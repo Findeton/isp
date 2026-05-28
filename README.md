@@ -349,8 +349,14 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `physics/relativistic-isp-v4-paper29-formal-hardening-of-continuum-yang-mills-descent.md`
 - `physics/relativistic-isp-v4-paper30-closing-the-ym-descent-certificates.md`
 - `physics/relativistic-isp-v4-paper31-post-certificate-formal-hardening-of-ym-descent.md`
+- `physics/relativistic-isp-v4-paper32-formal-hardening-of-effective-gr-descent.md`
+- `physics/relativistic-isp-v4-paper33-formal-hardening-of-relativistic-qft-descent.md`
+- `physics/relativistic-isp-v4-paper34-formal-hardening-of-finite-qcd-dynamics.md`
+- `physics/relativistic-isp-v4-paper35-repairing-the-gr-qft-qcd-hardening-gates.md`
+- `physics/relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
+- `physics/relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 
-Late V4 Yang-Mills hardening:
+Late V4 hardening and standard-equivalence bridges:
 
 - **Paper 28** formulates continuum Yang-Mills confinement/mass gap as an ISP
   descent problem and isolates the source-ledger, scale-lock, and YM-identity
@@ -369,21 +375,45 @@ active ISP-V4 finite-record ontology
   -> ISP-descended SU(N) Yang-Mills confinement/mass gap
 ```
 
-This is an internal ISP descent theorem.  It is not presented as an
-ontology-free proof of the standard Clay Yang-Mills problem; the conventional
-Hilbert/algebraic/OS comparison remains a separate externalization task.
+- **Paper 32** hardens the effective-GR descent, separating finite readout,
+  local equivalence, source coupling, and no-anomaly branch selection from
+  standard continuum GR interpretation.
+- **Paper 33** hardens relativistic QFT descent, including finite
+  source-response gluing, relativistic kinematics, and the spin/CPT bridge
+  discipline.
+- **Paper 34** hardens finite QCD dynamics, especially the finite
+  Wilson/source/flux certificates and row-budget constraints.
+- **Paper 35** repairs the load-bearing gates exposed by Papers 32-34:
+  local equivalence for GR, finite source-response gluing for QFT, spin/CPT
+  comparison, finite QCD margins, no circular import, and the NFB1-NFB9
+  no-free-branching ledger.
+- **Paper 36** compiles the GR/QFT/QCD hardening results and records the final
+  status ledger after the repairs.
+- **Paper 37** writes the standard-equivalence bridge for continuum
+  Yang-Mills.  It discharges the late external YM comparison gates on the
+  gauge-invariant SU(N) sector, including the E6, E10, E11, E12, E13 and
+  SE1-SE12 ledgers.
+
+The resulting status is sharper than the earlier README: the corpus now has
+an internal ISP Yang-Mills descent theorem and a written standard-equivalence
+bridge for the gauge-invariant continuum Yang-Mills comparison sector.  It is
+still not presented as an ontology-free proof of the Clay Yang-Mills problem
+detached from ISP; that would require rewriting the whole descent in standard
+mathematical physics language without invoking the active finite-record
+ontology as a premise.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  By Papers 29-31, the strongest V4
-claim is a closed internal theorem of the active finite-record ISP ontology:
-the descended \(SU(N)\) Yang-Mills sector has confinement/mass gap in the ISP
-descent sense.  The remaining boundary is external: translating this into a
-standard ontology-free mathematical proof requires an explicit comparison with
-the usual continuum Yang-Mills formulation.
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-37, the strongest V4
+claim is a hardened active finite-record stack: effective GR, relativistic QFT
+kinematics, finite QCD dynamics, internal Yang-Mills confinement/mass-gap
+descent, and the gauge-invariant standard-equivalence bridge for continuum
+Yang-Mills.  The remaining boundary is the broader externalization program:
+writing GR/QFT/QCD and the full ontology-free Yang-Mills claim in conventional
+mathematical physics language without relying on ISP as the starting ontology.
 
 ## V5: Consequences Of The Finite-Record Ontology
 
@@ -392,12 +422,14 @@ seriously.  The point is no longer only to reconstruct GR, QFT, QCD, and
 Yang-Mills as finite or effective descents.  The point is to reinterpret their
 hardest objects in finite-record language.
 
-Current V5 consequence paper:
+Current V5 review and consequence papers:
 
+- `physics/relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
 - `physics/relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
 
 Main role:
 
+- introduce Relativistic ISP for physicists in a compact review format;
 - treat a black hole as a finite record-accessibility structure rather than a
   primitive point singularity;
 - distinguish the GR event horizon from the GR singularity;
@@ -416,6 +448,9 @@ Paper 1 uses the V4 result stack as background:
 - P28-P31 supply the late Yang-Mills/confinement hardening sequence, showing how
   hard continuum physics is handled as active finite-record descent rather than
   as a primitive continuum assumption.
+- P32-P36 supply the GR/QFT/QCD hardening repairs and summary ledger.
+- P37 supplies the standard-equivalence bridge for the gauge-invariant
+  continuum Yang-Mills sector.
 
 Conceptual status:
 
@@ -431,8 +466,8 @@ pushed past the domain where it descends from finite stochastic records.
 V1: finite exchange defects
   -> V2: projective/refinement continuum viability
   -> V3: QFT, non-Abelian gauge, Yang-Mills source gates
-  -> V4: geometry, GR, value-source laws, QFT/QCD, and YM descent hardening
-  -> V5: consequences of finite-record ontology, beginning with black holes
+  -> V4: geometry, GR, value-source laws, QFT/QCD, YM hardening, and YM standard-equivalence
+  -> V5: review and consequences of finite-record ontology, beginning with black holes
 ```
 
 Or, conceptually:
@@ -446,6 +481,7 @@ real stochastic kernels
   -> GR-compatible finite geometry
   -> QCD/Yang-Mills descent under explicit source and compactness gates
   -> closed internal ISP Yang-Mills confinement/mass-gap theorem
+  -> standard gauge-invariant Yang-Mills equivalence bridge
   -> black holes as finite record horizons rather than primitive singular points
 ```
 
@@ -465,9 +501,12 @@ The honest reading is:
   descents;
 - within the active ISP ontology, the late V4 stack gives an internal
   Yang-Mills confinement/mass-gap descent theorem;
+- Paper 37 supplies the written standard-equivalence bridge for the
+  gauge-invariant continuum Yang-Mills sector;
 - remaining external acceptance depends on formalizing the active hypotheses
-  in standard mathematical language and checking that the finite source
-  packets are not merely calibrated restatements of the target physics.
+  in standard mathematical language, extending the bridge discipline across
+  GR/QFT/QCD, and showing that the finite source packets are not merely
+  calibrated restatements of the target physics.
 
 That is the point of the paper architecture: every generation either proves a
 piece, names the missing source, or exposes the exact place where the program
