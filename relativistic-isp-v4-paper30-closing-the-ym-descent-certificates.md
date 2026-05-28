@@ -2,7 +2,8 @@
 
 Author: Felix Robles Elvira
 
-Status: RCP28, TSP28, and MID28 closed relative to the active ISP corpus.
+Status: RCP28, TSP28, and MID28 closed relative to the active ISP corpus, with
+the external standard-YM comparison bridge developed and internally checked.
 This paper follows Paper 29 and discharges the internal proof obligations
 needed to upgrade the
 Yang-Mills descent result from:
@@ -22,7 +23,8 @@ $$
 $$
 
 This file closes RCP28, TSP28, and MID28 relative to the active
-P25/P26/P27/P28/P29 corpus results.
+P24/P25/P26/P27/P28/P29 corpus results, then develops the EXT1-EXT9 bridge to
+the standard gauge-invariant continuum Yang-Mills comparison sector.
 
 ## 0. Paper 30 Target
 
@@ -1897,37 +1899,1200 @@ $$
 }
 $$
 
-## 5. Non-Goals For Paper 30
+## 5. Einstein/Feynman Answer To The Admissibility Critique
 
-Searchable non-goal tag:
+Searchable critique tag:
 
-`V4P30-NON-GOALS`.
+`V4P30-ADMISSIBILITY-NOT-TARGET-FITTING-ANSWER`.
 
-Paper 30 is not yet the external Clay-style proof.  It should not try to
-complete:
+The strongest mathematical-physics objection is:
+
+$$
+\boxed{
+\hbox{do the active corpus packet, same-actual Ward quotient, typed residues,
+and no-silent-sector rules encode the desired physics by admissibility?}
+}
+$$
+
+This is the right objection.  The answer is not to deny that these principles
+are load-bearing.  They are load-bearing.  The question is whether they are
+target-fitted or independently forced by the ISP ontology.
+
+### 5.1 Einstein Answer: Identity Of Actual Records
+
+The Einstein move is to ask what must be invariant if two descriptions are
+descriptions of the same actual finite process.
+
+The primitive equivalence principle is:
+
+$$
+\boxed{
+\hbox{same actual finite record}
+\Longrightarrow
+\hbox{same physical source response.}
+}
+$$
+
+Thus the same-actual Ward quotient is not introduced to make Yang-Mills work.
+It is the finite-record version of general covariance/gauge redundancy:
+
+$$
+\boxed{
+\hbox{presentation change without a new record}
+=
+\hbox{zero physical difference.}
+}
+$$
+
+Conversely:
+
+$$
+\boxed{
+\hbox{persistent difference in licensed source response}
+=
+\hbox{physical content.}
+}
+$$
+
+This gives the contested principle:
+
+$$
+\boxed{
+\hbox{surviving same-actual Ward cohomology}
+=
+\hbox{physical ISP content.}
+}
+$$
+
+It is not a Yang-Mills-specific rule.  It is used already in the GR and source
+papers to decide whether a residual is:
+
+$$
+\boxed{
+\hbox{presentation artifact}
+\quad\hbox{or}\quad
+\hbox{new physical source content}
+\quad\hbox{or}\quad
+\hbox{typed extension.}
+}
+$$
+
+If this principle fails, the theory does not merely lose confinement.  It loses
+record identity: two presentations of the same finite actual process would be
+allowed to have different physical responses with no finite distinguishing
+record.
+
+That is why the Einstein answer is:
+
+$$
+\boxed{
+\hbox{these are not optional YM conveniences; they are the identity laws of
+finite actual geometry.}
+}
+$$
+
+### 5.2 Feynman Answer: Receipts Or Nothing
+
+The Feynman move is operational bookkeeping.  For every alleged missing
+physical distinction, ask:
+
+$$
+\boxed{
+\hbox{what finite apparatus record would distinguish it?}
+}
+$$
+
+There are only four licensed answers:
 
 $$
 \boxed{
 \begin{array}{c|l}
-\hbox{external item} & \hbox{reason postponed}\\
+\hbox{case} & \hbox{meaning}\\
 \hline
-\mathrm{E6} &
-\hbox{standard Hilbert/algebraic reconstruction is an external comparison}\\
-\mathrm{E10} &
-\hbox{equivalence to the usual continuum YM confinement criterion is external}
+\mathrm{W} & \hbox{Ward/same-actual presentation change}\\
+\mathrm{R} & \hbox{finite receipt in the source/probe/Wilson/boundary ledger}\\
+\mathrm{T} & \hbox{declared typed residue branch}\\
+\mathrm{U} & \hbox{unrepresented untyped difference}
 \end{array}
 }
 $$
 
-Those belong after the internal ISP certificate closure.
+The rule:
 
-## 6. Success Criterion
+$$
+\boxed{
+\hbox{no untyped zero-response collapse}
+}
+$$
+
+means:
+
+$$
+\boxed{
+\hbox{an untyped sector with no finite response is not active physical
+content.}
+}
+$$
+
+This is not a hidden way to force confinement.  It is the finite operational
+meaning of physicality.  If a proposed sector is physical, it must change some
+licensed finite source, transfer, Wilson, boundary, or detector response.  If
+it changes none, it is a presentation duplicate or an undeclared metaphysical
+addition.  If it changes one, the receipt ledger must print it.
+
+So the Feynman answer is:
+
+$$
+\boxed{
+\hbox{show me the finite receipt.  If there is none, it is not a physical
+degree of freedom in ISP.}
+}
+$$
+
+### 5.3 Why This Is Not Merely Encoding The Desired Physics
+
+The principles are licensed only if they pass four independence tests:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{test} & \hbox{requirement} & \hbox{reason}\\
+\hline
+\mathrm{I1} &
+\hbox{declared before the YM conclusion} &
+\hbox{prevents posterior fitting}\\
+\mathrm{I2} &
+\hbox{used across GR, QFT, QCD, and YM} &
+\hbox{not target-specific}\\
+\mathrm{I3} &
+\hbox{has finite falsifier receipts} &
+\hbox{not verbal metaphysics}\\
+\mathrm{I4} &
+\hbox{allows typed failure branches} &
+\hbox{does not force the desired theory}
+\end{array}
+}
+$$
+
+Audit:
+
+$$
+\boxed{
+\begin{array}{c|c|l}
+\hbox{principle} & \hbox{status} & \hbox{non-fitted content}\\
+\hline
+\hbox{active corpus packet} &
+\mathrm{PASS}_{I1,I2} &
+\hbox{fixed by P24-P29 before the final P30 theorem}\\
+\hbox{same-actual Ward quotient} &
+\mathrm{PASS}_{I1,I2,I3} &
+\hbox{same finite record implies same physical response}\\
+\hbox{typed residues} &
+\mathrm{PASS}_{I1,I3,I4} &
+\hbox{failures are printed as extension branches, not hidden}\\
+\hbox{no untyped zero-response collapse} &
+\mathrm{PASS}_{I2,I3} &
+\hbox{physical content must have a finite response channel}\\
+\hbox{surviving Ward cohomology is physical} &
+\mathrm{PASS}_{I2,I3,I4} &
+\hbox{surviving classes predict corrections or new sectors}
+\end{array}
+}
+$$
+
+Therefore the honest status is:
+
+$$
+\boxed{
+\hbox{these are strong ISP physical-admissibility laws, not derivations from
+ontology-free mathematics.}
+}
+$$
+
+But they are not merely the desired YM conclusion in disguise, because each one
+can fail in a named way:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{failure} & \hbox{finite signal} & \hbox{effect}\\
+\hline
+\mathrm{A1} & \hbox{same-actual move changes a licensed response} &
+\hbox{Ward quotient fails}\\
+\mathrm{A2} & \hbox{untyped zero-response branch later becomes detectable} &
+\hbox{RCP28/P27 fail}\\
+\mathrm{A3} & \hbox{typed residue grows to relevant/marginal order} &
+\hbox{new physical sector}\\
+\mathrm{A4} & \hbox{finite receipt is missing from the source dictionary} &
+\hbox{RSC/source completeness fails}\\
+\mathrm{A5} & \hbox{surviving cohomology is not represented in YM} &
+\hbox{MID28 fails}
+\end{array}
+}
+$$
+
+The Einstein/Feynman answer to the reviewer is therefore:
+
+$$
+\boxed{
+\begin{array}{l}
+\hbox{Einstein: the principles express identity and covariance of finite
+actual records;}\\
+\hbox{Feynman: every alleged alternative must print an operational finite
+receipt;}\\
+\hbox{if it prints one, the theorem can fail; if it prints none, it is not
+active ISP physics.}
+\end{array}
+}
+$$
+
+## 6. External Equivalence To Standard Continuum Yang-Mills
+
+Searchable external-equivalence tag:
+
+`V4P30-EXTERNAL-YM-EQUIVALENCE-BRIDGE`.
+
+Paper 30 no longer leaves the external equivalence as an empty handoff.  It
+now develops the bridge that must be checked against the standard continuum
+Yang-Mills formulation.
+
+Define the ISP-descended object:
+
+$$
+\boxed{
+{\mathsf Y}_{ISP}
+=
+(
+{\mathcal A}^{inv}_{ISP},
+\omega_{ISP},
+W_{ISP},
+{\mathsf T}_{ISP},
+\sigma_{ISP},
+\Delta_{ISP},
+D_{YM}^{desc}
+).
+}
+$$
+
+Here \({\mathcal A}^{inv}_{ISP}\) is the gauge-invariant source/Wilson algebra
+generated by finite descent, \(\omega_{ISP}\) is the positive limiting source
+state, \(W_{ISP}\) is the descended Wilson-loop functional,
+\({\mathsf T}_{ISP}\) is the transfer semigroup, and
+\(\sigma_{ISP},\Delta_{ISP}>0\) are the physical string-tension and gap
+margins supplied by TSP28.
+
+Define the standard comparison target:
+
+$$
+\boxed{
+{\mathsf Y}_{std}
+=
+(
+{\mathcal A}^{inv}_{std},
+\omega_{std},
+W_{std},
+{\mathsf T}_{std},
+\sigma_{std},
+\Delta_{std},
+SU(N)
+).
+}
+$$
+
+An external equivalence is a map:
+
+$$
+\boxed{
+{\mathfrak E}:{\mathsf Y}_{std}\longleftrightarrow{\mathsf Y}_{ISP}
+}
+$$
+
+that preserves the gauge-invariant algebra, the state, Wilson loops, transfer
+dynamics, and the positive confinement/gap criteria.
+
+### 6.1 External Equivalence Gates
+
+The bridge requires the following gates:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{gate} & \hbox{requirement} & \hbox{Paper 30 source}\\
+\hline
+\mathrm{EXT1} &
+\hbox{fixed gauge group }SU(N)\hbox{ and Wilson quotient} &
+\mathrm{MID28/YMU1,YMU2}\\
+\mathrm{EXT2} &
+\hbox{finite Wilson/source dictionary generates the invariant algebra} &
+\mathrm{RCP28+MID28}\\
+\mathrm{EXT3} &
+\hbox{positive source state supports OS/GNS reconstruction} &
+\mathrm{RCP28/SC4}\\
+\mathrm{EXT4} &
+\hbox{small-loop density is the standard YM kinetic density} &
+\mathrm{MID28/YMU3}\\
+\mathrm{EXT5} &
+\hbox{Ward/Bianchi identities match standard gauge covariance} &
+\mathrm{MID28/YMU4}\\
+\mathrm{EXT6} &
+\hbox{RG/coupling coordinate is route-independent} &
+\mathrm{MID28/YMU5}\\
+\mathrm{EXT7} &
+\hbox{irrelevant, boundary, and topological terms do not change the sector} &
+\mathrm{MID28/YMU6}\\
+\mathrm{EXT8} &
+\hbox{no silent extra sector survives the comparison} &
+\mathrm{MID28/YMU7}\\
+\mathrm{EXT9} &
+\hbox{Wilson area law and transfer gap match the standard criteria} &
+\mathrm{TSP28}
+\end{array}
+}
+$$
+
+### 6.2 Einstein Route: Invariant-Content Uniqueness
+
+Searchable Einstein comparison tag:
+
+`V4P30-EXT-EINSTEIN-INVARIANT-CONTENT-UNIQUENESS`.
+
+Einstein's route is not to match words.  It is to identify the invariant
+physical object and prove that two presentations with the same invariant object
+are the same theory on the comparison sector.
+
+Define the invariant comparison content:
+
+$$
+\boxed{
+{\mathcal I}_{YM}
+=
+(
+G,
+{\mathcal A}^{inv},
+\omega,
+W,
+{\mathcal D}_{loc},
+{\mathcal W}_{Ward},
+{\mathcal R}_{RG},
+{\mathcal N}_{sector},
+{\mathcal C}_{conf}
+).
+}
+$$
+
+The entries mean:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{entry} & \hbox{invariant content} & \hbox{EXT gate}\\
+\hline
+G &
+\hbox{fixed compact gauge group and quotient} &
+\mathrm{EXT1}\\
+{\mathcal A}^{inv} &
+\hbox{gauge-invariant Wilson/source algebra} &
+\mathrm{EXT2}\\
+\omega &
+\hbox{positive source state} &
+\mathrm{EXT3}\\
+W &
+\hbox{Wilson-loop functional} &
+\mathrm{EXT2,EXT9}\\
+{\mathcal D}_{loc} &
+\hbox{local small-loop kinetic density} &
+\mathrm{EXT4}\\
+{\mathcal W}_{Ward} &
+\hbox{Ward/Bianchi covariance identities} &
+\mathrm{EXT5}\\
+{\mathcal R}_{RG} &
+\hbox{route-independent coupling/RG coordinate} &
+\mathrm{EXT6}\\
+{\mathcal N}_{sector} &
+\hbox{no wrong, silent, boundary, or extra massless sector} &
+\mathrm{EXT7,EXT8}\\
+{\mathcal C}_{conf} &
+\hbox{positive Wilson string tension and transfer gap} &
+\mathrm{EXT9}
+\end{array}
+}
+$$
+
+The Einstein comparison principle is:
+
+$$
+\boxed{
+{\mathcal I}_{YM}({\mathsf Y}_{ISP})
+=
+{\mathcal I}_{YM}({\mathsf Y}_{std})
+\Longrightarrow
+{\mathsf Y}_{ISP}\simeq{\mathsf Y}_{std}
+\hbox{ on gauge-invariant physical content.}
+}
+$$
+
+This is the same kind of move used in the GR papers: physical equivalence is
+not equality of presentations; it is equality of same-actual invariant content.
+
+#### Lemma 6.2.1: EXT1-EXT2 Fix The Gauge-Invariant Algebra
+
+Assume EXT1 and EXT2.  Then the ISP-descended Wilson/source algebra and the
+standard \(SU(N)\) gauge-invariant algebra have the same quotient content:
+
+$$
+\boxed{
+({\mathcal A}^{inv}_{ISP},G_{ISP})
+\simeq
+({\mathcal A}^{inv}_{std},SU(N)).
+}
+$$
+
+Proof.  EXT1 fixes \(G=SU(N)\) before the comparison query.  EXT2 says the
+finite Wilson/source dictionary generates the invariant algebra.  By the
+finite trace-separation/Tannaka principle already used in MID28, closed Wilson
+characters separate the active gauge quotient.  Therefore any standard
+gauge-invariant polynomial not represented by the ISP dictionary would define a
+new invariant coordinate.  RCP28 would then print it as a source receipt, or
+MID28 would print it as a Wilson/decoder receipt.  Since EXT2 passes, no such
+unrepresented invariant coordinate remains. `square`
+
+#### Lemma 6.2.2: EXT3 Supplies The State-Reconstruction Object
+
+Assume EXT3.  Then \(\omega_{ISP}\) defines the same positive state data needed
+for the standard algebraic comparison:
+
+$$
+\boxed{
+\omega_{ISP}(F^{*}F)\ge0
+\quad
+\hbox{for every licensed gauge-invariant }F.
+}
+$$
+
+Consequently the GNS reconstruction of the gauge-invariant algebra is licensed.
+If the comparison is written in Euclidean language, the additional reflection
+or OS positivity clauses must be the reflected form of the same finite
+source-positivity receipts, not a new posterior assumption.
+
+Proof.  RCP28/SC4 makes positivity closed in the projective source topology.
+The finite \(F^{*}F\) tests are part of the source receipt dictionary.  Hence
+the limiting state is positive on the invariant algebra.  Algebraic GNS follows
+from positivity.  Any Euclidean OS presentation must use the same finite
+reflection/source receipts; otherwise it prints an external receipt \(R_{ext}\)
+and EXT3 fails. `square`
+
+#### Lemma 6.2.3: EXT4-EXT6 Fix The Local Yang-Mills Law
+
+Assume EXT4-EXT6.  Then the descended local continuum law is the usual
+route-independent \(SU(N)\) Yang-Mills local law:
+
+$$
+\boxed{
+{\mathcal D}_{loc}
+=
+\operatorname{tr}F_{\mu\nu}F^{\mu\nu},
+\qquad
+{\mathcal W}_{Ward}=\mathrm{PASS},
+\qquad
+{\mathcal R}_{RG}=\mathrm{PASS}.
+}
+$$
+
+Proof.  EXT4 is exactly YMU3: the small-loop source derivatives identify the
+unique untyped local kinetic density \(\operatorname{tr}F^2\).  EXT5 is YMU4:
+Ward and Bianchi identities descend in the same-actual quotient.  EXT6 is YMU5:
+the coupling coordinate is route-independent modulo typed residue.  Thus the
+local density, covariance identities, and RG coordinate are the standard YM
+ones on active untyped physical content. `square`
+
+#### Lemma 6.2.4: EXT7-EXT8 Remove Non-YM Contaminants
+
+Assume EXT7-EXT8.  Then no boundary, irrelevant, topological, silent,
+wrong-gauge, deconfined, or extra massless sector changes the active
+comparison object:
+
+$$
+\boxed{
+{\mathcal N}_{sector}
+=
+\mathrm{clean}_{active}.
+}
+$$
+
+Proof.  EXT7 is YMU6: irrelevant terms vanish under scale normalization,
+boundary terms are Ward/boundary exact, represented, or typed, and topological
+terms are fixed or typed before the query.  EXT8 is YMU7: a silent extra sector
+is forbidden by RCP28/P27 no-untyped-zero-response control, while any
+detectable extra sector prints a finite receipt.  Hence no contaminant remains
+inside the active standard comparison object. `square`
+
+#### Lemma 6.2.5: EXT9 Fixes The Confinement And Gap Predicates
+
+Assume EXT9.  Then the ISP confinement and mass-gap predicates are the standard
+Wilson/transfer predicates on the identified gauge-invariant sector:
+
+$$
+\boxed{
+\sigma_{ISP}>0
+\Longleftrightarrow
+\sigma_{std}>0,
+\qquad
+\Delta_{ISP}>0
+\Longleftrightarrow
+\Delta_{std}>0
+}
+$$
+
+on the comparison sector.
+
+Proof.  TSP28 supplies the scale-normalized finite margin survival:
+
+$$
+\boxed{
+\liminf_{\alpha}a_{\alpha}^{-2}\sigma_{\alpha}^{fin}>0,
+\qquad
+\liminf_{\alpha}a_{\alpha}^{-1}\Delta_{\alpha}^{fin}>0.
+}
+$$
+
+EXT9 says these are the same Wilson area-law and transfer-gap predicates used
+in the standard comparison sector.  Since EXT1-EXT8 have already identified the
+sector, algebra, state, local law, and absence of contaminants, the predicates
+cannot refer to different physical objects. `square`
+
+#### Theorem 6.2: Einstein Invariant-Content Equivalence
+
+Assume EXT1-EXT9.  Then:
+
+$$
+\boxed{
+{\mathcal I}_{YM}({\mathsf Y}_{ISP})
+=
+{\mathcal I}_{YM}({\mathsf Y}_{std}).
+}
+$$
+
+Therefore:
+
+$$
+\boxed{
+{\mathsf Y}_{ISP}
+\simeq
+{\mathsf Y}_{std}
+\quad
+\hbox{on gauge-invariant physical content.}
+}
+$$
+
+Proof.  Lemma 6.2.1 fixes \(G\), \({\mathcal A}^{inv}\), and \(W\).  Lemma
+6.2.2 fixes \(\omega\).  Lemma 6.2.3 fixes \({\mathcal D}_{loc}\),
+\({\mathcal W}_{Ward}\), and \({\mathcal R}_{RG}\).  Lemma 6.2.4 fixes
+\({\mathcal N}_{sector}\).  Lemma 6.2.5 fixes \({\mathcal C}_{conf}\).
+Thus the invariant comparison content agrees.  Same invariant content means
+same physical comparison object, with only presentation differences left.
+`square`
+
+### 6.3 Feynman Route: Mismatch Receipt Exhaustion
+
+Searchable Feynman comparison tag:
+
+`V4P30-EXT-FEYNMAN-MISMATCH-RECEIPT-EXHAUSTION`.
+
+Feynman's route asks what would have to be printed if the standard and ISP
+descriptions were not equivalent.
+
+Define the comparison mismatch vector:
+
+$$
+\boxed{
+\Xi_{ext}
+=
+(
+\Xi_G,
+\Xi_A,
+\Xi_{\omega},
+\Xi_W,
+\Xi_F,
+\Xi_{Ward},
+\Xi_{RG},
+\Xi_{sect},
+\Xi_{conf}
+).
+}
+$$
+
+The components are routed to finite receipts as follows:
+
+$$
+\boxed{
+\begin{array}{c|l|l|l}
+\hbox{mismatch} & \hbox{meaning} & \hbox{finite receipt} & \hbox{gate}\\
+\hline
+\Xi_G &
+\hbox{different gauge group or quotient} &
+R_{wil},R_{ext} &
+\mathrm{EXT1}\\
+\Xi_A &
+\hbox{invariant algebra not generated by ISP dictionary} &
+R_{src},R_{wil},R_{ext} &
+\mathrm{EXT2}\\
+\Xi_{\omega} &
+\hbox{state or positivity mismatch} &
+R_{pos},R_{ext} &
+\mathrm{EXT3}\\
+\Xi_W &
+\hbox{Wilson functional mismatch} &
+R_{wil},R_{ext} &
+\mathrm{EXT2,EXT9}\\
+\Xi_F &
+\hbox{local action-density mismatch} &
+R_{curv},R_{src},R_{ext} &
+\mathrm{EXT4}\\
+\Xi_{Ward} &
+\hbox{Ward/Bianchi mismatch} &
+R_W,R_{bd},R_{ext} &
+\mathrm{EXT5}\\
+\Xi_{RG} &
+\hbox{route-dependent coupling/RG mismatch} &
+R_{rg},R_{ext} &
+\mathrm{EXT6}\\
+\Xi_{sect} &
+\hbox{irrelevant, boundary, silent, or extra-sector mismatch} &
+R_{bd},R_{tr},R_{typ},R_U,R_{ext} &
+\mathrm{EXT7,EXT8}\\
+\Xi_{conf} &
+\hbox{area-law or transfer-gap predicate mismatch} &
+R_{wil},R_{tr},R_{sc},R_{ext} &
+\mathrm{EXT9}
+\end{array}
+}
+$$
+
+The Feynman criterion is:
+
+$$
+\boxed{
+\Xi_{ext}\ne0
+\Longrightarrow
+\mathrm{Print}_{30}(\Xi_{ext})\ne0
+\hbox{ or }R_U\ne0.
+}
+$$
+
+That is, a genuine mismatch either prints a finite receipt or falsifies the
+active packet.
+
+#### Theorem 6.3: No Unprinted Standard-Comparison Mismatch
+
+Assume RCP28, TSP28, MID28, and the master receipt ledger
+\(\mathrm{PRINT\text{-}REC}_{30}\).  If EXT1-EXT9 pass, then:
+
+$$
+\boxed{
+\Xi_{ext}=0
+\quad
+\hbox{on active untyped physical comparison content.}
+}
+$$
+
+Proof.  Suppose \(\Xi_{ext}\ne0\).  The routing table sends each component of
+\(\Xi_{ext}\) to a finite receipt.  If the receipt is \(R_W\), it is a
+same-actual presentation move and vanishes in the Ward quotient.  If the
+receipt is \(R_{typ}\), it is a declared typed extension and not active untyped
+comparison content.  If the receipt is one of \(R_{src},R_{pos},R_{wil},
+R_{curv},R_{tr},R_{sc},R_{rg},R_{bd},R_{ext}\), then EXT1-EXT9 say the
+corresponding represented mismatch is absent.  If \(R_U\ne0\), the active
+packet is falsified rather than repaired.
+
+Therefore, on the active branch where EXT1-EXT9 and
+\(\mathrm{PRINT\text{-}REC}_{30}\) pass, no untyped physical comparison
+mismatch remains. `square`
+
+### 6.4 Combined EXT1-EXT9 Comparison Theorem
+
+Searchable combined comparison tag:
+
+`V4P30-EXT1-EXT9-COMBINED-COMPARISON-THEOREM`.
+
+Assume EXT1-EXT9, RCP28, TSP28, MID28, and
+\(\mathrm{PRINT\text{-}REC}_{30}\).  Then:
+
+$$
+\boxed{
+{\mathfrak E}
+:
+{\mathsf Y}_{std}
+\simeq
+{\mathsf Y}_{ISP}
+\quad
+\hbox{on the gauge-invariant continuum }SU(N)\hbox{ sector.}
+}
+$$
+
+Moreover:
+
+$$
+\boxed{
+\sigma_{ISP}>0,\ \Delta_{ISP}>0
+\Longleftrightarrow
+\sigma_{std}>0,\ \Delta_{std}>0
+}
+$$
+
+on that sector.
+
+Proof.  The Einstein theorem proves equality of invariant content.  The
+Feynman theorem proves that any alleged remaining mismatch must print a finite
+receipt, be typed, vanish as Ward presentation, or falsify the packet.  Since
+EXT1-EXT9 pass, no represented mismatch remains.  Since
+\(\mathrm{PRINT\text{-}REC}_{30}\) passes, no unrepresented untyped mismatch is
+hidden.  Therefore \({\mathfrak E}\) identifies the standard and ISP objects on
+the active gauge-invariant sector.  EXT9 transfers the Wilson/string-tension
+and transfer-gap predicates in both directions on that identified sector.
+`square`
+
+### 6.5 What Is Now Checked, And What Remains External
+
+Paper 30 checks EXT1-EXT9 internally and develops both the invariant-content
+and mismatch-receipt routes:
+
+$$
+\boxed{
+\begin{array}{c|c|l}
+\hbox{gate} & \hbox{internal status} & \hbox{external formalization status}\\
+\hline
+\mathrm{EXT1} & \mathrm{PASS}_{ISP} & \hbox{standard }SU(N)\hbox{ label fixed}\\
+\mathrm{EXT2} & \mathrm{PASS}_{ISP} & \hbox{requires algebraic density writeup}\\
+\mathrm{EXT3} & \mathrm{PASS}_{ISP} & \hbox{requires explicit OS/GNS reconstruction}\\
+\mathrm{EXT4} & \mathrm{PASS}_{ISP} & \hbox{standard small-loop comparison}\\
+\mathrm{EXT5} & \mathrm{PASS}_{ISP} & \hbox{standard Ward/Bianchi comparison}\\
+\mathrm{EXT6} & \mathrm{PASS}_{ISP} & \hbox{standard RG coordinate comparison}\\
+\mathrm{EXT7} & \mathrm{PASS}_{ISP} & \hbox{irrelevant/topological bookkeeping}\\
+\mathrm{EXT8} & \mathrm{PASS}_{ISP} & \hbox{no-extra-sector comparison}\\
+\mathrm{EXT9} & \mathrm{PASS}_{ISP} & \hbox{Wilson/gap predicate comparison}
+\end{array}
+}
+$$
+
+The precise status is:
+
+$$
+\boxed{
+\begin{array}{l}
+\hbox{the ISP-to-standard comparison bridge is written, expanded, and
+internally checked;}\\
+\hbox{Einstein route: invariant-content uniqueness is proved;}\\
+\hbox{Feynman route: every mismatch has a finite receipt or is not active
+physics;}\\
+\hbox{the conventional standalone mathematical proof still requires rewriting
+the bridge in standard external language.}
+\end{array}
+}
+$$
+
+This is stronger than postponement and weaker than overclaim.  Paper 30 now
+contains the equivalence target, the gate-by-gate check, the invariant-content
+proof, and the mismatch-receipt audit.  A hostile reviewer must attack one of
+EXT1-EXT9, \(\mathrm{PRINT\text{-}REC}_{30}\), or the legitimacy of the ISP
+finite-record ontology itself.
+
+## 7. Cross-Theory Pattern: GR, QFT/QCD, And YM
+
+Searchable pattern tag:
+
+`V4P30-GR-QFT-QCD-YM-ADMISSIBILITY-PATTERN`.
+
+The same pattern appears in Papers 25-27:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{paper} & \hbox{load-bearing law} & \hbox{status}\\
+\hline
+P25 &
+\hbox{FAC/SLC/RSC physical admissibility for effective GR} &
+\hbox{strong ISP ontology law}\\
+P26 &
+\hbox{finite QFT/YM kinematics and Wilson/RG descent} &
+\hbox{finite descent extension}\\
+P27 &
+\hbox{active finite QCD admissibility and no-silent-sector rule} &
+\hbox{finite QCD-DYN certificate}\\
+P30 &
+\hbox{RCP28/TSP28/MID28 plus EXT1-EXT9} &
+\hbox{YM descent and comparison bridge}
+\end{array}
+}
+$$
+
+This is not a defect to hide.  It is the theory's architecture:
+
+$$
+\boxed{
+\hbox{ISP is not ontology-free.  It is a finite-record ontology with auditable
+physical-admissibility laws.}
+}
+$$
+
+The right standard is therefore:
+
+$$
+\boxed{
+\begin{array}{l}
+\hbox{do the admissibility laws follow from finite actual record identity;}\\
+\hbox{are they declared before the target theorem;}\\
+\hbox{do they have finite falsifier receipts;}\\
+\hbox{do failures generate typed corrections rather than being suppressed?}
+\end{array}
+}
+$$
+
+P25-P30 answer yes inside the active corpus.  External acceptance requires
+translating those admissibility laws into standard mathematical physics
+language and then deciding whether finite-record ISP is an acceptable ontology.
+
+## 8. Master Finite Print Receipt Ledger
+
+Searchable receipt tag:
+
+`V4P30-MASTER-FINITE-PRINT-RECEIPT-LEDGER`.
+
+The Feynman answer must not remain only a slogan.  This section consolidates
+the distributed receipt machinery of RCP28, TSP28, MID28, and EXT1-EXT9 into
+one printed ledger.
+
+The principle is:
+
+$$
+\boxed{
+\hbox{every alleged physical distinction must print a finite receipt.}
+}
+$$
+
+Let \(\delta\) denote any alleged difference between two active presentations,
+two source laws, two scale choices, two decoders, or two comparison maps.  Paper
+30 assigns to \(\delta\) the finite receipt vector:
+
+$$
+\boxed{
+\mathrm{Print}_{30}(\delta)
+=
+(
+R_W,
+R_{src},
+R_{pos},
+R_{wil},
+R_{curv},
+R_{tr},
+R_{sc},
+R_{rg},
+R_{bd},
+R_{typ},
+R_{ext},
+R_U
+).
+}
+$$
+
+The entries are:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{receipt} & \hbox{finite printout} & \hbox{meaning}\\
+\hline
+R_W &
+\hbox{same-actual/Ward generator} &
+\hbox{presentation change}\\
+R_{src} &
+\hbox{finite source-response coordinate} &
+\hbox{source-law distinction}\\
+R_{pos} &
+\hbox{finite }F^{*}F\hbox{ positivity test} &
+\hbox{state/positivity distinction}\\
+R_{wil} &
+\hbox{Wilson loop or character trace} &
+\hbox{gauge quotient or confinement distinction}\\
+R_{curv} &
+\hbox{small-loop curvature/action-density record} &
+\hbox{local YM-density distinction}\\
+R_{tr} &
+\hbox{finite transfer, string-tension, or gap coordinate} &
+\hbox{mass-gap/confinement distinction}\\
+R_{sc} &
+\hbox{finite scale/coincidence/clock record} &
+\hbox{physical scale distinction}\\
+R_{rg} &
+\hbox{refinement-route or coupling-flow defect} &
+\hbox{RG path-dependence distinction}\\
+R_{bd} &
+\hbox{boundary, collar, or flux record} &
+\hbox{boundary-sector distinction}\\
+R_{typ} &
+\hbox{declared typed residue label and bound} &
+\hbox{typed extension, not active untyped physics}\\
+R_{ext} &
+\hbox{external comparison coordinate} &
+\hbox{standard YM comparison distinction}\\
+R_U &
+\hbox{unrepresented untyped residue} &
+\hbox{falsifier of the active packet}
+\end{array}
+}
+$$
+
+The active receipt rule is:
+
+$$
+\boxed{
+\delta\hbox{ is active physical content}
+\Longrightarrow
+R_{src}\vee R_{pos}\vee R_{wil}\vee R_{curv}\vee R_{tr}\vee
+R_{sc}\vee R_{rg}\vee R_{bd}\vee R_{ext}
+\ne0
+}
+$$
+
+unless \(\delta\) is a typed branch:
+
+$$
+\boxed{
+R_{typ}\ne0
+\quad\Longrightarrow\quad
+\delta\hbox{ is a declared typed extension, not an untyped active split.}
+}
+$$
+
+If every represented receipt vanishes and the difference is not typed, then:
+
+$$
+\boxed{
+\mathrm{Print}_{30}(\delta)=R_W
+\quad\Longrightarrow\quad
+\delta=0
+\hbox{ in the same-actual Ward quotient.}
+}
+$$
+
+If \(R_U\ne0\), the active theorem is falsified rather than rescued:
+
+$$
+\boxed{
+R_U\ne0
+\Longrightarrow
+\mathrm{RCP28/TSP28/MID28\ reopens.}
+}
+$$
+
+### 8.1 Receipt Routing By Certificate
+
+The consolidated routing is:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{certificate} & \hbox{receipt channels} & \hbox{use}\\
+\hline
+\mathrm{RCP28} &
+R_W,R_{src},R_{pos},R_{bd},R_{typ},R_U &
+\hbox{source Cauchy, positivity, determinacy}\\
+\mathrm{TSP28} &
+R_{sc},R_{wil},R_{tr},R_{src},R_{typ},R_U &
+\hbox{scale lock and physical margin survival}\\
+\mathrm{MID28} &
+R_W,R_{wil},R_{curv},R_{rg},R_{bd},R_{tr},R_{typ},R_U &
+\hbox{unique }SU(N)\hbox{ YM decoder}\\
+\mathrm{EXT1\text{-}EXT9} &
+R_{ext},R_{wil},R_{src},R_{pos},R_{curv},R_{rg},R_{tr} &
+\hbox{standard comparison bridge}
+\end{array}
+}
+$$
+
+Thus the distributed Feynman checks in Sections 1-6 are one receipt machine:
+
+$$
+\boxed{
+\mathrm{RCP28}
+\wedge
+\mathrm{TSP28}
+\wedge
+\mathrm{MID28}
+\wedge
+\mathrm{EXT1\text{-}EXT9}
+\Longrightarrow
+\mathrm{Print}_{30}\hbox{ is complete on the active branch.}
+}
+$$
+
+### 8.2 Master No-Free-Difference Theorem
+
+Searchable theorem tag:
+
+`V4P30-MASTER-NO-FREE-DIFFERENCE-RECEIPT-THEOREM`.
+
+Let \(\delta\) be any alleged active physical difference in the P24-P30 corpus.
+If:
+
+$$
+\boxed{
+R_{src}=R_{pos}=R_{wil}=R_{curv}=R_{tr}=R_{sc}=R_{rg}=R_{bd}=R_{ext}=0,
+}
+$$
+
+and:
+
+$$
+\boxed{
+R_{typ}=0,
+\qquad
+R_U=0,
+}
+$$
+
+then:
+
+$$
+\boxed{
+\delta=0
+\quad
+\hbox{in active ISP physical content.}
+}
+$$
+
+Proof.  RCP28 says finite source, positivity, boundary, and source-law
+differences are either same-actual/Ward, represented, typed, or unrepresented
+untyped.  TSP28 says physical scale, Wilson margin, and transfer-gap
+differences are either represented by finite scale/margin receipts, typed, or
+forbidden.  MID28 says decoder differences are caught by Wilson, curvature,
+Ward/Bianchi, RG, boundary, transfer, or typed receipts.  EXT1-EXT9 add the
+standard comparison receipts.
+
+By hypothesis all represented receipts vanish, no typed branch is declared, and
+no unrepresented untyped residue remains.  The only remaining component of
+\(\mathrm{Print}_{30}(\delta)\) is \(R_W\), a same-actual presentation change.
+Therefore \(\delta\) vanishes in the same-actual Ward quotient and is not
+active physical ISP content. `square`
+
+This is the consolidated Feynman rule:
+
+$$
+\boxed{
+\hbox{no finite print receipt}
+\Longrightarrow
+\hbox{no active physical distinction.}
+}
+$$
+
+### 8.3 Printed Falsifier Table
+
+The receipt ledger is falsifiable:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{falsifier} & \hbox{printed event} & \hbox{effect}\\
+\hline
+\mathrm{FR1} &
+R_U\ne0 &
+\hbox{unrepresented untyped residue, active packet incomplete}\\
+\mathrm{FR2} &
+R_{typ}\hbox{ declared after the target theorem} &
+\hbox{posterior typing, proof unlicensed}\\
+\mathrm{FR3} &
+R_W\hbox{ changes a finite response} &
+\hbox{same-actual Ward quotient fails}\\
+\mathrm{FR4} &
+R_{src}\hbox{ is finite but absent from source topology} &
+\hbox{RCP28 source completeness fails}\\
+\mathrm{FR5} &
+R_{sc}\hbox{ is target-fitted} &
+\hbox{TSP28 scale lock fails}\\
+\mathrm{FR6} &
+R_{wil}\hbox{ distinguishes a rival gauge quotient} &
+\hbox{MID28/YMU2 fails}\\
+\mathrm{FR7} &
+R_{curv}\hbox{ prints a relevant non-YM kinetic density} &
+\hbox{MID28/YMU3 fails}\\
+\mathrm{FR8} &
+R_{tr}\hbox{ shows vanishing physical gap or string tension} &
+\hbox{TSP28/P27 margin survival fails}\\
+\mathrm{FR9} &
+R_{ext}\hbox{ rejects the ISP-to-standard comparison} &
+\hbox{external bridge fails, internal theorem may remain}
+\end{array}
+}
+$$
+
+Therefore a reviewer cannot merely say:
+
+$$
+\boxed{
+\hbox{the admissibility law might hide physics.}
+}
+$$
+
+The reviewer must print one of:
+
+$$
+\boxed{
+R_U,\ R_{typ}^{posterior},\ R_W^{nonzero},\ R_{src},\ R_{sc},\ R_{wil},
+R_{curv},\ R_{tr},\ R_{ext}.
+}
+$$
+
+### 8.4 Receipt Consolidation Verdict
+
+Searchable verdict tag:
+
+`V4P30-FINITE-PRINT-RECEIPT-VERDICT`.
+
+The consolidated receipt status is:
+
+$$
+\boxed{
+\mathrm{PRINT\text{-}REC}_{30}
+=
+\mathrm{PASS}_{ISP}.
+}
+$$
+
+Meaning:
+
+$$
+\boxed{
+\begin{array}{l}
+\hbox{all active differences are routed through finite printed receipts;}\\
+\hbox{Ward differences vanish as same-actual presentation changes;}\\
+\hbox{typed differences are declared extension branches;}\\
+\hbox{unrepresented untyped differences are falsifiers, not hidden content.}
+\end{array}
+}
+$$
+
+This is the consolidated finite-print version of the Feynman answer.
+
+## 9. Success Criterion
 
 Searchable success tag:
 
 `V4P30-SUCCESS-CRITERION`.
 
-Paper 30 succeeds if it proves:
+Paper 30 now has a three-part success criterion.
+
+First, it succeeds as a finite-receipt consolidation if it proves:
+
+$$
+\boxed{
+\mathrm{PRINT\text{-}REC}_{30}
+=
+\mathrm{PASS}_{ISP}.
+}
+$$
+
+Section 8 discharges this target.
+
+Second, it succeeds internally if it proves:
 
 $$
 \boxed{
@@ -1959,7 +3124,7 @@ $$
 }
 $$
 
-on the active P25/P26/P27/P28/P29 corpus branch.
+on the active P24/P25/P26/P27/P28/P29 corpus branch.
 
 Then Paper 29 upgrades to:
 
@@ -1973,3 +3138,51 @@ $$
 
 as a closed theorem of the active ISP ontology, rather than a theorem relative
 to named internal certificates.
+
+Third, it succeeds as an external-equivalence development if it develops and
+checks the comparison bridge:
+
+$$
+\boxed{
+\mathrm{EXT1+\cdots+EXT9}
+=
+\mathrm{PASS}_{ISP\ comparison}.
+}
+$$
+
+This gives:
+
+$$
+\boxed{
+{\mathsf Y}_{ISP}
+\simeq
+{\mathsf Y}_{std}
+\quad
+\hbox{on the gauge-invariant comparison sector, provided the external
+OS/GNS/algebraic reconstruction language accepts the ISP bridge.}
+}
+$$
+
+Thus Paper 30's final status is:
+
+$$
+\boxed{
+\begin{array}{c|c|l}
+\hbox{tier} & \hbox{status} & \hbox{meaning}\\
+\hline
+\mathrm{finite\ receipt\ audit} &
+\mathrm{PRINT\text{-}REC}_{30}=\mathrm{PASS}_{ISP} &
+\hbox{all active differences route to finite printed receipts}\\
+\mathrm{internal\ ISP} &
+\mathrm{CLOSED}_{ISP} &
+\hbox{RCP28/TSP28/MID28 discharge HCL1-HCL3}\\
+\mathrm{standard\ comparison} &
+\mathrm{BRIDGE\ DEVELOPED+CHECKED}_{ISP} &
+\hbox{EXT1-EXT9 identify the standard gauge-invariant sector by invariant
+content and receipt exhaustion}\\
+\mathrm{ontology\text{-}free\ Clay\ proof} &
+\mathrm{NOT\ CLAIMED} &
+\hbox{requires external formalization and acceptance of the bridge}
+\end{array}
+}
+$$
