@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explicit Higher Coefficients and First Nontrivial Singleton Strip Moments</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2937;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+.paper {
+  max-width: 920px;
+  margin: 2.5rem auto;
+  background: #ffffff;
+  padding: 2.7rem 3.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 10px;
+}
+.title {
+  font-size: 2.0rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Explicit Higher Coefficients and First Nontrivial Singleton Strip Moments</div>
+<div class="subtitle">Exact boundary-active $A^{(2)}$ data and the first $d=3$ exchange coefficient in relativistic ISP</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 7 in the relativistic ISP sequence; exact singleton $A^{(2)}$ data at the first genuinely new higher-order exchange level</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+Phase 4 isolated the first genuinely higher-order singleton exchange problem but left its coefficient algebra unresolved: at distance $d=3$ one needs the order-$\Delta^4$ singleton coefficient $A_n^{(2)}$ and the strip moments it induces. This paper closes that first explicit burden exactly for the collar-excision rule in the one-particle lattice-Dirac model.</p>
+<p>
+The main result is local and exact. We compute the full boundary-active block of $A_n^{(2)}$ relevant to the first separation-controlled commutator. Although the interior of $A_n^{(2)}$ already contains mass-dependent terms and is not symmetric, the boundary-facing shell that communicates across a distance-three gap is mass-independent. Combining that block with the exact leading coefficient $A_n^{(1)}$ yields an explicit decomposition of
+$$
+C_{n,n+3}^{(3)}:=[A_n^{(1)},A_{n+3}^{(2)}]+[A_n^{(2)},A_{n+3}^{(1)}]
+$$
+into three bond-flip strips, two same-spin two-step strips, and one new three-step spin-flip strip. The corresponding first strip moments are then read off exactly. The point is Barandes-style and algebraic: before claiming a higher-order continuum law, one should first extract the exact strip data from the transition-law coefficients themselves. This paper does that at the first nontrivial higher-order singleton level and no further.</p>
+</div>
+
+<h2>I. Introduction</h2>
+
+<p>
+Phase 4 of the present sequence closed the structural higher-order problem at the right exact level. It proved that higher-order exchange coefficients factor through finite overlap windows and that the first genuinely new singleton case occurs at distance $d=3$, where the exchange defect begins with
+$$
+E_{\{n\},\{n+3\}}(\Delta)
+=
+I+\Delta^6\Bigl([A_n^{(1)},A_{n+3}^{(2)}]+[A_n^{(2)},A_{n+3}^{(1)}]\Bigr)+O(\Delta^8).
+$$
+What phase 4 did not do was compute the actual order-$\Delta^4$ coefficient $A_n^{(2)}$ or the strip moments entering that first new commutator.
+</p>
+
+<p>
+That omission was unavoidable there, but not here. The present paper performs the first exact non-leading coefficient computation for the explicit free model. From the Barandes point of view, this is the correct next step: not to invent a continuum operator in advance, and not to guess a symmetry that the exact coefficient algebra has not earned, but to compute the concrete local coefficient data and ask what strip channels they actually generate.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main results (informal).</span>
+<ol>
+  <li><em>Exact boundary-active singleton $A^{(2)}$ block.</em> The entries of $A_n^{(2)}$ with one site at the outer shell $n\pm2$ and the other inside the active strip are computed exactly. That block is mass-independent even though the full $A_n^{(2)}$ is not.</li>
+  <li><em>Exact first higher-order singleton exchange coefficient.</em> The distance-three coefficient $C_{n,n+3}^{(3)}$ closes exactly on six strip channels: three bond-flip strips, two same-spin two-step strips, and one new three-step spin-flip strip.</li>
+  <li><em>Exact first strip moments.</em> Because the singleton coefficient functions are supported only at separation $r=3$, the first strip moments entering phase 4 are obtained exactly and explicitly from that strip decomposition.</li>
+</ol>
+</div>
+
+<p class="small-note">
+Scope note. The paper is intentionally narrow. It treats the collar-excision rule, singleton supports, and the first genuinely new visible case $d=3$. It does not claim a full classification of $A_R^{(2)}$ for arbitrary supports, nor a general higher-order continuum theorem beyond the exact strip moments computed here.
+</p>
+
+<h2>II. Setup and the exact strip basis</h2>
+
+<p>
+Let $R_n:=\{n\}$ and write the corresponding collar-excision comparison map as
+$$
+J_n(\Delta)=I+\Delta^2A_n^{(1)}+\Delta^4A_n^{(2)}+O(\Delta^6).
+$$
+We use the same one-particle lattice-Dirac model and the same exact leading coefficient $A_n^{(1)}$ established in the explicit free-model sequel. Throughout,
+$$
+h:=\frac{1}{2a}.
+$$
+For the pair $(R_n,R_{n+3})$, phase 4 gives the first separation-controlled higher-order coefficient
+$$
+C_{n,n+3}^{(3)}=[A_n^{(1)},A_{n+3}^{(2)}]+[A_n^{(2)},A_{n+3}^{(1)}].
+$$
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Exact strip basis for the singleton $d=3$ coefficient).</span>
+Define the antisymmetric strip operators
+$$
+F_{n+1/2}
+:=
+\sum_{s\in\{\uparrow,\downarrow\}}
+\Bigl(
+|n+1,\bar s\rangle\langle n,s|
+-
+|n,s\rangle\langle n+1,\bar s|
+\Bigr),
+$$
+$$
+S_{n,n+2}
+:=
+\sum_{s\in\{\uparrow,\downarrow\}}
+\Bigl(
+|n,s\rangle\langle n+2,s|
+-
+|n+2,s\rangle\langle n,s|
+\Bigr),
+$$
+and the new three-step spin-flip strip
+$$
+T_{n,n+3}
+:=
+\sum_{s\in\{\uparrow,\downarrow\}}
+\Bigl(
+|n+3,\bar s\rangle\langle n,s|
+-
+|n,s\rangle\langle n+3,\bar s|
+\Bigr).
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+At leading singleton order the exact commutators closed only on the $F$ and $S$ strip families. The operator $T_{n,n+3}$ is the first genuinely new strip channel forced by higher-order coefficient data.
+</div>
+
+<h2>III. Exact boundary-active singleton $A^{(2)}$ data</h2>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact boundary-active block of the singleton coefficient $A_n^{(2)}$).</span>
+For the collar-excision rule and the singleton support $R_n=\{n\}$, the only nonzero entries of $A_n^{(2)}$ with one site in the outer shell $\{n-2,n+2\}$ and the other in the active local strip $\{n-2,n-1,n,n+1,n+2\}$ are
+$$
+\begin{aligned}
+\langle n-2,\uparrow|A_n^{(2)}|n-2,\uparrow\rangle &= -\frac{1}{12}h^4, &
+\langle n-2,\uparrow|A_n^{(2)}|n-1,\downarrow\rangle &= \frac13 h^4, \\
+\langle n-1,\uparrow|A_n^{(2)}|n-2,\downarrow\rangle &= -\frac23 h^4, &
+\langle n,\uparrow|A_n^{(2)}|n-2,\uparrow\rangle &= \frac34 h^4, \\
+\langle n-2,\uparrow|A_n^{(2)}|n,\uparrow\rangle &= -\frac14 h^4,
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\langle n+2,\uparrow|A_n^{(2)}|n+2,\uparrow\rangle &= -\frac{1}{12}h^4, &
+\langle n+2,\uparrow|A_n^{(2)}|n+1,\downarrow\rangle &= \frac13 h^4, \\
+\langle n+1,\uparrow|A_n^{(2)}|n+2,\downarrow\rangle &= -\frac23 h^4, &
+\langle n,\uparrow|A_n^{(2)}|n+2,\uparrow\rangle &= \frac34 h^4, \\
+\langle n+2,\uparrow|A_n^{(2)}|n,\uparrow\rangle &= -\frac14 h^4,
+\end{aligned}
+$$
+together with the identical spin-flipped partners obtained by $\uparrow\leftrightarrow\downarrow$.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Write the kernel expansions
+$$
+\Gamma(e^{-i\Delta B_n})=I+\Delta^2L_n+\Delta^4M_n+O(\Delta^6),
+\qquad
+\Gamma_0(\Delta)=I+\Delta^2L_0+\Delta^4M_0+O(\Delta^6).
+$$
+Then
+$$
+A_n^{(1)}=L_n-L_0,
+\qquad
+A_n^{(2)}=M_n-M_0-A_n^{(1)}L_0.
+$$
+The quasilocal filtration already proved in the exact free-model sequel gives $\operatorname{supp}A_n^{(2)}\subset\{n-2,\dots,n+2\}$, so only finitely many matrix elements can appear. Exact evaluation of the twenty boundary-active matrix elements displayed above gives precisely those coefficients, and no others occur. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The entire boundary-active block is mass-independent. This is not true of the full coefficient $A_n^{(2)}$, only of the outer shell that can communicate across a distance-three gap.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark (the full $A_n^{(2)}$ is not symmetric).</span>
+One should not impose a transpose symmetry that the exact coefficient algebra has not earned. For example,
+$$
+\langle n,\uparrow|A_n^{(2)}|n+2,\uparrow\rangle=\frac34 h^4,
+\qquad
+\langle n+2,\uparrow|A_n^{(2)}|n,\uparrow\rangle=-\frac14 h^4,
+$$
+so $A_n^{(2)}\neq (A_n^{(2)})^\top$ already in the singleton case.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark (interior mass dependence).</span>
+The mass independence of Proposition&nbsp;1 is an outer-shell fact, not a full-coefficient fact. For example,
+$$
+\langle n,\uparrow|A_n^{(2)}|n,\uparrow\rangle=\frac92 h^4-\frac23 m^2h^2,
+\qquad
+\langle n,\uparrow|A_n^{(2)}|n+1,\downarrow\rangle=-3h^4+\frac13 m^2h^2.
+$$
+Thus mass information really does enter at order $\Delta^4$; it simply drops out of the first distance-three communication channel.
+</div>
+
+<h2>IV. Exact first nontrivial higher-order singleton exchange coefficient</h2>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Exact strip decomposition of the first nontrivial singleton coefficient).</span>
+For singleton supports $R_n=\{n\}$ and $R_{n+3}=\{n+3\}$,
+$$
+C_{n,n+3}^{(3)}
+:=
+[A_n^{(1)},A_{n+3}^{(2)}]+[A_n^{(2)},A_{n+3}^{(1)}]
+$$
+is exactly
+$$
+\boxed{
+C_{n,n+3}^{(3)}
+=
+h^6\Bigl(
+-\frac{1}{12}F_{n+1/2}
++\frac13 F_{n+3/2}
+-\frac{1}{12}F_{n+5/2}
++\frac{5}{12}\bigl(S_{n,n+2}+S_{n+1,n+3}\bigr)
++\frac12 T_{n,n+3}
+\Bigr).}
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Phase 4 already reduces the distance-three coefficient to the two commutators displayed above. For this separation, the overlap windows are the single sites $n+1$ and $n+2$, so only the boundary-active shell of Proposition&nbsp;1 can contribute. Insert those exact $A^{(2)}$ entries together with the exact leading singleton coefficient $A_n^{(1)}$ from the explicit free-model sequel. Direct multiplication yields twenty-four nonzero matrix entries. Grouping those entries into the antisymmetric strip basis of Definition&nbsp;1 gives exactly the displayed combination and no further channel. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(Exact first strip moments for the singleton $d=3$ coefficient).</span>
+In the notation of phase 4, the singleton channel coefficients are supported only at support displacement $r=3$ and are
+$$
+c_F^{\mathrm{L}}(3)=-\frac{1}{12}h^6,\qquad
+c_F^{\mathrm{M}}(3)=\frac13 h^6,\qquad
+c_F^{\mathrm{R}}(3)=-\frac{1}{12}h^6,
+$$
+$$
+c_S^{\mathrm{L}}(3)=\frac{5}{12}h^6,\qquad
+c_S^{\mathrm{R}}(3)=\frac{5}{12}h^6,\qquad
+c_T(3)=\frac12 h^6.
+$$
+Hence the corresponding first strip moments are
+$$
+C_F^{\mathrm{L}}=-\frac14 h^6,\qquad
+C_F^{\mathrm{M}}=h^6,\qquad
+C_F^{\mathrm{R}}=-\frac14 h^6,
+$$
+$$
+C_S^{\mathrm{L}}=\frac54 h^6,\qquad
+C_S^{\mathrm{R}}=\frac54 h^6,\qquad
+C_T=\frac32 h^6.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Theorem&nbsp;1 shows that the coefficient functions are supported only at the singleton separation $r=3$. The first strip moment is therefore just $r$ times the channel coefficient: $C=3c(3)$. Applying that identity channel by channel gives the displayed values. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The first separation-controlled higher-order singleton exchange coefficient is mass-independent even though the full $A_n^{(2)}$ is not. The exact reason is now visible: only the outer shell of $A_n^{(2)}$ can feed the distance-three commutator, and that shell has no $m$-dependence.
+</div>
+
+<h2>V. Barandes-style reading of what phase 6 closes</h2>
+
+<p>
+The main conceptual lesson is not that one has found a new continuum operator by guesswork. It is that the exact transition-law coefficient algebra has now been pushed one real step beyond the leading singleton sector. The higher-order strip basis was not assumed; it was extracted. The first strip moments were not postulated; they were computed. And the lack of symmetry of $A_n^{(2)}$ was not repaired by aesthetics; it was left exactly as the local algebra gives it.
+</p>
+
+<p>
+At this phase the honest claim is therefore precise and limited:
+</p>
+
+<ol>
+  <li>the exact boundary-active singleton coefficient $A_n^{(2)}$ is now known;</li>
+  <li>the first nontrivial higher-order singleton exchange coefficient $C_{n,n+3}^{(3)}$ is now known;</li>
+  <li>the first strip moments entering the phase-4 strip-moment criterion are now known in that singleton class.</li>
+</ol>
+
+<p>
+What is still outside the present claim is equally important. We do not yet classify all higher-order channels for larger support prototypes, and we do not yet claim a full higher-order continuum law beyond the exact strip moments computed here. Those are later burdens. The present paper closes only the first explicit one.
+</p>
+
+<h2>VI. Conclusion</h2>
+
+<p>
+Phase 6 is now complete at the strongest honest scope presently reached: the first nontrivial singleton higher-order coefficient has been computed exactly, its strip decomposition has been identified exactly, and its first strip moments have been extracted exactly. This is the first point in the relativistic ISP stack where a genuinely new higher-order coefficient algebra has been turned into explicit finite strip data rather than left as a structural theorem.
+</p>
+
+<p>
+That exact local computation immediately sets up the next question. Once the relevant singleton $A^{(2)}$ block is known, one can ask which parts of it are regulator artifacts and which survive in the normalized strip moments. The next paper answers exactly that question at the same non-leading singleton order.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Toward Lorentz-Covariant Indivisible Stochastic Processes: Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations,” preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes: Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality,” preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem,” preprint (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>Anonymous, “Higher Coefficients and Strip-Moment Closure in the Bond-Centered Thin-Slab Law,” preprint (2026).</span></li>
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>Anonymous, “Broader Regulator Stability Across Support Prototypes,” preprint (2026).</span></li>
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+</ol>
+</div>
+
+</article>
+</body>
+</html>

@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toward Lorentz-Covariant Indivisible Stochastic Processes</title>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    tags: 'ams',
+    macros: {
+      C: '{\\mathcal{C}}',
+      H: '{\\mathcal{H}}',
+      R: '{\\mathbb{R}}',
+      marg: '{\\mathrm{marg}}',
+      supp: '{\\mathrm{supp}}',
+      id: '{\\mathrm{id}}'
+    }
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #111;
+  background: #fff;
+  padding: 48px 20px 80px;
+}
+.paper { max-width: 740px; margin: 0 auto; }
+.title {
+  font-size: 1.55em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.7em;
+}
+.subtitle {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.2em;
+  color: #333;
+}
+.authors { text-align: center; font-size: 1em; margin-bottom: 0.25em; }
+.affil   { text-align: center; font-size: 0.88em; color: #444; margin-bottom: 0.25em; }
+.date    { text-align: center; font-size: 0.85em; color: #555; margin-bottom: 2em; }
+.arxiv-note {
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 2em;
+}
+.abstract {
+  border: 1px solid #bbb;
+  padding: 1em 1.2em;
+  margin-bottom: 2.4em;
+  font-size: 0.93em;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+.small-note { font-size: 0.92em; color: #444; }
+</style>
+</head>
+
+<body>
+<article class="paper">
+
+<div class="title">Toward Lorentz-Covariant Indivisible Stochastic Processes</div>
+<div class="subtitle">Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Companion to “Entropy Structure of Indivisible Stochastic Processes” and “Gauge-Invariant Process Entanglement in Indivisible Stochastic Processes”</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+Barandes’ indivisible stochastic process (ISP) framework reconstructs quantum dynamics from transition-probability data, but its relativistic formulation is still missing. This paper narrows that problem to the first structural question a relativistic ISP must answer. Transition laws should be attached to pairs of Cauchy hypersurfaces rather than to a preferred time slicing; settings and readouts should be represented by localized physical interventions; and observable probabilities should respect spatial locality and foliation compatibility even when the dynamics is temporally non-Markovian. The decisive integrability question is then not whether bare infinitesimal $ \Gamma $-generators exist, but what replaces the Dirac-Schwinger surface-deformation law at the level of exact finite hypersurface kernels. Within that architecture, disjoint localized stochastic controls commute and satisfy an operational no-signaling theorem.</p>
+<p>
+The toy Dirac analysis sharpens the point. The naive first-order bare-$ \Gamma $ generator vanishes; a current/coherence hierarchy restores missing mass and transport information only by introducing extra local data not fixed by $ \Gamma $ alone; and a pure second-order truncation remains too poor. This pushes the program toward exact finite slabs as the primitive stochastic objects. We therefore define region-supported finite deformations, their localized algebraic deformation maps, and a finite ISP exchange defect for two localized deformations. In the free lattice Dirac toy model, the first perturbative result is that, under a quasilocal filtration assumption, the two-region exchange defect cannot appear below the support-separation order. The hierarchy calculations are retained only as diagnostics. The main claim of the paper is that relativistic ISP should be built from spatially localized finite hypersurface deformations together with temporal indivisibility, and that the free two-region exchange problem is the right near-term test.</p>
+</div>
+
+<h2>I. Introduction</h2>
+
+<p>
+Barandes’ stochastic-quantum correspondence proposes that quantum systems can be represented as indivisible stochastic processes (ISPs): stochastic laws on ordinary configuration spaces whose transition structure is generically not divisible through intermediate times by honest stochastic maps [<a href="#r1">1</a>–<a href="#r3">3</a>]. The companion ISP papers sharpen what is fixed by the transition law $ \Gamma $ itself and what requires extra circuit, dilation, or subsystem data [<a href="#r4">4</a>, <a href="#r5">5</a>]. That distinction becomes more urgent, not less, when one asks for a relativistic formulation.
+</p>
+
+<p>
+The right next question is narrower than “build quantum gravity from ISP.” It is: what replaces the Dirac-Schwinger surface-deformation law at the $ \Gamma $ level? A relativistic ISP theory should be organized around transition kernels between Cauchy hypersurfaces, localized physical controls supported in spacetime regions, and a surface-deformation integrability condition strong enough to make operational predictions foliation-compatible.
+</p>
+
+<p>
+The paper’s main line is therefore the following. First, we formulate hypersurface ISP kinematics and isolate a conditional covariance criterion. Second, we show that localized stochastic controls already satisfy the minimal locality and no-signaling sanity checks one would want in a relativistic Bell-type architecture. Third, the toy lattice Dirac model shows that naive infinitesimal bare-$ \Gamma $ generators are the wrong primitive object: the first-order generator vanishes, and even the second-order coefficient misses local mass information. Fourth, this pushes the program toward exact finite hypersurface slabs. Fifth, the finite slabs should be localized: the real relativistic datum is the exchange defect for two region-supported finite deformations. Program 1 and Proposition 4G isolate that problem and give its first perturbative free-Dirac result.
+</p>
+
+<p>
+The diagnostic hierarchy is retained only because it explains why the obvious alternatives are weaker. Enriching the state by local covariance matrices, bond coherences, and bridge data does recover the missing bilinears, but only by using extra local information not fixed by $ \Gamma $ alone and by driving exact closure outward through the hierarchy. The clean ISP-facing route is instead to keep the ontology at the level of finite kernels and to ask whether their localized exchange law closes correctly.
+</p>
+
+<p>
+The paper is thus programmatic but no longer diffuse. Its claim is not that a relativistic ISP theory is complete here. Its claim is that the free two-region exchange problem is now the right bottleneck: if localized finite deformations fail already in the free lattice Dirac model, the present route is probably wrong; if they work, they provide the right backbone for everything that would come later.
+</p>
+
+<h2>II. Background and Motivation</h2>
+
+<p>
+In the standard ISP formalism one starts with a configuration space and a family of transition matrices $ \Gamma(t \leftarrow t_0) $ with nonnegative entries and unit column sums. Indivisibility means that the induced intermediate map obtained by algebraic inversion is not itself stochastic [<a href="#r1">1</a>–<a href="#r3">3</a>]. On the Hilbert-space side, $ \Gamma $ may be represented as $ \Gamma_{ij}=|\Theta_{ij}|^2 $, but that representation is not unique: phases and other lift data are not fixed by $ \Gamma $ alone [<a href="#r1">1</a>, <a href="#r3">3</a>].
+</p>
+
+<p>
+That distinction matters for relativity. The companion entropy paper emphasizes that the Shannon entropy is the natural quantity fixed by $ \Gamma $, whereas von Neumann-type quantities depend on additional representation structure [<a href="#r4">4</a>]. The companion entanglement paper shows that Bell content is recovered only when one treats the full physical circuit explicitly, including the localized operations that implement basis changes [<a href="#r5">5</a>]. A relativistic ISP theory should therefore begin from localized interventions in spacetime, not from terminal-basis labels attached to a preferred slice.
+</p>
+
+<p>
+The motivating question is then operational and structural at once. Can one formulate ISP so that locality is spatial, memory is temporal, and observable probabilities are compatible across foliations? The rest of the paper argues that the right place to answer that question is not a first-order generator on bare probabilities, but an exchange law for exact localized finite hypersurface deformations.
+</p>
+
+<h2>III. Hypersurface ISP Kinematics</h2>
+
+<p>
+The first change required by relativity is conceptually straightforward. Replace constant-time slices by Cauchy hypersurfaces. For each Cauchy hypersurface $ \Sigma $, let $ \C_\Sigma $ denote the configuration space of the system on $ \Sigma $. In a discrete regularization one may think of $ \C_\Sigma $ as assignments of beables to cells intersecting $ \Sigma $. For two hypersurfaces with $ \Sigma_0 \prec \Sigma_1 $, a <em>hypersurface transition kernel</em> is a matrix
+</p>
+
+<div class="eq">
+$$
+\Gamma_{\Sigma_1 \leftarrow \Sigma_0}(c_1|c_0) \ge 0,
+\qquad
+\sum_{c_1 \in \C_{\Sigma_1}}
+\Gamma_{\Sigma_1 \leftarrow \Sigma_0}(c_1|c_0) = 1.
+$$
+</div>
+
+<p>
+The induced probability update is
+</p>
+
+<div class="eq">
+$$
+p_{\Sigma_1}(c_1)
+=
+\sum_{c_0 \in \C_{\Sigma_0}}
+\Gamma_{\Sigma_1 \leftarrow \Sigma_0}(c_1|c_0)\, p_{\Sigma_0}(c_0).
+$$
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Hypersurface ISP).</span>
+Fix a class of Cauchy hypersurfaces in a spacetime region. A <em>hypersurface ISP</em> is a family of transition kernels $ \Gamma_{\Sigma_1 \leftarrow \Sigma_0} $ for ordered pairs $ \Sigma_0 \prec \Sigma_1 $, together with probability distributions $p_\Sigma$ on each $ \C_\Sigma $, such that $p_{\Sigma_1} = \Gamma_{\Sigma_1 \leftarrow \Sigma_0} p_{\Sigma_0}$.
+</div>
+
+<p>
+The corresponding notion of indivisibility is inherited from the ordinary time-indexed case, but it becomes <em>foliation-relative</em>. Choose an interpolating hypersurface $ \Sigma' $ between $ \Sigma_0 $ and $ \Sigma_1 $. If $ \Gamma_{\Sigma' \leftarrow \Sigma_0} $ is invertible, define the algebraic intermediate map
+</p>
+
+<div class="eq">
+$$
+\widetilde{\Gamma}_{\Sigma_1 \leftarrow \Sigma';\Sigma_0}
+
+=
+\Gamma_{\Sigma_1 \leftarrow \Sigma_0}
+\bigl[\Gamma_{\Sigma' \leftarrow \Sigma_0}\bigr]^{-1}.
+$$
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Foliation-relative indivisibility).</span>
+A hypersurface ISP is <em>indivisible across</em> $ \Sigma' $ if the algebraic intermediate map $ \widetilde{\Gamma}_{\Sigma_1 \leftarrow \Sigma';\Sigma_0} $ has at least one negative entry. A foliation is indivisible on an interval if this occurs for every nontrivial intermediate hypersurface in that interval.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The existence of foliation-relative indivisibility does not by itself violate relativity. What relativity constrains is not whether an algebraic factorization exists through arbitrary intermediate slices, but whether operational predictions depend on frame or on the ordering of spacelike-separated interventions. A future Lorentz-covariant ISP theory should therefore permit foliation-relative tests of indivisibility while demanding foliation-independent observable probabilities.
+</div>
+
+<p>
+This distinction is essential. In a relativistic theory there is no reason to expect a privileged slicing on which every local question is easiest. What matters instead is that the same physical experiment admit consistent descriptions across different slicings. The next section formulates a minimal locality principle aimed at precisely that consistency requirement.
+</p>
+
+<h3>III.1. What a full Lorentz-covariance theorem would require</h3>
+
+<p>
+The relativistic field-theory literature suggests a fairly precise template for the theorem missing from the present paper. Schwinger formulated generalized Schrödinger equations for states attached to spacelike hypersurfaces [<a href="#r10">10</a>], Dirac recast Hamiltonian field dynamics on arbitrary spacelike surfaces [<a href="#r11">11</a>], Brown related the Dirac-Schwinger covariance condition to the integrability required by the Schwinger-Tomonaga covariant formulation [<a href="#r12">12</a>], and locally covariant quantum field theory later abstracted covariance as functoriality together with a time-slice principle [<a href="#r13">13</a>]. Recent causality work in the Tomonaga-Schwinger picture again singles out unitarity, integrability, and foliation-independence as the ingredients that exclude superluminal signaling [<a href="#r14">14</a>]. These results indicate that the correct ISP target is not an ad hoc covariance slogan but a conditional theorem whose real content lies in a surface-deformation integrability condition.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Lorentz-covariant hypersurface ISP).</span>
+A hypersurface ISP is <em>Lorentz-covariant</em> if for every proper orthochronous Lorentz transformation $ \Lambda $ and every Cauchy hypersurface $ \Sigma $ there exists a stochastic isomorphism
+$$
+U_\Lambda^\Sigma:
+\{\text{probability distributions on } \C_\Sigma\}
+\longrightarrow
+\{\text{probability distributions on } \C_{\Lambda\Sigma}\}
+$$
+such that
+$$
+U_{\Lambda_2\Lambda_1}^{\Sigma}
+=
+U_{\Lambda_2}^{\Lambda_1\Sigma} U_{\Lambda_1}^{\Sigma},
+$$
+and for every ordered pair $ \Sigma_0 \prec \Sigma_1 $,
+$$
+\Gamma_{\Lambda\Sigma_1 \leftarrow \Lambda\Sigma_0}
+=
+U_\Lambda^{\Sigma_1}\,
+\Gamma_{\Sigma_1 \leftarrow \Sigma_0}\,
+\bigl(U_\Lambda^{\Sigma_0}\bigr)^{-1}.
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+In a strictly finite configuration space, a stochastic isomorphism whose inverse is
+also stochastic is necessarily a permutation of configurations. Thus Definition&nbsp;3
+is best read at fixed finite scope as a covariance template for relabeling-compatible
+benchmarks. A nontrivial boost/covariance theorem for changing discretizations or a
+continuum theory would require additional structure, such as embeddings between
+regularizations, coarse-graining/refinement maps, a projective/inductive limit, or a
+functorial continuum configuration-space construction.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Criterion A</span> <span class="env-name">(Conditional covariance criterion).</span>
+Consider an experiment $E$ built from:
+<ol>
+  <li>an initial probability distribution $p_{\Sigma_0}$ on some Cauchy hypersurface $ \Sigma_0 $,</li>
+  <li>a finite family of localized stochastic controls $ \Lambda_{O_k}^{x_k} $ supported in spacetime regions $O_k$, and</li>
+  <li>a final local readout map $M_O$ in a region $O$ on a later hypersurface.</li>
+</ol>
+Assume:
+<ol>
+  <li>the underlying hypersurface ISP is Lorentz-covariant in the sense of Definition 3,</li>
+  <li>the localized controls and readout map transform covariantly, i.e.
+  $$
+  U_\Lambda^{\Sigma_+}\Lambda_O^x
+  =
+  \Lambda_{\Lambda O}^x U_\Lambda^{\Sigma_-},
+  \qquad
+  M_{\Lambda O} U_\Lambda^\Sigma = M_O,
+  $$
+  whenever $O$ lies between $ \Sigma_- $ and $ \Sigma_+ $, and</li>
+  <li>for any two foliations connecting the same initial and final hypersurfaces and related by finitely many exchanges of spacelike-separated infinitesimal deformations, the induced transition kernel is the same.</li>
+</ol>
+Then the transformed experiment $ \Lambda E $ has the same outcome probabilities as $E$:
+$$
+p_{\Lambda E}(a|x_1,\dots,x_n) = p_E(a|x_1,\dots,x_n).
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Write the probability law of $E$ as the composition of the initial distribution, the relevant hypersurface transition kernels, the localized controls, and the final readout map. Assumption (1) lets one conjugate each transition kernel by the corresponding stochastic isomorphisms $U_\Lambda^\Sigma$. Assumption (2) does the same for every localized control and for the final readout map. Assumption (3) guarantees that changing foliation by exchanging spacelike-separated local deformations does not change the composed kernel. Hence the entire operator string for the transformed experiment is the $U_\Lambda$-conjugate of the original operator string, with the conjugations cancelling between preparation and readout. The resulting outcome distribution is therefore identical. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Criterion A is intentionally conditional and should be read as a template rather than as a constructive theorem. It does not produce a nontrivial Lorentz-covariant ISP by itself. Rather, it isolates the exact missing content of such a result: one needs an ISP analogue of Schwinger-Tomonaga integrability, or equivalently a surface-deformation law whose spacelike-separated generators commute strongly enough to make the induced kernel path-independent. The present paper proves only the weakest special case of assumption (3), namely the commutativity of disjoint localized stochastic controls on a fixed product factorization.
+</div>
+
+<h3>III.2. A proposed ISP Dirac-Schwinger condition</h3>
+
+<p>
+The natural next step is to make the missing integrability condition explicit. In the relativistic quantum-field-theory setting, the Schwinger-Tomonaga equation evolves states by infinitesimal deformations of a spacelike hypersurface, while the Dirac-Schwinger covariance condition expresses the fact that exchanging two such deformations does not produce a genuinely new physical evolution but only the geometrically expected tangential displacement [<a href="#r10">10</a>–<a href="#r12">12</a>]. The ISP analogue should live directly on the stochastic side.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 4</span> <span class="env-name">(Infinitesimal ISP surface generators).</span>
+Let $ \Sigma $ be a Cauchy hypersurface with induced spatial metric $h_{ij}$. An <em>infinitesimal ISP deformation law</em> on $ \Sigma $ consists of linear operators
+$$
+K_\perp(x;\Sigma), \qquad K_i(x;\Sigma),
+$$
+acting on probability distributions on $ \C_\Sigma $, with the following properties:
+<ol>
+  <li>for each smearing pair $(N,\vec N)$ one defines
+  $$
+  K_\perp[N] := \int_\Sigma d\mu_\Sigma(x)\, N(x)\, K_\perp(x;\Sigma),
+  \qquad
+  K[\vec N] := \int_\Sigma d\mu_\Sigma(x)\, N^i(x)\, K_i(x;\Sigma),
+  $$
+  where $N$ is a lapse scalar and $\vec N$ a shift vector field on $\Sigma$;</li>
+  <li>for an infinitesimal deformation $ \delta\Sigma $ generated by $(N,\vec N)$, the corresponding kernel has the expansion
+  $$
+  \Gamma_{\Sigma+\delta\Sigma \leftarrow \Sigma}
+  =
+  I + \varepsilon\bigl(K_\perp[N] + K[\vec N]\bigr) + O(\varepsilon^2);
+  $$</li>
+  <li>each smeared generator preserves total probability infinitesimally,
+  $$
+  \mathbf{1}^\top K_\perp[N] = 0,
+  \qquad
+  \mathbf{1}^\top K[\vec N] = 0.
+  $$</li>
+</ol>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Because ISP dynamics is generically indivisible, the operators $K_\perp(x;\Sigma)$ and $K_i(x;\Sigma)$ need not generate honest stochastic semigroups at intermediate steps. They are better viewed as <em>pseudo-stochastic deformation generators</em>: infinitesimal linear maps whose complete finite composition between appropriate hypersurfaces must yield an honest transition kernel even though the intermediate algebra need not remain positivity-preserving term by term. In the present paper these pseudo-generators are algebraic comparison objects, not physical stochastic transitions attached to every interpolating slice; the primitive physical conditioning laws are the exact finite hypersurface kernels themselves.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+At this point one should already be cautious about the state space on which the generators act. If one insists that $K_\perp(x;\Sigma)$ and $K_i(x;\Sigma)$ act directly on <em>bare instantaneous configuration probabilities</em>, the toy Dirac analysis below shows that the naive first-order generator extracted from a relativistic unitary evolution is trivial. This strongly suggests that the correct infinitesimal Dirac-Schwinger condition for ISP should either live on an <em>enriched ISP state space</em> carrying extra interference/current/memory data, or else be formulated at second order or finite deformation size rather than first order on probabilities alone.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 5</span> <span class="env-name">(ISP Dirac-Schwinger condition).</span>
+An infinitesimal ISP deformation law satisfies the <em>ISP Dirac-Schwinger condition</em> if the smeared generators obey the surface-deformation algebra
+$$
+[K[\vec N], K[\vec M]]
+=
+K([\vec N,\vec M]),
+$$
+$$
+[K[\vec N], K_\perp[M]]
+=
+K_\perp(\mathcal{L}_{\vec N} M),
+$$
+$$
+[K_\perp[N], K_\perp[M]]
+=
+K(\vec\beta(N,M)),
+\qquad
+\beta^i(N,M) := h^{ij}(N\partial_j M - M\partial_j N),
+$$
+for all smooth compactly supported lapse functions $N,M$ and shift vector fields $\vec N,\vec M$.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 2</span> <span class="env-name">(Infinitesimal foliation exchange).</span>
+Assume an infinitesimal ISP deformation law satisfies Definition 5, and assume further that tangential deformations act on scalar operational readouts only by coordinate relabeling, so that for every scalar local readout map $M_O$,
+$$
+M_O \circ \bigl(I + \varepsilon K[\vec N]\bigr)
+=
+M_O + O(\varepsilon^2).
+$$
+Then exchanging two infinitesimal normal deformations with lapses $N$ and $M$ changes outcome probabilities only at order $O(\varepsilon^3)$. In particular, assumption (3) of Criterion A holds infinitesimally for exchange moves of the corresponding local hypersurface deformations.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+To second order,
+$$
+\bigl(I+\varepsilon K_\perp[N]\bigr)\bigl(I+\varepsilon K_\perp[M]\bigr)
+-
+\bigl(I+\varepsilon K_\perp[M]\bigr)\bigl(I+\varepsilon K_\perp[N]\bigr)
+=
+\varepsilon^2 [K_\perp[N],K_\perp[M]] + O(\varepsilon^3).
+$$
+By Definition 5,
+$$
+[K_\perp[N],K_\perp[M]] = K(\vec\beta(N,M)).
+$$
+Hence exchanging the two normal deformations changes the state only by an infinitesimal tangential deformation:
+$$
+\varepsilon^2 K(\vec\beta(N,M)) + O(\varepsilon^3).
+$$
+By the scalar-readout assumption, such a tangential deformation alters the readout map only by a coordinate relabeling and therefore does not change the associated outcome probabilities to second order. Thus the two exchange-related deformation paths are operationally equivalent up to $O(\varepsilon^3)$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Proposition 2 is the precise bridge missing from the previous draft. It does not yet provide a global Lorentz-covariance theorem, but it identifies the infinitesimal content of assumption (3) in Criterion A. The open problem is now sharply formulated: construct nontrivial pseudo-stochastic generators $K_\perp(x;\Sigma)$ and $K_i(x;\Sigma)$ for ISP dynamics, prove that they satisfy Definition 5, and integrate them to finite hypersurface kernels. In the present rewrite, that infinitesimal story is best viewed as the limiting target of the finite-deformation program rather than as the primary constructive object.
+</div>
+
+<h3>III.3. Toy 1+1D Dirac model and an obstruction at the $ \Gamma $ level</h3>
+
+<p>
+It is useful to test the proposed infinitesimal framework against the simplest relativistic dynamics available, namely Dirac evolution. Here an important obstruction appears immediately. Suppose one tries to define ISP hypersurface generators directly from the bare transition law obtained by squaring matrix elements of an infinitesimal unitary operator. Then the first-order generator vanishes identically.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 3</span> <span class="env-name">(Vanishing of the naive first-order $ \Gamma $-generator).</span>
+Let
+$$
+U(\varepsilon) = I - i \varepsilon H + O(\varepsilon^2)
+$$
+for a Hermitian operator $H$ written in a fixed configuration basis $\{|i\rangle\}$. Define
+$$
+\Gamma_{ij}(\varepsilon) := |U_{ij}(\varepsilon)|^2.
+$$
+Then
+$$
+\Gamma_{ij}(\varepsilon)
+=
+\delta_{ij} + \varepsilon^2 L_{ij} + O(\varepsilon^3),
+$$
+where
+$$
+L_{ij} = |H_{ij}|^2 \quad (i \neq j),
+\qquad
+L_{jj} = -\sum_{i\neq j}|H_{ij}|^2.
+$$
+In particular,
+$$
+\lim_{\varepsilon\to 0}\frac{\Gamma(\varepsilon)-I}{\varepsilon} = 0.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+For $i\neq j$ one has
+$$
+U_{ij}(\varepsilon) = -i\varepsilon H_{ij} + O(\varepsilon^2),
+$$
+so
+$$
+\Gamma_{ij}(\varepsilon) = \varepsilon^2 |H_{ij}|^2 + O(\varepsilon^3).
+$$
+For $i=j$,
+$$
+U_{jj}(\varepsilon) = 1 - i\varepsilon H_{jj} - \frac{\varepsilon^2}{2}(H^2)_{jj} + O(\varepsilon^3),
+$$
+and Hermiticity gives
+$$
+|U_{jj}(\varepsilon)|^2
+=
+1 - \varepsilon^2\bigl((H^2)_{jj} - |H_{jj}|^2\bigr) + O(\varepsilon^3)
+=
+1 - \varepsilon^2 \sum_{i\neq j}|H_{ij}|^2 + O(\varepsilon^3).
+$$
+Combining the diagonal and off-diagonal terms yields the claimed expansion and the vanishing first-order limit. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+Proposition 3 is completely general and does not depend on using the Dirac Hamiltonian. It therefore expresses a structural fact about the $ \Gamma $-level coarse-graining itself: direct Born-squared transition kernels extracted from infinitesimal unitary evolution begin only at second order in the deformation parameter.
+</p>
+
+<p>
+To see what this means concretely, consider a 1+1 dimensional lattice Dirac toy model. Let lattice sites be indexed by $n \in \mathbb{Z}$ with spacing $a$, let the local spinor basis be $|\uparrow\rangle, |\downarrow\rangle$, and set $\hbar = c = 1$. Choose
+$$
+\alpha = \sigma_x,
+\qquad
+\beta = \sigma_z,
+$$
+and the central-difference lattice Dirac Hamiltonian
+$$
+(H_D \psi)_n
+=
+-\frac{i}{2a}\,\alpha\bigl(\psi_{n+1}-\psi_{n-1}\bigr)
++ m\,\beta \psi_n.
+$$
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4</span> <span class="env-name">(Bare lattice Dirac probability generator).</span>
+Let $U_D(\varepsilon)=e^{-i\varepsilon H_D}$ and define $\Gamma_D(\varepsilon)_{AB} := |(U_D)_{AB}(\varepsilon)|^2$ in the position-spin basis $A=(n,s)$, $B=(m,r)$. Then:
+<ol>
+  <li>the first-order probability generator vanishes, as in Proposition 3;</li>
+  <li>the second-order coefficient $L^{(D)}$ has nearest-neighbor spin-flip transitions
+  $$
+  L^{(D)}_{(n+1,\downarrow),(n,\uparrow)}
+  =
+  L^{(D)}_{(n-1,\downarrow),(n,\uparrow)}
+  =
+  \frac{1}{4a^2},
+  $$
+  $$
+  L^{(D)}_{(n+1,\uparrow),(n,\downarrow)}
+  =
+  L^{(D)}_{(n-1,\uparrow),(n,\downarrow)}
+  =
+  \frac{1}{4a^2},
+  $$
+  and diagonal entries
+  $$
+  L^{(D)}_{(n,s),(n,s)} = -\frac{1}{2a^2};
+  $$
+  </li>
+  <li>the mass term $m\beta$ does not appear in $L^{(D)}$.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The matrix elements of $H_D$ are diagonal in position for the mass term and nearest-neighbor with spin flip for the kinetic term. Because $\sigma_x$ flips spin, the only off-diagonal matrix elements are
+$$
+\langle n\!+\!1,\downarrow|H_D|n,\uparrow\rangle,
+\;
+\langle n\!-\!1,\downarrow|H_D|n,\uparrow\rangle,
+\;
+\langle n\!+\!1,\uparrow|H_D|n,\downarrow\rangle,
+\;
+\langle n\!-\!1,\uparrow|H_D|n,\downarrow\rangle,
+$$
+each of magnitude $1/(2a)$. Proposition 3 then gives the off-diagonal coefficients $1/(4a^2)$ and the diagonal coefficient $-2\cdot(1/(4a^2))=-1/(2a^2)$. Since the mass term is diagonal in the chosen basis, it contributes only a phase at this order and so drops out of the bare probability generator. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 3</span> <span class="env-name">(Which routes remain open after the bare $ \Gamma $ obstruction).</span>
+The naive identification of the infinitesimal ISP Dirac-Schwinger generators with first-order generators of bare configuration probabilities cannot recover relativistic Dirac dynamics. Even at second order, the bare probability generator sees only nearest-neighbor kinetic hopping in the chosen basis and misses the mass term locally. A viable relativistic ISP completion must therefore do at least one of the following:
+<ol>
+  <li>introduce enriched current/coherence data not fixed by $ \Gamma $ alone;</li>
+  <li>abandon infinitesimal bare-probability generators in favor of exact finite deformation slabs; or</li>
+  <li>replace the naive basis-by-basis Born-squared infinitesimal kernel by some more structured coarse-grained object.</li>
+</ol>
+</div>
+
+<p>
+This corollary is arguably the most important technical lesson of the toy model. It shows that the relativistic obstacle is sharper than “prove covariance somehow.” Even before one reaches covariance, one must decide what the correct stochastic object is. The next two subsections argue that the first and third options are much less promising than the second.
+</p>
+
+<h3>III.4. A diagnostic current-augmented hierarchy</h3>
+
+<p>
+One mathematically natural response to Corollary 3 is to enlarge the state object so that it retains the local current and the nearest-neighbor interference data that the bare probability distribution throws away. This route is worth recording because it exposes the obstruction concretely. But it should be treated as diagnostic only, not as the preferred ISP completion, because it reintroduces local covariance and bridge-coherence data of precisely the sort ISP seeks not to elevate to primitive ontology. For the 1+1D lattice Dirac model, the natural enriched variables are matrix-valued rather than scalar.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 6</span> <span class="env-name">(Current-augmented first-level state).</span>
+For a lattice Dirac spinor configuration $\{\psi_n\}_{n\in\mathbb{Z}}$, define
+$$
+R_n := \psi_n \psi_n^\dagger,
+\qquad
+B_{n+1/2} := \psi_{n+1}\psi_n^\dagger.
+$$
+The <em>current-augmented first-level state</em> on a hypersurface is the collection
+$$
+\mathfrak{X}^{(1)}_\Sigma := \{R_n, B_{n+1/2}\}_{n\in\mathbb{Z}}.
+$$
+Its projected scalar observables include
+$$
+p_n := \mathrm{Tr}(R_n),
+\qquad
+s_n := \mathrm{Tr}(\beta R_n),
+\qquad
+J_{n+1/2} := \frac{1}{2a}\,\mathrm{Tr}\!\bigl[\alpha(B_{n+1/2}+B_{n+1/2}^\dagger)\bigr].
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The variable $R_n$ is the local $2\times2$ Hermitian covariance matrix at site $n$; it contains the site probability, local spin polarization, and on-site interference data. The bond matrix $B_{n+1/2}$ carries the nearest-neighbor coherence needed to reconstruct the lattice probability current. This makes $\mathfrak{X}^{(1)}_\Sigma$ a useful diagnostic bookkeeping device, but it also shows why the route is not ISP-faithful: the construction already reinstates local off-diagonal/covariance data in disguised form.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 5</span> <span class="env-name">(Exact first-level evolution for $R_n$).</span>
+For the lattice Dirac Hamiltonian of Proposition 4,
+$$
+\dot R_n
+=
+-\frac{1}{2a}\Bigl[\alpha B_{n+1/2} + B_{n+1/2}^\dagger \alpha - \alpha B_{n-1/2}^\dagger - B_{n-1/2}\alpha\Bigr]
+- i m[\beta,R_n].
+$$
+Consequently,
+$$
+\dot p_n + J_{n+1/2} - J_{n-1/2} = 0.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Using
+$$
+\dot\psi_n
+=
+-\frac{1}{2a}\,\alpha(\psi_{n+1}-\psi_{n-1}) - i m \beta \psi_n,
+$$
+one computes
+$$
+\dot R_n = \dot\psi_n \psi_n^\dagger + \psi_n \dot\psi_n^\dagger.
+$$
+Substituting the lattice Dirac equation and its adjoint gives the displayed formula after identifying the bond matrices $B_{n\pm1/2}$ and using Hermiticity of $\alpha$ and $\beta$. Taking the trace removes the commutator term and yields the discrete continuity equation. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+Proposition 5 shows the key improvement over the bare probability description: the mass term now appears already at first order through the commutator $-im[\beta,R_n]$, and the local continuity equation for probability closes once one retains the bond current variable $B_{n+1/2}$.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 7</span> <span class="env-name">(Current-augmented coherence hierarchy).</span>
+For each separation $k\ge 0$, define
+$$
+C_n^{(k)} := \psi_{n+k}\psi_n^\dagger.
+$$
+Thus
+$$
+C_n^{(0)} = R_n,
+\qquad
+C_n^{(1)} = B_{n+1/2}.
+$$
+The <em>current-augmented coherence hierarchy</em> on a hypersurface is the collection
+$$
+\mathfrak{X}_\Sigma := \{C_n^{(k)}\}_{n\in\mathbb{Z},\,k\ge 0}.
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 6</span> <span class="env-name">(Exact hierarchy equation).</span>
+For $k\ge 1$, the lattice Dirac dynamics implies
+$$
+\dot C_n^{(k)}
+=
+-\frac{1}{2a}\alpha C_n^{(k+1)}
++\frac{1}{2a}\alpha C_n^{(k-1)}
+-\frac{1}{2a} C_{n+1}^{(k-1)}\alpha
++\frac{1}{2a} C_{n-1}^{(k+1)}\alpha
+- i m[\beta,C_n^{(k)}].
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Differentiate
+$$
+C_n^{(k)} = \psi_{n+k}\psi_n^\dagger
+$$
+and use the lattice Dirac equation for $\psi_{n+k}$ and the adjoint equation for $\psi_n^\dagger$. The resulting four kinetic terms are identified respectively with $C_n^{(k+1)}$, $C_n^{(k-1)}$, $C_{n+1}^{(k-1)}$, and $C_{n-1}^{(k+1)}$, while the mass term contributes the commutator. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 4</span> <span class="env-name">(Second level appears explicitly in the first-level evolution).</span>
+The first-level current-augmented state $\mathfrak{X}^{(1)}_\Sigma$ is not literally closed under the lattice Dirac evolution, because $\dot B_{n+1/2}$ depends explicitly on second-level coherences $C_n^{(2)}$. As shown below, these second-level terms can be algebraically reduced on the nodal-free sector, but only at the price of nonlinear singular dependence on the first-level variables.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Set $k=1$ in Proposition 6. The evolution of $C_n^{(1)}=B_{n+1/2}$ depends on both $C_n^{(0)}=R_n$ and the second-level matrices $C_n^{(2)}$ and $C_{n-1}^{(2)}$. Hence the first-level truncation is not literally closed in the displayed variables. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This hierarchy is the clearest diagnostic toy candidate for storing the information the projected probabilities forget. The ordinary probability law is recovered by the projection
+$$
+\pi(\mathfrak{X}_\Sigma) = \{p_n = \mathrm{Tr}(C_n^{(0)})\},
+$$
+but that is precisely the problem: as a candidate relativistic ISP state space the hierarchy is too close to a repackaged one-body density-matrix hierarchy. The calculations below are therefore best read as a negative diagnostic about what bare $\Gamma$-level data omit, not as the preferred ontological completion of ISP.
+</div>
+
+<h3>III.4A. Memory kernels, other options, and the finite-slab route</h3>
+
+<p>
+One might try to preserve ISP more faithfully by eliminating the diagnostic hierarchy and representing its effect by a retarded equation for local probabilities, or for a finite collection of local multi-component probabilities, inside the past light cone. Formally such a projection can always be written as a Volterra-type memory equation together with an initial-slip term. But that reformulation does not by itself produce an exact closure on the retained probability data.
+</p>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Take two Dirac wave-packet superpositions $ \psi_A + e^{i\phi}\psi_B $ whose packets remain spatially disjoint throughout an initial interval. For different relative phases $ \phi $, the entire local probability history on that interval can be identical, because the interference terms vanish before overlap. Once the packets later overlap, however, the subsequent probabilities generally depend on $ \phi $. Therefore future probabilities are not determined uniquely by past local probability histories alone. Any exact memory-kernel formulation on retained probability data must either fail to close uniquely or else carry hidden coherence data through its kernel or initial-slip term. In that sense a pure temporal-memory reformulation moves the obstruction from space into time rather than removing it.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Other obvious escape routes presently look weak. A direct generator on $ \Theta $ or on any equivalent lifted object abandons the $ \Gamma $-level spirit of ISP. Ontologizing internal phase or proper-time variables risks reintroducing hidden phase data in disguise. Hydrodynamic closures, finite-memory truncations, or other coarse-grained effective schemes may prove useful approximations, but at present they offer neither exact closure nor a covariant construction. Pure second-order generators are also insufficient: the coefficient $L^{(D)}$ captures the kinetic hopping visible in Proposition 4 but misses the local mass term, so a theory built only from that coefficient would discard physical information already present in the exact kernel.
+</div>
+
+<p>
+By contrast, the exact finite slab kernel
+</p>
+
+<div class="eq">
+$$
+\Gamma_\Delta := \bigl|e^{-i\Delta H_D}\bigr|^2
+$$
+</div>
+
+<p>
+appears much more promising. Unlike the pure second-order coefficient, the full $ \Gamma_\Delta $ recovers mass dependence at finite $ \Delta $, while still living entirely at the $ \Gamma $ level. At the same time it still fails ordinary Markov behavior in exactly the way ISP wants: $ \Gamma_{2\Delta} \neq \Gamma_\Delta^2 $, and the unique algebraic intermediate map can already develop negative entries perturbatively. Preliminary finite-lattice checks support exactly this pattern. The natural ISP-faithful path is therefore to take exact finite hypersurface slabs—not enriched first-order generators and not pure memory-kernel closures—as the primitive relativistic objects. One should not then iterate a single slab kernel as an ordinary Markov chain unless genuine division events occur; the point is instead to use the full family of finite hypersurface kernels as the primitive conditioning data for closed relativistic ISP dynamics.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4A</span> <span class="env-name">(Finite slabs recover mass at quartic order).</span>
+Write the lattice Dirac Hamiltonian as
+$$
+H_D = K + M,
+\qquad
+K := -\frac{i}{2a}\,\alpha(T_+ - T_-),
+\qquad
+M := m\beta,
+$$
+where $T_\pm$ are the lattice shift operators. Let
+$$
+\Gamma_\Delta(A|B) := \bigl|(e^{-i\Delta H_D})_{AB}\bigr|^2.
+$$
+Then for the representative input state $B=(n,\uparrow)$ one has
+$$
+\Gamma_\Delta((n,\uparrow)|(n,\uparrow))
+=
+1 - \frac{\Delta^2}{2a^2}
++ \Delta^4\left(\frac{m^2}{6a^2} + \frac{3}{32a^4}\right)
++ O(\Delta^6),
+$$
+$$
+\Gamma_\Delta((n+1,\downarrow)|(n,\uparrow))
+=
+\frac{\Delta^2}{4a^2}
+- \Delta^4\left(\frac{m^2}{12a^2} + \frac{1}{16a^4}\right)
++ O(\Delta^6),
+$$
+$$
+\Gamma_\Delta((n+2,\uparrow)|(n,\uparrow))
+=
+\frac{\Delta^4}{64a^4}
++ O(\Delta^6).
+$$
+In particular, the exact finite slab kernel recovers the Dirac mass term at order $\Delta^4$ even though the pure second-order coefficient $L^{(D)}$ of Proposition 4 is blind to it.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Because $\alpha^2=I$, $\beta^2=I$, and $\alpha\beta + \beta\alpha = 0$, one has
+$$
+MK + KM = 0,
+\qquad
+H_D^2 = K^2 + m^2 I.
+$$
+Moreover,
+$$
+K^2
+=
+\frac{1}{2a^2}I - \frac{1}{4a^2}(T_+^2 + T_-^2),
+$$
+and
+$$
+K^3
+=
+\frac{i}{8a^3}\,\alpha\bigl(T_+^3 - 3T_+ + 3T_- - T_-^3\bigr).
+$$
+Expanding
+$$
+e^{-i\Delta H_D}
+=
+I - i\Delta H_D - \frac{\Delta^2}{2}H_D^2
++ \frac{i\Delta^3}{6}H_D^3
++ \frac{\Delta^4}{24}H_D^4
++ O(\Delta^5)
+$$
+and evaluating the relevant matrix elements gives the stated amplitudes. Squaring their moduli yields the displayed probabilities. The return channel picks up a quartic $m^2$ contribution, the nearest-neighbor channel picks up the complementary quartic correction, and the next-nearest channel first appears at quartic order. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4B</span> <span class="env-name">(Finite slabs are not Markov-composable).</span>
+For the same representative channels one has
+$$
+\Gamma_{2\Delta}((n,\uparrow)|(n,\uparrow))
+- [\Gamma_\Delta^2]((n,\uparrow)|(n,\uparrow))
+=
+-\frac{\Delta^2}{a^2}
++ \Delta^4\left(\frac{7m^2}{3a^2} + \frac{15}{16a^4}\right)
++ O(\Delta^6),
+$$
+$$
+\Gamma_{2\Delta}((n+1,\downarrow)|(n,\uparrow))
+- [\Gamma_\Delta^2]((n+1,\downarrow)|(n,\uparrow))
+=
+\frac{\Delta^2}{2a^2}
+- \Delta^4\left(\frac{7m^2}{6a^2} + \frac{5}{8a^4}\right)
++ O(\Delta^6).
+$$
+Hence exact finite slabs are not perturbatively equal to a Markov chain built from repeated single-slab kernels.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Substitute the expansions of Proposition 4A into $\Gamma_{2\Delta}$ and into the matrix product $\Gamma_\Delta^2$. To order $\Delta^4$, only the stay channel and the two nearest-neighbor one-hop channels contribute to the return probability, and only the two stay-then-hop / hop-then-stay orderings contribute to the nearest-neighbor channel. The resulting coefficients are exactly the ones displayed above. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+A further concern remains. Exact finite slabs should not recover relativistic information only by becoming wildly nonlocal. In the toy lattice model they do not: although $\Gamma_\Delta$ has long tails for any fixed $\Delta>0$, those tails are highly constrained in the slab-thickness expansion.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4C</span> <span class="env-name">(Finite slabs are quasilocal and parity constrained).</span>
+Let $A=(m,r)$, $B=(n,s)$, and $d:=|m-n|$. Then:
+<ol>
+  <li>if $d$ is even and $r\neq s$, or if $d$ is odd and $r=s$, then
+  $$
+  (e^{-i\Delta H_D})_{AB}=0,
+  \qquad
+  \Gamma_\Delta(A|B)=0
+  $$
+  for all $\Delta$;</li>
+  <li>for the complementary channels one has
+  $$
+  (e^{-i\Delta H_D})_{AB}=O(\Delta^d),
+  \qquad
+  \Gamma_\Delta(A|B)=O(\Delta^{2d})
+  $$
+  as $\Delta\to0$.</li>
+</ol>
+Thus exact finite slabs retain a controlled quasilocality: transitions to distance $d$ first appear only at order $\Delta^{2d}$ in probability, subject to the exact spin-parity selection rule.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Expand $e^{-i\Delta H_D}$ in powers of $H_D=K+M$. Each factor $M=m\beta$ leaves both site and spin unchanged. Each factor $K$ shifts the site by $\pm1$ and flips the spin because $\alpha=\sigma_x$. Therefore a monomial containing $q$ factors of $K$ can connect $B$ to $A$ only if $q\ge d$, only if $q$ has the same parity as $d$, and only if $q$ is even or odd according as $r=s$ or $r\neq s$. The last two parity conditions are compatible exactly when even displacements connect same-spin states and odd displacements connect opposite-spin states; otherwise every monomial vanishes term by term, proving the exact selection rule. When the parity condition is satisfied, the smallest possible value of $q$ is $d$, so the first nonzero amplitude term is $O(\Delta^d)$ and the probability is $O(\Delta^{2d})$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is not a strict finite-speed theorem. For any fixed $\Delta>0$ the exact slab kernel generally has nonzero entries at arbitrarily large separations permitted by the parity rule. The point is instead that the slab thickness controls those tails perturbatively: distance $d$ costs at least order $\Delta^{2d}$ in probability.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4D</span> <span class="env-name">(The algebraic intermediate map acquires negative entries perturbatively).</span>
+On a finite periodic lattice, whenever $\Gamma_\Delta$ is invertible define the algebraic intermediate map
+$$
+J_\Delta := \Gamma_{2\Delta}\Gamma_\Delta^{-1}.
+$$
+Then for the representative channel $B=(n,\uparrow)$ one has
+$$
+J_\Delta((n+4,\uparrow)|(n,\uparrow))
+=
+-\frac{5\,\Delta^8}{16384\,a^8}
++ O(\Delta^{10}).
+$$
+Hence the exact finite-slab algebraic intermediate map is not stochastic even for arbitrarily small positive $\Delta$: its negative entries already appear perturbatively.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Write the exact slab kernel as a matrix series
+$$
+\Gamma_\Delta = I + \Delta^2 L + \Delta^4 Q + \Delta^6 R + \Delta^8 S + O(\Delta^{10}),
+$$
+invert this series algebraically, and substitute into $J_\Delta=\Gamma_{2\Delta}\Gamma_\Delta^{-1}$. For the distance-four same-spin channel the first exact-slab contribution is
+$$
+\Gamma_\Delta((n+4,\uparrow)|(n,\uparrow))
+=
+\frac{\Delta^8}{147456\,a^8} + O(\Delta^{10}),
+$$
+while the inverse series contributes larger order-$\Delta^8$ subtraction terms built from lower-distance channels. Collecting the order-$\Delta^8$ coefficient yields the displayed value $-5/(16384\,a^8)$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The negativity first appears only in sufficiently distant channels. For example, the nearest-neighbor channel in Proposition 4B still begins with a positive order-$\Delta^2$ coefficient, while the first strictly off-diagonal perturbative negativity shows up here in the distance-four same-spin sector at order $\Delta^8$.
+</div>
+
+<p>
+Proposition 4D sharpens the finite-slab picture, but the ratio $ \Gamma_{2\Delta}\Gamma_\Delta^{-1} $ is still a <em>global</em> equal-time comparison. It is therefore best read as a diagnostic warm-up rather than as the final relativistic deformation object. We record it because it shows how exact slabs already package mass information and pseudo-stochasticity into a thickness-dependent family before turning to the genuinely local construction.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4E</span> <span class="env-name">(Global thickness-renormalized pseudo-generator).</span>
+Whenever $J_\Delta$ is defined, set
+$$
+K_\Delta^{\mathrm{eff}}
+:=
+\frac{J_\Delta-I}{3\Delta^2}.
+$$
+Then $ \mathbf{1}^\top K_\Delta^{\mathrm{eff}} = 0 $. Moreover, for the representative input state $B=(n,\uparrow)$ one has
+$$
+K_\Delta^{\mathrm{eff}}((n,\uparrow)|(n,\uparrow))
+=
+-\frac{1}{2a^2}
++ \Delta^2\left(\frac{5m^2}{6a^2} + \frac{3}{32a^4}\right)
++ O(\Delta^4),
+$$
+$$
+K_\Delta^{\mathrm{eff}}((n+1,\downarrow)|(n,\uparrow))
+=
+\frac{1}{4a^2}
+- \Delta^2\left(\frac{5m^2}{12a^2} + \frac{1}{16a^4}\right)
++ O(\Delta^4),
+$$
+$$
+K_\Delta^{\mathrm{eff}}((n+2,\uparrow)|(n,\uparrow))
+=
+\frac{\Delta^2}{64a^4}
++ O(\Delta^4),
+$$
+$$
+K_\Delta^{\mathrm{eff}}((n+4,\uparrow)|(n,\uparrow))
+=
+-\frac{5\,\Delta^6}{49152\,a^8}
++ O(\Delta^8).
+$$
+In particular, $K_\Delta^{\mathrm{eff}}\to L^{(D)}$ as $\Delta\to0$, but unlike $L^{(D)}$ the thickness-dependent family already carries mass information at order $\Delta^2$ and later develops negative far-channel coefficients.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Since $\mathbf{1}^\top\Gamma_\Delta=\mathbf{1}^\top$, one also has $\mathbf{1}^\top\Gamma_\Delta^{-1}=\mathbf{1}^\top$ and therefore $\mathbf{1}^\top J_\Delta=\mathbf{1}^\top$, which gives $\mathbf{1}^\top K_\Delta^{\mathrm{eff}}=0$. Next write
+$$
+\Gamma_\Delta = I + \Delta^2 L + \Delta^4 Q + O(\Delta^6).
+$$
+Then
+$$
+J_\Delta
+=
+I + 3\Delta^2 L + \Delta^4(15Q-3L^2) + O(\Delta^6),
+$$
+so
+$$
+K_\Delta^{\mathrm{eff}}
+=
+L + \Delta^2(5Q-L^2) + O(\Delta^4).
+$$
+Substituting the local coefficients from Propositions 4 and 4A yields the first three displayed expansions. The distance-four coefficient follows directly from Proposition 4D after division by $3\Delta^2$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The family $K_\Delta^{\mathrm{eff}}$ is useful precisely because it shows what a finite-slab pseudo-generator can remember. But it is still derived from a global equal-time slab ratio, so it does not yet answer the relativistic question of how <em>localized</em> finite deformations exchange. The next clean move is to localize the comparison itself.
+</div>
+
+<h3>III.4B. Region-supported finite deformations and a finite exchange law</h3>
+
+<p>
+The right object for relativistic ISP should compare slabs that differ only inside a bounded region of the hypersurface. That is what makes a finite analogue of the Dirac-Schwinger exchange law meaningful: one wants to exchange two <em>localized</em> finite deformations, not merely compare two globally different slab thicknesses.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 5A</span> <span class="env-name">(Region-supported finite deformation).</span>
+Fix an initial Cauchy hypersurface $ \Sigma $ and a nearby reference hypersurface $ \Sigma_0^\Delta $. Let $R \subset \Sigma$ be a bounded spatial region. A <em>finite deformation supported in $R$</em> is a nearby hypersurface $ \Sigma_R^\Delta $ such that $ \Sigma_R^\Delta $ and $ \Sigma_0^\Delta $ coincide outside the finite spacetime collar swept out by pushing $R$ forward through thickness $ \Delta $. Its exact kernel is
+$$
+\Gamma_R(\Delta) := \Gamma_{\Sigma_R^\Delta \leftarrow \Sigma},
+\qquad
+\Gamma_0(\Delta) := \Gamma_{\Sigma_0^\Delta \leftarrow \Sigma}.
+$$
+In a discrete regularization the deformation is <em>quasilocal</em> if channels at lattice distance $d$ from $R$ first appear only at order $O(\Delta^{2d})$.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Proposition 4C shows that the toy Dirac slabs already have exactly the quasilocal behavior needed for this notion: a finite deformation need not be strictly compactly supported at fixed $ \Delta $, but its leakage away from $R$ is perturbatively suppressed by distance.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 5B</span> <span class="env-name">(Localized finite pseudo-generator).</span>
+Whenever $ \Gamma_0(\Delta) $ is invertible, the <em>localized algebraic deformation map</em> induced by the support region $R$ is
+$$
+J_R(\Delta)
+:=
+\Gamma_R(\Delta)\,\Gamma_0(\Delta)^{-1}.
+$$
+If moreover
+$$
+J_R(\Delta) = I + O(\Delta^2),
+$$
+define the associated <em>localized finite pseudo-generator</em> by
+$$
+K_R^{\mathrm{eff}}(\Delta)
+:=
+\frac{J_R(\Delta)-I}{\Delta^2}.
+$$
+More generally, one could divide by the first nontrivial power of $ \Delta $, but the Dirac-type probability kernels studied here naturally begin at order $ \Delta^2 $.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Unlike $K_\Delta^{\mathrm{eff}}$, the object $J_R(\Delta)$ compares two slabs that differ only inside a bounded region. It is therefore the finite-$\Delta$ analogue of a local normal deformation, and is the natural candidate from which a relativistic ISP deformation algebra should be built. As with the infinitesimal pseudo-generators, however, its role here is comparative rather than ontologically primitive: it measures how two exact finite slab kernels differ, rather than supplying a separate physical stochastic evolution between them.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 5C</span> <span class="env-name">(Finite ISP Dirac-Schwinger exchange law).</span>
+Let $R$ and $S$ be two support regions on the same initial hypersurface $ \Sigma $. Let $ \Sigma_R^\Delta $, $ \Sigma_S^\Delta $, $ \Sigma_{RS}^\Delta $, and $ \Sigma_{SR}^\Delta $ denote the final hypersurfaces obtained by applying the two finite deformations in the indicated orders, all relative to the same reference step $ \Sigma \to \Sigma_0^\Delta $. Whenever the relevant kernels are invertible, define the <em>exchange defect</em>
+$$
+E_{R,S}(\Delta)
+:=
+\Gamma_{\Sigma_{SR}^\Delta \leftarrow \Sigma}\,
+\bigl[\Gamma_{\Sigma_{RS}^\Delta \leftarrow \Sigma}\bigr]^{-1}.
+$$
+Equivalently,
+$$
+J_{S|R}(\Delta)\,J_R(\Delta)
+=
+E_{R,S}(\Delta)\,
+J_{R|S}(\Delta)\,J_S(\Delta),
+$$
+where
+$$
+J_{S|R}(\Delta)
+:=
+\Gamma_{\Sigma_{SR}^\Delta \leftarrow \Sigma}\,
+\bigl[\Gamma_{\Sigma_R^\Delta \leftarrow \Sigma}\bigr]^{-1},
+\qquad
+J_{R|S}(\Delta)
+:=
+\Gamma_{\Sigma_{RS}^\Delta \leftarrow \Sigma}\,
+\bigl[\Gamma_{\Sigma_S^\Delta \leftarrow \Sigma}\bigr]^{-1}.
+$$
+A family of localized finite deformations satisfies the <em>finite ISP Dirac-Schwinger exchange law</em> if $E_{R,S}(\Delta)$ is a normalization-preserving pseudo-stochastic map supported only on the finite tangential/boundary strip generated by exchanging the two deformations. In particular, for disjoint spacelike supports one requires
+$$
+E_{R,S}(\Delta) = I.
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4F</span> <span class="env-name">(Exact disjoint-support exchange in the ideal local case).</span>
+Assume that two finite deformations supported in disjoint regions $R$ and $S$ are represented exactly by stochastic maps on disjoint factors of the hypersurface configuration space, with identity action on the complement. Then
+$$
+E_{R,S}(\Delta)=I,
+$$
+equivalently
+$$
+J_{S|R}(\Delta)\,J_R(\Delta)
+=
+J_{R|S}(\Delta)\,J_S(\Delta).
+$$
+Hence the finite exchange law reduces to exact commutativity for disjoint supports.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By hypothesis the two finite deformation maps act on disjoint tensor factors, so they commute exactly. The ordered compositions leading to $ \Sigma_{RS}^\Delta $ and $ \Sigma_{SR}^\Delta $ therefore induce the same kernel from $ \Sigma $, which makes the exchange defect equal to the identity. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Definition 5C is the finite version of what Definition 5 expressed infinitesimally. If
+$$
+J_R(\Delta) = I + \varepsilon K_\perp[N_R] + O(\varepsilon^2),
+\qquad
+J_S(\Delta) = I + \varepsilon K_\perp[N_S] + O(\varepsilon^2),
+$$
+and if the exchange defect has the expansion
+$$
+E_{R,S}(\Delta)
+=
+I + \varepsilon^2 K(\vec\beta_{R,S}) + O(\varepsilon^3),
+$$
+then the finite exchange law reduces, in the thin-slab limit, to the normal-normal commutator relation of Definition 5. The point is that the Dirac-Schwinger structure should emerge from localized finite exchange defects, not from a global equal-time ratio such as $ \Gamma_{2\Delta}\Gamma_\Delta^{-1} $.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This localization also clarifies the next concrete research problem. One should no longer ask whether a single global family $K_\Delta^{\mathrm{eff}}$ forms the right relativistic algebra. One should ask instead whether exact Dirac- or Klein-Gordon-derived finite slabs can be organized into region-supported kernels whose localized pseudo-generators satisfy Definition 5C while remaining quasilocal and pseudo-stochastic at the algebraic level.
+</div>
+<h3>III.4C. The concrete free-Dirac test</h3>
+
+<p>
+Definitions 5A–5C identify the right finite object in general terms, but the next decisive step is much narrower. In the free 1+1D lattice Dirac toy model, one should choose a concrete region-supported deformation rule—most naturally by splitting the local Dirac update into bulk and collar terms, or an equivalent Trotterized collar evolution—then derive the exact kernels for two bounded support regions and ask whether the resulting exchange defect behaves like a finite Dirac-Schwinger bracket.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 5D</span> <span class="env-name">(Two-region Dirac exchange setup).</span>
+In the lattice Dirac model of Proposition 4, fix two disjoint finite intervals $R,S\subset\Sigma$, a slab thickness $\Delta$, and a reference deformation $\Sigma\to\Sigma_0^\Delta$. Let $ \Sigma_R^\Delta $, $ \Sigma_S^\Delta $, $ \Sigma_{RS}^\Delta $, and $ \Sigma_{SR}^\Delta $ be the corresponding finite deformations, and define
+$$
+\Gamma_R^{(D)}(\Delta),\quad
+\Gamma_S^{(D)}(\Delta),\quad
+\Gamma_{RS}^{(D)}(\Delta),\quad
+\Gamma_{SR}^{(D)}(\Delta)
+$$
+to be the exact Dirac kernels between $\Sigma$ and these hypersurfaces. The associated exchange defect is
+$$
+E_{R,S}^{(D)}(\Delta)
+:=
+\Gamma_{SR}^{(D)}(\Delta)\,
+\bigl[\Gamma_{RS}^{(D)}(\Delta)\bigr]^{-1}.
+$$
+Write $\ell(R,S)$ for the lattice separation between the two support intervals.
+</div>
+
+<div class="env definition">
+<span class="env-title">Program 1</span> <span class="env-name">(Free Dirac exchange-defect test).</span>
+The next theorem-sized target for relativistic ISP is to determine whether the defect $E_{R,S}^{(D)}(\Delta)$ satisfies the following properties:
+<ol>
+  <li><em>Normalization preservation.</em> $ \mathbf{1}^\top E_{R,S}^{(D)}(\Delta)=\mathbf{1}^\top $.</li>
+  <li><em>Boundary/tangential localization.</em> The nontrivial part of $E_{R,S}^{(D)}(\Delta)-I$ is confined to the finite strip generated by exchanging the two deformations, up to the quasilocal tails already suggested by Proposition 4C.</li>
+  <li><em>Separation scaling.</em> For disjoint supports, any departure from the identity should begin only at the first slab-thickness order at which quasilocal propagation can travel from one region to the other. In the toy Dirac model, the natural power-counting guess is order $O(\Delta^{2\ell(R,S)})$, though any equally strong or stronger suppression would serve the same purpose.</li>
+  <li><em>Thin-slab reduction.</em> After dividing by the first nontrivial power of $\Delta$ and making the correct spatial continuum identification, the leading term of $E_{R,S}^{(D)}(\Delta)-I$ reduces to a tangential pseudo-generator compatible with the normal-normal bracket in Definition 5.</li>
+</ol>
+If these properties fail already in the free lattice Dirac model, then the localized finite-slab route is probably not the right backbone for relativistic ISP. If they hold, then the exchange defect becomes the central integrability datum from which the rest of the relativistic program should be built.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Program 1 is the real fork in the road. It is more informative than further work on global equal-time slab ratios, and it is more urgent than extending the present framework to variable particle number, gauge fields, or gravity. The unresolved issue is not generic long-range tails at fixed slab thickness; Proposition 4C already shows that the exact global slab kernel has controlled order-by-distance tails. The thin-slab clause should also be read carefully: the most naive entrywise matrix limit of site-smeared local coefficients need not be the right continuum object. The sharper free-model target is a bond-centered operator-on-smooth-fields limit built from the exchange-strip algebra itself. The real burden is therefore twofold: realize the localized deformation maps explicitly, and identify the correct spatial continuum limit of their leading exchange coefficient. In the present draft Proposition 4G supplies only the first perturbative half of this program, and it does so under the filtration assumption.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4G</span> <span class="env-name">(Conditional perturbative vanishing of the free two-region exchange defect).</span>
+Let $R,S\subset\Sigma$ be disjoint finite intervals in the free lattice Dirac model, and let
+$$
+\ell:=\ell(R,S)\ge 1
+$$
+be their lattice separation. For each integer $q\ge 0$, write
+$$
+\mathcal{N}_q(R):=\{x\in\Sigma:\mathrm{dist}(x,R)\le q\},
+\qquad
+\mathcal{N}_q(S):=\{x\in\Sigma:\mathrm{dist}(x,S)\le q\}.
+$$
+Assume the localized deformation maps of Definition 5D admit slab-thickness expansions
+$$
+J_R^{(D)}(\Delta)=I+\sum_{q\ge1}\Delta^{2q}A_R^{(q)},
+\qquad
+J_S^{(D)}(\Delta)=I+\sum_{q\ge1}\Delta^{2q}A_S^{(q)},
+$$
+and similarly for $J_{S|R}^{(D)}(\Delta)$ and $J_{R|S}^{(D)}(\Delta)$, with the quasilocal filtration property that the order-$q$ coefficient for a deformation supported in $R$ acts only inside the $q$-step neighborhood of $R$, and likewise for $S$. Then the exchange defect obeys
+$$
+E_{R,S}^{(D)}(\Delta)=I+O(\Delta^{2\ell})
+$$
+entrywise.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Consider the ordered kernels $ \Gamma_{RS}^{(D)}(\Delta) $ and $ \Gamma_{SR}^{(D)}(\Delta) $ from Definition 5D. By the assumed quasilocal filtration, any term of total slab-thickness order $ \Delta^{2q} $ probes at most the $q$-step neighborhoods of the support regions. If $q<\ell$, then
+$$
+\mathcal{N}_q(R)\cap \mathcal{N}_q(S)=\varnothing,
+$$
+so no order-$\Delta^{2q}$ contribution can simultaneously involve both regions. Up to that order, every contribution is therefore confined entirely to the $R$ sector or entirely to the $S$ sector, and exchanging the order of the two deformations has no effect. Hence
+$$
+\Gamma_{SR}^{(D)}(\Delta)-\Gamma_{RS}^{(D)}(\Delta)=O(\Delta^{2\ell}).
+$$
+Since each ordered kernel is of the form
+$$
+\Gamma_{RS}^{(D)}(\Delta)=I+O(\Delta^2),
+$$
+its inverse admits the corresponding Neumann expansion
+$$
+\bigl[\Gamma_{RS}^{(D)}(\Delta)\bigr]^{-1}=I+O(\Delta^2).
+$$
+Therefore
+$$
+E_{R,S}^{(D)}(\Delta)
+=
+\Gamma_{SR}^{(D)}(\Delta)\bigl[\Gamma_{RS}^{(D)}(\Delta)\bigr]^{-1}
+=
+I+\bigl(\Gamma_{SR}^{(D)}(\Delta)-\Gamma_{RS}^{(D)}(\Delta)\bigr)\bigl[\Gamma_{RS}^{(D)}(\Delta)\bigr]^{-1},
+$$
+which gives
+$$
+E_{R,S}^{(D)}(\Delta)=I+O(\Delta^{2\ell}).
+$$
+This is the claimed first perturbative estimate. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+In its present conditional form, Proposition 4G is only the first half of Program 1. It proves that disjoint-support exchange effects cannot appear before the separation order, but it does not yet compute the leading $O(\Delta^{2\ell})$ coefficient. That coefficient is where the genuinely finite Dirac-Schwinger content should first live: if the program succeeds, it should be a normalization-preserving pseudo-stochastic map supported on the exchange strip.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+For the first few separations, Proposition 4G says:
+$$
+\ell=1 \Rightarrow E_{R,S}^{(D)}(\Delta)=I+O(\Delta^2),\qquad
+\ell=2 \Rightarrow E_{R,S}^{(D)}(\Delta)=I+O(\Delta^4),\qquad
+\ell=3 \Rightarrow E_{R,S}^{(D)}(\Delta)=I+O(\Delta^6).
+$$
+Thus the free toy model already predicts a concrete separation hierarchy for when finite exchange effects can first appear.
+</div>
+
+<h3>III.5. What the diagnostic hierarchy shows, and why it is not the paper</h3>
+
+<p>
+The long current/coherence calculation is best read diagnostically. Once one augments the bare probability data by local covariance matrices, bond coherences, and bridge variables, the lattice Dirac model immediately recovers the bilinears that the bare $ \Gamma $ projection forgets: local mass information, probability current, energy-like transport, and simple stress-energy-like continuity relations.
+</p>
+
+<p>
+The sharpest point is not merely that the hierarchy adds more variables. In the toy Dirac model, mass-like and energy-like observables are not determined by the bare probability profile alone, and the exact local fluxes depend on bridge/coherence data that the bare $ \Gamma $ description does not retain. The obstruction in Proposition 3 is therefore not a minor artifact of infinitesimal bookkeeping; the projected transition law really does forget data that later relativistic interference and transport can depend on.
+</p>
+
+<p>
+Nor is this loss of information a removable nuisance. On the nodal sector, one can hold fixed the first-level data while varying the bridge coherence, so there is no globally regular first-level closure for the exact fluxes. Attempts to regularize the problem by adjoining bridge variables repair the singularity only at the cost of pushing exact closure outward again through the hierarchy.
+</p>
+
+<p>
+But the same calculation also shows why this route should not carry the main paper. The enriched hierarchy uses extra state data not determined by $ \Gamma $ alone, its exact local closure keeps moving outward to higher bridge levels, and its stress-energy-like quantities belong to a lattice-specific diagnostic construction rather than to a clean covariant ISP completion. So the hierarchy clarifies what is missing, but it does not supply the preferred relativistic ISP dynamics.
+</p>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+For that reason the hierarchy material is best read as diagnostic rather than constructive. Its role is to justify the shift to exact finite slabs and then to localized finite deformations, not to compete with them as the preferred construction; Appendix A records the main diagnostic lessons that matter for the present paper.
+</div>
+
+<h2>IV. Relativistic Locality as Spatial Locality plus Temporal Memory</h2>
+
+<p>
+Let a hypersurface $ \Sigma $ be partitioned into disjoint regions $A$, $B$, and $R$, with corresponding factorization
+</p>
+
+<div class="eq">
+$$
+\C_\Sigma \cong \C_A \times \C_B \times \C_R.
+$$
+</div>
+
+<p>
+Here $A$ and $B$ should be thought of as localized detector wings or controllable subsystems, while $R$ denotes everything else. A setting choice in region $A$ should be represented by a genuine local stochastic control, not by a merely formal relabeling of a basis.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 8</span> <span class="env-name">(Localized stochastic control).</span>
+Let $O$ be a bounded spacetime region between two nearby hypersurfaces $ \Sigma_- \prec \Sigma_+ $. A <em>localized stochastic control</em> supported in $O$ is a column-stochastic map $ \Lambda_O^x $ acting nontrivially only on the factor of $ \C_{\Sigma_-} $ associated with degrees of freedom crossing $O$, with identity action on its complement.
+</div>
+
+<p>
+This motivates the principle we want a relativistic ISP to satisfy.
+</p>
+
+<div class="env definition">
+<span class="env-title">Principle 1</span> <span class="env-name">(Relativistic locality for ISP).</span>
+For any detector outcome registered in a spacetime region $O$, the corresponding probabilities may depend on:
+<ol>
+  <li>boundary data in the causal past $J^-(O)$,</li>
+  <li>localized controls supported in $J^-(O)$, and</li>
+  <li>non-Markovian dependence on <em>extended timelike history</em> inside $J^-(O)$.</li>
+</ol>
+They may not depend primitively on controls supported outside $J^-(O)$, in particular not on spacelike-separated settings. Equivalently, ISP may be nonlocal in time without being nonlocal in space.
+</div>
+
+<p>
+Principle 1 is intentionally weaker than a full relativistic field theory, but it is stronger than bare no-signaling. It says that the natural home for ISP memory is the past light cone rather than a preferred-time global state. This is the sense in which locality in space is preserved at the cost of non-Markovianity: one allows the law to be history-dependent, but only along causally permitted directions.
+</p>
+
+<p>
+The next fact is algebraically immediate but conceptually important.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Commutativity of disjoint local controls).</span>
+Let $ \Lambda_A^x $ be a stochastic map on $ \C_A $ and $ \Lambda_B^y $ a stochastic map on $ \C_B $. Then, on $ \C_A \times \C_B \times \C_R $,
+$$
+(\Lambda_A^x \otimes I_B \otimes I_R)
+(I_A \otimes \Lambda_B^y \otimes I_R)
+=
+(\Lambda_A^x \otimes \Lambda_B^y \otimes I_R)
+=
+(I_A \otimes \Lambda_B^y \otimes I_R)
+(\Lambda_A^x \otimes I_B \otimes I_R).
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The two maps act on distinct tensor factors, so their matrix elements multiply independently and hence commute. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(Local foliation independence for spacelike controls).</span>
+Suppose two foliations differ only by the order in which they cross two spacelike-separated control regions $A$ and $B$. If those controls are represented by $ \Lambda_A^x $ and $ \Lambda_B^y $ acting on disjoint factors, then the induced probability distribution on any later common hypersurface is the same for both foliations.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The only difference between the two induced transition laws is the order of the two local control maps. Proposition 1 shows that these maps commute, so the final law is identical. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+Corollary 1 is not full Lorentz covariance, but it captures the minimal relativistic demand for local settings: a mere change in foliation order across spacelike-separated intervention regions should not alter predictions. In this limited but crucial sense, disjoint localized stochastic controls already behave the way one wants relativistic local operations to behave.
+</p>
+
+<h2>V. No-signaling as a sanity check</h2>
+
+<p>
+We now prove the basic operational sanity check needed for a relativistic Bell-type architecture. Let $q_{ABR}$ be a probability distribution on $ \C_A \times \C_B \times \C_R $ on a hypersurface just before the settings are applied. For any classical distribution $q$ on a product space define the marginalization map
+</p>
+
+<div class="eq">
+$$
+(\marg_A q)(a) := \sum_{b,r} q(a,b,r),
+\qquad
+(\marg_B q)(b) := \sum_{a,r} q(a,b,r).
+$$
+</div>
+
+<p>
+Let $ \Lambda_A^x $ and $ \Lambda_B^y $ be localized stochastic control maps in spacelike-separated regions $A$ and $B$, and let $M_A$ be an arbitrary $A$-local stochastic readout map producing outcomes $a$.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Theorem 1</span> <span class="env-name">(No signaling under localized stochastic control).</span>
+Define
+$$
+q^{x,y}_{ABR}
+:=
+(\Lambda_A^x \otimes \Lambda_B^y \otimes I_R)\, q_{ABR}.
+$$
+Let $p(a|x,y)$ be the resulting $A$-local outcome distribution after applying an arbitrary local readout map $M_A$. Then
+$$
+p(a|x,y) = p(a|x)
+$$
+for all $a,x,y$. By symmetry, $p(b|x,y) = p(b|y)$ for all $b,x,y$.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+It is enough to show that the $A$-marginal of $q^{x,y}_{ABR}$ is independent of $y$, since applying a further $A$-local stochastic map $M_A$ cannot reintroduce any dependence on the remote setting.
+</div>
+
+<div class="proof-block">
+For each $a'$,
+$$
+(\marg_A q^{x,y})(a')
+=
+\sum_{b,r}
+\bigl[(\Lambda_A^x \otimes \Lambda_B^y \otimes I_R) q\bigr](a',b,r).
+$$
+Writing out the action of the tensor-product map gives
+$$
+(\marg_A q^{x,y})(a')
+=
+\sum_{\alpha,\beta,\rho}
+\Lambda_A^x(a'|\alpha)\,
+\Bigl[\sum_b \Lambda_B^y(b|\beta)\Bigr]\,
+q(\alpha,\beta,\rho).
+$$
+Since $ \Lambda_B^y $ is column-stochastic, $ \sum_b \Lambda_B^y(b|\beta) = 1 $ for every $ \beta $. Therefore
+$$
+(\marg_A q^{x,y})(a')
+=
+\sum_{\alpha,\beta,\rho}
+\Lambda_A^x(a'|\alpha)\,
+q(\alpha,\beta,\rho)
+=
+\bigl[\marg_A((\Lambda_A^x \otimes I_B \otimes I_R)q)\bigr](a'),
+$$
+which is independent of $y$. Applying $M_A$ to this marginal gives $p(a|x,y)=p(a|x)$. The $B$ statement is identical by symmetry. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 2</span> <span class="env-name">(Bell compatibility).</span>
+Theorem 1 constrains only local marginals. If an entire Bell family is represented on a fixed factorized pre-setting hypersurface by one common source law together with only localized stochastic controls and localized readouts on the two wings, then the resulting setting family is Bell-local. Bell-compatible joint laws in ISP therefore require a setting-dependent full-circuit representation in which the settings are active local Hamiltonians rather than mere terminal post-processing labels.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The theorem constrains only the marginals, so by itself it does not decide Bell locality one way or the other. But once a whole setting family is represented as a fixed common source distribution together with local response maps on the two wings, the hidden variable can be taken to be the full pre-setting configuration. The resulting family therefore has a local hidden-variable decomposition and lies inside the local polytope. So Bell-violating ISP examples must instead be represented at the level of setting-dependent full circuits, as in the companion entanglement paper. <span class="qed">$ \\square $</span>
+</div>
+
+<p>
+The point of Corollary 2 is easy to miss. A relativistic ISP account of Bell experiments should not be framed either as a single bare family of global kernels $ \\Gamma^{(xy)} $ indexed by settings or as a single common source law followed only by local post-processing on a fixed factorization. The first notation hides the causal architecture; the second collapses the experiment into a Bell-local model. What one actually needs is:
+</p>
+
+<ol>
+  <li>a source or preparation stage prior to the setting choice,</li>
+  <li>localized setting operations on the two wings, implemented as genuine physical controls,</li>
+  <li>localized detector/readout stages,</li>
+  <li>a setting-dependent full-circuit family, and</li>
+  <li>a requirement of foliation compatibility for spacelike-separated operational regions.</li>
+</ol>
+
+<p>
+Once the experiment is written that way, Bell violation and no signaling cease to pull in opposite directions. They become two different structural questions: Bell compatibility is a property of the full setting-dependent family of physical circuits, while no signaling is a statement about the invariance of local marginals under remote localized control changes.
+</p>
+
+<h2>VI. Relation to Existing ISP Results</h2>
+
+<p>
+The entropy and entanglement companion papers already suggest much of this perspective. The entropy paper emphasizes that the $ \Gamma $-level description is coarse-grained and that additional phase data become physically meaningful only once one fixes circuit embeddings, dilations, or subsystem structure [<a href="#r4">4</a>]. The entanglement paper shows that Bell correlations in ISP appear at the level of full circuits rather than isolated terminal kernels [<a href="#r5">5</a>]. The present paper simply translates that lesson into spacetime language: the relevant objects are not terminal-basis labels but localized control operations supported in concrete experimental regions.
+</p>
+
+<p>
+This also sharpens the interpretation of “measurement settings” in ISP. Since measuring in a different basis requires a physical Hamiltonian rather than a purely verbal basis change, each setting choice should be assigned a support region in spacetime. That assignment is exactly what lets one ask whether two settings are spacelike separated and whether changing their foliation order should matter. The Bell architecture therefore forces relativistic structure into the foreground rather than leaving it as a merely philosophical add-on.
+</p>
+
+<p>
+The 2025 review paper further notes that the Hamiltonian in the Hilbert-space representation transforms as a non-Abelian gauge potential under time-dependent Foldy-Wouthuysen gauge transformations [<a href="#r3">3</a>, <a href="#r9">9</a>]. We do not exploit that result here, but it is suggestive. A full relativistic completion of ISP will likely need both of the following:
+</p>
+
+<ol>
+  <li>a spacetime-local control calculus of the sort developed above, and</li>
+  <li>a principled account of gauge structure, probably beyond finite-dimensional transition matrices.</li>
+</ol>
+
+<p>
+In that sense, the present paper should be read as a preliminary layer beneath any future ISP-based quantum field theory. It provides the minimal causal bookkeeping, not the whole dynamics.
+</p>
+
+<h2>VII. Near-Term Program and Longer-Term Outlook</h2>
+
+<p>
+The next research sequence should be narrower than the original draft suggested.
+</p>
+
+<h3>VII.1. Complete Program 1 in the free lattice Dirac model</h3>
+
+<p>
+The immediate technical target is to realize the localized finite deformations of Definitions 5A–5D concretely in the lattice model, for example through a local Dirac update split into bulk and collar pieces or an equivalent Trotterized collar evolution, and then compute the leading coefficient of the exchange defect $E_{R,S}^{(D)}(\Delta)$. Proposition 4G shows only that, under a quasilocal filtration assumption, the defect cannot appear below order $O(\Delta^{2\ell(R,S)})$. The real make-or-break result is not merely that such a coefficient exists, but that it organizes itself into the correct bond-centered tangential density on the exchange strip. The sharpened free-model conjecture is that the relevant continuum object is a first-order divergence-form operator acting on smooth sampled profiles, rather than an entrywise matrix limit of site-smeared coefficients.
+</p>
+
+<p>
+A likely later route to broader interacting-theory locality is via Lieb-Robinson bounds. For finite-range lattice Hamiltonians, those bounds control the quasi-local propagation of Heisenberg-evolved local observables and therefore strongly suggest that support-growth estimates should persist beyond the free Dirac toy model. But that observation should not be overread at the present stage. The ISP exchange defect is not itself a Heisenberg commutator: it is the group commutator of comparison maps
+$$
+E_{R,S}(\Delta)=J_R(\Delta)J_S(\Delta)J_R(\Delta)^{-1}J_S(\Delta)^{-1},
+\qquad
+J_R(\Delta)=\Gamma_R(\Delta)\Gamma_0(\Delta)^{-1},
+$$
+built from primitive kernels and their inverses. So Lieb-Robinson does not by itself yield the exact ISP defect-order law or the bond-centered coefficient package. A separate bridge theorem would be needed to transfer operator-level quasi-locality to $\Gamma_R$, $\Gamma_0^{-1}$, $J_R$, and finally $E_{R,S}$.
+</p>
+
+<h3>VII.2. Broader relativistic extensions come later</h3>
+
+<p>
+Only after Program 1 is under control should the ISP program turn to variable particle number, gauge fields, and gravity. At that stage one could ask how to pass from finite single-particle hypersurface kernels to sector-changing dynamics, how gauge constraints appear on the $ \Gamma $ side, and whether any stress-energy-like structures survive in a regular covariant form. The first gauge benchmark should be modest and concrete: a minimal-coupling lattice $U(1)$ test with link-variable phases, ideally on a ring so that one can ask whether the finite-slab $ \Gamma $-level description reproduces the gauge-invariant Aharonov–Bohm holonomy without smuggling in extra coherence variables by hand. Before that, those extensions risk diffusing attention away from the paper’s actual bottleneck.
+</p>
+
+<h2>VIII. Limitations and Open Problems</h2>
+
+<p>
+Several limitations of the present draft should be stated as sharply as possible.
+</p>
+
+<ol>
+  <li><em>No explicit construction of the preferred localized finite deformations yet.</em> Definitions 5A–5D and Program 1 isolate the right object, but the paper still does not derive a concrete family of region-supported finite hypersurface kernels in the lattice model.</li>
+  <li><em>Proposition 4G is conditional.</em> The perturbative separation bound currently depends on a quasilocal filtration assumption. The next real calculation is to derive that filtration from an explicit free lattice Dirac construction rather than assume it.</li>
+  <li><em>No bond-centered thin-slab identification is built into the present paper.</em> Even once the leading exchange coefficient is computed, the right continuum object may be bond-centered and operator-theoretic rather than an entrywise matrix limit of site-smeared local coefficients. The present draft does not yet formulate that distinction internally.</li>
+  <li><em>The diagnostic hierarchy is not a candidate completion.</em> It explains what the bare $ \Gamma $ projection forgets, but it does so by using extra local data not determined by $ \Gamma $ alone and by pushing exact closure outward through the hierarchy.</li>
+  <li><em>The lattice Dirac model is only a toy regularization.</em> Continuum control and field-theoretic extensions remain open. In particular, issues such as lattice artifacts or fermion doubling are not what drive the bare first-order $ \Gamma $ obstruction; that obstruction already appears at the level of the Born-squared coarse-graining itself.</li>
+  <li><em>No localized detector dynamics is built yet.</em> Readout maps are treated abstractly. A fully satisfactory relativistic ISP theory should incorporate detector dynamics within the same spacetime-local formalism as the controls and hypersurface evolution.</li>
+  <li><em>No full Bell-locality or Lorentz-covariant field-theory theorem is proved here.</em> The paper establishes localized-control commutativity and operational no signaling, but not a complete local-causality analysis in Bell’s stronger sense and not a full Lorentz-covariant field theory.</li>
+</ol>
+
+<p>
+These limitations are also what make the revised paper cleaner. The main open problem is no longer diffuse. It is the explicit construction and exchange analysis of localized finite hypersurface deformations together with the correct bond-centered thin-slab identification of their leading exchange algebra.
+</p>
+
+<h2>IX. Conclusion</h2>
+
+<p>
+The main lesson of the toy Dirac analysis is now narrower and clearer. A relativistic ISP theory should not be built around naive infinitesimal generators of bare configuration probabilities. At that level the first-order generator vanishes, and even the next coefficient is too poor to encode local mass information. Exact finite hypersurface slabs survive this obstruction, and once localized they produce the right relativistic question: how two region-supported finite deformations exchange.
+</p>
+
+<p>
+Within the minimal spacetime architecture developed here, localized stochastic controls already satisfy the expected sanity checks: disjoint controls commute and local marginals obey no signaling. But those are preparatory results. The real integrability datum is the exchange defect $E_{R,S}(\Delta)$ for localized finite deformations. Program 1 identifies the decisive free-Dirac test, and Proposition 4G gives its first perturbative result by showing, conditionally, that the exchange defect cannot appear below the support-separation order. The sharpened thin-slab target is not a raw entrywise continuum limit of site-smeared coefficients, but a bond-centered exchange-strip density whose action on smooth sampled profiles converges to a first-order tangential operator.
+</p>
+
+<p>
+If the program succeeds, the leading separation-order coefficient should be where the finite ISP analogue of the Dirac-Schwinger bracket first lives in that bond-centered sense. If it fails already in the free two-region lattice model, then the present route should be abandoned early. Either way, the next step is now more specific than before. The right slogan is not gravity first, and not additional hierarchy first, but <em>spatial locality, temporal indivisibility, localized finite deformations, and the bond-centered thin-slab exchange law</em>.
+</p>
+<h2>Appendix A. Diagnostic hierarchy results kept off the main line</h2>
+
+<p>
+Section III.5 compresses a longer set of lattice-Dirac diagnostic calculations. Their first substantive lesson is that mass-like and energy-like quantities are not observables of the bare configuration probabilities alone. Once one introduces local covariance matrices and bond coherences, the toy model recovers local mass bilinears, probability current, and simple energy-transport identities. The point is negative rather than constructive: the bare $ \Gamma $ projection forgets information relevant to later relativistic interference and transport.
+</p>
+
+<p>
+A second lesson is that one can write stress-energy-like continuity relations in the enriched variables, but these should not be overread. They depend on a staggered lattice organization of densities and fluxes, are not manifestly covariant, and do not by themselves identify a preferred relativistic ISP ontology. They matter here only as evidence that the missing information is not exhausted by detector probabilities alone.
+</p>
+
+<p>
+The strongest obstruction appears at nodes. The exact fluxes depend on bridge coherences that are not globally recoverable from first-level data: one can hold fixed the first-level variables while changing the bridge term. This means the singularity of naive first-level reductions is structural rather than cosmetic, and no globally regular first-level closure exists for the exact local fluxes.
+</p>
+
+<p>
+One can regularize the nodal singularity by adjoining bridge variables, but then exact closure is pushed outward again through the hierarchy. That is why the hierarchy is retained only as a diagnostic appendix in spirit. It clarifies why bare infinitesimal generators fail and why simple enriched-state repairs are unpromising, but it does not displace the paper’s main program: exact finite hypersurface slabs, their localized deformation maps, and the two-region exchange defect.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Theorem,” arXiv:2309.03085 (2023).</span></li>
+
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” arXiv:2507.21192 (2025).</span></li>
+
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>Anonymous, “Entropy Structure of Indivisible Stochastic Processes: Gauge Invariance, Coherence, and Thermodynamic Interpretation,” companion preprint (2026).</span></li>
+
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>Anonymous, “Gauge-Invariant Process Entanglement in Indivisible Stochastic Processes: From ZZ-Gate Phantoms to Bell Inequalities,” companion preprint (2026).</span></li>
+
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. S. Bell, “On the Einstein Podolsky Rosen Paradox,” <em>Physics Physique Fizika</em> <strong>1</strong>, 195–200 (1964).</span></li>
+
+  <li id="r7"><span class="ref-num">[7]</span>
+  <span>J. S. Bell, “The Theory of Local Beables,” <em>Epistemological Letters</em> <strong>9</strong>, 11–23 (1976).</span></li>
+
+  <li id="r8"><span class="ref-num">[8]</span>
+  <span>J. R. Glick and C. Adami, “Markovian and Non-Markovian Quantum Measurements,” <em>Foundations of Physics</em> (2020); arXiv:1701.05636.</span></li>
+
+  <li id="r9"><span class="ref-num">[9]</span>
+  <span>L. L. Foldy and S. A. Wouthuysen, “On the Dirac Theory of Spin 1/2 Particles and Its Non-Relativistic Limit,” <em>Physical Review</em> <strong>78</strong>, 29–36 (1950).</span></li>
+
+  <li id="r10"><span class="ref-num">[10]</span>
+  <span>J. Schwinger, “The Theory of Quantized Fields. I,” <em>Physical Review</em> <strong>82</strong>, 914–927 (1951).</span></li>
+
+  <li id="r11"><span class="ref-num">[11]</span>
+  <span>P. A. M. Dirac, “The Hamiltonian Form of Field Dynamics,” <em>Canadian Journal of Mathematics</em> <strong>3</strong>, 1–23 (1951).</span></li>
+
+  <li id="r12"><span class="ref-num">[12]</span>
+  <span>S. G. Brown, “Dirac-Schwinger Covariance Condition in Canonical Theories,” <em>Physical Review</em> <strong>158</strong>, 1608–1626 (1967).</span></li>
+
+  <li id="r13"><span class="ref-num">[13]</span>
+  <span>R. Brunetti, K. Fredenhagen, and R. Verch, “The Generally Covariant Locality Principle—A New Paradigm for Local Quantum Physics,” <em>Communications in Mathematical Physics</em> <strong>237</strong>, 31–68 (2003).</span></li>
+
+  <li id="r14"><span class="ref-num">[14]</span>
+  <span>S. Fedida, “Einstein Causality of Quantum Measurements in the Tomonaga-Schwinger Picture,” <em>Annals of Physics</em> <strong>485</strong>, 170314 (2026).</span></li>
+  </ol>
+</div>
+
+</article>
+</body>
+</html>

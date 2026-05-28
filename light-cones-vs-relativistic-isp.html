@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lightcones versus Relativistic ISP — Guided Interactive Explainer</title>
+<style>
+:root {
+  --bg: #f8fafc;
+  --paper: #ffffff;
+  --ink: #111827;
+  --muted: #475569;
+  --line: #dbe5f5;
+  --blue: #2563eb;
+  --blue-soft: #eff6ff;
+  --orange: #c2410c;
+  --orange-soft: #fff7ed;
+  --red: #dc2626;
+  --red-soft: #fee2e2;
+  --slate-soft: #f8fafc;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.68;
+}
+article.paper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 2.3rem 1.3rem 4rem;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+.title {
+  font-size: 2.2em;
+  line-height: 1.16;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 0.15em;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05em;
+  color: #334155;
+  margin-top: 0.45em;
+  margin-bottom: 0.95em;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.18em 0;
+}
+.arxiv-note {
+  color: var(--muted);
+  font-size: 0.95em;
+  margin-bottom: 1.45em;
+}
+.abstract,
+.key-box,
+.control-panel,
+.explorer-panel,
+.note-panel,
+.tour-panel {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+.abstract {
+  margin: 1.35em 0 1.15em 0;
+  padding: 1em 1.1em;
+}
+.abstract-label {
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.08em;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.7em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.45em;
+}
+p {
+  margin: 0.6em 0 0.9em 0;
+}
+.small-note {
+  font-size: 0.92em;
+  color: var(--muted);
+}
+.formula {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.94em;
+  background: #eef4ff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+  white-space: nowrap;
+}
+.key-box {
+  padding: 0.95rem 1rem;
+  margin: 1rem 0 1.2rem;
+  border-left: 5px solid var(--orange);
+}
+.key-box p:last-child {
+  margin-bottom: 0;
+}
+.replacement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.95rem;
+  margin: 1rem 0 1.25rem;
+}
+.replacement-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem 0.95rem;
+  background: linear-gradient(180deg, #fcfdff 0%, #f8fbff 100%);
+  border-top: 4px solid var(--blue);
+}
+.replacement-card p {
+  margin-bottom: 0;
+  font-size: 0.95em;
+}
+.tour-panel,
+.explorer-panel,
+.note-panel,
+.control-panel {
+  padding: 1rem 1.05rem;
+}
+.tour-header,
+.explorer-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.32rem 0.7rem;
+  font-size: 0.78em;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+}
+.badge.blue {
+  background: var(--blue-soft);
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+.badge.orange {
+  background: var(--orange-soft);
+  border-color: #fed7aa;
+  color: var(--orange);
+}
+.badge.red {
+  background: var(--red-soft);
+  border-color: #fecaca;
+  color: var(--red);
+}
+.controls-row,
+.step-row,
+.explorer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+.control-panel {
+  margin: 0.95rem 0 1.1rem;
+  border-top: 4px solid var(--blue);
+}
+.control-panel p:last-child {
+  margin-bottom: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+.pill-button,
+.step-button {
+  appearance: none;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 999px;
+  padding: 0.48rem 0.82rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
+}
+.pill-button:hover,
+.pill-button:focus-visible,
+.step-button:hover,
+.step-button:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  outline: none;
+  transform: translateY(-1px);
+}
+.pill-button.active,
+.step-button.active {
+  background: var(--blue-soft);
+  border-color: var(--blue);
+  color: #1d4ed8;
+}
+.step-button {
+  font-size: 0.88em;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  border-radius: 999px;
+  padding: 0.42rem 0.78rem;
+  background: var(--slate-soft);
+  border: 1px solid var(--line);
+  font-size: 0.88em;
+  color: var(--muted);
+}
+.progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5eefb;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue) 0%, #60a5fa 100%);
+  transition: width 140ms linear;
+}
+.replacement-banner {
+  margin: 0.9rem 0 1.05rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: linear-gradient(90deg, #eef6ff 0%, #fff7ed 100%);
+}
+.replacement-banner strong {
+  display: inline-block;
+  margin-right: 0.35rem;
+}
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.canvas-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fcfdff 0%, #f8fbff 100%);
+}
+.canvas-card.ordinary {
+  border-top: 4px solid var(--blue);
+}
+.canvas-card.isp {
+  border-top: 4px solid var(--orange);
+}
+.canvas-head {
+  padding: 0.9rem 0.95rem 0.35rem;
+}
+.canvas-head p {
+  margin-bottom: 0.35rem;
+}
+.canvas-wrap {
+  padding: 0 0.85rem 0.75rem;
+}
+canvas {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border: 1px solid #e5e7eb;
+}
+#ordinary-canvas,
+#isp-canvas {
+  height: 390px;
+}
+#explorer-canvas {
+  height: 460px;
+}
+.note-text {
+  padding: 0 0.95rem 1rem;
+  font-size: 0.94em;
+  color: #334155;
+}
+.note-text p:last-child {
+  margin-bottom: 0;
+}
+.explorer-controls {
+  gap: 0.9rem 1.15rem;
+  margin: 0.9rem 0 1rem;
+}
+.control-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+.control-cluster label {
+  font-size: 0.9em;
+  color: var(--muted);
+}
+.range-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.range-wrap input[type="range"] {
+  width: 160px;
+}
+.explorer-status {
+  margin-top: 0.25rem;
+  font-size: 0.92em;
+  color: var(--muted);
+}
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.note-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem 0.95rem;
+  background: linear-gradient(180deg, #fcfdff 0%, #f8fbff 100%);
+  border-top: 4px solid var(--orange);
+}
+.note-card p:last-child {
+  margin-bottom: 0;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  border-radius: 10px;
+  font-size: 0.95em;
+}
+.env.definition {
+  border-color: #92400e;
+  background: #fffbeb;
+}
+.env.remark {
+  border-color: #6b7280;
+  background: #f9fafb;
+  font-style: italic;
+}
+.env-title {
+  font-weight: bold;
+  font-style: normal;
+  display: inline;
+}
+@media (max-width: 920px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  #ordinary-canvas,
+  #isp-canvas {
+    height: 340px;
+  }
+}
+@media (max-width: 720px) {
+  article.paper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #explorer-canvas {
+    height: 420px;
+  }
+}
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Lightcones versus Relativistic ISP</div>
+<div class="subtitle">A guided interactive explainer of the real visual difference: event-centered causal geometry versus whole-surface Γ-kernels, localized deformations, and exchange defects</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Interactive visual note / canvas companion</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Built to make the conceptual replacement legible, not just to add prettier diagrams</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span> The reason the earlier pictures can still feel unclear is that the difference is not merely geometric. The ordinary lightcone picture answers an <em>event question</em>: what can influence a given event, and what unfolds event by event? The relativistic ISP picture answers a different question: what exact <span class="formula">Γ[Σ₁←Σ₀]</span> connects the configuration spaces of two whole Cauchy hypersurfaces, how does that kernel change when only a bounded support region is deformed, and what is left when two such deformations are exchanged in opposite orders? The guided animation below is built around that replacement of the basic story unit.</p>
+</div>
+
+<div class="key-box">
+  <p><strong>Difference in one line.</strong> The lightcone picture is centered on an event and its causal future/past. The relativistic ISP picture is centered on an exact finite kernel between whole hypersurfaces, then on localized deformation maps <span class="formula">J<sub>R</sub>(Δ)</span>, and finally on the exchange defect <span class="formula">E<sub>R,S</sub>(Δ)</span>.</p>
+  <p class="small-note">That is why the animations below show two different kinds of story. On the left, events happen one after another. On the right, the primitive object is a whole-surface slab comparison, and only afterward do localized deformations and order comparisons enter.</p>
+</div>
+
+<div class="note-panel">
+  <p><strong>Scope of the comparison.</strong> Standard relativistic physics also has hypersurface, regional-algebra, and Cauchy-evolution formulations. The contrast here is not that ordinary relativity lacks global or algebraic language; it is that the ISP program chooses the exact stochastic kernel between whole configuration spaces as the primitive object, and only then asks how localized supported deformations exchange.</p>
+</div>
+
+<div class="replacement-grid">
+  <div class="replacement-card">
+    <h3>Basic object changes</h3>
+    <p><strong>event <em>p</em></strong> → <strong>whole-surface kernel</strong> <span class="formula">Γ[Σ₁←Σ₀]</span></p>
+  </div>
+  <div class="replacement-card">
+    <h3>Temporal picture changes</h3>
+    <p><strong>event-by-event chain</strong> → <strong>single exact slab</strong> that may fail to split into honest stochastic intermediate factors</p>
+  </div>
+  <div class="replacement-card">
+    <h3>What “local” means changes</h3>
+    <p><strong>small neighborhood of an event</strong> → <strong>bounded support region on a hypersurface</strong> whose deformation is compared against the reference slab</p>
+  </div>
+  <div class="replacement-card">
+    <h3>The decisive test changes</h3>
+    <p><strong>single local update</strong> → <strong>compare</strong> <span class="formula">R →right S</span> <em>versus</em> <span class="formula">S →right R</span> and inspect the resulting exchange defect</p>
+  </div>
+</div>
+
+<div class="env definition">
+<span class="env-title">Reading guide.</span>
+If you only watch one thing, watch what the animations take as the <em>primitive object</em>. The left-hand story starts from a distinguished event. The right-hand story starts from two whole hypersurfaces and the exact Γ-level transition law between their ordinary configuration spaces.
+</div>
+
+<h2>I. Guided side-by-side story</h2>
+
+<div class="tour-panel">
+  <div class="tour-header">
+    <div>
+      <span class="badge blue">guided tour</span>
+      <span class="badge orange">synchronized comparison</span>
+      <p class="small-note">Each step replaces one ordinary intuition with the corresponding relativistic ISP object.</p>
+    </div>
+    <div class="controls-row">
+      <button type="button" class="pill-button" id="guide-play">Pause tour</button>
+      <button type="button" class="pill-button" id="guide-restart">Restart step</button>
+      <span class="status-pill" id="guide-status">Auto-playing.</span>
+    </div>
+  </div>
+
+  <div class="step-row" id="step-buttons" aria-label="Guided steps"></div>
+  <div class="progress-track"><div class="progress-bar" id="guide-progress"></div></div>
+
+  <div class="replacement-banner">
+    <strong id="step-title">Step</strong>
+    <span id="step-replace"></span>
+    <p class="small-note" id="watch-text"></p>
+  </div>
+
+  <div class="comparison-grid">
+    <section class="canvas-card ordinary">
+      <div class="canvas-head">
+        <span class="badge blue">ordinary lightcone intuition</span>
+        <p class="small-note">Story unit: an event, then a causal chain of later events.</p>
+      </div>
+      <div class="canvas-wrap"><canvas id="ordinary-canvas" aria-label="Ordinary lightcone animation"></canvas></div>
+      <div class="note-text" id="ordinary-note"></div>
+    </section>
+
+    <section class="canvas-card isp">
+      <div class="canvas-head">
+        <span class="badge orange">relativistic ISP intuition</span>
+        <p class="small-note">Story unit: a whole-surface Γ-kernel, then supported deformations and their exchange.</p>
+      </div>
+      <div class="canvas-wrap"><canvas id="isp-canvas" aria-label="Relativistic ISP animation"></canvas></div>
+      <div class="note-text" id="isp-note"></div>
+    </section>
+  </div>
+</div>
+
+<h2>II. Exchange-defect explorer</h2>
+
+<div class="explorer-panel">
+  <div class="explorer-header">
+    <div>
+      <span class="badge orange">interactive explorer</span>
+      <span class="badge red">order comparison</span>
+      <p class="small-note">Use this to manipulate the part that matters most in the relativistic ISP picture: bounded support regions, deformation order, and where the leading data live.</p>
+    </div>
+    <div class="controls-row">
+      <button type="button" class="pill-button" id="explorer-play">Pause animation</button>
+      <span class="status-pill" id="explorer-play-status">Explorer running.</span>
+    </div>
+  </div>
+
+  <div class="explorer-controls">
+    <div class="control-cluster">
+      <label for="separation-range">Support separation</label>
+      <div class="range-wrap">
+        <input id="separation-range" type="range" min="1" max="6" step="1" value="3">
+        <span class="status-pill" id="separation-value">ℓ = 3</span>
+      </div>
+    </div>
+
+    <div class="control-cluster">
+      <label for="defect-range">Visible defect strength</label>
+      <div class="range-wrap">
+        <input id="defect-range" type="range" min="0" max="100" step="1" value="45">
+        <span class="status-pill" id="defect-value">0.45</span>
+      </div>
+    </div>
+
+    <div class="control-cluster" id="order-buttons" aria-label="Order mode"></div>
+    <div class="control-cluster" id="emphasis-buttons" aria-label="Emphasis mode"></div>
+  </div>
+
+  <div class="explorer-status" id="explorer-status"></div>
+  <div class="canvas-wrap" style="padding-left:0; padding-right:0; padding-bottom:0;"><canvas id="explorer-canvas" aria-label="Exchange defect explorer"></canvas></div>
+</div>
+
+<h2>III. What the animations are trying to teach</h2>
+
+<div class="note-grid">
+  <div class="note-card">
+    <h3>The left side is event-centered.</h3>
+    <p>You watch one event produce a causal future, or a chain of later events. That is the right picture when the question is “what can influence this event?”</p>
+  </div>
+  <div class="note-card">
+    <h3>The right side is whole-surface-centered.</h3>
+    <p>You begin from two hypersurfaces and an exact Γ-level kernel between their ordinary configuration spaces. The story is not built event by event first.</p>
+  </div>
+  <div class="note-card">
+    <h3>Temporal indivisibility is visualized by a failed split.</h3>
+    <p>In the ISP story, you can try to cut the slab at an intermediate hypersurface, but the algebraic factor through that cut need not remain an honest stochastic map.</p>
+  </div>
+  <div class="note-card">
+    <h3>Locality lives in supported deformations.</h3>
+    <p>“Local” does not mean “a single pointlike kick detached from the whole slab.” It means a bounded support region on the hypersurface whose deformation is compared against the reference slab.</p>
+  </div>
+  <div class="note-card">
+    <h3>The decisive integrability datum is the exchange defect.</h3>
+    <p>The essential question is not simply whether there is a local generator, but what happens when the exact finite deformations of two separated regions are exchanged.</p>
+  </div>
+  <div class="note-card">
+    <h3>The leading free-model data are boundary-first.</h3>
+    <p>The explorer fades from support volumes toward gap-facing boundaries and bonds because that is where the first nontrivial exchange data naturally live in the sharpened free-model picture.</p>
+  </div>
+</div>
+
+<div class="env remark">
+<span class="env-title">Compressed moral.</span>
+The lightcone picture asks for the causal domain of an event. The relativistic ISP picture asks how an exact whole-surface Γ-kernel changes under localized supported deformations, whether the resulting comparison remains decomposable through an intermediate slice, and whether two separated deformations exchange trivially or leave a gap-localized, boundary-controlled defect.
+</div>
+
+</article>
+<script>
+(function () {
+  const ordinaryCanvas = document.getElementById('ordinary-canvas');
+  const ispCanvas = document.getElementById('isp-canvas');
+  const explorerCanvas = document.getElementById('explorer-canvas');
+
+  const ordinaryCtx = ordinaryCanvas.getContext('2d');
+  const ispCtx = ispCanvas.getContext('2d');
+  const explorerCtx = explorerCanvas.getContext('2d');
+
+  const guidePlayButton = document.getElementById('guide-play');
+  const guideRestartButton = document.getElementById('guide-restart');
+  const guideStatus = document.getElementById('guide-status');
+  const guideProgress = document.getElementById('guide-progress');
+  const stepButtonsContainer = document.getElementById('step-buttons');
+  const stepTitle = document.getElementById('step-title');
+  const stepReplace = document.getElementById('step-replace');
+  const watchText = document.getElementById('watch-text');
+  const ordinaryNote = document.getElementById('ordinary-note');
+  const ispNote = document.getElementById('isp-note');
+
+  const explorerPlayButton = document.getElementById('explorer-play');
+  const explorerPlayStatus = document.getElementById('explorer-play-status');
+  const separationRange = document.getElementById('separation-range');
+  const defectRange = document.getElementById('defect-range');
+  const separationValue = document.getElementById('separation-value');
+  const defectValue = document.getElementById('defect-value');
+  const explorerStatus = document.getElementById('explorer-status');
+  const orderButtonsContainer = document.getElementById('order-buttons');
+  const emphasisButtonsContainer = document.getElementById('emphasis-buttons');
+
+  const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const steps = [
+    {
+      label: '1. Basic object',
+      replace: 'Replace “start from one event p” with “start from one exact whole-surface kernel Γ[Σ₁←Σ₀]”.',
+      watch: 'Watch the left animation radiate from one distinguished event, while the right animation begins with two whole hypersurfaces and a slab between them.',
+      ordinaryNote: '<p><strong>Ordinary view.</strong> The event <em>p</em> is the natural anchor. The question is which events lie inside its future or past lightcone.</p>',
+      ispNote: '<p><strong>Relativistic ISP view.</strong> The primitive object is not one event but the exact Γ-level kernel between configuration spaces on two whole hypersurfaces.</p>'
+    },
+    {
+      label: '2. Temporal composition',
+      replace: 'Replace “events happen one after another” with “a whole slab is primary, and a cut through Σ′ may fail to yield an honest stochastic intermediate factor”.',
+      watch: 'On the left, events activate sequentially. On the right, try to cut the slab at Σ′: the warning bar appears because temporal divisibility is no longer the primitive requirement.',
+      ordinaryNote: '<p><strong>Ordinary view.</strong> The visual story is a causal chain: event → later event → later event. The dynamics is naturally imagined as a succession of local steps.</p>',
+      ispNote: '<p><strong>Relativistic ISP view.</strong> The whole slab is primary. One may algebraically factor through an intermediate hypersurface, but that intermediate factor need not remain stochastic.</p>'
+    },
+    {
+      label: '3. What “local” means',
+      replace: 'Replace “local neighborhood around an event” with “bounded support region R on a hypersurface, together with the localized comparison map J_R(Δ)”.',
+      watch: 'The left side keeps locality attached to a point neighborhood. The right side makes locality a supported deformation of a whole hypersurface patch.',
+      ordinaryNote: '<p><strong>Ordinary view.</strong> Locality is pictured as a small point-neighborhood whose influence stays inside the cone.</p>',
+      ispNote: '<p><strong>Relativistic ISP view.</strong> Locality lives in a bounded support region on the hypersurface. The relevant object is the comparison between the reference slab and the slab with only that region deformed.</p>'
+    },
+    {
+      label: '4. The decisive comparison',
+      replace: 'Replace “one local update” with “compare R then S against S then R, and inspect the exchange defect E_R,S(Δ)”.',
+      watch: 'The right side now splits into two order stories. The crucial question is not just what R does or what S does, but what is left after their two orders are compared.',
+      ordinaryNote: '<p><strong>Ordinary view.</strong> You can talk about order among events, but the geometry by itself does not yet single out an exchange defect of whole-surface transition objects.</p>',
+      ispNote: '<p><strong>Relativistic ISP view.</strong> The integrability datum is the order comparison itself: R→S versus S→R. Their mismatch is the exchange defect.</p>'
+    },
+    {
+      label: '5. Where the leading data live',
+      replace: 'Replace a support-volume blob picture with gap-facing boundaries, strip channels, and bond-centered leading data.',
+      watch: 'The left side keeps the crude volume blocks. The right side fades the support interiors and leaves the inner boundaries and bonds glowing near the gap.',
+      ordinaryNote: '<p><strong>Ordinary view.</strong> A first attempt is to attach the effect to the whole support volumes R and S. That is a coarse picture.</p>',
+      ispNote: '<p><strong>Relativistic ISP view.</strong> The sharpened free-model intuition is boundary-first: the first exchange data are naturally concentrated near the gap-facing boundaries and bonds.</p>'
+    }
+  ];
+
+  const explorerState = {
+    playing: !reducedMotion,
+    phase: 0,
+    separation: Number(separationRange.value),
+    defect: Number(defectRange.value) / 100,
+    orderMode: 'compare',
+    emphasis: 'boundary'
+  };
+
+  const guideState = {
+    playing: !reducedMotion,
+    index: 0,
+    elapsed: 0,
+    duration: 8.2
+  };
+
+  const orderModes = [
+    { id: 'compare', label: 'Compare both orders' },
+    { id: 'rs', label: 'Show R → S' },
+    { id: 'sr', label: 'Show S → R' }
+  ];
+
+  const emphasisModes = [
+    { id: 'boundary', label: 'Boundary / bond emphasis' },
+    { id: 'volume', label: 'Support-volume emphasis' }
+  ];
+
+  function clamp(v, a, b) {
+    return Math.max(a, Math.min(b, v));
+  }
+
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
+
+  function smoothstep(a, b, x) {
+    const t = clamp((x - a) / (b - a), 0, 1);
+    return t * t * (3 - 2 * t);
+  }
+
+  function easeInOutSine(t) {
+    return 0.5 - 0.5 * Math.cos(Math.PI * clamp(t, 0, 1));
+  }
+
+  function pulse(time, speed, low, high) {
+    const s = 0.5 + 0.5 * Math.sin(time * speed);
+    return lerp(low, high, s);
+  }
+
+  function resizeCanvas(canvas, ctx) {
+    const dpr = window.devicePixelRatio || 1;
+    const width = Math.max(10, Math.round(canvas.clientWidth));
+    const height = Math.max(10, Math.round(canvas.clientHeight));
+    if (canvas.width !== Math.round(width * dpr) || canvas.height !== Math.round(height * dpr)) {
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { width, height };
+  }
+
+  function clearCanvas(ctx, w, h) {
+    const gradient = ctx.createLinearGradient(0, 0, 0, h);
+    gradient.addColorStop(0, '#ffffff');
+    gradient.addColorStop(1, '#f8fbff');
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, w, h);
+  }
+
+  function roundRect(ctx, x, y, w, h, r, fill, stroke) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    if (fill) {
+      ctx.fillStyle = fill;
+      ctx.fill();
+    }
+    if (stroke) {
+      ctx.strokeStyle = stroke;
+      ctx.stroke();
+    }
+  }
+
+  function drawNode(ctx, x, y, r, fill, stroke, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha == null ? 1 : alpha;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = fill;
+    ctx.fill();
+    if (stroke) {
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1.3;
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawHalo(ctx, x, y, r, color, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawArrow(ctx, x1, y1, x2, y2, color, width, progress) {
+    const p = clamp(progress == null ? 1 : progress, 0, 1);
+    const mx = lerp(x1, x2, p);
+    const my = lerp(y1, y2, p);
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width || 2;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(mx, my);
+    ctx.stroke();
+    if (p > 0.92) {
+      const angle = Math.atan2(y2 - y1, x2 - x1);
+      const size = 8;
+      ctx.beginPath();
+      ctx.moveTo(mx, my);
+      ctx.lineTo(mx - size * Math.cos(angle - Math.PI / 6), my - size * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(mx - size * Math.cos(angle + Math.PI / 6), my - size * Math.sin(angle + Math.PI / 6));
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawTextBox(ctx, x, y, w, lines, fill, stroke) {
+    const lineHeight = 15;
+    const padding = 10;
+    const h = padding * 2 + lines.length * lineHeight;
+    roundRect(ctx, x, y, w, h, 10, fill || '#ffffff', stroke || '#cbd5e1');
+    ctx.save();
+    ctx.fillStyle = '#1f2937';
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    lines.forEach((line, index) => {
+      ctx.fillText(line, x + padding, y + padding + 12 + index * lineHeight);
+    });
+    ctx.restore();
+    return h;
+  }
+
+  function drawSurfaceLine(ctx, fn, xStart, xEnd, color, width, dash) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    if (dash) ctx.setLineDash(dash);
+    ctx.beginPath();
+    const step = (xEnd - xStart) / 60;
+    for (let x = xStart; x <= xEnd + 0.1; x += step) {
+      const y = fn(x);
+      if (x === xStart) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function fillBetweenSurfaces(ctx, lowerFn, upperFn, xStart, xEnd, fill, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha == null ? 1 : alpha;
+    ctx.beginPath();
+    const step = (xEnd - xStart) / 70;
+    for (let x = xStart; x <= xEnd + 0.1; x += step) {
+      const y = lowerFn(x);
+      if (x === xStart) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    for (let x = xEnd; x >= xStart - 0.1; x -= step) {
+      ctx.lineTo(x, upperFn(x));
+    }
+    ctx.closePath();
+    ctx.fillStyle = fill;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function gaussian(x, center, width) {
+    const z = (x - center) / width;
+    return Math.exp(-z * z);
+  }
+
+  function ordinaryStep0(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const originX = w * 0.48;
+    const originY = h * 0.58;
+    const span = Math.min(w, h) * 0.34;
+    ctx.save();
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 2;
+    drawArrow(ctx, 40, originY + 105, w - 36, originY + 105, '#475569', 2, 1);
+    drawArrow(ctx, originX, h - 34, originX, 42, '#475569', 2, 1);
+    ctx.restore();
+
+    const pulseAlpha = pulse(time, 0.0026, 0.16, 0.3);
+    ctx.fillStyle = 'rgba(16, 185, 129,' + pulseAlpha.toFixed(3) + ')';
+    ctx.beginPath();
+    ctx.moveTo(originX, originY);
+    ctx.lineTo(originX - span, originY - span);
+    ctx.lineTo(originX + span, originY - span);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = 'rgba(37, 99, 235,' + pulse(time + 300, 0.0023, 0.12, 0.22).toFixed(3) + ')';
+    ctx.beginPath();
+    ctx.moveTo(originX, originY);
+    ctx.lineTo(originX - span, originY + span);
+    ctx.lineTo(originX + span, originY + span);
+    ctx.closePath();
+    ctx.fill();
+
+    drawArrow(ctx, originX, originY, originX - span, originY - span, '#0f172a', 2.2, 1);
+    drawArrow(ctx, originX, originY, originX + span, originY - span, '#0f172a', 2.2, 1);
+    drawArrow(ctx, originX, originY, originX - span, originY + span, '#0f172a', 2.2, 1);
+    drawArrow(ctx, originX, originY, originX + span, originY + span, '#0f172a', 2.2, 1);
+
+    drawHalo(ctx, originX, originY, 17 + 4 * Math.sin(time * 0.003), 'rgba(220,38,38,0.12)', 1);
+    drawNode(ctx, originX, originY, 7.5, '#dc2626', '#ffffff', 1);
+
+    const qY = originY - span * 0.72;
+    const qX = originX + span * 0.16;
+    const rX = originX + span * 0.86;
+    const rY = originY - span * 0.22;
+    drawHalo(ctx, qX, qY, 13, 'rgba(16,185,129,0.15)', pulse(time + 200, 0.003, 0.3, 0.9));
+    drawNode(ctx, qX, qY, 5.5, '#059669', '#ffffff', 1);
+    drawNode(ctx, rX, rY, 5.5, '#94a3b8', '#ffffff', 0.85);
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('ct', originX + 6, 56);
+    ctx.fillText('x', w - 52, originY + 122);
+    ctx.fillText('event p', originX + 12, originY - 8);
+    ctx.fillText('future of p', originX - 30, originY - span + 20);
+    ctx.fillText('past of p', originX - 24, originY + span - 12);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText('reachable event q', qX + 10, qY + 4);
+    ctx.fillText('spacelike elsewhere', rX - 16, rY - 12);
+    drawTextBox(ctx, 34, 26, 210, ['Ordinary question:', 'which events lie inside', 'the causal future or past of p?'], '#ffffff', '#cbd5e1');
+  }
+
+  function ordinaryStep1(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const ys = [h * 0.78, h * 0.56, h * 0.33];
+    const xs = [w * 0.25, w * 0.46, w * 0.67];
+    const sX = w * 0.82;
+
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 2;
+    ys.forEach((y) => {
+      ctx.beginPath();
+      ctx.moveTo(42, y);
+      ctx.lineTo(w - 40, y);
+      ctx.stroke();
+    });
+
+    const seg0 = smoothstep(0.0, 0.22, progress);
+    const seg1 = smoothstep(0.25, 0.52, progress);
+    const seg2 = smoothstep(0.55, 0.86, progress);
+
+    drawArrow(ctx, xs[0], ys[0], xs[1], ys[1], '#c2410c', 2.2, seg0);
+    drawArrow(ctx, xs[1], ys[1], xs[2], ys[2], '#c2410c', 2.2, seg1);
+
+    drawHalo(ctx, xs[0], ys[0], 14, 'rgba(37,99,235,0.16)', seg0 > 0 ? 0.9 : 0.35);
+    drawHalo(ctx, xs[1], ys[1], 14, 'rgba(251,146,60,0.15)', seg1);
+    drawHalo(ctx, xs[2], ys[2], 14, 'rgba(16,185,129,0.15)', seg2);
+
+    drawNode(ctx, xs[0], ys[0], 6, '#1d4ed8', '#ffffff', 1);
+    drawNode(ctx, xs[1], ys[1], 6, '#c2410c', '#ffffff', seg1 > 0.1 ? 1 : 0.5);
+    drawNode(ctx, xs[2], ys[2], 6, '#059669', '#ffffff', seg2 > 0.1 ? 1 : 0.35);
+    drawNode(ctx, sX, ys[1] - 20, 5.4, '#94a3b8', '#ffffff', 0.8);
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('p', xs[0] + 10, ys[0] - 8);
+    ctx.fillText('q', xs[1] + 10, ys[1] - 8);
+    ctx.fillText('r', xs[2] + 10, ys[2] - 8);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText('event chain', xs[1] - 22, 44);
+    ctx.fillText('later event not yet reached', sX - 48, ys[1] - 34);
+    drawTextBox(ctx, 40, 56, 230, ['Ordinary temporal intuition:', 'p happens, then q, then r.', 'The story is event → event → event.'], '#ffffff', '#cbd5e1');
+  }
+
+  function ordinaryStep2(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const originX = w * 0.34;
+    const originY = h * 0.65;
+    const neighborhoodR = 24 + 6 * pulse(time, 0.003, 0.2, 1.0);
+    const span = Math.min(w, h) * 0.3;
+
+    drawArrow(ctx, 36, originY + 90, w - 30, originY + 90, '#475569', 2, 1);
+    drawArrow(ctx, originX, h - 30, originX, 38, '#475569', 2, 1);
+
+    ctx.strokeStyle = '#0f172a';
+    ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    ctx.moveTo(originX, originY);
+    ctx.lineTo(originX - span, originY - span);
+    ctx.moveTo(originX, originY);
+    ctx.lineTo(originX + span, originY - span);
+    ctx.stroke();
+
+    drawHalo(ctx, originX, originY, neighborhoodR, 'rgba(37,99,235,0.12)', 1);
+    ctx.beginPath();
+    ctx.arc(originX, originY, neighborhoodR * 0.7, 0, Math.PI * 2);
+    ctx.strokeStyle = '#2563eb';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    drawNode(ctx, originX, originY, 6.5, '#dc2626', '#ffffff', 1);
+
+    const qX = originX + span * 0.55;
+    const qY = originY - span * 0.55;
+    drawHalo(ctx, qX, qY, 14, 'rgba(251,146,60,0.15)', pulse(time, 0.0034, 0.2, 0.9));
+    drawNode(ctx, qX, qY, 5.5, '#c2410c', '#ffffff', 1);
+
+    const farX = originX + span * 1.08;
+    const farY = originY - span * 0.1;
+    drawNode(ctx, farX, farY, 5.5, '#94a3b8', '#ffffff', 0.8);
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('local neighborhood', originX - 42, originY + 46);
+    ctx.fillText('p', originX + 10, originY - 10);
+    ctx.fillStyle = '#475569';
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('ordinary local picture:', 46, 44);
+    ctx.fillText('a small neighborhood around p drives the story', 46, 60);
+    ctx.fillText('inside the cone', qX + 10, qY + 4);
+    ctx.fillText('outside the local causal story', farX - 38, farY - 12);
+  }
+
+  function ordinaryStep3(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const y = h * 0.62;
+    const leftX = w * 0.28;
+    const rightX = w * 0.7;
+
+    drawArrow(ctx, 38, y + 78, w - 34, y + 78, '#475569', 2, 1);
+    drawArrow(ctx, w * 0.5, h - 34, w * 0.5, 42, '#475569', 2, 1);
+
+    drawHalo(ctx, leftX, y, 16, 'rgba(37,99,235,0.15)', pulse(time, 0.0026, 0.25, 0.85));
+    drawHalo(ctx, rightX, y - 24, 16, 'rgba(251,146,60,0.16)', pulse(time + 900, 0.0026, 0.25, 0.85));
+    drawNode(ctx, leftX, y, 6.5, '#2563eb', '#ffffff', 1);
+    drawNode(ctx, rightX, y - 24, 6.5, '#c2410c', '#ffffff', 1);
+    drawArrow(ctx, leftX + 10, y - 8, rightX - 10, y - 28, '#94a3b8', 1.8, 0.75 + 0.2 * Math.sin(time * 0.0025));
+    drawArrow(ctx, rightX - 8, y - 16, leftX + 14, y + 4, '#94a3b8', 1.8, 0.75 + 0.2 * Math.sin(time * 0.0025 + 1.5));
+
+    drawTextBox(ctx, 46, 40, 250, ['Ordinary order picture:', 'we can talk about which event comes first,', 'but this is not yet an exchange defect of', 'whole-surface transition objects.'], '#ffffff', '#cbd5e1');
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('event near R', leftX - 22, y + 34);
+    ctx.fillText('event near S', rightX - 18, y - 42);
+  }
+
+  function ordinaryStep4(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const baseY = h * 0.63;
+    const siteCount = 12;
+    const startX = 54;
+    const endX = w - 54;
+    const spacing = (endX - startX) / (siteCount - 1);
+    const supportA = [3, 5];
+    const supportB = [8, 10];
+
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    for (let i = 0; i < siteCount - 1; i++) {
+      ctx.beginPath();
+      ctx.moveTo(startX + i * spacing, baseY);
+      ctx.lineTo(startX + (i + 1) * spacing, baseY);
+      ctx.stroke();
+    }
+
+    const leftBoxX = startX + supportA[0] * spacing - 20;
+    const rightBoxX = startX + supportB[0] * spacing - 20;
+    const boxW = (supportA[1] - supportA[0]) * spacing + 40;
+    ctx.save();
+    ctx.globalAlpha = pulse(time, 0.0022, 0.35, 0.7);
+    roundRect(ctx, leftBoxX, baseY - 42, boxW, 52, 12, 'rgba(251,146,60,0.18)', '#f59e0b');
+    roundRect(ctx, rightBoxX, baseY - 42, boxW, 52, 12, 'rgba(251,146,60,0.18)', '#f59e0b');
+    ctx.restore();
+
+    for (let i = 0; i < siteCount; i++) {
+      const inSupport = (i >= supportA[0] && i <= supportA[1]) || (i >= supportB[0] && i <= supportB[1]);
+      drawNode(ctx, startX + i * spacing, baseY, 5.4, inSupport ? '#2563eb' : '#1f2937', '#ffffff', 1);
+    }
+
+    ctx.strokeStyle = '#dc2626';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(leftBoxX + boxW - 8, baseY - 40);
+    ctx.lineTo(rightBoxX + 8, baseY + 18);
+    ctx.moveTo(rightBoxX + 8, baseY - 40);
+    ctx.lineTo(leftBoxX + boxW - 8, baseY + 18);
+    ctx.stroke();
+
+    drawTextBox(ctx, 44, 36, 255, ['Crude ordinary support picture:', 'highlight the whole volumes R and S.', 'This is still too blob-like for the', 'sharpened free-model ISP story.'], '#ffffff', '#cbd5e1');
+    ctx.fillStyle = '#475569';
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('support volume R', leftBoxX + 8, baseY - 50);
+    ctx.fillText('support volume S', rightBoxX + 8, baseY - 50);
+  }
+
+  function baseSurfaceFn(mid, baseY, curve) {
+    return function (x) {
+      const z = (x - mid) / 210;
+      return baseY + curve * z * z * 110;
+    };
+  }
+
+  function ispStep0(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const x0 = 46;
+    const x1 = w - 46;
+    const mid = (x0 + x1) / 2;
+    const lower = baseSurfaceFn(mid, h * 0.7, 0.12);
+    const upper = baseSurfaceFn(mid, h * 0.28, 0.12);
+    fillBetweenSurfaces(ctx, lower, upper, x0, x1, 'rgba(251,146,60,0.14)', 1);
+    drawSurfaceLine(ctx, lower, x0, x1, '#2563eb', 3);
+    drawSurfaceLine(ctx, upper, x0, x1, '#c2410c', 3.2);
+
+    const xs = [x0 + 26, x0 + 110, mid, x1 - 110, x1 - 26];
+    xs.forEach((x, index) => {
+      drawNode(ctx, x, lower(x), 5.4, '#1d4ed8', '#ffffff', 1);
+      drawNode(ctx, x, upper(x), 5.4, '#1d4ed8', '#ffffff', 1);
+      const offset = (time * 0.00013 + index * 0.18) % 1;
+      const py = lerp(lower(x), upper(x), offset);
+      drawHalo(ctx, x, py, 11, 'rgba(251,146,60,0.14)', 0.9);
+      drawNode(ctx, x, py, 4.1, '#c2410c', '#ffffff', 0.95);
+    });
+
+    drawTextBox(ctx, 118, 154, 210, ['Primitive Γ-level object:', 'whole-surface kernel', 'Γ[Σ₁ ← Σ₀]'], '#ffffff', '#cbd5e1');
+    drawTextBox(ctx, w - 212, 30, 160, ['Not one event.', 'Two hypersurfaces', 'plus the exact slab.'], '#ffffff', '#cbd5e1');
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('Σ₀', 20, lower(x0) + 5);
+    ctx.fillText('Σ₁', 20, upper(x0) + 5);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText('configuration space on Σ₀', x0 + 12, lower(x0) + 28);
+    ctx.fillText('configuration space on Σ₁', x0 + 12, upper(x0) - 12);
+  }
+
+  function ispStep1(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const x0 = 44;
+    const x1 = w - 44;
+    const mid = (x0 + x1) / 2;
+    const lower = baseSurfaceFn(mid, h * 0.73, 0.1);
+    const middle = baseSurfaceFn(mid, h * 0.5, 0.1);
+    const upper = baseSurfaceFn(mid, h * 0.27, 0.1);
+    fillBetweenSurfaces(ctx, lower, upper, x0, x1, 'rgba(251,146,60,0.12)', 1);
+    drawSurfaceLine(ctx, lower, x0, x1, '#2563eb', 3);
+    drawSurfaceLine(ctx, upper, x0, x1, '#c2410c', 3.2);
+    drawSurfaceLine(ctx, middle, x0, x1, '#64748b', 2, [7, 6]);
+
+    const xs = [x0 + 30, x0 + 120, mid + 10, x1 - 112];
+    xs.forEach((x, index) => {
+      const offset = (time * 0.00011 + index * 0.2) % 1;
+      const py = lerp(lower(x), upper(x), offset);
+      drawNode(ctx, x, py, 4, '#c2410c', '#ffffff', 0.95);
+    });
+
+    const warn = smoothstep(0.35, 0.8, progress);
+    drawTextBox(ctx, w - 214, 38, 170, ['Attempted split at Σ′', 'may fail to remain', 'stochastic'], '#ffffff', '#cbd5e1');
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('Σ₀', 20, lower(x0) + 5);
+    ctx.fillText('Σ′', 20, middle(x0) + 5);
+    ctx.fillText('Σ₁', 20, upper(x0) + 5);
+
+    const barX = w - 190;
+    const barBase = h - 78;
+    ctx.fillStyle = '#475569';
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('attempted intermediate map', barX - 10, barBase - 56);
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(barX, barBase);
+    ctx.lineTo(barX + 132, barBase);
+    ctx.stroke();
+    const heights = [26, -34 * warn, 20, 29];
+    heights.forEach((height, index) => {
+      const x = barX + 14 + index * 28;
+      ctx.fillStyle = height >= 0 ? '#60a5fa' : '#dc2626';
+      ctx.fillRect(x, barBase - Math.max(0, height), 16, Math.abs(height));
+    });
+
+    drawTextBox(ctx, 54, 38, 220, ['Temporal indivisibility:', 'the whole slab is primary.', 'A cut through Σ′ may not give an', 'honest stochastic intermediate factor.'], '#ffffff', '#cbd5e1');
+  }
+
+  function ispStep2(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const x0 = 48;
+    const x1 = w - 48;
+    const mid = (x0 + x1) / 2;
+    const base = baseSurfaceFn(mid, h * 0.74, 0.09);
+    const ref = baseSurfaceFn(mid, h * 0.45, 0.07);
+    const supportCenter = mid;
+    const supportWidth = 84;
+    const bumpHeight = 34 * smoothstep(0.08, 0.7, progress) * pulse(time, 0.0018, 0.85, 1.0);
+    const deformed = function (x) {
+      return ref(x) - bumpHeight * gaussian(x, supportCenter, supportWidth);
+    };
+
+    drawSurfaceLine(ctx, base, x0, x1, '#2563eb', 3);
+    drawSurfaceLine(ctx, ref, x0, x1, '#64748b', 2, [7, 6]);
+    drawSurfaceLine(ctx, deformed, x0, x1, '#c2410c', 3.2);
+
+    fillBetweenSurfaces(
+      ctx,
+      function (x) { return ref(x); },
+      function (x) { return deformed(x); },
+      supportCenter - supportWidth * 1.7,
+      supportCenter + supportWidth * 1.7,
+      'rgba(251,146,60,0.18)',
+      1
+    );
+
+    ctx.strokeStyle = '#c2410c';
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(supportCenter - supportWidth * 0.82, base(supportCenter - supportWidth * 0.82));
+    ctx.lineTo(supportCenter + supportWidth * 0.82, base(supportCenter + supportWidth * 0.82));
+    ctx.stroke();
+
+    drawTextBox(ctx, w - 220, 42, 180, ['Localized support region R', 'changes only a bounded', 'portion of the slab.'], '#ffffff', '#cbd5e1');
+    drawTextBox(ctx, 64, 40, 216, ['Localized comparison map:', 'J_R(Δ) = Γ_R(Δ) Γ₀(Δ)^-1', 'The whole reference slab stays in view.'], '#ffffff', '#cbd5e1');
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('Σ', 22, base(x0) + 5);
+    ctx.fillText('Σ₀^Δ', 12, ref(x0) + 5);
+    ctx.fillText('Σ_R^Δ', 12, deformed(x0) - 10);
+    ctx.fillText('R', supportCenter - 4, base(supportCenter) - 12);
+  }
+
+  function drawOrderMiniPanel(ctx, x, y, w, h, order, phase, defect) {
+    roundRect(ctx, x, y, w, h, 14, '#ffffff', '#dbe5f5');
+    const pad = 16;
+    const left = x + pad;
+    const right = x + w - pad;
+    const center = x + w / 2;
+    const supportWidth = w * 0.12;
+    const leftSupport = x + w * 0.28;
+    const rightSupport = x + w * 0.72;
+    const baseY = y + h * 0.73;
+    const curve = function (xx) {
+      const z = (xx - center) / (w * 0.42);
+      return baseY + 7 * z * z;
+    };
+
+    const first = order === 'RS' ? 'R' : 'S';
+    const second = order === 'RS' ? 'S' : 'R';
+    const firstLevel = smoothstep(0.02, 0.42, phase);
+    const secondLevel = smoothstep(0.48, 0.88, phase);
+    const finalLevelR = order === 'RS' ? firstLevel : secondLevel;
+    const finalLevelS = order === 'RS' ? secondLevel : firstLevel;
+    const defectAmp = defect * smoothstep(0.72, 0.96, phase) * (order === 'RS' ? -1 : 1) * 10;
+    const current = function (xx) {
+      return curve(xx)
+        - 23 * finalLevelR * gaussian(xx, leftSupport, supportWidth)
+        - 23 * finalLevelS * gaussian(xx, rightSupport, supportWidth)
+        + defectAmp * gaussian(xx, (leftSupport + rightSupport) / 2, supportWidth * 0.9);
+    };
+
+    drawSurfaceLine(ctx, curve, left, right, '#64748b', 2, [7, 6]);
+    drawSurfaceLine(ctx, current, left, right, '#c2410c', 3);
+
+    ctx.strokeStyle = '#c2410c';
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(leftSupport - supportWidth * 0.6, curve(leftSupport - supportWidth * 0.6));
+    ctx.lineTo(leftSupport + supportWidth * 0.6, curve(leftSupport + supportWidth * 0.6));
+    ctx.moveTo(rightSupport - supportWidth * 0.6, curve(rightSupport - supportWidth * 0.6));
+    ctx.lineTo(rightSupport + supportWidth * 0.6, curve(rightSupport + supportWidth * 0.6));
+    ctx.stroke();
+
+    const firstX = first === 'R' ? leftSupport : rightSupport;
+    const secondX = second === 'R' ? leftSupport : rightSupport;
+    drawHalo(ctx, firstX, curve(firstX) - 30, 13, 'rgba(37,99,235,0.15)', 0.8);
+    drawHalo(ctx, secondX, curve(secondX) - 30, 13, 'rgba(251,146,60,0.15)', 0.4 + 0.6 * secondLevel);
+    drawNode(ctx, firstX, curve(firstX) - 30, 6, '#2563eb', '#ffffff', 1);
+    drawNode(ctx, secondX, curve(secondX) - 30, 6, '#c2410c', '#ffffff', 0.55 + 0.45 * secondLevel);
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText(first, firstX - 4, curve(firstX) - 46);
+    ctx.fillText(second, secondX - 4, curve(secondX) - 46);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText(order === 'RS' ? 'R then S' : 'S then R', x + 14, y + 22);
+
+    if (smoothstep(0.72, 0.94, phase) > 0.05) {
+      const stripX = (leftSupport + rightSupport) / 2 - 12;
+      const stripY = current((leftSupport + rightSupport) / 2) - 16;
+      roundRect(ctx, stripX, stripY, 24, 34, 6, 'rgba(239,68,68,0.15)', '#ef4444');
+    }
+  }
+
+  function ispStep3(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const panelW = (w - 88) / 2;
+    const panelH = h * 0.46;
+    const panelY = 82;
+    drawOrderMiniPanel(ctx, 30, panelY, panelW, panelH, 'RS', progress, 0.55);
+    drawOrderMiniPanel(ctx, 58 + panelW, panelY, panelW, panelH, 'SR', progress, 0.55);
+
+    drawTextBox(ctx, w / 2 - 116, 30, 232, ['Decisive comparison:', 'compare R then S with S then R.', 'The mismatch is the exchange defect', 'E_R,S(Δ).'], '#ffffff', '#cbd5e1');
+
+    const compareX = w / 2 - 110;
+    const compareY = panelY + panelH + 22;
+    roundRect(ctx, compareX, compareY, 220, 58, 12, '#fff5f5', '#fecaca');
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 13px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('Compare final surfaces', compareX + 48, compareY + 20);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText('The red strip marks where order leaves a localized defect.', compareX + 20, compareY + 39);
+    roundRect(ctx, compareX + 16, compareY + 14, 16, 28, 6, 'rgba(239,68,68,0.18)', '#ef4444');
+  }
+
+  function ispStep4(ctx, w, h, progress, time) {
+    clearCanvas(ctx, w, h);
+    const baseY = h * 0.62;
+    const siteCount = 14;
+    const startX = 48;
+    const endX = w - 48;
+    const spacing = (endX - startX) / (siteCount - 1);
+    const leftSupport = [3, 5];
+    const rightSupport = [8, 10];
+    const volumeAlpha = 1 - smoothstep(0.15, 0.92, progress);
+    const boundaryAlpha = smoothstep(0.18, 0.95, progress);
+
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    for (let i = 0; i < siteCount - 1; i++) {
+      ctx.beginPath();
+      ctx.moveTo(startX + i * spacing, baseY);
+      ctx.lineTo(startX + (i + 1) * spacing, baseY);
+      ctx.stroke();
+    }
+
+    const leftBoxX = startX + leftSupport[0] * spacing - 18;
+    const rightBoxX = startX + rightSupport[0] * spacing - 18;
+    const boxW = (leftSupport[1] - leftSupport[0]) * spacing + 36;
+    ctx.save();
+    ctx.globalAlpha = 0.8 * volumeAlpha;
+    roundRect(ctx, leftBoxX, baseY - 44, boxW, 54, 12, 'rgba(251,146,60,0.18)', '#f59e0b');
+    roundRect(ctx, rightBoxX, baseY - 44, boxW, 54, 12, 'rgba(251,146,60,0.18)', '#f59e0b');
+    ctx.restore();
+
+    for (let i = 0; i < siteCount; i++) {
+      const inSupport = (i >= leftSupport[0] && i <= leftSupport[1]) || (i >= rightSupport[0] && i <= rightSupport[1]);
+      drawNode(ctx, startX + i * spacing, baseY, 5.4, inSupport ? '#2563eb' : '#1f2937', '#ffffff', 1);
+    }
+
+    const hotBonds = [leftSupport[1], rightSupport[0] - 1];
+    const exchangeBonds = [leftSupport[1] + 1, rightSupport[0] - 2];
+
+    ctx.save();
+    ctx.globalAlpha = boundaryAlpha * pulse(time, 0.0028, 0.55, 1);
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 8;
+    ctx.lineCap = 'round';
+    hotBonds.forEach((bondIndex) => {
+      ctx.beginPath();
+      ctx.moveTo(startX + bondIndex * spacing, baseY);
+      ctx.lineTo(startX + (bondIndex + 1) * spacing, baseY);
+      ctx.stroke();
+    });
+    ctx.restore();
+
+    ctx.save();
+    ctx.globalAlpha = boundaryAlpha * pulse(time + 900, 0.0024, 0.35, 0.9);
+    ctx.strokeStyle = '#dc2626';
+    ctx.lineWidth = 8;
+    exchangeBonds.forEach((bondIndex) => {
+      ctx.beginPath();
+      ctx.moveTo(startX + bondIndex * spacing, baseY);
+      ctx.lineTo(startX + (bondIndex + 1) * spacing, baseY);
+      ctx.stroke();
+    });
+    ctx.restore();
+
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(startX + leftSupport[1] * spacing + 4, baseY - 22);
+    ctx.quadraticCurveTo(startX + (leftSupport[1] + 1) * spacing, baseY - 42, startX + (leftSupport[1] + 1.5) * spacing, baseY - 42);
+    ctx.moveTo(startX + (rightSupport[0] - 1) * spacing, baseY - 22);
+    ctx.quadraticCurveTo(startX + (rightSupport[0] - 1.4) * spacing, baseY - 42, startX + (rightSupport[0] - 2.1) * spacing, baseY - 42);
+    ctx.stroke();
+
+    drawTextBox(ctx, 48, 34, 250, ['Free-model sharpened picture:', 'support volumes fade, inner boundaries remain,', 'and the first nontrivial exchange data', 'live on bonds / strip channels near the gap.'], '#ffffff', '#cbd5e1');
+    drawTextBox(ctx, w - 230, 36, 176, ['Boundary packets', 'and bond-centered', 'leading data'], '#ffffff', '#cbd5e1');
+  }
+
+  function drawOrdinary(ctx, w, h, index, progress, time) {
+    switch (index) {
+      case 0: ordinaryStep0(ctx, w, h, progress, time); break;
+      case 1: ordinaryStep1(ctx, w, h, progress, time); break;
+      case 2: ordinaryStep2(ctx, w, h, progress, time); break;
+      case 3: ordinaryStep3(ctx, w, h, progress, time); break;
+      default: ordinaryStep4(ctx, w, h, progress, time); break;
+    }
+  }
+
+  function drawISP(ctx, w, h, index, progress, time) {
+    switch (index) {
+      case 0: ispStep0(ctx, w, h, progress, time); break;
+      case 1: ispStep1(ctx, w, h, progress, time); break;
+      case 2: ispStep2(ctx, w, h, progress, time); break;
+      case 3: ispStep3(ctx, w, h, progress, time); break;
+      default: ispStep4(ctx, w, h, progress, time); break;
+    }
+  }
+
+  function drawExplorerTrack(ctx, x, y, w, h, order, phase, defect, supportGap) {
+    roundRect(ctx, x, y, w, h, 16, '#ffffff', '#dbe5f5');
+    const pad = 18;
+    const left = x + pad;
+    const right = x + w - pad;
+    const supportWidth = Math.min(62, w * 0.12);
+    const leftCenter = x + w * 0.24;
+    const rightCenter = x + w * 0.24 + supportGap + supportWidth * 1.3;
+    const safeRightCenter = Math.min(rightCenter, x + w * 0.76);
+    const center = (left + right) / 2;
+    const baseY = y + h * 0.72;
+    const base = function (xx) {
+      const z = (xx - center) / (w * 0.44);
+      return baseY + 7 * z * z;
+    };
+
+    const firstLevel = smoothstep(0.04, 0.42, phase);
+    const secondLevel = smoothstep(0.5, 0.9, phase);
+    const rLevel = order === 'RS' ? firstLevel : secondLevel;
+    const sLevel = order === 'RS' ? secondLevel : firstLevel;
+    const defectAmp = defect * smoothstep(0.72, 0.98, phase) * (order === 'RS' ? -1 : 1) * 12;
+    const current = function (xx) {
+      return base(xx)
+        - 24 * rLevel * gaussian(xx, leftCenter, supportWidth)
+        - 24 * sLevel * gaussian(xx, safeRightCenter, supportWidth)
+        + defectAmp * gaussian(xx, (leftCenter + safeRightCenter) / 2, supportWidth * 0.9);
+    };
+
+    drawSurfaceLine(ctx, base, left, right, '#64748b', 2, [8, 6]);
+    drawSurfaceLine(ctx, current, left, right, '#c2410c', 3.2);
+
+    ctx.strokeStyle = '#c2410c';
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(leftCenter - supportWidth * 0.7, base(leftCenter - supportWidth * 0.7));
+    ctx.lineTo(leftCenter + supportWidth * 0.7, base(leftCenter + supportWidth * 0.7));
+    ctx.moveTo(safeRightCenter - supportWidth * 0.7, base(safeRightCenter - supportWidth * 0.7));
+    ctx.lineTo(safeRightCenter + supportWidth * 0.7, base(safeRightCenter + supportWidth * 0.7));
+    ctx.stroke();
+
+    const firstX = order === 'RS' ? leftCenter : safeRightCenter;
+    const secondX = order === 'RS' ? safeRightCenter : leftCenter;
+    drawHalo(ctx, firstX, base(firstX) - 30, 12, 'rgba(37,99,235,0.15)', 0.9);
+    drawNode(ctx, firstX, base(firstX) - 30, 6, '#2563eb', '#ffffff', 1);
+    drawHalo(ctx, secondX, base(secondX) - 30, 12, 'rgba(251,146,60,0.15)', 0.25 + 0.75 * secondLevel);
+    drawNode(ctx, secondX, base(secondX) - 30, 6, '#c2410c', '#ffffff', 0.45 + 0.55 * secondLevel);
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText(order === 'RS' ? 'R' : 'S', firstX - 4, base(firstX) - 45);
+    ctx.fillText(order === 'RS' ? 'S' : 'R', secondX - 4, base(secondX) - 45);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText(order === 'RS' ? 'R then S' : 'S then R', x + 16, y + 22);
+    ctx.fillText('support gap', (leftCenter + safeRightCenter) / 2 - 22, y + h - 10);
+  }
+
+  function drawExplorerComparison(ctx, x, y, w, h, defect, supportGap, phase) {
+    roundRect(ctx, x, y, w, h, 14, '#fff5f5', '#fecaca');
+    const pad = 18;
+    const left = x + pad;
+    const right = x + w - pad;
+    const center = (left + right) / 2;
+    const supportWidth = Math.min(62, w * 0.08);
+    const leftCenter = x + w * 0.27;
+    const rightCenter = Math.min(x + w * 0.27 + supportGap * 0.75 + supportWidth, x + w * 0.73);
+    const baseY = y + h * 0.64;
+    const base = function (xx) {
+      const z = (xx - center) / (w * 0.44);
+      return baseY + 5 * z * z;
+    };
+    const amp = defect * smoothstep(0.7, 0.96, phase) * 10;
+    const rs = function (xx) {
+      return base(xx) - amp * gaussian(xx, (leftCenter + rightCenter) / 2, supportWidth * 1.0);
+    };
+    const sr = function (xx) {
+      return base(xx) + amp * gaussian(xx, (leftCenter + rightCenter) / 2, supportWidth * 1.0);
+    };
+
+    fillBetweenSurfaces(ctx, rs, sr, left, right, 'rgba(239,68,68,0.14)', 1);
+    drawSurfaceLine(ctx, rs, left, right, '#dc2626', 2.4);
+    drawSurfaceLine(ctx, sr, left, right, '#2563eb', 2.4);
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('Final comparison', x + 16, y + 22);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText('The red fill is the visible exchange defect E_R,S(Δ).', x + 16, y + 40);
+  }
+
+  function drawExplorerLattice(ctx, x, y, w, h, separation, emphasis, defect, time) {
+    roundRect(ctx, x, y, w, h, 14, '#fcfdff', '#dbe5f5');
+    const startX = x + 24;
+    const endX = x + w - 24;
+    const baseY = y + h * 0.62;
+    const siteCount = 18;
+    const spacing = (endX - startX) / (siteCount - 1);
+    const leftSupportStart = 4;
+    const supportLen = 3;
+    const gapSites = separation + 1;
+    const rightSupportStart = leftSupportStart + supportLen + gapSites;
+
+    const volAlpha = emphasis === 'volume' ? 0.75 : 0.24;
+    const bondAlpha = emphasis === 'boundary' ? 0.92 : 0.38;
+
+    ctx.save();
+    ctx.globalAlpha = volAlpha;
+    roundRect(ctx, startX + leftSupportStart * spacing - 18, baseY - 44, spacing * supportLen + 36, 54, 12, 'rgba(251,146,60,0.18)', '#f59e0b');
+    roundRect(ctx, startX + rightSupportStart * spacing - 18, baseY - 44, spacing * supportLen + 36, 54, 12, 'rgba(251,146,60,0.18)', '#f59e0b');
+    ctx.restore();
+
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    for (let i = 0; i < siteCount - 1; i++) {
+      ctx.beginPath();
+      ctx.moveTo(startX + i * spacing, baseY);
+      ctx.lineTo(startX + (i + 1) * spacing, baseY);
+      ctx.stroke();
+    }
+
+    const hotBonds = [leftSupportStart + supportLen - 1, rightSupportStart - 1];
+    const exchangeStart = hotBonds[0] + 1;
+    const exchangeEnd = hotBonds[1] - 1;
+
+    ctx.save();
+    ctx.globalAlpha = bondAlpha * pulse(time, 0.0024, 0.55, 1.0);
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 8;
+    hotBonds.forEach((bondIndex) => {
+      ctx.beginPath();
+      ctx.moveTo(startX + bondIndex * spacing, baseY);
+      ctx.lineTo(startX + (bondIndex + 1) * spacing, baseY);
+      ctx.stroke();
+    });
+    ctx.restore();
+
+    ctx.save();
+    ctx.globalAlpha = defect * bondAlpha * pulse(time + 900, 0.0023, 0.35, 0.95);
+    ctx.strokeStyle = '#dc2626';
+    ctx.lineWidth = 8;
+    for (let i = exchangeStart; i <= exchangeEnd; i++) {
+      ctx.beginPath();
+      ctx.moveTo(startX + i * spacing, baseY);
+      ctx.lineTo(startX + (i + 1) * spacing, baseY);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    for (let i = 0; i < siteCount; i++) {
+      const inSupport = (i >= leftSupportStart && i <= leftSupportStart + supportLen) || (i >= rightSupportStart && i <= rightSupportStart + supportLen);
+      drawNode(ctx, startX + i * spacing, baseY, 5.3, inSupport ? '#2563eb' : '#1f2937', '#ffffff', 1);
+    }
+
+    ctx.fillStyle = '#1f2937';
+    ctx.font = 'bold 12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillText('Where the leading data live', x + 16, y + 20);
+    ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText(emphasis === 'boundary' ? 'Boundary-first view: inner boundaries and bonds stay bright.' : 'Volume-first view: the whole supports stay emphasized.', x + 16, y + 38);
+  }
+
+  function drawExplorer(ctx, w, h, state, time) {
+    clearCanvas(ctx, w, h);
+    const topH = h * 0.47;
+    const compareH = 82;
+    const latticeH = h - topH - compareH - 54;
+    const gapPixels = lerp(w * 0.08, w * 0.22, (state.separation - 1) / 5);
+
+    if (state.orderMode === 'compare') {
+      const panelW = (w - 74) / 2;
+      drawExplorerTrack(ctx, 22, 24, panelW, topH, 'RS', state.phase, state.defect, gapPixels * 0.64);
+      drawExplorerTrack(ctx, 52 + panelW, 24, panelW, topH, 'SR', state.phase, state.defect, gapPixels * 0.64);
+      drawExplorerComparison(ctx, 60, 28 + topH, w - 120, compareH - 8, state.defect, gapPixels * 0.64, state.phase);
+    } else {
+      drawExplorerTrack(ctx, 70, 24, w - 140, topH + 8, state.orderMode.toUpperCase(), state.phase, state.defect, gapPixels * 0.76);
+      roundRect(ctx, 110, 38 + topH, w - 220, compareH - 8, 14, '#f8fafc', '#dbe5f5');
+      ctx.fillStyle = '#1f2937';
+      ctx.font = 'bold 12px Helvetica Neue, Arial, sans-serif';
+      ctx.fillText('Single-order view', 126, 58 + topH);
+      ctx.font = '12px Helvetica Neue, Arial, sans-serif';
+      ctx.fillStyle = '#475569';
+      ctx.fillText('Switch to “Compare both orders” to see E_R,S(Δ) as a direct mismatch between the two final surfaces.', 126, 78 + topH);
+    }
+
+    drawExplorerLattice(ctx, 24, h - latticeH - 20, w - 48, latticeH, state.separation, state.emphasis, state.defect, time);
+  }
+
+  function updateGuideUI() {
+    const step = steps[guideState.index];
+    stepTitle.textContent = step.label;
+    stepReplace.textContent = step.replace;
+    watchText.textContent = step.watch;
+    ordinaryNote.innerHTML = step.ordinaryNote;
+    ispNote.innerHTML = step.ispNote;
+
+    Array.from(stepButtonsContainer.querySelectorAll('button')).forEach((button, index) => {
+      button.classList.toggle('active', index === guideState.index);
+    });
+  }
+
+  function updateExplorerUI() {
+    separationValue.textContent = 'ℓ = ' + explorerState.separation;
+    defectValue.textContent = explorerState.defect.toFixed(2);
+    explorerStatus.textContent = 'Current explorer state: separation ℓ = ' + explorerState.separation + ', order mode = ' + (explorerState.orderMode === 'compare' ? 'compare R→S and S→R' : explorerState.orderMode === 'rs' ? 'show only R→S' : 'show only S→R') + ', emphasis = ' + (explorerState.emphasis === 'boundary' ? 'gap-facing boundaries and bonds' : 'whole support volumes') + '.';
+
+    Array.from(orderButtonsContainer.querySelectorAll('button')).forEach((button) => {
+      button.classList.toggle('active', button.dataset.mode === explorerState.orderMode);
+    });
+    Array.from(emphasisButtonsContainer.querySelectorAll('button')).forEach((button) => {
+      button.classList.toggle('active', button.dataset.mode === explorerState.emphasis);
+    });
+  }
+
+  function buildButtons() {
+    steps.forEach((step, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'step-button';
+      button.textContent = step.label;
+      button.addEventListener('click', () => {
+        guideState.index = index;
+        guideState.elapsed = 0;
+        updateGuideUI();
+      });
+      stepButtonsContainer.appendChild(button);
+    });
+
+    orderModes.forEach((mode) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'pill-button';
+      button.textContent = mode.label;
+      button.dataset.mode = mode.id;
+      button.addEventListener('click', () => {
+        explorerState.orderMode = mode.id;
+        updateExplorerUI();
+      });
+      orderButtonsContainer.appendChild(button);
+    });
+
+    emphasisModes.forEach((mode) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'pill-button';
+      button.textContent = mode.label;
+      button.dataset.mode = mode.id;
+      button.addEventListener('click', () => {
+        explorerState.emphasis = mode.id;
+        updateExplorerUI();
+      });
+      emphasisButtonsContainer.appendChild(button);
+    });
+  }
+
+  function resizeAll() {
+    resizeCanvas(ordinaryCanvas, ordinaryCtx);
+    resizeCanvas(ispCanvas, ispCtx);
+    resizeCanvas(explorerCanvas, explorerCtx);
+  }
+
+  guidePlayButton.addEventListener('click', () => {
+    guideState.playing = !guideState.playing;
+    guidePlayButton.textContent = guideState.playing ? 'Pause tour' : 'Play tour';
+    guideStatus.textContent = guideState.playing ? 'Auto-playing.' : 'Paused on current step.';
+  });
+
+  guideRestartButton.addEventListener('click', () => {
+    guideState.elapsed = 0;
+  });
+
+  explorerPlayButton.addEventListener('click', () => {
+    explorerState.playing = !explorerState.playing;
+    explorerPlayButton.textContent = explorerState.playing ? 'Pause animation' : 'Play animation';
+    explorerPlayStatus.textContent = explorerState.playing ? 'Explorer running.' : 'Explorer paused.';
+  });
+
+  separationRange.addEventListener('input', () => {
+    explorerState.separation = Number(separationRange.value);
+    updateExplorerUI();
+  });
+
+  defectRange.addEventListener('input', () => {
+    explorerState.defect = Number(defectRange.value) / 100;
+    updateExplorerUI();
+  });
+
+  let lastTime = performance.now();
+  function loop(now) {
+    const dt = now - lastTime;
+    lastTime = now;
+
+    if (guideState.playing && !reducedMotion) {
+      guideState.elapsed += dt / 1000;
+      if (guideState.elapsed >= guideState.duration) {
+        guideState.elapsed = 0;
+        guideState.index = (guideState.index + 1) % steps.length;
+        updateGuideUI();
+      }
+    }
+
+    if (explorerState.playing && !reducedMotion) {
+      explorerState.phase = (explorerState.phase + dt / 4300) % 1;
+    }
+
+    const ordinaryMetrics = resizeCanvas(ordinaryCanvas, ordinaryCtx);
+    const ispMetrics = resizeCanvas(ispCanvas, ispCtx);
+    const explorerMetrics = resizeCanvas(explorerCanvas, explorerCtx);
+
+    const guideProgressValue = clamp(guideState.elapsed / guideState.duration, 0, 1);
+    guideProgress.style.width = (guideProgressValue * 100).toFixed(1) + '%';
+
+    drawOrdinary(ordinaryCtx, ordinaryMetrics.width, ordinaryMetrics.height, guideState.index, guideProgressValue, now);
+    drawISP(ispCtx, ispMetrics.width, ispMetrics.height, guideState.index, guideProgressValue, now);
+    drawExplorer(explorerCtx, explorerMetrics.width, explorerMetrics.height, explorerState, now);
+
+    requestAnimationFrame(loop);
+  }
+
+  buildButtons();
+  updateGuideUI();
+  updateExplorerUI();
+  resizeAll();
+  if (reducedMotion) {
+    guidePlayButton.textContent = 'Play tour';
+    guideStatus.textContent = 'Reduced motion detected; tour starts paused.';
+    explorerPlayButton.textContent = 'Play animation';
+    explorerPlayStatus.textContent = 'Reduced motion detected; explorer starts paused.';
+  }
+  window.addEventListener('resize', resizeAll);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

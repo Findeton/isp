@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relativistic ISP: Theorem-Level Scope, Synthesis, and Limits</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  background: #f8fafc;
+  color: #111827;
+}
+.paper {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 14px;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+  font-size: 0.9em;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #d1d5db;
+  padding: 0.45em 0.6em;
+  vertical-align: top;
+}
+th { background: #f3f4f6; font-weight: bold; }
+tr:nth-child(even) td { background: #f9fafb; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Relativistic ISP: Theorem-Level Scope, Synthesis, and Limits</div>
+<div class="subtitle">A ledger of what the finite-kernel relativistic program has earned, what remains conditional, and what stays outside the present claim</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">May 2026</p>
+<p class="arxiv-note">Paper 17 in the relativistic ISP sequence; optional final synthesis after the finite gauge-matter benchmark arc</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The preceding relativistic ISP papers develop a finite-kernel program from the free one-particle exchange-defect problem through variable particle number, static and dynamical Abelian gauge benchmarks, operational detector/control calculus, induced-net Einstein-causality bridges, boundary-flux-resolved locality, and the first finite interacting gauge-matter benchmarks. This paper adds no new coefficient calculation and no new ontology. Its purpose is to state exactly what the sequence has earned and exactly what it has not earned.</p>
+<p>
+The established theorem-level core is finite and benchmark-relative. Exact primitive kernels, localized comparison maps, and exchange defects have been constructed in the free one-particle model; their leading support-order and first non-leading strip data have been isolated; onset-renormalized universality has been proved at the strongest currently justified scope; the number-preserving finite Fock lift is exact; static lattice $U(1)$ holonomy and finite dynamical Abelian Gauss-sector decompositions have been brought to the $\Gamma$ level; localized controls and detector instruments have exact finite-hypersurface composition and no-signaling theorems; induced finite local nets satisfy Einstein-causality statements under explicit commutation or preserving-subclass hypotheses; and the $Z_2$ and truncated compact-$U(1)$ gauge-matter benchmarks give the first finite interacting reduced Hamiltonians and interaction-sensitive exchange coefficients.</p>
+<p>
+The same ledger also fixes the limits. The present sequence does not prove a full Lorentz-covariant continuum ISP, a Haag-Kastler QFT reconstruction, arbitrary-coupling gauge locality, cutoff- or volume-uniform compact-$U(1)$ control, a non-Abelian theory, a continuum Schwinger-model theorem, a Bell local-causality theorem for arbitrary microscopic couplings, a general interacting exchange-defect theorem, or any gravitational dynamics. The outcome is therefore not a final foundation of relativistic quantum physics. It is a theorem-level finite benchmark program with a sharply identified next burden: turn the supported finite exchange-defect data into regulator-stable continuum hypersurface-deformation structure without losing the distinction between raw comparison maps, operational instruments, and induced observables.</p>
+</div>
+
+<p class="small-note">
+Scope note. This synthesis is a ledger paper. It records the established finite and benchmark-level content of the relativistic ISP sequence, the conditional criteria that remain criteria rather than proofs, the numerical validation layer presently available for the interacting benchmark scripts, and the non-claims that must not be folded into the proved scope. It is not a new gravity proposal, not a continuum QFT construction, not a replacement for the exact phase papers, and not an assertion that all roadmap burdens have been solved beyond the stated fixed finite scopes.
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+The relativistic ISP sequence began with a narrow question. Barandes-style indivisible stochastic processes reconstruct quantum transition probabilities from ordinary stochastic data, but a relativistic version cannot be built merely by choosing a preferred time slicing. The primitive object has to be a transition kernel between Cauchy hypersurfaces, and locality has to be tested by localized finite deformations and by the exchange defects that compare their order.
+</p>
+
+<p>
+The sequence then made a deliberate methodological choice. Instead of claiming a continuum relativistic theory at once, it closed exact finite benchmark phases one by one: free exchange defects, leading and non-leading strip data, regulator comparisons, finite Fock sectors, static and dynamical gauge data, operational instruments, induced local nets, boundary centers, and first interacting reduced gauge-matter benchmarks. That style has a cost: many conclusions are narrower than the motivating physics. It also has a benefit: the line between proof and aspiration remains visible.
+</p>
+
+<p>
+This final synthesis makes that line explicit. Its organizing principle is conservative. A statement belongs in the established ledger only if it is proved in one of the dedicated finite-scope papers or follows directly from their hypotheses. A statement belongs in the future ledger if it requires continuum limits, uniform inverse control, arbitrary couplings, non-Abelian structure, full algebraic-QFT machinery, or geometry as a dynamical variable.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main synthesis theorem, informal.</span>
+At the present scope, relativistic ISP is established as an exact finite-kernel benchmark program with five linked components:
+<ol>
+  <li>a free localized exchange-defect core with leading and first non-leading strip data;</li>
+  <li>finite variable-particle-number and static/dynamical Abelian gauge extensions;</li>
+  <li>finite operational control and detector calculus with no-signaling and foliation-compatible composition;</li>
+  <li>finite induced-net Einstein-causality theorems, including boundary-flux-resolved physical-sector locality for preserving subclasses;</li>
+  <li>finite interacting $Z_2$ and truncated compact-$U(1)$ gauge-matter benchmarks with exact reduced Hamiltonians and first interaction-sensitive exchange coefficients.</li>
+</ol>
+The same result also states the boundary: none of these components is yet a full continuum, arbitrary-coupling, Haag-Kastler, non-Abelian, or gravitational theory.
+</div>
+
+<h2>II. Three Levels That Must Stay Separate</h2>
+
+<p>
+The most important structural lesson of the sequence is the separation of levels. Many possible overclaims come from sliding between them.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Raw kernel level).</span>
+For finite hypersurface configuration spaces $\mathcal C_{\Sigma_0}$ and $\mathcal C_{\Sigma_1}$, a physical slab is represented by a stochastic kernel
+$$
+\Gamma_{\Sigma_1\leftarrow\Sigma_0}:
+\mathbb R^{\mathcal C_{\Sigma_0}}\to \mathbb R^{\mathcal C_{\Sigma_1}}.
+$$
+For a localized deformation supported in a region $R$, the raw comparison map is
+$$
+J_R=\Gamma_R\Gamma_0^{-1},
+$$
+when the algebraic inverse exists. The exchange defect compares two localized deformations in opposite orders:
+$$
+E_{R,S}=J_{S|R}J_R\bigl(J_{R|S}J_S\bigr)^{-1}.
+$$
+These maps are algebraic relative-dynamics objects. They are not, by themselves, local observables.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Operational instrument level).</span>
+Localized controls, settings, and detectors are stochastic maps or stochastic instruments supported on factors or extended regional configuration spaces. They are the objects directly inserted into finite experiments between preparation and readout hypersurfaces.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Induced effect/algebra level).</span>
+Given a support-respecting family of localized maps, one may dualize their action to finite effect spaces and generate induced local algebras. Einstein-causality statements in the present sequence live at this induced level, under explicit spacelike-commutation or preserving-subclass hypotheses.
+</div>
+
+<div class="env remark">
+<span class="env-title">Scope warning.</span>
+Raw exchange nontriviality is not a violation of operational locality by itself, and induced finite microcausality is not a full Haag-Kastler reconstruction by itself. The proved bridge goes from explicit commutation/exchange-triviality hypotheses to induced-net causality, not from arbitrary raw comparison maps to continuum observables.
+</div>
+
+<h2>III. The Dependency Ledger</h2>
+
+<p>
+The finite program is not a single theorem. It is a dependency chain. Each later phase is allowed to use only the exact content earned earlier or an explicitly stated new benchmark hypothesis.
+</p>
+
+<table>
+<thead>
+<tr><th>Phase</th><th>Established role</th><th>Still outside that role</th></tr>
+</thead>
+<tbody>
+<tr><td>Architecture</td><td>Hypersurface kernels, localized finite deformations, comparison maps, exchange defects, and the finite Dirac-Schwinger target are formulated.</td><td>No constructive full Lorentz-covariant ISP and no gravity.</td></tr>
+<tr><td>Free exchange core</td><td>Exact finite one-particle localized kernels, quasilocal filtration, leading support-order boundary law, and first non-leading singleton data are isolated.</td><td>No full field theory and no general all-order continuum theorem.</td></tr>
+<tr><td>Regulators</td><td>Raw regulator universality fails; onset-renormalized leading universality and first non-leading singleton strip-moment stability are identified at exact scope.</td><td>No broad regulator-independent continuum theorem for all supports and all orders.</td></tr>
+<tr><td>Fock sectors</td><td>Number-preserving finite-lattice Fock lift is exact sector by sector; first local sector-changing examples and their first nonzero disjoint-local coefficients are computed.</td><td>No genuine infinite-Fock primitive-kernel theorem and no general sector-changing exchange algebra.</td></tr>
+<tr><td>Gauge benchmarks</td><td>Static $U(1)$ holonomy, dynamical finite Abelian Gauss-sector decomposition, and first mixed-support coefficient packages are established.</td><td>No cutoff-uniform compact-rotor theorem, no non-Abelian extension, and no full coupled continuum law.</td></tr>
+<tr><td>Operational phase</td><td>Finite localized controls, detector instruments, no-signaling, Bell-local reduced post-processing, and restricted full-circuit embeddings are established.</td><td>No arbitrary-coupling Bell local-causality theorem and no fully integrable detector field theory.</td></tr>
+<tr><td>Induced locality</td><td>Exchange-triviality or commuting operational maps imply finite induced-net Einstein causality; boundary-flux centers repair physical-sector factorization for preserving subclasses.</td><td>No raw observable-identification theorem and no continuum Haag-Kastler net.</td></tr>
+<tr><td>Interacting benchmarks</td><td>Finite $Z_2$ and truncated compact-$U(1)$ reduced gauge-matter blocks give exact interacting reduced Hamiltonians and first interaction-sensitive coefficients.</td><td>No $K\to\infty$ Schwinger-model theorem, nonintegrability theorem, or continuum interacting local-net theorem.</td></tr>
+</tbody>
+</table>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Dependency discipline).</span>
+Every theorem-level claim in the present relativistic ISP stack can be assigned to one of the finite scopes in the table above. Any claim requiring uniform continuum limits, arbitrary coupling classes, non-Abelian gauge structure, full compact-rotor kernel control, continuum algebraic-QFT axioms, or dynamical geometry is not established by the present stack unless separately stated as a conditional theorem or future program.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+This is a ledger statement. Papers 0 through 16 isolate their hypotheses and non-claims phase by phase: the free-model papers restrict to fixed finite one-particle or controlled finite-support data; the regulator papers distinguish exact normalized statements from broader criteria; the Fock and gauge papers state finite-lattice and fixed-cutoff hypotheses; the operational and bridge papers explicitly dualize to finite induced nets and preserving subclasses; and the interacting benchmark papers retain fixed finite blocks and no-truncation conditions. Therefore each established result lies within one of the finite scopes listed above, while the excluded items require hypotheses not supplied by those papers. <span class="qed">$\square$</span>
+</div>
+
+<h2>IV. What Counts As Established Relativistic ISP</h2>
+
+<p>
+The phrase <em>established relativistic ISP</em> should now be used in a precise benchmark-relative sense.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 2</span> <span class="env-name">(Established finite relativistic ISP package).</span>
+At the present scope, the established finite relativistic ISP package consists of the following data and theorems.
+<ol>
+  <li><em>Primitive finite slabs.</em> Exact finite stochastic kernels are the physical transition objects; algebraic intermediate maps may fail to be stochastic.</li>
+  <li><em>Localized finite deformations.</em> Region-supported deformation rules define comparison maps $J_R$ relative to a reference slab whenever the relevant inverse exists.</li>
+  <li><em>Exchange defects.</em> Order comparison of localized deformations produces exact finite defects $E_{R,S}$ whose leading free-model data are support-, boundary-, and strip-controlled.</li>
+  <li><em>Bond-centered tangential target.</em> In the free one-particle $1+1$ dimensional benchmark, the leading renormalized exchange data identify a bond-centered tangential pseudo-generator of the expected Dirac-Schwinger form at the proved finite/leading scopes.</li>
+  <li><em>Regulator ledger.</em> Raw local coefficients are not broadly universal, but normalized onset-renormalized strip data are the correct stability objects in the proved leading and first non-leading singleton cases.</li>
+  <li><em>Finite Fock lift.</em> Number-preserving finite-lattice Fock dynamics decomposes exactly sector by sector, and the one-particle tangential operator lifts by second quantization at fixed finite scope.</li>
+  <li><em>Gauge-sector structure.</em> Static and finite dynamical Abelian gauge benchmarks preserve exact $\Gamma$-level gauge-sector block structure for the primitive kernels, comparison maps, and exchange defects.</li>
+  <li><em>Operational locality.</em> Localized finite controls and instruments commute across disjoint factorized operational layers and imply finite no-signaling theorems.</li>
+  <li><em>Induced-net locality.</em> Under explicit spacelike-commutation or preserving-subclass hypotheses, the induced finite effect-space algebras satisfy Einstein-causality statements.</li>
+  <li><em>Boundary-center locality.</em> On physical Gauss sectors, correct locality is center-resolved over boundary flux labels rather than naive unfibered tensor factorization.</li>
+  <li><em>Interacting finite benchmarks.</em> The $Z_2$ and truncated compact-$U(1)$ gauge-matter blocks give exact finite reduced interacting Hamiltonians and first interaction-sensitive exchange coefficients.</li>
+</ol>
+</div>
+
+<p>
+This theorem-level package is already nontrivial. It says that the relativistic ISP program is no longer merely an analogy between quantum probabilities and stochastic matrices. It has a finite local-deformation algebra, an operational calculus, gauge-sector bookkeeping, and interacting benchmark tests. But every word in the previous sentence matters: finite, benchmark, local-deformation, operational, and tests.
+</p>
+
+<h2>V. The Free Exchange-Defect Core</h2>
+
+<p>
+The free exchange-defect core is still the spine of the program. It is where the relativistic content enters most sharply, because the exchange of two supported normal deformations is meant to reduce to a tangential deformation in the thin-slab limit.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Free-core status).</span>
+The free-core papers establish exact finite one-particle comparison-map expansions, support-growth filtration, leading support-order exchange classification, restricted onset-renormalized universality, exact higher-order overlap-window structure, and the first explicit non-leading singleton strip data. They do not yet establish a general all-support, all-order, regulator-independent continuum hypersurface-deformation theorem.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+The exact localized finite-deformation paper supplies the finite one-particle kernel and filtration package. The leading support-level and universality papers identify the boundary law and the normalized leading tangential operator. The higher-coefficient and regulator-comparison papers then isolate the conditional strip-moment criterion and compute the first non-leading singleton tests. None of these papers claims a uniform continuum theorem over arbitrary support prototypes and regulator classes. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Next mathematical burden.</span>
+The next foundational burden remains a non-gravitational one: prove a controlled free stochastic-curvature or hypersurface-deformation theorem with explicit limits and error estimates. A conceptual curvature synthesis is useful only if it is kept downstream of that proof burden.
+</div>
+
+<h2>VI. Fock and Gauge Extensions</h2>
+
+<p>
+The Fock and gauge papers show that the primitive finite-kernel method survives several important ontology-expanding moves, provided those moves are kept finite and benchmark-scoped.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 2</span> <span class="env-name">(Finite Fock and gauge status).</span>
+At fixed finite lattice size, number-preserving quadratic dynamics decomposes exactly into finite particle-number sectors, and the one-particle exchange law lifts by second quantization. Static lattice $U(1)$ coupling preserves $\Gamma$-level gauge invariance and isolates ring holonomy as the first global gauge datum. Finite-dimensional dynamical Abelian link spaces preserve exact Gauss-sector decomposition and give the first mixed site-link comparison-map and exchange-coefficient package.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Number preservation makes the Fock propagators block diagonal by particle number; taking squared moduli preserves the direct-sum kernel structure. Static $U(1)$ minimal coupling is carried by link phases whose local rephasings cancel at the $\Gamma$ level except for ring holonomy. Finite link spaces give a finite matter-plus-link Hilbert/configuration space and exact Gauss projectors commuting with the full and localized Hamiltonians, hence sectorwise primitive kernels and comparison maps. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Gauge limit warning.</span>
+The compact-rotor upgrade is structurally identified but not solved as a finite-kernel theorem. The periodic rotor carries an infinite global electric-flux tower, so compact $U(1)$ completion requires new inverse-control and kernel-existence estimates rather than a formal $S\to\infty$ slogan.
+</div>
+
+<h2>VII. Operational and Induced Locality</h2>
+
+<p>
+The operational and induced-net papers are where relativistic locality becomes an experimentally meaningful finite statement. They also show why raw comparison maps must not be mislabeled as observables.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 3</span> <span class="env-name">(Operational and induced-locality status).</span>
+The current operational stack establishes exact finite localized control and detector calculus, abstract finite realization of localized instruments by ancilla/unitary/pointer models, foliation-compatible composition for spacelike-separated operational layers, finite no-signaling for local marginals, and induced finite Einstein-causality theorems under explicit commutation hypotheses. On physical Gauss sectors, the locality statement is correctly refined over boundary-flux centers.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+On factorized finite hypersurface configuration spaces, localized maps supported on disjoint factors commute, which gives foliation-compatible products and no-signaling after marginalization. Dualizing support-respecting commuting families to finite effect spaces yields commuting induced algebras. On physical Gauss sectors, the exact boundary-flux recursion shows that regional data glue by fiber product over boundary labels; preserving subclasses act regionally on the extended spaces and hence commute blockwise over the induced boundary center. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Bell warning.</span>
+The sequence separates two statements. A fixed common source followed only by local stochastic post-processing is Bell-local. Bell-compatible nonfactorizable laws require setting-dependent full circuits in which settings are active local operations. This is not a proof of Bell's stronger local-causality condition for arbitrary microscopic couplings.
+</div>
+
+<h2>VIII. Interacting Gauge-Matter Benchmarks</h2>
+
+<p>
+The interacting gauge-matter papers are the strongest current evidence that the finite-kernel program can handle more than free or externally dressed systems. Their strength is also their boundary: they are finite, reduced, and benchmark-specific.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 4</span> <span class="env-name">(Interacting finite benchmark status).</span>
+The $Z_2$ benchmark establishes a finite matter-link gauge theory whose physical-sector/global-flux elimination produces a reduced matter Hamiltonian with a parity-string electric interaction. The truncated compact-$U(1)$ benchmark establishes a finite open-chain matter-link theory whose no-truncation physical blocks reduce to matter Hamiltonians with quadratic Coulomb-string electric terms. On both benchmarks, primitive kernels, comparison maps, and exchange defects remain exact finite objects on the stated blocks, and the first interaction-sensitive reduced-strip coefficients are computed at finite scope.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+In the $Z_2$ case, finite link variables and Gauss-sector/global-flux labels allow exact link elimination, yielding a reduced parity-string interaction. In the truncated compact-$U(1)$ case, integer link variables in a finite window and a fixed left-boundary flux seed allow exact one-dimensional recursion whenever the no-truncation condition holds, yielding a quadratic prefix-charge electric term. In each fixed reduced block the propagators and their squared-modulus kernels are finite matrices, so comparison maps and exchange defects are ordinary finite algebraic objects when inverses exist. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Interaction warning.</span>
+The phrase <em>genuinely interacting</em> means interacting in the reduced physical-sector variables after exact Gauss-law elimination. It does not assert nonintegrability, continuum interaction, or resistance to dual reformulation.
+</div>
+
+<h2>IX. Validation and Reproducibility Ledger</h2>
+
+<p>
+The validation layer is deliberately modest but important. The two finite-block scripts check exact matrix identities and extracted coefficients for the interacting benchmark phases.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 3</span> <span class="env-name">(Current validation status).</span>
+The available validation scripts provide reproducible finite-matrix checks for the minimal interacting $Z_2$ benchmark and the truncated compact-$U(1)$ benchmark. They check Gauss commutation or reduction matching where applicable, extract prototype exchange coefficients, and compare them against the stated formulas within finite numerical tolerance. These scripts validate finite benchmark calculations; they do not validate continuum limits or arbitrary-size uniform estimates.
+</div>
+
+<div class="env remark">
+<span class="env-title">Reproducibility target.</span>
+Future coefficient papers should continue this pattern but make the validation boundary explicit: exact finite symbolic identities, numerical coefficient extraction, tolerance statements, Python version, and whether the script tests a theorem, a prototype, or a diagnostic example.
+</div>
+
+<h2>X. What Remains Outside The Claim</h2>
+
+<p>
+The following exclusions are not rhetorical humility. They are part of the scientific content of the synthesis, because they say what would have to be proved before the program could be advertised more broadly.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 5</span> <span class="env-name">(Non-claim ledger).</span>
+The present relativistic ISP stack does not establish any of the following:
+<ol>
+  <li>a full continuum relativistic ISP functor over arbitrary Cauchy hypersurfaces;</li>
+  <li>nontrivial Lorentz covariance beyond finite relabeling-compatible benchmarks and conditional covariance templates;</li>
+  <li>a full all-order regulator-independent hypersurface-deformation theorem;</li>
+  <li>a continuum Haag-Kastler net with isotony, additivity, time-slice, covariance, spectrum/energy conditions, quasilocal $C^*$ completion, or type-III local structure;</li>
+  <li>an equality between raw comparison-map families and physical local observable algebras;</li>
+  <li>a compact-rotor or $K\to\infty$ compact-$U(1)$ theorem with cutoff-uniform inverse control;</li>
+  <li>a non-Abelian gauge theory;</li>
+  <li>a continuum Schwinger-model theorem or arbitrary-coupling interacting gauge-matter theorem;</li>
+  <li>a Bell local-causality theorem for arbitrary microscopic couplings;</li>
+  <li>metric reconstruction, dynamical spacetime, Einstein equations, or quantum gravity.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Each listed item requires hypotheses not supplied by the established finite benchmark papers: continuum/projective structure, uniform analytic estimates, arbitrary coupling control, non-Abelian link data, compact-rotor kernel theory, full local-algebra completion, or dynamical geometry variables. Since the phase papers explicitly exclude those hypotheses, none of the listed conclusions follows from the present stack. <span class="qed">$\square$</span>
+</div>
+
+<h2>XI. The Right Next Non-Gravitational Burden</h2>
+
+<p>
+The optional synthesis makes one point especially clear. The next foundational burden is still non-gravitational: convert the finite exchange-defect and strip-moment program into a controlled continuum hypersurface-deformation theorem.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Program A</span> <span class="env-name">(Free stochastic-curvature theorem).</span>
+For the free one-particle and number-preserving finite-Fock Dirac benchmarks, define an admissible regulator class, a sampling map, a slab-size/lattice-spacing scaling regime, and a normalization such that the normalized exchange defect converges on smooth compactly supported profiles to the tangential hypersurface-deformation operator
+$$
+K_{\parallel}[N\partial_xM-M\partial_xN].
+$$
+The theorem should include explicit error bounds and should state exactly which local deformation rules lie in the admissible class.
+</div>
+
+<div class="env remark">
+<span class="env-title">Why this remains non-gravitational.</span>
+Even if Program A succeeds, it proves relativistic stochastic integrability on a fixed background, not dynamical geometry. Metric reconstruction and gravity should remain outside the theorem paper until this non-gravitational burden is closed.
+</div>
+
+<h2>XII. Conclusion</h2>
+
+<p>
+The relativistic ISP sequence has earned more than a metaphor and less than a foundation. It has earned an exact finite benchmark architecture in which stochastic kernels, localized comparison maps, exchange defects, operational instruments, gauge-sector centers, induced finite local nets, and first interacting reduced benchmark coefficients all coexist without abandoning ordinary configuration-space probability.
+</p>
+
+<p>
+The main success is not that gravity or continuum QFT has been solved. It has not. The main success is that the program now has a precise finite theorem ledger and a precise failure ledger. If the next non-gravitational hypersurface-deformation theorem succeeds, the conceptual curvature reading becomes much more serious. If it fails, the synthesis still serves its purpose: it identifies exactly where probability-first relativistic ISP stops.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r0"><span class="ref-num">[0]</span><span>Anonymous, "Toward Lorentz-Covariant Indivisible Stochastic Processes: Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations," preprint (2026).</span></li>
+  <li id="r1"><span class="ref-num">[1]</span><span>Anonymous, "Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes," preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span><span>Anonymous, "Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem," preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span><span>Anonymous, "Exact Leading Support-Level Boundary Law for the Bond-Centered Thin-Slab Program," preprint (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span><span>Anonymous, "Restricted Renormalized Universality of the Leading Bond-Centered Thin-Slab Law," preprint (2026).</span></li>
+  <li id="r5"><span class="ref-num">[5]</span><span>Anonymous, "Higher Coefficients and Strip-Moment Closure in the Bond-Centered Thin-Slab Law," preprint (2026).</span></li>
+  <li id="r6"><span class="ref-num">[6]</span><span>Anonymous, "Broader Regulator Stability Across Support Prototypes," preprint (2026).</span></li>
+  <li id="r7"><span class="ref-num">[7]</span><span>Anonymous, "Explicit Higher Coefficients and First Nontrivial Singleton Strip Moments," preprint (2026).</span></li>
+  <li id="r8"><span class="ref-num">[8]</span><span>Anonymous, "Explicit Regulator Comparison at the First Non-Leading Singleton Order," preprint (2026).</span></li>
+  <li id="r9"><span class="ref-num">[9]</span><span>Anonymous, "Variable Particle Number in Relativistic ISP: Fock-Space Lift and First Sector-Changing Dynamics," preprint (2026).</span></li>
+  <li id="r10"><span class="ref-num">[10]</span><span>Anonymous, "Minimal U(1) Gauge Coupling and Holonomy in Relativistic ISP," preprint (2026).</span></li>
+  <li id="r11"><span class="ref-num">[11]</span><span>Anonymous, "Dynamical Abelian Gauge Field and Gauss-Law Sectors in Relativistic ISP," preprint (2026).</span></li>
+  <li id="r12"><span class="ref-num">[12]</span><span>Anonymous, "Localized Controls, Detectors, and Operational Relativity in Relativistic ISP," preprint (2026).</span></li>
+  <li id="r13"><span class="ref-num">[13]</span><span>Anonymous, "Einstein Causality from Exchange Defects: a Haag-Kastler Bridge for Relativistic ISP," preprint (2026).</span></li>
+  <li id="r14"><span class="ref-num">[14]</span><span>Anonymous, "Boundary-Flux-Resolved Einstein Causality in Relativistic ISP," preprint (2026).</span></li>
+  <li id="r15"><span class="ref-num">[15]</span><span>Anonymous, "Minimal Genuinely Interacting Gauge-Matter Benchmark in Relativistic ISP," preprint (2026).</span></li>
+  <li id="r16"><span class="ref-num">[16]</span><span>Anonymous, "Truncated Compact U(1) Gauge-Matter Benchmark in Relativistic ISP," preprint (2026).</span></li>
+  <li id="r17"><span class="ref-num">[17]</span><span>J. A. Barandes, "The Stochastic-Quantum Correspondence," <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+  <li id="r18"><span class="ref-num">[18]</span><span>J. A. Barandes, "The Stochastic-Quantum Theorem," arXiv:2309.03085 (2023; rev. 2026).</span></li>
+</ol>
+</div>
+
+</article>
+</body>
+</html>

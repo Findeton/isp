@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exact Leading Support-Level Boundary Law for the Bond-Centered Thin-Slab Program</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    tags: 'ams',
+    macros: {
+      C: '{\\mathcal{C}}',
+      H: '{\\mathcal{H}}',
+      F: '{\\mathcal{F}}',
+      N: '{\\mathcal{N}}',
+      id: '{\\mathrm{id}}',
+      supp: '{\\mathrm{supp}}',
+      Tr: '{\\mathrm{Tr}}',
+      one: '{\\mathbf{1}}'
+    }
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #111;
+  background: #fff;
+  padding: 48px 20px 80px;
+}
+.paper { max-width: 740px; margin: 0 auto; }
+.title {
+  font-size: 1.55em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.7em;
+}
+.subtitle {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.2em;
+  color: #333;
+}
+.authors { text-align: center; font-size: 1em; margin-bottom: 0.25em; }
+.affil   { text-align: center; font-size: 0.88em; color: #444; margin-bottom: 0.25em; }
+.date    { text-align: center; font-size: 0.85em; color: #555; margin-bottom: 2em; }
+.arxiv-note {
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 2em;
+}
+.abstract {
+  border: 1px solid #bbb;
+  padding: 1em 1.2em;
+  margin-bottom: 2.4em;
+  font-size: 0.93em;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+<div class="title">Exact Leading Support-Level Boundary Law for the Bond-Centered Thin-Slab Program</div>
+<div class="subtitle">Translated support prototypes, nearby-support exchange data, and the theorem-level completion of phase 2 in relativistic ISP</div>
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 3 in the relativistic ISP sequence; exact phase-2 completion at leading support order</p>
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The exact free one-particle exchange-defect theorem already established the full leading finite-support package currently justified in the relativistic ISP program: exact localized kernels, exact quasilocal filtration, exact deleted-bond leading coefficients, and exact minimal-strip boundary-packet control of the first nearby-support exchange coefficient. The right phase-2 paper should therefore do one precise thing and no more. It should turn those exact interval-support results into a theorem-level support-prototype statement, without pretending that higher coefficients or exact strip moments for non-singleton prototypes have already been computed.</p>
+<p>
+That is the scope of the present paper. Working throughout at the $\Gamma$-kernel level in the Barandes spirit—ordinary probability first, no extra phase data unless a distinct physical task later requires them—we formulate translated support prototypes, isolate the exact leading support-order algebra for nearby-support pairs, and prove that the singleton bond-centered thin-slab theorem is the first member of a genuine support-level boundary law. The exact result is boundary-first: when the first visible exchange order is already generated by the leading coefficients, the minimal-strip leading exchange data are completely fixed by the translated boundary packets facing the gap. Support volume enters only through those boundary packets and the normalization bookkeeping inherited from the one-region comparison maps.</p>
+<p>
+This closes phase 2 at the strongest exact scope now supported by the document stack. It does not compute $A_R^{(2)}$ or beyond, it does not classify higher-order active strip channels, and it does not derive a full non-singleton bond-centered continuum operator from exact strip moments. Those are real later proof burdens and are deferred explicitly rather than smuggled into theorem language. What phase 2 now completes is narrower and firmer: the theorem-level leading support-order extension of the singleton result.</p>
+</div>
+<p class="small-note">
+Scope note. This file retains its earlier path for continuity, but its theorem-level scope is now deliberately narrower than the broad draft path once suggested. The exact content here is limited to the leading support-order boundary law justified by the existing free-model papers, for translated nonwrapping disjoint support pairs unless a wrapping case is stated separately. Periodic seam effects and wrapped minimal strips are separate finite-ring data, not automatic corollaries of the nonwrapping prototype theorem.
+</p>
+
+<h2>I. Introduction</h2>
+<p>
+The relativistic ISP program has already learned one methodological lesson the hard way: one should not promote a roadmap calculation into a theorem before the exact kernel algebra supports it. The explicit free-model sequel proved the leading singleton bond-centered thin-slab law. The exact free one-particle sequel then proved something stronger than a singleton anecdote but weaker than a general higher-coefficient theory: for arbitrary finite interval supports, the leading coefficient is deleted-bond controlled, and for nearby-support pairs its minimal-strip leading commutator is exactly boundary-packet controlled.</p>
+<p>
+That exact package is already enough to close a genuine phase if the phase is scoped correctly. From the standpoint of Barandes’ broader stochastic-quantum framework, this is exactly the right style of advance. One stays at the level of the ordinary probabilistic transition data and the exact algebra they determine. One does not introduce auxiliary amplitude-level structure merely to guess the answer in advance. The leading support-level statement should therefore be read off the exact comparison-map coefficients themselves.</p>
+<p>
+This paper does just that. It reformulates the exact Paper-2 interval results in translated support-prototype language, proves the exact leading nearby-support boundary law in that language, and identifies the precise sense in which the singleton theorem is the first support-level case. Nothing more ambitious is claimed, and nothing less would count as a clean theorem-level completion of phase 2.</p>
+
+<h2>II. Exact input from the free one-particle exchange-defect theorem</h2>
+<p>
+We keep the same free one-particle periodic lattice Dirac setting as in the two preceding free-model papers. For every finite interval support $R\subset\Lambda_L$, the exact localized comparison map has the expansion
+</p>
+<div class="eq">
+$$
+J_R(\Delta)=I+\sum_{k\ge 1}\Delta^{2k}A_R^{(k)},
+\qquad
+\supp A_R^{(k)}\subset\N_k(R).
+$$
+</div>
+<p>
+For disjoint finite intervals $R,S$, the exact defect order is
+</p>
+<div class="eq">
+$$
+E_{R,S}(\Delta)=I+\Delta^{2\mu_1(R,S)}C_{R,S}^{(\mu_1)}+O(\Delta^{2\mu_1(R,S)+2}),
+$$
+</div>
+<p>
+with
+</p>
+<div class="eq">
+$$
+C_{R,S}^{(\mu_1)}=
+\sum_{\substack{p+q=\mu_1(R,S)\\p,q\ge 1}}[A_R^{(p)},A_S^{(q)}].
+$$
+</div>
+<p>
+At leading order one also has the exact deleted-bond formula
+</p>
+<div class="eq">
+$$
+A_R^{(1)}=
+\sum_{b\in\partial_1R}Q_b+D_R,
+$$
+</div>
+<p>
+where $Q_b$ is the local deleted-bond coefficient and $D_R$ is the diagonal normalization term fixed by $\mathbf 1^\top A_R^{(1)}=0$.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact leading support-order classification).</span>
+Let $R,S$ be a nonwrapping disjoint finite-support pair with first exchange order $\mu_1(R,S)=2$. Then the leading exchange coefficient is exactly
+$$
+C_{R,S}^{(2)}=[A_R^{(1)},A_S^{(1)}].
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The exact defect-order formula gives
+$$
+C_{R,S}^{(\mu_1)}=
+\sum_{p+q=\mu_1}[A_R^{(p)},A_S^{(q)}].
+$$
+If $\mu_1=2$, the only admissible pair is $(p,q)=(1,1)$, so the displayed identity follows immediately. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This proposition is elementary but decisive. It identifies the exact leading support-order problem with a pure leading-coefficient problem. Higher coefficients do not enter at all until the first support order exceeds two.
+</div>
+
+<h2>III. Translated support prototypes and exact nearby-support boundary law</h2>
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Translated support prototypes).</span>
+Fix finite interval prototypes $R_\ast,S_\ast\subset\mathbb Z$. On the lattice write their translates as
+$$
+R_n:=n+R_\ast,
+\qquad
+S_m:=m+S_\ast.
+$$
+Whenever a translated pair is nonwrapping and disjoint, let $\Pi^{\min}_{R_n,S_m}$ denote the projection to its minimal exchange strip, defined exactly as in the free one-particle exchange-defect theorem.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Translated boundary packets).</span>
+For each translated nonwrapping disjoint pair $(R_n,S_m)$, define the translated boundary packets by
+$$
+\mathcal Q_{R_n\to S_m}:=
+\Pi^{\min}_{R_n,S_m}\!\left(\sum_{b\in\partial_1R_n}Q_b\right),
+\qquad
+\mathcal Q_{S_m\to R_n}:=
+\Pi^{\min}_{R_n,S_m}\!\left(\sum_{c\in\partial_1S_m}Q_c\right).
+$$
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Exact translated nearby-support boundary law).</span>
+Let $(R_\ast,S_\ast)$ be finite interval prototypes, and let $(R_n,S_m)$ be any translated nonwrapping disjoint pair with $\mu_1(R_n,S_m)=2$. Then
+$$
+\Pi^{\min}_{R_n,S_m}[A_{R_n}^{(1)},A_{S_m}^{(1)}]
+=
+[\mathcal Q_{R_n\to S_m},\mathcal Q_{S_m\to R_n}].
+$$
+Equivalently, the minimal-strip leading exchange data for every such translated pair are determined exactly by the boundary packets facing the gap.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+For a nonwrapping disjoint pair, the exact free one-particle sequel proves the minimal-strip boundary-packet reduction
+$$
+\Pi^{\min}_{R,S}[A_R^{(1)},A_S^{(1)}]=[\mathcal Q_{R\to S},\mathcal Q_{S\to R}].
+$$
+Apply that result to the translated pair $(R_n,S_m)$. Translation changes the pair but not the form of the theorem. <span class="qed">$\square$</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(The singleton theorem is the first support-level case).</span>
+When both support prototypes are singletons, Theorem&nbsp;1 reduces to the leading singleton collar-excision exchange law. In that case the translated boundary packets collapse to the bond-flip and two-step strip channels identified in the explicit free-model sequel.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+For singleton supports there is only one deleted bond on each side of the gap, so the translated boundary packets reduce to the same local channels that generate the exact singleton commutator basis. Theorem&nbsp;1 then specializes to that case. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The corollary does not say that every non-singleton prototype already has the same continuum operator as the singleton pair. It says something more exact and more limited: the singleton theorem is not isolated, because the same boundary-first mechanism is already exact at leading support order for every nearby-support translated interval pair.
+</div>
+
+<h2>IV. Exact support-smeared leading boundary bracket</h2>
+<p>
+The previous theorem can be packaged in a support-prototype form that is convenient for later continuum work, while remaining entirely exact and entirely algebraic.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Support-smeared leading boundary bracket).</span>
+Fix support prototypes $(R_\ast,S_\ast)$ and let $\mathcal P_{R_\ast,S_\ast}$ denote the set of translated nonwrapping disjoint pairs $(n,m)$ with $\mu_1(R_n,S_m)=2$. For coefficient sequences $N_n$ and $M_m$, define
+$$
+\mathfrak B_{a;R_\ast,S_\ast}[N,M]
+:=
+ a^2\sum_{(n,m)\in\mathcal P_{R_\ast,S_\ast}}N_nM_m\,
+ \Pi^{\min}_{R_n,S_m}[A_{R_n}^{(1)},A_{S_m}^{(1)}].
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 2</span> <span class="env-name">(Exact reduction of the support-smeared leading bracket).</span>
+For every prototype pair $(R_\ast,S_\ast)$,
+$$
+\mathfrak B_{a;R_\ast,S_\ast}[N,M]
+=
+ a^2\sum_{(n,m)\in\mathcal P_{R_\ast,S_\ast}}N_nM_m\,[\mathcal Q_{R_n\to S_m},\mathcal Q_{S_m\to R_n}].
+$$
+Thus the exact leading support-smeared boundary bracket depends only on translated boundary packets, not on any stronger support-volume datum.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Insert Theorem&nbsp;1 term by term into the definition of $\mathfrak B_{a;R_\ast,S_\ast}[N,M]$. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the exact algebraic completion of phase 2. It is the precise support-level statement one can honestly make now: at leading support order, the entire nearby-support exchange bracket is boundary-controlled after projection to the minimal strip. No higher-coefficient hypothesis is needed.
+</div>
+
+<h2>V. What phase 2 now closes and what it defers</h2>
+<p>
+With the scope fixed this way, phase 2 is complete in the following exact sense.
+</p>
+<ol>
+  <li><em>Translated support-prototype language.</em> The exact interval-support results of the free one-particle sequel have been reformulated in prototype language suitable for later continuum work.</li>
+  <li><em>Exact nearby-support boundary law.</em> Whenever the first visible exchange order is already generated by the leading coefficients, the minimal-strip leading exchange data are fixed exactly by translated boundary packets.</li>
+  <li><em>Exact support-smeared leading bracket.</em> The leading support-smeared exchange algebra reduces exactly to a sum of translated boundary-packet commutators.</li>
+  <li><em>Singleton placement.</em> The leading singleton theorem is now located exactly as the first support-level case rather than as an isolated curiosity.</li>
+</ol>
+<p>
+Just as important is what is deliberately deferred.
+</p>
+<ol>
+  <li><em>Higher coefficients.</em> No theorem about $A_R^{(2)}$ or beyond is claimed here.</li>
+  <li><em>Active strip channels at higher support order.</em> Those remain to be computed exactly from the coefficient algebra.</li>
+  <li><em>Exact non-singleton strip moments and continuum operator.</em> The present paper does not derive a full non-singleton bond-centered thin-slab operator from exact strip moments.</li>
+  <li><em>Universality across regulators.</em> That belongs to the next phase.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+Narrowing the phase this way is not retreat. It is what makes the phase theorem-level. The unresolved higher-coefficient tasks are genuine later proof burdens and are best moved forward explicitly rather than hidden behind conditional language inside a supposedly completed phase paper.
+</div>
+
+<h2>VI. Conclusion</h2>
+<p>
+Phase 2 is now complete at the exact scope actually supported by the existing relativistic ISP stack. The leading nearby-support exchange data are boundary-controlled for every translated finite-interval prototype pair whose first visible order is already generated by the leading coefficients, and the singleton theorem is thereby placed exactly as the first support-level case.</p>
+<p>
+This is the right Barandes-style outcome: the exact probabilistic kernel algebra tells us what is already fixed, and it tells us equally clearly what is not yet fixed. The next paper should therefore move not to Fock space or gauge structure, but to the genuine remaining algebraic burden: higher coefficients and exact strip moments beyond the leading support order.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Toward Lorentz-Covariant Indivisible Stochastic Processes: Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations,” preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes: Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality,” preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem,” preprint (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Theorem,” arXiv:2309.03085 (2023; rev. 2026).</span></li>
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” arXiv:2507.21192 (2025).</span></li>
+</ol>
+</div>
+</article>
+</body>
+</html>

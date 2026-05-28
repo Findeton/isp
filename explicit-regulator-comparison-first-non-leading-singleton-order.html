@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explicit Regulator Comparison at the First Non-Leading Singleton Order</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2937;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+.paper {
+  max-width: 920px;
+  margin: 2.5rem auto;
+  background: #ffffff;
+  padding: 2.7rem 3.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 10px;
+}
+.title {
+  font-size: 2.0rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Explicit Regulator Comparison at the First Non-Leading Singleton Order</div>
+<div class="subtitle">Interior-shell nonuniversality, boundary-shell scaling, and exact $c_\lambda^2$ strip-moment universality</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 8 in the relativistic ISP sequence; exact first non-leading regulator comparison in the singleton class</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+Phase 5 identified normalized strip moments as the correct regulator-stability data, but the first explicit non-leading comparison still had to be performed. This paper does that at the first genuinely new singleton order for the admissible family
+$$
+U_n^{(\lambda)}(\Delta)=e^{-i\Delta(H_D-\lambda C_n)},
+\qquad
+c_\lambda:=\lambda(2-\lambda).
+$$
+</p>
+<p>
+The answer is sharper than either a naive universality claim or a naive nonuniversality claim. The full singleton coefficient $A_{n,\lambda}^{(2)}$ is <em>not</em> equal to $c_\lambda A_n^{(2)}$: the difference is an exact interior-shell operator with nonzero mass-dependent entries for every $0<\lambda<1$. So raw one-region non-leading coefficient data are genuinely regulator-dependent. But the boundary-facing shell of $A_{n,\lambda}^{(2)}$ that actually communicates across a gap of three lattice steps still scales exactly by the same factor $c_\lambda$. Consequently, the first separation-controlled exchange coefficient obeys the exact identity
+$$
+C_{n,n+3;\lambda}^{(3)}=c_\lambda^2\,C_{n,n+3}^{(3)},
+$$
+and the normalized first strip moments are regulator-independent throughout the admissible $\lambda$-family. Thus the first non-leading singleton comparison answers the physical question precisely: some regulator differences survive microscopically in $A^{(2)}$, but they do not yet survive in the first normalized strip-moment data. The Lie-Trotter benchmark remains a different onset class and is therefore an explicit contrast, not a same-order comparator, at this stage.</p>
+</div>
+
+<h2>I. Introduction</h2>
+
+<p>
+Phase 5 reformulated the regulator question in the right language. “Same continuum law” cannot mean equality of raw local coefficients, because that already fails at leading order across the admissible $\lambda$-family. What it could still mean is equality of the properly normalized strip-moment data extracted from the exact exchange algebra.
+</p>
+
+<p>
+The first place where that question becomes genuinely nontrivial is the singleton distance-three coefficient computed in phase 6. At that order one must compare order-$\Delta^4$ one-region coefficients, not just the already-known leading coefficient $A_n^{(1)}$. The purpose of the present paper is to perform that exact comparison and to say, without overclaiming, which regulator differences are merely onset artifacts and which are genuine microscopic nonuniversality.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main results (informal).</span>
+<ol>
+  <li><em>Exact raw nonuniversality.</em> The full singleton coefficient $A_{n,\lambda}^{(2)}$ is not a simple multiple of the collar-excision coefficient $A_n^{(2)}$ for $0<\lambda<1$.</li>
+  <li><em>Exact location of the new regulator dependence.</em> The difference $A_{n,\lambda}^{(2)}-c_\lambda A_n^{(2)}$ is supported entirely in the interior shell $\{n-1,n,n+1\}$.</li>
+  <li><em>Exact first non-leading strip-moment universality.</em> The distance-three singleton exchange coefficient nevertheless obeys
+  $C_{n,n+3;\lambda}^{(3)}=c_\lambda^2C_{n,n+3}^{(3)}$, so the normalized first strip moments coincide across the whole admissible $\lambda$-family.</li>
+  <li><em>Lie-Trotter contrast.</em> The Lie-Trotter rule remains in a distinct onset class with $J_n^{\mathrm{LT}}=I+O(\Delta^4)$ and $E_{n,n+3}^{\mathrm{LT}}=I+O(\Delta^8)$, so no same-order distance-three comparison exists there.</li>
+</ol>
+</div>
+
+<p class="small-note">
+Scope note. The exact comparison carried out here is the first non-leading singleton comparison inside the common $\Delta^2$-onset class. We do not claim a full higher-order regulator classification for larger support types, and we do not claim a same-order strip-moment comparison with the Lie-Trotter benchmark, whose exchange onset is later.
+</p>
+
+<h2>II. Setup</h2>
+
+<p>
+For the singleton support $R_n=\{n\}$, define
+$$
+J_n^{(\lambda)}(\Delta)
+=
+I+\Delta^2A_{n,\lambda}^{(1)}+\Delta^4A_{n,\lambda}^{(2)}+O(\Delta^6),
+$$
+with the collar-excision rule recovered at $\lambda=1$:
+$$
+A_n^{(k)}:=A_{n,\lambda=1}^{(k)}.
+$$
+The exact leading-order result from the explicit free-model sequel is
+$$
+A_{n,\lambda}^{(1)}=c_\lambda A_n^{(1)},
+\qquad
+c_\lambda:=\lambda(2-\lambda).
+$$
+The new comparison object is therefore
+$$
+D_n^{(\lambda)}:=A_{n,\lambda}^{(2)}-c_\lambda A_n^{(2)}.
+$$
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Interior and boundary shells for the singleton $A^{(2)}$ comparison).</span>
+For the singleton centered at $n$, call
+$$
+\{n-1,n,n+1\}
+$$
+the <em>interior shell</em> and
+$$
+\{n-2,n+2\}
+$$
+the <em>boundary shell</em> of the order-$\Delta^4$ coefficient. The boundary-active block consists of matrix entries with one site in the boundary shell and the other site in $\{n-2,n-1,n,n+1,n+2\}$.
+</div>
+
+<h2>III. Exact raw nonuniversality at order $\Delta^4$</h2>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact interior-shell correction to the singleton coefficient).</span>
+For the admissible $\lambda$-family one has
+$$
+D_n^{(\lambda)}:=A_{n,\lambda}^{(2)}-c_\lambda A_n^{(2)},
+\qquad c_\lambda=\lambda(2-\lambda),
+$$
+and $D_n^{(\lambda)}$ is supported entirely in the interior shell $\{n-1,n,n+1\}$. Its nonzero entries are generated by the exact formulas
+$$
+\langle n,\uparrow|D_n^{(\lambda)}|n,\uparrow\rangle
+=
+-\frac{4}{3}\lambda(1-\lambda)^2(2-\lambda)h^4
+-\frac16\lambda(1-\lambda)^2(4-\lambda)m^2h^2,
+$$
+$$
+\langle n,\uparrow|D_n^{(\lambda)}|n+1,\downarrow\rangle
+=
+\frac23\lambda(1-\lambda)^2(2-\lambda)h^4
++\frac{1}{12}\lambda(1-\lambda)^2(4-\lambda)m^2h^2,
+$$
+$$
+\langle n-1,\uparrow|D_n^{(\lambda)}|n+1,\uparrow\rangle
+=
+-\frac14\lambda(1-\lambda)^2(2-\lambda)h^4,
+$$
+together with their reflected partners and spin-flipped partners.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Expand the exact kernel ratio
+$$
+J_n^{(\lambda)}(\Delta)
+=
+\Gamma\!\bigl(e^{-i\Delta(H_D-\lambda C_n)}\bigr)\Gamma_0(\Delta)^{-1}
+$$
+to order $\Delta^4$ exactly, subtract $c_\lambda A_n^{(2)}$, and collect coefficients. The resulting difference has exactly eighteen nonzero entries, all confined to the interior shell. The displayed formulas generate that entire list by reflection and spin flip. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(Raw non-leading scaling fails).</span>
+For every $0<\lambda<1$,
+$$
+A_{n,\lambda}^{(2)}\neq c_\lambda A_n^{(2)}.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+For $0<\lambda<1$ the central diagonal correction in Proposition&nbsp;1 is nonzero, so $D_n^{(\lambda)}\neq0$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is genuine microscopic nonuniversality. It is already present in the exact one-region coefficient algebra before any continuum limit is discussed, and it includes mass-dependent terms.
+</div>
+
+<h2>IV. Boundary-shell scaling and exact first strip-moment universality</h2>
+
+<div class="env proposition">
+<span class="env-title">Proposition 2</span> <span class="env-name">(Exact boundary-shell scaling).</span>
+Every boundary-active entry of the singleton coefficient scales exactly by $c_\lambda$:
+$$
+\bigl(A_{n,\lambda}^{(2)}\bigr)_{\mathrm{boundary\text{-}active}}
+=
+c_\lambda\,
+\bigl(A_n^{(2)}\bigr)_{\mathrm{boundary\text{-}active}}.
+$$
+Equivalently,
+$$
+\bigl(D_n^{(\lambda)}\bigr)_{\mathrm{boundary\text{-}active}}=0.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By Proposition&nbsp;1, the full difference $D_n^{(\lambda)}$ is supported entirely in the interior shell $\{n-1,n,n+1\}$. Hence it has no boundary-active entry. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Exact $c_\lambda^2$ scaling of the first non-leading singleton exchange coefficient).</span>
+Let
+$$
+C_{n,n+3;\lambda}^{(3)}
+:=
+[A_{n,\lambda}^{(1)},A_{n+3,\lambda}^{(2)}]+[A_{n,\lambda}^{(2)},A_{n+3,\lambda}^{(1)}].
+$$
+Then
+$$
+\boxed{
+C_{n,n+3;\lambda}^{(3)}=c_\lambda^2\,C_{n,n+3}^{(3)}.}
+$$
+Equivalently, using the exact phase-6 decomposition,
+$$
+C_{n,n+3;\lambda}^{(3)}
+=
+c_\lambda^2h^6\Bigl(
+-\frac{1}{12}F_{n+1/2}
++\frac13 F_{n+3/2}
+-\frac{1}{12}F_{n+5/2}
++\frac{5}{12}\bigl(S_{n,n+2}+S_{n+1,n+3}\bigr)
++\frac12 T_{n,n+3}
+\Bigr).
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Write
+$$
+A_{n,\lambda}^{(2)}=c_\lambda A_n^{(2)}+D_n^{(\lambda)}.
+$$
+Then
+$$
+C_{n,n+3;\lambda}^{(3)}
+=
+c_\lambda^2C_{n,n+3}^{(3)}
++c_\lambda\Bigl([A_n^{(1)},D_{n+3}^{(\lambda)}]+[D_n^{(\lambda)},A_{n+3}^{(1)}]\Bigr).
+$$
+Now $A_n^{(1)}$ is supported on $\{n-1,n,n+1\}$, while Proposition&nbsp;1 gives
+$$
+\operatorname{supp}D_{n+3}^{(\lambda)}\subset\{n+2,n+3,n+4\},
+\qquad
+\operatorname{supp}D_n^{(\lambda)}\subset\{n-1,n,n+1\},
+$$
+and $A_{n+3}^{(1)}$ is supported on $\{n+2,n+3,n+4\}$. Thus the mixed products vanish:
+$$
+A_n^{(1)}D_{n+3}^{(\lambda)}=D_{n+3}^{(\lambda)}A_n^{(1)}=0,
+\qquad
+D_n^{(\lambda)}A_{n+3}^{(1)}=A_{n+3}^{(1)}D_n^{(\lambda)}=0.
+$$
+Therefore the extra commutators vanish and only the $c_\lambda^2C_{n,n+3}^{(3)}$ term remains. Inserting the exact phase-6 formula for $C_{n,n+3}^{(3)}$ gives the displayed strip decomposition. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 2</span> <span class="env-name">(Exact normalized first strip-moment universality at the first non-leading singleton order).</span>
+After dividing by $c_\lambda^2$, the first strip moments of the singleton distance-three coefficient are independent of $\lambda$:
+$$
+\widehat C_F^{\mathrm{L}}=-\frac14 h^6,\qquad
+\widehat C_F^{\mathrm{M}}=h^6,\qquad
+\widehat C_F^{\mathrm{R}}=-\frac14 h^6,
+$$
+$$
+\widehat C_S^{\mathrm{L}}=\frac54 h^6,\qquad
+\widehat C_S^{\mathrm{R}}=\frac54 h^6,\qquad
+\widehat C_T=\frac32 h^6.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Theorem&nbsp;1 multiplies every channel coefficient at separation $r=3$ by the same factor $c_\lambda^2$. Dividing by that factor therefore returns the exact phase-6 strip moments. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the precise answer to the phase-5 physical question. Regulator differences do survive in the raw one-region non-leading coefficient $A^{(2)}$, but they do <em>not</em> yet survive in the first normalized strip-moment data extracted from the first separation-controlled singleton exchange coefficient.
+</div>
+
+<h2>V. Lie-Trotter as onset-class contrast</h2>
+
+<div class="env remark">
+<span class="env-title">Remark (honest scope of the cross-regulator comparison).</span>
+The Lie-Trotter benchmark does not belong to the same onset class as the collar-excision and admissible $\lambda$-family rules. The exact free-model sequel proved
+$$
+J_n^{\mathrm{LT}}(\Delta)=I+O(\Delta^4),
+\qquad
+E_{n,n+3}^{\mathrm{LT}}(\Delta)=I+O(\Delta^8).
+$$
+So there is no same-order distance-three coefficient in the Lie-Trotter case to compare with $C_{n,n+3}^{(3)}$. At the present phase the honest exact comparison therefore closes inside the common $\Delta^2$-onset family, while Lie-Trotter remains an explicit contrasting regulator with later onset rather than a same-order normalized strip-moment comparator.
+</div>
+
+<h2>VI. Conclusion</h2>
+
+<p>
+Phase 7 is now complete at the strongest honest singleton scope presently reached. The first explicit non-leading regulator comparison has been carried out exactly. It shows that raw one-region higher coefficients are genuinely regulator-dependent, but that the first separation-controlled singleton strip moments are nevertheless onset-renormalized universal throughout the admissible $\lambda$-family.
+</p>
+
+<p>
+That is a stronger answer than the earlier roadmap could provide. It does not collapse everything into universality, and it does not collapse everything into nonuniversality. It separates the two. The exact microscopic transition-law algebra already knows both facts, and phase 7 now states them explicitly.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes: Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality,” preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Broader Regulator Stability Across Support Prototypes,” preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Explicit Higher Coefficients and First Nontrivial Singleton Strip Moments,” preprint (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+</ol>
+</div>
+
+</article>
+</body>
+</html>

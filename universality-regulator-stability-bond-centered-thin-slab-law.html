@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restricted Renormalized Universality of the Leading Bond-Centered Thin-Slab Law</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    tags: 'ams',
+    macros: {
+      C: '{\\mathcal{C}}',
+      H: '{\\mathcal{H}}',
+      N: '{\\mathcal{N}}',
+      id: '{\\mathrm{id}}',
+      supp: '{\\mathrm{supp}}',
+      one: '{\\mathbf{1}}'
+    }
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #111;
+  background: #fff;
+  padding: 48px 20px 80px;
+}
+.paper { max-width: 740px; margin: 0 auto; }
+.title {
+  font-size: 1.55em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.7em;
+}
+.subtitle {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.2em;
+  color: #333;
+}
+.authors { text-align: center; font-size: 1em; margin-bottom: 0.25em; }
+.affil   { text-align: center; font-size: 0.88em; color: #444; margin-bottom: 0.25em; }
+.date    { text-align: center; font-size: 0.85em; color: #555; margin-bottom: 2em; }
+.arxiv-note {
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 2em;
+}
+.abstract {
+  border: 1px solid #bbb;
+  padding: 1em 1.2em;
+  margin-bottom: 2.4em;
+  font-size: 0.93em;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+<div class="title">Restricted Renormalized Universality of the Leading Bond-Centered Thin-Slab Law</div>
+<div class="subtitle">Exact regulator comparison, the $\lambda$-family realization, and the theorem-level completion of phase 3 in relativistic ISP</div>
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 4 in the relativistic ISP sequence; exact phase-3 completion at leading visible order</p>
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The explicit free-model sequel already established the two facts any honest universality paper must respect. First, raw rule uniqueness fails: the present local-intervention axioms admit continuous families of admissible localized deformation rules with distinct leading comparison coefficients. Second, the naive site-centered continuum limit fails: the stable continuum object is the bond-centered action of the exchange algebra on smooth sampled profiles. The right universality question is therefore not whether all admissible microscopic regulators coincide. It is whether, after the correct onset renormalization, the same leading bond-centered tangential operator survives.</p>
+<p>
+That is the exact scope of the present paper. We isolate the leading-order regulator comparison already justified by the existing free-model stack. The Lie–Trotter and collar-excision constructions are treated as distinct regularizations of the same localized finite-deformation problem; the exact $\lambda$-family provides a nontrivial admissible class with explicit scaling; and the bond-centered collar-excision thin-slab theorem supplies the common tangential operator. We then prove the strongest theorem-level universality statement presently supported: restricted onset-renormalized universality at the first visible exchange order, together with an exact realization of that universality for the $\lambda$-family on smooth sampled profiles.</p>
+<p>
+This closes phase 3 at the strongest exact scope now available. It does not prove microscopic rule uniqueness, and it does not prove broader support-prototype stability beyond the leading order realized by the exact family. Those are later proof burdens. What phase 3 now completes is narrower and firmer: the theorem-level leading-order universality statement compatible with the existing exact results, together with its geometric reading in the supported-hypersurface architecture of relativistic ISP.</p>
+</div>
+<p class="small-note">
+Scope note. This file retains its earlier path for continuity, but its theorem-level scope is now limited to leading-order restricted universality. The admissible regulators used here are mathematically admissible localized-deformation rules inside the stated finite model; physical rule selection would require additional operational or dynamical criteria. Broader prototype-level regulator stability is deferred explicitly to a later phase.
+</p>
+
+<h2>I. Introduction</h2>
+<p>
+Phase 3 should never have been a rule-selection phase. The explicit free-model sequel already proved that the present local-intervention axioms do not determine a unique localized deformation rule. It also proved that the most naive site-centered thin-slab limit of the leading singleton coefficient diverges. So the correct universality target has to be weaker than microscopic uniqueness and stronger than a vague continuum slogan.</p>
+<p>
+The correct target is onset-renormalized universality of the leading bond-centered exchange law. One asks whether different admissible regulators, once divided by their first visible onset factor, generate the same leading tangential operator on smooth sampled profiles. That is exactly the kind of statement one can defend from the current stack without inventing unsupported higher-order results or smuggling in extra amplitude-level structure. It is also the formulation most faithful to the Barandes viewpoint: start from the exact probabilistic transition-law data and ask what structural content survives there.</p>
+<p>
+This paper therefore does three things. First, it reformulates the exact regulator facts already proved in the free-model sequel. Second, it states and proves the restricted onset-renormalized universality theorem at the leading visible order. Third, it shows that the exact $\lambda$-family realizes that theorem and shares the same bond-centered tangential operator after normalization. That is the theorem-level completion of phase 3.
+</p>
+
+<h2>II. Exact regulator facts from the free-model sequel</h2>
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Leading-order regulator family).</span>
+A leading-order regulator family for localized finite deformations is a collection of exact primitive kernels and comparison maps satisfying
+$$
+J_R^{(\alpha)}(\Delta)=I+c_\alpha\Delta^{2\kappa_\alpha}\,\mathcal K_R^{(\alpha)}+O(\Delta^{2\kappa_\alpha+2}),
+$$
+for some $c_\alpha>0$ and integer onset exponent $\kappa_\alpha\ge 1$, together with the corresponding inverse expansion and the same quasilocal support notion used throughout the free-model papers.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact leading-order regulator facts).</span>
+The present free-model stack yields the following exact facts.
+<ol>
+  <li><em>Lie–Trotter onset.</em> The bulk-then-collar Lie–Trotter rule begins at order $\Delta^4$, so $\kappa_{\mathrm{LT}}=2$.</li>
+  <li><em>Collar-excision onset.</em> The collar-excision rule begins at order $\Delta^2$, so $\kappa_{\mathrm{exc}}=1$.</li>
+  <li><em>Exact $\lambda$-family scaling.</em> For every finite interval support $R$ and every $0<\lambda\le 1$,
+  $$
+  A_{R,\lambda}^{(1)}=\lambda(2-\lambda)A_R^{(1)}.
+  $$</li>
+  <li><em>Exact bond-centered leading operator.</em> The leading collar-excision singleton exchange bracket reduces, after bond-centered spatial renormalization, to
+  $$
+  K_\parallel[\beta]=\Bigl(\beta\partial_x+\frac12\partial_x\beta\Bigr)(I-\alpha)
+  $$
+  on smooth sampled profiles.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Source of the statement.</span>
+Items (1), (2), and (4) are proved in the explicit free-model sequel, and item (3) is its exact $\lambda$-family scaling theorem. The present paper uses them as exact input. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+These facts already rule out two tempting but incorrect universality notions: raw microscopic uniqueness and raw entrywise matrix universality. Different admissible regulators do not even begin at the same visible order, and the stable continuum object is bond-centered rather than site-centered.
+</div>
+
+<h2>III. Restricted onset-renormalized universality</h2>
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Restricted onset-renormalized universality at the leading visible order).</span>
+Let $\alpha$ label a class of admissible leading-order regulators such that, for every bounded interval support $R$,
+$$
+J_R^{(\alpha)}(\Delta)=I+c_\alpha\Delta^{2\kappa_\alpha}\,\mathcal K_R+O(\Delta^{2\kappa_\alpha+2}),
+$$
+with the same normalized leading operator $\mathcal K_R$ across the class. Assume moreover that for the support pair under consideration:
+<ol>
+  <li>the corresponding inverse expansions hold;</li>
+  <li>the first nonzero exchange contribution is generated by the commutator of the normalized leading terms; and</li>
+  <li>the bond-centered continuum action of $[\mathcal K_R,\mathcal K_S]$ on smooth sampled profiles exists.</li>
+</ol>
+Then the renormalized exchange defect
+$$
+\widehat E_{R,S}^{(\alpha)}(\Delta)
+:=
+\frac{E_{R,S}^{(\alpha)}(\Delta)-I}{c_\alpha^2\Delta^{4\kappa_\alpha}}
+$$
+satisfies
+$$
+\widehat E_{R,S}^{(\alpha)}(\Delta)
+=
+[\mathcal K_R,\mathcal K_S]+O(\Delta^2),
+$$
+and every regulator in the class therefore shares the same leading tangential continuum bracket.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Insert the normalized leading expansions of $J_R^{(\alpha)}$ and $J_S^{(\alpha)}$ into the group-commutator definition of the exchange defect. The first nonzero term is the commutator of the normalized leading operators, multiplied by $c_\alpha^2\Delta^{4\kappa_\alpha}$. Dividing by that factor removes the regulator-dependent onset data and leaves the common commutator. Assumption (3) identifies its bond-centered continuum action. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the strongest universality theorem compatible with the present exact results. It is intentionally weaker than rule selection and intentionally stronger than a generic continuum slogan. The universal object is the normalized leading bond-centered exchange bracket.
+</div>
+
+<h2>IV. Exact realization by the $\lambda$-family</h2>
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(Exact finite-lattice universality test for the $\lambda$-family).</span>
+Let $R,S$ be any support pair whose first visible exchange order is generated by the leading coefficients. With
+$$
+c_\lambda:=\lambda(2-\lambda),
+$$
+one has
+$$
+E_{R,S}^{(\lambda)}(\Delta)
+=
+I+c_\lambda^2\Delta^4[A_R^{(1)},A_S^{(1)}]+O(\Delta^6),
+$$
+and therefore
+$$
+\frac{E_{R,S}^{(\lambda)}(\Delta)-I}{c_\lambda^2\Delta^4}
+=
+[A_R^{(1)},A_S^{(1)}]+O(\Delta^2).
+$$
+Thus the exact $\lambda$-family realizes restricted onset-renormalized universality at the first visible exchange order.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The exact scaling identity
+$$
+A_{R,\lambda}^{(1)}=c_\lambda A_R^{(1)}
+$$
+implies
+$$
+[A_{R,\lambda}^{(1)},A_{S,\lambda}^{(1)}]=c_\lambda^2[A_R^{(1)},A_S^{(1)}].
+$$
+By hypothesis, the first visible exchange term is generated by these leading coefficients, so the displayed defect expansion follows. Dividing by $c_\lambda^2\Delta^4$ yields the normalized statement. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This corollary is exact and finite-lattice. It does not yet use the continuum operator. It shows that the exact admissible family singled out by the no-go lemma already exhibits a nontrivial renormalized universality mechanism at the first visible order.
+</div>
+
+<h2>V. Exact bond-centered universality of the leading tangential operator</h2>
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Leading smeared singleton operators for the $\lambda$-family).</span>
+For the singleton-support leading coefficients, define
+$$
+\mathcal K_{a,\lambda}[N]:=a\sum_n N_nA_{n,\lambda}^{(1)},
+\qquad
+\mathcal K_a[N]:=a\sum_n N_nA_n.
+$$
+Write
+$$
+\beta:=N\partial_xM-M\partial_xN,
+$$
+and let $\iota_a\phi$ denote the lattice sampling of a smooth compactly supported two-component profile $\phi$.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 2</span> <span class="env-name">(Exact leading-order bond-centered universality for the $\lambda$-family).</span>
+For every $0<\lambda\le 1$ one has
+$$
+\mathcal K_{a,\lambda}[N]=c_\lambda\mathcal K_a[N].
+$$
+Consequently, for every smooth compactly supported two-component profile $\phi$,
+$$
+\frac{1}{c_\lambda^2}
+[\mathcal K_{a,\lambda}[N],\mathcal K_{a,\lambda}[M]]\iota_a\phi
+=
+\iota_a\bigl(K_\parallel[\beta]\phi\bigr)+O(a).
+$$
+Thus the entire exact admissible $\lambda$-family shares the same leading bond-centered tangential operator after onset renormalization.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+For singleton supports, the exact scaling theorem gives
+$$
+A_{n,\lambda}^{(1)}=c_\lambda A_n.
+$$
+Hence
+$$
+\mathcal K_{a,\lambda}[N]=a\sum_nN_nA_{n,\lambda}^{(1)}=c_\lambda a\sum_nN_nA_n=c_\lambda\mathcal K_a[N].
+$$
+Therefore
+$$
+\frac{1}{c_\lambda^2}[\mathcal K_{a,\lambda}[N],\mathcal K_{a,\lambda}[M]]
+=[\mathcal K_a[N],\mathcal K_a[M]].
+$$
+Apply the exact bond-centered collar-excision thin-slab theorem, which identifies the right-hand side with
+$$
+\iota_a\bigl(K_\parallel[\beta]\phi\bigr)+O(a)
+$$
+on smooth sampled profiles. <span class="qed">$\square$</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This theorem closes phase 3 at the strongest exact scope now available. It does not prove that every conceivable regulator family shares the same limit. It proves that the exact nontrivial family already realized inside the free-model sequel does share the same leading bond-centered tangential operator after onset normalization.
+</div>
+
+<h2>VI. Geometric reading in the supported-hypersurface architecture</h2>
+<p>
+The architecture paper argued that relativistic ISP should be organized around exact finite hypersurface kernels and localized supported deformations, with the exchange defect playing the role of the finite Dirac–Schwinger datum. Theorem&nbsp;2 gives the precise leading-order operator that survives this program in the explicit free-model realization.
+</p>
+<p>
+At leading visible order, the renormalized operator depends only on the antisymmetrized deformation profile $\beta$ and the bond-centered exchange density singled out by the exact local algebra. In that sense it is the leading tangential exchange datum attached to a pair of supported finite hypersurface deformations whose first visible order is generated by the leading coefficients. No additional wave-function ontology is needed to read that statement: it is already encoded in the exact transition-law algebra itself.
+</p>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The geometric reading is intentionally leading-order and intentionally exact only at that scope. Broader support-prototype stability, higher-coefficient geometric closure, and all ontology-expanding phases belong later in the program.
+</div>
+
+<h2>VII. What phase 3 now closes and what it defers</h2>
+<p>
+With the scope fixed this way, phase 3 is complete in the following exact sense.
+</p>
+<ol>
+  <li><em>Restricted universality theorem.</em> The strongest universality statement compatible with the present explicit free-model results has been isolated and proved.</li>
+  <li><em>Exact family realization.</em> The nontrivial admissible $\lambda$-family realizes that theorem at the first visible exchange order.</li>
+  <li><em>Exact common tangential limit.</em> After onset normalization, the exact $\lambda$-family shares the same leading bond-centered tangential operator on smooth sampled profiles.</li>
+  <li><em>Geometric placement.</em> The leading operator has been placed explicitly within the supported-hypersurface architecture of relativistic ISP.</li>
+</ol>
+<p>
+Just as important is what is deliberately deferred.
+</p>
+<ol>
+  <li><em>Microscopic rule uniqueness.</em> It is not available and is not claimed.</li>
+  <li><em>Broader prototype-level regulator stability.</em> This requires exact higher-coefficient strip moments beyond the present scope.</li>
+  <li><em>Higher-order universality.</em> No claim is made beyond the first visible order already realized by the exact family.</li>
+  <li><em>Fock, gauge, and detector phases.</em> These remain later, strictly dependent phases.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+Narrowing the phase this way is what makes it theorem-level. The broader universality questions are real, but they must sit downstream of exact higher-coefficient calculations rather than inside a prematurely broadened phase-3 paper.
+</div>
+
+<h2>VIII. Conclusion</h2>
+<p>
+Phase 3 is now complete at the strongest exact scope supported by the existing relativistic ISP stack. The right universality statement is onset-renormalized, bond-centered, and leading-order. It is realized exactly by the nontrivial $\lambda$-family, and it yields the same leading tangential operator after normalization.</p>
+<p>
+This is also the right conclusion from the Barandes point of view. The exact probabilistic transition-law algebra is primary. One does not repair regulator dependence by imposing extra representational structure that the transition law itself has not earned. Instead one identifies the structural content that survives there. At leading order, that content is now exact. The next real proof burden is not more rhetoric about universality, but exact higher-coefficient strip-moment control beyond the leading visible order.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Toward Lorentz-Covariant Indivisible Stochastic Processes: Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations,” preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes: Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality,” preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem,” preprint (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Theorem,” arXiv:2309.03085 (2023; rev. 2026).</span></li>
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” arXiv:2507.21192 (2025).</span></li>
+</ol>
+</div>
+</article>
+</body>
+</html>

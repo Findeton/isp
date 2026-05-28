@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Leading Singleton Sector in Relativistic Indivisible Stochastic Processes</title>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    tags: 'ams',
+    macros: {
+      C: '{\\mathcal{C}}',
+      H: '{\\mathcal{H}}',
+      F: '{\\mathcal{F}}',
+      N: '{\\mathcal{N}}',
+      id: '{\\mathrm{id}}',
+      supp: '{\\mathrm{supp}}',
+      Tr: '{\\mathrm{Tr}}',
+      one: '{\\mathbf{1}}',
+      Re: '{\\mathrm{Re}}',
+      Ad: '{\\mathrm{Ad}}',
+      grad: '{\\nabla}'
+    }
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #111;
+  background: #fff;
+  padding: 48px 20px 80px;
+}
+.paper { max-width: 740px; margin: 0 auto; }
+.title {
+  font-size: 1.55em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.7em;
+}
+.subtitle {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.2em;
+  color: #333;
+}
+.authors { text-align: center; font-size: 1em; margin-bottom: 0.25em; }
+.affil   { text-align: center; font-size: 0.88em; color: #444; margin-bottom: 0.25em; }
+.date    { text-align: center; font-size: 0.85em; color: #555; margin-bottom: 2em; }
+.arxiv-note {
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 2em;
+}
+.abstract {
+  border: 1px solid #bbb;
+  padding: 1em 1.2em;
+  margin-bottom: 2.4em;
+  font-size: 0.93em;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.lemma       { border-color: #1d4ed8; background: #eff6ff; }
+.env.conjecture  { border-color: #b45309; background: #fff7ed; border-style: dashed; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+  font-size: 0.9em;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.4em 0.65em;
+  text-align: left;
+}
+th { background: #f0f4ff; font-weight: bold; }
+tr:nth-child(even) td { background: #fafafa; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+
+<body>
+<article class="paper">
+
+<div class="title">Beyond the Leading Singleton Sector in Relativistic Indivisible Stochastic Processes</div>
+<div class="subtitle">Bridge draft on general supports, higher coefficients, Fock-space lift, and a minimal $U(1)$ gauge benchmark for the bond-centered thin-slab law</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Bridge draft / roadmap preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Direct sequel to “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes”</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The companion free-model sequel established the first explicit bond-centered thin-slab reduction for relativistic indivisible stochastic processes (ISPs): for the collar-excision rule in the one-particle lattice Dirac model, the leading singleton exchange coefficient has no finite entrywise continuum limit, but after bond-centered spatial renormalization its action on smooth sampled profiles converges to the tangential pseudo-generator
+$K_\parallel[\beta] = (\beta\partial_x + \tfrac12\partial_x\beta)(I-\alpha)$.
+That result solved only the first case in the agenda stated there. The present document is not a further exact theorem paper. Its role is to separate what is already proved from the next layer of finite-support, higher-coefficient, Fock-space, and gauge-benchmark scaffolding.</p>
+<p>
+The sections below keep the intended order of the program, but they now mark their status explicitly. At leading order we state the finite-support boundary picture as a conjectural extension of the singleton result. For higher coefficients and larger support types we record a conditional theorem under an exact strip-closure hypothesis. For variable particle number we give a formal Fock-space lift conditional on a proved one-particle bond-centered law. For gauge coupling we separate the exact $\Gamma$-level invariance of the primitive slab data from the still-conditional bond-centered continuum action. The point is not to blur roadmap material into theorem-level claims, but to preserve the next targets in the sharpest form currently justified:
+$K_\parallel^A[\beta] = (\beta D_x + \tfrac12\partial_x\beta)(I-\alpha)$
+with $D_x = \partial_x - iqA_x$. The outcome is a sharper near-term sequence: exact free one-particle exchange-defect results first, then higher coefficients and larger supports, then a genuinely exact Fock-space lift, and only after that the minimal gauge benchmark and broader field-theoretic questions.</p>
+</div>
+
+<p class="small-note">
+Status note. The present file is a bridge draft. Whenever a statement below depends on unproved strip-closure, exact-kernel, or support-level assumptions beyond the established singleton free-model results, it is labeled as a Program, Conjecture, or Conditional Theorem rather than as an unconditional theorem claim.
+</p>
+
+<p class="small-note">
+Update note. The theorem-level completion of phases 2 through 7 now lives in the dedicated phase papers on the leading support-level boundary law, the leading-order restricted universality statement, the higher-order overlap / strip-moment criterion, the broader regulator-stability criterion, the explicit singleton higher-coefficient calculation, and the first non-leading singleton regulator comparison. The remaining material still visible in this bridge draft should therefore be read primarily as scaffolding for later Fock-space and gauge phases rather than as already-completed theorem papers.
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+The previous relativistic ISP sequel ended with an unusually concrete conclusion. After comparing the Lie-Trotter and collar-excision localized deformation rules in the free one-particle lattice Dirac model, it identified the exact leading singleton exchange algebra, proved that naive site-smearing diverges entrywise in the thin-slab limit, and then showed that the same exchange algebra admits a <em>bond-centered</em> renormalization whose action on smooth sampled profiles converges to the tangential pseudo-generator required by Program&nbsp;1. The final paragraph then named the next agenda in a specific order: extend the bond-centered identification beyond the leading singleton sector, treat general supports and higher coefficients, move to variable particle number, and only after that test gauge coupling.
+</p>
+
+<p>
+This paper follows that order exactly. Its role is intermediate rather than final. We do not claim a complete relativistic ISP field theory, and we do not claim a unique physical rule-selection theorem beyond the restricted universality already established in the free-model sequel. What we do claim is that the bond-centered thin-slab law can be organized in a substantially more stable way than the singleton calculation alone might suggest.
+</p>
+
+<p>
+There are four intended points. First, for the collar-excision rule the natural leading-order conjecture is that the coefficient $A_R^{(1)}$ for a finite support $R$ is already boundary-driven: at order $\Delta^2$ the mass terms remain invisible and the coefficient should decompose into local deleted-bond contributions together with the diagonal normalization required by column sums. If so, the first nontrivial exchange between disjoint supports is controlled by the bond packets facing the gap rather than by the whole support volume. Second, once one abstracts the exact singleton calculation into a strip-channel language, the higher-coefficient and larger-support problem has a clean conditional form. The right hypothesis is not an entrywise matrix limit but closure of the exact exchange algebra on finitely many strip channels with finite first moments. Under that hypothesis the same bond-centered renormalization produces a first-order tangential operator on smooth sampled profiles.
+</p>
+
+<p>
+Third, the fixed-particle-number assumption can be relaxed without changing the essential architecture, but here only at the level of a formal or conditional Fock-space lift. In a fermionic Fock-space lift of the lattice Dirac model, number-preserving quadratic dynamics suggests that the localized deformation maps should decompose sectorwise and that the bond-centered thin-slab operator should simply second quantize. Thus the natural variable-particle-number extension is not a new continuum object but the Fock lift $d\Gamma(K_\parallel)$ of the one-particle tangential generator. Fourth, a minimal-coupling lattice $U(1)$ test can already be posed sharply. At the exact $\Gamma$ level the primitive slab kernels and the resulting exchange defect remain gauge invariant, while the continuum bond-centered action is recorded below only as the benchmark one would want later exact kernel calculations to recover. That is the right first gauge benchmark because it tests genuine gauge structure without yet diffusing the discussion into full field-theoretic constraints.
+</p>
+
+<p>
+The paper is organized as follows. Section II recalls only the minimal one-particle background needed from the previous sequel. Section III records the leading-order boundary picture for general finite supports in conjectural form. Section IV states the general strip-closure result as a conditional theorem for higher coefficients and larger support types. Section V gives the corresponding formal Fock-space lift. Section VI introduces the minimal lattice $U(1)$ coupling, keeping the exact primitive-kernel invariance separate from the conditional continuum action. Section VII closes with the sharpened near-term program.
+</p>
+
+<h2>II. Minimal background from the one-particle free-model sequel</h2>
+
+<p>
+We work on the same periodic one-dimensional lattice Dirac model as in the preceding sequel. The one-particle Hilbert space is $\H_L=\mathbb{C}^{2L}$ with configuration basis $\{|n,\uparrow\rangle,|n,\downarrow\rangle\}_{n\in\Lambda_L}$, lattice spacing $a$, and free Hamiltonian $H_D = K + M$ with $\alpha=\sigma_x$ and $\beta=\sigma_z$. For a finite support region $R\subset\Lambda_L$, the collar-excision rule uses the bulk Hamiltonian
+</p>
+
+<div class="eq">
+$$
+B_R := H_D - C_R,
+$$
+</div>
+
+<p>
+where $C_R$ contains the on-site mass terms in $R$ and every kinetic bond incident on $R$. The primitive positive slab kernels are
+</p>
+
+<div class="eq">
+$$
+\Gamma_0(\Delta) := \Gamma(e^{-i\Delta H_D}),
+\qquad
+\Gamma_R(\Delta) := \Gamma(e^{-i\Delta B_R}),
+$$
+</div>
+
+<p>
+and the localized algebraic deformation map is
+</p>
+
+<div class="eq">
+$$
+J_R(\Delta) := \Gamma_R(\Delta)\Gamma_0(\Delta)^{-1}.
+$$
+</div>
+
+<p>
+Whenever the relevant inverses exist one has an expansion
+</p>
+
+<div class="eq">
+$$
+J_R(\Delta)=I+\sum_{k\ge 1}\Delta^{2k}A_R^{(k)}.
+$$
+</div>
+
+<p>
+For singleton supports $R=\{n\}$, the preceding sequel computed $A_R^{(1)}$ exactly and showed that the leading exchange commutators close on two kinds of strip operators: the bond-flip operators $F_{n+1/2}$ and the two-step strip operators $S_{n,n+2}$. The naive site-smeared density
+</p>
+
+<div class="eq">
+$$
+\mathcal K_a[N] := a\sum_n N_nA_{\{n\}}^{(1)}
+$$
+</div>
+
+<p>
+does <em>not</em> have a finite entrywise continuum commutator. But the bond-centered density
+</p>
+
+<div class="eq">
+$$
+\tau_{n+1/2}^{(a)}
+:=
+\frac{1}{2a}F_{n+1/2}
++\frac{1}{8a}\bigl(S_{n-1,n+1}+S_{n,n+2}\bigr)
+$$
+</div>
+
+<p>
+does, in the sense that for
+$\beta = N\partial_xM - M\partial_xN$
+and smooth compactly supported profiles $\phi=(u,d)$,
+</p>
+
+<div class="eq">
+$$
+[\mathcal K_a[N],\mathcal K_a[M]]\,\iota_a\phi
+=
+\iota_a\bigl(K_\parallel[\beta]\phi\bigr)+O(a),
+\qquad
+K_\parallel[\beta]
+:=
+\Bigl(\beta\partial_x+\frac12\partial_x\beta\Bigr)(I-\alpha).
+$$
+</div>
+
+<p>
+The rest of the present paper should be read as the systematic extension of that statement.
+</p>
+
+<h2>III. General finite supports at leading order: boundary reduction</h2>
+
+<p>
+The first extension is the next exact target at the free-model level. Before discussing higher coefficients, one should understand what the leading collar-excision coefficient $A_R^{(1)}$ ought to look like for a genuine finite support $R$, not just a singleton.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Deleted-bond set).</span>
+For a finite region $R\subset\Lambda_L$, let
+$$
+\partial_1R
+:=
+\Bigl\{n+\tfrac12:\ \{n,n+1\}\cap R\neq\varnothing\Bigr\}
+$$
+denote the set of kinetic bonds deleted by collar excision. For each bond $b=n+\tfrac12$, write $Q_b$ for the second-order local kernel coefficient obtained by deleting only that bond from the free Dirac Hamiltonian and comparing with the reference free slab. Thus $Q_b$ is supported on the two adjacent sites and carries the same spin-parity structure as the singleton coefficient.
+</div>
+
+<div class="env conjecture">
+<span class="env-title">Conjecture 1</span> <span class="env-name">(Deleted-bond boundary decomposition for finite supports).</span>
+For every finite $R\subset\Lambda_L$, the leading collar-excision coefficient admits the decomposition
+$$
+A_R^{(1)}
+=
+\sum_{b\in\partial_1R}Q_b + D_R,
+$$
+where $D_R$ is diagonal and uniquely determined by column normalization. In particular:
+<ol>
+  <li>the off-diagonal part of $A_R^{(1)}$ depends only on deleted kinetic bonds, not on the deleted mass terms;</li>
+  <li>$A_R^{(1)}$ is supported in the one-step neighborhood $\N_1(R)$;</li>
+  <li>the support-volume dependence of $A_R^{(1)}$ enters through a sum of local bond contributions.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Motivation.</span>
+Exactly as in the singleton calculation, the second-order off-diagonal coefficient of a kernel $\Gamma(e^{-i\Delta H})$ is $|(H)_{AB}|^2$ for $A\neq B$. Replacing $H_D$ by $B_R$ removes precisely the off-diagonal matrix elements belonging to kinetic bonds incident on $R$; the diagonal mass terms contribute no off-diagonal second-order weight. Hence the off-diagonal part of $A_R^{(1)}$ is the sum over deleted bonds of their local differences, which is precisely $\sum_{b\in\partial_1R}Q_b$. The diagonal part is then fixed by the condition $\one^\top A_R^{(1)}=0$, since $J_R(\Delta)$ is normalization preserving order by order. Support in $\N_1(R)$ is immediate because each $Q_b$ is supported on the two sites adjacent to $b$. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+Conjecture&nbsp;1 captures how one should try to think about finite supports. If it is correct, then the leading coefficient is not an indivisible “blob” attached to $R$; it is a finite sum of boundary-local deleted-bond pieces plus the diagonal bookkeeping needed for normalization.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Boundary-facing bond packet).</span>
+Let $R,S\subset\Lambda_L$ be disjoint finite intervals. A deleted bond $b\in\partial_1R$ is <em>facing $S$</em> if its midpoint lies on a shortest lattice path from $R$ to $S$. Denote by
+$$
+\mathcal B_{R\to S}
+\subset
+\partial_1R
+$$
+the set of deleted bonds in $R$ facing $S$, and define the associated packet
+$$
+\mathcal Q_{R\to S}
+:=
+\sum_{b\in\mathcal B_{R\to S}}Q_b.
+$$
+Similarly define $\mathcal Q_{S\to R}$.
+</div>
+
+<div class="env conjecture">
+<span class="env-title">Conjecture 2</span> <span class="env-name">(Boundary reduction at the first exchange order).</span>
+Let $R,S\subset\Lambda_L$ be disjoint finite intervals. Then
+$$
+[A_R^{(1)},A_S^{(1)}]
+=
+[\mathcal Q_{R\to S},\mathcal Q_{S\to R}] + \mathcal R_{R,S},
+$$
+where every term in the remainder $\mathcal R_{R,S}$ is supported on strips whose minimal distance from the gap between $R$ and $S$ is strictly larger than the first meeting strip of the two supports. Equivalently, the first nontrivial exchange channel is completely determined by the boundary-facing bond packets.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Heuristic reduction.</span>
+Expand both leading coefficients using Conjecture&nbsp;1:
+$$
+[A_R^{(1)},A_S^{(1)}]
+=
+\sum_{b\in\partial_1R}\sum_{c\in\partial_1S}[Q_b,Q_c]
++\sum_{b\in\partial_1R}[Q_b,D_S]
++\sum_{c\in\partial_1S}[D_R,Q_c].
+$$
+The diagonal terms may shift local coefficients but cannot create a new overlap strip before a bond term does. Each bond commutator $[Q_b,Q_c]$ vanishes unless the one-step neighborhoods of $b$ and $c$ intersect or are connected by the minimal strip carrying the first exchange channel. Interior deleted bonds of $R$ lie farther from $S$ than the boundary-facing bonds, so any commutator involving them contributes only on a thicker strip. Therefore the first strip on which the exchange can appear is produced entirely by the bond packets facing the gap, which is the claimed reduction. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env conjecture">
+<span class="env-title">Program 1</span> <span class="env-name">(Leading-order finite-support bond-centered law).</span>
+Fix prototype finite intervals $R_\ast,S_\ast\subset\mathbb Z$ and write their translates on the lattice as $R_n:=n+R_\ast$, $S_n:=n+S_\ast$. Define
+$$
+\mathcal K_{a,R_\ast}[N]
+:=
+a\sum_n N_n A_{R_n}^{(1)},
+\qquad
+\mathcal K_{a,S_\ast}[M]
+:=
+a\sum_n M_n A_{S_n}^{(1)}.
+$$
+Then there exists a bond-centered density $\mathcal T_{a;R_\ast,S_\ast}[\beta]$, built from the translated commutators of the boundary-facing packets, such that for every smooth compactly supported two-component profile $\phi$,
+$$
+[\mathcal K_{a,R_\ast}[N],\mathcal K_{a,S_\ast}[M]]\,\iota_a\phi
+=
+\mathcal T_{a;R_\ast,S_\ast}[\beta]\iota_a\phi + O(a),
+$$
+where $\beta=N\partial_xM-M\partial_xN$. Moreover
+$$
+\mathcal T_{a;R_\ast,S_\ast}[\beta]\iota_a\phi
+=
+\iota_a\bigl(K_{\parallel;R_\ast,S_\ast}[\beta]\phi\bigr)+O(a),
+$$
+for a first-order tangential operator of the form
+$$
+K_{\parallel;R_\ast,S_\ast}[\beta]
+=
+\Bigl(\beta\partial_x+\frac12\partial_x\beta\Bigr)\Xi_{R_\ast,S_\ast},
+$$
+with $\Xi_{R_\ast,S_\ast}$ determined by the strip moments of the boundary packets. For singleton prototypes, $\Xi_{R_\ast,S_\ast}=I-\alpha$, recovering the earlier theorem.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Why this should follow.</span>
+By Conjecture&nbsp;2, the leading translated commutator can be replaced up to thicker-strip errors by the commutator of the boundary-facing packets. Translation covariance makes that commutator depend only on relative displacement. Antisymmetrizing the smeared sum gives
+$$
+[\mathcal K_{a,R_\ast}[N],\mathcal K_{a,S_\ast}[M]]
+=
+a^2\sum_{n,r}\bigl(N_nM_{n+r}-N_{n+r}M_n\bigr)\,\mathcal X_r + O(a),
+$$
+for finitely many translated strip operators $\mathcal X_r$. Smoothness gives
+$$
+N_nM_{n+r}-N_{n+r}M_n
+=
+ar\,\beta(x_{n+r/2})+O(a^2).
+$$
+The finite first moments of the active strip coefficients therefore produce a bond-centered density depending on $\beta$ at strip midpoints, and the same midpoint-Taylor argument as in the singleton case turns that density into a first-order tangential operator acting on smooth sampled profiles. The singleton result is the special case in which only the bond-flip and two-step strip channels are active. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Program&nbsp;1 is the conceptual extension of the singleton result. What matters is not the support volume of $R$ and $S$ but the strip moments of the boundary data that survive after antisymmetrization. The natural finite-support generalization of the bond-centered law should therefore still be a boundary law.
+</div>
+
+<h2>IV. Higher coefficients and larger support types: the strip-closure theorem</h2>
+
+<p>
+Beyond leading order the right framework is slightly more abstract. The previous sequel explicitly computed the first singleton coefficient and its exchange algebra. For higher coefficients or more general support shapes, the decisive question is whether the exact coefficient algebra closes on finitely many strip channels with controllable moments.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Translated coefficient families).</span>
+Let $\sigma$ label a support type (for example a singleton, an interval of fixed width, or a finite union of local cells). For each order $p\ge 1$, let $A_{\sigma,n}^{(p)}$ denote the order-$\Delta^{2p}$ coefficient appearing in the localized comparison map attached to the translate of type $\sigma$ centered at lattice site $n$. Define the corresponding smeared operator by
+$$
+\mathcal K_{\sigma,a}^{(p)}[N]
+:=
+a\sum_n N_nA_{\sigma,n}^{(p)}.
+$$
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 4</span> <span class="env-name">(Bond-centered admissible strip channels).</span>
+Suppose that for each active channel label $(\ell,\chi)$ there is a translated antisymmetric strip operator family $X_{n+1/2}^{(\ell,\chi)}$ and a corresponding smeared bond-centered density $\mathcal T_a^{(\ell,\chi)}[\beta]$ such that for every smooth compactly supported profile $\phi$,
+$$
+\mathcal T_a^{(\ell,\chi)}[\beta]\iota_a\phi
+=
+\iota_a\bigl(K_{\ell,\chi}[\beta]\phi\bigr)+O(a),
+$$
+with $K_{\ell,\chi}[\beta]$ first-order in derivatives and local in $\beta$. Call such a family <em>bond-centered admissible</em>.
+</div>
+
+<div class="env definition">
+<span class="env-title">Hypothesis 1</span> <span class="env-name">(Exact strip closure with finite first moments).</span>
+Fix support types $\sigma,\tau$ and orders $p,q$. Assume:
+<ol>
+  <li><em>strip closure:</em>
+  $$
+  [A_{\sigma,n}^{(p)},A_{\tau,m}^{(q)}]
+  =
+  \sum_{(\ell,\chi)} c_{\sigma,\tau}^{(p,q;\ell,\chi)}(m-n)\,
+  X_{n+1/2}^{(\ell,\chi)},
+  $$
+  for finitely many strip channels $(\ell,\chi)$ and finitely supported coefficient functions $c_{\sigma,\tau}^{(p,q;\ell,\chi)}$;</li>
+  <li><em>antisymmetry:</em>
+  $c_{\sigma,\tau}^{(p,q;\ell,\chi)}(r) = -c_{\tau,\sigma}^{(q,p;\ell,\chi)}(-r)$;</li>
+  <li><em>finite first moments:</em>
+  $$
+  C_{\sigma,\tau}^{(p,q;\ell,\chi)}
+  :=
+  \sum_r r\,c_{\sigma,\tau}^{(p,q;\ell,\chi)}(r)
+  $$
+  exist for all active channels.</li>
+</ol>
+</div>
+
+<div class="env theorem">
+<span class="env-title">Conditional Theorem 2</span> <span class="env-name">(General bond-centered thin-slab reduction under strip closure).</span>
+Assume Hypothesis&nbsp;1, and assume moreover that each active strip channel is bond-centered admissible in the sense of Definition&nbsp;4. Then for every smooth compactly supported two-component profile $\phi$ one has
+$$
+[\mathcal K_{\sigma,a}^{(p)}[N],\mathcal K_{\tau,a}^{(q)}[M]]\,\iota_a\phi
+=
+\sum_{(\ell,\chi)}
+C_{\sigma,\tau}^{(p,q;\ell,\chi)}
+\mathcal T_a^{(\ell,\chi)}[\beta]\iota_a\phi
++O(a),
+$$
+with $\beta=N\partial_xM-M\partial_xN$. Consequently,
+$$
+[\mathcal K_{\sigma,a}^{(p)}[N],\mathcal K_{\tau,a}^{(q)}[M]]\,\iota_a\phi
+=
+\iota_a\bigl(K_{\parallel;\sigma,\tau}^{(p,q)}[\beta]\phi\bigr)+O(a),
+$$
+where
+$$
+K_{\parallel;\sigma,\tau}^{(p,q)}[\beta]
+:=
+\sum_{(\ell,\chi)}
+C_{\sigma,\tau}^{(p,q;\ell,\chi)}K_{\ell,\chi}[\beta].
+$$
+Thus every coefficient pair with strip closure and finite first moments has the same bond-centered continuum form: an antisymmetrized first-order tangential operator controlled by strip moments.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Start from
+$$
+[\mathcal K_{\sigma,a}^{(p)}[N],\mathcal K_{\tau,a}^{(q)}[M]]
+=
+a^2\sum_{n,m}N_nM_m[A_{\sigma,n}^{(p)},A_{\tau,m}^{(q)}].
+$$
+Insert the strip-closure expansion from Hypothesis&nbsp;1 and set $r=m-n$:
+$$
+=
+a^2\sum_{n,r}
+N_nM_{n+r}
+\sum_{(\ell,\chi)}
+c_{\sigma,\tau}^{(p,q;\ell,\chi)}(r)\,X_{n+1/2}^{(\ell,\chi)}.
+$$
+Antisymmetrizing under $(n,\sigma,p)\leftrightarrow(n+r,\tau,q)$ replaces $N_nM_{n+r}$ by
+$N_nM_{n+r}-N_{n+r}M_n$.
+Smoothness gives
+$$
+N_nM_{n+r}-N_{n+r}M_n
+=
+ar\,\beta(x_{n+r/2})+O(a^2),
+$$
+uniformly on the finite set of active displacements. Summing over $r$ therefore produces precisely the first moments $C_{\sigma,\tau}^{(p,q;\ell,\chi)}$ multiplying the bond-centered admissible strip densities. The assumed profile-action limit of each strip density then yields the final continuum operator. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Conditional Corollary 1</span> <span class="env-name">(Singleton theorem as the first strip-closure case).</span>
+The leading singleton collar-excision theorem of the previous sequel is the special case of Theorem&nbsp;2 in which
+<ol>
+  <li>$\sigma=\tau=$ singleton,</li>
+  <li>$p=q=1$,</li>
+  <li>the only active strip channels are the bond-flip and two-step strip families, and</li>
+  <li>their bond-centered admissible combination yields $K_\parallel[\beta] = (\beta\partial_x+\tfrac12\partial_x\beta)(I-\alpha)$.</li>
+</ol>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Conditional Theorem&nbsp;2 is deliberately formulated at the coefficient algebra level rather than the kernel-entry level. This is exactly the lesson of the previous sequel: the naive entrywise continuum limit is too rigid. The object with a stable continuum meaning is the bond-centered action of the exchange algebra on smooth sampled profiles.
+</div>
+
+<h2>V. Variable particle number: Fock-space lift of the bond-centered law</h2>
+
+<p>
+The next requested extension is variable particle number. The clean first step is the fermionic Fock lift of the one-particle lattice Dirac model.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 5</span> <span class="env-name">(Fermionic Fock-space ISP lift).</span>
+Let
+$$
+\F_L
+:=
+\bigoplus_{N=0}^{2L}\Lambda^N\H_L
+$$
+be the finite-lattice fermionic Fock space. For a number-preserving quadratic Hamiltonian
+$$
+\widehat H = \sum_{A,B\in\C_L} h_{AB}\,c_A^\dagger c_B,
+$$
+write $\widehat U(\Delta)=e^{-i\Delta\widehat H}$ and denote its restriction to the $N$-particle sector by $\widehat U^{(N)}(\Delta)$. The corresponding primitive kernels are
+$$
+\Gamma_0^{(N)}(\Delta)
+:=
+\Gamma(\widehat U^{(N)}(\Delta)),
+\qquad
+\Gamma_R^{(N)}(\Delta)
+:=
+\Gamma(\widehat U_R^{(N)}(\Delta)),
+$$
+with comparison maps
+$$
+J_R^{(N)}(\Delta)
+:=
+\Gamma_R^{(N)}(\Delta)\bigl[\Gamma_0^{(N)}(\Delta)\bigr]^{-1}.
+$$
+</div>
+
+<p>
+Because the dynamics is quadratic and number preserving, the sectors decouple exactly. Variable particle number therefore appears as a direct sum of fixed-$N$ problems rather than as a new algebraic obstruction.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Conditional Theorem 3</span> <span class="env-name">(Formal sectorwise bond-centered thin-slab lift to Fock space).</span>
+Assume the one-particle bond-centered density $\mathcal T_a[\beta]$ satisfies
+$$
+\mathcal T_a[\beta]\iota_a\phi
+=
+\iota_a\bigl(K_\parallel[\beta]\phi\bigr)+O(a)
+$$
+for smooth compactly supported one-particle profiles. Define its fermionic second quantization on $\F_L$ by
+$$
+d\Gamma(\mathcal T_a[\beta])\big|_{\Lambda^N\H_L}
+:=
+\sum_{j=1}^N
+I^{\wedge(j-1)}\wedge\mathcal T_a[\beta]\wedge I^{\wedge(N-j)},
+$$
+and similarly for $d\Gamma(K_\parallel[\beta])$. Then for every finite-particle smooth antisymmetrized sampled profile $\Psi$,
+$$
+d\Gamma(\mathcal T_a[\beta])\,\iota_a^\F\Psi
+=
+\iota_a^\F\bigl(d\Gamma(K_\parallel[\beta])\Psi\bigr)+O(a),
+$$
+uniformly on finite particle-number truncations. In particular, the variable-particle-number tangential generator for number-preserving quadratic dynamics is
+$$
+K_{\parallel,\F}[\beta]
+=
+d\Gamma(K_\parallel[\beta]).
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Fix an $N$-particle sector. On antisymmetrized tensors of smooth one-particle profiles, $d\Gamma(\mathcal T_a[\beta])$ is the sum of $N$ copies of the one-particle operator acting in each slot. The one-particle convergence assumption therefore gives the same $O(a)$ estimate in each slot, and finite $N$ preserves the order of the error. Antisymmetrization commutes with applying the same one-body operator in each slot, so the resulting limit on $\Lambda^N\H_L$ is $d\Gamma(K_\parallel[\beta])$. Direct-summing over sectors gives the Fock-space statement for finite-particle states. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Conditional Corollary 2</span> <span class="env-name">(Variable particle number without new continuum kinematics).</span>
+For any state in a finite superposition of particle-number sectors, the bond-centered thin-slab law is obtained by applying the same one-particle tangential generator in each occupied slot and summing over sectors. Thus the first variable-particle-number extension is kinematically conservative: no new continuum operator is required beyond second quantization.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark on genuine number-changing dynamics.</span>
+If one adds localized source, sink, detector, or pair-creation terms, the Fock-space comparison map acquires off-diagonal blocks
+$A_R^{(p;N\to N\pm1)}$ or
+$A_R^{(p;N\to N\pm2)}$.
+Conditional Theorem&nbsp;3 then no longer applies literally, but Conditional Theorem&nbsp;2 still gives the right template on any finite Fock truncation: if those off-diagonal blocks satisfy the same strip-closure and finite-moment hypotheses, the exchange algebra again reduces to a bond-centered tangential law, now with local creation/annihilation insertions on the exchange strip. Deriving those exact coefficients is the natural next step beyond the present conservative Fock lift.
+</div>
+
+<h2>VI. Minimal $U(1)$ gauge coupling test</h2>
+
+<p>
+Only after the support and Fock-space extensions are in place is it sensible to test gauge coupling. The minimal benchmark is static lattice $U(1)$ coupling through Peierls phases on the Dirac kinetic bonds.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 6</span> <span class="env-name">(Lattice minimal coupling).</span>
+Let $A_{n+1/2}$ be a real link field and $q$ a charge. Define the link variable
+$$
+U_{n+1/2}:=e^{-iqaA_{n+1/2}}.
+$$
+The minimally coupled lattice Dirac Hamiltonian is
+$$
+H_D[A]
+=
+m\sum_n\beta_n
+-\frac{i}{2a}\sum_{n,s}
+\Bigl(
+U_{n+1/2}\,|n+1,\bar s\rangle\langle n,s|
+-U_{n+1/2}^{-1}\,|n,s\rangle\langle n+1,\bar s|
+\Bigr).
+$$
+For a support region $R$, define the coupled collar Hamiltonian $C_R[A]$ by replacing each free kinetic bond in $C_R$ with its minimally coupled version, and set $B_R[A]:=H_D[A]-C_R[A]$.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 7</span> <span class="env-name">(Local lattice gauge transformation).</span>
+For a site phase function $\chi_n$, let
+$$
+G_\chi|n,s\rangle := e^{iq\chi_n}|n,s\rangle,
+$$
+and transform the link field by
+$$
+A_{n+1/2}\longmapsto A_{n+1/2}^\chi
+:=
+A_{n+1/2}+\frac{\chi_{n+1}-\chi_n}{a}.
+$$
+Equivalently, $U_{n+1/2}\mapsto U_{n+1/2}^\chi=e^{-iq\chi_{n+1}}U_{n+1/2}e^{iq\chi_n}$.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 3</span> <span class="env-name">($\Gamma$-level gauge invariance of the primitive slab data).</span>
+Under the gauge transformation of Definition&nbsp;7 one has
+$$
+H_D[A^\chi]=G_\chi H_D[A]G_\chi^{-1},
+\qquad
+B_R[A^\chi]=G_\chi B_R[A]G_\chi^{-1}.
+$$
+Consequently,
+$$
+\Gamma_0[A^\chi](\Delta)=\Gamma_0[A](\Delta),
+\qquad
+\Gamma_R[A^\chi](\Delta)=\Gamma_R[A](\Delta),
+$$
+and therefore
+$$
+J_R[A^\chi](\Delta)=J_R[A](\Delta),
+\qquad
+E_{R,S}[A^\chi](\Delta)=E_{R,S}[A](\Delta).
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The first identities are the standard Peierls-covariance statements. Exponentiating gives
+$$
+e^{-i\Delta H_D[A^\chi]}
+=
+G_\chi e^{-i\Delta H_D[A]}G_\chi^{-1},
+\qquad
+e^{-i\Delta B_R[A^\chi]}
+=
+G_\chi e^{-i\Delta B_R[A]}G_\chi^{-1}.
+$$
+In the configuration basis,
+$$
+\bigl(G_\chi U G_\chi^{-1}\bigr)_{AB}
+=
+e^{iq(\chi_A-\chi_B)}U_{AB},
+$$
+so the entrywise moduli are unchanged:
+$|(G_\chi U G_\chi^{-1})_{AB}|^2=|U_{AB}|^2$.
+Hence the primitive kernels are invariant. Since $J_R$ and $E_{R,S}$ are built algebraically from those kernels, they are invariant as well. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+So the gauge test passes at the exact $\Gamma$ level before any continuum limit is taken. The remaining question is what bond-centered continuum operator the gauge-coupled exchange algebra selects.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 8</span> <span class="env-name">(Gauge-coupled strip operators and bond-centered density).</span>
+Define the gauge-coupled bond-flip and two-step strip operators by
+$$
+F_{n+1/2}^A
+:=
+\sum_{s}
+\Bigl(
+U_{n+1/2}|n+1,\bar s\rangle\langle n,s|
+-U_{n+1/2}^{-1}|n,s\rangle\langle n+1,\bar s|
+\Bigr),
+$$
+$$
+S_{n,n+2}^A
+:=
+\sum_s
+\Bigl(
+U_{n+1/2}U_{n+3/2}|n+2,s\rangle\langle n,s|
+-U_{n+1/2}^{-1}U_{n+3/2}^{-1}|n,s\rangle\langle n+2,s|
+\Bigr).
+$$
+The gauge-coupled bond-centered density is
+$$
+\tau_{n+1/2}^{A,(a)}
+:=
+\frac{1}{2a}F_{n+1/2}^A
++\frac{1}{8a}\bigl(S_{n-1,n+1}^A+S_{n,n+2}^A\bigr),
+$$
+and its smeared operator is
+$$
+\mathcal T_a^A[\beta]
+:=
+\sum_n \beta_{n+1/2}\tau_{n+1/2}^{A,(a)}.
+$$
+</div>
+
+<div class="env theorem">
+<span class="env-title">Conditional Proposition 4</span> <span class="env-name">(Gauge-covariant bond-centered continuum action).</span>
+Assume that the gauge-coupled leading exchange algebra is generated, at the same strip level as in the free case, by the operators of Definition&nbsp;8. Let $\phi=(u,d)\in C_c^\infty(\mathbb R,\mathbb C^2)$ and sample it on the lattice as before. If the continuum gauge potential $A_x$ is sampled at bond midpoints, then
+$$
+\mathcal T_a^A[\beta]\iota_a\phi
+=
+\iota_a\bigl(K_\parallel^A[\beta]\phi\bigr)+O(a^2)
+$$
+uniformly on compact sets, where
+$$
+K_\parallel^A[\beta]
+:=
+\Bigl(\beta D_x+\frac12\partial_x\beta\Bigr)(I-\alpha),
+\qquad
+D_x:=\partial_x-iqA_x.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Formal derivation.</span>
+Expand the link phases at bond midpoints:
+$$
+U_{n+1/2}=e^{-iqaA_{n+1/2}}=1-iqaA_{n+1/2}+O(a^2).
+$$
+The bond-flip part of $\mathcal T_a^A[\beta]$ therefore contains one-step covariant differences such as
+$$
+\frac{\beta_{n-1/2}}{2a}U_{n-1/2}^{-1}d_{n-1}
+\,-\,
+\frac{\beta_{n+1/2}}{2a}U_{n+1/2}d_{n+1},
+$$
+which are precisely the midpoint discretization of
+$-(\beta D_x+\tfrac12\partial_x\beta)d(x_n)$
+up to $O(a^2)$. The two-step strip terms supply the corresponding same-spin covariant centered difference:
+$$
+\frac{\beta_{n+1/2}+\beta_{n+3/2}}{8a}\,U_{n+1/2}U_{n+3/2}\,u_{n+2}
+\,-\,
+\frac{\beta_{n-3/2}+\beta_{n-1/2}}{8a}\,U_{n-3/2}^{-1}U_{n-1/2}^{-1}\,u_{n-2},
+$$
+which is the midpoint discretization of
+$(\beta D_x+\tfrac12\partial_x\beta)u(x_n)$
+up to $O(a^2)$. Combining the same-spin and opposite-spin pieces gives exactly the matrix action of $(I-\alpha)$, as in the free case, now with $\partial_x$ replaced by the gauge-covariant derivative $D_x$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Conditional Corollary 3</span> <span class="env-name">(Continuum gauge covariance).</span>
+Under the continuum gauge transformation
+$$
+\phi\longmapsto e^{iq\chi}\phi,
+\qquad
+A_x\longmapsto A_x+\partial_x\chi,
+$$
+one has
+$$
+K_\parallel^{A+\partial_x\chi}[\beta](e^{iq\chi}\phi)
+=
+e^{iq\chi}K_\parallel^A[\beta]\phi.
+$$
+Hence the bond-centered tangential operator obtained from the lattice exchange law passes the minimal gauge-coupling covariance test.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Immediate consequence.</span>
+This is the standard covariance of $D_x=\partial_x-iqA_x$ under local phase rotations. Since $\beta$ is a scalar profile built from the deformation smearing functions rather than the charged matter field, the prefactor $\beta\partial_x+\tfrac12\partial_x\beta$ transforms exactly as claimed. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark (Aharonov–Bohm benchmark).</span>
+On a periodic ring the local gauge field can be gauged away on any contractible patch, so the local profile action of $K_\parallel^A[\beta]$ is gauge-equivalent to the free one there. The nontrivial global datum is the holonomy
+$$
+e^{-iq\Phi},
+\qquad
+\Phi:=\oint A_x\,dx.
+$$
+That makes the static ring with nonzero flux the right first numerical gauge benchmark for the finite-slab exchange law: locally the bond-centered algebra should look free, while globally the flux should survive through holonomy-dependent boundary phases.
+</div>
+
+<h2>VII. Conclusion</h2>
+
+<p>
+The previous sequel fixed the singleton free-model core, and the dedicated phase papers have now carried that exact program through the first non-leading singleton higher-order calculation and the first non-leading regulator comparison. The present bridge draft should therefore no longer be read as a repository of unresolved higher-coefficient or broader regulator-comparison burdens. Its real remaining role is to organize what comes after phase 7 without silently promoting later ontology-expanding steps to theorem status.
+</p>
+
+<p>
+The variable-particle-number and gauge sections are therefore the central live scaffold here. The Fock-space section records the formal consequence of a proved one-particle bond-centered law for number-preserving quadratic dynamics. The gauge section separates one exact point—the $\Gamma$-level gauge invariance of the primitive slab data—from the still-conditional bond-centered continuum action.
+</p>
+
+<p>
+Read this file, then, as a sharpened program document for the later phases beyond the now-completed phase-7 scope: it preserves the Fock-space and gauge questions in the form in which they should be attacked, while leaving the exact higher-coefficient and regulator-comparison results to the dedicated phase papers.
+</p>
+
+<p>
+The resulting near-term program is now sharper than before.
+</p>
+
+<div class="env conjecture">
+<span class="env-title">Program 2</span> <span class="env-name">(Near-term sequence).</span>
+<ol>
+  <li><em>Variable particle number.</em> Extend the present Fock lift from number-preserving quadratic dynamics to localized sector-changing couplings.</li>
+  <li><em>Gauge benchmark.</em> Test the ring-holonomy/Aharonov–Bohm case directly at the finite-slab kernel level.</li>
+  <li><em>Operational completion.</em> Add localized controls and detectors only after the preceding algebraic sectors are under control.</li>
+  <li><em>Only then full field-theoretic generalization.</em> The next serious relativistic questions about non-Abelian gauge fields or gravity should come only after the preceding three items are under control.</li>
+</ol>
+</div>
+
+<p>
+So the bond-centered thin-slab law no longer looks like a singleton curiosity. Its exact theorem-level scope now includes the leading support-level law, the leading-order universality theorem, the higher-order structural criterion, the broader regulator-stability criterion, the first explicit singleton higher-order coefficient, and the first explicit non-leading singleton regulator comparison. The remaining Fock-space and gauge sections are benchmarks for later exact papers rather than finished endpoints.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Toward Lorentz-Covariant Indivisible Stochastic Processes: Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations,” preprint (2026).</span></li>
+
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes: Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality,” preprint (2026).</span></li>
+
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Entropy Structure of Indivisible Stochastic Processes: Gauge Invariance, Coherence, and Thermodynamic Interpretation,” companion preprint (2026).</span></li>
+
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>Anonymous, “Gauge-Invariant Process Entanglement in Indivisible Stochastic Processes: From ZZ-Gate Phantoms to Bell Inequalities,” companion preprint (2026).</span></li>
+
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Theorem,” arXiv:2309.03085 (2023; rev. 2026).</span></li>
+
+  <li id="r7"><span class="ref-num">[7]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” arXiv:2507.21192 (2025).</span></li>
+  </ol>
+</div>
+
+</article>
+</body>
+</html>

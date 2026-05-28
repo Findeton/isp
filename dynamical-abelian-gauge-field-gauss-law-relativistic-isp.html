@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamical Abelian Gauge Field and Gauss-Law Sectors in Relativistic ISP</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  background: #f8fafc;
+  color: #111827;
+}
+.paper {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 14px;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Dynamical Abelian Gauge Field and Gauss-Law Sectors in Relativistic ISP</div>
+<div class="subtitle">Finite matter-plus-link configuration space, exact $\Gamma$-level gauge-sector decomposition, and the first mixed-support benchmark</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 11 in the relativistic ISP sequence; phase-9 continuation after the static lattice $U(1)$ benchmark</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The static phase-9 paper closes the first genuine lattice-gauge benchmark for relativistic ISP, but only with an external background link field. The next honest enlargement is a dynamical Abelian gauge field. From the Barandes point of view, that enlargement should not begin with a continuum field slogan. It should begin by enlarging the finite configuration space itself so that the primitive kernels, localized comparison maps, and exchange defects remain exact finite objects.</p>
+<p>
+This paper fixes that enlarged benchmark at the strongest scope currently justified. Matter is placed on the full fixed finite-lattice Fock space, links are given finite-dimensional Abelian electric-flux states, and the coupled matter-link Hamiltonian is defined directly on the product space rather than by inserting a background phase into the matter Hamiltonian. The key exact structural result is that local gauge symmetry appears at the $\Gamma$ level as an exact block decomposition into Gauss-law-compatible sectors for the full and localized dynamics. The paper also defines the correct mixed site-link support, collar, and localized-deformation framework for the interacting problem, proves the first mixed quasilocal filtration for the sectorwise comparison maps on the fixed finite benchmark, upgrades the small-$\Delta$ blockwise invertibility to uniform sectorwise inverse control across the finite Gauss-sector family for each fixed gauge-compatible mixed region on that benchmark, computes the first exact coupled exchange coefficient for a disjoint site-link block pair in the minimal coupled benchmark $\widehat V_{\mathrm{gi}}=0$, shows that every fixed mixed strip already carries a finite exact antisymmetric channel basis, and investigates the full compact-rotor link field on the same finite ring. In that rotor investigation the gauge algebra still survives, but every compatible Gauss sector carries an infinite global electric-flux tower, so the primitive kernels are no longer finite matrices. What it does <em>not</em> yet claim is the full interacting exchange-defect theorem beyond that fixed finite benchmark: inverse-control estimates stable under growth of lattice size or link cutoff, a broader exact coupled exchange-coefficient and reduced strip-channel package, the full compact-rotor kernel theorem, and an exact coefficient-derived bond-centered continuum law. What it does already fix on the continuum side is the correct target <em>type</em>: an operator-valued bond-centered mixed generator on matter-plus-link profiles, which reduces under external-link reduction to the static covariant matter operator but otherwise retains genuine link-flux transport. The point here is to isolate that burden cleanly, not to smuggle it in.
+</p>
+</div>
+
+<p class="small-note">
+Scope note. The theorem-level exact content of this paper is the fixed finite-lattice matter-plus-link configuration-space setup, the gauge-invariant combined Hamiltonian and its localized mixed-support deformations, the exact $\Gamma$-level decomposition into Gauss-law-compatible sectors, the first mixed quasilocal filtration for the sectorwise comparison maps, uniform sectorwise inverse control across the finite Gauss-sector family for each fixed gauge-compatible mixed region on the fixed finite benchmark, and—after specializing to the minimal coupled benchmark $\widehat V_{\mathrm{gi}}=0$—the first exact coupled exchange coefficient for a disjoint site-link block pair together with the exact finite strip-basis closure available on every fixed mixed strip. The paper also investigates the full compact-rotor enlargement at the exact structural level and identifies the resulting infinite global electric-flux tower on the periodic lattice. Volume- or cutoff-uniform inverse estimates, a broader coupled exchange-defect coefficient package, a reduced canonical mixed strip basis uniform in strip length, a full compact-rotor kernel theorem, and an exact coefficient-derived coupled bond-centered continuum reduction are not yet claimed here; the mixed continuum target is recorded only in conditional operator-valued form.
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+The static lattice-$U(1)$ paper was the right first gauge benchmark because it asked the minimal exact question: what does the primitive $\Gamma$-level transition law already preserve when a background link field is turned on? That phase is now closed. But precisely because it is closed, its main limitation is also sharper than before. The link field there is not a stochastic subsystem. It is an external background.
+</p>
+
+<p>
+The next enlargement is qualitatively different. A dynamical gauge field changes the primitive configuration space itself. It introduces new local degrees of freedom on the links, new local constraints tying matter and link data together, and a new mixed notion of locality. So it should not be folded into the static benchmark as an afterthought. It is a second phase-9 paper in its own right.
+</p>
+
+<p>
+There is also a methodological choice to make immediately. If one keeps the compact lattice-$U(1)$ link Hilbert space literally infinite dimensional, then the primitive kernels cease to be finite matrices even on a fixed finite lattice. That is the wrong first move for <em>closing</em> the first theorem package. The conservative move is instead to keep the lattice finite and the link spaces finite dimensional, so that the enlarged matter-plus-link system still defines an exact finite kernel problem. But once that benchmark is fixed, one can already investigate the full compact-rotor upgrade and identify the genuinely new burden: a surviving gauge algebra together with an infinite global electric-flux tower and the loss of automatic finite-matrix inverse control.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main results (informal).</span>
+<ol>
+  <li><em>Exact finite matter-plus-link setup.</em> The dynamical gauge problem is formulated on a full fixed finite-lattice matter Fock space tensored with finite-dimensional link-flux spaces, so the primitive kernels remain exact finite objects.</li>
+  <li><em>Exact gauge-invariant combined Hamiltonian.</em> The matter-link Hamiltonian is defined directly on that enlarged space and commutes with the local Gauss generators.</li>
+  <li><em>Exact $\Gamma$-level Gauss-sector decomposition.</em> The full and localized primitive kernels, comparison maps, and exchange defects decompose exactly into Gauss-law-compatible sectors.</li>
+  <li><em>Exact mixed-support localization framework.</em> Honest localized deformations in the dynamical gauge problem are mixed site-link constructions rather than pure site regions.</li>
+  <li><em>Exact mixed quasilocal filtration and fixed-benchmark inverse control.</em> For each fixed gauge-compatible mixed region, there is a common small-$\Delta$ regime in which the coupled matter-link comparison maps admit a mixed support-growth filtration with no linear term, and the reference blocks, comparison maps, and comparison-map inverses are uniformly controlled across the finite family of compatible Gauss sectors.</li>
+  <li><em>Exact first coupled site-link block coefficient in the minimal benchmark.</em> For the minimal coupled Hamiltonian with $\widehat V_{\mathrm{gi}}=0$, the first nonzero exchange coefficient for a disjoint site-link block pair centered two sites apart appears at order $\Delta^4$ and is the commutator of the two facing-gap deleted hopping kernels.</li>
+  <li><em>Exact finite strip-basis closure on every fixed mixed strip.</em> Once the active mixed strip is fixed, the antisymmetric coupled exchange channels already close on a finite exact strip-local basis.</li>
+  <li><em>Conditional identification of the correct mixed continuum target.</em> Under mixed strip closure and first-moment reduction, the continuum object is an operator-valued bond-centered mixed generator; under external-link reduction it becomes the static covariant matter operator.</li>
+  <li><em>Exact compact-rotor investigation.</em> The full compact-rotor upgrade preserves the gauge algebra but replaces each compatible periodic-lattice Gauss sector by an infinite global electric-flux tower.</li>
+  <li><em>Explicit separation of the still-open interacting burden.</em> Larger-benchmark inverse control, a broader coupled exchange-coefficient and reduced strip-channel package, the full compact-rotor kernel problem, and an exact coefficient-derived mixed bond-centered continuum law are isolated but not overclaimed.</li>
+</ol>
+</div>
+
+<p class="small-note">
+Strategic note. This paper is deliberately structural. It closes the exact finite-object and gauge-sector bookkeeping first. It does not pretend that the interacting matter-link exchange algebra has already been solved merely because the gauge symmetry has been written down.
+</p>
+
+<h2>II. Finite matter-plus-link configuration space</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Fixed finite-lattice matter-plus-link configuration space).</span>
+Let
+$$
+\mathcal C_L:=\Lambda_L\times\{\uparrow,\downarrow\}
+$$
+be the one-particle site-spin set, and let
+$$
+\mathcal F_L:=\bigoplus_{N=0}^{2L}\Lambda^N\mathbb C^{2L}
+$$
+be the full finite-lattice fermionic Fock space used in phase 8. Fix a half-integer or integer
+$$
+S\in \tfrac12\mathbb N,
+$$
+and for each link $(n+\tfrac12)$ let
+$$
+\mathcal G_{n+1/2}^{(S)}\cong\mathbb C^{2S+1}
+$$
+with electric-flux basis
+$$
+|m\rangle_{n+1/2},
+\qquad
+m\in\{-S,-S+1,\dots,S\}.
+$$
+Set
+$$
+\mathcal G_{L,S}:=\bigotimes_{n=0}^{L-1}\mathcal G_{n+1/2}^{(S)},
+\qquad
+\mathcal K_{L,S}:=\mathcal F_L\otimes\mathcal G_{L,S}.
+$$
+Equivalently, an orthonormal basis of $\mathcal K_{L,S}$ is indexed by pairs $(X,\mathbf m)$ where $X\subset\mathcal C_L$ is an occupation configuration and $\mathbf m=(m_{1/2},m_{3/2},\dots,m_{L-1/2})$ is a link-flux configuration.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+At fixed lattice size $L$ and fixed link cutoff $S$, the combined configuration space is finite. That is the decisive conservative feature: the primitive kernels, their inverses when they exist, and the localized exchange algebra remain ordinary finite matrix objects throughout.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Finite-dimensional Abelian link operators).</span>
+On each link space $\mathcal G_{n+1/2}^{(S)}$, define
+$$
+\widehat E_{n+1/2}|m\rangle_{n+1/2}:=m\,|m\rangle_{n+1/2},
+$$
+$$
+\widehat U_{n+1/2}|m\rangle_{n+1/2}
+:=
+\begin{cases}
+|m+1\rangle_{n+1/2}, & m&lt;S,\\
+0, & m=S,
+\end{cases}
+$$
+and $\widehat U_{n+1/2}^\dagger$ as the adjoint lowering operator. Then
+$$
+[\widehat E_{n+1/2},\widehat U_{n+1/2}]=\widehat U_{n+1/2},
+\qquad
+[\widehat E_{n+1/2},\widehat U_{n+1/2}^\dagger]=-\widehat U_{n+1/2}^\dagger.
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Finite-link scope boundary.</span>
+At fixed $S$, the operator $\widehat U_{n+1/2}$ is a finite-link raising operator rather than a unitary compact-rotor variable with an infinite electric-flux tower. The present paper therefore studies the first exact <em>finite-dimensional</em> dynamical Abelian gauge benchmark on the fixed lattice. The full compact lattice-$U(1)$ rotor is investigated below at the structural level, but the first theorem package proved here still relies on the finite-link benchmark.
+</div>
+
+<h2>III. Combined matter-link Hamiltonian and local gauge symmetry</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Gauge-invariant combined matter-link Hamiltonian).</span>
+Let $c_{n,s}$ and $c_{n,s}^\dagger$ be the fermionic annihilation and creation operators on $\mathcal F_L$, and define the local occupation number
+$$
+\widehat N_n:=\sum_s c_{n,s}^\dagger c_{n,s}.
+$$
+Let
+$$
+\widehat\beta_n:=\sum_{s,s'}c_{n,s}^\dagger\beta_{ss'}c_{n,s'}
+$$
+denote the on-site Dirac mass bilinear. The dynamical Abelian matter-link Hamiltonian is
+$$
+\widehat H_{\mathrm{dyn}}^{(S)}
+:=
+m\sum_n \widehat\beta_n
+-\frac{i}{2a}\sum_{n,s}
+\Bigl(
+c_{n+1,\bar s}^\dagger\,\widehat U_{n+1/2}\,c_{n,s}
+-c_{n,s}^\dagger\,\widehat U_{n+1/2}^\dagger\,c_{n+1,\bar s}
+\Bigr)
++\frac{g^2a}{2}\sum_n \widehat E_{n+1/2}^2
++\widehat V_{\mathrm{gi}},
+$$
+where $\widehat V_{\mathrm{gi}}$ denotes any further local gauge-invariant matter or link term on the fixed finite lattice.
+</div>
+
+<div class="env remark">
+<span class="env-title">Local-term convention.</span>
+On the one-dimensional lattice there is no local plaquette magnetic term, so the electric-energy term is the first genuine dynamical gauge contribution. For the mixed-locality statements below, $\widehat V_{\mathrm{gi}}$ is assumed to admit a finite bounded-range decomposition into gauge-invariant mixed site-link local terms. The displayed mass, hopping, and electric terms are the minimal cells that every such decomposition must already contain.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 4</span> <span class="env-name">(Gauss generators and local gauge transformations).</span>
+Fix background charges $\rho_n^{\mathrm{bg}}\in\mathbb Z$ and define
+$$
+\widehat G_n
+:=
+\widehat E_{n-1/2}
+-\widehat E_{n+1/2}
+-\widehat N_n
++\rho_n^{\mathrm{bg}}.
+$$
+For a site phase function $\chi_n$, define the local gauge transformation
+$$
+\widehat{\mathcal G}_\chi
+:=
+\exp\Bigl(
+-iq\sum_n \chi_n \widehat G_n
+\Bigr).
+$$
+With this convention,
+$$
+\widehat{\mathcal G}_\chi\,c_{n,s}\,\widehat{\mathcal G}_\chi^{-1}
+=
+e^{-iq\chi_n}c_{n,s},
+$$
+and
+$$
+\widehat{\mathcal G}_\chi\,\widehat U_{n+1/2}\,\widehat{\mathcal G}_\chi^{-1}
+=
+e^{-iq\chi_{n+1}}\widehat U_{n+1/2}e^{iq\chi_n}.
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact gauge invariance of the combined matter-link Hamiltonian).</span>
+For every site $n$,
+$$
+[\widehat G_n,\widehat H_{\mathrm{dyn}}^{(S)}]=0.
+$$
+Equivalently,
+$$
+\widehat{\mathcal G}_\chi\,\widehat H_{\mathrm{dyn}}^{(S)}\,\widehat{\mathcal G}_\chi^{-1}
+=
+\widehat H_{\mathrm{dyn}}^{(S)}
+$$
+for every local gauge function $\chi$.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The mass term depends only on the local occupation bilinear and therefore commutes with every $\widehat G_n$. The electric energy is built only from the commuting link operators $\widehat E_{n+1/2}$ and also commutes with every $\widehat G_n$. For the matter-link hopping term
+$$
+c_{n+1,\bar s}^\dagger\,\widehat U_{n+1/2}\,c_{n,s},
+$$
+the only nontrivial commutators come from $\widehat G_n$ and $\widehat G_{n+1}$; by Definition&nbsp;4 the matter and link charges cancel exactly at each endpoint. The adjoint term behaves the same way. Finally, $\widehat V_{\mathrm{gi}}$ is gauge invariant by assumption. <span class="qed">$ \square $</span>
+</div>
+
+<h2>IV. Gauge-compatible mixed supports, collars, and localized deformations</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 5</span> <span class="env-name">(Gauge-compatible mixed support region).</span>
+A mixed support region is a pair
+$$
+R=(V_R,E_R),
+$$
+where $V_R\subset\Lambda_L$ is a site set and $E_R\subset\Lambda_L+\tfrac12$ is a link set. Let $\mathfrak C$ denote the family of local gauge-invariant mixed cells consisting of the mass cells
+$$
+Q_n^{\mathrm m}:=\{n\},
+$$
+the electric cells
+$$
+Q_{n+1/2}^{\mathrm e}:=\{n+\tfrac12\},
+$$
+the hopping cells
+$$
+Q_{n+1/2}^{\mathrm h}:=\{n,n+1,n+\tfrac12\},
+$$
+and any further bounded-range gauge-invariant cells appearing in the local decomposition of $\widehat V_{\mathrm{gi}}$. The mixed incidence graph has vertex set $\mathfrak C$ and edges between intersecting cells. The region $R$ is called gauge compatible if every local cell in $\mathfrak C$ that is meant to lie in $R$ is either fully included or fully excluded. In particular, a hopping cell can never be localized as a pure site object without its carrying link, and a site in $V_R$ must include the incident links required by every local Gauss generator or hopping term placed in the region.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the first basic difference from the static background-field paper. There the honest local regions were pure site supports because the link field was external data. Here a localized deformation cannot be a pure site object. The minimal local cells are mixed: a mass cell lives on one site, an electric cell on one link, and a matter-link hopping cell on one link together with its two endpoint sites.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 6</span> <span class="env-name">(Mixed collar Hamiltonian and localized deformation).</span>
+Let $\mathfrak C(R)\subset\mathfrak C$ denote the local cells fully contained in $V_R\cup E_R$, and define the mixed collar
+$$
+\partial R
+:=
+\{Q\in\mathfrak C\setminus\mathfrak C(R)\,:\,Q\cap Q'\neq\varnothing\ \text{for some }Q'\in\mathfrak C(R)\}.
+$$
+Equivalently, $\partial R$ is the one-cell collar in the mixed site-link incidence graph. Define the collar Hamiltonian
+$$
+\widehat C_R^{(S)}
+$$
+as the sum of the gauge-invariant local terms whose support cells lie in $\partial R$, and set
+$$
+\widehat B_R^{(S)}:=\widehat H_{\mathrm{dyn}}^{(S)}-\widehat C_R^{(S)}.
+$$
+The corresponding primitive kernels are
+$$
+\Gamma_0^{(S)}(\Delta):=\Gamma\bigl(e^{-i\Delta \widehat H_{\mathrm{dyn}}^{(S)}}\bigr),
+\qquad
+\Gamma_R^{(S)}(\Delta):=\Gamma\bigl(e^{-i\Delta \widehat B_R^{(S)}}\bigr).
+$$
+Whenever the inverse exists, define
+$$
+J_R^{(S)}(\Delta):=\Gamma_R^{(S)}(\Delta)\bigl[\Gamma_0^{(S)}(\Delta)\bigr]^{-1},
+$$
+and for two mixed regions $R,S$ define
+$$
+E_{R,S}^{(S)}(\Delta)
+:=
+J_R^{(S)}(\Delta)J_S^{(S)}(\Delta)\bigl[J_R^{(S)}(\Delta)\bigr]^{-1}\bigl[J_S^{(S)}(\Delta)\bigr]^{-1}.
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 2</span> <span class="env-name">(Gauge invariance of the localized mixed-support dynamics).</span>
+If the collar Hamiltonian $\widehat C_R^{(S)}$ is built from gauge-invariant local terms as in Definition&nbsp;6, then
+$$
+[\widehat G_n,\widehat B_R^{(S)}]=0
+$$
+for every site $n$.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By Proposition&nbsp;1 the full Hamiltonian is gauge invariant. The collar Hamiltonian is, by definition, a sum of gauge-invariant local terms. Therefore both $\widehat C_R^{(S)}$ and $\widehat H_{\mathrm{dyn}}^{(S)}-\widehat C_R^{(S)}$ commute with every $\widehat G_n$. <span class="qed">$ \square $</span>
+</div>
+
+<h2>V. Gauss-law-compatible sectors at the $\Gamma$ level</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 7</span> <span class="env-name">(Gauss-law-compatible sectors).</span>
+Because the operators $\widehat G_n$ commute, $\mathcal K_{L,S}$ decomposes into simultaneous eigenspaces
+$$
+\mathcal K_{L,S}
+=
+\bigoplus_{\mathbf g}\mathcal K_{L,S}^{(\mathbf g)},
+$$
+where $\mathbf g=(g_n)_n$ runs over the compatible Gauss data. Let $P_{\mathbf g}$ denote the corresponding sector projector. The physical sector is the distinguished choice of background-compatible Gauss data, often $\mathbf g=\mathbf 0$.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 3</span> <span class="env-name">(Exact $\Gamma$-level decomposition into Gauss sectors).</span>
+For every fixed finite lattice size $L$, link cutoff $S$, and gauge-compatible mixed region $R$, one has the exact direct-sum decompositions
+$$
+e^{-i\Delta \widehat H_{\mathrm{dyn}}^{(S)}}
+=
+\bigoplus_{\mathbf g}
+e^{-i\Delta \widehat H_{\mathrm{dyn}}^{(S,\mathbf g)}},
+\qquad
+e^{-i\Delta \widehat B_R^{(S)}}
+=
+\bigoplus_{\mathbf g}
+e^{-i\Delta \widehat B_R^{(S,\mathbf g)}},
+$$
+and therefore
+$$
+\Gamma_0^{(S)}(\Delta)
+=
+\bigoplus_{\mathbf g}\Gamma_0^{(S,\mathbf g)}(\Delta),
+\qquad
+\Gamma_R^{(S)}(\Delta)
+=
+\bigoplus_{\mathbf g}\Gamma_R^{(S,\mathbf g)}(\Delta).
+$$
+Whenever every sector block is invertible,
+$$
+J_R^{(S)}(\Delta)
+=
+\bigoplus_{\mathbf g}J_R^{(S,\mathbf g)}(\Delta),
+\qquad
+E_{R,S}^{(S)}(\Delta)
+=
+\bigoplus_{\mathbf g}E_{R,S}^{(S,\mathbf g)}(\Delta).
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By Proposition&nbsp;1 and Proposition&nbsp;2, both $\widehat H_{\mathrm{dyn}}^{(S)}$ and $\widehat B_R^{(S)}$ commute with every Gauss projector $P_{\mathbf g}$. Hence they are block diagonal in the Gauss-sector decomposition, and so are their exponentials. Taking entrywise squared moduli in the corresponding configuration bases preserves block diagonality, giving the primitive-kernel decomposition. Whenever each block is invertible, the same direct-sum form passes to the inverse, the comparison map, and the exchange defect. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(How Gauss law appears on the $\Gamma$ side).</span>
+At fixed finite lattice size and finite link cutoff, gauge constraints appear at the $\Gamma$ level not as external continuum conditions but as exact block structure of ordinary finite kernels, comparison maps, and exchange defects.
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 2</span> <span class="env-name">(Physical-sector primitive kernels and exchange data).</span>
+Fix a distinguished compatible Gauss datum $\mathbf g_{\mathrm{phys}}$ and write
+$$
+\mathcal K_{L,S}^{\mathrm{phys}}:=\mathcal K_{L,S}^{(\mathbf g_{\mathrm{phys}})}.
+$$
+Then
+$$
+\Gamma_{0,\mathrm{phys}}^{(S)}(\Delta):=\Gamma_0^{(S,\mathbf g_{\mathrm{phys}})}(\Delta),
+\qquad
+\Gamma_{R,\mathrm{phys}}^{(S)}(\Delta):=\Gamma_R^{(S,\mathbf g_{\mathrm{phys}})}(\Delta)
+$$
+are ordinary finite primitive-kernel blocks on $\mathcal K_{L,S}^{\mathrm{phys}}$, and whenever the corresponding inverse exists,
+$$
+J_{R,\mathrm{phys}}^{(S)}(\Delta):=J_R^{(S,\mathbf g_{\mathrm{phys}})}(\Delta),
+\qquad
+E_{R,S,\mathrm{phys}}^{(S)}(\Delta):=E_{R,S}^{(S,\mathbf g_{\mathrm{phys}})}(\Delta).
+$$
+In particular, no primitive-kernel transition, comparison-map entry, or exchange-defect entry connects different Gauss sectors.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+This is the distinguished sector block of Proposition&nbsp;3. Since the full matrices are block diagonal in the Gauss-sector decomposition, the physical block is an ordinary finite matrix problem in its own right and has no off-sector entries. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the right Barandes-style conclusion at this stage. One does not first write a continuum gauge constraint and then hope the primitive transition law respects it. One first writes the finite stochastic problem so that the Gauss sectors are exact invariant blocks and then asks what the exchange algebra does inside those blocks.
+</div>
+<h3>V.1. Investigating the full compact-rotor link field</h3>
+
+<p>
+Once the finite-link benchmark is explicit, the next natural question is what actually changes for the full compact lattice-$U(1)$ rotor on the same fixed finite ring. The answer is not merely “take $S\to\infty$.” The gauge algebra survives exactly, but the finite-matrix character does not: every compatible periodic-lattice Gauss sector carries an infinite global electric-flux tower.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 7A</span> <span class="env-name">(Full compact-rotor link field on the fixed finite lattice).</span>
+For each link $(n+\tfrac12)$ let
+$$
+\mathcal G_{n+1/2}^{\mathrm{rot}}:=\ell^2(\mathbb Z)
+$$
+with electric basis $|m\rangle_{n+1/2}$ for $m\in\mathbb Z$, electric operator
+$$
+\widehat E_{n+1/2}^{\mathrm{rot}}|m\rangle_{n+1/2}:=m\,|m\rangle_{n+1/2},
+$$
+and unitary shift
+$$
+\widehat U_{n+1/2}^{\mathrm{rot}}|m\rangle_{n+1/2}:=|m+1\rangle_{n+1/2},
+$$
+with adjoint $(\widehat U_{n+1/2}^{\mathrm{rot}})^\dagger|m\rangle_{n+1/2}=|m-1\rangle_{n+1/2}$. Then
+$$
+[\widehat E_{n+1/2}^{\mathrm{rot}},\widehat U_{n+1/2}^{\mathrm{rot}}]
+=
+\widehat U_{n+1/2}^{\mathrm{rot}}.
+$$
+Set
+$$
+\mathcal G_L^{\mathrm{rot}}
+:=
+\bigotimes_{n=0}^{L-1}\mathcal G_{n+1/2}^{\mathrm{rot}},
+\qquad
+\mathcal K_L^{\mathrm{rot}}
+:=
+\mathcal F_L\otimes\mathcal G_L^{\mathrm{rot}}.
+$$
+On the algebraic span of occupation-flux basis states, define the formal compact-rotor Hamiltonian by the same expression as Definition&nbsp;3 with $\widehat E_{n+1/2}$ and $\widehat U_{n+1/2}$ replaced by $\widehat E_{n+1/2}^{\mathrm{rot}}$ and $\widehat U_{n+1/2}^{\mathrm{rot}}$.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 3A</span> <span class="env-name">(What survives exactly in the compact-rotor upgrade).</span>
+For the compact-rotor enlargement of Definition&nbsp;7A, the following hold.
+<ol>
+  <li><em>Exact gauge algebra on the natural core.</em> If
+  $$
+  \widehat G_n^{\mathrm{rot}}
+  :=
+  \widehat E_{n-1/2}^{\mathrm{rot}}
+  -
+  \widehat E_{n+1/2}^{\mathrm{rot}}
+  -
+  \widehat N_n
+  +
+  \rho_n^{\mathrm{bg}},
+  $$
+  then the formal compact-rotor Hamiltonian commutes with every $\widehat G_n^{\mathrm{rot}}$ on the algebraic occupation-flux core.</li>
+  <li><em>Exact periodic-lattice sector compatibility.</em> Fix a matter occupation configuration $X\subset\mathcal C_L$ and write
+  $$
+  N_n(X):=\sum_s \mathbf 1_{(n,s)\in X}\in\{0,1,2\}.
+  $$
+  For prescribed Gauss data $\mathbf g=(g_n)_n$, a rotor link-flux configuration $\mathbf m=(m_{1/2},m_{3/2},\dots,m_{L-1/2})\in\mathbb Z^L$ satisfies
+  $$
+  m_{n-1/2}-m_{n+1/2}-N_n(X)+\rho_n^{\mathrm{bg}}=g_n
+  $$
+  for every $n$ if and only if
+  $$
+  \sum_{n=0}^{L-1}\bigl(N_n(X)-\rho_n^{\mathrm{bg}}+g_n\bigr)=0.
+  $$</li>
+  <li><em>Infinite global electric-flux tower.</em> Whenever the compatibility condition holds and one chooses
+  $$
+  k:=m_{L-1/2}\in\mathbb Z,
+  $$
+  the entire link configuration is determined by
+  $$
+  m_{n+1/2}
+  =
+  k-\sum_{j=0}^{n}\bigl(N_j(X)-\rho_j^{\mathrm{bg}}+g_j\bigr),
+  \qquad n=0,\dots,L-1.
+  $$
+  Hence every compatible Gauss sector on the periodic finite lattice contains a full $\mathbb Z$-tower of global electric-flux states.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 uses exactly the same endpoint charge-cancellation algebra as Proposition&nbsp;1; the finite-link cutoff played no role in that commutator calculation. For item 2, rewrite the Gauss-law equations as
+$$
+m_{n+1/2}
+=
+m_{n-1/2}-N_n(X)+\rho_n^{\mathrm{bg}}-g_n.
+$$
+Iterating once around the ring determines every link flux from one seed integer and yields the periodic closure condition
+$$
+0=\sum_{n=0}^{L-1}\bigl(N_n(X)-\rho_n^{\mathrm{bg}}+g_n\bigr).
+$$
+If that condition holds, the displayed recursion gives the unique link configuration for each choice of seed $k\in\mathbb Z$, which proves item 3. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the decisive compact-rotor difference. The mixed site-link locality of Sections&nbsp;IV and&nbsp;VI survives unchanged—the local cells are still mass cells on sites, electric cells on links, and hopping cells on endpoint-link triples—but the primitive kernels are no longer finite matrices, even at fixed lattice size and after fixing a Gauss sector. The obstruction is not gauge symmetry. It is the infinite global electric-flux tower on the ring.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The right future compact-rotor theorem is therefore not a new locality slogan. It is a weighted-operator extension of the present finite-benchmark results. One would need a self-adjoint compact-rotor realization of the coupled Hamiltonian, operator control of the primitive kernels on the countable occupation-flux basis, and then a rotor analogue of the mixed quasilocal filtration and inverse-control statements proved here only at finite link cutoff.
+</div>
+<h2>VI. Mixed quasilocal filtration and uniform inverse control for the coupled matter-link kernels</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 8</span> <span class="env-name">(Mixed neighborhoods and mixed-local kernel coefficients).</span>
+Let
+$$
+\Omega_{L,S}:=\{0,\uparrow,\downarrow,\uparrow\downarrow\}^{\Lambda_L}\times\{-S,-S+1,\dots,S\}^{\Lambda_L+1/2}
+$$
+denote the finite classical matter-link configuration space indexing the occupation-flux basis of Definition&nbsp;1. For a mixed region $M=(V_M,E_M)$ and a configuration $\omega=(x,\mathbf m)\in\Omega_{L,S}$, write
+$$
+\omega|_M:=(x|_{V_M},\mathbf m|_{E_M}).
+$$
+Let
+$$
+\mathfrak N_0(R):=\mathfrak C(R),
+$$
+and for $k\ge 1$ let $\mathfrak N_k(R)\subset\mathfrak C$ be the set of mixed cells whose graph distance from $\mathfrak C(R)$ in the mixed incidence graph of Definition&nbsp;5 is at most $k$. Define the associated mixed site-link neighborhood by
+$$
+N_k^{\mathrm{mix}}(R):=\bigcup_{Q\in\mathfrak N_k(R)}Q.
+$$
+A matrix $K$ on $\mathbb C^{\Omega_{L,S}}$ will be called $N_k^{\mathrm{mix}}(R)$-local if the following two conditions hold:
+<ol>
+  <li>$K_{\omega',\omega}=0$ whenever $\omega'|_{(N_k^{\mathrm{mix}}(R))^c}\neq \omega|_{(N_k^{\mathrm{mix}}(R))^c}$.</li>
+  <li>The value of $K_{\omega',\omega}$ depends only on the incoming and outgoing restrictions to $N_k^{\mathrm{mix}}(R)$.</li>
+</ol>
+In words: the kernel acts trivially outside the $k$-step mixed neighborhood and depends only on the local matter-link data inside that neighborhood.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Exact mixed quasilocal filtration for the sectorwise comparison maps).</span>
+Fix a gauge-compatible mixed region $R$ and a compatible Gauss sector $\mathbf g$. Then there exists
+$$
+\Delta_*(R,\mathbf g;L,S)&gt;0
+$$
+such that for $|\Delta|&lt;\Delta_*(R,\mathbf g;L,S)$ the sector block $\Gamma_0^{(S,\mathbf g)}(\Delta)$ is invertible and
+$$
+J_R^{(S,\mathbf g)}(\Delta)
+=
+I+\sum_{m\ge 2}\Delta^m A_{R,\mathbf g}^{[m],(S)}.
+$$
+Each coefficient $A_{R,\mathbf g}^{[m],(S)}$ is $N_m^{\mathrm{mix}}(R)$-local in the sense of Definition&nbsp;8. In particular, the sectorwise comparison map has no linear term and therefore begins at order $O(\Delta^2)$.
+Whenever all sector blocks are simultaneously invertible in the same small-$\Delta$ regime,
+$$
+J_R^{(S)}(\Delta)=\bigoplus_{\mathbf g}J_R^{(S,\mathbf g)}(\Delta)
+$$
+is the direct sum of these sectorwise mixed filtrations.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+At fixed $L$ and $S$, every Gauss sector is finite dimensional and
+$$
+\Gamma_0^{(S,\mathbf g)}(0)=I,
+$$
+so ordinary finite-dimensional analyticity gives invertibility for sufficiently small $|\Delta|$. Write the combined Hamiltonian as a finite sum of gauge-invariant local cell terms
+$$
+\widehat H_{\mathrm{dyn}}^{(S)}=\sum_{Q\in\mathfrak C}\widehat h_Q,
+\qquad
+\widehat C_R^{(S)}=\sum_{Q\in\partial R}\widehat h_Q,
+$$
+so that $\widehat B_R^{(S)}$ differs from the reference Hamiltonian only by deleting collar cells. In the Duhamel expansion of $e^{-i\Delta \widehat B_R^{(S,\mathbf g)}}$ relative to $e^{-i\Delta \widehat H_{\mathrm{dyn}}^{(S,\mathbf g)}}$, every nontrivial word contributing to the localized/reference difference contains at least one collar cell. A word with $m$ local insertions can enlarge the active mixed region by at most $m$ incidence steps away from $\mathfrak C(R)$, because each additional local factor can only attach through an intersecting mixed cell. Passing from amplitudes to primitive kernels by entrywise squared modulus removes the linear term, so the comparison map begins at order $O(\Delta^2)$. Right multiplication by the analytic inverse $\bigl[\Gamma_0^{(S,\mathbf g)}(\Delta)\bigr]^{-1}$ strips off the common reference propagation without enlarging the active mixed neighborhood order by order, so the order-$\Delta^m$ coefficient of $J_R^{(S,\mathbf g)}$ is $N_m^{\mathrm{mix}}(R)$-local. The final direct-sum statement is Proposition&nbsp;3 applied coefficientwise. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 3</span> <span class="env-name">(Uniform sectorwise inverse control on the fixed finite benchmark).</span>
+Fix a gauge-compatible mixed region $R$ and write $\|\cdot\|_1$ for the induced column-sum matrix norm on each finite sector block. Because at fixed $L$ and $S$ there are only finitely many compatible Gauss sectors, there exists
+$$
+\Delta_{\mathrm{unif}}(R;L,S)&gt;0
+$$
+and constants $C_0(L,S),D_R(L,S)&gt;0$ such that for every compatible sector $\mathbf g$ and every $|\Delta|&lt;\Delta_{\mathrm{unif}}(R;L,S)$,
+$$
+\|\Gamma_0^{(S,\mathbf g)}(\Delta)-I\|_1\le C_0(L,S)\Delta^2,
+\qquad
+\|\Gamma_R^{(S,\mathbf g)}(\Delta)-\Gamma_0^{(S,\mathbf g)}(\Delta)\|_1\le D_R(L,S)\Delta^2,
+$$
+$$
+\|[\Gamma_0^{(S,\mathbf g)}(\Delta)]^{-1}\|_1\le 2,
+\qquad
+\|J_R^{(S,\mathbf g)}(\Delta)-I\|_1\le 2D_R(L,S)\Delta^2,
+\qquad
+\|[J_R^{(S,\mathbf g)}(\Delta)]^{-1}\|_1\le 2.
+$$
+Hence
+$$
+J_R^{(S)}(\Delta)=\bigoplus_{\mathbf g}J_R^{(S,\mathbf g)}(\Delta)
+$$
+and
+$$
+[J_R^{(S)}(\Delta)]^{-1}
+=
+\bigoplus_{\mathbf g}[J_R^{(S,\mathbf g)}(\Delta)]^{-1}
+$$
+are exact finite block-diagonal objects with a uniform sectorwise bound on the chosen fixed benchmark. Moreover, for each compatible sector,
+$$
+[J_R^{(S,\mathbf g)}(\Delta)]^{-1}
+=
+I+\sum_{m\ge 2}\Delta^m\widetilde A_{R,\mathbf g}^{[m],(S)},
+$$
+where every coefficient $\widetilde A_{R,\mathbf g}^{[m],(S)}$ is $N_m^{\mathrm{mix}}(R)$-local.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+At fixed $L$ and $S$ the total matter-link configuration space is finite, hence there are only finitely many compatible Gauss sectors and only finitely many matrix entries across all sector blocks. Every entry of $\Gamma_0^{(S,\mathbf g)}(\Delta)$ and $\Gamma_R^{(S,\mathbf g)}(\Delta)$ is real analytic in $\Delta$, equals the identity entry at $\Delta=0$, and has vanishing first derivative there because primitive kernels are entrywise squared moduli of unitary amplitudes. Therefore there exist $C_0$, $D_R$, and $\delta_1&gt;0$ such that the first displayed bounds hold simultaneously for all sectors when $|\Delta|&lt;\delta_1$.
+
+Choose $\Delta_{\mathrm{unif}}$ smaller if necessary so that
+$$
+C_0\Delta_{\mathrm{unif}}^2\le \tfrac12,
+\qquad
+2D_R\Delta_{\mathrm{unif}}^2\le \tfrac12.
+$$
+Then for every sector,
+$$
+[\Gamma_0^{(S,\mathbf g)}(\Delta)]^{-1}
+=
+\sum_{\ell\ge 0}(I-\Gamma_0^{(S,\mathbf g)}(\Delta))^\ell,
+$$
+so $\|[\Gamma_0^{(S,\mathbf g)}(\Delta)]^{-1}\|_1\le 2$. Next,
+$$
+J_R^{(S,\mathbf g)}(\Delta)-I
+=
+(\Gamma_R^{(S,\mathbf g)}(\Delta)-\Gamma_0^{(S,\mathbf g)}(\Delta))
+[\Gamma_0^{(S,\mathbf g)}(\Delta)]^{-1},
+$$
+which gives $\|J_R^{(S,\mathbf g)}(\Delta)-I\|_1\le 2D_R\Delta^2$. The second Neumann-series argument then yields $\|[J_R^{(S,\mathbf g)}(\Delta)]^{-1}\|_1\le 2$ after possibly shrinking $\Delta_{\mathrm{unif}}$ once more.
+
+For the inverse filtration, write
+$$
+K_R^{(S,\mathbf g)}(\Delta):=J_R^{(S,\mathbf g)}(\Delta)-I
+=
+\sum_{m\ge 2}\Delta^mA_{R,\mathbf g}^{[m],(S)}.
+$$
+Since $\|K_R^{(S,\mathbf g)}(\Delta)\|_1\le \tfrac12$ in the chosen regime,
+$$
+[J_R^{(S,\mathbf g)}(\Delta)]^{-1}
+=
+\sum_{\ell\ge 0}(-K_R^{(S,\mathbf g)}(\Delta))^\ell
+$$
+converges absolutely. The order-$\Delta^m$ coefficient is a finite sum of products of the matrices $A_{R,\mathbf g}^{[m_j],(S)}$ with $\sum_j m_j=m$. By Theorem&nbsp;1 each factor is $N_{m_j}^{\mathrm{mix}}(R)$-local, and the same mixed-incidence support-growth argument used there shows that such a product is $N_m^{\mathrm{mix}}(R)$-local. Hence the inverse coefficients have the stated locality. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the strongest honest inverse-control statement presently available. For each fixed gauge-compatible mixed region, the uniformity is across the finite Gauss-sector family at fixed lattice size and fixed link cutoff. It does not yet give bounds stable under growth of $L$ or $S$, and it certainly does not reach the compact-rotor tower where the sector blocks cease to be finite matrices.
+</div>
+
+<h3>VI.1. The first exact coupled exchange coefficient on a disjoint site-link block pair</h3>
+
+<p>
+The structural results above still leave open the first explicit coupled coefficient. To compute that coefficient without importing extra model dependence, one should first specialize to the minimal coupled benchmark
+$$
+\widehat V_{\mathrm{gi}}=0
+$$
+and then choose the smallest disjoint gauge-compatible mixed regions whose deleted collars still face each other across a nontrivial strip. The natural choice is the site-centered block consisting of one site together with its two incident links.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 9</span> <span class="env-name">(Minimal site-link blocks and deleted hopping kernels).</span>
+For each site $n$, define the gauge-compatible site-link block
+$$
+R_n^{\mathrm{site}}
+:=
+\bigl(\{n\},\{n-\tfrac12,n+\tfrac12\}\bigr).
+$$
+Fix a compatible Gauss sector $\mathbf g$ and let $\Omega_{L,S}^{(\mathbf g)}\subset\Omega_{L,S}$ be the corresponding sector basis. For a bond $b=n+\tfrac12$, define the hopping indicator kernel $\mathsf T_b^{(S,\mathbf g)}$ on $\mathbb C^{\Omega_{L,S}^{(\mathbf g)}}$ by
+$$
+[\mathsf T_b^{(S,\mathbf g)}]_{\omega',\omega}
+:=
+\begin{cases}
+1, & \text{if } \omega' \text{ is obtained from } \omega \text{ by one allowed matter-link hop across } b,\\
+0, & \text{otherwise},
+\end{cases}
+$$
+where “allowed” means exactly that the corresponding matrix element of the hopping cell
+$$
+\widehat h_b^{\mathrm h,(S)}
+:=
+-\frac{i}{2a}\sum_s
+\Bigl(
+c_{n+1,\bar s}^\dagger\,\widehat U_{n+1/2}\,c_{n,s}
+-c_{n,s}^\dagger\,\widehat U_{n+1/2}^\dagger\,c_{n+1,\bar s}
+\Bigr)
+$$
+between $\omega$ and $\omega'$ is nonzero. Let $\mathsf D_b^{(S,\mathbf g)}$ be the diagonal degree kernel
+$$
+[\mathsf D_b^{(S,\mathbf g)}]_{\omega,\omega}
+:=
+\sum_{\omega'\neq\omega}[\mathsf T_b^{(S,\mathbf g)}]_{\omega',\omega},
+$$
+and set
+$$
+\mathsf Q_b^{(S,\mathbf g)}
+:=
+\mathsf D_b^{(S,\mathbf g)}-\mathsf T_b^{(S,\mathbf g)}.
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 4</span> <span class="env-name">(Exact first one-region coefficient for the minimal site-link block).</span>
+Assume $\widehat V_{\mathrm{gi}}=0$. Fix a site $n$ and a compatible Gauss sector $\mathbf g$. Then
+$$
+J_{R_n^{\mathrm{site}}}^{(S,\mathbf g)}(\Delta)
+=
+I+\Delta^2 A_{n,\mathbf g}^{[2],(S)}+O(\Delta^4),
+$$
+with
+$$
+A_{n,\mathbf g}^{[2],(S)}
+=
+\frac{1}{4a^2}
+\Bigl(
+\mathsf Q_{n-1/2}^{(S,\mathbf g)}
++
+\mathsf Q_{n+1/2}^{(S,\mathbf g)}
+\Bigr).
+$$
+In particular, the first coefficient depends only on the two deleted hopping cells incident on the site-link block; the mass cell at $n$ and the electric cells at $n\pm\tfrac12$ contribute only diagonal phase data and do not enter the order-$\Delta^2$ coefficient.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+For the block $R_n^{\mathrm{site}}$, the local cells fully contained in the region are precisely the mass cell $Q_n^{\mathrm m}$ and the two electric cells $Q_{n\pm1/2}^{\mathrm e}$. In the minimal benchmark $\widehat V_{\mathrm{gi}}=0$, the mixed collar therefore consists exactly of the two adjacent hopping cells $Q_{n-1/2}^{\mathrm h}$ and $Q_{n+1/2}^{\mathrm h}$. Hence $\widehat B_{R_n^{\mathrm{site}}}^{(S)}$ differs from the reference Hamiltonian only by deleting those two hopping cells.
+
+For any Hermitian Hamiltonian, the order-$\Delta^2$ off-diagonal coefficient of the primitive kernel is $|H_{\omega',\omega}|^2$. On every allowed hopping channel across a bond $b$, the matrix element of $\widehat h_b^{\mathrm h,(S)}$ has modulus $1/(2a)$, so deleting that bond contributes $-1/(4a^2)$ on the corresponding off-diagonal channel. The associated diagonal correction is fixed by column normalization and is exactly $(1/(4a^2))\mathsf D_b^{(S,\mathbf g)}$. Since the mass and electric terms are diagonal, they do not contribute to the order-$\Delta^2$ kernel coefficient. Summing the two deleted bond contributions gives the displayed formula. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 5</span> <span class="env-name">(First exact coupled exchange coefficient for a disjoint site-link block pair).</span>
+Assume $\widehat V_{\mathrm{gi}}=0$ and let
+$$
+R_n^{\mathrm{site}}
+:=
+\bigl(\{n\},\{n-\tfrac12,n+\tfrac12\}\bigr),
+\qquad
+R_{n+2}^{\mathrm{site}}
+:=
+\bigl(\{n+2\},\{n+\tfrac32,n+\tfrac52\}\bigr).
+$$
+These regions are disjoint and gauge compatible. Fix a compatible Gauss sector $\mathbf g$. Then
+$$
+E_{R_n^{\mathrm{site}},R_{n+2}^{\mathrm{site}}}^{(S,\mathbf g)}(\Delta)
+=
+I+\Delta^4 C_{n,n+2}^{(2),(S,\mathbf g)}+O(\Delta^6),
+$$
+where
+$$
+C_{n,n+2}^{(2),(S,\mathbf g)}
+=
+\frac{1}{16a^4}
+\Bigl[
+\mathsf Q_{n+1/2}^{(S,\mathbf g)},
+\mathsf Q_{n+3/2}^{(S,\mathbf g)}
+\Bigr].
+$$
+Hence the first coupled exchange coefficient is supported on the minimal mixed strip
+$$
+\Xi_{n,n+2}^{\mathrm{mix}}
+:=
+\bigl(\{n,n+1,n+2\},\{n+\tfrac12,n+\tfrac32\}\bigr).
+$$
+Moreover, if a sector configuration $\omega$ carries a fermion at $(n+2,s)$, vacancies at $(n+1,\bar s)$ and $(n,s)$, and fluxes $m_{n+1/2},m_{n+3/2}>-S$, and if $\omega'$ is obtained from $\omega$ by moving that fermion to $(n,s)$ and lowering both intervening link fluxes by one, then
+$$
+\bigl[C_{n,n+2}^{(2),(S,\mathbf g)}\bigr]_{\omega',\omega}
+=
+\frac{1}{16a^4},
+\qquad
+\bigl[C_{n,n+2}^{(2),(S,\mathbf g)}\bigr]_{\omega,\omega'}
+=
+-\frac{1}{16a^4}.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By Proposition&nbsp;4,
+$$
+A_{n,\mathbf g}^{[2],(S)}
+=
+\frac{1}{4a^2}
+\Bigl(
+\mathsf Q_{n-1/2}^{(S,\mathbf g)}
++
+\mathsf Q_{n+1/2}^{(S,\mathbf g)}
+\Bigr),
+$$
+$$
+A_{n+2,\mathbf g}^{[2],(S)}
+=
+\frac{1}{4a^2}
+\Bigl(
+\mathsf Q_{n+3/2}^{(S,\mathbf g)}
++
+\mathsf Q_{n+5/2}^{(S,\mathbf g)}
+\Bigr).
+$$
+The group-commutator expansion for two $\Delta^2$-onset comparison maps gives
+$$
+E_{R_n^{\mathrm{site}},R_{n+2}^{\mathrm{site}}}^{(S,\mathbf g)}(\Delta)
+=
+I+\Delta^4[A_{n,\mathbf g}^{[2],(S)},A_{n+2,\mathbf g}^{[2],(S)}]+O(\Delta^6).
+$$
+The bond kernels on disjoint bonds act on disjoint matter-link bits and therefore commute, so every commutator term vanishes except the facing-gap pair $\mathsf Q_{n+1/2}^{(S,\mathbf g)}$ and $\mathsf Q_{n+3/2}^{(S,\mathbf g)}$. This yields the displayed formula and the strip support.
+
+For the representative entry, the only allowed ordered product connecting $\omega$ to $\omega'$ is the right block acting first across the bond $(n+\tfrac32)$, followed by the left block acting across $(n+\tfrac12)$. Each deleted hopping kernel contributes the factor $-1/(4a^2)$ on its allowed off-diagonal channel, so the surviving product has coefficient $+1/(16a^4)$. The reverse channel is negative by antisymmetry of the commutator. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the first genuinely coupled matter-link coefficient in the dynamical paper. Unlike the static background-field floor coefficients, it is not merely a matter transport coefficient dressed by external phases. Its nonzero channel requires a two-bond matter transfer together with two compatible link-flux shifts on the active strip itself. The finite link cutoff appears honestly through the admissibility conditions on those flux shifts.
+</div>
+
+<h3>VI.2. Mixed strip channels beyond the first two-bond strip</h3>
+
+<p>
+Proposition&nbsp;5 identifies the first exact coupled channel on the minimal two-bond strip. The next structural question is not yet a closed formula for all longer-strip coefficients. It is the bookkeeping problem of what kind of exact channel family those broader coefficients can even live on. At the fixed finite benchmark, that question already has a clean exact answer.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 10</span> <span class="env-name">(Longer mixed strips and strip-local matrix units).</span>
+For every integer $\ell\ge 2$, define the $\ell$-bond mixed strip
+$$
+\Xi_{n,\ell}^{\mathrm{mix}}
+:=
+\bigl(
+\{n,n+1,\dots,n+\ell\},
+\{n+\tfrac12,n+\tfrac32,\dots,n+\ell-\tfrac12\}
+\bigr).
+$$
+Fix a compatible Gauss sector $\mathbf g$, and let
+$$
+\mathcal L_{n,\ell}^{(S,\mathbf g)}
+$$
+denote the finite set of all strip restrictions
+$$
+\eta=\omega|_{\Xi_{n,\ell}^{\mathrm{mix}}}
+$$
+that occur for configurations $\omega\in\Omega_{L,S}^{(\mathbf g)}$.
+For distinct $\eta,\eta'\in\mathcal L_{n,\ell}^{(S,\mathbf g)}$, define the strip-local matrix unit
+$$
+\bigl[\mathsf M_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)}\bigr]_{\omega',\omega}
+:=
+\begin{cases}
+1, & \omega'|_{(\Xi_{n,\ell}^{\mathrm{mix}})^c}=\omega|_{(\Xi_{n,\ell}^{\mathrm{mix}})^c},\ \omega|_{\Xi_{n,\ell}^{\mathrm{mix}}}=\eta,\ \omega'|_{\Xi_{n,\ell}^{\mathrm{mix}}}=\eta',\\
+0, & \text{otherwise}.
+\end{cases}
+$$
+Its antisymmetrized version is
+$$
+\mathsf X_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)}
+:=
+\mathsf M_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)}
+-\mathsf M_{\eta\leftarrow\eta';n,\ell}^{(S,\mathbf g)}.
+$$
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 11</span> <span class="env-name">(Spanning-active mixed strip channels).</span>
+Call the antisymmetric strip channel
+$$
+\mathsf X_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)}
+$$
+<em>spanning-active</em> if $\eta$ and $\eta'$ differ on data attached to both boundary bonds
+$$
+n+\tfrac12,
+\qquad
+n+\ell-\tfrac12,
+$$
+and if there exists a gauge-compatible sequence of local mixed-cell moves inside $\Xi_{n,\ell}^{\mathrm{mix}}$ carrying $\eta$ to $\eta'$.
+These are the candidate channels that genuinely use the full $\ell$-bond strip rather than a proper substrip.
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 6</span> <span class="env-name">(Finite exact strip-basis closure on every fixed mixed strip).</span>
+Fix $L$, $S$, a compatible Gauss sector $\mathbf g$, a strip center $n$, and a strip length $\ell\ge 2$. Then the space of antisymmetric kernels on $\mathbb C^{\Omega_{L,S}^{(\mathbf g)}}$ that
+<ol>
+  <li>leave the exterior data $(\Xi_{n,\ell}^{\mathrm{mix}})^c$ unchanged, and</li>
+  <li>are supported entirely on the mixed strip $\Xi_{n,\ell}^{\mathrm{mix}}$,</li>
+</ol>
+is finite dimensional, and the channels
+$$
+\mathsf X_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)},
+\qquad
+\eta\neq\eta',
+$$
+form an exact basis.
+Consequently every exact coupled exchange coefficient whose first visible support is contained in $\Xi_{n,\ell}^{\mathrm{mix}}$ admits a unique finite decomposition on this strip basis.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+At fixed $L$, $S$, $\mathbf g$, $n$, and $\ell$, the strip state set $\mathcal L_{n,\ell}^{(S,\mathbf g)}$ is finite because the strip contains only finitely many sites and links and each site/link variable has finitely many allowed values on the chosen benchmark. The corresponding strip-local matrix units
+$$
+\mathsf M_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)}
+$$
+therefore form the ordinary matrix-unit basis for all kernels that act only on the strip and leave exterior data unchanged. Passing to the antisymmetric subspace is accomplished by taking
+$$
+\mathsf M_{\eta'\leftarrow\eta;n,\ell}^{(S,\mathbf g)}
+-\mathsf M_{\eta\leftarrow\eta';n,\ell}^{(S,\mathbf g)},
+$$
+which proves the basis claim. The final sentence is then immediate. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Proposition&nbsp;6 does <em>not</em> yet compute the longer-strip coefficients. What it does fix exactly is the structural alternative. On the fixed finite benchmark, there is no question that mixed strip closure occurs on <em>some</em> finite exact basis once the active strip is fixed. In particular, Proposition&nbsp;5 lives in a one-dimensional spanning-active subspace of the $\ell=2$ strip basis. The real open problem is therefore narrower: determine which spanning-active channels actually occur for broader gauge-compatible mixed regions, and whether they collapse to a smaller canonical family uniform in $\ell$, analogous to the singleton $F/S$ basis and the local Fock-space strip bases of phase&nbsp;8.
+</div>
+
+<h3>VI.3. The correct mixed bond-centered continuum target: what can already be fixed</h3>
+
+<p>
+The first exact two-bond coefficient of Proposition&nbsp;5 already transports matter and shifts link flux on the same active strip. That single fact is enough to rule out one tempting but incorrect extrapolation: the dynamical continuum target cannot be a matter operator alone with a passive gauge background attached afterward.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 12</span> <span class="env-name">(External-link reduction and mixed cylinder profiles).</span>
+By <em>external-link reduction</em> we mean the formal de-dynamization map that replaces the link-shift operators carried by the mixed strip channels with c-number background link factors, thereby collapsing the mixed matter-link channel algebra to the static background-field channel algebra of Paper&nbsp;10.
+By a <em>smooth mixed cylinder profile</em> we mean a finite sum of tensors of the form
+$$
+\Psi(x,\eta)=\phi(x)\,\zeta(\eta),
+$$
+where $\phi\in C_c^\infty(\mathbb R,\mathbb C^2)$ and $\zeta$ is finitely supported on a fixed local strip-state set $\mathcal L_{n,\ell}^{(S,\mathbf g)}$.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Conditional Theorem 2A</span> <span class="env-name">(Form of the mixed bond-centered continuum target under mixed strip closure).</span>
+Assume a mixed version of the strip-closure/finite-first-moment hypothesis of Paper&nbsp;5: namely, assume that the first visible coupled exchange coefficients for the relevant mixed support class decompose into finitely many translated mixed strip channels
+$$
+X_{n+\ell/2}^{(\ell,\chi;S,\mathbf g)}
+$$
+with finite first strip moments, and assume that each translated channel family has a bond-centered action on smooth mixed cylinder profiles by a first-order local operator
+$$
+\mathbb K_{\ell,\chi}^{\mathrm{mix}}[\beta].
+$$
+Then the renormalized coupled exchange law has the continuum form
+$$
+\mathbb K_{\parallel}^{\mathrm{mix}}[\beta]
+:=
+\sum_{(\ell,\chi)}
+C_{\ell,\chi}^{\mathrm{mix}}\,
+\mathbb K_{\ell,\chi}^{\mathrm{mix}}[\beta],
+$$
+where the coefficients $C_{\ell,\chi}^{\mathrm{mix}}$ are the corresponding first strip moments and
+$$
+\beta=N\partial_xM-M\partial_xN.
+$$
+Moreover, if one applies external-link reduction to this mixed operator, then the result is the static covariant benchmark
+$$
+\mathbb K_{\parallel}^{\mathrm{mix}}[\beta]
+\longrightarrow
+K_\parallel^A[\beta]
+=
+\Bigl(\beta D_x+\frac12\partial_x\beta\Bigr)(I-\alpha).
+$$
+Before that reduction, however, $\mathbb K_{\parallel}^{\mathrm{mix}}[\beta]$ acts nontrivially on the link-state factor itself. Hence the correct continuum target for the dynamical matter-link exchange algebra is an <em>operator-valued bond-centered mixed generator</em>, not a matter operator alone.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Why this is the right target form.</span>
+The strip-moment part is the same antisymmetrized midpoint mechanism already isolated in Paper&nbsp;5, now applied to translated mixed strip channels rather than pure matter channels. The reduction to
+$$
+K_\parallel^A[\beta]
+$$
+is exactly the requirement that de-dynamizing the link sector recover the static background-field phase paper rather than a different continuum object. The genuinely dynamical part is forced by Proposition&nbsp;5 itself: its representative nonzero matrix elements already move a fermion across the strip and shift the two intervening link fluxes, so any continuum object that forgets the link-state factor would throw away part of the exact exchanged channel data instead of reducing it. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Conditional Theorem&nbsp;2A still does not provide the actual mixed strip moments or the actual operator coefficients. What it fixes is the correct <em>type</em> of continuum object. From the Barandes point of view, that is the honest step available now: the exact finite exchange law already rules out a purely matter-valued target, but it has not yet earned a full coefficient formula for the mixed operator-valued one.
+</div>
+
+<h2>VII. What the first dynamical Abelian benchmark now fixes and what it defers</h2>
+
+<p>
+With the scope fixed this way, the first dynamical Abelian benchmark can now be packaged as an exact structural closure statement.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 2</span> <span class="env-name">(Exact structural closure of the first dynamical Abelian benchmark).</span>
+At the presently justified fixed finite-lattice finite-link Abelian scope, the first dynamical gauge benchmark is fixed exactly in the following structural sense.
+<ol>
+  <li><em>Exact finite matter-plus-link primitive problem.</em> The enlarged configuration space is an ordinary finite matter-plus-link configuration space, so the primitive kernels remain finite objects.</li>
+  <li><em>Exact gauge invariance of full and localized dynamics.</em> The full matter-link Hamiltonian and every gauge-compatible localized deformation commute with the Gauss generators.</li>
+  <li><em>Exact $\Gamma$-level Gauss-sector decomposition.</em> Primitive kernels, comparison maps, and exchange defects decompose exactly into Gauss-law-compatible sectors.</li>
+  <li><em>Exact mixed quasilocal filtration and fixed-benchmark inverse control.</em> For each fixed gauge-compatible mixed region, there is a common small-$\Delta$ regime in which the sectorwise comparison maps admit a mixed support-growth filtration with no linear term, and the reference blocks, comparison maps, and comparison-map inverses are uniformly controlled across the finite Gauss-sector family.</li>
+  <li><em>Exact physical-sector reduction.</em> Any chosen physical Gauss sector is therefore an ordinary finite primitive-kernel / comparison-map / exchange-defect problem in its own right.</li>
+  <li><em>Exact finite strip-basis closure on each fixed mixed strip.</em> Once a coupled coefficient is known to live on a fixed active strip, it already closes on a finite exact antisymmetric strip-local basis.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 is Definitions&nbsp;1 and&nbsp;2 together with the finite-link scope boundary stated above. Item 2 is Proposition&nbsp;1 and Proposition&nbsp;2. Item 3 is Proposition&nbsp;3 together with Corollary&nbsp;1. Item 4 is Theorem&nbsp;1 together with Corollary&nbsp;3. Item 5 is Corollary&nbsp;2. Item 6 is Proposition&nbsp;6. Thus the first dynamical Abelian benchmark is fixed at exactly the structural level claimed here, and no interacting coefficient theorem is being smuggled in. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+What remains outside the present claim is equally important.
+</p>
+
+<ol>
+  <li><em>No full compact-rotor kernel theorem yet.</em> The paper now investigates the compact-rotor enlargement structurally and identifies its infinite global electric-flux tower, but it does not yet prove primitive-kernel existence, inverse control, or exchange-defect theorems for that infinite-dimensional problem.</li>
+  <li><em>No inverse-control theorem beyond the chosen fixed finite benchmark yet.</em> The paper now proves uniform sectorwise inverse control across the finite family of Gauss sectors for each fixed gauge-compatible mixed region at fixed lattice size and finite link cutoff, but it does not yet produce estimates stable under enlarging the lattice, varying the link cutoff, or passing to the compact-rotor tower.</li>
+  <li><em>No general exact coupled exchange-coefficient or reduced strip-channel package yet.</em> The paper now computes the first disjoint site-link block coefficient in the minimal coupled benchmark $\widehat V_{\mathrm{gi}}=0$ and shows that every fixed mixed strip carries a finite exact antisymmetric basis, but it does not yet determine which spanning-active channels actually occur for broader gauge-compatible mixed regions or whether they collapse to a smaller canonical family uniform in strip length.</li>
+  <li><em>No exact bond-centered coupled continuum reduction yet.</em> The paper now identifies the correct target type—an operator-valued bond-centered mixed generator that reduces under external-link reduction to the static covariant matter operator—but it does not yet derive the corresponding strip moments or operator coefficients from a full exact mixed-channel calculation.</li>
+  <li><em>No non-Abelian or detector/control extension yet.</em> The present paper is Abelian only, and operational detector/control embedding remains a later phase rather than an implicit assumption here.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+This is the strongest honest Paper&nbsp;11 that the current stack can support. It fixes the exact finite matter-link stochastic problem, its $\Gamma$-level Gauss-sector structure, the first mixed quasilocal filtration, the associated fixed-benchmark inverse control, the first explicit disjoint site-link block coefficient in the minimal coupled benchmark, the exact finite strip basis available once a mixed strip is fixed, and the correct operator-valued target type for any later continuum reduction; then it states plainly what interacting exchange work still has to be done instead of claiming it by continuum analogy.
+</div>
+
+<h2>VIII. The remaining interacting theorem burden</h2>
+
+<p>
+At a more technical level, the actual interacting phase-9 continuation is now narrower than before, but it still has to answer the following questions.
+</p>
+
+<ol>
+  <li><em>Compact-rotor operator theory.</em> One must replace the finite-matrix benchmark by a weighted-operator treatment of the full compact rotor, where each compatible periodic-lattice Gauss sector carries an infinite global electric-flux tower.</li>
+  <li><em>Larger-benchmark inverse control beyond the fixed finite theorem.</em> One must replace the fixed-region finite-family sectorwise bound of Corollary&nbsp;3 by estimates that remain stable as lattice size or link cutoff vary, and eventually by weighted inverse control for the compact-rotor tower.</li>
+  <li><em>Broader exact coupled exchange coefficients.</em> One must extend Proposition&nbsp;5 beyond the minimal disjoint site-link block pair to broader gauge-compatible mixed regions rather than extrapolate from the static background-field paper.</li>
+  <li><em>Reduced mixed strip-channel classification.</em> Proposition&nbsp;6 already gives a finite exact strip basis on every fixed mixed strip. One must now determine which spanning-active channels in that basis actually occur beyond the first two-bond strip and whether they collapse to a smaller canonical family uniform in strip length, analogous to the earlier singleton and local Fock-space cases.</li>
+  <li><em>Exact mixed bond-centered continuum law.</em> Conditional Theorem&nbsp;2A identifies the correct target type. One must now replace that conditional statement by an exact coefficient-derived theorem, including the correct renormalization, first strip moments, and channel coefficients of the operator-valued mixed generator.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+That final item is where overclaiming is easiest and therefore most dangerous. The right target is not a guessed Lagrangian density imported from elsewhere. It is the operator that the exact mixed matter-link exchange coefficients themselves force once the enlarged finite-kernel problem has actually been solved.
+</div>
+
+<h2>IX. Conclusion</h2>
+
+<p>
+The static phase-9 paper and the present dynamical paper have different logical jobs. The static paper closes the background-field benchmark. Paper&nbsp;11 now fixes the first dynamical Abelian gauge benchmark at the exact structural level that the current stack can honestly support: finite matter-plus-link configuration space, gauge-invariant combined and localized dynamics, mixed-support localization, exact $\Gamma$-level Gauss-sector decomposition, the first mixed quasilocal filtration for the sectorwise comparison maps together with fixed-benchmark uniform sectorwise inverse control for each fixed gauge-compatible mixed region, the first exact disjoint site-link block exchange coefficient in the minimal coupled benchmark, the exact finite strip-basis closure available on every fixed mixed strip, and an explicit compact-rotor investigation that identifies the surviving gauge algebra together with the infinite global electric-flux tower.
+</p>
+
+<p>
+That is the right Barandes-style Paper&nbsp;11 outcome. One first defines the enlarged finite stochastic problem, its exact sector structure, the first mixed quasilocal filtration and fixed-benchmark inverse control that the finite kernel algebra itself supports, the first exact coupled coefficient that can actually be computed without importing extra interaction terms, the finite exact strip basis on which any later longer-strip coefficient must live, and the precise way the compact-rotor upgrade stops being a finite-matrix problem; only then does one ask what the broader interacting exchange algebra forces. The remaining burden is therefore sharper than before rather than vaguer: develop the compact-rotor operator theory, replace the fixed-benchmark inverse bounds by estimates stable under larger-benchmark growth or rotor weights, extend the first site-link block coefficient to broader mixed regions and determine which exact strip channels survive there, and then let those exact finite-kernel data determine the coefficients of the operator-valued bond-centered mixed target without extrapolation.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Variable Particle Number in Relativistic ISP: Fock-Space Lift and First Sector-Changing Dynamics,” preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Minimal U(1) Gauge Coupling and Holonomy in Relativistic ISP,” preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Relativity and Indivisible Stochastic Processes,” architecture draft (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” arXiv:2507.21192 (2025).</span></li>
+</ol>
+</div>
+
+</article>
+</body>
+</html>

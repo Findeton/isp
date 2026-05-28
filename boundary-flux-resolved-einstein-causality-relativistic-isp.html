@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boundary-Flux-Resolved Einstein Causality in Relativistic ISP</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  background: #f8fafc;
+  color: #111827;
+}
+.paper {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 14px;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Boundary-Flux-Resolved Einstein Causality in Relativistic ISP</div>
+<div class="subtitle">Exact physical-sector gluing, extended regional configuration spaces, and center-resolved locality on the finite matter-link benchmark</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Proposed interposed bridge-refinement paper after Paper 13 and before the roadmap interacting gauge-matter benchmark</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The preceding operational and bridge papers already isolate the exact obstruction to naive locality on the fixed finite matter-link benchmark of relativistic ISP: on the physical Gauss sector, regional data do not generically factor as unconstrained tensor-product data, but are fibered over shared boundary electric-flux labels. The present paper turns that obstruction into the next exact theorem. In the Barandes spirit, the analysis stays at the level of ordinary finite configuration spaces and stochastic maps, rather than importing auxiliary Hilbert-space structure as primary.</p>
+<p>
+For a connected mixed region we define an extended regional configuration space carrying local matter data, interior link-flux data, and the two cut-boundary electric-flux labels. We then prove that the global physical-sector configuration space is canonically a fiber product of the corresponding extended regional spaces over matching boundary-flux data. For the boundary-flux-preserving detector and setting subclasses already isolated in the operational benchmark paper, the induced stochastic maps preserve the relevant boundary-label fibers and descend to exact regional maps on those extended spaces. This yields a finite abelian boundary-flux center, and the correct induced local net on the benchmark is therefore not naively unfibered but center resolved: on each admissible joint boundary-flux block the regional induced algebras commute exactly, and after compression to any fixed admissible joint block one recovers an ordinary finite benchmark local net satisfying Einstein causality outright on that block. In this precise sense the benchmark theory is Einstein-causal relative to the joint boundary-flux center.</p>
+<p>
+The paper therefore strengthens the phase-11 Haag-Kastler bridge at the exact scope already earned by the stack, while making explicit what it still does not claim: no identification of raw comparison maps with observables, no nontrivial exact raw commuting theorem for the active free or gauge comparison-map families, no arbitrary-coupling universality beyond the preserving subclasses, and no compact-rotor, continuum, interacting, or non-Abelian completion. The gain is narrower and firmer: the physical Gauss sector does not fail locality; it fails naive factorization, and the exact boundary data required to repair locality are now made explicit.</p>
+</div>
+
+<p class="small-note">
+Scope note. The theorem-level content of this paper is the exact obstruction to naive physical-sector factorization, the definition of extended regional configuration spaces with boundary flux labels, the exact gluing theorem on the fixed finite benchmark, the induced finite abelian boundary-flux center, the exact regional action of boundary-flux-preserving detector/setting subclasses on the extended spaces, the corresponding center-resolved Einstein-causality theorem for the induced benchmark net, and the blockwise reduction to ordinary finite benchmark local nets on fixed admissible joint boundary-flux sectors. This is the finite ISP analogue of the standard gauge-theory lesson that electric centers, edge/boundary data, and superselection sectors must be handled explicitly before locality is formulated. The paper does not claim a raw observable-identification theorem, a nontrivial exact raw commuting class, arbitrary-coupling universality, compact-rotor or continuum completion, or an interacting gauge-matter extension.
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+The phase ordering of the relativistic ISP program has become sharper with each paper. The architecture paper identified localized finite deformations and their exchange defect as the right relativistic integrability datum. The exact free-model papers then isolated quasilocal filtration, exact comparison-map coefficients, and the first exchange-defect theorems. The gauge papers enlarged the benchmark from matter alone to matter plus dynamical link variables, and the operational paper inserted localized settings and detectors into the same finite-hypersurface framework. The bridge paper then showed that, once localized maps commute at the appropriate operational or induced level, one obtains a genuine Einstein-causality theorem for an induced local net.
+</p>
+
+<p>
+But the same sequence also made a negative fact exact. On the physical Gauss sector of the finite matter-link benchmark, the correct microscopic locality target is not naive tensor-factor locality. The reason is not interpretive looseness. It is a literal recursion theorem: local matter occupation data on a connected region do not fix the interior link-flux profile unless one also supplies cut-boundary electric-flux data. So the physical-sector configuration space is organized into fibers over boundary flux labels rather than as an unconstrained regional product. The operational paper stated this explicitly and proved first preserving-class fiber theorems. The bridge paper then incorporated the point only as a refinement clause.
+</p>
+
+<p>
+The purpose of the present paper is to promote that refinement into the main theorem. The correct next question is not whether the active raw comparison-map families secretly commute after all; the present stack already contains explicit nonzero disjoint-support raw exchange in the free and gauge benchmarks. Nor is the next question yet a continuum $C^\ast$-completion or an interacting compact-rotor theory. The right next question is simpler and more structural: what are the correct regional configuration spaces on which locality should be formulated, once Gauss law is imposed exactly?
+</p>
+
+<p>
+The answer developed here is configuration-space level and finite. For a connected mixed region one must include not just regional matter and interior link data, but also the cut-boundary electric-flux labels. These form an extended regional configuration space. The first theorem then shows that the global physical-sector configuration space is canonically a fiber product of such extended regional spaces over matching boundary data. Once that is done, the boundary-flux-preserving detector and setting subclasses already isolated in the operational paper become honest regional maps on the extended spaces, and the corresponding induced local algebras commute fiberwise over a finite abelian center generated by the boundary-flux projectors.
+</p>
+
+<p>
+This is the precise sense in which the present paper refines the phase-11 bridge. It does not broaden the raw scope. It sharpens the benchmark locality statement. The physical Gauss sector does not fail Einstein causality; it fails the stronger and wrong statement that the relevant local degrees of freedom were already unconstrained tensor-factor data before the boundary information was supplied.
+</p>
+
+<p>
+The dependence on earlier exact results is correspondingly narrow. Proposition&nbsp;1 below is a direct repackaging of the exact boundary-flux recursion of Paper&nbsp;12, Proposition&nbsp;3A. The preserving hypotheses used later are exactly the boundary-flux-preserving detector and setting hypotheses of Paper&nbsp;12, Definition&nbsp;8A and Theorems&nbsp;4A and&nbsp;4C. The final induced-net interpretation is designed to sharpen the physical-sector refinement clause already present in the restricted gauge-benchmark bridge theorem of Paper&nbsp;13, rather than to replace its benchmark assumptions by new ones.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main results (informal).</span>
+<ol>
+  <li><em>Exact obstruction.</em> Naive unfibered regional factorization fails on the physical Gauss sector because the interior link-flux profile requires boundary-flux seeds.</li>
+  <li><em>Extended regional spaces.</em> The correct regional object is an extended configuration space carrying local matter data, interior link data, and boundary flux labels.</li>
+  <li><em>Exact gluing.</em> The physical-sector configuration space is canonically a fiber product of such regional spaces over matching boundary-flux labels.</li>
+  <li><em>Regional action of preserving subclasses.</em> Boundary-flux-preserving detector and setting maps descend to exact regional stochastic maps on the extended spaces.</li>
+  <li><em>Boundary-flux center.</em> The corresponding boundary-flux projectors generate a finite abelian center over which the induced benchmark net decomposes.</li>
+  <li><em>Center-resolved Einstein causality.</em> On each admissible joint boundary-flux block, the regional induced algebras commute exactly; equivalently, the benchmark net is Einstein-causal relative to the boundary-flux center.</li>
+  <li><em>Blockwise ordinary local nets.</em> Compressing to any fixed admissible joint boundary-flux block yields an ordinary finite benchmark local net satisfying Einstein causality outright on that block.</li>
+</ol>
+</div>
+
+<p class="small-note">
+Strategic note. The paper is strongest exactly where the stack is already strongest: finite benchmark configuration spaces, exact boundary-flux recursion, exact preserving-class block diagonality, and exact induced-net locality at restricted benchmark scope. It is deliberately noncommittal where the present stack remains restricted or open.
+</p>
+
+<h2>II. Exact obstruction to naive physical-sector factorization</h2>
+
+<p>
+We begin by isolating the structural point that motivates the whole paper. The operational benchmark already proved that on the physical Gauss sector the regional link-flux profile is determined recursively only after one supplies cut-boundary flux data. The first proposition simply repackages that fact as a no-go theorem for naive unfibered factorization.
+</p>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact obstruction to naive unfibered regional factorization).</span>
+Fix the finite matter-link benchmark of the dynamical Abelian gauge paper, the background charges
+$$
+(\rho_n^{\mathrm{bg}})_n,
+$$
+the physical Gauss datum
+$$
+\mathbf g_{\mathrm{phys}},
+$$
+and a connected site interval
+$$
+I=\{n_-,n_-+1,\dots,n_+\}.
+$$
+Let
+$$
+\omega=(X,\mathbf m)
+$$
+be a physical-sector basis configuration, with site occupation numbers
+$$
+N_n(X):=\sum_s \mathbf 1_{(n,s)\in X}
+$$
+and link fluxes
+$$
+\mathbf m=(m_{1/2},m_{3/2},\dots,m_{L-1/2}).
+$$
+Then the physical Gauss law implies the exact recursion
+$$
+m_{n+1/2}
+=
+m_{n-1/2}-N_n(X)+\rho_n^{\mathrm{bg}}-g_n^{\mathrm{phys}}
+$$
+for every site $n$, hence
+$$
+m_{n+1/2}
+=
+m_{n_- -1/2}
+-\sum_{j=n_-}^{n}\bigl(N_j(X)-\rho_j^{\mathrm{bg}}+g_j^{\mathrm{phys}}\bigr).
+$$
+and therefore
+$$
+m_{n_- -1/2}-m_{n_+ +1/2}
+=
+\sum_{j=n_-}^{n_+}\bigl(N_j(X)-\rho_j^{\mathrm{bg}}+g_j^{\mathrm{phys}}\bigr).
+$$
+Consequently the interior link-flux profile on $I$ is determined by the matter data on $I$ only after one supplies a boundary-flux seed. In particular, the physical-sector regional data on $I$ do not canonically factor as unconstrained tensor-product data independent of the surrounding cut-boundary flux.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+This is the exact boundary-flux recursion already isolated at benchmark level in Paper&nbsp;12, Proposition&nbsp;3A. The displayed one-step relation is just the Gauss-law eigenvalue equation rearranged to solve for the outgoing link flux. Iterating it from the left cut link proves the second formula, and setting $n=n_+$ gives the boundary-difference identity. The last sentence follows immediately: fixing only the matter occupation data on $I$ leaves the interior link profile undetermined whenever multiple admissible boundary seeds are compatible with the finite cutoff. Therefore the regional physical-sector data are fibered over boundary-flux labels rather than canonically unconstrained product data. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Proposition&nbsp;1 is the exact reason the present paper is needed. The benchmark locality problem is not “prove strict product factorization anyway.” The benchmark locality problem is “formulate locality on the correct regional spaces once strict product factorization has already been proved false.”
+</div>
+
+<h2>III. Extended regional configuration spaces</h2>
+
+<p>
+The proposition above suggests the correct regional object. One should keep the ordinary configuration-space viewpoint but enlarge each regional configuration by the minimal boundary data needed to reconstruct the interior link profile.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Connected mixed region and cut-boundary labels).</span>
+Let $R$ be a gauge-compatible mixed region whose site set is a connected interval
+$$
+V_R=\{n_-,n_-+1,\dots,n_+\}.
+$$
+The two cut-boundary links of $R$ are
+$$
+n_- - \tfrac12,
+\qquad
+n_+ + \tfrac12.
+$$
+For a physical-sector configuration
+$$
+\omega=(X,\mathbf m),
+$$
+define the boundary-flux label
+$$
+\partial\Phi_R(\omega)
+:=
+\bigl(m_{n_- -1/2},\,m_{n_+ +1/2}\bigr).
+$$
+Let
+$$
+\Lambda_\partial(R)
+$$
+denote the set of admissible such labels on the physical sector.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Extended regional configuration space).</span>
+Fix the physical Gauss datum
+$$
+\mathbf g_{\mathrm{phys}}.
+$$
+The extended regional configuration space of $R$ is
+$$
+\Omega_R^{\mathrm{ext}}
+$$
+consisting of tuples
+$$
+\eta_R=
+\bigl(X_R,\mathbf m_R^{\mathrm{int}},\lambda_-,\lambda_+\bigr)
+$$
+such that:
+<ol>
+  <li>$X_R$ is a matter occupation configuration on the sites of $R$;</li>
+  <li>$\mathbf m_R^{\mathrm{int}}$ is an interior link-flux profile on the links fully contained in $R$;</li>
+  <li>$(\lambda_-,\lambda_+)\in\Lambda_\partial(R)$ is an admissible boundary-flux label;</li>
+  <li>the local data satisfy the physical Gauss recursion on every site of $R$ with incoming seed $\lambda_-$ and outgoing boundary value $\lambda_+$.</li>
+</ol>
+For fixed admissible boundary label $\lambda=(\lambda_-,\lambda_+)$, write
+$$
+\Omega_{R,\lambda}^{\mathrm{ext}}
+\subset
+\Omega_R^{\mathrm{ext}}
+$$
+for the corresponding fiber.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+For a connected interval the interior link profile is already determined recursively by $X_R$ together with one boundary seed. We nevertheless keep both cut labels as part of the regional datum because gluing two regional spaces requires a symmetric interface language rather than an asymmetric seed language.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Complementary extended space and matching boundary data).</span>
+For the complementary mixed region $R^c$ on the same periodic ring, define
+$$
+\Omega_{R^c}^{\mathrm{ext}}
+$$
+and its admissible boundary-label map analogously. Write
+$$
+\pi_R:\Omega_R^{\mathrm{ext}}\to\Lambda_\partial(R),
+\qquad
+\pi_{R^c}:\Omega_{R^c}^{\mathrm{ext}}\to\Lambda_\partial(R)
+$$
+for the corresponding label maps, where the two cut links are identified in the obvious geometric way. The fiber product of the two extended spaces over matching boundary data is
+$$
+\Omega_R^{\mathrm{ext}}
+\times_{\Lambda_\partial(R)}
+\Omega_{R^c}^{\mathrm{ext}}
+:=
+\bigl\{
+(\eta_R,\eta_{R^c}) :
+\pi_R(\eta_R)=\pi_{R^c}(\eta_{R^c})
+\bigr\}.
+$$
+</div>
+
+<h2>IV. Exact physical-sector gluing theorem</h2>
+
+<p>
+The next theorem states the basic structural replacement for naive product factorization. The global physical-sector configuration space is not a direct product of regional spaces, but it is an exact fiber product of the extended regional spaces just defined.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Exact gluing of the physical sector by boundary flux).</span>
+Fix the finite matter-link benchmark, the physical Gauss datum
+$$
+\mathbf g_{\mathrm{phys}},
+$$
+and a connected mixed region $R$ with complementary region $R^c$. Then the physical-sector configuration space
+$$
+\Omega_{\mathrm{phys}}
+:=
+\Omega_{L,S}^{(\mathbf g_{\mathrm{phys}})}
+$$
+is canonically isomorphic to the fiber product
+$$
+\Omega_{\mathrm{phys}}
+\cong
+\Omega_R^{\mathrm{ext}}
+\times_{\Lambda_\partial(R)}
+\Omega_{R^c}^{\mathrm{ext}}.
+$$
+Equivalently, a physical-sector configuration is exactly the same thing as a pair of compatible extended regional configurations with matching cut-boundary flux labels.
+Moreover, for each admissible label
+$$
+\lambda\in\Lambda_\partial(R),
+$$
+the fixed-label block
+$$
+\Omega_{\mathrm{phys},\lambda}(R)
+:=
+\{\omega\in\Omega_{\mathrm{phys}}:\partial\Phi_R(\omega)=\lambda\}
+$$
+is canonically isomorphic to
+$$
+\Omega_{R,\lambda}^{\mathrm{ext}}
+\times
+\Omega_{R^c,\lambda}^{\mathrm{ext}}.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Define the map
+$$
+\mathfrak G_R:\Omega_{\mathrm{phys}}
+\longrightarrow
+\Omega_R^{\mathrm{ext}}
+\times_{\Lambda_\partial(R)}
+\Omega_{R^c}^{\mathrm{ext}}
+$$
+by restricting a global configuration
+$$
+\omega=(X,\mathbf m)
+$$
+to its regional matter data, regional interior link data, and common cut-boundary label on $R$ and $R^c$. The two resulting extended regional configurations clearly have matching boundary labels, so the map is well defined.
+
+It is injective because the regional matter occupations on $R$ and $R^c$ reconstruct the global occupation configuration $X$, while the regional interior link data together with the shared cut-boundary values reconstruct the global link-flux profile $\mathbf m$.
+
+It is surjective because any compatible pair
+$$
+(\eta_R,\eta_{R^c})
+$$
+with matching boundary labels determines a unique global matter configuration by union, and determines a unique global link-flux profile by taking the two regional interior profiles together with the common cut values. Since each regional component already satisfies the physical Gauss recursion on its own sites and the cut values match, the reconstructed global configuration satisfies the physical Gauss law everywhere. Hence the reconstructed configuration lies in $\Omega_{\mathrm{phys}}$.
+Thus $\mathfrak G_R$ is a canonical bijection. The fixed-label statement is the restriction of the same bijection to the subspace of pairs carrying the common boundary label $\lambda$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(Iterated multi-region gluing).</span>
+For any finite decomposition of the ring into connected mixed regions, the physical-sector configuration space is canonically an iterated fiber product of the corresponding extended regional configuration spaces over matching boundary-flux labels on the cut links.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Apply Theorem&nbsp;1 successively across each cut in the decomposition. Matching boundary labels at each stage are exactly the compatibility conditions needed to reconstruct the unique global physical-sector configuration. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Theorem&nbsp;1 is the exact replacement for naive tensor-factor locality on the physical sector. The regional spaces are ordinary finite configuration spaces; what changes is the gluing law. The benchmark local structure is therefore not an unconstrained product but a fiber product over a finite classical boundary algebra.
+</div>
+
+<h2>V. Boundary-flux center</h2>
+
+<p>
+Once the gluing law is stated correctly, the algebraic refinement becomes straightforward. The cut-boundary flux labels generate a finite abelian center that organizes the induced local net.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 4</span> <span class="env-name">(Boundary-flux center).</span>
+For a connected mixed region $R$ on the physical sector, let
+$$
+P_{R,\lambda}^{\partial},
+\qquad
+\lambda\in\Lambda_\partial(R),
+$$
+denote the exact boundary-flux projectors already defined at operational benchmark level. The <em>boundary-flux center</em> of $R$ is the finite abelian algebra
+$$
+\mathfrak Z_\partial(R)
+:=
+\operatorname{Alg}_1\bigl(\{P_{R,\lambda}^{\partial}\}_{\lambda\in\Lambda_\partial(R)}\bigr).
+$$
+For a finite family of disjoint regions
+$$
+R_1,\dots,R_m,
+$$
+define the corresponding joint boundary-flux center by
+$$
+\mathfrak Z_\partial(R_1,\dots,R_m)
+:=
+\operatorname{Alg}_1\Bigl(\bigcup_{j=1}^m \mathfrak Z_\partial(R_j)\Bigr).
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The point of Definition&nbsp;4 is not to add a new quantum center by hand. The center is already present in the exact finite configuration-space organization of the physical sector. The present paper merely promotes it from a bookkeeping device to the correct local structural datum.
+</div>
+
+<h2>VI. Exact regional action of boundary-flux-preserving benchmark maps</h2>
+
+<p>
+The operational benchmark already identified boundary-flux-preserving detector and setting subclasses. The next theorem reformulates those block-diagonality results as exact regionality statements on the extended spaces.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 5</span> <span class="env-name">(Boundary-flux-preserving benchmark maps).</span>
+Let $R$ be a connected mixed region on the physical sector. A benchmark stochastic map
+$$
+M_R
+$$
+supported in $R$ will be called <em>boundary-flux preserving</em> if it is one of the following exact benchmark maps and preserves every boundary-flux projector:
+<ol>
+  <li>a detector instrument component
+  $$
+  \mathcal J_{R,\mathbf g_{\mathrm{phys}}}^{a,(S)}(\tau)
+  $$
+  from the operational benchmark paper satisfying the preserving hypothesis of the detector locality theorem; or</li>
+  <li>a localized setting map
+  $$
+  \mathcal S_{R,\mathbf g_{\mathrm{phys}}}^{x,(S)}(\tau_{\mathrm{set}})
+  $$
+  satisfying the analogous preserving hypothesis for setting pulses.</li>
+</ol>
+Equivalently,
+$$
+[M_R,P_{R,\lambda}^{\partial}]=0
+$$
+for every admissible boundary label $\lambda$; by Paper&nbsp;12, Theorems&nbsp;4A and&nbsp;4C, this is exactly the block-diagonality condition satisfied by the benchmark preserving subclasses.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 2</span> <span class="env-name">(Exact regional action on the extended configuration spaces).</span>
+Let $R$ be a connected mixed region on the physical sector, and let
+$$
+M_R
+$$
+be a boundary-flux-preserving benchmark map in the sense of Definition&nbsp;5. Then:
+<ol>
+  <li><em>Fiber preservation.</em> The global map $M_R$ preserves each boundary-flux block
+  $$
+  P_{R,\lambda}^{\partial}\Omega_{\mathrm{phys}}.
+  $$</li>
+  <li><em>Extended regional descent.</em> For each admissible label $\lambda$, under the fixed-label gluing identification of Theorem&nbsp;1,
+  $$
+  \Omega_{\mathrm{phys},\lambda}(R)
+  \cong
+  \Omega_{R,\lambda}^{\mathrm{ext}}
+  \times
+  \Omega_{R^c,\lambda}^{\mathrm{ext}},
+  $$
+  there exists a stochastic map
+  $$
+  M_{R,\lambda}^{\mathrm{ext}}:
+  \Omega_{R,\lambda}^{\mathrm{ext}}\to\Omega_{R,\lambda}^{\mathrm{ext}}
+  $$
+  such that the restriction of $M_R$ to $\Omega_{\mathrm{phys},\lambda}(R)$ acts only on the $R$ factor and leaves the complementary extended factor fixed.</li>
+  <li><em>Exact regionality.</em> In this sense the preserving benchmark maps are exact regional stochastic maps on the extended spaces.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 is exactly the preserving-class block-diagonality already proved at benchmark level for detector and setting maps in Paper&nbsp;12, Theorems&nbsp;4A and&nbsp;4C. Because
+$$
+[M_R,P_{R,\lambda}^{\partial}]=0
+$$
+for every $\lambda$, the map $M_R$ preserves each boundary-flux block.
+
+For item 2, fix an admissible label $\lambda$. By the fixed-label part of Theorem&nbsp;1, every state in $\Omega_{\mathrm{phys},\lambda}(R)$ is represented uniquely by a compatible pair
+$$
+(\eta_R,\eta_{R^c})
+\in
+\Omega_{R,\lambda}^{\mathrm{ext}}
+\times
+\Omega_{R^c,\lambda}^{\mathrm{ext}}.
+$$
+Transport the restricted stochastic map
+$$
+M_R\big|_{\Omega_{\mathrm{phys},\lambda}(R)}
+$$
+across that canonical identification. Since the underlying detector or setting Hamiltonian is supported in $R$, the transported stochastic map can change only the matter and interior-link variables belonging to the $R$ component. Because the map is boundary-flux preserving, it cannot alter the common boundary label $\lambda$, and because its support is confined to $R$, it does not alter the complementary extended variables. Hence on the $\lambda$ block there is a unique regional stochastic map
+$$
+M_{R,\lambda}^{\mathrm{ext}}
+$$
+on $\Omega_{R,\lambda}^{\mathrm{ext}}$ such that the transported action is the identity on the complementary extended factor.
+
+Item 3 is merely the interpretation of item 2. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Theorem&nbsp;2 is the paper’s key dynamical reformulation. The earlier operational benchmark proved block diagonality. The present paper upgrades that statement to exact regionality on the correct regional spaces.
+</div>
+
+<h2>VII. Center-resolved induced local algebras and Einstein causality</h2>
+
+<p>
+Once the preserving benchmark maps are recognized as exact regional maps on the extended spaces, Einstein causality becomes a direct local statement over the boundary-flux center.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 6</span> <span class="env-name">(Boundary-resolved induced local algebra).</span>
+For a connected mixed region $R$ on the physical sector, define the boundary-resolved induced local algebra
+$$
+\mathfrak A_\partial^{\mathrm{ind}}(R)
+$$
+to be the unital algebra generated by:
+<ol>
+  <li>the dual effect-space actions of the boundary-flux-preserving benchmark detector and setting maps supported in $R$; and</li>
+  <li>the boundary-flux center
+  $$
+  \mathfrak Z_\partial(R).
+  $$</li>
+</ol>
+Equivalently, one may view
+$$
+\mathfrak A_\partial^{\mathrm{ind}}(R)
+$$
+as the direct sum over admissible boundary labels of the induced local algebras on the fibers
+$$
+\Omega_{R,\lambda}^{\mathrm{ext}}.
+$$
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 3</span> <span class="env-name">(Boundary-flux-resolved Einstein causality on the benchmark).</span>
+Let
+$$
+R_A\perp R_B
+$$
+be disjoint connected mixed regions on the physical sector, and consider the boundary-resolved induced local algebras
+$$
+\mathfrak A_\partial^{\mathrm{ind}}(R_A),
+\qquad
+\mathfrak A_\partial^{\mathrm{ind}}(R_B)
+$$
+generated by the boundary-flux-preserving detector and setting benchmark subclasses. Then:
+<ol>
+  <li><em>Joint central decomposition.</em> Both algebras are block diagonal with respect to the joint boundary-flux center
+  $$
+  \mathfrak Z_\partial(R_A,R_B).
+  $$</li>
+  <li><em>Fiberwise commutation.</em> On every admissible joint boundary-flux block, the two regional algebras commute exactly.</li>
+  <li><em>Center-resolved Einstein causality.</em> Equivalently, the induced benchmark net is Einstein-causal relative to the finite abelian boundary-flux center.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By Theorem&nbsp;2, every preserving benchmark map supported in $R_A$ acts, on each admissible joint boundary-label block, only on the extended $R_A$ component of the corresponding glued configuration, while every preserving benchmark map supported in $R_B$ acts only on the extended $R_B$ component. The boundary projectors generating
+$$
+\mathfrak Z_\partial(R_A,R_B)
+$$
+are diagonal on the same block decomposition, so item 1 is immediate.
+
+Fix a joint admissible boundary-label block. Under the iterated gluing decomposition of Corollary&nbsp;1, the $R_A$ generators act only on the $R_A$ factor and the $R_B$ generators act only on the $R_B$ factor. Therefore every generator from the first family commutes with every generator from the second family. By closure under products and linear combinations, the generated algebras commute on that block. This proves item 2.
+
+Item 3 is exactly the interpretation of item 2: the benchmark net is not naively unfibered, but once resolved over the finite classical boundary-flux center it satisfies Einstein causality exactly. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 2</span> <span class="env-name">(Blockwise ordinary Einstein-causal benchmark net).</span>
+Let
+$$
+Q_{\boldsymbol\lambda}^{\partial}
+$$
+be a minimal nonzero projector in the joint boundary-flux center corresponding to a fixed admissible joint label
+$$
+\boldsymbol\lambda
+$$
+of the pair
+$$
+R_A,R_B.
+$$
+For each of the two regions under consideration, define the compressed block algebra
+$$
+\mathfrak A_{\boldsymbol\lambda}^{\mathrm{ind}}(R)
+:=
+Q_{\boldsymbol\lambda}^{\partial}\,
+\mathfrak A_\partial^{\mathrm{ind}}(R)\,
+Q_{\boldsymbol\lambda}^{\partial},
+\qquad
+R\in\{R_A,R_B\}.
+$$
+Then the fixed-block assignment
+$$
+R\longmapsto \mathfrak A_{\boldsymbol\lambda}^{\mathrm{ind}}(R)
+$$
+on the two-region benchmark subassignment generated by $R_A$ and $R_B$ is an ordinary finite benchmark local net on that block, and for the preserving subclasses it satisfies Einstein causality exactly on the chosen block.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By Theorem&nbsp;3, the regional algebras are block diagonal over the joint boundary-flux center and commute on every admissible joint block. Compressing by the chosen minimal projector
+$$
+Q_{\boldsymbol\lambda}^{\partial}
+$$
+therefore freezes the central label and removes the need to keep the center explicit inside the local algebra. What remains is precisely the pair of compressed regional algebras acting on a fixed block of the extended configuration-space decomposition, and Theorem&nbsp;3 gives their exact Einstein-causality relation. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 3</span> <span class="env-name">(Structural reinterpretation of the phase-11 restricted bridge).</span>
+The restricted gauge-benchmark induced-net microcausality theorem of the phase-11 bridge paper is precisely the center-resolved Einstein-causality theorem of Theorem&nbsp;3 written in the older fiberwise language. In particular, the phase-11 “fiberwise refinement” is not an auxiliary caveat but the correct local structure of the physical Gauss sector at the presently justified benchmark scope.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The phase-11 theorem already proved exact commuting induced algebras on fixed compatible boundary-flux blocks for the relevant preserving subclasses. Theorem&nbsp;3 repackages the same commuting statement as a theorem about a net resolved over the finite abelian boundary-flux center generated by the exact projectors
+$$
+P_{R,\lambda}^{\partial}.
+$$
+This is a structural strengthening, not a change of benchmark scope. <span class="qed">$ \square $</span>
+</div>
+
+<h2>VIII. Raw-side status and explicit non-claims</h2>
+
+<p>
+The center-resolved locality theorem should not be confused with stronger claims that the current stack does not support. The point of this section is to say that plainly.
+</p>
+
+<div class="env remark">
+<span class="env-title">Raw-side status.</span>
+The present paper does not prove that the primitive raw comparison maps
+$$
+J_R=\Gamma_R\Gamma_0^{-1}
+$$
+or the raw exchange defects
+$$
+E_{R,S}
+$$
+are themselves local observables in the Haag-Kastler sense. Nor does it produce a nontrivial exact raw commuting class for the active free, static-$U(1)$, or dynamical-gauge raw families. The phase-11 bridge paper already records explicit nonzero disjoint-support raw exchange in those benchmark families. The present paper therefore sharpens the operational and induced local structure without erasing the raw-side obstruction by vocabulary.
+</div>
+
+<div class="env remark">
+<span class="env-title">Scope boundary.</span>
+Theorem&nbsp;3 applies only to the preserving detector and setting subclasses already isolated at benchmark level. It does not yet give arbitrary-coupling universality, a full boundary-flux-resolved theorem for all gauge-compatible couplings, a compact-rotor extension, a continuum quasilocal completion, a time-slice theorem, a non-Abelian extension, or an interacting gauge-matter closure theorem.
+</div>
+
+<h2>IX. Exact closure at the presently justified scope</h2>
+
+<p>
+With the structural issue now isolated correctly, the theorem-level deliverable of the paper can be stated cleanly.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 4</span> <span class="env-name">(Exact closure of the boundary-flux-resolved bridge refinement at the presently justified scope).</span>
+At the presently justified benchmark scope, the following are established exactly:
+<ol>
+  <li><em>Exact no-go for naive unfibered physical-sector factorization.</em> The physical Gauss sector is fibered over cut-boundary flux labels and is not canonically an unconstrained regional product space.</li>
+  <li><em>Exact extended regional spaces.</em> The correct regional objects are finite configuration spaces carrying local matter data, interior link data, and boundary flux labels.</li>
+  <li><em>Exact physical-sector gluing.</em> The global physical-sector configuration space is canonically the fiber product of the corresponding extended regional spaces over matching boundary labels.</li>
+  <li><em>Exact boundary-flux center.</em> The boundary-flux projectors generate a finite abelian center organizing the benchmark locality structure.</li>
+  <li><em>Exact regional action of preserving benchmark maps.</em> Boundary-flux-preserving detector and setting benchmark maps descend to exact regional stochastic maps on the extended spaces.</li>
+  <li><em>Exact center-resolved Einstein causality.</em> The induced benchmark local algebras commute on each admissible joint boundary-flux block, hence define an Einstein-causal benchmark net relative to the boundary-flux center.</li>
+  <li><em>Exact blockwise local-net reduction.</em> After compression to a fixed admissible joint boundary-flux block, one recovers an ordinary finite benchmark local net satisfying Einstein causality outright on that block.</li>
+  <li><em>Exact reinterpretation of the phase-11 fiberwise bridge.</em> The older fiberwise gauge-benchmark refinement is now identified as the correct center-resolved local structure rather than as a secondary qualification.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 is Proposition&nbsp;1. Items 2 and 3 are Definitions&nbsp;1–3 together with Theorem&nbsp;1 and Corollary&nbsp;1. Item 4 is Definition&nbsp;4. Item 5 is Definition&nbsp;5 together with Theorem&nbsp;2. Item 6 is Definition&nbsp;6 together with Theorem&nbsp;3. Item 7 is Corollary&nbsp;2. Item 8 is Corollary&nbsp;3. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+What remains outside the present claim is equally important:
+</p>
+
+<ol>
+  <li><em>No raw observable-identification theorem yet.</em> The paper does not prove that raw comparison maps or raw exchange defects are themselves local observables.</li>
+  <li><em>No nontrivial exact raw commuting theorem yet.</em> The active free and gauge raw benchmarks still exhibit explicit disjoint-support raw exchange.</li>
+  <li><em>No arbitrary-coupling boundary-flux-resolved locality theorem yet.</em> The present theorem applies to the preserving detector and setting subclasses already isolated in the operational paper.</li>
+  <li><em>No compact-rotor, continuum, or quasilocal completion yet.</em> The finite cutoff benchmark remains the exact scope of the present theorem package.</li>
+  <li><em>No interacting, non-Abelian, or full Haag-Kastler reconstruction yet.</em> Those remain later burdens.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+The gain of the present paper is conceptual and exact. It does not broaden the benchmark. It repairs the benchmark locality statement by putting the correct regional variables in place.
+</div>
+<h2>X. Discussion: center, edge data, and the next exact burdens</h2>
+
+<p>
+The central conceptual gain of the paper is easy to misstate if one speaks too quickly in algebraic-QFT language. Nothing here changes the Barandes ontology. The primary objects remain ordinary finite configuration spaces and stochastic maps on those spaces. The boundary-flux center is not imported as an additional quantum structure in order to save locality after the fact. It is the finite classical interface datum that the exact Gauss recursion already forces on the physical sector. In that sense the paper is conservative about ontology while being revisionary about local bookkeeping.
+</p>
+
+<p>
+That point is also why the present paper should not be read as a merely verbal “edge-mode” gloss. The benchmark obstruction is exact and finite. If one suppresses the cut-boundary electric-flux data, the physical sector appears not to factor regionally and localized benchmark maps appear to have a residual nonlocal dependence. Once the boundary data are restored explicitly, the same benchmark dynamics reorganizes into exact regional actions on extended configuration spaces and into commuting induced local algebras on each admissible joint block. The gain is therefore not a change of interpretation attached to the old theorem package; it is a sharper theorem package stated on the correct regional objects.
+</p>
+
+<p>
+This also clarifies the status of the phase-11 bridge. Paper&nbsp;13 already had the right local content at restricted benchmark scope, but it expressed that content as a fiberwise refinement clause attached to a broader bridge theorem. The present paper reverses the emphasis. On the physical Gauss sector, the center-resolved statement is not a secondary caveat; it is the benchmark locality theorem itself. Put differently: the phase-11 bridge did not overreach on the preserved subclasses, but it did not yet isolate the correct local variables as the main object of study.
+</p>
+
+<p>
+The new phase ordering follows directly from this diagnosis. A genuinely interacting benchmark is scientifically more useful once the exact noninteracting local structure has been put in its correct form. Otherwise one risks mixing two different burdens: the pre-existing failure of naive physical-sector factorization and the genuinely new burden of interaction-induced exchange structure. By inserting the present paper before the interacting benchmark, the roadmap cleanly separates those issues. The later interacting paper can then ask a sharper question: does the center-resolved locality structure survive, widen, or break when genuine physical-sector interactions are turned on?
+</p>
+
+<p>
+The next exact burdens are therefore more focused than they were before. First, one would like to enlarge the preserving subclasses toward broader gauge-compatible detector and setting couplings, ideally identifying the precise maximal class on which the extended-space regional-action theorem still holds. Second, one would like to compare the operational induced net and any raw-induced net on the overlap of their justified benchmark domains, rather than continuing to treat them as merely parallel constructions. Third, one would like to understand whether the boundary-flux center survives in a compact-rotor or larger-cutoff setting without losing exact control of the physical-sector gluing map. Only after those structural questions are settled does the interacting benchmark become maximally diagnostic rather than merely exploratory.
+</p>
+
+<div class="env remark">
+<span class="env-title">Discussion remark.</span>
+At this phase of the program, the right slogan is not “locality fails until interaction is added” and not “locality was already obvious on the physical sector.” The exact statement earned by the current stack is narrower: naive factorization fails, center-resolved locality survives, and the finite benchmark already knows the difference.
+</div>
+
+<h2>XI. Conclusion</h2>
+
+<p>
+The correct moral of the present benchmark is now simple. The physical Gauss sector does not generically factor into independent regional tensor factors, and the program should stop speaking as if it did. But that failure is not a failure of locality. It is a failure to include the exact cut-boundary data that the Gauss recursion already shows are necessary.
+</p>
+
+<p>
+Once the regional spaces are enlarged by those boundary-flux labels, the benchmark preserving subclasses become exact regional stochastic maps, and the corresponding induced local net becomes Einstein-causal in the right finite sense: not as an unfibered tensor-factor net, but as a net resolved over a finite abelian boundary-flux center. This is the strongest honest refinement of the phase-11 bridge that the present stack can support, and it clarifies the next true burdens rather than obscuring them.
+</p>
+
+<p>
+The immediate consequence for the roadmap is also sharp. If the roadmap is updated to reflect the exact structural burden now visible, this paper sits naturally before the first genuinely interacting gauge-matter benchmark. Only after the exact boundary-data organization of locality is closed does it become maximally informative to ask which interacting benchmark best tests whether the center-resolved locality structure survives beyond the present preserving subclasses and fixed finite cutoff. In that sense, the present paper is best understood as the last exact bridge-refinement paper before the interacting benchmark, not as an optional side note.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Toward Lorentz-Covariant Indivisible Stochastic Processes,” architecture draft (2026).</span></li>
+
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Dynamical Abelian Gauge Field and Gauss-Law Sectors in Relativistic ISP,” preprint (2026).</span></li>
+
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Localized Controls, Detectors, and Operational Relativity in Relativistic ISP,” preprint (2026).</span></li>
+
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>Anonymous, “Einstein Causality from Exchange Defects: a Haag-Kastler Bridge for Relativistic ISP,” preprint (2026).</span></li>
+
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>R. Haag and D. Kastler, “An Algebraic Approach to Quantum Field Theory,” <em>Journal of Mathematical Physics</em> <strong>5</strong>, 848–861 (1964).</span></li>
+
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> (accepted version, 2025).</span></li>
+
+  <li id="r7"><span class="ref-num">[7]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” preprint (2025).</span></li>
+
+  <li id="r8"><span class="ref-num">[8]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Theorem,” preprint (2026).</span></li>
+  </ol>
+</div>
+
+</article>
+</body>
+</html>

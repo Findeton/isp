@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einstein Causality from Exchange Defects: a Haag-Kastler Bridge for Relativistic ISP</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  background: #f8fafc;
+  color: #111827;
+}
+.paper {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 14px;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Einstein Causality from Exchange Defects: a Haag-Kastler Bridge for Relativistic ISP</div>
+<div class="subtitle">Induced local operational nets, spacelike exchange triviality, and restricted gauge-benchmark microcausality</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 13 in the relativistic ISP sequence; phase-11 bridge after detector/control dynamics</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+After the exact free-model exchange-defect papers, the dynamical Abelian gauge benchmark, and the operational detector/control paper, the next honest question in the relativistic ISP program is algebraic rather than merely kinematic or operational. The existing stack already proves exact foliation-compatible composition for spacelike-separated operational layers, exact no-signaling for localized control/readout families, and a restricted microscopic benchmark in which localized setting-plus-detector maps reproduce the same operational algebraic structure on the fixed matter-link system. What is still missing is the precise theorem that connects those results to Einstein causality in the Haag-Kastler sense.</p>
+<p>
+This paper develops that bridge at the strongest scope currently justified. It introduces an induced local operational/algebraic net on the dual effect space of the finite-hypersurface state space and proves an abstract bridge theorem: whenever spacelike-supported localized deformations have trivial exchange defect—or, equivalently at the operational layer, the corresponding localized maps commute—the induced local dynamics is foliation-order independent and the induced local algebras commute. The paper then realizes that theorem exactly in the factorized finite-hypersurface control/readout calculus of Paper&nbsp;12 and, at restricted benchmark level, on the fixed matter-link Gauss-sector family of Papers&nbsp;11 and 12 using benchmark-commuting setting/detector maps together with commuting-projector local observable families. On the physical Gauss sector it also records the refinement forced by Gauss law: for boundary-flux-preserving subclasses, locality is fiberwise over shared boundary-flux data rather than naive unfibered tensor-factor locality. Under the explicit sufficient-condition package of the Paper&nbsp;12 Lorentz theorem, the induced benchmark net is also Lorentz-frame independent. The paper also proves the strongest raw-side structural theorem presently supported by the stack: in every benchmark class where raw comparison maps already satisfy exact quasilocal filtration and inverse control, they generate inverse-closed localized relative-dynamics groups on the state side, and their dual image generates a corresponding induced raw net on the effect side. What is not claimed is an automatic identification of raw comparison maps with Haag-Kastler local observables, an equality between this raw-induced net and the operational benchmark net, or an exact spacelike-commutation theorem for the nontrivial free and gauge raw families themselves. A full Haag-Kastler reconstruction, a quasilocal $C^\ast$-completion, additivity or time-slice theorems, a full arbitrary-coupling microscopic bridge, and the interacting compact-rotor / continuum net all remain outside the present claim. The result is therefore exactly what the present stack can honestly support: a theorem-level bridge from ISP exchange-defect commutativity to Einstein causality for an induced local net, together with a strong raw-side regional group theorem and a clean ledger of the algebraic-QFT burden still remaining beyond that bridge.
+</p>
+</div>
+
+
+<p class="small-note">
+Scope note. The exact theorem-level content of this paper is an induced-net construction on the dual effect space of the finite-hypersurface formalism, a strong raw-side regional group theorem for benchmark classes with exact raw filtration and inverse control, an abstract exchange-defect-to-Einstein-causality bridge theorem for spacelike-commuting localized generators, an exact factorized finite-hypersurface realization using the Paper&nbsp;12 operational calculus, a restricted gauge-benchmark induced net on fixed Gauss sectors built from benchmark-commuting setting/detector maps and commuting-projector local observable families, a fiberwise boundary-flux refinement for preserving subclasses on the physical sector, and a conditional Lorentz-covariant induced-net theorem at that benchmark scope. The induced net is a finite Haag-Kastler-type benchmark object, not a continuum AQFT net. The paper does not claim a direct identification of raw $J_R$ or $E_{R,S}$ with local observable algebras, an equality between the raw-induced net and the operational benchmark net, a full arbitrary-coupling gauge benchmark theorem, a quasilocal or continuum completion of the induced net, isotony/additivity or time-slice axioms, spectrum/energy conditions, compact-rotor or interacting-net reconstruction, or a full Haag-Kastler field theory outside the proved benchmark hypotheses.
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+The operational phase of the relativistic ISP program changed the question in the right way. Once settings and detectors are treated as localized physical operations supported in bounded spacetime regions, the minimal relativistic demand is no longer a slogan about “covariance somehow.” It is a concrete structural statement: exchanging the order in which a foliation crosses spacelike-separated localized layers should not change the induced predictions. Paper&nbsp;12 proved that statement exactly in the factorized finite-hypersurface setting and then again, at restricted benchmark level, on the fixed matter-plus-link system.
+</p>
+
+<p>
+But that success immediately raises the next question. In algebraic quantum field theory, Einstein causality is not stated directly in terms of transition kernels or operational tables. It is stated as commutativity of local algebras attached to spacelike-separated regions. So if the relativistic ISP stack is to make contact with Haag-Kastler language at all, it must explain how one passes from exchange defects and localized stochastic maps to an induced local net, and exactly what theorem that induced net actually satisfies.
+</p>
+
+<p>
+That is the purpose of the present paper. The key point is a separation of levels. The raw localized comparison maps
+</p>
+
+<div class="eq">
+$$
+J_R=\Gamma_R\Gamma_0^{-1}
+$$
+</div>
+
+<p>
+and their exchange defects
+</p>
+
+<div class="eq">
+$$
+E_{R,S}
+=
+J_{S|R}J_R\bigl(J_{R|S}J_S\bigr)^{-1}
+$$
+</div>
+
+<p>
+are algebraic comparison objects, not yet local observable algebras. So the bridge to Einstein causality cannot honestly be the claim that the raw comparison-map commutator is already a Haag-Kastler commutator. The honest statement is weaker and sharper: if spacelike-separated localized deformations exchange trivially, then the <em>induced</em> local operational/algebraic net built from the corresponding dual effect-space actions is Einstein-causal. That is the bridge theorem proved here.
+</p>
+
+<p>
+That distinction also identifies the strongest raw-side theorem one can honestly try to prove now. It is not a raw observable-identification theorem. The natural raw-side object is the inverse-closed family generated by the localized comparison maps and their inverses, all relative to a common reference slab. Because all such maps act on one fixed finite state space, the right raw-side structure is actually stronger than a merely suggestive pseudogroup slogan: it is a regional subgroup of the invertible linear maps, equipped with the same benchmark quasilocal filtration already proved for the primitive generators. The dual image of that regional group then generates a corresponding induced raw net on the effect space. This formulation is much closer to the actual state of the stack, because inverse control and quasilocal support-growth statements are already proved for the raw maps in the free and fixed-sector gauge benchmarks, whereas Haag-Kastler observable reconstruction is not.
+</p>
+
+<p>
+This is exactly the point at which the gauge benchmark matters. In the factorized operational setting, locality is a literal tensor-factor statement. On the physical Gauss sector of the matter-link benchmark, it is not. Paper&nbsp;12 already proved that the exact physical-sector organization is fiberwise over shared boundary flux. So the correct Paper&nbsp;13 theorem must recover ordinary induced-net microcausality on the factorized operational hypersurface, but only a boundary-flux-refined version on the gauge benchmark. Anything stronger would ignore the exact obstruction that the previous phase has already isolated.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main results (informal).</span>
+<ol>
+  <li><em>Induced-net formulation.</em> Localized ISP operations admit a natural dual effect-space representation, and support-respecting families of such dual maps generate finite-dimensional local operational/algebraic nets.</li>
+  <li><em>Abstract exchange-defect bridge theorem.</em> If spacelike-supported localized deformations are exchange-trivial—or equivalently the relevant localized maps commute—then induced local dynamics is foliation-order independent and the induced local algebras commute.</li>
+  <li><em>Exact factorized realization.</em> The Paper&nbsp;12 factorized finite-hypersurface calculus already realizes this bridge exactly: disjoint localized controls/instruments induce commuting local algebras and foliation-independent local dynamics.</li>
+  <li><em>Restricted gauge-benchmark realization.</em> On the fixed matter-link benchmark, a restricted induced net can already be built from benchmark-commuting setting/detector maps and commuting-projector local observable families on each fixed Gauss sector.</li>
+  <li><em>Boundary-flux refinement on the physical sector.</em> For preserving subclasses, the induced gauge-benchmark net is not naively factorwise local but fiberwise Einstein-causal over the admissible shared boundary-flux labels.</li>
+  <li><em>Conditional covariance at induced-net level.</em> Under the explicit sufficient-condition package of the Paper&nbsp;12 Lorentz theorem, the induced benchmark net transforms covariantly and its Einstein-causality statement is frame independent.</li>
+  <li><em>Strong raw-side structural theorem.</em> At every benchmark scope where raw comparison maps already satisfy exact quasilocal filtration and inverse control, they generate inverse-closed localized relative-dynamics groups, and the dual-generated algebras define a corresponding induced raw net.</li>
+  <li><em>Explicit raw-side bridge interpretation.</em> The bridge to Haag-Kastler Einstein causality applies to that raw-induced net only after dualization and only under a spacelike-commutation hypothesis; it is not an identification of raw comparison maps with local observables, nor a theorem that the nontrivial free/gauge raw families already commute exactly.</li>
+  <li><em>Explicit non-claims.</em> No full quasilocal completion, no time-slice theorem, no arbitrary-coupling gauge bridge, no compact-rotor or interacting continuum net, and no full Haag-Kastler reconstruction are claimed here.</li>
+</ol>
+</div>
+
+<p class="small-note">
+Strategic note. Paper&nbsp;13 is strongest precisely where the current stack is already strongest: exact finite-hypersurface local commutation, exact foliation compatibility, restricted gauge-benchmark local observable families, conditional Lorentz covariance at benchmark scope, and exact quasilocal/inverse-control structure for raw comparison maps on the benchmarks where those theorems already exist. It is deliberately modest where the stack is still conditional or restricted: raw comparison maps are not yet observables, the raw-induced net is not yet identified with the operational benchmark net, Gauss-law locality is fiberwise rather than naive tensor-factor locality, and full algebraic-QFT reconstruction remains later work.
+</p>
+
+<h2>II. Induced local nets on the dual effect space</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Finite-hypersurface state space, effect space, and dual localized maps).</span>
+For a finite hypersurface configuration space $ \mathcal C_\Sigma $, let
+$$
+\mathscr S_\Sigma:=\mathbb R^{\mathcal C_\Sigma}
+$$
+denote the real state space of column vectors, with probability laws as the nonnegative normalized cone inside $ \mathscr S_\Sigma $. Let
+$$
+\mathscr E_\Sigma:=\operatorname{Hom}(\mathscr S_\Sigma,\mathbb R)\cong\mathbb R^{\mathcal C_\Sigma}
+$$
+denote the dual effect space of row vectors. For any linear map
+$$
+T:\mathscr S_{\Sigma_-}\to\mathscr S_{\Sigma_+},
+$$
+define the dual effect transport
+$$
+T^\dagger:\mathscr E_{\Sigma_+}\to\mathscr E_{\Sigma_-},
+\qquad
+T^\dagger e:=e\circ T.
+$$
+In matrix form relative to the canonical configuration bases,
+$$
+T^\dagger=T^\top.
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+If $e\in\mathscr E_{\Sigma_+}$ is an outcome effect and $p\in\mathscr S_{\Sigma_-}$ an incoming state, then
+$$
+e^\top(Tp)=\bigl((T^\dagger e)^\top p\bigr).
+$$
+So the dual picture is the natural finite-hypersurface Heisenberg picture for the present stochastic setting.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Support-respecting generator assignment and induced Haag-Kastler-type net).</span>
+Fix a class of bounded spacetime regions $O$ between chosen hypersurfaces. A <em>support-respecting generator assignment</em>
+$$
+O\longmapsto \mathcal G(O)\subset \operatorname{End}(\mathscr E_\Sigma)
+$$
+is a family of effect-space endomorphisms such that:
+<ol>
+  <li>every element of $ \mathcal G(O) $ is induced by a localized map or local effect operator supported in $O$;</li>
+  <li>if $O_1\subset O_2$, then $ \mathcal G(O_1)\subset \mathcal G(O_2) $.</li>
+</ol>
+The <em>induced local operational/algebraic net</em> is the assignment
+$$
+\mathfrak A^{\mathrm{ind}}(O)
+:=
+\operatorname{Alg}_1\bigl(\mathcal G(O)\bigr)
+\subset
+\operatorname{End}(\mathscr E_\Sigma),
+$$
+the unital real matrix algebra generated by $ \mathcal G(O) $. We say that this induced net satisfies <em>Einstein causality</em> if for every spacelike-separated pair $O\perp O'$,
+$$
+[A,B]=0
+\qquad
+\forall A\in \mathfrak A^{\mathrm{ind}}(O),\;
+\forall B\in \mathfrak A^{\mathrm{ind}}(O').
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is deliberately a <em>Haag-Kastler-type</em> finite-scope net, not yet a full quasilocal $C^\ast$-net. At fixed finite benchmark, the natural objects are ordinary finite-dimensional matrix algebras. If one wants a $^\ast$-structure, transpose already supplies the finite-dimensional involution, and one may complexify later. None of the bridge theorems below depend on that later completion.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Spacelike exchange triviality and spacelike commutation).</span>
+Let $O\perp O'$ be spacelike-separated localized regions. If the localized family is represented at finite-slab level by comparison maps
+$$
+J_O,\qquad J_{O'},
+$$
+relative to a common reference slab, we call the pair <em>spacelike exchange trivial</em> if the corresponding exchange defect satisfies
+$$
+E_{O,O'}=I,
+$$
+equivalently if the two ordered localized deformations induce the same global map. At the operational layer, where one is given localized stochastic maps directly rather than comparison maps, the corresponding condition is exact commutativity of the localized maps. In either language, a support-respecting generator assignment is called <em>spacelike commuting</em> if for every spacelike-separated pair $O\perp O'$ and every generators
+$$
+X\in\mathcal G(O),\qquad Y\in\mathcal G(O'),
+$$
+one has
+$$
+XY=YX.
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Definition&nbsp;3 is the formal point at which the paper separates raw comparison objects from induced local algebras. Exchange-triviality is checked on the deformation side; Einstein causality is concluded only on the induced-net side. The bridge theorem is precisely the implication from the first statement to the second.
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 3A</span> <span class="env-name">(Localized relative-dynamics family generated by raw comparison maps).</span>
+Suppose a chosen benchmark or model provides, relative to a common reference slab and in a regime where all relevant inverses exist, a family of invertible localized comparison maps
+$$
+J_R
+$$
+on the state side for bounded support regions $R$. For a bounded region $O$, define the <em>raw localized relative-dynamics family</em>
+$$
+\mathcal P_{\mathrm{rel}}(O)
+:=
+\{I\}\cup
+\Bigl\{
+J_{R_1}^{\varepsilon_1}\cdots J_{R_n}^{\varepsilon_n}:
+n\ge 1,\;
+R_k\subset O,\;
+\varepsilon_k\in\{+1,-1\}
+\Bigr\}
+\subset
+\operatorname{GL}(\mathscr S_\Sigma).
+$$
+Its dual image is
+$$
+\mathcal G_{\mathrm{rel}}^\dagger(O)
+:=
+\{W^\dagger: W\in\mathcal P_{\mathrm{rel}}(O)\}
+\subset
+\operatorname{End}(\mathscr E_\Sigma),
+$$
+and the corresponding dual-generated induced algebra is
+$$
+\mathfrak A_{\mathrm{rel}}^{\mathrm{ind}}(O)
+:=
+\operatorname{Alg}_1\bigl(\mathcal G_{\mathrm{rel}}^\dagger(O)\bigr).
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Definition&nbsp;3A states the raw-side structure that can now be turned into a theorem. The raw comparison maps are not themselves local observables; the natural raw-side object is the inverse-closed family they generate under composition. Since all those maps act on one fixed state space, each regional family is in fact a subgroup of the corresponding general linear group. One may still use the looser phrase localized relative-dynamics algebra or pseudogroup for intuition, but the exact finite-scope structure is stronger. The exchange defect measures the failure of a naive commutative regional closure law, while the dual family
+$$
+\mathcal G_{\mathrm{rel}}^\dagger(O)
+$$
+lands directly in the induced-net framework of Definition&nbsp;2. The next theorem isolates exactly how much of that raw-side structure the current stack already proves.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem A</span> <span class="env-name">(Strong raw relative-dynamics regional group theorem at fixed benchmark scope).</span>
+Assume a benchmark class of raw comparison maps on a fixed finite state space $ \mathscr S_\Sigma $ with the following exact properties:
+<ol>
+  <li>for every allowed bounded support region $R$, the comparison map
+  $$
+  J_R(\Delta)
+  $$
+  is invertible in a common small-$\Delta$ regime;</li>
+  <li>both
+  $$
+  J_R(\Delta)=I+\sum_{m\ge 2}\Delta^mA_R^{[m]},
+  \qquad
+  J_R(\Delta)^{-1}=I+\sum_{m\ge 2}\Delta^m\widetilde A_R^{[m]}
+  $$
+  admit benchmark-local coefficient filtrations
+  $$
+  \supp A_R^{[m]}\subset N_m(R),
+  \qquad
+  \supp \widetilde A_R^{[m]}\subset N_m(R).
+  $$
+  Here
+  $$
+  N_m(R)
+  $$
+  denotes the appropriate $m$-step neighborhood in the chosen benchmark class.</li>
+</ol>
+These hypotheses are exactly the free one-particle raw benchmark of Paper&nbsp;2 and the fixed-sector dynamical Abelian raw benchmark of Paper&nbsp;11.
+
+Then for every allowed bounded region $O$:
+<ol>
+  <li><em>Regional group structure.</em> The set
+  $$
+  \mathcal P_{\mathrm{rel}}(O)
+  $$
+  is an inverse-closed subgroup of
+  $$
+  \operatorname{GL}(\mathscr S_\Sigma),
+  $$
+  and the assignment is isotonic:
+  $$
+  O_1\subset O_2
+  \quad\Longrightarrow\quad
+  \mathcal P_{\mathrm{rel}}(O_1)\subset\mathcal P_{\mathrm{rel}}(O_2).
+  $$</li>
+  <li><em>Inherited quasilocal filtration.</em> Every element
+  $$
+  W\in\mathcal P_{\mathrm{rel}}(O)
+  $$
+  admits an expansion
+  $$
+  W(\Delta)=I+\sum_{m\ge 2}\Delta^mW_O^{[m]}
+  $$
+  with
+  $$
+  \supp W_O^{[m]}\subset N_m(O).
+  $$</li>
+  <li><em>Exact dual-generation of the raw-induced algebra.</em> The dual family
+  $$
+  \mathcal G_{\mathrm{rel}}^\dagger(O)
+  $$
+  is inverse closed, and
+  $$
+  \mathfrak A_{\mathrm{rel}}^{\mathrm{ind}}(O)
+  =
+  \operatorname{Alg}_1\bigl(\mathcal G_{\mathrm{rel}}^\dagger(O)\bigr)
+  =
+  \operatorname{Alg}_1\Bigl(\{J_R^\dagger:\ R\subset O\}\Bigr).
+  $$</li>
+  <li><em>Conditional Einstein-causal raw-induced net.</em> If for every spacelike-separated pair
+  $$
+  O\perp O'
+  $$
+  the two regional raw families commute pairwise on the state side, then
+  $$
+  O\longmapsto\mathfrak A_{\mathrm{rel}}^{\mathrm{ind}}(O)
+  $$
+  is a Haag-Kastler-type induced net satisfying Einstein causality.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 is immediate from Definition&nbsp;3A: the family is built from finite words in invertible generators and their inverses, so it is a subgroup, and isotony follows from inclusion of allowed regional generators.
+
+For item 2, let
+$$
+W=K_1\cdots K_n,
+$$
+where each factor is one of the generators
+$$
+J_{R_j}^{\pm1}
+$$
+with
+$$
+R_j\subset O.
+$$
+By hypothesis each factor has an expansion with coefficients supported in
+$$
+N_m(R_j)\subset N_m(O).
+$$
+The order-$\Delta^m$ coefficient of the product is a finite sum of products of coefficient matrices whose orders add to $m$. The same support-growth argument used in the inverse-stability proofs of Papers&nbsp;2 and 11 shows that support radii add under matrix composition, so every such product is supported in
+$$
+N_m(O).
+$$
+Summing those products gives the claimed filtration for
+$$
+W.
+$$
+
+For item 3, dualization reverses order:
+$$
+(K_1\cdots K_n)^\dagger=K_n^\dagger\cdots K_1^\dagger,
+$$
+and takes inverses to inverses. Hence the dual image of the regional group is again inverse closed. Because every dual of a word already lies in the unital algebra generated by the primitive duals
+$$
+\{J_R^\dagger:\ R\subset O\},
+$$
+one inclusion is immediate; the reverse inclusion holds because those primitive duals themselves belong to
+$$
+\mathcal G_{\mathrm{rel}}^\dagger(O).
+$$
+
+For item 4, the generator assignment
+$$
+O\mapsto\mathcal G_{\mathrm{rel}}^\dagger(O)
+$$
+is isotonic by item 1 and support-respecting in the same benchmark-local sense as item 2. If the regional raw families commute pairwise for spacelike-separated regions, then so do their duals. Theorem&nbsp;1 below therefore applies to the dualized raw family and yields Einstein causality for the raw-induced net. <span class="qed">$ \square $</span>
+</div>
+
+<h2>III. Abstract bridge theorem: from exchange defects to Einstein causality</h2>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Abstract exchange-defect-to-Einstein-causality bridge theorem).</span>
+Let
+$$
+O\longmapsto \mathcal G(O)
+$$
+be a support-respecting generator assignment on a fixed effect space $ \mathscr E_\Sigma $, and let
+$$
+O\longmapsto \mathfrak A^{\mathrm{ind}}(O)
+$$
+be the induced local net of Definition&nbsp;2. Assume the assignment is spacelike commuting in the sense of Definition&nbsp;3. Then:
+<ol>
+  <li><em>Foliation-order independence for localized dynamics.</em> For every finite family of pairwise spacelike-separated regions
+  $$
+  O_1,\dots,O_m
+  $$
+  and every choice of generators
+  $$
+  X_k\in\mathcal G(O_k),
+  $$
+  the ordered product
+  $$
+  X_{\pi(1)}\cdots X_{\pi(m)}
+  $$
+  is independent of the permutation $ \pi $. Hence any two foliations related by finitely many adjacent exchanges of such spacelike-separated layers induce the same local dynamics on the effect space.</li>
+  <li><em>Isotony.</em> The induced net is isotonic:
+  $$
+  O_1\subset O_2
+  \quad\Longrightarrow\quad
+  \mathfrak A^{\mathrm{ind}}(O_1)\subset \mathfrak A^{\mathrm{ind}}(O_2).
+  $$</li>
+  <li><em>Einstein causality / induced-net microcausality.</em> For every spacelike-separated pair $O\perp O'$,
+  $$
+  [A,B]=0
+  \qquad
+  \forall A\in\mathfrak A^{\mathrm{ind}}(O),\;
+  \forall B\in\mathfrak A^{\mathrm{ind}}(O').
+  $$</li>
+  <li><em>Bridge interpretation.</em> If the spacelike commutation hypothesis is verified through exact exchange triviality
+  $$
+  E_{O,O'}=I
+  $$
+  of localized comparison maps, then the theorem gives a bridge from ISP exchange-defect commutativity to Einstein causality in the Haag-Kastler sense for the induced local net.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 is immediate from adjacent transpositions. If two neighboring factors in an ordered product come from spacelike-separated regions, they commute by hypothesis. Any permutation is a product of adjacent transpositions, so the ordered product is permutation independent. This is exactly the finite-hypersurface foliation-order statement.
+
+Item 2 follows from the support-respecting hypothesis: if $O_1\subset O_2$, then every generator of $ \mathfrak A^{\mathrm{ind}}(O_1) $ already belongs to $ \mathcal G(O_2) $, hence the algebra it generates is a subalgebra of $ \mathfrak A^{\mathrm{ind}}(O_2) $.
+
+For item 3, choose
+$$
+A\in\mathfrak A^{\mathrm{ind}}(O),\qquad
+B\in\mathfrak A^{\mathrm{ind}}(O').
+$$
+Each is a finite linear combination of finite words in generators from $ \mathcal G(O) $ and $ \mathcal G(O') $, respectively. Every generator from $ \mathcal G(O) $ commutes with every generator from $ \mathcal G(O') $, so by repeated reordering every such word in $A$ commutes with every such word in $B$. Bilinearity then gives $[A,B]=0$.
+
+Item 4 is just the interpretation of item 3: the deformation-side statement is exchange triviality, while the algebra-side statement is Einstein causality for the induced net. The bridge is the implication between them, not an identification of the two notions. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Theorem&nbsp;1 is the precise bridge statement that the roadmap needs. Theorem&nbsp;A above is the strongest raw-side structural theorem presently earned, and Theorem&nbsp;1 is what turns that raw-side structure into Einstein causality once a spacelike-commutation hypothesis is available. Neither theorem says that raw comparison maps <em>are</em> Haag-Kastler local observables.
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(Dualization preserves the spacelike commutation hypothesis).</span>
+If a spacelike-separated localized family is given on the state side by commuting maps
+$$
+T_O T_{O'}=T_{O'} T_O,
+$$
+then the corresponding dual generators also commute:
+$$
+T_O^\dagger T_{O'}^\dagger
+=
+T_{O'}^\dagger T_O^\dagger.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Take transposes:
+$$
+T_O^\dagger T_{O'}^\dagger
+=
+(T_O T_{O'})^\top
+=
+(T_{O'} T_O)^\top
+=
+T_{O'}^\dagger T_O^\dagger.
+$$
+So the same spacelike commutation statement holds in the induced Heisenberg picture. <span class="qed">$ \square $</span>
+</div>
+
+<h2>IV. Exact factorized operational realization</h2>
+
+<p>
+The abstract bridge theorem becomes exact immediately on the factorized finite-hypersurface operational calculus of Paper&nbsp;12. There the localized setting and detector maps are literally tensor-factor maps on
+</p>
+
+<div class="eq">
+$$
+\mathbb R^{\mathcal C_A}\otimes
+\mathbb R^{\mathcal C_B}\otimes
+\mathbb R^{\mathcal C_R},
+$$
+</div>
+
+<p>
+so the support-level commutation hypothesis is already a proved theorem rather than a heuristic expectation.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 4</span> <span class="env-name">(Factorized operational generator family).</span>
+In the factorized setting of Paper&nbsp;12, let $O$ be one of the localized operational wings or, more generally, one of the disjoint factors crossed by a localized operational layer. Let
+$$
+\mathcal G_{\mathrm{fac}}(O)
+$$
+be the family of dual endomorphisms generated by the transposes of the localized control maps and localized detector-instrument maps supported in $O$:
+$$
+\widehat\Lambda_O^{x\,\dagger},
+\qquad
+\widehat{\mathcal J}_O^{a|x\,\dagger},
+$$
+optionally enlarged by any local event projectors or local readout multipliers supported in the same factor. Define
+$$
+\mathfrak A_{\mathrm{fac}}^{\mathrm{ind}}(O)
+:=
+\operatorname{Alg}_1\bigl(\mathcal G_{\mathrm{fac}}(O)\bigr).
+$$
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 2</span> <span class="env-name">(Exact factorized finite-hypersurface Einstein-causality bridge).</span>
+In the setting of Definition&nbsp;4:
+<ol>
+  <li>the family
+  $$
+  O\longmapsto \mathfrak A_{\mathrm{fac}}^{\mathrm{ind}}(O)
+  $$
+  is an isotonic induced local net;</li>
+  <li>for spacelike-separated operational factors $O\perp O'$,
+  $$
+  [A,B]=0
+  \qquad
+  \forall A\in\mathfrak A_{\mathrm{fac}}^{\mathrm{ind}}(O),\;
+  \forall B\in\mathfrak A_{\mathrm{fac}}^{\mathrm{ind}}(O');
+  $$</li>
+  <li>any two foliations differing only by the order in which they cross those spacelike-separated localized operational regions induce the same conditioned and unconditioned local dynamics;</li>
+  <li>the induced local marginals obey no-signaling.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Paper&nbsp;12, Proposition&nbsp;1 proves exact commutativity of disjoint localized instruments and controls on distinct factors. By Corollary&nbsp;1 above, the same commutation holds for their dual effect-space actions. Therefore the generator assignment of Definition&nbsp;4 is spacelike commuting. Theorem&nbsp;1 then gives items 1–3.
+
+For item 4, Theorem&nbsp;2 of Paper&nbsp;12 already proves no-signaling for the localized operational joint law. Rewriting that law in the dual picture does not change the scalar probabilities, so the same no-signaling statement holds for the induced local dynamics. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Theorem&nbsp;2 is the cleanest exact realization of the bridge. It is already a finite-scope Haag-Kastler-type result: isotony, Einstein causality, and foliation-order independence all hold exactly. What it is <em>not</em> yet is a field-theoretic reconstruction theorem, because the factorized operational setting was never intended to solve the Gauss-law and continuum burdens by itself.
+</div>
+
+<h2>V. Restricted gauge-benchmark induced net and boundary-flux refinement</h2>
+
+<p>
+The fixed matter-link benchmark is the real test of whether the bridge can survive beyond naive tensor-factor locality. Paper&nbsp;11 and Paper&nbsp;12 together already isolate the correct answer. Exact gauge-compatible localized setting and detector maps exist on each fixed finite Gauss sector, but on the physical sector naive strict factorwise locality is replaced by a fiber decomposition over shared boundary electric flux. So the correct Paper&nbsp;13 bridge theorem on the gauge benchmark must be restricted and fiberwise where necessary.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 5</span> <span class="env-name">(Restricted benchmark local generator family on a fixed Gauss sector).</span>
+Fix $L$, $S$, a compatible Gauss sector $ \mathbf g $, and a gauge-compatible mixed region $R$. Let
+$$
+\mathscr E_{L,S}^{(\mathbf g)}
+:=
+\bigl(\mathbb R^{\Omega_{L,S}^{(\mathbf g)}}\bigr)^\ast
+$$
+be the sector effect space. Define the <em>restricted benchmark generator family</em>
+$$
+\mathcal G_{\mathbf g}^{\mathrm{bench}}(R)
+\subset
+\operatorname{End}\bigl(\mathscr E_{L,S}^{(\mathbf g)}\bigr)
+$$
+to be generated by the following operators whenever they are present in the chosen restricted benchmark class:
+<ol>
+  <li>the dual benchmark setting/detector maps
+  $$
+  \bigl(\mathcal I_{R,\mathbf g}^{a|x,(S)}\bigr)^\dagger
+  =
+  \bigl(\mathcal I_{R,\mathbf g}^{a|x,(S)}\bigr)^\top;
+  $$</li>
+  <li>the spectral projectors
+  $$
+  \Pi_\zeta^{(R,\mathbf g)}
+  $$
+  from a commuting gauge-invariant local observable family of Definition&nbsp;11 in Paper&nbsp;12;</li>
+  <li>on the physical sector and for preserving subclasses, the boundary-flux projectors
+  $$
+  P_{R,\lambda}^{\partial}.
+  $$</li>
+</ol>
+Set
+$$
+\mathfrak A_{\mathbf g}^{\mathrm{bench}}(R)
+:=
+\operatorname{Alg}_1\bigl(\mathcal G_{\mathbf g}^{\mathrm{bench}}(R)\bigr).
+$$
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Definition&nbsp;5 deliberately mirrors the exact restricted theorems of Paper&nbsp;12. The setting/detector maps come from the benchmark Bell family of Definition&nbsp;10, the local projectors come from the commuting-projector subclass of Definition&nbsp;11, and the fiberwise refinement comes from the boundary-flux projectors of Definition&nbsp;8A together with the preserving theorems 4A and 4C there.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 3</span> <span class="env-name">(Restricted gauge-benchmark Einstein-causality bridge theorem).</span>
+Fix two disjoint gauge-compatible mixed regions
+$$
+R_A\perp R_B
+$$
+on a chosen compatible Gauss sector $ \mathbf g $. Assume:
+<ol>
+  <li>the benchmark-commuting hypothesis of Definition&nbsp;10 in Paper&nbsp;12 holds for the included setting/detector maps on $R_A$ and $R_B$;</li>
+  <li>the included local observable families on $R_A$ and $R_B$ belong to the commuting-projector class of Definition&nbsp;11 in Paper&nbsp;12 and are chosen so that the cross-wing projector generators commute;</li>
+  <li>if the physical-sector fiberwise refinement is claimed, then the chosen setting/detector subclass is boundary-flux preserving in the sense of Theorems&nbsp;4A and 4C of Paper&nbsp;12.</li>
+</ol>
+Then:
+<ol>
+  <li>the restricted benchmark induced algebras commute:
+  $$
+  [A,B]=0
+  \qquad
+  \forall A\in\mathfrak A_{\mathbf g}^{\mathrm{bench}}(R_A),\;
+  \forall B\in\mathfrak A_{\mathbf g}^{\mathrm{bench}}(R_B);
+  $$</li>
+  <li>the induced benchmark local dynamics is foliation-order independent under exchanges of the spacelike-separated layer regions $R_A$ and $R_B$;</li>
+  <li>the corresponding joint laws retain the no-signaling property proved in Paper&nbsp;12;</li>
+  <li>if $ \mathbf g=\mathbf g_{\mathrm{phys}} $ and the preserving hypotheses of item 3 hold, then each induced algebra is block diagonal over the admissible boundary-flux fibers and the Einstein-causality statement holds fiberwise on every common boundary-flux block.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Item 1 is a generator-by-generator statement. For the benchmark setting/detector maps, Theorem&nbsp;4D of Paper&nbsp;12 gives exact cross-wing commutation. For the commuting-projector observable families, the cross-wing generators commute by the explicit hypothesis of the present theorem. On the physical sector, the boundary-flux projectors are diagonal projectors on the sector basis and hence commute with one another; by Theorems&nbsp;4A and 4C of Paper&nbsp;12, the preserving subclasses are block diagonal with respect to those projectors. Therefore every generator in
+$$
+\mathcal G_{\mathbf g}^{\mathrm{bench}}(R_A)
+$$
+commutes with every generator in
+$$
+\mathcal G_{\mathbf g}^{\mathrm{bench}}(R_B),
+$$
+and the generated algebras commute.
+
+Item 2 follows exactly as in Theorem&nbsp;1: adjacent exchanges of commuting benchmark layers do not change the ordered product. Item 3 is already part of Theorem&nbsp;4D in Paper&nbsp;12 and is unchanged by passing to the induced effect-space picture.
+
+For item 4, Theorems&nbsp;4A and 4C give fiberwise block diagonality for the relevant detector and setting subclasses on the physical sector, while Definition&nbsp;8A provides the projectors $P_{R,\lambda}^{\partial}$. Therefore the induced algebra decomposes over those admissible blocks, and the same commuting-generator argument applies on each block separately. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Theorem&nbsp;3 is already enough to justify the roadmap language “bridge to Haag-Kastler” at the benchmark level. What it does <em>not</em> justify is a claim that the full physical Gauss sector factorizes into independent regional tensor factors. The benchmark microcausality theorem is fiberwise where Gauss law says it must be fiberwise.
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 2</span> <span class="env-name">(Restricted induced-net microcausality on the commuting-projector benchmark subclass).</span>
+On the restricted benchmark class generated by benchmark-commuting setting/detector maps and commuting-projector local observable families, the fixed-sector assignment
+$$
+R\longmapsto \mathfrak A_{\mathbf g}^{\mathrm{bench}}(R)
+$$
+is an induced Haag-Kastler-type local net satisfying Einstein causality at the exact finite benchmark scope proved here.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Isotony is inherited from the support-respecting choice of local generator families, and Theorem&nbsp;3 supplies Einstein causality. That is exactly the claimed restricted induced-net statement. <span class="qed">$ \square $</span>
+</div>
+
+<h2>VI. Conditional Lorentz covariance at induced-net level</h2>
+
+<p>
+Einstein causality in the Haag-Kastler sense is usually discussed together with covariance. The present stack does not yet have a constructive full covariance theorem for arbitrary couplings, but Paper&nbsp;12 does provide an explicit sufficient-condition package at benchmark scope. The induced-net version is immediate once the generators are transported to the dual side.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 6</span> <span class="env-name">(Dual Lorentz transport and induced-net covariance at benchmark scope).</span>
+Assume the Lorentz-covariant transport maps
+$$
+U_\Lambda^\Sigma
+$$
+of Definition&nbsp;3 in the architecture paper exist on the state side. Define the dual transport on the effect space by
+$$
+U_\Lambda^{\Sigma\,\dagger}
+:=
+\bigl(U_\Lambda^\Sigma\bigr)^\top.
+$$
+An induced benchmark net is called <em>covariant at benchmark scope</em> if for every localized region $O$ in the allowed benchmark class,
+$$
+U_\Lambda^{\Sigma\,\dagger}
+\mathfrak A^{\mathrm{ind}}(O)
+\bigl(U_\Lambda^{\Sigma\,\dagger}\bigr)^{-1}
+=
+\mathfrak A^{\mathrm{ind}}(\Lambda O).
+$$
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 4</span> <span class="env-name">(Conditional Lorentz-covariant induced-net theorem at benchmark scope).</span>
+Assume the four explicit hypotheses of Theorem&nbsp;4G in Paper&nbsp;12:
+<ol>
+  <li>Lorentz-covariant transport on the state side;</li>
+  <li>covariant transformation of the benchmark detector/control generators;</li>
+  <li>spacelike commutation of the benchmark layer maps;</li>
+  <li>foliations related by finitely many adjacent exchanges of spacelike-separated neighboring layers.</li>
+</ol>
+Then for the induced benchmark net generated by those covariantly transforming local generators:
+<ol>
+  <li>the induced benchmark net is covariant in the sense of Definition&nbsp;6;</li>
+  <li>its Einstein-causality statement is Lorentz-frame independent on the benchmark class considered;</li>
+  <li>the corresponding benchmark probabilities are foliation compatible in every frame related by the allowed Lorentz transformations.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof sketch.</span>
+Theorem&nbsp;4G of Paper&nbsp;12 already proves foliation compatibility and Lorentz-frame independence of the benchmark experiment law under the stated explicit sufficient-condition package. Hypothesis (2) there says precisely that the benchmark localized generators transform covariantly. Taking duals preserves those conjugation relations, so the corresponding induced generator families are mapped to one another by
+$$
+U_\Lambda^{\Sigma\,\dagger}(\cdot)\bigl(U_\Lambda^{\Sigma\,\dagger}\bigr)^{-1}.
+$$
+Therefore the generated local algebras transform covariantly as well, giving item 1. Item 2 follows because commuting algebras are carried to commuting algebras under conjugation, and item 3 is just the probability statement of Theorem&nbsp;4G restated in the induced-net picture. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Theorem&nbsp;4 is conditional for exactly the same reason Theorem&nbsp;4G is conditional. It is not a constructive full Lorentz-covariant field-theory theorem, and it certainly does not yet prove the time-slice or primitive-causality package of a fully developed Haag-Kastler net.
+</div>
+
+<h2>VII. Exact phase-11 closure and the remaining Haag-Kastler burden</h2>
+
+<p>
+With the bridge formulated this way, Paper&nbsp;13 can now be stated cleanly at the strongest honest scope presently justified.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Theorem 5</span> <span class="env-name">(Exact phase-11 closure at the presently justified bridge scope).</span>
+At the presently justified bridge scope, phase 11 is closed in the following exact sense.
+<ol>
+  <li><em>Induced-net formulation.</em> Localized ISP maps admit a natural dual effect-space picture and support-respecting families of such generators define induced local operational/algebraic nets.</li>
+  <li><em>Strong raw-side regional group theorem.</em> On every benchmark class where raw comparison maps already satisfy exact quasilocal filtration and inverse control, they generate inverse-closed localized relative-dynamics groups whose dual image defines a raw-induced net.</li>
+  <li><em>Abstract bridge theorem.</em> Spacelike exchange triviality / commuting localized maps imply foliation-order independence of the induced local dynamics and Einstein causality for the induced local net.</li>
+  <li><em>Exact factorized realization.</em> The Paper&nbsp;12 factorized finite-hypersurface control/readout calculus realizes the bridge theorem exactly.</li>
+  <li><em>Restricted fixed-sector gauge realization.</em> On each fixed compatible Gauss sector of the Paper&nbsp;11 benchmark, benchmark-commuting setting/detector maps plus commuting-projector local observable families generate a restricted induced local net satisfying Einstein causality.</li>
+  <li><em>Physical-sector fiberwise refinement.</em> For boundary-flux-preserving subclasses on the physical sector, the induced gauge-benchmark net is Einstein-causal fiberwise over the admissible shared boundary-flux blocks.</li>
+  <li><em>Conditional induced-net covariance.</em> Under the explicit sufficient-condition package of Paper&nbsp;12, the induced benchmark net is Lorentz covariant and its Einstein-causality statement is frame independent.</li>
+</ol>
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Item 1 is Definitions&nbsp;1 and&nbsp;2. Item 2 is Theorem&nbsp;A. Item 3 is Theorem&nbsp;1 together with Corollary&nbsp;1. Item 4 is Theorem&nbsp;2. Item 5 is Theorem&nbsp;3 together with Corollary&nbsp;2. Item 6 is item 4 of Theorem&nbsp;3. Item 7 is Theorem&nbsp;4. <span class="qed">$ \square $</span>
+</div>
+
+<p>
+What remains outside the present claim is equally important.
+</p>
+
+<ol>
+  <li><em>No raw-comparison-map identification theorem yet.</em> The paper does not prove that the primitive comparison maps $J_R$ or exchange defects $E_{R,S}$ are themselves Haag-Kastler local observables.</li>
+  <li><em>No theorem that the raw-induced net equals the operational benchmark net yet.</em> The strong raw-side theorem constructs a corresponding dual-generated raw net. It does not identify that raw net with the operational induced net generated later from localized setting/detector maps and commuting-projector observable families.</li>
+  <li><em>No exact raw spacelike-commutation theorem for the nontrivial free/gauge benchmarks yet, and no genuine nontrivial raw exception class is supported by the present stack.</em> The strong raw-side theorem proves regional group structure and inherited filtration, but the active free, static-$U(1)$, and fixed-sector dynamical-gauge comparison families already contain explicit disjoint-support nonzero raw exchange at benchmark level. So the only exact raw commuting classes presently supported are the ideal factorized/local case and degenerate support-frozen or otherwise trivial cases; the commuting-projector subclasses of Paper&nbsp;12 are operational benchmark families rather than raw comparison-map exceptions.</li>
+  <li><em>No full arbitrary-coupling microscopic bridge yet.</em> The gauge-benchmark theorem still depends on the restricted benchmark-commuting and commuting-projector families of Paper&nbsp;12. Full arbitrary-coupling universality and full microscopic bridge theorems remain open.</li>
+  <li><em>No unfibered physical-sector locality theorem yet.</em> On the physical Gauss sector, the exact locality statement remains boundary-flux refined for the preserving subclasses. The paper does not erase that obstruction by vocabulary.</li>
+  <li><em>No full Haag-Kastler reconstruction yet.</em> The paper does not provide additivity, primitive causality, time-slice, quasilocal completion, or a full interacting local net on the continuum side.</li>
+  <li><em>No compact-rotor or interacting continuum net yet.</em> The compact-rotor tower, larger-benchmark inverse-control burden, and later genuinely interacting gauge-matter benchmark remain future work.</li>
+  <li><em>No non-Abelian extension yet.</em> The bridge is built only at the current Abelian operational/gauge scope already established in Papers&nbsp;11 and 12.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+This is the strongest honest Paper&nbsp;13 that the present stack can support. It upgrades exact spacelike commutation from an operational bookkeeping fact to an induced-net Einstein-causality theorem, but it does so without pretending that the full Haag-Kastler machine has already been reconstructed from the stochastic side.
+</div>
+
+<h2>VIII. Conclusion</h2>
+
+<p>
+The right conceptual gain of Paper&nbsp;13 is narrow but real. The earlier papers already showed that localized ISP dynamics can be organized on finite hypersurfaces, that disjoint operational layers commute, and that the fixed matter-link benchmark admits nontrivial local setting and detector maps with restricted benchmark commutation. What they did not yet say is how those results should be read in algebraic-QFT language. The present paper supplies that reading.
+</p>
+
+<p>
+The bridge is not a slogan and not an identity claim. It is an induced-net theorem. Exchange-defect triviality or, operationally, exact commutation of localized spacelike-separated layers implies that the dual local dynamics is foliation-order independent and that the induced local algebras commute. In the factorized operational calculus this statement is exact outright. On the gauge benchmark it survives in the restricted form already earned by the previous papers: fixed Gauss sectors, benchmark-commuting setting/detector maps, commuting-projector local observable families, and fiberwise boundary-flux refinement where Gauss law requires it.
+</p>
+
+<p>
+That is the right Barandes-style phase-11 outcome. The paper now closes the first Einstein-causality bridge theorem that the stack can honestly support, and it also closes the strongest raw-side structural theorem that the current stack can really earn: at the benchmarks where exact raw filtration and inverse control already exist, the localized comparison maps generate inverse-closed regional relative-dynamics groups, and their dual image generates a corresponding raw-induced net. What remains is now sharper rather than vaguer. The present evidence does not support a hidden nontrivial exact raw commuting subclass: outside the ideal factorized/local case and degenerate support-frozen trivialities, the active free and gauge raw benchmarks already exhibit explicit disjoint-support nonzero raw exchange. So the next burden is not to guess a raw structure or to relabel an operational commuting subclass as a raw exception, but to determine whether a deeper no-go theorem can be proved, whether the raw-induced net coincides with the operational benchmark net on the classes already controlled, and how much of the full time-slice / covariance / quasilocal-completion package the ISP side can actually earn rather than borrow by analogy.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Relativity and Indivisible Stochastic Processes,” architecture draft (2026).</span></li>
+
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem,” preprint (2026).</span></li>
+
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Dynamical Abelian Gauge Field and Gauss-Law Sectors in Relativistic ISP,” preprint (2026).</span></li>
+
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>Anonymous, “Localized Controls, Detectors, and Operational Relativity in Relativistic ISP,” preprint (2026).</span></li>
+
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>R. Haag and D. Kastler, “An Algebraic Approach to Quantum Field Theory,” <em>Journal of Mathematical Physics</em> <strong>5</strong>, 848–861 (1964).</span></li>
+
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>R. Brunetti, K. Fredenhagen, and R. Verch, “The Generally Covariant Locality Principle—A New Paradigm for Local Quantum Physics,” <em>Communications in Mathematical Physics</em> <strong>237</strong>, 31–68 (2003).</span></li>
+
+  <li id="r7"><span class="ref-num">[7]</span>
+  <span>J. Schwinger, “The Theory of Quantized Fields. I,” <em>Physical Review</em> <strong>82</strong>, 914–927 (1951).</span></li>
+
+  <li id="r8"><span class="ref-num">[8]</span>
+  <span>P. A. M. Dirac, “The Hamiltonian Form of Field Dynamics,” <em>Canadian Journal of Mathematics</em> <strong>3</strong>, 1–23 (1951).</span></li>
+
+  <li id="r9"><span class="ref-num">[9]</span>
+  <span>S. G. Brown, “Dirac-Schwinger Covariance Condition in Canonical Theories,” <em>Physical Review</em> <strong>158</strong>, 1608–1626 (1967).</span></li>
+
+  <li id="r10"><span class="ref-num">[10]</span>
+  <span>S. Fedida, “Einstein Causality of Quantum Measurements in the Tomonaga-Schwinger Picture,” <em>Annals of Physics</em> <strong>485</strong>, 170314 (2026).</span></li>
+  </ol>
+</div>
+
+</article>
+</body>
+</html>

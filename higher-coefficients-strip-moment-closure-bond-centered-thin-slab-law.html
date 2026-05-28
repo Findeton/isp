@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higher Coefficients and Strip-Moment Closure in the Bond-Centered Thin-Slab Law</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2937;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+.paper {
+  max-width: 920px;
+  margin: 2.5rem auto;
+  background: #ffffff;
+  padding: 2.7rem 3.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 10px;
+}
+.title {
+  font-size: 2.0rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+.authors, .affil, .date, .arxiv-note {
+  text-align: center;
+  margin: 0.15rem 0;
+  font-size: 0.96rem;
+}
+.abstract {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.abstract-label { font-weight: bold; }
+p { margin-bottom: 0.85em; text-align: justify; }
+p:last-child { margin-bottom: 0; }
+h2 {
+  font-size: 1.05em;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+h3 {
+  font-size: 0.97em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.3em;
+  margin-bottom: 0.35em;
+}
+.env {
+  margin: 1.2em 0;
+  padding: 0.75em 1em 0.75em 1.1em;
+  border-left: 3.5px solid #1a56db;
+  background: #f3f7ff;
+  font-size: 0.95em;
+}
+.env.theorem     { border-color: #0e7a5c; background: #f0faf6; }
+.env.proposition { border-color: #0e7a5c; background: #f0faf6; }
+.env.corollary   { border-color: #6d28d9; background: #f5f3ff; }
+.env.definition  { border-color: #92400e; background: #fffbeb; }
+.env.remark      { border-color: #6b7280; background: #f9fafb; font-style: italic; }
+.env-title { font-weight: bold; font-style: normal; display: inline; }
+.env-name  { font-style: italic; }
+.proof-block {
+  margin: 0.6em 0 0.8em 0;
+  padding-left: 0.5em;
+  border-left: 2px solid #e5e7eb;
+  font-size: 0.94em;
+}
+.proof-head { font-style: italic; }
+.qed { float: right; }
+.eq { overflow-x: auto; margin: 0.9em 0; }
+ol, ul { margin: 0.5em 0 0.8em 1.5em; }
+li { margin-bottom: 0.35em; }
+.small-note { font-size: 0.92em; color: #444; }
+.references { margin-top: 2.5em; }
+.references h2 { margin-bottom: 0.8em; }
+.ref-list { list-style: none; padding: 0; margin-left: 0; }
+.ref-list li {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 0.5em;
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.ref-num { flex-shrink: 0; font-weight: bold; color: #1a56db; }
+</style>
+</head>
+<body>
+<article class="paper">
+
+<div class="title">Higher Coefficients and Strip-Moment Closure in the Bond-Centered Thin-Slab Law</div>
+<div class="subtitle">Exact higher-order overlap structure and the strip-moment criterion in relativistic ISP</div>
+
+<p class="authors">Felix Robles Elvira</p>
+<p class="affil">Draft preprint</p>
+<p class="date">March 2026</p>
+<p class="arxiv-note">Paper 5 in the relativistic ISP sequence; exact higher-order structure plus conditional strip-moment closure</p>
+
+<div class="abstract">
+<p><span class="abstract-label">Abstract.</span>
+The exact free one-particle exchange-defect package already proves more about the higher-order problem than the older bridge draft made explicit. The comparison maps admit a quasilocal filtration
+$$
+J_R(\Delta)=I+\sum_{k\ge 1}\Delta^{2k}A_R^{(k)},
+$$
+with $\supp A_R^{(k)}\subset\mathcal N_k(R)$, and the first visible defect coefficient for disjoint supports is
+$$
+C_{R,S}^{(\mu_1)}=\sum_{p+q=\mu_1}[A_R^{(p)},A_S^{(q)}].
+$$
+This paper isolates the exact higher-order content of those facts instead of leaving it scattered across roadmap prose.</p>
+<p>
+First, we prove an exact overlap-factorization statement: every product $A_R^{(p)}A_S^{(q)}$ factors through the finite overlap window $\mathcal N_p(R)\cap\mathcal N_q(S)$. Consequently, the first higher-order exchange coefficient is already an overlap-window datum of the exact kernel algebra itself. Second, we formulate, but do not prove in full generality, the correct higher-order continuum criterion. Under an explicit strip-closure hypothesis with finite first moments, the smeared higher-order exchange commutator again reduces to a bond-centered first-order tangential operator on smooth sampled profiles. The point is Barandes-style and structural: the continuum object is not an entrywise matrix limit but the bond-centered action of the exact transition-law algebra on smooth data.</p>
+</div>
+
+<h2>I. Introduction</h2>
+
+<p>
+Phase 2 closed the exact leading support-level boundary law, and phase 3 closed the strongest exact leading-order universality statement currently justified. But neither result exhausted the higher-order problem. The exact free one-particle paper already established the quasilocal filtration for <em>all</em> higher coefficients and the exact defect-order formula for <em>all</em> disjoint finite interval pairs. What it did not do was spell out what those exact facts already imply for the structure of the higher-order exchange algebra.
+</p>
+
+<p>
+That structural step matters. From the Barandes point of view, one should not begin by asking for a Hilbert-space representation-theoretic story or an entrywise continuum matrix limit. One should begin from the exact transition-law data and ask what the exchange algebra itself forces. At higher order, the right first question is therefore not yet “what is $A_R^{(2)}$ explicitly?” but “through what exact local overlap data can a coefficient pair $A_R^{(p)}$, $A_S^{(q)}$ communicate at all?” Once that question is answered, the right continuum criterion can be stated cleanly.
+</p>
+
+<div class="env theorem">
+<span class="env-title">Main results (informal).</span>
+<ol>
+  <li><em>Exact overlap-factorization.</em> Every higher-order coefficient product $A_R^{(p)}A_S^{(q)}$ factors through the finite overlap window $\mathcal N_p(R)\cap\mathcal N_q(S)$, so the first visible higher-order exchange coefficient is already an exact overlap-window datum.</li>
+  <li><em>Exact first higher-order package.</em> The first visible higher-order coefficient is the sum of those overlap-window contributions with $p+q=\mu_1(R,S)$; the first genuinely new case is $\mu_1=3$, where $A^{(2)}$ enters for the first time.</li>
+  <li><em>Conditional strip-moment reduction.</em> If the exact higher-order commutators close on finitely many bond-centered strip channels with finite first moments, then the smeared commutator again has a bond-centered first-order tangential continuum action on smooth sampled profiles.</li>
+</ol>
+</div>
+
+<p class="small-note">
+Scope note. This paper isolates exact higher-order exchange structure and states the strip-moment closure theorem in conditional form. It does not yet compute general formulas for $A_R^{(2)}$ or classify all higher-order strip channels explicitly.
+</p>
+
+<h2>II. Exact higher-order overlap structure</h2>
+
+<div class="env definition">
+<span class="env-title">Definition 1</span> <span class="env-name">(Higher-order overlap windows and onset index).</span>
+For disjoint finite intervals $R,S\subset\Lambda_L$ and integers $p,q\ge 1$, define
+$$
+\Omega_{R,S}^{(p,q)}:=\mathcal N_p(R)\cap\mathcal N_q(S),
+$$
+and let $P_{R,S}^{(p,q)}$ denote the projector onto configurations whose site labels lie in $\Omega_{R,S}^{(p,q)}$. Define the exact onset index
+$$
+\kappa(R,S):=\mu_1(R,S):=\min\bigl\{p+q:\ p,q\ge 1,\ \Omega_{R,S}^{(p,q)}\neq\varnothing\bigr\}.
+$$
+For a nonwrapping pair
+$$
+R=[r_-,r_+],\qquad S=[s_-,s_+],\qquad r_+<s_-,
+$$
+one has, whenever the window is nonempty,
+$$
+\Omega_{R,S}^{(p,q)}=[\,s_--q,\ r_++p\,].
+$$
+</div>
+
+<div class="env proposition">
+<span class="env-title">Proposition 1</span> <span class="env-name">(Exact overlap-factorization of coefficient products).</span>
+For disjoint finite intervals $R,S$ and integers $p,q\ge 1$,
+$$
+A_R^{(p)}A_S^{(q)}=A_R^{(p)}P_{R,S}^{(p,q)}A_S^{(q)},
+\qquad
+A_S^{(q)}A_R^{(p)}=A_S^{(q)}P_{R,S}^{(p,q)}A_R^{(p)}.
+$$
+In particular, if $\Omega_{R,S}^{(p,q)}=\varnothing$, then
+$$
+[A_R^{(p)},A_S^{(q)}]=0.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+By the exact quasilocal filtration,
+$$
+\supp A_R^{(p)}\subset\mathcal N_p(R),
+\qquad
+\supp A_S^{(q)}\subset\mathcal N_q(S).
+$$
+For a matrix entry of the product,
+$$
+[A_R^{(p)}A_S^{(q)}]_{AB}
+=
+\sum_C [A_R^{(p)}]_{AC}[A_S^{(q)}]_{CB},
+$$
+the intermediate configuration $C$ can contribute only if its site label lies simultaneously in $\mathcal N_p(R)$ and in $\mathcal N_q(S)$, hence in $\Omega_{R,S}^{(p,q)}$. Inserting the projector $P_{R,S}^{(p,q)}$ therefore does not change the sum. The same argument gives the second identity. If $\Omega_{R,S}^{(p,q)}$ is empty, then both products vanish. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the exact higher-order analog of the leading boundary-packet lesson. Exchange does not arise because two support volumes are both “large.” It arises because the exact localized coefficient algebra acquires a nonempty overlap window through which one coefficient can feed the other.
+</div>
+
+<div class="env theorem">
+<span class="env-title">Theorem 1</span> <span class="env-name">(Exact first higher-order exchange package).</span>
+Let $R,S$ be disjoint finite intervals and let $\kappa:=\mu_1(R,S)$. Then
+$$
+E_{R,S}(\Delta)=I+\Delta^{2\kappa}C_{R,S}^{(\kappa)}+O(\Delta^{2\kappa+2}),
+$$
+with
+$$
+C_{R,S}^{(\kappa)}
+=
+\sum_{p+q=\kappa}[A_R^{(p)},A_S^{(q)}]
+=
+\sum_{p+q=\kappa}
+\Bigl(
+A_R^{(p)}P_{R,S}^{(p,q)}A_S^{(q)}
+
+-A_S^{(q)}P_{R,S}^{(p,q)}A_R^{(p)}
+\Bigr).
+$$
+If $\kappa\ge 3$, then every summand contains at least one coefficient of order $\ge 2$.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+The exact defect-order formula from the free one-particle exchange-defect paper gives
+$$
+C_{R,S}^{(\kappa)}=\sum_{p+q=\kappa}[A_R^{(p)},A_S^{(q)}].
+$$
+Apply Proposition&nbsp;1 term by term to each commutator in that sum. If $\kappa\ge 3$, the constraints $p,q\ge 1$ force at least one of $p,q$ to be $\ge 2$. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 1</span> <span class="env-name">(First genuinely higher-order visible case).</span>
+If $\mu_1(R,S)=3$, then
+$$
+C_{R,S}^{(3)}=[A_R^{(1)},A_S^{(2)}]+[A_R^{(2)},A_S^{(1)}],
+$$
+and equivalently
+$$
+C_{R,S}^{(3)}
+=
+A_R^{(1)}P_{R,S}^{(1,2)}A_S^{(2)}
+-A_S^{(2)}P_{R,S}^{(1,2)}A_R^{(1)}
++A_R^{(2)}P_{R,S}^{(2,1)}A_S^{(1)}
+-A_S^{(1)}P_{R,S}^{(2,1)}A_R^{(2)}.
+$$
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+When $\mu_1(R,S)=3$, the only admissible pairs with $p,q\ge 1$ and $p+q=3$ are $(1,2)$ and $(2,1)$. Insert them into Theorem&nbsp;1. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+This is the first point at which genuinely new coefficient data are unavoidable. Because $A_R^{(1)}$ is already known to be mass-blind while higher coefficients need not be, $\mu_1=3$ is also the first visible order at which mass-dependent exchange structure can enter.
+</div>
+
+<h2>III. Support prototypes and strip-moment closure</h2>
+
+<p>
+The exact overlap package says where higher-order exchange lives. The next question is when that exact exchange algebra has a stable bond-centered continuum action. The right criterion is not an entrywise matrix limit. It is closure on finitely many strip channels with finite first moments.
+</p>
+
+<div class="env definition">
+<span class="env-title">Definition 2</span> <span class="env-name">(Translated coefficient families).</span>
+Let $\sigma$ label a support type, for example a singleton, an interval of fixed width, or a finite union of local cells. For each order $p\ge 1$, let $A_{\sigma,n}^{(p)}$ denote the order-$\Delta^{2p}$ coefficient attached to the translate of type $\sigma$ centered at lattice site $n$. Define the smeared operator
+$$
+\mathcal K_{\sigma,a}^{(p)}[N]
+:=
+a\sum_n N_nA_{\sigma,n}^{(p)}.
+$$
+</div>
+
+<div class="env definition">
+<span class="env-title">Definition 3</span> <span class="env-name">(Bond-centered admissible strip channels).</span>
+Suppose that for each active channel label $(\ell,\chi)$ there is a translated antisymmetric strip-operator family $X_{n+1/2}^{(\ell,\chi)}$ and a corresponding smeared bond-centered density $\mathcal T_a^{(\ell,\chi)}[\beta]$ such that, for every smooth compactly supported two-component profile $\phi$,
+$$
+\mathcal T_a^{(\ell,\chi)}[\beta]\iota_a\phi
+=
+\iota_a\bigl(K_{\ell,\chi}[\beta]\phi\bigr)+O(a),
+$$
+where $K_{\ell,\chi}[\beta]$ is first-order in derivatives and local in $\beta$. Call such a family <em>bond-centered admissible</em>.
+</div>
+
+<div class="env definition">
+<span class="env-title">Hypothesis 1</span> <span class="env-name">(Exact strip closure with finite first moments).</span>
+Fix support types $\sigma,\tau$ and orders $p,q$. Assume:
+<ol>
+  <li><em>strip closure:</em>
+  $$
+  [A_{\sigma,n}^{(p)},A_{\tau,m}^{(q)}]
+  =
+  \sum_{(\ell,\chi)}
+  c_{\sigma,\tau}^{(p,q;\ell,\chi)}(m-n)\,
+  X_{n+1/2}^{(\ell,\chi)},
+  $$
+  for finitely many strip channels $(\ell,\chi)$ and finitely supported coefficient functions $c_{\sigma,\tau}^{(p,q;\ell,\chi)}$;</li>
+  <li><em>antisymmetry:</em>
+  $c_{\sigma,\tau}^{(p,q;\ell,\chi)}(r)=-c_{\tau,\sigma}^{(q,p;\ell,\chi)}(-r)$;</li>
+  <li><em>finite first moments:</em>
+  $$
+  C_{\sigma,\tau}^{(p,q;\ell,\chi)}
+  :=
+  \sum_r r\,c_{\sigma,\tau}^{(p,q;\ell,\chi)}(r)
+  $$
+  exist for all active channels.</li>
+</ol>
+</div>
+
+<div class="env theorem">
+<span class="env-title">Conditional Theorem 2</span> <span class="env-name">(Higher-order bond-centered thin-slab reduction under strip closure).</span>
+Assume Hypothesis&nbsp;1, and assume moreover that each active strip channel is bond-centered admissible in the sense of Definition&nbsp;3. Then for every smooth compactly supported two-component profile $\phi$ one has
+$$
+[\mathcal K_{\sigma,a}^{(p)}[N],\mathcal K_{\tau,a}^{(q)}[M]]\,\iota_a\phi
+=
+\sum_{(\ell,\chi)}
+C_{\sigma,\tau}^{(p,q;\ell,\chi)}
+\mathcal T_a^{(\ell,\chi)}[\beta]\iota_a\phi
++O(a),
+$$
+with
+$$
+\beta=N\partial_xM-M\partial_xN.
+$$
+Consequently,
+$$
+[\mathcal K_{\sigma,a}^{(p)}[N],\mathcal K_{\tau,a}^{(q)}[M]]\,\iota_a\phi
+=
+\iota_a\bigl(K_{\parallel;\sigma,\tau}^{(p,q)}[\beta]\phi\bigr)+O(a),
+$$
+where
+$$
+K_{\parallel;\sigma,\tau}^{(p,q)}[\beta]
+:=
+\sum_{(\ell,\chi)}
+C_{\sigma,\tau}^{(p,q;\ell,\chi)}
+K_{\ell,\chi}[\beta].
+$$
+Thus every coefficient pair with strip closure and finite first moments has the same bond-centered continuum form: an antisymmetrized first-order tangential operator controlled by strip moments.
+</div>
+
+<div class="proof-block">
+<span class="proof-head">Proof.</span>
+Start from
+$$
+[\mathcal K_{\sigma,a}^{(p)}[N],\mathcal K_{\tau,a}^{(q)}[M]]
+=
+a^2\sum_{n,m}N_nM_m[A_{\sigma,n}^{(p)},A_{\tau,m}^{(q)}].
+$$
+Insert the strip-closure expansion from Hypothesis&nbsp;1 and set $r=m-n$:
+$$
+=
+a^2\sum_{n,r}
+N_nM_{n+r}
+\sum_{(\ell,\chi)}
+c_{\sigma,\tau}^{(p,q;\ell,\chi)}(r)\,X_{n+1/2}^{(\ell,\chi)}.
+$$
+Antisymmetrizing under $(n,\sigma,p)\leftrightarrow(n+r,\tau,q)$ replaces $N_nM_{n+r}$ by
+$N_nM_{n+r}-N_{n+r}M_n$.
+Smoothness gives
+$$
+N_nM_{n+r}-N_{n+r}M_n
+=
+ar\,\beta(x_{n+r/2})+O(a^2),
+$$
+uniformly on the finite set of active displacements. Summing over $r$ therefore produces the first moments $C_{\sigma,\tau}^{(p,q;\ell,\chi)}$ multiplying the bond-centered admissible strip densities. The assumed profile-action limit of each strip density then yields the continuum operator. <span class="qed">$ \square $</span>
+</div>
+
+<div class="env corollary">
+<span class="env-title">Corollary 2</span> <span class="env-name">(The leading support-order theorem is the first strip-closure case).</span>
+The phase-2 nearby-support boundary law and the phase-3 leading-order universality benchmark are the special $p=q=1$ instances of Conditional Theorem&nbsp;2. The first genuinely new higher-order visible case is $\mu_1=3$, where the relevant strip moments come from the $(p,q)=(1,2)$ and $(2,1)$ channel families isolated in Corollary&nbsp;1.
+</div>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+Conditional Theorem&nbsp;2 is deliberately formulated at the coefficient-algebra level rather than the kernel-entry level. That is exactly the lesson of the explicit free-model sequel: the wrong continuum object is the raw entrywise matrix coefficient, while the right continuum object is the bond-centered action of the exchange algebra on smooth sampled profiles.
+</div>
+
+<h2>IV. Barandes-style reading of the higher-order problem</h2>
+
+<p>
+The higher-order problem is often described as if its main burden were combinatorial bookkeeping. That is too shallow. The real issue is conceptual. The exact transition law already knows the localized support growth, the exact onset order, and the overlap windows through which higher-order exchange can first occur. What it does <em>not</em> yet know is whether the resulting overlap-window algebra closes on a finite family of strip channels with stable first moments.
+</p>
+
+<p>
+So the next proof burden is not to impose an external continuum representation and hope the algebra follows. It is to derive the strip channels and their first moments from the exact kernel algebra itself. Only then has the transition law earned a higher-order continuum operator. That is the Barandes perspective carried one level beyond the leading singleton sector.
+</p>
+
+<div class="env remark">
+<span class="env-title">Remark.</span>
+The exact overlap-factorization theorem is already useful even before explicit $A_R^{(2)}$ formulas are known. It tells us where to look: one does not need the entire support volume or a global matrix limit. One needs the active overlap windows and the strip moments of the channel coefficients that survive antisymmetrization.
+</div>
+
+<h2>V. What phase 4 now closes and what it defers</h2>
+
+<p>
+With the scope fixed this way, phase 4 is complete in the following exact sense.
+</p>
+<ol>
+  <li><em>Exact higher-order overlap windows.</em> The higher-order coefficient products are shown to factor exactly through finite overlap windows determined by the quasilocal filtration.</li>
+  <li><em>Exact first higher-order exchange package.</em> The first visible higher-order exchange coefficient is isolated exactly as a finite sum of overlap-window commutators with $p+q=\mu_1(R,S)$.</li>
+  <li><em>Strip-moment criterion.</em> The correct higher-order continuum theorem is stated cleanly: strip closure plus finite first moments imply a bond-centered first-order tangential action on smooth sampled profiles.</li>
+  <li><em>Proper placement of the first nontrivial new case.</em> The visible order $\mu_1=3$ is identified as the first genuinely higher-coefficient exchange problem.</li>
+</ol>
+
+<p>
+Just as important is what this paper deliberately does not claim.
+</p>
+<ol>
+  <li><em>Explicit formulas for $A_R^{(2)}$ and beyond.</em> Those are not yet computed here for nontrivial prototype classes.</li>
+  <li><em>Exact classification of active higher-order strip channels.</em> Hypothesis&nbsp;1 states the right target, but the full channel list still has to be derived from the kernels.</li>
+  <li><em>Exact first strip moments at non-leading order.</em> The theorem gives the criterion, not yet the explicit moments.</li>
+  <li><em>Broader cross-regulator stability.</em> That is the subject of the next paper once the correct higher-order invariants have been identified.</li>
+</ol>
+
+<div class="env remark">
+<span class="env-title">Strategic remark.</span>
+This is not a retreat from phase 4. It is the exact completion of phase 4 at the strongest scope the present record can genuinely support. The paper now tells us precisely what the higher-order proof burden is, rather than pretending that explicit $A^{(2)}$-level closure is already in hand.
+</div>
+
+<h2>VI. Conclusion</h2>
+
+<p>
+Phase 4 is now complete at the strongest honest scope supported by the current relativistic ISP stack. The exact kernel algebra already fixes the higher-order overlap windows and the precise form of the first visible higher-order exchange coefficient. What remains unresolved is not where higher-order exchange lives, but how the exact coefficient algebra decomposes into strip channels and what first moments those channels carry.
+</p>
+
+<p>
+That is the right next step from the Barandes perspective. One should not import extra ontology to repair an unfinished local algebra. One should continue the exact transition-law analysis until the higher-order bond-centered structure either closes or fails. The next paper therefore turns to regulator stability at precisely that level: not raw coefficient equality, but normalized strip-moment stability across support prototypes.
+</p>
+
+<div class="references">
+<h2>References</h2>
+<ol class="ref-list">
+  <li id="r1"><span class="ref-num">[1]</span>
+  <span>Anonymous, “Toward Lorentz-Covariant Indivisible Stochastic Processes: Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations,” preprint (2026).</span></li>
+  <li id="r2"><span class="ref-num">[2]</span>
+  <span>Anonymous, “Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes: Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality,” preprint (2026).</span></li>
+  <li id="r3"><span class="ref-num">[3]</span>
+  <span>Anonymous, “Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem,” preprint (2026).</span></li>
+  <li id="r4"><span class="ref-num">[4]</span>
+  <span>Anonymous, “Exact Leading Support-Level Boundary Law for the Bond-Centered Thin-Slab Program,” preprint (2026).</span></li>
+  <li id="r5"><span class="ref-num">[5]</span>
+  <span>Anonymous, “Restricted Renormalized Universality of the Leading Bond-Centered Thin-Slab Law,” preprint (2026).</span></li>
+  <li id="r6"><span class="ref-num">[6]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Correspondence,” <em>Philosophy of Physics</em> <strong>3</strong>, 8 (2025); arXiv:2302.10778.</span></li>
+  <li id="r7"><span class="ref-num">[7]</span>
+  <span>J. A. Barandes, “The Stochastic-Quantum Theorem,” arXiv:2309.03085 (2023; rev. 2026).</span></li>
+  <li id="r8"><span class="ref-num">[8]</span>
+  <span>J. A. Barandes, “Quantum Systems as Indivisible Stochastic Processes,” arXiv:2507.21192 (2025).</span></li>
+</ol>
+</div>
+
+</article>
+</body>
+</html>
