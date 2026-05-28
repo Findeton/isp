@@ -43,7 +43,8 @@ $$
 \hbox{relativistic QFT kinematics} & \mathrm{CLOSED}_{ISP}\\
 \hbox{finite QCD dynamics} & \mathrm{CLOSED}_{finite\ ISP}\\
 \hbox{continuum Yang-Mills descent} & \mathrm{CLOSED}_{ISP\ descent}\\
-\hbox{ontology-free Yang-Mills reduction} & \mathrm{CLOSED}_{P38}
+\hbox{ontology-free Yang-Mills reduction} & \mathrm{CLOSED}_{P38}\\
+\hbox{standalone ontology-free Yang-Mills proof} & \mathrm{CLOSED}_{P39}
 \end{array}
 }
 $$
@@ -53,8 +54,9 @@ ontology.  They are not the same thing as an unconditional theorem in the
 standard continuum language.  The external comparison to standard GR, QFT,
 QCD, and Yang-Mills is handled by explicit bridge gates.  For Yang-Mills,
 Paper 37 supplies the standard-equivalence bridge and Paper 38 supplies an
-ontology-free proof reduction inside the corpus.  The external review
-frontier is now the independent checking of the Paper 38 margin certificate.
+ontology-free proof reduction inside the corpus.  Paper 39 expands that
+reduction into a standalone proof manuscript.  The external review frontier
+is now the independent checking of the Paper 39 proof.
 
 The honest slogan is:
 
@@ -671,6 +673,8 @@ Yang-Mills external bridge has changed twice.  Paper 37 writes the standard
 gauge-invariant continuum Yang-Mills comparison bridge and discharges the late
 equivalence ledgers for that sector.  Paper 38 then rewrites the result as an
 ontology-free proof reduction and closes OFYM1-OFYM12 inside the corpus.
+Paper 39 expands that reduction into a standalone ontology-free proof
+manuscript.
 
 The careful status is:
 
@@ -684,6 +688,8 @@ $$
 \hbox{standard gauge-invariant continuum YM bridge} &
 \mathrm{CLOSED}_{bridge}\\
 \hbox{ontology-free YM reduction inside corpus} & \mathrm{CLOSED}_{P38}\\
+\hbox{standalone ontology-free YM proof manuscript} &
+\mathrm{CLOSED}_{P39}\\
 \hbox{external Clay-style acceptance} & \mathrm{UNVALIDATED}_{external}
 \end{array}
 }
@@ -692,9 +698,10 @@ $$
 This distinction matters.  ISP now has both a closed internal descent theorem
 and a written bridge to the standard gauge-invariant continuum Yang-Mills
 comparison sector.  Paper 38 adds a closed ontology-free reduction inside the
-corpus.  What is still not complete is external mathematical acceptance in the
-ordinary community sense.  That requires independent review of the Paper 38
-standard margin certificate and its conventional presentation.
+corpus.  Paper 39 expands the reduction into a standalone proof manuscript.
+What is still not complete is external mathematical acceptance in the ordinary
+community sense.  That requires independent review of the Paper 39 proof and
+its conventional presentation.
 
 ## 10. Internal Theorems Versus External Bridges
 
@@ -738,6 +745,8 @@ $$
 gauge-invariant continuum YM}\\
 \mathrm{OFYM} & \hbox{Paper 38 rewrites the Yang-Mills result as an
 ontology-free proof reduction}\\
+\mathrm{SOFYM} & \hbox{Paper 39 expands the reduction into a standalone
+ontology-free proof manuscript}\\
 \mathrm{spin/CPT} & \hbox{ISP exchange and orientation structure to standard
 spin-statistics and CPT}
 \end{array}
@@ -750,7 +759,9 @@ cannot be counted as an internal theorem until it is explicitly discharged.
 For Yang-Mills, Paper 37 is the first completed instance of this external
 bridge discipline.  Paper 38 is the first completed instance of the stronger
 ontology-free reduction discipline, although its external acceptance still
-depends on conventional review of the printed margin certificate.
+depends on conventional review.  Paper 39 is the first standalone
+ontology-free proof manuscript, with the same external-review boundary stated
+as a single conventional proof target.
 
 ## 11. What The Framework Achieves
 
@@ -782,6 +793,9 @@ $$
 \hbox{ontology-free YM reduction} &
 \mathrm{CLOSED}_{P38} &
 \hbox{OFYM1-OFYM12 closed inside Paper 38}\\
+\hbox{standalone ontology-free YM proof} &
+\mathrm{CLOSED}_{P39} &
+\hbox{Paper 39 prints the proof without corpus-source shortcuts}\\
 \hbox{remaining GR/QFT/QCD external equivalence} &
 \mathrm{BRIDGE} &
 \hbox{requires explicit comparison gates}
@@ -809,7 +823,7 @@ comparison language}\\
 from bare stochastic process theory}\\
 \mathrm{NC3}:&\hbox{that standard spin-statistics and CPT follow without
 bridge assumptions}\\
-\mathrm{NC4}:&\hbox{that Paper 38 has already received external Clay-style
+\mathrm{NC4}:&\hbox{that Paper 39 has already received external Clay-style
 acceptance}\\
 \mathrm{NC5}:&\hbox{that experimental validation has been supplied by formal
 reconstruction alone}\\
@@ -827,7 +841,8 @@ $$
 and hardens effective GR, relativistic QFT kinematics, and finite QCD
 dynamics.  Paper 37 closes the gauge-invariant standard continuum
 Yang-Mills bridge, and Paper 38 closes the ontology-free Yang-Mills reduction
-inside the corpus while leaving external mathematical acceptance explicit.}
+inside the corpus.  Paper 39 expands that result into a standalone proof
+manuscript while leaving external mathematical acceptance explicit.}
 }
 $$
 
@@ -867,7 +882,8 @@ ontology}\\
 \mathrm{P35} & \hbox{repair of hardening gates}\\
 \mathrm{P36} & \hbox{hardening summary and compilation}\\
 \mathrm{P37} & \hbox{standard-equivalence bridge for continuum Yang-Mills}\\
-\mathrm{P38} & \hbox{ontology-free Yang-Mills proof reduction}
+\mathrm{P38} & \hbox{ontology-free Yang-Mills proof reduction}\\
+\mathrm{P39} & \hbox{standalone ontology-free Yang-Mills proof manuscript}
 \end{array}
 }
 $$
@@ -881,6 +897,7 @@ The current late-corpus document ledger is:
 - `relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
+- `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
 - `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
 
 ## 14. Why The Framework Is Barandes-Aligned
@@ -927,8 +944,8 @@ $$
 ISP premises?}\\
 \hbox{remaining external equivalence} & \hbox{can GR, QFT, QCD, and spin/CPT
 bridges be written to the same level as Paper 37?}\\
-\hbox{external YM validation} & \hbox{does the Paper 38 margin certificate
-survive independent conventional review?}\\
+\hbox{external YM validation} & \hbox{does the Paper 39 proof survive
+independent conventional review?}\\
 \hbox{experimental signatures} & \hbox{does ISP predict deviations from
 standard GR, QFT, or QCD?}\\
 \hbox{black holes} & \hbox{what replaces singularities in finite record
@@ -957,9 +974,10 @@ stable no-anomaly structures in the finite record calculus.  In the active
 ISP corpus, effective GR, relativistic QFT kinematics, and finite QCD
 dynamics are internally closed.  Continuum Yang-Mills has an internal ISP
 descent theorem, a standard gauge-invariant equivalence bridge through Paper
-37, and an ontology-free proof reduction through Paper 38.  The remaining
+37, an ontology-free proof reduction through Paper 38, and a standalone
+ontology-free proof manuscript through Paper 39.  The remaining
 bridge program concerns broader GR, QFT, and QCD external comparison, plus
-independent review of the Paper 38 margin certificate.  The result is a
+independent review of the Paper 39 proof.  The result is a
 finite stochastic ontology that
 tries to explain why the usual continuum quantum and relativistic formalism
 works, rather than taking its most mysterious structures as primitive.
@@ -985,7 +1003,8 @@ $$
 effective GR, relativistic QFT kinematics, and finite QCD dynamics, with
 continuum Yang-Mills additionally bridged to the standard gauge-invariant
 comparison sector in Paper 37 and reduced to an ontology-free proof ledger in
-Paper 38.}
+Paper 38, then expanded into a standalone ontology-free proof manuscript in
+Paper 39.}
 }
 $$
 
@@ -994,7 +1013,7 @@ The cleanest statement of the next task is:
 $$
 \boxed{
 \hbox{derive more of the active corpus from minimal ISP premises and develop
-the remaining GR, QFT, and QCD external bridges while subjecting the Paper 38
-margin certificate to independent conventional review.}
+the remaining GR, QFT, and QCD external bridges while subjecting the Paper 39
+proof to independent conventional review.}
 }
 $$

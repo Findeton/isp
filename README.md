@@ -359,6 +359,7 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
+- `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -403,30 +404,36 @@ active ISP-V4 finite-record ontology
   OFYM6 margin certificate, and marks the ontology-free Yang-Mills theorem
   as closed inside the corpus while leaving external Clay-style acceptance
   dependent on independent checking of `OFYM6-SMC-001`.
+- **Paper 39** expands the Paper 38 reduction into a standalone ontology-free
+  proof manuscript.  It prints the regulated construction, compactness,
+  Ward quotient, OS/GNS reconstruction, response floor, row-token majorants,
+  crossing lemmas, Wilson area law, transfer gap, falsifier ledger, and final
+  theorem without sourcing proof steps from the ISP corpus.
 
 The resulting status is sharper than the earlier README: the corpus now has
 an internal ISP Yang-Mills descent theorem and a written standard-equivalence
 bridge for the gauge-invariant continuum Yang-Mills comparison sector.
 Paper 38 goes one step further: it writes the ontology-free reduction itself
-and closes OFYM1-OFYM12 inside the corpus.  The remaining boundary is no
-longer an unnamed missing internal gate; it is external validation of the
-printed OFYM6 margin certificate and the conventional-review status of the
-result.
+and closes OFYM1-OFYM12 inside the corpus.  Paper 39 turns that reduction
+into a standalone proof manuscript.  The remaining boundary is no longer an
+unnamed missing internal gate; it is independent external review of the
+standalone proof, especially the response-floor, row-token, crossing, and
+continuum-liminf steps.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  By Papers 29-38, the strongest V4
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-39, the strongest V4
 claim is a hardened active finite-record stack plus an ontology-free
 Yang-Mills reduction: effective GR, relativistic QFT kinematics, finite QCD
 dynamics, internal Yang-Mills confinement/mass-gap descent, the
 gauge-invariant standard-equivalence bridge for continuum Yang-Mills, and the
-OFYM1-OFYM12 ontology-free Yang-Mills proof ledger.  The remaining boundary is
-the broader external validation and externalization program: checking the
-OFYM6 margin certificate independently, and writing GR/QFT/QCD bridges with
-the same conventional clarity.
+OFYM1-OFYM12 ontology-free Yang-Mills proof ledger expanded into a standalone
+proof manuscript.  The remaining boundary is the broader external validation
+and externalization program: independent review of the Paper 39 proof and
+writing GR/QFT/QCD bridges with the same conventional clarity.
 
 ## V5: Consequences Of The Finite-Record Ontology
 
@@ -467,6 +474,9 @@ Paper 1 uses the V4 result stack as background:
 - P38 supplies the ontology-free Yang-Mills proof reduction and closes
   OFYM1-OFYM12 inside the corpus, with external validation focused on the
   OFYM6 margin certificate.
+- P39 supplies the standalone ontology-free Yang-Mills proof manuscript, so
+  the external validation target is now a single conventional proof document
+  rather than a corpus-dependent reduction.
 
 Conceptual status:
 
@@ -499,6 +509,7 @@ real stochastic kernels
   -> closed internal ISP Yang-Mills confinement/mass-gap theorem
   -> standard gauge-invariant Yang-Mills equivalence bridge
   -> ontology-free Yang-Mills reduction closed inside the corpus
+  -> standalone ontology-free Yang-Mills proof manuscript
   -> black holes as finite record horizons rather than primitive singular points
 ```
 
@@ -522,8 +533,9 @@ The honest reading is:
   gauge-invariant continuum Yang-Mills sector;
 - Paper 38 supplies the ontology-free Yang-Mills reduction and closes
   OFYM1-OFYM12 inside the corpus;
+- Paper 39 supplies the standalone ontology-free Yang-Mills proof manuscript;
 - remaining external acceptance depends on independent conventional review of
-  the OFYM6 margin certificate, extending the bridge discipline across
+  the Paper 39 proof, extending the bridge discipline across
   GR/QFT/QCD, and showing that the finite source packets are not merely
   calibrated restatements of the target physics.
 
