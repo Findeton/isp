@@ -139,7 +139,7 @@ trying to explain.
 
 ## How To Read The Corpus
 
-The papers live mostly in `physics/`.  There are five broad generations.
+The papers live mostly in `.`.  There are five broad generations.
 
 ## V1: Finite Exchange-Defect Foundations
 
@@ -205,16 +205,16 @@ Main role:
 
 Core files:
 
-- `physics/relativistic-isp-v2-paper1-free-stochastic-curvature-theorem.md`
-- `physics/relativistic-isp-v2-paper2-projective-hypersurface-kernel-dynamics.md`
-- `physics/relativistic-isp-v2-paper3-interacting-comparison-map-locality.md`
-- `physics/relativistic-isp-v2-paper4-operational-observable-reconstruction.md`
-- `physics/relativistic-isp-v2-paper5-continuum-gauge-benchmark.md`
-- `physics/relativistic-isp-v2-paper6-qft-reconstruction-no-go-investigation.md`
-- `physics/relativistic-isp-v2-paper7-free-qft-promotion-from-stochastic-curvature-investigation.md`
-- `physics/relativistic-isp-v2-paper8-free-qft-matching-equivalence-benchmarks-investigation.md`
-- `physics/relativistic-isp-v2-paper9-lorentz-covariant-free-qft-completion-investigation.md`
-- `physics/relativistic-isp-v2-paper10-metric-data-from-stochastic-exchange-curvature-investigation.md`
+- `relativistic-isp-v2-paper1-free-stochastic-curvature-theorem.md`
+- `relativistic-isp-v2-paper2-projective-hypersurface-kernel-dynamics.md`
+- `relativistic-isp-v2-paper3-interacting-comparison-map-locality.md`
+- `relativistic-isp-v2-paper4-operational-observable-reconstruction.md`
+- `relativistic-isp-v2-paper5-continuum-gauge-benchmark.md`
+- `relativistic-isp-v2-paper6-qft-reconstruction-no-go-investigation.md`
+- `relativistic-isp-v2-paper7-free-qft-promotion-from-stochastic-curvature-investigation.md`
+- `relativistic-isp-v2-paper8-free-qft-matching-equivalence-benchmarks-investigation.md`
+- `relativistic-isp-v2-paper9-lorentz-covariant-free-qft-completion-investigation.md`
+- `relativistic-isp-v2-paper10-metric-data-from-stochastic-exchange-curvature-investigation.md`
 
 Conceptual status:
 
@@ -240,49 +240,49 @@ Main role:
 
 Early V3 core:
 
-- `physics/relativistic-isp-v3-paper1-minimal-enriched-isp-data-qft-reconstruction.md`
-- `physics/relativistic-isp-v3-paper2-primitive-smooth-lapse-hypersurface-kernels.md`
-- `physics/relativistic-isp-v3-paper3-interacting-projective-kernel-inverse-control.md`
-- `physics/relativistic-isp-v3-paper4-two-branch-interacting-stochastic-curvature.md`
-- `physics/relativistic-isp-v3-paper5-wilson-standard-qft-benchmark.md`
-- `physics/relativistic-isp-v3-paper6-no-wilson-detail-preserving-new-physics-branch.md`
-- `physics/relativistic-isp-v3-paper7-foliation-independence-interacting-projective-kernels.md`
-- `physics/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md`
-- `physics/relativistic-isp-v3-paper9-finite-nonabelian-gauge-sectors.md`
-- `physics/relativistic-isp-v3-paper10-projective-nonabelian-gauge-continuum.md`
+- `relativistic-isp-v3-paper1-minimal-enriched-isp-data-qft-reconstruction.md`
+- `relativistic-isp-v3-paper2-primitive-smooth-lapse-hypersurface-kernels.md`
+- `relativistic-isp-v3-paper3-interacting-projective-kernel-inverse-control.md`
+- `relativistic-isp-v3-paper4-two-branch-interacting-stochastic-curvature.md`
+- `relativistic-isp-v3-paper5-wilson-standard-qft-benchmark.md`
+- `relativistic-isp-v3-paper6-no-wilson-detail-preserving-new-physics-branch.md`
+- `relativistic-isp-v3-paper7-foliation-independence-interacting-projective-kernels.md`
+- `relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md`
+- `relativistic-isp-v3-paper9-finite-nonabelian-gauge-sectors.md`
+- `relativistic-isp-v3-paper10-projective-nonabelian-gauge-continuum.md`
 
 Yang-Mills and confinement arc:
 
-- `physics/relativistic-isp-v3-paper11-continuum-yang-mills-nonabelian-rg-closure.md`
-- `physics/relativistic-isp-v3-paper12-renormalized-unsmeared-wilson-loop-functionals.md`
-- `physics/relativistic-isp-v3-paper13-nonperturbative-continuum-yang-mills-functional.md`
-- `physics/relativistic-isp-v3-paper14-finite-block-yang-mills-entry-gates.md`
-- `physics/relativistic-isp-v3-paper15-connected-polymer-kp-creutz-margin.md`
-- `physics/relativistic-isp-v3-paper16-nonperturbative-yang-mills-closure.md`
-- `physics/relativistic-isp-v3-paper17-yang-mills-mass-gap-gates.md`
-- `physics/relativistic-isp-v3-paper18-confinement-area-law-isp-yang-mills.md`
-- `physics/relativistic-isp-v3-paper19-actual-source-constants-confinement.md`
+- `relativistic-isp-v3-paper11-continuum-yang-mills-nonabelian-rg-closure.md`
+- `relativistic-isp-v3-paper12-renormalized-unsmeared-wilson-loop-functionals.md`
+- `relativistic-isp-v3-paper13-nonperturbative-continuum-yang-mills-functional.md`
+- `relativistic-isp-v3-paper14-finite-block-yang-mills-entry-gates.md`
+- `relativistic-isp-v3-paper15-connected-polymer-kp-creutz-margin.md`
+- `relativistic-isp-v3-paper16-nonperturbative-yang-mills-closure.md`
+- `relativistic-isp-v3-paper17-yang-mills-mass-gap-gates.md`
+- `relativistic-isp-v3-paper18-confinement-area-law-isp-yang-mills.md`
+- `relativistic-isp-v3-paper19-actual-source-constants-confinement.md`
 
 Actual-source campaign:
 
-- `physics/relativistic-isp-v3-paper20-actual-heat-kernel-coefficient-loss-estimates.md`
-- `physics/relativistic-isp-v3-paper21-sel2-tree-rate-source-falsification.md`
-- `physics/relativistic-isp-v3-paper22-continuum-yang-mills-confinement-continuation.md`
-- `physics/relativistic-isp-v3-paper23-adaptive-branch-a-source-campaign.md`
-- `physics/relativistic-isp-v3-paper24-full-object-rpf-dual-certificate-campaign.md`
-- `physics/relativistic-isp-v3-paper25-actual-law-screened-conditional-influence-campaign.md`
-- `physics/relativistic-isp-v3-paper26-actual-law-finite-template-data-extraction.md`
-- `physics/relativistic-isp-v3-paper27-actual-law-rn-mixamp-smallness-or-floor-campaign.md`
-- `physics/relativistic-isp-v3-paper28-rn-mixamp-spectral-tail-campaign.md`
-- `physics/relativistic-isp-v3-paper29-rn-mixamp-low-mode-value-extraction.md`
-- `physics/relativistic-isp-v3-paper30-actual-law-signed-bridge-amplitude-or-floor-campaign.md`
-- `physics/relativistic-isp-v3-paper31-same-law-source-response-calculus.md`
-- `physics/relativistic-isp-v3-paper32-heat-bad-source-neutrality-curvature-or-floor.md`
-- `physics/relativistic-isp-v3-paper33-same-law-bootstrap-of-live-scalars.md`
-- `physics/relativistic-isp-v3-paper34-reflection-positive-moment-bootstrap.md`
-- `physics/relativistic-isp-v3-paper35-scalar-ray-detector-theorem.md`
-- `physics/relativistic-isp-v3-paper36-nongauge-ward-stein-raycut.md`
-- `physics/relativistic-isp-v3-paper37-actual-scalar-field-admissibility-or-kernel-floor.md`
+- `relativistic-isp-v3-paper20-actual-heat-kernel-coefficient-loss-estimates.md`
+- `relativistic-isp-v3-paper21-sel2-tree-rate-source-falsification.md`
+- `relativistic-isp-v3-paper22-continuum-yang-mills-confinement-continuation.md`
+- `relativistic-isp-v3-paper23-adaptive-branch-a-source-campaign.md`
+- `relativistic-isp-v3-paper24-full-object-rpf-dual-certificate-campaign.md`
+- `relativistic-isp-v3-paper25-actual-law-screened-conditional-influence-campaign.md`
+- `relativistic-isp-v3-paper26-actual-law-finite-template-data-extraction.md`
+- `relativistic-isp-v3-paper27-actual-law-rn-mixamp-smallness-or-floor-campaign.md`
+- `relativistic-isp-v3-paper28-rn-mixamp-spectral-tail-campaign.md`
+- `relativistic-isp-v3-paper29-rn-mixamp-low-mode-value-extraction.md`
+- `relativistic-isp-v3-paper30-actual-law-signed-bridge-amplitude-or-floor-campaign.md`
+- `relativistic-isp-v3-paper31-same-law-source-response-calculus.md`
+- `relativistic-isp-v3-paper32-heat-bad-source-neutrality-curvature-or-floor.md`
+- `relativistic-isp-v3-paper33-same-law-bootstrap-of-live-scalars.md`
+- `relativistic-isp-v3-paper34-reflection-positive-moment-bootstrap.md`
+- `relativistic-isp-v3-paper35-scalar-ray-detector-theorem.md`
+- `relativistic-isp-v3-paper36-nongauge-ward-stein-raycut.md`
+- `relativistic-isp-v3-paper37-actual-scalar-field-admissibility-or-kernel-floor.md`
 
 Conceptual status:
 
@@ -312,49 +312,49 @@ Main role:
 
 Geometry and GR source arc:
 
-- `physics/relativistic-isp-v4-paper1-geometric-source-coupling-or-no-go.md`
-- `physics/relativistic-isp-v4-paper2-fixed-background-metric-data-from-exchange-curvature.md`
-- `physics/relativistic-isp-v4-paper3-orientation-sensitive-finite-curvature-or-no-go.md`
-- `physics/relativistic-isp-v4-paper4-operational-orientation-quorum-or-enriched-only-metric-diagnostic.md`
-- `physics/relativistic-isp-v4-paper5-operational-curvature-compatibility-source.md`
-- `physics/relativistic-isp-v4-paper6-dynamical-geometry-configuration-gate.md`
-- `physics/relativistic-isp-v4-paper7-finite-constraint-dynamics-or-gr-no-go.md`
-- `physics/relativistic-isp-v4-paper8-geometric-score-or-residual-bound-exhaustion.md`
-- `physics/relativistic-isp-v4-paper9-residual-minimum-side-decision.md`
-- `physics/relativistic-isp-v4-paper10-source-conditioned-smooth-realizability-or-floor.md`
-- `physics/relativistic-isp-v4-paper11-actual-law-regular-packet-source.md`
-- `physics/relativistic-isp-v4-paper12-residual-source-ward-stein-four-route-decision.md`
-- `physics/relativistic-isp-v4-paper13-three-normal-switch-decision-or-floor.md`
-- `physics/relativistic-isp-v4-paper14-boundary-sufficiency-or-separator.md`
-- `physics/relativistic-isp-v4-paper15-concrete-actual-law-route-decision.md`
-- `physics/relativistic-isp-v4-paper16-minimal-actual-law-support-calculation.md`
-- `physics/relativistic-isp-v4-paper17-nontautological-grsm-support-ansatz-or-no-go.md`
-- `physics/relativistic-isp-v4-paper18-support-stability-consequences-and-value-frontier.md`
-- `physics/relativistic-isp-v4-paper19-finite-source-stein-engine-value-control.md`
+- `relativistic-isp-v4-paper1-geometric-source-coupling-or-no-go.md`
+- `relativistic-isp-v4-paper2-fixed-background-metric-data-from-exchange-curvature.md`
+- `relativistic-isp-v4-paper3-orientation-sensitive-finite-curvature-or-no-go.md`
+- `relativistic-isp-v4-paper4-operational-orientation-quorum-or-enriched-only-metric-diagnostic.md`
+- `relativistic-isp-v4-paper5-operational-curvature-compatibility-source.md`
+- `relativistic-isp-v4-paper6-dynamical-geometry-configuration-gate.md`
+- `relativistic-isp-v4-paper7-finite-constraint-dynamics-or-gr-no-go.md`
+- `relativistic-isp-v4-paper8-geometric-score-or-residual-bound-exhaustion.md`
+- `relativistic-isp-v4-paper9-residual-minimum-side-decision.md`
+- `relativistic-isp-v4-paper10-source-conditioned-smooth-realizability-or-floor.md`
+- `relativistic-isp-v4-paper11-actual-law-regular-packet-source.md`
+- `relativistic-isp-v4-paper12-residual-source-ward-stein-four-route-decision.md`
+- `relativistic-isp-v4-paper13-three-normal-switch-decision-or-floor.md`
+- `relativistic-isp-v4-paper14-boundary-sufficiency-or-separator.md`
+- `relativistic-isp-v4-paper15-concrete-actual-law-route-decision.md`
+- `relativistic-isp-v4-paper16-minimal-actual-law-support-calculation.md`
+- `relativistic-isp-v4-paper17-nontautological-grsm-support-ansatz-or-no-go.md`
+- `relativistic-isp-v4-paper18-support-stability-consequences-and-value-frontier.md`
+- `relativistic-isp-v4-paper19-finite-source-stein-engine-value-control.md`
 
 Value-source and bridge arc:
 
-- `physics/relativistic-isp-v4-paper20-gcr-to-grsm-value-bridge.md`
-- `physics/relativistic-isp-v4-paper21-finite-source-equivalence-or-external-calibration.md`
-- `physics/relativistic-isp-v4-paper22-source-completion-grid.md`
-- `physics/relativistic-isp-v4-paper23-finite-generating-functional-source-values.md`
-- `physics/relativistic-isp-v4-paper24-barandes-finite-effective-calibration-bridge.md`
+- `relativistic-isp-v4-paper20-gcr-to-grsm-value-bridge.md`
+- `relativistic-isp-v4-paper21-finite-source-equivalence-or-external-calibration.md`
+- `relativistic-isp-v4-paper22-source-completion-grid.md`
+- `relativistic-isp-v4-paper23-finite-generating-functional-source-values.md`
+- `relativistic-isp-v4-paper24-barandes-finite-effective-calibration-bridge.md`
 
 Effective GR, QFT, QCD, and continuum YM descent:
 
-- `physics/relativistic-isp-v4-paper25-finite-descent-reconstruction-of-effective-gr.md`
-- `physics/relativistic-isp-v4-paper26-relativistic-qft-qcd-as-v4-finite-descent-extension.md`
-- `physics/relativistic-isp-v4-paper27-finite-qcd-dynamics-certificate.md`
-- `physics/relativistic-isp-v4-paper28-continuum-yang-mills-confinement-descent.md`
-- `physics/relativistic-isp-v4-paper29-formal-hardening-of-continuum-yang-mills-descent.md`
-- `physics/relativistic-isp-v4-paper30-closing-the-ym-descent-certificates.md`
-- `physics/relativistic-isp-v4-paper31-post-certificate-formal-hardening-of-ym-descent.md`
-- `physics/relativistic-isp-v4-paper32-formal-hardening-of-effective-gr-descent.md`
-- `physics/relativistic-isp-v4-paper33-formal-hardening-of-relativistic-qft-descent.md`
-- `physics/relativistic-isp-v4-paper34-formal-hardening-of-finite-qcd-dynamics.md`
-- `physics/relativistic-isp-v4-paper35-repairing-the-gr-qft-qcd-hardening-gates.md`
-- `physics/relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
-- `physics/relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
+- `relativistic-isp-v4-paper25-finite-descent-reconstruction-of-effective-gr.md`
+- `relativistic-isp-v4-paper26-relativistic-qft-qcd-as-v4-finite-descent-extension.md`
+- `relativistic-isp-v4-paper27-finite-qcd-dynamics-certificate.md`
+- `relativistic-isp-v4-paper28-continuum-yang-mills-confinement-descent.md`
+- `relativistic-isp-v4-paper29-formal-hardening-of-continuum-yang-mills-descent.md`
+- `relativistic-isp-v4-paper30-closing-the-ym-descent-certificates.md`
+- `relativistic-isp-v4-paper31-post-certificate-formal-hardening-of-ym-descent.md`
+- `relativistic-isp-v4-paper32-formal-hardening-of-effective-gr-descent.md`
+- `relativistic-isp-v4-paper33-formal-hardening-of-relativistic-qft-descent.md`
+- `relativistic-isp-v4-paper34-formal-hardening-of-finite-qcd-dynamics.md`
+- `relativistic-isp-v4-paper35-repairing-the-gr-qft-qcd-hardening-gates.md`
+- `relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
+- `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -424,8 +424,8 @@ hardest objects in finite-record language.
 
 Current V5 review and consequence papers:
 
-- `physics/relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
-- `physics/relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
+- `relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
+- `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
 
 Main role:
 
