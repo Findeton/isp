@@ -41,7 +41,9 @@ $$
 \hline
 \hbox{effective general relativity} & \mathrm{CLOSED}_{ISP}\\
 \hbox{relativistic QFT kinematics} & \mathrm{CLOSED}_{ISP}\\
-\hbox{finite QCD dynamics} & \mathrm{CLOSED}_{finite\ ISP}
+\hbox{finite QCD dynamics} & \mathrm{CLOSED}_{finite\ ISP}\\
+\hbox{continuum Yang-Mills descent} & \mathrm{CLOSED}_{ISP\ descent}\\
+\hbox{ontology-free Yang-Mills reduction} & \mathrm{CLOSED}_{P38}
 \end{array}
 }
 $$
@@ -49,7 +51,10 @@ $$
 These closures are internal to the active Barandes-aligned finite-record ISP
 ontology.  They are not the same thing as an unconditional theorem in the
 standard continuum language.  The external comparison to standard GR, QFT,
-QCD, and Yang-Mills is handled by explicit bridge gates.
+QCD, and Yang-Mills is handled by explicit bridge gates.  For Yang-Mills,
+Paper 37 supplies the standard-equivalence bridge and Paper 38 supplies an
+ontology-free proof reduction inside the corpus.  The external review
+frontier is now the independent checking of the Paper 38 margin certificate.
 
 The honest slogan is:
 
@@ -662,9 +667,10 @@ $$
 $$
 
 This remains an active-ISP-relative statement, but the status of the
-Yang-Mills external bridge has changed.  Paper 37 now writes the standard
+Yang-Mills external bridge has changed twice.  Paper 37 writes the standard
 gauge-invariant continuum Yang-Mills comparison bridge and discharges the late
-equivalence ledgers for that sector.
+equivalence ledgers for that sector.  Paper 38 then rewrites the result as an
+ontology-free proof reduction and closes OFYM1-OFYM12 inside the corpus.
 
 The careful status is:
 
@@ -677,16 +683,18 @@ $$
 \hbox{ISP continuum YM descent} & \mathrm{CLOSED}_{ISP\ descent}\\
 \hbox{standard gauge-invariant continuum YM bridge} &
 \mathrm{CLOSED}_{bridge}\\
-\hbox{ontology-free Clay-style YM proof} & \mathrm{NOT\ CLAIMED}
+\hbox{ontology-free YM reduction inside corpus} & \mathrm{CLOSED}_{P38}\\
+\hbox{external Clay-style acceptance} & \mathrm{UNVALIDATED}_{external}
 \end{array}
 }
 $$
 
 This distinction matters.  ISP now has both a closed internal descent theorem
 and a written bridge to the standard gauge-invariant continuum Yang-Mills
-comparison sector.  What is still not claimed is a proof that starts from the
-usual continuum formulation alone, with no ISP ontology or active finite-record
-premises.
+comparison sector.  Paper 38 adds a closed ontology-free reduction inside the
+corpus.  What is still not complete is external mathematical acceptance in the
+ordinary community sense.  That requires independent review of the Paper 38
+standard margin certificate and its conventional presentation.
 
 ## 10. Internal Theorems Versus External Bridges
 
@@ -728,6 +736,8 @@ $$
 \mathrm{CEXT} & \hbox{ISP finite QCD to standard effective QCD}\\
 \mathrm{EXT} & \hbox{Paper 37 closes ISP Yang-Mills descent to standard
 gauge-invariant continuum YM}\\
+\mathrm{OFYM} & \hbox{Paper 38 rewrites the Yang-Mills result as an
+ontology-free proof reduction}\\
 \mathrm{spin/CPT} & \hbox{ISP exchange and orientation structure to standard
 spin-statistics and CPT}
 \end{array}
@@ -738,7 +748,9 @@ This is not a weakness.  It is what makes the framework auditable.  A bridge
 can fail while the internal theorem remains meaningful.  Conversely, a bridge
 cannot be counted as an internal theorem until it is explicitly discharged.
 For Yang-Mills, Paper 37 is the first completed instance of this external
-bridge discipline.
+bridge discipline.  Paper 38 is the first completed instance of the stronger
+ontology-free reduction discipline, although its external acceptance still
+depends on conventional review of the printed margin certificate.
 
 ## 11. What The Framework Achieves
 
@@ -767,6 +779,9 @@ $$
 \hbox{standard YM external equivalence} &
 \mathrm{CLOSED}_{bridge} &
 \hbox{gauge-invariant continuum YM comparison via Paper 37}\\
+\hbox{ontology-free YM reduction} &
+\mathrm{CLOSED}_{P38} &
+\hbox{OFYM1-OFYM12 closed inside Paper 38}\\
 \hbox{remaining GR/QFT/QCD external equivalence} &
 \mathrm{BRIDGE} &
 \hbox{requires explicit comparison gates}
@@ -794,8 +809,8 @@ comparison language}\\
 from bare stochastic process theory}\\
 \mathrm{NC3}:&\hbox{that standard spin-statistics and CPT follow without
 bridge assumptions}\\
-\mathrm{NC4}:&\hbox{that Paper 37 is an ontology-free Clay-style proof
-detached from ISP ontology}\\
+\mathrm{NC4}:&\hbox{that Paper 38 has already received external Clay-style
+acceptance}\\
 \mathrm{NC5}:&\hbox{that experimental validation has been supplied by formal
 reconstruction alone}\\
 \mathrm{NC6}:&\hbox{that GR, QFT, and QCD external equivalence have all been
@@ -810,8 +825,9 @@ $$
 \boxed{
 \hbox{inside the active finite-record ISP ontology, the corpus reconstructs
 and hardens effective GR, relativistic QFT kinematics, and finite QCD
-dynamics, and Paper 37 closes the gauge-invariant standard continuum
-Yang-Mills bridge while leaving broader externalization work explicit.}
+dynamics.  Paper 37 closes the gauge-invariant standard continuum
+Yang-Mills bridge, and Paper 38 closes the ontology-free Yang-Mills reduction
+inside the corpus while leaving external mathematical acceptance explicit.}
 }
 $$
 
@@ -850,7 +866,8 @@ ontology}\\
 \mathrm{P32\text{-}P34} & \hbox{formal hardening of GR, QFT, finite QCD}\\
 \mathrm{P35} & \hbox{repair of hardening gates}\\
 \mathrm{P36} & \hbox{hardening summary and compilation}\\
-\mathrm{P37} & \hbox{standard-equivalence bridge for continuum Yang-Mills}
+\mathrm{P37} & \hbox{standard-equivalence bridge for continuum Yang-Mills}\\
+\mathrm{P38} & \hbox{ontology-free Yang-Mills proof reduction}
 \end{array}
 }
 $$
@@ -863,6 +880,7 @@ The current late-corpus document ledger is:
 - `relativistic-isp-v4-paper35-repairing-the-gr-qft-qcd-hardening-gates.md`
 - `relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
+- `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
 
 ## 14. Why The Framework Is Barandes-Aligned
@@ -909,8 +927,8 @@ $$
 ISP premises?}\\
 \hbox{remaining external equivalence} & \hbox{can GR, QFT, QCD, and spin/CPT
 bridges be written to the same level as Paper 37?}\\
-\hbox{ontology-free theorem} & \hbox{can the Yang-Mills result be rewritten
-without ISP premises as starting ontology?}\\
+\hbox{external YM validation} & \hbox{does the Paper 38 margin certificate
+survive independent conventional review?}\\
 \hbox{experimental signatures} & \hbox{does ISP predict deviations from
 standard GR, QFT, or QCD?}\\
 \hbox{black holes} & \hbox{what replaces singularities in finite record
@@ -937,10 +955,12 @@ holonomy of real stochastic updates across incompatible hypersurfaces.
 Effective spacetime geometry, fields, and gauge dynamics then arise as
 stable no-anomaly structures in the finite record calculus.  In the active
 ISP corpus, effective GR, relativistic QFT kinematics, and finite QCD
-dynamics are internally closed.  Continuum Yang-Mills has both an internal ISP
-descent theorem and, through Paper 37, a standard gauge-invariant equivalence
-bridge.  The remaining bridge program concerns the broader GR, QFT, QCD, and
-ontology-free reformulations.  The result is a finite stochastic ontology that
+dynamics are internally closed.  Continuum Yang-Mills has an internal ISP
+descent theorem, a standard gauge-invariant equivalence bridge through Paper
+37, and an ontology-free proof reduction through Paper 38.  The remaining
+bridge program concerns broader GR, QFT, and QCD external comparison, plus
+independent review of the Paper 38 margin certificate.  The result is a
+finite stochastic ontology that
 tries to explain why the usual continuum quantum and relativistic formalism
 works, rather than taking its most mysterious structures as primitive.
 
@@ -964,7 +984,8 @@ $$
 \hbox{the V4 corpus has consolidated internal active-ISP reconstructions of
 effective GR, relativistic QFT kinematics, and finite QCD dynamics, with
 continuum Yang-Mills additionally bridged to the standard gauge-invariant
-comparison sector in Paper 37.}
+comparison sector in Paper 37 and reduced to an ontology-free proof ledger in
+Paper 38.}
 }
 $$
 
@@ -973,6 +994,7 @@ The cleanest statement of the next task is:
 $$
 \boxed{
 \hbox{derive more of the active corpus from minimal ISP premises and develop
-the remaining GR, QFT, QCD, and ontology-free external bridges.}
+the remaining GR, QFT, and QCD external bridges while subjecting the Paper 38
+margin certificate to independent conventional review.}
 }
 $$

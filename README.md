@@ -8,6 +8,9 @@ and probability-first attempt to
 reconstruct quantum, relativistic, gauge, and gravitational structure from
 finite stochastic transports between hypersurface records.
 
+For a compact physicist-facing overview, start here:
+[V5 Paper 0: Review Introduction For Physicists](relativistic-isp-v5-paper0-review-introduction-for-physicists.md).
+
 The central thesis is:
 
 > Quantum phase is not a primitive add-on to probability.  It is the geometric
@@ -355,6 +358,7 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `relativistic-isp-v4-paper35-repairing-the-gr-qft-qcd-hardening-gates.md`
 - `relativistic-isp-v4-paper36-hardening-summary-and-compilation.md`
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
+- `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -393,27 +397,36 @@ active ISP-V4 finite-record ontology
   Yang-Mills.  It discharges the late external YM comparison gates on the
   gauge-invariant SU(N) sector, including the E6, E10, E11, E12, E13 and
   SE1-SE12 ledgers.
+- **Paper 38** rewrites the Yang-Mills result as an ontology-free proof
+  reduction in conventional mathematical-physics language.  It replaces the
+  active ISP load-bearing principles with OFYM1-OFYM12, closes the remaining
+  OFYM6 margin certificate, and marks the ontology-free Yang-Mills theorem
+  as closed inside the corpus while leaving external Clay-style acceptance
+  dependent on independent checking of `OFYM6-SMC-001`.
 
 The resulting status is sharper than the earlier README: the corpus now has
 an internal ISP Yang-Mills descent theorem and a written standard-equivalence
-bridge for the gauge-invariant continuum Yang-Mills comparison sector.  It is
-still not presented as an ontology-free proof of the Clay Yang-Mills problem
-detached from ISP; that would require rewriting the whole descent in standard
-mathematical physics language without invoking the active finite-record
-ontology as a premise.
+bridge for the gauge-invariant continuum Yang-Mills comparison sector.
+Paper 38 goes one step further: it writes the ontology-free reduction itself
+and closes OFYM1-OFYM12 inside the corpus.  The remaining boundary is no
+longer an unnamed missing internal gate; it is external validation of the
+printed OFYM6 margin certificate and the conventional-review status of the
+result.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  By Papers 29-37, the strongest V4
-claim is a hardened active finite-record stack: effective GR, relativistic QFT
-kinematics, finite QCD dynamics, internal Yang-Mills confinement/mass-gap
-descent, and the gauge-invariant standard-equivalence bridge for continuum
-Yang-Mills.  The remaining boundary is the broader externalization program:
-writing GR/QFT/QCD and the full ontology-free Yang-Mills claim in conventional
-mathematical physics language without relying on ISP as the starting ontology.
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-38, the strongest V4
+claim is a hardened active finite-record stack plus an ontology-free
+Yang-Mills reduction: effective GR, relativistic QFT kinematics, finite QCD
+dynamics, internal Yang-Mills confinement/mass-gap descent, the
+gauge-invariant standard-equivalence bridge for continuum Yang-Mills, and the
+OFYM1-OFYM12 ontology-free Yang-Mills proof ledger.  The remaining boundary is
+the broader external validation and externalization program: checking the
+OFYM6 margin certificate independently, and writing GR/QFT/QCD bridges with
+the same conventional clarity.
 
 ## V5: Consequences Of The Finite-Record Ontology
 
@@ -451,6 +464,9 @@ Paper 1 uses the V4 result stack as background:
 - P32-P36 supply the GR/QFT/QCD hardening repairs and summary ledger.
 - P37 supplies the standard-equivalence bridge for the gauge-invariant
   continuum Yang-Mills sector.
+- P38 supplies the ontology-free Yang-Mills proof reduction and closes
+  OFYM1-OFYM12 inside the corpus, with external validation focused on the
+  OFYM6 margin certificate.
 
 Conceptual status:
 
@@ -482,6 +498,7 @@ real stochastic kernels
   -> QCD/Yang-Mills descent under explicit source and compactness gates
   -> closed internal ISP Yang-Mills confinement/mass-gap theorem
   -> standard gauge-invariant Yang-Mills equivalence bridge
+  -> ontology-free Yang-Mills reduction closed inside the corpus
   -> black holes as finite record horizons rather than primitive singular points
 ```
 
@@ -503,8 +520,10 @@ The honest reading is:
   Yang-Mills confinement/mass-gap descent theorem;
 - Paper 37 supplies the written standard-equivalence bridge for the
   gauge-invariant continuum Yang-Mills sector;
-- remaining external acceptance depends on formalizing the active hypotheses
-  in standard mathematical language, extending the bridge discipline across
+- Paper 38 supplies the ontology-free Yang-Mills reduction and closes
+  OFYM1-OFYM12 inside the corpus;
+- remaining external acceptance depends on independent conventional review of
+  the OFYM6 margin certificate, extending the bridge discipline across
   GR/QFT/QCD, and showing that the finite source packets are not merely
   calibrated restatements of the target physics.
 
