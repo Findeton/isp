@@ -139,7 +139,7 @@ trying to explain.
 
 ## How To Read The Corpus
 
-The papers live mostly in `physics/`.  There are four broad generations.
+The papers live mostly in `physics/`.  There are five broad generations.
 
 ## V1: Finite Exchange-Defect Foundations
 
@@ -346,15 +346,84 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `physics/relativistic-isp-v4-paper26-relativistic-qft-qcd-as-v4-finite-descent-extension.md`
 - `physics/relativistic-isp-v4-paper27-finite-qcd-dynamics-certificate.md`
 - `physics/relativistic-isp-v4-paper28-continuum-yang-mills-confinement-descent.md`
+- `physics/relativistic-isp-v4-paper29-formal-hardening-of-continuum-yang-mills-descent.md`
+- `physics/relativistic-isp-v4-paper30-closing-the-ym-descent-certificates.md`
+- `physics/relativistic-isp-v4-paper31-post-certificate-formal-hardening-of-ym-descent.md`
+
+Late V4 Yang-Mills hardening:
+
+- **Paper 28** formulates continuum Yang-Mills confinement/mass gap as an ISP
+  descent problem and isolates the source-ledger, scale-lock, and YM-identity
+  closure targets.
+- **Paper 29** hardens the descent theorem formally by naming the HCL1-HCL3
+  closure lemmas, the LEAK1-LEAK7 failure ledger, and the exact boundary
+  between an internal ISP theorem and an external Clay-style proof.
+- **Paper 30** discharges the three named certificates:
+  `RCP28`, `TSP28`, and `MID28`, upgrading the theorem from closed relative to
+  certificates to closed inside the active ISP ontology.
+- **Paper 31** consolidates Papers 29 and 30 into the post-certificate theorem
+  statement:
+
+```text
+active ISP-V4 finite-record ontology
+  -> ISP-descended SU(N) Yang-Mills confinement/mass gap
+```
+
+This is an internal ISP descent theorem.  It is not presented as an
+ontology-free proof of the standard Clay Yang-Mills problem; the conventional
+Hilbert/algebraic/OS comparison remains a separate externalization task.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  Its strongest claims are explicitly
-framed as ISP descent results, not as unqualified external proofs independent
-of the finite-record hypotheses.
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-31, the strongest V4
+claim is a closed internal theorem of the active finite-record ISP ontology:
+the descended \(SU(N)\) Yang-Mills sector has confinement/mass gap in the ISP
+descent sense.  The remaining boundary is external: translating this into a
+standard ontology-free mathematical proof requires an explicit comparison with
+the usual continuum Yang-Mills formulation.
+
+## V5: Consequences Of The Finite-Record Ontology
+
+V5 asks what familiar physical objects become once the ISP ontology is taken
+seriously.  The point is no longer only to reconstruct GR, QFT, QCD, and
+Yang-Mills as finite or effective descents.  The point is to reinterpret their
+hardest objects in finite-record language.
+
+Current V5 consequence paper:
+
+- `physics/relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
+
+Main role:
+
+- treat a black hole as a finite record-accessibility structure rather than a
+  primitive point singularity;
+- distinguish the GR event horizon from the GR singularity;
+- interpret the horizon as exterior many-to-one record compression;
+- interpret the singularity as failure of smooth GR descent beyond the
+  licensed finite-record regime;
+- frame entropy, evaporation, information loss, and firewall questions as
+  questions about exterior channels and global finite records.
+
+Paper 1 uses the V4 result stack as background:
+
+- P25 supplies effective GR as finite descent, so a black-hole metric is not
+  primitive ontology.
+- P26-P27 supply relativistic QFT/QCD finite descent, so quantum fields near
+  horizons are treated as reconstructed effective structures.
+- P28-P31 supply the late Yang-Mills/confinement hardening sequence, showing how
+  hard continuum physics is handled as active finite-record descent rather than
+  as a primitive continuum assumption.
+
+Conceptual status:
+
+V5 begins the consequences program.  Its first claim is deliberately
+ontological: in ISP, a black hole is not fundamentally a discontinuous point of
+infinite curvature.  The horizon is an exterior accessibility boundary, and
+the classical singularity is a sign that the continuum GR description has been
+pushed past the domain where it descends from finite stochastic records.
 
 ## The Whole Architecture In One Line
 
@@ -362,7 +431,8 @@ of the finite-record hypotheses.
 V1: finite exchange defects
   -> V2: projective/refinement continuum viability
   -> V3: QFT, non-Abelian gauge, Yang-Mills source gates
-  -> V4: geometry, GR, value-source laws, and finite-to-continuum descent
+  -> V4: geometry, GR, value-source laws, QFT/QCD, and YM descent hardening
+  -> V5: consequences of finite-record ontology, beginning with black holes
 ```
 
 Or, conceptually:
@@ -375,14 +445,16 @@ real stochastic kernels
   -> gauge and QFT structures
   -> GR-compatible finite geometry
   -> QCD/Yang-Mills descent under explicit source and compactness gates
+  -> closed internal ISP Yang-Mills confinement/mass-gap theorem
+  -> black holes as finite record horizons rather than primitive singular points
 ```
 
 ## Current High-Level Status
 
 The corpus has built a large finite-record framework for recovering structures
 normally written in Hilbert-space, QFT, gauge, and GR language.  Its strongest
-internal statements are conditional on explicitly named finite source,
-compactness, admissibility, and descent hypotheses.
+internal statements are now organized as active finite-record ISP theorems with
+explicitly named source, compactness, admissibility, and descent packets.
 
 The honest reading is:
 
@@ -391,6 +463,8 @@ The honest reading is:
   complex amplitude;
 - many QFT/gauge/GR structures are reconstructed as finite or effective
   descents;
+- within the active ISP ontology, the late V4 stack gives an internal
+  Yang-Mills confinement/mass-gap descent theorem;
 - remaining external acceptance depends on formalizing the active hypotheses
   in standard mathematical language and checking that the finite source
   packets are not merely calibrated restatements of the target physics.
