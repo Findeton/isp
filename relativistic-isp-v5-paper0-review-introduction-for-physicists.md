@@ -44,7 +44,8 @@ $$
 \hbox{finite QCD dynamics} & \mathrm{CLOSED}_{finite\ ISP}\\
 \hbox{continuum Yang-Mills descent} & \mathrm{CLOSED}_{ISP\ descent}\\
 \hbox{ontology-free Yang-Mills reduction} & \mathrm{CLOSED}_{P38}\\
-\hbox{standalone ontology-free Yang-Mills proof} & \mathrm{CLOSED}_{P39}
+\hbox{standalone ontology-free Yang-Mills proof} & \mathrm{CLOSED}_{P39}\\
+\hbox{C0 construction in active ISP} & \mathrm{CLOSED}_{P40\ ISP}
 \end{array}
 }
 $$
@@ -56,7 +57,10 @@ QCD, and Yang-Mills is handled by explicit bridge gates.  For Yang-Mills,
 Paper 37 supplies the standard-equivalence bridge and Paper 38 supplies an
 ontology-free proof reduction inside the corpus.  Paper 39 expands that
 reduction into a standalone proof manuscript.  The external review frontier
-is now the independent checking of the Paper 39 proof.
+is now the independent checking of the Paper 39 proof.  Paper 40 develops the
+C0 construction gate identified by Paper 39 inside the active ISP corpus while
+separating that result from the harder ontology-free constructive Yang-Mills
+existence burden.
 
 The honest slogan is:
 
@@ -674,7 +678,9 @@ gauge-invariant continuum Yang-Mills comparison bridge and discharges the late
 equivalence ledgers for that sector.  Paper 38 then rewrites the result as an
 ontology-free proof reduction and closes OFYM1-OFYM12 inside the corpus.
 Paper 39 expands that reduction into a standalone ontology-free proof
-manuscript.
+manuscript.  Paper 40 develops the C0 construction gate directly, proving C0
+inside the active Relativistic ISP corpus while separating that internal result
+from the harder ontology-free constructive Yang-Mills existence problem.
 
 The careful status is:
 
@@ -690,6 +696,7 @@ $$
 \hbox{ontology-free YM reduction inside corpus} & \mathrm{CLOSED}_{P38}\\
 \hbox{standalone ontology-free YM proof manuscript} &
 \mathrm{CLOSED}_{P39}\\
+\hbox{active-ISP C0 construction theorem} & \mathrm{CLOSED}_{P40\ ISP}\\
 \hbox{external Clay-style acceptance} & \mathrm{UNVALIDATED}_{external}
 \end{array}
 }
@@ -699,9 +706,11 @@ This distinction matters.  ISP now has both a closed internal descent theorem
 and a written bridge to the standard gauge-invariant continuum Yang-Mills
 comparison sector.  Paper 38 adds a closed ontology-free reduction inside the
 corpus.  Paper 39 expands the reduction into a standalone proof manuscript.
-What is still not complete is external mathematical acceptance in the ordinary
-community sense.  That requires independent review of the Paper 39 proof and
-its conventional presentation.
+Paper 40 closes the active-ISP C0 construction gate and prints the translation
+burden separately.  What is still not complete is external mathematical
+acceptance in the ordinary community sense.  That requires independent review
+of the Paper 39 proof, the Paper 40 C0 translation burden, and their
+conventional presentation.
 
 ## 10. Internal Theorems Versus External Bridges
 
@@ -861,8 +870,8 @@ intuition}\\
 \mathrm{V3} & \hbox{QFT and QCD reconstruction attempts}\\
 \mathrm{V4} & \hbox{formal hardening of GR, QFT, QCD, Yang-Mills descent,
 and Yang-Mills standard equivalence}\\
-\mathrm{V5} & \hbox{review, consequences, black holes, horizons, cosmology,
-information}
+\mathrm{V5} & \hbox{review, consequences, black holes, horizons, record
+stabilization, quantum computing}
 \end{array}
 }
 $$
@@ -883,7 +892,8 @@ ontology}\\
 \mathrm{P36} & \hbox{hardening summary and compilation}\\
 \mathrm{P37} & \hbox{standard-equivalence bridge for continuum Yang-Mills}\\
 \mathrm{P38} & \hbox{ontology-free Yang-Mills proof reduction}\\
-\mathrm{P39} & \hbox{standalone ontology-free Yang-Mills proof manuscript}
+\mathrm{P39} & \hbox{standalone ontology-free Yang-Mills proof manuscript}\\
+\mathrm{P40} & \hbox{C0 construction theorem for continuum Yang-Mills}
 \end{array}
 }
 $$
@@ -898,7 +908,21 @@ The current late-corpus document ledger is:
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
+- `relativistic-isp-v4-paper40-c0-construction-theorem-for-continuum-yang-mills.md`
+- `relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
 - `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
+- `relativistic-isp-v5-paper2-gravitational-record-stabilization-coherence-decay.md` (draft)
+- `relativistic-isp-v5-paper3-quantum-computation-as-finite-record-transport.md` (draft)
+- `relativistic-isp-v5-paper4-phase-as-stochastic-holonomy-computational-resource.md` (draft)
+- `relativistic-isp-v5-paper5-entanglement-as-indivisible-record-nonfactorization.md` (draft)
+- `relativistic-isp-v5-paper6-measurement-as-record-stabilization-quantum-computing.md` (draft)
+- `relativistic-isp-v5-paper7-quantum-error-correction-same-actual-preservation.md` (draft)
+- `relativistic-isp-v5-paper8-fault-tolerance-as-record-leakage-threshold.md` (draft)
+- `relativistic-isp-v5-paper9-topological-quantum-computing-as-protected-holonomy.md` (draft)
+- `relativistic-isp-v5-paper10-quantum-algorithms-as-record-amplification-machines.md` (draft)
+- `relativistic-isp-v5-paper11-bqp-as-efficiently-stabilizable-records.md` (draft)
+- `relativistic-isp-v5-paper12-physical-limits-quantum-computing-record-cost.md` (draft)
+- `relativistic-isp-v5-paper13-finite-record-resource-bounds-shor-factoring.md` (draft)
 
 ## 14. Why The Framework Is Barandes-Aligned
 

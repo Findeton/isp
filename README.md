@@ -6,7 +6,11 @@ This repository contains a developing research corpus on **Relativistic
 Indivisible Stochastic Processes** (ISP): an indivisible stochastic geometry
 and probability-first attempt to
 reconstruct quantum, relativistic, gauge, and gravitational structure from
-finite stochastic transports between hypersurface records.
+finite stochastic transports between hypersurface records.  The full
+ontology-free Yang-Mills manuscript is
+[V4 Paper 39: Standalone Ontology-Free Yang-Mills Proof](relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md),
+treated here as the full ontology-free document while it continues to be
+edited.
 
 For a compact physicist-facing overview, start here:
 [V5 Paper 0: Review Introduction For Physicists](relativistic-isp-v5-paper0-review-introduction-for-physicists.md).
@@ -360,6 +364,7 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
+- `relativistic-isp-v4-paper40-c0-construction-theorem-for-continuum-yang-mills.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -409,31 +414,38 @@ active ISP-V4 finite-record ontology
   Ward quotient, OS/GNS reconstruction, response floor, row-token majorants,
   crossing lemmas, Wilson area law, transfer gap, falsifier ledger, and final
   theorem without sourcing proof steps from the ISP corpus.
+- **Paper 40** develops the C0 construction gate identified by Paper 39.  It
+  proves C0 inside the active Relativistic ISP corpus and separates that
+  internal theorem from the harder ontology-free constructive Yang-Mills
+  existence burden.
 
 The resulting status is sharper than the earlier README: the corpus now has
 an internal ISP Yang-Mills descent theorem and a written standard-equivalence
 bridge for the gauge-invariant continuum Yang-Mills comparison sector.
 Paper 38 goes one step further: it writes the ontology-free reduction itself
 and closes OFYM1-OFYM12 inside the corpus.  Paper 39 turns that reduction
-into a standalone proof manuscript.  The remaining boundary is no longer an
-unnamed missing internal gate; it is independent external review of the
+into a standalone proof manuscript.  Paper 40 then develops the C0
+construction gate in the active ISP setting.  The remaining boundary is no
+longer an unnamed missing internal gate; it is independent external review of the
 standalone proof, especially the response-floor, row-token, crossing, and
-continuum-liminf steps.
+continuum-liminf steps, plus conventional review of the C0 translation burden.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  By Papers 29-39, the strongest V4
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-40, the strongest V4
 claim is a hardened active finite-record stack plus an ontology-free
 Yang-Mills reduction: effective GR, relativistic QFT kinematics, finite QCD
 dynamics, internal Yang-Mills confinement/mass-gap descent, the
 gauge-invariant standard-equivalence bridge for continuum Yang-Mills, and the
 OFYM1-OFYM12 ontology-free Yang-Mills proof ledger expanded into a standalone
-proof manuscript.  The remaining boundary is the broader external validation
-and externalization program: independent review of the Paper 39 proof and
-writing GR/QFT/QCD bridges with the same conventional clarity.
+proof manuscript, followed by an active-ISP C0 construction theorem.  The
+remaining boundary is the broader external validation and externalization
+program: independent review of the Paper 39 proof, conventional review of the
+Paper 40 C0 translation burden, and writing GR/QFT/QCD bridges with the same
+conventional clarity.
 
 ## V5: Consequences Of The Finite-Record Ontology
 
@@ -446,6 +458,18 @@ Current V5 review and consequence papers:
 
 - `relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
 - `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
+- `relativistic-isp-v5-paper2-gravitational-record-stabilization-coherence-decay.md` (draft)
+- `relativistic-isp-v5-paper3-quantum-computation-as-finite-record-transport.md` (draft)
+- `relativistic-isp-v5-paper4-phase-as-stochastic-holonomy-computational-resource.md` (draft)
+- `relativistic-isp-v5-paper5-entanglement-as-indivisible-record-nonfactorization.md` (draft)
+- `relativistic-isp-v5-paper6-measurement-as-record-stabilization-quantum-computing.md` (draft)
+- `relativistic-isp-v5-paper7-quantum-error-correction-same-actual-preservation.md` (draft)
+- `relativistic-isp-v5-paper8-fault-tolerance-as-record-leakage-threshold.md` (draft)
+- `relativistic-isp-v5-paper9-topological-quantum-computing-as-protected-holonomy.md` (draft)
+- `relativistic-isp-v5-paper10-quantum-algorithms-as-record-amplification-machines.md` (draft)
+- `relativistic-isp-v5-paper11-bqp-as-efficiently-stabilizable-records.md` (draft)
+- `relativistic-isp-v5-paper12-physical-limits-quantum-computing-record-cost.md` (draft)
+- `relativistic-isp-v5-paper13-finite-record-resource-bounds-shor-factoring.md` (draft)
 
 Main role:
 
@@ -458,6 +482,13 @@ Main role:
   licensed finite-record regime;
 - frame entropy, evaporation, information loss, and firewall questions as
   questions about exterior channels and global finite records.
+- prove the GRS1-GRS4 Penrose-like gravitational coherence-decay gate as a
+  finite-record stabilization theorem, with laboratory mass/separation
+  thresholds and falsifier experiments.
+- reinterpret quantum computation as finite record transport, with phase,
+  entanglement, measurement, error correction, fault tolerance, topological
+  protection, algorithms, BQP, physical limits, and Shor factoring bounds
+  treated as record-theoretic consequence papers.
 
 Paper 1 uses the V4 result stack as background:
 
@@ -485,6 +516,15 @@ ontological: in ISP, a black hole is not fundamentally a discontinuous point of
 infinite curvature.  The horizon is an exterior accessibility boundary, and
 the classical singularity is a sign that the continuum GR description has been
 pushed past the domain where it descends from finite stochastic records.
+Its second claim is internally closed and externally testable: geometric
+mismatch supplies a finite-record stabilization channel inside V5P2, and
+mesoscopic mass superpositions should lose coherence at calculable mass,
+separation, and hold-time thresholds if nature realizes that channel.
+Its third arc treats quantum computing as record engineering: coherent
+transport delays stable records, algorithms amplify answer-compatible records,
+error correction protects same-actual logical records, and factoring machines
+are bounded by period-record leakage rather than by a failure of Shor's
+abstract theorem.
 
 ## The Whole Architecture In One Line
 
@@ -493,7 +533,7 @@ V1: finite exchange defects
   -> V2: projective/refinement continuum viability
   -> V3: QFT, non-Abelian gauge, Yang-Mills source gates
   -> V4: geometry, GR, value-source laws, QFT/QCD, YM hardening, and YM standard-equivalence
-  -> V5: review and consequences of finite-record ontology, beginning with black holes
+  -> V5: review and consequences of finite-record ontology, including black holes, record stabilization, and quantum computing
 ```
 
 Or, conceptually:

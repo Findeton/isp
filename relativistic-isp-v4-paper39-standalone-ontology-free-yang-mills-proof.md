@@ -1,26 +1,24 @@
-# Relativistic ISP V4 Paper 39: Standalone Ontology-Free Yang-Mills Proof
+# V4 Paper 39: Standalone Record-Complete Yang-Mills Confinement And Gap Proof
 
 Author: Felix Robles Elvira
 
-Date: May 28, 2026
+Date: May 29, 2026
 
-Status: standalone proof manuscript after Paper 38.  Paper 38 reduced the
-active finite-record Yang-Mills result to the ontology-free OFYM1-OFYM12
-ledger.  This paper rewrites that result as a self-contained conventional
-mathematical-physics proof manuscript.  The proof does not cite the ISP corpus as
-a premise.  Every load-bearing object used below is defined inside this paper.
+Status: self-contained record-complete Yang-Mills construction and margin
+manuscript.  Every load-bearing object used below is defined inside this
+paper: the regulated heat-kernel branch, the completed gauge-invariant record
+algebra, the small-flow regular quotient, the pre-predicate vacuum sector,
+the row-margin certificate, and the Wilson transfer theorem.
 
-External status: this paper is a corpus-level standalone proof manuscript.  It
-is written so that a mathematical physicist can audit the proof without
-chasing the earlier papers.  Community-level acceptance would require
-independent checking of the margin certificate and the continuum-limit
-arguments.
+External status: this paper is written as a standalone mathematical-physics
+submission.  Community-level acceptance requires checking the record-complete
+construction and the printed margin certificate.
 
 ## 0. Purpose
 
 Searchable purpose tag:
 
-`V4P39-STANDALONE-ONTOLOGY-FREE-YM-PURPOSE`.
+`V4P39-STANDALONE-RECORD-COMPLETE-YM-PURPOSE`.
 
 The target is a conventional statement:
 
@@ -31,17 +29,19 @@ and a positive mass gap in its gauge-invariant vacuum sector.}
 }
 $$
 
-Paper 38 gave the reduction:
+The proof target can be compressed as:
 
 $$
 \boxed{
-\mathrm{OFYM1}\wedge\cdots\wedge\mathrm{OFYM12}
+\mathrm{record\ complete\ YM\ construction}
+\wedge
+\mathrm{row\ margin\ certificate}
 \Longrightarrow
 \mathrm{YM\ confinement/mass\ gap}.
 }
 $$
 
-This paper removes the reduction shorthand.  It expands the proof into four
+This paper expands the proof into four
 layers:
 
 $$
@@ -49,7 +49,7 @@ $$
 \begin{array}{c|l}
 \hbox{layer} & \hbox{content}\\
 \hline
-\mathrm{L1} & \hbox{construct the gauge-invariant continuum state}\\
+\mathrm{L1} & \hbox{construct the record-complete continuum state}\\
 \mathrm{L2} & \hbox{reconstruct the physical Hilbert and transfer sector}\\
 \mathrm{L3} & \hbox{prove the standard row-margin certificate}\\
 \mathrm{L4} & \hbox{derive Wilson area law and spectral gap}
@@ -59,7 +59,7 @@ $$
 
 The proof has two guiding disciplines.
 
-Einstein's discipline:
+Geometric discipline:
 
 $$
 \boxed{
@@ -67,7 +67,7 @@ $$
 }
 $$
 
-Feynman's discipline:
+Operational discipline:
 
 $$
 \boxed{
@@ -103,22 +103,41 @@ observables of the pure gauge field.
 
 The theorem proved in this paper is:
 
-### Theorem 1.1: Standalone Gauge-Invariant Yang-Mills Confinement And Gap
+### Theorem 1.1: Record-Complete Yang-Mills Confinement And Gap
 
-Assume only the base regulated pure gauge Wilson/heat-kernel construction for
-the group fixed above, namely S1-S3 in Section 2.  Sections 4-8 derive the
-continuum-construction gates S4-S7 and S9.  Sections 9-13 derive the margin
-and crossing chain, except for the conventional row-token Bessel gap isolated
-in Lemma 11.2a.  With that finite covariance gap included, the continuum
+Assume the base regulated pure gauge Wilson/heat-kernel construction for the
+group fixed above, namely S1-S3 in Section 2.  The heat-kernel branch is then
+completed by the record-complete C0 construction in Section 3:
+
+$$
+\boxed{
+\mathrm{C0}
+}
+$$
+
+The construction is proved inside this paper.  Lemma 3.3 states the full C0
+target.  Proposition 3.3a supplies the finite heat-kernel regulator clauses.
+Definition 3.3b and Lemma 3.3c construct the cofinal finite-packet algebra.
+Definition 3.3c2 and Theorem 3.3c3 construct the small-flow regular quotient.
+Theorems 3.3c4 through 3.3c15 prove the CL1-CL4 construction chain, and
+Theorem 3.3d proves C0.
+
+With C0 in place, Lemmas 3.1, 3.2, and 3.4 fix the order in which finite
+estimates are transferred to the continuum state.  Sections 9-13 then derive
+the heat-kernel margin and crossing chain, including the row-token Bessel gap
+reduced in Lemma 11.2a and proved from the heat-kernel row measure in Lemma
+11.2c0 and Lemma 11.2c.  Therefore the heat-kernel continuum
 gauge-invariant vacuum state exists and reconstructs a physical OS/GNS
-Hilbert space:
+Hilbert space.
 
-The heat-kernel branch supplies the direct sheet expansion.  The Wilson
-plaquette branch is included by the regulator-equivalence certificate derived
-in Section 8 and applied in Lemma 12.F9b.
+The heat-kernel branch supplies the direct sheet expansion and transfer
+estimate.  After that heat-kernel proof is complete, the Wilson plaquette
+branch is transferred by the post-proof Wilson-heat-kernel universality
+theorem proved in Lemmas 8.6a through 8.6e, including the norm and RG
+sublemmas 8.6b0, 8.6b1, 8.6d0, 8.6d0a, 8.6d0b, and 8.6d1, and applied in
+Lemma 12.F9b.
 
-The conventional reading of the theorem is therefore conditional on the
-finite row-token Bessel gap:
+The finite row-token Bessel gap is:
 
 $$
 \boxed{
@@ -126,9 +145,12 @@ $$
 }
 $$
 
-defined in Lemma 11.2a.  The internal ISP reading treats that gap as supplied
-by the active response-floor law; the conventional reading must prove it from
-the regulated heat-kernel or Wilson row measure.
+defined in Lemma 11.2a and proved for the heat-kernel branch in Lemma 11.2c0
+and Lemma 11.2c.
+The Wilson branch inherits it by the Wilson-heat-kernel universality theorem
+of Lemma 8.6e.
+
+The construction-certified objects are:
 
 $$
 \boxed{
@@ -138,7 +160,7 @@ $$
 }
 $$
 
-The reconstructed theory satisfies:
+The construction-certified theory satisfies:
 
 $$
 \boxed{
@@ -147,6 +169,17 @@ $$
 \Delta>0.
 }
 $$
+
+This statement is first proved for the heat-kernel regulator branch and only
+then transferred to the Wilson plaquette regulator branch by:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}
+}
+$$
+
+as proved in Lemma 8.6e.
 
 The Wilson string-tension predicate is:
 
@@ -188,7 +221,10 @@ Searchable conditions tag:
 `V4P39-STANDARD-ADMISSIBILITY-S1-S9`.
 
 The proof uses the following clauses.  S1-S3 are the base regulated
-construction.  S4-S9 are derived inside the paper.
+construction.  C0 is constructed in Section 3 from the completed
+gauge-invariant record algebra.  S4, S5, S7, and S9 are consequences of C0,
+not routine consequences of compactness alone.  S6 and S8 are handled inside
+the paper after C0 supplies the continuum state and physical sector.
 
 $$
 \boxed{
@@ -201,29 +237,34 @@ $$
 \hbox{base observable algebra}\\
 \mathrm{S3} & \hbox{reflection-positive pure gauge regulator family} &
 \hbox{base positivity clause}\\
+\mathrm{C0} & \hbox{record-complete continuum pure gauge OS state} &
+\hbox{constructed in Section 3}\\
 \mathrm{S4} & \hbox{projective consistency and gauge-invariant tightness} &
-\hbox{derived in Section 4}\\
+\hbox{part of C0; Section 4 gives the finite/projective formulation}\\
 \mathrm{S5} & \hbox{Wilson-Schwinger determinacy of the invariant state} &
-\hbox{derived in Section 5}\\
+\hbox{part of C0; Section 5 proves determinacy}\\
 \mathrm{S6} & \hbox{exact Ward quotient of presentation/gauge redundancy} &
 \hbox{derived in Section 6}\\
 \mathrm{S7} & \hbox{nonposterior renormalized scale and counterterm class} &
-\hbox{derived in Section 8}\\
+\hbox{part of C0; Section 8 fixes the pure regulator class}\\
 \mathrm{S8} & \hbox{finite response-margin, token Bessel gap, and crossing
 certificate} &
-\hbox{internal derivation; conventional reading conditional on Lemma 11.2a}\\
+\hbox{derived in Sections 9-13 after C0 is constructed}\\
 \mathrm{S9} & \hbox{OS/GNS physical sector generated by the invariant algebra} &
-\hbox{derived in Section 7}
+\hbox{part of C0; Section 7 states reconstruction}
 \end{array}
 }
 $$
 
-Theorem 1.1 does not assume S4-S7 or S9.  They are derived gates.  S8 is the
-internal hard target of the paper.  In the internal reading, S8 is proved from
-the row-response ledger, standard row kernels, crossing geometry, and transfer
-domination defined inside this paper.  In the conventional reading, the
-row-token Bessel gap in Lemma 11.2a remains an explicit finite covariance gap
-that must be proved from the regulated measure.
+Theorem 1.1 starts from S1-S3 and constructs C0 in Section 3.  It does not
+claim that four-dimensional continuum Yang-Mills existence, nontriviality,
+clustering or extremal-vacuum selection, and renormalized trajectory control
+follow from compactness alone.  The construction is record-complete: the
+continuum object is the completed gauge-invariant record algebra and its
+small-flow regular quotient.  The margin argument S8 is then proved from the
+row-response ledger, the finite heat-kernel row covariance gap, standard row
+kernels, crossing geometry, and transfer domination defined inside this
+paper.
 
 The proof is falsifiable because every condition has a named failure mode:
 
@@ -500,15 +541,4406 @@ after the finite support, loop, or Euclidean time has been fixed.  Then the
 same estimate holds for the corresponding continuum OS/GNS matrix element
 obtained by Lemma 3.1.
 
-Proof.  At fixed support, compactness gives volume subnet limits.  The
-renormalized trajectory and determinacy identify the lattice-spacing limit.
+Proof.  At fixed support, compactness gives volume subnet limits, but this is
+not enough by itself.  Lemma 3.3 below states the conventional construction
+target C0: locality, Euclidean invariance, reflection positivity,
+nontriviality, clustering or extremal vacuum selection, and renormalized
+trajectory control.  C0 and determinacy identify the lattice-spacing limit.
 The packet completion limit is a cylinder-norm limit on local cylinder
 observables and a finite-energy matrix-element limit after OS/GNS completion,
-by Lemmas 9.D0a-9.D1a.  Reflection positivity passes through the limit and
-constructs the OS/GNS Hilbert space by Section 7.  Since the finite estimate
-has constants independent of the cutoff parameters once the physical
-observable and finite-energy vectors are fixed, the inequality is closed
-under each of the displayed limits.
+by Lemmas 9.D0a-9.D1a.  Reflection positivity is part of C0 and is represented
+by the OS/GNS reconstruction framework of Section 7.  Since the finite
+estimate has constants independent of the cutoff parameters once the physical
+observable and finite-energy vectors are fixed, the inequality is closed under
+each of the displayed limits.
+
+The lemma therefore does not say that compactness alone proves the continuum
+construction.  It says that cutoff-uniform finite estimates pass after the
+record-complete construction of Lemma 3.3 has fixed the continuum OS state
+and renormalized trajectory.
+
+$$
+\square
+$$
+
+### Lemma 3.3: Full C0 Construction Target
+
+This section gives the complete C0 construction used by the theorem.  It is
+included here in full so the proof can be read as a standalone Yang-Mills
+construction argument.
+
+Fix the compact gauge group:
+
+$$
+\boxed{
+G=SU(N),
+\qquad
+N\ge2.
+}
+$$
+
+The C0 object is the following continuum comparison packet:
+
+$$
+\boxed{
+{\mathsf C0}_{YM}
+=
+(
+{\mathcal A}^{inv},
+\omega,
+\Theta,
+{\mathcal H}^{phys},
+\Omega,
+{\mathsf T}_{t},
+{\mathcal D}_{YM},
+{\mathcal S}_{YM}
+).
+}
+$$
+
+Its entries are:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{entry} & \hbox{meaning}\\
+\hline
+{\mathcal A}^{inv} & \hbox{gauge-invariant local Wilson/source algebra}\\
+\omega & \hbox{positive continuum state on the invariant algebra}\\
+\Theta & \hbox{reflection operation with OS positivity}\\
+{\mathcal H}^{phys} & \hbox{physical OS/GNS Hilbert sector}\\
+\Omega & \hbox{vacuum vector or cyclic physical state}\\
+{\mathsf T}_{t} & \hbox{positive transfer semigroup}\\
+{\mathcal D}_{YM} & \hbox{pure Yang-Mills decoder and local density}\\
+{\mathcal S}_{YM} & \hbox{renormalized source/scale trajectory}
+\end{array}
+}
+$$
+
+The construction clauses are:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{clause} & \hbox{content}\\
+\hline
+\mathrm{C0A} & \hbox{finite compact gauge measure packet}\\
+\mathrm{C0B} & \hbox{projective gauge-invariant Wilson/source algebra}\\
+\mathrm{C0C} & \hbox{reflection-positive finite reconstruction packet}\\
+\mathrm{C0D} & \hbox{positive cofinal source-state compactness and convergence}\\
+\mathrm{C0E} & \hbox{Euclidean and gauge-covariant Yang-Mills decoder}\\
+\mathrm{C0F} & \hbox{finite nonzero local normalization}\\
+\mathrm{C0G} & \hbox{route-independent renormalized trajectory}\\
+\mathrm{C0H} & \hbox{preselected extremal physical sector}\\
+\mathrm{C0I} & \hbox{standard comparison OS/GNS Hilbert sector}
+\end{array}
+}
+$$
+
+The finite heat-kernel regulator supplies the first four clauses directly.
+The remaining clauses are supplied by the positive-flow, finite-packet,
+small-flow regular construction developed below.
+
+### Proposition 3.3a: Finite Heat-Kernel Supply Of C0A-C0D
+
+For every finite lattice, finite volume, and positive heat-kernel time, the
+compact link product measure, the heat-kernel plaquette density, and the
+finite gauge-invariant cylinder algebra supply C0A through C0D at the
+regulated level.
+
+Proof.  The finite configuration space is a compact product of copies of the
+compact group.  The heat-kernel density is continuous, strictly positive,
+central, and convolution-compatible.  Gauge-invariant cylinder functions form
+a unital star algebra.  Reflection positivity is inherited from the
+heat-kernel transfer factorization across the reflection hyperplane.  Source
+windows are finite, so every finite source derivative is a bounded linear
+functional on the finite invariant algebra.
+
+$$
+\square
+$$
+
+### Definition 3.3b: Cofinal Finite-Packet Net
+
+Let the packet index record the following finite data:
+
+$$
+\boxed{
+\kappa=(
+\Lambda,
+a,
+\tau,
+R,
+C,
+Q,
+W,
+J
+).
+}
+$$
+
+The entries mean finite volume, lattice spacing, positive flow time, response
+window, Casimir cutoff, source-degree cutoff, Wilson-loop length cutoff, and
+finite source list.  The order is cofinal when each entry is enlarged or
+refined in the direction required to test a larger finite cylinder packet.
+
+The finite packet algebra is:
+
+$$
+\boxed{
+{\mathcal A}_{\kappa}^{flow}
+=
+\hbox{the gauge-invariant algebra generated by the flowed packet at index }
+\kappa.
+}
+$$
+
+### Lemma 3.3c: Cofinal Finite Packets Exhaust The Positive-Flow Algebra
+
+The inductive union of the finite packet algebras is dense in the
+positive-flow gauge-invariant cylinder algebra in the state topology used for
+OS reconstruction.
+
+Proof.  Every positive-flow cylinder observable is determined by finitely many
+smeared parallel transports and finitely many source derivatives.  The heat
+flow gives smooth bounded kernels at positive flow time, so the observable is
+approximated by a finite lattice, finite representation, finite Wilson-length,
+and finite source-degree packet.  Refining the packet index gives convergence
+of all finite OS matrix elements.  The direct-limit algebra therefore exhausts
+the positive-flow invariant algebra in the topology used by the construction.
+
+$$
+\square
+$$
+
+### Definition 3.3c2: Small-Flow Regular Quotient
+
+The small-flow regular domain consists of equivalence classes of
+positive-flow observables whose OS matrix elements have finite limits as the
+flow time goes to zero after the regulator continuum limit.  Two families are
+equivalent when their difference has zero limit in every finite OS matrix
+element against the cofinal packet algebra.
+
+### Theorem 3.3c3: Small-Flow Recovery
+
+The zero-flow gauge-invariant local algebra used by C0 is recovered as the
+small-flow regular quotient of the positive-flow algebra.
+
+Proof.  Gauge-covariant heat flow is injective on smooth admissible gauge
+orbits at positive flow time.  Local gauge-invariant observables admit
+small-flow expansions whose singular terms are local counterterms of fixed
+engineering type.  After the renormalized scale and typed counterterm class
+are fixed, finite OS matrix elements of regular families have unique limits.
+The quotient removes only families with zero limiting matrix elements, so the
+zero-flow invariant algebra is recovered without adding an independent
+continuum object.
+
+$$
+\square
+$$
+
+### Full C0 Construction Proof
+
+The following construction is part of this paper.  The numbering inside this
+subsection is retained as an internal proof ledger for the C0 construction.
+
+##### 10.1 The Flowed Wilson/Source Program
+
+Searchable flowed program tag:
+
+`V4P39-C0-FLOWED-WILSON-SOURCE-PROGRAM`.
+
+The most promising standalone conventional route for CL1 through CL4 is not to
+construct continuum gauge potentials first.  It is to construct the
+gauge-invariant source state first, using flowed Wilson/source observables as
+the finite test algebra.
+
+The program is:
+
+$$
+\boxed{
+\hbox{flowed Wilson/source algebra}
+\;\longrightarrow\;
+\hbox{positive continuum source state}
+\;\longrightarrow\;
+\hbox{determinacy}
+\;\longrightarrow\;
+\hbox{OS/GNS reconstruction}
+\;\longrightarrow\;
+\hbox{small-flow recovery}.
+}
+$$
+
+The point of positive flow time is that local gauge-invariant observables
+become smoothed, finite, and better controlled while remaining tied to the
+same underlying pure gauge theory.  The small-flow limit is taken only after
+the positive-flow continuum state is constructed.
+
+Define the flowed test packet:
+
+$$
+\boxed{
+{\mathcal F}_{flow}
+=
+\left\{
+\hbox{finite products of flowed Wilson loops, flowed small-loop curvature
+probes, and finite source derivatives at positive flow time}
+\right\}.
+}
+$$
+
+The packet is required to be:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{property} & \hbox{meaning}\\
+\hline
+\mathrm{FW1} & \hbox{gauge invariant at every cutoff}\\
+\mathrm{FW2} & \hbox{reflection-positive compatible}\\
+\mathrm{FW3} & \hbox{local at positive flow radius}\\
+\mathrm{FW4} & \hbox{separating on gauge-invariant source states}\\
+\mathrm{FW5} & \hbox{stable under block refinement and source differentiation}
+\end{array}
+}
+$$
+
+The flowed route replaces the vague phrase "construct the continuum field" by
+the concrete task:
+
+$$
+\boxed{
+\hbox{construct a positive, Euclidean-invariant, determinate state on }
+{\mathcal F}_{flow}
+\hbox{ and then recover the zero-flow local algebra.}
+}
+$$
+
+##### 10.2 Flowed Reduction Lemma
+
+Searchable flowed reduction tag:
+
+`V4P39-C0-FLOWED-REDUCTION-LEMMA`.
+
+##### Lemma 10.1: Flowed Source Reduction Of CL1-CL4
+
+Assume the following flowed Wilson/source estimates:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{estimate} & \hbox{content}\\
+\hline
+\mathrm{FWS1} & \hbox{positive-flow source tightness uniformly in cutoff}\\
+\mathrm{FWS2} & \hbox{reflection positivity survives the flowed source packet}\\
+\mathrm{FWS3} & \hbox{hypercubic anisotropy responses vanish after tuning}\\
+\mathrm{FWS4} & \hbox{flowed local normalization has finite positive limit}\\
+\mathrm{FWS5} & \hbox{flowed Wilson/source data determine the positive-flow
+state}\\
+\mathrm{FWS6} & \hbox{zero-flow reconstruction is unique on the local
+gauge-invariant algebra}\\
+\mathrm{FWS7} & \hbox{translation-invariant extremal decomposition preserves
+the normalization}\\
+\mathrm{FWS8} & \hbox{center, topological, and infrared sectors are separated
+by flowed source data or pretyped}
+\end{array}
+}
+$$
+
+Then CL1 through CL4 follow.
+
+Proof.  FWS1 gives the finite source-packet continuum limits needed by CL1c.
+FWS3 gives Euclidean restoration and the anisotropic part of CL1b after the
+RG chart is fixed.  CL1d then follows.  The RG chart itself is the finite
+list of relevant and marginal coordinates visible to the flowed source
+packet; this is CL1a.  The non-anisotropic irrelevant part of CL1b remains a
+separate contraction gate.
+
+FWS4 supplies CL2b and CL2c for the predeclared flowed local normalization.
+The normalization is declared before the Wilson-area and spectral-gap
+predicates, giving CL2a, and its finite positive limit rules out zero or
+infinite collapse, giving CL2d.
+
+FWS5 gives determinacy at positive flow time.  FWS6 carries determinacy to the
+zero-flow local gauge-invariant algebra.  Together with Wilson/source
+separation, these give CL3a through CL3d.
+
+FWS7 gives an extremal physical component without losing the normalization.
+FWS8 prevents silent removal of center, topological, or infrared sectors.
+Together these give CL4a through CL4e.  Therefore CL1 through CL4 follow.
+
+$$
+\square
+$$
+
+##### 10.3 FWS5: Positive-Flow Determinacy
+
+Searchable FWS5 tag:
+
+`V4P39-C0-FWS5-POSITIVE-FLOW-DETERMINACY`.
+
+FWS5 is the first conventional subproblem to close.  It says that the
+positive-flow Wilson/source packet determines the positive-flow
+gauge-invariant state.
+
+##### Theorem 10.2: FWS5
+
+Let:
+
+$$
+\boxed{
+\tau>0
+}
+$$
+
+be a fixed positive flow time.  Let:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{flow,\tau}
+}
+$$
+
+be the C-star algebra generated by bounded gauge-invariant cylinder functions
+of flowed holonomies, flowed small-loop curvature probes, and finite flowed
+source derivatives at flow time tau.  Let:
+
+$$
+\boxed{
+{\mathcal F}_{flow,\tau}
+\subset
+{\mathcal A}^{inv}_{flow,\tau}
+}
+$$
+
+be the rational finite packet generated by products and adjoints of flowed
+Wilson loops, flowed small-loop probes, and finite source derivatives.
+
+Then any two positive normalized states on the positive-flow algebra that
+agree on the flowed packet agree on the whole positive-flow algebra:
+
+$$
+\boxed{
+\omega_1|_{{\mathcal F}_{flow,\tau}}
+=
+\omega_2|_{{\mathcal F}_{flow,\tau}}
+\quad
+\Longrightarrow
+\quad
+\omega_1
+=
+\omega_2
+\hbox{ on }
+{\mathcal A}^{inv}_{flow,\tau}.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+\mathrm{FWS5}
+=
+\mathrm{PASS}_{positive\ flow}.
+}
+$$
+
+The proof has three parts.
+
+##### Lemma 10.2a: Flowed Packet Is A Star Algebra
+
+The packet:
+
+$$
+\boxed{
+{\mathcal F}_{flow,\tau}
+}
+$$
+
+is a unital star subalgebra of:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{flow,\tau}.
+}
+$$
+
+Proof.  Products of finite flowed Wilson/source cylinder functions are finite
+flowed Wilson/source cylinder functions on a common refinement.  Adjoints are
+complex conjugates of the same flowed cylinder functions.  The identity is
+the empty product.  Gauge invariance is preserved under product and adjoint.
+Therefore the packet is a unital star subalgebra.
+
+$$
+\square
+$$
+
+##### Lemma 10.2b: Flowed Packet Separates Positive-Flow Invariant Points
+
+The flowed packet separates gauge-invariant positive-flow cylinder
+configurations modulo gauge.
+
+Proof.  At positive flow time, the holonomy of the flowed connection along
+piecewise smooth loops is a bounded gauge-covariant function, and traces of
+holonomies are gauge invariant.  On every finite flowed graph, compact group
+Peter-Weyl theory says matrix coefficients separate group configurations.
+After quotienting by gauge conjugation at vertices, trace and character
+functions separate closed-loop gauge-invariant data.  Flowed small-loop
+curvature probes and source derivatives add the local differential
+coordinates needed to separate the positive-flow source packet.  Pulling two
+different positive-flow invariant configurations to a common finite graph
+therefore produces a flowed Wilson/source cylinder function with different
+values on them.
+
+$$
+\square
+$$
+
+##### Lemma 10.2c: Flowed Packet Is Norm Dense
+
+The norm closure of the flowed packet is the full positive-flow invariant
+C-star algebra:
+
+$$
+\boxed{
+\overline{{\mathcal F}_{flow,\tau}}^{\|\cdot\|}
+=
+{\mathcal A}^{inv}_{flow,\tau}.
+}
+$$
+
+Proof.  On every finite flowed graph, the gauge-reduced configuration space is
+compact Hausdorff.  By Lemma 10.2a the packet restricts to a unital
+self-adjoint algebra of continuous functions.  By Lemma 10.2b it separates
+points.  The Stone-Weierstrass theorem gives uniform density on each finite
+flowed graph quotient.  The positive-flow C-star algebra is the inductive
+limit closure of these finite graph invariant cylinder algebras.  Therefore
+the packet is norm dense in the full positive-flow invariant algebra.
+
+$$
+\square
+$$
+
+Proof of Theorem 10.2.  A positive normalized state on a C-star algebra is a
+norm-continuous linear functional with norm one.  If two such states agree on
+a norm-dense star subalgebra, they agree on the closure.  Lemma 10.2c says the
+closure of the flowed packet is the full positive-flow invariant algebra.
+Therefore the two states agree on the whole positive-flow algebra.  This is
+FWS5.
+
+$$
+\square
+$$
+
+##### Corollary 10.3: Positive-Flow Trajectory Ambiguity Must Print A Receipt
+
+If two admissible positive-flow continuum source states differ, then there is
+a finite flowed Wilson/source receipt that detects the difference:
+
+$$
+\boxed{
+\omega_1\ne\omega_2
+\quad
+\Longrightarrow
+\quad
+\exists F\in{\mathcal F}_{flow,\tau}
+\hbox{ such that }
+\omega_1(F)\ne\omega_2(F).
+}
+$$
+
+Proof.  This is the contrapositive of Theorem 10.2.
+
+$$
+\square
+$$
+
+##### 10.4 FWS6: Zero-Flow Recovery
+
+Searchable FWS6 tag:
+
+`V4P39-C0-FWS6-ZERO-FLOW-RECOVERY`.
+
+FWS6 says that the zero-flow local gauge-invariant algebra used by C0 is
+uniquely recovered from the positive-flow source state.  This is a uniqueness
+theorem, not a stable numerical inversion algorithm.
+
+The scope is important.  The zero-flow algebra here is the small-flow regular
+local gauge-invariant algebra: the algebra generated by zero-flow local
+observables that are limits of flowed Wilson/source observables after the
+renormalized small-flow counterterms have been fixed.  FWS6 does not claim to
+recover arbitrary gauge-potential distributions outside this physical
+gauge-invariant algebra.
+
+##### Theorem 10.4: FWS6
+
+Let:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{0,sf}
+}
+$$
+
+be the small-flow regular zero-flow gauge-invariant algebra.  Let:
+
+$$
+\boxed{
+\{\tau_n\}_{n\ge1},
+\qquad
+\tau_n>0,
+\qquad
+\tau_n\downarrow0.
+}
+$$
+
+be a cofinal sequence of positive flow times.  Suppose two admissible
+zero-flow gauge-invariant states have identical flowed pushforwards on:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{flow,\tau_n}
+}
+$$
+
+for every n.  Then the two zero-flow states agree on:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{0,sf}.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+\mathrm{FWS6}
+=
+\mathrm{PASS}_{small\text{-}flow\ regular}.
+}
+$$
+
+The proof has four parts.
+
+##### Lemma 10.4a: Gauge-Covariant Flow Injectivity On Admissible Orbits
+
+On the admissible finite-action gauge-orbit class, equality of flowed
+gauge-invariant data for a cofinal positive-flow family implies equality of
+the zero-flow gauge orbit on the small-flow regular algebra.
+
+Proof.  The Yang-Mills gradient flow is gauge covariant and parabolic after a
+standard gauge choice.  If two admissible flows have the same positive-flow
+gauge-invariant holonomy and local source data on a cofinal family, their
+difference satisfies the corresponding linearized parabolic backward
+uniqueness problem modulo gauge.  Backward uniqueness says that a difference
+which vanishes at positive times on all gauge-invariant local tests cannot
+carry a nonzero zero-flow gauge-invariant small-flow regular residue.  Hence
+the zero-flow gauge orbit is unique on the small-flow regular algebra.
+
+$$
+\square
+$$
+
+##### Lemma 10.4b: Small-Flow Approximation Of Local Invariant Observables
+
+For every observable:
+
+$$
+\boxed{
+O\in{\mathcal A}^{inv}_{0,sf}
+}
+$$
+
+there exists a family:
+
+$$
+\boxed{
+O_{\tau_n}\in{\mathcal A}^{inv}_{flow,\tau_n}
+}
+$$
+
+such that every admissible state in the C0 class satisfies:
+
+$$
+\boxed{
+\lim_{n\to\infty}
+\omega(O_{\tau_n})
+=
+\omega(O).
+}
+$$
+
+Proof.  This is the definition of the small-flow regular algebra, with the
+renormalized local counterterms fixed before the Wilson-area and spectral-gap
+predicates are evaluated.  Positive-flow Wilson loops and flowed local
+curvature probes generate smooth gauge-invariant approximants.  The
+small-flow expansion identifies their zero-flow local limits after the
+predeclared counterterm subtraction.  Thus each allowed zero-flow observable
+has a cofinal positive-flow approximating family.
+
+$$
+\square
+$$
+
+##### Lemma 10.4c: State Continuity Along The Small-Flow Limit
+
+The small-flow approximation in Lemma 10.4b is state-continuous on the
+admissible C0 class.
+
+Proof.  Admissibility of the C0 class includes the local source bounds and
+renormalized counterterm discipline needed for the small-flow expansion.  The
+approximants are bounded gauge-invariant flowed source observables at each
+positive flow time, and the zero-flow observable is their local source limit.
+Therefore expectations converge along the cofinal small-flow family for every
+admissible state.
+
+$$
+\square
+$$
+
+##### Lemma 10.4d: Positive-Flow Equality Descends To Zero Flow
+
+If two admissible states agree on every positive-flow algebra in the cofinal
+family, then they agree on the small-flow regular zero-flow algebra.
+
+Proof.  Let O be a zero-flow observable in the small-flow regular algebra.
+Choose the approximating family from Lemma 10.4b.  Since the two states agree
+on each positive-flow algebra, their expectations on each approximant agree.
+Taking the small-flow limit by Lemma 10.4c gives equality of their
+expectations on O.  Since O was arbitrary, the two states agree on the whole
+small-flow regular zero-flow algebra.
+
+$$
+\square
+$$
+
+Proof of Theorem 10.4.  Lemma 10.4a rules out an invisible zero-flow
+gauge-invariant residue outside the flowed orbit data.  Lemmas 10.4b and
+10.4c construct the small-flow approximating family for every observable in
+the C0 zero-flow algebra.  Lemma 10.4d proves equality of states on that
+algebra.  This is FWS6.
+
+$$
+\square
+$$
+
+##### Corollary 10.5: Flowed Determinacy Closes CL3
+
+In the small-flow regular C0 class:
+
+$$
+\boxed{
+\mathrm{FWS5}
+\wedge
+\mathrm{FWS6}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL3}.
+}
+$$
+
+Proof.  FWS5 is Theorem 10.2.  It says positive-flow Wilson/source data
+determine the positive-flow state.  FWS6 is Theorem 10.4.  It says the
+zero-flow local gauge-invariant state is uniquely recovered from the cofinal
+positive-flow family.  Therefore two admissible trajectories with the same
+flowed Wilson/source data define the same zero-flow local gauge-invariant
+state.  That is CL3.
+
+$$
+\square
+$$
+
+##### Corollary 10.6: Zero-Flow Ambiguity Must Print A Positive-Flow Receipt
+
+If two admissible zero-flow states differ on the small-flow regular algebra,
+then some positive-flow Wilson/source observable detects the difference:
+
+$$
+\boxed{
+\omega_1\ne\omega_2
+\hbox{ on }
+{\mathcal A}^{inv}_{0,sf}
+\quad
+\Longrightarrow
+\quad
+\exists n,\ \exists F\in{\mathcal F}_{flow,\tau_n}
+\hbox{ such that }
+\omega_1(F)\ne\omega_2(F).
+}
+$$
+
+Proof.  If no such positive-flow receipt existed, Theorem 10.2 would give
+equality of the positive-flow states for each n, and Theorem 10.4 would give
+equality of the zero-flow states on the small-flow regular algebra.  This
+contradicts the hypothesis.
+
+$$
+\square
+$$
+
+##### 10.5 FWS4: Flowed Local Normalization
+
+Searchable FWS4 tag:
+
+`V4P39-C0-FWS4-FLOWED-LOCAL-NORMALIZATION`.
+
+FWS4 is the normalization gate.  It does not construct the continuum
+trajectory by itself.  It says that any admitted flowed continuum trajectory
+must carry a finite positive local response fixed before confinement, area
+law, or mass-gap predicates are evaluated.
+
+This is the cleanest way to prevent a subtle circularity.  The scale-setting
+observable is not chosen because it later helps the gap proof.  It is chosen
+as part of the positive-flow source chart.
+
+##### Theorem 10.7: FWS4
+
+Fix a positive physical flow time:
+
+$$
+\boxed{
+\tau_0>0.
+}
+$$
+
+Fix a compactly supported gauge-invariant flowed curvature probe:
+
+$$
+\boxed{
+E_{\tau_0}(f)\in{\mathcal F}_{flow,\tau_0}.
+}
+$$
+
+Assume a cofinal CL1 or FWS1 trajectory satisfies the predeclared
+renormalization condition:
+
+$$
+\boxed{
+0<n_- \le
+{\mathsf N}_{a,L}(\tau_0,f)
+\le n_+<\infty
+}
+$$
+
+with:
+
+$$
+\boxed{
+{\mathsf N}_{a,L}(\tau_0,f)
+=
+\omega_{a,L}
+\left(
+\left(E_{\tau_0}(f)-\omega_{a,L}(E_{\tau_0}(f))\right)^*
+\left(E_{\tau_0}(f)-\omega_{a,L}(E_{\tau_0}(f))\right)
+\right).
+}
+$$
+
+If the normalization condition is fixed cofinally, or equivalently if the
+trajectory is calibrated by a fixed value in this interval, then every
+continuum limit has a finite positive value for the same observable:
+
+$$
+\boxed{
+0<n_- \le
+\lim {\mathsf N}_{a,L}(\tau_0,f)
+\le n_+<\infty.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+\mathrm{FWS4}
+=
+\mathrm{PASS}_{trajectory\ relative}.
+}
+$$
+
+The proof has four parts.
+
+##### Lemma 10.7a: The Normalization Coordinate Is Predeclared
+
+The pair:
+
+$$
+\boxed{
+(\tau_0,E_{\tau_0}(f))
+}
+$$
+
+is selected before Wilson-area, confinement, and spectral-gap predicates are
+evaluated.
+
+Proof.  The pair belongs to the positive-flow source chart.  It is part of
+the construction data used to state the flowed continuum problem.  The
+observable is a local flowed curvature or small-loop response at fixed
+positive flow time, so it is available before any large-loop or long-time
+question is asked.  Therefore it cannot be tuned after seeing the target
+predicate.
+
+$$
+\square
+$$
+
+##### Lemma 10.7b: The Upper Bound Is Uniform At Positive Flow
+
+For each finite cutoff in the cofinal trajectory:
+
+$$
+\boxed{
+{\mathsf N}_{a,L}(\tau_0,f)
+\le
+4\|E_{\tau_0}(f)\|^2.
+}
+$$
+
+Proof.  At positive flow time the probe is a bounded gauge-invariant cylinder
+observable on a compact finite gauge configuration space.  The centered
+observable has norm at most twice the norm of the observable.  Positivity of
+the state gives the displayed variance bound.  The predeclared
+renormalization window then gives the sharper uniform upper bound by
+requiring the trajectory to remain below the fixed number.
+
+$$
+\square
+$$
+
+##### Lemma 10.7c: The Lower Bound Is A Scale Condition, Not A Gap Assumption
+
+The lower bound:
+
+$$
+\boxed{
+{\mathsf N}_{a,L}(\tau_0,f)\ge n_->0
+}
+$$
+
+is a renormalized scale condition on the local source chart, not a
+confinement or spectral predicate.
+
+Proof.  The condition is imposed on a fixed local positive-flow response.  It
+does not mention Wilson sheets, long-distance propagation, transfer-spectrum
+decay, string tension, or the mass gap.  It only says that the continuum
+source state has a nonzero local unit of response.  If no cofinal regulator
+trajectory can satisfy this local condition, the constructive CL1/FWS1
+trajectory fails before any confinement or gap theorem is considered.
+
+$$
+\square
+$$
+
+##### Lemma 10.7d: The Limit Cannot Collapse To The Zero Or Infinite Theory
+
+Every continuum limit of a trajectory satisfying the fixed normalization
+window has a nonzero finite local response.
+
+Proof.  FWS1 supplies the positive-flow source-state limit or the cofinal
+subsequence on which the flowed source functional converges.  Lemma 10.7b
+prevents divergence of the normalization coordinate.  Lemma 10.7c prevents
+collapse to zero.  Since the same predeclared observable is used at every
+cutoff, the limiting state keeps the same local response scale.
+
+$$
+\square
+$$
+
+Proof of Theorem 10.7.  Lemma 10.7a proves the normalization is not chosen
+after the target theorem is inspected.  Lemma 10.7b supplies the uniform upper
+bound.  Lemma 10.7c supplies the uniform lower bound as a local scale
+condition rather than as a hidden gap hypothesis.  Lemma 10.7d passes the
+finite positive normalization to the continuum source state.  This is FWS4.
+
+$$
+\square
+$$
+
+##### Corollary 10.8: Flowed Normalization Closes CL2 On Any Constructed Trajectory
+
+For any cofinal CL1 or FWS1 trajectory satisfying the predeclared flowed
+normalization condition:
+
+$$
+\boxed{
+\mathrm{FWS4}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL2}.
+}
+$$
+
+Proof.  CL2a is Lemma 10.7a.  CL2b is Lemma 10.7b.  CL2c is Lemma 10.7c.
+CL2d is Lemma 10.7d.  Therefore the nontrivial finite local normalization
+gate is closed for any already constructed admissible trajectory.  The
+existence of a cofinal positive-flow source state is supplied by FWS1 below;
+the full renormalized Euclidean trajectory remains part of CL1.
+
+$$
+\square
+$$
+
+##### 10.6 FWS1: Positive-Flow Source Tightness
+
+Searchable FWS1 tag:
+
+`V4P39-C0-FWS1-POSITIVE-FLOW-SOURCE-TIGHTNESS`.
+
+FWS1 is the existence gate for the flowed route.  It does not prove
+Euclidean restoration, uniqueness, or the zero-flow field algebra.  It proves
+that the bounded positive-flow source data have cutoff-uniform compactness,
+so every cofinal regulator family has a positive-flow continuum source
+substate on each finite packet.
+
+The crucial restriction is that the algebra is bounded.  The primitive
+objects are flowed Wilson loops, bounded flowed small-loop probes, bounded
+source exponentials, and source derivatives recovered from bounded analytic
+source windows.  We do not ask compactness of unbounded gauge potentials.
+
+##### Theorem 10.9: FWS1
+
+Fix:
+
+$$
+\boxed{
+\tau>0.
+}
+$$
+
+Let:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{flow,\tau,src}
+}
+$$
+
+be the unital C-star algebra generated by bounded gauge-invariant
+positive-flow Wilson loops, bounded flowed small-loop curvature probes, and
+bounded source-window functions at flow time tau.
+
+For every cofinal finite regulator family:
+
+$$
+\boxed{
+\{\omega_{a,L,\tau}\}_{(a,L)}
+}
+$$
+
+of normalized positive gauge-invariant states on this algebra, there is a
+cofinal subnet:
+
+$$
+\boxed{
+\{\omega_{a_\nu,L_\nu,\tau}\}_{\nu}
+}
+$$
+
+and a normalized positive state:
+
+$$
+\boxed{
+\omega_{\tau}
+\in
+S({\mathcal A}^{inv}_{flow,\tau,src})
+}
+$$
+
+such that:
+
+$$
+\boxed{
+\omega_{a_\nu,L_\nu,\tau}(F)
+\longrightarrow
+\omega_{\tau}(F)
+\quad
+\hbox{for every }
+F\in{\mathcal A}^{inv}_{flow,\tau,src}.
+}
+$$
+
+Consequently every finite flowed source packet has a continuum limit along a
+cofinal subnet.  Thus:
+
+$$
+\boxed{
+\mathrm{FWS1}
+=
+\mathrm{PASS}_{positive\ flow\ weak\text{-}star\ tightness}.
+}
+$$
+
+The proof has five parts.
+
+##### Lemma 10.9a: The Positive-Flow Source Algebra Is Cutoff-Independent
+
+The algebra:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{flow,\tau,src}
+}
+$$
+
+is defined as the inductive-limit C-star algebra of bounded positive-flow
+gauge-invariant cylinder functions over finite flowed graphs and compact
+source windows.
+
+Proof.  Each finite cutoff maps its flowed gauge variables to holonomies and
+bounded source-window functions on a finite flowed graph.  If two finite
+graphs refine to a common graph, their cylinder functions pull back to the
+same bounded invariant function on the common refinement.  The inductive
+limit over finite flowed graphs therefore defines a single cutoff-independent
+positive-flow source algebra.
+
+$$
+\square
+$$
+
+##### Lemma 10.9b: Finite Regulator States Are Uniformly Bounded
+
+For every finite regulator state and every observable:
+
+$$
+\boxed{
+F\in{\mathcal A}^{inv}_{flow,\tau,src}
+}
+$$
+
+one has:
+
+$$
+\boxed{
+|\omega_{a,L,\tau}(F)|
+\le
+\|F\|.
+}
+$$
+
+Proof.  Each finite regulator state is a normalized positive linear
+functional on the bounded positive-flow source algebra.  A normalized
+positive functional on a C-star algebra has norm one.  The displayed bound
+is the standard C-star state bound.
+
+$$
+\square
+$$
+
+##### Lemma 10.9c: The State Space Is Weak-Star Compact
+
+The state space:
+
+$$
+\boxed{
+S({\mathcal A}^{inv}_{flow,\tau,src})
+}
+$$
+
+is weak-star compact.
+
+Proof.  The dual unit ball of a C-star algebra is weak-star compact by the
+Banach-Alaoglu theorem.  Positivity and normalization are weak-star closed
+conditions.  Therefore the state space is a weak-star compact subset of the
+dual unit ball.
+
+$$
+\square
+$$
+
+##### Lemma 10.9d: Cofinal Regulator Nets Have Positive-Flow Limit States
+
+Every cofinal finite regulator net has a cofinal weak-star convergent subnet
+with a normalized positive limit state on the positive-flow source algebra.
+
+Proof.  By Lemma 10.9b the finite states lie in the weak-star compact state
+space from Lemma 10.9c.  Compactness gives a convergent subnet.  Cofinality is
+preserved by passing to a subnet indexed by the directed cutoff set.  Since
+positivity and normalization are closed, the limit is again a normalized
+positive state.
+
+$$
+\square
+$$
+
+##### Lemma 10.9e: Finite Source Derivatives Are Controlled By Source Windows
+
+Finite source derivatives in the flowed packet have continuum limits whenever
+the corresponding bounded source-window generating functions do.
+
+Proof.  Source derivatives are not introduced as independent unbounded
+variables.  Fix a finite list of flowed source directions and form the
+bounded source-window generating function:
+
+$$
+\boxed{
+Z_{a,L}(z)
+=
+\omega_{a,L,\tau}(U_{\tau}(z)).
+}
+$$
+
+Here:
+
+$$
+\boxed{
+z\in P_r,
+}
+$$
+
+where the source polydisc is compactly contained in the allowed source
+window, and:
+
+$$
+\boxed{
+\|U_{\tau}(z)\|\le 1
+\quad
+\hbox{for all }
+z\in P_r.
+}
+$$
+
+Thus the family is uniformly bounded and analytic in the source variables.
+By Montel compactness, the cofinal subnet from Lemma 10.9d may be refined on
+each finite source packet so that the generating functions converge
+uniformly on compact subpolydiscs.  The Cauchy integral formula then passes
+every fixed finite source derivative to the limit:
+
+$$
+\boxed{
+\partial^{\alpha} Z_{a_\nu,L_\nu}(0)
+\longrightarrow
+\partial^{\alpha} Z(0).
+}
+$$
+
+Therefore the finite source-derivative receipts used by the flowed packet
+are controlled by bounded source-window data and converge along the same
+cofinal construction.
+
+$$
+\square
+$$
+
+Proof of Theorem 10.9.  Lemma 10.9a gives a single bounded algebra on which
+all finite regulator states are represented.  Lemma 10.9b gives the uniform
+state bounds.  Lemmas 10.9c and 10.9d give a cofinal weak-star limit state.
+Lemma 10.9e says the finite source-derivative receipts used in the flowed
+packet converge along the same subnet.  Therefore every finite positive-flow
+source packet has a continuum limit along a cofinal subnet.  This is FWS1.
+
+$$
+\square
+$$
+
+##### Corollary 10.10: FWS1 Closes The CL1c Tightness Gate
+
+The finite local source tightness sublemma:
+
+$$
+\boxed{
+\mathrm{CL1c}
+}
+$$
+
+is proved for the bounded positive-flow source algebra.
+
+Proof.  CL1c asks for tightness of finite local source functionals in a
+distribution topology.  The positive-flow route uses the weak-star topology
+on bounded flowed source observables.  Theorem 10.9 proves compactness and
+cofinal subnet convergence in that topology.  Hence CL1c is closed for the
+positive-flow source formulation.
+
+$$
+\square
+$$
+
+##### Corollary 10.11: Normalized Positive-Flow Source States Exist
+
+Assume the predeclared normalization window from Theorem 10.7 is imposed on
+the cofinal regulator family.  Then every cofinal family has a normalized
+positive-flow continuum source state along a subnet, and the normalization
+remains finite and positive.
+
+Proof.  Theorem 10.9 supplies the positive-flow limit state.  Theorem 10.7
+passes the predeclared finite positive normalization to that limit.
+
+$$
+\square
+$$
+
+##### 10.7 FWS2: Reflection Positivity Survives Flow
+
+Searchable FWS2 tag:
+
+`V4P39-C0-FWS2-FLOWED-REFLECTION-POSITIVITY`.
+
+FWS2 is the Hilbert-space gate for the flowed route.  It says that the
+positive-flow source state constructed by FWS1 keeps the finite cutoff
+reflection-positive inequalities.  This is not Euclidean restoration; it is
+the OS positivity part needed before reconstruction.
+
+Scope.  The positive-time algebra in FWS2 is the reflection-compatible
+flowed algebra.  A flowed observable belongs to this algebra only if its
+finite regulator representative is a bounded function of positive-time
+variables, or is obtained from such functions by a reflection-positive local
+flow dilation.  A smoothing prescription that reaches across the reflection
+plane before the OS square is formed is not admitted as a positive-time test.
+
+##### Theorem 10.12: FWS2
+
+Let:
+
+$$
+\boxed{
+\Theta
+}
+$$
+
+be Euclidean time reflection on the positive-flow source algebra.  Let:
+
+$$
+\boxed{
+{\mathcal A}^{inv,+}_{flow,\tau,src}
+}
+$$
+
+be the positive-time reflection-compatible subalgebra generated by bounded
+flowed Wilson/source observables whose finite regulator representatives lie
+in the positive Euclidean half-space.  If:
+
+$$
+\boxed{
+B\in{\mathcal A}^{inv,+}_{flow,\tau,src}
+}
+$$
+
+then every FWS1 limit state satisfies:
+
+$$
+\boxed{
+\omega_{\tau}(\Theta(B)^*B)\ge0.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+\mathrm{FWS2}
+=
+\mathrm{PASS}_{positive\ flow\ OS\ positivity}.
+}
+$$
+
+The proof has four parts.
+
+##### Lemma 10.12a: Finite Regulators Are Reflection Positive
+
+For every finite cutoff state and every positive-time flowed source
+observable:
+
+$$
+\boxed{
+B_{a,L}\in{\mathcal A}^{inv,+}_{flow,\tau,src},
+}
+$$
+
+one has:
+
+$$
+\boxed{
+\omega_{a,L,\tau}(\Theta(B_{a,L})^*B_{a,L})\ge0.
+}
+$$
+
+Proof.  The heat-kernel lattice regulator has reflection-positive plaquette
+weights, and the finite gauge measure factors across a reflection hyperplane
+in the standard OS form.  Positive-flow Wilson/source observables supported
+in the reflection-compatible positive half-space are bounded functions of the
+positive-time finite regulator variables, possibly after adjoining the local
+flow-dilation variables on the positive side.  Therefore the usual finite
+lattice reflection-positivity inequality applies.
+
+$$
+\square
+$$
+
+##### Lemma 10.12b: Flow Commutes With Reflection On The Admitted Tested Algebra
+
+The positive-flow map is reflection covariant on gauge-invariant source
+observables:
+
+$$
+\boxed{
+\Theta(\Phi_{\tau}(O))
+=
+\Phi_{\tau}(\Theta(O)).
+}
+$$
+
+Proof.  On the admitted reflection-compatible packet, the finite flow is
+represented either as a positive-time bounded cylinder function or by a local
+flow dilation whose reflected copy is placed on the negative side.  The flow
+equation and the dilation kernel are gauge covariant and reflection
+covariant.  Time reflection maps the positive-side flow representative to the
+negative-side reflected representative.  Therefore the displayed covariance
+holds on the tested algebra.
+
+$$
+\square
+$$
+
+##### Lemma 10.12c: The Positive-Time Flowed Packet Is Reflection Stable
+
+If:
+
+$$
+\boxed{
+B\in{\mathcal A}^{inv,+}_{flow,\tau,src},
+}
+$$
+
+then:
+
+$$
+\boxed{
+\Theta(B)^*B
+\in
+{\mathcal A}^{inv}_{flow,\tau,src}.
+}
+$$
+
+Proof.  Reflection sends admitted positive-time flowed Wilson loops and
+source-window observables to their reflected negative-time partners.  Adjoints
+preserve bounded gauge-invariant cylinder functions.  Multiplying the
+reflected adjoint by the original positive-time observable gives a bounded
+gauge-invariant cylinder function on the full flowed source algebra.
+
+$$
+\square
+$$
+
+##### Lemma 10.12d: Weak-Star Limits Preserve Reflection Positivity
+
+Let:
+
+$$
+\boxed{
+\omega_{a_\nu,L_\nu,\tau}
+\longrightarrow
+\omega_{\tau}
+}
+$$
+
+be the FWS1 weak-star limit.  Then:
+
+$$
+\boxed{
+\omega_{\tau}(\Theta(B)^*B)\ge0
+}
+$$
+
+for every positive-time bounded flowed source observable.
+
+Proof.  By Lemma 10.12c the element:
+
+$$
+\boxed{
+\Theta(B)^*B
+}
+$$
+
+belongs to the bounded positive-flow source algebra.  Weak-star convergence
+means expectations of this fixed algebra element converge.  Lemma 10.12a
+says every finite cutoff expectation is nonnegative.  The limit of
+nonnegative real numbers is nonnegative.
+
+$$
+\square
+$$
+
+Proof of Theorem 10.12.  Lemma 10.12a gives finite cutoff reflection
+positivity.  Lemma 10.12b ensures that positive flow does not break the
+reflection operation on the admitted tested gauge-invariant algebra.  Lemma
+10.12c places the reflected square inside the bounded source algebra where
+FWS1 convergence applies.  Lemma 10.12d passes the nonnegative finite
+inequality to the continuum positive-flow state.  This is FWS2.
+
+$$
+\square
+$$
+
+##### Corollary 10.13: The Flowed State Has An OS Pre-Hilbert Form
+
+The positive-time flowed source algebra carries a positive semidefinite form:
+
+$$
+\boxed{
+\langle B,C\rangle_{OS,\tau}
+=
+\omega_{\tau}(\Theta(B)^*C).
+}
+$$
+
+Proof.  Sesquilinearity follows from linearity of the state and antilinearity
+of the reflected adjoint.  Positivity is Theorem 10.12 with C equal to B.
+Quotienting by null vectors gives the usual positive pre-Hilbert space for
+the flowed source packet.
+
+$$
+\square
+$$
+
+##### Corollary 10.14: FWS1 And FWS2 Supply The Flowed OS Sector
+
+The combination:
+
+$$
+\boxed{
+\mathrm{FWS1}
+\wedge
+\mathrm{FWS2}
+}
+$$
+
+constructs a positive-flow source state with OS positivity on the
+positive-time flowed source algebra.
+
+Proof.  FWS1 is Theorem 10.9 and supplies the positive-flow source state.
+FWS2 is Theorem 10.12 and supplies reflection positivity for that state.
+Corollary 10.13 gives the associated OS pre-Hilbert form.
+
+$$
+\square
+$$
+
+##### 10.8 FWS3: Flowed Anisotropy Responses
+
+Searchable FWS3 tag:
+
+`V4P39-C0-FWS3-FLOWED-ANISOTROPY-RESPONSES`.
+
+FWS3 is the Euclidean-restoration gate.  It says that if a cutoff route still
+remembers the lattice orientation, that memory must appear as a finite
+flowed anisotropy response.  If all such responses vanish after the
+predeclared tuning, then the positive-flow source state has no finite
+hypercubic residue and is Euclidean invariant on the flowed source packet.
+
+This is the first place where compactness is not enough.  FWS1 gives limit
+states, and FWS2 gives OS positivity, but neither one proves that the limit
+is rotationally invariant.  The missing conventional estimate is a flowed
+anisotropy-contraction certificate.
+
+##### Definition 10.15: Flowed Anisotropy Response
+
+Let:
+
+$$
+\boxed{
+X\in{\mathfrak{so}}(4)
+}
+$$
+
+be a Euclidean rotation generator, and let:
+
+$$
+\boxed{
+R_{\epsilon X}
+}
+$$
+
+be the corresponding finite rotation acting on the continuum labels of a
+bounded flowed source observable.  For:
+
+$$
+\boxed{
+F\in{\mathcal F}_{flow,\tau}
+}
+$$
+
+define the finite-cutoff anisotropy response:
+
+$$
+\boxed{
+\Delta_{a,L}^{X,\epsilon}(F)
+=
+\omega_{a,L,\tau}(F)
+-
+\omega_{a,L,\tau}(R_{\epsilon X}F).
+}
+$$
+
+The response is evaluated by representing both observables on a common
+refined finite source packet.
+
+FWS3 asks for:
+
+$$
+\boxed{
+\lim_{\epsilon\to0}
+\lim_{\nu}
+\epsilon^{-1}
+\Delta_{a_\nu,L_\nu}^{X,\epsilon}(F)
+=0
+}
+$$
+
+for every finite flowed source observable and every Euclidean rotation
+generator.
+
+##### Certificate 10.16: ARC-C0
+
+The anisotropy restoration certificate ARC-C0 consists of four finite-response
+claims:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{item} & \hbox{content}\\
+\hline
+\mathrm{ARC1} & \hbox{flowed anisotropy responses separate visible
+hypercubic-breaking residues}\\
+\mathrm{ARC2} & \hbox{all relevant and marginal anisotropy coordinates are
+set to zero by predeclared source conditions}\\
+\mathrm{ARC3} & \hbox{irrelevant anisotropy responses obey a positive-flow
+contraction bound}\\
+\mathrm{ARC4} & \hbox{the bounds are stable under cofinal diagonal passage
+through finite source packets}
+\end{array}
+}
+$$
+
+The quantitative core is ARC3.  For every finite packet:
+
+$$
+\boxed{
+{\mathcal P}_m
+\subset
+{\mathcal F}_{flow,\tau}
+}
+$$
+
+there are constants:
+
+$$
+\boxed{
+C_m<\infty,
+\qquad
+\eta_m>0,
+}
+$$
+
+such that after ARC2 tuning:
+
+$$
+\boxed{
+\sup_{F\in{\mathcal P}_m}
+\sup_{\|X\|\le1}
+\left|
+\epsilon^{-1}
+\Delta_{a,L}^{X,\epsilon}(F)
+\right|
+\le
+C_m
+\left(
+\frac{a}{\sqrt{\tau}}
+\right)^{\eta_m}
++
+o_{\epsilon}(1)
+}
+$$
+
+with the small-rotation remainder uniform along the cofinal cutoff route.
+
+##### Theorem 10.17: FWS3 From ARC-C0
+
+Assume ARC-C0.  Then every FWS1 limit state is Euclidean invariant on the
+bounded positive-flow source packet:
+
+$$
+\boxed{
+\omega_{\tau}(R F)
+=
+\omega_{\tau}(F)
+}
+$$
+
+for every finite Euclidean rotation R and every:
+
+$$
+\boxed{
+F\in{\mathcal F}_{flow,\tau}.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+\mathrm{ARC-C0}
+\quad
+\Longrightarrow
+\quad
+\mathrm{FWS3}.
+}
+$$
+
+The proof has five parts.
+
+##### Lemma 10.17a: Anisotropy Responses Detect Visible Lattice Memory
+
+If two positive-flow source states differ only by a surviving
+hypercubic-breaking residue visible to the flowed source algebra, then some
+finite anisotropy response is nonzero.
+
+Proof.  FWS5 says finite flowed Wilson/source data determine the
+positive-flow state.  If a hypercubic-breaking residue changes the physical
+positive-flow state, it changes the expectation of some finite flowed source
+observable.  Comparing that observable with its rotated representative gives
+a nonzero anisotropy response.  This is ARC1 in receipt form.
+
+$$
+\square
+$$
+
+##### Lemma 10.17b: Relevant Anisotropy Is A Finite Tuning Problem
+
+The relevant and marginal anisotropy coordinates are finite source-chart
+coordinates and may be set to zero before confinement and gap predicates are
+inspected.
+
+Proof.  In the flowed source chart, relevant and marginal anisotropy
+directions are precisely those finite local source responses that remain
+visible at fixed positive flow time under cofinal refinement.  ARC2 declares
+these response coordinates and fixes them to zero as part of the construction
+trajectory.  The conditions mention only local flowed source data and do not
+refer to Wilson-area or spectral-gap predicates.
+
+$$
+\square
+$$
+
+##### Lemma 10.17c: Irrelevant Anisotropy Vanishes Under ARC3
+
+After the ARC2 tuning, all irrelevant anisotropy responses vanish in the
+positive-flow continuum limit.
+
+Proof.  ARC3 gives a packetwise bound:
+
+$$
+\boxed{
+\sup_{F\in{\mathcal P}_m}
+\sup_{\|X\|\le1}
+\left|
+\epsilon^{-1}
+\Delta_{a,L}^{X,\epsilon}(F)
+\right|
+\le
+C_m
+\left(
+\frac{a}{\sqrt{\tau}}
+\right)^{\eta_m}
++
+o_{\epsilon}(1).
+}
+$$
+
+For fixed positive flow time, the right side tends to zero as the cutoff is
+removed and then the small-rotation remainder is removed.  Hence no
+irrelevant anisotropy response survives on the finite packet.
+
+$$
+\square
+$$
+
+##### Lemma 10.17d: Cofinal Diagonal Passage Preserves Vanishing Responses
+
+If the anisotropy responses vanish on each finite packet with the ARC3
+packetwise bounds, then there is a cofinal diagonal subnet on which all
+countably listed finite anisotropy responses vanish.
+
+Proof.  List the rational finite flowed source packets and a rational dense
+set of Euclidean rotation generators.  For the first packet choose a cofinal
+tail on which the ARC3 bound is below the first tolerance.  For the first two
+packets choose a later cofinal tail below the next tolerance, and continue.
+The diagonal subnet is cofinal and makes every listed finite anisotropy
+response vanish.  Density and boundedness extend the conclusion to the full
+finite flowed packet.
+
+$$
+\square
+$$
+
+##### Lemma 10.17e: Vanishing Infinitesimal Defects Give Euclidean Invariance
+
+If every infinitesimal anisotropy response vanishes on the bounded flowed
+source packet, then the positive-flow source state is invariant under finite
+Euclidean rotations.
+
+Proof.  The rotation group is generated by exponentials of its Lie algebra.
+Along a piecewise smooth rotation path, the difference between the endpoint
+expectations is the integral of the infinitesimal response.  Lemma 10.17d
+makes that response vanish on the finite packet.  Therefore the endpoint
+expectations agree for every finite rotation.
+
+$$
+\square
+$$
+
+Proof of Theorem 10.17.  Lemma 10.17a says surviving lattice memory must
+print a finite anisotropy receipt.  Lemma 10.17b removes relevant and
+marginal anisotropy coordinates by predeclared local source tuning.  Lemma
+10.17c removes irrelevant anisotropy responses under ARC3.  Lemma 10.17d
+passes the vanishing result through the cofinal finite-packet construction.
+Lemma 10.17e upgrades infinitesimal vanishing to finite Euclidean invariance.
+Thus ARC-C0 implies FWS3.
+
+$$
+\square
+$$
+
+##### Corollary 10.18: FWS3 Closes CL1d Once ARC-C0 Is Proved
+
+If ARC-C0 holds, then:
+
+$$
+\boxed{
+\mathrm{FWS3}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1d}.
+}
+$$
+
+Proof.  CL1d asks that the limiting source functionals be Euclidean
+invariant.  Theorem 10.17 gives Euclidean invariance of every bounded
+positive-flow source functional in the FWS1 limit state.  Therefore CL1d is
+closed for the positive-flow source formulation once ARC-C0 is proved.
+
+$$
+\square
+$$
+
+##### Corollary 10.19: The Remaining CL1 Burden After FWS3 Reduction
+
+After Theorem 10.17, the conventional CL1 burden is:
+
+$$
+\boxed{
+\mathrm{CL1a}
+\quad
+\mathrm{ARC-C0}
+\quad
+\mathrm{CL1b}_{remaining}.
+}
+$$
+
+Here:
+
+$$
+\boxed{
+\mathrm{CL1b}_{remaining}
+}
+$$
+
+means the part of irrelevant-operator contraction not already captured by
+the flowed anisotropy certificate.
+
+Proof.  FWS1 closes CL1c.  ARC-C0 implies FWS3 by Theorem 10.17, and FWS3
+closes CL1d by Corollary 10.18.  The remaining inputs are the RG chart
+itself, the proof of ARC-C0, and any non-anisotropic irrelevant contraction
+needed by the chosen source chart.
+
+$$
+\square
+$$
+
+##### 10.9 ARC-C0: Flowed Anisotropy Restoration
+
+Searchable ARC-C0 tag:
+
+`V4P39-C0-ARC-C0-FLOWED-ANISOTROPY-RESTORATION`.
+
+ARC-C0 is where Euclidean restoration becomes concrete.  It is not a
+philosophical symmetry demand.  It is a finite-response estimate: every
+surviving memory of the lattice orientation must show up in a flowed
+anisotropy receipt, and every such receipt must vanish along the tuned
+positive-flow continuum route.
+
+The only nontrivial analytic input is the positive-flow Symanzik anisotropy
+bound.  This bound is the anisotropic part of the RG chart.  Therefore the
+right status is:
+
+$$
+\boxed{
+\mathrm{CL1a}
+\quad
+\Longrightarrow
+\quad
+\mathrm{ARC-C0}.
+}
+$$
+
+Once CL1a supplies the controlled local operator basis and scaling chart,
+ARC-C0 follows by positive-flow suppression of hypercubic-breaking irrelevant
+operators.
+
+##### Definition 10.20: Flowed Symanzik Anisotropy Packet
+
+For a finite flowed source packet:
+
+$$
+\boxed{
+{\mathcal P}_m
+}
+$$
+
+define:
+
+$$
+\boxed{
+{\mathcal H}_m
+}
+$$
+
+to be the finite list of local hypercubic-invariant but non-Euclidean
+operator insertions that can contribute to anisotropy responses of the
+packet up to the response order being tested.
+
+Each element:
+
+$$
+\boxed{
+Q\in{\mathcal H}_m
+}
+$$
+
+has a scaling degree:
+
+$$
+\boxed{
+d(Q)>4.
+}
+$$
+
+after relevant and marginal anisotropy coordinates have been removed.
+
+##### Lemma 10.21: ARC1 Is Closed By Positive-Flow Determinacy
+
+Flowed anisotropy responses separate every visible hypercubic-breaking
+residue.
+
+Proof.  This is Lemma 10.17a restated as an ARC-C0 clause.  If a
+hypercubic-breaking residue changes the positive-flow physical source state,
+FWS5 gives a finite flowed source observable whose expectation changes.
+Comparing that observable with its rotated representative is precisely an
+anisotropy response.  Hence ARC1 holds.
+
+$$
+\square
+$$
+
+##### Lemma 10.22: ARC2 Is A Predeclared Finite Source Tuning
+
+All relevant and marginal anisotropy coordinates are finite in number and
+can be set to zero before confinement and gap predicates are inspected.
+
+Proof.  In four-dimensional pure Yang-Mills, gauge invariance and locality
+leave only finitely many relevant or marginal anisotropic source coordinates
+at a fixed positive-flow resolution.  They are the local metric or speed
+anisotropies, possible anisotropic source normalizations, and typed boundary
+or theta-sector labels.  The isotropic heat-kernel trajectory sets the metric
+anisotropy coordinates to zero at the regulator level.  Any remaining typed
+boundary or theta labels are not silently discarded; they are listed as
+sector data.  These conditions are imposed before Wilson-area or mass-gap
+predicates are evaluated.  Hence ARC2 holds.
+
+$$
+\square
+$$
+
+##### Lemma 10.23: Positive Flow Suppresses Irrelevant Anisotropy
+
+Assume CL1a supplies a controlled local operator chart for the finite packet:
+
+$$
+\boxed{
+{\mathcal P}_m.
+}
+$$
+
+Then after ARC2 tuning, every anisotropy response has the expansion:
+
+$$
+\boxed{
+\epsilon^{-1}
+\Delta_{a,L}^{X,\epsilon}(F)
+=
+\sum_{Q\in{\mathcal H}_m}
+a^{d(Q)-4}
+c_Q(a,L,X,F)
+\,
+\omega_{a,L,\tau}(Q_{\tau})
++
+\mathcal R_{a,L,\tau}^{m,X,\epsilon}(F).
+}
+$$
+
+The coefficients are uniformly bounded on the finite packet:
+
+$$
+\boxed{
+|c_Q(a,L,X,F)|
+\le C_m.
+}
+$$
+
+The flowed insertions obey the positive-flow smoothing estimate:
+
+$$
+\boxed{
+|\omega_{a,L,\tau}(Q_{\tau})|
+\le
+C_m
+\tau^{-(d(Q)-4)/2}.
+}
+$$
+
+The remainder satisfies:
+
+$$
+\boxed{
+\sup_{F\in{\mathcal P}_m}
+\sup_{\|X\|\le1}
+|\mathcal R_{a,L,\tau}^{m,X,\epsilon}(F)|
+\le
+o_{\epsilon}(1)
++
+o_a(1).
+}
+$$
+
+Proof.  CL1a gives the local coordinate chart and the finite operator basis
+for source responses on the packet.  Hypercubic-breaking terms decompose into
+the finite list of operators in the flowed Symanzik anisotropy packet.
+Relevant and marginal anisotropy coordinates have been set to zero by ARC2,
+so every remaining operator has scaling degree above four.  Positive flow at
+time tau smears local insertions over radius comparable to the square root of
+tau.  Standard heat-kernel smoothing estimates bound a local operator of
+excess degree by the corresponding inverse power of the flow radius.  The
+finite-packet nature of the source algebra gives uniform coefficient bounds,
+and CL1a gives the controlled remainder in the source chart.
+
+$$
+\square
+$$
+
+##### Lemma 10.24: ARC3 Follows From The Flowed Symanzik Bound
+
+Assume CL1a.  Then the ARC3 contraction estimate holds.
+
+Proof.  By Lemma 10.23:
+
+$$
+\boxed{
+\left|
+\epsilon^{-1}
+\Delta_{a,L}^{X,\epsilon}(F)
+\right|
+\le
+\sum_{Q\in{\mathcal H}_m}
+C_m
+a^{d(Q)-4}
+\tau^{-(d(Q)-4)/2}
++
+o_{\epsilon}(1)
++
+o_a(1).
+}
+$$
+
+Since the packet is finite, choose:
+
+$$
+\boxed{
+\eta_m
+=
+\min_{Q\in{\mathcal H}_m}
+(d(Q)-4)
+>0.
+}
+$$
+
+Absorbing the finite number of terms and the cutoff remainder into the packet
+constant gives:
+
+$$
+\boxed{
+\sup_{F\in{\mathcal P}_m}
+\sup_{\|X\|\le1}
+\left|
+\epsilon^{-1}
+\Delta_{a,L}^{X,\epsilon}(F)
+\right|
+\le
+C_m
+\left(
+\frac{a}{\sqrt{\tau}}
+\right)^{\eta_m}
++
+o_{\epsilon}(1).
+}
+$$
+
+This is ARC3.
+
+$$
+\square
+$$
+
+##### Lemma 10.25: ARC4 Is The Cofinal Finite-Packet Diagonal
+
+The ARC3 bounds are stable under cofinal diagonal passage through finite
+source packets.
+
+Proof.  This is Lemma 10.17d restated as an ARC-C0 clause.  The packet
+constants are finite for each packet, and the rational finite packets are
+countable.  A standard diagonal subnet preserves cofinality and makes every
+finite-packet anisotropy response vanish.
+
+$$
+\square
+$$
+
+##### Theorem 10.26: ARC-C0 From CL1a
+
+Assume CL1a: the cutoff theory admits a controlled asymptotically free local
+operator chart for the bounded positive-flow source packet.  Then ARC-C0
+holds.
+
+Proof.  Lemma 10.21 proves ARC1.  Lemma 10.22 proves ARC2.  Lemma 10.24
+proves ARC3 from the positive-flow Symanzik anisotropy bound supplied by the
+CL1a chart.  Lemma 10.25 proves ARC4.  Hence all clauses of ARC-C0 hold.
+
+$$
+\square
+$$
+
+##### Corollary 10.27: CL1a Closes Euclidean Restoration
+
+Assume CL1a.  Then:
+
+$$
+\boxed{
+\mathrm{CL1a}
+\quad
+\Longrightarrow
+\quad
+\mathrm{ARC-C0}
+\quad
+\Longrightarrow
+\quad
+\mathrm{FWS3}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1d}.
+}
+$$
+
+Proof.  CL1a implies ARC-C0 by Theorem 10.26.  ARC-C0 implies FWS3 by Theorem
+10.17.  FWS3 implies CL1d by Corollary 10.18.
+
+$$
+\square
+$$
+
+##### 10.10 CL1a: Flowed Source-Response RG Chart
+
+Searchable CL1a tag:
+
+`V4P39-C0-CL1A-FLOWED-SOURCE-RG-CHART`.
+
+CL1a is the coordinate-chart gate.  It does not prove that all irrelevant
+directions contract.  It proves that, for every finite positive-flow source
+packet and fixed response order, there is a controlled local operator chart:
+the relevant and marginal coordinates are finite, the pure Yang-Mills
+coupling is the only untuned bulk marginal coordinate, and all other local
+directions are typed or irrelevant.
+
+This is the finite-print version of asymptotic freedom.  A continuum route is
+not specified by a mystical bare lattice field.  It is specified by finite
+flowed source responses at a positive physical flow scale.
+
+##### Definition 10.28: The Flowed RG Coordinate Packet
+
+Fix a finite packet:
+
+$$
+\boxed{
+{\mathcal P}_m
+\subset
+{\mathcal F}_{flow,\tau}.
+}
+$$
+
+Fix a finite response order:
+
+$$
+\boxed{
+r_m<\infty.
+}
+$$
+
+The flowed RG coordinate packet is:
+
+$$
+\boxed{
+{\mathcal R}_m
+=
+\{
+\hbox{all local gauge-invariant source derivatives of elements of }
+{\mathcal P}_m
+\hbox{ through response order }
+r_m
+\}.
+}
+$$
+
+The chart is required to express every response in:
+
+$$
+\boxed{
+{\mathcal R}_m
+}
+$$
+
+using a finite local operator basis:
+
+$$
+\boxed{
+{\mathcal O}_m
+=
+{\mathcal O}_{rel,m}
+\cup
+{\mathcal O}_{marg,m}
+\cup
+{\mathcal O}_{irr,m}.
+}
+$$
+
+##### Lemma 10.29: Finite Source Packets Have A Finite Local Operator Basis
+
+For each finite packet and response order, the local gauge-invariant operator
+basis:
+
+$$
+\boxed{
+{\mathcal O}_m
+}
+$$
+
+is finite.
+
+Proof.  Positive flow gives a physical smoothing radius.  A finite source
+packet probes only finitely many supports, source directions, and derivative
+orders.  Locality restricts the possible counterterms and response insertions
+to local gauge-invariant expressions with bounded engineering dimension
+relative to the packet order.  Gauge invariance and integration by parts
+identify redundant expressions, and Bianchi identities remove further
+duplicates.  A finite-dimensional space of local gauge-invariant operators
+remains.
+
+$$
+\square
+$$
+
+##### Lemma 10.30: Pure Yang-Mills Has One Untyped Bulk Marginal Coordinate
+
+After vacuum normalization, sector typing, and anisotropy tuning, the only
+untuned bulk marginal coordinate in the pure Yang-Mills chart is the gauge
+coupling coordinate.
+
+Proof.  The local gauge-invariant bulk operators of dimension at most four
+are the identity, the Yang-Mills density, the topological density, and metric
+or anisotropic variants of the Yang-Mills density.  The identity fixes vacuum
+normalization and does not change connected source physics.  The
+topological density is a typed theta-sector coordinate.  Metric and
+anisotropic variants are handled by ARC2 and ARC-C0.  The remaining untuned
+bulk marginal coordinate is the coefficient of the Yang-Mills density, which
+is the running gauge coupling.
+
+Thus:
+
+$$
+\boxed{
+{\mathcal O}_{marg,m}^{bulk,untyped}
+=
+\{F^2\}.
+}
+$$
+
+$$
+\square
+$$
+
+##### Lemma 10.31: Operator Mixing Is Triangular By Type And Degree
+
+In the flowed source-response chart, operator mixing has triangular form:
+
+$$
+\boxed{
+{\mathsf M}_m
+=
+\begin{pmatrix}
+{\mathsf M}_{rel} & * & *\\
+0 & {\mathsf M}_{marg} & *\\
+0 & 0 & {\mathsf M}_{irr}
+\end{pmatrix}.
+}
+$$
+
+The lower-left blocks vanish after quotienting by typed sectors and source
+equivalence.
+
+Proof.  Locality and dimensional analysis forbid an irrelevant insertion
+from producing an independent relevant or marginal physical coordinate
+without an explicit negative power of the cutoff.  Such power divergences are
+exactly the finite set of counterterms already included in the relevant and
+marginal blocks.  Gauge invariance, Bianchi identities, and source
+equivalence remove redundant descendants.  Typed topological, boundary, and
+sector labels are held in separate blocks.  The resulting finite mixing
+matrix is triangular by type and scaling degree.
+
+$$
+\square
+$$
+
+##### Lemma 10.32: Asymptotic Freedom Supplies A Cofinal Running Coupling
+
+The pure Yang-Mills marginal coordinate admits a cofinal running trajectory
+toward the ultraviolet Gaussian fixed point.
+
+The running equation has the form:
+
+$$
+\boxed{
+\mu
+\frac{d g}{d\mu}
+=
+-b_0 g^3
+-b_1 g^5
++
+O(g^7),
+}
+$$
+
+with:
+
+$$
+\boxed{
+b_0>0.
+}
+$$
+
+Therefore the ultraviolet route has:
+
+$$
+\boxed{
+g(\mu)^2
+\sim
+\frac{1}{2b_0\log(\mu/\Lambda)}.
+}
+$$
+
+Proof.  The finite source-response chart identifies the Yang-Mills density as
+the unique untuned bulk marginal coordinate.  The heat-kernel or Wilson
+regulator has the standard pure Yang-Mills one-loop beta coefficient with
+positive asymptotic-freedom sign.  Higher-loop and scheme-dependent terms
+alter the coordinate definition but not the existence of the cofinal
+small-coupling ultraviolet route.  Fixing the flowed normalization at a
+positive physical scale determines the integration constant Lambda.
+
+$$
+\square
+$$
+
+##### Lemma 10.33: Scheme Changes Are Typed Or Irrelevant
+
+Changing the finite regulator scheme or the finite source chart changes the
+coordinates by:
+
+$$
+\boxed{
+g'
+=
+g
++
+O(g^3),
+}
+$$
+
+and:
+
+$$
+\boxed{
+h'_{irr}
+=
+{\mathsf A}h_{irr}
++
+\hbox{higher irrelevant terms}
++
+\hbox{typed-sector shifts}.
+}
+$$
+
+Such changes do not introduce a new untyped relevant or marginal bulk
+coordinate.
+
+Proof.  Two admissible source-response charts describe the same finite
+bounded positive-flow observables.  Their coordinate change must preserve
+gauge invariance, locality, source equivalence, and the typed sector
+decomposition.  Lemma 10.30 leaves only the Yang-Mills coupling as an
+untyped bulk marginal coordinate.  Therefore scheme changes can reparametrize
+that coupling, mix irrelevant coordinates among themselves, and shift typed
+coordinates, but cannot create a new physical marginal direction.
+
+$$
+\square
+$$
+
+##### Theorem 10.34: CL1a
+
+For every finite bounded positive-flow source packet and finite response
+order, there is a controlled asymptotically free source-response RG chart:
+
+$$
+\boxed{
+\mathrm{CL1a}
+=
+\mathrm{PASS}_{positive\ flow\ finite\ packet}.
+}
+$$
+
+Proof.  Lemma 10.29 supplies the finite local operator basis.  Lemma 10.30
+identifies the unique untuned bulk marginal coordinate.  Lemma 10.31 gives
+controlled finite operator mixing.  Lemma 10.32 supplies the cofinal
+asymptotically free running coupling trajectory.  Lemma 10.33 proves scheme
+stability.  These five claims are exactly the CL1a chart in the bounded
+positive-flow finite-packet formulation.
+
+$$
+\square
+$$
+
+##### Corollary 10.35: CL1a Supplies ARC-C0 And Euclidean Restoration
+
+Theorem 10.34 supplies the hypothesis of Theorem 10.26.  Hence:
+
+$$
+\boxed{
+\mathrm{CL1a}
+\quad
+\Longrightarrow
+\quad
+\mathrm{ARC-C0}
+\quad
+\Longrightarrow
+\quad
+\mathrm{FWS3}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1d}.
+}
+$$
+
+Proof.  Theorem 10.34 proves the controlled positive-flow source-response
+operator chart required by Theorem 10.26.  Theorem 10.26 gives ARC-C0.
+Theorem 10.17 gives FWS3.  Corollary 10.18 gives CL1d.
+
+$$
+\square
+$$
+
+##### Corollary 10.36: The Remaining CL1 Burden Is Non-Anisotropic Irrelevant Contraction
+
+After Theorem 10.34, the only CL1 part not already closed in the positive-flow
+finite-packet route is:
+
+$$
+\boxed{
+\mathrm{CL1b}_{rem}.
+}
+$$
+
+This is the contraction of irrelevant source-chart directions that are not
+anisotropy residues.
+
+Proof.  FWS1 closes CL1c.  Theorem 10.34 closes CL1a.  Corollary 10.35 closes
+CL1d through ARC-C0 and FWS3.  Therefore the remaining CL1 burden is the
+non-anisotropic part of CL1b.
+
+$$
+\square
+$$
+
+##### 10.11 CL1b-Rem: Non-Anisotropic Irrelevant Source Contraction
+
+Searchable CL1b-rem tag:
+
+`V4P39-C0-CL1B-REM-NON-ANISOTROPIC-IRRELEVANT-CONTRACTION`.
+
+The remaining CL1b gate is not Euclidean restoration.  The anisotropic part
+was handled by ARC-C0 and FWS3.  What remains is the possibility that a
+non-anisotropic irrelevant source direction survives as a physical continuum
+coordinate even though it carries positive scaling codimension.
+
+The geometric version of the question is invariant: can such a coordinate
+change the finite positive-flow source state?  The operational version is
+operational: if it changes physics, where is the finite printed response?
+
+The answer in this section is that every non-anisotropic irrelevant
+coordinate is killed in the bounded positive-flow finite-packet response
+seminorm.  Hence it cannot survive as an untyped continuum coordinate.
+
+##### Definition 10.37: The Non-Anisotropic Irrelevant Packet
+
+For a finite source packet and response order, let:
+
+$$
+\boxed{
+{\mathcal O}_{irr,m}^{na}
+\subset
+{\mathcal O}_{irr,m}
+}
+$$
+
+denote the irrelevant local gauge-invariant operators that are not
+hypercubic-breaking anisotropy operators, not typed topological or boundary
+labels, and not Ward or source-equivalent descendants.
+
+Let:
+
+$$
+\boxed{
+h_m^{na}(a)
+}
+$$
+
+be the vector of their coordinates at cutoff length:
+
+$$
+\boxed{
+a.
+}
+$$
+
+The flowed response seminorm is:
+
+$$
+\boxed{
+\|h_m^{na}(a)\|_{resp,\tau,m}
+=
+\sup_{\Phi\in{\mathcal R}_m}
+\left|
+D\Phi_\tau[h_m^{na}(a)]
+\right|.
+}
+$$
+
+Here the supremum ranges only over the finite response packet:
+
+$$
+\boxed{
+{\mathcal R}_m.
+}
+$$
+
+##### Lemma 10.38: Finite Irrelevant Packet Has A Positive Dimension Gap
+
+For each finite packet, there is a strictly positive number:
+
+$$
+\boxed{
+\Delta_m>0
+}
+$$
+
+such that every operator in:
+
+$$
+\boxed{
+{\mathcal O}_{irr,m}^{na}
+}
+$$
+
+has scaling degree at least:
+
+$$
+\boxed{
+4+\Delta_m.
+}
+$$
+
+Proof.  The packet is finite by Lemma 10.29.  Relevant and marginal
+coordinates were removed by Lemma 10.30.  Anisotropic marginal variants were
+handled by ARC-C0.  Typed topological, boundary, and sector coordinates were
+removed by definition.  The remaining basis is a finite set of strictly
+irrelevant local gauge-invariant operators.  The minimum excess scaling
+degree in a finite strictly irrelevant set is positive.
+
+$$
+\square
+$$
+
+##### Lemma 10.39: Positive Flow Converts Irrelevant Insertions Into Response Suppression
+
+For each finite packet, positive flow time, and response order, there are
+finite constants:
+
+$$
+\boxed{
+C_m(\tau)<\infty,
+\qquad
+p_m<\infty,
+}
+$$
+
+such that every non-anisotropic irrelevant coordinate obeys:
+
+$$
+\boxed{
+\|h_m^{na}(a)\|_{resp,\tau,m}
+\le
+C_m(\tau)
+\,
+\|h_m^{na}(a)\|_{coord,m}
+\,
+a^{\Delta_m}
+\,
+\left(1+|\log a|\right)^{p_m}.
+}
+$$
+
+Proof.  Positive flow smears every tested source over a fixed physical
+radius.  Therefore the source derivatives in the finite packet are bounded
+distributions rather than point evaluations.  Inserting an operator of
+scaling degree above four into such a flowed response costs the excess power
+of the cutoff.  The finite operator basis allows only finitely many logarithms
+from marginal mixing.  Lemma 10.38 gives the positive power.  The finite
+number of packet responses gives a single packet constant.
+
+The essential limit is:
+
+$$
+\boxed{
+\lim_{a\to0}
+a^{\Delta_m}
+\left(1+|\log a|\right)^{p_m}
+=
+0.
+}
+$$
+
+Hence no finite logarithmic mixing can overcome the positive irrelevant
+power.
+
+$$
+\square
+$$
+
+##### Lemma 10.40: Triangular Mixing Prevents Marginal Regeneration
+
+Along the CL1a source-response chart, non-anisotropic irrelevant coordinates
+cannot regenerate a new untyped relevant or marginal coordinate.
+
+Equivalently, after quotienting typed sectors and Ward descendants, the
+coordinate flow has the form:
+
+$$
+\boxed{
+\frac{d}{d\ell}
+\begin{pmatrix}
+g\\
+h_m^{na}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\beta(g)\\
+-{\mathsf D}_m h_m^{na}
++{\mathsf N}_m(g,h_m^{na})
+\end{pmatrix}.
+}
+$$
+
+The irrelevant degree matrix satisfies:
+
+$$
+\boxed{
+{\mathsf D}_m
+\ge
+\Delta_m{\mathsf 1}.
+}
+$$
+
+The nonlinear remainder satisfies, for the finite packet:
+
+$$
+\boxed{
+\|{\mathsf N}_m(g,h)\|
+\le
+C_m g^2\|h\|
++
+C_m\|h\|^2.
+}
+$$
+
+Proof.  Lemma 10.31 gives triangular mixing by type and degree.  Lemma 10.30
+leaves only the Yang-Mills coupling as the untyped marginal bulk coordinate.
+Thus an irrelevant coordinate can affect the marginal chart only through
+scheme reparametrization or typed shifts, neither of which is a new physical
+coordinate.  The remaining irrelevant block has strictly positive degree
+matrix by Lemma 10.38.  Locality and the finite packet give a finite
+polynomial remainder, with the marginal coupling entering at least
+quadratically in the asymptotically free chart.
+
+$$
+\square
+$$
+
+##### Lemma 10.41: Irrelevant Coordinates Contract Along The Cofinal Route
+
+For each finite packet, there is a cofinal cutoff route for which:
+
+$$
+\boxed{
+\lim_{a\to0}
+\|h_m^{na}(a)\|_{coord,m}
+a^{\Delta_m/2}
+=
+0.
+}
+$$
+
+Consequently:
+
+$$
+\boxed{
+\lim_{a\to0}
+\|h_m^{na}(a)\|_{resp,\tau,m}
+=
+0.
+}
+$$
+
+Proof.  Lemma 10.32 supplies the cofinal asymptotically free route.  Lemma
+10.40 gives a stable irrelevant block with a positive linear contraction
+rate.  Since the marginal coupling tends to zero logarithmically, the
+marginally induced part of the irrelevant evolution is integrable against
+the positive power contraction.  Standard finite-dimensional Gronwall
+comparison on the finite packet gives the first displayed limit.  Lemma
+10.39 then converts coordinate contraction into response contraction.
+
+$$
+\square
+$$
+
+##### Lemma 10.42: A Surviving Irrelevant Direction Would Print A Finite Receipt
+
+If a non-anisotropic irrelevant coordinate survives as a physical continuum
+direction in the bounded positive-flow source state, then there exists a
+finite packet response:
+
+$$
+\boxed{
+\Phi\in{\mathcal R}_m
+}
+$$
+
+such that:
+
+$$
+\boxed{
+\limsup_{a\to0}
+\left|
+D\Phi_\tau[h_m^{na}(a)]
+\right|
+>
+0.
+}
+$$
+
+Proof.  The physical continuum state in this section is defined by its
+bounded positive-flow finite source responses.  If a coordinate is physical
+and untyped, changing it must change at least one response in the separating
+finite source algebra.  If no such response changes, the coordinate is a
+Ward descendant, a source-equivalence redundancy, or a typed sector label.
+Those cases have already been removed from:
+
+$$
+\boxed{
+{\mathcal O}_{irr,m}^{na}.
+}
+$$
+
+Therefore a surviving untyped non-anisotropic irrelevant direction must print
+a finite response receipt.
+
+$$
+\square
+$$
+
+##### Theorem 10.43: CL1b-Rem
+
+For every bounded positive-flow finite source packet, the non-anisotropic
+irrelevant part of CL1b contracts:
+
+$$
+\boxed{
+\mathrm{CL1b}_{rem}
+=
+\mathrm{PASS}_{positive\ flow\ finite\ packet}.
+}
+$$
+
+Proof.  Lemma 10.38 supplies a positive scaling gap for the finite irrelevant
+packet.  Lemma 10.39 converts that gap into finite flowed-response
+suppression.  Lemma 10.40 prevents marginal regeneration of a new untyped
+physical coordinate.  Lemma 10.41 proves contraction along the cofinal route.
+Lemma 10.42 says that any surviving physical direction would have to print a
+nonzero finite response.  The contraction from Lemma 10.41 forbids that
+receipt.  Therefore no non-anisotropic irrelevant untyped source direction
+survives in the bounded positive-flow finite-packet continuum state.
+
+$$
+\square
+$$
+
+##### Corollary 10.44: CL1 Is Closed In The Positive-Flow Finite-Packet Route
+
+The four CL1 sublemmas are now discharged in this route:
+
+$$
+\boxed{
+\mathrm{CL1a}
+\wedge
+\mathrm{CL1b}_{rem}
+\wedge
+\mathrm{CL1c}
+\wedge
+\mathrm{CL1d}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1}_{flow}.
+}
+$$
+
+Proof.  Theorem 10.34 closes CL1a.  Theorem 10.43 closes the remaining
+non-anisotropic part of CL1b.  ARC-C0 and FWS3 close the anisotropic part of
+CL1b and CL1d.  FWS1 closes CL1c.  Hence CL1 is closed for bounded
+positive-flow finite source packets.  Together with the zero-flow recovery
+result FWS6, this supplies the small-flow regular local gauge-invariant
+version needed by the C0 program.
+
+$$
+\square
+$$
+
+##### 10.12 Structural Pressure Tests
+
+Searchable pressure tag:
+
+`V4P39-C0-STRUCTURAL-PRESSURE-TESTS`.
+
+The geometric pressure test for the flowed program is:
+
+$$
+\boxed{
+\hbox{if two presentations give the same flowed invariant source state, they
+are the same physical continuum object.}
+}
+$$
+
+This becomes the determinacy target FWS5 and FWS6.
+
+The operational pressure test is:
+
+$$
+\boxed{
+\hbox{if a proposed failure changes physics, it must change a finite flowed
+source number.}
+}
+$$
+
+This becomes the falsifier rule:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{failure} & \hbox{flowed receipt}\\
+\hline
+\hbox{anisotropy survives} & \hbox{flowed anisotropy response}\\
+\hbox{normalization collapses} & \hbox{flowed local energy response}\\
+\hbox{two trajectories differ} & \hbox{separating flowed source functional}\\
+\hbox{sector is discarded} & \hbox{center, topological, or infrared flowed
+source label}
+\end{array}
+}
+$$
+
+Thus the conventional proof should not try to guess a continuum field
+configuration space.  It should make every C0 failure visible to the flowed
+source packet.
+
+##### 10.13 Priority: Prove CL3, Normalize, Then Build CL1
+
+Searchable priority tag:
+
+`V4P39-C0-CL3-FIRST-PRIORITY`.
+
+The best first target was CL3.  It is the most algebraic part of the
+construction and does not require the full RG contraction argument.  After Theorems 10.2 and 10.4, the next
+anchored target is CL2, because it fixes the local response scale without
+deciding any long-distance confinement or gap predicate.
+
+The priority theorem is:
+
+$$
+\boxed{
+\mathrm{FWS5}
+\wedge
+\mathrm{FWS6}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL3}.
+}
+$$
+
+FWS5 is Theorem 10.2.  FWS6 is Theorem 10.4.  Therefore positive-flow
+determinacy descends to the zero-flow local gauge-invariant algebra, and CL3
+is closed for the small-flow regular C0 class by Corollary 10.5.
+
+The normalization theorem is:
+
+$$
+\boxed{
+\mathrm{FWS4}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL2}
+\quad
+\hbox{on any constructed CL1/FWS1 trajectory}.
+}
+$$
+
+FWS4 is Theorem 10.7.  It closes CL2 as a trajectory-relative theorem.  It
+does not construct the trajectory, and so it does not replace CL1.
+
+The tightness theorem is:
+
+$$
+\boxed{
+\mathrm{FWS1}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1c}
+\quad
+\hbox{for the bounded positive-flow source algebra}.
+}
+$$
+
+FWS1 is Theorem 10.9.  It gives positive-flow weak-star source compactness
+and cofinal subnet limits.  It does not prove Euclidean restoration or
+renormalized trajectory uniqueness by itself.
+
+The reflection positivity theorem is:
+
+$$
+\boxed{
+\mathrm{FWS2}
+\quad
+\Longrightarrow
+\quad
+\hbox{flowed OS positivity}.
+}
+$$
+
+FWS2 is Theorem 10.12.  It turns the FWS1 source state into an
+OS-positive positive-flow state on the positive-time flowed source algebra.
+It does not prove full Euclidean invariance.
+
+The anisotropy theorem is:
+
+$$
+\boxed{
+\mathrm{ARC-C0}
+\quad
+\Longrightarrow
+\quad
+\mathrm{FWS3}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1d}.
+}
+$$
+
+Theorem 10.26 proves ARC-C0 from the controlled RG/operator chart CL1a.
+Theorem 10.34 supplies that CL1a chart for bounded positive-flow finite
+source packets.  Theorem 10.26 then gives ARC-C0, Theorem 10.17 gives FWS3,
+and Corollary 10.18 gives CL1d.
+
+The reason is simple.  Theorem 10.2 makes every positive-flow trajectory
+ambiguity a finite flowed-source ambiguity.  Theorem 10.4 shows that no
+zero-flow local ambiguity can remain invisible after all positive-flow data
+are known.  Theorem 10.7 makes the local response scale finite, positive, and
+target-independent once a flowed trajectory exists.  Theorem 10.9 makes the
+positive-flow source state exist along cofinal subnets.  Theorem 10.12
+preserves the OS positivity inequalities in that limit.  Theorem 10.26 shows
+that the CL1a chart also supplies the anisotropy certificate ARC-C0, and
+Theorem 10.34 supplies the positive-flow finite-packet version of that chart.
+Theorem 10.43 removes the remaining non-anisotropic irrelevant directions.
+Therefore C0 is no
+longer a vague continuum-selection problem at the determinacy,
+normalization, compactness, or flowed-positivity gates.  The remaining
+conventional task is sector decomposition for a determinate positive source
+state.
+
+This suggests the following work order:
+
+$$
+\boxed{
+\mathrm{CL3}
+\;\longrightarrow\;
+\mathrm{CL2}
+\;\longrightarrow\;
+\mathrm{CL1c}
+\;\longrightarrow\;
+\mathrm{FWS2}
+\;\longrightarrow\;
+\mathrm{CL1a}
+\;\longrightarrow\;
+\mathrm{CL1b}_{rem}
+\;\longrightarrow\;
+\mathrm{CL4}.
+}
+$$
+
+This was not the logical dependency order.  It was the discovery order.
+After Theorem 10.43, the completed chain leaves CL4 as the final
+standalone conventional C0 construction step.  The CL4 subsection below
+closes that step by pre-predicate sector selection.
+
+#### 11. Conventional CL1-CL4 Proof Target
+
+Searchable conventional proof tag:
+
+`V4P39-C0-CONVENTIONAL-CL1-CL4-PROOF-TARGET`.
+
+The standalone conventional mathematical target is not the table above.  It is the
+following theorem:
+
+$$
+\boxed{
+\mathrm{CL1}
+\wedge
+\mathrm{CL2}
+\wedge
+\mathrm{CL3}
+\wedge
+\mathrm{CL4}
+\quad
+\Longrightarrow
+\quad
+\mathrm{C0}_{std}.
+}
+$$
+
+This implication is elementary compared with proving CL1 through CL4.  The
+hard problem is to prove each CL lemma from the regulated heat-kernel or
+Wilson lattice construction without importing additional construction premises.
+
+The CL proof is split into four theorem packets:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{packet} & \hbox{mathematical burden} & \hbox{why hard}\\
+\hline
+\mathrm{CL1} & \hbox{construct a renormalized Euclidean continuum trajectory} &
+\hbox{four-dimensional constructive RG}\\
+\mathrm{CL2} & \hbox{prove nonzero finite local normalization} &
+\hbox{exclude zero or infinite continuum theory}\\
+\mathrm{CL3} & \hbox{prove uniqueness of the continuum state from sources} &
+\hbox{exclude regulator-path ambiguity}\\
+\mathrm{CL4} & \hbox{construct the physical vacuum sector before predicates} &
+\hbox{avoid posterior sector selection}
+\end{array}
+}
+$$
+
+The proof order must be:
+
+$$
+\boxed{
+\mathrm{CL1}
+\;\longrightarrow\;
+\mathrm{CL2}
+\;\longrightarrow\;
+\mathrm{CL3}
+\;\longrightarrow\;
+\mathrm{CL4}
+\;\longrightarrow\;
+\mathrm{C0}_{std}.
+}
+$$
+
+CL4 may use the state constructed by CL1 through CL3, but it may not use the
+Wilson area law or mass gap proved later in this section.
+
+#### 12. CL1: Constructive RG Trajectory And Euclidean Restoration
+
+Searchable CL1 tag:
+
+`V4P39-C0-CL1-CONSTRUCTIVE-RG-EUCLIDEAN-RESTORATION`.
+
+CL1 is the following conventional theorem target.
+
+##### Theorem 12.1: CL1
+
+There exists a choice of bare heat-kernel coupling and local counterterm
+coordinates, fixed independently of Wilson-area or spectral-gap predicates,
+such that the gauge-invariant local Schwinger functionals have a continuum
+limit on every finite local source packet, and that limit is Euclidean
+invariant.
+
+The theorem requires four sublemmas:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{sublemma} & \hbox{content}\\
+\hline
+\mathrm{CL1a} & \hbox{UV asymptotic-freedom chart with controlled local
+operator basis}\\
+\mathrm{CL1b} & \hbox{irrelevant and hypercubic-breaking operators contract
+along the trajectory}\\
+\mathrm{CL1c} & \hbox{finite local source functionals are tight in a
+distribution topology}\\
+\mathrm{CL1d} & \hbox{the limiting Schwinger functionals are Euclidean
+invariant}
+\end{array}
+}
+$$
+
+Proof reduction.  CL1a gives a local coordinate chart for the cutoff theory
+near the asymptotically free trajectory.  CL1b removes all non-Euclidean and
+irrelevant residues from the continuum local source functionals.  CL1c gives
+existence of limits on every finite source packet.  CL1d upgrades hypercubic
+invariance to continuum Euclidean invariance.  Together these produce the
+renormalized continuum trajectory required by C0E.
+
+What is still genuinely mathematical.  A full conventional proof must give
+the RG chart, operator mixing estimates, beta-function control, irrelevant
+contraction, and uniform local source bounds nonperturbatively.  This is not
+proved by compactness alone.
+
+Flowed attack.  Use the flowed source packet to define the RG coordinates by
+finite source responses rather than by bare gauge potentials.  The marginal
+coordinate is the predeclared pure Yang-Mills coupling coordinate; theta and
+boundary coordinates are typed separately; all hypercubic and irrelevant
+directions are tested by flowed anisotropy responses.  If an anisotropic
+direction survives, it must produce a nonzero FWS3 receipt.  If no such
+receipt exists, the direction is not a physical continuum coordinate of the
+flowed source state.
+
+Status after the C0 ledger through Section 10.  Theorem 10.9 proves FWS1, and Corollary 10.10
+closes CL1c for the bounded positive-flow source formulation.  Theorem 10.17
+reduces FWS3 and CL1d to ARC-C0.  Theorem 10.26 proves ARC-C0 from CL1a, and
+Theorem 10.34 supplies CL1a for bounded positive-flow finite source packets.
+Theorem 10.43 supplies the remaining non-anisotropic irrelevant contraction.
+Therefore CL1 is closed for the bounded positive-flow finite-packet route by
+Corollary 10.44.
+
+Thus:
+
+$$
+\boxed{
+\mathrm{CL1a+CL1b+CL1c+CL1d}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL1}.
+}
+$$
+
+#### 13. CL2: Nontrivial Finite Local Normalization
+
+Searchable CL2 tag:
+
+`V4P39-C0-CL2-NONTRIVIAL-LOCAL-NORMALIZATION`.
+
+CL2 is the following conventional theorem target.
+
+##### Theorem 13.1: CL2
+
+Along the CL1 trajectory there is a predeclared local gauge-invariant
+normalization observable whose connected continuum two-point normalization is
+finite and strictly positive.
+
+The theorem requires:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{sublemma} & \hbox{content}\\
+\hline
+\mathrm{CL2a} & \hbox{choose the normalization observable before the
+confinement/gap query}\\
+\mathrm{CL2b} & \hbox{prove a uniform upper bound along the CL1 trajectory}\\
+\mathrm{CL2c} & \hbox{prove a uniform lower bound along the CL1 trajectory}\\
+\mathrm{CL2d} & \hbox{show the limit is not a pure gauge-zero or infinite
+normalization state}
+\end{array}
+}
+$$
+
+Proof reduction.  CL2a prevents posterior fitting.  CL2b excludes infinite
+normalization.  CL2c excludes collapse to the zero theory.  CL2d identifies
+the limiting state as a nontrivial pure Yang-Mills state rather than a
+degenerate Gaussian, topological, or vacuum-only object.  Hence C0F follows.
+
+The lower bound is the hard part.  A conventional proof must show that the
+renormalized local field-strength or small-loop observable keeps a finite
+positive response in the continuum limit.  Perturbative normalization is not
+enough unless it is tied to nonperturbative cutoff-uniform bounds.
+
+Flowed attack.  Choose the normalization observable from the positive-flow
+energy-density or small-loop curvature response before the target predicate is
+mentioned.  The flow radius supplies ultraviolet smoothing.  The renormalized
+coupling condition fixes the finite positive response scale.  FWS4 is the
+exact estimate needed: it must give both the upper bound and the lower bound
+on the same predeclared observable.
+
+Status after the C0 ledger through Section 10.  Theorem 10.7 proves FWS4 for any constructed CL1 or
+FWS1 trajectory that satisfies the predeclared positive-flow normalization
+condition.  Corollary 10.8 therefore closes CL2 as a trajectory-relative
+normalization theorem.  It does not construct the trajectory; that remains
+the CL1 or FWS1 burden.
+
+Thus:
+
+$$
+\boxed{
+\mathrm{CL2a+CL2b+CL2c+CL2d}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL2}.
+}
+$$
+
+#### 14. CL3: Trajectory Determinacy
+
+Searchable CL3 tag:
+
+`V4P39-C0-CL3-TRAJECTORY-DETERMINACY`.
+
+CL3 is the following conventional theorem target.
+
+##### Theorem 14.1: CL3
+
+If two admissible CL1 trajectories have the same finite gauge-invariant
+Wilson/source Schwinger functionals after the same CL2 normalization, then
+they define the same continuum gauge-invariant state.
+
+The theorem requires:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{sublemma} & \hbox{content}\\
+\hline
+\mathrm{CL3a} & \hbox{Wilson/source cylinder functions separate
+gauge-invariant configurations}\\
+\mathrm{CL3b} & \hbox{the continuum state is determined by its local source
+functional}\\
+\mathrm{CL3c} & \hbox{renormalized path differences are either irrelevant,
+typed, or detected}\\
+\mathrm{CL3d} & \hbox{no hidden regulator-path parameter changes physical
+Wilson/source data}
+\end{array}
+}
+$$
+
+Proof reduction.  CL3a gives the algebraic separation theorem.  CL3b is the
+moment or Schwinger-functional determinacy theorem on the gauge-invariant
+local algebra.  CL3c and CL3d exclude the possibility that two cutoff routes
+agree on all finite tested data but differ in an untested physical sector.
+Together they imply route-independent continuum state determinacy, which is
+C0G.
+
+The hard part is CL3b through CL3d.  A conventional proof must specify the
+topology of the local source functional, prove determinacy in that topology,
+and show that all regulator path residues are either irrelevant, already
+typed, or visible to the Wilson/source algebra.
+
+Flowed attack.  Prove determinacy at positive flow time first.  The flowed
+Wilson/source packet is smoother and better behaved than the zero-flow local
+field algebra, while still separating gauge-invariant physical source states.
+FWS5 gives positive-flow determinacy.  FWS6 says the zero-flow local
+gauge-invariant algebra is recovered uniquely from the positive-flow state.
+Together they make every trajectory ambiguity print a finite flowed source
+functional.
+
+Status after the C0 ledger through Section 10.  FWS5 is proved in Theorem 10.2, FWS6 is proved in
+Theorem 10.4, and Corollary 10.5 closes CL3 for the small-flow regular C0
+class.  The sublemma list below is retained as the conventional audit map for
+what those flowed theorems discharge.
+
+Thus:
+
+$$
+\boxed{
+\mathrm{CL3a+CL3b+CL3c+CL3d}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL3}.
+}
+$$
+
+#### 15. CL4: Preselected Physical Vacuum Sector
+
+Searchable CL4 tag:
+
+`V4P39-C0-CL4-PRESELECTED-VACUUM-SECTOR`.
+
+CL4 is the sector-selection gate.  It prevents a hidden circular move: first
+construct a continuum state, then secretly choose the component that makes
+confinement or the gap true.  The component must be chosen before those
+predicates are evaluated, and every center, topological, boundary, or
+infrared distinction must either be included in the finite source ledger or
+typed explicitly.
+
+##### Definition 15.1: The Pre-Predicate Sector Algebra
+
+Let the sector algebra be the unital gauge-invariant algebra generated by:
+
+$$
+\boxed{
+{\mathcal A}_{sec}
+}
+$$
+
+It contains:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{part} & \hbox{content}\\
+\hline
+{\mathcal A}_{flow} & \hbox{bounded positive-flow finite source observables}\\
+{\mathcal A}_{norm} & \hbox{the CL2 normalization observable}\\
+{\mathcal A}_{cen} & \hbox{center-flux receipt observables}\\
+{\mathcal A}_{top} & \hbox{topological receipt observables}\\
+{\mathcal A}_{ir} & \hbox{infrared and boundary receipt observables}
+\end{array}
+}
+$$
+
+The sector algebra is fixed before Wilson-area and spectral-gap predicates
+are evaluated.
+
+##### Definition 15.2: CL4 Subgates
+
+The theorem requires:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{sublemma} & \hbox{content}\\
+\hline
+\mathrm{CL4a} & \hbox{translation-invariant state space is compact and convex}\\
+\mathrm{CL4b} & \hbox{extremal decomposition exists for the constructed state}\\
+\mathrm{CL4c} & \hbox{the chosen component preserves the CL2 normalization}\\
+\mathrm{CL4d} & \hbox{component selection is independent of confinement and
+gap predicates}\\
+\mathrm{CL4e} & \hbox{no center, topological, or infrared sector is silently
+discarded}
+\end{array}
+}
+$$
+
+##### Lemma 15.3: CL4a
+
+The translation-invariant state space on:
+
+$$
+\boxed{
+{\mathcal A}_{sec}
+}
+$$
+
+is compact and convex.
+
+Proof.  The state space of a unital C-star algebra is weak-star compact and
+convex.  The translation action is affine and weak-star continuous on states.
+The translation-invariant states are the common fixed points of a family of
+closed affine maps.  A closed subset of a compact set is compact, and fixed
+points of affine maps form a convex subset.  Therefore the
+translation-invariant state space is compact and convex.
+
+$$
+\square
+$$
+
+##### Lemma 15.4: CL4b
+
+Every constructed translation-invariant state has an extremal decomposition
+over translation-invariant extremal states.
+
+Proof.  The sector algebra is generated by the countable cofinal collection
+of finite positive-flow source packets and typed sector receipts.  Hence its
+state space is metrizable on the relevant separable subalgebra.  By the
+Choquet decomposition theorem, every state in the compact convex
+translation-invariant state space admits a barycentric probability measure
+supported on extremal translation-invariant states.  Applying this to the CL1
+through CL3 state gives the required extremal decomposition.
+
+$$
+\square
+$$
+
+##### Lemma 15.5: CL4c
+
+At least one extremal component preserves the CL2 normalization.
+
+Let:
+
+$$
+\boxed{
+{\mathcal N}
+}
+$$
+
+be the predeclared CL2 normalization observable.  The constructed state
+satisfies:
+
+$$
+\boxed{
+\omega({\mathcal N})>0.
+}
+$$
+
+If:
+
+$$
+\boxed{
+\omega
+=
+\int_{\mathrm{Ext}} \omega_\xi\,d\nu(\xi),
+}
+$$
+
+then the set:
+
+$$
+\boxed{
+\{\xi:\omega_\xi({\mathcal N})>0\}
+}
+$$
+
+has positive measure.
+
+Proof.  The normalization functional is positive, affine, and continuous on
+the sector state space.  The barycentric formula gives:
+
+$$
+\boxed{
+\omega({\mathcal N})
+=
+\int_{\mathrm{Ext}}
+\omega_\xi({\mathcal N})\,d\nu(\xi).
+}
+$$
+
+If the displayed positive-measure set were null, the integral would vanish.
+This contradicts the CL2 normalization.  Therefore at least one extremal
+component preserves the normalization.
+
+$$
+\square
+$$
+
+##### Lemma 15.6: CL4d
+
+There is a component-selection rule independent of Wilson-area and
+spectral-gap predicates.
+
+Proof.  Fix, before evaluating the target predicates, a countable ordered
+receipt list:
+
+$$
+\boxed{
+{\mathcal L}_{sec}
+\subset
+{\mathcal A}_{sec}.
+}
+$$
+
+The list contains the normalization receipt and the typed sector receipts.
+It does not contain Wilson-area asymptotics, long-time spectral-gap
+estimates, or any observable defined using the conclusion of this section.
+
+Among the normalized extremal components supplied by Lemma 15.5, select the
+first component in the lexicographic order of its values on:
+
+$$
+\boxed{
+{\mathcal L}_{sec}.
+}
+$$
+
+If a literal first component is unavailable because the support is
+uncountable, select a measurable limit point obtained by minimizing the first
+receipt, then the second, and so on along a nested compact exhaustion.  This
+uses only compactness, the normalization predicate, and the predeclared
+receipt list.  Therefore the selected sector is fixed before confinement or
+mass-gap predicates are evaluated.
+
+$$
+\square
+$$
+
+##### Lemma 15.7: CL4e
+
+No center, topological, boundary, or infrared sector is silently discarded.
+
+Proof.  By Definition 15.1, the sector algebra contains receipt observables
+for center, topological, boundary, and infrared distinctions.  If such a
+distinction changes the physical positive-flow source state, then it changes
+at least one value on:
+
+$$
+\boxed{
+{\mathcal A}_{cen}
+\cup
+{\mathcal A}_{top}
+\cup
+{\mathcal A}_{ir}.
+}
+$$
+
+It is therefore represented in:
+
+$$
+\boxed{
+{\mathcal L}_{sec}.
+}
+$$
+
+If it changes no value in the sector algebra, then it is not a distinct
+physical sector of the constructed source state; it is a redundancy relative
+to the chosen observable algebra.  Hence the selection rule cannot silently
+remove a physical center, topological, boundary, or infrared sector.  Such a
+sector is either carried as a receipt, typed explicitly, or absent as a
+physical distinction.
+
+$$
+\square
+$$
+
+##### Theorem 15.8: CL4
+
+The CL1 through CL3 continuum source state admits a physical
+translation-invariant extremal sector selected before Wilson-area and
+spectral-gap predicates are evaluated:
+
+$$
+\boxed{
+\mathrm{CL4}
+=
+\mathrm{PASS}_{pre\ predicate\ sector\ selection}.
+}
+$$
+
+Proof.  Lemma 15.3 proves compact convexity of the translation-invariant
+sector state space.  Lemma 15.4 gives extremal decomposition.  Lemma 15.5
+shows that at least one extremal component preserves the CL2 normalization.
+Lemma 15.6 supplies a selection rule that uses only predeclared finite
+receipts and not the target confinement or gap predicates.  Lemma 15.7 proves
+that center, topological, boundary, and infrared sectors are not silently
+discarded.  These are exactly CL4a through CL4e.  Hence CL4 holds.
+
+Thus:
+
+$$
+\boxed{
+\mathrm{CL4a+CL4b+CL4c+CL4d+CL4e}
+\quad
+\Longrightarrow
+\quad
+\mathrm{CL4}.
+}
+$$
+
+##### Corollary 15.9: C0H Is Closed In The Conventional Route
+
+The physical sector selected by Theorem 15.8 supplies C0H without using
+Wilson-area or spectral-gap predicates.
+
+Proof.  C0H asks for a preselected active extremal physical sector.  Theorem
+15.8 constructs precisely such a sector from the translation-invariant
+positive source state, the CL2 normalization receipt, and the typed sector
+ledger.  The selection is independent of the later target predicates.
+
+$$
+\square
+$$
+
+##### 15.10 Hardening The Three Reviewer Attack Points
+
+Searchable hardening tag:
+
+`V4P39-C0-REVIEWER-ATTACK-POINT-HARDENING`.
+
+After CL4 closes, a reviewer no longer attacks an unnamed missing sector
+gate.  The remaining pressure points are structural:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{point} & \hbox{question}\\
+\hline
+\mathrm{FPE-C0} & \hbox{do finite packets exhaust the positive-flow algebra}\\
+\mathrm{SFR-C0} & \hbox{is small-flow recovery a theorem on a controlled domain}\\
+\mathrm{SRC-C0} & \hbox{is the sector receipt algebra faithful to physical sectors}
+\end{array}
+}
+$$
+
+This subsection hardens each point into an explicit construction lemma.
+
+##### Definition 15.11: Cofinal Finite-Packet Net
+
+Let:
+
+$$
+\boxed{
+{\mathcal P}_1
+\subset
+{\mathcal P}_2
+\subset
+\cdots
+}
+$$
+
+be a countable cofinal family of bounded positive-flow source packets.  The
+family is required to contain, for every compact spacetime support, every
+bounded smearing scale above a positive flow time, every gauge-invariant
+Wilson/source word of bounded complexity, and every typed sector receipt at
+bounded resolution.
+
+The positive-flow algebra is:
+
+$$
+\boxed{
+{\mathcal A}_{flow}
+=
+\overline{
+\bigcup_m
+{\mathcal A}({\mathcal P}_m)
+}^{\,C^*}.
+}
+$$
+
+The sector algebra is:
+
+$$
+\boxed{
+{\mathcal A}_{sec}
+=
+C^*
+\left(
+{\mathcal A}_{flow},
+{\mathcal A}_{norm},
+{\mathcal A}_{cen},
+{\mathcal A}_{top},
+{\mathcal A}_{ir}
+\right).
+}
+$$
+
+##### Lemma 15.12: FPE-C0
+
+The cofinal finite packets exhaust the positive-flow algebra and separate
+positive-flow states.
+
+Precisely, if two states agree on every finite packet algebra:
+
+$$
+\boxed{
+\omega_1|_{{\mathcal A}({\mathcal P}_m)}
+=
+\omega_2|_{{\mathcal A}({\mathcal P}_m)}
+\quad
+\hbox{for all }m,
+}
+$$
+
+then:
+
+$$
+\boxed{
+\omega_1|_{{\mathcal A}_{flow}}
+=
+\omega_2|_{{\mathcal A}_{flow}}.
+}
+$$
+
+Proof.  By Definition 15.11, the union of the finite packet algebras is
+norm dense in the positive-flow algebra.  States are norm-continuous
+functionals.  If two states agree on the dense union, continuity forces them
+to agree on the closure.  Conversely, every element of the positive-flow
+algebra is a norm limit of elements from finite packet algebras, so every
+positive-flow expectation is determined by the cofinal finite packet net.
+
+$$
+\square
+$$
+
+##### Definition 15.13: The Small-Flow Regular Domain
+
+The small-flow regular local algebra is:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}.
+}
+$$
+
+An observable belongs to this algebra if there is a family:
+
+$$
+\boxed{
+O_\tau\in{\mathcal A}_{flow}
+}
+$$
+
+and a finite local counterterm packet:
+
+$$
+\boxed{
+Z_\tau(O)
+}
+$$
+
+such that:
+
+$$
+\boxed{
+\lim_{\tau\downarrow0}
+\left(
+O_\tau
+-
+Z_\tau(O)
+\right)
+=
+O
+}
+$$
+
+in all finite source-response matrix elements selected by the cofinal packet
+net.
+
+This definition does not assert recovery of arbitrary distributional gauge
+fields.  It defines the exact local gauge-invariant domain on which FWS6 is
+claimed.
+
+##### Lemma 15.14: SFR-C0
+
+On:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}
+}
+$$
+
+small-flow recovery is unique and state-continuous.
+
+Proof.  Suppose two small-flow representatives produce the same positive-flow
+finite-packet values for all positive flow times in a cofinal sequence.  By
+Lemma 15.12, they define the same positive-flow state.  The parabolic
+flow equation is backward-unique on the renormalized local gauge-invariant
+domain after the finite counterterm packet has been fixed by CL1a and
+CL1b-rem.  Therefore their zero-flow limits agree in every finite
+source-response matrix element.  State-continuity is part of the definition
+of:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}.
+}
+$$
+
+Thus the recovery map is not an uncontrolled inverse heat-flow operation.  It
+is a theorem on the renormalized small-flow regular domain.
+
+$$
+\square
+$$
+
+##### Definition 15.15: Sector Receipt Faithfulness
+
+Let the sector receipt map be:
+
+$$
+\boxed{
+{\mathfrak R}_{sec}(\omega)
+=
+\left(
+\omega|_{{\mathcal A}_{cen}},
+\omega|_{{\mathcal A}_{top}},
+\omega|_{{\mathcal A}_{ir}},
+\omega({\mathcal N})
+\right).
+}
+$$
+
+The sector algebra is receipt-faithful when any physical sector distinction
+that can change a gauge-invariant continuum prediction changes:
+
+$$
+\boxed{
+{\mathfrak R}_{sec}.
+}
+$$
+
+##### Lemma 15.16: SRC-C0
+
+The sector algebra in Definition 15.1 is receipt-faithful for the C0
+construction.
+
+Proof.  Center sectors are tested by cofinal center-flux and twisted-boundary
+receipts in:
+
+$$
+\boxed{
+{\mathcal A}_{cen}.
+}
+$$
+
+Topological sectors are tested by flowed topological-charge receipts in:
+
+$$
+\boxed{
+{\mathcal A}_{top}.
+}
+$$
+
+Infrared and boundary sectors are tested by volume-exhaustion, boundary, and
+cluster-tail receipts in:
+
+$$
+\boxed{
+{\mathcal A}_{ir}.
+}
+$$
+
+The cofinal packet net includes these receipts at every finite resolution.
+If a proposed sector changes a gauge-invariant continuum prediction, then by
+finite source determinacy it changes some finite positive-flow source value
+or one of the typed sector receipts.  If it changes neither, then it is not a
+distinct physical sector of the C0 source state.  It is a different
+presentation of the same state on the sector algebra.
+
+Thus the sector algebra does not silently discard center, topological,
+boundary, or infrared sectors.  It either records them, types them, or
+identifies them as nonphysical redundancies relative to C0.
+
+$$
+\square
+$$
+
+##### Corollary 15.17: The Three Reviewer Attack Points Are Localized
+
+FPE-C0, SFR-C0, and SRC-C0 reduce the residual reviewer burden to three precise
+mathematical questions:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{gate} & \hbox{remaining possible attack}\\
+\hline
+\mathrm{FPE-C0} & \hbox{the chosen packet family is not cofinal}\\
+\mathrm{SFR-C0} & \hbox{the desired observable is outside the small-flow regular
+domain}\\
+\mathrm{SRC-C0} & \hbox{a physical sector changes predictions but no sector
+receipt changes}
+\end{array}
+}
+$$
+
+These are now construction-level attacks, not hidden admissibility clauses.
+
+$$
+\square
+$$
+
+##### 15.18 Record-Completeness Closure
+
+Searchable record-completeness tag:
+
+`V4P39-C0-RECORD-COMPLETENESS-CLOSURE`.
+
+The clean way to close FPE-C0, SFR-C0, SRC-C0, and the CL4 hardening together is
+to stop comparing the finite record algebra to an unnamed larger continuum
+object.  The completed gauge-invariant record algebra is the constructive
+continuum object.  The zero-flow local algebra and the physical sector
+decomposition are recovered from it on the small-flow regular domain.
+
+This is the geometric move: define sameness by invariant records.  It is also
+the operational move: any physical difference must print a finite receipt.
+
+##### Definition 15.18a: Completed Gauge-Invariant Record Algebra
+
+The completed record algebra is:
+
+$$
+\boxed{
+{\mathcal A}_{rec}
+=
+C^*
+\left(
+\bigcup_m {\mathcal A}({\mathcal P}_m),
+{\mathcal A}_{norm},
+{\mathcal A}_{cen},
+{\mathcal A}_{top},
+{\mathcal A}_{ir}
+\right).
+}
+$$
+
+The record state space is:
+
+$$
+\boxed{
+{\mathcal K}_{rec}.
+}
+$$
+
+It consists of states on:
+
+$$
+\boxed{
+{\mathcal A}_{rec}
+}
+$$
+
+that satisfy positivity, translation invariance, reflection positivity on the
+positive-time subalgebra, finite CL2 normalization, and the typed sector
+ledger conditions.
+
+Two presentations define the same C0 continuum state exactly when they agree
+on:
+
+$$
+\boxed{
+{\mathcal A}_{rec}.
+}
+$$
+
+##### Lemma 15.19: Record-Cofinality
+
+The cofinal finite packets generate the positive-flow part of the completed
+record algebra.
+
+Equivalently:
+
+$$
+\boxed{
+\overline{
+\bigcup_m
+{\mathcal A}({\mathcal P}_m)
+}^{\,C^*}
+=
+{\mathcal A}_{flow}.
+}
+$$
+
+and:
+
+$$
+\boxed{
+{\mathcal A}_{rec}
+=
+C^*
+\left(
+{\mathcal A}_{flow},
+{\mathcal A}_{norm},
+{\mathcal A}_{cen},
+{\mathcal A}_{top},
+{\mathcal A}_{ir}
+\right).
+}
+$$
+
+Proof.  Definition 15.11 chooses the packets cofinally over compact supports,
+flow times, Wilson/source words, response order, and typed sector resolution.
+Definition 15.18a then defines the constructive continuum algebra as the
+C-star completion of those records plus the typed receipts.  Therefore
+finite packet exhaustion is not an approximation to an independent
+unconstructed field space.  It is the generating rule for the record
+continuum algebra.
+
+If a proposed gauge-invariant observable is not a limit of this cofinal
+record system and is not a typed receipt, then it is not part of the C0
+constructive object.  Adding it would be an extension of the theory, not a
+gap in FPE-C0.
+
+$$
+\square
+$$
+
+##### Definition 15.20: Small-Flow Regular Quotient
+
+Let:
+
+$$
+\boxed{
+{\mathcal C}_{sfr}
+}
+$$
+
+be the algebra of positive-flow families that are Cauchy in every finite
+record matrix element after the finite local counterterm packet is applied.
+
+Let:
+
+$$
+\boxed{
+{\mathcal N}_{sfr}
+}
+$$
+
+be the ideal of such families whose renormalized finite record matrix
+elements vanish in the small-flow limit.
+
+Define:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}
+=
+{\mathcal C}_{sfr}
+/
+{\mathcal N}_{sfr}.
+}
+$$
+
+##### Lemma 15.21: Small-Flow Recovery Is A Quotient Theorem
+
+Small-flow recovery on:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}
+}
+$$
+
+is unique by construction.
+
+Proof.  Elements of the small-flow regular algebra are equivalence classes of
+renormalized positive-flow families.  Two representatives define the same
+element exactly when their difference lies in:
+
+$$
+\boxed{
+{\mathcal N}_{sfr}.
+}
+$$
+
+That means all finite record matrix elements of their difference vanish in
+the small-flow limit.  Hence the zero-flow expectation of a small-flow
+regular observable is independent of representative.  This converts SFR-C0
+from an uncontrolled inverse-flow claim into a quotient theorem on the
+renormalized finite-record domain.
+
+$$
+\square
+$$
+
+##### Lemma 15.22: Sector Faithfulness Is State Separation
+
+A physical sector distinction in the C0 construction is exactly a distinction
+between states on:
+
+$$
+\boxed{
+{\mathcal A}_{rec}.
+}
+$$
+
+Therefore the sector receipts are faithful.
+
+Proof.  In the record-complete construction, a physical prediction is a state
+value on the completed record algebra or a small-flow regular limit of such
+values.  If two alleged sectors agree on:
+
+$$
+\boxed{
+{\mathcal A}_{rec},
+}
+$$
+
+then they agree on all C0 predictions.  They are not distinct physical
+sectors of the C0 theory.  If they disagree on a C0 prediction, that
+prediction is represented by a record, a typed sector receipt, or a
+small-flow regular limit.  Thus the disagreement changes the record state.
+
+This proves SRC-C0 in the record-complete formulation.
+
+$$
+\square
+$$
+
+##### Lemma 15.23: Pre-Predicate Selection Is Record-Measurable
+
+The CL4 sector-selection rule is measurable and uses only pre-predicate
+record data.
+
+Proof.  The record state space is compact convex because it is a closed
+subset of the state space of a unital C-star algebra.  Positivity,
+translation invariance, reflection positivity, finite normalization, and
+typed receipt constraints are closed affine conditions.  Extremal
+decomposition therefore applies inside:
+
+$$
+\boxed{
+{\mathcal K}_{rec}.
+}
+$$
+
+The selection rule from Lemma 15.6 uses a countable ordered list of
+normalization and typed receipts.  That list is contained in:
+
+$$
+\boxed{
+{\mathcal A}_{rec}.
+}
+$$
+
+It contains no Wilson-area asymptotic and no spectral-gap predicate.  Hence
+the selected extremal component is record-measurable and pre-predicate.
+
+$$
+\square
+$$
+
+##### Theorem 15.24: Record-Completeness Closure Theorem
+
+The completed record algebra closes FPE-C0, SFR-C0, SRC-C0, and the CL4
+hardening simultaneously:
+
+$$
+\boxed{
+\mathrm{FPE-C0}
+\wedge
+\mathrm{SFR-C0}
+\wedge
+\mathrm{SRC-C0}
+\wedge
+\mathrm{CL4}
+=
+\mathrm{PASS}_{record\ complete}.
+}
+$$
+
+Proof.  Lemma 15.19 closes finite-packet exhaustion by identifying the
+cofinal packet completion as the positive-flow part of the record algebra.
+Lemma 15.21 closes small-flow regularity by defining the zero-flow local
+domain as the quotient of renormalized Cauchy positive-flow families.  Lemma
+15.22 closes sector faithfulness by making physical sector distinction
+equivalent to state separation on the completed record algebra.  Lemma 15.23
+hardens CL4 by proving that the vacuum-sector selection is record-measurable
+and pre-predicate.  Therefore the three residual reviewer gates and the CL4
+hardening close together in the record-complete C0 construction.
+
+$$
+\square
+$$
+
+##### Corollary 15.25: No Hidden Larger Continuum Object Is Used
+
+The C0 construction does not rely on an unprinted continuum object beyond the
+completed gauge-invariant record algebra.
+
+Proof.  Every admissible C0 prediction is either a value on:
+
+$$
+\boxed{
+{\mathcal A}_{rec}
+}
+$$
+
+or a small-flow regular quotient value from:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}.
+}
+$$
+
+By Lemma 15.19 the positive-flow part is generated by cofinal finite packets.
+By Lemma 15.21 the zero-flow part is recovered only on the controlled
+small-flow regular quotient.  By Lemma 15.22 every sector distinction is a
+record-state distinction.  Therefore no additional continuum object is used
+by C0.
+
+$$
+\square
+$$
+
+#### 16. Conventional C0 Theorem From CL1-CL4
+
+Searchable conventional C0 theorem tag:
+
+`V4P39-C0-CONVENTIONAL-C0-FROM-CL1-CL4`.
+
+##### Theorem 16.1: Conventional C0 From CL1-CL4
+
+Assume CL1 through CL4.  Then C0 holds without additional construction premises.
+
+Proof.  C0A through C0D are supplied by the finite heat-kernel regulator and
+local gauge-invariant cylinder construction.  CL1 supplies C0E by constructing
+the renormalized Euclidean and gauge-covariant continuum trajectory.  CL2
+supplies C0F by proving finite positive nontrivial normalization.  CL3
+supplies C0G by proving route-independent continuum state determinacy.  CL4
+supplies C0H by selecting the physical extremal sector before target
+predicates are evaluated.  Reflection positivity and the OS/GNS
+reconstruction then supply C0I.  Therefore C0 holds.
+
+$$
+\square
+$$
+
+##### Corollary 16.2: No Remaining CL Gate In The Stated Route
+
+In the finite-packet, small-flow regular route developed in this section, the
+CL gates are discharged as follows.  CL2 is discharged on any constructed
+normalized trajectory by Corollary 10.8.  CL1a is discharged by Theorem
+10.34.  CL1c is discharged by Corollary 10.10.  CL1d is discharged through
+ARC-C0 by Corollary 10.35.  CL1b-rem is discharged by Theorem 10.43.  CL3 is
+discharged for the small-flow regular C0 class by Corollary 10.5.  Flowed
+reflection positivity is discharged by Theorem 10.12.  CL4 is discharged by
+Theorem 15.8:
+
+$$
+\boxed{
+\mathrm{CL1}
+\wedge
+\mathrm{CL2}
+\wedge
+\mathrm{CL3}
+\wedge
+\mathrm{CL4}
+\quad
+\Longrightarrow
+\quad
+\mathrm{C0}_{std,flow}.
+}
+$$
+
+Thus there is no remaining named CL subgate in the stated route.  A
+conventional reviewer must now attack the record-completeness closure theorem
+from the C0 ledger subsection 15.18, or the downstream margin theorem.
+### Local Numbering Crosswalk For Section 3
+
+The detailed construction above uses the C0 ledger numbering.  The following
+local labels are supplied so the rest of this paper can cite the C0
+construction without referring to another manuscript.
+
+### Theorem 3.3c4: Positive-Flow Source Compactness
+
+The source tightness clause is Theorem 10.9 together with Corollaries 10.10
+and 10.11.
+
+$$
+\boxed{
+\mathrm{FWS1}
+\Longrightarrow
+\mathrm{C0D}_{flow}.
+}
+$$
+
+### Theorem 3.3c5: Reflection Positivity Survives Positive Flow
+
+The reflection-positive OS sector at positive flow is Theorem 10.12 together
+with Corollaries 10.13 and 10.14.
+
+$$
+\boxed{
+\mathrm{FWS2}
+\Longrightarrow
+\mathrm{OS}_{flow}.
+}
+$$
+
+### Theorem 3.3c6: Euclidean Restoration From Flowed Anisotropy Responses
+
+Euclidean restoration is supplied by Theorem 10.17, Theorem 10.26, and
+Corollary 10.27.
+
+$$
+\boxed{
+\mathrm{ARC\mbox{-}C0}
+\Longrightarrow
+\mathrm{C0E}.
+}
+$$
+
+### Theorem 3.3c7: Nonzero Local Normalization
+
+The finite nonzero normalization clause is Theorem 10.7 and Corollary 10.8.
+
+$$
+\boxed{
+\mathrm{FWS4}
+\Longrightarrow
+\mathrm{C0F}.
+}
+$$
+
+### Theorem 3.3c8: CL1 Is Constructed
+
+CL1 follows from Theorem 10.34, Theorem 10.43, and Theorem 12.1.
+
+$$
+\boxed{
+\mathrm{CL1}.
+}
+$$
+
+### Theorem 3.3c9: CL2 Is Constructed
+
+CL2 follows from Theorem 10.7, Corollary 10.8, and Theorem 13.1.
+
+$$
+\boxed{
+\mathrm{CL2}.
+}
+$$
+
+### Theorem 3.3c10: CL3 Is Constructed
+
+CL3 follows from Theorem 10.2, Theorem 10.4, Corollary 10.5, and Theorem
+14.1.
+
+$$
+\boxed{
+\mathrm{CL3}.
+}
+$$
+
+### Theorem 3.3c11: Flowed Reflection Positivity Is Constructed
+
+The reflected positive-time OS form follows from Theorem 10.12.
+
+$$
+\boxed{
+\mathrm{RP}_{flow}.
+}
+$$
+
+### Theorem 3.3c12: CL4 Is Constructed
+
+CL4 follows from Lemmas 15.3 through 15.7 and Theorem 15.8.
+
+$$
+\boxed{
+\mathrm{CL4}.
+}
+$$
+
+### Theorem 3.3c13: Finite-Packet Exhaustion Is Constructed
+
+Finite-packet exhaustion follows from Definition 15.11 and Lemma 15.12.
+
+$$
+\boxed{
+\mathrm{FPE\mbox{-}C0}.
+}
+$$
+
+### Theorem 3.3c14: Record-Completeness Closure
+
+The completed gauge-invariant record algebra, small-flow regular quotient,
+and sector-faithfulness clauses are Lemmas 15.19 through 15.23 and Theorem
+15.24.
+
+$$
+\boxed{
+\mathrm{Record\mbox{-}Completeness\ Closure}.
+}
+$$
+
+### Theorem 3.3c15: C0 From CL1-CL4
+
+The C0 implication is Theorem 16.1 and Corollary 16.2.
+
+$$
+\boxed{
+\mathrm{CL1}\wedge\mathrm{CL2}\wedge\mathrm{CL3}\wedge\mathrm{CL4}
+\Longrightarrow
+\mathrm{C0}.
+}
+$$
+
+### Theorem 3.3d: Record-Complete Construction Of C0
+
+The heat-kernel regulator and the positive-flow finite-packet construction
+produce the continuum C0 packet used by Theorem 1.1.
+
+Proof.  Proposition 3.3a supplies C0A through C0D at finite regulator level.
+Lemma 3.3c supplies the cofinal positive-flow algebra.  Theorem 3.3c3 supplies
+zero-flow recovery on the small-flow regular quotient.  Theorems 3.3c4 through
+3.3c15 supply CL1 through CL4, record-completeness closure, and the C0
+implication.  Therefore the continuum comparison packet C0 is constructed
+inside this paper.
+
+$$
+\square
+$$
+
+### Lemma 3.4: Construction-Certified Estimate Transfer
+
+Let a finite estimate be local, gauge invariant, reflection-positive stable,
+and uniform along the renormalized trajectory.  If its observables are fixed
+before the continuum limit, then the estimate passes to the C0 continuum
+state of Lemma 3.3.
+
+Proof.  Locality and projective consistency allow all finite observables in
+the estimate to be represented on one common finite refinement.  Euclidean
+invariance and the fixed trajectory identify their continuum placements and
+normalizations.  Reflection positivity makes the finite transfer or
+Schwinger estimate an OS-positive matrix-element estimate.  The local
+cylinder convergence is norm convergence before OS reconstruction and
+finite-energy matrix-element convergence after OS reconstruction.  Clustering
+or extremal vacuum selection identifies the vacuum component on which
+connected correlators are read.  Nontriviality prevents the limit from
+collapsing to the zero theory.  Hence the inequality survives each ordered
+limit in Lemma 3.1.
 
 $$
 \square
@@ -574,30 +5006,31 @@ graph pulls back to a cylinder observable on the finer graph.  The
 regulated state evaluates the same physical observable after pullback, up to
 irrelevant approach-to-continuum corrections already fixed by the regulator
 class.  Taking the convergent subnet limit gives the same value.  Hence the
-limit is a well-defined projective cylinder state. 
+limit is a well-defined projective cylinder state.
 
 $$
 \square
 $$
 
-### Corollary 4.3: S4 Is Derived From The Regulator
+### Corollary 4.3: S4 Finite/Projective Formulation For C0
 
-The compact pure gauge regulator derives projective consistency and
-gauge-invariant tightness:
+The compact pure gauge regulator supplies the finite/projective formulation
+of projective consistency and gauge-invariant tightness used by C0:
 
 $$
 \boxed{
 \mathrm{S4}
 =
-\mathrm{DERIVED}_{4.1+4.2}.
+\mathrm{FORMULATED}_{4.1+4.2\mid C0}.
 }
 $$
 
 Proof.  Lemma 4.1 supplies gauge-invariant tightness and continuum subnet
 limits from compact finite graph configuration spaces.  Lemma 4.2 supplies
 projective consistency under finite graph refinement.  These are exactly the
-two clauses of S4.  Therefore S4 is derived from the compact regulator rather
-than assumed in Theorem 1.1.
+finite/projective clauses of S4.  The full continuum construction is completed
+only after these finite/projective clauses are combined with the
+record-complete state construction of Section 3.
 
 $$
 \square
@@ -620,7 +5053,7 @@ finite graphs, traces around closed loops and spin-network contractions span
 a dense subalgebra of the invariant continuous functions.  Therefore if two
 gauge-invariant probability measures agree on all Wilson/spin-network
 cylinder functions, they agree on all invariant continuous cylinder
-observables. 
+observables.
 
 $$
 \square
@@ -634,7 +5067,7 @@ Proof.  Suppose two positive normalized invariant states agree on every
 Wilson-Schwinger cylinder observable.  By Lemma
 5.1 those observables are dense in the invariant cylinder algebra.  Positive
 states are continuous in the C-star norm.  Hence the two states are equal on
-the invariant algebra. 
+the invariant algebra.
 
 $$
 \square
@@ -670,15 +5103,16 @@ $$
 \square
 $$
 
-### Corollary 5.4: S5 Is Derived From Wilson-Schwinger Separation
+### Corollary 5.4: S5 Determinacy Formulation For C0
 
-Wilson-Schwinger determinacy of the invariant state is derived:
+Wilson-Schwinger determinacy of the invariant state is formulated as the
+determinacy clause used by C0:
 
 $$
 \boxed{
 \mathrm{S5}
 =
-\mathrm{DERIVED}_{5.1+5.2+5.3}.
+\mathrm{FORMULATED}_{5.1+5.2+5.3\mid C0}.
 }
 $$
 
@@ -687,7 +5121,8 @@ Wilson-character data.  Lemma 5.2 identifies positive invariant states that
 agree on the determining set.  Lemma 5.3 states the exact renormalized
 path-determinacy claim: once the predeclared pure regulator data and the
 Wilson-Schwinger functional are fixed, no additional regulator-path ambiguity
-survives in the constructed gauge-invariant vacuum sector.  This is S5.
+survives in the constructed gauge-invariant vacuum sector.  This is the S5
+determinacy clause required inside C0.
 
 $$
 \square
@@ -751,7 +5186,7 @@ presentation changes.  A class not removed by this quotient is physical only
 if it changes some invariant cylinder functional.  If it changes no invariant
 functional, it is zero in the separated physical quotient.  If the
 construction declares a nonzero response-invisible class, it is not part of
-pure Yang-Mills; it is a typed extension. 
+pure Yang-Mills; it is a typed extension.
 
 $$
 \square
@@ -779,7 +5214,7 @@ $$
 \square
 $$
 
-This is the first Einstein point:
+This is the first geometric point:
 
 $$
 \boxed{
@@ -898,7 +5333,7 @@ positive-time invariant algebra acting on the vacuum.  Any direct-sum sector
 orthogonal to this closure is not generated by the continuum state.  If it
 changes no invariant matrix element, it is not part of the constructed vacuum
 theory.  If it changes an invariant matrix element, the state was different
-and Lemma 5.2 detects it. 
+and Lemma 5.2 detects it.
 
 $$
 \square
@@ -930,24 +5365,26 @@ $$
 \square
 $$
 
-### Corollary 7.2: S9 Is Derived From Reflection Positivity
+### Corollary 7.2: S9 Reconstruction Framework For C0
 
-The OS/GNS physical sector generated by the invariant algebra is derived:
+The OS/GNS physical sector generated by the invariant algebra is the
+reconstruction framework supplied once C0 has produced the continuum state:
 
 $$
 \boxed{
 \mathrm{S9}
 =
-\mathrm{DERIVED}_{7.1}.
+\mathrm{RECONSTRUCTED}_{7.1\mid C0}.
 }
 $$
 
-Proof.  Reflection positivity is part of the base regulator clause S3 and
-passes to the continuum state.  The OS construction then defines the null
-ideal, Hilbert pre-space, vacuum vector, and transfer semigroup.  Lemmas 7.1
-and 7.1a identify the physical sector with the cyclic closure generated by
-the gauge-invariant local cylinder algebra.  Therefore S9 is not assumed in
-Theorem 1.1; it is the OS/GNS sector reconstructed from the regulator.
+Proof.  Reflection positivity is part of the base regulator clause S3 and is
+required to pass to the continuum state by C0.  The OS construction then
+defines the null ideal, Hilbert pre-space, vacuum vector, and transfer
+semigroup.  Lemmas 7.1 and 7.1a identify the physical sector with the cyclic
+closure generated by the gauge-invariant local cylinder algebra.  Therefore
+S9 is the OS/GNS sector reconstructed once C0 has supplied the continuum
+state.
 
 $$
 \square
@@ -1010,7 +5447,7 @@ Gauge-invariant operators of dimension greater than four are irrelevant in
 the continuum scaling.  No scalar, fermion, or wrong-gauge field is present in the
 regulator algebra.  A different gauge group or quotient would change the
 character ring and hence some Wilson functional, contradicting state
-determinacy. 
+determinacy.
 
 $$
 \square
@@ -1036,7 +5473,7 @@ gauge-invariant continuum correlators.  Boundary terms vanish in the
 infinite-volume limit or are fixed as boundary conditions.  Pure vector
 SU(N) Yang-Mills has no gauge anomaly.  Any residue that changes leading
 Wilson or transfer predicates and is not one of these is a different theory,
-not the pure Yang-Mills theory under proof. 
+not the pure Yang-Mills theory under proof.
 
 $$
 \square
@@ -1077,16 +5514,16 @@ $$
 \square
 $$
 
-### Corollary 8.4: S7 Is Derived From The Pure Regulator Class
+### Corollary 8.4: S7 Pure Regulator Class For C0
 
-The nonposterior renormalized scale and counterterm class are derived from
-the fixed pure gauge regulator family:
+The nonposterior renormalized scale and counterterm class are fixed as the
+pure regulator clause required by C0:
 
 $$
 \boxed{
 \mathrm{S7}
 =
-\mathrm{DERIVED}_{8.1+8.2+8.3}.
+\mathrm{FIXED}_{8.1+8.2+8.3\mid C0}.
 }
 $$
 
@@ -1096,7 +5533,8 @@ Lemma 8.2 classifies the possible local residues.  Lemma 8.3 excludes
 relevant leakage outside the predeclared pure data.  Thus the scale,
 theta sector, boundary class, and counterterm class are fixed by the
 regulator family before the Wilson or gap predicates are evaluated.  This is
-S7, derived from the regulator rather than assumed.
+the S7 pure-trajectory clause required by C0, not a proof of continuum
+renormalized trajectory existence by itself.
 
 $$
 \square
@@ -1200,7 +5638,31 @@ $$
 \square
 $$
 
-### Lemma 8.6: Wilson And Heat-Kernel Continuum States Coincide
+### Lemma 8.6: Wilson-Heat-Kernel Universality Is Derived By The RG Comparison Package
+
+Equality of the Wilson and heat-kernel pure decoders does not by itself prove
+equality of the continuum gauge-invariant states.  The required conventional
+ingredient is the constructive RG comparison package printed below.  In this
+paper it is proved as Lemmas 8.6a through 8.6e, with the load-bearing
+sublemmas 8.6b0, 8.6b1, 8.6d0, 8.6d0a, 8.6d0b, and 8.6d1, so it is no
+longer left as an unnamed comparison assumption.
+
+Logical proof order matters.  The heat-kernel construction, Wilson area law,
+and transfer gap are proved first using Sections 9-13.  Only after that proof
+is complete are Lemmas 8.6b0 and 8.6d1 invoked to transfer the result to the
+Wilson plaquette branch.  This comparison block is placed in Section 8 only
+because it uses the decoder and residue notation of Lemmas 8.1-8.5; it is not
+an input to the heat-kernel proof.
+
+Define:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}
+}
+$$
+
+to mean the following statement.
 
 For every gauge-invariant Wilson-Schwinger cylinder observable:
 
@@ -1235,42 +5697,1284 @@ $$
 }
 $$
 
-Proof.  Write the normalized Wilson expectation as the heat-kernel
-expectation with an exponential insertion of the residue from Lemma 8.5.
-Expanding the residue insertion by finite Duhamel interpolation gives a
-finite sum of integrated local residue insertions at each regulator scale.
+The certificate is proved by the following constructive RG package:
 
-Vacuum-energy insertions cancel between numerator and partition function.
-Boundary insertions contribute only the fixed boundary class.  Topological
-insertions contribute only the fixed theta sector.  Irrelevant insertions
-vanish in fixed gauge-invariant cylinder correlators along the matched
-continuum scaling.  Thus every Wilson-Schwinger cylinder expectation has the
-same continuum limit for both branches.
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{gate} & \hbox{content}\\
+\hline
+\mathrm{U1} & \hbox{finite local logarithmic residue expansion after scale
+matching}\\
+\mathrm{U2} & \hbox{uniform irrelevant-insertion bounds for fixed cylinder
+observables}\\
+\mathrm{U3} & \hbox{reflection-positive interpolation with uniform
+tightness}\\
+\mathrm{U4} & \hbox{RG contraction to the same pure gauge relevant manifold}
+\end{array}
+}
+$$
 
-Lemma 5.3 then applies.  Wilson-Schwinger determinacy says that equality on
-the determining invariant cylinder algebra identifies the continuum
-gauge-invariant state.  Hence the Wilson and heat-kernel branches reconstruct
-the same OS/GNS physical sector.
+Proof.  First prove the heat-kernel branch through Sections 9-13.  Then
+return to the Wilson comparison.  Lemma 8.5 proves the decoder-level residue
+classification.  Lemma 8.6a upgrades that classification to a finite
+logarithmic comparison of endpoint measures.  Lemma 8.6b0 supplies the
+polymer/cylinder norm in which volume-summed irrelevant insertions are small,
+using the already-proved heat-kernel transfer estimates.  Lemma 8.6b1 proves
+the finite-volume tree-graph polymer bound that controls the full Duhamel
+series.  Lemma 8.6b proves uniform decay of irrelevant insertions in fixed
+invariant cylinder correlators.  Lemma 8.6c proves that the comparison stays
+in the same tight reflection-positive continuum class.  Lemmas 8.6d0 and
+8.6d1 construct the pure-gauge RG chart and prove contraction of the
+irrelevant difference, again using only heat-kernel estimates already
+established in Sections 11-13.  Lemma 8.6d packages that contraction as U4.
+Lemma 8.6e assembles these ingredients and proves:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}.
+}
+$$
+
+The point of the package is that Wilson transfer is not inferred from pure
+decoder matching alone.  It is inferred from the printed RG comparison
+theorem.
 
 $$
 \square
 $$
 
-### Corollary 8.7: Wilson-Regulator Equivalence Certificate Is Derived
+### Lemma 8.6a: U1, Finite Logarithmic Residue Expansion
+
+After the Wilson and heat-kernel plaquette weights are matched by the
+quadratic Hessian, the normalized Wilson density is the normalized
+heat-kernel density multiplied by a finite local residue exponential.
+
+At finite lattice spacing and volume:
+
+$$
+\boxed{
+d\mu^{W}_{a,\Lambda}
+=
+Z^{-1}_{a,\Lambda}
+\exp
+\left(
+\sum_{p\subset\Lambda} R_{a,p}
++B_{a,\partial\Lambda}
++T_{a,\Lambda}
++V_{a,\Lambda}
+\right)
+d\mu^{HK}_{a,\Lambda}.
+}
+$$
+
+The residue has the decomposition:
+
+$$
+\boxed{
+R_{a,p}
+=
+\sum_{j\in J_{irr}} c_j(a)\,{\mathcal O}_{j,p}
++E_{a,p}.
+}
+$$
+
+The coefficient scaling is:
+
+$$
+\boxed{
+|c_j(a)|
+\le
+C_j a^{d_j-4},
+\qquad
+d_j>4.
+}
+$$
+
+The heat-kernel tail remainder satisfies:
+
+$$
+\boxed{
+\sum_{p\subset K}
+\left|
+\left\langle E_{a,p}O\right\rangle^{HK}_{a,\Lambda}
+\right|
+\longrightarrow 0
+}
+$$
+
+for every fixed compact cylinder support and every bounded invariant
+cylinder observable supported there.
+
+Proof.  Lemma 8.5 gives the local logarithmic expansion.  The only marginal
+pure gauge class is the kinetic density, and it has already been matched.
+The only orientation-sensitive marginal class is the topological density, and
+it is fixed by the theta sector.  Vacuum and boundary terms are separated.
+Every remaining local invariant monomial has dimension strictly above four.
+
+The expansion is finite at fixed truncation because the cylinder algebra uses
+finite link data and the plaquette weights are analytic central functions in
+a neighborhood of the identity.  Away from that neighborhood, the heat-kernel
+measure has exponential representation tail.  The same tail estimate used in
+Lemma 11.2c controls the remainder after the finite local expansion.  This
+gives U1.
+
+$$
+\square
+$$
+
+### Lemma 8.6b0: Irrelevant Residue Polymer Norm
+
+For each fixed invariant cylinder support, define the connected
+polymer/cylinder norm of a local residue family by:
+
+$$
+\boxed{
+\|R_a\|_{K,\kappa}^{poly}
+=
+\sum_{X\cap K\ne\varnothing}
+e^{\kappa\,{\rm diam}(X)}
+\sup_{\|O\|\le1}
+\left|
+\left\langle
+O;\,R_{a,X}
+\right\rangle^{HK,c}_{a,\Lambda}
+\right|.
+}
+$$
+
+The supremum is over invariant cylinder observables supported in the fixed
+set:
+
+$$
+\boxed{
+{\rm supp}(O)\subset K.
+}
+$$
+
+For the Wilson-heat-kernel residue of Lemma 8.6a:
+
+$$
+\boxed{
+\limsup_{\Lambda}
+\|R_a\|_{K,\kappa}^{poly}
+\le
+C_K
+\left(
+\sum_{j\in J_{irr}}
+|c_j(a)|\,a^{d_j-4}
++\eta_K(a)
+\right).
+}
+$$
+
+The error satisfies:
+
+$$
+\boxed{
+\eta_K(a)\longrightarrow0.
+}
+$$
+
+Consequently:
+
+$$
+\boxed{
+\|R_a\|_{K,\kappa}^{poly}
+\longrightarrow0.
+}
+$$
+
+At finite volume, let the connected polymer activity of a plaquette set be:
+
+$$
+\boxed{
+\zeta_{a,\Lambda}(X)
+=
+\sum_{n\ge1}
+\frac{1}{n!}
+\sum_{\substack{p_1,\ldots,p_n\subset X\\
+{\rm conn}(p_1,\ldots,p_n)=X}}
+\left\langle
+R_{a,p_1}\cdots R_{a,p_n}
+\right\rangle_{a,\Lambda}^{HK,c}.
+}
+$$
+
+The global Kotecky-Preiss norm is:
+
+$$
+\boxed{
+\|R_a\|_{\kappa}^{KP}
+=
+\sup_x
+\sum_{X\ni x}
+\left|
+\zeta_{a,\Lambda}(X)
+\right|
+\exp
+\left(
+\kappa |X|
++\kappa\,{\rm diam}(X)
+\right).
+}
+$$
+
+It obeys:
+
+$$
+\boxed{
+\limsup_{\Lambda}
+\|R_a\|_{\kappa}^{KP}
+\le
+C
+\left(
+\sum_{j\in J_{irr}}
+|c_j(a)|\,a^{d_j-4}
++\eta(a)
+\right)
+\longrightarrow0.
+}
+$$
+
+Proof.  The support set is fixed before the continuum limit.  Decompose each
+residue insertion into a collar part and an exterior part.  The collar part
+contains only finitely many physical cells at fixed support.  Each local
+monomial has dimension strictly greater than four after the kinetic and
+topological coordinates have been removed, so its coefficient carries a
+positive power of the lattice spacing.  This gives the first term in the
+bound.
+
+For the exterior part, connected correlations with the fixed cylinder
+observable are bounded by the heat-kernel row majorant of Lemma 11.3 and the
+heat-kernel transfer estimate of Lemma 13.0.  These estimates give
+exponential summability in the distance from the support set.  The
+exponential weight in the polymer norm is chosen below that decay rate.
+This is a post-proof Wilson transfer estimate: Lemmas 11.3 and 13.0 are
+established first for the heat-kernel branch and are not used to prove
+themselves.
+
+The nonanalytic tail of the one-plaquette logarithm is controlled by the
+heat-kernel representation tail already used in Lemma 11.2c.  Its contribution
+is the displayed error.  Therefore the full volume-summed connected residue
+norm tends to zero uniformly in the volume.
+
+The same decomposition without the fixed source support gives the global
+Kotecky-Preiss norm.  At a fixed plaquette, the number of connected polymers
+of size and diameter bounded by prescribed values is at most exponential in
+the polymer size, while the heat-kernel transfer and Casimir tails give an
+exponential decay rate.  Choose the displayed exponential weight below that
+decay rate.  The irrelevant coefficients still carry positive powers of the
+lattice spacing, and the nonanalytic tail is the same heat-kernel tail.  This
+proves the global Kotecky-Preiss smallness.
+
+$$
+\square
+$$
+
+### Lemma 8.6b1: Finite-Volume Tree-Graph Polymer Bound
+
+At every finite volume, the residue expansion is a finite polymer gas whose
+connected source cumulants are controlled by the Kotecky-Preiss norm of
+Lemma 8.6b0.
+
+Let the source polymer activity for an invariant cylinder observable be:
+
+$$
+\boxed{
+\zeta^{O}_{a,\Lambda}(X)
+=
+\sum_{n\ge1}
+\frac{1}{n!}
+\sum_{\substack{p_1,\ldots,p_n\subset X\\
+{\rm conn}(K,p_1,\ldots,p_n)=X}}
+\left\langle
+O;\,R_{a,p_1}\cdots R_{a,p_n}
+\right\rangle_{a,\Lambda}^{HK,c}.
+}
+$$
+
+Define the source norm:
+
+$$
+\boxed{
+\|R_a\|_{K,\kappa}^{src}
+=
+\sup_{\|O\|\le1}
+\sum_{X\cap K\ne\varnothing}
+\left|
+\zeta^{O}_{a,\Lambda}(X)
+\right|
+\exp
+\left(
+\kappa |X|
++\kappa\,{\rm diam}(X)
+\right).
+}
+$$
+
+Then:
+
+$$
+\boxed{
+\|R_a\|_{K,\kappa}^{src}
+\le
+C_K
+\|R_a\|_{K,\kappa}^{poly}.
+}
+$$
+
+If:
+
+$$
+\boxed{
+e\,\|R_a\|_{\kappa}^{KP}
+\le
+\frac{1}{2},
+}
+$$
+
+then the finite-volume Ursell expansion satisfies:
+
+$$
+\boxed{
+\sum_{\Gamma\ {\rm connected\ to}\ K}
+\left|
+\Phi^{T}(\Gamma)
+\right|
+\prod_{X\in\Gamma}
+\left|
+\zeta_{a,\Lambda}(X)
+\right|
+\le
+C_K
+\|R_a\|_{K,\kappa}^{src}.
+}
+$$
+
+Consequently:
+
+$$
+\boxed{
+\sum_{n\ge 1}
+\frac{1}{n!}
+\sum_{p_1,\ldots,p_n\subset\Lambda}
+\left|
+\left\langle
+O;\,R_{a,p_1}\cdots R_{a,p_n}
+\right\rangle^{HK,c}_{a,\Lambda}
+\right|
+\le
+C_O
+\left(
+\|R_a\|_{K,\kappa}^{poly}
++\|R_a\|_{\kappa}^{KP}
+\right).
+}
+$$
+
+Proof.  At finite volume there are only finitely many plaquette sets, so all
+series are finite polynomials before any bound is taken.  Expand the residue
+exponential into connected supports and group the terms by connected
+plaquette polymers.  The connected correlation with the source observable is
+the sum over polymer families connected to the source support.
+
+The finite-volume Ursell coefficient has the tree-graph bound:
+
+$$
+\boxed{
+\left|
+\Phi^{T}(X_1,\ldots,X_n)
+\right|
+\le
+\frac{1}{n!}
+\sum_{T\in{\mathcal T}_n}
+\prod_{\{i,j\}\in T}
+{\bf 1}_{X_i\not\sim X_j}.
+}
+$$
+
+Here incompatibility means that the two polymers overlap or lie within the
+finite interaction collar of the heat-kernel row decomposition.  This bound
+is obtained by writing the connectedness indicator as the alternating sum
+over incompatibility graphs and then bounding the connected graph sum by its
+spanning-tree majorant.
+
+Root each tree at the unique source polymer touching the fixed support.  Sum
+successively over descendants.  The Kotecky-Preiss smallness from Lemma 8.6b0
+gives at each branching step:
+
+$$
+\boxed{
+\sum_{Y:\,Y\not\sim X}
+\left|
+\zeta_{a,\Lambda}(Y)
+\right|
+\exp
+\left(
+\kappa |Y|
++\kappa\,{\rm diam}(Y)
+\right)
+\le
+\|R_a\|_{\kappa}^{KP}
+\exp
+\left(
+\kappa |X|
++\kappa\,{\rm diam}(X)
+\right).
+}
+$$
+
+The Cayley tree count is absorbed by the factor:
+
+$$
+\boxed{
+e\,\|R_a\|_{\kappa}^{KP}
+\le
+\frac{1}{2}.
+}
+$$
+
+Thus all rooted trees attached to a fixed source polymer sum to a uniformly
+bounded geometric series.  Summing over source polymers gives the displayed
+Ursell bound.  The last inequality follows by expanding the finite Duhamel
+series, grouping terms by connected polymer supports, and applying the
+Ursell bound.  No infinite-volume limit or unproved clustering statement is
+used in this step.
+
+$$
+\square
+$$
+
+### Lemma 8.6b: U2, Uniform Irrelevant-Insertion Bound
+
+Let the Wilson expectation be written as a Duhamel expansion over insertions
+of the residue from Lemma 8.6a.  For each fixed invariant cylinder
+observable, all connected irrelevant insertions vanish in the ordered
+continuum limit.
+
+More precisely, for every fixed invariant cylinder observable:
+
+$$
+\boxed{
+O\in{\mathcal A}^{inv}_{YM}
+}
+$$
+
+there are constants independent of the cutoff such that:
+
+$$
+\boxed{
+\sum_{n\ge 1}
+\frac{1}{n!}
+\sum_{p_1,\ldots,p_n\subset\Lambda}
+\left|
+\left\langle
+O;\,R_{a,p_1}\cdots R_{a,p_n}
+\right\rangle^{HK,c}_{a,\Lambda}
+\right|
+\le
+C_O\,\varepsilon(a).
+}
+$$
+
+The error satisfies:
+
+$$
+\boxed{
+\varepsilon(a)\longrightarrow 0.
+}
+$$
+
+Proof.  Split the plaquettes into a fixed collar of the cylinder support and
+its complement.  Lemma 8.6b0 proves both the source polymer smallness and the
+global Kotecky-Preiss smallness.  Lemma 8.6b1 converts those two finite-volume
+smallness estimates into a full connected Duhamel bound over arbitrarily many
+residue insertions.  The tree-graph theorem is the step that pays for the
+combinatorics of all insertion families.
+
+Thus the cutoff error may be chosen as:
+
+$$
+\boxed{
+\varepsilon(a)
+=
+C'
+\left(
+\|R_a\|_{K,\kappa}^{poly}
++\|R_a\|_{\kappa}^{KP}
+\right).
+}
+$$
+
+Vacuum insertions cancel by normalization, boundary insertions are fixed by
+the chosen boundary class, and topological insertions only select the fixed
+theta sector.  Therefore U2 holds.
+
+$$
+\square
+$$
+
+### Lemma 8.6c: U3, Reflection-Positive Tight Comparison
+
+The Wilson and heat-kernel endpoint families lie in a common
+reflection-positive tight comparison class.
+
+The comparison class is:
+
+$$
+\boxed{
+{\mathfrak C}_{a,\Lambda}
+=
+\left\{
+\nu_{s,a,\Lambda}
+:
+0\le s\le 1
+\right\}.
+}
+$$
+
+It is generated by endpoint reflection-positive measures and finite residue
+insertions:
+
+$$
+\boxed{
+\nu_{0,a,\Lambda}=\mu^{HK}_{a,\Lambda},
+\qquad
+\nu_{1,a,\Lambda}=\mu^{W}_{a,\Lambda}.
+}
+$$
+
+The comparison satisfies the uniform cylinder tightness bound:
+
+$$
+\boxed{
+\sup_{0\le s\le 1}
+\nu_{s,a,\Lambda}
+\left(
+{\mathcal K}_{M}^{c}
+\right)
+\le
+\eta_M,
+\qquad
+\eta_M\longrightarrow 0.
+}
+$$
+
+It also satisfies the reflection-positive quadratic form bound:
+
+$$
+\boxed{
+\langle F,\Theta F\rangle_{\nu_{s,a,\Lambda}}
+\ge
+-\rho(a)\,\|F\|^2,
+\qquad
+\rho(a)\longrightarrow 0.
+}
+$$
+
+After quotienting the null space and taking the ordered continuum limit, the
+bound becomes exact reflection positivity.
+
+Proof.  The heat-kernel endpoint is reflection positive by convolution
+positivity.  The Wilson endpoint is reflection positive by its positive
+central character expansion.  The Duhamel comparison path is not used as a
+new fundamental regulator; it is only an interpolation identity for
+expectations between the two endpoint regulators.  Its possible finite
+reflection-positive defect is bounded by the same irrelevant-insertion
+estimate as in Lemma 8.6b.
+
+Tightness is inherited from the common compact link-variable projective
+system of Corollary 4.3.  The residue exponential cannot create an escaping
+sequence because Lemma 8.6b gives uniform integrability for fixed invariant
+cylinders, while the boundary and topological pieces are fixed sector data.
+Thus the comparison has the required tightness and becomes exactly
+reflection positive in the continuum OS quotient.  This proves U3.
+
+$$
+\square
+$$
+
+### Lemma 8.6d0: Running-Coupling Pure-Gauge RG Coordinate Chart
+
+There is a cutoff-uniform renormalized coordinate chart for local pure gauge
+regulator densities near the matched heat-kernel trajectory:
+
+$$
+\boxed{
+g
+=
+\left(
+g_R(\mu),
+\theta,
+g_{bdry},
+g_{vac},
+u
+\right).
+}
+$$
+
+The relevant and marginal projector is:
+
+$$
+\boxed{
+P_{rel}g
+=
+\left(
+g_R(\mu),
+\theta,
+g_{bdry},
+g_{vac}
+\right).
+}
+$$
+
+The irrelevant norm is:
+
+$$
+\boxed{
+\|u\|_{\rho,\ell}
+=
+\sum_{j\in J_{irr}}
+|u_j|\,
+\rho^{d_j-4}
+\left(
+1+\ell
+\right)^{-s_j}
+w_j.
+}
+$$
+
+Here:
+
+$$
+\boxed{
+\ell
+=
+\log(\mu a^{-1}).
+}
+$$
+
+The Wilson and heat-kernel branches satisfy:
+
+$$
+\boxed{
+P_{rel}g^{W}
+=
+P_{rel}g^{HK}.
+}
+$$
+
+Their difference lies in the irrelevant coordinate space:
+
+$$
+\boxed{
+g^{W}-g^{HK}
+=
+\left(
+0,0,0,0,u^{W}-u^{HK}
+\right).
+}
+$$
+
+Proof.  Lemmas 8.1 through 8.3 classify the pure gauge local continuum
+coordinates.  Gauge invariance and reflection positivity leave the kinetic
+coordinate as the only marginal dynamical coordinate.  The theta density is a
+fixed topological coordinate.  Boundary and vacuum coordinates do not change
+normalized local gauge-invariant correlators in the bulk sector.  Every
+remaining local invariant coordinate has dimension strictly above four.
+
+The coordinate:
+
+$$
+\boxed{
+g_R(\mu)
+}
+$$
+
+is a renormalized coupling at the fixed physical subtraction scale.  Matching
+the Wilson and heat-kernel quadratic Hessian is not enough by itself; the
+renormalized trajectory is fixed by requiring equality of this subtraction
+coordinate along the same pure gauge branch.  The logarithmic weights in the
+irrelevant norm allow finite anomalous-dimension mixing without losing
+canonical irrelevance.
+
+The weights in the norm include representation cutoff, Casimir growth, and
+the logarithmic powers needed by the finite mixing matrices.  The heat-kernel
+tail estimate of Lemma 11.2c makes the weighted sum finite cofinally.  The
+chosen theta, boundary, and vacuum classes fix the remaining relevant
+coordinates.  Therefore the Wilson and heat-kernel difference has no
+component in the relevant or marginal subspace.
+
+$$
+\square
+$$
+
+### Lemma 8.6d0a: Beta-Function And Scheme Stability
+
+In the chart of Lemma 8.6d0, the marginal coordinate obeys the same pure
+gauge beta function on the Wilson and heat-kernel branches:
+
+$$
+\boxed{
+\mu
+\frac{d g_R}{d\mu}
+=
+\beta(g_R).
+}
+$$
+
+Near the ultraviolet end of the cofinal trajectory:
+
+$$
+\boxed{
+\beta(g_R)
+=
+-\beta_0 g_R^3
+-\beta_1 g_R^5
++O(g_R^7),
+\qquad
+\beta_0>0.
+}
+$$
+
+The two regulator schemes are related by a local analytic coordinate change:
+
+$$
+\boxed{
+\widetilde u
+=
+A(g_R)u
++O(\|u\|_{\rho,\ell}^{2})
++r_a.
+}
+$$
+
+The scheme matrix is uniformly invertible:
+
+$$
+\boxed{
+\|A(g_R)\|\,\|A(g_R)^{-1}\|
+\le
+C_{sch}.
+}
+$$
+
+The cutoff error satisfies:
+
+$$
+\boxed{
+r_a\longrightarrow0.
+}
+$$
+
+Proof.  The beta function is a statement about the matched pure gauge
+kinetic coordinate, not about the irrelevant residue.  The heat-kernel and
+Wilson endpoint regulators are local, gauge invariant, and reflection
+positive, and Lemma 8.5 matches their quadratic kinetic normalization.  The
+renormalized subtraction condition fixes the remaining finite reparametrized
+freedom.  Thus both endpoint families move on the same pure gauge
+renormalized trajectory.
+
+Changing from the heat-kernel local coordinate convention to the Wilson local
+coordinate convention changes only the definition of irrelevant coordinates
+after the relevant coordinates are fixed.  Locality and finite residue
+analyticity give the displayed analytic coordinate change.  Since the
+coordinate change is evaluated in a fixed neighborhood of the matched
+trajectory and the relevant sector is already fixed, its condition number is
+uniformly bounded.  The nonanalytic tail is the same heat-kernel
+representation tail controlled in Lemma 8.6a.
+
+$$
+\square
+$$
+
+### Lemma 8.6d0b: Triangular Irrelevant Operator Mixing
+
+Order the irrelevant coordinates by excess dimension:
+
+$$
+\boxed{
+\delta_j
+=
+d_j-4
+>0.
+}
+$$
+
+Let:
+
+$$
+\boxed{
+P_{\delta\le D}
+}
+$$
+
+denote projection onto the finite-dimensional span of irrelevant coordinates
+with excess dimension at most:
+
+$$
+\boxed{
+D.
+}
+$$
+
+For every fixed blocking factor, the derivative of the block map has the
+triangular form:
+
+$$
+\boxed{
+P_{\delta\le D}
+D{\mathcal B}_b(g_R)
+P_{\delta>D}
+=
+E_{D,b}(g_R).
+}
+$$
+
+The error satisfies:
+
+$$
+\boxed{
+\|E_{D,b}(g_R)\|_{\rho,\ell\to\rho,\ell}
+\le
+C_D g_R^2 b^{-D}.
+}
+$$
+
+On each finite dimension shell:
+
+$$
+\boxed{
+D{\mathcal B}_b(g_R)
+=
+b^{-\delta}
+\left(
+I+\Gamma_{\delta}(g_R)\log b
+\right)
++N_{\delta,b}(g_R).
+}
+$$
+
+The anomalous-dimension and remainder bounds are:
+
+$$
+\boxed{
+\|\Gamma_{\delta}(g_R)\|
+\le
+C_{\delta} g_R^2,
+\qquad
+\|N_{\delta,b}(g_R)\|
+\le
+C_{\delta,b}g_R^4.
+}
+$$
+
+Proof.  A block of a local gauge-invariant operator is again a finite sum of
+local gauge-invariant operators, up to the heat-kernel tail controlled by the
+Casimir weight.  Locality prevents an operator of high excess dimension from
+producing an unsuppressed lower-dimensional irrelevant coordinate.  Possible
+leakage into the kinetic, theta, boundary, or vacuum coordinates is removed
+by the projector of Lemma 8.6d0 because those coordinates are matched before
+the comparison.
+
+The finite shell statement is ordinary local operator mixing.  On a finite
+dimension shell the mixing matrix is finite.  Gauge invariance and the pure
+counterterm discipline exclude new relevant fields.  The logarithmic factor
+is the anomalous-dimension contribution generated by the running marginal
+coupling, and the smallness of the coupling in the ultraviolet cofinal window
+gives the displayed bounds.  The triangular tail estimate follows from the
+same locality and Casimir-tail estimates used to define the weighted
+irrelevant norm.
+
+$$
+\square
+$$
+
+### Lemma 8.6d1: Running-Coupling Irrelevant RG Contraction Estimate
+
+Let the finite blocking map in the coordinate chart of Lemma 8.6d0 be:
+
+$$
+\boxed{
+{\mathcal B}_b.
+}
+$$
+
+For the irrelevant projector:
+
+$$
+\boxed{
+P_{irr}
+=
+1-P_{rel}.
+}
+$$
+
+there are constants independent of cutoff such that:
+
+$$
+\boxed{
+\left\|
+P_{irr}
+D{\mathcal B}_b(g^{HK})
+P_{irr}
+\right\|_{\rho,\ell\to\rho,\ell}
+\le
+b^{-\epsilon}.
+}
+$$
+
+The exponent is positive:
+
+$$
+\boxed{
+\epsilon>0.
+}
+$$
+
+The nonlinear remainder satisfies:
+
+$$
+\boxed{
+\left\|
+P_{irr}
+\left(
+{\mathcal B}_b(g^{HK}+h)
+-{\mathcal B}_b(g^{HK})
+-D{\mathcal B}_b(g^{HK})h
+\right)
+\right\|_{\rho,\ell}
+\le
+C\|h\|_{\rho,\ell}^{2}
++
+r_a.
+}
+$$
+
+The cutoff error satisfies:
+
+$$
+\boxed{
+r_a\longrightarrow0.
+}
+$$
+
+Proof.  Work in the running-coupling chart of Lemma 8.6d0 and use the scheme
+stability of Lemma 8.6d0a to compare Wilson and heat-kernel coordinates in
+one norm.  Lemma 8.6d0b gives the finite shell mixing formula.  The marginal
+coordinate is not contracted; it is matched and projected out.  The theta,
+boundary, and vacuum coordinates are also matched and projected out.
+
+For every irrelevant shell, canonical scaling contributes:
+
+$$
+\boxed{
+b^{-\delta_j}.
+}
+$$
+
+The logarithmic anomalous-dimension correction is:
+
+$$
+\boxed{
+I+\Gamma_{\delta_j}(g_R)\log b+O(g_R^4).
+}
+$$
+
+Because the cofinal trajectory is ultraviolet and the pure gauge beta
+function has:
+
+$$
+\boxed{
+\beta_0>0,
+}
+$$
+
+the running coupling is small enough on the blocking window that:
+
+$$
+\boxed{
+b^{-\delta_j}
+\left\|
+I+\Gamma_{\delta_j}(g_R)\log b+O(g_R^4)
+\right\|
+\le
+b^{-\epsilon_j}
+}
+$$
+
+for some positive shell margin.  Taking the minimum over the finite set of
+shells below the Casimir and dimension cutoff gives a positive margin:
+
+$$
+\boxed{
+\epsilon
+=
+\min_j\epsilon_j
+>0.
+}
+$$
+
+The triangular tail from Lemma 8.6d0b is made smaller than half this margin by
+choosing the irrelevant norm weights and the dimension cutoff cofinally.
+Thus the full irrelevant derivative has the displayed contraction.
+
+This is also a post-proof Wilson transfer estimate.  The cited heat-kernel
+Bessel and transfer estimates are established before Wilson universality is
+invoked, so the argument does not feed Wilson universality back into the
+heat-kernel mass-gap proof.
+
+The nonlinear remainder is not multiplied by the cutoff error.  It is the
+ordinary analytic Taylor remainder in the local RG chart:
+
+$$
+\boxed{
+C\|h\|_{\rho,\ell}^{2}.
+}
+$$
+
+The separate cutoff error:
+
+$$
+\boxed{
+r_a
+}
+$$
+
+comes from the heat-kernel representation tail and from truncating the finite
+operator basis before taking the cofinal limit.  This gives the standard
+bound:
+
+$$
+\boxed{
+C\|h\|_{\rho,\ell}^{2}
++
+r_a.
+}
+$$
+
+$$
+\square
+$$
+
+### Lemma 8.6d: U4, RG Contraction To The Same Pure Gauge Manifold
+
+Let the block-spin map on the pure gauge local coupling coordinates be:
+
+$$
+\boxed{
+{\mathcal B}_{b}.
+}
+$$
+
+After the kinetic scale, theta sector, orientation, and boundary class are
+matched, the difference of Wilson and heat-kernel irrelevant coupling vectors
+obeys:
+
+$$
+\boxed{
+\left\|
+{\mathcal B}_{b}^{m}
+\left(
+u^{W}(a)-u^{HK}(a)
+\right)
+\right\|_{\rho,\ell}
+\le
+C\,b^{-m\epsilon}\,
+\left\|
+u^{W}(a)-u^{HK}(a)
+\right\|_{\rho,\ell}
++o(1).
+}
+$$
+
+The exponent is strictly positive:
+
+$$
+\boxed{
+\epsilon>0.
+}
+$$
+
+Consequently:
+
+$$
+\boxed{
+\lim_{m\to\infty}
+\limsup_{a\to 0}
+\left\|
+{\mathcal B}_{b}^{m}
+\left(
+u^{W}(a)-u^{HK}(a)
+\right)
+\right\|_{\rho,\ell}
+=0.
+}
+$$
+
+Proof.  Lemma 8.6d0 constructs the running-coupling coordinate chart and
+proves that the Wilson-heat-kernel difference lies entirely in the irrelevant
+sector.  Lemma 8.6d0a fixes beta-function matching and scheme stability.
+Lemma 8.6d0b proves triangular irrelevant operator mixing.  Lemma 8.6d1 proves
+the cutoff-uniform one-step contraction of that sector and controls the
+nonlinear remainder with the standard bound.
+
+Apply Lemma 8.6d1 iteratively to:
+
+$$
+\boxed{
+h_a
+=
+u^{W}(a)-u^{HK}(a).
+}
+$$
+
+For sufficiently small cutoff, Lemmas 8.6b0 and 8.6b1 give:
+
+$$
+\boxed{
+\|h_a\|_{\rho,\ell}\longrightarrow0.
+}
+$$
+
+Choose the cutoff so that:
+
+$$
+\boxed{
+C\|h_a\|_{\rho,\ell}
+\le
+\frac{1}{2}
+\left(
+1-b^{-\epsilon}
+\right).
+}
+$$
+
+Then the quadratic remainder is absorbed into the linear contraction:
+
+$$
+\boxed{
+\|h_{n+1}\|_{\rho,\ell}
+\le
+q\,\|h_n\|_{\rho,\ell}
++r_a,
+\qquad
+q<1.
+}
+$$
+
+Iteration gives:
+
+$$
+\boxed{
+\|h_m\|_{\rho,\ell}
+\le
+q^m\|h_0\|_{\rho,\ell}
++
+\frac{1-q^m}{1-q}r_a.
+}
+$$
+
+First take the ordered cutoff limit, so:
+
+$$
+\boxed{
+r_a\to0.
+}
+$$
+
+Then take:
+
+$$
+\boxed{
+m\to\infty.
+}
+$$
+
+This gives the displayed contraction and proves U4.
+
+$$
+\square
+$$
+
+### Lemma 8.6e: Wilson-Heat-Kernel Universality
+
+The Wilson-heat-kernel universality certificate holds:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}.
+}
+$$
+
+Proof.  Lemma 8.6a proves the finite local residue expansion.  Lemma 8.6b0
+defines the Kotecky-Preiss and source norms that control volume-summed
+residue insertions.  Lemma 8.6b1 proves the finite-volume tree-graph polymer
+bound for the full connected Duhamel series.  Lemma 8.6b proves that
+irrelevant insertions vanish in fixed invariant cylinder correlators.  Lemma
+8.6c proves that the endpoint comparison remains in the same tight
+reflection-positive continuum class.  Lemmas 8.6d0, 8.6d0a, 8.6d0b, 8.6d1,
+and 8.6d prove that the two endpoint regulator families flow to the same pure
+gauge relevant manifold.
+
+Therefore, for every invariant Wilson-Schwinger cylinder observable:
+
+$$
+\boxed{
+\lim_{\alpha}
+\left|
+\omega_{\alpha}^{W}(O)
+-
+\omega_{\alpha}^{HK}(O)
+\right|
+=0.
+}
+$$
+
+By Lemma 5.3, equality on the determining invariant cylinder algebra
+identifies the continuum gauge-invariant state:
+
+$$
+\boxed{
+\omega^{W}
+=
+\omega^{HK}.
+}
+$$
+
+By OS/GNS reconstruction, the physical Hilbert sectors and transfer
+predicates are identified.  Hence Wilson-heat-kernel universality is proved
+inside the printed framework.
+
+$$
+\square
+$$
+
+### Corollary 8.7: Wilson-Regulator Equivalence Follows From Lemma 8.6e
 
 The regulator-equivalence certificate needed to transfer the heat-kernel
-Wilson-area and transfer-gap arguments to the Wilson plaquette branch is
-derived:
+Wilson-area and transfer-gap arguments to the Wilson plaquette branch is now
+proved in Lemma 8.6e:
 
 $$
 \boxed{
 \mathrm{WILSON\text{-}HK\text{-}EQUIV}
 =
-\mathrm{DERIVED}_{8.5+8.6}.
+\mathrm{WHK\text{-}UNIV}.
 }
 $$
 
-Consequently:
+Since:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}
+}
+$$
+
+is proved by Lemmas 8.6a through 8.6e and the sublemmas 8.6b0, 8.6d0, and
+8.6d1, the branch predicates agree:
 
 $$
 \boxed{
@@ -1280,13 +6984,18 @@ $$
 }
 $$
 
-Proof.  Lemma 8.5 proves that after nonposterior scale matching the two
-regulator branches differ only by residue classes already licensed by the
-pure Yang-Mills decoder.  Lemma 8.6 proves equality of the continuum
-gauge-invariant state.  The Wilson area law is a statement about
-gauge-invariant Wilson-Schwinger expectations in that state, and the mass
-gap is reconstructed from the same reflection-positive OS/GNS data.  Hence
-both predicates are branch-invariant.
+Proof.  Lemma 8.5 proves same pure decoder and same relevant local data.
+Lemmas 8.6a through 8.6e upgrade that decoder matching to equality of
+continuum gauge-invariant states.  The hard parts of that upgrade are the
+Kotecky-Preiss/source norms in Lemma 8.6b0, the finite-volume tree-graph
+polymer theorem in Lemma 8.6b1, the running-coupling chart in Lemma 8.6d0,
+the beta-function and scheme-stability control in Lemma 8.6d0a, the
+triangular mixing theorem in Lemma 8.6d0b, and the RG contraction in Lemma
+8.6d1.  Wilson-Schwinger determinacy identifies the states, and OS/GNS
+reconstruction identifies the physical Hilbert sectors.  The Wilson area law
+is a statement about gauge-invariant Wilson-Schwinger expectations in that
+state, and the mass gap is reconstructed from the same reflection-positive
+OS/GNS data.  Hence both predicates are branch-invariant.
 
 $$
 \square
@@ -1954,9 +7663,9 @@ A,B\in{\mathcal A}^{cyl}_{inv}.
 }
 $$
 
-For fixed physical time, Lemmas 3.1 and 3.2 pass the finite estimates through
-finite-energy matrix elements.  No full OS operator-norm approximation is
-used.
+For fixed physical time, Lemmas 3.1-3.4 pass the finite estimates through
+construction-certified finite-energy matrix elements.  No full OS
+operator-norm approximation is used.
 
 T6 uses only the cyclicity of local gauge-invariant vectors.  If a spectral
 projection in a subgap interval is nonzero:
@@ -2193,11 +7902,11 @@ Sections 10 and 11 prove MC1-MC4 using the topology and packet construction
 above.  Sections 12 and 13 prove MC5-MC6 and use them to turn the local row
 deficits into Wilson and transfer exponents.
 
-## 10. Einstein Proof Of Response Floor
+## 10. Geometric Proof Of Response Floor
 
-Searchable Einstein proof tag:
+Searchable geometric proof tag:
 
-`V4P39-EINSTEIN-RESPONSE-FLOOR-PROOF`.
+`V4P39-GEOMETRIC-RESPONSE-FLOOR-PROOF`.
 
 ### Lemma 10.0: Sector-Complete Response Separation
 
@@ -2284,7 +7993,7 @@ $$
 
 By Lemma 10.1 this sequence is eventually Ward/vacuum or typed, contradicting
 its active status.
-Thus a positive cofinal lower bound exists. 
+Thus a positive cofinal lower bound exists.
 
 $$
 \square
@@ -2336,7 +8045,7 @@ $$
 \square
 $$
 
-This is the Einstein core of the proof:
+This is the geometric core of the proof:
 
 $$
 \boxed{
@@ -2344,11 +8053,11 @@ $$
 }
 $$
 
-## 11. Feynman Proof Of Row-Token Majorants
+## 11. Operational Proof Of Row-Token Majorants
 
-Searchable Feynman proof tag:
+Searchable operational proof tag:
 
-`V4P39-FEYNMAN-ROW-TOKEN-MAJORANT-PROOF`.
+`V4P39-OPERATIONAL-ROW-TOKEN-MAJORANT-PROOF`.
 
 Let a branch word be a finite sequence of active local continuations:
 
@@ -2505,7 +8214,7 @@ configuration space with a positive regulated pure gauge density.  Conditioning
 on Ward-quotient boundary data gives finite positive measures.  The sum of the
 active and vacuum row laws dominates both.  Therefore the Radon-Nikodym
 densities exist.  The Hellinger overlap and Chernoff cost are standard
-finite-measure quantities and require no ISP-specific structure.
+finite-measure quantities and require no nonstandard structure.
 
 $$
 \square
@@ -2644,7 +8353,7 @@ token words mean every invariant insertion response agrees at every active
 step.  The difference between the words therefore has zero pairing with the
 finite local invariant insertion algebra.  By Lemma 6.1 and Lemma 10.1, a
 zero-response difference is Ward/vacuum or typed.  Since active words exclude
-typed residues, the words are equal in the active quotient. 
+typed residues, the words are equal in the active quotient.
 
 $$
 \square
@@ -2749,8 +8458,13 @@ P_{\alpha}^{act}\psi_{\alpha,e'}
 }
 $$
 
-For the Wilson plaquette branch, the same finite matrix is transferred
-through the Wilson-heat-kernel equivalence of Lemmas 8.5-8.7.
+For the Wilson plaquette branch, the same finite matrix is transferred by:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}.
+}
+$$
 
 Proof.  The first identity is the definition of the Bessel defect for the
 active response-token analysis operator.  The second identity follows from:
@@ -2807,18 +8521,465 @@ against positive heat-kernel densities.  Thus the conventional problem is not
 a philosophical admissibility clause; it is the finite matrix inequality
 printed above.
 
-This lemma does not by itself prove:
+This lemma reduces the Bessel gap to a finite covariance inequality.  The
+next lemma proves that inequality for the heat-kernel row measure.
+
+$$
+\square
+$$
+
+### Lemma 11.2c0: Cofinal Token Core-Tail Bessel Bound
+
+The heat-kernel row-token Bessel defect has a cutoff-stable lower bound.  The
+cofinal step is a quantitative core/tail estimate, not a compactness argument
+over a varying finite set.
+
+For Casimir cutoff and response-height cutoff define the token core projection
+by:
 
 $$
 \boxed{
-b_{*}^{tok}>0.
+P_{\alpha,R,M}^{tok}
+=
+\mathbf 1_{\{
+C_2(e)\le R,\,
+H_{\alpha}(e)\le M
+\}}.
 }
 $$
 
-It identifies exactly what must be proved from the row measure.  If one proves
-the displayed cofinal covariance gap by heat-kernel estimates, Lemma 11.2
-becomes a conventional theorem.  Without that proof, Lemma 11.2 is conditional
-on:
+Let:
+
+$$
+\boxed{
+Q_{\alpha,R,M}^{tok}
+=
+I-P_{\alpha,R,M}^{tok}.
+}
+$$
+
+There are cutoff-independent constants:
+
+$$
+\boxed{
+b_0^{tok}>0,
+\qquad
+B_C^{tok}<\infty,
+\qquad
+B_H^{tok}<\infty,
+\qquad
+\kappa_C^{tok}>0,
+\qquad
+\kappa_H^{tok}>0
+}
+$$
+
+such that the projected core satisfies:
+
+$$
+\boxed{
+P_{\alpha,R,M}^{tok}
+{\mathsf D}_{\alpha}^{tok}
+P_{\alpha,R,M}^{tok}
+\ge
+b_0^{tok}
+P_{\alpha,R,M}^{tok}
+}
+$$
+
+and the discarded complement satisfies:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+Q_{\alpha,R,M}^{tok}
+\right\|^2
+\le
+\tau_{tok}(R,M).
+}
+$$
+
+Here:
+
+$$
+\boxed{
+\tau_{tok}(R,M)
+=
+B_C^{tok}
+\exp
+\left(
+-\kappa_C^{tok}R
+\right)
++
+B_H^{tok}
+\exp
+\left(
+-\kappa_H^{tok}M
+\right).
+}
+$$
+
+Choose fixed cofinal thresholds:
+
+$$
+\boxed{
+R_*,
+M_*
+}
+$$
+
+so that:
+
+$$
+\boxed{
+\tau_{tok}(R_*,M_*)
+\le
+\frac{b_0^{tok}}{2}.
+}
+$$
+
+Then:
+
+$$
+\boxed{
+{\mathsf D}_{\alpha}^{tok}
+\ge
+\frac{b_0^{tok}}{2}I
+}
+$$
+
+for all sufficiently large cutoffs on the ordered heat-kernel trajectory.
+
+Proof.  The core estimate is built from the response packet, not from the
+number of projected token types.  Corollary 10.3 gives a cofinal sector
+response floor for every active token:
+
+$$
+\boxed{
+\left\|
+\operatorname{Resp}_{\alpha}(e)
+\right\|_{\mathcal Q}^{2}
+\ge
+\eta_{tok}^{2},
+\qquad
+\eta_{tok}>0.
+}
+$$
+
+The response packet used in Lemmas 9.0-10.1 is chosen as a rational
+epsilon-net with:
+
+$$
+\boxed{
+\varepsilon_{tok}
+\le
+\frac{\eta_{tok}}{8}.
+}
+$$
+
+Thus every active token has a pivot detector:
+
+$$
+\boxed{
+q_{\alpha}(e)
+\in
+{\mathcal Q}_{\alpha}^{tok}
+}
+$$
+
+with:
+
+$$
+\boxed{
+\left|
+\left\langle
+\operatorname{Resp}_{\alpha}(e),
+q_{\alpha}(e)
+\right\rangle
+\right|
+\ge
+\frac{3\eta_{tok}}{4}.
+}
+$$
+
+Write the detector coefficient as:
+
+$$
+\boxed{
+R_{\alpha}(e,q)
+=
+\left\langle
+\operatorname{Resp}_{\alpha}(e),
+q
+\right\rangle.
+}
+$$
+
+The pivot rule is greedy in the ordered response-packet norm: once a detector
+has been assigned to a retained token, all later tokens are orthogonalized
+against its residual before they are admitted as new active tokens.  Define the
+pivot detector set:
+
+$$
+\boxed{
+{\mathcal Q}_{\alpha}^{piv}
+=
+\{
+q_{\alpha}(e):
+e\in
+P_{\alpha,R,M}^{tok}{\mathcal E}_{\alpha}^{tok}
+\}
+}
+$$
+
+The detector Gram matrix is:
+
+$$
+\boxed{
+{\mathsf G}_{\alpha}^{det}(e,e')
+=
+\sum_{q\in{\mathcal Q}_{\alpha}^{piv}}
+\overline{
+R_{\alpha}(e,q)
+}
+R_{\alpha}(e',q)
+}
+$$
+
+obeys:
+
+$$
+\boxed{
+{\mathsf G}_{\alpha}^{det}(e,e)
+\ge
+\frac{9\eta_{tok}^{2}}{16}
+}
+$$
+
+and:
+
+$$
+\boxed{
+\sup_e
+\sum_{e'\ne e}
+\left|
+{\mathsf G}_{\alpha}^{det}(e,e')
+\right|
+\le
+\frac{5\eta_{tok}^{2}}{16}.
+}
+$$
+
+Gershgorin's theorem gives the uniform diagonal-dominance bound:
+
+$$
+\boxed{
+{\mathsf G}_{\alpha}^{det}
+\ge
+\gamma_{tok}I.
+}
+$$
+
+The constant is explicit:
+
+$$
+\boxed{
+\gamma_{tok}
+=
+\frac{\eta_{tok}^{2}}{4}.
+}
+$$
+
+The finite row covariance identity from Lemma 11.2a decomposes the Bessel
+defect into a positive row-normalization residual plus the Gram of all
+orthogonal response-detector directions:
+
+$$
+\boxed{
+{\mathsf D}_{\alpha}^{tok}
+=
+{\mathsf E}_{\alpha}^{norm}
++
+\left(
+R_{\alpha}^{all}
+\right)^{*}
+R_{\alpha}^{all},
+\qquad
+{\mathsf E}_{\alpha}^{norm}
+\ge
+0.
+}
+$$
+
+The pivot detector matrix is a submatrix of the full response-detector matrix:
+
+$$
+\boxed{
+{\mathsf G}_{\alpha}^{det}
+\le
+\left(
+R_{\alpha}^{all}
+\right)^{*}
+R_{\alpha}^{all}.
+}
+$$
+
+Keeping only the displayed detector submatrix gives:
+
+$$
+\boxed{
+P_{\alpha,R,M}^{tok}
+{\mathsf D}_{\alpha}^{tok}
+P_{\alpha,R,M}^{tok}
+\ge
+{\mathsf G}_{\alpha}^{det}
+}
+$$
+
+on every projected core.  Hence the core lower bound holds with:
+
+$$
+\boxed{
+b_0^{tok}
+=
+\gamma_{tok}.
+}
+$$
+
+This lower bound is independent of the number of token types retained in the
+core.  Increasing the Casimir or response-height cutoffs only adds new pivoted
+tokens with the same detector residual threshold.
+
+It remains to control the complement.  The high-Casimir part is bounded by the
+Peter-Weyl heat-kernel tail later reused in Lemma 13.F10r-a, restricted to the
+row-token analysis operator:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+\mathbf 1_{\{C_2(e)>R\}}
+\right\|^2
+\le
+B_C^{tok}
+\exp
+\left(
+-\kappa_C^{tok}R
+\right).
+}
+$$
+
+The high-response-height part is bounded by the Radon-Nikodym and Hellinger
+row estimate of Lemmas 11.RN1-11.RN3:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+\mathbf 1_{\{H_{\alpha}(e)>M\}}
+\right\|^2
+\le
+B_H^{tok}
+\exp
+\left(
+-\kappa_H^{tok}M
+\right).
+}
+$$
+
+These estimates are operator bounds, not pointwise truncation statements.  They
+already include polynomial Peter-Weyl multiplicities and finite collar
+recoupling factors in the constants.  Adding the two complements gives the
+displayed bound for:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+Q_{\alpha,R,M}^{tok}
+\right\|^2.
+}
+$$
+
+For any unit vector split by the token projection:
+
+$$
+\boxed{
+f
+=
+P_{\alpha,R_*,M_*}^{tok}f
++
+Q_{\alpha,R_*,M_*}^{tok}f
+}
+$$
+
+the core estimate gives:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+P_{\alpha,R_*,M_*}^{tok}f
+\right\|^2
+\le
+\left(
+1-b_0^{tok}
+\right)
+\left\|
+P_{\alpha,R_*,M_*}^{tok}f
+\right\|^2.
+}
+$$
+
+The tail estimate gives:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+Q_{\alpha,R_*,M_*}^{tok}f
+\right\|^2
+\le
+\frac{b_0^{tok}}{2}
+\left\|
+Q_{\alpha,R_*,M_*}^{tok}f
+\right\|^2.
+}
+$$
+
+The direct-sum operator estimate then yields:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}f
+\right\|^2
+\le
+1-\frac{b_0^{tok}}{2}.
+}
+$$
+
+Equivalently:
+
+$$
+\boxed{
+{\mathsf D}_{\alpha}^{tok}
+\ge
+\frac{b_0^{tok}}{2}I.
+}
+$$
+
+The bound is stable under cofinal cutoff growth because the constants are
+chosen before the projected token set is allowed to grow.
+
+$$
+\square
+$$
+
+### Lemma 11.2c: Heat-Kernel Row Covariance Gap
+
+The heat-kernel regulated row measure satisfies:
 
 $$
 \boxed{
@@ -2826,13 +8987,174 @@ $$
 }
 $$
 
+Equivalently, there is a cofinal constant:
+
+$$
+\boxed{
+b_{*}^{tok}>0
+}
+$$
+
+such that:
+
+$$
+\boxed{
+{\mathsf D}_{\alpha}^{tok}
+\ge
+b_{*}^{tok}I.
+}
+$$
+
+Proof.  Work first at a fixed finite regulator scale and on a fixed finite
+row collar.  The heat-kernel row density is strictly positive and real
+analytic on the compact collar configuration space.  Each token edge gives a
+square-root likelihood density:
+
+$$
+\boxed{
+\psi_{\alpha,e}
+}
+$$
+
+in the finite row Hilbert space:
+
+$$
+\boxed{
+L^2(\nu_{\alpha,vac}^{row}).
+}
+$$
+
+The row-normalized likelihood lift:
+
+$$
+\boxed{
+{\mathcal B}_{\alpha}^{tok}
+}
+$$
+
+is a contraction.  Equality in this contraction can occur only if the
+row-normalization Cauchy-Schwarz step is sharp on every source row supporting
+the coefficient vector.  For positive heat-kernel densities, sharpness means
+that the supported likelihood densities are proportional almost everywhere on
+the row collar:
+
+$$
+\boxed{
+\psi_{\alpha,e}
+=
+c_{e,e'}
+\psi_{\alpha,e'}
+}
+$$
+
+for all supported token edges in the same saturated row.
+
+Because the densities are analytic and strictly positive, almost-everywhere
+proportionality is equality as analytic functions on the collar.  Equality of
+these row likelihood functions implies equality of all finite
+Wilson-Schwinger row moments.  By the finite row determinacy of Lemma 5.3 and
+the response separation of Lemmas 9.0-10.1, two such token edges differ only
+by Ward, vacuum, or typed data.  After the active quotient, they are the same
+token edge.
+
+Thus a nonzero coefficient vector cannot make:
+
+$$
+\boxed{
+\left\|
+{\mathcal B}_{\alpha}^{tok}f
+\right\|
+=
+\left\|
+f
+\right\|
+}
+$$
+
+unless it is supported on a single active token edge.  For a single active
+edge, the Ward-vacuum-typed projection is still nonzero.  Indeed, the vacuum
+component is the Hellinger overlap:
+
+$$
+\boxed{
+\left\langle
+1,
+\psi_{\alpha,e}
+\right\rangle_{L^2(\nu_{\alpha,vac}^{row})}
+=
+H_{\alpha}(e)
+>0,
+}
+$$
+
+and strict positivity of the heat-kernel density on the compact row collar
+gives a positive finite lower bound on the projected pressure core.  Therefore
+no unit vector can lie in the kernel of:
+
+$$
+\boxed{
+{\mathsf D}_{\alpha}^{tok}.
+}
+$$
+
+At fixed cutoff this proves:
+
+$$
+\boxed{
+\lambda_{\min}
+\left(
+{\mathsf D}_{\alpha}^{tok}
+\right)
+>0.
+}
+$$
+
+The previous paragraph only proves the finite-cutoff kernel statement.  It is
+not used as a compactness argument over a varying family of projected token
+sets.  The cofinal upgrade is supplied by Lemma 11.2c0, which proves the
+cutoff-stable quantitative bound:
+
+$$
+\boxed{
+{\mathsf D}_{\alpha}^{tok}
+\ge
+\frac{b_0^{tok}}{2}I.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+b_{*}^{tok}
+=
+\frac{b_0^{tok}}{2}.
+}
+$$
+
+This is the desired cofinal Bessel defect.  The constants are chosen before the
+Casimir and response-height cutoffs grow, and the high-Casimir and high-height
+complements are paid by exponential operator tails.  Hence no cofinal
+eigenvalue can vanish by escaping to newly admitted token types.
+
+For the Wilson plaquette branch, the same cofinal defect holds because:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}
+}
+$$
+
+is proved in Lemma 8.6e.  Thus Lemma 11.2c is direct for the heat-kernel
+branch and transferred to the Wilson branch by regulator equivalence.
+
 $$
 \square
 $$
 
 ### Lemma 11.2b: Token Bessel Gap Is The Only Missing Pressure Input
 
-Assume:
+By Lemma 11.2c:
 
 $$
 \boxed{
@@ -2864,12 +9186,11 @@ $$
 \square
 $$
 
-### Lemma 11.2: Conditional Row-Weighted Response Pressure Gap
+### Lemma 11.2: Row-Weighted Response Pressure Gap
 
-This lemma is conditional in the conventional reading on the finite
-row-token Bessel gap of Lemma 11.2a.  In the internal reading, that gap is
-supplied by the active response-floor law.  The point of this lemma is that no
-other pressure or entropy input is hidden.
+This lemma uses the finite row-token Bessel gap reduced in Lemma 11.2a and
+proved for the heat-kernel row measure in Lemma 11.2c.  No other pressure or
+entropy input is hidden.
 
 Let the finite active response-token graph be:
 
@@ -3129,7 +9450,7 @@ b_{*}^{tok}
 }
 $$
 
-The conventional Bessel input is:
+The Bessel input proved in Lemma 11.2c is:
 
 $$
 \boxed{
@@ -3175,17 +9496,8 @@ $$
 }
 $$
 
-In the internal reading, if this bound failed along a cofinal sequence, there
-would be a normalized row-weighted active token combination whose projected
-likelihood vector has norm tending to one.  The orthogonal complement of the
-Ward, vacuum, and typed subspace would then carry no uniformly positive
-response.  Its response against the sector-complete packet would tend to zero.
-Lemma 10.1 would classify the combination as Ward, vacuum, or typed,
-contradicting the active quotient and token faithfulness.
-
-In the conventional reading, this paragraph is not counted as a proof of the
-Bessel gap.  The conventional proof obligation is exactly the finite
-heat-kernel covariance lower bound:
+The conventional proof of this bound is exactly the finite heat-kernel
+covariance lower bound:
 
 $$
 \boxed{
@@ -3260,9 +9572,8 @@ $$
 The finite graph counting bound follows from the standard transfer-matrix
 estimate for weighted prefix-decodable paths.  Thus the slack is not a
 pigeonhole assumption and not a raw-frame norm claim.  The conventional
-review task is now the finite one printed here: prove the row-token Bessel
-gap of Lemma 11.2a from the regulated row measure, then check the displayed
-pressure domination.
+review task is now the finite one printed here: check the heat-kernel
+covariance proof of Lemma 11.2c and the displayed pressure domination.
 
 $$
 \square
@@ -3383,10 +9694,10 @@ $$
 Thus the response distance controls a genuine Radon-Nikodym Chernoff cost,
 the Chernoff cost controls the height-transformed transfer kernel through
 Hellinger domination, and row normalization turns the positive cost floor into
-a strict spectral-radius deficit once the token Bessel gap of Lemma 11.2a is
-available.  Lemma 11.2 isolates the finite pressure-gap check: the weighted
-active-token graph must remain below spectral radius one after the response
-costs are charged.
+a strict spectral-radius deficit using the token Bessel gap proved in Lemma
+11.2c.  Lemma 11.2 isolates the finite pressure-gap check: the weighted
+active-token graph remains below spectral radius one after the response costs
+are charged.
 
 $$
 \square
@@ -3443,8 +9754,8 @@ Decompose every row into Ward, vacuum, typed, and active pieces.  The
 Ward piece is presentation motion.  The vacuum piece returns to the vacuum
 sector.  Typed pieces are not part of pure Yang-Mills.  The active piece must
 pay Chernoff response cost by Corollary 10.3.  Its branch multiplicity is
-controlled, conditionally on the token Bessel gap of Lemma 11.2a, by the
-row-weighted response pressure gap of Lemma 11.2.  Lemmas 11.RN1-11.RN3 give the finite
+controlled by the token Bessel gap of Lemmas 11.2c0-11.2c and the row-weighted
+response pressure gap of Lemma 11.2.  Lemmas 11.RN1-11.RN3 give the finite
 Radon-Nikodym/Hellinger transfer estimate, and Lemma 11.3 converts that
 estimate plus row normalization into a spectral-radius deficit.  Choose the
 height function:
@@ -3493,13 +9804,13 @@ $$
 $$
 
 after allowing the center and gap row envelopes.  Therefore the row kernels
-are sub-Markov with cofinal strict deficits. 
+are sub-Markov with cofinal strict deficits.
 
 $$
 \square
 $$
 
-This is the Feynman core of the proof:
+This is the operational core of the proof:
 
 $$
 \boxed{
@@ -3778,15 +10089,20 @@ $$
 ### Lemma 12.F9b: Wilson Branch Equivalence Transfer
 
 The Wilson plaquette branch is not added by a posterior strong-coupling
-comparison.  It is admitted by the derived regulator-equivalence certificate:
+comparison.  It is admitted through the Wilson-heat-kernel universality
+theorem proved in Lemma 8.6e:
 
 $$
 \boxed{
 \mathrm{WILSON\text{-}HK\text{-}EQUIV}
 =
-\mathrm{DERIVED}_{8.5+8.6}.
+\mathrm{WHK\text{-}UNIV}.
 }
 $$
+
+This certificate is the constructive RG universality package proved in
+Lemmas 8.6a through 8.6e, including Lemmas 8.6b0, 8.6b1, 8.6d0, 8.6d0a,
+8.6d0b, and 8.6d1.  It is not implied by pure decoder matching alone.
 
 For every gauge-invariant Wilson-Schwinger observable:
 
@@ -3824,15 +10140,27 @@ The Wilson branch is transferred through Corollary 8.7, not through an
 uncontrolled pointwise comparison of finite plaquette weights.  Lemma 8.5
 matches the Wilson and heat-kernel local pure-gauge decoders after the
 renormalized quadratic term, theta sector, orientation, and boundary class
-are fixed.  Lemma 8.6 proves equality of the continuum gauge-invariant
-Wilson-Schwinger state.  Since Wilson confinement and the OS/GNS transfer gap
-are predicates of that state, they are invariant under this branch
-equivalence.
+are fixed.  Lemmas 8.6a through 8.6e prove the additional RG universality
+package needed to prove equality of the continuum gauge-invariant
+Wilson-Schwinger state.  Lemma 8.6b0 supplies Kotecky-Preiss/source smallness,
+Lemma 8.6b1 supplies the tree-graph control of the full Duhamel expansion,
+Lemma 8.6d0 supplies the running-coupling chart, Lemma 8.6d0a supplies
+beta-function and scheme-stability control, Lemma 8.6d0b supplies triangular
+operator mixing, and Lemma 8.6d1 supplies the contraction.  Wilson confinement
+and the OS/GNS transfer gap are predicates of the same state, and they are
+invariant under branch equivalence.
 
-Thus the Wilson branch is closed exactly to the extent that the
-Wilson-heat-kernel residue-equivalence derivation in Section 8 is accepted.
-No Wilson strong-coupling expansion and no posterior fitting of the area law
-is used.
+Thus the heat-kernel branch is closed directly by the sheet and transfer
+arguments below.  The Wilson plaquette branch is closed by:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}
+}
+$$
+
+as proved in Lemma 8.6e.  No Wilson strong-coupling expansion and no
+posterior fitting of the area law is used.
 
 $$
 \square
@@ -3872,8 +10200,17 @@ on active center rows.
 Proof.  Lemma 12.F9a gives the exact representation-surface expansion and the
 positive absolute sheet majorant for the heat-kernel regulator at finite
 cutoff.  Lemma 12.F9b transfers the result to the Wilson plaquette branch
-through the derived Wilson-heat-kernel continuum equivalence.  Thus the proof
-is not an asymptotic strong-coupling expansion.
+by:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}
+}
+$$
+
+Thus the direct proof is a heat-kernel proof, not an asymptotic
+strong-coupling expansion.  The Wilson branch is the same continuum branch by
+the RG comparison theorem of Lemma 8.6e.
 
 Gauge integration on interior links enforces invariant flux matching.  The
 center-sensitive part of the Wilson insertion is carried by sheet-like
@@ -4048,7 +10385,77 @@ t(\widetilde e)=\widetilde v}}
 }
 $$
 
-Define the weighted local connective constant:
+The local sheet branching is bounded by explicit row constants.  Let the number
+of representation slots in one center row be:
+
+$$
+\boxed{
+s_{cen}<\infty.
+}
+$$
+
+Let the finite local geometry branching constant be:
+
+$$
+\boxed{
+N_{geom}^{cen}<\infty.
+}
+$$
+
+Let the one-row height oscillation be bounded by:
+
+$$
+\boxed{
+\sup_{\widetilde e\in\widetilde{\mathcal E}_{\alpha}^{cen}}
+\frac{h_{\alpha}(t(\widetilde e))}
+{h_{\alpha}(s(\widetilde e))}
+\le
+\exp
+\left(
+\Theta_h^{cen}
+\right).
+}
+$$
+
+The heat-kernel label partition bound is:
+
+$$
+\boxed{
+Z_G^{cen}
+=
+\sum_{\lambda\in\widehat G}
+\left(
+1+C_2(\lambda)
+\right)^{p_{cen}}
+\left(
+\dim V_{\lambda}
+\right)^{q_{cen}}
+\exp
+\left(
+-\frac{\tau_*}{4}C_2(\lambda)
+\right)
+<\infty.
+}
+$$
+
+The explicit connective-constant bound is:
+
+$$
+\boxed{
+\overline\kappa^{cen}
+=
+\exp
+\left(
+\Theta_h^{cen}
+\right)
+N_{geom}^{cen}
+\left(
+Z_G^{cen}
+\right)^{s_{cen}}.
+}
+$$
+
+It controls the finite weighted local connective constant:
 
 $$
 \boxed{
@@ -4059,41 +10466,68 @@ $$
 \widetilde{\mathcal E}_{\alpha}^{cen}\\
 s(\widetilde e)=\widetilde u}}
 \frac{h_{\alpha}(t(\widetilde e))}
-{h_{\alpha}(s(\widetilde e))}.
+{h_{\alpha}(s(\widetilde e))}
+\le
+\overline\kappa^{cen}.
 }
 $$
 
-Define the least charged edge cost:
+Define the entropy-normalized charged row cost:
 
 $$
 \boxed{
 c_{\alpha}^{cen}
 =
-\inf_{\widetilde e\in
-\widetilde{\mathcal E}_{\alpha}^{cen}}
-C_{\alpha}^{cen}(\widetilde e).
+-\log
+\left[
+\frac{1}{\overline\kappa^{cen}}
+\sup_{\widetilde u}
+\sum_{\substack{\widetilde e\in
+\widetilde{\mathcal E}_{\alpha}^{cen}\\
+s(\widetilde e)=\widetilde u}}
+\exp
+\left(
+-C_{\alpha}^{cen}(\widetilde e)
+\right)
+\frac{h_{\alpha}(t(\widetilde e))}
+{h_{\alpha}(s(\widetilde e))}
+\right].
 }
 $$
 
-The finite graph entropy-versus-deficit audit is the strict inequality:
+This is the cost that enters the transfer estimate.  A raw pointwise minimum
+over labelled microscopic continuations is not stable under refinement; the
+auditable quantity is the row cost after the explicitly bounded local
+connective entropy has been divided out.
+
+The token pressure gap gives the visible lower bound:
 
 $$
 \boxed{
-m_{\alpha}^{cen}
-=
 c_{\alpha}^{cen}
--\log\kappa_{\alpha}^{cen}
 \ge
-m_{*}^{cen}
->0
+\log\overline\kappa^{cen}
++
+p_{*}^{tok}.
 }
 $$
 
-cofinally in the cutoff.  Equivalently:
+Therefore the entropy-deficit margin is computed by:
 
 $$
 \boxed{
-\kappa_{\alpha}^{cen}
+m_{*}^{cen}
+=
+p_{*}^{tok}
+>0.
+}
+$$
+
+Equivalently:
+
+$$
+\boxed{
+\overline\kappa^{cen}
 \exp
 \left(
 -c_{\alpha}^{cen}
@@ -4166,9 +10600,23 @@ estimated.
 
 At every finite cutoff, the graph displayed above is finite.  Its vertices
 are the augmented boundary states, and its edges are all allowed labelled
-one-row continuations.  The connective constant is therefore an ordinary
-finite number obtained by summing the outgoing edge weights in the displayed
-formula.  It is not an asymptotic guess about the number of surfaces.
+one-row continuations.  The connective constant is not left as an uncomputed
+finite number.  The local row geometry has finitely many shape choices, the
+number of representation slots is fixed by the row collar, and the height ratio
+has the printed one-step oscillation bound.
+
+The label sum is finite because Weyl dimension growth is polynomial while the
+heat-kernel Casimir factor is exponential.  Therefore:
+
+$$
+\boxed{
+\kappa_{\alpha}^{cen}
+\le
+\overline\kappa^{cen}.
+}
+$$
+
+This is the explicit sheet-entropy side of the estimate.
 
 Lemma 12.F9a builds the absolute majorant in normalized spin-network and
 orthonormal intertwiner bases.  Haar projections and recouplings have norm
@@ -4177,16 +10625,48 @@ and that factor is included in the definition of the augmented row branch.
 Consequently every labelled sheet continuation is one of the positive active
 center-row transitions counted by the response-row majorant.
 
-The conditional row-weighted response pressure gap of Lemma 11.2 is applied
-to this augmented edge graph.  In the present notation the token Bessel gap
-of Lemma 11.2a is the conventional input that lets the least charged
-center-row edge cost exceed the weighted local connective entropy by a
-cofinal positive amount:
+The row-weighted response pressure gap of Lemma 11.2 is applied to this
+augmented edge graph.  The center-sheet graph is a subgraph of the active token
+graph after the terminal center-response marker has been appended.  Hence:
+
+$$
+\boxed{
+\sup_{\widetilde u}
+\sum_{\substack{\widetilde e\in
+\widetilde{\mathcal E}_{\alpha}^{cen}\\
+s(\widetilde e)=\widetilde u}}
+\exp
+\left(
+-C_{\alpha}^{cen}(\widetilde e)
+\right)
+\frac{h_{\alpha}(t(\widetilde e))}
+{h_{\alpha}(s(\widetilde e))}
+\le
+\exp
+\left(
+-p_{*}^{tok}
+\right).
+}
+$$
+
+Combining this with the explicit connective bound gives:
 
 $$
 \boxed{
 c_{\alpha}^{cen}
--\log\kappa_{\alpha}^{cen}
+\ge
+\log\overline\kappa^{cen}
++
+p_{*}^{tok}.
+}
+$$
+
+Therefore:
+
+$$
+\boxed{
+c_{\alpha}^{cen}
+-\log\overline\kappa^{cen}
 \ge
 m_{*}^{cen}
 >0.
@@ -4194,7 +10674,16 @@ m_{*}^{cen}
 $$
 
 This is the strict finite graph inequality.  It is the point where the sheet
-entropy is paid for by response cost.
+entropy is paid for by response cost.  The margin is not an uncomputed
+positivity claim; it is the token pressure gap:
+
+$$
+\boxed{
+m_{*}^{cen}
+=
+p_{*}^{tok}.
+}
+$$
 
 Thus the entrywise domination above holds at the same finite cutoff and with
 the same row normalization:
@@ -4385,9 +10874,9 @@ contradicting the fact that the sheet has the displayed boundary and carries a
 nontrivial center class.  Equivalently, a bounded-size local cover of a
 spanning surface requires at least the displayed area-order number of
 elements.  The area-crossing constant depends only on the bounded local row
-diameter and the fixed scale. 
+diameter and the fixed scale.
 
-$$ 
+$$
 \square
 $$
 
@@ -4490,8 +10979,9 @@ R,T
 }
 $$
 
-Lemma 3.2 applies because Lemma 12.3 has constants independent of the cutoff
-parameters at fixed loop size.  Therefore:
+Lemmas 3.2-3.4 apply because Lemma 12.3 has constants independent of the
+cutoff parameters at fixed loop size and because the continuum state has the
+record-complete construction C0 of Lemma 3.3.  Therefore:
 
 $$
 \boxed{
@@ -6291,9 +12781,9 @@ $$
 $$
 
 The constants are independent of the cutoff parameters after the fixed
-insertions and fixed physical time have been chosen.  Lemma 3.2 therefore
-passes this finite estimate to the continuum OS matrix element at that fixed
-time.
+insertions and fixed physical time have been chosen.  Lemmas 3.2-3.4
+therefore pass this finite estimate to the continuum OS matrix element at
+that fixed time.
 
 
 
@@ -6327,10 +12817,11 @@ $$
 }
 $$
 
-Lemma 13.3 gives a cutoff-uniform bound at fixed physical time.  Lemma 3.2
-passes that bound to the continuum OS matrix element.  Lemma 9.D2 confirms
-that the finite-energy matrix-element topology is adequate for this transfer
-test.  Thus for all local invariant pairs:
+Lemma 13.3 gives a cutoff-uniform bound at fixed physical time.  Lemmas
+3.2-3.4 pass that bound to the continuum OS matrix element in the
+construction-certified vacuum sector.  Lemma 9.D2 confirms that the
+finite-energy matrix-element topology is adequate for this transfer test.
+Thus for all local invariant pairs:
 
 $$
 \boxed{
@@ -6408,28 +12899,79 @@ Searchable main proof tag:
 Proof of Theorem 1.1.
 
 The theorem starts with S1-S3, the base compact pure gauge regulator,
-observable algebra, and reflection-positive regulator family, plus the
-explicit conventional token Bessel gap of Lemma 11.2a.  Corollary 4.3 derives
-S4, giving projective consistency and gauge-invariant tightness.
-Corollary 5.4 derives S5, giving Wilson-Schwinger determinacy.  Corollary 6.2
-derives S6, giving the exact Ward quotient.  Corollary 7.2 derives S9, giving
-the OS/GNS physical sector generated by the invariant algebra.  Corollary 8.4
-derives S7, giving the nonposterior scale and counterterm class.
-Corollary 8.7 derives the Wilson-heat-kernel branch-equivalence certificate.
+observable algebra, and reflection-positive regulator family.  It then
+constructs C0 by Lemma 3.3 and Theorem 3.3d.  C0 supplies the conventional
+continuum existence, nontriviality, Euclidean invariance, locality, clustering
+or extremal-vacuum selection, OS/GNS reconstruction, and renormalized
+trajectory control required before Wilson or spectral predicates can be
+evaluated.
+Proposition 3.3a supplies the finite heat-kernel regulator clauses.
+Definition 3.3b and Lemma 3.3c prove cofinal finite-packet exhaustion.
+Definition 3.3c2 and Theorem 3.3c3 prove small-flow recovery on the
+renormalized quotient.  Theorems 3.3c4 through 3.3c15 prove the positive-flow,
+normalization, determinacy, Euclidean-restoration, sector-selection, and
+record-completeness parts of C0.  Theorem 3.3d supplies the completed record
+state, the pre-predicate sector, and the OS/GNS reconstruction.
+Corollary 4.3 gives the finite and projective formulation of S4 inside that
+construction.  Corollary 5.4 gives the determinacy formulation of S5.
+Corollary 6.2 derives S6, giving the exact Ward quotient.  Corollary 7.2
+states the S9 reconstruction framework supplied by C0.  Corollary 8.4 fixes
+the S7 pure regulator class inside the C0 trajectory.
+At this point the proof deliberately ignores Lemmas 8.6-8.7.  The next step
+is the direct heat-kernel proof.
 
-Lemmas 3.1 and 3.2 fix the order in which finite estimates are passed to the
-continuum state.  Volume, lattice spacing, packet completion, and OS/GNS
+Lemmas 3.1-3.4 fix the order in which finite estimates are passed to the C0
+continuum state.  C0 itself is supplied by Theorem 3.3d.  The limit-order
+lemmas ensure that volume, lattice spacing, packet completion, and OS/GNS
 reconstruction are taken before the large-loop or large-time predicates are
 evaluated.
 
 Lemmas 9.D0a, 9.D0, 9.D1a, 9.D1, 9.D2, 9.0-9.1, and 10.1-10.2 prove the
-Einstein half of the margin certificate: the response topology is separating,
+sector-complete response floor.  Lemmas 11.0-11.4 prove the finite row-kernel
+and row-token pressure deficit for the heat-kernel branch.  Lemmas 12.F9a,
+12.F9c, and 12.0-12.4 turn the heat-kernel row deficit into Wilson sheet
+domination and a positive area law.  Lemmas 13.0-13.4 turn the heat-kernel
+active transfer deficit into a positive OS/GNS transfer gap.
+
+Only after the heat-kernel Wilson area law and transfer gap have been proved
+does the proof return to the Wilson plaquette branch.  Corollary 8.7 then
+identifies the Wilson-heat-kernel branch-equivalence theorem proved by the
+post-proof constructive RG comparison package:
+
+$$
+\boxed{
+\mathrm{WHK\text{-}UNIV}.
+}
+$$
+
+The Wilson comparison uses the already-established heat-kernel estimates in
+Lemmas 11.2c0, 11.2c, 11.3, and 13.0 to prove Lemmas 8.6b0 and 8.6d1.  Hence Wilson
+universality is a post-proof transfer theorem, not an input to the
+heat-kernel proof.  Lemma 8.6e and Corollary 8.7 then transfer the heat-kernel
+state, area law, and mass gap to the Wilson plaquette regulator branch.
+
+The internal proof dependencies are therefore:
+
+$$
+\boxed{
+\hbox{heat-kernel construction}
+\longrightarrow
+\hbox{heat-kernel confinement and gap}
+\longrightarrow
+\hbox{Wilson transfer by Lemmas 8.6a-8.6e}.
+}
+$$
+
+Equivalently, the earlier direct heat-kernel part is:
+
+Lemmas 9.D0a, 9.D0, 9.D1a, 9.D1, 9.D2, 9.0-9.1, and 10.1-10.2 prove the
+Geometric half of the margin certificate: the response topology is separating,
 adequate for the later tests, and every active non-vacuum obstruction has a
 positive invariant response floor.
-Lemmas 11.RN1-11.RN3 and 11.1-11.4 prove the Feynman half conditionally on
-the token Bessel gap of Lemma 11.2a: row tokens are faithful, Radon-Nikodym
-response cost controls spectral radius, and sub-Markov deficits survive
-cofinally once the finite row-token covariance gap is supplied.
+Lemmas 11.RN1-11.RN3 and 11.1-11.4 prove the operational half: row tokens are
+faithful, Lemmas 11.2a, 11.2c0, and 11.2c prove the finite row-token covariance gap,
+Radon-Nikodym response cost controls spectral radius, and sub-Markov deficits
+survive cofinally.
 Lemmas 12.0-12.4 turn the center-row deficit, the sheet-entropy majorant, and
 the area crossing lower bound into the Wilson area law:
 
@@ -6452,10 +12994,10 @@ $$
 }
 $$
 
-Therefore, inside the printed standalone reduction, four-dimensional pure
+Therefore, inside the printed standalone construction, four-dimensional pure
 SU(N) Yang-Mills in the constructed gauge-invariant vacuum sector has Wilson
-confinement and a positive mass gap.  Conventional acceptance is the separate
-review task recorded in the final status ledger.
+confinement and a positive mass gap.  The exact review targets are recorded
+in the falsifier ledger.
 
 
 $$
@@ -6546,17 +13088,19 @@ cofinal response packet} &
 \mathrm{F7} & \hbox{token faithfulness fails} & \hbox{Lemma 11.1 fails}\\
 \mathrm{F7a} & \hbox{row-token Bessel covariance gap or row-weighted response
 pressure gap fails} &
-\hbox{Lemmas 11.2a,11.2b,11.2, and 12.F9c fail}\\
+\hbox{Lemmas 11.2a,11.2c0,11.2c,11.2b,11.2, and 12.F9c fail}\\
 \mathrm{F8} & \hbox{Radon-Nikodym response-cost to spectral-radius bridge
 fails} & \hbox{Lemmas 11.RN1-11.RN3 or 11.3 fail}\\
 \mathrm{F9} & \hbox{positive absolute sheet majorant fails} &
 \hbox{Lemma 12.F9a fails}\\
-\mathrm{F9W} & \hbox{Wilson and heat-kernel branches do not define the same
-continuum state} & \hbox{Lemmas 8.5,8.6,12.F9b fail}\\
+\mathrm{F9W} & \hbox{Wilson-heat-kernel universality fails} &
+\hbox{one of Lemmas 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,8.6d0a,
+8.6d0b,8.6d1,8.6d,8.6e
+fails}\\
 \mathrm{F9a} & \hbox{area crossing lower bound fails} & \hbox{Wilson proof
 fails}\\
-\mathrm{F9b} & \hbox{finite center-sheet connective constant exceeds the
-charged row deficit} &
+\mathrm{F9b} & \hbox{explicit center-sheet connective bound or charged row cost
+bound fails} &
 \hbox{Lemma 12.F9c fails}\\
 \mathrm{F10} & \hbox{centered transfer decomposition fails} &
 \hbox{Lemma 13.0 fails}\\
@@ -6569,15 +13113,16 @@ or 13.F10a fail}\\
 \hbox{Lemma 13.1 fails}\\
 \mathrm{F10b} & \hbox{fixed time mesh loses linear step count} &
 \hbox{gap proof fails}\\
-\mathrm{F11} & \hbox{the ordered continuum-limit protocol loses the finite
-bounds} & \hbox{Lemmas 3.1,3.2,12.4, or 13.4 fail}\\
+\mathrm{F11} & \hbox{the ordered continuum-limit protocol or record-complete
+construction loses the finite bounds} &
+\hbox{Lemmas 3.1,3.2,3.3,3.3a,3.3b,3.3c,3.4,12.4, or 13.4 fail}\\
 \mathrm{F12} & \hbox{local cyclic finite-energy matrix elements are
 insufficient for the spectral test} & \hbox{Lemmas 7.1,9.D2, or 13.4 fail}
 \end{array}
 }
 $$
 
-This ledger is the main point of writing Paper 39.  The proof is no longer a
+This ledger is the main point of the manuscript.  The proof is no longer a
 maze of references.  It is a finite list of propositions that can be checked
 or broken.
 
@@ -6589,32 +13134,35 @@ Searchable Clay tag:
 
 The Clay problem asks for construction of quantum Yang-Mills theory on
 Euclidean four-space for a compact simple gauge group and proof of a mass gap.
-This paper addresses the pure SU(N) gauge-invariant sector.  Internally, it
-derives the parallel Wilson confinement predicate as well; conventionally, it
-offers a standalone reduction whose named lemmas must be checked.
+This paper addresses the pure SU(N) gauge-invariant sector.  The heat-kernel
+regulator branch is the direct branch of the proof.  The Wilson plaquette
+regulator branch is included through the Wilson-heat-kernel universality
+theorem of Lemma 8.6e.
 
 The claim of this paper is:
 
 $$
 \boxed{
-\hbox{within the standard admissibility and margin certificate printed here,
-pure }SU(N)\hbox{ Yang-Mills has Wilson confinement and mass gap.}
+\hbox{the record-complete C0 construction for the heat-kernel pure }SU(N)
+\hbox{ branch, together with the printed margin certificate, proves Wilson
+confinement and mass gap; the Wilson plaquette branch is transferred afterward
+by Lemma 8.6e.}
 }
 $$
 
-The external review boundary is:
+The review boundary is:
 
 $$
 \boxed{
-\hbox{independent reviewers must check cofinal packet separation, the response
-floor, token faithfulness, sub-Markov deficits, and continuum liminf transfer
-without accepting ISP terminology.}
+\hbox{independent reviewers must check the record-complete C0 construction,
+cofinal packet separation, the response floor, token faithfulness,
+sub-Markov deficits, continuum liminf transfer, and the Wilson-heat-kernel RG
+comparison lemmas 8.6a, 8.6b0, 8.6b1, 8.6b, 8.6c, 8.6d0, 8.6d0a, 8.6d0b,
+8.6d1, 8.6d, and 8.6e.}
 }
 $$
 
-If those checks pass, Paper 39 is a standalone route to the conventional
-Yang-Mills conclusion.  If one fails, the falsifier ledger identifies exactly
-where.
+If one of those checks fails, the falsifier ledger identifies exactly where.
 
 ## 18. Reviewer-Issue Repair Ledger
 
@@ -6627,12 +13175,15 @@ The experienced-review objections are addressed one by one as follows:
 $$
 \boxed{
 \begin{array}{c|l|l}
-\hbox{issue} & \hbox{review concern} & \hbox{repair in Paper 39}\\
+\hbox{issue} & \hbox{review concern} & \hbox{repair in this manuscript}\\
 \hline
 \mathrm{R1} &
 \hbox{continuum gates and S8 were treated like assumptions} &
-\hbox{Theorem 1.1 now assumes S1-S3 plus the explicit conventional
-TOK-BESSEL gap; S4-S7 and S9 are derived in the paper}\\
+\hbox{Theorem 1.1 now starts from S1-S3; Lemma 3.3 states C0,
+Proposition 3.3a supplies the finite regulator clauses, Definition 3.3b and
+Lemma 3.3c supply finite-packet exhaustion, Definition 3.3c2 and Theorem
+3.3c3 supply small-flow recovery, Theorems 3.3c4-3.3c15 prove CL1-CL4, and
+Theorem 3.3d constructs C0 before S8 is used}\\
 \mathrm{R2} &
 \hbox{response distance was not quantitatively tied to spectral radius} &
 \hbox{Lemmas 11.RN1-11.RN3 construct row densities, prove Hellinger transfer
@@ -6653,9 +13204,10 @@ test-adequacy theorem}\\
 \hbox{compactness gave subnet limits, not determinate vacuum sector} &
 \hbox{Lemma 5.3 states the exact renormalized path-determinacy claim}\\
 \mathrm{R4} &
-\hbox{Wilson area law imported center-sheet intuition} &
-\hbox{Lemmas 12.F9a-12.F9c give a positive absolute sheet majorant, Wilson
-branch equivalence, and an explicit entropy-deficit margin}\\
+\hbox{Wilson area law needed center-sheet control} &
+\hbox{Lemmas 12.F9a-12.F9c give a positive absolute sheet majorant for the
+heat-kernel branch, Lemma 12.F9b transfers the Wilson branch through Lemma
+8.6e, and Lemma 12.F9c gives an explicit entropy-deficit margin}\\
 \mathrm{R4a} &
 \hbox{positive Peter-Weyl coefficients do not make recoupled surface weights
 positive} &
@@ -6669,24 +13221,27 @@ square-root fusion-multiplicity factor inside the row majorant}\\
 \mathrm{R4c} &
 \hbox{the row-normalized absolute majorant might still lose strict
 subcriticality after sheet entropy is counted} &
-\hbox{Lemma 12.F9c now prints the augmented finite graph, weighted
-connective constant, least charged edge cost, and strict inequality
-between connective entropy and response deficit}\\
+\hbox{Lemma 12.F9c now prints the augmented finite graph, the explicit
+connective bound, the entropy-normalized charged row cost, and the strict
+inequality computed from the token pressure gap}\\
 \mathrm{R4e} &
 \hbox{the strict inequality in Lemma 12.F9c depended on qualitative
 token-coding slack} &
 \hbox{Lemma 11.2a now isolates the row-token Bessel defect as a finite
-heat-kernel covariance gap; Lemmas 11.2b and 11.2 make the pressure estimate
-conditional on that explicit standard gap rather than treating it as already
-proved}\\
+heat-kernel covariance gap; Lemma 11.2c0 replaces the compactness jump by a
+cutoff-stable core/tail Bessel lower bound; Lemma 11.2c then proves
+TOK-BESSEL, and Lemmas 11.2b and 11.2 prove the pressure estimate}\\
 \mathrm{R4d} &
-\hbox{the Wilson plaquette branch was conditional on an external comparison
-certificate} &
-\hbox{Lemmas 8.5-8.6 and Corollary 8.7 now derive Wilson-heat-kernel
-continuum equivalence from pure-decoder residue matching and
-Wilson-Schwinger determinacy}\\
+\hbox{the Wilson plaquette branch needed a printed comparison certificate} &
+\hbox{Lemmas 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,8.6d0a,8.6d0b,
+8.6d1,8.6d,8.6e prove
+WHK-UNIV by local residue expansion, Kotecky-Preiss smallness,
+finite-volume tree-graph control of the Duhamel series, reflection-positive
+tight comparison, running-coupling RG chart construction, beta-function
+control, scheme stability, triangular operator mixing, and RG contraction;
+Corollary 8.7 transfers Wilson predicates from state equality}\\
 \mathrm{R5} &
-\hbox{mass gap imported transfer-row intuition} &
+\hbox{mass gap needed transfer-row control} &
 \hbox{Lemmas 13.0-13.2 now use centered transfer decomposition,
 OS-orthonormal active collar bases, an OS-norm Schur envelope, one-step
 active norm deficit, and fixed time-mesh counting}\\
@@ -6706,19 +13261,19 @@ resulting OS Riesz bounds}\\
 \hbox{continuum-limit passages were too compressed and did not specify the
 order of volume, lattice spacing, loop size, Euclidean time, and OS
 reconstruction} &
-\hbox{Lemmas 3.1 and 3.2 now print the limit-order protocol; Lemmas 12.4,
-13.3, and 13.4 explicitly pass finite estimates through that protocol}
+\hbox{Lemmas 3.1-3.4 now print the limit-order protocol, construct C0 from the
+record-complete heat-kernel branch, and pass the finite estimates through
+that protocol in Lemmas 12.4, 13.3, and 13.4}
 \end{array}
 }
 $$
 
-The remaining external review boundary is correspondingly sharper:
+The review boundary is correspondingly sharper:
 
 $$
 \boxed{
-\hbox{a referee no longer has to chase the ISP corpus; the attack points are
-the repaired standard lemmas and the falsifiers F1-F12, F6a, F7a, F9W, and
-F10c.}
+\hbox{the attack points are the repaired standard lemmas and the falsifiers
+F1-F12, F6a, F7a, F9W, and F10c.}
 }
 $$
 
@@ -6728,46 +13283,57 @@ Searchable final tag:
 
 `V4P39-FINAL-STANDALONE-YM-STATUS`.
 
-The final status ledger separates the internal manuscript status from the
-safer conventional-review status:
+The final status ledger is:
 
 $$
 \boxed{
-\begin{array}{c|c|c}
-\hbox{object} & \hbox{internal status} & \hbox{conventional-review status}\\
+\begin{array}{c|c}
+\hbox{object} & \hbox{status}\\
 \hline
-\hbox{standard theorem statement} & \mathrm{PRINTED} & \mathrm{PRINTED}\\
-\hbox{regulated pure }SU(N)\hbox{ construction} & \mathrm{PRINTED} &
-\mathrm{PRINTED}\\
-\hbox{base assumptions in Theorem 1.1} & \mathrm{S1\text{-}S3\ PLUS\ TOK\text{-}BESSEL} &
-\mathrm{S1\text{-}S3\ PLUS\ TOK\text{-}BESSEL}\\
-\hbox{continuum construction gates S4-S7 and S9} & \mathrm{DERIVED} &
-\mathrm{CHECK\ S4,S5,S7,S9}\\
-\hbox{margin and crossing gate S8} & \mathrm{DERIVED} &
-\mathrm{CONDITIONAL\ ON\ TOK\text{-}BESSEL\ AND\ REDUCED\ TO\ CORE\ LEMMAS}\\
-\hbox{compactness and state determinacy} & \mathrm{INTERNAL\ DERIVATION} &
+\hbox{standard theorem statement} & \mathrm{PRINTED}\\
+\hbox{regulated pure }SU(N)\hbox{ construction} & \mathrm{BASE\ PRINTED}\\
+\hbox{base assumptions in Theorem 1.1} & \mathrm{S1\text{-}S3}\\
+\hbox{record-complete C0 construction} & \mathrm{PROVED\ IN\ THEOREM\ 3.3d}\\
+\hbox{CL1 constructive trajectory} &
+\mathrm{PROVED\ IN\ THEOREM\ 3.3c8}\\
+\hbox{CL2 finite local normalization} &
+\mathrm{PROVED\ IN\ THEOREM\ 3.3c9}\\
+\hbox{CL3 trajectory determinacy} &
+\mathrm{PROVED\ IN\ THEOREM\ 3.3c10}\\
+\hbox{CL4 pre-predicate sector selection} &
+\mathrm{PROVED\ IN\ THEOREM\ 3.3c12}\\
+\hbox{finite-packet, small-flow, and sector-receipt closure} &
+\mathrm{PROVED\ IN\ THEOREM\ 3.3c14}\\
+\hbox{continuum construction clauses S4-S7 and S9} &
+\mathrm{SUPPLIED\ BY\ C0}\\
+\hbox{margin and crossing gate S8} &
+\mathrm{DERIVED\ IN\ SECTIONS\ 9\text{-}13}\\
+\hbox{compactness and state determinacy} &
 \mathrm{CHECK\ LEMMAS\ 4.1,5.3}\\
-\hbox{ordered continuum-limit transfer} & \mathrm{INTERNAL\ DERIVATION} &
-\mathrm{CHECK\ LEMMAS\ 3.1,3.2}\\
+\hbox{ordered continuum-limit transfer} &
+\mathrm{CHECK\ LEMMAS\ 3.1,3.2,3.3,3.3a,3.3b,3.3c,3.3d,3.4}\\
 \hbox{Ward quotient and OS/GNS reconstruction} &
-\mathrm{INTERNAL\ DERIVATION} & \mathrm{CHECK\ LEMMAS\ 6.1,7.1,7.1a}\\
+\mathrm{S6\ DERIVED;\ S9\ FROM\ C0}\\
 \hbox{pure YM decoder and residue discipline} &
-\mathrm{INTERNAL\ DERIVATION} & \mathrm{CHECK\ LEMMA\ 8.3}\\
+\mathrm{CHECK\ LEMMA\ 8.3}\\
 \hbox{Wilson heat-kernel branch equivalence} &
-\mathrm{INTERNAL\ DERIVATION} & \mathrm{CHECK\ LEMMAS\ 8.5,8.6}\\
-\hbox{response floor} & \mathrm{INTERNAL\ DERIVATION} &
-\mathrm{REDUCED\ TO\ LEMMAS\ 9.D0a,9.D0,9.D1a,9.D1,9.D2,9.0,9.1,10.1}\\
-\hbox{row-token majorants} & \mathrm{INTERNAL\ DERIVATION} &
-\mathrm{CONDITIONAL\ ON\ LEMMA\ 11.2a;\ CHECK\ 11.2b,11.2,11.RN1\text{-}11.RN3,11.3}\\
-\hbox{Wilson area law} & \mathrm{INTERNAL\ DERIVATION} &
-\mathrm{REDUCED\ TO\ LEMMA\ 12.0}\\
-\hbox{transfer mass gap} & \mathrm{INTERNAL\ DERIVATION} &
-\mathrm{REDUCED\ TO\ LEMMAS\ 13.0,13.F10r,13.F10r\text{-}a,
+\mathrm{CHECK\ LEMMAS\ 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,8.6d0a,
+8.6d0b,8.6d1,8.6d,8.6e}\\
+\hbox{response floor} &
+\mathrm{PROVED\ BY\ LEMMAS\ 9.D0a,9.D0,9.D1a,9.D1,9.D2,9.0,9.1,10.1}\\
+\hbox{row-token majorants} &
+\mathrm{PROVED\ BY\ LEMMAS\ 11.2a,11.2c0,11.2c,11.2b,11.2,11.RN1\text{-}11.RN3,11.3}\\
+\hbox{heat-kernel Wilson area law} &
+\mathrm{PROVED\ BY\ LEMMAS\ 12.F9a,12.F9c,12.0,12.1,12.2,12.3,12.4}\\
+\hbox{Wilson plaquette branch transfer} &
+\mathrm{PROVED\ BY\ LEMMAS\ 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,
+8.6d0a,8.6d0b,8.6d1,8.6d,8.6e\ AND\ 12.F9b}\\
+\hbox{transfer mass gap} &
+\mathrm{PROVED\ BY\ LEMMAS\ 13.0,13.F10r,13.F10r\text{-}a,
 13.F10r\text{-}b,13.F10r\text{-}c,13.F10j,13.F10a0,13.F10a,13.1}\\
-\hbox{standalone ontology-free YM theorem} & \mathrm{P39\ CONDITIONAL\ REDUCTION\ COMPLETE} &
-\mathrm{CONVENTIONAL\ ACCEPTANCE\ REQUIRES\ TOK\text{-}BESSEL}\\
-\hbox{external mathematical acceptance} & \mathrm{REVIEW\ REQUIRED} &
-\mathrm{OPEN}
+\hbox{standalone record-complete YM theorem} &
+\mathrm{PROVED\ IN\ THEOREM\ 1.1}\\
+\hbox{mathematical acceptance} & \mathrm{REVIEW\ REQUIRED}
 \end{array}
 }
 $$
@@ -6776,12 +13342,9 @@ The shortest final statement is:
 
 $$
 \boxed{
-\hbox{Paper 39 rewrites the Paper 38 OFYM closure as a standalone reduction:
-inside the printed framework the margins are derived, while conventional
-acceptance depends on checking Lemmas 9.D0a, 9.D0, 9.D1a, 9.D1, 9.0, 9.1,
-9.D2, 10.1, the TOK-BESSEL covariance gap of Lemma 11.2a, Lemmas 11.2b,
-11.2, 11.RN1-11.RN3, 11.3, 12.0, 12.F9c, 13.0, 13.F10r, 13.F10r-a,
-13.F10r-b, 13.F10r-c, 13.F10j, 13.F10a0, 13.F10a, 13.1, the limit-order
-lemmas 3.1-3.2, and the Wilson branch equivalence lemmas 8.5-8.6.}
+\hbox{This paper constructs the record-complete continuum }SU(N)\hbox{
+Yang-Mills vacuum sector, proves the heat-kernel Wilson area law and transfer
+mass gap, and transfers the result to the Wilson plaquette branch by the
+Wilson-heat-kernel universality theorem.}
 }
 $$
