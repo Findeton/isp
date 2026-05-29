@@ -131,6 +131,24 @@ Paper 17 does not prove:
 It proves that if Paper 16 supplies `CYM_WL` and the new mass-gap gates hold,
 then the declared gauge-invariant OS sector has a positive spectral gap.
 
+### Continuum-floor pointer (external review, 2026-05)
+
+This conditional reduction is the *easy* OS direction: exponential clustering
+with a positive rate `m_gap` implies a spectral gap. The load-bearing input is
+the rate itself — the positive continuum clustering rate / string-tension floor
+fed in as `G_j-2PT-KP` and `MG-UNIF(m_*)`. That floor is **not** established
+here; it is reduced downstream (Papers 18-21) to a strict source inequality
+(sheet rate vs. surface-polymer entropy), which the v3 corpus left **undecided**,
+and which the v4 consolidation (paper 39, Section 11, `TOK-BESSEL`) proves only
+at *fixed* heat-kernel collar time `t_- > 0`. Uniform survival as `t_- → 0` is
+the open infrared step and coincides with the open part of the Clay problem.
+
+Note (non-circular): the ISP suppositions here are existence/reconstruction/
+probe-density/whole-process conditions only; none assumes clustering, a
+correlation length, or a mass scale. So the gap is genuinely *reduced* to the
+floor, not assumed — the circularity risk does not arise. The single missing
+piece is the continuum survival of the floor.
+
 ## 0C. What This Paper Proves And Does Not Prove
 
 **Proves, conditionally.** Paper 17 proves the following ISP-aligned

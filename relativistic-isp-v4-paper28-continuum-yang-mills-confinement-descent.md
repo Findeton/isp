@@ -39,6 +39,44 @@ target is to prove that a cofinal family of finite ISP gauge-record systems
 has a continuum gauge-invariant limit whose Wilson sector has positive string
 tension and whose gauge-invariant local sector has positive mass gap.
 
+### Continuum-floor audit note (external review, 2026-05)
+
+This descent is conditional on a positive *continuum* string-tension/mass-gap
+floor, and the floor's survival to the genuine continuum is the open step.
+Two findings from the external audit:
+
+1. Non-circular at the ontology level.  The ISP suppositions used here are
+   existence, reconstruction, and whole-process-compatibility conditions only
+   (continuum Wilson-loop functional exists, OS reconstruction closes, probe
+   density, whole-process compatibility).  None assumes clustering, a
+   correlation length, a mass scale, or a string tension.  So the gap is
+   genuinely *reduced* to the floor, not assumed.
+
+2. The floor is established only at fixed smearing.  The load-bearing open step
+   is positivity of the string-tension/margin floor *uniformly as the
+   heat-kernel collar (smearing) time* $t_-\downarrow0$.  In the standalone
+   consolidation of this descent (paper 39, Section 11, the row-token Bessel
+   gap `TOK-BESSEL`), the floor is proved only at *fixed* $t_->0$: the detector
+   variance (paper 39 Lemma 11.2a2) and the Casimir/height tail rates (paper 39
+   Lemma 11.2a4) are positive only because $t_-$ is held away from $0$, and both
+   degrade as $t_-\downarrow0$.  Uniform survival as $t_-\downarrow0$ — a
+   positive continuum string tension — is the genuine infrared/strong-coupling
+   content and coincides with the open part of the Clay problem.
+
+3. The ISP base does not supply the floor either.  An audit of the foundational
+   base layer (the v2 stochastic-curvature papers) shows the extra ISP structure
+   beneath C0 — the exchange-defect curvature — is the hypersurface-deformation
+   (Dirac-Schwinger) algebra (v2-paper1): relativistic covariance/kinematics,
+   not a confinement mechanism.  It supplies existence + Euclidean/Lorentz
+   covariance of the continuum object (the C0-existence half, non-circularly)
+   but carries no string tension, mass scale, or clustering rate.  So the
+   dynamical floor is external to the ISP base, not just to C0.
+
+Therefore the "positive string tension and positive mass gap" target below is
+proved *modulo* the $t_-\downarrow0$ survival of the floor — dynamical content
+external to both C0 and the ISP base.  It is a conditional continuum descent,
+not an unconditional continuum confinement/mass-gap theorem.
+
 ## 0. Imports From Papers 24-27
 
 Paper 24 supplies the Barandes-aligned finite effective calibration bridge:

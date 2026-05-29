@@ -48,6 +48,36 @@ $$
 
 on the gauge-invariant continuum \(SU(N)\) comparison sector.
 
+### Continuum-floor / base audit (external review, 2026-05)
+
+The status line above ("the internal ISP Yang-Mills descent theorem is already
+closed") must be read with one conditional attached, and the equivalence below
+inherits it. The bridge is an honest *transfer*: it faithfully identifies the
+ISP descent object with the standard gauge-invariant continuum YM object, so
+whatever confinement/mass-gap status the left side has, the right side inherits
+— **including its conditionality.** That conditionality is a positive continuum
+string-tension floor surviving the heat-kernel collar limit `t_- → 0`, and the
+audit finds it is supplied by **no** layer of the corpus:
+
+1. Not by the construction: in the standalone consolidation (paper 39, Section
+   11, `TOK-BESSEL`) the floor is proved only at fixed `t_- > 0` (detector
+   variance Lemma 11.2a2 and Casimir/height tails Lemma 11.2a4 are positive only
+   because `t_-` is held away from 0); `t_- → 0` survival is the open infrared
+   step.
+2. Not by the ISP base: the extra ISP structure beneath C0 — the exchange-defect
+   curvature — is the hypersurface-deformation (Dirac-Schwinger) algebra
+   (v2-paper1), i.e. relativistic covariance/kinematics, not a confinement
+   mechanism. It supplies existence + covariance (the C0-existence half,
+   non-circularly) but carries no string tension or mass scale.
+
+So the equivalence here is sound and valuable for the *existence/covariance*
+identification (it correctly makes the ISP object the standard YM object), but
+on the confinement and mass-gap predicates it transfers a **conditional**
+statement: `CONFINEMENT/MASS GAP_standard YM` holds iff the `t_- → 0` floor
+survives, and that survival is the open dynamical content external to both C0
+and the ISP base. The bridge does not close it; it relocates it faithfully to
+the standard side.
+
 The paper has three jobs:
 
 $$

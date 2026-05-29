@@ -60,6 +60,18 @@ The candidate ISP definition interface is:
 This is a definition interface and reduction target, not an existence theorem
 for continuum `4D SU(N)` Yang-Mills.
 
+**Continuum-floor pointer (external review, 2026-05).** The area-law certificate
+`CONF-AL(sigma)` that feeds Paper 17's clustering gate is itself reduced (Papers
+19-21) to a strict source inequality — the block-plaquette sheet rate must beat
+the rooted surface-polymer entropy. That positive source floor is the genuine
+content (it is the string tension), and the v3 corpus left it **undecided**
+("the current corpus does not prove this… remains open"). The v4 consolidation
+(paper 39, Section 11, `TOK-BESSEL`) proves the floor only at *fixed* heat-kernel
+collar time `t_- > 0`; uniform survival as `t_- → 0` (a positive continuum string
+tension) is the open infrared step and coincides with the open part of the Clay
+problem. The ISP suppositions used are existence-type only, so the reduction is
+non-circular: the gap is reduced to the floor, not assumed.
+
 The completion target is:
 
 ```text

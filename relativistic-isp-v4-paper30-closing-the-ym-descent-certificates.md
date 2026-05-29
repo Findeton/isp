@@ -90,6 +90,37 @@ $$
 }
 $$
 
+### Continuum-floor audit note (external review, 2026-05)
+
+The `CLOSED_{ISP ontology}` status above must be read as conditional on one open
+continuum step, located precisely in `TSP28`.
+
+- `RCP28` (source-Cauchy/determinacy) and `MID28` (decoder separation) are
+  existence/uniqueness-type certificates.  The ISP suppositions they use are
+  existence, reconstruction, and whole-process-compatibility conditions only;
+  none assumes clustering, a correlation length, a mass scale, or a string
+  tension.  So the mass gap is genuinely *reduced* here, not assumed: the
+  closure is **non-circular** at the ontology level.
+
+- `TSP28` ("scale-normalized margin survival") is exactly the continuum-survival
+  certificate, and it is the load-bearing one.  Its `PASS_{ISP}` is conditional
+  on the margin floor staying positive *uniformly as the heat-kernel collar
+  (smearing) time* $t_-\downarrow0$.  In the standalone consolidation of this
+  margin (paper 39, Section 11, the row-token Bessel gap `TOK-BESSEL`), the floor
+  is established only at *fixed* $t_->0$: the detector variance (paper 39 Lemma
+  11.2a2) and the Casimir/height tail rates (paper 39 Lemma 11.2a4) are positive
+  only because $t_-$ is held away from $0$, and both degrade as $t_-\downarrow0$.
+  If Sections 2.1-2.10 below intend a genuinely $t_-\downarrow0$-uniform margin,
+  that uniform step is the one a reviewer must verify; it is the genuine
+  infrared/strong-coupling content and coincides with the open part of the Clay
+  problem.
+
+Net: `RCP28+MID28` close the *existence/uniqueness* of the continuum object
+relative to the ISP ontology, but `TSP28` — the positive continuum string
+tension/mass gap — is `PASS` only modulo the $t_-\downarrow0$ survival of the
+floor.  "`CLOSED_{ISP ontology}`" should be understood with that single
+conditional attached.
+
 ## 1. Issue List: RCP28
 
 Searchable issue tag:

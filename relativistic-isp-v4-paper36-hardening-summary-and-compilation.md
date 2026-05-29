@@ -57,6 +57,52 @@ process theory.}
 }
 $$
 
+### Continuum-floor status (external review, 2026-05)
+
+The taxonomy above needs one more distinction that the corpus currently blurs:
+an $\mathrm{INTERNAL}_{ISP}$ result can still be **conditional on an open
+continuum step**.  The Yang-Mills continuum confinement/mass-gap result is in
+exactly this position, and it splits cleanly:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{certificate} & \hbox{content} & \hbox{honest status}\\
+\hline
+\mathrm{RCP28} & \hbox{continuum source-Cauchy/determinacy (existence)} &
+\mathrm{INTERNAL}_{ISP}\\
+\mathrm{MID28} & \hbox{YM decoder separation/uniqueness} &
+\mathrm{INTERNAL}_{ISP}\\
+\mathrm{TSP28} & \hbox{positive continuum string tension / mass gap} &
+\mathrm{INTERNAL}_{ISP}\hbox{ modulo }t_-\downarrow0\hbox{ floor survival (OPEN)}
+\end{array}
+}
+$$
+
+Two audit findings fix this status:
+
+1. Non-circular.  The ISP suppositions are existence/reconstruction/whole-process
+   conditions only; none assumes clustering, a correlation length, a mass scale,
+   or a string tension.  So the mass gap is genuinely reduced to a positive
+   string-tension floor, not assumed.
+
+2. The floor is established only at fixed smearing.  In the standalone
+   consolidation (paper 39, Section 11, row-token Bessel gap `TOK-BESSEL`) the
+   floor is proved only at fixed heat-kernel collar time $t_->0$: the detector
+   variance (Lemma 11.2a2) and the Casimir/height tail rates (Lemma 11.2a4) are
+   positive only because $t_-$ is held away from $0$ and both degrade as
+   $t_-\downarrow0$.  Uniform survival as $t_-\downarrow0$ — a positive continuum
+   string tension — is the genuine infrared content and coincides with the open
+   part of the Clay problem.
+
+Therefore the honest corpus statement is: ISP closes continuum YM *existence and
+uniqueness* (RCP28, MID28) and *reduces* the mass gap to a positive continuum
+string-tension floor without assuming it, but the floor's $t_-\downarrow0$
+survival (TSP28) is the single open step.  "YM proven within ISP" should be read
+as "YM existence within ISP, plus a non-circular reduction of the gap to one
+open continuum-floor inequality," not as an unconditional internal mass-gap
+theorem.
+
 ## 1. Active Corpus Packet
 
 Searchable import tag:

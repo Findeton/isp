@@ -38,6 +38,40 @@ identified with the standard continuum Yang-Mills Hilbert/algebraic theory.}
 }
 $$
 
+### Continuum-floor / base audit (external review, 2026-05)
+
+The internal descent theorem above concludes `CONFINEMENT/MASS GAP` only
+*conditionally on a positive continuum string-tension floor* — the survival of
+the margin floor uniformly as the heat-kernel collar (smearing) time
+`t_- → 0`. Two audit findings fix the status, and the hardening normal form
+should carry them so the conclusion is not read as unconditional:
+
+1. The floor is established only at fixed smearing. In the standalone
+   consolidation (paper 39, Section 11, the row-token Bessel gap `TOK-BESSEL`)
+   the floor is proved only at fixed `t_- > 0`: the detector variance (Lemma
+   11.2a2) and the Casimir/height tail rates (Lemma 11.2a4) are positive only
+   because `t_-` is held away from 0, and both degrade as `t_- → 0`. The
+   `t_- → 0` survival is the open infrared step and coincides with the open part
+   of the Clay problem.
+
+2. The ISP base does **not** supply the floor either. An audit of the
+   foundational base layer (the v2 stochastic-curvature / kernel-dynamics
+   papers) shows the extra ISP structure beneath C0 — the exchange-defect
+   curvature — converges to the hypersurface-deformation (Dirac-Schwinger)
+   algebra (v2-paper1). That is relativistic **covariance/kinematics**, not a
+   confinement mechanism: it carries no string tension, mass scale, or
+   clustering rate. It supplies existence + Euclidean/Lorentz covariance of the
+   continuum object (the C0-existence half), which is exactly why the ISP
+   suppositions are existence-only and non-circular — but it contains no
+   dynamical confinement floor. The base is also itself finite/regulated, with
+   its own continuum limit proved only in 1+1D/free toy scope (v2-paper1;
+   v2-paper5 is 1+1D abelian with an explicit obstruction).
+
+Therefore the positive continuum string tension / mass gap is external to
+**both** C0 and the ISP base; it is genuinely dynamical content that no current
+layer supplies. This hardened descent theorem is `PASS` modulo that floor, not
+an unconditional internal mass gap.
+
 ## 0. What Is Being Hardened
 
 Searchable scope tag:
