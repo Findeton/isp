@@ -37,7 +37,7 @@ The V4 corpus then pushes this idea through three major reconstructions:
 $$
 \boxed{
 \begin{array}{c|c}
-\hbox{domain} & \hbox{active ISP status}\\
+\hbox{domain} & \hbox{current corpus status}\\
 \hline
 \hbox{effective general relativity} & \mathrm{CLOSED}_{ISP}\\
 \hbox{relativistic QFT kinematics} & \mathrm{CLOSED}_{ISP}\\
@@ -45,21 +45,28 @@ $$
 \hbox{continuum Yang-Mills descent} & \mathrm{CLOSED}_{ISP\ descent}\\
 \hbox{ontology-free Yang-Mills reduction} & \mathrm{CLOSED}_{P38}\\
 \hbox{standalone ontology-free Yang-Mills manuscript} &
-\mathrm{CONDITIONAL}_{P39:C0}
+\mathrm{CONDITIONAL}_{P39:C0}\\
+\hbox{center-resolved YM confinement route} &
+\mathrm{PROGRAM}_{P40}
 \end{array}
 }
 $$
 
-These closures are internal to the active Barandes-aligned finite-record ISP
-ontology.  They are not the same thing as an unconditional theorem in the
-standard continuum language.  The external comparison to standard GR, QFT,
-QCD, and Yang-Mills is handled by explicit bridge gates.  For Yang-Mills,
+These statuses separate active-ISP closure, ontology-free reduction, and open
+research programs.  The active-ISP closures are internal to the
+Barandes-aligned finite-record ontology.  They are not the same thing as an
+unconditional theorem in the standard continuum language.  The external
+comparison to standard GR, QFT, QCD, and Yang-Mills is handled by explicit
+bridge gates.  For Yang-Mills,
 Paper 37 supplies the standard-equivalence bridge and Paper 38 supplies an
 ontology-free proof reduction inside the corpus.  Paper 39 expands that
 reduction into a standalone manuscript, but the expanded C0 section now
 exposes an open constructive core.  The open clauses are uniform projective
 control, large-field control, Euclidean restoration, zero-flow recovery, and
-nontriviality.
+nontriviality.  Paper 40 then returns to the active ISP ontology and asks
+whether primitive center-resolved / Gauss-law gluing supplies a
+dual-disorder route to the continuum confinement floor.  It is a
+research-program paper, not a new proof of confinement or mass gap.
 
 The honest slogan is:
 
@@ -678,7 +685,10 @@ equivalence ledgers for that sector.  Paper 38 then rewrites the result as an
 ontology-free proof reduction and closes OFYM1-OFYM12 inside the corpus.
 Paper 39 expands that reduction into a standalone ontology-free reduction
 manuscript, but its C0 section is now explicitly conditional on an open
-constructive core.
+constructive core.  Paper 40 does not change the ontology-free C0 status; it
+indexes a separate ontological route, internal to active ISP, in which
+boundary-center / Gauss-law gluing is tested as a dual-disorder source for the
+continuum confinement floor.
 
 The careful status is:
 
@@ -694,6 +704,8 @@ $$
 \hbox{ontology-free YM reduction inside corpus} & \mathrm{CLOSED}_{P38}\\
 \hbox{standalone ontology-free YM manuscript} &
 \mathrm{CONDITIONAL}_{P39:C0}\\
+\hbox{center-resolved dual-disorder route} &
+\mathrm{PROGRAM}_{P40}\\
 \hbox{external Clay-style acceptance} & \mathrm{UNVALIDATED}_{external}
 \end{array}
 }
@@ -703,12 +715,16 @@ This distinction matters.  ISP now has both a closed internal descent theorem
 and a written bridge to the standard gauge-invariant continuum Yang-Mills
 comparison sector.  Paper 38 adds a closed ontology-free reduction inside the
 corpus.  Paper 39 expands the reduction into a standalone manuscript and
-names the remaining C0 open core.  What is still not complete is the
-ontology-free constructive C0 theorem in ordinary mathematical-physics
-language.  That requires closing the Paper 39 clauses for uniform projective
-control, large-field control, Euclidean restoration, zero-flow recovery, and
+names the remaining C0 open core.  Paper 40 is the active-ISP-side
+center-resolved route: it relocates the remaining confinement-floor question
+to primitive center-flux gluing data, but flags every load-bearing dynamical
+estimate as open.  What is still not complete is the ontology-free
+constructive C0 theorem in ordinary mathematical-physics language.  That
+requires closing the Paper 39 clauses for uniform projective control,
+large-field control, Euclidean restoration, zero-flow recovery, and
 nontriviality, followed by independent review of the remaining margin and
-transfer machinery.
+transfer machinery.  The Paper 40 program is parallel: it must prove, or
+falsify, a center-disorder floor without importing the desired Wilson area law.
 
 ## 10. Internal Theorems Versus External Bridges
 
@@ -754,6 +770,8 @@ gauge-invariant continuum YM}\\
 ontology-free proof reduction}\\
 \mathrm{SOFYM} & \hbox{Paper 39 expands the reduction into a standalone
 ontology-free reduction manuscript with open C0 core}\\
+\mathrm{CGYM} & \hbox{Paper 40 tests center-resolved gluing as an
+active-ISP dual-disorder route}\\
 \mathrm{spin/CPT} & \hbox{ISP exchange and orientation structure to standard
 spin-statistics and CPT}
 \end{array}
@@ -768,7 +786,9 @@ bridge discipline.  Paper 38 is the first completed instance of the stronger
 ontology-free reduction discipline, although its external acceptance still
 depends on conventional review.  Paper 39 is the first standalone
 ontology-free reduction manuscript, with the C0 constructive core named as
-the remaining open conventional target.
+the remaining open conventional target.  Paper 40 belongs to the ontological
+side rather than the ontology-free side: it explores whether the ISP primitive
+center can source the disorder-side confinement floor.
 
 ## 11. What The Framework Achieves
 
@@ -803,6 +823,9 @@ $$
 \hbox{standalone ontology-free YM manuscript} &
 \mathrm{CONDITIONAL}_{P39:C0} &
 \hbox{Paper 39 prints the reduction and open C0 core}\\
+\hbox{center-resolved YM route} &
+\mathrm{PROGRAM}_{P40} &
+\hbox{Paper 40 tests primitive center gluing as a dual-disorder source}\\
 \hbox{remaining GR/QFT/QCD external equivalence} &
 \mathrm{BRIDGE} &
 \hbox{requires explicit comparison gates}
@@ -849,7 +872,9 @@ and hardens effective GR, relativistic QFT kinematics, and finite QCD
 dynamics.  Paper 37 closes the gauge-invariant standard continuum
 Yang-Mills bridge, and Paper 38 closes the ontology-free Yang-Mills reduction
 inside the corpus.  Paper 39 expands that result into a standalone reduction
-manuscript and explicitly names the C0 constructive open core.}
+manuscript and explicitly names the C0 constructive open core.  Paper 40
+records the separate active-ISP center-resolved gluing route as an open
+dual-disorder research program.}
 }
 $$
 
@@ -891,7 +916,8 @@ ontology}\\
 \mathrm{P37} & \hbox{standard-equivalence bridge for continuum Yang-Mills}\\
 \mathrm{P38} & \hbox{ontology-free Yang-Mills proof reduction}\\
 \mathrm{P39} & \hbox{standalone ontology-free Yang-Mills manuscript with
-open C0 core}
+open C0 core}\\
+\mathrm{P40} & \hbox{center-resolved dual-disorder confinement route}
 \end{array}
 }
 $$
@@ -906,6 +932,7 @@ The current late-corpus document ledger is:
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
+- `relativistic-isp-v4-paper40-center-resolved-gluing-confinement-route.md`
 - `relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
 - `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
 - `relativistic-isp-v5-paper2-gravitational-record-stabilization-coherence-decay.md` (draft)
@@ -967,6 +994,8 @@ ISP premises?}\\
 bridges be written to the same level as Paper 37?}\\
 \hbox{external YM validation} & \hbox{can the Paper 39 C0 open core be
 closed and then reviewed conventionally?}\\
+\hbox{center-disorder YM route} & \hbox{can Paper 40 turn primitive center
+gluing into a real confinement-floor estimate?}\\
 \hbox{experimental signatures} & \hbox{does ISP predict deviations from
 standard GR, QFT, or QCD?}\\
 \hbox{black holes} & \hbox{what replaces singularities in finite record
@@ -998,10 +1027,12 @@ descent theorem, a standard gauge-invariant equivalence bridge through Paper
 37, an ontology-free proof reduction through Paper 38, and a standalone
 ontology-free reduction manuscript through Paper 39.  Paper 39 is conditional
 on closing the C0 constructive core: uniform projective control, large-field
-control, Euclidean restoration, zero-flow recovery, and nontriviality.  The
-remaining bridge program concerns broader GR, QFT, and QCD external
-comparison, plus independent review of the Paper 39 margin and transfer
-machinery after that core is supplied.  The result is a
+control, Euclidean restoration, zero-flow recovery, and nontriviality.  Paper
+40 adds an active-ISP research route through primitive center-resolved gluing,
+but does not prove the continuum string tension or mass gap.  The remaining
+bridge program concerns broader GR, QFT, and QCD external comparison, plus
+independent review of the Paper 39 margin and transfer machinery after that
+core is supplied.  The result is a
 finite stochastic ontology that
 tries to explain why the usual continuum quantum and relativistic formalism
 works, rather than taking its most mysterious structures as primitive.
@@ -1028,7 +1059,8 @@ effective GR, relativistic QFT kinematics, and finite QCD dynamics, with
 continuum Yang-Mills additionally bridged to the standard gauge-invariant
 comparison sector in Paper 37 and reduced to an ontology-free proof ledger in
 Paper 38, then expanded into a standalone ontology-free reduction manuscript
-in Paper 39 with an explicit open C0 constructive core.}
+in Paper 39 with an explicit open C0 constructive core, while Paper 40 records
+the separate center-resolved active-ISP route as an open research program.}
 }
 $$
 
@@ -1037,7 +1069,8 @@ The cleanest statement of the next task is:
 $$
 \boxed{
 \hbox{derive more of the active corpus from minimal ISP premises, close the
-Paper 39 C0 open core, and develop the remaining GR, QFT, and QCD external
-bridges with the same conventional clarity.}
+Paper 39 C0 open core, test the Paper 40 center-disorder route, and develop
+the remaining GR, QFT, and QCD external bridges with the same conventional
+clarity.}
 }
 $$

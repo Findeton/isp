@@ -6,13 +6,24 @@ This repository contains a developing research corpus on **Relativistic
 Indivisible Stochastic Processes** (ISP): an indivisible stochastic geometry
 and probability-first attempt to
 reconstruct quantum, relativistic, gauge, and gravitational structure from
-finite stochastic transports between hypersurface records.  The current
-standalone ontology-free Yang-Mills reduction manuscript is
-[V4 Paper 39: Standalone Ontology-Free Yang-Mills Proof](relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md),
-treated here as the full ontology-free document under active hardening.  Its
-honest status is conditional: the C0 construction section now exposes an open
-constructive core, especially uniform projective control, large-field control,
-Euclidean restoration, zero-flow recovery, and nontriviality.
+finite stochastic transports between hypersurface records.
+
+Current Yang-Mills status:
+
+- **Ontological / active-ISP status:** the late V4 stack contains an internal
+  active finite-record ISP descent theorem for `SU(N)` Yang-Mills confinement
+  and mass gap, with the standard gauge-invariant bridge written in
+  [V4 Paper 37](relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md).
+- **Ontology-free status:** [V4 Paper 38](relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md)
+  closes the ontology-free reduction ledger inside the corpus, while
+  [V4 Paper 39](relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md)
+  is the standalone ontology-free manuscript with an explicitly open C0
+  constructive core: uniform projective control, large-field control,
+  Euclidean restoration, zero-flow recovery, and nontriviality.
+- **Active Paper 40 route:** [V4 Paper 40](relativistic-isp-v4-paper40-center-resolved-gluing-confinement-route.md)
+  is indexed as a research-program paper.  It does not prove confinement or
+  the mass gap; it asks whether primitive center-resolved/Gauss-law gluing can
+  supply a dual-disorder route to the missing continuum confinement floor.
 
 For a compact physicist-facing overview, start here:
 [V5 Paper 0: Review Introduction For Physicists](relativistic-isp-v5-paper0-review-introduction-for-physicists.md).
@@ -366,6 +377,7 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
+- `relativistic-isp-v4-paper40-center-resolved-gluing-confinement-route.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -418,6 +430,12 @@ active ISP-V4 finite-record ontology
   status is not a closed conventional Yang-Mills proof: the C0 construction
   section isolates an open constructive core, namely `U`, `LF`, `ER`, `ZF`,
   and `NT`.
+- **Paper 40** indexes the center-resolved gluing route as an ISP-specific
+  dual-disorder research program.  It does not close the continuum string
+  tension or mass gap.  Instead it relocates the live dynamical question to
+  primitive boundary-center / Gauss-law gluing data and names the open
+  estimates needed for a center-flux condensation or disorder-side
+  confinement floor.
 
 The resulting status is sharper than the earlier README: the corpus now has
 an internal ISP Yang-Mills descent theorem and a written standard-equivalence
@@ -425,17 +443,20 @@ bridge for the gauge-invariant continuum Yang-Mills comparison sector.
 Paper 38 goes one step further: it writes the ontology-free reduction itself
 and closes OFYM1-OFYM12 inside the corpus.  Paper 39 turns that reduction
 into a standalone reduction manuscript and makes the remaining C0 burden
-explicit.  The remaining boundary is no longer an unnamed missing internal
-gate; it is the constructive C0 open core inside Paper 39, plus independent
-external review of the response-floor, row-token, crossing, area-law, and
-transfer-gap mechanisms once that core is supplied.
+explicit.  Paper 40 does not alter that ontology-free status; it opens a
+separate active-ISP center-gluing route to the continuum confinement floor.
+The remaining boundary is no longer an unnamed missing internal gate; it is
+the constructive C0 open core inside Paper 39, the open center-disorder
+estimates of Paper 40, plus independent external review of the response-floor,
+row-token, crossing, area-law, and transfer-gap mechanisms once the relevant
+cores are supplied.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  By Papers 29-39, the strongest V4
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-40, the strongest V4
 claim is a hardened active finite-record stack plus an ontology-free
 Yang-Mills reduction: effective GR, relativistic QFT kinematics, finite QCD
 dynamics, internal Yang-Mills confinement/mass-gap descent, the
@@ -443,8 +464,9 @@ gauge-invariant standard-equivalence bridge for continuum Yang-Mills, and the
 OFYM1-OFYM12 ontology-free Yang-Mills proof ledger expanded into a standalone
 conditional manuscript.  The remaining boundary is the broader external
 validation and externalization program: closing the Paper 39 C0 open core,
-independent review of the Paper 39 margin and transfer machinery,
-and writing GR/QFT/QCD bridges with the same conventional clarity.
+testing the Paper 40 center-resolved dual-disorder route, independent review
+of the Paper 39 margin and transfer machinery, and writing GR/QFT/QCD bridges
+with the same conventional clarity.
 
 ## V5: Consequences Of The Finite-Record Ontology
 
@@ -508,6 +530,10 @@ Paper 1 uses the V4 result stack as background:
   but it explicitly keeps the C0 constructive core open.  The external
   validation target is therefore a single conventional proof document with a
   named open core, not a closed theorem.
+- P40 supplies the center-resolved gluing route as a research-program paper:
+  the active ISP ontology may still have leverage through primitive
+  boundary-center / Gauss-law gluing, but the disorder-side confinement-floor
+  estimates remain open.
 
 Conceptual status:
 
@@ -550,6 +576,7 @@ real stochastic kernels
   -> standard gauge-invariant Yang-Mills equivalence bridge
   -> ontology-free Yang-Mills reduction closed inside the corpus
   -> standalone ontology-free Yang-Mills reduction manuscript with open C0 core
+  -> center-resolved dual-disorder route to the remaining confinement floor
   -> black holes as finite record horizons rather than primitive singular points
 ```
 
@@ -575,6 +602,9 @@ The honest reading is:
   OFYM1-OFYM12 inside the corpus;
 - Paper 39 supplies the standalone ontology-free Yang-Mills reduction
   manuscript and names the remaining C0 open core;
+- Paper 40 supplies a center-resolved gluing research route for the
+  ontological/active-ISP side, but it does not prove the continuum string
+  tension or mass gap;
 - remaining external acceptance depends on closing that C0 core, independent
   conventional review of the Paper 39 proof architecture, extending the bridge
   discipline across GR/QFT/QCD, and showing that the finite source packets are
