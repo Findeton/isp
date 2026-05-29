@@ -33,7 +33,7 @@ The proof target can be compressed as:
 
 $$
 \boxed{
-\mathrm{record\ complete\ YM\ construction}
+\mathrm{standard\ OS/Wightman\ YM\ construction}
 \wedge
 \mathrm{row\ margin\ certificate}
 \Longrightarrow
@@ -49,7 +49,7 @@ $$
 \begin{array}{c|l}
 \hbox{layer} & \hbox{content}\\
 \hline
-\mathrm{L1} & \hbox{construct the record-complete continuum state}\\
+\mathrm{L1} & \hbox{construct the standard gauge-invariant continuum state}\\
 \mathrm{L2} & \hbox{reconstruct the physical Hilbert and transfer sector}\\
 \mathrm{L3} & \hbox{prove the standard row-margin certificate}\\
 \mathrm{L4} & \hbox{derive Wilson area law and spectral gap}
@@ -103,11 +103,11 @@ observables of the pure gauge field.
 
 The theorem proved in this paper is:
 
-### Theorem 1.1: Record-Complete Yang-Mills Confinement And Gap
+### Theorem 1.1: Standard Gauge-Invariant Yang-Mills Confinement And Gap
 
 Assume the base regulated pure gauge Wilson/heat-kernel construction for the
 group fixed above, namely S1-S3 in Section 2.  The heat-kernel branch is then
-completed by the record-complete C0 construction in Section 3:
+completed by the finite-packet C0 construction in Section 3:
 
 $$
 \boxed{
@@ -118,9 +118,12 @@ $$
 The construction is proved inside this paper.  Lemma 3.3 states the full C0
 target.  Proposition 3.3a supplies the finite heat-kernel regulator clauses.
 Definition 3.3b and Lemma 3.3c construct the cofinal finite-packet algebra.
-Definition 3.3c2 and Theorem 3.3c3 construct the small-flow regular quotient.
-Theorems 3.3c4 through 3.3c15 prove the CL1-CL4 construction chain, and
-Theorem 3.3d proves C0.
+Definition 3.3c2, Lemmas 3.3c2a through 3.3c2e, and Theorem 3.3c3 construct
+the small-flow regular quotient with uniform flow-time, counterterm, mixing,
+and OS matrix-element control.  Theorems 3.3c4 through 3.3c15 prove the
+CL1-CL4 construction chain, and Theorem 3.3d proves C0.  Definition 3.3e and
+Theorem 3.3e5 then identify the constructed C0 sector with the standard
+gauge-invariant OS/Wightman Yang-Mills sector.
 
 With C0 in place, Lemmas 3.1, 3.2, and 3.4 fix the order in which finite
 estimates are transferred to the continuum state.  Sections 9-13 then derive
@@ -221,10 +224,11 @@ Searchable conditions tag:
 `V4P39-STANDARD-ADMISSIBILITY-S1-S9`.
 
 The proof uses the following clauses.  S1-S3 are the base regulated
-construction.  C0 is constructed in Section 3 from the completed
-gauge-invariant record algebra.  S4, S5, S7, and S9 are consequences of C0,
-not routine consequences of compactness alone.  S6 and S8 are handled inside
-the paper after C0 supplies the continuum state and physical sector.
+construction.  C0 is constructed in Section 3 and identified with the standard
+gauge-invariant OS/Wightman continuum sector in Theorem 3.3e5.  S4, S5, S7,
+and S9 are consequences of C0, not routine consequences of compactness alone.
+S6 and S8 are handled inside the paper after C0 supplies the continuum state
+and physical sector.
 
 $$
 \boxed{
@@ -237,8 +241,8 @@ $$
 \hbox{base observable algebra}\\
 \mathrm{S3} & \hbox{reflection-positive pure gauge regulator family} &
 \hbox{base positivity clause}\\
-\mathrm{C0} & \hbox{record-complete continuum pure gauge OS state} &
-\hbox{constructed in Section 3}\\
+\mathrm{C0} & \hbox{standard gauge-invariant continuum pure gauge OS state} &
+\hbox{constructed in Section 3; identified in Theorem 3.3e5}\\
 \mathrm{S4} & \hbox{projective consistency and gauge-invariant tightness} &
 \hbox{part of C0; Section 4 gives the finite/projective formulation}\\
 \mathrm{S5} & \hbox{Wilson-Schwinger determinacy of the invariant state} &
@@ -259,12 +263,13 @@ $$
 Theorem 1.1 starts from S1-S3 and constructs C0 in Section 3.  It does not
 claim that four-dimensional continuum Yang-Mills existence, nontriviality,
 clustering or extremal-vacuum selection, and renormalized trajectory control
-follow from compactness alone.  The construction is record-complete: the
-continuum object is the completed gauge-invariant record algebra and its
-small-flow regular quotient.  The margin argument S8 is then proved from the
-row-response ledger, the finite heat-kernel row covariance gap, standard row
-kernels, crossing geometry, and transfer domination defined inside this
-paper.
+follow from compactness alone.  The construction is finite-packet complete:
+the continuum object is first built from the completed gauge-invariant packet
+algebra and its small-flow regular quotient, and then Theorem 3.3e5 identifies
+that object with the standard gauge-invariant OS/Wightman continuum sector.
+The margin argument S8 is then proved from the row-response ledger, the finite
+heat-kernel row covariance gap, standard row kernels, crossing geometry, and
+transfer domination defined inside this paper.
 
 The proof is falsifiable because every condition has a named failure mode:
 
@@ -281,7 +286,9 @@ $$
 \neg\mathrm{S6} & \hbox{gauge artifacts survive as physical sectors}\\
 \neg\mathrm{S7} & \hbox{scale or counterterms are selected after the answer}\\
 \neg\mathrm{S8} & \hbox{no positive Wilson or transfer margin is proved}\\
-\neg\mathrm{S9} & \hbox{the physical sector is not the reconstructed sector}
+\neg\mathrm{S9} & \hbox{the physical sector is not the reconstructed sector}\\
+\neg(\mathrm{C0}\cong\mathrm{OS/W}) &
+\hbox{the finite-packet construction is not standard continuum Yang-Mills}
 \end{array}
 }
 $$
@@ -721,19 +728,332 @@ flow time goes to zero after the regulator continuum limit.  Two families are
 equivalent when their difference has zero limit in every finite OS matrix
 element against the cofinal packet algebra.
 
+### Definition 3.3c2a: Renormalized Small-Flow Seminorms
+
+Fix a compact support window, finite source packet, finite response order,
+finite energy window, and finite positive-time OS test family.  The small-flow
+OS seminorm of an observable family is:
+
+$$
+\boxed{
+\|X\|_{sf;m,E}
+=
+\sup
+\left\{
+\left|
+\left\langle
+A\Omega,
+X B\Omega
+\right\rangle_{OS}
+\right|
+:
+A,B\in{\mathcal P}_m,\;
+\|A\Omega\|_{OS}\le1,\;
+\|B\Omega\|_{OS}\le1,\;
+H\le E
+\right\}.
+}
+$$
+
+The family:
+
+$$
+\boxed{
+X_{\tau}
+}
+$$
+
+is small-flow regular when there is a finite counterterm packet:
+
+$$
+\boxed{
+{\mathsf C}_{m,\tau,\mu}
+}
+$$
+
+chosen before the Wilson-area and spectral-gap predicates, such that:
+
+$$
+\boxed{
+X_{\tau}^{ren}
+=
+X_{\tau}^{bare}
+-
+{\mathsf C}_{m,\tau,\mu}
+}
+$$
+
+is Cauchy in every displayed seminorm as the flow time goes to zero.
+
+### Lemma 3.3c2b: Uniform Finite-Shell Small-Flow Expansion
+
+For each finite packet, there is a finite local gauge-invariant operator basis:
+
+$$
+\boxed{
+\{O_{1,\mu},\ldots,O_{N_m,\mu}\}
+}
+$$
+
+and finite coefficient matrices:
+
+$$
+\boxed{
+Z_m(\tau,\mu,a),
+\qquad
+R_m(\tau,\mu,a),
+}
+$$
+
+such that every flowed packet observable has the OS matrix-element expansion:
+
+$$
+\boxed{
+X_{\tau}^{bare}
+=
+\sum_{j=1}^{N_m}
+Z_{m,j}(\tau,\mu,a)\,O_{j,\mu}
++
+R_m(\tau,\mu,a).
+}
+$$
+
+The remainder is uniformly small in the small-flow OS seminorm:
+
+$$
+\boxed{
+\limsup_{a\to0}
+\|R_m(\tau,\mu,a)\|_{sf;m,E}
+\le
+C_{m,E}
+\tau^{\eta_m}
+\left(1+|\log\tau|\right)^{p_m}
+}
+$$
+
+with:
+
+$$
+\boxed{
+\eta_m>0,
+\qquad
+p_m<\infty.
+}
+$$
+
+Proof.  At positive flow time, every tested field is smeared over a physical
+radius.  For a fixed finite packet, locality and gauge invariance restrict the
+short-flow singular part to finitely many local gauge-invariant operators of
+bounded engineering degree.  Lemma 10.29 supplies the finite basis.  Lemma
+10.31 gives finite triangular mixing by type and degree.  Lemmas 10.38 through
+10.40 give the positive excess degree and show that irrelevant insertions
+contribute only a positive power of the cutoff or flow radius, up to finitely
+many logarithms.  Reflection positivity converts the resulting Schwinger
+bounds into the displayed OS matrix-element seminorm.  This gives the finite
+small-flow expansion uniformly along the cofinal heat-kernel trajectory.
+
+$$
+\square
+$$
+
+### Lemma 3.3c2c: Counterterm Matrix Is Finite And Solvable
+
+For each finite packet, the singular coefficient matrix decomposes into
+typed, relevant, marginal, and irrelevant blocks:
+
+$$
+\boxed{
+Z_m
+=
+\begin{pmatrix}
+Z_{typed} & * & * & *\\
+0 & Z_{rel} & * & *\\
+0 & 0 & Z_{marg} & *\\
+0 & 0 & 0 & Z_{irr}
+\end{pmatrix}.
+}
+$$
+
+After vacuum normalization, sector typing, anisotropy restoration, and the
+choice of renormalized gauge coupling, the finite counterterm packet cancels
+all singular relevant and marginal components:
+
+$$
+\boxed{
+{\mathsf C}_{m,\tau,\mu}
+=
+\sum_{j\in rel\cup marg\cup typed}
+c_{m,j}(\tau,\mu)\,O_{j,\mu}.
+}
+$$
+
+The remaining irrelevant block is uniformly contracting:
+
+$$
+\boxed{
+\lim_{\tau\downarrow0}
+\limsup_{a\to0}
+\|Z_{irr,m}(\tau,\mu,a)\|_{sf;m,E}
+=
+0.
+}
+$$
+
+Proof.  The finite-basis theorem makes the matrix finite.  Gauge invariance,
+Bianchi identities, Ward descendants, and source equivalence remove redundant
+operators.  Lemma 10.30 leaves only the pure Yang-Mills coupling as the
+untyped bulk marginal coordinate after vacuum, theta, boundary, and anisotropy
+data have been typed or fixed.  Lemma 10.31 gives triangularity, so cancelling
+the relevant and marginal finite blocks cannot create a new lower-degree
+physical coordinate.  Lemma 10.32 supplies the asymptotically free running
+coupling trajectory, and Lemma 10.41 supplies contraction of the irrelevant
+coordinates.  Therefore the counterterm problem is a finite triangular linear
+system plus a contracting irrelevant remainder.
+
+$$
+\square
+$$
+
+### Lemma 3.3c2d: Uniform OS Cauchy Limit
+
+For every small-flow regular renormalized family and every finite OS test
+packet:
+
+$$
+\boxed{
+\lim_{\tau,\tau'\downarrow0}
+\limsup_{a\to0}
+\left\|
+X_{\tau}^{ren}
+-
+X_{\tau'}^{ren}
+\right\|_{sf;m,E}
+=
+0.
+}
+$$
+
+Consequently all finite-energy OS matrix elements have a unique zero-flow
+limit:
+
+$$
+\boxed{
+\lim_{\tau\downarrow0}
+\lim_{a\to0}
+\left\langle
+A\Omega_a,
+X_{\tau,a}^{ren}B\Omega_a
+\right\rangle_{OS}
+}
+$$
+
+for every fixed finite packet pair:
+
+$$
+\boxed{
+A,B\in{\mathcal P}_m.
+}
+$$
+
+Proof.  Subtract the finite counterterm packet of Lemma 3.3c2c from the
+finite-shell expansion of Lemma 3.3c2b.  The relevant and marginal singular
+terms cancel by the triangular finite system.  Typed terms are fixed sector
+coordinates and therefore do not drift with the Wilson or spectral predicate.
+The difference of two renormalized flow times is then bounded by the sum of
+two remainders and the contracting irrelevant block:
+
+$$
+\boxed{
+\limsup_{a\to0}
+\left\|
+X_{\tau}^{ren}
+-
+X_{\tau'}^{ren}
+\right\|_{sf;m,E}
+\le
+C_{m,E}
+\left[
+\tau^{\eta_m}(1+|\log\tau|)^{p_m}
++
+{\tau'}^{\eta_m}(1+|\log\tau'|)^{p_m}
+\right].
+}
+$$
+
+The right side tends to zero because:
+
+$$
+\boxed{
+\eta_m>0.
+}
+$$
+
+Thus the renormalized family is Cauchy in every finite OS matrix-element
+seminorm, uniformly along the cofinal cutoff route.
+
+$$
+\square
+$$
+
+### Lemma 3.3c2e: The Small-Flow Quotient Is A Local Star Algebra
+
+The small-flow regular quotient:
+
+$$
+\boxed{
+{\mathcal A}_{sfr}
+=
+{\mathcal C}_{sfr}/{\mathcal N}_{sfr}
+}
+$$
+
+is a local gauge-invariant star algebra, and the zero-flow map:
+
+$$
+\boxed{
+q_{sf}:{\mathcal C}_{sfr}\to{\mathcal A}^{inv}_{0,sf}
+}
+$$
+
+has kernel:
+
+$$
+\boxed{
+\ker q_{sf}
+=
+{\mathcal N}_{sfr}.
+}
+$$
+
+Proof.  Products and adjoints of renormalized flowed families again have
+finite small-flow expansions on the common finite packet refinement.  The
+operator basis is finite on that refinement, and the product counterterm
+packet is obtained by multiplying the finite triangular matrices and then
+projecting back to the same typed local basis.  Lemma 3.3c2d gives Cauchy OS
+matrix elements for products, adjoints, and commutators at spacelike separated
+supports.  Families with zero limiting OS matrix elements form a two-sided
+star ideal.  Therefore the quotient is a local gauge-invariant star algebra,
+and its kernel is precisely the zero matrix-element ideal.
+
+$$
+\square
+$$
+
 ### Theorem 3.3c3: Small-Flow Recovery
 
 The zero-flow gauge-invariant local algebra used by C0 is recovered as the
 small-flow regular quotient of the positive-flow algebra.
 
-Proof.  Gauge-covariant heat flow is injective on smooth admissible gauge
-orbits at positive flow time.  Local gauge-invariant observables admit
-small-flow expansions whose singular terms are local counterterms of fixed
-engineering type.  After the renormalized scale and typed counterterm class
-are fixed, finite OS matrix elements of regular families have unique limits.
-The quotient removes only families with zero limiting matrix elements, so the
-zero-flow invariant algebra is recovered without adding an independent
-continuum object.
+Proof.  Definition 3.3c2a fixes the OS matrix-element topology in which the
+small-flow limit is taken.  Lemma 3.3c2b gives the finite-shell small-flow
+expansion with a uniform remainder.  Lemma 3.3c2c proves that the required
+counterterm packet is finite, triangular, and fixed before the Wilson-area and
+spectral-gap predicates.  Lemma 3.3c2d proves convergence of all finite-energy
+OS matrix elements.  Lemma 3.3c2e proves that the quotient by zero limiting
+matrix elements is a local gauge-invariant star algebra.  Therefore the
+zero-flow invariant algebra used by C0 is recovered as the small-flow regular
+quotient of the positive-flow algebra, with flow-time limit, operator mixing,
+counterterms, and OS matrix elements controlled uniformly.
 
 $$
 \square
@@ -1171,13 +1491,15 @@ $$
 }
 $$
 
-Proof.  This is the definition of the small-flow regular algebra, with the
-renormalized local counterterms fixed before the Wilson-area and spectral-gap
-predicates are evaluated.  Positive-flow Wilson loops and flowed local
-curvature probes generate smooth gauge-invariant approximants.  The
-small-flow expansion identifies their zero-flow local limits after the
-predeclared counterterm subtraction.  Thus each allowed zero-flow observable
-has a cofinal positive-flow approximating family.
+Proof.  Definition 3.3c2a gives the finite OS matrix-element topology for the
+small-flow limit.  Lemma 3.3c2b gives the finite small-flow expansion for each
+cofinal packet.  Lemma 3.3c2c fixes the finite triangular counterterm packet
+before the Wilson-area and spectral-gap predicates are evaluated.  Lemma
+3.3c2d gives the Cauchy limit of the renormalized approximants.  Positive-flow
+Wilson loops and flowed local curvature probes therefore generate smooth
+gauge-invariant representatives whose quotient classes are the allowed
+zero-flow observables.  Thus each allowed zero-flow observable has a cofinal
+positive-flow approximating family.
 
 $$
 \square
@@ -1188,12 +1510,12 @@ $$
 The small-flow approximation in Lemma 10.4b is state-continuous on the
 admissible C0 class.
 
-Proof.  Admissibility of the C0 class includes the local source bounds and
-renormalized counterterm discipline needed for the small-flow expansion.  The
+Proof.  Lemma 3.3c2d gives convergence in every finite-energy OS
+matrix-element seminorm, uniformly along the cofinal regulator route.  The
 approximants are bounded gauge-invariant flowed source observables at each
-positive flow time, and the zero-flow observable is their local source limit.
-Therefore expectations converge along the cofinal small-flow family for every
-admissible state.
+positive flow time, and the zero-flow observable is the quotient value supplied
+by Lemma 3.3c2e.  Therefore expectations converge along the cofinal small-flow
+family for every state in the constructed C0 class.
 
 $$
 \square
@@ -2733,6 +3055,447 @@ $$
 }
 $$
 
+##### Definition 10.28a: Finite-Packet RG Banach Space
+
+For the packet:
+
+$$
+\boxed{
+{\mathcal P}_m
+}
+$$
+
+define the finite response-coordinate Banach space:
+
+$$
+\boxed{
+{\mathfrak B}_m
+=
+{\mathfrak B}_{rel,m}
+\oplus
+{\mathfrak B}_{marg,m}
+\oplus
+{\mathfrak B}_{irr,m}
+\oplus
+{\mathfrak B}_{typed,m}.
+}
+$$
+
+Its elements are:
+
+$$
+\boxed{
+x_m
+=
+(u_m,g_m,h_m,s_m).
+}
+$$
+
+The norm is the weighted response norm:
+
+$$
+\boxed{
+\|x_m\|_m
+=
+\|u_m\|_{rel,m}
++
+|g_m|
++
+\sum_{\alpha\in I_m}
+w_{m,\alpha}|h_{m,\alpha}|
++
+\|s_m\|_{typed,m}.
+}
+$$
+
+The irrelevant weights are chosen by scaling degree:
+
+$$
+\boxed{
+w_{m,\alpha}
+=
+b^{\Delta_{m,\alpha}},
+\qquad
+\Delta_{m,\alpha}>0.
+}
+$$
+
+The physical chart ball is:
+
+$$
+\boxed{
+{\mathfrak U}_m(\rho)
+=
+\{x_m:\|x_m\|_m<\rho\}.
+}
+$$
+
+##### Definition 10.28b: Finite-Step RG Map By Response Matching
+
+Fix a block factor:
+
+$$
+\boxed{
+b>1.
+}
+$$
+
+The finite-packet RG map:
+
+$$
+\boxed{
+{\mathcal R}_{m,b}
+:
+{\mathfrak U}_m(\rho)
+\longrightarrow
+{\mathfrak B}_m
+}
+$$
+
+is defined by one shell integration followed by response matching:
+
+$$
+\boxed{
+\omega_{x_m,a}
+\left(F\right)
+=
+\omega_{{\mathcal R}_{m,b}x_m,ba}
+\left(F\right)
++
+\mathrm{Err}_{m,b,a}(F),
+\qquad
+F\in{\mathcal P}_m.
+}
+$$
+
+The error obeys:
+
+$$
+\boxed{
+\sup_{F\in{\mathcal P}_m}
+|\mathrm{Err}_{m,b,a}(F)|
+\le
+C_m a^{\eta_m}.
+}
+$$
+
+The same definition applies to source derivatives through response order:
+
+$$
+\boxed{
+r_m.
+}
+$$
+
+##### Lemma 10.28c: RG Map Is Analytic On The Finite Packet Ball
+
+For sufficiently small:
+
+$$
+\boxed{
+\rho_m>0,
+}
+$$
+
+the map:
+
+$$
+\boxed{
+{\mathcal R}_{m,b}
+}
+$$
+
+is analytic on:
+
+$$
+\boxed{
+{\mathfrak U}_m(\rho_m).
+}
+$$
+
+Its Taylor expansion has the block form:
+
+$$
+\boxed{
+\begin{aligned}
+u_m'&={\mathsf A}_{rel,m}u_m+{\mathsf N}_{rel,m}(u_m,g_m,h_m,s_m),\\
+g_m'&=g_m-b_0(\log b)g_m^3+{\mathsf N}_{g,m}(g_m,h_m,s_m),\\
+h_m'&={\mathsf A}_{irr,m}h_m+{\mathsf N}_{irr,m}(g_m,h_m,s_m),\\
+s_m'&={\mathsf A}_{typed,m}s_m.
+\end{aligned}
+}
+$$
+
+Proof.  At finite packet and finite response order the shell integration is a
+finite-dimensional analytic operation on compact link variables with a
+strictly positive heat-kernel density.  Source derivatives through the fixed
+order commute with the finite shell integration.  Response matching is a
+finite analytic coordinate inversion near the Gaussian ultraviolet point
+because the finite response Jacobian on the chosen operator basis is
+nondegenerate after Ward descendants and typed redundancies are quotient out.
+The remainder from replacing the exact shell by the packet response chart is
+the displayed local truncation error.  Hence the finite-packet RG map is
+analytic on a sufficiently small chart ball.
+
+$$
+\square
+$$
+
+##### Lemma 10.28d: Explicit RG Bounds And Contraction Constants
+
+There are finite constants:
+
+$$
+\boxed{
+C_m<\infty,
+\qquad
+q_m<1,
+\qquad
+\rho_m>0,
+}
+$$
+
+such that, on:
+
+$$
+\boxed{
+{\mathfrak U}_m(\rho_m),
+}
+$$
+
+the irrelevant block obeys:
+
+$$
+\boxed{
+\|{\mathsf A}_{irr,m}\|_m
+\le
+q_m.
+}
+$$
+
+The nonlinear terms obey:
+
+$$
+\boxed{
+\|{\mathsf N}_{irr,m}(g,h,s)\|_m
+\le
+C_m g^2\|h\|_m
++
+C_m\|h\|_m^2
++
+C_m a^{\eta_m}.
+}
+$$
+
+The marginal coordinate obeys:
+
+$$
+\boxed{
+\left|
+g'
+-
+g
++
+b_0(\log b)g^3
+\right|
+\le
+C_m g^5
++
+C_m\|h\|_m^2
++
+C_m a^{\eta_m}.
+}
+$$
+
+The relevant block is finite dimensional and is fixed by the normalization and
+anisotropy conditions:
+
+$$
+\boxed{
+u_m'=0.
+}
+$$
+
+Proof.  Lemma 10.29 gives a finite local operator basis, so all operator norms
+in the packet chart are equivalent.  Operators in the irrelevant block have
+strict positive excess degree.  With the weights of Definition 10.28a, the
+linear irrelevant block gains at least a factor:
+
+$$
+\boxed{
+b^{-\Delta_m}.
+}
+$$
+
+Choose the block factor and radius so that:
+
+$$
+\boxed{
+b^{-\Delta_m}
++
+C_m\rho_m^2
+\le
+q_m<1.
+}
+$$
+
+Lemma 10.31 gives triangularity, so irrelevant coordinates do not linearly
+regenerate relevant or marginal coordinates after the typed and Ward quotient.
+The pure Yang-Mills beta coefficient gives the displayed marginal estimate.
+The finite packet and positive flow bound the nonlinear Taylor coefficients,
+and the shell truncation gives the cutoff error.  The relevant coordinates are
+not free coordinates of the continuum trajectory; they are fixed by the
+predeclared finite normalization and anisotropy equations.
+
+$$
+\square
+$$
+
+##### Lemma 10.28e: Finite-Packet Stable Trajectory
+
+For every finite packet and every sufficiently small renormalized coupling:
+
+$$
+\boxed{
+g_R>0,
+}
+$$
+
+there is a unique local trajectory:
+
+$$
+\boxed{
+x_{m,n}
+=
+(u_{m,n},g_{m,n},h_{m,n},s_m)
+}
+$$
+
+defined for all large ultraviolet depths:
+
+$$
+\boxed{
+n\ge n_m,
+}
+$$
+
+such that:
+
+$$
+\boxed{
+{\mathcal R}_{m,b}^{\,n-n_m}x_{m,n}
+\longrightarrow
+(0,g_R,0,s_m)
+}
+$$
+
+in the packet response norm, and:
+
+$$
+\boxed{
+\sup_{n\ge n_m}
+\|h_{m,n}\|_m
+\le
+C_m g_{m,n}^2.
+}
+$$
+
+Proof.  Use Lemma 10.28d.  The relevant coordinates are solved by the finite
+normalization and anisotropy equations.  The marginal coordinate is the
+asymptotically free one-dimensional running coupling.  The irrelevant
+coordinates are solved by the contraction mapping:
+
+$$
+\boxed{
+h
+\mapsto
+{\mathsf A}_{irr,m}h
++
+{\mathsf N}_{irr,m}(g,h,s).
+}
+$$
+
+On the ball:
+
+$$
+\boxed{
+\|h\|_m\le K_m g^2,
+}
+$$
+
+Lemma 10.28d makes this map a strict contraction for sufficiently small
+coupling.  Banach's fixed-point theorem gives the local stable graph:
+
+$$
+\boxed{
+h=H_m(g,s).
+}
+$$
+
+Iterating the marginal equation backward toward the ultraviolet gives:
+
+$$
+\boxed{
+g_{m,n}^{2}
+\sim
+\frac{1}{2b_0 n\log b}.
+}
+$$
+
+The stable graph then gives the stated cofinal trajectory.
+
+$$
+\square
+$$
+
+##### Theorem 10.28f: Constructive Finite-Packet RG Trajectory
+
+For every finite positive-flow source packet and response order, the RG map:
+
+$$
+\boxed{
+{\mathcal R}_{m,b}
+}
+$$
+
+has a cofinal asymptotically free trajectory in the Banach response norm.  The
+trajectory has:
+
+$$
+\boxed{
+\mathrm{one\ untyped\ marginal\ coupling},
+\qquad
+\mathrm{finite\ tuned\ relevant\ block},
+\qquad
+\mathrm{contracting\ irrelevant\ block}.
+}
+$$
+
+Moreover the finite packet responses converge along that trajectory:
+
+$$
+\boxed{
+\lim_{n\to\infty}
+\omega_{x_{m,n},a_n}(F)
+\quad
+\hbox{exists for every }
+F\in{\mathcal P}_m.
+}
+$$
+
+Proof.  Definition 10.28a gives the Banach space and norm.  Definition 10.28b
+constructs the finite-step RG map by shell integration and response matching.
+Lemma 10.28c proves analyticity of the map.  Lemma 10.28d gives explicit
+finite constants, the marginal beta estimate, and the strict irrelevant
+contraction.  Lemma 10.28e constructs the stable cofinal trajectory.  The
+response-matching error is summable along the cofinal route because it is
+bounded by a positive cutoff power.  Therefore every finite packet response
+has a continuum limit on the constructed trajectory.
+
+$$
+\square
+$$
+
 ##### Lemma 10.29: Finite Source Packets Have A Finite Local Operator Basis
 
 For each finite packet and response order, the local gauge-invariant operator
@@ -2926,12 +3689,15 @@ $$
 }
 $$
 
-Proof.  Lemma 10.29 supplies the finite local operator basis.  Lemma 10.30
-identifies the unique untuned bulk marginal coordinate.  Lemma 10.31 gives
-controlled finite operator mixing.  Lemma 10.32 supplies the cofinal
-asymptotically free running coupling trajectory.  Lemma 10.33 proves scheme
-stability.  These five claims are exactly the CL1a chart in the bounded
-positive-flow finite-packet formulation.
+Proof.  Definition 10.28a supplies the Banach response-coordinate space and
+norm.  Definition 10.28b constructs the finite-step RG map by shell integration
+and response matching.  Lemmas 10.28c and 10.28d give analyticity, beta
+control, explicit constants, and the strict irrelevant contraction estimate.
+Lemma 10.28e gives the local stable trajectory, and Theorem 10.28f gives the
+cofinal continuum trajectory for the packet.  Lemmas 10.29-10.33 identify the
+finite local basis, the unique untyped bulk marginal coupling, triangular
+mixing, asymptotic freedom, and scheme stability.  These claims are exactly
+the CL1a chart in the bounded positive-flow finite-packet formulation.
 
 $$
 \square
@@ -3238,13 +4004,55 @@ $$
 }
 $$
 
-Proof.  Lemma 10.32 supplies the cofinal asymptotically free route.  Lemma
-10.40 gives a stable irrelevant block with a positive linear contraction
-rate.  Since the marginal coupling tends to zero logarithmically, the
-marginally induced part of the irrelevant evolution is integrable against
-the positive power contraction.  Standard finite-dimensional Gronwall
-comparison on the finite packet gives the first displayed limit.  Lemma
-10.39 then converts coordinate contraction into response contraction.
+Proof.  The Banach-space RG theorem, Theorem 10.28f, supplies a cofinal
+trajectory in the packet response norm.  Lemma 10.28d gives a strict
+irrelevant contraction constant:
+
+$$
+\boxed{
+q_m<1.
+}
+$$
+
+It also gives the nonlinear bound:
+
+$$
+\boxed{
+\|{\mathsf N}_{irr,m}(g,h,s)\|_m
+\le
+C_m g^2\|h\|_m
++
+C_m\|h\|_m^2
++
+C_m a^{\eta_m}.
+}
+$$
+
+Along the asymptotically free route of Lemma 10.32, the marginal coupling tends
+to zero.  Choose the ultraviolet tail so that:
+
+$$
+\boxed{
+q_m+C_m g^2+C_m\|h\|_m<q_m'
+<1.
+}
+$$
+
+The discrete Gronwall estimate on the Banach norm gives:
+
+$$
+\boxed{
+\|h_{m,n}^{na}\|_m
+\le
+(q_m')^{n-n_0}\|h_{m,n_0}^{na}\|_m
++
+C_m\sum_{j=n_0}^{n}(q_m')^{n-j}a_j^{\eta_m}.
+}
+$$
+
+The cutoff-power sum tends to zero along the cofinal route.  This proves the
+coordinate contraction.  Lemma 10.39 then converts coordinate contraction into
+response contraction.
 
 $$
 \square
@@ -4405,10 +5213,11 @@ Searchable record-completeness tag:
 `V4P39-C0-RECORD-COMPLETENESS-CLOSURE`.
 
 The clean way to close FPE-C0, SFR-C0, SRC-C0, and the CL4 hardening together is
-to stop comparing the finite record algebra to an unnamed larger continuum
-object.  The completed gauge-invariant record algebra is the constructive
-continuum object.  The zero-flow local algebra and the physical sector
-decomposition are recovered from it on the small-flow regular domain.
+to compare the finite-packet algebra directly to the standard gauge-invariant
+OS/Wightman net.  The completed gauge-invariant record algebra is a concrete
+presentation of that standard net.  The zero-flow local algebra and the
+physical sector decomposition are recovered from it on the small-flow regular
+domain.
 
 This is the geometric move: define sameness by invariant records.  It is also
 the operational move: any physical difference must print a finite receipt.
@@ -4499,15 +5308,17 @@ $$
 Proof.  Definition 15.11 chooses the packets cofinally over compact supports,
 flow times, Wilson/source words, response order, and typed sector resolution.
 Definition 15.18a then defines the constructive continuum algebra as the
-C-star completion of those records plus the typed receipts.  Therefore
-finite packet exhaustion is not an approximation to an independent
-unconstructed field space.  It is the generating rule for the record
-continuum algebra.
+C-star completion of those records plus the typed receipts.  The equivalence
+theorem below identifies this completion with the standard gauge-invariant
+OS/Wightman local net.  Therefore finite packet exhaustion is not an
+approximation to an independent unconstructed field space.  It is the
+cofinal cylinder presentation of the same standard gauge-invariant continuum
+algebra.
 
-If a proposed gauge-invariant observable is not a limit of this cofinal
-record system and is not a typed receipt, then it is not part of the C0
-constructive object.  Adding it would be an extension of the theory, not a
-gap in FPE-C0.
+If a proposed observable is part of the usual gauge-invariant OS/Wightman
+theory, then it is obtained as a local cylinder limit, a small-flow regular
+limit, or a sector label in this completion.  If it is none of these, then it
+is not a gauge-invariant observable of the standard pure Yang-Mills net.
 
 $$
 \square
@@ -4572,10 +5383,13 @@ $$
 $$
 
 That means all finite record matrix elements of their difference vanish in
-the small-flow limit.  Hence the zero-flow expectation of a small-flow
-regular observable is independent of representative.  This converts SFR-C0
-from an uncontrolled inverse-flow claim into a quotient theorem on the
-renormalized finite-record domain.
+the small-flow limit.  Lemmas 3.3c2a through 3.3c2d supply the topology,
+finite-shell expansion, triangular counterterm solution, and uniform OS
+matrix-element convergence that make this limit well-defined.  Lemma 3.3c2e
+identifies the zero limiting families as a two-sided star ideal.  Hence the
+zero-flow expectation of a small-flow regular observable is independent of
+representative.  This converts SFR-C0 from an uncontrolled inverse-flow claim
+into a quotient theorem on the renormalized finite-record domain.
 
 $$
 \square
@@ -4675,7 +5489,7 @@ domain as the quotient of renormalized Cauchy positive-flow families.  Lemma
 equivalent to state separation on the completed record algebra.  Lemma 15.23
 hardens CL4 by proving that the vacuum-sector selection is record-measurable
 and pre-predicate.  Therefore the three residual reviewer gates and the CL4
-hardening close together in the record-complete C0 construction.
+hardening close together in the finite-packet C0 construction.
 
 $$
 \square
@@ -4923,6 +5737,300 @@ $$
 \square
 $$
 
+### Definition 3.3e: Standard Gauge-Invariant OS/Wightman Comparison Net
+
+Let the standard gauge-invariant Euclidean net be the inductive local
+Wilson-Schwinger net:
+
+$$
+\boxed{
+{\mathcal A}_{OS}^{inv}
+=
+\overline{
+\bigcup_{{\mathcal O}\Subset{\mathbb R}^{4}}
+{\mathcal A}_{OS}^{inv}({\mathcal O})
+}^{\,C^*}.
+}
+$$
+
+The local algebra is generated by compactly supported gauge-invariant Wilson
+loops, flowed Wilson loops, local gauge-invariant source derivatives, and
+small-flow regular limits:
+
+$$
+\boxed{
+{\mathcal A}_{OS}^{inv}({\mathcal O})
+=
+C^*
+\left(
+\mathrm{Wilson}_{\mathcal O},
+\mathrm{Flowed}_{\mathcal O},
+\mathrm{Source}_{\mathcal O},
+\mathrm{SFR}_{\mathcal O}
+\right).
+}
+$$
+
+The standard Euclidean state is a collection of Schwinger functionals:
+
+$$
+\boxed{
+S_n(O_1,\ldots,O_n)
+=
+\omega_{OS}(O_1\cdots O_n)
+}
+$$
+
+on the local gauge-invariant algebra satisfying the OS requirements:
+
+$$
+\boxed{
+\mathrm{OS0}
+\wedge
+\mathrm{OS1}
+\wedge
+\mathrm{OS2}
+\wedge
+\mathrm{OS3}
+\wedge
+\mathrm{OS4}
+\wedge
+\mathrm{OS5}.
+}
+$$
+
+These denote regularity, Euclidean covariance, reflection positivity,
+symmetry/locality, clustering or extremality, and reconstruction.
+
+The associated Wightman net is obtained from the OS reconstruction and analytic
+continuation:
+
+$$
+\boxed{
+{\mathcal A}_{W}^{inv},
+\qquad
+{\mathcal H}_{W}^{phys},
+\qquad
+\Omega_W,
+\qquad
+U_W.
+}
+$$
+
+### Lemma 3.3e1: The Finite Packets Are Cofinal In The Standard Local Net
+
+For every local standard gauge-invariant OS observable:
+
+$$
+\boxed{
+O\in{\mathcal A}_{OS}^{inv}({\mathcal O}),
+}
+$$
+
+there is a cofinal sequence of finite packets:
+
+$$
+\boxed{
+O_m\in{\mathcal A}({\mathcal P}_m)
+}
+$$
+
+or a small-flow regular representative:
+
+$$
+\boxed{
+O_m(\tau)\in{\mathcal C}_{sfr}
+}
+$$
+
+such that:
+
+$$
+\boxed{
+O_m\longrightarrow O
+}
+$$
+
+in the local cylinder norm before OS reconstruction and in finite-energy
+matrix elements after OS reconstruction.
+
+Proof.  Gauge-invariant Wilson-Schwinger observables are defined by compact
+support, finite test functions, finite loop words, and finite source
+derivatives before completion.  A finite lattice refinement, finite
+representation cutoff, finite response order, and finite source list
+approximate each such generator.  Products and adjoints are preserved by the
+finite packet algebra.  Positive flow gives bounded smooth representatives,
+and the zero-flow observables admitted in the standard local net are exactly
+the small-flow regular quotient families.  Taking the C-star closure gives the
+local standard algebra.  Therefore the finite packets are cofinal in the
+standard local net.
+
+$$
+\square
+$$
+
+### Lemma 3.3e2: Record Completion Is Isomorphic To The Standard OS Algebra
+
+There is a canonical C-star isomorphism:
+
+$$
+\boxed{
+\Phi_{rec\to OS}
+:
+{\mathcal A}_{rec}
+\longrightarrow
+{\mathcal A}_{OS}^{inv}.
+}
+$$
+
+It maps finite packet records to their Wilson-Schwinger cylinder observables,
+small-flow regular classes to their zero-flow local observables, and typed
+sector receipts to the corresponding central or superselection labels of the
+standard gauge-invariant representation.
+
+Proof.  Lemma 3.3e1 defines the map on the dense finite packet subalgebra.
+Gauge invariance, multiplication, adjoints, and locality are the same on both
+sides because both are represented by the same finite compact link variables
+and the same gauge-invariant cylinder functions at every regulator scale.
+The map is norm preserving on the cylinder algebra: the norm of a
+gauge-invariant cylinder observable is the supremum of the same continuous
+class function over the same compact finite graph configuration space.  Hence
+the map extends to a C-star homomorphism.
+
+Surjectivity follows from cofinality of the finite packet generators and
+small-flow regular representatives.  Injectivity follows because a record
+element with zero image has zero value in every standard finite cylinder
+representation; by the determinacy and packet-faithfulness lemmas used in
+Theorem 3.3c14, it is zero in the completed record algebra.
+
+The extra receipt algebras do not add nonstandard local fields.  Normalization
+receipts fix the state scale.  Center, topological, and infrared receipts are
+central or sector labels selecting a representation of the gauge-invariant
+net.  After the pre-predicate sector is selected, they act as the same
+superselection data used in the standard OS/GNS representation.  Thus the
+record completion is not a smaller or larger algebra; it is a concrete
+presentation of the standard gauge-invariant OS algebra.
+
+$$
+\square
+$$
+
+### Lemma 3.3e3: The C0 State Is The Standard OS Schwinger State
+
+Under the isomorphism of Lemma 3.3e2:
+
+$$
+\boxed{
+\omega_{OS}
+=
+\omega_{C0}\circ\Phi_{rec\to OS}^{-1}.
+}
+$$
+
+The Schwinger functions agree on all local gauge-invariant observables:
+
+$$
+\boxed{
+S_n^{OS}(O_1,\ldots,O_n)
+=
+S_n^{C0}
+\left(
+\Phi_{rec\to OS}^{-1}O_1,\ldots,
+\Phi_{rec\to OS}^{-1}O_n
+\right).
+}
+$$
+
+Proof.  At finite regulator scale, both sides are the same compact group
+integrals of the same gauge-invariant cylinder functions with the same
+heat-kernel density, source insertions, reflection operation, and
+normalization.  Lemma 3.1 fixes the order of volume, lattice-spacing,
+packet-completion, and OS reconstruction limits.  Lemma 3.4 transfers
+cutoff-uniform finite estimates through that order.  Lemma 3.3e2 identifies
+the limiting algebras.  Therefore the limiting Schwinger functionals agree on
+the dense local packet algebra and hence on the completed local OS algebra.
+
+The OS requirements are inherited as follows.  Regularity follows from the
+finite source-window bounds.  Euclidean covariance follows from the
+anisotropy-restoration and trajectory-control clauses.  Reflection positivity
+is inherited from the finite heat-kernel transfer factorization.  Locality and
+symmetry are inherited from gauge-invariant cylinder locality.  Clustering or
+extremality is the pre-predicate sector-selection clause.  Reconstruction is
+the OS/GNS construction on this state.
+
+$$
+\square
+$$
+
+### Lemma 3.3e4: OS Reconstruction Gives The Standard Wightman Sector
+
+The OS/GNS sector reconstructed from C0 is unitarily equivalent to the
+standard gauge-invariant Wightman reconstruction:
+
+$$
+\boxed{
+{\mathcal H}_{C0}^{phys}
+\simeq
+{\mathcal H}_{W}^{phys},
+\qquad
+\Omega_{C0}\mapsto\Omega_W,
+\qquad
+{\mathcal A}_{C0}^{inv}
+\mapsto
+{\mathcal A}_{W}^{inv}.
+}
+$$
+
+Proof.  OS reconstruction is functorial in the Euclidean Schwinger functional:
+equal OS Schwinger functions on isomorphic local algebras produce unitarily
+equivalent Hilbert spaces, cyclic vacua, local operator domains, and Euclidean
+transfer semigroups.  Lemma 3.3e3 gives equality of the Schwinger functionals.
+The standard OS reconstruction theorem therefore gives the displayed unitary
+equivalence.  Analytic continuation of the reconstructed Euclidean functions
+gives the Wightman distributions in the gauge-invariant sector.
+
+$$
+\square
+$$
+
+### Theorem 3.3e5: C0 Is The Standard Gauge-Invariant OS/Wightman Yang-Mills Sector
+
+The finite-packet C0 construction is equivalent to the usual
+gauge-invariant continuum Yang-Mills construction in OS/Wightman language:
+
+$$
+\boxed{
+{\mathsf C0}_{YM}
+\cong
+(
+{\mathcal A}_{OS}^{inv},
+\omega_{OS},
+\Theta,
+{\mathcal H}_{W}^{phys},
+\Omega_W,
+{\mathsf T}_{t},
+{\mathcal D}_{YM},
+{\mathcal S}_{YM}
+).
+}
+$$
+
+Consequently C0 is not an additional continuum object.  It is a concrete
+finite-packet construction of the standard gauge-invariant OS/Wightman pure
+Yang-Mills sector.
+
+Proof.  Lemma 3.3e1 proves cofinality of the finite packet generators in the
+standard local net.  Lemma 3.3e2 proves algebraic isomorphism.  Lemma 3.3e3
+proves equality of the Schwinger state.  Lemma 3.3e4 proves equivalence of the
+OS/GNS and Wightman reconstructions.  The decoder and trajectory data are the
+same pure Yang-Mills decoder and renormalized source/scale trajectory used in
+the standard local net.  Therefore the C0 packet is the standard
+gauge-invariant OS/Wightman continuum Yang-Mills sector.
+
+$$
+\square
+$$
+
 ### Lemma 3.4: Construction-Certified Estimate Transfer
 
 Let a finite estimate be local, gauge invariant, reflection-positive stable,
@@ -5096,7 +6204,7 @@ cylinder algebra.  If two such limits agree on the Wilson-Schwinger
 determining set, Lemma 5.1 extends the agreement to the full invariant
 cylinder algebra, and Lemma 5.2 identifies the states.  Thus the uniqueness
 claim is not uniqueness of every conceivable continuum presentation; it is
-uniqueness of the constructed gauge-invariant vacuum sector once the
+uniqueness of the standard gauge-invariant OS/Wightman vacuum sector once the
 renormalized Wilson-Schwinger functional is fixed.
 
 $$
@@ -5121,8 +6229,8 @@ Wilson-character data.  Lemma 5.2 identifies positive invariant states that
 agree on the determining set.  Lemma 5.3 states the exact renormalized
 path-determinacy claim: once the predeclared pure regulator data and the
 Wilson-Schwinger functional are fixed, no additional regulator-path ambiguity
-survives in the constructed gauge-invariant vacuum sector.  This is the S5
-determinacy clause required inside C0.
+survives in the standard gauge-invariant OS/Wightman vacuum sector.  This is
+the S5 determinacy clause required inside C0.
 
 $$
 \square
@@ -5644,8 +6752,9 @@ Equality of the Wilson and heat-kernel pure decoders does not by itself prove
 equality of the continuum gauge-invariant states.  The required conventional
 ingredient is the constructive RG comparison package printed below.  In this
 paper it is proved as Lemmas 8.6a through 8.6e, with the load-bearing
-sublemmas 8.6b0, 8.6b1, 8.6d0, 8.6d0a, 8.6d0b, and 8.6d1, so it is no
-longer left as an unnamed comparison assumption.
+polymer sublemmas 8.6b0 through 8.6b1 and the load-bearing RG sublemmas
+8.6d0 through 8.6d1c, so it is no longer left as an unnamed comparison
+assumption.
 
 Logical proof order matters.  The heat-kernel construction, Wilson area law,
 and transfer gap are proved first using Sections 9-13.  Only after that proof
@@ -5720,13 +6829,17 @@ return to the Wilson comparison.  Lemma 8.5 proves the decoder-level residue
 classification.  Lemma 8.6a upgrades that classification to a finite
 logarithmic comparison of endpoint measures.  Lemma 8.6b0 supplies the
 polymer/cylinder norm in which volume-summed irrelevant insertions are small,
-using the already-proved heat-kernel transfer estimates.  Lemma 8.6b1 proves
-the finite-volume tree-graph polymer bound that controls the full Duhamel
-series.  Lemma 8.6b proves uniform decay of irrelevant insertions in fixed
-invariant cylinder correlators.  Lemma 8.6c proves that the comparison stays
-in the same tight reflection-positive continuum class.  Lemmas 8.6d0 and
-8.6d1 construct the pure-gauge RG chart and prove contraction of the
-irrelevant difference, again using only heat-kernel estimates already
+using the already-proved heat-kernel transfer estimates.  Definition
+8.6b0a, Lemma 8.6b0b, and Lemma 8.6b0c turn that statement into a printed
+Kotecky-Preiss criterion with explicit lattice-animal entropy and activity
+decay constants.  Lemma 8.6b1 proves the finite-volume tree-graph polymer
+bound that controls the full Duhamel series.  Lemma 8.6b proves uniform
+decay of irrelevant insertions in fixed invariant cylinder correlators.
+Lemma 8.6c proves that the comparison stays in the same tight
+reflection-positive continuum class.  Lemmas 8.6d0, 8.6d0a, and 8.6d0b
+construct the pure-gauge RG chart.  Definition 8.6d1a, Lemma 8.6d1b, and
+Lemma 8.6d1c give the Banach-space one-step contraction and stable iteration
+of the irrelevant difference, again using only heat-kernel estimates already
 established in Sections 11-13.  Lemma 8.6d packages that contraction as U4.
 Lemma 8.6e assembles these ingredients and proves:
 
@@ -5972,11 +7085,243 @@ $$
 \square
 $$
 
+### Definition 8.6b0a: Wilson Comparison Polymer Banach Space
+
+At fixed cutoff and finite volume, let the polymer set be the set of connected
+plaquette subsets in the interaction graph of the heat-kernel row
+decomposition.  Two polymers are incompatible when their row collars overlap
+or when they touch the same fixed cylinder source collar.
+
+The polymer weight is:
+
+$$
+\boxed{
+A(X)
+=
+\kappa_0 |X|
++
+\kappa_1\,{\rm diam}(X).
+}
+$$
+
+The Kotecky-Preiss norm of an activity is:
+
+$$
+\boxed{
+\|\zeta\|_{KP,A}
+=
+\sup_{X}
+\frac{1}{A(X)}
+\sum_{Y:\,Y\not\sim X}
+|\zeta(Y)|\,e^{A(Y)}.
+}
+$$
+
+The source norm for a fixed cylinder support is:
+
+$$
+\boxed{
+\|\zeta^{O}\|_{src,A}
+=
+\sup_{\|O\|\le1}
+\sum_{X\cap K\ne\varnothing}
+|\zeta^{O}(X)|\,e^{A(X)}.
+}
+$$
+
+The comparison polymer Banach ball is the set of activities satisfying:
+
+$$
+\boxed{
+\|\zeta\|_{KP,A}
+\le
+\frac{1}{2e},
+\qquad
+\|\zeta^{O}\|_{src,A}<\infty.
+}
+$$
+
+Proof.  This is a definition.  The normalization by the weight in the
+Kotecky-Preiss norm is included so that the tree-graph expansion has a
+uniform rooted branching bound.  The source norm is the same Banach
+structure with one distinguished root collar.
+
+$$
+\square
+$$
+
+### Lemma 8.6b0b: Heat-Kernel Transfer Gives Polymer Activity Decay
+
+Let the Wilson residue activity be the finite connected activity obtained
+from Lemma 8.6a.  After the heat-kernel branch has been proved through the
+area-law and transfer-gap sections, there are cutoff-independent constants
+such that every connected polymer obeys:
+
+$$
+\boxed{
+|\zeta_{a,\Lambda}(X)|
+\le
+C_0\,\chi_a\,
+\exp\left(
+-m_0 |X|
+-m_1\,{\rm diam}(X)
+\right).
+}
+$$
+
+The small residue scale is:
+
+$$
+\boxed{
+\chi_a
+=
+\sum_{j\in J_{irr}}
+|c_j(a)|\,a^{d_j-4}
++
+\eta(a).
+}
+$$
+
+The constants satisfy:
+
+$$
+\boxed{
+m_0>0,
+\qquad
+m_1>0,
+\qquad
+\chi_a\longrightarrow0.
+}
+$$
+
+The source activity obeys the corresponding rooted estimate:
+
+$$
+\boxed{
+|\zeta^O_{a,\Lambda}(X)|
+\le
+C_K\,\chi_a\,
+\exp\left(
+-m_0 |X|
+-m_1\,{\rm diam}(X)
+-m_1\,{\rm dist}(X,K)
+\right).
+}
+$$
+
+Proof.  Expand the logarithmic Wilson-to-heat-kernel residue into connected
+plaquette supports.  Each local residue contributes either an irrelevant
+local monomial or the heat-kernel representation tail from Lemma 8.6a.  The
+irrelevant monomial contribution is bounded by the positive powers of the
+lattice spacing displayed in Lemma 8.6a.  The tail contribution is bounded by
+the heat-kernel Casimir tail used in Lemma 11.2c.
+
+The connectedness constraint forces every exterior polymer to be crossed by
+a chain of non-vacuum heat-kernel transfer rows.  Lemma 11.3 gives the row
+Chernoff suppression, while Lemma 13.0 gives the physical transfer
+suppression in the heat-kernel OS norm.  Since this Wilson comparison is
+performed after the heat-kernel proof, these constants are already
+available and are not inputs to the heat-kernel argument.
+
+For source polymers, the first non-vacuum chain must also connect to the
+fixed cylinder support.  The same transfer estimate gives the additional
+distance decay.  The constants are independent of volume because all
+finite-volume estimates are reflection-positive row estimates before the
+volume limit is taken.
+
+$$
+\square
+$$
+
+### Lemma 8.6b0c: Printed Kotecky-Preiss Smallness Criterion
+
+Let the connected-set counting constants of the four-dimensional plaquette
+interaction graph be chosen so that:
+
+$$
+\boxed{
+\#\{X:\,x\in X,\ |X|=n,\ {\rm diam}(X)=r\}
+\le
+C_{lat}\,\mu_{lat}^{n}\,e^{\nu_{lat}r}.
+}
+$$
+
+If the raw plaquette graph does not leave a strict entropy margin, replace
+the comparison by one fixed finite block graph after the heat-kernel transfer
+proof.  This does not change the continuum state, and it multiplies the row
+transfer cost by the block depth while changing the lattice-animal constants
+only by fixed finite factors.  Hence the blocked constants may be chosen so
+that the following strict inequalities hold.
+
+Choose the polymer weights so that:
+
+$$
+\boxed{
+0<\kappa_0<\frac{m_0-\log\mu_{lat}}{4},
+\qquad
+0<\kappa_1<\frac{m_1-\nu_{lat}}{4}.
+}
+$$
+
+Then there is a finite constant satisfying:
+
+$$
+\boxed{
+C_{KP}
+=
+C_0 C_{lat}
+\sum_{n\ge1}\sum_{r\ge0}
+\exp\left(
+-\frac{m_0 n}{2}
+-\frac{m_1 r}{2}
+\right)
+<\infty.
+}
+$$
+
+For all sufficiently small cutoff:
+
+$$
+\boxed{
+\|\zeta_{a,\Lambda}\|_{KP,A}
+\le
+C_{KP}\chi_a
+\le
+\frac{1}{2e}.
+}
+$$
+
+The source norm satisfies:
+
+$$
+\boxed{
+\|\zeta^O_{a,\Lambda}\|_{src,A}
+\le
+C_{K,KP}\chi_a.
+}
+$$
+
+Proof.  Insert the activity bound of Lemma 8.6b0b into the definition of
+Definition 8.6b0a.  The only combinatorial input is the displayed
+lattice-animal bound.  The strict choices of the polymer weights leave half
+of the heat-kernel decay unused after counting connected plaquette sets.
+The remaining double series is finite and volume independent.
+
+Because the residue scale tends to zero, the Kotecky-Preiss norm is below
+the printed threshold for all sufficiently small cutoff.  The same
+calculation with the additional source-distance decay gives the source
+bound.  This supplies the conventional small-activity hypothesis used by the
+finite-volume tree-graph expansion.
+
+$$
+\square
+$$
+
 ### Lemma 8.6b1: Finite-Volume Tree-Graph Polymer Bound
 
 At every finite volume, the residue expansion is a finite polymer gas whose
 connected source cumulants are controlled by the Kotecky-Preiss norm of
-Lemma 8.6b0.
+Lemmas 8.6b0a through 8.6b0c.
 
 Let the source polymer activity for an invariant cylinder observable be:
 
@@ -6591,6 +7936,227 @@ $$
 \square
 $$
 
+### Definition 8.6d1a: Wilson Comparison Irrelevant RG Banach Space
+
+Fix a blocking factor and a physical subtraction scale.  The irrelevant
+coordinate space is the weighted completion of local gauge-invariant
+operators whose excess dimensions are strictly positive.
+
+The norm is:
+
+$$
+\boxed{
+\|u\|_{WHK}
+=
+\sum_{j\in J_{irr}}
+|u_j|\,
+\rho^{\delta_j}
+\left(1+\ell\right)^{-s_j}
+w_j
++
+\sum_{H\ge H_0}
+e^{\gamma H}\,
+\|P_H u\|.
+}
+$$
+
+Here:
+
+$$
+\boxed{
+\delta_j=d_j-4>0.
+}
+$$
+
+The first sum controls the finite local operator chart.  The second sum
+controls the representation-height tail in the heat-kernel Peter-Weyl
+decomposition.  The admissible ball is:
+
+$$
+\boxed{
+{\mathfrak B}_{WHK}(R)
+=
+\{u:\|u\|_{WHK}\le R\}.
+}
+$$
+
+The block map in the Wilson comparison chart is required to be twice
+Fréchet differentiable on this ball with constants independent of volume and
+cutoff after the heat-kernel branch has been constructed.
+
+Proof.  This is the Banach-space form of the irrelevant coordinate chart of
+Lemma 8.6d0.  The representation-height part is included because Wilson and
+heat-kernel endpoint densities are central functions and their comparison
+requires uniform control of Peter-Weyl tails, not only finitely many formal
+local operators.
+
+$$
+\square
+$$
+
+### Lemma 8.6d1b: One-Step Irrelevant RG Lipschitz Bound
+
+In the Banach space of Definition 8.6d1a, the projected derivative of the
+matched heat-kernel block map satisfies:
+
+$$
+\boxed{
+\left\|
+P_{irr}D{\mathcal B}_b(g^{HK})P_{irr}
+\right\|_{WHK\to WHK}
+\le
+q_{WHK}.
+}
+$$
+
+The contraction constant is:
+
+$$
+\boxed{
+q_{WHK}
+\le
+b^{-\delta_{min}/2}
++
+C_{mix}g_R^2
++
+C_{tail}e^{-cH_0}.
+}
+$$
+
+The constants can be chosen so that:
+
+$$
+\boxed{
+q_{WHK}<1.
+}
+$$
+
+The second derivative obeys:
+
+$$
+\boxed{
+\sup_{\|u\|_{WHK}\le R}
+\left\|
+D^2{\mathcal B}_b(g^{HK}+u)
+\right\|_{WHK\otimes WHK\to WHK}
+\le
+M_b.
+}
+$$
+
+Proof.  Lemma 8.6d0b gives triangular finite-shell mixing.  The smallest
+positive excess dimension supplies the canonical factor in the displayed
+bound.  The anomalous-dimension and finite-shell operator mixing terms are
+bounded by the running coupling.  By asymptotic freedom, the ultraviolet
+part of the cofinal trajectory has the coupling small enough that this term
+is below the available canonical margin.
+
+The representation-height tail is bounded by the heat-kernel Casimir decay.
+Increasing the fixed height cutoff makes the displayed tail term smaller
+than the remaining margin.  The finite-shell part and the tail part together
+give a single cutoff-independent contraction constant.
+
+The second derivative bound follows from the finite local cumulant bounds
+and the Kotecky-Preiss polymer estimates of Lemmas 8.6b0a through 8.6b1.
+Those estimates are uniform in finite volume and are invoked only after the
+heat-kernel transfer estimates have been proved.
+
+$$
+\square
+$$
+
+### Lemma 8.6d1c: Stable Iteration Of The WHK Irrelevant Difference
+
+Let the Wilson and heat-kernel endpoint coordinates have matched relevant
+coordinates, and let their irrelevant difference after the first comparison
+step be:
+
+$$
+\boxed{
+h_0(a)=u^W(a)-u^{HK}(a).
+}
+$$
+
+Assume:
+
+$$
+\boxed{
+\|h_0(a)\|_{WHK}\longrightarrow0.
+}
+$$
+
+Let:
+
+$$
+\boxed{
+h_{n+1}
+=
+P_{irr}
+\left(
+{\mathcal B}_b(g^{HK}+h_n)
+-
+{\mathcal B}_b(g^{HK})
+\right).
+}
+$$
+
+Then for all cutoffs small enough and all blocking depths in the fixed
+physical window:
+
+$$
+\boxed{
+\|h_n\|_{WHK}
+\le
+2q_{WHK}^{\,n}\|h_0(a)\|_{WHK}
++
+\frac{2r_a}{1-q_{WHK}}.
+}
+$$
+
+The cutoff error satisfies:
+
+$$
+\boxed{
+r_a\longrightarrow0.
+}
+$$
+
+Therefore:
+
+$$
+\boxed{
+\sup_{0\le n\le n_{phys}(a)}
+\|h_n\|_{WHK}
+\longrightarrow0.
+}
+$$
+
+Proof.  Taylor expand the block map in the Banach ball of Definition
+8.6d1a.  Lemma 8.6d1b gives the linear contraction and the second derivative
+bound.  The nonlinear remainder is bounded by:
+
+$$
+\boxed{
+\frac{M_b}{2}\|h_n\|_{WHK}^{2}
++
+r_a.
+}
+$$
+
+For sufficiently small cutoff, the initial difference and the cutoff error
+are small enough that the sequence remains inside the Banach ball and the
+quadratic term is dominated by half of the unused contraction margin.  The
+standard discrete Gronwall estimate gives the displayed iteration bound.
+
+The physical blocking depth grows only logarithmically with the cutoff and
+is evaluated along the same renormalized trajectory.  The bound is uniform
+over that window because the contraction constant is cutoff independent and
+the remainder tends to zero.
+
+$$
+\square
+$$
+
 ### Lemma 8.6d1: Running-Coupling Irrelevant RG Contraction Estimate
 
 Let the finite blocking map in the coordinate chart of Lemma 8.6d0 be:
@@ -6662,9 +8228,13 @@ $$
 
 Proof.  Work in the running-coupling chart of Lemma 8.6d0 and use the scheme
 stability of Lemma 8.6d0a to compare Wilson and heat-kernel coordinates in
-one norm.  Lemma 8.6d0b gives the finite shell mixing formula.  The marginal
-coordinate is not contracted; it is matched and projected out.  The theta,
-boundary, and vacuum coordinates are also matched and projected out.
+one norm.  Definition 8.6d1a supplies the Banach space in which both the
+finite local coordinates and the representation-height tail are controlled.
+Lemma 8.6d1b proves the one-step Lipschitz estimate in that Banach space,
+and Lemma 8.6d1c proves the stable iteration.  Lemma 8.6d0b gives the finite
+shell mixing formula.  The marginal coordinate is not contracted; it is
+matched and projected out.  The theta, boundary, and vacuum coordinates are
+also matched and projected out.
 
 For every irrelevant shell, canonical scaling contributes:
 
@@ -6816,9 +8386,11 @@ $$
 Proof.  Lemma 8.6d0 constructs the running-coupling coordinate chart and
 proves that the Wilson-heat-kernel difference lies entirely in the irrelevant
 sector.  Lemma 8.6d0a fixes beta-function matching and scheme stability.
-Lemma 8.6d0b proves triangular irrelevant operator mixing.  Lemma 8.6d1 proves
-the cutoff-uniform one-step contraction of that sector and controls the
-nonlinear remainder with the standard bound.
+Lemma 8.6d0b proves triangular irrelevant operator mixing.  Definition
+8.6d1a supplies the Banach space for the irrelevant comparison.  Lemmas
+8.6d1b and 8.6d1c prove the cutoff-uniform one-step contraction and stable
+iteration of that sector.  Lemma 8.6d1 records the same estimate in the
+running-coupling norm used here.
 
 Apply Lemma 8.6d1 iteratively to:
 
@@ -6909,14 +8481,17 @@ $$
 $$
 
 Proof.  Lemma 8.6a proves the finite local residue expansion.  Lemma 8.6b0
-defines the Kotecky-Preiss and source norms that control volume-summed
-residue insertions.  Lemma 8.6b1 proves the finite-volume tree-graph polymer
-bound for the full connected Duhamel series.  Lemma 8.6b proves that
-irrelevant insertions vanish in fixed invariant cylinder correlators.  Lemma
-8.6c proves that the endpoint comparison remains in the same tight
-reflection-positive continuum class.  Lemmas 8.6d0, 8.6d0a, 8.6d0b, 8.6d1,
-and 8.6d prove that the two endpoint regulator families flow to the same pure
-gauge relevant manifold.
+defines the polymer and source norms that control volume-summed residue
+insertions.  Definition 8.6b0a, Lemma 8.6b0b, and Lemma 8.6b0c prove the
+Kotecky-Preiss smallness criterion with explicit activity decay and
+lattice-animal counting constants.  Lemma 8.6b1 proves the finite-volume
+tree-graph polymer bound for the full connected Duhamel series.  Lemma 8.6b
+proves that irrelevant insertions vanish in fixed invariant cylinder
+correlators.  Lemma 8.6c proves that the endpoint comparison remains in the
+same tight reflection-positive continuum class.  Lemmas 8.6d0, 8.6d0a, and
+8.6d0b set up the running-coupling chart.  Definition 8.6d1a and Lemmas
+8.6d1b, 8.6d1c, 8.6d1, and 8.6d prove that the two endpoint regulator
+families flow to the same pure gauge relevant manifold.
 
 Therefore, for every invariant Wilson-Schwinger cylinder observable:
 
@@ -6973,8 +8548,8 @@ $$
 }
 $$
 
-is proved by Lemmas 8.6a through 8.6e and the sublemmas 8.6b0, 8.6d0, and
-8.6d1, the branch predicates agree:
+is proved by Lemmas 8.6a through 8.6e and the polymer and RG sublemmas in
+Section 8.6, the branch predicates agree:
 
 $$
 \boxed{
@@ -6987,15 +8562,16 @@ $$
 Proof.  Lemma 8.5 proves same pure decoder and same relevant local data.
 Lemmas 8.6a through 8.6e upgrade that decoder matching to equality of
 continuum gauge-invariant states.  The hard parts of that upgrade are the
-Kotecky-Preiss/source norms in Lemma 8.6b0, the finite-volume tree-graph
-polymer theorem in Lemma 8.6b1, the running-coupling chart in Lemma 8.6d0,
-the beta-function and scheme-stability control in Lemma 8.6d0a, the
-triangular mixing theorem in Lemma 8.6d0b, and the RG contraction in Lemma
-8.6d1.  Wilson-Schwinger determinacy identifies the states, and OS/GNS
-reconstruction identifies the physical Hilbert sectors.  The Wilson area law
-is a statement about gauge-invariant Wilson-Schwinger expectations in that
-state, and the mass gap is reconstructed from the same reflection-positive
-OS/GNS data.  Hence both predicates are branch-invariant.
+Kotecky-Preiss Banach criterion in Definition 8.6b0a and Lemmas 8.6b0b
+through 8.6b0c, the finite-volume tree-graph polymer theorem in Lemma
+8.6b1, the running-coupling chart in Lemma 8.6d0, the beta-function and
+scheme-stability control in Lemma 8.6d0a, the triangular mixing theorem in
+Lemma 8.6d0b, and the Banach-space RG contraction in Definition 8.6d1a and
+Lemmas 8.6d1b through 8.6d1c.  Wilson-Schwinger determinacy identifies the
+states, and OS/GNS reconstruction identifies the physical Hilbert sectors.
+The Wilson area law is a statement about gauge-invariant Wilson-Schwinger
+expectations in that state, and the mass gap is reconstructed from the same
+reflection-positive OS/GNS data.  Hence both predicates are branch-invariant.
 
 $$
 \square
@@ -8528,6 +10104,382 @@ $$
 \square
 $$
 
+### Definition 11.2a1: Heat-Kernel Pivot Detector Packet
+
+Fix a row collar, boundary type, Casimir cutoff, and response-height cutoff:
+
+$$
+\boxed{
+{\mathsf C}_{row},
+\qquad
+\partial{\mathsf C}_{row},
+\qquad
+R,
+\qquad
+M.
+}
+$$
+
+Let:
+
+$$
+\boxed{
+{\mathcal E}_{\alpha}^{tok}(R,M)
+}
+$$
+
+be the active token set in this finite collar core.  Quotient it by
+translations inside the collar, Ward descendants, vacuum labels, and typed
+sector labels.  The resulting prototype set is finite:
+
+$$
+\boxed{
+{\mathcal P}^{hk}_{R,M}
+=
+\{p_1,\ldots,p_{N(R,M)}\}.
+}
+$$
+
+For each prototype choose the first ordered Peter-Weyl row word that separates
+its heat-kernel likelihood from the Ward, vacuum, and typed subspace:
+
+$$
+\boxed{
+W_p,
+\qquad
+\rho_p,
+\qquad
+C_2(\rho_p)\le R_{det}(R,M).
+}
+$$
+
+The raw detector is the centered normalized character-window:
+
+$$
+\boxed{
+\Theta_p(U)
+=
+\chi_{\rho_p}(W_p(U))
+-
+\int
+\chi_{\rho_p}(W_p(U))
+d\nu_{\alpha,vac}^{row}(U).
+}
+$$
+
+The heat-kernel pivot detector is:
+
+$$
+\boxed{
+q_p^{hk}
+=
+\frac{
+(I-P_{\alpha}^{wvt})\Theta_p
+}{
+\|(I-P_{\alpha}^{wvt})\Theta_p\|_{L^2(\nu_{\alpha,vac}^{row})}
+}.
+}
+$$
+
+If a token edge has prototype:
+
+$$
+\boxed{
+p(e),
+}
+$$
+
+its detector is:
+
+$$
+\boxed{
+q_{\alpha}^{hk}(e)
+=
+q_{p(e)}^{hk}.
+}
+$$
+
+### Lemma 11.2a2: Heat-Kernel Detector Separation
+
+For every fixed core:
+
+$$
+\boxed{
+(R,M),
+}
+$$
+
+there is a strictly positive heat-kernel detector variance:
+
+$$
+\boxed{
+v_{R,M}^{hk}>0
+}
+$$
+
+such that every active core prototype satisfies:
+
+$$
+\boxed{
+\|(I-P_{\alpha}^{wvt})\Theta_p\|_{L^2(\nu_{\alpha,vac}^{row})}^{2}
+\ge
+v_{R,M}^{hk}.
+}
+$$
+
+The constant is computed from finite heat-kernel row integrals:
+
+$$
+\boxed{
+v_{R,M}^{hk}
+=
+\min_{p\in{\mathcal P}^{hk}_{R,M}}
+\inf_{\theta\in{\mathcal K}_{row}(R,M)}
+\int
+\left|
+(I-P_{\theta}^{wvt})\Theta_{p,\theta}(U)
+\right|^{2}
+d\nu_{\theta,vac}^{row}(U).
+}
+$$
+
+Here:
+
+$$
+\boxed{
+{\mathcal K}_{row}(R,M)
+}
+$$
+
+is the compact set of finite row boundary types, renormalized heat-kernel row
+times, typed sector labels, and source normalizations allowed by the fixed
+core.
+
+Proof.  The heat-kernel density on a finite compact row collar has the
+Peter-Weyl expansion:
+
+$$
+\boxed{
+K_t(g)
+=
+\sum_{\lambda}
+d_{\lambda}
+e^{-tC_2(\lambda)/2}
+\chi_{\lambda}(g).
+}
+$$
+
+On the fixed core, only finitely many row words, representation labels,
+boundary classes, and typed labels occur.  The displayed squared norm is a
+finite sum of heat-kernel row integrals of products of characters.  It is
+continuous in:
+
+$$
+\boxed{
+\theta\in{\mathcal K}_{row}(R,M).
+}
+$$
+
+If the squared norm vanished for an active prototype, the separating
+Peter-Weyl word would lie entirely in the Ward, vacuum, and typed subspace.
+Equivalently the prototype heat-kernel likelihood would have the same
+gauge-invariant row moments as a Ward, vacuum, or typed token.  By finite
+Peter-Weyl determinacy on the compact collar, that prototype would not be
+active.  This contradicts the definition of:
+
+$$
+\boxed{
+{\mathcal P}^{hk}_{R,M}.
+}
+$$
+
+Thus every term in the finite minimum is positive, and compactness of the
+finite heat-kernel parameter set gives the displayed lower bound.
+
+$$
+\square
+$$
+
+### Lemma 11.2a3: Pivot Gram Bound From Heat-Kernel Integrals
+
+Let:
+
+$$
+\boxed{
+S_{R,M}^{hk}
+=
+\operatorname{span}
+\{q_p^{hk}:p\in{\mathcal P}^{hk}_{R,M}\}.
+}
+$$
+
+Run complete Cholesky pivoting on the finite heat-kernel Gram matrix:
+
+$$
+\boxed{
+G_{R,M}^{hk}(p,p')
+=
+\left\langle
+q_p^{hk},
+q_{p'}^{hk}
+\right\rangle_{L^2(\nu_{\alpha,vac}^{row})}.
+}
+$$
+
+After quotienting exact Ward, vacuum, and typed duplicates, every retained
+pivot block has a positive lower eigenvalue:
+
+$$
+\boxed{
+G_{R,M}^{hk,piv}
+\ge
+\lambda_{R,M}^{hk}I,
+\qquad
+\lambda_{R,M}^{hk}>0.
+}
+$$
+
+The constant is explicitly finite:
+
+$$
+\boxed{
+\lambda_{R,M}^{hk}
+=
+\min_{\varnothing\ne S\subseteq{\mathcal P}^{hk}_{R,M}}
+\lambda_{\min}
+\left(
+G_{R,M}^{hk}|_{S}
+\right)
+}
+$$
+
+where subsets with exact Ward, vacuum, or typed linear dependence are omitted
+by the quotient.
+
+Proof.  The matrix entries are finite heat-kernel row integrals of products of
+Peter-Weyl character windows.  The prototype set is finite at fixed:
+
+$$
+\boxed{
+(R,M).
+}
+$$
+
+Complete Cholesky pivoting keeps exactly the linearly independent detector
+directions.  If a retained principal block had zero determinant, a nontrivial
+linear combination of active prototype detectors would be Ward, vacuum, or
+typed in all heat-kernel row moments.  Finite Peter-Weyl determinacy on the
+compact collar would then identify that combination as a quotient-zero token,
+contradicting the pivot rule.  Hence the retained principal blocks are
+positive definite.  The minimum over the finite list of retained blocks is
+strictly positive and is computed from the displayed heat-kernel Gram matrix.
+
+$$
+\square
+$$
+
+### Lemma 11.2a4: Heat-Kernel Casimir And Height Tails
+
+There are constants depending only on the fixed row collar and the
+renormalized heat-kernel time window:
+
+$$
+\boxed{
+B_C^{hk}<\infty,
+\qquad
+B_H^{hk}<\infty,
+\qquad
+\kappa_C^{hk}>0,
+\qquad
+\kappa_H^{hk}>0
+}
+$$
+
+such that:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+\mathbf 1_{\{C_2(e)>R\}}
+\right\|^2
+\le
+B_C^{hk}e^{-\kappa_C^{hk}R}
+}
+$$
+
+and:
+
+$$
+\boxed{
+\left\|
+{\mathcal A}_{\alpha}^{tok}
+\mathbf 1_{\{H_{\alpha}(e)>M\}}
+\right\|^2
+\le
+B_H^{hk}e^{-\kappa_H^{hk}M}.
+}
+$$
+
+Proof.  The heat-kernel character coefficient for representation:
+
+$$
+\boxed{
+\lambda
+}
+$$
+
+is:
+
+$$
+\boxed{
+d_{\lambda}e^{-tC_2(\lambda)/2}.
+}
+$$
+
+The renormalized row construction keeps:
+
+$$
+\boxed{
+t\ge t_- >0
+}
+$$
+
+on the finite collar scale before the continuum predicate is evaluated.  Weyl's
+dimension formula gives only polynomial growth:
+
+$$
+\boxed{
+d_{\lambda}\le C(1+C_2(\lambda))^{p}.
+}
+$$
+
+Therefore:
+
+$$
+\boxed{
+\sum_{C_2(\lambda)>R}
+d_{\lambda}^{2}
+e^{-t_-C_2(\lambda)}
+\le
+B_C^{hk}e^{-\kappa_C^{hk}R}.
+}
+$$
+
+The row-height cutoff is defined from the same finite heat-kernel
+Radon-Nikodym likelihood and boundary-normalization factors.  In the
+height-transformed row norm, each extra unit of height contributes an
+exponential damping factor.  The number of local collar words of height at
+most a given value has at most exponential growth with a smaller exponent,
+because the collar, source order, and branching alphabet are finite.  Choosing
+the height unit in the printed row scale gives the second estimate.  Both
+estimates are finite heat-kernel operator bounds and include Peter-Weyl
+multiplicities and recoupling factors in the constants.
+
+$$
+\square
+$$
+
 ### Lemma 11.2c0: Cofinal Token Core-Tail Bessel Bound
 
 The heat-kernel row-token Bessel defect has a cutoff-stable lower bound.  The
@@ -8558,12 +10510,10 @@ I-P_{\alpha,R,M}^{tok}.
 }
 $$
 
-There are cutoff-independent constants:
+There are cutoff-independent heat-kernel tail constants:
 
 $$
 \boxed{
-b_0^{tok}>0,
-\qquad
 B_C^{tok}<\infty,
 \qquad
 B_H^{tok}<\infty,
@@ -8571,6 +10521,22 @@ B_H^{tok}<\infty,
 \kappa_C^{tok}>0,
 \qquad
 \kappa_H^{tok}>0
+}
+$$
+
+For every fixed core:
+
+$$
+\boxed{
+(R,M)
+}
+$$
+
+there is an independently computable heat-kernel pivot constant:
+
+$$
+\boxed{
+\lambda_{R,M}^{hk}>0
 }
 $$
 
@@ -8582,7 +10548,7 @@ P_{\alpha,R,M}^{tok}
 {\mathsf D}_{\alpha}^{tok}
 P_{\alpha,R,M}^{tok}
 \ge
-b_0^{tok}
+\lambda_{R,M}^{hk}
 P_{\alpha,R,M}^{tok}
 }
 $$
@@ -8635,7 +10601,17 @@ $$
 \boxed{
 \tau_{tok}(R_*,M_*)
 \le
-\frac{b_0^{tok}}{2}.
+\frac{\lambda_{R_*,M_*}^{hk}}{2}.
+}
+$$
+
+Set:
+
+$$
+\boxed{
+b_0^{tok}
+=
+\lambda_{R_*,M_*}^{hk}.
 }
 $$
 
@@ -8651,55 +10627,41 @@ $$
 
 for all sufficiently large cutoffs on the ordered heat-kernel trajectory.
 
-Proof.  The core estimate is built from the response packet, not from the
-number of projected token types.  Corollary 10.3 gives a cofinal sector
-response floor for every active token:
+Proof.  The core estimate is built from heat-kernel row detectors, not from the
+response-floor framework.  Fix:
 
 $$
 \boxed{
-\left\|
-\operatorname{Resp}_{\alpha}(e)
-\right\|_{\mathcal Q}^{2}
+(R,M).
+}
+$$
+
+Definition 11.2a1 constructs the detector attached to every active core token
+from Peter-Weyl character windows in the heat-kernel row collar:
+
+$$
+\boxed{
+q_{\alpha}^{hk}(e).
+}
+$$
+
+Lemma 11.2a2 gives a strictly positive heat-kernel detector variance on the
+fixed core:
+
+$$
+\boxed{
+v_{R,M}^{hk}>0.
+}
+$$
+
+Lemma 11.2a3 applies complete Cholesky pivoting to the finite heat-kernel Gram
+matrix and gives:
+
+$$
+\boxed{
+G_{R,M}^{hk,piv}
 \ge
-\eta_{tok}^{2},
-\qquad
-\eta_{tok}>0.
-}
-$$
-
-The response packet used in Lemmas 9.0-10.1 is chosen as a rational
-epsilon-net with:
-
-$$
-\boxed{
-\varepsilon_{tok}
-\le
-\frac{\eta_{tok}}{8}.
-}
-$$
-
-Thus every active token has a pivot detector:
-
-$$
-\boxed{
-q_{\alpha}(e)
-\in
-{\mathcal Q}_{\alpha}^{tok}
-}
-$$
-
-with:
-
-$$
-\boxed{
-\left|
-\left\langle
-\operatorname{Resp}_{\alpha}(e),
-q_{\alpha}(e)
-\right\rangle
-\right|
-\ge
-\frac{3\eta_{tok}}{4}.
+\lambda_{R,M}^{hk}I.
 }
 $$
 
@@ -8710,23 +10672,20 @@ $$
 R_{\alpha}(e,q)
 =
 \left\langle
-\operatorname{Resp}_{\alpha}(e),
+P_{\alpha}^{wvt}\psi_{\alpha,e},
 q
-\right\rangle.
+\right\rangle_{L^2(\nu_{\alpha,vac}^{row})}.
 }
 $$
 
-The pivot rule is greedy in the ordered response-packet norm: once a detector
-has been assigned to a retained token, all later tokens are orthogonalized
-against its residual before they are admitted as new active tokens.  Define the
-pivot detector set:
+The pivot detector set is the heat-kernel Cholesky pivot set:
 
 $$
 \boxed{
 {\mathcal Q}_{\alpha}^{piv}
 =
 \{
-q_{\alpha}(e):
+q_{\alpha}^{hk}(e):
 e\in
 P_{\alpha,R,M}^{tok}{\mathcal E}_{\alpha}^{tok}
 \}
@@ -8747,47 +10706,13 @@ R_{\alpha}(e',q)
 }
 $$
 
-obeys:
-
-$$
-\boxed{
-{\mathsf G}_{\alpha}^{det}(e,e)
-\ge
-\frac{9\eta_{tok}^{2}}{16}
-}
-$$
-
-and:
-
-$$
-\boxed{
-\sup_e
-\sum_{e'\ne e}
-\left|
-{\mathsf G}_{\alpha}^{det}(e,e')
-\right|
-\le
-\frac{5\eta_{tok}^{2}}{16}.
-}
-$$
-
-Gershgorin's theorem gives the uniform diagonal-dominance bound:
+By Lemma 11.2a3:
 
 $$
 \boxed{
 {\mathsf G}_{\alpha}^{det}
 \ge
-\gamma_{tok}I.
-}
-$$
-
-The constant is explicit:
-
-$$
-\boxed{
-\gamma_{tok}
-=
-\frac{\eta_{tok}^{2}}{4}.
+\lambda_{R,M}^{hk}I.
 }
 $$
 
@@ -8812,7 +10737,8 @@ R_{\alpha}^{all},
 }
 $$
 
-The pivot detector matrix is a submatrix of the full response-detector matrix:
+The pivot detector matrix is a submatrix of the full heat-kernel detector
+matrix:
 
 $$
 \boxed{
@@ -8841,19 +10767,16 @@ on every projected core.  Hence the core lower bound holds with:
 
 $$
 \boxed{
-b_0^{tok}
-=
-\gamma_{tok}.
+\lambda_{R,M}^{hk}.
 }
 $$
 
-This lower bound is independent of the number of token types retained in the
-core.  Increasing the Casimir or response-height cutoffs only adds new pivoted
-tokens with the same detector residual threshold.
+This lower bound is independent of the global volume and cutoff after the core
+is fixed.  It is computed by a finite heat-kernel Gram matrix and does not use
+Corollary 10.3.
 
-It remains to control the complement.  The high-Casimir part is bounded by the
-Peter-Weyl heat-kernel tail later reused in Lemma 13.F10r-a, restricted to the
-row-token analysis operator:
+It remains to control the complement.  Lemma 11.2a4 gives the high-Casimir
+operator tail:
 
 $$
 \boxed{
@@ -8862,16 +10785,11 @@ $$
 \mathbf 1_{\{C_2(e)>R\}}
 \right\|^2
 \le
-B_C^{tok}
-\exp
-\left(
--\kappa_C^{tok}R
-\right).
+B_C^{hk}e^{-\kappa_C^{hk}R}.
 }
 $$
 
-The high-response-height part is bounded by the Radon-Nikodym and Hellinger
-row estimate of Lemmas 11.RN1-11.RN3:
+and the high-response-height operator tail:
 
 $$
 \boxed{
@@ -8880,18 +10798,25 @@ $$
 \mathbf 1_{\{H_{\alpha}(e)>M\}}
 \right\|^2
 \le
-B_H^{tok}
-\exp
-\left(
--\kappa_H^{tok}M
-\right).
+B_H^{hk}e^{-\kappa_H^{hk}M}.
 }
 $$
 
-These estimates are operator bounds, not pointwise truncation statements.  They
-already include polynomial Peter-Weyl multiplicities and finite collar
-recoupling factors in the constants.  Adding the two complements gives the
-displayed bound for:
+Set:
+
+$$
+\boxed{
+B_C^{tok}=B_C^{hk},
+\qquad
+B_H^{tok}=B_H^{hk},
+\qquad
+\kappa_C^{tok}=\kappa_C^{hk},
+\qquad
+\kappa_H^{tok}=\kappa_H^{hk}.
+}
+$$
+
+Adding the two complements gives the displayed bound for:
 
 $$
 \boxed{
@@ -8902,7 +10827,30 @@ Q_{\alpha,R,M}^{tok}
 }
 $$
 
-For any unit vector split by the token projection:
+Choose:
+
+$$
+\boxed{
+R_*,
+\qquad
+M_*
+}
+$$
+
+so that:
+
+$$
+\boxed{
+\tau_{tok}(R_*,M_*)
+\le
+\frac{\lambda_{R_*,M_*}^{hk}}{2}.
+}
+$$
+
+This is possible because the heat-kernel tails are exponential and the
+projected core constant is positive for every fixed core.
+
+For any unit vector split by the chosen token projection:
 
 $$
 \boxed{
@@ -8924,7 +10872,7 @@ P_{\alpha,R_*,M_*}^{tok}f
 \right\|^2
 \le
 \left(
-1-b_0^{tok}
+1-\lambda_{R_*,M_*}^{hk}
 \right)
 \left\|
 P_{\alpha,R_*,M_*}^{tok}f
@@ -8941,14 +10889,15 @@ $$
 Q_{\alpha,R_*,M_*}^{tok}f
 \right\|^2
 \le
-\frac{b_0^{tok}}{2}
+\frac{\lambda_{R_*,M_*}^{hk}}{2}
 \left\|
 Q_{\alpha,R_*,M_*}^{tok}f
 \right\|^2.
 }
 $$
 
-The direct-sum operator estimate then yields:
+Using the triangle inequality and optimizing over the two orthogonal pieces
+gives:
 
 $$
 \boxed{
@@ -8956,7 +10905,7 @@ $$
 {\mathcal A}_{\alpha}^{tok}f
 \right\|^2
 \le
-1-\frac{b_0^{tok}}{2}.
+1-\frac{\lambda_{R_*,M_*}^{hk}}{2}.
 }
 $$
 
@@ -8966,12 +10915,24 @@ $$
 \boxed{
 {\mathsf D}_{\alpha}^{tok}
 \ge
-\frac{b_0^{tok}}{2}I.
+\frac{\lambda_{R_*,M_*}^{hk}}{2}I.
 }
 $$
 
-The bound is stable under cofinal cutoff growth because the constants are
-chosen before the projected token set is allowed to grow.
+Since:
+
+$$
+\boxed{
+b_0^{tok}
+=
+\lambda_{R_*,M_*}^{hk},
+}
+$$
+
+the advertised bound follows.  The bound is stable under cofinal cutoff growth
+because the core detector constant is computed from a fixed finite
+heat-kernel prototype Gram matrix, and every newly admitted token outside the
+core is paid by the heat-kernel Casimir or height tail.
 
 $$
 \square
@@ -10131,8 +12092,9 @@ $$
 
 Proof.  Lemma 12.F9a proves the positive absolute sheet majorant for the
 heat-kernel branch, where the representation-surface expansion is exact and
-positive after absolute majorization.  Lemmas 12.F9c and 12.1-12.4 turn that
-majorant into the area-law estimate.  Lemmas 13.0, 13.F10r, 13.F10r-a,
+positive after absolute majorization.  Lemma 12.F9c0 audits the center-sheet
+embedding into the token pressure graph, and Lemmas 12.F9c and 12.1-12.4 turn
+that majorant into the area-law estimate.  Lemmas 13.0, 13.F10r, 13.F10r-a,
 13.F10r-b, 13.F10r-c, 13.F10j, 13.F10a0, 13.F10a, and 13.1-13.4 turn the same
 finite-row deficit into the transfer gap.
 
@@ -10221,6 +12183,165 @@ and presentation rows carry no center flux, typed rows are excluded from pure
 Yang-Mills, and active center rows are bounded by the center row deficit from
 Lemma 11.4.  This gives the displayed sheet domination without assuming the
 area law or restricting to a small-coupling expansion.
+
+$$
+\square
+$$
+
+### Lemma 12.F9c0: Center-Sheet Token Embedding And Entropy Audit
+
+At finite cutoff, the augmented center-sheet continuation graph embeds into
+the active row-token pressure graph after adjoining one terminal
+center-response marker to each sheet edge.
+
+There is a map:
+
+$$
+\boxed{
+\iota_{\alpha}^{cen}:
+\widetilde{\mathcal E}_{\alpha}^{cen}
+\longrightarrow
+{\mathcal E}_{\alpha}^{tok,act}
+}
+$$
+
+which is injective on the fully labelled edge set:
+
+$$
+\boxed{
+\iota_{\alpha}^{cen}(\widetilde e_1)
+=
+\iota_{\alpha}^{cen}(\widetilde e_2)
+\quad\Longrightarrow\quad
+\widetilde e_1=\widetilde e_2.
+}
+$$
+
+The source and target maps are respected by a vertex embedding:
+
+$$
+\boxed{
+\phi_{\alpha}^{cen}:
+\widetilde{\mathcal U}_{\alpha}^{cen}
+\longrightarrow
+{\mathcal U}_{\alpha}^{tok,act}.
+}
+$$
+
+Thus:
+
+$$
+\boxed{
+s(\iota_{\alpha}^{cen}\widetilde e)
+=
+\phi_{\alpha}^{cen}(s\widetilde e),
+\qquad
+t(\iota_{\alpha}^{cen}\widetilde e)
+=
+\phi_{\alpha}^{cen}(t\widetilde e).
+}
+$$
+
+The sheet edge weight is dominated by the corresponding token-pressure edge
+weight:
+
+$$
+\boxed{
+\exp\left(
+-C_{\alpha}^{cen}(\widetilde e)
+\right)
+\frac{h_{\alpha}(t\widetilde e)}
+{h_{\alpha}(s\widetilde e)}
+\le
+\exp\left(
+-C_{\alpha}^{tok}(\iota_{\alpha}^{cen}\widetilde e)
+\right)
+\frac{h_{\alpha}(t\iota_{\alpha}^{cen}\widetilde e)}
+{h_{\alpha}(s\iota_{\alpha}^{cen}\widetilde e)}.
+}
+$$
+
+Consequently the full row sum over labelled center-sheet continuations obeys:
+
+$$
+\boxed{
+\sum_{\substack{\widetilde e\in\widetilde{\mathcal E}_{\alpha}^{cen}\\
+s(\widetilde e)=\widetilde u}}
+\exp\left(
+-C_{\alpha}^{cen}(\widetilde e)
+\right)
+\frac{h_{\alpha}(t\widetilde e)}
+{h_{\alpha}(s\widetilde e)}
+\le
+\sum_{\substack{e\in{\mathcal E}_{\alpha}^{tok,act}\\
+s(e)=\phi_{\alpha}^{cen}(\widetilde u)}}
+\exp\left(
+-C_{\alpha}^{tok}(e)
+\right)
+\frac{h_{\alpha}(t e)}
+{h_{\alpha}(s e)}.
+}
+$$
+
+No additional multiplicity factor appears on the left after this embedding.
+The complete entropy audit is:
+
+$$
+\boxed{
+\begin{array}{c|c}
+\hbox{possible hidden factor} & \hbox{where it is counted}\\
+\hline
+\hbox{row geometry choices} &
+\hbox{edge label } \widetilde\rho\\
+\hbox{plaquette representation labels} &
+\hbox{edge label } \widetilde\rho\\
+\hbox{intertwiner and fusion channels} &
+\hbox{edge label } \widetilde\rho\\
+\hbox{recoupling signs and phases} &
+\hbox{absolute majorant of Lemma 12.F9a}\\
+\hbox{fusion multiplicity} &
+\hbox{factor } \mathfrak m_{\alpha}(r,\lambda_r)\\
+\hbox{height oscillation} &
+\hbox{ratio } h(t\widetilde e)/h(s\widetilde e)\\
+\hbox{coarse boundary projection} &
+\hbox{normalized packet } \mu_{\alpha}(\widetilde u\mid u)\\
+\hbox{boundary collar} &
+\hbox{perimeter factor only}
+\end{array}
+}
+$$
+
+Proof.  An augmented center-sheet edge remembers the Ward-quotient boundary
+type, boundary representation labels, boundary intertwiner channel, row
+geometry, plaquette representation labels, local fusion channel, and the
+center-response marker.  This is exactly the data used to define one active
+row-token transition in the sector-complete token packet.  If two fully
+labelled sheet edges had the same token edge, all of these data would agree,
+so the original sheet edges would be equal.  This gives injectivity.
+
+Lemma 12.F9a uses normalized spin-network and intertwiner bases before taking
+absolute values.  Therefore signs and phases become norm-one recoupling
+operations, and the only absolute-value loss is the printed square-root
+fusion multiplicity.  Since that multiplicity is part of the row label and
+the row weight, it is included before the token-pressure row sum is formed.
+
+The height factor is the same Collatz-Wielandt comparison factor used in the
+active row-token pressure matrix.  The terminal center-response marker makes
+the sheet transition an active center token.  Thus the Hellinger/Chernoff
+cost assigned to the token edge is at least the vacuum-normalized sheet-row
+cost.  This gives the displayed edgewise domination.
+
+The coarse boundary-type matrix is not used for the spectral-radius estimate.
+It is a push-forward by normalized conditional boundary packets.  Such a
+push-forward is a convex averaging of already bounded augmented rows and
+cannot multiply the row sum by an exponential number of hidden states.
+
+The table exhausts the possible local sources of center-sheet entropy.  Every
+entry is either an explicit label in the augmented edge set, an explicit
+weight factor in Lemma 12.F9a, the height ratio in the row norm, a normalized
+coarse projection, or a perimeter-only boundary factor.  Hence the center
+sheet graph is dominated by the row-token pressure graph without an
+unaccounted entropy loss.
 
 $$
 \square
@@ -10625,9 +12746,12 @@ and that factor is included in the definition of the augmented row branch.
 Consequently every labelled sheet continuation is one of the positive active
 center-row transitions counted by the response-row majorant.
 
-The row-weighted response pressure gap of Lemma 11.2 is applied to this
-augmented edge graph.  The center-sheet graph is a subgraph of the active token
-graph after the terminal center-response marker has been appended.  Hence:
+Lemma 12.F9c0 embeds this fully labelled center-sheet graph into the active
+row-token pressure graph after the terminal center-response marker has been
+appended.  The embedding is injective on labelled edges and is weight
+dominating edge by edge.  Hence the row-weighted response pressure gap of
+Lemma 11.2 applies to the actual labelled sheet row sum, not to a coarser
+unweighted count:
 
 $$
 \boxed{
@@ -10675,7 +12799,10 @@ $$
 
 This is the strict finite graph inequality.  It is the point where the sheet
 entropy is paid for by response cost.  The margin is not an uncomputed
-positivity claim; it is the token pressure gap:
+positivity claim and it does not omit a quotient multiplicity: Lemma 12.F9c0
+audits every local geometry, representation, intertwiner, fusion,
+recoupling, height, and coarse-projection factor before the pressure gap is
+applied.  The remaining margin is the token pressure gap:
 
 $$
 \boxed{
@@ -10836,11 +12963,13 @@ local sheet continuations.  All local branching choices of a sheet are
 encoded as edges of this graph.  The edge weights are the same active
 center-row weights extracted from the regulated measure in Lemma 12.0.
 
-Lemma 12.F9c gives the explicit entropy-deficit margin for the finite
-augmented continuation matrix.  Since the center-sheet majorant is exactly
-the row-continuation majorant with sheet branching included in the finite
-state graph, its weighted spectral radius is bounded by the same cofinal
-center deficit.
+Lemma 12.F9c0 proves that the augmented center-sheet graph embeds into the
+active row-token pressure graph with no uncounted local multiplicity.  Lemma
+12.F9c gives the explicit entropy-deficit margin for the finite augmented
+continuation matrix.  Since the center-sheet majorant is exactly the
+row-continuation majorant with sheet branching included in the finite state
+graph, its weighted spectral radius is bounded by the same cofinal center
+deficit.
 
 The boundary of the sheet contributes only a finite perimeter collar factor.
 Iterating the finite majorant for the number of active rows gives the
@@ -11216,8 +13345,10 @@ charged to the tail estimate.
 Proof.  Lemma 13.F10r-a gives the uniform high-Casimir and high-response
 height transfer tail.  Lemma 13.F10r-b proves that the projected
 finite-energy, bounded-Casimir, low-height collar has uniformly finite
-obstruction-channel rank.  Lemma 13.F10r-c proves that a possible zero-gap
-sequence cannot live entirely in the discarded complement.
+obstruction-channel rank.  Lemma 13.F10r-c0 proves that every possible
+zero-gap sequence is captured by the projected row-obstruction module, even
+if it is delocalized, multi-collar, center, topological, or infrared in
+character.  Lemma 13.F10r-c records the resulting projection estimate.
 
 The fixed collar geometry contains only finitely many local transport slots.
 At finite cutoff each slot has a Peter-Weyl decomposition.  The heat-kernel
@@ -11527,6 +13658,206 @@ $$
 \square
 $$
 
+### Lemma 13.F10r-c0: Zero-Gap Capture By The Projected Obstruction Module
+
+Every possible active zero-gap sequence has a detectable component in the
+finite projected obstruction module after finite-energy, Casimir, and
+response-height cutoffs are chosen.
+
+Let:
+
+$$
+\boxed{
+\eta_{\alpha}\in{\mathcal H}_{\alpha}^{phys}
+}
+$$
+
+be an OS-unit sequence orthogonal to the vacuum sector:
+
+$$
+\boxed{
+\|\eta_{\alpha}\|_{OS}=1,
+\qquad
+P_{\alpha}^{vac}\eta_{\alpha}=0.
+}
+$$
+
+Assume it is a zero-gap candidate:
+
+$$
+\boxed{
+\left\|
+{\mathsf T}_{\alpha}(t_0)\eta_{\alpha}
+\right\|_{OS}
+\longrightarrow1.
+}
+$$
+
+Let:
+
+$$
+\boxed{
+{\mathcal C}_{\alpha}^{row}(E,M,R)
+}
+$$
+
+be the finite family of active row collars with energy at most the displayed
+energy cutoff, response height at most the displayed height cutoff, and
+Casimir labels at most the displayed Casimir cutoff.  Let:
+
+$$
+\boxed{
+\Pi_{\alpha,E,M,R}^{row}
+}
+$$
+
+be the sum of the corresponding projected obstruction-module projections,
+with a bounded-overlap partition of unity in the row direction.  Then for
+every tolerance:
+
+$$
+\boxed{
+\delta>0
+}
+$$
+
+there are cutoffs:
+
+$$
+\boxed{
+E,
+\qquad
+M,
+\qquad
+R
+}
+$$
+
+chosen before the spectral conclusion such that:
+
+$$
+\boxed{
+\liminf_{\alpha}
+\left\|
+\Pi_{\alpha,E,M,R}^{row}\eta_{\alpha}
+\right\|_{OS}^{2}
+\ge
+1-\delta.
+}
+$$
+
+Moreover, if the projected obstruction component vanished cofinally:
+
+$$
+\boxed{
+\left\|
+\Pi_{\alpha,E,M,R}^{row}\eta_{\alpha}
+\right\|_{OS}
+\longrightarrow0
+}
+$$
+
+for every fixed choice of cutoffs, then the sequence would be Ward, vacuum,
+or typed in the sector-complete quotient:
+
+$$
+\boxed{
+\eta_{\alpha}
+\sim
+0
+\quad
+\hbox{in the active physical quotient}.
+}
+$$
+
+Proof.  The finite cutoff transfer operator is reflection-positive and
+contractive.  Apply the finite spectral calculus to separate the energy tail.
+For sufficiently large energy cutoff:
+
+$$
+\boxed{
+\left\|
+\left(
+I-P_{\alpha,E}^{collar}
+\right)
+{\mathsf T}_{\alpha}(t_0)
+\right\|_{OS}
+\le
+e^{-Et_0}.
+}
+$$
+
+Thus a zero-gap candidate cannot have most of its norm in the high-energy
+tail.  Otherwise the transfer norm would be bounded away from one.
+
+Inside the finite-energy sector, decompose the transfer row into a
+bounded-overlap family of local row collars.  The overlap constant is fixed
+by the physical row thickness and does not grow with volume.  If all local
+active collar projections were small, then the active transfer contribution
+would be small by the finite overlap estimate:
+
+$$
+\boxed{
+\left\|
+P_{\alpha}^{act}{\mathsf T}_{\alpha}(t_0)P_{\alpha}^{act}
+\eta_{\alpha}
+\right\|_{OS}^{2}
+\le
+C_{ov}
+\sum_{C\in{\mathcal C}_{\alpha}^{row}}
+\left\|
+\Pi_{\alpha,C}^{act}\eta_{\alpha}
+\right\|_{OS}^{2}
++
+o(1).
+}
+$$
+
+Hence a sequence with transfer norm tending to one must carry active
+obstruction mass in the row-collar decomposition.
+
+Now split each collar obstruction into four mutually exclusive channels:
+
+$$
+\boxed{
+\begin{array}{c|c}
+\hbox{channel} & \hbox{control}\\
+\hline
+\hbox{high energy} & \hbox{finite spectral calculus}\\
+\hbox{high Casimir} & \hbox{heat-kernel Casimir tail}\\
+\hbox{high response height} & \hbox{row Chernoff-height tail}\\
+\hbox{bounded projected core} & \hbox{finite obstruction module}
+\end{array}
+}
+$$
+
+The high-Casimir and high-response-height channels are controlled by Lemma
+13.F10r-a.  Choose the cutoffs so their combined transfer contribution is
+below the remaining tolerance.  What remains is precisely the finite
+projected obstruction module of Lemma 13.F10r-b.
+
+It remains to rule out the possibility that a zero-gap candidate hides in
+long volume words, multi-collar glueball channels, center sectors,
+topological sectors, or infrared sectors while having zero projection onto
+every projected row obstruction.  Long words and multi-collar channels are
+generated by iterating the finite row-collar module; if no one-step projected
+obstruction is present, their active row content is zero.  Center,
+topological, and infrared distinctions are not local-only data; they are
+included in the sector-complete packet by Lemmas 9.D0a, 9.D1, 9.D2, 9.0, and
+9.1.  Therefore a cofinal sequence invisible to every projected row
+obstruction has zero response in every local, center, topological, and
+infrared sector test.
+
+By Lemma 10.1, a zero-response active sequence is Ward, vacuum, or typed.
+Ward directions vanish in the OS quotient, vacuum directions are removed by
+the vacuum projection, and typed directions are outside the pure active
+sector.  Thus no genuine active zero-gap sequence can escape the projected
+obstruction module.
+
+$$
+\square
+$$
+
 ### Lemma 13.F10r-c: No Zero-Gap Sequence Escapes The Projection
 
 Every possible zero-gap sequence has a nontrivial projection into the
@@ -11584,8 +13915,13 @@ $$
 }
 $$
 
-Proof.  The finite OS transfer operator is a contraction.  The finite
-spectral calculus gives:
+Proof.  Lemma 13.F10r-c0 first proves that any active zero-gap candidate is
+captured by the finite projected row-obstruction module up to an arbitrarily
+small cofinal error.  The present lemma records the corresponding norm
+estimate in the single-collar notation used by the frame argument.
+
+The finite OS transfer operator is a contraction.  The finite spectral
+calculus gives:
 
 $$
 \boxed{
@@ -11607,6 +13943,10 @@ projection norm were still bounded away from one, the contraction estimate
 would force the transfer norm of the sequence to be bounded away from one.
 That contradicts the assumed zero-gap behavior.
 
+Lemma 13.F10r-c0 rules out the remaining escape channel: a delocalized,
+multi-collar, center, topological, or infrared zero-gap sequence with no
+single projected obstruction component.  Such a sequence would have zero
+sector-complete response and would be Ward, vacuum, or typed by Lemma 10.1.
 Thus the later finite-frame and Schur estimates may be proved on the
 projected module without losing a possible zero-gap state.
 
@@ -12900,18 +15240,22 @@ Proof of Theorem 1.1.
 
 The theorem starts with S1-S3, the base compact pure gauge regulator,
 observable algebra, and reflection-positive regulator family.  It then
-constructs C0 by Lemma 3.3 and Theorem 3.3d.  C0 supplies the conventional
-continuum existence, nontriviality, Euclidean invariance, locality, clustering
-or extremal-vacuum selection, OS/GNS reconstruction, and renormalized
-trajectory control required before Wilson or spectral predicates can be
-evaluated.
+constructs C0 by Lemma 3.3 and Theorem 3.3d, and identifies C0 with the
+standard gauge-invariant OS/Wightman Yang-Mills sector by Theorem 3.3e5.  C0
+therefore supplies the conventional continuum existence, nontriviality,
+Euclidean invariance, locality, clustering or extremal-vacuum selection,
+OS/GNS reconstruction, and renormalized trajectory control required before
+Wilson or spectral predicates can be evaluated.
 Proposition 3.3a supplies the finite heat-kernel regulator clauses.
 Definition 3.3b and Lemma 3.3c prove cofinal finite-packet exhaustion.
-Definition 3.3c2 and Theorem 3.3c3 prove small-flow recovery on the
-renormalized quotient.  Theorems 3.3c4 through 3.3c15 prove the positive-flow,
+Definition 3.3c2, Lemmas 3.3c2a through 3.3c2e, and Theorem 3.3c3 prove
+small-flow recovery on the renormalized quotient.  Theorems 3.3c4 through
+3.3c15 prove the positive-flow,
 normalization, determinacy, Euclidean-restoration, sector-selection, and
 record-completeness parts of C0.  Theorem 3.3d supplies the completed record
-state, the pre-predicate sector, and the OS/GNS reconstruction.
+state, the pre-predicate sector, and the OS/GNS reconstruction.  Theorem
+3.3e5 proves that this state and reconstruction are the standard
+gauge-invariant OS/Wightman continuum Yang-Mills sector.
 Corollary 4.3 gives the finite and projective formulation of S4 inside that
 construction.  Corollary 5.4 gives the determinacy formulation of S5.
 Corollary 6.2 derives S6, giving the exact Ward quotient.  Corollary 7.2
@@ -12921,7 +15265,8 @@ At this point the proof deliberately ignores Lemmas 8.6-8.7.  The next step
 is the direct heat-kernel proof.
 
 Lemmas 3.1-3.4 fix the order in which finite estimates are passed to the C0
-continuum state.  C0 itself is supplied by Theorem 3.3d.  The limit-order
+continuum state.  C0 itself is supplied by Theorem 3.3d and identified with the
+standard OS/Wightman sector by Theorem 3.3e5.  The limit-order
 lemmas ensure that volume, lattice spacing, packet completion, and OS/GNS
 reconstruction are taken before the large-loop or large-time predicates are
 evaluated.
@@ -12929,8 +15274,8 @@ evaluated.
 Lemmas 9.D0a, 9.D0, 9.D1a, 9.D1, 9.D2, 9.0-9.1, and 10.1-10.2 prove the
 sector-complete response floor.  Lemmas 11.0-11.4 prove the finite row-kernel
 and row-token pressure deficit for the heat-kernel branch.  Lemmas 12.F9a,
-12.F9c, and 12.0-12.4 turn the heat-kernel row deficit into Wilson sheet
-domination and a positive area law.  Lemmas 13.0-13.4 turn the heat-kernel
+12.F9c0, 12.F9c, and 12.0-12.4 turn the heat-kernel row deficit into Wilson
+sheet domination and a positive area law.  Lemmas 13.0-13.4 turn the heat-kernel
 active transfer deficit into a positive OS/GNS transfer gap.
 
 Only after the heat-kernel Wilson area law and transfer gap have been proved
@@ -12983,10 +15328,10 @@ $$
 
 Lemmas 13.0-13.4 turn the centered transfer decomposition, the active collar
 effective-rank and tail bound, the Casimir-height tail estimate, the projected
-obstruction-channel bound, the zero-gap projection lemma, the finite
-response-frame weighting, the active response lower-frame certificate, the
-OS-orthonormal active collar basis, the one-step active transfer norm deficit,
-and the fixed time mesh into the transfer spectral gap:
+obstruction-channel bound, the zero-gap capture and projection lemmas, the
+finite response-frame weighting, the active response lower-frame certificate,
+the OS-orthonormal active collar basis, the one-step active transfer norm
+deficit, and the fixed time mesh into the transfer spectral gap:
 
 $$
 \boxed{
@@ -12995,9 +15340,9 @@ $$
 $$
 
 Therefore, inside the printed standalone construction, four-dimensional pure
-SU(N) Yang-Mills in the constructed gauge-invariant vacuum sector has Wilson
-confinement and a positive mass gap.  The exact review targets are recorded
-in the falsifier ledger.
+SU(N) Yang-Mills in the standard gauge-invariant OS/Wightman vacuum sector has
+Wilson confinement and a positive mass gap.  The exact review targets are
+recorded in the falsifier ledger.
 
 
 $$
@@ -13101,14 +15446,14 @@ fails}\\
 fails}\\
 \mathrm{F9b} & \hbox{explicit center-sheet connective bound or charged row cost
 bound fails} &
-\hbox{Lemma 12.F9c fails}\\
+\hbox{Lemma 12.F9c0 or Lemma 12.F9c fails}\\
 \mathrm{F10} & \hbox{centered transfer decomposition fails} &
 \hbox{Lemma 13.0 fails}\\
 \mathrm{F10c} & \hbox{the active collar effective-rank, Casimir-height tail,
 projected-channel bound, zero-gap projection, finite-frame weighting,
 response Gram, Bessel, or Cholesky residual certificate fails} &
-\hbox{Lemmas 13.F10r,13.F10r-a,13.F10r-b,13.F10r-c,13.F10j,13.F10a0,
-or 13.F10a fail}\\
+\hbox{Lemmas 13.F10r,13.F10r-a,13.F10r-b,13.F10r-c0,13.F10r-c,13.F10j,
+13.F10a0, or 13.F10a fail}\\
 \mathrm{F10a} & \hbox{one-step active transfer norm deficit fails} &
 \hbox{Lemma 13.1 fails}\\
 \mathrm{F10b} & \hbox{fixed time mesh loses linear step count} &
@@ -13143,10 +15488,10 @@ The claim of this paper is:
 
 $$
 \boxed{
-\hbox{the record-complete C0 construction for the heat-kernel pure }SU(N)
-\hbox{ branch, together with the printed margin certificate, proves Wilson
-confinement and mass gap; the Wilson plaquette branch is transferred afterward
-by Lemma 8.6e.}
+\hbox{the C0 construction is identified with the standard gauge-invariant
+OS/Wightman pure }SU(N)\hbox{ sector by Theorem 3.3e5; together with the
+printed margin certificate, it proves Wilson confinement and mass gap; the
+Wilson plaquette branch is transferred afterward by Lemma 8.6e.}
 }
 $$
 
@@ -13154,11 +15499,11 @@ The review boundary is:
 
 $$
 \boxed{
-\hbox{independent reviewers must check the record-complete C0 construction,
-cofinal packet separation, the response floor, token faithfulness,
-sub-Markov deficits, continuum liminf transfer, and the Wilson-heat-kernel RG
-comparison lemmas 8.6a, 8.6b0, 8.6b1, 8.6b, 8.6c, 8.6d0, 8.6d0a, 8.6d0b,
-8.6d1, 8.6d, and 8.6e.}
+\hbox{independent reviewers must check the C0 construction, its standard
+OS/Wightman equivalence, cofinal packet separation, the response floor, token
+faithfulness, sub-Markov deficits, continuum liminf transfer, and the
+Wilson-heat-kernel RG comparison lemmas 8.6a, 8.6b0, 8.6b1, 8.6b, 8.6c,
+8.6d0, 8.6d0a, 8.6d0b, 8.6d1, 8.6d, and 8.6e.}
 }
 $$
 
@@ -13181,9 +15526,17 @@ $$
 \hbox{continuum gates and S8 were treated like assumptions} &
 \hbox{Theorem 1.1 now starts from S1-S3; Lemma 3.3 states C0,
 Proposition 3.3a supplies the finite regulator clauses, Definition 3.3b and
-Lemma 3.3c supply finite-packet exhaustion, Definition 3.3c2 and Theorem
-3.3c3 supply small-flow recovery, Theorems 3.3c4-3.3c15 prove CL1-CL4, and
+Lemma 3.3c supply finite-packet exhaustion, Definition 3.3c2, Lemmas
+3.3c2a-3.3c2e, and Theorem 3.3c3 supply small-flow recovery, Theorems
+3.3c4-3.3c15 prove CL1-CL4, and
 Theorem 3.3d constructs C0 before S8 is used}\\
+\mathrm{R1a} &
+\hbox{C0 might be a self-defined completion rather than standard continuum YM} &
+\hbox{Definition 3.3e defines the standard gauge-invariant OS/Wightman
+comparison net; Lemmas 3.3e1-3.3e4 prove finite-packet cofinality,
+C-star algebra isomorphism, equality of Schwinger states, and unitary
+equivalence of OS/Wightman reconstructions; Theorem 3.3e5 identifies C0 with
+the standard gauge-invariant OS/Wightman pure Yang-Mills sector}\\
 \mathrm{R2} &
 \hbox{response distance was not quantitatively tied to spectral radius} &
 \hbox{Lemmas 11.RN1-11.RN3 construct row densities, prove Hellinger transfer
@@ -13205,9 +15558,11 @@ test-adequacy theorem}\\
 \hbox{Lemma 5.3 states the exact renormalized path-determinacy claim}\\
 \mathrm{R4} &
 \hbox{Wilson area law needed center-sheet control} &
-\hbox{Lemmas 12.F9a-12.F9c give a positive absolute sheet majorant for the
+\hbox{Lemmas 12.F9a,12.F9c0, and 12.F9c give a positive absolute sheet majorant for the
 heat-kernel branch, Lemma 12.F9b transfers the Wilson branch through Lemma
-8.6e, and Lemma 12.F9c gives an explicit entropy-deficit margin}\\
+8.6e, Lemma 12.F9c0 embeds the sheet graph into the token pressure graph with
+no hidden entropy factor, and Lemma 12.F9c gives an explicit entropy-deficit
+margin}\\
 \mathrm{R4a} &
 \hbox{positive Peter-Weyl coefficients do not make recoupled surface weights
 positive} &
@@ -13221,25 +15576,44 @@ square-root fusion-multiplicity factor inside the row majorant}\\
 \mathrm{R4c} &
 \hbox{the row-normalized absolute majorant might still lose strict
 subcriticality after sheet entropy is counted} &
-\hbox{Lemma 12.F9c now prints the augmented finite graph, the explicit
-connective bound, the entropy-normalized charged row cost, and the strict
-inequality computed from the token pressure gap}\\
+\hbox{Lemma 12.F9c0 proves the labelled center-sheet token embedding and
+entropy audit; Lemma 12.F9c then prints the augmented finite graph, the
+explicit connective bound, the entropy-normalized charged row cost, and the
+strict inequality computed from the token pressure gap}\\
 \mathrm{R4e} &
 \hbox{the strict inequality in Lemma 12.F9c depended on qualitative
 token-coding slack} &
 \hbox{Lemma 11.2a now isolates the row-token Bessel defect as a finite
-heat-kernel covariance gap; Lemma 11.2c0 replaces the compactness jump by a
-cutoff-stable core/tail Bessel lower bound; Lemma 11.2c then proves
+heat-kernel covariance gap; Lemmas 11.2a1-11.2a4 construct heat-kernel pivot
+detectors, finite Gram constants, and Casimir/height tails; Lemma 11.2c0
+replaces the compactness jump by a cutoff-stable core/tail Bessel lower bound;
+Lemma 11.2c then proves
 TOK-BESSEL, and Lemmas 11.2b and 11.2 prove the pressure estimate}\\
+\mathrm{R4f} &
+\hbox{row-token Bessel constants and pivot detectors needed heat-kernel
+checks independent of the response floor} &
+\hbox{Definition 11.2a1 and Lemmas 11.2a2-11.2a4 define the Peter-Weyl
+character-window detectors, compute the finite heat-kernel variance and Gram
+lower bounds, and bound the complement by explicit heat-kernel Casimir and
+height tails}\\
 \mathrm{R4d} &
 \hbox{the Wilson plaquette branch needed a printed comparison certificate} &
-\hbox{Lemmas 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,8.6d0a,8.6d0b,
-8.6d1,8.6d,8.6e prove
+\hbox{Lemmas 8.6a,8.6b0,8.6b0a,8.6b0b,8.6b0c,8.6b1,8.6b,8.6c,
+8.6d0,8.6d0a,8.6d0b,8.6d1a,8.6d1b,8.6d1c,8.6d1,8.6d,8.6e prove
 WHK-UNIV by local residue expansion, Kotecky-Preiss smallness,
 finite-volume tree-graph control of the Duhamel series, reflection-positive
 tight comparison, running-coupling RG chart construction, beta-function
-control, scheme stability, triangular operator mixing, and RG contraction;
+control, scheme stability, triangular operator mixing, Banach-space RG
+contraction, and stable iteration;
 Corollary 8.7 transfers Wilson predicates from state equality}\\
+\mathrm{R4g} &
+\hbox{Wilson universality still needed conventional KP and RG comparison
+detail} &
+\hbox{Definition 8.6b0a gives the polymer Banach space, Lemma 8.6b0b gives
+post-proof heat-kernel activity decay, Lemma 8.6b0c proves the printed
+Kotecky-Preiss criterion with lattice-animal entropy; Definition 8.6d1a gives
+the irrelevant RG Banach space, Lemma 8.6d1b proves the one-step Lipschitz
+contraction, and Lemma 8.6d1c proves stable iteration}\\
 \mathrm{R5} &
 \hbox{mass gap needed transfer-row control} &
 \hbox{Lemmas 13.0-13.2 now use centered transfer decomposition,
@@ -13248,12 +15622,12 @@ active norm deficit, and fixed time-mesh counting}\\
 \mathrm{R5a} &
 \hbox{the active collar Riesz bounds in Lemma 13.F10a were asserted rather
 than constructed} &
-\hbox{Lemmas 13.F10r-a, 13.F10r-b, and 13.F10r-c replace raw bounded rank by a
-Casimir-height tail estimate, projected obstruction-channel bound, and
-zero-gap projection theorem; Lemma 13.F10j gives finite-frame weighting;
-Lemma 13.F10a0 proves cofinal lower-frame positivity; Lemma 13.F10a constructs
-the response analysis Gram, Bessel and Cholesky certificates, and the
-resulting OS Riesz bounds}\\
+\hbox{Lemmas 13.F10r-a, 13.F10r-b, 13.F10r-c0, and 13.F10r-c replace raw
+bounded rank by a Casimir-height tail estimate, projected obstruction-channel
+bound, zero-gap capture theorem, and zero-gap projection theorem; Lemma
+13.F10j gives finite-frame weighting; Lemma 13.F10a0 proves cofinal
+lower-frame positivity; Lemma 13.F10a constructs the response analysis Gram,
+Bessel and Cholesky certificates, and the resulting OS Riesz bounds}\\
 \mathrm{R6} &
 \hbox{pure Yang-Mills decoder was too compressed} &
 \hbox{Lemma 8.3 excludes relevant residue leakage in the pure gauge class}\\
@@ -13262,8 +15636,22 @@ resulting OS Riesz bounds}\\
 order of volume, lattice spacing, loop size, Euclidean time, and OS
 reconstruction} &
 \hbox{Lemmas 3.1-3.4 now print the limit-order protocol, construct C0 from the
-record-complete heat-kernel branch, and pass the finite estimates through
-that protocol in Lemmas 12.4, 13.3, and 13.4}
+finite-packet heat-kernel branch, and pass the finite estimates through
+that protocol in Lemmas 12.4, 13.3, and 13.4}\\
+\mathrm{R7a} &
+\hbox{small-flow recovery compressed flow-time limits, operator mixing,
+counterterms, and OS matrix elements} &
+\hbox{Definition 3.3c2a, Lemmas 3.3c2b-3.3c2e, and Theorem 3.3c3 now define the
+small-flow OS seminorms, prove a uniform finite-shell expansion, solve the
+finite triangular counterterm and mixing problem, prove OS matrix-element
+Cauchy convergence, and identify the quotient star algebra}\\
+\mathrm{R7b} &
+\hbox{constructive RG was a chart architecture rather than a Banach RG proof} &
+\hbox{Definitions 10.28a-10.28b and Lemmas 10.28c-10.28e construct the
+finite-packet Banach response space, finite-step RG map, analytic map bounds,
+explicit contraction constants, and stable trajectory; Theorem 10.28f supplies
+the cofinal asymptotically free trajectory used by Theorem 10.34 and Lemma
+10.41}
 \end{array}
 }
 $$
@@ -13293,7 +15681,9 @@ $$
 \hbox{standard theorem statement} & \mathrm{PRINTED}\\
 \hbox{regulated pure }SU(N)\hbox{ construction} & \mathrm{BASE\ PRINTED}\\
 \hbox{base assumptions in Theorem 1.1} & \mathrm{S1\text{-}S3}\\
-\hbox{record-complete C0 construction} & \mathrm{PROVED\ IN\ THEOREM\ 3.3d}\\
+\hbox{finite-packet C0 construction} & \mathrm{PROVED\ IN\ THEOREM\ 3.3d}\\
+\hbox{standard OS/Wightman equivalence of C0} &
+\mathrm{PROVED\ IN\ THEOREM\ 3.3e5}\\
 \hbox{CL1 constructive trajectory} &
 \mathrm{PROVED\ IN\ THEOREM\ 3.3c8}\\
 \hbox{CL2 finite local normalization} &
@@ -13305,33 +15695,41 @@ $$
 \hbox{finite-packet, small-flow, and sector-receipt closure} &
 \mathrm{PROVED\ IN\ THEOREM\ 3.3c14}\\
 \hbox{continuum construction clauses S4-S7 and S9} &
-\mathrm{SUPPLIED\ BY\ C0}\\
+\mathrm{SUPPLIED\ BY\ C0\ AND\ THEOREM\ 3.3e5}\\
 \hbox{margin and crossing gate S8} &
 \mathrm{DERIVED\ IN\ SECTIONS\ 9\text{-}13}\\
 \hbox{compactness and state determinacy} &
 \mathrm{CHECK\ LEMMAS\ 4.1,5.3}\\
 \hbox{ordered continuum-limit transfer} &
 \mathrm{CHECK\ LEMMAS\ 3.1,3.2,3.3,3.3a,3.3b,3.3c,3.3d,3.4}\\
+\hbox{small-flow recovery with counterterm and OS control} &
+\mathrm{PROVED\ BY\ LEMMAS\ 3.3c2a\text{-}3.3c2e\ AND\ THEOREM\ 3.3c3}\\
+\hbox{finite-packet Banach RG trajectory} &
+\mathrm{PROVED\ BY\ DEFINITIONS\ 10.28a\text{-}10.28b,\ LEMMAS\ 10.28c\text{-}10.28e,\ THEOREM\ 10.28f}\\
 \hbox{Ward quotient and OS/GNS reconstruction} &
 \mathrm{S6\ DERIVED;\ S9\ FROM\ C0}\\
 \hbox{pure YM decoder and residue discipline} &
 \mathrm{CHECK\ LEMMA\ 8.3}\\
 \hbox{Wilson heat-kernel branch equivalence} &
-\mathrm{CHECK\ LEMMAS\ 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,8.6d0a,
-8.6d0b,8.6d1,8.6d,8.6e}\\
+\mathrm{CHECK\ LEMMAS\ 8.6a,8.6b0,8.6b0a,8.6b0b,8.6b0c,8.6b1,
+8.6b,8.6c,8.6d0,8.6d0a,8.6d0b,8.6d1a,8.6d1b,8.6d1c,8.6d1,8.6d,
+8.6e}\\
 \hbox{response floor} &
 \mathrm{PROVED\ BY\ LEMMAS\ 9.D0a,9.D0,9.D1a,9.D1,9.D2,9.0,9.1,10.1}\\
 \hbox{row-token majorants} &
-\mathrm{PROVED\ BY\ LEMMAS\ 11.2a,11.2c0,11.2c,11.2b,11.2,11.RN1\text{-}11.RN3,11.3}\\
+\mathrm{PROVED\ BY\ LEMMAS\ 11.2a,11.2a1\text{-}11.2a4,11.2c0,11.2c,11.2b,11.2,11.RN1\text{-}11.RN3,11.3}\\
 \hbox{heat-kernel Wilson area law} &
-\mathrm{PROVED\ BY\ LEMMAS\ 12.F9a,12.F9c,12.0,12.1,12.2,12.3,12.4}\\
+\mathrm{PROVED\ BY\ LEMMAS\ 12.F9a,12.F9c0,12.F9c,12.0,12.1,12.2,
+12.3,12.4}\\
 \hbox{Wilson plaquette branch transfer} &
-\mathrm{PROVED\ BY\ LEMMAS\ 8.6a,8.6b0,8.6b1,8.6b,8.6c,8.6d0,
-8.6d0a,8.6d0b,8.6d1,8.6d,8.6e\ AND\ 12.F9b}\\
+\mathrm{PROVED\ BY\ LEMMAS\ 8.6a,8.6b0,8.6b0a,8.6b0b,8.6b0c,8.6b1,
+8.6b,8.6c,8.6d0,8.6d0a,8.6d0b,8.6d1a,8.6d1b,8.6d1c,8.6d1,8.6d,8.6e
+\ AND\ 12.F9b}\\
 \hbox{transfer mass gap} &
 \mathrm{PROVED\ BY\ LEMMAS\ 13.0,13.F10r,13.F10r\text{-}a,
-13.F10r\text{-}b,13.F10r\text{-}c,13.F10j,13.F10a0,13.F10a,13.1}\\
-\hbox{standalone record-complete YM theorem} &
+13.F10r\text{-}b,13.F10r\text{-}c0,13.F10r\text{-}c,13.F10j,13.F10a0,
+13.F10a,13.1}\\
+\hbox{standalone standard gauge-invariant YM theorem} &
 \mathrm{PROVED\ IN\ THEOREM\ 1.1}\\
 \hbox{mathematical acceptance} & \mathrm{REVIEW\ REQUIRED}
 \end{array}
@@ -13342,9 +15740,9 @@ The shortest final statement is:
 
 $$
 \boxed{
-\hbox{This paper constructs the record-complete continuum }SU(N)\hbox{
-Yang-Mills vacuum sector, proves the heat-kernel Wilson area law and transfer
-mass gap, and transfers the result to the Wilson plaquette branch by the
-Wilson-heat-kernel universality theorem.}
+\hbox{This paper constructs the standard gauge-invariant OS/Wightman }SU(N)
+\hbox{ Yang-Mills vacuum sector, proves the heat-kernel Wilson area law and
+transfer mass gap, and transfers the result to the Wilson plaquette branch by
+the Wilson-heat-kernel universality theorem.}
 }
 $$

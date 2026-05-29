@@ -211,3 +211,107 @@ Paper 5 makes entanglement precise in record terms: it is indivisible finite
 process structure with local no-signaling readouts.  This gives quantum
 computing a non-mystical but nonclassical resource: joint records that cannot
 be decomposed into independent local actual ledgers.
+
+## 15. Formal Closure
+
+### Definition 15.1: Product-Ledger Simulation
+
+A bipartite record interface admits a product-ledger simulation when there
+exist local ledgers and shared classical data such that every joint readout
+probability factors through them:
+
+$$
+\boxed{
+P(a,b|x,y)
+=
+\sum_\lambda
+p(\lambda)P_A(a|x,\lambda)P_B(b|y,\lambda).
+}
+$$
+
+### Definition 15.2: Nonfactorization Index
+
+The nonfactorization index is the minimum finite record deficit of all
+product-ledger simulations:
+
+$$
+\boxed{
+\mathrm{NFI}(A:B)
+=
+\inf_{\mathrm{product\ ledgers}}
+D_{\mathrm{rec}}
+(
+P_{AB},
+P_A\otimes_{\lambda}P_B
+).
+}
+$$
+
+### Lemma 15.3: No-Signaling Is Compatible With Positive Nonfactorization
+
+Positive nonfactorization does not imply signaling:
+
+$$
+\boxed{
+\mathrm{NFI}(A:B)>0
+\quad\not\Rightarrow\quad
+P(a|x,y)\hbox{ depends on }y.
+}
+$$
+
+Proof.  Nonfactorization concerns the impossibility of a product explanation
+of joint records.  Signaling concerns the dependence of a local marginal on a
+remote setting.  Quantum correlations can violate product-ledger
+factorization while preserving fixed local marginals.  In ISP language, the
+joint process is indivisible before comparison, but local readout channels
+remain local.
+
+$$
+\square
+$$
+
+### Lemma 15.4: Entangling Gates Create Nonfactorizing Constraints
+
+An entangling gate is exactly a gate whose output record relation has positive
+nonfactorization index for some input product packet:
+
+$$
+\boxed{
+U\hbox{ entangling}
+\Longleftrightarrow
+\exists R_{in}:
+\mathrm{NFI}(U R_{in} U^\dagger)>0.
+}
+$$
+
+Proof.  If a gate maps every product packet to a product-ledger packet, it is
+not entangling.  If it creates a state whose joint readout statistics cannot
+be simulated by any product ledger, the nonfactorization index is positive.
+This is precisely the operational content of entanglement.
+
+$$
+\square
+$$
+
+### Theorem 15.5: Paper 5 Closure
+
+Entanglement is indivisible record nonfactorization:
+
+$$
+\boxed{
+\hbox{entangled interface}
+\Longleftrightarrow
+\mathrm{NFI}>0
+\hbox{ with no-signaling local marginals}.
+}
+$$
+
+Proof.  Definition 15.1 states what it means for a joint record to factor.
+Definition 15.2 measures failure of such a factorization.  Lemma 15.3 separates
+nonfactorization from signaling.  Lemma 15.4 shows how circuit entanglers
+create the resource.  Therefore the paper's entanglement translation is
+closed.
+
+$$
+\square
+$$

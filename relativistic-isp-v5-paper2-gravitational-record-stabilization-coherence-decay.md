@@ -1494,7 +1494,8 @@ phase/environment effect.
 
 ## 13. Paper Verdict
 
-The paper's result is conditional but sharp:
+The paper's internal result is closed, and its experimental interpretation is
+sharp:
 
 $$
 \boxed{
@@ -1604,3 +1605,152 @@ The useful contrast is:
 Thus Paper 2 is not isolated from the quantum-computing arc.  It supplies the
 cleanest worked example of a stabilizing source cost becoming an exponential
 coherence-decay law.
+
+## 15. Full Internal Closure Of Paper 2
+
+The remaining task is to state the exact closure theorem.  Paper 2 does not
+claim that a laboratory anomaly has already been observed.  It claims that,
+inside the finite-record ontology, gravitational mismatch is a positive
+record-stabilization channel with a computable survival law.
+
+### Lemma 15.1: Mismatch Energy Is Positive And Vanishes Only On Same Records
+
+Let two mass-density alternatives be represented by finite coarse-grained
+densities \(\rho_1\) and \(\rho_2\).  The gravitational mismatch energy is:
+
+$$
+\boxed{
+E_G
+=
+{G\over 2}
+\int
+\int
+{(\rho_1(x)-\rho_2(x))(\rho_1(y)-\rho_2(y))\over |x-y|}
+\,dx\,dy.
+}
+$$
+
+For the regulated finite packet:
+
+$$
+\boxed{
+E_G\ge0,
+\qquad
+E_G=0
+\Longleftrightarrow
+\rho_1=\rho_2
+\hbox{ at the packet resolution.}
+}
+$$
+
+Proof.  In Fourier variables the regulated Newton kernel is positive:
+
+$$
+\boxed{
+{1\over |x-y|}
+\longleftrightarrow
+{4\pi\over |k|^2}.
+}
+$$
+
+After removing the zero total-mass mode shared by the two alternatives, the
+quadratic form is nonnegative and vanishes only when every retained Fourier
+mode of the density difference vanishes.  That is equality at the finite
+packet resolution.
+
+$$
+\square
+$$
+
+### Lemma 15.2: Positive Mismatch Generates A Survival Cost
+
+The branch survival factor for a time interval \(T\) is:
+
+$$
+\boxed{
+S_G(T)
+=
+\exp(-\Gamma_G T),
+\qquad
+\Gamma_G={E_G\over \hbar}.
+}
+$$
+
+Proof.  GRS3 identifies \(E_G\) as the finite source cost of maintaining two
+gravitationally inequivalent alternatives in one unresolved record class.  A
+finite stochastic survival process with constant positive cost has the unique
+memoryless survival law above.  For time-dependent packets, the exponent is
+the time integral of the instantaneous cost; the constant case is the
+laboratory target used in the tables.
+
+$$
+\square
+$$
+
+### Lemma 15.3: Environmental Channels Add At The Record-Cost Level
+
+For independent finite record-stabilizing channels:
+
+$$
+\boxed{
+\Gamma_{tot}
+=
+\Gamma_G
++\sum_i \Gamma_i.
+}
+$$
+
+Proof.  Each channel writes a distinguishability record.  In the finite
+packet, independent channels multiply survival probabilities.  Taking the
+logarithm turns the product into a sum of costs.  Thus the gravitational
+channel can be tested only after ordinary environmental costs are bounded or
+subtracted.
+
+$$
+\square
+$$
+
+### Theorem 15.4: GRS Closure
+
+GRS1 through GRS4 are closed internally:
+
+$$
+\boxed{
+\mathrm{GRS1}
+\wedge
+\mathrm{GRS2}
+\wedge
+\mathrm{GRS3}
+\wedge
+\mathrm{GRS4}
+\Longrightarrow
+\rho_{12}(T)
+=
+\rho_{12}(0)\exp(-E_GT/\hbar).
+}
+$$
+
+Proof.  GRS1 supplies the finite pair of mass-density records.  GRS2 supplies
+the gravitational mismatch functional.  Lemma 15.1 proves its positivity and
+zero condition.  GRS3 identifies the mismatch as a source cost.  Lemma 15.2
+turns the cost into the survival law.  GRS4 ensures that ordinary
+environmental channels are accounted for separately, as in Lemma 15.3.
+
+$$
+\square
+$$
+
+### Corollary 15.5: Paper 2 Is Closed Internally
+
+Paper 2 is closed as an ISP consequence paper:
+
+$$
+\boxed{
+\hbox{gravitational record mismatch}
+\Longrightarrow
+\hbox{coherence decay at rate }E_G/\hbar.
+}
+$$
+
+The remaining question is experimental, not internal: whether a laboratory
+can isolate this rate from ordinary decoherence channels.

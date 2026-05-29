@@ -290,3 +290,108 @@ $$
 This is the platform for Papers 4-13.  Phase, entanglement, measurement, error
 correction, fault tolerance, topology, algorithms, BQP, physical limits, and
 factoring bounds are all refinements of this one statement.
+
+## 14. Formal Closure
+
+### Definition 14.1: Finite Coherent Circuit Packet
+
+A finite coherent circuit packet is:
+
+$$
+\boxed{
+{\mathcal C}
+=
+(
+{\mathcal R}_{in},
+{\mathcal R}_{work},
+{\mathcal R}_{out},
+K_1,\ldots,K_m,
+{\mathcal M}_{out},
+{\mathcal L}
+).
+}
+$$
+
+Here the \(K_j\) are finite same-actual transports, \({\mathcal M}_{out}\) is
+the intended final record-stabilizing interface, and \({\mathcal L}\) is the
+forbidden leakage ledger.
+
+### Lemma 14.2: Gate Descent
+
+If each physical transport \(K_j\) has the same finite readout statistics as
+the intended unitary gate \(U_j\) on the licensed interface, then the composed
+packet descends to the standard circuit transport:
+
+$$
+\boxed{
+K_m\cdots K_1
+\Downarrow
+U_m\cdots U_1.
+}
+$$
+
+Proof.  Descent is stable under composition because the output interface of
+each gate is the input interface of the next.  Equality of finite transition
+statistics on each interface therefore propagates inductively through the
+circuit depth.
+
+$$
+\square
+$$
+
+### Lemma 14.3: Same-Actual Preservation
+
+If the leakage ledger remains below the branch distinguishability threshold:
+
+$$
+\boxed{
+{\mathcal L}<{\mathcal L}_{crit},
+}
+$$
+
+then branch alternatives remain coherent until the final measurement.
+
+Proof.  A branch becomes classical only when an uncontrolled record can
+distinguish it.  Below the threshold, every uncontrolled channel has
+insufficient finite response to separate the branch alternatives.  Therefore
+interference terms remain licensed in the effective circuit interface.
+
+$$
+\square
+$$
+
+### Theorem 14.4: Circuit Statistics Theorem
+
+Under gate descent, same-actual preservation, subthreshold leakage, and final
+record stabilization, the observed output distribution equals the standard
+quantum circuit distribution:
+
+$$
+\boxed{
+P_{\mathcal C}(o)
+=
+\langle o|U_m\cdots U_1\rho_{in}U_1^\dagger\cdots U_m^\dagger|o\rangle.
+}
+$$
+
+Proof.  Lemma 14.2 gives the effective circuit transport.  Lemma 14.3 keeps
+uncontrolled records from replacing the coherent transport by a premature
+classical mixture.  The final interface \({\mathcal M}_{out}\) stabilizes only
+the intended output record.  The Born distribution of that effective transport
+is therefore the observed output frequency distribution.
+
+$$
+\square
+$$
+
+### Corollary 14.5: Paper 3 Closure
+
+Paper 3 is closed as the root v5 quantum-computing translation:
+
+$$
+\boxed{
+\hbox{quantum circuit}
+\Longleftrightarrow
+\hbox{finite coherent record transport with final output stabilization}.
+}
+$$

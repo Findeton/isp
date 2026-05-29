@@ -168,3 +168,116 @@ Paper 10 develops the algorithmic thesis: quantum algorithms work when they
 engineer finite transports so answer-compatible records are the records most
 likely to stabilize.  This is a precise alternative to the misleading image of
 many worlds trying all answers independently.
+
+## 14. Formal Closure
+
+### Definition 14.1: Record-Amplification Algorithm
+
+A record-amplification algorithm is a finite transport packet:
+
+$$
+\boxed{
+{\mathcal A}
+=
+(
+{\mathcal R}_{cand},
+{\mathcal R}_{good},
+K,
+{\mathcal M}_{out}
+)
+}
+$$
+
+where \(K\) increases the stabilization weight of answer-compatible records
+relative to answer-incompatible records.
+
+### Lemma 14.2: Amplitude Amplification Is Weight Rotation
+
+In the two-dimensional good-bad subspace:
+
+$$
+\boxed{
+K^q
+:
+w_{good}
+\longmapsto
+\sin^2((2q+1)\theta).
+}
+$$
+
+Proof.  The oracle reflection and diffusion reflection generate a rotation in
+the span of the good and bad components.  The final measurement stabilizes the
+good record with the displayed rotated weight.  Thus amplitude amplification
+is record-weight rotation, not enumeration of all candidates.
+
+$$
+\square
+$$
+
+### Lemma 14.3: Period Finding Is Holonomy Compression
+
+Period finding is efficient when the hidden period is encoded as a compact
+transport defect:
+
+$$
+\boxed{
+\hbox{hidden period}
+\longrightarrow
+\hbox{controlled transport holonomy}
+\longrightarrow
+\hbox{finite period record}.
+}
+$$
+
+Proof.  Modular exponentiation creates a periodic transport structure.  The
+Fourier interface converts that structure into a finite record concentrated
+near rational multiples of the inverse period.  Classical postprocessing then
+extracts the period from the stable record.
+
+$$
+\square
+$$
+
+### Lemma 14.4: Simulation Is Target Transport Emulation
+
+A quantum simulation succeeds when finite observables of the simulated device
+match finite observables of the target transport:
+
+$$
+\boxed{
+P_{\mathrm{device}}(r)
+=
+P_{\mathrm{target}}(r)
+}
+$$
+
+for every licensed output record \(r\).
+
+Proof.  Simulation does not need to copy an entire hidden state.  It needs to
+reproduce the finite record statistics requested by the experiment.  A device
+that matches those finite statistics emulates the target transport at the
+specified resolution.
+
+$$
+\square
+$$
+
+### Theorem 14.5: Paper 10 Closure
+
+Quantum algorithms are record-amplification machines:
+
+$$
+\boxed{
+\hbox{algorithmic advantage}
+=
+\hbox{efficient transport that amplifies answer-compatible records}.
+}
+$$
+
+Proof.  Lemma 14.2 closes amplitude amplification.  Lemma 14.3 closes period
+finding.  Lemma 14.4 closes simulation.  The table in Section 12 is therefore
+not only a dictionary but a common theorem schema.
+
+$$
+\square
+$$

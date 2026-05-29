@@ -207,3 +207,120 @@ Paper 6 develops measurement as a controlled record phase transition inside
 quantum computing.  It explains why reading the final answer is necessary,
 why reading the logical branch too early is fatal, and why syndrome records
 can be useful rather than destructive.
+
+## 14. Formal Closure
+
+### Definition 14.1: Stabilization Channel
+
+A stabilization channel is a finite map:
+
+$$
+\boxed{
+{\mathcal S}
+:
+{\mathcal R}_{amb}
+\longrightarrow
+{\mathcal R}_{act}
+}
+$$
+
+from unresolved alternatives to stable records, equipped with weights:
+
+$$
+\boxed{
+w_i\ge0,
+\qquad
+\sum_i w_i=1.
+}
+$$
+
+### Lemma 14.2: Born Weights Are Stabilization Weights
+
+If the effective interface is Hilbert-reconstructible and the final record
+basis is fixed, the stabilization weights are:
+
+$$
+\boxed{
+w_i
+=
+|\langle i|\psi\rangle|^2.
+}
+$$
+
+Proof.  The v4 reconstruction gives the Hilbert interface and Born rule for
+finite readouts.  Paper 6 adds the physical interpretation: these weights are
+the probabilities with which the unresolved alternatives become stable final
+records.  No new probability rule is added.
+
+$$
+\square
+$$
+
+### Lemma 14.3: Premature Measurement Is Harmful Exactly When It Stabilizes A
+Logical Branch
+
+Let \(B_L\) be the logical branch label and \(R_E\) an uncontrolled
+environmental record.  Premature measurement is harmful exactly when:
+
+$$
+\boxed{
+I(B_L;R_E)>0
+}
+$$
+
+at a stage where branch coherence is still required.
+
+Proof.  If the environmental record carries no logical branch information, it
+can be treated as syndrome, gauge, or irrelevant noise.  If it carries logical
+branch information, it stabilizes a distinction that the computation still
+needed to keep same-actual.  That is precisely premature measurement.
+
+$$
+\square
+$$
+
+### Lemma 14.4: Echo Reversibility Is Equivalent To Absence Of Stable Branch
+Records
+
+An echo can restore interference exactly when no stable record has separated
+the branch alternatives:
+
+$$
+\boxed{
+\mathrm{Echo\ succeeds}
+\Longleftrightarrow
+I(B_L;R_{stable})=0
+}
+$$
+
+within the licensed record packet.
+
+Proof.  A reversible transport can undo coherent phase and amplitude changes.
+It cannot undo the existence of an actual stable branch record without erasing
+that record.  Therefore echo success is equivalent to the absence of stable
+branch distinguishability in the packet.
+
+$$
+\square
+$$
+
+### Theorem 14.5: Paper 6 Closure
+
+Measurement is controlled record stabilization:
+
+$$
+\boxed{
+\hbox{measurement}
+=
+\hbox{stabilization of a selected finite record interface}.
+}
+$$
+
+Proof.  Definition 14.1 defines stabilization.  Lemma 14.2 identifies the
+weights with the reconstructed Born weights.  Lemma 14.3 distinguishes useful
+readout from harmful premature logical measurement.  Lemma 14.4 supplies the
+reversibility criterion.  The measurement translation is therefore closed.
+
+$$
+\square
+$$

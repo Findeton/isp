@@ -173,3 +173,93 @@ logical record stabilization until the final sector measurement.
 Paper 9 fully aligns topological quantum computing with ISP: compute by
 protected holonomy, resist local record leakage through global encoding, and
 stabilize the result only at fusion readout.
+
+## 13. Formal Closure
+
+### Definition 13.1: Protected Holonomy Code
+
+A protected holonomy code is:
+
+$$
+\boxed{
+{\mathcal T}
+=
+(
+{\mathcal F},
+{\mathcal B},
+\rho,
+{\mathcal A}_{loc},
+{\mathcal M}_{fusion}
+).
+}
+$$
+
+Here \({\mathcal F}\) is the fusion-sector record space, \({\mathcal B}\) is
+the braid group, \(\rho\) is its representation, \({\mathcal A}_{loc}\) is
+the local perturbation algebra, and \({\mathcal M}_{fusion}\) is final readout.
+
+### Lemma 13.2: Braid Computation Is Holonomy Transport
+
+For any braid word \(B\), the logical action is:
+
+$$
+\boxed{
+U_B
+=
+\rho(B).
+}
+$$
+
+It depends only on the braid class, up to errors that create detectable local
+records.
+
+Proof.  Topological protection identifies microscopic path deformations that
+do not change the braid class.  The finite logical record is the fusion
+sector, and the braid representation transports that sector.  Therefore the
+computation is protected holonomy.
+
+$$
+\square
+$$
+
+### Lemma 13.3: Local Perturbations Are Harmless Below Code Scale
+
+If a local perturbation cannot distinguish the global fusion sector:
+
+$$
+\boxed{
+D_{loc}({\mathcal F})=0
+}
+$$
+
+within the code distance, then it cannot collapse the logical record.
+
+Proof.  A local perturbation writes only local records.  Topological encoding
+stores the logical record nonlocally.  If local records have zero
+distinguishability on the fusion sector, they cannot stabilize the logical
+branch.  They may create correctable local excitations, but not a logical
+measurement.
+
+$$
+\square
+$$
+
+### Theorem 13.4: Paper 9 Closure
+
+Topological quantum computation is protected noncommuting holonomy:
+
+$$
+\boxed{
+\hbox{topological computation}
+=
+\hbox{braid holonomy protected against local record leakage}.
+}
+$$
+
+Proof.  Lemma 13.2 gives the computational action.  Lemma 13.3 gives the
+protection condition.  Final fusion measurement supplies the intended stable
+record.  This closes the topological translation.
+
+$$
+\square
+$$

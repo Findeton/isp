@@ -171,3 +171,75 @@ Paper 11 develops the complexity claim: BQP is the class of answer records
 that finite coherent transport can stabilize efficiently with bounded error.
 This preserves the standard theory while making its physical ontology
 explicit.
+
+## 14. Formal Closure
+
+### Definition 14.1: Efficiently Stabilizable Record Class
+
+A language \(L\) belongs to the efficiently stabilizable record class when
+there is a uniform polynomial family of finite coherent transport packets
+\({\mathcal C}_n\) such that:
+
+$$
+\boxed{
+\Pr[{\mathcal C}_n(x)=L(x)]
+\ge
+{2\over 3}.
+}
+$$
+
+The packet size, depth, control description, and final stabilization interface
+are all polynomial in the input length.
+
+### Lemma 14.2: Standard BQP Implies Efficient Record Stabilization
+
+Every uniform BQP circuit family defines an efficiently stabilizable record
+family.
+
+Proof.  A BQP circuit is a polynomial uniform sequence of unitary gates with a
+final measurement.  Paper 3 translates each gate into finite coherent record
+transport and the final measurement into output stabilization.  The bounded
+error condition is exactly the probability bound in Definition 14.1.
+
+$$
+\square
+$$
+
+### Lemma 14.3: Efficient Record Stabilization Implies Standard BQP
+
+Every efficiently stabilizable record family with unitary gate descent defines
+a BQP circuit family.
+
+Proof.  Gate descent maps the finite transport packet to a polynomial-size
+uniform circuit over a universal gate set, up to standard approximation
+overhead.  The final stabilized record is the circuit measurement outcome.
+The bounded error is preserved by the descent.
+
+$$
+\square
+$$
+
+### Theorem 14.4: ISP-BQP Equals BQP Under Circuit Descent
+
+Under the circuit-descent gate:
+
+$$
+\boxed{
+\mathrm{ISP\mbox{-}BQP}
+=
+\mathrm{BQP}.
+}
+$$
+
+Proof.  Lemma 14.2 gives one inclusion.  Lemma 14.3 gives the reverse
+inclusion.  Thus the ISP formulation changes the interpretation of the
+resource but not the mathematical complexity class.
+
+$$
+\square
+$$
+
+### Corollary 14.5: Paper 11 Closure
+
+BQP is the class of decision records efficiently stabilized by finite coherent
+transport with bounded error.

@@ -208,3 +208,111 @@ Paper 12 develops a physical resource bound: a quantum computer is limited by
 the integrated branch-distinguishing record cost.  Standard engineering noise
 models remain valid, but ISP says what they are all measuring at the deepest
 level: premature logical record formation.
+
+## 14. Formal Closure
+
+### Definition 14.1: Total Branch-Distinguishing Record Cost
+
+For a computation of duration \(T\), define:
+
+$$
+\boxed{
+R_{tot}(T)
+=
+\int_0^T
+\sum_\alpha
+\Gamma_\alpha(t)\,dt.
+}
+$$
+
+The channels \(\alpha\) include dephasing, relaxation, leakage, crosstalk,
+measurement backaction, thermal records, control records, and any
+gravitational mismatch channel.
+
+### Lemma 14.2: Record Costs Add For Independent Channels
+
+If branch survival factors multiply, then costs add:
+
+$$
+\boxed{
+S_{tot}
+=
+\prod_\alpha S_\alpha
+\quad
+\Longrightarrow
+\quad
+R_{tot}
+=
+\sum_\alpha R_\alpha.
+}
+$$
+
+Proof.  Each independent channel contributes an exponential survival factor.
+The negative logarithm of the product is the sum of the negative logarithms.
+Thus the integrated record costs add.
+
+$$
+\square
+$$
+
+### Lemma 14.3: Computation Requires Cost Below Margin
+
+Let \(M_{FT}\) be the distinguishability margin supplied by error correction,
+fault tolerance, and final readout.  Successful coherent computation requires:
+
+$$
+\boxed{
+R_{tot}<M_{FT}.
+}
+$$
+
+Proof.  If the integrated uncontrolled record cost exceeds the margin, some
+uncontrolled channel can stabilize enough logical branch information to
+destroy same-actual preservation before intended readout.  If the cost remains
+below the margin, the branch information is either unrecorded or absorbed into
+correctable syndrome records.
+
+$$
+\square
+$$
+
+### Lemma 14.4: Gravitational Term Is A Special Case Of Record Cost
+
+For mass-distribution alternatives:
+
+$$
+\boxed{
+R_G
+=
+{E_G T\over \hbar}.
+}
+$$
+
+Proof.  Paper 2 proves the gravitational survival rate.  Multiplying the rate
+by the computation time gives the integrated record cost.  For ordinary
+microscopic qubits this term is negligible; for mesoscopic mass-separated
+hardware it becomes part of the same budget.
+
+$$
+\square
+$$
+
+### Theorem 14.5: Paper 12 Closure
+
+The physical limit statement is:
+
+$$
+\boxed{
+R_{tot}<M_{FT}
+\quad
+\hbox{is necessary for scalable coherent computation.}
+}
+$$
+
+Proof.  Lemma 14.2 gives the additive cost ledger.  Lemma 14.3 gives the
+success condition.  Lemma 14.4 embeds the gravitational channel.  Therefore
+Paper 12 is closed as a physical record-cost bound.
+
+$$
+\square
+$$

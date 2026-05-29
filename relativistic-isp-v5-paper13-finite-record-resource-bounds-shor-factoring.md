@@ -283,3 +283,128 @@ Paper 13 becomes valuable when it supplies the period-record leakage
 functional.  It does not refute Shor.  It identifies the physical invariant a
 real Shor machine must protect: the hidden period must remain an unresolved
 same-actual record until the intended phase-estimation readout stabilizes it.
+
+## 18. Formal Closure
+
+### Definition 18.1: Period-Record Leakage
+
+For a Shor computation, let \(R\) be the hidden period record and let \(E_t\)
+be all uncontrolled records available before intended phase-estimation
+readout.  Define:
+
+$$
+\boxed{
+L_{period}(t)
+=
+I(R;E_t).
+}
+$$
+
+The information quantity is external bookkeeping for the finite record
+distinguishability of the hidden period.
+
+### Definition 18.2: Period Margin
+
+The period margin is the amount of distinguishability the intended readout can
+tolerate while still reconstructing the period with bounded error:
+
+$$
+\boxed{
+M_{period}
+=
+\hbox{minimum readout margin needed for successful continued-fraction
+reconstruction}.
+}
+$$
+
+### Lemma 18.3: Shor Success Requires Submargin Period Leakage
+
+Successful period finding requires:
+
+$$
+\boxed{
+L_{period}(T_{readout})
+<
+M_{period}.
+}
+$$
+
+Proof.  If uncontrolled records contain period-correlated information above
+the margin, then the period alternatives have been partially stabilized before
+the intended Fourier readout.  That destroys or biases the coherent
+holonomy-to-period conversion.  If the leakage remains below the margin, the
+intended phase-estimation readout is still the dominant stabilizing period
+record.
+
+$$
+\square
+$$
+
+### Lemma 18.4: Syndrome Records Are Allowed When Period-Independent
+
+Error correction is compatible with Shor when:
+
+$$
+\boxed{
+I(S;R)\approx0,
+\qquad
+I(S;E)>0.
+}
+$$
+
+Proof.  Syndrome histories should record physical faults, not the hidden
+period.  If the syndrome is period-independent, it preserves the same-actual
+period alternatives while still enabling recovery.  If it becomes
+period-correlated, it is part of \(L_{period}\).
+
+$$
+\square
+$$
+
+### Lemma 18.5: No General Factoring No-Go Follows
+
+The leakage inequality does not imply:
+
+$$
+\boxed{
+\hbox{large-scale factoring is impossible}.
+}
+$$
+
+Proof.  A no-go theorem would require a lower bound showing that every
+physical architecture must satisfy:
+
+$$
+\boxed{
+L_{period}\ge M_{period}.
+}
+$$
+
+Paper 13 proves no such architecture-independent lower bound.  It identifies
+the invariant that must be protected.
+
+$$
+\square
+$$
+
+### Theorem 18.6: Paper 13 Closure
+
+The finite-record resource bound for Shor factoring is:
+
+$$
+\boxed{
+\hbox{Shor succeeds physically only if }
+L_{period}<M_{period}
+\hbox{ until intended readout.}
+}
+$$
+
+Proof.  Definition 18.1 defines the harmful period-correlated leakage.
+Definition 18.2 defines the readout margin.  Lemma 18.3 proves the necessary
+submargin condition.  Lemma 18.4 shows how error correction can coexist with
+that condition.  Lemma 18.5 states the no-go boundary.  Thus Paper 13 is
+closed without denying the standard Shor theorem.
+
+$$
+\square
+$$

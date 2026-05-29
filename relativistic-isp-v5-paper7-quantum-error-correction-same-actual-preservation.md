@@ -192,3 +192,126 @@ only when a chain of local faults forms a global distinguishing record.
 Paper 7 turns error correction into the central ISP engineering principle:
 record the errors, not the computation.  It explains why measurement can be
 both dangerous and essential, depending on which finite record is stabilized.
+
+## 14. Formal Closure
+
+### Definition 14.1: Same-Actual Code Packet
+
+A code packet consists of:
+
+$$
+\boxed{
+{\mathcal Q}
+=
+(
+{\mathcal H}_{code},
+{\mathcal E},
+{\mathcal S},
+{\mathcal R},
+{\mathcal L}
+).
+}
+$$
+
+Here \({\mathcal E}\) is the correctable error set, \({\mathcal S}\) is the
+syndrome record algebra, \({\mathcal R}\) is the recovery map, and
+\({\mathcal L}\) is the logical record algebra.
+
+### Lemma 14.2: Knill-Laflamme Is Same-Actual Preservation
+
+The standard condition:
+
+$$
+\boxed{
+P E_a^\dagger E_b P
+=
+c_{ab}P
+}
+$$
+
+is equivalent to saying that correctable error records do not distinguish
+logical alternatives.
+
+Proof.  The operator \(E_a^\dagger E_b\) compares two error histories inside
+the code space.  If its compression is proportional to the code projector,
+then it has the same value on every logical vector.  The syndrome can identify
+the error class, but it cannot identify the logical branch.
+
+$$
+\square
+$$
+
+### Lemma 14.3: Syndrome Measurement Is Harmless Exactly When It Commutes With
+Logical Distinguishability
+
+For a syndrome history \(S\), QEC preserves same-actual logical records when:
+
+$$
+\boxed{
+I(S;L)=0
+}
+$$
+
+for the protected logical label \(L\), while:
+
+$$
+\boxed{
+I(S;E)>0
+}
+$$
+
+for the physical error class \(E\).
+
+Proof.  Syndrome measurement is useful only if it records error information.
+It is harmful only if it records logical information.  Thus the two mutual
+information statements are exactly the selective-measurement criterion.
+
+$$
+\square
+$$
+
+### Lemma 14.4: Distance Is Minimum Logical Record Path
+
+The code distance is the minimum weight of a physical record path that can
+separate logical alternatives:
+
+$$
+\boxed{
+d
+=
+\min
+\{
+|P|:
+P\hbox{ creates a logical distinguishing record}
+\}.
+}
+$$
+
+Proof.  In stabilizer and topological codes, errors below distance are either
+detectable syndrome records or stabilizer-equivalent changes.  A logical
+operator is precisely an undetected path connecting distinct logical records.
+The minimum weight of such a path is the distance.
+
+$$
+\square
+$$
+
+### Theorem 14.5: Paper 7 Closure
+
+Quantum error correction is same-actual preservation:
+
+$$
+\boxed{
+\hbox{QEC succeeds}
+\Longleftrightarrow
+\hbox{errors are recorded while logical branches remain unresolved}.
+}
+$$
+
+Proof.  Lemma 14.2 translates the Knill-Laflamme condition.  Lemma 14.3 states
+the syndrome criterion.  Lemma 14.4 identifies distance as the minimum
+forbidden logical record path.  Therefore Paper 7 is closed.
+
+$$
+\square
+$$

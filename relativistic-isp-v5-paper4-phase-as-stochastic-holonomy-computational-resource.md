@@ -249,3 +249,106 @@ Paper 4 identifies the first nonclassical resource of ISP quantum computing:
 algorithmic phase is record-visible holonomy.  It is useful when a circuit can
 protect the holonomy until readout and then convert it into a stable answer
 record.
+
+## 15. Formal Closure
+
+### Definition 15.1: Transport Holonomy Ledger
+
+For a finite circuit packet, define the holonomy ledger:
+
+$$
+\boxed{
+{\mathcal H}_{\gamma}
+=
+K_{\gamma_n}\cdots K_{\gamma_1}
+K_{\gamma_0}^{-1}
+}
+$$
+
+where the word \(\gamma\) compares two licensed transport paths with the same
+classical endpoints.
+
+### Lemma 15.2: Phase Is The Abelian Holonomy Class
+
+When the effective transported sector is one-dimensional, the holonomy ledger
+reduces to a phase class:
+
+$$
+\boxed{
+{\mathcal H}_{\gamma}
+=
+e^{i\theta_{\gamma}}.
+}
+$$
+
+Proof.  A one-dimensional unitary automorphism is multiplication by a unit
+complex number.  The path dependence of the finite transport is therefore
+fully captured by the angle \(\theta_{\gamma}\), modulo the record resolution
+of the readout packet.
+
+$$
+\square
+$$
+
+### Lemma 15.3: Phase Estimation Is Finite Holonomy Readout
+
+Controlled powers amplify the holonomy angle into a binary readout register:
+
+$$
+\boxed{
+e^{i\theta}
+\longmapsto
+\hbox{finite record approximation to }\theta.
+}
+$$
+
+Proof.  Controlled powers convert the phase into relative rotations across
+control records.  The inverse Fourier interface maps those rotations into a
+stable finite output record.  The algorithm reads the holonomy class, not a
+pre-existing classical list of all alternatives.
+
+$$
+\square
+$$
+
+### Lemma 15.4: Holonomy Protection Condition
+
+Let \(L_{phase}\) be the leakage that distinguishes holonomy alternatives.
+Successful phase readout requires:
+
+$$
+\boxed{
+L_{phase}<\Delta\theta.
+}
+$$
+
+Proof.  If leakage is larger than the required phase resolution, the
+environment already stores enough information to smear or stabilize the
+wrong holonomy class before the intended Fourier readout.  If leakage remains
+below the readout margin, the intended output interface is the first stable
+record of the phase class.
+
+$$
+\square
+$$
+
+### Theorem 15.5: Paper 4 Closure
+
+Algorithmic phase is stochastic holonomy made record-visible:
+
+$$
+\boxed{
+\hbox{protected finite transport holonomy}
+\Longrightarrow
+\hbox{computational phase resource}.
+}
+$$
+
+Proof.  Lemma 15.2 identifies phase with the abelian holonomy class.  Lemma
+15.3 proves that phase estimation reads this class as a finite record.  Lemma
+15.4 states the exact protection condition.  Thus the phase resource is fully
+translated and closed.
+
+$$
+\square
+$$

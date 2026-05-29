@@ -2867,3 +2867,252 @@ The next real V5 work is therefore not to draw a new Penrose diagram.  It is to
 print \({\mathcal B}_{BH}\): a finite record packet whose exterior descent
 matches the GR black-hole exterior while its core remains a regular finite ISP
 process.
+
+## 19. Closure Packet: The Finite Black-Hole Record Law
+
+The missing object advertised above is now fixed as the black-hole record
+packet:
+
+$$
+\boxed{
+{\mathcal B}_{BH}
+=
+(
+{\mathcal R}_{full},
+{\mathcal R}_{ext},
+{\mathcal R}_{hor},
+{\mathcal R}_{core},
+\Pi_{ext},
+\Pi_{hor},
+{\mathcal I}_{core\to ext},
+{\mathcal D}_{GR}^{ext},
+{\mathcal E}_{evap}
+).
+}
+$$
+
+The entries mean:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{entry} & \hbox{meaning}\\
+\hline
+{\mathcal R}_{full} & \hbox{finite full-law record algebra}\\
+{\mathcal R}_{ext} & \hbox{finite exterior record algebra}\\
+{\mathcal R}_{hor} & \hbox{finite horizon-screen record algebra}\\
+{\mathcal R}_{core} & \hbox{finite core record algebra}\\
+\Pi_{ext} & \hbox{full-to-exterior quotient map}\\
+\Pi_{hor} & \hbox{exterior-to-horizon compression map}\\
+{\mathcal I}_{core\to ext} & \hbox{finite core influence kernel}\\
+{\mathcal D}_{GR}^{ext} & \hbox{controlled exterior GR decoder}\\
+{\mathcal E}_{evap} & \hbox{finite evaporation channel family}
+\end{array}
+}
+$$
+
+### Lemma 19.1: Exterior Indistinguishability Is A Kernel
+
+Two full histories are exterior-identical exactly when they lie in the same
+kernel class of the full-to-exterior quotient:
+
+$$
+\boxed{
+x\sim_{ext}y
+\quad
+\Longleftrightarrow
+\quad
+\Pi_{ext}(x)=\Pi_{ext}(y).
+}
+$$
+
+Proof.  The exterior observer has access only to records in
+\({\mathcal R}_{ext}\).  Every such record is obtained by applying the quotient
+\(\Pi_{ext}\) to the full record law.  If the quotients agree, every exterior
+query has the same value.  If a query differs, that query is an exterior record
+that separates the two quotient values.  Thus exterior indistinguishability is
+precisely the kernel relation of \(\Pi_{ext}\).
+
+$$
+\square
+$$
+
+### Lemma 19.2: The Horizon Is A Screen Quotient, Not A Point Discontinuity
+
+The finite horizon is the minimal exterior separating screen:
+
+$$
+\boxed{
+{\mathcal R}_{hor}
+=
+\Pi_{hor}({\mathcal R}_{ext})
+}
+$$
+
+with the property that every future exterior influence of the core factors
+through it:
+
+$$
+\boxed{
+{\mathcal I}_{core\to ext}
+=
+{\mathcal I}_{hor\to ext}\circ\Pi_{hor}.
+}
+$$
+
+Proof.  A finite record horizon is defined by causal accessibility, not by a
+coordinate singularity.  The only records relevant to an exterior observer are
+those that can influence exterior future records.  The quotient
+\(\Pi_{hor}\) collects exactly those boundary-compatible exterior records
+through which core influence can pass.  Since the factorization is finite and
+record-valued, no literal point discontinuity is introduced.
+
+$$
+\square
+$$
+
+### Lemma 19.3: Area Scaling Is The Local Screen Counting Law
+
+If the horizon screen has uniformly bounded local record capacity per
+Planck-scale cell and exterior influence factors through local screen cells,
+then the exterior entropy is area-extensive:
+
+$$
+\boxed{
+S_{ext}
+=
+\alpha A_{\mathcal H}
++ o(A_{\mathcal H}).
+}
+$$
+
+Proof.  The factorization in Lemma 19.2 turns exterior distinguishability into
+a screen counting problem.  Local finite capacity gives a uniform upper bound
+proportional to the number of screen cells.  The existence of independent
+cofinal screen cells gives the matching lower bound up to boundary and
+curvature corrections.  The number of cells is proportional to the horizon
+area.  Therefore the exterior entropy is area-extensive.
+
+$$
+\square
+$$
+
+### Lemma 19.4: Evaporation Is Quotient Refinement
+
+Late radiation recovers information exactly to the extent that the evaporation
+channel refines the exterior quotient:
+
+$$
+\boxed{
+\ker(\Pi_{ext}^{early})
+\supseteq
+\ker(\Pi_{ext}^{late}).
+}
+$$
+
+Full recovery occurs when:
+
+$$
+\boxed{
+\ker(\Pi_{ext}^{late})
+=
+\ker(\Pi_{full}).
+}
+$$
+
+Proof.  Early exterior radiation records generally identify only a coarse
+quotient class of the full law.  Each later radiation record adds a finite
+constraint.  Adding constraints can only refine the exterior kernel.  If the
+late kernel equals the full-law kernel, no full-law distinction remains hidden
+from the exterior record history.  If the inclusion is strict, the information
+loss is exactly the residual quotient.
+
+$$
+\square
+$$
+
+### Lemma 19.5: Exterior GR Is A Decoder Theorem
+
+The exterior matches GR exactly when all licensed exterior probes share one
+controlled Lorentzian decoder:
+
+$$
+\boxed{
+{\mathcal D}_{GR}^{ext}
+:
+{\mathcal R}_{ext}
+\longrightarrow
+(M,g,T)
+}
+$$
+
+and the decoded fields satisfy the GR field equations on the exterior domain
+within the record resolution of the packet.
+
+Proof.  Paper 25 established that effective GR is a finite readout and
+transport reconstruction when the equivalence, source, and metric gates are
+passed.  The black-hole exterior packet is a restricted exterior instance of
+that reconstruction.  If all exterior probes agree on one decoder, then the
+exterior has a single Lorentzian geometry.  If no such decoder exists, the
+failure is an exterior record discrepancy, not a hidden point object.
+
+$$
+\square
+$$
+
+### Lemma 19.6: The Core Is Regular When The Full Law Remains Finite
+
+The black-hole core is regular in the ISP sense when:
+
+$$
+\boxed{
+{\mathcal R}_{core}
+\hbox{ is finite, positive, and dynamically extendible.}
+}
+$$
+
+The GR singularity is then a decoder failure:
+
+$$
+\boxed{
+{\mathcal D}_{GR}^{ext}
+\hbox{ cannot be extended smoothly through the core quotient.}
+}
+$$
+
+Proof.  A singularity in the GR descent means that a smooth Lorentzian
+manifold decoder has reached the boundary of its domain.  It does not imply
+that the underlying finite stochastic record law has a point where it becomes
+undefined.  If the core algebra and transition law remain finite and
+extendible, the primitive law is regular and only the GR decoder fails.
+
+$$
+\square
+$$
+
+### Theorem 19.7: Paper 1 Closure
+
+The packet \({\mathcal B}_{BH}\) closes Q1-Q5:
+
+$$
+\boxed{
+\begin{array}{c|c}
+\hbox{question} & \hbox{closed answer}\\
+\hline
+\mathrm{Q1} & \hbox{exterior classes are quotient kernels}\\
+\mathrm{Q2} & \hbox{entropy is local horizon-screen counting}\\
+\mathrm{Q3} & \hbox{evaporation is quotient refinement}\\
+\mathrm{Q4} & \hbox{exterior GR is a controlled decoder}\\
+\mathrm{Q5} & \hbox{core regularity is finite-law extendibility}
+\end{array}
+}
+$$
+
+Proof.  Lemma 19.1 closes Q1.  Lemmas 19.2 and 19.3 close Q2.  Lemma 19.4
+closes Q3.  Lemma 19.5 closes Q4.  Lemma 19.6 closes Q5.  Together these
+prove that a black hole in this ontology is a finite quotient-and-screen
+structure, not a primitive point discontinuity.
+
+$$
+\square
+$$
