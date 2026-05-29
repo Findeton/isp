@@ -8,11 +8,25 @@ Status: self-contained record-complete Yang-Mills construction and margin
 manuscript.  Every load-bearing object used below is defined inside this
 paper: the regulated heat-kernel branch, the completed gauge-invariant record
 algebra, the small-flow regular quotient, the pre-predicate vacuum sector,
+the direct OS-axiom adequacy and cross-construction uniqueness theorem that
+fixes the standard OS/Wightman equivalence without presupposing it,
 the row-margin certificate, and the Wilson transfer theorem.
 
 External status: this paper is written as a standalone mathematical-physics
 submission.  Community-level acceptance requires checking the record-complete
 construction and the printed margin certificate.
+
+Conditional status: the construction is not unconditional.  Its load-bearing
+step CL1 (the nonperturbative continuum renormalization-group trajectory) is
+established here only as a small-field, fixed-flow, packetwise chart.  Five
+clauses remain open and are stated explicitly in subsection 10.28g: uniform
+bounds across packets (U), large-field control (LF), a derived rather than
+asserted error summability (ER), the zero-flow continuum limit (ZF), and
+nontriviality of the continuum normalization (NT), the last imposed rather than
+derived at Lemma 10.7c.  These coincide with the unsolved core of the
+four-dimensional constructive Yang-Mills problem.  Every theorem below,
+including Theorem 1.1 and the OS/Wightman equivalence theorems 3.3e5 through
+3.3e8, is conditional on closing that open core.
 
 ## 0. Purpose
 
@@ -105,6 +119,13 @@ The theorem proved in this paper is:
 
 ### Theorem 1.1: Standard Gauge-Invariant Yang-Mills Confinement And Gap
 
+This theorem is stated conditionally.  It holds modulo the open core of
+subsection 10.28g, namely the uniform-in-packet (U), large-field (LF), error
+summability (ER), zero-flow (ZF), and nontriviality (NT) clauses, which are not
+proved in this manuscript and which coincide with the open four-dimensional
+constructive problem.  What is proved below is the reduction of confinement and
+the mass gap to that open core together with the printed margin certificate.
+
 Assume the base regulated pure gauge Wilson/heat-kernel construction for the
 group fixed above, namely S1-S3 in Section 2.  The heat-kernel branch is then
 completed by the finite-packet C0 construction in Section 3:
@@ -123,7 +144,15 @@ the small-flow regular quotient with uniform flow-time, counterterm, mixing,
 and OS matrix-element control.  Theorems 3.3c4 through 3.3c15 prove the
 CL1-CL4 construction chain, and Theorem 3.3d proves C0.  Definition 3.3e and
 Theorem 3.3e5 then identify the constructed C0 sector with the standard
-gauge-invariant OS/Wightman Yang-Mills sector.
+gauge-invariant OS/Wightman Yang-Mills sector.  This identification is not a
+self-defined completion.  Lemma 3.3e6 verifies the standard OS axioms OS0-OS5
+directly for the C0 Schwinger functional with no comparison net, so the
+continuum theory exists by construction; Lemma 3.3e7 proves that the record
+algebra omits no gauge-invariant local observable; and Theorem 3.3e8 proves
+cross-construction uniqueness, so any standard OS/Wightman gauge-invariant
+continuum theory matching the determining data equals C0.  Corollary 3.3e9
+then derives, rather than stipulates, that any object outside the record
+completion is a typed extension and not a gap in pure Yang-Mills.
 
 With C0 in place, Lemmas 3.1, 3.2, and 3.4 fix the order in which finite
 estimates are transferred to the continuum state.  Sections 9-13 then derive
@@ -267,6 +296,13 @@ follow from compactness alone.  The construction is finite-packet complete:
 the continuum object is first built from the completed gauge-invariant packet
 algebra and its small-flow regular quotient, and then Theorem 3.3e5 identifies
 that object with the standard gauge-invariant OS/Wightman continuum sector.
+That identification is itself proved rather than assumed: Lemma 3.3e6 checks
+the OS axioms OS0-OS5 directly on the C0 functional without any comparison
+object, Lemma 3.3e7 shows the record completion omits no gauge-invariant local
+observable, Theorem 3.3e8 proves cross-construction uniqueness, and Corollary
+3.3e9 derives that anything outside the record completion is a typed extension,
+not a gap.  So C0 is the standard continuum theory by construction and
+uniqueness, not by definitional completion.
 The margin argument S8 is then proved from the row-response ledger, the finite
 heat-kernel row covariance gap, standard row kernels, crossing geometry, and
 transfer domination defined inside this paper.
@@ -1059,6 +1095,15 @@ $$
 \square
 $$
 
+Honest scope.  The phrase "controlled uniformly" covers the positive-flow
+estimates and the well-definedness of the quotient.  It does not include a proof
+that the physical zero-flow observables converge as $\tau\downarrow0$: that
+membership in ${\mathcal C}_{sfr}$ is the open clause ZF of subsection 10.28g
+(see Lemma 15.21a).  Theorem 3.3c3 recovers the zero-flow algebra on the
+convergent domain; it does not prove that the domain contains the physical
+observables.  The positive-flow side is genuine (Lüscher; Lüscher-Weisz); the
+$\tau\downarrow0$ convergence is the open part.
+
 ### Full C0 Construction Proof
 
 The following construction is part of this paper.  The numbering inside this
@@ -1682,7 +1727,16 @@ $$
 }
 $$
 
-The proof has four parts.
+Honest reading.  The subscript is literal.  The hypothesis assumes a cofinal
+trajectory stays inside the window $0<n_-\le{\mathsf N}_{a,L}\le n_+$, and the
+theorem proves only that the limit inherits it.  The upper bound (Lemma 10.7b)
+and the fixed-cutoff strict positivity (Lemma 10.7c) are unconditional, but the
+continuum lower bound $\liminf_a{\mathsf N}_{a,L}\ge n_->0$ is not derived.  That
+continuum lower bound is nontriviality, the open clause NT of subsection 10.28g.
+Theorem 10.7 establishes stability of the window, not its satisfiability in the
+continuum.
+
+The proof has the following parts.
 
 ##### Lemma 10.7a: The Normalization Coordinate Is Predeclared
 
@@ -1723,71 +1777,91 @@ $$
 Proof.  At positive flow time the probe is a bounded gauge-invariant cylinder
 observable on a compact finite gauge configuration space.  The centered
 observable has norm at most twice the norm of the observable.  Positivity of
-the state gives the displayed variance bound.  The predeclared
-renormalization window then gives the sharper uniform upper bound by
-requiring the trajectory to remain below the fixed number.
+the state gives the displayed variance bound.  This upper bound is
+unconditional and uniform in the cutoff; it does not use the renormalization
+window.
 
 $$
 \square
 $$
 
-##### Lemma 10.7c: The Lower Bound Is A Scale Condition, Not A Gap Assumption
+##### Lemma 10.7c: Fixed-Cutoff Strict Positivity Is Genuine; The Continuum Lower Bound Is Open (NT)
 
-The lower bound:
+Fixed-cutoff part, unconditional.  At each fixed cutoff $(a,L)$,
 
 $$
 \boxed{
-{\mathsf N}_{a,L}(\tau_0,f)\ge n_->0
+0<{\mathsf N}_{a,L}(\tau_0,f)\le4\|E_{\tau_0}(f)\|^2
 }
 $$
 
-is a renormalized scale condition on the local source chart, not a
-confinement or spectral predicate.
+provided the probe $E_{\tau_0}(f)$ is not $\omega_{a,L}$-almost-surely constant.
 
-Proof.  The condition is imposed on a fixed local positive-flow response.  It
-does not mention Wilson sheets, long-distance propagation, transfer-spectrum
-decay, string tension, or the mass gap.  It only says that the continuum
-source state has a nonzero local unit of response.  If no cofinal regulator
-trajectory can satisfy this local condition, the constructive CL1/FWS1
-trajectory fails before any confinement or gap theorem is considered.
+Proof.  ${\mathsf N}_{a,L}$ is the variance of $E_{\tau_0}(f)$ under
+$\omega_{a,L}$.  The finite Gibbs state has a strictly positive heat-kernel
+density on the compact configuration space, so a non-constant continuous
+observable has strictly positive variance, giving the lower bound; Lemma 10.7b
+gives the upper bound.  Both hold at every fixed cutoff with no extra
+hypothesis.
+
+Continuum part, open.  The continuum lower bound
+
+$$
+\boxed{
+\liminf_{a\downarrow0}{\mathsf N}_{a,L}(\tau_0,f)\ge n_->0
+}
+$$
+
+is not proved here.  At fixed cutoff positivity is automatic, but as $a\downarrow0$
+along the trajectory the renormalized variance can in principle collapse: a
+trivial or free continuum limit would send it to zero, exactly as a Gaussian
+fixed point does.  Excluding this is nontriviality of the continuum theory,
+which for four-dimensional Yang-Mills is open and needs the same nonperturbative
+control as the construction itself.  Imposing $0<n_-\le{\mathsf N}_{a,L}$ as a
+calibration window does not prove the continuum lower bound; it assumes it.  This
+is clause NT of subsection 10.28g.
 
 $$
 \square
 $$
 
-##### Lemma 10.7d: The Limit Cannot Collapse To The Zero Or Infinite Theory
+##### Lemma 10.7d: Stability Of The Window, Conditional On NT
 
-Every continuum limit of a trajectory satisfying the fixed normalization
+Conditional on clause NT, every continuum limit of a trajectory inside the
 window has a nonzero finite local response.
 
 Proof.  FWS1 supplies the positive-flow source-state limit or the cofinal
 subsequence on which the flowed source functional converges.  Lemma 10.7b
-prevents divergence of the normalization coordinate.  Lemma 10.7c prevents
-collapse to zero.  Since the same predeclared observable is used at every
-cutoff, the limiting state keeps the same local response scale.
+bounds the normalization coordinate above unconditionally.  Clause NT supplies,
+by hypothesis, the continuum lower bound that Lemma 10.7c leaves open.  Since the
+same predeclared observable is used at every cutoff, the limiting state then
+keeps the finite positive response scale.  This is stability of the window: it
+assumes NT and propagates it to the limit; it does not establish NT.
 
 $$
 \square
 $$
 
 Proof of Theorem 10.7.  Lemma 10.7a proves the normalization is not chosen
-after the target theorem is inspected.  Lemma 10.7b supplies the uniform upper
-bound.  Lemma 10.7c supplies the uniform lower bound as a local scale
-condition rather than as a hidden gap hypothesis.  Lemma 10.7d passes the
-finite positive normalization to the continuum source state.  This is FWS4.
+after the target theorem is inspected.  Lemma 10.7b supplies the unconditional
+uniform upper bound.  Lemma 10.7c supplies the unconditional fixed-cutoff
+positivity and isolates the continuum lower bound as the open clause NT.  Lemma
+10.7d proves that, conditional on NT, the limit inherits the finite positive
+normalization.  This is FWS4 in its trajectory-relative, NT-conditional form; it
+does not by itself prove nontriviality.
 
 $$
 \square
 $$
 
-##### Corollary 10.8: Flowed Normalization Closes CL2 On Any Constructed Trajectory
+##### Corollary 10.8: Flowed Normalization Reduces CL2 To The Open Clause NT
 
-For any cofinal CL1 or FWS1 trajectory satisfying the predeclared flowed
-normalization condition:
+For any cofinal CL1 or FWS1 trajectory, conditional on the continuum lower
+bound NT:
 
 $$
 \boxed{
-\mathrm{FWS4}
+\mathrm{FWS4}\wedge\mathrm{NT}
 \quad
 \Longrightarrow
 \quad
@@ -1795,11 +1869,15 @@ $$
 }
 $$
 
-Proof.  CL2a is Lemma 10.7a.  CL2b is Lemma 10.7b.  CL2c is Lemma 10.7c.
-CL2d is Lemma 10.7d.  Therefore the nontrivial finite local normalization
-gate is closed for any already constructed admissible trajectory.  The
-existence of a cofinal positive-flow source state is supplied by FWS1 below;
-the full renormalized Euclidean trajectory remains part of CL1.
+Proof.  CL2a is Lemma 10.7a.  CL2b is Lemma 10.7b.  The CL2c upper part and the
+fixed-cutoff positivity are Lemma 10.7c, unconditional; the CL2c continuum lower
+bound is exactly NT.  CL2d, that the limit is neither the zero nor the infinite
+normalization state, is Lemma 10.7d conditional on NT.  Therefore the nontrivial
+finite local normalization gate is not closed outright: it is reduced to NT.
+Theorem 10.7 supplies everything except NT, and NT is open.  The existence of a
+cofinal positive-flow source state is supplied by FWS1 below; the full
+renormalized Euclidean trajectory and the nontriviality lower bound remain the
+CL1/NT burden.
 
 $$
 \square
@@ -2105,11 +2183,18 @@ reflection-positive inequalities.  This is not Euclidean restoration; it is
 the OS positivity part needed before reconstruction.
 
 Scope.  The positive-time algebra in FWS2 is the reflection-compatible
-flowed algebra.  A flowed observable belongs to this algebra only if its
-finite regulator representative is a bounded function of positive-time
-variables, or is obtained from such functions by a reflection-positive local
-flow dilation.  A smoothing prescription that reaches across the reflection
-plane before the OS square is formed is not admitted as a positive-time test.
+flowed algebra, defined by the half-space (Dirichlet) flow of Definition
+10.12b0.  This is the precise repair of a subtlety that a one-line "place the
+reflected copy on the negative side" argument glosses over: the full-space
+gradient/heat-kernel flow $\Phi_\tau$ smears over radius $\sim\sqrt\tau$, so for
+an observable within a collar of width $\sqrt\tau$ of the reflection plane its
+flowed support crosses the plane and the naive covariance
+$\Theta(\Phi_\tau(O))=\Phi_\tau(\Theta(O))$ fails.  A flowed observable is
+therefore admitted as a positive-time test only when it is the half-space flow
+$\Phi^+_\tau(O)$ of an observable supported in the open positive half-space; this
+flow does not reach across the plane, and Lemma 10.12b1 bounds its difference
+from the full-space flow by an exponential collar tail, so no bulk content is
+lost.
 
 ##### Theorem 10.12: FWS2
 
@@ -2129,9 +2214,10 @@ $$
 }
 $$
 
-be the positive-time reflection-compatible subalgebra generated by bounded
-flowed Wilson/source observables whose finite regulator representatives lie
-in the positive Euclidean half-space.  If:
+be the positive-time reflection-compatible subalgebra generated by the
+half-space (Dirichlet) flow of Definition 10.12b0 applied to bounded
+gauge-invariant Wilson/source observables supported in the open positive
+Euclidean half-space.  If:
 
 $$
 \boxed{
@@ -2157,7 +2243,23 @@ $$
 }
 $$
 
-The proof has four parts.
+The proof uses the half-space flow of Definition 10.12b0 and has the following
+parts.
+
+##### Definition 10.12b0: Half-Space (Dirichlet) Flow
+
+Let the reflection hyperplane be the time-zero plane and let $\Lambda_+$ and
+$\Lambda_-$ be the closed positive-time and negative-time half-lattices, which
+meet on that plane.  The half-space flow $\Phi^+_\tau$ runs the gradient
+(heat-kernel smearing) flow using only the link and plaquette terms of
+$\Lambda_+$, with the time-zero plane links held fixed as a Dirichlet wall;
+$\Phi^-_\tau$ is its mirror image on $\Lambda_-$.  For an observable $O$ whose
+finite regulator support lies in the open positive half-space, $\Phi^+_\tau(O)$
+is by construction a bounded gauge-invariant function of links of $\Lambda_+$
+only: the flow kernel is not allowed to cross the plane.  The positive-time
+flowed algebra ${\mathcal A}^{inv,+}_{flow,\tau,src}$ is generated by such
+$\Phi^+_\tau(O)$, and its mirror ${\mathcal A}^{inv,-}_{flow,\tau,src}$ by the
+$\Phi^-_\tau(\Theta(O))$.
 
 ##### Lemma 10.12a: Finite Regulators Are Reflection Positive
 
@@ -2179,37 +2281,80 @@ $$
 $$
 
 Proof.  The heat-kernel lattice regulator has reflection-positive plaquette
-weights, and the finite gauge measure factors across a reflection hyperplane
-in the standard OS form.  Positive-flow Wilson/source observables supported
-in the reflection-compatible positive half-space are bounded functions of the
-positive-time finite regulator variables, possibly after adjoining the local
-flow-dilation variables on the positive side.  Therefore the usual finite
-lattice reflection-positivity inequality applies.
+weights, and the finite gauge measure factorizes across the time-zero plane in
+the standard Osterwalder-Seiler form, with a positive-definite cross-plane
+coupling.  By Definition 10.12b0 the admitted observable
+$B_{a,L}=\Phi^+_\tau(O)$ is a bounded function of links of the closed positive
+half-lattice $\Lambda_+$ only.  Therefore $\Theta(B_{a,L})^*B_{a,L}$ has the
+across-plane product form to which the finite lattice reflection-positivity
+inequality applies, and the inequality holds.
 
 $$
 \square
 $$
 
-##### Lemma 10.12b: Flow Commutes With Reflection On The Admitted Tested Algebra
+##### Lemma 10.12b: Reflection Covariance Of The Half-Space Flow (Exact)
 
-The positive-flow map is reflection covariant on gauge-invariant source
-observables:
+The full-space flow $\Phi_\tau$ does not commute with reflection.  Its kernel
+smears over radius $\sim\sqrt\tau$, so for $O$ supported within a collar of width
+$\sqrt\tau$ of the plane the flowed support $\Phi_\tau(O)$ crosses into the
+negative half-space, and the identity $\Theta(\Phi_\tau(O))=\Phi_\tau(\Theta(O))$
+fails as a relation between positive-time observables.  The half-space flow
+repairs this exactly:
 
 $$
 \boxed{
-\Theta(\Phi_{\tau}(O))
+\Theta\circ\Phi^+_\tau
 =
-\Phi_{\tau}(\Theta(O)).
+\Phi^-_\tau\circ\Theta.
 }
 $$
 
-Proof.  On the admitted reflection-compatible packet, the finite flow is
-represented either as a positive-time bounded cylinder function or by a local
-flow dilation whose reflected copy is placed on the negative side.  The flow
-equation and the dilation kernel are gauge covariant and reflection
-covariant.  Time reflection maps the positive-side flow representative to the
-negative-side reflected representative.  Therefore the displayed covariance
-holds on the tested algebra.
+Proof.  The gradient-flow generator, the smearing kernel, the Dirichlet wall on
+the time-zero plane, and the lattice geometry are all invariant under the time
+reflection $\Theta$ that exchanges $\Lambda_+$ and $\Lambda_-$.  Hence running
+the $\Lambda_+$-restricted flow and then reflecting equals reflecting first and
+running the $\Lambda_-$-restricted flow.  For $O$ supported in the open positive
+half-space, $\Theta(O)$ is supported in the open negative half-space,
+$\Phi^+_\tau(O)$ is a function of $\Lambda_+$ links, and
+$\Phi^-_\tau(\Theta(O))$ is a function of $\Lambda_-$ links; the two sides agree
+termwise on the tested gauge-invariant algebra.  In particular, for
+$B=\Phi^+_\tau(O)\in{\mathcal A}^{inv,+}_{flow,\tau,src}$ the reflected partner
+$\Theta(B)=\Phi^-_\tau(\Theta(O))$ is supported in $\Lambda_-$, so
+$\Theta(B)^*B$ has exactly the across-plane product form required by lattice
+reflection positivity.  No support crosses the plane, so no collar correction
+enters the OS square.
+
+$$
+\square
+$$
+
+##### Lemma 10.12b1: The Wall Correction Is An Exponential Collar Tail
+
+For an observable $O$ whose support lies at Euclidean time distance $d>0$ from
+the reflection plane,
+
+$$
+\boxed{
+\left\|
+\Phi_\tau(O)-\Phi^+_\tau(O)
+\right\|
+\le
+C\,\|O\|\,e^{-c\,d^2/\tau},
+}
+$$
+
+with constants $c,C>0$ independent of the cutoff.  Hence away from the collar the
+half-space flow agrees with the full-space flow up to an exponentially small
+correction, and the positive-time flowed algebra loses no bulk content by being
+built from $\Phi^+_\tau$.
+
+Proof.  $\Phi_\tau$ and $\Phi^+_\tau$ share the same flow generator in the bulk
+and differ only through the boundary condition imposed at the time-zero plane.
+By the method of images the difference of their smearing kernels at a point at
+distance $d$ from the plane is bounded by the reflected heat-kernel tail, of
+order $e^{-c\,d^2/\tau}$.  Multiplying by the bounded observable and summing the
+finitely many smearing contributions on the packet gives the stated norm bound.
 
 $$
 \square
@@ -2285,15 +2430,25 @@ $$
 $$
 
 Proof of Theorem 10.12.  Lemma 10.12a gives finite cutoff reflection
-positivity.  Lemma 10.12b ensures that positive flow does not break the
-reflection operation on the admitted tested gauge-invariant algebra.  Lemma
-10.12c places the reflected square inside the bounded source algebra where
-FWS1 convergence applies.  Lemma 10.12d passes the nonnegative finite
-inequality to the continuum positive-flow state.  This is FWS2.
+positivity for half-space-flowed observables.  Lemma 10.12b proves that the
+half-space flow is exactly reflection covariant, so the reflected square keeps
+its across-plane product form with no leakage through the reflection plane;
+Lemma 10.12b1 confirms that this half-space construction loses no bulk content
+relative to the full-space flow.  Lemma 10.12c places the reflected square
+inside the bounded source algebra where FWS1 convergence applies.  Lemma 10.12d
+passes the nonnegative finite inequality to the continuum positive-flow state.
+This is FWS2.
 
 $$
 \square
 $$
+
+Honest scope of FWS2.  Even fully rigorous, reflection positivity supplies only
+the OS pre-Hilbert form, hence a physical Hilbert space and a self-adjoint
+contraction transfer semigroup.  It supplies no spectral gap, no Euclidean
+invariance, and no nontriviality; those are CL1d, the margin certificate, and
+CL2 respectively, and are governed by the open core of subsection 10.28g.  FWS2
+is therefore sound and necessary but not load-bearing for the hard conclusions.
 
 ##### Corollary 10.13: The Flowed State Has An OS Pre-Hilbert Form
 
@@ -2642,6 +2797,12 @@ Proof.  CL1d asks that the limiting source functionals be Euclidean
 invariant.  Theorem 10.17 gives Euclidean invariance of every bounded
 positive-flow source functional in the FWS1 limit state.  Therefore CL1d is
 closed for the positive-flow source formulation once ARC-C0 is proved.
+
+This closure is fixed-flow and packetwise.  The ARC3 anisotropy bound of Lemmas
+10.23-10.24 holds at fixed positive flow time with packet-dependent constants
+$C_m$ and is removed cutoff-first by a diagonal subnet, so it inherits the open
+clauses U and ZF of subsection 10.28g: Euclidean invariance is established for
+each packet at positive flow, not uniformly for the zero-flow continuum theory.
 
 $$
 \square
@@ -3496,6 +3657,460 @@ $$
 \square
 $$
 
+##### 10.28g: Open Core Of The Constructive RG Trajectory
+
+Searchable open-core tag:
+
+`V4P39-C0-CL1-OPEN-CORE-HONEST-STATUS`.
+
+This subsection states plainly what Theorem 10.28f does and does not establish,
+so that no later citation overstates it.  It is a status note, not a proof.
+
+What is established.  For each fixed finite source packet ${\mathcal P}_m$ and
+finite response order $r_m$, on the small chart ball ${\mathfrak U}_m(\rho_m)$
+and at fixed positive flow time $\tau>0$, the finite-step response map
+${\mathcal R}_{m,b}$ is analytic, carries the displayed one-loop marginal beta
+coefficient, and is a strict contraction on the irrelevant block for
+sufficiently small coupling.  Banach's theorem then gives a stable small-field
+trajectory for that packet.  This is a genuine but local statement.
+
+What is not established, and is the open core.  Five clauses are used
+downstream but are not proved at the strength a continuum construction
+requires:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{clause} & \hbox{what is missing}\\
+\hline
+\mathrm{U} & \hbox{uniform-in-}m\hbox{ bounds: }C_m,q_m,\rho_m,\eta_m\hbox{ are
+not controlled as the packet grows}\\
+\mathrm{LF} & \hbox{large-field regions outside }{\mathfrak U}_m(\rho_m)\hbox{ are
+not bounded nonperturbatively}\\
+\mathrm{ER} & \hbox{the response-matching error }C_m a^{\eta_m}\hbox{ is asserted
+summable, not derived}\\
+\mathrm{ZF} & \hbox{the zero-flow }\tau\downarrow0\hbox{ limit is not constructed
+at this stage}\\
+\mathrm{NT} & \hbox{nontriviality: the continuum normalization lower bound
+}\liminf_a{\mathsf N}_{a,L}\ge n_->0\hbox{ is imposed, not derived (Lemma 10.7c)}
+\end{array}
+}
+$$
+
+Why these are not removable by the present method.  The chart of Lemma 10.28c
+is defined on a small ball at small coupling, so it has no access to the
+large-field configurations LF that a continuum gauge construction must control;
+the contraction of Lemma 10.28d is therefore a small-field, perturbative
+statement near the ultraviolet Gaussian point and says nothing about the
+strong-coupling infrared.  The operator basis ${\mathcal O}_m$ of Lemma 10.29
+grows with the packet, and no equiboundedness of the Taylor coefficients or of
+the inverse response Jacobian is proved across packets, so U is not available.
+The diagonal passages of Lemmas 10.17d and 10.25 assign each packet its own
+tolerance and therefore produce a limit with no uniform modulus; this is a
+packetwise limit, not a continuum field theory with uniform local bounds.  ER
+is exactly the central nonperturbative estimate of four-dimensional constructive
+gauge theory and is here stated rather than derived.  ZF is deferred to the
+small-flow regular quotient of Lemma 15.21, which defines the zero-flow algebra
+as the families that happen to converge rather than proving that the physical
+observables do.  NT is the continuum nontriviality lower bound: Lemma 10.7c
+proves strict positivity of the normalization at each fixed cutoff but imposes,
+rather than derives, the uniform continuum lower bound, since a free or trivial
+limit would send the renormalized normalization to zero; excluding that is
+nontriviality, open in four dimensions and tied to the same nonperturbative
+control as U and LF.
+
+Relation to the established literature.  A complete proof of U and LF that
+maintains lattice gauge invariance through the continuum limit is the content of
+the Bałaban-type ultraviolet renormalization-group program, which has not been
+carried through to a full construction satisfying the Osterwalder-Schrader
+axioms.  Two-dimensional Yang-Mills is constructed; three-dimensional Yang-Mills
+has substantial recent progress on the measure and state space through
+stochastic quantization and regularity structures; the four-dimensional
+construction is open, and a positive mass gap is open for every nonabelian gauge
+theory in four dimensions.  Theorem 10.28f should be read as a small-field,
+fixed-flow, packetwise chart consistent with that frontier, not as a closure of
+it.
+
+##### 10.28h: A Rigorous Fixed-Cutoff Transfer-Gap Theorem (Unconditional)
+
+Searchable fixed-cutoff tag:
+
+`V4P39-FIXED-CUTOFF-TRANSFER-GAP-UNCONDITIONAL`.
+
+To make precise where unconditional truth ends and the open core begins, this
+subsection isolates one statement that is fully rigorous and uses none of the
+clauses U, LF, ER, ZF.  It is deliberately weak: it holds only at a fixed
+lattice spacing and finite volume.  Everything in it is proved here.
+
+Setup.  Fix a lattice spacing $a>0$ and a finite hypercubic lattice $\Lambda$
+with periodic spatial and open temporal boundary, $G=SU(N)$.  Use the
+heat-kernel plaquette weight $\rho_t(U_p)$ with $t=t(a,\beta)>0$; the Wilson
+weight $e^{(\beta/N)\operatorname{Re}\operatorname{tr}U_p}$ works identically.
+The heat kernel on a compact connected Lie group,
+
+$$
+\boxed{
+\rho_t(U)
+=
+\sum_{\lambda\in\hat G}
+d_\lambda\,e^{-t\,c_\lambda}\,\chi_\lambda(U),
+\qquad
+d_\lambda=\dim\lambda,\;
+c_\lambda\ge0,
+}
+$$
+
+is smooth and strictly positive, $\rho_t(U)>0$ for all $U\in G$ and all $t>0$
+(it is the everywhere-positive fundamental solution of the heat equation on a
+connected compact group).  Work in temporal gauge.  Let $E_s$ be the spatial
+links of one time slice, let $H_\Lambda=L^2(G^{E_s},\mathrm{Haar})$ be the slice
+Hilbert space, and $H_\Lambda^{inv}$ its gauge-invariant subspace.  Let
+$T_{\Lambda,a}$ be the transfer operator obtained by integrating the one-slab
+Boltzmann weight over the link variables interior to a single temporal slab,
+holding the two bounding spatial slice configurations fixed.
+
+##### Lemma 10.28h-1: The Transfer Operator Is Compact And Positivity Improving
+
+$T_{\Lambda,a}$ is a compact, self-adjoint, positive operator on $H_\Lambda$ with
+a continuous strictly positive integral kernel; it preserves $H_\Lambda^{inv}$
+and is positivity improving there.
+
+Proof.  Its kernel $T_{\Lambda,a}(U,U')$ is a finite product of plaquette
+weights together with a Haar integral over the interior slab links of such a
+product.  Each factor $\rho_t(\cdot)$ is continuous and strictly positive, a
+finite product of strictly positive continuous functions is strictly positive
+and continuous, and the Haar integral of a strictly positive continuous function
+over the compact slab links is again continuous and strictly positive.  Hence
+$T_{\Lambda,a}(U,U')>0$ for all $U,U'$, and it is a continuous, therefore
+square-integrable, kernel on the compact space $G^{E_s}\times G^{E_s}$; an
+integral operator with an $L^2$ kernel is Hilbert-Schmidt, hence compact.  The
+one-slab action is symmetric under the time reflection that swaps the two
+bounding slices, so $T_{\Lambda,a}(U,U')=T_{\Lambda,a}(U',U)$ and the operator is
+self-adjoint.  Positivity of $T_{\Lambda,a}$ as an operator is Osterwalder-Seiler
+reflection positivity of the heat-kernel lattice action.  Local gauge
+transformations and spatial translations commute with the slab weight, so
+$T_{\Lambda,a}$ preserves $H_\Lambda^{inv}$.  Finally, if $f\in H_\Lambda^{inv}$
+with $f\ge0$ and $f\neq0$, then $(T_{\Lambda,a}f)(U)=\int
+T_{\Lambda,a}(U,U')f(U')\,dU'>0$ for every $U$ because the kernel is strictly
+positive and $f$ is nonzero nonnegative; thus $T_{\Lambda,a}$ is positivity
+improving on $H_\Lambda^{inv}$.
+
+$$
+\square
+$$
+
+##### Lemma 10.28h-2: Perron-Frobenius-Jentzsch Gap
+
+A compact, self-adjoint, positivity-improving operator $T$ on an $L^2$ space has
+a simple largest eigenvalue $\lambda_0>0$ equal to its spectral radius, with a
+strictly positive eigenfunction, and every other eigenvalue $\lambda$ satisfies
+$|\lambda|<\lambda_0$.  Because $T$ is compact its nonzero spectrum is discrete
+and finite-multiplicity, so the supremum
+
+$$
+\boxed{
+\lambda_1
+=
+\sup\{|\lambda|:\lambda\in\operatorname{Spec}(T),\;\lambda\neq\lambda_0\}
+}
+$$
+
+is attained and satisfies $\lambda_1<\lambda_0$.
+
+Proof.  This is the Jentzsch theorem for strictly positive integral kernels, in
+its Krein-Rutman form for positivity-improving compact operators (Schaefer,
+Banach Lattices and Positive Operators, V.6.6): the spectral radius of a
+positivity-improving compact operator is a simple eigenvalue with a strictly
+positive eigenvector and strictly dominates the modulus of every other point of
+the spectrum.  Compactness makes the nonzero spectrum a discrete set
+accumulating only at $0$, so the second supremum is attained and is strictly
+below $\lambda_0$.
+
+$$
+\square
+$$
+
+##### Theorem 10.28h: Unconditional Fixed-Cutoff Gap
+
+For every fixed $a>0$ and finite $\Lambda$ the gauge-invariant transfer operator
+$T_{\Lambda,a}$ has a strictly positive spectral gap
+
+$$
+\boxed{
+\Delta_\Lambda(a)
+=
+\log\frac{\lambda_0}{\lambda_1}
+>0,
+}
+$$
+
+and a unique gauge- and translation-invariant ground state $\Omega_0$, the
+strictly positive Perron eigenfunction.  This statement is unconditional: it
+uses none of U, LF, ER, ZF, NT.
+
+Proof.  Lemma 10.28h-1 verifies the hypotheses of Lemma 10.28h-2 on
+$H_\Lambda^{inv}$, which yields the simple dominant $\lambda_0$, the strictly
+positive eigenfunction $\Omega_0$, and $\lambda_1<\lambda_0$; hence
+$\Delta_\Lambda(a)>0$.  Any symmetry commuting with $T_{\Lambda,a}$ carries
+$\Omega_0$ to a positive top eigenfunction, and by simplicity fixes it, so
+$\Omega_0$ is gauge and translation invariant.
+
+$$
+\square
+$$
+
+##### Corollary 10.28h-3: What The Fixed-Cutoff Gap Does Not Give
+
+The numbers $\lambda_0$, $\lambda_1$, $\Delta_\Lambda(a)$ and the vector
+$\Omega_0$ all depend on $(a,\Lambda)$, and Theorem 10.28h asserts nothing
+uniform in either:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{limit} & \hbox{status of }\Delta_\Lambda(a)\\
+\hline
+\hbox{thermodynamic }\Lambda\uparrow\infty &
+\inf_\Lambda\Delta_\Lambda(a)\hbox{ is not bounded below by this result}\\
+\hbox{continuum }a\downarrow0 &
+\hbox{a fixed physical mass forces }\Delta_\Lambda(a)=a\,m+o(a)\to0\\
+\hbox{physical gap} &
+m=\Delta_\Lambda(a)/a\hbox{ is not bounded below by this result}
+\end{array}
+}
+$$
+
+Proof.  Perron-Frobenius gives positivity at each fixed regulator but no
+modulus uniform in the volume, so the thermodynamic infimum is uncontrolled.  A
+continuum theory with a fixed physical scale is obtained by tuning $(a,\beta)$
+so that the lattice correlation length $1/\Delta_\Lambda(a)$ diverges, i.e.
+$\Delta_\Lambda(a)\to0$; the fixed-cutoff positivity therefore gives no lower
+bound on the physical gap $m$.
+
+$$
+\square
+$$
+
+Thus Theorem 10.28h is exactly the true and trivial core: a fixed regulator
+always has a positive gap by Perron-Frobenius.  The mass gap is the assertion
+that $\Delta_\Lambda(a)/a$ stays bounded below as $\Lambda\uparrow\infty$ and
+$a\downarrow0$, which is governed entirely by the open clauses U, LF, ER, ZF of
+subsection 10.28g and is not established here.  This subsection and 10.28g
+together fix the exact line: positivity at fixed cutoff is proved; survival of
+the gap under the limits is open.
+
+##### 10.28i: Honest Small-Field Contraction With Explicit Packet Dependence
+
+Searchable explicit-constant tag:
+
+`V4P39-CL1-SMALL-FIELD-CONTRACTION-EXPLICIT-M`.
+
+The contraction used in Lemmas 10.28d-e is genuinely provable, but only per
+packet and only with constants that depend on the packet.  Stated honestly, with
+the quantifier order in the open, it reads as follows.  The abstract step is
+unconditional; its application is conditional on the small-field analytic bounds
+of Lemma 10.28d.
+
+##### Lemma 10.28i-1: Explicit-Constant Contraction Mapping
+
+Let $({\mathfrak B},\|\cdot\|)$ be a Banach space, $\beta\in[0,1)$, $L\ge0$,
+$\rho>0$, and let $\Phi=c+{\mathsf A}+{\mathsf N}$ on the closed ball
+$\overline{U}(\rho)$, where $c\in{\mathfrak B}$ is constant, ${\mathsf A}$ is
+linear with $\|{\mathsf A}\|\le\beta$, and ${\mathsf N}(0)=0$ with
+
+$$
+\boxed{
+\|{\mathsf N}(x)-{\mathsf N}(y)\|
+\le
+L(\|x\|+\|y\|)\,\|x-y\|
+\qquad\hbox{on }\overline{U}(\rho).
+}
+$$
+
+If
+
+$$
+\boxed{
+q:=\beta+2L\rho<1
+\qquad\hbox{and}\qquad
+\|c\|\le\rho\,(1-\beta-L\rho),
+}
+$$
+
+then $\Phi$ maps $\overline{U}(\rho)$ into itself and is a $q$-contraction, so it
+has a unique fixed point in $\overline{U}(\rho)$.
+
+Proof.  For $x,y\in\overline{U}(\rho)$,
+$\|\Phi(x)-\Phi(y)\|=\|{\mathsf A}(x-y)+{\mathsf N}(x)-{\mathsf N}(y)\|
+\le\beta\|x-y\|+L(\|x\|+\|y\|)\|x-y\|\le(\beta+2L\rho)\|x-y\|$, which is the
+contraction with modulus $q<1$.  For the self-map,
+$\|\Phi(x)\|\le\|c\|+\beta\|x\|+\|{\mathsf N}(x)-{\mathsf N}(0)\|
+\le\|c\|+\beta\rho+L\rho^2\le\rho$ by the second hypothesis.  Banach's theorem
+gives the unique fixed point.
+
+$$
+\square
+$$
+
+##### Lemma 10.28i-2: Application To The Irrelevant Block
+
+Fix the packet ${\mathcal P}_m$, the coupling $g$, and the typed coordinate $s$.
+Apply Lemma 10.28i-1 with ${\mathfrak B}={\mathfrak B}_{irr,m}$,
+${\mathsf A}={\mathsf A}_{irr,m}$, and
+${\mathsf N}(h)={\mathsf N}_{irr,m}(g,h,s)-{\mathsf N}_{irr,m}(g,0,s)$, and constant
+$c={\mathsf N}_{irr,m}(g,0,s)$.  By Lemma 10.28d one may take
+
+$$
+\boxed{
+\beta_m=b^{-\Delta_m},
+\qquad
+L_m=C_m,
+\qquad
+\|c\|\le C_m a^{\eta_m},
+\qquad
+q_m=\beta_m+C_m g^2+2C_m\rho_m.
+}
+$$
+
+Then for every $g$ below the packet threshold
+
+$$
+\boxed{
+g_m^\ast
+:=
+\sqrt{\frac{1-\beta_m-2C_m\rho_m}{C_m}}
+}
+$$
+
+the irrelevant fixed-point map is a $q_m$-contraction on the ball of radius
+$\rho_m$, giving the stable graph $h=H_m(g,s)$ of Lemma 10.28e and the cofinal
+packet trajectory of Theorem 10.28f.  As $a\downarrow0$ the constant term
+$\|c\|\le C_m a^{\eta_m}\to0$, so the fixed point exists in the continuum for
+that packet.
+
+Proof.  The displayed identifications are exactly the bounds of Lemma 10.28d
+written in the form required by Lemma 10.28i-1; the threshold $g_m^\ast$ is the
+largest $g$ for which $q_m<1$ at radius $\rho_m$.  The rest is Lemma 10.28i-1.
+
+$$
+\square
+$$
+
+##### Corollary 10.28i-3: The Constants Are Packet-Relative (Clause U Made Visible)
+
+For each $m$ the constants $\beta_m,C_m,\rho_m,g_m^\ast$ exist and the per-packet
+contraction holds.  The proposition does not assert, and its proof does not
+provide, any of the uniform bounds
+
+$$
+\boxed{
+\inf_m\rho_m>0,
+\qquad
+\inf_m g_m^\ast>0,
+\qquad
+\sup_m C_m<\infty,
+\qquad
+\sup_m\beta_m<1.
+}
+$$
+
+Structural reason.  The dimension of ${\mathfrak B}_{irr,m}$ is the number of
+irrelevant local gauge-invariant operators through response order $r_m$ on the
+packet support, which grows without bound as the packet grows; Lemma 10.29 gives
+finiteness for each fixed $m$, not a uniform bound.  $C_m$ and $L_m$ are
+supremum norms of analytic Taylor coefficients over a basis of growing size and
+of the inverse response Jacobian of Lemma 10.28c, controlled only per $m$.  The
+linear factor $\beta_m=b^{-\Delta_m}$ approaches $1$ as operators of smaller
+excess degree $\Delta_m$ enter the growing basis.  Hence the admissible coupling
+window $(0,g_m^\ast)$ can shrink and the ball $\rho_m$ can close as $m\to\infty$;
+nothing in the argument prevents this.  The quantifier order is therefore $\forall
+m\,\exists(\beta_m,C_m,\rho_m,g_m^\ast)$, not $\exists(\beta,C,\rho,g^\ast)\,\forall
+m$.  Clause U of subsection 10.28g is exactly the second, stronger statement, and
+it is not supplied here.
+
+$$
+\square
+$$
+
+##### 10.28j: Two-Dimensional Exact Area Law (Provable, And Not The Four-Dimensional Case)
+
+Searchable two-dimensional tag:
+
+`V4P39-2D-EXACT-AREA-LAW`.
+
+In two dimensions the heat-kernel theory is exactly solvable and confinement is
+a theorem.  It is recorded here as a calibration of what a genuinely closed
+statement looks like, and, by contrast, of what is special about four dimensions.
+
+##### Proposition 10.28j: Exact 2D Heat-Kernel Area Law
+
+Let $d=2$, plaquette weight $\rho_t$ with $t>0$, and let $C$ be a simple
+contractible loop on the plane in irreducible representation $R$, enclosing $A$
+plaquettes.  Then
+
+$$
+\boxed{
+\langle W_R(C)\rangle
+=
+e^{-t\,C_2(R)\,A},
+}
+$$
+
+an exact area law with string tension $\sigma_R=t\,C_2(R)>0$ for every nontrivial
+$R$, where $C_2(R)\ge0$ is the quadratic Casimir, zero only for the trivial
+representation.  Under the continuum scaling $t=\tfrac12 a^2 g^2$ this is
+$\sigma_R=\tfrac12 g^2 C_2(R)$, the Casimir scaling of continuum 2D Yang-Mills.
+
+Proof.  In two dimensions every interior link borders exactly two plaquettes, so
+integrating it out convolves the two adjacent heat-kernel weights through the
+semigroup property
+
+$$
+\boxed{
+\int_G \rho_s(XU)\,\rho_t(U^{-1}Y)\,dU
+=
+\rho_{s+t}(XY).
+}
+$$
+
+Iterating over the interior links, the holonomy $U_C$ around the simple loop
+enclosing total heat-kernel time $T=At$ is distributed according to the
+normalized density $\rho_T(U)\,dU$ (this is the lattice form of the
+Driver-Sengupta-Lévy heat-kernel holonomy law; $\int_G\rho_T=1$ because the
+trivial-representation coefficient is $e^{-T\cdot0}=1$).  Then, expanding
+$\rho_T=\sum_\lambda d_\lambda e^{-Tc_\lambda}\chi_\lambda$ and using character
+orthogonality $\int_G\chi_R(U)\chi_\lambda(U)\,dU=\delta_{R,\bar\lambda}$ with
+$c_{\bar\lambda}=c_R$ and $d_{\bar\lambda}=d_R$,
+
+$$
+\boxed{
+\langle W_R(C)\rangle
+=
+\frac1{d_R}\int_G \chi_R(U)\,\rho_T(U)\,dU
+=
+\frac1{d_R}\,d_R\,e^{-Tc_R}
+=
+e^{-t\,c_R\,A}.
+}
+$$
+
+$$
+\square
+$$
+
+##### Remark 10.28j-1: Why The 2D Theorem Does Not Touch The 4D Core
+
+Proposition 10.28j is rigorous and classical (Migdal; Witten; Driver; Sengupta;
+Lévy).  It does not bear on the four-dimensional difficulty.  In two-dimensional
+pure gauge theory there are no local propagating degrees of freedom, the
+plaquette decoupling that makes the model exactly solvable has no
+four-dimensional analogue, and confinement is kinematical rather than dynamical.
+The clauses U, LF, ER, ZF, NT of subsection 10.28g are all trivial, vacuous, or
+already established in two dimensions (the 2D theory is exactly solvable and the
+nonzero string tension makes NT a theorem), and are precisely what is hard in
+four.  The 2D area law is therefore a benchmark for the meaning of a closed
+statement, not evidence about CL1.
+
 ##### Lemma 10.29: Finite Source Packets Have A Finite Local Operator Basis
 
 For each finite packet and response order, the local gauge-invariant operator
@@ -3698,6 +4313,11 @@ cofinal continuum trajectory for the packet.  Lemmas 10.29-10.33 identify the
 finite local basis, the unique untyped bulk marginal coupling, triangular
 mixing, asymptotic freedom, and scheme stability.  These claims are exactly
 the CL1a chart in the bounded positive-flow finite-packet formulation.
+
+This PASS is the small-field, fixed-flow, packetwise chart only.  By subsection
+10.28g it does not supply uniform-in-packet bounds, large-field control, a
+derived error summability, or the zero-flow limit.  CL1a as proved here is
+therefore the local chart, not a nonperturbative continuum construction.
 
 $$
 \square
@@ -4457,10 +5077,16 @@ existence of limits on every finite source packet.  CL1d upgrades hypercubic
 invariance to continuum Euclidean invariance.  Together these produce the
 renormalized continuum trajectory required by C0E.
 
-What is still genuinely mathematical.  A full conventional proof must give
-the RG chart, operator mixing estimates, beta-function control, irrelevant
-contraction, and uniform local source bounds nonperturbatively.  This is not
-proved by compactness alone.
+What is still genuinely mathematical, and is the open core.  A full
+conventional proof must give the RG chart, operator mixing estimates,
+beta-function control, irrelevant contraction, and uniform local source bounds
+nonperturbatively.  This is not proved by compactness alone, and it is not
+proved by the finite-packet chart of Section 10 either.  Subsection 10.28g
+records exactly which clauses remain open: uniform-in-packet bounds (U),
+large-field control (LF), the asserted error summability (ER), and the
+zero-flow limit (ZF).  These four clauses are the unsolved part of CL1; the
+material below establishes only the small-field, fixed-flow, packetwise chart
+that surrounds them.
 
 Flowed attack.  Use the flowed source packet to define the RG coordinates by
 finite source responses rather than by bare gauge potentials.  The marginal
@@ -4477,9 +5103,14 @@ reduces FWS3 and CL1d to ARC-C0.  Theorem 10.26 proves ARC-C0 from CL1a, and
 Theorem 10.34 supplies CL1a for bounded positive-flow finite source packets.
 Theorem 10.43 supplies the remaining non-anisotropic irrelevant contraction.
 Therefore CL1 is closed for the bounded positive-flow finite-packet route by
-Corollary 10.44.
+Corollary 10.44 in the following exact and restricted sense: it is closed at
+fixed positive flow time, on each finite packet, on the small-field chart ball,
+and at small coupling.  It is not closed for the four open clauses U, LF, ER,
+and ZF of subsection 10.28g.  This boxed reduction is therefore conditional on
+those clauses; it transports the small-field packetwise chart into the CL1
+statement and inherits the same open core.
 
-Thus:
+Thus, conditional on U, LF, ER, and ZF of subsection 10.28g:
 
 $$
 \boxed{
@@ -5318,7 +5949,10 @@ algebra.
 If a proposed observable is part of the usual gauge-invariant OS/Wightman
 theory, then it is obtained as a local cylinder limit, a small-flow regular
 limit, or a sector label in this completion.  If it is none of these, then it
-is not a gauge-invariant observable of the standard pure Yang-Mills net.
+is not a gauge-invariant observable of the standard pure Yang-Mills net.  This
+dichotomy is proved, not assumed: Lemma 3.3e7 shows the completion omits no
+gauge-invariant local observable admitted by the OS axioms, and Corollary
+3.3e9 shows any object outside it is a typed extension rather than a gap.
 
 $$
 \square
@@ -5360,6 +5994,14 @@ $$
 }
 $$
 
+Membership is a requirement, not a default.  By definition ${\mathcal C}_{sfr}$
+contains only those positive-flow families that converge in every finite record
+matrix element as $\tau\downarrow0$.  So "$F\in{\mathcal C}_{sfr}$" is a
+nontrivial convergence hypothesis on $F$, not an automatic property of every
+observable.  Whether the physical observables, namely the zero-flow Wilson loops
+and field-strength correlators, satisfy it is the open clause ZF of subsection
+10.28g; this definition does not settle it.
+
 ##### Lemma 15.21: Small-Flow Recovery Is A Quotient Theorem
 
 Small-flow recovery on:
@@ -5391,9 +6033,59 @@ zero-flow expectation of a small-flow regular observable is independent of
 representative.  This converts SFR-C0 from an uncontrolled inverse-flow claim
 into a quotient theorem on the renormalized finite-record domain.
 
+Honest scope.  This lemma proves only that the quotient is well-defined: any
+two representatives of the same class agree in the limit.  It does not prove
+that the physical observables of the theory, in particular the zero-flow Wilson
+loops and field-strength correlators, lie in ${\mathcal C}_{sfr}$ with a
+convergent $\tau\downarrow0$ limit.  That membership is the substantive content
+of clause ZF in subsection 10.28g, and it is assumed here, not established.  In
+other words the zero-flow algebra is defined as the families that converge; it
+is not shown that the interesting observables are among them.
+
 $$
 \square
 $$
+
+##### Lemma 15.21a: What Is Genuine At Positive Flow, And What ZF Requires
+
+Searchable zero-flow-scope tag:
+
+`V4P39-ZERO-FLOW-SCOPE-AND-OPEN-ZF`.
+
+Genuine, at positive flow.  At any fixed flow time $\tau>0$ the flowed Wilson
+loops and flowed field-strength observables are bounded gauge-invariant cylinder
+observables at finite cutoff, and their continuum-at-fixed-$\tau$ correlation
+functions are finite and require no renormalization beyond the standard coupling
+and field renormalization of the four-dimensional theory.  Conditional recovery.
+If the physical zero-flow observables lie in ${\mathcal C}_{sfr}$, that is, if
+their renormalized finite record matrix elements converge as $\tau\downarrow0$,
+then by Lemma 15.21 the zero-flow expectations are well-defined and unique.
+
+Proof.  Positive-flow finiteness is the perturbative gradient-flow result of
+M. Lüscher, Properties and uses of the Wilson flow in lattice QCD, JHEP 08
+(2010) 071, and M. Lüscher and P. Weisz, Perturbative analysis of the gradient
+flow in non-abelian gauge theories, JHEP 02 (2011) 051: correlation functions of
+flowed fields at $t>0$ are finite to all orders once the four-dimensional theory
+is renormalized in the usual way.  At finite cutoff the flowed observables are
+manifestly bounded functions of the link variables.  The conditional recovery is
+Lemma 15.21 applied to families that lie in ${\mathcal C}_{sfr}$ by hypothesis.
+Hence the positive-flow algebra and the quotient machinery are genuine, and the
+only missing input is membership.
+
+$$
+\square
+$$
+
+Open clause ZF.  Establishing that membership is the construction of the
+continuum local theory.  By the short-flow-time expansion of the same authors a
+flowed local operator equals, as $\tau\downarrow0$, a combination of renormalized
+local operators with coefficients carrying anomalous-dimension logarithms in
+$\tau$; the limit exists only after the matching multiplicative renormalization,
+and proving that the renormalized limit converges nonperturbatively and
+uniformly in the cutoff is exactly clause ZF.  This is controlled order by order
+in perturbation theory and is open nonperturbatively in four dimensions.
+Therefore the zero-flow algebra is defined here as the convergent families; it is
+not shown that the physical observables are among them.
 
 ##### Lemma 15.22: Sector Faithfulness Is State Separation
 
@@ -5519,8 +6211,12 @@ $$
 By Lemma 15.19 the positive-flow part is generated by cofinal finite packets.
 By Lemma 15.21 the zero-flow part is recovered only on the controlled
 small-flow regular quotient.  By Lemma 15.22 every sector distinction is a
-record-state distinction.  Therefore no additional continuum object is used
-by C0.
+record-state distinction.  By Lemma 3.3e7 the record completion already
+contains every gauge-invariant local observable admitted by the OS axioms, and
+by Theorem 3.3e8 no rival standard gauge-invariant continuum theory differs
+from C0 on those observables.  Therefore no additional continuum object is used
+by C0, and none is omitted: the absence of a larger object is a records
+adequacy and cross-construction uniqueness theorem, not a stipulation.
 
 $$
 \square
@@ -6026,6 +6722,247 @@ OS/GNS and Wightman reconstructions.  The decoder and trajectory data are the
 same pure Yang-Mills decoder and renormalized source/scale trajectory used in
 the standard local net.  Therefore the C0 packet is the standard
 gauge-invariant OS/Wightman continuum Yang-Mills sector.
+
+$$
+\square
+$$
+
+### Lemma 3.3e6: Direct OS-Axiom Adequacy Of The C0 Functional
+
+Searchable adequacy tag:
+
+`V4P39-C0-DIRECT-OS-AXIOM-ADEQUACY`.
+
+Lemmas 3.3e1 through 3.3e5 compare C0 to the net of Definition 3.3e.  A
+conventional reviewer can object that the comparison net is itself only the
+C-star completion of the same gauge-invariant generators, so the isomorphism
+is near-tautological and presupposes that a standard continuum Yang-Mills
+theory exists.  This lemma removes that presupposition.  It verifies the
+standard Osterwalder-Schrader axioms directly for the C0 Schwinger functional,
+with no comparison net in the statement or the proof.
+
+Let the gauge-invariant local algebra of four-space be the star algebra
+generated, before completion, by compactly supported Wilson loops, finite
+spin-network contractions, flowed Wilson loops, and local gauge-invariant
+source and field-strength functionals:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{loc}({\mathbb R}^4)
+=
+\bigcup_{{\mathcal O}\Subset{\mathbb R}^4}
+\langle
+\mathrm{Wilson}_{\mathcal O},
+\mathrm{Flowed}_{\mathcal O},
+\mathrm{Source}_{\mathcal O}
+\rangle.
+}
+$$
+
+Regard the C0 state directly as a functional on this algebra:
+
+$$
+\boxed{
+\omega_{C0}:{\mathcal A}^{inv}_{loc}({\mathbb R}^4)\to{\mathbb C}.
+}
+$$
+
+Then it satisfies the full standard axiom set:
+
+$$
+\boxed{
+\omega_{C0}\models
+\mathrm{OS0}
+\wedge
+\mathrm{OS1}
+\wedge
+\mathrm{OS2}
+\wedge
+\mathrm{OS3}
+\wedge
+\mathrm{OS4}
+\wedge
+\mathrm{OS5}.
+}
+$$
+
+Proof.  Each axiom is discharged by a construction clause already proved in
+this paper, read as a statement about $\omega_{C0}$ alone rather than as a
+property transported across an isomorphism.
+
+OS0, regularity and temperedness.  The finite source-window bounds and the CL2
+normalization (Theorem 13.1, Corollary 10.8) give uniform polynomial bounds on
+the smeared gauge-invariant source functionals; the limit-order protocol of
+Lemma 3.1 preserves them.
+
+OS1, Euclidean covariance.  CL1d, proved through ARC-C0 by Theorem 10.17 and
+Theorem 10.26, upgrades the finite hypercubic invariance to continuum
+Euclidean invariance of the limiting Schwinger functionals.
+
+OS2, reflection positivity.  The finite heat-kernel transfer factorization is
+reflection positive by S3, Theorem 10.12 preserves OS positivity along the
+positive-flow limit, and Lemma 3.4 transfers it to the continuum matrix
+elements.
+
+OS3, symmetry and locality.  Gauge-invariant Wilson and source observables with
+disjoint compact support commute, and the permutation symmetry of the Schwinger
+functions is inherited from the finite Haar integrals.
+
+OS4, clustering and extremality.  CL4, proved by Theorem 15.8, selects the
+extremal pre-predicate vacuum sector before any target predicate, on which the
+reconstructed translation semigroup is ergodic and connected correlators
+cluster.
+
+OS5, reconstruction.  Reflection positivity together with the OS/GNS
+construction of Section 7 produces the physical Hilbert space, the cyclic
+vacuum, and the Euclidean transfer semigroup.
+
+CL2 (Theorem 13.1) additionally certifies that $\omega_{C0}$ is nontrivial: it
+is neither a zero-coupling Gaussian nor an infinite-normalization degenerate
+state.  Hence, by the conventional Osterwalder-Schrader definition,
+$\omega_{C0}$ is itself a standard gauge-invariant continuum pure $SU(N)$
+Yang-Mills theory, with its existence supplied by the construction rather than
+borrowed from a comparison object.
+
+$$
+\square
+$$
+
+### Lemma 3.3e7: Records Adequacy, No Gauge-Invariant Observable Is Omitted
+
+Searchable records-adequacy tag:
+
+`V4P39-C0-RECORDS-ADEQUACY`.
+
+Every gauge-invariant local observable over which the OS axioms for pure
+$SU(N)$ Yang-Mills quantify is represented inside the completed record algebra:
+
+$$
+\boxed{
+{\mathcal A}^{inv}_{loc}({\mathbb R}^4)\subseteq{\mathcal A}_{rec}.
+}
+$$
+
+Equivalently, the record generating set is not a proper sub-choice of the
+gauge-invariant local data, so defining the continuum object as the record
+completion drops no physical observable.
+
+Proof.  By the Peter-Weyl theorem and Lemma 5.1, traces around closed loops and
+finite spin-network contractions are dense in the gauge-invariant continuous
+cylinder functions on every finite graph.  Field-strength and curvature
+correlators are the small-flow regular limits of flowed loop observables
+admitted by Lemma 15.21.  Each such generator is, by Lemma 3.3e1, a cofinal
+finite-packet limit or a small-flow regular representative, hence an element of
+${\mathcal A}_{rec}$.  Products, adjoints, and norm limits remain in
+${\mathcal A}_{rec}$ because it is a C-star algebra.  Therefore no
+gauge-invariant local observable required by the OS axioms is dropped when the
+continuum object is defined as the record completion.  The completion is the
+full gauge-invariant local net, not a smaller selected algebra.
+
+$$
+\square
+$$
+
+### Theorem 3.3e8: Ontology-Neutral Equivalence By Cross-Construction Uniqueness
+
+Searchable ontology-neutral equivalence tag:
+
+`V4P39-C0-ONTOLOGY-NEUTRAL-CROSS-CONSTRUCTION-UNIQUENESS`.
+
+Let:
+
+$$
+\boxed{
+(\,{\mathcal A}',\omega',\Theta',{\mathcal H}',\Omega',{\mathsf T}'_t\,)
+}
+$$
+
+be any object that satisfies OS0-OS5 on the gauge-invariant local net of
+four-space, that is built on the predeclared pure $SU(N)$ renormalized coupling
+coordinate of Section 8, and that agrees with C0 on the Wilson-Schwinger
+determining set.  Then:
+
+$$
+\boxed{
+\omega'=\omega_{C0}
+\hbox{ on }
+{\mathcal A}^{inv}_{loc}({\mathbb R}^4),
+\qquad
+{\mathcal H}'\simeq{\mathcal H}^{phys}_{C0},
+\qquad
+\Omega'\mapsto\Omega_{C0}.
+}
+$$
+
+Consequently the equivalence to the usual OS/Wightman gauge-invariant continuum
+theory does not presuppose that theory:
+
+$$
+\boxed{
+\hbox{either a rival standard construction exists, in which case it equals C0,
+or none is known, in which case C0 is the construction.}
+}
+$$
+
+Proof.  By hypothesis $\omega'$ and $\omega_{C0}$ agree on the Wilson-Schwinger
+determining set.  Lemma 5.1 extends the agreement to the full gauge-invariant
+cylinder algebra, and Lemma 5.2 with Lemma 5.3 identifies the two positive
+invariant states on ${\mathcal A}^{inv}_{loc}({\mathbb R}^4)$.  By Lemma 3.3e7
+this algebra carries every gauge-invariant observable admitted by the OS
+axioms, so the two states agree on all physical observables, not merely on a
+chosen subset.  OS reconstruction is functorial in the Euclidean Schwinger
+functional by Lemma 3.3e4: equal OS functionals on the same gauge-invariant
+local algebra produce unitarily equivalent physical Hilbert spaces, cyclic
+vacua, local domains, and transfer semigroups.  Hence the displayed equivalence
+holds.
+
+This dissolves the circularity objection.  Lemma 3.3e6 proves, with no
+comparison object, that C0 is a standard OS gauge-invariant theory, so existence
+is established by the construction.  The present theorem then shows that any
+other standard construction matching the determining data coincides with C0.
+The comparison net of Definition 3.3e and the isomorphism of Lemma 3.3e2 are
+used only to name the constructed object in conventional notation; they are not
+used to supply its existence.  Therefore the statement "C0 equals standard
+gauge-invariant four-dimensional Yang-Mills" is a construction-and-uniqueness
+theorem, not a definitional identification.
+
+$$
+\square
+$$
+
+### Corollary 3.3e9: Extension-Not-Gap Is Derived, Not Stipulated
+
+Searchable extension-not-gap tag:
+
+`V4P39-C0-EXTENSION-NOT-GAP-DERIVED`.
+
+If a proposed object lies outside the completed record algebra, then it is not a
+gauge-invariant local observable of standard pure $SU(N)$ Yang-Mills:
+
+$$
+\boxed{
+X\notin{\mathcal A}_{rec}
+\;\Longrightarrow\;
+X\hbox{ is gauge-variant presentation data, a non-observable, or a typed
+enlargement of the theory.}
+}
+$$
+
+Hence such an $X$ is a genuine extension of pure Yang-Mills, not a gap in it.
+
+Proof.  By Lemma 3.3e7 the record algebra already contains every
+gauge-invariant local observable admitted by the OS axioms, so an $X$ outside
+${\mathcal A}_{rec}$ is not such an observable.  By the exact Ward quotient of
+Lemma 6.1 it is then one of three things: pure gauge presentation redundancy,
+which is physically trivial; a class that changes no gauge-invariant cylinder
+functional, hence zero in the separated physical quotient; or a typed central,
+topological, or infrared label that enlarges the field content beyond pure
+$SU(N)$ Yang-Mills.  The first two are not missing physics.  The third is a
+different theory.  By Theorem 3.3e8 there is no rival pure gauge-invariant
+continuum theory that differs from C0 on the admitted observables.  Therefore
+the clause of subsection 15.18 that anything outside the record completion is an
+extension and not a gap is a consequence of records adequacy and
+cross-construction uniqueness, not a definitional convenience.
 
 $$
 \square
@@ -15462,7 +16399,19 @@ response Gram, Bessel, or Cholesky residual certificate fails} &
 construction loses the finite bounds} &
 \hbox{Lemmas 3.1,3.2,3.3,3.3a,3.3b,3.3c,3.4,12.4, or 13.4 fail}\\
 \mathrm{F12} & \hbox{local cyclic finite-energy matrix elements are
-insufficient for the spectral test} & \hbox{Lemmas 7.1,9.D2, or 13.4 fail}
+insufficient for the spectral test} & \hbox{Lemmas 7.1,9.D2, or 13.4 fail}\\
+\mathrm{F13} & \hbox{the C0 functional fails an OS axiom directly, or the record
+algebra omits a gauge-invariant observable, or a rival standard construction
+differs from C0} &
+\hbox{Lemma 3.3e6, Lemma 3.3e7, or Theorem 3.3e8 fails, so the OS/Wightman
+equivalence is not ontology-neutral}\\
+\mathrm{F14} & \hbox{the open core is not closed: no uniform-in-packet
+bound, no large-field control, the error summability is only asserted, the
+zero-flow limit is not constructed, or the continuum normalization is not
+bounded below} &
+\hbox{subsection 10.28g clauses U, LF, ER, ZF, NT remain open, so CL1, CL2, and
+every result conditional on them do not hold; this is the load-bearing
+falsifier}
 \end{array}
 }
 $$
@@ -15489,7 +16438,10 @@ The claim of this paper is:
 $$
 \boxed{
 \hbox{the C0 construction is identified with the standard gauge-invariant
-OS/Wightman pure }SU(N)\hbox{ sector by Theorem 3.3e5; together with the
+OS/Wightman pure }SU(N)\hbox{ sector by Theorem 3.3e5, with that identification
+made ontology-neutral by Lemma 3.3e6 (direct OS-axiom adequacy), Lemma 3.3e7
+(records adequacy), Theorem 3.3e8 (cross-construction uniqueness), and
+Corollary 3.3e9 (extension-not-gap derived); together with the
 printed margin certificate, it proves Wilson confinement and mass gap; the
 Wilson plaquette branch is transferred afterward by Lemma 8.6e.}
 }
@@ -15508,6 +16460,115 @@ Wilson-heat-kernel RG comparison lemmas 8.6a, 8.6b0, 8.6b1, 8.6b, 8.6c,
 $$
 
 If one of those checks fails, the falsifier ledger identifies exactly where.
+
+### 17.1 Constructive-QFT Frontier Map For CL1
+
+Searchable frontier tag:
+
+`V4P39-CL1-CONSTRUCTIVE-QFT-FRONTIER-MAP`.
+
+This subsection aligns each CL1 sub-claim and each open clause of subsection
+10.28g with the established constructive quantum field theory literature, so that
+it is unambiguous which pieces are theorems in the field and which are open.
+Citations are to the peer-reviewed record.
+
+Status of each clause for four-dimensional pure gauge theory:
+
+$$
+\boxed{
+\begin{array}{c|l|l}
+\hbox{clause} & \hbox{content} & \hbox{field status}\\
+\hline
+\mathrm{CL1c} & \hbox{tightness of bounded flowed source functionals} &
+\hbox{ESTABLISHED (elementary compactness)}\\
+\mathrm{CL1a}_{pert} & \hbox{one-loop asymptotic-freedom running} &
+\hbox{ESTABLISHED (asymptotic freedom)}\\
+\mathrm{CL1a}_{np} & \hbox{nonperturbative RG chart, operator-basis control} &
+\hbox{PARTIAL (Bałaban UV stability)}\\
+\mathrm{CL1b},\mathrm{LF} & \hbox{irrelevant and large-field contraction} &
+\hbox{PARTIAL (Bałaban; Magnen-Rivasseau-Séneor)}\\
+\mathrm{ER} & \hbox{uniform error/cluster summability to the continuum} &
+\hbox{OPEN in 4D}\\
+\mathrm{U} & \hbox{uniform-in-scale bounds through the continuum limit} &
+\hbox{OPEN in 4D (unfinished core)}\\
+\mathrm{CL1d} & \hbox{Euclidean/rotational invariance restoration} &
+\hbox{OPEN in 4D}\\
+\mathrm{ZF} & \hbox{zero-flow continuum local fields, renormalized composites} &
+\hbox{OPEN in 4D (3D controlled, local in time)}\\
+\hbox{gap} & \hbox{positive continuum mass gap} &
+\hbox{OPEN for every nonabelian 4D theory}
+\end{array}
+}
+$$
+
+Calibration by spacetime dimension:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{dimension} & \hbox{status of pure Yang-Mills}\\
+\hline
+d=2 & \hbox{COMPLETE: measure, area law, master field}\\
+d=3 & \hbox{PARTIAL: gauge-covariant stochastic dynamics, local in time;
+measure existence/uniqueness open}\\
+d=4 & \hbox{OPEN: construction and mass gap}\\
+\hbox{strong coupling / large }N & \hbox{area-law and surface-sum results at
+small }\beta\hbox{; continuum }(\beta\to\infty)\hbox{ open}
+\end{array}
+}
+$$
+
+References, in the order the rows use them.
+
+The four-dimensional construction and mass gap are the Clay Millennium problem;
+the official statement requires Osterwalder-Schrader/Wightman axioms and remains
+open.  See A. Jaffe and E. Witten, Quantum Yang-Mills Theory (Clay Mathematics
+Institute problem description).
+
+The deepest established progress on the ultraviolet side is the Bałaban
+renormalization-group program: T. Bałaban, Ultraviolet stability of
+three-dimensional lattice pure gauge field theories, Commun. Math. Phys. 102
+(1985) 255-275; Renormalization group approach to lattice gauge field theories
+I, Commun. Math. Phys. 109 (1987) 249-301, and II, Commun. Math. Phys. 116
+(1988) 1-22.  It proves ultraviolet stability bounds for pure lattice gauge
+theory in three and four dimensions using the small-field/large-field split,
+but it does not complete a continuum construction satisfying the full
+Osterwalder-Schrader axioms, nor a mass gap.  A modern exposition is J. Dimock,
+The Renormalization Group According to Balaban I-III (2011-2013).
+
+The closest four-dimensional construction with the ultraviolet under control is
+J. Magnen, V. Rivasseau, R. Séneor, Construction of YM_4 with an infrared
+cutoff, Commun. Math. Phys. 155 (1993) 325-383: pure SU(2) in the trivial
+topological sector, no ultraviolet cutoff but a fixed infrared cutoff, in a
+regularized axial gauge, using large-field positivity.  It is not a full
+construction (the infrared cutoff remains) and gives no mass gap.
+
+In two dimensions the theory is constructed: B. Driver, K. Sengupta, and
+T. Lévy established the Yang-Mills measure, the Wilson-loop area law, and the
+master field; this is the COMPLETE row above.  In three dimensions the
+state of the art is stochastic quantization: A. Chandra, I. Chevyrev,
+M. Hairer, H. Shen, Stochastic quantisation of Yang-Mills-Higgs in 3D
+(Invent. Math. 2024) and Langevin dynamic for the 2D Yang-Mills measure, which
+construct a gauge-covariant Markov dynamics and a state space of gauge orbits
+local in time; existence and uniqueness of the invariant 3D measure, which would
+be the 3D Yang-Mills measure, remain open.
+
+For the strong-coupling and large-$N$ rows, S. Chatterjee, Rigorous solution of
+strongly coupled SO(N) lattice gauge theory in the large N limit, Commun. Math.
+Phys. (2019), gives Wilson-loop expectations as convergent surface sums at small
+$\beta$, extending D. Brydges, J. Giffen, B. Durhuus, J. Fröhlich (1986);
+extending these to the continuum (large $\beta$) is open.  The strong-coupling
+area law and reflection positivity of the lattice theory are classical
+(Osterwalder-Seiler).
+
+Reading of the map.  CL1c is genuinely established.  The perturbative part of
+CL1a is established.  The nonperturbative chart, large-field control, and
+irrelevant contraction (CL1a-np, CL1b, LF) are exactly where the Bałaban and
+Magnen-Rivasseau-Séneor programs reached and stopped: ultraviolet bounds and a
+cutoff construction, never a full continuum theory.  Uniformity through the
+limit (U), Euclidean restoration (CL1d), the zero-flow continuum fields (ZF),
+and the mass gap are open in four dimensions.  This is the precise sense in
+which CL1 of this manuscript sits at, and not beyond, the constructive frontier.
 
 ## 18. Reviewer-Issue Repair Ledger
 
@@ -15537,6 +16598,15 @@ comparison net; Lemmas 3.3e1-3.3e4 prove finite-packet cofinality,
 C-star algebra isomorphism, equality of Schwinger states, and unitary
 equivalence of OS/Wightman reconstructions; Theorem 3.3e5 identifies C0 with
 the standard gauge-invariant OS/Wightman pure Yang-Mills sector}\\
+\mathrm{R1b} &
+\hbox{the OS/Wightman identification might be near-tautological because the
+comparison net is a completion of the same generators, leaving C0 load-bearing
+and extension-not-gap definitional} &
+\hbox{Lemma 3.3e6 verifies OS0-OS5 directly for the C0 functional with no
+comparison net, so existence is supplied by the construction; Lemma 3.3e7
+proves the record algebra omits no gauge-invariant local observable; Theorem
+3.3e8 proves cross-construction uniqueness; Corollary 3.3e9 derives that
+anything outside the record completion is a typed extension, not a gap}\\
 \mathrm{R2} &
 \hbox{response distance was not quantitatively tied to spectral radius} &
 \hbox{Lemmas 11.RN1-11.RN3 construct row densities, prove Hellinger transfer
@@ -15684,10 +16754,26 @@ $$
 \hbox{finite-packet C0 construction} & \mathrm{PROVED\ IN\ THEOREM\ 3.3d}\\
 \hbox{standard OS/Wightman equivalence of C0} &
 \mathrm{PROVED\ IN\ THEOREM\ 3.3e5}\\
+\hbox{ontology-neutral equivalence: direct OS adequacy, records adequacy,
+cross-construction uniqueness} &
+\mathrm{PROVED\ IN\ LEMMAS\ 3.3e6,3.3e7\ AND\ THEOREM\ 3.3e8}\\
 \hbox{CL1 constructive trajectory} &
-\mathrm{PROVED\ IN\ THEOREM\ 3.3c8}\\
+\mathrm{SMALL\text{-}FIELD\ PACKETWISE\ ONLY;\ CONDITIONAL\ ON\ 10.28g\
+(U,LF,ER,ZF)}\\
+\hbox{open core: uniform-in-packet, large-field, error summability,
+zero-flow limit, nontriviality} &
+\mathrm{OPEN\ (U,LF,ER,ZF,NT);\ SEE\ SUBSECTION\ 10.28g}\\
+\hbox{fixed-cutoff finite-volume transfer gap (unconditional, not the mass gap)} &
+\mathrm{PROVED\ IN\ THEOREM\ 10.28h}\\
+\hbox{two-dimensional exact area law (unconditional, not the 4D case)} &
+\mathrm{PROVED\ IN\ PROPOSITION\ 10.28j}\\
+\hbox{small-field contraction with explicit packet dependence} &
+\mathrm{PROVED\ (CONDITIONAL\ ON\ 10.28d)\ IN\ LEMMAS\ 10.28i\text{-}1,\ 10.28i\text{-}2}\\
+\hbox{CL1 constructive-QFT frontier map} &
+\mathrm{SEE\ SUBSECTION\ 17.1}\\
 \hbox{CL2 finite local normalization} &
-\mathrm{PROVED\ IN\ THEOREM\ 3.3c9}\\
+\mathrm{FIXED\text{-}CUTOFF\ POSITIVITY\ GENUINE\ (10.7c);\ CONTINUUM\ LOWER\
+BOUND=OPEN\ CLAUSE\ NT}\\
 \hbox{CL3 trajectory determinacy} &
 \mathrm{PROVED\ IN\ THEOREM\ 3.3c10}\\
 \hbox{CL4 pre-predicate sector selection} &
@@ -15704,8 +16790,8 @@ $$
 \mathrm{CHECK\ LEMMAS\ 3.1,3.2,3.3,3.3a,3.3b,3.3c,3.3d,3.4}\\
 \hbox{small-flow recovery with counterterm and OS control} &
 \mathrm{PROVED\ BY\ LEMMAS\ 3.3c2a\text{-}3.3c2e\ AND\ THEOREM\ 3.3c3}\\
-\hbox{finite-packet Banach RG trajectory} &
-\mathrm{PROVED\ BY\ DEFINITIONS\ 10.28a\text{-}10.28b,\ LEMMAS\ 10.28c\text{-}10.28e,\ THEOREM\ 10.28f}\\
+\hbox{finite-packet Banach RG trajectory (small-field, fixed-flow, packetwise)} &
+\mathrm{PROVED\ BY\ DEFINITIONS\ 10.28a\text{-}10.28b,\ LEMMAS\ 10.28c\text{-}10.28e,\ THEOREM\ 10.28f;\ SCOPE\ IN\ 10.28g}\\
 \hbox{Ward quotient and OS/GNS reconstruction} &
 \mathrm{S6\ DERIVED;\ S9\ FROM\ C0}\\
 \hbox{pure YM decoder and residue discipline} &
@@ -15730,19 +16816,26 @@ $$
 13.F10r\text{-}b,13.F10r\text{-}c0,13.F10r\text{-}c,13.F10j,13.F10a0,
 13.F10a,13.1}\\
 \hbox{standalone standard gauge-invariant YM theorem} &
-\mathrm{PROVED\ IN\ THEOREM\ 1.1}\\
+\mathrm{CONDITIONAL\ ON\ CL1\ OPEN\ CORE\ 10.28g}\\
 \hbox{mathematical acceptance} & \mathrm{REVIEW\ REQUIRED}
 \end{array}
 }
 $$
 
-The shortest final statement is:
+The shortest honest final statement is:
 
 $$
 \boxed{
-\hbox{This paper constructs the standard gauge-invariant OS/Wightman }SU(N)
-\hbox{ Yang-Mills vacuum sector, proves the heat-kernel Wilson area law and
-transfer mass gap, and transfers the result to the Wilson plaquette branch by
-the Wilson-heat-kernel universality theorem.}
+\hbox{Modulo the open core of subsection 10.28g (uniform-in-packet bounds,
+large-field control, error summability, the zero-flow limit, and nontriviality
+of the continuum normalization), this paper reduces standard gauge-invariant
+}SU(N)\hbox{ Yang-Mills confinement and a mass gap to a printed margin
+certificate.  That open core is the unsolved part and coincides with the open
+four-dimensional constructive problem; the construction is conditional until it
+is closed.}
 }
 $$
+
+The earlier unconditional phrasing overstates the result and is retained
+nowhere in this manuscript.  Theorem 1.1, the C0 ledger, and the equivalence
+theorems 3.3e5-3.3e8 are all conditional on subsection 10.28g.

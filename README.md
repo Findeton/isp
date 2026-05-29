@@ -6,11 +6,13 @@ This repository contains a developing research corpus on **Relativistic
 Indivisible Stochastic Processes** (ISP): an indivisible stochastic geometry
 and probability-first attempt to
 reconstruct quantum, relativistic, gauge, and gravitational structure from
-finite stochastic transports between hypersurface records.  The full
-ontology-free Yang-Mills manuscript is
+finite stochastic transports between hypersurface records.  The current
+standalone ontology-free Yang-Mills reduction manuscript is
 [V4 Paper 39: Standalone Ontology-Free Yang-Mills Proof](relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md),
-treated here as the full ontology-free document while it continues to be
-edited.
+treated here as the full ontology-free document under active hardening.  Its
+honest status is conditional: the C0 construction section now exposes an open
+constructive core, especially uniform projective control, large-field control,
+Euclidean restoration, zero-flow recovery, and nontriviality.
 
 For a compact physicist-facing overview, start here:
 [V5 Paper 0: Review Introduction For Physicists](relativistic-isp-v5-paper0-review-introduction-for-physicists.md).
@@ -364,7 +366,6 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
-- `relativistic-isp-v4-paper40-c0-construction-theorem-for-continuum-yang-mills.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -410,42 +411,40 @@ active ISP-V4 finite-record ontology
   as closed inside the corpus while leaving external Clay-style acceptance
   dependent on independent checking of `OFYM6-SMC-001`.
 - **Paper 39** expands the Paper 38 reduction into a standalone ontology-free
-  proof manuscript.  It prints the regulated construction, compactness,
+  reduction manuscript.  It prints the regulated construction, compactness,
   Ward quotient, OS/GNS reconstruction, response floor, row-token majorants,
   crossing lemmas, Wilson area law, transfer gap, falsifier ledger, and final
-  theorem without sourcing proof steps from the ISP corpus.
-- **Paper 40** develops the C0 construction gate identified by Paper 39.  It
-  proves C0 inside the active Relativistic ISP corpus and separates that
-  internal theorem from the harder ontology-free constructive Yang-Mills
-  existence burden.
+  theorem without sourcing proof steps from the ISP corpus.  Its current
+  status is not a closed conventional Yang-Mills proof: the C0 construction
+  section isolates an open constructive core, namely `U`, `LF`, `ER`, `ZF`,
+  and `NT`.
 
 The resulting status is sharper than the earlier README: the corpus now has
 an internal ISP Yang-Mills descent theorem and a written standard-equivalence
 bridge for the gauge-invariant continuum Yang-Mills comparison sector.
 Paper 38 goes one step further: it writes the ontology-free reduction itself
 and closes OFYM1-OFYM12 inside the corpus.  Paper 39 turns that reduction
-into a standalone proof manuscript.  Paper 40 then develops the C0
-construction gate in the active ISP setting.  The remaining boundary is no
-longer an unnamed missing internal gate; it is independent external review of the
-standalone proof, especially the response-floor, row-token, crossing, and
-continuum-liminf steps, plus conventional review of the C0 translation burden.
+into a standalone reduction manuscript and makes the remaining C0 burden
+explicit.  The remaining boundary is no longer an unnamed missing internal
+gate; it is the constructive C0 open core inside Paper 39, plus independent
+external review of the response-floor, row-token, crossing, area-law, and
+transfer-gap mechanisms once that core is supplied.
 
 Conceptual status:
 
 V4 is the most ambitious layer.  It does not merely add geometry labels.  It
 asks which finite record laws make geometry dynamical, which admissibility
 principles recover GR-like behavior, and which source ledgers are sufficient
-to descend to QFT/QCD/Yang-Mills results.  By Papers 29-40, the strongest V4
+to descend to QFT/QCD/Yang-Mills results.  By Papers 29-39, the strongest V4
 claim is a hardened active finite-record stack plus an ontology-free
 Yang-Mills reduction: effective GR, relativistic QFT kinematics, finite QCD
 dynamics, internal Yang-Mills confinement/mass-gap descent, the
 gauge-invariant standard-equivalence bridge for continuum Yang-Mills, and the
 OFYM1-OFYM12 ontology-free Yang-Mills proof ledger expanded into a standalone
-proof manuscript, followed by an active-ISP C0 construction theorem.  The
-remaining boundary is the broader external validation and externalization
-program: independent review of the Paper 39 proof, conventional review of the
-Paper 40 C0 translation burden, and writing GR/QFT/QCD bridges with the same
-conventional clarity.
+conditional manuscript.  The remaining boundary is the broader external
+validation and externalization program: closing the Paper 39 C0 open core,
+independent review of the Paper 39 margin and transfer machinery,
+and writing GR/QFT/QCD bridges with the same conventional clarity.
 
 ## V5: Consequences Of The Finite-Record Ontology
 
@@ -505,9 +504,10 @@ Paper 1 uses the V4 result stack as background:
 - P38 supplies the ontology-free Yang-Mills proof reduction and closes
   OFYM1-OFYM12 inside the corpus, with external validation focused on the
   OFYM6 margin certificate.
-- P39 supplies the standalone ontology-free Yang-Mills proof manuscript, so
-  the external validation target is now a single conventional proof document
-  rather than a corpus-dependent reduction.
+- P39 supplies the standalone ontology-free Yang-Mills reduction manuscript,
+  but it explicitly keeps the C0 constructive core open.  The external
+  validation target is therefore a single conventional proof document with a
+  named open core, not a closed theorem.
 
 Conceptual status:
 
@@ -549,7 +549,7 @@ real stochastic kernels
   -> closed internal ISP Yang-Mills confinement/mass-gap theorem
   -> standard gauge-invariant Yang-Mills equivalence bridge
   -> ontology-free Yang-Mills reduction closed inside the corpus
-  -> standalone ontology-free Yang-Mills proof manuscript
+  -> standalone ontology-free Yang-Mills reduction manuscript with open C0 core
   -> black holes as finite record horizons rather than primitive singular points
 ```
 
@@ -573,11 +573,12 @@ The honest reading is:
   gauge-invariant continuum Yang-Mills sector;
 - Paper 38 supplies the ontology-free Yang-Mills reduction and closes
   OFYM1-OFYM12 inside the corpus;
-- Paper 39 supplies the standalone ontology-free Yang-Mills proof manuscript;
-- remaining external acceptance depends on independent conventional review of
-  the Paper 39 proof, extending the bridge discipline across
-  GR/QFT/QCD, and showing that the finite source packets are not merely
-  calibrated restatements of the target physics.
+- Paper 39 supplies the standalone ontology-free Yang-Mills reduction
+  manuscript and names the remaining C0 open core;
+- remaining external acceptance depends on closing that C0 core, independent
+  conventional review of the Paper 39 proof architecture, extending the bridge
+  discipline across GR/QFT/QCD, and showing that the finite source packets are
+  not merely calibrated restatements of the target physics.
 
 That is the point of the paper architecture: every generation either proves a
 piece, names the missing source, or exposes the exact place where the program

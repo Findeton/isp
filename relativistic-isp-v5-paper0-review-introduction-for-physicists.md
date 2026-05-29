@@ -44,8 +44,8 @@ $$
 \hbox{finite QCD dynamics} & \mathrm{CLOSED}_{finite\ ISP}\\
 \hbox{continuum Yang-Mills descent} & \mathrm{CLOSED}_{ISP\ descent}\\
 \hbox{ontology-free Yang-Mills reduction} & \mathrm{CLOSED}_{P38}\\
-\hbox{standalone ontology-free Yang-Mills proof} & \mathrm{CLOSED}_{P39}\\
-\hbox{C0 construction in active ISP} & \mathrm{CLOSED}_{P40\ ISP}
+\hbox{standalone ontology-free Yang-Mills manuscript} &
+\mathrm{CONDITIONAL}_{P39:C0}
 \end{array}
 }
 $$
@@ -56,11 +56,10 @@ standard continuum language.  The external comparison to standard GR, QFT,
 QCD, and Yang-Mills is handled by explicit bridge gates.  For Yang-Mills,
 Paper 37 supplies the standard-equivalence bridge and Paper 38 supplies an
 ontology-free proof reduction inside the corpus.  Paper 39 expands that
-reduction into a standalone proof manuscript.  The external review frontier
-is now the independent checking of the Paper 39 proof.  Paper 40 develops the
-C0 construction gate identified by Paper 39 inside the active ISP corpus while
-separating that result from the harder ontology-free constructive Yang-Mills
-existence burden.
+reduction into a standalone manuscript, but the expanded C0 section now
+exposes an open constructive core.  The open clauses are uniform projective
+control, large-field control, Euclidean restoration, zero-flow recovery, and
+nontriviality.
 
 The honest slogan is:
 
@@ -677,10 +676,9 @@ Yang-Mills external bridge has changed twice.  Paper 37 writes the standard
 gauge-invariant continuum Yang-Mills comparison bridge and discharges the late
 equivalence ledgers for that sector.  Paper 38 then rewrites the result as an
 ontology-free proof reduction and closes OFYM1-OFYM12 inside the corpus.
-Paper 39 expands that reduction into a standalone ontology-free proof
-manuscript.  Paper 40 develops the C0 construction gate directly, proving C0
-inside the active Relativistic ISP corpus while separating that internal result
-from the harder ontology-free constructive Yang-Mills existence problem.
+Paper 39 expands that reduction into a standalone ontology-free reduction
+manuscript, but its C0 section is now explicitly conditional on an open
+constructive core.
 
 The careful status is:
 
@@ -694,9 +692,8 @@ $$
 \hbox{standard gauge-invariant continuum YM bridge} &
 \mathrm{CLOSED}_{bridge}\\
 \hbox{ontology-free YM reduction inside corpus} & \mathrm{CLOSED}_{P38}\\
-\hbox{standalone ontology-free YM proof manuscript} &
-\mathrm{CLOSED}_{P39}\\
-\hbox{active-ISP C0 construction theorem} & \mathrm{CLOSED}_{P40\ ISP}\\
+\hbox{standalone ontology-free YM manuscript} &
+\mathrm{CONDITIONAL}_{P39:C0}\\
 \hbox{external Clay-style acceptance} & \mathrm{UNVALIDATED}_{external}
 \end{array}
 }
@@ -705,12 +702,13 @@ $$
 This distinction matters.  ISP now has both a closed internal descent theorem
 and a written bridge to the standard gauge-invariant continuum Yang-Mills
 comparison sector.  Paper 38 adds a closed ontology-free reduction inside the
-corpus.  Paper 39 expands the reduction into a standalone proof manuscript.
-Paper 40 closes the active-ISP C0 construction gate and prints the translation
-burden separately.  What is still not complete is external mathematical
-acceptance in the ordinary community sense.  That requires independent review
-of the Paper 39 proof, the Paper 40 C0 translation burden, and their
-conventional presentation.
+corpus.  Paper 39 expands the reduction into a standalone manuscript and
+names the remaining C0 open core.  What is still not complete is the
+ontology-free constructive C0 theorem in ordinary mathematical-physics
+language.  That requires closing the Paper 39 clauses for uniform projective
+control, large-field control, Euclidean restoration, zero-flow recovery, and
+nontriviality, followed by independent review of the remaining margin and
+transfer machinery.
 
 ## 10. Internal Theorems Versus External Bridges
 
@@ -755,7 +753,7 @@ gauge-invariant continuum YM}\\
 \mathrm{OFYM} & \hbox{Paper 38 rewrites the Yang-Mills result as an
 ontology-free proof reduction}\\
 \mathrm{SOFYM} & \hbox{Paper 39 expands the reduction into a standalone
-ontology-free proof manuscript}\\
+ontology-free reduction manuscript with open C0 core}\\
 \mathrm{spin/CPT} & \hbox{ISP exchange and orientation structure to standard
 spin-statistics and CPT}
 \end{array}
@@ -769,8 +767,8 @@ For Yang-Mills, Paper 37 is the first completed instance of this external
 bridge discipline.  Paper 38 is the first completed instance of the stronger
 ontology-free reduction discipline, although its external acceptance still
 depends on conventional review.  Paper 39 is the first standalone
-ontology-free proof manuscript, with the same external-review boundary stated
-as a single conventional proof target.
+ontology-free reduction manuscript, with the C0 constructive core named as
+the remaining open conventional target.
 
 ## 11. What The Framework Achieves
 
@@ -802,9 +800,9 @@ $$
 \hbox{ontology-free YM reduction} &
 \mathrm{CLOSED}_{P38} &
 \hbox{OFYM1-OFYM12 closed inside Paper 38}\\
-\hbox{standalone ontology-free YM proof} &
-\mathrm{CLOSED}_{P39} &
-\hbox{Paper 39 prints the proof without corpus-source shortcuts}\\
+\hbox{standalone ontology-free YM manuscript} &
+\mathrm{CONDITIONAL}_{P39:C0} &
+\hbox{Paper 39 prints the reduction and open C0 core}\\
 \hbox{remaining GR/QFT/QCD external equivalence} &
 \mathrm{BRIDGE} &
 \hbox{requires explicit comparison gates}
@@ -832,8 +830,8 @@ comparison language}\\
 from bare stochastic process theory}\\
 \mathrm{NC3}:&\hbox{that standard spin-statistics and CPT follow without
 bridge assumptions}\\
-\mathrm{NC4}:&\hbox{that Paper 39 has already received external Clay-style
-acceptance}\\
+\mathrm{NC4}:&\hbox{that Paper 39 has already closed its C0 core or received
+external Clay-style acceptance}\\
 \mathrm{NC5}:&\hbox{that experimental validation has been supplied by formal
 reconstruction alone}\\
 \mathrm{NC6}:&\hbox{that GR, QFT, and QCD external equivalence have all been
@@ -850,8 +848,8 @@ $$
 and hardens effective GR, relativistic QFT kinematics, and finite QCD
 dynamics.  Paper 37 closes the gauge-invariant standard continuum
 Yang-Mills bridge, and Paper 38 closes the ontology-free Yang-Mills reduction
-inside the corpus.  Paper 39 expands that result into a standalone proof
-manuscript while leaving external mathematical acceptance explicit.}
+inside the corpus.  Paper 39 expands that result into a standalone reduction
+manuscript and explicitly names the C0 constructive open core.}
 }
 $$
 
@@ -892,8 +890,8 @@ ontology}\\
 \mathrm{P36} & \hbox{hardening summary and compilation}\\
 \mathrm{P37} & \hbox{standard-equivalence bridge for continuum Yang-Mills}\\
 \mathrm{P38} & \hbox{ontology-free Yang-Mills proof reduction}\\
-\mathrm{P39} & \hbox{standalone ontology-free Yang-Mills proof manuscript}\\
-\mathrm{P40} & \hbox{C0 construction theorem for continuum Yang-Mills}
+\mathrm{P39} & \hbox{standalone ontology-free Yang-Mills manuscript with
+open C0 core}
 \end{array}
 }
 $$
@@ -908,7 +906,6 @@ The current late-corpus document ledger is:
 - `relativistic-isp-v4-paper37-standard-equivalence-bridge-for-continuum-yang-mills.md`
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
-- `relativistic-isp-v4-paper40-c0-construction-theorem-for-continuum-yang-mills.md`
 - `relativistic-isp-v5-paper0-review-introduction-for-physicists.md`
 - `relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md`
 - `relativistic-isp-v5-paper2-gravitational-record-stabilization-coherence-decay.md` (draft)
@@ -968,8 +965,8 @@ $$
 ISP premises?}\\
 \hbox{remaining external equivalence} & \hbox{can GR, QFT, QCD, and spin/CPT
 bridges be written to the same level as Paper 37?}\\
-\hbox{external YM validation} & \hbox{does the Paper 39 proof survive
-independent conventional review?}\\
+\hbox{external YM validation} & \hbox{can the Paper 39 C0 open core be
+closed and then reviewed conventionally?}\\
 \hbox{experimental signatures} & \hbox{does ISP predict deviations from
 standard GR, QFT, or QCD?}\\
 \hbox{black holes} & \hbox{what replaces singularities in finite record
@@ -999,9 +996,12 @@ ISP corpus, effective GR, relativistic QFT kinematics, and finite QCD
 dynamics are internally closed.  Continuum Yang-Mills has an internal ISP
 descent theorem, a standard gauge-invariant equivalence bridge through Paper
 37, an ontology-free proof reduction through Paper 38, and a standalone
-ontology-free proof manuscript through Paper 39.  The remaining
-bridge program concerns broader GR, QFT, and QCD external comparison, plus
-independent review of the Paper 39 proof.  The result is a
+ontology-free reduction manuscript through Paper 39.  Paper 39 is conditional
+on closing the C0 constructive core: uniform projective control, large-field
+control, Euclidean restoration, zero-flow recovery, and nontriviality.  The
+remaining bridge program concerns broader GR, QFT, and QCD external
+comparison, plus independent review of the Paper 39 margin and transfer
+machinery after that core is supplied.  The result is a
 finite stochastic ontology that
 tries to explain why the usual continuum quantum and relativistic formalism
 works, rather than taking its most mysterious structures as primitive.
@@ -1027,8 +1027,8 @@ $$
 effective GR, relativistic QFT kinematics, and finite QCD dynamics, with
 continuum Yang-Mills additionally bridged to the standard gauge-invariant
 comparison sector in Paper 37 and reduced to an ontology-free proof ledger in
-Paper 38, then expanded into a standalone ontology-free proof manuscript in
-Paper 39.}
+Paper 38, then expanded into a standalone ontology-free reduction manuscript
+in Paper 39 with an explicit open C0 constructive core.}
 }
 $$
 
@@ -1036,8 +1036,8 @@ The cleanest statement of the next task is:
 
 $$
 \boxed{
-\hbox{derive more of the active corpus from minimal ISP premises and develop
-the remaining GR, QFT, and QCD external bridges while subjecting the Paper 39
-proof to independent conventional review.}
+\hbox{derive more of the active corpus from minimal ISP premises, close the
+Paper 39 C0 open core, and develop the remaining GR, QFT, and QCD external
+bridges with the same conventional clarity.}
 }
 $$
