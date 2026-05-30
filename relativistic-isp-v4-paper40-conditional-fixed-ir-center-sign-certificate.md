@@ -36109,9 +36109,724 @@ sufficient. Equation (37.32) identifies the sector free energy with the final
 hypothesis. Sections 37.11-37.14 rule out renormalization, strong coupling,
 weak-coupling good sectors, and record bookkeeping as shortcuts. `∎`
 
-### 37.16. Completed Branch A Investigation
+### 37.16. Target 40.188: Conditional Center-Marginal Soft-Cutset Route
 
-Branch A is now fully investigated:
+`V4P40-TARGET-40188-CONDITIONAL-CENTER-MARGINAL-SOFT-CUTSET`.
+
+The previous audit says that one prescribed thick insertion is too rigid. The
+new route asks whether the center twist can choose a soft channel after the
+non-center environment is observed.
+
+The guiding question is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{After conditioning on the SO(3) record,}\\[1mm]
+\text{is there a cutoff-uniform soft center cutset with positive probability?}
+\end{array}}
+\tag{37.48}
+```
+
+This is not a hidden Markov move. It is a disintegration of the same
+deterministic SU(2) pushforward measure.
+
+### 37.17. Conditional Center Marginal
+
+Choose a measurable section:
+
+```math
+s:
+SO(3)
+\longrightarrow
+SU(2).
+\tag{37.49}
+```
+
+Every link variable can be written as:
+
+```math
+U_{\ell}
+=
+\varepsilon_{\ell}
+s
+\left(
+\bar U_{\ell}
+\right),
+\qquad
+\varepsilon_{\ell}\in Z_2.
+\tag{37.50}
+```
+
+Let:
+
+```math
+b
+=
+\{\varepsilon_{\ell}\}_{\ell}
+\tag{37.51}
+```
+
+denote the center lift field. Disintegrate the fixed-tile SU(2) measure as:
+
+```math
+d\mu^{\mathrm{SU2}}_{R,a}
+=
+d\bar\mu^{0}_{R,a}(\bar U)
+d\mu^{0}_{R,a}(b\mid\bar U).
+\tag{37.52}
+```
+
+Here `bar mu` is the untwisted SO(3) marginal. The twisted and untwisted
+conditional center partition functions are:
+
+```math
+Z^{0}_{\mathrm{cen}}(\bar U)
+=
+\sum_{b\in\mathcal B^{0}(\bar U)}
+\exp
+\left(
+-S_{R,a}(b,\bar U)
+\right),
+\tag{37.53}
+```
+
+and:
+
+```math
+Z^{\mathrm{tw}}_{\mathrm{cen}}(\bar U)
+=
+\sum_{b\in\mathcal B^{\mathrm{tw}}(\bar U)}
+\exp
+\left(
+-S_{R,a}(b,\bar U)
+\right).
+\tag{37.54}
+```
+
+The conditional twist ratio is:
+
+```math
+r_{R,a}(\bar U)
+:=
+\frac{
+Z^{\mathrm{tw}}_{\mathrm{cen}}(\bar U)
+}{
+Z^{0}_{\mathrm{cen}}(\bar U)
+}.
+\tag{37.55}
+```
+
+The global twist ratio is exactly:
+
+```math
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}
+=
+\int
+r_{R,a}(\bar U)
+d\bar\mu^{0}_{R,a}(\bar U).
+\tag{37.56}
+```
+
+Thus the problem becomes: prove that the conditional center ratio is not almost
+surely crushed to zero.
+
+### 37.18. Cutset Transforms And Soft Costs
+
+Let:
+
+```math
+\mathcal C_{R,a}(\bar U)
+\tag{37.57}
+```
+
+be a measurable family of admissible center cutsets. A cutset:
+
+```math
+\Gamma\in\mathcal C_{R,a}(\bar U)
+\tag{37.58}
+```
+
+defines a center transform:
+
+```math
+T_{\Gamma}:
+\mathcal B^{0}(\bar U)
+\longrightarrow
+\mathcal B^{\mathrm{tw}}(\bar U).
+\tag{37.59}
+```
+
+The action increment is:
+
+```math
+\Delta_{\Gamma}(b,\bar U)
+:=
+S_{R,a}
+\left(
+T_{\Gamma}b,\bar U
+\right)
+-
+S_{R,a}
+\left(
+b,\bar U
+\right).
+\tag{37.60}
+```
+
+Assume `T_Gamma` is injective on the untwisted center fiber. Then:
+
+```math
+r_{R,a}(\bar U)
+\ge
+\mathbb E_{\mu^{0}(\cdot\mid\bar U)}
+\left[
+\exp
+\left(
+-\Delta_{\Gamma}(b,\bar U)
+\right)
+\right].
+\tag{37.61}
+```
+
+Define the soft cost of the cutset:
+
+```math
+K_{\Gamma}(\bar U)
+:=
+-
+\log
+\mathbb E_{\mu^{0}(\cdot\mid\bar U)}
+\left[
+\exp
+\left(
+-\Delta_{\Gamma}(b,\bar U)
+\right)
+\right].
+\tag{37.62}
+```
+
+The adaptive soft-cutset cost is:
+
+```math
+M_{R,a}(\bar U)
+:=
+\inf_{\Gamma\in\mathcal C_{R,a}(\bar U)}
+K_{\Gamma}(\bar U).
+\tag{37.63}
+```
+
+Then:
+
+```math
+r_{R,a}(\bar U)
+\ge
+\exp
+\left(
+-M_{R,a}(\bar U)
+\right).
+\tag{37.64}
+```
+
+This is the exact mathematical form of the new idea.
+
+### 37.19. Soft-Cutset Criterion
+
+**Theorem 40.188A (Soft-Cutset Criterion).** If there are constants:
+
+```math
+C_R<\infty,
+\qquad
+p_R>0,
+\tag{37.65}
+```
+
+independent of `a`, such that:
+
+```math
+\bar\mu^{0}_{R,a}
+\left(
+M_{R,a}\le C_R
+\right)
+\ge
+p_R
++o_a(1),
+\tag{37.66}
+```
+
+then the fixed-tile twist free-energy bound (37.47) holds.
+
+#### Proof
+
+By (37.56) and (37.64):
+
+```math
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}
+\ge
+\int
+\exp
+\left(
+-M_{R,a}(\bar U)
+\right)
+d\bar\mu^{0}_{R,a}(\bar U).
+\tag{37.67}
+```
+
+On the event `M <= C_R`, the integrand is at least `e^{-C_R}`. Thus:
+
+```math
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}
+\ge
+e^{-C_R}
+\left(
+p_R+o_a(1)
+\right).
+\tag{37.68}
+```
+
+Taking `-log` gives (37.47). `∎`
+
+So the route is exact: Branch A would close if the conditioned SO(3)
+environment has a positive-probability bounded soft cutset.
+
+### 37.20. Why Microscopic Adaptive Cutsets Still Fail
+
+Suppose cutsets are microscopic sheets with:
+
+```math
+N_a(\Gamma)
+\asymp
+\frac{
+\operatorname{Area}_R
+}{
+a^2
+}.
+\tag{37.69}
+```
+
+If each plaquette in the cutset has conditional cost bounded below on the
+typical weak-coupling event by:
+
+```math
+c_a
+\ge
+c\beta_a,
+\qquad
+c>0,
+\tag{37.70}
+```
+
+then:
+
+```math
+K_{\Gamma}(\bar U)
+\gtrsim
+c\beta_aN_a(\Gamma).
+\tag{37.71}
+```
+
+The number of microscopic sheets of area `N` is at most:
+
+```math
+\exp
+\left(
+\kappa N
+\right)
+\tag{37.72}
+```
+
+for a lattice constant `kappa`. Since:
+
+```math
+\beta_a\to\infty,
+\tag{37.73}
+```
+
+the entropy of microscopic sheets cannot beat the weak-coupling plaquette cost:
+
+```math
+\kappa N
+-
+c\beta_aN
+\to
+-\infty.
+\tag{37.74}
+```
+
+Therefore the adaptive route does not rescue thin microscopic sheets. The
+soft-cutset route must use physical blocked cutsets, not arbitrary microscopic
+surface entropy.
+
+### 37.21. Physical Blocked Soft-Cutsets
+
+Fix a physical block scale:
+
+```math
+0<\ell_R<R.
+\tag{37.75}
+```
+
+Partition the tile region into a finite physical cell complex:
+
+```math
+\mathcal Q_R(\ell_R).
+\tag{37.76}
+```
+
+The number of blocks:
+
+```math
+N_R(\ell_R)
+:=
+\left|
+\mathcal Q_R(\ell_R)
+\right|
+\tag{37.77}
+```
+
+is independent of `a`. For each block `Q`, define a local conditional charged
+block ratio:
+
+```math
+\rho_{Q,a}(\bar U)
+:=
+\frac{
+Z^{\mathrm{tw}}_{Q,a}(\bar U)
+}{
+Z^{0}_{Q,a}(\bar U)
+}.
+\tag{37.78}
+```
+
+The corresponding block soft cost is:
+
+```math
+c_{Q,a}(\bar U)
+:=
+-
+\log
+\rho_{Q,a}(\bar U).
+\tag{37.79}
+```
+
+For a physical environment-admissible cutset:
+
+```math
+\Sigma\in
+\operatorname{Cut}^{\mathrm{adm}}_{R,a}
+\left(
+\bar U;\ell_R
+\right),
+\tag{37.80}
+```
+
+define:
+
+```math
+C_{\Sigma,a}(\bar U)
+:=
+\sum_{Q\in\Sigma}
+c_{Q,a}(\bar U).
+\tag{37.81}
+```
+
+The blocked min-cut is:
+
+```math
+M^{\mathrm{blk}}_{R,a}(\bar U)
+:=
+\min_{
+\Sigma\in
+\operatorname{Cut}^{\mathrm{adm}}_{R,a}
+\left(
+\bar U;\ell_R
+\right)
+}
+C_{\Sigma,a}(\bar U).
+\tag{37.82}
+```
+
+If no admissible cutset exists, set `M^{blk}_{R,a}=infty`. Since the underlying
+physical cell complex is finite at fixed physical `R`, it is enough to prove
+tightness of the block costs and enough nonlocking of the admissible-cutset
+law.
+
+### 37.22. Block Finite-Energy Criterion
+
+**Theorem 40.188B (Blocked Soft-Cutset Criterion).** Suppose:
+
+```math
+\mathsf{SC}_{1}(R,\ell_R):
+\qquad
+\lim_{L\to\infty}
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+\max_{Q\in\mathcal Q_R(\ell_R)}
+c_{Q,a}
+>
+L
+\right)
+=
+0,
+\tag{37.83}
+```
+
+and:
+
+```math
+\mathsf{SC}_{2}(R,\ell_R):
+\qquad
+\liminf_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+\operatorname{Cut}^{\mathrm{adm}}_{R,a}
+\left(
+\bar U;\ell_R
+\right)
+\ne\varnothing
+\right)
+>
+0.
+\tag{37.84}
+```
+
+Then the soft-cutset criterion (37.66) holds.
+
+#### Proof
+
+On the event:
+
+```math
+\max_{Q}c_{Q,a}\le L,
+\tag{37.85}
+```
+
+every physical cutset has cost at most:
+
+```math
+L
+\left|
+\Sigma
+\right|.
+\tag{37.86}
+```
+
+Since the physical complex is finite, define:
+
+```math
+n_R(\ell_R)
+:=
+\max_{\Sigma\in\operatorname{Cut}^{\mathrm{geom}}_R(\ell_R)}
+\left|
+\Sigma
+\right|
+<
+\infty.
+\tag{37.87}
+```
+
+Then:
+
+```math
+M^{\mathrm{blk}}_{R,a}
+\le
+Ln_R(\ell_R).
+\tag{37.88}
+```
+
+Choose `L` so that (37.83) gives positive probability after combining with
+(37.84). Then (37.66) holds with:
+
+```math
+C_R
+=
+Ln_R(\ell_R).
+\tag{37.89}
+```
+
+Theorem 40.188A gives (37.47). `∎`
+
+The real burden is therefore not global. It is the local block finite-energy
+statement `SC1` plus the nonlocking statement `SC2`.
+
+### 37.23. What The Block Criterion Really Requires
+
+The first block condition says that a fixed physical block has a nonzero
+charged center ratio after all microscopic degrees of freedom inside the block
+are integrated out. It is a local continuum statement:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{a fixed physical charged block insertion}\\[1mm]
+\text{has a tight renormalized free-energy distribution.}
+\end{array}}
+\tag{37.90}
+```
+
+The second says the environment does not force all admissible physical cutsets
+to be absent or locked into the dominant sign sector:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the SO(3) record does not eliminate}\\[1mm]
+\text{all fixed physical center routing channels.}
+\end{array}}
+\tag{37.91}
+```
+
+These are sharper than (37.47). They are local and falsifiable.
+
+### 37.24. Falsification Modes
+
+The soft-cutset route fails in exactly three ways.
+
+First, local block costs may diverge:
+
+```math
+c_{Q,a}
+\to
+\infty
+\quad
+\text{in probability}.
+\tag{37.92}
+```
+
+Then no physical block can carry charged center flux at bounded cost.
+
+Second, block costs may be tight but perfectly correlated so that every
+complete cutset is blocked:
+
+```math
+M^{\mathrm{blk}}_{R,a}
+\to
+\infty
+\quad
+\text{in probability}.
+\tag{37.93}
+```
+
+Then the obstruction is not local cost, but long-range SO(3)/cocycle locking.
+
+Third, the blocked cutsets may depend on a renormalized observable that is not
+the same charged sheet package used in Section 36. Then the route has changed
+the target and no longer proves Paper 40's certificate.
+
+Thus:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{F}_{1}
+&
+\text{local charged blocks have divergent free energy},\\[1mm]
+\mathrm{F}_{2}
+&
+\text{physical cutsets are globally locked},\\[1mm]
+\mathrm{F}_{3}
+&
+\text{renormalized cutsets change the observable}.
+\end{array}}
+\tag{37.94}
+```
+
+These are the exact failure modes to test.
+
+### 37.25. Relation To Branch B
+
+If the soft-cutset criterion holds, then:
+
+```math
+\limsup_{a\to0}
+\left(
+-
+\log
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}
+\right)
+<
+\infty,
+\tag{37.95}
+```
+
+so Branch A proves `H_3sec`. Branch B then has no pinned continuum cell state.
+
+If Branch B fails by a pinned continuum cell state, then any soft-cutset proof
+must fail by one of (37.92)-(37.94). Thus the two branches are dual diagnostics:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Branch B sees one-sided pinning in the cell law.}\\[1mm]
+\text{Branch A sees the same obstruction as soft-cutset failure.}
+\end{array}}
+\tag{37.96}
+```
+
+This is the precise ISP value of the route: it turns an abstract twist free
+energy into local conditional tests on the finite record environment.
+
+### 37.26. Decision Theorem For The Soft-Cutset Route
+
+**Theorem 40.188C (Soft-Cutset Exhaustion).** Under fixed-IR and Barandes
+alignment, the conditional center-marginal soft-cutset route has the exact
+decision table:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{SC}_{+}
+&
+\mathsf{SC}_{1}\text{ and }\mathsf{SC}_{2}\text{ hold, hence (37.47)},\\[1mm]
+\mathrm{SC}_{\mathrm{micro}}
+&
+\text{microscopic adaptive sheets fail by entropy versus }\beta_a,\\[1mm]
+\mathrm{SC}_{\mathrm{loc}}
+&
+\mathsf{SC}_{1}\text{ fails, so local charged blocks diverge},\\[1mm]
+\mathrm{SC}_{\mathrm{lock}}
+&
+\mathsf{SC}_{2}\text{ fails, so the SO(3) environment locks all cutsets},\\[1mm]
+\mathrm{SC}_{\mathrm{obs}}
+&
+\text{the cutset uses a different observable and proves the wrong ratio}.
+\end{array}}
+\tag{37.97}
+```
+
+The only positive route is `SC_+`. The other four outcomes are falsifications
+or scope errors.
+
+#### Proof
+
+The conditional decomposition is exact by disintegration. The soft-cost
+inequality is (37.61)-(37.64). The positive criterion is Theorem 40.188A, and
+the blocked sufficient condition is Theorem 40.188B. The microscopic failure is
+(37.69)-(37.74). If the blocked criterion fails, then either local block costs
+are not tight, physical cutsets are globally locked, or the proposed cutset no
+longer represents the charged sheet package. These are precisely the remaining
+rows of (37.97). `∎`
+
+### 37.27. Soft-Cutset Reduction Ledger
+
+At this point Branch A has been reduced to the soft-cutset tests:
 
 ```math
 \boxed{
@@ -36128,18 +36843,18437 @@ Branch A is now fully investigated:
 \mathrm{EQUIV}_{\mathrm{FE}}
 &
 \text{bounded tile twist free energy is exactly the final input},\\[1mm]
+\mathrm{NEW}_{\mathrm{soft}}
+&
+\text{conditional SO(3) soft cutsets give a local route to the same bound},\\[1mm]
+\mathrm{FAIL}_{\mathrm{micro}}
+&
+\text{microscopic adaptive cutsets do not beat weak-coupling cost},\\[1mm]
+\mathrm{OPEN}_{\mathrm{block}}
+&
+\text{physical block finite energy and nonlocking are the live tests},\\[1mm]
 \mathrm{NO}_{\mathrm{ISP}}
 &
-\text{deterministic record bookkeeping does not change the ratio},\\[1mm]
-\mathrm{NEXT}_{\mathrm{honest}}
-&
-\text{prove fixed-tile disorder free energy or stay conditional}.
+\text{deterministic record bookkeeping exposes but does not change the ratio}.
 \end{array}}
-\tag{37.48}
+\tag{37.98}
 ```
 
-So Branch A is less ISP-native than Branch B, but it is not vague. Its final
-form is the fixed-IR 't Hooft/tile free-energy estimate (37.47). If that
-estimate is proved, Paper 40's conditional certificate becomes a fixed-IR
-theorem. If it cannot be proved without importing the Wilson area law, Branch
-A has simply rediscovered the confinement area barrier in disorder variables.
+The new route is therefore exhausted to a precise local test. It does not make
+(37.47) automatic. It replaces the global vortex free-energy question by two
+fixed-IR conditional questions: local charged block finite energy and absence
+of SO(3)-environment cutset locking. If those are proved, Paper 40's
+conditional certificate becomes a fixed-IR theorem. If either fails, the
+soft-cutset route has found the same area barrier in a more local form.
+
+### 37.28. Target 40.189: SC1 Local Charged Block Finite-Energy Audit
+
+`V4P40-TARGET-40189-SC1-LOCAL-CHARGED-BLOCK-FINITE-ENERGY`.
+
+We now isolate `SC1`, the first live test in the soft-cutset route. Fix the
+physical block scale `ell_R` and a block:
+
+```math
+Q\in\mathcal Q_R(\ell_R).
+\tag{37.99}
+```
+
+The local charged block ratio is:
+
+```math
+\rho_{Q,a}(\bar U)
+=
+\frac{
+Z^{\mathrm{tw}}_{Q,a}(\bar U)
+}{
+Z^{0}_{Q,a}(\bar U)
+},
+\tag{37.100}
+```
+
+and the local charged block cost is:
+
+```math
+c_{Q,a}(\bar U)
+=
+-
+\log
+\rho_{Q,a}(\bar U).
+\tag{37.101}
+```
+
+The `SC1` condition is:
+
+```math
+\boxed{
+\lim_{L\to\infty}
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+\max_{Q\in\mathcal Q_R(\ell_R)}
+c_{Q,a}
+>
+L
+\right)
+=
+0.
+}
+\tag{37.102}
+```
+
+Since the physical block family is finite at fixed `R`, this is equivalent to
+tightness of each block cost:
+
+```math
+\forall Q\in\mathcal Q_R(\ell_R),
+\qquad
+\lim_{L\to\infty}
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+c_{Q,a}>L
+\right)
+=
+0.
+\tag{37.103}
+```
+
+Thus SC1 is a local statement. It is not a global vortex theorem and not a
+large-loop theorem.
+
+### 37.29. Exact Meaning Of SC1
+
+Equation (37.103) is equivalent to:
+
+```math
+\forall\epsilon>0\quad
+\exists L_R<\infty
+\quad
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+\rho_{Q,a}<e^{-L_R}
+\right)
+<
+\epsilon.
+\tag{37.104}
+```
+
+So SC1 says:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{for a fixed physical block,}\\[1mm]
+\text{the charged center class is not almost surely suppressed}\\[1mm]
+\text{by an unbounded conditional free-energy cost.}
+\end{array}}
+\tag{37.105}
+```
+
+This is the precise local version of no one-sided center pinning.
+
+### 37.30. Finite-Cutoff Positivity Is Not SC1
+
+At every fixed cutoff, the SU(2) Haar support gives:
+
+```math
+Z^{\mathrm{tw}}_{Q,a}(\bar U)>0,
+\qquad
+Z^{0}_{Q,a}(\bar U)>0,
+\tag{37.106}
+```
+
+for admissible boundary data. Hence:
+
+```math
+0<\rho_{Q,a}(\bar U)<\infty.
+\tag{37.107}
+```
+
+But SC1 requires cutoff-uniform tightness as `a` goes to zero. The following
+abstract behavior is compatible with finite-cutoff positivity:
+
+```math
+\rho_{Q,a}(\bar U)
+=
+\exp
+\left(
+-a^{-1}
+\right).
+\tag{37.108}
+```
+
+Thus support proves availability, not weight. This is the same lesson as the
+global Branch B support audit, now localized to a physical block.
+
+### 37.31. Local Pinned-Block Equivalence
+
+Define the local pinned-block condition:
+
+```math
+\mathsf{LPB}(Q,\ell_R)
+:
+\qquad
+\rho_{Q,a}
+\to
+0
+\quad
+\text{in }\bar\mu^{0}_{R,a}\text{-probability along a subsequence}.
+\tag{37.109}
+```
+
+Then:
+
+```math
+\boxed{
+\mathsf{SC}_{1}(Q,\ell_R)
+\text{ fails}
+\quad
+\Longleftrightarrow
+\quad
+\mathsf{LPB}(Q,\ell_R)
+\text{ holds along a subsequence after threshold extraction.}
+}
+\tag{37.110}
+```
+
+#### Proof
+
+If SC1 fails, then there is an `epsilon_R>0` such that for every `L` one can
+choose a subsequence with:
+
+```math
+\bar\mu^{0}_{R,a_n}
+\left(
+c_{Q,a_n}>L
+\right)
+\ge
+\epsilon_R.
+\tag{37.111}
+```
+
+Taking `L` through an increasing sequence and diagonalizing gives a subsequence
+on which:
+
+```math
+\rho_{Q,a_n}
+\to
+0
+\tag{37.112}
+```
+
+on a set of SO(3) marginal mass at least `epsilon_R` in the threshold sense.
+Conversely, (37.109) immediately violates tightness of `c_Q,a`. `∎`
+
+Thus SC1 is exactly the exclusion of local charged-block pinning.
+
+### 37.32. Local Symmetry Route
+
+The cleanest positive proof of SC1 would be a local class-exchange symmetry.
+Suppose there is a measurable map of center fibers:
+
+```math
+J_{Q,a}(\bar U):
+\mathcal B^{0}_{Q}(\bar U)
+\longrightarrow
+\mathcal B^{\mathrm{tw}}_{Q}(\bar U)
+\tag{37.113}
+```
+
+whose entropy or action cost obeys:
+
+```math
+S_{Q,a}
+\left(
+J_{Q,a}b,\bar U
+\right)
+-
+S_{Q,a}
+\left(
+b,\bar U
+\right)
+\le
+C_Q
++o_a(1),
+\tag{37.114}
+```
+
+with `C_Q` independent of `a`, on a set of conditional center probability
+tending to one. Then:
+
+```math
+\rho_{Q,a}(\bar U)
+\ge
+e^{-C_Q+o_a(1)}
+\tag{37.115}
+```
+
+on that SO(3) event, and SC1 follows.
+
+This route is valid, but no such exact local symmetry has been derived. Local
+center coboundaries do not change the relative charged class; a nontrivial
+relative class change is not an action gauge symmetry.
+
+### 37.33. Local Entropy-Bridge Route
+
+Pointwise action control is stronger than necessary. In this subsection
+`mu^0_{Q,a}` means the finite neutral-action reference measure on the enlarged
+neutral-plus-twisted local fiber, normalized by the neutral partition function
+`Z^0_{Q,a}`. Its mass on the twisted class is exactly the local ratio
+`rho_{Q,a}`. This convention is essential: a normalized probability measure
+supported only on the neutral class would be singular against every twisted
+bridge.
+
+Let:
+
+```math
+\eta_{Q,a}^{\mathrm{tw}}(\cdot\mid\bar U)
+\tag{37.116}
+```
+
+be a probability measure supported on the twisted local center class. If:
+
+```math
+H
+\left(
+\eta_{Q,a}^{\mathrm{tw}}(\cdot\mid\bar U)
+\mid
+\mu^{0}_{Q,a}(\cdot\mid\bar U)
+\right)
+\le
+C_Q
+\tag{37.117}
+```
+
+with probability tending to one under `bar mu`, then:
+
+```math
+\rho_{Q,a}(\bar U)
+\ge
+e^{-C_Q}
+\tag{37.118}
+```
+
+on that event. Therefore SC1 follows.
+
+This is the best positive form of SC1:
+
+```math
+\boxed{
+\text{construct a local twisted center bridge with bounded relative entropy.}
+}
+\tag{37.119}
+```
+
+It allows microscopic entropy to compensate for pointwise action cost. It is
+also exactly a local fixed-IR free-energy theorem, not a formal record
+identity.
+
+### 37.34. Local Classical-Field Route Fails Pointwise
+
+A deterministic smooth local charged background `V_Q` in the block has
+positive continuum action:
+
+```math
+I_Q(V_Q)>0.
+\tag{37.120}
+```
+
+The same calculation as (37.24) gives:
+
+```math
+\Delta S_{Q,a}(V_Q)
+=
+\frac{\beta_a}{4}
+I_Q(V_Q)
++o(1).
+\tag{37.121}
+```
+
+Since:
+
+```math
+\beta_a\to\infty,
+\tag{37.122}
+```
+
+the pointwise local classical insertion has:
+
+```math
+\Delta S_{Q,a}(V_Q)
+\to
+\infty.
+\tag{37.123}
+```
+
+Thus the Einstein-style geometric thick field does not prove SC1 by itself.
+The local block proof must be entropic or genuinely nonperturbative.
+
+### 37.35. RP And Weak-Coupling Audits For SC1
+
+Reflection positivity can compare reflected block packages, but SC1 needs a
+charged local class ratio. RP proves SC1 only if it supplies a charged
+class-exchange map or bounded entropy bridge. Without that extra charged
+oddness, RP gives structure but not the local ratio (37.100).
+
+Weak-coupling good-sector control also does not prove SC1. It can say that
+most plaquettes are near identity, but that tends to make a charged local class
+look costly. The missing estimate is precisely the integrated ratio:
+
+```math
+\frac{
+Z^{\mathrm{tw}}_{Q,a}(\bar U)
+}{
+Z^{0}_{Q,a}(\bar U)
+}.
+\tag{37.124}
+```
+
+So the two obvious tools do not prove SC1 without a new charged-sector input.
+
+### 37.36. SC1 Falsification Criterion
+
+SC1 fails if one proves a local lower bound:
+
+```math
+c_{Q,a}(\bar U)
+\ge
+L_a
+\tag{37.125}
+```
+
+on SO(3) marginal probability bounded away from zero, with:
+
+```math
+L_a\to\infty.
+\tag{37.126}
+```
+
+Equivalently:
+
+```math
+\rho_{Q,a}(\bar U)
+\le
+e^{-L_a}
+\tag{37.127}
+```
+
+on that event. This is a clean falsifier. It would mean that the soft-cutset
+route dies locally before SC2 is even relevant.
+
+### 37.37. SC1 Decision Theorem
+
+**Theorem 40.189A (SC1 Exhaustion).** For each fixed physical block `Q`, under
+fixed-IR and Barandes alignment, exactly one of the following must be supplied
+to decide SC1:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{SC1}_{+}^{\mathrm{sym}}
+&
+\text{a bounded local charged class-exchange symmetry},\\[1mm]
+\mathrm{SC1}_{+}^{\mathrm{ent}}
+&
+\text{a bounded local relative-entropy bridge},\\[1mm]
+\mathrm{SC1}_{-}
+&
+\text{a divergent local charged-block cost on positive SO(3) mass},\\[1mm]
+\mathrm{SC1}_{0}
+&
+\text{no present formal tool decides the local ratio}.
+\end{array}}
+\tag{37.128}
+```
+
+The first two imply SC1. The third falsifies SC1. The fourth is the current
+state under the tools developed in this paper.
+
+#### Proof
+
+Equations (37.103)-(37.110) identify SC1 with exclusion of local block
+pinning. Section 37.32 proves that a bounded class-exchange symmetry implies
+SC1. Section 37.33 proves the same for a bounded entropy bridge. Section 37.36
+proves the falsification criterion. Sections 37.30, 37.34, and 37.35 show that
+finite support, pointwise classical insertion, RP alone, weak-coupling
+smoothness, and deterministic record bookkeeping do not decide the ratio.
+`∎`
+
+### 37.38. Updated SC1 Outcome
+
+The SC1 investigation is therefore complete as a reduction:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{equiv}}
+&
+\mathsf{SC}_{1}\text{ is local no-pinning of charged block ratios},\\[1mm]
+\mathrm{NO}_{\mathrm{support}}
+&
+\text{finite-cutoff support gives positivity, not tightness},\\[1mm]
+\mathrm{NO}_{\mathrm{classical}}
+&
+\text{smooth charged backgrounds fail pointwise by }\beta_a\text{ growth},\\[1mm]
+\mathrm{NO}_{\mathrm{RP/UV}}
+&
+\text{RP and weak-coupling smoothness need extra charged input},\\[1mm]
+\mathrm{YES}_{\mathrm{ent}}
+&
+\text{bounded local entropy bridge would prove }\mathsf{SC}_{1},\\[1mm]
+\mathrm{NO}_{\mathrm{free}}
+&
+\text{deterministic ISP records expose but do not change the ratio},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{construct or falsify the local entropy bridge}.
+\end{array}}
+\tag{37.129}
+```
+
+Thus SC1 is the local version of the remaining free-energy barrier. The next
+actual proof attempt is no longer broad: construct the bounded local entropy
+bridge (37.117), or prove the divergent local-cost falsifier (37.125).
+
+### 37.39. Target 40.190: Local Entropy Bridge For A Fixed Charged Block
+
+`V4P40-TARGET-40190-LOCAL-ENTROPY-BRIDGE-FIXED-CHARGED-BLOCK`.
+
+We now split the entropy bridge out as its own target. The purpose is not to
+rename SC1. The purpose is to ask whether there is a non-tautological local
+construction that keeps the charged block ratio from collapsing.
+
+Fix one physical block:
+
+```math
+Q\in\mathcal Q_R(\ell_R),
+\qquad
+\ell_R>0
+\quad
+\text{fixed in physical units}.
+\tag{37.130}
+```
+
+All constants in this target may depend on `R`, `ell_R`, and the block geometry,
+but not on the lattice spacing `a`.
+
+### 37.40. The Correct Local Reference Measure
+
+For a fixed SO(3) environment `bar U`, let the paired local center fiber be:
+
+```math
+\Omega^{\mathrm{pair}}_{Q,a}(\bar U)
+=
+\mathcal B^{0}_{Q,a}(\bar U)
+\sqcup
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U).
+\tag{37.131}
+```
+
+Define the finite neutral-normalized reference measure on this paired fiber by:
+
+```math
+d\widehat\mu^{0}_{Q,a}(b\mid\bar U)
+=
+\frac{
+\exp
+\left(
+-S_{Q,a}(b,\bar U)
+\right)
+}{
+Z^{0}_{Q,a}(\bar U)
+}
+d\nu_{Q,a}(b\mid\bar U).
+\tag{37.132}
+```
+
+Here `d nu` is the common local counting/Haar fiber measure restricted to the
+two local center classes. By construction:
+
+```math
+\widehat\mu^{0}_{Q,a}
+\left(
+\mathcal B^{0}_{Q,a}(\bar U)
+\mid
+\bar U
+\right)
+=
+1,
+\tag{37.133}
+```
+
+and:
+
+```math
+\widehat\mu^{0}_{Q,a}
+\left(
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\mid
+\bar U
+\right)
+=
+\frac{
+Z^{\mathrm{tw}}_{Q,a}(\bar U)
+}{
+Z^{0}_{Q,a}(\bar U)
+}
+=
+\rho_{Q,a}(\bar U).
+\tag{37.134}
+```
+
+Thus the bridge is measured against a finite reference measure, not against a
+probability law supported on the wrong class.
+
+### 37.41. Entropy Bridge Target
+
+Target 40.190 asks for events:
+
+```math
+E_{Q,a}
+\subseteq
+\mathcal E^{\mathrm{SO}(3)}_{R,a}
+\tag{37.135}
+```
+
+and probability measures:
+
+```math
+\eta^{\mathrm{tw}}_{Q,a}(\cdot\mid\bar U)
+\quad
+\text{supported on}
+\quad
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U),
+\tag{37.136}
+```
+
+such that:
+
+```math
+\lim_{a\to0}
+\bar\mu^{0}_{R,a}(E_{Q,a})
+=
+1,
+\tag{37.137}
+```
+
+and:
+
+```math
+H
+\left(
+\eta^{\mathrm{tw}}_{Q,a}(\cdot\mid\bar U)
+\mid
+\widehat\mu^{0}_{Q,a}(\cdot\mid\bar U)
+\right)
+\le
+C_Q
+\tag{37.138}
+```
+
+for every `bar U` in `E_{Q,a}`, with `C_Q<infty` independent of `a`.
+Here `H` is the finite-reference entropy functional:
+
+```math
+H(\eta\mid\nu)
+=
+\int
+\log
+\left(
+\frac{d\eta}{d\nu}
+\right)
+d\eta,
+```
+
+defined as `+infty` unless `eta` is absolutely continuous with respect to the
+finite positive measure `nu`.
+
+This is the fixed-IR entropy bridge. It is also Barandes-aligned: it is a
+statement about the deterministic finite readout measure after conditioning on
+the whole SO(3) environment. It assumes no hidden Markov transition law.
+
+### 37.42. Entropy Bridge Implies SC1
+
+**Theorem 40.190A (Entropy Bridge Implies Local No-Pinning).** If equations
+(37.135) through (37.138) hold for every fixed physical block in the finite
+family `\mathcal Q_R(\ell_R)`, then SC1 holds.
+
+#### Proof
+
+Let:
+
+```math
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+=
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U).
+\tag{37.139}
+```
+
+Among all probability measures supported on `A^tw`, the normalized restriction
+of `widehat mu^0` to `A^tw` minimizes relative entropy. Therefore:
+
+```math
+H
+\left(
+\eta^{\mathrm{tw}}_{Q,a}
+\mid
+\widehat\mu^{0}_{Q,a}
+\right)
+\ge
+-
+\log
+\widehat\mu^{0}_{Q,a}
+\left(
+A^{\mathrm{tw}}_{Q,a}
+\right).
+\tag{37.140}
+```
+
+Using (37.134), (37.138), and (37.140):
+
+```math
+-
+\log
+\rho_{Q,a}(\bar U)
+\le
+C_Q
+\tag{37.141}
+```
+
+on `E_{Q,a}`. Hence:
+
+```math
+c_{Q,a}(\bar U)
+\le
+C_Q
+\tag{37.142}
+```
+
+on `E_{Q,a}`. Since the number of physical blocks is finite at fixed `R`,
+the union bound over `Q` gives (37.102). `∎`
+
+### 37.43. The Tautological Bridge Does Not Prove Anything New
+
+There is always a formal minimizer:
+
+```math
+\eta^{\ast}_{Q,a}(\cdot\mid\bar U)
+=
+\widehat\mu^{0}_{Q,a}
+\left(
+\cdot
+\mid
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+\right).
+\tag{37.143}
+```
+
+For this minimizer:
+
+```math
+H
+\left(
+\eta^{\ast}_{Q,a}
+\mid
+\widehat\mu^{0}_{Q,a}
+\right)
+=
+-
+\log
+\rho_{Q,a}(\bar U)
+=
+c_{Q,a}(\bar U).
+\tag{37.144}
+```
+
+Thus the bare existence of a bridge is equivalent to the ratio itself. A useful
+proof of Target 40.190 must construct a bridge whose entropy is bounded for a
+reason not already identical to knowing `rho_{Q,a}`.
+
+### 37.44. Candidate Mechanism I: Bounded Class-Exchange Map
+
+A deterministic local class-exchange map would be enough if it controlled the
+finite-reference entropy. Suppose:
+
+```math
+T_{Q,a}(\bar U):
+\mathcal B^{0}_{Q,a}(\bar U)
+\longrightarrow
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\tag{37.145}
+```
+
+and let:
+
+```math
+\eta^{T}_{Q,a}
+=
+(T_{Q,a})_{\#}
+\mu^{0,\mathrm{prob}}_{Q,a},
+\tag{37.146}
+```
+
+where `mu^{0,prob}` is the neutral class probability law. If:
+
+```math
+H
+\left(
+\eta^{T}_{Q,a}
+\mid
+\widehat\mu^{0}_{Q,a}
+\right)
+\le
+C_Q
+\tag{37.147}
+```
+
+with high SO(3)-marginal probability, then Theorem 40.190A proves SC1.
+
+The obstruction is exactly the one already found in Section 37.34: the obvious
+smooth charged insertion has pointwise cost growing like `beta_a`. A successful
+map must use many-to-one entropy or a genuinely nonperturbative local
+redistribution. A classical thick field alone is not enough.
+
+### 37.45. Candidate Mechanism II: Local Heat-Bath Minorization
+
+A more probabilistic route would be a local heat-bath kernel:
+
+```math
+K_{Q,a}(\bar U;b,d b')
+\tag{37.148}
+```
+
+that is defined entirely inside the fixed physical block and satisfies a
+charged-class minorization:
+
+```math
+K_{Q,a}
+\left(
+\bar U;b,
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\right)
+\ge
+\kappa_Q
+\tag{37.149}
+```
+
+for neutral-class `b` in a high-probability local set, with:
+
+```math
+\kappa_Q>0
+\quad
+\text{independent of}
+\quad
+a.
+\tag{37.150}
+```
+
+If the kernel is reversible or has bounded entropy production relative to
+`widehat mu^0`, then the averaged output measure gives (37.138).
+
+This is a genuine route, but it is not automatic. Standard single-link heat
+baths typically preserve too much local boundary information to jump the
+charged center class at bounded cost. To make (37.149) true, the kernel must
+update a whole physical block with the correct boundary-compatible charged
+degrees of freedom. Proving that minorization is essentially a local finite
+energy theorem.
+
+### 37.46. Candidate Mechanism III: Transport Or Log-Sobolev Bridge
+
+Another possible route is a transport inequality on the paired local fiber. If
+one could prove:
+
+```math
+W_1
+\left(
+\eta,
+\widehat\mu^{0}_{Q,a}
+\right)^2
+\le
+2\alpha_Q
+H
+\left(
+\eta
+\mid
+\widehat\mu^{0}_{Q,a}
+\right)
+\tag{37.151}
+```
+
+with `alpha_Q` independent of `a`, and also construct a twisted measure at
+bounded transport distance from the neutral local ensemble, then (37.138) would
+follow.
+
+This route is attractive because the block is fixed in physical size. Its
+hazard is also clear: the paired fiber contains different center classes, and
+uniform convexity across those classes is not supplied by the Wilson action at
+weak lattice spacing. A transport proof would need a block-level inequality for
+the renormalized local variables, not a microscopic convexity estimate.
+
+### 37.47. Candidate Mechanism IV: ISP Record Constraint
+
+The ISP-specific test is whether the deterministic record law changes the
+paired local center marginal. The needed statement is:
+
+```math
+\widehat\mu^{0,\mathrm{ISP}}_{Q,a}
+\left(
+\mathcal B^{\mathrm{tw}}_{Q,a}
+\mid
+\bar U
+\right)
+\ge
+e^{-C_Q}
+\tag{37.152}
+```
+
+on high SO(3)-marginal probability, with `C_Q` independent of `a`.
+
+If (37.152) is derived from an ISP boundary-center record constraint, then
+Target 40.190 is proved by taking the normalized twisted restriction of
+`widehat mu^{0,ISP}`. If the ISP record law induces the same paired local
+center marginal as standard lattice Yang-Mills, then (37.152) is just SC1 in
+different notation and gives no new leverage.
+
+This is the decisive ontology-sensitive question. The branch is still
+Barandes-aligned only if the record law is used as a deterministic whole-process
+constraint on finite readouts, not as an unadvertised stochastic Markov
+dynamics.
+
+### 37.48. Falsification Of The Entropy Bridge
+
+Target 40.190 fails exactly when the bridge entropy diverges on positive SO(3)
+marginal mass. More explicitly, if there are `epsilon_Q>0` and a sequence with:
+
+```math
+L_a\to\infty
+```
+
+such that:
+
+```math
+\bar\mu^{0}_{R,a}
+\left(
+\inf_{\eta:\eta(A^{\mathrm{tw}}_{Q,a})=1}
+H
+\left(
+\eta
+\mid
+\widehat\mu^{0}_{Q,a}
+\right)
+\ge
+L_a
+\right)
+\ge
+\epsilon_Q,
+\tag{37.153}
+```
+
+then SC1 fails for the block `Q`.
+
+But the infimum in (37.153) is explicit:
+
+```math
+\inf_{\eta:\eta(A^{\mathrm{tw}}_{Q,a})=1}
+H
+\left(
+\eta
+\mid
+\widehat\mu^{0}_{Q,a}
+\right)
+=
+-
+\log
+\rho_{Q,a}.
+\tag{37.154}
+```
+
+So the falsifier is not mysterious. It is precisely local charged-block
+pinning.
+
+### 37.49. Relation To Existing Physics Routes
+
+The surrounding object is familiar: vortex free energy, twisted partition
+function ratios, and local finite-energy ideas are standard in the confinement
+literature. What appears nonstandard here is the exact formulation:
+
+```math
+\boxed{
+\text{SO(3)-conditioned, fixed-physical-block, finite-reference entropy bridge}
+}
+\tag{37.155}
+```
+
+This formulation is useful because it gives a sharp local test. It does not by
+itself lower the difficulty. The nontrivial content would be a bridge produced
+by a mechanism other than the tautological twisted Gibbs restriction.
+
+### 37.50. Target 40.190 Decision
+
+The local entropy bridge is now fully reduced:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{imp}}
+&
+\text{a bounded bridge implies }\mathsf{SC}_{1},\\[1mm]
+\mathrm{PROVED}_{\mathrm{equiv}}
+&
+\text{the optimal bridge cost equals }-\log\rho_{Q,a},\\[1mm]
+\mathrm{NO}_{\mathrm{taut}}
+&
+\text{the Gibbs restriction bridge only restates the target},\\[1mm]
+\mathrm{OPEN}_{\mathrm{mech}}
+&
+\text{find class-exchange, heat-bath, transport, or ISP-record leverage},\\[1mm]
+\mathrm{FALSIFY}
+&
+\text{prove divergent optimal bridge cost on positive SO(3) mass}.
+\end{array}}
+\tag{37.156}
+```
+
+Consequently, Target 40.190 is not an independent theorem waiting to be quoted.
+It is the cleanest local mechanism test for SC1. The next investigation should
+attack one of the four mechanisms above, with the ISP record-constraint test
+(37.152) first if the goal is to decide whether Branch A has genuine ISP
+content rather than only a conventional vortex free-energy reformulation.
+
+### 37.51. Target 40.191: ISP Record-Constraint Audit For The Local Center Marginal
+
+`V4P40-TARGET-40191-ISP-RECORD-CONSTRAINT-LOCAL-CENTER-MARGINAL`.
+
+We now audit the ISP-specific option in (37.152). The question is not whether
+the center readout is meaningful. It is meaningful. The question is whether a
+Barandes-aligned ISP record law changes the local paired center marginal:
+
+```math
+\widehat\mu^{0,\mathrm{ISP}}_{Q,a}
+\left(
+\mathcal B^{\mathrm{tw}}_{Q,a}
+\mid
+\bar U
+\right)
+\stackrel{?}{\ne}
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\left(
+\mathcal B^{\mathrm{tw}}_{Q,a}
+\mid
+\bar U
+\right).
+\tag{37.157}
+```
+
+If the answer is no, Branch A is an ordinary Yang-Mills free-energy route. If
+the answer is yes, the difference must be exhibited as a concrete local
+Radon-Nikodym factor or support constraint.
+
+The fixed-IR contract is unchanged: `R`, `ell_R`, and `Q` are physical and
+fixed, and all useful constants must be independent of `a`. The Barandes
+contract is also unchanged: ISP records are deterministic finite readouts of one
+whole-process law, not a hidden Markov dynamics and not an added stochastic
+kernel.
+
+### 37.52. Local Paired Readout Map
+
+Let:
+
+```math
+\Omega_{R,a}^{\mathrm{SU2}}
+\tag{37.158}
+```
+
+be the finite-cutoff SU(2) link-readout space on the fixed physical tile. Let:
+
+```math
+\mu^{\mathrm{YM}}_{R,a}
+\tag{37.159}
+```
+
+be the ordinary finite-cutoff Yang-Mills Gibbs law. The local paired readout is
+the deterministic map:
+
+```math
+\Pi_{Q,a}(U)
+=
+\left(
+\bar U,
+b_Q
+\right),
+\tag{37.160}
+```
+
+where `bar U` is the SO(3) environment and `b_Q` is the local center coordinate
+relative to the chosen section. The standard paired law is:
+
+```math
+\nu^{\mathrm{YM}}_{Q,a}
+=
+(\Pi_{Q,a})_{\#}
+\mu^{\mathrm{YM}}_{R,a}.
+\tag{37.161}
+```
+
+Disintegrating (37.161) gives:
+
+```math
+d\nu^{\mathrm{YM}}_{Q,a}(\bar U,b_Q)
+=
+d\bar\mu^{0}_{R,a}(\bar U)
+d\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U).
+\tag{37.162}
+```
+
+The finite neutral-normalized reference measure from (37.132) is just a
+convenient unnormalized version of this conditional local law on the paired
+neutral-plus-twisted fiber.
+
+### 37.53. Admissible ISP Record Construction
+
+An admissible Barandes-aligned ISP local construction may add deterministic
+record maps:
+
+```math
+\mathcal R_{R,a}:
+\Omega_{R,a}^{\mathrm{SU2}}
+\longrightarrow
+\mathcal X_{R,a},
+\tag{37.163}
+```
+
+deterministic restrictions of those records to boundaries, deterministic
+coordinate refinements, and ordinary conditioning on declared record events:
+
+```math
+G_{R,a}\in\sigma(\mathcal R_{R,a}),
+\qquad
+\mu^{\mathrm{YM}}_{R,a}(G_{R,a})>0.
+\tag{37.164}
+```
+
+The corresponding ISP local paired law is therefore:
+
+```math
+\nu^{\mathrm{ISP}}_{Q,a}
+=
+(\Pi_{Q,a})_{\#}
+\left(
+\mu^{\mathrm{YM}}_{R,a}(\,\cdot\,\mid G_{R,a})
+\right).
+\tag{37.165}
+```
+
+This is the most general deterministic-readout construction allowed here. Any
+additional Boltzmann weight, transition kernel between records, or
+future-conditioned charged-sector selection is outside the Barandes-aligned
+contract unless independently derived from the same finite whole-process law.
+
+### 37.54. Local No-Tilt Theorem
+
+**Theorem 40.191A (No Local Center Tilt From Deterministic Records).** Suppose
+the ISP record construction is admissible in the sense of (37.163)-(37.165), and
+suppose the declared record event is either already true under the finite SU(2)
+law or is measurable after conditioning on the SO(3) environment:
+
+```math
+G_{R,a}\in\sigma(\bar U).
+\tag{37.166}
+```
+
+Then for `bar mu`-almost every SO(3) environment:
+
+```math
+\mu^{0,\mathrm{ISP}}_{Q,a}(\,\cdot\,\mid\bar U)
+=
+\mu^{0,\mathrm{YM}}_{Q,a}(\,\cdot\,\mid\bar U).
+\tag{37.167}
+```
+
+Consequently:
+
+```math
+\widehat\mu^{0,\mathrm{ISP}}_{Q,a}
+\left(
+\mathcal B^{\mathrm{tw}}_{Q,a}
+\mid
+\bar U
+\right)
+=
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\left(
+\mathcal B^{\mathrm{tw}}_{Q,a}
+\mid
+\bar U
+\right)
+=
+\rho_{Q,a}^{\mathrm{YM}}(\bar U).
+\tag{37.168}
+```
+
+Thus (37.152) becomes exactly the ordinary SC1 lower-bound problem.
+
+#### Proof
+
+If `G_{R,a}` is already true, conditioning on it changes no law. If `G_{R,a}` is
+measurable with respect to `bar U`, then conditioning on the exact value of
+`bar U` already decides whether `G_{R,a}` occurred. For every bounded local center
+test function `F`:
+
+```math
+\mathbb E_{\mathrm{YM}}
+\left[
+F(b_Q)
+\mid
+\bar U,
+G_{R,a}
+\right]
+=
+\mathbb E_{\mathrm{YM}}
+\left[
+F(b_Q)
+\mid
+\bar U
+\right]
+\tag{37.169}
+```
+
+on the event where the conditional law is defined. This proves (37.167).
+Equation (37.168) follows by applying the equality of conditional laws to the
+twisted local class and using the neutral-normalized reference convention from
+(37.132)-(37.134). `∎`
+
+### 37.55. The Only Possible Change: A Center-Sensitive Constraint
+
+The only remaining way an admissible deterministic record event can change the
+local center marginal is through a conditional likelihood that depends on the
+center coordinate after the SO(3) environment has been fixed. In that case:
+
+```math
+\mathbb P_{\mathrm{YM}}
+\left(
+G_{R,a}
+\mid
+\bar U,b_Q
+\right)
+\text{ is not constant in }b_Q.
+\tag{37.170}
+```
+
+Define:
+
+```math
+q_{Q,a}(\bar U,b_Q)
+:=
+\mathbb P_{\mathrm{YM}}
+\left(
+G_{R,a}
+\mid
+\bar U,b_Q
+\right).
+\tag{37.171}
+```
+
+The conditional density is then exactly:
+
+```math
+\frac{
+d\mu^{0,\mathrm{ISP}}_{Q,a}
+}{
+d\mu^{0,\mathrm{YM}}_{Q,a}
+}
+(b_Q\mid\bar U)
+=
+\frac{
+q_{Q,a}(\bar U,b_Q)
+}{
+\mathbb E_{\mu^{0,\mathrm{YM}}_{Q,a}(\cdot\mid\bar U)}
+\left(
+q_{Q,a}(\bar U,\cdot)
+\right)
+}.
+\tag{37.172}
+```
+
+For a purely local event, `q_Q,a` is the indicator of that event. More generally,
+if a derived deterministic refinement produces a positive local weight:
+
+```math
+\Theta_{Q,a}(\bar U,b_Q)>0,
+\tag{37.173}
+```
+
+then the modified local twisted ratio is:
+
+```math
+\rho^{\mathrm{ISP}}_{Q,a}(\bar U)
+=
+\frac{
+\int_{\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)}
+\Theta_{Q,a}(\bar U,b_Q)
+d\widehat\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U)
+}{
+\int_{\mathcal B^{0}_{Q,a}(\bar U)}
+\Theta_{Q,a}(\bar U,b_Q)
+d\widehat\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U)
+}.
+\tag{37.174}
+```
+
+Equation (37.174) is the exact test. A claimed ISP improvement must identify
+`Theta_Q,a` and prove that it increases the twisted local ratio at fixed physical
+scale.
+
+### 37.56. Center-Blind Or Bounded-Distortion Factors Do Not Help
+
+If the derived factor is center-blind after the SO(3) environment is fixed:
+
+```math
+\Theta_{Q,a}(\bar U,b_Q)
+=
+\theta_{Q,a}(\bar U),
+\tag{37.175}
+```
+
+then (37.174) gives:
+
+```math
+\rho^{\mathrm{ISP}}_{Q,a}(\bar U)
+=
+\rho^{\mathrm{YM}}_{Q,a}(\bar U).
+\tag{37.176}
+```
+
+If the factor has only bounded distortion:
+
+```math
+e^{-D_Q}
+\le
+\frac{
+\Theta_{Q,a}(\bar U,b_1)
+}{
+\Theta_{Q,a}(\bar U,b_2)
+}
+\le
+e^{D_Q}
+\tag{37.177}
+```
+
+for all paired local center states and with `D_Q` independent of `a`, then:
+
+```math
+e^{-D_Q}
+\rho^{\mathrm{YM}}_{Q,a}(\bar U)
+\le
+\rho^{\mathrm{ISP}}_{Q,a}(\bar U)
+\le
+e^{D_Q}
+\rho^{\mathrm{YM}}_{Q,a}(\bar U).
+\tag{37.178}
+```
+
+This preserves SC1 if SC1 is already true, and preserves failure if the ordinary
+ratio collapses faster than the bounded factor can repair. It does not prove the
+fixed-IR lower bound from ISP alone.
+
+### 37.57. What Would Count As A Genuine ISP Lever
+
+A genuine ISP lever for Branch A would have to supply a derived center-sensitive
+factor satisfying:
+
+```math
+\rho^{\mathrm{ISP}}_{Q,a}(\bar U)
+\ge
+e^{-C_Q}
+\tag{37.179}
+```
+
+with high SO(3)-marginal probability and `C_Q` independent of `a`, while not
+being reducible to any of the following:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{L0}
+&
+\text{the standard Yang-Mills conditional ratio},\\[1mm]
+\mathrm{L1}
+&
+\text{a center-blind deterministic readout},\\[1mm]
+\mathrm{L2}
+&
+\text{a boundary event already fixed by }\bar U,\\[1mm]
+\mathrm{L3}
+&
+\text{postselection on the desired charged class},\\[1mm]
+\mathrm{L4}
+&
+\text{a hidden Markov transition between records},\\[1mm]
+\mathrm{L5}
+&
+\text{a continuum or CD4 survival assumption}.
+\end{array}}
+\tag{37.180}
+```
+
+No such factor has been derived in this paper. The earlier E4 audit also says
+that deterministic finite SU(2) center/coset/cocycle readouts have the original
+SU(2) link field as a common refinement. Therefore they cannot create a new
+local measure by readout language alone.
+
+### 37.58. Consequence For Branch A
+
+Combining Theorem 40.191A with the bounded-distortion audit gives:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Under the current Barandes-aligned finite-readout premises,}\\[1mm]
+\text{Branch A has no demonstrated ISP-specific local center-marginal tilt.}
+\end{array}}
+\tag{37.181}
+```
+
+Thus the local entropy bridge must be proved by ordinary Yang-Mills means unless
+a new center-sensitive deterministic constraint is explicitly supplied. In the
+present paper, the ISP role is diagnostic and organizational: it identifies the
+right local center record to test, but it does not by itself change its weight.
+
+This is not a failure of the fixed-IR program. It is a narrowing of the proof
+burden:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{YM}
+&
+\text{prove SC1/SC2 or the entropy bridge as ordinary fixed-IR estimates},\\[1mm]
+\mathrm{ISP}
+&
+\text{derive a nonboundary center-sensitive constraint satisfying }(37.179).
+\end{array}}
+\tag{37.182}
+```
+
+### 37.59. Target 40.191 Decision
+
+Target 40.191 is therefore decided under the current premises:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{notilt}}
+&
+\text{deterministic center-blind records leave the local marginal unchanged},\\[1mm]
+\mathrm{PROVED}_{\mathrm{formula}}
+&
+\text{any change must appear through the explicit factor }(37.174),\\[1mm]
+\mathrm{NO}_{\mathrm{bounded}}
+&
+\text{bounded distortion cannot prove the missing lower bound},\\[1mm]
+\mathrm{OPEN}_{\mathrm{ISP}}
+&
+\text{derive a nonboundary center-sensitive constraint satisfying }(37.179),\\[1mm]
+\mathrm{NEXT}_{\mathrm{YM}}
+&
+\text{otherwise return to SC1, SC2, or RP as ordinary fixed-IR estimates}.
+\end{array}}
+\tag{37.183}
+```
+
+The next target should not be another generic record-law audit. Either supply a
+specific candidate for `Theta_Q,a`, or continue Branch A on the ordinary
+Yang-Mills side by attacking the local heat-bath or transport mechanisms from
+Target 40.190.
+
+### 37.60. Target 40.192: Exhaustion Of ISP Sources For A Local Center Factor
+
+`V4P40-TARGET-40192-EXHAUST-ISP-SOURCES-LOCAL-CENTER-FACTOR`.
+
+Target 40.191 reduced the ISP question to one object:
+
+```math
+\Theta_{Q,a}(\bar U,b_Q).
+\tag{37.184}
+```
+
+Target 40.192 asks whether such a factor can be derived from ISP structure
+without leaving the fixed-IR and Barandes-aligned contracts. The goal is
+exhaustive rather than optimistic:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{classify every permitted source of }\Theta_{Q,a},\\[1mm]
+\text{prove no-tilt when possible,}\\[1mm]
+\text{and state the exact boundary where a genuine new premise would be needed.}
+\end{array}}
+\tag{37.185}
+```
+
+The target is fixed-IR throughout. The block `Q`, the physical block scale
+`ell_R`, and the tile scale `R` are fixed before the cutoff is sent to zero.
+
+### 37.61. Abstract Classification Setup
+
+Let:
+
+```math
+Y_{Q,a}
+=
+\left(
+\bar U,
+b_Q
+\right)
+\tag{37.186}
+```
+
+be the local paired center readout. Let `R_a` be any deterministic ISP record
+readout from the same finite SU(2) whole-process configuration:
+
+```math
+R_a:
+\Omega^{\mathrm{SU2}}_{R,a}
+\longrightarrow
+\mathcal X_a.
+\tag{37.187}
+```
+
+Under the Barandes-aligned contract, the allowed operations are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A1}
+&
+\text{deterministic pushforward by }R_a,\\[1mm]
+\mathrm{A2}
+&
+\text{deterministic restriction to boundary records},\\[1mm]
+\mathrm{A3}
+&
+\text{ordinary conditioning on a declared finite-readout event},\\[1mm]
+\mathrm{A4}
+&
+\text{coordinate change or common deterministic refinement},\\[1mm]
+\mathrm{A5}
+&
+\text{normalization of the resulting finite measure}.
+\end{array}}
+\tag{37.188}
+```
+
+The forbidden operations are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{F1}
+&
+\text{an added Boltzmann weight on records},\\[1mm]
+\mathrm{F2}
+&
+\text{a hidden Markov transition between record slices},\\[1mm]
+\mathrm{F3}
+&
+\text{postselection on the charged class to be proved},\\[1mm]
+\mathrm{F4}
+&
+\text{a continuum or CD4 survival premise},\\[1mm]
+\mathrm{F5}
+&
+\text{a stochastic independence law not derived from the finite SU(2) measure}.
+\end{array}}
+\tag{37.189}
+```
+
+Thus the only nontrivial admissible operation that can change the law is
+ordinary conditioning on a declared event.
+
+### 37.62. Classification Theorem
+
+**Theorem 40.192A (Classification Of Barandes-Aligned Local Factors).** Every
+local factor `Theta_Q,a` obtained from (37.188) has exactly one of the following
+forms:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{C0}
+&
+\Theta_{Q,a}(\bar U,b_Q)=\theta_{Q,a}(\bar U),\\[1mm]
+\mathrm{C1}
+&
+\Theta_{Q,a}(\bar U,b_Q)=q_{Q,a}(\bar U,b_Q),\\[1mm]
+\mathrm{C2}
+&
+\Theta_{Q,a}\text{ is a coordinate rewrite of C0 or C1},\\[1mm]
+\mathrm{C3}
+&
+\Theta_{Q,a}\text{ is an added weight or kernel outside }(37.188).
+\end{array}}
+\tag{37.190}
+```
+
+Here C0 is center-blind after `bar U` is fixed. C1 is the conditional likelihood
+of a declared event:
+
+```math
+q_{Q,a}(\bar U,b_Q)
+=
+\mathbb P_{\mathrm{YM}}
+\left(
+G_{R,a}
+\mid
+\bar U,b_Q
+\right).
+\tag{37.191}
+```
+
+C2 cannot change any ratio because it is only a measurable relabeling or common
+refinement. C3 is not Barandes-aligned unless supplied as a new finite
+whole-process law.
+
+#### Proof
+
+A deterministic pushforward, boundary restriction, coordinate change, or common
+refinement does not reweight the underlying finite SU(2) configurations. After
+disintegration over `bar U`, such operations either leave the conditional center
+law unchanged or rename its variables. This gives C0 or C2.
+
+If an event `G_{R,a}` is imposed, Bayes' formula gives:
+
+```math
+\frac{
+d\mu_{Q,a}^{G}
+}{
+d\mu_{Q,a}^{0,\mathrm{YM}}
+}
+(b_Q\mid\bar U)
+=
+\frac{
+\mathbb P_{\mathrm{YM}}
+\left(
+G_{R,a}
+\mid
+\bar U,b_Q
+\right)
+}{
+\mathbb E_{\mu_{Q,a}^{0,\mathrm{YM}}(\cdot\mid\bar U)}
+\left[
+\mathbb P_{\mathrm{YM}}
+\left(
+G_{R,a}
+\mid
+\bar U,\cdot
+\right)
+\right]
+}.
+\tag{37.192}
+```
+
+This is C1. Any object not expressible as deterministic readout, ordinary
+conditioning, coordinate change, or normalization is an added weight or kernel,
+hence C3. `∎`
+
+### 37.63. Consequences Of The Classification
+
+C0 gives no tilt:
+
+```math
+\rho^{\mathrm{C0}}_{Q,a}(\bar U)
+=
+\rho^{\mathrm{YM}}_{Q,a}(\bar U).
+\tag{37.193}
+```
+
+C2 gives no new tilt because common refinements preserve the pushed-forward
+finite law. C3 is outside the current assumptions. Thus the only possible
+center-sensitive candidate inside the allowed operations is C1.
+
+For C1, the modified local ratio is:
+
+```math
+\rho^{G}_{Q,a}(\bar U)
+=
+\frac{
+\int_{\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)}
+q_{Q,a}(\bar U,b_Q)
+d\widehat\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U)
+}{
+\int_{\mathcal B^{0}_{Q,a}(\bar U)}
+q_{Q,a}(\bar U,b_Q)
+d\widehat\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U)
+}.
+\tag{37.194}
+```
+
+This is a real formula, but it is also the boundary of the no-go theorem:
+center-sensitive conditioning changes the ensemble being studied.
+
+### 37.64. Why Arbitrary Conditioning Cannot Prove The Original Certificate
+
+There is no absolute mathematical impossibility of producing a center-sensitive
+factor. One can always choose a declared event that depends on the charged
+sector. For example:
+
+```math
+G_{R,a}
+=
+\left\{
+b_Q\in\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\right\}.
+\tag{37.195}
+```
+
+Then `q_Q,a` is maximally center-sensitive. But this is postselection on the
+desired charged class. It proves nothing about the original unconditioned
+Yang-Mills law and violates F3 in (37.189).
+
+More generally, a center-sensitive event `G_{R,a}` gives a valid theorem only for:
+
+```math
+\mu^{\mathrm{YM}}_{R,a}(\,\cdot\,\mid G_{R,a}),
+\tag{37.196}
+```
+
+not for the original fixed-tile law. To recover the original law, one must also
+prove that the conditioned estimate transfers back with constants independent of
+`a`. That transfer is exactly another finite-energy or area-barrier estimate.
+
+Thus arbitrary center-sensitive conditioning does not solve SC1. It relocates
+SC1 into the probability and charged bias of `G_{R,a}`.
+
+### 37.65. Boundary Gluing Audit
+
+Boundary gluing can mean two different things.
+
+First, it can mean the ordinary requirement that local records match because
+they come from one global SU(2) configuration. This is already built into:
+
+```math
+\Omega^{\mathrm{SU2}}_{R,a}.
+\tag{37.197}
+```
+
+It gives no extra factor:
+
+```math
+\Theta^{\mathrm{glue}}_{Q,a}(\bar U,b_Q)
+=
+1.
+\tag{37.198}
+```
+
+Second, it can mean conditioning on a special boundary center sector. If that
+sector is determined by `bar U`, Theorem 40.191A applies and there is no local
+center tilt. If it is not determined by `bar U`, it is a center-sensitive
+boundary condition:
+
+```math
+\Theta^{\mathrm{bdry}}_{Q,a}
+=
+q^{\mathrm{bdry}}_{Q,a}.
+\tag{37.199}
+```
+
+That may define a legitimate twisted or charged ensemble, but it is not a proof
+of the original unconditioned local ratio unless a separate comparison back to
+the original ensemble is supplied.
+
+### 37.66. Whole-Process Consistency Audit
+
+Whole-process consistency says that the finite readouts must be restrictions of
+one global configuration. At finite cutoff this is not an additional event. It
+is the definition of the underlying sample space. Therefore:
+
+```math
+\Theta^{\mathrm{whole}}_{Q,a}(\bar U,b_Q)
+=
+1.
+\tag{37.200}
+```
+
+If one adds a further global consistency class, such as a specified center
+cohomology sector, then the construction becomes ordinary conditioning on a
+global event:
+
+```math
+\Theta^{\mathrm{sector}}_{Q,a}
+=
+q^{\mathrm{sector}}_{Q,a}.
+\tag{37.201}
+```
+
+Again, this is a changed ensemble unless the sector event is already almost sure
+or is averaged with its correct original probability.
+
+### 37.67. Record Indivisibility Audit
+
+Record indivisibility is a warning against replacing the whole finite law by
+independent Markov pieces. It is not itself a density. In the present notation it
+says that one should not assume:
+
+```math
+\mu^{\mathrm{YM}}_{R,a}
+=
+\prod_j
+\mu^{\mathrm{record}}_{j,a}
+\tag{37.202}
+```
+
+unless such a product law has been derived. This can block false proofs, but it
+does not create:
+
+```math
+\Theta_{Q,a}(\bar U,b_Q)>1
+\tag{37.203}
+```
+
+on the twisted class. To become a positive proof, indivisibility would have to
+produce an explicit conditional likelihood `q_Q,a` or weight `Theta_Q,a`. No such
+object is obtained from the principle alone.
+
+### 37.68. Section-Choice And Cocycle Audit
+
+The center coordinate depends on a section:
+
+```math
+s:
+SO(3)\to SU(2).
+\tag{37.204}
+```
+
+Changing the section changes the local center coordinate by a deterministic
+coboundary:
+
+```math
+b_Q
+\longmapsto
+\chi_Q(\bar U)b_Q.
+\tag{37.205}
+```
+
+This is a bijection of the paired local fiber. Therefore:
+
+```math
+\rho_{Q,a}^{s'}
+(\bar U)
+=
+\rho_{Q,a}^{s}
+(\bar U).
+\tag{37.206}
+```
+
+Section choice can move signs between the center coordinate and the cocycle
+amplitude, but it cannot create a positive density factor favoring the twisted
+class. It is C2 in Theorem 40.192A.
+
+### 37.69. Finite SU(2) Readout And Common Refinement Audit
+
+The strongest possible deterministic readout is the original finite SU(2) field:
+
+```math
+U\in\Omega^{\mathrm{SU2}}_{R,a}.
+\tag{37.207}
+```
+
+Every center, coset, cocycle, boundary, and tile record considered here is a
+measurable function of `U`. Hence all deterministic readouts share the common
+refinement:
+
+```math
+K_{R,a}(U)
+=
+U.
+\tag{37.208}
+```
+
+A common refinement cannot produce a second law on the same local center
+variable. It only changes coordinates or forgets information. Therefore finite
+SU(2) readouts do not supply a nonboundary `Theta_Q,a`.
+
+### 37.70. High-Probability Events Do Not Give A Free Escape
+
+One might hope that a high-probability ISP event could be center-sensitive while
+still harmless. Suppose:
+
+```math
+\mu^{\mathrm{YM}}_{R,a}(G_{R,a})\to1.
+\tag{37.209}
+```
+
+This alone does not prove a useful lower bound. If the event removes precisely
+the twisted local class on a small but strategically placed set, then the
+conditional ratio can still be distorted. If instead the conditional likelihood
+is uniformly bounded below:
+
+```math
+q_{Q,a}(\bar U,b_Q)\ge\kappa_Q>0,
+\tag{37.210}
+```
+
+then its distortion is bounded, and Section 37.56 applies. Bounded distortion
+does not create SC1 from nothing. Unbounded distortion is exactly a new
+center-sensitive hypothesis.
+
+### 37.71. What A Successful ISP Factor Would Have To Prove
+
+The only surviving positive route is to present a concrete candidate:
+
+```math
+\Theta^{\mathrm{new}}_{Q,a}(\bar U,b_Q)
+\tag{37.211}
+```
+
+and prove all of the following:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{T1}
+&
+\text{it is derived from a finite whole-process ISP rule},\\[1mm]
+\mathrm{T2}
+&
+\text{it is not center-blind after conditioning on }\bar U,\\[1mm]
+\mathrm{T3}
+&
+\text{it is not postselection on the desired charged class},\\[1mm]
+\mathrm{T4}
+&
+\text{it is not a hidden Markov kernel or added Boltzmann weight},\\[1mm]
+\mathrm{T5}
+&
+\text{it proves } \rho^{\mathrm{new}}_{Q,a}(\bar U)\ge e^{-C_Q}
+\text{ at fixed }R.
+\end{array}}
+\tag{37.212}
+```
+
+No candidate in Sections 37.65-37.70 satisfies T1-T5.
+
+### 37.72. Exhaustion Theorem
+
+**Theorem 40.192B (No Nonboundary ISP Factor From Current Premises).** Under the
+fixed-IR and Barandes-aligned premises currently stated in this paper, no
+nonboundary center-sensitive factor `Theta_Q,a` proving (37.179) is derived from
+ISP structure alone.
+
+More precisely:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{readout-only, gluing-only, whole-process-only, indivisibility-only,}\\[1mm]
+\text{section-choice, and finite-common-refinement mechanisms}\\[1mm]
+\text{all reduce to no tilt, coordinate change, or ordinary conditioning.}
+\end{array}}
+\tag{37.213}
+```
+
+Ordinary center-sensitive conditioning is possible, but it changes the ensemble
+unless an additional transfer estimate back to the original law is proved.
+
+#### Proof
+
+Theorem 40.192A classifies all Barandes-aligned finite-readout operations into
+C0-C3. Sections 37.65-37.69 check each ISP source proposed in the paper and
+place it in C0, C1, or C2. C0 and C2 give no new local ratio. C1 is ordinary
+conditioning and therefore proves only a conditioned law unless a separate
+comparison to the unconditioned law is supplied. C3 is outside the current
+contract. Hence no current ISP source derives a usable nonboundary
+center-sensitive factor. `∎`
+
+### 37.73. Boundary Of The No-Go Result
+
+The no-go result is intentionally not stronger than it can be. It does not prove
+that every imaginable ISP theory can never help. It proves only:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{deterministic finite readouts of the same SU(2) law}\\[1mm]
+\text{do not by themselves change the local center marginal.}
+\end{array}}
+\tag{37.214}
+```
+
+The result would be bypassed by any one of the following genuinely new inputs:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B1}
+&
+\text{a new finite whole-process law different from Yang-Mills},\\[1mm]
+\mathrm{B2}
+&
+\text{a mandatory center-sensitive support constraint not already in SU(2)},\\[1mm]
+\mathrm{B3}
+&
+\text{a non-Markov deterministic rule that yields an explicit }q_{Q,a},\\[1mm]
+\mathrm{B4}
+&
+\text{an ordinary YM proof of the local entropy bridge},\\[1mm]
+\mathrm{B5}
+&
+\text{an RP or transfer-positive proof of the charged fixed-IR gap}.
+\end{array}}
+\tag{37.215}
+```
+
+B1-B3 would be genuine ISP additions and must be stated as new premises. B4-B5
+do not use ISP to change the measure; they return to ordinary fixed-IR
+Yang-Mills analysis.
+
+### 37.74. Target 40.192 Decision
+
+Target 40.192 is therefore exhausted under the current assumptions:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{class}}
+&
+\text{all allowed readout factors are C0-C3},\\[1mm]
+\mathrm{NO}_{\mathrm{glue}}
+&
+\text{boundary gluing is already in the global SU(2) sample space},\\[1mm]
+\mathrm{NO}_{\mathrm{whole}}
+&
+\text{whole-process consistency is not a new density},\\[1mm]
+\mathrm{NO}_{\mathrm{indiv}}
+&
+\text{indivisibility blocks false Markov proofs but gives no factor},\\[1mm]
+\mathrm{NO}_{\mathrm{section}}
+&
+\text{section changes are coordinate bijections},\\[1mm]
+\mathrm{NO}_{\mathrm{readout}}
+&
+\text{finite SU(2) readout is a common refinement},\\[1mm]
+\mathrm{BOUNDARY}_{\mathrm{proof}}
+&
+\text{center-sensitive conditioning is possible but changes the ensemble},\\[1mm]
+\mathrm{OPEN}_{\mathrm{new}}
+&
+\text{only B1-B5 can move the program forward}.
+\end{array}}
+\tag{37.216}
+```
+
+Consequently the paper should not keep searching for an implicit ISP
+`Theta_Q,a` inside the existing record language. The next productive move is
+either to state a genuinely new ISP premise of type B1-B3, or to return to the
+ordinary fixed-IR Yang-Mills mechanisms left open by Target 40.190.
+
+## 38. Research Branch C: ISP-Specific B3-B2 Audit
+
+`V4P40-BRANCH-C-ISP-B3-B2-AUDIT`.
+
+Section 37 exhausted implicit ISP help from the existing record language. The
+remaining ISP-specific possibilities are therefore explicit:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B3}
+&
+\text{a mandatory non-Markov rule yielding a center-sensitive likelihood},\\[1mm]
+\mathrm{B2}
+&
+\text{a mandatory center-sensitive support constraint}.
+\end{array}}
+\tag{38.1}
+```
+
+This section fixes the order of attack. B3 is tested first because it could
+remain closest to Barandes alignment: it may be a deterministic whole-process
+rule rather than a new measure. B2 is tested second because it is stronger: it
+would remove or constrain some ordinary finite SU(2) configurations.
+
+### 38.1. Alignment Contract
+
+The fixed-IR contract is:
+
+```math
+\boxed{
+\begin{array}{c}
+R,\ \ell_R,\ Q\text{ are fixed in physical units},\\[1mm]
+\text{all constants are independent of }a,\\[1mm]
+\text{no CD4, no }t_-\downarrow0\text{ survival step, no weak-coupling shortcut}.
+\end{array}}
+\tag{38.2}
+```
+
+The Barandes contract is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{ISP records are deterministic whole-process finite readouts},\\[1mm]
+\text{not hidden Markov transitions, added kernels, or postselection rules}.
+\end{array}}
+\tag{38.3}
+```
+
+### 38.2. Target 40.193: B3 Mandatory Center-Sensitive Rule Audit
+
+`V4P40-TARGET-40193-B3-MANDATORY-CENTER-SENSITIVE-RULE-AUDIT`.
+
+B3 asks for a deterministic whole-process rule or event:
+
+```math
+G_{R,a}
+\tag{38.4}
+```
+
+whose conditional likelihood after fixing the SO(3) environment is:
+
+```math
+q_{Q,a}(\bar U,b_Q)
+=
+\mathbb P_{\mathrm{YM}}
+\left(
+G_{R,a}
+\mid
+\bar U,b_Q
+\right).
+\tag{38.5}
+```
+
+The rule would be useful only if it passes five tests:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B3a}
+&
+\text{the rule is mandatory or derived from the finite whole-process law},\\[1mm]
+\mathrm{B3b}
+&
+\text{the likelihood depends on }b_Q\text{ after }\bar U\text{ is fixed},\\[1mm]
+\mathrm{B3c}
+&
+\text{the rule is not postselection on the desired charged class},\\[1mm]
+\mathrm{B3d}
+&
+\text{the rule is not a hidden Markov transition between records},\\[1mm]
+\mathrm{B3e}
+&
+\text{the induced local ratio is bounded below at fixed physical }R.
+\end{array}}
+\tag{38.6}
+```
+
+The induced ratio is:
+
+```math
+\rho^{G}_{Q,a}(\bar U)
+=
+\frac{
+\int_{\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)}
+q_{Q,a}(\bar U,b_Q)
+d\widehat\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U)
+}{
+\int_{\mathcal B^{0}_{Q,a}(\bar U)}
+q_{Q,a}(\bar U,b_Q)
+d\widehat\mu^{0,\mathrm{YM}}_{Q,a}(b_Q\mid\bar U)
+}.
+\tag{38.7}
+```
+
+B3 succeeds only if:
+
+```math
+\rho^{G}_{Q,a}(\bar U)
+\ge
+e^{-C_Q}
+\tag{38.8}
+```
+
+with high SO(3)-marginal probability and `C_Q` independent of `a`.
+
+### 38.3. B3 Candidate List
+
+The first B3 audit should test the following candidates.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{G1}
+&
+\text{boundary record matching},\\[1mm]
+\mathrm{G2}
+&
+\text{whole-process closure or cocycle consistency},\\[1mm]
+\mathrm{G3}
+&
+\text{record indivisibility},\\[1mm]
+\mathrm{G4}
+&
+\text{section-independent center/cocycle consistency},\\[1mm]
+\mathrm{G5}
+&
+\text{a future-free global record admissibility rule}.
+\end{array}}
+\tag{38.9}
+```
+
+The expected outcomes are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{G1}
+&
+\text{already in the global SU(2) sample space or ordinary conditioning},\\[1mm]
+\mathrm{G2}
+&
+\text{already enforced by finite configurations},\\[1mm]
+\mathrm{G3}
+&
+\text{blocks false Markov factorizations but gives no likelihood},\\[1mm]
+\mathrm{G4}
+&
+\text{a coordinate-invariance condition, not a weight},\\[1mm]
+\mathrm{G5}
+&
+\text{the only live slot, but it must be explicitly stated}.
+\end{array}}
+\tag{38.10}
+```
+
+Thus B3 is not a broad search. It is a request for a concrete candidate
+`G_{R,a}`
+in G5.
+
+### 38.4. B3 Decision Boundary
+
+The B3 audit should end in one of two ways:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B3}_{\mathrm{closed}}
+&
+\text{all mandatory rules reduce to no tilt, coordinates, or conditioning},\\[1mm]
+\mathrm{B3}_{\mathrm{live}}
+&
+\text{a concrete }G_{R,a}\text{ passes B3a-B3d and remains to test B3e}.
+\end{array}}
+\tag{38.11}
+```
+
+Under the present text, B3 is not yet live. The paper has not supplied a
+specific mandatory `G_{R,a}` beyond standard finite SU(2) consistency.
+
+### 38.5. Target 40.194: B2 Mandatory Support Constraint Audit
+
+`V4P40-TARGET-40194-B2-MANDATORY-SUPPORT-CONSTRAINT-AUDIT`.
+
+B2 is stronger than B3. It asks for a deterministic ISP admissibility constraint:
+
+```math
+\Omega^{\mathrm{ISP}}_{R,a}
+\subseteq
+\Omega^{\mathrm{SU2}}_{R,a}
+\tag{38.12}
+```
+
+that is mandatory, center-sensitive, and not already present in ordinary finite
+SU(2) Yang-Mills.
+
+The corresponding local support factor is:
+
+```math
+\Theta^{\mathrm{sup}}_{Q,a}(\bar U,b_Q)
+=
+\mathbb P_{\mathrm{YM}}
+\left(
+\Omega^{\mathrm{ISP}}_{R,a}
+\mid
+\bar U,b_Q
+\right).
+\tag{38.13}
+```
+
+B2 must pass:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B2a}
+&
+\text{the support law is mandatory, not optional conditioning},\\[1mm]
+\mathrm{B2b}
+&
+\text{it is not already the ordinary SU(2) sample space},\\[1mm]
+\mathrm{B2c}
+&
+\text{it is center-sensitive after }\bar U\text{ is fixed},\\[1mm]
+\mathrm{B2d}
+&
+\text{it is not postselection on the desired charged sector},\\[1mm]
+\mathrm{B2e}
+&
+\text{it gives a fixed-IR lower bound for the twisted local class}.
+\end{array}}
+\tag{38.14}
+```
+
+### 38.6. B2 Audit
+
+Known ISP statements in the present paper do not yet supply B2:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{S1}
+&
+\text{global consistency is already included in }\Omega^{\mathrm{SU2}}_{R,a},\\[1mm]
+\mathrm{S2}
+&
+\text{boundary matching is ordinary gluing of one global field},\\[1mm]
+\mathrm{S3}
+&
+\text{section independence is coordinate invariance},\\[1mm]
+\mathrm{S4}
+&
+\text{indivisibility forbids false factorization but excludes no field},\\[1mm]
+\mathrm{S5}
+&
+\text{charged-sector exclusion would be postselection unless mandatory}.
+\end{array}}
+\tag{38.15}
+```
+
+So B2 is not falsified for all possible ISP theories. It is falsified for the
+current finite-readout-only ISP content of this paper.
+
+### 38.7. B2 Decision Boundary
+
+B2 has the following boundary:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B2}_{\mathrm{closed}}
+&
+\text{no support restriction beyond ordinary SU(2) is stated or derived},\\[1mm]
+\mathrm{B2}_{\mathrm{new}}
+&
+\text{a new mandatory support law is added as an explicit ISP premise},\\[1mm]
+\mathrm{B2}_{\mathrm{invalid}}
+&
+\text{the support law is just charged-sector postselection}.
+\end{array}}
+\tag{38.16}
+```
+
+If B2 is closed under current premises, the paper should say so plainly and move
+to B4/B5. If B2 is made live, the new premise must be stated before it is used.
+
+### 38.8. Section 38 Working Outcome
+
+Section 38 should ultimately decide:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B3}
+&
+\text{find a concrete mandatory }G_{R,a}\text{ or close the route},\\[1mm]
+\mathrm{B2}
+&
+\text{state a mandatory support law or close the route},\\[1mm]
+\mathrm{B1}
+&
+\text{defer unless the ontology is explicitly changed}.
+\end{array}}
+\tag{38.17}
+```
+
+Until B3 or B2 is made live by a concrete candidate, the fixed-IR confinement
+program should proceed through ordinary Yang-Mills estimates.
+
+### 38.9. Full B3 Audit: Boundary Matching
+
+Boundary matching is not a new rule. At finite cutoff, a local boundary record
+matches its neighbor because both are restrictions of one global SU(2) field.
+Thus the event:
+
+```math
+G^{\mathrm{match}}_{R,a}
+\tag{38.18}
+```
+
+is either already built into the sample space or is ordinary conditioning on a
+chosen boundary sector.
+
+If it is already built into the sample space, then:
+
+```math
+q^{\mathrm{match}}_{Q,a}(\bar U,b_Q)
+=
+1.
+\tag{38.19}
+```
+
+If it is conditioning on a chosen boundary center sector, then it changes the
+ensemble. It may define a charged or twisted boundary problem, but it does not
+prove the unconditioned local ratio without a transfer estimate back to the
+original law.
+
+Therefore boundary matching does not supply B3.
+
+### 38.10. Full B3 Audit: Whole-Process Closure And Cocycle Consistency
+
+Whole-process closure says that records are not independent subprocesses. This
+is a guardrail against false Markov factorization. It is not itself a new
+likelihood.
+
+At finite cutoff, the closure/cocycle constraints are already true for every
+configuration in:
+
+```math
+\Omega^{\mathrm{SU2}}_{R,a}.
+\tag{38.20}
+```
+
+Hence the corresponding likelihood is:
+
+```math
+q^{\mathrm{closure}}_{Q,a}(\bar U,b_Q)
+=
+1.
+\tag{38.21}
+```
+
+If one imposes an additional global cohomology sector, that is ordinary
+conditioning on a global event. Such conditioning can be center-sensitive, but it
+then proves a theorem for the conditioned sector, not for the original
+unconditioned law.
+
+Thus closure and cocycle consistency do not supply B3.
+
+### 38.11. Full B3 Audit: Record Indivisibility
+
+Record indivisibility rules out this invalid move:
+
+```math
+\mu^{\mathrm{records}}
+=
+\prod_j
+\mu^{\mathrm{record}}_j.
+\tag{38.22}
+```
+
+But ruling out a false product law is not the same as producing a positive
+center-sensitive likelihood. It tells us what not to assume. It does not give a
+candidate event `G_{R,a}`, nor a function:
+
+```math
+q_{Q,a}(\bar U,b_Q).
+\tag{38.23}
+```
+
+Therefore indivisibility is protective, not constructive. It preserves
+Barandes alignment, but it does not supply B3.
+
+### 38.12. Full B3 Audit: Section Independence
+
+The center coordinate depends on a section from SO(3) to SU(2). Changing the
+section relabels the center coordinate by a deterministic sign convention. It
+does not change the underlying SU(2) field, the SO(3) environment, or the paired
+local fiber as a measured object.
+
+So section independence is a covariance requirement:
+
+```math
+\rho^{s'}_{Q,a}(\bar U)
+=
+\rho^{s}_{Q,a}(\bar U).
+\tag{38.24}
+```
+
+It is not a likelihood favoring one local center class. Therefore it does not
+supply B3.
+
+### 38.13. Full B3 Audit: Future-Free Global Record Admissibility
+
+The only slot that could make B3 live is a future-free global admissibility rule:
+
+```math
+G^{\mathrm{new}}_{R,a}.
+\tag{38.25}
+```
+
+To be admissible, it must be:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{N1}
+&
+\text{mandatory for ISP records, not optional conditioning},\\[1mm]
+\mathrm{N2}
+&
+\text{deterministic from the finite whole-process readout},\\[1mm]
+\mathrm{N3}
+&
+\text{center-sensitive after fixing }\bar U,\\[1mm]
+\mathrm{N4}
+&
+\text{not chosen by looking at the desired charged sector},\\[1mm]
+\mathrm{N5}
+&
+\text{strong enough to imply the fixed-IR lower bound}.
+\end{array}}
+\tag{38.26}
+```
+
+No such rule is currently stated in the paper. Therefore B3 is not live under
+the current premises. It remains a precise opening for a new ISP premise.
+
+### 38.14. Target 40.193 Decision
+
+The B3 investigation is exhausted under the current text:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}_{\mathrm{match}}
+&
+\text{boundary matching is built in or ordinary conditioning},\\[1mm]
+\mathrm{NO}_{\mathrm{closure}}
+&
+\text{whole-process closure gives no new likelihood},\\[1mm]
+\mathrm{NO}_{\mathrm{indiv}}
+&
+\text{indivisibility blocks false Markov steps but gives no event},\\[1mm]
+\mathrm{NO}_{\mathrm{section}}
+&
+\text{section independence is coordinate covariance},\\[1mm]
+\mathrm{OPEN}_{\mathrm{new}}
+&
+\text{only an explicit }G^{\mathrm{new}}_{R,a}\text{ satisfying }(38.26)\text{ can revive B3}.
+\end{array}}
+\tag{38.27}
+```
+
+Thus B3 is closed for the existing Barandes-aligned finite-readout ontology, but
+not logically closed for every possible strengthened ISP theory.
+
+### 38.15. Full B2 Audit: Ordinary SU(2) Support
+
+B2 asks for a support restriction. The first possibility is that the ISP support
+is just the ordinary finite SU(2) support:
+
+```math
+\Omega^{\mathrm{ISP}}_{R,a}
+=
+\Omega^{\mathrm{SU2}}_{R,a}.
+\tag{38.28}
+```
+
+Then:
+
+```math
+\Theta^{\mathrm{sup}}_{Q,a}(\bar U,b_Q)
+=
+1.
+\tag{38.29}
+```
+
+No center-sensitive local factor appears.
+
+### 38.16. Full B2 Audit: Boundary And Global Sector Restrictions
+
+If the support restriction fixes a boundary or global center sector, then it is
+ordinary conditioning unless it is mandatory for every physical ISP history. A
+nonmandatory restriction proves only a conditioned problem:
+
+```math
+\mu^{\mathrm{YM}}_{R,a}(\,\cdot\,\mid G_{R,a}).
+\tag{38.30}
+```
+
+To use it for the original law, one must compare the conditioned and
+unconditioned ensembles. That comparison is another charged free-energy problem.
+
+So boundary/global sector restrictions do not prove B2 unless they are stated as
+mandatory support laws.
+
+### 38.17. Full B2 Audit: Charged-Sector Exclusion
+
+A support law that excludes the unwanted local class would be strong enough, but
+it is also the dangerous case. If it says:
+
+```math
+b_Q\in
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\tag{38.31}
+```
+
+or the analogous preferred charged condition, then it is postselection unless it
+is derived as a mandatory physical admissibility law. No such derivation exists
+in the current paper.
+
+Thus charged-sector exclusion is not an available B2 proof.
+
+### 38.18. Target 40.194 Decision
+
+The B2 investigation is exhausted under the current text:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}_{\mathrm{support}}
+&
+\text{ordinary SU(2) support gives no factor},\\[1mm]
+\mathrm{NO}_{\mathrm{bdry}}
+&
+\text{boundary or sector fixing is conditioning unless mandatory},\\[1mm]
+\mathrm{NO}_{\mathrm{charged}}
+&
+\text{charged-sector exclusion is postselection unless mandatory},\\[1mm]
+\mathrm{OPEN}_{\mathrm{premise}}
+&
+\text{a new mandatory support law would have to be stated explicitly}.
+\end{array}}
+\tag{38.32}
+```
+
+B2 is therefore closed for the present finite-readout-only ISP content. It is
+open only as a new ontology-level support premise.
+
+### 38.19. Section 38 Final Verdict
+
+Section 38 leaves no implicit ISP-specific route:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B3}
+&
+\text{closed unless a concrete mandatory }G^{\mathrm{new}}_{R,a}\text{ is added},\\[1mm]
+\mathrm{B2}
+&
+\text{closed unless a mandatory support law is added},\\[1mm]
+\mathrm{B1}
+&
+\text{would require changing the finite whole-process law}.
+\end{array}}
+\tag{38.33}
+```
+
+Therefore the paper now has a clean fork. Either strengthen ISP explicitly, or
+continue with the ordinary fixed-IR Yang-Mills routes in Sections 39 and 40.
+
+## 39. Research Branch D: B4 Ordinary YM Local Entropy Bridge
+
+`V4P40-BRANCH-D-B4-ORDINARY-YM-LOCAL-ENTROPY-BRIDGE`.
+
+B4 is the direct ordinary Yang-Mills route to SC1. It does not try to change the
+measure through ISP. It tries to prove the local entropy bridge from the finite
+SU(2) law itself.
+
+### 39.1. Target 40.195: Ordinary YM Proof Of SC1
+
+`V4P40-TARGET-40195-B4-ORDINARY-YM-SC1-ENTROPY-BRIDGE`.
+
+The target is:
+
+```math
+\boxed{
+\text{construct a fixed-IR local twisted bridge with bounded entropy cost.}
+}
+\tag{39.1}
+```
+
+For each fixed physical block `Q`, find measures:
+
+```math
+\eta^{\mathrm{tw}}_{Q,a}(\cdot\mid\bar U)
+\tag{39.2}
+```
+
+supported on the twisted local center class such that:
+
+```math
+H
+\left(
+\eta^{\mathrm{tw}}_{Q,a}
+\mid
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\right)
+\le
+C_Q
+\tag{39.3}
+```
+
+with high SO(3)-marginal probability and `C_Q` independent of `a`.
+
+### 39.2. B4 Candidate Mechanisms
+
+The candidates are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{Y1}
+&
+\text{block heat-bath minorization},\\[1mm]
+\mathrm{Y2}
+&
+\text{renormalized transport or log-Sobolev bridge},\\[1mm]
+\mathrm{Y3}
+&
+\text{finite-energy charged class exchange with entropy compensation},\\[1mm]
+\mathrm{Y4}
+&
+\text{comparison to a solvable blocked effective model},\\[1mm]
+\mathrm{Y5}
+&
+\text{direct falsification by divergent local charged cost}.
+\end{array}}
+\tag{39.4}
+```
+
+B4 is therefore not a single lemma. It is the local analytic core of the
+ordinary Yang-Mills route.
+
+### 39.3. Heat-Bath Mechanism
+
+A block heat-bath proof would need a kernel:
+
+```math
+K_{Q,a}(\bar U;b,db')
+\tag{39.5}
+```
+
+that updates the whole fixed physical block and reaches the twisted class with
+cutoff-uniform probability:
+
+```math
+K_{Q,a}
+\left(
+\bar U;b,
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\right)
+\ge
+\kappa_Q.
+\tag{39.6}
+```
+
+The hard part is not writing the kernel. The hard part is proving (39.6) without
+using a microscopic strong-coupling estimate or a hidden center-sector
+postselection.
+
+### 39.4. Transport Mechanism
+
+A transport proof would use a fixed physical block distance between local center
+ensembles and prove that a twisted representative lies at bounded entropy cost.
+The key risk is that microscopic convexity constants can degrade as `a` goes to
+zero. A successful proof must be expressed in renormalized block variables, not
+in single-plaquette weak-coupling coordinates.
+
+### 39.5. B4 Decision Boundary
+
+B4 closes positively if one proves (39.3). It closes negatively, for this route,
+if one proves:
+
+```math
+c_{Q,a}(\bar U)\to\infty
+\tag{39.7}
+```
+
+on SO(3)-marginal probability bounded away from zero.
+
+The decision is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B4}_{+}
+&
+\text{bounded local entropy bridge proves SC1},\\[1mm]
+\mathrm{B4}_{-}
+&
+\text{divergent local charged cost falsifies SC1},\\[1mm]
+\mathrm{B4}_{0}
+&
+\text{current paper has reductions but no ordinary YM bridge yet}.
+\end{array}}
+\tag{39.8}
+```
+
+### 39.6. Heat-Bath Mechanism: Exact Reduction
+
+A heat-bath route is attractive because the block is fixed in physical size. The
+right update must refresh the whole block, not a microscopic plaquette. Let:
+
+```math
+K_{Q,a}
+\tag{39.9}
+```
+
+be a kernel reversible with respect to the local neutral-conditioned law. If
+there is a high-probability event `E_Q,a` such that:
+
+```math
+K_{Q,a}
+\left(
+\bar U;b,
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\right)
+\ge
+\kappa_Q
+\tag{39.10}
+```
+
+for neutral local states `b` on `E_Q,a`, with `kappa_Q` independent of `a`, then
+SC1 follows.
+
+#### Proof
+
+Average the transition probability over the neutral local law. Reversibility or
+absolute-continuity of the kernel gives a twisted output measure whose entropy
+cost is bounded by `log(1/kappa_Q)` plus the entropy production of the kernel.
+If the entropy production is bounded uniformly in `a`, this is exactly the
+bridge (39.3). `∎`
+
+The obstruction is equally explicit: proving (39.10) is already a local
+finite-energy theorem. A microscopic heat bath will generally pay a cost over a
+number of microscopic degrees of freedom growing as `a` goes to zero. Therefore
+the heat-bath route is viable only as a renormalized block update, not as a
+single-link or single-plaquette argument.
+
+### 39.7. Heat-Bath Decision
+
+The heat-bath mechanism is reduced to:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{HB}_{+}
+&
+\text{prove block minorization plus bounded entropy production},\\[1mm]
+\mathrm{HB}_{-}
+&
+\text{prove every such block update has vanishing twisted probability},\\[1mm]
+\mathrm{HB}_{0}
+&
+\text{microscopic heat baths do not decide the fixed-IR block problem}.
+\end{array}}
+\tag{39.11}
+```
+
+At present the paper has `HB_0`, not `HB_+`.
+
+### 39.8. Transport Mechanism: Exact Reduction
+
+A transport proof would compare a neutral block ensemble to a twisted block
+ensemble using a metric on renormalized block records. The useful theorem would
+be:
+
+```math
+H
+\left(
+\eta
+\mid
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\right)
+\le
+C_Q
+\tag{39.12}
+```
+
+whenever `eta` lies at bounded renormalized distance from the neutral ensemble
+and is supported on the twisted local class.
+
+This route can work only if the metric is physical-resolution. A microscopic
+metric over individual plaquettes is not aligned with fixed IR, because the
+number of coordinates in a fixed physical block diverges as `a` goes to zero.
+
+### 39.9. Transport Decision
+
+The transport route reduces to:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{TR}_{+}
+&
+\text{prove a uniform block transport or log-Sobolev inequality},\\[1mm]
+\mathrm{TR}_{-}
+&
+\text{prove every cross-class transport cost diverges},\\[1mm]
+\mathrm{TR}_{0}
+&
+\text{microscopic convexity estimates degrade and do not decide SC1}.
+\end{array}}
+\tag{39.13}
+```
+
+The current paper has `TR_0`. A positive proof must be genuinely
+renormalized-block, not weak-coupling microscopic.
+
+### 39.10. Class-Exchange Mechanism: Exact Reduction
+
+A deterministic class-exchange map:
+
+```math
+J_{Q,a}:
+\mathcal B^{0}_{Q,a}(\bar U)
+\to
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\tag{39.14}
+```
+
+would prove SC1 if its pushforward entropy cost is bounded uniformly in `a`.
+The pointwise action version is too strong: the smooth charged background cost
+grows with the bare coupling as the cutoff is removed.
+
+Thus the only possible class-exchange proof is entropic. The map must be
+many-to-one or accompanied by a large enough family of alternatives to offset
+pointwise action cost.
+
+### 39.11. Class-Exchange Decision
+
+The class-exchange route reduces to:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{CE}_{+}
+&
+\text{construct a bounded-entropy charged class exchange},\\[1mm]
+\mathrm{CE}_{-}
+&
+\text{prove all charged exchanges have diverging entropy cost},\\[1mm]
+\mathrm{CE}_{0}
+&
+\text{pointwise smooth insertions fail but do not decide entropy}.
+\end{array}}
+\tag{39.15}
+```
+
+The paper currently has `CE_0`.
+
+### 39.12. Solvable Blocked Effective Model Comparison
+
+A comparison proof would build a fixed-IR effective block model whose charged
+block ratio is known, then dominate the Yang-Mills local ratio from below. The
+needed comparison is:
+
+```math
+\rho^{\mathrm{YM}}_{Q,a}(\bar U)
+\ge
+c_Q
+\rho^{\mathrm{eff}}_{Q}(\bar U)
+\tag{39.16}
+```
+
+with `c_Q>0` independent of `a`.
+
+This would be powerful because the effective model can be chosen at physical
+resolution. The difficulty is domination: a heuristic blocked action is not
+enough. The comparison must be an inequality for the actual finite-cutoff
+conditional measure.
+
+### 39.13. Effective-Model Decision
+
+The effective-model route reduces to:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{EM}_{+}
+&
+\text{prove a lower domination by a solvable fixed-block model},\\[1mm]
+\mathrm{EM}_{-}
+&
+\text{prove no such domination can hold for the chosen block variables},\\[1mm]
+\mathrm{EM}_{0}
+&
+\text{heuristic blocking alone gives no theorem}.
+\end{array}}
+\tag{39.17}
+```
+
+The paper currently has `EM_0`.
+
+### 39.14. Direct Falsifier For SC1
+
+The clean negative result would be:
+
+```math
+\bar\mu^{0}_{R,a}
+\left(
+c_{Q,a}>L_a
+\right)
+\ge
+\epsilon_Q,
+\qquad
+L_a\to\infty.
+\tag{39.18}
+```
+
+This would falsify SC1 for the block `Q`. It would not falsify all confinement
+routes, but it would close the local entropy bridge route.
+
+The most plausible way to prove such a falsifier would be to show that, after
+conditioning on typical SO(3) environments, every local twisted representative
+requires a continuum positive-action defect whose entropy cannot compensate the
+bare coupling growth. The current paper has not proved this. It remains a real
+negative target.
+
+### 39.15. Target 40.195 Exhaustion
+
+B4 is now fully reduced:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{HB}
+&
+\text{needs block minorization and bounded entropy production},\\[1mm]
+\mathrm{TR}
+&
+\text{needs a renormalized block transport inequality},\\[1mm]
+\mathrm{CE}
+&
+\text{needs a bounded-entropy charged class exchange},\\[1mm]
+\mathrm{EM}
+&
+\text{needs lower domination by a solvable fixed-block model},\\[1mm]
+\mathrm{NEG}
+&
+\text{can be closed negatively by divergent local charged cost}.
+\end{array}}
+\tag{39.19}
+```
+
+None of HB, TR, CE, or EM is proved here. None is refuted in full generality.
+What is refuted is the microscopic shortcut version of each route. A valid B4
+proof must be a physical-block theorem.
+
+### 39.16. Interim Section 39 Verdict
+
+The first pass through Section 39 leaves B4 open but sharply localized:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{B4 is exactly the ordinary YM proof or falsification of SC1}\\[1mm]
+\text{at one fixed physical block.}
+\end{array}}
+\tag{39.20}
+```
+
+The next B4 move is therefore not another broad reduction. It is the exact
+local-cost dichotomy below.
+
+### 39.17. Target 40.200: Fixed-IR Local Charged Cost Dichotomy For SC1
+
+`V4P40-TARGET-40200-FIXED-IR-LOCAL-CHARGED-COST-DICHOTOMY-SC1`.
+
+Target 40.200 turns the Section 39 mechanisms into one exact object. Fix a
+physical block:
+
+```math
+Q\in\mathcal Q_R(\ell_R),
+\qquad
+\ell_R>0
+\quad
+\text{fixed in physical units}.
+\tag{39.21}
+```
+
+For a fixed SO(3) environment `bar U`, let:
+
+```math
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+=
+\mathcal B^{\mathrm{tw}}_{Q,a}(\bar U)
+\tag{39.22}
+```
+
+be the local twisted center class inside the paired local fiber. Define the
+ordinary Yang-Mills twisted local mass:
+
+```math
+r_{Q,a}(\bar U)
+:=
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\left(
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+\mid
+\bar U
+\right).
+\tag{39.23}
+```
+
+With the neutral-normalized convention of Section 37:
+
+```math
+r_{Q,a}(\bar U)
+=
+\rho_{Q,a}(\bar U)
+=
+\frac{
+Z^{\mathrm{tw}}_{Q,a}(\bar U)
+}{
+Z^{0}_{Q,a}(\bar U)
+}.
+\tag{39.24}
+```
+
+Define the local charged cost:
+
+```math
+c_{Q,a}(\bar U)
+:=
+-
+\log r_{Q,a}(\bar U),
+\tag{39.25}
+```
+
+with `c_Q,a=+infty` if `r_Q,a=0`.
+
+All objects in (39.21)-(39.25) are fixed-IR objects: the block scale, the block
+shape, the local center class, and the SO(3) environment are fixed in physical
+units before `a -> 0`.
+
+### 39.18. Entropy-Cost Identity
+
+Let `nu` be a finite positive measure and let `A` be a measurable set with:
+
+```math
+0<\nu(A)<\infty.
+\tag{39.26}
+```
+
+Then:
+
+```math
+\inf_{\eta:\eta(A)=1}
+H(\eta\mid\nu)
+=
+-
+\log \nu(A),
+\tag{39.27}
+```
+
+where the infimum is over probability measures supported on `A`. The minimizer
+is the normalized restriction:
+
+```math
+\eta^\ast
+=
+\frac{\nu|_A}{\nu(A)}.
+\tag{39.28}
+```
+
+#### Proof
+
+For any probability measure `eta` supported on `A`, write:
+
+```math
+\nu_A
+=
+\frac{\nu|_A}{\nu(A)}.
+\tag{39.29}
+```
+
+Then:
+
+```math
+H(\eta\mid\nu)
+=
+H(\eta\mid\nu_A)
+-
+\log\nu(A).
+\tag{39.30}
+```
+
+The first term is nonnegative and vanishes exactly at `eta=nu_A`. This proves
+(39.27)-(39.28).
+
+Applying (39.27) to:
+
+```math
+\nu
+=
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}(\cdot\mid\bar U),
+\qquad
+A
+=
+A^{\mathrm{tw}}_{Q,a}(\bar U),
+\tag{39.31}
+```
+
+gives the exact identity:
+
+```math
+\inf_{\eta:\eta(A^{\mathrm{tw}}_{Q,a})=1}
+H
+\left(
+\eta
+\mid
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\right)
+=
+c_{Q,a}(\bar U).
+\tag{39.32}
+```
+
+Thus the local entropy bridge and the local charged cost are not two different
+problems. The optimal bridge cost is exactly the negative logarithm of the
+twisted local class mass.
+
+### 39.19. Exact Positive Form Of B4
+
+For the fixed block `Q`, the following are equivalent:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{P1}
+&
+\text{there is a high-probability bounded local entropy bridge},\\[1mm]
+\mathrm{P2}
+&
+\text{the costs }c_{Q,a}\text{ are tight under the SO(3) marginal},\\[1mm]
+\mathrm{P3}
+&
+\text{the twisted masses }r_{Q,a}\text{ are not suppressed to zero in probability}.
+\end{array}}
+\tag{39.33}
+```
+
+More explicitly, for every `epsilon>0` there is `C_Q(epsilon)<infty` such that:
+
+```math
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+c_{Q,a}>C_Q(\epsilon)
+\right)
+<
+\epsilon.
+\tag{39.34}
+```
+
+Equivalently:
+
+```math
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+r_{Q,a}<e^{-C_Q(\epsilon)}
+\right)
+<
+\epsilon.
+\tag{39.35}
+```
+
+Since the family of physical blocks is finite at fixed `R`, the union bound
+turns (39.34) for each fixed `Q` into SC1 for the whole block family.
+
+This proves the positive side of B4 as an exact criterion:
+
+```math
+\boxed{
+\mathrm{B4}_{+}
+\quad
+\Longleftrightarrow
+\quad
+\text{prove cutoff-uniform tightness of }c_{Q,a}
+\text{ at fixed physical }Q.
+}
+\tag{39.36}
+```
+
+### 39.20. Exact Negative Form Of B4
+
+B4 is falsified for the block `Q` if there are:
+
+```math
+\epsilon_Q>0,
+\qquad
+L_n\to\infty,
+\qquad
+a_n\to0,
+\tag{39.37}
+```
+
+such that:
+
+```math
+\bar\mu^{0}_{R,a_n}
+\left(
+c_{Q,a_n}>L_n
+\right)
+\ge
+\epsilon_Q.
+\tag{39.38}
+```
+
+Equivalently:
+
+```math
+\bar\mu^{0}_{R,a_n}
+\left(
+r_{Q,a_n}<e^{-L_n}
+\right)
+\ge
+\epsilon_Q.
+\tag{39.39}
+```
+
+This is the local pinned-block falsifier. It says that on positive SO(3)
+marginal mass, the charged/twisted local class is present at finite cutoff but
+loses all fixed-IR weight as the cutoff is removed.
+
+Thus:
+
+```math
+\boxed{
+\mathrm{B4}_{-}
+\quad
+\Longleftrightarrow
+\quad
+\text{construct a positive-mass local pinned-block subsequence.}
+}
+\tag{39.40}
+```
+
+This is a falsifier for SC1 and for the B4 local entropy-bridge route. It is not
+a falsifier for every possible confinement route.
+
+### 39.21. Heat-Bath Minorization Revisited
+
+The heat-bath mechanism can now be stated without ambiguity. A block update
+kernel proves B4 only if it yields a lower bound on `r_Q,a`.
+
+Suppose a whole-block kernel `K_Q,a` is absolutely continuous with bounded
+entropy production relative to the paired local reference measure, and suppose
+there is a high-probability SO(3) event on which:
+
+```math
+K_{Q,a}
+\left(
+\bar U;b,
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+\right)
+\ge
+\kappa_Q
+\tag{39.41}
+```
+
+with:
+
+```math
+\kappa_Q>0
+\quad
+\text{independent of }a.
+\tag{39.42}
+```
+
+Then (39.34) holds with a constant depending on `-log kappa_Q` and the entropy
+production bound.
+
+Conversely, if every admissible physical-block update in the chosen kernel class
+has:
+
+```math
+K_{Q,a}
+\left(
+\bar U;b,
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+\right)
+\to
+0
+\tag{39.43}
+```
+
+on positive SO(3) marginal mass, then that kernel class cannot prove B4.
+
+This does not yet falsify B4, because the tautological kernel that samples the
+normalized twisted restriction exists whenever `r_Q,a>0`. To be meaningful, a
+heat-bath proof must be constructive: its minorization must be proved without
+already knowing the lower bound (39.35).
+
+### 39.22. Class-Exchange Revisited
+
+A local class-exchange map:
+
+```math
+J_{Q,a}(\bar U):
+\mathcal B^{0}_{Q,a}(\bar U)
+\to
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+\tag{39.44}
+```
+
+proves B4 if the pushed-forward neutral probability law has bounded finite
+reference entropy:
+
+```math
+H
+\left(
+(J_{Q,a})_{\#}\mu^{0,\mathrm{prob}}_{Q,a}
+\mid
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\right)
+\le
+C_Q
+\tag{39.45}
+```
+
+on high SO(3) marginal probability, with `C_Q` independent of `a`.
+
+By (39.32), any such map immediately implies:
+
+```math
+c_{Q,a}\le C_Q.
+\tag{39.46}
+```
+
+The pointwise smooth charged insertion previously audited does not prove
+(39.45), because its action cost grows with the bare coupling. A successful
+class exchange must use multiplicity, entropy compensation, or a genuinely
+nonperturbative block rearrangement. Section 39 does not currently construct
+such a map.
+
+### 39.23. Transport And Effective-Model Routes Revisited
+
+A transport or log-Sobolev route proves B4 only if it produces a probability
+measure supported on `A^tw_Q,a` with entropy bounded as in (39.32). Uniform
+microscopic convexity is not enough, because the number of microscopic
+coordinates in a fixed physical block diverges as `a -> 0`.
+
+The effective-model route is similarly exact. A solvable fixed-block model helps
+only if one proves an actual lower domination inequality for the finite-cutoff
+conditional Yang-Mills measure:
+
+```math
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\left(
+A^{\mathrm{tw}}_{Q,a}
+\mid
+\bar U
+\right)
+\ge
+c_Q
+\widehat\mu^{\mathrm{eff}}_{Q}
+\left(
+A^{\mathrm{tw}}_{Q}
+\mid
+\bar U_{\mathrm{eff}}
+\right)
+\tag{39.47}
+```
+
+with `c_Q>0` independent of `a`, on high SO(3) marginal probability. A heuristic
+blocked action is not such an inequality.
+
+Thus transport and effective-model methods remain possible proof technologies,
+but their target is still exactly (39.35).
+
+### 39.24. What A Negative Proof Would Need
+
+The clean negative proof of B4 would be an action-entropy imbalance. One
+sufficient form is the following. Suppose that, on SO(3) marginal mass at least
+`epsilon_Q`, every twisted local representative pays an unavoidable excess
+action `I_Q,a`, while the total entropy of possible twisted representatives is
+bounded above by `N_Q,a`, and:
+
+```math
+I_{Q,a}(\bar U)
+-
+\log N_{Q,a}(\bar U)
+\to
+\infty.
+\tag{39.48}
+```
+
+Then:
+
+```math
+c_{Q,a}(\bar U)\to\infty
+\tag{39.49}
+```
+
+on that same positive-mass set, so B4 is falsified by (39.38).
+
+This is the exact negative target. The paper has not proved (39.48). It has only
+shown that the naive pointwise smooth insertion has growing action cost. That is
+not enough, because entropy may still compensate.
+
+### 39.25. Target 40.200 Decision
+
+Target 40.200 is fully decided as a reduction:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{id}}
+&
+\text{optimal local bridge entropy equals }c_{Q,a}=-\log r_{Q,a},\\[1mm]
+\mathrm{PROVED}_{+}
+&
+\text{B4 holds exactly when }c_{Q,a}\text{ is tight at fixed physical }Q,\\[1mm]
+\mathrm{PROVED}_{-}
+&
+\text{B4 fails exactly when }c_{Q,a}\text{ diverges on positive SO(3) mass},\\[1mm]
+\mathrm{NO}_{\mathrm{micro}}
+&
+\text{microscopic heat-bath, convexity, or smooth-insertion shortcuts do not decide it},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{prove tightness or pinned-block divergence for the actual SU(2) law}.
+\end{array}}
+\tag{39.50}
+```
+
+The remaining open point is a genuine fixed-IR Yang-Mills weight estimate. It is
+not an ISP ontology assumption and not a hidden Markov transition.
+
+### 39.26. Final Section 39 Exhaustion
+
+Section 39 is now exhausted in the same precise sense as Section 40. B4 is not a
+separate formal mystery. It is the local fixed-block form of the same weight
+problem:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{prove }r_{Q,a}\text{ has a cutoff-uniform lower tail at fixed physical }Q,\\[1mm]
+\mathrm{negative}
+&
+\text{prove }r_{Q,a}\to0\text{ on positive SO(3) marginal mass}.
+\end{array}}
+\tag{39.51}
+```
+
+Equivalently:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{construct a non-tautological bounded local entropy bridge},\\[1mm]
+\mathrm{negative}
+&
+\text{construct the local pinned-block falsifier}.
+\end{array}}
+\tag{39.52}
+```
+
+All constants remain fixed at physical `R` and physical block scale `ell_R`.
+The record law remains the deterministic SU(2) pushforward law. Therefore the
+Section 39 endpoint is fixed-IR aligned and Barandes aligned.
+
+## 40. Research Branch E: B5 Reflection Positivity And Transfer Positivity
+
+`V4P40-BRANCH-E-B5-RP-TRANSFER-POSITIVITY`.
+
+B5 is the last nonperturbative ordinary Yang-Mills lever in this paper. It does
+not try to prove SC1 locally. It asks whether reflection positivity or transfer
+positivity can prove the charged fixed-IR disorder estimate more directly.
+
+### 40.1. Target 40.196: RP Or Transfer-Positive Charged Fixed-IR Gap
+
+`V4P40-TARGET-40196-B5-RP-TRANSFER-CHARGED-FIXED-IR-GAP`.
+
+The target is a fixed-IR charged-sector deficit:
+
+```math
+\lambda^{\mathrm{ch}}_{R}
+<
+\lambda^{0}_{R}
+\tag{40.1}
+```
+
+with a gap independent of `a` after the physical scale `R` is fixed.
+
+This is not the Clay mass gap. It is a finite physical-scale charged transfer
+deficit or disorder certificate. Only after additional reconstruction and
+continuum survival would it become a statement about the continuum spectral
+gap.
+
+### 40.2. What RP Can Plausibly Prove
+
+Reflection positivity can plausibly give:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{RP1}
+&
+\text{a Hilbert-space representation},\\[1mm]
+\mathrm{RP2}
+&
+\text{two-sidedness or positivity of charged tile comparisons},\\[1mm]
+\mathrm{RP3}
+&
+\text{a strict charged transfer deficit}.
+\end{array}}
+\tag{40.2}
+```
+
+The likely audit outcome is RP1/RP2. RP3 is the hard part because reflection
+positivity alone is usually structural; it does not automatically distinguish a
+confined phase from another phase.
+
+### 40.3. Charged-Sector Compatibility Hazard
+
+The RP proof must verify that the charged sheet or tile insertion is compatible
+with the reflection planes. The danger is:
+
+```math
+\boxed{
+\text{RP naturally sees neutral reflected squares, not arbitrary charged sheets.}
+}
+\tag{40.3}
+```
+
+Thus the first technical task is not to prove a gap. It is to build a charged
+observable package that is reflection-compatible at fixed physical scale.
+
+### 40.4. Transfer-Positive Mechanism
+
+A transfer-positive proof would construct neutral and charged transfer operators:
+
+```math
+T^{0}_{R,a},
+\qquad
+T^{\mathrm{ch}}_{R,a},
+\tag{40.4}
+```
+
+and prove a strict fixed-IR norm deficit:
+
+```math
+\left\|T^{\mathrm{ch}}_{R,a}\right\|
+\le
+e^{-m_R}
+\left\|T^{0}_{R,a}\right\|.
+\tag{40.5}
+```
+
+The constant `m_R` may depend on the fixed physical scale `R`, but not on `a`.
+This would bypass SC1 if it can be proved directly.
+
+### 40.5. B5 Decision Boundary
+
+B5 should be judged by:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B5}_{\mathrm{struct}}
+&
+\text{RP gives Hilbert space and two-sidedness only},\\[1mm]
+\mathrm{B5}_{+}
+&
+\text{RP or transfer positivity gives a strict fixed-IR charged deficit},\\[1mm]
+\mathrm{B5}_{0}
+&
+\text{charged insertion is not reflection-compatible},\\[1mm]
+\mathrm{B5}_{\mathrm{gap}}
+&
+\text{continuum mass-gap interpretation remains a later reconstruction step}.
+\end{array}}
+\tag{40.6}
+```
+
+The expectation is conservative: RP should be pursued because it is the
+only coupling-independent nonperturbative structure left, but the paper should
+not assume RP alone proves a strict gap.
+
+### 40.6. Global Roadmap After Sections 38-40
+
+The post-40.192 research order is:
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{test B3 by searching for a concrete mandatory }G_{R,a},\\[1mm]
+2
+&
+\text{test B2 by asking whether ISP supplies a mandatory support law},\\[1mm]
+3
+&
+\text{attack B4 as the direct ordinary YM proof of SC1},\\[1mm]
+4
+&
+\text{attack B5 as a possible RP or transfer-positive bypass}.
+\end{array}}
+\tag{40.7}
+```
+
+This keeps the paper honest: ISP-specific possibilities are tested first, but if
+they close, the remaining fixed-IR program is ordinary Yang-Mills analysis.
+
+### 40.7. RP1: Neutral Hilbert-Space Reconstruction At Fixed Cutoff
+
+For reflection-compatible finite lattices and the Wilson action, ordinary
+reflection positivity gives a Hilbert-space representation for neutral
+observables. This is structural and coupling-independent. In the present
+fixed-IR setting it means:
+
+```math
+\langle F,\Theta F\rangle
+\ge
+0
+\tag{40.8}
+```
+
+for observables `F` supported on one side of a reflection plane.
+
+This proves RP1 for neutral observables. It does not by itself prove a charged
+deficit, a string tension, or a mass gap.
+
+### 40.8. Charged Reflection-Compatibility Test
+
+The charged tile insertion must be placed so that reflection positivity can see
+it. The first necessary condition is a reflected-pair form:
+
+```math
+\mathcal O_{\mathrm{ch}}
+=
+F_{\mathrm{ch}}
+\Theta F_{\mathrm{ch}}
+\tag{40.9}
+```
+
+or an equivalent pair of reflected boundary twists. If the charged sheet cannot
+be represented in such a reflected-pair geometry, RP gives no useful inequality
+for it.
+
+Thus the first B5 task is geometric:
+
+```math
+\boxed{
+\text{build a fixed-IR charged tile package compatible with the reflection plane.}
+}
+\tag{40.10}
+```
+
+This task is fixed-IR aligned only if the tile and reflection geometry have
+physical thickness independent of `a`.
+
+### 40.9. RP2: Two-Sidedness, Not Strict Gap
+
+If the charged package is reflection-compatible, chessboard or RP arguments can
+compare reflected charged insertions to neutral ones. The expected form is a
+two-sidedness estimate:
+
+```math
+0
+<
+Z^{\mathrm{ch}}_{R,a}
+\le
+Z^{0}_{R,a}.
+\tag{40.11}
+```
+
+or a nonnegative charged-sector quadratic form. This is useful because it
+prevents some sign-cancellation pathologies. But it does not prove:
+
+```math
+Z^{\mathrm{ch}}_{R,a}
+\le
+e^{-m_R}
+Z^{0}_{R,a}
+\tag{40.12}
+```
+
+with `m_R>0`.
+
+So RP2 is a real structural result, but RP3 is still the hard estimate.
+
+### 40.10. Why RP Alone Does Not Prove RP3
+
+RP is compatible with many phases. It gives positivity and transfer structure,
+not automatically a strict charged-sector energy penalty. To prove RP3 one must
+exclude almost-invariant charged vectors:
+
+```math
+\left\|T^{\mathrm{ch}}_{R,a}v_a\right\|
+\approx
+\left\|T^{0}_{R,a}v_a\right\|.
+\tag{40.13}
+```
+
+Excluding such vectors is a dynamical estimate. In this paper's language it is
+another form of the area barrier or charged transfer gap. It cannot be obtained
+from RP formalism alone.
+
+### 40.11. Transfer-Positive Route: Exact Equivalent Target
+
+The transfer-positive route is valid if one constructs a charged transfer
+operator and proves:
+
+```math
+\left\|T^{\mathrm{ch}}_{R,a}\right\|
+\le
+e^{-m_R}
+\left\|T^{0}_{R,a}\right\|,
+\qquad
+m_R>0.
+\tag{40.14}
+```
+
+This would be a fixed-IR charged gap. It may bypass SC1, but it does not lower
+the difficulty for free. It is equivalent to proving that the charged sector has
+a positive fixed-IR penalty under the actual finite Yang-Mills transfer
+operator.
+
+### 40.12. Transfer-Positive Falsifier
+
+B5 fails in its strict-gap form if one constructs charged trial vectors `v_a`
+with:
+
+```math
+\frac{
+\left\|T^{\mathrm{ch}}_{R,a}v_a\right\|
+}{
+\left\|T^{0}_{R,a}v_a\right\|
+}
+\to
+1.
+\tag{40.15}
+```
+
+This would show no cutoff-uniform charged transfer deficit at the fixed physical
+scale under the chosen charged package. It would not disprove confinement in all
+forms, but it would falsify this B5 implementation.
+
+### 40.13. Relation Between B5 And SC1
+
+B5 is not the same as SC1.
+
+SC1 is local:
+
+```math
+\text{a fixed charged block has bounded local entropy cost.}
+\tag{40.16}
+```
+
+B5 is transfer-theoretic:
+
+```math
+\text{a charged sector has a strict fixed-IR transfer deficit.}
+\tag{40.17}
+```
+
+B5 could imply the disorder certificate without proving SC1 block by block. It
+could also fail while SC1 remains true. Therefore B5 is a bypass route, not just
+a subcase of B4.
+
+### 40.14. Target 40.196 Exhaustion
+
+B5 is now exhausted as a reduction:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{RP1}_{+}
+&
+\text{neutral RP gives Hilbert and transfer structure},\\[1mm]
+\mathrm{RP2}_{\mathrm{cond}}
+&
+\text{charged two-sidedness follows only for reflection-compatible packages},\\[1mm]
+\mathrm{RP3}_{\mathrm{open}}
+&
+\text{strict charged deficit needs a separate dynamical estimate},\\[1mm]
+\mathrm{TP}_{+}
+&
+\text{a norm deficit would prove the fixed-IR charged gap},\\[1mm]
+\mathrm{TP}_{-}
+&
+\text{almost-invariant charged trial vectors would falsify this route}.
+\end{array}}
+\tag{40.18}
+```
+
+The current paper proves neither RP3 nor TP+. It identifies the exact missing
+estimate and prevents a common overclaim: RP support is not the same as a strict
+charged fixed-IR gap.
+
+### 40.15. Section 40 Final Verdict
+
+Section 40 leaves B5 open, but with hard boundaries:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{RP is worth pursuing for charged two-sidedness and transfer structure,}\\[1mm]
+\text{but a strict charged deficit remains an independent fixed-IR estimate.}
+\end{array}}
+\tag{40.19}
+```
+
+The next B5 move should be the charged reflection-compatibility construction.
+Only after that construction exists does it make sense to attack the strict norm
+deficit or its trial-vector falsifier.
+
+### 40.16. Final Sections 38-40 Ledger
+
+The full investigation of Sections 38-40 gives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B3}
+&
+\text{closed under current ISP premises; open only with a new mandatory rule},\\[1mm]
+\mathrm{B2}
+&
+\text{closed under current ISP premises; open only with a new support law},\\[1mm]
+\mathrm{B4}
+&
+\text{open as ordinary YM SC1 proof or falsifier},\\[1mm]
+\mathrm{B5}
+&
+\text{reflection-compatible package exists; strict deficit remains open}.
+\end{array}}
+\tag{40.20}
+```
+
+Thus the honest next step is no longer a broad philosophical search. It is one
+of two concrete mathematical tasks:
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{attack B4 through block heat-bath minorization or local-cost falsification},\\[1mm]
+2
+&
+\text{attack B5 through strict charged deficit or its trial-vector falsifier}.
+\end{array}}
+\tag{40.21}
+```
+
+If a new ISP premise is later proposed, it must enter through Section 38 as a
+specific B3 rule or B2 support law before it can affect the fixed-IR certificate.
+
+### 40.17. Target 40.197: Reflection-Compatible Charged Tile Package
+
+`V4P40-TARGET-40197-REFLECTION-COMPATIBLE-CHARGED-TILE-PACKAGE`.
+
+We now attack the first concrete B5 task. The question is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Can the fixed-IR charged tile insertion be put in reflection-positive form}\\[1mm]
+\text{without changing the ensemble, shrinking the physical scale, or postselecting?}
+\end{array}}
+\tag{40.22}
+```
+
+This target is structural. It is not the strict charged gap. It decides whether
+RP can legitimately see the charged object.
+
+### 40.18. Inputs From The Earlier RP Audit
+
+Section 18 already proved the essential SU(2) charged-sheet admissibility gate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the }Z_2\text{ charged sheet passes reflection admissibility}\\[1mm]
+\text{after reflection-compatible or doubled fixed-IR packaging.}
+\end{array}}
+\tag{40.23}
+```
+
+The earlier failure modes were:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{F1}
+&
+\text{the reflection does not transport the sheet to a sheet},\\[1mm]
+\mathrm{F2}
+&
+\text{the observable uses an untransported section-dependent coordinate},\\[1mm]
+\mathrm{F3}
+&
+\text{boundary or collar data are not reflection-pairable},\\[1mm]
+\mathrm{F4}
+&
+\text{the repair doubles only microscopic plaquettes},\\[1mm]
+\mathrm{F5}
+&
+\text{the reflection sign is selected from the configuration}.
+\end{array}}
+\tag{40.24}
+```
+
+Thus Target 40.197 does not start from zero. It imports the admissibility
+criterion and re-expresses it in the Section 40 B5 notation.
+
+### 40.19. Fixed-IR Geometry
+
+Choose a reflection plane `P_R` and a physical tile:
+
+```math
+\mathcal T_{R,a}^{+}
+\tag{40.25}
+```
+
+on one side of the plane. Its reflected partner is:
+
+```math
+\mathcal T_{R,a}^{-}
+=
+\theta
+\mathcal T_{R,a}^{+}.
+\tag{40.26}
+```
+
+The collar thickness, tile diameter, and separation from the reflection plane are
+fixed in physical units. No microscopic doubling is allowed. If an unpaired
+charged sheet meets the reflection boundary, replace it by a doubled physical
+package:
+
+```math
+\mathcal T_{R,a}^{\mathrm{dbl}}
+=
+\mathcal T_{R,a}^{+}
+\cup
+\theta\mathcal T_{R,a}^{+}.
+\tag{40.27}
+```
+
+This is fixed-IR aligned because the doubled package has physical size depending
+on `R`, not on `a`.
+
+### 40.20. Charged Sheet Character
+
+Let:
+
+```math
+\chi_{R,a}^{+}
+\tag{40.28}
+```
+
+be the `Z_2` charged sheet character on the positive tile. Reflection transports
+it to:
+
+```math
+\chi_{R,a}^{-}
+=
+\theta\chi_{R,a}^{+}.
+\tag{40.29}
+```
+
+For SU(2), this `Z_2` character is orientation-blind: reversing the sheet
+orientation does not change the center character. Therefore the reflected
+product:
+
+```math
+\chi_{R,a}^{\mathrm{pair}}
+=
+\chi_{R,a}^{+}
+\chi_{R,a}^{-}
+\tag{40.30}
+```
+
+is a legitimate reflection-paired charged insertion.
+
+### 40.21. Section And Gauge Compatibility
+
+The package must be written in section-independent terms. A raw center coordinate
+changes when the SO(3)-to-SU(2) section is changed. The admissible object is the
+paired sheet character or twisted boundary comparison, because the section
+change acts on both halves of the reflected pair and cancels in the paired
+observable.
+
+The test is:
+
+```math
+\chi_{R,a}^{\mathrm{pair},s'}
+=
+\chi_{R,a}^{\mathrm{pair},s}.
+\tag{40.31}
+```
+
+If (40.31) fails, the object is not a physical charged package. It is a coordinate
+artifact.
+
+### 40.22. Reflection-Positive Form
+
+Define a one-sided charged observable:
+
+```math
+F^{\mathrm{ch}}_{R,a}
+\tag{40.32}
+```
+
+supported on the positive half-space and including the positive charged sheet
+and its collar data. The reflected package is:
+
+```math
+F^{\mathrm{ch}}_{R,a}
+\Theta F^{\mathrm{ch}}_{R,a}.
+\tag{40.33}
+```
+
+The RP inequality applies to this package because it is a reflected square:
+
+```math
+\left\langle
+F^{\mathrm{ch}}_{R,a},
+\Theta F^{\mathrm{ch}}_{R,a}
+\right\rangle
+\ge
+0.
+\tag{40.34}
+```
+
+This is the RP2 gate. It proves positivity/two-sidedness for the charged package,
+not a strict gap.
+
+### 40.23. No Ensemble Change And No Postselection
+
+The charged package is an observable or a twisted-boundary comparison inside the
+same finite Yang-Mills law. It is not a new measure:
+
+```math
+\mu^{\mathrm{RP,ch}}_{R,a}
+=
+\mu^{\mathrm{YM}}_{R,a}.
+\tag{40.35}
+```
+
+The reflection sign and sheet location must be chosen before sampling the
+configuration. If they are selected from the configuration, the construction is
+postselection and violates the Barandes/fixed-readout guardrail.
+
+### 40.24. The Compatibility Theorem
+
+**Theorem 40.197A (Fixed-IR Reflection-Compatible Charged Package).** For SU(2)
+at finite cutoff, a `Z_2` charged tile insertion admits a reflection-compatible
+fixed-IR package provided:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{C1}
+&
+\text{the tile and collar geometry are fixed in physical units},\\[1mm]
+\mathrm{C2}
+&
+\text{the reflected partner is included or a fixed-physical double is used},\\[1mm]
+\mathrm{C3}
+&
+\text{the charged character is written section-independently},\\[1mm]
+\mathrm{C4}
+&
+\text{boundary data are reflection-paired, not configuration-selected},\\[1mm]
+\mathrm{C5}
+&
+\text{the observable is evaluated in the original Yang-Mills ensemble}.
+\end{array}}
+\tag{40.36}
+```
+
+Under C1-C5, RP applies to the charged package and proves the RP2
+two-sidedness/positivity gate.
+
+#### Proof
+
+C1 keeps the construction fixed-IR. C2 converts an unpaired sheet into a
+reflected pair. C3 removes section dependence by using the paired `Z_2` character
+or an equivalent twisted-boundary comparison. C4 prevents postselection. C5 keeps
+the construction inside the original finite Yang-Mills law. The Wilson action is
+reflection positive for the finite lattice, so the reflected one-sided charged
+observable satisfies (40.34). `∎`
+
+### 40.25. What Target 40.197 Does Not Prove
+
+The theorem does not prove:
+
+```math
+\left\|T^{\mathrm{ch}}_{R,a}\right\|
+\le
+e^{-m_R}
+\left\|T^{0}_{R,a}\right\|.
+\tag{40.37}
+```
+
+It proves only that the charged object can be placed in the RP Hilbert-space
+framework. The strict deficit still requires a dynamical estimate excluding
+almost-invariant charged vectors.
+
+### 40.26. Failure Modes For Target 40.197
+
+The construction fails if:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{K1}
+&
+\text{the charged sheet is not paired by the reflection},\\[1mm]
+\mathrm{K2}
+&
+\text{the repair uses microscopic rather than physical doubling},\\[1mm]
+\mathrm{K3}
+&
+\text{the sheet character is section-dependent},\\[1mm]
+\mathrm{K4}
+&
+\text{boundary data are selected from the sampled configuration},\\[1mm]
+\mathrm{K5}
+&
+\text{the construction changes the Yang-Mills ensemble}.
+\end{array}}
+\tag{40.38}
+```
+
+These are construction failures, not dynamical gap failures.
+
+### 40.27. Target 40.197 Decision
+
+Target 40.197 is therefore closed positively as a compatibility result:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{geom}}
+&
+\text{fixed-physical reflected or doubled geometry is available},\\[1mm]
+\mathrm{PASS}_{\mathrm{Z2}}
+&
+\text{SU(2) center charge is orientation-blind under reflection},\\[1mm]
+\mathrm{PASS}_{\mathrm{sec}}
+&
+\text{paired sheet characters remove section dependence},\\[1mm]
+\mathrm{PASS}_{\mathrm{RP2}}
+&
+\text{RP applies to the charged package},\\[1mm]
+\mathrm{OPEN}_{\mathrm{RP3}}
+&
+\text{strict charged transfer deficit remains open}.
+\end{array}}
+\tag{40.39}
+```
+
+Thus B5 is not blocked at the reflection-compatibility gate. The next B5 target
+is the strict charged transfer deficit or its almost-invariant-vector falsifier.
+
+### 40.28. Target 40.198: Strict Charged Transfer Deficit Or Falsifier
+
+`V4P40-TARGET-40198-STRICT-CHARGED-TRANSFER-DEFICIT-OR-FALSIFIER`.
+
+Target 40.197 placed the charged package inside RP. The next question is
+quantitative:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Does the reflection-compatible charged transfer have a fixed-IR norm gap,}\\[1mm]
+\text{or are there almost-invariant charged trial vectors?}
+\end{array}}
+\tag{40.40}
+```
+
+This is an ordinary Yang-Mills question. It uses the same finite measure and the
+same fixed physical charged package. No ISP tilt, hidden Markov transition,
+postselection, or continuum survival step is allowed.
+
+### 40.29. Transfer Operators And Normalization
+
+Let:
+
+```math
+\mathcal H_{R,a}
+\tag{40.41}
+```
+
+be the RP Hilbert space for the fixed physical tile package. Let:
+
+```math
+T^{0}_{R,a},
+\qquad
+T^{\mathrm{ch}}_{R,a}
+\tag{40.42}
+```
+
+be the neutral and charged transfer operators or bounded transfer forms induced
+by the package. Define the normalized charged operator:
+
+```math
+A_{R,a}
+:=
+\frac{
+T^{\mathrm{ch}}_{R,a}
+}{
+\left\|T^{0}_{R,a}\right\|
+}.
+\tag{40.43}
+```
+
+The fixed-IR strict deficit is:
+
+```math
+\limsup_{a\to0}
+\left\|
+A_{R,a}
+\right\|
+\le
+e^{-m_R}
+\quad
+\text{for some }m_R>0.
+\tag{40.44}
+```
+
+If the charged package is formulated in spectral-radius language, replace the
+operator norm in (40.44) by the corresponding spectral radius. The variational
+dichotomy below is the same after passing to approximate spectral vectors.
+
+### 40.30. Variational Dichotomy
+
+**Theorem 40.198A (Strict Deficit Versus Almost-Invariant Charged Vectors).**
+Assume the normalized charged operators `A_R,a` are uniformly bounded and the
+neutral normalization is nonzero. Then exactly one of the following holds:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{D}_{+}
+&
+\limsup_{a\to0}\left\|A_{R,a}\right\|<1,\\[1mm]
+\mathrm{D}_{0}
+&
+\limsup_{a\to0}\left\|A_{R,a}\right\|=1,\\[1mm]
+\mathrm{D}_{>}
+&
+\limsup_{a\to0}\left\|A_{R,a}\right\|>1.
+\end{array}}
+\tag{40.45}
+```
+
+`D_+` is the strict charged transfer deficit. `D_0` is witnessed by
+almost-invariant charged trial vectors:
+
+```math
+\left\|v_{a_n}\right\|=1,
+\qquad
+\left\|A_{R,a_n}v_{a_n}\right\|\to1.
+\tag{40.46}
+```
+
+`D_>` means the chosen charged normalization is not dominated by the neutral
+package and must be repaired before it can serve as a disorder-deficit
+certificate.
+
+#### Proof
+
+This is the variational characterization of the operator norm. If the limsup is
+strictly below one, choose `m_R` with:
+
+```math
+e^{-m_R}
+>
+\limsup_{a\to0}
+\left\|A_{R,a}\right\|.
+\tag{40.47}
+```
+
+Then (40.44) holds. If the limsup equals one, choose a sequence `a_n` approaching
+zero and unit vectors `v_{a_n}` whose images approach the norm. This gives
+(40.46). If the limsup is larger than one, the charged package is not a
+contraction relative to the neutral normalization. `∎`
+
+### 40.31. What RP Adds And What It Does Not Add
+
+Reflection positivity gives the Hilbert space, the reflected package, and
+positivity of reflected quadratic forms. It may also give a domination estimate:
+
+```math
+\left\|A_{R,a}\right\|
+\le
+1.
+\tag{40.48}
+```
+
+when the charged package is represented as a dominated reflected comparison.
+But RP alone does not improve (40.48) to a strict bound:
+
+```math
+\left\|A_{R,a}\right\|
+\le
+e^{-m_R}.
+\tag{40.49}
+```
+
+The strict improvement is a dynamical estimate. In the language of earlier
+sections, it is the same fixed-IR charged transfer deficit that was reduced to
+the final three-sector nonconcentration input.
+
+### 40.32. Link To The Existing Final Hypothesis
+
+Earlier sections already identified a sufficient fixed-IR input:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+\tag{40.50}
+```
+
+Under that hypothesis, the paper already proves a charged transfer deficit:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+e^{-m_R+o_a(1)}
+\rho
+\left(
+\mathcal T^{0}_{R,a}
+\right),
+\qquad
+m_R>0.
+\tag{40.51}
+```
+
+Thus Target 40.198 is not a new formal route around the final hypothesis. It is
+the B5 variational face of the same problem:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove the final fixed-IR charged-sector estimate,}\\[1mm]
+\text{or construct almost-invariant charged trial vectors.}
+\end{array}}
+\tag{40.52}
+```
+
+### 40.33. Candidate Proof Route For The Strict Deficit
+
+The only positive route inside B5 is to prove that every unit vector in the
+charged package pays a fixed physical penalty. In variational form:
+
+```math
+\left\|A_{R,a}v\right\|^2
+\le
+\left(
+1-\delta_R
+\right)
+\left\|v\right\|^2
+\tag{40.53}
+```
+
+with:
+
+```math
+\delta_R>0
+\tag{40.54}
+```
+
+independent of `a`.
+
+This is equivalent to excluding the equality case. Earlier sections identify
+that equality case with center-sign coboundary absorption or three-sector
+collapse. Therefore a B5 proof of (40.53) must show that such absorption has
+positive fixed-IR cost.
+
+### 40.34. Candidate Falsifier
+
+The clean falsifier is an explicit sequence:
+
+```math
+a_n\to0,
+\qquad
+\left\|v_n\right\|=1,
+\qquad
+\left\|A_{R,a_n}v_n\right\|\to1.
+\tag{40.55}
+```
+
+Such a sequence would mean that the charged package can be absorbed by boundary,
+collar, or cell degrees of freedom at no fixed-IR transfer cost. It would falsify
+this B5 implementation. It would not disprove every possible confinement route,
+but it would show that RP plus this charged package does not yield a strict
+deficit.
+
+### 40.35. Candidate Trial Vector Sources
+
+The plausible sources of almost-invariant vectors are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{V1}
+&
+\text{boundary coboundary absorption},\\[1mm]
+\mathrm{V2}
+&
+\text{collar holonomy adjustment},\\[1mm]
+\mathrm{V3}
+&
+\text{cell-law concentration in one sign sector},\\[1mm]
+\mathrm{V4}
+&
+\text{near-trivial center pairing across the reflected package},\\[1mm]
+\mathrm{V5}
+&
+\text{a section-coordinate artifact}.
+\end{array}}
+\tag{40.56}
+```
+
+`V5` is removed by Target 40.197. The live falsifiers are V1-V4. Each is another
+form of the final fixed-IR area-barrier problem.
+
+### 40.36. Target 40.198 Decision
+
+Target 40.198 is fully reduced:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{var}}
+&
+\text{strict deficit is equivalent to absence of almost-invariant vectors},\\[1mm]
+\mathrm{RP}_{\mathrm{support}}
+&
+\text{RP supplies the Hilbert package and possible domination},\\[1mm]
+\mathrm{OPEN}_{\mathrm{strict}}
+&
+\text{strict contraction needs the final fixed-IR charged-sector estimate},\\[1mm]
+\mathrm{FALSIFY}
+&
+\text{construct almost-invariant charged trial vectors},\\[1mm]
+\mathrm{REDUCED}_{\mathrm{old}}
+&
+\text{the existing sufficient input is }\mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+\end{array}}
+\tag{40.57}
+```
+
+So B5 has now reached its real obstruction. The next work is not another RP
+formal step. It is either a proof of the fixed-IR strict contraction (40.53), or
+a trial-vector falsifier (40.55).
+
+### 40.37. Target 40.199: Almost-Invariant Charged Trial Vector Audit
+
+`V4P40-TARGET-40199-ALMOST-INVARIANT-CHARGED-TRIAL-VECTOR-AUDIT`.
+
+Target 40.198 says that the strict charged transfer deficit fails exactly when
+there are almost-invariant charged trial vectors. Target 40.199 audits every
+candidate source identified in (40.56).
+
+A valid falsifier must satisfy all of the following:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FV1}
+&
+\text{the charged package is the fixed-IR package from Target 40.197},\\[1mm]
+\mathrm{FV2}
+&
+\text{the vectors live in the actual RP Hilbert space},\\[1mm]
+\mathrm{FV3}
+&
+\text{the original Yang-Mills ensemble is not changed},\\[1mm]
+\mathrm{FV4}
+&
+\text{the vectors are not selected using future charged signs},\\[1mm]
+\mathrm{FV5}
+&
+\left\|v_n\right\|=1\text{ and }\left\|A_{R,a_n}v_n\right\|\to1.
+\end{array}}
+\tag{40.58}
+```
+
+This standard is deliberately strict. A heuristic absorption picture is not yet
+a falsifier.
+
+### 40.38. V1 Audit: Boundary Coboundary Absorption
+
+Boundary coboundary absorption would mean that the charged sign can be written,
+up to a phase, as a boundary coboundary:
+
+```math
+s_{R,a}(\omega,\omega')
+\approx
+\lambda
+\frac{
+h(\omega')
+}{
+h(\omega)
+}.
+\tag{40.59}
+```
+
+If (40.59) holds in norm along `a_n`, then the trial vectors:
+
+```math
+v_n=h_n
+\tag{40.60}
+```
+
+are almost invariant in the compressed transfer model. This is a real falsifier
+provided the compressed cell representation embeds faithfully into the charged
+RP package.
+
+But the paper has not derived such `h_n`. Earlier sections identify (40.59) as
+the equality case. Thus V1 is not an available construction; it is exactly the
+negative side of the strict-deficit problem.
+
+### 40.39. V2 Audit: Collar Holonomy Adjustment
+
+Collar holonomy adjustment would try to absorb the charged sheet in the collar
+without paying fixed physical cost. A valid falsifier would require collar
+states `c_n` such that:
+
+```math
+\frac{
+\left\|A_{R,a_n}v(c_n)\right\|
+}{
+\left\|v(c_n)\right\|
+}
+\to
+1.
+\tag{40.61}
+```
+
+This is not produced by a flat-collar example alone. Earlier collar audits show
+that exact or trivial collar choices can defeat pointwise repair lemmas, but they
+do not automatically give almost-invariant vectors for the final reflected
+charged package.
+
+To become a falsifier, V2 must prove that the collar adjustment has enough
+measure or entropy under the actual finite Yang-Mills law. That is another form
+of the fixed-IR collar free-energy problem.
+
+### 40.40. V3 Audit: Cell-Law One-Sector Concentration
+
+Cell-law concentration is the sharpest falsifier. If the three-sector
+nonconcentration hypothesis fails, then there is a subsequence with the cell law
+pinned in one sign sector:
+
+```math
+m^{\zeta,\sigma}_{R,a_n}
+\to
+1.
+\tag{40.62}
+```
+
+In the reduced cell transfer picture, the constant trial vector then becomes
+almost invariant for the charged sign. Equivalently, the sign kernel becomes a
+constant coboundary:
+
+```math
+s_{R,a_n}
+\to
+\sigma.
+\tag{40.63}
+```
+
+Thus V3 is a genuine falsifier of the B5 strict-deficit route if it can be lifted
+from the cell representation to the actual RP Hilbert package.
+
+Conversely, if the charged RP package is norm-faithfully represented by the
+three-sector cell law, then an almost-invariant charged vector forces a pinned or
+near-pinned cell-law limit. This is the exact connection to the final hypothesis:
+V3 is the falsifier face of failure of `H_3sec`.
+
+### 40.41. V4 Audit: Near-Trivial Center Pairing
+
+Near-trivial center pairing across the reflected package can mean two different
+things.
+
+First, the reflected product may be exactly neutral:
+
+```math
+\chi^{\mathrm{pair}}_{R,a}
+\equiv
+1.
+\tag{40.64}
+```
+
+Then the package is not a charged package. It has been trivialized by the
+definition of the observable, so this is a construction failure, not a dynamical
+falsifier.
+
+Second, the package is genuinely charged but the measure concentrates where the
+paired sign is almost constant. Then V4 reduces to V3: one-sector concentration
+or boundary coboundary absorption.
+
+Thus V4 supplies no independent falsifier beyond V1/V3.
+
+### 40.42. V5 Audit: Section-Coordinate Artifacts
+
+Target 40.197 already removes this case. A raw center coordinate can change under
+section changes, but the paired charged package is section-independent:
+
+```math
+\chi^{\mathrm{pair},s'}_{R,a}
+=
+\chi^{\mathrm{pair},s}_{R,a}.
+\tag{40.65}
+```
+
+Therefore section artifacts do not generate almost-invariant charged trial
+vectors for the physical package.
+
+### 40.43. Trial-Vector Audit Theorem
+
+**Theorem 40.199A (Almost-Invariant Vector Exhaustion).** Under the fixed-IR
+charged RP package of Target 40.197 and the Barandes-aligned no-postselection
+contract, the candidate falsifiers V1-V5 have the following status:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{V1}
+&
+\text{equivalent to constructing the coboundary equality case},\\[1mm]
+\mathrm{V2}
+&
+\text{requires a collar free-energy theorem; not supplied by flat examples},\\[1mm]
+\mathrm{V3}
+&
+\text{equivalent to failure of three-sector nonconcentration, modulo lifting},\\[1mm]
+\mathrm{V4}
+&
+\text{either invalidly trivializes the charge or reduces to V1/V3},\\[1mm]
+\mathrm{V5}
+&
+\text{removed by section-independent pairing}.
+\end{array}}
+\tag{40.66}
+```
+
+Hence no explicit almost-invariant vector sequence is constructed in this paper.
+The only live falsifier is the same fixed-IR obstruction already isolated:
+failure of the three-sector/coboundary barrier.
+
+#### Proof
+
+V1 is precisely the equality case in the transfer variational principle. V2
+needs measure-theoretic collar weight, not just an admissible collar
+configuration. V3 is the pinned-limit equivalence from Branch B, transported to
+B5 through the charged package. V4 is either a wrong observable or another
+description of sign concentration. V5 is removed by Target 40.197. This proves
+the theorem.
+
+### 40.44. Final Section 40 Closure
+
+Section 40 is now fully exhausted as an RP/transfer route:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{RP1}
+&
+\text{neutral RP Hilbert structure is available},\\[1mm]
+\mathrm{RP2}
+&
+\text{the charged package is reflection-compatible},\\[1mm]
+\mathrm{RP3}
+&
+\text{strict deficit is equivalent to excluding almost-invariant vectors},\\[1mm]
+\mathrm{FALS}
+&
+\text{candidate falsifiers reduce to coboundary or three-sector failure},\\[1mm]
+\mathrm{OPEN}
+&
+\text{prove or falsify the fixed-IR three-sector/coboundary barrier}.
+\end{array}}
+\tag{40.67}
+```
+
+For clarity, the phrase **fixed-IR three-sector/coboundary barrier** in
+(40.67) means the following fixed-physical-`R` assertion.
+
+First, the physical package:
+
+```math
+\mathfrak G_R
+=
+\left(
+R,\zeta_R,T_R,S_R,\rho_R,\mathcal R^{\square}_R
+\right),
+\qquad
+0<\zeta_R<\frac14
+```
+
+is fixed before the cutoff is removed. No scale in this package is allowed to
+shrink with `a`.
+
+The **three-sector face** of the barrier is:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R):
+\qquad
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0,
+```
+
+where:
+
+```math
+q^{\zeta}_{R,a}
+=
+m^{\zeta,0}_{R,a}
++
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right).
+```
+
+Equivalently, the actual fixed-IR cell law cannot concentrate all its mass in
+one pinned sign sector.
+
+The **free-energy face** of the same three-sector barrier is:
+
+```math
+\limsup_{a\to0}
+B^{\zeta,\mathrm{3sec}}_{R,a}
+<
+\infty,
+\qquad
+B^{\zeta,\mathrm{3sec}}_{R,a}
+=
+-
+\log q^{\zeta}_{R,a}.
+```
+
+The **coboundary face** is the transfer-space version: the charged sign kernel
+must stay a positive fixed-IR distance from every boundary coboundary,
+
+```math
+\liminf_{a\to0}
+\inf_{\substack{
+|\lambda|=1\\
+|h|=1
+}}
+\int
+\left|
+s_{R,a}(\omega,\omega')
+-
+\lambda
+\frac{
+h(\omega')
+}{
+h(\omega)
+}
+\right|^2
+d\Pi^0_{R,a}(\omega,\omega')
+>
+0.
+```
+
+A **proof** of the barrier is therefore a proof of the three-sector
+nonconcentration estimate, or a direct proof of the non-coboundary estimate,
+with all constants fixed at physical `R` and uniform as `a -> 0`.
+
+A **falsification** of the barrier is a cutoff subsequence along which either:
+
+```math
+q^{\zeta}_{R,a}
+\to
+0
+```
+
+so the cell law becomes one-sector pinned, or:
+
+```math
+s_{R,a}(\omega,\omega')
+\approx
+\lambda_a
+\frac{
+h_a(\omega')
+}{
+h_a(\omega)
+}
+```
+
+in the neutral top-edge measure, so the charged sign is absorbed by boundary
+phases. In the RP formulation this is exactly the almost-invariant charged
+trial-vector scenario audited in Target 40.199.
+
+This definition is ordinary fixed-IR Yang-Mills data. It does not add an ISP
+measure tilt, a hidden Markov transition, or a continuum-survival assumption.
+
+There is no further formal RP step left in this paper. The remaining work is the
+same mathematical core from two sides:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{prove fixed-IR strict contraction or }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{negative}
+&
+\text{construct a pinned cell-law limit or coboundary almost-invariant vectors}.
+\end{array}}
+\tag{40.68}
+```
+
+This completes Section 40. B5 remains a valid route, but only as a route to the
+same final fixed-IR Yang-Mills estimate, not as an independent consequence of RP
+formalism.
+
+## 41. Local-To-Cell And Microcanonical Transport Program
+
+This section collects the post-B4/B5 comparison program in one place. It keeps
+Targets 40.201-40.205 as separate proof/falsification tasks, but treats them as
+one continuous fixed-IR investigation:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{compare B4 and B5,}\\[1mm]
+\text{prove the incidence bridge when the block is chosen correctly,}\\[1mm]
+\text{reduce the remaining weight estimate to a local microcanonical transport,}\\[1mm]
+\text{then try to construct or falsify that transport.}
+\end{array}}
+\tag{41.0}
+```
+
+Equation tags inherited from Targets 40.202-40.204 are kept stable for
+cross-reference continuity, even though the material now lives inside Section
+41. Target 40.205 uses `41.5.x` tags.
+
+### 41.1. Target 40.201: Local-To-Cell Barrier Comparison
+
+`V4P40-TARGET-40201-LOCAL-TO-CELL-BARRIER-COMPARISON`.
+
+Sections 39 and 40 now end at two nearby-looking fixed-IR obstructions.
+
+Section 39 ends at the local charged block mass:
+
+```math
+r_{Q,a}(\bar U)
+=
+\widehat\mu^{0,\mathrm{YM}}_{Q,a}
+\left(
+A^{\mathrm{tw}}_{Q,a}(\bar U)
+\mid
+\bar U
+\right),
+\tag{41.1}
+```
+
+or equivalently the local cost:
+
+```math
+c_{Q,a}(\bar U)
+=
+-
+\log r_{Q,a}(\bar U).
+\tag{41.2}
+```
+
+Section 40 ends at the three-sector/coboundary barrier:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)
+:
+\qquad
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0.
+\tag{41.3}
+```
+
+Target 40.201 asks whether these are the same fixed-IR obstruction or two
+different ones.
+
+#### 41.1.1. Common Fixed-IR Package
+
+Fix the physical package:
+
+```math
+\mathfrak G_R
+=
+\left(
+R,\zeta_R,T_R,S_R,\rho_R,\mathcal R^{\square}_R
+\right),
+\qquad
+0<\zeta_R<\frac14,
+\tag{41.4}
+```
+
+and a finite family of physical blocks:
+
+```math
+\mathcal Q_R(\ell_R)
+\tag{41.5}
+```
+
+with `ell_R` fixed in physical units. The cell variable is a deterministic
+readout:
+
+```math
+Y_{R,a}
+=
+\Phi_{R,a}(\bar U,b),
+\qquad
+Y_{R,a}\in K^{\square}_R,
+\tag{41.6}
+```
+
+and its law is:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\Phi_{R,a})_{\#}\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{41.7}
+```
+
+The three sector partition is:
+
+```math
+K^{\square}_R
+=
+E^{\zeta,+}_{R,a}
+\cup
+E^{\zeta,-}_{R,a}
+\cup
+E^{\zeta,0}_{R,a}.
+\tag{41.8}
+```
+
+The sector masses are:
+
+```math
+m^{\zeta,\sigma}_{R,a}
+=
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,\sigma}_{R,a}
+\right),
+\qquad
+\sigma\in\{+,-,0\}.
+\tag{41.9}
+```
+
+We also use the joint law of the cell readout and the SO(3) environment:
+
+```math
+\widetilde\mu^{\square}_{R,a}
+:=
+(Y_{R,a},\bar U)_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{41.10}
+```
+
+The projection of `tilde mu^square` to the `Y` coordinate is `mu^square`.
+Its SO(3) marginal is the same neutral-conditioned SO(3) marginal used in the
+SC1 local-cost statement, with the same fixed boundary and cell package. If the
+two packages are not the same, Target 40.201 is not asserting a comparison.
+
+All objects above are deterministic finite readouts of the same finite SU(2)
+configuration law. No stochastic record transition is being introduced.
+
+#### 41.1.2. Why No Formal Equivalence Is Automatic
+
+There is no abstract implication:
+
+```math
+\mathsf{SC}_1
+\Longrightarrow
+\mathsf H_{\mathrm{3sec}}
+\tag{41.11}
+```
+
+unless the local twisted class seen by `r_Q,a` is actually detected by the cell
+observable `Y_R,a`.
+
+Indeed, an abstract finite model can have:
+
+```math
+r_{Q,a}\ge\frac12
+\tag{41.12}
+```
+
+for every local block while:
+
+```math
+m^{\zeta,+}_{R,a}=1,
+\qquad
+m^{\zeta,-}_{R,a}=m^{\zeta,0}_{R,a}=0.
+\tag{41.13}
+```
+
+This happens if the local twist changes variables outside the readout used to
+define the three-sector cell.
+
+Conversely, there is no abstract implication:
+
+```math
+\mathsf H_{\mathrm{3sec}}
+\Longrightarrow
+\mathsf{SC}_1
+\tag{41.14}
+```
+
+for every block `Q`. A block irrelevant to the cell readout can have:
+
+```math
+r_{Q,a}
+=
+\exp(-a^{-1}),
+\tag{41.15}
+```
+
+while:
+
+```math
+m^{\zeta,+}_{R,a}
+=
+m^{\zeta,-}_{R,a}
+=
+\frac12,
+\qquad
+m^{\zeta,0}_{R,a}=0.
+\tag{41.16}
+```
+
+Thus B4 and B5 become equivalent only after a compatibility theorem ties the
+local twisted class to the cell sign sectors.
+
+#### 41.1.3. The Needed Incidence Inequality
+
+The exact compatibility input is a local-to-cell incidence inequality.
+
+For each dominant sign `sigma in {+,-}`, suppose there is a fixed physical block:
+
+```math
+Q_\sigma\in\mathcal Q_R(\ell_R)
+\tag{41.17}
+```
+
+and a constant:
+
+```math
+\gamma_R>0
+\tag{41.18}
+```
+
+independent of `a`, such that:
+
+```math
+m^{\zeta,-\sigma}_{R,a}
++
+m^{\zeta,0}_{R,a}
+\ge
+\gamma_R
+\int_{\{Y\in E^{\zeta,\sigma}_{R,a}\}}
+r_{Q_\sigma,a}(\bar U)
+d\widetilde\mu^{\square}_{R,a}(Y,\bar U)
+-
+o_a(1).
+\tag{41.19}
+```
+
+Here the notation `-sigma` means the opposite pinned sign. Equation (41.19) says:
+on configurations whose cell readout is pinned in sign `sigma`, a local charged
+block bridge has a fixed fraction of its mass landing outside that same pinned
+sector.
+
+This is the missing bridge between Section 39 and Section 40.
+
+Call (41.19):
+
+```math
+\mathsf{LCI}(R,\zeta_R,\ell_R).
+\tag{41.20}
+```
+
+The hypothesis is fixed-IR because `R`, `zeta_R`, `ell_R`, the block family, and
+the cell readout are fixed before `a -> 0`.
+
+#### 41.1.4. SC1 Plus Incidence Implies Three-Sector Nonconcentration
+
+**Theorem 40.201A (Local Bridge To Three-Sector Barrier).** Assume
+`\mathsf{LCI}(R,\zeta_R,\ell_R)`. If SC1 holds for the incident blocks
+`Q_+` and `Q_-`, then:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)
+\tag{41.21}
+```
+
+holds.
+
+#### Proof
+
+SC1 for `Q_sigma` means that, for every `epsilon>0`, there is a constant
+`C_R(epsilon)<infty` such that:
+
+```math
+\limsup_{a\to0}
+\bar\mu^{0}_{R,a}
+\left(
+r_{Q_\sigma,a}<e^{-C_R(\epsilon)}
+\right)
+<
+\epsilon.
+\tag{41.22}
+```
+
+Let `M_a` be the dominant pinned sector mass:
+
+```math
+M_a
+=
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right).
+\tag{41.23}
+```
+
+If `M_a` is bounded away from one, there is nothing to prove. Suppose instead
+that along a subsequence the dominant sector is `sigma` and `M_a -> 1`. On that
+subsequence, (41.22) and (41.19) give:
+
+```math
+m^{\zeta,-\sigma}_{R,a}
++
+m^{\zeta,0}_{R,a}
+\ge
+\gamma_R e^{-C_R(\epsilon)}
+\left(
+M_a-\epsilon
+\right)
+-
+o_a(1).
+\tag{41.24}
+```
+
+For fixed small `epsilon`, the right side has a positive lower limit. Therefore
+the non-dominant mass cannot vanish. Since:
+
+```math
+q^{\zeta}_{R,a}
+=
+1-M_a,
+\tag{41.25}
+```
+
+this proves:
+
+```math
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0.
+\tag{41.26}
+```
+
+This is (41.21).
+
+#### 41.1.5. Three-Sector Failure Plus Incidence Forces Local SC1 Failure
+
+**Theorem 40.201B (Pinned Cell Law Forces Local Pinned Block).** Assume
+`\mathsf{LCI}(R,\zeta_R,\ell_R)`. If:
+
+```math
+q^{\zeta}_{R,a_n}
+\to
+0
+\tag{41.27}
+```
+
+along a cutoff subsequence, then for at least one incident block `Q_sigma`,
+SC1 fails along a further subsequence.
+
+#### Proof
+
+By Target 40.183, (41.27) means that along a further subsequence one pinned
+sector dominates. Let it be `sigma`, so:
+
+```math
+m^{\zeta,\sigma}_{R,a_n}
+\to
+1,
+\qquad
+m^{\zeta,-\sigma}_{R,a_n}
++
+m^{\zeta,0}_{R,a_n}
+\to
+0.
+\tag{41.28}
+```
+
+Insert (41.28) into (41.19). Since `gamma_R>0`, one obtains:
+
+```math
+\int_{\{Y\in E^{\zeta,\sigma}_{R,a_n}\}}
+r_{Q_\sigma,a_n}(\bar U)
+d\widetilde\mu^{\square}_{R,a_n}(Y,\bar U)
+\to
+0.
+\tag{41.29}
+```
+
+Because `mu^square(E^{zeta,sigma}) -> 1`, (41.29) implies:
+
+```math
+r_{Q_\sigma,a_n}
+\to
+0
+\tag{41.30}
+```
+
+in probability along that subsequence on the relevant SO(3) marginal. By
+Section 39, this is exactly the local pinned-block falsifier for SC1.
+
+#### 41.1.6. Coboundary Form Of The Same Comparison
+
+The same comparison can be stated in transfer language. If the local bridge
+costs are tight on the incident blocks and the incidence inequality holds, then
+the charged sign kernel cannot approach a boundary coboundary:
+
+```math
+s_{R,a}(\omega,\omega')
+\approx
+\lambda_a
+\frac{
+h_a(\omega')
+}{
+h_a(\omega)
+}.
+\tag{41.31}
+```
+
+If (41.31) held, Target 40.199 would give almost-invariant charged trial
+vectors. By Theorem 40.201B, those vectors would force local pinned-block
+collapse on at least one incident block, contradicting SC1 for that block.
+
+Thus, under `LCI`, the Section 39 obstruction and the Section 40 coboundary
+obstruction are the same obstruction seen through different compressions.
+
+#### 41.1.7. Can LCI Be Proved Formally?
+
+Not from topology alone.
+
+Topology can prove that the local twist changes the charged sheet parity. It
+does not prove that the finite SU(2) weight of the changed class is comparable
+to the original class. That comparability is exactly what `r_Q,a` measures.
+
+Not from RP alone.
+
+RP can place the charged package in a Hilbert-space setting. It does not by
+itself say that the local charged bridge from `Q_sigma` lands outside the
+dominant cell sector with fixed probability.
+
+Not from ISP record bookkeeping under the current Barandes-aligned premises.
+
+The record law is the deterministic SU(2) pushforward law. Unless a new
+mandatory record rule or support constraint is explicitly added, it does not
+change the local mass `r_Q,a` or the cell law `mu^square`.
+
+Therefore `LCI` is the exact local-to-cell theorem one would have to prove from
+the ordinary finite SU(2) measure.
+
+#### 41.1.8. Target 40.201 Decision
+
+Target 40.201 is now fully decided as a comparison theorem:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}_{\mathrm{formal}}
+&
+\text{SC1 and }\mathsf H_{\mathrm{3sec}}\text{ are not formally equivalent},\\[1mm]
+\mathrm{PROVED}_{\mathrm{cond}+}
+&
+\text{SC1 plus LCI implies }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{PROVED}_{\mathrm{cond}-}
+&
+\text{failure of }\mathsf H_{\mathrm{3sec}}\text{ plus LCI forces local SC1 failure},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{prove or falsify LCI for the actual SU(2) fixed-IR package}.
+\end{array}}
+\tag{41.32}
+```
+
+So the answer is precise:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{B4 and B5 are the same final barrier only after LCI is proved.}\\[1mm]
+\text{Without LCI, they remain distinct fixed-IR reductions.}
+\end{array}}
+\tag{41.33}
+```
+
+This is fixed-IR aligned: every block, cell, tolerance, and readout is fixed in
+physical units before `a -> 0`. It is Barandes aligned: all measures are
+deterministic pushforwards or conditionals of the finite SU(2) law, with no
+hidden Markov supposition.
+
+### 41.2. Target 40.202: Gibbs-Surgery Proof Attempt For LCI
+
+`V4P40-TARGET-40202-GIBBS-SURGERY-PROOF-ATTEMPT-LCI`.
+
+Target 40.201 left `LCI` as an optional incidence bridge. Target 40.202 asks
+whether it can actually be proved from the ordinary finite SU(2) conditional
+measure.
+
+The answer is conditional but sharp:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{LCI is provable by a Gibbs-surgery mass-transport argument}\\[1mm]
+\text{when the local charged block is chosen as an actual cell-sector exit.}
+\end{array}}
+\tag{42.1}
+```
+
+Without that incidence-compatible choice, LCI is not forced.
+
+#### 41.2.1. Local Disintegration
+
+Fix `sigma in {+,-}` and a physical block `Q_sigma`. Let `xi` denote all
+degrees of freedom outside the block, including the fixed boundary/collar data
+needed to define the local conditional law. Disintegrate the finite SU(2)
+measure as:
+
+```math
+d\mu_{R,a}(x)
+=
+d\pi_{Q_\sigma,a}(\xi)\,
+d\nu_{Q_\sigma,a}(u\mid\xi),
+\qquad
+x=(\xi,u).
+\tag{42.2}
+```
+
+Here `u` is the local block variable. This is ordinary finite-dimensional
+disintegration of the finite lattice measure, not a stochastic record dynamics.
+
+Let:
+
+```math
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+\tag{42.3}
+```
+
+be the local slice of the pinned cell event:
+
+```math
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+=
+\left\{
+u:
+Y_{R,a}(\xi,u)
+\in
+E^{\zeta,\sigma}_{R,a}
+\right\}.
+\tag{42.4}
+```
+
+Let:
+
+```math
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\tag{42.5}
+```
+
+be the local class produced by the charged block operation. The desired
+incidence condition is:
+
+```math
+u'\in
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\quad
+\Longrightarrow
+\quad
+Y_{R,a}(\xi,u')
+\in
+E^{\zeta,-\sigma}_{R,a}
+\cup
+E^{\zeta,0}_{R,a}.
+\tag{42.6}
+```
+
+Thus the local charged block must actually exit the dominant pinned sector.
+
+#### 41.2.2. Incidence-Compatible Local Ratio
+
+Define:
+
+```math
+Z^{\sigma}_{Q_\sigma,a}(\xi)
+:=
+\nu_{Q_\sigma,a}
+\left(
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+\mid
+\xi
+\right),
+\tag{42.7}
+```
+
+and:
+
+```math
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+:=
+\nu_{Q_\sigma,a}
+\left(
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\mid
+\xi
+\right).
+\tag{42.8}
+```
+
+The incidence-compatible local charged mass is:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+:=
+\frac{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+}{
+Z^{\sigma}_{Q_\sigma,a}(\xi)
+},
+\tag{42.9}
+```
+
+with the convention that the ratio is zero if the denominator vanishes.
+
+This is the same type of object as the Section 39 local mass `r_Q,a`, but it is
+more specific: its target class is chosen to exit the pinned cell sector. The
+original LCI of Section 41 is obtained only if:
+
+```math
+r_{Q_\sigma,a}(\bar U)
+=
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+\tag{42.10}
+```
+
+for the chosen block package, up to harmless boundary-layer errors.
+
+#### 41.2.3. Gibbs-Surgery Incidence Lemma
+
+**Theorem 40.202A (Gibbs-Surgery Incidence Lemma).** Assume the sector-exit
+condition (42.6). Then:
+
+```math
+m^{\zeta,-\sigma}_{R,a}
++
+m^{\zeta,0}_{R,a}
+\ge
+\int_{\{Y\in E^{\zeta,\sigma}_{R,a}\}}
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+d\mu_{R,a}(\xi,u).
+\tag{42.11}
+```
+
+Consequently, if (42.10) holds, then LCI holds with:
+
+```math
+\gamma_R=1
+\tag{42.12}
+```
+
+up to the boundary-layer error already allowed in Section 41.
+
+#### Proof
+
+For each outside environment `xi`, define the normalized exit measure:
+
+```math
+d\nu^{\mathrm{exit}}_{\xi}(u')
+=
+\frac{
+\mathbf 1_{\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)}(u')
+}{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+}
+d\nu_{Q_\sigma,a}(u'\mid\xi),
+\tag{42.13}
+```
+
+when `Z^{exit}` is positive, and the zero subprobability otherwise.
+
+Now define a subprobability transport from pinned-sector configurations to
+exit-sector configurations:
+
+```math
+d\alpha(\xi,u')
+=
+d\pi_{Q_\sigma,a}(\xi)\,
+\nu_{Q_\sigma,a}
+\left(
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+\cap
+\{Y\in E^{\zeta,\sigma}_{R,a}\}
+\mid
+\xi
+\right)
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+d\nu^{\mathrm{exit}}_{\xi}(u').
+\tag{42.14}
+```
+
+Using (42.9) and the inclusion:
+
+```math
+\nu_{Q_\sigma,a}
+\left(
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+\cap
+\{Y\in E^{\zeta,\sigma}_{R,a}\}
+\mid
+\xi
+\right)
+\le
+Z^{\sigma}_{Q_\sigma,a}(\xi),
+\tag{42.15}
+```
+
+the density of `alpha` is bounded by the original finite SU(2) measure restricted
+to the exit class:
+
+```math
+d\alpha(\xi,u')
+\le
+d\pi_{Q_\sigma,a}(\xi)\,
+\mathbf 1_{\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)}(u')
+d\nu_{Q_\sigma,a}(u'\mid\xi).
+\tag{42.16}
+```
+
+By the sector-exit condition (42.6), the right side is supported inside:
+
+```math
+E^{\zeta,-\sigma}_{R,a}
+\cup
+E^{\zeta,0}_{R,a}.
+\tag{42.17}
+```
+
+Therefore the total mass of `alpha` is bounded by:
+
+```math
+m^{\zeta,-\sigma}_{R,a}
++
+m^{\zeta,0}_{R,a}.
+\tag{42.18}
+```
+
+But the total mass of `alpha` is exactly the right side of (42.11). This proves
+the lemma.
+
+#### 41.2.4. What The Lemma Proves And Does Not Prove
+
+The lemma proves LCI from two concrete ingredients:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{I1}
+&
+\text{the local charged class exits the pinned cell sector},\\[1mm]
+\mathrm{I2}
+&
+\text{the Section 39 local mass is the incidence-compatible ratio }r^{\mathrm{inc}}.
+\end{array}}
+\tag{42.19}
+```
+
+It does not prove either ingredient automatically.
+
+`I1` is a deterministic readout-design condition. It can be checked on the
+finite physical cell package: apply the chosen local center operation and see
+whether the cell readout leaves the pinned sector with the fixed tolerance
+`zeta_R`.
+
+`I2` is a choice of local block package. If Section 39's `A^tw_Q,a` was chosen
+to be the same sector-exit class, then (42.10) is true by definition. If Section
+39 used a different local charged class, then Theorem 40.202A proves a different
+comparison, not the original LCI.
+
+Thus LCI is neither free nor mysterious. It is exactly the statement that the B4
+local charged block was chosen to be incident to the B5 cell sign.
+
+#### 41.2.5. Failure Modes
+
+The proof attempt exposes the exact ways LCI can fail.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{readout}}
+&
+\text{the chosen local twist does not move }Y\text{ out of }E^{\zeta,\sigma},\\[1mm]
+\mathrm{FAIL}_{\mathrm{package}}
+&
+\text{the B4 twisted class is not the incidence-compatible exit class},\\[1mm]
+\mathrm{FAIL}_{\mathrm{boundary}}
+&
+\text{boundary/collar records make the local surgery inadmissible},\\[1mm]
+\mathrm{FAIL}_{\mathrm{scale}}
+&
+\text{the block or readout must shrink with }a,\\[1mm]
+\mathrm{FAIL}_{\mathrm{ontology}}
+&
+\text{the proof secretly changes the measure or adds a Markov transition}.
+\end{array}}
+\tag{42.20}
+```
+
+The first three failures preserve the distinction between B4 and B5. They do not
+falsify either route. They only say that this chosen incidence bridge is not the
+right bridge.
+
+The last two failures are disallowed by the fixed-IR and Barandes alignment
+contracts.
+
+#### 41.2.6. Target 40.202 Decision
+
+Target 40.202 gives the promised proof attempt:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{cond}}
+&
+\text{LCI follows from sector-exit incidence and matching local ratio},\\[1mm]
+\mathrm{PROVED}_{\mathrm{mass}}
+&
+\text{the proof is finite-measure Gibbs surgery, not a new stochastic dynamics},\\[1mm]
+\mathrm{NOT}_{\mathrm{auto}}
+&
+\text{LCI is not automatic for an arbitrary B4 block},\\[1mm]
+\mathrm{OPEN}_{\mathrm{check}}
+&
+\text{verify sector-exit incidence for the actual chosen cell/block package}.
+\end{array}}
+\tag{42.21}
+```
+
+So yes: LCI can be proved, but only after choosing the B4 local block to be
+incident to the B5 cell sign and verifying the deterministic sector-exit
+condition. If that choice is not made, B4 remains a distinct reduction.
+
+### 41.3. Target 40.203: Incidence-Compatible Local Finite-Energy Lower Tail
+
+`V4P40-TARGET-40203-INCIDENCE-COMPATIBLE-LOCAL-FINITE-ENERGY-LOWER-TAIL`.
+
+Target 40.202 says that, once the B4 local block is chosen to be incident to the
+B5 cell sign, LCI follows by finite-measure Gibbs surgery. The remaining
+question is therefore the actual B4 weight estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{does the incidence-compatible local exit class have}\\[1mm]
+\text{nonvanishing fixed-IR Yang-Mills weight?}
+\end{array}
+}
+\tag{43.1}
+```
+
+This section fully explores that route.
+
+#### 41.3.1. The Incidence-Compatible Lower-Tail Target
+
+Fix the incidence-compatible block `Q_sigma` and the exit class from Target
+40.202. The local exit mass is:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+=
+\frac{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+}{
+Z^{\sigma}_{Q_\sigma,a}(\xi)
+}.
+\tag{43.2}
+```
+
+The local exit cost is:
+
+```math
+c^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+=
+-
+\log r^{\mathrm{inc}}_{Q_\sigma,a}(\xi).
+\tag{43.3}
+```
+
+The desired lower-tail statement is:
+
+```math
+\boxed{
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+c^{\mathrm{inc}}_{Q_\sigma,a}>C
+\right)
+=
+0.
+}
+\tag{43.4}
+```
+
+Equivalently:
+
+```math
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+r^{\mathrm{inc}}_{Q_\sigma,a}<e^{-C}
+\right)
+=
+0.
+\tag{43.5}
+```
+
+This is the clean fixed-IR Section 39 target after LCI compatibility has been
+chosen.
+
+#### 41.3.2. What Proving (43.4) Would Buy
+
+**Theorem 40.203A (Local Lower Tail Closes The Incidence-Compatible Route).**
+Assume the sector-exit condition (42.6), the matching ratio condition (42.10),
+and the lower-tail estimate (43.4). Then:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)
+\tag{43.6}
+```
+
+holds, and hence the fixed-IR charged transfer certificate of Section 35 follows.
+
+#### Proof
+
+Equation (43.4) is SC1 for the incidence-compatible block. By Target 40.202,
+sector-exit plus matching ratio proves LCI. By Theorem 40.201A, SC1 plus LCI
+implies `H_3sec`. Section 35 then gives the fixed-IR charged transfer
+certificate.
+
+Thus Target 40.203 is not another formal branch. It is the local fixed-IR
+Yang-Mills estimate at the bottom of Sections 39-42.
+
+#### 41.3.3. Pointwise Finite-Energy Map: Why The Naive Proof Fails
+
+The most tempting proof would construct a deterministic local map:
+
+```math
+J_{Q_\sigma,a}(\xi):
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+\to
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\tag{43.7}
+```
+
+with Radon-Nikodym cost:
+
+```math
+\frac{
+d(J_{Q_\sigma,a})_{\#}\nu^{\sigma}_{Q_\sigma,a}
+}{
+d\nu^{\mathrm{exit}}_{Q_\sigma,a}
+}
+\le
+e^{C_Q}
+\tag{43.8}
+```
+
+where `C_Q` is independent of `a`. If (43.8) holds on high outside-environment
+probability, then:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+\ge
+e^{-C_Q},
+\tag{43.9}
+```
+
+and (43.4) follows.
+
+The naive smooth insertion tries to realize `J` by adding a classical charged
+background field. That does not prove (43.8). The pointwise action excess of a
+fixed physical charged background can grow with the bare coupling as the cutoff
+is removed:
+
+```math
+\Delta S^{\mathrm{smooth}}_{Q_\sigma,a}
+\to
+\infty.
+\tag{43.10}
+```
+
+Therefore a single smooth representative is not a fixed-IR finite-energy proof.
+It only proves the route if accompanied by an entropy or multiplicity mechanism
+that offsets (43.10).
+
+#### 41.3.4. Entropy-Compensated Microcanonical Route
+
+The most promising positive route is not pointwise. It is microcanonical and
+entropy-compensated.
+
+Choose a finite physical-resolution local readout battery:
+
+```math
+\Psi_{Q_\sigma,a}
+=
+\left(
+\text{boundary bins},
+\text{flowed curvature bins},
+\text{coarse holonomy bins},
+\text{center compatibility bins}
+\right).
+\tag{43.11}
+```
+
+The number of bins is fixed after `R` and `ell_R` are fixed. It does not grow as
+`a -> 0`.
+
+For each outside environment `xi` and readout value `psi`, define the neutral
+and exit microcanonical weights:
+
+```math
+W^{\sigma}_{a}(\xi,\psi)
+:=
+\nu_{Q_\sigma,a}
+\left(
+\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi_{Q_\sigma,a}=\psi\}
+\mid
+\xi
+\right),
+\tag{43.12}
+```
+
+and:
+
+```math
+W^{\mathrm{exit}}_{a}(\xi,\psi)
+:=
+\nu_{Q_\sigma,a}
+\left(
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi_{Q_\sigma,a}=\psi\}
+\mid
+\xi
+\right).
+\tag{43.13}
+```
+
+The microcanonical lower-bound hypothesis is:
+
+```math
+\boxed{
+W^{\mathrm{exit}}_{a}(\xi,\psi)
+\ge
+e^{-C_Q}
+W^{\sigma}_{a}(\xi,\psi)
+}
+\tag{43.14}
+```
+
+for all relevant `psi` outside a bad set whose `pi_Q,a` probability tends to
+zero, with `C_Q` independent of `a`.
+
+If (43.14) holds, summing over `psi` gives:
+
+```math
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\ge
+e^{-C_Q}
+Z^{\sigma}_{Q_\sigma,a}(\xi),
+\tag{43.15}
+```
+
+hence:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+\ge
+e^{-C_Q}.
+\tag{43.16}
+```
+
+So (43.14) proves (43.4).
+
+The content of (43.14) is exactly entropy compensation: the exit class may cost
+more pointwise, but it has enough microscopic realizations in each physical
+readout bin to keep the total weight comparable.
+
+#### 41.3.5. Why This Is Not A Hidden Markov Or ISP Assumption
+
+The battery `Psi_Q,a` is a deterministic readout of the same finite SU(2)
+configuration. The weights (43.12)-(43.13) are ordinary conditional finite
+Yang-Mills weights. No transition between records is postulated.
+
+Thus the route is Barandes aligned if and only if:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{BA1}
+&
+\Psi_{Q_\sigma,a}\text{ is a deterministic finite readout},\\[1mm]
+\mathrm{BA2}
+&
+\text{the measure remains the original finite SU(2) conditional measure},\\[1mm]
+\mathrm{BA3}
+&
+\text{no future charged sign is used to choose the readout bin},\\[1mm]
+\mathrm{BA4}
+&
+\text{the block and readout resolution are fixed in physical units}.
+\end{array}}
+\tag{43.17}
+```
+
+These are the same guardrails as Sections 39-42.
+
+#### 41.3.6. Heat-Bath Form Of The Same Route
+
+A whole-block heat bath proves (43.4) exactly when it proves the same lower
+bound in transition form.
+
+Let `K_Q,a` be a block update kernel that preserves the finite conditional
+measure or has uniformly bounded entropy production. If:
+
+```math
+K_{Q_\sigma,a}
+\left(
+\xi,u,
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\right)
+\ge
+\kappa_Q
+\tag{43.18}
+```
+
+for `u` in the pinned local class on high outside-environment probability, with
+`kappa_Q>0` independent of `a`, then:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+\ge
+e^{-C_Q}
+\tag{43.19}
+```
+
+for a constant depending on `kappa_Q` and the entropy-production bound.
+
+But this is not an easier theorem unless the heat-bath minorization is proved by
+a constructive block mechanism. A kernel that samples directly from the
+normalized exit restriction merely restates the target.
+
+#### 41.3.7. Transport Form Of The Same Route
+
+A transport proof would need a physical-resolution inequality:
+
+```math
+H(\eta\mid\nu_{Q_\sigma,a})
+\le
+C_Q
+\tag{43.20}
+```
+
+for a probability measure `eta` supported on the exit class, with `C_Q`
+independent of `a`. By the entropy-cost identity of Section 39, (43.20) is
+equivalent to:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}
+\ge
+e^{-C_Q}.
+\tag{43.21}
+```
+
+Thus transport is again a proof technology for (43.4), not a separate escape.
+Microscopic convexity constants do not suffice unless they survive after
+coarse-graining to fixed physical variables.
+
+#### 41.3.8. Direct Falsifier
+
+The exact falsifier is local pinned-block collapse:
+
+```math
+\exists\epsilon_Q>0,\quad
+\exists a_n\to0,\quad
+\exists L_n\to\infty
+\quad
+\text{such that}
+\quad
+\pi_{Q_\sigma,a_n}
+\left(
+c^{\mathrm{inc}}_{Q_\sigma,a_n}>L_n
+\right)
+\ge
+\epsilon_Q.
+\tag{43.22}
+```
+
+Equivalently:
+
+```math
+\pi_{Q_\sigma,a_n}
+\left(
+r^{\mathrm{inc}}_{Q_\sigma,a_n}<e^{-L_n}
+\right)
+\ge
+\epsilon_Q.
+\tag{43.23}
+```
+
+A sufficient way to prove this is an action-entropy imbalance. Suppose that on
+outside-environment mass at least `epsilon_Q`, every exit-class realization
+pays excess action `I_a`, while the total multiplicity compensation is bounded
+by `N_a`, and:
+
+```math
+I_a(\xi)-\log N_a(\xi)\to\infty.
+\tag{43.24}
+```
+
+Then:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)\to0
+\tag{43.25}
+```
+
+on that same positive-mass set. This falsifies the Section 39 route and, through
+LCI, gives the pinned-cell failure mode for the incidence-compatible package.
+
+#### 41.3.9. Compactness Route And Its Boundary
+
+There is one more possible positive route. If the physical readout battery
+`\Psi_Q,a` has a subsequential continuum limit and the neutral and exit
+microcanonical laws converge to mutually absolutely continuous finite measures
+with density ratio bounded below, then (43.14) follows.
+
+In concrete terms, one would need:
+
+```math
+W^{\mathrm{exit}}_{a}(\xi,\psi)
+\ge
+e^{-C_Q}
+W^{\sigma}_{a}(\xi,\psi)
+-
+o_a(1)
+\tag{43.26}
+```
+
+for the limiting physical readout bins. This is attractive because it does not
+require a pointwise smooth representative. But it is a real continuum block-law
+theorem, not a formal consequence of finite-cutoff support.
+
+If the limiting exit measure is singular with respect to the pinned measure, or
+if the density ratio drops to zero on positive outside-environment mass, then
+the compactness route fails and points to the falsifier (43.22).
+
+#### 41.3.10. Target 40.203 Decision
+
+Target 40.203 is therefore fully explored as follows:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{imp}}
+&
+\text{the local lower-tail estimate closes the incidence-compatible route},\\[1mm]
+\mathrm{NO}_{\mathrm{point}}
+&
+\text{a single smooth finite-energy insertion does not prove the estimate},\\[1mm]
+\mathrm{PROVED}_{\mathrm{micro}}
+&
+\text{microcanonical entropy compensation }(43.14)\text{ proves the estimate},\\[1mm]
+\mathrm{PROVED}_{\mathrm{heat}}
+&
+\text{constructive whole-block minorization proves the estimate},\\[1mm]
+\mathrm{PROVED}_{\mathrm{trans}}
+&
+\text{bounded physical transport entropy proves the estimate},\\[1mm]
+\mathrm{FALSIFY}
+&
+\text{prove local pinned-block collapse }(43.22),\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{decide the actual SU(2) fixed-IR block law}.
+\end{array}}
+\tag{43.27}
+```
+
+The best forward route is therefore:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove or falsify the microcanonical comparison }(43.14)\\[1mm]
+\text{for the incidence-compatible local block.}
+\end{array}}
+\tag{43.28}
+```
+
+This is the most local fixed-IR form of the remaining Yang-Mills problem. It is
+not an ontology modification and not a Markov assumption. It is an ordinary
+finite SU(2) weight estimate after deterministic physical readout.
+
+### 41.4. Target 40.204: Microcanonical Comparison Pass-Fail Test
+
+`V4P40-TARGET-40204-MICROCANONICAL-COMPARISON-PASS-FAIL-TEST`.
+
+Target 40.203 identified the next concrete estimate:
+
+```math
+W^{\mathrm{exit}}_{a}(\xi,\psi)
+\ge
+e^{-C_Q}
+W^{\sigma}_{a}(\xi,\psi)
+\tag{44.1}
+```
+
+for the incidence-compatible local block. Target 40.204 asks what would prove
+or falsify (44.1).
+
+The answer is exact:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{a proof is a bounded-distortion microcanonical transport,}\\[1mm]
+\text{and a falsifier is microcanonical singularity or collapsing density ratio.}
+\end{array}}
+\tag{44.2}
+```
+
+#### 41.4.1. Fixed Physical Readout Battery
+
+Fix a deterministic physical-resolution battery:
+
+```math
+\Psi_{Q_\sigma,a}:
+(\xi,u)
+\longmapsto
+\psi
+\in
+\mathcal P_Q,
+\tag{44.3}
+```
+
+where `P_Q` is a finite set after `R` and `ell_R` are fixed. The battery may
+record boundary bins, flowed curvature bins, coarse holonomy bins, and local
+center compatibility bins, but it may not record a future charged sign selected
+after the comparison is made.
+
+The pinned and exit bin measures are:
+
+```math
+d\nu^{\sigma}_{\xi,\psi}
+=
+\mathbf 1_{\mathcal B^{\sigma}_{Q_\sigma,a}(\xi)}
+\mathbf 1_{\{\Psi_{Q_\sigma,a}=\psi\}}
+d\nu_{Q_\sigma,a}(\cdot\mid\xi),
+\tag{44.4}
+```
+
+and:
+
+```math
+d\nu^{\mathrm{exit}}_{\xi,\psi}
+=
+\mathbf 1_{\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)}
+\mathbf 1_{\{\Psi_{Q_\sigma,a}=\psi\}}
+d\nu_{Q_\sigma,a}(\cdot\mid\xi).
+\tag{44.5}
+```
+
+Their masses are:
+
+```math
+W^{\sigma}_{a}(\xi,\psi)
+=
+\nu^{\sigma}_{\xi,\psi}(1),
+\qquad
+W^{\mathrm{exit}}_{a}(\xi,\psi)
+=
+\nu^{\mathrm{exit}}_{\xi,\psi}(1).
+\tag{44.6}
+```
+
+The same-bin comparison is (44.1). A nearby-bin comparison allows a fixed
+physical adjacency relation:
+
+```math
+\psi'\in\mathcal N_Q(\psi),
+\tag{44.7}
+```
+
+where the maximum neighbor count is bounded by a constant:
+
+```math
+D_Q
+=
+\max_{\psi}
+\#\mathcal N_Q(\psi)
+<
+\infty.
+\tag{44.8}
+```
+
+The relation `N_Q` is fixed after the physical battery is chosen and does not
+grow with `a`.
+
+#### 41.4.2. Same-Bin Transport Criterion
+
+**Theorem 40.204A (Same-Bin Bounded-Distortion Criterion).** Suppose that for
+each relevant `(xi,psi)` there is a measurable map:
+
+```math
+J_{\xi,\psi}:
+\operatorname{supp}\nu^{\sigma}_{\xi,\psi}
+\longrightarrow
+\operatorname{supp}\nu^{\mathrm{exit}}_{\xi,\psi}
+\tag{44.9}
+```
+
+such that:
+
+```math
+(J_{\xi,\psi})_{\#}
+\nu^{\sigma}_{\xi,\psi}
+\le
+e^{C_Q}
+\nu^{\mathrm{exit}}_{\xi,\psi}.
+\tag{44.10}
+```
+
+Then (44.1) holds.
+
+#### Proof
+
+Taking total masses in (44.10) gives:
+
+```math
+W^{\sigma}_{a}(\xi,\psi)
+\le
+e^{C_Q}
+W^{\mathrm{exit}}_{a}(\xi,\psi).
+\tag{44.11}
+```
+
+Rearranging proves (44.1).
+
+The same conclusion holds if `J` is replaced by a coupling whose first marginal
+is `nu^sigma` and whose second marginal is dominated by
+`e^{C_Q} nu^exit`.
+
+#### 41.4.3. Same-Bin Criterion Is Also Necessary
+
+The previous criterion is not merely sufficient. It is the measure-theoretic
+content of (44.1).
+
+**Theorem 40.204B (Mass-Transport Necessity).** For a fixed `(xi,psi)`, (44.1)
+holds if and only if there exists a positive measure:
+
+```math
+\Gamma_{\xi,\psi}
+\tag{44.12}
+```
+
+on:
+
+```math
+\operatorname{supp}\nu^{\sigma}_{\xi,\psi}
+\times
+\operatorname{supp}\nu^{\mathrm{exit}}_{\xi,\psi}
+\tag{44.13}
+```
+
+whose first marginal is:
+
+```math
+e^{-C_Q}\nu^{\sigma}_{\xi,\psi}
+\tag{44.14}
+```
+
+and whose second marginal is bounded by:
+
+```math
+\nu^{\mathrm{exit}}_{\xi,\psi}.
+\tag{44.15}
+```
+
+#### Proof
+
+If such `Gamma` exists, comparing total masses gives (44.1).
+
+Conversely, if (44.1) holds, let:
+
+```math
+\overline\nu^{\sigma}_{\xi,\psi}
+=
+\frac{\nu^{\sigma}_{\xi,\psi}}{W^\sigma_a(\xi,\psi)},
+\qquad
+\overline\nu^{\mathrm{exit}}_{\xi,\psi}
+=
+\frac{\nu^{\mathrm{exit}}_{\xi,\psi}}{W^{\mathrm{exit}}_a(\xi,\psi)}
+\tag{44.16}
+```
+
+when the masses are nonzero. Then:
+
+```math
+\Gamma_{\xi,\psi}
+=
+e^{-C_Q}
+W^\sigma_a(\xi,\psi)
+\overline\nu^{\sigma}_{\xi,\psi}
+\otimes
+\overline\nu^{\mathrm{exit}}_{\xi,\psi}
+\tag{44.17}
+```
+
+has the desired first marginal. Its second marginal is:
+
+```math
+e^{-C_Q}
+W^\sigma_a(\xi,\psi)
+\overline\nu^{\mathrm{exit}}_{\xi,\psi}
+\le
+W^{\mathrm{exit}}_a(\xi,\psi)
+\overline\nu^{\mathrm{exit}}_{\xi,\psi}
+=
+\nu^{\mathrm{exit}}_{\xi,\psi},
+\tag{44.18}
+```
+
+where the inequality is exactly (44.1). Zero-mass cases follow by taking the
+zero coupling. This proves the equivalence.
+
+Thus a same-bin proof of (44.1) is precisely a bounded-distortion transport
+problem. The theorem is tautological at the level of arbitrary couplings; the
+nontrivial work is to construct the coupling from local Yang-Mills structure,
+not from knowing (44.1) already.
+
+#### 41.4.4. Nearby-Bin Transport Criterion
+
+Same-bin preservation may be too rigid. A charged local surgery can slightly
+move the physical readout while still staying in a fixed physical neighborhood.
+
+Suppose that for every relevant `(xi,psi)` there are maps or couplings from the
+pinned bin `psi` into exit bins in `N_Q(psi)` with distortion:
+
+```math
+\Gamma_{\xi,\psi}
+\quad
+\text{has first marginal }
+\nu^{\sigma}_{\xi,\psi}
+\tag{44.19}
+```
+
+and second marginal dominated by:
+
+```math
+e^{C_Q}
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}.
+\tag{44.20}
+```
+
+Then:
+
+```math
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+W^{\mathrm{exit}}_a(\xi,\psi')
+\ge
+e^{-C_Q}
+W^\sigma_a(\xi,\psi).
+\tag{44.21}
+```
+
+If the neighbor graph has bounded overlap:
+
+```math
+\#\{\psi:\psi'\in\mathcal N_Q(\psi)\}
+\le
+M_Q
+\tag{44.22}
+```
+
+then summing (44.21) over `psi` gives:
+
+```math
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\ge
+M_Q^{-1}
+e^{-C_Q}
+Z^{\sigma}_{Q_\sigma,a}(\xi).
+\tag{44.23}
+```
+
+Therefore:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+\ge
+M_Q^{-1}e^{-C_Q}.
+\tag{44.24}
+```
+
+So nearby-bin bounded distortion is enough for the lower-tail estimate (43.4).
+
+#### 41.4.5. What A Constructive Transport Must Respect
+
+A useful transport cannot be chosen after looking at the future charged sign.
+It must be specified from the local block data and the fixed readout battery.
+
+An admissible constructive transport has to satisfy:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{T1}
+&
+\text{it is defined at fixed physical block scale},\\[1mm]
+\mathrm{T2}
+&
+\text{it sends pinned configurations to the incidence-compatible exit class},\\[1mm]
+\mathrm{T3}
+&
+\text{it preserves the readout bin or moves it only inside }\mathcal N_Q,\\[1mm]
+\mathrm{T4}
+&
+\text{its density distortion is bounded independently of }a,\\[1mm]
+\mathrm{T5}
+&
+\text{it uses the original finite SU(2) conditional measure}.
+\end{array}}
+\tag{44.25}
+```
+
+`T4` is the hard analytic condition. It is where the action-entropy balance of
+the local Yang-Mills block enters.
+
+#### 41.4.6. Exact Singularity Falsifier
+
+The microcanonical route fails if exit bins are singular relative to pinned bins
+on positive outside-environment mass.
+
+A sharp same-bin falsifier is:
+
+```math
+\exists\epsilon_Q>0,\quad
+\exists a_n\to0,\quad
+\exists \psi_n(\xi)\in\mathcal P_Q
+\tag{44.26}
+```
+
+such that:
+
+```math
+\pi_{Q_\sigma,a_n}
+\left(
+W^\sigma_{a_n}(\xi,\psi_n(\xi))>0,
+\quad
+W^{\mathrm{exit}}_{a_n}(\xi,\psi_n(\xi))=0
+\right)
+\ge
+\epsilon_Q.
+\tag{44.27}
+```
+
+This falsifies same-bin comparison for that battery. It does not automatically
+falsify nearby-bin comparison.
+
+The nearby-bin singularity falsifier is:
+
+```math
+\pi_{Q_\sigma,a_n}
+\left(
+W^\sigma_{a_n}(\xi,\psi_n(\xi))>0,
+\quad
+\sum_{\psi'\in\mathcal N_Q(\psi_n(\xi))}
+W^{\mathrm{exit}}_{a_n}(\xi,\psi')=0
+\right)
+\ge
+\epsilon_Q.
+\tag{44.28}
+```
+
+This falsifies the chosen nearby-bin battery and adjacency relation.
+
+#### 41.4.7. Exact Density-Collapse Falsifier
+
+Even without strict singularity, the route fails if the density ratio collapses.
+For same-bin comparison, the falsifier is:
+
+```math
+\exists\epsilon_Q>0,\quad
+\exists L_n\to\infty,\quad
+\exists a_n\to0,\quad
+\exists \psi_n(\xi)\in\mathcal P_Q
+\tag{44.29}
+```
+
+such that:
+
+```math
+\pi_{Q_\sigma,a_n}
+\left(
+\frac{
+W^{\mathrm{exit}}_{a_n}(\xi,\psi_n(\xi))
+}{
+W^{\sigma}_{a_n}(\xi,\psi_n(\xi))
+}
+<
+e^{-L_n}
+\text{ and }W^{\sigma}_{a_n}(\xi,\psi_n(\xi))>0
+\right)
+\ge
+\epsilon_Q.
+\tag{44.30}
+```
+
+For nearby-bin comparison, replace the numerator by:
+
+```math
+\sum_{\psi'\in\mathcal N_Q(\psi_n(\xi))}
+W^{\mathrm{exit}}_{a_n}(\xi,\psi').
+\tag{44.31}
+```
+
+If the pinned mass is concentrated in such collapsing bins, then:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a_n}(\xi)
+\to
+0
+\tag{44.32}
+```
+
+on positive outside-environment mass. This is exactly the local pinned-block
+falsifier from Target 40.203.
+
+#### 41.4.8. Relation To The Smooth-Insertion Failure
+
+The smooth-insertion failure from Target 40.203 is now better interpreted.
+It shows that one obvious transport has:
+
+```math
+C_{Q,a}^{\mathrm{smooth}}
+\to
+\infty.
+\tag{44.33}
+```
+
+This does not prove density collapse, because another transport may use entropy,
+many-to-one structure, or nearby-bin compensation.
+
+To falsify the microcanonical route one must prove a lower bound on every
+admissible transport cost, or directly prove the singularity/density-collapse
+conditions (44.28) or (44.30). A bad smooth map is only a failed proof attempt.
+
+#### 41.4.9. Target 40.204 Decision
+
+Target 40.204 fully reduces the microcanonical comparison:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{same}}
+&
+\text{same-bin bounded distortion proves }(43.14),\\[1mm]
+\mathrm{PROVED}_{\mathrm{near}}
+&
+\text{nearby-bin bounded distortion proves the lower tail},\\[1mm]
+\mathrm{PROVED}_{\mathrm{eq}}
+&
+\text{same-bin comparison is equivalent to a dominated coupling},\\[1mm]
+\mathrm{FALSIFY}_{\mathrm{sing}}
+&
+\text{prove same-bin or nearby-bin singularity},\\[1mm]
+\mathrm{FALSIFY}_{\mathrm{dens}}
+&
+\text{prove density-ratio collapse on pinned-mass carrying bins},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{construct or rule out such transport for the actual SU(2) block law}.
+\end{array}}
+\tag{44.34}
+```
+
+The next genuine mathematical task is therefore:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{build a fixed-IR constructive transport satisfying T1-T5,}\\[1mm]
+\text{or prove that all such transports have unbounded distortion.}
+\end{array}}
+\tag{44.35}
+```
+
+This is the first point in the route where the proof must genuinely understand
+the local SU(2) block law, rather than only its center/sign bookkeeping.
+
+### 41.5. Target 40.205: Constructive Nearby-Bin Transport Or Distortion Falsifier
+
+`V4P40-TARGET-40205-CONSTRUCTIVE-NEARBY-BIN-TRANSPORT-OR-DISTORTION-FALSIFIER`.
+
+Target 40.204 says that the microcanonical comparison is equivalent to a
+bounded-distortion transport. Target 40.205 tries to construct such a transport
+for the incidence-compatible local block, or to state the exact distortion
+falsifier.
+
+The target is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{build a fixed-IR constructive transport satisfying T1-T5,}\\[1mm]
+\text{or prove that every such transport has unbounded distortion.}
+\end{array}}
+\tag{41.5.1}
+```
+
+#### 41.5.1. Constructive Surgery Kernel
+
+A constructive nearby-bin transport is a kernel:
+
+```math
+\mathcal K_{Q_\sigma,a}
+\left(
+\xi,u,d u'
+\right)
+\tag{41.5.2}
+```
+
+from pinned local configurations to exit local configurations. It is admissible
+if, on the relevant outside-environment set:
+
+```math
+u\in\mathcal B^\sigma_{Q_\sigma,a}(\xi)
+\quad
+\Longrightarrow
+\quad
+\mathcal K_{Q_\sigma,a}
+\left(
+\xi,u,
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\right)
+=
+1,
+\tag{41.5.3}
+```
+
+and:
+
+```math
+\Psi_{Q_\sigma,a}(\xi,u')\in
+\mathcal N_Q
+\left(
+\Psi_{Q_\sigma,a}(\xi,u)
+\right)
+\tag{41.5.4}
+```
+
+for `K`-almost every `u'`.
+
+The induced transport measure from a pinned bin is:
+
+```math
+d\Gamma_{\xi,\psi}
+(u,u')
+=
+d\nu^\sigma_{\xi,\psi}(u)\,
+\mathcal K_{Q_\sigma,a}(\xi,u,d u').
+\tag{41.5.5}
+```
+
+The needed distortion estimate is:
+
+```math
+\Gamma_{\xi,\psi}^{(2)}
+\le
+e^{C_Q}
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'},
+\tag{41.5.6}
+```
+
+where `Gamma^(2)` is the second marginal. If (41.5.6) holds with `C_Q`
+independent of `a`, Target 40.204 gives the lower-tail estimate.
+
+#### 41.5.2. Immediate Proof From A Bounded-Distortion Kernel
+
+**Theorem 40.205A (Constructive Nearby-Bin Transport Implies The Lower Tail).**
+Assume there is an admissible surgery kernel satisfying (41.5.3)-(41.5.6) on an
+outside-environment event whose `pi_Q,a` probability tends to one. Then:
+
+```math
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+c^{\mathrm{inc}}_{Q_\sigma,a}>C
+\right)
+=
+0.
+\tag{41.5.7}
+```
+
+Consequently the incidence-compatible Section 39 route proves
+`\mathsf H_{\mathrm{3sec}}(R,\zeta_R)`.
+
+#### Proof
+
+Equations (41.5.3)-(41.5.6) are exactly the nearby-bin criterion of Target 40.204.
+The bounded neighbor overlap gives:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+\ge
+M_Q^{-1}e^{-C_Q}
+\tag{41.5.8}
+```
+
+on the high-probability event. This implies (41.5.7). Target 40.203 and Target
+40.202 then give the three-sector barrier.
+
+#### 41.5.3. The Natural Surgery And Its Four Gates
+
+The natural surgery is not a single smooth insertion. It should be a family of
+local sector-exit modifications:
+
+```math
+\mathcal S_{\xi,u}
+=
+\left\{
+u' :
+u'\text{ is an admissible sector-exit modification of }u
+\right\}.
+\tag{41.5.9}
+```
+
+The candidate kernel samples from `S_{xi,u}`. To prove the transport bound, four
+gates must hold:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{S1}
+&
+\text{sector exit: }u'\text{ leaves }E^{\zeta,\sigma}_{R,a},\\[1mm]
+\mathrm{S2}
+&
+\text{near-bin stability: }\Psi(u')\in\mathcal N_Q(\Psi(u)),\\[1mm]
+\mathrm{S3}
+&
+\text{bounded overlap: each }u'\text{ has bounded preimage multiplicity},\\[1mm]
+\mathrm{S4}
+&
+\text{action-entropy distortion is bounded independently of }a.
+\end{array}}
+\tag{41.5.10}
+```
+
+`S1` is the incidence design already isolated in Target 40.202.
+
+`S2` is plausible only for a physical-resolution battery. If `Psi` contains raw
+plaquette-scale bins, a sector-exit surgery can move many microscopic
+coordinates and leave the bin graph. If `Psi` contains flowed or coarse
+physical variables with fixed tolerance, then a bounded physical local surgery
+can stay inside `N_Q`.
+
+`S3` is a combinatorial control condition. It prevents the surgery from sending
+too many pinned configurations to the same exit configuration without paying for
+that multiplicity in the density.
+
+`S4` is the real analytic estimate.
+
+#### 41.5.4. Action-Entropy Distortion Budget
+
+Let the local finite action density be written as:
+
+```math
+d\nu_{Q_\sigma,a}(u\mid\xi)
+=
+e^{-S_{Q_\sigma,a}(u;\xi)}
+d\lambda_{Q_\sigma,a}(u),
+\tag{41.5.11}
+```
+
+where `lambda` is the local Haar/counting reference. For a surgery family, define
+the effective distortion:
+
+```math
+\mathcal D_{Q_\sigma,a}(\xi,\psi)
+=
+\inf_{\mathcal K}
+\log
+\left\|
+\frac{
+d\Gamma_{\xi,\psi}^{(2)}
+}{
+d\left(
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}
+\right)
+}
+\right\|_\infty.
+\tag{41.5.12}
+```
+
+The infimum is over admissible kernels satisfying `S1-S3`. The constructive
+transport succeeds exactly if:
+
+```math
+\limsup_{a\to0}
+\mathcal D_{Q_\sigma,a}(\xi,\psi)
+\le
+C_Q
+\tag{41.5.13}
+```
+
+on the pinned-mass carrying bins, outside a vanishing outside-environment set.
+
+This is the action-entropy version of the problem. A pointwise action insertion
+controls only one candidate kernel. The infimum in (41.5.12) allows entropy,
+many-to-one compensation, and nearby-bin slack.
+
+#### 41.5.5. What Can Be Proved Formally
+
+The formal part is now complete.
+
+If:
+
+```math
+\mathcal D_{Q_\sigma,a}(\xi,\psi)
+\le
+C_Q
+\tag{41.5.14}
+```
+
+on pinned-mass carrying bins with high outside-environment probability, then
+the nearby-bin comparison holds and Section 39 proves the incidence-compatible
+fixed-IR certificate.
+
+If:
+
+```math
+\mathcal D_{Q_\sigma,a}(\xi,\psi)
+\to
+\infty
+\tag{41.5.15}
+```
+
+on pinned-mass carrying bins with positive outside-environment probability, then
+every admissible constructive transport has unbounded distortion on that set.
+If the pinned mass is concentrated in such bins, Target 40.204 gives:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}\to0
+\tag{41.5.16}
+```
+
+on positive outside-environment probability. This falsifies the
+incidence-compatible Section 39 route.
+
+Thus the constructive route has no remaining formal escape. It asks for the
+actual sign of the distortion budget (41.5.12).
+
+#### 41.5.6. Why The Smooth Map Still Does Not Decide The Route
+
+The smooth map gives one upper-bound attempt:
+
+```math
+\mathcal D_{Q_\sigma,a}
+\le
+C^{\mathrm{smooth}}_{Q_\sigma,a}
+\tag{41.5.17}
+```
+
+if it is admissible. If `C_smooth` diverges, nothing follows about the infimum
+in (41.5.12). The route fails only if every admissible kernel has diverging
+distortion, not merely the smooth one.
+
+This is why the problem is genuinely entropy-compensated.
+
+#### 41.5.7. Fixed-IR And Barandes Alignment
+
+The target remains fixed-IR aligned only if:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FIR1}
+&
+Q_\sigma,\ell_R,\Psi,\mathcal N_Q\text{ are fixed before }a\to0,\\[1mm]
+\mathrm{FIR2}
+&
+\mathcal K\text{ modifies a fixed physical block, not a shrinking plaquette},\\[1mm]
+\mathrm{FIR3}
+&
+C_Q,M_Q,D_Q\text{ are independent of }a.
+\end{array}}
+\tag{41.5.18}
+```
+
+It remains Barandes aligned only if:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{BA1}
+&
+\Psi\text{ and }\mathcal K\text{ are deterministic constructions from finite readouts},\\[1mm]
+\mathrm{BA2}
+&
+\nu_{Q_\sigma,a}\text{ is the original finite SU(2) conditional law},\\[1mm]
+\mathrm{BA3}
+&
+\mathcal K\text{ is a proof device, not an ontic Markov transition},\\[1mm]
+\mathrm{BA4}
+&
+\text{no center-sector postselection or measure tilt is introduced}.
+\end{array}}
+\tag{41.5.19}
+```
+
+These conditions are not decorative. Violating them would make the proof a new
+premise rather than a Barandes-aligned Yang-Mills estimate.
+
+#### 41.5.8. Target 40.205 Decision
+
+Target 40.205 is therefore fully reduced:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{+}
+&
+\text{bounded nearby-bin distortion }(41.5.13)\text{ proves the lower tail},\\[1mm]
+\mathrm{PROVED}_{-}
+&
+\text{unbounded optimal distortion on pinned bins falsifies the route},\\[1mm]
+\mathrm{NO}_{\mathrm{smooth}}
+&
+\text{failure of one smooth map does not decide the infimum},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{decide the optimal distortion budget }(41.5.12)\text{ for actual SU(2)}.
+\end{array}}
+\tag{41.5.20}
+```
+
+The next true mathematical task is no longer to define the transport. It is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{estimate the optimal nearby-bin action-entropy distortion }(41.5.12)\\[1mm]
+\text{for the incidence-compatible local SU(2) block law.}
+\end{array}}
+\tag{41.5.21}
+```
+
+If this estimate is bounded, the fixed-IR certificate follows through Section
+39. If it diverges on positive pinned mass, the incidence-compatible local route
+is falsified.
+
+### 41.6. Target 40.206: Optimal Distortion Budget Audit
+
+`V4P40-TARGET-40206-OPTIMAL-DISTORTION-BUDGET-AUDIT`.
+
+Target 40.205 left one precise object:
+
+```math
+\mathcal D_{Q_\sigma,a}(\xi,\psi).
+\tag{41.6.1}
+```
+
+Target 40.206 asks whether this object can be estimated directly. The answer is
+subtle but decisive:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the unconstrained optimal distortion is exactly the local mass ratio;}\\[1mm]
+\text{the non-tautological problem is the constrained constructive distortion.}
+\end{array}}
+\tag{41.6.2}
+```
+
+This section fully separates those two meanings.
+
+#### 41.6.1. Source And Target Masses
+
+For each outside environment `xi` and readout bin `psi`, define the pinned source
+mass:
+
+```math
+P_a(\xi,\psi)
+:=
+W^\sigma_a(\xi,\psi),
+\tag{41.6.3}
+```
+
+and the nearby exit target mass:
+
+```math
+T_a(\xi,\psi)
+:=
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+W^{\mathrm{exit}}_a(\xi,\psi').
+\tag{41.6.4}
+```
+
+The nearby-bin comparison from Target 40.204 is exactly:
+
+```math
+T_a(\xi,\psi)
+\ge
+e^{-C_Q}
+P_a(\xi,\psi)
+\tag{41.6.5}
+```
+
+on the bins that carry pinned mass.
+
+The local exit ratio is:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi)
+=
+\frac{
+\sum_{\psi}T_a(\xi,\psi)
+}{
+\sum_{\psi}P_a(\xi,\psi)
+},
+\tag{41.6.6}
+```
+
+up to the bounded neighbor-overlap factor already isolated in Target 40.204.
+
+#### 41.6.2. The Unconstrained Optimum Is Tautological
+
+Let `D^all_a(xi,psi)` be the infimum of the distortion over all couplings whose
+first marginal is the pinned bin measure and whose second marginal is supported
+in the nearby exit bins. No locality, no algorithmic construction, and no
+action geometry are imposed.
+
+**Theorem 40.206A (Unconstrained Distortion Equals The Mass Ratio).** For every
+fixed `(xi,psi)`:
+
+```math
+D^{\mathrm{all}}_a(\xi,\psi)
+=
+\begin{cases}
+\log\left(P_a(\xi,\psi)/T_a(\xi,\psi)\right),
+&
+P_a(\xi,\psi)>0,\ T_a(\xi,\psi)>0,\\[1mm]
+-\infty,
+&
+P_a(\xi,\psi)=0,\\[1mm]
++\infty,
+&
+P_a(\xi,\psi)>0,\ T_a(\xi,\psi)=0.
+\end{cases}
+\tag{41.6.7}
+```
+
+Consequently:
+
+```math
+D^{\mathrm{all}}_a(\xi,\psi)\le C_Q
+\quad
+\Longleftrightarrow
+\quad
+T_a(\xi,\psi)\ge e^{-C_Q}P_a(\xi,\psi).
+\tag{41.6.8}
+```
+
+#### Proof
+
+If `P_a=0`, the zero coupling has no cost. If `P_a>0` and `T_a=0`, no coupling
+with the required support exists.
+
+Assume both masses are positive. Let:
+
+```math
+\overline\nu^\sigma_{\xi,\psi}
+=
+\frac{\nu^\sigma_{\xi,\psi}}{P_a(\xi,\psi)}
+\tag{41.6.9}
+```
+
+and:
+
+```math
+\overline\nu^{\mathrm{exit}}_{\xi,\mathcal N(\psi)}
+=
+\frac{
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}
+}{
+T_a(\xi,\psi)
+}.
+\tag{41.6.10}
+```
+
+The product coupling:
+
+```math
+\Gamma_{\xi,\psi}
+=
+P_a(\xi,\psi)\,
+\overline\nu^\sigma_{\xi,\psi}
+\otimes
+\overline\nu^{\mathrm{exit}}_{\xi,\mathcal N(\psi)}
+\tag{41.6.11}
+```
+
+has first marginal `nu^sigma_{xi,psi}` and second marginal:
+
+```math
+\Gamma^{(2)}_{\xi,\psi}
+=
+\frac{P_a(\xi,\psi)}{T_a(\xi,\psi)}
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}.
+\tag{41.6.12}
+```
+
+Thus the distortion is at most the logarithm in (41.6.7).
+
+Conversely, if a coupling has second marginal dominated by:
+
+```math
+e^D
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'},
+\tag{41.6.13}
+```
+
+then comparing total masses gives:
+
+```math
+P_a(\xi,\psi)
+\le
+e^D T_a(\xi,\psi).
+\tag{41.6.14}
+```
+
+Hence:
+
+```math
+D
+\ge
+\log\left(P_a(\xi,\psi)/T_a(\xi,\psi)\right).
+\tag{41.6.15}
+```
+
+This proves the theorem.
+
+#### 41.6.3. Consequence: The Fully Optimal Problem Does Not Lower The Barrier
+
+Theorem 40.206A is useful because it prevents a false proof.
+
+If the word optimal means all measurable couplings, then bounding the optimal
+distortion is exactly the same as proving the nearby-bin comparison. It is not a
+new estimate.
+
+Thus the formal optimum gives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{EXACT}
+&
+D^{\mathrm{all}}=\log(P/T),\\[1mm]
+\mathrm{EQUIV}
+&
+\sup D^{\mathrm{all}}<\infty
+\text{ is equivalent to the desired local comparison},\\[1mm]
+\mathrm{NO}_{\mathrm{gain}}
+&
+\text{unconstrained optimal transport does not simplify SC1}.
+\end{array}}
+\tag{41.6.16}
+```
+
+The proof must therefore restrict the transport class in a meaningful way. The
+restriction is not ontological. It is a proof discipline: the kernel must come
+from a fixed-IR local surgery whose cost can be estimated before knowing the
+answer.
+
+#### 41.6.4. Constructive Distortion Class
+
+Let:
+
+```math
+\mathfrak K_R^{\mathrm{loc}}
+\tag{41.6.17}
+```
+
+be a family of admissible local surgery kernels. A kernel belongs to this class
+only if it satisfies the following fixed-IR constructive rules:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{K1}
+&
+\text{it modifies only the chosen physical block }Q_\sigma,\\[1mm]
+\mathrm{K2}
+&
+\text{it is specified before seeing the output sector mass},\\[1mm]
+\mathrm{K3}
+&
+\text{it sends pinned bins into nearby exit bins},\\[1mm]
+\mathrm{K4}
+&
+\text{it has a reference-density distortion estimated from local action},\\[1mm]
+\mathrm{K5}
+&
+\text{it uses the original finite SU(2) conditional law}.
+\end{array}}
+\tag{41.6.18}
+```
+
+Define the constructive distortion:
+
+```math
+D^{\mathrm{loc}}_a(\xi,\psi)
+:=
+\inf_{\mathcal K\in\mathfrak K_R^{\mathrm{loc}}}
+\log
+\left\|
+\frac{
+d\Gamma_{\xi,\psi}^{(2)}
+}{
+d\left(
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}
+\right)
+}
+\right\|_\infty.
+\tag{41.6.19}
+```
+
+Here the infimum is taken only over kernels whose cost is generated by a local
+fixed-IR surgery rule. This is the first non-tautological version of the
+distortion problem.
+
+#### 41.6.5. Positive Sufficient Condition: Action-Jacobian Bridge
+
+The clean positive theorem is the following.
+
+**Theorem 40.206B (Action-Jacobian Bridge).** Suppose that, outside an
+environment set whose probability tends to zero, each pinned-mass carrying bin
+admits a measurable local surgery:
+
+```math
+J_{\xi,\psi,a}:
+\operatorname{supp}\nu^\sigma_{\xi,\psi}
+\longrightarrow
+\bigcup_{\psi'\in\mathcal N_Q(\psi)}
+\operatorname{supp}\nu^{\mathrm{exit}}_{\xi,\psi'}
+\tag{41.6.20}
+```
+
+such that:
+
+```math
+\Psi(J_{\xi,\psi,a}u)\in\mathcal N_Q(\Psi(u)),
+\tag{41.6.21}
+```
+
+and the pushforward of the local reference measure obeys:
+
+```math
+(J_{\xi,\psi,a})_{\#}
+\lambda_{\xi,\psi}
+\le
+e^{B_Q}
+\lambda^{\mathrm{exit}}_{\xi,\mathcal N(\psi)}.
+\tag{41.6.22}
+```
+
+Assume also that the action defect is bounded:
+
+```math
+S_{Q_\sigma,a}(J_{\xi,\psi,a}u;\xi)
+-
+S_{Q_\sigma,a}(u;\xi)
+\le
+A_Q.
+\tag{41.6.23}
+```
+
+Here `A_Q` and `B_Q` are independent of `a`. Then:
+
+```math
+D^{\mathrm{loc}}_a(\xi,\psi)
+\le
+A_Q+B_Q.
+\tag{41.6.24}
+```
+
+Consequently the incidence-compatible lower-tail estimate (43.4) holds.
+
+#### Proof
+
+Write:
+
+```math
+d\nu_{Q_\sigma,a}(u\mid\xi)
+=
+e^{-S_{Q_\sigma,a}(u;\xi)}
+d\lambda_{Q_\sigma,a}(u).
+\tag{41.6.25}
+```
+
+For any measurable exit test function `f>=0`:
+
+```math
+\int f(Ju)\,d\nu^\sigma_{\xi,\psi}(u)
+=
+\int f(Ju)e^{-S(u;\xi)}\,d\lambda_{\xi,\psi}(u).
+\tag{41.6.26}
+```
+
+By (41.6.23):
+
+```math
+e^{-S(u;\xi)}
+\le
+e^{A_Q}e^{-S(Ju;\xi)}.
+\tag{41.6.27}
+```
+
+Using (41.6.22) then gives:
+
+```math
+\int f(Ju)\,d\nu^\sigma_{\xi,\psi}(u)
+\le
+e^{A_Q+B_Q}
+\int f(v)\,d\nu^{\mathrm{exit}}_{\xi,\mathcal N(\psi)}(v).
+\tag{41.6.28}
+```
+
+This is exactly the dominated second-marginal estimate with cost `A_Q+B_Q`.
+Target 40.205 then proves the lower tail.
+
+#### 41.6.6. Audit Of Candidate Proof Technologies
+
+The previous theorem tells us what a real proof must supply. We now audit the
+available candidates.
+
+**Candidate 1: exact conditional resampling.**
+
+Define `K` by ignoring `u` and drawing `u'` from the normalized nearby exit
+measure. This attains the unconstrained optimum of Theorem 40.206A. But it uses
+the unknown target mass itself. It is a restatement of the comparison, not a
+proof.
+
+```math
+\boxed{
+\text{conditional resampling is exact but tautological.}
+}
+\tag{41.6.29}
+```
+
+**Candidate 2: microscopic heat-bath minorization.**
+
+One can try to use ordinary local heat-bath positivity on all links in the block.
+At fixed cutoff this is true. At fixed physical block scale, however, the number
+of microscopic links grows as `a` goes to zero, and the heat-bath constants
+degrade. Therefore microscopic minorization does not give an `a`-independent
+constant.
+
+```math
+\boxed{
+\text{microscopic heat-bath positivity is finite-cutoff positivity, not SC1.}
+}
+\tag{41.6.30}
+```
+
+**Candidate 3: thin center-sheet flip.**
+
+A raw center flip on a microscopic sheet is local and explicit, but it changes a
+number of plaquettes proportional to the microscopic area of the sheet. Its
+action defect is not controlled by a fixed physical constant. This is the same
+thin-vortex cost obstruction already isolated earlier.
+
+```math
+\boxed{
+\text{thin center-sheet surgery is not a fixed-IR bounded-distortion proof.}
+}
+\tag{41.6.31}
+```
+
+**Candidate 4: thick physical collar surgery.**
+
+This is the only plausible positive constructive route. The surgery must spread
+the charged sector-exit modification through a physical collar of fixed
+thickness and then prove:
+
+```math
+A_Q+B_Q\le C_Q
+\tag{41.6.32}
+```
+
+with `C_Q` independent of `a`. This is a genuine fixed-IR Yang-Mills estimate:
+it asks whether the charged local modification has bounded physical
+action-entropy cost after the microscopic degrees of freedom are integrated
+out.
+
+```math
+\boxed{
+\text{the positive route is bounded thick-collar action-entropy cost.}
+}
+\tag{41.6.33}
+```
+
+**Candidate 5: reflection positivity.**
+
+RP can organize a charged package and compare reflected sectors, but it does not
+by itself produce a local action-Jacobian map satisfying (41.6.22)-(41.6.23).
+If RP proves a strict charged transfer deficit, that is B5. It does not prove the
+B4 local distortion estimate unless it also supplies the local mass comparison.
+
+```math
+\boxed{
+\text{RP is a parallel transfer route, not a proof of local distortion by itself.}
+}
+\tag{41.6.34}
+```
+
+#### 41.6.7. Negative Sufficient Conditions
+
+There are two levels of falsification.
+
+The strongest falsifier is mass-ratio collapse:
+
+```math
+\exists\epsilon_Q>0,\quad
+\exists L_n\to\infty,\quad
+\exists a_n\to0
+\tag{41.6.35}
+```
+
+such that, with probability at least `epsilon_Q` over the outside environment,
+there is a pinned-mass carrying bin `psi_n(xi)` with:
+
+```math
+\frac{
+T_{a_n}(\xi,\psi_n(\xi))
+}{
+P_{a_n}(\xi,\psi_n(\xi))
+}
+<
+e^{-L_n}.
+\tag{41.6.36}
+```
+
+By Theorem 40.206A, this implies:
+
+```math
+D^{\mathrm{all}}_{a_n}(\xi,\psi_n(\xi))
+\to
+\infty.
+\tag{41.6.37}
+```
+
+Therefore no coupling, constructive or otherwise, can prove the nearby-bin
+comparison on that package. This falsifies the incidence-compatible Section 39
+route for the chosen block/readout package.
+
+The weaker falsifier is constructive distortion collapse:
+
+```math
+D^{\mathrm{loc}}_{a_n}(\xi,\psi_n(\xi))
+\to
+\infty
+\tag{41.6.38}
+```
+
+on positive pinned-mass probability, while `D^all` may remain bounded. This
+falsifies the chosen constructive proof class, not the comparison itself. It
+says the admissible local surgeries are too rigid; entropy may still exist in a
+different coupling.
+
+Thus:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FALSIFY}_{\mathrm{strong}}
+&
+\text{prove mass-ratio collapse }(41.6.36),\\[1mm]
+\mathrm{FALSIFY}_{\mathrm{method}}
+&
+\text{prove constructive distortion collapse }(41.6.38).
+\end{array}}
+\tag{41.6.39}
+```
+
+#### 41.6.8. Boundary Of The Investigation
+
+The audit now gives a complete boundary.
+
+A general proof of bounded `D^all` is impossible without proving the local
+nearby-bin comparison, because they are equivalent by Theorem 40.206A.
+
+A general proof of bounded `D^loc` is impossible without specifying an actual
+local surgery class. Otherwise the word constructive has no mathematical
+content.
+
+A general falsification of `D^all` is also impossible from formal structure
+alone, because it requires proving that the actual SU(2) exit mass collapses.
+
+Therefore the remaining non-formal object is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the fixed-IR thick-collar center-exit free energy}\\[1mm]
+\text{for the incidence-compatible local SU(2) block.}
+\end{array}}
+\tag{41.6.40}
+```
+
+This is exactly where the route must meet real Yang-Mills dynamics. Topology
+chooses the exit class. Measure theory identifies the exact comparison.
+Barandes alignment says the measure is the original finite SU(2) law. The only
+unsettled question is whether that law assigns fixed-IR nonvanishing weight to
+the incidence-compatible exit class.
+
+#### 41.6.9. Fixed-IR And Barandes Alignment
+
+Target 40.206 is fixed-IR aligned only in the following sense:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FIR1}
+&
+Q_\sigma,\Psi,\mathcal N_Q,\text{ and the collar thickness are fixed},\\[1mm]
+\mathrm{FIR2}
+&
+\text{all constants }A_Q,B_Q,C_Q\text{ are independent of }a,\\[1mm]
+\mathrm{FIR3}
+&
+\text{no microscopic minorization constant is allowed to stand in for }C_Q.
+\end{array}}
+\tag{41.6.41}
+```
+
+It is Barandes aligned only if:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{BA1}
+&
+\text{the law is the finite SU(2) conditional law},\\[1mm]
+\mathrm{BA2}
+&
+\text{readouts are deterministic finite functions of configurations},\\[1mm]
+\mathrm{BA3}
+&
+\text{surgery kernels are proof couplings, not ontic transitions},\\[1mm]
+\mathrm{BA4}
+&
+\text{no extra center-sector weighting or postselection is inserted}.
+\end{array}}
+\tag{41.6.42}
+```
+
+Under these contracts, Target 40.206 is an ordinary fixed-IR Yang-Mills weight
+problem, not a new ISP premise.
+
+#### 41.6.10. Target 40.206 Decision
+
+Target 40.206 is therefore exhausted as follows:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{exact}}
+&
+\text{unconstrained optimal distortion equals the mass ratio},\\[1mm]
+\mathrm{NO}_{\mathrm{shortcut}}
+&
+\text{bounding that optimum is equivalent to the desired comparison},\\[1mm]
+\mathrm{PROVED}_{+}
+&
+\text{bounded action-Jacobian thick surgery proves the lower tail},\\[1mm]
+\mathrm{FALSIFY}_{+}
+&
+\text{mass-ratio collapse falsifies the local route},\\[1mm]
+\mathrm{FALSIFY}_{\mathrm{method}}
+&
+\text{constructive distortion collapse falsifies a proposed surgery class},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{decide the thick-collar center-exit free energy for actual SU(2)}.
+\end{array}}
+\tag{41.6.43}
+```
+
+The next target is therefore not another abstract transport reformulation. It is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove or falsify bounded thick-collar center-exit free energy}\\[1mm]
+\text{for the fixed incidence-compatible block package.}
+\end{array}}
+\tag{41.6.44}
+```
+
+If that free energy is bounded, the Section 39 route proves the fixed-IR
+certificate. If it diverges on positive pinned mass, the local entropy-bridge
+route has found the area barrier again.
+
+### 41.7. Target 40.207: Fixed-IR Thick-Collar Center-Exit Free Energy
+
+`V4P40-TARGET-40207-FIXED-IR-THICK-COLLAR-CENTER-EXIT-FREE-ENERGY`.
+
+Target 40.206 says that the next object is not another transport abstraction.
+It is the actual fixed-IR cost of moving from the pinned local class to the
+incidence-compatible center-exit class through a thick physical collar.
+
+The target is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove or falsify bounded thick-collar center-exit free energy}\\[1mm]
+\text{for the fixed incidence-compatible local SU(2) block package.}
+\end{array}}
+\tag{41.7.1}
+```
+
+This section carries out the five required steps: freeze the package, define the
+free energy, give the positive theorem, give the falsifier, and state the
+alignment contract.
+
+#### 41.7.1. Step 1: Freeze The Fixed-IR Collar Package
+
+Fix once and for all, before taking `a -> 0`, the package:
+
+```math
+\mathfrak P^{\mathrm{tc}}_R
+=
+\left(
+Q_\sigma,\delta_R,\Psi_{Q_\sigma},\mathcal N_Q,
+\mathcal B^\sigma_{Q_\sigma,a},
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}
+\right).
+\tag{41.7.2}
+```
+
+Here:
+
+```math
+\delta_R>0
+\tag{41.7.3}
+```
+
+is a physical collar thickness, not a cutoff-scale thickness. The collar is:
+
+```math
+\operatorname{Col}_{\delta_R}(Q_\sigma).
+\tag{41.7.4}
+```
+
+The allowed thick-collar surgeries may modify only links or plaquette variables
+whose support lies inside this collar. The readout battery:
+
+```math
+\Psi_{Q_\sigma,a}
+\tag{41.7.5}
+```
+
+and the neighbor graph:
+
+```math
+\mathcal N_Q
+\tag{41.7.6}
+```
+
+are the same fixed physical-resolution objects used in Target 40.204. The
+incidence-compatible exit class is the one from Target 40.202:
+
+```math
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\subset
+\left\{
+u':
+Y_{R,a}(\xi,u')
+\in
+E^{\zeta,-\sigma}_{R,a}
+\cup
+E^{\zeta,0}_{R,a}
+\right\}.
+\tag{41.7.7}
+```
+
+This freezes the problem. No later proof may change `Q_sigma`, `delta_R`,
+`Psi`, or `N_Q` as `a` changes.
+
+#### 41.7.2. Step 2: Define The Thick-Collar Free Energy
+
+For each outside environment `xi` and readout bin `psi`, reuse:
+
+```math
+P_a(\xi,\psi)
+=
+W^\sigma_a(\xi,\psi),
+\qquad
+T_a(\xi,\psi)
+=
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+W^{\mathrm{exit}}_a(\xi,\psi').
+\tag{41.7.8}
+```
+
+The bin-level thick-collar center-exit free energy is:
+
+```math
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a}(\xi,\psi)
+=
+\begin{cases}
+\log\left(P_a(\xi,\psi)/T_a(\xi,\psi)\right),
+&
+P_a(\xi,\psi)>0,\ T_a(\xi,\psi)>0,\\[1mm]
+-\infty,
+&
+P_a(\xi,\psi)=0,\\[1mm]
++\infty,
+&
+P_a(\xi,\psi)>0,\ T_a(\xi,\psi)=0.
+\end{cases}
+\tag{41.7.9}
+```
+
+The environment-level free energy is:
+
+```math
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a}(\xi)
+=
+\log
+\frac{
+Z^\sigma_{Q_\sigma,a}(\xi)
+}{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+},
+\tag{41.7.10}
+```
+
+with the same zero-mass conventions. This is:
+
+```math
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a}(\xi)
+=
+-
+\log
+r^{\mathrm{inc}}_{Q_\sigma,a}(\xi).
+\tag{41.7.11}
+```
+
+The fixed-IR bounded-free-energy target is the tightness statement:
+
+```math
+\boxed{
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a}(\xi)>C
+\right)
+=
+0.
+}
+\tag{41.7.12}
+```
+
+This is exactly the local lower-tail estimate (43.4), rewritten as a thick-collar
+free-energy statement.
+
+The stronger bin-uniform target is:
+
+```math
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+\sup_{\psi:P_a(\xi,\psi)>0}
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a}(\xi,\psi)>C
+\right)
+=
+0.
+\tag{41.7.13}
+```
+
+Because the physical readout battery has finitely many bins after `R` is fixed,
+(41.7.13) implies (41.7.12). The converse need not hold: one bad tiny bin may
+not carry enough mass to affect the environment-level ratio.
+
+#### 41.7.3. Step 3: Positive Theorem From Thick-Collar Action-Entropy Control
+
+Let:
+
+```math
+\mathfrak J^{\mathrm{tc}}_{R,a}(\xi,\psi)
+\tag{41.7.14}
+```
+
+be the class of thick-collar maps:
+
+```math
+J_{\xi,\psi,a}:
+\operatorname{supp}\nu^\sigma_{\xi,\psi}
+\longrightarrow
+\bigcup_{\psi'\in\mathcal N_Q(\psi)}
+\operatorname{supp}\nu^{\mathrm{exit}}_{\xi,\psi'}
+\tag{41.7.15}
+```
+
+that modify only the collar `Col_{\delta_R}(Q_\sigma)` and are specified without
+using the unknown exit mass `T_a(xi,psi)`.
+
+**Theorem 40.207A (Bounded Thick-Collar Action-Entropy Cost Implies The
+Fixed-IR Certificate).** Suppose that, outside an environment event whose
+probability tends to zero, every pinned-mass carrying bin admits
+a map `J_{xi,psi,a}` in the class (41.7.14) such that:
+
+```math
+\Psi_{Q_\sigma,a}(J u)
+\in
+\mathcal N_Q
+\left(
+\Psi_{Q_\sigma,a}(u)
+\right),
+\tag{41.7.16}
+```
+
+the reference pushforward is bounded:
+
+```math
+J_{\#}\lambda_{\xi,\psi}
+\le
+e^{B_R}
+\lambda^{\mathrm{exit}}_{\xi,\mathcal N(\psi)},
+\tag{41.7.17}
+```
+
+and the action defect is bounded:
+
+```math
+S_{Q_\sigma,a}(Ju;\xi)
+-
+S_{Q_\sigma,a}(u;\xi)
+\le
+A_R.
+\tag{41.7.18}
+```
+
+The constants `A_R` and `B_R` are independent of `a`. Then:
+
+```math
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a}(\xi,\psi)
+\le
+A_R+B_R
+\tag{41.7.19}
+```
+
+on the pinned-mass carrying bins. Hence (41.7.13), (41.7.12), the local
+lower-tail estimate (43.4), and the fixed-IR certificate all follow.
+
+#### Proof
+
+This is the thick-collar specialization of Theorem 40.206B. The action bound
+(41.7.18) and reference-measure bound (41.7.17) give:
+
+```math
+J_{\#}\nu^\sigma_{\xi,\psi}
+\le
+e^{A_R+B_R}
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}.
+\tag{41.7.20}
+```
+
+Taking total masses gives:
+
+```math
+P_a(\xi,\psi)
+\le
+e^{A_R+B_R}
+T_a(\xi,\psi).
+\tag{41.7.21}
+```
+
+This is (41.7.19). Since the bin set is fixed and finite, the bin-uniform
+estimate gives the environment-level free-energy tightness. Targets
+40.203-40.206 then complete the implication chain.
+
+The theorem proves exactly what a positive route must prove: a thick physical
+collar can carry the center-exit operation with bounded action and bounded
+entropy loss.
+
+#### 41.7.4. Step 4: Falsifiers
+
+There are three distinct negative outcomes.
+
+The strongest falsifier is environment-level collapse:
+
+```math
+\exists\epsilon_R>0,\quad
+\exists L_n\to\infty,\quad
+\exists a_n\to0
+\tag{41.7.22}
+```
+
+such that:
+
+```math
+\pi_{Q_\sigma,a_n}
+\left(
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a_n}(\xi)>L_n
+\right)
+\ge
+\epsilon_R.
+\tag{41.7.23}
+```
+
+Equivalently:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a_n}(\xi)
+<
+e^{-L_n}
+\tag{41.7.24}
+```
+
+on a set of outside environments of probability at least `epsilon_R`. This
+falsifies the incidence-compatible Section 39 route for the chosen fixed-IR
+package.
+
+The second falsifier is mass-carrying bin collapse. There are constants
+`epsilon_R>0` and `eta_R>0`, a sequence `L_n -> infinity`, and selectors
+`psi_n(xi)` such that:
+
+```math
+P_{a_n}(\xi,\psi_n(\xi))
+\ge
+\eta_R
+Z^\sigma_{Q_\sigma,a_n}(\xi),
+\tag{41.7.25}
+```
+
+and:
+
+```math
+\mathcal F^{\mathrm{tc}}_{Q_\sigma,a_n}
+\left(
+\xi,\psi_n(\xi)
+\right)
+>
+L_n
+\tag{41.7.26}
+```
+
+with outside probability at least `epsilon_R`. This falsifies the bin-uniform
+comparison (41.7.13). It falsifies the environment-level route only if the
+remaining bins cannot compensate the missing exit mass.
+
+The third falsifier is method collapse. For a proposed thick-collar surgery
+class:
+
+```math
+\mathfrak J^{\mathrm{tc}}_{R,a},
+\tag{41.7.27}
+```
+
+one proves:
+
+```math
+\inf_{J\in\mathfrak J^{\mathrm{tc}}_{R,a}}
+\left(
+A_R(J;\xi,\psi)+B_R(J;\xi,\psi)
+\right)
+\to
+\infty
+\tag{41.7.28}
+```
+
+on positive pinned-mass probability. This only falsifies that proposed surgery
+class. It does not falsify the comparison unless it is paired with
+environment-level collapse (41.7.23).
+
+Thus the real negative theorem is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FALSIFY}_{\mathrm{route}}
+&
+\text{prove environment-level free-energy divergence }(41.7.23),\\[1mm]
+\mathrm{FALSIFY}_{\mathrm{bin}}
+&
+\text{prove mass-carrying bin collapse }(41.7.25)\text{--}(41.7.26),\\[1mm]
+\mathrm{FALSIFY}_{\mathrm{method}}
+&
+\text{prove all maps in a chosen surgery class have diverging cost}.
+\end{array}}
+\tag{41.7.29}
+```
+
+The first falsifier is decisive. The second is a serious obstruction. The third
+only says that the chosen constructive route was too rigid.
+
+#### 41.7.5. Step 5: Alignment Contract And Target Decision
+
+The positive theorem and the falsifiers are fixed-IR aligned only under:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FIR1}
+&
+Q_\sigma,\delta_R,\Psi_{Q_\sigma},\mathcal N_Q\text{ are fixed before }a\to0,\\[1mm]
+\mathrm{FIR2}
+&
+\text{the collar has fixed physical thickness, not microscopic thickness},\\[1mm]
+\mathrm{FIR3}
+&
+A_R,B_R,C_R,\epsilon_R,\eta_R\text{ are independent of }a,\\[1mm]
+\mathrm{FIR4}
+&
+\text{no weak-coupling good-sector smallness is used as an IR estimate}.
+\end{array}}
+\tag{41.7.30}
+```
+
+They are Barandes aligned only under:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{BA1}
+&
+\text{the measure is the original finite SU(2) conditional law},\\[1mm]
+\mathrm{BA2}
+&
+\text{all readouts are deterministic finite functions of configurations},\\[1mm]
+\mathrm{BA3}
+&
+\text{collar surgeries are proof maps or couplings, not ontic transitions},\\[1mm]
+\mathrm{BA4}
+&
+\text{no Markov record law, center tilt, or postselection is introduced}.
+\end{array}}
+\tag{41.7.31}
+```
+
+Target 40.207 is therefore fully reduced:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{+}
+&
+\text{bounded thick-collar action-entropy cost proves the certificate},\\[1mm]
+\mathrm{PROVED}_{-}
+&
+\text{environment-level free-energy divergence falsifies the local route},\\[1mm]
+\mathrm{WARN}_{\mathrm{bin}}
+&
+\text{bin collapse is decisive only when it controls total pinned mass},\\[1mm]
+\mathrm{WARN}_{\mathrm{method}}
+&
+\text{failure of one collar surgery class is not failure of the comparison},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{decide the actual SU(2) thick-collar center-exit free energy}.
+\end{array}}
+\tag{41.7.32}
+```
+
+The remaining live mathematical problem is now:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{estimate }Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)/Z^\sigma_{Q_\sigma,a}(\xi)\\[1mm]
+\text{for the fixed thick-collar incidence package as }a\to0.
+\end{array}}
+\tag{41.7.33}
+```
+
+No formal reformulation after this point lowers the difficulty. A positive proof
+must produce the bounded thick-collar action-entropy estimate. A negative proof
+must produce environment-level center-exit free-energy divergence. Either
+outcome is a genuine fixed-IR Yang-Mills statement.
+
+## 42. Classification Of Possible Attacks On The Thick-Collar Estimate
+
+This section classifies the possible attacks on Target 40.207. It is not a list
+of ideas. Most ideas collapse into a few proof families, and several attractive
+ones are demoted because they are tautological, finite-cutoff only, or really a
+different route.
+
+Because equation tags `42.x` were preserved inside Section 41 for
+cross-reference continuity, this section uses unnumbered displays.
+
+### 42.1. The Two Real Forks
+
+The live fixed-IR question is:
+
+```math
+\frac{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+}{
+Z^\sigma_{Q_\sigma,a}(\xi)
+}
+```
+
+for the fixed incidence-compatible thick-collar package. There are only two
+decisive outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{Fork\ P}
+&
+\text{prove the ratio stays nonvanishing in the fixed-IR limit},\\[1mm]
+\mathrm{Fork\ N}
+&
+\text{prove the ratio collapses on positive outside-environment mass}.
+\end{array}}
+```
+
+Fork P closes the Section 39 route. Fork N falsifies the local entropy-bridge
+route for the chosen incidence package. Everything else is either a method for
+Fork P, a method for Fork N, or an auxiliary diagnostic.
+
+### 42.2. Family A: Constructive Thick-Collar Transport
+
+This is the direct route.
+
+It includes variational collar bridges, randomized thick surgeries,
+cluster-swap couplings, boundary randomization, and action-Jacobian maps. These
+are not separate mathematical ideas. They are all attempts to build a proof
+coupling:
+
+```math
+\text{pinned local class}
+\quad\longrightarrow\quad
+\text{nearby center-exit class}
+```
+
+with bounded action defect and bounded entropy/Jacobian loss.
+
+The pass condition is:
+
+```math
+\boxed{
+\text{bounded thick-collar action-entropy cost.}
+}
+```
+
+The fail condition is method collapse:
+
+```math
+\boxed{
+\text{every map in the proposed surgery class has diverging cost.}
+}
+```
+
+Method collapse does not falsify the estimate unless it also proves
+environment-level free-energy divergence. It only says that this particular
+constructive class was too rigid.
+
+This family should be tried first because it is the shortest route from Section
+41.7 to the fixed-IR certificate.
+
+### 42.3. Family B: Entropy-Compensated Carrier Counting
+
+This family asks whether the center-exit class has enough internal multiplicity
+to compensate action cost.
+
+It includes entropy-beats-action arguments, random physical sheets, random
+foams, topological current decompositions, and minimal-surface competition.
+Those are the same idea in different coordinates:
+
+```math
+\boxed{
+\text{one carrier may be expensive, but many carriers may have nonvanishing total weight.}
+}
+```
+
+A representation-theoretic version is a Peter-Weyl or spin-foam expansion in
+the collar. A geometric version is a random-surface ensemble inside the fixed
+physical collar. A polymer version counts connected charged carriers near the
+collar boundary.
+
+The pass condition is a uniform lower bound on the summed exit weight. The fail
+condition is an action-entropy imbalance showing that all carriers together
+still lose fixed-IR mass.
+
+This family is genuinely different from Family A. Family A tries to transport
+typical pinned configurations into exit configurations. Family B tries to count
+the exit configurations directly.
+
+### 42.4. Family C: Effective Boundary Action
+
+This family integrates out the collar interior and studies the induced boundary
+or interface law.
+
+It includes Dirichlet-to-Neumann collar operators, boundary-data stratification,
+hostile/easy boundary splits, and collar response estimates. These are the same
+idea:
+
+```math
+\boxed{
+\text{replace the collar interior by an effective boundary free energy.}
+}
+```
+
+The pass condition is that typical outside boundary data do not force a large
+center-exit penalty. The fail condition is a positive-probability set of hostile
+boundary data whose induced center-exit free energy diverges.
+
+This family is especially useful because it can distinguish three cases:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{easy}
+&
+\text{exit has bounded cost for typical boundary data},\\[1mm]
+\mathrm{hostile}
+&
+\text{typical boundary data pin the sector},\\[1mm]
+\mathrm{irrelevant}
+&
+\text{bad boundary data exist but have vanishing probability}.
+\end{array}}
+```
+
+That makes it a good bridge between positive proof and falsifier.
+
+### 42.5. Family D: Bottleneck Geometry
+
+This family treats the pinned and exit classes as two regions of local
+configuration space and asks whether the SU(2) conditional measure has a
+fixed-IR bottleneck between them.
+
+It includes capacity estimates, isoperimetric inequalities, functional
+inequalities, and Morse-theoretic barrier analysis. Again, these are one family:
+
+```math
+\boxed{
+\text{measure geometry of the passage from pinned class to exit class.}
+}
+```
+
+A positive result would show that no exponentially thin neck separates the
+classes. A negative result would show that every passage crosses a bottleneck
+whose measure collapses as `a -> 0`.
+
+This family is best suited to falsification or to proving that a constructive
+transport must exist. It is less explicit than Family A, but it can reveal
+whether the failure is geometric rather than merely a bad choice of surgery.
+
+### 42.6. Auxiliary Diagnostics
+
+Some attacks are useful but should not be mistaken for proofs.
+
+Calibration in solved models is useful:
+
+```math
+\boxed{
+\text{test the same local ratio in }Z_2,\ 3D\ U(1),\ 2D\ SU(2),\text{ or small cells.}
+}
+```
+
+This can show whether the local ratio detects the known confinement mechanism,
+but it does not prove the 4D SU(2) fixed-IR estimate.
+
+Numerical microcell audits are also useful. They can tell whether the ratio
+appears to stabilize or collapse, and which variables carry the entropy. They
+are evidence and guideposts, not proofs.
+
+Continuum heat-kernel cell comparisons are useful as model problems. They become
+proofs only if the lattice-to-cell comparison is uniform in the fixed-IR cutoff
+limit.
+
+### 42.7. Demoted Or Non-Decisive Attacks
+
+Several ideas should not be primary targets.
+
+Unconstrained optimal transport is tautological:
+
+```math
+\boxed{
+\text{its cost is exactly the source/target mass ratio.}
+}
+```
+
+Microscopic heat-bath minorization is finite-cutoff positivity. Its constants
+degrade when a fixed physical block contains more microscopic links as
+`a -> 0`.
+
+Thin center-sheet flips see microscopic area cost and therefore do not prove the
+fixed-IR thick-collar estimate.
+
+Weak-coupling good-sector estimates are UV estimates. They do not prove the
+fixed physical IR statement.
+
+Reflection positivity is a parallel B5/transfer route. It is useful only if it
+produces the strict charged deficit or an actual local mass comparison. RP alone
+does not prove the Section 39 thick-collar ratio.
+
+ISP record bookkeeping, under the current Barandes-aligned premises, does not
+change the SU(2) conditional measure. It can organize readouts, but it cannot
+insert a center-sector tilt or postselected transition.
+
+### 42.8. Recommended Order Of Attack
+
+The sensible order is:
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{try Family A: construct bounded thick-collar transport},\\[1mm]
+2
+&
+\text{if A fails, decide whether it is method collapse or mass collapse},\\[1mm]
+3
+&
+\text{try Family B: count entropy-compensated exit carriers},\\[1mm]
+4
+&
+\text{try Family C: integrate the collar into an effective boundary action},\\[1mm]
+5
+&
+\text{use Family D to prove or falsify a genuine bottleneck},\\[1mm]
+6
+&
+\text{use diagnostics only to guide which theorem to attempt}.
+\end{array}}
+```
+
+Thus the classification is compact:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{two forks, four live proof families, auxiliary diagnostics,}\\[1mm]
+\text{and a short list of demoted non-deciders.}
+\end{array}}
+```
+
+No family is allowed to violate fixed-IR order of limits or Barandes alignment.
+Every live proof must estimate the original finite SU(2) conditional law with
+fixed physical collar data.
+
+## 43. Exhaustion Of The Forks And Proof Families
+
+This section investigates the two forks and the four live families from Section
+42. The purpose is to determine which arguments prove the fixed-IR certificate,
+which arguments falsify the Section 39 route, and which arguments merely fail as
+methods.
+
+As in Section 42, numbered `43.x` equation tags are avoided because those tags
+were preserved inside Section 41 for cross-reference continuity.
+
+### 43.1. Common Object And Logical Dichotomy
+
+For the fixed thick-collar package, define the environment-level ratio:
+
+```math
+\rho_a(\xi)
+=
+\frac{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+}{
+Z^\sigma_{Q_\sigma,a}(\xi)
+},
+```
+
+and the free energy:
+
+```math
+F_a(\xi)
+=
+-
+\log \rho_a(\xi).
+```
+
+The positive fork is tightness:
+
+```math
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+F_a>C
+\right)
+=
+0.
+```
+
+The negative fork is failure of tightness:
+
+```math
+\exists\epsilon_R>0,\quad
+\exists C_n\to\infty,\quad
+\exists a_n\to0
+```
+
+such that:
+
+```math
+\pi_{Q_\sigma,a_n}
+\left(
+F_{a_n}>C_n
+\right)
+\ge
+\epsilon_R.
+```
+
+These are logical complements for the environment-level free energy. Therefore
+there is no third route-level outcome. There can be method failure, bin-level
+failure, or inconclusive diagnostics, but the actual Section 39 estimate either
+has a tight environment-level free energy or it does not.
+
+This observation already exhausts the two forks at the formal level:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{Fork\ P}
+&
+\text{tight }F_a\text{ proves the local lower-tail estimate},\\[1mm]
+\mathrm{Fork\ N}
+&
+\text{non-tight }F_a\text{ falsifies the local lower-tail estimate}.
+\end{array}}
+```
+
+The remaining work is to see whether any family proves one of these two
+statements without smuggling it in.
+
+### 43.2. Fork P: What Counts As A Positive Proof
+
+Fork P is proved if any argument supplies a cutoff-uniform lower bound:
+
+```math
+\rho_a(\xi)
+\ge
+e^{-C_R}
+```
+
+outside an outside-environment event of probability tending to zero. More
+generally, it is enough to prove tightness of `F_a`.
+
+**Theorem 40.208A (Positive Fork Closure).** If Fork P holds for the
+incidence-compatible thick-collar package, then the Section 39 route proves the
+fixed-IR center-sign certificate.
+
+#### Proof
+
+Fork P is exactly:
+
+```math
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\pi_{Q_\sigma,a}
+\left(
+-
+\log r^{\mathrm{inc}}_{Q_\sigma,a}>C
+\right)
+=
+0.
+```
+
+This is the incidence-compatible local lower-tail estimate. Target 40.203
+converts it into the local estimate needed by Section 39. Target 40.202 supplies
+LCI once the block is chosen incident to the cell sign. Target 40.201 then gives
+the three-sector barrier. The earlier certificate theorem converts the
+three-sector barrier into the fixed-IR charged transfer certificate.
+
+Thus Fork P is sufficient.
+
+### 43.3. Fork N: What Counts As A Falsification
+
+Fork N is not a falsification of confinement. It is a falsification of this
+incidence-compatible Section 39 proof route.
+
+**Theorem 40.208B (Negative Fork Falsifies The Local Entropy-Bridge Route).** If
+Fork N holds, then the incidence-compatible SC1 lower-tail estimate fails for
+the chosen package.
+
+#### Proof
+
+Fork N says that along a cutoff sequence the free energy exceeds arbitrarily
+large thresholds on outside-environment probability bounded below. Since:
+
+```math
+F_a(\xi)
+=
+-
+\log r^{\mathrm{inc}}_{Q_\sigma,a}(\xi),
+```
+
+this is exactly:
+
+```math
+r^{\mathrm{inc}}_{Q_\sigma,a_n}(\xi)
+<
+e^{-C_n}
+```
+
+on positive outside-environment probability with `C_n` tending to infinity.
+That is the negation of the lower-tail estimate. Therefore the Section 39 local
+entropy-bridge route fails for this fixed package.
+
+The result says nothing by itself about a different incidence package, a
+different proof family, or the truth of confinement. It only says that this
+local ratio collapses.
+
+### 43.4. Family A: Constructive Thick-Collar Transport
+
+Family A is the strongest positive route because it tries to build a map or
+kernel from pinned configurations to exit configurations.
+
+The positive theorem is already exact:
+
+```math
+\boxed{
+\text{bounded action defect plus bounded entropy/Jacobian loss implies Fork P.}
+}
+```
+
+The proof is Theorem 40.207A. There is no missing formal step.
+
+What remains to investigate is whether failures inside Family A are decisive.
+There are three cases.
+
+First, a proposed map may fail because its action defect grows. This is not
+decisive. It only proves:
+
+```math
+\boxed{
+\text{that map was too rigid.}
+}
+```
+
+Second, every map in a chosen constructive class may have diverging cost. This
+is still not decisive unless the chosen class is proved complete.
+
+Third, one proves a completeness theorem:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{every nonnegligible exit configuration can be reached from pinned}\\[1mm]
+\text{configuration mass by the chosen thick-collar class with bounded overlap.}
+\end{array}}
+```
+
+Under such completeness, method collapse becomes route collapse.
+
+**Theorem 40.208C (Constructive Class Exhaustion).** Let a thick-collar surgery
+class be complete in the sense that every admissible dominated coupling between
+pinned and nearby exit bins can be approximated, up to bounded overlap, by
+kernels from that class. If every kernel in the class has distortion tending to
+infinity on positive pinned-mass probability, then Fork N holds.
+
+#### Proof
+
+If Fork P held, Theorem 40.206A would give a bounded dominated coupling between
+pinned mass and nearby exit mass. Completeness would approximate that coupling
+by kernels in the chosen class with only bounded additional distortion. This
+contradicts the assumed divergence for every kernel in the class. Therefore
+Fork P fails. By the logical dichotomy of Section 43.1, Fork N holds.
+
+This theorem is useful but also sobering. Family A cannot be exhausted by
+checking one map, or even one natural smooth class, unless one proves
+completeness of that class.
+
+The practical status of Family A is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{proved}
+&
+\text{bounded action-Jacobian thick surgery proves Fork P},\\[1mm]
+\mathrm{not\ enough}
+&
+\text{failure of a thin flip, smooth map, or heat bath does not prove Fork N},\\[1mm]
+\mathrm{decisive}
+&
+\text{complete-class collapse proves Fork N},\\[1mm]
+\mathrm{open}
+&
+\text{construct a bounded thick surgery or prove complete-class collapse}.
+\end{array}}
+```
+
+There is no further formal move inside Family A.
+
+### 43.5. Family B: Entropy-Compensated Carrier Counting
+
+Family B counts the exit class directly rather than transporting pinned
+configurations into it.
+
+Let:
+
+```math
+\mathcal C_R(\xi)
+```
+
+be a finite or countable family of fixed-IR carrier labels inside the collar.
+For each carrier `c`, let:
+
+```math
+\mathcal E_c(\xi)
+```
+
+be the corresponding exit subset, and let:
+
+```math
+w_a(c,\xi)
+=
+\nu_{Q_\sigma,a}
+\left(
+\mathcal E_c(\xi)
+\mid
+\xi
+\right).
+```
+
+Assume the exit class is covered with bounded multiplicity:
+
+```math
+\mathbf 1_{\mathcal B^{\mathrm{exit}}}
+\ge
+M_R^{-1}
+\sum_{c\in\mathcal C_R(\xi)}
+\mathbf 1_{\mathcal E_c}.
+```
+
+Then:
+
+```math
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\ge
+M_R^{-1}
+\sum_{c\in\mathcal C_R(\xi)}
+w_a(c,\xi).
+```
+
+Therefore Family B proves Fork P if it proves:
+
+```math
+\sum_{c\in\mathcal C_R(\xi)}
+w_a(c,\xi)
+\ge
+e^{-C_R}
+Z^\sigma_{Q_\sigma,a}(\xi)
+```
+
+outside a vanishing environment event.
+
+This is the entropy-counting pass condition. It has two common sufficient
+forms.
+
+The first is action versus entropy:
+
+```math
+w_a(c,\xi)
+\ge
+e^{-A_R(c,\xi)}
+v_a(c,\xi),
+```
+
+where the summed reference volume obeys:
+
+```math
+\sum_c e^{-A_R(c,\xi)}v_a(c,\xi)
+\ge
+e^{-C_R}
+Z^\sigma_{Q_\sigma,a}(\xi).
+```
+
+The second is a representation or spin-foam parity expansion. The even and odd
+carrier sectors must have comparable total weights after summing over all
+allowed carriers.
+
+Family B falsifies the route only if it proves the opposite at the environment
+level:
+
+```math
+\sum_{c\in\mathcal C_R(\xi)}
+w_a(c,\xi)
+\le
+e^{-C_n}
+Z^\sigma_{Q_\sigma,a_n}(\xi)
+```
+
+on positive outside-environment probability with `C_n` tending to infinity, and
+the carrier family covers all exit configurations with bounded loss.
+
+Thus the exhaustion result is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{proved}
+&
+\text{carrier entropy beating action proves Fork P},\\[1mm]
+\mathrm{proved}
+&
+\text{complete carrier action-entropy collapse proves Fork N},\\[1mm]
+\mathrm{not\ enough}
+&
+\text{collapse of one carrier type does not decide the route},\\[1mm]
+\mathrm{open}
+&
+\text{construct a complete carrier expansion with uniform weights}.
+\end{array}}
+```
+
+Family B is genuinely different from Family A because it can succeed even when
+no simple pinned-to-exit map has bounded cost. It needs a complete carrier
+decomposition; otherwise it is only evidence.
+
+### 43.6. Family C: Effective Boundary Action
+
+Family C integrates out the collar interior. Let `eta` denote the boundary data
+seen by the collar, and disintegrate:
+
+```math
+d\pi_{Q_\sigma,a}(\xi)
+=
+d\Pi_a(\eta)\,
+d\Pi_a(\xi\mid\eta).
+```
+
+Define the conditional boundary free energy:
+
+```math
+F^{\partial}_a(\eta)
+=
+-
+\log
+\frac{
+\mathbb E\left[
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\mid
+\eta
+\right]
+}{
+\mathbb E\left[
+Z^\sigma_{Q_\sigma,a}(\xi)
+\mid
+\eta
+\right]
+}.
+```
+
+This object is useful only if boundary conditioning is not losing the ratio.
+The correct pass theorem has two inputs.
+
+First, typical boundary data have bounded boundary free energy:
+
+```math
+\lim_{C\to\infty}
+\limsup_{a\to0}
+\Pi_a
+\left(
+F^{\partial}_a>C
+\right)
+=
+0.
+```
+
+Second, the conditional fluctuations inside a boundary class are controlled in
+additive free-energy form:
+
+```math
+F_a(\xi)
+\le
+F^{\partial}_a(\eta(\xi))
++
+H_a(\xi),
+```
+
+with `H_a` tight.
+
+Under these two inputs, Family C proves Fork P.
+
+Family C proves Fork N if it finds hostile boundary data of positive
+probability:
+
+```math
+\Pi_{a_n}
+\left(
+F^{\partial}_{a_n}>C_n
+\right)
+\ge
+\epsilon_R,
+```
+
+and proves that conditional fluctuations cannot compensate the boundary
+penalty.
+
+This last clause matters. A hostile boundary class is not decisive if rare
+interior configurations inside that boundary class still supply exit mass.
+
+The exhaustion result is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{proved}
+&
+\text{bounded boundary free energy plus tight interior response proves Fork P},\\[1mm]
+\mathrm{proved}
+&
+\text{hostile boundary mass plus no interior compensation proves Fork N},\\[1mm]
+\mathrm{not\ enough}
+&
+\text{bad boundary data alone do not decide the route},\\[1mm]
+\mathrm{open}
+&
+\text{derive the effective boundary action and response estimates}.
+\end{array}}
+```
+
+Family C is the best way to locate where collapse happens if Fork N is true:
+boundary pinning, interior screening failure, or readout-package mismatch.
+
+### 43.7. Family D: Bottleneck Geometry
+
+Family D treats the pinned and exit classes as subsets of the local
+configuration space with its finite SU(2) conditional measure.
+
+Let:
+
+```math
+A_\xi
+=
+\mathcal B^\sigma_{Q_\sigma,a}(\xi),
+\qquad
+B_\xi
+=
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi).
+```
+
+The direct geometric pass condition is an isoperimetric or capacity lower bound
+that prevents `A_xi` and `B_xi` from being separated by a vanishing neck. A
+representative form is:
+
+```math
+\operatorname{Cap}_a(A_\xi,B_\xi)
+\ge
+e^{-C_R}
+\min
+\left(
+\nu(A_\xi),
+\nu(B_\xi)
+\right),
+```
+
+combined with a local path or flow construction showing that capacity lower
+bound transfers pinned mass into exit mass. If this transfer has bounded
+overlap, Fork P follows.
+
+The direct geometric fail condition is:
+
+```math
+\operatorname{Cap}_a(A_\xi,B_\xi)
+\le
+e^{-C_n}
+\nu(A_\xi)
+```
+
+on positive outside-environment probability, together with a bottleneck theorem
+showing that small capacity forces:
+
+```math
+\nu(B_\xi)
+\le
+e^{-C'_n}
+\nu(A_\xi).
+```
+
+Then Fork N follows.
+
+The danger is that capacity or isoperimetry can fail to see the right ratio.
+Small capacity can reflect a narrow passage even when the target set has large
+mass. Large capacity can reflect many paths without enough target mass. Thus
+Family D needs a capacity-to-mass comparison, not merely a geometric inequality.
+
+The exhaustion result is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{proved}
+&
+\text{bottleneck lower bound plus mass-transfer theorem proves Fork P},\\[1mm]
+\mathrm{proved}
+&
+\text{bottleneck collapse plus mass-collapse theorem proves Fork N},\\[1mm]
+\mathrm{not\ enough}
+&
+\text{capacity estimates alone do not decide the ratio},\\[1mm]
+\mathrm{open}
+&
+\text{prove capacity-to-mass control for the SU(2) collar law}.
+\end{array}}
+```
+
+Family D is therefore a powerful diagnostic and possible proof route, but it is
+not automatically stronger than the free-energy ratio. It must connect geometry
+back to `Z_exit / Z_sigma`.
+
+### 43.8. Cross-Family Equivalences And Non-Equivalences
+
+The four families are not independent at the level of final outcome. Each
+family proves Fork P by lower-bounding `Z_exit / Z_sigma`, and each family
+proves Fork N by upper-bounding the same ratio along a subsequence.
+
+They differ only in the coordinate system used to estimate the ratio:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}
+&
+\text{transport from pinned mass to exit mass},\\[1mm]
+\mathrm{B}
+&
+\text{direct count of exit carriers},\\[1mm]
+\mathrm{C}
+&
+\text{effective boundary free energy},\\[1mm]
+\mathrm{D}
+&
+\text{measure bottleneck between pinned and exit classes}.
+\end{array}}
+```
+
+The following implications are formal:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{A with bounded distortion implies P},\\[1mm]
+\text{B with complete carrier lower bound implies P},\\[1mm]
+\text{C with bounded boundary free energy and tight response implies P},\\[1mm]
+\text{D with bottleneck-to-mass transfer implies P}.
+\end{array}}
+```
+
+The corresponding negative implications require completeness:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{A collapse is decisive only for a complete surgery class},\\[1mm]
+\text{B collapse is decisive only for a complete carrier expansion},\\[1mm]
+\text{C hostile boundaries are decisive only without interior compensation},\\[1mm]
+\text{D bottlenecks are decisive only when they imply mass collapse}.
+\end{array}}
+```
+
+This is the important lesson. Positive results need only find enough mass.
+Negative results must rule out all ways the mass could hide.
+
+### 43.9. Final Exhaustion Theorem
+
+**Theorem 40.209A (Section 43 Exhaustion).** Under the fixed-IR and Barandes
+alignment contracts, every attack in Sections 42-43 falls into exactly one of
+the following classes:
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{a proof of Fork P by lower-bounding the thick-collar ratio},\\[1mm]
+2
+&
+\text{a proof of Fork N by proving environment-level ratio collapse},\\[1mm]
+3
+&
+\text{a method failure that does not decide the ratio},\\[1mm]
+4
+&
+\text{an auxiliary diagnostic that only guides a later proof}.
+\end{array}}
+```
+
+Moreover, none of the four live proof families reduces the problem below the
+same final object:
+
+```math
+\frac{
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+}{
+Z^\sigma_{Q_\sigma,a}(\xi)
+}.
+```
+
+#### Proof
+
+Sections 43.2 and 43.3 prove that the environment-level ratio is the logical
+fork. Sections 43.4-43.7 show that each family proves the positive fork only by
+lower-bounding the ratio, and proves the negative fork only by upper-bounding
+the ratio on positive outside-environment mass. Failures that do not imply one
+of those two bounds are method failures or diagnostics. Therefore the list above
+is exhaustive.
+
+### 43.10. What Is Left After Exhaustion
+
+There is nothing more to prove formally inside the classification. The next
+mathematical task must choose one family and supply a real SU(2) estimate.
+
+The most honest next attempt is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Family A first: construct a bounded thick-collar proof coupling;}\\[1mm]
+\text{if that fails, test whether the failure is complete enough to imply Fork N.}
+\end{array}}
+```
+
+In parallel, Family B should be developed only if one can write a complete
+carrier expansion of the exit class. Family C should be developed if the collar
+interior can be integrated into a usable boundary free energy. Family D should
+be developed if one can prove a capacity-to-mass theorem.
+
+The unavoidable conclusion is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Section 39 continued through Sections 41-43 is fully reduced}\\[1mm]
+\text{to an actual fixed-IR SU(2) thick-collar weight estimate.}
+\end{array}}
+```
+
+This is fixed-IR aligned and Barandes aligned. It is not a hidden Markov
+assumption, not an ISP measure tilt, and not a weak-coupling good-sector
+substitute.
+
+## 44. Family A: Constructive Thick-Collar Transport Proof Attempt
+
+`V4P40-TARGET-40210-FAMILY-A-CONSTRUCTIVE-THICK-COLLAR-TRANSPORT`.
+
+This section works on Family A from Sections 42-43. The goal is to build a
+fixed-IR proof coupling from the pinned local class to the
+incidence-compatible center-exit class.
+
+As before, numbered `44.x` equation tags are avoided because those tags were
+preserved inside Section 41 for cross-reference continuity.
+
+### 44.1. What A Family A Proof Must Produce
+
+Fix the thick-collar package from Target 40.207. A Family A proof must produce a
+map or kernel:
+
+```math
+K_{\xi,\psi,a}
+:
+\mathcal B^\sigma_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi=\psi\}
+\longrightarrow
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi\in\mathcal N_Q(\psi)\},
+```
+
+with second marginal dominated by the nearby exit measure:
+
+```math
+K_{\#}\nu^\sigma_{\xi,\psi}
+\le
+e^{C_R}
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+\nu^{\mathrm{exit}}_{\xi,\psi'}.
+```
+
+The constant `C_R` must be independent of `a`. The kernel is a proof coupling,
+not an ontic transition. It must use the original finite SU(2) conditional law.
+
+Equivalently, for a deterministic map `J`, it is enough to prove:
+
+```math
+J_{\#}\lambda_{\xi,\psi}
+\le
+e^{B_R}
+\lambda^{\mathrm{exit}}_{\xi,\mathcal N(\psi)}
+```
+
+and:
+
+```math
+S(Ju;\xi)-S(u;\xi)
+\le
+A_R,
+```
+
+with `A_R+B_R` independent of `a`.
+
+This is the exact target.
+
+### 44.2. Attempt 1: Thin Center Flip
+
+The first natural map is the raw center-sheet flip. Multiply a microscopic
+sheet of links by the center element `-1` so that the cell sign exits the pinned
+sector.
+
+This map has two virtues:
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{it is Haar-measure preserving},\\[1mm]
+2
+&
+\text{it changes the desired center parity}.
+\end{array}}
+```
+
+So its Jacobian cost is zero and the sector-exit condition is clear.
+
+But its action defect is supported on a microscopic sheet whose plaquette count
+grows as the cutoff is refined. For the Wilson action:
+
+```math
+S_{\beta}(U)
+=
+\beta
+\sum_p
+\left(
+1-\frac12\operatorname{Tr}U_p
+\right),
+```
+
+the flip changes the sign of the affected plaquette holonomies. The defect is:
+
+```math
+\Delta S_{\mathrm{thin}}(U)
+=
+\beta
+\sum_{p\in\Sigma_a}
+\operatorname{Tr}U_p,
+```
+
+up to harmless normalization conventions. Pointwise:
+
+```math
+|\Delta S_{\mathrm{thin}}(U)|
+\le
+2\beta\,|\Sigma_a|.
+```
+
+At fixed physical area, `|Sigma_a|` diverges as `a` goes to zero. Therefore this
+map gives no fixed-IR bound.
+
+**Theorem 40.210A (Thin Flip Failure).** The raw microscopic center flip is a
+valid finite-cutoff sector-exit map, but it does not prove Family A at fixed
+physical IR scale.
+
+#### Proof
+
+Haar invariance gives the Jacobian control. The center multiplication changes
+the center parity. But the only uniform action bound available from the map is
+proportional to the microscopic size of the sheet. Since that size diverges at
+fixed physical sheet area, the action-Jacobian cost is not bounded uniformly in
+`a`.
+
+This is method failure, not route failure.
+
+### 44.3. Attempt 2: Pure Gauge Collar Motion
+
+The opposite extreme is a collar gauge transformation. Let `g_x` be an SU(2)
+function supported in the collar, and define:
+
+```math
+U_{xy}
+\mapsto
+g_x U_{xy}g_y^{-1}.
+```
+
+This transformation is exactly Haar-preserving and exactly action-preserving:
+
+```math
+S(gUg^{-1};\xi)
+=
+S(U;\xi).
+```
+
+So the action-Jacobian cost is zero.
+
+But a genuine gauge transformation cannot change a gauge-invariant cell sign or
+center sheet pairing when the fixed boundary/readout package is held fixed. If
+it is identity on the relevant boundary data, it preserves the readout sector.
+If it is not identity on the boundary data, it changes the outside environment
+and is not a map inside the same conditional law.
+
+**Theorem 40.210B (Zero-Cost Gauge Motions Do Not Exit).** Pure gauge collar
+motions either preserve the pinned sector or leave the fixed conditional
+problem. They do not prove Family A.
+
+#### Proof
+
+If the gauge motion respects the fixed boundary/readout data, all gauge-invariant
+cell quantities and center pairings are unchanged. Hence the image remains in
+the pinned class. If the gauge motion changes the boundary/readout data, the map
+no longer sends configurations within the conditional law indexed by the same
+outside environment `xi`. This violates the fixed package. Thus the zero-cost
+motion is not an admissible sector-exit proof.
+
+This gives the first important obstruction:
+
+```math
+\boxed{
+\text{zero cost means gauge, and gauge does not exit.}
+}
+```
+
+### 44.4. Attempt 3: Smooth Thick Background Insertion
+
+The real Family A candidate is a smooth, non-gauge background insertion spread
+through the physical collar. Let:
+
+```math
+H_{R,a}
+```
+
+be a deterministic background link field supported in
+`Col_{\delta_R}(Q_\sigma)`. Define:
+
+```math
+J_H(U)
+=
+H_{R,a}U
+```
+
+with left or right multiplication chosen linkwise so that the resulting
+configuration lies in the center-exit class and the readout remains in a nearby
+bin.
+
+The Haar Jacobian is again one:
+
+```math
+(J_H)_{\#}\lambda
+=
+\lambda.
+```
+
+Thus Family A reduces to the action defect:
+
+```math
+S(HU;\xi)-S(U;\xi).
+```
+
+If one could prove:
+
+```math
+S(HU;\xi)-S(U;\xi)
+\le
+C_R
+```
+
+on pinned-mass carrying bins outside a vanishing environment event, then Family A
+would prove Fork P.
+
+This is not formal. For arbitrary microscopic configurations, the pointwise
+defect of a fixed smooth background can still be bounded only by the number of
+microscopic plaquettes times a small per-plaquette change. That worst-case bound
+diverges.
+
+Thus the smooth thick insertion gives the exact possible proof input:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{typical pinned configurations must be stable under a}\\[1mm]
+\text{fixed physical non-gauge collar insertion.}
+\end{array}}
+```
+
+Call this input **collar insertion stability**.
+
+**Theorem 40.210C (Smooth Thick Insertion Reduction).** A smooth thick
+background insertion proves Family A if and only if it satisfies collar
+insertion stability on pinned-mass carrying bins.
+
+#### Proof
+
+Haar invariance supplies the reference-measure bound. The designed background
+supplies the sector-exit condition and nearby-bin condition. The only remaining
+condition in Theorem 40.207A is an `a`-uniform action defect bound. That is
+exactly collar insertion stability.
+
+The theorem is an equivalence for this map class. It is not an unconditional
+proof of the estimate.
+
+### 44.5. Attempt 4: Randomized Thick Background Insertion
+
+The deterministic smooth insertion may fail because it has a bad cross term
+against the microscopic field. A natural repair is to randomize the orientation
+or carrier inside the collar.
+
+Let `theta` be a random finite-dimensional collar parameter, and let:
+
+```math
+H_{\theta,R,a}
+```
+
+be a family of thick sector-exit backgrounds. Define the proof kernel:
+
+```math
+K(U,dU')
+=
+\int
+\mathbf 1_{\{H_{\theta,R,a}U\in dU'\}}
+d\Theta_R(\theta).
+```
+
+Here `Theta_R` is fixed at physical scale and independent of `a`.
+
+This kernel is still Barandes aligned: it is a proof coupling built from the
+finite SU(2) law, not an ontic stochastic dynamics.
+
+Assume each insertion in the family sends the pinned bin into nearby exit bins:
+
+```math
+H_{\theta,R,a}
+\left(
+\mathcal B^\sigma_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi=\psi\}
+\right)
+\subset
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi\in\mathcal N_Q(\psi)\}.
+```
+
+The hoped-for estimate is a pointwise-in-`U` averaged Boltzmann-ratio lower
+bound on the pinned source bin:
+
+```math
+\int
+\exp
+\left(
+-
+S(H_{\theta,R,a}U;\xi)
++
+S(U;\xi)
+\right)
+d\Theta_R(\theta)
+\ge
+e^{-C_R}.
+```
+
+If this holds for every `U` in the relevant pinned-mass carrying bins outside a
+vanishing environment event, then Family A proves Fork P.
+
+**Theorem 40.210D (Randomized Insertion Criterion).** If the randomized thick
+insertion satisfies the nearby-exit inclusion and the averaged Boltzmann-ratio
+lower bound above pointwise on pinned-mass carrying bins, uniformly in `a`, then
+it proves Fork P.
+
+#### Proof
+
+Integrate the averaged Boltzmann-ratio bound over a pinned bin:
+
+```math
+\int_{\mathcal B^\sigma\cap\{\Psi=\psi\}}
+e^{-S(U;\xi)}
+d\lambda(U)
+\le
+e^{C_R}
+\int_{\mathcal B^\sigma\cap\{\Psi=\psi\}}
+\int
+e^{-S(H_{\theta,R,a}U;\xi)}
+d\Theta_R(\theta)
+d\lambda(U).
+```
+
+For each fixed `theta`, Haar invariance changes variables from `U` to
+`V=H_{theta,R,a}U`. The nearby-exit inclusion sends the image into the nearby
+exit bins, hence:
+
+```math
+\int_{\mathcal B^\sigma\cap\{\Psi=\psi\}}
+e^{-S(H_{\theta,R,a}U;\xi)}
+d\lambda(U)
+\le
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+W^{\mathrm{exit}}_a(\xi,\psi').
+```
+
+Averaging in `theta` preserves the same bound. Therefore:
+
+```math
+W^\sigma_a(\xi,\psi)
+\le
+e^{C_R}
+\sum_{\psi'\in\mathcal N_Q(\psi)}
+W^{\mathrm{exit}}_a(\xi,\psi').
+```
+
+This is exactly the nearby-bin mass comparison, so Fork P follows.
+
+This is the strongest Family A proof attempt because it allows entropy inside
+the transport itself.
+
+But it still leaves a genuine SU(2) estimate: one must prove the averaged
+Boltzmann ratio does not collapse. The worst-case pointwise bound is not enough.
+One needs a real cancellation, convexity, character-positivity, or typicality
+estimate inside the fixed collar.
+
+#### 44.5.1. Action-Defect Decomposition
+
+The randomized criterion becomes concrete only after the action defect is
+expanded. Write:
+
+```math
+\Delta_\theta S(U;\xi)
+=
+S(H_{\theta,R,a}U;\xi)-S(U;\xi).
+```
+
+For a thick insertion close to a smooth physical background, the defect should
+be organized as:
+
+```math
+\Delta_\theta S(U;\xi)
+=
+A_{\theta,R,a}(\xi)
++
+L_{\theta,R,a}(U;\xi)
++
+Q_{\theta,R,a}(U;\xi)
++
+\operatorname{Rem}_{\theta,R,a}(U;\xi).
+```
+
+Here:
+
+```math
+\boxed{
+\begin{array}{ll}
+A_{\theta,R,a}
+&
+\text{is the background self-cost},\\[1mm]
+L_{\theta,R,a}
+&
+\text{is the linear cross term with the microscopic collar field},\\[1mm]
+Q_{\theta,R,a}
+&
+\text{is the quadratic response term},\\[1mm]
+\operatorname{Rem}_{\theta,R,a}
+&
+\text{is the higher-order or lattice-discretization remainder}.
+\end{array}}
+```
+
+The worst-case bound fails because `L` can be summed over many microscopic
+plaquettes. The randomized route is viable only if the average over `theta`
+neutralizes this term or turns it into a bounded physical observable.
+
+The desired estimate is:
+
+```math
+\int
+\exp
+\left(
+-\Delta_\theta S(U;\xi)
+\right)
+d\Theta_R(\theta)
+\ge
+e^{-C_R}.
+```
+
+The problem is therefore no longer vague. It is:
+
+```math
+\boxed{
+\text{control the logarithmic moment of }-\Delta_\theta S
+\text{ under fixed physical randomization.}
+}
+```
+
+#### 44.5.2. A Positive Cancellation Lemma
+
+The cleanest positive mechanism is exact cancellation of the dangerous linear
+term.
+
+**Lemma 40.210E (Randomized Cross-Term Cancellation).** Suppose that for all
+relevant pinned configurations:
+
+```math
+A_{\theta,R,a}(\xi)
+\le
+A_R,
+```
+
+and:
+
+```math
+Q_{\theta,R,a}(U;\xi)
++
+\operatorname{Rem}_{\theta,R,a}(U;\xi)
+\le
+B_R.
+```
+
+Assume also that the randomization law satisfies:
+
+```math
+\int
+\exp
+\left(
+-L_{\theta,R,a}(U;\xi)
+\right)
+d\Theta_R(\theta)
+\ge
+e^{-D_R}
+```
+
+uniformly in `a`, `U`, and `xi` on pinned-mass carrying bins. Then the randomized
+Boltzmann-ratio criterion holds with:
+
+```math
+C_R=A_R+B_R+D_R.
+```
+
+#### Proof
+
+Using the decomposition:
+
+```math
+\exp(-\Delta_\theta S)
+\ge
+e^{-A_R-B_R}
+\exp(-L_{\theta,R,a}),
+```
+
+and integrating over `theta` gives:
+
+```math
+\int \exp(-\Delta_\theta S)d\Theta_R(\theta)
+\ge
+e^{-A_R-B_R-D_R}.
+```
+
+This is exactly the averaged Boltzmann-ratio lower bound.
+
+This lemma shows precisely what Family A needs from randomization. It does not
+need every insertion to be cheap. It needs the dangerous cross term to be
+averagably harmless.
+
+#### 44.5.3. How The Cancellation Could Happen
+
+There are only a few plausible fixed-IR mechanisms.
+
+First, **group-orbit cancellation**. If `theta` ranges over a compact group
+orbit and `L_theta` changes sign or rotates through a zero-mean representation,
+then convexity or character orthogonality may yield:
+
+```math
+\int \exp(-L_\theta)d\Theta(\theta)
+\ge
+1
+```
+
+after the correct centering.
+
+Second, **paired-carrier cancellation**. If each insertion has a partner
+`theta*` with:
+
+```math
+L_{\theta^*}(U;\xi)
+=
+-L_{\theta}(U;\xi),
+```
+
+then:
+
+```math
+\frac12
+\left(
+e^{-L_\theta}
++
+e^{L_\theta}
+\right)
+\ge
+1.
+```
+
+This is a very strong mechanism because it does not require `L_theta` to be
+small.
+
+Third, **physical-observable reduction**. If the full microscopic linear term is
+actually the discretization of a fixed physical collar observable:
+
+```math
+L_{\theta,R,a}(U;\xi)
+=
+\ell_{\theta,R}(\mathcal O_R(U,\xi))
++
+o_a(1),
+```
+
+and `O_R` is tight under the pinned law, then the average can be bounded using
+a fixed physical moment estimate. This is weaker than exact cancellation but
+more realistic.
+
+The first two mechanisms would give a proof close to Family A. The third
+connects Family A to Family C, because it identifies the dangerous term as an
+effective boundary or collar observable.
+
+#### 44.5.4. The Surviving Obstruction
+
+If none of the mechanisms above holds, the obstruction is explicit. There is a
+sequence of pinned configurations or pinned-mass carrying bins for which:
+
+```math
+\int
+\exp
+\left(
+-L_{\theta,R,a}(U;\xi)
+\right)
+d\Theta_R(\theta)
+\to
+0.
+```
+
+If, in addition, the bounded pieces `A`, `Q`, and `Rem` cannot compensate this
+collapse, then the randomized thick insertion fails.
+
+This is still not route falsification. It is a **linear-response obstruction**
+for this insertion family:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the pinned microscopic collar field aligns with every admissible}\\[1mm]
+\text{thick center-exit insertion strongly enough to suppress its weight.}
+\end{array}}
+```
+
+To turn this into Fork N, one must prove that every complete insertion family
+has such a collapsing linear response, or directly prove environment-level
+collapse of `Z_exit/Z_sigma`.
+
+#### 44.5.5. Result Of The Expanded Attempt 4
+
+The expanded randomized route has a precise pass/fail boundary:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}
+&
+\text{prove cross-term cancellation or fixed physical moment control},\\[1mm]
+\mathrm{FAIL}_{\mathrm{method}}
+&
+\text{show the averaged linear response collapses for this family},\\[1mm]
+\mathrm{FAIL}_{\mathrm{route}}
+&
+\text{show all complete insertion families have collapsing response}.
+\end{array}}
+```
+
+Thus the next Family A calculation is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{compute the linear cross term }L_{\theta,R,a}\\[1mm]
+\text{and test group-orbit, paired-carrier, or physical-observable cancellation.}
+\end{array}}
+```
+
+#### 44.5.6. Exit-Preserving Paired Thick Insertion Test
+
+The simplest nontrivial randomization is a two-point family:
+
+```math
+\Theta_R
+=
+\frac12\delta_{+}
++
+\frac12\delta_{-},
+\qquad
+H_{+,R,a},\ H_{-,R,a}.
+```
+
+The pair must satisfy three requirements.
+
+First, both insertions must carry the same center-exit charge:
+
+```math
+H_{\pm,R,a}
+\left(
+\mathcal B^\sigma_{Q_\sigma,a}(\xi)
+\cap
+\{\Psi=\psi\}
+\right)
+\subset
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi).
+```
+
+Second, both insertions must stay in nearby physical readout bins:
+
+```math
+\Psi(H_{\pm,R,a}U)
+\in
+\mathcal N_Q(\Psi(U)).
+```
+
+Third, they must reverse the dangerous linear response:
+
+```math
+L_{-,R,a}(U;\xi)
+=
+-
+L_{+,R,a}(U;\xi)
++
+E_{R,a}(U;\xi),
+```
+
+where the error is bounded by a fixed physical constant:
+
+```math
+|E_{R,a}(U;\xi)|
+\le
+E_R.
+```
+
+If the nonlinear pieces are also bounded:
+
+```math
+Q_{\pm,R,a}(U;\xi)
++
+\operatorname{Rem}_{\pm,R,a}(U;\xi)
+\le
+B_R,
+```
+
+and:
+
+```math
+A_{\pm,R,a}(\xi)
+\le
+A_R,
+```
+
+then the pair proves the randomized criterion.
+
+**Theorem 40.210F (Exit-Preserving Pair Criterion).** An exit-preserving pair
+with bounded nonlinear terms and sign-reversed linear response up to bounded
+error proves Fork P.
+
+#### Proof
+
+The averaged Boltzmann factor is:
+
+```math
+\frac12
+e^{-\Delta_+S}
++
+\frac12
+e^{-\Delta_-S}.
+```
+
+Using the bounds on `A`, `Q`, and `Rem`, this is bounded below by:
+
+```math
+e^{-A_R-B_R}
+\frac12
+\left(
+e^{-L_+}
++
+e^{-L_-}
+\right).
+```
+
+The sign-reversal condition gives:
+
+```math
+e^{-L_-}
+\ge
+e^{-E_R}e^{L_+}.
+```
+
+Therefore:
+
+```math
+\frac12
+\left(
+e^{-L_+}
++
+e^{-L_-}
+\right)
+\ge
+\frac12
+\left(
+e^{-L_+}
++
+e^{-E_R}e^{L_+}
+\right)
+\ge
+e^{-E_R/2}.
+```
+
+Thus the averaged Boltzmann factor is bounded below by:
+
+```math
+e^{-A_R-B_R-E_R/2}.
+```
+
+Theorem 40.210D then proves Fork P.
+
+The critical compatibility question is now exact:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{can one reverse the SO(3)/coset linear response}\\[1mm]
+\text{without reversing the center-exit charge?}
+\end{array}}
+```
+
+If the answer is yes and the nonlinear terms are bounded, Family A succeeds. If
+the answer is no for all such pairs, paired cancellation is unavailable, but the
+randomized/group-orbit or physical-observable routes may still remain.
+
+#### 44.5.7. Center-Coset Pair Compatibility Test
+
+The paired route needs one structural fact: reverse the coset response without
+reversing the center-exit charge.
+
+Write a thick insertion schematically as:
+
+```math
+H_{\pm,R,a}
+=
+C_{R,a}\,V_{\pm,R,a}.
+```
+
+Here `C_R,a` is the center-carrier part that creates the exit class. The factors
+`V_+` and `V_-` are SU(2) lifts of SO(3)/coset orientations supported in the same
+physical collar.
+
+The desired pair is:
+
+```math
+V_{-,R,a}
+=
+V_{+,R,a}^{-1}
+```
+
+or, more generally, an orientation reversal with the same first-order effect.
+The center carrier is kept fixed:
+
+```math
+C_{-,R,a}
+=
+C_{+,R,a}
+=
+C_{R,a}.
+```
+
+This gives the center-side condition:
+
+```math
+[H_{+,R,a}]_{\mathrm{cen}}
+=
+[H_{-,R,a}]_{\mathrm{cen}}
+=
+[C_{R,a}]_{\mathrm{cen}}.
+```
+
+Thus both insertions have the same center-exit charge if the readout depends
+only on this fixed center carrier and the coset factors are center-neutral.
+
+The coset-side condition is different. Linearizing:
+
+```math
+V_{+,R,a}
+=
+\exp X_{R,a},
+\qquad
+V_{-,R,a}
+=
+\exp(-X_{R,a})
++
+\operatorname{Err}_{R,a}.
+```
+
+If the center carrier contributes the same nonreversing part to both insertions,
+then the linear terms split as:
+
+```math
+L_\pm
+=
+L_{\mathrm{cen}}
+\pm
+L_{\mathrm{cos}}
++
+L_{\mathrm{mix},\pm}.
+```
+
+Therefore exact sign reversal:
+
+```math
+L_-
+=
+-L_+
++
+O_R(1)
+```
+
+requires:
+
+```math
+2L_{\mathrm{cen}}
++
+L_{\mathrm{mix},+}
++
+L_{\mathrm{mix},-}
+=
+O_R(1).
+```
+
+This is the compatibility obstruction. Keeping the same center carrier may
+force a common linear term that does not reverse under coset inversion.
+
+**Theorem 40.210G (Center-Coset Pair Compatibility).** The center-coset paired
+construction proves the sign-reversal hypothesis of Theorem 40.210F if and only
+if the common center-carrier linear term and the symmetric mixed linear term are
+bounded at fixed physical scale:
+
+```math
+2L_{\mathrm{cen}}
++
+L_{\mathrm{mix},+}
++
+L_{\mathrm{mix},-}
+=
+O_R(1)
+```
+
+on pinned-mass carrying bins. Under this condition, paired cancellation works
+provided the nonlinear terms are also bounded.
+
+#### Proof
+
+The center-exit charge is fixed by `C_R,a` because both insertions use the same
+center carrier. Coset inversion changes the sign of the odd coset contribution
+to first order. The sum:
+
+```math
+L_+ + L_-
+```
+
+is precisely the nonreversing center part plus the symmetric mixed part. The
+sign-reversal condition from Theorem 40.210F is equivalent to this sum being
+bounded. The paired criterion then applies.
+
+This theorem clarifies the fork.
+
+If:
+
+```math
+L_{\mathrm{cen}}
+=
+O_R(1)
+```
+
+and the mixed symmetric part is bounded, then one can reverse the coset response
+without losing the center-exit charge.
+
+If:
+
+```math
+L_{\mathrm{cen}}
+```
+
+itself has microscopic-area growth on pinned-mass carrying bins, then coset
+pairing cannot cancel it. The paired route fails for a structural reason: the
+piece that performs the center exit also carries an uncancelled linear action
+response.
+
+The next calculation is therefore:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{split the linear term into center, coset, and mixed parts,}\\[1mm]
+\text{then prove or falsify boundedness of the nonreversing center part.}
+\end{array}}
+```
+
+#### 44.5.8. Center, Coset, And Mixed Split Of The Linear Term
+
+We now carry out that split. For the paired insertion:
+
+```math
+H_{\pm,R,a}
+=
+C_{R,a}V_{\pm,R,a},
+```
+
+let `C_{p,R,a}` be the plaquette factor generated by the center carrier and let
+the coset factors be linearized as:
+
+```math
+V_{\pm,p,R,a}
+=
+\exp
+\left(
+\pm X_{p,R,a}
+\right)
+```
+
+up to higher-order collar errors. Then the plaquette insertion factor has the
+form:
+
+```math
+M_{\pm,p}
+=
+C_{p,R,a}
+\left(
+1\pm X_{p,R,a}
+\right)
++
+Y_{\mathrm{mix},\pm,p,R,a},
+```
+
+where `Y_mix` collects commutators, ordering defects, and higher-order terms.
+Substituting into the finite-cutoff Wilson defect gives:
+
+```math
+L_\pm(U;\xi)
+=
+L_{\mathrm{cen}}(U;\xi)
+\pm
+L_{\mathrm{cos}}(U;\xi)
++
+L_{\mathrm{mix},\pm}(U;\xi),
+```
+
+with:
+
+```math
+L_{\mathrm{cen}}(U;\xi)
+=
+\frac{\beta}{2}
+\sum_p
+\operatorname{ReTr}
+\left(
+\left(
+1-C_{p,R,a}
+\right)
+U_p
+\right),
+```
+
+and:
+
+```math
+L_{\mathrm{cos}}(U;\xi)
+=
+-
+\frac{\beta}{2}
+\sum_p
+\operatorname{ReTr}
+\left(
+C_{p,R,a}X_{p,R,a}U_p
+\right).
+```
+
+The mixed term is:
+
+```math
+L_{\mathrm{mix},\pm}(U;\xi)
+=
+-
+\frac{\beta}{2}
+\sum_p
+\operatorname{ReTr}
+\left(
+Y_{\mathrm{mix},\pm,p,R,a}U_p
+\right).
+```
+
+This is the promised split. The coset term reverses sign under
+`X -> -X`. The center term does not. The paired cancellation theorem therefore
+cannot remove `L_cen`; it can only remove the odd coset response.
+
+**Theorem 40.210H (Nonreversing Center Term Is The Paired Obstruction).** The
+paired insertion criterion reduces to the boundedness of:
+
+```math
+2L_{\mathrm{cen}}
++
+L_{\mathrm{mix},+}
++
+L_{\mathrm{mix},-}
+```
+
+on pinned-mass carrying bins, together with bounded nonlinear terms.
+
+#### Proof
+
+Adding the two linear responses cancels the odd coset term:
+
+```math
+L_+ + L_-
+=
+2L_{\mathrm{cen}}
++
+L_{\mathrm{mix},+}
++
+L_{\mathrm{mix},-}.
+```
+
+The sign-reversal condition in Theorem 40.210F is precisely that this sum be
+bounded at fixed physical scale. The paired criterion then applies.
+
+#### 44.5.9. Thin Center Carriers Fail The Bound
+
+For a raw center-sheet carrier, the plaquette carrier is:
+
+```math
+C_{p,R,a}
+=
+-1
+```
+
+on an active microscopic sheet `Sigma_a`, and `C_p=1` off the sheet. Then:
+
+```math
+L_{\mathrm{cen}}(U;\xi)
+=
+\beta
+\sum_{p\in\Sigma_a}
+\operatorname{ReTr}U_p
+```
+
+up to the harmless normalization convention for the Wilson action.
+
+If a pinned bin allows configurations with:
+
+```math
+\operatorname{ReTr}U_p\ge \tau_R>0
+```
+
+on a positive fraction of `Sigma_a`, then:
+
+```math
+L_{\mathrm{cen}}(U;\xi)
+\ge
+c_R\beta|\Sigma_a|.
+```
+
+At fixed physical sheet area, `|Sigma_a|` diverges as `a -> 0`. Therefore:
+
+```math
+L_{\mathrm{cen}}
+```
+
+is not bounded at fixed physical IR scale for the raw thin center carrier.
+
+**Theorem 40.210I (Thin Center Carrier Falsifies Paired Cancellation).** The
+exit-preserving paired cancellation route fails for raw microscopic center
+carriers on any pinned-mass carrying set where the active plaquettes are not
+forced to have vanishing average trace.
+
+#### Proof
+
+The exact expression for `L_cen` above is common to both members of the pair.
+It is not reversed by coset inversion. On the stated pinned set it grows at
+least like `beta |Sigma_a|`, which is not a fixed-IR constant. Hence the
+boundedness condition of Theorem 40.210H fails.
+
+This is a method-level falsification of thin center carriers. It is not yet a
+falsification of all thick-collar carriers.
+
+#### 44.5.10. Thick Center Carriers Reduce To A New Stability Input
+
+A genuinely thick center carrier cannot be judged by the thin-sheet formula. Its
+plaquette carrier should be spread across the physical collar, so the relevant
+condition is the bounded positive part:
+
+```math
+\left(
+L_{\mathrm{cen}}(U;\xi)
+\right)_+
+\le
+C_R
+```
+
+on pinned-mass carrying bins, or the weaker averaged form:
+
+```math
+\int
+\exp
+\left(
+-L_{\mathrm{cen}}(U;\xi)
+\right)
+d\Theta_R
+\ge
+e^{-C_R}
+```
+
+after any remaining randomization. If this holds and the mixed symmetric term is
+bounded, then paired cancellation can remove the odd coset response.
+
+**Theorem 40.210J (Thick Center Carrier Stability Criterion).** A thick
+center-coset pair proves the paired insertion route if:
+
+```math
+\left(
+2L_{\mathrm{cen}}
++
+L_{\mathrm{mix},+}
++
+L_{\mathrm{mix},-}
+\right)_+
+\le
+C_R
+```
+
+on pinned-mass carrying bins and the nonlinear terms are bounded.
+
+#### Proof
+
+This is exactly Theorem 40.210H with the observation that only the positive part
+of the nonreversing term can suppress the Boltzmann lower bound. Negative values
+help the estimate.
+
+The criterion is fixed-IR and Barandes aligned, but it is not formal. It is the
+remaining SU(2) weight estimate for the center carrier.
+
+#### 44.5.11. Decision Of The Split
+
+The center/coset/mixed split gives a clear result:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}
+&
+\text{the odd coset linear term can be cancelled by pairing},\\[1mm]
+\mathrm{PROVED}_{-}
+&
+\text{raw thin center carriers have unbounded nonreversing center response},\\[1mm]
+\mathrm{OPEN}_{+}
+&
+\text{genuinely thick center carriers require a new center-stability estimate},\\[1mm]
+\mathrm{NO}
+&
+\text{coset pairing cannot cancel the common center-carrier response}.
+\end{array}}
+```
+
+Thus the paired route succeeds only if the center-exit charge can be carried by
+a thick center carrier whose nonreversing action response is fixed-IR bounded.
+If every center-exit carrier has thin-sheet behavior on pinned-mass carrying
+sets, Family A fails and the proof must move to Family B or Family C.
+
+#### 44.5.12. Target 40.210K: Thick Center Carrier Dichotomy
+
+We now test whether the phrase "thick center carrier" can mean something
+stronger than a thin center sheet hidden inside a physical collar.
+
+There are two possible meanings.
+
+First, the carrier may have a genuinely center-valued plaquette projection.
+That is, after choosing a section, the center part contains a `Z_2` plaquette
+cochain:
+
+```math
+C^{\mathrm{cen}}_{p,R,a}
+\in
+\left\{
++1,-1
+\right\}.
+```
+
+Second, the carrier may be smooth as an `SU(2)` field and carry the center exit
+only through a global holonomy or endpoint mismatch. In that case there is no
+literal center plaquette sheet; the center charge is represented by coset
+interpolation and by the mixed terms in the section-dependent split.
+
+These two cases have different consequences.
+
+**Theorem 40.210K (Fixed-IR Thick Center Carrier Dichotomy).** Let the insertion
+be fixed-IR admissible and Barandes aligned: the physical collar, readout,
+boundary conditions, and constants are fixed before `a -> 0`, and the insertion
+is only a proof map on the original finite `SU(2)` configuration law. Then one
+of the following holds.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{HARD}
+&
+\text{the carrier contains a nontrivial }Z_2\text{ plaquette sheet,}\\[1mm]
+\mathrm{SOFT}
+&
+\text{the carrier has no robust center plaquette sheet.}
+\end{array}}
+```
+
+In the hard-center case, any boundary-stable center-exit carrier has a
+microscopic plaquette support whose size grows like the lattice area of a fixed
+physical cross-section. Consequently the nonreversing center term is not
+uniformly bounded on pinned-mass bins unless an additional cancellation or
+suppression estimate is assumed.
+
+In the soft-`SU(2)` case, the carrier is not a bounded center response theorem.
+It is a coset or mixed stability problem: the center charge has been moved out
+of the discrete center plaquette coordinate and into the smooth `SU(2)`
+interpolation.
+
+#### Proof
+
+Assume first that the carrier has a robust center plaquette projection. Robust
+means that the center exit is detected by the fixed physical readout and cannot
+be removed by a local center coboundary supported strictly inside one microscopic
+neighborhood. This is the fixed-IR version of the earlier coboundary barrier:
+local center coboundaries have trivial sheet pairing, so a boundary-stable exit
+must cross the physical collar.
+
+Thus the support:
+
+```math
+\Sigma_a
+=
+\left\{
+p:
+C^{\mathrm{cen}}_{p,R,a}=-1
+\right\}
+```
+
+cannot be confined to a bounded number of plaquettes. It must contain a lattice
+representative of a fixed physical separating sheet, or an equivalent chain
+with the same boundary pairing. By the lattice isoperimetric lower bound inside
+the fixed collar:
+
+```math
+|\Sigma_a|
+\ge
+c_R a^{-2}.
+```
+
+On pinned-mass carrying bins that do not force the average trace on this sheet
+to vanish, Theorem 40.210I gives:
+
+```math
+\left(
+L_{\mathrm{cen}}
+\right)_+
+\ge
+c'_R\beta|\Sigma_a|.
+```
+
+This is not bounded independently of `a`. Therefore a hard center carrier does
+not solve the paired route by thickness alone. It either fails, or it needs a
+new estimate proving that the original `SU(2)` conditional law suppresses the
+positive center response on the entire required sheet.
+
+Now assume that no such robust center plaquette sheet exists. Then the insertion
+can still change the center exit only because the `SU(2)` variables interpolate
+between center-related boundary data. The obstruction is no longer the
+center-valued plaquette cochain `C_cen`; it lies in the section dependence, the
+coset interpolation, and the mixed commutators. In the notation of the split:
+
+```math
+L_+ + L_-
+=
+2L_{\mathrm{cen}}
++
+L_{\mathrm{mix},+}
++
+L_{\mathrm{mix},-},
+```
+
+the name `L_cen` is then not a literal discrete-center sheet cost. It is the
+part of the chosen section that records how the smooth interpolation crosses
+the center chart. Proving boundedness is exactly the mixed or soft-transport
+problem, not a center-only theorem.
+
+This proves the dichotomy.
+
+#### Consequence
+
+The attempted thick-center escape does not produce a third possibility. It
+produces either:
+
+```math
+\boxed{
+\text{a hard }Z_2\text{ sheet, hence the thin-sheet divergence returns,}
+}
+```
+
+or:
+
+```math
+\boxed{
+\text{a soft }SU(2)\text{ interpolation, hence a coset/mixed stability problem.}
+}
+```
+
+Therefore the phrase "thick center carrier" is only useful if it is accompanied
+by a concrete fixed-IR estimate for the original finite `SU(2)` conditional
+law. Without that estimate, Attempt 4 does not close Family A.
+
+#### Boundary Of The Result
+
+The dichotomy does not prove that every possible thick insertion fails. It
+proves something narrower and more useful:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{a genuinely center-valued carrier cannot be saved merely by placing it}\\[1mm]
+\text{inside a physical collar; its microscopic sheet response remains.}
+\end{array}}
+```
+
+The only surviving version of Attempt 4 is the soft-`SU(2)` version. That
+version must be investigated as a mixed stability estimate, not as a pure center
+boundedness estimate.
+
+#### 44.5.13. Target 40.210L: Soft-`SU(2)` Mixed-Stability Test
+
+`V4P40-TARGET-40210L-SOFT-SU2-MIXED-STABILITY-TEST`.
+
+We now test the surviving soft branch of Attempt 4. The hoped-for mechanism is
+real: a smooth path in `SU(2)` can run from `1` to `-1`, and its inverse path
+also ends at `-1`. Thus a paired carrier may keep the same center exit while
+reversing the first-order coset response.
+
+The question is whether the symmetric cost left after this reversal is bounded
+at fixed physical IR scale.
+
+Let the paired soft carrier have plaquette insertions:
+
+```math
+M_{\pm,p}
+=
+\exp
+\left(
+\pm A_{p,R,a}
+\right)
+```
+
+up to higher-order ordering errors, with no robust `Z_2` plaquette sheet. The
+finite-cutoff Wilson action defect is:
+
+```math
+\Delta_\pm S(U)
+=
+-
+\frac{\beta}{2}
+\sum_p
+\operatorname{ReTr}
+\left(
+\left(
+M_{\pm,p}-1
+\right)
+U_p
+\right).
+```
+
+Adding the two paired defects cancels the odd term and leaves:
+
+```math
+\Delta_+S(U)+\Delta_-S(U)
+=
+-
+\frac{\beta}{2}
+\sum_p
+\operatorname{ReTr}
+\left(
+A_{p,R,a}^{2}U_p
+\right)
++
+\operatorname{Err}_{R,a}(U).
+```
+
+Thus the deterministic paired route requires a bound of the form:
+
+```math
+\left(
+\beta
+\sum_p
+\left\|A_{p,R,a}\right\|^2
++\operatorname{Err}_{R,a}(U)
+\right)_+
+\le
+C_R.
+```
+
+For a smooth physical carrier, `A_p` is the lattice plaquette curvature of the
+background. The sum:
+
+```math
+\sum_p
+\left\|A_{p,R,a}\right\|^2
+```
+
+converges to the physical Yang-Mills energy of the inserted background inside
+the collar. Therefore the symmetric cost is controlled by:
+
+```math
+\beta(a)\,E_R(H),
+```
+
+where `E_R(H)` is the physical curvature energy of the soft carrier.
+
+This is the decisive point. Along a continuum route, `beta(a)` is not a fixed
+physical constant. Therefore a soft carrier with:
+
+```math
+E_R(H)>0
+```
+
+does not give an `a`-uniform deterministic bound. Pairing cancels the linear
+response, but it exposes the classical quadratic cost of the inserted
+background.
+
+**Theorem 40.210L (Soft Carrier Deterministic Failure).** A deterministic
+soft-`SU(2)` paired carrier proves the mixed-stability condition of Theorem
+40.210H only if one of the following extra inputs holds:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FLAT}
+&
+\text{the carrier has vanishing physical curvature energy},\\[1mm]
+\mathrm{SMALL}
+&
+\text{the carrier energy is }O(\beta(a)^{-1}),\\[1mm]
+\mathrm{AVERAGED}
+&
+\text{the original SU(2) law supplies a conditional cancellation estimate}.
+\end{array}}
+```
+
+Without one of these inputs, the deterministic soft paired carrier is not
+fixed-IR bounded.
+
+#### Proof
+
+The paired expansion above shows that the odd first-order term cancels. The
+common second-order term is controlled by the physical curvature energy of the
+carrier. If this energy has a positive fixed lower bound, the common action
+response grows like `beta(a)`. This violates the fixed-IR boundedness required
+by Theorem 40.210H.
+
+If the carrier energy is `O(beta(a)^-1)`, the quadratic cost can remain bounded,
+but that is an additional small-energy construction. It is not supplied by the
+existence of a center exit.
+
+If the carrier has exactly zero curvature energy, it is locally pure gauge.
+Then there are only three possibilities:
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{it respects the fixed boundary/readout data and does not exit},\\[1mm]
+2
+&
+\text{it changes boundary/readout data and leaves the conditional problem},\\[1mm]
+3
+&
+\text{it is implemented with a cut, which reintroduces a hard center sheet}.
+\end{array}}
+```
+
+The first case is Attempt 2. The second is not Barandes aligned, because it is
+not a proof map inside the original finite conditional law. The third is the
+hard-center case of Theorem 40.210K. Hence flatness does not close Attempt 4.
+
+The only remaining possibility is the averaged case: the finite `SU(2)`
+conditional law itself must make the positive mixed response harmless. That is
+a genuine conditional estimate, not a formal property of smooth `SU(2)`
+interpolation.
+
+#### Consequence For Attempt 4
+
+Target 40.210L changes the status of Attempt 4:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{DEAD}
+&
+\text{hard center carrier with microscopic sheet response},\\[1mm]
+\mathrm{DEAD}
+&
+\text{deterministic soft carrier with positive physical curvature energy},\\[1mm]
+\mathrm{GAUGE}
+&
+\text{flat soft carrier, unless it changes boundary data or creates a cut},\\[1mm]
+\mathrm{OPEN}
+&
+\text{conditional averaged mixed-stability under the original SU(2) law}.
+\end{array}}
+```
+
+Thus Attempt 4 is not fully dead, but its surviving form is no longer a
+constructive deterministic carrier. It is the following estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove that the original finite SU(2) conditional law}\\[1mm]
+\text{averages the positive paired mixed response to a fixed-IR constant.}
+\end{array}}
+```
+
+This is exactly the same fixed-IR and Barandes alignment contract as before:
+the physical collar and readout are fixed before `a -> 0`, and the averaging is
+with respect to the original finite `SU(2)` configuration law, not a hidden
+Markov dynamics or an added center-sector tilt.
+
+#### Boundary Of The Falsification
+
+The theorem falsifies the deterministic soft-carrier proof class. It does not
+falsify all proof kernels. A kernel that samples soft carriers depending on the
+conditioned environment, or a proof that integrates over collar configurations
+directly, might still prove the averaged mixed-stability estimate.
+
+But such a proof would belong to the conditional entropy or carrier-counting
+families, not to a simple paired-background construction. In that sense, Target
+40.210L exhausts the last elementary version of Attempt 4.
+
+### 44.6. Attempt 5: Flow Or Heat-Kernel Transport
+
+Another possible repair is to flow the configuration, insert a smooth
+center-exit background, and then compare back. This resembles a heat-kernel or
+gradient-flow transport.
+
+The difficulty is that flow is not Haar-measure preserving on the finite link
+space. Its Jacobian and density distortion must be estimated. If the proof uses
+microscopic heat-bath minorization over all links in a fixed physical collar,
+the constants degrade because the number of links grows as `a` goes to zero.
+
+Thus flow transport proves Family A only under a new uniform quasi-invariance
+input:
+
+```math
+\boxed{
+\text{the flowed collar law is uniformly quasi-invariant under the exit insertion.}
+}
+```
+
+This input is essentially another version of collar insertion stability. It is
+not easier than the thick-collar free-energy estimate unless the flow produces a
+new coercive inequality.
+
+### 44.7. Can Family A Be Falsified By Constructive Failure?
+
+Not directly.
+
+The thin flip fails. Pure gauge motions do not exit. Deterministic smooth
+backgrounds require collar insertion stability. Randomized backgrounds require
+an averaged Boltzmann-ratio lower bound. Flow transport requires uniform
+quasi-invariance.
+
+These failures do not prove Fork N.
+
+To falsify Family A decisively one would need either:
+
+```math
+\boxed{
+\text{environment-level collapse of }Z^{\mathrm{exit}}/Z^\sigma,
+}
+```
+
+or:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{a completeness theorem for a constructive class,}\\[1mm]
+\text{plus divergence for every kernel in that complete class.}
+\end{array}}
+```
+
+No natural smooth or heat-kernel class is currently known to be complete in that
+sense. Therefore the present Family A investigation cannot honestly claim a
+negative theorem beyond method failure.
+
+### 44.8. Family A Decision
+
+Family A has now been pushed past the elementary transport stage:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}
+&
+\text{thin flip is finite-cutoff only and not fixed-IR},\\[1mm]
+\mathrm{PROVED}
+&
+\text{pure gauge motion has zero cost but cannot exit},\\[1mm]
+\mathrm{PROVED}_{\mathrm{cond}}
+&
+\text{smooth thick insertion proves the route iff collar stability holds},\\[1mm]
+\mathrm{DEAD}
+&
+\text{hard center paired carriers have unbounded sheet response},\\[1mm]
+\mathrm{DEAD}
+&
+\text{deterministic soft paired carriers expose positive curvature cost},\\[1mm]
+\mathrm{PROVED}_{\mathrm{cond}}
+&
+\text{randomized thick insertion proves the route iff the averaged ratio holds},\\[1mm]
+\mathrm{PROVED}_{\mathrm{cond}}
+&
+\text{flow transport proves the route iff uniform quasi-invariance holds},\\[1mm]
+\mathrm{NO}
+&
+\text{failure of these candidate maps does not falsify the ratio},\\[1mm]
+\mathrm{OPEN}_{\mathrm{entropy}}
+&
+\text{prove averaged mixed-stability under the original SU(2) law}.
+\end{array}}
+```
+
+Thus Family A has not produced an unconditional proof. More importantly, it has
+separated two notions that were previously blurred. A clever deterministic
+carrier is not enough. The hard-center version has the thin-sheet divergence,
+and the soft-`SU(2)` version has the common quadratic curvature cost. The only
+surviving proof obligation is genuinely averaged:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove that the original finite SU(2) conditional law}\\[1mm]
+\text{supplies enough carrier entropy or averaging to offset}\\[1mm]
+\text{the positive paired mixed response at fixed physical IR scale.}
+\end{array}}
+```
+
+This is still fixed-IR aligned: the collar, randomization family, readout
+battery, and constants are fixed before `a -> 0`. It is Barandes aligned:
+all maps and kernels are proof devices acting on the original finite SU(2)
+configuration law, with no hidden Markov record dynamics and no center-sector
+tilt.
+
+#### 44.8.1. Target 40.210M: Averaged Mixed-Stability As Conditional Entropy
+
+`V4P40-TARGET-40210M-AVERAGED-MIXED-STABILITY-AS-CONDITIONAL-ENTROPY`.
+
+This target records the exact handoff from Attempt 4 to the conditional entropy
+and carrier-counting routes. The surviving estimate is not the existence of one
+good deterministic carrier. It is the existence of enough admissible carriers,
+under the original finite `SU(2)` conditional law, to keep the averaged
+Boltzmann response bounded below.
+
+Let `eta` denote the remaining admissible carrier choice: a soft insertion,
+collar filling, local repair, or environment-dependent proof parameter. Let:
+
+```math
+\mathcal M_{\eta,R,a}(U;\xi)
+```
+
+be the positive paired mixed response left after all formal odd cancellations.
+For the soft paired carrier of Target 40.210L this includes the common
+quadratic curvature term and the symmetric mixed error. Define the conditional
+mixed free energy:
+
+```math
+\mathcal F_{R,a}(U;\xi)
+:=
+-
+\log
+\int
+\exp
+\left(
+-\mathcal M_{\eta,R,a}(U;\xi)
+\right)
+d\Theta_{R,a}(\eta\mid U,\xi).
+```
+
+Here `Theta` is not an ontic transition law. It is a proof disintegration of the
+same finite `SU(2)` conditional measure, or a proof kernel absolutely tied to
+that measure. This is the Barandes-alignment requirement.
+
+The surviving averaged mixed-stability estimate is exactly:
+
+```math
+\mathcal F_{R,a}(U;\xi)
+\le
+C_R
+```
+
+on the pinned-mass carrying source bins, outside a vanishing outside-environment
+event, with `C_R` independent of `a`.
+
+**Theorem 40.210M (Entropy-Energy Form Of The Surviving Attempt 4 Estimate).**
+The remaining open part of Attempt 4 is equivalent to a fixed-IR bound on the
+conditional mixed free energy `F`. In particular:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{averaged mixed-stability holds}\\[1mm]
+\Longleftrightarrow\\[1mm]
+\text{the conditional carrier entropy offsets the positive mixed response.}
+\end{array}}
+```
+
+More concretely, a sufficient condition is the existence of constants `E_R` and
+`H_R`, independent of `a`, such that for every relevant `U,xi` there is a set of
+carriers `Good_{R,a}(U,xi)` with:
+
+```math
+\mathcal M_{\eta,R,a}(U;\xi)
+\le
+E_R
+```
+
+on `Good`, and:
+
+```math
+\Theta_{R,a}
+\left(
+Good_{R,a}(U,\xi)
+\mid U,\xi
+\right)
+\ge
+e^{-H_R}.
+```
+
+Then:
+
+```math
+\mathcal F_{R,a}(U;\xi)
+\le
+E_R+H_R.
+```
+
+Conversely, if `M` is nonnegative and:
+
+```math
+\mathcal F_{R,a}(U;\xi)
+\le
+C_R,
+```
+
+then for every `t>0` the set:
+
+```math
+\left\{
+\eta:
+\mathcal M_{\eta,R,a}(U;\xi)
+\le
+C_R+t
+\right\}
+```
+
+has conditional carrier mass bounded below by a constant depending only on
+`C_R` and `t`, not on `a`. Thus a bounded averaged response always contains a
+nonvanishing low-cost carrier population at fixed physical scale.
+
+#### Proof
+
+The forward implication is just the definition of `F`. If:
+
+```math
+\int
+\exp
+\left(
+-\mathcal M_{\eta,R,a}
+\right)
+d\Theta
+\ge
+e^{-C_R},
+```
+
+then `F <= C_R`. Conversely, if `F <= C_R`, the same displayed inequality holds.
+Thus averaged mixed-stability and bounded conditional mixed free energy are the
+same statement.
+
+The sufficient entropy-energy condition follows by restricting the integral to
+`Good`:
+
+```math
+\int
+\exp
+\left(
+-\mathcal M_{\eta,R,a}
+\right)
+d\Theta
+\ge
+e^{-E_R}
+\Theta(Good)
+\ge
+e^{-E_R-H_R}.
+```
+
+For the converse low-cost population statement, use `M >= 0`. If the set
+`M <= C_R+t` had vanishing carrier mass uniformly in `a`, then the integral of
+`exp(-M)` could not stay above `e^{-C_R}`. Quantitatively:
+
+```math
+\int e^{-M}d\Theta
+\le
+\Theta(M\le C_R+t)
++
+e^{-C_R-t}.
+```
+
+Since the left side is at least `e^{-C_R}`, the low-cost set has a positive
+lower bound depending only on `C_R,t`.
+
+#### Consequence
+
+Target 40.210M is the clean handoff:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Attempt 4 is exhausted as a deterministic carrier construction;}\\[1mm]
+\text{what remains is a conditional entropy/carrier-counting estimate.}
+\end{array}}
+```
+
+If this estimate is proved, Family A closes through averaged mixed-stability.
+If it fails on positive outside-environment mass, then the Family A transport
+route has found the fixed-IR area barrier again.
+
+### 44.9. Target 40.211: Linear Cross-Term Audit For Randomized Thick Insertions
+
+`V4P40-TARGET-40211-LINEAR-CROSS-TERM-AUDIT-RANDOMIZED-THICK-INSERTIONS`.
+
+Target 40.211 carries out the calculation requested at the end of Attempt 4. It
+does not assume a continuum gauge field. It starts from the finite lattice
+Wilson action and isolates the exact microscopic term that randomization must
+neutralize.
+
+#### 44.9.1. Plaquette-Level Defect Identity
+
+Let the thick insertion act on links by:
+
+```math
+U_\ell
+\mapsto
+H_{\theta,\ell}U_\ell
+```
+
+inside the fixed physical collar, with `H_{theta,ell}=1` outside the collar.
+For each plaquette `p`, let:
+
+```math
+M_{\theta,p}(U)
+```
+
+be the ordered product obtained by inserting the `H_theta` factors into the
+plaquette product. Then:
+
+```math
+(H_\theta U)_p
+=
+M_{\theta,p}(U)\,U_p
+```
+
+after choosing a consistent convention for left/right insertion. The Wilson
+action defect is therefore:
+
+```math
+\Delta_\theta S(U;\xi)
+=
+\frac{\beta}{2}
+\sum_{p\subset \operatorname{Col}_{\delta_R}(Q_\sigma)}
+\operatorname{ReTr}
+\left(
+U_p
+-
+M_{\theta,p}(U)U_p
+\right).
+```
+
+This identity is exact at finite cutoff. The problem is not deriving it. The
+problem is controlling its logarithmic average as `a -> 0`.
+
+#### 44.9.2. Linearization And The Dangerous Term
+
+For a smooth thick insertion, write:
+
+```math
+M_{\theta,p}(U)
+=
+\exp X_{\theta,p}(U),
+```
+
+where `X_{theta,p}` is supported in the collar and is small per plaquette when
+the insertion is spread over physical thickness. Expanding:
+
+```math
+\operatorname{ReTr}
+\left(
+U_p
+-
+e^{X_{\theta,p}}U_p
+\right)
+=
+-
+\operatorname{ReTr}
+\left(
+X_{\theta,p}U_p
+\right)
+-
+\frac12
+\operatorname{ReTr}
+\left(
+X_{\theta,p}^2U_p
+\right)
+-
+R_{\theta,p}(U).
+```
+
+Thus:
+
+```math
+L_{\theta,R,a}(U;\xi)
+=
+-
+\frac{\beta}{2}
+\sum_p
+\operatorname{ReTr}
+\left(
+X_{\theta,p}(U)U_p
+\right)
+```
+
+is the dangerous linear cross term. Even if each `X_{theta,p}` is small, the
+sum is over many microscopic plaquettes in a fixed physical collar. A
+worst-case absolute-value estimate therefore sees microscopic volume and is not
+fixed-IR.
+
+The randomized insertion route must prove that `L_theta` is harmless in
+logarithmic average.
+
+#### 44.9.3. Group-Orbit Cancellation Test
+
+Suppose the randomization is a compact group orbit:
+
+```math
+\theta\in G_R,
+\qquad
+d\Theta_R=d\theta,
+```
+
+and that the linear term has the form:
+
+```math
+L_{\theta,R,a}(U;\xi)
+=
+\langle
+\operatorname{Ad}_{\theta}A_{R,a},
+B_{R,a}(U,\xi)
+\rangle.
+```
+
+If the group average of the orbit is zero:
+
+```math
+\int_{G_R}
+\operatorname{Ad}_{\theta}A_{R,a}
+d\theta
+=
+0,
+```
+
+then:
+
+```math
+\int_{G_R}
+L_{\theta,R,a}(U;\xi)
+d\theta
+=
+0.
+```
+
+By Jensen:
+
+```math
+\int_{G_R}
+\exp
+\left(
+-L_{\theta,R,a}(U;\xi)
+\right)
+d\theta
+\ge
+\exp
+\left(
+-
+\int_{G_R}
+L_{\theta,R,a}(U;\xi)d\theta
+\right)
+=
+1.
+```
+
+**Theorem 40.211A (Group-Orbit Linear Cancellation).** If the thick insertion
+family is a compact group orbit whose linear term is a zero-mean orbit as above,
+and the self-cost, quadratic term, and remainder are uniformly bounded, then
+Attempt 4 proves Fork P.
+
+#### Proof
+
+The group average gives the exponential moment lower bound with `D_R=0`. Lemma
+40.210E then gives the averaged Boltzmann-ratio bound. Theorem 40.210D gives
+Fork P.
+
+This is the cleanest positive route. Its hard requirement is not algebraic; it
+is geometric: the center-exit condition must be preserved along the group orbit.
+If most orbit points fail to land in the exit class, the cancellation is useless.
+
+#### 44.9.4. Paired-Carrier Cancellation Test
+
+A weaker but more concrete mechanism is pair symmetry. Suppose the insertion
+family can be partitioned into pairs:
+
+```math
+\theta
+\leftrightarrow
+\theta^\ast
+```
+
+such that both insertions land in nearby exit bins and:
+
+```math
+L_{\theta^\ast,R,a}(U;\xi)
+=
+-
+L_{\theta,R,a}(U;\xi).
+```
+
+Then:
+
+```math
+\frac12
+\left(
+e^{-L_{\theta,R,a}}
++
+e^{-L_{\theta^\ast,R,a}}
+\right)
+\ge
+1.
+```
+
+**Theorem 40.211B (Paired-Carrier Linear Cancellation).** If the thick insertion
+family admits an exit-preserving involution reversing the linear term, and the
+nonlinear terms are uniformly bounded, then Attempt 4 proves Fork P.
+
+#### Proof
+
+Average the two paired exponentials and use the displayed inequality. The
+linear exponential moment is bounded below by one. Lemma 40.210E and Theorem
+40.210D finish the proof.
+
+This route is attractive because it does not require the linear term to be
+small. It only requires a sign-reversing partner that still performs the
+center-exit operation.
+
+#### 44.9.5. Physical-Observable Reduction Test
+
+If exact cancellation fails, the linear term may still reduce to a fixed
+physical observable. Suppose:
+
+```math
+L_{\theta,R,a}(U;\xi)
+=
+\ell_{\theta,R}
+\left(
+\mathcal O_R(U,\xi)
+\right)
++
+\varepsilon_{\theta,a}(U,\xi),
+```
+
+with:
+
+```math
+\sup_{\theta,U,\xi}
+|\varepsilon_{\theta,a}(U,\xi)|
+\to
+0.
+```
+
+Assume the physical observable has a uniform exponential moment:
+
+```math
+\inf_a
+\inf_{\xi\in\Omega^{\mathrm{good}}_{R,a}}
+\inf_{U\in\mathcal B^\sigma(\xi)}
+\int
+\exp
+\left(
+-
+\ell_{\theta,R}
+\left(
+\mathcal O_R(U,\xi)
+\right)
+\right)
+d\Theta_R(\theta)
+\ge
+e^{-D_R}.
+```
+
+Then the averaged linear term is controlled.
+
+**Theorem 40.211C (Physical Observable Reduction).** If the linear term reduces
+to a fixed physical collar observable with the uniform exponential moment above,
+and the nonlinear terms are uniformly bounded, then Attempt 4 proves Fork P.
+
+#### Proof
+
+The small error changes the exponential moment by `e^{-o_a(1)}`. The displayed
+moment bound gives Lemma 40.210E with a slightly enlarged `D_R`. Theorem 40.210D
+then proves Fork P.
+
+This is the most realistic positive route if exact pair or group cancellation is
+too rigid. It moves the problem from microscopic action control to a fixed
+physical moment estimate.
+
+#### 44.9.6. Obstruction: Exit-Preserving Cancellation May Fail
+
+The cancellation mechanisms above have a common hidden demand: the randomization
+must preserve the exit class. This can fail in two ways.
+
+First, the orbit or pair may reverse the linear term but also undo the center
+exit:
+
+```math
+H_{\theta^\ast}U
+\notin
+\mathcal B^{\mathrm{exit}}.
+```
+
+Second, the orbit may preserve exit but leave the nearby readout graph:
+
+```math
+\Psi(H_\theta U)
+\notin
+\mathcal N_Q(\Psi(U)).
+```
+
+Either failure destroys the Family A proof, even if the linear moment cancels.
+Thus the actual positive target is a joint statement:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{find a randomization family that both preserves center-exit incidence}\\[1mm]
+\text{and cancels or controls the linear cross term.}
+\end{array}}
+```
+
+This is the exact constructive bottleneck.
+
+#### 44.9.7. Method-Level Falsifier
+
+For a fixed randomized family, the method fails if there are pinned-mass carrying
+bins and a cutoff sequence such that:
+
+```math
+\int
+\exp
+\left(
+-L_{\theta,R,a_n}(U_n;\xi_n)
+\right)
+d\Theta_R(\theta)
+\to
+0,
+```
+
+while the self-cost, quadratic term, and remainder do not compensate the
+collapse.
+
+This proves only:
+
+```math
+\boxed{
+\text{the chosen randomized family fails.}
+}
+```
+
+It proves Fork N only if the family is complete among exit-preserving thick
+insertions, or if one separately proves environment-level collapse of
+`Z_exit/Z_sigma`.
+
+#### 44.9.8. Target 40.211 Decision
+
+Target 40.211 is fully reduced:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{calc}}
+&
+\text{the dangerous term is the finite-cutoff linear plaquette cross term},\\[1mm]
+\mathrm{PROVED}_{+}
+&
+\text{group-orbit cancellation plus bounded nonlinear terms proves Fork P},\\[1mm]
+\mathrm{PROVED}_{+}
+&
+\text{paired-carrier cancellation plus bounded nonlinear terms proves Fork P},\\[1mm]
+\mathrm{PROVED}_{+}
+&
+\text{physical-observable moment control plus bounded nonlinear terms proves Fork P},\\[1mm]
+\mathrm{WARN}
+&
+\text{cancellation is useless unless the insertion remains exit-preserving},\\[1mm]
+\mathrm{OPEN}_{\mathrm{SU2}}
+&
+\text{construct such an exit-preserving cancellation family for actual SU(2)}.
+\end{array}}
+```
+
+Thus Attempt 4 now has a precise next step:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{construct an exit-preserving group orbit or paired insertion family,}\\[1mm]
+\text{then verify bounded nonlinear terms at fixed physical collar scale.}
+\end{array}}
+```
+
+If no such family can exist, Family A should be abandoned in favor of Family B
+or C, because the obstruction would be incidence compatibility rather than
+transport formalism.
+
+## 45. Family B: Entropy-Compensated Carrier Counting Tests
+
+`V4P40-TARGET-40212-FAMILY-B-ENTROPY-COMPENSATED-CARRIER-COUNTING`.
+
+Section 44 ended with a precise lesson. A single clever carrier is too rigid.
+Hard center carriers return the thin-sheet divergence. Deterministic soft
+`SU(2)` carriers replace the sheet cost by a positive curvature cost. Pairing
+cancels odd response but not the common positive response. Therefore the only
+surviving mechanism is entropy:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{there must be enough admissible low-cost carriers}\\[1mm]
+\text{inside the original finite SU(2) conditional law}\\[1mm]
+\text{to offset the positive mixed response at fixed physical scale.}
+\end{array}}
+```
+
+This section starts Family B. It counts the exit sector directly rather than
+transporting each pinned configuration by one prescribed map.
+
+The alignment contract is unchanged.
+
+```math
+\boxed{
+\begin{array}{c}
+\text{fixed physical collar and readouts before }a\to0,\\[1mm]
+\text{original finite SU(2) law only,}\\[1mm]
+\text{no hidden Markov transition, no center-sector tilt,}\\[1mm]
+\text{no weak-coupling good-sector replacement for the IR estimate.}
+\end{array}}
+```
+
+### 45.1. Exact Family B Target
+
+For an outside environment `xi`, let:
+
+```math
+\mathcal C_{R,a}(\xi)
+```
+
+be a candidate carrier family. A carrier `c` labels a subset:
+
+```math
+\mathcal E_c(\xi)
+\subset
+\mathcal B^{\mathrm{exit}}_{Q_\sigma,a}(\xi).
+```
+
+The family is useful only if it covers the exit class with bounded loss:
+
+```math
+\mathbf 1_{\mathcal B^{\mathrm{exit}}}
+\le
+\sum_{c\in\mathcal C_{R,a}(\xi)}
+\mathbf 1_{\mathcal E_c}
+\le
+M_R
+\mathbf 1_{\mathcal B^{\mathrm{exit}}},
+```
+
+where `M_R` is independent of `a`. The carrier weights are:
+
+```math
+w_a(c,\xi)
+=
+\int_{\mathcal E_c(\xi)}
+e^{-S(U;\xi)}
+d\lambda(U).
+```
+
+Family B proves the positive fork if:
+
+```math
+\sum_{c\in\mathcal C_{R,a}(\xi)}
+w_a(c,\xi)
+\ge
+e^{-C_R}
+Z^\sigma_{Q_\sigma,a}(\xi)
+```
+
+outside a vanishing outside-environment event. It proves the negative fork only
+if a complete carrier family satisfies the opposite collapse on positive
+outside-environment mass.
+
+This is exactly the entropy-energy form of Target 40.210M, but with the carrier
+population counted directly.
+
+### 45.2. Attempt 1: Raw Microscopic Center Sheets
+
+The first carrier family is the literal family of microscopic `Z_2` sheets
+crossing the fixed physical collar. This is the entropy version of the thin
+center flip.
+
+Let a sheet `Sigma_a` have lattice area `|\Sigma_a|`. Its hard center response
+contains:
+
+```math
+\beta
+\sum_{p\in\Sigma_a}
+\operatorname{ReTr}U_p.
+```
+
+On pinned-mass carrying bins where a positive fraction of sheet plaquettes have
+positive average trace, this gives an action penalty:
+
+```math
+c_R\beta|\Sigma_a|.
+```
+
+The number of lattice sheets of a fixed local type has at most exponential
+growth:
+
+```math
+N(\Sigma_a)
+\le
+\exp
+\left(
+h_R|\Sigma_a|
+\right),
+```
+
+with `h_R` independent of `a`. Along the continuum route, `beta(a)` is not a
+fixed physical constant. Therefore the entropy-action balance for these raw
+sheets is bounded above by:
+
+```math
+\exp
+\left(
+-\left(
+c_R\beta(a)-h_R
+\right)
+|\Sigma_a|
+\right),
+```
+
+which collapses on the same pinned-mass sets as the thin carrier.
+
+**Theorem 40.212A (Raw Sheet Entropy Does Not Rescue Thin Carriers).** Raw
+microscopic center-sheet counting does not prove Family B at fixed physical IR
+scale unless the original conditional law supplies an additional estimate
+forcing the sheet-averaged trace response to vanish or become negative.
+
+#### Proof
+
+The carrier entropy is exponential in microscopic sheet area with an
+`a`-independent entropy density. The positive action response has coefficient
+`beta(a)` times the same microscopic area. On the stated pinned-mass carrying
+sets, the action coefficient eventually dominates the entropy coefficient.
+Thus raw sheet counting inherits the thin-sheet failure from Family A.
+
+This is not a proof of Fork N because it covers only the raw sheet carrier
+class.
+
+### 45.3. Attempt 2: Finite-Dimensional Soft Physical Carriers
+
+The next carrier family is a finite-dimensional physical family of smooth
+`SU(2)` interpolations inside the collar. This imports the surviving soft
+branch of Attempt 4, but tries to save it by counting many physical
+orientations.
+
+Let the physical carrier family have dimension `d_R`, independent of `a`, and
+let `Theta_R` be its normalized parameter measure. If every admissible soft
+carrier in a positive-measure subset has physical curvature energy at least:
+
+```math
+E_R>0,
+```
+
+then Target 40.210L gives a common positive response of order:
+
+```math
+\beta(a)E_R.
+```
+
+The entropy of the physical parameter family is at most a fixed physical
+constant. It cannot offset `beta(a)E_R`.
+
+**Theorem 40.212B (Finite Physical Soft Entropy Is Too Small).** A
+finite-dimensional physical family of deterministic soft carriers cannot prove
+Family B when all exit-carrying members have positive physical curvature energy
+bounded below.
+
+#### Proof
+
+The family supplies only `O_R(1)` entropy. The positive common soft-carrier
+cost grows like `beta(a)E_R`. Hence the summed weight of this carrier family
+collapses unless the family contains flat carriers, small-energy carriers with
+energy `O(beta(a)^{-1})`, or a genuine conditional averaging mechanism from the
+original `SU(2)` law. These are precisely the exceptions isolated in Target
+40.210L.
+
+### 45.4. Attempt 3: Microscopic Soft Foams
+
+One might try to restore entropy by allowing microscopic soft foams: many small
+`SU(2)` fluctuations that collectively carry the exit condition. This is the
+most tempting Family B repair because the number of microscopic choices grows
+rapidly.
+
+The problem is normalization. Most microscopic soft fluctuations occur in both
+the pinned and exit sectors. Their local Gaussian entropy is common. What can
+help Family B is only the relative entropy of exit-compatible carriers over
+pinned-compatible carriers.
+
+Let:
+
+```math
+Z^{\mathrm{soft}}_{\mathrm{exit}}(\xi)
+```
+
+be the summed soft-foam weight of exit-compatible collar fillings, and let:
+
+```math
+Z^{\mathrm{soft}}_{\sigma}(\xi)
+```
+
+be the corresponding pinned weight. Then the useful quantity is:
+
+```math
+\frac{
+Z^{\mathrm{soft}}_{\mathrm{exit}}(\xi)
+}{
+Z^{\mathrm{soft}}_{\sigma}(\xi)
+}.
+```
+
+Local fluctuation entropy common to both numerator and denominator cancels.
+Therefore a microscopic foam count proves Family B only if the charged relative
+partition function above is bounded below.
+
+**Theorem 40.212C (Soft-Foam Entropy Reduction).** Microscopic soft-foam
+entropy proves Family B exactly when the exit-to-pinned soft-foam relative
+partition function is bounded below at fixed physical scale. Pure local
+fluctuation entropy is not enough.
+
+#### Proof
+
+Disintegrate the collar variables into a soft-foam coordinate and all remaining
+neutral fluctuations. Neutral fluctuations that do not affect the charged exit
+constraint appear in both sectors. After cancellation, the remaining ratio is
+the charged relative partition function. A lower bound on that ratio proves
+Family B. Without it, the large microscopic entropy was common normalization and
+does not decide the exit mass.
+
+Thus Attempt 3 is not false, but it is not an elementary entropy argument. It
+has become the exact charged soft-foam ratio.
+
+### 45.5. Attempt 4: Character Or Spin-Foam Parity Expansion
+
+The cleanest complete carrier language is the finite-cutoff character expansion.
+For the Wilson action:
+
+```math
+e^{\frac{\beta}{2}\operatorname{Tr}U_p}
+=
+\sum_{j\in\frac12\mathbb N_0}
+a_j(\beta)
+\chi_j(U_p),
+```
+
+with positive coefficients `a_j(beta)`. The collar partition function can be
+expanded into admissible representation foams. Center parity is carried by the
+parity of half-integer representations crossing the relevant sheet.
+
+Let:
+
+```math
+Z_{\mathrm{even}}(\xi),
+\qquad
+Z_{\mathrm{odd}}(\xi)
+```
+
+be the summed positive weights of the two parity classes after integrating the
+collar interior and respecting the fixed outside data. Family B needs:
+
+```math
+Z_{\mathrm{odd}}(\xi)
+\ge
+e^{-C_R}
+Z_{\mathrm{even}}(\xi)
+```
+
+outside a vanishing environment event, up to the finite bounded-overlap
+constant.
+
+**Theorem 40.212D (Spin-Foam Parity Reduction).** A complete positive
+spin-foam or character expansion proves Family B if and only if the charged
+odd-parity foam weight is comparable to the neutral even-parity foam weight at
+fixed physical scale.
+
+#### Proof
+
+The character expansion has positive local coefficients, so the sector weights
+are positive sums over representation foams. Completeness gives the exact
+collar partition functions. Bounded overlap turns the odd-parity sum into a
+lower bound for the exit mass. Therefore comparability proves the positive
+fork. Conversely, if the complete odd-parity sum collapses relative to the even
+sum on positive outside-environment mass, the Family B carrier-counting route
+falsifies the fixed-IR certificate along that subsequence.
+
+This is a genuine complete carrier language. But it does not lower the
+difficulty by itself: the parity comparability estimate is the fixed-IR charged
+sector estimate in representation variables.
+
+### 45.6. Attempt 5: Local Block Entropy Bridge
+
+The best surviving Family B route is local and physical-resolution. Instead of
+counting microscopic sheets or all foams globally, choose a fixed physical block
+`Q` in the collar and compare paired local center sectors after conditioning on
+the outside and coset data.
+
+Let:
+
+```math
+r_{Q,a}(\bar U,\xi)
+=
+\frac{
+Z^{\mathrm{loc,odd}}_{Q,a}(\bar U,\xi)
+}{
+Z^{\mathrm{loc,even}}_{Q,a}(\bar U,\xi)
+}
+```
+
+be the local charged-block ratio. Here `bar U` denotes the fixed `SO(3)` or
+coset environment. The target is:
+
+```math
+r_{Q,a}(\bar U,\xi)
+\ge
+e^{-C_Q}
+```
+
+on high conditional environment probability, with `C_Q` independent of `a`.
+
+This is exactly the local entropy bridge that Sections 39 and 41 kept circling.
+It is better than the raw global sheet count because the number of physical
+blocks is fixed at fixed `R`. It also avoids claiming that one deterministic
+carrier has bounded cost.
+
+**Theorem 40.212E (Local Entropy Bridge Suffices For Family B).** If a finite
+cover of the thick collar by fixed physical blocks admits local charged-block
+ratios bounded below by `e^{-C_Q}` with bounded incidence overlap, then Family B
+proves the positive fork.
+
+#### Proof
+
+Use the local ratios to choose odd local carriers block by block, respecting the
+incidence constraints. Bounded overlap prevents repeated counting from growing
+with the cutoff. Since the number of physical blocks in the fixed collar is
+`O_R(1)`, multiplying the local lower bounds gives:
+
+```math
+Z^{\mathrm{exit}}_{Q_\sigma,a}(\xi)
+\ge
+e^{-C_R}
+Z^\sigma_{Q_\sigma,a}(\xi),
+```
+
+with `C_R` independent of `a`. This is the Family B pass condition.
+
+#### Failure Modes
+
+The route fails in exactly three ways.
+
+```math
+\boxed{
+\begin{array}{ll}
+1
+&
+\text{the local ratio collapses on positive SO(3) environment mass},\\[1mm]
+2
+&
+\text{local odd choices cannot be glued with bounded incidence loss},\\[1mm]
+3
+&
+\text{the chosen block variables are not complete for the exit class}.
+\end{array}}
+```
+
+The first failure is the real area barrier in local form. The second is a
+combinatorial gluing obstruction. The third is a bookkeeping failure.
+
+### 45.7. Attempt 6: Heat-Bath Minorization Of Local Blocks
+
+A direct way to prove the local entropy bridge is a heat-bath minorization:
+show that, after conditioning on the block boundary and coset data, the local
+center coordinate has both parities with uniformly positive probability.
+
+For a fixed microscopic block this is elementary. But a fixed physical block
+contains a number of links diverging as `a -> 0`. A naive Doeblin or heat-bath
+minorization has a constant that decays exponentially in the microscopic
+volume.
+
+**Theorem 40.212F (Naive Heat-Bath Minorization Fails At Fixed Physical
+Resolution).** Microscopic heat-bath minorization of all links in a fixed
+physical block does not prove the local entropy bridge unless it is upgraded to
+a physical-block inequality whose constant is independent of the number of
+microscopic links.
+
+#### Proof
+
+Local heat-bath densities are bounded below one microscopic variable at a time.
+Tensoring over a fixed physical block multiplies the constants over a number of
+variables that diverges as `a -> 0`. The resulting lower bound collapses. Hence
+the naive minorization is a finite-cutoff statement, not a fixed-IR estimate.
+
+This is the same lesson as Family A: microscopic local positivity is not enough.
+The needed object is a renormalized physical-block entropy inequality.
+
+### 45.8. Attempt 7: Reflection-Positive Two-Sidedness
+
+Reflection positivity can sometimes show that two charged signs have comparable
+weights. This was the motivation behind the B5 route in Section 40.
+
+For Family B, RP would be useful if it produced:
+
+```math
+Z_{\mathrm{odd}}(\xi)
+\ge
+e^{-C_R}
+Z_{\mathrm{even}}(\xi)
+```
+
+for the relevant local or collar carrier sectors. But RP naturally controls
+neutral squared quantities. It can give Hilbert-space positivity and, in
+favorable geometries, two-sidedness of a reflection-compatible charged package.
+It does not by itself give a strict charged transfer deficit or a fixed-IR
+lower bound on the odd sector.
+
+**Theorem 40.212G (RP Is A Compatibility Tool, Not A Family B Proof By
+Itself).** Reflection positivity can support Family B only after the charged
+carrier package is reflection-compatible and after a separate estimate prevents
+the odd sector from collapsing. RP alone does not prove the required carrier
+entropy lower bound.
+
+#### Proof
+
+RP gives positivity of reflected products and transfer-operator structure. The
+Family B estimate is a quantitative comparison of charged and neutral carrier
+weights. Without an additional two-sidedness or transfer-deficit estimate, the
+odd sector may still have arbitrarily small weight. Thus RP is an auxiliary
+tool for building or testing carrier packages, not the missing entropy bound.
+
+### 45.9. Attempt 8: Effective Boundary Count
+
+One may integrate the collar interior and count carriers only at the boundary.
+This is attractive because it removes microscopic bulk redundancy. Let:
+
+```math
+W^{\mathrm{odd}}_{\partial R,a}(\eta),
+\qquad
+W^{\mathrm{even}}_{\partial R,a}(\eta)
+```
+
+be the effective boundary weights after summing all interior carrier fillings.
+Family B then asks for:
+
+```math
+W^{\mathrm{odd}}_{\partial R,a}(\eta)
+\ge
+e^{-C_R}
+W^{\mathrm{even}}_{\partial R,a}(\eta)
+```
+
+on typical boundary data.
+
+This is a useful reformulation, but it has crossed into Family C. The carrier
+entropy is now hidden inside an effective boundary action.
+
+**Theorem 40.212H (Boundary Count Is Family C In Disguise).** Effective
+boundary carrier counting proves Family B exactly when the induced boundary
+free-energy difference is uniformly bounded. This is the Family C target.
+
+#### Proof
+
+Taking the logarithm of the boundary weight ratio gives the induced charged
+boundary free-energy difference. A bounded difference gives the Family B lower
+bound; collapse of the ratio is divergence of that boundary free energy. Thus
+the boundary-count route is not a separate elementary Family B mechanism. It is
+the transition to Family C.
+
+### 45.10. Family B Exhaustion Decision
+
+The Family B tests give the following ledger:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{method}}
+&
+\text{raw microscopic sheet entropy loses to the hard center response},\\[1mm]
+\mathrm{FAIL}_{\mathrm{method}}
+&
+\text{finite-dimensional soft carrier entropy loses to curvature cost},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{microscopic soft foams reduce to a charged relative partition function},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{spin-foam parity expansion reduces to odd/even comparability},\\[1mm]
+\mathrm{BEST}
+&
+\text{local physical-block entropy bridge is the sharp surviving route},\\[1mm]
+\mathrm{FAIL}_{\mathrm{method}}
+&
+\text{naive microscopic heat-bath minorization collapses},\\[1mm]
+\mathrm{AUX}
+&
+\text{reflection positivity helps compatibility but not the entropy bound},\\[1mm]
+\mathrm{TOC}
+&
+\text{effective boundary counting is Family C}.
+\end{array}}
+```
+
+Therefore Family B is not exhausted into a proof, but it is exhausted into a
+single honest remaining target:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove or falsify the fixed-IR local charged-block entropy bridge}\\[1mm]
+\text{for the original finite SU(2) conditional law.}
+\end{array}}
+```
+
+This is the best Family B target because it is physical-resolution, complete in
+principle, and not tied to one deterministic carrier. It is also the cleanest
+place where the area barrier can appear as an actual local ratio collapse rather
+than as a failed construction.
+
+### 45.11. Target 40.213: The Next Precise Family B Problem
+
+`V4P40-TARGET-40213-FIXED-IR-LOCAL-CHARGED-BLOCK-ENTROPY-BRIDGE`.
+
+The next proof target is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{For fixed physical Q and typical conditioned SO(3) environment,}\\[1mm]
+\text{prove or falsify a cutoff-uniform lower bound on the}\\[1mm]
+\text{local odd/even charged-block partition ratio.}
+\end{array}}
+```
+
+The positive theorem would be:
+
+```math
+r_{Q,a}(\bar U,\xi)
+\ge
+e^{-C_Q}
+```
+
+with high conditional environment probability.
+
+The negative theorem would be:
+
+```math
+r_{Q,a_n}(\bar U,\xi)
+\to
+0
+```
+
+on positive conditional environment probability along a cutoff sequence.
+
+Everything else in Family B is now secondary. Raw carriers and finite soft
+families fail. Complete spin-foam and soft-foam languages reduce to this kind
+of charged relative ratio. Boundary integration moves to Family C. RP is only
+an auxiliary compatibility tool. Thus Target 40.213 is the correct next
+mathematical object.
+
+### 45.12. Target 40.213A: Exact Local Ratio Setup
+
+We now investigate Target 40.213 directly, still inside Family B.
+
+Fix a physical block `Q` in the collar. The block size and shape are fixed in
+physical units before `a -> 0`. Condition on:
+
+```math
+(\bar U,\xi),
+```
+
+where `bar U` is the local `SO(3)` or coset environment and `xi` is the outside
+collar data. Let:
+
+```math
+\widehat\mu^{0}_{Q,a}(\cdot\mid\bar U,\xi)
+```
+
+be the neutral local finite `SU(2)` conditional law. Let:
+
+```math
+\mathcal A^{\mathrm{odd}}_{Q,a}(\bar U,\xi),
+\qquad
+\mathcal A^{\mathrm{even}}_{Q,a}(\bar U,\xi)
+```
+
+be the two local charged center classes. Define:
+
+```math
+Z^{\mathrm{odd}}_{Q,a}(\bar U,\xi)
+=
+\widehat\mu^{0}_{Q,a}
+\left(
+\mathcal A^{\mathrm{odd}}_{Q,a}(\bar U,\xi)
+\mid
+\bar U,\xi
+\right),
+```
+
+and:
+
+```math
+Z^{\mathrm{even}}_{Q,a}(\bar U,\xi)
+=
+\widehat\mu^{0}_{Q,a}
+\left(
+\mathcal A^{\mathrm{even}}_{Q,a}(\bar U,\xi)
+\mid
+\bar U,\xi
+\right).
+```
+
+The local charged-block ratio is:
+
+```math
+r_{Q,a}(\bar U,\xi)
+=
+\frac{
+Z^{\mathrm{odd}}_{Q,a}(\bar U,\xi)
+}{
+Z^{\mathrm{even}}_{Q,a}(\bar U,\xi)
+}.
+```
+
+The local charged cost is:
+
+```math
+c_{Q,a}(\bar U,\xi)
+=
+-
+\log r_{Q,a}(\bar U,\xi).
+```
+
+The positive Target 40.213 statement is tightness of this cost:
+
+```math
+\limsup_{a\to0}
+\mathbb P
+\left(
+c_{Q,a}>C_Q(\epsilon)
+\right)
+<
+\epsilon
+```
+
+for every `epsilon>0`, with `C_Q(epsilon)` independent of `a`.
+
+The negative Target 40.213 statement is local ratio collapse:
+
+```math
+\mathbb P
+\left(
+c_{Q,a_n}>L_n
+\right)
+\ge
+\epsilon_Q,
+\qquad
+L_n\to\infty,
+```
+
+along a cutoff sequence and on positive conditioned environment probability.
+
+**Theorem 40.213A (Exact Target 40.213 Dichotomy).** Target 40.213 is exactly
+the dichotomy:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}
+&
+\text{the local charged cost is tight at fixed physical block scale},\\[1mm]
+\mathrm{FAIL}
+&
+\text{the local charged cost diverges on positive environment mass}.
+\end{array}}
+```
+
+There is no third formal outcome inside Family B. Any proposed proof technology
+must prove one of these two statements, or it is only a diagnostic.
+
+#### Proof
+
+The local ratio is the exact normalized mass of the odd local class relative to
+the even local class. A lower-tail bound on `r_Q,a` is the same as an upper-tail
+bound on `c_Q,a`. A collapse of `r_Q,a` on positive environment mass is the
+same as divergence of `c_Q,a` on that mass. This proves the dichotomy.
+
+### 45.13. Attempt 1: Compactness Or Haar Positivity
+
+At finite cutoff, the local block has compact link space and Haar measure gives
+positive mass to open sets. This proves:
+
+```math
+r_{Q,a}(\bar U,\xi)>0
+```
+
+whenever the odd sector has nonempty interior. But this is not fixed-IR
+control. The number of microscopic links in a fixed physical block diverges, so
+finite-cutoff positivity may decay faster than any fixed physical constant.
+
+**Theorem 40.213B (Finite-Cutoff Positivity Is Not A Fixed-IR Bound).**
+Compactness and Haar positivity do not prove Target 40.213.
+
+#### Proof
+
+For each fixed `a`, compactness gives a positive number. Nothing in compactness
+prevents this number from being:
+
+```math
+\exp
+\left(
+-a^{-2}
+\right)
+```
+
+or smaller along the cutoff sequence. Target 40.213 requires constants fixed
+after the physical block is chosen and before `a -> 0`. Therefore finite-cutoff
+positivity is only a nonemptiness statement, not an entropy bridge.
+
+### 45.14. Attempt 2: Local Center Flip
+
+A local center flip maps even configurations into odd ones by inserting a
+microscopic center sheet inside `Q`. It is the local version of the Family A
+thin flip.
+
+The same calculation gives a center response:
+
+```math
+\beta
+\sum_{p\in\Sigma_{Q,a}}
+\operatorname{ReTr}U_p,
+```
+
+where `Sigma_Q,a` is a microscopic sheet crossing the fixed block. If the
+conditioned environment permits positive average trace on a positive fraction
+of the sheet, the action cost grows like:
+
+```math
+c_Q\beta|\Sigma_{Q,a}|.
+```
+
+Since:
+
+```math
+|\Sigma_{Q,a}|
+\to
+\infty
+```
+
+at fixed physical block scale, the local flip does not prove a uniform lower
+bound on `r_Q,a`.
+
+**Theorem 40.213C (Local Thin Flip Fails).** The local center-flip map proves
+nonemptiness of the odd sector but does not prove Target 40.213 at fixed
+physical IR scale.
+
+#### Proof
+
+The map has bounded Jacobian, but the action defect is supported on a
+microscopic sheet whose area diverges in lattice units. On the stated
+conditioned environments, the positive action response is not bounded
+independently of `a`. Hence the induced entropy bridge cost is not fixed-IR
+bounded.
+
+This is a method failure. It does not prove the negative branch because other
+odd representatives may avoid the thin-sheet cost.
+
+### 45.15. Attempt 3: Local Soft `SU(2)` Interpolation
+
+A local soft interpolation tries to reach the odd class through a smooth
+`SU(2)` filling instead of a hard center sheet. This is the local block version
+of Target 40.210L.
+
+If the interpolation has positive physical curvature energy:
+
+```math
+E_Q>0,
+```
+
+then the common quadratic response is of order:
+
+```math
+\beta(a)E_Q.
+```
+
+Thus one deterministic local soft interpolation does not prove Target 40.213.
+
+If the interpolation is flat, then it is locally pure gauge. It either preserves
+the local charged class, changes the conditioned boundary data, or introduces a
+cut. These are exactly the pure-gauge and hard-sheet failures already found in
+Family A.
+
+**Theorem 40.213D (Local Deterministic Soft Interpolation Fails).** A single
+deterministic local soft interpolation proves Target 40.213 only under an
+additional averaged entropy estimate. By itself it either has positive
+curvature cost, is pure gauge, or reintroduces a hard center cut.
+
+#### Proof
+
+The paired odd response cancels only the first-order coset term. The common
+second-order term is controlled by the physical curvature energy. If this
+energy is positive, the cost grows with `beta(a)`. If it is zero, the
+interpolation is pure gauge unless a cut or boundary change is introduced.
+Neither case gives the required fixed-IR lower bound.
+
+### 45.16. Attempt 4: Tautological Entropy Bridge
+
+There is a formal entropy bridge: sample the normalized odd-sector restriction
+itself. Its entropy cost is:
+
+```math
+c_{Q,a}(\bar U,\xi)
+=
+-
+\log r_{Q,a}(\bar U,\xi).
+```
+
+This identity is useful because it identifies the optimal possible bridge cost.
+It is also tautological: it proves Target 40.213 only if one already knows that
+`c_Q,a` is tight.
+
+**Theorem 40.213E (Optimal Bridge Identity).** The minimal relative entropy
+cost of a probability measure supported on the local odd class is exactly
+`c_Q,a`.
+
+#### Proof
+
+Let `nu` be the even-normalized local finite measure:
+
+```math
+\nu
+=
+\frac{
+\widehat\mu^{0}_{Q,a}
+}{
+Z^{\mathrm{even}}_{Q,a}
+},
+```
+
+and let `A` be the odd sector. Then:
+
+```math
+\nu(A)
+=
+r_{Q,a}.
+```
+
+For every probability measure `eta` supported on `A`:
+
+```math
+H(\eta\mid\nu)
+=
+H(\eta\mid\nu_A)
+-
+\log\nu(A),
+```
+
+where `nu_A` is the normalized restriction of `nu` to `A`. The first term is
+nonnegative and vanishes at `eta=nu_A`. Since `nu(A)=r_Q,a`, the optimal cost is
+`-log r_Q,a`.
+
+Thus the optimal bridge identity is an exact reduction, not a proof of
+tightness.
+
+### 45.17. Attempt 5: Whole-Block Heat-Bath Minorization
+
+A constructive heat-bath proof would show that the local conditional law gives
+both charged parities with uniformly positive probability after conditioning on
+the physical environment.
+
+Microscopic heat-bath minorization fails because the block contains a diverging
+number of microscopic variables. A whole-block minorization would prove the
+target, but it is exactly the missing physical-block theorem.
+
+**Theorem 40.213F (Whole-Block Minorization Criterion).** Target 40.213 follows
+if there is a physical-block update or comparison kernel `K_Q,a` such that:
+
+```math
+K_{Q,a}
+\left(
+\mathcal A^{\mathrm{odd}}_{Q,a}(\bar U,\xi)
+\mid
+U,\bar U,\xi
+\right)
+\ge
+\kappa_Q
+```
+
+on high conditioned environment probability, with `kappa_Q>0` independent of
+`a`, and with entropy distortion bounded independently of `a`.
+
+The naive microscopic heat-bath product does not supply such a kernel.
+
+#### Proof
+
+The lower bound gives odd-sector mass at least `kappa_Q` after the comparison
+kernel is applied. Bounded entropy distortion transfers this lower bound back
+to the original local conditional law with only a fixed multiplicative loss.
+The result is a cutoff-uniform lower bound on `r_Q,a`. The naive microscopic
+product has a minorization constant that decays with the number of microscopic
+links, so it does not meet the hypothesis.
+
+### 45.18. Attempt 6: Complete Character Expansion
+
+The complete character expansion gives an exact positive representation of the
+local block weights. Let:
+
+```math
+Z^{\mathrm{odd}}_{Q,a}
+=
+\sum_{\omega\in\Omega^{\mathrm{odd}}_{Q,a}}
+W_a(\omega;\bar U,\xi),
+```
+
+and:
+
+```math
+Z^{\mathrm{even}}_{Q,a}
+=
+\sum_{\omega\in\Omega^{\mathrm{even}}_{Q,a}}
+W_a(\omega;\bar U,\xi),
+```
+
+with all weights nonnegative. Then:
+
+```math
+r_{Q,a}
+=
+\frac{
+\sum_{\omega\in\Omega^{\mathrm{odd}}_{Q,a}}
+W_a(\omega;\bar U,\xi)
+}{
+\sum_{\omega\in\Omega^{\mathrm{even}}_{Q,a}}
+W_a(\omega;\bar U,\xi)
+}.
+```
+
+**Theorem 40.213G (Character Expansion Is Complete But Equivalent).** A
+complete positive character expansion proves Target 40.213 exactly when it
+proves odd/even parity-weight comparability at fixed physical block scale.
+
+#### Proof
+
+Completeness and positivity identify the numerator and denominator with the
+actual local sector weights. Therefore parity comparability is exactly the
+lower bound on `r_Q,a`. If the odd parity sum collapses on positive environment
+mass, Target 40.213 fails there. The expansion is a complete language, but the
+required parity estimate is not automatic.
+
+### 45.19. Attempt 7: Negative Action-Entropy Imbalance
+
+The clean negative proof would show that every odd representative pays more
+action than the available odd entropy can compensate.
+
+Suppose that on a conditioned environment event of probability at least
+`epsilon_Q`, every odd local carrier has excess action at least `I_Q,a`, while
+the total odd carrier entropy is bounded by `N_Q,a`, and:
+
+```math
+I_{Q,a}
+-
+\log N_{Q,a}
+\to
+\infty.
+```
+
+Then:
+
+```math
+r_{Q,a}
+\to
+0
+```
+
+on that event.
+
+**Theorem 40.213H (Local Action-Entropy Falsifier).** The action-entropy
+imbalance above proves the negative branch of Target 40.213.
+
+#### Proof
+
+The odd sector weight is bounded by the number of admissible odd carriers times
+the largest odd Boltzmann weight relative to the even baseline. The assumed
+imbalance gives:
+
+```math
+r_{Q,a}
+\le
+\exp
+\left(
+-I_{Q,a}
++
+\log N_{Q,a}
+\right),
+```
+
+which tends to zero on the positive-probability environment event.
+
+This is the first honest negative route. The paper has not proved its
+hypothesis. Pointwise failure of one thin or soft representative is not enough;
+the estimate must cover the complete odd local class.
+
+### 45.20. Target 40.213 Decision
+
+Target 40.213 is now fully investigated inside Family B:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}
+&
+\text{finite-cutoff compactness or Haar positivity gives no fixed-IR bound},\\[1mm]
+\mathrm{FAIL}_{\mathrm{method}}
+&
+\text{local thin flip has microscopic sheet cost},\\[1mm]
+\mathrm{FAIL}_{\mathrm{method}}
+&
+\text{deterministic soft interpolation has curvature cost or is gauge},\\[1mm]
+\mathrm{ID}
+&
+\text{optimal entropy bridge cost equals }-\log r_{Q,a},\\[1mm]
+\mathrm{COND}_{+}
+&
+\text{whole-block minorization with bounded entropy distortion proves it},\\[1mm]
+\mathrm{EQUIV}
+&
+\text{complete character expansion reduces it to parity comparability},\\[1mm]
+\mathrm{COND}_{-}
+&
+\text{complete action-entropy imbalance falsifies it}.
+\end{array}}
+```
+
+Thus Family B has reached its real boundary. The remaining proof is not another
+formal reduction. It is one of two genuine finite `SU(2)` fixed-IR estimates:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{prove a physical-block odd/even lower-tail bound},\\[1mm]
+\mathrm{negative}
+&
+\text{prove complete odd-class action-entropy collapse on positive mass}.
+\end{array}}
+```
+
+Both are fixed-IR aligned and Barandes aligned. They use the original finite
+`SU(2)` conditional law and deterministic readouts only. No Markov record
+dynamics, no center-sector tilt, and no weak-coupling substitute has been
+introduced.
+
+## 46. Family C: Effective Boundary Action Tests
+
+`V4P40-TARGET-40214-FAMILY-C-EFFECTIVE-BOUNDARY-ACTION`.
+
+Sections 44 and 45 leave the same fixed-IR obstruction in two different forms.
+Family A showed that one deterministic carrier is too rigid. Family B showed
+that carrier counting reduces to a local odd/even partition ratio. Family C now
+integrates the block or collar interior and asks whether that same ratio is
+better controlled as an effective boundary free energy.
+
+The goal is not to introduce a new ensemble. It is to rewrite the original
+finite `SU(2)` conditional law by disintegration.
+
+```math
+\boxed{
+\begin{array}{c}
+\text{integrate the finite SU(2) interior variables,}\\[1mm]
+\text{keep fixed physical boundary data,}\\[1mm]
+\text{compare the induced odd and even boundary weights.}
+\end{array}}
+```
+
+The fixed-IR and Barandes alignment contracts remain unchanged: physical
+boundary scale first, cutoff second; deterministic readouts only; no hidden
+Markov law; no center-sector tilt.
+
+### 46.1. Target 40.214: Charged Boundary Free-Energy Difference
+
+Fix a physical block or collar region `Q`. Let:
+
+```math
+\eta
+```
+
+denote the boundary data retained after integrating the interior. Depending on
+the package, `eta` may include outside links, boundary `SO(3)` data, readout
+data, or a coarser physical boundary summary.
+
+Define the induced boundary weights:
+
+```math
+W^{\mathrm{odd}}_{Q,a}(\eta)
+=
+\int_{\mathcal A^{\mathrm{odd}}_{Q,a}(\eta)}
+e^{-S_Q(U;\eta)}
+d\lambda_Q(U),
+```
+
+and:
+
+```math
+W^{\mathrm{even}}_{Q,a}(\eta)
+=
+\int_{\mathcal A^{\mathrm{even}}_{Q,a}(\eta)}
+e^{-S_Q(U;\eta)}
+d\lambda_Q(U).
+```
+
+The charged boundary free-energy difference is:
+
+```math
+\Delta F_{Q,a}(\eta)
+=
+-
+\log
+\frac{
+W^{\mathrm{odd}}_{Q,a}(\eta)
+}{
+W^{\mathrm{even}}_{Q,a}(\eta)
+}.
+```
+
+Family C proves the positive fork if `Delta F_Q,a` is tight on typical boundary
+data:
+
+```math
+\limsup_{a\to0}
+\mathbb P
+\left(
+\Delta F_{Q,a}>C_Q(\epsilon)
+\right)
+<
+\epsilon.
+```
+
+It proves the negative fork if, on positive boundary probability:
+
+```math
+\Delta F_{Q,a_n}>L_n,
+\qquad
+L_n\to\infty.
+```
+
+### 46.2. Complete Boundary Data: Exact Equivalence With Family B
+
+If `eta` contains all local conditioning data used in Target 40.213, then:
+
+```math
+\frac{
+W^{\mathrm{odd}}_{Q,a}(\eta)
+}{
+W^{\mathrm{even}}_{Q,a}(\eta)
+}
+=
+r_{Q,a}(\bar U,\xi),
+```
+
+and therefore:
+
+```math
+\Delta F_{Q,a}(\eta)
+=
+c_{Q,a}(\bar U,\xi).
+```
+
+**Theorem 40.214A (Complete-Boundary Equivalence).** With complete boundary
+data, Family C is exactly Target 40.213 in boundary-free-energy variables.
+
+#### Proof
+
+The numerator and denominator defining the effective boundary weights are the
+odd and even local partition weights from Target 40.213. Taking the negative
+logarithm of their ratio gives the local charged cost. Hence tightness,
+collapse, and all pass/fail statements are identical.
+
+This is the first important lesson: Family C gives a better coordinate system,
+not a free proof.
+
+### 46.3. Coarse Boundary Data And The Fluctuation Hazard
+
+If `eta` is coarser than the full local conditioning data, then boundary
+integration averages over hidden interior or sub-boundary variables. Write the
+complete data as:
+
+```math
+\zeta
+=
+(\eta,\theta),
+```
+
+where `theta` denotes the hidden remainder. The coarse boundary ratio is:
+
+```math
+\frac{
+W^{\mathrm{odd}}(\eta)
+}{
+W^{\mathrm{even}}(\eta)
+}
+=
+\frac{
+\mathbb E
+\left[
+W^{\mathrm{odd}}(\eta,\theta)
+\mid
+\eta
+\right]
+}{
+\mathbb E
+\left[
+W^{\mathrm{even}}(\eta,\theta)
+\mid
+\eta
+\right]
+}.
+```
+
+This can be larger than a typical complete-data ratio if rare hidden data carry
+large odd-sector weight. Therefore hostile complete-data boundaries do not
+automatically imply hostile coarse boundaries.
+
+**Theorem 40.214B (Boundary Fluctuation Requirement).** Coarse Family C proves
+the positive fork if:
+
+```math
+\Delta F^{\partial}_{Q,a}(\eta)
+\le
+C_Q
+```
+
+on typical `eta`, and the hidden-data response from complete boundary data to
+coarse boundary data is tight. It proves the negative fork only if hostile
+coarse boundary data have positive probability and hidden interior
+fluctuations cannot compensate the odd-sector penalty.
+
+#### Proof
+
+The positive statement is immediate from the definition of the coarse ratio if
+hidden fluctuations do not change the free energy by more than a tight additive
+term. For the negative statement, a complete-data hostile set is not enough:
+the numerator may be dominated by rare favorable hidden data. Thus one must
+also prove no interior compensation. This is exactly the warning from Section
+43.6 made local.
+
+### 46.4. Attempt 1: Boundary Compactness
+
+At finite cutoff, the boundary state space is compact and the induced weights
+are positive whenever the sectors have nonempty interior. As in Family B, this
+does not give fixed-IR control.
+
+**Theorem 40.214C (Boundary Positivity Is Not Boundary Tightness).** Finite
+boundary compactness and positivity do not prove Family C.
+
+#### Proof
+
+For each fixed cutoff the ratio is a positive number. It may still be as small
+as:
+
+```math
+\exp
+\left(
+-a^{-2}
+\right),
+```
+
+or smaller. Family C needs tightness of `Delta F_Q,a` after the physical
+boundary scale is fixed and before `a -> 0`. Compactness supplies no such
+uniform estimate.
+
+### 46.5. Attempt 2: Classical Dirichlet Boundary Response
+
+The most direct boundary-action estimate compares Dirichlet minimizers. Let:
+
+```math
+I^{\mathrm{odd}}_{Q,a}(\eta),
+\qquad
+I^{\mathrm{even}}_{Q,a}(\eta)
+```
+
+be the minimal lattice action in the two local sectors with boundary data
+`eta`. The classical excess is:
+
+```math
+D_{Q,a}(\eta)
+=
+I^{\mathrm{odd}}_{Q,a}(\eta)
+-
+I^{\mathrm{even}}_{Q,a}(\eta).
+```
+
+If:
+
+```math
+D_{Q,a}(\eta)
+\ge
+d_Q>0
+```
+
+in physical units on positive boundary probability, then the boundary
+free-energy difference has a candidate divergent term:
+
+```math
+\beta(a)d_Q.
+```
+
+But this is a proof of divergence only if fluctuation determinants and carrier
+entropy cannot compensate it.
+
+**Theorem 40.214D (Dirichlet Excess Is A Falsifier Only With Entropy Control).**
+A positive charged Dirichlet excess proves Family C negative only together with
+a complete entropy bound for odd fluctuations. Without that entropy bound, it is
+a diagnostic.
+
+#### Proof
+
+The odd weight is bounded above by an entropy factor times the exponential of
+the odd minimum. The even weight is bounded below by neighborhoods of even
+minimizers. If the difference between these entropy factors is bounded while
+`beta(a)d_Q` diverges, then the odd/even boundary ratio collapses. If the odd
+sector has compensating entropy of the same order, the classical excess alone
+does not decide the ratio.
+
+This is the boundary-action form of the Family B action-entropy falsifier.
+
+### 46.6. Attempt 3: Flat Boundary Screening
+
+Family A showed that flat soft carriers are pure gauge unless they change
+boundary data or introduce a cut. In boundary language the same issue appears
+as screening.
+
+If the charged boundary condition can be filled by a flat `SU(2)` connection
+without changing the retained boundary data and without a center cut, then:
+
+```math
+\Delta F_{Q,a}(\eta)
+=
+O_Q(1)
+```
+
+is plausible. But if the flat filling is only possible after changing the
+boundary data, it does not apply to the conditional boundary problem. If it is
+implemented by a cut, the hard center sheet returns.
+
+**Theorem 40.214E (Flat Screening Dichotomy).** Flat boundary screening proves
+Family C only when the odd and even sectors are connected by a flat filling
+inside the same retained boundary condition. Otherwise it reduces to either a
+boundary change or the hard-sheet obstruction.
+
+#### Proof
+
+A flat filling has no bulk curvature cost. If it preserves the retained
+boundary data and changes the charged sector, it supplies comparable odd and
+even neighborhoods with bounded action difference. If it changes boundary data,
+it compares different conditional problems. If it requires a cut, the
+center-valued sheet reappears and Section 44 applies.
+
+Thus flat screening is a possible positive mechanism, but only under a genuine
+topological compatibility condition on the retained boundary package.
+
+### 46.7. Attempt 4: Transfer Kernel Across The Collar
+
+Integrating the collar one layer at a time gives a finite-cutoff transfer
+kernel. Let:
+
+```math
+T^{0}_{Q,a},
+\qquad
+T^{\mathrm{ch}}_{Q,a}
+```
+
+be the neutral and charged transfer kernels for the retained boundary package.
+A sufficient positive condition is a fixed-IR comparison:
+
+```math
+T^{\mathrm{ch}}_{Q,a}
+\ge
+e^{-C_Q}
+T^{0}_{Q,a}
+```
+
+as positive kernels on the boundary observables relevant to the readout.
+
+**Theorem 40.214F (Transfer-Kernel Comparison Criterion).** A positive-kernel
+comparison of charged and neutral boundary transfer kernels with constant
+`e^{-C_Q}` proves Family C.
+
+#### Proof
+
+Apply the kernel comparison to the boundary vector determined by `eta`. The
+result is exactly:
+
+```math
+W^{\mathrm{odd}}_{Q,a}(\eta)
+\ge
+e^{-C_Q}
+W^{\mathrm{even}}_{Q,a}(\eta),
+```
+
+which is `Delta F_Q,a <= C_Q`.
+
+The difficulty is proving the kernel comparison. Microscopic positivity again
+gives constants that degrade with the number of layers. A useful comparison
+must be a physical-collar transfer inequality.
+
+### 46.8. Attempt 5: Reflection Positivity
+
+Reflection positivity can help construct positive boundary kernels and
+reflection-compatible charged packages. It does not automatically compare the
+charged and neutral boundary weights.
+
+**Theorem 40.214G (RP Supports Family C Only After Charged Compatibility).**
+Reflection positivity can support Family C if the retained boundary package and
+charged insertion are reflection compatible and if an additional two-sidedness
+or transfer comparison estimate is available. RP alone does not prove
+`Delta F_Q,a` tight.
+
+#### Proof
+
+RP gives positivity of reflected boundary forms. The Family C target is a
+quantitative lower bound on the charged boundary weight relative to the neutral
+one. Positivity permits such comparisons but does not supply their constants.
+This is the same boundary as Section 40's RP analysis.
+
+### 46.9. Attempt 6: Effective Solvable Boundary Model
+
+One may try to approximate the induced boundary action by a solvable physical
+model:
+
+```math
+W^{\mathrm{odd}}_{Q,a}(\eta)
+\ge
+c_Q
+W^{\mathrm{odd,eff}}_{Q}(\eta_{\mathrm{eff}}),
+```
+
+and:
+
+```math
+W^{\mathrm{even}}_{Q,a}(\eta)
+\le
+C_Q
+W^{\mathrm{even,eff}}_{Q}(\eta_{\mathrm{eff}}),
+```
+
+with constants independent of `a`. If the effective model has odd/even
+comparability, then Family C is proved.
+
+**Theorem 40.214H (Effective Model Requires Two-Sided Domination).** A solvable
+boundary model proves Family C only if it is connected to the finite `SU(2)`
+boundary weights by cutoff-uniform two-sided domination. A heuristic
+renormalized action is not enough.
+
+#### Proof
+
+The two domination inequalities transfer odd/even comparability from the
+effective model to the finite-cutoff boundary weights. Without such
+inequalities, the effective model is only a guide; it does not bound the
+original finite `SU(2)` conditional law.
+
+### 46.10. Attempt 7: Hostile Boundary Falsifier
+
+The clean Family C negative theorem is hostile boundary data plus no interior
+compensation.
+
+Suppose there are:
+
+```math
+\epsilon_Q>0,
+\qquad
+L_n\to\infty,
+\qquad
+a_n\to0,
+```
+
+such that:
+
+```math
+\mathbb P
+\left(
+\Delta F_{Q,a_n}(\eta)>L_n
+\right)
+\ge
+\epsilon_Q.
+```
+
+Then the local charged ratio collapses on that boundary event, provided `eta`
+is complete or the coarse hidden variables cannot compensate the odd sector.
+
+**Theorem 40.214I (Hostile Boundary Falsifier).** Complete hostile boundary
+data of positive probability prove the negative branch of Family C. Coarse
+hostile boundary data prove it only with a no-compensation estimate for hidden
+variables.
+
+#### Proof
+
+For complete boundary data, `Delta F=-log r`, so the displayed divergence is
+exactly local ratio collapse. For coarse boundary data, the coarse numerator is
+an average over hidden variables. A hostile coarse estimate is decisive only if
+hidden favorable sub-boundaries do not restore the numerator. This is precisely
+the no-compensation clause.
+
+### 46.11. Family C Decision
+
+Family C has now been fully investigated as an effective-boundary strategy:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{EQUIV}
+&
+\text{complete boundary data give exactly the Family B local ratio},\\[1mm]
+\mathrm{WARN}
+&
+\text{coarse boundary data require hidden-fluctuation control},\\[1mm]
+\mathrm{NO}
+&
+\text{boundary compactness gives no fixed-IR bound},\\[1mm]
+\mathrm{COND}_{-}
+&
+\text{Dirichlet excess plus entropy control falsifies the route},\\[1mm]
+\mathrm{COND}_{+}
+&
+\text{flat screening inside fixed boundary data proves the route},\\[1mm]
+\mathrm{COND}_{+}
+&
+\text{charged-neutral transfer-kernel comparison proves the route},\\[1mm]
+\mathrm{AUX}
+&
+\text{RP helps only after charged compatibility and comparison},\\[1mm]
+\mathrm{COND}_{+}
+&
+\text{effective model works only with two-sided domination},\\[1mm]
+\mathrm{COND}_{-}
+&
+\text{hostile complete boundary data falsify the route}.
+\end{array}}
+```
+
+Thus Family C does not magically bypass the area barrier. It localizes it. The
+remaining proof is one of the following genuine fixed-IR boundary estimates:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{prove charged boundary free-energy tightness},\\[1mm]
+\mathrm{negative}
+&
+\text{prove hostile boundary divergence with no interior compensation}.
+\end{array}}
+```
+
+This is the same obstruction as Family B, but now expressed at the boundary.
+That is useful because it tells us where to look next: boundary transfer
+comparison, flat screening compatibility, or hostile boundary divergence. It is
+not an ontology change and not a Markov assumption.
+
+### 46.12. Target 40.215: The Remaining Family C Problem
+
+`V4P40-TARGET-40215-FIXED-IR-CHARGED-BOUNDARY-FREE-ENERGY`.
+
+The next precise Family C problem is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{For fixed physical boundary data, prove or falsify}\\[1mm]
+\text{cutoff-uniform tightness of the charged boundary free energy}\\[1mm]
+\Delta F_{Q,a}.
+\end{array}}
+```
+
+The positive route should try transfer-kernel comparison or flat screening
+inside the same retained boundary package.
+
+The negative route should try hostile boundary data:
+
+```math
+\Delta F_{Q,a_n}>L_n,
+\qquad
+L_n\to\infty,
+```
+
+on positive boundary probability, with a proof that hidden interior variables
+cannot compensate.
+
+All constants remain fixed at physical block and boundary scale before the
+cutoff is removed.
+
+### 46.13. Target 40.215A: Flat Boundary Screening Compatibility
+
+`V4P40-TARGET-40215A-FLAT-BOUNDARY-SCREENING-COMPATIBILITY`.
+
+The cheapest positive Family C mechanism would be flat screening. It asks
+whether the odd and even boundary sectors can be connected by an interior
+`SU(2)` filling with zero curvature cost while preserving the retained boundary
+data.
+
+Let `eta` be the retained boundary package. Call it **charge faithful** if the
+odd/even distinction is detected by a relative center pairing that is invariant
+under boundary-preserving flat fillings. This is the meaningful case for the
+fixed-IR certificate: the boundary package actually sees the charged sector.
+
+Let:
+
+```math
+\mathcal F^{\mathrm{flat}}_{Q,a}(\eta)
+```
+
+be the set of flat interior fillings compatible with `eta`. Flat screening
+would require a relation:
+
+```math
+\mathcal F^{\mathrm{flat}}_{Q,a}(\eta)
+\cap
+\mathcal A^{\mathrm{odd}}_{Q,a}(\eta)
+\ne
+\emptyset
+```
+
+whenever the even class is nonempty, with bounded neighborhood volume compared
+to the even class.
+
+**Theorem 40.215A (Flat Screening Dichotomy).** For fixed retained boundary
+data `eta`, any proposed flat-screening mechanism falls into one of the
+following cases.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}
+&
+\text{odd and even sectors are connected by boundary-preserving flat fillings},\\[1mm]
+\mathrm{NO}
+&
+\text{the retained boundary package is charge faithful},\\[1mm]
+\mathrm{BAD}
+&
+\text{the proposed flat move changes eta or creates a hard center cut}.
+\end{array}}
+```
+
+In the `PASS` case, flat screening gives a bounded contribution to
+`Delta F_Q,a`. In the `NO` case, flat screening is topologically unavailable.
+In the `BAD` case, the move is not an admissible Family C comparison.
+
+#### Proof
+
+A flat filling has trivial local curvature and therefore no bulk curvature
+action cost. If it preserves `eta` and changes the local charged class, then
+small neighborhoods of the flat odd and even fillings have comparable action at
+fixed physical boundary scale. This gives a bounded contribution to the
+odd/even boundary ratio.
+
+If `eta` is charge faithful, the relative center pairing is invariant under
+boundary-preserving flat fillings. A flat filling cannot change the detected
+charge. Therefore an odd/even flat exchange cannot exist inside the same
+retained boundary condition.
+
+If a proposed flat move changes `eta`, it compares two different conditional
+boundary problems. If it is implemented by cutting the flat connection across a
+surface, the hard center sheet returns and Section 44 applies. These are not
+valid flat-screening proofs for Family C.
+
+#### Consequence
+
+For the boundary packages that are useful for the fixed-IR certificate,
+flat screening is usually ruled out by charge faithfulness. If flat screening
+does pass, one must check that the boundary package has not become too coarse to
+detect the charged sector. Otherwise the proof is solving a weaker problem.
+
+Thus Target 40.215A mostly removes the optimistic flat escape. It leaves two
+serious Family C routes: transfer-kernel comparison and hostile-boundary
+falsification.
+
+### 46.14. Target 40.215B: Charged-Neutral Boundary Transfer Comparison
+
+`V4P40-TARGET-40215B-CHARGED-NEUTRAL-BOUNDARY-TRANSFER-COMPARISON`.
+
+The next positive route is a direct comparison of the integrated boundary
+kernels. Let:
+
+```math
+T^{0}_{Q,a}
+```
+
+be the neutral boundary transfer kernel, and:
+
+```math
+T^{\mathrm{ch}}_{Q,a}
+```
+
+be the charged boundary transfer kernel. Both are derived from the original
+finite `SU(2)` law by integrating interior variables. They are not new
+dynamics.
+
+The desired physical-kernel comparison is:
+
+```math
+T^{\mathrm{ch}}_{Q,a}
+\ge
+e^{-C_Q}
+T^{0}_{Q,a}
+```
+
+on the boundary cone relevant to the retained readout, with `C_Q` independent
+of `a`.
+
+**Theorem 40.215B (Boundary Transfer Comparison Criterion).** The kernel
+comparison above proves charged boundary free-energy tightness. Conversely, for
+complete boundary data, cutoff-uniform tightness of `Delta F_Q,a` is equivalent
+to such a comparison on the one-dimensional boundary vectors determined by the
+conditioned data.
+
+#### Proof
+
+Applying the kernel inequality to the retained boundary vector gives:
+
+```math
+W^{\mathrm{odd}}_{Q,a}(\eta)
+\ge
+e^{-C_Q}
+W^{\mathrm{even}}_{Q,a}(\eta),
+```
+
+and hence:
+
+```math
+\Delta F_{Q,a}(\eta)
+\le
+C_Q.
+```
+
+Conversely, if complete boundary data give a uniform bound for every retained
+boundary vector in the target class, then the same inequality holds on those
+vectors. Extending it to a full cone inequality is an additional strengthening,
+not a formal consequence.
+
+#### Microscopic Minorization Fails
+
+A layer-by-layer heat-bath lower bound gives a comparison constant that
+multiplies over the number of microscopic layers and boundary variables. Since
+a fixed physical collar contains a diverging number of microscopic variables,
+the naive constant collapses as `a -> 0`.
+
+Thus the useful comparison must be a physical transfer theorem, not a product
+of microscopic positivity constants.
+
+#### RP And Cone Positivity
+
+Reflection positivity may help construct a positive boundary form, but it does
+not supply the comparison constant. A Perron-Frobenius or cone-contraction
+argument would prove the target only if it gives a cutoff-uniform comparison of
+the charged and neutral boundary cones at fixed physical scale.
+
+This is a genuine nonperturbative estimate. It is not a formal consequence of
+positivity.
+
+#### Decision
+
+Target 40.215B remains a live positive route, but it has been reduced to a
+specific estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove a fixed-physical boundary transfer comparison}\\[1mm]
+\text{between charged and neutral kernels of the original SU(2) law.}
+\end{array}}
+```
+
+No microscopic minorization, RP positivity alone, or heuristic transfer matrix
+derivation proves it.
+
+### 46.15. Target 40.215C: Hostile Boundary Falsifier
+
+`V4P40-TARGET-40215C-HOSTILE-BOUNDARY-FALSIFIER`.
+
+The clean negative Family C route is to prove that charged boundary free energy
+diverges on a positive-probability boundary event.
+
+Let:
+
+```math
+\mathcal H_{Q,a_n}
+=
+\left\{
+\eta:
+\Delta F_{Q,a_n}(\eta)>L_n
+\right\},
+\qquad
+L_n\to\infty.
+```
+
+The complete-boundary hostile condition is:
+
+```math
+\mathbb P(\mathcal H_{Q,a_n})
+\ge
+\epsilon_Q>0.
+```
+
+**Theorem 40.215C (Complete Hostile Boundary Falsifier).** If the retained
+boundary data are complete and the hostile condition above holds, then the
+negative branch of Family C holds.
+
+#### Proof
+
+For complete boundary data:
+
+```math
+\Delta F_{Q,a}
+=
+-
+\log r_{Q,a}.
+```
+
+Thus `Delta F > L_n` is exactly:
+
+```math
+r_{Q,a_n}<e^{-L_n}.
+```
+
+Positive boundary probability gives local charged-ratio collapse on positive
+mass, which is the negative branch of Target 40.213 and hence the negative
+Family C outcome.
+
+#### Coarse Boundary Hazard
+
+If `eta` is coarse, write the complete data as:
+
+```math
+\zeta=(\eta,\theta).
+```
+
+Then a coarse hostile boundary is decisive only if hidden favorable values of
+`theta` do not restore the odd weight. A sufficient no-compensation condition
+is:
+
+```math
+\mathbb E
+\left[
+\exp
+\left(
+-\Delta F_{Q,a_n}(\eta,\theta)
+\right)
+\mid
+\eta
+\right]
+\le
+e^{-L_n}
+```
+
+on a boundary event of probability at least `epsilon_Q`.
+
+Under this condition:
+
+```math
+\Delta F^{\partial}_{Q,a_n}(\eta)
+\ge
+L_n,
+```
+
+so the coarse boundary also falsifies Family C.
+
+**Theorem 40.215D (Coarse Hostile Boundary Needs No Compensation).** Hostile
+coarse boundary data prove the negative branch only when the conditional hidden
+average of the odd/even ratio also collapses.
+
+#### Proof
+
+The coarse odd/even ratio is the conditional hidden average of the complete
+odd/even ratio, with the even normalization included in the boundary
+disintegration. If that conditional average is at most `e^{-L_n}`, then the
+coarse boundary free energy is at least `L_n`. Without this estimate, rare
+hidden favorable data may dominate the numerator.
+
+#### Dirichlet-Entropy Route To Hostility
+
+A practical hostile-boundary proof would combine a classical excess and an
+entropy bound. Suppose that on a boundary event of probability at least
+`epsilon_Q`, every odd filling pays excess action `I_Q,a` over the even sector,
+while the total odd fluctuation entropy relative to the even sector is at most
+`N_Q,a`, and:
+
+```math
+I_{Q,a}
+-
+\log N_{Q,a}
+\to
+\infty.
+```
+
+Then the complete hostile condition holds.
+
+This is the boundary version of Theorem 40.213H. It is an honest negative
+target. It has not been proved by the existing thin-sheet or soft-carrier
+failures, because those failures cover candidate representatives rather than
+the complete odd boundary class.
+
+### 46.16. Revised Family C Decision After Target 40.215
+
+The deeper Target 40.215 audit sharpens the Family C ledger:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}_{\mathrm{faithful}}
+&
+\text{flat screening fails for charge-faithful boundary packages},\\[1mm]
+\mathrm{PASS}_{\mathrm{flat}}
+&
+\text{flat screening works only if it preserves eta and changes charge},\\[1mm]
+\mathrm{OPEN}_{+}
+&
+\text{prove charged-neutral physical boundary transfer comparison},\\[1mm]
+\mathrm{NO}_{\mathrm{micro}}
+&
+\text{microscopic transfer minorization constants collapse},\\[1mm]
+\mathrm{AUX}
+&
+\text{RP gives positivity but not the comparison constant},\\[1mm]
+\mathrm{OPEN}_{-}
+&
+\text{prove hostile boundary divergence with no hidden compensation}.
+\end{array}}
+```
+
+Thus Family C is exhausted down to two genuine remaining estimates:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{a physical charged-neutral boundary transfer comparison},\\[1mm]
+\mathrm{negative}
+&
+\text{a complete hostile-boundary action-entropy imbalance}.
+\end{array}}
+```
+
+If the positive estimate holds, the fixed-IR certificate closes through Family
+C. If the negative estimate holds, the Family C route is falsified by a real
+boundary area barrier. If neither can be proved, the next natural family is
+Family D, where the same obstruction is recast as a bottleneck or capacity
+problem.
+
+### 46.17. Target 40.216: Boundary Transfer Comparison Audit
+
+`V4P40-TARGET-40216-BOUNDARY-TRANSFER-COMPARISON-AUDIT`.
+
+Target 40.215B left a positive conditional pass:
+
+```math
+T^{\mathrm{ch}}_{Q,a}
+\ge
+e^{-C_Q}
+T^{0}_{Q,a}.
+```
+
+This full kernel inequality is stronger than the fixed-IR certificate needs.
+The certificate only needs comparison on the boundary states and test functions
+generated by the retained readout package. We therefore audit three increasingly
+weak versions:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{K1}
+&
+\text{full positive-kernel domination},\\[1mm]
+\mathrm{K2}
+&
+\text{coarse physical boundary domination},\\[1mm]
+\mathrm{K3}
+&
+\text{readout-cone domination}.
+\end{array}}
+```
+
+The weakest useful target is K3.
+
+#### 46.17.1. Readout Cone
+
+Let:
+
+```math
+\mathcal K_R
+```
+
+be the finite positive cone generated by the retained physical readout events,
+nearby-bin indicators, and incidence-compatible boundary tests used in the
+fixed-IR certificate. The cone is fixed after `R` is fixed and before
+`a -> 0`.
+
+The readout-cone comparison is:
+
+```math
+\langle f,T^{\mathrm{ch}}_{Q,a}g\rangle
+\ge
+e^{-C_Q}
+\langle f,T^{0}_{Q,a}g\rangle
+```
+
+for all nonnegative:
+
+```math
+f,g\in\mathcal K_R,
+```
+
+on the relevant outside-boundary event, with `C_Q` independent of `a`.
+
+**Theorem 40.216A (Readout-Cone Comparison Suffices).** If the readout-cone
+comparison holds for the cone that generates the fixed-IR boundary certificate,
+then Family C proves the positive fork.
+
+#### Proof
+
+The fixed-IR certificate evaluates only boundary masses seen through the
+retained readout package. Those masses are pairings of the form:
+
+```math
+\langle f,Tg\rangle
+```
+
+with `f,g` in the readout cone. The displayed comparison gives the charged
+boundary weight at least `e^{-C_Q}` times the neutral boundary weight for every
+certificate-relevant test. This is exactly charged boundary free-energy
+tightness on the retained boundary package.
+
+Thus full kernel domination is not necessary. Readout-cone domination is the
+right positive target.
+
+#### 46.17.2. Support Test
+
+Before estimating densities, test support. The positive comparison cannot hold
+if there are `f,g` in the readout cone with:
+
+```math
+\langle f,T^{0}_{Q,a}g\rangle>0
+```
+
+but:
+
+```math
+\langle f,T^{\mathrm{ch}}_{Q,a}g\rangle=0.
+```
+
+**Theorem 40.216B (Cone Support Obstruction).** A readout-cone support gap
+falsifies the positive transfer-comparison route.
+
+#### Proof
+
+If the neutral pairing is positive and the charged pairing is zero, no finite
+constant `C_Q` can satisfy the readout-cone comparison. This falsifies the
+positive route for that retained readout package.
+
+This is not yet a full negative confinement statement. It becomes a Family C
+negative only if the support gap occurs on positive outside-boundary
+probability and the readout cone is complete for the charged boundary
+certificate.
+
+#### 46.17.3. Pointwise Density Ratio Test
+
+Assume the charged and neutral kernels admit densities with respect to a common
+boundary reference measure:
+
+```math
+dT^{\mathrm{ch}}_{Q,a}
+=
+k^{\mathrm{ch}}_{Q,a}d\rho,
+\qquad
+dT^{0}_{Q,a}
+=
+k^{0}_{Q,a}d\rho.
+```
+
+A pointwise lower bound:
+
+```math
+k^{\mathrm{ch}}_{Q,a}
+\ge
+e^{-C_Q}
+k^{0}_{Q,a}
+```
+
+implies full kernel domination and hence readout-cone domination.
+
+But this pointwise route is usually too strong. The density ratio can see the
+same microscopic sheet or curvature costs that defeated Families A and B.
+
+**Theorem 40.216C (Pointwise Density Bound Is Sufficient But Too Strong).** A
+cutoff-uniform pointwise charged-neutral density lower bound proves Family C,
+but the known local carrier obstructions show why this bound should not be
+expected without a genuine nonperturbative estimate.
+
+#### Proof
+
+The first statement follows by integrating the pointwise inequality against
+nonnegative boundary test functions. The warning follows from Sections 44 and
+45: pointwise comparisons of explicit odd representatives see either hard
+center sheet cost or soft positive curvature cost. Therefore a pointwise density
+bound would already contain the missing area-barrier estimate.
+
+#### 46.17.4. Coarse Physical Boundary Domination
+
+A more plausible target is domination after applying a physical boundary
+coarse-graining:
+
+```math
+\Pi_R:
+\partial Q_a
+\longrightarrow
+\partial Q_R^{\mathrm{phys}}.
+```
+
+Let:
+
+```math
+\bar T^{0}_{Q,a}
+=
+(\Pi_R)_{\#}T^{0}_{Q,a},
+\qquad
+\bar T^{\mathrm{ch}}_{Q,a}
+=
+(\Pi_R)_{\#}T^{\mathrm{ch}}_{Q,a}.
+```
+
+The coarse comparison is:
+
+```math
+\bar T^{\mathrm{ch}}_{Q,a}
+\ge
+e^{-C_Q}
+\bar T^{0}_{Q,a}
+```
+
+on the finite physical boundary sigma-algebra generated by the readouts.
+
+**Theorem 40.216D (Coarse Domination Suffices If The Readout Factors Through
+It).** If the retained readout cone factors through `Pi_R`, then coarse
+physical boundary domination proves readout-cone domination.
+
+#### Proof
+
+If every `f,g` in the readout cone is a function of the coarse boundary
+variables, then the pairings with `T` equal the pairings with `bar T`.
+Domination of the coarse kernels therefore gives domination on all
+certificate-relevant tests.
+
+The cost of this weakening is faithfulness. If `Pi_R` forgets the charged
+boundary information, the resulting comparison may prove a weaker statement
+than the fixed-IR certificate.
+
+#### 46.17.5. RP And Cone Comparison
+
+Reflection positivity supplies positive forms:
+
+```math
+\langle h,T^{0}h\rangle\ge0,
+\qquad
+\langle h,T^{\mathrm{ch}}h\rangle\ge0
+```
+
+when the charged package is reflection compatible. It does not supply:
+
+```math
+T^{\mathrm{ch}}
+\ge
+e^{-C_Q}
+T^{0}.
+```
+
+**Theorem 40.216E (RP Does Not Imply Cone Domination).** Reflection positivity
+does not by itself prove readout-cone domination. It becomes useful only if
+combined with a cutoff-uniform charged-neutral comparison, cone contraction, or
+two-sidedness estimate.
+
+#### Proof
+
+Positivity of two quadratic forms does not imply a lower domination relation
+between them. A positive operator can have arbitrarily small weight on a
+subcone while remaining reflection positive. Therefore RP is structural support
+for the transfer comparison, not the comparison itself.
+
+#### 46.17.6. Perron-Frobenius Or Cone-Contraction Route
+
+A possible positive strategy is to prove that both charged and neutral boundary
+transfers are strictly positive on the same finite physical cone and that their
+projective diameters are uniformly bounded. A Birkhoff or Perron-Frobenius
+argument could then give a comparison constant.
+
+The needed input is:
+
+```math
+\operatorname{diam}_{\mathcal K_R}
+\left(
+T^{0}_{Q,a}\mathcal K_R
+\right)
+\le
+D_Q,
+\qquad
+\operatorname{diam}_{\mathcal K_R}
+\left(
+T^{\mathrm{ch}}_{Q,a}\mathcal K_R
+\right)
+\le
+D_Q,
+```
+
+together with common support in the cone.
+
+**Theorem 40.216F (Cone-Contraction Criterion).** A cutoff-uniform
+cone-contraction theorem for the charged and neutral physical boundary kernels,
+plus common readout-cone support, proves readout-cone domination.
+
+#### Proof
+
+Finite projective diameter in the same cone gives uniform comparison between
+positive images of cone elements after normalization. Common support prevents
+one kernel from annihilating a certificate-relevant direction. Combining these
+facts gives a constant `C_Q` such that the charged pairings dominate the neutral
+pairings up to `e^{-C_Q}`.
+
+This is a genuine positive route, but it is not a formal consequence of local
+heat-bath positivity. The contraction must be proved at fixed physical boundary
+scale uniformly as `a -> 0`.
+
+#### 46.17.7. Negative Readout-Cone Falsifier
+
+The negative transfer-comparison test is exact. If there exist:
+
+```math
+f_n,g_n\in\mathcal K_R,
+\qquad
+a_n\to0,
+\qquad
+L_n\to\infty,
+```
+
+such that:
+
+```math
+\frac{
+\langle f_n,T^{\mathrm{ch}}_{Q,a_n}g_n\rangle
+}{
+\langle f_n,T^{0}_{Q,a_n}g_n\rangle
+}
+\le
+e^{-L_n}
+```
+
+on positive outside-boundary probability, then readout-cone domination fails.
+
+**Theorem 40.216G (Readout-Cone Collapse Falsifier).** If the readout cone is
+complete for the fixed-IR charged boundary certificate, readout-cone collapse on
+positive boundary probability proves the negative Family C branch.
+
+#### Proof
+
+The displayed ratio is exactly the charged-to-neutral boundary ratio seen by a
+certificate-relevant test. If it collapses on positive boundary probability,
+then the charged boundary free energy diverges there. Completeness of the cone
+ensures that this is not a readout artifact. The result is the hostile-boundary
+falsifier in transfer-kernel language.
+
+#### 46.17.8. Target 40.216 Decision
+
+The boundary transfer comparison audit has a clean outcome:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}
+&
+\text{full kernel domination is stronger than needed},\\[1mm]
+\mathrm{BEST}_{+}
+&
+\text{readout-cone domination is the weakest useful positive target},\\[1mm]
+\mathrm{FAIL}_{+}
+&
+\text{support gaps falsify the positive transfer route},\\[1mm]
+\mathrm{TOO\_STRONG}
+&
+\text{pointwise density domination contains the hard estimate},\\[1mm]
+\mathrm{COND}_{+}
+&
+\text{coarse domination works only if the readout factors faithfully},\\[1mm]
+\mathrm{AUX}
+&
+\text{RP gives positivity but not domination},\\[1mm]
+\mathrm{OPEN}_{+}
+&
+\text{cone contraction could prove domination},\\[1mm]
+\mathrm{OPEN}_{-}
+&
+\text{readout-cone collapse would prove hostile boundary behavior}.
+\end{array}}
+```
+
+Thus the next positive Family C attack should be cone contraction on the
+physical readout boundary cone. The next negative attack should search for
+readout-cone collapse on positive boundary probability. Both are fixed-IR
+aligned and use only the original finite `SU(2)` boundary kernels.
+
+### 46.18. Target 40.217: Cone-Contraction Audit
+
+`V4P40-TARGET-40217-CONE-CONTRACTION-AUDIT`.
+
+Target 40.216 identified readout-cone domination as the weakest useful positive
+Family C estimate. Target 40.217 asks whether cone contraction can prove it.
+
+There is one immediate hazard. Projective contraction controls the **shape** of
+positive boundary vectors, but it does not control their **size**. A charged
+kernel can have exactly the same projective image as the neutral kernel and
+still be smaller by a factor that tends to zero. Therefore a cone-contraction
+proof needs two inputs:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{shape}
+&
+\text{charged and neutral images are projectively comparable},\\[1mm]
+\mathrm{scale}
+&
+\text{the charged normalization is not collapsing}.
+\end{array}}
+```
+
+Both inputs must be fixed-IR estimates.
+
+#### 46.18.1. Hilbert Metric On The Readout Cone
+
+Let `K_R` be the finite readout cone from Target 40.216. For nonzero
+`x,y in K_R`, define:
+
+```math
+M(x/y)
+=
+\inf
+\left\{
+\lambda>0:
+x\le \lambda y
+\right\},
+```
+
+and:
+
+```math
+m(x/y)
+=
+\sup
+\left\{
+\mu>0:
+\mu y\le x
+\right\}.
+```
+
+The Hilbert projective distance is:
+
+```math
+d_H(x,y)
+=
+\log
+\frac{
+M(x/y)
+}{
+m(x/y)
+}.
+```
+
+Here the order is the order induced by `K_R`. Infinite distance means a support
+gap in at least one cone direction.
+
+Choose a positive normalization functional:
+
+```math
+\ell_R:
+K_R
+\longrightarrow
+\mathbb R_+,
+```
+
+strictly positive on nonzero cone elements. It represents the retained total
+boundary mass or another fixed physical readout normalization.
+
+#### 46.18.2. Projective Control Alone Is Not Enough
+
+**Theorem 40.217A (Scalar Collapse Escapes Hilbert Contraction).** A
+cutoff-uniform Hilbert-diameter bound for the charged image and neutral image
+does not by itself prove readout-cone domination.
+
+#### Proof
+
+Let:
+
+```math
+T^{\mathrm{ch}}_{Q,a}
+=
+e^{-L_a}
+T^{0}_{Q,a},
+\qquad
+L_a\to\infty.
+```
+
+Then the charged and neutral images are identical in projective space. Their
+Hilbert distance is zero for every input. Nevertheless:
+
+```math
+T^{\mathrm{ch}}_{Q,a}
+\ge
+e^{-C_Q}
+T^{0}_{Q,a}
+```
+
+is impossible with `C_Q` independent of `a`. The missing datum is the scalar
+normalization. Thus cone contraction must be paired with a charged/neutral mass
+lower bound.
+
+#### 46.18.3. Sharp Positive Criterion
+
+The correct positive criterion has three parts.
+
+First, common readout-cone support:
+
+```math
+T^{0}_{Q,a}g\ne0
+\quad
+\Longrightarrow
+\quad
+T^{\mathrm{ch}}_{Q,a}g\ne0
+```
+
+for every nonzero `g in K_R`.
+
+Second, projective comparison:
+
+```math
+d_H
+\left(
+T^{\mathrm{ch}}_{Q,a}g,
+T^{0}_{Q,a}g
+\right)
+\le
+D_Q
+```
+
+for every nonzero `g in K_R`.
+
+Third, normalization comparison:
+
+```math
+\ell_R
+\left(
+T^{\mathrm{ch}}_{Q,a}g
+\right)
+\ge
+e^{-A_Q}
+\ell_R
+\left(
+T^{0}_{Q,a}g
+\right),
+```
+
+again for every nonzero `g in K_R`.
+
+**Theorem 40.217B (Shape Plus Scale Proves Readout-Cone Domination).** The
+three conditions above imply:
+
+```math
+T^{\mathrm{ch}}_{Q,a}g
+\ge
+e^{-A_Q-D_Q}
+T^{0}_{Q,a}g
+```
+
+for every nonzero `g in K_R`. Consequently Family C proves the positive fork.
+
+#### Proof
+
+Let:
+
+```math
+x=T^{\mathrm{ch}}_{Q,a}g,
+\qquad
+y=T^{0}_{Q,a}g.
+```
+
+By the definition of `m(x/y)`, it is enough to lower-bound `m(x/y)`. The
+projective bound says:
+
+```math
+\frac{
+M(x/y)
+}{
+m(x/y)
+}
+\le
+e^{D_Q}.
+```
+
+The normalization ratio:
+
+```math
+r
+=
+\frac{\ell_R(x)}{\ell_R(y)}
+```
+
+satisfies:
+
+```math
+r\le M(x/y),
+```
+
+because `x <= M(x/y)y` and `ell_R` is positive. Hence:
+
+```math
+r
+\le
+e^{D_Q}m(x/y).
+```
+
+Since `r >= e^{-A_Q}`, we get:
+
+```math
+m(x/y)
+\ge
+e^{-A_Q-D_Q}.
+```
+
+Therefore:
+
+```math
+x
+\ge
+e^{-A_Q-D_Q}y.
+```
+
+Pairing with all positive readout tests gives readout-cone domination.
+
+#### 46.18.4. How To Prove The Shape Bound
+
+A possible route to the projective bound is a physical Doeblin theorem on the
+readout cone:
+
+```math
+T^{\sigma}_{Q,a}g
+\in
+\mathcal K_R(D_Q)
+```
+
+for:
+
+```math
+\sigma\in\{0,\mathrm{ch}\},
+```
+
+where `K_R(D_Q)` is a projective ball of diameter `D_Q` inside the cone.
+
+Microscopic Doeblin estimates do not prove this, because their constants
+multiply over a number of microscopic variables that diverges. A valid proof
+must use a physical-block smoothing, transfer, or reflection-compatible
+comparison that is uniform after `R` is fixed.
+
+**Theorem 40.217C (Shape Bound Is A Physical-Block Mixing Estimate).** The
+projective shape bound is equivalent to a cutoff-uniform mixing statement for
+the charged and neutral boundary kernels on the finite physical readout cone.
+Microscopic positivity alone does not imply it.
+
+#### Proof
+
+Finite projective diameter of the image of a positive cone is exactly uniform
+mixing in Hilbert metric. If obtained by multiplying microscopic positivity
+constants, the bound degrades with the microscopic size of the physical block.
+Thus a fixed-IR proof must be a renormalized physical-block estimate.
+
+#### 46.18.5. How To Prove The Scale Bound
+
+The scalar normalization comparison is:
+
+```math
+\ell_R(T^{\mathrm{ch}}g)
+\ge
+e^{-A_Q}
+\ell_R(T^0g).
+```
+
+This is not a projective statement. It is the charged boundary free-energy
+lower bound in one averaged direction. If it fails, cone contraction cannot
+repair it.
+
+**Theorem 40.217D (Scale Bound Is The Area-Barrier Slot).** The normalization
+comparison is precisely where a residual area penalty can enter the
+cone-contraction route.
+
+#### Proof
+
+Hilbert distance is invariant under scalar multiplication. Therefore any
+collapse of the total charged mass relative to the neutral mass is invisible to
+projective contraction. The normalization comparison is exactly the statement
+that this scalar collapse does not occur on the readout cone.
+
+In other words, cone contraction can distribute charged mass once it exists; it
+cannot create charged mass if the scalar charged sector has collapsed.
+
+#### 46.18.6. Negative Cone-Contraction Falsifiers
+
+There are three distinct ways the cone route can fail.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{support}
+&
+\text{a neutral cone direction has zero charged image},\\[1mm]
+\mathrm{shape}
+&
+\text{Hilbert distance between charged and neutral images diverges},\\[1mm]
+\mathrm{scale}
+&
+\text{charged normalization collapses relative to neutral normalization}.
+\end{array}}
+```
+
+The strongest negative outcome is scale collapse: there exist `g_n in K_R` and
+`a_n -> 0` such that:
+
+```math
+\frac{
+\ell_R(T^{\mathrm{ch}}_{Q,a_n}g_n)
+}{
+\ell_R(T^{0}_{Q,a_n}g_n)
+}
+\le
+e^{-L_n},
+\qquad
+L_n\to\infty.
+```
+
+If the cone is complete for the fixed-IR certificate and this happens on
+positive boundary probability, then Family C is falsified on that event.
+
+**Theorem 40.217E (Scale Collapse Falsifier).** Readout-cone scalar collapse on
+positive boundary probability proves the hostile-boundary negative branch,
+provided the cone is certificate-complete.
+
+#### Proof
+
+The displayed scalar ratio is a charged-to-neutral boundary mass ratio seen by
+the retained readout package. Its collapse is exactly divergence of the charged
+boundary free energy in that readout direction. Certificate completeness rules
+out the possibility that the collapse is merely a forgotten-coordinate artifact.
+
+#### 46.18.7. Target 40.217 Decision
+
+The cone-contraction audit gives a sharper answer than Target 40.216:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}
+&
+\text{projective contraction alone is insufficient},\\[1mm]
+\mathrm{COND}_{+}
+&
+\text{shape bound plus scale bound proves readout-cone domination},\\[1mm]
+\mathrm{OPEN}_{\mathrm{shape}}
+&
+\text{prove physical-block Hilbert-metric mixing},\\[1mm]
+\mathrm{OPEN}_{\mathrm{scale}}
+&
+\text{prove charged normalization does not collapse},\\[1mm]
+\mathrm{COND}_{-}
+&
+\text{scale collapse on a complete readout cone falsifies Family C}.
+\end{array}}
+```
+
+Thus the positive cone route is not a single estimate. It is a coupled
+shape-and-scale problem. The shape estimate is a physical-block mixing theorem;
+the scale estimate is the same charged free-energy lower bound in normalized
+form. If the scale estimate cannot be proved, Family C has found the area
+barrier again. If both shape and scale are proved, the fixed-IR certificate
+closes through Family C.
+
+## 47. Family D: Bottleneck And Capacity Geometry Tests
+
+`V4P40-TARGET-40218-FAMILY-D-BOTTLENECK-CAPACITY-GEOMETRY`.
+
+Families A-C all arrived at the same fixed-IR object from different sides.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}
+&
+\text{one carrier or transport map is too rigid},\\[1mm]
+\mathrm{B}
+&
+\text{carrier entropy reduces to an odd/even mass ratio},\\[1mm]
+\mathrm{C}
+&
+\text{boundary action reduces to charged free-energy scale}.
+\end{array}}
+```
+
+Family D asks whether the same obstruction is geometric: are the pinned and
+charged sectors separated by a real bottleneck in the original finite `SU(2)`
+conditional measure?
+
+The Markov kernels and Dirichlet forms below are analytic comparison devices.
+They are not record dynamics, not ISP transition laws, and not modifications of
+the finite `SU(2)` ensemble. Every object is built from the same conditional
+configuration measure after the physical block, boundary package, and readout
+scale have been fixed.
+
+### 47.1. Fixed-IR Sets And Ratio
+
+Fix a physical block or collar region `Q`, outside data `xi`, and any retained
+boundary or coset data needed by the certificate. Let:
+
+```math
+\mu_{Q,a}
+```
+
+be the corresponding normalized finite `SU(2)` conditional law. Let:
+
+```math
+A_{Q,a}
+```
+
+be the neutral, pinned, or even local class, and let:
+
+```math
+B_{Q,a}
+```
+
+be the charged, exit, or odd local class. The mass ratio is:
+
+```math
+r_{Q,a}
+=
+\frac{
+\mu_{Q,a}(B_{Q,a})
+}{
+\mu_{Q,a}(A_{Q,a})
+}.
+```
+
+Family D proves the positive fork if it proves:
+
+```math
+r_{Q,a}
+\ge
+e^{-C_Q}
+```
+
+on high outside-environment probability. It proves the negative fork if it
+proves:
+
+```math
+r_{Q,a_n}
+\to
+0
+```
+
+on positive outside-environment probability.
+
+Thus Family D has the same endpoint as Families B and C. Its only possible
+advantage is to prove the ratio through geometry.
+
+### 47.2. Admissible Analytic Kernels
+
+Let:
+
+```math
+P_{Q,a}
+```
+
+be a reversible Markov kernel with stationary law `mu_Q,a`. This kernel is an
+analytic proof device. It must be chosen without sampling from the normalized
+charged class and without inserting a hidden stochastic ontology.
+
+The Dirichlet form is:
+
+```math
+\mathcal E_{Q,a}(f,f)
+=
+\frac12
+\int
+\left(
+f(U)-f(V)
+\right)^2
+d\mu_{Q,a}(U)dP_{Q,a}(U,V).
+```
+
+The capacity between `A=A_Q,a` and `B=B_Q,a` is:
+
+```math
+\operatorname{Cap}_{Q,a}(A,B)
+=
+\inf
+\left\{
+\mathcal E_{Q,a}(f,f):
+f|_A=1,\ f|_B=0,\ 0\le f\le1
+\right\}.
+```
+
+The normalization is important. For a unit-rate reversible kernel:
+
+```math
+\operatorname{Cap}_{Q,a}(A,B)
+\le
+\mu_{Q,a}(B).
+```
+
+Indeed, use the test function `f=1_{B^c}`. Its energy is the one-step boundary
+flow out of `B`, which is at most `mu(B)`.
+
+### 47.3. Target 40.218A: Positive Capacity Lower Bound
+
+The clean positive Family D theorem is immediate from the capacity upper bound.
+
+**Theorem 40.218A (Capacity Lower Bound Proves The Mass Ratio).** If an
+admissible normalized kernel satisfies:
+
+```math
+\operatorname{Cap}_{Q,a}(A_{Q,a},B_{Q,a})
+\ge
+e^{-C_Q}
+\mu_{Q,a}(A_{Q,a})
+```
+
+on high outside-environment probability, then:
+
+```math
+\mu_{Q,a}(B_{Q,a})
+\ge
+e^{-C_Q}
+\mu_{Q,a}(A_{Q,a}),
+```
+
+and therefore Family D proves the positive fork.
+
+#### Proof
+
+By the capacity upper bound:
+
+```math
+\operatorname{Cap}_{Q,a}(A,B)
+\le
+\mu_{Q,a}(B).
+```
+
+Combining this with the assumed lower bound gives:
+
+```math
+\mu_{Q,a}(B)
+\ge
+e^{-C_Q}\mu_{Q,a}(A).
+```
+
+This is exactly the fixed-IR odd/even mass lower bound.
+
+#### Consequence
+
+This theorem is useful but unforgiving. A capacity lower bound of this strength
+is already a mass lower bound in geometric form. It is a valid proof route only
+if the capacity estimate is proved by a non-tautological geometric argument,
+not by assuming the charged mass.
+
+### 47.4. Target 40.218B: Capacity Collapse Is Not Enough
+
+The negative direction is not symmetric.
+
+**Theorem 40.218B (Small Capacity Does Not Imply Small Charged Mass).** A bound
+of the form:
+
+```math
+\operatorname{Cap}_{Q,a}(A_{Q,a},B_{Q,a})
+\le
+e^{-L_a}
+\mu_{Q,a}(A_{Q,a}),
+\qquad
+L_a\to\infty,
+```
+
+does not by itself imply:
+
+```math
+\mu_{Q,a}(B_{Q,a})
+\le
+e^{-L'_a}
+\mu_{Q,a}(A_{Q,a}).
+```
+
+#### Proof
+
+A reversible chain can have two large regions connected by an exponentially
+thin neck. The capacity between them is small, while both regions have large
+stationary mass. Capacity measures passage, not target volume. Therefore
+capacity collapse alone is a bottleneck diagnostic, not a mass-collapse proof.
+
+To prove the negative fork, one needs an additional mass-collapse theorem: the
+bottleneck must force the charged region itself to have small equilibrium
+weight, or must be paired with a complete hostile-boundary/action-entropy
+estimate.
+
+### 47.5. Attempt 1: Microscopic Poincare Or Log-Sobolev Bounds
+
+One might try to use a microscopic heat-bath chain on all links in the fixed
+physical block. At finite cutoff, this gives a valid reversible kernel.
+
+The problem is scaling. A fixed physical block contains a number of microscopic
+variables that diverges as `a -> 0`. Tensorized Poincare, log-Sobolev, or
+Doeblin constants degrade with this number unless a renormalized physical-block
+inequality is proved.
+
+**Theorem 40.218C (Microscopic Functional Inequalities Do Not Give Fixed-IR
+Capacity).** Naive microscopic Poincare, log-Sobolev, or heat-bath minorization
+does not prove the Family D capacity lower bound.
+
+#### Proof
+
+The constants supplied by one-site or one-link inequalities multiply or tensor
+over the microscopic degrees of freedom. Since the number of variables in a
+fixed physical block diverges, the resulting lower bound on capacity or
+conductance collapses. This is the same finite-cutoff-only positivity failure
+seen in Families B and C.
+
+The needed input is a physical-block functional inequality with constants
+independent of `a`.
+
+### 47.6. Attempt 2: Path Or Flow Construction
+
+A classical way to lower-bound capacity is to build a unit flow from `A` to `B`
+with bounded congestion, or to construct many paths from `A` to `B`.
+
+This recovers the lessons from Families A and B.
+
+```math
+\boxed{
+\begin{array}{ll}
+\text{one path}
+&
+\text{is Family A transport},\\[1mm]
+\text{many paths}
+&
+\text{is Family B carrier entropy}.
+\end{array}}
+```
+
+**Theorem 40.218D (Flow Construction Reduces To A/B Estimates).** A bounded
+congestion flow from `A` to `B` proves the positive capacity bound. But any
+explicit construction of such a flow must overcome exactly the transport and
+carrier-counting obstructions isolated in Families A and B.
+
+#### Proof
+
+Thomson's principle identifies capacity with the inverse minimal flow energy.
+A flow with fixed-IR bounded congestion gives:
+
+```math
+\operatorname{Cap}_{Q,a}(A,B)
+\ge
+e^{-C_Q}\mu(A).
+```
+
+By Theorem 40.218A this proves the mass ratio. If the flow is concentrated on
+one surgery, it has the deterministic carrier costs of Family A. If it spreads
+over many surgeries, its bounded congestion is exactly an entropy-compensated
+carrier-counting estimate of Family B. Thus the flow language is useful, but it
+does not bypass those estimates.
+
+### 47.7. Attempt 3: Isoperimetric No-Neck Inequality
+
+A more intrinsic positive target is a no-neck inequality. Let `S` be any
+measurable separator with:
+
+```math
+A\subset S,
+\qquad
+B\subset S^c.
+```
+
+Let `partial_P S` denote the one-step boundary flow:
+
+```math
+\partial_P S
+=
+\int_S P(U,S^c)d\mu(U).
+```
+
+A fixed-IR no-neck inequality would be:
+
+```math
+\partial_P S
+\ge
+e^{-C_Q}
+\min
+\left(
+\mu(S),
+\mu(S^c)
+\right)
+```
+
+for all such separators relevant to the readout package.
+
+**Theorem 40.218E (No-Neck Inequality Proves Capacity Lower Bound).** A
+fixed-IR no-neck inequality for all separators between `A` and `B` implies the
+positive capacity lower bound, hence proves Family D positive.
+
+#### Proof
+
+Cheeger-type capacity estimates bound the pair capacity below by the
+isoperimetric constant times the source mass, up to fixed normalization
+conventions for the kernel. Since the constants are fixed at physical scale,
+Theorem 40.218A gives the mass-ratio lower bound.
+
+#### Boundary Of The Route
+
+The no-neck inequality is a genuine physical-block isoperimetric theorem. It
+cannot be replaced by microscopic local positivity. If the best no-neck
+constant decays as `a -> 0`, the route fails to prove fixed-IR confinement.
+
+### 47.8. Attempt 4: Morse Or Energy-Barrier Analysis
+
+The negative geometric story is that every passage from `A` to `B` crosses a
+high-action saddle. Let:
+
+```math
+H_{Q,a}
+```
+
+be a separating barrier set. Suppose every admissible path from `A` to `B`
+crosses `H_Q,a`, and:
+
+```math
+\mu_{Q,a}(H_{Q,a})
+\le
+e^{-L_a}
+\mu_{Q,a}(A),
+\qquad
+L_a\to\infty.
+```
+
+Then the capacity is small.
+
+**Theorem 40.218F (Barrier Sets Diagnose Bottlenecks, Not Mass Collapse).** A
+small separating barrier proves capacity collapse. It proves the negative
+Family D branch only with an additional theorem that the charged target mass is
+controlled by passage through the barrier.
+
+#### Proof
+
+If every path crosses `H`, then a test function changing only across `H` gives
+small capacity, or equivalently the equilibrium potential has small boundary
+flow. But the charged set `B` may still have large mass behind a narrow neck.
+Static mass and dynamic passage are different. Therefore a barrier set is a
+diagnostic unless combined with a mass-collapse or no-compensation estimate.
+
+This is the geometric form of the warning from Family C: hostile boundary
+behavior is decisive only when hidden compensation cannot restore the odd
+sector.
+
+### 47.9. Attempt 5: Support Disconnection
+
+The strongest negative geometry would be a support gap:
+
+```math
+\mu_{Q,a}(B_{Q,a})=0
+```
+
+on positive environment probability. Then the ratio is zero.
+
+At finite cutoff for `SU(2)` link variables, genuine support disconnection is
+rare. The group is connected, and most charged local classes are nonempty when
+the boundary package allows them. More often, the issue is not zero support but
+vanishing weight.
+
+**Theorem 40.218G (Support Disconnection Is Decisive But Usually Unavailable).**
+If the charged class is empty on positive environment probability, Family D
+falsifies the fixed-IR certificate there. In the ordinary finite `SU(2)` local
+law, the relevant obstruction is typically weight collapse, not exact support
+disconnection.
+
+#### Proof
+
+If `mu(B)=0`, then `r=0`. Conversely, if `B` is nonempty but exponentially
+small, support analysis does not decide the ratio. One must estimate weight.
+
+### 47.10. Attempt 6: Tautological Kernel Trap
+
+There is a dangerous fake proof. Define a kernel that, from any point in `A`,
+jumps directly into the normalized charged class `B`. If `mu(B)>0`, such a
+kernel can make the capacity large.
+
+This proves nothing because the kernel is built from the unknown target measure.
+
+**Theorem 40.218H (Tautological Kernels Are Not Admissible Proofs).** A Family D
+kernel cannot use the normalized charged restriction as an input. Any capacity
+lower bound produced by such a kernel is equivalent to assuming the charged mass
+is already available.
+
+#### Proof
+
+Sampling from `mu(.|B)` requires knowing and normalizing `B`. The normalization
+constant is exactly `mu(B)`, the target of the proof. Therefore the resulting
+capacity estimate is circular. Barandes alignment also forbids interpreting
+this proof kernel as a physical record transition.
+
+### 47.11. Attempt 7: Readout-Cone Bottleneck
+
+Family C ended with readout-cone scale collapse. Family D can express the same
+failure as a cone bottleneck. Let `K_R` be the certificate-complete readout cone
+and let:
+
+```math
+R_{Q,a}(g)
+=
+\frac{
+\ell_R(T^{\mathrm{ch}}_{Q,a}g)
+}{
+\ell_R(T^0_{Q,a}g)
+}.
+```
+
+If:
+
+```math
+R_{Q,a_n}(g_n)
+\le
+e^{-L_n},
+\qquad
+L_n\to\infty,
+```
+
+on positive boundary probability, then the charged boundary scale collapses in
+a certificate-relevant direction.
+
+**Theorem 40.218I (Readout-Cone Bottleneck Equals Family C Scale Collapse).**
+Readout-cone scalar collapse is the boundary-kernel version of a bottleneck. It
+falsifies Family C and the Family D positive capacity route when the cone is
+certificate-complete.
+
+#### Proof
+
+The ratio `R_Q,a(g)` is the charged-to-neutral mass in a retained boundary
+direction. Its collapse is exactly hostile boundary free-energy divergence for
+that readout. A capacity lower bound sufficient for the positive fork would
+force this ratio to stay bounded below. Hence collapse falsifies the positive
+capacity route and proves the negative branch in that cone direction.
+
+### 47.12. Family D Decision
+
+Family D has now been fully investigated as a bottleneck/capacity strategy:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{capacity lower bound relative to source mass proves the ratio},\\[1mm]
+\mathrm{NO}
+&
+\text{capacity collapse alone does not prove mass collapse},\\[1mm]
+\mathrm{FAIL}_{\mathrm{micro}}
+&
+\text{microscopic functional inequalities lose fixed-IR constants},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{flow constructions reduce to Family A or B estimates},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{physical no-neck inequality proves capacity lower bound},\\[1mm]
+\mathrm{DIAG}
+&
+\text{barrier sets diagnose bottlenecks but need mass-collapse control},\\[1mm]
+\mathrm{PASS}_{-}
+&
+\text{support disconnection falsifies, but is usually unavailable},\\[1mm]
+\mathrm{NO}
+&
+\text{tautological charged kernels are circular},\\[1mm]
+\mathrm{EQUIV}
+&
+\text{readout-cone bottleneck equals Family C scale collapse}.
+\end{array}}
+```
+
+Thus Family D does not create a new shortcut. It gives the cleanest geometric
+form of the remaining alternatives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{prove a physical no-neck or capacity lower bound},\\[1mm]
+\mathrm{negative}
+&
+\text{prove target mass collapse, not merely passage bottleneck}.
+\end{array}}
+```
+
+The positive capacity lower bound would close the fixed-IR certificate. The
+negative result must still be an action-entropy, hostile-boundary, or
+readout-cone scale-collapse theorem. Small capacity alone is not enough.
+
+### 47.13. Target 40.219: Final Family D Problem
+
+`V4P40-TARGET-40219-FIXED-IR-NO-NECK-OR-MASS-COLLAPSE`.
+
+The remaining Family D problem is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{For the original finite SU(2) conditional law at fixed physical scale,}\\[1mm]
+\text{prove either a no-neck capacity lower bound between pinned and charged}\\[1mm]
+\text{sets, or prove charged target mass collapse on positive environment mass.}
+\end{array}}
+```
+
+This is fixed-IR aligned and Barandes aligned. The analytic kernel is a proof
+object only. No Markov record dynamics, no center-sector tilt, and no
+weak-coupling replacement has been introduced.
+
+At this point, Families A-D have all been exhausted to genuine estimates rather
+than formal proof styles. The remaining mathematical content is the fixed-IR
+`SU(2)` charged weight problem itself, expressed equivalently as transport,
+entropy, boundary free energy, or bottleneck geometry.
+
+## 48. Fixed-IR No-Neck Test For The Physical Block Kernel
+
+`V4P40-TARGET-40220-FIXED-IR-PHYSICAL-BLOCK-NO-NECK-AUDIT`.
+
+Section 47 leaves one positive-looking route: prove a no-neck capacity lower
+bound for a physical block kernel. This section investigates that route
+directly.
+
+The question is not whether one can invent a transition rule from a pinned
+configuration to a charged configuration. That was Family A, and deterministic
+transport already failed except under averaged mixed-stability assumptions. The
+question is sharper:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Can a target-blind physical block kernel see enough charged mass}\\[1mm]
+\text{to prove the fixed-IR ratio without assuming the ratio?}
+\end{array}}
+```
+
+The answer below is conditional but decisive. A genuine physical no-neck
+inequality would close the fixed-IR certificate. However, every currently
+available way of proving such an inequality either becomes circular, loses its
+constant as `a -> 0`, or reduces to the already isolated A-C estimates.
+
+### 48.1. Alignment Contract For Section 48
+
+The proof object in this section is an analytic kernel only. It is not a
+stochastic record law and not an additional ISP dynamics.
+
+An admissible kernel must satisfy the following constraints.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{K1}
+&
+\text{it acts on one fixed physical block and its fixed collar},\\[1mm]
+\mathrm{K2}
+&
+\text{it is reversible for the original finite SU(2) conditional law},\\[1mm]
+\mathrm{K3}
+&
+\text{it is target-blind: it does not sample from the charged class},\\[1mm]
+\mathrm{K4}
+&
+\text{its constants are uniform as }a\to0\text{ at fixed physical }R,\\[1mm]
+\mathrm{K5}
+&
+\text{it uses deterministic finite SU(2) readouts only},\\[1mm]
+\mathrm{K6}
+&
+\text{it introduces no hidden Markov or center-sector ontology}.
+\end{array}}
+```
+
+These constraints are exactly the fixed-IR and Barandes-alignment guardrails.
+They also prevent the two easy fake proofs: microscopic positivity and
+target-conditioned heat bath sampling.
+
+### 48.2. Physical Block Notation
+
+Fix a physical block `Q_R` and a physical collar `C_R`. Let `a` go to zero
+with `R` fixed. After conditioning on the outside environment and on the
+collar data retained by the certificate, write the original conditional law as:
+
+```math
+\mu_{R,a}^{\eta}.
+```
+
+Let:
+
+```math
+A_{R,a}^{\eta}
+=
+\text{the pinned source set},
+\qquad
+B_{R,a}^{\eta}
+=
+\text{the charged target set}.
+```
+
+The fixed-IR ratio to be bounded below is:
+
+```math
+r_{R,a}^{\eta}
+=
+\frac{\mu_{R,a}^{\eta}(B_{R,a}^{\eta})}
+{\mu_{R,a}^{\eta}(A_{R,a}^{\eta})}.
+```
+
+The no-neck route asks for an admissible reversible kernel `P_{R,a}^{\eta}`
+such that every separator `S` with:
+
+```math
+A_{R,a}^{\eta}\subset S,
+\qquad
+B_{R,a}^{\eta}\subset S^c
+```
+
+has uniformly positive boundary flow:
+
+```math
+\int_S P_{R,a}^{\eta}(U,S^c)d\mu_{R,a}^{\eta}(U)
+\ge
+e^{-C_R}
+\min
+\left(
+\mu_{R,a}^{\eta}(S),
+\mu_{R,a}^{\eta}(S^c)
+\right).
+```
+
+The constant `C_R` may depend on the physical scale `R`, but not on `a`.
+
+### 48.3. The Positive Theorem
+
+**Theorem 40.220A (Physical No-Neck Proves The Fixed-IR Ratio).** Suppose an
+admissible physical block kernel satisfies the no-neck inequality above for
+all certificate-relevant separators between `A_{R,a}^{\eta}` and
+`B_{R,a}^{\eta}`, uniformly as `a -> 0`. Then the charged-to-pinned ratio is
+bounded below at fixed physical scale:
+
+```math
+r_{R,a}^{\eta}
+\ge
+e^{-C'_R}.
+```
+
+#### Proof
+
+The no-neck inequality gives a Cheeger-type capacity lower bound between the
+source and target sets:
+
+```math
+\mathrm{Cap}_{P_{R,a}^{\eta}}
+\left(
+A_{R,a}^{\eta},
+B_{R,a}^{\eta}
+\right)
+\ge
+e^{-C_R}
+\mu_{R,a}^{\eta}
+\left(
+A_{R,a}^{\eta}
+\right),
+```
+
+with only fixed normalization changes absorbed into `C'_R`.
+
+For a unit-rate reversible kernel, the capacity between `A` and `B` is bounded
+above by the target mass:
+
+```math
+\mathrm{Cap}_P(A,B)
+\le
+\mu(B).
+```
+
+Combining the two estimates gives:
+
+```math
+\mu_{R,a}^{\eta}
+\left(
+B_{R,a}^{\eta}
+\right)
+\ge
+e^{-C'_R}
+\mu_{R,a}^{\eta}
+\left(
+A_{R,a}^{\eta}
+\right).
+```
+
+This is the desired fixed-IR ratio bound.
+
+#### Consequence
+
+The no-neck theorem is not cosmetic. If proved for an admissible kernel, it
+would close the positive fixed-IR certificate. The rest of this section asks
+whether such a proof can actually be obtained from the present tools.
+
+### 48.4. Attempt 1: Exact Whole-Block Heat Bath
+
+The first tempting kernel refreshes the whole physical block from the exact
+conditional law:
+
+```math
+P(U,dV)=\mu_{R,a}^{\eta}(dV).
+```
+
+It is reversible and fixed-IR. It is also target-blind in a literal sense: it
+does not condition on the charged set. But it does not prove anything new.
+
+**Theorem 40.220B (Exact Heat Bath Is Equivalent To The Target Ratio).** The
+exact whole-block heat-bath kernel cannot prove the fixed-IR ratio unless the
+ratio is already controlled.
+
+#### Proof
+
+For the exact heat bath, the probability of jumping into the charged target is
+exactly:
+
+```math
+\mu_{R,a}^{\eta}
+\left(
+B_{R,a}^{\eta}
+\right).
+```
+
+Thus any capacity or no-neck lower bound for this kernel contains the unknown
+charged mass as an input. The kernel is useful as a diagnostic identity, but
+not as an independent proof.
+
+#### Decision
+
+This attempt is circular in the proof-theoretic sense. It is not an ontology
+problem; it is a normalization problem. The unknown target mass is already
+inside the transition probability.
+
+### 48.5. Attempt 2: Microscopic Link Heat Bath
+
+A second natural kernel updates microscopic links or microscopic plaquette
+patches one at a time. This is target-blind and reversible for the original
+finite `SU(2)` law.
+
+The obstruction is fixed-IR scaling. A fixed physical block contains a number
+of microscopic variables that diverges as `a -> 0`. Standard microscopic
+Poincare, log-Sobolev, or conductance bounds therefore produce constants that
+depend on the number of microscopic variables.
+
+**Theorem 40.220C (Microscopic No-Neck Constants Are Not Fixed-IR Constants).**
+Microscopic heat-bath positivity does not by itself prove Theorem 40.220A.
+
+#### Proof
+
+A one-link or bounded-link update can change only microscopic data. To move
+between pinned and charged physical readouts, the chain must coordinate
+changes across a physical sheet, collar, or block. The number of required
+microscopic updates grows as `a -> 0`. Any conductance lower bound obtained
+from the naive product of local minorization constants therefore loses a factor
+that decays with the cutoff. This violates K4.
+
+#### Decision
+
+This is the same lesson as Families A and B: microscopic positivity is real at
+fixed cutoff, but it does not give the fixed-IR estimate.
+
+### 48.6. Attempt 3: Uniform Proposal Minorization
+
+Suppose a proposal kernel `Q_{R,a}^{\eta}` and an acceptance rule give:
+
+```math
+P_{R,a}^{\eta}(U,dV)
+\ge
+\epsilon_R
+Q_{R,a}^{\eta}(dV)
+```
+
+with `epsilon_R` independent of `a`. Then:
+
+```math
+P_{R,a}^{\eta}
+\left(
+U,
+B_{R,a}^{\eta}
+\right)
+\ge
+\epsilon_R
+Q_{R,a}^{\eta}
+\left(
+B_{R,a}^{\eta}
+\right).
+```
+
+This would prove the target ratio if the proposal gives fixed-IR mass to the
+charged class.
+
+**Theorem 40.220D (Minorization Reduces To Proposal Charged Mass).** Uniform
+minorization proves the no-neck theorem only if the proposal itself has a
+fixed-IR charged-mass lower bound.
+
+#### Proof
+
+The minorization constant controls the cost of accepting the proposal. It does
+not create charged mass. The charged mass must already be present in
+`Q(B)`. If `Q` is a deterministic or low-dimensional carrier proposal, this is
+Family A. If `Q` is an entropy-rich proposal over many charged carriers, this
+is Family B.
+
+#### Decision
+
+This is a conditional pass, not a new proof. The remaining estimate is exactly
+the charged proposal entropy estimate.
+
+### 48.7. Attempt 4: Bounded-Action Physical Flow
+
+A stronger geometric idea is to build a physical path from `A` to `B` whose
+action never rises by more than `C_R`. If every point in `A` can be connected
+to enough points in `B` by such paths, then one can push source mass into the
+target without an area penalty.
+
+This is the cleanest version of the carrier idea, but it is already what
+Family A tested.
+
+**Theorem 40.220E (Bounded-Action Flow Is Family A In Geometric Form).** A
+bounded-action physical flow proves Theorem 40.220A only when it transports a
+positive fraction of source mass into the charged target with fixed-IR
+Jacobian control. Otherwise it is only a path existence statement.
+
+#### Proof
+
+A single path has zero measure. To prove mass, the path construction must carry
+a positive-dimensional family of source configurations into charged
+configurations while controlling both action and volume distortion. The
+action part is the carrier cost. The volume-distortion part is the mixed
+stability or entropy factor. These are precisely the two terms isolated in
+Family A.
+
+#### Decision
+
+The deterministic carrier version fails. The averaged version survives only as
+the mixed-stability estimate already recorded in Section 44.
+
+### 48.8. Attempt 5: Reaction Coordinate And Coarea
+
+One can try to avoid explicit carriers by choosing a center-sensitive reaction
+coordinate `rho_R`. The pinned set lies near one range of `rho_R`; the charged
+set lies near another. A coarea argument would prove no-neck if the conditional
+density of `rho_R` has no deep valley between the two ranges.
+
+The required estimate is:
+
+```math
+\text{all intermediate level bands of }rho_R
+\text{ have fixed-IR mass.}
+```
+
+**Theorem 40.220F (Reaction-Coordinate No-Valley Is The Boundary Scale
+Problem).** A coarea no-valley estimate proves the no-neck theorem. But proving
+the no-valley estimate is equivalent to ruling out hostile boundary scale
+collapse.
+
+#### Proof
+
+Coarea decomposes the block measure into level sets of the reaction coordinate.
+If every intermediate band has fixed-IR mass and the within-band geometry is
+connected with fixed-IR constants, separators cannot have small boundary flow.
+Conversely, a hostile boundary condition can make the intermediate bands
+exponentially small relative to the pinned band. That is exactly the Family C
+charged-neutral scale collapse.
+
+#### Decision
+
+This is a good formulation, but it reduces to Family C. It is not a separate
+proof until the no-valley lower-tail estimate is proved.
+
+### 48.9. Attempt 6: Reflection-Positive Symmetrization
+
+Reflection positivity can sometimes turn one-sided estimates into two-sided
+estimates by reflecting charged packages across a symmetry plane. This is a
+real nonperturbative tool and remains Barandes-aligned because it is a
+reconstruction property of the measure, not an ontic stochastic process.
+
+For the no-neck problem, RP can help only if the pinned and charged packages
+are reflection-compatible and live in the same physical-resolution observable
+class.
+
+**Theorem 40.220G (RP Can Give Two-Sidedness But Not The No-Neck Scale Alone).**
+Reflection positivity may prove symmetry or two-sidedness of the charged
+package, but it does not by itself give the fixed-IR lower scale required in
+Theorem 40.220A.
+
+#### Proof
+
+RP compares reflected observables through positive inner products. It can say
+that a charged insertion and its reflected partner are controlled in a common
+Hilbert-space geometry. But the no-neck theorem requires a quantitative lower
+bound on charged mass or boundary flow. RP alone is coupling-independent and
+cannot supply the strict scale separating confined behavior from non-confined
+behavior.
+
+#### Decision
+
+RP remains useful for validating the charged package, but not for closing
+Target 40.219 unless combined with a scale estimate from B or C.
+
+### 48.10. Attempt 7: Compactness At Fixed Cutoff
+
+At fixed cutoff, the block configuration space is compact and the Wilson action
+is continuous. If both `A` and `B` are nonempty open sets, their measures are
+positive. This proves:
+
+```math
+r_{R,a}^{\eta}>0
+```
+
+for each fixed `a`.
+
+**Theorem 40.220H (Fixed-Cutoff Positivity Does Not Prove Fixed-IR
+Positivity).** Compactness at fixed cutoff gives positivity, but not a
+uniform lower bound as `a -> 0`.
+
+#### Proof
+
+The compact space changes dimension as the cutoff is refined. A positive
+measure lower bound at each finite dimension can still decay to zero faster
+than any fixed physical constant. The required theorem is not nonemptiness; it
+is uniform fixed-IR weight.
+
+#### Decision
+
+This rules out another fake shortcut. Finite-cutoff positivity is too weak.
+
+### 48.11. Attempt 8: Abstract No-Neck From Connectedness
+
+Could one prove no-neck merely from connectedness of `SU(2)` and continuity of
+the action? No.
+
+**Theorem 40.220I (Connectedness Alone Cannot Prove No-Neck).** The topology of
+the finite `SU(2)` configuration space does not imply a fixed-IR no-neck
+constant.
+
+#### Proof
+
+A connected compact space can carry a probability density with two large
+regions connected by an arbitrarily thin neck. Continuity of the density does
+not prevent the neck mass from becoming exponentially small along a sequence
+of cutoffs. Therefore connectedness and continuity are insufficient. A
+quantitative action-entropy or boundary-scale theorem is necessary.
+
+#### Decision
+
+This is a falsification of a proof style, not a falsification of the desired
+certificate. It shows why Family D needs a real measure estimate.
+
+### 48.12. Attempt 9: Gauge-Orbit Or Coboundary Sliding
+
+Another possible no-neck mechanism is to slide the charged readout along gauge
+or coboundary directions. This can move where a representative sign or cocycle
+appears without changing some pairings.
+
+The caveat from earlier sections is decisive: local center coboundaries have
+trivial sheet pairing, not action-gauge invariance.
+
+**Theorem 40.220J (Coboundary Sliding Does Not Create Charged Mass).** Gauge or
+coboundary sliding can reorganize representatives, but it does not prove a
+fixed-IR lower bound for the charged target unless the charged pairing itself
+is preserved and weighted with fixed-IR mass.
+
+#### Proof
+
+If a move changes only a representative while leaving the physical sheet
+pairing trivial, it has not reached the charged target. If it reaches the
+charged target, its cost is again the carrier, entropy, or boundary-scale
+cost. Thus the move either misses `B` or reduces to Families A-C.
+
+#### Decision
+
+No-neck cannot be obtained by quotient notation alone. The physical readout
+pairing must be charged and must carry measure.
+
+### 48.13. The Negative Branch: What Would Falsify No-Neck
+
+A failure of no-neck is not enough by itself. Section 47 already showed that
+small capacity can coexist with large target mass behind a narrow passage. The
+negative branch must prove target mass collapse.
+
+The useful falsifier is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{on a positive-measure set of environments,}\\[1mm]
+\mu_{R,a}^{\eta}(B_{R,a}^{\eta})
+\le
+e^{-L_a}
+\mu_{R,a}^{\eta}(A_{R,a}^{\eta}),
+\qquad
+L_a\to\infty.
+\end{array}}
+```
+
+This is the fixed-IR hostile-boundary or action-entropy imbalance in its
+strongest form.
+
+**Theorem 40.220K (The Only Decisive Negative No-Neck Result Is Mass
+Collapse).** To falsify the positive Family D certificate, one must prove
+charged target mass collapse, not merely small passage capacity.
+
+#### Proof
+
+Small passage capacity can be caused by a thin neck between two large regions.
+That does not imply the charged region has small mass. The certificate fails
+only if the charged target itself has vanishing conditional mass relative to
+the pinned source on environments that matter for the readout.
+
+#### Decision
+
+The negative branch is exactly the hostile-boundary action-entropy estimate
+from Family C, expressed as a mass theorem.
+
+### 48.14. Section 48 Decision
+
+The physical-block no-neck route has now been fully audited.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{a genuine physical no-neck inequality proves the fixed-IR ratio},\\[1mm]
+\mathrm{CIRC}
+&
+\text{exact heat bath contains the unknown target mass},\\[1mm]
+\mathrm{FAIL}_{\mathrm{IR}}
+&
+\text{microscopic kernels lose constants as }a\to0,\\[1mm]
+\mathrm{REDUCE}
+&
+\text{minorization reduces to proposal charged mass},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{bounded-action flow is Family A plus entropy control},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{reaction-coordinate no-valley is Family C scale control},\\[1mm]
+\mathrm{PARTIAL}
+&
+\text{RP can validate two-sided packages but not strict scale alone},\\[1mm]
+\mathrm{FAIL}_{\mathrm{IR}}
+&
+\text{fixed-cutoff compactness gives no uniform lower bound},\\[1mm]
+\mathrm{NO}
+&
+\text{connectedness alone cannot prove no-neck},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{coboundary sliding does not create charged physical mass},\\[1mm]
+\mathrm{NEG}
+&
+\text{the decisive falsifier is charged target mass collapse}.
+\end{array}}
+```
+
+Thus Section 48 does not close the proof unconditionally. It sharpens the last
+positive branch to one estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove a target-blind physical-block no-neck inequality}\\[1mm]
+\text{with constants uniform as }a\to0.
+\end{array}}
+```
+
+And it sharpens the last negative branch to one estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove charged target mass collapse}\\[1mm]
+\text{on positive environment mass.}
+\end{array}}
+```
+
+Both are fixed-IR aligned. Both use the original finite `SU(2)` conditional
+law. Neither assumes hidden Markov dynamics, center-sector tilt, or a
+weak-coupling replacement.
+
+### 48.15. Consequence For The Whole A-D Program
+
+Families A-D plus the physical-block no-neck audit leave no remaining formal
+shortcut. The certificate problem has one mathematical core:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Does the original finite SU(2) conditional law assign fixed-IR}\\[1mm]
+\text{nonvanishing mass to the charged physical readout class?}
+\end{array}}
+```
+
+The equivalent languages are now clear:
+
+```math
+\begin{array}{ll}
+\text{Family A}
+&
+\text{averaged mixed-stability of carriers},\\[1mm]
+\text{Family B}
+&
+\text{charged odd/even action-entropy mass},\\[1mm]
+\text{Family C}
+&
+\text{charged-neutral boundary transfer scale},\\[1mm]
+\text{Family D}
+&
+\text{physical no-neck or target mass collapse}.
+\end{array}
+```
+
+The next proof attempt should therefore stop searching for a fifth formal
+language and choose one of the two remaining estimates. The most direct
+positive target is the Family C/B overlap: a physical-block lower-tail theorem
+for charged mass under all admissible collar environments. The most direct
+negative target is the hostile-boundary collapse theorem.
+
+## 49. Tool Import Contract For The Physical-Block Lower Tail
+
+`V4P40-TARGET-40221-TOOL-IMPORT-WITHOUT-TARGET-DRIFT`.
+
+The preceding sections have reduced the route to a single estimate. The next
+step is allowed to use classical lattice-gauge tools, but it is not allowed to
+change the object being estimated.
+
+This section records the precise problem, the alignment contract, and the
+available tools.
+
+### 49.1. The Specific Problem To Solve
+
+Fix a physical scale `R`. Let `Q_R` be the physical block, let `C_R` be its
+physical collar, and let `a -> 0` with `R` fixed. For each admissible exterior
+and collar readout `eta`, let:
+
+```math
+\mu_{R,a}^{\eta}
+```
+
+be the original finite `SU(2)` conditional law on the block variables. Let:
+
+```math
+A_{R,a}^{\eta}
+=
+\text{the pinned physical readout class},
+```
+
+and:
+
+```math
+B_{R,a}^{\eta}
+=
+\text{the charged physical readout class}.
+```
+
+The positive lower-tail theorem is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{there is }C_R<\infty\text{ such that, for all small }a,\\[1mm]
+\mu_{R,a}^{\eta}
+\left(
+B_{R,a}^{\eta}
+\right)
+\ge
+e^{-C_R}
+\mu_{R,a}^{\eta}
+\left(
+A_{R,a}^{\eta}
+\right)
+\end{array}}
+```
+
+for the class of admissible collar environments needed by the certificate.
+
+The decisive negative theorem is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{there is a positive-measure set of admissible environments}\\[1mm]
+\text{for which the ratio tends to zero as }a\to0.
+\end{array}}
+```
+
+The estimate is local, conditional, fixed-IR, and finite-cutoff first. It is
+not a global thermodynamic twist statement.
+
+### 49.2. What Counts As Target Drift
+
+The following moves broaden the target and are therefore not allowed:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{D1}
+&
+\text{replace the local conditional ratio by a global torus twist ratio},\\[1mm]
+\mathrm{D2}
+&
+\text{average over hostile collars without proving boundary stability},\\[1mm]
+\mathrm{D3}
+&
+\text{prove only fixed-cutoff positivity},\\[1mm]
+\mathrm{D4}
+&
+\text{use weak-coupling good sectors as an IR substitute},\\[1mm]
+\mathrm{D5}
+&
+\text{sample from the charged class inside the proof kernel},\\[1mm]
+\mathrm{D6}
+&
+\text{tilt the center sector or change the finite SU(2) law},\\[1mm]
+\mathrm{D7}
+&
+\text{interpret an analytic kernel as record dynamics},\\[1mm]
+\mathrm{D8}
+&
+\text{derive a mass gap before reflection-positive reconstruction}.
+\end{array}}
+```
+
+Any imported method must return to the same local conditional inequality.
+
+### 49.3. Barandes And Fixed-IR Alignment
+
+The alignment contract is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A1}
+&
+\text{use the original finite SU(2) configuration law},\\[1mm]
+\mathrm{A2}
+&
+\text{use deterministic finite readouts only},\\[1mm]
+\mathrm{A3}
+&
+\text{keep }R\text{ fixed before sending }a\to0,\\[1mm]
+\mathrm{A4}
+&
+\text{do not add hidden Markov dynamics},\\[1mm]
+\mathrm{A5}
+&
+\text{do not add a center-sector prior or tilt},\\[1mm]
+\mathrm{A6}
+&
+\text{treat kernels, flows, and transfer operators as proof objects},\\[1mm]
+\mathrm{A7}
+&
+\text{distinguish configuration-native string tension from RP spectral gap}.
+\end{array}}
+```
+
+Thus confinement and string tension remain configuration-measure questions.
+The spectral mass-gap interpretation requires the separate RP/OS
+reconstruction layer.
+
+### 49.4. Available Tool 1: Tomboulis-Yaffe Style Vortex Inequalities
+
+The closest classical tool is the center-vortex free-energy inequality. Its
+global form relates Wilson-loop disorder to ratios of twisted and untwisted
+partition functions.
+
+What it can provide here:
+
+```math
+\boxed{
+\text{a way to compare charged and neutral center sectors by reflected tiles.}
+}
+```
+
+What it cannot provide without extra work:
+
+```math
+\boxed{
+\text{a pointwise lower tail for every admissible local collar environment.}
+}
+```
+
+The local use must therefore be conditional: build a reflected physical tile,
+derive a local charged-neutral ratio, then prove a de-tiling step back to the
+original collar.
+
+### 49.5. Available Tool 2: Reflection Positivity And Chessboard Estimates
+
+Reflection positivity is nonperturbative and coupling-independent. It can
+compare reflected copies of a charged tile and often converts local insertions
+into repeated-tile partition functions.
+
+Useful output:
+
+```math
+\boxed{
+\text{two-sidedness, compatibility of charged packages, and chessboard bounds.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{RP alone does not supply the strict fixed-IR scale.}
+}
+```
+
+This tool is best for proving that the charged package is the right package.
+It still needs a scale estimate from entropy, boundary transfer, or vortex
+free energy.
+
+### 49.6. Available Tool 3: Twisted Sectors And Electric-Flux Ratios
+
+Twisted boundary conditions and electric-flux Fourier transforms are a natural
+language for charged sectors.
+
+Useful output:
+
+```math
+\boxed{
+\text{an exact ratio-of-partition-functions expression for charged mass.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{global twists are not automatically local conditional lower tails.}
+}
+```
+
+The tool is admissible only after localization to `Q_R` and its collar.
+
+### 49.7. Available Tool 4: Character And Spin-Foam Expansions
+
+The character expansion can make center parity and surface constraints
+explicit. It is especially useful for checking whether odd charged sectors have
+entropy comparable to even sectors.
+
+Useful output:
+
+```math
+\boxed{
+\text{a positive combinatorial representation of charged and pinned weights.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{the needed estimate is still an odd/even lower-tail bound.}
+}
+```
+
+This is Family B in its most explicit form.
+
+### 49.8. Available Tool 5: Polymer Or Cluster Expansions
+
+Polymer methods can control defects when an expansion parameter is small.
+
+Useful output:
+
+```math
+\boxed{
+\text{controlled local defect weights in regimes where the expansion converges.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{small-parameter control is usually UV or strong-coupling, not fixed IR.}
+}
+```
+
+The tool is valid only if the constants survive at fixed physical `R`.
+
+### 49.9. Available Tool 6: Strong-Coupling Expansion
+
+At strong coupling, area-law estimates and local charged-sector weights can be
+proved directly.
+
+Useful output:
+
+```math
+\boxed{
+\text{a sanity check and a solved positive regime.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{continuum }a\to0\text{ is weak bare coupling, so this is not the IR proof.}
+}
+```
+
+Strong coupling should be used as a calibration, not as the final fixed-IR
+argument.
+
+### 49.10. Available Tool 7: Capacity, Conductance, And Isoperimetry
+
+These tools rephrase charged mass as a geometric bottleneck problem.
+
+Useful output:
+
+```math
+\boxed{
+\text{a no-neck theorem implies the lower-tail theorem.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{small capacity alone does not prove small charged mass.}
+}
+```
+
+This is Family D. It is admissible only for target-blind reversible kernels.
+
+### 49.11. Available Tool 8: Coarse Graining And Block-Spin Maps
+
+A physical block map could retain only the fixed-resolution readout variables.
+
+Useful output:
+
+```math
+\boxed{
+\text{a finite-dimensional effective charged-mass problem at scale }R.
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{the pushforward density must be controlled without changing the law.}
+}
+```
+
+This is promising only if the coarse map is a deterministic readout and the
+Jacobian or disintegration constants are controlled.
+
+### 49.12. Available Tool 9: Solved Model Benchmarks
+
+The 3D compact `U(1)` confinement proof, Villain duality, and related
+monopole-gas methods are valuable tests.
+
+Useful output:
+
+```math
+\boxed{
+\text{a check that the local lower-tail formulation reproduces known results.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{a solved abelian 3D mechanism is not a proof for 4D SU(2).}
+}
+```
+
+This tool should be used to validate the formulation and expose false
+shortcuts.
+
+### 49.13. Available Tool 10: ISP Record-Law Derivations
+
+The ISP side is relevant only if it derives an additional center-sensitive
+factor without modifying the finite `SU(2)` law or adding Markov dynamics.
+
+Useful output:
+
+```math
+\boxed{
+\text{a derivation that explains why the original law favors charged records.}
+}
+```
+
+Limitation:
+
+```math
+\boxed{
+\text{if it changes the measure, it is not this ontology-free certificate.}
+}
+```
+
+For this paper, ISP may motivate the readout package. It may not replace the
+analytic lower-tail estimate unless a separate Barandes-aligned derivation is
+given.
+
+### 49.14. Tool Priority
+
+The best next tool is the localized Tomboulis-Yaffe / reflection-positivity
+package because it is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{P1}
+&
+\text{center-sensitive},\\[1mm]
+\mathrm{P2}
+&
+\text{nonperturbative},\\[1mm]
+\mathrm{P3}
+&
+\text{historically tied to vortex free energy and confinement},\\[1mm]
+\mathrm{P4}
+&
+\text{compatible with finite SU(2) configuration measures},\\[1mm]
+\mathrm{P5}
+&
+\text{able to test whether local conditioning is the real obstruction}.
+\end{array}}
+```
+
+Section 50 attacks the lower-tail problem with that package.
+
+## 50. Localized Tomboulis-Yaffe And Reflection-Positive Attack
+
+`V4P40-TARGET-40222-LOCALIZED-TY-RP-LOWER-TAIL-ATTACK`.
+
+This section fully explores the best imported tool: use reflection positivity
+and Tomboulis-Yaffe style chessboard repetition, but keep the target local and
+conditional.
+
+The attack succeeds conditionally, and it identifies exactly why the classical
+global tool does not automatically prove the desired fixed-IR lower tail.
+
+### 50.1. The Local Charged Tile
+
+Let `T_R` be one physical tile containing the block `Q_R`, the collar `C_R`,
+and the deterministic readout package. Let:
+
+```math
+Z^0_{R,a}(\eta)
+```
+
+be the pinned conditional partition weight, and let:
+
+```math
+Z^{\mathrm{ch}}_{R,a}(\eta)
+```
+
+be the charged conditional partition weight.
+
+The target ratio is:
+
+```math
+r_{R,a}(\eta)
+=
+\frac{
+Z^{\mathrm{ch}}_{R,a}(\eta)
+}{
+Z^0_{R,a}(\eta)
+}.
+```
+
+The lower-tail theorem asks for:
+
+```math
+r_{R,a}(\eta)
+\ge
+e^{-C_R}
+```
+
+uniformly as `a -> 0`, on the admissible environment class required by the
+certificate.
+
+### 50.2. What The Global TY Inequality Would Give
+
+On a periodic lattice, a center twist through a noncontractible surface defines
+a vortex partition function:
+
+```math
+Z_{\mathrm{tw}}
+```
+
+and an untwisted partition function:
+
+```math
+Z_0.
+```
+
+The vortex free energy is encoded by:
+
+```math
+\frac{Z_{\mathrm{tw}}}{Z_0}.
+```
+
+The classical TY logic says that suitable vortex free-energy behavior implies
+Wilson-loop disorder.
+
+This is not yet our theorem. It is global, thermodynamic, and unconditioned.
+Our target is local, fixed-IR, and conditioned on a collar.
+
+**Theorem 40.222A (Global TY Does Not Directly Prove The Local Lower Tail).**
+A global vortex-free-energy inequality does not by itself imply the local
+conditional lower-tail theorem.
+
+#### Proof
+
+The global ratio averages over all collars and exterior environments. The
+local lower tail asks for a uniform or certificate-relevant bound after those
+environments are fixed. A global average can be large while a positive set of
+collars is hostile. Therefore the global theorem lacks the deconditioning
+step needed by the local certificate.
+
+#### Decision
+
+Global TY is admissible as technology, but not as a replacement target.
+
+### 50.3. Localizing By Reflected Tiling
+
+The natural localization attempt is to reflect the physical tile `T_R` across
+its faces and build a periodic tiled box:
+
+```math
+\mathcal T_{R,N}
+```
+
+with `N` reflected copies in each relevant direction.
+
+Let:
+
+```math
+Z^0_{R,a,N}(\eta)
+```
+
+be the tiled pinned partition function, and:
+
+```math
+Z^{\mathrm{ch}}_{R,a,N}(\eta)
+```
+
+be the tiled charged partition function with the charged package repeated in
+the chessboard pattern.
+
+The repeated ratio is:
+
+```math
+R_{R,a,N}(\eta)
+=
+\frac{
+Z^{\mathrm{ch}}_{R,a,N}(\eta)
+}{
+Z^0_{R,a,N}(\eta)
+}.
+```
+
+If tiling were exact and independent, one would expect:
+
+```math
+R_{R,a,N}(\eta)
+\approx
+r_{R,a}(\eta)^{N}.
+```
+
+The actual statement requires RP and boundary control.
+
+### 50.4. RP Compatibility Of The Charged Package
+
+The charged package must be compatible with the reflection planes. This means:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the reflected charged tile is again a valid charged tile,}\\[1mm]
+\text{and the collar gluing preserves the physical readout charge.}
+\end{array}}
+```
+
+**Theorem 40.222B (RP Compatibility Is Necessary).** If the charged package is
+not reflection-compatible, chessboard repetition does not produce a valid
+local TY estimate.
+
+#### Proof
+
+RP compares an observable with its reflected copy. If reflection changes the
+readout class or destroys the collar constraints, the repeated object is not a
+power of the local charged event. The resulting partition function estimates a
+different observable. That is target drift.
+
+#### Decision
+
+This is a hard package-design constraint, but not the main obstruction. A
+reflection-compatible charged package can be chosen by pairing the sheet with
+its mirror and keeping the collar physical.
+
+### 50.5. The Chessboard Upper Direction
+
+Chessboard estimates most naturally give upper bounds on local expectations in
+terms of fully tiled expectations. Schematically:
+
+```math
+\langle F\rangle
+\le
+\langle F^{\mathrm{tile}}\rangle^{1/N}.
+```
+
+For confinement, upper bounds on Wilson loops are useful. For our lower-tail
+target, the direction is dangerous.
+
+**Theorem 40.222C (The Naive Chessboard Direction Is The Wrong Direction For
+Lower Tails).** A standard chessboard upper bound does not prove that the
+charged tile has enough local mass.
+
+#### Proof
+
+The target is a lower bound on `Z_ch / Z_0`. An upper bound on a repeated
+charged expectation can show that a charged event is not too large. It cannot
+show that it is not too small. To obtain a lower tail, the RP/TY package must
+be applied to a complement, a two-sided ratio, or a vortex free-energy
+identity.
+
+#### Decision
+
+RP alone is not enough. The attack must convert the charged lower tail into a
+two-sided or ratio statement.
+
+### 50.6. Two-Sided Charged Tile Ratio
+
+The better object is the pair of reflected charged signs. Let:
+
+```math
+Z^{+}_{R,a}(\eta)
+```
+
+and:
+
+```math
+Z^{-}_{R,a}(\eta)
+```
+
+be the two local sign sectors of the reflection-compatible charged package.
+
+The useful two-sidedness estimate is:
+
+```math
+e^{-C_R}
+\le
+\frac{Z^{+}_{R,a}(\eta)}
+{Z^{-}_{R,a}(\eta)}
+\le
+e^{C_R}.
+```
+
+**Theorem 40.222D (Two-Sidedness Is Helpful But Not Sufficient).** If both
+charged sign sectors together have fixed-IR mass relative to the pinned sector,
+then two-sidedness gives the lower-tail theorem. Without the total charged
+mass estimate, two-sidedness alone does not.
+
+#### Proof
+
+Two-sidedness prevents one sign sector from disappearing relative to the other.
+But both sign sectors could be small relative to the pinned sector. The missing
+input is:
+
+```math
+Z^{+}_{R,a}(\eta)
++
+Z^{-}_{R,a}(\eta)
+\ge
+e^{-C_R}
+Z^0_{R,a}(\eta).
+```
+
+The displayed statement is exactly the charged total-mass lower tail.
+
+#### Decision
+
+This recovers the earlier RP lesson: RP can validate a charged package, but it
+does not supply the fixed-IR scale by itself.
+
+### 50.7. Boundary Conditioning Breaks Direct RP
+
+Reflection positivity is a property of the unconditioned or reflection-stable
+finite-volume measure. Once an arbitrary collar environment `eta` is fixed, RP
+may fail.
+
+**Theorem 40.222E (Arbitrary Collars Break Direct RP).** A local conditional
+law with an arbitrary fixed collar environment need not be reflection positive.
+
+#### Proof
+
+Conditioning on `eta` inserts boundary data. If `eta` is not invariant under
+the reflection plane, the reflected copy lives under a different boundary
+condition. RP can compare the pair only after doubling or averaging the
+environment. It cannot directly give a pointwise estimate for the original
+single collar.
+
+#### Decision
+
+The direct RP proof works only for reflection-compatible collars. General
+collars require a de-tiling or boundary-stability theorem.
+
+### 50.8. The Doubled-Collar Repair
+
+For any collar `eta`, form the reflected collar:
+
+```math
+\theta\eta.
+```
+
+Then build a doubled environment:
+
+```math
+\eta\cup\theta\eta.
+```
+
+This restores reflection symmetry at the level of the doubled block.
+
+**Theorem 40.222F (Doubled Collars Give Paired Lower-Tail Targets).** RP on the
+doubled collar can at best prove a paired estimate relating `eta` and
+`theta eta`. It does not automatically prove the pointwise lower tail for
+`eta`.
+
+#### Proof
+
+The doubled partition function contains both the original and reflected
+environments. A lower bound for the doubled charged ratio controls a product
+or geometric mean of the two single-collar ratios. A product lower bound allows
+one factor to be small if the reflected factor is large. Therefore pointwise
+control requires an additional no-hostile-boundary estimate.
+
+#### Decision
+
+Doubled RP is useful and non-circular, but it reduces to boundary stability.
+This is Family C again.
+
+### 50.9. Tiled Vortex Free Energy As A Conditional Criterion
+
+The strongest localized TY criterion is:
+
+```math
+R_{R,a,N}(\eta)
+\ge
+e^{-C_R N}
+```
+
+with `C_R` independent of `a` and with tiling constants controlled. If the
+chessboard de-tiling step gives:
+
+```math
+r_{R,a}(\eta)
+\ge
+R_{R,a,N}(\eta)^{1/N}
+e^{-o_R(1)},
+```
+
+then the lower-tail theorem follows.
+
+**Theorem 40.222G (Localized TY Criterion).** The local lower-tail theorem
+follows from two inputs:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{TY1}
+&
+\text{a tiled vortex free-energy lower bound at physical scale }R,\\[1mm]
+\mathrm{TY2}
+&
+\text{a de-tiling theorem from the tiled ratio to the conditional ratio.}
+\end{array}}
+```
+
+#### Proof
+
+TY1 gives a lower bound on the repeated charged-to-pinned ratio. TY2 prevents
+the repeated ratio from being supported only by favorable tiles or favorable
+reflected collars. Taking the fixed root in the number of tiles gives the
+single-tile lower bound with constants depending only on `R`.
+
+#### Decision
+
+This is the clean conditional pass for the localized TY route.
+
+### 50.10. Why TY1 Is Not Enough
+
+TY1 alone is a global or tiled statement. It can hold because the tiled system
+chooses favorable collars after averaging, while the original conditional
+problem asks about a fixed collar.
+
+**Theorem 40.222H (Tiled Free Energy Without De-Tiling Is Target Drift).**
+Using TY1 without TY2 broadens the target.
+
+#### Proof
+
+The tiled ratio integrates over internal degrees of freedom and, unless the
+collar is frozen in a reflection-compatible way, over boundary-compatible
+copies. The local certificate requires the ratio after the collar is fixed.
+Therefore TY1 proves the wrong object unless TY2 transfers it back.
+
+#### Decision
+
+This is the main obstruction to importing the classical vortex-free-energy
+proof wholesale.
+
+### 50.11. Can De-Tiling Be Proved By Convexity
+
+One might hope Jensen or Holder inequalities convert a tiled average into a
+pointwise lower bound. They do not.
+
+**Theorem 40.222I (Convexity Does Not Give Pointwise De-Tiling).** Convexity
+can convert products and averages into average bounds, but it cannot rule out
+hostile collars.
+
+#### Proof
+
+An average lower bound is compatible with a distribution where the ratio is
+large on favorable environments and tiny on hostile environments. Pointwise
+lower-tail control requires a lower-tail estimate, not convexity. Thus
+convexity gives only an averaged certificate unless paired with a
+boundary-stability theorem.
+
+#### Decision
+
+The missing theorem is not algebraic. It is a measure estimate over collar
+environments.
+
+### 50.12. Can De-Tiling Be Proved By Gauge Symmetry
+
+Could gauge invariance identify all collar environments? No. Gauge symmetry
+removes redundant representatives, not physical center-sensitive collar
+readouts.
+
+**Theorem 40.222J (Gauge Symmetry Does Not Remove Hostile Collars).** Gauge
+equivalence cannot prove de-tiling unless the hostile/favorable distinction is
+pure gauge.
+
+#### Proof
+
+The charged readout is a physical center pairing, not merely a section choice.
+Gauge transformations can reorganize representatives, but they do not force
+the conditional weights of charged and pinned physical readouts to be equal.
+If they did, the lower-tail theorem would be immediate. The earlier
+coboundary analysis showed that representative motion is not action-gauge
+invariance for charged sheet pairing.
+
+#### Decision
+
+Gauge symmetry helps define the package. It does not supply the lower-tail
+scale.
+
+### 50.13. Can De-Tiling Be Proved By Locality
+
+Locality says far-away boundary data should have limited influence on a fixed
+physical block when correlations decay. But using correlation decay here is
+dangerous: the mass gap and confinement are what the broader program aims to
+derive.
+
+**Theorem 40.222K (Locality Alone Does Not Prove Boundary Stability).** A
+local action does not imply cutoff-uniform insensitivity to collar data at
+fixed physical scale.
+
+#### Proof
+
+The collar is adjacent to the block. Its effect is not suppressed by distance.
+Moreover, fixed physical `R` contains infinitely many microscopic variables as
+`a -> 0`. Locality of the action gives finite interaction range, not a uniform
+lower-tail bound for a charged readout class.
+
+#### Decision
+
+Locality is necessary for formulating the block problem. It is not sufficient
+to solve the hostile-boundary obstruction.
+
+### 50.14. Can Strong Coupling Prove The Local TY Criterion
+
+At strong coupling, the character expansion can prove charged-sector weights
+with explicit constants. In that regime, a localized TY/RP lower-tail theorem
+is plausible and often provable.
+
+**Theorem 40.222L (Strong Coupling Gives A Calibration, Not The Fixed-IR
+Continuum Proof).** A strong-coupling proof of the local lower tail is a
+valuable check, but it does not prove the fixed-IR continuum statement.
+
+#### Proof
+
+The continuum limit of four-dimensional asymptotically free `SU(2)` is reached
+at weak bare coupling. A strong-coupling lower-tail estimate can verify the
+definitions and the direction of inequalities. It cannot provide constants
+uniform along the continuum scaling trajectory unless a separate continuation
+theorem is proved.
+
+#### Decision
+
+Use strong coupling as a model test, not as the final proof.
+
+### 50.15. Can Character Expansion Prove TY2
+
+The character expansion rewrites the local ratio as a sum over constrained
+spin foams. The charged target corresponds to an odd center/parity constraint.
+
+The desired statement becomes:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{odd constrained foams have fixed-IR total weight}\\[1mm]
+\text{relative to even constrained foams.}
+\end{array}}
+```
+
+**Theorem 40.222M (Character Expansion Reduces TY2 To Family B).** The
+character expansion makes the de-tiling problem explicit, but the required
+estimate is the Family B odd/even action-entropy lower tail.
+
+#### Proof
+
+After expanding into characters, pinned and charged readouts become parity
+constraints on admissible surfaces or foams. De-tiling asks whether the odd
+sector remains weighted under each admissible collar. This is precisely the
+charged odd/even lower-tail problem recorded in Section 45.
+
+#### Decision
+
+This is a good computational representation. It is not a new proof unless the
+odd/even lower-tail estimate is established.
+
+### 50.16. Can RP Prove The Odd/Even Lower Tail
+
+RP can compare reflected odd packages, but it is neutral-sector positivity at
+heart. To prove odd/even lower tails, it needs the odd package to be embedded
+as a positive reflected object.
+
+**Theorem 40.222N (RP Does Not Automatically See The Charged Sector Scale).**
+Reflection positivity can certify nonnegativity of certain charged-pair
+correlations, but it does not guarantee fixed-IR odd/even mass balance.
+
+#### Proof
+
+The odd/even ratio is a sector-weight statement. RP gives positivity of
+reflected products. A positive inner product may still be exponentially small.
+Thus RP can prevent sign pathologies but cannot remove the scale estimate.
+
+#### Decision
+
+This closes the RP-only attempt. The missing ingredient is still scale.
+
+### 50.17. Negative Use Of Local TY
+
+The localized TY setup is also useful for falsification. If one can construct
+admissible collars `eta_a` such that:
+
+```math
+r_{R,a}(\eta_a)
+\le
+e^{-L_a},
+\qquad
+L_a\to\infty,
+```
+
+and if those collars occur with positive environment mass, the fixed-IR
+certificate fails on this route.
+
+**Theorem 40.222O (Hostile Collar Collapse Falsifies Local TY Lower Tail).** A
+positive-probability sequence of hostile collars with charged ratio collapse
+falsifies the local lower-tail theorem.
+
+#### Proof
+
+The lower-tail theorem demands a fixed physical lower bound on the charged
+ratio across the admissible collar class. A positive set of collars on which
+the ratio collapses violates that demand. This is stronger than capacity
+collapse and stronger than a bad carrier example; it is direct mass collapse.
+
+#### Decision
+
+The negative route is clear. The hard part is proving that hostile collars have
+positive environment mass under the original finite `SU(2)` law.
+
+### 50.18. Relation To The Classical Vortex-Free-Energy Criterion
+
+The local lower-tail theorem implies a corresponding tiled vortex-free-energy
+lower bound. Therefore it is at least as strong as the local version of the
+vortex free-energy perimeter-law input.
+
+**Theorem 40.222P (The Local Lower Tail Is Not Easier Than The Local Vortex
+Free-Energy Problem).** A proof of the local lower-tail theorem yields the
+localized vortex-free-energy bound for reflected tiled systems.
+
+#### Proof
+
+If each tile has charged mass at least `e^{-C_R}` times pinned mass, then a
+reflection-compatible tiling of `N` tiles has charged repeated weight at least
+`e^{-C_R N}` times pinned repeated weight, up to the gluing constants already
+controlled by the theorem. This is exactly the localized vortex-free-energy
+lower bound.
+
+#### Decision
+
+This explains why the target is hard. It is not merely a technical local
+lemma; it is a sharpened local version of the center-vortex free-energy
+criterion.
+
+### 50.19. Conditional Positive Result
+
+Collect the successful pieces:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{C1}
+&
+\text{reflection-compatible charged package},\\[1mm]
+\mathrm{C2}
+&
+\text{tiled vortex free-energy lower bound at physical scale }R,\\[1mm]
+\mathrm{C3}
+&
+\text{de-tiling or boundary-stability theorem for admissible collars}.
+\end{array}}
+```
+
+**Theorem 40.222Q (Localized TY/RP Conditional Certificate).** If C1-C3 hold
+with constants independent of `a`, then the physical-block charged-mass
+lower-tail theorem holds at fixed physical scale.
+
+#### Proof
+
+C1 makes the charged package legitimate under RP reflection. C2 gives the
+repeated-tile charged-to-pinned ratio. C3 transfers the repeated-tile lower
+bound back to the original conditional collar. Taking the fixed tile root and
+absorbing collar-gluing constants gives:
+
+```math
+r_{R,a}(\eta)
+\ge
+e^{-C_R}.
+```
+
+This is exactly the lower-tail theorem.
+
+#### Decision
+
+This is the strongest positive result available from localized TY/RP without
+broadening the target.
+
+### 50.20. Failure Modes Of The Best Tool
+
+The attack fails in exactly four ways:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{F1}
+&
+\text{the charged package is not reflection-compatible},\\[1mm]
+\mathrm{F2}
+&
+\text{the tiled vortex free-energy lower bound is unavailable},\\[1mm]
+\mathrm{F3}
+&
+\text{de-tiling fails because hostile collars survive},\\[1mm]
+\mathrm{F4}
+&
+\text{the proof uses a global averaged target instead of the local target}.
+\end{array}}
+```
+
+F1 is a package-design problem. F2 is the classical vortex-free-energy
+obstruction. F3 is the new local conditioning obstruction. F4 is target drift.
+
+### 50.21. Section 50 Decision
+
+The localized TY/RP attack is now exhausted.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{TY/RP proves the lower tail from C1-C3},\\[1mm]
+\mathrm{NO}
+&
+\text{global TY alone does not prove the local conditional theorem},\\[1mm]
+\mathrm{PARTIAL}
+&
+\text{RP gives package compatibility and two-sidedness},\\[1mm]
+\mathrm{MISSING}
+&
+\text{RP does not supply the strict fixed-IR scale},\\[1mm]
+\mathrm{MISSING}
+&
+\text{de-tiling requires boundary stability},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{character expansion reduces de-tiling to Family B},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{doubled collars reduce pointwise control to Family C},\\[1mm]
+\mathrm{NEG}
+&
+\text{hostile collar mass collapse would falsify the route}.
+\end{array}}
+```
+
+The best imported tool does not close the theorem unconditionally. It tells us
+what remains:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove boundary-stable de-tiling for the localized vortex ratio,}\\[1mm]
+\text{or prove hostile-collar charged mass collapse.}
+\end{array}}
+```
+
+This is the same core estimate reached by Families B, C, and D, now expressed
+in the classical TY/RP language without broadening the target.
+
+### 50.22. What To Attack After Section 50
+
+The next section should not introduce another proof language. It should choose
+one of the two remaining estimates:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{boundary-stable de-tiling for admissible collars},\\[1mm]
+\mathrm{negative}
+&
+\text{hostile-collar charged mass collapse}.
+\end{array}}
+```
+
+The positive route is more aligned with proving the fixed-IR certificate. The
+negative route is more aligned with falsifying this local lower-tail strategy.
+Both remain fixed-IR and Barandes aligned.
+
+## 51. Boundary-Stable De-Tiling For The Single-Collar Ratio
+
+`V4P40-TARGET-40223-BOUNDARY-STABLE-DETILING`.
+
+Section 50 showed that localized Tomboulis-Yaffe and reflection positivity can
+support the fixed-IR certificate only if a tiled or doubled estimate can be
+transferred back to the original single-collar conditional ratio.
+
+This section investigates that de-tiling problem completely.
+
+The point is narrow and important:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{de-tiling is not a broader target;}\\[1mm]
+\text{it is the step that prevents a broader tiled target from replacing}\\[1mm]
+\text{the original single-collar conditional target.}
+\end{array}}
+```
+
+### 51.1. The Single-Collar Target
+
+For a fixed physical collar `eta`, write:
+
+```math
+r_a(\eta)
+=
+\frac{
+Z^{\mathrm{ch}}_{R,a}(\eta)
+}{
+Z^0_{R,a}(\eta)
+}.
+```
+
+The desired single-collar lower tail is:
+
+```math
+r_a(\eta)
+\ge
+e^{-C_R}
+```
+
+with `C_R` independent of `a`, for every collar environment retained by the
+certificate.
+
+The reflection of the collar is denoted:
+
+```math
+\theta\eta.
+```
+
+The reflected ratio is:
+
+```math
+r_a(\theta\eta)
+=
+\frac{
+Z^{\mathrm{ch}}_{R,a}(\theta\eta)
+}{
+Z^0_{R,a}(\theta\eta)
+}.
+```
+
+The de-tiling problem is to derive the single-collar lower bound from the
+paired or tiled estimates produced by RP/TY.
+
+### 51.2. What Doubled RP Actually Gives
+
+The cleanest doubled output has the form:
+
+```math
+r_a(\eta)
+r_a(\theta\eta)
+\ge
+e^{-C_R}.
+```
+
+More generally, a tiled estimate gives a geometric mean lower bound over a
+finite reflected orbit of collars:
+
+```math
+\prod_{j=1}^{M_R}
+r_a(\eta_j)
+\ge
+e^{-C_R M_R}.
+```
+
+Here `M_R` is fixed at physical scale. These are useful estimates, but they
+are not yet the single-collar lower tail.
+
+**Theorem 40.223A (Paired Lower Bounds Are Not Pointwise Lower Bounds).** The
+paired estimate:
+
+```math
+r_a(\eta)
+r_a(\theta\eta)
+\ge
+e^{-C_R}
+```
+
+does not imply:
+
+```math
+r_a(\eta)
+\ge
+e^{-C'_R}.
+```
+
+#### Proof
+
+The first inequality is compatible with:
+
+```math
+r_a(\eta)=e^{-L_a},
+\qquad
+r_a(\theta\eta)=e^{L_a-C_R},
+\qquad
+L_a\to\infty.
+```
+
+The product remains bounded below while the original single-collar ratio
+collapses. Therefore paired RP control is insufficient unless one also
+controls the asymmetry between `eta` and `theta eta`.
+
+#### Decision
+
+This is the core de-tiling obstruction.
+
+### 51.3. Attempt 1: Reflection-Symmetric Collars
+
+If the admissible collar is reflection-symmetric:
+
+```math
+\eta=\theta\eta,
+```
+
+then the paired estimate gives:
+
+```math
+r_a(\eta)^2
+\ge
+e^{-C_R}.
+```
+
+Hence:
+
+```math
+r_a(\eta)
+\ge
+e^{-C_R/2}.
+```
+
+**Theorem 40.223B (Symmetric Collars De-Tile).** Reflection-symmetric collars
+admit de-tiling from paired RP estimates.
+
+#### Proof
+
+Substitute `eta = theta eta` into the paired estimate and take the square
+root.
+
+#### Boundary Of The Result
+
+This is a genuine positive theorem, but it is too narrow for the general
+certificate. The original target allows arbitrary admissible collars, not only
+reflection-symmetric collars.
+
+### 51.4. Attempt 2: Uniform Reflected-Asymmetry Bound
+
+The exact condition needed to turn the paired estimate into a pointwise
+estimate is a reflected-asymmetry bound:
+
+```math
+\left|
+\log r_a(\eta)
+-
+\log r_a(\theta\eta)
+\right|
+\le
+D_R.
+```
+
+**Theorem 40.223C (Asymmetry Bound De-Tiles).** If the paired RP lower bound
+holds and the reflected-asymmetry bound holds with constants independent of
+`a`, then:
+
+```math
+r_a(\eta)
+\ge
+e^{-(C_R+D_R)/2}.
+```
+
+#### Proof
+
+Let:
+
+```math
+x_a=\log r_a(\eta),
+\qquad
+y_a=\log r_a(\theta\eta).
+```
+
+The paired estimate gives:
+
+```math
+x_a+y_a\ge -C_R.
+```
+
+The asymmetry bound gives:
+
+```math
+x_a-y_a\ge -D_R.
+```
+
+Adding the two inequalities gives:
+
+```math
+2x_a\ge -(C_R+D_R).
+```
+
+Exponentiating proves the claim.
+
+#### Decision
+
+This is the clean positive de-tiling theorem. The whole problem is now
+concentrated in proving the reflected-asymmetry bound.
+
+### 51.5. Attempt 3: Prove Asymmetry From Exact Reflection Invariance
+
+If the conditional law with collar `eta` were exactly mapped to the conditional
+law with collar `theta eta`, and the charged and pinned readouts were also
+mapped exactly, then:
+
+```math
+r_a(\eta)
+=
+r_a(\theta\eta).
+```
+
+**Theorem 40.223D (Exact Reflection Invariance Is Too Strong).** Exact
+reflection invariance proves de-tiling, but arbitrary admissible collars need
+not satisfy it.
+
+#### Proof
+
+The equality follows by reflecting all block variables. The Wilson action and
+Haar measure are reflection invariant, and the readout classes map into their
+reflected counterparts. However, the boundary data are fixed. Unless `eta` is
+itself reflection-compatible, the reflected system is a different conditional
+problem. Thus the theorem proves the symmetric-collar case, not the general
+single-collar target.
+
+#### Decision
+
+Exact reflection invariance is a useful check, not a general proof.
+
+### 51.6. Attempt 4: Bound Asymmetry By Collar Action Difference
+
+A natural strategy is to compare the conditional measures for `eta` and
+`theta eta` by a Radon-Nikodym derivative. If:
+
+```math
+e^{-D_R}
+\le
+\frac{
+d\mu_{R,a}^{\eta}
+}{
+d\mu_{R,a}^{\theta\eta}
+}
+\le
+e^{D_R}
+```
+
+on the block variables, then:
+
+```math
+\left|
+\log r_a(\eta)
+-
+\log r_a(\theta\eta)
+\right|
+\le
+2D_R.
+```
+
+**Theorem 40.223E (Bounded Conditional Density Comparison De-Tiles).** A
+cutoff-uniform density comparison between reflected collar laws proves the
+reflected-asymmetry bound and hence de-tiling.
+
+#### Proof
+
+The density comparison bounds every conditional block integral under `eta` by
+the corresponding integral under `theta eta`, up to `e^{D_R}`. Applying this to
+the charged numerator and pinned denominator gives a ratio comparison with
+constant `2D_R`. Then Theorem 40.223C applies.
+
+#### Obstruction
+
+The naive action difference along the microscopic collar contains a number of
+plaquettes that diverges as `a -> 0`. Without cancellation or coarse
+physical-readout compression, `D_R` grows with the cutoff.
+
+#### Decision
+
+This is a conditional pass. The missing estimate is a cutoff-uniform collar
+density comparison.
+
+### 51.7. Attempt 5: Coarse Physical Collar Compression
+
+The previous obstruction suggests compressing the collar to a finite
+physical-resolution readout:
+
+```math
+\Pi_R(\eta).
+```
+
+If the charged ratio depends on the collar only through `Pi_R(eta)`, and if
+the reflected asymmetry of this finite readout is bounded, then de-tiling
+works.
+
+**Theorem 40.223F (Coarse Collar Compression De-Tiles If It Is Complete).** If
+there is a deterministic finite physical collar readout `Pi_R` such that:
+
+```math
+r_a(\eta)
+=
+r_a(\eta')
+\quad
+\text{whenever}
+\quad
+\Pi_R(\eta)=\Pi_R(\eta'),
+```
+
+up to `e^{C_R}` factors uniform in `a`, then de-tiling reduces to a finite
+physical comparison problem.
+
+#### Proof
+
+Completeness of `Pi_R` replaces the infinite microscopic collar by finitely
+many physical readout classes. The reflected-asymmetry bound can then be
+checked on those classes, with constants depending only on `R`. Theorem
+40.223C gives the single-collar lower tail.
+
+#### Obstruction
+
+Completeness is a strong claim. If microscopic collar modes can create a
+hostile charged-mass collapse while leaving `Pi_R` fixed, the compression is
+not valid.
+
+#### Decision
+
+This is the best positive conceptual route. It is also exactly where fixed-IR
+alignment bites: the readout must be physical and finite, but complete enough
+to control the charged ratio.
+
+### 51.8. Attempt 6: Average De-Tiling
+
+Maybe one can avoid pointwise de-tiling by proving an average over collars:
+
+```math
+\int r_a(\eta)d\nu_a(\eta)
+\ge
+e^{-C_R}.
+```
+
+This is not enough for the present certificate.
+
+**Theorem 40.223G (Average De-Tiling Broadens The Target).** An averaged collar
+lower bound does not prove the single-collar lower-tail theorem.
+
+#### Proof
+
+The average can be supported by favorable collars. A positive set of hostile
+collars may still have ratios tending to zero. Since the certificate keeps the
+collar fixed, the average statement changes the target unless it is upgraded
+to a lower-tail or pointwise statement.
+
+#### Decision
+
+Average de-tiling is target drift unless accompanied by a no-hostile-collar
+theorem.
+
+### 51.9. Attempt 7: High-Probability De-Tiling
+
+A weaker but possibly useful theorem is high-probability de-tiling:
+
+```math
+\nu_a
+\left(
+r_a(\eta)<e^{-C_R}
+\right)
+\le
+\delta_R.
+```
+
+This proves the certificate only if the discarded collar set is irrelevant to
+the final observable or if `delta_R` can be made zero for the admissible class.
+
+**Theorem 40.223H (High-Probability De-Tiling Is Conditional).** A
+high-probability lower tail is useful, but it does not replace pointwise
+de-tiling unless the certificate tolerates the exceptional set.
+
+#### Proof
+
+If the final Wilson/certificate estimate integrates over collars, a small
+exceptional set might be harmless after a separate domination argument. But
+the current single-collar theorem demands a bound for each admissible collar.
+Therefore high-probability de-tiling is a different theorem unless its
+exceptional set is removed or shown irrelevant.
+
+#### Decision
+
+This is an admissible auxiliary route only after the certificate statement is
+explicitly weakened or after domination removes the exceptional collars.
+
+### 51.10. Attempt 8: Martingale Or Concentration Over Collar Layers
+
+One can reveal the collar in physical layers and study:
+
+```math
+X_a(\eta)
+=
+-\log r_a(\eta).
+```
+
+If `X_a` has bounded differences at physical scale and a fixed-IR
+concentration inequality, then hostile collars are rare.
+
+**Theorem 40.223I (Concentration De-Tiles Only With Physical Bounded
+Differences).** Concentration of `-\log r_a` proves a lower-tail version of
+de-tiling only if the bounded-difference constants are physical, not
+microscopic.
+
+#### Proof
+
+Concentration can turn an averaged or paired lower bound into a lower-tail
+bound by ruling out deep asymmetric dips. But if the function changes by a
+small amount per microscopic variable across a diverging number of variables,
+the total concentration scale may still degrade as `a -> 0`. Fixed-IR
+de-tiling requires bounded differences for physical collar layers or a
+cutoff-uniform log-Sobolev inequality.
+
+#### Decision
+
+This is another conditional pass. Its missing estimate is essentially
+coarse-collar stability in probabilistic form.
+
+### 51.11. Attempt 9: FKG Or Monotonicity
+
+For some spin systems, positive association turns reflected or averaged bounds
+into pointwise inequalities. It is tempting to seek an analogous monotonicity
+for center charge.
+
+**Theorem 40.223J (No General FKG Shortcut Is Available For The SU(2) Charged
+Ratio).** The ordinary finite `SU(2)` Wilson measure does not provide an
+obvious scalar order in which charged mass is monotone.
+
+#### Proof
+
+The variables are nonabelian group elements, and the charged readout is a
+center-sensitive global pairing over the block/collar package. There is no
+canonical lattice order compatible with Haar measure, Wilson action, and the
+charged/pinned sector ratio. Any monotonicity theorem would need to be proved
+from a new positive representation, such as a character expansion.
+
+#### Decision
+
+This route reduces to Family B if a positive odd/even representation is used.
+It is not a standalone de-tiling proof.
+
+### 51.12. Attempt 10: Character Expansion De-Tiling
+
+In a character expansion, the collar controls which spin-foam boundary states
+are allowed. De-tiling becomes a comparison between odd and even boundary
+state sums under `eta` and `theta eta`.
+
+**Theorem 40.223K (Character De-Tiling Is The Odd/Even Boundary Estimate).**
+The character expansion rewrites de-tiling as a positive combinatorial
+odd/even boundary estimate. It does not remove that estimate.
+
+#### Proof
+
+After expansion, `Z_ch(eta)` and `Z_0(eta)` are sums over constrained foams.
+Reflection maps the boundary state set for `eta` to the set for `theta eta`.
+To compare the single-collar ratio to the paired/tiled ratio, one must prove
+that odd boundary states are not exponentially suppressed relative to even
+ones for the fixed collar. This is the Family B lower-tail problem.
+
+#### Decision
+
+This is an excellent representation for computation, but still a reduction.
+
+### 51.13. Attempt 11: Choose The Better Reflection Orientation
+
+The paired estimate shows that at least one of `eta` and `theta eta` is good:
+
+```math
+\max
+\left(
+r_a(\eta),
+r_a(\theta\eta)
+\right)
+\ge
+e^{-C_R/2}.
+```
+
+Could the certificate choose the better orientation?
+
+**Theorem 40.223L (Choosing The Better Reflection Is Target Drift Unless The
+Readout Allows It).** Selecting the favorable reflected collar proves the
+original theorem only if the certificate is invariant under that choice.
+
+#### Proof
+
+The original target fixes the collar. If the proof replaces `eta` by
+`theta eta` whenever convenient, it estimates a different conditional problem.
+The choice is legitimate only when the deterministic readout package treats
+the two reflected collars as the same physical event or when the final
+observable averages symmetrically over both. Otherwise it is target drift.
+
+#### Decision
+
+This route is usually not allowed for the single-collar lower tail. It may be
+allowed for a symmetrized certificate, but that would need to be stated as a
+different theorem.
+
+### 51.14. The Hostile-Collar Falsifier
+
+The exact negative obstruction is now clear. A hostile-collar sequence is a
+sequence `eta_a` such that:
+
+```math
+r_a(\eta_a)
+\le
+e^{-L_a},
+\qquad
+L_a\to\infty,
+```
+
+while the reflected or paired ratio stays bounded by compensation from:
+
+```math
+r_a(\theta\eta_a).
+```
+
+**Theorem 40.223M (Hostile-Collar Asymmetry Falsifies De-Tiling).** If hostile
+collars occur with positive environment mass under the original finite
+`SU(2)` law, boundary-stable de-tiling fails for the single-collar target.
+
+#### Proof
+
+The single-collar lower-tail theorem requires a cutoff-uniform lower bound for
+each admissible collar in the retained class. A positive-measure family of
+collars with `r_a(eta_a)` tending to zero violates the theorem. The paired RP
+estimate may still hold if the reflected collars compensate, so this is
+precisely a de-tiling failure rather than an RP failure.
+
+#### Decision
+
+This is the decisive negative theorem to try to prove if the positive
+asymmetry estimates fail.
+
+### 51.15. Boundary-Stable De-Tiling Criterion
+
+The investigation yields the following exact criterion.
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Boundary-stable de-tiling holds exactly when paired/tiled RP}\\[1mm]
+\text{control is}\\[1mm]
+\text{supplemented by a cutoff-uniform no-hostile-collar estimate.}
+\end{array}}
+```
+
+One convenient positive version is:
+
+```math
+\boxed{
+\left|
+\log r_a(\eta)
+-
+\log r_a(\theta\eta)
+\right|
+\le
+D_R.
+}
+```
+
+An equivalent negative version is:
+
+```math
+\boxed{
+\text{there are no positive-mass hostile collars with }r_a(\eta)\to0.
+}
+```
+
+### 51.16. Section 51 Decision
+
+Section 51 is fully investigated:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}
+&
+\text{symmetric collars de-tile},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{reflected-asymmetry bound de-tiles},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{uniform density comparison de-tiles},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{complete coarse collar compression de-tiles},\\[1mm]
+\mathrm{NO}
+&
+\text{paired RP alone is not pointwise},\\[1mm]
+\mathrm{NO}
+&
+\text{averages alone broaden the target},\\[1mm]
+\mathrm{PARTIAL}
+&
+\text{high-probability de-tiling needs domination of exceptions},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{concentration requires physical collar stability},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{FKG and character approaches reduce to Family B},\\[1mm]
+\mathrm{DRIFT}
+&
+\text{choosing the better reflected collar changes the theorem},\\[1mm]
+\mathrm{NEG}
+&
+\text{positive-mass hostile collars falsify de-tiling}.
+\end{array}}
+```
+
+Thus the best next target is not another reflection argument. It is the
+reflected-asymmetry estimate, preferably in the strongest fixed-IR form:
+
+```math
+\boxed{
+\left|
+\log r_a(\eta)
+-
+\log r_a(\theta\eta)
+\right|
+\le
+D_R
+\quad
+\text{uniformly as }a\to0.
+}
+```
+
+If that estimate is false, the next target is the hostile-collar theorem. Both
+targets stay with the original finite `SU(2)` conditional law, keep the collar
+fixed, and preserve Barandes alignment.
+
+## 52. Reflected-Asymmetry Estimate For The Local Charged Ratio
+
+`V4P40-TARGET-40224-REFLECTED-ASYMMETRY-AUDIT`.
+
+Section 51 reduced boundary-stable de-tiling to the reflected-asymmetry
+estimate:
+
+```math
+\left|
+\log r_a(\eta)
+-
+\log r_a(\theta\eta)
+\right|
+\le
+D_R,
+```
+
+uniformly as `a -> 0`.
+
+This section investigates that estimate directly. The main lesson is that the
+raw reflected collar measures are too different, but the ratio-of-ratios has a
+real cancellation structure. The positive route survives only as a
+charge-sensitive collar-response bound. If that bound fails, the same analysis
+produces the hostile-collar falsifier.
+
+### 52.1. Exact Ratio-Of-Ratios
+
+Recall:
+
+```math
+r_a(\eta)
+=
+\frac{
+Z^{\mathrm{ch}}_a(\eta)
+}{
+Z^0_a(\eta)
+}.
+```
+
+The reflected-asymmetry object is:
+
+```math
+\mathcal A_a(\eta)
+=
+\log r_a(\eta)
+-
+\log r_a(\theta\eta).
+```
+
+Equivalently:
+
+```math
+\mathcal A_a(\eta)
+=
+\log
+\frac{
+Z^{\mathrm{ch}}_a(\eta)
+Z^0_a(\theta\eta)
+}{
+Z^0_a(\eta)
+Z^{\mathrm{ch}}_a(\theta\eta)
+}.
+```
+
+This is the right object. It compares charged response to pinned response
+under reflection. It does not require the full conditional law for `eta` to be
+close to the conditional law for `theta eta`.
+
+### 52.2. Full Collar Density Comparison Is Too Strong
+
+The strongest possible comparison would be:
+
+```math
+e^{-D_R}
+\le
+\frac{
+d\mu_a^{\eta}
+}{
+d\mu_a^{\theta\eta}
+}
+\le
+e^{D_R}.
+```
+
+This would immediately bound `\mathcal A_a(\eta)`, but it asks for too much.
+
+**Theorem 40.224A (Full Collar Density Comparison Fails As A Fixed-IR
+Strategy).** A cutoff-uniform comparison of the full conditional block laws
+for arbitrary `eta` and `theta eta` cannot be expected from locality or compact
+group structure alone.
+
+#### Proof
+
+The collar action contains microscopic plaquette couplings along a physical
+interface. The number of those plaquettes diverges as `a -> 0`. A raw
+Radon-Nikodym comparison sees all microscopic collar differences, including
+common terms that affect charged and pinned sectors equally. Therefore the
+best naive bound grows with the microscopic interface size and violates the
+fixed-IR requirement.
+
+#### Decision
+
+Do not try to prove full density comparison. It is the wrong estimate.
+
+### 52.3. Common-Action Cancellation
+
+Write the sector free energies:
+
+```math
+F^{\mathrm{ch}}_a(\eta)
+=
+-\log Z^{\mathrm{ch}}_a(\eta),
+\qquad
+F^0_a(\eta)
+=
+-\log Z^0_a(\eta).
+```
+
+Then:
+
+```math
+-\log r_a(\eta)
+=
+F^{\mathrm{ch}}_a(\eta)
+-
+F^0_a(\eta).
+```
+
+The reflected asymmetry is the difference of differences:
+
+```math
+\mathcal A_a(\eta)
+=
+\left(
+F^0_a(\eta)
+-
+F^{\mathrm{ch}}_a(\eta)
+\right)
+-
+\left(
+F^0_a(\theta\eta)
+-
+F^{\mathrm{ch}}_a(\theta\eta)
+\right).
+```
+
+The raw collar free energy may diverge, but any part common to charged and
+pinned sectors cancels.
+
+**Theorem 40.224B (Only The Charge-Sensitive Collar Response Matters).** The
+reflected-asymmetry estimate is equivalent to boundedness of the
+charge-sensitive reflected collar response, not boundedness of the full collar
+free energy.
+
+#### Proof
+
+The displayed expression subtracts the pinned collar free energy from the
+charged collar free energy before comparing `eta` with `theta eta`. Terms in
+the collar action that shift both sectors by the same amount disappear. Thus
+the only surviving contribution is the collar response that distinguishes the
+charged readout from the pinned readout.
+
+#### Decision
+
+This is the first real opening. The proof should estimate the
+charged-minus-pinned response, not the full microscopic collar action.
+
+### 52.4. Functional-Derivative Form
+
+Let `eta(t)` be a smooth interpolation in collar configuration space from
+`theta eta` to `eta`. Formally:
+
+```math
+\mathcal A_a(\eta)
+=
+\int_0^1
+\frac{d}{dt}
+\log r_a(\eta(t))
+dt.
+```
+
+The derivative is:
+
+```math
+\frac{d}{dt}
+\log r_a(\eta(t))
+=
+-
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{\mathrm{ch},t}
++
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{0,t}.
+```
+
+Here `dot S_eta(t)` is the collar action derivative, and the expectations are
+under the charged and pinned conditional laws.
+
+**Theorem 40.224C (Asymmetry Follows From Integrated Response Difference).** If
+for some physical interpolation:
+
+```math
+\int_0^1
+\left|
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{0,t}
+\right|
+dt
+\le
+D_R,
+```
+
+uniformly as `a -> 0`, then the reflected-asymmetry estimate holds.
+
+#### Proof
+
+Integrate the derivative of `log r_a(eta(t))` from `theta eta` to `eta` and
+take absolute values.
+
+#### Decision
+
+This is the clean analytic positive target. It is fixed-IR aligned because the
+bound is on the charged-minus-pinned response, not on the raw collar action.
+
+### 52.5. Why The Naive Response Bound Still Fails
+
+The derivative `dot S_eta(t)` is a sum over microscopic collar plaquettes. A
+naive absolute-value bound gives:
+
+```math
+\left|
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{0,t}
+\right|
+\le
+2
+\left\|
+\dot S_{\eta(t)}
+\right\|_{\infty},
+```
+
+and this grows with the number of microscopic collar plaquettes.
+
+**Theorem 40.224D (Naive Response Bounds Lose Fixed-IR Alignment).** Bounding
+the charged and pinned responses separately cannot prove reflected asymmetry
+at fixed physical scale.
+
+#### Proof
+
+Separate bounds see the full microscopic collar derivative. Its norm grows
+with the cutoff refinement of the physical interface. The desired estimate
+requires cancellation between the charged and pinned expectations. Therefore a
+proof must exploit sector comparison, not absolute size.
+
+#### Decision
+
+The response route survives only as a cancellation theorem.
+
+### 52.6. Charge-Sensitive Collar Compression
+
+Define a deterministic physical collar readout:
+
+```math
+\Pi_R(\eta).
+```
+
+It is charge-sensitive complete if there exists `D_R` such that:
+
+```math
+\left|
+\log r_a(\eta)
+-
+\log r_a(\eta')
+\right|
+\le
+D_R
+```
+
+whenever:
+
+```math
+\Pi_R(\eta)=\Pi_R(\eta').
+```
+
+**Theorem 40.224E (Complete Charge-Sensitive Compression Proves
+Asymmetry).** If `Pi_R` is charge-sensitive complete and:
+
+```math
+\left|
+\log r_a(\Pi_R(\eta))
+-
+\log r_a(\Pi_R(\theta\eta))
+\right|
+\le
+D_R,
+```
+
+on the finite physical readout space, then reflected asymmetry holds.
+
+#### Proof
+
+Compare `eta` to its compressed readout, compare the compressed readout to its
+reflection, and compare back to `theta eta`. The constants add and depend only
+on `R`.
+
+#### Obstruction
+
+Completeness is exactly the hard part. If microscopic collar modes can affect
+the charged-minus-pinned response while leaving `Pi_R` fixed, then compression
+fails.
+
+#### Decision
+
+This is a plausible positive architecture, but it shifts the proof to
+charge-sensitive completeness of the physical collar readout.
+
+### 52.7. Reflection On The Ratio-Of-Ratios
+
+Reflection maps:
+
+```math
+\mathcal A_a(\eta)
+\longmapsto
+-\mathcal A_a(\theta\eta).
+```
+
+Since applying reflection twice returns the original collar:
+
+```math
+\mathcal A_a(\theta\eta)
+=
+-\mathcal A_a(\eta).
+```
+
+This antisymmetry is exact but does not bound the magnitude.
+
+**Theorem 40.224F (Reflection Gives Antisymmetry, Not Boundedness).** The
+ratio-of-ratios is reflection-antisymmetric, but RP does not by itself bound
+its absolute value.
+
+#### Proof
+
+The identity follows from the definition:
+
+```math
+\mathcal A_a(\theta\eta)
+=
+\log r_a(\theta\eta)
+-
+\log r_a(\eta)
+=
+-\mathcal A_a(\eta).
+```
+
+An antisymmetric quantity can still diverge. RP gives positivity for reflected
+products, not a uniform bound on this logarithmic skew.
+
+#### Decision
+
+Reflection structure is necessary but not sufficient. The missing estimate is
+still magnitude control.
+
+### 52.8. Pairing With The Doubled System
+
+The doubled collar system controls:
+
+```math
+\log r_a(\eta)
++
+\log r_a(\theta\eta).
+```
+
+The asymmetry target controls:
+
+```math
+\log r_a(\eta)
+-
+\log r_a(\theta\eta).
+```
+
+Together, these determine both single-collar ratios.
+
+**Theorem 40.224G (Doubled RP Plus Asymmetry Gives Pointwise Control).** A
+paired lower bound and a reflected-asymmetry bound imply the single-collar
+lower tail.
+
+#### Proof
+
+This is Theorem 40.223C restated in sum-difference variables. The paired
+estimate controls the sum; the asymmetry estimate controls the difference.
+Solving for `log r_a(eta)` gives the pointwise lower bound.
+
+#### Decision
+
+This confirms that asymmetry is the only missing de-tiling input once paired
+RP is available.
+
+### 52.9. Attempted Proof By Locality Of The Difference
+
+One might argue that charged and pinned sectors differ only inside the block,
+so collar reflection should affect them similarly. This is not enough.
+
+**Theorem 40.224H (Locality Does Not Bound The Charge-Sensitive Response).**
+The locality of the Wilson action does not by itself imply cutoff-uniform
+boundedness of `\mathcal A_a(\eta)`.
+
+#### Proof
+
+The collar is adjacent to the block. Even though the interaction is local,
+there are cutoff-many microscopic interaction terms along the physical
+interface. The charged and pinned sectors may respond differently to a coherent
+collar pattern across that interface. Locality gives support control, not
+fixed-IR magnitude control.
+
+#### Decision
+
+This route reduces to response cancellation or coarse compression.
+
+### 52.10. Attempted Proof By Gauge Averaging
+
+Gauge averaging can remove representative dependence, but the charged readout
+is physical. If the collar mode affects the physical center pairing, gauge
+averaging cannot erase it.
+
+**Theorem 40.224I (Gauge Averaging Does Not Bound Reflected Asymmetry).** Gauge
+symmetry can simplify representatives but cannot prove reflected asymmetry for
+charge-sensitive collars.
+
+#### Proof
+
+Gauge transformations preserve physical Wilson and center-pairing data. They
+cannot identify a collar with its reflection unless the two are physically
+equivalent under the readout. Therefore gauge averaging does not bound the
+ratio-of-ratios for arbitrary collars.
+
+#### Decision
+
+No gauge shortcut.
+
+### 52.11. Attempted Proof By Character Expansion
+
+In a character expansion, `\mathcal A_a(\eta)` is the logarithm of an odd/even
+boundary-state cross ratio. The desired bound becomes a cross-ratio
+comparability theorem for reflected boundary states.
+
+**Theorem 40.224J (Character Expansion Reduces Asymmetry To Boundary
+Cross-Ratio Comparability).** The character expansion gives a positive
+representation of the reflected-asymmetry problem, but the needed theorem is a
+fixed-IR cross-ratio bound.
+
+#### Proof
+
+The four partition functions in the ratio-of-ratios become four sums over
+spin-foam boundary states: charged and pinned under `eta`, charged and pinned
+under `theta eta`. Bounding their cross ratio is exactly an odd/even boundary
+comparability estimate. This is a sharpened Family B problem.
+
+#### Decision
+
+Good representation; not an automatic proof.
+
+### 52.12. Hostile-Collar Construction From Failed Asymmetry
+
+If reflected asymmetry fails, then there exists a sequence `eta_a` with:
+
+```math
+\left|
+\mathcal A_a(\eta_a)
+\right|
+\to
+\infty.
+```
+
+Assume, after choosing orientation, that:
+
+```math
+\mathcal A_a(\eta_a)
+\to
+-\infty.
+```
+
+Then:
+
+```math
+\frac{
+r_a(\eta_a)
+}{
+r_a(\theta\eta_a)
+}
+\to
+0.
+```
+
+If the paired RP lower bound holds and `r_a(\theta\eta_a)` does not collapse,
+then `eta_a` is a hostile collar for the original single-collar target.
+
+**Theorem 40.224K (Failed Asymmetry Produces A Candidate Hostile Collar).** A
+failure of the reflected-asymmetry estimate produces a candidate hostile
+collar sequence. It falsifies de-tiling if that sequence has positive
+environment mass and the reflected partner supplies the paired compensation.
+
+#### Proof
+
+The failure gives unbounded skew between the original and reflected ratios.
+Choosing the orientation where the original ratio is smaller gives a candidate
+collapse. To turn candidate collapse into theorem-level collapse, one must
+also show that these collars occur with positive probability under the
+original environment law and that the paired/tiled estimate does not collapse
+simultaneously.
+
+#### Decision
+
+The negative branch is precise but still requires a measure theorem for
+hostile collars.
+
+### 52.13. Positive Criterion: Charge-Sensitive Response Bound
+
+The strongest positive criterion isolated by this section is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{for every admissible interpolation from }\theta\eta\text{ to }\eta,\\[1mm]
+\text{the integrated charged-minus-pinned collar response is }O_R(1).
+\end{array}}
+```
+
+More explicitly:
+
+```math
+\boxed{
+\int_0^1
+\left|
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{0,t}
+\right|
+dt
+\le
+D_R.
+}
+```
+
+**Theorem 40.224L (Response Bound Proves Reflected Asymmetry).** The
+charge-sensitive response bound implies the reflected-asymmetry estimate and
+hence, together with paired RP, the single-collar lower-tail theorem.
+
+#### Proof
+
+The response bound is exactly the integrated derivative formula for
+`log r_a(\eta(t))`. It bounds `log r_a(\eta) - log r_a(\theta\eta)`. Theorem
+40.223C then de-tiles the paired RP lower bound.
+
+#### Decision
+
+This is the best positive target after Section 52.
+
+### 52.14. Negative Criterion: Positive-Mass Hostile Response
+
+The matching negative criterion is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{there is a positive-measure set of collars for which}\\[1mm]
+\text{the charged-minus-pinned reflected response diverges negatively.}
+\end{array}}
+```
+
+**Theorem 40.224M (Hostile Response Falsifies Asymmetry).** If such collars
+exist under the original finite `SU(2)` environment law, the reflected
+asymmetry estimate fails and boundary-stable de-tiling fails.
+
+#### Proof
+
+Negative divergence of the charged-minus-pinned response makes
+`log r_a(\eta) - log r_a(\theta\eta)` tend to `-\infty`. This is precisely the
+failure of the asymmetry bound. If the collar set has positive environment
+mass, the failure is not an exceptional representative artifact.
+
+#### Decision
+
+This is the clean falsification target.
+
+### 52.15. Section 52 Decision
+
+The reflected-asymmetry estimate has now been fully investigated.
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}
+&
+\text{full collar density comparison is too strong},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{common-action cancellation identifies the right object},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{integrated response difference proves asymmetry},\\[1mm]
+\mathrm{FAIL}
+&
+\text{naive response bounds lose fixed-IR constants},\\[1mm]
+\mathrm{PASS}_{\mathrm{cond}}
+&
+\text{complete charge-sensitive collar compression proves asymmetry},\\[1mm]
+\mathrm{PARTIAL}
+&
+\text{reflection gives antisymmetry but not magnitude control},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{locality and gauge averaging do not supply the bound},\\[1mm]
+\mathrm{REDUCE}
+&
+\text{character expansion gives boundary cross-ratio comparability},\\[1mm]
+\mathrm{NEG}
+&
+\text{failed asymmetry produces candidate hostile collars}.
+\end{array}}
+```
+
+Thus the next mathematical target is no longer vague. Prove one of:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{positive}
+&
+\text{charge-sensitive response bound},\\[1mm]
+\mathrm{positive}
+&
+\text{complete physical collar compression},\\[1mm]
+\mathrm{negative}
+&
+\text{positive-mass hostile response}.
+\end{array}}
+```
+
+All three are fixed-IR aligned and Barandes aligned. They keep the original
+finite `SU(2)` conditional law, do not introduce hidden Markov dynamics, and
+do not broaden the target away from the single-collar ratio.
+
+### 52.16. Branch I: Try To Prove The Charge-Sensitive Response Bound
+
+`V4P40-TARGET-40225-CHARGE-SENSITIVE-RESPONSE-BOUND`.
+
+The first possible proof is:
+
+```math
+\int_0^1
+\left|
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+\dot S_{\eta(t)}
+\right\rangle_{0,t}
+\right|
+dt
+\le
+D_R.
+```
+
+This branch asks whether the bound can be proved from finite `SU(2)` structure,
+reflection, locality, or charge neutrality.
+
+#### 52.16.1. Split The Collar Derivative Into Physical Pieces
+
+Write:
+
+```math
+\dot S_{\eta(t)}
+=
+\sum_{\alpha\in I_{R,a}}
+X_{\alpha,t}.
+```
+
+Here the index set is microscopic, but the support lies in a fixed physical
+collar. The response difference is:
+
+```math
+\Delta_t
+=
+\sum_{\alpha\in I_{R,a}}
+\left(
+\left\langle
+X_{\alpha,t}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+X_{\alpha,t}
+\right\rangle_{0,t}
+\right).
+```
+
+The desired bound is not that each summand is small by itself. It is that the
+sum has physical cancellation.
+
+**Theorem 40.225A (Response Bound Is A Summed Charge-Screening Estimate).** The
+charge-sensitive response bound follows if the microscopic response
+differences form a summable signed density at fixed physical scale:
+
+```math
+\int_0^1
+\sum_{\alpha\in I_{R,a}}
+\left|
+\left\langle
+X_{\alpha,t}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+X_{\alpha,t}
+\right\rangle_{0,t}
+\right|
+dt
+\le
+D_R.
+```
+
+#### Proof
+
+Apply the triangle inequality to the decomposition of `dot S_eta(t)`.
+
+#### Decision
+
+This is sufficient but probably too strong. It asks for absolute summability
+of microscopic response differences. A more realistic proof must use
+cancellation at the physical-block level.
+
+#### 52.16.2. Physical Cancellation Version
+
+Group the microscopic collar terms into finitely many physical collar cells:
+
+```math
+\dot S_{\eta(t)}
+=
+\sum_{j=1}^{M_R}
+Y_{j,a,t},
+```
+
+where `M_R` depends only on the physical scale. Each `Y_j,a,t` may contain
+cutoff-many plaquettes.
+
+**Theorem 40.225B (Physical Cell Cancellation Would Prove The Response Bound).**
+If:
+
+```math
+\int_0^1
+\left|
+\left\langle
+Y_{j,a,t}
+\right\rangle_{\mathrm{ch},t}
+-
+\left\langle
+Y_{j,a,t}
+\right\rangle_{0,t}
+\right|
+dt
+\le
+D_{R,j}
+```
+
+for each physical cell, with:
+
+```math
+\sum_{j=1}^{M_R}D_{R,j}
+\le
+D_R,
+```
+
+then the response bound holds.
+
+#### Proof
+
+Sum over the finitely many physical cells. Since `M_R` is independent of the
+cutoff, the constant remains fixed-IR.
+
+#### Decision
+
+This is the correct non-microscopic target. It asks whether the charged and
+pinned sectors have the same divergent local collar energy up to a physical
+finite remainder.
+
+#### 52.16.3. Charge-Blind Local Marginal Test
+
+A very strong sufficient condition would be equality of local collar-energy
+marginals:
+
+```math
+\left\langle
+Y_{j,a,t}
+\right\rangle_{\mathrm{ch},t}
+=
+\left\langle
+Y_{j,a,t}
+\right\rangle_{0,t}
++
+O_R(1).
+```
+
+**Theorem 40.225C (Exact Charge-Blindness Is Too Strong In General).** If each
+physical collar-energy cell is charge-blind up to `O_R(1)`, the response bound
+holds. But exact charge-blindness is not implied by gauge invariance,
+reflection, or locality.
+
+#### Proof
+
+The first statement is Theorem 40.225B. For the second, the charged condition
+is a physical center-pairing constraint. It can change the conditional
+interior distribution adjacent to the collar. Gauge invariance removes
+representatives, not physical sector response. Reflection relates `eta` to
+`theta eta`, not charged to pinned under the same collar. Locality only says
+where the response lives, not how large the charged-minus-pinned response is.
+
+#### Decision
+
+Charge-blindness would prove the theorem, but it is not available for free.
+
+#### 52.16.4. Covariance Form
+
+Let `Q` denote the charged readout indicator inside the block, and let `P`
+denote the pinned readout indicator. Under a common auxiliary collar law,
+sector expectations can be written as conditional expectations. For a collar
+observable `Y`:
+
+```math
+\left\langle
+Y
+\right\rangle_{\mathrm{ch}}
+-
+\left\langle
+Y
+\right\rangle_{0}
+```
+
+is controlled by correlations between `Y` and the sector readout.
+
+**Theorem 40.225D (Covariance Control Proves Response Control).** If every
+physical collar-energy cell has cutoff-uniform connected correlation with the
+charged-versus-pinned readout, then the response bound holds.
+
+#### Proof
+
+Express the difference of conditional expectations by subtracting sector
+conditional means from the common mean. The resulting terms are covariances
+between the collar observable and the sector indicators, divided by the sector
+probabilities. If the sector probabilities are already bounded below and the
+covariances are physically summable, the response is bounded.
+
+#### Obstruction
+
+This proof risks circularity: a lower bound on sector probabilities is close
+to the charged-mass lower-tail theorem. To avoid circularity, the covariance
+estimate must use a sector package whose paired RP lower bound already
+supplies the denominators, or it must prove denominator stability separately.
+
+#### Decision
+
+Covariance control is a useful representation, but it does not close the
+proof without a non-circular sector-probability input.
+
+#### 52.16.5. Branch I Verdict
+
+Branch I does not close unconditionally. It gives the cleanest positive
+estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove physical-cell cancellation of the charged-minus-pinned}\\[1mm]
+\text{collar-energy response, uniformly as }a\to0.
+\end{array}}
+```
+
+Equivalently, prove a non-circular covariance or screening theorem for the
+charged readout against physical collar-energy cells.
+
+The branch is alive, but its missing input is real: fixed-IR
+charge-sensitive screening.
+
+### 52.17. Branch II: Try To Prove Complete Physical Collar Compression
+
+`V4P40-TARGET-40226-COMPLETE-PHYSICAL-COLLAR-COMPRESSION`.
+
+The second possible proof is to find a deterministic finite physical readout:
+
+```math
+\Pi_R(\eta)
+```
+
+such that the local charged ratio depends on the microscopic collar only
+through `Pi_R`, up to fixed-IR constants.
+
+#### 52.17.1. Exact Compression Statement
+
+Exact compression would say:
+
+```math
+\Pi_R(\eta)=\Pi_R(\eta')
+\quad
+\Longrightarrow
+\quad
+\left|
+\log r_a(\eta)
+-
+\log r_a(\eta')
+\right|
+\le
+C_R.
+```
+
+**Theorem 40.226A (Exact Compression Proves Reflected Asymmetry).** If exact
+compression holds and the finite readout has bounded reflected asymmetry, then
+the reflected-asymmetry estimate holds.
+
+#### Proof
+
+This is Theorem 40.224E. Compress `eta`, compare finitely many physical readout
+classes, and decompress to `theta eta`.
+
+#### Decision
+
+Exact compression is sufficient. The question is whether any non-tautological
+finite physical readout can satisfy it.
+
+#### 52.17.2. Center-Only Compression Fails
+
+The smallest candidate is the center pairing or center-flux readout on the
+collar.
+
+**Theorem 40.226B (Center-Only Collar Data Are Not Complete).** A collar
+readout retaining only center data is not complete for the charged ratio in
+the ordinary finite `SU(2)` law.
+
+#### Proof
+
+The Wilson action depends on full `SU(2)` plaquette variables, not only their
+center signs. Two collars can have the same center readout but different
+adjoint or coset holonomy data along the block boundary. Those coset data
+change the conditional interior weights in both charged and pinned sectors,
+and their charged-minus-pinned difference is exactly the response being
+estimated. Therefore center-only data cannot be a complete sufficient
+statistic.
+
+#### Decision
+
+Center-only compression is too coarse.
+
+#### 52.17.3. Finite Wilson-Net Compression
+
+A richer candidate keeps finitely many physical Wilson loops, adjoint
+holonomies, and center pairings in the collar. Call this finite readout:
+
+```math
+\Pi_R^{\mathrm{net}}(\eta).
+```
+
+**Theorem 40.226C (Finite Wilson-Net Compression Is Conditional On A
+Microscopic-Stability Theorem).** A finite physical Wilson net proves
+compression only if microscopic collar modes inside each net fiber have
+cutoff-uniform charge-sensitive stability.
+
+#### Proof
+
+The finite Wilson net leaves infinitely many microscopic collar modes
+unresolved as `a -> 0`. If those modes affect `log r_a(eta)` by more than
+`O_R(1)` inside a fixed fiber, compression fails. If their
+charged-minus-pinned effect is uniformly bounded, then compression holds.
+
+#### Decision
+
+Finite Wilson-net compression reduces to the Branch I response bound on the
+unresolved microscopic modes. It is not an independent proof.
+
+#### 52.17.4. Full Boundary-State Compression
+
+One can define a complete boundary state by retaining the full induced
+conditional transfer functional:
+
+```math
+\Pi_R^{\mathrm{full}}(\eta)
+=
+\text{the full charged and pinned boundary transfer data}.
+```
+
+This is complete by construction.
+
+**Theorem 40.226D (Full Boundary-State Compression Is Tautological Unless It
+Is Finite And Stable).** The full boundary-state readout is complete, but it
+does not prove the fixed-IR theorem unless it is reduced to finitely many
+physical coordinates with cutoff-uniform stability.
+
+#### Proof
+
+If `Pi_R_full` contains the charged and pinned partition functionals, then it
+contains `r_a(eta)` itself. Compression is then true by definition, but the
+unknown ratio has been placed into the readout. To be a proof, the readout must
+be finite at physical scale and its fibers must be stable uniformly in the
+cutoff.
+
+#### Decision
+
+The tautological complete state is not admissible as a proof.
+
+#### 52.17.5. Renormalized Effective Collar State
+
+The best non-tautological version is a renormalized physical collar state:
+
+```math
+\Pi_R^{\mathrm{eff}}(\eta),
+```
+
+constructed by integrating microscopic collar variables inside fixed physical
+cells while retaining only charge-sensitive effective couplings.
+
+**Theorem 40.226E (Effective Collar Compression Is Equivalent To A Finite-Rank
+Boundary RG Theorem).** Complete physical collar compression is proved by a
+finite-rank boundary renormalization theorem with cutoff-uniform error.
+
+#### Proof
+
+A finite-rank boundary RG theorem says that all microscopic collar effects on
+the charged/pinned ratio are represented by finitely many physical effective
+couplings, with residual error bounded by `O_R(1)`. This is exactly the
+compression condition. Conversely, a complete compression map defines such a
+finite effective boundary state.
+
+#### Decision
+
+Branch II is alive only as a boundary RG theorem. It is not easier than Branch
+I; it packages the same fixed-IR response stability in finite-dimensional
+language.
+
+#### 52.17.6. Branch II Verdict
+
+Branch II does not close unconditionally. It rules out center-only compression
+and tautological full-state compression. The only viable positive route is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove a finite-rank physical boundary RG theorem for the}\\[1mm]
+\text{charge-sensitive collar response.}
+\end{array}}
+```
+
+This is fixed-IR aligned, but it is a real theorem, not a notational choice.
+
+### 52.18. Branch III: Try To Prove Positive-Mass Hostile Response
+
+`V4P40-TARGET-40227-POSITIVE-MASS-HOSTILE-RESPONSE`.
+
+The third possible proof is the negative one. It would show that the
+reflected-asymmetry estimate is false on a positive-mass set of collars.
+
+#### 52.18.1. Hostile Response Statement
+
+A hostile response theorem would prove that there exist collar sets:
+
+```math
+H_{R,a}
+```
+
+and numbers `L_a -> infinity` such that:
+
+```math
+\nu_{R,a}(H_{R,a})
+\ge
+p_R
+>
+0,
+```
+
+and for every `eta` in `H_R,a`:
+
+```math
+\log r_a(\eta)
+-
+\log r_a(\theta\eta)
+\le
+-L_a.
+```
+
+Here `nu_R,a` is the original environment/collar law induced by the finite
+`SU(2)` measure.
+
+**Theorem 40.227A (Positive-Mass Hostile Response Falsifies De-Tiling).** The
+hostile response statement falsifies the reflected-asymmetry estimate and
+therefore falsifies boundary-stable de-tiling for the single-collar target.
+
+#### Proof
+
+The reflected-asymmetry estimate requires the logarithmic difference to be
+bounded below by `-D_R`. On `H_R,a`, it is bounded above by `-L_a`, with
+`L_a -> infinity`. Since the hostile sets have probability bounded below,
+the failure is not an exceptional zero-measure artifact.
+
+#### Decision
+
+This is the exact negative theorem.
+
+#### 52.18.2. Pointwise Hostile Collars Are Not Enough
+
+It is easy at finite cutoff to find special collar configurations that make a
+sector ratio small. That is not a falsification.
+
+**Theorem 40.227B (Pointwise Hostility Does Not Falsify Fixed-IR De-Tiling).**
+A sequence of individual hostile collars does not falsify the theorem unless
+the collars occupy positive environment mass or are stable under physical
+thickening.
+
+#### Proof
+
+A single collar configuration has zero Haar probability. Even an open
+microscopic neighborhood may have probability tending to zero as the cutoff is
+refined. The fixed-IR theorem is falsified only by hostile behavior on a set
+that survives in the original collar law.
+
+#### Decision
+
+The negative branch must prove a lower-tail probability estimate, not just
+construct a bad collar.
+
+#### 52.18.3. Physical Hostile Class
+
+A viable hostile set must be defined by physical readouts, not by a shrinking
+microscopic pattern. Let:
+
+```math
+\mathcal H_R
+```
+
+be a physical collar event. The negative theorem would require:
+
+```math
+\nu_{R,a}(\mathcal H_R)
+\ge
+p_R
+>
+0,
+```
+
+and hostile response on that event.
+
+**Theorem 40.227C (Physical Hostile Classes Are The Right Negative Objects).**
+Positive-mass hostile response can be proved only by a physical hostile class
+or by a microscopic class with a separate fixed-IR probability lower bound.
+
+#### Proof
+
+Fixed-IR alignment requires events whose probability does not disappear under
+cutoff refinement. Physical readout events are the natural candidates because
+their definition does not shrink with `a`. A microscopic pattern can also work,
+but only if one proves its environment probability stays bounded below, which
+is usually false for exact microscopic constraints.
+
+#### Decision
+
+Search for hostile physical collar classes, not isolated hostile
+micro-configurations.
+
+#### 52.18.4. Can Hostility Be Forced By Large Coset Holonomy
+
+One candidate hostile class is large outgoing coset holonomy in the collar.
+Earlier sections already warned that raw large holonomy is not controlled by a
+uniform action gap in four dimensions.
+
+**Theorem 40.227D (Large Holonomy Is A Diagnostic, Not Yet A Hostile Proof).**
+Large physical collar holonomy can mark potential hostile collars, but it
+does not by itself prove charged response collapse.
+
+#### Proof
+
+Large holonomy may affect both charged and pinned sector weights similarly. To
+be hostile, it must make the charged-minus-pinned response diverge negatively.
+That is a sector comparison, not a one-sector holonomy statement.
+
+#### Decision
+
+Large holonomy is a useful search coordinate, but not the theorem.
+
+#### 52.18.5. Can Hostility Be Forced By Odd/Even Boundary Entropy Loss
+
+In the character expansion, hostile response becomes a boundary odd/even
+entropy imbalance. A negative theorem would prove that odd boundary states
+lose entropy relative to even states on a positive-mass physical collar class.
+
+**Theorem 40.227E (Odd/Even Entropy Loss Would Prove Hostile Response).** If a
+positive-mass collar class has odd-sector boundary weight smaller than
+even-sector boundary weight by `e^{-L_a}` with `L_a -> infinity`, then hostile
+response holds.
+
+#### Proof
+
+The charged/pinned ratio is the odd/even boundary partition ratio in the
+character representation. A collapsing odd/even ratio gives collapsing
+`r_a(eta)`. If the reflected partner does not collapse at the same rate, the
+reflected-asymmetry ratio also diverges negatively.
+
+#### Obstruction
+
+The entropy imbalance itself is the hard estimate. Strong coupling suggests
+the opposite behavior in the confining regime, while weak-coupling continuum
+control is unavailable.
+
+#### Decision
+
+This is the best negative representation, but it is not presently proved.
+
+#### 52.18.6. Branch III Verdict
+
+Branch III does not produce an unconditional falsification. It sharpens the
+negative target to:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{find a positive-mass physical collar class on which the}\\[1mm]
+\text{charged-minus-pinned response diverges negatively.}
+\end{array}}
+```
+
+Equivalently, in the character expansion:
+
+```math
+\boxed{
+\text{prove positive-mass odd/even boundary entropy collapse.}
+}
+```
+
+This is a real possible disproof route, but it requires a fixed-IR probability
+theorem for hostile collars.
+
+### 52.19. Updated Section 52 Decision After The Three Branches
+
+The three possible proofs have now been targeted one by one.
+
+```math
+\boxed{
+\begin{array}{ll}
+\text{Branch I}
+&
+\text{response bound survives as physical-cell charge screening},\\[1mm]
+\text{Branch II}
+&
+\text{compression survives as finite-rank boundary RG},\\[1mm]
+\text{Branch III}
+&
+\text{hostile response survives as positive-mass entropy collapse}.
+\end{array}}
+```
+
+None closes from formal symmetry alone. The exact state is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\text{positive route}
+&
+\text{prove fixed-IR charge-sensitive screening},\\[1mm]
+\text{positive route}
+&
+\text{prove finite-rank physical boundary RG},\\[1mm]
+\text{negative route}
+&
+\text{prove positive-mass hostile collar entropy collapse}.
+\end{array}}
+```
+
+The first two positive routes are equivalent in spirit: they say microscopic
+collar data have only bounded charge-sensitive effect after physical blocking.
+The negative route says that this fails on a physically visible set of collars.
+
+Thus the next best target is the response-screening theorem, because it is the
+most direct and least notational:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{for each physical collar cell, prove that charged and pinned}\\[1mm]
+\text{expectations of the collar-energy response differ by }O_R(1).
+\end{array}}
+```
+
+If that theorem fails, the failure should be converted immediately into the
+positive-mass hostile-collar statement.

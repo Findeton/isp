@@ -26,6 +26,10 @@ Current Yang-Mills status:
   fixed-physical-`R` center-sign route to the single remaining input
   `\mathsf H_{\mathrm{3sec}}(R,\zeta_R)`, equivalently a bounded
   three-sector barrier or bounded thick tile-flip free-energy estimate.
+- **Paper 41 continuation:** [V4 Paper 41](relativistic-isp-v4-paper41-fixed-ir-response-screening-continuation.md)
+  continues the Paper 40 single-collar lower-tail route through the three
+  remaining fixed-IR alternatives: charge-sensitive response screening,
+  finite-rank physical boundary RG, or positive-mass hostile-collar collapse.
 
 For a compact physicist-facing overview, start here:
 [V5 Paper 0: Review Introduction For Physicists](relativistic-isp-v5-paper0-review-introduction-for-physicists.md).
@@ -380,6 +384,7 @@ Effective GR, QFT, QCD, and continuum YM descent:
 - `relativistic-isp-v4-paper38-ontology-free-yang-mills-proof-reduction.md`
 - `relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
 - `relativistic-isp-v4-paper40-conditional-fixed-ir-center-sign-certificate.md`
+- `relativistic-isp-v4-paper41-fixed-ir-response-screening-continuation.md`
 
 Late V4 hardening and standard-equivalence bridges:
 
@@ -608,6 +613,9 @@ The honest reading is:
 - Paper 40 supplies a conditional fixed-IR center-sign certificate for the
   ontological/active-ISP side, but it does not prove the continuum string
   tension or mass gap;
+- Paper 41 continues the Paper 40 certificate route by isolating the remaining
+  fixed-IR single-collar alternatives: response screening, finite-rank
+  boundary RG, or hostile-collar collapse;
 - remaining external acceptance depends on closing that C0 core, independent
   conventional review of the Paper 39 proof architecture, extending the bridge
   discipline across GR/QFT/QCD, and showing that the finite source packets are
