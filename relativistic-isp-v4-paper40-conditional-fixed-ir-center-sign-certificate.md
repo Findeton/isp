@@ -1,16 +1,111 @@
-# Relativistic ISP V4 Paper 40: Center-Resolved Gluing And The Conditional Cocycle Obstruction To Confinement
+# Relativistic ISP V4 Paper 40: Conditional Fixed-IR Center-Sign Certificate For Yang-Mills Confinement
 
 Author: Felix Robles Elvira
 
 Date: 2026-05-30
 
-Status: obstruction-audit and research-program paper. This paper does not prove
-confinement, the continuum string tension, or the mass gap. It proves the
-center-only strong-coupling dual story, proves an exact finite-cutoff SU(2)
-center/coset Wilson identity, and isolates the non-Abelian obstruction: the
-SO(3) cocycle factor can cancel center disorder unless a separate conditional
-decorrelation estimate is proved. The paper therefore does not clear O1/O2 for
-full SU(N); it identifies the exact theorem that would be needed for IR5.
+Status: conditional fixed-IR certificate and obstruction-closure paper. This
+paper does not prove full continuum Yang-Mills confinement, survival of the
+continuum string tension, or the Clay mass gap. It proves exact finite-cutoff
+center/coset and center-sign reduction identities, audits the cocycle and
+sign-transfer obstructions, and closes the formal fixed-physical-`R`
+center-sign route to one remaining analytic input:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+```
+
+This final input is the fixed-IR three-sector nonconcentration estimate,
+equivalently a bounded three-sector barrier or bounded thick tile-flip
+free-energy estimate. Under Barandes alignment, the ISP record law is treated
+as the deterministic SU(2) pushforward law; it exposes the center variables but
+does not tilt the Yang-Mills measure or introduce hidden Markov dynamics.
+
+## Abstract
+
+This paper studies whether ISP center gluing can supply a disorder-side route
+to the Yang-Mills confinement floor. The answer reached here is conditional and
+fixed-IR: the finite-cutoff SU(2) center/coset identities are exact, the
+complex cocycle-amplitude route is reduced to a genuine obstruction, and the
+real center-sign transfer/cell route closes to a single fixed-physical-`R`
+input. For the actual SU(2) center-sign kernel, the residual modulus branch is
+exhausted, the formal transfer/cell reductions are complete, and the final
+hypothesis is three-sector nonconcentration at fixed physical resolution.
+Assuming that hypothesis, the physical four-cell holonomy is separated from
+every boundary coboundary, the integrated non-coboundary estimate holds, and
+the fixed-IR charged transfer deficit follows. The paper therefore supplies a
+conditional certificate, not an unconditional proof of continuum confinement or
+mass gap.
+
+## Executive Closure And Final Hypothesis
+
+Searchable closure tag:
+
+`V4P40-CONDITIONAL-FIXED-IR-CENTER-SIGN-CERTIFICATE`.
+
+The formal conclusion of the paper is:
+
+```math
+\boxed{
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)
+\Longrightarrow
+(18.20)
+}
+```
+
+where `(18.20)` is the strict fixed-IR charged-sector transfer deficit at the
+chosen physical resolution `R`. The final hypothesis is:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)
+:
+\qquad
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0.
+```
+
+Equivalently, the dominant positive or negative sign sector never captures all
+mass in the fixed-IR limit:
+
+```math
+\limsup_{a\to0}
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+<
+1.
+```
+
+Equivalently, the fixed-IR three-sector barrier remains bounded:
+
+```math
+\limsup_{a\to0}
+B^{\zeta,\mathrm{3sec}}_{R,a}
+<
+\infty.
+```
+
+The conditional theorem proved by the route is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{fixed physical }R
+\text{ and deterministic SU(2) record pushforward}\\[1mm]
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)\\[1mm]
+\Longrightarrow\\[1mm]
+\text{fixed-IR charged transfer deficit and center-sign certificate.}
+\end{array}}
+```
+
+The formal route is therefore complete. The remaining mathematical problem is
+not another reduction, but an actual fixed-IR Yang-Mills weight estimate:
+prove the bounded thick-vortex/tile-flip free-energy estimate, or prove
+three-sector nonconcentration directly from the SU(2) cell law.
 
 ## 0. Purpose And Honest Boundary
 
@@ -40,8 +135,12 @@ the `Z_N` center flux through region boundaries is part of the whole-process
 record law rather than a reconstructed gauge-invariant observable.
 
 This paper asks whether that primitive center structure is the ISP-specific
-route to the shared floor, and it shows that the route is blocked unless the
-conditional cocycle obstruction is controlled.
+route to the shared floor. Its final answer is sharper than the original
+question: the broad cocycle route is blocked unless a separate decorrelation
+estimate is proved, while the real center-sign route closes conditionally at
+the fixed-IR three-sector estimate stated above. In the Barandes-aligned
+reading, primitive ISP records expose the relevant center variables; they do
+not by themselves change the SU(2) weights.
 
 ### Non-claims
 
@@ -57,8 +156,11 @@ This paper does not prove:
    and obstruction diagnostics.
 
 It proves finite-cutoff identities, strong-coupling center-sector results, and a
-no-free-lunch theorem for the bare center-sheet route. It does not prove the
-fixed-scale infrared decorrelation estimate required for confinement.
+no-free-lunch theorem for the bare center-sheet route. It also proves the
+conditional fixed-IR center-sign certificate: once
+`\mathsf H_{\mathrm{3sec}}(R,\zeta_R)` is supplied, the fixed-physical-`R`
+charged transfer deficit follows. It does not prove the remaining fixed-IR
+Yang-Mills weight estimate.
 
 ## 1. The Center And The Order/Disorder Duality
 
@@ -198,8 +300,10 @@ Searchable target tag:
 
 `V4P40-CENTER-DUAL-THEOREM-TARGETS`.
 
-The route decomposes into four targets. None is proved here; each is stated so it
-can be attacked or falsified.
+The original global route decomposed into four targets. The present paper does
+not close the full continuum chain, but it does close the fixed-physical-`R`
+center-sign subroute conditionally: the remaining input is the three-sector
+Yang-Mills weight estimate named in the executive closure.
 
 ```math
 \boxed{
@@ -1784,7 +1888,7 @@ dependence on the interior of the spanning surface:
 ```math
 \alpha^s_{C,S}(b)
 \quad
-\hbox{carries area-order dependence on }S.
+\text{carries area-order dependence on }S.
 \tag{15.34}
 ```
 
@@ -19588,3 +19692,15760 @@ Together with Target 40.154, this gives the concrete center-marginal route to
 boundary-stable center disorder. The remaining work is no longer formal or
 coordinate-theoretic: prove or falsify the physical two-sidedness estimate
 (15.1070), uniformly at fixed physical scale.
+
+### 15.71. Target 40.156: Fixed-IR Two-Sidedness From Tile Flips Or Reflection Positivity
+
+Searchable Target-40.156 tag:
+
+`V4P40-TARGET-40156-FIXED-IR-TWO-SIDEDNESS`.
+
+Target 40.155 reduced the center-marginal problem to one concrete statement:
+after conditioning on the fixed physical interfaces of a deep tile, the local
+sheet character must not be pinned to one sign. This target gives two rigorous
+ways to prove that statement and one rigorous way to falsify it.
+
+All objects below are fixed physical objects before the cutoff is removed: the
+smoothing radius, tile geometry, interface atlas, and loop/sheet family are
+chosen at scale `R`; only then is `a` sent to zero.
+
+#### 15.71.1. Conditional Tile Weight
+
+For an admissible tile-interface pair, let:
+
+```math
+W^0_{j,a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right)
+:=
+Z^s_{\mathrm{SO3},a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right)
+\nu^s_{\mathrm{cen},a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right)
+\tag{15.1074}
+```
+
+denote the positive summand in the neutral tile partition function (15.1040).
+Thus:
+
+```math
+Z^0_{j,a}(\omega_-,\omega_+)
+=
+\sum_{b_{T_j}}
+W^0_{j,a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right).
+\tag{15.1075}
+```
+
+The two sign sectors are:
+
+```math
+\mathcal A^{\pm}_{j,a}(\omega_-,\omega_+)
+:=
+\left\{
+b_{T_j}:
+\chi_{j,a}(b_{T_j})=\pm1
+\right\}.
+\tag{15.1076}
+```
+
+The probabilities in (15.1068) are:
+
+```math
+p^{\pm}_{j,a}(\omega_-,\omega_+)
+=
+\frac{
+\sum_{b_{T_j}\in\mathcal A^{\pm}_{j,a}(\omega_-,\omega_+)}
+W^0_{j,a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right)
+}{
+Z^0_{j,a}(\omega_-,\omega_+)
+}.
+\tag{15.1077}
+```
+
+So two-sidedness is not a qualitative mixing slogan. It is a lower bound on the
+relative neutral tile weights of the two sign sectors.
+
+#### 15.71.2. Local Flip Criterion
+
+A relative center flip for the tile/interface pair is a center two-cochain:
+
+```math
+\eta_{j,a}
+\in
+Z^2(T_j,\partial_{\pm}T_j;Z_2)
+\tag{15.1078}
+```
+
+such that multiplication by `eta` preserves the admissible interface data and
+flips the sheet character:
+
+```math
+\Theta^{\eta}_{j,a}b_{T_j}
+:=
+\eta_{j,a}b_{T_j},
+\qquad
+\chi_{j,a}
+\left(
+\Theta^{\eta}_{j,a}b_{T_j}
+\right)
+=
+-
+\chi_{j,a}(b_{T_j}).
+\tag{15.1079}
+```
+
+Equivalently, in pairing notation:
+
+```math
+(-1)^{
+\left\langle
+\eta_{j,a},
+S_{\gamma,a}\cap T_j
+\right\rangle
+}
+=
+-1.
+\tag{15.1080}
+```
+
+The flip is useful only if it has uniformly bounded fixed-IR cost. The precise
+cost hypothesis is:
+
+```math
+\exp
+\left(
+-B_R-\varepsilon_a
+\right)
+W^0_{j,a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right)
+\le
+W^0_{j,a}
+\left(
+\Theta^{\eta}_{j,a}b_{T_j}\mid\omega_-,\omega_+
+\right)
+\le
+\exp
+\left(
+B_R+\varepsilon_a
+\right)
+W^0_{j,a}
+\left(
+b_{T_j}\mid\omega_-,\omega_+
+\right),
+\tag{15.1081}
+```
+
+with:
+
+```math
+B_R<\infty,
+\qquad
+\varepsilon_a\downarrow0.
+\tag{15.1082}
+```
+
+The constant `B_R` may depend on the physical scale and tile atlas. It must not
+diverge as the cutoff is removed.
+
+**Criterion 40.156A (Finite-Cost Flip Proves Two-Sidedness).** If every
+admissible deep tile/interface pair admits a relative center flip satisfying
+(15.1078)-(15.1082), then (15.1070) holds with:
+
+```math
+c^{\mathrm{flip}}_R
+:=
+\frac{1}{1+\exp(B_R)}.
+\tag{15.1083}
+```
+
+More explicitly:
+
+```math
+\inf_{\substack{
+j\\
+\omega_-,\omega_+
+}}
+\min
+\left\{
+p^+_{j,a}(\omega_-,\omega_+),
+p^-_{j,a}(\omega_-,\omega_+)
+\right\}
+\ge
+c^{\mathrm{flip}}_R
+-
+o_a(1).
+\tag{15.1084}
+```
+
+Consequently the twisted ratio satisfies:
+
+```math
+\sup_{\substack{
+j\\
+\omega_-,\omega_+
+}}
+\mathfrak r^{\chi}_{j,a}(\omega_-,\omega_+)
+\le
+1-2c^{\mathrm{flip}}_R
++
+o_a(1).
+\tag{15.1085}
+```
+
+Since:
+
+```math
+1-2c^{\mathrm{flip}}_R<1,
+\tag{15.1086}
+```
+
+the charged transfer gap (15.1029) follows with any:
+
+```math
+0<m_R<
+-
+\log
+\left(
+1-2c^{\mathrm{flip}}_R
+\right).
+\tag{15.1087}
+```
+
+#### Proof
+
+The map `Theta` is a bijection from the plus sector to the minus sector and
+from the minus sector to the plus sector. By the lower bound in (15.1081):
+
+```math
+p^-_{j,a}(\omega_-,\omega_+)
+\ge
+\exp
+\left(
+-B_R-\varepsilon_a
+\right)
+p^+_{j,a}(\omega_-,\omega_+).
+\tag{15.1088}
+```
+
+Applying the same bound after the inverse flip gives:
+
+```math
+p^+_{j,a}(\omega_-,\omega_+)
+\ge
+\exp
+\left(
+-B_R-\varepsilon_a
+\right)
+p^-_{j,a}(\omega_-,\omega_+).
+\tag{15.1089}
+```
+
+Since the two probabilities sum to one, (15.1088)-(15.1089) imply:
+
+```math
+\min
+\left\{
+p^+_{j,a}(\omega_-,\omega_+),
+p^-_{j,a}(\omega_-,\omega_+)
+\right\}
+\ge
+\frac{
+\exp
+\left(
+-B_R-\varepsilon_a
+\right)
+}{
+1+
+\exp
+\left(
+-B_R-\varepsilon_a
+\right)
+}.
+\tag{15.1090}
+```
+
+Letting `a` go to zero gives (15.1084). Equation (15.1085) follows from
+(15.1069), and then (15.1087) gives (15.1045). By Criterion 40.155A, the
+charged transfer gap follows. `∎`
+
+#### 15.71.3. Proving The Flip Cost By A Fiber Map
+
+The center flip criterion should not be proved by manipulating the already
+integrated weight as a black box. The clean finite-cutoff proof is to build a
+map on the SO(3) fibers.
+
+For each supported tile center field `b`, suppose there is a measurable
+injection:
+
+```math
+\Psi^{\eta}_{b}
+:
+\mathcal F^s_a(b\mid\omega_-,\omega_+)
+\longrightarrow
+\mathcal F^s_a(\eta b\mid\omega_-,\omega_+)
+\tag{15.1091}
+```
+
+with unit Jacobian on Haar-disintegrated fiber measure and action cost:
+
+```math
+\mathcal A^s_a
+\left(
+\eta b,
+\Psi^{\eta}_{b}\bar U
+\right)
+\le
+\mathcal A^s_a
+\left(
+b,
+\bar U
+\right)
++
+B_R+\varepsilon_a.
+\tag{15.1092}
+```
+
+Then:
+
+```math
+W^0_{j,a}
+\left(
+\eta b\mid\omega_-,\omega_+
+\right)
+\ge
+\exp
+\left(
+-B_R-\varepsilon_a
+\right)
+W^0_{j,a}
+\left(
+b\mid\omega_-,\omega_+
+\right).
+\tag{15.1093}
+```
+
+If the same construction applies to the inverse flip, then the two-sided weight
+comparison (15.1081) follows.
+
+This is the most concrete version of the local proof. It asks for a
+measure-preserving repair of the SO(3) fiber after a relative center flip, with
+only bounded physical action excess. If every such repair costs an amount
+diverging as `a` goes to zero, the local flip route is not fixed-IR aligned.
+
+#### 15.71.4. Topological Gate For The Local Flip
+
+Before estimating action, one must check that a relative flip exists at all.
+The required topology is:
+
+```math
+\exists\,
+\eta_{j,a}
+\in
+Z^2(T_j,\partial_{\pm}T_j;Z_2)
+\quad
+\mathrm{such\ that}
+\quad
+(-1)^{
+\left\langle
+\eta_{j,a},
+S_{\gamma,a}\cap T_j
+\right\rangle
+}
+=
+-1.
+\tag{15.1094}
+```
+
+If no such relative class exists for the chosen physical tile/interface atlas,
+then two-sidedness cannot be proved by a local center flip. That failure is
+geometric, not analytic. The correct response is to change the physical tile
+atlas or use the reflection-positive route below.
+
+#### 15.71.5. Reflection-Positive Charged Sheet Route
+
+The alternative to a local flip is to prove a charged free-energy gap by
+reflection positivity or a chessboard estimate.
+
+Let a physical reflected extension contain `N` copies of the tile, with copied
+characters:
+
+```math
+\chi_{1,a},
+\ldots,
+\chi_{N,a}.
+\tag{15.1095}
+```
+
+Let:
+
+```math
+Z^{\mathrm{cb},0}_{N,a},
+\qquad
+Z^{\mathrm{cb},\chi}_{N,a}
+\tag{15.1096}
+```
+
+be the neutral and fully chessboard-charged partition functions for that
+physical reflected extension. The reflection-positive target is:
+
+```math
+\frac{
+\left|
+Z^{\mathrm{cb},\chi}_{N,a}
+\right|
+}{
+Z^{\mathrm{cb},0}_{N,a}
+}
+\le
+\exp
+\left(
+-m_R N
++
+o_a(N)
+\right),
+\qquad
+m_R>0.
+\tag{15.1097}
+```
+
+The corresponding chessboard inequality is:
+
+```math
+\mathfrak r^{\chi}_{j,a}(\omega_-,\omega_+)
+\le
+\left(
+\frac{
+\left|
+Z^{\mathrm{cb},\chi}_{N,a}
+\right|
+}{
+Z^{\mathrm{cb},0}_{N,a}
+}
+\right)^{1/N}
++
+o_a(1).
+\tag{15.1098}
+```
+
+Equations (15.1097)-(15.1098) imply (15.1045). This route is fixed-IR aligned
+only if the reflected extension is built from physical tiles and the per-tile
+gap `m_R` remains positive as `a` goes to zero.
+
+This reflection-positive route is useful when a single-tile flip is too rigid
+but a charged sheet insertion has a positive free-energy density.
+
+#### 15.71.6. The Falsifier: Center-Sign Pinning
+
+Target 40.156 fails if there is a sequence of fixed physical tile/interface
+pairs and cutoffs with:
+
+```math
+\min
+\left\{
+p^+_{j,a}(\omega_-,\omega_+),
+p^-_{j,a}(\omega_-,\omega_+)
+\right\}
+\longrightarrow
+0.
+\tag{15.1099}
+```
+
+In that case:
+
+```math
+\mathfrak r^{\chi}_{j,a}(\omega_-,\omega_+)
+\longrightarrow
+1,
+\tag{15.1100}
+```
+
+so no positive charged transfer gap can be extracted from that tile atlas. In
+physical terms, the conditioned SO(3) fiber has made the center character
+predictable. This is exactly the fixed-IR version of the failure mode in
+(15.1054).
+
+#### 15.71.7. Completed Target 40.156
+
+Target 40.156 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{flip}}
+&
+\text{construct a relative center flip and prove }(15.1081),\\[1mm]
+\mathrm{PASS}_{\mathrm{fiber}}
+&
+\text{prove }(15.1081)\text{ using the fiber map }(15.1091),\\[1mm]
+\mathrm{PASS}_{\mathrm{rp}}
+&
+\text{prove the charged chessboard gap }(15.1097),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{the two-sidedness estimate }(15.1070)\text{ follows},\\[1mm]
+\mathrm{FAIL}
+&
+\text{center-sign pinning occurs as in }(15.1099).
+\end{array}}
+\tag{15.1101}
+```
+
+Thus the next genuinely dynamical proof is not another reformulation of the
+center/coset identity. It is one of the following: a bounded-cost relative
+center flip, a bounded-cost SO(3) fiber repair, or a reflection-positive charged
+free-energy density.
+
+### 15.72. Target 40.157: Structural Dichotomy For The Actual Cocycle Amplitude
+
+Searchable Target-40.157 tag:
+
+`V4P40-TARGET-40157-ACTUAL-COCYCLE-DICHOTOMY`.
+
+We now return to the fork stated in (15.49). The area law itself is not the next
+primitive target, because the numerical decorrelation estimate is already IR5
+written in center/coset variables. The next primitive target is structural:
+determine whether the actual conditional cocycle amplitude belongs to the
+boundary-admissible class needed by Targets 40.152-40.156, or whether it carries
+irreducible sheet-interior dependence.
+
+#### 15.72.1. The Actual Amplitude Defect
+
+For a fixed physical loop/sheet/collar package, let:
+
+```math
+\alpha_{\gamma,a}(b)
+:=
+\alpha^s_{C_{\gamma,a},S_{\gamma,a}}(b)
+\tag{15.1102}
+```
+
+be the actual conditional cocycle amplitude from the exact SU(2) lift identity.
+It obeys:
+
+```math
+\left|
+\alpha_{\gamma,a}(b)
+\right|
+\le
+1.
+\tag{15.1103}
+```
+
+Let:
+
+```math
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\tag{15.1104}
+```
+
+be the physical center boundary-collar sigma algebra from Target 40.152. Define
+the boundary defect of the actual amplitude by:
+
+```math
+\mathcal D^{\alpha}_{\gamma,R,a}
+:=
+\inf_{\substack{
+\Gamma_{\gamma,a}\in
+L^{\infty}
+\left(
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\right)\\
+\left\|\Gamma_{\gamma,a}\right\|_{\infty}\le1
+}}
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\left|
+\alpha_{\gamma,a}
+-
+\Gamma_{\gamma,a}
+\right|
+\right].
+\tag{15.1105}
+```
+
+This is the clean fixed-IR diagnostic. It asks how much of the actual cocycle
+amplitude remains after the best possible boundary-collar explanation is
+removed.
+
+The good structural branch is:
+
+```math
+\mathcal D^{\alpha}_{\gamma,R,a}
+\le
+K^{\alpha}_R
+\exp
+\left(
+-\sigma^{\alpha}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\alpha}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1),
+\qquad
+\sigma^{\alpha}_R>0.
+\tag{15.1106}
+```
+
+The bad structural branch is the failure of (15.1106) for every positive
+candidate exponent. Equivalently, there is no area-rate boundary approximation
+of the actual amplitude in the norm (15.1105).
+
+#### 15.72.2. The Good Branch Implies The Fixed-IR Area Law
+
+Assume boundary-stable center disorder from Target 40.154:
+
+```math
+\sup_{\substack{
+\Gamma_{\gamma,a}\in
+L^{\infty}
+\left(
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\right)\\
+\left\|\Gamma_{\gamma,a}\right\|_{\infty}\le1
+}}
+\left|
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}\Gamma_{\gamma,a}
+\right]
+\right|
+\le
+K^{\mathrm{cen}}_R
+\exp
+\left(
+-\sigma^{\mathrm{cen}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\mathrm{cen}}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1).
+\tag{15.1107}
+```
+
+Assume also the actual amplitude defect bound (15.1106). Then the Wilson
+expectation obeys:
+
+```math
+\left|
+\left\langle
+W_{1/2}(C_{\gamma,a})
+\right\rangle
+\right|
+\le
+K_R
+\exp
+\left(
+-\sigma_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1),
+\tag{15.1108}
+```
+
+where one may take:
+
+```math
+\sigma_R
+<
+\min
+\left\{
+\sigma^{\mathrm{cen}}_R,
+\sigma^{\alpha}_R
+\right\}.
+\tag{15.1109}
+```
+
+**Theorem 40.157A (Boundary-Admissible Actual Amplitude Closes The Route).**
+If (15.1106) and (15.1107) hold uniformly for the fixed physical loop/sheet
+family, then the fixed-IR Wilson area-law estimate (15.1108) holds.
+
+#### Proof
+
+Choose a boundary-collar observable `Gamma` with norm at most one and defect
+within `o_a(1)` of the infimum in (15.1105). The exact Wilson identity gives:
+
+```math
+\left\langle
+W_{1/2}(C_{\gamma,a})
+\right\rangle
+=
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}\alpha_{\gamma,a}
+\right].
+\tag{15.1110}
+```
+
+Decompose:
+
+```math
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}\alpha_{\gamma,a}
+\right]
+=
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}\Gamma_{\gamma,a}
+\right]
++
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}
+\left(
+\alpha_{\gamma,a}
+-
+\Gamma_{\gamma,a}
+\right)
+\right].
+\tag{15.1111}
+```
+
+Since:
+
+```math
+\left|
+\Xi_{S_{\gamma,a}}
+\right|
+=
+1,
+\tag{15.1112}
+```
+
+the second term is bounded by the defect (15.1105). The first term is bounded
+by (15.1107). Insert (15.1106), absorb constants into `K_R` and `kappa_R`, and
+choose any exponent satisfying (15.1109). This proves (15.1108). `∎`
+
+Thus the good branch of (15.49) is now a plug-in theorem: the actual amplitude
+does not need to be pointwise boundary-measurable. It only needs an
+area-small boundary defect in the physical center-sensitivity norm.
+
+#### 15.72.3. How The Area Barrier Supplies The Good Branch
+
+Target 40.153 proposed an area barrier for center-sensitive cocycle carriers.
+In the notation of this target, the required output is exactly:
+
+```math
+\mathcal D^{\alpha}_{\gamma,R,a}
+\le
+K^{\alpha}_R
+\exp
+\left(
+-\sigma^{\alpha}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\alpha}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1).
+\tag{15.1113}
+```
+
+The logic is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{quasilocal cocycle expansion}\\[1mm]
+\text{plus}\\[1mm]
+\text{area barrier for center-sensitive carriers}\\[1mm]
+\Longrightarrow\\[1mm]
+\text{actual amplitude defect bound }(15.1113).
+\end{array}}
+\tag{15.1114}
+```
+
+This is why the area barrier is not a decorative strengthening. It is exactly
+the missing implication from structural cocycle locality to the norm needed in
+Theorem 40.157A.
+
+#### 15.72.4. The Bad Branch Is A Route-Failure Certificate
+
+The opposite branch is not merely that a proof is missing. It is the following
+mathematical statement: for every positive candidate exponent `sigma` and every
+perimeter coefficient `kappa`, there are fixed physical loop/sheet packages and
+cutoffs such that:
+
+```math
+\mathcal D^{\alpha}_{\gamma,R,a}
+>
+\exp
+\left(
+-\sigma
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
+\tag{15.1115}
+```
+
+up to constants independent of the cutoff.
+
+Equivalently, after the best boundary-collar approximation has been removed,
+the actual cocycle amplitude still carries sheet-interior information at a
+strength too large to be absorbed by the center-disorder estimate. In that case
+the center route has not proved confinement; it has identified a non-Abelian
+area-supported cocycle obstruction.
+
+The sharp falsifier is stronger. If there are fixed physical packages for which:
+
+```math
+\alpha_{\gamma,a}(b)
+=
+\overline{\Xi_{S_{\gamma,a}}(b)}
++
+r_{\gamma,a}(b),
+\qquad
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\left|
+r_{\gamma,a}
+\right|
+\right]
+\longrightarrow
+0,
+\tag{15.1116}
+```
+
+then:
+
+```math
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}\alpha_{\gamma,a}
+\right]
+\longrightarrow
+1.
+\tag{15.1117}
+```
+
+This realizes the no-free-lunch mechanism of Theorem 40.5 inside the actual
+amplitude. It would close the center-lift route negatively.
+
+#### 15.72.5. Completed Target 40.157
+
+Target 40.157 is the operational form of the dichotomy (15.49):
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{GOOD}
+&
+\text{prove the actual defect bound }(15.1106),\\[1mm]
+\mathrm{CENTER}
+&
+\text{prove boundary-stable center disorder }(15.1107),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{the fixed-IR Wilson area law follows by Theorem 40.157A},\\[1mm]
+\mathrm{BAD}
+&
+\text{prove non-boundary area dependence as in }(15.1115),\\[1mm]
+\mathrm{FAIL}
+&
+\text{the actual amplitude cancels the sheet as in }(15.1116).
+\end{array}}
+\tag{15.1118}
+```
+
+This target explains why the next work should attack the dichotomy rather than
+the area law directly. The area law is the consequence of the good branch plus
+center disorder. The structural dichotomy is where the Yang-Mills content still
+lives.
+
+### 15.73. Target 40.158: Area Barrier For The Actual Cocycle Amplitude
+
+Searchable Target-40.158 tag:
+
+`V4P40-TARGET-40158-ACTUAL-COCYCLE-AREA-BARRIER`.
+
+Target 40.157 used the full boundary defect (15.1105). That is a clean
+sufficient condition, but it is stronger than the Wilson estimate strictly
+needs. The Wilson identity only tests the part of the cocycle amplitude that
+survives multiplication by the center sheet character. The fixed-IR attack
+should therefore control the sheet-charged residual first; the full boundary
+defect can remain as a stronger corollary when available.
+
+#### 15.73.1. Charged Boundary Defect
+
+For a boundary-collar approximation `Gamma`, define the charged residual:
+
+```math
+\mathcal R^{\chi}_{\gamma,R,a}(\Gamma)
+:=
+\left|
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}
+\left(
+\alpha_{\gamma,a}
+-
+\Gamma_{\gamma,a}
+\right)
+\right]
+\right|.
+\tag{15.1119}
+```
+
+The charged boundary defect is:
+
+```math
+\mathcal D^{\alpha,\chi}_{\gamma,R,a}
+:=
+\inf_{\substack{
+\Gamma_{\gamma,a}\in
+L^{\infty}
+\left(
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\right)\\
+\left\|\Gamma_{\gamma,a}\right\|_{\infty}\le1
+}}
+\mathcal R^{\chi}_{\gamma,R,a}(\Gamma).
+\tag{15.1120}
+```
+
+The full boundary defect dominates it:
+
+```math
+\mathcal D^{\alpha,\chi}_{\gamma,R,a}
+\le
+\mathcal D^{\alpha}_{\gamma,R,a}.
+\tag{15.1121}
+```
+
+Thus the target:
+
+```math
+\mathcal D^{\alpha}_{\gamma,R,a}
+\le
+\text{area-small}
+\tag{15.1122}
+```
+
+is sufficient, but the strictly necessary amplitude-side target for the Wilson
+route is:
+
+```math
+\mathcal D^{\alpha,\chi}_{\gamma,R,a}
+\le
+K^{\chi}_R
+\exp
+\left(
+-\sigma^{\chi}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\chi}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1).
+\tag{15.1123}
+```
+
+The advantage of (15.1123) is that center-neutral interior dependence of
+`alpha` is harmless if it cancels after multiplication by the sheet character.
+Only sheet-charged interior dependence can obstruct confinement through this
+route.
+
+#### 15.73.2. Charged Defect Plus Center Disorder Still Implies Area Law
+
+Assume boundary-stable center disorder (15.1107) and the charged defect bound
+(15.1123). Then:
+
+```math
+\left|
+\left\langle
+W_{1/2}(C_{\gamma,a})
+\right\rangle
+\right|
+\le
+K_R
+\exp
+\left(
+-\sigma_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1),
+\tag{15.1124}
+```
+
+with:
+
+```math
+\sigma_R
+<
+\min
+\left\{
+\sigma^{\mathrm{cen}}_R,
+\sigma^{\chi}_R
+\right\}.
+\tag{15.1125}
+```
+
+**Theorem 40.158A (Charged Boundary Defect Is Enough).** The full defect bound
+(15.1106) in Theorem 40.157A may be replaced by the charged defect bound
+(15.1123).
+
+#### Proof
+
+Choose a boundary-collar `Gamma` within `o_a(1)` of the infimum in (15.1120).
+By the exact Wilson identity:
+
+```math
+\left\langle
+W_{1/2}(C_{\gamma,a})
+\right\rangle
+=
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}\Gamma_{\gamma,a}
+\right]
++
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}
+\left(
+\alpha_{\gamma,a}
+-
+\Gamma_{\gamma,a}
+\right)
+\right].
+\tag{15.1126}
+```
+
+The first term is bounded by (15.1107). The second is bounded by (15.1123).
+Absorb constants and choose the exponent as in (15.1125). This proves
+(15.1124). `∎`
+
+#### 15.73.3. Fixed-IR Carrier Expansion For The Actual Amplitude
+
+Let:
+
+```math
+\mathcal T^{\mathrm{int}}_{\gamma,R}
+\tag{15.1127}
+```
+
+be the finite physical tile set in the sheet interior after removing the
+boundary collar. A fixed-IR cocycle-carrier expansion is a decomposition:
+
+```math
+\alpha_{\gamma,a}(b)
+=
+\Gamma^{\partial}_{\gamma,a}(b)
++
+\sum_{P\subset\mathcal T^{\mathrm{int}}_{\gamma,R}}
+A_{P,a}(b)
++
+\tau_{\gamma,a}(b),
+\tag{15.1128}
+```
+
+where:
+
+```math
+\Gamma^{\partial}_{\gamma,a}
+\in
+L^{\infty}
+\left(
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\right),
+\qquad
+\left\|
+\Gamma^{\partial}_{\gamma,a}
+\right\|_{\infty}
+\le1.
+\tag{15.1129}
+```
+
+The carriers `P` are physical tile clusters. Their number is controlled by an
+entropy bound:
+
+```math
+\#\left\{
+P:
+|P|=n,\,
+P\subset\mathcal T^{\mathrm{int}}_{\gamma,R}
+\right\}
+\le
+C_R
+\left(
+1+
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
+\right)
+\exp(s_R n).
+\tag{15.1130}
+```
+
+The amplitude weight is controlled by:
+
+```math
+\left\|
+A_{P,a}
+\right\|_{L^1(\mu^s_{\mathrm{cen},a})}
+\le
+C_R
+\exp(-m_R |P|)
++
+o_a(1),
+\qquad
+m_R>s_R.
+\tag{15.1131}
+```
+
+The residual tail is:
+
+```math
+\left\|
+\tau_{\gamma,a}
+\right\|_{L^1(\mu^s_{\mathrm{cen},a})}
+\le
+K_R
+\exp
+\left(
+-\sigma^{\tau}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\tau}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1).
+\tag{15.1132}
+```
+
+This expansion is fixed-IR aligned only if the tile set, cluster size `|P|`,
+and constants in (15.1130)-(15.1132) are defined at physical scale before
+taking the cutoff limit.
+
+#### 15.73.4. Neutral Carriers And Sheet-Charged Carriers
+
+A carrier is sheet-neutral if it gives no charged contribution:
+
+```math
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+=
+0.
+\tag{15.1133}
+```
+
+A carrier is sheet-charged if (15.1133) fails. Let:
+
+```math
+\mathfrak C^{\chi}_{\gamma,R,a}
+\tag{15.1134}
+```
+
+be the family of sheet-charged carriers.
+
+The actual area-barrier hypothesis is:
+
+```math
+P\in\mathfrak C^{\chi}_{\gamma,R,a}
+\quad\Longrightarrow\quad
+|P|
+\ge
+c^{\chi}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
+-
+C^{\chi}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma).
+\tag{15.1135}
+```
+
+This is the structural content of the good branch. Local cocycle fluctuations
+may exist. Even bulk fluctuations may exist. What is forbidden is a small
+sheet-charged carrier deep in the physical interior.
+
+#### 15.73.5. Area Barrier Proves The Charged Defect Bound
+
+**Theorem 40.158B (Carrier Area Barrier Proves Charged Boundary Defect).**
+Assume the fixed-IR carrier expansion (15.1128), the entropy and weight bounds
+(15.1130)-(15.1132), neutral cancellation (15.1133), and the area barrier
+(15.1135). Then the charged defect bound (15.1123) holds.
+
+#### Proof
+
+Choose:
+
+```math
+\Gamma_{\gamma,a}
+=
+\Gamma^{\partial}_{\gamma,a}.
+\tag{15.1136}
+```
+
+By (15.1128):
+
+```math
+\mathcal R^{\chi}_{\gamma,R,a}(\Gamma^{\partial})
+\le
+\sum_{P\subset\mathcal T^{\mathrm{int}}_{\gamma,R}}
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
++
+\left\|
+\tau_{\gamma,a}
+\right\|_1.
+\tag{15.1137}
+```
+
+Sheet-neutral carriers vanish by (15.1133). For charged carriers, use:
+
+```math
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
+\le
+\left\|
+A_{P,a}
+\right\|_1.
+\tag{15.1138}
+```
+
+Set:
+
+```math
+n_{\min}
+:=
+c^{\chi}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
+-
+C^{\chi}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma).
+\tag{15.1139}
+```
+
+By (15.1130)-(15.1131):
+
+```math
+\sum_{P\in\mathfrak C^{\chi}_{\gamma,R,a}}
+\left\|
+A_{P,a}
+\right\|_1
+\le
+C_R
+\left(
+1+
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
+\right)
+\sum_{n\ge n_{\min}}
+\exp
+\left(
+-(m_R-s_R)n
+\right)
++
+o_a(1).
+\tag{15.1140}
+```
+
+Because `m_R>s_R`, the sum is bounded by:
+
+```math
+K_R
+\exp
+\left(
+-(m_R-s_R)n_{\min}
+\right)
++
+o_a(1).
+\tag{15.1141}
+```
+
+Substitute (15.1139) into (15.1141) and combine with the tail estimate
+(15.1132). The polynomial area prefactor in (15.1130) is absorbed by reducing
+the area exponent. This gives (15.1123) with:
+
+```math
+0<\sigma^{\chi}_R
+<
+(m_R-s_R)c^{\chi}_R.
+\tag{15.1142}
+```
+
+The perimeter contribution is absorbed into `kappa^chi_R`. `∎`
+
+#### 15.73.6. Falsifiers For The Area Barrier
+
+Target 40.158 fails if any of the following fixed-IR obstructions occurs.
+
+First, there may be small charged carriers:
+
+```math
+\exists\,
+P_a\in\mathfrak C^{\chi}_{\gamma,R,a}
+\quad\text{with}\quad
+|P_a|
+=
+O_R(1)
+\tag{15.1143}
+```
+
+for surfaces with growing physical area. This directly falsifies the area
+barrier.
+
+Second, the entropy may beat the amplitude weight:
+
+```math
+m_R\le s_R.
+\tag{15.1144}
+```
+
+Then even area-order carriers need not produce an exponentially small total
+charged residual.
+
+Third, neutral cancellation may fail:
+
+```math
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\ne
+0
+\tag{15.1145}
+```
+
+for a positive-density family of small carriers. This is exactly where the
+earlier caveat matters: local center coboundaries may have trivial sheet
+pairing without being action symmetries of the induced center marginal.
+
+Fourth, the carrier expansion itself may fail to be fixed-IR uniform:
+
+```math
+\limsup_{a\downarrow0}
+m_R(a)
+\le
+s_R.
+\tag{15.1146}
+```
+
+This would mean the proof has fallen back into a cutoff-scale expansion rather
+than a physical-scale estimate.
+
+#### 15.73.7. Completed Target 40.158
+
+Target 40.158 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{expand}}
+&
+\text{prove the fixed-IR carrier expansion }(15.1128),\\[1mm]
+\mathrm{PASS}_{\mathrm{neutral}}
+&
+\text{prove sheet-neutral cancellation }(15.1133),\\[1mm]
+\mathrm{PASS}_{\mathrm{barrier}}
+&
+\text{prove the charged area barrier }(15.1135),\\[1mm]
+\mathrm{PASS}_{\mathrm{weight}}
+&
+\text{prove }m_R>s_R\text{ in }(15.1131),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{the charged defect bound }(15.1123)\text{ follows},\\[1mm]
+\mathrm{FAIL}
+&
+\text{one of the falsifiers }(15.1143)\text{--}(15.1146)\text{ occurs}.
+\end{array}}
+\tag{15.1147}
+```
+
+Together with Theorem 40.158A and boundary-stable center disorder, this supplies
+the fixed-IR route from the structural good branch of (15.49) to the Wilson area
+law. It also identifies the exact ways the route can fail without hiding the
+failure inside the words "area law."
+
+#### 15.73.8. Investigation: The Naive Area Barrier Is Sufficient But Too Strong
+
+The area barrier in (15.1135) is a clean sufficient condition, but a hard review
+shows that it is not the right general target. It declares a carrier
+sheet-charged whenever:
+
+```math
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\ne
+0.
+\tag{15.1148}
+```
+
+That is too strict. A small interior carrier can have a nonzero charged
+expectation and still be harmless if the remaining sheet is disordered. The
+right question is not whether a local carrier gives exactly zero after
+multiplication by the sheet character. The right question is whether inserting
+that carrier destroys the area-order center disorder of the unoccupied part of
+the sheet.
+
+Thus Target 40.158 splits into two mechanisms:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{small or moderate carriers are controlled by punctured-sheet disorder,}\\[1mm]
+\text{uncontrolled carriers must obey an area barrier.}
+\end{array}}
+\tag{15.1149}
+```
+
+This repair is still fixed-IR. The punctures are physical tile clusters, not
+cutoff holes.
+
+#### 15.73.9. Punctured-Sheet Carrier Stability
+
+For a carrier:
+
+```math
+P\subset\mathcal T^{\mathrm{int}}_{\gamma,R},
+\tag{15.1150}
+```
+
+let:
+
+```math
+S_{\gamma,a}\setminus P
+\tag{15.1151}
+```
+
+denote the sheet with the physical tile cluster `P` removed and with the
+newly-created physical boundary recorded. Define:
+
+```math
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\tag{15.1152}
+```
+
+as the physical perimeter of the cluster in the fixed tile atlas.
+
+The punctured-sheet disorder hypothesis is the following insertion estimate:
+
+```math
+\left|
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
+\le
+K_R
+\left\|
+A_{P,a}
+\right\|_1
+\exp
+\left(
+-\sigma^{\mathrm{pun}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}\setminus P)
++
+\kappa^{\mathrm{pun}}_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right)
+\right)
++
+o_a(1).
+\tag{15.1153}
+```
+
+This estimate says that a local cocycle carrier may be inserted, but then the
+remaining unpunctured sheet must still carry center disorder. The perimeter cost
+is allowed to grow with the physical boundary of the puncture.
+
+For connected physical tile clusters, assume:
+
+```math
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\le
+C^{\partial}_R |P|.
+\tag{15.1154}
+```
+
+Also assume the carrier size is not too large:
+
+```math
+|P|
+\le
+\theta_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}),
+\qquad
+0<\theta_R<1.
+\tag{15.1155}
+```
+
+Then (15.1153) gives:
+
+```math
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
+\le
+K_R
+\left\|
+A_{P,a}
+\right\|_1
+\exp
+\left(
+-\sigma^{\mathrm{pun}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\lambda_R |P|
++
+\kappa^{\mathrm{pun}}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1),
+\tag{15.1156}
+```
+
+where:
+
+```math
+\lambda_R
+:=
+\sigma^{\mathrm{pun}}_R
+\theta^{\mathrm{area}}_R
++
+\kappa^{\mathrm{pun}}_R C^{\partial}_R.
+\tag{15.1157}
+```
+
+Here `theta_area_R` is the physical area per tile in the chosen atlas.
+
+#### 15.73.10. Repaired Carrier Criterion
+
+Split carriers into:
+
+```math
+\mathscr P_{\mathrm{pun}},
+\qquad
+\mathscr P_{\mathrm{bar}}.
+\tag{15.1158}
+```
+
+The first class is controlled by punctured-sheet disorder (15.1153). The second
+class is not. For the punctured class assume:
+
+```math
+\left\|
+A_{P,a}
+\right\|_1
+\le
+C_R
+\exp(-m^{\mathrm{pun}}_R |P|)
++
+o_a(1),
+\qquad
+m^{\mathrm{pun}}_R>s_R+\lambda_R.
+\tag{15.1159}
+```
+
+For the uncontrolled class assume the old area barrier:
+
+```math
+P\in\mathscr P_{\mathrm{bar}}
+\quad\Longrightarrow\quad
+|P|
+\ge
+c^{\mathrm{bar}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
+-
+C^{\mathrm{bar}}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma),
+\tag{15.1160}
+```
+
+and the old weight gap:
+
+```math
+\left\|
+A_{P,a}
+\right\|_1
+\le
+C_R
+\exp(-m^{\mathrm{bar}}_R |P|)
++
+o_a(1),
+\qquad
+m^{\mathrm{bar}}_R>s_R.
+\tag{15.1161}
+```
+
+**Theorem 40.158C (Punctured Disorder Plus Barrier Proves Charged Defect).**
+Assume the fixed-IR carrier expansion (15.1128), the entropy bound (15.1130),
+the tail bound (15.1132), the punctured estimate (15.1153) for carriers in
+`P_pun`, and the barrier estimates (15.1160)-(15.1161) for carriers in `P_bar`.
+Assume also (15.1159). Then the charged defect bound (15.1123) holds.
+
+#### Proof
+
+Use:
+
+```math
+\Gamma_{\gamma,a}
+=
+\Gamma^{\partial}_{\gamma,a}.
+\tag{15.1162}
+```
+
+The carrier contribution splits as:
+
+```math
+\sum_P
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
+=
+\sum_{P\in\mathscr P_{\mathrm{pun}}}
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
++
+\sum_{P\in\mathscr P_{\mathrm{bar}}}
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|.
+\tag{15.1163}
+```
+
+For the punctured class, combine (15.1130), (15.1156), and (15.1159). Since:
+
+```math
+m^{\mathrm{pun}}_R>s_R+\lambda_R,
+\tag{15.1164}
+```
+
+the sum over all punctured carriers is bounded by:
+
+```math
+K_R
+\exp
+\left(
+-\sigma^{\mathrm{pun}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\mathrm{pun}}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1),
+\tag{15.1165}
+```
+
+after reducing the area exponent to absorb the polynomial area prefactor.
+
+For the barrier class, repeat the proof of Theorem 40.158B using (15.1160) and
+(15.1161). This gives an area-law bound with any exponent below:
+
+```math
+\left(
+m^{\mathrm{bar}}_R-s_R
+\right)
+c^{\mathrm{bar}}_R.
+\tag{15.1166}
+```
+
+The tail is controlled by (15.1132). Summing the three contributions gives
+(15.1123). `∎`
+
+#### 15.73.11. Consequence Of The Investigation
+
+The investigation changes the meaning of Target 40.158. The original
+area-barrier criterion remains a valid sufficient proof, but the broad fixed-IR
+route should try to prove the repaired criterion:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{local and moderate carriers}\\
+\text{are controlled by punctured-sheet disorder;}\\[1mm]
+\text{only carriers not controlled this way}\\
+\text{must satisfy an area barrier.}
+\end{array}}
+\tag{15.1167}
+```
+
+The next proof should therefore target (15.1153), not the raw area barrier
+(15.1135), unless one has a special reason to believe every nonzero charged
+carrier must be area-order. In fixed-IR terms, this means proving center
+disorder is stable under physical punctures and local cocycle insertions.
+
+The repaired falsifiers are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{pun}}
+&
+\text{punctured-sheet disorder }(15.1153)\text{ fails},\\[1mm]
+\mathrm{FAIL}_{\mathrm{gap}}
+&
+m^{\mathrm{pun}}_R\le s_R+\lambda_R,\\[1mm]
+\mathrm{FAIL}_{\mathrm{bar}}
+&
+\text{uncontrolled carriers violate }(15.1160),\\[1mm]
+\mathrm{FAIL}_{\mathrm{tail}}
+&
+\text{the fixed-IR tail estimate }(15.1132)\text{ fails}.
+\end{array}}
+\tag{15.1168}
+```
+
+### 15.74. Target 40.159: Investigating The Punctured-Sheet Estimate
+
+Searchable Target-40.159 tag:
+
+`V4P40-TARGET-40159-PUNCTURED-SHEET-ESTIMATE`.
+
+We now investigate the estimate singled out in (15.1153). The conclusion is
+important: (15.1153) is not a consequence of the `L1` boundary-stable disorder
+estimate alone. It requires a stronger pointwise conditional disorder estimate
+after the physical puncture data have been revealed.
+
+#### 15.74.1. Why The Existing Boundary Estimate Is Not Enough
+
+Let:
+
+```math
+M_{\partial}
+:=
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}
+\mid
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\right].
+\tag{15.1169}
+```
+
+Boundary-stable center disorder controls:
+
+```math
+\mathbb E
+\left[
+\left|
+M_{\partial}
+\right|
+\right].
+\tag{15.1170}
+```
+
+But (15.1153) asks for an estimate with a factor:
+
+```math
+\left\|
+A_{P,a}
+\right\|_1.
+\tag{15.1171}
+```
+
+This is stronger. An `L1` bound on `M_boundary` cannot be multiplied by
+`||A||_1` for arbitrary local insertions.
+
+**Lemma 40.159A (L1 Disorder Does Not Imply The Punctured Insertion Bound).**
+There are probability spaces with:
+
+```math
+\mathbb E
+\left[
+\left|
+M_{\partial}
+\right|
+\right]
+=
+\epsilon,
+\tag{15.1172}
+```
+
+but with a bounded insertion `A` satisfying:
+
+```math
+\left\|
+A
+\right\|_1
+=
+\epsilon,
+\qquad
+\left|
+\mathbb E
+\left[
+\Xi_S A
+\right]
+\right|
+=
+\epsilon.
+\tag{15.1173}
+```
+
+Thus the desired estimate:
+
+```math
+\left|
+\mathbb E
+\left[
+\Xi_S A
+\right]
+\right|
+\lesssim
+\left\|
+A
+\right\|_1
+\epsilon
+\tag{15.1174}
+```
+
+fails by a factor `epsilon^{-1}`.
+
+#### Proof
+
+Take an event `E` with probability `epsilon`. Let the sheet character equal one
+on `E`, and let it be an independent fair `Z_2` sign on the complement. Then
+the conditional sheet mean equals one on `E` and zero outside `E`. Set:
+
+```math
+A:=\mathbf 1_E.
+\tag{15.1175}
+```
+
+Then (15.1172)-(15.1173) hold, while the right side of (15.1174) is
+`epsilon^2`. `∎`
+
+So (15.1153) is not a corollary of Target 40.154 in its `L1` form. The proof
+must use the stronger transfer-gap machinery before integrating over the
+revealed data.
+
+#### 15.74.2. Correct Conditional Object
+
+For a physical carrier cluster `P`, define the puncture sigma algebra:
+
+```math
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+:=
+\mathcal F^{\mathrm{cen}}_{\partial,\rho_R}(\gamma)
+\vee
+\mathcal F^{\mathrm{cen}}_{N_R(P)}.
+\tag{15.1176}
+```
+
+Here:
+
+```math
+N_R(P)
+\tag{15.1177}
+```
+
+is a fixed physical neighborhood of the carrier cluster, including the newly
+created puncture boundary. The carrier locality requirement is:
+
+```math
+A_{P,a}
+\text{ is }
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+\text{ measurable}.
+\tag{15.1178}
+```
+
+The sheet character factorizes as:
+
+```math
+\Xi_{S_{\gamma,a}}
+=
+\Xi^{P}_{\gamma,a}
+\Xi_{S_{\gamma,a}\setminus P},
+\tag{15.1179}
+```
+
+where:
+
+```math
+\Xi^{P}_{\gamma,a}
+\text{ is }
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+\text{ measurable},
+\qquad
+\left|
+\Xi^{P}_{\gamma,a}
+\right|
+=
+1.
+\tag{15.1180}
+```
+
+Define the punctured conditional sheet mean:
+
+```math
+M^{\mathrm{pun}}_{\gamma,P,a}
+:=
+\mathbb E_{\mu^s_{\mathrm{cen},a}}
+\left[
+\Xi_{S_{\gamma,a}\setminus P}
+\mid
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+\right].
+\tag{15.1181}
+```
+
+The pointwise punctured disorder target is:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+K_R
+\exp
+\left(
+-\sigma^{\mathrm{pun}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}\setminus P)
++
+\kappa^{\mathrm{pun}}_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right)
+\right)
++
+o_a(1).
+\tag{15.1182}
+```
+
+This is the precise estimate that can imply (15.1153).
+
+#### 15.74.3. Pointwise Punctured Disorder Implies The Insertion Estimate
+
+**Theorem 40.159B (Pointwise Punctured Disorder Proves (15.1153)).** Assume
+(15.1178)-(15.1182). Then the punctured insertion estimate (15.1153) holds.
+
+#### Proof
+
+Using (15.1179):
+
+```math
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+=
+\mathbb E
+\left[
+\Xi^{P}_{\gamma,a}A_{P,a}
+\Xi_{S_{\gamma,a}\setminus P}
+\right].
+\tag{15.1183}
+```
+
+Because `Xi^P A_P` is measurable with respect to
+`F_boundary,P,rho`, condition on that sigma algebra:
+
+```math
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+=
+\mathbb E
+\left[
+\Xi^{P}_{\gamma,a}A_{P,a}
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right].
+\tag{15.1184}
+```
+
+Therefore:
+
+```math
+\left|
+\mathbb E
+\left[
+\Xi_{S_{\gamma,a}}A_{P,a}
+\right]
+\right|
+\le
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\left\|
+A_{P,a}
+\right\|_1.
+\tag{15.1185}
+```
+
+Insert (15.1182). This is exactly (15.1153). `∎`
+
+#### 15.74.4. Tile-Transfer Proof Of Pointwise Punctured Disorder
+
+The right way to prove (15.1182) is to reuse the charged transfer gap, but on
+the punctured sheet.
+
+Tile the remaining sheet:
+
+```math
+S_{\gamma}\setminus P
+\tag{15.1186}
+```
+
+by fixed physical tiles:
+
+```math
+\mathcal T_{\gamma,R}(P)
+=
+\left\{
+T_1,\ldots,T_{N_{\gamma,R}(P)}
+\right\}.
+\tag{15.1187}
+```
+
+The tile count must obey:
+
+```math
+N_{\gamma,R}(P)
+\ge
+c_{\mathrm{tile}}(R)
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}\setminus P)
+-
+C_{\mathrm{tile}}(R)
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right).
+\tag{15.1188}
+```
+
+Assume the charged transfer contraction (15.1021) holds uniformly for every
+such punctured tile order, with the same fixed-IR constant:
+
+```math
+0<q_R<1.
+\tag{15.1189}
+```
+
+The conditioning sigma algebra is now:
+
+```math
+\mathcal G^{P}_0
+:=
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma).
+\tag{15.1190}
+```
+
+Iterating the punctured transfer contraction gives:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+q_R^{N_{\gamma,R}(P)}.
+\tag{15.1191}
+```
+
+Using (15.1188), this implies (15.1182) with:
+
+```math
+\sigma^{\mathrm{pun}}_R
+=
+-c_{\mathrm{tile}}(R)\log q_R.
+\tag{15.1192}
+```
+
+and a perimeter constant determined by `C_tile(R)`.
+
+**Criterion 40.159C (Punctured Transfer Gap Proves (15.1153)).** If the charged
+transfer gap (15.1029) holds uniformly for the punctured physical tile atlas
+(15.1187), then (15.1153) holds for every carrier satisfying the locality
+condition (15.1178).
+
+#### 15.74.5. Consequence Of The Investigation
+
+The target (15.1153) is valid as a fixed-IR proof obligation, but only after it
+is interpreted as a consequence of:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{carrier locality with respect to the puncture sigma algebra,}\\[1mm]
+\text{pointwise punctured conditional center disorder,}\\[1mm]
+\text{or equivalently a charged transfer gap on punctured tile domains.}
+\end{array}}
+\tag{15.1193}
+```
+
+The remaining theorem target is therefore:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{local}}
+&
+\text{prove carrier measurability }(15.1178),\\[1mm]
+\mathrm{PASS}_{\mathrm{pun}}
+&
+\text{prove pointwise punctured disorder }(15.1182),\\[1mm]
+\mathrm{PASS}_{\mathrm{gap}}
+&
+\text{prove punctured charged transfer }(15.1189),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{the insertion estimate }(15.1153)\text{ follows},\\[1mm]
+\mathrm{FAIL}
+&
+\text{only }L^1\text{ boundary disorder is available, or carriers are nonlocal.}
+\end{array}}
+\tag{15.1194}
+```
+
+This is a meaningful sharpening of Target 40.158: the next center-side proof
+must be stable not only under boundary collars, but under physical punctures
+created by local cocycle carriers.
+
+### 15.75. Target 40.160: Hereditary Punctured Charged Transfer Gap
+
+Searchable Target-40.160 tag:
+
+`V4P40-TARGET-40160-HEREDITARY-PUNCTURED-TRANSFER-GAP`.
+
+Target 40.159 shows that the insertion estimate (15.1153) requires pointwise
+punctured disorder. The concrete center-side question is therefore whether the
+charged transfer gap from Targets 40.154-40.156 is hereditary under physical
+punctures and local carrier conditioning.
+
+This is not automatic. It is a new fixed-IR stability theorem.
+
+#### 15.75.1. Unpunctured Two-Sidedness Does Not Imply Punctured Two-Sidedness
+
+Let `chi` be a `Z_2` sign with:
+
+```math
+\mathbb P(\chi=1)
+=
+\mathbb P(\chi=-1)
+=
+\frac12.
+\tag{15.1195}
+```
+
+Then:
+
+```math
+\left|
+\mathbb E[\chi]
+\right|
+=
+0.
+\tag{15.1196}
+```
+
+Now reveal a puncture variable:
+
+```math
+Y:=\chi.
+\tag{15.1197}
+```
+
+Conditioning on the puncture data pins the sign:
+
+```math
+\left|
+\mathbb E[\chi\mid Y]
+\right|
+=
+1
+\qquad
+\text{almost surely}.
+\tag{15.1198}
+```
+
+So an unpunctured charged gap can coexist with complete punctured pinning.
+
+**Lemma 40.160A (Puncture Conditioning Is A New Uniformity Requirement).**
+The unpunctured two-sidedness estimate (15.1070) does not imply the punctured
+two-sidedness needed for (15.1189).
+
+#### Proof
+
+Equations (15.1195)-(15.1198) give a finite probability-space counterexample.
+The puncture variable is not a small perturbation of the unpunctured law; it is
+additional conditioning data. Therefore the fixed-IR proof must quantify
+uniformly over the enlarged punctured interface atlas. `∎`
+
+#### 15.75.2. Punctured Interface Atlas
+
+Fix the physical scale `R`, smoothing radius, loop/sheet family, and physical
+tile atlas before taking the cutoff limit. Let:
+
+```math
+\mathfrak A^{\mathrm{pun}}_{R}
+\tag{15.1199}
+```
+
+be the physical class of punctured tile-interface data. Its local interface
+types must be finite at fixed physical resolution, but the class itself ranges
+over puncture positions and carrier clusters. An element is:
+
+```math
+\mathfrak a
+=
+(\gamma,P,j,\omega_-,\omega_+),
+\tag{15.1200}
+```
+
+where:
+
+```math
+P\subset\mathcal T^{\mathrm{int}}_{\gamma,R}
+\tag{15.1201}
+```
+
+is a physical carrier cluster, `j` is a tile in the punctured tiling of
+`S_gamma \setminus P`, and `omega_-, omega_+` include all physical boundary,
+previous-tile, and puncture-interface data.
+
+The atlas must have uniformly bounded local complexity:
+
+```math
+\sup_{\mathfrak a\in\mathfrak A^{\mathrm{pun}}_{R}}
+\#\{\text{local interface states for }\mathfrak a\}
+<
+\infty.
+\tag{15.1202}
+```
+
+The cutoff may refine the microscopic representation of these states, but it
+must not create a new physical interface type after the atlas is fixed.
+
+For:
+
+```math
+\mathfrak a=(\gamma,P,j,\omega_-,\omega_+),
+\tag{15.1203}
+```
+
+define the neutral and charged punctured tile partition functions:
+
+```math
+Z^{0,\mathrm{pun}}_{\mathfrak a,a}
+:=
+\sum_{b_{T_j}}
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j}),
+\tag{15.1204}
+```
+
+and:
+
+```math
+Z^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+:=
+\sum_{b_{T_j}}
+\chi_{j,a}(b_{T_j})
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j}).
+\tag{15.1205}
+```
+
+Here `W^0,pun` is the exact positive center weight after the SO(3) fibers have
+been integrated out with the puncture interfaces fixed. The admissibility
+condition is:
+
+```math
+Z^{0,\mathrm{pun}}_{\mathfrak a,a}>0
+\tag{15.1206}
+```
+
+for every supported physical interface datum.
+
+The punctured twisted ratio is:
+
+```math
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+:=
+\frac{
+\left|
+Z^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\right|
+}{
+Z^{0,\mathrm{pun}}_{\mathfrak a,a}
+}.
+\tag{15.1207}
+```
+
+#### 15.75.3. Hereditary Gap Target
+
+The hereditary punctured charged transfer gap is:
+
+```math
+\sup_{\mathfrak a\in\mathfrak A^{\mathrm{pun}}_{R}}
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\le
+e^{-m^{\mathrm{her}}_R}
++
+o_a(1),
+\qquad
+m^{\mathrm{her}}_R>0.
+\tag{15.1208}
+```
+
+Equivalently, under the neutral punctured tile law:
+
+```math
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a},
+\tag{15.1209}
+```
+
+both signs survive uniformly:
+
+```math
+\inf_{\mathfrak a\in\mathfrak A^{\mathrm{pun}}_{R}}
+\min
+\left\{
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a}(\chi_{j,a}=1),
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a}(\chi_{j,a}=-1)
+\right\}
+\ge
+c^{\mathrm{her}}_R
+-
+o_a(1),
+\qquad
+c^{\mathrm{her}}_R>0.
+\tag{15.1210}
+```
+
+The relation between the constants is:
+
+```math
+e^{-m^{\mathrm{her}}_R}
+=
+1-2c^{\mathrm{her}}_R.
+\tag{15.1211}
+```
+
+This is the hereditary version of (15.1070). It is the fixed-IR statement that
+physical punctures and local carrier data cannot pin the next tile's center
+sign.
+
+#### 15.75.4. Consequence For Punctured Disorder
+
+**Theorem 40.160B (Hereditary Gap Proves Punctured Charged Transfer).** If
+(15.1208) holds for the punctured atlas, then the punctured transfer
+contraction (15.1189) holds with:
+
+```math
+q_R=e^{-m^{\mathrm{her}}_R}.
+\tag{15.1212}
+```
+
+Consequently, Criterion 40.159C gives (15.1153) for every local carrier
+satisfying (15.1178).
+
+#### Proof
+
+For each punctured interface datum, the proof is the same kernel comparison as
+Criterion 40.155A. The ratio bound (15.1208) gives:
+
+```math
+\left\|
+\mathcal T^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\right\|_{\infty\to\infty}
+\le
+e^{-m^{\mathrm{her}}_R}
+\left\|
+\mathcal T^{0,\mathrm{pun}}_{\mathfrak a,a}
+\right\|_{\infty\to\infty}
++
+o_a(1).
+\tag{15.1213}
+```
+
+For sufficiently small cutoff, the right side is bounded by any larger fixed
+contraction factor below one. Iterating over the punctured tile order gives
+(15.1189), and Target 40.159 then gives (15.1153). `∎`
+
+#### 15.75.5. Finite-Cost Punctured Flip Criterion
+
+A relative punctured flip for:
+
+```math
+\mathfrak a=(\gamma,P,j,\omega_-,\omega_+)
+\tag{15.1214}
+```
+
+is a center two-cochain:
+
+```math
+\eta_{\mathfrak a,a}
+\in
+Z^2(T_j,\partial_{\pm}T_j;Z_2)
+\tag{15.1215}
+```
+
+which preserves the punctured interface data and flips the local character:
+
+```math
+\chi_{j,a}(\eta_{\mathfrak a,a}b_{T_j})
+=
+-
+\chi_{j,a}(b_{T_j}).
+\tag{15.1216}
+```
+
+The fixed-IR cost hypothesis is:
+
+```math
+\exp
+\left(
+-B^{\mathrm{her}}_R-\varepsilon_a
+\right)
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j})
+\le
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(\eta_{\mathfrak a,a}b_{T_j})
+\le
+\exp
+\left(
+B^{\mathrm{her}}_R+\varepsilon_a
+\right)
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j}),
+\tag{15.1217}
+```
+
+uniformly over:
+
+```math
+\mathfrak a\in\mathfrak A^{\mathrm{pun}}_{R},
+\qquad
+\varepsilon_a\downarrow0.
+\tag{15.1218}
+```
+
+**Criterion 40.160C (Punctured Flip Proves Hereditary Two-Sidedness).** If every
+supported punctured interface datum admits a relative punctured flip satisfying
+(15.1215)-(15.1218), then (15.1210) holds with:
+
+```math
+c^{\mathrm{her}}_R
+=
+\frac{1}{1+\exp(B^{\mathrm{her}}_R)}.
+\tag{15.1219}
+```
+
+The proof is identical to Criterion 40.156A, with the unpunctured interface
+atlas replaced by the punctured atlas.
+
+#### 15.75.6. Fiber-Repair Version
+
+The most concrete way to prove (15.1217) is again a fiber map. For each
+supported punctured center field, require a measurable injection:
+
+```math
+\Psi^{\eta,\mathrm{pun}}_{b}
+:
+\mathcal F^s_a(b\mid\mathfrak a)
+\longrightarrow
+\mathcal F^s_a(\eta_{\mathfrak a,a}b\mid\mathfrak a)
+\tag{15.1220}
+```
+
+with unit Jacobian and action cost:
+
+```math
+\mathcal A^s_a
+\left(
+\eta_{\mathfrak a,a}b,
+\Psi^{\eta,\mathrm{pun}}_{b}\bar U
+\right)
+\le
+\mathcal A^s_a
+\left(
+b,
+\bar U
+\right)
++
+B^{\mathrm{her}}_R+\varepsilon_a.
+\tag{15.1221}
+```
+
+The same construction must hold for the inverse flip. Then (15.1217) follows.
+
+This is the exact place where fixed physical IR can fail: the puncture data may
+force every fiber repair of the flipped center tile to pay an action cost that
+diverges as the cutoff is removed.
+
+#### 15.75.7. Falsifier: Puncture-Induced Sign Pinning
+
+The hereditary gap fails if there are supported punctured interface data with:
+
+```math
+\min
+\left\{
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a}(\chi_{j,a}=1),
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a}(\chi_{j,a}=-1)
+\right\}
+\longrightarrow
+0.
+\tag{15.1222}
+```
+
+Equivalently:
+
+```math
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\longrightarrow
+1.
+\tag{15.1223}
+```
+
+This is the precise obstruction: a physical puncture or local carrier interface
+has created enough boundary data to make the next center sign predictable.
+
+#### 15.75.8. Completed Target 40.160
+
+Target 40.160 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{auto}}
+&
+\text{unpunctured two-sidedness is insufficient by Lemma 40.160A},\\[1mm]
+\mathrm{PASS}_{\mathrm{atlas}}
+&
+\text{construct the punctured interface atlas }(15.1199),\\[1mm]
+\mathrm{PASS}_{\mathrm{her}}
+&
+\text{prove the hereditary twisted ratio }(15.1208),\\[1mm]
+\mathrm{PASS}_{\mathrm{flip}}
+&
+\text{or prove the punctured finite-cost flip }(15.1217),\\[1mm]
+\mathrm{PASS}_{\mathrm{fiber}}
+&
+\text{or prove the punctured fiber repair }(15.1220)\text{--}(15.1221),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{punctured disorder }(15.1182)\text{ and insertion control }(15.1153),\\[1mm]
+\mathrm{FAIL}
+&
+\text{puncture-induced center-sign pinning }(15.1222).
+\end{array}}
+\tag{15.1224}
+```
+
+This target is now the center-side inheritance test. If it passes, the
+punctured estimates required by the repaired amplitude argument are available.
+If it fails, the route fails by a concrete fixed-IR mechanism rather than by an
+undefined gap in the proof.
+
+#### 15.75.9. Investigation: Heredity Is Needed Only Away From The Puncture Collar
+
+A hard review of Target 40.160 shows that (15.1208) is stronger than necessary
+if the supremum includes tiles adjacent to the puncture boundary. Such tiles can
+be pinned by the puncture interface itself. That is not an area-order failure;
+it is a new boundary effect and should be charged to the puncture perimeter.
+
+Fix a physical shielding thickness:
+
+```math
+\rho^{\mathrm{pun}}_R
+\asymp
+\ell_R.
+\tag{15.1225}
+```
+
+Define the puncture collar:
+
+```math
+\mathcal N_{\mathrm{pun},\rho_R}(P)
+:=
+\left\{
+x\in S_{\gamma}:
+\operatorname{dist}_{\mathrm{phys}}(x,\partial P)
+\le
+\rho^{\mathrm{pun}}_R
+\right\}.
+\tag{15.1226}
+```
+
+The deep punctured sheet is:
+
+```math
+S^{\mathrm{deep}}_{\gamma}(P)
+:=
+S_{\gamma}
+\setminus
+\left(
+P
+\cup
+\mathcal N_{\mathrm{pun},\rho_R}(P)
+\cup
+\mathcal N_{\partial,\rho_R}(\gamma)
+\right).
+\tag{15.1227}
+```
+
+For fixed physical geometry:
+
+```math
+\operatorname{Area}_{\mathrm{phys}}
+\left(
+S^{\mathrm{deep}}_{\gamma}(P)
+\right)
+\ge
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}\setminus P)
+-
+C_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right).
+\tag{15.1228}
+```
+
+Thus removing the puncture collar only changes the perimeter term. The
+hereditary gap should be required only for tiles in a fixed physical tiling of
+`S_deep_gamma(P)`.
+
+#### 15.75.10. Shielded Hereditary Gap
+
+Let:
+
+```math
+\mathfrak A^{\mathrm{sh}}_R
+\subset
+\mathfrak A^{\mathrm{pun}}_R
+\tag{15.1229}
+```
+
+be the class of punctured interface data for tiles satisfying:
+
+```math
+T_j\subset S^{\mathrm{deep}}_{\gamma}(P).
+\tag{15.1230}
+```
+
+The shielded hereditary gap is:
+
+```math
+\sup_{\mathfrak a\in\mathfrak A^{\mathrm{sh}}_R}
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\le
+e^{-m^{\mathrm{sh}}_R}
++
+o_a(1),
+\qquad
+m^{\mathrm{sh}}_R>0.
+\tag{15.1231}
+```
+
+The puncture-collar tiles are not required to satisfy (15.1231). They are
+absorbed into the revealed puncture boundary. Their number is bounded by:
+
+```math
+N_{\mathrm{collar}}(P,\gamma)
+\le
+C_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right).
+\tag{15.1232}
+```
+
+The deep punctured tile count is:
+
+```math
+N^{\mathrm{deep}}_{\gamma,R}(P)
+\ge
+c^{\mathrm{deep}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}\setminus P)
+-
+C^{\mathrm{deep}}_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right).
+\tag{15.1233}
+```
+
+**Theorem 40.160D (Shielded Heredity Is Enough For Punctured Disorder).** If
+(15.1231)-(15.1233) hold, then the pointwise punctured disorder estimate
+(15.1182) holds, after changing the perimeter constant.
+
+#### Proof
+
+Reveal the original boundary collar, the puncture data, and the puncture collar
+tiles. What remains is the deep punctured sheet. Iterating the charged transfer
+contraction only over the deep punctured tiles gives:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+\exp
+\left(
+-m^{\mathrm{sh}}_R
+N^{\mathrm{deep}}_{\gamma,R}(P)
+\right)
++
+o_a(1).
+\tag{15.1234}
+```
+
+Insert (15.1233). The removed puncture-collar tiles contribute only to the
+perimeter term through (15.1232). Therefore:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+K_R
+\exp
+\left(
+-\sigma^{\mathrm{pun}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma}\setminus P)
++
+\kappa^{\mathrm{pun}}_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right)
+\right)
++
+o_a(1),
+\tag{15.1235}
+```
+
+with:
+
+```math
+\sigma^{\mathrm{pun}}_R
+<
+m^{\mathrm{sh}}_R c^{\mathrm{deep}}_R.
+\tag{15.1236}
+```
+
+This is (15.1182). `∎`
+
+#### 15.75.11. Topological Gate For Shielded Flips
+
+The shielded version also clarifies the flip criterion. A punctured relative
+flip need not exist next to the puncture collar, because the puncture interface
+may already determine the local center sign. For a shielded deep tile, the
+correct topological gate is:
+
+```math
+\exists\,
+\eta_{\mathfrak a,a}
+\in
+Z^2(T_j,\partial_{\pm}T_j;Z_2)
+\quad
+\mathrm{such\ that}
+\quad
+(-1)^{
+\left\langle
+\eta_{\mathfrak a,a},
+S_{\gamma,a}\cap T_j
+\right\rangle
+}
+=
+-1,
+\tag{15.1237}
+```
+
+while:
+
+```math
+\eta_{\mathfrak a,a}
+\text{ is trivial on all revealed shield interfaces.}
+\tag{15.1238}
+```
+
+If (15.1237)-(15.1238) fail for shielded tiles, then the finite-cost flip route
+cannot prove (15.1231). The failure is geometric. If they hold, the remaining
+question is analytic: prove the bounded fiber repair cost (15.1221) uniformly
+over shielded punctured interface data.
+
+#### 15.75.12. Result Of The Investigation
+
+Target 40.160 should be read in the following repaired form:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{puncture-adjacent tiles may be pinned and are charged to perimeter;}\\[1mm]
+\text{deep shielded punctured tiles must satisfy a hereditary gap;}\\[1mm]
+\text{a shielded finite-cost flip or fiber repair is the concrete proof route.}
+\end{array}}
+\tag{15.1239}
+```
+
+The next proof target is therefore not raw (15.1208), but the shielded
+hereditary gap (15.1231). The fixed-IR falsifier is now sharper:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{deep}}
+&
+\text{a shielded deep punctured tile has sign pinning},\\[1mm]
+\mathrm{FAIL}_{\mathrm{top}}
+&
+\text{the relative flip class }(15.1237)\text{ does not exist},\\[1mm]
+\mathrm{FAIL}_{\mathrm{fiber}}
+&
+\text{every shielded fiber repair has cutoff-divergent action cost}.
+\end{array}}
+\tag{15.1240}
+```
+
+### 15.76. Target 40.161: Proving Or Falsifying The Shielded Hereditary Gap
+
+Searchable Target-40.161 tag:
+
+`V4P40-TARGET-40161-SHIELDED-HEREDITARY-GAP`.
+
+We now investigate the shielded hereditary gap (15.1231) itself. The conclusion
+is that raw (15.1231), with a supremum over all supported shielded interface
+data, is still too strong unless the interface class is restricted to
+shield-good data. This is the same fixed-IR lesson already encountered for
+collar estimates: adversarial boundary data can force a bad local response, and
+such data must be absorbed into the existing carrier/collar budget rather than
+included in the uniform transfer supremum.
+
+#### 15.76.1. Why Raw Shielded Supremum Is Too Strong
+
+Let the shielded tile character be:
+
+```math
+\chi_{j,a}.
+\tag{15.1241}
+```
+
+Raw (15.1231) requires a positive gap uniformly over every supported shielded
+interface datum:
+
+```math
+\mathfrak a\in\mathfrak A^{\mathrm{sh}}_R.
+\tag{15.1242}
+```
+
+But supported does not mean good. An interface datum can be supported and still
+nearly determine the tile center sign. In that case:
+
+```math
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a}
+\left(
+\chi_{j,a}=1
+\right)
+\longrightarrow
+1,
+\qquad
+\mathbb P^{0,\mathrm{pun}}_{\mathfrak a,a}
+\left(
+\chi_{j,a}=-1
+\right)
+\longrightarrow
+0,
+\tag{15.1243}
+```
+
+so:
+
+```math
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\longrightarrow
+1.
+\tag{15.1244}
+```
+
+This falsifies raw (15.1231).
+
+**Lemma 40.161A (Supported Shielded Data Can Pin The Center Sign).** The
+shielded hereditary gap (15.1231) is false if the class
+`A_sh_R` contains supported interface data for which one sign sector has
+vanishing neutral punctured tile weight.
+
+#### Proof
+
+If:
+
+```math
+\frac{
+\sum_{\chi_{j,a}=-1}
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j})
+}{
+Z^{0,\mathrm{pun}}_{\mathfrak a,a}
+}
+\longrightarrow
+0,
+\tag{15.1245}
+```
+
+then the two-sidedness quantity in (15.1210) tends to zero. By (15.1069), with
+the punctured weights replacing the unpunctured ones, the punctured twisted
+ratio tends to one. Hence no constant `m_sh_R>0` can make (15.1231) true. `∎`
+
+This is not yet a falsification of Yang-Mills confinement. It is a falsification
+of the raw supremum over arbitrary supported shielded data. The corrected target
+must separate shield-good interface data from shield-bad interface data.
+
+#### 15.76.2. Shield-Good Interface Data
+
+Define a shield-good subset:
+
+```math
+\mathfrak A^{\mathrm{sh,good}}_R
+\subset
+\mathfrak A^{\mathrm{sh}}_R.
+\tag{15.1246}
+```
+
+Membership means two things.
+
+First, the relative topological flip class exists:
+
+```math
+\exists\,
+\eta_{\mathfrak a,a}
+\in
+Z^2(T_j,\partial_{\pm}T_j;Z_2)
+\quad
+\text{satisfying }(15.1237)\text{ and }(15.1238).
+\tag{15.1247}
+```
+
+Second, the punctured SO(3) fiber admits a uniformly bounded repair for that
+flip:
+
+```math
+\mathcal A^s_a
+\left(
+\eta_{\mathfrak a,a}b,
+\Psi^{\eta,\mathrm{pun}}_{b}\bar U
+\right)
+\le
+\mathcal A^s_a
+\left(
+b,
+\bar U
+\right)
++
+B^{\mathrm{good}}_R+\varepsilon_a,
+\tag{15.1248}
+```
+
+with:
+
+```math
+B^{\mathrm{good}}_R<\infty,
+\qquad
+\varepsilon_a\downarrow0,
+\tag{15.1249}
+```
+
+and the same estimate for the inverse flip. This definition is not circular: it
+isolates the exact finite-cost repair property needed for two-sidedness.
+
+The shield-bad class is:
+
+```math
+\mathfrak A^{\mathrm{sh,bad}}_R
+:=
+\mathfrak A^{\mathrm{sh}}_R
+\setminus
+\mathfrak A^{\mathrm{sh,good}}_R.
+\tag{15.1250}
+```
+
+The fixed-IR route must prove that shield-bad data are already charged to the
+carrier/collar budget:
+
+```math
+\mathbb P
+\left(
+\mathfrak a\in\mathfrak A^{\mathrm{sh,bad}}_R
+\right)
+\le
+K_R
+\exp
+\left(
+-\sigma^{\mathrm{bad}}_R
+\operatorname{Area}_{\mathrm{phys}}(S_{\gamma})
++
+\kappa^{\mathrm{bad}}_R
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
+\right)
++
+o_a(1),
+\tag{15.1251}
+```
+
+or, more locally, that bad shield data are absorbed into the puncture/cocycle
+carrier and counted by the same entropy-weight budget as in Target 40.158.
+
+#### 15.76.3. Good-Data Gap Theorem
+
+**Theorem 40.161B (Shield-Good Data Prove The Hereditary Gap).** If every datum
+in `A_sh,good_R` satisfies the finite-cost repair property
+(15.1247)-(15.1249), then:
+
+```math
+\sup_{\mathfrak a\in\mathfrak A^{\mathrm{sh,good}}_R}
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\le
+1
+-
+\frac{2}{1+\exp(B^{\mathrm{good}}_R)}
++
+o_a(1).
+\tag{15.1252}
+```
+
+In particular, the shielded hereditary gap holds on good data with any:
+
+```math
+0<m^{\mathrm{sh}}_R
+<
+-
+\log
+\left(
+1
+-
+\frac{2}{1+\exp(B^{\mathrm{good}}_R)}
+\right).
+\tag{15.1253}
+```
+
+#### Proof
+
+The proof is the same finite-cost flip argument as Criteria 40.156A and
+40.160C. The repair map gives the two-sided weight comparison:
+
+```math
+\exp
+\left(
+-B^{\mathrm{good}}_R-\varepsilon_a
+\right)
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j})
+\le
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(\eta_{\mathfrak a,a}b_{T_j})
+\le
+\exp
+\left(
+B^{\mathrm{good}}_R+\varepsilon_a
+\right)
+W^{0,\mathrm{pun}}_{\mathfrak a,a}(b_{T_j}).
+\tag{15.1254}
+```
+
+Since the flip exchanges the two sign sectors, each sign has conditional
+probability at least:
+
+```math
+\frac{1}{1+\exp(B^{\mathrm{good}}_R)}
+-
+o_a(1).
+\tag{15.1255}
+```
+
+Equation (15.1069), with punctured weights, gives (15.1252). The exponent
+(15.1253) follows immediately. `∎`
+
+#### 15.76.4. What Is Proved And What Is Falsified
+
+This investigation proves a conditional positive result and falsifies the raw
+unqualified version of (15.1231).
+
+The raw statement:
+
+```math
+\sup_{\mathfrak a\in\mathfrak A^{\mathrm{sh}}_R}
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\le
+e^{-m^{\mathrm{sh}}_R}
++
+o_a(1)
+\tag{15.1256}
+```
+
+is false unless all supported shielded data are shield-good.
+
+The repaired statement is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove the hereditary gap on } \mathfrak A^{\mathrm{sh,good}}_R,\\[1mm]
+\text{and prove shield-bad data are absorbed into the carrier/collar budget.}
+\end{array}}
+\tag{15.1257}
+```
+
+This is fixed-IR aligned: the shield-good definition uses physical tile data and
+a physical repair cost, and shield-bad data are not discarded; they are charged
+to the same physical carrier/perimeter accounting used earlier.
+
+#### 15.76.5. Completed Target 40.161
+
+Target 40.161 resolves the status of (15.1231):
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FALSIFIED}_{\mathrm{raw}}
+&
+\text{raw }(15.1231)\text{ is false over arbitrary supported shielded data},\\[1mm]
+\mathrm{PROVED}_{\mathrm{good}}
+&
+\text{finite-cost shield-good repair implies }(15.1252),\\[1mm]
+\mathrm{OPEN}_{\mathrm{bad}}
+&
+\text{prove shield-bad data are absorbed into the carrier/collar budget},\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{the repaired shielded hereditary gap can still feed }(15.1182),\\[1mm]
+\mathrm{FAIL}
+&
+\text{shield-bad data occur at area order without being counted.}
+\end{array}}
+\tag{15.1258}
+```
+
+The next investigation should therefore target the shield-bad absorption
+estimate (15.1251), not the raw supremum (15.1256).
+
+### 15.77. Target 40.162: Shield-Bad Absorption Is A Polymer Budget
+
+Searchable Target-40.162 tag:
+
+`V4P40-TARGET-40162-SHIELD-BAD-ABSORPTION`.
+
+We now investigate the open part of Target 40.161. The estimate (15.1251), as
+written, is not the correct general absorption statement. It asks for the
+probability of shield-bad data to be area-small. But a local bad shield datum
+may occur with positive small density without destroying the area law, provided
+bad components are absorbed into the carrier/collar budget and the remaining
+frontier-good region still has a positive density of good transfer tiles.
+
+Thus shield-bad absorption is a polymer-budget problem, not an event-probability
+problem.
+
+#### 15.77.1. Why (15.1251) Is Too Strong
+
+Suppose each physical tile is independently shield-bad with probability:
+
+```math
+0<p_R<1.
+\tag{15.1259}
+```
+
+Then the probability that at least one shield-bad tile occurs in a sheet with
+`N` tiles is:
+
+```math
+1-(1-p_R)^N.
+\tag{15.1260}
+```
+
+This tends to one as the physical area grows. Therefore an estimate of the form
+(15.1251) cannot hold.
+
+But if the good tiles still carry a transfer contraction and the bad-tile
+density is small enough, the product over good tiles can still give an area
+law with a reduced exponent. Thus (15.1251) is not only too strong; it is the
+wrong type of statement.
+
+The corrected principle is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{shield-bad tiles need not be absent;}\\[1mm]
+\text{their connected components must be subcritical at fixed physical scale;}\\[1mm]
+\text{transfer estimates are applied only across frontier-good tiles.}
+\end{array}}
+\tag{15.1261}
+```
+
+#### 15.77.2. Bad Shield Set And Frontier-Good Complement
+
+For fixed physical punctured data, let:
+
+```math
+\mathcal T^{\mathrm{deep}}_{\gamma,R}(P)
+\tag{15.1262}
+```
+
+be the deep shielded tile set from (15.1227). Define the shield-bad set:
+
+```math
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\subset
+\mathcal T^{\mathrm{deep}}_{\gamma,R}(P)
+\tag{15.1263}
+```
+
+as the set of tiles whose revealed local interface datum lies in:
+
+```math
+\mathfrak A^{\mathrm{sh,bad}}_R.
+\tag{15.1264}
+```
+
+Let:
+
+```math
+\widehat{\mathcal B}^{\mathrm{sh}}_{\gamma,P,a}
+\tag{15.1265}
+```
+
+be the fixed physical enlargement of the bad set by one shield collar. The
+frontier-good set is:
+
+```math
+\mathcal G^{\mathrm{fr}}_{\gamma,P,a}
+:=
+\mathcal T^{\mathrm{deep}}_{\gamma,R}(P)
+\setminus
+\widehat{\mathcal B}^{\mathrm{sh}}_{\gamma,P,a}.
+\tag{15.1266}
+```
+
+The deterministic counting requirement is:
+
+```math
+\#\mathcal G^{\mathrm{fr}}_{\gamma,P,a}
+\ge
+N^{\mathrm{deep}}_{\gamma,R}(P)
+-
+C_R
+\left|
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\right|.
+\tag{15.1267}
+```
+
+This is fixed-IR geometry: one bad physical tile removes only a bounded number
+of neighboring physical tiles from the good transfer product.
+
+#### 15.77.3. Frontier-Good Transfer
+
+On the frontier-good set, assume the good-data hereditary gap from Theorem
+40.161B:
+
+```math
+\mathfrak r^{\chi,\mathrm{pun}}_{\mathfrak a,a}
+\le
+e^{-m^{\mathrm{good}}_R}
++
+o_a(1),
+\qquad
+\mathfrak a\in\mathfrak A^{\mathrm{sh,good}}_R.
+\tag{15.1268}
+```
+
+Then, after revealing the enlarged bad shield set and all of its collar data,
+the conditional sheet mean over the frontier-good complement satisfies:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+\exp
+\left(
+-m^{\mathrm{good}}_R
+\#\mathcal G^{\mathrm{fr}}_{\gamma,P,a}
+\right)
++
+o_a(1).
+\tag{15.1269}
+```
+
+Using (15.1267):
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+\exp
+\left(
+-m^{\mathrm{good}}_R
+N^{\mathrm{deep}}_{\gamma,R}(P)
++
+C_R m^{\mathrm{good}}_R
+\left|
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\right|
+\right)
++
+o_a(1).
+\tag{15.1270}
+```
+
+So the shield-bad set is harmless if its exponential moment does not eat the
+good transfer exponent.
+
+#### 15.77.4. Shield-Bad Exponential Moment
+
+The correct absorption hypothesis is:
+
+```math
+\mathbb E
+\left[
+\exp
+\left(
+\theta_R
+\left|
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\right|
+\right)
+\mid
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+\right]
+\le
+K_R
+\exp
+\left(
+\zeta_R
+N^{\mathrm{deep}}_{\gamma,R}(P)
++
+\kappa_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right)
+\right)
++
+o_a(1),
+\tag{15.1271}
+```
+
+with:
+
+```math
+\theta_R
+=
+C_R m^{\mathrm{good}}_R,
+\qquad
+0\le\zeta_R<m^{\mathrm{good}}_R.
+\tag{15.1272}
+```
+
+This is weaker and more natural than (15.1251). It allows shield-bad tiles to
+occur, but only with a subcritical exponential moment relative to the good
+transfer gap.
+
+#### 15.77.5. Polymer Absorption Theorem
+
+**Theorem 40.162A (Shield-Bad Exponential Moment Preserves Punctured
+Disorder).** Assume the frontier-good transfer estimate (15.1268), the
+deterministic counting bound (15.1267), and the shield-bad exponential moment
+(15.1271)-(15.1272). Then the bad-set-absorbed pointwise punctured disorder
+estimate holds; equivalently, (15.1182) holds with a reduced area exponent
+after shield-bad clusters are charged to the carrier/collar budget.
+
+#### Proof
+
+Condition on the puncture sigma algebra and on the bad shield set. Equation
+(15.1270) gives:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+\exp
+\left(
+-m^{\mathrm{good}}_R
+N^{\mathrm{deep}}_{\gamma,R}(P)
+\right)
+\exp
+\left(
+C_R m^{\mathrm{good}}_R
+\left|
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\right|
+\right)
++
+o_a(1).
+\tag{15.1273}
+```
+
+Take the conditional exponential moment and apply (15.1271) with
+`theta_R = C_R m_good_R`. This gives:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+K_R
+\exp
+\left(
+-
+\left(
+m^{\mathrm{good}}_R-\zeta_R
+\right)
+N^{\mathrm{deep}}_{\gamma,R}(P)
++
+\kappa_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right)
+\right)
++
+o_a(1).
+\tag{15.1274}
+```
+
+Because `zeta_R < m_good_R`, the exponent is positive. Insert the deep tile
+count (15.1233). The result is (15.1182), after reducing the area exponent and
+changing the perimeter constant. `∎`
+
+#### 15.77.6. KP Version Of The Bad-Shield Moment
+
+A standard way to prove (15.1271) is a fixed-IR polymer estimate. Let
+`C` range over connected shield-bad clusters in the physical tile adjacency
+graph. Suppose their activities obey:
+
+```math
+\sum_{\substack{
+C\ni T\\
+C\text{ connected}
+}}
+z_R(C)
+\exp
+\left(
+\Theta_R |C|
+\right)
+\le
+\varepsilon_R
+\tag{15.1275}
+```
+
+for every physical tile `T`, with:
+
+```math
+\Theta_R>C_R m^{\mathrm{good}}_R+s_R^{\mathrm{bad}}.
+\tag{15.1276}
+```
+
+Here `s_bad_R` is the fixed physical lattice-animal entropy rate for shield-bad
+clusters. If:
+
+```math
+\varepsilon_R
+\tag{15.1277}
+```
+
+is small enough, the exponential moment (15.1271) follows with
+`zeta_R < m_good_R`.
+
+This is exactly the old frontier-good lesson in the shielded-puncture language:
+bad data are not banned; they must form a subcritical polymer gas.
+
+#### 15.77.7. Falsifier
+
+Shield-bad absorption fails if:
+
+```math
+\limsup_{a\downarrow0}
+\frac{1}{N^{\mathrm{deep}}_{\gamma,R}(P)}
+\log
+\mathbb E
+\left[
+\exp
+\left(
+C_R m^{\mathrm{good}}_R
+\left|
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\right|
+\right)
+\mid
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+\right]
+\ge
+m^{\mathrm{good}}_R.
+\tag{15.1278}
+```
+
+Equivalently, shield-bad components occur with enough physical density or
+connectivity to consume the entire good-transfer exponent. Then the repaired
+hereditary transfer route cannot prove punctured disorder.
+
+#### 15.77.8. Completed Target 40.162
+
+Target 40.162 replaces the over-strong event estimate (15.1251) by the correct
+fixed-IR absorption criterion:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FALSIFIED}_{\mathrm{event}}
+&
+\text{area-small probability of any shield-bad datum is too strong},\\[1mm]
+\mathrm{PASS}_{\mathrm{frontier}}
+&
+\text{prove good transfer on the frontier-good complement }(15.1268),\\[1mm]
+\mathrm{PASS}_{\mathrm{moment}}
+&
+\text{prove the shield-bad exponential moment }(15.1271),\\[1mm]
+\mathrm{PASS}_{\mathrm{KP}}
+&
+\text{or prove the cluster KP estimate }(15.1275),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{bad-set-absorbed punctured disorder follows with reduced exponent},\\[1mm]
+\mathrm{FAIL}
+&
+\text{shield-bad density consumes the good-transfer exponent }(15.1278).
+\end{array}}
+\tag{15.1279}
+```
+
+This is the fixed-IR form of shield-bad absorption. It neither assumes bad data
+are absent nor lets them poison the transfer supremum. It asks for a physical
+subcriticality estimate strong enough to leave a positive charged-transfer
+exponent after bad clusters are absorbed.
+
+#### 15.77.9. Investigation: The Bad-Cluster Moment Must Be Quenched
+
+A hard review of Theorem 40.162A exposes one more necessary strengthening.
+The exponential moment in (15.1271) must be a pointwise conditional, or
+quenched, estimate over the puncture sigma algebra. An averaged moment would
+repeat the same mistake diagnosed in Target 40.159.
+
+Define:
+
+```math
+\mathcal Z^{\mathrm{bad}}_{\gamma,P,a}
+(\theta_R)
+:=
+\mathbb E
+\left[
+\exp
+\left(
+\theta_R
+\left|
+\mathcal B^{\mathrm{sh}}_{\gamma,P,a}
+\right|
+\right)
+\mid
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma)
+\right].
+\tag{15.1280}
+```
+
+The required estimate is not:
+
+```math
+\mathbb E
+\left[
+\mathcal Z^{\mathrm{bad}}_{\gamma,P,a}
+(\theta_R)
+\right]
+\le
+\text{area-small}.
+\tag{15.1281}
+```
+
+The required estimate is the essential-supremum bound:
+
+```math
+\left\|
+\mathcal Z^{\mathrm{bad}}_{\gamma,P,a}
+(\theta_R)
+\right\|_{\infty}
+\le
+K_R
+\exp
+\left(
+\zeta_R
+N^{\mathrm{deep}}_{\gamma,R}(P)
++
+\kappa_R
+\left(
+\operatorname{Perim}_{\mathrm{phys}}(\gamma)
++
+\operatorname{Perim}_{\mathrm{phys}}(P)
+\right)
+\right)
++
+o_a(1).
+\tag{15.1282}
+```
+
+with:
+
+```math
+\theta_R=C_Rm^{\mathrm{good}}_R,
+\qquad
+0\le\zeta_R<m^{\mathrm{good}}_R.
+\tag{15.1283}
+```
+
+**Lemma 40.162B (Averaged Bad-Cluster Moment Is Not Enough).** An averaged
+version of (15.1282) does not imply the punctured insertion estimate (15.1153).
+
+#### Proof
+
+Let `E` be a rare puncture-boundary event. On `E`, let the bad shield set be
+large enough to pin the remaining sheet; off `E`, let there be strong disorder.
+The averaged moment can be small if `E` is rare. But an admissible local carrier
+whose puncture sigma algebra detects `E` can choose:
+
+```math
+A_{P,a}=\mathbf 1_E.
+\tag{15.1284}
+```
+
+Then the insertion estimate sees the bad conditional sector directly and loses
+the factor `||A_P||_1`, exactly as in Lemma 40.159A. Therefore the bad-cluster
+moment must hold pointwise over the puncture conditioning data. `∎`
+
+#### 15.77.10. Adapted Bad-Set Rule
+
+There is a second necessary discipline. The shield-bad set must be determined
+by already revealed local interface data, not by peeking at future good-tile
+center signs. Formally, for each transfer order, require:
+
+```math
+\mathbf 1_{\{T_j\in\mathcal B^{\mathrm{sh}}_{\gamma,P,a}\}}
+\in
+\mathcal H_{j-1}^{\mathrm{pun}},
+\tag{15.1285}
+```
+
+where:
+
+```math
+\mathcal H_{j-1}^{\mathrm{pun}}
+\tag{15.1286}
+```
+
+is the sigma algebra generated by the puncture data, the enlarged bad-cluster
+collars already exposed, and the past transfer interfaces before tile `j`.
+
+If (15.1285) fails, the bad-set selection rule could encode the future charged
+product and artificially create or hide center disorder. Such a proof would not
+be fixed-IR transfer; it would be postselection.
+
+#### 15.77.11. Quenched Polymer Absorption Theorem
+
+**Theorem 40.162C (Quenched Shield-Bad Absorption).** Assume:
+
+```math
+\begin{array}{ll}
+\mathrm{A1} & \text{the adapted bad-set rule }(15.1285),\\[1mm]
+\mathrm{A2} & \text{frontier-good transfer }(15.1268),\\[1mm]
+\mathrm{A3} & \text{the deterministic counting bound }(15.1267),\\[1mm]
+\mathrm{A4} & \text{the quenched bad-cluster moment }(15.1282).
+\end{array}
+\tag{15.1287}
+```
+
+Then the bad-set-absorbed pointwise punctured disorder estimate holds with a
+positive area exponent.
+
+#### Proof
+
+Condition first on:
+
+```math
+\mathcal F^{\mathrm{cen}}_{\partial,P,\rho_R}(\gamma).
+\tag{15.1288}
+```
+
+Then expose the adapted bad clusters and their fixed collars. Because of
+(15.1285), the remaining frontier-good transfer order is legitimate: no future
+charged sign has been used to select the good region. Applying (15.1268) along
+the frontier-good tiles gives (15.1270). Taking the conditional expectation of
+the resulting bound gives:
+
+```math
+\left\|
+M^{\mathrm{pun}}_{\gamma,P,a}
+\right\|_{\infty}
+\le
+\exp
+\left(
+-m^{\mathrm{good}}_R
+N^{\mathrm{deep}}_{\gamma,R}(P)
+\right)
+\left\|
+\mathcal Z^{\mathrm{bad}}_{\gamma,P,a}
+(C_Rm^{\mathrm{good}}_R)
+\right\|_{\infty}
++
+o_a(1).
+\tag{15.1289}
+```
+
+Insert (15.1282). Since `zeta_R < m_good_R`, a positive area exponent remains.
+The deep tile count (15.1233) converts this into the desired fixed-IR punctured
+disorder estimate, with perimeter corrections from the original and puncture
+boundaries. `∎`
+
+#### 15.77.12. Quenched KP Target
+
+The KP estimate in (15.1275) must therefore also be quenched. The correct
+target is: for every admissible puncture boundary datum and every frontier-good
+external interface,
+
+```math
+\sup_{\mathrm{puncture\ data}}
+\sup_{T}
+\sum_{\substack{
+C\ni T\\
+C\text{ connected}
+}}
+z_R(C\mid\mathrm{puncture\ data})
+\exp
+\left(
+\Theta_R |C|
+\right)
+\le
+\varepsilon_R,
+\tag{15.1290}
+```
+
+with:
+
+```math
+\Theta_R>C_Rm^{\mathrm{good}}_R+s_R^{\mathrm{bad}},
+\tag{15.1291}
+```
+
+and `epsilon_R` small enough to imply (15.1282). This is a quenched
+subcriticality statement at fixed physical scale.
+
+#### 15.77.13. Updated Status Of Target 40.162
+
+Target 40.162 is therefore sharpened as follows:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FALSIFIED}_{\mathrm{event}}
+&
+\text{area-small probability of any shield-bad datum is too strong},\\[1mm]
+\mathrm{FALSIFIED}_{\mathrm{annealed}}
+&
+\text{an averaged bad-cluster moment is too weak},\\[1mm]
+\mathrm{PASS}_{\mathrm{adapted}}
+&
+\text{prove the bad-set rule is adapted }(15.1285),\\[1mm]
+\mathrm{PASS}_{\mathrm{quenched}}
+&
+\text{prove the quenched moment }(15.1282),\\[1mm]
+\mathrm{PASS}_{\mathrm{KP}}
+&
+\text{or prove the quenched KP estimate }(15.1290),\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{bad-set-absorbed punctured disorder follows},\\[1mm]
+\mathrm{FAIL}
+&
+\text{bad clusters are only annealed-subcritical or are selected nonadaptively.}
+\end{array}}
+\tag{15.1292}
+```
+
+This is now the fixed-IR form of the absorption problem. The proof must be
+uniform over physical puncture data, and the bad-cluster expansion must be
+adapted to the transfer filtration.
+
+### 15.78. Post-Reduction Audit: The O1 Test After The Fixed-IR Tower
+
+Searchable Target-40.163 tag:
+
+`V4P40-TARGET-40163-POST-REDUCTION-O1-TEST`.
+
+Targets 40.151-40.162 have done something useful but narrower than a
+confinement proof. They have converted the original center/cocycle ambiguity
+into a precise fixed-IR reduction. The remaining question is no longer a
+coordinate question, a section question, or a positivity question. It is whether
+the center record law supplies a genuine nonperturbative charged disorder
+estimate.
+
+#### 15.78.1. What The Section-15 Tower Actually Proves
+
+Unrolled at fixed physical scale, the current route has the following form:
+
+```text
+exact SU(2) center/coset lift
+-> conditional cocycle decorrelation
+-> center-disorder stability
+-> charged transfer gap
+-> twisted tile ratio
+-> two-sided tile center character, or charged RP sheet gap
+-> Wilson area law.
+```
+
+The algebraic and measure-theoretic parts are now mostly clean. Finite-cutoff
+positivity is a pushforward theorem. Section changes are coordinate changes.
+The exact lift identity is not the obstruction. The obstruction is the fixed-IR
+charged disorder input at the bottom of the tower.
+
+In the strongest form isolated above, the needed input is:
+
+```text
+boundary-stable, puncture-stable, quenched center disorder
+for physical tile/sheet/collar observables, uniformly as the cutoff is removed.
+```
+
+This is a restricted area-law statement. It is restricted because it does not
+ask for every Wilson loop directly; it asks for a physical charged-transfer gap
+for the center field after SO(3) fibers, boundary collars, punctures, and
+shield-bad clusters have been accounted for. It is still hard because it is the
+nonperturbative disorder content of confinement.
+
+#### 15.78.2. What Has Not Yet Been Proved
+
+Up to Target 40.162, Section 15 is essentially ontology-free. The ISP language
+appears as an interpretation of why center records are natural, but the proof
+chain itself uses the standard finite-cutoff SU(2) Gibbs law, the SU(2)-to-SO(3)
+lift, center cochains, physical smoothing, transfer estimates, and conditional
+center marginals.
+
+The many estimates involving the running effective coupling are useful
+small-scale controls. They do not by themselves prove fixed-IR confinement. They
+control local or good-sector errors in regimes where the effective coupling is
+small; the confinement step needs a positive charged disorder exponent at fixed
+physical scale. That is why the reflection-positive route and the center
+transfer gap are the only genuinely nonperturbative levers left inside this
+paper.
+
+Thus the current status is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}
+&
+\text{fixed-IR confinement follows from restricted quenched center disorder},\\[1mm]
+\mathrm{OPEN}
+&
+\text{restricted quenched center disorder itself},\\[1mm]
+\mathrm{OPEN}
+&
+\text{whether ISP center records prove or strengthen that disorder}.
+\end{array}}
+\tag{15.1293}
+```
+
+#### 15.78.3. Consequence For The Whole Paper
+
+The paper now has a sharp fork.
+
+First, ISP might add a real dynamical input. Then the ISP record law should
+modify or constrain the center marginal, the tile-flip free energy, or the
+charged transfer kernel in a way that is not available from the standard
+center/coset disintegration alone.
+
+Second, ISP might not add such input. Then the route is an honest relabeling of
+the standard center-disorder problem. That would not make Section 15 useless:
+it would give a precise falsification ledger and a clean conditional theorem.
+But it would mean the proof of confinement must come from an ordinary
+nonperturbative Yang-Mills estimate, not from ISP structure.
+
+The decisive comparison is:
+
+```math
+\mu^{\mathrm{ISP}}_{\mathrm{cen},R,a}
+\quad
+\mathrm{versus}
+\quad
+\mu^{\mathrm{std}}_{\mathrm{cen},R,a},
+\tag{15.1294}
+```
+
+where the first symbol denotes the center law generated by the ISP
+whole-process boundary-center record, and the second denotes the standard
+center marginal obtained by integrating out the noncenter fibers.
+
+The O1-positive outcome is:
+
+```math
+\mu^{\mathrm{ISP}}_{\mathrm{cen},R,a}
+=
+\mu^{\mathrm{std}}_{\mathrm{cen},R,a}
+\quad
+\text{up to harmless coordinate or boundary reparametrization}.
+\tag{15.1295}
+```
+
+The O1-negative outcome is that the ISP law produces a nontrivial fixed-IR tilt:
+
+```math
+\frac{
+d\mu^{\mathrm{ISP}}_{\mathrm{cen},R,a}
+}{
+d\mu^{\mathrm{std}}_{\mathrm{cen},R,a}
+}
+(b)
+=
+\exp
+\left(
+-Q^{\mathrm{ISP}}_{R,a}(b)
+\right),
+\tag{15.1296}
+```
+
+where `Q_ISP` is not merely a boundary coboundary, and where its contribution
+improves the charged transfer exponent or the tile-flip cost uniformly as
+`a -> 0`.
+
+Equivalently, one should test whether ISP changes the fixed-IR charged
+free-energy excess:
+
+```math
+\Delta F^{\chi,\mathrm{ISP}}_{j,a}
+(\omega_-,\omega_+)
+-
+\Delta F^{\chi,\mathrm{std}}_{j,a}
+(\omega_-,\omega_+)
+\ge
+c_R-o_a(1),
+\qquad
+c_R>0,
+\tag{15.1297}
+```
+
+or whether the difference is only boundary/quasilocal bookkeeping that cannot
+create a positive area exponent.
+
+#### 15.78.4. Highest-Value Test: The Solved Three-Dimensional Abelian Case
+
+The cheapest decisive test is not four-dimensional SU(2). It is the solved
+three-dimensional Abelian case.
+
+The test is:
+
+```text
+Construct the ISP boundary-center record law for 3D compact U(1), or for the
+central Abelian sector, and compare it directly with the standard
+Gopfert-Mack monopole/Coulomb-gas dual.
+```
+
+There are two clean outcomes.
+
+If the ISP record law natively produces the monopole Coulomb gas, with the
+monopole condensation estimate appearing as a primitive record-law disorder
+estimate, then O1 is defeated in the best possible test case. That would justify
+returning to four-dimensional SU(2) with a concrete ISP mechanism to aim at
+Target 40.155 or Target 40.162.
+
+If the ISP construction merely reproduces the standard dual measure, with no
+extra estimate on the charged free energy, then O1 is supported. The route would
+still recover known confinement in the solved model, but it would not explain
+why the unsolved four-dimensional center transfer gap should hold.
+
+This test is stronger than another formal reduction because the answer is known
+on the ordinary side. The issue is not whether the dual exists; the issue is
+whether ISP supplies an additional, usable estimate.
+
+#### 15.78.5. Reflection Positivity: Worth Pursuing, But With A Narrow Target
+
+The reflection-positive route in (15.1097)-(15.1098) remains the only
+coupling-independent lever in Section 15. It should be investigated, but the
+target must be scoped precisely.
+
+The useful RP question is:
+
+```math
+\text{Does reflection positivity prove }(15.1070)\text{ or }(15.1097)
+\text{ at fixed physical tile scale?}
+\tag{15.1298}
+```
+
+There are three possible outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{RP1}
+&
+\text{RP gives a Hilbert-space reflection structure but no positive gap},\\[1mm]
+\mathrm{RP2}
+&
+\text{RP gives two-sidedness }(15.1070)\text{ but not }(15.1097),\\[1mm]
+\mathrm{RP3}
+&
+\text{RP gives the charged chessboard gap }(15.1097).
+\end{array}}
+\tag{15.1299}
+```
+
+Only RP3 closes the center-transfer gap directly. RP2 would still be useful if
+combined with a separate uniform free-energy loss or finite-cost flip estimate.
+RP1 would be an honest boundary of the method.
+
+#### 15.78.6. Direct Computation Of The Actual Amplitude And Flip Cost
+
+The structural fork (15.49) should also be tested in models where the actual
+conditional amplitude can be computed.
+
+The concrete quantities are:
+
+```math
+\alpha^s_{C,S}(b),
+\qquad
+B_R,
+\qquad
+\Delta F^{\chi}_{j,a}(\omega_-,\omega_+).
+\tag{15.1300}
+```
+
+The calibration cases are:
+
+```text
+1. small finite SU(2) lattices with exact center/coset summation,
+2. two-dimensional or three-dimensional reductions where transfer matrices are explicit,
+3. strong-coupling expansions of the actual cocycle amplitude, not only of Wilson loops,
+4. the three-dimensional Abelian dual where the monopole gas is already known.
+```
+
+The purpose is not to replace the proof by numerics. The purpose is to decide
+whether the actual cocycle amplitude is boundary/quasilocal, area-supported, or
+split into a good branch plus a bad-cluster polymer budget.
+
+#### 15.78.7. Guardrails After The Audit
+
+The next work should obey the following guardrails:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{G1}
+&
+\text{do not promote a criterion to a theorem by assuming its hard input},\\[1mm]
+\mathrm{G2}
+&
+\text{do not extend small }g_{\mathrm{eff}}(R)\text{ estimates into IR confinement},\\[1mm]
+\mathrm{G3}
+&
+\text{do not attack CD4 or }t_-\downarrow0\text{ before the fixed-IR gap},\\[1mm]
+\mathrm{G4}
+&
+\text{test O1 before claiming ISP supplies the missing disorder estimate},\\[1mm]
+\mathrm{G5}
+&
+\text{keep all tile, collar, smoothing, and puncture objects physical before }a\downarrow0,\\[1mm]
+\mathrm{G6}
+&
+\text{keep Barandes alignment: do not add Markov suppositions from ISP},\\[1mm]
+\mathrm{G7}
+&
+\text{separate ISP record laws from ordinary probabilistic Markov kernels.}
+\end{array}}
+\tag{15.1301}
+```
+
+Here G6-G7 mean that ISP may motivate the primitive boundary-center records,
+but it must not smuggle in an extra stochastic Markov property unless that
+property is independently derived in the ordinary finite-cutoff measure. The
+proof may use honest conditional expectations, transfer kernels, and reflection
+positivity from the lattice Gibbs law; it may not import a Markov supposition as
+an ontology premise.
+
+The next decisive target is therefore:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove or falsify that the ISP boundary-center record law changes}\\[1mm]
+\text{the fixed-IR center transfer measure or flip free energy,}\\[1mm]
+\text{first in the solved three-dimensional Abelian case.}
+\end{array}}
+\tag{15.1302}
+```
+
+That is the point at which the paper either becomes genuinely ISP-powered or
+honestly closes the O1 relabeling branch.
+
+### 15.79. Target 40.164: The 3D U(1) O1 Test For ISP Boundary Records
+
+Searchable Target-40.164 tag:
+
+`V4P40-TARGET-40164-THREED-U1-O1-TEST`.
+
+The post-reduction audit makes the next test precise. Before returning to
+four-dimensional non-Abelian confinement, test the ISP record law in the solved
+three-dimensional Abelian case. This is the cleanest place to decide whether ISP
+adds a new disorder estimate or merely presents the standard dual variables in
+record-law language.
+
+This target is fixed-regulator and fixed-IR aligned. The lattice box, physical
+scale, boundary convention, and Villain parameter are fixed first. No
+`t_- -> 0` or continuum-survival claim is made.
+
+#### 15.79.1. Standard Three-Dimensional Villain U(1) Dual
+
+Let `Lambda` be a finite simply connected three-dimensional cubical box with a
+boundary condition chosen to remove harmonic sectors. Link fields are angles:
+
+```math
+\theta
+\in
+C^1(\Lambda;\mathbb T),
+\qquad
+\mathbb T=\mathbb R/2\pi\mathbb Z.
+\tag{15.1303}
+```
+
+Use normalized Haar measure on each link. The Villain plaquette weight has the
+Fourier representation:
+
+```math
+V_{\beta}(x)
+=
+c_{\beta}
+\sum_{m\in\mathbb Z}
+\exp
+\left(
+-\frac{m^2}{2\beta}
+\right)
+e^{imx}.
+\tag{15.1304}
+```
+
+The finite-cutoff partition function is:
+
+```math
+Z^{\mathrm{std}}_{\Lambda,\beta}
+=
+\int
+\prod_{\ell}d\theta_{\ell}
+\prod_{p}
+V_{\beta}
+\left(
+(d\theta)_p
+\right).
+\tag{15.1305}
+```
+
+Expanding (15.1304) and integrating the link angles gives:
+
+```math
+Z^{\mathrm{std}}_{\Lambda,\beta}
+=
+c_{\beta}^{|P|}
+\sum_{\substack{
+m\in C^2(\Lambda;\mathbb Z)\\
+\delta m=0
+}}
+\exp
+\left(
+-\frac{1}{2\beta}
+\sum_p m_p^2
+\right).
+\tag{15.1306}
+```
+
+Here `m` is the integer plaquette flux and `delta m = 0` is the Gauss/gluing
+law at every link. For an integer Wilson loop current `eta_C`:
+
+```math
+\left\langle
+e^{i\langle\theta,\eta_C\rangle}
+\right\rangle_{\Lambda,\beta}
+=
+\frac{
+\sum_{\delta m=-\eta_C}
+\exp
+\left(
+-\frac{1}{2\beta}
+\sum_p m_p^2
+\right)
+}{
+\sum_{\delta m=0}
+\exp
+\left(
+-\frac{1}{2\beta}
+\sum_p m_p^2
+\right)
+}.
+\tag{15.1307}
+```
+
+This is the ordinary disorder/free-energy ratio. No ISP premise has entered.
+
+#### 15.79.2. ISP Boundary-Flux Record Law At The Same Cutoff
+
+The ISP boundary-record candidate assigns an integer flux record to each
+oriented plaquette:
+
+```math
+\Phi_p\in\mathbb Z.
+\tag{15.1308}
+```
+
+The boundary-center record of a region is the restriction of `Phi` to the
+plaquettes crossing the region boundary, and gluing requires matching the
+incoming and outgoing boundary records. In cochain form the whole-process
+consistency law is:
+
+```math
+\delta\Phi=0
+\tag{15.1309}
+```
+
+away from externally inserted Wilson sources.
+
+Barandes alignment imposes the decisive discipline: the ISP record law must be a
+pushed-forward finite-cutoff record law, not an independently postulated Markov
+kernel on boundary records. Therefore the natural ISP flux-record measure is:
+
+```math
+d\mu^{\mathrm{ISP}}_{\Lambda,\beta}(\Phi)
+=
+\frac{1}{Z^{\mathrm{ISP}}_{\Lambda,\beta}}
+\mathbf 1_{\{\delta\Phi=0\}}
+\exp
+\left(
+-\frac{1}{2\beta}
+\sum_p \Phi_p^2
+\right)
+d\#(\Phi),
+\tag{15.1310}
+```
+
+where `d#` denotes counting measure on integer plaquette records.
+
+The corresponding sourced law is:
+
+```math
+d\mu^{\mathrm{ISP}}_{\Lambda,\beta,C}(\Phi)
+=
+\frac{1}{Z^{\mathrm{ISP}}_{\Lambda,\beta,C}}
+\mathbf 1_{\{\delta\Phi=-\eta_C\}}
+\exp
+\left(
+-\frac{1}{2\beta}
+\sum_p \Phi_p^2
+\right)
+d\#(\Phi).
+\tag{15.1311}
+```
+
+#### 15.79.3. The O1 Comparison Theorem
+
+**Theorem 40.164A (Barandes-Aligned 3D U(1) ISP Records Equal The Standard
+Dual).** For finite three-dimensional Villain `U(1)` lattice gauge theory, under
+the Barandes-aligned rule that ISP records are pushed-forward finite-cutoff
+records and not independently postulated Markov kernels:
+
+```math
+\mu^{\mathrm{ISP}}_{\Lambda,\beta}
+=
+\mu^{\mathrm{std}}_{\mathrm{dual},\Lambda,\beta},
+\qquad
+\mu^{\mathrm{ISP}}_{\Lambda,\beta,C}
+=
+\mu^{\mathrm{std}}_{\mathrm{dual},\Lambda,\beta,C}.
+\tag{15.1312}
+```
+
+Consequently the ISP boundary-flux representation reproduces the standard
+Gopfert-Mack starting measure exactly. It does not add a new bulk tilt or a new
+condensation estimate by itself.
+
+#### Proof
+
+Start from the ordinary finite-cutoff Villain measure (15.1305). The Fourier
+coefficient attached to plaquette `p` is the integer record `m_p`. Link-angle
+orthogonality gives:
+
+```math
+\int_{\mathbb T}
+e^{i\theta_{\ell}(\delta m)_{\ell}}
+d\theta_{\ell}
+=
+\mathbf 1_{\{(\delta m)_{\ell}=0\}}.
+\tag{15.1313}
+```
+
+Thus the pushforward of the ordinary finite-cutoff measure to integer plaquette
+records is exactly (15.1306), normalized. The Wilson insertion replaces
+`delta m = 0` by `delta m = - eta_C`, giving (15.1307). But (15.1310) and
+(15.1311) are exactly these two pushed-forward laws with the variable renamed:
+
+```math
+\Phi=m.
+\tag{15.1314}
+```
+
+No Markov divisibility of intermediate boundary records is used. The only
+operations are Fourier expansion, Haar orthogonality, deterministic
+restriction of records to boundaries, and normalization of the same
+whole-process law. Hence (15.1312). `∎`
+
+#### 15.79.4. Relation To The Gopfert-Mack Monopole Gas
+
+In three dimensions, the closed integer plaquette flux can be written, up to the
+boundary convention and harmless harmonic sectors, as a dual height gradient:
+
+```math
+m=\star dh,
+\qquad
+h\in C^0(\Lambda^{\ast};\mathbb Z).
+\tag{15.1315}
+```
+
+Therefore (15.1306) becomes the integer-valued dual height model:
+
+```math
+Z^{\mathrm{std}}_{\Lambda,\beta}
+=
+\mathrm{const}
+\sum_{h\in C^0(\Lambda^{\ast};\mathbb Z)/\mathbb Z}
+\exp
+\left(
+-\frac{1}{2\beta}
+\sum_{\langle xy\rangle}
+(h_x-h_y)^2
+\right).
+\tag{15.1316}
+```
+
+Poisson summation gives the neutral monopole Coulomb gas:
+
+```math
+Z^{\mathrm{std}}_{\Lambda,\beta}
+=
+\mathrm{const}
+\sum_{\substack{
+q\in C^0(\Lambda^{\ast};\mathbb Z)\\
+\langle q,\mathbf 1\rangle=0
+}}
+\exp
+\left(
+-2\pi^2\beta
+\left\langle
+q,
+G_{\Lambda^{\ast}}q
+\right\rangle
+\right).
+\tag{15.1317}
+```
+
+This is the Gopfert-Mack dual object. Since Theorem 40.164A identifies the ISP
+record law with the standard integer-flux law before this transform, the ISP
+record law also reproduces the height model and monopole gas. The reproduction
+is exact, but it is not yet extra analytic control.
+
+The known Gopfert-Mack confinement theorem can therefore be read in ISP record
+language:
+
+```math
+\text{monopole condensation in the standard dual}
+\quad
+\Longrightarrow
+\quad
+\text{area law for the original }3D\ U(1)\text{ Wilson loop}.
+\tag{15.1318}
+```
+
+But the implication is inherited from the standard dual theorem. It is not
+derived from an additional ISP stochastic assumption.
+
+#### 15.79.5. What Would Count As O1-Negative
+
+To defeat O1 in this test case, one must exhibit an ISP-derived bulk correction:
+
+```math
+\frac{
+d\mu^{\mathrm{ISP}}_{\Lambda,\beta}
+}{
+d\mu^{\mathrm{std}}_{\mathrm{dual},\Lambda,\beta}
+}
+(\Phi)
+=
+\frac{
+\exp
+\left(
+-Q^{\mathrm{ISP}}_{\Lambda,\beta}(\Phi)
+\right)
+}{
+\mathbb E_{\mathrm{std}}
+\left[
+\exp
+\left(
+-Q^{\mathrm{ISP}}_{\Lambda,\beta}
+\right)
+\right]
+}.
+\tag{15.1319}
+```
+
+This correction would have to satisfy three tests:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{Q1}
+&
+\text{it is derived from the same finite whole-process record law},\\[1mm]
+\mathrm{Q2}
+&
+\text{it is not a boundary coboundary or coordinate reparametrization},\\[1mm]
+\mathrm{Q3}
+&
+\text{it improves the charged free-energy or condensation estimate}.
+\end{array}}
+\tag{15.1320}
+```
+
+If no such `Q_ISP` exists, the 3D Abelian O1 test is relabeling-positive:
+ISP presents the correct dual variables, but supplies no new estimate beyond the
+ordinary Gopfert-Mack analysis.
+
+#### 15.79.6. Completed Target 40.164
+
+Target 40.164 is therefore:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{dual}}
+&
+\text{standard Villain dual derived as }(15.1306)\text{ and }(15.1307),\\[1mm]
+\mathrm{PASS}_{\mathrm{ISP}}
+&
+\text{Barandes-aligned ISP records give the same pushed-forward law},\\[1mm]
+\mathrm{PASS}_{\mathrm{GM}}
+&
+\text{the height and monopole gas are recovered by standard transforms},\\[1mm]
+\mathrm{O1}_{\mathrm{pos}}
+&
+\text{no extra ISP disorder estimate appears from the record law alone},\\[1mm]
+\mathrm{O1}_{\mathrm{neg}}
+&
+\text{requires a derived nonboundary }Q^{\mathrm{ISP}}\text{ satisfying }(15.1320),\\[1mm]
+\mathrm{FAIL}_{\mathrm{scope}}
+&
+\text{any proof uses CD4, continuum survival, or an ISP Markov supposition.}
+\end{array}}
+\tag{15.1321}
+```
+
+So the solved three-dimensional Abelian case gives a clean baseline: ISP
+boundary records reproduce the right dual object exactly, but under the
+Barandes-aligned no-extra-kernel rule they do not improve it. The next question
+is no longer whether the Abelian dual exists. It is whether any ISP axiom
+actually supplies a nonboundary `Q_ISP`; absent that, the four-dimensional
+non-Abelian route must obtain its fixed-IR disorder estimate by ordinary
+Yang-Mills means.
+
+### 15.80. Target 40.165: No-Tilt Dichotomy For Barandes-Aligned ISP Records
+
+Searchable Target-40.165 tag:
+
+`V4P40-TARGET-40165-NO-TILT-DICHOTOMY`.
+
+Target 40.164 proves the O1 baseline in the solved Abelian case. The next
+question is whether that conclusion is accidental, or whether it follows from a
+general record-law principle: if ISP records are only deterministic readouts of
+one finite whole-process law, then they cannot create a new bulk center measure.
+
+This target makes that principle explicit. It is not a confinement theorem. It
+is a guardrail theorem: it says exactly what kind of extra premise would be
+needed before `Q_ISP` could be real.
+
+#### 15.80.1. Admissible ISP Record Construction
+
+Fix a finite cutoff `a` and a fixed physical scale package `R`. Let:
+
+```math
+(\Omega_a,\mathcal F_a,\mu_a)
+\tag{15.1322}
+```
+
+be the ordinary finite-cutoff whole-process law. For lattice Yang-Mills,
+`\Omega_a` is the finite link-field space or compact link-field space and
+`\mu_a` is the positive Gibbs law.
+
+An admissible ISP record construction is generated by the following operations:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A1}
+&
+\text{deterministic readout maps }X_a:\Omega_a\to\mathcal X_a,\\[1mm]
+\mathrm{A2}
+&
+\text{deterministic boundary restrictions }X_a\mapsto X_a|_{\partial R},\\[1mm]
+\mathrm{A3}
+&
+\text{conditioning on declared boundary-record events of positive measure},\\[1mm]
+\mathrm{A4}
+&
+\text{coordinate changes or common refinements of deterministic records},\\[1mm]
+\mathrm{A5}
+&
+\text{normalization of the resulting pushed-forward or conditioned law}.
+\end{array}}
+\tag{15.1323}
+```
+
+The following are not admissible unless separately derived from the same
+finite-cutoff law:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{F1}
+&
+\text{a new Markov kernel between boundary records},\\[1mm]
+\mathrm{F2}
+&
+\text{postselection on future charged signs or good sectors},\\[1mm]
+\mathrm{F3}
+&
+\text{an added Boltzmann factor on records},\\[1mm]
+\mathrm{F4}
+&
+\text{a continuum or }t_-\downarrow0\text{ limiting assumption},\\[1mm]
+\mathrm{F5}
+&
+\text{a nonstandard stochastic independence premise from ISP ontology}.
+\end{array}}
+\tag{15.1324}
+```
+
+This is the Barandes-aligned meaning of whole-process records: records are
+ordinary stochastic data read from one law, not subprocesses made Markov by
+assumption.
+
+#### 15.80.2. Standard Pushforward And Boundary Conditioning
+
+Let `X_a` be a center, flux, or boundary-center record. The corresponding
+standard record law is:
+
+```math
+\nu^X_a
+:=
+(X_a)_{\#}\mu_a.
+\tag{15.1325}
+```
+
+If a declared boundary record event is imposed:
+
+```math
+E_a\in\sigma(X_a|_{\partial R}),
+\qquad
+\mu_a(E_a)>0,
+\tag{15.1326}
+```
+
+then the boundary-conditioned standard record law is:
+
+```math
+\nu^X_{a,E}
+:=
+(X_a)_{\#}
+\left(
+\mu_a(\,\cdot\,|E_a)
+\right).
+\tag{15.1327}
+```
+
+This conditioning can certainly change the bulk distribution of `X_a`. But it
+is not an ISP tilt. It is the ordinary conditional distribution of the same
+finite-cutoff law after fixing declared boundary data.
+
+#### 15.80.3. No-Tilt Theorem
+
+**Theorem 40.165A (No Bulk Tilt From Deterministic ISP Records).** Suppose an
+ISP record law for `X_a`, with declared boundary event `E_a`, is built only by
+the admissible operations (15.1323) from the same finite-cutoff law (15.1322).
+Then:
+
+```math
+\mu^{\mathrm{ISP},X}_{a,E}
+=
+\nu^X_{a,E}.
+\tag{15.1328}
+```
+
+Consequently, after transporting coordinates to the same record space, the
+Radon-Nikodym derivative is:
+
+```math
+\frac{
+d\mu^{\mathrm{ISP},X}_{a,E}
+}{
+d\nu^X_{a,E}
+}
+(x)
+=
+1
+\qquad
+\nu^X_{a,E}\text{-almost surely}.
+\tag{15.1329}
+```
+
+Equivalently, any representation:
+
+```math
+\frac{
+d\mu^{\mathrm{ISP},X}_{a,E}
+}{
+d\nu^X_{a,E}
+}
+(x)
+=
+\frac{
+\exp
+\left(
+-Q^{\mathrm{ISP}}_{a,E}(x)
+\right)
+}{
+\mathbb E_{\nu^X_{a,E}}
+\left[
+\exp
+\left(
+-Q^{\mathrm{ISP}}_{a,E}
+\right)
+\right]
+}
+\tag{15.1330}
+```
+
+has:
+
+```math
+Q^{\mathrm{ISP}}_{a,E}(x)
+=
+\mathrm{constant}
+\qquad
+\nu^X_{a,E}\text{-almost surely}.
+\tag{15.1331}
+```
+
+Thus deterministic ISP records cannot generate a nonboundary bulk tilt.
+
+#### Proof
+
+Operation A1 gives exactly the pushforward (15.1325). Operation A2 only replaces
+`X_a` by a deterministic function of `X_a`. Operation A3 replaces `\mu_a` by the
+ordinary conditional law `\mu_a(.|E_a)` before pushing forward. Operation A4
+either renames the record space or passes to a deterministic common refinement.
+Operation A5 normalizes the same measure.
+
+Every finite composition of A1-A5 is therefore a deterministic pushforward of
+either `\mu_a` or `\mu_a(.|E_a)`. For the declared record `X_a` and the declared
+boundary event `E_a`, that law is precisely (15.1327). This proves (15.1328).
+Equation (15.1329) follows by equality of measures. If (15.1330) also holds,
+then the normalized exponential density equals one almost surely, so
+`Q_ISP` is constant almost surely. `∎`
+
+#### 15.80.4. Common-Refinement Lemma
+
+A possible loophole is to say that the ISP readout is not the same as the
+standard readout. The correct comparison then uses a common refinement.
+
+Let:
+
+```math
+X_a:\Omega_a\to\mathcal X_a,
+\qquad
+Y_a:\Omega_a\to\mathcal Y_a
+\tag{15.1332}
+```
+
+be two deterministic record maps. Define:
+
+```math
+K_a
+:=
+(X_a,Y_a).
+\tag{15.1333}
+```
+
+Then:
+
+```math
+(X_a)_{\#}\mu_a
+=
+(\pi_X)_{\#}(K_a)_{\#}\mu_a,
+\qquad
+(Y_a)_{\#}\mu_a
+=
+(\pi_Y)_{\#}(K_a)_{\#}\mu_a.
+\tag{15.1334}
+```
+
+So two deterministic readouts of the same whole-process law are marginals of
+one refined ordinary record law. They do not define two competing bulk dynamics.
+Any apparent tilt between them is a comparison between different observables,
+not evidence of an ISP-modified center measure.
+
+#### 15.80.5. What Can Still Produce A Real Tilt
+
+The no-tilt theorem does not rule out every possible ISP contribution. It rules
+out a specific kind: a hidden bulk measure change produced by deterministic
+record language alone.
+
+A genuine `Q_ISP` would require at least one of the following:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{E1}
+&
+\text{a new finite whole-process law different from the Yang-Mills Gibbs law},\\[1mm]
+\mathrm{E2}
+&
+\text{a derived superselection rule not expressible as boundary conditioning},\\[1mm]
+\mathrm{E3}
+&
+\text{a non-deterministic record readout derived from the finite law},\\[1mm]
+\mathrm{E4}
+&
+\text{a non-Abelian center/coset readout with no Abelian common-refinement analogue},\\[1mm]
+\mathrm{E5}
+&
+\text{a reflection-positive or transfer estimate not equivalent to a new measure}.
+\end{array}}
+\tag{15.1335}
+```
+
+Items E1-E4 are structural escape hatches. They must be stated and proved as
+new inputs, not inferred from the word "record." Item E5 is different: it would
+not change the measure, but it could still prove the missing fixed-IR charged
+gap by ordinary mathematical physics.
+
+#### 15.80.6. Consequence For The Paper-40 Route
+
+Combining Target 40.164 with Theorem 40.165A gives:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{In Abelian and center-dual cases, Barandes-aligned ISP records}\\[1mm]
+\text{identify the correct disorder variables but do not add a bulk tilt.}
+\end{array}}
+\tag{15.1336}
+```
+
+Therefore the remaining four-dimensional options are:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{R1}
+&
+\text{prove the fixed-IR charged disorder estimate by ordinary YM methods},\\[1mm]
+\mathrm{R2}
+&
+\text{find a genuine non-Abelian ISP escape hatch among E1-E4},\\[1mm]
+\mathrm{R3}
+&
+\text{use RP or transfer positivity to prove the gap without changing the law},\\[1mm]
+\mathrm{R4}
+&
+\text{close O1 and treat the route as a conditional reduction only}.
+\end{array}}
+\tag{15.1337}
+```
+
+This is a useful narrowing. The next proof should not look for a mysterious
+center-measure improvement inside the existing record terminology. It should
+either produce one of E1-E4 explicitly, or move to R1/R3 and prove the charged
+gap as an ordinary finite-cutoff Yang-Mills estimate.
+
+#### 15.80.7. Completed Target 40.165
+
+Target 40.165 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{no}\text{-}\mathrm{tilt}}
+&
+\text{deterministic ISP record pushforwards give }Q^{\mathrm{ISP}}=\mathrm{const},\\[1mm]
+\mathrm{PROVED}_{\mathrm{refine}}
+&
+\text{different deterministic readouts compare through a common refinement},\\[1mm]
+\mathrm{OPEN}_{\mathrm{escape}}
+&
+\text{only E1-E4 can create a genuine ISP bulk tilt},\\[1mm]
+\mathrm{OPEN}_{\mathrm{gap}}
+&
+\text{R1 or R3 must still prove the fixed-IR charged disorder estimate},\\[1mm]
+\mathrm{FAIL}_{\mathrm{scope}}
+&
+\text{any proof uses hidden Markov divisibility, postselection, or CD4.}
+\end{array}}
+\tag{15.1338}
+```
+
+The result is O1-positive for deterministic Abelian/center record laws, and it
+sets the burden for any O1-negative claim: exhibit a specific nonboundary
+mechanism beyond deterministic pushforward from the same finite whole-process
+measure.
+
+### 15.81. Target 40.166: Non-Abelian Readout Escape Test
+
+Searchable Target-40.166 tag:
+
+`V4P40-TARGET-40166-NONABELIAN-READOUT-ESCAPE`.
+
+Target 40.165 leaves one structural escape hatch that is worth testing before
+turning back to reflection positivity or transfer estimates. Perhaps the
+non-Abelian SU(2) center/coset/cocycle readout is not merely a deterministic
+record map in the sense of Target 40.165. If so, it might create a genuine
+`Q_ISP` without adding a new Markov kernel.
+
+This target closes that possibility at finite cutoff. The non-Abelian readout
+is section-dependent and cocycle-rich, but it is still a deterministic readout
+of the same SU(2) link configuration. Its difficulty is analytic, not
+measure-theoretic.
+
+#### 15.81.1. The Finite SU(2) Whole-Process Law
+
+Fix the finite lattice, cutoff, physical scale package, and boundary conditions.
+Let:
+
+```math
+\Omega^{\mathrm{SU2}}_a
+:=
+SU(2)^{E_a}.
+\tag{15.1339}
+```
+
+The finite-cutoff Yang-Mills law is:
+
+```math
+d\mu^{\mathrm{SU2}}_a(U)
+=
+\frac{1}{Z_a}
+\prod_{p}
+K_t(U_p)
+\prod_{\ell}dU_{\ell}.
+\tag{15.1340}
+```
+
+This is the only whole-process law allowed in the present ontology-free and
+Barandes-aligned reading. ISP records may be read from it, pushed forward, or
+conditioned on declared boundary records. They may not replace it by a new
+stochastic dynamics.
+
+#### 15.81.2. Section-Relative Non-Abelian Record Map
+
+Choose a measurable section:
+
+```math
+s:SO(3)\to SU(2).
+\tag{15.1341}
+```
+
+For each link:
+
+```math
+\bar U_{\ell}
+:=
+\pi(U_{\ell}),
+\qquad
+z^s_{\ell}
+:=
+U_{\ell}s(\bar U_{\ell})^{-1}
+\in
+\{\pm1\}.
+\tag{15.1342}
+```
+
+Define the section cocycle and center plaquette coordinate as in (15.13) and
+(15.14):
+
+```math
+c_s(\bar U;p),
+\qquad
+b^s_p
+:=
+(\delta z^s)_p\,c_s(\bar U;p).
+\tag{15.1343}
+```
+
+For any fixed finite battery of loops, sheets, collars, tiles, and boundary
+records chosen at physical scale before the cutoff is removed, define:
+
+```math
+\mathfrak R^s_a(U)
+:=
+\left(
+\bar U,
+z^s,
+b^s,
+c_s(\bar U;\cdot),
+\mathcal B^s_{\partial,R}(U),
+\mathcal A^s_{\mathrm{bat},R}(U)
+\right).
+\tag{15.1344}
+```
+
+Here `B_boundary` denotes the finite collection of boundary-center records in
+the battery, and `A_bat` denotes the corresponding finite collection of
+section-cocycle amplitudes such as (15.17). Every entry in (15.1344) is a
+measurable deterministic function of `U`.
+
+Therefore the non-Abelian record law is:
+
+```math
+\nu^s_a
+:=
+(\mathfrak R^s_a)_{\#}\mu^{\mathrm{SU2}}_a.
+\tag{15.1345}
+```
+
+This is not an ansatz. It is the ordinary pushforward of the finite SU(2) Gibbs
+law.
+
+#### 15.81.3. Non-Abelian No-Escape Theorem
+
+**Theorem 40.166A (SU(2) Center/Coset Records Are Deterministic Pushforwards).**
+For any fixed measurable section `s` and any fixed physical finite readout
+battery, the Barandes-aligned ISP law of the SU(2) center/coset/cocycle records
+equals the ordinary pushforward law:
+
+```math
+\mu^{\mathrm{ISP},s}_{\mathrm{rec},a}
+=
+\nu^s_a.
+\tag{15.1346}
+```
+
+If a declared boundary-record event `E_a` is imposed, then:
+
+```math
+\mu^{\mathrm{ISP},s}_{\mathrm{rec},a,E}
+=
+(\mathfrak R^s_a)_{\#}
+\left(
+\mu^{\mathrm{SU2}}_a(\,\cdot\,|E_a)
+\right).
+\tag{15.1347}
+```
+
+Consequently no nonboundary `Q_ISP` is generated by the non-Abelian readout
+itself.
+
+#### Proof
+
+Equations (15.1342)-(15.1344) define a measurable map from the finite SU(2) link
+space to the declared record space. Reading records, restricting them to
+boundaries, adding a finite battery of cocycle observables, and conditioning on
+a declared boundary event are exactly operations A1-A5 of Target 40.165. The
+claim is therefore Theorem 40.165A applied to:
+
+```math
+X_a=\mathfrak R^s_a,
+\qquad
+\mu_a=\mu^{\mathrm{SU2}}_a.
+\tag{15.1348}
+```
+
+No Markov kernel, postselection rule, or continuum survival assumption is used.
+`∎`
+
+#### 15.81.4. Section Changes Are Common Refinements, Not New Measures
+
+Let:
+
+```math
+s'(\bar g)=\varepsilon(\bar g)s(\bar g)
+\tag{15.1349}
+```
+
+be another measurable section. The section-change laws (15.24)-(15.29) give a
+deterministic transformation between the full section-relative record packages:
+
+```math
+\left(
+\bar U,z^s,b^s,c_s,A^s
+\right)
+\longleftrightarrow
+\left(
+\bar U,z^{s'},b^{s'},c_{s'},A^{s'}
+\right),
+\tag{15.1350}
+```
+
+after including the common `SO(3)` coordinate `\bar U` and the fixed function
+`\varepsilon(\bar U)`.
+
+The important caveat is that the bare center plaquette coordinate alone is not
+section-invariant. In fact (15.26) shows that `b^s` and `b^{s'}` are related
+through the coset plaquette data. Thus an untransported comparison of two bare
+center marginals can look like a change of measure. But this is a projection
+artifact: both marginals come from the same common refined law:
+
+```math
+(\mathfrak R^s_a,\mathfrak R^{s'}_a)_{\#}\mu^{\mathrm{SU2}}_a.
+\tag{15.1351}
+```
+
+So section dependence does not create a second dynamics. It only says that the
+bare center coordinate is not itself a physical invariant.
+
+#### 15.81.5. The Cocycle Amplitude Is Not An ISP Tilt
+
+The conditional cocycle amplitude:
+
+```math
+\alpha^s_{C,S}(b)
+=
+\mathbb E
+\left[
+A^s_{C,S}(\bar U)
+\mid
+\mathcal B_s=b
+\right]
+\tag{15.1352}
+```
+
+is a genuine obstruction, but it is not a new positive record measure. It is a
+conditional expectation of a Wilson-insertion amplitude under the standard
+pushforward law. In general it is signed and loop-dependent. Therefore the
+formal object:
+
+```math
+\alpha^s_{C,S}(b)\,d\mu^s_{\mathrm{cen}}(b)
+\tag{15.1353}
+```
+
+is not an ISP replacement for the center marginal. It is the exact Wilson
+expectation written by the tower property. Treating (15.1353) as a new positive
+center law would violate the positivity and no-postselection guardrails.
+
+This distinction is central. The non-Abelian cocycle can cancel center disorder,
+carry area-supported dependence, or obstruct the Wilson route. But those are
+analytic facts about conditional expectations inside ordinary SU(2) Yang-Mills,
+not evidence of an ISP-created `Q_ISP`.
+
+#### 15.81.6. E4 Verdict
+
+The E4 escape hatch from (15.1335) was:
+
+```math
+\text{a non-Abelian center/coset readout with no Abelian common-refinement analogue}.
+\tag{15.1354}
+```
+
+At finite cutoff, the SU(2) center/coset/cocycle readout does not satisfy this
+escape condition. The full readout has a common refinement, namely the original
+SU(2) link field itself, or equivalently the joint record map
+(15.1351). Therefore:
+
+```math
+\boxed{
+\text{E4 fails for deterministic finite SU(2) readouts.}
+}
+\tag{15.1355}
+```
+
+What remains open is not a hidden ISP measure. What remains open is the fixed-IR
+Yang-Mills estimate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove boundary-stable charged center disorder,}\\[1mm]
+\text{or prove that the actual cocycle amplitude is boundary/quasilocal,}\\[1mm]
+\text{or prove a reflection-positive charged sheet gap.}
+\end{array}}
+\tag{15.1356}
+```
+
+#### 15.81.7. Completed Target 40.166
+
+Target 40.166 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{push}}
+&
+\text{SU(2) center/coset/cocycle records are deterministic pushforwards},\\[1mm]
+\mathrm{PROVED}_{\mathrm{section}}
+&
+\text{section changes are common-refinement coordinate changes},\\[1mm]
+\mathrm{PROVED}_{\mathrm{notilt}}
+&
+\text{no nonboundary }Q^{\mathrm{ISP}}\text{ arises from non-Abelian readout},\\[1mm]
+\mathrm{OPEN}_{\mathrm{analytic}}
+&
+\text{the cocycle amplitude may still carry area-order dependence},\\[1mm]
+\mathrm{NEXT}
+&
+\text{investigate RP or ordinary transfer positivity for the charged gap}.
+\end{array}}
+\tag{15.1357}
+```
+
+Thus the current ISP premises have no remaining measure-theoretic escape hatch
+inside the center/coset readout. The paper's confinement route is now honestly
+conditional on an ordinary fixed-IR nonperturbative estimate, unless a new
+finite whole-process law, superselection principle, or independently derived
+non-deterministic readout is explicitly added.
+
+## 16. Roadmap After O1/E4: Record-Law Confinement And RP Support
+
+Searchable roadmap tag:
+
+`V4P40-ROADMAP-AFTER-O1-E4`.
+
+The route is now clear enough to summarize. Confinement and string tension are
+properties of configuration observables. Wilson loops are functions of link
+records; center sheets and center fluxes are functions of the same finite
+record law. Therefore the confinement question is ISP-native in the precise
+sense that it can be stated and tested directly on the whole-process record
+law.
+
+The mass gap is different. The clustering rate itself is still readable as a
+configuration-measure statement, but the statement that this rate is the
+spectral gap of a positive Hamiltonian is reconstructed. It needs reflection
+positivity, Osterwalder-Schrader reconstruction, and a Hilbert-space transfer
+picture. Thus RP is essential for the mass-gap interpretation, but confinement
+itself should first be attacked as a record-law area-order estimate.
+
+### 16.1. General Aim
+
+The remaining Paper-40 aim is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove or falsify a fixed-IR, boundary-stable, quenched charged}\\[1mm]
+\text{center-disorder estimate for the finite Yang-Mills record law.}
+\end{array}}
+\tag{16.1}
+```
+
+Equivalently, prove a positive fixed-IR string tension from record observables:
+
+```math
+\sigma_R
+:=
+\liminf_{\mathrm{phys}\ A(S)\to\infty}
+\left[
+-\frac{1}{A_{\mathrm{phys}}(S)}
+\log
+\left|
+\mathbb E_{\mu_a}
+\left[
+W(C)
+\right]
+\right|
+\right]
+>
+0,
+\tag{16.2}
+```
+
+with the cutoff removed at fixed physical geometry before the large-area limit
+is taken.
+
+The center-transfer version of the same aim is:
+
+```math
+\sup_{\substack{
+j\\
+\omega_-,\omega_+
+}}
+\frac{
+\left|
+Z^{\chi}_{j,a}(\omega_-,\omega_+)
+\right|
+}{
+Z^{0}_{j,a}(\omega_-,\omega_+)
+}
+\le
+e^{-m_R}
++
+o_a(1),
+\qquad
+m_R>0.
+\tag{16.3}
+```
+
+This is the operational fixed-IR confinement certificate left by Section 15.
+It is a genuine intermediate milestone, not the full continuum confinement
+theorem. Proving `sigma_R > 0` at fixed physical resolution still leaves the
+continuum-survival step, CD4/O5, including the `R`/`t_-` limiting question. That
+is precisely why the roadmap forbids attacking CD4 before the fixed-IR
+certificate is isolated.
+
+### 16.2. Ordered Investigations
+
+The investigations should proceed in this order.
+
+```math
+\boxed{
+\begin{array}{c|l}
+\text{order} & \text{investigation}\\
+\hline
+1
+&
+\text{record-law confinement certificate: define }\sigma_R\text{ and }(16.3)
+\text{ purely on records}\\
+2
+&
+\text{RP boundary: prove the charged chessboard inequality if possible}\\
+3
+&
+\text{strict gap audit: decide whether RP gives }m_R>0
+\text{ or only locates the operator}\\
+4
+&
+\text{ordinary transfer route: search for a charged-sector spectral deficit}\\
+5
+&
+\text{cocycle route: prove boundary/quasilocal actual amplitude or falsify it}\\
+6
+&
+\text{mass-gap reconstruction only after record-law decay is established.}
+\end{array}}
+\tag{16.4}
+```
+
+The immediate next target is therefore not another ISP-measure escape. O1 and E4
+are closed under current deterministic finite-record premises. The next target
+is the reflection-positive boundary of the confinement certificate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{prove the RP/chessboard inequality for fixed physical charged sheets,}\\[1mm]
+\text{then identify whether a strict charged free-energy gap follows}\\[1mm]
+\text{or remains open.}
+\end{array}}
+\tag{16.5}
+```
+
+### 16.3. Expected RP Audit Boundary
+
+The RP investigation should be scoped with realistic expectations. Reflection
+positivity is coupling-independent, so it should not be expected by itself to
+separate confined, Coulomb, and Higgs-type behavior. The likely positive output
+is an RP/chessboard inequality or, at most, a two-sidedness statement for a
+charged tile. The strict charged free-energy gap:
+
+```math
+m_R>0
+\tag{16.6}
+```
+
+is expected to remain an independent dynamical input unless a new charged-sector
+spectral deficit is proved.
+
+There is also a concrete technical hazard. The charged or twisted sheet
+insertion must be compatible with the reflection operation used in the
+chessboard estimate. RP is naturally a neutral-sector positivity tool. Whether
+the reflected construction actually sees the charged sector, rather than merely
+constructing the neutral Hilbert-space framework, is one of the open points to
+audit.
+
+The expected RP outcomes are therefore:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{RP1}
+&
+\text{RP gives the reflected Hilbert or chessboard structure only},\\[1mm]
+\mathrm{RP2}
+&
+\text{RP gives charged two-sidedness but not a strict }m_R>0,\\[1mm]
+\mathrm{RP3}
+&
+\text{RP proves the strict charged gap }m_R>0.
+\end{array}}
+\tag{16.7}
+```
+
+The roadmap leaves RP3 open, but the audit should expect RP1 or RP2 unless an
+additional charged-sector estimate is found.
+
+### 16.4. Fixed-IR Alignment Contract
+
+Every future theorem in this branch must satisfy the following contract:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FIR1}
+&
+\text{choose loop shape, tile size, collar, smoothing, and RP block physically first},\\[1mm]
+\mathrm{FIR2}
+&
+\text{never let the reflected RP block shrink to a plaquette as }a\downarrow0,\\[1mm]
+\mathrm{FIR3}
+&
+\text{measure string tension using physical area, not raw lattice area},\\[1mm]
+\mathrm{FIR4}
+&
+\text{state charged gaps per fixed physical tile, not per microscopic plaquette},\\[1mm]
+\mathrm{FIR5}
+&
+\text{prove constants uniform as }a\downarrow0\text{ at fixed physical geometry},\\[1mm]
+\mathrm{FIR6}
+&
+\text{take the large-loop or large-area limit only after cutoff removal},\\[1mm]
+\mathrm{FIR7}
+&
+\text{allow constants to depend on physical }R\text{ and shape class, not on }a.
+\end{array}}
+\tag{16.8}
+```
+
+This contract blocks the common false proof: a true microscopic chessboard or
+strong-coupling estimate that never becomes a fixed-physical-area statement.
+
+### 16.5. Barandes Alignment And No Hidden Markov Kernels
+
+All future steps must also obey:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{BA1}
+&
+\text{work with one finite whole-process record law at each cutoff},\\[1mm]
+\mathrm{BA2}
+&
+\text{use deterministic readouts, pushforwards, and declared conditioning only},\\[1mm]
+\mathrm{BA3}
+&
+\text{do not introduce stochastic Markov divisibility from ISP ontology},\\[1mm]
+\mathrm{BA4}
+&
+\text{derive every transfer kernel from the ordinary finite Gibbs law},\\[1mm]
+\mathrm{BA5}
+&
+\text{keep RP as a positivity/reconstruction theorem, not a hidden dynamics},\\[1mm]
+\mathrm{BA6}
+&
+\text{separate configuration confinement from reconstructed spectral mass gap.}
+\end{array}}
+\tag{16.9}
+```
+
+The route may use Markov-field facts or transfer kernels when they are genuine
+consequences of the finite lattice Gibbs measure. It may not assert that ISP
+records themselves form a divisible Markov process.
+
+### 16.6. What Counts As Progress
+
+Progress now has three honest forms:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{P1}
+&
+\text{prove }(16.3)\text{ from record-law center disorder},\\[1mm]
+\mathrm{P2}
+&
+\text{prove an RP/chessboard inequality and isolate the exact strict-gap input},\\[1mm]
+\mathrm{P3}
+&
+\text{falsify a proposed gap by center-sign pinning or area cocycle cancellation}.
+\end{array}}
+\tag{16.10}
+```
+
+Non-progress is equally clear:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{N1}
+&
+\text{assuming the charged gap and calling a criterion a theorem},\\[1mm]
+\mathrm{N2}
+&
+\text{using small }g_{\mathrm{eff}}(R)\text{ estimates as if they were IR disorder},\\[1mm]
+\mathrm{N3}
+&
+\text{attacking CD4 or }t_-\downarrow0\text{ before the fixed-IR gap is proved},\\[1mm]
+\mathrm{N4}
+&
+\text{smuggling in an ISP Markov kernel or postselected good sector}.
+\end{array}}
+\tag{16.11}
+```
+
+This is the paper's post-O1 working discipline. Confinement is record-native and
+should be attacked directly as a fixed-IR area law. RP should be investigated
+next, but only as a way to prove or delimit the charged-sheet free-energy gap
+and, later, to support spectral mass-gap reconstruction.
+
+## 17. Target 40.167: RP Boundary For The Fixed-IR Confinement Certificate
+
+Searchable Target-40.167 tag:
+
+`V4P40-TARGET-40167-RP-FIXED-IR-CONFINEMENT-BOUNDARY`.
+
+Section 16 leaves one nonperturbative lever that does not rely on ISP measure
+modification, hidden Markov divisibility, or weak-coupling good-sector
+smallness: reflection positivity. This section investigates exactly what RP can
+and cannot supply for the fixed-IR record-law confinement certificate.
+
+The target is deliberately narrow. RP is not asked to prove the full continuum
+Yang-Mills theorem. It is asked whether, at fixed physical resolution, it proves
+the charged chessboard reduction and whether it also proves the strict charged
+free-energy deficit needed in (16.3).
+
+### 17.1. Fixed-IR RP Setup
+
+Choose first, in physical units:
+
+```math
+\mathcal G_R
+:=
+\left(
+T_R,
+\partial T_R,
+S_R,
+C_R,
+\rho_R,
+\ell_R
+\right),
+\tag{17.1}
+```
+
+where `T_R` is the physical tile, `S_R` is the local charged sheet segment,
+`C_R` is the compatible loop boundary segment when present, `rho_R` is the
+collar thickness, and `ell_R` is the smoothing or blocking scale. The reflected
+chessboard volume is built from physical copies of `T_R`, not from plaquettes.
+
+For each cutoff `a`, let:
+
+```math
+\Lambda_{R,N,a}
+\tag{17.2}
+```
+
+be a finite reflected chessboard made of `N` physical copies of the tile
+package. The number of microscopic cells in each copy grows as `a` goes to
+zero. This is the fixed-IR condition:
+
+```math
+\#(T_R\cap\Lambda_a)
+\longrightarrow
+\infty
+\qquad
+\text{as }a\downarrow0,
+\tag{17.3}
+```
+
+while the physical shape of `T_R` is held fixed.
+
+Let:
+
+```math
+d\mu^{0}_{R,N,a}
+\tag{17.4}
+```
+
+be the neutral finite-cutoff Gibbs record law on the reflected chessboard, with
+the declared physical boundary/collar data. Let:
+
+```math
+\chi_{j,a}
+\tag{17.5}
+```
+
+be the charged tile character in the `j`-th reflected copy, transported by the
+reflection group from the original physical tile.
+
+### 17.2. Neutral And Charged Chessboard Ratios
+
+The neutral chessboard partition function is:
+
+```math
+Z^{0}_{R,N,a}
+:=
+\int
+d\mu^{0}_{R,N,a}.
+\tag{17.6}
+```
+
+The fully charged chessboard partition function is:
+
+```math
+Z^{\chi}_{R,N,a}
+:=
+\int
+\prod_{j=1}^{N}
+\chi_{j,a}
+\ d\mu^{0}_{R,N,a}.
+\tag{17.7}
+```
+
+The charged chessboard ratio is:
+
+```math
+\mathfrak R^{\chi}_{R,N,a}
+:=
+\frac{
+\left|
+Z^{\chi}_{R,N,a}
+\right|
+}{
+Z^{0}_{R,N,a}
+}.
+\tag{17.8}
+```
+
+The strict fixed-IR RP3 target would be:
+
+```math
+\mathfrak R^{\chi}_{R,N,a}
+\le
+\exp
+\left(
+-m_RN
++
+o_a(N)
+\right),
+\qquad
+m_R>0.
+\tag{17.9}
+```
+
+This is the same content as (15.1097), now with the fixed-IR contract made
+explicit.
+
+### 17.3. Charged Reflection Admissibility
+
+Reflection positivity is naturally a neutral-sector positivity statement. A
+charged insertion must pass an additional compatibility test before chessboard
+estimates can be applied.
+
+Let `theta` be a reflection across a physical tile face. The charged tile
+observable is reflection-admissible if its reflected copies obey:
+
+```math
+\theta(\chi_{j,a})
+\in
+\left\{
+\chi_{\theta j,a},
+-\chi_{\theta j,a}
+\right\},
+\tag{17.10}
+```
+
+and if the product of signs around every reflected cell is fixed by the declared
+sheet orientation rather than by postselection:
+
+```math
+\prod_{\mathrm{reflections}}
+\mathrm{sign}(\theta,\chi)
+=
+\mathrm{sign}_{\mathrm{sheet}}.
+\tag{17.11}
+```
+
+The charged observable also must lie in the finite record algebra generated by
+the physical tile/collar package:
+
+```math
+\chi_{j,a}
+\in
+\mathcal A_{\mathrm{rec}}(T_R,\rho_R).
+\tag{17.12}
+```
+
+If (17.10)-(17.12) fail, RP may still reconstruct the neutral Hilbert space, but
+it does not give a charged chessboard estimate for the operator needed in
+(16.3).
+
+### 17.4. Conditional RP Chessboard Theorem
+
+**Theorem 40.167A (RP Gives The Chessboard Reduction When The Charged Tile Is
+Admissible).** Assume:
+
+```math
+\begin{array}{ll}
+\mathrm{A1} & \text{the finite Gibbs law is reflection positive for physical tile reflections},\\[1mm]
+\mathrm{A2} & \text{the reflected tile/collar/sheet package satisfies FIR1-FIR7},\\[1mm]
+\mathrm{A3} & \text{the charged tile observable satisfies }(17.10)\text{-}(17.12),\\[1mm]
+\mathrm{A4} & \text{boundary conditioning is reflection-symmetric or paired}.
+\end{array}
+\tag{17.13}
+```
+
+Then the local charged tile ratio satisfies the chessboard bound:
+
+```math
+\mathfrak r^{\chi}_{j,a}(\omega_-,\omega_+)
+\le
+\left(
+\mathfrak R^{\chi}_{R,N,a}
+\right)^{1/N}
++
+o_a(1),
+\tag{17.14}
+```
+
+uniformly for the fixed physical interface atlas.
+
+#### Proof
+
+Reflection positivity gives a positive semi-definite pairing:
+
+```math
+\langle F,\Theta F\rangle_{0}
+\ge
+0
+\tag{17.15}
+```
+
+for observables `F` supported on one half of the reflected chessboard. The
+standard Cauchy-Schwarz iteration over the reflection group gives the
+chessboard estimate: replacing one local charged insertion by its fully
+reflected product can only increase the appropriate normalized absolute ratio
+after taking the `N`-th root. Assumptions A2-A4 ensure that this iteration acts
+on physical tiles, transports the charged sheet consistently, and does not
+change the declared boundary conditioning by postselection. This yields
+(17.14). `∎`
+
+### 17.5. RP Does Not By Itself Prove Strictness
+
+Theorem 40.167A reduces the local target to the fully reflected charged ratio.
+It does not prove that this ratio has exponential decay in `N`.
+
+Define the charged RP free-energy density:
+
+```math
+\Delta f^{\chi}_{R,a}
+:=
+-
+\limsup_{N\to\infty}
+\frac{1}{N}
+\log
+\mathfrak R^{\chi}_{R,N,a}.
+\tag{17.16}
+```
+
+Then:
+
+```math
+\mathrm{RP3}
+\quad
+\Longleftrightarrow
+\quad
+\liminf_{a\downarrow0}
+\Delta f^{\chi}_{R,a}
+>
+0.
+\tag{17.17}
+```
+
+Reflection positivity supplies the Hilbert-space structure and the chessboard
+submultiplicativity needed to define (17.16). But the strict inequality in
+(17.17) is a charged-sector spectral or transfer deficit. It is not a formal
+consequence of positivity.
+
+The obstruction can be stated as equality of spectral radii. Let:
+
+```math
+\mathcal T^0_{R,a},
+\qquad
+\mathcal T^{\chi}_{R,a}
+\tag{17.18}
+```
+
+be the neutral and charged physical-tile transfer operators obtained from the
+same finite Gibbs law. Then strictness requires:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+e^{-m_R+o_a(1)}
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right).
+\tag{17.19}
+```
+
+RP constructs the setting in which (17.19) is meaningful. It does not by itself
+exclude:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+=
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right)
++
+o_a(1).
+\tag{17.20}
+```
+
+Equation (17.20) is the precise RP failure mode for the confinement certificate:
+the charged sector has no fixed-IR spectral deficit.
+
+### 17.6. RP Outcomes For The Fixed-IR Certificate
+
+The RP audit therefore has three possible outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{RP1}
+&
+\text{neutral RP holds, but charged admissibility fails},\\[1mm]
+\mathrm{RP2}
+&
+\text{charged chessboard or two-sidedness holds, but }(17.19)\text{ remains open},\\[1mm]
+\mathrm{RP3}
+&
+\text{a strict charged-sector deficit }(17.19)\text{ is proved},\\[1mm]
+\mathrm{FAIL}_{\mathrm{FIR}}
+&
+\text{the reflected block is microscopic or constants degrade as }a\downarrow0,\\[1mm]
+\mathrm{FAIL}_{\mathrm{BA}}
+&
+\text{the proof uses hidden Markov divisibility or postselection}.
+\end{array}}
+\tag{17.21}
+```
+
+Only RP3 proves the fixed-IR certificate (16.3) through the RP route. RP2 is
+still valuable: it identifies the exact transfer operator where the strict gap
+must be proved. RP1 is also useful because it shows that the charged sheet
+observable is not compatible with the chosen reflection geometry.
+
+### 17.7. Completed Target 40.167
+
+Target 40.167 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{conditional}}
+&
+\text{RP gives }(17.14)\text{ under charged reflection admissibility},\\[1mm]
+\mathrm{OPEN}_{\mathrm{admiss}}
+&
+\text{verify }(17.10)\text{-}(17.12)\text{ for the actual charged sheet package},\\[1mm]
+\mathrm{OPEN}_{\mathrm{strict}}
+&
+\text{prove or falsify the spectral deficit }(17.19),\\[1mm]
+\mathrm{EXPECTED}
+&
+\text{RP alone gives RP1 or RP2, not RP3},\\[1mm]
+\mathrm{CONSEQUENCE}
+&
+\text{the next hard input is a charged-sector transfer gap at fixed physical }R.
+\end{array}}
+\tag{17.22}
+```
+
+Thus RP remains the right next nonperturbative audit, but the target is no
+longer vague. Either the charged sheet is reflection-admissible and RP reduces
+the problem to a spectral-radius deficit, or the charged sheet is not
+reflection-admissible and this RP geometry cannot see the fixed-IR center
+certificate. In neither case may RP be used as a hidden Markov or continuum
+assumption.
+
+## 18. Target 40.168: Charged Reflection-Admissibility Audit
+
+Searchable Target-40.168 tag:
+
+`V4P40-TARGET-40168-CHARGED-REFLECTION-ADMISSIBILITY`.
+
+Target 40.167 made the RP route conditional on charged reflection
+admissibility. This section audits that condition for the actual SU(2) center
+sheet character used in the fixed-IR transfer problem.
+
+The audit is deliberately geometric. It asks whether the charged tile
+observable is transported by the physical reflection group without
+postselection and without changing the declared boundary/collar conditioning.
+It does not ask for the strict charged gap.
+
+### 18.1. Physical Reflection Package
+
+Fix a physical reflected tile package:
+
+```math
+\mathfrak P_R
+:=
+\left(
+T_R,
+S_R,
+\rho_R,
+\Theta_R,
+\mathcal C_R
+\right),
+\tag{18.1}
+```
+
+where `T_R` is a physical tile, `S_R` is the local sheet segment, `rho_R` is the
+collar thickness, `Theta_R` is the finite reflection group generated by physical
+tile-face reflections, and `C_R` denotes the declared collar/boundary record
+class.
+
+For each cutoff `a`, let:
+
+```math
+S_{j,a}
+:=
+S_R\cap T_{j,a}
+\tag{18.2}
+```
+
+be the lattice plaquette representative of the sheet segment in the `j`-th
+reflected tile.
+
+The package is sheet-compatible if every reflection sends sheet segments to
+sheet segments:
+
+```math
+\theta S_{j,a}
+=
+S_{\theta j,a}
+\quad
+\text{as unoriented }Z_2\text{ plaquette chains},
+\qquad
+\theta\in\Theta_R.
+\tag{18.3}
+```
+
+The word "unoriented" is important. For SU(2), the center is `Z_2`, so reversing
+a plaquette orientation does not change the center factor.
+
+### 18.2. The Actual Charged Tile Character
+
+For a section-relative center plaquette field `b`, the local charged tile
+character is:
+
+```math
+\chi_{j,a}(b)
+:=
+\prod_{p\in S_{j,a}}
+b_p.
+\tag{18.4}
+```
+
+Equivalently:
+
+```math
+\chi_{j,a}(b)
+=
+(-1)^{
+\left\langle
+b,
+S_{j,a}
+\right\rangle
+}.
+\tag{18.5}
+```
+
+This is a finite record observable. It belongs to the tile/collar record algebra
+whenever the sheet segment is contained in the declared physical tile package:
+
+```math
+\chi_{j,a}
+\in
+\mathcal A_{\mathrm{rec}}(T_R,\rho_R).
+\tag{18.6}
+```
+
+Thus condition (17.12) is a geometry/readout condition, not a dynamical
+estimate.
+
+### 18.3. Reflection Covariance Of The Z2 Sheet Character
+
+The reflection action on center records is:
+
+```math
+(\theta b)_p
+:=
+b_{\theta^{-1}p}.
+\tag{18.7}
+```
+
+For SU(2), no orientation sign appears because:
+
+```math
+b_p^{-1}=b_p,
+\qquad
+b_p\in\{\pm1\}.
+\tag{18.8}
+```
+
+Therefore:
+
+```math
+\theta(\chi_{j,a})(b)
+:=
+\chi_{j,a}(\theta^{-1}b)
+=
+\prod_{p\in S_{j,a}}
+b_{\theta p}
+=
+\prod_{q\in \theta S_{j,a}}
+b_q.
+\tag{18.9}
+```
+
+Using sheet compatibility (18.3):
+
+```math
+\theta(\chi_{j,a})
+=
+\chi_{\theta j,a}.
+\tag{18.10}
+```
+
+So in the SU(2) center case the reflection sign in (17.10) is fixed and equal
+to `+1`. There is no configuration-dependent sign and no postselection.
+
+### 18.4. Sign Consistency Around The Chessboard
+
+Because the reflection sign is fixed:
+
+```math
+\mathrm{sign}(\theta,\chi)=+1,
+\tag{18.11}
+```
+
+the sign product around every reflected cell is:
+
+```math
+\prod_{\mathrm{reflections}}
+\mathrm{sign}(\theta,\chi)
+=
+1.
+\tag{18.12}
+```
+
+This proves the sign-consistency gate (17.11) for the SU(2) `Z_2` center sheet
+character, provided the sheet package itself is transported geometrically by
+the reflection group.
+
+For general `Z_N`, orientation would matter because inversion is nontrivial.
+That is not the present SU(2) target.
+
+### 18.5. Boundary And Collar Compatibility
+
+The remaining admissibility issue is not the charged character; it is the
+conditioning. Let:
+
+```math
+E_{R,N,a}
+\tag{18.13}
+```
+
+be the declared boundary/collar conditioning event in the reflected chessboard.
+The RP-compatible condition is:
+
+```math
+\theta E_{R,N,a}
+=
+E_{R,N,a}
+\quad
+\text{or the boundary data occur in reflected pairs},
+\qquad
+\theta\in\Theta_R.
+\tag{18.14}
+```
+
+If (18.14) fails, RP can fail even though the charged sheet character transforms
+correctly. This is a boundary-data failure, not a center-character failure.
+
+The standard repair is to double the tile/collar package across every reflection
+face carrying unpaired boundary data. Let:
+
+```math
+\mathfrak P^{\mathrm{dbl}}_R
+\tag{18.15}
+```
+
+denote the doubled physical package. It is admissible if:
+
+```math
+\theta\mathfrak P^{\mathrm{dbl}}_R
+=
+\mathfrak P^{\mathrm{dbl}}_R
+\quad
+\text{and}
+\quad
+\theta E^{\mathrm{dbl}}_{R,N,a}
+=
+E^{\mathrm{dbl}}_{R,N,a}.
+\tag{18.16}
+```
+
+This doubling is fixed-IR aligned only if the doubled tile remains a fixed
+physical object before the cutoff is removed.
+
+### 18.6. Admissibility Theorem
+
+**Theorem 40.168A (SU(2) Charged Sheet Is RP-Admissible After Reflection-Compatible
+Packaging).** Assume:
+
+```math
+\begin{array}{ll}
+\mathrm{A1} & \text{the physical sheet package satisfies }(18.3),\\[1mm]
+\mathrm{A2} & \text{the charged tile character is the }Z_2\text{ sheet character }(18.4),\\[1mm]
+\mathrm{A3} & \text{the boundary/collar conditioning satisfies }(18.14),\\[1mm]
+\mathrm{A4} & \text{all packages are fixed physical objects before }a\downarrow0.
+\end{array}
+\tag{18.17}
+```
+
+Then the charged reflection-admissibility conditions (17.10)-(17.12) hold. If
+A1-A2 hold but A3 fails, the doubled package (18.15)-(18.16) gives admissibility
+whenever the doubled boundary data are reflection-symmetric.
+
+#### Proof
+
+Condition (17.12) is (18.6). Conditions (17.10) and (17.11) follow from
+(18.10)-(18.12). Boundary compatibility is exactly (18.14). If (18.14) fails,
+the doubled package replaces the unpaired boundary event by a reflection-paired
+one without changing the local `Z_2` sheet character. Since the doubling is
+performed at fixed physical scale, it does not violate the fixed-IR contract.
+`∎`
+
+### 18.7. Failure Modes
+
+The charged reflection-admissibility audit fails in the following concrete
+ways:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{F1}
+&
+\text{the reflection does not transport }S_{j,a}\text{ to another sheet segment},\\[1mm]
+\mathrm{F2}
+&
+\text{the charged observable uses an untransported section-dependent coordinate},\\[1mm]
+\mathrm{F3}
+&
+\text{boundary or collar data are not reflection-symmetric or pairable},\\[1mm]
+\mathrm{F4}
+&
+\text{the repair doubles only microscopic plaquettes rather than physical tiles},\\[1mm]
+\mathrm{F5}
+&
+\text{the reflection sign is selected from the configuration}.
+\end{array}}
+\tag{18.18}
+```
+
+F5 is especially important: a configuration-dependent sign would be
+postselection, not reflection admissibility.
+
+### 18.8. Consequence For The RP Route
+
+Combining Theorem 40.168A with Theorem 40.167A gives:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{For SU(2), the }Z_2\text{ charged sheet passes the RP admissibility gate}\\[1mm]
+\text{after reflection-compatible or doubled fixed-IR packaging.}
+\end{array}}
+\tag{18.19}
+```
+
+Therefore the RP route does not fail at the charged-observable compatibility
+gate, provided the physical reflection package is chosen correctly. The next
+open point is exactly the strict charged-sector deficit:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+e^{-m_R+o_a(1)}
+\rho
+\left(
+\mathcal T^{0}_{R,a}
+\right),
+\qquad
+m_R>0.
+\tag{18.20}
+```
+
+This is the same hard input as (17.19), now with charged admissibility removed
+as an obstruction.
+
+### 18.9. Completed Target 40.168
+
+Target 40.168 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{Z2}}
+&
+\text{the SU(2) }Z_2\text{ sheet character is orientation-blind under reflection},\\[1mm]
+\mathrm{PASS}_{\mathrm{geom}}
+&
+\text{reflection-compatible sheet packages satisfy }(17.10)\text{-}(17.12),\\[1mm]
+\mathrm{PASS}_{\mathrm{dbl}}
+&
+\text{unpaired collars can be repaired by fixed-physical doubling},\\[1mm]
+\mathrm{FAIL}
+&
+\text{nonpaired boundary data or microscopic doubling violate the RP scope},\\[1mm]
+\mathrm{NEXT}
+&
+\text{prove or falsify the strict charged-sector deficit }(18.20).
+\end{array}}
+\tag{18.21}
+```
+
+Thus the next RP obstruction is no longer charged reflection-admissibility for
+SU(2). It is the strict fixed-IR charged transfer gap itself.
+
+## 19. Target 40.169: Equality Case For The Charged Transfer Deficit
+
+Searchable Target-40.169 tag:
+
+`V4P40-TARGET-40169-CHARGED-TRANSFER-EQUALITY-CASE`.
+
+Target 40.168 removes charged reflection-admissibility as the RP obstruction.
+The remaining question is the strict fixed-IR charged-sector transfer deficit:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+e^{-m_R+o_a(1)}
+\rho
+\left(
+\mathcal T^{0}_{R,a}
+\right),
+\qquad
+m_R>0.
+\tag{19.1}
+```
+
+This is not another RP-positivity question. It is an equality-case problem for a
+dominated signed transfer operator.
+
+### 19.1. Physical Boundary State Space And Kernels
+
+Fix the physical tile/collar/sheet package from Sections 17-18. Let:
+
+```math
+\Omega^{\partial}_{R,a}
+\tag{19.2}
+```
+
+be the finite-cutoff boundary/collar record space for one physical tile. Its
+elements are denoted:
+
+```math
+\omega,
+\qquad
+\omega'.
+\tag{19.3}
+```
+
+Let:
+
+```math
+K^0_{R,a}(\omega,\omega')
+\ge
+0
+\tag{19.4}
+```
+
+be the neutral physical-tile transfer kernel obtained from the ordinary
+finite-cutoff Gibbs law after integrating the tile interior and the SO(3)
+fibers. Let:
+
+```math
+K^{\chi}_{R,a}(\omega,\omega')
+\tag{19.5}
+```
+
+be the same kernel with the charged tile character inserted.
+
+On the support of the neutral kernel, write:
+
+```math
+K^{\chi}_{R,a}(\omega,\omega')
+=
+K^0_{R,a}(\omega,\omega')
+s_{R,a}(\omega,\omega'),
+\tag{19.6}
+```
+
+where the normalized sign kernel is:
+
+```math
+s_{R,a}(\omega,\omega')
+:=
+\frac{
+K^{\chi}_{R,a}(\omega,\omega')
+}{
+K^0_{R,a}(\omega,\omega')
+}
+\quad
+\text{where }K^0_{R,a}(\omega,\omega')>0.
+\tag{19.7}
+```
+
+On the support of the neutral kernel:
+
+```math
+\left|
+s_{R,a}(\omega,\omega')
+\right|
+\le
+1.
+\tag{19.8}
+```
+
+The transfer operators are:
+
+```math
+\left(
+\mathcal T^0_{R,a}f
+\right)(\omega)
+:=
+\int
+K^0_{R,a}(\omega,\omega')
+f(\omega')
+d\nu^{\partial}_{R,a}(\omega'),
+\tag{19.9}
+```
+
+and:
+
+```math
+\left(
+\mathcal T^{\chi}_{R,a}f
+\right)(\omega)
+:=
+\int
+K^{\chi}_{R,a}(\omega,\omega')
+f(\omega')
+d\nu^{\partial}_{R,a}(\omega').
+\tag{19.10}
+```
+
+All objects are physical-tile objects before the cutoff is removed.
+
+### 19.2. Basic Domination
+
+Because the charged tile character has absolute value one:
+
+```math
+\left|
+K^{\chi}_{R,a}(\omega,\omega')
+\right|
+\le
+K^0_{R,a}(\omega,\omega').
+\tag{19.11}
+```
+
+Therefore:
+
+```math
+\left|
+\mathcal T^{\chi}_{R,a}f
+\right|
+\le
+\mathcal T^0_{R,a}|f|.
+\tag{19.12}
+```
+
+Consequently:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right).
+\tag{19.13}
+```
+
+This is the RP2-level bound. It is not the fixed-IR gap.
+
+### 19.3. Equality Case Theorem
+
+Assume, at fixed cutoff, that `T0` is positivity improving on the physical
+boundary state space and has a simple Perron-Frobenius eigenvalue:
+
+```math
+\rho^0_{R,a}
+:=
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right),
+\tag{19.14}
+```
+
+with positive right and left eigenfunctions:
+
+```math
+\phi_{R,a}>0,
+\qquad
+\psi_{R,a}>0.
+\tag{19.15}
+```
+
+Normalize:
+
+```math
+\int
+\psi_{R,a}(\omega)\phi_{R,a}(\omega)
+d\nu^{\partial}_{R,a}(\omega)
+=
+1.
+\tag{19.16}
+```
+
+Define the neutral top-edge measure:
+
+```math
+d\Pi^0_{R,a}(\omega,\omega')
+:=
+\frac{
+\psi_{R,a}(\omega)
+K^0_{R,a}(\omega,\omega')
+\phi_{R,a}(\omega')
+}{
+\rho^0_{R,a}
+}
+d\nu^{\partial}_{R,a}(\omega)
+d\nu^{\partial}_{R,a}(\omega').
+\tag{19.17}
+```
+
+**Theorem 40.169A (Equality Implies Boundary Coboundary Absorption).** Under
+the Perron-Frobenius assumptions above, equality in (19.13):
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+=
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right)
+\tag{19.18}
+```
+
+can occur only if there exist a phase:
+
+```math
+\lambda_{R,a}\in\mathbb C,
+\qquad
+\left|
+\lambda_{R,a}
+\right|
+=
+1,
+\tag{19.19}
+```
+
+and a boundary phase function:
+
+```math
+h_{R,a}:\Omega^{\partial}_{R,a}\to\mathbb C,
+\qquad
+\left|
+h_{R,a}
+\right|
+=
+1,
+\tag{19.20}
+```
+
+such that:
+
+```math
+s_{R,a}(\omega,\omega')
+=
+\lambda_{R,a}
+\frac{
+h_{R,a}(\omega')
+}{
+h_{R,a}(\omega)
+}
+\quad
+\Pi^0_{R,a}\text{-almost surely}.
+\tag{19.21}
+```
+
+In the real `Z_2` case, this says that the charged tile sign is a boundary
+coboundary on the top neutral transfer support.
+
+#### Proof
+
+Domination (19.12) gives the spectral-radius inequality. If equality holds,
+the equality case in the triangle inequality and in the Perron-Frobenius
+domination argument must hold along a top charged eigenfunction. Let `g` be a
+unimodular representative of such an eigenfunction after normalizing by the
+positive Perron vector `phi`. Equality in:
+
+```math
+\left|
+\int
+K^{\chi}_{R,a}(\omega,\omega')
+g(\omega')
+d\nu^{\partial}_{R,a}(\omega')
+\right|
+\le
+\int
+K^0_{R,a}(\omega,\omega')
+d\nu^{\partial}_{R,a}(\omega')
+\tag{19.22}
+```
+
+forces all complex summands to have the same phase for
+`Pi0`-almost every edge. Hence the normalized sign kernel must equal a constant
+phase times the ratio of outgoing to incoming boundary phases. This is
+(19.21). `∎`
+
+### 19.4. Approximate Equality Falsifier
+
+The fixed-IR strict gap fails if there are cutoffs `a_n -> 0`, phases
+`lambda_n`, and boundary phase functions `h_n` such that:
+
+```math
+\int
+\left|
+s_{R,a_n}(\omega,\omega')
+-
+\lambda_n
+\frac{
+h_n(\omega')
+}{
+h_n(\omega)
+}
+\right|^2
+d\Pi^0_{R,a_n}(\omega,\omega')
+\longrightarrow
+0.
+\tag{19.23}
+```
+
+Then the charged transfer is asymptotically a boundary conjugate of the neutral
+transfer, and:
+
+```math
+\frac{
+\rho
+\left(
+\mathcal T^{\chi}_{R,a_n}
+\right)
+}{
+\rho
+\left(
+\mathcal T^0_{R,a_n}
+\right)
+}
+\longrightarrow
+1.
+\tag{19.24}
+```
+
+Indeed, conjugating the neutral Perron vector by `h_n` gives an approximate
+charged Perron vector. Equation (19.23) says that the charged kernel differs
+from the conjugated neutral kernel by a term whose norm vanishes on the neutral
+top-edge measure. The Rayleigh quotient, or equivalently the Collatz-Wielandt
+upper and lower comparison on the Perron cone, then gives (19.24).
+
+This is the precise transfer-operator form of center-sign pinning or boundary
+coboundary absorption.
+
+### 19.5. Uniform Non-Coboundary Criterion
+
+A sufficient condition for the fixed-IR deficit is the uniform non-coboundary
+bound:
+
+```math
+\inf_{\substack{
+|\lambda|=1\\
+|h|=1
+}}
+\int
+\left|
+s_{R,a}(\omega,\omega')
+-
+\lambda
+\frac{
+h(\omega')
+}{
+h(\omega)
+}
+\right|^2
+d\Pi^0_{R,a}(\omega,\omega')
+\ge
+\delta_R
++
+o_a(1),
+\qquad
+\delta_R>0.
+\tag{19.25}
+```
+
+Under the compactness and positivity-improving assumptions, (19.25) implies:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+e^{-m_R+o_a(1)}
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right)
+\tag{19.26}
+```
+
+for some:
+
+```math
+m_R>0.
+\tag{19.27}
+```
+
+The proof is the contrapositive of Theorem 40.169A with compactness. If no
+positive `m_R` exists, there is a sequence `a_n -> 0` for which the charged and
+neutral spectral radii have ratio tending to one. Choose normalized approximate
+charged Perron vectors. Equality stability in the domination argument then
+produces phases `lambda_n` and boundary phases `h_n` satisfying (19.23), which
+contradicts the lower bound (19.25).
+
+Thus (18.20) is reduced to ruling out approximate boundary-coboundary absorption
+of the charged sign on the neutral top-edge measure.
+
+### 19.6. Relation To Two-Sidedness
+
+The pointwise two-sidedness estimate (15.1070) is a strong sufficient route. In
+the present notation it says:
+
+```math
+\sup_{\omega,\omega'}
+\left|
+s_{R,a}(\omega,\omega')
+\right|
+\le
+1-2c_R
++
+o_a(1),
+\qquad
+c_R>0.
+\tag{19.28}
+```
+
+Then:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+\left(
+1-2c_R+o_a(1)
+\right)
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right),
+\tag{19.29}
+```
+
+which proves (18.20). But (19.28) is stronger than necessary. The spectral
+criterion (19.25) allows local near-pinning, provided it cannot align coherently
+as a boundary coboundary on the top neutral transfer edges.
+
+### 19.7. Completed Target 40.169
+
+Target 40.169 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{dom}}
+&
+\text{charged transfer is dominated by neutral transfer }(19.12),\\[1mm]
+\mathrm{PROVED}_{\mathrm{eq}}
+&
+\text{equality forces boundary-coboundary absorption }(19.21),\\[1mm]
+\mathrm{FAIL}_{\mathrm{strict}}
+&
+\text{approximate coboundary absorption }(19.23)\text{ gives no fixed-IR gap},\\[1mm]
+\mathrm{PASS}_{\mathrm{strict}}
+&
+\text{uniform non-coboundary }(19.25)\text{ gives the deficit }(18.20),\\[1mm]
+\mathrm{STRONG}_{\mathrm{route}}
+&
+\text{pointwise two-sidedness }(19.28)\text{ is sufficient but not necessary}.
+\end{array}}
+\tag{19.30}
+```
+
+The strict fixed-IR charged-sector deficit is therefore no longer a vague
+request. It is exactly the problem of proving that the charged tile sign is not,
+even asymptotically, a boundary coboundary on the top neutral physical-tile
+transfer measure.
+
+## 20. Target 40.170: Relative-Cohomology Test For Charged Coboundary Absorption
+
+Searchable Target-40.170 tag:
+`V4P40-TARGET-40170-RELATIVE-COHOMOLOGY-COBOUNDARY-ABSORPTION`.
+
+Target 40.169 reduced the strict charged-sector deficit to one concrete
+question: can the charged sign be absorbed into boundary phases on the neutral
+top-edge transfer measure? Target 40.170 separates that question into three
+different gates.
+
+The first gate is topological. It asks whether the charged sheet parity is
+determined by the boundary and interface records. The second gate is support
+theoretic. It asks whether both charged parities are actually present at finite
+cutoff once the neutral tile measure is imposed. The third gate is quantitative.
+It asks whether the weaker sign sector has a fixed-physical-size lower weight as
+the lattice spacing goes to zero.
+
+Only the third gate can prove the strict fixed-IR deficit. The first two gates
+are necessary audits; they are not a substitute for the area-barrier input.
+
+### 20.1. Fixed-IR Relative Variation Space
+
+Fix the physical tile scale `R`. The lattice spacing `a` is allowed to tend to
+zero while `R` is held fixed. Let the tile boundary and interface records be:
+
+```math
+\mathfrak b
+=
+(\omega,\omega').
+\tag{20.1}
+```
+
+Let:
+
+```math
+\mathcal C_{R,a}(\mathfrak b)
+\tag{20.2}
+```
+
+be the set of admissible interior center plaquette fields compatible with
+`mathfrak b` and with nonempty neutral `SO(3)` fibers. The fields are written
+additively over `Z_2`. The relative center variation space is:
+
+```math
+\mathcal V_{R,a}(\mathfrak b)
+:=
+\left\{
+b+b_0:
+b,b_0\in
+\mathcal C_{R,a}(\mathfrak b)
+\right\}.
+\tag{20.3}
+```
+
+Every element of (20.3) has trivial boundary record:
+
+```math
+v|_{\partial_{\mathfrak b} T_{R,a}}
+=
+0.
+\tag{20.4}
+```
+
+Thus:
+
+```math
+\mathcal V_{R,a}(\mathfrak b)
+\subset
+C^2
+\left(
+T_{R,a},
+\partial_{\mathfrak b}T_{R,a};
+Z_2
+\right).
+\tag{20.5}
+```
+
+Let `S_{R,a}` be the physical charged sheet used in the tile insertion. Its
+center character is:
+
+```math
+\chi_{S_{R,a}}(b)
+:=
+(-1)^{
+\langle b,S_{R,a}\rangle_2
+}.
+\tag{20.6}
+```
+
+For a relative variation:
+
+```math
+\frac{
+\chi_{S_{R,a}}(b+v)
+}{
+\chi_{S_{R,a}}(b)
+}
+=
+(-1)^{
+\langle v,S_{R,a}\rangle_2
+}.
+\tag{20.7}
+```
+
+Equation (20.7) is the invariant object. The individual center coordinate may
+depend on a section choice, but the ratio between two fillings with the same
+boundary record is the charged relative sign. This is a pairing statement, not
+an action-gauge-invariance statement.
+
+### 20.2. Boundary-Exactness Criterion
+
+The charged sheet character is boundary-exact over the boundary datum
+`mathfrak b` if there exists a boundary function:
+
+```math
+q_{R,a}(\mathfrak b)
+\in
+\{\pm 1\}
+\tag{20.8}
+```
+
+such that:
+
+```math
+\chi_{S_{R,a}}(b)
+=
+q_{R,a}(\mathfrak b)
+\quad
+\mathrm{for\ all}
+\quad
+b\in
+\mathcal C_{R,a}(\mathfrak b).
+\tag{20.9}
+```
+
+The relative-cohomology test is:
+
+```math
+\chi_{S_{R,a}}
+\ \mathrm{is\ boundary\ exact\ over}\ \mathfrak b
+\quad
+\Longleftrightarrow
+\quad
+\langle v,S_{R,a}\rangle_2
+=
+0
+\quad
+\mathrm{for\ all}
+\quad
+v\in
+\mathcal V_{R,a}(\mathfrak b).
+\tag{20.10}
+```
+
+Proof. If (20.9) holds, two fillings with the same boundary have the same
+charged character. Their ratio is therefore one, and (20.7) gives the
+right-hand side of (20.10).
+
+Conversely, assume the right-hand side of (20.10). Given two fillings
+`b` and `b_0` with the same boundary, their difference lies in
+`\mathcal V`. Equation (20.7) gives equal charged characters. Hence the
+character is constant on the fiber over `mathfrak b`, so (20.9) holds. `∎`
+
+Equivalently, boundary-exactness fails exactly when:
+
+```math
+\exists\,
+v\in
+\mathcal V_{R,a}(\mathfrak b)
+\quad
+\mathrm{such\ that}
+\quad
+\langle v,S_{R,a}\rangle_2
+=
+1.
+\tag{20.11}
+```
+
+This is the topological gate:
+
+```math
+\mathrm{PASS}_{\mathrm{top}}
+\Longleftrightarrow
+S_{R,a}
+\notin
+\mathcal V_{R,a}(\mathfrak b)^\perp .
+\tag{20.12}
+```
+
+and:
+
+```math
+\mathrm{FAIL}_{\mathrm{top}}
+\Longleftrightarrow
+S_{R,a}
+\in
+\mathcal V_{R,a}(\mathfrak b)^\perp .
+\tag{20.13}
+```
+
+If the boundary record already contains the total sheet parity, then
+(20.13) holds by design. Therefore the charged tile package must not put the
+desired flux parity into the boundary data. This is a fixed-IR bookkeeping
+condition, not a dynamical theorem.
+
+### 20.3. What The Topological Gate Proves
+
+The topological gate proves only non-readability from the boundary. It does not
+prove that the neutral measure gives comparable weights to the two parities.
+
+For the intended physical charged tile, the useful target is:
+
+```math
+\Pi^0_{R,a}
+\left(
+\left\{
+\mathfrak b:
+\mathrm{PASS}_{\mathrm{top}}(\mathfrak b)
+\right\}
+\right)
+\to
+1
+\quad
+\mathrm{at\ fixed}\ R.
+\tag{20.14}
+```
+
+Here `Pi^0` is the neutral top-edge measure from Section 19. This assertion is
+verifiable by finite `Z_2` linear algebra on the physical tile complex: compute
+the admissible relative variation space, compute the sheet functional, and test
+membership in the annihilator. No weak-coupling estimate and no ISP Markov
+supposition is involved.
+
+However, (20.14) is still not the charged transfer deficit. It says that the
+sign is allowed to vary inside the tile. It does not say that both signs survive
+with fixed-IR weight as `a` tends to zero.
+
+### 20.4. Finite-Cutoff Support Gate
+
+Split the admissible center fillings into sign sectors:
+
+```math
+\mathcal C^{\pm}_{R,a}(\mathfrak b)
+:=
+\left\{
+b\in
+\mathcal C_{R,a}(\mathfrak b):
+\chi_{S_{R,a}}(b)=\pm 1
+\right\}.
+\tag{20.15}
+```
+
+Let the neutral finite-cutoff tile weight of these sectors be:
+
+```math
+Z^{\pm}_{R,a}(\mathfrak b)
+:=
+\int_{\mathcal C^{\pm}_{R,a}(\mathfrak b)}
+d\nu^0_{R,a}(b,\bar U\mid\mathfrak b).
+\tag{20.16}
+```
+
+Define the conditional sector weights:
+
+```math
+p^{\pm}_{R,a}(\mathfrak b)
+:=
+\frac{
+Z^{\pm}_{R,a}(\mathfrak b)
+}{
+Z^{+}_{R,a}(\mathfrak b)
++
+Z^{-}_{R,a}(\mathfrak b)
+}.
+\tag{20.17}
+```
+
+At finite cutoff, strict positivity of the Wilson or heat-kernel density gives:
+
+```math
+\mathcal C^{+}_{R,a}(\mathfrak b)
+\neq
+\varnothing,
+\qquad
+\mathcal C^{-}_{R,a}(\mathfrak b)
+\neq
+\varnothing
+\quad
+\Longrightarrow
+\quad
+p^{+}_{R,a}(\mathfrak b)>0,
+\qquad
+p^{-}_{R,a}(\mathfrak b)>0,
+\tag{20.18}
+```
+
+provided each sector contains a nonempty supported `SO(3)` fiber. This is a
+finite-dimensional positivity statement. It does not use stochastic ISP
+dynamics, hidden Markov structure, or any continuum limit.
+
+The support gate therefore passes at finite cutoff whenever topology gives both
+relative signs and the corresponding coset fibers are nonempty. It can still
+fail if the neutral constraints or boundary records remove one of the two
+sectors.
+
+### 20.5. Quantitative Fixed-IR Gate
+
+The charged sign appearing in the transfer kernel is the conditional mean:
+
+```math
+s_{R,a}(\mathfrak b)
+=
+p^{+}_{R,a}(\mathfrak b)
+-
+p^{-}_{R,a}(\mathfrak b).
+\tag{20.19}
+```
+
+The strong two-sidedness route asks for:
+
+```math
+\min
+\left(
+p^{+}_{R,a}(\mathfrak b),
+p^{-}_{R,a}(\mathfrak b)
+\right)
+\ge
+c_R
+-
+o_a(1)
+\tag{20.20}
+```
+
+on the relevant neutral top-edge support, for some:
+
+```math
+c_R>0.
+\tag{20.21}
+```
+
+Then:
+
+```math
+\left|
+s_{R,a}(\mathfrak b)
+\right|
+\le
+1-2c_R+o_a(1),
+\tag{20.22}
+```
+
+which is exactly the pointwise two-sidedness estimate (19.28). Hence (20.20)
+implies the strict charged transfer deficit (18.20).
+
+The weaker and more intrinsic route is the integrated non-coboundary condition:
+
+```math
+\inf_{\substack{
+|\lambda|=1\\
+|h|=1
+}}
+\int
+\left|
+s_{R,a}(\omega,\omega')
+-
+\lambda
+\frac{
+h(\omega')
+}{
+h(\omega)
+}
+\right|^2
+d\Pi^0_{R,a}(\omega,\omega')
+\ge
+\delta_R
++
+o_a(1).
+\tag{20.23}
+```
+
+This is (19.25). It can hold even when pointwise two-sidedness fails on a small
+set of edges. It fails precisely when the charged conditional mean becomes an
+approximate boundary coboundary on the neutral top-edge measure.
+
+Thus Target 40.170 does not replace the area-barrier input. It identifies its
+minimal local form:
+
+```math
+\boxed{
+\text{fixed-IR deficit}
+\quad
+\Longleftarrow
+\quad
+\text{quantitative non-coboundary balance}
+\quad
+\Longleftarrow
+\quad
+\text{two-sided sign sector weights}.
+}
+\tag{20.24}
+```
+
+The first two gates make (20.24) meaningful. They do not prove it.
+
+### 20.6. Exact Falsifiers
+
+Target 40.170 is falsified, or restricted, in exactly the following ways:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{top}}
+&
+\text{the boundary records already determine the sheet parity},\\[1mm]
+\mathrm{FAIL}_{\mathrm{support}}
+&
+\text{one charged sign sector has empty neutral supported fiber},\\[1mm]
+\mathrm{FAIL}_{\mathrm{quant}}
+&
+\text{both signs exist but one has weight tending to zero},\\[1mm]
+\mathrm{FAIL}_{\mathrm{edge}}
+&
+\text{the conditional sign is an approximate boundary coboundary},\\[1mm]
+\mathrm{FAIL}_{\mathrm{scope}}
+&
+\text{the proof uses shrinking microscopic scales or hidden Markov premises}.
+\end{array}}
+\tag{20.25}
+```
+
+The third and fourth failures are the real fixed-IR dangers. They are exactly
+where a center vortex free-energy barrier can re-enter the argument.
+
+### 20.7. Consequence For The ISP Question
+
+The relative-cohomology test is also the clean place to ask whether ISP changes
+the proof.
+
+If the ISP record law changes only the names of the center variables, then
+Target 40.170 reduces to the standard lattice Yang-Mills support and weight
+problem. The paper then has an honest O1-positive outcome: the route is a
+transparent relabeling of the standard center-disorder obstruction.
+
+If the ISP record law supplies an additional primitive constraint or positivity
+principle, it must appear in one of the following two quantities:
+
+```math
+p^{\pm}_{R,a}(\mathfrak b),
+\qquad
+\delta_R.
+\tag{20.26}
+```
+
+That is the decisive place to look. It keeps the confinement question
+configuration-native while preserving Barandes alignment: no Markov process is
+being smuggled into the ontology.
+
+### 20.8. Completed Target 40.170
+
+Target 40.170 is therefore fully investigated as follows:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{criterion}}
+&
+\text{boundary exactness is equivalent to the annihilator test }(20.10),\\[1mm]
+\mathrm{REDUCED}_{\mathrm{top}}
+&
+\text{topological pass is the existence of an odd relative variation }(20.11),\\[1mm]
+\mathrm{PROVED}_{\mathrm{finite}}
+&
+\text{finite-cutoff positivity gives positive weights for supported sectors},\\[1mm]
+\mathrm{OPEN}_{\mathrm{FIR}}
+&
+\text{uniform sector balance or non-coboundary remains the hard input},\\[1mm]
+\mathrm{NEXT}
+&
+\text{prove or falsify }(20.20)\text{ or }(20.23)\text{ on the top measure}.
+\end{array}}
+\tag{20.27}
+```
+
+The outcome is sharp. Relative cohomology can rule out trivial boundary
+readability of the charged sheet. Finite-cutoff positivity can rule out empty
+sectors. Neither result proves the fixed-IR transfer deficit unless it is paired
+with quantitative sector balance on the neutral top-edge measure.
+
+## 21. Target 40.171: Exact Sector-Pairing Cost Formula
+
+Searchable Target-40.171 tag:
+`V4P40-TARGET-40171-SECTOR-PAIRING-COST-FORMULA`.
+
+Target 40.170 isolated the quantitative problem. The two sign sectors may both
+exist, but the fixed-IR proof needs their weights to stay comparable as
+`a -> 0` with the physical tile scale `R` fixed.
+
+The next audit is therefore exact: construct a sign-changing pairing and compute
+its neutral Radon-Nikodym cost. If the cost is bounded at fixed `R`, the
+two-sidedness estimate follows. If the natural cost grows with the microscopic
+area of the sheet, then topology has passed but the measure has recreated the
+area barrier.
+
+### 21.1. Neutral Tile Density
+
+For a fixed boundary datum:
+
+```math
+\mathfrak b
+=
+(\omega,\omega'),
+\tag{21.1}
+```
+
+write the supported neutral tile configuration space as:
+
+```math
+\mathcal X_{R,a}(\mathfrak b)
+=
+\left\{
+(b,\bar U):
+b\in
+\mathcal C_{R,a}(\mathfrak b),
+\quad
+\bar U
+\in
+\mathcal F_{R,a}(b,\mathfrak b)
+\right\}.
+\tag{21.2}
+```
+
+Let the neutral conditional measure have density:
+
+```math
+d\nu^0_{R,a}(x\mid\mathfrak b)
+=
+\frac{1}{Z^0_{R,a}(\mathfrak b)}
+\exp
+\left(
+-A^0_{R,a}(x\mid\mathfrak b)
+\right)
+d\kappa_{R,a}(x\mid\mathfrak b),
+\tag{21.3}
+```
+
+where:
+
+```math
+x=(b,\bar U).
+\tag{21.4}
+```
+
+The reference measure `kappa` is the finite-cutoff counting-Haar measure after
+the boundary and fiber constraints have been imposed. This is a
+configuration-measure statement only. No Markov process is introduced.
+
+The sign sectors are:
+
+```math
+\mathcal X^{\pm}_{R,a}(\mathfrak b)
+=
+\left\{
+x\in
+\mathcal X_{R,a}(\mathfrak b):
+\chi_{S_{R,a}}(x)=\pm 1
+\right\}.
+\tag{21.5}
+```
+
+Their unnormalized weights are:
+
+```math
+Z^{\pm}_{R,a}(\mathfrak b)
+=
+\int_{\mathcal X^{\pm}_{R,a}(\mathfrak b)}
+\exp
+\left(
+-A^0_{R,a}(x\mid\mathfrak b)
+\right)
+d\kappa_{R,a}(x\mid\mathfrak b).
+\tag{21.6}
+```
+
+### 21.2. Admissible Sign-Changing Pairing
+
+An admissible sector pairing is a measurable bijection:
+
+```math
+\Phi_{R,a,\mathfrak b}:
+\mathcal X^{+}_{R,a}(\mathfrak b)
+\to
+\mathcal X^{-}_{R,a}(\mathfrak b)
+\tag{21.7}
+```
+
+which preserves the boundary datum `mathfrak b` and is nonsingular with respect
+to `kappa`. Its reference Jacobian is:
+
+```math
+J_{\Phi}(x)
+:=
+\frac{
+d(\kappa_{R,a}\circ\Phi)(x\mid\mathfrak b)
+}{
+d\kappa_{R,a}(x\mid\mathfrak b)
+}.
+\tag{21.8}
+```
+
+The exact cost of the pairing is:
+
+```math
+D_{\Phi}(x)
+:=
+A^0_{R,a}(\Phi x\mid\mathfrak b)
+-
+A^0_{R,a}(x\mid\mathfrak b)
+-
+\log J_{\Phi}(x).
+\tag{21.9}
+```
+
+Changing variables in (21.6) gives the exact identity:
+
+```math
+Z^{-}_{R,a}(\mathfrak b)
+=
+\int_{\mathcal X^{+}_{R,a}(\mathfrak b)}
+\exp
+\left(
+-D_{\Phi}(x)
+\right)
+\exp
+\left(
+-A^0_{R,a}(x\mid\mathfrak b)
+\right)
+d\kappa_{R,a}(x\mid\mathfrak b).
+\tag{21.10}
+```
+
+Equivalently:
+
+```math
+\frac{
+Z^{-}_{R,a}(\mathfrak b)
+}{
+Z^{+}_{R,a}(\mathfrak b)
+}
+=
+\mathbb E^{+}_{R,a,\mathfrak b}
+\left[
+\exp
+\left(
+-D_{\Phi}
+\right)
+\right],
+\tag{21.11}
+```
+
+where `E^+` is expectation in the plus sector with the neutral conditional
+weight.
+
+This is the exact sector-pairing formula. Nothing is hidden in the word
+pairing: all the difficulty is in the cost variable `D_Phi`.
+
+### 21.3. Bounded-Cost Pairing Implies Two-Sidedness
+
+Suppose that, on the neutral top-edge support, there exists an admissible
+pairing with:
+
+```math
+D_{\Phi}(x)
+\le
+B_R
++
+o_a(1)
+\quad
+\mathrm{for\ } \nu^{0,+}_{R,a,\mathfrak b}\mathrm{\ almost\ every\ }x,
+\tag{21.12}
+```
+
+where:
+
+```math
+B_R<\infty
+\tag{21.13}
+```
+
+is allowed to depend on the fixed physical scale `R`, but not on `a`. Then
+(21.11) gives:
+
+```math
+\frac{
+Z^{-}_{R,a}(\mathfrak b)
+}{
+Z^{+}_{R,a}(\mathfrak b)
+}
+\ge
+\exp
+\left(
+-B_R+o_a(1)
+\right).
+\tag{21.14}
+```
+
+If the inverse pairing satisfies the same bound, then:
+
+```math
+\exp
+\left(
+-B_R+o_a(1)
+\right)
+\le
+\frac{
+Z^{-}_{R,a}(\mathfrak b)
+}{
+Z^{+}_{R,a}(\mathfrak b)
+}
+\le
+\exp
+\left(
+B_R+o_a(1)
+\right).
+\tag{21.15}
+```
+
+Therefore:
+
+```math
+\min
+\left(
+p^{+}_{R,a}(\mathfrak b),
+p^{-}_{R,a}(\mathfrak b)
+\right)
+\ge
+\frac{1}{1+\exp(B_R)}
++
+o_a(1).
+\tag{21.16}
+```
+
+Equation (21.16) is exactly the fixed-IR two-sidedness estimate (20.20), with:
+
+```math
+c_R
+=
+\frac{1}{1+\exp(B_R)}.
+\tag{21.17}
+```
+
+Thus:
+
+```math
+\boxed{
+\mathrm{bounded\ pairing\ cost}
+\quad
+\Longrightarrow
+\quad
+\text{fixed-IR sector balance}
+\quad
+\Longrightarrow
+\quad
+\mathrm{charged\ transfer\ deficit}.
+}
+\tag{21.18}
+```
+
+The entire sector-pairing route is now reduced to proving a finite fixed-IR
+bound on `D_Phi`.
+
+### 21.4. Raw Center Flip And Its Cost
+
+Let `v` be an odd relative variation from (20.11). The raw center flip is:
+
+```math
+\Phi_v(b,\bar U)
+=
+(b+v,\bar U),
+\tag{21.19}
+```
+
+whenever both sides lie in the supported fiber. In the center-resolved
+counting-Haar coordinates, the reference Jacobian is:
+
+```math
+J_{\Phi_v}(x)
+=
+1.
+\tag{21.20}
+```
+
+Hence:
+
+```math
+D_{\Phi_v}(x)
+=
+A^0_{R,a}(b+v,\bar U\mid\mathfrak b)
+-
+A^0_{R,a}(b,\bar U\mid\mathfrak b).
+\tag{21.21}
+```
+
+For a local plaquette action with single-plaquette weight `w_a`, this becomes:
+
+```math
+D_{\Phi_v}(x)
+=
+\sum_{p\in\mathrm{supp}(v)}
+\left[
+-\log
+w_a
+\left(
+-g_p(x)
+\right)
++
+\log
+w_a
+\left(
+g_p(x)
+\right)
+\right],
+\tag{21.22}
+```
+
+where `g_p(x)` is the lifted plaquette element before the center flip. For the
+Wilson weight:
+
+```math
+w_a(g)
+=
+\exp
+\left(
+\frac{\beta_a}{2}
+\operatorname{Tr}(g)
+\right),
+\tag{21.23}
+```
+
+one gets:
+
+```math
+D_{\Phi_v}(x)
+=
+\beta_a
+\sum_{p\in\mathrm{supp}(v)}
+\operatorname{Tr}
+\left(
+g_p(x)
+\right).
+\tag{21.24}
+```
+
+The absolute worst-case bound is:
+
+```math
+\left|
+D_{\Phi_v}(x)
+\right|
+\le
+2\beta_a
+\left|
+\mathrm{supp}(v)
+\right|.
+\tag{21.25}
+```
+
+This is not merely a bad estimate. For any fixed:
+
+```math
+0<\tau\le 2,
+\tag{21.26}
+```
+
+on the near-vacuum support event:
+
+```math
+E_{\tau}(v)
+:=
+\left\{
+x:
+\operatorname{Tr}(g_p(x))\ge \tau
+\quad
+\mathrm{for\ all}
+\quad
+p\in\mathrm{supp}(v)
+\right\},
+\tag{21.27}
+```
+
+the raw flip cost satisfies:
+
+```math
+D_{\Phi_v}(x)
+\ge
+\tau\beta_a
+\left|
+\mathrm{supp}(v)
+\right|.
+\tag{21.28}
+```
+
+Thus, whenever `E_tau(v)` has positive plus-sector neutral weight, the
+essential supremum of the raw flip cost is already microscopic-area sized.
+
+At fixed physical scale `R`, a sheet-supported microscopic variation has:
+
+```math
+\left|
+\mathrm{supp}(v)
+\right|
+\asymp
+\frac{\operatorname{Area}_R}{a^2}.
+\tag{21.29}
+```
+
+Along the four-dimensional continuum tuning, `beta_a` does not cancel this
+microscopic area factor. Therefore the raw center flip has no uniform
+fixed-IR cost bound of the form (21.12). It proves finite-cutoff positivity, but
+it does not prove fixed-IR sector balance.
+
+This is not a failure of relative cohomology. It is the area barrier appearing
+in the exact Radon-Nikodym formula.
+
+### 21.5. Minimal Pairing Cost
+
+Define the optimal sector-pairing cost:
+
+```math
+B^{\star}_{R,a}(\mathfrak b)
+:=
+\inf_{\Phi}
+\max
+\left\{
+\operatorname*{ess\,sup}_{\mathcal X^{+}}
+D_{\Phi},
+\operatorname*{ess\,sup}_{\mathcal X^{-}}
+D_{\Phi^{-1}}
+\right\},
+\tag{21.30}
+```
+
+where the infimum runs over admissible sign-changing bijections preserving the
+boundary datum. The exact criterion is:
+
+```math
+\limsup_{a\to 0}
+B^{\star}_{R,a}(\mathfrak b)
+<
+\infty
+\quad
+\Longrightarrow
+\quad
+\text{fixed-IR two-sidedness at }\mathfrak b.
+\tag{21.31}
+```
+
+A top-edge version sufficient for the transfer deficit is:
+
+```math
+\Pi^0_{R,a}
+\left(
+\left\{
+\mathfrak b:
+B^{\star}_{R,a}(\mathfrak b)
+\le
+B_R+o_a(1)
+\right\}
+\right)
+\to
+1.
+\tag{21.32}
+```
+
+The raw center flip only gives:
+
+```math
+B^{\mathrm{raw}}_{R,a}(\mathfrak b)
+\lesssim
+\beta_a
+\frac{\operatorname{Area}_R}{a^2},
+\tag{21.33}
+```
+
+and, on the near-vacuum event, has the matching lower behavior (21.28). This is
+useless for (21.32). A successful proof must therefore find a different
+pairing, or prove sector balance without a pointwise pairing.
+
+### 21.6. Exact Falsifier For The Pairing Route
+
+The sector-pairing route fails at fixed physical `R` if:
+
+```math
+\liminf_{a\to 0}
+B^{\star}_{R,a}(\mathfrak b)
+=
+\infty
+\tag{21.34}
+```
+
+on a positive fraction of the neutral top-edge measure, or if every admissible
+sign-changing transformation changes a microscopic sheet with action cost of
+order:
+
+```math
+\beta_a
+\frac{\operatorname{Area}_R}{a^2}.
+\tag{21.35}
+```
+
+This would not disprove confinement. It would disprove this bounded-cost
+pairing proof of fixed-IR sector balance. The weaker integrated
+non-coboundary route (20.23) could still survive.
+
+### 21.7. Consequence For ISP
+
+Target 40.171 identifies the exact place where ISP would have to help.
+
+If the ISP record law leaves the finite-cutoff neutral density (21.3) unchanged,
+then the pairing cost is the standard lattice Yang-Mills cost. The fixed-IR
+problem remains the standard center-vortex free-energy problem.
+
+If ISP changes the configuration measure in a useful way, the change must alter
+one of:
+
+```math
+A^0_{R,a},
+\qquad
+J_{\Phi},
+\qquad
+B^{\star}_{R,a}.
+\tag{21.36}
+```
+
+Any proposed ISP contribution that does not change these quantities cannot
+improve the sector-pairing proof. This preserves Barandes alignment: the test is
+about record-law weights on configurations, not about adding hidden stochastic
+law to the ontology.
+
+### 21.8. Completed Target 40.171
+
+Target 40.171 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{RN}}
+&
+\text{sector weights obey the exact cost identity }(21.11),\\[1mm]
+\mathrm{PROVED}_{\mathrm{balance}}
+&
+\text{bounded bidirectional cost implies two-sidedness }(21.16),\\[1mm]
+\mathrm{FAIL}_{\mathrm{raw}}
+&
+\text{the naive center flip has microscopic area cost }(21.33),\\[1mm]
+\mathrm{OPEN}_{\mathrm{optimal}}
+&
+\text{bounded optimal cost }(21.32)\text{ is the remaining pairing question},\\[1mm]
+\mathrm{NEXT}
+&
+\text{test whether }(20.23)\text{ can be proved without pointwise pairing}.
+\end{array}}
+\tag{21.37}
+```
+
+The conclusion is decisive but not overclaimed. Target 40.171 proves the exact
+cost formula and shows that the raw center flip does not close the fixed-IR
+proof. What remains is either a genuinely bounded optimal transport between sign
+sectors, or the weaker non-coboundary route that bypasses pointwise
+two-sidedness.
+
+## 22. Target 40.172: Transfer-Cycle Obstruction To Coboundary Absorption
+
+Searchable Target-40.172 tag:
+`V4P40-TARGET-40172-TRANSFER-CYCLE-COBOUNDARY-OBSTRUCTION`.
+
+Target 40.171 showed that pointwise sign-sector pairing is a very strong route.
+The raw center flip sees microscopic area cost, so the next fixed-IR route
+should attack the weaker integrated condition (20.23) directly.
+
+The natural obstruction is a transfer cycle. A boundary coboundary telescopes
+around a closed cycle. Therefore a charged transfer sign with nontrivial cycle
+holonomies that cannot be matched by one global phase cannot be a boundary
+coboundary. The subtlety is the global eigenphase: if:
+
+```math
+s(\omega,\omega')
+=
+\lambda
+\frac{h(\omega')}{h(\omega)},
+\tag{22.1}
+```
+
+then an `n`-step cycle has product `lambda^n`, not necessarily one. The cycle
+test must therefore compare charged cycle holonomy to all possible powers
+`lambda^n`.
+
+### 22.1. Fixed-IR Transfer Cycles
+
+Let:
+
+```math
+\Omega_{R,a}
+\tag{22.2}
+```
+
+be the fixed-physical-resolution boundary-record space used by the neutral
+tile transfer operator. The neutral top-edge measure is:
+
+```math
+d\Pi^0_{R,a}(\omega,\omega').
+\tag{22.3}
+```
+
+An `n_R`-cycle is a tuple:
+
+```math
+\gamma
+=
+(\omega_0,\omega_1,\ldots,\omega_{n_R})
+\quad
+\mathrm{with}
+\quad
+\omega_{n_R}=\omega_0.
+\tag{22.4}
+```
+
+The integer `n_R` is fixed at physical scale `R` and does not grow as
+`a -> 0`. Its edges are:
+
+```math
+e_j(\gamma)
+=
+(\omega_j,\omega_{j+1}),
+\qquad
+0\le j<n_R.
+\tag{22.5}
+```
+
+Let:
+
+```math
+d\Gamma_{R,a}(\gamma)
+\tag{22.6}
+```
+
+be a probability measure on such cycles. It is a fixed-IR admissible cycle
+measure if there exists:
+
+```math
+M_R<\infty
+\tag{22.7}
+```
+
+independent of `a`, such that for every nonnegative edge observable `F`:
+
+```math
+\int
+F(e_j(\gamma))
+d\Gamma_{R,a}(\gamma)
+\le
+M_R
+\int
+F(\omega,\omega')
+d\Pi^0_{R,a}(\omega,\omega')
+\tag{22.8}
+```
+
+for each:
+
+```math
+0\le j<n_R.
+\tag{22.9}
+```
+
+This is the fixed-IR alignment condition for the cycle route. The cycles have
+bounded physical length, and their edge marginals do not concentrate on a set
+invisible to the neutral transfer measure.
+
+### 22.2. Charged Cycle Holonomy
+
+Let:
+
+```math
+s_{R,a}(\omega,\omega')
+\tag{22.10}
+```
+
+be the normalized charged sign kernel from (19.7), equivalently the conditional
+mean sign in (20.19). Define the charged cycle holonomy:
+
+```math
+\mathcal H_{R,a}(\gamma)
+:=
+\prod_{j=0}^{n_R-1}
+s_{R,a}(\omega_j,\omega_{j+1}).
+\tag{22.11}
+```
+
+If `s` has the exact boundary-coboundary form (22.1), then:
+
+```math
+\mathcal H_{R,a}(\gamma)
+=
+\lambda^{n_R}
+\tag{22.12}
+```
+
+for every closed cycle. This proves the exact cycle obstruction:
+
+```math
+\inf_{|\lambda|=1}
+\int
+\left|
+\mathcal H_{R,a}(\gamma)
+-
+\lambda^{n_R}
+\right|^2
+d\Gamma_{R,a}(\gamma)
+>
+0
+\quad
+\Longrightarrow
+\quad
+s_{R,a}
+\mathrm{\ is\ not\ an\ exact\ boundary\ coboundary}.
+\tag{22.13}
+```
+
+A single unit-modulus cycle product is not enough, because it can always be
+matched by choosing a suitable `n_R`-th root for `lambda`. The obstruction is a
+family of cycle holonomies that cannot be fit by one common phase.
+
+The statement is purely a transfer-graph identity. It uses no weak-coupling
+estimate and no ISP Markov premise.
+
+### 22.3. Quantitative Cycle Criterion
+
+The fixed-IR quantitative target is a cycle separation bound:
+
+```math
+\inf_{|\lambda|=1}
+\int
+\left|
+\mathcal H_{R,a}(\gamma)
+-
+\lambda^{n_R}
+\right|^2
+d\Gamma_{R,a}(\gamma)
+\ge
+\theta_R
++
+o_a(1),
+\qquad
+\theta_R>0.
+\tag{22.14}
+```
+
+If (22.14) holds for a fixed-IR admissible cycle measure, then the integrated
+non-coboundary condition (20.23) follows.
+
+Indeed, for any phase `lambda` and boundary phase `h`, define:
+
+```math
+q_{\lambda,h}(\omega,\omega')
+:=
+\lambda
+\frac{h(\omega')}{h(\omega)}.
+\tag{22.15}
+```
+
+Since the product of `q_lambda,h` around a closed `n_R`-cycle is
+`lambda^{n_R}`, the elementary product estimate gives:
+
+```math
+\left|
+\mathcal H_{R,a}(\gamma)
+-
+\lambda^{n_R}
+\right|
+\le
+\sum_{j=0}^{n_R-1}
+\left|
+s_{R,a}(e_j(\gamma))
+-
+q_{\lambda,h}(e_j(\gamma))
+\right|.
+\tag{22.16}
+```
+
+Squaring, integrating, and using the marginal domination (22.8):
+
+```math
+\int
+\left|
+\mathcal H_{R,a}(\gamma)
+-
+\lambda^{n_R}
+\right|^2
+d\Gamma_{R,a}(\gamma)
+\le
+n_R^2 M_R
+\int
+\left|
+s_{R,a}(\omega,\omega')
+-
+q_{\lambda,h}(\omega,\omega')
+\right|^2
+d\Pi^0_{R,a}(\omega,\omega').
+\tag{22.17}
+```
+
+Taking the infimum over `lambda` and `h`, (22.14) implies:
+
+```math
+\inf_{\substack{
+|\lambda|=1\\
+|h|=1
+}}
+\int
+\left|
+s_{R,a}(\omega,\omega')
+-
+\lambda
+\frac{h(\omega')}{h(\omega)}
+\right|^2
+d\Pi^0_{R,a}(\omega,\omega')
+\ge
+\frac{\theta_R}{n_R^2M_R}
++
+o_a(1).
+\tag{22.18}
+```
+
+Thus (20.23) holds with:
+
+```math
+\delta_R
+=
+\frac{\theta_R}{n_R^2M_R}.
+\tag{22.19}
+```
+
+Combining with Section 19 gives the strict fixed-IR charged transfer deficit.
+
+### 22.4. What The Cycle Route Can And Cannot Prove
+
+The cycle route avoids the pointwise sector-pairing demand. It does not need a
+bounded cost map between plus and minus sectors. It only needs the conditional
+charged sign to carry a nontrivial loop obstruction on the top neutral transfer
+graph.
+
+However, the route is still not free. It requires all of the following:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{CYC}_{1}
+&
+\text{fixed physical cycle length }n_R\text{ independent of }a,\\[1mm]
+\mathrm{CYC}_{2}
+&
+\text{edge marginals dominated by the top-edge measure with }M_R<\infty,\\[1mm]
+\mathrm{CYC}_{3}
+&
+\text{cycle holonomy separated from every }\lambda^{n_R},\\[1mm]
+\mathrm{CYC}_{4}
+&
+\text{separation constant }\theta_R\text{ independent of }a.
+\end{array}}
+\tag{22.20}
+```
+
+The third and fourth items are the real dynamical burden. If the charged sign is
+topologically nontrivial but its nontriviality is carried only by cycles whose
+measure vanishes as `a -> 0`, then (22.14) fails.
+
+### 22.5. Falsifiers
+
+The transfer-cycle route fails in one of five sharp ways:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{length}}
+&
+\text{nontrivial cycles require length growing as }a^{-1},\\[1mm]
+\mathrm{FAIL}_{\mathrm{margin}}
+&
+\text{cycle edge marginals are not uniformly dominated by }\Pi^0,\\[1mm]
+\mathrm{FAIL}_{\mathrm{phase}}
+&
+\text{cycle holonomies align with }\lambda^{n_R}\text{ for some phase},\\[1mm]
+\mathrm{FAIL}_{\mathrm{weight}}
+&
+\text{nontrivial cycle families have vanishing neutral weight},\\[1mm]
+\mathrm{FAIL}_{\mathrm{scope}}
+&
+\text{the construction uses weak-coupling smallness or hidden Markov data}.
+\end{array}}
+\tag{22.21}
+```
+
+These failures are diagnostic, not cosmetic. In particular, `FAIL_weight` is the
+cycle version of the area-barrier obstruction.
+
+### 22.6. Consequence For ISP
+
+Target 40.172 identifies another precise place where ISP could matter. If the
+ISP record law modifies the distribution of charged cycle holonomies under the
+neutral top-edge measure, then it may change:
+
+```math
+\theta_R,
+\qquad
+M_R,
+\qquad
+\mathcal H_{R,a}.
+\tag{22.22}
+```
+
+If those objects are unchanged from the standard center-resolved lattice
+Yang-Mills measure, then the cycle route is again a transparent restatement of
+the standard obstruction. This is the right O1 test: does the ISP record law
+change the fixed-IR charged transfer cycles, or merely rename them?
+
+### 22.7. Completed Target 40.172
+
+Target 40.172 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{exact}}
+&
+\text{boundary coboundaries have cycle holonomy }\lambda^{n_R},\\[1mm]
+\mathrm{PROVED}_{\mathrm{quant}}
+&
+\text{cycle separation }(22.14)\text{ implies non-coboundary }(20.23),\\[1mm]
+\mathrm{PASS}_{\mathrm{FIR}}
+&
+\text{the criterion is fixed-IR if }n_R\text{ and }M_R\text{ are fixed},\\[1mm]
+\mathrm{OPEN}_{\mathrm{cycle}}
+&
+\text{construct or falsify a separated physical cycle family},\\[1mm]
+\mathrm{NEXT}
+&
+\text{test a doubled reflection tile or smallest physical plaquette-cycle}.
+\end{array}}
+\tag{22.23}
+```
+
+The result is the clean weaker alternative to bounded sector pairing. A fixed-IR
+cycle family with nontrivial charged holonomy proves the integrated
+non-coboundary estimate directly. If no such family exists with nonvanishing
+top-edge weight, the obstruction has again collapsed into the area-barrier
+problem.
+
+## 23. Target 40.173: Minimal Fixed-IR Cycle Family Test
+
+Searchable Target-40.173 tag:
+`V4P40-TARGET-40173-MINIMAL-FIXED-IR-CYCLE-FAMILY`.
+
+Target 40.172 gave a criterion. Target 40.173 tests the smallest possible
+cycle families. There are two natural candidates.
+
+The first is the doubled reflection cycle. It has length two and is fixed-IR by
+construction. It is the cheapest test, but it mostly detects edge-level sign
+depinning. The second is a physical plaquette-cycle in boundary-record space. It
+has length four, still fixed at physical scale, and can detect true phase
+frustration around the transfer graph.
+
+### 23.1. Reversal Map And Doubled Cycle
+
+Let:
+
+```math
+\mathsf r:
+\Omega_{R,a}\times\Omega_{R,a}
+\to
+\Omega_{R,a}\times\Omega_{R,a}
+\tag{23.1}
+```
+
+be the reflection or transfer-reversal map on oriented edges:
+
+```math
+\mathsf r(\omega,\omega')
+=
+(\omega',\omega)
+\tag{23.2}
+```
+
+or the corresponding reflected version if the boundary records include oriented
+collar data. Assume the neutral top-edge measure is reversible:
+
+```math
+\mathsf r_{\#}\Pi^0_{R,a}
+=
+\Pi^0_{R,a}.
+\tag{23.3}
+```
+
+This is the RP-aligned finite-cutoff condition. It is not a gap assumption.
+
+For each oriented edge:
+
+```math
+e=(\omega,\omega'),
+\tag{23.4}
+```
+
+define the doubled cycle:
+
+```math
+\gamma_2(e)
+=
+(\omega,\omega',\omega).
+\tag{23.5}
+```
+
+Let:
+
+```math
+d\Gamma^2_{R,a}(\gamma_2(e))
+:=
+d\Pi^0_{R,a}(e).
+\tag{23.6}
+```
+
+Then `n_R=2`, and the edge marginal domination (22.8) holds with:
+
+```math
+M_R=1.
+\tag{23.7}
+```
+
+Thus the doubled reflection cycle is fixed-IR aligned whenever the reversal map
+is defined on the same physical boundary-record space.
+
+### 23.2. Doubled-Cycle Holonomy
+
+The doubled-cycle holonomy is:
+
+```math
+\mathcal H^2_{R,a}(e)
+=
+s_{R,a}(e)
+s_{R,a}(\mathsf r e).
+\tag{23.8}
+```
+
+If the charged and neutral kernels are reflection symmetric, then:
+
+```math
+s_{R,a}(\mathsf r e)
+=
+\overline{s_{R,a}(e)}.
+\tag{23.9}
+```
+
+In the real center-character case this reduces to:
+
+```math
+\mathcal H^2_{R,a}(e)
+=
+\left|
+s_{R,a}(e)
+\right|^2.
+\tag{23.10}
+```
+
+The doubled-cycle separation constant is:
+
+```math
+\theta^2_{R,a}
+:=
+\inf_{|\lambda|=1}
+\int
+\left|
+\mathcal H^2_{R,a}(e)
+-
+\lambda^2
+\right|^2
+d\Pi^0_{R,a}(e).
+\tag{23.11}
+```
+
+Under (23.10), this has the explicit form:
+
+```math
+\theta^2_{R,a}
+=
+\int
+\left(
+1-
+\left|
+s_{R,a}(e)
+\right|^2
+\right)^2
+d\Pi^0_{R,a}(e).
+\tag{23.12}
+```
+
+Therefore:
+
+```math
+\liminf_{a\to0}
+\theta^2_{R,a}
+>
+0
+\quad
+\Longrightarrow
+\quad
+\text{non-coboundary }(20.23).
+\tag{23.13}
+```
+
+This is a valid fixed-IR route, but it is not a new topological miracle. It says
+that the conditional charged sign is not almost unit-modulus on the top-edge
+measure. In sector language, this is an averaged two-sidedness statement:
+
+```math
+1-
+\left|
+s_{R,a}(e)
+\right|^2
+=
+4p^+_{R,a}(e)p^-_{R,a}(e).
+\tag{23.14}
+```
+
+So the doubled cycle detects average sector mixing. If `s` is pinned to `+1` or
+`-1` on almost every top edge, the doubled cycle gives no obstruction.
+
+### 23.3. Consequence Of The Doubled-Cycle Test
+
+The doubled reflection cycle gives the first concrete pass or fail:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{2}
+&
+\text{average edge depinning gives }\liminf\theta^2_{R,a}>0,\\[1mm]
+\mathrm{FAIL}_{2}
+&
+\text{the charged sign is almost unit-modulus on top edges},\\[1mm]
+\mathrm{SCOPE}_{2}
+&
+\text{this test is fixed-IR and uses only RP reversibility}.
+\end{array}}
+\tag{23.15}
+```
+
+If `PASS_2` holds, the integrated non-coboundary estimate is proved. If
+`FAIL_2` holds, the minimal cycle route must look for phase frustration rather
+than edge depinning.
+
+### 23.4. Physical Plaquette-Cycle Test
+
+A physical plaquette-cycle is a four-step loop in the boundary-record transfer
+graph:
+
+```math
+\gamma_{\square}
+=
+(\omega_0,\omega_1,\omega_2,\omega_3,\omega_0),
+\tag{23.16}
+```
+
+with:
+
+```math
+n_R=4.
+\tag{23.17}
+```
+
+The four states are records on adjacent faces of a fixed physical doubled tile
+or fixed physical plaquette in the transfer graph. The family is admissible only
+if its cycle measure:
+
+```math
+d\Gamma^{\square}_{R,a}
+\tag{23.18}
+```
+
+has uniformly dominated edge marginals:
+
+```math
+\int
+F(e_j(\gamma_{\square}))
+d\Gamma^{\square}_{R,a}(\gamma_{\square})
+\le
+M^{\square}_R
+\int
+F(e)
+d\Pi^0_{R,a}(e),
+\qquad
+0\le j<4.
+\tag{23.19}
+```
+
+The plaquette-cycle holonomy is:
+
+```math
+\mathcal H^{\square}_{R,a}(\gamma_{\square})
+:=
+\prod_{j=0}^{3}
+s_{R,a}(\omega_j,\omega_{j+1}).
+\tag{23.20}
+```
+
+The phase-frustration criterion is:
+
+```math
+\theta^{\square}_{R,a}
+:=
+\inf_{|\lambda|=1}
+\int
+\left|
+\mathcal H^{\square}_{R,a}(\gamma_{\square})
+-
+\lambda^4
+\right|^2
+d\Gamma^{\square}_{R,a}(\gamma_{\square}).
+\tag{23.21}
+```
+
+If:
+
+```math
+\liminf_{a\to0}
+\theta^{\square}_{R,a}
+>
+0,
+\tag{23.22}
+```
+
+then (22.14) holds with:
+
+```math
+n_R=4,
+\qquad
+M_R=M^{\square}_R,
+\qquad
+\theta_R=
+\liminf_{a\to0}\theta^{\square}_{R,a}.
+\tag{23.23}
+```
+
+Thus the integrated non-coboundary estimate (20.23) follows.
+
+### 23.5. Why The Four-Cycle Is Genuinely Different
+
+The doubled cycle sees the modulus of `s`. The four-cycle can see sign
+frustration.
+
+In the pinned sign case:
+
+```math
+s_{R,a}(e)\in\{\pm1\}
+\tag{23.24}
+```
+
+the doubled cycle has:
+
+```math
+\mathcal H^2_{R,a}(e)=1,
+\tag{23.25}
+```
+
+and therefore cannot obstruct a coboundary. But the four-cycle may have:
+
+```math
+\mathcal H^{\square}_{R,a}(\gamma_{\square})
+\in
+\{\pm1\}.
+\tag{23.26}
+```
+
+If both signs occur with fixed positive `Gamma_square` weight, then:
+
+```math
+\inf_{|\lambda|=1}
+\int
+\left|
+\mathcal H^{\square}_{R,a}
+-
+\lambda^4
+\right|^2
+d\Gamma^{\square}_{R,a}
+\ge
+2
+\left(
+1-
+\left|
+\int
+\mathcal H^{\square}_{R,a}
+d\Gamma^{\square}_{R,a}
+\right|
+\right),
+\tag{23.27}
+```
+
+which is positive uniformly if the signed holonomy is not asymptotically
+constant. This is the smallest fixed-IR cycle test that can detect a `Z_2`
+curvature obstruction rather than mere edge depinning.
+
+### 23.6. Falsifiers For The Minimal Cycle Test
+
+Target 40.173 fails to advance the proof in exactly these cases:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{2}
+&
+\text{doubled cycles have }\theta^2_{R,a}\to0,\\[1mm]
+\mathrm{FAIL}_{\square,\mathrm{phase}}
+&
+\text{plaquette holonomies fit one global }\lambda^4,\\[1mm]
+\mathrm{FAIL}_{\square,\mathrm{weight}}
+&
+\text{frustrated plaquette cycles have vanishing neutral weight},\\[1mm]
+\mathrm{FAIL}_{\square,\mathrm{margin}}
+&
+\text{plaquette-cycle edge marginals lack fixed-IR domination},\\[1mm]
+\mathrm{FAIL}_{\mathrm{scope}}
+&
+\text{the cycle construction uses microscopic length or hidden Markov data}.
+\end{array}}
+\tag{23.28}
+```
+
+The most important fail state is `FAIL_square,weight`. It says that the
+topological frustration exists only in a set whose neutral weight disappears in
+the fixed-IR continuum limit. That is the cycle-language version of the area
+barrier.
+
+### 23.7. Completed Target 40.173
+
+Target 40.173 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{2}
+&
+\text{the doubled reflection cycle is fixed-IR with }n_R=2,\ M_R=1,\\[1mm]
+\mathrm{REDUCED}_{2}
+&
+\text{its obstruction is averaged edge depinning }(23.12),\\[1mm]
+\mathrm{PROVED}_{\square}
+&
+\text{a separated plaquette-cycle family implies }(20.23),\\[1mm]
+\mathrm{OPEN}_{\square}
+&
+\text{construct or falsify fixed-weight plaquette-cycle frustration},\\[1mm]
+\mathrm{NEXT}
+&
+\text{test the plaquette-cycle holonomy under RP or direct finite-cell enumeration}.
+\end{array}}
+\tag{23.29}
+```
+
+The minimal cycle investigation is therefore decisive. The two-cycle is a clean
+fixed-IR diagnostic but mostly repackages averaged two-sidedness. The four-cycle
+is the first candidate that could prove non-coboundary by genuine transfer-graph
+frustration. If the four-cycle also fails by weight collapse, then the cycle
+route has returned to the same area-barrier question in a sharper language.
+
+## 24. Target 40.174: Physical Plaquette-Cycle Enumeration And RP Marginal Audit
+
+Searchable Target-40.174 tag:
+`V4P40-TARGET-40174-PLAQUETTE-CYCLE-ENUMERATION-RP-MARGINAL-AUDIT`.
+
+Target 40.173 identified the first genuinely new cycle test: the fixed physical
+four-cycle in boundary-record space. Target 40.174 makes that test operational.
+It separates the fixed-IR geometry from the dynamical holonomy question.
+
+The goal is not to assume a plaquette-cycle obstruction. The goal is to build
+the smallest physical cell, prove its edge marginals are controlled by the
+neutral top-edge measure, and then enumerate the charged holonomy values seen by
+that cell.
+
+### 24.1. Physical Four-Cell Package
+
+Fix a physical tile scale `R`. A physical plaquette-cell package consists of:
+
+```math
+\mathfrak P_R
+=
+\left(
+\Omega_{R,a},
+\mathcal Y_{R,a},
+\mu^{\square}_{R,a},
+\pi_0,\pi_1,\pi_2,\pi_3
+\right).
+\tag{24.1}
+```
+
+Here `mathcal Y` is the finite-cutoff record space of one fixed physical
+four-cell, and:
+
+```math
+\pi_j:
+\mathcal Y_{R,a}
+\to
+\Omega_{R,a}\times\Omega_{R,a},
+\qquad
+0\le j<4,
+\tag{24.2}
+```
+
+are the four oriented edge projections. The cell-cycle map is:
+
+```math
+\gamma_{\square}(y)
+=
+\left(
+\omega_0(y),
+\omega_1(y),
+\omega_2(y),
+\omega_3(y),
+\omega_0(y)
+\right),
+\tag{24.3}
+```
+
+with:
+
+```math
+\pi_j(y)
+=
+\left(
+\omega_j(y),
+\omega_{j+1}(y)
+\right).
+\tag{24.4}
+```
+
+The cycle measure is the pushforward:
+
+```math
+\Gamma^{\square}_{R,a}
+=
+(\gamma_{\square})_{\#}\mu^{\square}_{R,a}.
+\tag{24.5}
+```
+
+This package is fixed-IR aligned only if the cell has fixed physical diameter
+and the four projections in (24.2) are physical-resolution records. No
+microscopic loop length is allowed to grow as `a -> 0`.
+
+### 24.2. Barandes-Aligned Construction
+
+The cell measure:
+
+```math
+\mu^{\square}_{R,a}
+\tag{24.6}
+```
+
+must be the pushforward of the ordinary finite-cutoff SU(2) configuration
+measure on the physical cell, with the same deterministic center/coset/cocycle
+readouts used elsewhere in the paper. In particular:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{24.7}
+```
+
+This is the Barandes-aligned rule. The ISP record law may choose which
+deterministic records to read, but it does not add a hidden stochastic transition
+kernel. Reflection positivity and tiling symmetry may be used to compare
+marginals; they are not used as a substitute for a gap.
+
+### 24.3. RP Marginal Domination
+
+For each edge projection define:
+
+```math
+\Pi^{\square,j}_{R,a}
+:=
+(\pi_j)_{\#}\mu^{\square}_{R,a}.
+\tag{24.8}
+```
+
+The required marginal audit is:
+
+```math
+\Pi^{\square,j}_{R,a}
+\le
+M^{\square}_R
+\Pi^0_{R,a},
+\qquad
+0\le j<4,
+\tag{24.9}
+```
+
+with:
+
+```math
+M^{\square}_R<\infty
+\tag{24.10}
+```
+
+independent of `a`. If (24.9) holds, then for every nonnegative edge observable
+`F`:
+
+```math
+\int
+F(e_j(\gamma_{\square}))
+d\Gamma^{\square}_{R,a}(\gamma_{\square})
+\le
+M^{\square}_R
+\int
+F(e)
+d\Pi^0_{R,a}(e).
+\tag{24.11}
+```
+
+Thus (23.19) is proved.
+
+A sufficient RP or tiling condition for (24.9) is bounded overlap of the physical
+cell projections. Namely, if every top edge belongs to at most:
+
+```math
+N_R<\infty
+\tag{24.12}
+```
+
+physical four-cells in the chosen fixed-resolution tiling, and the cell sampling
+is obtained by uniformly choosing one of those cells from the same neutral
+finite-cutoff measure, then:
+
+```math
+M^{\square}_R
+\le
+N_R.
+\tag{24.13}
+```
+
+This is a geometric counting statement at fixed physical scale. It is not a
+Markov property and not a weak-coupling estimate.
+
+### 24.4. Charged Holonomy Readout On The Cell
+
+The charged edge value on the `j`-th edge is:
+
+```math
+s_j(y)
+:=
+s_{R,a}(\pi_j(y)).
+\tag{24.14}
+```
+
+The physical plaquette-cycle holonomy is:
+
+```math
+H^{\square}_{R,a}(y)
+:=
+\prod_{j=0}^{3}
+s_j(y).
+\tag{24.15}
+```
+
+The separation functional is:
+
+```math
+\Theta^{\square}_{R,a}
+:=
+\inf_{|\lambda|=1}
+\int
+\left|
+H^{\square}_{R,a}(y)
+-
+\lambda^4
+\right|^2
+d\mu^{\square}_{R,a}(y).
+\tag{24.16}
+```
+
+By pushforward, this is the same quantity as (23.21). Therefore:
+
+```math
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0
+\quad
+\Longrightarrow
+\quad
+(20.23).
+\tag{24.17}
+```
+
+The proof is exactly Target 40.172 with:
+
+```math
+n_R=4,
+\qquad
+M_R=M^{\square}_R,
+\qquad
+\theta_R=
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}.
+\tag{24.18}
+```
+
+### 24.5. Finite Sign-Curvature Enumeration
+
+The first enumeration is the pinned-sign audit. On the pinned event:
+
+```math
+\mathcal E_{\mathrm{pin}}
+:=
+\left\{
+y:
+s_j(y)\in\{\pm1\}
+\quad
+\mathrm{for\ all}
+\quad
+0\le j<4
+\right\},
+\tag{24.19}
+```
+
+write:
+
+```math
+\epsilon_j(y)
+:=
+s_j(y),
+\qquad
+\kappa_{\square}(y)
+:=
+\prod_{j=0}^{3}
+\epsilon_j(y).
+\tag{24.20}
+```
+
+The sign-curvature table is the finite list:
+
+```math
+(\epsilon_0,\epsilon_1,\epsilon_2,\epsilon_3)
+\in
+\{\pm1\}^4,
+\qquad
+\kappa_{\square}
+=
+\epsilon_0\epsilon_1\epsilon_2\epsilon_3.
+\tag{24.21}
+```
+
+If there are constants:
+
+```math
+\eta_R>0,
+\qquad
+\alpha_R>0,
+\tag{24.22}
+```
+
+such that:
+
+```math
+\mu^{\square}_{R,a}
+\left(
+\kappa_{\square}=+1
+\right)
+\ge
+\eta_R+o_a(1),
+\qquad
+\mu^{\square}_{R,a}
+\left(
+\kappa_{\square}=-1
+\right)
+\ge
+\alpha_R+o_a(1),
+\tag{24.23}
+```
+
+then no single phase `lambda^4` fits the cell holonomy distribution. More
+precisely:
+
+```math
+\Theta^{\square}_{R,a}
+\ge
+4
+\min(\eta_R,\alpha_R)
++
+o_a(1).
+\tag{24.24}
+```
+
+Therefore (20.23) follows. This is the cleanest success mode for the
+plaquette-cycle route.
+
+### 24.6. Soft Holonomy Enumeration
+
+The pinned-sign table is sufficient but not necessary. Define the distance from
+constant unit phase:
+
+```math
+\operatorname{dist}_{\mathbb T}
+\left(
+H^{\square}_{R,a}
+\right)^2
+:=
+\inf_{|\lambda|=1}
+\left|
+H^{\square}_{R,a}
+-
+\lambda^4
+\right|^2.
+\tag{24.25}
+```
+
+If:
+
+```math
+\int
+\operatorname{dist}_{\mathbb T}
+\left(
+H^{\square}_{R,a}(y)
+\right)^2
+d\mu^{\square}_{R,a}(y)
+\ge
+\theta_R+o_a(1),
+\tag{24.26}
+```
+
+then (24.17) holds. This radial soft version captures edge depinning:
+
+```math
+\boxed{
+\mathrm{MIX}_{\mathrm{edge}}
+\quad
+\text{some }|s_j|\text{ are bounded away from one}.
+}
+\tag{24.27}
+```
+
+The pointwise distance in (24.25) does not detect pinned sign frustration,
+because both `+1` and `-1` lie on the unit circle. Genuine plaquette-cycle
+frustration is measured by the global phase fit:
+
+```math
+\Theta^{\square}_{R,a}
+=
+\inf_{|\lambda|=1}
+\int
+\left|
+H^{\square}_{R,a}(y)
+-
+\lambda^4
+\right|^2
+d\mu^{\square}_{R,a}(y).
+\tag{24.28}
+```
+
+Thus the soft audit has two distinct success modes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{MIX}_{\mathrm{edge}}
+&
+\text{radial distance from the unit circle is bounded below},\\[1mm]
+\mathrm{FRUST}_{\square}
+&
+\text{the global phase fit }\Theta^{\square}_{R,a}\text{ is bounded below}.
+\end{array}}
+\tag{24.29}
+```
+
+The first effect is averaged two-sidedness in another language. The second is
+genuine plaquette-cycle frustration.
+
+### 24.7. Exact Outcomes Of The Audit
+
+The physical plaquette-cycle audit has five possible outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{margin}}
+&
+\text{RP or tiling gives }M^{\square}_R<\infty,\\[1mm]
+\mathrm{PASS}_{\mathrm{curv}}
+&
+\text{fixed-weight sign curvature gives }\Theta^{\square}_{R,a}\ge\theta_R,\\[1mm]
+\mathrm{FAIL}_{\mathrm{align}}
+&
+\text{the holonomy fits one }\lambda^4\text{ asymptotically},\\[1mm]
+\mathrm{FAIL}_{\mathrm{weight}}
+&
+\text{frustrated cells exist but their weight goes to zero},\\[1mm]
+\mathrm{FAIL}_{\mathrm{margin}}
+&
+\text{the cell sampler is not dominated by }\Pi^0\text{ at fixed }R.
+\end{array}}
+\tag{24.30}
+```
+
+Only the first two lines prove the fixed-IR non-coboundary estimate. The fourth
+line is the area-barrier obstruction in finite-cell form.
+
+### 24.8. ISP And O1 Reading
+
+Target 40.174 gives a particularly sharp O1 test. The entire audit depends on:
+
+```math
+\mu^{\square}_{R,a},
+\qquad
+\Pi^0_{R,a},
+\qquad
+H^{\square}_{R,a}.
+\tag{24.31}
+```
+
+If Barandes-aligned ISP records are deterministic pushforwards of the same
+finite-cutoff SU(2) measure, then these three objects are the standard
+center-resolved Yang-Mills objects. ISP has not changed the plaquette-cycle
+proof problem.
+
+If ISP contributes a genuine record-law advantage, it must change the
+fixed-IR distribution of the sign-curvature table (24.21), or the soft
+holonomy distribution entering (24.28), without adding a hidden stochastic
+kernel. That is the precise, falsifiable place to look.
+
+### 24.9. Completed Target 40.174
+
+Target 40.174 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{margin}}
+&
+\text{bounded physical overlap gives }M^{\square}_R<\infty,\\[1mm]
+\mathrm{PROVED}_{\mathrm{criterion}}
+&
+\text{cell holonomy separation }\Theta^{\square}_{R,a}\text{ implies }(20.23),\\[1mm]
+\mathrm{PROVED}_{\mathrm{enum}}
+&
+\text{fixed-weight positive and negative sign curvature implies separation},\\[1mm]
+\mathrm{OPEN}_{\mathrm{data}}
+&
+\text{compute whether the actual cell law has fixed-weight frustration},\\[1mm]
+\mathrm{NEXT}
+&
+\text{enumerate the finite-cell sign-curvature law in a tractable model}.
+\end{array}}
+\tag{24.32}
+```
+
+Thus the next obstruction is no longer abstract. At fixed physical scale, the
+plaquette-cycle route succeeds exactly if the actual finite-cell record law puts
+nonvanishing weight on incompatible charged holonomies. If that weight vanishes
+as `a -> 0`, the cycle route has found the area barrier again, now as a concrete
+cell-enumeration failure.
+
+## 25. Target 40.175: Minimal Z2 Sign-Curvature Enumeration
+
+Searchable Target-40.175 tag:
+`V4P40-TARGET-40175-MINIMAL-Z2-SIGN-CURVATURE-ENUMERATION`.
+
+Target 40.174 reduced the plaquette-cycle route to a finite-cell law. Target
+40.175 performs the minimal enumeration that decides what kind of finite-cell
+law can possibly help.
+
+The point of this target is modest but important. It does not compute the actual
+four-dimensional SU(2) cell law. It computes the smallest `Z_2` sign-curvature
+table and shows exactly which distributions pass, which distributions are pure
+coboundaries, and where the actual Yang-Mills input must enter.
+
+### 25.1. Minimal Z2 Edge Table
+
+Let:
+
+```math
+\epsilon
+=
+(\epsilon_0,\epsilon_1,\epsilon_2,\epsilon_3)
+\in
+\{\pm1\}^4.
+\tag{25.1}
+```
+
+The plaquette sign curvature is:
+
+```math
+\kappa(\epsilon)
+:=
+\epsilon_0\epsilon_1\epsilon_2\epsilon_3.
+\tag{25.2}
+```
+
+There are:
+
+```math
+16
+\tag{25.3}
+```
+
+edge-sign configurations. Exactly:
+
+```math
+8
+\tag{25.4}
+```
+
+have `kappa=+1`, and exactly:
+
+```math
+8
+\tag{25.5}
+```
+
+have `kappa=-1`.
+
+Thus the uniform table gives:
+
+```math
+\mathbb P_{\mathrm{unif}}(\kappa=+1)
+=
+\mathbb P_{\mathrm{unif}}(\kappa=-1)
+=
+\frac12.
+\tag{25.6}
+```
+
+By (24.24), the uniform table would give:
+
+```math
+\Theta^{\square}
+\ge
+2.
+\tag{25.7}
+```
+
+This proves that the finite sign table has no algebraic obstruction to the
+plaquette-cycle route. The obstruction, if present, is measure concentration.
+
+### 25.2. Coboundary Table
+
+Now assign vertex signs:
+
+```math
+u_0,u_1,u_2,u_3\in\{\pm1\},
+\tag{25.8}
+```
+
+and define edge signs by:
+
+```math
+\epsilon_j
+=
+u_{j+1}u_j,
+\qquad
+u_4=u_0.
+\tag{25.9}
+```
+
+Then:
+
+```math
+\kappa(\epsilon)
+=
+\prod_{j=0}^{3}
+u_{j+1}u_j
+=
+1.
+\tag{25.10}
+```
+
+Thus every pure boundary-coboundary edge-sign table has trivial plaquette
+curvature. Conversely, if:
+
+```math
+\kappa(\epsilon)=1,
+\tag{25.11}
+```
+
+then there are vertex signs satisfying (25.9). For example choose:
+
+```math
+u_0=1,
+\qquad
+u_1=\epsilon_0,
+\qquad
+u_2=\epsilon_1\epsilon_0,
+\qquad
+u_3=\epsilon_2\epsilon_1\epsilon_0.
+\tag{25.12}
+```
+
+The condition (25.11) is exactly what makes the fourth equation close.
+
+Therefore:
+
+```math
+\boxed{
+\kappa=+1
+\quad
+\Longleftrightarrow
+\quad
+\epsilon\ \mathrm{is\ a\ }Z_2\ \mathrm{boundary\ coboundary\ on\ the\ cycle}.
+}
+\tag{25.13}
+```
+
+This is the finite-cell version of the cycle obstruction. Negative plaquette
+curvature is precisely non-coboundary sign holonomy.
+
+### 25.3. General Law On The Table
+
+Let `rho` be any probability law on:
+
+```math
+\{\pm1\}^4.
+\tag{25.14}
+```
+
+Set:
+
+```math
+p_+
+:=
+\rho(\kappa=+1),
+\qquad
+p_-
+:=
+\rho(\kappa=-1).
+\tag{25.15}
+```
+
+Then:
+
+```math
+p_+ + p_- = 1.
+\tag{25.16}
+```
+
+The pinned-sign plaquette-cycle separation is:
+
+```math
+\Theta_{\rho}
+:=
+\inf_{|\lambda|=1}
+\mathbb E_{\rho}
+\left[
+\left|
+\kappa-\lambda^4
+\right|^2
+\right].
+\tag{25.17}
+```
+
+Since `lambda^4` ranges over the unit circle:
+
+```math
+\Theta_{\rho}
+=
+2
+\left(
+1-
+\left|
+p_+ - p_-
+\right|
+\right)
+=
+4
+\min(p_+,p_-).
+\tag{25.18}
+```
+
+Thus the exact pinned-table criterion is:
+
+```math
+\Theta_{\rho}>0
+\quad
+\Longleftrightarrow
+\quad
+p_+>0
+\quad
+\mathrm{and}
+\quad
+p_->0.
+\tag{25.19}
+```
+
+The fixed-IR version is:
+
+```math
+\liminf_{a\to0}
+\min
+\left(
+p_{+,R,a},
+p_{-,R,a}
+\right)
+>
+0.
+\tag{25.20}
+```
+
+This is exactly the finite-cell sign-curvature form of (24.23).
+
+### 25.4. Three Tractable Laws
+
+The minimal enumeration has three canonical laws.
+
+First, the uniform law:
+
+```math
+p_+=p_-=\frac12,
+\qquad
+\Theta_{\rho}=2.
+\tag{25.21}
+```
+
+This passes.
+
+Second, any pure coboundary law:
+
+```math
+p_+=1,
+\qquad
+p_-=0,
+\qquad
+\Theta_{\rho}=0.
+\tag{25.22}
+```
+
+This fails. It is the exact algebraic form of boundary-coboundary absorption.
+
+Third, an area-biased law:
+
+```math
+p_{-,R,a}
+=
+\exp
+\left(
+-B_{R,a}
+\right),
+\qquad
+B_{R,a}\to\infty.
+\tag{25.23}
+```
+
+Then:
+
+```math
+\Theta_{\rho_{R,a}}
+\le
+4
+\exp
+\left(
+-B_{R,a}
+\right)
+\to
+0.
+\tag{25.24}
+```
+
+This fails by weight collapse. It is the cell-enumeration version of the area
+barrier.
+
+### 25.5. What The Actual SU(2) Cell Law Must Prove
+
+Let:
+
+```math
+0<\zeta_R<\frac14
+\tag{25.25}
+```
+
+be a fixed physical tolerance. The near-pinned event is:
+
+```math
+\mathcal E_{\mathrm{pin}}(\zeta_R)
+:=
+\left\{
+y:
+\exists\epsilon_j(y)\in\{\pm1\}
+\quad
+\left|
+s_j(y)-\epsilon_j(y)
+\right|
+\le
+\zeta_R
+\quad
+\mathrm{for\ all}\quad
+0\le j<4
+\right\}.
+\tag{25.26}
+```
+
+On this event define:
+
+```math
+\kappa_{\square}(y)
+:=
+\prod_{j=0}^{3}
+\epsilon_j(y).
+\tag{25.27}
+```
+
+Let the near-pinned actual sign-curvature sublaw be:
+
+```math
+\rho^{\mathrm{YM},\zeta}_{R,a}
+=
+\left(
+\epsilon_0,\epsilon_1,\epsilon_2,\epsilon_3
+\right)_{\#}
+\left(
+\mu^{\square}_{R,a}
+\big|_{\mathcal E_{\mathrm{pin}}(\zeta_R)}
+\right).
+\tag{25.28}
+```
+
+The pinned-table route for the actual SU(2) cell law must prove:
+
+```math
+\liminf_{a\to0}
+\rho^{\mathrm{YM},\zeta}_{R,a}(\kappa_{\square}=-1)
+>
+0
+\quad
+\mathrm{and}
+\quad
+\liminf_{a\to0}
+\rho^{\mathrm{YM},\zeta}_{R,a}(\kappa_{\square}=+1)
+>
+0.
+\tag{25.29}
+```
+
+The product map is Lipschitz on the unit polydisc. Hence, on
+`E_pin(zeta_R)`, the actual cell holonomy differs from `kappa_square` by at
+most `4 zeta_R`. Therefore (25.29) gives:
+
+```math
+\Theta^{\square}_{R,a}
+\ge
+4
+\min
+\left(
+\rho^{\mathrm{YM},\zeta}_{R,a}(\kappa_{\square}=+1),
+\rho^{\mathrm{YM},\zeta}_{R,a}(\kappa_{\square}=-1)
+\right)
+-
+C\zeta_R
++
+o_a(1)
+\tag{25.30}
+```
+
+for a universal finite constant `C`. Choosing `zeta_R` small enough then proves
+(20.23).
+
+If:
+
+```math
+\rho^{\mathrm{YM},\zeta}_{R,a}(\kappa_{\square}=-1)
+\to
+0,
+\tag{25.31}
+```
+
+or if the near-pinned event itself has vanishing useful weight, then the
+pinned-sign plaquette-cycle route fails and the proof must use the soft
+holonomy functional (24.28) directly.
+
+For weak-continuum SU(2), the expected danger is (25.31): negative curvature
+cells exist algebraically, but their neutral weight may vanish. This is not a
+rendering problem or a section-choice problem. It is a physical fixed-IR weight
+problem.
+
+### 25.6. Barandes And ISP Reading
+
+The enumeration above is compatible with Barandes alignment because it treats
+the signs as deterministic readouts of the finite-cutoff configuration. It does
+not add a transition law for the records.
+
+If the ISP record law is only a deterministic pushforward, then:
+
+```math
+\rho^{\mathrm{ISP},\zeta}_{R,a}
+=
+\rho^{\mathrm{YM},\zeta}_{R,a}.
+\tag{25.32}
+```
+
+In that case the enumeration gives no extra ISP lever. The proof needs the
+ordinary fixed-IR Yang-Mills estimate (25.29), or the soft estimate (24.28).
+
+If ISP is to help without violating Barandes alignment, it must justify a
+different deterministic record battery whose pushed-forward law has:
+
+```math
+\liminf_{a\to0}
+\min
+\left(
+\rho^{\mathrm{ISP},\zeta}_{R,a}(\kappa_{\square}=+1),
+\rho^{\mathrm{ISP},\zeta}_{R,a}(\kappa_{\square}=-1)
+\right)
+>
+0
+\tag{25.33}
+```
+
+while still being a deterministic readout of the same finite-cutoff process.
+
+### 25.7. Completed Target 40.175
+
+Target 40.175 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{table}}
+&
+\text{the minimal }Z_2\text{ table has eight positive and eight negative curvatures},\\[1mm]
+\mathrm{PROVED}_{\mathrm{cob}}
+&
+\text{pure coboundary tables are exactly }\kappa=+1,\\[1mm]
+\mathrm{PROVED}_{\mathrm{criterion}}
+&
+\text{the pinned-table separation is }4\min(p_+,p_-),\\[1mm]
+\mathrm{FAIL}_{\mathrm{area}}
+&
+\text{area-biased negative curvature weight makes the criterion vanish},\\[1mm]
+\mathrm{NEXT}
+&
+\text{estimate }\rho^{\mathrm{YM},\zeta}_{R,a}(\kappa_{\square}=-1)\text{ or }(24.28).
+\end{array}}
+\tag{25.34}
+```
+
+The finite enumeration is complete. It shows that plaquette-cycle frustration is
+not algebraically forbidden, but also not automatic. The remaining fixed-IR
+question is whether the actual Barandes-aligned SU(2) cell law gives
+near-pinned negative sign curvature with nonvanishing weight, or else a direct
+soft holonomy separation, as `a -> 0`.
+
+## 26. Target 40.176: Actual SU(2) Cell-Law Weight Estimate
+
+Searchable Target-40.176 tag:
+`V4P40-TARGET-40176-ACTUAL-SU2-CELL-LAW-WEIGHT-ESTIMATE`.
+
+Target 40.175 finished the algebra. Target 40.176 asks the actual Yang-Mills
+question: under the Barandes-aligned finite-cell pushforward, does negative
+plaquette sign curvature survive with fixed physical weight, or does its weight
+collapse as the cutoff is removed?
+
+The target has two branches. The near-pinned branch estimates the constrained
+weight of `kappa_square=-1`. The soft branch estimates the holonomy separation
+functional `Theta_square` directly.
+
+### 26.1. Actual Cell Density
+
+Use the physical four-cell package from Target 40.174. The actual cell measure
+has density:
+
+```math
+d\mu^{\square}_{R,a}(y)
+=
+\frac{1}{Z^{\square}_{R,a}}
+\exp
+\left(
+-A^{\square}_{R,a}(y)
+\right)
+d\kappa^{\square}_{R,a}(y),
+\tag{26.1}
+```
+
+where `kappa_square` is the counting-Haar reference measure on the deterministic
+record cell, and:
+
+```math
+Z^{\square}_{R,a}
+=
+\int
+\exp
+\left(
+-A^{\square}_{R,a}(y)
+\right)
+d\kappa^{\square}_{R,a}(y).
+\tag{26.2}
+```
+
+This is a configuration-measure statement. The records are deterministic
+readouts. There is no hidden Markov transition on records.
+
+Fix:
+
+```math
+0<\zeta_R<\frac14.
+\tag{26.3}
+```
+
+Let:
+
+```math
+E^{\zeta,\pm}_{R,a}
+:=
+\mathcal E_{\mathrm{pin}}(\zeta_R)
+\cap
+\left\{
+\kappa_{\square}=\pm1
+\right\}.
+\tag{26.4}
+```
+
+The constrained partition functions are:
+
+```math
+Z^{\zeta,\pm}_{R,a}
+:=
+\int_{E^{\zeta,\pm}_{R,a}}
+\exp
+\left(
+-A^{\square}_{R,a}(y)
+\right)
+d\kappa^{\square}_{R,a}(y).
+\tag{26.5}
+```
+
+The actual near-pinned curvature masses are:
+
+```math
+m^{\zeta,\pm}_{R,a}
+:=
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,\pm}_{R,a}
+\right)
+=
+\frac{
+Z^{\zeta,\pm}_{R,a}
+}{
+Z^{\square}_{R,a}
+}.
+\tag{26.6}
+```
+
+Thus the near-pinned branch of Target 40.175 is exactly:
+
+```math
+\liminf_{a\to0}
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+>
+0.
+\tag{26.7}
+```
+
+### 26.2. Free-Energy Form Of The Weight Problem
+
+Define the constrained free-energy costs:
+
+```math
+B^{\zeta,\pm}_{R,a}
+:=
+-\log
+m^{\zeta,\pm}_{R,a}.
+\tag{26.8}
+```
+
+Then:
+
+```math
+\liminf_{a\to0}
+m^{\zeta,\pm}_{R,a}
+>
+0
+\quad
+\Longleftrightarrow
+\quad
+\limsup_{a\to0}
+B^{\zeta,\pm}_{R,a}
+<
+\infty.
+\tag{26.9}
+```
+
+Therefore the exact fixed-IR criterion is:
+
+```math
+\boxed{
+\limsup_{a\to0}
+\max
+\left(
+B^{\zeta,+}_{R,a},
+B^{\zeta,-}_{R,a}
+\right)
+<
+\infty
+\quad
+\Longrightarrow
+\quad
+(20.23).
+}
+\tag{26.10}
+```
+
+Conversely, if:
+
+```math
+B^{\zeta,-}_{R,a}
+\to
+\infty,
+\tag{26.11}
+```
+
+then:
+
+```math
+m^{\zeta,-}_{R,a}
+\to
+0,
+\tag{26.12}
+```
+
+and the near-pinned negative-curvature route fails.
+
+This is the precise fixed-IR area-barrier form. The problem is not whether
+negative sign curvature is algebraically allowed. The problem is whether its
+constrained free-energy cost stays bounded at fixed physical `R`.
+
+### 26.3. Ratio Form
+
+Sometimes the ratio to the positive sector is cleaner. Define:
+
+```math
+\Delta B^{\zeta}_{R,a}
+:=
+-\log
+\frac{
+Z^{\zeta,-}_{R,a}
+}{
+Z^{\zeta,+}_{R,a}
+}.
+\tag{26.13}
+```
+
+If:
+
+```math
+\limsup_{a\to0}
+\left|
+\Delta B^{\zeta}_{R,a}
+\right|
+<
+\infty
+\tag{26.14}
+```
+
+and:
+
+```math
+\liminf_{a\to0}
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,+}_{R,a}
+\cup
+E^{\zeta,-}_{R,a}
+\right)
+>
+0,
+\tag{26.15}
+```
+
+then (26.7) follows. If (26.15) fails, the near-pinned branch has no useful
+mass and the soft branch must be used instead.
+
+### 26.4. Soft Holonomy Moment Formula
+
+The soft branch uses:
+
+```math
+H^{\square}_{R,a}(y)
+=
+\prod_{j=0}^{3}
+s_j(y).
+\tag{26.16}
+```
+
+Since `lambda^4` ranges over the unit circle:
+
+```math
+\Theta^{\square}_{R,a}
+=
+\inf_{|z|=1}
+\int
+\left|
+H^{\square}_{R,a}(y)-z
+\right|^2
+d\mu^{\square}_{R,a}(y).
+\tag{26.17}
+```
+
+Expanding the square gives the exact moment formula:
+
+```math
+\Theta^{\square}_{R,a}
+=
+1
++
+\mathbb E_{\mu^{\square}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}
+\right|^2
+\right]
+-
+2
+\left|
+\mathbb E_{\mu^{\square}_{R,a}}
+\left[
+H^{\square}_{R,a}
+\right]
+\right|.
+\tag{26.18}
+```
+
+Thus the soft branch proves (20.23) exactly when:
+
+```math
+\liminf_{a\to0}
+\left(
+1
++
+\mathbb E
+\left[
+\left|
+H^{\square}_{R,a}
+\right|^2
+\right]
+-
+2
+\left|
+\mathbb E
+\left[
+H^{\square}_{R,a}
+\right]
+\right|
+\right)
+>
+0.
+\tag{26.19}
+```
+
+This is often the most computable form. It does not require identifying pinned
+signs. It only requires the first moment and second modulus moment of the actual
+cell holonomy.
+
+### 26.5. Exact Failure Modes
+
+Target 40.176 has four sharp outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{pin}}
+&
+\text{both }B^{\zeta,+}_{R,a}\text{ and }B^{\zeta,-}_{R,a}\text{ stay bounded},\\[1mm]
+\mathrm{FAIL}_{\mathrm{pin}}
+&
+\text{the negative near-pinned free energy diverges},\\[1mm]
+\mathrm{PASS}_{\mathrm{soft}}
+&
+\text{the moment formula }(26.18)\text{ has a positive limit inferior},\\[1mm]
+\mathrm{FAIL}_{\mathrm{soft}}
+&
+\text{the holonomy becomes asymptotically one constant unit phase}.
+\end{array}}
+\tag{26.20}
+```
+
+The expected weak-continuum danger is:
+
+```math
+B^{\zeta,-}_{R,a}
+\to
+\infty.
+\tag{26.21}
+```
+
+If (26.21) holds and the soft moment also collapses, the plaquette-cycle route
+has not escaped the area barrier. It has merely localized the barrier to one
+finite-cell constrained free energy.
+
+### 26.6. Fixed-IR And Barandes Contracts
+
+The fixed-IR contract for Target 40.176 is:
+
+```math
+R\ \mathrm{fixed},
+\qquad
+\zeta_R\ \mathrm{fixed},
+\qquad
+a\to0.
+\tag{26.22}
+```
+
+No cycle length, smoothing radius, or cell diameter may shrink with `a`.
+
+The Barandes contract is:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{26.23}
+```
+
+All quantities in (26.1)-(26.19) are deterministic pushforwards of the finite
+SU(2) configuration measure. Reflection positivity, tiling, and deterministic
+record batteries may be used. A hidden stochastic dynamics for the records may
+not be inserted.
+
+### 26.7. Completed Target 40.176
+
+Target 40.176 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{ratio}}
+&
+\text{near-pinned curvature weights are constrained partition ratios }(26.6),\\[1mm]
+\mathrm{PROVED}_{\mathrm{free}}
+&
+\text{fixed weight is equivalent to bounded constrained free energy }(26.9),\\[1mm]
+\mathrm{PROVED}_{\mathrm{soft}}
+&
+\text{soft separation equals the moment expression }(26.18),\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{estimate }B^{\zeta,-}_{R,a}\text{ or the soft moment for actual SU(2)},\\[1mm]
+\mathrm{NEXT}
+&
+\text{test whether the constrained negative-curvature free energy diverges}.
+\end{array}}
+\tag{26.24}
+```
+
+The actual SU(2) cell-law problem is now exact. The proof succeeds if the
+negative-curvature constrained free energy remains bounded, or if the soft
+holonomy moment stays separated from one constant phase. It fails by this route
+if both collapse in the fixed-IR continuum limit.
+
+## 27. Target 40.177: Plaquette-Cycle Pass Or Area-Barrier Collapse
+
+Searchable Target-40.177 tag:
+`V4P40-TARGET-40177-PLAQUETTE-CYCLE-PASS-OR-AREA-BARRIER-COLLAPSE`.
+
+Target 40.176 left two possible ways to close the plaquette-cycle route:
+bounded negative-curvature free energy, or soft holonomy separation. Target
+40.177 proves the exact dichotomy. If neither branch holds, the plaquette-cycle
+route has not escaped confinement difficulty; it has identified the area barrier
+as a finite-cell concentration statement.
+
+### 27.1. Near-Pinned Cell Trichotomy
+
+Fix `R` and `zeta_R` as in Target 40.176. Define:
+
+```math
+E^{\zeta,+}_{R,a}
+=
+\mathcal E_{\mathrm{pin}}(\zeta_R)
+\cap
+\{\kappa_{\square}=+1\},
+\tag{27.1}
+```
+
+```math
+E^{\zeta,-}_{R,a}
+=
+\mathcal E_{\mathrm{pin}}(\zeta_R)
+\cap
+\{\kappa_{\square}=-1\},
+\tag{27.2}
+```
+
+and the non-pinned remainder:
+
+```math
+E^{\zeta,0}_{R,a}
+:=
+\left(
+E^{\zeta,+}_{R,a}
+\cup
+E^{\zeta,-}_{R,a}
+\right)^c.
+\tag{27.3}
+```
+
+Let:
+
+```math
+m^{\zeta,\sigma}_{R,a}
+:=
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,\sigma}_{R,a}
+\right),
+\qquad
+\sigma\in\{+, -, 0\}.
+\tag{27.4}
+```
+
+The three masses satisfy:
+
+```math
+m^{\zeta,+}_{R,a}
++
+m^{\zeta,-}_{R,a}
++
+m^{\zeta,0}_{R,a}
+=
+1.
+\tag{27.5}
+```
+
+The near-pinned branch succeeds if:
+
+```math
+\liminf_{a\to0}
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+>
+0.
+\tag{27.6}
+```
+
+By Target 40.176, (27.6) is equivalent to bounded constrained free energy for
+both signs and implies (20.23).
+
+### 27.2. Collapse Lemma
+
+On the positive near-pinned event:
+
+```math
+y\in E^{\zeta,+}_{R,a},
+\tag{27.7}
+```
+
+the cell holonomy obeys:
+
+```math
+\left|
+H^{\square}_{R,a}(y)-1
+\right|
+\le
+4\zeta_R.
+\tag{27.8}
+```
+
+On the negative near-pinned event:
+
+```math
+y\in E^{\zeta,-}_{R,a},
+\tag{27.9}
+```
+
+it obeys:
+
+```math
+\left|
+H^{\square}_{R,a}(y)+1
+\right|
+\le
+4\zeta_R.
+\tag{27.10}
+```
+
+Since:
+
+```math
+\left|
+H^{\square}_{R,a}(y)
+\right|
+\le
+1
+\tag{27.11}
+```
+
+for the normalized sign kernels, if:
+
+```math
+m^{\zeta,-}_{R,a}
++
+m^{\zeta,0}_{R,a}
+\to
+0,
+\tag{27.12}
+```
+
+then:
+
+```math
+\limsup_{a\to0}
+\int
+\left|
+H^{\square}_{R,a}(y)-1
+\right|^2
+d\mu^{\square}_{R,a}(y)
+\le
+16\zeta_R^2.
+\tag{27.13}
+```
+
+Therefore:
+
+```math
+\limsup_{a\to0}
+\Theta^{\square}_{R,a}
+\le
+16\zeta_R^2.
+\tag{27.14}
+```
+
+Sending the fixed tolerance `zeta_R` through a sequence of smaller physical
+tolerances shows the collapse mechanism:
+
+```math
+m^{\zeta,-}_{R,a}
++
+m^{\zeta,0}_{R,a}
+\to
+0
+\quad
+\Longrightarrow
+\quad
+\Theta^{\square}_{R,a}
+\to
+0
+\quad
+\mathrm{along\ the\ near\ positive\ phase}.
+\tag{27.15}
+```
+
+The same statement holds with `+` and `-` exchanged, replacing the limiting
+phase `1` by `-1`.
+
+### 27.3. Soft Moment Separation Is The Only Escape From Collapse
+
+The soft functional is:
+
+```math
+\Theta^{\square}_{R,a}
+=
+\inf_{|z|=1}
+\int
+\left|
+H^{\square}_{R,a}(y)-z
+\right|^2
+d\mu^{\square}_{R,a}(y).
+\tag{27.16}
+```
+
+Thus:
+
+```math
+\Theta^{\square}_{R,a}\to0
+\tag{27.17}
+```
+
+if and only if there exist phases:
+
+```math
+z_a\in\mathbb T
+\tag{27.18}
+```
+
+such that:
+
+```math
+\int
+\left|
+H^{\square}_{R,a}(y)-z_a
+\right|^2
+d\mu^{\square}_{R,a}(y)
+\to
+0.
+\tag{27.19}
+```
+
+Consequently, the soft branch succeeds exactly when the actual cell holonomy
+does not concentrate in `L^2` near one constant unit phase:
+
+```math
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0.
+\tag{27.20}
+```
+
+This is not a separate algebraic assumption. It is a measurable concentration
+statement for the actual SU(2) pushed-forward cell law.
+
+### 27.4. Exact Dichotomy
+
+Combining the constrained free-energy branch and the soft branch gives the
+fixed-IR dichotomy:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{pin}}
+&
+\liminf\limits_{a\to0}\min(m^{\zeta,+}_{R,a},m^{\zeta,-}_{R,a})>0,\\[1mm]
+\mathrm{PASS}_{\mathrm{soft}}
+&
+\liminf\limits_{a\to0}\Theta^{\square}_{R,a}>0,\\[1mm]
+\mathrm{FAIL}_{\mathrm{cell}}
+&
+\Theta^{\square}_{R,a}\to0
+\text{ and the negative near-pinned mass collapses}.
+\end{array}}
+\tag{27.21}
+```
+
+The first two lines prove (20.23), hence the charged transfer deficit through
+Section 19. The third line means the plaquette-cycle route fails.
+
+In free-energy language, the failure line is:
+
+```math
+B^{\zeta,-}_{R,a}
+\to
+\infty
+\quad
+\mathrm{and}
+\quad
+\Theta^{\square}_{R,a}
+\to
+0.
+\tag{27.22}
+```
+
+This is exactly the finite-cell area-barrier collapse.
+
+### 27.5. What Can Be Proved Now
+
+The following statements are proved without additional Yang-Mills input:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{P1}
+&
+\text{bounded negative-curvature free energy proves the route},\\[1mm]
+\mathrm{P2}
+&
+\text{soft holonomy separation proves the route},\\[1mm]
+\mathrm{P3}
+&
+\text{near-positive concentration forces soft collapse},\\[1mm]
+\mathrm{P4}
+&
+\text{failure of both branches is exactly area-barrier concentration}.
+\end{array}}
+\tag{27.23}
+```
+
+What is not proved by topology, RP, or Barandes-aligned record bookkeeping is:
+
+```math
+\boxed{
+\limsup_{a\to0}
+B^{\zeta,-}_{R,a}
+<
+\infty
+\quad
+\mathrm{or}
+\quad
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0
+}
+\tag{27.24}
+```
+
+for the actual four-dimensional SU(2) cell law. That is the remaining
+nonperturbative input.
+
+### 27.6. Consequence For The Paper
+
+The plaquette-cycle route has now reached a hard boundary. It does not give a
+free proof of fixed-IR confinement from finite `Z_2` topology. It gives an exact
+finite-cell test:
+
+```math
+\boxed{
+\text{prove bounded negative-curvature free energy or soft holonomy separation.}
+}
+\tag{27.25}
+```
+
+If both fail, the route has found the area barrier again. The value of the route
+is that the barrier is now localized to one explicit finite-cell law rather than
+spread across the whole Wilson surface.
+
+### 27.7. Fixed-IR And Barandes Alignment
+
+Target 40.177 remains fixed-IR aligned because:
+
+```math
+R,\ \zeta_R,\ \mathfrak P_R
+\quad
+\mathrm{are\ fixed\ before}
+\quad
+a\to0.
+\tag{27.26}
+```
+
+It remains Barandes aligned because all masses and moments are computed from:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{27.27}
+```
+
+No Markov law for records, no hidden stochastic transition, and no ontology
+tilt has been introduced.
+
+### 27.8. Completed Target 40.177
+
+Target 40.177 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{pass}}
+&
+\text{bounded negative-curvature free energy or soft separation proves }(20.23),\\[1mm]
+\mathrm{PROVED}_{\mathrm{collapse}}
+&
+\text{near-positive concentration forces }\Theta^{\square}_{R,a}\to0,\\[1mm]
+\mathrm{PROVED}_{\mathrm{dichotomy}}
+&
+\text{failure of both branches is finite-cell area-barrier collapse},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{decide which branch holds for the actual SU(2) cell law},\\[1mm]
+\mathrm{NEXT}
+&
+\text{estimate the constrained free energy }B^{\zeta,-}_{R,a}.
+\end{array}}
+\tag{27.28}
+```
+
+Thus the requested alternatives are exhausted at the level available from the
+current framework. The route closes if either bounded negative-curvature free
+energy or soft holonomy separation is proved. If both fail, the plaquette-cycle
+route has located the area barrier as the collapse of one explicit
+Barandes-aligned finite-cell observable.
+
+## 28. Target 40.178: Constrained Negative-Curvature Free-Energy Audit
+
+Searchable Target-40.178 tag:
+`V4P40-TARGET-40178-CONSTRAINED-NEGATIVE-CURVATURE-FREE-ENERGY-AUDIT`.
+
+Target 40.177 reduced the actual SU(2) problem to one of two estimates. Target
+40.178 investigates the first estimate:
+
+```math
+\limsup_{a\to0}
+B^{\zeta,-}_{R,a}
+<
+\infty.
+\tag{28.1}
+```
+
+The result is a sharp conditional audit. A thin microscopic realization of
+negative cell curvature has divergent free energy and therefore cannot close the
+fixed-IR route. A bounded result can only come from a thick physical
+realization, a renormalized record battery, or the soft holonomy branch.
+
+### 28.1. Exact Free-Energy Ratio
+
+Recall:
+
+```math
+B^{\zeta,-}_{R,a}
+=
+-\log
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,-}_{R,a}
+\right).
+\tag{28.2}
+```
+
+Equivalently:
+
+```math
+B^{\zeta,-}_{R,a}
+=
+-\log
+\frac{
+Z^{\zeta,-}_{R,a}
+}{
+Z^{\square}_{R,a}
+}.
+\tag{28.3}
+```
+
+Let:
+
+```math
+G^{\zeta,+}_{R,a}
+\subset
+E^{\zeta,+}_{R,a}
+\tag{28.4}
+```
+
+be any comparison good set with positive near-positive cell curvature. Define:
+
+```math
+Z^{G}_{R,a}
+:=
+\int_{G^{\zeta,+}_{R,a}}
+\exp
+\left(
+-A^{\square}_{R,a}(y)
+\right)
+d\kappa^{\square}_{R,a}(y).
+\tag{28.5}
+```
+
+Since:
+
+```math
+Z^{\square}_{R,a}
+\ge
+Z^{G}_{R,a},
+\tag{28.6}
+```
+
+one has:
+
+```math
+B^{\zeta,-}_{R,a}
+\ge
+-\log
+\frac{
+Z^{\zeta,-}_{R,a}
+}{
+Z^{G}_{R,a}
+}.
+\tag{28.7}
+```
+
+Thus a lower bound on the relative constrained free energy proves collapse of
+the negative-curvature branch.
+
+### 28.2. Thin-Defect Peierls Package
+
+The thin-defect hypothesis is not assumed as Yang-Mills truth. It is the
+specific microscopic scenario to test.
+
+Assume that every configuration in `E^{zeta,-}` contains a thin defect support:
+
+```math
+\Sigma_a(y)
+\tag{28.8}
+```
+
+with:
+
+```math
+|\Sigma_a(y)|
+\ge
+c_R a^{-2},
+\qquad
+c_R>0.
+\tag{28.9}
+```
+
+Assume also that relative to the comparison set `G` the action cost and entropy
+obey:
+
+```math
+A^{\square}_{R,a}(y)
+-
+A^{G}_{R,a}
+\ge
+\tau_R\beta_a|\Sigma_a(y)|
+-
+C_R,
+\tag{28.10}
+```
+
+and:
+
+```math
+\log
+\frac{
+\kappa^{\square}_{R,a}
+\left(
+E^{\zeta,-}_{R,a}
+\right)
+}{
+\kappa^{\square}_{R,a}
+\left(
+G^{\zeta,+}_{R,a}
+\right)
+}
+\le
+S_{R,a}.
+\tag{28.11}
+```
+
+Here:
+
+```math
+\tau_R>0
+\tag{28.12}
+```
+
+is a fixed physical action-density penalty, and `S_{R,a}` is the entropy or
+reference-volume allowance.
+
+Then:
+
+```math
+B^{\zeta,-}_{R,a}
+\ge
+\tau_R\beta_a c_R a^{-2}
+-
+C_R
+-
+S_{R,a}.
+\tag{28.13}
+```
+
+Therefore, if:
+
+```math
+\tau_R\beta_a c_R a^{-2}
+-
+S_{R,a}
+\to
+\infty,
+\tag{28.14}
+```
+
+then:
+
+```math
+B^{\zeta,-}_{R,a}
+\to
+\infty.
+\tag{28.15}
+```
+
+This proves that a thin negative-curvature realization collapses the
+plaquette-cycle route.
+
+### 28.3. What The Thin Result Means
+
+Equation (28.15) is not a proof that actual SU(2) fails the route. It proves a
+conditional falsifier:
+
+```math
+\boxed{
+\mathrm{thin\ center\ defect}
+\quad
+\Longrightarrow
+\quad
+\mathrm{negative\ curvature\ weight\ collapse}.
+}
+\tag{28.16}
+```
+
+The fixed-IR route can survive only if negative curvature is realized without a
+microscopic-area Peierls penalty. That means one of:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{THICK}_{R}
+&
+\text{a physical-thickness defect has bounded free energy},\\[1mm]
+\mathrm{REN}_{R}
+&
+\text{the record battery measures a renormalized cell curvature},\\[1mm]
+\mathrm{SOFT}_{R}
+&
+\text{the non-pinned holonomy moment satisfies }(27.20).
+\end{array}}
+\tag{28.17}
+```
+
+These are genuine dynamical alternatives. They cannot be obtained from the
+finite `Z_2` table alone.
+
+### 28.4. Bounded Branch As A Thick-Vortex Free Energy
+
+Define the optimal constrained negative-curvature free energy:
+
+```math
+\mathcal F^{-}_{R,a}(\zeta_R)
+:=
+\inf_{\mathcal R}
+\left[
+-\log
+\mu^{\square}_{R,a}
+\left(
+E^{-}_{\mathcal R,\zeta}
+\right)
+\right],
+\tag{28.18}
+```
+
+where `mathcal R` ranges over admissible deterministic fixed-IR record batteries
+for the same physical cell that still feed the plaquette-cycle criterion, and
+`E^{-}_{mathcal R,zeta}` is the corresponding near-pinned negative-curvature
+event.
+
+The bounded branch is:
+
+```math
+\limsup_{a\to0}
+\mathcal F^{-}_{R,a}(\zeta_R)
+<
+\infty.
+\tag{28.19}
+```
+
+This is exactly a finite-cell thick-vortex or renormalized center-disorder free
+energy statement. It is the local version of the same center-disorder input
+that the paper has been trying to isolate.
+
+Thus:
+
+```math
+\boxed{
+\mathrm{bounded\ }B^{\zeta,-}_{R,a}
+\quad
+\mathrm{is\ not\ a\ topology\ theorem;}
+\quad
+\mathrm{it\ is\ a\ finite\ cell\ vortex\ free\ energy\ theorem}.
+}
+\tag{28.20}
+```
+
+### 28.5. Soft Residual Escape
+
+If the near-pinned negative event collapses, the only remaining plaquette-cycle
+escape is the soft holonomy moment:
+
+```math
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0.
+\tag{28.21}
+```
+
+Decompose:
+
+```math
+\mu^{\square}_{R,a}
+=
+\mu^{\zeta,+}_{R,a}
++
+\mu^{\zeta,-}_{R,a}
++
+\mu^{\zeta,0}_{R,a}.
+\tag{28.22}
+```
+
+If:
+
+```math
+m^{\zeta,-}_{R,a}
+\to
+0
+\tag{28.23}
+```
+
+and:
+
+```math
+m^{\zeta,0}_{R,a}
+\to
+0,
+\tag{28.24}
+```
+
+then Target 40.177 gives:
+
+```math
+\Theta^{\square}_{R,a}
+\to
+0.
+\tag{28.25}
+```
+
+Therefore soft escape requires:
+
+```math
+\limsup_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0
+\tag{28.26}
+```
+
+and an actual phase-spread estimate on `E^{zeta,0}`. Equivalently, the
+non-pinned residual cell law must carry the fixed-IR disorder.
+
+### 28.6. Consequence For The Current Route
+
+Target 40.178 gives the honest answer to the requested alternative.
+
+The bounded negative-curvature free-energy branch is proved only under the
+finite-cell vortex free-energy input (28.19). The thin microscopic realization
+is falsified by (28.15). If the non-pinned residual mass also vanishes or
+concentrates on one phase, then the soft branch collapses by (28.25).
+
+Thus the plaquette-cycle route has the following exact status:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}
+&
+\text{prove a bounded thick or renormalized negative-curvature free energy},\\[1mm]
+\mathrm{PASS}
+&
+\text{prove fixed soft residual holonomy spread},\\[1mm]
+\mathrm{FAIL}
+&
+\text{thin negative curvature plus soft concentration gives area barrier}.
+\end{array}}
+\tag{28.27}
+```
+
+This is fixed-IR aligned: all scales in (28.17) are physical before the cutoff
+limit. It is Barandes aligned: changing record batteries is allowed only as a
+deterministic readout of the same finite SU(2) configuration law.
+
+### 28.7. Admissible Renormalized Batteries
+
+A renormalized battery:
+
+```math
+\mathcal R_{R,a}
+\tag{28.28}
+```
+
+is admissible for the plaquette-cycle route only if all of the following hold:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{ADM}_{1}
+&
+\text{it is a deterministic readout of the finite SU(2) configuration},\\[1mm]
+\mathrm{ADM}_{2}
+&
+\text{its support has fixed physical diameter},\\[1mm]
+\mathrm{ADM}_{3}
+&
+\text{it feeds the same four-edge cycle criterion},\\[1mm]
+\mathrm{ADM}_{4}
+&
+\text{its edge marginals remain dominated by }\Pi^0_{R,a},\\[1mm]
+\mathrm{ADM}_{5}
+&
+\text{it is reflection-compatible when RP is used}.
+\end{array}}
+\tag{28.29}
+```
+
+These conditions are not decorative. If `ADM_1` fails, the construction violates
+Barandes alignment by adding a hidden stochastic law. If `ADM_2` fails, the
+construction is not fixed-IR. If `ADM_3` or `ADM_4` fails, the battery no longer
+proves the transfer-cycle criterion. If `ADM_5` fails, the RP marginal audit is
+lost.
+
+### 28.8. No-Relabelling Lemma
+
+Let:
+
+```math
+\rho^{\mathcal R}_{R,a}
+=
+(\mathcal R_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}
+\tag{28.30}
+```
+
+be the record law induced by an admissible deterministic battery. Then every
+negative-curvature weight is exactly a pushed-forward Yang-Mills probability:
+
+```math
+\rho^{\mathcal R}_{R,a}
+\left(
+E^{-}_{\mathcal R,\zeta}
+\right)
+=
+\mu^{\mathrm{SU2}}_{R,a,\square}
+\left(
+\mathcal R_{R,a}^{-1}
+E^{-}_{\mathcal R,\zeta}
+\right).
+\tag{28.31}
+```
+
+Therefore:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{a Barandes-aligned battery cannot change the measure;}\\
+\text{it can only choose a different deterministic event to test.}
+\end{array}
+}
+\tag{28.32}
+```
+
+Consequently, if an admissible battery satisfies:
+
+```math
+\limsup_{a\to0}
+-\log
+\rho^{\mathcal R}_{R,a}
+\left(
+E^{-}_{\mathcal R,\zeta}
+\right)
+<
+\infty,
+\tag{28.33}
+```
+
+then the bounded-weight fact is an ordinary fixed-IR Yang-Mills fact about the
+preimage event in (28.31). It is not generated by ISP dynamics.
+
+This is the O1 guardrail in its sharpest local form.
+
+### 28.9. Thin-Equivalent Batteries Fail
+
+An admissible battery is thin-equivalent if its negative-curvature event implies
+a microscopic support satisfying (28.9)-(28.14). In symbols:
+
+```math
+E^{-}_{\mathcal R,\zeta}
+\subset
+\left\{
+y:
+\exists\Sigma_a(y)
+\ \mathrm{satisfying}\ (28.9)\text{--}(28.14)
+\right\}.
+\tag{28.34}
+```
+
+For every thin-equivalent battery:
+
+```math
+-\log
+\rho^{\mathcal R}_{R,a}
+\left(
+E^{-}_{\mathcal R,\zeta}
+\right)
+\to
+\infty.
+\tag{28.35}
+```
+
+Thus a successful battery must not be a disguised thin center-plaquette event.
+It must be genuinely physical-resolution or genuinely soft.
+
+### 28.10. Exact Investigation Outcome
+
+Target 40.178 has now been investigated to the local fixed-IR floor:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}_{\mathrm{thin}}
+&
+\text{thin or thin-equivalent negative curvature cannot close the route},\\[1mm]
+\mathrm{NO}_{\mathrm{ISP\ tilt}}
+&
+\text{Barandes-aligned records cannot alter the SU(2) measure},\\[1mm]
+\mathrm{YES}_{\mathrm{thick}}
+&
+\text{a bounded thick event would close the route but is a YM input},\\[1mm]
+\mathrm{YES}_{\mathrm{soft}}
+&
+\text{a non-pinned residual phase spread would close the route},\\[1mm]
+\mathrm{OPEN}
+&
+\text{construct such a thick or soft event for actual SU(2), or falsify it}.
+\end{array}}
+\tag{28.36}
+```
+
+This is the strongest conclusion available without adding a new Yang-Mills
+estimate. The route has not proved bounded negative-curvature free energy. It
+has proved that any successful proof must be a genuine fixed-IR disorder
+estimate for the ordinary SU(2) cell law.
+
+### 28.11. Completed Target 40.178
+
+Target 40.178 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{thin}}
+&
+\text{the thin Peierls package forces divergent free energy }(28.15),\\[1mm]
+\mathrm{REDUCED}_{\mathrm{thick}}
+&
+\text{bounded curvature weight is a thick-vortex free-energy input }(28.19),\\[1mm]
+\mathrm{REDUCED}_{\mathrm{soft}}
+&
+\text{soft escape requires non-pinned residual mass and phase spread},\\[1mm]
+\mathrm{FAIL}_{\mathrm{route}}
+&
+\text{thin defect plus soft concentration is finite-cell area-barrier collapse},\\[1mm]
+\mathrm{PROVED}_{\mathrm{O1}}
+&
+\text{admissible records only choose deterministic SU(2) events }(28.31),\\[1mm]
+\mathrm{NEXT}
+&
+\text{construct or falsify a genuinely thick or soft fixed-IR event}.
+\end{array}}
+\tag{28.37}
+```
+
+The conclusion is not that confinement is false. It is that the plaquette-cycle
+proof has no free lunch left. Either the actual SU(2) record law supplies a
+bounded thick/renormalized negative-curvature free energy, or a soft residual
+holonomy spread, or this route returns to the same area-barrier input in a
+finite-cell disguise.
+
+## 29. Target 40.179: Soft Residual Holonomy Spread Audit
+
+`V4P40-TARGET-40179-SOFT-RESIDUAL-HOLONOMY-SPREAD-AUDIT`.
+
+Target 40.178 leaves one non-thin escape that is not immediately a constrained
+negative-curvature free-energy theorem. The escape is the non-pinned residual
+sector:
+
+```math
+E^{\zeta,0}_{R,a}.
+\tag{29.1}
+```
+
+The question is whether this sector carries genuine physical holonomy spread at
+fixed `R`, rather than merely avoiding the near-positive and near-negative
+sign charts.
+
+### 29.1. Residual Measure And Residual Mass
+
+Recall the decomposition:
+
+```math
+\mu^{\square}_{R,a}
+=
+\mu^{\zeta,+}_{R,a}
++
+\mu^{\zeta,-}_{R,a}
++
+\mu^{\zeta,0}_{R,a}.
+\tag{29.2}
+```
+
+Define:
+
+```math
+m^{\zeta,0}_{R,a}
+:=
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,0}_{R,a}
+\right).
+\tag{29.3}
+```
+
+If `m^{\zeta,0}_{R,a}>0`, define the normalized residual law:
+
+```math
+d\nu^{\zeta,0}_{R,a}
+:=
+\frac{1}{m^{\zeta,0}_{R,a}}
+\mathbf 1_{E^{\zeta,0}_{R,a}}
+d\mu^{\square}_{R,a}.
+\tag{29.4}
+```
+
+This is still an ordinary deterministic pushforward of the finite SU(2) cell
+law, conditioned on an ordinary measurable event. No new stochastic transition
+law has been introduced.
+
+### 29.2. Residual Spread Functional
+
+Define the residual phase-spread functional:
+
+```math
+\Xi^{\zeta,0}_{R,a}
+:=
+\inf_{|z|=1}
+\int_{E^{\zeta,0}_{R,a}}
+\left|
+H^{\square}_{R,a}(y)-z
+\right|^2
+d\mu^{\square}_{R,a}(y).
+\tag{29.5}
+```
+
+Since:
+
+```math
+\Theta^{\square}_{R,a}
+=
+\inf_{|z|=1}
+\int
+\left|
+H^{\square}_{R,a}(y)-z
+\right|^2
+d\mu^{\square}_{R,a}(y),
+\tag{29.6}
+```
+
+and the integrand is nonnegative, one has the exact lower bound:
+
+```math
+\Theta^{\square}_{R,a}
+\ge
+\Xi^{\zeta,0}_{R,a}.
+\tag{29.7}
+```
+
+Therefore the residual sector alone closes the soft branch if:
+
+```math
+\liminf_{a\to0}
+\Xi^{\zeta,0}_{R,a}
+>
+0.
+\tag{29.8}
+```
+
+This is the cleanest possible residual target. It is fixed-IR because the
+event, the record battery, the cell, and the physical scale `R` are all fixed
+before the cutoff limit.
+
+### 29.3. Mass Times Conditional Spread
+
+For positive residual mass, (29.5) factors as:
+
+```math
+\Xi^{\zeta,0}_{R,a}
+=
+m^{\zeta,0}_{R,a}
+\inf_{|z|=1}
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}-z
+\right|^2
+\right].
+\tag{29.9}
+```
+
+Thus residual success requires two separate facts:
+
+```math
+\liminf_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0,
+\tag{29.10}
+```
+
+and:
+
+```math
+\liminf_{a\to0}
+\inf_{|z|=1}
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}-z
+\right|^2
+\right]
+>
+0.
+\tag{29.11}
+```
+
+The first condition says that the residual sector remains physically visible.
+The second says that, after conditioning on that sector, the four-edge residual
+holonomy does not collapse to one constant unit phase.
+
+### 29.4. Residual Moment Formula
+
+The conditional spread in (29.11) has the exact moment form:
+
+```math
+\inf_{|z|=1}
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}-z
+\right|^2
+\right]
+=
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}
+\right|^2
+\right]
++
+1
+-
+2
+\left|
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+H^{\square}_{R,a}
+\right]
+\right|.
+\tag{29.12}
+```
+
+Hence the residual branch is not asking for a vague nonconcentration claim. It
+is asking for a strict fixed-IR gap between the residual second moment and twice
+the residual first moment:
+
+```math
+\liminf_{a\to0}
+\left(
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}
+\right|^2
+\right]
++
+1
+-
+2
+\left|
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+H^{\square}_{R,a}
+\right]
+\right|
+\right)
+>
+0.
+\tag{29.13}
+```
+
+This is the residual version of the global soft moment formula (26.18).
+
+### 29.5. Residual Failure Modes
+
+The residual branch fails as a proof of (29.8) if:
+
+```math
+\Xi^{\zeta,0}_{R,a}
+\to
+0.
+\tag{29.14}
+```
+
+By (29.9), this happens whenever the residual mass collapses:
+
+```math
+m^{\zeta,0}_{R,a}
+\to
+0,
+\tag{29.15}
+```
+
+or whenever the residual conditional law concentrates near one unit phase:
+
+```math
+\inf_{|z|=1}
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}-z
+\right|^2
+\right]
+\to
+0.
+\tag{29.16}
+```
+
+These are not cosmetic failures, but they must be read with one important
+qualification. Residual concentration near some phase defeats the residual
+proof of (29.8). It does not by itself force the global soft functional to
+vanish unless that residual phase is compatible with the phase carried by the
+remaining pinned sector.
+
+The exact global-collapse condition is the following. If the negative
+near-pinned sector collapses and there are phases `z_a` such that:
+
+```math
+\int_{E^{\zeta,+}_{R,a}\cup E^{\zeta,0}_{R,a}}
+\left|
+H^{\square}_{R,a}(y)-z_a
+\right|^2
+d\mu^{\square}_{R,a}(y)
+\to
+0,
+\tag{29.17}
+```
+
+then:
+
+```math
+\Theta^{\square}_{R,a}
+\to
+0.
+\tag{29.18}
+```
+
+The plaquette-cycle proof then returns to the area barrier.
+
+### 29.6. Exact Residual Pass Or Collapse Criterion
+
+Combining the previous subsections gives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{res}}
+&
+\liminf\limits_{a\to0}\Xi^{\zeta,0}_{R,a}>0,\\[1mm]
+\mathrm{PASS}_{\mathrm{res}}
+&
+\liminf\limits_{a\to0}m^{\zeta,0}_{R,a}>0
+\text{ and }(29.11),\\[1mm]
+\mathrm{FAIL}_{\mathrm{mass}}
+&
+m^{\zeta,0}_{R,a}\to0,\\[1mm]
+\mathrm{FAIL}_{\mathrm{phase}}
+&
+\text{the residual branch concentrates near one unit phase},\\[1mm]
+\mathrm{FAIL}_{\mathrm{cell}}
+&
+\text{negative collapse plus phase-compatible residual concentration gives }\Theta^{\square}_{R,a}\to0.
+\end{array}}
+\tag{29.19}
+```
+
+Thus the residual branch has not been proved for actual SU(2). It has been
+reduced to an exact fixed-IR conditional moment estimate.
+
+### 29.7. Barandes And Fixed-IR Alignment
+
+The residual audit obeys the alignment contract:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{IR}_{1}
+&
+R,\zeta_R,\text{ the cell, and the record battery are fixed before }a\to0,\\[1mm]
+\mathrm{IR}_{2}
+&
+E^{\zeta,0}_{R,a}\text{ is a physical-resolution event, not a shrinking loop test},\\[1mm]
+\mathrm{BAR}_{1}
+&
+\mu^{\square}_{R,a}\text{ is the deterministic SU(2) pushforward law},\\[1mm]
+\mathrm{BAR}_{2}
+&
+\nu^{\zeta,0}_{R,a}\text{ is conditioning, not a hidden Markov dynamics},\\[1mm]
+\mathrm{BAR}_{3}
+&
+\text{any successful estimate is an ordinary SU(2) record-law estimate}.
+\end{array}}
+\tag{29.20}
+```
+
+So the residual route is ISP-native only in the sense that its observables are
+configuration records. It does not create a new measure. If it succeeds, the
+success is a genuine fixed-IR fact about the SU(2) configuration law.
+
+### 29.8. What Must Be Investigated Next
+
+Target 40.179 points to the next concrete calculation:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{compute or bound }m^{\zeta,0}_{R,a},\\[1mm]
+\text{compute or bound the conditional moment }(29.12),\\[1mm]
+\text{for the actual SU(2) physical cell law at fixed }R.
+\end{array}}
+\tag{29.21}
+```
+
+There are three possible outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{OUT}_{1}
+&
+\text{residual mass and spread survive, so the soft route closes},\\[1mm]
+\mathrm{OUT}_{2}
+&
+\text{residual mass vanishes, so residual escape collapses},\\[1mm]
+\mathrm{OUT}_{3}
+&
+\text{residual mass survives but the residual holonomy aligns to one phase}.
+\end{array}}
+\tag{29.22}
+```
+
+Outcome `OUT_1` is a real fixed-IR disorder estimate. Outcome `OUT_2` removes
+the residual escape. Outcome `OUT_3` defeats the residual proof; it becomes a
+full soft-collapse statement only when the residual phase is compatible with the
+surviving pinned phase, as in (29.17).
+
+### 29.9. Completed Target 40.179
+
+Target 40.179 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{lower}}
+&
+\text{residual spread lower-bounds the global soft functional }(29.7),\\[1mm]
+\mathrm{PROVED}_{\mathrm{factor}}
+&
+\text{residual spread equals mass times conditional spread }(29.9),\\[1mm]
+\mathrm{PROVED}_{\mathrm{moment}}
+&
+\text{conditional residual spread equals the moment formula }(29.12),\\[1mm]
+\mathrm{FAIL}_{\mathrm{res}}
+&
+\text{zero residual mass or phase concentration defeats this branch},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{decide whether actual SU(2) has fixed residual spread},\\[1mm]
+\mathrm{NEXT}
+&
+\text{test the conditional residual moment, or return to thick free energy}.
+\end{array}}
+\tag{29.23}
+```
+
+The result is a sharp audit, not a disguised proof of the area law. The next
+mathematical work is to decide whether the actual fixed-IR SU(2) residual law
+has the mass and phase spread required by (29.10)-(29.11).
+
+## 30. Target 40.180: Residual Moment Decision At Fixed IR
+
+`V4P40-TARGET-40180-RESIDUAL-MOMENT-DECISION-AT-FIXED-IR`.
+
+Target 40.179 reduced the soft residual branch to two quantities:
+
+```math
+m^{\zeta,0}_{R,a}
+\tag{30.1}
+```
+
+and:
+
+```math
+\inf_{|z|=1}
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R,a}-z
+\right|^2
+\right].
+\tag{30.2}
+```
+
+Target 40.180 asks what can actually be decided at fixed physical `R`, before
+touching the continuum string-tension problem.
+
+### 30.1. Fixed Record Space
+
+Fix `R`, `zeta_R`, the physical four-cell, and the admissible smoother. The
+cell readout has values in a compact record space:
+
+```math
+K^{\square}_{R}.
+\tag{30.3}
+```
+
+The finite-cutoff record law is:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{a}.
+\tag{30.4}
+```
+
+The near-pinned and residual events are fixed Borel subsets of this record
+space:
+
+```math
+E^{\zeta,+}_{R},
+\qquad
+E^{\zeta,-}_{R},
+\qquad
+E^{\zeta,0}_{R}
+=
+\left(
+E^{\zeta,+}_{R}
+\cup
+E^{\zeta,-}_{R}
+\right)^c.
+\tag{30.5}
+```
+
+The cutoff-dependent notation in previous targets is the pullback of (30.5)
+along the same deterministic readout. Thus:
+
+```math
+m^{\zeta,0}_{R,a}
+=
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,0}_{R}
+\right).
+\tag{30.6}
+```
+
+The soft holonomy readout is a bounded physical observable:
+
+```math
+H^{\square}_{R}
+:
+K^{\square}_{R}
+\longrightarrow
+\mathbb C,
+\qquad
+\left|
+H^{\square}_{R}
+\right|
+\le
+1.
+\tag{30.7}
+```
+
+For an admissible smoother, this observable is continuous on the fixed record
+space. If one uses a discontinuous chart readout instead, the compactness
+argument below must be replaced by a semicontinuity audit; that would be a
+different target.
+
+### 30.2. Subsequence Compactness
+
+Assume the residual mass does not vanish:
+
+```math
+\liminf_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0.
+\tag{30.8}
+```
+
+Then every cutoff sequence has a subsequence such that:
+
+```math
+m^{\zeta,0}_{R,a}
+\to
+m^{\zeta,0}_{R,*}
+>
+0,
+\tag{30.9}
+```
+
+and:
+
+```math
+\nu^{\zeta,0}_{R,a}
+\Rightarrow
+\nu^{\zeta,0}_{R,*}
+\tag{30.10}
+```
+
+weakly as probability measures on `K^{\square}_{R}`.
+
+By continuity and boundedness of `H^{\square}_{R}`:
+
+```math
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+H^{\square}_{R}
+\right]
+\to
+\int
+H^{\square}_{R}
+d\nu^{\zeta,0}_{R,*},
+\tag{30.11}
+```
+
+and:
+
+```math
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R}
+\right|^2
+\right]
+\to
+\int
+\left|
+H^{\square}_{R}
+\right|^2
+d\nu^{\zeta,0}_{R,*}.
+\tag{30.12}
+```
+
+Therefore the residual decision is a statement about the subsequential limit
+laws of the fixed record observable.
+
+### 30.3. Limit Spread Functional
+
+For any residual subsequential limit, define:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+:=
+\inf_{|z|=1}
+\int
+\left|
+H^{\square}_{R}(y)-z
+\right|^2
+d\nu^{\zeta,0}_{R,*}(y).
+\tag{30.13}
+```
+
+The moment formula becomes:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+=
+1
++
+\int
+\left|
+H^{\square}_{R}
+\right|^2
+d\nu^{\zeta,0}_{R,*}
+-
+2
+\left|
+\int
+H^{\square}_{R}
+d\nu^{\zeta,0}_{R,*}
+\right|.
+\tag{30.14}
+```
+
+Consequently:
+
+```math
+\liminf_{a\to0}
+\inf_{|z|=1}
+\mathbb E_{\nu^{\zeta,0}_{R,a}}
+\left[
+\left|
+H^{\square}_{R}-z
+\right|^2
+\right]
+>
+0
+\tag{30.15}
+```
+
+holds if and only if every residual subsequential limit satisfies a uniform
+positive spread:
+
+```math
+\inf_{\nu_*}
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+>
+0,
+\tag{30.16}
+```
+
+where the infimum is over all residual subsequential limits with positive
+limiting residual mass.
+
+This is the fixed-IR decision criterion.
+
+### 30.4. Phase-Fiber Characterization
+
+Define the unit phase fibers:
+
+```math
+F_z
+:=
+\left\{
+y\in E^{\zeta,0}_{R}
+:
+H^{\square}_{R}(y)=z
+\right\},
+\qquad
+|z|=1.
+\tag{30.17}
+```
+
+Then:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+=
+0
+\tag{30.18}
+```
+
+if and only if there exists a unit phase `z_*` such that:
+
+```math
+\nu^{\zeta,0}_{R,*}
+\left(
+F_{z_*}
+\right)
+=
+1.
+\tag{30.19}
+```
+
+Proof. If (30.19) holds, choose `z=z_*` in (30.13). Conversely, if (30.18)
+holds, there are unit phases `z_n` with:
+
+```math
+\int
+\left|
+H^{\square}_{R}(y)-z_n
+\right|^2
+d\nu^{\zeta,0}_{R,*}(y)
+\to
+0.
+\tag{30.20}
+```
+
+Compactness of the unit circle gives a subsequence with `z_n -> z_*`. Since
+`H^{\square}_{R}` is bounded:
+
+```math
+\int
+\left|
+H^{\square}_{R}(y)-z_*
+\right|^2
+d\nu^{\zeta,0}_{R,*}(y)
+=
+0.
+\tag{30.21}
+```
+
+Thus (30.19) follows. `∎`
+
+So the residual soft route succeeds exactly when fixed-IR residual limit laws
+cannot concentrate on one unit phase fiber.
+
+### 30.5. What Fixed-IR Bookkeeping Alone Cannot Prove
+
+The fixed-IR and Barandes contracts imply:
+
+```math
+\mu^{\square}_{R,a}
+\text{ is a deterministic SU(2) pushforward.}
+\tag{30.22}
+```
+
+They do not imply:
+
+```math
+\nu^{\zeta,0}_{R,*}
+\left(
+F_z
+\right)
+<
+1
+\quad
+\text{for every unit phase }z.
+\tag{30.23}
+```
+
+Nor do they imply the stronger uniform statement (30.16). A deterministic
+record law is still allowed to concentrate on a Borel subset of the record
+space if the underlying Yang-Mills measure concentrates there.
+
+Thus Target 40.180 falsifies one possible shortcut:
+
+```math
+\boxed{
+\text{fixed-IR deterministic readout structure alone does not prove residual spread.}
+}
+\tag{30.24}
+```
+
+To prove residual spread for actual SU(2), one needs an additional
+nonperturbative estimate or symmetry statement that excludes phase-fiber
+concentration.
+
+### 30.6. The Only Nonperturbative Shortcut Still Visible
+
+There is one clean symmetry route. Suppose every residual subsequential limit is
+invariant under a measurable involution:
+
+```math
+\mathcal J_R
+:
+E^{\zeta,0}_{R}
+\longrightarrow
+E^{\zeta,0}_{R},
+\qquad
+(\mathcal J_R)_{\#}\nu^{\zeta,0}_{R,*}
+=
+\nu^{\zeta,0}_{R,*},
+\tag{30.25}
+```
+
+and the holonomy is charged under that involution:
+
+```math
+H^{\square}_{R}
+\left(
+\mathcal J_R y
+\right)
+=
+-
+H^{\square}_{R}(y).
+\tag{30.26}
+```
+
+Then:
+
+```math
+\int
+H^{\square}_{R}
+d\nu^{\zeta,0}_{R,*}
+=
+0,
+\tag{30.27}
+```
+
+and therefore:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+=
+1
++
+\int
+\left|
+H^{\square}_{R}
+\right|^2
+d\nu^{\zeta,0}_{R,*}
+\ge
+1.
+\tag{30.28}
+```
+
+Together with positive residual mass, this proves the residual branch.
+
+This is the precise role reflection positivity or charge reflection could play:
+not to generate a mass gap by itself, but to force two-sidedness of the charged
+residual holonomy distribution. The technical question is whether such an
+involution exists on the residual sector and is seen by the actual fixed-IR
+cell law.
+
+### 30.7. Boundary-Layer Audit
+
+The previous compactness criterion assumes that the residual event and the
+observable are stable under cutoff limits. This must be stated explicitly.
+Let:
+
+```math
+B^{\zeta}_{R}
+:=
+\partial E^{\zeta,0}_{R}
+\cup
+\mathrm{Disc}
+\left(
+H^{\square}_{R}
+\right).
+\tag{30.29}
+```
+
+For the admissible smooth readouts used here, the discontinuity set is empty,
+but the boundary of the residual event can still matter. The clean fixed-IR
+boundary condition is:
+
+```math
+\lim_{\eta\downarrow0}
+\limsup_{a\to0}
+\mu^{\square}_{R,a}
+\left(
+N_{\eta}
+\left(
+B^{\zeta}_{R}
+\right)
+\right)
+=
+0.
+\tag{30.30}
+```
+
+If (30.30) holds, then the conditioning in (30.10) has no hidden boundary
+leakage: every residual subsequential limit is supported on the intended
+residual event:
+
+```math
+\nu^{\zeta,0}_{R,*}
+\left(
+E^{\zeta,0}_{R}
+\right)
+=
+1.
+\tag{30.31}
+```
+
+If (30.30) fails, then the boundary layer is not harmless. It becomes a fourth
+sector:
+
+```math
+E^{\zeta,\partial}_{R,\eta}
+:=
+N_{\eta}
+\left(
+B^{\zeta}_{R}
+\right).
+\tag{30.32}
+```
+
+That sector must either be included in the residual moment or estimated
+separately. Otherwise the residual proof may be proving spread for a cleaned
+event while the actual SU(2) law concentrates on the chart boundary.
+
+Thus a fully honest Target 40.180 has one preliminary gate:
+
+```math
+\boxed{
+\text{prove boundary-layer negligibility }(30.30)
+\text{ or add }E^{\zeta,\partial}_{R,\eta}\text{ to the residual sector.}
+}
+\tag{30.33}
+```
+
+This is still fixed-IR aligned: `eta` is a physical record-space tolerance
+chosen before the cutoff limit.
+
+### 30.8. Modulus-Deficit Escape
+
+There is a route that is easier than phase two-sidedness. For every unit phase
+`z`:
+
+```math
+\left|
+H^{\square}_{R}(y)-z
+\right|
+\ge
+1
+-
+\left|
+H^{\square}_{R}(y)
+\right|.
+\tag{30.34}
+```
+
+Therefore:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+\ge
+\int
+\left(
+1
+-
+\left|
+H^{\square}_{R}
+\right|
+\right)^2
+d\nu^{\zeta,0}_{R,*}.
+\tag{30.35}
+```
+
+Consequently, residual spread follows if:
+
+```math
+\inf_{\nu_*}
+\int
+\left(
+1
+-
+\left|
+H^{\square}_{R}
+\right|
+\right)^2
+d\nu^{\zeta,0}_{R,*}
+>
+0.
+\tag{30.36}
+```
+
+This is important. The residual branch does not always need a sign-flip or RP
+two-sidedness. If the admissible smoother makes the non-pinned residual sector
+lose unit modulus at fixed physical scale, the soft branch closes through
+modulus deficit alone.
+
+The exact obstruction to this easier route is:
+
+```math
+\left|
+H^{\square}_{R}
+\right|
+\to
+1
+\quad
+\text{in residual conditional probability}.
+\tag{30.37}
+```
+
+Only after (30.37) holds does the residual problem become a pure phase-spread
+problem.
+
+### 30.9. Pure Phase-Spread Subcase
+
+Assume the residual law is asymptotically unit-modulus:
+
+```math
+\int
+\left(
+1
+-
+\left|
+H^{\square}_{R}
+\right|
+\right)^2
+d\nu^{\zeta,0}_{R,*}
+=
+0.
+\tag{30.38}
+```
+
+Then `H^{\square}_{R}` is unit-modulus almost surely under the residual limit,
+and:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+=
+2
+-
+2
+\left|
+\int
+H^{\square}_{R}
+d\nu^{\zeta,0}_{R,*}
+\right|.
+\tag{30.39}
+```
+
+Thus the pure phase problem succeeds exactly when:
+
+```math
+\sup_{\nu_*}
+\left|
+\int
+H^{\square}_{R}
+d\nu^{\zeta,0}_{R,*}
+\right|
+<
+1.
+\tag{30.40}
+```
+
+It fails exactly when a residual limit is supported on one unit phase fiber.
+This recovers (30.19), now with the modulus obstruction removed.
+
+### 30.10. Witness Laws: Why Bookkeeping Cannot Decide
+
+The no-bookkeeping result can be made completely concrete. Suppose the residual
+record space contains a point:
+
+```math
+y_0\in E^{\zeta,0}_{R},
+\qquad
+H^{\square}_{R}(y_0)=z_0,
+\qquad
+|z_0|=1.
+\tag{30.41}
+```
+
+The abstract residual law:
+
+```math
+\nu_0
+:=
+\delta_{y_0}
+\tag{30.42}
+```
+
+satisfies:
+
+```math
+D_R(\nu_0)=0.
+\tag{30.43}
+```
+
+Thus no theorem that uses only compactness, deterministic readout status, and
+fixed-IR scale can exclude failure.
+
+Conversely, if the residual record space contains two points:
+
+```math
+y_1,y_2\in E^{\zeta,0}_{R},
+\qquad
+H^{\square}_{R}(y_2)
+=
+-
+H^{\square}_{R}(y_1),
+\qquad
+\left|
+H^{\square}_{R}(y_1)
+\right|
+=
+1,
+\tag{30.44}
+```
+
+then:
+
+```math
+\nu_{\mathrm{two}}
+:=
+\frac12\delta_{y_1}
++
+\frac12\delta_{y_2}
+\tag{30.45}
+```
+
+satisfies:
+
+```math
+D_R
+\left(
+\nu_{\mathrm{two}}
+\right)
+=
+2.
+\tag{30.46}
+```
+
+Therefore the fixed record space can support both failure and success laws. The
+actual SU(2) measure, not the record vocabulary, decides which law is relevant.
+
+This is the O1-positive lesson of Target 40.180:
+
+```math
+\boxed{
+\text{records expose the residual question, but do not tilt the answer.}
+}
+\tag{30.47}
+```
+
+### 30.11. Reflection, Charge, And Center Symmetry Audit
+
+The involution criterion (30.25)-(30.26) is sufficient, but it is not automatic.
+For a candidate symmetry `J_R`, four gates must be checked:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{S1}
+&
+J_R(E^{\zeta,0}_{R})=E^{\zeta,0}_{R},\\[1mm]
+\mathrm{S2}
+&
+(J_R)_{\#}\nu^{\zeta,0}_{R,*}=\nu^{\zeta,0}_{R,*},\\[1mm]
+\mathrm{S3}
+&
+H^{\square}_{R}(J_Ry)=-H^{\square}_{R}(y),\\[1mm]
+\mathrm{S4}
+&
+J_R\text{ preserves the declared boundary and collar data}.
+\end{array}}
+\tag{30.48}
+```
+
+Each candidate has a different likely failure mode.
+
+Charge conjugation is measure-preserving for SU(2), but it typically sends a
+charged holonomy to its complex conjugate rather than to its negative:
+
+```math
+H^{\square}_{R}
+\mapsto
+\overline{H^{\square}_{R}}.
+\tag{30.49}
+```
+
+This proves two-sidedness only if the relevant obstruction is imaginary or if
+the residual observable has been centered so that conjugation acts as a sign.
+
+A local center reflection can flip a charged holonomy:
+
+```math
+H^{\square}_{R}
+\mapsto
+-
+H^{\square}_{R}.
+\tag{30.50}
+```
+
+But it usually changes boundary or collar data. It is admissible only if the
+change is paired, absorbed by the declared boundary records, or implemented as a
+valid reflected double.
+
+Reflection positivity is coupling-independent and can provide paired
+reflection symmetry, but only after the charged sheet insertion and the
+residual conditioning are compatible with the reflection plane:
+
+```math
+\theta E^{\zeta,0}_{R}
+=
+E^{\zeta,0}_{R},
+\qquad
+H^{\square}_{R}(\theta y)
+=
+-
+H^{\square}_{R}(y).
+\tag{30.51}
+```
+
+If the insertion is not reflection-compatible, RP does not prove residual
+spread. It merely locates the charged operator in the reconstructed Hilbert
+space.
+
+### 30.12. Full Target 40.180 Verdict
+
+The complete fixed-IR decision is now:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{mod}}
+&
+\text{positive residual mass plus modulus deficit }(30.36),\\[1mm]
+\mathrm{PASS}_{\mathrm{phase}}
+&
+\text{positive residual mass plus pure phase spread }(30.40),\\[1mm]
+\mathrm{PASS}_{\mathrm{sym}}
+&
+\text{a symmetry passes gates S1-S4},\\[1mm]
+\mathrm{FAIL}_{\mathrm{mass}}
+&
+\liminf m^{\zeta,0}_{R,a}=0,\\[1mm]
+\mathrm{FAIL}_{\mathrm{unit}}
+&
+\text{unit-modulus residual concentration on one phase fiber},\\[1mm]
+\mathrm{OPEN}_{\mathrm{SU2}}
+&
+\text{decide which alternative the actual fixed-IR SU(2) law realizes}.
+\end{array}}
+\tag{30.52}
+```
+
+Thus Target 40.180 is fully investigated in the following sense. The residual
+moment cannot be proved from fixed-IR Barandes-aligned bookkeeping alone. It can
+be proved by one of exactly three fixed-IR inputs:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{a residual mass lower bound},\\[1mm]
+\text{either residual modulus deficit or residual phase spread},\\[1mm]
+\text{and boundary-layer stability}.
+\end{array}}
+\tag{30.53}
+```
+
+If the boundary layer is first absorbed into the residual sector and these
+mechanisms still fail, the residual soft branch returns to the finite-cell area
+barrier.
+
+### 30.13. Exact Decision Outcome
+
+Target 40.180 gives the following decision table:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{lim}}
+&
+\text{all residual subsequential limits have }D_R>0,\\[1mm]
+\mathrm{PASS}_{\mathrm{sym}}
+&
+\text{a residual involution satisfying }(30.25)\text{ and }(30.26)\text{ exists},\\[1mm]
+\mathrm{PASS}_{\mathrm{mod}}
+&
+\text{the residual limits have fixed modulus deficit }(30.36),\\[1mm]
+\mathrm{FAIL}_{\mathrm{fiber}}
+&
+\text{some residual subsequential limit is supported on one phase fiber},\\[1mm]
+\mathrm{FAIL}_{\mathrm{mass}}
+&
+\liminf m^{\zeta,0}_{R,a}=0,\\[1mm]
+\mathrm{OPEN}_{\partial}
+&
+\text{boundary-layer stability }(30.30)\text{ must be checked},\\[1mm]
+\mathrm{NO}_{\mathrm{bookkeeping}}
+&
+\text{deterministic fixed-IR readouts alone do not decide the question}.
+\end{array}}
+\tag{30.54}
+```
+
+This is a genuine fixed-IR result. It does not mention `t_-`, continuum
+survival, or large-loop string tension. It also does not use any hidden Markov
+assumption. All measures remain deterministic pushforwards or conditionings of
+finite-cutoff SU(2) configuration measures.
+
+### 30.14. Completed Target 40.180
+
+Target 40.180 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{compact}}
+&
+\text{positive residual mass gives residual subsequential limits},\\[1mm]
+\mathrm{PROVED}_{\mathrm{criterion}}
+&
+\text{residual spread is equivalent to uniform positive }D_R,\\[1mm]
+\mathrm{PROVED}_{\mathrm{fiber}}
+&
+D_R=0\text{ exactly means support on one unit phase fiber},\\[1mm]
+\mathrm{PROVED}_{\mathrm{mod}}
+&
+\text{fixed modulus deficit is enough to prove residual spread},\\[1mm]
+\mathrm{PROVED}_{\mathrm{witness}}
+&
+\text{fixed record structure admits both pass and fail laws},\\[1mm]
+\mathrm{FALSIFIED}_{\mathrm{shortcut}}
+&
+\text{fixed-IR Barandes bookkeeping alone cannot force spread},\\[1mm]
+\mathrm{OPEN}_{\mathrm{SU2}}
+&
+\text{decide mass, boundary layer, modulus deficit, and phase spread},\\[1mm]
+\mathrm{NEXT}
+&
+\text{test modulus deficit first, then audit residual reflection symmetry}.
+\end{array}}
+\tag{30.55}
+```
+
+The next target should therefore test the easiest surviving branch first: does
+the admissible residual smoother force a fixed modulus deficit on
+`E^{\zeta,0}_{R}`? If not, the problem reduces to pure phase spread, and the
+next audit is whether RP, charge conjugation, or center reflection passes the
+four symmetry gates (30.48) at fixed physical `R`.
+
+## 31. Target 40.181: Residual Modulus-Deficit Test
+
+`V4P40-TARGET-40181-RESIDUAL-MODULUS-DEFICIT-TEST`.
+
+Target 40.180 identified the easiest possible residual escape:
+
+```math
+\inf_{\nu_*}
+\int
+\left(
+1
+-
+\left|
+H^{\square}_{R}
+\right|
+\right)^2
+d\nu^{\zeta,0}_{R,*}
+>
+0.
+\tag{31.1}
+```
+
+Target 40.181 tests when (31.1) is actually forced by the definition of the
+residual sector.
+
+### 31.1. Edge Range Determines The Answer
+
+Let:
+
+```math
+S_R
+\subset
+\left\{
+w\in\mathbb C:
+|w|\le1
+\right\}
+\tag{31.2}
+```
+
+be the closed edge-value range of the normalized sign kernel `s_{R,a}` in the
+fixed physical record battery. For a fixed tolerance `zeta_R`, define:
+
+```math
+\delta_R(\zeta_R)
+:=
+\inf
+\left\{
+1-|w|:
+w\in S_R,
+\quad
+\min_{\epsilon=\pm1}
+|w-\epsilon|
+>
+\zeta_R
+\right\}.
+\tag{31.3}
+```
+
+The residual sector means that at least one edge is not near either pinned sign:
+
+```math
+y\in E^{\zeta,0}_{R}
+\quad
+\Longrightarrow
+\quad
+\exists j
+\text{ such that }
+\min_{\epsilon=\pm1}
+|s_j(y)-\epsilon|
+>
+\zeta_R.
+\tag{31.4}
+```
+
+Therefore, if:
+
+```math
+\delta_R(\zeta_R)>0,
+\tag{31.5}
+```
+
+then on the residual sector:
+
+```math
+\left|
+H^{\square}_{R}(y)
+\right|
+=
+\prod_{j=0}^{3}
+\left|
+s_j(y)
+\right|
+\le
+1-\delta_R(\zeta_R).
+\tag{31.6}
+```
+
+Consequently:
+
+```math
+\left(
+1-
+\left|
+H^{\square}_{R}(y)
+\right|
+\right)^2
+\ge
+\delta_R(\zeta_R)^2
+\qquad
+y\in E^{\zeta,0}_{R}.
+\tag{31.7}
+```
+
+This proves the residual modulus-deficit branch:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+\ge
+\delta_R(\zeta_R)^2.
+\tag{31.8}
+```
+
+Thus, under (31.5), positive residual mass closes the soft residual route.
+
+### 31.2. Real Center-Sign Kernel
+
+For the strict SU(2) center-sign transfer kernel, the charged insertion is a
+real `Z_2` character. On each boundary edge:
+
+```math
+s_{R,a}(\omega,\omega')
+=
+\mathbb E
+\left[
+\chi_R
+\mid
+\omega,\omega'
+\right],
+\qquad
+\chi_R\in\{\pm1\}.
+\tag{31.9}
+```
+
+Therefore:
+
+```math
+s_{R,a}(\omega,\omega')
+\in
+[-1,1].
+\tag{31.10}
+```
+
+For real `w` in `[-1,1]`:
+
+```math
+\min_{\epsilon=\pm1}
+|w-\epsilon|
+=
+1-|w|.
+\tag{31.11}
+```
+
+Hence:
+
+```math
+\delta_R(\zeta_R)
+\ge
+\zeta_R.
+\tag{31.12}
+```
+
+Actually, with the closed pinned event convention, one may replace strict `>`
+by the corresponding closed boundary convention and obtain the same lower
+bound up to an arbitrarily small fixed tolerance. Thus:
+
+```math
+y\in E^{\zeta,0}_{R}
+\quad
+\Longrightarrow
+\quad
+\left|
+H^{\square}_{R}(y)
+\right|
+\le
+1-\zeta_R.
+\tag{31.13}
+```
+
+Consequently:
+
+```math
+D_R
+\left(
+\nu^{\zeta,0}_{R,*}
+\right)
+\ge
+\zeta_R^2.
+\tag{31.14}
+```
+
+This is a genuine pass for the residual modulus branch, provided the kernel
+being used is exactly the real center-sign conditional expectation.
+
+### 31.3. General Complex Kernels Fail The Test
+
+The preceding conclusion is false for a general complex charged kernel. Suppose
+the edge range contains a unit-modulus value away from `+1` and `-1`, for
+example:
+
+```math
+i\in S_R.
+\tag{31.15}
+```
+
+Then:
+
+```math
+\min_{\epsilon=\pm1}
+|i-\epsilon|
+=
+\sqrt2
+\tag{31.16}
+```
+
+but:
+
+```math
+1-|i|
+=
+0.
+\tag{31.17}
+```
+
+Thus:
+
+```math
+\delta_R(\zeta_R)=0
+\qquad
+\text{for every }\zeta_R<\sqrt2
+\tag{31.18}
+```
+
+whenever such unit-circle residual phases are allowed.
+
+An explicit residual witness is:
+
+```math
+s_0=i,
+\qquad
+s_1=s_2=s_3=1.
+\tag{31.19}
+```
+
+Then the configuration is residual for every small `zeta_R`, but:
+
+```math
+\left|
+H^{\square}_{R}
+\right|
+=
+1.
+\tag{31.20}
+```
+
+So the modulus-deficit route gives no lower bound. The problem is then purely a
+phase-spread problem.
+
+### 31.4. Exact Pass And Fail Statement
+
+Target 40.181 gives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{real}}
+&
+s_{R,a}\in[-1,1]\text{ implies residual modulus deficit }\zeta_R^2,\\[1mm]
+\mathrm{PASS}_{\mathrm{radial}}
+&
+\delta_R(\zeta_R)>0\text{ implies residual modulus deficit }\delta_R^2,\\[1mm]
+\mathrm{FAIL}_{\mathrm{complex}}
+&
+\text{unit-circle residual phases make }\delta_R(\zeta_R)=0,\\[1mm]
+\mathrm{OPEN}_{\mathrm{kernel}}
+&
+\text{decide whether the actual edge kernel is real/radial or complex-phase}.
+\end{array}}
+\tag{31.21}
+```
+
+This is the desired modulus test. It passes for real `Z_2` conditional signs. It
+fails for complex phase-valued residual kernels.
+
+### 31.5. Consequence For The Fixed-IR Route
+
+If the actual SU(2) fixed-IR edge kernel is the real center-sign kernel
+(31.9), then Target 40.180 reduces to:
+
+```math
+\liminf_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0
+\tag{31.22}
+```
+
+plus boundary-layer stability. Indeed:
+
+```math
+\Xi^{\zeta,0}_{R,a}
+\ge
+\zeta_R^2
+m^{\zeta,0}_{R,a}
+-
+o_a(1)
+\tag{31.23}
+```
+
+after absorbing the fixed record-space boundary layer as in (30.30)-(30.33).
+
+Therefore, under the real-kernel hypothesis:
+
+```math
+\boxed{
+\liminf_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0
+\quad
+\Longrightarrow
+\quad
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0.
+}
+\tag{31.24}
+```
+
+If the residual mass vanishes and the negative near-pinned mass also vanishes,
+then the cell law concentrates on the positive pinned sector:
+
+```math
+m^{\zeta,+}_{R,a}
+\to
+1.
+\tag{31.25}
+```
+
+This is exactly the finite-cell area-barrier concentration already identified
+in Target 40.177.
+
+### 31.6. Barandes And Fixed-IR Alignment
+
+No new stochastic rule has been added. The proof uses only:
+
+```math
+s_{R,a}
+=
+\frac{K^{\chi}_{R,a}}{K^0_{R,a}},
+\qquad
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{31.26}
+```
+
+The fixed objects are:
+
+```math
+R,
+\qquad
+\zeta_R,
+\qquad
+S_R,
+\qquad
+E^{\zeta,0}_{R}.
+\tag{31.27}
+```
+
+All are chosen before `a -> 0`. The only fork is mathematical, not ontological:
+
+```math
+\boxed{
+\begin{array}{ll}
+\text{real/radial edge kernel}
+&
+\text{residual modulus deficit is automatic},\\[1mm]
+\text{complex phase edge kernel}
+&
+\text{one must prove residual phase spread instead}.
+\end{array}}
+\tag{31.28}
+```
+
+### 31.7. Completed Target 40.181
+
+Target 40.181 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{criterion}}
+&
+\delta_R(\zeta_R)>0\text{ gives modulus deficit on }E^{\zeta,0}_{R},\\[1mm]
+\mathrm{PROVED}_{\mathrm{real}}
+&
+\text{real }Z_2\text{ center signs give }\delta_R(\zeta_R)\ge\zeta_R,\\[1mm]
+\mathrm{FALSIFIED}_{\mathrm{complex}}
+&
+\text{unit-circle residual phases defeat modulus deficit},\\[1mm]
+\mathrm{REDUCED}_{\mathrm{route}}
+&
+\text{for real kernels, the residual branch needs residual mass},\\[1mm]
+\mathrm{NEXT}
+&
+\text{prove the actual kernel is real/radial, or audit phase symmetry}.
+\end{array}}
+\tag{31.29}
+```
+
+Thus the modulus-deficit test is fully decided. It is a pass for the strict
+real center-sign formulation and a fail for a general complex residual
+cocycle-amplitude formulation. The next step is not to redo the modulus test;
+it is to verify which kernel the fixed-IR cell route is actually using.
+
+## 32. Target 40.182: Actual Kernel Reality And Radiality Audit
+
+`V4P40-TARGET-40182-ACTUAL-KERNEL-REALITY-RADIALITY-AUDIT`.
+
+Target 40.181 leaves a fork:
+
+```math
+\boxed{
+\begin{array}{ll}
+\text{real center-sign kernel}
+&
+\text{residual modulus deficit passes},\\[1mm]
+\text{complex cocycle-amplitude kernel}
+&
+\text{residual modulus deficit can fail}.
+\end{array}}
+\tag{32.1}
+```
+
+Target 40.182 decides which kernel the fixed-IR transfer/cell route actually
+uses.
+
+### 32.1. The Charged Tile Character Is Z2-Valued
+
+In the fixed-IR RP and transfer route, the charged tile observable is the SU(2)
+center sheet character:
+
+```math
+\chi_{S_{R,a}}(b)
+:=
+(-1)^{
+\langle b,S_{R,a}\rangle_2
+}.
+\tag{32.2}
+```
+
+Hence:
+
+```math
+\chi_{S_{R,a}}(b)
+\in
+\{-1,+1\}.
+\tag{32.3}
+```
+
+This is the object used in the charged transfer kernel `K^{\chi}_{R,a}` in
+Section 19 and in the relative-sector weights of Section 20. It is not the
+section-lifted complex SU(2) cocycle amplitude from the earlier Wilson
+decomposition.
+
+### 32.2. Kernel Ratio As A Conditional Expectation
+
+For a boundary/interface datum:
+
+```math
+\mathfrak b=(\omega,\omega'),
+\tag{32.4}
+```
+
+write the neutral interior measure as:
+
+```math
+d\nu^0_{R,a}(b,\bar U\mid\mathfrak b).
+\tag{32.5}
+```
+
+The neutral kernel is:
+
+```math
+K^0_{R,a}(\mathfrak b)
+=
+\int
+d\nu^0_{R,a}(b,\bar U\mid\mathfrak b),
+\tag{32.6}
+```
+
+and the charged kernel is:
+
+```math
+K^{\chi}_{R,a}(\mathfrak b)
+=
+\int
+\chi_{S_{R,a}}(b)
+d\nu^0_{R,a}(b,\bar U\mid\mathfrak b).
+\tag{32.7}
+```
+
+On the support where `K^0_{R,a}(\mathfrak b)>0`:
+
+```math
+s_{R,a}(\mathfrak b)
+=
+\frac{
+K^{\chi}_{R,a}(\mathfrak b)
+}{
+K^0_{R,a}(\mathfrak b)
+}
+=
+\mathbb E_{\nu^0_{R,a}(\cdot\mid\mathfrak b)}
+\left[
+\chi_{S_{R,a}}
+\right].
+\tag{32.8}
+```
+
+Therefore:
+
+```math
+s_{R,a}(\mathfrak b)
+\in
+[-1,1].
+\tag{32.9}
+```
+
+Equivalently, with:
+
+```math
+p^{\pm}_{R,a}(\mathfrak b)
+:=
+\nu^0_{R,a}
+\left(
+\chi_{S_{R,a}}=\pm1
+\mid
+\mathfrak b
+\right),
+\tag{32.10}
+```
+
+one has:
+
+```math
+s_{R,a}(\mathfrak b)
+=
+p^+_{R,a}(\mathfrak b)
+-
+p^-_{R,a}(\mathfrak b).
+\tag{32.11}
+```
+
+This reproduces (20.19) and proves that the transfer/cell route uses the real
+center-sign kernel.
+
+### 32.3. Consequence For The Residual Cell
+
+For the physical plaquette cell:
+
+```math
+s_j(y)
+=
+s_{R,a}(\pi_j(y)),
+\qquad
+0\le j<4.
+\tag{32.12}
+```
+
+By (32.9):
+
+```math
+s_j(y)\in[-1,1].
+\tag{32.13}
+```
+
+The non-pinned residual event is:
+
+```math
+E^{\zeta,0}_{R,a}
+=
+\left(
+E^{\zeta,+}_{R,a}
+\cup
+E^{\zeta,-}_{R,a}
+\right)^c.
+\tag{32.14}
+```
+
+Thus, for each `y` in the residual event, at least one edge has:
+
+```math
+\min_{\epsilon=\pm1}
+\left|
+s_j(y)-\epsilon
+\right|
+>
+\zeta_R.
+\tag{32.15}
+```
+
+Since the edge values are real:
+
+```math
+\min_{\epsilon=\pm1}
+\left|
+s_j(y)-\epsilon
+\right|
+=
+1-
+\left|
+s_j(y)
+\right|.
+\tag{32.16}
+```
+
+Therefore:
+
+```math
+\left|
+H^{\square}_{R,a}(y)
+\right|
+=
+\prod_{j=0}^{3}
+\left|
+s_j(y)
+\right|
+\le
+1-\zeta_R
+\qquad
+y\in E^{\zeta,0}_{R,a}.
+\tag{32.17}
+```
+
+Consequently:
+
+```math
+\Xi^{\zeta,0}_{R,a}
+\ge
+\zeta_R^2
+m^{\zeta,0}_{R,a}
+-
+o_a(1)
+\tag{32.18}
+```
+
+after the fixed record-space boundary layer is absorbed as in (30.30)-(30.33).
+
+Thus, for the actual center-sign transfer/cell route:
+
+```math
+\boxed{
+\liminf_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0
+\quad
+\Longrightarrow
+\quad
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0.
+}
+\tag{32.19}
+```
+
+This closes the residual modulus branch conditional only on residual mass and
+boundary-layer stability.
+
+### 32.4. What This Does Not Prove
+
+The kernel-reality audit does not prove:
+
+```math
+\liminf_{a\to0}
+m^{\zeta,0}_{R,a}
+>
+0.
+\tag{32.20}
+```
+
+It proves that if the non-pinned residual sector remains visible, then it
+automatically supplies soft holonomy separation. The remaining failure mode is
+therefore concentration into the pinned sectors.
+
+If:
+
+```math
+m^{\zeta,0}_{R,a}
+\to
+0,
+\tag{32.21}
+```
+
+then the cell law becomes near-pinned. The route succeeds if both pinned
+curvatures survive:
+
+```math
+\liminf_{a\to0}
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+>
+0.
+\tag{32.22}
+```
+
+The route fails only in the one-sided pinned concentration case:
+
+```math
+m^{\zeta,+}_{R,a}
+\to
+1,
+\qquad
+m^{\zeta,-}_{R,a}
+\to
+0,
+\qquad
+m^{\zeta,0}_{R,a}
+\to
+0,
+\tag{32.23}
+```
+
+or the same statement with `+` and `-` exchanged. This is the finite-cell area
+barrier in its sharpest current form.
+
+### 32.5. Separation From The Complex Cocycle-Amplitude Route
+
+The earlier Wilson lift decomposition contains a different object: a
+section-dependent SO(3)/SU(2) cocycle amplitude. Schematically it has the form:
+
+```math
+A^s_{C,S}(\bar U)
+\in
+\mathbb C.
+\tag{32.24}
+```
+
+If one builds a transfer kernel using such an amplitude:
+
+```math
+K^{\mathrm{amp}}_{R,a}
+=
+\int
+\chi_{S_{R,a}}(b)
+A^s_{R,a}(\bar U)
+d\nu^0_{R,a}(b,\bar U\mid\mathfrak b),
+\tag{32.25}
+```
+
+then the normalized ratio:
+
+```math
+s^{\mathrm{amp}}_{R,a}
+:=
+\frac{
+K^{\mathrm{amp}}_{R,a}
+}{
+K^0_{R,a}
+}
+\tag{32.26}
+```
+
+need not be real. It can have unit-modulus phases away from `+1` and `-1`.
+Therefore the modulus-deficit conclusion (32.17) does not apply to
+`s^{\mathrm{amp}}_{R,a}`.
+
+This is not a contradiction. It says there are two distinct routes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{center\ transfer}
+&
+s_{R,a}=p^+_{R,a}-p^-_{R,a}\in[-1,1],\\[1mm]
+\mathrm{cocycle\ amplitude}
+&
+s^{\mathrm{amp}}_{R,a}\in\mathbb C\text{ and needs phase-spread control}.
+\end{array}}
+\tag{32.27}
+```
+
+The fixed-IR cell route developed in Sections 17-31 is the first route.
+
+### 32.6. Consequence For The Next Obstruction
+
+Combining Targets 40.176-40.182, the actual center-sign cell route has the
+following exact alternatives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PASS}_{\mathrm{pin}}
+&
+\liminf\limits_{a\to0}\min(m^{\zeta,+}_{R,a},m^{\zeta,-}_{R,a})>0,\\[1mm]
+\mathrm{PASS}_{\mathrm{res}}
+&
+\liminf\limits_{a\to0}m^{\zeta,0}_{R,a}>0,\\[1mm]
+\mathrm{FAIL}_{\mathrm{cell}}
+&
+\text{one pinned sign has subsequential mass one}.
+\end{array}}
+\tag{32.28}
+```
+
+The first line is the pinned sign-curvature route. The second line is now the
+residual modulus-deficit route. The third line is the only remaining failure
+mode.
+
+Equivalently, since the three masses sum to one, the fixed-IR center-sign cell
+route fails only if there is a cutoff subsequence for which:
+
+```math
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+\to
+1.
+\tag{32.29}
+```
+
+Thus the positive fixed-IR target is:
+
+```math
+\limsup_{a\to0}
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+<
+1.
+\tag{32.30}
+```
+
+Proving (32.30) is exactly the remaining fixed-IR center-disorder input. It is
+not supplied by kernel reality. It is the same area-barrier problem, now
+localized to one physical cell law.
+
+An equivalent lower-bound form is:
+
+```math
+\liminf_{a\to0}
+\left(
+m^{\zeta,0}_{R,a}
++
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+\right)
+>
+0.
+\tag{32.31}
+```
+
+This form makes the two success modes explicit: residual mass or both pinned
+curvatures.
+
+### 32.7. Barandes And Fixed-IR Alignment
+
+Target 40.182 is Barandes aligned because it uses only:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square},
+\tag{32.32}
+```
+
+and the deterministic center sheet character:
+
+```math
+\chi_{S_{R,a}}(b)
+=
+(-1)^{\langle b,S_{R,a}\rangle_2}.
+\tag{32.33}
+```
+
+There is no hidden Markov transition on records. There is no ISP measure tilt.
+The result is fixed-IR because `R`, `zeta_R`, the tile, the sheet segment, and
+the boundary/collar package are all fixed before `a -> 0`.
+
+### 32.8. Completed Target 40.182
+
+Target 40.182 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{real}}
+&
+\text{the actual center transfer kernel has }s_{R,a}\in[-1,1],\\[1mm]
+\mathrm{PROVED}_{\mathrm{cond}}
+&
+s_{R,a}=p^+_{R,a}-p^-_{R,a}\text{ as in }(32.11),\\[1mm]
+\mathrm{PROVED}_{\mathrm{res}}
+&
+\text{residual mass implies modulus separation }(32.19),\\[1mm]
+\mathrm{SEPARATED}_{\mathrm{amp}}
+&
+\text{complex cocycle amplitudes are a different route},\\[1mm]
+\mathrm{OPEN}_{\mathrm{mass}}
+&
+\text{rule out subsequential one-sided pinning }(32.29),\\[1mm]
+\mathrm{NEXT}
+&
+\text{prove fixed-IR nonconcentration of the three-sector cell law}.
+\end{array}}
+\tag{32.34}
+```
+
+The modulus question is therefore closed for the center-sign route. The next
+problem is no longer phase spread; it is the mass distribution of the three
+fixed-IR sectors `+`, `-`, and `0`.
+
+## 33. Target 40.183: Three-Sector Nonconcentration Audit
+
+`V4P40-TARGET-40183-THREE-SECTOR-NONCONCENTRATION-AUDIT`.
+
+Target 40.182 reduced the real center-sign cell route to one question: can the
+actual fixed-IR SU(2) cell law concentrate on one pinned sign sector?
+
+### 33.1. The Three-Sector Order Parameter
+
+Define the three-sector nonconcentration parameter:
+
+```math
+q^{\zeta}_{R,a}
+:=
+m^{\zeta,0}_{R,a}
++
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right).
+\tag{33.1}
+```
+
+Since:
+
+```math
+m^{\zeta,+}_{R,a}
++
+m^{\zeta,-}_{R,a}
++
+m^{\zeta,0}_{R,a}
+=
+1,
+\tag{33.2}
+```
+
+one has the exact identity:
+
+```math
+q^{\zeta}_{R,a}
+=
+1
+-
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right).
+\tag{33.3}
+```
+
+Thus `q` is precisely the amount of cell mass not captured by the dominant
+pinned sign sector.
+
+The positive fixed-IR target is:
+
+```math
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0.
+\tag{33.4}
+```
+
+The failure target is:
+
+```math
+q^{\zeta}_{R,a}
+\to
+0
+\tag{33.5}
+```
+
+along a cutoff subsequence. By (33.3), this is exactly one-sided pinned
+concentration.
+
+### 33.2. Three-Sector Lower Bound For The Cell Functional
+
+For the real center-sign kernel, Target 40.182 gives residual modulus deficit
+on `E^{\zeta,0}`. Targets 40.174-40.176 give pinned sign-curvature separation
+when both pinned signs have mass.
+
+Assume:
+
+```math
+0<\zeta_R<\frac14.
+\tag{33.6}
+```
+
+After absorbing the boundary layer from (30.30)-(30.33), the three sector
+geometry is:
+
+```math
+y\in E^{\zeta,+}_{R,a}
+\quad
+\Longrightarrow
+\quad
+\left|
+H^{\square}_{R,a}(y)-1
+\right|
+\le
+4\zeta_R,
+\tag{33.7}
+```
+
+```math
+y\in E^{\zeta,-}_{R,a}
+\quad
+\Longrightarrow
+\quad
+\left|
+H^{\square}_{R,a}(y)+1
+\right|
+\le
+4\zeta_R,
+\tag{33.8}
+```
+
+and:
+
+```math
+y\in E^{\zeta,0}_{R,a}
+\quad
+\Longrightarrow
+\quad
+\left|
+H^{\square}_{R,a}(y)
+\right|
+\le
+1-\zeta_R.
+\tag{33.9}
+```
+
+Define:
+
+```math
+c_{\zeta,R}>0
+\tag{33.10}
+```
+
+by:
+
+```math
+c_{\zeta,R}
+:=
+\min
+\left\{
+\zeta_R^2,
+\,
+2(1-4\zeta_R)^2
+\right\}.
+\tag{33.11}
+```
+
+Then:
+
+```math
+\Theta^{\square}_{R,a}
+\ge
+c_{\zeta,R}
+q^{\zeta}_{R,a}
+-
+o_a(1).
+\tag{33.12}
+```
+
+Here `c_{\zeta,R}` depends on the fixed physical tolerance and readout package,
+but not on `a`.
+
+Proof. The residual sector contribution is immediate from (33.9):
+
+```math
+\inf_{|z|=1}
+\int_{E^{\zeta,0}_{R,a}}
+\left|
+H^{\square}_{R,a}(y)-z
+\right|^2
+d\mu^{\square}_{R,a}(y)
+\ge
+\zeta_R^2
+m^{\zeta,0}_{R,a}.
+\tag{33.13}
+```
+
+For the pinned sectors, fix any unit phase `z`. Let:
+
+```math
+d_+(z)
+:=
+\max
+\left(
+|z-1|-4\zeta_R,
+0
+\right),
+\qquad
+d_-(z)
+:=
+\max
+\left(
+|z+1|-4\zeta_R,
+0
+\right).
+\tag{33.14}
+```
+
+Equations (33.7)-(33.8) imply:
+
+```math
+\int_{E^{\zeta,+}_{R,a}\cup E^{\zeta,-}_{R,a}}
+\left|
+H^{\square}_{R,a}(y)-z
+\right|^2
+d\mu^{\square}_{R,a}(y)
+\ge
+d_+(z)^2m^{\zeta,+}_{R,a}
++
+d_-(z)^2m^{\zeta,-}_{R,a}.
+\tag{33.15}
+```
+
+Since the two pinned target disks have distance:
+
+```math
+2-8\zeta_R
+=
+2(1-4\zeta_R),
+\tag{33.16}
+```
+
+one has:
+
+```math
+d_+(z)+d_-(z)
+\ge
+2(1-4\zeta_R).
+\tag{33.17}
+```
+
+Therefore:
+
+```math
+d_+(z)^2+d_-(z)^2
+\ge
+2(1-4\zeta_R)^2.
+\tag{33.18}
+```
+
+Using:
+
+```math
+d_+(z)^2m^{\zeta,+}_{R,a}
++
+d_-(z)^2m^{\zeta,-}_{R,a}
+\ge
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+\left(
+d_+(z)^2+d_-(z)^2
+\right),
+\tag{33.19}
+```
+
+and combining with the residual contribution gives (33.12). Taking the
+infimum over `z` proves the claim. `∎`
+
+Therefore:
+
+```math
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0
+\quad
+\Longrightarrow
+\quad
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0.
+\tag{33.20}
+```
+
+The center-sign plaquette-cycle route closes under (33.4).
+
+### 33.3. Exact Collapse Mode
+
+If:
+
+```math
+q^{\zeta}_{R,a}
+\to
+0,
+\tag{33.21}
+```
+
+then exactly one of the following holds along a further subsequence:
+
+```math
+m^{\zeta,+}_{R,a}
+\to
+1,
+\qquad
+m^{\zeta,-}_{R,a}
+\to
+0,
+\qquad
+m^{\zeta,0}_{R,a}
+\to
+0,
+\tag{33.22}
+```
+
+or:
+
+```math
+m^{\zeta,-}_{R,a}
+\to
+1,
+\qquad
+m^{\zeta,+}_{R,a}
+\to
+0,
+\qquad
+m^{\zeta,0}_{R,a}
+\to
+0.
+\tag{33.23}
+```
+
+In either case, the cell holonomy concentrates near one pinned phase. As the
+fixed physical tolerance is tightened through a sequence of allowed tolerances,
+this is exactly the soft-collapse mechanism of Target 40.177.
+
+So the only remaining failure mode is not phase ambiguity, and not kernel
+complexity. It is one-sided pinned-sector concentration.
+
+### 33.4. Free-Energy Form Of The Remaining Barrier
+
+Define the three-sector barrier free energy:
+
+```math
+B^{\zeta,\mathrm{3sec}}_{R,a}
+:=
+-
+\log
+q^{\zeta}_{R,a}.
+\tag{33.24}
+```
+
+Then:
+
+```math
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0
+\quad
+\Longleftrightarrow
+\quad
+\limsup_{a\to0}
+B^{\zeta,\mathrm{3sec}}_{R,a}
+<
+\infty.
+\tag{33.25}
+```
+
+Thus the remaining fixed-IR input is a bounded three-sector barrier:
+
+```math
+\boxed{
+\limsup_{a\to0}
+B^{\zeta,\mathrm{3sec}}_{R,a}
+<
+\infty.
+}
+\tag{33.26}
+```
+
+If (33.26) fails, then the center-sign cell route has returned to the area
+barrier, localized to one physical cell law.
+
+### 33.5. Exact Symmetry Route
+
+The cleanest way to prove (33.4) would be a sign-exchanging symmetry. Suppose
+there is an involution:
+
+```math
+J_{R,a}:
+K^{\square}_{R}
+\longrightarrow
+K^{\square}_{R}
+\tag{33.27}
+```
+
+such that:
+
+```math
+J_{R,a}
+\left(
+E^{\zeta,+}_{R,a}
+\right)
+=
+E^{\zeta,-}_{R,a},
+\qquad
+J_{R,a}
+\left(
+E^{\zeta,0}_{R,a}
+\right)
+=
+E^{\zeta,0}_{R,a},
+\tag{33.28}
+```
+
+and:
+
+```math
+(J_{R,a})_{\#}\mu^{\square}_{R,a}
+=
+\mu^{\square}_{R,a}.
+\tag{33.29}
+```
+
+Then:
+
+```math
+m^{\zeta,+}_{R,a}
+=
+m^{\zeta,-}_{R,a}.
+\tag{33.30}
+```
+
+Consequently:
+
+```math
+q^{\zeta}_{R,a}
+=
+\frac{
+1+m^{\zeta,0}_{R,a}
+}{
+2
+}
+\ge
+\frac12.
+\tag{33.31}
+```
+
+This would close the route with no area-barrier estimate.
+
+### 33.6. Bounded-Cost Pairing Route
+
+Exact symmetry is stronger than needed. Suppose there is a sign-exchanging
+measurable map:
+
+```math
+J_{R,a}
+:
+E^{\zeta,+}_{R,a}
+\longrightarrow
+E^{\zeta,-}_{R,a}
+\tag{33.32}
+```
+
+with Radon-Nikodym cost bounded by a fixed physical constant:
+
+```math
+\frac{
+d(J_{R,a})_{\#}
+\left(
+\mu^{\square}_{R,a}\big|_{E^{\zeta,+}_{R,a}}
+\right)
+}{
+d\left(
+\mu^{\square}_{R,a}\big|_{E^{\zeta,-}_{R,a}}
+\right)
+}
+\le
+e^{C_R}
+\tag{33.33}
+```
+
+where:
+
+```math
+C_R<\infty
+\tag{33.34}
+```
+
+is independent of `a`. Then:
+
+```math
+m^{\zeta,-}_{R,a}
+\ge
+e^{-C_R}
+m^{\zeta,+}_{R,a}.
+\tag{33.35}
+```
+
+If `m^{\zeta,+}_{R,a}` is the dominant pinned mass, (33.35) gives:
+
+```math
+q^{\zeta}_{R,a}
+\ge
+\frac{
+e^{-C_R}
+}{
+1+e^{-C_R}
+}.
+\tag{33.36}
+```
+
+The same argument applies with `+` and `-` exchanged. Hence bounded sign-flip
+cost proves (33.4).
+
+This is exactly the sector-pairing route in its three-sector form. It is valid,
+but the bounded-cost hypothesis is the hard Yang-Mills estimate.
+
+### 33.7. Symmetry Audit
+
+The obvious candidate symmetries do not automatically prove (33.4).
+
+Charge conjugation preserves the SU(2) center value:
+
+```math
+-1
+\mapsto
+-1.
+\tag{33.37}
+```
+
+Thus it does not exchange the two pinned sign-curvature sectors by itself.
+
+A local center sheet flip can exchange the signs algebraically, but it is not a
+free gauge symmetry of the conditioned physical cell law. It either changes the
+declared boundary/collar data or changes the Wilson action on a physical sheet:
+
+```math
+\Delta A^{\mathrm{flip}}_{R,a}
+\neq
+0.
+\tag{33.38}
+```
+
+To use such a flip, one must prove:
+
+```math
+\sup_{a}
+\Delta A^{\mathrm{flip}}_{R,a}
+<
+\infty.
+\tag{33.39}
+```
+
+That is precisely a bounded vortex or tile-flip free-energy estimate.
+
+Reflection positivity can pair reflected packages, but it proves (33.4) only if
+the reflected construction actually satisfies the sign-exchange and
+measure-preservation gates (33.28)-(33.29), or the bounded-cost gate
+(33.33). Otherwise RP gives the neutral Hilbert-space structure and
+chessboard bounds, but not one-sided-sector nonconcentration.
+
+Therefore:
+
+```math
+\boxed{
+\text{no formal symmetry currently rules out one-sided pinning.}
+}
+\tag{33.40}
+```
+
+The remaining burden is dynamical.
+
+### 33.8. Formal Exhaustion
+
+The three-sector problem has no remaining algebraic obstruction. The abstract
+law:
+
+```math
+m^{\zeta,+}_{R,a}=1,
+\qquad
+m^{\zeta,-}_{R,a}=0,
+\qquad
+m^{\zeta,0}_{R,a}=0
+\tag{33.41}
+```
+
+is compatible with the sector partition and the real-kernel range. It fails the
+route.
+
+The abstract law:
+
+```math
+m^{\zeta,+}_{R,a}=\frac12,
+\qquad
+m^{\zeta,-}_{R,a}=\frac12,
+\qquad
+m^{\zeta,0}_{R,a}=0
+\tag{33.42}
+```
+
+is also compatible with the same algebra. It passes the route.
+
+Similarly:
+
+```math
+m^{\zeta,+}_{R,a}=1-\eta_R,
+\qquad
+m^{\zeta,-}_{R,a}=0,
+\qquad
+m^{\zeta,0}_{R,a}=\eta_R
+\tag{33.43}
+```
+
+passes for every fixed:
+
+```math
+\eta_R>0.
+\tag{33.44}
+```
+
+Therefore the formal record structure admits both pass and fail laws. The only
+remaining way to decide the actual SU(2) case is to estimate the measure of the
+non-dominant sectors, or equivalently the three-sector free energy (33.24).
+
+This is exactly what "fully investigated" means here:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Target 40.183 is closed as a reduction.}\\[1mm]
+\text{It is open only as a Yang-Mills weight estimate.}
+\end{array}
+}
+\tag{33.45}
+```
+
+### 33.9. Fixed-IR And Barandes Guardrails
+
+The target remains fixed-IR aligned because:
+
+```math
+R,\zeta_R,K^{\square}_{R},E^{\zeta,\sigma}_{R}
+\quad
+\text{are fixed before }a\to0.
+\tag{33.46}
+```
+
+It remains Barandes aligned because:
+
+```math
+\mu^{\square}_{R,a}
+=
+(\mathcal R^{\square}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}
+\tag{33.47}
+```
+
+and all sector masses are ordinary probabilities under this deterministic
+pushforward. A sign-flip map may be tested as a change of variables, but it is
+not allowed to become a hidden Markov transition or an ISP measure tilt.
+
+### 33.10. Exact Outcome Of Target 40.183
+
+Target 40.183 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{param}}
+&
+q^{\zeta}_{R,a}=1-\max(m^{\zeta,+}_{R,a},m^{\zeta,-}_{R,a}),\\[1mm]
+\mathrm{PROVED}_{\mathrm{pass}}
+&
+\text{the explicit bound }(33.12)\text{ closes the route when }\liminf q^{\zeta}_{R,a}>0,\\[1mm]
+\mathrm{PROVED}_{\mathrm{fail}}
+&
+q^{\zeta}_{R,a}\to0\text{ is exactly subsequential one-sided pinning},\\[1mm]
+\mathrm{PROVED}_{\mathrm{free}}
+&
+\text{bounded }B^{\zeta,\mathrm{3sec}}_{R,a}\text{ is equivalent to }\liminf q^{\zeta}_{R,a}>0,\\[1mm]
+\mathrm{PROVED}_{\mathrm{sym}}
+&
+\text{exact sign-exchange symmetry gives }q^{\zeta}_{R,a}\ge1/2,\\[1mm]
+\mathrm{PROVED}_{\mathrm{cost}}
+&
+\text{bounded sign-flip cost gives }q^{\zeta}_{R,a}>0,\\[1mm]
+\mathrm{PROVED}_{\mathrm{exhaust}}
+&
+\text{formal sector algebra admits both pass and fail laws},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{prove bounded cost or nonconcentration for actual SU(2)},\\[1mm]
+\mathrm{NEXT}
+&
+\text{audit the actual sign-flip cost at fixed physical }R.
+\end{array}}
+\tag{33.48}
+```
+
+Thus the remaining obstruction is fully localized. The proof no longer needs a
+phase-spread estimate for the center-sign route. It needs a fixed-IR proof that
+the actual cell law does not collapse onto a single pinned sign sector.
+
+## 34. Target 40.184: Actual Sign-Flip Cost Audit At Fixed Physical R
+
+`V4P40-TARGET-40184-ACTUAL-SIGN-FLIP-COST-AUDIT-FIXED-R`.
+
+Target 40.183 left one concrete next task: audit the cost of a sign flip at
+fixed physical scale `R`. This target separates three notions that must not be
+confused:
+
+```math
+\boxed{
+\begin{array}{ll}
+\text{raw thin flip}
+&
+\text{multiply a microscopic center sheet by }-1,\\[1mm]
+\text{bounded-cost flip}
+&
+\text{a change of variables with uniformly bounded Radon-Nikodym cost},\\[1mm]
+\text{optimal free-energy flip}
+&
+\text{the actual probability ratio between dominant and nondominant sectors}.
+\end{array}}
+\tag{34.1}
+```
+
+Only the second or third can prove the three-sector nonconcentration target.
+
+### 34.1. Dominant-Sector Cost Criterion
+
+For a sign:
+
+```math
+\sigma\in\{+,-\},
+\tag{34.2}
+```
+
+define the complement of the pinned sector:
+
+```math
+E^{\zeta,\neg\sigma}_{R,a}
+:=
+\left(
+E^{\zeta,\sigma}_{R,a}
+\right)^c.
+\tag{34.3}
+```
+
+Thus:
+
+```math
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,\neg +}_{R,a}
+\right)
+=
+m^{\zeta,-}_{R,a}
++
+m^{\zeta,0}_{R,a},
+\tag{34.4}
+```
+
+and similarly with `+` and `-` exchanged.
+
+Suppose there is a measurable map:
+
+```math
+\Phi^{\sigma}_{R,a}
+:
+E^{\zeta,\sigma}_{R,a}
+\longrightarrow
+E^{\zeta,\neg\sigma}_{R,a}
+\tag{34.5}
+```
+
+that is nonsingular with respect to the cell reference measure and whose
+Radon-Nikodym cost obeys:
+
+```math
+D_{\Phi^{\sigma}}(y)
+\le
+C_R
++
+o_a(1)
+\tag{34.6}
+```
+
+on `E^{\zeta,\sigma}_{R,a}`, with:
+
+```math
+C_R<\infty
+\tag{34.7}
+```
+
+independent of `a`. Then:
+
+```math
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,\neg\sigma}_{R,a}
+\right)
+\ge
+e^{-C_R+o_a(1)}
+\mu^{\square}_{R,a}
+\left(
+E^{\zeta,\sigma}_{R,a}
+\right).
+\tag{34.8}
+```
+
+If `E^{zeta,sigma}` is the dominant sector, (34.8) gives:
+
+```math
+q^{\zeta}_{R,a}
+\ge
+\frac{
+e^{-C_R+o_a(1)}
+}{
+1+e^{-C_R+o_a(1)}
+}.
+\tag{34.9}
+```
+
+Thus a bounded-cost dominant-sector flip proves the three-sector
+nonconcentration target.
+
+### 34.2. The Optimal Cost Is Exactly The Barrier
+
+Define the optimal dominant-sector free-energy cost:
+
+```math
+C^{\mathrm{opt}}_{R,a}
+:=
+\log
+\frac{
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+}{
+1-
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+}.
+\tag{34.10}
+```
+
+Using (33.3):
+
+```math
+C^{\mathrm{opt}}_{R,a}
+=
+\log
+\frac{
+1-q^{\zeta}_{R,a}
+}{
+q^{\zeta}_{R,a}
+}.
+\tag{34.11}
+```
+
+Therefore:
+
+```math
+\limsup_{a\to0}
+C^{\mathrm{opt}}_{R,a}
+<
+\infty
+\quad
+\Longleftrightarrow
+\quad
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0.
+\tag{34.12}
+```
+
+So the optimal free-energy flip is not an easier theorem. It is exactly the
+three-sector nonconcentration statement in cost language.
+
+### 34.3. Raw Thin Center Flip
+
+Let `v_a` be a relative center variation that changes the charged sign and
+preserves the declared boundary data. The raw center flip is:
+
+```math
+\Phi_{v_a}(b,\bar U)
+=
+\left(
+b+v_a,\bar U
+\right).
+\tag{34.13}
+```
+
+Let:
+
+```math
+N_a(v)
+:=
+\left|
+\operatorname{supp}(v_a)
+\right|.
+\tag{34.14}
+```
+
+For the Wilson plaquette weight:
+
+```math
+w_a(g)
+=
+\exp
+\left(
+\frac{\beta_a}{2}
+\operatorname{Tr}(g)
+\right),
+\tag{34.15}
+```
+
+the exact cost from Target 40.171 is:
+
+```math
+D_{\Phi_{v_a}}(x)
+=
+\beta_a
+\sum_{p\in\operatorname{supp}(v_a)}
+\operatorname{Tr}
+\left(
+g_p(x)
+\right).
+\tag{34.16}
+```
+
+On the near-vacuum event:
+
+```math
+G_{\tau}(v_a)
+:=
+\left\{
+x:
+\operatorname{Tr}
+\left(
+g_p(x)
+\right)
+\ge
+\tau
+\quad
+\text{for every }p\in\operatorname{supp}(v_a)
+\right\},
+\tag{34.17}
+```
+
+where:
+
+```math
+0<\tau\le2,
+\tag{34.18}
+```
+
+one has:
+
+```math
+D_{\Phi_{v_a}}(x)
+\ge
+\tau\beta_aN_a(v)
+\qquad
+x\in G_{\tau}(v_a).
+\tag{34.19}
+```
+
+At finite cutoff, every nonempty open near-vacuum event has positive
+counting-Haar density inside the supported fiber. Hence the essential supremum
+of the raw flip cost satisfies:
+
+```math
+\operatorname*{ess\,sup}
+D_{\Phi_{v_a}}
+\ge
+\tau\beta_aN_a(v).
+\tag{34.20}
+```
+
+For a thin physical sheet flip at fixed `R`:
+
+```math
+N_a(v)
+\asymp
+\frac{
+\operatorname{Area}_R
+}{
+a^2
+}.
+\tag{34.21}
+```
+
+Therefore:
+
+```math
+\operatorname*{ess\,sup}
+D_{\Phi_{v_a}}
+\gtrsim
+\tau\beta_a
+\frac{
+\operatorname{Area}_R
+}{
+a^2
+}
+\to
+\infty.
+\tag{34.22}
+```
+
+The raw thin center flip does not have bounded fixed-IR cost.
+
+### 34.4. Heat-Kernel Or Improved Actions
+
+The conclusion is not special to the Wilson action. For any local action whose
+single-plaquette penalty for multiplying a near-identity plaquette by the
+nontrivial center element is:
+
+```math
+\Delta_a(\tau)
+>
+0,
+\tag{34.23}
+```
+
+the same argument gives:
+
+```math
+\operatorname*{ess\,sup}
+D_{\Phi_{v_a}}
+\ge
+\Delta_a(\tau)N_a(v).
+\tag{34.24}
+```
+
+For heat-kernel or asymptotically free continuum tunings, `Delta_a(tau)` does
+not cancel the microscopic sheet area. Thus a thin physical sign flip again has
+divergent cost.
+
+### 34.5. Could A Thick Flip Have Bounded Cost?
+
+A bounded-cost flip would have to be different from (34.13). It would need to
+modify the center and SO(3) variables together so that the action cost is spread
+or relaxed over a physical region:
+
+```math
+\Phi^{\mathrm{thick}}_{R,a}
+:
+E^{\zeta,\sigma}_{R,a}
+\longrightarrow
+E^{\zeta,\neg\sigma}_{R,a}.
+\tag{34.25}
+```
+
+The required estimate is:
+
+```math
+D_{\Phi^{\mathrm{thick}}}(y)
+\le
+C_R
++
+o_a(1)
+\tag{34.26}
+```
+
+on the dominant pinned sector, with `C_R` independent of `a`.
+
+This is exactly a bounded thick-vortex or tile-flip free-energy statement. It is
+not implied by topology, reflection positivity, or deterministic record
+bookkeeping.
+
+Equivalently:
+
+```math
+\boxed{
+\text{bounded thick flip}
+\quad
+\Longleftrightarrow
+\quad
+\text{bounded three-sector free-energy barrier}.
+}
+\tag{34.27}
+```
+
+The implication from left to right is (34.8)-(34.12). The reverse implication is
+the abstract optimal-transport statement encoded by (34.10)-(34.12), not an
+explicit local construction.
+
+### 34.6. Fixed-IR Interpretation
+
+This target stays fixed-IR aligned because `R`, the tile, the sheet segment,
+and the tolerance are fixed before `a -> 0`. The divergence in (34.22) is not
+caused by increasing the physical loop size. It is caused by the microscopic
+resolution of a fixed physical sheet:
+
+```math
+\operatorname{Area}_R/a^2
+\to
+\infty.
+\tag{34.28}
+```
+
+Thus the raw-flip failure is directly relevant to fixed physical IR. It says
+that a proof cannot flip a thin center sheet plaquette-by-plaquette and call the
+cost bounded.
+
+### 34.7. Barandes And ISP Guardrail
+
+The audit uses only deterministic finite-cutoff records:
+
+```math
+\mu^{\square}_{R,a}
+=
+\left(
+\mathcal R^{\square}_{R,a}
+\right)_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{34.29}
+```
+
+Changing variables by `Phi` is a mathematical test on this same measure. It is
+not an added Markov transition and not an ISP measure tilt. Therefore:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{ISP record structure can expose the flip cost.}\\[1mm]
+\text{It cannot lower it without changing the SU(2) weight estimate.}
+\end{array}
+}
+\tag{34.30}
+```
+
+### 34.8. Completed Target 40.184
+
+Target 40.184 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{criterion}}
+&
+\text{bounded dominant-sector flip cost implies }q^{\zeta}_{R,a}>0,\\[1mm]
+\mathrm{PROVED}_{\mathrm{optimal}}
+&
+\text{optimal flip cost is exactly the three-sector barrier }(34.11),\\[1mm]
+\mathrm{FAIL}_{\mathrm{thin}}
+&
+\text{raw thin center flips have microscopic-area cost }(34.22),\\[1mm]
+\mathrm{OPEN}_{\mathrm{thick}}
+&
+\text{bounded thick flip is a genuine YM free-energy estimate},\\[1mm]
+\mathrm{NO}_{\mathrm{formal}}
+&
+\text{topology/RP/records alone do not bound the actual cost},\\[1mm]
+\mathrm{NEXT}
+&
+\text{decide whether to assume/prove thick-vortex free energy or close the route as conditional}.
+\end{array}}
+\tag{34.31}
+```
+
+The actual sign-flip cost audit is therefore complete. Thin flips fail at fixed
+physical `R`; optimal or thick flips are precisely the remaining area-barrier
+input.
+
+## 35. Target 40.185: Route Closure And Conditional Fixed-IR Certificate
+
+`V4P40-TARGET-40185-ROUTE-CLOSURE-CONDITIONAL-FIXED-IR-CERTIFICATE`.
+
+Targets 40.170-40.184 have exhausted the center-sign route. The remaining task
+is no longer to add another reduction. It is to state the exact conditional
+certificate and the exact remaining input.
+
+### 35.1. The Final Hypothesis
+
+Fix the physical package:
+
+```math
+\mathfrak G_R
+=
+\left(
+R,\zeta_R,T_R,S_R,\rho_R,\mathcal R^{\square}_R
+\right),
+\qquad
+0<\zeta_R<\frac14.
+\tag{35.1}
+```
+
+The final fixed-IR hypothesis is:
+
+```math
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)
+:
+\qquad
+\liminf_{a\to0}
+q^{\zeta}_{R,a}
+>
+0.
+\tag{35.2}
+```
+
+By Target 40.183, this is equivalent to:
+
+```math
+\limsup_{a\to0}
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+<
+1,
+\tag{35.3}
+```
+
+and also to the bounded three-sector barrier:
+
+```math
+\limsup_{a\to0}
+B^{\zeta,\mathrm{3sec}}_{R,a}
+<
+\infty.
+\tag{35.4}
+```
+
+By Target 40.184, a bounded thick sign-flip cost is a sufficient way to prove
+(35.2), while the raw thin flip does not prove it.
+
+### 35.2. Closure Theorem
+
+**Theorem 40.185A (Conditional Fixed-IR Center-Sign Certificate).** Assume:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FIR}
+&
+\text{the physical tile, sheet, tolerance, and record battery are fixed before }a\to0,\\[1mm]
+\mathrm{BA}
+&
+\text{the record law is the deterministic SU(2) pushforward law},\\[1mm]
+\mathrm{RP}
+&
+\text{the charged sheet package is reflection-admissible when RP is used},\\[1mm]
+\mathrm{KER}
+&
+s_{R,a}=p^+_{R,a}-p^-_{R,a}\in[-1,1],\\[1mm]
+\mathrm{BDY}
+&
+\text{the fixed record-space boundary layer is absorbed or negligible},\\[1mm]
+\mathrm{H}
+&
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R)\text{ holds}.
+\end{array}}
+\tag{35.5}
+```
+
+Then:
+
+```math
+\liminf_{a\to0}
+\Theta^{\square}_{R,a}
+>
+0.
+\tag{35.6}
+```
+
+Consequently the integrated non-coboundary estimate holds:
+
+```math
+\inf_{\substack{
+|\lambda|=1\\
+|h|=1
+}}
+\int
+\left|
+s_{R,a}(\omega,\omega')
+-
+\lambda
+\frac{
+h(\omega')
+}{
+h(\omega)
+}
+\right|^2
+d\Pi^0_{R,a}(\omega,\omega')
+\ge
+\delta_R
++
+o_a(1)
+\tag{35.7}
+```
+
+for some:
+
+```math
+\delta_R>0.
+\tag{35.8}
+```
+
+Therefore the fixed-IR charged transfer deficit holds:
+
+```math
+\rho
+\left(
+\mathcal T^{\chi}_{R,a}
+\right)
+\le
+e^{-m_R+o_a(1)}
+\rho
+\left(
+\mathcal T^0_{R,a}
+\right),
+\qquad
+m_R>0.
+\tag{35.9}
+```
+
+This is the fixed-physical-`R` center-sign confinement certificate supplied by
+this route.
+
+#### Proof
+
+Hypotheses `FIR`, `BA`, `KER`, and `BDY` place the cell law in the setting of
+Targets 40.182-40.183. Hypothesis `H` and the explicit bound (33.12) give
+(35.6). Target 40.174 and Target 40.177 convert cell holonomy separation into
+(20.23), which is (35.7). Target 40.169 converts (35.7) into the charged
+transfer deficit (35.9). `∎`
+
+### 35.3. What Is Proved Without The Final Hypothesis
+
+The formal chain is now closed:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{C1}
+&
+\text{SU(2) }Z_2\text{ charged sheets are RP-admissible after fixed packaging},\\[1mm]
+\mathrm{C2}
+&
+\text{equality of charged and neutral transfer radii forces coboundary absorption},\\[1mm]
+\mathrm{C3}
+&
+\text{relative cohomology identifies when the charged sign can vary},\\[1mm]
+\mathrm{C4}
+&
+\text{cycle separation implies integrated non-coboundary},\\[1mm]
+\mathrm{C5}
+&
+\text{the physical four-cell gives the first genuine cycle test},\\[1mm]
+\mathrm{C6}
+&
+\text{the actual center-sign kernel is real and radial},\\[1mm]
+\mathrm{C7}
+&
+\text{residual mass gives modulus separation},\\[1mm]
+\mathrm{C8}
+&
+\text{three-sector nonconcentration is the only remaining cell input},\\[1mm]
+\mathrm{C9}
+&
+\text{raw thin sign flips have divergent fixed-IR cost}.
+\end{array}}
+\tag{35.10}
+```
+
+None of these statements is the area law by itself. Together they prove that
+the entire center-sign route bottoms out at the single Yang-Mills weight
+estimate (35.2).
+
+### 35.4. Equivalent Forms Of The Remaining Input
+
+The final hypothesis can be written in four equivalent or sufficient forms:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{H}_{1}
+&
+\liminf\limits_{a\to0}q^{\zeta}_{R,a}>0,\\[1mm]
+\mathrm{H}_{2}
+&
+\limsup\limits_{a\to0}\max(m^{\zeta,+}_{R,a},m^{\zeta,-}_{R,a})<1,\\[1mm]
+\mathrm{H}_{3}
+&
+\limsup\limits_{a\to0}B^{\zeta,\mathrm{3sec}}_{R,a}<\infty,\\[1mm]
+\mathrm{H}_{4}
+&
+\text{there is a bounded thick sign-flip cost at fixed physical }R.
+\end{array}}
+\tag{35.11}
+```
+
+The first three are equivalent by Target 40.183. The fourth is a sufficient
+constructive route by Target 40.184. A raw thin flip is not such a route.
+
+### 35.5. What Does Not Prove The Final Hypothesis
+
+The audit rules out several tempting shortcuts:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NO}_{\mathrm{top}}
+&
+\text{topology proves sign availability, not fixed weights},\\[1mm]
+\mathrm{NO}_{\mathrm{RP}}
+&
+\text{RP gives admissibility and chessboard structure, not strict deficit},\\[1mm]
+\mathrm{NO}_{\mathrm{thin}}
+&
+\text{thin center flips have microscopic-area cost},\\[1mm]
+\mathrm{NO}_{\mathrm{ISP}}
+&
+\text{deterministic ISP records do not tilt the SU(2) measure},\\[1mm]
+\mathrm{NO}_{\mathrm{Markov}}
+&
+\text{no hidden Markov transition between records is allowed},\\[1mm]
+\mathrm{NO}_{\mathrm{UV}}
+&
+\text{weak-coupling good-sector smallness does not prove the fixed-IR input}.
+\end{array}}
+\tag{35.12}
+```
+
+Thus a proof of (35.2) must be an actual fixed-IR Yang-Mills weight estimate.
+
+### 35.6. What The Paper May Claim
+
+The honest claim is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{If the fixed-IR three-sector nonconcentration estimate holds,}\\[1mm]
+\text{then the center-sign transfer/cell route proves}\\[1mm]
+\text{the fixed-physical-}R\text{ charged transfer deficit and certificate.}
+\end{array}}
+\tag{35.13}
+```
+
+The paper should not claim:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{NOT}_{1}
+&
+\text{a proof of full continuum Yang-Mills confinement},\\[1mm]
+\mathrm{NOT}_{2}
+&
+\text{survival as }R\to\infty\text{ or }t_-\downarrow0,\\[1mm]
+\mathrm{NOT}_{3}
+&
+\text{a Clay mass-gap theorem},\\[1mm]
+\mathrm{NOT}_{4}
+&
+\text{an unconditional area law},\\[1mm]
+\mathrm{NOT}_{5}
+&
+\text{a result derived from ISP ontology alone}.
+\end{array}}
+\tag{35.14}
+```
+
+This is not a defeat. It is the clean endpoint of the current route.
+
+### 35.7. Consequence For The Paper Structure
+
+The center-sign route should now be presented as a conditional theorem plus a
+single open hypothesis:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{The formal route is complete.}\\[1mm]
+\text{The analytic route is open exactly at } \mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+\end{array}}
+\tag{35.15}
+```
+
+Further sections should not add new formal reductions unless they introduce a
+new way to prove (35.2). The next genuine research direction is one of:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}
+&
+\text{prove the bounded thick-vortex or tile-flip free-energy estimate},\\[1mm]
+\mathrm{B}
+&
+\text{prove three-sector nonconcentration directly from the SU(2) cell law},\\[1mm]
+\mathrm{C}
+&
+\text{close this route as conditional and move to a different ISP-specific test}.
+\end{array}}
+\tag{35.16}
+```
+
+### 35.8. Completed Target 40.185
+
+Target 40.185 is:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{closure}}
+&
+\text{Targets 40.170-40.184 reduce the route to } \mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{PROVED}_{\mathrm{conditional}}
+&
+\mathsf H_{\mathrm{3sec}}\text{ implies the charged transfer deficit},\\[1mm]
+\mathrm{PROVED}_{\mathrm{equiv}}
+&
+\text{the final input is equivalent to bounded three-sector barrier},\\[1mm]
+\mathrm{PROVED}_{\mathrm{guardrails}}
+&
+\text{topology, RP, thin flips, and record bookkeeping do not prove it},\\[1mm]
+\mathrm{OPEN}_{\mathrm{YM}}
+&
+\text{prove or assume the fixed-IR three-sector nonconcentration estimate},\\[1mm]
+\mathrm{NEXT}
+&
+\text{revise status/title or formulate } \mathsf H_{\mathrm{3sec}}\text{ as the final hypothesis}.
+\end{array}}
+\tag{35.17}
+```
+
+The route is now closed as a conditional fixed-IR certificate. Its only live
+mathematical input is the fixed-physical-`R` three-sector Yang-Mills weight
+estimate.
+
+## 36. Research Branch A: Thick-Vortex Tile-Flip Free Energy
+
+`V4P40-RESEARCH-BRANCH-A-THICK-VORTEX-FREE-ENERGY`.
+
+Branch A attacks the remaining input by trying to prove a bounded physical
+thick-vortex sign flip at fixed `R`. This is the constructive version of:
+
+```math
+\mathsf H_{4}(R,\zeta_R)
+:
+\qquad
+\limsup_{a\to0}
+B^{\zeta,\mathrm{thick}}_{R,a}
+<
+\infty.
+\tag{36.1}
+```
+
+If (36.1) holds, Target 40.184 gives:
+
+```math
+\mathsf H_{4}(R,\zeta_R)
+\Longrightarrow
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R),
+\tag{36.2}
+```
+
+and Theorem 40.185A gives the fixed-IR charged transfer deficit.
+
+### 36.1. Fixed-IR Alignment Contract For Branch A
+
+The branch is admissible only under the following order of operations:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{fix }R,\zeta_R,T_R,S_R,\rho_R,\mathcal R_R^\square
+\text{ first,}\\[1mm]
+\text{choose a physical-thickness flip supported at scale }R,\\[1mm]
+\text{then take }a\to0.
+\end{array}}
+\tag{36.3}
+```
+
+No estimate may shrink the thickness with `a`, use a UV-good sector as an IR
+substitute, or appeal to the continuum survival limit `t_-` going to zero.
+
+### 36.2. Barandes Alignment Contract For Branch A
+
+The flip is a change-of-variables or comparison argument on the deterministic
+SU(2) pushforward measure. It is not a stochastic transition added by the ISP
+ontology:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{same SU(2) Wilson action, same deterministic readout law,}\\[1mm]
+\text{no hidden Markov dynamics, no record-law tilt, no ontology bias.}
+\end{array}}
+\tag{36.4}
+```
+
+Thus Branch A can succeed only by proving a real Yang-Mills free-energy bound
+for a physical thick center defect.
+
+### 36.3. Concrete Tasks
+
+1. Define the physical thick flip map
+   `\Phi^{\mathrm{thick}}_{R,a}` on the four-cell package, with support
+   contained in the fixed physical collar and with boundary records fixed.
+2. Prove that the map changes the charged sector while preserving the
+   reflection-admissible sheet package.
+3. Estimate the Radon-Nikodym cost:
+
+```math
+\sup_{\omega}
+\log
+\frac{
+d\mu^{\mathrm{SU2}}_{R,a}
+}{
+d(\Phi^{\mathrm{thick}}_{R,a})_{\#}\mu^{\mathrm{SU2}}_{R,a}
+}
+(\omega)
+\le
+C_R
++o_a(1).
+\tag{36.5}
+```
+
+4. Convert (36.5) to a bounded three-sector barrier using Target 40.184.
+5. If (36.5) fails with a cost growing like microscopic area, record Branch A
+   as closed negatively: the thick-vortex route has found the area barrier
+   again.
+
+### 36.4. Expected Output
+
+The branch has only two honest outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}_{+}
+&
+\text{bounded thick-vortex cost proves }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{A}_{-}
+&
+\text{all admissible physical flips require area-order cost.}
+\end{array}}
+\tag{36.6}
+```
+
+Outcome `A_+` turns the paper's certificate into a fixed-IR theorem. Outcome
+`A_-` shows that this route is equivalent to the remaining confinement
+free-energy barrier.
+
+## 37. Research Branch B: Direct Three-Sector Cell-Law Nonconcentration
+
+`V4P40-RESEARCH-BRANCH-B-THREE-SECTOR-CELL-LAW`.
+
+Branch B attacks the final hypothesis directly, without constructing a flip.
+The target is:
+
+```math
+\liminf_{a\to0}
+\left(
+m^{\zeta,0}_{R,a}
++
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+\right)
+>
+0.
+\tag{37.1}
+```
+
+Equivalently, neither charged sign sector can pin the real SU(2) cell law in
+the fixed-IR continuum refinement:
+
+```math
+\limsup_{a\to0}
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+<
+1.
+\tag{37.2}
+```
+
+### 37.1. Fixed-IR Alignment Contract For Branch B
+
+All observables in the cell law are physical-resolution observables. The
+sector partition, smoothing radius, boundary battery, and four-cell geometry
+are fixed before `a` is refined:
+
+```math
+\boxed{
+\text{Branch B studies the fixed cell law first and the }a\to0
+\text{ refinement second.}
+}
+\tag{37.3}
+```
+
+This forbids replacing (37.1) by a weak-coupling UV estimate for a shrinking
+observable.
+
+### 37.2. Barandes Alignment Contract For Branch B
+
+The cell law is the deterministic SU(2) readout law:
+
+```math
+\mu^{\mathrm{cell}}_{R,a}
+=
+(\mathrm{readout}_{R,a})_{\#}
+\mu^{\mathrm{SU2}}_{R,a}.
+\tag{37.4}
+```
+
+Any proof must be a theorem about (37.4). It may use the ISP record variables
+as coordinates, but it may not assume an additional stochastic process on
+records or a Markov relaxation between sign sectors.
+
+### 37.3. Concrete Tasks
+
+1. Work with the actual real center-sign kernel:
+
+```math
+s_{R,a}
+=
+p^+_{R,a}
+-
+p^-_{R,a}.
+\tag{37.5}
+```
+
+2. Prove compactness of the fixed-IR cell laws along `a_n` going to zero.
+3. Classify any subsequential pinned limit satisfying:
+
+```math
+\max
+\left(
+m^{\zeta,+}_{R,a_n},
+m^{\zeta,-}_{R,a_n}
+\right)
+\to
+1.
+\tag{37.6}
+```
+
+4. Show that such a pinned limit forces one of the excluded structures:
+boundary coboundary absorption, collapse of the physical four-cell cycle, or
+an area-order vortex free-energy barrier.
+5. If pinned limits remain possible after this classification, record Branch B
+   as closed negatively: direct cell-law nonconcentration is another form of
+   the area barrier.
+
+### 37.4. Expected Output
+
+Branch B also has only two honest outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B}_{+}
+&
+\text{direct nonconcentration proves }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{B}_{-}
+&
+\text{pinned subsequential limits remain possible unless the area barrier is bounded.}
+\end{array}}
+\tag{37.7}
+```
+
+Outcome `B_+` proves the fixed-IR certificate without an explicit flip map.
+Outcome `B_-` confirms that the remaining obstruction is not formal; it is the
+same Yang-Mills disorder free-energy estimate in cell-law form.
+
+### 37.5. Target 40.186: Full Branch B Pinned-Limit Audit
+
+`V4P40-TARGET-40186-BRANCH-B-PINNED-LIMIT-AUDIT`.
+
+Branch B is interesting only if it can use the ISP-exposed cell variables to
+prove the final input without constructing a vortex flip. The sharp test is:
+
+```math
+\boxed{
+\text{Can the fixed-IR cell law have a subsequential limit supported on one pinned sign?}
+}
+\tag{37.8}
+```
+
+If the answer is no, Branch B proves the certificate. If the answer is yes, or
+if present tools cannot rule it out, Branch B has found the same area barrier
+in cell-law form.
+
+### 37.6. Compactness Of The Fixed-IR Cell Laws
+
+Fix the physical package:
+
+```math
+\mathfrak G_R
+=
+\left(
+R,\zeta_R,T_R,S_R,\rho_R,\mathcal R^{\square}_R
+\right).
+\tag{37.9}
+```
+
+The record battery is fixed before refinement. Hence the cell readout takes
+values in one fixed compact metric record space:
+
+```math
+K_R^{\square}.
+\tag{37.10}
+```
+
+The cell laws are:
+
+```math
+\nu_{R,a}
+:=
+\mu^{\mathrm{cell}}_{R,a}
+=
+\left(
+\mathrm{readout}_{R,a}
+\right)_{\#}
+\mu^{\mathrm{SU2}}_{R,a}.
+\tag{37.11}
+```
+
+Since `K_R^{\square}` is compact, every cutoff sequence has a weakly convergent
+subsequence:
+
+```math
+\nu_{R,a_n}
+\Longrightarrow
+\nu_{R,\infty}.
+\tag{37.12}
+```
+
+This proves the first requested Branch B task. Compactness is useful, but it
+does not by itself give nonconcentration; it only says that any failure has a
+limit object.
+
+### 37.7. Sector Boundary Convention
+
+Use the buffered three-sector partition from Target 40.183:
+
+```math
+K_R^{\square}
+=
+E^{\zeta,+}_{R}
+\sqcup
+E^{\zeta,0}_{R}
+\sqcup
+E^{\zeta,-}_{R},
+\tag{37.13}
+```
+
+with the pinned sectors closed after absorbing the fixed boundary annulus into
+`BDY`. Thus weak convergence gives the upper and lower bounds needed for sector
+masses. If a boundary annulus carries nonzero limiting mass, it is counted as
+part of the residual sector, not hidden in a sign sector.
+
+The sector masses are:
+
+```math
+m^{\zeta,\sigma}_{R,a}
+=
+\nu_{R,a}
+\left(
+E^{\zeta,\sigma}_{R}
+\right),
+\qquad
+\sigma\in\{+,0,-\}.
+\tag{37.14}
+```
+
+### 37.8. Pinned-Limit Equivalence
+
+Define the no-pinned-cell-state condition:
+
+```math
+\mathsf{NPCS}(R,\zeta_R)
+:
+\quad
+\text{no weak limit }\nu_{R,\infty}
+\text{ is supported on }E^{\zeta,+}_{R}
+\text{ or }E^{\zeta,-}_{R}.
+\tag{37.15}
+```
+
+Then:
+
+```math
+\boxed{
+\mathsf{NPCS}(R,\zeta_R)
+\Longleftrightarrow
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+}
+\tag{37.16}
+```
+
+#### Proof
+
+If `H_3sec` fails, then by Target 40.183 there is a subsequence and a sign
+`\sigma` such that:
+
+```math
+m^{\zeta,\sigma}_{R,a_n}
+\to
+1.
+\tag{37.17}
+```
+
+By compactness, pass to a further subsequence with:
+
+```math
+\nu_{R,a_n}
+\Longrightarrow
+\nu_{R,\infty}.
+\tag{37.18}
+```
+
+Since the pinned sector is closed after the boundary convention:
+
+```math
+\nu_{R,\infty}
+\left(
+E^{\zeta,\sigma}_{R}
+\right)
+=
+1.
+\tag{37.19}
+```
+
+Thus `NPCS` fails.
+
+Conversely, if `NPCS` fails, then some weak limit satisfies (37.19). By the
+sector boundary convention and weak convergence, the corresponding sector
+masses converge to one along a subsequence, so:
+
+```math
+q^{\zeta}_{R,a_n}
+\to
+0.
+\tag{37.20}
+```
+
+Thus `H_3sec` fails. `∎`
+
+This is the exact Branch B reduction. Direct cell-law nonconcentration is not a
+weaker problem than the final input; it is the final input written as a
+continuum-limit support theorem for the fixed record cell.
+
+### 37.9. What A Pinned Limit Means
+
+Let `s_{R,a}` be the real center-sign kernel:
+
+```math
+s_{R,a}
+=
+p^+_{R,a}
+-
+p^-_{R,a}.
+\tag{37.21}
+```
+
+On a pinned positive limit, the kernel converges in probability to the constant
+phase `+1` at fixed physical resolution:
+
+```math
+s_{R,a_n}
+\longrightarrow
+1
+\quad
+\text{in }\nu_{R,a_n}\text{-probability}.
+\tag{37.22}
+```
+
+On a pinned negative limit:
+
+```math
+s_{R,a_n}
+\longrightarrow
+-1
+\quad
+\text{in }\nu_{R,a_n}\text{-probability}.
+\tag{37.23}
+```
+
+Thus the failure mode is exactly boundary coboundary absorption at the cell
+level:
+
+```math
+s
+\approx
+\lambda
+\frac{
+h(\omega')
+}{
+h(\omega)
+},
+\qquad
+\lambda\in\{+1,-1\},
+\qquad
+h\equiv1.
+\tag{37.24}
+```
+
+Branch B therefore does not need to hunt for a new algebraic obstruction. The
+only bad limit is already visible: the charged sign becomes a constant
+coboundary on the physical cell.
+
+### 37.10. Attempted Lever 1: Exact Sign-Exchange Symmetry
+
+If there were a measure-preserving involution:
+
+```math
+J_R:
+K_R^{\square}
+\longrightarrow
+K_R^{\square}
+\tag{37.25}
+```
+
+with:
+
+```math
+J_R
+\left(
+E^{\zeta,+}_{R}
+\right)
+=
+E^{\zeta,-}_{R},
+\qquad
+\left(
+J_R
+\right)_{\#}
+\nu_{R,a}
+=
+\nu_{R,a},
+\tag{37.26}
+```
+
+then:
+
+```math
+m^{\zeta,+}_{R,a}
+=
+m^{\zeta,-}_{R,a},
+\tag{37.27}
+```
+
+and hence:
+
+```math
+q^{\zeta}_{R,a}
+\ge
+\frac12.
+\tag{37.28}
+```
+
+This would prove Branch B.
+
+But the already-audited symmetries do not give (37.26). Charge conjugation does
+not exchange the SU(2) center sign. Local center coboundaries have trivial
+sheet pairing rather than action-gauge invariance. Reflection can compare
+neutral reflected packages, but it does not automatically produce a
+charged-sector sign-exchange map on the fixed cell law.
+
+Therefore exact symmetry is a valid sufficient condition, but not a theorem
+from the present ISP or SU(2) data.
+
+### 37.11. Attempted Lever 2: Reflection Positivity
+
+Reflection positivity can be used only if the charged insertion is compatible
+with the reflection package. The useful gate would be:
+
+```math
+\theta_{\#}\nu_{R,a}
+=
+\nu_{R,a},
+\qquad
+s_{R,a}\circ\theta
+=
+-s_{R,a}.
+\tag{37.29}
+```
+
+Then (37.26) follows with `J_R=\theta`, and Branch B closes.
+
+The actual RP structure proved earlier is weaker. It gives a neutral Hilbert
+space, admissibility of reflected sheets, and chessboard-type inequalities.
+Those facts can locate a charged operator, but they do not imply the oddness
+condition:
+
+```math
+s_{R,a}\circ\theta
+=
+-s_{R,a}.
+\tag{37.30}
+```
+
+Thus RP alone proves two-sided admissibility, not strict three-sector
+nonconcentration. This matches the fixed-IR guardrail: a coupling-independent
+RP theorem cannot by itself decide the confinement-side sign-sector weights.
+
+### 37.12. Attempted Lever 3: Deterministic ISP Records
+
+The ISP record law gives the variables:
+
+```math
+\nu_{R,a}
+=
+\left(
+\mathrm{readout}_{R,a}
+\right)_{\#}
+\mu^{\mathrm{SU2}}_{R,a}.
+\tag{37.31}
+```
+
+This is valuable because it exposes the center-sign cell law directly. But
+deterministic pushforward does not imply any lower bound on the mass of a
+sector. A deterministic readout can push a measure almost entirely into one
+sector.
+
+The missing implication would be:
+
+```math
+\left(
+\mathrm{readout}_{R,a}
+\right)_{\#}
+\mu^{\mathrm{SU2}}_{R,a}
+\text{ deterministic}
+\quad
+\Longrightarrow
+\quad
+\liminf_{a\to0}q^{\zeta}_{R,a}>0.
+\tag{37.32}
+```
+
+This implication is false as a matter of measure theory. Determinism supplies
+coordinates, not weights.
+
+### 37.13. Formal Countermodel To Pure Record-Level Proofs
+
+The preceding point can be made precise. Let:
+
+```math
+K
+=
+\{+,\ 0,\ -\},
+\tag{37.33}
+```
+
+with the three sectors the three singleton sets. Let:
+
+```math
+\nu_a
+=
+\left(
+1-\varepsilon_a
+\right)\delta_+
++
+\varepsilon_a\delta_0,
+\qquad
+\varepsilon_a\downarrow0.
+\tag{37.34}
+```
+
+Then:
+
+```math
+q_a
+=
+\varepsilon_a
+\to
+0.
+\tag{37.35}
+```
+
+This model satisfies the formal features used by Branch B: compact fixed record
+space, deterministic pushforward representation, real sign kernel, nonempty
+sectors, and fixed-IR order of limits. It fails only the desired Yang-Mills
+weight estimate.
+
+Therefore no proof of Branch B can use only:
+
+```math
+\boxed{
+\text{compact records}
++
+\text{deterministic pushforward}
++
+\text{sector topology}
++
+\text{real sign kernel}.
+}
+\tag{37.36}
+```
+
+Any successful Branch B proof must use an additional property of the actual
+SU(2) cell law.
+
+### 37.14. Attempted Lever 4: Poincare Or Fluctuation Control
+
+A Poincare inequality can control fluctuations of a Lipschitz cell observable:
+
+```math
+\operatorname{Var}_{\nu_{R,a}}
+\left(
+F
+\right)
+\le
+C_R
+\mathcal E_{R,a}
+\left(
+F,F
+\right).
+\tag{37.37}
+```
+
+But one-sided pinning is a mean problem. A measure concentrated near `+1` has
+small variance, not large variance. Thus fluctuation control alone is
+compatible with:
+
+```math
+s_{R,a}
+\to
+1
+\quad
+\text{in probability}.
+\tag{37.38}
+```
+
+To make Poincare useful one also needs a conditional mean-flux exclusion:
+
+```math
+\limsup_{a\to0}
+\left|
+\int s_{R,a}\,d\nu_{R,a}
+\right|
+<
+1.
+\tag{37.39}
+```
+
+More precisely, because pinned sectors have fixed tolerance, it is enough to
+separate the mean from both pinned phases:
+
+```math
+\liminf_{a\to0}
+\operatorname{dist}
+\left(
+\int s_{R,a}\,d\nu_{R,a},
+\{+1,-1\}
+\right)
+>
+\eta_R
+\tag{37.40}
+```
+
+for some:
+
+```math
+\eta_R>0.
+\tag{37.41}
+```
+
+But (37.40) is itself a nonconcentration input. Poincare can stabilize it; it
+does not create it.
+
+### 37.15. Attempted Lever 5: Absolute Continuity And Sector Volume
+
+Let `\lambda_R` be a fixed reference measure on `K_R^{\square}`. Suppose the
+cell-law density obeyed the fixed-IR two-sided bound:
+
+```math
+e^{-C_R}
+\le
+\frac{
+d\nu_{R,a}
+}{
+d\lambda_R
+}
+\le
+e^{C_R},
+\tag{37.42}
+```
+
+and suppose the nondominant-sector reference mass were uniformly positive:
+
+```math
+\lambda_R
+\left(
+E^{\zeta,0}_{R}
+\right)
++
+\min
+\left(
+\lambda_R(E^{\zeta,+}_{R}),
+\lambda_R(E^{\zeta,-}_{R})
+\right)
+\ge
+v_R
+>
+0.
+\tag{37.43}
+```
+
+Then:
+
+```math
+q^{\zeta}_{R,a}
+\ge
+e^{-C_R}v_R.
+\tag{37.44}
+```
+
+This would prove Branch B.
+
+However (37.42) is far stronger than absolute continuity. It is a uniform
+fixed-IR density-ratio bound across charged sectors. In Yang-Mills language it
+is again a bounded free-energy barrier. Thus the density route is equivalent
+to paying the same bill in reference-measure form.
+
+### 37.16. Attempted Lever 6: Local Support Of SU(2)
+
+At finite cutoff, the Haar support of the SU(2) link variables is full. Hence
+all three sectors are kinematically available:
+
+```math
+\nu_{R,a}
+\left(
+E^{\zeta,\sigma}_{R}
+\right)
+>
+0
+\qquad
+\sigma\in\{+,0,-\}.
+\tag{37.45}
+```
+
+This is not enough. Branch B needs a lower bound independent of `a`:
+
+```math
+\inf_{a}
+\left[
+m^{\zeta,0}_{R,a}
++
+\min
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right)
+\right]
+>
+0.
+\tag{37.46}
+```
+
+Full support proves availability. It does not prove nonvanishing weight. The
+thin-flip audit already shows why: available charged sectors may have
+microscopic-area suppression.
+
+### 37.17. Branch B Decision Theorem
+
+**Theorem 40.186A (Branch B Decision).** Under the fixed-IR and Barandes
+alignment contracts, Branch B has the following exact alternatives:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{B}_{+}
+&
+\mathsf{NPCS}(R,\zeta_R)\text{ holds, hence }\mathsf H_{\mathrm{3sec}}(R,\zeta_R),\\[1mm]
+\mathrm{B}_{-}
+&
+\text{there is a pinned continuum cell state }\nu_{R,\infty},\\[1mm]
+\mathrm{B}_{0}
+&
+\text{current formal tools cannot decide between }\mathrm{B}_{+}\text{ and }\mathrm{B}_{-}.
+\end{array}}
+\tag{37.47}
+```
+
+Moreover:
+
+```math
+\boxed{
+\mathrm{B}_{+}
+\Longleftrightarrow
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+}
+\tag{37.48}
+```
+
+The present paper proves that exact symmetry, RP alone, deterministic records,
+compactness, Poincare control, and finite-cutoff support do not imply
+`\mathrm{B}_{+}`. Each successful route must add one of the following actual
+SU(2) weight inputs:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{S}_{1}
+&
+\text{a genuine sign-exchange symmetry of the fixed cell law},\\[1mm]
+\mathrm{S}_{2}
+&
+\text{a fixed-IR mean-flux separation estimate},\\[1mm]
+\mathrm{S}_{3}
+&
+\text{a uniform density-ratio lower bound across sectors},\\[1mm]
+\mathrm{S}_{4}
+&
+\text{a bounded thick-vortex or tile-flip free-energy estimate}.
+\end{array}}
+\tag{37.49}
+```
+
+The first three would make Branch B genuinely direct. The fourth is Branch A.
+
+#### Proof
+
+The equivalence (37.48) is (37.16). Sections 37.10-37.16 prove that each
+formal lever either fails to produce a sign-sector lower bound or is exactly a
+fixed-IR Yang-Mills weight estimate. Therefore the alternatives (37.47) are
+exhaustive. `∎`
+
+### 37.18. Consequence For The ISP Route
+
+Branch B is still the most ISP-facing route, but not because it changes the
+measure. Its value is diagnostic:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{ISP center records expose the pinned-cell-state question directly.}\\[1mm]
+\text{They do not, by determinism alone, answer it.}
+\end{array}}
+\tag{37.50}
+```
+
+If an additional ISP principle can forbid pinned continuum cell states while
+remaining Barandes-aligned, it must appear as a deterministic constraint on the
+readout support or on the admissible cell-law limits. It cannot be a hidden
+transition, relaxation, or reweighting of records.
+
+Thus the only acceptable ISP-native strengthening would have the form:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{every admissible fixed-IR whole-process cell limit}\\[1mm]
+\text{has nonzero residual or opposite-sign center mass.}
+\end{array}}
+\tag{37.51}
+```
+
+But (37.51) is exactly `NPCS`. It is not yet derived from the existing ISP
+axioms in this paper.
+
+### 37.19. Completed Branch B Investigation
+
+Branch B is now fully investigated as a route:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{PROVED}_{\mathrm{compact}}
+&
+\text{fixed-IR cell laws have subsequential limits},\\[1mm]
+\mathrm{PROVED}_{\mathrm{equiv}}
+&
+\mathsf{NPCS}(R,\zeta_R)\Longleftrightarrow\mathsf H_{\mathrm{3sec}}(R,\zeta_R),\\[1mm]
+\mathrm{PROVED}_{\mathrm{meaning}}
+&
+\text{pinned limits are constant-sign coboundary absorption},\\[1mm]
+\mathrm{NO}_{\mathrm{records}}
+&
+\text{deterministic ISP readout alone cannot force nonconcentration},\\[1mm]
+\mathrm{NO}_{\mathrm{RP}}
+&
+\text{RP alone does not give charged sign oddness},\\[1mm]
+\mathrm{NO}_{\mathrm{support}}
+&
+\text{finite-cutoff support gives availability, not uniform weight},\\[1mm]
+\mathrm{REDUCED}_{\mathrm{direct}}
+&
+\text{a direct proof must establish }\mathrm{S}_{1},\mathrm{S}_{2},\text{ or }\mathrm{S}_{3},\\[1mm]
+\mathrm{FALLBACK}_{\mathrm{A}}
+&
+\mathrm{S}_{4}\text{ is the thick-vortex free-energy branch}.
+\end{array}}
+\tag{37.52}
+```
+
+The conclusion is not that Branch B is uninteresting. It is the opposite:
+Branch B is the cleanest place to see whether ISP contributes anything beyond
+standard disorder variables. But under the current Barandes-aligned premises,
+Branch B does not yet prove the fixed-IR certificate. It reduces it to the
+precise no-pinned-cell-state theorem (37.15), and all known ways of proving
+that theorem are genuine Yang-Mills weight estimates.
