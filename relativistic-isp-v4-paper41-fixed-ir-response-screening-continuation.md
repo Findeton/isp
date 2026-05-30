@@ -14,7 +14,9 @@ fixed-IR or Barandes alignment. Sections 14-31 (this revision) carry that
 program through a chain of exact reductions and clearly-labelled frontier
 explorations that progressively *localize* the open kernel; they prove no part
 of confinement. Section 32 states the maximally-localized open problem (the
-`SO(3)` dressing) self-containedly; Section 33 is the final status ledger.
+`SO(3)` dressing) self-containedly; Section 33 is the final status ledger; Section 34 is a frontier
+continued-fraction (Stieltjes-Ramanujan) crack at that kernel, recorded after the
+ledger and not altering it.
 
 ## Abstract
 
@@ -5317,4 +5319,153 @@ gauge-projection ambiguity is removed, and the sole remaining unknown — the
 `SO(3)` dressing — is stated self-containedly in §32 with its exact requirements.
 Whether that dressing drives condensation at a fixed physical scale, uniformly in
 `a`, is the open problem, and it is Clay-level. Nothing here should be read as a
-proof of it.
+proof of it. (Section 34 records a subsequent frontier crack at this dressing — a
+continued-fraction resummation — that yields a new non-perturbative handle but
+does **not** change any verdict in this ledger.)
+
+## 34. Frontier Crack At §32: A Stieltjes–Ramanujan Continued-Fraction Resummation Of The Dressing
+
+`V4P41-FRONTIER-CF-RESUMMATION-OF-DRESSING`.
+
+**Frontier exploration, original, not a proof; the §33 ledger stands.** This is a
+crack at the §32 dressing that deliberately uses *none* of the earlier devices
+(even–odd, relative entropy, RP-commutator, decimation/MK, Balaban,
+induced-`Z_2`-threshold, modular gas, energy–entropy). It is a different kind of
+object: an exact *continued fraction*.
+
+### 34.1. The Idea
+
+Every earlier estimate of the dressing — §29 included — effectively truncated, at
+its first rung, the back-reaction of the higher `SU(2)` representations onto the
+center-odd (`j=\tfrac12`) channel through the fusion ladder `j\to j\pm\tfrac12`. A
+tridiagonal back-reaction is, exactly, a **continued fraction** (the
+Stieltjes/Jacobi resolvent). The Ramanujan point is that continued fractions
+**converge where the strong-coupling power series diverges** — so one may
+*evaluate* the dressing non-perturbatively instead of estimating it.
+
+### 34.2. The Construction
+
+Model the center-channel dressing by the fusion-ladder Jacobi operator on sites
+`n=2j=0,1,2,\dots`:
+
+```math
+J_{nn}=\varepsilon_n=\frac{n(n+2)}4=\frac{(n+1)^2-1}4
+\ \ (\text{Casimir of spin }\tfrac n2),
+\qquad
+J_{n,n\pm1}=t,
+```
+
+where the hopping `t` is the fundamental-fusion amplitude (small at weak coupling,
+`O(1)` at strong coupling). The center grading is `(-1)^n=(-1)^{2j}` (`+1` for
+integer spin / center-even, `-1` for half-integer / center-odd). The dressed
+center order parameter is the ground-state expectation
+
+```math
+m(t)=\langle(-1)^{2j}\rangle_{\rm gs}=\sum_n(-1)^n\psi_n^2,
+\qquad
+m\!\to\!1:\ \text{ordered},\quad m\!\to\!0:\ \text{center disordered}.
+```
+
+### 34.3. The Exact Continued Fraction
+
+The center Green's function is the exact Jacobi continued fraction
+
+```math
+\boxed{
+G_{00}(E)=\cfrac{1}{E-\varepsilon_0-\cfrac{t^2}{E-\varepsilon_1-\cfrac{t^2}{E-\varepsilon_2-\cdots}}}\,,
+}
+```
+
+whose lowest pole is the ground energy `E_0(t)`. This is verified: the pole sits
+exactly at the independently diagonalized `E_0` (`1/G_{00}` changes sign through
+zero there), and the fraction **converges to machine precision by depth `\sim20`**
+at `t=2` — Stieltjes convergence, uniform in coupling.
+
+### 34.4. Result: The Dressing, Resummed Non-Perturbatively
+
+Evaluating the fraction gives the dressed order parameter at all coupling:
+
+```text
+ t      E0(t)       m(t)=<(-1)^{2j}>
+0.1    -0.0132       0.9658     (ordered)
+0.3    -0.1102       0.7629
+0.5    -0.2743       0.5424
+0.8    -0.5924       0.3159
+1.0    -0.8334       0.2234
+1.5    -1.4952       0.1005
+2.0    -2.2103       0.0491
+3.0    -3.7328       0.0140
+5.0    -6.9761       0.0018     (disordered)
+```
+
+`m(t)` decreases **smoothly and monotonically** from order to disorder as the
+coupling grows, computed by a convergent continued fraction at *every* `t`,
+including the strong-coupling region where no expansion of the dressing converges.
+This is the first time in the program the dressed center channel is *computed*
+rather than estimated.
+
+### 34.5. The Special-Function (Ramanujan) Structure
+
+The three-term recurrence `P_{n+1}=(E-\varepsilon_n)P_n-t^2P_{n-1}` with quadratic
+`\varepsilon_n` defines orthogonal polynomials of **parabolic-cylinder / Hermite**
+type — the discrete harmonic oscillator. The large-coupling ground energy obeys
+the harmonic-well asymptotics
+
+```math
+E_0(t)\simeq-2t+O(\sqrt t)\qquad(\text{verified: }(E_0+2t)/\sqrt t\to\approx1.4),
+```
+
+the `-2t` being the band bottom and the `\sqrt t` the zero-point of the quadratic
+well. So `G_{00}` is, in the scaling limit, a ratio of parabolic-cylinder
+functions — an exact closed structure of exactly the kind Ramanujan/Stieltjes
+continued fractions evaluate.
+
+### 34.6. The Quantitative Payoff
+
+The leading single-channel estimates (the §29 induced coupling among them) are the
+**depth-one truncation** of this fraction: the `j=\tfrac12` site with its tail
+amputated. The full fraction restores the higher-representation back-reaction —
+*which is precisely the dressing* — and it disorders the center markedly faster in
+the coupling. Hence:
+
+```math
+\boxed{
+\text{Truncating the fusion ladder systematically \emph{under}-disorders the center;}
+\text{ the §29 ``factor-5 overshoot'' is a truncation artifact, removed by the tail.}
+}
+```
+
+The dressing, properly resummed, pushes toward disorder *more* strongly than any
+leading estimate suggested — a genuine, direction-confirming result.
+
+### 34.7. The Honest Wall
+
+```math
+\boxed{
+\begin{array}{l}
+\text{(a) The 1D Jacobi ladder is a \emph{model} of the true 4D transverse }SO(3)\\
+\quad\text{transfer; the real dressing may carry non-tridiagonal (longer-range)}\\
+\quad\text{couplings — then a }\textit{banded}\text{ resolvent, still resummable but not the}\\
+\quad\text{clean Stieltjes fraction. Model fidelity is unproven.}\\[1mm]
+\text{(b) The hopping-to-coupling map }t\!\leftrightarrow\!\beta(\text{physical scale})\text{ is the open input:}\\
+\quad\text{the fraction gives }m(t)\text{ exactly, not }t\text{ at fixed physical }R\text{ uniformly in }a.\\[1mm]
+\text{(c) A single ladder has only a \emph{crossover}; the sharp 4D condensation needs}\\
+\quad\text{the 2D sheet of coupled ladders. This controls the single-channel dressed}\\
+\quad\text{propagator, not the full 4D transition.}
+\end{array}}
+```
+
+### 34.8. Status Of The Crack
+
+```math
+\boxed{
+\begin{array}{l}
+\textbf{New non-perturbative handle, not a breach.}\\[1mm]
+\text{First computation (not estimate) of the dressed center channel: an exact}\\
+\text{Stieltjes continued fraction over the fusion ladder, convergent at all coupling,}\\
+\text{parabolic-cylinder in structure, giving }m(t)\text{ from order to disorder.}\\[1mm]
+\text{Confirms the dressing disorders \emph{more} than leading estimates (de-truncation).}\\[1mm]
+\text{Open: ladder-model fidelity to 4D, the }t\!\leftrightarrow\!\beta\text{ map, and crossover}\\
+\text{vs transition (one ladder vs the sheet). Does not close §32; sharpens it.}
+\end{array}}
+```
