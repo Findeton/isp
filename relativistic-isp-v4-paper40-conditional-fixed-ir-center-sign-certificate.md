@@ -104,8 +104,8 @@ The conditional theorem proved by the route is:
 
 The formal route is therefore complete. The remaining mathematical problem is
 not another reduction, but an actual fixed-IR Yang-Mills weight estimate:
-prove the bounded thick-vortex/tile-flip free-energy estimate, or prove
-three-sector nonconcentration directly from the SU(2) cell law.
+prove three-sector nonconcentration directly from the SU(2) cell law, or else
+prove the bounded thick-vortex/tile-flip free-energy estimate.
 
 ## 0. Purpose And Honest Boundary
 
@@ -34434,12 +34434,12 @@ new way to prove (35.2). The next genuine research direction is one of:
 ```math
 \boxed{
 \begin{array}{ll}
-\mathrm{A}
-&
-\text{prove the bounded thick-vortex or tile-flip free-energy estimate},\\[1mm]
 \mathrm{B}
 &
 \text{prove three-sector nonconcentration directly from the SU(2) cell law},\\[1mm]
+\mathrm{A}
+&
+\text{prove the bounded thick-vortex or tile-flip free-energy estimate},\\[1mm]
 \mathrm{C}
 &
 \text{close this route as conditional and move to a different ISP-specific test}.
@@ -34480,122 +34480,7 @@ The route is now closed as a conditional fixed-IR certificate. Its only live
 mathematical input is the fixed-physical-`R` three-sector Yang-Mills weight
 estimate.
 
-## 36. Research Branch A: Thick-Vortex Tile-Flip Free Energy
-
-`V4P40-RESEARCH-BRANCH-A-THICK-VORTEX-FREE-ENERGY`.
-
-Branch A attacks the remaining input by trying to prove a bounded physical
-thick-vortex sign flip at fixed `R`. This is the constructive version of:
-
-```math
-\mathsf H_{4}(R,\zeta_R)
-:
-\qquad
-\limsup_{a\to0}
-B^{\zeta,\mathrm{thick}}_{R,a}
-<
-\infty.
-\tag{36.1}
-```
-
-If (36.1) holds, Target 40.184 gives:
-
-```math
-\mathsf H_{4}(R,\zeta_R)
-\Longrightarrow
-\mathsf H_{\mathrm{3sec}}(R,\zeta_R),
-\tag{36.2}
-```
-
-and Theorem 40.185A gives the fixed-IR charged transfer deficit.
-
-### 36.1. Fixed-IR Alignment Contract For Branch A
-
-The branch is admissible only under the following order of operations:
-
-```math
-\boxed{
-\begin{array}{c}
-\text{fix }R,\zeta_R,T_R,S_R,\rho_R,\mathcal R_R^\square
-\text{ first,}\\[1mm]
-\text{choose a physical-thickness flip supported at scale }R,\\[1mm]
-\text{then take }a\to0.
-\end{array}}
-\tag{36.3}
-```
-
-No estimate may shrink the thickness with `a`, use a UV-good sector as an IR
-substitute, or appeal to the continuum survival limit `t_-` going to zero.
-
-### 36.2. Barandes Alignment Contract For Branch A
-
-The flip is a change-of-variables or comparison argument on the deterministic
-SU(2) pushforward measure. It is not a stochastic transition added by the ISP
-ontology:
-
-```math
-\boxed{
-\begin{array}{c}
-\text{same SU(2) Wilson action, same deterministic readout law,}\\[1mm]
-\text{no hidden Markov dynamics, no record-law tilt, no ontology bias.}
-\end{array}}
-\tag{36.4}
-```
-
-Thus Branch A can succeed only by proving a real Yang-Mills free-energy bound
-for a physical thick center defect.
-
-### 36.3. Concrete Tasks
-
-1. Define the physical thick flip map
-   `\Phi^{\mathrm{thick}}_{R,a}` on the four-cell package, with support
-   contained in the fixed physical collar and with boundary records fixed.
-2. Prove that the map changes the charged sector while preserving the
-   reflection-admissible sheet package.
-3. Estimate the Radon-Nikodym cost:
-
-```math
-\sup_{\omega}
-\log
-\frac{
-d\mu^{\mathrm{SU2}}_{R,a}
-}{
-d(\Phi^{\mathrm{thick}}_{R,a})_{\#}\mu^{\mathrm{SU2}}_{R,a}
-}
-(\omega)
-\le
-C_R
-+o_a(1).
-\tag{36.5}
-```
-
-4. Convert (36.5) to a bounded three-sector barrier using Target 40.184.
-5. If (36.5) fails with a cost growing like microscopic area, record Branch A
-   as closed negatively: the thick-vortex route has found the area barrier
-   again.
-
-### 36.4. Expected Output
-
-The branch has only two honest outcomes:
-
-```math
-\boxed{
-\begin{array}{ll}
-\mathrm{A}_{+}
-&
-\text{bounded thick-vortex cost proves }\mathsf H_{\mathrm{3sec}},\\[1mm]
-\mathrm{A}_{-}
-&
-\text{all admissible physical flips require area-order cost.}
-\end{array}}
-\tag{36.6}
-```
-
-Outcome `A_+` turns the paper's certificate into a fixed-IR theorem. Outcome
-`A_-` shows that this route is equivalent to the remaining confinement
-free-energy barrier.
-
-## 37. Research Branch B: Direct Three-Sector Cell-Law Nonconcentration
+## 36. Research Branch B: Direct Three-Sector Cell-Law Nonconcentration
 
 `V4P40-RESEARCH-BRANCH-B-THREE-SECTOR-CELL-LAW`.
 
@@ -34615,7 +34500,7 @@ m^{\zeta,-}_{R,a}
 \right)
 >
 0.
-\tag{37.1}
+\tag{36.1}
 ```
 
 Equivalently, neither charged sign sector can pin the real SU(2) cell law in
@@ -34630,10 +34515,10 @@ m^{\zeta,-}_{R,a}
 \right)
 <
 1.
-\tag{37.2}
+\tag{36.2}
 ```
 
-### 37.1. Fixed-IR Alignment Contract For Branch B
+### 36.1. Fixed-IR Alignment Contract For Branch B
 
 All observables in the cell law are physical-resolution observables. The
 sector partition, smoothing radius, boundary battery, and four-cell geometry
@@ -34644,13 +34529,13 @@ are fixed before `a` is refined:
 \text{Branch B studies the fixed cell law first and the }a\to0
 \text{ refinement second.}
 }
-\tag{37.3}
+\tag{36.3}
 ```
 
-This forbids replacing (37.1) by a weak-coupling UV estimate for a shrinking
+This forbids replacing (36.1) by a weak-coupling UV estimate for a shrinking
 observable.
 
-### 37.2. Barandes Alignment Contract For Branch B
+### 36.2. Barandes Alignment Contract For Branch B
 
 The cell law is the deterministic SU(2) readout law:
 
@@ -34659,14 +34544,14 @@ The cell law is the deterministic SU(2) readout law:
 =
 (\mathrm{readout}_{R,a})_{\#}
 \mu^{\mathrm{SU2}}_{R,a}.
-\tag{37.4}
+\tag{36.4}
 ```
 
-Any proof must be a theorem about (37.4). It may use the ISP record variables
+Any proof must be a theorem about (36.4). It may use the ISP record variables
 as coordinates, but it may not assume an additional stochastic process on
 records or a Markov relaxation between sign sectors.
 
-### 37.3. Concrete Tasks
+### 36.3. Concrete Tasks
 
 1. Work with the actual real center-sign kernel:
 
@@ -34676,7 +34561,7 @@ s_{R,a}
 p^+_{R,a}
 -
 p^-_{R,a}.
-\tag{37.5}
+\tag{36.5}
 ```
 
 2. Prove compactness of the fixed-IR cell laws along `a_n` going to zero.
@@ -34690,7 +34575,7 @@ m^{\zeta,-}_{R,a_n}
 \right)
 \to
 1.
-\tag{37.6}
+\tag{36.6}
 ```
 
 4. Show that such a pinned limit forces one of the excluded structures:
@@ -34700,7 +34585,7 @@ an area-order vortex free-energy barrier.
    as closed negatively: direct cell-law nonconcentration is another form of
    the area barrier.
 
-### 37.4. Expected Output
+### 36.4. Expected Output
 
 Branch B also has only two honest outcomes:
 
@@ -34714,14 +34599,14 @@ Branch B also has only two honest outcomes:
 &
 \text{pinned subsequential limits remain possible unless the area barrier is bounded.}
 \end{array}}
-\tag{37.7}
+\tag{36.7}
 ```
 
 Outcome `B_+` proves the fixed-IR certificate without an explicit flip map.
 Outcome `B_-` confirms that the remaining obstruction is not formal; it is the
 same Yang-Mills disorder free-energy estimate in cell-law form.
 
-### 37.5. Target 40.186: Full Branch B Pinned-Limit Audit
+### 36.5. Target 40.186: Full Branch B Pinned-Limit Audit
 
 `V4P40-TARGET-40186-BRANCH-B-PINNED-LIMIT-AUDIT`.
 
@@ -34732,14 +34617,14 @@ prove the final input without constructing a vortex flip. The sharp test is:
 \boxed{
 \text{Can the fixed-IR cell law have a subsequential limit supported on one pinned sign?}
 }
-\tag{37.8}
+\tag{36.8}
 ```
 
 If the answer is no, Branch B proves the certificate. If the answer is yes, or
 if present tools cannot rule it out, Branch B has found the same area barrier
 in cell-law form.
 
-### 37.6. Compactness Of The Fixed-IR Cell Laws
+### 36.6. Compactness Of The Fixed-IR Cell Laws
 
 Fix the physical package:
 
@@ -34749,7 +34634,7 @@ Fix the physical package:
 \left(
 R,\zeta_R,T_R,S_R,\rho_R,\mathcal R^{\square}_R
 \right).
-\tag{37.9}
+\tag{36.9}
 ```
 
 The record battery is fixed before refinement. Hence the cell readout takes
@@ -34757,7 +34642,7 @@ values in one fixed compact metric record space:
 
 ```math
 K_R^{\square}.
-\tag{37.10}
+\tag{36.10}
 ```
 
 The cell laws are:
@@ -34771,7 +34656,7 @@ The cell laws are:
 \mathrm{readout}_{R,a}
 \right)_{\#}
 \mu^{\mathrm{SU2}}_{R,a}.
-\tag{37.11}
+\tag{36.11}
 ```
 
 Since `K_R^{\square}` is compact, every cutoff sequence has a weakly convergent
@@ -34781,14 +34666,14 @@ subsequence:
 \nu_{R,a_n}
 \Longrightarrow
 \nu_{R,\infty}.
-\tag{37.12}
+\tag{36.12}
 ```
 
 This proves the first requested Branch B task. Compactness is useful, but it
 does not by itself give nonconcentration; it only says that any failure has a
 limit object.
 
-### 37.7. Sector Boundary Convention
+### 36.7. Sector Boundary Convention
 
 Use the buffered three-sector partition from Target 40.183:
 
@@ -34800,7 +34685,7 @@ E^{\zeta,+}_{R}
 E^{\zeta,0}_{R}
 \sqcup
 E^{\zeta,-}_{R},
-\tag{37.13}
+\tag{36.13}
 ```
 
 with the pinned sectors closed after absorbing the fixed boundary annulus into
@@ -34819,10 +34704,10 @@ E^{\zeta,\sigma}_{R}
 \right),
 \qquad
 \sigma\in\{+,0,-\}.
-\tag{37.14}
+\tag{36.14}
 ```
 
-### 37.8. Pinned-Limit Equivalence
+### 36.8. Pinned-Limit Equivalence
 
 Define the no-pinned-cell-state condition:
 
@@ -34833,7 +34718,7 @@ Define the no-pinned-cell-state condition:
 \text{no weak limit }\nu_{R,\infty}
 \text{ is supported on }E^{\zeta,+}_{R}
 \text{ or }E^{\zeta,-}_{R}.
-\tag{37.15}
+\tag{36.15}
 ```
 
 Then:
@@ -34844,7 +34729,7 @@ Then:
 \Longleftrightarrow
 \mathsf H_{\mathrm{3sec}}(R,\zeta_R).
 }
-\tag{37.16}
+\tag{36.16}
 ```
 
 #### Proof
@@ -34856,7 +34741,7 @@ If `H_3sec` fails, then by Target 40.183 there is a subsequence and a sign
 m^{\zeta,\sigma}_{R,a_n}
 \to
 1.
-\tag{37.17}
+\tag{36.17}
 ```
 
 By compactness, pass to a further subsequence with:
@@ -34865,7 +34750,7 @@ By compactness, pass to a further subsequence with:
 \nu_{R,a_n}
 \Longrightarrow
 \nu_{R,\infty}.
-\tag{37.18}
+\tag{36.18}
 ```
 
 Since the pinned sector is closed after the boundary convention:
@@ -34877,12 +34762,12 @@ E^{\zeta,\sigma}_{R}
 \right)
 =
 1.
-\tag{37.19}
+\tag{36.19}
 ```
 
 Thus `NPCS` fails.
 
-Conversely, if `NPCS` fails, then some weak limit satisfies (37.19). By the
+Conversely, if `NPCS` fails, then some weak limit satisfies (36.19). By the
 sector boundary convention and weak convergence, the corresponding sector
 masses converge to one along a subsequence, so:
 
@@ -34890,7 +34775,7 @@ masses converge to one along a subsequence, so:
 q^{\zeta}_{R,a_n}
 \to
 0.
-\tag{37.20}
+\tag{36.20}
 ```
 
 Thus `H_3sec` fails. `∎`
@@ -34899,7 +34784,7 @@ This is the exact Branch B reduction. Direct cell-law nonconcentration is not a
 weaker problem than the final input; it is the final input written as a
 continuum-limit support theorem for the fixed record cell.
 
-### 37.9. What A Pinned Limit Means
+### 36.9. What A Pinned Limit Means
 
 Let `s_{R,a}` be the real center-sign kernel:
 
@@ -34909,7 +34794,7 @@ s_{R,a}
 p^+_{R,a}
 -
 p^-_{R,a}.
-\tag{37.21}
+\tag{36.21}
 ```
 
 On a pinned positive limit, the kernel converges in probability to the constant
@@ -34921,7 +34806,7 @@ s_{R,a_n}
 1
 \quad
 \text{in }\nu_{R,a_n}\text{-probability}.
-\tag{37.22}
+\tag{36.22}
 ```
 
 On a pinned negative limit:
@@ -34932,7 +34817,7 @@ s_{R,a_n}
 -1
 \quad
 \text{in }\nu_{R,a_n}\text{-probability}.
-\tag{37.23}
+\tag{36.23}
 ```
 
 Thus the failure mode is exactly boundary coboundary absorption at the cell
@@ -34951,14 +34836,14 @@ h(\omega)
 \lambda\in\{+1,-1\},
 \qquad
 h\equiv1.
-\tag{37.24}
+\tag{36.24}
 ```
 
 Branch B therefore does not need to hunt for a new algebraic obstruction. The
 only bad limit is already visible: the charged sign becomes a constant
 coboundary on the physical cell.
 
-### 37.10. Attempted Lever 1: Exact Sign-Exchange Symmetry
+### 36.10. Attempted Lever 1: Exact Sign-Exchange Symmetry
 
 If there were a measure-preserving involution:
 
@@ -34967,7 +34852,7 @@ J_R:
 K_R^{\square}
 \longrightarrow
 K_R^{\square}
-\tag{37.25}
+\tag{36.25}
 ```
 
 with:
@@ -34986,7 +34871,7 @@ J_R
 \nu_{R,a}
 =
 \nu_{R,a},
-\tag{37.26}
+\tag{36.26}
 ```
 
 then:
@@ -34995,7 +34880,7 @@ then:
 m^{\zeta,+}_{R,a}
 =
 m^{\zeta,-}_{R,a},
-\tag{37.27}
+\tag{36.27}
 ```
 
 and hence:
@@ -35004,12 +34889,12 @@ and hence:
 q^{\zeta}_{R,a}
 \ge
 \frac12.
-\tag{37.28}
+\tag{36.28}
 ```
 
 This would prove Branch B.
 
-But the already-audited symmetries do not give (37.26). Charge conjugation does
+But the already-audited symmetries do not give (36.26). Charge conjugation does
 not exchange the SU(2) center sign. Local center coboundaries have trivial
 sheet pairing rather than action-gauge invariance. Reflection can compare
 neutral reflected packages, but it does not automatically produce a
@@ -35018,7 +34903,7 @@ charged-sector sign-exchange map on the fixed cell law.
 Therefore exact symmetry is a valid sufficient condition, but not a theorem
 from the present ISP or SU(2) data.
 
-### 37.11. Attempted Lever 2: Reflection Positivity
+### 36.11. Attempted Lever 2: Reflection Positivity
 
 Reflection positivity can be used only if the charged insertion is compatible
 with the reflection package. The useful gate would be:
@@ -35031,10 +34916,10 @@ with the reflection package. The useful gate would be:
 s_{R,a}\circ\theta
 =
 -s_{R,a}.
-\tag{37.29}
+\tag{36.29}
 ```
 
-Then (37.26) follows with `J_R=\theta`, and Branch B closes.
+Then (36.26) follows with `J_R=\theta`, and Branch B closes.
 
 The actual RP structure proved earlier is weaker. It gives a neutral Hilbert
 space, admissibility of reflected sheets, and chessboard-type inequalities.
@@ -35045,14 +34930,14 @@ condition:
 s_{R,a}\circ\theta
 =
 -s_{R,a}.
-\tag{37.30}
+\tag{36.30}
 ```
 
 Thus RP alone proves two-sided admissibility, not strict three-sector
 nonconcentration. This matches the fixed-IR guardrail: a coupling-independent
 RP theorem cannot by itself decide the confinement-side sign-sector weights.
 
-### 37.12. Attempted Lever 3: Deterministic ISP Records
+### 36.12. Attempted Lever 3: Deterministic ISP Records
 
 The ISP record law gives the variables:
 
@@ -35063,7 +34948,7 @@ The ISP record law gives the variables:
 \mathrm{readout}_{R,a}
 \right)_{\#}
 \mu^{\mathrm{SU2}}_{R,a}.
-\tag{37.31}
+\tag{36.31}
 ```
 
 This is valuable because it exposes the center-sign cell law directly. But
@@ -35083,13 +34968,13 @@ The missing implication would be:
 \Longrightarrow
 \quad
 \liminf_{a\to0}q^{\zeta}_{R,a}>0.
-\tag{37.32}
+\tag{36.32}
 ```
 
 This implication is false as a matter of measure theory. Determinism supplies
 coordinates, not weights.
 
-### 37.13. Formal Countermodel To Pure Record-Level Proofs
+### 36.13. Formal Countermodel To Pure Record-Level Proofs
 
 The preceding point can be made precise. Let:
 
@@ -35097,7 +34982,7 @@ The preceding point can be made precise. Let:
 K
 =
 \{+,\ 0,\ -\},
-\tag{37.33}
+\tag{36.33}
 ```
 
 with the three sectors the three singleton sets. Let:
@@ -35112,7 +34997,7 @@ with the three sectors the three singleton sets. Let:
 \varepsilon_a\delta_0,
 \qquad
 \varepsilon_a\downarrow0.
-\tag{37.34}
+\tag{36.34}
 ```
 
 Then:
@@ -35123,7 +35008,7 @@ q_a
 \varepsilon_a
 \to
 0.
-\tag{37.35}
+\tag{36.35}
 ```
 
 This model satisfies the formal features used by Branch B: compact fixed record
@@ -35143,13 +35028,13 @@ Therefore no proof of Branch B can use only:
 +
 \text{real sign kernel}.
 }
-\tag{37.36}
+\tag{36.36}
 ```
 
 Any successful Branch B proof must use an additional property of the actual
 SU(2) cell law.
 
-### 37.14. Attempted Lever 4: Poincare Or Fluctuation Control
+### 36.14. Attempted Lever 4: Poincare Or Fluctuation Control
 
 A Poincare inequality can control fluctuations of a Lipschitz cell observable:
 
@@ -35164,7 +35049,7 @@ C_R
 \left(
 F,F
 \right).
-\tag{37.37}
+\tag{36.37}
 ```
 
 But one-sided pinning is a mean problem. A measure concentrated near `+1` has
@@ -35177,7 +35062,7 @@ s_{R,a}
 1
 \quad
 \text{in probability}.
-\tag{37.38}
+\tag{36.38}
 ```
 
 To make Poincare useful one also needs a conditional mean-flux exclusion:
@@ -35189,7 +35074,7 @@ To make Poincare useful one also needs a conditional mean-flux exclusion:
 \right|
 <
 1.
-\tag{37.39}
+\tag{36.39}
 ```
 
 More precisely, because pinned sectors have fixed tolerance, it is enough to
@@ -35204,20 +35089,20 @@ separate the mean from both pinned phases:
 \right)
 >
 \eta_R
-\tag{37.40}
+\tag{36.40}
 ```
 
 for some:
 
 ```math
 \eta_R>0.
-\tag{37.41}
+\tag{36.41}
 ```
 
-But (37.40) is itself a nonconcentration input. Poincare can stabilize it; it
+But (36.40) is itself a nonconcentration input. Poincare can stabilize it; it
 does not create it.
 
-### 37.15. Attempted Lever 5: Absolute Continuity And Sector Volume
+### 36.15. Attempted Lever 5: Absolute Continuity And Sector Volume
 
 Let `\lambda_R` be a fixed reference measure on `K_R^{\square}`. Suppose the
 cell-law density obeyed the fixed-IR two-sided bound:
@@ -35232,7 +35117,7 @@ d\lambda_R
 }
 \le
 e^{C_R},
-\tag{37.42}
+\tag{36.42}
 ```
 
 and suppose the nondominant-sector reference mass were uniformly positive:
@@ -35252,7 +35137,7 @@ E^{\zeta,0}_{R}
 v_R
 >
 0.
-\tag{37.43}
+\tag{36.43}
 ```
 
 Then:
@@ -35261,17 +35146,17 @@ Then:
 q^{\zeta}_{R,a}
 \ge
 e^{-C_R}v_R.
-\tag{37.44}
+\tag{36.44}
 ```
 
 This would prove Branch B.
 
-However (37.42) is far stronger than absolute continuity. It is a uniform
+However (36.42) is far stronger than absolute continuity. It is a uniform
 fixed-IR density-ratio bound across charged sectors. In Yang-Mills language it
 is again a bounded free-energy barrier. Thus the density route is equivalent
 to paying the same bill in reference-measure form.
 
-### 37.16. Attempted Lever 6: Local Support Of SU(2)
+### 36.16. Attempted Lever 6: Local Support Of SU(2)
 
 At finite cutoff, the Haar support of the SU(2) link variables is full. Hence
 all three sectors are kinematically available:
@@ -35285,7 +35170,7 @@ E^{\zeta,\sigma}_{R}
 0
 \qquad
 \sigma\in\{+,0,-\}.
-\tag{37.45}
+\tag{36.45}
 ```
 
 This is not enough. Branch B needs a lower bound independent of `a`:
@@ -35303,14 +35188,14 @@ m^{\zeta,-}_{R,a}
 \right]
 >
 0.
-\tag{37.46}
+\tag{36.46}
 ```
 
 Full support proves availability. It does not prove nonvanishing weight. The
 thin-flip audit already shows why: available charged sectors may have
 microscopic-area suppression.
 
-### 37.17. Branch B Decision Theorem
+### 36.17. Branch B Decision Theorem
 
 **Theorem 40.186A (Branch B Decision).** Under the fixed-IR and Barandes
 alignment contracts, Branch B has the following exact alternatives:
@@ -35328,7 +35213,7 @@ alignment contracts, Branch B has the following exact alternatives:
 &
 \text{current formal tools cannot decide between }\mathrm{B}_{+}\text{ and }\mathrm{B}_{-}.
 \end{array}}
-\tag{37.47}
+\tag{36.47}
 ```
 
 Moreover:
@@ -35339,7 +35224,7 @@ Moreover:
 \Longleftrightarrow
 \mathsf H_{\mathrm{3sec}}(R,\zeta_R).
 }
-\tag{37.48}
+\tag{36.48}
 ```
 
 The present paper proves that exact symmetry, RP alone, deterministic records,
@@ -35363,19 +35248,19 @@ SU(2) weight inputs:
 &
 \text{a bounded thick-vortex or tile-flip free-energy estimate}.
 \end{array}}
-\tag{37.49}
+\tag{36.49}
 ```
 
 The first three would make Branch B genuinely direct. The fourth is Branch A.
 
 #### Proof
 
-The equivalence (37.48) is (37.16). Sections 37.10-37.16 prove that each
+The equivalence (36.48) is (36.16). Sections 36.10-36.16 prove that each
 formal lever either fails to produce a sign-sector lower bound or is exactly a
-fixed-IR Yang-Mills weight estimate. Therefore the alternatives (37.47) are
+fixed-IR Yang-Mills weight estimate. Therefore the alternatives (36.47) are
 exhaustive. `∎`
 
-### 37.18. Consequence For The ISP Route
+### 36.18. Consequence For The ISP Route
 
 Branch B is still the most ISP-facing route, but not because it changes the
 measure. Its value is diagnostic:
@@ -35386,7 +35271,7 @@ measure. Its value is diagnostic:
 \text{ISP center records expose the pinned-cell-state question directly.}\\[1mm]
 \text{They do not, by determinism alone, answer it.}
 \end{array}}
-\tag{37.50}
+\tag{36.50}
 ```
 
 If an additional ISP principle can forbid pinned continuum cell states while
@@ -35402,13 +35287,13 @@ Thus the only acceptable ISP-native strengthening would have the form:
 \text{every admissible fixed-IR whole-process cell limit}\\[1mm]
 \text{has nonzero residual or opposite-sign center mass.}
 \end{array}}
-\tag{37.51}
+\tag{36.51}
 ```
 
-But (37.51) is exactly `NPCS`. It is not yet derived from the existing ISP
+But (36.51) is exactly `NPCS`. It is not yet derived from the existing ISP
 axioms in this paper.
 
-### 37.19. Completed Branch B Investigation
+### 36.19. Completed Branch B Investigation
 
 Branch B is now fully investigated as a route:
 
@@ -35440,12 +35325,821 @@ Branch B is now fully investigated as a route:
 &
 \mathrm{S}_{4}\text{ is the thick-vortex free-energy branch}.
 \end{array}}
-\tag{37.52}
+\tag{36.52}
 ```
 
 The conclusion is not that Branch B is uninteresting. It is the opposite:
 Branch B is the cleanest place to see whether ISP contributes anything beyond
 standard disorder variables. But under the current Barandes-aligned premises,
 Branch B does not yet prove the fixed-IR certificate. It reduces it to the
-precise no-pinned-cell-state theorem (37.15), and all known ways of proving
+precise no-pinned-cell-state theorem (36.15), and all known ways of proving
 that theorem are genuine Yang-Mills weight estimates.
+
+## 37. Research Branch A: Thick-Vortex Tile-Flip Free Energy
+
+`V4P40-RESEARCH-BRANCH-A-THICK-VORTEX-FREE-ENERGY`.
+
+Branch A attacks the remaining input by trying to prove a bounded physical
+thick-vortex sign flip at fixed `R`. This is the constructive version of:
+
+```math
+\mathsf H_{4}(R,\zeta_R)
+:
+\qquad
+\limsup_{a\to0}
+B^{\zeta,\mathrm{thick}}_{R,a}
+<
+\infty.
+\tag{37.1}
+```
+
+If (37.1) holds, Target 40.184 gives:
+
+```math
+\mathsf H_{4}(R,\zeta_R)
+\Longrightarrow
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R),
+\tag{37.2}
+```
+
+and Theorem 40.185A gives the fixed-IR charged transfer deficit.
+
+### 37.1. Fixed-IR Alignment Contract For Branch A
+
+The branch is admissible only under the following order of operations:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{fix }R,\zeta_R,T_R,S_R,\rho_R,\mathcal R_R^\square
+\text{ first,}\\[1mm]
+\text{choose a physical-thickness flip supported at scale }R,\\[1mm]
+\text{then take }a\to0.
+\end{array}}
+\tag{37.3}
+```
+
+No estimate may shrink the thickness with `a`, use a UV-good sector as an IR
+substitute, or appeal to the continuum survival limit `t_-` going to zero.
+
+### 37.2. Barandes Alignment Contract For Branch A
+
+The flip is a change-of-variables or comparison argument on the deterministic
+SU(2) pushforward measure. It is not a stochastic transition added by the ISP
+ontology:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{same SU(2) Wilson action, same deterministic readout law,}\\[1mm]
+\text{no hidden Markov dynamics, no record-law tilt, no ontology bias.}
+\end{array}}
+\tag{37.4}
+```
+
+Thus Branch A can succeed only by proving a real Yang-Mills free-energy bound
+for a physical thick center defect.
+
+### 37.3. Concrete Tasks
+
+1. Define the physical thick flip map
+   `\Phi^{\mathrm{thick}}_{R,a}` on the four-cell package, with support
+   contained in the fixed physical collar and with boundary records fixed.
+2. Prove that the map changes the charged sector while preserving the
+   reflection-admissible sheet package.
+3. Estimate the Radon-Nikodym cost:
+
+```math
+\sup_{\omega}
+\log
+\frac{
+d\mu^{\mathrm{SU2}}_{R,a}
+}{
+d(\Phi^{\mathrm{thick}}_{R,a})_{\#}\mu^{\mathrm{SU2}}_{R,a}
+}
+(\omega)
+\le
+C_R
++o_a(1).
+\tag{37.5}
+```
+
+4. Convert (37.5) to a bounded three-sector barrier using Target 40.184.
+5. If (37.5) fails with a cost growing like microscopic area, record Branch A
+   as closed negatively: the thick-vortex route has found the area barrier
+   again.
+
+### 37.4. Expected Output
+
+The branch has only two honest outcomes:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}_{+}
+&
+\text{bounded thick-vortex cost proves }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{A}_{-}
+&
+\text{all admissible physical flips require area-order cost.}
+\end{array}}
+\tag{37.6}
+```
+
+Outcome `A_+` turns the paper's certificate into a fixed-IR theorem. Outcome
+`A_-` shows that this route is equivalent to the remaining confinement
+free-energy barrier.
+
+### 37.5. Target 40.187: Full Branch A Cost Audit
+
+`V4P40-TARGET-40187-BRANCH-A-THICK-FREE-ENERGY-AUDIT`.
+
+Branch A must answer a sharper question than "can one draw a thick vortex?"
+The real question is:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Can a physical center-sign change be produced}\\[1mm]
+\text{with cutoff-uniform probability cost at fixed }R\text{?}
+\end{array}
+}
+\tag{37.7}
+```
+
+There are three different cost notions:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}_{\infty}
+&
+\text{pointwise bounded Radon-Nikodym cost},\\[1mm]
+\mathrm{A}_{p}
+&
+\text{bounded }L^p\text{ density cost for some }p>1,\\[1mm]
+\mathrm{A}_{\mathrm{ent}}
+&
+\text{bounded entropy or free-energy cost}.
+\end{array}}
+\tag{37.8}
+```
+
+The earlier formula (37.5) is the strongest version, `A_infty`. The audit
+below shows that this is too strong for ordinary physical thick insertions.
+The viable Branch A target is the entropy/free-energy version.
+
+### 37.6. Cost Criteria That Would Prove The Certificate
+
+Let:
+
+```math
+D^{\sigma}_{R,a}
+=
+E^{\zeta,\sigma}_{R,a},
+\qquad
+F^{\sigma}_{R,a}
+=
+\left(
+E^{\zeta,\sigma}_{R,a}
+\right)^c,
+\qquad
+\sigma\in\{+,-\}.
+\tag{37.9}
+```
+
+Assume `D^sigma` is the dominant pinned sector. Let:
+
+```math
+d_{R,a}
+=
+\mu^{\square}_{R,a}
+\left(
+D^{\sigma}_{R,a}
+\right),
+\qquad
+f_{R,a}
+=
+\mu^{\square}_{R,a}
+\left(
+F^{\sigma}_{R,a}
+\right).
+\tag{37.10}
+```
+
+Since `D^sigma` is dominant:
+
+```math
+d_{R,a}\ge\frac12.
+\tag{37.11}
+```
+
+The needed conclusion is:
+
+```math
+\liminf_{a\to0}f_{R,a}>0.
+\tag{37.12}
+```
+
+This is exactly `H_3sec`.
+
+#### Pointwise Criterion
+
+If a map from the dominant sector to the complement has pointwise
+Radon-Nikodym cost:
+
+```math
+\frac{
+d\Phi_{\#}
+\left(
+\mu^{\square}_{R,a}\big|_{D^\sigma}
+\right)
+}{
+d\left(
+\mu^{\square}_{R,a}\big|_{F^\sigma}
+\right)
+}
+\le
+e^{C_R},
+\tag{37.13}
+```
+
+then:
+
+```math
+f_{R,a}
+\ge
+\frac{
+e^{-C_R}
+}{
+1+e^{-C_R}
+}
++o_a(1).
+\tag{37.14}
+```
+
+This is Target 40.184.
+
+#### Density-Moment Criterion
+
+Let `eta_{R,a}` be a probability measure supported on `F^sigma`. If:
+
+```math
+\eta_{R,a}
+\ll
+\mu^{\square}_{R,a},
+\qquad
+\left\|
+\frac{
+d\eta_{R,a}
+}{
+d\mu^{\square}_{R,a}
+}
+\right\|_{L^p(\mu^{\square}_{R,a})}
+\le
+e^{C_R},
+\qquad
+p>1,
+\tag{37.15}
+```
+
+then:
+
+```math
+f_{R,a}
+\ge
+\exp
+\left(
+-
+\frac{
+pC_R
+}{
+p-1
+}
+\right).
+\tag{37.16}
+```
+
+This follows from Holder's inequality:
+
+```math
+1
+=
+\int_{F^\sigma}
+\frac{
+d\eta
+}{
+d\mu
+}
+d\mu
+\le
+\left\|
+\frac{
+d\eta
+}{
+d\mu
+}
+\right\|_{p}
+f_{R,a}^{1-1/p}.
+\tag{37.17}
+```
+
+Thus an `L^p` thick-defect comparison is enough; pointwise control is not
+necessary.
+
+#### Entropy Criterion
+
+If:
+
+```math
+H
+\left(
+\eta_{R,a}
+\mid
+\mu^{\square}_{R,a}
+\right)
+\le
+C_R,
+\qquad
+\eta_{R,a}
+\left(
+F^\sigma_{R,a}
+\right)
+=
+1,
+\tag{37.18}
+```
+
+then:
+
+```math
+f_{R,a}
+\ge
+e^{-C_R}.
+\tag{37.19}
+```
+
+Indeed, among probability measures supported on a set of mass `f`, the least
+relative entropy with respect to `mu` is `-log f`. Hence bounded entropy cost
+also proves the final hypothesis.
+
+These criteria are the correct way to pursue Branch A. A successful thick
+vortex does not have to give a pointwise bounded map; it must give one of
+(37.15) or (37.18), or directly prove the free-energy lower bound (37.12).
+
+### 37.7. Classical Thick Vortex: What It Proves And What It Does Not
+
+Consider a fixed physical tube around the sheet, of radius:
+
+```math
+\rho_R>0.
+\tag{37.20}
+```
+
+A smooth thick vortex background has curvature spread over this tube. In a
+continuum notation its classical action scale is:
+
+```math
+I_R(V)
+=
+\int_{\operatorname{tube}(R,\rho_R)}
+\left|
+F_V
+\right|^2
+d^4x.
+\tag{37.21}
+```
+
+For a nontrivial center-sign change with fixed boundary collar:
+
+```math
+I_R(V)>0.
+\tag{37.22}
+```
+
+The reason is simple. If `I_R(V)=0`, the background is flat. With the fixed
+boundary collar, flatness makes the relevant contractible cell holonomies
+trivial, so it cannot change the relative center sign.
+
+Discretized at cutoff `a`, a smooth background has plaquettes:
+
+```math
+V_p
+=
+\exp
+\left(
+a^2F_V(x_p)
++
+O(a^3)
+\right).
+\tag{37.23}
+```
+
+On the vacuum or near-vacuum source configuration, the Wilson action increase
+is:
+
+```math
+\Delta S_a(V)
+=
+\frac{\beta_a}{4}
+a^4
+\sum_p
+\left|
+F_V(x_p)
+\right|^2
++
+o(1)
+=
+\frac{\beta_a}{4}
+I_R(V)
++
+o(1).
+\tag{37.24}
+```
+
+Along the continuum Yang-Mills scaling:
+
+```math
+\beta_a\to\infty.
+\tag{37.25}
+```
+
+Therefore:
+
+```math
+\Delta S_a(V)\to\infty.
+\tag{37.26}
+```
+
+So a classical smooth thick vortex does not give `A_infty`. It avoids the
+microscopic-area divergence of the thin sheet, but it still carries a bare
+classical action divergence. A pointwise bounded Radon-Nikodym proof is
+therefore the wrong target for a physical thick insertion.
+
+### 37.8. Strong Pointwise Branch A Is Falsified For Standard Insertions
+
+The previous calculation gives a precise negative result:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{Thin center flips fail by microscopic-area cost.}\\[1mm]
+\text{Smooth fixed-thickness classical insertions}\\[1mm]
+\text{fail the pointwise cost test by bare-action growth.}
+\end{array}}
+\tag{37.27}
+```
+
+This does not falsify the thick-vortex free-energy route. It falsifies only
+the overly strong pointwise map version (37.5) for the standard local
+constructions.
+
+The viable comparison must ignore rare near-vacuum source configurations or
+pay for them entropically. That is exactly why the correct Branch A object is
+not a uniform action-gain map, but a sector free-energy estimate.
+
+### 37.9. The Correct Branch A Hypothesis
+
+Define the dominant-sector complement probability:
+
+```math
+Q^{\zeta}_{R,a}
+:=
+1
+-
+\max
+\left(
+m^{\zeta,+}_{R,a},
+m^{\zeta,-}_{R,a}
+\right).
+\tag{37.28}
+```
+
+This is the same quantity previously denoted:
+
+```math
+Q^{\zeta}_{R,a}
+=
+q^{\zeta}_{R,a}.
+\tag{37.29}
+```
+
+The correct fixed-IR Branch A free-energy is:
+
+```math
+F^{\mathrm{tile}}_{R,a}
+:=
+-
+\log
+Q^{\zeta}_{R,a}.
+\tag{37.30}
+```
+
+The exact target is:
+
+```math
+\boxed{
+\limsup_{a\to0}
+F^{\mathrm{tile}}_{R,a}
+<
+\infty.
+}
+\tag{37.31}
+```
+
+By definition:
+
+```math
+\boxed{
+\limsup_{a\to0}
+F^{\mathrm{tile}}_{R,a}
+<
+\infty
+\Longleftrightarrow
+\mathsf H_{\mathrm{3sec}}(R,\zeta_R).
+}
+\tag{37.32}
+```
+
+So Branch A is not easier than the final input. It is the final input in
+defect-free-energy language.
+
+### 37.10. Relation To The 't Hooft Disorder Free Energy
+
+The thick tile flip is a local version of a center-twisted disorder insertion.
+Let:
+
+```math
+Z^{\mathrm{tw}}_{R,a}
+\tag{37.33}
+```
+
+be the partition function with the fixed physical center twist in the tile
+package, and:
+
+```math
+Z^{0}_{R,a}
+\tag{37.34}
+```
+
+the untwisted one. The corresponding disorder free energy is:
+
+```math
+\Delta F^{\mathrm{tw}}_{R,a}
+:=
+-
+\log
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}.
+\tag{37.35}
+```
+
+A fixed-IR perimeter-law type bound for the tile is:
+
+```math
+\limsup_{a\to0}
+\Delta F^{\mathrm{tw}}_{R,a}
+<
+\infty.
+\tag{37.36}
+```
+
+If the twist package is the same charged sheet package used in the cell law,
+then (37.36) implies (37.31), up to fixed boundary constants already absorbed
+by `BDY`.
+
+Conversely, if (37.31) holds, the optimal-transport construction of Target
+40.184 gives an abstract bounded-cost transfer from the dominant sector into
+its complement. Thus:
+
+```math
+\boxed{
+\text{Branch A is the fixed-tile 't Hooft free-energy problem.}
+}
+\tag{37.37}
+```
+
+This is conventional Yang-Mills mathematics. ISP identifies the exact record
+variable and the exact tile package, but the estimate itself is not produced
+by the ontology.
+
+### 37.11. Renormalized Disorder Operators Do Not Automatically Help
+
+One might try to define a renormalized twist free energy:
+
+```math
+\Delta F^{\mathrm{ren}}_{R,a}
+=
+\Delta F^{\mathrm{tw}}_{R,a}
+-
+c_aL_R,
+\tag{37.38}
+```
+
+where `L_R` is a fixed physical boundary or perimeter quantity. A bounded
+renormalized value:
+
+```math
+\limsup_{a\to0}
+\Delta F^{\mathrm{ren}}_{R,a}
+<
+\infty
+\tag{37.39}
+```
+
+does not by itself imply (37.31). It implies (37.31) only if the counterterm is
+part of the actual fixed-IR observable package or cancels in the sector ratio
+used by `q`. Otherwise the counterterm changes the question.
+
+Thus Branch A may use renormalized disorder operators only under the gate:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{the renormalized insertion must be exactly}\\[1mm]
+\text{the insertion represented in the fixed cell law.}
+\end{array}
+}
+\tag{37.40}
+```
+
+No perimeter or collar subtraction may be smuggled into the proof after the
+cell law has been fixed.
+
+### 37.12. Attempted Shortcut: Strong Coupling
+
+At fixed bare strong coupling, a polymer or character expansion can give
+bounded tile-disorder costs. That proves a version of Branch A in the
+strong-coupling lattice regime.
+
+But fixed physical IR alignment requires:
+
+```math
+a\to0
+\quad
+\text{with }R\text{ fixed physically}.
+\tag{37.41}
+```
+
+The strong-coupling expansion does not survive this limit. It is therefore a
+valid finite-cutoff check, but not a proof of (37.31).
+
+### 37.13. Attempted Shortcut: Weak-Coupling Good Sectors
+
+A weak-coupling good-sector estimate may show that smooth fields dominate
+small plaquette fluctuations. That is not enough for Branch A. The required
+object is a charged sector ratio:
+
+```math
+\frac{
+\mu^{\square}_{R,a}
+\left(
+F^\sigma_{R,a}
+\right)
+}{
+\mu^{\square}_{R,a}
+\left(
+D^\sigma_{R,a}
+\right)
+}.
+\tag{37.42}
+```
+
+Good-sector control can bound fluctuations around a chosen sector. It does not
+prove that the opposite or residual sector has fixed weight. If anything, a
+naive weak-coupling argument tends to reinforce one-sided pinning.
+
+Thus:
+
+```math
+\boxed{
+\begin{array}{c}
+\text{weak-coupling smoothness is not a substitute}\\[1mm]
+\text{for the thick-vortex free-energy bound.}
+\end{array}
+}
+\tag{37.43}
+```
+
+### 37.14. Attempted Shortcut: ISP Record Bookkeeping
+
+The ISP record law gives:
+
+```math
+\mu^{\square}_{R,a}
+=
+\left(
+\mathcal R^{\square}_{R,a}
+\right)_{\#}
+\mu^{\mathrm{SU2}}_{R,a,\square}.
+\tag{37.44}
+```
+
+This can expose the tile-twist sector and the free-energy ratio. It cannot
+alter:
+
+```math
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}.
+\tag{37.45}
+```
+
+Therefore ISP bookkeeping cannot prove Branch A unless an additional
+Barandes-aligned deterministic constraint changes the admissible support of
+the cell law. No such constraint has been derived here.
+
+### 37.15. Branch A Decision Theorem
+
+**Theorem 40.187A (Branch A Decision).** Under fixed-IR and Barandes alignment:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{A}_{\infty}
+&
+\text{pointwise local thick insertions are too strong},\\[1mm]
+\mathrm{A}_{\mathrm{ent}}
+&
+\text{bounded entropy or }L^p\text{ defect cost proves }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{A}_{\mathrm{FE}}
+&
+\text{bounded tile twist free energy is equivalent to }\mathsf H_{\mathrm{3sec}},\\[1mm]
+\mathrm{A}_{\mathrm{ISP}}
+&
+\text{record bookkeeping exposes but does not lower the free energy}.
+\end{array}}
+\tag{37.46}
+```
+
+Consequently the viable Branch A target is:
+
+```math
+\boxed{
+\limsup_{a\to0}
+\left(
+-
+\log
+\frac{
+Z^{\mathrm{tw}}_{R,a}
+}{
+Z^{0}_{R,a}
+}
+\right)
+<
+\infty
+}
+\tag{37.47}
+```
+
+for the same fixed physical charged tile package used in Section 36.
+
+#### Proof
+
+The pointwise implication is Target 40.184. Sections 37.7-37.8 show that
+standard thin and smooth classical insertions do not satisfy the pointwise
+criterion in the continuum refinement. Sections 37.6 and 37.9 prove that
+bounded entropy, bounded `L^p` density, or bounded sector free energy is
+sufficient. Equation (37.32) identifies the sector free energy with the final
+hypothesis. Sections 37.11-37.14 rule out renormalization, strong coupling,
+weak-coupling good sectors, and record bookkeeping as shortcuts. `∎`
+
+### 37.16. Completed Branch A Investigation
+
+Branch A is now fully investigated:
+
+```math
+\boxed{
+\begin{array}{ll}
+\mathrm{FAIL}_{\mathrm{thin}}
+&
+\text{microscopic thin flips have area-divergent cost},\\[1mm]
+\mathrm{FAIL}_{\mathrm{classical}\ \infty}
+&
+\text{smooth thick insertions fail pointwise cost},\\[1mm]
+\mathrm{PASS}_{\mathrm{criterion}}
+&
+\text{bounded entropy or }L^p\text{ defect cost would prove the certificate},\\[1mm]
+\mathrm{EQUIV}_{\mathrm{FE}}
+&
+\text{bounded tile twist free energy is exactly the final input},\\[1mm]
+\mathrm{NO}_{\mathrm{ISP}}
+&
+\text{deterministic record bookkeeping does not change the ratio},\\[1mm]
+\mathrm{NEXT}_{\mathrm{honest}}
+&
+\text{prove fixed-tile disorder free energy or stay conditional}.
+\end{array}}
+\tag{37.48}
+```
+
+So Branch A is less ISP-native than Branch B, but it is not vague. Its final
+form is the fixed-IR 't Hooft/tile free-energy estimate (37.47). If that
+estimate is proved, Paper 40's conditional certificate becomes a fixed-IR
+theorem. If it cannot be proved without importing the Wilson area law, Branch
+A has simply rediscovered the confinement area barrier in disorder variables.
