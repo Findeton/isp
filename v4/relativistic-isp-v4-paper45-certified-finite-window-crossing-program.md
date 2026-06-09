@@ -466,24 +466,34 @@ step; certified table, basin `\varepsilon\le1/5`, Lemma 45.X-h bound):
 
 ```text
  t0      beta0   N    digits  K(cert)  eps_K(hi)   width(eps)  log4 sigma_phys >=   secs
- 1       2       51   67      6        6.5805e-02  2.60e-56    -5.710                  0.3
- 0.5     4       66   81      14       3.1631e-02  1.04e-52    -13.422                 1.4
- 0.25    8       87   109     30       1.2655e-02  5.59e-43    -29.174                 2.5
- 0.125   16      117  163     61       1.8559e-01  1.69e-19    -61.563                22.7
- DEEP-ROWS-PENDING
+ 1       2       51   89      6        6.5805e-02  1.04e-72    -5.710                  1.0
+ 0.5     4       66   112     14       3.1631e-02  6.62e-77    -13.422                 3.0
+ 0.25    8       87   158     30       1.2655e-02  1.85e-81    -29.174                15.7
+ 0.125   16      141  248     61       1.8559e-01  1.95e-85    -61.563                67.4
+ 0.0833  24      206  341     93       1.6117e-01  1.60e-89    -93.369               317.2
+ 0.0625  32      271  434     125      1.2472e-01  1.02e-92    -125.113              646.8
+ 0.05    40      336  526     157      1.0762e-01  8.74e-92    -156.998             1385.8
+
+transmutation fit (all 7 rows):  ln sigma_phys >= -11.06/t0 + 3.4
+  1/t0 ~ beta0/2  =>  d ln sigma / d beta0 ~= -5.53
 ```
+
+Every certified `K` equals the float-diagnostic `K` exactly, and every final
+`\varepsilon_K` enclosure brackets the float value; the enclosure margins at
+the basin are 72–92 digits.
 
 Readings. (i) **The window is crossed, certifiedly, at every depth tried**:
 from `β₀=2` (6 steps) to `β₀=40` (157 steps), the flow provably enters the
 basin and Lemma 45.X-h converts basin entry into `\sigma_{\rm phys}>0` with an
 explicit lower bound. (ii) **Transmutation is certified, not assumed**: the
-certified `\log\sigma_{\rm phys}` is linear in `β₀` with slope `≈-5.37` per
+certified `\ln\sigma_{\rm phys}` is linear in `β₀` with slope `≈-5.53` per
 unit `β₀` (the hypercubic one-loop value is `-6\pi^2/11=-5.39`; the closeness
 is the known MK scheme coincidence and is *not* claimed as a quantitative 4D
-statement). The certified object spans **68 orders of magnitude** in
-`\sigma_{\rm phys}` at linear cost in steps and digits. (iii) Steps, digits,
-and runtime all scale linearly-to-polynomially in `β₀`, confirming §4.3's
-cost law empirically.
+statement). The certified bounds span **~91 orders of magnitude** in
+`\sigma_{\rm phys}`. (iii) Steps (`157`), state size (`336`), digits (`526`),
+and runtime (`23` min for the deepest row) all scale linearly-to-polynomially
+in `β₀`, confirming §4.3's cost law empirically — against an exponentially
+shrinking target scale.
 
 ### 4.5. What the demonstration does and does not establish
 
@@ -499,8 +509,8 @@ cost law empirically.
 \textbf{DOES NOT:}\ \text{(1) say anything about the hypercubic lattice (bond moving is exact}\\
 \text{only hierarchically); (2) cover }\beta_0=\infty\text{: the table reaches }\beta_0\le40\text{, and ``all }\beta_0\text{''}\\
 \text{needs the weak-coupling entry lemma (Target 45.D below) — though each additional unit}\\
-\text{of }\beta_0\ \text{costs only }\sim4\ \text{more steps and }\sim5\ \text{more digits, so any finite depth is}\\
-\text{reachable; (3) replace 45.E/45.T for 4D, where the one-step map is not exact and the}\\
+\text{of }\beta_0\ \text{costs only }\sim4\ \text{steps, }O(10)\ \text{digits, and }O(10)\ \text{retained characters, so any}\\
+\text{finite depth is reachable; (3) replace 45.E/45.T for 4D, where the one-step map is not exact and the}\\
 \text{remainder bound is the genuine engineering core.}
 \end{array}}
 ```
@@ -584,10 +594,10 @@ should be developed against the same (X) interface. **[NEW routing; OPEN]**
 - **(F3) Certified-step impossibility:** if the one-step remainder
   `\epsilon(A)` cannot be made smaller than the contraction margin at `O(1)`
   coupling for any blocking scheme (error bars exceed signal), 45.T is dead
-  as engineering; the demonstration's margin accounting (§4.4: widths
-  `10^{-37}`–`10^{-76}` against thresholds `O(10^{-1})`) is the existence
-  proof that such margins are not intrinsically unreachable in transmutation
-  windows.
+  as engineering; the demonstration's margin accounting (§4.4: enclosure
+  widths `10^{-72}`–`10^{-92}` against thresholds `O(10^{-1})`) is the
+  existence proof that such margins are not intrinsically unreachable in
+  transmutation windows.
 - **(F4) Demonstration-level falsifiers:** an error in Lemma 45.X-h's
   constants, or a certified trajectory that fails to enter the basin at some
   deeper `β₀` (none found through `β₀=40`).
