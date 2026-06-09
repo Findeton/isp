@@ -1,0 +1,4 @@
+cvxpy>=1.5
+numpy
+scipy
+mpmath

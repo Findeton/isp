@@ -1,0 +1,693 @@
+% Compile with pdflatex (RevTeX 4-2, in TeX Live / MiKTeX):  pdflatex relativistic-isp-v5-paper3-unimodular-beable-gravity
+\documentclass[aps,prd,preprint,amsmath,amssymb,nofootinbib,superscriptaddress]{revtex4-2}
+
+\usepackage{bm}
+
+% lightweight "Result" block (bold lead-in; package-free, compiles cleanly)
+\newenvironment{result}[1]{\par\medskip\noindent\textbf{#1}\ }{\par\medskip}
+
+\begin{document}
+
+\title{Indivisible beable matter as a source for unimodular semiclassical gravity:
+gravitational decoherence, a dynamical cosmological term, and the covariance obstruction}
+
+\author{Felix Robles Elvira}
+\affiliation{Independent Researcher}
+\date{\today}
+
+\begin{abstract}
+A central obstruction to coupling classical gravity to quantum (beable) matter is that
+the contracted Bianchi identity forces covariant conservation of the source,
+$\nabla^\mu T_{\mu\nu}=0$, whereas a stochastic, indivisible beable process injects
+energy--momentum and so violates it. We show that \emph{unimodular gravity} removes this
+obstruction: its trace-free field equations do not impose conservation, and the
+non-conservation is absorbed into a dynamically generated cosmological term
+(Josset--Perez--Sudarsky). Using the indivisible-stochastic-process (ISP) beable of
+Barandes as the matter source, the violation current $\eta_\nu=\nabla^\mu T_{\mu\nu}$
+decomposes into a \emph{mean} part and a \emph{fluctuating} part. The mean part,
+homogeneous and isotropic in the cosmic rest frame, is curl-free and sources a dynamical
+cosmological term $\Lambda(t)$; we find, however, that for Di\'osi--Penrose-type sourcing
+this term is quantitatively \emph{excluded} as dark energy --- the same regularization
+length the spontaneous-radiation experiments bound caps the induced $\Lambda$ many orders
+below the observed value. The fluctuating part sources metric noise (an Einstein--Langevin
+term) that, in the Newtonian limit, reduces to the Di\'osi--Penrose / Tilloy--Di\'osi
+gravitational decoherence and to the Gaussian-onset, falsifiable signature of a companion
+paper. We resolve the recent dispute over the entanglement signature for this construction
+--- the beable-sourced field is a classical channel and so predicts a \emph{negative}
+Bose--Marletto--Vedral result (falsifiable), with mandatory complementary decoherence ---
+and we isolate the covariance of the beable dynamics for a quantum field as the single
+binding open problem, dissecting it down to a four-way no-free-lunch among manifest
+covariance, real time, genuine probability, and a physical-time-evolving beable.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction and the three couplings}
+
+How a classical spacetime couples to quantum matter admits three structurally distinct
+answers, experimentally distinguishable in principle
+\cite{Bose2017,Marletto2017,Donadi2021}: (1)~\emph{quantized gravity} --- the metric is
+itself in superposition and can mediate entanglement (BMV-positive);
+(2)~\emph{mean-field semiclassical gravity} (Schr\"odinger--Newton),
+$G_{\mu\nu}=8\pi G\langle T_{\mu\nu}\rangle$, which is pathological (superluminal
+signalling, an experimentally constrained nonlinear self-gravity);
+(3)~\emph{stochastic semiclassical gravity} --- the field is classical but sourced by the
+\emph{actual localized} matter, consistent in the Newtonian limit and yielding gravitational
+decoherence as a by-product \cite{TilloyDiosi2016}.
+
+The indivisible-stochastic-process (ISP) reformulation of quantum theory
+\cite{Barandes2023a,Barandes2023b} is a natural home for option~3: its primitive ontology
+is a definite configuration (beable) at all times, exactly the localized source option~3
+needs and that Tilloy--Di\'osi supplied by hand through collapse outcomes. This paper asks
+the relativistic question: \emph{can the ISP beable source classical gravity covariantly?}
+The immediate obstruction is energy conservation; the main result is that unimodular
+gravity removes it, at the price of a dynamical cosmological term and a residual covariance
+problem we then isolate sharply.
+
+\emph{Scope note.} The gravity-sourcing results (Results 1--6) use only that the matter is a
+\emph{non-conserved source}; they are \textbf{Markovian-agnostic} and hold for the ISP beable
+treated as a non-relativistic / schematic source, exactly as for ordinary collapse matter (the
+original setting of Josset--Perez--Sudarsky). ``Indivisible'' names the program's ontology, not
+a load-bearing property of Results 1--6; wherever ``indivisible'' or ``relativistic ISP'' appears
+as a fully covariant interacting-field beable process, that object is the \emph{open} problem of
+Sec.~\ref{sec:rsft}, not an input to the sourcing results. The non-Markovian
+content bites in exactly two places: the decoherence onset shape (the Gaussian signature) and the
+covariant-construction lever.
+
+Claims are marked \textbf{[STD]} (established), \textbf{[SYN]} (this synthesis), or
+\textbf{[OPEN]}. Nothing is asserted as a solution of quantum gravity or an experimentally
+confirmed deviation from general relativity.
+
+\section{The obstruction: Bianchi versus beable non-conservation}
+
+In general relativity, $G_{\mu\nu}=8\pi G\,T_{\mu\nu}$ with the contracted Bianchi identity
+$\nabla^\mu G_{\mu\nu}\equiv0$ forces $\nabla^\mu T_{\mu\nu}=0$. An ISP beable process
+injects energy--momentum (record-stabilization, the indivisible analogue of collapse,
+makes the stress--energy built from the actual configuration jump and diffuse), so that
+\begin{equation}
+\nabla^\mu T_{\mu\nu}=\eta_\nu\neq0 ,
+\end{equation}
+with $\eta_\nu$ a stochastic violation current. The left side of Einstein's equation is
+identically divergence-free; the right side is not. The naive coupling is inconsistent ---
+the obstruction that has made relativistic collapse / beable gravity difficult
+\cite{Bassi2013}. \textbf{[STD]}
+
+\section{Unimodular gravity removes the obstruction}
+
+Unimodular gravity (UG) fixes $\sqrt{-g}$ and yields the \emph{trace-free} Einstein
+equations \cite{HenneauxTeitelboim1989,Unruh1989}:
+\begin{equation}
+R_{\mu\nu}-\tfrac14 g_{\mu\nu}R = 8\pi G\big(T_{\mu\nu}-\tfrac14 g_{\mu\nu}T\big).
+\end{equation}
+Conservation is no longer imposed. Taking the divergence and using
+$\nabla^\mu R_{\mu\nu}=\tfrac12\nabla_\nu R$,
+\begin{equation}
+\tfrac14\nabla_\nu\big(R+8\pi G\,T\big)=8\pi G\,\eta_\nu .
+\end{equation}
+Defining the scalar $\Lambda$ via $R+8\pi G\,T\equiv4\Lambda$, two cases follow:
+\begin{equation}
+\boxed{\;
+\begin{array}{ll}
+\eta_\nu=0: & \Lambda=\text{const (usual UG integration constant)},\\[3pt]
+\eta_\nu\neq0: & \nabla_\nu\Lambda=8\pi G\,\eta_\nu\ \ (\Lambda\text{ dynamical, integrating the violation)}.
+\end{array}\;}
+\end{equation}
+So in UG the non-conservation is absorbed into a dynamical cosmological term; consistency
+needs only that $\eta_\nu$ be a gradient ($\eta_\nu=\nabla_\nu\phi$, so
+$\Lambda=8\pi G\phi+\Lambda_0$). This is the mechanism of Josset--Perez--Sudarsky
+\cite{Josset2017}, with the ISP beable a concrete realization. \textbf{[STD mechanism; SYN
+applied to ISP]}
+
+\begin{result}{Result 1 [SYN].}
+The conservation-vs-Bianchi obstruction to sourcing relativistic gravity from \emph{any}
+non-conserved matter (the ISP beable being one instance) is not fatal. Unimodular gravity
+evades it, converting the violation into a dynamical cosmological term, provided the violation
+current is curl-free. The mechanism uses only non-conservation --- it is \textbf{Markovian-agnostic},
+holding equally for ordinary collapse matter (the original setting of \cite{Josset2017});
+indivisibility is not used here.
+\end{result}
+
+\section{The mean/fluctuation split}
+
+Decompose $\eta_\nu=\langle\eta_\nu\rangle+\delta\eta_\nu$.
+
+\emph{Mean --- a dynamical cosmological term.} For a record-stabilization process
+homogeneous and isotropic in the cosmic rest frame, $\langle\eta_i\rangle=0$ while
+$\langle\eta_0\rangle=w(t)$ is a net energy-density injection rate. Then
+$\langle\eta_\nu\rangle=(w(t),\mathbf0)$ is curl-free, $\langle\eta_\nu\rangle=\nabla_\nu\phi$
+with $\phi(t)=\int w\,dt$, and
+\begin{equation}
+\Lambda(t)=\Lambda_0+8\pi G\int^t w(t')\,dt' .
+\end{equation}
+This is the Josset--Perez--Sudarsky structure, here sourced by the ISP rate. \textbf{[SYN]}
+
+\emph{Fluctuation --- gravitational decoherence.} The fluctuating $\delta\eta_\nu$ is not
+curl-free; it sources metric fluctuations through the trace-free equations --- an
+Einstein--Langevin noise term \cite{HuVerdaguer2008} --- dephasing a massive system in
+spatial superposition. \textbf{[SYN]}
+
+\begin{result}{Result 2 [SYN].}
+The single ISP non-conservation splits into a mean part (curl-free, cosmic rest frame)
+sourcing a dynamical cosmological term, and a fluctuating part sourcing metric noise and
+hence gravitational decoherence. Dark-energy-like behaviour and gravitational decoherence
+are two faces of the same beable non-conservation.
+\end{result}
+
+\section{The Newtonian limit and the entanglement question}
+
+In the weak-field, non-relativistic limit UG reduces to $\nabla^2\Phi=4\pi G\rho$, sourced
+by the beable mass density $\rho\ge0$ (no conservation constraint: there is no Bianchi
+identity in the Newtonian limit). The fluctuating source reproduces, term for term, the
+Tilloy--Di\'osi beable-sourced gravity \cite{TilloyDiosi2016}: the Newtonian pair potential
+up to a short-distance cutoff plus a gravitational decoherence term. With the indivisible
+(non-divisible) survival law, the decoherence is non-exponential, with the falsifiable
+Gaussian onset
+\begin{equation}
+C(T)=C(0)\,\exp\!\big[-\tfrac12(T/\tau_G)^2\big],\qquad \tau_G=\hbar/E_G,
+\end{equation}
+$E_G$ the Di\'osi--Penrose self-energy of the mass-density difference
+\cite{Diosi1989,Penrose1996}. \textbf{[SYN; reduces to STD]}
+
+\emph{The entanglement signature --- resolved for the ISP construction.} The
+ISP-beable-sourced field is, by construction, a \emph{classical channel}: gravity is
+sourced by the definite beable (one value per mass), not the superposed wavefunction.
+Kafri, Taylor and Milburn \cite{KTM2014} proved that a classically-mediated gravitational
+interaction --- which they show is \emph{equivalent to Di\'osi's model} --- cannot create
+entanglement, while necessarily producing decoherence. Entanglement cannot increase under
+local operations and classical communication, and the beable-sourced field carries only
+classical information about the actual configuration.
+
+\begin{result}{Result 4 [SYN].}
+The ISP-beable-sourced construction predicts a \emph{negative} BMV result (no
+gravitationally-induced entanglement) together with mandatory, complementary gravitational
+decoherence, the two linked by the classical-channel structure \cite{KTM2014}. A
+\emph{positive} BMV result would falsify the construction.
+\end{result}
+
+This resolves the 2025 dispute as a model-definition issue. Analyses finding entanglement
+\cite{Trillo2025} treat gravity as a quantum two-body potential on superposed positions
+(with Di\'osi--Penrose decoherence on top); those finding none \cite{Collapse2025,KTM2014}
+treat gravity as a classical channel sourced by the localized matter. The ISP ontology
+falls unambiguously on the classical-channel side. (Such a channel can still generate
+quantum \emph{discord} short of entanglement \cite{Discord2022}; BMV witnesses entanglement,
+so the negative prediction stands.) \textbf{[SYN]}
+
+\section{Magnitudes}
+
+\emph{Decoherence.} The Newtonian-limit scale is the Di\'osi--Penrose $\tau_G=\hbar/E_G$,
+with object-scale superpositions of $10^{10}$--$10^{12}$ amu over second-to-hour holds.
+\textbf{[STD/SYN]}
+
+\emph{Cosmological term --- quantitatively excluded for Di\'osi--Penrose sourcing.}
+Matching $\rho_\Lambda c^2\approx6\times10^{-10}\,\mathrm{J\,m^{-3}}$ over a Hubble time
+$t_H\approx4\times10^{17}\,\mathrm{s}$ requires a mean injection rate density
+$\langle w\rangle\sim\rho_\Lambda c^2/t_H\sim1.5\times10^{-27}\,\mathrm{J\,m^{-3}\,s^{-1}}$.
+The DP injection rate is fixed once the regularization length $R_0$ is:
+\begin{equation}
+\frac{dE}{dt}\sim\frac32\,\frac{\hbar\,G\,m_N}{R_0^3}.
+\end{equation}
+With the experimentally-allowed $R_0\gtrsim0.5$--$4\,\text{\AA}$ (Donadi \cite{Donadi2021})
+and $m_N$ the nucleon mass, $dE/dt\sim10^{-41}$--$10^{-43}\,\mathrm{W}$ per nucleon; times
+the cosmic baryon number density $n_N\sim0.25\,\mathrm{m^{-3}}$,
+$w_{\rm DP}\sim10^{-42}$--$10^{-44}\,\mathrm{J\,m^{-3}\,s^{-1}}$ --- \textbf{12--16 orders of
+magnitude below} $\langle w\rangle$ (an early-universe enhancement
+$\propto(1+z)^{3/2}$, $\sim10^{4}$--$10^{5}$, does not close the gap). Reaching $\rho_\Lambda$
+would need $R_0\sim10^{-15}\,\mathrm{m}$, which Donadi excludes by $\sim5$ orders.
+
+\begin{result}{Result 5 [SYN].}
+Di\'osi--Penrose-type ISP sourcing is not a viable dark-energy mechanism: the same
+regularization length $R_0$ bounded by the spontaneous-radiation experiments also fixes the
+cosmological injection, making the induced $\Lambda$ many orders too small. The UG mechanism
+is real, but for DP-type sourcing its dark-energy realization is quantitatively excluded ---
+a correct mechanism with an excluded magnitude.
+\end{result}
+
+\emph{Dark matter --- no mechanism.} Dark matter is a \emph{content} problem (rotation
+curves, lensing, CMB third peak, structure formation, the Bullet Cluster's lensing/gas
+offset). The construction adds no matter content; in the Newtonian limit it reproduces
+Newtonian gravity up to $R_0\sim\text{\AA}$ \cite{TilloyDiosi2016}, so no galactic-scale
+(MOND-like) modification; at linear order $\langle g(T[q])\rangle=g(\langle T\rangle)$, so
+no extra mean attraction (only the fluctuations differ, sourcing decoherence not mass). Its
+novel sector is bounded (Result 5) to $\gtrsim12$ orders below $\rho_\Lambda$, far below
+$\rho_{\rm DM}\sim2\rho_\Lambda$, and of the wrong equation of state (heating $w>0$, metric
+noise $w\approx1/3$, vs.\ pressureless $w\approx0$). The Bullet Cluster independently
+excludes modified gravity. \textbf{[SYN/STD]}
+
+\begin{result}{Result 6 [SYN].}
+The construction provides no dark-matter mechanism. With Result 5, ISP/RISP gravity
+addresses neither component of the dark sector --- both are content / cosmological-gravity
+problems, while ISP reformulates dynamics.
+\end{result}
+
+\section{The binding obstruction: covariance of the beable dynamics}
+
+UG solves conservation but not covariance. Two features expose a preferred frame:
+(1)~$\langle\eta_\nu\rangle$ is curl-free only in the frame where it carries no net momentum
+--- the cosmic rest frame --- so the well-definedness of $\Lambda(t)$ selects a foliation;
+(2)~the beable is a configuration on a spatial slice, presupposing a notion of simultaneity.
+The status of this preferred frame:
+{\footnotesize
+\begin{equation}
+\boxed{\;
+\begin{array}{ll}
+\text{universal foliation:} & \text{anisotropies}\sim\beta^2\sim10^{-6}\text{, excluded by Lorentz tests at}\sim10^{-18},\\
+\text{confined to gravity/decoherence:} & \text{evades bounds, signatures}\lesssim10^{-7}\text{ (unobservable)}.
+\end{array}\;}
+\end{equation}}
+So a preferred-frame RISP gravity is consistent only if the frame is confined to the
+non-unitary sector (\textbf{Route A}, empirically hidden). The covariant alternative
+(\textbf{Route B}) is more advanced than a free-particle construction: Tumulka realizes a
+Lorentz-invariant flash collapse not only for non-interacting particles \cite{Tumulka2006}
+but for interacting \emph{distinguishable} particles \cite{Tumulka2020}, inserting flashes
+into a Tomonaga--Schwinger evolution between arbitrary spacelike hypersurfaces ---
+foliation-independent, no-signaling, reducing to non-relativistic GRW. The remaining gap is
+his stated limitation: the construction is not known for indistinguishable particles or
+variable particle number, i.e.\ for a \emph{quantum field}, which is what sourcing gravity
+requires.
+
+Any candidate must thread established no-go results: a relativistic \emph{Markovian} collapse
+in standard QFT cannot keep both vacuum stability and no-signaling without nonstandard
+degrees of freedom; a Lorentz-covariant mass-coupled collapse cannot both avoid divergent
+energy production and forbid superluminal signaling \cite{MassCoupled2020}; and Gisin's
+theorem \cite{Gisin1989} forbids nonlinear (signaling) ensemble dynamics. These force
+abandoning one of \{strict Lorentz invariance, Markovian dynamics, standard field ontology\}.
+\textbf{The ISP beable abandons two} (non-Markovian and non-standard ontology), so it has
+more structural room than any Markovian collapse model. \textbf{[OPEN]}
+
+\begin{result}{Result 3 [SYN/OPEN].}
+The binding obstruction is not energy conservation (solved by UG) but covariance of the
+beable dynamics for a \emph{quantum field}. A covariant interacting flash dynamics exists for
+\emph{distinguishable} particles \cite{Tumulka2020}; the field case required to source
+gravity is open. Being both non-Markovian and of non-standard ontology, the ISP beable
+forgoes two of the three properties the relativistic-collapse no-go theorems force one to
+abandon --- giving it, in principle, the room to thread them.
+\end{result}
+
+\section{Falsifiable content and honest scope}
+
+\emph{Testable.} (i)~Gravitational decoherence with a non-exponential (Gaussian) onset at the
+DP scale, in matter-wave / levitated / optomechanical interferometry. (ii)~The
+classical-vs-quantum-gravity fork via BMV: the construction predicts \emph{no}
+gravitationally-induced entanglement, and a positive BMV result falsifies it (Result 4).
+(iii)~A preferred-frame modulation of the decoherence rate at the $\lesssim10^{-7}$ level
+(unobservable, but bounded from above by Lorentz tests if the frame is universal).
+
+\emph{Not a prediction.} The cosmological term is a real mechanism but not a dark-energy
+prediction (Result 5). The decoherence scale is Di\'osi--Penrose's, not new; the contribution
+is the non-exponential shape (indivisibility) and the unified relativistic framing.
+
+\emph{Known-address caveat.} As with the program's Bell-locality and frame-dependence
+analyses, the distinctive signatures (classical-gravity BMV behaviour, non-Markovian onset)
+are shared with other collapse / classical-gravity models. ISP provides a principled ontology
+and a unifying frame, not a unique fingerprint.
+
+\section{Open problems}
+
+\textbf{1. Covariant interacting \emph{field} beable dynamics --- the binding problem
+[OPEN].} Construct a Lorentz-covariant, foliation-independent ISP beable dynamics for a
+quantum field that sources gravity. The distinguishable-particle case is solved
+\cite{Tumulka2020}; the field case is not. Any solution must thread the three no-go
+constraints above \cite{MassCoupled2020,Gisin1989}. Since the ISP beable already abandons two
+of the three, the ISP-specific question is whether its non-Markovianity provides enough room
+to build the covariant interacting field dynamics that Markovian collapse provably cannot. A
+positive answer makes relativistic ISP gravity consistent; a clean negative converts Route A
+into a theorem.
+
+\textbf{2. Curl-free violation beyond the mean [OPEN].} Characterize when the coarse-grained
+violation remains curl-free, and the back-reaction of $\delta\eta_\nu$.
+
+\textbf{3. Cosmological magnitude of $\Lambda$ [RESOLVED, negative].} Result 5: DP-type
+sourcing with the allowed $R_0$ gives $\Lambda$ 12--16 orders too small.
+
+\textbf{4. BMV entanglement [RESOLVED for this construction].} Result 4: classical channel,
+no entanglement \cite{KTM2014}; the 2025 dispute is a model-definition issue.
+
+\section{Investigating the binding obstruction: relativistic stochastic field theory and a free-field testbed}
+\label{sec:rsft}
+
+\subsection{The reduction}
+Stripped of gravity, open problem 1 is: construct a Lorentz-covariant, real-time stochastic
+process, with genuine non-negative probabilities, over field configurations, reconstructing
+the unitary QFT --- relativistic stochastic mechanics for fields done with honest
+probabilities (the field-theoretic Nelson/Barandes problem). The beable is a configuration
+$\varphi$ on a slice (foliation enters); indivisibility is the candidate escape from the
+no-go.
+
+\subsection{The covariant structure exists --- in Euclidean signature}
+A relativistic QFT carries a genuine, manifestly covariant probability measure over field
+configurations: the Euclidean measure $e^{-S_E}$ (Euclidean rotation = Lorentz after Wick
+rotation), with Osterwalder--Schrader reconstruction recovering the Lorentzian theory via
+reflection positivity. Guerra and Ruggiero proved the Euclidean--Markov field is the
+ground-state stochastic process of Nelson's stochastic mechanics
+\cite{GuerraRuggiero1973,Nelson1973}. The Markov structure is diagnostic: the \emph{free}
+field is Markov, the \emph{interacting} field generically non-Markov. So non-Markovianity is
+the generic structure of interacting relativistic random fields. \textbf{[STD]}
+
+\subsection{The obstruction (refined): see Result 10}
+The Euclidean measure is imaginary-time; the real-time path integral has oscillatory
+$e^{iS}$ weights. A stochastic \emph{process} lives at the time-sliced, intermediate level,
+which is not manifestly covariant even though the final QFT is. We sharpen and partly correct
+this framing in Sec.~\ref{sec:nofreelunch}: the ISP transition probabilities are positive, so
+the binding obstruction is covariance, not positivity. \textbf{[STD framing]}
+
+\subsection{Why indivisibility is the candidate tool}
+In Barandes' construction the quantum phase is encoded in the non-Markovian memory, not in
+complex weights \cite{Barandes2023a,Barandes2025}. Nelson's stochastic mechanics is the
+Markovian-diffusion \emph{special case} of the indivisible class; its Markov-diffusion
+structure selects a time direction and resists covariantization (the fifty-year obstruction,
+studied even for the free scalar field \cite{FenyesNelsonCov}). The ISP-specific question:
+does the general indivisible class contain a Lorentz-covariant interacting-field member?
+Three facts make it well-posed: interacting Euclidean fields are already non-Markov; the no-go
+is for Markovian dynamics; it localizes the obstruction to one object. \emph{Caveat
+(Sec.~\ref{sec:freefield}): the free-field test shows non-Markovianity is not what buys
+covariance per se.} \textbf{[SYN]}
+
+\subsection{The free-scalar-field testbed: a worked result}
+\label{sec:freefield}
+We carried out the test. \textbf{Outcome: a covariant genuine-probability ISP exists for the
+free field --- but through Gaussianity, not non-Markovianity.} The free field is one
+oscillator per mode $k$ with $\omega_k=\sqrt{k^2+m^2}$; Nelson's process makes each an
+independent Ornstein--Uhlenbeck (Markov) process with correlation
+\begin{equation}
+\langle\tilde\varphi(k,t)\,\tilde\varphi(-k,t')\rangle=\frac{1}{2\omega_k}\,e^{-\omega_k|t-t'|},
+\end{equation}
+exactly the Euclidean propagator in the mixed $(k,\tau)$ representation
+\cite{GuerraRuggiero1973}. A covariant genuine-probability description exists two ways:
+(A)~the Euclidean random field $e^{-S_E}$ is a genuine $O(4)$-invariant probability measure
+on 4D configurations; (B)~the Gaussian vacuum has a positive Wigner functional
+\cite{Hudson1974}, a genuine phase-space probability under classical Liouville flow. So
+relativistic ISP exists for the free field. But (1)~it works via Gaussianity, not
+non-Markovianity (the process is Markov; no memory kernel needed), disconfirming the
+Sec.~10.4 reading; and (2)~by Hudson's theorem a pure state has a non-negative Wigner function
+\emph{iff} it is Gaussian, so any interaction makes route (B) negative --- the sign problem
+as a theorem --- while route (A)'s $|\Psi[\varphi]|^2$ stays positive but the interacting
+Euclidean field is non-Markov and its covariant real-time process is unestablished.
+
+\begin{result}{Result 7 [SYN].}
+Relativistic ISP exists for the free scalar field (Gaussian, integrable: positive Wigner
+\cite{Hudson1974} / Euclidean--Markov field \cite{GuerraRuggiero1973}) --- but for the trivial
+reason and \emph{without} non-Markovianity, so it neither advances nor evidences the
+interacting conjecture. Hudson's theorem makes the interacting obstruction precise: positive
+phase-space probability is Gaussian-only.
+\end{result}
+
+\subsection{Beyond the free field: the case map and the reduction to pure foliation-independence}
+Arrange the cases by (free vs interacting) $\times$ (non-relativistic QM vs relativistic
+field). Three of four cells are settled: \emph{interacting QM is already an ISP} (Barandes'
+theorem builds a config-space indivisible process for any unitary system, including
+Wigner-negative states --- so Hudson is a \emph{phase-space} obstruction that config-space ISP
+evades); the \emph{covariant interacting measure exists} (constructive QFT: $P(\phi)_2$,
+$\phi^4_2$ Euclidean measures \cite{GlimmJaffe1987}); and \emph{2D dualities} (Thirring /
+sine-Gordon via bosonization \cite{Coleman1975}, Ising via free fermions) give covariant
+interacting ISPs through free duals. Formally, Barandes' construction applied to the
+interacting QFT Hilbert space and $U(t)$ already yields a config-space ISP \emph{in a frame};
+the residue is purely \emph{foliation-independence}.
+
+\begin{result}{Result 8 [SYN].}
+The candidate obstructions fall one by one (Wigner-negativity is phase-space; the covariant
+interacting measure exists; 2D dualities give covariant interacting ISPs). The binding
+obstruction narrows to foliation-independence of the frame-dependently-existing interacting
+field process --- modulo the rigorous QFT extension of Barandes against Haag's theorem
+\cite{StreaterWightman1964}.
+\end{result}
+
+\subsection{Does Haag's theorem obstruct, or merely complicate?}
+Haag forbids only the interaction picture; it does not forbid the interacting theory, which
+exists Poincar\'e-covariantly in its own representation (Wightman; constructive QFT
+\cite{GlimmJaffe1987} builds it by abandoning the equal-time-CCR / interaction-picture
+assumption). The configuration-space representation ISP needs exists for interacting fields ---
+the Schr\"odinger functional representation ($\Psi[\varphi]$, $U(t)=e^{-iHt}$, full $H$) ---
+which is renormalizable \cite{Symanzik1981} and Haag-evading, so a \emph{frame-dependent}
+interacting-field ISP exists. But the Schr\"odinger functional is \emph{not manifestly Lorentz
+invariant}, and the manifestly-covariant route is the Tomonaga--Schwinger (interaction-picture)
+evolution --- the tool that made the distinguishable-particle case covariant --- which Haag
+obstructs for fields.
+
+\begin{result}{Result 9 [SYN].}
+Haag's theorem does \emph{not} obstruct the existence of an interacting-field ISP (the
+Schr\"odinger functional representation \cite{Symanzik1981} supplies a frame-dependent one);
+it \emph{does} obstruct the manifestly-covariant Tomonaga--Schwinger route, explaining why the
+distinguishable-particle success \cite{Tumulka2020} does not transfer to fields. The residue
+is sharp and non-Haag: promote the non-manifest Lorentz covariance of the Schr\"odinger-functional
+interacting theory to a manifestly-covariant config-space ISP without the interaction picture.
+A prior covariant beable-QFT attempt --- Nikoli\'c's many-fingered-time Bohmian QFT
+\cite{Nikolic2006} --- \emph{claims} exactly this, at a formal level whose rigorous status
+against Haag's theorem is itself the open question.
+\end{result}
+
+\subsection{Attempting the residue: a four-way no-free-lunch}
+\label{sec:nofreelunch}
+We attempted the residue via the most tractable (Euclidean / OS) route; the honest outcome is a
+structured obstruction. Four desiderata: \textbf{(C)} manifest covariance, \textbf{(R)} real
+time, \textbf{(P)} genuine probability, \textbf{(E)} a beable evolving in physical time. The
+natural constructions each achieve three and drop one:
+\begin{equation}
+\boxed{\;
+\begin{array}{l|cccc|l}
+\text{route} & \text{C} & \text{R} & \text{P} & \text{E} & \text{drops}\\
+\hline
+\text{Barandes }|U|^2 & - & \checkmark & \checkmark & \checkmark & \text{manifest covariance}\\
+\text{Euclidean / OS} & \checkmark & - & \checkmark & - & \text{real-time process}\\
+\text{stochastic quantization} & \checkmark & - & \checkmark & \checkmark & \text{physical-time evolution}\\
+\text{complex Langevin} & \checkmark & \checkmark & - & \checkmark & \text{positivity (sign problem)}
+\end{array}\;}
+\end{equation}
+The Barandes transition probabilities $|\langle q'|U(t)|q\rangle|^2$ are genuinely non-negative
+(no sign problem at the pairwise level; the quantum-ness is in the non-Markovian incompatibility
+of the multi-time joints) --- which corrects the ``process-level sign problem'' language of
+Sec.~10.3: the obstruction for ISP is covariance, not positivity. OS reconstruction yields a
+Hilbert space and correlators, not a real-time process. Stochastic quantization (Parisi--Wu)
+gives a covariant genuine process but in fictitious Langevin time (a 4D block-universe beable).
+Complex Langevin restores real time but with complex weights. The deep tension: manifest
+covariance pulls toward a 4D block-universe object, while ISP wants a beable evolving in
+physical time.
+
+\begin{result}{Result 10 [SYN/OPEN].}
+The Euclidean-reconstruction attempt does not close the residue; with its siblings it reveals a
+four-way no-free-lunch among \{manifest covariance, real time, genuine probability,
+physical-time-evolving beable\} --- every known construction drops exactly one. A manifestly
+covariant relativistic ISP appears to require either a hidden preferred frame (Route A) or the
+abandonment of physical-time evolution for a 4D-history beable. This is a structured map of the
+obstruction, not a no-go: no theorem forbids a fifth route, but none of the standard four
+delivers all four desiderata.
+\end{result}
+
+\subsection{Working the residue: the many-fingered-time route and the foliation-relative-beable condition}
+A direct attack on the residue identifies a fifth route the Result-10 table omits, and the
+precise condition under which it threads the no-free-lunch. \emph{The fifth route} is
+\emph{many-fingered time}: evolve a Schr\"odinger-functional state $\psi[\Sigma,\varphi]$ over
+all spacelike hypersurfaces $\Sigma$ by the Tomonaga--Schwinger equation with the \emph{full}
+interacting Hamiltonian density (not the interaction picture). This is manifestly covariant (no
+preferred $\Sigma$), real-time, config-space-positive ($|\psi[\Sigma,\varphi]|^2$), carries a
+beable on each slice --- formally all four desiderata --- and \emph{evades Haag} (full $H$ in the
+Schr\"odinger-functional representation \cite{Symanzik1981}, not the free$\leftrightarrow$interacting
+intertwiner); it is what Nikoli\'c's covariant Bohmian QFT \cite{Nikolic2006} targets. \emph{The
+wall} is foliation-independent equivariance: requiring the Born distribution $|\psi[\Sigma]|^2$ on
+\emph{every} $\Sigma$ over-determines a single 4D beable history $\varphi(x)$ (marginals on crossing
+slices cannot all be Born except in free/Gaussian cases) --- the standard obstruction to covariant
+Bohmian QFT. \emph{The ISP-specific lever:} indivisibility commits only to single-slice Born
+marginals plus a non-divisible within-foliation transition structure; it does not posit a consistent
+trans-foliation joint history, which is what the over-determination constrains --- so an indivisible
+process can carry Born marginals on every $\Sigma$ where a Bohmian single trajectory cannot. \emph{The
+enabling condition} is a \emph{foliation-relative beable}: configs defined per slice, with no
+foliation-independent point-value $\varphi(x)$. If the beable is instead a 4D field with point-values,
+the over-determination bites and the route collapses to the block-universe (Euclidean) option. The
+foliation-relative reading is arguably relativistically natural (no absolute simultaneity $\Rightarrow$
+no absolute ``configuration now''), but its coherence is the new open question.
+
+\begin{result}{Result 11 [SYN/OPEN].}
+A fifth route exists that the Result-10 table omits: a many-fingered-time, Schr\"odinger-functional,
+\emph{indivisible} process. It evades Haag (full $H$) and would thread the four-way no-free-lunch
+\emph{provided} a foliation-relative beable is a coherent ontology --- exactly the condition under
+which indivisibility evades the equivariance over-determination that sinks covariant Bohmian QFT.
+The residue thus sharpens to one ISP-specific open question: \emph{are foliation-relative indivisible
+beables coherent?} Two technical issues remain even then: Tomonaga--Schwinger integrability against
+Schwinger-term anomalies in $[\mathcal H(x),\mathcal H(y)]$, and a rigorous construction. A structured
+advance, not a solution; every step is conjectural and the ontology may prove incoherent.
+\end{result}
+
+\subsection{Is the foliation-relative beable coherent? A positive case}
+The verdict on the question Result 11 isolated is a qualified \emph{yes}: the technical
+incoherence-candidates dissolve, and the residue is a single defensible interpretive
+commitment, not a contradiction. \emph{Established precedent:} Aharonov and Albert
+\cite{AharonovAlbert1980} proved relativistic quantum states are genuinely
+hypersurface-relative --- the covariance resides exclusively in the experimental
+probabilities, not the states --- and relativistic Bohmian mechanics admits a class of
+empirically equivalent probability spaces, one per foliation \cite{DurrEtAl2014}; the
+foliation-relative indivisible beable is the beable-ontology analogue. \emph{The beable is}
+$\varphi(x,n)$, a field value at each point relative to a local timelike direction $n$ (the
+slice normal); unlike single-valued $\varphi(x)$ it is not over-determined, since different
+foliations read off different $n$-components. \emph{Microcausality dissolves the incoherence
+candidates:} on a shared region $R$ the Born marginal is fixed by the local algebra
+$\mathcal A(D(R))$, identical for crossing slices; records/outcomes are localized, hence
+foliation-independent, so observers agree; the joint of two spacelike outcomes is fixed by
+$\mathcal A(A)\vee\mathcal A(B)$, foliation-independent and equal to QM's. Foliation-relativity
+is confined to the unobservable global structure --- exactly as relativity confines
+frame-relativity to simultaneity. \emph{Indivisibility is decisive:} a deterministic Bohmian
+trajectory must dynamically preserve equivariance ($|\psi|^2$) on each foliation (clean only
+on a preferred one, forcing Bohmian toward a preferred frame), whereas the indivisible process
+merely posits the Born marginal on each slice, with no preservation burden.
+
+\begin{result}{Result 12 [SYN/OPEN].}
+Foliation-relative indivisible beables are \emph{tentatively coherent}. Every technical
+incoherence-candidate (crossing-slice consistency, record/observer agreement, Bell
+correlations) dissolves via microcausality: local facts are foliation-independent, only the
+global beable structure is foliation-relative --- the structure Aharonov--Albert established
+for relativistic states \cite{AharonovAlbert1980} and relativistic Bohmian mechanics realizes
+as a per-foliation class \cite{DurrEtAl2014}. Indivisibility removes the equivariance-preservation
+burden that forces Bohmian toward a preferred foliation. What remains is not a contradiction
+but one explicit interpretive commitment --- that the beable (reality), not merely the
+description, can be frame-relative --- coherent by parallel to relativity's frame-relative
+simultaneity, but a genuine ontological postulate. Caveats: coherence by dissolution-of-objections
+plus parallels, not a theorem; the leap from frame-relative state to frame-relative beable is
+substantive; and ontological coherence is separate from existence of the construction (Result 11).
+\end{result}
+
+\subsection{The technical move: Tomonaga--Schwinger integrability and the Schwinger anomaly}
+The remaining outright-killer is whether the full-$H$ Tomonaga--Schwinger evolution
+$i\,\delta\psi[\Sigma]/\delta\sigma(x)=\mathcal H(x)\psi[\Sigma]$ is integrable
+(path-independent in hypersurface space) for an interacting field. The verdict is favorable in
+the semiclassical setting. \emph{Distinct-point integrability holds by microcausality:} the
+renormalized $\mathcal H(x)=T^{00}(x)$ is local, so renormalized microcausality gives
+$[\mathcal H(x),\mathcal H(y)]=0$ for $x\neq y$ spacelike, for the \emph{full} interacting
+density. \emph{The coincidence anomaly is a phase that cancels in the beable:} the deformation
+algebra carries Schwinger terms at $x=y$ --- the classical part ($\propto T^{0k}\partial_k\delta$,
+the tangential generator) is the correct hypersurface-deformation algebra, faithfully
+represented, while the anomalous part is a c-number central extension (the conformal/Schwinger
+anomaly). For Hermitian $\mathcal H$, $[\mathcal H(x),\mathcal H(y)]$ is anti-Hermitian, so its
+c-number part is purely imaginary (a phase, not a norm change), and being a c-number it is
+field-configuration-independent (a global phase $e^{i\alpha[\Sigma]}$). Either way it cancels in
+the Born-marginal beable $|\psi[\Sigma,\varphi]|^2$: the state's phase may be anomalous, but the
+beable distribution is path-independent. Indivisibility helps again --- the beable being a
+modulus is exactly what makes it immune to the phase anomaly.
+
+\begin{result}{Result 13 [SYN/OPEN].}
+In the semiclassical setting the Tomonaga--Schwinger integrability worry does \emph{not} kill the
+fifth route. Distinct-point integrability holds by renormalized microcausality
+($[\mathcal H(x),\mathcal H(y)]=0$, $x\neq y$); the coincidence Schwinger anomaly is an
+anti-Hermitian c-number --- a global phase cocycle on $\psi[\Sigma]$ --- which cancels in the
+Born-marginal beable. So the beable is integrable even when the state's phase is anomalous.
+Holds provided the $[\mathcal H,\mathcal H]$ anomaly is c-number (no anomalous operator terms
+beyond the classical deformation algebra; true for standard renormalizable QFT) and in the
+semiclassical setting. Defusing this obstruction is necessary, not sufficient: a rigorous
+construction gluing the per-foliation Barandes ISPs into one covariant object with consistent
+all-foliation Born marginals remains undone, and a subtler obstruction is not excluded.
+\end{result}
+
+\subsection{Honest status}
+This converts open problem 1 from an aspiration into a well-posed problem with a fifty-year
+literature, a known covariant structure (Euclidean--Markov), and a named obstruction. The
+free-field testbed settles the easy case --- relativistic ISP exists --- but through
+Gaussianity, not non-Markovianity. Every other candidate obstruction (conservation,
+Wigner-negativity, measure-existence, interacting-existence, Haag-existence) has been ruled out,
+localizing the residue to a manifestly-covariant, non-interaction-picture construction of the
+frame-dependently-existing interacting-field config-space ISP. No one --- Nelson,
+Guerra--Ruggiero, or Barandes --- has produced one. Realistically a decade-scale problem in
+mathematical physics, now stated correctly. \textbf{[OPEN]}
+
+\section{Epistemic status and route to acceptance}
+
+This paper, like the program, offers RISP \emph{no unique measurable prediction}: the relativistic
+sections reproduce the observables of QFT$+$GR, the one measurable deviation (the gravitational
+decoherence of the companion decoherence paper) is \emph{non-relativistic} ISP shared with the
+collapse-model family, and the genuinely relativistic content (the foliation-relative beable) is, by
+Result~12 and the unobservability argument, observationally hidden. It is worth stating plainly
+\emph{why} the relativistic construction is worth pursuing and \emph{how} such a theory could ever be
+accepted.
+
+\paragraph{The value is ontological unification, not unique prediction.} Ontologies are routinely
+adopted for explanatory scope and unification rather than by crucial experiments --- atomism before
+atoms were resolved, the reality of fields, of spacetime curvature. RISP's claim is of that kind: the
+coherent relativistic ontology that a confirmed ISP would generalize to. Its route to acceptance is
+inference-to-the-best-explanation, not a RISP-specific test --- a legitimate but non-empirical path,
+which we name as such.
+
+\paragraph{Three conditions, one of them binding.}
+\begin{enumerate}
+\item \textbf{ISP must be empirically confirmed} --- the optional non-unitary channel must exist, and
+the two-axis test must land in the ISP cell. Even then, what is confirmed is the \emph{class}
+``non-Markovian gravitational objective-collapse''; selecting Barandes' ISP within it is itself a
+coherence judgement.
+\item \textbf{RISP must exist as a constructed, coherent theory --- the binding condition.} One cannot
+generalize a confirmed ISP \emph{to} RISP if the covariant interacting beable dynamics (Sec.~\ref{sec:rsft})
+is not built. This paper cleared that construction's would-be-killers (Results~11--13) but did not build
+it. Far from lowering the burden, the acceptance route \emph{rests} on it: no construction, no ontology
+to generalize to.
+\item \textbf{RISP must win the ontology competition} --- against other relativistic completions
+(Tumulka's relativistic flash GRW, Bohmian QFT, the spacetime-from-entanglement program), on coherence
+and naturalness, since these are roughly empirically equivalent. RISP's case is that indivisibility is
+the \emph{confirmed} ISP feature and the foliation-relative beable its natural relativistic completion ---
+an argument to be made, not an automatic victory.
+\end{enumerate}
+
+\paragraph{The historical caveat.} Confirmation of a \emph{dynamics} underdetermines its \emph{ontology}.
+Quantum mechanics has been confirmed for a century and its ontology remains contested (Copenhagen, Bohm,
+Everett, collapse, ISP all coexist); the luminiferous aether was the ``natural'' ontology for confirmed
+wave optics and was wrong. So even a confirmed ISP may leave the relativistic ontology as unsettled as
+QM's interpretation is today; predicting that RISP \emph{would} be widely adopted is itself an overclaim.
+
+\paragraph{Program priorities.} (i)~Get ISP confirmed (the two-axis decoherence test); (ii)~\emph{build}
+RISP (complete the construction of Sec.~\ref{sec:rsft} --- the linchpin); (iii)~argue RISP's coherence
+against rival relativistic ontologies. If all three hold, RISP could become the accepted QFT$+$GR
+ontology by the unification route --- and it should be presented as inference-to-the-best-explanation,
+named as such, never as a crucial-experiment result. \textbf{[meta / epistemic]}
+
+\section{Conclusion}
+
+Non-conserved matter --- of which the indivisible beable is one instance --- can source classical
+gravity relativistically once one adopts unimodular gravity: the energy--momentum non-conservation
+that ordinarily obstructs the coupling is absorbed into a dynamical cosmological term, splitting
+into a mean part (dark-energy-like) and a fluctuating part (gravitational decoherence). This
+unimodular sourcing is Markovian-agnostic; making the \emph{source itself} a genuinely relativistic
+indivisible beable is the separate open problem investigated in Sec.~\ref{sec:rsft}. The framework reduces, in the Newtonian limit, to
+Di\'osi--Penrose / Tilloy--Di\'osi physics and to a falsifiable Gaussian-onset decoherence. Two
+quantitative questions are settled: the construction is a classical channel, predicting a negative
+BMV result (falsified by a positive one); and the cosmological term, while a genuine consequence
+of the unimodular mechanism, is quantitatively excluded as dark energy for Di\'osi--Penrose-type
+sourcing. The binding open problem is the covariance of the beable dynamics for a quantum field,
+which we dissect to a four-way no-free-lunch and a single manifestly-covariant non-interaction-picture
+construction.
+
+\begin{acknowledgments}
+The author thanks the developers of the open literature cited herein.
+\end{acknowledgments}
+
+\begin{thebibliography}{99}
+
+\bibitem{Barandes2023a} J.~A.~Barandes, \textit{The stochastic-quantum correspondence}, arXiv:2302.10778 (2023).
+\bibitem{Barandes2023b} J.~A.~Barandes, \textit{The stochastic-quantum theorem}, arXiv:2309.03085 (2023).
+\bibitem{Barandes2025} J.~A.~Barandes, \textit{Quantum systems as indivisible stochastic processes}, arXiv:2507.21192 (2025).
+\bibitem{Penrose1996} R.~Penrose, \textit{On gravity's role in quantum state reduction}, Gen.\ Relativ.\ Gravit.\ \textbf{28}, 581 (1996).
+\bibitem{Diosi1989} L.~Di\'osi, \textit{Models for universal reduction of macroscopic quantum fluctuations}, Phys.\ Rev.\ A \textbf{40}, 1165 (1989).
+\bibitem{TilloyDiosi2016} A.~Tilloy and L.~Di\'osi, \textit{Sourcing semiclassical gravity from spontaneously localized quantum matter}, Phys.\ Rev.\ D \textbf{93}, 024026 (2016); arXiv:1509.08705.
+\bibitem{Josset2017} T.~Josset, A.~Perez, and D.~Sudarsky, \textit{Dark energy from violation of energy conservation}, Phys.\ Rev.\ Lett.\ \textbf{118}, 021102 (2017); arXiv:1604.04183.
+\bibitem{HenneauxTeitelboim1989} M.~Henneaux and C.~Teitelboim, \textit{The cosmological constant and general covariance}, Phys.\ Lett.\ B \textbf{222}, 195 (1989).
+\bibitem{Unruh1989} W.~G.~Unruh, \textit{Unimodular theory of canonical quantum gravity}, Phys.\ Rev.\ D \textbf{40}, 1048 (1989).
+\bibitem{HuVerdaguer2008} B.~L.~Hu and E.~Verdaguer, \textit{Stochastic gravity: theory and applications}, Living Rev.\ Relativ.\ \textbf{11}, 3 (2008).
+\bibitem{KTM2014} D.~Kafri, J.~M.~Taylor, and G.~J.~Milburn, \textit{A classical channel model for gravitational decoherence}, New J.\ Phys.\ \textbf{16}, 065020 (2014); arXiv:1401.0946.
+\bibitem{Trillo2025} D.~Trillo and M.~Navascu\'es, \textit{The Di\'osi--Penrose model of classical gravity predicts gravitationally induced entanglement}, Phys.\ Rev.\ D \textbf{111}, L121101 (2025); arXiv:2411.02287.
+\bibitem{Collapse2025} \textit{Collapse-based models for gravity do not violate the entanglement-based witness of non-classicality}, arXiv:2503.19774 (2025) [response to \cite{Trillo2025}].
+\bibitem{Discord2022} \textit{Quantum correlations beyond entanglement in a classical-channel model of gravity}, arXiv:2205.15333 (2022). [authors to verify]
+\bibitem{Tumulka2006} R.~Tumulka, \textit{A relativistic version of the Ghirardi--Rimini--Weber model}, J.\ Stat.\ Phys.\ \textbf{125}, 821 (2006); arXiv:quant-ph/0406094.
+\bibitem{Tumulka2020} R.~Tumulka, \textit{A relativistic GRW flash process with interaction}, in \textit{Do Wave Functions Jump?} (Springer, 2021), p.~321; arXiv:2002.00482.
+\bibitem{MassCoupled2020} \textit{Mass-coupled relativistic spontaneous collapse models}, arXiv:2012.02627 (2020). [authors to verify]
+\bibitem{Gisin1989} N.~Gisin, \textit{Weinberg's non-linear quantum mechanics and supraluminal communications}, Phys.\ Lett.\ A \textbf{143}, 1 (1990).
+\bibitem{Nelson1973} E.~Nelson, \textit{Construction of quantum fields from Markoff fields}, J.\ Funct.\ Anal.\ \textbf{12}, 97 (1973).
+\bibitem{GuerraRuggiero1973} F.~Guerra and P.~Ruggiero, \textit{New interpretation of the Euclidean--Markov field in the framework of physical Minkowski space-time}, Phys.\ Rev.\ Lett.\ \textbf{31}, 1022 (1973).
+\bibitem{Hudson1974} R.~L.~Hudson, \textit{When is the Wigner quasi-probability density non-negative?}, Rep.\ Math.\ Phys.\ \textbf{6}, 249 (1974).
+\bibitem{GlimmJaffe1987} J.~Glimm and A.~Jaffe, \textit{Quantum Physics: A Functional Integral Point of View}, 2nd ed.\ (Springer, 1987).
+\bibitem{Coleman1975} S.~Coleman, \textit{Quantum sine-Gordon equation as the massive Thirring model}, Phys.\ Rev.\ D \textbf{11}, 2088 (1975).
+\bibitem{StreaterWightman1964} R.~F.~Streater and A.~S.~Wightman, \textit{PCT, Spin and Statistics, and All That} (Benjamin, 1964).
+\bibitem{Symanzik1981} K.~Symanzik, \textit{Schr\"odinger representation and Casimir effect in renormalizable quantum field theory}, Nucl.\ Phys.\ B \textbf{190}[FS3], 1 (1981).
+\bibitem{Nikolic2006} H.~Nikoli\'c, \textit{Covariant many-fingered time Bohmian interpretation of quantum field theory}, Phys.\ Lett.\ A \textbf{348}, 166 (2006); arXiv:hep-th/0501046.
+\bibitem{AharonovAlbert1980} Y.~Aharonov and D.~Z.~Albert, \textit{States and observables in relativistic quantum field theories}, Phys.\ Rev.\ D \textbf{21}, 3316 (1980); \textit{ibid.}\ \textbf{24}, 359 (1981).
+\bibitem{DurrEtAl2014} D.~D\"urr, S.~Goldstein, T.~Norsen, W.~Struyve, and N.~Zangh\`i, \textit{Can Bohmian mechanics be made relativistic?}, Proc.\ R.\ Soc.\ A \textbf{470}, 20130699 (2014); arXiv:1307.1714. [author list to verify]
+\bibitem{FenyesNelsonCov} M.~Davidson, \textit{Lorentz covariance of the generalized F\'enyes--Nelson stochastic model for the free scalar field}, arXiv:quant-ph/0211097. [details to verify]
+\bibitem{Bose2017} S.~Bose et al., \textit{Spin entanglement witness for quantum gravity}, Phys.\ Rev.\ Lett.\ \textbf{119}, 240401 (2017).
+\bibitem{Marletto2017} C.~Marletto and V.~Vedral, \textit{Gravitationally induced entanglement between two massive particles is sufficient evidence of quantum effects in gravity}, Phys.\ Rev.\ Lett.\ \textbf{119}, 240402 (2017).
+\bibitem{Donadi2021} S.~Donadi et al., \textit{Underground test of gravity-related wave function collapse}, Nat.\ Phys.\ \textbf{17}, 74 (2021).
+\bibitem{Bassi2013} A.~Bassi, K.~Lochan, S.~Satin, T.~P.~Singh, and H.~Ulbricht, \textit{Models of wave-function collapse, underlying theories, and experimental tests}, Rev.\ Mod.\ Phys.\ \textbf{85}, 471 (2013).
+
+\end{thebibliography}
+
+\end{document}

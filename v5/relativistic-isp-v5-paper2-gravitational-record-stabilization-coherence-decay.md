@@ -1754,3 +1754,289 @@ $$
 
 The remaining question is experimental, not internal: whether a laboratory
 can isolate this rate from ordinary decoherence channels.
+
+## 16. Beyond The Markovian Gate: Indivisibility And The Non-Exponential Onset
+
+Sections 11 and 15 close the GRS gate *conditionally on one assumption that is in
+direct tension with the defining property of an indivisible stochastic process*.
+This section isolates that assumption, drops it, and shows that doing so converts
+the paper's result from a relabeling of the Penrose-Diosi exponential into a
+distinct, falsifiable prediction.  Nothing here overturns the gate's structure;
+it identifies the exponential as the Markovian special case and derives the
+generic indivisible correction.
+
+### 16.1 The Hidden Assumption Is Divisibility
+
+The survival lemma (Section 11.5) used time multiplicativity:
+
+$$
+\boxed{
+S(E,T+U)=S(E,T)\,S(E,U).
+}
+$$
+
+This is the semigroup (Chapman-Kolmogorov) property: processing over the whole
+interval factorizes into independent processing over its parts.  That is the
+definition of a *divisible* (Markov) process.  But an indivisible stochastic
+process is defined by the opposite property:
+
+$$
+\boxed{
+\Gamma(t_2,t_0)\neq\Gamma(t_2,t_1)\,\Gamma(t_1,t_0).
+}
+$$
+
+The Cauchy functional equation only ever proves that a *memoryless multiplicative*
+survival is exponential.  Hence the exponential law, and with it the exact
+Penrose-Diosi rate, is the Markovian boundary case of the survival functional,
+not a consequence of indivisibility.
+
+### 16.2 The General Indivisible Survival Functional
+
+Drop multiplicativity; keep the mandatory conditions S(0,T)=1, S(E,0)=1, and
+monotonicity.  The model-independent decoherence functional is:
+
+$$
+\boxed{
+\ln{|C(T)|\over|C(0)|}
+=
+-\,{1\over2\hbar^2}
+\int_0^T\!\!\int_0^T
+K(t_1-t_2)\,dt_1\,dt_2,
+}
+$$
+
+where K is the autocorrelation of the gravitational record-mismatch energy, with
+fluctuation amplitude sigma_E and record-memory time tau_c.  Two limits bracket
+the behaviour:
+
+$$
+\boxed{
+\begin{array}{l|l}
+\hbox{Markov limit } (\tau_c\to0,\ K\propto\delta) & \Gamma(T)\propto T \;\Rightarrow\; \exp(-T/\tau_G)\ \ (\hbox{Section 11.5 / DP})\\
+\hbox{maximally indivisible } (\tau_c\to\infty) & \Gamma(T)=\tfrac12(\sigma_E T/\hbar)^2 \;\Rightarrow\; \hbox{Gaussian}
+\end{array}
+}
+$$
+
+The general case is Gaussian for T much less than tau_c, exponential for T much
+greater than tau_c, with a crossover at the record-memory time tau_c.
+
+### 16.3 The Committed Prediction
+
+For the natural reading in which the relative which-record amplitude is held
+coherently across a single indivisible transition (sigma_E of order E_G), the
+shape is fixed and the scale is the *same* tau_G as Penrose-Diosi:
+
+$$
+\boxed{
+C(T)=C(0)\,\exp\!\left[-\tfrac12\left(T/\tau_G\right)^2\right],
+\qquad
+\tau_G={\hbar\over E_G}.
+}
+$$
+
+Same gravitational threshold scale as DP; Gaussian functional form instead of
+exponential.
+
+### 16.4 The Fit-Free Discriminator
+
+At fixed E_G and fixed environmental budget, define the residual gravitational
+log-coherence L(T)=ln[V(T)/V_env(T)], where V_env is measured separately at
+E_G -> 0 (small separation).  The three hypotheses give:
+
+$$
+\boxed{
+\begin{array}{l|l|l}
+\hbox{hypothesis} & L(T) & \hbox{onset at }T=0\\
+\hline
+\hbox{ordinary QM} & 0 & \hbox{no gravitational channel}\\
+\hbox{DP / Markov} & -\,T/\tau_G & \hbox{finite slope (straight line)}\\
+\hbox{ISP / indivisible} & -\tfrac12(T/\tau_G)^2 & \hbox{zero slope (parabola tangent to axis)}
+\end{array}
+}
+$$
+
+The discriminator carries no fitted constant in its *shape*:
+
+$$
+\boxed{
+\hbox{straight line through origin = Markovian DP/CSL;}\quad
+\hbox{parabola tangent at origin = indivisible ISP.}
+}
+$$
+
+It is run by scanning the hold time T at fixed E_G in Experiment Classes A-D of
+Sections 5-8.
+
+### 16.5 Boundary And Non-Claims For Section 16
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{point} & \hbox{honest status}\\
+\hline
+\hbox{shape} & \hbox{the quadratic onset / Gaussian form is the robust, assumption-light content}\\
+\hbox{coefficient} & \hbox{whether }\tau_G^{Gauss}=\hbar/E_G\hbox{ exactly inherits DP's ansatz-dependence via }\sigma_E\\
+\hbox{uniqueness} & \hbox{a quadratic onset is the signature of non-Markovianity in general,}\\
+ & \hbox{shared by other non-Markovian collapse models and non-Markovian baths}\\
+\hbox{crossover} & \tau_c\hbox{ is a new scale ISP must supply; the pure Gaussian is the }\tau_c\to\infty\hbox{ limit}\\
+\hbox{relation to 11/15} & \hbox{Section 16 refines, not overturns: the closed gate's exponential is its Markov case}
+\end{array}
+}
+$$
+
+The decisive honesty, matching the corpus's own Bell-locality verdict: observing
+the quadratic onset would *falsify* strict Markovian DP/CSL and *confirm* a
+non-Markovian fundamental channel consistent with ISP, but it would not by itself
+single out ISP among non-Markovian models.  ISP gains a distinguishable signature
+against the strict exponential, not a unique fingerprint.
+
+### 16.6 Net Of Section 16
+
+$$
+\boxed{
+\hbox{Dropping the one assumption that contradicts indivisibility turns the result from}
+}
+$$
+$$
+\boxed{
+\hbox{"DP exponential, relabeled" into "Gaussian gravitational decoherence at the DP scale" -}
+}
+$$
+$$
+\boxed{
+\hbox{a falsifiable departure from both unitary QM (no decay) and Markovian DP/CSL (exponential),}
+}
+$$
+$$
+\boxed{
+\hbox{testable by onset shape in the platforms of Sections 5-8. (See code/viz_indivisible_decoherence.png.)}
+}
+$$
+
+## 17. The Record-Memory Time And The Spontaneous-Radiation Bound
+
+Section 16 left two questions open: what fixes the crossover time tau_c, and whether
+the non-exponential version survives the experiment that already excluded
+parameter-free Penrose-Diosi.  This section addresses both, and marks honestly
+where ISP fixes the answer and where it inherits an unsettled controversy.
+
+### 17.1 What Fixes tau_c: The Division-Event Spacing
+
+In the Barandes formalism a *division event* is a time at which the otherwise
+indivisible transition matrix momentarily factorizes,
+Gamma(t2,t0)=Gamma(t2,t1)Gamma(t1,t0); between division events the process is
+coherent and non-Markovian.  The record-memory time is therefore identified with
+the **mean spacing between division events** for the gravitational which-record
+channel:
+
+$$
+\boxed{
+\tau_c \;=\; \hbox{mean time between division events of the gravitational record channel.}
+}
+$$
+
+This gives an internally consistent fix, because in this paper the division event
+*is* the record stabilization.  The time to stabilize a record is exactly tau_G,
+so the memory time and the stabilization time coincide:
+
+$$
+\boxed{
+\tau_c \;\sim\; \tau_G \;=\; {\hbar\over E_G}
+\qquad(\hbox{division event = record stabilization}).
+}
+$$
+
+This is the principled choice, but ISP fixes tau_c only up to which physical scale
+governs the channel.  The available scales and their consequence:
+
+$$
+\boxed{
+\begin{array}{l|l|l}
+\hbox{candidate }\tau_c & \hbox{origin} & \hbox{consequence}\\
+\hline
+\hbar/E_G=\tau_G & \hbox{channel-intrinsic (division = stabilization)} & \hbox{Gaussian onset OBSERVABLE near }T\sim\tau_G\\
+(3/4\pi G\rho)^{1/2}=1/\omega_G & \hbox{gravitational dynamical time (density only)} & \hbox{order }10^3\,\hbox{s for rock: also observable}\\
+R/c & \hbox{light-crossing (microphysical floor)} & \hbox{order }10^{-15}\,\hbox{s: Markov, washes out to DP}
+\end{array}
+}
+$$
+
+The honest verdict: ISP forces the decay to be **non-exponential**, but pins tau_c
+only dimensionally.  The principled (division-event) and density-dynamical choices
+both land in the observable non-exponential window; only a fast microphysical floor
+(light-crossing, thermal) would Markovianize the channel back to the DP exponential.
+
+### 17.2 The Spontaneous-Radiation Bound
+
+The simplest (parameter-free) Penrose-Diosi model is **experimentally excluded**:
+Donadi, Piscicchia, Curceanu, Diosi, Laubenstein, Bassi (Nature Physics, 2020)
+searched underground at Gran Sasso for the spontaneous photon emission that
+collapse-driven charge diffusion would produce, saw none, and pushed the bound on
+the effective nuclear mass-density size about three orders of magnitude tighter.
+
+The natural hope is that the non-Markovian ISP channel evades this, because its
+noise is **quasi-static**: with tau_c of order seconds the spectral weight sits at
+1/tau_c of order 1 Hz, while the experiment probes X-ray frequencies of order
+10^19 Hz, and a direct-current-like noise carries no quanta able to create a keV
+photon (energy conservation):
+
+$$
+\boxed{
+{1/\tau_c \over \omega_{\mathrm{Xray}}} \;\sim\; {1\,\mathrm{Hz}\over 10^{19}\,\mathrm{Hz}} \;\sim\; 10^{-19}
+\quad\Longrightarrow\quad
+\hbox{negligible spectral weight at the probed frequency.}
+}
+$$
+
+But this is **not a free pass**, and honesty requires flagging an open controversy:
+
+$$
+\boxed{
+\begin{array}{c|l}
+\hbox{position} & \hbox{claim}\\
+\hline
+\hbox{energy-conservation (naive)} & \hbox{colored noise with no high-}\omega\hbox{ weight cannot emit keV photons: evades}\\
+\hbox{Adler-Bassi} & \hbox{emission rate is set by the ZERO-frequency }S(0)\hbox{, not }S(\omega_{\mathrm{Xray}});\\
+ & \hbox{a high-frequency cutoff then does NOT lower it: does not evade}\\
+\hbox{wave-packet / bounded noise} & \hbox{the extra term vanishes for normalizable states: evades again}
+\end{array}
+}
+$$
+
+The collapse-model literature has **not settled** whether genuinely colored noise
+escapes the spontaneous-radiation bound.  The ISP-Gaussian channel inherits exactly
+this open question; it is the same address occupied by colored / non-Markovian CSL.
+
+$$
+\boxed{
+\hbox{Status: the ISP-Gaussian version is PLAUSIBLY not excluded by Donadi 2020}
+}
+$$
+$$
+\boxed{
+\hbox{(its noise is quasi-DC), but settling that needs the open }S(0)\hbox{-vs-}S(\omega)\hbox{ question resolved.}
+}
+$$
+
+### 17.3 Net Of Section 17
+
+$$
+\boxed{
+\begin{array}{l|l}
+\hbox{question} & \hbox{answer}\\
+\hline
+\hbox{what fixes }\tau_c & \hbox{division-event spacing; }\tau_c\sim\tau_G\hbox{ by self-consistency; fixed only dimensionally}\\
+\hbox{radiation bound} & \hbox{DP white-noise excluded; ISP quasi-static noise plausibly evades, but contested}\\
+\hbox{clean discriminator} & \hbox{remains the interferometric onset shape of Section 16, not radiation}\\
+\hbox{consistency note} & \hbox{non-observation of collapse radiation mildly FAVORS large }\tau_c\hbox{ over the excluded Markov edge}
+\end{array}
+}
+$$
+
+The two results reinforce each other: the same large tau_c (quasi-static record
+memory) that produces the observable Gaussian onset of Section 16 is also the regime
+whose quasi-DC noise is least exposed to the spontaneous-radiation bound that killed
+the Markovian DP edge.  Both point to the interferometric onset-shape test as the
+decisive measurement.
