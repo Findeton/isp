@@ -1,9 +1,28 @@
-# Paper 4 (v6) - Sealed Record Events, Born Composition, and Record Gravity
+# Paper 4 (v6) - SHARD: Sealed Holonomy and Record Dynamics
+
+Author: Felix Robles Elvira
+
+Subtitle:
+
+```text
+Sealed record events, Born composition, and operative record gravity
+```
 
 ## 0. Thesis
 
-This paper states the v6 sealed-record ontology without relying on Paper 3's
-campaign history.
+This paper states **SHARD**, the v6 sealed-record ontology, without relying on
+Paper 3's campaign history.
+
+SHARD means:
+
+```text
+Sealed Holonomy And Record Dynamics.
+```
+
+The name is meant literally. The primitive objects are sealed finite record
+diamonds, their physical content is complete closed exchange holonomy, and
+their dynamics is an indivisible whole-history record law rather than a
+Markovian state-update rule.
 
 Relative to the v1-v5 papers, this is deliberately a change of primitive, not
 a simple summary. The earlier program starts from exact stochastic transition
@@ -30,6 +49,38 @@ transition. It is a sealed finite record diamond carrying an internal
 exchange-defect holonomy. A primitive objective event is a complete,
 count-symmetric idempotent readout of that holonomy.
 
+The status of the main claims is:
+
+```text
+Finite primitive event law:
+  derived inside one sealed diamond.
+
+Finite Born-composition law:
+  derived inside the retained-holonomy composition packet.
+
+Intrinsic division-event commitment:
+  derived from RN/KL evidence gluing and self-accounting.
+
+Cofinal and cover stability:
+  proved for the primitive RN/KL quotient ledger under admissible refinements
+  and admissible sealed-diamond cover changes.
+
+Operative finite record gravity:
+  derived as source/response/transport readouts of sealed record data.
+
+Full Hilbert-space Born theorem:
+  not claimed here.
+
+Full 3+1 continuum Einstein equation:
+  not claimed here.
+```
+
+Thus the paper is not claiming that ordinary quantum measurement theory or
+general relativity have been completely rederived. It claims something more
+specific: the sealed finite record ontology now has a non-Markovian,
+Barandes-aligned whole-history law that fixes its own event coefficients and
+supports finite Born composition and finite record-gravity readouts.
+
 The single-diamond law is:
 
 ```text
@@ -40,20 +91,22 @@ primitive law = KL holonomy content equals Fisher holonomy capacity.
 
 In formulas:
 
-```text
+```math
 E^2 = E;
-Var_mu(q_raw | E) = 0;
-E <-> 1-E under mu;
-q = 2E - 1;
-Pi_0 P_eta = mu;
-D(P_eta || mu) = Var_{P_eta}(q).
+{\rm Var}_{\mu_D}(q_{\rm raw}\mid E)=0;
+E \leftrightarrow 1-E\ {\rm under}\ \mu_D;
+q=2E-1;
+\Pi_0P_\eta=\mu_D;
+D(P_\eta\Vert\mu_D)={\rm Var}_{P_\eta}(q).
 ```
 
 This fixes the primitive one-diamond constants:
 
-```text
-eta_*   = 1.090344354879492;
-theta_* = 0.797003794162878;
+```math
+\eta_* = 1.090344354879492,
+\qquad
+\theta_* = 0.797003794162878,
+\qquad
 W_*=J_* = 0.364784952089976.
 ```
 
@@ -81,6 +134,25 @@ derived as a cellular coboundary of complete interface holonomy. This is a v6
 finite-cellular extension of the v1-v5 boundary-flux/seam-cancellation
 discipline, not a claim that v1-v5 already proved the general coboundary law
 at arbitrary continuum scope.
+
+The literature position is:
+
+```text
+Barandes / indivisible stochastic processes:
+  SHARD keeps the whole-history, non-Markovian stochastic-process discipline.
+
+Causal diamonds and entanglement first laws:
+  SHARD uses diamonds and RN/KL work, but the primitive is a finite record
+  process, not a continuum QFT vacuum modular Hamiltonian.
+
+Born-rule literature:
+  SHARD derives a finite quadratic composition law for retained holonomy, not
+  a general Gleason-style Hilbert-space theorem.
+
+Causal-set and discrete-gravity literature:
+  SHARD is discrete and causal-diamond-like, but the atom is not a causal-set
+  element; the atom is a sealed record diamond with a whole-history law.
+```
 
 ## 1. Sealed finite record diamond
 
@@ -5786,32 +5858,35 @@ partial_eta psi = tanh eta.
 
 The law becomes:
 
-```text
-tanh eta = exp(-eta).
+```math
+\tanh\eta=\exp(-\eta).
 ```
 
 The left side is the retained closed-holonomy memory; the right side is the
 no-division survival through the same RN cochain action. The equation has one
 positive solution because:
 
-```text
-d/deta [tanh eta - exp(-eta)]
-= sech^2 eta + exp(-eta) > 0.
+```math
+{d\over d\eta}\left(\tanh\eta-\exp(-\eta)\right)
+=
+{\rm sech}^2\eta+\exp(-\eta)>0.
 ```
 
 The selected coefficient is:
 
-```text
-eta_* = 0.6093778634360061,
-theta_* = tanh(eta_*) = exp(-eta_*) = 0.5436890126920763.
+```math
+\eta_* = 0.6093778634360061,
+\qquad
+\theta_*=\tanh\eta_*=\exp(-\eta_*)=0.5436890126920763.
 ```
 
 For a complete finite ledger, the same law is the Euler equation of a strictly
 convex commitment potential:
 
-```text
-Phi(h)=psi(h)+sum_j exp(-h_j),
-partial_j Phi(h)=partial_j psi(h)-exp(-h_j).
+```math
+\Phi(h)=\psi(h)+\sum_j \exp(-h_j),
+\qquad
+\partial_j\Phi(h)=\partial_j\psi(h)-\exp(-h_j).
 ```
 
 Since `psi` is convex and `sum_j exp(-h_j)` has positive diagonal curvature,
@@ -5835,15 +5910,15 @@ works in a coupled complete-history ledger.
 The dangerous normalization attack is the two-sided log-odds attack. In the
 parity family:
 
-```text
-log P(+)/P(-)=2 eta.
+```math
+\log {P(+)\over P(-)}=2\eta.
 ```
 
 If one incorrectly treats the full two-sided odds as one primitive commitment
 unit, the equation becomes:
 
-```text
-tanh eta = exp(-2 eta),
+```math
+\tanh\eta=\exp(-2\eta),
 ```
 
 and gives a different value:
@@ -5863,21 +5938,40 @@ So the intrinsic division-event commitment law is:
 ```text
 Evidence clock:
   I = additive sealed RN/KL record evidence.
+```
 
+```math
+S(I)=\exp(-I),
+\qquad
+P_D(I)=1-\exp(-I).
+```
+
+```text
 Eventless survival:
-  S(I)=exp(-I).
+  probability that no division has occurred after evidence I.
 
 Division probability:
-  P_D(I)=1-exp(-I).
+  probability that a division has occurred by evidence I.
+```
 
+```math
+\nabla\psi_G(h_G)=\exp(-h_G).
+```
+
+```text
 Closed-holonomy fixed point:
-  grad psi_G(h_G)=exp(-h_G)
   on the complete primitive oriented closed-history ledger.
+```
 
+```math
+P_G^{\rm hist}(\omega)
+=
+U_G(\omega)
+\exp\!\left(\langle h_G,\chi_G(\omega)\rangle-\psi_G(h_G)\right).
+```
+
+```text
 Whole-history law:
-  P_G^{hist}(omega)
-  =
-  U_G(omega) exp(<h_G,chi_G(omega)> - psi_G(h_G)),
   with h_G the unique solution of the commitment fixed point.
 ```
 
@@ -5896,7 +5990,7 @@ Two caveats remain, but they are no longer the old free-parameter caveats.
    self-accounting require the RN/KL clock.
 
 Under those two already-named structural gates, the division-event commitment
-law is no longer a shadow. It is the missing law:
+law is no longer a shadow. It is the missing finite commitment law:
 
 ```text
 division is Poisson in intrinsic RN/KL evidence,
@@ -6521,24 +6615,25 @@ Whole-history law selection:
   source/period origin, and positive non-divisibility still leave a
   one-parameter family of positive whole-history laws. Entropy selects the
   divisible vacuum, maximum memory runs to a boundary, and scalar selectors
-  miss future orientation. Thus P_G^{hist} itself is the remaining
-  indivisible process law.
+  miss future orientation. Thus those structural shadows alone do not select
+  P_G^{hist}; the later intrinsic commitment law is needed.
 
 V1-V5 law clue:
   exact finite slabs, exchange defects, projective path kernels, phase as
   stochastic holonomy, and non-Markovian survival all point to a
   closed-exchange whole-history RN/Gibbs law. This closes the schema, but not
-  the coefficient field h_G. Maximum caliber, entropy, memory, regularized
-  memory, Born-square readout, and onset-renormalized universality do not
-  select h_G.
+  by itself the coefficient field h_G. Maximum caliber, entropy, memory,
+  regularized memory, Born-square readout, and onset-renormalized universality
+  do not select h_G; the later RN/KL commitment law does.
 
 h_G field equation:
   source-free least action selects the divisible vacuum; supplied source
   response is branch B; self-source response is tautological; gluing is
   consistency; non-divisibility thresholds, self-induced memory, regularized
   memory, and quantized holonomy all require unsupplied constants; normalized
-  exchange brackets fix direction but not amplitude. Thus no tested invariant
-  field equation selects h_G.
+  exchange brackets fix direction but not amplitude. Thus no tested response
+  or consistency equation selects h_G; the successful selector is the later
+  division-event commitment law.
 
 Overlap/sheaf composition:
   nontrivial overlap consistency is necessary but not a selector. Path
@@ -6550,17 +6645,17 @@ Overlap/sheaf composition:
 
 Further v1-v5 audit:
   the older corpus points most strongly to same-law finite pressure and finite
-  value-generator technology. This gives the right next target: a cofinal
+  value-generator technology. This identifies the right target: a cofinal
   actual-law pressure whose derivatives are h_G, or a renewal/division-event
-  commitment law that fixes the closed-history coefficients. The corpus does
-  not yet supply that pressure, density table, action, or division law.
+  commitment law that fixes the closed-history coefficients. The paper's
+  later move is to make the commitment clock additive RN/KL evidence.
 
 Same-law pressure / division commitment:
   same-law pressure reconstructs h_G once P_G^{hist} is supplied. A
   self-consistent division-commitment equation can select a nonzero coefficient
   in the parity model, but only after the waiting-law shape and dimensionless
-  commitment scale are fixed. This is the strongest current branch-A route,
-  not closure.
+  commitment scale are fixed. This section is the last conditional gate before
+  the intrinsic RN/KL commitment law removes that freedom.
 
 Intrinsic division-event commitment:
   using additive RN/KL evidence as the sealed eventless clock, eventless gluing
@@ -6591,7 +6686,7 @@ Cover independence:
   coordinates, not primitive oriented RN/KL record units.
 ```
 
-The honest remaining target is therefore the full composition law:
+The audit chain is:
 
 ```text
 sealed diamond sequence
@@ -6634,7 +6729,63 @@ sealed diamond sequence
 -> cover independence under admissible sealed diamond decompositions.
 ```
 
-This paper establishes thirty-five anchors of that program:
+The current outputs are:
+
+```text
+1. Primitive event:
+   a complete count-symmetric idempotent modular proposition inside one sealed
+   diamond.
+
+2. Intrinsic coefficient law:
+   S(I)=exp(-I) in additive RN/KL evidence, with
+   grad psi_G(h_G)=exp(-h_G) on the primitive closed-history ledger.
+
+3. Whole-history law:
+   P_G^{hist}(omega)=mu_G(omega) exp(<h_G,chi_G(omega)>-psi_G(h_G)),
+   with h_G selected by the commitment fixed point.
+
+4. Refinement and cover stability:
+   h_G is stable under admissible projective refinements and admissible
+   diamond cover changes.
+
+5. Born role:
+   quadratic event weights are selected inside the retained-holonomy
+   composition packet. This is a finite Born-composition theorem, not a full
+   Hilbert-space measurement theorem.
+
+6. Gravity role:
+   finite source, response, connection, and transport readouts are derived
+   from sealed record data. This is operative finite record gravity, not yet
+   the full 3+1 continuum Einstein equation.
+```
+
+The next theorem targets are:
+
+```text
+Born representation theorem:
+  prove that the retained-holonomy amplitudes of SHARD represent arbitrary
+  finite quantum measurement contexts and coarse-grainings.
+
+Continuum gravity theorem:
+  prove that the cofinal screen/connection/source objects converge to a
+  Lorentzian 3+1 tensor equation with the correct Einstein coupling, or else
+  identify the distinct record-gravity continuum equation.
+
+Barandes equivalence theorem:
+  prove that SHARD's sealed whole-history laws are equivalent to, or a strict
+  finite-record realization of, the relevant indivisible stochastic processes.
+
+Empirical receipt theorem:
+  compute detector, interference, decoherence, and weak-gravity receipts from
+  the same P_G^{hist} without adding branch-B kernels or fitted constants.
+```
+
+The negative campaigns are retained only when they are falsifiers. They show
+which tempting shorter routes fail: scalar work, lower shadows, endpoint
+transports, source-only readouts, local sheaf gluing, arbitrary coordinate
+bases, and physical-time renewal laws.
+
+This paper establishes thirty-five anchors of the SHARD program:
 
 ```text
 1. the primitive event law;
@@ -6777,4 +6928,96 @@ This paper establishes thirty-five anchors of that program:
     while overlap double-counting, per-cell serial commitment, dropped
     vertical modes, and arbitrary mixed bases are rejected as non-admissible
     descriptions of the same sealed process.
+```
+
+## References and literature map
+
+The closest external literatures are listed here to make the scope of SHARD
+checkable. The references are not used as authority for the finite diagnostic
+claims above; those claims are carried by the stated finite definitions and
+scripts. The references name the surrounding mathematics and physics.
+
+**Indivisible stochastic processes and stochastic quantum theory.**
+
+- Jacob Barandes, "The Stochastic-Quantum Correspondence" / indivisible
+  stochastic process program. This is the closest conceptual ancestor: SHARD
+  keeps the whole-history, non-Markovian stochastic discipline rather than a
+  Markov state-update ontology.
+  See also Barandes' related papers on quantum systems as indivisible
+  stochastic processes. Reference entry point:
+  `https://arxiv.org/abs/2302.10778`.
+- E. T. Jaynes, maximum entropy and maximum caliber. These are useful
+  comparison principles, but SHARD's diagnostic campaigns explicitly show
+  where entropy/caliber reconstruct supplied constraints rather than selecting
+  the closed-history law.
+
+**Causal diamonds, modular energy, and gravity from information.**
+
+- T. Jacobson, "Thermodynamics of Spacetime" and "Entanglement Equilibrium
+  and the Einstein Equation." SHARD is similar in spirit because gravitational
+  response is tied to information/record work, but SHARD's primitive is a
+  finite sealed record process rather than a continuum local Rindler or vacuum
+  entanglement assumption. Reference entry points:
+  `https://arxiv.org/abs/gr-qc/9504004` and
+  `https://arxiv.org/abs/1505.04753`.
+- P. Bueno, V. S. Min, A. J. Speranza, and M. R. Visser, "Entanglement
+  equilibrium for higher order gravity" / causal-diamond first-law literature.
+  SHARD borrows the discipline of testing diamond-local first-law identities,
+  but not the continuum modular Hamiltonian as a primitive.
+- N. Lashkari, M. B. McDermott, and M. Van Raamsdonk, and also T. Faulkner,
+  M. Guica, T. Hartman, R. C. Myers, and M. Van Raamsdonk, on deriving
+  gravitational dynamics from entanglement first laws. SHARD's record-gravity
+  packet should be compared to these results, especially at the continuum
+  theorem target. Reference entry points:
+  `https://arxiv.org/abs/1308.3716` and
+  `https://arxiv.org/abs/1312.7856`.
+
+**Born rule and quantum probability.**
+
+- M. Born's statistical interpretation gives the target probability law.
+- A. M. Gleason's theorem is the classic Hilbert-space route from measures on
+  projectors to the Born rule. SHARD does not reproduce Gleason here; it
+  derives a finite quadratic retained-holonomy composition law and leaves the
+  Hilbert-space representation theorem as a next target. Reference entry
+  point:
+  `https://doi.org/10.1512/iumj.1957.6.560`.
+- W. H. Zurek's envariance program is another symmetry route to the Born
+  rule. SHARD's route is different: invariant screen transport selects the
+  exponent inside a sealed composition packet. Reference entry point:
+  `https://arxiv.org/abs/quant-ph/0405161`.
+
+**Causal sets and discrete gravity.**
+
+- L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, "Space-Time as a Causal
+  Set." SHARD is discrete and causal-diamond-like, but it does not take causal
+  order atoms as primitive. The primitive is a sealed finite record diamond
+  with a whole-history RN/KL law. Reference entry point:
+  `https://doi.org/10.1103/PhysRevLett.59.521`.
+- R. D. Sorkin and later causal-set reviews are relevant for comparing
+  covariant discreteness, order, and source/volume readouts.
+
+**Information geometry and RN/KL tools.**
+
+- T. M. Cover and J. A. Thomas, *Elements of Information Theory*, for KL
+  divergence, chain rules, and information-theoretic bookkeeping.
+- S. Amari, *Information Geometry and Its Applications*, for exponential
+  families, log-partition convexity, and Fisher geometry.
+- D. Petz and related quantum information literature on relative entropy,
+  sufficiency, and recovery are useful for a future noncommutative upgrade of
+  the finite RN/KL ledger.
+
+The immediate comparison tests for future work are:
+
+```text
+Barandes comparison:
+  identify SHARD's P_G^{hist} as a finite-record realization of an
+  indivisible stochastic process, or prove the mismatch.
+
+Born comparison:
+  represent arbitrary finite measurement contexts by retained holonomy
+  amplitudes and prove stable coarse-graining.
+
+Gravity comparison:
+  take the cofinal record-gravity limit and compare the resulting tensor law
+  with Jacobson / causal-diamond / entanglement-first-law derivations.
 ```
