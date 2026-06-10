@@ -1,5 +1,7 @@
 # Paper 7 (v6.4) - SHARD: The Kernel Frontier Campaign
 
+Author: Felix Robles Elvira
+
 Subtitle:
 
 ```text

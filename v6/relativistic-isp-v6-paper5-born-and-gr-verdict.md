@@ -1,5 +1,7 @@
 # Paper 5 (v6) - SHARD Born Rule and GR Verdict
 
+Author: Felix Robles Elvira
+
 Subtitle:
 
 ```text

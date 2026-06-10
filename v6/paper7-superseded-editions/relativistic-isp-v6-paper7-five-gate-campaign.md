@@ -1,5 +1,7 @@
 # Paper 7 (v6) - SHARD: The Five-Gate Campaign and the Cosmological Term
 
+Author: Felix Robles Elvira
+
 Subtitle:
 
 ```text
