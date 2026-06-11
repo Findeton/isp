@@ -4,6 +4,20 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **GRADING NOTE (2026-06-11, publishable-campaign review).**
+> Three scope clarifications, none changing results: (1) D4's
+> "univalence superselection DERIVED" is the Wick-Wightman-Wigner
+> argument (credited in Sec. 4) with axiom S converting
+> "unobservable" to "excluded"; the derivation's negative branch
+> (no record registers the relative sign) is verified WITHIN THE
+> STATED RECORD CLASS, and the claim carries that scope
+> (v6/publishable/paper-Vb, Sec. 2).  (2) "2m in Z from the
+> derived (1,3)" inherits P7's grading: the split (1,d) is
+> derived, d = 3 is a minimality input.  (3) The span{1, P}
+> commutant exclusion is a PAIR-EXCHANGE statement; the n-strand
+> DHR parastatistics exclusion is open and named
+> (v6/publishable/paper-Vb, Sec. 4).
+
 Subtitle:
 
 ```text

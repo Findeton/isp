@@ -1,5 +1,5 @@
 \documentclass[aps,prd,onecolumn,amsmath,amssymb,nofootinbib,superscriptaddress]{revtex4-2}
-% Preprint, not peer reviewed, version 2026-06-04.
+% Preprint, not peer reviewed.  Version 2026-06-11 (v2; v1 was 2026-06-04).
 
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -10,9 +10,10 @@
 Di\'osi--Penrose Exponential}
 
 \author{Felix Robles Elvira}
+\thanks{ORCID: 0009-0009-2017-4394.  Independent researcher.}
 \noaffiliation
 
-\date{\today}
+\date{Version of 11 June 2026 --- preprint, not peer reviewed}
 
 \begin{abstract}
 Gravitationally induced decoherence, in the Di\'osi--Penrose (DP) form, predicts that a spatial
@@ -149,8 +150,8 @@ C(T)=C(0)\,\exp(-T/\tau_G).
 \end{equation}
 It is instructive to see precisely which assumption produces the exponential. Write the survival
 factor $S(E_G,T)=|C(T)|/|C(0)|$. If one assumes (i) time multiplicativity $S(E_G,T+U)=S(E_G,T)\,
-S(E_G,U)$, (ii) additivity of independent cost channels $S(E_1+E_2,T)=S(E_1,T)\,S(E_2,T)$, and
-(iii) dependence only on the dimensionless action $a$, then the Cauchy functional equation forces
+S(E_G,U)$ and (ii) dependence only on the dimensionless action $a$ (additivity of independent cost
+channels then follows and need not be assumed separately), the Cauchy functional equation forces
 \begin{equation}
 S=\exp(-\kappa\,a)=\exp(-\kappa\,E_G T/\hbar),
 \end{equation}
@@ -292,6 +293,7 @@ The scale $\tau_c$ is then fixed self-consistently rather than dimensionally: a 
 decoherence, $\chi(\tau_c)\approx1$. With $\sigma_E\sim E_G$,
 \begin{equation}
 \chi(\tau_c)=\Big(\frac{\tau_c}{\tau_G}\Big)^2 e^{-1}=1 \;\Longrightarrow\; \tau_c\approx1.65\,\tau_G,
+\tag{closure}
 \end{equation}
 pinning the crossover to $\tau_G$ (see Sec.~\ref{sec:tauc} for the alternative candidate scales). This
 converts the two inputs of Secs.~\ref{subsec:model}--\ref{subsec:hierarchy}---the exponential kernel and
@@ -303,13 +305,19 @@ concrete and reproduces the kernel, but deriving it from the full configuration-
 process for a gravitationally-coupled system remains open. So this grounds the kernel one level
 deeper---in the division-event structure---without claiming a first-principles derivation.
 
+(One bookkeeping caveat on the closure: the renewal-reset process is a jump process, not jointly
+Gaussian, so the second-cumulant $\chi$ used in the closure is exact only to the same
+$O(10\%)$ non-Gaussian corrections quantified in the third-axis discussion; the fixed point
+$\tau_c \approx 1.65\,\tau_G$ inherits that accuracy, which is ample for its role as a scale
+estimate.)
+
 \paragraph{On the state-dependence this introduces.} Because $\tau_c\approx1.65\,\tau_G\propto1/E_G$,
 the record-memory time scales with the experimentally-chosen mass configuration. This is \emph{not} a
 dynamical backreaction or a Schr\"odinger--Newton nonlinearity: $\chi(\tau_c)\approx1$ is an algebraic
 self-consistency condition that fixes a parameter once $E_G$ is given, not a self-potential sourced by
 the wavefunction (the mean-field Schr\"odinger--Newton effect is a deterministic phase \emph{shift}
-with no decay---a separate entry in the Sec.~\ref{sec:disc} classification, already bounded by
-optomechanics~\cite{R24}). For a fixed preparation the dynamics is an ordinary \emph{linear} dephasing
+with no decay---a separate entry in the Sec.~\ref{sec:disc} classification, testable by the
+proposed optomechanical Schr\"odinger--Newton experiments~\cite{R24}). For a fixed preparation the dynamics is an ordinary \emph{linear} dephasing
 channel, and the $E_G$-dependence of $\tau_c$ is the same kind of state-dependence as the
 $E_G$-dependence of the decay \emph{rate} $1/\tau_G$ in standard DP/CSL. What differs is the
 bookkeeping: DP/CSL obtain that dependence as an \emph{emergent} matrix element of a master equation
@@ -326,7 +334,10 @@ its leading power in $T$, which is \emph{rate-robust}---it does not rely on an a
 fit. Prepare a spatial superposition with fixed gravitational mismatch $E_G$ and a fixed
 environmental budget $\Gamma_{\rm env}$, and measure the interferometric visibility $V(T)$. Define
 the residual gravitational log-coherence by subtracting the separately measured environmental
-contribution (e.g.\ by repeating at $E_G\to0$, i.e.\ negligible separation),
+contribution (cleanly, by the density lever below --- same size, shape and surface at lower bulk
+density; the cruder $E_G\to0$ small-separation control changes the environmental rate too, since
+$\Gamma_{\rm env}$ itself depends on $d$ below the environment's coherence wavelength, and is
+usable only with that $d$-dependence modeled out),
 \begin{equation}
 L(T)=\ln\frac{V(T)}{V_{\rm env}(T)}.
 \end{equation}
@@ -335,7 +346,7 @@ The three hypotheses give qualitatively distinct onsets:
 L(T)=
 \begin{cases}
 0, & \text{ordinary quantum mechanics (no fundamental channel),}\\[2pt]
--\,T/\tau_G, & \text{Markovian DP/CSL: finite initial slope (straight line),}\\[2pt]
+-\,T/\tau_G, & \text{Markovian collapse: finite initial slope (rate shown for DP; CSL's rate is set by $(\lambda, r_C)$),}\\[2pt]
 -\,\tfrac12(T/\tau_G)^2, & \text{indivisible ISP: zero initial slope (parabola tangent to axis).}
 \end{cases}
 \end{equation}
@@ -390,14 +401,17 @@ $x=T/\tau_G$ & $V_{\rm exp}$ & $V_{\rm Gauss}$ & $\Delta V$ \\
 \end{tabular}
 \end{table}
 
-A non-Markovian \emph{environment} produces the same quadratic onset~\cite{R16}, so curvature alone
+A non-Markovian \emph{environment} produces the same quadratic onset~\cite{R21,R22}, so curvature alone
 does not establish a gravitational origin---only the \emph{scaling} with $E_G$ does, and the
 discriminating power lies in knobs that move $E_G$ while leaving the environment fixed:
 \begin{itemize}
 \item \textbf{Density.} Gravitational decoherence scales as $E_G\propto\rho^2$ (harmonic
 $\propto\rho^2 R^3 d^2$, saturated $\propto\rho^2 R^5$), whereas gas-collision and blackbody
 decoherence depend on external geometry, surface, polarizability, pressure and temperature but are
-essentially \emph{blind to bulk mass density} at fixed external size~\cite{R16}. Comparing same-size,
+essentially \emph{blind to bulk mass density} at fixed external size~\cite{R16} (with one honest
+caveat: dielectric response correlates with density across real materials via Clausius--Mossotti, so
+the blackbody channel's $\rho$-blindness is approximate, and its discrimination leans on the
+internal-temperature knob below). Comparing same-size,
 same-shape particles of very different density isolates gravity by a $\rho^2$ law no environmental
 channel mimics.
 \item \textbf{Common-mode subtraction.} Run a high-$E_G$ and a low-$E_G$ configuration in the
@@ -424,8 +438,9 @@ $P$, $T$) that no single environmental source reproduces.
 \paragraph{A second axis: distinguishing ISP from the whole collapse-model family.} The onset shape
 separates ISP from any \emph{Markovian} collapse model, but several related theories must be told
 apart at once, and they are distinguished by \emph{two} axes---the onset shape and the scaling of the
-rate. (Both axes are plain, non-relativistic ISP: indivisibility supplies the onset, and the
-Newtonian self-energy $E_G$ supplies the scaling---the relativistic extension adds nothing here.)
+rate. (Both axes are plain, non-relativistic physics: indivisibility supplies the onset, and the
+\emph{inherited} DP scale --- ansatz (M2), not an ISP derivation --- supplies the $E_G$ scaling;
+the relativistic extension adds nothing here.)
 This cell---finite-memory gravitational decoherence---is reached by no Markovian or non-gravitational
 model (Table~\ref{tab:twoaxis}).
 
@@ -450,8 +465,8 @@ Markovian models (exponential vs Gaussian). \textbf{Axis 2 (rate scaling):} vary
 separation $d$, and geometry, and test whether the rate tracks the gravitational self-energy $E_G$
 (the Di\'osi--Penrose form, $\propto G$) or the CSL parameters ($\lambda,r_C$, with a fixed
 $\sim10^{-7}\,$m length scale and a different geometry dependence); the Schr\"odinger--Newton
-alternative appears instead as a deterministic frequency \emph{shift} with no decay, already bounded
-by optomechanics~\cite{R24}. A result in the (Gaussian onset) $\times$ (gravitational
+alternative appears instead as a deterministic frequency \emph{shift} with no decay, testable by
+the proposed optomechanical experiments~\cite{R24}. A result in the (Gaussian onset) $\times$ (gravitational
 $E_G$-scaling) cell supports the ISP-motivated non-Markovian gravitational hypothesis---without
 uniquely establishing ISP (see the limits below)---and simultaneously excludes Markovian DP
 (exponential), CSL/GRW (wrong scaling), Schr\"odinger--Newton (shift, not decay), and unitary QM (no
@@ -472,8 +487,10 @@ mismatch-energy distribution, $C(T)=\langle e^{i\delta E\,T/\hbar}\rangle$: a Ga
 reproduces the Gaussian onset, while a discrete, branch-selecting $\delta E$ produces non-Gaussian
 structure---up to coherence \emph{revivals} ($C(T)=\cos(\sigma_E T/\hbar)$ for $\delta E=\pm\sigma_E$),
 which no monotone $e^{-\chi}$ can produce. The effect is not parametrically small: at $T\sim\tau_G$ the
-leading correction is set by the excess kurtosis of $p(\delta E)$ ($\approx8\%$ of the onset exponent
-for a bimodal $\delta E$, growing as $p$ becomes more discrete), and it occupies the \emph{same}
+leading correction is set by the excess kurtosis of $p(\delta E)$ (for bimodal $\delta E=\pm\sigma_E$
+the quartic term is $x^4/12$ against the quadratic $x^2/2$: $17\%$ of the onset exponent at
+$x = \sigma_E T/\hbar = 1$, equivalently $\approx8\%$ of $\chi\approx1$ at the closure point ---
+both conventions stated since an earlier draft quoted only the second), and it occupies the \emph{same}
 observable window as the onset, washing out only in the white-noise limit. Since the discreteness of
 records is precisely the ISP content a continuum (Gaussian) theory lacks, a measured departure of
 $C(T)$ from the pure form $e^{-\chi(T)}$---a $T^4$ term, or non-monotonicity---is a \emph{positive}
@@ -568,7 +585,9 @@ whereas other physical scales are conceivable. The candidate scales and their co
 given in Table~\ref{tab:tauc}.
 
 Two considerations show the channel does not generically slide to the Markovian floor, and that
-$\tau_c\gtrsim\tau_G$ is \emph{forced} rather than chosen. First, \textbf{records are information-gated}:
+$\tau_c\gtrsim\tau_G$ is \emph{strongly motivated} rather than freely chosen (not forced: the
+information-gating premise below --- that record formation requires order-unity distinguishability ---
+is itself a hypothesis). First, \textbf{records are information-gated}:
 a division event is the gravitational field committing to a which-branch record, and no record can form
 before the branches are distinguishable---at the light-crossing time the accumulated distinguishability
 is $\chi(R/c)\sim(R/c\,\tau_G)^2\sim10^{-30}$, so there is nothing to record, and the record time is
@@ -582,9 +601,11 @@ DP-\emph{sized} at $\sigma_E\sim E_G$ forces $\tau_c\gtrsim\tau_G$: the onset cu
 unity at $T\sim\tau_G$ only if the crossover has not already turned the decay into its slow linear tail.
 
 The honest verdict is that \emph{finite memory} forces the decay away from a strict exponential---and
-indivisibility motivates the finite memory---with $\tau_c$ pinned to the gravitational scale three
-ways: by the Sec.~\ref{subsec:micro} fixed point, by information-gating, and by the demand for an
-observable DP-scale effect. The DP-Markovian limit is the unphysical $\sigma_E\to\infty$ corner. The
+indivisibility motivates the finite memory---with $\tau_c$ tied to the gravitational scale two
+ways: by the Sec.~\ref{subsec:micro} fixed point and by information-gating.  (A third consideration
+sometimes invoked---that an \emph{observable} DP-scale effect requires $\tau_c$ in the measurement
+window---is experimental-design reasoning, not physics: nature is not obliged to put $\tau_c$ in the
+observable window, and we do not count it as a pinning.) The DP-Markovian limit is the unphysical $\sigma_E\to\infty$ corner. The
 channel-intrinsic and gravitational-dynamical candidates both place the crossover within the observable
 window ($\tau_c$ of order seconds to hours for the masses in Sec.~\ref{sec:thresholds}), so the
 Gaussian onset is accessible.
@@ -634,8 +655,10 @@ the temporal cutoff suppresses keV emission by $(E_G/\hbar\omega_{\rm keV})^2\si
 white DP, the gravitational mismatch energy being the natural emission cutoff. This Lorentzian (rather
 than exponential) tail is the \emph{least}-suppressed case, forced by the cusp the discrete division
 events put in the kernel at the origin ($K'(0^+)=-\sigma_E^2/\tau_c$, for any waiting-time law); even
-this worst case is suppressed by $10^{-36}$, and the emission margin itself reads out the division
-microstructure of Sec.~\ref{subsec:micro}. In this sense the finite memory acts as a \emph{temporal}
+this worst case is suppressed by $10^{-36}$; with sharp lab-time resets the emission margin would
+read out the division microstructure of Sec.~\ref{subsec:micro}, though a covariant completion
+smooths the kernel's cusp on timescales $\lesssim R/c$ and weakens that readout while strengthening
+the suppression (see the Note added). In this sense the finite memory acts as a \emph{temporal}
 ultraviolet regulator: the band-limit $1/\tau_c$ curtails the high-frequency radiation that the flat
 white-noise spectrum would make divergent---the role the \emph{spatial} smearing $R_0$ plays for the
 static self-energy. The two regulators act on \emph{different} sectors and do not substitute for one
@@ -646,7 +669,12 @@ sometimes invoked for collapse models was shown to be a non-normalizable-state a
 for wave packets~\cite{R9,R10}.) The finite-memory channel thus inherits standard DP's consistency with
 the radiation and heating bounds---at worst identically, and at the keV frequencies actually searched,
 more comfortably---while changing only the \emph{onset shape} of the decoherence, not its magnitude or
-radiation phenomenology.
+radiation phenomenology.  (One extrapolation is used here and flagged: the bulk-matter emitters of the
+radiation searches carry no prepared superposition, while $\tau_c$ in this model is tied to the
+two-branch configuration of an interferometer --- the effective-description caveat of
+Sec.~\ref{subsec:micro}.  The conclusion is insensitive to this: \emph{any} $\tau_c$ far above
+attoseconds kills keV emission, and the zero-frequency heating bound is inherited at worst
+identically.)
 
 \section{Discussion: scope and limitations}\label{sec:limits}
 
@@ -666,6 +694,9 @@ with ISP, but would not by itself single out ISP among non-Markovian models.
 (Sec.~\ref{subsec:micro}) pins it to $\approx1.65\,\tau_G$ via the record-stabilization fixed point, but
 this rests on the renewal-reset ansatz, and Sec.~\ref{sec:tauc} lists other candidate scales that
 interpolate toward the Markovian limit.
+\item \textbf{The analysis is non-relativistic throughout.}  Kernels are correlated in laboratory
+time, energies are Newtonian, and the platforms are slow: nothing here claims Lorentz covariance,
+and the covariant completion of a finite-memory kernel is a separate problem (see the Note added).
 \item \textbf{The DP limit is the white-noise limit, not $\tau_c\to0$ at fixed amplitude.} At fixed
 $\sigma_E$ the $\tau_c\to0$ limit gives vanishing decoherence, not DP; the strict DP law requires
 holding the noise power $\sigma_E^2\,\tau_c$ fixed. The clean ``Gaussian onset at $\tau_G$ with a
@@ -700,6 +731,41 @@ decoherence, so the finite-memory channel inherits standard DP's consistency wit
 standard DP is the onset \emph{shape} alone---now grounded (Sec.~\ref{subsec:micro}) in the
 division-event structure of the indivisible process.
 
+
+\section*{Note added (11 June 2026)}
+
+After this paper was completed, companion work within the same
+program (manuscript in preparation: \emph{Interacting
+Tomonaga--Schwinger integrability of indivisible division-event
+dynamics}; archived with the program repository accompanying this
+deposit) examined the \emph{relativistic} completion of
+finite-memory collapse noise and reached two results that bear on,
+without modifying, the present analysis.  (i) A frame-fixed
+correlation time --- the form used here, $K(s)\propto e^{-|s|/\tau_c}$
+in laboratory time --- is not Lorentz-covariant; a covariant memory
+must correlate in the invariant interval, $K = f\bigl((x-y)^2\bigr)$,
+and finiteness of the induced energy production requires its
+spectrum to decay faster than any power (a quartic-exponential
+class $\hat f(q)\propto e^{-q^4/\beta^4}$ suffices), while
+Lorentzian/Ornstein--Uhlenbeck spectra remain ultraviolet-divergent
+relativistically.  (ii) This does not alter the present paper's results,
+whose scope is explicitly non-relativistic
+(Sec.~\ref{sec:limits}), with one qualification: a covariant
+$f\bigl((x-y)^2\bigr)$ restricted to a laboratory worldline is a
+smooth even function of the time lag, so it reproduces the
+exponential kernel used here only up to a covariant smoothing of
+the kernel's cusp at the origin on timescales $\lesssim R/c$ ---
+which leaves the onset-shape discriminator untouched (it is a
+property of the finite-memory \emph{class}, not of the kernel's
+detailed shape) and only \emph{strengthens} the high-frequency
+emission suppression of Sec.~\ref{sec:radiation}, while weakening
+that section's microstructure-readout remark, which we have
+qualified accordingly.  What the
+companion result adds is a sharpening at the program level: if the
+quadratic onset is observed, the covariant completion of the
+inferred memory is constrained to the smooth (faster-than-power-law)
+spectral class, not merely to ``coloured noise.''
+
 \begin{thebibliography}{99}
 
 \bibitem{R1} R. Penrose, \emph{On gravity's role in quantum state reduction}, Gen. Relativ. Gravit. \textbf{28}, 581 (1996).
@@ -714,7 +780,6 @@ division-event structure of the indivisible process.
 \bibitem{R10} M. Carlesso, L. Ferialdi, A. Bassi, \emph{Colored collapse models from the non-interferometric perspective}, Eur. Phys. J. D \textbf{72}, 159 (2018).
 \bibitem{R11} J. A. Barandes, \emph{The stochastic-quantum correspondence}, arXiv:2302.10778 (2023).
 \bibitem{R12} J. A. Barandes, \emph{The stochastic-quantum theorem}, arXiv:2309.03085 (2023).
-\bibitem{R13} E. Nelson, \emph{Derivation of the Schr\"odinger equation from Newtonian mechanics}, Phys. Rev. \textbf{150}, 1079 (1966).
 \bibitem{R14} W. H. Zurek, \emph{Decoherence, einselection, and the quantum origins of the classical}, Rev. Mod. Phys. \textbf{75}, 715 (2003).
 \bibitem{R15} H.-P. Breuer, F. Petruccione, \emph{The Theory of Open Quantum Systems} (Oxford University Press, 2002).
 \bibitem{R16} M. Arndt, K. Hornberger, \emph{Testing the limits of quantum mechanical superpositions}, Nat. Phys. \textbf{10}, 271 (2014).

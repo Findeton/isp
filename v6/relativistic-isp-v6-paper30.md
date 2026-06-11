@@ -4,6 +4,28 @@ Preprint, not peer reviewed, version 2026-06-11.
 
 Author: Felix Robles Elvira
 
+> **CORRECTION (2026-06-11, publishable-campaign hostile
+> review).**  Two errors in this paper were found by independent
+> referees of the publishable batch and verified here:
+> (1) **The d = 3 threshold claim is FALSE.**  Sections quoting
+> "001011 always-real at d = 3 ... complex first at d = 4" are
+> refuted by an exact-rational 3x3 PD counterexample (exact cubic
+> discriminant < 0; dominant complex pair |Im|/rho ~ 1;
+> certificate matrices and exact-arithmetic verification in
+> v6/publishable/paper-I, Section 5).  The table entry "0.2980"
+> for {001011, 001101} is a search lower bound only; the supremum
+> is ~1 already at d = 3.  Optimizer failure of exactly the kind
+> this paper itself warns about.  Theorems (ANT, exhaustion,
+> confinement) are unaffected.
+> (2) **The even-length palindromic-rotation criterion is
+> INVERTED** wherever stated: a palindromic rotation of an even
+> achiral necklace exists iff some reflection axis is EDGE-EDGE
+> (through two edge midpoints), not vertex-vertex (verified
+> exhaustively, 45/45 even achiral necklaces L <= 8; 0110
+> qualifies via its edge-edge axis; 0001 has a vertex-vertex axis
+> and no palindromic rotation).  Corrected statement:
+> v6/publishable/paper-II, Theorem 4.1(a).
+
 Subtitle:
 
 ```text

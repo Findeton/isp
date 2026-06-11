@@ -1,0 +1,616 @@
+# Reflection positivity and the obstruction to finite hidden-Markov realization
+
+**Author:** Felix Robles Elvira (ORCID: 0009-0009-2017-4394; independent researcher)
+
+**Status:** preprint, not peer reviewed, version 2026-06-11.
+
+## Abstract
+
+A stationary binary process is reflection-positive (RP) if the Gram
+matrices built from word probabilities by reflection through bonds
+($G[u,v] = p(\bar u \circ v)$, $\bar u$ the reversal) *and* through
+sites ($p(\bar u\,x\,v)$) are positive semidefinite — the discrete
+Osterwalder–Schrader structure, with the two reflections playing
+genuinely different roles.  We prove that RP processes are exactly
+those with a representation $p(x_1\cdots x_n) = \langle\omega,
+A_{x_1}\cdots A_{x_n}\omega\rangle$ with self-adjoint PSD letters
+summing to a contraction fixing $\omega$ — the POVM-type "quantum"
+realizations (site reflection is precisely what makes the letters
+positive) — and that within this class *reflection positivity is
+exhausted*: every reflected Gram is automatically PSD, so the entire
+content of the open realization problem resides in word positivity of
+the non-commutative form.  Our main structural results confine the
+known obstruction to classical (entrywise-nonnegative, hidden-Markov)
+realizability: (i) for every block $W$ whose cyclic word is achiral,
+the diagonal $p(W^n)$ is a Stieltjes moment sequence at palindromic
+phase *where such a phase exists* (odd length always; even length
+iff an edge–edge axis) and has real nonnegative poles at every
+phase, hence is
+positively realizable by the dominant-pole criterion; consequently any
+irrational-rotation ("clock") obstruction must live on *chiral* blocks
+of length $\ge 6$; (ii) for the minimal dangerous configuration — a
+coupled spectral triple $\{\rho, \rho e^{\pm i\theta}\}$ on a chiral
+block — all constraints from the block–reversed-block word algebra
+reduce, exactly and $\theta$-freely, to torus-positivity conditions on
+a six-parameter reduced datum, and the *normal point* of that datum
+satisfies every such condition at every coupling ratio $r < 1$ (the
+supremum $r = 1$ is approached but not attained), so no exclusion
+argument can be carried by the block algebra alone; (iii) we reduce
+the remaining conjecture, *for rank-three blocks* (the higher-rank
+case needs a named strengthening stated in Section 6),
+to two sharp finite-dimensional statements — "normal words in two PSD
+letters have real spectrum" and "all-depth torus feasibility is
+isolated at the normal point" — and supply quantitative evidence
+including a two-walls separation: letter-realizable near-triples live
+at Gram distance $\ge 0.50$ from normality while deep-torus-feasible
+data live at $\le 0.15$.  An explicit three-dimensional reversible
+process whose diagonal oscillates on its decay circle (a "clock")
+shows the finite-rank realization question has genuine content; the
+clock provably fails reflection positivity.
+
+## 1. Introduction
+
+**The realization problem.**  When is a stationary process a function
+of a finite-state Markov chain?  The question is classical
+(Dharmadhikari [1]; Heller's cone-theoretic characterization [2]) and
+hard: finite Hankel rank — the existence of a finite-dimensional
+*quasi-realization* $p(w) = \pi M_{x_1}\cdots M_{x_n}\mathbf 1$ with
+sign-indefinite data — does not suffice.  The obstruction is
+spectral: Anderson-type positive-realization theory [3, 4] shows a
+diagonal sequence with a unique positive dominant pole is positively
+realizable, while an irrational rotation on the decay circle
+($h(n) = \rho^n(a + b\cos(n\theta + \varphi))$, $\theta/\pi$
+irrational) admits no finite positive realization at any dimension.
+We call a process exhibiting this on some block diagonal a
+**clock**.  Clocks exist: Section 3 presents a rank-three,
+*reversible*, fully valid example, certified analytically.
+
+**Reflection positivity.**  Bond-RP — positivity of the
+reversal-pairing Grams — is the probabilistic shadow of
+Osterwalder–Schrader positivity and of the transfer-matrix
+self-adjointness of equilibrium statistical mechanics [5].  The
+conjecture animating this paper, suggested by positive experience
+with reflection-positive systems:
+
+> **Conjecture (RP-realization).**  Reflection positivity (the
+> bond-plus-site conjunction of Definition 2.0) plus finite Hankel
+> rank implies a finite positive (hidden-Markov) realization.
+
+Equivalently: *no clock hides inside a reflection-positive process.*
+The clock of Section 3 fails RP, consistent with the conjecture; the
+question is whether that is a theorem.
+
+**Results.**  Section 2 proves the representation theorem (bond-RP
+$\iff$ POVM form) and an exhaustion principle: within the form, all
+reflected Grams are *automatically* PSD — receipts include an
+engineered process with negative word probabilities whose reflected
+Grams are PSD to machine precision — so reflection contributes
+nothing beyond the form, and word positivity carries the entire
+problem.  Section 4 proves the confinement theorems via the
+companion paper's achiral-necklace theorem: achiral-block diagonals
+have exact Stieltjes structure at palindromic phase, real nonnegative
+poles at every phase, and are positively realizable; clocks are
+confined to chiral blocks of length $\ge 6$.  Section 5 analyzes the
+minimal dangerous configuration through an exact *peripheral
+reduction* and proves the *normal escape*: the block–reversed-block
+constraint tower is satisfiable at full coupling by normal-block
+data, closing every exclusion route that stays inside that algebra.  Section 6
+states the resulting two-conjecture reduction and the evidence,
+including walls measured by three independent searches and a
+two-coordinate "pinch" showing the letter-realizable and
+torus-feasible regions are disjoint at every budget reached.
+Section 7 discusses the assembly problem and literature.
+
+## 2. The representation theorem and the exhaustion of reflection
+
+**Definition 2.0 (reflection positivity, airtight).**  A stationary
+process $p$ on $\{0,1\}^{\mathbb Z}$ is *reversible* if
+$p(\bar w) = p(w)$ for every word ($\bar w$ the reversal).  It is
+**bond-RP** if for every finite family of words $\{u_i\}$ the matrix
+$G[u_i, u_j] = p(\bar u_i \circ u_j)$ is PSD — where PSD is taken
+in the convention that *includes symmetry of the matrix*, so
+reversibility ($p(\bar w) = p(w)$: take one word empty) is built
+into bond-RP by that convention rather than derived; we state
+reversibility separately in the definition for transparency.  (An
+earlier draft claimed reversibility follows "by polarization"; under
+the quadratic-form-only reading of PSD, polarization constrains only
+the symmetric part, so that claim is withdrawn and the convention is
+now explicit.)  It is **site-RP** if for
+every finite family and every letter $x$ the matrix
+$p(\bar u_i \, x \, u_j)$ is PSD.  We call $p$ **RP** if it is both
+bond- and site-RP — the conjunction is the discrete
+Osterwalder–Schrader structure (reflections through bonds *and*
+through sites), and the two are genuinely different conditions
+(Section 2's theorem and remark make the division of labor
+precise).
+
+**Theorem 2.1 (RP form).**  A stationary process $p$ is RP
+(Definition 2.0) iff there exist a Hilbert space, a *unit* vector
+$\omega$, and self-adjoint operators $A_0, A_1 \succeq 0$ with
+$T = A_0 + A_1 \preceq \mathbf 1$, $T\omega = \omega$, such that
+$p(x_1\cdots x_n) = \langle\omega, A_{x_1}\cdots A_{x_n}\omega\rangle$.
+If the Hankel rank is finite the space may be taken
+finite-dimensional.
+
+*Proof.*  ($\Leftarrow$)  With $B_w = A_{x_1}\cdots A_{x_n}$,
+self-adjointness gives $B_{\bar w} = B_w^{\dagger}$, so the bond
+Gram is $\langle B_{u_i}\omega, B_{u_j}\omega\rangle$ and the site
+matrix is $\langle B_{u_i}\omega, A_x B_{u_j}\omega\rangle$ — PSD
+since $A_x \succeq 0$.  ($\Rightarrow$)  GNS/OS construction at a
+bond, run *at the level of forms on the free word span first*,
+with operators descending only afterwards (an earlier draft
+quotiented first and used the contraction bound before proving it;
+that order is circular and is repaired here).  On the free vector
+space spanned by words define the sesquilinear form
+$\langle u, v\rangle := p(\bar u \circ v)$ (PSD by bond-RP;
+$\langle\varnothing,\varnothing\rangle = p(\varnothing) = 1$, so
+the vacuum is normalized) and the *prepend* maps
+$S_x[v] = [x v]$.  **The letter must be prepended, not appended**:
+appending gives $\langle u, [v x]\rangle = p(\bar u\, v\, x)$, with
+the letter at the far end where site-RP says nothing — a false
+display in an earlier draft, twice caught in review and corrected
+here.  Prepending gives
+$\langle u, S_x v\rangle = p(\bar u\, x\, v)$, which by site-RP is
+a PSD form in $(u, v)$, and symmetric by reversibility
+($p(\bar u x v) = p(\bar v x u)$).  Form inequalities, all on the
+free span: (i) $0 \le \langle v, S_x v\rangle$ and
+$\sum_x \langle v, S_x v\rangle = \langle v, T v\rangle$ with
+$T := S_0 + S_1$; (ii) for $\xi = \sum_i c_i [u_i]$, the quantity
+$F(k) := \langle\xi, T^k\xi\rangle = \sum_{i,j}\bar c_i c_j
+\sum_{|w| = k} p(\bar u_i\, w\, u_j)$ satisfies the uniform bound
+$F(k) \le \sum_{i,j}|c_i||c_j|$ (sums of word probabilities are
+$\le 1$) and the reflection Cauchy–Schwarz $F(k)^2 \le
+F(0)\,F(2k)$; iterating, $F(1) \le F(0)^{1 - 2^{-k}}
+F(2^k)^{2^{-k}} \to F(0)$, so $0 \le \langle\xi, T\xi\rangle \le
+\langle\xi, \xi\rangle$ as forms, and $0 \le \langle\xi, S_x\xi
+\rangle \le \langle\xi, T\xi\rangle$ likewise.  These bounds imply
+$S_x$ and $T$ annihilate null vectors of the form, hence descend to
+well-defined bounded self-adjoint operators $A_x, T$ on the
+quotient completion $\mathcal H$ with $0 \preceq A_x \preceq T
+\preceq \mathbf 1$ (in infinite dimensions, boundedness of the
+quotient operators is exactly what the form bounds provide, in the
+manner of Klein–Landau [6]).  Iterating the display,
+$\langle\omega, A_{x_1}\cdots A_{x_n}\omega\rangle =
+p(x_1\cdots x_n)$ with $\omega$ the class of the empty word;
+$T\omega = \omega$ is stationarity ($\sum_x p(xw) = p(w)$).  Finite
+Hankel rank bounds $\dim\mathcal H$ by the rank of the bond Gram.
+$\square$
+
+*Remark (what each reflection buys).*  Bond-RP alone builds the
+space and the Gram; **site-RP is exactly what makes the letters
+positive operators** — the two hypotheses are not interchangeable,
+and the conjunction is the honest name of the class this paper
+studies.  (An earlier draft derived $A_x \succeq 0$ from bond-RP
+"at a shifted bond"; that argument conflates the two reflections
+and is withdrawn.)
+
+Thus RP processes are exactly the POVM-*type* representable
+stationary
+processes (the letters are PSD but sum to a contraction
+$T \preceq \mathbf 1$, not to $\mathbf 1$ — the qualifier is kept
+deliberately): the realization conjecture asks when
+quantum-representable
+processes are secretly classical — a quantum-vs-classical boundary
+for stationary processes, related to but distinct from the hidden
+quantum Markov model literature [7] and to finitely correlated
+states [9], whose generating structure is the operator form above
+with the positivity demanded of the *map* rather than the letters.
+
+**Proposition 2.2 (exhaustion).**  For any data as in Theorem 2.1 —
+*with or without* word positivity — every reflected Gram is PSD.
+
+*Proof.*  The display above never used positivity of $p$.  $\square$
+
+Receipt: an engineered datum with $\min_w p(w) = -4.6\times 10^{-3}$
+(word scan to length 10) has reflected Grams PSD at
+$-1.8\times 10^{-17}$.  Consequence: *reflection is spent*.  All
+remaining force of the conjecture is the non-automatic requirement
+$\langle\omega, A_{x_1}\cdots A_{x_n}\omega\rangle \ge 0$ for
+non-commuting PSD factors.  We also document a trap this exposes: an
+apparent one-line proof of block-moment positivity via mismatched
+Gram families produces only the off-diagonal block of an
+automatically-PSD matrix, hence nothing.
+
+**A genericity observation.**  For the natural construction (random
+PSD letters, $\omega$ the Perron vector of $T$), word positivity
+held in $160/161$ random draws across two studies; invalid instances
+had to be engineered by optimization.  Why the Perron state aligns so
+strongly with validity is open and flagged.
+
+## 3. The clock, and that it fails RP
+
+**Example 3.1 (the clock, fully specified).**  A renewal-type
+quasi-realization on $\mathbb R^3$ [8]:
+
+$$
+\tau_1 = \tfrac12\begin{pmatrix} R(1) & 0\\ 0 & 1\end{pmatrix},
+\qquad
+\tau_0 = q\,r^{\mathsf T},\quad
+q = \mathbf 1 - \tau_1\mathbf 1 =
+\begin{pmatrix}1.150584\\ 0.309113\\ 0.5\end{pmatrix},\quad
+r = \begin{pmatrix}0.07\\ 0\\ 0.93\end{pmatrix},
+$$
+
+with $R(1)$ rotation by $1$ radian; $p(w) = \pi\,\tau_{x_1}\cdots
+\tau_{x_n}\mathbf 1$ with $\pi = (0.038079, -0.021951, 0.983872)$
+the stationary functional ($\pi\tau = \pi$, $\tau\mathbf 1 =
+\mathbf 1$, $\tau = \tau_0 + \tau_1$).  **Validity is proved to all
+orders in closed form**: because $\tau_0 = q r^{\mathsf T}$ has rank
+one, every word value factorizes over the runs of $1$s,
+
+$$
+p(1^{a_0}0\,1^{a_1}0\cdots 0\,1^{a_k})
+= \bigl(\pi\tau_1^{a_0}q\bigr)
+  \prod_{i=1}^{k-1}\bigl(r^{\mathsf T}\tau_1^{a_i}q\bigr)
+  \cdot\bigl(r^{\mathsf T}\tau_1^{a_k}\mathbf 1\bigr),
+$$
+
+so validity is equivalent to nonnegativity of four scalar families
+of the form $\kappa^a(A + B\cos(a + \varphi))$ — the display shows
+single-$0$ separators, but the factorization covers *all* words:
+run exponents $a_i = 0$ are allowed (consecutive zeros), the
+corresponding factor being $r^{\mathsf T} q = 0.5455 > 0$ — each
+family certified by
+its closed-form margin $A - |B| > 0$:
+
+```text
+   family            A          |B|        margin A - |B|
+   r  tau1^a q     0.465000   0.083397      0.381603
+   pi tau1^a q     0.491936   0.052365      0.439571
+   r  tau1^a 1     0.930000   0.098995      0.831005
+   pi tau1^a 1     0.983872   0.062159      0.921714
+```
+
+The process is reversible, has Hankel rank exactly $3$, and its
+diagonal is
+
+$$
+p(1^n) = (1/2)^{n}\bigl(0.98387 + 0.06216\cos(n + \varphi)\bigr),
+$$
+
+an oscillation at one radian per step — irrational in turns — on
+the decay circle: by the obstruction theory for nonnegatively
+realizable sequences (the Berstel–Soittola theory; we cite the
+$\mathbb R_+$-rational version our application needs
+[10], not only the $\mathbb N$-rational
+statement: dominant singularities are the radius times roots of
+unity), **no finite positive realization exists at any dimension**.
+Functions of finite Markov chains are therefore a *strict* subclass
+of valid reversible finite-rank processes.
+
+**Proposition 3.2.**  The clock is not RP: the $15$-word reflected
+Gram over all words of length $\le 3$ has minimum eigenvalue
+$-1.06\times 10^{-2}$ (entries are finite products of the displayed
+rational-and-$R(1)$ data, so this is checkable to any precision;
+the negativity exceeds any conceivable rounding by ten orders), and
+the offset diagonal Hankel fails the moment test that Theorem 4.1
+imposes on RP processes — consistent with the oscillating diagonal,
+which no moment sequence can produce.
+
+This is the conjecture's first nontrivial confirmation: the unique
+known obstruction mechanism is incompatible with RP at the
+single-letter level.  The remainder of the paper is about *block*
+diagonals, where the question is genuinely open.
+
+## 4. Confinement: clocks need chiral blocks
+
+The companion paper proves: a word whose cyclic class is achiral
+factors (through a rotation) into two palindromes, hence its block
+operator is a product of two PSD matrices with real nonnegative
+spectrum, at every dimension.  Applied to processes:
+
+**Theorem 4.1.**  Let $p$ be valid with the RP form (real form:
+real symmetric letters, real $\omega$ — available whenever $p$ is
+real, by realification), $W$ a block whose necklace is achiral.
+Then:
+(a) *if the necklace contains a palindromic rotation* $W'$ (always
+true for odd $|W|$ — the reflection axis passes through a vertex —
+and for even $|W|$ exactly when some reflection axis is
+**edge–edge**, i.e. passes through two edge midpoints; e.g. $0110$
+qualifies (edge–edge axis only), while $01$ and $0001$ do not
+(vertex–vertex axes only)).  An earlier draft stated the even-length
+criterion as "vertex–vertex" — that is exactly inverted, as the
+draft's own examples already betrayed, and we verified the
+corrected criterion exhaustively over all even achiral necklaces of
+length $\le 8$ ($45/45$, fixed-seed receipt).  At such a phase the
+diagonal
+$h(n) = p(W'^n)$ is an exact Stieltjes moment
+sequence ($B_{W'} \succeq 0$ and the spectral theorem);
+(b) at **every** phase of **every** achiral necklace — including
+those with no palindromic rotation, like $01$ — and for $n$ above
+the nilpotency index at $0$:
+$h(n) = \sum_k c_k\lambda_k^{\,n-1}$ with $\lambda_k \ge 0$ and
+real $c_k$ (exponent convention: $n - 1$ because $h(n) =
+\langle\omega', B_W^{\,n-1} B_W\,\omega\rangle$ groups one block
+with the boundary vectors; purely a normalization, stated to
+prevent an off-by-one reading) — the two-palindrome factorization
+makes $B_W$ a product
+of two PSD operators: real nonnegative spectrum, semisimple off
+zero — no oscillatory component;
+(c) $h$ admits a finite positive realization.  The hypotheses of
+the dominant-pole sufficiency of positive-realization theory
+[3, 4] are matched explicitly: (i) *unique simple dominant pole* —
+the largest $\lambda_k$ with nonzero residue; if two $\lambda_k$
+tie they merge into one residue, and ties cannot produce
+oscillation since all poles are nonnegative real; (ii) *positive
+dominant residue* — forced by validity ($h(n) \ge 0$ with
+$h(n)/\lambda_{\max}^{\,n-1} \to c_{\max}$); (iii) *degenerate
+cases*: if $h$ is eventually zero it is finitely supported and
+realized by a delay line outright; if every coupled residue
+vanishes, the effective dominant pole is the largest $\lambda$
+surviving in $h$, and (i)–(ii) apply to it.  (iv) *Absorbability
+lemma for the transient part*: the nilpotent component contributes
+finitely many initial terms $h(1), \ldots, h(\nu)$ — nonnegative by
+validity.  Let $(A, b, c)$ be the entrywise-nonnegative realization
+of the tail supplied by (i)–(iii), $h(\nu + k) = c^{\mathsf T}
+A^{k-1} b$ for $k \ge 1$.  The assembled system, displayed (on
+$\mathbb R^\nu \oplus \mathbb R^m$, with $S$ the $\nu$-stage shift
+$S_{k+1,k} = 1$ and $e_k$ coordinate vectors):
+
+$$
+x_{n+1} = \begin{pmatrix} S & 0 \\ b\,e_\nu^{\mathsf T} & A
+\end{pmatrix} x_n, \qquad
+y_n = \bigl(h(1), \ldots, h(\nu),\, c\bigr)^{\mathsf T} x_n,
+\qquad x_1 = (e_1, 0),
+$$
+
+realizes $h$ exactly: for $n \le \nu$ the state is $(e_n, 0)$ and
+$y_n = h(n)$; at step $\nu$ the delay exit injects $b$ through the
+rank-one corner block, so $y_{\nu+k} = c^{\mathsf T} A^{k-1} b =
+h(\nu + k)$.  Every entry of the assembled matrices and the
+initial state is nonnegative, with no rescaling step (an earlier
+draft invoked an undefined "first-passage normalization" here;
+this displayed block system replaces it and is the justification
+of "absorbable").
+
+**Corollary 4.2 (confinement).**  Any clock obstruction in a valid
+RP process lives on a chiral-necklace block; the smallest chiral
+classes have length six.
+
+Receipts: Hankel matrices of palindromic-phase diagonals PSD at
+$-1.3\times 10^{-16}$ across 40 verified-valid processes; rotated
+phases show real poles ($|\mathrm{Im}| = 0$) with genuinely signed
+residues (to $-0.5$).
+
+## 5. The chiral core: reduction and the normal escape
+
+### 5.1 The minimal dangerous configuration and its exact reduction
+
+A coupled complex pair strictly *above* the coupled real spectrum
+violates diagonal positivity outright (equidistribution makes the
+cosine dominate), so the minimal threat is the **coupled triple**:
+top coupled spectrum $\{\rho, \rho e^{\pm i\theta}\}$,
+$\theta/2\pi$ irrational, semisimple.  (The spectral data $G, H,
+\beta, \alpha$ used throughout are defined once, in Theorem 5.1.)
+
+**Theorem 5.1 (peripheral reduction, with the formulas).**  Write
+the triple's spectral data with right/left eigenvectors $R_s, L_s$
+($L^\dagger R = \mathbf 1$, $s \in \{0, +, -\}$), and set
+$G = L^\dagger L$, $H = G^{-1} = R^\dagger R$,
+$\beta_s = L_s^\dagger\omega$, $\alpha = G^{-1}\beta$,
+$D(x) = \mathrm{diag}(1, e^{ix}, e^{-ix})$.  Then for any
+alternating word $W^{a_1}\widetilde W^{b_1}W^{a_2}\cdots$ (at rank
+3 exactly; at higher rank in the peripheral limit along exponent
+subsequences, with subperipheral corrections $o(\rho^{\Sigma})$):
+
+$$
+\rho^{-\Sigma}\,p\bigl(W^{a_1}\widetilde W^{b_1}\cdots\bigr)
+= \bigl(D(a_1\theta)\,\bar\alpha\bigr)^{\mathsf T} G\,
+  D(-b_1\theta)\,H\,D(a_2\theta)\,G\cdots(\text{final }\alpha
+  \text{ or }\beta\text{ by parity}).
+$$
+
+Validity at all exponents plus Weyl equidistribution of
+$(a_j\theta, b_j\theta)$ forces these trigonometric forms to be
+nonnegative on the whole torus — a $\theta$-free system of
+conditions on the reduced datum $(G, \beta)$ alone (six real
+parameters in the gauge $G_{00} = G_{++} = G_{--} = 1$, $G_{0+}$
+real).  *Proof of the display*: insert the spectral resolution
+$\mathbf 1 = \sum_s R_s L_s^\dagger + (\text{subperipheral})$
+between consecutive segments; each block power contributes
+$D(a\theta)$ on the peripheral part, each segment boundary
+contributes $G$ or $H$ by $L^\dagger R$-biorthogonality, and the
+subperipheral terms are $o(\rho^\Sigma)$ along the stated
+subsequences with *fixed segment count* — the equidistribution
+argument is applied per fixed chain shape, with uniformity of the
+correction in the exponents of that shape (the scope sentence an
+earlier draft omitted).  The numerical validation at
+$1.1\times 10^{-11}$ over three- and four-segment
+words checks the implementation, not the proof.  Define for later
+use the **coupling ratio**
+$r := 2|c_+|/c_0$ with $c_s = \bar\alpha_s\beta_s$ (diagonal
+positivity gives $r \le 1$), and the **Gram distance** from
+normality $\mathrm{dist}(G) := \max(|G_{0+}|, |G_{+-}|)$ in the
+stated gauge — the two coordinates in which all Section 6 evidence
+is expressed.  The **subordination** $s$ of a (not necessarily
+peripheral) coupled complex pair is
+$|\lambda_{\mathrm{cx}}|/\rho_{\mathrm{coupled}}$, the pair's
+modulus relative to the coupled spectral radius.
+
+Two structural discoveries inside this system.  First, *entrywise*
+versus matrix positivity: the two-segment values
+$p(W^a\widetilde W^b)$ are probabilities, and their nonnegativity is
+a genuine constraint even though the corresponding Gram matrices are
+automatically PSD; probing it yields closed-form necessary
+inequalities (e.g. $\alpha_0^2 \ge 2|\alpha_+|^2(1 + |G_{+-}|)$ in a
+normalized gauge).  Second:
+
+**Theorem 5.2 (normal escape).**  At $G = I$ — equivalently, at
+rank three, $B_W$
+normal (at higher rank $G = I$ is normality *of the peripheral
+part*; see the Section 6 scope correction) — every chain in the
+tower collapses to a single-frequency
+Fejér form: each chain value equals $c_0 + 2\,\mathrm{Re}(c_+
+e^{i\Phi})$ with $\Phi$ the signed sum of segment phases.
+
+*Proof.*  $G = H = I$ makes all chain matrices diagonal; the
+boundary contractions then collapse the product to the displayed
+form.  $\square$
+
+**Corollary 5.3.**  The all-depth torus system is satisfiable at
+every coupling ratio $r < 1$: take $G = I$ and any $\beta$ with
+$c_0 = 2|c_+|/r$ — every chain value is then
+$c_0(1 + r\cos\Phi) \ge c_0(1 - r) > 0$.  (Explicit witness used in
+the receipts: $G = I$, $\beta = (\sqrt2(1+10^{-6}), 1, 1)$, giving
+$r = 0.999998$ with all implemented depths' margins $+2\times
+10^{-6}$ in the $c_0$-normalized convention — chain values divided
+by $c_0$; unnormalized, the floor is $c_0(1-r) \approx 4\times
+10^{-6}$.)
+
+**Consequence (scoped).**  The torus-constraint family of Theorem
+5.1 — the complete set of conditions obtainable from words in
+$\{W, \widetilde W\}$ alone — does not separate normal-clock data
+from realizable data: any argument excluding the clock must use
+words leaving the block alphabet, or the letter structure itself.
+The question is thus pushed to (i) the *letters* (can a chiral word
+of PSD letters be normal with nonreal spectrum? — the companion
+paper's Conjecture NR says no, with strong receipts), and (ii)
+*depth dynamics off the normal point*.
+
+### 5.2 Off the normal point: the deep adversary
+
+Each chain value is degree-one trigonometric in each phase
+separately, so exact cyclic coordinate descent gives a deep
+adversary (calibrated to reproduce the Fejér bound at
+$4\times 10^{-16}$ to depth 16).  Findings, reported as measured:
+a tower-optimized datum surviving grid constraints to depth 5 dies
+at depth 8 (margins $+0.018 \to -0.055 \to -0.338$ by depth 16):
+shallow feasibility is an artifact.  But band searches at fixed Gram
+distance $\varepsilon$ from $I$ give a mixed picture: some winners
+die at finite depth (instances at $k^* = 16$ and $48$), at least one
+survives a 64-phase adversary, and the $\varepsilon = 0.05$ shell
+retains coupling $0.84$ through constraint depth 56.  Whether
+all-depth feasibility is isolated at the normal point is open;
+stated as a conjecture in its own right:
+
+> **Conjecture ISO.**  If a reduced datum $(G, \beta)$ with
+> nonzero coupling ($r > 0$) satisfies the all-depth torus system
+> of Theorem 5.1, then $G = I$.
+
+Sum-of-squares certification over the torus is the named decisive
+tool.
+
+## 6. The two-conjecture reduction and the evidence
+
+**Theorem 6.1 (conditional; rank-3 blocks).**  Assume (NR): a word
+in two PSD
+letters that is normal has real spectrum; and (ISO): all-depth torus
+feasibility with nonzero coupling forces $G = I$.  Then no valid RP
+process whose block operator $B_W$ has **rank three** carries a
+coupled irrational triple with
+semisimple peripheral part on that chiral block.
+
+*Proof.*  Such a process' reduced datum is all-depth feasible
+(Theorem 5.1), hence $G = I$ by (ISO); at rank three the peripheral
+triple *is* the whole operator, so $G = I$ is normality of $B_W$,
+hence real spectrum by (NR) — contradicting the triple.  $\square$
+
+**Scope correction (the higher-rank gap, found in review and kept
+visible).**  An earlier draft claimed the conclusion at every
+finite rank.  That does not follow: at rank $> 3$, $G = I$ makes
+the three *peripheral* eigenvectors orthonormal among themselves
+but says nothing about their angle to the subperipheral spectral
+subspaces, so $B_W$ need not be normal and (NR) does not apply.
+Closing the general case needs one of: (ISO$^+$) all-depth
+feasibility forces peripheral-to-subperipheral orthogonality as
+well; or (NR$^{\mathrm{per}}$) a *peripherally normal* variant of
+(NR) — a word operator whose peripheral part is normal has real
+peripheral spectrum.  Both are stated as named open strengthenings;
+the evidence below (walls, pinch) probes the reduced datum and is
+agnostic to the distinction, but the theorem itself is rank-3.
+
+**Evidence, summarized.**  (a) *Generic validity decouples*: across
+120 verified-valid random processes, coupled complex poles never
+appear on any chiral block (subordination $s = 0$ throughout).
+(b) *The wall*: steering searches under hard validity reach coupled
+complex poles but stall at $s \approx 0.19$–$0.21$ in three
+independent campaigns; every candidate at $s = 1$ fails validity at
+an explicit witness word — including a documented impostor whose
+first negative probability hides at word length $\approx 150$,
+beyond any letter scan (block-diagonal depth checks are therefore
+structural in all searches).  (c) *The mechanism*: lifting a valid
+instance's complex pair to the coupled circle with residues fixed
+forces $h(n) < 0$ at $n = 32$.  (d) *The pinch*: in the shared
+coordinate where $G = I$ is exactly normality, letter-realizable
+near-triples (modulus spread to $0.0015$, so the triple is
+kinematically reachable) live at Gram distance $0.50$–$0.94$ from
+normality, while deep-torus-feasible data live at $0.054$–$0.147$:
+**disjoint by a factor $\ge 3.4$** — a counterexample must thread
+two walls that no search has seen overlap.
+
+## 7. Discussion
+
+**The assembly half.**  Even granting the spectral exclusion,
+realizing all block diagonals *jointly* — one nonnegative pair on
+one cone — is the classical functions-of-Markov-chains problem
+[1, 2] and remains open; per-diagonal dominant-pole realizations
+construct different cones per block.  The natural program: assemble
+on the achiral sublattice first (exact Stieltjes structure provides
+canonical cones), then extend by reversal-pairing.
+
+**Relation to quantum models.**  Theorem 2.1 places the conjecture
+at the boundary between POVM-representable and classically
+realizable processes.  Quantum trajectory models with non-normal
+Kraus operators *can* oscillate at block level with automatic
+positivity, but generically fail bond-RP; the conjecture asserts
+that time-reflection symmetry is precisely what closes the quantum
+loophole at finite memory.
+
+**Scope.**  Single irrational orbit plus real top, semisimple
+peripheral part; rational phases are unobstructed (block-power
+decimation); harmonically-related orbits need higher-degree Fejér
+systems (same machinery, unexecuted); peripheral Jordan tails open.
+
+## Reproducibility
+
+All quantitative claims regenerate from fixed-seed scripts: the
+representation and exhaustion receipts; the clock's certificates;
+the confinement receipts (40 valid processes); the reduction
+validation; tower searches with stated budgets; the adversary,
+band, and pinch measurements.  Code and canonical outputs accompany
+the submission; we flag explicitly that the Section 5.2/6 evidence
+(walls, bands, pinch, the 160/161 genericity study) is
+artifact-dependent — without the artifact those sections are
+claims, not evidence — so the artifact is part of the submission,
+not supplementary.
+
+## References
+
+[1] S. W. Dharmadhikari, Functions of finite Markov chains,
+*Ann. Math. Statist.* **34** (1963) 1022–1032.
+
+[2] A. Heller, On stochastic processes derived from Markov chains,
+*Ann. Math. Statist.* **36** (1965) 1286–1291.
+
+[3] B. D. O. Anderson, M. Deistler, L. Farina, L. Benvenuti,
+Nonnegative realization of a linear system with nonnegative impulse
+response, *IEEE Trans. Circuits Syst. I* **43** (1996) 134–142.
+
+[4] L. Benvenuti, L. Farina, A tutorial on the positive realization
+problem, *IEEE Trans. Autom. Control* **49** (2004) 651–664.
+
+[5] J. Glimm, A. Jaffe, *Quantum Physics: A Functional Integral
+Point of View*, Springer (1987) — reflection positivity.
+
+[6] A. Klein, L. J. Landau, Construction of a unique self-adjoint
+generator for a symmetric local semigroup, *J. Funct. Anal.* **44**
+(1981) 121–137.
+
+[7] A. Monras, A. Beige, K. Wiesner, Hidden quantum Markov models
+and non-adaptive read-out of many-body states, *Appl. Math. Comput.
+Sci.* **3** (2011) 93.
+
+[8] H. Jaeger, Observable operator models for discrete stochastic
+time series, *Neural Computation* **12** (2000) 1371–1398.
+
+[9] M. Fannes, B. Nachtergaele, R. F. Werner, Finitely correlated
+states on quantum spin chains, *Commun. Math. Phys.* **144** (1992)
+443–490.
+
+[10] J. Berstel, C. Reutenauer, *Noncommutative Rational Series
+with Applications*, CUP (2011), Ch. 8 — the
+$\mathbb R_+$-rational (Soittola) dominant-singularity theory used
+in Section 3.
+
+**Companion paper:** *Spectral reality of words in two positive
+semidefinite letters is a necklace invariant* (same author).

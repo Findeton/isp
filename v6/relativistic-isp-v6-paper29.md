@@ -4,6 +4,29 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **AUDIT CORRECTIONS (2026-06-11, publishable-campaign
+> review; this paper is the ledger, so the graded rows are restated
+> here).**  (1) Registration: final form = undressed spectrum
+> point (S_nu = 0.17556), band and free-coefficient exponent forms
+> withdrawn; expected ~5.6 sigma JUNO exclusion stated against
+> interest (v6/publishable/paper-VII).  This paper's own
+> coefficient no-go (68% band [0.22, 1.26], 23% in-band) is what
+> forced the rebuild.  (2) Signature row: "(1,3) [RSC]" reads
+> (1,d) THEOREM + d = 3 MINIMALITY INPUT (d >= 4 not excluded).
+> (3) "Gauge group from exchange [RSC] + Schur-Weyl": the
+> commutant step is classical Schur-Weyl (import); output is the
+> global internal symmetry group; gauging is input.  (4) The
+> P30-based two-conjecture reduction ((NR) and (ISO) imply no
+> coupled triple) is proved at RANK-3 BLOCKS; higher rank needs a
+> named strengthening (peripheral-to-subperipheral orthogonality
+> or peripherally-normal NR) - v6/publishable/paper-II, Sec. 6.
+> (5) Instrument rows (P26/P28): SIGNED verdicts are scoped to
+> MOORE-form HMMs with reversible chains (the Mealy reading is
+> false - the textbook pair model is Mealy-on-reversible and
+> signs); tool v2.2 (v6/publishable/paper-III).  (6) The d = 3
+> always-real threshold quoted from P30 searches is REFUTED by an
+> exact 3x3 certificate (P30 correction block).
+
 Subtitle:
 
 ```text
@@ -25,7 +48,7 @@ number campaign to its honest end.  The root is ONE equation with
 three faces (machine identity at 1e-16): the commitment law
 tanh(eta) = e^(-eta), the refinement cubic theta^3 + theta^2 + theta
 = 1, and the b = 2 fixed point tanh(eta/2) = theta^2 are the same
-transcendental number - axiom C's entire dimensionless output.  The
+algebraic number (the reciprocal tribonacci constant) - axiom C's entire dimensionless output.  The
 predictivity result: the EXPONENT of the neutrino step is derivable
 (three tagged premises: amplitude = root-weight at seams, half-integer
 record charge lattice, minimal nontrivial difference), and nature's
@@ -328,7 +351,7 @@ identity $\tanh(\eta/2)=\theta^{2}$ holds.  Receipts:
 $\theta = 0.543689012692$, $\eta = 0.609377863436$,
 $|\theta - e^{-\eta}| = 0$, the algebraic identity at $1.1\times
 10^{-16}$, the MK identity at $5.6\times 10^{-17}$.  Axiom C owns one
-transcendental number; everything dimensionless downstream is built
+algebraic number (reciprocal tribonacci); everything dimensionless downstream is built
 from it.
 
 ### 4.2 The pedigree of the small parameter

@@ -4,6 +4,17 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **CORRECTION/GRADING NOTE (2026-06-11, publishable-campaign
+> review).**  Corollary 4.3's "(1,3)" should be read at honest
+> grade: what the commitment structure forces is the LORENTZIAN
+> SPLIT (1, d) with derived orientation (Theorem 4.2); the "3" is
+> the dimension of the screens used in the construction, i.e. an
+> input.  Per the campaign's grading (v6/publishable/paper-Va,
+> Sec. 3): d = 3 is selected by a MINIMALITY principle (first
+> dimension with trivial exchange holonomy, P9/P18); nothing in
+> the corpus excludes d >= 4.  Claims downstream of "(1,3)
+> derived" inherit this grading.
+
 Subtitle:
 
 ```text

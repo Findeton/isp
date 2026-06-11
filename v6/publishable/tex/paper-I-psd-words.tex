@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\providecommand{\tightlist}{}
+\title{Spectral reality of words in two positive semidefinite letters is a necklace invariant}
+\author{Felix Robles Elvira (ORCID: 0009-0009-2017-4394; independent researcher)}
+\date{\small preprint, not peer reviewed, version 2026-06-11.}
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Let $A, B$ be positive semidefinite matrices and let $W(A,B) = A^{a_1}B^{b_1}\cdots$ be a word in the two letters.  It is classical that $AB$ has real nonnegative spectrum [4], and Hillar and Johnson initiated the systematic study of which words in two positive definite letters must have positive spectra.  We prove that spectral reality is governed by a combinatorial invariant of the word's \emph{cyclic class}: if the necklace of $W$ is \textbf{achiral} (equal to its own reversal up to rotation), then $W(A,B)$ has real nonnegative spectrum for all PSD letters of every dimension.  The proof combines a reflection-axis lemma (a cyclic word is achiral iff some rotation is a product of two palindromes) with the observation that palindromic words are manifestly positive semidefinite.  Since every binary necklace of length at most five is achiral, all words of length $\le 5$ have real nonnegative spectra, and complex spectra can occur only on chiral necklaces, the first of which appear at length six; we verify by optimization that complex spectra are in fact realized on all probed chiral classes — including an exact-arithmetic certificate that the first chiral pair is complex-capable already in dimension three, refuting an earlier draft's threshold claim (kept on record).  Separately we prove a \textbf{floor theorem}: for $2\times 2$ \emph{real symmetric} positive definite letters, every positive word has real spectrum — by exhibiting an invariant boundary arc for the induced Möbius action on the hyperbolic plane (the complex Hermitian case is open). Finally we study the interaction of normality with reality: extensive optimization indicates that a word in two PSD letters that is \emph{normal} always has real spectrum (a two-letter phenomenon: by Ballantine's theorem, products of five positive definite matrices realize every spectrum with positive determinant, rotations included), we quantify the trade-off between normality defect and spectral oscillation, and we prove an \emph{obstruction theorem}: this "normal implies real" conjecture cannot be reduced to the achirality theorem, because unbalanced words in $\{W, \widetilde W\}$ inherit the chirality of $W$ — proved for boundary-clean configurations, and verified exhaustively at the stated scan bounds in general.
+
+\section*{1. Introduction}
+Products of positive semidefinite (PSD) matrices need not be Hermitian, but they are far from arbitrary.  The product of two PSD matrices has real nonnegative spectrum — a classical fact used across matrix analysis — and Ballantine [1] showed by contrast that products of \emph{five} positive definite (PD) matrices realize every real matrix of positive determinant, so all spectral rigidity disappears with enough distinct factors.  Hillar and Johnson [2] sharpened the question to \emph{words}: fixing two PD letters $A, B$ and asking which words $W(A,B) = A^{a_1}B^{b_1}\cdots A^{a_k}B^{b_k}$ are forced to have positive spectrum.  They proved this for palindromic ("symmetric") words and observed the phenomenon is delicate beyond them.
+
+This paper identifies a combinatorial structure controlling one direction of the question (with the converse direction supported empirically and stated as such).  Associate to a word its \textbf{necklace} — the cyclic class under rotation — and call a necklace \textbf{achiral} if it contains the reversal of the word, \textbf{chiral} otherwise.  Our main theorem assembles two known ingredients (the two-palindrome characterization of achiral words [3], and the palindromic-word positivity of Hillar–Johnson [2]) with the classical two-factor spectral fact into a statement we have not found in the literature, and whose consequences for moment structure and process realization appear new; we state the provenance of each ingredient where it is used; Section 8 states our literature position explicitly and in advance of any priority claim:
+
+\begin{quote}
+\textbf{Theorem A (achiral necklace theorem).}  If the necklace of $W$ is achiral, then $W(A,B)$ has real nonnegative spectrum for all PSD letters $A, B$ of every dimension.
+\end{quote}
+Reality of word spectra is thus a \emph{necklace invariant}, and the obstruction to it is precisely the chirality — the time-asymmetry — of the word's cyclic pattern.  All binary necklaces of length $\le 5$ are achiral, so Theorem A subsumes the known short-word results and extends them to infinite families at every length; the first chiral classes occur at length six, and we verify that complex spectra are realized on every probed chiral class (Section 5), already at dimension three for the first pair (by an exact certificate that corrects an earlier draft).
+
+Two companion results delimit the phenomenon.  First, a \textbf{floor theorem} in two dimensions:
+
+\begin{quote}
+\textbf{Theorem B.}  Every nonempty positive word in two \emph{real symmetric} $2\times 2$ positive definite letters has real spectrum.  (The complex Hermitian case acts on $\mathbb H^3$ and is open.)
+\end{quote}
+The proof is geometric: determinant-normalized PD letters act on the hyperbolic plane as hyperbolic Möbius transformations whose axes pass through a common point; the interleaving of their boundary fixed points produces a closed arc invariant under both letters, hence under every positive word, forcing a real eigendirection.  Thus the entire complex-spectrum phenomenon begins at dimension three.
+
+Second, we study \textbf{normality}.  Optimization finds that the normal matrices in the image of a chiral word map appear always to have real spectrum, despite objectives rewarding oscillation; we state this as:
+
+\begin{quote}
+\textbf{Conjecture NR.}  A word in two PSD letters that is normal has real spectrum.
+\end{quote}
+We quantify the conjecture's content (the trade-off wall between normality defect and demanded oscillation is $O(1)$ down to one-percent oscillation), note that Ballantine's theorem makes it a strictly two-letter phenomenon, and prove an obstruction theorem (Theorem C): the natural strategy of detecting nonreal phases through achiral words in the block alphabet $\{W, \widetilde W\}$ is impossible, because a cyclic occurrence-counting invariant forces every unbalanced block word to inherit $W$'s chirality.
+
+\textbf{Motivation.}  Beyond intrinsic matrix-theoretic interest, these questions arise in the realization theory of stationary stochastic processes: reflection-positive processes admit representations $p(x_1\cdots x_n) = \langle \omega, A_{x_1}\cdots A_{x_n}\omega\rangle$ with PSD letters, and the reality of block spectra controls whether such processes can oscillate on their decay circles — the known obstruction to finite hidden-Markov realizability.  We develop that application in a companion paper; the present paper is self-contained matrix analysis.
+
+\section*{2. Preliminaries}
+Words are finite strings over $\{0, 1\}$; the word map sends $W = x_1\cdots x_L$ to $B_W = A_{x_1}\cdots A_{x_L}$ for letters $A_0, A_1 \succeq 0$ (real symmetric or complex Hermitian; reality of the letters is immaterial, and we use "PSD" throughout, with PD when invertibility matters).  The \textbf{reversal} $\widetilde W$ satisfies $B_{\widetilde W} = B_W^{\dagger}$.  Rotations of $W$ change $B_W$ by cyclic conjugation, so the nonzero spectrum of $B_W$ is an invariant of the necklace of $W$.
+
+A word is a \textbf{palindrome} if $W = \widetilde W$.  A necklace is \textbf{achiral} if $\widetilde W$ is a rotation of $W$.
+
+\textbf{Lemma 2.1 (palindrome factorization).}  If $u$ is a palindrome then $B_u \succeq 0$.
+
+\emph{Proof.}  Write $u = x_1\cdots x_m$ with $x_k = x_{m+1-k}$.  If $m = 2q$ then the second half is the reversal of the first, so $B_u = C C^{\dagger}$ with $C = A_{x_1}\cdots A_{x_q}$.  If $m = 2q+1$ then $B_u = C A_{x_{q+1}} C^{\dagger}$ with the central letter PSD.  $\square$
+
+\textbf{Lemma 2.2 (two-PSD products; classical).}  If $P, Q \succeq 0$ then $\operatorname{spec}(PQ) \subset [0, \infty)$, and $PQ$ is semisimple away from $0$.
+
+\emph{Proof.}  For invertible $Q$, $Q^{1/2}(PQ)Q^{-1/2} = Q^{1/2}PQ^{1/2} \succeq 0$; the general case follows by perturbing $Q$ and eigenvalue continuity.  Semisimplicity off zero follows from the fact that $XY$ and $YX$ have the same Jordan structure at nonzero eigenvalues (Flanders [5]), applied to $X = PQ^{1/2}$, $Y = Q^{1/2}$.  $\square$
+
+\section*{3. The reflection-axis lemma}
+\textbf{Lemma 3.1.}  A necklace is achiral if and only if some rotation of it is a product of two palindromes (either factor may be empty).
+
+\emph{Proof.}  ($\Leftarrow$)  If $\sigma^k W = uv$ with $u, v$ palindromes, then $\widetilde{\sigma^k W} = \tilde v \tilde u = vu$, a rotation of $uv$.
+
+($\Rightarrow$)  Regard $W$ as a labeling of the cycle $\mathbb Z_L$.  Achirality says the labeled cycle is invariant under some orientation-reversing symmetry of the dihedral group — a reflection $r$.  Every reflection of an $L$-cycle has an axis meeting the cycle in exactly two points (two vertices, two edge midpoints, or one of each according to parity).  Cut the cycle at the two axis points: each resulting arc maps to itself under $r$ with orientation reversed, hence reads as a palindrome (a vertex on the axis is the center of an odd palindrome; an edge-midpoint cut falls between letters).  Reading from either cut point exhibits a rotation of $W$ as a product of the two arc palindromes.  $\square$
+
+The lemma is elementary and the characterization of words conjugate to their reversals as products of two palindromes appears in the combinatorics-on-words literature — the statement is folklore there, with [3] a representative modern treatment rather than the origin; we include the geometric proof for completeness and because the \emph{reflection axis} viewpoint explains the structure.  We verified both directions exhaustively for all $801$ binary necklaces of length $\le 12$ (the per-length counts of Table 1, which sum to $801$; for cross-checking, necklace counts are OEIS A000031, bracelet counts A000029, and the achiral count at each length equals $2\cdot(\text{bracelets}) - (\text{necklaces})$).
+
+\section*{4. The achiral necklace theorem}
+\textbf{Theorem 4.1.}  Let $W$ be a word whose necklace is achiral.  Then $\operatorname{spec} B_W \subset [0,\infty)$ for all PSD letters of every dimension.
+
+\emph{Proof.}  By Lemma 3.1, some rotation $W' = uv$ with $u, v$ palindromes; by Lemma 2.1, $B_{W'} = B_u B_v$ is a product of two PSD matrices; by Lemma 2.2 its spectrum is real nonnegative; rotations preserve nonzero spectra.  $\square$
+
+\textbf{Corollary 4.2.}  Every word of length $\le 5$ has real nonnegative spectrum (all binary necklaces of length $\le 5$ are achiral; the census is in Table 1).  The first chiral pair is $\{001011, 001101\}$ at length six.
+
+\begin{small}\begin{verbatim}
+Table 1: binary necklaces by length
+ L        1   2   3   4   5   6   7   8   9   10   11   12
+ classes  2   3   4   6   8  14  20  36  60  108  188  352
+ achiral  2   3   4   6   8  12  16  24  32   48   64   96
+ chiral   0   0   0   0   0   2   4  12  28   60  124  256
+\end{verbatim}\end{small}
+\textbf{Structural consequences.}  (i) Achiral-word \emph{moment structure}: for a palindromic $W$, the diagonal sequence $h(n) = \langle \omega, B_W^n \omega\rangle$ is an exact Stieltjes moment sequence for any vector $\omega$ (spectral theorem applied to $B_W \succeq 0$).  For any rotation of an achiral word, with \emph{real symmetric} letters and real $\omega$, and for $n$ exceeding the nilpotency index of the (possible) Jordan structure at $0$, $h(n) = \sum_k c_k \lambda_k^{\,n-1}$ with $\lambda_k \ge 0$ and real (possibly negative) $c_k$ (the exponent $n-1$ is a normalization — one block factor is grouped with the boundary vectors — stated to forestall an off-by-one reading) — real nonnegative poles at every phase, with genuinely signed residues (normalized residues $c_k/\sum_j|c_j|$ as negative as $-0.3$ occur in random instances). (ii) Complex spectra, when they exist, are confined to chiral necklaces: a fact with consequences for process realization theory developed in the companion paper.
+
+\section*{5. The reality map: search evidence that chirality is complex-capable}
+Theorem 4.1 makes chirality \emph{necessary} for nonreal spectra.  Is it sufficient?  Before reporting searches, two corrections of our own earlier drafts, both kept on record.  The census: the chiral classes of lengths 6–8 number $18$ ($2 + 4 + 12$, per Table 1), forming $9$ reversal pairs; since $B_{\widetilde W} = B_W^{\mathsf T}$ for symmetric letters, \textbf{a chiral class and its reversal class have identical attainable spectra}, so each pair is one independent problem — Table 2 probes $4$ of the $9$ pairs, and an earlier draft both misstated the census ("seven classes, four problems") and reported reversal partners separately with discrepant optima — a useful lesson in optimizer non-convergence: per-class search values are \emph{lower bounds on suprema}, nothing more.  Optimization (hill-climbing $|\mathrm{Im}\lambda|/\rho(B_W)$; 9 restarts $\times$ 2500 steps per member; dimensions 3–5; per-pair best reported) realizes complex spectra on \textbf{all four} probed chiral problems:
+
+\begin{small}\begin{verbatim}
+Table 2: best |Im lambda| / spectral radius found (per reversal
+pair; lower bounds on the suprema; 4 of 9 pairs at lengths 6-8)
+ pair                      best found
+ {001011, 001101}            0.298  (hill-climbing; but see the
+                                     d = 3 certificate below: the
+                                     supremum is ~1 already at d=3)
+ {0001011, 0001101}          >= 0.999
+ {0010111, 0011101}          >= 0.999
+ {00011101, 00010111}        >= 0.999
+\end{verbatim}\end{small}
+All four pairs are complex-capable with dominant pairs attainable. Weak searches miss much of this (a 60-trial random sweep finds nothing below length 8), which we flag because the literature's empirical maps may be similarly search-limited — as our own was, decisively, at the first pair:
+
+\textbf{The $d = 3$ threshold claim of an earlier draft is false — exact certificate.}  An earlier draft reported $\{001011, 001101\}$ always-real at $d = 3$ ($8\times 3000$-step climbs finding ratio $0.0000$) and conjectured the threshold $d = 4$.  Hostile review of that draft produced a counterexample, which we verified in exact rational arithmetic and reproduce as the honest resolution: with $A, B$ the positive definite matrices (entries exact, denominator $10^6$)
+
+\begin{small}\begin{verbatim}
+ A = [ 4.744014  0.199767 -2.318975 ;  0.199767  0.016101 -0.140138 ;
+      -2.318975 -0.140138  1.398943 ]
+ B = [ 0.126476  0.807436  0.335329 ;  0.807436  8.921895  2.209530 ;
+       0.335329  2.209530  0.892048 ]
+\end{verbatim}\end{small}
+(all leading principal minors positive in exact arithmetic), the word $W = A^2BAB^2$ (necklace $001011$) has exact cubic discriminant $< 0$: one real eigenvalue and a complex pair $\lambda \approx 2.4\times 10^{-7} \pm 0.00423\,i$ — \textbf{dominant} ($|\mathrm{Im}\lambda|/\rho \approx 1$) and six orders of magnitude above rounding.  (The certificate matrices are deliberately ill-conditioned — $\det A \approx 10^{-3}$ at entries of order $5$ — which is why the verification is exact-rational; the complex pair at $4\times 10^{-3}$ of the matrix scale sits far above any arithmetic floor.)  So the first chiral pair is already complex-capable at $d = 3$; there is no dimension threshold above three for it; the earlier draft's claim was optimizer failure of exactly the kind the preceding paragraph warns about; and the reconciliation question that draft posed against [2] is resolved \emph{against} our threshold.  Theorems A–C are unaffected.
+
+\section*{6. The floor theorem: dimension two is always real}
+\textbf{Theorem 6.1.}  Every positive word in two \emph{real symmetric} $2\times 2$ positive definite letters has real spectrum.  (The complex Hermitian case acts on $\mathbb H^3$ and is not addressed here.)
+
+\emph{Proof.}  Degenerate cases first: if either letter is a multiple of the identity, or the letters commute (coincident eigenframes), the word is a product of simultaneously diagonalizable PD matrices — real positive spectrum.  Otherwise: normalizing determinants to one changes the word by a positive scalar.  A symmetric PD matrix of determinant one is a hyperbolic Möbius transformation of the upper half-plane whose boundary fixed points are its (orthogonal) eigendirections; the geodesic joining boundary points $p, q$ passes through $i$ iff $pq = -1$, so the axes of all such matrices pass through the common point $i$.  (If an eigendirection is vertical, its boundary fixed point is $\infty$ and the other is $0$ — the axis is the imaginary axis, which passes through $i$; read "$pq = -1$" in that limiting sense, so this case is included, not excluded.)  Two distinct axes through a common interior point cross, hence the four boundary fixed points alternate in label around the circle: each $A$-point has two $B$-points as neighbors.  In particular $\xi_A^+$ is adjacent to at least one of $\xi_B^\pm$; since there is only one $\xi_B^-$, the point $\xi_A^+$ has $\xi_B^+$ as a neighbor in at least one of the two label-alternating arrangements, and in either arrangement there is a closed arc $J$ with endpoints $\xi_A^+$ and $\xi_B^+$ containing \textbf{neither} repeller (if the cyclic order is $\xi_A^+, \xi_B^+, \xi_A^-, \xi_B^-$, take the direct arc; if it is $\xi_A^+, \xi_B^-, \xi_A^-, \xi_B^+$, take the arc on the other side, which is again repeller-free).  North–south dynamics moves every point of $J$ toward the corresponding attractor \emph{within} $J$, for both letters and all their positive powers; hence every positive word maps $J$ into itself, and a continuous self-map of a closed arc has a fixed point: a real eigendirection.  A real $2\times 2$ matrix with one real eigenvalue has two.  $\square$
+
+(Numerical illustration, not needed for the proof: interleaving in $500/500$ random PD pairs; arc invariance with $0$ violations over $300$ pairs $\times$ 25 boundary points; $400$ random words all real with the fixed eigendirection inside $J$ in every instance.)
+
+\section*{7. Normality: the NR conjecture, the wall, and an obstruction theorem}
+A natural refinement asks when $B_W$ can be \emph{normal}.  Optimization reaches the normal manifold easily (commutator defects at machine precision, $5\times 10^{-16}$), yet across every trial — with objectives explicitly rewarding oscillation — the resulting spectra are real:
+
+\begin{quote}
+\textbf{Conjecture NR.}  If $B_W$ is normal for PSD letters $A_0, A_1$, then $\operatorname{spec} B_W \subset \mathbb R$.
+\end{quote}
+Three quantitative remarks.  (1) \emph{Two letters are essential}: by Ballantine [1], scaled rotations are products of five PD matrices, so no such statement holds for products of many distinct positive factors; the conjecture probes the rigidity of two commuting power families.  (2) \emph{The trade-off observation}: minimizing the normality defect $\|[B, B^{\dagger}]\|/\|BB^{\dagger}\|$ subject to a hard floor on $|\mathrm{Im}\lambda|/\rho$ (word $00011101$, $d = 4$) finds best values $0.27 / 1.40 / 0.98$ at floors $0.05 / 0.15 / 0.30$, and $0.17$ at a one-percent floor.  These are \emph{search outputs — upper bounds on the true minimal defects} (the true wall is necessarily nondecreasing in the floor; the non-monotone found values quantify the searches' slack): the honest summary is that no configuration with defect below $0.17$ was found at any demanded oscillation, and normality and oscillation appear to repel at order one.  (3) \emph{Reality at the floor}: by Theorem 6.1 the conjecture holds at $d = 2$ for \emph{real symmetric} letters (vacuously, since all spectra are real there); for complex Hermitian letters at $d = 2$ Theorem 6.1 does not apply and the conjecture is open there too; the receipts cover $d \le 5$, and the conjecture is open above.
+
+\textbf{Definition.}  Call $W$ \emph{boundary-clean for $X$} if every cyclic occurrence of $W$ or $\widetilde W$ as a factor of the block word $X \in \{W, \widetilde W\}^*$ lies inside a single block (no occurrence straddles a block boundary).  This holds, e.g., whenever $W$ is primitive and neither $W$ nor $\widetilde W$ occurs in any two-block concatenation other than at the block positions — a checkable condition for any given $W$.
+
+\textbf{Theorem 7.1 (detector obstruction; = Theorem C of the introduction).}  Suppose one tries to prove NR by finding, for a chiral word $W$, an \emph{achiral} word $X$ in the block alphabet $\{W, \widetilde W\}$ with unequal block counts $m = \#W - \#\widetilde W \neq 0$ (for normal $B_W$ the blocks commute, $B_X = B_W^p B_W^{\dagger q}$ has eigenvalues $\rho^{p+q}e^{im\theta}$, and Theorem 4.1 — real \emph{nonnegative} spectrum — would force $m\theta \in 2\pi\mathbb Z$; two coprime detectors would force $\theta \in 2\pi\mathbb Z$, i.e. real spectrum, proving NR for $W$).  If $W$ is boundary-clean for $X$, \textbf{no such detector exists}: the cyclic occurrence count $I(X) = \mathrm{occ}_W(X) - \mathrm{occ}_{\widetilde W}(X)$ is rotation-invariant and reversal flips its sign, so achirality forces $I(X) = 0$ while an unbalanced boundary-clean block word has $I(X) = m \neq 0$.
+
+\emph{Proof.}  Occurrence counts of a fixed factor in a cyclic word are invariant under rotation; occurrences of $W$ in $\widetilde X$ biject with occurrences of $\widetilde W$ in $X$.  Under the boundary-clean hypothesis all occurrences come from blocks, so $I(X) = m$.  $\square$
+
+Beyond the boundary-clean case the obstruction is verified by scan: zero achiral unbalanced block words exist over all $106$ chiral classes of lengths 6–10 with up to 8 blocks.  The precise status, then: the route from Theorem 4.1 to Conjecture NR is closed for boundary-clean configurations by Theorem 7.1, and closed exhaustively at the stated scan bounds in general — which sharply delimits where a proof of NR must come from.
+
+\section*{8. Literature position and open problems}
+\textbf{Literature position, stated in advance of any priority claim.} The ingredients are classical or attributed: two-factor spectral reality is classical; palindromic-word positivity and the word program are Hillar–Johnson [2] and their symmetric-word-equation sequel; the two-palindrome characterization of reversal-closed cyclic words is from the combinatorics-on-words literature [3]. What we did not find in [2], [3], or the post-2002 word-positivity line: the necklace-invariance formulation (Theorem A as a statement about cyclic classes), the real-symmetric $2\times 2$ floor via the invariant-arc argument (Theorem B), the chirality-inheritance obstruction (Theorem C), or the moment/realization consequences developed in the companion paper.  We state this as a checked absence, not a certainty: if a referee locates any of these in print, the corresponding section becomes exposition with attribution, and we commit to that correction in advance.
+
+\begin{enumerate}
+\item \textbf{Conjecture NR} at $d \ge 3$; even the modulus-degenerate triple case ($\operatorname{spec} = \{\rho, \rho e^{\pm i\theta}\}$, $d = 3$) is open.
+\item \textbf{Dimension thresholds}: the Section 5 certificate shows the first chiral pair is complex-capable already at $d = 3$ (an earlier draft's threshold conjecture is refuted); the surviving question is whether \emph{any} chiral necklace has minimal complex-capable dimension $> 3$, i.e. whether the function (necklace) $\mapsto$ (minimal dimension admitting nonreal spectrum) is ever $> 3$ on chiral classes.
+\item \textbf{Chirality sufficiency}: is every chiral class complex-capable at some dimension?  (Empirically yes for all probed classes — $4$ of $9$ reversal pairs at lengths $6$–$8$.)
+\item \textbf{Quantitative reality}: the observed wall structure — complex eigenvalues of valid-process blocks staying far inside the spectral radius — suggests inequalities relating subordination to word positivity; companion-paper territory.
+\end{enumerate}
+\section*{Reproducibility}
+All numerical claims regenerate from fixed-seed scripts (necklace census and exhaustive lemma verification to length 12; integer-exact palindrome factorizations; the optimization searches with stated budgets; the $2\times 2$ receipts).  Code and canonical outputs accompany the submission.
+
+\section*{References}
+[1] C. S. Ballantine, Products of positive definite matrices IV, \emph{Linear Algebra Appl.} \textbf{3} (1970) 79–114.
+
+[2] C. Hillar, C. R. Johnson, Eigenvalues of words in two positive definite letters, \emph{SIAM J. Matrix Anal. Appl.} \textbf{23} (2002) 916–928.
+
+[3] A. de Luca, A. De Luca, Pseudopalindrome closure operators in free monoids, \emph{Theoret. Comput. Sci.} \textbf{362} (2006) 282–300.
+
+[4] R. A. Horn, C. R. Johnson, \emph{Topics in Matrix Analysis}, CUP (1991) — products of positive matrices, classical spectra facts.
+
+[5] H. Flanders, Elementary divisors of $AB$ and $BA$, \emph{Proc. AMS} \textbf{2} (1951) 871 — Jordan structure of $AB$ vs $BA$ at nonzero eigenvalues.
+
+\end{document}

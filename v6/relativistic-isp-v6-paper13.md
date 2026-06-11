@@ -4,6 +4,24 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **CREDIT/GRADING NOTE (2026-06-11, publishable-campaign
+> review).**  Classical anchors, named at honest grade
+> (v6/publishable/paper-VIII): the smooth-cone period selection is
+> the GIBBONS-HAWKING regularity argument; its record-language
+> reading ("no boundary record at the tip") rests on one NAMED
+> IDENTIFICATION - equilibrium sector = eventless - plus the
+> holonomy-equals-enclosed-events step; until the premise is
+> derived, route A is Gibbons-Hawking with a record gloss.  The
+> two temperature routes are linked by known KMS/modular theorems
+> (one Gaussian lattice theory): agreement is an implementation
+> check, not mutual corroboration.  The capacity slope 1/6 is the
+> CALABRESE-CARDY c/6 at c = 1; the modular quanta are the known
+> single-interval spectra (Peschel; Casini-Huerta); the closed-form
+> reflection coefficient is the classical smooth-step/Eckart
+> family (Landau-Lifshitz).  The receipts verify that record
+> lattices reproduce known physics - consistency credentials, not
+> new horizon phenomena.
+
 Subtitle:
 
 ```text

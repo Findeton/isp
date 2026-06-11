@@ -4,6 +4,31 @@ Preprint, not peer reviewed, version 2026-06-11.
 
 Author: Felix Robles Elvira
 
+> **CORRECTIONS (2026-06-11, publishable-campaign review; three
+> are substantive).**  (1) THE IMPOSTOR WAS STATED FOR THE WRONG
+> DETECTOR: the oracle detector r-tilde (true-c normalization) is
+> NEVER fooled by the homogenized microstructure - it reads
+> ~sqrt((1+a)/c_H) - 1 ~ 0.41, non-decaying, at all scales above
+> the crossover (which is exactly how the blind classification
+> catches it, fitted rate ~ -0.07).  The impostor phenomenon and
+> the finite-window failure of the converse belong to the
+> COEFFICIENT-FREE detectors (fitted-coefficient / ratio form) -
+> the only ones a real measurement has.  (2) THE RATE-1 CLASS IS
+> THE FAVARD CLASS {c : c'' in L-infinity} (saturation theory for
+> first-order semigroup approximation), NOT a Zygmund/B^2-type
+> class - second-order characterizations would be needed for the
+> latter.  (3) EPISTEMIC GRADE: the graded law and the corrected
+> converse are CONJECTURES with a window heuristic and receipts;
+> the proof obligation (uniform two-sided parametrix bounds for
+> non-smooth coefficients) is open and named.  Also: the
+> (NR)/(ISO) reduction cited from P30 is proved at rank-3 blocks
+> only (see P30/P29 correction notes), and a de-circularized RATIO
+> detector now exists with receipts (rates 0.22-0.24 / 0.49 with
+> no oracle input; N-refinement stable to 0.001;
+> code/v6_pub_iv_chat_receipt.py) - the naive repair (estimate
+> c-hat at the smallest window scale) FAILS by construction.
+> Full treatment: v6/publishable/paper-IV.
+
 Subtitle:
 
 ```text
@@ -243,6 +268,22 @@ dressing class, **cusps are not concealable** — the empirical face
 of rigidity.  Scope honesty: the dressing class is small (9
 parameters); a wider adversary is conceivable and the wall is
 search-bounded, stated as such.
+
+### 6.5 The 2d port ((C-reg-rig), first installment)
+
+Executed during the publishable-papers campaign (script v6_p32c):
+the full receipt set ports to the 2-torus with the same exact
+rescaling baseline.  Graded rates $0.197/0.452/0.880$ vs
+$0.25/0.50/1.00$ (window-limited but clean separation); position
+recovery to $0.015$ against kernel width $0.035$; and the 2d
+impostor lands on its own exact classical anchor: a symmetric
+two-phase random checkerboard reads as the **geometric-mean**
+effective medium (Dykhne/Keller duality) at $0.6\%$ — with the
+arithmetic mean excluded at $20\%$ and the $O(1)$ break below the
+cell scale.  The detector performs the correct dimension-specific
+homogenization in each dimension; (C-reg-rig)'s Euclidean-2d
+installment is thereby receipted, with general-$d$ and the
+Lorentzian port remaining.
 
 ## 7. What this buys the GR bridge
 

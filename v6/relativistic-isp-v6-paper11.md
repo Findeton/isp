@@ -4,6 +4,18 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **GRADING NOTE (2026-06-11, publishable-campaign review).**  The
+> reconstruction-layer line "gauge algebra reconstructed as the
+> commutant of record statistics (Doplicher-Roberts at record
+> scope)" is graded as follows: the commutant computation is
+> classical Schur-Weyl duality (named import, no mathematical
+> novelty); what the program adds is that the statistics are
+> FORCED before the group is read off, and the delivered object is
+> the GLOBAL internal symmetry group of the fiber - promotion to a
+> local gauge symmetry with connection and dynamics is an
+> additional input, graded where used (v6/publishable/paper-Vb,
+> Sec. 5).
+
 Subtitle:
 
 ```text

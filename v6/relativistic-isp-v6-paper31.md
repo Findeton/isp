@@ -4,6 +4,27 @@ Preprint, not peer reviewed, version 2026-06-11.
 
 Author: Felix Robles Elvira
 
+> **INPUT-GRADING NOTE (2026-06-11, publishable-campaign
+> review).**  Four inputs of this derivation, named so none does silent
+> work (v6/publishable/paper-VI): (1) the existence of FERMIONIC
+> records in the (3,2) and (1,2) composite fibers - the carriers
+> needed to write the QQQL-type seal - is an empirical input about
+> nature's ledger, the single largest one; (2) the screen-U(1)
+> premise (one continuous charge functional survives screening) is
+> a named input co-equal with the seal - in effect "a long-range
+> abelian charge exists"; (3) the Yukawa seam carrier is a single
+> weak-doublet color-singlet scalar (the Higgs representation) -
+> the seam-existence premise alone does not produce it; (4) the
+> tower-exclusion comparison assumes UNIFORMITY (each
+> counterfactual tower seals its own primitive direction).  Also:
+> the 4d overlap-index receipts stand on the
+> Hasenfratz-Laliena-Niedermayer / Luescher index theory (the
+> mathematical foundation is theirs; the use - measuring
+> gauge-squared coefficients on record lattices - is ours), and
+> the anomaly-based hypercharge-uniqueness genre has prior art
+> (Hucks; Allanach-Gripaios-Tooby-Smith) engaged in the
+> publishable version.
+
 Subtitle:
 
 ```text

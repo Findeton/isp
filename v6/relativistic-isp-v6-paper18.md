@@ -4,6 +4,21 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **GRADING NOTE (2026-06-11, publishable-campaign review).**
+> Three honesty clarifications (v6/publishable/paper-Vb): (1) the
+> 165 = 165 double-commutant receipt verifies our implementation
+> of CLASSICAL SCHUR-WEYL DUALITY - it is a consistency check, not
+> evidence of new mathematics; the program's content is that the
+> statistics are forced first (R1/R2) and the named premise that
+> internal symmetries are record-transport operators.  (2) R2's
+> span{1, P} exclusion is a PAIR-EXCHANGE statement; the n-strand
+> DHR parastatistics exclusion is open (the n = 3, 4 channel
+> receipts are consistency evidence, not proof).  (3) "Gauge from
+> exchange" delivers the GLOBAL internal symmetry group;
+> gauging (locality, connection, dynamics) is an additional input.
+> Model-internal numbers (e.g. baryon-channel weight 0.0096) are
+> outputs of the constructed dynamics, not measurements.
+
 Subtitle:
 
 ```text

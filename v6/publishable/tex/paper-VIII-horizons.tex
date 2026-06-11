@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\providecommand{\tightlist}{}
+\title{Horizon thermodynamics on record lattices: temperature two ways, censorship, greybody impedance, and capacity}
+\author{Felix Robles Elvira (ORCID: 0009-0009-2017-4394; independent researcher)}
+\date{\small preprint, not peer reviewed, version 2026-06-11.}
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Within the sealed-records program (Parts I–II), we present the horizon sector: a set of exact lattice constructions in which the standard thermodynamic structure of horizons emerges from record kinematics, with machine receipts for every number.  The technical spine is an exact tortoise-coordinate fact: for any lapse profile $N(x)$, the record wave operator satisfies $A_N = -N\partial(N \partial) = -\partial_y^2$ exactly in $y = \int dx/N$ — horizons sit at infinite record distance, and logarithmic mode pile-up (predicted density $14.66$ per decade; counted $14/15/15$ over three decades — counts consistent with, though too coarse to sharply discriminate, the prediction) replaces boundary conditions.  Results: (i) \textbf{temperature two ways} — the Euclidean cone is smooth at the unique period $\beta = 2\pi/\kappa$ (Gibbons–Hawking regularity, with a record-language reading graded in the text as resting on one named identification; Bessel-mode matching to $10^{-5}$, tip exponent $0.9997$), and the wedge-reduced record vacuum exhibits Bisognano–Wichmann modular structure, $\varepsilon_k = 2\pi\,\omega_k^{\mathrm{boost}}$ uniformly to $2.5\times 10^{-5}$ across all eight resolvable modular levels; (ii) \textbf{censorship} — $N \sim x^\beta$ is a horizon iff $\beta \ge 1$: super-linear profiles displace all extension ambiguity to infinite record distance (tower spectra collapse to the same free limit), while $\beta < 1$ leaves finite-distance ambiguities (towers converge to distinct limits, exhibited exactly); the marginal Rindler case $\beta = 1$ coincides with the program's limit-circle threshold; extremal profiles show the smooth period tracking $1/N'(0)$ with $T \to 0$; (iii) \textbf{greybody factors are record impedance} — for the exactly solvable profile the reflection coefficient $R = [\sinh(\pi(k-q)/2\kappa)/\sinh(\pi(k+q)/2\kappa)]^2$ is verified to $1.5\times 10^{-14}$, the $\kappa \to \infty$ limit reproduces the program's independently derived homogenization impedance law, and record packets split with flux-weighted accuracy $1.7\times 10^{-5}$; (iv) \textbf{capacity} — the entanglement entropy of near-horizon record towers grows at $1/6$ nat per e-fold (slope error $4.4\times 10^{-4}$; the Calabrese–Cardy $c/6$ at $c = 1$), with discrete modular quanta spaced $2\pi^2/\ln(cL)$ verified at the one-percent level — checks of known single-interval results, claimed as consistency only.  We state explicitly what is and is not claimed: these are kinematic/thermal-structure results on record lattices — back-reaction, evaporation dynamics, and the area coefficient's calibration are outside scope and named.
+
+\section*{1. Introduction}
+Horizon thermodynamics — temperature $\kappa/2\pi$, the special role of regularity at the Euclidean tip, modular (Bisognano–Wichmann) structure, greybody filtering — is among the most robust expectations of any candidate quantum-gravitational framework: a program that cannot reproduce it is wrong, and a program that reproduces it with \emph{receipts} earns a consistency credential.  This paper provides those receipts for the sealed-records program.  We state the epistemic status up front: every closed form checked below (the smooth cone period, the Bisognano–Wichmann spectrum, the reflection coefficient, the capacity slope) is \emph{known physics} — the value of the paper is that a discrete record ontology reproduces all of it exactly, with each classical result named at the point of use, and that the translations into record language are sharp enough to be checked by machine.  Nothing here claims new horizon phenomena.
+
+Two features distinguish the treatment.  First, everything is discrete and finite: record lattices with lapse profiles, exact diagonalizations, and numbers checked against closed forms — no formal continuum manipulations.  Second, the conceptual translations are sharp: "no conical singularity" becomes \emph{no boundary record at the tip}; "horizon regularity" becomes \emph{infinite record distance}; "greybody barrier" becomes \emph{impedance mismatch of record propagation}, quantitatively continuous with the program's homogenization results.
+
+\section*{2. The exact tortoise fact and horizon kinematics}
+\textbf{Proposition 2.1.}  For any lapse $N(x) > 0$, the operator $A_N = -N\partial(N\partial)$ equals $-\partial_y^2$ exactly under $y(x) = \int^x dt/N(t)$ — on the lattice as in the continuum (receipt: $2\times 10^{-7}$ on the discrete profile).  This is the record-lattice form of the classical tortoise/Regge–Wheeler coordinate [6]; the content of the proposition is that the conjugation is \emph{exact} on the discrete record geometry, not merely asymptotic.
+
+Consequences, each receipted: horizons ($\int dx/N$ divergent) sit at infinite record distance; the spectrum is free, $(k\pi/Y)^2$ up to $O(h^2)$; modes pile up logarithmically at the measured density ($\ln$-uniform: $14.66$/decade predicted, $14/15/15$ counted in successive decades — the lattice realization of 't Hooft's brick-wall mode counting [4]); and infall follows $x(t) = x_0e^{-\kappa t}$ with slope error $2\times 10^{-6}$.
+
+\section*{3. Temperature, twice}
+\textbf{Route A: Euclidean cone regularity.}  Periodically identified Euclidean record time with period $\beta$ produces a cone; smoothness selects $\beta = 2\pi/\kappa$ uniquely — the Gibbons–Hawking regularity argument [7], which is the named classical import here.  The \emph{record-language reading} of the regularity demand — "no boundary record at the tip" — is graded carefully, because an earlier draft presented it as axiom S applied directly, and that is not yet a derivation.  The argument it requires, stated so it can be attacked: (premise) the equilibrium sector is \emph{eventless} — thermal equilibrium is defined by the absence of committed events in the Euclidean window; (step) a conical deficit is nonzero holonomy, and by Part II's transport analysis holonomy is \emph{enclosed events} — so a deficit requires an event at the tip, contradicting the premise.  The step is exactly Part II's receipted identification, but the premise (equilibrium $=$ eventless) is a \textbf{named identification of this paper}, not a theorem; until it is derived, Route A is Gibbons–Hawking with a record-theoretic gloss whose one nontrivial ingredient is the holonomy-events link.  Receipts: interior Bessel-mode matching at $10^{-5}$; tip exponent $0.9997$ (vs $1$); the deficit/excess detection at periods $0.8\times$ and $1.25\times$ the smooth value.
+
+\textbf{Route B: modular structure.}  The wedge-reduced vacuum of the record lattice, analyzed without any Euclidean input, exhibits Bisognano–Wichmann structure [1]: modular eigenvalues $\varepsilon_k = 2\pi\,\omega_k$ with boost frequencies $\omega_k$, uniform to $2.5\times 10^{-5}$ across all eight resolvable levels (the residual is a level-independent cut-placement systematic; the lattice modular-spectrum methodology follows Peschel's correlation-matrix construction [8]).  The boost generator is the program's threshold operator at its limit-circle point — the same operator that classifies the tame boundary (Part I, Section 2).
+
+Two routes, one temperature, $T = \kappa/2\pi$ — Hawking's value [3], with Route B the lattice form of the Unruh wedge analysis [2].  We do not present the agreement of the two routes as mutual corroboration: both are properties of the same Gaussian lattice theory, linked by known KMS/modular theorems, so their agreement is an implementation check — consistent with the uniqueness theorems for thermal states on bifurcate Killing horizons (Kay–Wald [9]), of which this is a discrete-record instance, not an extension.
+
+\section*{4. Censorship and extremality}
+\textbf{Proposition 4.1 (record censorship as endpoint classification).} For $N \sim x^\beta$: if $\beta \ge 1$ the profile is a true horizon — the tortoise distance diverges and \emph{all} self-adjoint-extension ambiguity is displaced to infinite record distance: record towers with different boundary completions collapse to the same free spectrum ($\lambda_1 Y^2 \to \pi^2$ and $\pi^2/4$ for the two canonical completions of the \emph{same} tower — distinct boxes, same physics).  If $\beta < 1$ the distance is finite and the ambiguity is real: towers converge to distinct exact limits ($\pi^2/4$ vs $\pi^2/16$ at $\beta = 1/2$).  The marginal case $\beta = 1$ (Rindler) coincides with the logarithmic threshold of the program's limit-point/limit-circle classification.
+
+\emph{Status of the statement.}  The underlying mathematics is Weyl's classical endpoint classification for Sturm–Liouville operators [10] — limit point at the divergent end, limit circle at the finite one — and we claim no new operator theory.  The contribution is the \emph{identification} (horizon regularity $=$ limit-point displacement of the extension ambiguity; "censorship" $=$ the statement that profiles with $\beta \ge 1$ hide their boundary data behind infinite record distance) and the exact tower receipts that verify the dichotomy is realized on finite record lattices.
+
+\textbf{Extremal profiles.}  For $N$ vanishing quadratically and faster (extremal-like), the smooth Euclidean period tracks $1/N'(0) \to \infty$: measured exponents $0.9926/0.9853$ against naive expectations $2.98/4.93$ from the curvature scale — the temperature goes to zero the right way.
+
+\section*{5. Greybody factors as record impedance}
+For the exactly solvable interpolation $N^2 = 1/(1 + e^{-2\kappa y})$ (Rindler-to-flat), the record scattering problem has the closed-form reflection coefficient
+
+\[
+R \;=\;
+\left[\frac{\sinh\!\bigl(\pi(k-q)/2\kappa\bigr)}
+           {\sinh\!\bigl(\pi(k+q)/2\kappa\bigr)}\right]^{2},
+\]
+verified on the lattice to $1.5\times 10^{-14}$ (the closed form is the classical reflection coefficient of the smooth-step/Eckart barrier family, textbook material since Landau–Lifshitz [11]; the receipt checks the record lattice against it, it does not rederive it).  Two consistency receipts tie this to independent program results: the $\kappa \to \infty$ (sharp-wall) limit reproduces the homogenization impedance law derived elsewhere in the program ($0.021172$ vs $0.021286$ at $\kappa = 32$), and physical record packets split with flux-weighted band accuracy $1.7\times 10^{-5}$, with sub-barrier reflection machine-exact at unity.  Within the $1{+}1$ radial toy class studied here, greybody filtering \emph{is} impedance mismatch of record propagation; we scope the statement, because physical black-hole greybody factors are dominated by the centrifugal (Regge–Wheeler) barrier of the angular sector, which this construction does not contain.  The homogenization impedance law used as the $\kappa \to \infty$ anchor is a corpus-bound program result [P]; the closed form checked here stands on its own.
+
+\section*{6. Capacity}
+Near-horizon record towers carry what we measure as \emph{entanglement entropy of the reduced record state} — called "capacity" throughout for brevity, and defined as exactly that — growing at $1/6$ nat per e-fold of approach (slope $0.16622$; deviation from $1/6$ equal to $4.4\times 10^{-4}$ as computed in the receipt from the unrounded fitted value — recomputing it from the $5$-digit rounded slope shown here gives $4.5\times 10^{-4}$, a rounding artifact, stated so the pair is checkable; constant against the chord-form correction to $10^{-3}$).  The value is not mysterious and we do not present it as such: $1/6$ is the central-charge coefficient $c/6$ of the Calabrese–Cardy entanglement law [12] at $c = 1$ in the single-endpoint geometry, and the discrete modular quanta with spacing $2\pi^2/\ln(cL)$ are the known single-interval modular spectra (Peschel [8]; Casini–Huerta [13]) — a one-constant prediction verified here at the one-percent level on record towers.  We also measure a two-dimensional record area law ($S = 0.07222\,n$, residual $2.7\times 10^{-3}$).  These are stated as lattice facts whose continuum anchors are named; their continuum normalization (the area coefficient) is a calibration question, named and not claimed.
+
+\section*{7. What is and is not claimed}
+Claimed: the thermal, causal, scattering, and capacity \emph{structure} of horizons emerges on record lattices with exact receipts, by two routes for the temperature (linked, per Section 3, not independent), and quantitatively continuous with the program's homogenization and boundary-classification results.  Not claimed: back-reaction and evaporation — in particular nothing here touches the information-flow questions of the Page curve [5], which require evaporation dynamics (dynamics outside the kinematic scope); the Bekenstein–Hawking coefficient (calibration); uniqueness of the record framework (these receipts are consistency credentials, not exclusivity proofs).  The constructions are $1{+}1$-dimensional in the radial sector, as is standard for this physics; the angular sector enters only through the capacity counting.
+
+\section*{Reproducibility}
+Every number regenerates from fixed-seed scripts: the tortoise and pile-up receipts; both temperature routes; the censorship tower limits; the closed-form scattering check; the capacity slopes. Bit-identical reruns.
+
+\section*{References}
+[1] J. J. Bisognano, E. H. Wichmann, \emph{J. Math. Phys.} \textbf{16} (1975) 985; \textbf{17} (1976) 303.
+
+[2] W. G. Unruh, Notes on black-hole evaporation, \emph{Phys. Rev. D} \textbf{14} (1976) 870.
+
+[3] S. W. Hawking, Particle creation by black holes, \emph{Commun. Math. Phys.} \textbf{43} (1975) 199.
+
+[4] G. 't Hooft, On the quantum structure of a black hole, \emph{Nucl. Phys. B} \textbf{256} (1985) 727 — brick-wall mode counting, the ancestor of the pile-up receipts.
+
+[5] D. N. Page, Information in black hole radiation, \emph{Phys. Rev. Lett.} \textbf{71} (1993) 3743.
+
+[6] T. Regge, J. A. Wheeler, Stability of a Schwarzschild singularity, \emph{Phys. Rev.} \textbf{108} (1957) 1063 — the tortoise coordinate.
+
+[7] G. W. Gibbons, S. W. Hawking, Action integrals and partition functions in quantum gravity, \emph{Phys. Rev. D} \textbf{15} (1977) 2752.
+
+[8] I. Peschel, Calculation of reduced density matrices from correlation functions, \emph{J. Phys. A} \textbf{36} (2003) L205.
+
+[9] B. S. Kay, R. M. Wald, Theorems on the uniqueness and thermal properties of stationary, nonsingular, quasifree states on spacetimes with a bifurcate Killing horizon, \emph{Phys. Rep.} \textbf{207} (1991) 49.
+
+[10] H. Weyl, Über gewöhnliche Differentialgleichungen mit Singularitäten, \emph{Math. Ann.} \textbf{68} (1910) 220; M. Reed, B. Simon, \emph{Methods of Modern Mathematical Physics II}, Academic Press (1975) — limit-point/limit-circle theory.
+
+[11] L. D. Landau, E. M. Lifshitz, \emph{Quantum Mechanics}, §25 (Pergamon) — reflection above smooth barriers; C. Eckart, \emph{Phys. Rev.} \textbf{35} (1930) 1303.
+
+[12] P. Calabrese, J. Cardy, Entanglement entropy and quantum field theory, \emph{J. Stat. Mech.} (2004) P06002.
+
+[13] H. Casini, M. Huerta, Entanglement entropy in free quantum field theory, \emph{J. Phys. A} \textbf{42} (2009) 504007.
+
+\textbf{Parts I–II:} \emph{Quantum theory from sealed records I–II} (same author).
+
+\end{document}

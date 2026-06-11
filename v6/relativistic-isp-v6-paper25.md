@@ -4,6 +4,23 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **CORRECTION/UPDATE NOTE (2026-06-11, publishable-campaign
+> review).**  (1) The neutrino-step registration (P28-era) was
+> rebuilt twice; FINAL FORM: the registered content is the
+> UNDRESSED SPECTRUM POINT m1:m2:m3 = eps:sqrt(eps):1 (S_nu =
+> 0.17556); the band and the free-coefficient exponent forms are
+> withdrawn (the 68% coefficient spread covers the whole exponent
+> axis - zero discriminating power); EXPECTED OUTCOME at current
+> centrals: ~5.6 sigma JUNO exclusion - the claim is expected to
+> die, pre-committed (v6/publishable/paper-VII; external
+> registration file, CORRECTION 2).  (2) P-Maj's consequence
+> "0nbb at some level" is NOT by itself a falsifier (no rate
+> floor); the row's operative falsifier remains "Dirac-only
+> neutrinos established."  (3) P-Z6 scope: a confirmed
+> millicharged particle kills the Z6 quotient DERIVATION, not the
+> record ontology (alternative-seal worlds survive) - stated so
+> the falsifier does not appear to cover more than it does.
+
 Subtitle:
 
 ```text

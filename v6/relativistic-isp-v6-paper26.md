@@ -367,6 +367,30 @@ metric prices the mechanism.
 
 ## 6. Part IV - the clock test: a hardware protocol
 
+> **CORRECTION (2026-06-11).**  The Hankel statistic below includes
+> the n = 0 entry and claims exclusion of every finite HMM; both are
+> corrected in the publishable treatment: the offset Hankel on
+> m_k = p(1^(k+1)) is the theorem-backed statistic (reversible
+> chains => Hamburger; a deterministic alternator falsifies the
+> naive version), SIGNED means "no reversible finite-state model,"
+> and full exclusion needs the pole stage (irrational phase).  See
+> the P28 correction note and v6/publishable/paper-III for the
+> corrected instrument and the revised device results.
+
+> **CORRECTION 2 (2026-06-11, hostile review).**  The
+> corrected claim above is STILL too strong: "no reversible
+> finite-state model" holds only for MOORE-form HMMs
+> (state-conditional emissions).  A Mealy (edge-emission) model on
+> a reversible chain is NOT covered - the induced Moore model
+> lives on the edge chain, which is never reversible - and the
+> textbook pair mechanism itself is exactly such a model
+> (1449/2000 random Mealy-on-reversible models sign; receipt).
+> v2.2 verdict string: "SIGNED (no reversible Moore-form HMM)".
+> The pole stage now carries a dominance condition (a complex pair
+> obstructs only ON the dominant circle) and a rank-scan with
+> resample stability; see P28 CORRECTION 2 and
+> v6/publishable/paper-III.
+
 ### 6.1 What it detects
 
 P16's separation theorem: there exist stationary processes of finite

@@ -4,6 +4,16 @@ Preprint, not peer reviewed, version 2026-06-11.
 
 Author: Felix Robles Elvira
 
+> **SCOPE NOTE (2026-06-11, publishable-campaign review).**  The
+> two-conjecture reduction quoted from P30 ((NR) + (ISO) close the
+> spectral obstruction) is proved at RANK-3 BLOCKS: at higher rank
+> G = I orthonormalizes the peripheral triple only and says
+> nothing about its angle to subperipheral subspaces, so (NR)
+> cannot be invoked; closing the general case needs a named
+> strengthening (ISO+ or peripherally-normal NR).  Frontier rows
+> citing the reduction carry this scope
+> (v6/publishable/paper-II, Sec. 6).
+
 Subtitle:
 
 ```text

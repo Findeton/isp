@@ -4,6 +4,54 @@ Preprint, not peer reviewed, version 2026-06-10.
 
 Author: Felix Robles Elvira
 
+> **CORRECTION 2 (2026-06-11, hostile review - scope of
+> the verdict narrowed again).**  The corrected claim below,
+> "SIGNED means no reversible finite-state model," is STILL too
+> strong: it holds only for MOORE-form HMMs (state-conditional
+> emissions).  A Mealy (edge-emission) model on a reversible chain
+> is not covered - the induced Moore model lives on the edge
+> chain, which is never reversible - and the textbook pair
+> mechanism itself IS such a Mealy model (iid measurement errors +
+> symmetric edge emissions), reproducing the signed process
+> exactly; 1449/2000 random Mealy-on-reversible models sign
+> (fixed-seed receipt).  v2.2 verdict: "SIGNED (no reversible
+> Moore-form HMM)."  Also in v2.2: B = 2000 bootstrap with a
+> conservative Bonferroni statement (all 64 survive), per-stream
+> run counts, and a rank-scan + dominance stage (0/64 device
+> streams show a stable dominant complex pair - the clock
+> signature - while the oscillatory control shows it at stability
+> and dominance 1.00; the control also exposed that the primary
+> order selection under-selects on it, which the scan corrects).
+> Headline (no clock) UNCHANGED.  Tool: clock_test_tool.py v2.2;
+> full treatment: v6/publishable/paper-III.
+>
+> **CORRECTION (2026-06-11, from the publishable-papers campaign).**
+> Movement I used the v1 statistic: the Hankel on p(1^(i+j))
+> INCLUDING the n = 0 entry, with the claim "signed excludes every
+> finite HMM."  Both parts are corrected.  (1) THEORY: the n = 0
+> entry is not part of the moment structure - a deterministic
+> two-state alternator (a legitimate reversible HMM) signs the naive
+> Hankel.  The correct theorem: for REVERSIBLE chains, m_k =
+> p(1^(k+1)) is a Hamburger moment sequence (detailed-balance
+> symmetrization), so the OFFSET Hankel [m_{i+j}] is PSD; SIGNED
+> means "no reversible finite-state model"; excluding ALL finite
+> models additionally requires an irrational-phase (pole-stage)
+> signature.  (2) DATA: under the corrected statistic the 64/64
+> PASS becomes 64/64 SIGNED - and the textbook detection-event
+> mechanism (measurement errors firing consecutive-round detector
+> pairs) signs identically, with purely real Prony poles (one
+> negative: the pair fingerprint).  Pole stage on the device: 62/64
+> purely real, 2/64 complex only at the lowest signal-to-noise.
+> REVISED CONCLUSION: the device statistics are non-reversible
+> exactly as the standard pair mechanism predicts, and show NO
+> irrational-rotation signature - the headline (no clock; no
+> obstruction to finite-state noise modeling) STANDS, now through
+> the corrected two-stage instrument (sign stage + pole stage).
+> The corrected tool is clock_test_tool.py v2; the publishable
+> paper (v6/publishable/paper-III-moment-test.md) carries the full
+> corrected treatment.  Movement I below is preserved as written
+> for the record.
+
 Subtitle:
 
 ```text

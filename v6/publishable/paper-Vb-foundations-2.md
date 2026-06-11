@@ -1,0 +1,325 @@
+# Quantum theory from sealed records II: fermions, statistics, and internal symmetry groups as outputs
+
+**Author:** Felix Robles Elvira (ORCID: 0009-0009-2017-4394; independent researcher)
+
+**Status:** preprint, not peer reviewed, version 2026-06-11.
+
+## Abstract
+
+Within the sealed-records program (Part I), we derive the structures
+of particle statistics and gauge theory as outputs rather than
+inputs.  Results at stated scope, each with machine receipts: (i)
+**univalence superselection is derived within the stated record
+class** (defined in Section 2; the silence of the relative sign is
+established by exhaustive verification within that class, so the
+verb "derived" carries exactly that scope) — the silent-seam axiom
+then excludes superpositions across the double cover, making the
+$(-1)^F$ grading central; (ii) **spin quantization** $2m \in
+\mathbb Z$ follows from the $(1,3)$ signature with the belt-trick
+identification, with record anyons confined to genuinely
+two-dimensional screens; (iii) the **statistics theorem** — *under the named
+framed-transport premise* (exchange is transport of the fiber with
+its frame; graded as premise throughout, with a corpus-bound [P]
+derivation not part of this batch), sealed
+positivity on the exchange collar forces exchange phase
+$(-1)^{2m}$: wrong-statistics sectors carry strictly negative
+weights, and Pauli exclusion appears as an exact zero; (iv) **parastatistics excluded at
+pair-exchange level**: the transport commutant on $V \otimes V$ is
+exactly $\mathrm{span}\{\mathbf 1, P\}$, and the $\pm\mathbf 1$
+options are excluded by the ledger (the $n$-strand DHR
+parastatistics question is scoped in Section 4); (v) the **internal symmetry group of the fiber is reconstructed as
+the commutant of record exchange**: once the ledger forces the
+statistics, classical Schur–Weyl duality (named import, no novelty
+claimed) delivers the full unitary group of the fiber — $U(3)$ for
+three-strand fibers (implementation check: $165 = 165$ dimension
+match, determinant slot included; the baryon channel transforms by
+$\det U$ exactly), $U(2)$ for the weak fiber ($10 = 10$,
+$20 = 20$) — in the *direction* of Doplicher–Roberts: group as
+output of statistics.  What is delivered is the *global* symmetry
+group; the promotion to a local gauge symmetry with connection and
+dynamics is an additional step, graded as input where Part III
+uses it.  Color receipts include exact Pauli
+for color ($\Vert A_4\Vert = 0$) and the uniqueness of the baryon
+singlet.  We state the paper's two named premises — framed
+transport, carrying the exchange association, and collar
+presentability, named in Section 3's premise accounting — and the
+scope of each result; the matter-content
+selection built on these structures, and its falsifiable
+consequences, appear in Part III.
+
+## 1. Introduction
+
+Standard quantum field theory *postulates* its deepest structural
+facts: that particles are bosons or fermions with the spin-statistics
+connection, that parastatistics does not occur, and that interactions
+are governed by compact gauge groups acting on internal indices.  The
+algebraic tradition showed these postulates are not independent —
+Doplicher–Haag–Roberts theory [1] reconstructs a compact gauge group
+from the category of superselection sectors — but the inputs there
+are themselves field-theoretic axioms.
+
+This paper derives the same structures inside the sealed-records
+program (Part I): the only primitives are records and the three
+axioms R, S, C.  The derivations are *exclusion* arguments in the
+program's characteristic style — the silent-seam axiom S eliminates
+every alternative — and each step carries machine receipts.
+
+## 2. Univalence superselection, derived
+
+**Theorem 2.1 (stated scope).**  Half-integer record fibers are
+consistent (the silent-sign analysis: a $2\pi$ frame rotation's sign
+is unobservable on any single record), but *superpositions across
+the double cover are excluded*: a relative sign between integer and
+half-integer sectors would be a silent seam — a datum no record
+registers — and axiom S quotients it away.  Hence the grading
+$(-1)^F$ is superselected: central in the record algebra.  The
+argument form is Wick–Wightman–Wigner's univalence superselection
+[8], and we credit it as such; the program's specific contribution
+is the conversion of "unobservable" into "excluded by axiom S" via
+the operational criterion below, with its negative branch verified
+within the stated record class (the abstract's claim carries that
+scope).
+
+**The stated record class (defined, since the criterion below
+quantifies over it).**  Throughout this paper the record class is
+the finite sealed-record towers of Part I Section 2: finite
+products of projective record fibers with sealed seams, closed
+under the dilation lifts of this section, probed exhaustively up
+to the stated tower depths in the receipts.  Claims of silence are
+exhaustive-verification statements *within this class*, graded as
+such — silence in a finite class is evidence for, not a proof of,
+silence in every extension, and we say so once here instead of
+hedging every sentence.
+
+**The silent-vs-physical criterion (stated, since it carries the
+load here and in Part I).**  A relative datum between two ledger
+configurations is *physical* if some admissible sealed record
+assigns them different weights, and *silent* if no record does;
+axiom S quotients silent data away.  The criterion is operational,
+not aesthetic: each application below is discharged by a receipt
+exhibiting either the discriminating record (physical) or the
+exhaustive failure to find one within the stated record class
+(silent).  The $2\pi$ rotation sign is silent on every single
+record (receipted); a relative phase *within* a sector changes seam
+interference weights (receipted), so intra-sector superpositions
+survive; the integer/half-integer relative sign fails the test
+against every record — that asymmetry is the theorem.
+
+The receipts include the $4\pi$-interferometry consistency checks
+and the projective-dilation classification ($H^2$ classes, both
+realized).  Two consequences do heavy work later: (a) fermionic
+intertwiners cannot implement sector equivalences (they shift a
+superselected label) — load-bearing in Part III's charge-screening
+theorem; (b) spin quantization: with the $(1,3)$ signature of Part
+I and exchange-as-transport (below), $2m \in \mathbb Z$, with
+anyonic interpolation surviving only on genuinely two-dimensional
+record screens.
+
+## 3. The statistics theorem
+
+**The association.**  The first of this paper's two named
+premises (the second, collar presentability, is named in the
+premise accounting below):
+exchange of identical record structures is *framed transport* — the
+exchange path is the transport of one fiber around the other with
+its frame.  (In the program's corpus this premise is discharged into
+a no-silent-circulation theorem for eventless transport on open
+paths: silent extra circulation is quantized to $\mathbb Z_2$ and a
+silent $\pi$ is excluded.  That derivation is **corpus-bound [P]**
+— not in this batch — so within this submission the
+framed-transport association is a *named premise*, full stop; the
+[P] pointer records where a derivation exists to be audited, and
+nothing here leans on it.)
+
+**Theorem 3.1 (with its premises displayed).**  Sealed positivity
+on the exchange collar forces the exchange phase $(-1)^{2m}$.
+Wrong-statistics sectors are not merely unconventional: their
+collar weights are strictly negative — the same failure class as
+the reflection-positivity violations of Part I — and Pauli
+exclusion appears as an exact zero of the sealed weight.
+
+*Premise accounting, complete.*  (a) The framed-transport
+association above.  (b) **The presentation premise, previously
+silent and now named**: Part I proves reflection positivity as a
+theorem only for eventless sectors admitting finite primitive
+Markov presentations, and proves that hypothesis sharp; applying
+"sealed positivity" on the exchange collar therefore assumes the
+collar sector *admits such a presentation*.  Our collar
+constructions do (they are built as finite record lattices, and the
+receipts certify positivity directly on them), but the general
+statement "every physical exchange collar is presentable" is a
+premise of the same type as the tame premise of Part I.  (c) We
+also temper the novelty claim: "wrong statistics implies positivity
+violation" is the engine of the classical field-theoretic proof
+[3]; what differs here is the input layer (records, not fields) and
+the finite, machine-checkable form of the violation.
+
+Receipts (implementation checks in the sense of Section 5, except
+the first, which is the substantive one): the wrong-sector
+negativity is exhibited directly; the fermionic tower then
+reconstructs canonical anticommutation relations to
+$8.9\times 10^{-16}$ with Fock subset-sum structure at
+$7.6\times 10^{-15}$, and a quadratic reconstruction whose inputs
+nowhere assume the CAR algebra (that is what "non-circular" means
+here) at $2.4\times 10^{-15}$.
+
+## 4. Parastatistics never, and why dimension three matters
+
+**Theorem 4.1.**  (a) For relative configuration spaces of dimension
+$\ge 3$, eventless exchange squares to the identity (pure-gauge
+holonomy receipts at $2.2\times 10^{-14}$ across contraction stages;
+an eventful contrast degrades from $1.99$ to $0.12$ — holonomy is
+*enclosed events*).  The configuration-space formulation of
+exchange used throughout this section is Leinaas–Myrheim's [5]
+(named frame, not only the source of the $d = 2$ exception).  (b) The transport commutant on $V \otimes V$ is
+exactly $\mathrm{span}\{\mathbf 1, P\}$ (machine dimension $2$ at
+$d = 2, 3, 4$), so the exchange operator is $\pm\mathbf 1$ or
+$\pm P$; the scalar options are *excluded by the ledger*: they
+predict vanishing cross-records at seams where eventless transport
+in fact seals with unit modulus — a distinction between labelings
+that no record registers, which is precisely the silent-datum
+configuration the criterion of Section 2 excludes.  Hence exchange
+$= (-1)^{2m}P$ at pair level: ordinary Bose/Fermi statistics, with
+the two-dimensional anyon window [5] as the unique exception.
+
+*Scope of the parastatistics exclusion, stated precisely.*  The
+theorem above is a statement about *pair exchange*.  Parastatistics
+in the DHR sense lives in higher-dimensional representations of
+$S_n$ acting on multiplicity spaces, and excluding it requires the
+$n$-strand statement.  What this batch has: (i) the pair-level
+theorem; (ii) the $n = 3, 4$ channel receipts of Section 5 (the
+statistics algebra truncates as ordinary Bose/Fermi structure
+requires — rank $23 \neq 24$ on $(\mathbb C^3)^{\otimes 4}$ — and
+sector bookkeeping matches $3^n$ counting), which are *consistency
+evidence at the probed strand numbers, not a proof*; and (iii) the
+observation that a genuine para-order-2 alternative is excluded at
+$n = 3$ by the baryon-channel computation of Section 5.  The
+all-$n$ exclusion theorem is open and named; the abstract is scoped
+accordingly.
+
+## 5. The gauge group as the commutant of exchange
+
+**Theorem 5.1 (gauge commutant; Schur–Weyl applied, with the
+physical identification named).**  The algebra of record-transport
+operators commuting with all exchanges on $n$ strands of a
+$d$-dimensional fiber is exactly
+$\mathrm{span}\{U^{\otimes n} : U \in U(d)\}$ — the *full* unitary
+group of the fiber, determinant slot included.
+
+*Status of the statement.*  The mathematics here is classical
+Schur–Weyl duality [4]; we prove nothing new about commutants and
+claim no mathematical novelty.  What the program contributes is the
+two-step physical identification that makes the classical theorem
+do gauge-theoretic work: (i) the ledger *forces* the statistics
+(Sections 3–4), so the symmetric-group action is derived, not
+assumed; (ii) the named premise that internal symmetries are
+record-transport operators, which must therefore commute with the
+forced statistics — whereupon Schur–Weyl delivers the group.  The
+analogy with Doplicher–Roberts reconstruction [1, 2] is one of
+direction (group as output), not of mathematical content or depth.
+
+Receipts: for the color fiber ($d = 3$, $n = 3$), commutant
+dimension $165$ equals the dimension of
+$\mathrm{span}\{U^{\otimes 3}\}$ ($165 = 10^2 + 8^2 + 1^2$); the
+statistics algebra truncates exactly as Schur–Weyl requires (rank
+$23 \neq 24$ on $(\mathbb C^3)^{\otimes 4}$); for the weak fiber
+($d = 2$), the mirror receipts give $10 = 10$ ($n = 2$) and
+$20 = 20$ ($n = 3$).  *These numbers verify our implementation
+against a known theorem — they are consistency checks of the
+machinery, not evidence for new mathematics*; the receipts that
+carry evidential weight in this section are the ledger-side ones
+(negativity of wrong-statistics sectors, the baryon-channel weight
+$0.0096 > 0$ below), where the program's claims are not classical.
+Gauge structure is thereby an *output*: the group is whatever
+commutes with the statistics the ledger forces.
+
+**Color receipts.**  The three-strand antisymmetric channel is
+unique ($\operatorname{rank} A_3 = 1$: one baryon singlet); the
+four-strand channel vanishes *exactly* ($\Vert A_4\Vert = 0$: Pauli
+for color); and the baryon transforms by $\det U$ alone
+($U^{\otimes 3} b = \det(U)\, b$ to $2.4\times 10^{-16}$) — the
+determinant slot that Part III identifies as the hypercharge
+carrier.
+
+**Order parameters of the derivation.**  Fiber order equals fiber
+dimension, checked in both directions *within the constructed
+model*: a parastatistics-order-2 alternative predicts zero sealed
+weight in the baryon channel, where the constructed record dynamics
+yields $0.0096 > 0$ — a model output demonstrating that the record
+construction realizes the dimension-equals-order case, not a
+measurement of nature.  Sector collapse bookkeeping matches
+$3^n$-counting exactly (same status).
+
+## 6. What is not claimed
+
+(i) The specific fiber dimensions $\{3, 2\}$ are *selected*, not
+derived ab initio: the program's exhaustion theorem makes $3$ the
+first chirality-supporting stack and a tower-exclusion search makes
+$(3,2)$ the strictly cheapest chiral tower on uniformly derived
+charge lattices — with the minimality principle itself named as the
+remaining input (Part III).  (ii) Dynamics (running couplings, mass
+generation) is outside this paper.  (iii) All results are at stated
+scope, with the program's frontier taxonomy (rank-free vs
+engine-uniform vs frontier-bound) applying clause by clause; notably
+the centrality and commutant arguments here are *rank-free* — their
+proofs never invoke the fiber multiplicity.
+
+## 7. Relation to prior work
+
+DHR/DR reconstruction [1, 2] is the conceptual ancestor; the
+difference is the input layer (records and exclusions rather than
+field-theoretic axioms) and the direction: statistics is *forced*
+(Section 3) before the group is reconstructed from it (Section 5).
+The spin-statistics literature is engaged at two levels: the
+field-theoretic theorem [3], and the long program of seeking
+kinematic or non-relativistic derivations, whose history and
+pitfalls are documented by Duck and Sudarshan [6] and whose best
+known geometric attempt is Berry–Robbins [7] — our
+no-silent-circulation route belongs to this second family and
+inherits its burden: the exchange-as-framed-transport association
+is a named premise, not a theorem of quantum mechanics.  The
+two-dimensional anyon window is Leinaas–Myrheim and Wilczek [5].
+Schur–Weyl duality [4] supplies the double-commutant machinery
+(named import, with the honesty note of Section 5).
+
+## Reproducibility
+
+Receipts regenerate from fixed-seed scripts (the silent-sign and
+holonomy analyses; the commutant dimensions; the CAR tower; the
+baryon channel).  Bit-identical reruns; repository accompanies the
+program.
+
+## References
+
+[1] S. Doplicher, R. Haag, J. E. Roberts, Local observables and
+particle statistics I–II, *Commun. Math. Phys.* **23** (1971) 199,
+**35** (1974) 49.
+
+[2] S. Doplicher, J. E. Roberts, Why there is a field algebra with a
+compact gauge group describing the superselection structure in
+particle physics, *Commun. Math. Phys.* **131** (1990) 51.
+
+[3] R. F. Streater, A. S. Wightman, *PCT, Spin and Statistics, and
+All That*, Princeton (1964).
+
+[4] R. Goodman, N. Wallach, *Symmetry, Representations, and
+Invariants*, Springer (2009) — Schur–Weyl duality.
+
+[5] J. M. Leinaas, J. Myrheim, On the theory of identical
+particles, *Nuovo Cim. B* **37** (1977) 1; F. Wilczek, Quantum
+mechanics of fractional-spin particles, *Phys. Rev. Lett.* **49**
+(1982) 957.
+
+[6] I. Duck, E. C. G. Sudarshan, *Pauli and the Spin-Statistics
+Theorem*, World Scientific (1997).
+
+[7] M. V. Berry, J. M. Robbins, Indistinguishability for quantum
+particles: spin, statistics and the geometric phase, *Proc. R.
+Soc. Lond. A* **453** (1997) 1771.
+
+[8] G. C. Wick, A. S. Wightman, E. P. Wigner, The intrinsic parity
+of elementary particles, *Phys. Rev.* **88** (1952) 101 —
+univalence superselection.
+
+**Part I:** *Quantum theory from sealed records I* (same author).
+**Part III:** *The Standard-Model floor* (same author).
