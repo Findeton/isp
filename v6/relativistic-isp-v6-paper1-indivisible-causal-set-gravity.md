@@ -1,5 +1,7 @@
 # Paper 1 (v6) — Indivisible Causal-Set Gravity: discharging the hypersurface-deformation residue on the division-event network
 
+Preprint, not peer reviewed, version 2026-06-08.
+
 **Author:** Felix Robles Elvira
 **Status:** Program + feasibility probe (markdown draft). This is **not** a derivation of general
 relativity and **not** a solution of the relativistic-QFT reconstruction problem. It proposes one

@@ -1,5 +1,7 @@
 # Paper 2 (v6) — Spatial direction, flow-drift, and interacting Tomonaga-Schwinger integrability
 
+Preprint, not peer reviewed, version 2026-06-08.
+
 **Author:** Felix Robles Elvira
 
 **Status:** Research investigation, numerical probes, and sharpened derivation target. This combined Paper 2 keeps both v6 legs in one place: Part I extracts the oriented spatial frame and GR flow-drift observable from causal order; Part II analyzes the interacting covariance residue, the division-event memory law, and the A/B fork for whether `g(s²)` is derived or postulated. It is not a derivation of GR and not a completed relativistic collapse model.

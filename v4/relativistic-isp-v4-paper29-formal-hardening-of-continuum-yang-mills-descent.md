@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 29: Formal Hardening Of The Internal Yang-Mills Descent Theorem
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Status: formal hardening paper after Paper 28.  This paper adds no new

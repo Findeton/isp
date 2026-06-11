@@ -1,5 +1,7 @@
 # V4 Paper 39: Standalone Record-Complete Yang-Mills Construction And Confinement/Gap Reduction
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Date: May 29, 2026

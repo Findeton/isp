@@ -1,5 +1,7 @@
 # Fourth Review of "Non-Markovian Gravitational Decoherence"
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 ## Referee-style verdict
 
 **Recommendation: minor-to-major revision before submission; suitable for preprint circulation after tightening.**

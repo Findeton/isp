@@ -1,5 +1,7 @@
 # Boundary-Flux-Resolved Einstein Causality in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Exact physical-sector gluing, extended regional configuration spaces, and center-resolved locality on the finite matter-link benchmark*
 
 Author: Felix Robles Elvira

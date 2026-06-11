@@ -1,5 +1,7 @@
 # Paper 12 (v6) - SHARD: The (C) Decomposition Campaign
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -125,11 +127,12 @@ code/v6_p12d_synthetic_boundary_campaign.py    O10, interface,
                                           homogenization, wave speed
 ```
 
-Imports, named: Mosco convergence of Dirichlet forms (Mosco;
-Kuwae-Shioya), periodic homogenization (Bensoussan-Lions-Papanicolaou),
-the Weyl limit-point/limit-circle alternative and von Neumann extension
-theory, synthetic Lorentzian geometry (Cavalletti-Mondino).  The OS
-bridge is NOT an import: it is Paper 10's theorem, instantiated.
+All four scripts rerun bit-identically.  Imports, named: Mosco
+convergence of Dirichlet forms (Mosco; Kuwae-Shioya), periodic
+homogenization (Bensoussan-Lions-Papanicolaou), the Weyl limit-point/
+limit-circle alternative and von Neumann extension theory, synthetic
+Lorentzian geometry (Cavalletti-Mondino).  The OS bridge is NOT an
+import: it is Paper 10's theorem, instantiated.
 
 ## 2. The decomposition
 
@@ -161,9 +164,26 @@ already-closed positivity layer.
 
 ## 3. (C2): the OS bridge, operational
 
-Spatial ring with curved conductance c(x) = 1 + 0.5 sin(2 pi x); the
-Euclidean record kernel K = e^{-tau A} is a positive record law (min
-entry 2.7e-40, positive within round-off; all 64 modes resolved):
+### 3.1 The construction
+
+Spatial ring with curved conductance c(x) = 1 + 0.5 sin(2 pi x),
+assembled as the bond-weighted record Laplacian A.  The Euclidean
+record kernel is K = e^{-tau A} at tau = 2e-4 - small enough that all
+64 modes are resolved above the round-off floor.  K is a POSITIVE
+record law (min entry 2.7e-40, positive within round-off): it is
+ledger data, not an operator abstraction.  The bridge runs:
+
+```text
+   Euclidean record kernel K  --(spectral log)-->  generator A_rec
+   --(spectral cosine)-->  Lorentzian propagator cos(sqrt(A_rec) t),
+```
+
+with the right to take the spectral cosine supplied by Paper 10's
+reflection-positivity theorem (the OS Hilbert space and self-adjoint
+generator exist for the eventless record law) - NOT by an
+analytic-continuation axiom.
+
+### 3.2 Receipts
 
 ```text
 generator reconstruction:        ||A_rec - A|| = 3.6e-11
@@ -183,9 +203,23 @@ is elliptic convergence plus a theorem the corpus already owns.
 
 ## 4. (C1): genuine tensor record metrics
 
+### 4.1 The form assembly
+
 A full Riemannian record metric is a tensor field C(x); the record
-operator is assembled from the Dirichlet form E(u) = sum grad(u)^T C(x)
-grad(u), symmetric PSD whenever C is pointwise PSD.
+operator is assembled from the Dirichlet form
+
+```text
+   E(u) = sum_cells grad(u)^T C(x_c) grad(u),
+   A = sym sum_{ab} G_a^T diag(C_ab) G_b,
+```
+
+with G_a the forward-difference operators and cell-center coefficient
+sampling - symmetric and positive whenever C is pointwise PSD, by
+construction.  The test family: rotated-eigenframe metrics
+C = R(theta) diag(l1, l2) R(theta)^T with smoothly varying angle and
+eigenvalue fields - genuine anisotropy, not conformal rescaling.
+
+### 4.2 Receipts
 
 ```text
 2d rotated-eigenframe metric (l1 = 1.3, l2 = 0.7, varying angle):
@@ -201,20 +235,25 @@ uniform audit (12 random tensor metrics x n in {16,24,32} x modes 1..8;
 Sub-gate (C1) now covers the actual Riemannian data of a spatial slice -
 anisotropy, rotation of the eigenframe, and three dimensions - with the
 audited uniform constant extending P8 Proposition 7.1 beyond conformal
-classes.
+classes.  (Paper 15 later PROVES the class-uniform version of this
+audit, with the audited C* = 0.25 as the sharp working constant.)
 
 ## 5. The Lorentzian instances: redshift and the operational lapse
 
 ### 5.1 Cosmological redshift (1+1, precision; 3+1, the first instance)
 
-On the FRW record lattice ds^2 = -dt^2 + a(t)^2 dx^2 with a = 1 + 0.4t,
-a propagating mode's coordinate frequency obeys omega(t) a(t) = const:
+On the FRW record lattice ds^2 = -dt^2 + a(t)^2 dx^2 the wave equation
+is u_tt + D H u_t = a^{-2} lap(u) with H = adot/a and D the spatial
+dimension - the friction term is the dimensional dilution of record
+flux, and the WKB consequence is the redshift law omega(t) a(t) =
+const.  Receipts (a = 1 + 0.4 t):
 
 ```text
-1+1 (zero-crossing measurement):
+1+1 (zero-crossing frequency measurement):
    n = 512:  err 9.08e-04     n = 1024: err 3.33e-04
    n = 2048: err 2.09e-04     (falling under refinement)
-3+1 (32^3 expanding lattice, full 3H friction, phase-quadrature):
+3+1 (32^3 expanding lattice, FULL 3H friction, phase-quadrature
+   measurement - cos/sin mode pair, unwrapped phase):
    omega ratio 0.65463 vs prediction 0.64706 (err 7.6e-03, at the
    lattice-dispersion scale for kh = 0.79)
 ```
@@ -225,9 +264,13 @@ correct redshift law, from record evolution alone.
 
 ### 5.2 Gravitational time dilation: the lapse is the operational Z_perp
 
-One record lattice, ONE coordinate clock, two identical cavities sitting
-at lapses N = 1 and N = 0.7 (operator A = -N d(N d), the static-metric
-wave operator):
+For a static metric ds^2 = -N(x)^2 dt^2 + dx^2 the wave operator on
+record modes is A = -N d(N d.) - derived directly from the action
+int N^{-1} (u_t)^2 - N (u_x)^2: the lapse enters as the normal-sector
+weight on both the kinetic and gradient terms.  One record lattice,
+ONE coordinate clock, two identical cavities sitting at lapses N = 1
+and N = 0.7, frequencies extracted by the exact three-term cosine
+recursion on eigenmode amplitudes:
 
 ```text
 cavity at N = 1.0:  omega = 18.849364
@@ -241,7 +284,11 @@ the Z_perp datum that Paper 5 Section 11 identified as the minimal
 missing normal-sector record: here it is OPERATIONAL, and the frequency
 ratio between the two worldlines IS the normal boost holonomy connecting
 them.  The normal sector of (C) is thereby wired: lapse data = Z_perp
-data = local clock-rate data, three names for one record entry.
+data = local clock-rate data, three names for one record entry.  The
+receipt is exact to 3.7e-8 because the continuum target is an exact
+identity (for cavity-constant lapses, omega scales exactly with N) and
+the ratio measurement cancels the lattice systematics - a null-test
+design, not a harder computation.
 
 ## 6. (C4) and the synthetic stratum
 
@@ -271,7 +318,9 @@ HOMOGENIZATION: c_k = 1 + 0.6 sin(2 pi k x) has no pointwise limit; its
 INTERFACE: a discontinuous metric (c: 1 -> 4) is not a smooth geometry,
   yet the record dynamics converges to exact physics: measured
   reflection fraction 0.1111 and transmission 0.8889 against the
-  impedance law R^2 = ((Z1-Z2)/(Z1+Z2))^2 = 1/9 with Z = sqrt(c).
+  impedance law R^2 = ((Z1-Z2)/(Z1+Z2))^2 = 1/9 with Z = sqrt(c) -
+  derived by matching the record flux across the seam, exactly as in
+  classical transmission-line physics.
 LORENTZIAN FACE: a wave packet in the k = 32 microstructured medium
   propagates at 0.870 - the homogenized speed sqrt(0.8) = 0.894 within
   the packet-width systematic, and far from the naive mean speed 1.0:
@@ -290,9 +339,16 @@ record geometry, with smoothness a named extra condition on the class.
 
 ## 7. O10 folded in: boundary records, operationally
 
-On the degenerate record metric c(x) = x^alpha over (0,1), two
-microscopically different record towers - clamped versus free at the
-degenerate end - probe whether the ledger determines the continuum:
+### 7.1 The Weyl alternative on record towers
+
+For the degenerate record metric c(x) = x^alpha over (0,1), classical
+extension theory (Weyl 1910; von Neumann) says the singular end is
+LIMIT-CIRCLE for alpha < 3/2 - the operator has a one-parameter family
+of self-adjoint extensions, i.e. the continuum limit DEMANDS a boundary
+condition - and LIMIT-POINT for alpha >= 3/2 (unique limit, no choice).
+The record-native test: build two microscopically different towers
+(clamped vs free at the degenerate end) and watch whether they converge
+to the same continuum:
 
 ```text
 alpha   n=200      n=400      n=800      n=1600    behavior
@@ -302,14 +358,16 @@ alpha   n=200      n=400      n=800      n=1600    behavior
  3.0    0.000516   0.000258   0.000129   0.000064  O(1/n): UNIQUE
 ```
 
-Against the Weyl alternative (limit-circle iff alpha < 3/2): at
-alpha = 0.5 the towers converge to DIFFERENT self-adjoint extensions -
-the ledger underdetermines the limit, and a boundary record decides; at
-alpha = 3 the limit is unique and the microscopic scheme is irrelevant.
-The threshold-adjacent rows are measured precisely: at alpha = 1 the
-two schemes merge at exactly the 1/log n law (ratio receipts 1.099,
-1.090 vs the 1/log prediction 1.105, 1.094) - limit-circle guarantees
-that SOME scheme pairs differ in the limit, not that every pair does.
+At alpha = 0.5 the towers converge to DIFFERENT self-adjoint
+extensions - the ledger underdetermines the limit, and a boundary
+record decides; at alpha = 3 the limit is unique and the microscopic
+scheme is irrelevant.  The threshold-adjacent rows are measured
+precisely: at alpha = 1 the two schemes merge at exactly the 1/log n
+law (ratio receipts 1.099, 1.090 vs the 1/log prediction 1.105, 1.094)
+- limit-circle guarantees that SOME scheme pairs differ in the limit,
+not that every pair does.
+
+### 7.2 The identity
 
 **O10's identity, operational:** non-tame sectors are sectors with
 MISSING BOUNDARY RECORDS; the deficiency space parametrizes the ledger
@@ -403,11 +461,12 @@ record towers with the 1/log-threshold measurement.
 
 Does not prove: (C-reg) - the uniform 3+1 Mosco theorem and the
 regularity-stratum identification (the residue, now precisely one
-theorem); nonlinear focusing and Einstein dynamics (outside (C) by
-construction); the horizon reading of boundary-record loci (a flagged
-direction); continuum matter coupling (process-O6).  The decomposition
-Claim of Section 2 is a strategy theorem whose conjuncts are
-individually established at their stated scopes; its fully rigorous
+theorem; subsequently split and half-discharged by Paper 15); nonlinear
+focusing and Einstein dynamics (outside (C) by construction); the
+horizon reading of boundary-record loci (a flagged direction, executed
+by Paper 13); continuum matter coupling (process-O6).  The
+decomposition Claim of Section 2 is a strategy theorem whose conjuncts
+are individually established at their stated scopes; its fully rigorous
 assembly at class-uniform constants IS (C-reg).
 
 ## 11. Status

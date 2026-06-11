@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 36: Hardening Summary And Compilation
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Status: compilation and status-lock paper after Papers 32-35.  This paper

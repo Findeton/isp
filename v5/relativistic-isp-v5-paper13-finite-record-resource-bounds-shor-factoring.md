@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 13: Finite Record Resource Bounds For Shor Factoring
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Date: May 29, 2026

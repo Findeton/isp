@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 31: Post-Certificate Formal Hardening Of Yang-Mills Descent
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: post-Paper-30 consolidation.  Paper 29 hardened the continuum

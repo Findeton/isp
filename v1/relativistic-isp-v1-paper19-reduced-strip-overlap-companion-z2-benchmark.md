@@ -1,5 +1,7 @@
 # Reduced-Strip and Overlap Coefficients for the Minimal Interacting $Z_2$ Gauge-Matter Benchmark in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Companion draft to the benchmark paper: broader reduced-strip structure, first four-site coefficients, fixed-strip blocks, and the first overlap shell*
 
 Author: Felix Robles Elvira

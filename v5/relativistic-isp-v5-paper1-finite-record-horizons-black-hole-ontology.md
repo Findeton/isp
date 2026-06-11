@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 1: Finite Record Horizons And Black-Hole Ontology
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Status: V5 consequences paper after the V4 GR/QFT/QCD/YM descent stack.

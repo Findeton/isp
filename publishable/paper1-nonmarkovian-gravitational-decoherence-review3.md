@@ -1,5 +1,7 @@
 # Third Review of "Non-Markovian Gravitational Decoherence"
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 ## Overall verdict
 
 This version is much closer to a publishable standalone paper. The manuscript now presents its core claim as a finite-memory, phenomenological alternative to the strict Diósi-Penrose exponential, rather than as a completed derivation of a new gravitational decoherence law from first principles. That is the right direction. The distinction between a white-noise Markovian limit and a finite-correlation-time channel is now clear, and the minimal model in Section 4 gives the reader a concrete mathematical object to assess.

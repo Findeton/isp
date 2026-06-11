@@ -1,5 +1,7 @@
 # Paper 11 (v6) - SHARD: The Reconstruction Layer and Record-Pauli
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

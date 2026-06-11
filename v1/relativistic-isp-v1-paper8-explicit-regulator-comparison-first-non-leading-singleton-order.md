@@ -1,5 +1,7 @@
 # Explicit Regulator Comparison at the First Non-Leading Singleton Order
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Interior-shell nonuniversality, boundary-shell scaling, and exact $c_\lambda^2$ strip-moment universality*
 
 Author: Felix Robles Elvira

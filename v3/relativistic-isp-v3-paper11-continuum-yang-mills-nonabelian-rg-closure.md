@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 11: Finite-Battery Non-Abelian RG Closure Toward Continuum Yang-Mills
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: continuum-RG investigation draft. This paper takes the finite-battery

@@ -1,5 +1,7 @@
 # Variable Particle Number in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Exact finite-lattice Fock-space lift for number-preserving quadratic dynamics, plus first local sector-changing examples*
 
 Author: Felix Robles Elvira

@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 13: Three-Normal Switch Decision Or Floor
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-26

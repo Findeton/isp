@@ -1,5 +1,7 @@
 # Note: Mass and the Gap Theorem of the Commitment Spectrum
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 (Addendum to Papers 7 v6.2-v6.4; diagnostic: code/v6_p7j_mass_gap_verification.py)
 
 ## 1. What mass is

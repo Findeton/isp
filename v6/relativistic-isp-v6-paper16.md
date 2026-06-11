@@ -1,5 +1,7 @@
 # Paper 16 (v6) - SHARD: Process-O6 - The Separation Theorem
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -51,74 +53,43 @@ there exists a polyhedral cone K with finitely many rays such that
   (b) the stationary state lies in K,
   (c) the evaluation functional is nonnegative on K.
 THE LEDGER IS THE CONE: rays = sealed states, capacity = ray count.
-Direction "law => cone": the image of the probability simplex.
-Direction "cone => law": the update matrices in the ray basis are
-entrywise nonnegative - the chain on rays.  [Import status: classical;
-both directions elementary; stated here because the corpus needs the
-CONE reading, not just the HMM reading.]
 
-THEOREM B (the obstruction; PROVED).  Let p be any stationary process
-such that
+THEOREM B (the obstruction; PROVED, Section 3).  Let p be any
+stationary process such that
     p(1^n) = kappa^n (a + b cos(n theta + c)),  a > |b| > 0,
     theta / 2 pi irrational.
 Then p admits NO finite positive realization, of any dimension.
-Proof sketch (full proof in Section 3): a positive realization gives
-p(1^n) = pi M_1^n 1 with M_1 entrywise nonnegative.  The minimal
-linear recurrence of the sequence has characteristic roots
-{kappa, kappa e^{+i theta}, kappa e^{-i theta}}, all of modulus kappa,
-and every realization's M_1 contains these among its eigenvalues.
-Since a > |b| > 0 the sequence is exactly of order kappa^n, so kappa
-is the spectral radius of the part of M_1 accessible from (pi, 1), and
-kappa e^{+-i theta} are PERIPHERAL eigenvalues of an accessible block.
-By Frobenius normal-form theory the peripheral spectrum of every
-nonnegative block is its radius times a set of ROOTS OF UNITY; the
-accessible contribution to p(1^n)/kappa^n is therefore asymptotically
-periodic with a RATIONAL period, while a + b cos(n theta + c) with
-theta/2pi irrational is almost periodic with no rational period.
-Contradiction.
 
-THE WITNESS (the record clock; constructed, validity ANALYTIC).
-3-dimensional renewal OOM: tau_1 = kappa diag(R(theta), 1) with
-kappa = 1/2, theta = 1; reset operator tau_0 = v (1^T - 1^T tau_1),
-v = (0.07, 0, 0.93).  Lemma W (proved): the run-survival sequence
-g(n) = 1^T tau_1^n v satisfies g(n) - g(n+1) >= kappa^n [v3(1 - kappa)
-- A(1 + kappa)] = kappa^n * 0.3165 > 0, so every word probability is a
-product of nonnegative renewal factors: the clock is a VALID stationary
-process at all orders - no scope-limited premise.  Machine receipts:
-  validity scan: min p(w) over ALL 2^16 words to length 16 = 7.3e-6;
-  record rank exactly 3 (Hankel SVD: 1.97, 0.043, 0.014, then 4.6e-16);
-  p(1^n)/kappa^n fits a + b cos(n + c) at 3.3e-16, |b| = 0.0595, and
-    fits NO rational period P <= 12 (deviation >= 0.0168);
-  reversibility: max |p(w) - p(reverse w)| = 8.3e-17 to length 12
-    (stationary renewal: iid blocks - reversible by structure).
-By Theorem B: NOT a record law at any finite capacity.  SEPARATION:
-finite record laws are STRICTLY inside reversible, valid, finite-rank
-processes.  Record rank is NOT record realizability.
+THE WITNESS (the record clock; constructed, validity ANALYTIC,
+Section 4): 3-dim renewal OOM with tau_1 = kappa diag(R(theta), 1),
+kappa = 1/2, theta = 1; reset tau_0 = v (1^T - 1^T tau_1),
+v = (0.07, 0, 0.93).  Valid at ALL orders (Lemma W: run margin
+0.3165 > 0); record rank EXACTLY 3; oscillation exact (b = 0.0595,
+fit residual 3.3e-16, no rational period P <= 12 within 0.0168);
+REVERSIBLE to 8.3e-17.  By Theorem B: NOT a record law at any finite
+capacity.  SEPARATION: finite record laws are STRICTLY inside
+reversible, valid, finite-rank processes.  Record rank is NOT record
+realizability.
 
-THE UNPLANNED FINDING (the typed-theorem alignment).  The clock FAILS
-reflection positivity: reflection Gram min eigenvalue -4.1e-2, diagonal
-Hankel min eigenvalue -1.0e-2.  This is exactly P8's typed moment
-theorem operating: site-RP forces the diagonal p(1^n) to be a Hamburger
-moment sequence (real spectrum), and the clock's whole mechanism is a
-complex pair on the decay circle.  Consequences:
-  - reversibility does NOT imply RP without a Markov presentation:
-    P10 T4's hypothesis is SHARP, witnessed;
-  - the separation witness lives in the reversible-non-RP stratum;
-  - for the RP class the question is OPEN and NEWLY NAMED:
-    (PR-RP): does RP + finite record rank imply a finite record law?
-    The clock mechanism is unavailable there (moment theorem); the
-    positive-realization literature (Anderson: strictly dominant real
-    pole implies realizability at possibly higher dimension) suggests
-    the answer may be YES with a capacity gap - making RP not just
-    necessary but nearly SUFFICIENT for sealability.  That would be a
-    profound closure; it is NOT claimed.
+THE UNPLANNED FINDING (the typed-theorem alignment, Section 5): the
+clock FAILS reflection positivity (Gram -4.1e-2, diagonal Hankel
+-1.0e-2) - P8's typed moment theorem in action: site-RP forces the
+diagonal into the Hamburger moment class (real spectrum), and the
+clock's whole mechanism is a complex pair on the decay circle.
+Consequences: reversibility does NOT imply RP without a Markov
+presentation (P10 T4's hypothesis is SHARP, witnessed); the separation
+witness lives in the reversible-non-RP stratum; and the RP-restricted
+question is OPEN and NEWLY NAMED:
+  (PR-RP): does RP + finite record rank imply a finite record law?
+The clock mechanism is unavailable there (moment theorem); Anderson's
+dominant-pole realizability suggests YES with a capacity gap.  If true,
+record positivity ~ sealability at process level.  NOT claimed; named.
 
-THE POSITIVE SIDE (p16b).  A genuinely non-Markov reversible process
-(2-symbol function of a hidden reversible 4-state chain): order-1/2
-Markov fits fail (0.0123 / 0.00013), record rank 4, RP PASSES
-(-3.7e-16), moment test PASSES, and the EXPLICIT Heller cone (the
-simplex image) certifies it as a record law at capacity 4.  The
-boundary in action: cone geometry, not rank, is the content.
+THE POSITIVE SIDE (Section 6): a genuinely non-Markov reversible
+process (2-symbol function of a hidden reversible 4-state chain):
+order-1/2 Markov fits fail (0.0123 / 0.00013), record rank 4, RP
+PASSES (-3.7e-16), moment test PASSES, and the EXPLICIT Heller cone
+(the simplex image) certifies it as a record law at capacity 4.
 
 PROCESS-O6 AFTER THIS PAPER: RESOLVED AS A CLASSIFICATION -
   sealable   = cone-finite   (Theorem A: the ledger is the cone);
@@ -138,24 +109,40 @@ code/v6_p16b_heller_boundary_campaign.py the positive side: Heller
                                          the boundary stated
 ```
 
-Named imports: Heller's characterization (Theorem A; also Benvenuti-
-Farina's positive-realization survey and Vidyasagar's treatment);
-Frobenius normal form and Perron-Frobenius peripheral-spectrum theory
-(the engine of Theorem B); Anderson's positive-realization existence
-theorem (the (PR-RP) outlook; cited, not used).  Corpus inputs: the
-process-O6 location and F1-F4 receipts (P11 4.4), the typed moment
-theorems (P8 6), the reversibility/RP theorem and its Markov-
-presentation hypothesis (P10 T2/T4).
+Both scripts rerun bit-identically.  Named imports: Heller's
+characterization (Theorem A; also Benvenuti-Farina's positive-
+realization survey and Vidyasagar's treatment); Frobenius normal form
+and Perron-Frobenius peripheral-spectrum theory (the engine of Theorem
+B); Anderson's positive-realization existence theorem (the (PR-RP)
+outlook; cited, not used).  Corpus inputs: the process-O6 location and
+F1-F4 receipts (P11 4.4), the typed moment theorems (P8 6), the
+reversibility/RP theorem and its Markov-presentation hypothesis
+(P10 T2/T4).
 
 ## 2. Theorem A: the ledger is the cone
 
-(Statement in Section 0.)  The corpus reading is the contribution: a
-sealed record law of capacity m is EXACTLY an invariant polyhedral cone
-with m rays.  Sealing a sector = exhibiting its cone; capacity = ray
-count; the update operators act as nonnegative matrices on rays - the
-relation code of the ledger.  Realizability questions about matter
-sectors are CONE-GEOMETRY questions, and rank (the linear invariant)
-is blind to them - as Theorem B now proves.
+**Statement** as in Section 0.  **Proof sketch, both directions.**
+
+(law => cone): given a positive realization (pi, {M_x}, 1) of
+dimension m, take K = the image of the nonnegative orthant under the
+realization's state map.  K is polyhedral with at most m rays;
+nonnegativity of the M_x makes (a) hold; pi >= 0 gives (b); 1 >= 0
+gives (c).
+
+(cone => law): given K with rays r_1..r_m satisfying (a)-(c), expand
+tau_x r_i = sum_j M_x[j, i] r_j with M_x[j, i] >= 0 (possible because
+tau_x K is inside K and the r_j generate); the stationary state's
+cone coordinates give pi >= 0 and the evaluation functional's values
+on rays give the nonnegative output vector.  The triple is a positive
+realization of capacity m.                                       QED
+
+**The corpus reading is the contribution:** a sealed record law of
+capacity m is EXACTLY an invariant polyhedral cone with m rays.
+Sealing a sector = exhibiting its cone; capacity = ray count; the
+update operators act as nonnegative matrices on rays - the relation
+code of the ledger.  Realizability questions about matter sectors are
+CONE-GEOMETRY questions, and rank (the linear invariant) is blind to
+them - as Theorem B now proves.
 
 ## 3. Theorem B: the proof
 
@@ -163,65 +150,114 @@ Let (pi, {M_x}, 1) be a positive realization of p, all data entrywise
 nonnegative, and let h(n) := p(1^n) = pi M_1^n 1 = kappa^n (a +
 b cos(n theta + c)) with a > |b| > 0 and theta/2pi irrational.
 
-1. (Recurrence roots.)  h satisfies the minimal linear recurrence with
-   characteristic roots {kappa, kappa e^{i theta}, kappa e^{-i theta}}
-   (distinct, all of modulus kappa; minimality from b != 0, a != 0).
-   For any realization, h(n) = pi M_1^n 1 implies every root of h's
-   minimal recurrence is an eigenvalue of M_1 (standard: the Krylov
-   space of (pi, M_1, 1) carries the recurrence).
-2. (Accessibility reduction.)  Let I be the set of indices i such that
-   pi reaches i and i reaches 1 through nonnegative powers of M_1
-   (the accessible part).  Replacing M_1 by its principal submatrix on
-   I changes no h(n); discard the rest.  On the accessible part,
-   h(n) = Theta(kappa^n) (since a > |b|), so the spectral radius of
-   the accessible M_1 is exactly kappa.
-3. (Frobenius normal form.)  Permute the accessible M_1 to block upper
-   triangular form with irreducible (or zero) diagonal blocks B_1..B_r.
-   Each B_j is nonnegative irreducible with some period p_j; by the
-   Perron-Frobenius/Frobenius theorem its peripheral spectrum is
-   rho(B_j) times the p_j-th roots of unity.  All eigenvalues of M_1
-   are eigenvalues of the diagonal blocks; in particular
-   kappa e^{+-i theta} is a peripheral eigenvalue of some block with
-   rho(B_j) = kappa - forcing e^{i theta} to be a p_j-th root of
-   unity, i.e. theta/2pi rational... UNLESS no block has radius kappa
-   carrying it.  But step 1 says kappa e^{i theta} IS an eigenvalue of
-   the accessible M_1, hence of some diagonal block B_j, and
-   |kappa e^{i theta}| = kappa <= rho(B_j) <= rho(M_1) = kappa forces
-   rho(B_j) = kappa and peripherality.  Contradiction with theta/2pi
-   irrational.                                                   QED
+**Step 1 (recurrence roots).**  h satisfies the minimal linear
+recurrence with characteristic roots {kappa, kappa e^{i theta},
+kappa e^{-i theta}} - distinct, all of modulus kappa; minimality from
+a != 0, b != 0.  For any realization, h(n) = pi M_1^n 1 lives in the
+Krylov space of (pi, M_1, 1), so every root of h's minimal recurrence
+is an eigenvalue of M_1.
 
-Remark (why the witness needs the oscillation ON the decay circle): if
-the complex pair sits strictly below the dominant real eigenvalue, the
-peripheral theorem says nothing - and indeed such sequences can be
-positively realizable.  The clock construction places the rotation and
-the survival weight at the SAME modulus by design (tau_1 = kappa
-diag(R, 1)); validity then has to be re-won, which is what Lemma W's
-margin 0.3165 does.
+**Step 2 (accessibility reduction).**  Let I be the set of indices i
+such that pi reaches i and i reaches the output through nonnegative
+powers of M_1.  Restricting M_1 to I changes no h(n); discard the
+rest.  On the accessible part, h(n) = Theta(kappa^n) (because
+a > |b|), so the spectral radius of the accessible M_1 is exactly
+kappa.
 
-## 4. The witness and its receipts (p16a)
+**Step 3 (Frobenius normal form).**  Permute the accessible M_1 to
+block upper-triangular form with irreducible (or zero) diagonal blocks
+B_1..B_r.  Each B_j is nonnegative irreducible with some period p_j;
+by the Frobenius theorem its peripheral spectrum is rho(B_j) times the
+p_j-th roots of unity.  All eigenvalues of M_1 are eigenvalues of the
+diagonal blocks; in particular kappa e^{+-i theta} (Step 1) is an
+eigenvalue of some block B_j, and |kappa e^{i theta}| = kappa <=
+rho(B_j) <= rho(M_1) = kappa forces rho(B_j) = kappa and
+PERIPHERALITY.  Hence e^{i theta} is a p_j-th root of unity, i.e.
+theta/2pi is rational.  Contradiction.                            QED
 
-(Construction and numbers in Section 0.)  Three structural notes:
+**Remark (why the witness needs the oscillation ON the decay
+circle).**  If the complex pair sits strictly below the dominant real
+eigenvalue, the peripheral theorem says nothing - and such sequences
+can indeed be positively realizable.  The clock construction places
+the rotation and the survival weight at the SAME modulus by design
+(tau_1 = kappa diag(R, 1)); validity then has to be re-won, which is
+Lemma W's job.
 
-1. **Validity is analytic, not scanned.**  The renewal structure makes
-   every word probability a product of run factors g(n) - g(n+1) and
-   tail factors g(n), all bounded below by Lemma W.  The exhaustive
-   2^16-word scan (min 7.3e-6) and the stationary-state check are
-   AUDITS of the lemma, not its source.
-2. **Reversibility is structural.**  A stationary renewal process is a
-   stationary sequence of iid blocks; reversal permutes block order
-   and fixes the law.  The machine receipt (8.3e-17 over 8000+ words)
-   audits this.
-3. **Rank 3 is exact.**  The fourth Hankel singular value is 4.6e-16
+## 4. The witness: the record clock
+
+### 4.1 Construction and Lemma W
+
+State space R^3; tau_1 = kappa diag(R(theta), 1) with kappa = 1/2,
+theta = 1 rad (theta/2pi irrational since pi is irrational);
+tau_0 = v (1^T - 1^T tau_1) with v = (v_1, 0, v_3) = (0.07, 0, 0.93):
+every 0-symbol RESETS the state to v - a renewal process whose runs of
+1s have survival sequence g(n) = 1^T tau_1^n v.
+
+**Lemma W (validity at all orders).**  g(n) = kappa^n (v_3 +
+v_1 (cos n theta + sin n theta)), and every word probability is a
+product of run factors g(n) - g(n+1) >= 0 and tail factors g(n) >= 0.
+*Proof.*  The renewal structure factorizes word probabilities by
+construction.  For the run factors:
+
+```text
+ g(n) - g(n+1) >= kappa^n [ v_3 (1 - kappa) - A (1 + kappa) ],
+ A = sqrt(2) v_1 = 0.0990:
+ margin = 0.93 * 0.5 - 0.099 * 1.5 = 0.3165 > 0,
+```
+
+uniformly in n.  Hence all word probabilities are nonnegative and sum
+correctly (sum of run probabilities telescopes to g(0) = 1): the
+clock is a VALID stationary process - no scope-limited premise.   QED
+
+**Reversibility (structural).**  A stationary renewal process is a
+stationary sequence of iid blocks (a 0 followed by a run of 1s);
+reversal permutes block order and fixes the law.  Machine audit:
+max |p(w) - p(reverse w)| = 8.3e-17 over all words to length 12.
+
+### 4.2 Receipts (p16a)
+
+```text
+validity:     analytic margin 0.3165 (Lemma W); exhaustive scan of
+              ALL 2^16 words to length 16: min p(w) = 7.3e-6 >= 0;
+              stationary state omega = (0.036, 0.021, 0.942) >= 0
+record rank:  Hankel (63x63, words to length 5) singular values
+              1.9705, 0.0433, 0.0142, then 4.6e-16: rank EXACTLY 3
+oscillation:  p(1^n)/kappa^n fits a + b cos(n theta + c) at residual
+              3.3e-16 with a = 0.9425, |b| = 0.0595; best rational
+              period P <= 12 deviates by >= 0.0168
+reversibility: 8.3e-17 (above)
+```
+
+### 4.3 Three structural notes
+
+1. **Validity is analytic, not scanned.**  The scan and the
+   stationary-state check are AUDITS of Lemma W, not its source - the
+   witness needs no finite-scope premise.
+2. **Rank 3 is exact.**  The fourth Hankel singular value is 4.6e-16
    against a third of 1.4e-2: the process is as finite-dimensional as
    a process can be - and still not sealable.  Record rank does not
    measure ledger capacity; the cone does.
+3. **The cone picture of the failure:** the predictive states
+   tau_1^n omega rotate by the irrational angle theta in a 2-plane;
+   any finite invariant polyhedral cone would have to absorb a dense
+   set of directions on a circle while staying finitely generated AND
+   compatible with positivity of every output - Theorem B is the
+   rigorous form of this geometric obstruction.
 
 ## 5. The RP stratum and the residue (PR-RP)
 
-The clock's RP failure is forced: by P8's typed theorem, site-RP makes
-p(1^n) a Hamburger moment sequence - real spectrum, no oscillation.
-Receipts: reflection Gram -4.1e-2; diagonal Hankel -1.0e-2 (the moment
-test failing is the SAME fact at first invariant level).  Therefore:
+The clock's RP failure is forced, not accidental: by P8's typed moment
+theorem, site-RP makes p(1^n) a Hamburger moment sequence - real
+spectrum, no oscillation.  Receipts:
+
+```text
+reflection Gram (words to length 4, 31 x 31): min eig = -4.137e-2
+   (FAILS PSD)
+diagonal Hankel [p(1^(i+j))], 8 x 8:          min eig = -9.958e-3
+   (FAILS the moment test - the SAME fact at first-invariant level)
+```
+
+Therefore:
 
 ```text
 - P10 T4's "admits a reversible MARKOV presentation" hypothesis is
@@ -239,24 +275,50 @@ test failing is the SAME fact at first invariant level).  Therefore:
   condition.  Not claimed; named.
 ```
 
-## 6. What this paper proves and does not prove
+## 6. The positive side: the Heller boundary in action (p16b)
 
-Proves: Theorem B in full (modulo textbook Perron-Frobenius theory,
-named); Lemma W (analytic validity of the witness at all orders); the
-witness' properties at machine precision (rank exactly 3, exact
-oscillation form, reversibility, RP failure, moment-test failure); the
-strict separation {finite record laws} inside {reversible, valid,
-finite-rank}; the positive-side certificate (explicit Heller cone for
-a non-Markov RP process, with RP and moment receipts passing).
+A 2-symbol function of a hidden reversible 4-state chain (random
+symmetric generator, lazy mixing, emission partition {1,2}|{3,4}):
 
-Does not prove: (PR-RP) (the named residue); Theorem A internally (a
-classical import, both directions elementary and restated); minimal-
-capacity gaps (how much larger than the rank a ledger must be - the
-literature has examples; not pursued); any continuum statement (this
-is the process level by design; the continuum face of matter coupling
-remains with (M) and the L3 residues).
+```text
+non-Markovianity:  |P(1|x,1) - P(1|y,1)| = 0.0123 (order 1),
+                   0.00013 (order 2): genuinely non-Markov
+record rank:       4  (singular values 2.113, 0.424, 1.95e-3,
+                   2.06e-5, then 5.5e-16)
+Heller cone:       the simplex image: tau_x(rays) >= 0 entrywise
+                   TRUE; omega in K; 1^T >= 0 on K - certificate
+                   complete at capacity 4
+RP:                reflection Gram min eig = -3.7e-16 (PASSES, as
+                   P10 T4 demands for a reversible presentation)
+moment test:       diagonal Hankel min eig = -3.8e-18 (PASSES)
+```
 
-## 7. The kernel after Paper 16
+The boundary in one table: the clock (rank 3, reversible, valid) fails
+the moment test and has NO cone at any dimension; this process (rank
+4, non-Markov, RP) carries an explicit cone at capacity 4.
+Process-O6's content is CONE GEOMETRY, not rank: the ledger is the
+cone, and matter sectors divide into cone-finite (sealable) and
+cone-infinite (approximable only).
+
+## 7. What this paper proves and does not prove
+
+Proves: Theorem B in full (Section 3; modulo textbook Perron-Frobenius
+theory, named); Lemma W (analytic validity of the witness at all
+orders); the witness' properties at machine precision (rank exactly 3,
+exact oscillation form, reversibility, RP failure, moment-test
+failure); the strict separation {finite record laws} inside
+{reversible, valid, finite-rank}; the positive-side certificate
+(explicit Heller cone for a non-Markov RP process, with RP and moment
+receipts passing); Theorem A's two directions at the sketch level of
+Section 2 (elementary; the statement is a classical import restated).
+
+Does not prove: (PR-RP) (the named residue); minimal-capacity gaps
+(how much larger than the rank a ledger must be - the literature has
+examples; not pursued); any continuum statement (this is the process
+level by design; the continuum face of matter coupling remains with
+(M) and the L3 residues).
+
+## 8. The kernel after Paper 16
 
 ```text
 process-O6  RESOLVED AS A CLASSIFICATION:
@@ -272,13 +334,19 @@ KERNEL: { (C-reg-b), (M), (V), (PR-RP) } +
         { D10, O7, O8-remainder, O11-remainder }.
         [process-O6 leaves the kernel as a named open; (PR-RP) enters
         as its sharpened successor.]
+[Paper 26 update: the clock became an INSTRUMENT - the signed-Hankel
+        "clock test" on quantum-processor syndrome streams (a
+        structural no-go for finite-state noise models, with a
+        numbered hardware protocol), and the Heller cone became the
+        classical-simulability boundary (advantage = cone violation,
+        the (QC-adv) conjecture).  See Paper 26, Sections 6 and 8.3.]
 ```
 
-## 8. Status
+## 9. Status
 
 ```text
-Theorem A:  record law <=> finite invariant cone (import, restated:
-            the ledger IS the cone).
+Theorem A:  record law <=> finite invariant cone (import, restated
+            with both directions sketched: the ledger IS the cone).
 Theorem B:  irrational oscillation on the decay circle => no finite
             positive realization (PROVED, Frobenius peripheral).
 Witness:    record clock - valid (analytic, margin 0.3165; scan

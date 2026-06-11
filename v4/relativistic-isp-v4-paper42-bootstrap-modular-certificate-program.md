@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 42: A Research Program For The Lattice Yang–Mills Bootstrap And A Viazovska-Style Modular Certificate
 
+Preprint, not peer reviewed, version 2026-06-01.
+
 Author: Felix Robles Elvira
 
 Date: 2026-06-01

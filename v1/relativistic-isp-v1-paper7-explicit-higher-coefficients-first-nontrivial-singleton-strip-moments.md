@@ -1,5 +1,7 @@
 # Explicit Higher Coefficients and First Nontrivial Singleton Strip Moments
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Exact boundary-active $A^{(2)}$ data and the first $d=3$ exchange coefficient in relativistic ISP*
 
 Author: Felix Robles Elvira

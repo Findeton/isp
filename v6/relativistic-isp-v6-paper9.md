@@ -1,5 +1,7 @@
 # Paper 9 (v6) - SHARD: The Fermion Route - Projective Fibers, Spin Quantization, Statistics, and the Record Weyl Seed
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

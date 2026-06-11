@@ -1,5 +1,7 @@
 # Paper 8 (v6) - SHARD: The Tractable Frontier Campaign
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

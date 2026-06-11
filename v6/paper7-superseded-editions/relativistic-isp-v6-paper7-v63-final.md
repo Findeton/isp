@@ -1,5 +1,7 @@
 # Paper 7 (v6.3, final) - SHARD: Interacting Thermality, the (S) Resolution, Matter II, and the Corrected Contact Surface
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

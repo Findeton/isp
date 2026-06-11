@@ -1,5 +1,7 @@
 # Detail-Sector Options And Interacting Stochastic Curvature In Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V3 Paper 4 draft

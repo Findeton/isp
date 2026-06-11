@@ -1,5 +1,7 @@
 # Broader Regulator Stability Across Support Prototypes
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Raw rule nonuniqueness, normalized strip-moment universality, and the correct stability criterion*
 
 Author: Felix Robles Elvira

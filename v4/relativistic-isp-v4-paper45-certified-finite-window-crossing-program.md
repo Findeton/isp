@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 45: The Certified Finite-Window Crossing Program For The Fixed-IR Confinement Problem
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Date: 2026-06-10

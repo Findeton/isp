@@ -1,5 +1,7 @@
 # Toward Lorentz-Covariant Indivisible Stochastic Processes
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Spatial Locality, Temporal Indivisibility, and Localized Finite Deformations*
 
 Author: Felix Robles Elvira

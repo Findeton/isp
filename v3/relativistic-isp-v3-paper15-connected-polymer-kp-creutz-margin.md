@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 15: Connected-Polymer KP, Surface Subcriticality, And Creutz Margins
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 ## Abstract

@@ -1,5 +1,7 @@
 # Paper 18 (v6) - SHARD: D10 - The Record Doplicher-Roberts Theorem
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -47,198 +49,277 @@ permutation statistics and reconstructs the gauge group."
 ## 0. Verdict
 
 ```text
-THEOREM R1 (permutation forcing; proved from P4 s20 + topology).  The
-relative configuration space of two identical record excitations in
-screen dimension d is homotopic to S^(d-1).  Eventless transport is
-flat away from coincidence (P4 s20: events are the only curvature
-sources).  For d >= 3, S^(d-1) is simply connected, every flat fiber
-connection is pure gauge, and the exchange-squared loop carries NO
-holonomy: eps^2 = 1 - the braid group collapses to S_n.  For d = 2,
-pi_1(S^1) = Z and flat connections carry a holonomy modulus: the braid
-group survives - EXACTLY Paper 9's record-anyon window, recovered as
-the unique exception of the same theorem.
-  Receipts: pure-gauge U(3) transport along the exchange-squared loop
-  and its explicit contraction: holonomy = 1 to 2.2e-14 at every
-  stage; an eventful (curved) connection gives O(1) holonomy that dies
-  as the contraction empties the loop (1.99 -> 0.12): holonomy
-  measures ENCLOSED EVENTS, never statistics; d = 2 flat modulus:
-  an arbitrary U(3) element (printed).
+THEOREM R1 (permutation forcing; proved from P4 s20 + topology).
+d >= 3: eventless exchange-squared transport is trivial: eps^2 = 1 -
+braids collapse to S_n.  d = 2: the flat modulus survives: P9's anyon
+window is the unique exception.  Receipts: pure-gauge holonomy = 1 to
+2.2e-14 at every contraction stage; eventful holonomy 1.99 -> 0.12 as
+the contraction empties the loop; d = 2 modulus = arbitrary U(3).
 
-THEOREM R2 (the statistics operator; proved, with the sign computed).
-The two-excitation statistics operator must commute with simultaneous
-fiber transport U x U; the commutant on V x V is span{1, P} (machine:
-dimension 2 for d = 2, 3, 4).  With eps^2 = 1 and unitarity the
-candidates are {+1, -1, +P, -P}.  The ledger excludes +-1: for
-ORTHOGONAL fiber labels the exchanged configuration is a DIFFERENT
-word whose cross-record the eventless seam seals with modulus 1, while
-+-1 predict ABSENCE (modulus 0) - no phase convention repairs an
-absent record (and a label-spectating exchange is a silent seam: P4's
-exclusion).  The surviving sign is not chosen but COMPUTED: by D9a
-(P11 Part III) exchange IS eventless transport, which carries the
-relative 2pi frame rotation (P9), contributing exp(2 pi i Jz) =
-(-1)^(2m) on the spin-m fiber (machine: m = 1/2, 1, 3/2):
+THEOREM R2 (the statistics operator; proved, sign computed).
+Transport covariance puts eps in span{1, P} (machine: commutant dim 2
+for d = 2, 3, 4); with eps^2 = 1 and unitarity: {+1, -1, +P, -P}.
+The LEDGER excludes +-1 (absent cross-records where the eventless seam
+seals modulus 1); D9a computes the sign (exchange IS transport, which
+carries the 2pi frame rotation: exp(2 pi i Jz) = (-1)^(2m), receipts
+m = 1/2, 1, 3/2):
+                    eps = (-1)^(2m) P.
+COROLLARY: parastatistics is NOT fundamental in the record ontology;
+record-Pauli (P11 Part II) becomes downstream.
 
-    eps = (-1)^(2m) P.
+THEOREM R3 (record Doplicher-Roberts; proved at finite scope).
+(a) TRUNCATION = ORDER: dim span(S_n on (C^d)^n) = sum over Young
+    diagrams with <= d rows of f_lambda^2 < n! once n > d (receipts:
+    23 != 24 at d = 3, n = 4; 5 != 6 at d = 2, n = 3); the order is
+    FORCED both ways (sealed baryon-channel weight 0.00964 > 0
+    clashes with any lower-order hosting; higher order adds nothing).
+(b) GAUGE FROM EXCHANGE: the commutant of the statistics span on
+    (C^3)^3 has dimension 165 = 10^2 + 8^2 + 1^2 and EQUALS the span
+    of {U x U x U : U in U(3)} (165 = 165, mutual): the gauge algebra
+    is RECONSTRUCTED as the symmetry of the record exchange structure.
+(c) THE COLLAPSE: sum_lambda dim S_lambda(C^3) f_lambda = 3^n (27,
+    81): para-sector state counts ARE ordinary Fermi/Bose with the
+    fiber unhidden.
 
-COROLLARY: PARASTATISTICS IS NOT FUNDAMENTAL in the record ontology -
-statistics never carries fiber structure of its own; record-Pauli
-(P11 Part II) becomes a consequence.
+R4 (color receipts).  rank(A_3) = 1 (the unique baryon singlet);
+||A_4|| = 0 EXACTLY (Pauli for color); U^3 b = det(U) b to 2.4e-16
+(the baryon carries only the determinant: the center shadow).
 
-THEOREM R3 (the record Doplicher-Roberts reconstruction; proved at
-finite scope via Schur-Weyl, machine-receipted).  With eps =
-(-1)^(2m) P, n identical excitations on a d-dim fiber carry S_n by
-permutation on V^(x)n.  Then:
-  (a) TRUNCATION = ORDER: the statistics algebra has dimension
-      sum_{lambda: <= d rows} f_lambda^2 < n! once n > d.  Receipts:
-      d = 3, n = 4: rank 23 (not 24 - the (1^4) channel is absent);
-      d = 2, n = 3: rank 5 (not 6).  "Para-order d" is the fiber
-      dimension showing through - and it is FORCED both ways: hosting
-      a d = 3 fiber at order 2 deletes the baryon channel whose sealed
-      weight in a generic record is strictly positive (0.00964 > 0:
-      clash), while order > d adds nothing (truncation automatic).
-  (b) GAUGE FROM EXCHANGE: the commutant of the statistics span on
-      (C^3)^(x)3 has dimension 165 = 10^2 + 8^2 + 1^2 and EQUALS the
-      span of {U^(x)3 : U in U(3)} (machine: 165 = 165, mutual): the
-      gauge algebra is RECONSTRUCTED as the symmetry of the record
-      exchange structure.  The gauge group is an output.
-  (c) THE COLLAPSE: sum_lambda dim S_lambda(C^3) f_lambda = 3^n
-      (27, 81): the para-sector state count IS ordinary Fermi/Bose
-      with the fiber unhidden - exact, no states gained or lost.
+R5 (Paper 17 derived).  The center omega 1 of SU(3) acts on Lambda^k
+by omega^k; P17's closure predicate IS center neutrality; the minimal
+bases land on conjugate triality patterns ((1,1,1)|(2,2,2)); the
+multiplicity-3 charges lift to single U(3) fundamentals with the
+abelian charge on det U(3).  What an abelian search can see of a
+reconstructed nonabelian group is exactly its CENTER - the DR
+prediction, realized.
 
-R4 (color receipts).  rank(A_3) = 1 on (C^3)^3: the baryon is the
-unique totally antisymmetric singlet; ||A_4|| = 0 EXACTLY on (C^3)^4:
-PAULI FOR COLOR (no four-quark total antisymmetrization over a 3-dim
-fiber); U^(x)3 b = det(U) b to 2.4e-16: the baryon transforms only
-under the determinant U(1) - the abelian (center/hypercharge) shadow.
-
-R5 (the triality instance: Paper 17 derived).  The center omega 1 of
-SU(3) acts on Lambda^k by omega^k: quark 1, diquark 2, baryon 0.
-P17's closure predicate (triple summing to 0 mod 3) IS center
-neutrality, and every minimal chiral base is center-neutral as a whole
-- the Z_3 census, the divisibility observation, and the multiplicity-3
-color shadows are all the CENTER of the reconstructed group seen by an
-abelian search, exactly as Doplicher-Roberts predicts.  The
-multiplicity-3 charges of the P17 minimal solutions lift to ONE
-fundamental of U(3) each, with the abelian charge riding det U(3) (the
-hypercharge slot, where R4 put the baryon's residual charge).
+PART II ((M) PHASE II, OPENED HERE).  The nonabelian predicates
+computed from explicit generators (T(R) = 1/2, 1/2, 3, 5/2, 15/2;
+A(R) = +1, -1, 0, +7, +27 for {3, 3bar, 8, 6, 10}, cubic-tensor
+proportionality to the d-symbol at 1e-15; SU(2)'s d-tensor identically
+ZERO with the Witten even-doublet condition in its place); the
+exhaustive representation search (color to the fundamental, weak to
+the doublet, Z_6 lattice, <= 5 multiplets): sizes 1-4 EMPTY; size 5:
+THE STANDARD MODEL GENERATION AND ITS CONJUGATE, alone; nothing below
+15 Weyl, nothing else at 15; robust at |Y6| <= 10, 12.
 
 D10: DISCHARGED AT STATED SCOPE.  Nonabelian gauge-charged matter
 exists in SHARD as fiber-dimension >= 2 sectors with eps = (-1)^(2m) P;
 the gauge group is reconstructed from exchange; (M) PHASE II IS
-UNBLOCKED as a representation search with Phase I as its center
-boundary condition.
+EXECUTED at minimal scope with the SM generation as its unique floor.
 ```
 
 ## 1. Method and reproducibility
 
 ```text
-code/v6_p18a_exchange_topology_campaign.py        R1: topology
-code/v6_p18b_statistics_classification_campaign.py R2: classification
-code/v6_p18c_schur_weyl_dr_campaign.py            R3 + R4: Schur-Weyl,
-                                                  reconstruction, color
-code/v6_p18d_triality_instance_campaign.py        R5: the P17 hookup
-code/v6_p18e_nonabelian_predicates_campaign.py    Part II: predicates
-                                                  from generators
-code/v6_p18f_phase2_search_campaign.py            Part II: Phase II
-                                                  run 1 (the search)
+code/v6_p18a_exchange_topology_campaign.py        R1 (Section 2)
+code/v6_p18b_statistics_classification_campaign.py R2 (Section 3)
+code/v6_p18c_schur_weyl_dr_campaign.py            R3 + R4 (Section 4)
+code/v6_p18d_triality_instance_campaign.py        R5 (Section 5)
+code/v6_p18e_nonabelian_predicates_campaign.py    Part II (Section 6)
+code/v6_p18f_phase2_search_campaign.py            Part II (Section 7)
 ```
 
-Named imports: simple-connectedness of S^(d-1), d >= 3 (topology);
-Schur-Weyl duality and Young theory (classical - and machine-verified
-at the scopes used: every rank and dimension printed is computed, not
-quoted); the continuum DHR/DR theory as the TARGET FRAME (Doplicher-
-Haag-Roberts 1971/74; Doplicher-Roberts 1989) - the corpus does NOT
-re-prove the continuum category theorem; it proves the record-scope
-finite version.  Corpus inputs: P4 s20 (eventless = flat; silent-seam
-exclusion), P9 (frame-winding, anyon window, projective fibers), P11
-Parts II-III (record-Pauli; D9a: exchange = transport), P17 (the
-abelian census this paper derives).
+All six scripts rerun bit-identically.  Named imports: simple-
+connectedness of S^(d-1), d >= 3 (topology); Schur-Weyl duality and
+Young theory (classical - and machine-verified at the scopes used:
+every rank and dimension printed is computed, not quoted); the
+continuum DHR/DR theory as the TARGET FRAME (Doplicher-Haag-Roberts
+1971/74; Doplicher-Roberts 1989) - the corpus does NOT re-prove the
+continuum category theorem; it proves the record-scope finite version;
+the Witten SU(2) condition and the 4d cubic structure (Part II).
+Corpus inputs: P4 s20 (eventless = flat; silent-seam exclusion), P9
+(frame winding, anyon window, projective fibers), P11 Parts II-III
+(record-Pauli; D9a: exchange = transport), P17 (the abelian census
+this paper derives, and the Z_6 lattice Part II consumes).
 
-## 2. Theorem R1: permutation forcing (p18a)
+## 2. Theorem R1: permutation forcing
 
-(Statement in Section 0.)  The record content beyond the topology
-import is the IDENTIFICATION of "eventless" with "flat": P4 s20 makes
-curvature an event count, so an exchange-squared loop in d >= 3, being
-contractible through event-free configurations, transports trivially.
-The receipts separate the two faces cleanly: pure-gauge holonomy is
-identity at EVERY contraction stage (2.2e-14 - not just in the limit),
-while an eventful connection's holonomy (1.99 at full loop) decays
-only as the contraction expels the events (0.12 at s = 0.1).
-Statistics is what remains when no events are enclosed - and in d >= 3
-that remainder squares to one.  The d = 2 modulus (an arbitrary U(3)
-holonomy, printed) is Paper 9's anyon window, now a corollary.
+### 2.1 Statement and proof
 
-## 3. Theorem R2: the statistics operator (p18b)
+**Theorem R1.**  Let two identical record excitations live on a screen
+of spatial dimension d, with fiber transport that is EVENTLESS (no
+records form along the exchange).  Then for d >= 3 the exchange
+operator satisfies eps^2 = 1; for d = 2 the square of the exchange can
+carry an arbitrary unitary holonomy.
 
-The three receipts:
+*Proof.*  The relative configuration space of the ordered pair is
+R^d minus the coincidence point, which deformation-retracts to
+S^(d-1); the exchange-squared path is a closed loop in it (the
+relative coordinate traverses a great circle).  By P4 s20, eventless
+transport is FLAT away from coincidence: events are the only curvature
+sources.  For d >= 3, S^(d-1) is simply connected, so every flat fiber
+connection is pure gauge and every closed loop - in particular
+exchange-squared - has trivial holonomy: the braid generator squares
+to the identity, and the braid group representation factors through
+the symmetric group S_n.  For d = 2 the relative space retracts to
+S^1 with pi_1 = Z: flat connections carry a holonomy modulus (an
+arbitrary unitary assigned to the generator), and the braid group
+survives - exactly the record-anyon window P9 established.       QED
+
+### 2.2 Receipts (p18a)
 
 ```text
-commutant of {U x U} on V x V:  dim = 2 (d = 2, 3, 4) = span{1, P}
-ledger clash:  |<w'|eps|w>| for orthogonal labels:
-   +1: 0.0   -1: 0.0   +P: 1.0   -P: 1.0   (sealed modulus: 1.0)
-the computed sign:  exp(2 pi i Jz) on spin-m: -1, +1, -1
-   for m = 1/2, 1, 3/2  [= (-1)^(2m)]
+(i) eventless (pure-gauge U(3)) transport along exchange-squared and
+    its explicit contraction (loop family shrinking to a pole):
+    ||holonomy - 1||_max = 2.2e-14 / 1.2e-14 / 7.3e-15
+    at stages s = 1.0 / 0.6 / 0.3.
+(ii) eventful contrast (curved connection): holonomy 1.99 at the full
+    loop, decaying 1.96 -> 0.70 -> 0.12 as the contraction empties
+    the enclosed events: holonomy MEASURES ENCLOSED EVENTS, never
+    statistics.
+(iii) d = 2: flat connection A = X dtheta: exchange-squared holonomy
+    = exp(2 pi i X), an arbitrary U(3) element (printed at 1.025
+    max deviation from 1): the anyon window.
 ```
 
-The exclusion of +-1 is a LEDGER argument, not a positivity argument:
-the exchanged configuration of distinguishable fiber labels is a
-different word, its cross-record exists (sealed by the eventless seam
-at modulus 1), and +-1 predict it absent.  An exchange that spectates
-the labels is a silent seam - excluded by the corpus' oldest principle
-(P4).  The sign on the identical-label sector is then computed by
-D9a's exchange-is-transport plus frame winding: eps = (-1)^(2m) P,
-and record-Pauli (P11 Part II) is downstream.  Honest note: the +-P
-"freedom" in the classification table is apparent only if one forgets
-D9a; the operator was never free.
+The receipts separate the two faces cleanly: statistics is what
+remains when no events are enclosed - and in d >= 3 that remainder
+squares to one, at every stage of the contraction, not just in the
+limit.
 
-## 4. Theorem R3 + R4: the reconstruction and color (p18c)
+## 3. Theorem R2: the statistics operator
+
+### 3.1 The commutant and the four candidates
+
+The exchange operator eps on the two-excitation fiber space V x V
+(V = C^d) must commute with simultaneous fiber transport U x U - the
+exchange cannot see a gauge frame.  The commutant of {U x U : U in
+SU(d)} on V x V is span{1, P} (P the flip): machine receipt, dimension
+2 for d = 2, 3, 4 by exact nullspace computation.  With eps^2 = 1 (R1)
+and unitarity, eps = a 1 + b P requires a^2 + b^2 = 1 and 2ab = 0:
 
 ```text
-truncation:    d=3: n=2: 2, n=3: 6 (full), n=4: 23 != 24
-               d=2: n=3: 5 != 6
-double
-commutant:     dim comm(S_3 on (C^3)^3) = 165 = 10^2 + 8^2 + 1^2
-               dim span{U x U x U} = 165   (EQUAL: gauge = exchange
-               commutant)
-collapse:      sum dim S_lambda(C^3) f_lambda = 27 = 3^3; 81 = 3^4
-color:         rank A_3 = 1 (the baryon); ||A_4|| = 0 EXACTLY;
-               ||U^3 b - det(U) b|| = 2.4e-16
-order forcing: baryon-channel weight of a generic sealed record =
-               0.00964 > 0; para-order-2 hosting predicts 0: CLASH
+                eps in { +1, -1, +P, -P }.
 ```
 
-Two readings, both load-bearing:
+### 3.2 The ledger excludes the spectators
 
-1. **Gauge from exchange.** The 165 = 165 receipt is the Doplicher-
-   Roberts reconstruction at record scope: the algebra of transports
-   that commute with the record statistics IS the gauge algebra, with
-   nothing else in it.  In SHARD's ontology the gauge group's status
-   changes from input to output - the same promotion the corpus
-   earlier won for Lorentz signature (commitment), fermions (D9a), and
-   reflection positivity (eventlessness).
-2. **Color physics as exact linear algebra.** Pauli-for-color
-   (||A_4|| = 0) and the unique det-charged baryon are EXACT at finite
-   scope - the record ontology's first nonabelian hadron-structure
-   statements, and they came from the statistics theorem, not from
-   dynamics.  (Confinement DYNAMICS remains with O7/O8 - not claimed.)
+**Claim.**  The candidates +-1 are excluded by the ledger itself.
 
-## 5. R5: Paper 17 derived (p18d)
+*Argument.*  Consider two excitations with ORTHOGONAL fiber labels
+e_1, e_2 - distinguishable words of the ledger.  The exchanged
+configuration is a DIFFERENT word, and its cross-record is SEALED by
+the eventless seam with modulus 1 (the transport value; the SIGN on
+distinguishable words is word-phase gauge).  Machine:
 
-The center omega 1_3 in SU(3) acts on Lambda^k by omega^k; the closure
-predicate of P17 (charge triple = 0 mod 3) is precisely center
-neutrality; and the census table shows every minimal chiral base is
-center-neutral as a whole, with the L|R stacks landing on conjugate
-triality patterns ((1,1,1)|(2,2,2) for the smallest base - fundamental
-vs antifundamental shadows).  What Phase I could see of the
-reconstructed group was exactly its center - the DR prediction for an
-abelian probe.  The lift dictionary then sends each multiplicity-3
-charge of the P17 4d minimal solutions to ONE U(3) fundamental, with
-the abelian charge on det U(3): the hypercharge slot.
+```text
+   candidate    |<w'| eps |w>|     sealed cross-record modulus
+     +1               0.0                  1.0
+     -1               0.0                  1.0
+     +P               1.0                  1.0
+     -P               1.0                  1.0
+```
 
-**(M) Phase II, now posed:** search representation contents of
-reconstructed U(d) fibers (with their determinant U(1)s) against the
-nonabelian seam/anomaly predicates, with Phase I's abelian data as the
-center boundary condition.  The gate is open.
++-1 predict ABSENCE where the ledger holds a modulus-1 entry - no
+phase convention repairs an absent record.  In corpus terms, an
+exchange that spectates the labels is a SILENT LABEL-SWAP: excluded by
+P4's silent-seam principle, the same mechanism that has carried every
+forcing argument since Paper 4.  Surviving: +-P.
+
+### 3.3 The sign is computed, not chosen
+
+By P11 Part III (D9a discharged), record exchange of identical
+excitations IS eventless transport along the exchange path, and that
+path carries a relative 2pi frame rotation (P9's frame-winding
+theorem).  The projective layer therefore CONTRIBUTES the phase of a
+2pi rotation on the spin-m fiber:
+
+```text
+   exp(2 pi i Jz)|spin-m  =  (-1)^(2m):
+   m = 1/2: -1      m = 1: +1      m = 3/2: -1     (machine receipts)
+```
+
+**Theorem R2.**  eps = (-1)^(2m) P.  The record exchange is the fiber
+PERMUTATION times the computed projective sign; the +-P "freedom" of
+3.1-3.2 was apparent only before D9a - the operator was never free.
+
+**Corollary.**  Parastatistics is never fundamental in the record
+ontology: statistics carries no fiber structure of its own.
+Record-Pauli (P11 Part II) is now downstream of the classification
+rather than parallel to it.
+
+## 4. Theorem R3 and the color receipts
+
+### 4.1 Schur-Weyl as the engine
+
+With eps = (-1)^(2m) P, n identical excitations on a d-dim fiber carry
+the symmetric group S_n by permutation of tensor factors on V^n.
+Schur-Weyl duality (classical; machine-verified at every scope used)
+decomposes V^n = sum over Young diagrams lambda of S_lambda(C^d)
+tensor M_lambda, with S_lambda the GL(d) irrep (nonzero only for
+<= d rows) and M_lambda the S_n irrep of dimension f_lambda.  Three
+consequences become the theorem's three clauses.
+
+### 4.2 (a) Truncation = order, forced both ways
+
+dim span(S_n on V^n) = sum over {lambda: <= d rows} f_lambda^2,
+strictly less than n! = sum over ALL lambda once n > d.  Receipts:
+
+```text
+   d = 3: n = 2: 2; n = 3: 6 (full); n = 4: 23 != 24
+          (the (1^4) channel is absent: no 4-fold antisymmetrization
+          over a 3-dim fiber)
+   d = 2: n = 3: 5 != 6
+```
+
+"Para-order d" is the fiber dimension showing through - and it is
+FORCED: hosting a d = 3 fiber at order 2 (forbidding the (1,1,1)
+channel) deletes the baryon channel, whose sealed weight in a generic
+3-excitation record is strictly positive (machine: 0.00964 > 0) - a
+CLASH with an existing ledger entry; order above d adds nothing (the
+truncation is automatic).  THE STATISTICS ORDER IS THE FIBER
+DIMENSION.
+
+### 4.3 (b) Gauge from exchange: the double commutant
+
+```text
+   dim commutant of S_3 on (C^3)^3 = 165 = 10^2 + 8^2 + 1^2
+   dim span{ U x U x U : U in U(3) } = 165        (EQUAL, mutual)
+```
+
+The algebra of transports commuting with the record statistics IS the
+gauge algebra, with nothing else in it.  This is the Doplicher-Roberts
+reconstruction at record scope: the gauge group's status changes from
+input to OUTPUT - the same promotion the corpus earlier won for
+Lorentz signature (commitment), fermions (D9a), and reflection
+positivity (eventlessness).
+
+### 4.4 (c) The collapse, and R4's color receipts
+
+```text
+collapse:  sum_lambda dim S_lambda(C^3) f_lambda = 10 + 16 + 1 = 27
+           = 3^3;  15 + 45 + 12 + 9 = 81 = 3^4: the "para-order-3"
+           state count IS ordinary Fermi/Bose with the fiber unhidden.
+color:     rank A_3 on (C^3)^3 = 1: the baryon is the UNIQUE totally
+           antisymmetric singlet;
+           ||A_4 on (C^3)^4||_max = 0.0e+00 EXACTLY: PAULI FOR COLOR
+           (no four-quark total antisymmetrization);
+           ||U^3 b - det(U) b|| = 2.4e-16: the baryon transforms only
+           under the determinant U(1) - the abelian (center /
+           hypercharge) shadow.
+```
+
+The record ontology's first nonabelian hadron-structure statements -
+exact at finite scope, and they came from the statistics theorem, not
+from dynamics.  (Confinement DYNAMICS remains with O7/O8 - not
+claimed.)
+
+## 5. R5: Paper 17 derived
+
+The center omega 1_3 (omega = e^{2 pi i/3}; det(omega 1) = 1, so it
+lies in SU(3)) acts on Lambda^k(C^3) by omega^k: quark 1, diquark 2,
+baryon 0 (trivial - singlet-capable).  P17's closure predicate (a
+charge triple summing to 0 mod 3) is precisely CENTER NEUTRALITY, and
+the census table shows every minimal chiral base center-neutral as a
+whole, with the L|R stacks landing on conjugate triality patterns
+((1,1,1)|(2,2,2) for the smallest base - fundamental vs
+antifundamental shadows).  What Phase I could see of the reconstructed
+group was exactly its center - the DR prediction for an abelian probe.
+The lift dictionary sends each multiplicity-3 charge of the P17 4d
+minimal solutions to ONE U(3) fundamental, with the abelian charge on
+det U(3): the hypercharge slot, exactly where R4 put the baryon's
+residual charge.
 
 ## 5.5 PART II - (M) Phase II opened: the predicates and the search
 
@@ -292,8 +373,9 @@ size <= 5 multiplets.  EXHAUSTIVE.  The result:
 genuinely chiral matter content of the record filter stack.**  Scope
 honesty, stated plainly: color/weak representations beyond the
 fundamental/doublet (6, 8, weak triplets...) and contents beyond five
-multiplets are NOT searched here - that is run 2; and this is a
-KINEMATIC selection (anomalies + lattice + chirality), not a dynamical
+multiplets are NOT searched here - that is run 2 (executed in Paper
+19, where the floor survives the zoo); and this is a KINEMATIC
+selection (anomalies + lattice + chirality), not a dynamical
 derivation: nothing here explains three generations, masses, or why
 nature picks the minimal solution.  What IS established: the filter
 stack built across Papers 14-18, executed on representations of the
@@ -303,14 +385,13 @@ nontrivial positive result.
 
 ## 6. What this paper proves and does not prove
 
-Proves: R1 (from P4 s20 plus the topology import, with the
-event-vs-statistics separation receipts); R2 (commutant computed,
-ledger exclusion of +-1, sign computed via D9a + frame winding); R3 at
-finite record scope (truncation, both directions of order = fiber
-dimension, the 165 = 165 reconstruction, the collapse bookkeeping);
-R4's exact color statements; R5's derivation of the P17 census.
-
-Part II adds, proved/computed at stated scope: the anomaly
+Proves: R1 (Section 2.1, from P4 s20 plus the topology import, with
+the event-vs-statistics separation receipts); R2 (commutant computed,
+ledger exclusion of +-1 via silent-seam, sign computed via D9a + frame
+winding); R3 at finite record scope (truncation, both directions of
+order = fiber dimension, the 165 = 165 reconstruction, the collapse
+bookkeeping); R4's exact color statements; R5's derivation of the P17
+census.  Part II adds, proved/computed at stated scope: the anomaly
 coefficients of the SU(3) representations from explicit generators
 with the exact d-symbol proportionality; the vanishing of the SU(2)
 cubic; and the exhaustive Phase II run-1 result - the SM generation as
@@ -322,12 +403,12 @@ the target frame; the record-scope finite version is what is
 established); O(d)/Sp(d) real/quaternionic fiber cases (the receipts
 are unitary-fiber; the orthogonal/symplectic refinement is a named
 direction); SU(d) vs U(d) splitting beyond the det-charge bookkeeping
-(the determinant U(1) is identified as the abelian slot; run 1 now
-FIXES the hypercharge pattern at minimal scope, but its uniqueness
-beyond fundamental/doublet reps is run 2's question); any confinement
-dynamics (O7/O8); the Witten condition internally (named import);
-three generations, masses, or dynamical selection of the minimal
-solution (kinematic scope, stated in 5.5.2).
+(the determinant U(1) is identified as the abelian slot; run 1 fixes
+the hypercharge pattern at minimal scope, but its uniqueness beyond
+fundamental/doublet reps is run 2's question - answered affirmatively
+in Paper 19); any confinement dynamics (O7/O8); the Witten condition
+internally (named import); three generations, masses, or dynamical
+selection of the minimal solution (kinematic scope, stated in 5.5.2).
 
 ## 7. The kernel after Paper 18
 
@@ -353,9 +434,9 @@ KERNEL: { (C-reg-b), (M)-Phase-II-run-2, (V), (PR-RP) } +
 ## 8. Status
 
 ```text
-R1:  eps^2 = 1 forced in d >= 3 (pure-gauge holonomy 2.2e-14 at all
-     contraction stages; eventful contrast 1.99 -> 0.12; d = 2 modulus
-     = the P9 anyon window).
+R1:  eps^2 = 1 forced in d >= 3 (proof 2.1; pure-gauge holonomy
+     2.2e-14 at all contraction stages; eventful contrast 1.99 ->
+     0.12; d = 2 modulus = the P9 anyon window).
 R2:  commutant dim 2 (d = 2, 3, 4); +-1 excluded by the ledger
      (absent vs sealed modulus-1 cross-records); sign computed:
      eps = (-1)^(2m) P (receipts m = 1/2, 1, 3/2).
@@ -364,20 +445,21 @@ R3:  truncation 23 != 24 / 5 != 6; order = fiber dim forced (clash
 R4:  baryon rank 1; ||A_4|| = 0 exact; det-receipt 2.4e-16.
 R5:  P17's Z_3 census = the center of the reconstructed group;
      closure = center neutrality; lift dictionary stated.
-D10: discharged at stated scope; (M) Phase II open.
 Part II (predicates): A(R) computed from generators (1, -1, 0, +7,
      +27; proportionality 1e-15); SU(2) cubic identically zero;
      Witten named.
 Part II (run 1): SM GENERATION = THE UNIQUE MINIMAL CHIRAL CONTENT
      at fundamental/doublet scope on the Z_6 lattice (exhaustive,
      sizes 1-5; nothing below 15 Weyl; robust to |Y6| <= 12).
+D10: discharged at stated scope; (M) Phase II open and running.
 ```
 
 ## References and literature map
 
 - Papers 4, 9, 11, 17 (internal): silent-seam exclusion and
   eventless-flat (P4 s20), frame winding and the anyon window (P9),
-  record-Pauli and D9a (P11 Parts II-III), the abelian census (P17).
+  record-Pauli and D9a (P11 Parts II-III), the abelian census and the
+  Z_6 lattice (P17).
 - S. Doplicher, R. Haag, J. E. Roberts, Comm. Math. Phys. 23, 199
   (1971); 35, 49 (1974): superselection sectors and permutation
   statistics in d >= 3.

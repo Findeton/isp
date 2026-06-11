@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 6: Measurement As Record Stabilization In Quantum Computing
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Date: May 29, 2026

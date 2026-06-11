@@ -1,5 +1,7 @@
 # Interacting Projective Kernel Dynamics And Comparison-Map Inverse Control
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V3 Paper 3 investigation draft

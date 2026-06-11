@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 28: RN-MIXAMP Spectral Contraction Plus Tail Campaign
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-25

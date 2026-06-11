@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 35: Repairing The GR/QFT/QCD Hardening Gates
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: repair and closure paper after the review of Papers 32-34.  Papers

@@ -1,5 +1,7 @@
 # Paper 44 — Confinement as an Affine-Theta Cusp on ℝ³×S¹: a Semiclassically-Calculable Program
 
+Preprint, not peer reviewed, version 2026-06-01.
+
 **Status.** An exploration, not a proof. The small-circle semiclassics used here is established
 (Polyakov 3D mechanism; Ünsal–Yaffe adiabatic continuity; Dunne–Ünsal resurgence) — those are dressing.
 The *new lens* offered is that the monopole-instanton gas on `ℝ³×S¹` realizes an **affine theta

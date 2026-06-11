@@ -1,5 +1,7 @@
 # Paper 7 (v6.2, extended) - SHARD: Five Gates, the Dilation Theorems, the Two Clocks, a Matter Sector, and Predictions
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

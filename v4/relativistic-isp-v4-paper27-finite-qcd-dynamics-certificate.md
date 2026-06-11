@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 27: Finite QCD Dynamics Certificate
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: QCD dynamics certificate paper after Paper 26.  Paper 26 closed

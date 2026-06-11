@@ -1,5 +1,7 @@
 # Minimal Genuinely Interacting Gauge-Matter Benchmark in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Fixed finite $Z_2$ matter-link sectors, exact physical-sector elimination, a conventional-physics interpretation, and finite-block validation*
 
 Author: Felix Robles Elvira

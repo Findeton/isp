@@ -1,0 +1,90 @@
+== THE CLOCK TEST ON REAL SURFACE-CODE SYNDROME DATA ==
+   (Google 2023 memory experiment, Zenodo 6804040;
+    50,000 shots per folder; bulk rounds; m = 3 Hankel)
+
+--- surface_code_bX_d3_r25_center_3_5: 8 stabilizers ---
+  stab (1.0, 4.0): rate 0.1266  round-drift 0.0179  lam_min +2.83e-05  CI [-1.62e-06, +5.35e-05]  -> PASS (moment-compatible)
+  stab (2.0, 5.0): rate 0.1997  round-drift 0.0264  lam_min +1.48e-05  CI [-2.18e-05, +5.67e-05]  -> PASS (moment-compatible)
+  stab (2.0, 7.0): rate 0.1213  round-drift 0.0149  lam_min -2.07e-05  CI [-4.54e-05, +1.11e-05]  -> PASS (moment-compatible)
+  stab (3.0, 4.0): rate 0.1670  round-drift 0.0201  lam_min -8.34e-06  CI [-3.60e-05, +2.15e-05]  -> PASS (moment-compatible)
+  stab (3.0, 6.0): rate 0.2015  round-drift 0.0134  lam_min -2.77e-05  CI [-6.13e-05, +6.47e-06]  -> PASS (moment-compatible)
+  stab (4.0, 3.0): rate 0.1037  round-drift 0.0065  lam_min +3.57e-07  CI [-1.70e-05, +1.77e-05]  -> PASS (moment-compatible)
+  stab (4.0, 5.0): rate 0.1790  round-drift 0.0084  lam_min +5.17e-06  CI [-1.58e-05, +3.23e-05]  -> PASS (moment-compatible)
+  stab (5.0, 6.0): rate 0.1200  round-drift 0.0034  lam_min +1.39e-05  CI [+1.03e-06, +3.22e-05]  -> PASS (moment-compatible)
+
+--- surface_code_bX_d3_r25_center_5_3: 8 stabilizers ---
+  stab (3.0, 2.0): rate 0.0986  round-drift 0.0047  lam_min +2.51e-06  CI [-1.66e-05, +1.86e-05]  -> PASS (moment-compatible)
+  stab (4.0, 3.0): rate 0.1554  round-drift 0.0068  lam_min +9.43e-07  CI [-2.74e-05, +2.77e-05]  -> PASS (moment-compatible)
+  stab (4.0, 5.0): rate 0.1201  round-drift 0.0027  lam_min +3.33e-06  CI [-1.93e-05, +2.58e-05]  -> PASS (moment-compatible)
+  stab (5.0, 2.0): rate 0.2019  round-drift 0.0176  lam_min +3.11e-05  CI [-2.37e-06, +6.64e-05]  -> PASS (moment-compatible)
+  stab (5.0, 4.0): rate 0.1794  round-drift 0.0066  lam_min +1.75e-05  CI [-7.56e-06, +4.16e-05]  -> PASS (moment-compatible)
+  stab (6.0, 1.0): rate 0.1141  round-drift 0.0026  lam_min +2.01e-05  CI [+7.43e-06, +3.44e-05]  -> PASS (moment-compatible)
+  stab (6.0, 3.0): rate 0.1892  round-drift 0.0059  lam_min -6.34e-06  CI [-3.34e-05, +2.60e-05]  -> PASS (moment-compatible)
+  stab (7.0, 4.0): rate 0.1311  round-drift 0.0043  lam_min +1.97e-05  CI [+3.20e-06, +3.90e-05]  -> PASS (moment-compatible)
+
+--- surface_code_bX_d3_r25_center_5_7: 8 stabilizers ---
+  stab (3.0, 6.0): rate 0.1194  round-drift 0.0050  lam_min -5.20e-06  CI [-2.30e-05, +1.40e-05]  -> PASS (moment-compatible)
+  stab (4.0, 7.0): rate 0.1655  round-drift 0.0076  lam_min +2.11e-05  CI [+3.07e-06, +4.45e-05]  -> PASS (moment-compatible)
+  stab (4.0, 9.0): rate 0.1249  round-drift 0.0051  lam_min +1.64e-05  CI [-3.80e-06, +3.97e-05]  -> PASS (moment-compatible)
+  stab (5.0, 6.0): rate 0.1646  round-drift 0.0146  lam_min +3.32e-06  CI [-1.61e-05, +2.83e-05]  -> PASS (moment-compatible)
+  stab (5.0, 8.0): rate 0.1724  round-drift 0.0098  lam_min -1.44e-05  CI [-4.42e-05, +1.40e-05]  -> PASS (moment-compatible)
+  stab (6.0, 5.0): rate 0.1081  round-drift 0.0083  lam_min -7.09e-06  CI [-2.35e-05, +1.36e-05]  -> PASS (moment-compatible)
+  stab (6.0, 7.0): rate 0.1549  round-drift 0.0078  lam_min +6.58e-06  CI [-1.59e-05, +3.17e-05]  -> PASS (moment-compatible)
+  stab (7.0, 8.0): rate 0.1121  round-drift 0.0072  lam_min -8.48e-06  CI [-1.72e-05, +4.87e-06]  -> PASS (moment-compatible)
+
+--- surface_code_bX_d3_r25_center_7_5: 8 stabilizers ---
+  stab (5.0, 4.0): rate 0.1168  round-drift 0.0064  lam_min -1.49e-05  CI [-3.16e-05, +5.37e-06]  -> PASS (moment-compatible)
+  stab (6.0, 5.0): rate 0.1696  round-drift 0.0061  lam_min +1.04e-05  CI [-1.57e-05, +3.49e-05]  -> PASS (moment-compatible)
+  stab (6.0, 7.0): rate 0.1111  round-drift 0.0037  lam_min -1.70e-06  CI [-1.63e-05, +1.49e-05]  -> PASS (moment-compatible)
+  stab (7.0, 4.0): rate 0.1814  round-drift 0.0043  lam_min -2.30e-05  CI [-5.10e-05, +1.84e-06]  -> PASS (moment-compatible)
+  stab (7.0, 6.0): rate 0.1531  round-drift 0.0070  lam_min +5.23e-06  CI [-1.42e-05, +2.83e-05]  -> PASS (moment-compatible)
+  stab (8.0, 3.0): rate 0.1135  round-drift 0.0058  lam_min +5.32e-06  CI [-1.25e-05, +2.61e-05]  -> PASS (moment-compatible)
+  stab (8.0, 5.0): rate 0.1537  round-drift 0.0085  lam_min +1.77e-05  CI [-6.71e-06, +4.02e-05]  -> PASS (moment-compatible)
+  stab (9.0, 6.0): rate 0.1030  round-drift 0.0050  lam_min -6.35e-06  CI [-2.31e-05, +1.42e-05]  -> PASS (moment-compatible)
+
+--- surface_code_bX_d5_r25_center_5_5: 24 stabilizers ---
+  stab (1.0, 4.0): rate 0.1346  round-drift 0.0276  lam_min +1.26e-07  CI [-2.87e-05, +3.40e-05]  -> PASS (moment-compatible)
+  stab (2.0, 5.0): rate 0.2046  round-drift 0.0252  lam_min +1.05e-05  CI [-3.05e-05, +4.45e-05]  -> PASS (moment-compatible)
+  stab (2.0, 7.0): rate 0.1327  round-drift 0.0172  lam_min +3.82e-05  CI [+9.56e-06, +7.07e-05]  -> PASS (moment-compatible)
+  stab (3.0, 2.0): rate 0.0974  round-drift 0.0056  lam_min +3.02e-07  CI [-1.70e-05, +1.89e-05]  -> PASS (moment-compatible)
+  stab (3.0, 4.0): rate 0.1745  round-drift 0.0244  lam_min -1.52e-05  CI [-5.07e-05, +1.41e-05]  -> PASS (moment-compatible)
+  stab (3.0, 6.0): rate 0.2022  round-drift 0.0186  lam_min +2.61e-05  CI [-8.98e-06, +5.82e-05]  -> PASS (moment-compatible)
+  stab (4.0, 3.0): rate 0.1678  round-drift 0.0089  lam_min -1.33e-05  CI [-3.89e-05, +1.59e-05]  -> PASS (moment-compatible)
+  stab (4.0, 5.0): rate 0.2047  round-drift 0.0086  lam_min -5.39e-06  CI [-3.25e-05, +3.12e-05]  -> PASS (moment-compatible)
+  stab (4.0, 7.0): rate 0.1744  round-drift 0.0115  lam_min +1.28e-05  CI [-1.57e-05, +4.01e-05]  -> PASS (moment-compatible)
+  stab (4.0, 9.0): rate 0.1275  round-drift 0.0039  lam_min +1.51e-05  CI [-2.02e-06, +3.45e-05]  -> PASS (moment-compatible)
+  stab (5.0, 2.0): rate 0.2063  round-drift 0.0078  lam_min +1.80e-05  CI [-1.32e-05, +5.11e-05]  -> PASS (moment-compatible)
+  stab (5.0, 4.0): rate 0.2113  round-drift 0.0135  lam_min +1.08e-06  CI [-2.89e-05, +3.49e-05]  -> PASS (moment-compatible)
+  stab (5.0, 6.0): rate 0.1873  round-drift 0.0146  lam_min +1.47e-05  CI [-1.06e-05, +4.29e-05]  -> PASS (moment-compatible)
+  stab (5.0, 8.0): rate 0.1744  round-drift 0.0116  lam_min -1.72e-05  CI [-4.41e-05, +1.54e-05]  -> PASS (moment-compatible)
+  stab (6.0, 1.0): rate 0.1119  round-drift 0.0023  lam_min -5.88e-06  CI [-2.23e-05, +1.05e-05]  -> PASS (moment-compatible)
+  stab (6.0, 3.0): rate 0.1962  round-drift 0.0040  lam_min +2.01e-05  CI [-1.02e-05, +5.38e-05]  -> PASS (moment-compatible)
+  stab (6.0, 5.0): rate 0.1913  round-drift 0.0096  lam_min +2.29e-06  CI [-2.64e-05, +3.26e-05]  -> PASS (moment-compatible)
+  stab (6.0, 7.0): rate 0.1613  round-drift 0.0053  lam_min +1.20e-05  CI [-8.11e-06, +3.50e-05]  -> PASS (moment-compatible)
+  stab (7.0, 4.0): rate 0.1936  round-drift 0.0032  lam_min +1.07e-05  CI [-1.60e-05, +4.49e-05]  -> PASS (moment-compatible)
+  stab (7.0, 6.0): rate 0.1646  round-drift 0.0122  lam_min -1.41e-06  CI [-2.65e-05, +2.46e-05]  -> PASS (moment-compatible)
+  stab (7.0, 8.0): rate 0.1147  round-drift 0.0034  lam_min +1.56e-05  CI [+5.75e-06, +3.17e-05]  -> PASS (moment-compatible)
+  stab (8.0, 3.0): rate 0.1175  round-drift 0.0044  lam_min +1.08e-06  CI [-1.79e-05, +1.82e-05]  -> PASS (moment-compatible)
+  stab (8.0, 5.0): rate 0.1551  round-drift 0.0097  lam_min +6.77e-06  CI [-1.94e-05, +3.14e-05]  -> PASS (moment-compatible)
+  stab (9.0, 6.0): rate 0.1040  round-drift 0.0054  lam_min +3.68e-06  CI [-1.45e-05, +2.21e-05]  -> PASS (moment-compatible)
+
+--- surface_code_bZ_d3_r25_center_3_5: 8 stabilizers ---
+  stab (1.0, 4.0): rate 0.1270  round-drift 0.0166  lam_min +5.74e-06  CI [-2.14e-05, +3.26e-05]  -> PASS (moment-compatible)
+  stab (2.0, 5.0): rate 0.2027  round-drift 0.0189  lam_min +9.11e-07  CI [-3.75e-05, +4.21e-05]  -> PASS (moment-compatible)
+  stab (2.0, 7.0): rate 0.1226  round-drift 0.0176  lam_min +2.07e-05  CI [-6.13e-06, +4.82e-05]  -> PASS (moment-compatible)
+  stab (3.0, 4.0): rate 0.1697  round-drift 0.0166  lam_min -1.77e-05  CI [-4.71e-05, +1.31e-05]  -> PASS (moment-compatible)
+  stab (3.0, 6.0): rate 0.2025  round-drift 0.0161  lam_min +7.22e-06  CI [-3.13e-05, +4.77e-05]  -> PASS (moment-compatible)
+  stab (4.0, 3.0): rate 0.1066  round-drift 0.0044  lam_min +1.73e-05  CI [-1.98e-07, +3.46e-05]  -> PASS (moment-compatible)
+  stab (4.0, 5.0): rate 0.1802  round-drift 0.0050  lam_min +2.73e-06  CI [-2.04e-05, +3.42e-05]  -> PASS (moment-compatible)
+  stab (5.0, 6.0): rate 0.1215  round-drift 0.0033  lam_min +8.57e-06  CI [-9.02e-06, +2.50e-05]  -> PASS (moment-compatible)
+
+== AGGREGATE: 64 PASS, 0 SIGNED of 64 stabilizer streams ==
+
+== controls ==
+  iid control (rate 0.153):       lam_min -2.70e-05  CI [-4.88e-05, +7.57e-05]  -> PASS (moment-compatible)
+  oscillatory control (same rate):    lam_min -3.78e-04  CI [-4.16e-04, -3.37e-04]  -> SIGNED (no finite-state model)
+
+  (the instrument: a hidden irrational rotation SIGNS the
+   Hankel at matched rate and statistics, while iid passes -
+   whatever the device data shows is therefore a statement
+   about the device, not about the test's power)

@@ -1,5 +1,7 @@
 # Minimal U(1) Gauge Coupling and Holonomy in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Exact $\Gamma$-level gauge invariance, exact ring-holonomy reduction, and the bond-centered covariant benchmark*
 
 Author: Felix Robles Elvira

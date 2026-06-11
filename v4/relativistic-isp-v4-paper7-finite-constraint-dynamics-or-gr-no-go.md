@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 7: Finite Constraint Dynamics Or GR-Dynamics No-Go
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-26

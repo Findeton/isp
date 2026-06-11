@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 8: Continuum QFT Reconstruction And No-Go Theorems
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: theorem-level draft. This paper is the QFT reconstruction gate after

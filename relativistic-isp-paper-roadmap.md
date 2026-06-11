@@ -1,5 +1,7 @@
 # Relativistic ISP Paper Roadmap
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 ## Purpose

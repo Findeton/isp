@@ -1,5 +1,7 @@
 # Second Review of "Non-Markovian Gravitational Decoherence"
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 ## Referee-style verdict
 
 **Recommendation: major revision, but substantially improved.**

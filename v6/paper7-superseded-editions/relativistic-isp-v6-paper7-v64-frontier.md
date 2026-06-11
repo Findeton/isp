@@ -1,5 +1,7 @@
 # Paper 7 (v6.4) - SHARD: The Kernel Frontier Campaign
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

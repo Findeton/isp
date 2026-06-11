@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 19: Finite Source-Stein Engine For Same-Law Value Control
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-27

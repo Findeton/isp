@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 14: Does Indivisibility Evade Bell Nonlocality?
 
+Preprint, not peer reviewed, version 2026-05-30.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-31

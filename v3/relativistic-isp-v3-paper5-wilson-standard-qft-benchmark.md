@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 5: Wilson Single-Species QFT Benchmark
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: first theorem-level draft. This paper is Follow-Up A after V3 Paper 4:

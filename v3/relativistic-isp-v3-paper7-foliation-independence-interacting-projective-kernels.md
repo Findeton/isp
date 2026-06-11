@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 7: Foliation Independence For Interacting Projective Kernels
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: theorem-level draft. This paper follows V3 Papers 3-6 and proves the

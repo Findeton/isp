@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 10: Projective Non-Abelian Gauge Cutoffs
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: theorem-level projective-cutoff draft. This paper is the bridge from

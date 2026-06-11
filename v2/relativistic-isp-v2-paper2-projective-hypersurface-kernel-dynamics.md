@@ -1,5 +1,7 @@
 # Projective Hypersurface Kernel Dynamics for Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V2 Paper 2 consolidated draft

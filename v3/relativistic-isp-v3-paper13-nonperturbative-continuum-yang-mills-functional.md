@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 13: Nonperturbative Continuum Yang-Mills Functional
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: first investigation draft. Paper 13 starts from the Paper-12

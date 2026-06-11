@@ -1,5 +1,7 @@
 # Entropy Structure of Indivisible Stochastic Processes
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Gauge Invariance, Coherence, and Thermodynamic Interpretation*
 
 Author: Felix Robles Elvira

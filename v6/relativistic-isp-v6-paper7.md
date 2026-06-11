@@ -1,5 +1,7 @@
 # Paper 7 (v6, consolidated) - SHARD: The Five Gates, the Dilation Theorems, Matter and Gauge Structure, Lambda, and the Kernel Frontier
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

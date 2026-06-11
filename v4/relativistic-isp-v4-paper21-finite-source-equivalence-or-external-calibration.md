@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 21: Finite Source Equivalence Or External Calibration
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 ## 0. Purpose

@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 9: Topological Quantum Computing As Protected Holonomy
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Date: May 29, 2026

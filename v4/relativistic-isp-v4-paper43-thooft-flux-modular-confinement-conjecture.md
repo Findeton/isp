@@ -1,5 +1,7 @@
 # Paper 43 — The ’t Hooft-Flux Modular Confinement Conjecture, and an Attempt to Prove It
 
+Preprint, not peer reviewed, version 2026-06-01.
+
 **Status.** This is an *exploration toward a proof*, not a proof. The conjecture below is stated
 precisely and self-containedly in §0. §1–§6 develop a proof strategy: a reduction to two lemmas, a
 fully-worked abelian template where the analogous statement is essentially a theorem, and an honest

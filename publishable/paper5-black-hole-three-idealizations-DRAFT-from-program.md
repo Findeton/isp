@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 4: The Black Hole as a Finite-Record Indivisible Process — a Three-Idealization Diagnosis of the Information, Singularity, and Firewall Puzzles, with the ISP and RISP Content Separated
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 Author: Felix Robles Elvira
 
 Date: June 2026

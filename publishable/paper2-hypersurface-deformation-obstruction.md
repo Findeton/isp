@@ -1,5 +1,7 @@
 # The hypersurface-deformation obstruction to a relativistic indivisible reconstruction of field theory and geometry
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 **Author:** Felix Robles Elvira
 
 **Status:** Draft (markdown). Foundations-venue obstruction-map paper. This is a map of two *open* reconstruction problems unified by a single obstruction — it is explicitly **not** a reconstruction result.

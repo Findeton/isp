@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 3: Indivisible Beable Matter as a Source for Unimodular Semiclassical Gravity — Gravitational Decoherence, a Dynamical Cosmological Term, and the Covariance Obstruction
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 Author: Felix Robles Elvira
 
 Date: June 2026

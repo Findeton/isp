@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 37: Standard Equivalence Bridge For Continuum Yang-Mills
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Status: standard-equivalence bridge paper after Papers 28-31 and Papers

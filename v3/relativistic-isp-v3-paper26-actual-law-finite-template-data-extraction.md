@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 26: Actual-Law Finite-Template Data Extraction, Atom Values, Residual Source, RN Ratios, RN-MIXAMP, And Evaluation For Adaptive Branch A
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: completed finite-template worksheet, atom-value source campaign,

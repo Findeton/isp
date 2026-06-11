@@ -1,5 +1,7 @@
 # Paper 3 (v6) - Modular Record Diamonds and the Sealed-Deletion Equivalence Principle
 
+Preprint, not peer reviewed, version 2026-06-08.
+
 **Author:** Felix Robles Elvira
 
 **Status:** Ontology paper and finite theorem-target campaign. This paper does

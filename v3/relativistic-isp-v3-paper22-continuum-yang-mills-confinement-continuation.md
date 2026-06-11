@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 22: Continuum Yang-Mills Confinement Continuation After The SEL2 Source Audit
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: completed continuation/source-audit ledger after Paper 21; handoff to

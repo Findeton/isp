@@ -1,5 +1,7 @@
 # Paper 10 (v6) - SHARD: The Arrow-Positivity Theorem and the Record Renormalization Group
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -571,6 +573,12 @@ O11 (the sigma-RP bound): upgrade T5's joint-vanishing receipt to a
     [ADVANCED in Part III, Section 4.1: mechanism established (rank-d
     Gram, second-order matching), linear law audited at C* = 0.06;
     residue = constant-chasing.]
+    [Paper 26 update: the sigma-RP linear structure gained an
+    OPERATIONAL face - the quarter law of quantum-processor
+    decoherence (-ln BC = sigma/4 + corrections, proved with its
+    correction series and measured to four digits): leaked
+    record evidence destroys coherent capacity at the calibrated
+    exchange rate.  See Paper 26, Section 3.]
 SM running, Yukawa flows, and scheme-independence statements remain
 unposed; the corpus now has the machine to pose them.
 ```

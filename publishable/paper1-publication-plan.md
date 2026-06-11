@@ -1,5 +1,7 @@
 # Publication Plan for Paper 1
 
+Preprint, not peer reviewed, version 2026-06-04.
+
 ## Goal
 
 Publish `paper1-nonmarkovian-gravitational-decoherence` as a serious independent-research contribution in quantum foundations / gravitational decoherence.

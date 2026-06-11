@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 0: A Review Introduction For Physicists
 
+Preprint, not peer reviewed, version 2026-05-30.
+
 Author: Felix Robles Elvira
 
 Status: review and orientation document.  This is not a proof paper.  It is a

@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 24: Full-Object RPF Dual Certificate Campaign For Adaptive Branch A
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: completed certificate-body verdict.  The full-object finite-dual

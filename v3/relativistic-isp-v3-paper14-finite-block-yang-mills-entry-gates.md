@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 14: Finite-Block Entry Gates For Actual Continuum SU(N) Yang-Mills
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 ## Abstract

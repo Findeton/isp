@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 17: Mass Gap Gates For Relativistic ISP Yang-Mills
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 ## Abstract

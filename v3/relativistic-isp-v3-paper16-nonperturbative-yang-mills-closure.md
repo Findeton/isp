@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 16: Nonperturbative Continuum Yang-Mills Closure From ISP Record Gates
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 ## Abstract

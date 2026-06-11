@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 26: Relativistic QFT And QCD As V4 Finite Descent Extensions
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: developed V4 embedding and audit after Paper 25.  Paper 26 asks

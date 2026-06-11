@@ -1,5 +1,7 @@
 # Localized Controls, Detectors, and Operational Relativity in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Finite-hypersurface stochastic instruments, foliation-compatible composition, and no-signaling with Bell-compatible full-circuit families*
 
 Author: Felix Robles Elvira

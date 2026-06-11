@@ -1,5 +1,7 @@
 # Restricted Renormalized Universality of the Leading Bond-Centered Thin-Slab Law
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Exact regulator comparison, the $\lambda$-family realization, and the theorem-level completion of phase 3 in relativistic ISP*
 
 Author: Felix Robles Elvira

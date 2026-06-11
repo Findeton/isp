@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 34: Formal Hardening Of Finite QCD Dynamics
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: formal hardening paper after Papers 27, 30, 31, and 33.  Paper 27

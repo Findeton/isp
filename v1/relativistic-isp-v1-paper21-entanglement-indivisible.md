@@ -1,5 +1,7 @@
 # Gauge-Invariant Process Entanglement in Indivisible Stochastic Processes
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *From ZZ-Gate Phantoms to Bell Inequalities*
 
 Author: Felix Robles Elvira

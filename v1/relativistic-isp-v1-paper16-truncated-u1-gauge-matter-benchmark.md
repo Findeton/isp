@@ -1,5 +1,7 @@
 # Truncated Compact U(1) Gauge-Matter Benchmark in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Finite $K$-truncated $U(1)$ matter-link sectors, exact physical-sector elimination, Coulomb-string reduced interaction, and finite-block validation*
 
 Author: Felix Robles Elvira

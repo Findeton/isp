@@ -1,5 +1,7 @@
 # Paper 4 (v6) - SHARD: Sealed Holonomy and Record Dynamics
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

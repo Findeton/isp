@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 41: Fixed-IR Response Screening And Hostile-Collar Continuation
 
+Preprint, not peer reviewed, version 2026-06-01.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-30

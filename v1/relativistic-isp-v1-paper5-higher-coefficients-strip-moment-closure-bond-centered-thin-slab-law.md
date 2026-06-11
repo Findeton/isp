@@ -1,5 +1,7 @@
 # Higher Coefficients and Strip-Moment Closure in the Bond-Centered Thin-Slab Law
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Exact higher-order overlap structure and the strip-moment criterion in relativistic ISP*
 
 Author: Felix Robles Elvira

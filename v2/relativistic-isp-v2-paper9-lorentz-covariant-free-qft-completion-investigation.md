@@ -1,5 +1,7 @@
 # Lorentz-Covariant Free-QFT Completion
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V2 Paper 9 investigation draft

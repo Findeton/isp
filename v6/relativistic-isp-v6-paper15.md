@@ -1,5 +1,7 @@
 # Paper 15 (v6) - SHARD: (C-reg-a) - The Uniform Tensor-Class Convergence Theorem
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -46,7 +48,7 @@ threshold,
 
     |lam_k(n) - lam_k|  <=  C*(lam_k) h^2 lam_k^2,
 
-where C* is the EXPLICIT expression assembled in Section 4 from the
+where C* is the EXPLICIT expression assembled in Section 5 from the
 lemma constants - depending only on (l0, L0, K1, K2, d), NOT on the
 individual metric.  Status ledger per lemma:
 
@@ -103,7 +105,7 @@ Named imports: Babuska-Osborn spectral approximation theory (the lower
 Lemma 2); midpoint-quadrature error calculus.  Everything else -
 regularity, min-max, assembly - is proved in-line by elementary energy
 arguments on the torus.  Corpus inputs: the assembly scheme and audit
-class (P12 4), the synthetic stratum (P12 6.2, P15b's other side).
+class (P12 4), the synthetic stratum (P12 6.2, Section 6's other side).
 
 ## 2. Setting
 
@@ -114,113 +116,160 @@ The discrete operator is the corpus assembly (P12): forward differences
 (D_mu u)(x) = n (u(x + h e_mu) - u(x)) on the grid (h Z)^d, cell-center
 sampled coefficients, symmetrized:
 
+```text
     a_h(u, v) = h^d sum_x sum_{mu nu} (D_mu u)(x) C_{mu nu}(x_c)
                 (D_nu v)(x),     A_n = sym assembly of a_h,
+```
 
 with eigenvalues lam_k(n) against the lumped mass h^d.  P is the grid
-sampling operator.
+sampling operator.  The audited class instance (six sampled tensor
+metrics of the P12 family - rotated eigenframes with trigonometric
+modulation) has measured class constants l0 = 0.3335, L0 = 1.7462,
+K1 = 2.403, K2 = 20.89.
 
-## 3. The lemma chain
+## 3. Lemma 1: regularity by the energy method
 
-**Lemma 1 (regularity, energy method; PROVED).** For an eigenpair
-(lam, u) of A with ||u|| = 1:
+**Lemma 1.**  For an eigenpair (lam, u) of A with ||u||_{L^2} = 1:
 
-(a) ||grad u||^2 = a(u,u)/<C-weight> <= lam / l0, i.e.
-    ||grad u|| <= nu(lam) := sqrt(lam / l0).
+```text
+(a)  ||grad u||  <=  nu(lam) := sqrt(lam / l0);
+(b)  ||D^2 u||   <=  R2(lam) := d nu (nu + sqrt(d) K1 / l0);
+(c)  ||D^3 u||   <=  R3(lam) := d^2 ( nu R2
+                                 + sqrt(d)(2 K1 R2 + K2 nu)/l0 ).
+```
 
-(b) Differentiate the eigenvalue equation: for each mu,
-    div(C grad du_mu) = -lam du_mu - div(dC_mu grad u).  Testing with
-    du_mu := d_mu u and using ellipticity on the left,
-    Cauchy-Schwarz on the right:
+*Proof.*  (a) Test the eigenvalue equation with u:
+l0 ||grad u||^2 <= a(u, u) = lam.
 
-      l0 ||grad du_mu||^2 <= lam ||du_mu||^2
-                             + sqrt(d) K1 ||grad u|| ||grad du_mu||,
+(b) Differentiate the equation in direction mu:
+div(C grad d_mu u) = -lam d_mu u - div((d_mu C) grad u).  Test with
+v = d_mu u and integrate by parts; on the left, ellipticity gives
+l0 ||grad v||^2; on the right, |lam <v, v>| <= lam ||v||^2 and the
+commutator term is bounded by Cauchy-Schwarz:
+| int grad(v)^T (d_mu C) grad u | <= sqrt(d) K1 ||grad u|| ||grad v||.
+Hence the quadratic inequality
 
-    a quadratic inequality in ||grad du_mu|| whose positive root gives,
-    after the loosening ||du_mu|| <= ||grad u|| <= nu,
+```text
+   l0 ||grad v||^2 <= lam ||v||^2 + sqrt(d) K1 ||grad u|| ||grad v||,
+```
 
-      ||grad du_mu|| <= nu (sqrt(lam/l0) + sqrt(d) K1 / l0),
+whose positive root, after the loosenings ||v|| <= ||grad u|| <= nu
+(Poincare on the mean-zero torus eigenfunctions, unit-normalized),
+gives ||grad d_mu u|| <= nu (sqrt(lam/l0) + sqrt(d) K1 / l0).  Summing
+the d directions yields (b).
 
-    and summing over mu:
+(c) Differentiate twice: the commutator now carries
+2 (d C)(grad d u) + (d^2 C)(grad u), bounded by
+sqrt(d) (2 K1 R2 + K2 nu); repeating the energy step with v a second
+derivative and assembling over the d^2 index pairs yields (c).  All
+constants are explicit; no Calderon-Zygmund import is needed - the
+torus energy method suffices, at the price of deliberate conservatism
+in the lam- and K-scaling (each loosening compounds).            QED
 
-      ||D^2 u|| <= R2(lam) := d nu (nu + sqrt(d) K1 / l0).
+**Audit (p15a (i)).**  Across the class, on fine-grid eigenfunctions
+(n = 48, k = 1..4): measured ||grad u||/nu <= 0.7745,
+||D^2 u||/R2 <= 0.1489, ||D^3 u||/R3 <= 0.0109.  The formulas dominate,
+increasingly conservatively at higher order - that conservatism is
+paid back by the audited cell constants of Lemma 2.
 
-(c) Differentiating twice and repeating the same energy argument (the
-    commutator now carries 2 K1 D^2 u + K2 grad u):
+## 4. Lemmas 2-4: consistency, mass, min-max
 
-      ||D^3 u|| <= R3(lam) := d^2 ( nu R2 + sqrt(d)(2 K1 R2 + K2 nu)/l0 ).
-
-All constants explicit; no Calderon-Zygmund import (the torus energy
-method suffices).  AUDIT (p15a (i)): across the class, measured
-||grad u|| / nu <= 0.77, ||D^2 u|| / R2 <= 0.15, ||D^3 u|| / R3 <=
-0.011 - the formulas dominate, increasingly conservatively at higher
-order (each energy loosening compounds).  That conservatism is paid
-back in the audited cell constants below.
-
-**Lemma 2 (consistency; PROVED IN STRUCTURE, constant audited).** For
+**Lemma 2 (consistency; proved in structure, constant audited).**  For
 u in H^3(T^d) and the sampling P:
 
-    |a_h(Pu, Pu) - a(u, u)| <= c_BH h^2 [ L0 (R3 nu + R2^2)
-                                + 2 K1 R2 nu + K2 nu^2 ](lam).
+```text
+ |a_h(Pu, Pu) - a(u, u)| <= c_BH h^2 [ L0 (R3 nu + R2^2)
+                              + 2 K1 R2 nu + K2 nu^2 ](lam).
+```
 
-Structure of proof: per cell, the forward difference is the average
-derivative along an edge (exact, by the fundamental theorem of
-calculus); the deviation of the integrand from its cell-center value
-is controlled by the Bramble-Hilbert lemma applied to the quadratic
-functional, with second-order cancellation of the O(h) terms under the
-symmetrized cell-center sum (midpoint property).  The terms collect
-exactly into the bracket shown, with one scheme-specific cell constant
-c_BH.  AUDIT (p15a (ii), calibration metrics 1-3): c_BH = 8.22e-5 -
-small precisely because Lemma 1's shapes are conservative; what the
-audit certifies is that ONE constant serves the whole class (the
-class-uniformity that is the theorem's content).
+*Structure of proof.*  Per cell: (i) the forward difference is the
+exact average of the derivative along the corresponding edge (the
+fundamental theorem of calculus), so D_mu(Pu)(x) = d_mu u(x + h e_mu/2)
++ E with |E| controlled by the second derivative on the cell; (ii) the
+deviation of the quadratic integrand grad^T C grad from its
+cell-center value is controlled by the Bramble-Hilbert lemma applied
+on the cell, with the O(h) terms cancelling under the symmetrized
+cell-center sum (the midpoint property); (iii) the surviving O(h^2)
+terms collect into exactly the bracket shown - one term per derivative
+allocation (L0 against third-times-first and second-squared
+derivatives of u; K1 against mixed; K2 against first-squared) - with
+ONE scheme-specific cell constant c_BH.  The corpus discipline marks
+step (ii)-(iii)'s numeric constant as AUDITED rather than hand-derived:
+the audit certifies that a single constant serves the entire class,
+which is the theorem's actual content.
+
+**Audit (p15a (ii); calibration metrics 1-3 ONLY).**  c_BH = 8.22e-5,
+c_m = 1.43e-11.  These are NOT order-one, and that is the point: the
+energy-method shapes R2, R3 are deliberately conservative in their
+lam- and K-scaling, and the cell constants absorb that slack.  A
+declared safety factor 2 is applied to both before assembly.
 
 **Lemma 3 (mass defect; same status).**
-|  ||Pu||_h^2 - 1 | <= c_m h^2 R2(lam)^2, c_m audited on the same
-calibration set.
+| ||Pu||_h^2 - 1 | <= c_m h^2 R2(lam)^2.
 
-**Lemma 4 (min-max upper bound; PROVED).** Using the trial space
-P span(u_1..u_k) in the discrete min-max and Lemmas 2-3 (plus the Gram
-control that follows from Lemma 3 at h below the class threshold):
+**Lemma 4 (min-max upper bound; proved).**  Let V_k = P span(u_1..u_k).
+By Lemma 3, for h below the class threshold the Gram matrix of V_k is
+invertible with controlled condition; the discrete min-max over V_k
+plus Lemma 2 then gives
 
-    lam_k(n) <= lam_k + E_cons(lam_k) + lam_k E_mass(lam_k) + h.o.t.
+```text
+   lam_k(n) <= lam_k + E_cons(lam_k) + lam_k E_mass(lam_k) + h.o.t.,
+   E_cons = c_BH h^2 [bracket](lam),   E_mass = c_m h^2 R2^2.
+```
 
-**Lemma 5 (lower bound; NAMED IMPORT).** The reverse inequality at the
-same order with the same class data, by Babuska-Osborn spectral
+*Proof.*  Standard Rayleigh-quotient comparison: for w in V_k,
+a_h(w, w)/||w||_h^2 <= (a(w, w) + E_cons ||w||^2)/(||w||^2 (1 -
+E_mass)), and the continuum min-max over span(u_1..u_k) is exactly
+lam_k; expanding (1 - E_mass)^{-1} to first order absorbs the rest
+into h.o.t.                                                      QED
+
+**Lemma 5 (lower bound; named import).**  The reverse inequality at
+the same order with the same class data, by Babuska-Osborn spectral
 approximation theory applied to the multilinear-interpolant comparison
-form.  The import is absorbed as the two-sidedness factor S = 2 in the
-assembly.
+form (the corpus scheme is a quadrature perturbation of the Q1 finite
+element method; the quadrature perturbation is Lemma-2-sized).  The
+import is absorbed as the two-sidedness factor S = 2 in the assembly.
 
-## 4. The theorem, assembled
+## 5. The theorem, assembled, and its out-of-sample validation
 
-    E_cons(lam) = c_BH h^2 [ L0 (R3 nu + R2^2) + 2 K1 R2 nu + K2 nu^2 ]
+```text
+    E_cons(lam) = c_BH h^2 [ L0 (R3 nu + R2^2) + 2 K1 R2 nu
+                             + K2 nu^2 ]
     E_mass(lam) = c_m  h^2 R2^2
     C*(lam)     = S (E_cons + lam E_mass) / (h^2 lam^2),    S = 2,
+```
 
-with the audited constants carried at a DECLARED safety factor 2.
+with the audited constants carried at the declared safety factor 2.
+The leading lam-scaling: R3 nu ~ lam^2/l0^2-class, so C* is finite and
+lam-stable - the normalization by h^2 lam^2 is the right gauge.
 
-**Validation (out of sample; p15a (iii)).** The bound calibrated on
-metrics 1-3 dominates every measured normalized error on the DISJOINT
-validation metrics 4-6, across n in {16, 24, 32} and modes k = 1..6:
+**Validation (p15a (iii); metrics 4-6, DISJOINT from calibration).**
 
 ```text
 measured sup |dlam| / (h^2 lam^2)  [validation set]  = 0.1478
 min over validation metrics/modes of  C* / measured  = 2.9x
+   (all n in {16, 24, 32}, all modes k = 1..6)
 ```
 
-**Sharpness of the rate (p15a (iv)).** On a class member, the
-normalized error's MINIMUM over modes is pinned under refinement:
+The bound, calibrated on metrics 1-3 with its safety factor, dominates
+every measured error on the disjoint validation metrics: the
+class-uniform guarantee holds OUT OF SAMPLE.  The audited practical
+constant (P12: C* = 0.25) remains the sharp working value; the
+proved-modulo-audit guarantee sits a factor ~2 above it.
+
+**Sharpness of the rate (p15a (iv)).**  On a class member, the
+normalized error's MINIMUM over modes under refinement:
 
 ```text
 n = 16: 0.05731   n = 24: 0.05748   n = 32: 0.05753   n = 48: 0.05757
 ```
 
-bounded below away from zero: O(h^2) is attained - the theorem's rate
-cannot be improved on this class, only its constant (the practical
-sharp value remains the P12 audit's C* = 0.25, a factor ~2 below the
-proved-modulo-audit guarantee).
+bounded below away from zero: O(h^2) is ATTAINED - the theorem's rate
+cannot be improved on this class, only its constant.
 
-## 5. Necessity: the theorem meets the synthetic stratum
+## 6. Necessity: the theorem meets the synthetic stratum
+
+### 6.1 The threshold
 
 On the fixed ellipticity window, the family c_k(x) = 1 + 0.45 sin(2 pi
 k x) has K1 = 0.9 pi k.  At n = 64 (p15b):
@@ -235,14 +284,16 @@ k x) has K1 = 0.9 pi k.  At n = 64 (p15b):
  32    1.414       12.552        <- the dimer point: 126x
 ```
 
-Inside the class the constant is genuinely uniform (homogenization
-protects the low modes); the failure at the line is STRUCTURAL, not
-monotone - at k = 24 the sampled pattern happens to be balanced and
-every target coincides, so the constant looks fine by accident.  No
-K-free theorem exists.
+Inside the class the constant is genuinely uniform - and the mechanism
+of that uniformity is itself instructive: the low modes are PROTECTED
+BY HOMOGENIZATION (a fast-oscillating metric looks effectively smooth
+to long wavelengths), which is why the failure at the line is
+STRUCTURAL rather than monotone.  At k = 24 the sampled pattern happens
+to be balanced, every target coincides, and the constant looks fine by
+accident; at the dimer point it blows up by two orders.  No K-free
+theorem exists; inside the class the uniformity is real.
 
-And beyond the line the tower does not diverge - it converges to the
-wrong (synthetic) geometry, and the limit is COMPUTABLE:
+### 6.2 Beyond the line: the computable synthetic limit
 
 ```text
   k    c_hm(sampled)   gap to c_k   gap to c_eff   gap to c_hm
@@ -250,25 +301,32 @@ wrong (synthetic) geometry, and the limit is COMPUTABLE:
  16      0.89875        0.0030        0.0013         0.0053
  24      0.89305        0.0038        0.0047         0.0047
  32      0.79750        0.1112        0.1116         0.0052   <- dimer
+  (c_eff = sqrt(1 - 0.45^2) = 0.89303, the continuum-homogenized
+   conductance; c_hm = the harmonic mean of the bonds the lattice
+   actually sampled)
 ```
 
-At the boundary (k/n = 1/2 - the exactly dimerized chain) the limit is
-the harmonic mean of the SAMPLED bonds, c_hm = 0.79750, to 0.005, while
-both smooth targets miss by 0.11.  The theorem's hypothesis line is the
+AT the boundary (k/n = 1/2 - the exactly dimerized chain, alternating
+bonds 1 +- 0.45) the tower's limit is the harmonic mean of the SAMPLED
+bonds, c_hm = 2/(1/0.55 + 1/1.45) = 0.79750, to 0.005, while both
+smooth targets miss by 0.11.  The theorem's hypothesis line is the
 handoff to Paper 12's synthetic stratum, and the stratum's boundary
-value is exact arithmetic, not a fit.  In the intermediate regime the
+value is EXACT ARITHMETIC, not a fit.  In the intermediate regime the
 tower interpolates between the smooth and sampled-synthetic targets,
-with commensuration points where all targets coincide.
+with commensuration points where all targets coincide.  This receipt
+is the bridge to (C-reg-b): beyond the class line the question is not
+whether limits exist but WHICH geometry they are - the
+regularity-stratum question, now with a computable handle.
 
-## 6. What this paper proves and does not prove
+## 7. What this paper proves and does not prove
 
-Proves: Lemma 1 in full with explicit constants (energy method);
-Lemmas 2-3 in structure with audited, safety-factored cell constants
-(calibration and validation disjoint); Lemma 4 in full; the assembled
-class-uniform bound validated out of sample at 2.9x margin; rate
-sharpness; hypothesis necessity with the structural failure
-classification; and the computable synthetic limit at the class
-boundary.
+Proves: Lemma 1 in full with explicit constants (energy method, the
+proof in Section 3); Lemmas 2-3 in structure with audited,
+safety-factored cell constants (calibration and validation disjoint);
+Lemma 4 in full; the assembled class-uniform bound validated out of
+sample at 2.9x margin; rate sharpness; hypothesis necessity with the
+structural failure classification; and the computable synthetic limit
+at the class boundary.
 
 Does not prove: the cell constants c_BH, c_m analytically (the two
 audited gaps - closing them is bookkeeping-grade Bramble-Hilbert
@@ -283,7 +341,7 @@ hypothesis line is exactly the synthetic-stratum boundary, so the
 remaining question is which limits are smooth - not whether controlled
 limits exist.
 
-## 7. The kernel after Paper 15
+## 8. The kernel after Paper 15
 
 ```text
 (C-reg)  SPLIT AND REDUCED:
@@ -292,21 +350,24 @@ limits exist.
             sharp, hypotheses necessary, out-of-sample validated.
   (C-reg-b) the regularity stratum (which controlled limits are smooth
             Lorentzian geometries): NOW THE ENTIRE RESIDUE of (C-reg),
-            with a new handle from Section 5: the limit beyond the
+            with a new handle from Section 6: the limit beyond the
             class line is the sampled-harmonic-mean geometry -
             smoothness of the limit is equivalent to the stability of
             that computable functional under refinement (a stated
-            criterion, not yet a theorem).
+            criterion, operationalized as the local-Weyl detector in
+            Paper 24).
 KERNEL: { (C-reg-b), (M), (V), process-O6 } +
         { D10, O7, O8-remainder, O11-remainder }.
 ```
 
-## 8. Status
+## 9. Status
 
 ```text
 Theorem:    class-uniform |dlam| <= C* h^2 lam^2 - proved modulo two
             audited constants (declared safety factor 2; disjoint
             validation margin 2.9x); rate SHARP (0.0575 pinned).
+Lemmas:     1 proved (Section 3); 2-3 proved in structure, constants
+            audited; 4 proved (Section 4); 5 named import.
 Necessity:  constant flat (~0.10) in-class; structural failure at
             K1 h = O(1) (0.65 resonance / accident at k = 24 / 12.55
             dimer); class hypothesis necessary.
@@ -328,7 +389,7 @@ Residue:    (C-reg-b) regularity stratum; two bookkeeping constants;
 - G. Strang and G. J. Fix, An Analysis of the Finite Element Method
   (1973): quadrature-perturbed forms.
 - A. Bensoussan, J.-L. Lions, G. Papanicolaou (1978); Jikov-Kozlov-
-  Oleinik (1994): homogenization (the other side of Section 5).
+  Oleinik (1994): homogenization (the other side of Section 6).
 - U. Mosco (1994); K. Kuwae and T. Shioya (2003): the convergence
   frame this theorem instantiates class-uniformly.
 ```

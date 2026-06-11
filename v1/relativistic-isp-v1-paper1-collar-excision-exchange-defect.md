@@ -1,5 +1,7 @@
 # Localized Finite Deformations and the Free Dirac Exchange Defect in Relativistic Indivisible Stochastic Processes
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Lie-Trotter and collar-excision rules, rule non-uniqueness, bond-centered thin-slab reduction, and renormalized universality*
 
 Author: Felix Robles Elvira

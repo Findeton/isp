@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 18: Confinement, Uniform Marked KP, And 4D Gauge-Theory Completion Gates
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 ## Abstract

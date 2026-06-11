@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 38: Ontology-Free Yang-Mills Proof Reduction
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: reduction and hardening paper after Paper 37.  Paper 37 closes the

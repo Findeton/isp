@@ -1,5 +1,7 @@
 # Relativistic QFT Reconstruction And No-Go Tests For ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V2 Paper 6 investigation draft

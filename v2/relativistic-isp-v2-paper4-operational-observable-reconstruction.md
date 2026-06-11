@@ -1,5 +1,7 @@
 # Operational Observable Reconstruction From Relativistic ISP Kernels
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V2 Paper 4 consolidated draft

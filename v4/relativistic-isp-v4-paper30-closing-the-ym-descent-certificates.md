@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 30: Closing The Yang-Mills Descent Certificates
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Status: RCP28, TSP28, and MID28 closed relative to the active ISP corpus, with

@@ -1,5 +1,7 @@
 # Paper 6 (v6.1) - SHARD: A_rec Is Gauge; the Intrinsic Coupling Is kappa*sigma_A
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:

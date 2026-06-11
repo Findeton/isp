@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 25: Finite Descent Reconstruction Of Effective GR
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: Developed reconstruction paper after Paper 24.  Paper 24 closed the

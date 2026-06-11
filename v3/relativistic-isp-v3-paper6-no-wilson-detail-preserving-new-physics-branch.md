@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 6: No-Wilson Detail-Preserving Branch
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: completed theorem-level draft. This paper is Follow-Up B after V3 Paper 4:

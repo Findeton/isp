@@ -1,5 +1,7 @@
 # Non-Markovian Gravitational Decoherence from Indivisible Stochastic Processes: A Gaussian-Onset Alternative to Diósi–Penrose and a Fit-Free Interferometric Test
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 **Felix Robles Elvira**
 
 *Manuscript — foundations of quantum mechanics / gravitational decoherence.*

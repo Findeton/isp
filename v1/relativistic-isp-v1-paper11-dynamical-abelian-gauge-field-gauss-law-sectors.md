@@ -1,5 +1,7 @@
 # Dynamical Abelian Gauge Field and Gauss-Law Sectors in Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Finite matter-plus-link configuration space, exact $\Gamma$-level gauge-sector decomposition, and the first mixed-support benchmark*
 
 Author: Felix Robles Elvira

@@ -16,9 +16,11 @@ alternatives imprint a biased record bit per step (P_0 = (1/2+eps,
       COHERENT RECORD CAPACITY DECAYS AT ONE QUARTER OF THE EVIDENCE
       RATE.  Machine: the ratio table and its large-eps breakdown.
  (ii) GENERAL MONITORS: for random (P_0, P_1) pairs the ratio
-      (-ln BC)/sigma stays in a band below 1/4-at-symmetric -
-      symmetric monitoring is the WORST CASE per nat of evidence
-      (printed empirical band).
+      (-ln BC)/sigma lives in an O(1) band around the quarter (the
+      empirical band is printed): the EXCHANGE RATE between evidence
+      and coherence is monitor-dependent only within bounded factors -
+      sigma is the right currency, and the quarter is its symmetric
+      small-leak value.
  (iii) THE DECOUPLING EQUIVALENCE: across (eps, n), the Holevo
       information I(L:E) (computed exactly over the 2^n record
       streams) and the recovery infidelity 1 - F_rec rise together -
@@ -67,10 +69,12 @@ ratios = np.array(ratios)
 print(f"  {len(ratios)} random monitor pairs (sigma <= 1):")
 print(f"  ratio band: min {ratios.min():.4f}, median"
       f" {np.median(ratios):.4f}, max {ratios.max():.4f}")
-print("  -> the quarter coefficient is the small-leak symmetric value;")
-print("     random monitors leak MORE evidence per unit coherence lost")
-print("     (ratio below 1/4 is impossible only asymptotically - the")
-print("     printed max bounds the observed band).")
+print("  -> the evidence-to-coherence exchange rate is monitor-")
+print("     dependent only within an O(1) band (here [0.10, 0.49]):")
+print("     asymmetric monitors can be cheaper or dearer than the")
+print("     symmetric quarter, but never by more than bounded factors -")
+print("     sigma is the right CURRENCY for the capacity law, with the")
+print("     quarter as its calibration point.")
 
 # ---------- (iii) decoupling equivalence ----------
 print("\n== (iii) I(L:E) and recovery infidelity rise together ==")

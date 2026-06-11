@@ -1,5 +1,7 @@
 # Lightcones versus Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *A guided interactive explainer of the real visual difference: event-centered causal geometry versus whole-surface Γ-kernels, localized deformations, and exchange defects*
 
 Author: Felix Robles Elvira

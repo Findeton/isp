@@ -1,5 +1,7 @@
 # Paper 25 (v6) - SHARD: Calibration and the Prediction Ledger
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -49,30 +51,7 @@ THE PREDICTIONS:
   P-eps   hierarchy steps are powers of eps_record = 0.0318 within
           [eps^2, sqrt(eps)]             [pattern claim: 9/9, P23]
   P-mass  every charged fermion mass proportional to v   [M1]
-Each row names its falsifier: a sterile-free neutrino sector kills
-P-nu and (F-fiber); Dirac-only neutrinos kill P-Maj; B-L-violating
-proton decay kills P-BL; a hierarchy step far outside the eps band
-kills P-eps.
-
-THE CANDIDACY TABLE:
-  gauge group      OUTPUT - reconstructed from exchange        (P18)
-  matter content   UNIQUE minimal chiral floor = the SM     (P17-19)
-  hypercharges     FORCED - anomalies + the Z_6 lattice     (P14-18)
-  scalar sector    one doublet, lattice-minimal, seam-maximal  (P20)
-  EWSB             tree mechanism exact; photon = Q exactly    (P20)
-  generations      protected iff >= 3; gauged fiber forces nu_R (P21)
-  QCD/QED signs    necessity + flow direction + condensate     (P22)
-  masses           protected except nu^c; structural seesaw    (P23)
-  hierarchy        grain = eps_record (pattern)                (P23)
-  gravity + QM     the original corpus                       (P4-16)
-  continuum        CONDITIONAL: (C-reg-b) detector-posed;
-                   (PR-RP+) evidenced - both bounded           (P24)
-  calibration      EXTERNAL: one dimensionful measurement
-                   (the corpus' own gauge theorems say so)
-
-KILL-CONDITION SCOREBOARD: wrong sign - PASSED (P22); scalar seam
-obstruction - PASSED (P20); exotic floor flood - PASSED (P19);
-(PR-RP) negative - NOT OBSERVED (evidenced positive, P24).
+Each row names its falsifier (Section 3).
 
 VERDICT.  At stated scopes, conditional on two bounded mathematical
 residues ((C-reg-b) equivalence, multi-letter Anderson) and one
@@ -93,23 +72,129 @@ code/v6_p25a_prediction_ledger_campaign.py   the ledger, predictions,
                                              and assembly
 ```
 
-All operator rows carry machine receipts (hypercharge sums, epsilon
-invariance, weak contractions via P20); the assembly table cites its
-papers row by row.
+The script reruns bit-identically.  All operator rows carry machine
+receipts (hypercharge sums, epsilon invariance, weak contractions via
+P20); the assembly table cites its papers row by row.
 
-## 2. What this paper proves and does not prove
+## 2. The operator ledger
+
+### 2.1 The bookkeeping
+
+Every gauge-invariant operator of the SM + nu_R + H content at low
+dimension, with its exact quantum numbers (machine: hypercharge sums;
+color-epsilon SU(3) invariance at 8.9e-16; weak contractions per P20):
+
+```text
+   operator             dim   sum Y6   dB   dL   B-L   role
+   nu^c nu^c            3       0      0    -2    +2   Majorana (M1)
+   Q u^c H              4       0      0     0     0   u-Yukawa
+   Q d^c H*             4       0      0     0     0   d-Yukawa
+   L e^c H*             4       0      0     0     0   e-Yukawa
+   L nu^c H             4       0      0     0     0   Dirac-nu
+   (L H)(L H)           5       0      0    -2    +2   Weinberg
+   Q Q Q L              6       0     +1    +1     0   proton decay
+   u^c u^c d^c e^c      6       0     -1    -1     0   proton decay
+   u^c d^c d^c nu^c     6       0     -1    -1     0   proton decay
+```
+
+### 2.2 Readings
+
+1. Lepton number is broken ONLY by the Majorana sector, by two units
+   - the dim-3 term M1 made unique, and its dim-5 (Weinberg) light
+   shadow.  The neutrino has both Dirac (dim-4) and Majorana channels:
+   the seesaw is COMPLETE within the lattice-allowed operator set.
+2. Baryon number is exact through dimension 5 and first violated at
+   dimension 6 - and EVERY dim-6 channel conserves B - L (the color
+   epsilon forces three quark fields, the lattice forces the fourth
+   field's hypercharge into the lepton sector).  B - L violation in
+   the baryon sector requires dimension 9: doubly cutoff-suppressed.
+3. With calibration absent, RATES are not predicted - the cutoff
+   scale is the one external dimensionful contact (Section 4) - but
+   CHANNEL STRUCTURE is, and channel structure is falsifiable.
+
+## 3. The predictions, with falsifiers
+
+```text
+P-nu   nu_R exists (the 16th Weyl).  [Conditional on (F-fiber), P21.]
+       FALSIFIER: established nu_R-less neutrino physics (no sterile
+       state at any scale) kills P-nu and (F-fiber) with it.
+P-Maj  Neutrinos are Majorana; neutrinoless double-beta decay is
+       nonzero.  [M1 is unconditional given the content; the Weinberg
+       channel exists.]  FALSIFIER: Dirac-only neutrinos established
+       (0nbb excluded through the full mass-ordering bands).
+P-BL   All baryon violation conserves B - L: p -> e+ pi0 class
+       allowed at dim-6/Lambda^2; n-nbar oscillation and B-L-violating
+       decay channels doubly suppressed (dim 9).  FALSIFIER: observed
+       B-L-violating nucleon decay or n-nbar oscillation at rates
+       implying low-dimension operators.
+P-eps  Fermion hierarchy steps are powers of eps_record = 0.0318
+       within [eps^2, sqrt(eps)] up to O(1).  [Pattern claim: 9/9
+       observed steps comply, P23.]  FALSIFIER: any established
+       fermion mass ratio step far outside the band.
+P-mass Every charged fermion mass is proportional to v.  [M1.]
+       FALSIFIER: a charged fermion mass component not tracking the
+       Higgs vacuum (precision Higgs-coupling deviations of the
+       wrong, non-proportional form).
+```
+
+Noted directions, NOT ledger rows: the strong-CP status (the record
+gauge measures constructed in this corpus are reflection-positive,
+hence carry real positive weights at construction scope - suggesting
+theta = 0 structurally; whether theta stays zero under full matter
+coupling is open, so it is a direction); dark energy (the corpus' old
+(V)/C4 direction: Lambda as sealed-packet state data permits w(z)
+drift - distinguishable in principle, no value predicted); dark
+matter (nothing forced; sterile nu_R is hosted, not selected).
+
+## 4. The calibration requirement
+
+The corpus' own gauge theorems (P6.1: A_rec is gauge; all geometric
+statements dimensionless) imply that exactly ONE dimensionful contact
+- a measurement, not a theorem - converts the structure into numbers:
+fixing the record scale against any one measured quantity (G in SI
+units, a fermion mass in GeV, the cutoff against a decay bound) prices
+every other dimensionful claim.  Until that contact: channel
+structures, ratios, and pattern claims are the falsifiable content
+(Section 3); after it: rates and absolute masses join the ledger.
+This is stated as a feature of the discipline, not an apology: the
+theory declares precisely where its one external number lives.
+
+## 5. The candidacy table
+
+```text
+  gauge group      OUTPUT - reconstructed from exchange        (P18)
+  matter content   UNIQUE minimal chiral floor = the SM     (P17-19)
+  hypercharges     FORCED - anomalies + the Z_6 lattice     (P14-18)
+  scalar sector    one doublet, lattice-minimal, seam-maximal  (P20)
+  EWSB             tree mechanism exact; photon = Q exactly    (P20)
+  generations      protected iff >= 3; gauged fiber forces nu_R (P21)
+  QCD/QED signs    necessity + flow direction + condensate     (P22)
+  masses           protected except nu^c; structural seesaw    (P23)
+  hierarchy        grain = eps_record (pattern)                (P23)
+  gravity + QM     the original corpus                       (P4-16)
+  continuum        CONDITIONAL: (C-reg-b) detector-posed;
+                   (PR-RP+) evidenced - both bounded           (P24)
+  calibration      EXTERNAL: one dimensionful measurement
+                   (the corpus' own gauge theorems say so)
+
+KILL-CONDITION SCOREBOARD: wrong sign - PASSED (P22); scalar seam
+obstruction - PASSED (P20); exotic floor flood - PASSED (P19);
+(PR-RP) negative - NOT OBSERVED (evidenced positive, P24).
+```
+
+## 6. What this paper proves and does not prove
 
 Proves/receipts: the operator ledger at the listed dimensions with
 exact quantum-number bookkeeping; the B - L structure of the dim-6
 sector; the five predictions as stated consequences of proved
-structure (with their conditions named).
+structure (with their conditions and falsifiers named).
 
 Does not prove: operator coefficients (calibration-dependent); proton
-lifetime values; the strong-CP status (the record measure's
-positivity suggests theta = 0 at construction scope - left as a noted
-direction, not a ledger row); anything about (V).
+lifetime values; the strong-CP status (direction, not row); anything
+about (V) beyond the direction note; the two bounded mathematical
+residues (P24's named theorems).
 
-## 3. The kernel after Paper 25 - the program's state
+## 7. The kernel after Paper 25 - the program's state
 
 ```text
 KERNEL: { (C-reg-b) [detector-posed], (PR-RP+) [evidenced], (V),
@@ -131,4 +216,6 @@ group -> matter content -> EWSB -> masses -> predictions.
   classification (the ledger's continuum frame).
 - W. J. Marciano; P. Nath and P. Fileviez Perez (reviews): proton
   decay channels and B - L (the P-BL frame).
+- Particle Data Group: the mass ratios quoted at order of magnitude
+  in P-eps.
 ```

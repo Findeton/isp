@@ -1,5 +1,7 @@
 # Critique of "Non-Markovian Gravitational Decoherence from Indivisible Stochastic Processes"
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 ## Overall assessment
 
 This is a promising foundations/phenomenology manuscript, but it is not yet strong enough as a standalone physics paper. Its best version is a narrower paper: **a non-Markovian generalization of Diósi-Penrose gravitational decoherence with a proposed onset-shape discriminator**. Its weakest current form is as a claim that ISP itself derives a parameter-free Gaussian law at the DP energy scale.

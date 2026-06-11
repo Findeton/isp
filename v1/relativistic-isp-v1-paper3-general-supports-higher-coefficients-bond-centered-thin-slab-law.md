@@ -1,5 +1,7 @@
 # Exact Leading Support-Level Boundary Law for the Bond-Centered Thin-Slab Program
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Translated support prototypes, nearby-support exchange data, and the theorem-level completion of phase 2 in relativistic ISP*
 
 Author: Felix Robles Elvira

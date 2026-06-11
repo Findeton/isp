@@ -1,5 +1,7 @@
 # Indivisible stochastic processes among their neighbours: what the reformulation buys, what it costs, and where it can differ
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 **Author:** Felix Robles Elvira
 
 **Status:** Draft (markdown). Foundations-venue positioning paper.

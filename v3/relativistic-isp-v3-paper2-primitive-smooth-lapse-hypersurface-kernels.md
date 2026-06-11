@@ -1,5 +1,7 @@
 # Primitive Smooth-Lapse Hypersurface Kernels In Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V3 Paper 2 investigation draft

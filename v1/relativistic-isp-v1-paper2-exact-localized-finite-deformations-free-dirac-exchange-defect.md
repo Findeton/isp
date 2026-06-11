@@ -1,5 +1,7 @@
 # Exact Localized Finite Deformations and the Free Dirac Exchange-Defect Theorem
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Quasilocal filtration, deleted-bond leading coefficients, and the first exact finite-support exchange package in relativistic ISP*
 
 Author: Felix Robles Elvira

@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 28: Continuum Yang-Mills Confinement Descent
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Status: continuum-bridge paper after Paper 27.

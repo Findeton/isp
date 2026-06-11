@@ -1,5 +1,7 @@
 # Relativistic ISP V5 Paper 10: Quantum Algorithms As Record-Amplification Machines
 
+Preprint, not peer reviewed, version 2026-05-29.
+
 Author: Felix Robles Elvira
 
 Date: May 29, 2026

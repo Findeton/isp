@@ -1,5 +1,7 @@
 # Relativistic ISP: Theorem-Level Scope, Synthesis, and Limits
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *A ledger of what the finite-kernel relativistic program has earned, what remains conditional, and what stays outside the present claim*
 
 Author: Felix Robles Elvira

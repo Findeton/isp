@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 40: Conditional Fixed-IR Center-Sign Certificate For Yang-Mills Confinement
 
+Preprint, not peer reviewed, version 2026-05-30.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-30

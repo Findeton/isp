@@ -1,5 +1,7 @@
 # Minimal Enriched ISP Data For Relativistic QFT Reconstruction
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 V3 Paper 1 draft

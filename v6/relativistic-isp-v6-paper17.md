@@ -1,5 +1,7 @@
 # Paper 17 (v6) - SHARD: (M) Phase I - The Constrained Inverse Search
 
+Preprint, not peer reviewed, version 2026-06-10.
+
 Author: Felix Robles Elvira
 
 Subtitle:
@@ -69,6 +71,10 @@ in Z_4, Z_6, Z_9 - with Z_3 the smallest, by a visible mechanism:
 every minimal base's TOTAL charge (9, 12, 12, 15, 15, 18) is divisible
 by 3, so the full stack is its own closing triple.  Triality-flavored;
 reported as a Phase-I observation, NOT a derivation of color.
+[Paper 18 update: the Z_3 structure was DERIVED - closure = center
+neutrality of the reconstructed gauge group.  Paper 19 update: the
+DIVISIBILITY observation is REFUTED at larger charge bounds (first
+counterexample {1,6,9 | 3,3,10}); the center theorem is unaffected.]
 
 RESULT 3 (the 4d filter; complete enumeration |q| <= 9).  The cubic
 constraint is far harder than the 2d screen: no genuinely chiral 4d
@@ -107,37 +113,75 @@ code/v6_p17b_sm_filter_campaign.py        the 4d filter, SM receipts,
 ```
 
 All enumerations are EXHAUSTIVE at their stated scopes (charge bounds,
-stack sizes, code orders printed in place); no sampling.  Named
-imports: the 4d cubic anomaly condition (the triangle); the SM
-hypercharge assignments and the Z_6 global-structure fact (known;
-machine-rechecked here as record receipts).  Corpus inputs: the P14
-anomaly filter with its lattice-grounded linear predicate and
-exhaustion theorem; P8's single-relation binding law (the closure
-predicate); P9's orientation-class chirality; P11's statistics
-theorem.
+stack sizes, code orders printed in place); no sampling; both scripts
+rerun bit-identically.  Named imports: the 4d cubic anomaly condition
+(the triangle); the SM hypercharge assignments and the Z_6
+global-structure fact (known; machine-rechecked here as record
+receipts).  Corpus inputs: the P14 anomaly filter with its
+lattice-grounded linear predicate and exhaustion theorem; P8's
+single-relation binding law (the closure predicate); P9's
+orientation-class chirality; P11's statistics theorem.
 
-## 2. The cascade (p17a)
+## 2. The candidate space, formally
+
+A Phase-I candidate over the cyclic code Z_N is a pair of multisets
+(L, R) of nonzero characters, lifted to the symmetric integer range
+[-(N-1)/2, N/2].  The physical dictionary: characters = abelian record
+charges (P8's "ledger = character set"); the L/R split = orientation
+classes (P9); the integer lift = the embedding charge of the screen
+U(1) (P14's index = qQ receipts are statements about the lift).  The
+filters of Section 0 are predicates on (L, R); F1's linear predicate is
+the only one carrying a lattice-grounded receipt (P14), F1's quadratic
+predicate and the 4d cubic are named imports, F3 encodes P8's
+empirical binding law (w = 3 binds, w >= 4 anti-binds) as the demand
+that the ledger admit a bound three-composite, and F4 encodes
+replication as multiset structure.
+
+## 3. The cascade and the factorization theorem
+
+### 3.1 The cascade (exhaustive)
 
 ```text
    N    k   raw spectra   F1 anomaly   F2 chiral   F3 closure   F4 gen
     5   3         400          22          2           2          0
     6   3        1225          37          2           2          0
+    7   3        3136          60          4           4          0
     8   3        7056          88          4           4          0
+    9   3       14400         128          8           8          0
+   10   3       27225         179         14           8          0
+   11   3       48400         244         24          12          0
    12   3       81796         320         34          24          0
     6   6       44100         282         72          72          0
-    7   6      213444         ...        314 (F1-F3)               0
+    7   6      213444         (F1-F3: 314)                        0
 ```
 
-Zero three-generation survivors everywhere - and Section 0's
-factorization theorem says why: F4 commutes with F1/F2, so the base
-must itself be anomaly-free and chiral, impossible below size 3 (P14).
-The corollary - minimal three-generation chiral record matter is 9 + 9
-Weyl entries - is the first structural prediction of the inverse
-search: any SHARD matter sector with generation structure has at least
-this complexity.  (A negative result with content, in the corpus
-tradition of the Triangle Law refutation.)
+Zero three-generation survivors everywhere.
 
-## 3. The closure census (p17a)
+### 3.2 The factorization theorem
+
+**Theorem 3.1.**  Let S = g copies of a base spectrum B.  Then S
+passes F1 iff B passes F1, and S is genuinely chiral iff B is.
+Consequently, with P14's exhaustion theorem (no chiral base below
+size 3), the minimal three-generation chiral record matter content is
+9 + 9 Weyl entries.
+
+*Proof.*  Every F1 predicate is a sum over entries of a fixed function
+of the charge (1, q, or q^2 per side); replication multiplies each
+side's sum by g, preserving every equality and every inequality
+between the sides.  Chirality: g copies of B equal g copies of B' as
+multisets iff B = B'.  The bound follows since the base must itself be
+anomaly-free and chiral, impossible below size 3 (P14 Theorem 6.1).
+                                                                  QED
+
+The zero rows of 3.1's table are this theorem verified by complete
+enumeration - a negative result with content, in the corpus tradition
+of the Triangle Law refutation: generation structure is FREE with
+respect to anomalies (it never helps and never hurts), so the entire
+selection pressure acts on the base.  The SM's base (15 Weyl) sits
+above the 3-per-side floor with room to spare; what fills the gap
+between 3 and 15 is the nonabelian structure Phase II must address.
+
+## 4. The closure census
 
 ```text
   base (L | R)              closing codes N <= 12
@@ -153,57 +197,97 @@ tradition of the Triangle Law refutation.)
 
 Z_3 is the smallest code closing every minimal chiral base, and the
 mechanism is elementary once seen: the minimal bases' total charges
-are all multiples of 3.  Whether that divisibility persists at larger
-charge bounds is a checkable conjecture (named: the TRIALITY
-DIVISIBILITY observation); if it does, the triality code is selected
-by anomaly freedom + minimality alone.  Reported at stated scope.
+are all multiples of 3, so the full stack is its own closing triple.
+At the time of writing this was flagged as the TRIALITY DIVISIBILITY
+observation, a checkable conjecture.  Its subsequent history is the
+corpus discipline working as intended: Paper 18 DERIVED the Z_3
+structure properly (closure = center neutrality of the reconstructed
+SU(3); the abelian search sees exactly the center, as
+Doplicher-Roberts predicts), and Paper 19 REFUTED the divisibility
+conjecture at larger charge bounds (first counterexample
+{1, 6, 9 | 3, 3, 10}, total 16; 156 counterexamples below charge 25).
+The observation was a small-charge phenomenon; the theorem that
+explained its appearance survives it.
 
-## 4. The 4d filter and the Standard Model (p17b)
+## 5. The 4d filter and the Standard Model
+
+### 5.1 The cubic filter (complete enumeration, |q| <= 9)
 
 ```text
-size 3, |q| <= 9:  0 genuinely chiral solutions
-size 4:            0
-size 5:            2   (minimal: {-9,-5,-1,7,8})
-size 6:            4   (smallest by charge: {-5,-1,-1,-1,4,4};
-                        2 of 4 carry a multiplicity-3 charge)
-SM, one generation (6Y):  sum q = 0,  sum q^3 = 0   EXACTLY
-Z_6 receipt: 2t + 3d + Y6 = 0 mod 6 for all five field types
+size 3:  0 genuinely chiral solutions
+size 4:  0
+size 5:  2    (minimal: {-9, -5, -1, 7, 8})
+size 6:  4    (smallest by max charge: {-5,-1,-1,-1, 4, 4};
+               2 of 4 carry a multiplicity-3 charge)
 ```
 
-Three readings:
+The 4d stack is the hard one: the cubic kills everything below five
+Weyl fields - chiral matter in 4d is structurally expensive, and the
+SM's 15 per generation is not extravagant.  The multiplicity-3 charges
+in half the minimal size-6 solutions are the COLOR SHADOW: an abelian
+search cannot see a triplet, only a charge repeated three times -
+Phase II's lift target.
 
-1. **The 4d stack is the hard one.**  The cubic kills everything below
-   five Weyl fields - chiral matter in 4d is structurally expensive,
-   and the SM's 15 per generation is not extravagant.
-2. **The SM passes the record filters exactly.**  The hypercharge
-   miracle (both sums vanishing on the actual assignments) is now a
-   corpus receipt; with three generations the factorization theorem
-   applies and the sums still vanish.
-3. **The target object is the quotient lattice.**  The Z_6 receipt
-   pins what "(M) finds the SM" would even mean: the relation code to
-   search for is the Z_6 quotient's character lattice, not the naive
-   product group - a precise correction to the search specification,
-   delivered by a six-line machine check.
+### 5.2 The hypercharge receipt
 
-## 5. What this paper proves and does not prove
+One generation, all-left Weyl convention, 6Y units:
 
-Proves (at stated, exhaustively enumerated scopes): the factorization
-theorem and the 9 + 9 minimality corollary; the zero-survivor results
-at stack sizes 3 and 6 for all codes tested; the closure census and
-its divisibility mechanism; the 4d minimal-size results (nothing below
-5; the explicit minimal solutions); the SM hypercharge and Z_6
-receipts.
+```text
+   field   multiplicity   6Y      contribution to sum q / sum q^3
+   Q           6          +1          +6  /    +6
+   u^c         3          -4         -12  /  -192
+   d^c         3          +2          +6  /   +24
+   L           2          -3          -6  /   -54
+   e^c         1          +6          +6  /  +216
+   total      15                       0  /     0      EXACT
+```
+
+Both sums vanish identically on the actual assignments - the
+hypercharge miracle as a record-filter receipt, generation by
+generation (nu^c at q = 0 is filter-neutral; with three generations
+Theorem 3.1 applies and the sums still vanish).
+
+### 5.3 The Z_6 quotient receipt
+
+For each field, with t = triality (color boxes mod 3), d = duality
+(weak doublet parity), the Z_6 generator (e^{2pi i/3} 1_c, -1_w,
+e^{i pi Y}) acts trivially iff 2t + 3d + Y6 = 0 mod 6:
+
+```text
+   Q   : 2(1) + 3(1) + 1  =  +6  = 0 mod 6
+   u^c : 2(-1) + 0 - 4    =  -6  = 0
+   d^c : 2(-1) + 0 + 2    =   0  = 0
+   L   : 0 + 3(1) - 3     =   0  = 0
+   e^c : 0 + 0 + 6        =  +6  = 0          ALL PASS
+```
+
+Every SM Weyl field is invariant under the Z_6 subgroup: the faithful
+gauge code is SU(3) x SU(2) x U(1) / Z_6, and in record terms THE
+RELATION-CODE CHARACTER LATTICE IS THE QUOTIENT LATTICE.  This pins
+what "(M) finds the SM" even means - the search target is the
+quotient's character lattice, not the naive product group - a precise
+correction to the search specification delivered by a six-line machine
+check, and the structural constraint that Paper 18 Part II's
+representation search then consumed.
+
+## 6. What this paper proves and does not prove
+
+Proves (at stated, exhaustively enumerated scopes): Theorem 3.1 and
+the 9 + 9 minimality corollary; the zero-survivor results at stack
+sizes 3 and 6 for all codes tested; the closure census (with its
+subsequent derivation/refutation history recorded in Section 4); the
+4d minimal-size results (nothing below 5; the explicit minimal
+solutions); the SM hypercharge and Z_6 receipts.
 
 Does not prove: anything about WHICH spectrum nature instantiates
 beyond the structural bounds (that is the search's continuing job);
-the triality-divisibility observation beyond charge bound 8 (named
-conjecture, checkable); the 4d cubic predicate from record data (named
-import - the 4d analogue of P14's lattice grounding is open); the
-nonabelian lift (Phase II, gated on D10); all dynamical filters
-(binding spectra, masses - they need (M)'s dynamic layer and the
-calibration contact).
+the 4d cubic predicate from record data (named import - the 4d
+analogue of P14's lattice grounding is open); the nonabelian lift
+(Phase II, executed in Paper 18 Part II after D10); all dynamical
+filters (binding spectra, masses - they need (M)'s dynamic layer and
+the calibration contact).
 
-## 6. The kernel after Paper 17
+## 7. The kernel after Paper 17
 
 ```text
 (M)  PHASE I EXECUTED: the search is a bounded enumeration with
@@ -211,7 +295,8 @@ calibration contact).
        - minimal chiral base = 3 (P14, used);
        - minimal three-generation chiral content = 9 + 9 (THEOREM);
        - closure census: Z_3 smallest universal closer at minimal
-         scope (observation + named divisibility conjecture);
+         scope (observation; derived in P18, divisibility refuted in
+         P19);
        - 4d minimal chiral size = 5 (exhaustion);
        - the SM target = the Z_6 quotient character lattice (pinned).
      PHASE II (named): nonabelian triality lift - GATED ON D10;
@@ -235,19 +320,20 @@ KERNEL: { (C-reg-b), (M)-Phase-II, (V), (PR-RP) } +
      generation/mass layer.  See Paper 18 5.5.]
 ```
 
-## 7. Status
+## 8. Status
 
 ```text
 Cascade:   exhaustive, zero 3-generation survivors below 9 + 9
-           (factorization theorem); pruning to 44,100x demonstrated.
+           (Theorem 3.1); pruning to 44,100x demonstrated.
 Census:    Z_3 universal at minimal scope; totals 9..18 all
-           divisible by 3 (mechanism visible; conjecture named).
+           divisible by 3 (mechanism visible; conjecture later
+           refuted at scale, P19; structure derived, P18).
 4d:        minimal chiral size 5 ({-9,-5,-1,7,8}); color-shadow
            multiplicity-3 in 2/4 of size-6 minimals.
 SM:        hypercharge receipt exact (0, 0); Z_6 quotient receipt
            exact (all five field types).
-Next:      Phase II nonabelian lift (D10-gated); triality-divisibility
-           check at larger bounds; 4d lattice grounding of the cubic.
+Next:      Phase II nonabelian lift (D10-gated; executed in P18);
+           4d lattice grounding of the cubic (open).
 ```
 
 ## References and literature map
@@ -260,11 +346,11 @@ Next:      Phase II nonabelian lift (D10-gated); triality-divisibility
 - C. Q. Geng and R. E. Marshak, Phys. Rev. D 39, 693 (1989); J. A.
   Minahan, P. Ramond, R. C. Warner, Phys. Rev. D 41, 715 (1990):
   anomaly constraints determining hypercharge - the literature face of
-  Section 4's receipt.
+  Section 5's receipt.
 - B. C. Allanach, B. Gripaios, J. Tooby-Smith, Phys. Rev. Lett. 125,
   161601 (2020): systematic anomaly-free chiral U(1) enumerations (the
   modern context for the size-5/6 census).
 - J. C. Baez and J. Huerta, Bull. AMS 47 (2010); D. Tong, "Line
   operators in the Standard Model," JHEP (2017): the SM's Z_6 global
-  structure (Section 4's quotient receipt).
+  structure (Section 5.3's quotient receipt).
 ```

@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 9: Finite Non-Abelian Gauge Sectors
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: theorem-level finite benchmark draft. This paper starts the

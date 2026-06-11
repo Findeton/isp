@@ -1,5 +1,7 @@
 # Follow-up to paper 1 (unified): the ISP-derived kernel, and the radiation/viability question
 
+Preprint, not peer reviewed, version 2026-06-04.
+
 **Status:** working note (not a submission). Consolidates the follow-up calculations for paper 1.
 Rigor tags: **[DERIVED]**, **[ARGUED]**, **[LITERATURE]**, **[OPEN]**.
 

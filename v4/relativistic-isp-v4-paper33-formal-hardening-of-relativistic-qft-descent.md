@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 33: Formal Hardening Of Relativistic QFT Descent
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: formal hardening paper after Papers 26, 30, 31, and 32.  Paper 26

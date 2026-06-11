@@ -1,5 +1,7 @@
 # Beyond the Leading Singleton Sector in Relativistic Indivisible Stochastic Processes
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Bridge draft on general supports, higher coefficients, Fock-space lift, and a minimal $U(1)$ gauge benchmark for the bond-centered thin-slab law*
 
 Author: Felix Robles Elvira

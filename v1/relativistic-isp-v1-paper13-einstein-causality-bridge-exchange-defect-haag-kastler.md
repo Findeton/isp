@@ -1,5 +1,7 @@
 # Einstein Causality from Exchange Defects: a Haag-Kastler Bridge for Relativistic ISP
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 *Induced local operational nets, spacelike exchange triviality, and restricted gauge-benchmark microcausality*
 
 Author: Felix Robles Elvira

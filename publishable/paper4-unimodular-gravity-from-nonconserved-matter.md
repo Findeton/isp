@@ -1,5 +1,7 @@
 # Sourcing classical gravity from non-conserved matter: unimodular gravity, a dynamical cosmological term, and why its magnitude is bounded out
 
+Preprint, not peer reviewed, version 2026-06-02.
+
 **Author:** Felix Robles Elvira
 
 **Status:** Draft (markdown). PRD / CQG-style paper. Markovian-agnostic: the result holds for any

@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 23: Adaptive Branch-A Source Campaign For Continuum Yang-Mills Confinement
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: adaptive Branch A source campaign settled through Section 57: the

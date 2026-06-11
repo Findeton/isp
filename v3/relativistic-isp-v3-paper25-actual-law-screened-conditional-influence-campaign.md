@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 25: Actual-Law Screened Conditional Influence Campaign For Adaptive Branch A
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: completed Branch-A actual-law source and truth-status audit.  Paper

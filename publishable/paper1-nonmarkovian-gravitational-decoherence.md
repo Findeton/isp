@@ -1,5 +1,7 @@
 # Non-Markovian Gravitational Decoherence: A Gaussian-Onset Alternative to the Diósi–Penrose Exponential
 
+Preprint, not peer reviewed, version 2026-06-04.
+
 *An indivisible-stochastic-process motivation and a shape-based interferometric test*
 
 **Felix Robles Elvira**

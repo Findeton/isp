@@ -1,5 +1,7 @@
 # Relativistic ISP V4 Paper 24: Barandes-Aligned Finite Effective Calibration Bridge
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: Einstein/Feynman closure attempt after Paper 23.  The goal is to

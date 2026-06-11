@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 32: Heat-Bad Source Neutrality, Curvature, Or Floor
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Date: 2026-05-26

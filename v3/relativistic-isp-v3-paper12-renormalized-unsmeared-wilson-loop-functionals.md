@@ -1,5 +1,7 @@
 # Relativistic ISP V3 Paper 12: From Smeared Perturbative Wilson Loops To Renormalized Unsmeared Wilson-Loop Functionals
 
+Preprint, not peer reviewed, version 2026-05-28.
+
 Author: Felix Robles Elvira
 
 Status: first investigation draft. This paper begins the first follow-up
