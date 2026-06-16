@@ -2,11 +2,12 @@
 
 **Author:** Felix Robles Elvira (ORCID: 0009-0009-2017-4394; independent researcher)
 
-**Status:** preprint, not peer reviewed, version 2026-06-11.
+**Status:** preprint, not peer reviewed, version 2026-06-14.
 
 ## Abstract
 
-We present the foundational layer of a research program that derives
+We present the foundational layer of a research program that
+reconstructs
 quantum-mechanical, relativistic, and thermodynamic structure from a
 single ontology: a ledger of *sealed records*, governed by three
 axioms — **R** (laws are laws of whole sealed histories), **S** (no
@@ -14,14 +15,20 @@ distinction without a record), and **C** (couplings are fixed by
 self-consistency under refinement).  The program builds on the
 stochastic–quantum correspondence of Barandes' indivisible processes,
 replacing configuration trajectories by committed records as the
-primitive.  Main results at stated scope, each with machine-verified
-receipts: (i) the **Born layer** — record weights compose through
-square roots, and the tame-class reconstruction recovers the Weyl
-algebra and the Schrödinger representation (via Stone–von Neumann)
-from record towers, with ladder operators, selection rules, and
+primitive.  Main results at stated scope, each with a
+machine-verified receipt in this submission or a tagged
+companion/corpus pointer ([C]/[P]): (i) the **Born layer** — record weights compose through
+square roots, and the tame-class reconstruction is *argued to* recover
+the Weyl algebra and to land in the Schrödinger representation via the
+Stone–von Neumann import, from record towers (at tame scope: the
+tame-class definition with its growth constants and the boundary
+classification are corpus-bound [P]), with ladder
+operators, selection rules, and
 exact continuum targets approached at machine precision; (ii)
-**Lorentz signature** — the commitment structure of records forces a
-Lorentzian $(1,d)$ split with derived orientation classes (the
+**Lorentz signature** — the commitment structure of records *is argued
+to select* a Lorentzian $(1,d)$ split with derived orientation classes (a
+structural argument from the commit-order asymmetry, its proof
+obligation corpus-bound [P]; the
 spatial dimension $d = 3$ is *selected*, by a minimality principle
 graded as input in the text, not derived), and the operational
 identification lapse $=$ local clock rate is verified to
@@ -74,10 +81,12 @@ sealed entries in a ledger.  Three axioms govern them:
 R and S are principle-type axioms in Einstein's sense — they forbid
 rather than construct; C is of a different kind, a fixed-point
 *selection* condition, and we do not claim the principle-theory
-mantle for it.  The program's results are forcing theorems:
+mantle for it.  The program's results are *forcing arguments* — some proved as
+theorems, others structural arguments resting on named inputs or
+corpus-bound proof obligations, as the Section 7 audit records:
 structures usually postulated (Hilbert space, signature, reflection
-positivity, fermions, gauge groups) appear as the *unique* survivors
-of the exclusions.  This first paper presents the kinematic,
+positivity, fermions, gauge groups) appear as the survivors of the
+exclusions, *under the inputs and scope premises each layer names*.  This first paper presents the kinematic,
 relativistic, and thermodynamic layer; a companion (Part II) treats
 statistics and gauge structure; further papers treat the
 matter-content selection and its falsifiable consequences.
@@ -95,19 +104,17 @@ paper), and **[P]** marks results whose full
 treatment lives in the program corpus — a longer, internally dated
 paper series available as supplementary material but *not* part of
 this submission.  Every claim below whose proof is corpus-bound is
-tagged [P], never [C]; a referee of this batch can check every [C]
-pointer and should treat every [P] pointer as a stated dependency,
-not a verified one.  The referents: a **ledger** is a
+tagged [P], never [C]; the [C] pointers are checkable companions and
+the [P] pointers are stated dependencies, not verified ones.  The
+referents: a **ledger** is a
 stationary stochastic process of committed symbols ("records") with
 its word-probability functional; **reflection structure** means
 bond- *and site-*reflection positivity of that functional (for
 the reconstruction tradition see [3, 7]), *jointly* equivalent
 ([C2], Thm. 2.1) to a representation by positive-semidefinite
 letter operators — site-RP is exactly what makes the letters
-positive operators, and [C2]'s own remark stresses the two
-hypotheses are not interchangeable; an earlier draft of this
-sentence cited bond-RP alone, reintroducing precisely the
-conflation [C2] had corrected (caught in review) — the operator
+positive operators, and the two hypotheses are not interchangeable
+(bond-RP alone does not give the operator form) — the operator
 form in which all of this paper's transfer-matrix statements
 live; **seams** are the invariant
 tensors coupling letter fibers; record **towers** are inductive
@@ -127,7 +134,9 @@ companions.)  Every load-bearing assumption is named and typed:
 *axiom*, *theorem*, *identification* (a bridge chosen, not proved),
 or *import* (classical mathematics).  The audit appears in Section
 7 — including the honest count: three axioms, a handful of named
-identifications, four scope premises.
+identifications, four scope premises, and three named structural
+inputs (the power-sum weight form; screen-transport linearity and
+transitivity; the spatial $d = 3$ minimality selection).
 
 ## 2. The Born layer at tame scope
 
@@ -145,6 +154,55 @@ an ontology with no observers in it.  Where they meet — the
 uniqueness of the quadratic weight calculus — we rely on the
 correspondence theorems, not on novelty claims.
 
+**What the "quadratic" imports, exactly.**  Although we do not
+*derive* the Born exponent, we can say precisely which single
+structural assumption it is.  Let a record screen carry a finite
+complex weight vector $a = (a_1, \dots, a_n)$ and let the event weight
+be componentwise, $W_p(a) = \sum_i |a_i|^p$; require it invariant
+under the admissible screen transports.  This separates into two layers.  *Layer 1 (tautological).*  Once the
+screen norm is *declared* to be $\ell_q$, the readable exponent is
+pinned to $p = q$ with no further content: an equal-split transport
+$(1,0,\dots,0) \mapsto n^{-1/q}(1,\dots,1)$ sends the unit input
+($W_p = 1$) to $W_p = n^{1-p/q}$, and a single screen size $n \ge 2$
+already forces $n^{1-p/q} = 1$, i.e. $p = q$.  This holds for *every*
+$q$ and says nothing about *which* $q$ — the readable exponent is
+*identically* the norm one declares.  *Layer 2 (the substantive
+step).*  All the content is in *which* transports are admissible: the
+equal-split map preserves the $\ell_q$ norm of its one input–output
+pair, but for $q \neq 2$ it does **not** extend to a linear $\ell_q$
+isometry of the screen at all, so its very admissibility as a transport
+is already a $q = 2$ statement.  And there is a classical reason the
+admissible (linear, transitive) transports are the $q = 2$ (unitary)
+family:
+by the **Banach–Lamperti theorem** [17], for $q \neq 2$ the surjective
+linear isometries of complex $\ell^n_q$ are the generalized
+permutations (coordinate permutations dressed with phases), which do
+**not** act transitively on the screen sphere — none carries
+$(1,0,\dots,0)$ to the uniform superposition $n^{-1/q}(1,\dots,1)$ —
+whereas $q = 2$ is the unique exponent whose isometry group $U(n)$ acts
+**transitively**.  So the content of "the weight calculus is quadratic"
+reduces to three structural inputs: **(0)** the screen weight is a
+componentwise power-sum $W_p(a) = \sum_i |a_i|^p$ (additive over
+components, phase-blind per component, a single global exponent — itself
+an assumed form, not derived from R/S/C), and the admissible
+record-screen transports **(a)** are **linear** maps preserving the
+screen norm — so the Banach–Lamperti classification applies — and
+**(b)** act **transitively** on the screen sphere: any normalized
+configuration is reachable from any other (any-to-any reachability,
+strictly stronger than mere reversibility/invertibility of a
+transport).  Under (a) and (b), Banach–Lamperti forces $q = 2$ —
+hence Born's square-root composition — by a named classical theorem.
+(In finite dimension every injective linear isometry is automatically
+onto, so the surjectivity hypothesis of Banach–Lamperti is free; the
+equal-split argument is taken at screen size $n \ge 2$, the $n = 1$
+sphere being degenerate.)  Linearity is
+load-bearing, not cosmetic: drop it and *every* $\ell_q$ sphere becomes
+a homogeneous space under (nonlinear) transitive transports — an
+explicit $q = 3$ transport carries $(1,0,0)$ to the uniform vector while
+staying on the sphere — so transitivity alone would not single out
+$q = 2$.  This is the precise, minimal form of the import that the
+correspondence theorems otherwise carry wholesale.
+
 **Statement.**  For record ledgers in the tame class — sketched
 here since it is load-bearing: inductive towers of finite record
 processes whose generator matrix elements grow at most
@@ -152,10 +210,7 @@ polynomially in the tower level, whose limiting quadratic forms
 are closable, and whose boundary behavior is limit-point in the
 Weyl sense (no boundary data needed); the full definition with the
 growth constants is corpus-bound [P], as is the boundary
-classification with its receipts [P] (an earlier draft said the
-classification was "receipted in this batch" — no in-batch
-companion carries it; mislabeled under our own [C]-vs-[P]
-discipline, corrected) — the
+classification with its receipts [P] — the
 weight calculus reconstructs: (i) Born
 composition — amplitudes attach to seams as square roots of record
 weights, with relative seam data supplying interference (the
@@ -176,15 +231,25 @@ alternative [16] on record towers, with the threshold case
 appearing at an explicit $1/\log n$ merging rate.
 
 **Scope.**  The reconstruction half of the program's "L3" problem is
-closed at tame scope; beyond-tame self-adjointness is classified,
-not derived.  (The frontier taxonomy of Section 7 tracks this.)
+closed *conditionally on the [P] tame-class definition* (whose growth
+constants are corpus-bound); beyond-tame self-adjointness is
+classified, not derived.  (The frontier taxonomy of Section 7 tracks this.)
 
 ## 3. Lorentz signature and the operational metric
 
 **Statement, with its honest scope.**  The commitment structure of
 records — the seal order is unrefinable while relational directions
-are not — forces a *Lorentzian split*: exactly one timelike
-direction, with orientation classes derived rather than chosen.
+are not — *is argued to select* a *Lorentzian split*: exactly one timelike
+direction, with orientation classes that follow from the same
+commit-order argument (on the same [P] footing, not independently
+proved).  This
+is a structural argument from the commit-order asymmetry (the seal
+order contributes the one unrefinable direction, the relational
+directions the rest), not a theorem proved in this batch; the proof
+obligation — that an unrefinable seal order forces exactly one timelike
+direction in the reconstructed operational metric — is named here and
+is corpus-bound [P], on the same footing as the open Lorentzian-port
+obligation of §4.
 What it does **not** force, from the axioms alone, is the number of
 spatial dimensions.  The honest status of $d = 3$, stated once and
 relied on everywhere: Part II proves that exchange holonomy
@@ -199,8 +264,9 @@ emergent-or-measured rather than axiomatic.  The emergent metric is
 operational: the lapse function *is* the local clock rate of record
 formation.
 
-**Receipts.**  The lapse identification is verified in curved record
-geometries: gravitational time dilation reproduced with ratio error
+**Receipts.**  The lapse-equals-clock-rate identification is
+internally consistent in curved record
+geometries to ratio error
 $3.7\times 10^{-8}$; $1{+}1$-dimensional
 Friedmann–Robertson–Walker redshift to $2.1\times 10^{-4}$; a first
 genuinely $3{+}1$ curved instance ($32^3$ spatial lattice) whose
@@ -244,7 +310,8 @@ statistics — "the arrow is the evidence."  This identity is
 program: entropy production as the relative entropy of forward
 versus time-reversed path measures goes back to Schnakenberg and is
 developed by Gaspard, Kawai–Parrondo–Van den Broeck, and
-Roldán–Parrondo [15]; we import it (the audit row now says so) and
+Roldán–Parrondo [15]; we import it (the audit row types it as a
+classical import) and
 add only the record-pair form and the corollary that matters here —
 a **no-silent-arrow theorem**: eventless dynamics forces detailed
 balance, so a thermodynamic arrow cannot hide in a sector with no
@@ -257,12 +324,11 @@ nonnegative, certified analytically to all orders), of Hankel rank
 exactly three, whose diagonal oscillates irrationally on its decay
 circle.  By Perron–Frobenius obstruction theory it admits *no*
 finite positive realization, and it *fails* reflection positivity:
-the reflected Gram on the 15-word family of words of length
-$\le 3$ has minimum eigenvalue $-1.06\times 10^{-2}$ ([C2],
-Prop. 3.2 — the certified clock constructed there; an earlier
-program witness with a different Gram family quoted a different
-magnitude, and this paper now matches the submitted companion's
-number and family exactly).  Sealed
+the reflected Gram on the 15-word family — the $1 + 2 + 4 + 8 = 15$
+words of length $\le 3$ over a binary alphabet — has minimum
+eigenvalue $-1.06\times 10^{-2}$ (verified in companion [C2], Prop. 3.2;
+the eigenvalue and the Perron–Frobenius non-realizability are not
+reproduced in this paper).  Sealed
 ledgers are thus a strict subclass of valid reversible processes,
 and the separating witness is precisely a clock — an object that
 keeps time without recording it.  The structural question this
@@ -294,7 +360,7 @@ Axiom C is not decorative: it has a computable fixed point.  Two
 registers, kept honestly separate: the *mathematics* of the fixed
 point — the equation, the constants $\theta, \eta, \kappa_b,
 \varepsilon$, their closed forms and exact algebraic relations —
-is now fully self-contained in the submitted companion [C0].  The
+is fully self-contained in the submitted companion [C0].  The
 *identification* of that fixed point with axiom C's refinement
 construction (the derivation sketched next) remains corpus-bound
 [P]: [C0] derives the same equation from its own
@@ -329,17 +395,15 @@ second order, per [C0] — with closed form $\kappa_b =
 definition, computation, and exact algebraic relations in the
 submitted companion [C0]) yields the program's
 small parameter
-$\varepsilon = 3\kappa_b - 1 = 0.0317686364466$ (exact to the
-displayed digits; the registration documents adopt a $\ge 10$-digit
-precision rule after a 3-digit rounding was found to matter at
-next-generation experimental precision).  Two things are claimed and
+$\varepsilon = 3\kappa_b - 1 = 0.0317686364466$ (carried to
+$\ge 10$ significant digits, the precision relevant at
+next-generation experimental sensitivity).  Two things are claimed and
 no more: the constant's pedigree contains no Standard-Model input —
-now checkable *within this batch* via [C0] —
+checkable *within this batch* via [C0] —
 and its provenance predates by many program papers
 its registered confrontations with data (the accompanying note's
-undressed spectrum-point registration — the note's earlier
-exponent and band forms were found incoherent and are withdrawn
-within it — and the mechanism paper [IX]'s dressed menu; both with
+undressed spectrum-point registration and the mechanism paper [IX]'s
+dressed menu; both with
 stated falsifiers and named resolving experiments).  Whether that
 confrontation survives is an experimental question; this section's
 content is the derivation chain and its timestamp.
@@ -356,18 +420,14 @@ Born layer at tame scope        theorem (R,S,C) + Barandes
                                 calculus is inherited, not derived
                                 here) + Stone-von Neumann import
                                 + tame premise [P]
-Lorentzian split, orientation   theorem (C) for the (1,d) split;
+                                + power-sum weight ansatz INPUT
+                                (componentwise additivity, per-
+                                component phase-blindness, single
+                                exponent; not derived from R,S,C)
+Lorentzian split, orientation   structural argument [P] for the (1,d) split;
                                 spatial d = 3 INPUT (minimality
                                 principle, Sec. 3; d >= 4 not
                                 excluded anywhere in this batch)
-equivalence principle           stated ONLY here in the audit (no
-                                body section): a structural
-                                consequence of axiom R (quotient
-                                functoriality of history-weights
-                                under frame refinement); full
-                                statement and proof CORPUS-BOUND
-                                [P] - typed theorem-at-corpus, not
-                                verifiable in this batch
 RP for eventless sectors        theorem + Markov-presentation
                                 premise (SHARP: the clock [C2])
 sigma = KL identity             classical import [15] (stochastic
@@ -393,7 +453,10 @@ The four scope premises promised in Section 1, counted here so
 the numbers reconcile: the tame-class premise [P]; the
 Markov-presentation premise (sharp, witness in [C2]); the
 finite/atomic sector premise; and the smooth-stratum regularity
-premise [P].
+premise [P].  The three named structural inputs, likewise counted: the
+power-sum weight form (§2 input (0)); screen-transport linearity and
+transitivity (§2 inputs (a),(b)); and the spatial $d = 3$ minimality
+selection (§3).
 Named identifications and imports are enumerated exhaustively in
 the program's audit paper; nothing is silently load-bearing.  The
 frontier (tame class, continuous sector families) is likewise
@@ -434,19 +497,15 @@ not assumed — and the multidimensional rigidity theorem is open;
 (iii) interacting dynamics (coupling flows, mass generation) is the
 program's open dynamics layer; (iv) the identifications — few and
 named — are bridges, not theorems.  On falsifiability we keep two
-notions separate that an earlier draft conflated: a *failing
-receipt* shows that our construction does not realize an
-identification — internal refutation, which has happened and been
-published in the program's correction record — while *empirical*
+notions separate: a *failing
+receipt* shows that the construction does not realize an
+identification — an internal refutation — while *empirical*
 falsification requires data.  The batch's empirical exposure is
 carried by two documents: the registered **undressed spectrum
-point** of the accompanying note [VII] (the note's earlier
-exponent and band forms were found incoherent as tests and are
-withdrawn within it, correction record kept visible), and the
+point** of the accompanying note [VII], and the
 mechanism paper [IX], which registers the dressed **four-member
-menu** (two members live against today's data, two already
-excluded and listed as falsified; [IX]'s earlier drafts' mixing
-and CP claims are withdrawn there) with its own
+menu** (two members live against today's data, two
+excluded and listed as falsified) with its own
 pre-committed kill criteria.  Both are named here so this paper's audit and the
 batch's actual empirical surface agree.
 
@@ -520,6 +579,16 @@ stationary trajectories, *Phys. Rev. Lett.* **105** (2010) 150607
 [16] M. Reed, B. Simon, *Methods of Modern Mathematical Physics
 II*, Academic Press (1975) — the Weyl limit-point/limit-circle
 alternative.
+
+[17] J. Lamperti, On the isometries of certain function-spaces,
+*Pacific J. Math.* **8** (1958) 459–466 (after S. Banach, *Théorie
+des opérations linéaires*, 1932) — for $1 < q < \infty$, $q \neq 2$ the
+surjective linear isometries of complex $\ell^n_q$ are the generalized
+(phase-)permutations; the finite-dimensional endpoint cases
+$\ell^n_1, \ell^n_\infty$ have the same (generalized-permutation)
+isometry group by the separate classical classification (Banach 1932),
+not by Lamperti's $L^p$ theorem; only $q = 2$ yields the transitive
+group $U(n)$.
 
 **Companion papers** [C1]–[C4]: the mathematical companions
 submitted with this batch — [C1] the necklace-invariant

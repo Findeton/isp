@@ -104,8 +104,8 @@ smoothness selects $\beta = 2\pi/\kappa$ uniquely — the
 Gibbons–Hawking regularity argument [7], which is the named
 classical import here.  The *record-language reading* of the
 regularity demand — "no boundary record at the tip" — is graded
-carefully, because an earlier draft presented it as axiom S applied
-directly, and that is not yet a derivation.  The argument it
+carefully: read as axiom S applied directly it would not yet be a
+derivation.  The argument it
 requires, stated so it can be attacked: (premise) the equilibrium
 sector is *eventless* — thermal equilibrium is defined by the
 absence of committed events in the Euclidean window; (step) a

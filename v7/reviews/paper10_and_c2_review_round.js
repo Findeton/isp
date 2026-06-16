@@ -1,0 +1,55 @@
+export const meta = {
+  name: 'review-v7-paper10-spin2-and-c2-note',
+  description: 'Hostile review of v7 Paper X (graviton spin-2 three-layer pricing: spin-2 STRUCTURE carried + Weinberg COUPLING owned, but the two helicity POLARIZATIONS record-blind = the metric/mode walls) plus the C2 deferral note (discharging Paper VII covariance premise is BHS-blocked). Paper X verify: (Q-tensor) the record stress carries the spin-2 tensor structure (binary source: dipole vanishes, traceless quadrupole, Q_xx=1+3cos2t period-pi, pure l>=2) [OWNED, reproduces paper55-A]; (Q-coupling) the record stress is a conserved symmetric rank-2 current (symmetric + d_mu T^mu_nu=0 massless on-shell) = the Weinberg soft-graviton source, with the "must couple to helicity-2" the EXTERNAL Weinberg lever and the emergent stress evading Weinberg-Witten as an internal current [LEVER]; (Q-polarization) the two physical helicities are RECORD-BLIND -- the TT projection 5-dof->2 needs a propagation DIRECTION (metric, l_step-walled) AND a canonical polarization BASIS (mode-canonicalization, the fifth wall), so the second helicity is the established walls re-attributed from the corpus geometric guesses (3+1D/lattice/holography). HUNT overclaims: must NOT claim to construct the graviton, derive the equivalence principle (Weinberg is external), or fix the polarizations; must NOT claim a NEW gravitational no-go (the polarization blindness is the EXISTING metric+mode walls); must honestly flag the CONFIRMATORY nature (most is owned paper52/55/57; the new content is the Weinberg lever + the wall re-attribution) and check the re-attribution is principled not shallow relabeling. C2 note verify: the three-leg decomposition ((P-Lor) reduces -- causal order boost-invariant; (P-point) BLOCKED by BHS no-LI-finite-valency-graph -- collar frame-dependent; (P-scalar) emergence core); faithful to BHS gr-qc/0605006; honestly framed as "discreteness alone cannot supply point-locality" NOT "premise undischargeable"; Paper VII stays conditional. RUN receipts p10_spin2_pricing.py and c2_bhs_collar_nogo.py. Pre-geometric (metric direction / polarization basis / collar appear only as walled inputs), single-threaded, high precision, faithfulness to Weinberg / Weinberg-Witten / BHS and companion v6 papers 49/52/55/57 + v7 III/IV/VII/VIII/IX.',
+  phases: [{ title: 'Review', detail: '3 on Paper X + 1 on the C2 note' }],
+}
+
+const PX = '/Users/felixrobles/workspace/isp/v7/relativistic-isp-v7-paper10-spin2-carried-helicity2-modeblind.md'
+const C2N = '/Users/felixrobles/workspace/isp/v7/note-C2-covariance-premise-deferral.md'
+const P57 = '/Users/felixrobles/workspace/isp/v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md'
+const P7v7 = '/Users/felixrobles/workspace/isp/v7/relativistic-isp-v7-paper7-covariant-decoherence.md'
+const P9v7 = '/Users/felixrobles/workspace/isp/v7/relativistic-isp-v7-paper9-chiral-gap-and-chirality-nogos.md'
+const PLAN = '/Users/felixrobles/workspace/isp/v7/LONG_MARCH_PLAN.md'
+const RX = '/Users/felixrobles/workspace/isp/v7/code/p10_spin2_pricing.py'
+const RC2 = '/Users/felixrobles/workspace/isp/v7/code/c2_bhs_collar_nogo.py'
+
+const RULES = `
+STANDING RULES:
+- PRE-GEOMETRIC DISCIPLINE: the source multipoles, the conservation law, and the causal order are record-internal stress/sprinkling statistics. A metric propagation DIRECTION, a polarization BASIS, or a finite COLLAR must appear ONLY as the walled inputs the records lack, NEVER as derivation inputs. FLAG any emergent metric / direction / basis smuggled in as a premise.
+- HIGH PRECISION: every numeric claim sympy-exact or mpmath dps>=80. RUN python3 ${RX} and ${RC2} (if numpy/sympy/mpmath missing use /Users/felixrobles/workspace/isp/code/.venv/bin/python). Re-derive: the binary mass dipole=0, traceless quadrupole, Q_xx=1+3cos2t (period pi), pure l>=2; the record stress symmetric + conserved on-shell; the TT projection 5-dof source -> 2 transverse-traceless components; and for C2: s^2 boost-invariant, the causal order boost-invariant, the k-nearest collar frame-DEPENDENT (overlap < k).
+- SINGLE-THREADED: reads written-once. FLAG 'previously / we now / earlier version / corrected / round N / version N' (bare date stamp OK).
+- HONESTY / OVERCLAIM HUNT (BOTH directions):
+  (a) MANUFACTURED POSITIVE (Paper X): must NOT claim to CONSTRUCT the helicity-2 graviton, DERIVE the equivalence principle (Weinberg's soft-graviton uniqueness is EXTERNAL, SHARD only feeds it a conserved-stress source), or FIX the two polarizations (they are walled). Must NOT claim a NEW gravitational no-go -- the polarization blindness is the EXISTING metric (l_step) + mode-canonicalization (fifth) walls, NOT an independent obstruction. CHECK each disavowal (sec 6).
+  (b) UNDER-STATEMENT / CONFIRMATORY HONESTY: the paper must HONESTLY flag that it is largely a PRICING / confirmatory of owned results (paper52 4/9, paper55 tensor structure, paper49 Ward), with the genuinely NEW content being narrow: the Weinberg lever as the coupling layer + the re-attribution of the missing second helicity to the metric+mode walls. CHECK this honesty is present and not oversold as a major new result.
+  (c) THE RE-ATTRIBUTION: is "the second helicity is record-blind = the metric direction + the mode basis walls" PRINCIPLED, or SHALLOW RELABELING of the corpus's '3+1D/lattice/holography' accounts? Is the 5-dof -> 2-polarization TT counting correct, and does the projection genuinely need (a) a metric direction AND (b) a mode-basis choice -- mapping faithfully onto the l_step wall (Papers III/IV) and the mode-canonicalization wall (Papers VIII/IX)? Or is the mapping forced/superficial?
+  (d) THE WEINBERG LEVER: is the conserved-symmetric-stress => helicity-2-coupling faithful to Weinberg (soft-graviton uniqueness / equivalence principle)? Is the Weinberg-Witten evasion (emergent internal current, not the fundamental Poincare charge) correct and not hand-waved?
+  (e) C2 NOTE: is the three-leg decomposition honest -- (P-Lor) genuinely REDUCES (causal order LI), (P-point) genuinely BLOCKED by BHS (no LI finite-valency graph; collar frame-dependent), (P-scalar) the open emergence core? Is it correctly framed as "discreteness ALONE cannot supply point-locality" (NOT "the premise is undischargeable")? Faithful to BHS gr-qc/0605006? Does it correctly leave Paper VII CONDITIONAL without overclaiming?
+- FAITHFULNESS: Weinberg soft-graviton (Phys Rev 135/138), Weinberg-Witten (Phys Lett B96), Wald/Deser spin-2 bootstrap, BHS gr-qc/0605006; companion v6 papers 49 (Ward), 52 (4/9 pricing), 55 (TT back-reaction A / dynamical channel B), 57 (scale no-go + spin-2-blind residue); v7 papers III/IV (l_step/metric wall), VII (covariance conditional), VIII/IX (mode wall). Read the cited ones.
+`
+
+const SCHEMA = {
+  type: 'object', additionalProperties: false,
+  required: ['focus', 'verdict', 'must_fix', 'overclaims', 'math_or_claim_errors', 'pre_geometric_violations', 'single_threaded_violations', 'summary'],
+  properties: {
+    focus: { type: 'string' },
+    verdict: { type: 'string', enum: ['accept', 'minor-revision', 'major-revision', 'reject'] },
+    must_fix: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['issue', 'where', 'severity', 'fix'], properties: { issue: { type: 'string' }, where: { type: 'string' }, severity: { type: 'string', enum: ['minor', 'major', 'critical'] }, fix: { type: 'string' } } } },
+    overclaims: { type: 'array', items: { type: 'string' } },
+    math_or_claim_errors: { type: 'array', items: { type: 'string' } },
+    pre_geometric_violations: { type: 'array', items: { type: 'string' } },
+    single_threaded_violations: { type: 'array', items: { type: 'string' } },
+    summary: { type: 'string' },
+  },
+}
+
+phase('Review')
+const reviews = await parallel([
+  ['Paper X TENSOR + COUPLING layers (secs 2-3). RUN p10. Verify (Q-tensor) reproduces the spin-2 fingerprint sympy-exactly (binary: dipole=0, traceless quadrupole, Q_xx=1+3cos2t period-pi, pure l>=2) and is correctly graded OWNED (reproducing paper55-A). Verify (Q-coupling): is the record stress genuinely a conserved symmetric rank-2 current (symmetric + d_mu T^mu_nu=0 on the massless shell)? Is the Weinberg soft-graviton uniqueness lever stated FAITHFULLY (a massless helicity-2 MUST couple to the conserved symmetric stress) and correctly tagged EXTERNAL (SHARD owns the source, not the theorem)? Is the Weinberg-Witten evasion (emergent internal modular current, not the fundamental Poincare charge) correct and not hand-waved? Hunt any overclaim that SHARD derives the EP or constructs the graviton.'],
+  ['Paper X POLARIZATION + the re-attribution (secs 4-5) -- THE key new content + shallowness risk. RUN p10. Verify the TT counting: a 5-dof symmetric-traceless source TT-projected along n-hat leaves exactly 2 transverse-traceless components (the helicity +-2 polarizations). Is "the two helicities are record-blind" SOUND, and is the re-attribution -- the missing second helicity = (a) a metric propagation direction (l_step wall, Papers III/IV) + (b) a canonical polarization basis (mode-canonicalization, the fifth wall, Papers VIII/IX) -- PRINCIPLED or SHALLOW RELABELING of the corpus 3+1D/lattice/holography accounts? Does the projection genuinely need BOTH a metric direction AND a mode-basis choice, mapping faithfully onto the two named walls? Is the 4/9-component reconciliation (sec 5) faithful to paper52/55? Flag if the mode-wall mapping is forced/superficial.'],
+  ['Paper X overclaim hunt BOTH directions + discipline + the C2 NOTE (secs 1,6,7 + the note). (a) Paper X: confirm the disavowals (no graviton constructed, no EP derived, no polarizations fixed, NO new gravitational no-go -- it is the existing walls). (b) CONFIRMATORY HONESTY: does the paper honestly flag it is largely a pricing of owned results (paper52/55/57/49) with narrow new content (Weinberg lever + wall re-attribution), not oversold? (c) pre-geometric (metric direction/basis/collar only as walled inputs); single-threaded; references resolve + faithful (Weinberg, Weinberg-Witten, BHS, v6 49/52/55/57, v7 III/IV/VII/VIII/IX). (d) THE C2 NOTE: RUN c2_bhs_collar_nogo.py. Is the three-leg decomposition honest -- (P-Lor) reduces (causal order boost-invariant), (P-point) BLOCKED by BHS (collar frame-dependent, overlap<k), (P-scalar) the open emergence core? Is it framed as "discreteness ALONE cannot supply point-locality" (not "undischargeable"), faithful to BHS gr-qc/0605006, leaving Paper VII correctly CONDITIONAL? Hunt any overclaim in the note.'],
+].map(([f]) => () => agent(
+  `Hostile, high-precision review of v7 Paper X (graviton spin-2 pricing) at ${PX} and the C2 deferral note at ${C2N}. Your focus: ${f}\nRead the relevant papers: ${PX}, ${C2N}, the plan ${PLAN}, paper57 ${P57}, Paper VII ${P7v7}, Paper IX ${P9v7}. Run the receipts ${RX} , ${RC2} + your own sympy/numpy checks. ${RULES}\nReturn the schema.`,
+  { label: `P10:${f.slice(0, 26)}`, phase: 'Review', schema: SCHEMA }
+)))
+
+return { reviews }

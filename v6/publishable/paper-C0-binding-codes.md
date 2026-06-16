@@ -47,10 +47,19 @@ single-share chains $D_\infty = 0.013273$ (converged to $4\times
 \eta(7 - 2\theta + \theta^2)$ exactly, while $\kappa \notin
 \mathbb Q(\theta)$ is a theorem (Hermite–Lindemann): the
 theory's constants are transcendental-form in $\theta$ with one
-$\eta$ factor.  The marginality $\varepsilon = 3\kappa - 1 =
-0.0317686364466$ — the triangle's first-order distance from the
-sign boundary — is the constant exported to companion papers; this
-paper is its complete, self-contained pedigree.
+$\eta$ factor; (7) the **global frustration optimum** — over all
+$2^{2^n-1}$ orientations of the complete $n$-mode character set, the
+minimum evidence content $D(P\|U)$ — the maximally binding
+orientation — is attained at the alternating-by-weight orientation
+(a two-value collapse of the tilted exponent), in closed form
+$m_{\min}(n) = -\ln(1-2^{-n}) - \delta_n$ with $\delta_n$ positive
+and doubly-exponentially small: strictly positive at every finite
+$n$, decaying as $2^{-n}$ with prefactor exactly one, verified by
+exhaustive enumeration over all orientations through $n=4$.  The
+marginality $\varepsilon = 3\kappa - 1 = 0.0317686364466$ — the
+triangle's first-order distance from the sign boundary — is the
+constant exported to companion papers; this paper is its complete,
+self-contained pedigree.
 
 ## 1. The model
 
@@ -102,10 +111,8 @@ every $w \le 40$ and both signs of $\lambda$ (one root each;
 receipts; the scan is fine but carries no inter-node derivative
 bound, so "one root" on $(0,6)$ is a verified-numerics statement,
 not a certificate), and roots outside $(0,6)$ are excluded
-analytically, split by the sign of $\lambda$ (the inequality an
-earlier draft printed here — "$2\tanh^{w-1}h/(1-\tanh^w h) < 0.01$"
-— was false, its left side *diverging* as $h$ grows; caught in
-review): for $h \ge 6$, $e^{-h} \le e^{-6} < 0.0025$, while at
+analytically, split by the sign of $\lambda$: for $h \ge 6$,
+$e^{-h} \le e^{-6} < 0.0025$, while at
 $\lambda = +1$ the relation term is positive so the left side
 exceeds $\tanh 6 > 0.9999$, and at $\lambda = -1$ the relation
 term $(1-t^2)\,t^{w-1}/(1-t^w)$ ($t = \tanh h$) is bounded by its
@@ -137,11 +144,9 @@ per-mode divergence below), the evidence *absorbed* by the
 relations: a
 positive defect means the constrained system sits **closer to
 uniform** than free modes — the relations soak up commitment — and
-we call such relation sets *binding*; negative = anti-binding.
-(An earlier draft defined the defect with the opposite sign while
-printing these values, an inconsistency caught in review; the
-present definition is the one all printed numbers satisfy, and the
-gloss above is the correct reading of its sign.)
+we call such relation sets *binding*; negative = anti-binding. This
+sign convention is the one all printed numbers satisfy, and the gloss
+above is the correct reading of it.
 
 **The free mode.**  With $K = \{0\}$, each mode separately solves
 $\tanh h = e^{-h}$.  Substituting $x = e^{-h}$ gives
@@ -218,15 +223,13 @@ $w \in \{6, 12, 40, 60, 80, 100\}$ — so this corollary is a
 verified-numerics bound, not a theorem.  The bound is decreasing
 in $w$ (as $w^2\theta^w$ is, for $w > 2/\eta \approx 3.3$) and
 equals $3.0\times 10^{-9}$ at $w = 40$, where the true remainder
-is $|r_{40}| = 1.43\times 10^{-9}$.  (An earlier draft quoted
-"$1.5\times 10^{-9}$" and "$0.26$" for the bound — those are the
-second-order *ratios* $|d_2/d_1|$, a mislabeling caught in
-review; the displayed bound at $w = 6$ is in fact $0.81$ and the
-true remainder there $0.21$ — not uniformly small for $6 \le w
-\le 40$, which is why those cases are solved exactly rather than
-bounded; the earlier draft's "$\ll$ for $w \ge 6$" claim was
-wrong and is replaced by this split.)  The sign of the tail is
-that of $d_1$, i.e. anti-binding.  $\square$
+is $|r_{40}| = 1.43\times 10^{-9}$.  The bound is *not* uniformly
+small at small $w$: the displayed bound at $w = 6$ is $0.81$ and the
+true remainder there $0.21$ — not negligible for $6 \le w \le 40$,
+which is why those cases are solved exactly rather than bounded
+(the second-order *ratio* $|d_2/d_1|$ at these $w$, e.g. $0.26$ at
+$w=6$, is a distinct quantity and not the remainder bound).  The
+sign of the tail is that of $d_1$, i.e. anti-binding.  $\square$
 
 **Theorem 3.3 (first order and the marginality).**  The defect's
 first order in the codeword amplitude is exactly
@@ -369,7 +372,87 @@ discrepancy.
 These are, to our knowledge, the first interaction constants of
 this fixed-point theory.
 
-## 7. Algebraic status of the constants
+## 7. The global frustration optimum: a closed form over all orientations
+
+Sections 5–6 fix the orientation of a single relation
+(Proposition 5.1: frustration is the sign $\lambda = -1$) and solve
+codes of *fixed* orientation (Theorem 6.1).  We now let the
+orientation vary freely.  On the **complete character set** of
+$(\mathbb Z/2)^n$ — all $m = 2^n - 1$ nontrivial parity modes
+$\chi_a(s) = \prod_{i\in a} s_i$ — an **orientation** is a sign
+$\varepsilon_a \in \{\pm 1\}$ per mode (the multi-mode generalisation
+of the single $\lambda$ of Section 5).  There are $2^{2^n - 1}$ of
+them, each giving an **evidence content** $m(n;\varepsilon) =
+D(P_h\|U)$ — the relative entropy of the tilted law to the uniform
+law — at the exponential-consistency fixed point.  Recall
+$\mathrm{defect} = D^{\mathrm{free}} - D(P\|U)$ (Section 1), so the
+orientation of *minimum* evidence content is the *maximally
+binding* one; its value is closed-form.
+
+**Theorem 7.1 (the alternating-by-weight minimiser and its
+closed-form relative entropy).**  Over all $2^{2^n-1}$ orientations
+of the complete $n$-mode set, the minimum evidence content
+$m_{\min}(n) = \min_\varepsilon D(P_h\|U)$ — equivalently the
+maximally binding orientation — is attained at the
+**alternating-by-weight** orientation $\varepsilon_a =
+(-1)^{|a|-1}$ (sign set by the parity of the mode's weight $|a|$).
+This orientation collapses the tilted exponent to two values: with
+$T(s) = \sum_{a\ne 0}\varepsilon_a\,\chi_a(s)$,
+
+$$
+T(s) = -\Bigl[\textstyle\prod_{i=1}^n (1 - s_i) - 1\Bigr]
+= \begin{cases} -(2^n - 1), & s = (-1,\dots,-1),\\
++1, & \text{otherwise},\end{cases}
+$$
+
+since $\prod_i(1-s_i)$ is $2^n$ on the all-minus state and $0$
+elsewhere.  The tilted law thus has one state of weight
+$e^{-h(2^n-1)}$ and $2^n-1$ states of weight $e^{h}$, and its scalar
+self-consistency $\langle\chi_a\rangle = e^{-h}$ has the closed form
+
+$$
+m_{\min}(n) = -\ln\!\bigl(1 - 2^{-n}\bigr) - \delta_n,
+$$
+
+with $\delta_n$ the correction from the dropped all-minus weight.
+It is **positive** — restoring the dropped positive-weight all-minus
+state strictly lowers the relative entropy below the
+uniform-over-the-other-states value $-\ln(1-2^{-n})$, so
+$\delta_n > 0$ analytically — and doubly-exponentially small
+($\delta_n = O(2^{-n(2^n-1)})$, e.g. $4.1\times10^{-7}$ at $n=3$,
+checked positive through $n=7$ at high precision).  Hence
+$m_{\min}(n)$ is **strictly positive at every finite $n$**,
+vanishes only as $n\to\infty$, and has **prefactor exactly $1$**:
+$m_{\min}(n)\,2^n \to 1$ ($1.068, 1.033, 1.016, \dots, 1.0000000149$
+at $n=25$).  The exact values
+$m_{\min}(3)=0.133530982072$, $m_{\min}(4)=0.064538521138$,
+$m_{\min}(5)=0.031748698315$ match the closed form to print
+precision.
+
+The minimiser claim is a finite global-optimality lemma, verified
+by **exhaustive enumeration** over all orientations at $n=2$ (all
+$8$), $n=3$ (all $128$), and $n=4$ (all $32768$) — the minimum
+equals the closed-form value and is realised by the
+alternating-by-weight class — with the closed form supplying
+$n\ge5$; the two-value collapse $T(s)$ is verified exactly over all
+$2^n$ states for $n=2,\dots,7$.
+
+Three remarks place the result.  First, this is the *complete*
+character set, not a minimum-distance-3 code, so — as in Section 6's
+multiset caution — it lives in the abstract-enumerator extension;
+the fixed point and the relative entropy are nonetheless the same
+exponential-consistency objects of Sections 1–4.  Second,
+$m_{\min}(n)$ is the **system relative entropy** $D(P_h\|U)$ of the
+tilted exponential family at the common field $h$ — not a balanced
+reference KL, which gives a much smaller value; the closed form
+$-\ln(1-2^{-n})$ is the correct one ($0.13353$ at $n=3$).  Third,
+this is the global counterpart of Proposition 5.1: where a single
+frustrated triangle binds a fixed $\sim24\times$, the freely
+optimised orientation binds *arbitrarily* hard as $n$ grows — its
+evidence content $m_{\min}$ decaying to $0$ as $2^{-n}$ (prefactor
+one), so the binding defect $D^{\mathrm{free}} - m_{\min}$ diverges.
+
+## 8. Algebraic status of the constants
 
 PSLQ [3] at 40+ digits with symbolic verification (residuals
 $\sim 10^{-50}$):
@@ -394,7 +477,7 @@ holds at any height.  The theory's
 constants are transcendental-form — one $\eta$ factor over the
 cubic field.
 
-## 8. Related work and novelty position
+## 9. Related work and novelty position
 
 The character expansion is classical (high-temperature expansions;
 van der Waerden); Ising models on hypergraphs and codes are widely
@@ -412,9 +495,11 @@ corresponding section becomes exposition with attribution.
 Every number regenerates from fixed-seed scripts at 40–50 digits
 (mpmath): the table of Theorem 3.1; the functional and second-order
 verifications; the frustration identity; the multi-mode solver
-validations and chain constants; the PSLQ relations with symbolic
-checks.  Bit-identical reruns; code and canonical outputs accompany
-the submission.
+validations and chain constants; the global-frustration-optimum
+closed form, two-value collapse, and exhaustive $n\le4$ orientation
+enumeration of Theorem 7.1 (`global_frustration_optimum.py`, dps 130);
+the PSLQ relations with symbolic checks.  Bit-identical reruns; code
+and canonical outputs accompany the submission.
 
 ## References
 
