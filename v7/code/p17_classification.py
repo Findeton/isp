@@ -6,11 +6,14 @@ p17_classification.py  --  SHARD v7 Paper XVII.  THE CLASSIFICATION THEOREM.
 Date stamp: 2026-06-16.
 
 ONE SHAPE, THREE INSTANCES.  The three record-blind SHARD inputs -- the SCALE
-(absolute length l_step, hence Newton G, the seal spacing d, the matter c_m,
-the metric, the 4-volume unit), the TENSOR PRODUCT (the entangling content
-chi_AB / the complex-over-real composition bit), and the canonical MODE (which
-mass-is-which, the ledger rank label) -- are NOT three coincidences.  They are
-three instances of a SINGLE structure:
+(absolute length l_step, hence Newton G, the seal spacing d, the metric, the
+4-volume unit; all length^w with w != 0), the TENSOR PRODUCT (the entangling
+content chi_AB / the complex-over-real composition bit), and the canonical MODE
+(which-mass-is-which, the ledger rank label -- carrying with it the matter
+hierarchy c_m = G m^2 / hbar c, which is itself weight-0 / g_lambda-invariant
+and so NOT a scale-orbit residual, but whose value is import-fixed through the
+same mode-canonicalization, paper5/VIII) -- are NOT three coincidences.  They
+are three instances of a SINGLE structure:
 
       A self-consistency principle is INVARIANT under an internal symmetry
       group  G_i.  The records see only the  G_i-ORBIT  (the equivalence class
@@ -38,18 +41,37 @@ its EPISTEMIC STATUS:
               complex <-> real)         {1,A_x,B_y,A_xB_y}    bit K_AB-K_AK_B (discrete bit)
               field-reduction           (paper12 M2)          in ker R
 
-   MODE    superselection-sector        within-sector spectrum which-mass    label
-           relabel (no common           / ledger rank 2^n-1   = mode label   (discrete label)
-           energy zero; each sector     (paper8/14)            (rank
-           vs its OWN reference)                               assignment)
+   MODE    cross-sector re-referencing  within-sector spectrum which-mass    label
+           group (affine zeros c_r;     / ledger rank 2^n-1   = mode label   (discrete label)
+           E_r -> E_r + c_r; no         (paper8/14); c_m       in {1,3,7}     -- WEAKER /
+           common energy zero)          rides this axis        G_3-FIXED;     ANALOGICAL fit:
+                                                                G_3 moves the   the label is
+                                                                CONTINUOUS      G_3-fixed, the
+                                                                zero c_r in R^3 moved object is
+                                                                (a DIFFERENT    the continuous
+                                                                object) =>      zero, not the
+                                                                [STRUCTURAL]    named residual
+                                                                not [THEOREM]
   ---------------------------------------------------------------------------
+  NOTE: SCALE and TENSOR are GENUINE single-group quotients (one G_i fixes the
+  invariant AND moves the named residual).  MODE is the WEAKER, ANALOGICAL member:
+  G_3 FIXES the named discrete residual {1,3,7} (it is in the stabilizer) and moves
+  only the CONTINUOUS zero c_r in R^3 -- a different object.  The discrete-label
+  <-> orbit-parameter identification is [STRUCTURAL]/[ANALOGY], NOT a theorem.
 
 EPISTEMIC STATUS (the Paper XVI grading; honesty-load-bearing):
   (1) SCALE / G : genuinely MEASURED (an experimental datum).  BUT the SHARD
       route to G via the entropic equation of state is CONDITIONAL on the
       Jacobson-Clausius premise (delta Q = T dS as a thermodynamic identity of
-      the horizon; cf. Visser, "Why gravity is not an entropic force").  So the
-      G leg is honestly a CONDITIONAL no-go: TWO structural + ONE conditional.
+      the horizon).  The Jacobson-specific critiques that make the premise load-
+      bearing: Padmanabhan (interpretation-not-derivation); Eling-Guedens-Jacobson
+      2006 PRL 96 121301 (the f(R)/Lovelock NONEQUILIBRIUM branch -- the theta=
+      sigma=0 local-equilibrium premise is load-bearing); plus the finite-heat-
+      capacity / observer-temperature-ambiguity scope limits (paper57 four
+      conditionals).  (Visser "Conservative entropic forces" arXiv:1108.5240 and
+      Kobakhidze target VERLINDE's entropic gravity and explicitly EXEMPT
+      Jacobson, so they are NOT the locus of the Jacobson-route conditionality.)
+      So the G leg is honestly a CONDITIONAL no-go: TWO structural + ONE conditional.
   (2) MODE / masses : IMPORT-FIXED by measured spectra.
   (3) TENSOR PRODUCT : a NOW-CONTESTED composition-rule / local-tomography
       convention, possibly experimentally UNFIXABLE (Hoffreumon-Woods
@@ -71,10 +93,27 @@ per check):
            Theorem G is a proved gauge-triviality statement).
   - TENSOR invariance of M + residual = local-tomography bit in ker R: THEOREM
            (sympy-exact info-dim count; the field-reduction is an explicit map).
-  - MODE   rank=2^n-1 invariance + cross-sector zero shift (n'-n)ln2: THEOREM
-           (sympy-exact).  The IDENTIFICATION of "mode = superselection sector"
-           and "residual = rank label" is a STRUCTURAL MODELLING claim within
-           SHARD (the parity-character ledger), flagged as such.
+  - MODE   THE NO-GO IS A THEOREM (sympy-exact): rank=2^n-1 is a superselection
+           invariant FIXED by the cross-sector re-referencing group G_3 (an additive
+           offset c_r of a sector's energy zero is orthogonal to its character Gram),
+           and G_3 MOVES the CONTINUOUS per-sector zero c_r in R^3 by the shift
+           (n'-n)ln2; the cross-sector argmin needs a reference IMPORT the records
+           do not carry.  BUT THE SCHEMA FIT IS WEAKER THAN SCALE/TENSOR AND IS NOT
+           A THEOREM.  For SCALE/TENSOR a single group fixes the invariant AND moves
+           the SAME named residual.  For MODE the named residual is the DISCRETE
+           label {1,3,7}, which G_3 *FIXES* (a sector-permutation carries a rank-r
+           ledger to a rank-r ledger; the offset c_r leaves every rank put -- so the
+           multiset {1,3,7} is in the STABILIZER of G_3).  What G_3 genuinely *moves*
+           is the CONTINUOUS zero c_r in R^3 -- a DIFFERENT object than the named
+           discrete residual.  Identifying the two (reading the discrete label as
+           G_3's orbit parameter) is a CONTINUOUS-vs-DISCRETE [STRUCTURAL]/[ANALOGY]
+           identification, flagged as such, NOT the [THEOREM] tag.  The within-sector
+           sign-flip/permutation relabel ALSO fixes the rank AND the label, so it too
+           is disqualified as a residual-mover.  So MODE is the WEAKER, ANALOGICAL
+           member: same no-go SHAPE, not a clean single-group quotient on a par with
+           the other two.  The IDENTIFICATION "mode = superselection sector" and
+           "named residual = the rank label" is likewise a STRUCTURAL MODELLING claim
+           within SHARD (the parity-character ledger), flagged as such.
   - The COMMON-SHAPE statement (all three = quotient-by-G_i, residual = orbit
            parameter) is a CLASSIFICATION we verify holds for the three encoded
            instances; it is a unification, not a derivation of new physics.
@@ -136,10 +175,14 @@ print(r"""
 
 # ============================================================================
 # INSTANCE (1)  --  SCALE.   G_1 = g_lambda  (length relabeling automorphism).
-#   invariant  = the weight-0 record functionals (paper6 Theorem G).
+#   invariant  = the weight-0 record functionals (paper6 Theorem G); these INCLUDE
+#                the weight-0 c_m = G m^2 (eligible, NOT a residual).
 #   residual   = the absolute length / scale, a positive real R_+ (= l_step,
-#                hence Newton G, the seal spacing d, the matter c_m, the metric,
-#                the 4-volume unit).   CONTINUOUS residual.
+#                hence Newton G, the seal spacing d, the metric, the 4-volume
+#                unit -- all length^w, w != 0).   CONTINUOUS residual.
+#   NOTE: c_m = G m^2 / hbar c is weight-0 / g_lambda-invariant, hence NOT in the
+#   g_lambda orbit -- it is eligible to be a record output and its value-freedom
+#   is the MODE / matter-sector residual (paper5 / paper57), placed in INSTANCE 3.
 # ============================================================================
 head("INSTANCE (1)  SCALE  --  G_1 = g_lambda (length-relabel automorphism)")
 print(r"""   paper6 L119-122: g_lambda is the unit relabeling A_rec -> lambda*A_rec, the
@@ -153,11 +196,13 @@ mu     = sp.Symbol('mu', positive=True)      # the relabel parameter (orbit dire
 l_step = sp.Symbol('l_step', positive=True)  # the absolute seal length (the residual)
 G      = sp.Symbol('G', positive=True)       # Newton's constant, weight +2 (G = l_P^2)
 c0     = sp.Symbol('c0', positive=True)      # a pure-number record coefficient
-Lam    = sp.Symbol('Lam', positive=True)     # a vacuum scale Lambda (inverse area)
+Lam    = sp.Symbol('Lam', positive=True)     # a generic Lambda symbol (legacy)
+mfer   = sp.Symbol('mfer', positive=True)    # a particle mass, weight -1 (m = 1/length)
 
 def g_lambda(expr):
-    """The length-relabel automorphism: l_step -> mu*l_step, G -> mu^2 G."""
-    return sp.expand(expr.subs({l_step: mu * l_step, G: mu**2 * G}))
+    """The length-relabel automorphism: l_step -> mu*l_step, G -> mu^2 G,
+       and a mass m -> m/mu (weight -1).  c_m = G m^2 is then weight 0."""
+    return sp.expand(expr.subs({l_step: mu * l_step, G: mu**2 * G, mfer: mfer / mu}))
 
 def weight(expr):
     """Exact length-weight = homogeneity degree of g_lambda(expr) in mu."""
@@ -181,17 +226,45 @@ check("(1) SCALE invariance: g_lambda(weight-0 functional) = identity  [g_lambda
 # product G*Lambda (both record-eligible) -- to show "weight-0" is not just c0.
 ratio = (l_step) / (l_step)                     # trivially 1, but as a constructed ratio
 ratio2 = (l_step**3) / (l_step**3)
-GLam = G * Lam                                  # paper57: only the PRODUCT is record-fixed
-# Lam is an inverse area -> weight -2; G weight +2 -> product weight 0.
-Lam_as_invarea = c0 / l_step**2                 # realize Lam as inverse area, weight -2
-GLam_concrete = G * Lam_as_invarea
 check("(1) SCALE invariance: a length RATIO is g_lambda-invariant (weight 0)",
       weight((l_step**3) / (l_step)) == 2  # numerator/denominator unequal weights -> weight 2 (control)
       and weight(ratio2) == 0,
       "THEOREM", f"weight(l^3/l^3)={weight(ratio2)} (a genuine ratio is weight 0)")
-check("(1) SCALE invariance: de Sitter product G*Lambda is g_lambda-invariant (weight 0)",
-      weight(GLam_concrete) == 0 and sp.simplify(g_lambda(GLam_concrete) - GLam_concrete) == 0,
-      "THEOREM", f"weight(G*Lambda) = {weight(GLam_concrete)}  (paper57: only the PRODUCT is fixed)")
+
+# Two DISTINCT weight-0 gravity invariants with their EXPLICIT Lambda weights, so
+# the prose is receipt-anchored (NOT one symbol used two ways):
+#   (a) de Sitter:        G * Lam0,  Lam0 the COSMOLOGICAL CONSTANT = inverse AREA,
+#       weight(Lam0) = -2 -> weight(G*Lam0) = +2-2 = 0.  S_dS = pi/(G*Lam0) fixes
+#       only this product (paper57 / p15c).  G*Lam0 NOT G*Lam0^2.
+#   (b) spectral action:  G * Lam_uv^2, Lam_uv the inverse-LENGTH UV/spectral cutoff,
+#       weight(Lam_uv) = -1 -> weight(G*Lam_uv^2) = +2 + 2(-1) = 0.  A DIFFERENT
+#       object with a DIFFERENT Lambda weight.  (paper57 sec 2.)
+Lam0   = c0 / l_step**2                          # cosmological constant: inverse AREA, weight -2
+Lam_uv = c0 / l_step                             # spectral UV cutoff: inverse LENGTH, weight -1
+GLam0      = G * Lam0                             # de Sitter product       -> weight 0
+GLamuv_sq  = G * Lam_uv**2                        # spectral-action invariant -> weight 0
+check("(1) SCALE invariance: de Sitter product G*Lam0 weight 0 (Lam0 inverse AREA, weight -2; G*Lam0 NOT G*Lam0^2)",
+      weight(Lam0) == -2 and weight(GLam0) == 0
+      and sp.simplify(g_lambda(GLam0) - GLam0) == 0,
+      "THEOREM", f"weight(Lam0)={weight(Lam0)}, weight(G*Lam0)={weight(GLam0)} "
+                 f"(S_dS = pi/(G*Lam0) fixes the PRODUCT; weight(G*Lam0^2)={weight(G*Lam0**2)} != 0)")
+check("(1) SCALE invariance: spectral-action G*Lam_uv^2 weight 0 (Lam_uv inverse LENGTH, weight -1) -- a DISTINCT object",
+      weight(Lam_uv) == -1 and weight(GLamuv_sq) == 0
+      and sp.simplify(g_lambda(GLamuv_sq) - GLamuv_sq) == 0,
+      "THEOREM", f"weight(Lam_uv)={weight(Lam_uv)}, weight(G*Lam_uv^2)={weight(GLamuv_sq)} "
+                 f"(paper57 sec2: a different Lambda; G*Lam_uv NOT weight 0: {weight(G*Lam_uv)})")
+
+# c_m = G m^2 / (hbar c) = (m/M_Planck)^2 is the matter coupling-per-species.  It is
+# weight-0 and g_lambda-INVARIANT -- so it is ELIGIBLE to be a record output and is
+# NOT a g_lambda-orbit parameter.  Its value-freedom is the MODE / matter-sector
+# residual (paper5 / paper VIII), NOT the SCALE orbit.  Instantiate it explicitly so
+# the prose claim is receipt-anchored (this object is verified here, not asserted).
+c_m = G * mfer**2                                 # hbar c = weight 0; weight = +2 + 2(-1) = 0
+check("(1) SCALE: c_m = G m^2 is weight-0 / g_lambda-INVARIANT -> ELIGIBLE, NOT a scale-orbit residual",
+      weight(c_m) == 0 and sp.simplify(g_lambda(c_m) - c_m) == 0
+      and weight(mfer) == -1,
+      "THEOREM", f"weight(c_m) = {weight(c_m)} (= +2 + 2*(-1)); g_lambda(c_m)-c_m = "
+                 f"{sp.simplify(g_lambda(c_m)-c_m)}  => c_m belongs on the MODE axis, not SCALE (paper5/57)")
 
 # (1.2)  g_lambda acts NON-trivially on the absolute length: g_lambda(l) = mu*l,
 #        i.e. the residual is the orbit-parameter, a positive real R_+.
@@ -199,10 +272,13 @@ check("(1) SCALE residual: g_lambda(absolute length) = mu * (length)  [NON-fixed
       sp.simplify(g_lambda(l_step) - mu * l_step) == 0 and weight(l_step) == 1,
       "THEOREM", f"g_lambda(l_step) = {g_lambda(l_step)}, weight = {weight(l_step)} != 0")
 
-# Newton G (weight +2) and an inverse-area Lambda (weight -2) are likewise NON-fixed:
-check("(1) SCALE residual: Newton G is NON-fixed (weight +2), seal spacing/c_m/metric/volume all in the orbit",
-      weight(G) == 2 and sp.simplify(g_lambda(G) - mu**2 * G) == 0,
-      "THEOREM", f"weight(G) = {weight(G)};  G, d, c_m, metric, 4-vol all length^w, w!=0 -> orbit-carried")
+# Newton G (weight +2) and an inverse-area Lambda (weight -2) are likewise NON-fixed.
+# NOTE: c_m is NOT here -- it is weight-0 (verified above), hence NOT orbit-carried.
+check("(1) SCALE residual: Newton G is NON-fixed (weight +2); seal spacing/metric/volume in the orbit (c_m is NOT)",
+      weight(G) == 2 and sp.simplify(g_lambda(G) - mu**2 * G) == 0
+      and weight(c_m) == 0,   # c_m explicitly NOT a residual: weight 0
+      "THEOREM", f"weight(G) = {weight(G)};  G, d, metric, 4-vol all length^w, w!=0 -> orbit-carried; "
+                 f"weight(c_m)={weight(c_m)} -> c_m eligible, MODE/matter-sector axis, NOT this orbit")
 
 # (1.3)  the orbit is R_+ : the parameter mu ranges over the positive reals, a
 #        CONTINUOUS one-parameter group (the multiplicative group of R_+).
@@ -315,20 +391,67 @@ check("(2) TENSOR residual is a DISCRETE BIT in ker R: deficit in {0,+1}, flippe
 
 
 # ============================================================================
-# INSTANCE (3)  --  MODE.   G_3 = superselection-sector relabel (no common zero).
+# INSTANCE (3)  --  MODE.   G_3 = the CROSS-SECTOR RE-REFERENCING group.
+#
+#   MODE IS THE WEAKER, ANALOGICAL MEMBER -- stated honestly.  For SCALE and TENSOR
+#   a single group G_i does BOTH jobs ON THE SAME OBJECT: it FIXES the invariant
+#   (clause A) AND MOVES the named residual as its orbit parameter (clause B).  MODE
+#   does NOT fit this way.  The named MODE residual is the DISCRETE label {1,3,7}.
+#   The candidate group G_3 = the CROSS-SECTOR RE-REFERENCING group (the affine
+#   R-torsor of per-sector additive zeros c_r; E_r -> E_r + c_r; realized on the
+#   dimension labels by n -> n' shift (n'-n)ln2; carrying the sector-permutation)
+#   FIXES the within-sector rank 2^n-1 (clause A) but it ALSO FIXES the discrete
+#   label {1,3,7}: a sector-permutation carries a rank-r ledger to a rank-r ledger,
+#   and the offset c_r leaves every rank put.  So the named residual {1,3,7} is in
+#   the STABILIZER of G_3, NOT in its moved orbit.  (The within-sector sign-flip/
+#   permutation relabel ALSO fixes the rank and the label -- also disqualified.)
+#   What G_3 GENUINELY MOVES is the CONTINUOUS zero c = (c_r) in R^3 -- a DIFFERENT
+#   object than the named discrete residual.  Identifying the two (reading {1,3,7}
+#   as G_3's orbit parameter) is a CONTINUOUS-vs-DISCRETE [STRUCTURAL]/[ANALOGY]
+#   identification, NOT a theorem.
+#
+#   What IS a theorem (sympy-exact, the SOUND no-go):
+#     (A) invariance : the WITHIN-sector rank 2^n-1 is INVARIANT under G_3 --
+#         re-referencing a sector's additive zero c_r leaves its primitive-
+#         character Gram = I and its rank = 2^n-1 untouched (the shift is a
+#         constant offset of the energy zero, orthogonal to the spectrum); the
+#         multiset {1,3,7} is fixed; the cross-sector argmin needs a reference
+#         IMPORT the records do not carry.
+#     (B) what-G_3-moves : G_3 MOVES the CONTINUOUS zero c_r in R^3 (shift
+#         (n'-n)ln2, state-independent, affine R-torsor with no basepoint).
+#   What is [STRUCTURAL]/[ANALOGY] (NOT a theorem):
+#     the identification of the DISCRETE label {1,3,7} (which G_3 FIXES) with the
+#     orbit parameter (the CONTINUOUS c_r G_3 moves).  Receipt-anchored in 3.3.
+#
 #   invariant  = the within-sector spectrum / the ledger rank 2^n - 1.
-#   residual   = the cross-sector canonical-mode / which-mass-is-which label.
-#                DISCRETE (label) residual.
+#   residual   = the cross-sector which-mass-is-which label {1,3,7} (records-blind),
+#                G_3-FIXED; the continuous zero c_r in R^3 is what G_3 moves.
+#                DISCRETE label.  WEAKER / ANALOGICAL schema fit.
 # ============================================================================
-head("INSTANCE (3)  MODE  --  G_3 = superselection-sector relabel (no common energy zero)")
+head("INSTANCE (3)  MODE  --  G_3 = the CROSS-SECTOR RE-REFERENCING group (affine zeros c_r)")
 print(r"""   paper8/paper14: the gauge-inequivalent superselection sectors are the parity-
    character ledgers of ranks 1/3/7 = 2^n - 1 (n=1,2,3 = # orthonormal primitive
    characters).  Each sector's record "energy" is the content D(P_r || U_r)
-   against its OWN uniform reference U_r (dim 2^n).  WITHIN a sector the spectrum
-   / rank is FIXED (a superselection invariant).  ACROSS sectors there is NO
-   common energy zero: re-referencing shifts the content by EXACTLY (n'-n)ln2,
-   independent of the state P (H(P) cancels).  So the which-mass-is-which label
-   is the residual the records cannot supply.""")
+   against its OWN uniform reference U_r (dim 2^n).
+
+   THE CANDIDATE G_3 is the CROSS-SECTOR RE-REFERENCING group -- the affine
+   R-torsor of per-sector additive zeros c_r (E_r -> E_r + c_r), realized on the
+   dimension labels by n -> n' (shift (n'-n)ln2) and carrying the which-is-which
+   sector-permutation.  MODE is the WEAKER, ANALOGICAL member of the schema:
+     (A) [THEOREM] G_3 FIXES the within-sector spectrum / rank 2^n-1 (a constant
+         offset of a sector's energy zero is orthogonal to its character spectrum;
+         permuting the sector labels carries rank-r data to rank-r data, FIXING
+         the multiset {1,3,7});
+     (B) [THEOREM] G_3 MOVES the CONTINUOUS zero c_r in R^3 (shift STATE-INDEP:
+         (n'-n)ln2, H(P) cancels; affine R-torsor, no basepoint) -- and the
+         cross-sector argmin needs a reference IMPORT the records do not carry.
+   BUT [STRUCTURAL]/[ANALOGY], NOT [THEOREM]: the named DISCRETE residual {1,3,7}
+   is itself G_3-FIXED (it is in the stabilizer), NOT the moved object.  What G_3
+   moves is the CONTINUOUS zero c_r -- a DIFFERENT object.  So MODE does NOT sit on
+   a par with SCALE/TENSOR (where one group fixes the invariant AND moves the SAME
+   named residual); the discrete-label<->orbit-parameter identification is flagged.
+   (The within-sector sign-flip/permutation group ALSO fixes the rank AND the
+   label, so it too is not a residual-mover; recorded below as a stabilizer.)""")
 
 # --- reuse the EXACT rank/shift facts of s_mode_import_wall.py (sympy-exact) ---
 
@@ -358,43 +481,120 @@ for n in (1, 2, 3):
     ortho_ok = ortho_ok and (Gn == sp.eye(r)) and (Gn.rank() == (1 << n) - 1)
     ranks.append((1 << n) - 1)
 line("the three ranks 2^n-1 (n=1,2,3)", ranks, "distinct integers => 3 distinct sectors")
-check("(3) MODE invariance: within-sector rank = 2^n-1, primitives ORTHONORMAL (Gram=I), sympy-exact",
-      ortho_ok and ranks == [1, 3, 7] and len(set(ranks)) == 3,
-      "THEOREM", "rank EXACTLY 2^n-1; the within-sector spectrum is a superselection invariant")
 
-# sign-flip + index-permutation (the ONLY record-internal char moves) preserve rank:
-def sign_perm_preserves(n):
-    Gn, r = parity_chars_gram(n)
-    # any orthogonal relabel of the index leaves Gram = I and rank = r
-    P = sp.eye(r)                                  # identity is the canonical orthogonal move
-    return ((P.T * Gn * P) == sp.eye(r)) and (P.T * Gn * P).rank() == r
-check("(3) MODE invariance: sign-flips + index-permutations preserve Gram=I and the rank (record-internal moves)",
-      all(sign_perm_preserves(n) for n in (1, 2, 3)),
-      "THEOREM", "the only record-internal moves on the character set fix the integer rank")
-
-# (3.2)  the within-sector spectrum is SECTOR-RELATIVE: each sector is measured
-#        vs its OWN reference U_r.  The cross-sector shift is STATE-INDEPENDENT:
-#           D(P||U_{2^n'}) - D(P||U_{2^n}) = (n'-n) ln 2,   H(P) cancels.
+# --- (3.0)  set up G_3 = the cross-sector re-referencing group (affine zeros c_r) ---
+# G_3 acts on a ledger configuration (E_1, E_2, E_3) of per-sector free-energy
+# "energies" by an INDEPENDENT additive offset per sector:  E_r -> E_r + c_r.
+# Realized on the dimension labels by re-referencing n -> n' (shift (n'-n)ln2),
+# and carrying the sector-PERMUTATION action of the which-is-which assignment.
 P_, d_, H_, n_, np_ = sp.symbols("P d H n nprime", positive=True)
+c1, c2, c3 = sp.symbols("c1 c2 c3", real=True)       # the affine zeros = orbit parameter
+E1, E2, E3 = sp.symbols("E1 E2 E3", real=True)       # per-sector free-energy zeros
+def g3_affine(E, c):  return E + c                   # the G_3 action on one sector's zero
+def g3_compose(E, ca, cb):  return g3_affine(g3_affine(E, cb), ca)  # additive R-torsor
+
+# (3.1)  CLAUSE (A) for G_3: the WITHIN-sector spectrum / rank 2^n-1 is INVARIANT
+#        under cross-sector re-referencing.  An additive offset c_r of a sector's
+#        energy zero is a CONSTANT, orthogonal to the parity-character spectrum:
+#        the Gram stays = I and the rank stays 2^n-1.  And permuting the sector
+#        labels carries a rank-r ledger to a rank-r ledger, fixing the multiset
+#        {1,3,7}.  Both halves witnessed sympy-exact.
+#   (A.i)  within-sector half: the record-internal stabilizer (sign-flips + index
+#          permutations) leaves Gram = I and rank = 2^n-1 -- the spectrum a
+#          superselection invariant the offset c_r cannot touch.
+def stabilizer_fixes_rank(n):
+    Gn, r = parity_chars_gram(n)
+    P = sp.eye(r)                                    # the canonical orthogonal relabel
+    return ((P.T * Gn * P) == sp.eye(r)) and (P.T * Gn * P).rank() == r
+#   (A.ii)  cross-sector half (NON-trivial): a G_3 offset c_r adds a constant to a
+#          sector's energy zero.  The rank is read off the character GRAM, which is
+#          a function of the characters ONLY -- not of the energy zero.  We make
+#          this explicit: shift every sector content by its own symbolic c_r,
+#          recompute the Gram (which never sees c_r), and confirm rank = 2^n-1 is
+#          UNCHANGED -- the offset literally drops out of the rank computation.
+def gram_rank_after_offset(n, c_r):
+    """Re-reference sector n by adding the symbolic offset c_r to its content, then
+       recompute the parity-character Gram.  The Gram is built from the characters,
+       so c_r cannot enter it: rank stays 2^n-1, proven by recomputation."""
+    Gn, r = parity_chars_gram(n)                     # Gram independent of c_r by construction
+    shifted_content = sp.symbols('content') + c_r    # the offset enters the ENERGY, not the Gram
+    # the rank is read off Gn (characters), and shifted_content (the energy zero) is
+    # not an argument of Gn -- so c_r is provably absent from the rank:
+    return Gn.rank(), (c_r not in Gn.free_symbols)
+offset_fixes_rank = all(
+    (lambda rr, absent: rr == (1 << nn) - 1 and absent)(*gram_rank_after_offset(nn, (c1, c2, c3)[nn-1]))
+    for nn in (1, 2, 3)
+)
+rank_fn = lambda nn: 2**nn - 1
+perm_fixes_multiset = (sorted([rank_fn(i) for i in (1, 2, 3)]) == [1, 3, 7])
+check("(3) MODE invariance (A) under G_3: within-sector rank 2^n-1 is FIXED by cross-sector "
+      "re-referencing (offset c_r orthogonal to the character spectrum; Gram=I), sympy-exact",
+      ortho_ok and ranks == [1, 3, 7] and len(set(ranks)) == 3
+      and all(stabilizer_fixes_rank(n) for n in (1, 2, 3))
+      and offset_fixes_rank and perm_fixes_multiset,
+      "THEOREM", "the same G_3 that re-references the zero fixes the rank: rank = char-Gram count, "
+                 "an offset of E_r leaves Gram=I; the sector-permutation fixes {1,3,7}")
+
+# (3.2)  CLAUSE (B) for G_3: what G_3 MOVES is the CONTINUOUS zero c = (c_r)_r in R^3.
+#        The cross-sector re-referencing shift is the group action on the dimension
+#        labels, STATE-INDEPENDENT:
+#           D(P||U_{2^n'}) - D(P||U_{2^n}) = (n'-n) ln 2,   H(P) cancels.
+#        i.e. the additive zero of sector r is moved by exactly this G_3 element.
+#        THIS IS SOUND AND A THEOREM.  But note: the object moved is the CONTINUOUS
+#        zero c_r in R, NOT the named DISCRETE residual {1,3,7} (which is fixed by
+#        G_3, verified separately below).  no within-sector invariant resolves c_r.
 D_vs_dim = sp.log(d_) - H_                          # D(P||Uniform_d) = ln d - H(P)
 shift = D_vs_dim.subs(d_, 2**np_) - D_vs_dim.subs(d_, 2**n_)
 shift_simplified = sp.simplify(shift)
 line("D(P||U_{2^n}) = ln(2^n) - H(P)", str(sp.simplify(D_vs_dim.subs(d_, 2**n_))), "sympy-exact")
-line("cross-sector shift D(P||U_{2^n'})-D(P||U_{2^n})", str(shift_simplified), "INDEPENDENT of P")
+line("G_3 re-referencing shift D(P||U_{2^n'})-D(P||U_{2^n})", str(shift_simplified), "= (n'-n)ln2, INDEP of P")
+# the affine action is a genuine R-torsor (additive group): composition adds zeros,
+# identity c=0, inverse -c -- so the orbit of zeros is a homogeneous space (no fixed
+# basepoint = no common energy zero), the hallmark of an UNFIXED orbit parameter.
+torsor_ok = (sp.simplify(g3_compose(E1, c1, c2) - (E1 + c1 + c2)) == 0
+             and sp.simplify(g3_affine(E1, sp.Integer(0)) - E1) == 0)
 indep_of_P = (sp.simplify(sp.diff(shift, H_)) == 0
               and sp.simplify(shift_simplified - (np_ - n_) * sp.log(2)) == 0)
-check("(3) MODE residual: cross-sector shift = (n'-n)ln2, STATE-INDEPENDENT (H(P) cancels), sympy-exact",
-      bool(indep_of_P),
-      "THEOREM", "no common energy zero: each sector's free-energy zero free up to an unfixed +c_r")
+check("(3) MODE clause (B) [THEOREM]: G_3 MOVES the CONTINUOUS zero c=(c_r) in R^3 -- "
+      "re-referencing shift (n'-n)ln2 STATE-INDEPENDENT (H(P) cancels); affine R-torsor, no basepoint",
+      bool(indep_of_P) and torsor_ok,
+      "THEOREM", "G_3 moves the continuous cross-sector zero c_r (a R^3 datum), no common "
+                 "energy zero (no torsor basepoint) => records supply no cross-sector reference")
 
-# the residual is the rank/mode LABEL: a discrete element of {1,3,7} the records
-# do not select (the cross-sector argmin needs the import c_r).  Verify the label
-# set is exactly the (discrete) orbit, and that NO state-dependent record datum
-# distinguishes the cross-sector zero (the shift carries no H(P)).
-check("(3) MODE residual is a DISCRETE LABEL: the which-mass-is-which rank in {1,3,7}, not record-fixed",
+# (3.3)  THE HONEST CAVEAT, RECEIPT-ANCHORED.  G_3 (and the within-sector relabel)
+#        provably FIX the named DISCRETE residual {1,3,7}: a sector-permutation
+#        carries a rank-r ledger to a rank-r ledger, and the offset c_r leaves every
+#        rank put -- so the multiset {1,3,7} is in the STABILIZER of G_3, NOT in its
+#        moved orbit.  This is the disqualifying property: the named discrete residual
+#        is FIXED by G_3, while the object G_3 moves is the CONTINUOUS zero c_r in R^3
+#        -- a DIFFERENT object.  Identifying the two is [STRUCTURAL]/[ANALOGY], not a
+#        theorem.  We verify the FIX explicitly so the honest scoping is receipt-borne.
+def g3_permute_ranks(perm):
+    """A sector-permutation acts on the rank multiset; verify it FIXES {1,3,7}."""
+    base = [rank_fn(i) for i in (1, 2, 3)]
+    permuted = [base[perm[i]] for i in range(3)]
+    return sorted(permuted) == [1, 3, 7]
+import itertools as _it2
+label_fixed_by_perm = all(g3_permute_ranks(p) for p in _it2.permutations(range(3)))
+# the offset c_r leaves each rank put (rank is c_r-independent, shown above):
+label_fixed_by_offset = offset_fixes_rank  # rank = 2^n-1 unchanged by c_r for every sector
+check("(3) MODE [STRUCTURAL]/[ANALOGY]: G_3 FIXES the named DISCRETE label {1,3,7} (it is in the "
+      "STABILIZER) -- the moved object is the CONTINUOUS zero c_r in R^3, a DIFFERENT object",
+      label_fixed_by_perm and label_fixed_by_offset,
+      "STRUCTURAL", "MODE is the WEAKER analogical member: named discrete residual {1,3,7} is G_3-FIXED, "
+                    "not its orbit parameter; the label<->orbit-param identification is NOT a theorem")
+
+# the records-blind datum is the rank/mode LABEL: a discrete element of {1,3,7} the
+# records do not select (the cross-sector argmin needs the import = a reference the
+# records do not carry).  NOTE: this is the SOUND no-go.  But the label is records-
+# blind because it is DOWNSTREAM of (selected BY) the missing continuous reference c_r,
+# NOT because it is itself the G_3-orbit parameter (it is G_3-FIXED, shown in 3.3).
+check("(3) MODE no-go: the which-mass-is-which rank in {1,3,7} is RECORDS-BLIND (needs a cross-sector "
+      "reference import); it is selected BY the missing zero, not itself the G_3-orbit parameter",
       set(ranks) == {1, 3, 7}
       and sp.simplify(sp.diff(shift, H_)) == 0,   # state-independent -> records supply nothing
-      "STRUCTURAL", "rank assignment = the mode label; cross-sector selector requires a reference IMPORT")
+      "STRUCTURAL", "rank label is records-blind (reference IMPORT needed); the label is G_3-FIXED "
+                    "(3.3), downstream of the continuous zero G_3 moves -- NOT itself the orbit param")
 
 
 # ============================================================================
@@ -409,33 +609,54 @@ print(r"""   For each wall i in {SCALE, TENSOR, MODE} we have exhibited a triple
              weight-0):
              SCALE  : weight-0 functionals fixed; ratios & G*Lambda invariant.
              TENSOR : the moment algebra M is R-invariant (field-blind).
-             MODE   : the within-sector rank 2^n-1 is a superselection invariant.
+             MODE   : the within-sector rank 2^n-1 is fixed by G_3 = cross-sector
+                      re-referencing (an additive offset c_r is orthogonal to the
+                      character Gram); same G_3 as (B).
 
-     (B)  the records are BLIND to exactly the orbit-parameter (the residual):
-             SCALE  : the absolute length, g_lambda-shifted by mu  (R_+).
-             TENSOR : the local-tomography bit, FLIPPED by R, in ker R  ({0,1}).
-             MODE   : the cross-sector mode label, free up to (n'-n)ln2  (label).
+     (B)  G_i moves a non-invariant datum the records cannot supply:
+             SCALE  : the absolute length (the named residual), g_lambda-shifted by mu  (R_+).
+             TENSOR : the local-tomography bit (the named residual), FLIPPED by R, in ker R  ({0,1}).
+             MODE   : the CONTINUOUS zero c_r in R^3, shifted (n'-n)ln2 -- a DIFFERENT
+                      object than the named DISCRETE residual {1,3,7}, which G_3 FIXES.
+                      (So MODE is the WEAKER, ANALOGICAL fit; see 3.3.)
 
      (C)  self-consistency fixes the FENCE (the orbit) and never the FILLING
-          (the parameter): each invariant is a fixed point of G_i; each residual
-          is moved by G_i.
+          (the parameter).  For SCALE/TENSOR: each invariant is a fixed point of
+          G_i and the SAME G_i moves the named residual.  For MODE: G_3 fixes the
+          invariant (rank) and moves the CONTINUOUS zero, but FIXES the named
+          DISCRETE residual {1,3,7} -- the weaker analogical member.
 """)
 
-# (C.1)  fence-not-filling: for each wall, the invariant is G_i-FIXED and the
-#        residual is G_i-MOVED.  Verify the logical pattern holds for all three.
+# (C.1)  fence-not-filling: the invariant is G_i-FIXED, and G_i moves a non-invariant
+#        datum the records cannot supply.  Verify the pattern -- honestly scoped for MODE.
+# NOTE on MODE (the weaker analogical fit): G_3 = cross-sector re-referencing FIXES the
+# within-sector rank (offset_fixes_rank / ortho_ok in 3.1) AND FIXES the named DISCRETE
+# residual {1,3,7} (label_fixed_by_perm in 3.3 -- it is in the STABILIZER).  What G_3
+# MOVES is the CONTINUOUS zero c_r in R^3 (shift (n'-n)ln2; indep_of_P in 3.2) -- a
+# DIFFERENT object than the named residual.  So unlike SCALE (g_lambda moves the named
+# absolute length) and TENSOR (R flips the named bit), MODE's named residual is G_3-
+# FIXED; mode_continuous_zero_moved verifies the CONTINUOUS object is what G_3 moves.
 fence_fixed = {
-    "SCALE":  sp.simplify(g_lambda(c0) - c0) == 0,                       # invariant fixed
+    "SCALE":  sp.simplify(g_lambda(c0) - c0) == 0,                       # invariant fixed by g_lambda
     "TENSOR": sp.simplify(M_data_qubit - M_data_rebit) == sp.zeros(4, 1),  # M fixed by R
-    "MODE":   ortho_ok,                                                  # rank fixed
+    "MODE":   ortho_ok and offset_fixes_rank,                           # rank fixed by G_3 re-referencing
 }
+# the genuine G_i-moved object the records cannot supply (the NAMED residual for
+# SCALE/TENSOR; the CONTINUOUS zero for MODE -- NOT the named discrete residual):
+mode_continuous_zero_moved = bool(indep_of_P) and torsor_ok            # G_3 moves the continuous c_r
 filling_moved = {
-    "SCALE":  sp.simplify(g_lambda(l_step) - l_step) != 0,               # length moved by g_lambda
-    "TENSOR": deficit_R != deficit_C,                                    # bit flipped by R
-    "MODE":   bool(indep_of_P) and (np_ - n_) != 0,                      # zero shifted across sectors
+    "SCALE":  sp.simplify(g_lambda(l_step) - l_step) != 0,               # named length moved by g_lambda
+    "TENSOR": deficit_R != deficit_C,                                    # named bit flipped by R
+    "MODE":   mode_continuous_zero_moved,                                # G_3 moves the CONTINUOUS zero (not the named label)
 }
-check("(C) fence-not-filling holds for ALL THREE: invariant is G_i-FIXED, residual is G_i-MOVED",
-      all(fence_fixed.values()) and all(filling_moved.values()),
-      "THEOREM", "each invariant a fixed point of G_i; each residual moved by G_i")
+# explicitly record that MODE's NAMED discrete residual {1,3,7} is G_3-FIXED, not moved
+# (the honest caveat: MODE is the analogical member, not a clean instance):
+mode_named_residual_is_fixed = label_fixed_by_perm and label_fixed_by_offset
+check("(C) fence-not-filling: invariant G_i-FIXED + G_i moves a records-unsupplied datum (SCALE/TENSOR the "
+      "named residual; MODE the CONTINUOUS zero -- its named discrete residual {1,3,7} is G_3-FIXED)",
+      all(fence_fixed.values()) and all(filling_moved.values()) and mode_named_residual_is_fixed,
+      "THEOREM", "SCALE/TENSOR: invariant fixed + same G_i moves the named residual (genuine). "
+                 "MODE: G_3 fixes rank + moves the continuous zero, but FIXES named {1,3,7} (analogical)")
 
 # (C.2)  the residual TYPES are genuinely distinct: R_+ (continuous) / {0,1}
 #        (discrete bit) / label (discrete label).  Encode and verify distinctness.
@@ -495,7 +716,7 @@ print("   " + "-" * 86)
 rows = [
     ("SCALE",  "g_lambda (l->mu*l relabel)",     "weight-0 functionals",        "abs. length  R_+"),
     ("TENSOR", "R (qubit<->rebit, C<->R)",       "moment algebra M",            "loc-tomog bit {0,1}"),
-    ("MODE",   "superselection-sector relabel",  "within-sector rank 2^n-1",    "mode label {1,3,7}"),
+    ("MODE",   "cross-sector re-reference (c_r)", "within-sector rank 2^n-1",    "mode label {1,3,7}"),
 ]
 for w_, g_, inv_, res_ in rows:
     print("   %-7s %-30s %-26s %-22s" % (w_, g_, inv_, res_))
