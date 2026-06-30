@@ -28,10 +28,55 @@ from itertools import combinations, permutations
 import math
 import sys
 
-import mpmath as mp
+try:
+    import mpmath as mp
+
+    mp.mp.dps = 140
+    PRECISION_LINE = f"mp.dps = {mp.mp.dps}"
+except ModuleNotFoundError:
+    from decimal import Decimal, getcontext
+
+    getcontext().prec = 170
+
+    class _MPState:
+        dps = 140
+
+    class _MPShim:
+        mp = _MPState()
+
+        @staticmethod
+        def mpf(x=0):
+            if isinstance(x, Decimal):
+                return x
+            if isinstance(x, Fraction):
+                return Decimal(x.numerator) / Decimal(x.denominator)
+            return Decimal(str(x))
+
+        @staticmethod
+        def nstr(x, digits=30):
+            return format(_MPShim.mpf(x), f".{digits}g")
+
+        @staticmethod
+        def fsum(values):
+            total = Decimal(0)
+            for value in values:
+                total += _MPShim.mpf(value)
+            return +total
+
+        @staticmethod
+        def log(x):
+            return _MPShim.mpf(x).ln()
+
+        @staticmethod
+        def sqrt(x):
+            return _MPShim.mpf(x).sqrt()
+
+    mp = _MPShim()
+    PRECISION_LINE = (
+        "Decimal fallback precision = 170 digits; mpmath unavailable"
+    )
 
 sys.stdout.reconfigure(line_buffering=True)
-mp.mp.dps = 140
 
 checks = []
 CANON_CACHE = {}
@@ -526,7 +571,7 @@ def main():
     print("=" * 80)
     print("Paper 29 projected likelihood basis audit")
     print("=" * 80)
-    print(f"mp.dps = {mp.mp.dps}")
+    print(PRECISION_LINE)
 
     summaries = [run_audit(6), run_audit(7)]
 
