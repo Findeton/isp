@@ -1,0 +1,12 @@
+orbit file OK: 176 orbits, sizes sum to 2^31
+  delta orbit: size=32, D=0.03174869831458030115699628 enclosure-match=True
+
+n=5 CERTIFIED SUMMARY: orbits=176, failures=0
+  D_delta(32) in [0.03174869831458030115699628, 0.03174869831458030115699628]
+  worst certified non-delta margin = 0.138872685663742 (orbit rep 2040)
+  five lowest orbits by D: (rep, size, D, errD)
+             0         32 0.031748698 4.30e-35
+          2040       4960 0.170621384 9.92e-34
+        498144      27776 0.234706844 3.98e-34
+            30      34720 0.243617531 1.89e-34
+        109268     317440 0.405832442 3.28e-35

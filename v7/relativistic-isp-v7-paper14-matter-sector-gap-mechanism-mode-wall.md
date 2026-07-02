@@ -65,7 +65,7 @@ Concretely, the simplest free-energy `F_α = C_ext − α·\ln(\text{modes} + 1)
 
 ### 3.4 The matter member of the import family
 
-The canonical mode therefore passes all the weight-`0` import diagnostics — the form is forced in *every* sector, the cross-sector selector needs an import, and no forced constant lands it — and joins the program's **three SHARD-specific last inputs**: the absolute scale `l_step`/`G`, the composite tensor product `χ_AB`, and now the **canonical mode**. Three orthogonal import-fixed walls; the canonical mode is the *matter* member. (Paper VIII named it the "fifth wall" in its broader enumeration of named obstructions; here it is the third and last of the three *import-fixed weight-`0`* family.)
+The canonical mode therefore passes all the weight-`0` import diagnostics — the form is forced in *every* sector, the cross-sector selector needs an import, and no forced constant lands it — and joins the program's **three SHARD-specific last inputs**: the absolute scale `l_step`/`G`, the composite tensor product `χ_AB`, and now the **canonical mode**. Three orthogonal last-input walls of **different grade and epistemic status** — the scale a weight-`(+1)` grading obstruction (genuinely measured), `χ_AB` a weight-`0` field/symmetry obstruction (a now-contested composition-rule convention), the mode a weight-`0` relocation obstruction (import-fixed by measured spectra); the canonical mode is the *matter* member. (Paper VIII named it the "fifth wall" in its broader enumeration of named obstructions; here it is the third last input, the second *weight-`0`* member.)
 
 ---
 
@@ -83,7 +83,7 @@ What, then, *is* record-forced about masses? The gap *values*, but not the speci
 
 Put the three parts together and the matter sector resolves cleanly, with no overclaim:
 
-> **"Build the matter sector" = "own the gap mechanism, import the mode-selector."** The interacting record Ginsparg–Wilson flow *owns* the dynamical mass-gap mechanism (chiral-symmetry breaking with the record topology — the index theorem's zero modes — in the order parameter, large-`N`, the exact Lüscher symmetry intact). The canonical mode is the third (matter) *import-fixed* wall — the same weight-`0` grade as `G` and `χ_AB`. And the chiral-gap *values* are record-forced pure numbers, while every between-species mass *ratio* is *singly* gated by the rank assignment alone.
+> **"Build the matter sector" = "own the gap mechanism, import the mode-selector."** The interacting record Ginsparg–Wilson flow *owns* the dynamical mass-gap mechanism (chiral-symmetry breaking with the record topology — the index theorem's zero modes — in the order parameter, large-`N`, the exact Lüscher symmetry intact). The canonical mode is the third (matter) last-input wall — weight-`0` like `χ_AB` (unlike the weight-`(+1)` scale/`G`), import-fixed by the measured spectra. And the chiral-gap *values* are record-forced pure numbers, while every between-species mass *ratio* is *singly* gated by the rank assignment alone.
 
 This is why no single physical mass ratio is computable now, stated precisely: not because the gap is unknown (it is a forced number to 100+ digits), but because *which* gap belongs to *which* particle is the one import the records cannot supply — the mode. The meta-pattern is complete on the matter axis: the records force the *mechanism and the values*, and import the *one last assignment*.
 
@@ -96,7 +96,7 @@ Listed prominently, not buried:
 1. **Finite `N`.** The entire constructive win is the large-`N` (exactly solvable) Gross–Neveu mechanism; the `1/N` corrections and the loss of exact solvability are open.
 2. **Dimension and background.** 2d, quenched / uniform-flux (the gauge field is *not* dynamical); 4d, unquenched dynamics, and the area-law / confinement question are untouched.
 3. **The Clay gap.** The pure-gauge Yang–Mills mass gap is explicitly *not* addressed — a different object, owned separately by the program's Yang–Mills line, and the nonperturbative core open for everyone. The Gross–Neveu mass is a *dynamical fermion* mass from chiral-symmetry breaking, not the pure-gauge gap.
-4. **The mode import.** The canonical mode is proven un-supplied internally (§3); a mode-selecting matter Hamiltonian relocates rather than closes the choice. Closing it requires an external input, like `G` and `χ_AB`.
+4. **The mode import.** The canonical mode is proven un-supplied internally (§3); a mode-selecting matter Hamiltonian relocates rather than closes the choice. Closing it requires an external input — like `G` (genuinely measured); unlike `χ_AB`, whose closure is itself a now-contested composition-rule convention, possibly unfixable in principle.
 
 None of these weakens the three results inside their stated scope; they are the boundary of the matter-sector claim.
 

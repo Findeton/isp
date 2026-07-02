@@ -1,0 +1,5 @@
+n=4: CERTIFIED. orientations=32768, failures=0
+  D_delta in [0.06453852113757117122300464, 0.06453852113757117122300464]
+  worst certified non-delta margin = 0.263509278574703 (idx 2655)
+  max Kantorovich radius r0 = 2.269e-11, max |D|-error = 1.626e-9
+ALL CERTIFIED

@@ -2,7 +2,7 @@
 
 **Author:** Felix Robles Elvira (ORCID: 0009-0009-2017-4394; independent researcher)
 
-**Status:** preprint, not peer reviewed, version 2026-06-15. Tenth paper of the v7 program; it prices the graviton's "spin-2" character — the residue Paper 57 left after closing the gravitational scale no-go — by splitting it into three layers and assigning each to owned machinery, an external lever, or a named wall. Tags: **[OWNED]** = derived on record-internal machinery; **[LEVER]** = an external theorem SHARD feeds with an owned input; **[BLIND]** = a quantity the records provably do not carry; **[WALL]** = an obstruction identified with an established one. All numeric claims are sympy-exact or at mpmath `dps ≥ 80`; receipt `v7/code/p10_spin2_pricing.py`.
+**Status:** preprint, not peer reviewed, version 2026-06-15. Tenth paper of the v7 program; it prices the graviton's "spin-2" character — the residue Paper 57 left after closing the gravitational scale no-go — by splitting it into three layers and assigning each to owned machinery, an external lever, or a named wall. Tags: **[OWNED]** = derived on record-internal machinery; **[LEVER]** = an external theorem SHARD feeds with an owned input; **[BLIND]** = a quantity the records provably do not carry; **[WALL]** = an obstruction identified with an established one. All numeric claims are sympy-exact or at mpmath `dps ≥ 80`, with one declared exception: the TT-projection counting check in the receipt is float-safe integer-rank counting (numpy, tolerance `10⁻¹²`), stated as such per the corpus convention for float-safe items; receipt `v7/code/p10_spin2_pricing.py`.
 
 ## Abstract
 

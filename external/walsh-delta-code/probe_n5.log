@@ -1,0 +1,14 @@
+probe_n56.py:131: RuntimeWarning: invalid value encountered in log
+  Dd = (A * np.log(A) + (N - 1) * Bv * np.log(Bv)) / N
+  new best: D=0.411763528 from seed def1 (seed D=0.728096)
+  new best: D=0.411763528 from seed def1 (seed D=0.728096)
+  new best: D=0.411763528 from seed def1 (seed D=0.728096)
+  new best: D=0.411763528 from seed def1 (seed D=0.728096)
+  new best: D=0.411763528 from seed def2 (seed D=0.411764)
+  new best: D=0.405832442 from seed rand (seed D=0.984964)
+  new best: D=0.405832442 from seed rand (seed D=0.984964)
+  new best: D=0.405832442 from seed rand (seed D=0.616841)
+n=5: D_delta=nan, best non-delta found D=0.405832442, ratio=nan
+  |M|(best)=9, minX=1.617e-20, u-levels=[0.021749, 0.148543, 0.19204]
+  X-levels=[0.0, 1e-06, 1.362332, 3.391031]
+==========================================================================================

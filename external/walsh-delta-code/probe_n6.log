@@ -1,0 +1,16 @@
+probe_n56.py:131: RuntimeWarning: divide by zero encountered in log
+  Dd = (A * np.log(A) + (N - 1) * Bv * np.log(Bv)) / N
+probe_n56.py:131: RuntimeWarning: invalid value encountered in double_scalars
+  Dd = (A * np.log(A) + (N - 1) * Bv * np.log(Bv)) / N
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.378536053 from seed def1 (seed D=0.716500)
+  new best: D=0.335624242 from seed rand (seed D=0.940750)
+n=6: D_delta=nan, best non-delta found D=0.335624242, ratio=nan
+  |M|(best)=21, minX=1.013e-37, u-levels=[0.000573, 0.043108, 0.068131, 0.102674, 0.221144]
+  X-levels=[0.0, 0.651249, 1.264825, 1.642783, 2.180201]
+==========================================================================================

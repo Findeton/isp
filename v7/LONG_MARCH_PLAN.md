@@ -1,5 +1,9 @@
 # The Long March: deriving the record click-law (v7 Paper 1)
 
+> **[FROZEN 2026-07-01.]** This plan tracked the campaign through Paper XI and was not updated for
+> XII–XIX, the foundations campaign, or the λ=σ dissolution. It is superseded by `../v8/LEDGER.md`
+> (the authoritative result/receipt/status map) and frozen with the rest of v7 (`ARCHIVE-STATUS.md`).
+
 **Goal.** Derive — or constrain to a uniqueness-up-to-the-one-no-go-scale — the SHARD **record click-law**: the whole-history law `P^hist` that fixes *when, where, and how* a record commits (a seal/division event fires). The target is a triple:
 
 - **`λ`** — the seal *rate* functional (when a seal fires);
