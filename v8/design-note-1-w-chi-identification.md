@@ -1,0 +1,50 @@
+# Design note 1: the record-native identification of the tomography coupling — `w ↔ χ_AB`
+
+**Status:** design document, 2026-07-02. Think-first, no code — this note fixes the object to be built, the candidate identifications, the falsifiable ladder with its gates set in advance, the blocker analysis, and the kill conditions, so that the eventual receipts measure a pre-registered design rather than a post-hoc story. Nothing here is a result. Companion: design note 2 (supply decorrelation), which is a *prerequisite* for this note's Level-3 rung.
+
+## 1. What is to be identified, exactly
+
+Papers 14–15 proved the geometric half of a physics claim the corpus has carried as [POSITED] since paper 14 §4: the **chain-fleet coupling carries the missing dimensions**. On faithful geometric input, greedy chains (worldline surrogates) plus the cross-chain comparability coupling `w(c, c′)` (the fraction of cross-chain pairs that are order-comparable) plus MDS recover the transverse plane at Procrustes `0.993` (receipt `k3`), and the same object is the intrinsic finder's transverse seed in both `2+1` and `3+1` (receipts `l2`, `m1`). So `w` is *sufficient* for transverse geometry — **given** an order that has one.
+
+The record-native question is the converse sourcing direction: in a record web, *what record-native two-party data plays the role of `w`?* The corpus's answer-shaped candidate is paper 2's entangling content `χ_AB = I_σ` — the mutual term of the joint odometer — because paper 2 §5 already proves the constructive half at the graph level: the weight-`0` entanglement content sources the record graph's **connectivity** (the Van Raamsdonk pinch) and its **hop-metric up to one overall scale** (distance ratios invariant to `10⁻¹⁰⁰`), and provably not the absolute scale. What paper 2 does *not* supply is the middle term: that the connectivity/hop-metric it sources, when fed through the chain-fleet construction, reproduces the *tomographic* coupling — the specific `w` whose MDS is the transverse geometry the certificate then verifies.
+
+**The identification to be tested, stated as a chain of three maps:**
+
+```
+χ-field on chain pairs  →(F)→  affinity matrix  →(MDS)→  transverse coordinates  →(certificate)→  verdict
+```
+
+with the claim being that some fixed, order-independent, monotone `F` makes the composite reproduce the `k3`-class recovery. The identification is *record-native* iff `F` uses only paper 2's moment set `M = {1, A_x, B_y, A_xB_y}` per chain pair — no held-out geometry, no order data beyond what the web itself commits.
+
+## 2. Candidate identifications, ranked
+
+**(a) The kinematic-magnitude route [primary].** `w(c, c′) ≐ F(E_cl(c, c′))` with `E_cl` the non-negative kinematic entanglement functional (paper 2: `E_cl = 0` iff product structure). Rationale for preferring `E_cl` over `I_σ` itself: `I_σ` is **signed and two-sided** (the U-shaped joint content at fixed marginals, paper 2 §3), while `w` is a `[0, 1]` comparability fraction — a monotone identification needs a non-negative magnitude, and `E_cl` is the corpus's canonical one. Predicted form, from the geometric side: for faithful configurations `w(c, c′)` decays with transverse separation roughly as the diamond-overlap fraction; so `F` should be increasing, with `F(0) = w_floor` (causally disconnected chain pairs still have accidental comparabilities at the interleaving floor) — the floor is *measurable in advance* on sprinkling fleets and should be subtracted, not fitted.
+
+**(b) The hop-metric route [secondary, sharper theory].** Skip the affinity middleman: paper 2 §5's sourcing gives a graph and hop-metric directly; take `d_hop(c, c′)` between chains (minimal cross-links weighted by entangling content) and hand `−d_hop` (or `exp(−d_hop/ℓ)` with `ℓ` the one free scale, order-only calibrated as in `l2`) to MDS. This is theoretically cleaner — it uses exactly what paper 2 proved is sourced (ratios, not values) and exactly discards what it proved is not (the absolute scale, which the finder's scale-calibration step was *already built* to supply from the order side). If (a) and (b) disagree, (b) wins the argument and (a) wins the demonstration — record which.
+
+**(c) The collar route [held in reserve].** Collar-overlap data (v6 paper 10's T4 arena) as the mediator between seals and cross-chain comparability. Not developed here: it adds a construction layer without adding a test the first two lack; revisit only if (a) and (b) both fail their gates in a way that localizes to *missing* two-party data rather than the wrong functional.
+
+## 3. The falsifiable ladder (gates set now, measured later)
+
+- **L0 — spectral signature [cheap, kinematic].** On synthetic webs built *from* a sprinkling (chains = worldline bundles, so ground truth exists), compute the candidate affinity's MDS spectrum. Gate: `d_transverse` dominant components with a spectral drop `≤ 0.05` at the (d_transverse+1)-th eigenvalue ratio, mirroring `l3`'s `|λ₄|/λ₃` gate. Fails here ⇒ the functional form is wrong before any geometry is even asked for.
+- **L1 — the monotone relation [the identification proper, forward].** Same synthetic webs; measure `w(c, c′)` (order side) against `F⁻¹`-candidate (record side: `E_cl` or `d_hop`) per chain pair. Gate: Spearman `≥ 0.9` across the fleet, per-web, at both `N ∈ {400, 1000}`; the shuffled-coupling control must collapse below `0.2` (the `k3` control convention).
+- **L2 — the geometric closure [inverse].** Feed the record-side affinity (not `w`) through the `k3`/`l2` pipeline. Gate: transverse Procrustes `≥ 0.9` against held-out geometry (benchmark: `0.993` from `w` itself; the gap between them is the identification's measured cost), and — the stronger, corpus-consistent ask — the full finder run seeded by the record-side affinity lands in the same certificate band as the `w`-seeded run (`m1` parity convention).
+- **L3 — no geometry anywhere [the physics rung].** A record web generated by corpus dynamics (paper 1 supply + commit, decorrelated per design note 2) with a `χ`-field laid down as Tier-A configuration data sourcing connectivity per paper 2 §5; run the intrinsic finder with the record-native seed; score with certificate v2. Any certified or near-band verdict here is the headline; a refusal is *also* publishable (it localizes the failure to the sourcing, given L1/L2 passed).
+
+## 4. The blocker, stated honestly
+
+Paper 2 §4.7's **unbuilt two-party matter locus** is the real obstruction, and it must not be papered over: the corpus has no derived two-party interaction — the interacting Ginsparg–Wilson flow (paper 5) and any mode-selecting Hamiltonian are unbuilt — so `χ_AB` *values* cannot be produced from inside; they are free Tier-A inputs (that is paper 2's no-go, and it is a theorem, not a gap). The design therefore splits cleanly:
+
+- L0–L2 need **no** two-party dynamics: the `χ`-field is computed *from the synthetic web's own seal moments* (which exist once the web is built on a sprinkling) — the identification is tested as a *kinematic dictionary*, exactly parallel to how paper 14 tested the decoration principle.
+- L3 needs a *chosen* `χ`-field (configuration data). That is legitimate — paper 2 proves the choice is free — but the write-up must grade the rung [DEMONSTRATED given Tier-A input], never [DERIVED]. The derivation of `χ_AB` from a matter sector remains §4.7's open and is out of scope here by design.
+
+## 5. Kill conditions and known risks
+
+1. **Sign contamination.** If `I_σ`'s sign structure leaks into any candidate `F` (Spearman computed on signed values), the U-shape guarantees a spurious non-monotonicity. Pre-commit: all affinities are magnitudes; the sign axis is separately logged and must be *uninformative* (a measured null, `|Spearman| < 0.1`), which doubles as a fresh receipt of paper 2's sign-freedom.
+2. **The clock-correlation confound.** On record-native webs (L3), paper 13's obstruction makes chain fleets rays in rank–rank space; the transverse MDS would then read *supply persistence*, not space. Design note 2's mechanism is therefore a hard prerequisite for L3, and L3 must include a correlated-supply control that is *expected to fail* — if it passes, the pipeline is reading the confound and the run is void.
+3. **Floor illusion.** Comparability floors rise with chain count and `N`; an `F` fitted at one scale can be pure floor at another. All gates run at two `N` (the `m1` scale-lesson convention) and the floor is measured and subtracted per scale.
+4. **The honest failure mode.** If L1 passes and L2 fails, the coupling carries *ordinal* but not *metric* transverse information — that would refute the identification as stated while confirming paper 2's ratios-only sourcing; the redirect is then route (b) with the scale supplied order-only, and if *that* fails, the [POSITED] tag on "coupling structure carries the missing dimensions" for record webs is retired as measured-false at these regimes.
+
+## 6. Receipts plan (names reserved, not written)
+
+`n1_chi_dictionary.py` (L0 + L1: spectrum, monotone relation, shuffled + sign controls, two scales), `n2_chi_geometry.py` (L2: record-side seed through the finder, Procrustes + certificate band vs the `w`-seeded benchmark), `n3_record_native_web.py` (L3: corpus-dynamics web + Tier-A `χ`-field + design-note-2 supply; certificate v2 verdict with the correlated-supply void-control). Conventions: `default_rng(20260702)`, float64 measurement landscapes, gates as fixed in §3, verdict bands as in paper 15 §3. Every gate in this note is quoted so the receipts can assert against the design instead of the other way around.

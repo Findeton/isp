@@ -1,0 +1,43 @@
+# Design note 7: the magnitude no-go (enumerative) — can anything in the corpus pin `w = 0`?
+
+**Status:** derivation document, 2026-07-02. **[Executed same-date: receipt `f7` green 5/5 first run — outcomes in `LEDGER.md` #35; this note is left as pre-registered; the §5 predictions confirmed exactly (dC/dλ = −0.113946, relative −0.729911).]** Written **before** receipt `f7` runs; the enumeration, the two-branch base argument, the claim grades, and the receipt's computable predictions are fixed here. This is Push 1 of the updated plan: upgrade design note 6's verdict ("R3 tilted toward R2") to a decision, in either direction. The attempted theorem mirrors the corpus's own κ no-go in *role* — "the one thing records provably cannot fix from inside" — but **not in mechanism**, and the difference is stated up front (§3): the spread `w` is weight-0, so the grading trichotomy does *not* forbid a pinning principle. The no-go attempted here is therefore **enumerative** — relative to the corpus's current principle set — not absolute. That is the honest maximum available, and it is enough to decide the burden question.
+
+## 1. The claim to be decided
+
+**Pinning claim (R1, what the wall needs):** the realized per-seal content equals the arena atom exactly — `σ_seal = C(mode)` with zero spread — at every seal of every physical web, to precision better than `w = 0.5%` (equivalently, by `f6` check 7's first-order map, base-configuration exactness `δp < 1.1×10⁻³` web-wide).
+
+**No-go claim (this note):** no principle in the corpus's current set entails the pinning claim; every route either (i) is conditional on exactly the configuration data it would need to pin, (ii) explicitly disclaims magnitude, or (iii) constrains a different axis. Furthermore the count-dual point is **not a critical point of the content in configuration space** — the content moves at *first order* along every tested configuration axis — so there is no "protected minimum" for a generic-configuration argument to appeal to.
+
+## 2. The enumeration (the principle sweep)
+
+| # | Principle | Does it pin `σ_seal = C(mode)` exactly? |
+|---|---|---|
+| P1 | Count-dual/orthogonality admissibility gate (v6 p4 §73–76) | **No — category error.** It defines the *class* over which the `W_*` ceiling is a theorem; it is nowhere derived that physical webs realize the class exactly. Using it to pin would convert a class definition into a physical postulate — precisely the unstated assumption note 6 flagged. |
+| P2 | The arena fixed point (`Φ` strictly convex, unique minimizer; `Var[content] = 0`) | **No — it is conditional.** The determinism clause is `Var[σ | mode, base] = 0` (uniqueness of the root *given* the base; receipt-verified: `g′ > 0` everywhere). The wall needs the *marginal* `Var[σ | mode] = 0`, which requires the base marginal to be a delta. Nothing in the set supplies the delta. This conditionality is the note's central formal observation. |
+| P3 | The coboundary lemma (§4.1) | **No — it is the anti-pinning clause.** Form forced, "magnitude is physical configuration data; the law constrains differences only." Verbatim. |
+| P4 | The grading trichotomy / weight bookkeeping (the κ no-go's engine) | **Does not apply in either direction.** `w` is dimensionless, weight-0; weight-0 quantities *can* be internally derived (the arena derived `W_*`, `η_B`). So the trichotomy neither pins `w` nor forbids a future pinning principle — this is why the no-go is enumerative, not absolute. |
+| P5 | Screen stationarity (b2) | **No — different axis.** (b2) demands the *conversion* (channel contraction per unit content, κ) be location-independent along the commit order; survival multiplicativity in `χ` is definitional given the odometer, so per-seal content variation does not touch it. (b2) pins κ-homogeneity (itself assumed, discharge open) — not σ-homogeneity. |
+| P6 | Ledger completeness/primitivity | **No.** Constrains *which observables* commit, not the base or couplings. |
+| P7 | The Born layer / the base's meaning | **No under either reading — the two-branch argument, §4 below.** |
+| P8 | A dynamical attractor onto the symmetric point | **Absent.** No flow on the base/couplings exists anywhere in the corpus (placement undelivered). Goes to the falsifier list, with its precision requirement quantified. |
+
+## 3. Why this cannot be the κ no-go's clone (stated for honesty)
+
+The κ no-go is *absolute within its gate*: κ carries nonzero weight, and the grading homomorphism forbids any record-internal weight-0 derivation from producing it. The magnitude spread `w` is weight-0 — the same engine is silent. What replaces it is weaker but sufficient: (a) the enumeration above closes every existing route; (b) the first-order structure (§5) removes the only generic rescue (a protected critical point); (c) any *future* pinning principle now has a quantified job description — force the base delta (or identification-exactness) to `δp < 1.1×10⁻³` web-wide — and must do so from record-internal data that P2 shows is currently unconstrained. Grade of the result: **[ENUMERATIVE NO-GO — relative to the named principle set; falsifiable by exhibiting a pinning principle meeting the stated precision]**.
+
+## 4. The two-branch base argument (P7 resolved without deciding the base's meaning)
+
+The corpus's phrase "count-dual eventless base" admits two readings, and the no-go goes through under both:
+
+- **Base = physical pre-commitment marginal** of the committing contrast. Then the base is state/configuration-dependent through the Born layer itself; generic webs have `p ≠ 1/2` seal-to-seal unless a symmetry forces every committed contrast to be maximally symmetric — no such principle exists (P1–P8). The spread is then *directly* `w ≈ 4.570·δp` (f6). 
+- **Base = counting-dual convention** (a reference measure). Then the arena atoms are convention-exact — but the *physical* content is `σ = D(P_AB‖P_BA)` of the actual transport (paper 1's import (i)), and its identification with the arena's `C(mode)` is exactly §4.1's **[POSITED] cochain identification**. The spread reappears as configuration dependence of the realized Schnakenberg functional relative to the idealized arena value; exactness would require the identification to hold *exactly*, which is a posited layer, not a law. 
+
+Either way: exactness is unforced. The branches differ only in *where* the configuration dependence lives (base axis vs identification layer).
+
+## 5. The receipt's computable predictions (pre-registered)
+
+`f7` fixes four claims: **(1) conditionality of P2:** the one-mode fixed point is unique (`g′(h) = sech²h + e^{−h} > 0` verified symbolically/numerically) — `Var[σ | mode, base] = 0` holds exactly, and a base *ensemble* of width `δp` produces content spread `w = 4.570·δp + O(δp²)` (the j4 dispersion threshold `w = 0.5%` at `δp = 1.09×10⁻³`; the robust cell at `2.2×10⁻²`). **(2) No protected minimum, axis 1:** `dC/dp = −0.713404` at the count-dual point (re-fixed from f6). **(3) No protected minimum, axis 2 (new):** the cochain-unit axis — perturbing the seal condition `tanh h = e^{−λh}` around the admissible unit `λ = 1` — also moves content at first order: exploratory hand value `dC/dλ ≈ −0.114` (relative `≈ −0.730`), receipt-fixed at `dps = 40`. Two independent first-order axes ⇒ the content-critical locus has codimension ≥ 2 in configuration space: the symmetric point is not a minimum, maximum, or any protected point of content. **(4) Weight honesty:** `w` is a pure number (content ratios are κ-free) — the P4 row's "engine is silent" claim, stated and checked at the bookkeeping level.
+
+## 6. Verdict structure and falsifiers
+
+If `f7` lands as predicted: **conjunct 2 of the records wall is decided against R1 at the enumerative grade** — the wall's precision demand is a postulate foreign to the corpus, the content spread is generic configuration physics, and note 6's "tilted toward R2" upgrades to "R2 modulo the enumerated set." Combined with `f6` (conjunct 1 = the regime question, echo-floor-addressable) and `j4` (conjunct 3 held but moot once either other conjunct falls), the standing of the records wall becomes: **down by default; revivable only by a new named postulate** (P8-type attractor or a magnitude-pinning identification upgrade, precision `≤ 10⁻³` quantified in advance). Falsifiers, so the decision is not rhetorical: (i) a derivation that the committed contrast is always maximally symmetric (kills branch 1); (ii) an upgrade of the cochain identification to an exact law (kills branch 2); (iii) a derived attractor with web-wide basin and sub-`10⁻³` residual (kills P8's absence). Each would be a major positive result in its own right — which is exactly what "the burden has flipped" means.

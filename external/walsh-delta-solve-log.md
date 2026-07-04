@@ -686,3 +686,47 @@ Data consistent with (M): certified minima 1.84, 4.77, 5.25, 5.46
 (M) is a uniform-in-n statement, likely as hard as the limit route, but
 a restriction-map mechanism (orientation restricted to the bit_n = 0
 mask subgroup) is testable numerically — candidate next experiment.
+
+
+## 2026-07-02 — Standalone journal paper shipped (shard repo)
+
+Per instruction: an independent, publication-grade mathematics paper for
+the problem + solution now lives in the SHARD publishable-batch repo
+(`/Users/felixrobles/workspace/shard`), fully self-contained (no isp/SHARD
+dependencies, no [P] tags; "sealed" renamed to "self-calibrated"):
+
+- `papers/paper-XII-walsh-delta.md` (source of record, ~1030 lines): full
+  derivations of everything — existence/uniqueness (convex G_eps with
+  coercivity proof), translation + GL covariance, the delta law in closed
+  form (symmetry reduction via GL-transitivity + the scalar polynomial),
+  D_delta < 1/(N-1), Pinsker bookkeeping, spectral floor + sign readout,
+  dominance criterion, the deep-dip trichotomy with safe-rounded
+  constants, assembly for n >= 6, the certified n <= 5 computation
+  (Kantorovich + entropy-transfer lemmas proved; orbit reduction with
+  generator proof; Burnside cross-check), sharpness section (3-dip family,
+  conjecture 4log4), code manifest, references.
+- `tex/paper-XII-walsh-delta.tex` via the house md2tex (extended
+  additively with pipe-table + blockquote-display-math support;
+  regression-tested against paper-I: byte-identical output).
+- Code `w1`–`w5` + fresh canonical receipts (all green, all reproducible
+  per the README protocol): w1 exhaustive certified n<=4; w2 orbit BFS
+  (2/4/14/176 + checksums); w3 certified 176-orbit n=5 (path fixed to run
+  from repo root); w4 in-regime family verification (now both families at
+  n=9,10,11 + Lemma 5.1 checks); w5 NEW independent Burnside count in C
+  (exact divisibility, 2/4/14/176).
+- README: new "Standalone mathematics paper" section + receipt-map row;
+  notes that XII discharges the global-optimality lemma left open by
+  paper IX's receipt p9a (their "alternating-by-weight" orientation = the
+  delta at the all-minus state).
+
+Referee audit before finalizing (3 hostile journal referees): verdicts
+minor-revision x3, ZERO fatal/major math findings; all findings fixed:
+the two majors (unshipped cross-checks -> w5 shipped + Section 8.4
+reworded to shipped-vs-development; md2tex table/math damage -> converter
+patched, tex regenerated clean), the unsafe-rounding chain in Thm 6.1
+(1.244163 now cited so 0.701014 derives exactly), h_a > 0 one-liner in
+Section 1.1, margin 0.138873 -> 0.138872 (safe direction), entropy-error
+global bound 1e-32, Burnside wording (translation-sum inside the GL
+loop), j=1 remark, notation dip-transform F -> Phi, receipt-file
+documentation. PDF compilation pending (no tectonic on this machine; tex
+is ready and clean).

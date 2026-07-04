@@ -366,12 +366,6 @@ def process_n(n, want_aut=True):
     buckets = {}
     for rel in nat:
         h = wl_hash(n, rel)
-        buckets.setdefault(h, [])
-    # second pass to actually place (need fresh because hashing twice is wasteful;
-    # do it in one pass instead)
-    buckets = {}
-    for rel in nat:
-        h = wl_hash(n, rel)
         lst = buckets.setdefault(h, [])
         placed = False
         for cls in lst:
