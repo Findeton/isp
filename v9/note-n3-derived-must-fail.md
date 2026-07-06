@@ -16,6 +16,21 @@ ml2's construction verbatim (web (2048, 32, 16); chains = segments ≥ 8; the de
 - **Gn3 (the calibrated confound):** the derived field's max-statistic below its permutation-null 95th percentile on ≥ 5/6 seeds; a firing seed is adjudicated by Gn2(b) (supply-partialled closure retained ⇒ benign shared geometry, recorded; not retained ⇒ that seed VOID).
 - **T6.4 semantics, pinned:** Gn1 ∧ Gn2(a,b) ∧ Gn3-or-benign ⇒ **the must-fail void is DISCHARGED and T6.4 is fully met at rung-2 grade**; Gn2(a) refusing ⇒ the pipeline cannot distinguish geometry from bookkeeping — T6.4 refused at the void, the readout line redesigns (the honest outcome).
 
+## 3. The refusal ledger and the diagnosis (2026-07-06; the run frozen pre-analysis)
+
+**Gn1 HELD (closure 0.871–0.942, 6/6) — everything else REFUSED, and the refusal is the leg's finding:**
+
+- **Gn2a — the must-fail control fired on its first real outing:** the supply-only surrogate closes the "own geometry" at **0.713–0.797** on every seed (null 0.10–0.14). The pipeline does NOT reject bookkeeping-only fields *in this design*.
+- **Gn3:** the derived field's recovered coordinates correlate with supply observables at max-statistic 0.86–0.92 vs null 95th ≈ 0.22–0.30 — on every seed. **Gn2b:** residual retention 0.71–0.90× (4/6 above the 0.85 line) — not benign.
+
+**The diagnosis (design-level, not instrumental):** the own-geometry target — each chain's mean two-clock rank position — is **built from (mean commit rank, mean content rank) ≈ (birth time, content level): the target IS a supply readout.** A field carrying only bookkeeping closes it because the bookkeeping and the target are nearly the same object. This is the round-4 review's M6 caveat ("probe and target are functionals of the same committed (b, χ)") materialized as a gate refusal — the rung-2 *own-geometry* form cannot, even in principle, distinguish "the field carries geometry" from "the field carries the web's bookkeeping", because in this design the geometry IS the bookkeeping's shadow.
+
+**Per the pinned kill semantics (§2, verbatim): "Gn2(a) refusing ⇒ the pipeline cannot distinguish geometry from bookkeeping — T6.4 refused at the void, and the readout line redesigns."** T6.4 therefore stands: **L2 conjunct certified (Tier-A legs); the must-fail void REFUSED on the own-geometry derived leg; the gate NOT met — and now for a measured reason, not a paper-trail gap.** No amendment: the branch fired as pre-agreed.
+
+**What the redesign requires (named for the next leg, not begun here):** a target that is *not derivable from supply observables* — neither planted (the Tier-A legs' limitation: the web contributes only the roster) nor the two-clock positions (this leg's: supply-aligned). The corpus already owns the candidate instrument class: the **tomography line's invariants** (papers 14–15 — celestial structure, reconstruction certificates), which are functions of the *causal pattern across many sheets*, not of per-chain bookkeeping. The genuinely binding 3+1 test: **ml3b's matter-derived field at fleet scale, scored against tomographic invariants** — both halves now have their first pieces (the step-(b) correlator exists and decays; the tomography certificates run at pilot scale).
+
+**Retro-scope on ml2 (recorded, to be reviewed):** rung 2's "the derived field reads out the web's own two-clock geometry" survives as a *measurement* (it does close it) but its **evidential weight is demoted**: closing a supply-aligned target is necessary, not probative — the ml2 size-residual void tested one supply feature (size); this leg's two-feature surrogate (level × birth) closes the target nearly as well as the field does. The demotion notice belongs in the ml2 record (LEDGER row; the note stands as history).
+
 ## References
 
 ml2 (`ml2_derived_field_web.py` — the construction verbatim; the size-residual void this generalizes); note-n3-full §4 (MINOR-6/7 — the placebo finding and the outstanding-void status); PLAN T6.4 (the amended gate's named must-fail control); the round-15 review; LEDGER #66.
