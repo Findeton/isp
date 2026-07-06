@@ -762,3 +762,7 @@ Attempt II per the r26 void: the instrument moves from chain MOMENTS (measured c
 ## Round 27 CLOSED (2026-07-06)
 
 A second certified void with two real findings banked (the double-blindness theorem-by-measurement; the fleet-domination of extremal statistics). The program's honest position after five 3+1 rounds: dimension = channels is MEASURED (the ladder 2.00/2.83/3.67); cone shape is UNDISCRIMINATED pending directional instruments; the named round-28 designs: de-fleeted statistics and/or the Phase-3 intrinsic-finder leg (which doubles as the directional instrument). No reviews (mode).
+
+## 2026-07-06 (round 28) — OPENED at user go (one-at-a-time, token-lean): DE-FLEETED STATISTICS
+
+note-3p1-p2c pins: decimation = ONE representative commit per slot-LIFE (life boundaries = any channel reset of the slot — record-native: one record per thread-life), fixed N_dec = 320 by subsampling the kept set; the registered expectations: the tall-narrow extremal anomaly RESOLVES (the webs join the common uniform-causality locus at matched s2 — matched to the orthant family as representative since round/orthant are extremal-indistinguishable, disclosed), d_MM(C = 3) rises from 3.67 toward the 3.92 ideal, and order dimension survives. Review trigger re-pinned: decimated d_MM(C = 3) >= 3.8 => flag PENDING-USER-REVIEW-DECISION. The Phase-3 leg (intrinsic finder) WAITS for the next user go. NO-REVIEW MODE stands.
