@@ -7,12 +7,13 @@ receipt existed — the freeze discipline's first full cycle).
 Theorem P: churn-class supplies with sub-geometric lifetime tails and
 atomless content have interval-count statistics -> Poisson at rate
 O(L/N) (Chen-Stein over the life-partition dependency graph). Joints:
-  P-DOUBLEPRIME BAND PINS (note-t23 SS7, pinned at 080fd89; run-1 and
-     run-2 histories frozen at f959aeb / d0f9d87): V1'' both ensembles'
-     band gaps decay in N AND churn <= box everywhere; V2'' P3 as the
-     N-trend (geom decay >= 1.3x; heavy STRICTLY flatter); V3'' the
-     cv2-correct qualifying prediction (det/geom in [0.1, 1.0]); V4
-     unchanged. Band = exp_k in [10, 40], the Poisson-target regime.
+  RUN-4 FORM (note-t23 SS9, pinned at 1cee768; history frozen at
+     f959aeb/d0f9d87/cbbe6c9): V1-dp/V2-dp/V4 stand from run 3
+     (adjudicated sound); V3-dp (REFUSED-BY-MISPINNED-FUNCTIONAL per the
+     cycle review) REPLACED by the review-prescribed V3-tp (signed
+     control-relative band excess, SEs both legs) and V1-tp (margin cap
+     dr1,dr2 <= sqrt(40N) — true vanishing sampling fraction).
+     Non-blind confirmation run, disclosed.
   V2 the density mechanism: gap at N = 2048 monotone non-decreasing in
      L across {2, 4, 8} [directional].
   V3 the tail boundary (Lemma P3, load-bearing): matched mean-lifetime 4 —
@@ -112,6 +113,28 @@ def ifano_band(b_, c_, lo=10, hi=40):
     resid = btw[ii, jj][sel] - exp_k[sel]
     return float(np.mean(resid ** 2 / exp_k[sel]))
 
+def sfano_band(b_, c_, lo=10, hi=40, cap=False):
+    """SIGNED (fano - 1) on the band; cap=True adds the margin cap
+    dr1, dr2 <= sqrt(40*N) (note SS9 / review MAJOR-3)."""
+    pts_ = np.column_stack([np.asarray(b_, dtype=float), c_])
+    Np = len(pts_)
+    C = dominance_order(pts_)
+    r1 = np.argsort(np.argsort(pts_[:, 0]))
+    r2 = np.argsort(np.argsort(pts_[:, 1]))
+    Cf = C.astype(np.float32)
+    btw = np.rint(Cf @ Cf).astype(np.int32)
+    ii, jj = np.nonzero(C)
+    dr1 = (r1[jj] - r1[ii]).astype(float)
+    dr2 = (r2[jj] - r2[ii]).astype(float)
+    exp_k = (dr1 - 1) * (dr2 - 1) / Np
+    sel = (exp_k >= lo) & (exp_k <= hi)
+    if cap:
+        m = np.sqrt(40.0 * Np)
+        sel &= (dr1 <= m) & (dr2 <= m)
+    if not np.any(sel): return float("nan")
+    resid = btw[ii, jj][sel] - exp_k[sel]
+    return float(np.mean(resid ** 2 / exp_k[sel])) - 1.0
+
 REPS = 24
 def cellstats(Nn, life, L):
     full, band = [], []
@@ -169,14 +192,46 @@ check("V2'' (Lemma P3 as the N-trend, 24 reps) [directional]: geometric "
       "ratio STRICTLY below the geometric's (the plateau signature)",
       rg >= 1.3 and rh < rg, f"geom {rg:.2f}x vs heavy {rh:.2f}x")
 
-dd = band_cell(2048, "det", 4)
-ratio = dd[0] / max(gg[2048][0], 1e-12)
-print(f"      V3'' @2048 mean-4: det {dd[0]:.4f}+-{dd[1]:.4f} vs geom "
-      f"{gg[2048][0]:.4f} -> det/geom = {ratio:.2f}")
-check("V3'' (the cv2-correct qualifying prediction, 24 reps) "
-      "[directional]: det <= geom with det/geom in [0.1, 1.0] (T2.1's "
-      "cv2 law's direction; the anti-corpus symmetric pin retired)",
-      0.1 <= ratio <= 1.0, f"det/geom = {ratio:.2f}")
+def signed_cell(Nn, life, L, cap=False):
+    vals = []
+    for _ in range(REPS):
+        chi, _ = web_churn(Nn, M, life, L)
+        vals.append(sfano_band(np.arange(Nn), chi, cap=cap))
+    return float(np.mean(vals)), float(np.std(vals, ddof=1)/np.sqrt(REPS))
+def signed_box(Nn, cap=False):
+    vals = [sfano_band(np.arange(Nn), rng.random(Nn), cap=cap)
+            for _ in range(REPS)]
+    return float(np.mean(vals)), float(np.std(vals, ddof=1)/np.sqrt(REPS))
+
+bx_s = signed_box(2048)
+dt_s = signed_cell(2048, "det", 4)
+gm_s = signed_cell(2048, "geom", 4)
+ex_d = dt_s[0] - bx_s[0]; se_d = (dt_s[1]**2 + bx_s[1]**2) ** 0.5
+ex_g = gm_s[0] - bx_s[0]; se_g = (gm_s[1]**2 + bx_s[1]**2) ** 0.5
+ratio = ex_d / max(ex_g, 1e-12)
+print(f"      V3-tp signed excess @2048: det {ex_d:+.4f}+-{se_d:.4f}, "
+      f"geom {ex_g:+.4f}+-{se_g:.4f} -> det/geom = {ratio:.2f} "
+      f"(box floor {bx_s[0]:+.4f}+-{bx_s[1]:.4f})")
+check("V3-tp (review-prescribed functional: signed control-relative band "
+      "excess, SEs both legs; NON-BLIND confirmation, review expectation "
+      "0.25): both excesses positive AND det/geom in [0.05, 0.6] — the "
+      "T2.1 direction on the right functional",
+      ex_d > 0 and ex_g > 0 and 0.05 <= ratio <= 0.6,
+      f"ratio {ratio:.2f}")
+
+capbox = {Nn: signed_box(Nn, cap=True) for Nn in NS}
+capch = signed_cell(4096, "geom", 2, cap=True)
+print("      V1-tp capped box floor: " + "  ".join(
+    f"N={n}: {capbox[n][0]:+.4f}" for n in NS)
+      + f"   capped churn-L2 @4096: {capch[0]:+.4f}+-{capch[1]:.4f}")
+mono_cap = abs(capbox[512][0]) >= abs(capbox[2048][0]) >= abs(capbox[4096][0])
+near0 = abs(capch[0]) <= 3 * capch[1]
+check("V1-tp (the margin-capped regime, review MAJOR-3; NON-BLIND, review "
+      "expectation -0.017+-0.019): the capped box floor decays "
+      "monotonically AND churn-L2 sits within 3 SE of exact Poisson at "
+      "N = 4096 — Theorem P-dp at its strongest", mono_cap and near0,
+      f"box |floor| mono {mono_cap}; churn {capch[0]:+.4f} vs 3SE "
+      f"{3*capch[1]:.4f}")
 
 ok4 = True
 for Nn in (1024, 4096):
@@ -196,7 +251,7 @@ check("V4 (the density ledger = paper 16 object): within 25% of "
 print()
 print(f"PRE-REGISTERED GATE LEDGER (P'' band pins, note SS7): "
       f"{'ALL HELD' if FAIL == 0 else 'REFUSALS PRESENT'} — V1'' decay+order; "
-      f"V2'' P3 N-trend; V3'' cv2 prediction; V4 ledger")
+      f"V2 P3 N-trend; V3-tp + V1-tp (SS9); V4 ledger")
 print()
 total = PASS + FAIL
 print(f"ALL CHECKS PASS ({PASS}/{total})" if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
