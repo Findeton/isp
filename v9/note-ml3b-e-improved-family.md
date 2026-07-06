@@ -25,6 +25,13 @@ Bubbles with **K = (1 − D/2) S** in place of S (source, vertex, and sink all i
 
 All of note-ml3b-d §5 verbatim (tree exchange, L = 6, large-N, 2d, quenched, sectors (1, 2)). The S/P **channel labels** remain the mode import; what this family removes is the operator-level arbitrariness *within* the channels (the covariant densities are unique up to normalization, which cancels in signs). A SELECTED here inherits the same "not yet a Bell derivation" caveats; a kill here is graver than round 18's split — it would refute the locus at its own consistent operator content.
 
+## 5. Review corrections (2026-07-06, the round-19 hostile review — applied; PASS-WITH-CORRECTIONS, reproduction exact, verdict stands)
+
+- **The contraction algebra certified:** independently derived — the connected correlator of ψ̄Γ(1−D/2)ψ densities is Π^{ab}(u,v) = −Tr[Γ_a K(u,v) Γ_b K(v,u)] with exactly one (1−D/2) per leg; the receipt matches to 7e-18; (1−D/2) commutes with S exactly (3e-17) so the placement is unambiguous; source/vertex/sink consistently improved.
+- **MINOR-4 (over-quantification corrected):** "every split ever measured is subtraction-side" holds for the 16 principled-estimator legs of rounds 18–19 (referee-enumerated: all 4 even legs are sub-side; all 8 full legs odd) but NOT universally — round 17's window split (contact even / shell odd) existed under both conventions. The claim is scoped to the estimator protocol.
+- **NITs:** the (4, −½) even-even reading is the SECOND of its form (round 17's root read the window pattern, which contains an odd shell); the improved family's P-cell shrinkage is ~×7–12 for E2 but ×58–118 for E1 (the record's "~an order" was conservative).
+- **Round-20 option list amended (referee physics adjudication: the pathology-class claim is CORRECT as stated; 2d transfer sound):** add the standard **scalar-minus-pseudoscalar (S − P) cancellation combination**, in which exact-zero-mode contributions cancel — to be weighed alongside sector-weighting, subtraction, and the contamination's own V-scaling (∼1/(m²V)-type at fixed Q).
+
 ## References
 
 note-ml3b-d (+§6) and `ml3b_d_one_shot.py` (protocol + machinery, verbatim); note-ml3b-c §6 (the corrected zero-mode form); note-ml3b-a §2/MINOR-3 (the gap-side (1 − D/2) trace — the consistency argument's source); v8 paper 5 (the Lüscher standard); LEDGER #71/#73.
