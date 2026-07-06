@@ -59,6 +59,17 @@ Refusals print the ledger and exit 1 by design; the first-run ledger is preserve
 
 Standing corrections this section supplies to §§1–2: the §1 absolute statement is superseded (twice: P → P′ → P″); Lemma P2's bound is per-unit-count in the band regime; Lemma P3 gains "as an N-trend" in its statement. The gap list (§3) gains: 5. the mean-model-bias term of the pooled instrument (why band-restriction or band-calibration is necessary — the reference-floor discovery of §5, now with its control-relative residue measured).
 
+## 7. The P″ (band) pins — the round-13 continuation (2026-07-06; committed before the re-instrumented receipt runs)
+
+Instrument: `ifano_band` (u1's statistic restricted to exp_k ∈ [10, 40] — the vanishing-sampling-fraction regime where the Chen–Stein target is exactly Poisson). 24 reps per cell; SEs printed; all gates [directional]. The P′ run-2 results stand as frozen history (§6, d0f9d87); these pins supersede them as the receipt's current form.
+
+- **V1″ (the band decay + the ordering):** at N ∈ {512, 2048, 4096}, (M, L) = (32, 2): BOTH ensembles' band gaps decrease monotonically in N, AND churn ≤ box at every N (the run-2 diagnostic read churn 0.341 → 0.183, box 0.459 → 0.290 at 24 reps — these are now the registered expectations, not blind pins; disclosed).
+- **V2″ (Lemma P3 as the N-trend it always was):** at matched mean-lifetime 4, the band-gap decay ratio gap(512)/gap(4096): geometric ≥ 1.3×; the heavy-tail law's ratio STRICTLY BELOW the geometric's (the plateau signature — flatter decay under infinite variance). Both-decay-equally ⇒ REFUSED ⇒ P3 unsupported at this scale — report, no rescue.
+- **V3″ (the cv²-correct qualifying prediction — the T2.1-consistent re-pin):** at (2048, mean 4): det ≤ geom in band gap (cv² = 0 ⇒ below), with det/geom ∈ [0.1, 1.0] (the halved density + zero-cv² direction; the old "within 2×" symmetric pin is retired as anti-corpus, §6).
+- **V4:** unchanged (held twice).
+
+Kill semantics: V1″ refusing on the ordering (churn > box) ⇒ P″ itself is wrong — halt, no amendment without a fresh diagnosis section; V2″ refusing on the geometric side ⇒ the band rate is wrong (not just the tail clause). Refusals exit 1 by design; this section is the last pin round for t23 — any further refusal goes to the review as-is.
+
 ## References
 
 PLAN T2.1–T2.3 (the statistical-layer bracket; T2.2 = the deterministic converse, out of this note's scope); note-u4 Addendum + u4a (the race-model factorization P1 imports); v8 paper 16 (§2 the τ/same-lineage ledger — P2's density object; §4 the cell's z layer; the L = 2 staircase residual this theorem's rate contextualizes); note-w1/Theorem W (the companion pillar; the shared continuity/atomless hypothesis); u1 (`interval_fano` — the instrument, verbatim); Chen (1975), Stein (1972), Arratia–Goldstein–Gordon (1989) — the dependency-graph Poisson approximation; LEDGER #61–#62.
