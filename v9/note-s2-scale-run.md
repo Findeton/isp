@@ -1,0 +1,13 @@
+# T-scale — the s2 scale run: does the derived action's growth hold at N = 512–1024, and what do the order-only layers say?
+
+**Status:** design note + pre-registration, 2026-07-05 (round 3; v9 paper 1 §6's named next rung). Receipt: `v9/code/s2_scale_run.py` (long-running; launched in background).
+
+**Arms.** A1 (r+link+S_comp) argmin at N = 512 (8 reps) and N = 1024 (2 reps, [directional]); A2 (+S_ab, increments truncated to interiors k ≤ 64 — DISCLOSED: the j ≤ 2 abundance rows act at small k, and the truncation caps the O(k³) increment cost; the truncation is a charge floor, not a reference substitute) at N = 256 (6 reps) + N = 512 (2 reps); β = 0 kernel control at N = 512 (3 reps).
+
+**The verdict layers (order-only first — no realizer assumed).** (a) (r, H) class per s1's bands; (b) the heredity axis: mean interior `r_I` over the largest intervals (paper 11 h2's object) vs the faithful ½-band; (c) the abundance axis: sampled per-interval `m_ab` vs the faithful same-k baseline (the s0 machinery — an order-only statistical layer); (d) `dim ≤ 2` capped oracle with honest UNDECIDED; (e) only if (d) decides YES: canonical D* powered verdict vs the same-N band (q2 semantics). Layer (e) is expected UNDECIDED-blocked at these r/n (the backtracking oracle's exponential face) — the poly-time realizer implementation is the named unblock, not this receipt's.
+
+**Pre-registered predictions (both directions live).** P1: A1's endpoint r holds in [0.38, 0.52] at both scales (offset persistence vs closing toward ½ — either is the finding). P2: the β = 0 control leaves the MIDDLE band upward at N = 512 (its measured drift 0.555 → 0.649 over n = 64 → 128 continues; r_ctrl ≥ 0.7 = DENSE), completing the attribution: **the action holds at scale what the kernel loses**. P3: A1's heredity axis reads faithful-band interiors (mean r_I ∈ [0.35, 0.65]); the forgery direction (unbalanced interiors at balanced global r) is the named alternative. P4: A1's sampled m_ab sits above the faithful baseline (ratio measured — the fine-structure gap Row A prices); A2's sits below A1's at its scales (steering persists at scale). P5: layer (d) returns UNDECIDED at N = 512 within the cap (disclosed expectation, not a gate).
+
+**Kill/redirects.** Control stays MIDDLE at 512 ⇒ the attribution weakens to centering-only (stated). A1 leaves [0.38, 0.52] downward ⇒ the S_comp pull loses to the r-term at scale — re-derive the trade-off. Abundance ratio explodes ⇒ the forgery direction — Row A's steering becomes the primary axis for round 4.
+
+Conventions: `default_rng(20260707)`; float64; the powered semantics where bands apply; gates quoted in the docstring.

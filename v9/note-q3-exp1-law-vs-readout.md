@@ -1,0 +1,32 @@
+# q3 — the Exp(1) disambiguation: what is law, what is posit, and what the D2 theorem must therefore target
+
+**Status:** design-note section, 2026-07-05 (PLAN.md T0.3). No code; sources pinned. This note fixes the well-posedness question that gates every Tier-3 proof attempt: *is the corpus's per-lineage `Exp(1)` claim a law-level statement (the physical clock is exponential) or a readout-level statement (any stack whose seal-time marginal reads exponential is admissible)?* The answer is split, and the split relocates the D2 theorem's target.
+
+## 1. The sources, pinned
+
+**(a) The per-lineage survival law is law-level *in the evidence coordinate*.** v6 paper 4 §71 derives `S(I) = e^{−I}` from eventless sealed gluing (with continuity) — `S(I+J) = S(I)·S(J)` with `I` the accumulated RN/KL evidence, which obeys the chain rule under sealed gluing *because it is the RN/KL action in natural log units*, not a generic monotone score — plus exact self-accounting, `−log S(I) = I`, which kills the remaining rate (`λ = 1`, commitment ratio `r = 1`). The companion diagnostic section (§72's attack table) already closes the readout loophole at the clock level: the **clock-regraduation attack** (`I → f(I)`) is rejected — nonlinear clocks violate sealed additivity, linear rescalings violate self-accounting unless `c = 1` (verdict line: REJECTS-HIDDEN-CLOCK). Paper 1 §4.3 carries this forward verbatim: the seal fires on a random evidence clock `I ∼ Exp(1)`, `E[I] = Var[I] = 1` exactly, with all per-mode content deterministic (`Var[content | mode] = 0`) so that *all randomness lives on the evidence axis*. **Conclusion: `Exp(1)` is not a readout convention. It is forced as the survival law in the one coordinate the records intrinsically carry, and regraduations of that coordinate are already excluded by the corpus's own attack table.**
+
+**(b) The uniform race — and hence the `Geometric(1/M)` sequencing marginal — is posit-level.** Paper 16 F1: the committer is uniform on the live fleet *under one named posit* — independence of the lineages' evidence clocks, a refinement of paper 13's posit 1 that *specifies the sequencing distribution*. The `Geometric(1/M)` per-lineage inter-commit count marginal is the shadow of that posit (an `Exp(1)` race among `M` independent identical clocks hands each commit to lineage `ℓ` with probability `1/M`), not of the §71 law. Nothing in §71 or paper 1 §4.3 constrains the *joint* across lineages.
+
+## 2. The disambiguation, stated once
+
+> **Law-level (non-negotiable):** the per-lineage inter-commit *evidence* marginal is `Exp(1)` along every lineage — in the RN/KL evidence coordinate, with regraduation excluded.
+> **Posit-level (swappable, at the price of a named posit swap):** independence of the lineages' clocks, hence the uniform committer and the `Geometric(1/M)` sequencing marginal.
+
+Design note 8 §2 (D2) already had the right object — its legality gate is "a deterministic committer-given-history must still reproduce that [`Exp(1)`] marginal along every lineage" — and its framing of D2 as a *posit swap* is exactly clause two. What was not yet said, and matters now:
+
+## 3. Three consequences for Tier 3
+
+**(i) `u3`'s D2 visibility is posit-deviation, not illegality.** The `u3` powered gate measured both deterministic committers `≫ 5×` off the **`Geometric(1/M)` sequencing marginal** (round-robin `0.63`, argmin-χ `0.23`, calibration `0.007`). Under this note's split, that establishes *visibility of the posit swap* — the committer detectably replaces the independence refinement — and nothing about corpus-legality. A D2 candidate is not corpus-illegal for failing `Geometric(1/M)`; it is corpus-illegal only if it fails the per-lineage `Exp(1)` *evidence* marginal.
+
+**(ii) The irreducibility theorem must be stated against the evidence marginal.** The strong form of the Tier-3 target is: *no committer/clock stack that is a deterministic functional of the committed web (finite generative state, equivariant) reproduces the per-lineage `Exp(1)` evidence marginal along every lineage.* The `Geometric(1/M)` version is then a **corollary under the independence posit**, not the theorem. Proposals that target `Geometric(1/M)` directly prove only that deterministic committers are *distinguishable from the uniform race* — true, measured (`u3`), and strictly weaker than irreducibility.
+
+**(iii) The `w = 0` rigidity leg is nearly immediate once correctly targeted.** For a *fully determinized* stack (deterministic content, `w = 0`, deterministic committer, deterministic event schedule), the per-lineage inter-commit evidence sequence is a deterministic functional of a deterministic web: with finite generative state the trajectory is eventually periodic, so the empirical evidence marginal is supported on finitely many values — and a finitely-supported law has Kolmogorov–Smirnov distance from `Exp(1)` bounded below by a constant depending only on the support size (`sup_F |F_n − F_exp| ≥ 1/(2k)` for `k` atoms is the crude floor). The law-level marginal is therefore *unreachable* by the fully determinized stack — the L0 leg of the Tier-3 ladder — while the `w > 0` case (content randomness available for laundering into the evidence axis) is the genuine content of the theorem, exactly as PLAN.md T3.1 has it. *(This paragraph is the statement of the leg, not its proof; the proof, with the hypotheses doing their named work, is T3.1's.)*
+
+## 4. What this note does not decide
+
+Whether any *stochastic-but-non-race* committer (deterministic given history, but fed by the content spread `w > 0`) can launder content randomness into an exact `Exp(1)` evidence marginal — that is the open heart of T3.1, both directions live. And nothing here touches the *placement* freedom (C4): this note is about the sequencing/clock layers only.
+
+## References
+
+v6 paper 4 §71–72 (the derivation: eventless gluing + continuity + exact self-accounting ⇒ `S(I) = e^{−I}`, `λ = 1`, `r = 1`; §72's attack table incl. clock regraduation REJECTS-HIDDEN-CLOCK); v8 paper 1 §4.3 (the firing law and the three-object discipline; `E[I] = Var[I] = 1`; per-mode determinism); v8 paper 16 §2 F1 (the named independence posit; uniform committer); design note 8 §2 (D2 as a posit swap; the evidence-marginal KS gate); `u3_determinism_axis.py` (the powered sequencing-marginal gate this note re-classifies); v8 paper 17 §6 (the enumerative evidence); PLAN.md T0.3/T3.1.

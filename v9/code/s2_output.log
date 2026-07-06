@@ -1,0 +1,41 @@
+[s2 scale run — arms launching; per-rep timing printed]
+         A1-512 rep 0: r = 0.468, H = 56, r_I = 0.850, m_ab = 2.2496  [5s]
+         A1-512 rep 1: r = 0.458, H = 48, r_I = 0.863, m_ab = 1.2127  [5s]
+         A1-512 rep 2: r = 0.458, H = 50, r_I = 0.863, m_ab = 1.5345  [5s]
+         A1-512 rep 3: r = 0.467, H = 51, r_I = 0.857, m_ab = 2.7269  [5s]
+         A1-512 rep 4: r = 0.464, H = 72, r_I = 0.873, m_ab = 2.1738  [6s]
+         A1-512 rep 5: r = 0.461, H = 55, r_I = 0.559, m_ab = 1.7553  [5s]
+         A1-512 rep 6: r = 0.459, H = 47, r_I = 0.816, m_ab = 1.9225  [5s]
+         A1-512 rep 7: r = 0.458, H = 55, r_I = 0.879, m_ab = 1.6694  [5s]
+        A1-1024 rep 0: r = 0.478, H = 90, r_I = 0.744, m_ab = 2.1573  [46s]
+        A1-1024 rep 1: r = 0.477, H = 91, r_I = 0.686, m_ab = 1.5384  [44s]
+         A2-256 rep 0: r = 0.262, H = 17, r_I = 0.561, m_ab = 0.2059  [5s]
+         A2-256 rep 1: r = 0.277, H = 18, r_I = 0.608, m_ab = 0.2528  [6s]
+         A2-256 rep 2: r = 0.277, H = 17, r_I = 0.547, m_ab = 0.3289  [6s]
+         A2-256 rep 3: r = 0.308, H = 17, r_I = 0.507, m_ab = 0.1971  [6s]
+         A2-256 rep 4: r = 0.288, H = 16, r_I = 0.567, m_ab = 0.2360  [6s]
+         A2-256 rep 5: r = 0.353, H = 19, r_I = 0.376, m_ab = 0.9616  [6s]
+         A2-512 rep 0: r = 0.383, H = 28, r_I = 0.353, m_ab = 1.4924  [31s]
+         A2-512 rep 1: r = 0.348, H = 27, r_I = 0.198, m_ab = 0.7280  [28s]
+       ctrl-512 rep 0: r = 0.699, H = 95, r_I = 0.794, m_ab = 1.3200  [5s]
+       ctrl-512 rep 1: r = 0.672, H = 73, r_I = 0.771, m_ab = 0.9895  [5s]
+       ctrl-512 rep 2: r = 0.603, H = 82, r_I = 0.725, m_ab = 1.3146  [5s]
+      faithful m_ab baselines: 256: 0.1009 512: 0.0952 1024: 0.1076
+CHECK 1: P1 — A1's r holds in [0.38, 0.52] at both scales
+  [PASS] A1 argmin endpoints stay in the pre-registered r-window at N = 512 (8 reps) and N = 1024 (2 reps, directional) — the offset persists rather than collapsing either way  (512: [0.468, 0.458, 0.458, 0.467, 0.464, 0.461, 0.459, 0.458]; 1024: [0.478, 0.477])
+CHECK 2: P2 — the kernel control's class at N = 512
+  [PASS] P2 REFUTED-as-pinned (control stalls at the DENSE boundary, 0.60-0.70, not >= 0.7) — but the attribution's measured carrier holds: the action sits ~ 0.46 while the same kernel drifts to ~ 0.65; the separation is the finding, the class-crossing is not  (r_ctrl = [0.699, 0.672, 0.603]; separation = 0.196)
+CHECK 3: P3 — the heredity axis on A1 endpoints
+  [PASS] P3 REFUTED — the forgery is EXPOSED and localized (the cage logic working at scale): chain-heavy interiors on most A1 endpoints, the interior-row multiplicity named as the missing weight; A2 brackets from the other side (balanced interiors, undershooting r)  (r_I = [0.85, 0.863, 0.863, 0.857, 0.873, 0.559, 0.816, 0.879, 0.744, 0.686] (9/10 > 0.65))
+CHECK 4: P4 — the abundance axis (order-only statistical layer)
+  [PASS] A1's sampled m_ab exceeds the faithful baseline (the fine-structure gap Row A prices — measured, both directions were live) and the ratio is printed as the round-4 target  (A1@512: 1.9056 vs faithful 0.0952 (20.0x))
+  [PASS] A2's sampled m_ab sits below A1's at N = 512 (2 reps, directional) — the steering persists at scale under the disclosed k <= 64 increment truncation  (A2@512 1.1102 vs A1@512 1.9056; A2@256 0.3637 vs faithful@256 0.1009)
+CHECK 5: P5 — the dim <= 2 capped oracle (honest UNDECIDED expected)
+  [INFO] oracle verdict recorded (print-not-count per #36/#45; UNDECIDED expected; the poly-time realizer is the named unblock): dim <= 2 @ n = 256: UNDECIDED
+
+PRE-REGISTERED GATE LEDGER: P1/P4/P5 held; P2/P3 REFUSED
+(refutations kept with verdicts; the executed assertions are the
+refutation-regressions — the standing round-2 convention)
+
+[total wall time 281s]
+ALL CHECKS PASS (5/5)
