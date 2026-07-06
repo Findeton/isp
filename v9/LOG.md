@@ -688,3 +688,7 @@ Paper 5 SS6 gains the RPA rows ((v): the dressed legs invert the lean) and the a
 ## Round 22 CLOSED (2026-07-06)
 
 Delivered: paper-5 results pass (f1cd23a); the PLAN fork + funded line; note-h1 + receipt + the pre-data amendment + the run (SELECTED-EVEN-H raw) + the reserved review (VOIDED — FAILS-AT-H-EXACT) + the disposition + paper 5's final form. **The funded sign program is complete and honestly terminal. Live lines: ml4 (deferred; now carrying the sign's last accessible test as a passenger), the wb-line next rung, backlog; the SHARD article needs its sign section rewritten to the final terminal form before publication.**
+
+## 2026-07-06 (round 23) — OPENED at user go: THE 3+1 PROGRAM, Phase 0 (the dimension ledger)
+
+User decisions: the 3+1 question takes priority over the 2D-closure program (which becomes the fallback); ml4 stays parked; **NO-REVIEW MODE for this program** (recorded in PLAN + every doc); the Phase-1 d~4 reserved-review recommendation stands for the user's future decision. Phase 0 = note-3p1-dimension-ledger (the two-clock obstruction theorem-grade + the escape-route ledger) + `dimwall_phase0.py` (the instrument: order-dim <= 2 tester wire-checked; M2 pass / M3 refuse / corpus webs consistent; the measured MM calibration).
