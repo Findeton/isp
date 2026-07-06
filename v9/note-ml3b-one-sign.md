@@ -1,0 +1,29 @@
+# ml3b — the one-sign machine: design note (Tier 7 rung 3b)
+
+**Status:** design note, 2026-07-05 (v9 round 12; think-first, no code this round — the build is a multi-round campaign). Input: ml3a's verdict (LEDGER #59–#60): under the implemented least-bias constraints the two-party coupling is fixed up to **one discrete bit** — the CHSH parity of the sign pattern. This note pins what ml3b must build and measure, and first states the theory question precisely.
+
+## 1. What the bit IS (an honest sharpening before any dynamics)
+
+The two gauge orbits of ml3a are not cosmetically different sign conventions — they are physically inequivalent at the same budget: at |E| = c/2 the **odd** orbit has |CHSH| = 4·(c/2) = 2c (Bell-violating for c > 1, Tsirelson-saturating at c = √2), while the **even** orbit has |CHSH| = 2·(c/2) = c (Bell-satisfying at every admissible budget). **The un-fixable bit is the nonlocality bit itself:** least-bias, fed the derived constraints, cannot decide whether the world's coupling is Bell-violating-signed or Bell-satisfying-signed. That is the sharpest statement of ml3a's result and the one-line job description of the matter sector.
+
+**The identification question, stated honestly (and corrected from the round-11 phrasing).** Paper 2's residual bit (the ker-R / local-tomography datum) and ml3a's parity bit are **prima facie different data**: the parity bit is CHSH-*visible* (one Bell experiment reads it), while the ker-R bit is CHSH-*invisible* (real and complex quantum mechanics both reach Tsirelson for CHSH — that invisibility is exactly why the field needed network tests). The layered freedom is: (i) magnitudes — fixed by least-bias given the budget; (ii) the parity/nonlocality sign — ml3a's bit, open; (iii) the Q-vs-Q̃ composition datum — paper 2's bit, open and provably record-unfixable. The round-11 "consonance" is therefore a *structural rhyme* (each principle leaves exactly one binary datum), **not** a candidate identity — the two bits live at different observational depths, and ml3b's dynamics can only be asked to fix (ii). Whether a built matter sector also bears on (iii) is a separate question requiring network-level (not CHSH-level) observables — named, out of ml3b's scope.
+
+## 2. The machine (pinned targets for the build rounds)
+
+Paper 5's interacting record Ginsparg–Wilson flow, extended to **two record species** A, B on the record GW operator with a cross-species four-fermi coupling at seals (the g_AB dial — the sector's one new import, disclosed up front). The derived coupling readout: `χ_AB^derived` = the windowed cross-chain content covariance of the flow's cross-species correlators (ml1's estimator pointed at dynamics), evaluated per mode pair to produce the **sign pattern** across the four (x, y) cells.
+
+**Pinned gates (the build must face these; thresholds to be numerically pinned in the receipt-round note once the lattice sizes are fixed):**
+- **G1 (existence):** the cross-species correlator at seals is nonzero and decays with hop distance (the ml1 shape). Kill: flat correlators ⇒ the GW-flow shape is the wrong locus ⇒ redirect to the mode-selecting-Hamiltonian alternative (its own note).
+- **G2 (the sign readout — the point of the campaign), with the empirical anchor (2026-07-05, user observation):** the bit is CHSH-visible, so **experiment has already fixed it: the world sits on the ODD (Bell-violating) branch** (the loophole-free Bell tests; CHSH > 2 measured, approaching 2√2). ml3b is therefore a *falsifiable prediction test*, not an open selection. Semantics pinned: **consistent ODD parity across sectors and couplings = SELECTED-CORRECT** (the matter sector derives the empirically right sign — the campaign's success condition); **consistent EVEN parity = SELECTED-WRONG = the flow is REFUTED as the locus** (a kill condition with the same standing as G1's flat-correlator kill — the Hamiltonian fallback activates); **sector- or coupling-dependent parity = RELOCATED** (the import moves from "which parity" to "which sector/coupling"; the empirical anchor then demands the realized sector/coupling be the odd-selecting one — reported as such); **no stable sign structure = UNDETERMINED** (magnitude without sign coherence — a real negative). Grading: the bit's value is [MEASURED, external] today; ml3b's target is upgrading it to [DERIVED given the matter sector], with experiment as the standing falsifier.
+- **G3 (regression):** the ml2 non-washout bands (the induced field still reads out the web's own two-clock geometry) and the rung-1/2 amplitude/estimability band.
+- **G4 (symmetry):** the Lüscher exact-chirality survival check extended to the coupled two-species system (paper 5's residual standard: < 1e-90 at its precision regime).
+
+**Scope inherited verbatim from paper 5:** large-N, two-dimensional, quenched/uniform-flux, small lattices; mode-relative; everything [DERIVED given the matter sector] with the import ledger (mode; scale; now g_AB).
+
+## 3. Sequencing and cost
+
+Build rounds: (a) the two-species free operator + cross-term (extend paper 5's operator; verify G4 first — cheapest kill); (b) the gap/correlator computation per sector (G1); (c) the sign readout (G2) + G3 regression. Each build round gets its own receipt with numeric pins; this note's G2 semantics are the standing registration. The mode-selecting-Hamiltonian alternative stays warm as the named fallback.
+
+## References
+
+ml3a (`ml3a_least_bias.py`, note-ml3 + verdicts + round-11 corrections — the one-bit result at its corrected grade); v8 paper 5 (the single-species interacting GW flow; O8; the import-ledger style; the Lüscher standard); v8 paper 2 (§4.7 the locus; the ker-R residual bit — §1's layer (iii)); v8 paper 16 (the derived-supply parameter ledger); Renou et al., Nature **600**, 625 (2021) + the 2026 real-composition results (the CHSH-invisibility of layer (iii) — paper 2's own citation frame); LEDGER #59–#60; PLAN.md T7.3.
