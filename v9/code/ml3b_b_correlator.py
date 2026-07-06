@@ -204,6 +204,46 @@ r = float(np.abs(C5)[sel1].mean() / max(np.abs(C25)[sel1].mean(), 1e-300))
 print(f"      Gb4 [directional, printed]: near-window |C| ratio "
       f"(g_x 1/2 vs 1/4) = {r:.3f} (expected in (1, 2))")
 
+# ---- review-prescribed diagnostics (round-16 review MAJOR-2/3; INFO, unpinned)
+print("      [diagnostics per the round-16 review — INFO, unpinned]")
+signed = [float(C5[Dm == d].mean()) for d in range(7)]
+print("      signed per-distance mean C: " + "  ".join(
+    f"d={d}: {v:+.3e}" for d, v in enumerate(signed)))
+# S_B with the Q=1 topological zero mode projected out (the correlator-side
+# analog of the gap-side subtraction; convention question flagged for step (c))
+U1 = flux_links(Lx, Lx, 1)
+D1, G51, s1 = overlap_float(Lx, Lx, U1)
+Mf = MB
+ev, W = np.linalg.eig(D1)
+i0 = int(np.argmin(np.abs(ev)))
+Winv = np.linalg.inv(W)
+P0 = np.outer(W[:, i0], Winv[i0, :])
+S1 = np.linalg.inv(D1 + Mf * (np.eye(2 * V) - D1 / 2))
+S1sub = S1 - S1 @ P0.real
+PiBs = np.zeros((V, V))
+for a in (0, 1):
+    for bb in (0, 1):
+        PiBs -= (S1sub[a*V:(a+1)*V, bb*V:(bb+1)*V]
+                 * S1sub[bb*V:(bb+1)*V, a*V:(a+1)*V].T).real
+Cs = 0.5 * (out_cache["A"] @ PiBs) if False else None
+# rebuild Pi_A for the subtracted variant
+U0 = flux_links(Lx, Lx, 0)
+D0, G50, s0_ = overlap_float(Lx, Lx, U0)
+S0 = np.linalg.inv(D0 + MA * (np.eye(2 * V) - D0 / 2))
+PiA = np.zeros((V, V))
+for a in (0, 1):
+    for bb in (0, 1):
+        PiA -= (S0[a*V:(a+1)*V, bb*V:(bb+1)*V]
+                * S0[bb*V:(bb+1)*V, a*V:(a+1)*V].T).real
+Csub = 0.5 * (PiA @ PiBs)
+means_sub = [float(np.abs(Csub)[(Dm >= lo) & (Dm <= hi)].mean())
+             for lo, hi in bins]
+print("      zero-mode-SUBTRACTED S_B variant, binned |C|: " + "  ".join(
+    f"d={lo}-{hi}: {m:.3e}" for (lo, hi), m in zip(bins, means_sub))
+    + "   (the strict-decrease conjunct would "
+    + ("HOLD" if means_sub[0] > means_sub[1] > means_sub[2] else "REFUSE")
+    + " under this convention — flagged for the step-(c) pin)")
+
 print()
 print(f"PRE-REGISTERED GATE LEDGER: "
       f"{'ALL HELD' if FAIL == 0 else 'REFUSALS PRESENT'} — Gb1 kill; "
