@@ -119,7 +119,6 @@ for name, N, M, L, mode in ARMS:
                 for d in (0, 1) for q in confs.values()]
         if any(c >= 2.5 * null_sd for c in cors): ok3 = False
         # G-5 coverage
-        quad = [(np.sum((lat[:, 0] > 0) == qx) if False else 0) for qx in (0,)]
         qcounts = [int(np.sum((lat[:, 0] > 0) & (lat[:, 1] > 0))),
                    int(np.sum((lat[:, 0] > 0) & (lat[:, 1] <= 0))),
                    int(np.sum((lat[:, 0] <= 0) & (lat[:, 1] > 0))),

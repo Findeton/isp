@@ -205,17 +205,43 @@ for gx in (mp.mpf(0), mp.mpf(1)/4, mp.mpf(1)/2):
     sols[float(gx)] = (MA, MB)
     print(f"      Ga2 (QA,QB)=(0,1) g2=4 gx={float(gx):.2f}: "
           f"M_A = {mp.nstr(MA, 12)}, M_B = {mp.nstr(MB, 12)}")
-M0A, M0B = solve_coupled(g2, mp.mpf(0), SA, SA, nzA, nzA, V6)  # A-only sanity via symmetric
-singleA = solve_coupled(g2, mp.mpf(0), SA, SB, nzA, nzB, V6)
-cont = abs(sols[0.0][0] - singleA[0]) < mp.mpf("1e-40")
+def solve_single_gridscan(Sig, nz, V, g2):
+    """INDEPENDENT single-species solver (paper 5's solve_gap form:
+    grid-scan for sign changes + bisection on the largest positive root)
+    — wired into Ga2 per the round-15 review MAJOR-1 (the first form
+    compared a call with itself and was unwired; repaired)."""
+    def f(M):
+        Mv = mp.mpf(M)
+        return Mv - g2 * (Sig(Mv) - mp.mpf(nz) / (Mv * V))
+    grid = [mp.mpf(k) / 40 for k in range(1, 121)]
+    roots = []
+    for a, b in zip(grid[:-1], grid[1:]):
+        if f(a) * f(b) < 0:
+            lo, hi = a, b
+            for _ in range(200):
+                mid = (lo + hi) / 2
+                if f(lo) * f(mid) <= 0: hi = mid
+                else: lo = mid
+            roots.append((lo + hi) / 2)
+    return max(roots) if roots else mp.mpf(0)
+
+indA = solve_single_gridscan(SA, nzA, V6, g2)
+indB = solve_single_gridscan(SB, nzB, V6, g2)
+cont = (abs(sols[0.0][0] - indA) < mp.mpf("1e-40")
+        and abs(sols[0.0][1] - indB) < mp.mpf("1e-40"))
+print(f"      independent grid-scan solver: M_A(single) = "
+      f"{mp.nstr(indA, 12)}, M_B(single) = {mp.nstr(indB, 12)}")
 sus = (sols[0.5][0] - sols[0.0][0]) / mp.mpf("0.5")
 ok_exist = all(s[0] > 0 and s[1] > 0 for s in sols.values())
 check("Ga2 (existence + continuity + cross-susceptibility): the coupled "
-      "system solves with M_A, M_B > 0 at all g_x; the g_x = 0 column is "
-      "the single-species anchor; |dM_A/dg_x| > 1e-6 over [0, 1/2] "
-      "[directional: positive expected]",
-      ok_exist and abs(sus) > mp.mpf("1e-6"),
-      f"dM_A/dg_x = {mp.nstr(sus, 8)}; M_A(0) = {mp.nstr(sols[0.0][0], 10)}")
+      "system solves with M_A, M_B > 0 at all g_x; the g_x = 0 column "
+      "matches an INDEPENDENT grid-scan single-species solve to 1e-40 "
+      "(the continuity anchor, now wired — review MAJOR-1); the "
+      "cross-susceptibility secant over [0, 1/2] exceeds 1e-6 "
+      "[directional: positive expected; the local IFT derivative at "
+      "g_x = 1/2 is smaller (~0.46, review-measured) — concave response]",
+      ok_exist and abs(sus) > mp.mpf("1e-6") and cont,
+      f"secant dM_A/dg_x = {mp.nstr(sus, 8)}; continuity {cont}")
 # symmetric control, unpinned
 MAs, MBs = solve_coupled(g2, mp.mpf(1)/2, SB, SB, nzB, nzB, V6)
 print(f"      control (Q_A = Q_B = 1, gx = 1/2, unpinned): "
