@@ -788,3 +788,7 @@ note-3p1-p2d pins: central b-window slabs of width Delta in {128, 256, 512, 1024
 ## Round 29 CLOSED (2026-07-06)
 
 The cylinder died; the d = C + 1 law surfaced where it was hiding (in-window). User's menu, one at a time: (i) the M5-extended calibration + the reserved review on the windowed d ~ 4 finding (the crown-result path); (ii) the Phase-3 finder leg, window-aware; (iii) the scale-free extremal-anomaly characterization. No reviews spent (mode).
+
+## 2026-07-06 (round 30) — OPENED at user go (menu item i): the M5 calibration, then THE RESERVED REVIEW on the windowed d = C+1 finding
+
+Sequence pinned: (1) `dimwall_m5cal.py` extends the d_MM reference curve with measured M5 sprinklings so the windowed readings INTERPOLATE (r29's 4.0x mildly extrapolated past M4); gates: the M5 point separates cleanly (> 3x pooled sd below M4), the windowed d_MM(C = 3, Delta = 512) lands in [3.7, 4.3] by interpolation, and the in-window C-ladder (C = 1, 2, 3) is strictly monotone with C = 2 in [2.8, 3.5]. (2) If green: THE RESERVED HOSTILE REVIEW fires on the whole windowed d = C+1 finding (the one review the token budget holds; the standing rule's trigger case) — independent rebuild, instrument verification against the analytic anchors (M2 = 1/2; orthant 2^-C), window-position robustness, and the sparsity-confound attack (the d_MM x realizer PAIR is the built-in defense: sparse-but-2D controls read high d_MM but PASS the realizer). Grading only after the review returns. One-at-a-time rule: items (ii)/(iii) wait.
