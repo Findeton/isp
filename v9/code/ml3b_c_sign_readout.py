@@ -31,6 +31,18 @@ tree-level parity is prefactor-blind — only mass back-reaction can flip);
 full-propagator variant; vector-pair probe {gam1, gam2}; the demoted
 (0, 1) row measuring the Q=0 kinematic parity-kill.
 Exit 1 by design on refusal.
+
+POST-REVIEW CORRECTED RECEIPT (the round-17 hostile review; original run
+at commit 1f432bb — this rerun supersedes it).  MAJOR-1: the zero-mode
+subtraction now implements the note's PINNED form (joint COMPLEX
+eigenprojector S -> S - S@P, P = sum_j outer(W_j, Winv_j)); the
+original's S@P0.real truncation was not a projector, broke
+g5-hermiticity, and manufactured the bubble imaginary parts and 4/9
+parities.  MAJOR-2: Gc3 adjudicates per-window pattern-invariance
+(point-invariant-but-window-split is not "DYNAMIC"); the vector probe
+declares degeneracy when all cells sit below the floor.  MAJOR-3:
+multi-start Newton with residual verification (the single 0.7-start
+missed the positive root at (4, -1/2), review-measured (0.1097, 0.5040)).
 """
 import numpy as np
 import mpmath as mp
@@ -106,12 +118,13 @@ def build_sigma_extended(L, Q):
         return (tot / V).real
     return Sigma, n_zero, evD
 
-def solve_coupled(g2, gx, SA, SB, nzA, nzB, V):
+def solve_coupled(g2, gx, SA, SB, nzA, nzB, V, start=("0.7", "0.7")):
     """Newton on the coupled gap system, Luscher-subtracted bulk both
-    channels (ml3b-a's pinned convention, verbatim)."""
+    channels (ml3b-a's pinned convention; start parameter + residual
+    return added per review MAJOR-3)."""
     def bulkA(M): return SA(M) - mp.mpf(nzA) / (mp.mpf(M) * V)
     def bulkB(M): return SB(M) - mp.mpf(nzB) / (mp.mpf(M) * V)
-    MA, MB = mp.mpf("0.7"), mp.mpf("0.7")
+    MA, MB = mp.mpf(start[0]), mp.mpf(start[1])
     for _ in range(200):
         fA = MA - g2 * bulkA(MA) - gx * bulkB(MB)
         fB = MB - g2 * bulkB(MB) - gx * bulkA(MA)
@@ -126,7 +139,10 @@ def solve_coupled(g2, gx, SA, SB, nzA, nzB, V):
         MA, MB = MA - dMA, MB - dMB
         if abs(dMA) + abs(dMB) < mp.mpf("1e-50"):
             break
-    return MA, MB
+    res = (abs(MA - g2 * bulkA(MA) - gx * bulkB(MB))
+           + abs(MB - g2 * bulkB(MB) - gx * bulkA(MA))
+           if MA > 0 and MB > 0 else mp.mpf(1))
+    return MA, MB, res
 
 # ---------------- geometry, windows ----------------
 Lx = 6; V = Lx * Lx
@@ -164,9 +180,10 @@ def propagator(Q, M, subtract=True):
     D, ev, W, Winv, nz, order = sector_D(Q)
     S = np.linalg.inv(D + M * (np.eye(2 * V) - D / 2))
     if subtract and nz > 0:
+        P = np.zeros((2 * V, 2 * V), complex)
         for j in order[:nz]:
-            P0 = np.outer(W[:, j], Winv[j, :])
-            S = S - S @ P0.real
+            P += np.outer(W[:, j], Winv[j, :])
+        S = S - S @ P
     return S
 
 def bubble(S, G1, G2):
@@ -228,10 +245,19 @@ print(f"      sectors (Q_A, Q_B) = ({QA}, {QB}) per the SS5 amendment; "
       f"n_zero = ({nzA}, {nzB}); L = {Lx}; zero-mode-SUBTRACTED (pinned)")
 
 def solve(g2, gx):
-    MA, MB = solve_coupled(mp.mpf(g2), mp.mpf(gx), SAf, SBf, nzA, nzB, V)
-    fa, fb = float(MA), float(MB)
-    good = np.isfinite(fa) and np.isfinite(fb) and 0.02 < fa < 5 and 0.02 < fb < 5
-    return fa, fb, good
+    """Multi-start Newton (review MAJOR-3): accept only a residual-verified
+    positive-quadrant root."""
+    starts = [("0.7", "0.7")] + [(str(a), str(b))
+              for a in (0.1, 0.3, 0.5, 0.9) for b in (0.1, 0.3, 0.5, 0.9)]
+    fa = fb = float("nan")
+    for st in starts:
+        MA, MB, r = solve_coupled(mp.mpf(g2), mp.mpf(gx), SAf, SBf,
+                                  nzA, nzB, V, st)
+        fa, fb = float(MA), float(MB)
+        if (r < mp.mpf("1e-40") and np.isfinite(fa) and np.isfinite(fb)
+                and 0.02 < fa < 5 and 0.02 < fb < 5):
+            return fa, fb, True
+    return fa, fb, False
 
 # -- anchor (4, 1/2)
 MA5, MB5, ok5 = solve(4, "0.5")
@@ -278,15 +304,25 @@ if ok2:
     show("(2, 1/4) sub", out2, keys)
     pts["(2,1/4)"] = parities(out2)
 else:
-    print(f"      (2, 1/4): NO positive root (M = {MA2:.3g}, {MB2:.3g}) — "
-          "point VOID-by-solve (gap closed at g2=2); disclosed")
+    print(f"      (2, 1/4): no residual-verified positive root over the "
+          f"start grid (last M = {MA2:.3g}, {MB2:.3g}) — point VOID-by-solve; "
+          "review MINOR-2: inherited single-species closure (A has no root "
+          "at g2 = 2 alone, B none at <= 3), not a coupled-flow feature")
 flat = [p for ps in pts.values() for p in ps]
 welldef = None not in flat
-kin = welldef and len(set(flat)) == 1
-label = ("KINEMATIC-" + flat[0] if kin else
-         ("DYNAMIC (point-dependent): " +
-          "; ".join(f"{k}={list(set(v))}" for k, v in pts.items())) if welldef
-         else "ILL-DEFINED at some point")
+patts = {k: tuple(v) for k, v in pts.items()}
+if not welldef:
+    label = "ILL-DEFINED at some point"
+elif len(set(patts.values())) == 1:
+    p0 = next(iter(set(patts.values())))
+    if len(set(p0)) == 1:
+        label = f"KINEMATIC-{p0[0]} (one parity, all windows, all points)"
+    else:
+        label = ("PATTERN-INVARIANT: per-window parity is point-invariant; "
+                 f"the windows split {list(p0)} (contact vs shell)")
+else:
+    label = ("DYNAMIC (point-dependent): " +
+             "; ".join(f"{k}={list(v)}" for k, v in patts.items()))
 check("Gc3 (kinematic vs dynamic): the discriminator is well-defined at "
       "all evaluable points", welldef, label)
 
@@ -300,19 +336,25 @@ if okn:
           f"{parities(outn)}  [tree-level parity is prefactor-blind: "
           "(-1)^4 = +1; any flip here = mass back-reaction]")
 else:
-    print(f"      gx = -1/2: NO positive root (M = {MAn:.3g}, {MBn:.3g}) — "
-          "the mass-weakening branch closes the gap; disclosed")
+    print(f"      gx = -1/2: no residual-verified positive root over the "
+          f"start grid (last M = {MAn:.3g}, {MBn:.3g}); disclosed")
 # full-propagator variant at the anchor
 outF, _, _ = cells(QA, QB, MA5, MB5, 0.5, subtract=False)
 print(f"      FULL-propagator variant at (4, 1/2): parities {parities(outF)}")
-# vector-pair probe
+# vector-pair probe (degeneracy declared per review MAJOR-2)
 outV, imV, kV = cells(QA, QB, MA5, MB5, 0.5, gams={"S": gam1, "P": gam2})
-print(f"      vector-pair probe {{gam1, gam2}} at (4, 1/2): parities "
-      f"{parities(outV)} (max|imag| {imV:.2e})")
+maxV = max(abs(E[xy]) for _, (E, _) in outV.items() for xy in E)
+if maxV <= 1e-14:
+    print(f"      vector-pair probe {{gam1, gam2}} at (4, 1/2): DEGENERATE "
+          f"— max|cell| = {maxV:.2e} below the 1e-14 floor (the real-part "
+          f"estimator vanishes for vector insertions; probe uninformative)")
+else:
+    print(f"      vector-pair probe {{gam1, gam2}} at (4, 1/2): parities "
+          f"{parities(outV)} (max|cell| {maxV:.2e}, max|imag| {imV:.2e})")
 # the demoted (0, 1) row — the measured kinematic parity-kill
 SA0, nz0, _ = build_sigma_extended(Lx, 0)
 SB1, nz1, _ = build_sigma_extended(Lx, 1)
-MA01, MB01 = solve_coupled(mp.mpf(4), mp.mpf("0.5"), SA0, SB1, nz0, nz1, V)
+MA01, MB01, _ = solve_coupled(mp.mpf(4), mp.mpf("0.5"), SA0, SB1, nz0, nz1, V)
 out01, _, _ = cells(0, 1, float(MA01), float(MB01), 0.5)
 E01, _ = out01["w=1 (d<=1)"]
 print("      demoted (0, 1) row at (4, 1/2): "
