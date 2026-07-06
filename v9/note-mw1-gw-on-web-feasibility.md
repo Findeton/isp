@@ -27,6 +27,12 @@ wb2 licensed the W-port for **ml2-class** fields (Hasse-GFF — a graph function
 
 R1, gated by criterion 1 as the cheapest kill, with the supply must-fail control designed in from the first receipt. R2 parked as the honest-ambition track; R3 recorded as fallback-with-disclosed-import. No receipt this round — ml4 is a build decision for the user when the sign-readout line settles.
 
+## 6. Review corrections (2026-07-06, the round-20 hostile review — applied; PASS as a scoping note)
+
+- **R1's license re-cited:** the load-bearing fact is the **universal two-clock realizer** (paper 4 §2 pillar (i) / paper 13 Thm 2.1: dominance = the intersection of the b-order and the χ-rank order, valid for EVERY churn web — including the wb-line's random-victim webs, which sit outside the committing-slot corner), not the corner-scoped census headline. Pillars (ii)/(iii) do NOT transfer (D1/kernel open) — R1 as written needs only the embedding.
+- **ml4 criterion 3 tightened:** the future pin must specify the composite — the Gn2a-form rejection half (surrogate closure < null + 3σ), the #68 beats-margin half (field > surrogate by a pinned margin), AND the wb-line's partial-residual form; this note had conflated them.
+- **The §1 license carries wb2's qualifier inline:** the W-port is licensed for ml2-class fields **in the contemporaneous regime only** (wb2 §4).
+
 ## References
 
 wb2 (+§4: the licensed port and its scope); the round-17 scout (Gaps 1–3); v9 paper 4 (dim ≤ 2 — R1's license); v8 paper 5 (the machinery standard); n3-derived / LEDGER #68 (the supply must-fail form ml4 inherits); LEDGER #74.
