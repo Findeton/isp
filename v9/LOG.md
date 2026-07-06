@@ -654,3 +654,7 @@ The round delivered the program's first supported record-native identification �
 ## Round 20 CLOSED (2026-07-06)
 
 **The tree-level sign-readout arc is TERMINAL** (rounds 15–20: the machine built and certified; three adjudications under hardening pinned protocols; three splits; the last with a review-certified genuine zero-crossing as the deciding leg). The suggestive record (7/8; 8/8 L = 6 full legs; 8/8 E2-full legs ever) stays as measurement, never promoted. **The campaign's live lines going forward:** (1) **ml4** — the GW-grade matter-on-web build (note-mw1's R1 route, review-corrected; a build decision for the user); (2) **the RPA dressing program** (the sigma-pole sign — one loop up; a new design arc); (3) **the mode-selecting Hamiltonian fallback** (note-ml3b's original alternative); (4) the wb-line's next rung and the standing backlog (posit-2 map, k4-under-growth, u4b growth-trend); the SHARD article awaits the user's read.
+
+## 2026-07-06 (round 21) — OPENED on the user's amended plan: PLAN fork recorded; paper 5 initial draft; RPA at max effort
+
+User decisions on record: ml4 + Hamiltonian DEFERRED (funding); token-restricted mode (reviews suspended EXCEPT one reserved for an RPA SELECTED); paper 5 = initial pass, DRAFT-UNREVIEWED status line; RPA = the funded attempt to close the sign. PLAN.md carries the authoritative four-line fork + the standing mode. Sequence: paper 5 draft -> note-ml3b-g (RPA) pinned -> receipt -> run -> records + paper-5 chapter.

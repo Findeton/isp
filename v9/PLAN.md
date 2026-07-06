@@ -226,3 +226,18 @@ Grade vocabulary per paper 1's tag table; pre-registered gates with power analys
 ## References
 
 `v8/LEDGER.md` (the map; #32–#36 the derived-supply arc); v8 papers 7, 11, 12, 13, 16 (the manifoldlikeness chain); design notes 1–8; `v8/u-line-results-memo.md` (the post-2026-07-04 state this plan starts from); receipts `u1`–`u3` (executed), `u4`/`u5`/`n1`–`n3` (reserved before this plan), `q1`/`q2`/`s1`/`y1` (reserved here). External anchors as cited in the underlying papers: Rideout–Sorkin PRD 61, 024002 (2000); Brightwell–Henson–Surya CQG 25, 105025 (2008); Winkler Order 7, 329 (1990); Barandes arXiv:2302.10778; Kleitman–Rothschild (1975); Glaser–Surya PRD 88, 124026 (2013) (the abundance axis); Baik–Deift–Johansson (1999); Kuipers–Niederreiter (1974).
+
+
+## Post-round-20 standing state and the funded fork (2026-07-06 — authoritative for rounds 21+; DO NOT LOSE)
+
+**Where the campaign stands.** Papers 1–4 TERMINAL (grader / forgery map / pincer / THE DISCHARGE). The tree-level sign-readout arc (rounds 15–20, the ml3b line) is **TERMINAL at FAILS-AT-TREE-LEVEL** under propagated one-shot clauses — three adjudications, three splits, the last with a review-certified genuine zero-crossing as the deciding leg (LEDGER #71–#78). The suggestive record (8/8 full-propagator legs odd at L = 6; 8/8 E2-full legs ever; 7/8 at L = 8/10) is MEASUREMENT, never promoted. In parallel, wb2 licensed the tomography W-port for ml2-class fields in the contemporaneous regime (LEDGER #74) — the program's first supported record-native identification since #68.
+
+**THE FOUR-LINE FORK (recorded so no future agent forgets; user-priced 2026-07-06):**
+1. **ml4 — GW-grade matter ON the grown web** (note-mw1, review-corrected: R1 light-cone-lattice transplant licensed by the universal two-clock realizer; supply must-fail composite pinned as criterion 3). The 3+1 spine. EXPENSIVE — **DEFERRED by user decision until funds allow. Do not open without explicit user go.**
+2. **RPA dressing** — the sign question one loop up (the sigma-pole object; reuses the whole ml3b stack). **FUNDED — round 21's item.** Verdict semantics: SELECTED-{ODD,EVEN}-DRESSED / FAILS-AT-RPA (⇒ only ml4/Hamiltonian remain for the sign).
+3. **Mode-selecting Hamiltonian fallback** (note-ml3b's original alternative). Biggest redesign. **DEFERRED with ml4.**
+4. **Consolidation** — v9 paper 5 (the one-sign machine arc) + the wb-line next rung + backlog (posit-2 map, k4-under-growth, u4b growth-trend). Paper 5 = round 21's first item.
+
+**TOKEN-RESTRICTED MODE (user-declared 2026-07-06, standing until lifted):** hostile reviews are SUSPENDED except: **one review is reserved for any SELECTED outcome on the RPA line** (a positive crown result must be hostile-verified; refusals/splits are self-limiting and may stand unreviewed). Papers drafted in this mode carry an explicit status line: **[DRAFT — assembly unreviewed; all quoted results receipt-reviewed]**, and quote numbers only from committed receipt outputs. The freeze discipline (pins committed strictly before receipts; commit at every pin/run/amendment) is UNCHANGED — it is cheap and load-bearing.
+
+**Sequence pinned for round 21:** PLAN update (this section) → paper 5 initial draft (marked DRAFT-UNREVIEWED) → RPA design note + receipt at max effort → if SELECTED: the one reserved review, then paper 5's RPA chapter; else: record and add the chapter unreviewed. The SHARD article (roblesnotes, uncommitted) needs its sign-machine section updated to the terminal state before any publication.
