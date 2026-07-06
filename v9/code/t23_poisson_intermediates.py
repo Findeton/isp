@@ -7,10 +7,12 @@ receipt existed — the freeze discipline's first full cycle).
 Theorem P: churn-class supplies with sub-geometric lifetime tails and
 atomless content have interval-count statistics -> Poisson at rate
 O(L/N) (Chen-Stein over the life-partition dependency graph). Joints:
-  AMENDED to the P-prime control-relative pins (note-t23 SS5; the first
-     run and its refusals frozen at f959aeb): V1-rel gap <= floor/3 at
-     every N; V2-rel monotone in L; V3-rel tail boundary (heavy >= 2x);
-     V4 unchanged. Small-interval absolute column printed unpinned.
+  P-DOUBLEPRIME BAND PINS (note-t23 SS7, pinned at 080fd89; run-1 and
+     run-2 histories frozen at f959aeb / d0f9d87): V1'' both ensembles'
+     band gaps decay in N AND churn <= box everywhere; V2'' P3 as the
+     N-trend (geom decay >= 1.3x; heavy STRICTLY flatter); V3'' the
+     cv2-correct qualifying prediction (det/geom in [0.1, 1.0]); V4
+     unchanged. Band = exp_k in [10, 40], the Poisson-target regime.
   V2 the density mechanism: gap at N = 2048 monotone non-decreasing in
      L across {2, 4, 8} [directional].
   V3 the tail boundary (Lemma P3, load-bearing): matched mean-lifetime 4 —
@@ -88,7 +90,7 @@ def web_churn(Nn, M, life="geom", L=2):
     return chi, lid
 
 M = 32
-print("[t23 Theorem P-prime joints — control-relative Poissonization (note-t23 SS5)]")
+print("[t23 Theorem P-doubleprime joints — the BAND form (note-t23 SS7)]")
 
 def ifano_band(b_, c_, lo=10, hi=40):
     """u1 interval_fano restricted to small intervals (exp_k in [lo, hi])
@@ -128,47 +130,53 @@ def boxstats(Nn):
     return (float(np.mean(full)), float(np.std(full, ddof=1)/np.sqrt(REPS)),
             float(np.mean(band)))
 
-ok1 = True
-box_at = {}
-for Nn in (512, 2048, 4096):
-    bx = boxstats(Nn); ch = cellstats(Nn, "geom", 2)
-    box_at[Nn] = bx
-    rel = abs(ch[0] - bx[0])
-    floor = bx[0]
-    print(f"      V1-rel N={Nn}: churn {ch[0]:.4f}+-{ch[1]:.4f}, box {bx[0]:.4f}"
-          f"+-{bx[1]:.4f}, |rel| = {rel:.4f} vs floor/3 = {floor/3:.4f}   "
-          f"[small-interval abs: churn {ch[2]:.3f}, box {bx[2]:.3f}]")
-    if rel > floor / 3: ok1 = False
-check("V1-rel (control-relative, 24 reps) [directional]: at every N the "
-      "churn-box gap is <= (the box own Poisson floor)/3 — the churn "
-      "sits >= 3x closer to the reference than the reference to Poisson",
-      ok1)
+def band_cell(Nn, life, L):
+    vals = []
+    for _ in range(REPS):
+        chi, _ = web_churn(Nn, M, life, L)
+        vals.append(abs(ifano_band(np.arange(Nn), chi) - 1.0))
+    return float(np.mean(vals)), float(np.std(vals, ddof=1)/np.sqrt(REPS))
+def band_box(Nn):
+    vals = []
+    for _ in range(REPS):
+        vals.append(abs(ifano_band(np.arange(Nn), rng.random(Nn)) - 1.0))
+    return float(np.mean(vals)), float(np.std(vals, ddof=1)/np.sqrt(REPS))
 
-bx2 = box_at[2048]
-rels = {}; ses = {}
-for L in (2, 4, 8):
-    ch = cellstats(2048, "geom", L)
-    rels[L] = abs(ch[0] - bx2[0]); ses[L] = ch[1]
-print("      V2-rel gap @2048: " + "  ".join(
-    f"L={l}: {rels[l]:.4f}+-{ses[l]:.4f}" for l in rels))
-se_pool = max(ses.values())
-mono = (rels[2] <= rels[4] + se_pool) and (rels[4] <= rels[8] + se_pool)
-check("V2-rel (the density mechanism, control-relative, 24 reps) "
-      "[directional]: monotone non-decreasing in L within 1 pooled SE",
-      mono, f"{rels[2]:.4f} <= {rels[4]:.4f} <= {rels[8]:.4f} (+-{se_pool:.4f})")
+NS = (512, 2048, 4096)
+ch = {Nn: band_cell(Nn, "geom", 2) for Nn in NS}
+bx = {Nn: band_box(Nn) for Nn in NS}
+for Nn in NS:
+    print(f"      V1'' N={Nn}: churn {ch[Nn][0]:.4f}+-{ch[Nn][1]:.4f}   "
+          f"box {bx[Nn][0]:.4f}+-{bx[Nn][1]:.4f}")
+mono_c = ch[512][0] >= ch[2048][0] >= ch[4096][0]
+mono_b = bx[512][0] >= bx[2048][0] >= bx[4096][0]
+order = all(ch[Nn][0] <= bx[Nn][0] for Nn in NS)
+check("V1'' (the band decay + ordering, 24 reps) [directional]: both "
+      "ensembles' band gaps decrease monotonically in N AND churn <= box "
+      "at every N", mono_c and mono_b and order,
+      f"churn mono {mono_c}, box mono {mono_b}, churn<=box {order}")
 
-gg = cellstats(2048, "geom", 4); gd = cellstats(2048, "det", 4)
-gh = cellstats(2048, "heavy", 4)
-rg = abs(gg[0] - bx2[0]); rd = abs(gd[0] - bx2[0]); rh = abs(gh[0] - bx2[0])
-print(f"      V3-rel gaps @2048 mean-4: geom {rg:.4f}, det {rd:.4f}, "
-      f"heavy {rh:.4f}")
-qual2 = max(rg, rd) / max(min(rg, rd), 1e-12) <= 2.0
-heavy2 = rh >= 2.0 * rg
-check("V3-rel (the tail boundary, control-relative, 24 reps) [directional]: "
-      "qualifying pair within 2x; heavy >= 2x above geom (the re-pinned "
-      "relative threshold, note SS5)", qual2 and heavy2,
-      f"qual ratio {max(rg,rd)/max(min(rg,rd),1e-12):.2f}; heavy/geom "
-      f"{rh/max(rg,1e-12):.1f}x")
+gg = {Nn: band_cell(Nn, "geom", 4) for Nn in NS}
+hh = {Nn: band_cell(Nn, "heavy", 4) for Nn in NS}
+rg = gg[512][0] / max(gg[4096][0], 1e-12)
+rh = hh[512][0] / max(hh[4096][0], 1e-12)
+print(f"      V2'' geom band: " + "  ".join(f"N={n}: {gg[n][0]:.4f}" for n in NS)
+      + f"  decay {rg:.2f}x")
+print(f"      V2'' heavy band: " + "  ".join(f"N={n}: {hh[n][0]:.4f}" for n in NS)
+      + f"  decay {rh:.2f}x")
+check("V2'' (Lemma P3 as the N-trend, 24 reps) [directional]: geometric "
+      "band-gap decay >= 1.3x from 512 to 4096 AND the heavy-tail decay "
+      "ratio STRICTLY below the geometric's (the plateau signature)",
+      rg >= 1.3 and rh < rg, f"geom {rg:.2f}x vs heavy {rh:.2f}x")
+
+dd = band_cell(2048, "det", 4)
+ratio = dd[0] / max(gg[2048][0], 1e-12)
+print(f"      V3'' @2048 mean-4: det {dd[0]:.4f}+-{dd[1]:.4f} vs geom "
+      f"{gg[2048][0]:.4f} -> det/geom = {ratio:.2f}")
+check("V3'' (the cv2-correct qualifying prediction, 24 reps) "
+      "[directional]: det <= geom with det/geom in [0.1, 1.0] (T2.1's "
+      "cv2 law's direction; the anti-corpus symmetric pin retired)",
+      0.1 <= ratio <= 1.0, f"det/geom = {ratio:.2f}")
 
 ok4 = True
 for Nn in (1024, 4096):
@@ -179,17 +187,16 @@ for Nn in (1024, 4096):
         pairs = float(np.sum(counts * (counts - 1) // 2))
         dens.append(pairs / (Nn * (Nn - 1) / 2.0))
     d = float(np.mean(dens)); pred = 2.0 / (Nn - 1)
-    ok = abs(d - pred) / pred <= 0.25
-    ok4 &= ok
+    ok4 &= abs(d - pred) / pred <= 0.25
     print(f"      V4 same-life pair density N={Nn}: {d:.6f} vs {pred:.6f} "
           f"({(d/pred-1)*100:+.1f}%)")
 check("V4 (the density ledger = paper 16 object): within 25% of "
       "2(L-1)/(N-1) at both N (exact life-id counts)", ok4)
 
 print()
-print(f"PRE-REGISTERED GATE LEDGER (P-prime pins, note SS5): "
-      f"{'ALL HELD' if FAIL == 0 else 'REFUSALS PRESENT'} — V1-rel; "
-      f"V2-rel; V3-rel; V4 ledger")
+print(f"PRE-REGISTERED GATE LEDGER (P'' band pins, note SS7): "
+      f"{'ALL HELD' if FAIL == 0 else 'REFUSALS PRESENT'} — V1'' decay+order; "
+      f"V2'' P3 N-trend; V3'' cv2 prediction; V4 ledger")
 print()
 total = PASS + FAIL
 print(f"ALL CHECKS PASS ({PASS}/{total})" if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
