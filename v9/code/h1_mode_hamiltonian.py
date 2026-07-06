@@ -221,8 +221,10 @@ def masses(L, gx):
             return fa, fb
     raise SystemExit(f"no root at L={L} gx={gx}")
 
-# Gh1: wiring at L = 3
-MA3, MB3 = masses(3, "0.5")
+# Gh1: wiring at L = 3 — pinned REFERENCE masses per the note SS6
+# amendment (the L = 3 gap system has no positive root; the wiring
+# check is mass-agnostic by purpose)
+MA3, MB3 = 0.9, 0.8
 Ka3A, Ka3B = K_legs(3, QA, MA3), K_legs(3, QB, MB3)
 kb_net, _ = kappa_box(3, Ka3A, Ka3B)
 kb_bru = kappa_brute(3, Ka3A, Ka3B)

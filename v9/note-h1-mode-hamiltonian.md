@@ -33,6 +33,10 @@ summed over all 6 × 6 cyclic insertion orderings per species (the full symmetri
 
 The S/P channel assignment remains the mode import (unchanged, disclosed). The selection premise is Euclidean equilibrium (Γ-minimization); a dynamical-selection alternative is out of scope. κ_box is the leading connected topology of the exact discriminator — the analog, in this route, of step (b)'s tree exchange; its named next order is the excluded-topology family. A SELECTED here is a one-coefficient, protocol-tight statement — and precisely because the observable is one number with no estimator freedom, a refusal here (a sign flip across six points) would be close to conclusive that the parity is not determined by this construction at any accessible object, sharpening paper 5's terminal statement into its final form.
 
+## 6. Pre-rerun amendment (2026-07-06, committed before any κ was computed)
+
+The first run exited at the L = 3 gap solve: the coupled system has **no positive root at L = 3** (g², g_x) = (4, ½) — a small-lattice feature (output on record; no κ value was ever evaluated). The wiring gate's purpose is mass-agnostic — it verifies that the einsum network and the brute-force Wick sum compute the same object from IDENTICAL inputs — so Gh1 now runs at pinned reference masses (M_A, M_B) = (0.9, 0.8) at L = 3. Nothing else changes; the grid, Gh2, Gh3, and all semantics are untouched. This amendment cannot be data-tuned: no κ_box number existed anywhere when it was committed.
+
 ## References
 
 Paper 5 (the arc; §7's Hamiltonian registration and its crossing-immunity rationale); ml3a + the round-11/12 corrections (the manifold, the gauge, the equal-magnitude law, the orbits); note-ml3b (the fallback's original registration); notes ml3b-e/f (the improved content and full-propagator resolutions carried); PLAN §post-round-20 (the funded line; the reserved-review rule); LEDGER #77–#79.
