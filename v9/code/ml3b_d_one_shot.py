@@ -234,8 +234,10 @@ for gxs in ("0.5", "0.25"):
         print(f"                    E2[{cellrow(E2)}] => {par(E2)}")
         if gxs == "0.5" and conv == "sub":
             anchorE = (E1, E2, imax)
-            # INFO: the full per-distance signed table (this convention)
-            print("      per-distance signed means (sub), d = 0..6:")
+        if gxs == "0.5":
+            # INFO: per-distance signed table, BOTH conventions as pinned
+            # (review MINOR-1: the first run under-delivered, sub only)
+            print(f"      per-distance signed means ({conv}), d = 0..6:")
             for xy in C:
                 row = "  ".join(f"d{d}:{float(C[xy][Dm == d].mean()):+.2e}"
                                 for d in range(7))

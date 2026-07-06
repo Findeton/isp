@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
 wb1_bridge_test.py — v9 round 18: the w <-> chi_AB BRIDGE TEST at the
-constructible grade (note-wb1; pins committed BEFORE this receipt).
+constructible grade (note-wb1).  Pin ordering, corrected per review
+MINOR-2: the full gate semantics (incl. the CONFOUNDED class and the
+mandatory Gw3) were pinned at the LOG-open commit 182d63d; the note and
+this receipt were then CO-committed at e038946 — the note did not
+strictly precede the receipt file.  Disclosed; process rule reasserted:
+pin commits strictly precede receipt commits.
 
 One grown web (ml2 construction verbatim, (N, M, L) = (2048, 32, 16),
 dominance order on (b, chi)); over the SAME chain fleet:

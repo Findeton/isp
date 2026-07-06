@@ -22,6 +22,13 @@ The posited identification predicts a positive monotone association between the 
 
 Both W and χ̂ are functionals of the same web, so association is NOT automatic evidence of the physical identification — it is the necessary first rung (the posited claim fails if even this refuses), and Gw3 guards the known failure mode. Float64; exits 1 by design; house verdict conventions.
 
+## 4. Review corrections (2026-07-06, the round-18 hostile review — applied; verdict PASS-WITH-CORRECTIONS, all gates/numbers reproduced exact; the W-port formula verified verbatim-equivalent to k3/l2/m1)
+
+- **MAJOR-2 (the mechanism clause corrected — the W-half was backwards):** the recorded "temporal separation raises W; contemporaneous pairs invert both" is refuted by measurement: ρ(W, |Δbirth|) = −0.61 (quartile mean W 0.767 contemporaneous → 0.355 separated); contemporaneous pairs have HIGHER W and higher χ̂. **The true structure: BOTH matrices decline with temporal separation, χ̂ much faster (ρ(χ̂, |Δbirth|) = −0.77..−0.87) — the negative partial is the DIFFERENTIAL-DECAY imprint**, not an inversion. The CONFOUNDED verdict, the fairness note, and wb2's directional prediction all stand on the corrected mechanism.
+- **The negative partial certified genuine (referee attack failed):** it survives 2-regressor partialling on the surrogate's channels separately (−0.219/−0.285/−0.314, z −12.6/−14.8/−19.4) and a raw-|Δbirth| variant — not a composite-surrogate artifact; regime-bound to the pooled heterogeneous-birth fleet.
+- **Referee-run scouting (unpinned, recorded for wb2's design):** restricted to lifetime-overlap pairs the partial collapses to null (−0.050/−0.016/−0.065); on strong-overlap pairs (> 50% of the shorter lifespan) it flips POSITIVE (2-reg +0.172/+0.074/+0.096) — wb2's registered direction pre-confirms on this receipt's own data; and k3's native fleet is measured fully contemporaneous (100% pair overlap, median overlap fraction 1.00) — the fairness note is quantitatively right. wb2 must be pinned fresh (seeds, gates) before any claim.
+- **MINOR-2 (pin ordering):** the note and receipt were co-committed (e038946); the LOG-open commit (182d63d, earlier) carried the full gate semantics including the CONFOUNDED class and mandatory Gw3 — mitigating, disclosed in the receipt docstring; process rule reasserted: pin commits strictly precede receipt commits.
+
 ## References
 
 Round-17 scout (LOG dafe8ca: the binding gap; the W-port formulas at k3:112-117 / l2:143-147 / m1:109-114); v8 papers 14 §4/§6 + 15 §6 (the [POSITED] flags); ml2 + n3-derived (`n3_derived_must_fail.py` — the construction and surrogate ported verbatim); LEDGER #68 (the zero-readouts adjudication this line answers).
