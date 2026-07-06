@@ -774,3 +774,7 @@ note-3p1-p2c pins: decimation = ONE representative commit per slot-LIFE (life bo
 ## Round 28 CLOSED (2026-07-06)
 
 An honest refusal that upgraded the diagnosis: not the fleet, but the cylinder geometry of the measure. Next candidates (user picks, one at a time per the token rule): (a) the time-window diagnosis receipt (cheap; tests the cylinder hypothesis directly and calibrates the window Phase 3 needs); (b) the Phase-3 leg (the intrinsic finder, now best designed window-aware). No reviews (mode).
+
+## 2026-07-06 (round 29) — OPENED at user "a": THE TIME-WINDOW DIAGNOSIS (the cylinder hypothesis tested)
+
+note-3p1-p2d pins: central b-window slabs of width Delta in {128, 256, 512, 1024, 2048}, each subsampled to matched N = 128; orthant references at N = 128; the pinned window Delta* = 512 from the principled scale tau ~ L*M = 16*32 (a slot-channel's reset recurrence — the chi-correlation time; disclosed). Gates: Gt1 the cylinder signature (full-web locus distance > the Delta*-window distance per seed); Gt2 the joining (webs within 3x sd of the orthant matched locus AT Delta* on >= 4/5 seeds); Gt3 in-window dimension (windowed d_MM >= 3.2 and realizer refusals >= 4/5 at Delta*). Verdicts: CYLINDER-CONFIRMED / BAND-SHIFTED (joins at another Delta, sweep-visible) / CYLINDER-REFUTED. NO-REVIEW MODE; one-at-a-time rule active (Phase-3 leg waits).
