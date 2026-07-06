@@ -52,6 +52,10 @@ Refusals print the ledger and exit 1 by design; [directional] tags on the 6-rep 
 
 The amendments change no theorem statement; they align the instruments with the objects the lemmas actually name (W1: the fleet, not the output; W4: the stationary law; gap 2: the log M factor now stated in §2's Lemma W1).
 
+## 6. Correction (2026-07-06, the round-14 proof audit — paper 4's referee 1)
+
+§1's class sentence claimed Theorem W for "(j3 corner; D1; the kernel variant — any law whose slot choice, content increments, and resets read only the fleet state)". **Downgraded:** the shared-innovation coupling does not reach state-dependent victims (a matched slot can be unmatched when the copies kill different slots) — **the D1 and kernel variants' coverage is a NAMED OPEN**, not a claim. Further, lattice lifetime laws (deterministic-L) make the fleet chain **periodic** (the total-age mod-L clock; β(t) ≥ 1 − 1/L for all t — the audit's counterexample): the geometric β-mixing statement holds for the geometric corner and hazard-floor laws at proof grade, for aperiodic non-lattice laws modulo a carried offset-randomization argument, and for lattice laws only via the phase-decomposed L-skeleton. Paper 4 §1's Class-disclosure block is the authoritative statement; this note's §1 is superseded accordingly.
+
 ## References
 
 v8 paper 16 (§2 the washout theorems — the τ-decay this note extends to the sup-norm; §4 the cell; the renewal ledger); v8 paper 12 (the sufficiency theorem; the canonical instrument); v8 paper 7 (§II the discrepancy–r bridge, the exact constants); q2/note-q2 (the measured rate law C(L,M)·√(logN/N)); u1 (`star_disc`, `rank_embed2` — the instruments, verbatim); LEDGER #57–#58 (Theorem U's census half); u4b/LEDGER #59–#60 (the ensemble leg; the L-sweep this note's W1 explains); Dvoretzky–Kiefer–Wolfowitz (1956); P. Doukhan, *Mixing* (1994) / E. Rio (2000) — the W4 import class; W. Hoeffding (1948).
