@@ -846,3 +846,11 @@ note-3p1-p4 pins: measure the chain-scaling law H(N) and the width law W(N) (Mir
 ## Round 33 CLOSED (2026-07-06)
 
 Item (iii) delivered (the characterization + the mis-pin owned). Round 34 = item (iv): paper 6.
+
+## 2026-07-06 (round 34) — batch item (iv): PAPER 6 DRAFTED; the batch closes
+
+**Paper 6** (`relativistic-isp-v9-paper6-dimension-from-channels.md`): the rounds 23–33 arc single-threaded — the two-clock wall (Lemma + instrumented both directions), the multi-channel construction and the two laws (the wall comes down; distinct-AND-interacting with the segregation control), the windowed instrument and the theorem-grade core (dim = C + 1 exactly, witness-certified, the reserved review's language verbatim), the environmental ending of the selection question (d = C + 1 as LAW, C an input — the constants pattern's third instance), the EXPONENT-CLASS extremal signature as a falsifiable observable, and the open fronts (Lorentzization behind the double instrument-blindness; reconstruction behind the finder void with m1-at-scale named; manifoldlikeness withheld; C >= 2 volume-faithfulness untouched). Status line carries the split review coverage honestly: the core hostile-review-confirmed; assembly and the no-review-mode legs disclosed as such, with the three certified voids cited as the discipline's record. LEDGER #93.
+
+## Round 34 CLOSED (2026-07-06) — THE BATCH (ii)–(v) COMPLETE
+
+The four items landed: (v) selection = environmental (d = C + 1 the law, C the input); (ii) reconstruction = OPEN-WITH-VOID (the simplified finder failed its own control; m1-at-scale named); (iii) the anomaly = EXPONENT-CLASS characterized (a_H ~ 0.58 — the record-universe signature); (iv) paper 6 drafted at DRAFT-UNREVIEWED with the review-confirmed core. **The campaign's standing state: papers 1–6 (1–4 terminal, 5 final-form draft, 6 new draft); the crown result dim = C + 1 graded; live fronts = Lorentzization (directional instruments), m1-at-scale reconstruction, C >= 2 volume-faithfulness, the SHARD article rewrite (sign-terminal + the new 3+1 chapter).** No reviews spent this batch beyond the standing record (mode).
