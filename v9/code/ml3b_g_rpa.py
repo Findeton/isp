@@ -19,6 +19,21 @@ PINNED (note-ml3b-g SS2):
        FAILS-AT-RPA (the sign exits the resummed reach).
 INFO: sigma spectrum; anchor distance tables; subtracted row; E1/E2
 spread dressed vs tree; L = 6 continuity row.  Exit 1 on refusal.
+
+ROUND-35 AMENDMENTS (the paper-5 hostile review; note-ml3b-g SS4):
+  Gr1(i) the wiring check now runs at the NON-power-of-two coupling
+       gx = 0.3, gated rel < 1e-12 (the original gx = 1/2 check was
+       vacuous by float algebra — a power-of-two scalar commutes
+       bitwise through the product, so "wiring 0.0e0" could not fail).
+  Gr1b ADDED — the O(2) branch certification: [D_sigma]_AB = gx I +
+       g2 gx (P_A + P_B) + O(3) from the step-(a) four-fermi
+       expansion; the relative residual, computed at the anchor AND at
+       couplings scaled by 1/2 and 1/4 (masses fixed — pure algebra),
+       must SHRINK monotonically — confirming the implemented
+       (loop-minus Pi) branch is the expansion's.  Gr2 does NOT
+       adjudicate the sign convention (the flipped branch is also
+       stable at every run point); the convention is derived, not
+       gate-certified.
 """
 import numpy as np
 import mpmath as mp
@@ -245,9 +260,13 @@ for L in (8, 10):
 
 # Gr1: wiring + convergence at the anchor
 L8, MA8, MB8, PiA8, PiB8, C8, E1a, E2a = anchor_pack
-Ctree, _ = dressed_cells(8, 4.0, 0.5, PiA8, PiB8, mode="tree")
-Ctree_direct = {xy: 0.5 * (PiA8[xy[0]] @ PiB8[xy[1]]) for xy in Ctree}
-w1 = max(np.abs(Ctree[xy] - Ctree_direct[xy]).max() for xy in Ctree)
+# Round-35 amendment: the wiring check runs at the NON-power-of-two
+# coupling gx = 0.3 (the original gx = 1/2 check was vacuous — bitwise
+# equality guaranteed by float algebra), gated rel < 1e-12.
+Cw, _ = dressed_cells(8, 4.0, 0.3, PiA8, PiB8, mode="tree")
+Cw_direct = {xy: 0.3 * (PiA8[xy[0]] @ PiB8[xy[1]]) for xy in Cw}
+w1 = max(np.abs(Cw[xy] - Cw_direct[xy]).max()
+         / max(np.abs(Cw_direct[xy]).max(), 1e-300) for xy in Cw)
 V8 = 64
 Gm = np.block([[4.0 * np.eye(V8), 0.5 * np.eye(V8)],
                [0.5 * np.eye(V8), 4.0 * np.eye(V8)]]) / 8.0
@@ -259,9 +278,30 @@ for _ in range(40):
     part += term
     term = Gm @ Pi8 @ term
 conv = np.abs(closed - part).max() / max(np.abs(closed).max(), 1e-300)
-check("Gr1 (wiring + convergence): truncated D_sigma reproduces tree "
-      "exactly; G/8 closed form vs K = 40 partial sum rel < 1e-12",
-      w1 == 0.0 and conv < 1e-12, f"wiring {w1:.1e}; conv {conv:.2e}")
+check("Gr1 (wiring + convergence): truncated D_sigma reproduces tree at "
+      "the non-power-of-two coupling gx = 0.3, rel < 1e-12; G/8 closed "
+      "form vs K = 40 partial sum rel < 1e-12",
+      w1 < 1e-12 and conv < 1e-12, f"wiring {w1:.1e}; conv {conv:.2e}")
+
+# Gr1b (round-35 review-added gate): the O(2) branch certification.
+# [D_sigma]_AB = gx I + g2 gx (P_A + P_B) + O(3) from the step-(a)
+# four-fermi expansion; the relative residual at the anchor and at
+# couplings scaled by 1/2 and 1/4 (masses fixed — pure algebra) must
+# shrink monotonically, confirming the implemented (loop-minus Pi)
+# branch is the expansion's.  Gr2 does NOT adjudicate the convention.
+def o2_residual(s):
+    g2s, gxs2 = 4.0 * s, 0.5 * s
+    Gms = np.block([[g2s * np.eye(V8), gxs2 * np.eye(V8)],
+                    [gxs2 * np.eye(V8), g2s * np.eye(V8)]])
+    DAB = np.linalg.solve(np.eye(2 * V8) - Gms @ Pi8, Gms)[:V8, V8:]
+    O2 = gxs2 * np.eye(V8) + g2s * gxs2 * (PiA8["S"] + PiB8["S"])
+    return float(np.linalg.norm(DAB - O2) / np.linalg.norm(DAB))
+r_o2 = [o2_residual(s) for s in (1.0, 0.5, 0.25)]
+check("Gr1b (O(2) branch certification, round-35 amendment): "
+      "[D_sigma]_AB = gx I + g2 gx (P_A+P_B) + O(3); residual shrinks "
+      "monotonically at couplings x1 -> x1/2 -> x1/4 (masses fixed)",
+      r_o2[0] > r_o2[1] > r_o2[2],
+      "residuals " + " -> ".join(f"{r:.3e}" for r in r_o2))
 
 gr2 = all(v > 0 for v in minevs.values())
 check("Gr2 (RPA validity): min Re eig(I - G Pi) > 0 at ALL four points",
@@ -299,6 +339,7 @@ for xy in C8:
     row = "  ".join(f"d{d}:{float(C8[xy][g8['Dm'] == d].mean()):+.2e}"
                     for d in range(7))
     print(f"        C_{xy[0]}{xy[1]}: {row}")
+Ctree_direct = {xy: 0.5 * (PiA8[xy[0]] @ PiB8[xy[1]]) for xy in C8}
 E1t, E2t = estimators(Ctree_direct, 8)
 sp_t = max(abs(E1t[xy] - E2t[xy]) / max(abs(E1t[xy]), 1e-300) for xy in E1t)
 sp_d = max(abs(E1a[xy] - E2a[xy]) / max(abs(E1a[xy]), 1e-300) for xy in E1a)
@@ -318,9 +359,9 @@ print(f"      L = 6 continuity row: E1 {par(E16)} / E2 {par(E26)} "
       f"(min eig {mev6:+.4f})")
 
 print()
-print(f"PRE-REGISTERED GATE LEDGER: "
+print(f"PRE-REGISTERED GATE LEDGER (+ the r35 amendment Gr1b): "
       f"{'ALL HELD' if FAIL == 0 else 'REFUSALS PRESENT'} — Gr1 wiring; "
-      f"Gr2 validity; Gr3 ({gr2v})")
+      f"Gr1b O(2) branch (r35); Gr2 validity; Gr3 ({gr2v})")
 print()
 total = PASS + FAIL
 print(f"ALL CHECKS PASS ({PASS}/{total})" if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
