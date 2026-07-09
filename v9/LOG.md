@@ -822,3 +822,7 @@ Execution order pinned for the batch: (v) selection -> (ii) the window-aware fin
 ## Round 31 CLOSED (2026-07-06)
 
 Item (v) answered at its honest scope: no selection of C = 3 from the tested dynamics; d = C + 1 is the prediction, C the input. Batch continues: (ii) the window-aware Phase-3 finder next.
+
+## 2026-07-06 (round 32) — batch item (ii): THE FIRST RECONSTRUCTION ON A GROWN WEB (the window-aware 2+1 finder)
+
+note-3p1-p3 pins the order-only reconstruction + internal certificate on windowed C = 2 webs (d = 3 = 2+1, the witness-certified dimension): t-hat = |past|^{1/3} − |future|^{1/3} (the m1-B seed form at d = 3); transverse = 2-component MDS on the past-overlap dissimilarity (1 − |past intersection| / sqrt(|past||past|)); THE CERTIFICATE = cone-fit balanced accuracy (predict x < y iff dt > rho*|dx|, rho fit in-sample identically for every family — disclosed): does the reconstructed geometry REALIZE the order? Yardsticks: M3 sprinklings (positive control, pinned >= 0.85 balanced), the chi-permuted null (must sit >= 0.10 below the web, else VOID — the score must discriminate), and the C = 2 webs = THE MEASUREMENT — registered [directional]: between null and M3 (the extremal anomaly is on record); web >= M3 − 0.03 would flag manifoldlike-grade. NO-REVIEW MODE.
