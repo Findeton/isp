@@ -834,3 +834,7 @@ note-3p1-p3 pins the order-only reconstruction + internal certificate on windowe
 ## Round 32 CLOSED (2026-07-06)
 
 Batch continues: (iii) the anomaly characterization next, then (iv) paper 6.
+
+## 2026-07-06 (round 33) — batch item (iii): THE ANOMALY CHARACTERIZATION (the extremal signature as a falsifiable prediction)
+
+note-3p1-p4 pins: measure the chain-scaling law H(N) and the width law W(N) (Mirsky) at N in {96,128,192,256,384} on windowed C = 3 webs (Delta = 1024) vs orthant-4 and round-M4 references; fit log-log slopes. Sanity gate on the references (a_H in [0.18, 0.32] ~ 1/4; a_W in [0.65, 0.85] ~ 3/4); the webs classified EXPONENT-CLASS (a_H > 0.32 — the tallness grows with N: a genuinely different scaling law) vs OFFSET-CLASS (in-band exponent, constant offset H-ratio > 1.5). Either class = the characterization; the deliverable = the falsifiable signature sentence for paper 6 (record-grown causality is distinguishable from Poisson causality by its extremal scaling — an observable). NO-REVIEW MODE.
