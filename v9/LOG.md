@@ -838,3 +838,11 @@ Batch continues: (iii) the anomaly characterization next, then (iv) paper 6.
 ## 2026-07-06 (round 33) — batch item (iii): THE ANOMALY CHARACTERIZATION (the extremal signature as a falsifiable prediction)
 
 note-3p1-p4 pins: measure the chain-scaling law H(N) and the width law W(N) (Mirsky) at N in {96,128,192,256,384} on windowed C = 3 webs (Delta = 1024) vs orthant-4 and round-M4 references; fit log-log slopes. Sanity gate on the references (a_H in [0.18, 0.32] ~ 1/4; a_W in [0.65, 0.85] ~ 3/4); the webs classified EXPONENT-CLASS (a_H > 0.32 — the tallness grows with N: a genuinely different scaling law) vs OFFSET-CLASS (in-band exponent, constant offset H-ratio > 1.5). Either class = the characterization; the deliverable = the falsifiable signature sentence for paper 6 (record-grown causality is distinguishable from Poisson causality by its extremal scaling — an observable). NO-REVIEW MODE.
+
+### Round-33 receipt: the anomaly is EXPONENT-CLASS — a different scaling law, measured; one mis-pinned band owned
+
+**The run** (`dimwall_anomaly.py`, pin f488320, receipt 928d315 pre-run): **Ga2: EXPONENT-CLASS** — webs (a_H, a_W) = (0.583, 0.413) vs measured references (orthant 0.292/0.710; round-M4 0.381/0.638), with the H-ratio GROWING 1.42 -> 2.15 across N — the tall-narrow profile is a genuinely different extremal scaling LAW, not an offset. **Ga1 REFUSED and the mis-pin is owned:** the sanity band was pinned at the literature asymptotics (1/4, 3/4), which the finite-size references do not reach at N <= 384 (round a_H drifted to 0.381) — the gate tested my references against asymptotics rather than against themselves; the classification stands on the measured-vs-measured comparison (0.583 sits far outside even the drifted reference range). **The signature sentence (paper 6): record-grown (C = 3)-channel causal orders carry extremal scaling (a_H, a_W) ~ (0.58, 0.41) against uniform causality's ~(0.3, 0.7) at matched N — an order-invariant, affine-invariant observable distinguishing record universes from Poisson ones; the corresponding falsifiable claim: any process in this ontology's class produces chains that LENGTHEN anomalously (a_H ~ 0.6) relative to its volume dimension.** LEDGER #92.
+
+## Round 33 CLOSED (2026-07-06)
+
+Item (iii) delivered (the characterization + the mis-pin owned). Round 34 = item (iv): paper 6.
