@@ -1,0 +1,27 @@
+[rotating frame — round 44]
+    calibration: the reference card (must match the 43b bands):
+      iso   : [1.050,1.112] vs 43b (1.05, 1.112)
+      disk  : [3.009,3.087] vs 43b (3.009, 3.087)
+      p12   : [2.121,2.183] vs 43b (2.121, 2.183)
+      p045  : [2.550,2.625] vs 43b (2.55, 2.625)
+      simp  : [1.545,1.575] vs 43b (1.545, 1.575)
+      anchors: M4 F_iso [1.080,1.130] (43: (1.08, 1.13)), o4 [1.263,1.344] (43: (1.263, 1.344)); M4 F_2D [1.050,1.108]
+  [PASS] Gw0b (calibration): the card matches 43b exactly; the anchors match round 43 exactly
+  [PASS] Gw0 (wiring): omega = 0 reproduces the round-40 corner F exactly  ([2.218, 1.949, 2.179, 2.316, 2.18])
+    Gw1 (the omega curve; parking: F_iso <= 1.243, F_2D <= 1.219, refusals >= 8/10, win d_MM >= 3.7):
+      om=0.0 : F_iso =  1.864 [1.800,1.915]  F_2D = 1.640  native 2.126  eig3/1 0.620  pairs 3258  frac 0.1489  win-refusals 10/10  win d_MM = 3.97
+      om=0.1 : F_iso =  1.481 [1.377,1.626]  F_2D = 1.347  native 1.521  eig3/1 0.689  pairs 3796  frac 0.0959  win-refusals 10/10  win d_MM = 3.85
+      om=0.3 : F_iso =  1.424 [1.375,1.496]  F_2D = 1.361  native 1.471  eig3/1 0.759  pairs 4048  frac 0.1212  win-refusals 10/10  win d_MM = 3.92
+      om=1.0 : F_iso =  1.412 [1.348,1.473]  F_2D = 1.315  native 1.468  eig3/1 0.790  pairs 3821  frac 0.1138  win-refusals 10/10  win d_MM = 3.87
+      om=3.0 : F_iso =  1.446 [1.370,1.509]  F_2D = 1.423  native 1.493  eig3/1 0.728  pairs 3932  frac 0.1252  win-refusals 10/10  win d_MM = 3.84
+      om=inf : F_iso =  1.450 [1.409,1.488]  F_2D = 1.375  native 1.493  eig3/1 0.716  pairs 4168  frac 0.1291  win-refusals 10/10  win d_MM = 3.71
+      INFO per-commit b=1 (continuity): F_iso = 1.347, native 1.379
+  [PASS] Gw1: the omega curve computed at every point
+      parking candidates: NONE
+  [PASS] Gw2: S4 certification run at every candidate  (0 candidates, 0 confirmed)
+
+      Gw3 THE VERDICT: LAST-NO-GO (no non-sparse point reaches F_iso <= 1.356 with win d_MM >= 3.0) — the rounds-40-44 arc completes
+
+  [PASS] Gw3 (the verdict; a read)  (LAST-NO-GO (no non-sparse point reaches F_iso <= 1.356 with win d_MM >= 3.0) — the rounds-40-44 arc completes)
+
+ALL CHECKS PASS (5/5)
