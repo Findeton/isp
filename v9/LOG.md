@@ -1092,3 +1092,7 @@ The user's convergence question receipt-shaped: do the 6–9% roundness residual
 ### Paper-numbering correction (user-caught, 2026-07-10)
 
 The stem-spectrum paper (round 38) was v9's seventh paper and now carries the name: `v9/stem-spectrum-paper.md` → **`relativistic-isp-v9-paper7-stem-spectrum.md`** (the frozen dev record of shard paper XIV; git-mv, history preserved). The shape–dimension frontier paper (round 46) is accordingly **paper 8**: → `relativistic-isp-v9-paper8-shape-dimension-frontier.md`. Historical LOG/LEDGER entries referencing the old filenames are not rewritten (house rule); this entry is the pointer. The v9 paper roster: 1 grader, 2 forgery map, 3 pincer, 4 discharge, 5 one-sign machine, 6 dimension-from-channels, 7 stem spectrum (→ shard XIV), 8 shape–dimension frontier.
+
+## 2026-07-10 (round 47) — OPENED at user go: CONSERVATION-CHURN — the first coupled builder, and the first influence measurement. NO-REVIEW MODE (standing, token-constrained).
+
+The user's challenge, adopted: content destruction was a stationarity shortcut, never a principle — records (snapshots) were always permanent, but the working accumulators' evidence vanished on reset, a non-conservative dynamics with three now-visible costs (no interaction ⇒ no matter; teleport scars; the residual). Pin: `v9/note-3p1-conservation.md`. The receipt carries the program's FIRST influence measurement (meaningful only now — the free-web theorem made it trivial before).
