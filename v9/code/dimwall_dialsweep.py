@@ -186,16 +186,53 @@ frozen = json.load(open("v9/data/mm_reference.json"))
 ok0b = all(abs(ref[d] - frozen[f"M{d}"]) < 1e-9 for d in (2, 3, 4))
 check("Gd0b (wiring, MM side): re-derived reference == frozen json (1e-9)",
       ok0b, "  ".join(f"M{d}:{ref[d]:.4f}" for d in (2, 3, 4)))
+ref[5] = frozen["M5"]   # the m5cal extension (frozen; interpolate to M5)
 
 def d_mm(f):
+    # m5cal mapping: interpolate on the frozen M2..M5 curve; clamp at 5
     ds = sorted(ref); fs = [ref[d] for d in ds]
     if f >= fs[0]: return 2.0
-    if f <= fs[-1]: return 4.0 + (fs[-1] - f) / max(fs[-2] - fs[-1], 1e-9)
+    if f <= fs[-1]: return float(ds[-1])
     for a in range(len(ds) - 1):
         if fs[a] >= f >= fs[a + 1]:
             w = (fs[a] - f) / (fs[a] - fs[a + 1])
             return ds[a] + w * (ds[a + 1] - ds[a])
     return float("nan")
+
+def win_frac_m5cal(sd, C, D=512, NW=128):
+    # m5cal verbatim: web_chiv (alpha=0.75, per-channel churn) + window
+    rng = np.random.default_rng(sd)
+    M, L, N = 32, 16, 2048
+    acc = np.zeros((M, C))
+    pref = np.arange(M) % C
+    chiV = np.zeros((N, C))
+    for t in range(N):
+        c = int(rng.integers(M))
+        if C > 1 and rng.random() < 0.75:
+            k = int(pref[c])
+        else:
+            k = int(rng.integers(C))
+        acc[c, k] += rng.exponential(0.109551)
+        chiV[t] = acc[c]
+        for kk in range(C):
+            if rng.random() < 1.0 / L:
+                acc[int(rng.integers(M)), kk] = 0.0
+    start = (2048 - D) // 2
+    idx = np.sort(rng.choice(np.arange(start, start + D), NW, replace=False))
+    b = idx
+    rel = b[:, None] < b[None, :]
+    for k in range(C):
+        rel &= chiV[idx][:, None, k] <= chiV[idx][None, :, k]
+    np.fill_diagonal(rel, False)
+    n = rel.shape[0]
+    return rel.sum() / (n * (n - 1) / 2)
+
+wfr = [win_frac_m5cal(sd, 3) for sd in range(20260960, 20260965)]
+wmean = float(np.mean(wfr))
+check("Gd0c-prime (the crown anchor): m5cal windowed fraction and d_MM "
+      "reproduced (0.1008 -> 4.04)",
+      round(wmean, 4) == 0.1008 and round(d_mm(wmean), 2) == 4.04,
+      f"fraction {wmean:.4f} -> d_MM {d_mm(wmean):.2f}")
 
 # Gd0a: wiring, F side (round-40 seeds and values)
 R40 = {"corner": [2.218, 1.949, 2.179, 2.316, 2.180],
@@ -220,25 +257,32 @@ POINTS = ([("alpha", f"a={a}", dict(alpha=a)) for a in (0.0, 0.25, 0.5, 0.75, 1.
           + [("beta", f"b={b}", dict(beta=b)) for b in (0.25, 1.0, 4.0, 16.0)]
           + [("equal", "b=EQ", {})])
 rows = {}
+WSTART = (2048 - 512) // 2
 for mode, tag, kw in POINTS:
-    Fs, frs, refusals, corrs = [], [], 0, []
+    Fs, frs, wfrs, refusals, corrs = [], [], [], 0, []
     for sd in SEEDS:
         rel, chiV, wrel, coords, rng = build_lorentzline(sd, mode, **kw)
         F, npairs = footprint_F(wrel, coords)
         Fs.append(F)
         frs.append(frac(rel))
+        widx = np.sort(rng.choice(np.arange(WSTART, WSTART + 512), 128,
+                                  replace=False))
+        wfrs.append(frac(rel[np.ix_(widx, widx)]))
         for _ in range(2):
-            idx = np.sort(rng.choice(2048, 144, replace=False))
+            idx = np.sort(rng.choice(np.arange(WSTART, WSTART + 512), 144,
+                                     replace=False))
             if not dim_le_2(rel[np.ix_(idx, idx)]):
                 refusals += 1
         cc = np.corrcoef(chiV.T)
         corrs.append(float(np.mean(cc[np.triu_indices(3, 1)])))
-    dm = d_mm(float(np.mean(frs)))
+    dmw = d_mm(float(np.mean(wfrs)))
+    dm_full = d_mm(float(np.mean(frs)))
     rows[tag] = (float(np.nanmean(Fs)), float(np.nanmin(Fs)), float(np.nanmax(Fs)),
-                 refusals, dm, float(np.mean(corrs)))
+                 refusals, dmw, float(np.mean(corrs)), dm_full)
     print(f"      {tag:7s}: F = {rows[tag][0]:.3f} [{rows[tag][1]:.3f},"
-          f"{rows[tag][2]:.3f}]  refusals {refusals}/10  "
-          f"d_MM = {dm:.2f}  chan-corr {rows[tag][5]:+.3f}")
+          f"{rows[tag][2]:.3f}]  win-refusals {refusals}/10  "
+          f"win d_MM = {dmw:.2f}  (INFO full-web {dm_full:.2f})  "
+          f"chan-corr {rows[tag][5]:+.3f}")
 
 # A6: the paper-6 class anchor
 frs, refusals = [], 0
@@ -250,9 +294,9 @@ for sd in SEEDS:
         if not dim_le_2(rel[np.ix_(idx, idx)]):
             refusals += 1
 dmA6 = d_mm(float(np.mean(frs)))
-print(f"      A6 (paper-6 class): refusals {refusals}/10, d_MM = {dmA6:.2f}")
-check("Gd0c (dimension anchor): A6 refusals >= 8/10 and d_MM >= 3.0",
-      refusals >= 8 and dmA6 >= 3.0, f"{refusals}/10, {dmA6:.2f}")
+print(f"      INFO A6 (round-24 uniform class): refusals {refusals}/10, "
+      f"full-web d_MM = {dmA6:.2f} (corpus round-24 reading 2.50, "
+      f"DIM-WITHOUT-VOLUME — consistency print, not a gate)")
 
 check("Gd1 (shape curves) [MEASURED]: F computed at every dial point",
       all(np.isfinite(rows[t][0]) for t in rows))
@@ -261,9 +305,9 @@ check("Gd2 (dimension curves) [MEASURED]: refusals + d_MM at every point",
 
 # Gd3: the trade-off verdict (pinned semantics)
 sweet = [t for t, r in rows.items()
-         if r[0] <= 1.10 and r[3] >= 8 and r[4] >= 3.0]
+         if r[0] <= 1.10 and r[3] >= 8 and r[4] >= 3.7]
 lowF = [t for t, r in rows.items() if r[0] <= 1.20]
-nogo = len(lowF) > 0 and all(rows[t][3] <= 2 or rows[t][4] <= 2.5 for t in lowF)
+nogo = len(lowF) > 0 and all(rows[t][3] <= 2 or rows[t][4] <= 3.0 for t in lowF)
 if sweet:
     verdict = f"SWEET-SPOT-EXISTS at {sweet}"
 elif nogo or not lowF:
