@@ -1,0 +1,28 @@
+[45e — the pre-registered decision protocol]
+    Gate 0: the same-pipeline parking line (confetti through the IDENTICAL 45d pipeline; both conventions; 20 seeds):
+      convention dom: band [1.039,1.124] mean 1.086 -> parking line 1.236
+      convention m4 : band [1.043,1.102] mean 1.069 -> parking line 1.212
+  [PASS] Gate 0: the line set per convention (>= 18/20 finite each)  (dom 1.236, m4 1.212)
+    O2: the ballistic-class volume reference (latent d = 2..6, 8 seeds each, same window protocol):
+      d=2: window fraction 0.3016 (+- 0.0203)
+      d=3: window fraction 0.0997 (+- 0.0122)
+      d=4: window fraction 0.0404 (+- 0.0065)
+      d=5: window fraction 0.0253 (+- 0.0058)
+      d=6: window fraction 0.0134 (+- 0.0045)
+  [PASS] O2: the reference curve is strictly monotone in d
+    Gate 1: the pre-registered points on 10 FRESH seeds (split-sample tau everywhere):
+      P0 (K=24, a=0.75, c=0.5): F_dom = 1.298 (SE 0.014)  F_m4 = 1.237 (SE 0.011)  d_ball = 3.84  refusals 10/10  S4 10/10
+      N1 (K=32, a=0.75, c=0.5): F_dom = 1.310 (SE 0.016)  F_m4 = 1.239 (SE 0.012)  d_ball = 3.85  refusals 10/10  S4 10/10
+      N2 (K=24, a=0.75, c=0.35): F_dom = 1.323 (SE 0.028)  F_m4 = 1.247 (SE 0.018)  d_ball = 4.80  refusals 10/10  S4 10/10
+  [PASS] Gate 1: the three pre-registered points measured on fresh seeds
+      dF/dc (P0 vs N2, dom): -0.162 per unit c
+    the decision (P0 at z <= -1.64 both conventions; neighbors at z <= -2.13; volume in [3.5, 4.5]; refusals >= 8/10; S4 >= 3/10):
+      P0: z_dom = +4.33, z_m4 = +2.31
+      N1: z_dom = +4.64, z_m4 = +2.23
+      N2: z_dom = +3.04, z_m4 = +1.91
+
+      45e THE DECISION: NOT-PARKED (no pre-registered point passes the full conjunction)
+
+  [PASS] the decision (a read; pre-registered semantics)  (NOT-PARKED (no pre-registered point passes the full conjunction))
+
+ALL CHECKS PASS (4/4)
