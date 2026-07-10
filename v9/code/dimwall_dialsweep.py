@@ -141,24 +141,31 @@ def dim_le_2(rel):
             return False
     return True
 
-# ---- MM machinery (verbatim recipe, phase 0/1) ----
+# ---- MM machinery (now byte-verbatim from dimwall_phase0.py — the
+# first run's from-memory transcription was caught by Gd0b, exactly the
+# wiring gate's job; amendment disclosed in the LOG) ----
 def sprinkle_mink(rng, N, dspace):
-    P = np.empty((0, dspace + 1))
-    while len(P) < N:
-        t = rng.random(8 * N)
-        x = rng.uniform(-0.5, 0.5, (8 * N, dspace))
-        r = np.linalg.norm(x, axis=1)
-        keep = (r <= t) & (r <= 1 - t)
-        P = np.vstack([P, np.column_stack([t[keep], x[keep]])])
-    P = P[:N]
-    dt = P[None, :, 0] - P[:, None, 0]
-    dx = np.linalg.norm(P[None, :, 1:] - P[:, None, 1:], axis=2)
+    """Uniform points in the causal diamond of M^(1+dspace); returns rel."""
+    pts = []
+    while len(pts) < N:
+        t = rng.random()
+        x = rng.uniform(-0.5, 0.5, dspace)
+        r = np.linalg.norm(x)
+        if r <= t and r <= 1 - t:
+            pts.append((t, x))
+    T = np.array([p[0] for p in pts])
+    X = np.array([p[1] for p in pts])
+    dt = T[None, :] - T[:, None]
+    dx = np.linalg.norm(X[None, :, :] - X[:, None, :], axis=2)
     rel = (dt > 0) & (dt >= dx)
     np.fill_diagonal(rel, False)
     return rel
 
 def sprinkle_m2(rng, N):
-    return sprinkle_mink(rng, N, 1)
+    u = rng.random(N); v = rng.random(N)
+    rel = (u[:, None] < u[None, :]) & (v[:, None] < v[None, :])
+    np.fill_diagonal(rel, False)
+    return rel
 
 def frac(rel):
     n = rel.shape[0]
