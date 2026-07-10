@@ -1,0 +1,20 @@
+[dial sweep 42b — the in-family completion]
+      wiring b=1.0    : F =  1.809 [1.690,1.947]  win-refusals 10/10  win d_MM = 3.94
+  [PASS] Ge-w (wiring): round-42 per-slot b = 1.0 row reproduced  (F 1.809 vs 1.809, win d_MM 3.94 vs 3.94)
+    Ge1 (per-commit Dirichlet, per-channel churn):
+      per-commit b=0.25: F =  1.462 [1.363,1.548]  win-refusals 10/10  win d_MM = 3.49
+      per-commit b=1.0: F =  1.409 [1.339,1.473]  win-refusals 10/10  win d_MM = 3.19
+      per-commit b=4.0: F =  1.348 [1.240,1.488]  win-refusals 10/10  win d_MM = 3.37
+    Ge2 (per-slot Dirichlet, FULL-VECTOR churn):
+      full-reset b=1.0: F =  1.617 [1.481,1.731]  win-refusals 10/10  win d_MM = 2.94
+      full-reset b=4.0: F =  1.484 [1.417,1.620]  win-refusals 10/10  win d_MM = 2.50
+      full-reset b=16.0: F =  1.270 [1.227,1.331]  win-refusals 10/10  win d_MM = 2.17
+      equal+full-reset: F =  1.000 [1.000,1.000]  win-refusals 0/10  win d_MM = 2.00
+      (equal+full-reset = the memo's degenerate endpoint: co-monotone by proof, dim <= 2 expected)
+  [PASS] Ge1/Ge2: all rows computed and printed
+
+      Ge3 THE FLOOR VERDICT: FLOOR-BEATEN at ['fv b=16.0']
+
+  [PASS] Ge3 (the floor verdict; a read)  (FLOOR-BEATEN at ['fv b=16.0'])
+
+ALL CHECKS PASS (3/3)
