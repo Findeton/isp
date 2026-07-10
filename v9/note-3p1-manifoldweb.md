@@ -19,3 +19,7 @@ The confetti probe (note-round-cone-mechanisms §2) proved the destination: K ce
 ## References
 
 note-round-cone-mechanisms (LEDGER #115: the impossibility, the mechanism, the probe); v8 paper 14 (Thm 2.1 celestial clocks; §1 the detachment; Johnston SVD embeddings arXiv:2111.09331); rounds 40–44b (instruments verbatim; the card; the confound exhibits); the weak two-clock lemma (dim ≤ K+1); the frozen mm_reference.json.
+
+## Round-45 amendment: the starvation diagnosis and the 45b pin (appended)
+
+**The receipt's read:** GROWTH-SPOILS by CLOCK STARVATION — per-clock churn injects K independent perturbations, destroying the latent low-rank structure that makes K-clock dominance non-starving (the confetti's clocks are consistent projections of one 4-state; the web's were, until the resets). **Receipt 45b (`v9/code/dimwall_manifoldweb_b.py`; pinned here, committed strictly before running):** the identical grid and gates with FULL-VECTOR churn (one victim slot's whole K-vector reset per firing, rate 1/L — the 42b convention), which returns reset slots to the deposit surface's apex and preserves the latent structure. Wiring: two round-45 rows (K = 4, both α) reproduced byte-exactly under the per-clock flag before the full-vector grid runs. Registered expectations: fraction stays K-healthy; F_iso descends toward the confetti trajectory; dimension instruments live; the 42b common-shock collapse risk is watched via the eig columns (expected inert for direction-valued deposits). Verdict semantics unchanged (GROWTH-REACHES-ROUND / GROWTH-SPOILS / MIXED).
