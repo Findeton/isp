@@ -38,3 +38,13 @@ The F instrument reads OCCUPANCY (the round-40 #104 scoping); geometric cones ar
 ## References
 
 Round-40 close (LEDGER #103–#105; the ablation; the re-review's both-parametrizations requirement); note-3p1-lorentz2-footprint (+ its corrections section); dimwall_phase0/phase1 (the certified dimension instruments, copied verbatim); v9/data/mm_reference.json (frozen); note-3p1-p1-multichannel (the paper-6 pinned class); the weak two-clock lemma (note-3p1-dimension-ledger, round-35 corrected form).
+
+## Round-42 amendment (pre-review, wiring-driven; appended)
+
+**What the wiring gates caught, in order:** (1) Gd0b refused twice — the sweep's sprinkler must be `openings_pass.py`'s (the frozen json's writer, 6N-batch); the corpus carries THREE sprinkle_mink variants (phase0 one-at-a-time; m5cal 4N; openings 6N) — flagged for the review as a lineage item. (2) Gd0c refused for a REAL reason: the anchor was mis-pinned from memory. The corpus record (LOG rounds 24/29/30): the uniform+full-reset builder ("A6") read full-web d_MM = 2.50 at round 24 — **Gm3 REFUSED, DIM-WITHOUT-VOLUME** — and my A6 reproduces it (2.46 fresh seeds; 2.51 at the round-24 seeds through the frozen reference). The d = C+1 = 4.04 crown reading is the WINDOWED metric (Δ = 512, m5cal, S₄-witnessed at round 30), and **the crown class is α = 0.75 with PER-CHANNEL churn (m5cal's web_chiv) — the same class as the round-40 corner webs**; this note's §2 and the round-42 LOG open mis-identified the certified class as the uniform builder — corrected here.
+
+**Re-pinned gates (supersede §4's Gd0c/Gd2/Gd3):**
+- **Gd0c′ (the crown anchor):** `win_frac` (m5cal verbatim: Δ = 512, NW = 128) at m5cal's own seeds 20260960–4, mean fraction through the frozen M2–M5 curve, must reproduce the m5cal print: fraction 0.1008, windowed d_MM = 4.04 (two decimals).
+- **Gd2′ (the dimension curves, WINDOWED):** per dial point: windowed fraction (Δ = 512, NW = 128, the win_frac construction on the dial builder; the window draw follows the F-window draw in rng order — disclosed, fresh seeds) → windowed d_MM through the frozen M2–M5 curve (M5 included; below-M5 clamps at 5 per m5cal); refusals = two 144-index draws from the central Δ = 512 window per seed. Full-web d_MM and fraction demoted to INFO (the round-29 mixture-dilution).
+- **Gd3′ (the verdict, on the crown metric):** SWEET-SPOT-EXISTS iff some point has F ≤ 1.10 AND windowed refusals ≥ 8/10 AND windowed d_MM ≥ 3.7 (the crown band floor). TRADE-OFF-NO-GO iff every point with F ≤ 1.20 has refusals ≤ 2/10 OR windowed d_MM ≤ 3.0. Else MIXED-FRONTIER (frontier printed both directions).
+- **A6 demoted to an INFO consistency print** (must sit near the round-24 2.50 full-web reading; it does).
