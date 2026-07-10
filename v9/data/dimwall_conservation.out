@@ -1,0 +1,21 @@
+[conservation churn — round 47; NO-REVIEW MODE on record]
+    G0a: the destructive twin (transfer off) vs 45e's P0 band:
+      twin: F_dom 1.343 F_m4 1.272 (45e P0: 1.298/1.237)
+    G0b: the free-web influence control (must be exactly ONE slot):
+      seed 20263950: affected slots = [7]
+      seed 20263951: affected slots = [7]
+  [PASS] G0 (twin band + the influence-theorem control)
+    G1: conservation-churn, 10 seeds:
+      F_dom = 1.344 (SE 0.032, line 1.236, z +3.35) | F_m4 = 1.276 (SE 0.020, line 1.212, z +3.25)
+      d_ball = 3.95  refusals 10/10  S4 9/10  dipole-drift late/early = 1.64 (disclosure)
+  [PASS] G1 [MEASURED, unreviewed]: the conservation web measured
+    G2: the first influence measurement (5 common-rng pairs, conservation on):
+      affected-slot count vs Delta-b (mean over 5 pairs):
+        Delta-b =   64:   0.6 slots (range 0-1)
+        Delta-b =  128:   1.2 slots (range 1-2)
+        Delta-b =  256:   1.4 slots (range 1-2)
+        Delta-b =  512:   2.2 slots (range 1-4)
+        Delta-b = 1024:   3.6 slots (range 2-5)
+  [PASS] G2 (the influence measurement): propagation OBSERVED — the fleet is coupled  (3.6 slots affected by Delta-b = 1024 (the control: exactly 1))
+
+ALL CHECKS PASS (3/3)
