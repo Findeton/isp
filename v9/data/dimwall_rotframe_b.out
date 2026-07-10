@@ -1,0 +1,19 @@
+[rotating frame 44b — the drift-tuned corner + the morph record]
+  [PASS] Gz0 (calibration): the round-43 anchor bands reproduced exactly  (M4 [1.080,1.130], o4 [1.263,1.344])
+    Gz1 (drift-tuned diagonal+noise; the registered prediction: fraction -> 1, win d_MM -> 2, F_iso -> 1 with healthy eigenvalues):
+      rho=0.0: F_iso =  1.467 [1.401,1.524]  F_2D = 1.372  eig3/1 0.709  pairs 4166  frac 0.1235  win-frac 0.1327  win-refusals 10/10  win d_MM = 3.73
+      rho=0.5: F_iso =  1.440 [1.367,1.507]  F_2D = 1.309  eig3/1 0.781  pairs 4727  frac 0.1809  win-frac 0.1480  win-refusals 10/10  win d_MM = 3.62
+      rho=1.0: F_iso =  1.425 [1.372,1.500]  F_2D = 1.256  eig3/1 0.785  pairs 5195  frac 0.2327  win-frac 0.1684  win-refusals 10/10  win d_MM = 3.47
+      rho=2.0: F_iso =  1.367 [1.291,1.438]  F_2D = 1.271  eig3/1 0.821  pairs 5581  frac 0.2723  win-frac 0.1821  win-refusals 10/10  win d_MM = 3.37
+      rho=4.0: F_iso =  1.368 [1.288,1.441]  F_2D = 1.294  eig3/1 0.813  pairs 5780  frac 0.2878  win-frac 0.1863  win-refusals 10/10  win d_MM = 3.34
+  [PASS] Gz1: the drift dial computed at every rho
+
+      Gz1 THE READ: OTHER — the printed columns are the record
+
+  [PASS] Gz1-read (a read)  (OTHER — the printed columns are the record)
+    Gz2 (omega = inf mechanism-morph decomposition):
+      related-pair fraction: same-slot 0.0041, cross-slot 0.1250 (total 0.1291; stationary-coincidence prediction 2^-3 = 0.125)
+      zero-atom mass among related pairs (some chi-difference exactly 0): 0.000
+  [PASS] Gz2: the decomposition printed (the morph record)
+
+ALL CHECKS PASS (4/4)
