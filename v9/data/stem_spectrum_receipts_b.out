@@ -1,0 +1,22 @@
+[stem spectrum receipts B]
+  [PASS] rB1a: |labeled 7-causets| = 96428 = independent recount  (growth 96428, recount 96428)
+  [PASS] rB1b: exact-3 census = 21 (n<=6) -> 22 (n<=7); the one new class = all five 3-orders  (n6:21 n7:22 new:[['A3', 'C3', 'L', 'Lam', 'V']])
+      rB1c witness (7 elements, relation pairs): [(0, 1), (0, 2), (0, 3), (0, 5), (1, 2), (4, 5)]
+      its size-3 down-sets and shapes:
+        (0, 1, 2) -> C3
+        (0, 1, 3) -> V
+        (0, 1, 4) -> L
+        (0, 1, 6) -> L
+        (0, 3, 4) -> L
+        (0, 3, 6) -> L
+        (0, 4, 5) -> Lam
+        (0, 4, 6) -> A3
+  [PASS] rB1c: explicit all-five witness at n = 7, re-verified
+  [PASS] rB2: extension lemma at n <= 7 (every <3-stem extends; no counterexample)
+  [PASS] rB2b: exact-3 signature determines <=3 signature (n = 6 and 7)  (n6 21 le3-sigs over 21 classes; n7 22 over 22)
+  [PASS] rB3: state machine (n <= 12) exact-3 sets == n = 7 brute census  (machine 22, brute 22; completeness beyond n = 12 rests on the cited witness bound (Gutzeit et al.), review-verified)
+  [PASS] rB4: #(<=3 signatures) == #(exact-3 signatures) at n = 6 and 7  (n6: 21==21; n7: 22==22 — covtree level-3 node count within these sizes: 22)
+
+PRE-REGISTERED GATE LEDGER B: ALL HELD — rB1 the 22; rB2 extension lemma + determination; rB3 machine == brute; rB4 tower shadow
+
+ALL CHECKS PASS (7/7)
