@@ -1,0 +1,21 @@
+[c-ladder 43b]
+    Gr1 (the F_iso reference card; synthetic clouds, 3000 points):
+      3D isotropic Gaussian             : F_iso = 1.078 [1.050,1.112]
+      planar isotropic disk (eig3 = 0)  : F_iso = 3.044 [3.009,3.087]
+      round plane + axis, eig3/1 = 0.12 : F_iso = 2.154 [2.121,2.183]
+      round plane + axis, eig3/1 = 0.045: F_iso = 2.584 [2.550,2.625]
+      3-simplex interior (polyhedral ref): F_iso = 1.557 [1.545,1.575]
+  [PASS] Gr1 (the card matches the review-derived references)  (iso 1.078 | disk 3.044 | p12 2.154 | p045 2.584 | simplex 1.557)
+    Gr2 (the equal-split witness ladder):
+      C=3: S_4 witnesses on 5/5 seeds (gate, tries=20000)
+      C=4: S_5 witnesses on 5/5 seeds (gate, tries=20000)
+      C=6: S_7 witnesses on 0/5 seeds (INFO, tries=5000)
+      C=8: S_9 witnesses on 0/5 seeds (INFO, tries=5000)
+  [PASS] Gr2: the S4/S5 gate rows searched at full tries; S7/S9 INFO at reduced tries (absence there is NOT evidence of absence)  (S4@C3: 5/5, S5@C4: 5/5, S7@C6: 0/5 (INFO), S9@C8: 0/5 (INFO))
+    Gr3 (projection-vs-CLT; orthant-9 native vs 3-PCA shadow):
+      orthant-9 native 9-frame corner/face F: 1.420 [1.394,1.440]
+      orthant-9 3-PCA-shadow F_iso:          1.165 [1.116,1.206]
+      read: shadow << native => the o9 < o4 gap is PROJECTION rounding; comparable => Gaussianization (INFO)
+  [PASS] Gr3: both readings computed and printed
+
+ALL CHECKS PASS (3/3)
