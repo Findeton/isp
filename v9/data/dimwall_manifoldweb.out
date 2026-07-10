@@ -1,0 +1,46 @@
+[manifold web — round 45]
+      confetti K=4   : F_iso 1.454 vs note 1.454
+      confetti K=8   : F_iso 1.132 vs note 1.132
+      confetti K=16  : F_iso 1.055 vs note 1.055
+      confetti K=inf : F_iso 1.046 vs note 1.046
+  [PASS] Gm0 (calibration): card + M4 anchor + the confetti reference trajectory all reproduce exactly
+    the grid (parking: F_iso <= 1.243, refusals >= 8/10, win d_MM >= 3.7, S4 >= 3/5):
+      K= 4 a=0.00: F_iso =  1.439 [1.346,1.574]  F_2D 1.281  F_emb 7.205  eig3/1 0.751  pairs 2833  frac 0.1589  win-refusals 10/10  win d_MM = 4.37
+      K= 4 a=0.75: F_iso =  1.821 [1.760,1.883]  F_2D 1.538  F_emb 9.178  eig3/1 0.574  pairs 1726  frac 0.0957  win-refusals 10/10  win d_MM = 4.70
+      K= 8 a=0.00: F_iso =  1.616 [1.450,1.719]  F_2D 1.388  F_emb   nan  eig3/1 0.577  pairs 476  frac 0.0598  win-refusals 10/10  win d_MM = 5.00
+      K= 8 a=0.75: F_iso =  1.808 [1.610,2.124]  F_2D 1.474  F_emb   nan  eig3/1 0.562  pairs 281  frac 0.0309  win-refusals 7/10  win d_MM = 5.00
+      K=12 a=0.00: F_iso =  1.645 [1.504,1.830]  F_2D 1.470  F_emb   nan  eig3/1 0.498  pairs 157  frac 0.0358  win-refusals 4/10  win d_MM = 5.00
+      K=12 a=0.75: F_iso =    nan [nan,nan]  F_2D   nan  F_emb   nan  eig3/1 0.104  pairs 101  frac 0.0169  win-refusals 1/10  win d_MM = 5.00
+      K=16 a=0.00: F_iso =  1.855 [1.855,1.855]  F_2D 1.548  F_emb   nan  eig3/1 0.110  pairs 74  frac 0.0231  win-refusals 1/10  win d_MM = 5.00
+      K=16 a=0.75: F_iso =    nan [nan,nan]  F_2D   nan  F_emb   nan  eig3/1 0.000  pairs 54  frac 0.0112  win-refusals 0/10  win d_MM = 5.00
+      K=24 a=0.00: F_iso =    nan [nan,nan]  F_2D   nan  F_emb   nan  eig3/1 0.000  pairs 38  frac 0.0148  win-refusals 0/10  win d_MM = 5.00
+      K=24 a=0.75: F_iso =    nan [nan,nan]  F_2D   nan  F_emb   nan  eig3/1 0.000  pairs 32  frac 0.0073  win-refusals 0/10  win d_MM = 5.00
+  [PASS] Gm1: the grid computed at every (K, alpha) point
+    Gm2 (witness ladder; tries = 8000 disclosed reduced; absence is never evidence of absence):
+      K= 4 a=0.00: S4 5/5
+      K= 4 a=0.75: S4 5/5
+      K=12 a=0.00: S4 5/5, S5 0/5
+      K=12 a=0.75: S4 0/5, S5 0/5
+      K=16 a=0.00: S4 1/5, S5 0/5
+      K=16 a=0.75: S4 0/5, S5 0/5
+      K=24 a=0.00: S4 1/5, S5 0/5
+      K=24 a=0.75: S4 0/5, S5 0/5
+      INFO K=24 a=0: S6 0/5 (tries 4000)
+  [PASS] Gm2: the ladder searched per pin
+
+      Gm3 THE VERDICT: GROWTH-SPOILS (no point reaches F_iso <= 1.356 with win d_MM >= 3.0)
+
+  [PASS] Gm3 (the verdict; a read)  (GROWTH-SPOILS (no point reaches F_iso <= 1.356 with win d_MM >= 3.0))
+  [PASS] Gv1 (F-covariance) [directional read]: Spearman(F_native, F_embedded) across the grid  (rho = 0.903 -> ORDER-READABLE (covariant))
+v9/code/dimwall_manifoldweb.py:365: RuntimeWarning: Mean of empty slice
+  Femb=float(np.nanmean(Fembs)),
+v9/code/dimwall_manifoldweb.py:368: RuntimeWarning: Mean of empty slice
+  print(f"      K={K:2d} a={alpha:4.2f}: F_iso = {np.nanmean(Fs):6.3f} "
+v9/code/dimwall_manifoldweb.py:363: RuntimeWarning: Mean of empty slice
+  rows[(K, alpha)] = dict(F=float(np.nanmean(Fs)),
+v9/code/dimwall_manifoldweb.py:364: RuntimeWarning: Mean of empty slice
+  F2=float(np.nanmean(F2s)),
+v9/code/dimwall_manifoldweb.py:368: RuntimeWarning: All-NaN axis encountered
+  print(f"      K={K:2d} a={alpha:4.2f}: F_iso = {np.nanmean(Fs):6.3f} "
+
+ALL CHECKS PASS (5/5)
