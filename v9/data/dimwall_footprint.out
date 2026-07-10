@@ -1,0 +1,37 @@
+[footprint receipt — Lorentz II]
+    M4 diamond (own coordinates, round anchor):
+      m4       seed 20262000: F =  0.999  (pairs 3552, min dir-count 1735, corner supports [0.52, 0.499, 0.511, 0.497], face [0.509, 0.508, 0.506, 0.506])
+      m4       seed 20262001: F =  0.983  (pairs 2718, min dir-count 1286, corner supports [0.446, 0.437, 0.45, 0.442], face [0.456, 0.449, 0.446, 0.454])
+      m4       seed 20262002: F =  0.993  (pairs 3225, min dir-count 1531, corner supports [0.476, 0.48, 0.476, 0.484], face [0.485, 0.494, 0.469, 0.483])
+      m4       seed 20262003: F =  0.992  (pairs 3423, min dir-count 1478, corner supports [0.503, 0.478, 0.486, 0.516], face [0.482, 0.516, 0.489, 0.512])
+      m4       seed 20262004: F =  0.990  (pairs 2765, min dir-count 1219, corner supports [0.448, 0.451, 0.465, 0.447], face [0.462, 0.453, 0.464, 0.452])
+    orthant-iid k = 4 (polyhedral anchor):
+      orthant  seed 20262000: F =  1.363  (pairs 4035, min dir-count 1795, corner supports [0.703, 0.712, 0.691, 0.693], face [0.517, 0.505, 0.518, 0.514])
+      orthant  seed 20262001: F =  1.307  (pairs 4805, min dir-count 2174, corner supports [0.678, 0.671, 0.667, 0.661], face [0.515, 0.512, 0.51, 0.511])
+      orthant  seed 20262002: F =  1.345  (pairs 4105, min dir-count 1879, corner supports [0.715, 0.713, 0.673, 0.672], face [0.515, 0.516, 0.515, 0.514])
+      orthant  seed 20262003: F =  1.392  (pairs 3459, min dir-count 1474, corner supports [0.698, 0.732, 0.756, 0.721], face [0.517, 0.524, 0.522, 0.526])
+      orthant  seed 20262004: F =  1.334  (pairs 4050, min dir-count 1734, corner supports [0.693, 0.701, 0.69, 0.686], face [0.516, 0.518, 0.519, 0.523])
+  [PASS] Gf0 (certification): min orthant F > max M4 F, strict separation 5/5 vs 5/5  (orthant [1.307, 1.392] vs M4 [0.983, 0.999])
+    corner C = 3 webs (windowed):
+      corner   seed 20262000: F =  2.218  (pairs 2380, min dir-count 483, corner supports [1.183, 1.281, 1.167, 1.309], face [0.496, 0.577, 0.577, 0.577])
+      corner   seed 20262001: F =  1.949  (pairs 4300, min dir-count 876, corner supports [1.035, 1.155, 1.076, 1.082], face [0.499, 0.577, 0.577, 0.577])
+      corner   seed 20262002: F =  2.179  (pairs 3109, min dir-count 882, corner supports [1.193, 1.285, 1.243, 1.173], face [0.514, 0.577, 0.577, 0.577])
+      corner   seed 20262003: F =  2.316  (pairs 2688, min dir-count 703, corner supports [1.242, 1.301, 1.3, 1.323], face [0.498, 0.577, 0.577, 0.577])
+      corner   seed 20262004: F =  2.180  (pairs 2417, min dir-count 639, corner supports [1.169, 1.268, 1.112, 1.34], face [0.51, 0.577, 0.577, 0.577])
+    kdir C = 3 webs (Dirichlet channel mixing):
+      kdir     seed 20262000: F =  1.725  (pairs 3316, min dir-count 1010, corner supports [0.97, 0.936, 0.808, 1.006], face [0.505, 0.567, 0.549, 0.536])
+      kdir     seed 20262001: F =  1.831  (pairs 2683, min dir-count 711, corner supports [0.998, 0.845, 0.986, 1.103], face [0.494, 0.555, 0.547, 0.55])
+      kdir     seed 20262002: F =  1.811  (pairs 2531, min dir-count 756, corner supports [1.014, 1.147, 0.821, 0.936], face [0.496, 0.555, 0.56, 0.552])
+      kdir     seed 20262003: F =  1.664  (pairs 2949, min dir-count 890, corner supports [0.973, 0.903, 0.819, 0.91], face [0.516, 0.551, 0.546, 0.553])
+      kdir     seed 20262004: F =  1.865  (pairs 3257, min dir-count 368, corner supports [1.004, 0.923, 0.986, 1.055], face [0.494, 0.54, 0.539, 0.555])
+  [PASS] Gf1 (baseline, registered [directional]: polyhedral): corner-web F band printed and classified  (corner [1.949, 2.316] -> POLYHEDRAL (M4 max 0.999, orthant min 1.307))
+  [PASS] Gf2 (THE MIXING QUESTION) [directional]: mean F(kdir) < mean F(corner) — mixing rounds the cone  (kdir 1.779 vs corner 2.168 (shift -0.389))
+    INFO: M4 rotated-tetrad probe (fairness):
+      m4-alt   seed 20262000: F =  1.013  (pairs 3552, min dir-count 1745, corner supports [0.524, 0.495, 0.509, 0.497], face [0.512, 0.51, 0.501, 0.476])
+      m4-alt   seed 20262001: F =  1.007  (pairs 2718, min dir-count 1272, corner supports [0.448, 0.438, 0.445, 0.463], face [0.439, 0.436, 0.444, 0.464])
+      m4-alt   seed 20262002: F =  1.015  (pairs 3225, min dir-count 1518, corner supports [0.495, 0.492, 0.475, 0.495], face [0.491, 0.481, 0.474, 0.481])
+      m4-alt   seed 20262003: F =  0.988  (pairs 3423, min dir-count 1517, corner supports [0.497, 0.483, 0.479, 0.515], face [0.489, 0.522, 0.488, 0.499])
+      m4-alt   seed 20262004: F =  0.991  (pairs 2765, min dir-count 1242, corner supports [0.444, 0.438, 0.453, 0.467], face [0.458, 0.436, 0.459, 0.465])
+      INFO: M4 alt-tetrad band [0.988, 1.015] vs pinned [0.983, 0.999] — frame-choice sensitivity WITHIN band overlap
+
+ALL CHECKS PASS (3/3)
