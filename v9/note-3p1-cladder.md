@@ -32,3 +32,7 @@ F_iso reads OCCUPANCY in the effective 3-frame; geometric cones remain polyhedra
 ## References
 
 Rounds 40/42/42b (LEDGER #103–#109; the frontier, the confound exhibits, the collinearity identity); note-3p1-dimension-ledger §2 R-A (the registered limit); dimwall_witness (find_sk/verify_sk, verbatim); dimwall_dialsweep{,_b} (builders, metrics — verbatim); the frozen mm_reference.json.
+
+## Round-43 amendment 1 (Gc0 VOID, diagnosed; appended before the amended receipt runs)
+
+The certification refused exactly as designed, catching two wiring flaws before any web was read: **(a)** the F_iso pipeline used the diagonal causal axis for ALL families — but M4's axis is the t-axis (the round-40 convention, dropped in transcription); the mis-axed M4 transverse cloud is offset/anisotropic and starves sphere directions below MIN_PROJ. Fix: family-specific d-hat exactly as round 40 (M4 → t-axis; dominance families → the diagonal). **(b)** the orthant-9 anchor at N = 256 has ~2^-9 ordering fraction → ~80 related pairs — the pin's own K3 sparsity risk, firing on the anchor itself. Fix: the orthant-9 anchor runs at N = 1024 (≈ 1000 pairs); web pair counts remain printed and MIN_PROJ-guarded. Gates otherwise unchanged.

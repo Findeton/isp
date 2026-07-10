@@ -32,10 +32,13 @@ def fib_sphere(n=64):
                             np.sin(phi) * np.sin(theta), np.cos(phi)])
 UDIRS = fib_sphere(64)
 
-def transverse_cloud(rel, coords):
+def transverse_cloud(rel, coords, family="dom"):
     X = (coords - coords.mean(0)) / np.maximum(coords.std(0), 1e-9)
     k = X.shape[1]
-    dhat = np.ones(k) / np.sqrt(k)
+    if family == "m4":
+        dhat = np.zeros(k); dhat[0] = 1.0   # round-40 convention: t-axis
+    else:
+        dhat = np.ones(k) / np.sqrt(k)
     ii, jj = np.where(rel)
     d = X[jj] - X[ii]
     s = d @ dhat
@@ -44,11 +47,11 @@ def transverse_cloud(rel, coords):
     w = d - s[:, None] * dhat[None, :]
     return w / s[:, None]
 
-def F_iso(rel, coords):
+def F_iso(rel, coords, family="dom"):
     """Effective-3-frame isotropy: PCA top-3 of the v-cloud, directional
     q90 supports on the pinned sphere; top-8/bottom-8 support ratio.
     Returns (F, npairs, eig_ratio3, degenerate_flag)."""
-    v = transverse_cloud(rel, coords)
+    v = transverse_cloud(rel, coords, family)
     if len(v) < 4 * MIN_PROJ:
         return float("nan"), len(v), 0.0, True
     C = np.cov(v.T)
@@ -265,14 +268,15 @@ Fm4, Fo4, Fo9 = [], [], []
 for sd in SEEDS:
     rng = np.random.default_rng(sd)
     rel, P = m4diamond(rng, 256)
-    F, npairs, er, dg = F_iso(rel, P)
+    F, npairs, er, dg = F_iso(rel, P, family="m4")
     Fm4.append(F)
     print(f"      m4       seed {sd}: F_iso = {F:6.3f} (pairs {npairs}, "
           f"eig3/eig1 {er:.3f}{', DEGEN' if dg else ''})")
 for name, k, sink in (("orthant4", 4, Fo4), ("orthant9", 9, Fo9)):
+    NA = 256 if k == 4 else 1024   # amendment 1(b): the o9 sparsity fix
     for sd in SEEDS:
         rng = np.random.default_rng(sd)
-        rel, Z = orthantk(rng, 256, k)
+        rel, Z = orthantk(rng, NA, k)
         F, npairs, er, dg = F_iso(rel, Z)
         sink.append(F)
         print(f"      {name} seed {sd}: F_iso = {F:6.3f} (pairs {npairs}, "
