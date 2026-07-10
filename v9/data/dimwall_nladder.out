@@ -1,0 +1,15 @@
+[n-ladder — round 46; NO-REVIEW MODE on record]
+    N= 2048: F_dom 1.298 F_m4 1.237 | conf dom 1.086 m4 1.070 | gap dom +0.212±0.017 m4 +0.167±0.013 | d_ball 3.83 | refusals 10/10 S4 10/10
+    N= 8192: F_dom 1.301 F_m4 1.230 | conf dom 1.090 m4 1.073 | gap dom +0.211±0.024 m4 +0.157±0.021 | d_ball 2.89 | refusals 10/10 S4 10/10
+    N=32768: F_dom 1.296 F_m4 1.214 | conf dom 1.094 m4 1.078 | gap dom +0.202±0.021 m4 +0.135±0.015 | d_ball 2.94 | refusals 3/10 S4 10/10
+  [PASS] G0 (wiring): the N=2048 rung reproduces 45e's P0 (2 d.p. / d_ball within 0.15)  (F 1.298/1.237, d_ball 3.83)
+    INFO churn axis N=8192 L=64: F_dom 1.276 F_m4 1.236 (L=16 row: 1.301/1.230)
+  [PASS] G1 [MEASURED, unreviewed]: the ladder computed
+      trend[dom]: gap +0.212 -> +0.202 (pooled SE 0.027) => PERSISTS
+      trend[m4]: gap +0.167 -> +0.135 (pooled SE 0.020) => PERSISTS
+
+      G2 THE TREND: PERSISTS/PERSISTS (CONVENTION-STABLE)
+
+  [PASS] G2 (the trend; a read)  (PERSISTS/PERSISTS stable)
+
+ALL CHECKS PASS (3/3)
