@@ -1,6 +1,6 @@
 # 3p1-p5 — the selection question: why C = 3?
 
-**Status:** design note, 2026-07-06 (v9 round 31, batch item v). Receipt: `v9/code/dimwall_selection.py` (pinned here, committed strictly before the receipt). **NO-REVIEW MODE on record. A mapping receipt: verdict CLASSES pinned, not numeric predictions — we have none, and pretending otherwise would be theater. The honest risk, stated: the likely outcome relocates the question to the dials (the Newton-G pattern); the wildcard is a genuine band-closure.**
+**Status:** design note, 2026-07-06 (committed 2026-07-09) (v9 round 31, batch item v). Receipt: `v9/code/dimwall_selection.py` (pinned here, committed strictly before the receipt). **NO-REVIEW MODE on record. A mapping receipt: verdict CLASSES pinned, not numeric predictions — we have none, and pretending otherwise would be theater. The honest risk, stated: the likely outcome relocates the question to the dials (the Newton-G pattern); the wildcard is a genuine band-closure.**
 
 ## Receipt (b): the viability-band closure
 

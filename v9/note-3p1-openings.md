@@ -1,6 +1,6 @@
 # 3p1-openings — the openings pass: the reserved review's leftovers + all why-C=3 routes
 
-**Status:** design note, 2026-07-06 (v9 round 35). Receipt: `v9/code/openings_pass.py` (pinned strictly before). **REVIEWS RESTORED — this receipt's results feed paper 6 BEFORE its review.**
+**Status:** design note, 2026-07-06 (committed 2026-07-09) (v9 round 35). Receipt: `v9/code/openings_pass.py` (pinned strictly before). **REVIEWS RESTORED — this receipt's results feed paper 6 BEFORE its review.**
 
 ## Parts (all measured; directional registrations noted)
 
@@ -13,3 +13,7 @@
 
 ## References
 LEDGER #89 (the openings), #90 (the environmental ending + undesigned routes), #92 (the band mis-pin lesson: anchors measured at matched n, in-receipt).
+
+## Round-35 correction (the paper-6 hostile review, NIT-2 — appended, not silently edited)
+
+The final Parts bullet's "Disclosed, designed-not-run" misstates the record: no such design exists in any artifact — read "undesigned by choice, ledgered" (the paper's and the receipt-1 LOG entry's wording, now tidied there too). The bullet above is left as committed; this section is the correction.

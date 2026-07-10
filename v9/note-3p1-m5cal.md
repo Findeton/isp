@@ -17,6 +17,6 @@ Attack the finding "multi-channel record webs read d = C + 1 in time-windows": i
 
 r29 (`dimwall_phase2d.py` + LEDGER #88 — the banked finding and its disclosure); the Phase-0 instruments; PLAN SS-the-3+1-program (the reserved-review rule).
 
-## Review disposition (2026-07-06 — the reserved review returned CONFIRMED-NARROWED; applied)
+## Review disposition (2026-07-06 (committed 2026-07-09) — the reserved review returned CONFIRMED-NARROWED; applied)
 
 The sharp upgrade (S_{C+1} witnesses => dim = C + 1 exactly), the pair-defense fooling construction, the MM narrowing (+-0.2–0.4, association-dependent), and the equilibrated-windows qualifier are recorded at LOG round-30 receipt 2 and LEDGER #89; the grade language there is the referee's verbatim. Corrections owned here: the round-30 LOG line "orthant anchors match to the third digit" overstated k = 3 (two digits: 0.2547 vs 0.2500); the C = 1 rung 2.00 is a boundary clamp; the M4 reference differs across receipts by RNG-consumption refactor (<= 0.02 d_MM, immaterial, disclosed).

@@ -25,3 +25,7 @@ No hostile review (mode on record). The builder's channel-choice (uniform per ev
 ## References
 
 note-3p1-dimension-ledger (+ Phase-0 receipt: the Lemma, the certified tester, the measured MM curve); PLAN §the-3+1-program; the wb-line builder (construction provenance); LEDGER #82.
+
+## Round-35 correction (the paper-6 hostile review, MINOR-3 — appended, not silently edited)
+
+§1's "dim ≤ C + 1 by the Phase-0 Lemma" mis-routes: the Phase-0 Lemma as stated (all-strict inequalities with tie-breaks) does not cover the weak-inequality dominance pinned here, and the parenthetical measure-zero-ties argument covers only C = 1 (correctly) — cross-slot χ-ties are abundant at C ≥ 2, where churn resets land exactly 0.0. The bound holds by the weak-form Lemma (note-3p1-dimension-ledger §Round-35 correction): L₀ = the b-order and L_k = lex(χ_k ascending, b ascending) realize dominance exactly (b injective). No result changes; §1 above is left as committed — this section is the correction.

@@ -1,6 +1,6 @@
 # 3p1-p3 — the window-aware finder: the first reconstruction score on a grown web
 
-**Status:** design note, 2026-07-06 (v9 round 32, batch item ii). Receipt: `v9/code/dimwall_finder.py` (pinned here, committed strictly before the receipt). **NO-REVIEW MODE on record.**
+**Status:** design note, 2026-07-06 (committed 2026-07-09) (v9 round 32, batch item ii). Receipt: `v9/code/dimwall_finder.py` (pinned here, committed strictly before the receipt). **NO-REVIEW MODE on record.**
 
 ## The pipeline (order-only, m1-B seed form at d = 3)
 
