@@ -40,3 +40,7 @@ The rounds-40–44 arc's measurements all stand; their INTERPRETATION upgrades: 
 ## References
 
 v8 paper 14 (Thm 2.1, §1, and its reference list: Meyer 1993; Brightwell–Winkler 1989; BHS 2009); Müller arXiv:2303.11237 (withdrawn; consistent); BHS gr-qc/0605006; Collins et al. gr-qc/0403053; Chadha–Nielsen Nucl. Phys. B217 (1983); Cohen–Glashow hep-ph/0601236 (VSR); rounds 40–44 (LEDGER #103–#114); note-3p1-dimension-ledger (R-A + supersession; the dichotomy conjecture — now understood as the finite-C statement).
+
+## Round-45 correction (appended): the probe's K = 4 value under the canonical instrument
+
+The §2 probe used an analysis-grade F_iso variant lacking the canonical PCA sign convention (rounds 43–45's card-validated form); the difference is immaterial on round clouds (K ≥ 8 values unchanged to 3 d.p.) but shifts K = 4 by 0.003: **the canonical K = 4 value is 1.454** (was printed 1.451). Caught by round-45's Gm0 calibration gate; the trajectory and all conclusions unchanged.

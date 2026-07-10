@@ -308,7 +308,10 @@ for sd in [20262400 + i for i in range(5)]:
 Fm4 = np.array(Fm4)
 oka = (round(Fm4.min(), 3), round(Fm4.max(), 3)) == (1.080, 1.130)
 # the confetti continuity anchor (investigation-note numbers, same seeds)
-CONF = {4: 1.451, 8: 1.132, 16: 1.055, "inf": 1.046}
+# K=4 corrected to the canonical instrument (note-round-cone-
+# mechanisms, round-45 correction: the probe variant lacked the PCA
+# sign convention; 0.003 shift at K=4 only)
+CONF = {4: 1.454, 8: 1.132, 16: 1.055, "inf": 1.046}
 okc = True
 for K, expect in CONF.items():
     Fs = []
