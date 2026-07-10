@@ -1,0 +1,43 @@
+[manifold web — round 45]
+      confetti K=4   : F_iso 1.454 vs note 1.454
+      confetti K=8   : F_iso 1.132 vs note 1.132
+      confetti K=16  : F_iso 1.055 vs note 1.055
+      confetti K=inf : F_iso 1.046 vs note 1.046
+  [PASS] Gm0 (calibration): card + M4 anchor + the confetti reference trajectory all reproduce exactly
+      wiring K=4 a=0.0: F_iso 1.439 vs 45's 1.439
+      wiring K=4 a=0.75: F_iso 1.821 vs 45's 1.821
+  [PASS] Gw (wiring): round-45 rows reproduced under the per-clock flag
+    the grid (parking: F_iso <= 1.243, refusals >= 8/10, win d_MM >= 3.7, S4 >= 3/5):
+      K= 4 a=0.00: F_iso =  1.774 [1.540,2.157]  F_2D 1.653  F_emb 5.274  eig3/1 0.495  pairs 10315  frac 0.3570  win-refusals 10/10  win d_MM = 2.73
+      K= 4 a=0.75: F_iso =  1.876 [1.742,2.020]  F_2D 1.556  F_emb   nan  eig3/1 0.640  pairs 4311  frac 0.1755  win-refusals 10/10  win d_MM = 3.67
+      K= 8 a=0.00: F_iso =  1.808 [1.628,2.206]  F_2D 1.810  F_emb 6.395  eig3/1 0.581  pairs 8819  frac 0.3064  win-refusals 10/10  win d_MM = 2.90
+      K= 8 a=0.75: F_iso =  1.723 [1.484,2.085]  F_2D 1.436  F_emb 5.105  eig3/1 0.708  pairs 2983  frac 0.1180  win-refusals 10/10  win d_MM = 3.95
+      K=12 a=0.00: F_iso =  1.780 [1.618,2.154]  F_2D 1.772  F_emb 6.658  eig3/1 0.676  pairs 8318  frac 0.2882  win-refusals 10/10  win d_MM = 2.96
+      K=12 a=0.75: F_iso =  1.800 [1.552,2.191]  F_2D 1.336  F_emb 4.538  eig3/1 0.649  pairs 2492  frac 0.0992  win-refusals 10/10  win d_MM = 4.20
+      K=16 a=0.00: F_iso =  1.712 [1.570,2.094]  F_2D 1.618  F_emb 5.509  eig3/1 0.744  pairs 8031  frac 0.2781  win-refusals 10/10  win d_MM = 2.99
+      K=16 a=0.75: F_iso =  1.845 [1.606,2.158]  F_2D 1.344  F_emb 4.858  eig3/1 0.633  pairs 2286  frac 0.0905  win-refusals 10/10  win d_MM = 4.36
+      K=24 a=0.00: F_iso =  1.614 [1.273,2.110]  F_2D 1.566  F_emb 5.852  eig3/1 0.722  pairs 7697  frac 0.2668  win-refusals 10/10  win d_MM = 3.05
+      K=24 a=0.75: F_iso =  1.700 [1.558,2.164]  F_2D 1.369  F_emb 10.736  eig3/1 0.625  pairs 2092  frac 0.0821  win-refusals 10/10  win d_MM = 4.49
+  [PASS] Gm1: the grid computed at every (K, alpha) point
+    Gm2 (witness ladder; tries = 8000 disclosed reduced; absence is never evidence of absence):
+      K= 4 a=0.00: S4 5/5
+      K= 4 a=0.75: S4 5/5
+      K=12 a=0.00: S4 5/5, S5 5/5
+      K=12 a=0.75: S4 5/5, S5 1/5
+      K=16 a=0.00: S4 5/5, S5 5/5
+      K=16 a=0.75: S4 5/5, S5 0/5
+      K=24 a=0.00: S4 5/5, S5 5/5
+      K=24 a=0.75: S4 5/5, S5 1/5
+      INFO K=24 a=0: S6 0/5 (tries 4000)
+  [PASS] Gm2: the ladder searched per pin
+
+      Gm3 THE VERDICT: GROWTH-SPOILS (no point reaches F_iso <= 1.356 with win d_MM >= 3.0)
+
+  [PASS] Gm3 (the verdict; a read)  (GROWTH-SPOILS (no point reaches F_iso <= 1.356 with win d_MM >= 3.0))
+  [PASS] Gv1 (F-covariance) [directional read]: Spearman(F_native, F_embedded) across the grid  (rho = -0.030 -> THE PAPER-XIV BOOKKEEPING CAVEAT FIRES (recorded))
+v9/code/dimwall_manifoldweb_b.py:388: RuntimeWarning: Mean of empty slice
+  Femb=float(np.nanmean(Fembs)),
+v9/code/dimwall_manifoldweb_b.py:391: RuntimeWarning: Mean of empty slice
+  print(f"      K={K:2d} a={alpha:4.2f}: F_iso = {np.nanmean(Fs):6.3f} "
+
+ALL CHECKS PASS (6/6)
