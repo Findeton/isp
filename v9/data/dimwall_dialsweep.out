@@ -1,0 +1,30 @@
+[dial sweep — round 42]
+  [PASS] Gd0b (wiring, MM side): re-derived reference == frozen json (1e-9)  (M2:0.4978  M3:0.2324  M4:0.0966)
+  [PASS] Gd0c-dblprime (the crown anchor): m5cal windowed fraction byte-reproduced; frozen-curve mapping = 3.97 (the m5cal print 4.04 used its own in-receipt M4/M5 — disclosed in the pin)  (fraction 0.1008 -> d_MM(frozen) 3.97)
+      wiring corner: [2.218, 1.949, 2.179, 2.316, 2.18]
+      wiring kdir: [1.725, 1.831, 1.811, 1.664, 1.865]
+  [PASS] Gd0a (wiring, F side): round-40 corner and kdir F reproduced exactly
+      a=0.0  : F = 1.492 [1.433,1.569]  win-refusals 10/10  win d_MM = 3.57  (INFO full-web 3.08)  chan-corr +0.090
+      a=0.25 : F = 1.551 [1.439,1.649]  win-refusals 10/10  win d_MM = 3.78  (INFO full-web 3.17)  chan-corr +0.022
+      a=0.5  : F = 1.851 [1.652,1.985]  win-refusals 10/10  win d_MM = 3.89  (INFO full-web 3.36)  chan-corr -0.092
+      a=0.75 : F = 2.196 [2.089,2.273]  win-refusals 10/10  win d_MM = 4.11  (INFO full-web 3.66)  chan-corr -0.186
+      a=1.0  : F = 2.596 [2.505,2.643]  win-refusals 0/10  win d_MM = 3.34  (INFO full-web 3.20)  chan-corr -0.216
+      b=0.25 : F = 2.024 [1.940,2.149]  win-refusals 10/10  win d_MM = 4.27  (INFO full-web 3.91)  chan-corr -0.167
+      b=1.0  : F = 1.809 [1.690,1.947]  win-refusals 10/10  win d_MM = 3.94  (INFO full-web 3.40)  chan-corr -0.067
+      b=4.0  : F = 1.593 [1.416,1.720]  win-refusals 10/10  win d_MM = 3.69  (INFO full-web 2.91)  chan-corr +0.108
+      b=16.0 : F = 1.403 [1.334,1.502]  win-refusals 10/10  win d_MM = 3.49  (INFO full-web 2.82)  chan-corr +0.195
+      b=EQ   : F = 1.343 [1.280,1.433]  win-refusals 10/10  win d_MM = 3.55  (INFO full-web 2.79)  chan-corr +0.218
+      INFO A6 (round-24 uniform class): refusals 10/10, full-web d_MM = 2.46 (corpus round-24 reading 2.50, DIM-WITHOUT-VOLUME — consistency print, not a gate)
+  [PASS] Gd1 (shape curves) [MEASURED]: F computed at every dial point
+  [PASS] Gd2 (dimension curves) [MEASURED]: refusals + d_MM at every point  (printed above)
+
+      Gd3 THE TRADE-OFF VERDICT: TRADE-OFF-NO-GO (no dial point reaches F <= 1.2 at all)
+
+  [PASS] Gd3 (verdict read; not a pass/fail — always passes if computed)  (TRADE-OFF-NO-GO (no dial point reaches F <= 1.2 at all))
+      Gd4 (scale leg): F at (D,NW) = (1024,256) vs (2048,512), N = 4096:
+        a=0.75 : F(1024,256) = 2.217 -> F(2048,512) = 2.257  [PERSISTS]
+        b=1.0  : F(1024,256) = 1.918 -> F(2048,512) = 1.916  [PERSISTS]
+        b=16.0 : F(1024,256) = 1.598 -> F(2048,512) = 1.579  [PERSISTS]
+  [PASS] Gd4 (scale leg) [directional]: printed per point
+
+ALL CHECKS PASS (7/7)
