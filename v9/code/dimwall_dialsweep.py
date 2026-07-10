@@ -229,10 +229,11 @@ def win_frac_m5cal(sd, C, D=512, NW=128):
 
 wfr = [win_frac_m5cal(sd, 3) for sd in range(20260960, 20260965)]
 wmean = float(np.mean(wfr))
-check("Gd0c-prime (the crown anchor): m5cal windowed fraction and d_MM "
-      "reproduced (0.1008 -> 4.04)",
-      round(wmean, 4) == 0.1008 and round(d_mm(wmean), 2) == 4.04,
-      f"fraction {wmean:.4f} -> d_MM {d_mm(wmean):.2f}")
+check("Gd0c-dblprime (the crown anchor): m5cal windowed fraction "
+      "byte-reproduced; frozen-curve mapping = 3.97 (the m5cal print 4.04 "
+      "used its own in-receipt M4/M5 — disclosed in the pin)",
+      round(wmean, 4) == 0.1008 and round(d_mm(wmean), 2) == 3.97,
+      f"fraction {wmean:.4f} -> d_MM(frozen) {d_mm(wmean):.2f}")
 
 # Gd0a: wiring, F side (round-40 seeds and values)
 R40 = {"corner": [2.218, 1.949, 2.179, 2.316, 2.180],
