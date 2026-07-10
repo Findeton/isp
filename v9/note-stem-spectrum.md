@@ -1,6 +1,6 @@
 # note-stem-spectrum — the stem spectrum: Stone/Priestley duality for sequential-growth observables
 
-**Status:** design note, 2026-07-10 (v9 round 38; extraction-bound per the user's plan). Receipt: `v9/code/stem_spectrum_receipts.py` (pinned here, committed strictly before). Paper: `v9/stem-spectrum-paper.md` (standalone-framed). Reviews ON (full hostile pass in v9; extraction-scoped pass after the move).
+**Status:** design note, 2026-07-10 (v9 round 38; extraction-bound per the user's plan). Receipt: `v9/code/stem_spectrum_receipts.py` (pinned here, committed strictly before). Paper: `v9/relativistic-isp-v9-paper7-stem-spectrum.md` (renamed from `stem-spectrum-paper.md` at the paper-numbering correction, 2026-07-10) (standalone-framed). Reviews ON (full hostile pass in v9; extraction-scoped pass after the move).
 
 ## The objects (definitions fixed here, used verbatim in the paper)
 
