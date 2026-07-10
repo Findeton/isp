@@ -1,0 +1,52 @@
+[c-ladder — round 43]
+    Gc0 anchors (F_iso through the same pipeline):
+      m4       seed 20262400: F_iso =  1.128 (pairs 3750, eig3/eig1 0.771)
+      m4       seed 20262401: F_iso =  1.080 (pairs 3262, eig3/eig1 0.860)
+      m4       seed 20262402: F_iso =  1.081 (pairs 3483, eig3/eig1 0.854)
+      m4       seed 20262403: F_iso =  1.130 (pairs 3623, eig3/eig1 0.769)
+      m4       seed 20262404: F_iso =  1.115 (pairs 3352, eig3/eig1 0.871)
+      orthant4 seed 20262400: F_iso =  1.326 (pairs 3628, eig3/eig1 0.929)
+      orthant4 seed 20262401: F_iso =  1.307 (pairs 3582, eig3/eig1 0.887)
+      orthant4 seed 20262402: F_iso =  1.264 (pairs 4514, eig3/eig1 0.930)
+      orthant4 seed 20262403: F_iso =  1.344 (pairs 3220, eig3/eig1 0.885)
+      orthant4 seed 20262404: F_iso =  1.263 (pairs 4227, eig3/eig1 0.919)
+      orthant9 seed 20262400: F_iso =  1.182 (pairs 2142, eig3/eig1 0.930)
+      orthant9 seed 20262401: F_iso =  1.149 (pairs 2379, eig3/eig1 0.946)
+      orthant9 seed 20262402: F_iso =  1.241 (pairs 1945, eig3/eig1 0.926)
+      orthant9 seed 20262403: F_iso =  1.255 (pairs 1548, eig3/eig1 0.885)
+      orthant9 seed 20262404: F_iso =  1.183 (pairs 2146, eig3/eig1 0.949)
+  [PASS] Gc0 (certification): min orthant-4/9 F_iso > max M4 F_iso, 5/5 each  (M4 [1.080,1.130] vs o4 [1.263,1.344] o9 [1.149,1.255])
+      wiring fv b=1.0: (1.617, 1.481, 1.731) vs (1.617, 1.481, 1.731)
+      wiring fv b=4.0: (1.484, 1.417, 1.62) vs (1.484, 1.417, 1.62)
+      wiring fv b=16.0: (1.27, 1.227, 1.331) vs (1.27, 1.227, 1.331)
+  [PASS] Gc-w (wiring): 42b fv rows reproduced at 3 d.p.
+    Gc1 (the ladder; parking thresholds: F_iso <= 1.243, refusals >= 8/10, win d_MM >= 3.7):
+      C=3 b=  1.0: F_iso =  1.823 [1.619,2.044]  win-refusals 10/10  win d_MM = 3.01  eig3/1 0.591
+      C=3 b=  4.0: F_iso =  2.087 [1.936,2.397]  win-refusals 10/10  win d_MM = 2.42  eig3/1 0.312
+      C=3 b= 16.0: F_iso =  3.120 [2.780,3.528]  win-refusals 10/10  win d_MM = 2.18  eig3/1 0.132
+      C=3 b= 64.0: F_iso =  5.261 [4.459,6.304]  win-refusals 10/10  win d_MM = 2.04  eig3/1 0.046
+      INFO C=3 equal-split/per-channel-churn: F_iso =  1.387  refusals 10/10  win d_MM = 3.30
+      C=4 b=  1.0: F_iso =  1.904 [1.700,2.116]  win-refusals 10/10  win d_MM = 3.23  eig3/1 0.614
+      C=4 b=  4.0: F_iso =  2.168 [1.984,2.562]  win-refusals 10/10  win d_MM = 2.52  eig3/1 0.331
+      C=4 b= 16.0: F_iso =  3.217 [2.810,3.768]  win-refusals 10/10  win d_MM = 2.27  eig3/1 0.140
+      C=4 b= 64.0: F_iso =  5.585 [4.592,6.454]  win-refusals 10/10  win d_MM = 2.11  eig3/1 0.051
+      INFO C=4 equal-split/per-channel-churn: F_iso =  1.374  refusals 10/10  win d_MM = 3.76
+      C=6 b=  1.0: F_iso =  2.284 [1.905,2.489]  win-refusals 10/10  win d_MM = 3.54  eig3/1 0.528
+      C=6 b=  4.0: F_iso =  2.478 [2.139,3.029]  win-refusals 10/10  win d_MM = 2.64  eig3/1 0.294
+      C=6 b= 16.0: F_iso =  3.783 [3.426,4.449]  win-refusals 10/10  win d_MM = 2.29  eig3/1 0.124
+      C=6 b= 64.0: F_iso =  6.461 [5.775,7.314]  win-refusals 10/10  win d_MM = 2.08  eig3/1 0.043
+      INFO C=6 equal-split/per-channel-churn: F_iso =  1.420  refusals 10/10  win d_MM = 4.96
+      C=8 b=  1.0: F_iso =  2.225 [2.028,2.646]  win-refusals 10/10  win d_MM = 3.74  eig3/1 0.564
+      C=8 b=  4.0: F_iso =  2.487 [1.813,3.133]  win-refusals 10/10  win d_MM = 2.88  eig3/1 0.322
+      C=8 b= 16.0: F_iso =  3.646 [2.938,5.071]  win-refusals 10/10  win d_MM = 2.41  eig3/1 0.127
+      C=8 b= 64.0: F_iso =  6.236 [4.819,8.284]  win-refusals 10/10  win d_MM = 2.18  eig3/1 0.043
+      INFO C=8 equal-split/per-channel-churn: F_iso =  1.525  refusals 10/10  win d_MM = 5.00
+  [PASS] Gc1: the ladder computed at every (C, beta) point
+      parking candidates: NONE
+  [PASS] Gc2: S4 certification run at every candidate  (0 candidates, 0 confirmed)
+
+      Gc3 THE VERDICT: UNIVERSAL-FRONTIER (no point reaches F_iso <= 1.356 with win d_MM >= 3.0)
+
+  [PASS] Gc3 (the verdict; a read)  (UNIVERSAL-FRONTIER (no point reaches F_iso <= 1.356 with win d_MM >= 3.0))
+
+ALL CHECKS PASS (5/5)
