@@ -1,0 +1,44 @@
+[footprint ablation receipt — round 40 corrections]
+    wiring rerun (round-40 seeds):
+      corner   seed 20262000: F =  2.218 (pairs 2380, tie-frac 0.459, face cap-mass [0.0, 0.15, 0.416, 0.174])
+      corner   seed 20262001: F =  1.949 (pairs 4300, tie-frac 0.456, face cap-mass [0.0, 0.136, 0.206, 0.368])
+      corner   seed 20262002: F =  2.179 (pairs 3109, tie-frac 0.354, face cap-mass [0.0, 0.286, 0.139, 0.191])
+      corner   seed 20262003: F =  2.316 (pairs 2688, tie-frac 0.590, face cap-mass [0.0, 0.462, 0.255, 0.198])
+      corner   seed 20262004: F =  2.180 (pairs 2417, tie-frac 0.408, face cap-mass [0.0, 0.328, 0.233, 0.119])
+      orthant  seed 20262000: F =  1.363 (pairs 4035, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      orthant  seed 20262001: F =  1.307 (pairs 4805, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      orthant  seed 20262002: F =  1.345 (pairs 4105, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      orthant  seed 20262003: F =  1.392 (pairs 3459, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      orthant  seed 20262004: F =  1.334 (pairs 4050, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+  [PASS] Gb-w (wiring): round-40 corner and orthant F reproduced exactly  (corner [2.218, 1.949, 2.179, 2.316, 2.18], orthant [1.363, 1.307, 1.345, 1.392, 1.334])
+    Ga1 (m1 alone — the one-hot line, no slots/churn/preference):
+      onehot   seed 20262100: F =  1.205 (pairs 29865, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      onehot   seed 20262101: F =  0.949 (pairs 29902, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      onehot   seed 20262102: F =  1.025 (pairs 29958, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      onehot   seed 20262103: F =  1.131 (pairs 29871, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+      onehot   seed 20262104: F =  1.101 (pairs 29841, tie-frac 0.000, face cap-mass [0.0, 0.0, 0.0, 0.0])
+    Ga2 (m2 removed — corner webs, alpha = 0):
+      alpha0   seed 20262100: F =  1.458 (pairs 3845, tie-frac 0.117, face cap-mass [0.0, 0.101, 0.067, 0.037])
+      alpha0   seed 20262101: F =  1.448 (pairs 5020, tie-frac 0.056, face cap-mass [0.0, 0.039, 0.047, 0.025])
+      alpha0   seed 20262102: F =  1.492 (pairs 3411, tie-frac 0.088, face cap-mass [0.0, 0.066, 0.049, 0.056])
+      alpha0   seed 20262103: F =  1.546 (pairs 4388, tie-frac 0.072, face cap-mass [0.0, 0.049, 0.038, 0.045])
+      alpha0   seed 20262104: F =  1.353 (pairs 4740, tie-frac 0.074, face cap-mass [0.0, 0.031, 0.028, 0.11])
+    Ga3 (m3 removed — corner webs, snapshots shuffled):
+      shuffle  seed 20262100: F =  2.287 (pairs 2668, tie-frac 0.449, face cap-mass [0.0, 0.217, 0.103, 0.399])
+      shuffle  seed 20262101: F =  2.304 (pairs 2971, tie-frac 0.577, face cap-mass [0.0, 0.234, 0.443, 0.284])
+      shuffle  seed 20262102: F =  2.300 (pairs 2971, tie-frac 0.523, face cap-mass [0.0, 0.322, 0.213, 0.342])
+      shuffle  seed 20262103: F =  2.297 (pairs 2391, tie-frac 0.562, face cap-mass [0.0, 0.272, 0.312, 0.38])
+      shuffle  seed 20262104: F =  2.201 (pairs 2470, tie-frac 0.478, face cap-mass [0.0, 0.322, 0.27, 0.276])
+      BANDS: corner [1.949,2.316] | orthant [1.307,1.392] | M4 (round 40) [0.983,0.999]
+      Ga1 one-hot  mean 1.082 band [0.949,1.205]
+      Ga2 alpha=0  mean 1.459 band [1.353,1.546]
+      Ga3 shuffled mean 2.278 band [2.201,2.304]
+  [PASS] Ga1-3 (attribution probe): all three ablation bands computed and printed with the reference bands
+    INFO: tie-immune angular functional (corner + orthant, round-40 seeds):
+      F_ang corner [1.719, 1.531, 1.663, 1.732, 1.625] | orthant [1.14, 1.113, 1.14, 1.156, 1.132]
+    INFO: robustness grid (seed-mean F, corner | orthant):
+      q0.8/s0.2: 1.88|1.16  q0.8/s0.3: 1.88|1.16  q0.8/s0.5: 1.90|1.15
+      q0.9/s0.2: 2.17|1.35  q0.9/s0.3: 2.17|1.35  q0.9/s0.5: 2.17|1.35
+      q0.95/s0.2: 2.39|1.55  q0.95/s0.3: 2.38|1.55  q0.95/s0.5: 2.38|1.55
+
+ALL CHECKS PASS (2/2)
