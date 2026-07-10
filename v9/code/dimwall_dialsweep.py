@@ -141,20 +141,22 @@ def dim_le_2(rel):
             return False
     return True
 
-# ---- MM machinery (now byte-verbatim from dimwall_phase0.py — the
-# first run's from-memory transcription was caught by Gd0b, exactly the
-# wiring gate's job; amendment disclosed in the LOG) ----
+# ---- MM machinery — byte-verbatim from openings_pass.py, which WROTE
+# the frozen v9/data/mm_reference.json (round 35). Amendment trail,
+# disclosed: attempt 1 was a from-memory transcription (8*N batch),
+# attempt 2 copied dimwall_phase0.py (one-at-a-time rejection) — both
+# caught by Gd0b, which requires the json's own byte-recipe. The corpus
+# carries THREE sprinkle_mink variants (phase0; m5cal 4*N; openings
+# 6*N) — flagged for the round review. ----
 def sprinkle_mink(rng, N, dspace):
-    """Uniform points in the causal diamond of M^(1+dspace); returns rel."""
-    pts = []
-    while len(pts) < N:
-        t = rng.random()
-        x = rng.uniform(-0.5, 0.5, dspace)
-        r = np.linalg.norm(x)
-        if r <= t and r <= 1 - t:
-            pts.append((t, x))
-    T = np.array([p[0] for p in pts])
-    X = np.array([p[1] for p in pts])
+    T = np.empty(0); X = np.empty((0, dspace))
+    while len(T) < N:
+        t = rng.random(6 * N)
+        x = rng.uniform(-0.5, 0.5, (6 * N, dspace))
+        r = np.linalg.norm(x, axis=1)
+        keep = (r <= t) & (r <= 1 - t)
+        T = np.concatenate([T, t[keep]]); X = np.vstack([X, x[keep]])
+    T = T[:N]; X = X[:N]
     dt = T[None, :] - T[:, None]
     dx = np.linalg.norm(X[None, :, :] - X[:, None, :], axis=2)
     rel = (dt > 0) & (dt >= dx)
