@@ -367,57 +367,61 @@ def transitions(Bcanon, caps):
         out.append((P, bits, newB, mapname))
     return out
 
-def machine_bfs(caps, ncap=None, want_pred=False, state_limit=6_000_000):
-    """BFS over (Bcanon, sig). Returns (census set of sigs with sig4!=0,
-    per-depth cumulative sig sets (if ncap), pred dict, minsize dict)."""
-    trans_cache = {}
-    B0 = ((), ())
-    start = (B0, 0)
+def machine_bfs(caps, want_pred=False, state_limit=8_000_000, tag=""):
+    """BFS over (B-canon-id, sig) with interned canons (restructured
+    2026-07-10 after the first big-caps run degraded at ~90 min: nested
+    -tuple state hashing + predecessor storage; disclosed in the LOG).
+    Start = the empty causet (0 elements); depth = element count.
+    Returns (census, pred, node_first, nstates, id2canon, depths)."""
+    id2canon = []
+    canon2id = {}
+    def bid_of(B):
+        i = canon2id.get(B)
+        if i is None:
+            i = len(id2canon)
+            canon2id[B] = i
+            id2canon.append(B)
+        return i
+    trans = {}
+    start = (bid_of(((), ())), 0)
     visited = {start: 0}
     pred = {start: None} if want_pred else None
     frontier = deque([start])
-    depth_sets = {}
-    minsize = {}
     census = set()
-    depth = {start: 0}
+    node_first = {}
+    processed = 0
     while frontier:
         st = frontier.popleft()
-        B, sig = st
-        d = depth[st]
-        n = d + 1  # elements = moves + ... first move creates element 1
-        if ncap is not None and n >= ncap + 1:
-            continue
-        tr = trans_cache.get(B)
+        bidx, sig = st
+        d = visited[st]
+        processed += 1
+        if processed % 250_000 == 0:
+            log(f"{tag} BFS progress: {processed} expanded, "
+                f"{len(visited)} states, {len(id2canon)} B-canons, "
+                f"census {len(census)}")
+        tr = trans.get(bidx)
         if tr is None:
-            tr = transitions(B, caps)
-            trans_cache[B] = tr
-        for (P, bits, newB, mapname) in tr:
+            tr = [(bits, bid_of(newB), P, mapname)
+                  for (P, bits, newB, mapname) in transitions(id2canon[bidx], caps)]
+            trans[bidx] = tr
+        for (bits, nbid, P, mapname) in tr:
             nsig = sig | bits
-            nst = (newB, nsig)
+            nst = (nbid, nsig)
             if nst not in visited:
                 if len(visited) >= state_limit:
-                    print("  [ABORT] state limit reached — SCALE REFUSAL", flush=True)
+                    print("  [ABORT] state limit reached — SCALE REFUSAL",
+                          flush=True)
                     return None
-                visited[nst] = 1
-                depth[nst] = d + 1
+                visited[nst] = d + 1
                 if want_pred:
                     pred[nst] = (st, P, mapname)
                 frontier.append(nst)
                 if sig4_part(nsig):
-                    if nsig in census:
-                        pass
                     census.add(nsig)
                     p4 = sig4_part(nsig)
-                    if p4 not in minsize:
-                        minsize[p4] = d + 2  # n = moves+1... see below
-                nn = d + 2
-                depth_sets.setdefault(nn, set()).add(nsig)
-    return census, depth_sets, pred, minsize, len(visited), len(trans_cache)
-
-# depth bookkeeping: the start state is the empty causet (0 elements);
-# each move adds one element, so a state at BFS depth d is a causet with
-# d elements. minsize/depth_sets use n = d (fixed below by calibration
-# against the brute per-n sets in G3 — the calibration is part of the gate).
+                    if p4 not in node_first:
+                        node_first[p4] = nst
+    return census, pred, node_first, len(visited), id2canon, visited
 
 log("machine: validation run (n-tracked to 8, production caps)")
 CAPS_BIG = (5, 3, 2, 1)
@@ -470,49 +474,27 @@ m3 = {sig_split(s)[1] for s in mcum[NB] if sig_split(s)[1]}
 gate("G2: machine exact-3 census = 22 (round-38 anchor; within n <= 8: "
      "expect 22 since the 22nd appears at n = 7)", len(m3) == 22, f"{len(m3)}")
 
-# ---------------- production runs ----------------
-log(f"production BFS, caps {CAPS_SMALL}")
-res_small = machine_bfs(CAPS_SMALL, want_pred=False)
+# ---------------- production runs (restructured order: pred on the
+# CHEAP small-caps run; the big run census-only for G4) ----------------
+log(f"production BFS, caps {CAPS_SMALL} (with predecessor tracking for G5)")
+res_small = machine_bfs(CAPS_SMALL, want_pred=True, tag="small")
 if res_small is None: sys.exit(1)
-cen_s, _, _, mins_s, nvis_s, nB_s = res_small
+cen_s, pred, node_state, nvis_s, id2canon_s, _ = res_small
 lvl4_small = {sig4_part(s) for s in cen_s}
-log(f"caps {CAPS_SMALL}: {nvis_s} states, {nB_s} B-canons, level-4 census {len(lvl4_small)}")
+log(f"caps {CAPS_SMALL}: {nvis_s} states, {len(id2canon_s)} B-canons, "
+    f"level-4 census {len(lvl4_small)}")
 
-log(f"production BFS, caps {CAPS_BIG} (with predecessor tracking for G5)")
-res_big = machine_bfs(CAPS_BIG, want_pred=True)
-if res_big is None: sys.exit(1)
-cen_b, _, pred, mins_b, nvis_b, nB_b = res_big
-lvl4_big = {sig4_part(s) for s in cen_b}
-log(f"caps {CAPS_BIG}: {nvis_b} states, {nB_b} B-canons, level-4 census {len(lvl4_big)}")
-
-gate(f"G4: cap-stability — census identical at {CAPS_SMALL} and {CAPS_BIG}",
-     lvl4_small == lvl4_big,
-     f"{len(lvl4_small)} vs {len(lvl4_big)}")
-
-# G6: determination shadow
+# G6: determination shadow (on the small-run census; re-checked on big)
 full_by_4 = {}
-for s in cen_b:
+for s in cen_s:
     full_by_4.setdefault(sig4_part(s), set()).add(s)
 ok6 = all(len(v) == 1 for v in full_by_4.values())
 gate("G6: each exact-4 set carries exactly one full signature", ok6,
      f"{sum(len(v) for v in full_by_4.values())} sigs over {len(full_by_4)} nodes")
 
-# ---------------- G5: witness replay for EVERY node ----------------
+# ---------------- G5: witness replay for EVERY node (small-run paths;
+# valid for the full census provided G4 holds, which is gated below) ----
 log("G5: replaying witness paths for every census node")
-# first-reaching state per node
-first_state = {}
-for st in pred:
-    B, sig = st
-    p4 = sig4_part(sig)
-    if p4 and p4 not in first_state:
-        first_state[p4] = st
-# ensure we use a state whose sig is THE unique full sig (G6) — any works
-node_state = {}
-for st in pred:
-    B, sig = st
-    p4 = sig4_part(sig)
-    if p4 and p4 not in node_state:
-        node_state[p4] = st
 
 def replay2(st):
     chain = []
@@ -536,7 +518,7 @@ def replay2(st):
             nn = mapname(name)
             if nn is not None:
                 new_map[nn] = idx
-        els_new, _ = layout(nxt[0])
+        els_new, _ = layout(id2canon_s[nxt[0]])
         missing = [e for e in els_new if e not in new_map]
         if len(missing) == 1:
             new_map[missing[0]] = newidx
@@ -564,6 +546,22 @@ for p4, st in sorted(node_state.items()):
 gate("G5: every census node's path replayed to a concrete causet; "
      "signature recomputed from scratch matches", ok5,
      f"{len(node_state)} nodes replayed" + (f"; failures {bad[:3]}" if bad else ""))
+
+log(f"production BFS, caps {CAPS_BIG} (census-only)")
+res_big = machine_bfs(CAPS_BIG, want_pred=False, tag="big")
+if res_big is None: sys.exit(1)
+cen_b, _, _, nvis_b, id2canon_b, _ = res_big
+lvl4_big = {sig4_part(s) for s in cen_b}
+log(f"caps {CAPS_BIG}: {nvis_b} states, {len(id2canon_b)} B-canons, "
+    f"level-4 census {len(lvl4_big)}")
+
+gate(f"G4: cap-stability — census identical at {CAPS_SMALL} and {CAPS_BIG}",
+     lvl4_small == lvl4_big,
+     f"{len(lvl4_small)} vs {len(lvl4_big)}")
+ok6b = cen_b == cen_s
+gate("G6b: the big-caps full-signature census equals the small-caps one "
+     "(determination re-check)", ok6b,
+     f"{len(cen_b)} vs {len(cen_s)}")
 
 # ---------------- outputs ----------------
 print()
