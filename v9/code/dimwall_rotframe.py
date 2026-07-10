@@ -328,7 +328,8 @@ def card(name, gen):
         Fs.append(F)
     lo, hi = float(np.nanmin(Fs)), float(np.nanmax(Fs))
     print(f"      {name:6s}: [{lo:.3f},{hi:.3f}] vs 43b {CARD43B[name]}")
-    return abs(lo - CARD43B[name][0]) < 1e-9 and abs(hi - CARD43B[name][1]) < 1e-9
+    # 43b bands recorded at print precision (3 d.p.) — compare there
+    return (round(lo, 3), round(hi, 3)) == CARD43B[name]
 
 def disk(r):
     v = r.normal(size=(3000, 3)); v[:, 2] = 0.0
