@@ -1,0 +1,43 @@
+  [    0.0s] G1: brute stream to n = 8 begins
+  [    0.0s] G1: n=2: 2 labeled causets, 2 distinct sigs at this size
+  [    0.0s] G1: n=3: 7 labeled causets, 5 distinct sigs at this size
+  [    0.0s] G1: n=4: 40 labeled causets, 16 distinct sigs at this size
+  [    0.0s] G1: n=5: 357 labeled causets, 52 distinct sigs at this size
+  [    0.1s] G1: n=6: 4824 labeled causets, 136 distinct sigs at this size
+  [    1.4s] G1: n=7: 96428 labeled causets, 316 distinct sigs at this size
+  [   34.3s] G1: n=8: 2800472 labeled causets, 656 distinct sigs at this size
+  [PASS] G1a: labeled counts 1/2/7/40/357/4824/96428/2800472 (A006455)  (n1:1 n2:2 n3:7 n4:40 n5:357 n6:4824 n7:96428 n8:2800472)
+  [PASS] G1b: cumulative exact-4 censuses printed, monotone  (sizes n4:16 n5:52 n6:136 n7:316 n8:656)
+      brute exact-3 cumulative census sizes: n3:5 n4:11 n5:17 n6:21 n7:22 n8:22
+  [   34.3s] machine: validation run (n-tracked to 8, production caps)
+  [   34.5s] machine validation: 1584 (n,B,sig) states
+  [PASS] G3: machine (n-tracked, caps (5, 3, 2, 1)) == brute cumulative census at every n <= 8  (n4:24/24 n5:60/60 n6:144/144 n7:324/324 n8:664/664)
+  [PASS] G2: machine exact-3 census = 22 (round-38 anchor; within n <= 8: expect 22 since the 22nd appears at n = 7)  (22)
+  [   34.5s] production BFS, caps (4, 2, 1, 1) (with predecessor tracking for G5)
+  [   48.7s] small BFS progress: 250000 expanded, 369315 states, 4231 B-canons, census 4799
+  [   54.1s] small BFS progress: 500000 expanded, 639222 states, 4693 B-canons, census 4799
+  [   57.9s] small BFS progress: 750000 expanded, 860505 states, 4830 B-canons, census 4799
+  [   60.4s] small BFS progress: 1000000 expanded, 1030803 states, 4858 B-canons, census 4799
+  [   61.1s] caps (4, 2, 1, 1): 1062012 states, 4859 B-canons, level-4 census 4799
+  [PASS] G6: each exact-4 set carries exactly one full signature  (4799 sigs over 4799 nodes)
+  [   61.1s] G5: replaying witness paths for every census node
+  [PASS] G5: every census node's path replayed to a concrete causet; signature recomputed from scratch matches  (4799 nodes replayed)
+  [   64.3s] production BFS, caps (5, 3, 2, 1) (census-only)
+  [  433.6s] big BFS progress: 250000 expanded, 532277 states, 54438 B-canons, census 4759
+  [  852.3s] big BFS progress: 500000 expanded, 1023340 states, 93216 B-canons, census 4795
+  [ 1253.0s] big BFS progress: 750000 expanded, 1517233 states, 135217 B-canons, census 4799
+  [ 1692.3s] big BFS progress: 1000000 expanded, 1980067 states, 162061 B-canons, census 4799
+  [ 1816.7s] big BFS progress: 1250000 expanded, 2351182 states, 177062 B-canons, census 4799
+  [ 2605.0s] big BFS progress: 1500000 expanded, 2935604 states, 235830 B-canons, census 4799
+  [ 3202.6s] big BFS progress: 1750000 expanded, 3415966 states, 264857 B-canons, census 4799
+  [ 3397.4s] big BFS progress: 2000000 expanded, 3757058 states, 273024 B-canons, census 4799
+  [ 3630.5s] big BFS progress: 2250000 expanded, 4154294 states, 290295 B-canons, census 4799
+  [ 4110.3s] big BFS progress: 2500000 expanded, 4603890 states, 327937 B-canons, census 4799
+  [ 5944.2s] big BFS progress: 2750000 expanded, 5199737 states, 383672 B-canons, census 4799
+  [ 7619.4s] big BFS progress: 3000000 expanded, 5619448 states, 402196 B-canons, census 4799
+  [ 8219.5s] big BFS progress: 3250000 expanded, 6098703 states, 428682 B-canons, census 4799
+  [ 8513.5s] big BFS progress: 3500000 expanded, 6460509 states, 438177 B-canons, census 4799
+  [ 8715.6s] big BFS progress: 3750000 expanded, 6763411 states, 443926 B-canons, census 4799
+  [10305.7s] big BFS progress: 4000000 expanded, 7162668 states, 462176 B-canons, census 4799
+  [10342.0s] big BFS progress: 4250000 expanded, 7457482 states, 467284 B-canons, census 4799
+  [ABORT] state limit reached — SCALE REFUSAL
