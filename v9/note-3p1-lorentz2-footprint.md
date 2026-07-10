@@ -29,3 +29,21 @@ The statistic reads the OCCUPIED cross-section under the sprinkling/growth measu
 ## References
 
 LEDGER #96 (the redesign, named); note-3p1-lorentz1 (the voided instrument + the builders and window conventions, reused verbatim); the round-35 scoped forms (paper 6 §6(i)); paper 14 Thm 2.1 (the direction-resolved shelf).
+
+## Round-40 review corrections (appended, not silently edited) + the ablation pin
+
+**MAJOR-1 (the reading, re-scoped):** F measures the OCCUPIED cross-section under the family's measure (§4 said so; the LOG/LEDGER prose did not). The corner-web relation is componentwise dominance in (b, χ) — its GEOMETRIC cone is the same 4-orthant as the anchor's. F(corner) = 2.17 > F(orthant-iid) = 1.35 therefore reads: the web's displacement measure is more corner-concentrated than iid — NOT a sharper cone. Candidate mechanisms, attribution UNTESTED at round 40: (m1) deposit sparsity/heavy tails (one-hot exponential increments keep one component dominant — needs no slot structure); (m2) the α-preference channel concentration; (m3) slot-chain temporal correlation. The ablation receipt below adjudicates.
+
+**MINOR-1 (the 0.577 face-pinning, diagnosed by the review — recorded):** for dominance families v·(−c_a) = (2/√3)(1/2 − d_a/s), capped at 1/√3 = 0.57735, attained exactly at d_a = 0; web χ-ties (resets and untouched channels) put an atom at the cap, pinning the three channel-face q90's there; the b-face cannot tie (d_0 > 0). The tie-atom MAXIMIZES the face denominator, so web F is UNDERSTATED — Gf1's separation is conservative w.r.t. this effect. kdir's sub-cap face supports (0.54–0.57) corroborate (mixing kills exact ties).
+
+**MINOR-2 (arithmetic):** the kdir shift −0.389 is about HALF the corner-to-orthant-band gap and a third of the corner-to-M4-band gap (the LOG's "a third of the way toward the iid-orthant band" was wrong; corrected in the LOG's correction entry).
+
+### The ablation receipt (`v9/code/dimwall_footprint_b.py`; pinned here, committed strictly before running)
+
+- **Gb-w (wiring):** re-run the round-40 corner and orthant families at the pinned seeds — F values must reproduce the round-40 prints exactly (same code path, same seeds).
+- **Ga1 (m1 alone):** the one-hot line — a single accumulator (no slots, no churn, no preference): b_t = t, χ⃗ gains one Exp(0.109551) deposit in a uniformly chosen channel per step; window/subsample per web_window's pinned geometry. F printed.
+- **Ga2 (m2 removed):** corner webs with α = 0 (uniform channel choice, slots and churn intact). F printed.
+- **Ga3 (m3 removed):** corner webs with the window's χ-snapshots randomly permuted across the window indices before the relation is computed (temporal slot-chain correlation destroyed; χ marginals kept; b untouched). F printed.
+- **Verdict semantics [attribution, directional]:** the mechanism(s) whose removal moves F(ablation) off the corner band own the concentration; if Ga1 alone reproduces corner-level F, sparsity owns it. All three readings printed with the corner/orthant/M4 bands; no numeric pins (attribution probe).
+- **INFO (per the review):** tie-fraction and cap-mass prints per family; the robustness grid q ∈ {0.8, 0.9, 0.95} × s_min ∈ {0.2, 0.3, 0.5} for corner and orthant; the tie-immune angular functional (directional q90 of v/|v| projections) alongside F.
+- Fresh seeds 20262100+ for the ablations; the wiring gate uses the round-40 seeds verbatim.
