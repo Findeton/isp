@@ -1,0 +1,8 @@
+[diffusion churn — round 48; NO-REVIEW, lean]
+    g=0.0625: F_dom 1.197±0.010 (line 1.236, z -3.83) F_m4 1.180 | d_ball 5.65 refusals 10/10 S4 8/10 | eig3/1 0.732 frac 0.0674
+  [PASS] sanity: finite F at the main dial
+    g=0.25: F_dom 1.255±0.043 (line 1.236, z +0.46) F_m4 1.192 | d_ball 3.92 refusals 5/5 S4 5/5 | eig3/1 0.771 frac 0.1698
+    influence: affected slots by Delta-b=1024: 32.0 (47's conservation: 3.6; control: 1)
+  [PASS] the diffusion reads printed
+
+ALL CHECKS PASS (2/2)
