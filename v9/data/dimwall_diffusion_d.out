@@ -1,0 +1,14 @@
+[diffusion decision — round 48d; NO-REVIEW, lean]
+    g=0.18: F_dom 1.203±0.017 (line 1.236, z -1.96) F_m4 1.169 | d_ball 4.44 refusals 10/10 S4 10/10 | eig3/1 0.777 frac 0.1434
+    influence: affected slots by Delta-b=1024: nan (47's conservation: 3.6; control: 1)
+  [PASS] the diffusion reads printed
+
+      48d THE DECISION: PARKED (round AND 4D AND witnessed, pre-registered)
+
+  [PASS] the decision (pre-registered)  (PARKED (round AND 4D AND witnessed, pre-registered))
+/opt/miniconda3/envs/tbp.monty/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3432: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/opt/miniconda3/envs/tbp.monty/lib/python3.8/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+
+ALL CHECKS PASS (2/2)
