@@ -15,3 +15,11 @@
 ## References
 
 45e (protocol, lines, O2 reference — reused verbatim); the round-46 pin (the free-web influence theorem; conservation-churn named); the particle reframe (note-3p1-manifoldweb, final section); the user's conservation challenge (this round's cause).
+
+## The leak = sealing connection (user-posed, 2026-07-10; appended)
+
+The user's question — "can the leaks be basically entanglement?" — resolves into three layers, recorded for the diffusion round and the bridge program:
+
+1. **Strictly: no bipartite entanglement.** The webs are classical stochastic processes; leaks create correlations-through-shared-history (two slots holding content of common lineage), which is classical mutual information. The corpus's own sobriety results stand (v5 paper 14's Bell verdict; magic ≠ indivisibility).
+2. **But leak-to-the-fleet IS the structure of entanglement-with-the-ENVIRONMENT — i.e., DECOHERENCE — i.e., SHARD's own sealing.** A slot's content dispersing irreversibly into many other slots is which-path information becoming environmental record: the microscopic mechanism of a SEAL. This is the missing substrate the round-41 bridge design needed — the coupled builder gives the quarter-law/Fisher-identity program its first concrete mechanism (σ_wp of a marked slot vs leak rate; the readout ensembles of note-bridge-seal-is-record §2 now have a dynamics that actually disperses the mark).
+3. **The separating signature is MONOGAMY** (the corpus already owns the theorem import: Toner–Verstraete, v8 paper 16). Broadcast/diffusive leaks → promiscuous many-party correlations → classical, decoherence-like (the environment reading). EXCLUSIVE PAIRED exchange (two slots swapping content with each other only) → the only in-ontology candidate for entanglement-LIKE two-party structure, testable with the corpus's CHSH/χ_AB instruments (the ml3b two-party locus line). Named as the round-48+ fork: diffusion-churn (the decoherence/sealing pole) vs paired-exchange churn (the correlation pole), with the monogamy structure of induced correlations as the printed discriminator.
