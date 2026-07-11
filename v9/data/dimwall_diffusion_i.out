@@ -1,0 +1,11 @@
+[diffusion interp — round 48i; NO-REVIEW, lean]
+    g=0.1: F_dom 1.188±0.018 (line 1.236, z -2.63) F_m4 1.166 | d_ball 5.25 refusals 5/5 S4 5/5 | eig3/1 0.790 frac 0.0973
+    g=0.15: F_dom 1.222±0.025 (line 1.236, z -0.54) F_m4 1.172 | d_ball 4.70 refusals 5/5 S4 5/5 | eig3/1 0.783 frac 0.1440
+    influence: affected slots by Delta-b=1024: nan (47's conservation: 3.6; control: 1)
+  [PASS] the diffusion reads printed
+/opt/miniconda3/envs/tbp.monty/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3432: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/opt/miniconda3/envs/tbp.monty/lib/python3.8/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+
+ALL CHECKS PASS (1/1)
