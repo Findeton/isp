@@ -1149,3 +1149,43 @@ selector problem (the birth-level D12 analog); F13 anomaly-ledger
 tracking (H0/S8, short-baseline, CDF W — named with dispositions).
 NEXT: the round-2 integrated delta pass (the goal's reviews conjunct),
 then the DONE audit.
+
+## 2026-07-12 — Campaign round 2: delta PASS; residuals applied; THE GOAL'S DONE AUDIT COMPLETE
+
+Round-2 integrated delta review (report: `reviews/campaign-round2-
+integrated-delta-review.md`): PASS-WITH-RESIDUALS — every round-1 MAJOR
+verified faithfully applied at every load-bearing locus; all four
+receipts reran byte-identical (d24 7/7, d25 7/7, d26 7/7, d27 5/5); the
+repaired E1, the exhaustive G2 (16/36 hand-counted), the click-side G5
+and the external dispositions all independently confirmed; zero false
+results. The 4 MINOR + 4 NIT residuals (count fix; the d26 E6 print
+brought to the survivor-structure wording and rerun green; two label/
+pointer lags; two neutrino-wording loci; the stray duplicate removed)
+applied same day — LEDGER #131.
+
+THE DONE AUDIT, against the goal's four conjuncts:
+(1) REVIEWS — round 1 (two internal hostile streams + one external user
+review) applied in full; round 2 delta PASS with residuals applied;
+openings executed (D27 = the Busch closure) or pinned as live fronts
+(F9-F13): TERMINAL at this campaign's scope.
+(2) NO CURRENT EXPERIMENT CONTRADICTS — holds at audit grade with the
+anomaly ledger carried in paper 19 §5 (H0/S8 state-slot stress;
+short-baseline contested; CDF W outlier), not omitted.
+(3) CONSISTENCY RECEIPTS GREEN — 23 substantive + 3 print gates, exit 0,
+pins pre-run, the tested-domain reduction reproduced (d24 G4, d26 E5),
+the kernel's shadow consistent (d26 E4; [PROTOCOL] consistency-not-fit).
+(4) EXACTLY ONE EQUIVALENCE CLASS SURVIVES AT THE DECLARED INTERFACE —
+the goal-literal form holds (paper 19 §6: forced by the declared
+convention's structure — survivors within budget of the data are within
+chained tolerance of each other; ontology forks are class-internal
+members or corpses, never a second class), its falsifiers printed
+(paper 19 §7), with the clause-(3) representative selected through the
+goal's own grounding-rule route (b) (NSE: discriminates real rivals by
+theorem, D25/D27; carries the ladder falsifier).
+
+THE CLAIM ON THE RECORD, exactly as the goal words it: the unique
+surviving candidate law on all probed domains, defeasible by its printed
+falsifiers — nothing stronger. The law is paper 19 §4's survivor
+structure; what would kill it is paper 19 §7; what remains open is named
+(F9-F13, the kernel-selector problem, the Einstein list). CAMPAIGN
+CLOSED at the goal's standard.

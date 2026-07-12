@@ -14,21 +14,29 @@
       Current nulls are CONSISTENT with any admissible kernel below the
       bound; no quantitative rate is claimed (grounding rule).
   [PASS] E5 tested-domain consistency: the zero-birth-window law equals the fixed-carrier conditional measure — full 8-outcome chain table gated against hand closed forms (wiring leg: D24 G4)
-      E6 THE SURVIVING CLASS AT THE DECLARED INTERFACE (current lab/
-      collider/solar-system + current cosmological/coherence records):
+      E6 THE SURVIVOR STRUCTURE AT THE DECLARED INTERFACE (current lab/
+      collider/solar-system + current cosmological/coherence records;
+      GIVEN the NSE selection [POSITED], one class under the declared
+      epsilon-convention — paper 19 §1/§4):
         { D15 tested-domain restriction (identified, paper 18) }
-        x { dim-5 neutrino operator at measured inputs [LITERATURE]:
-            dm2_21 ~ 7.5e-5 eV^2, |dm2_32| ~ 2.4e-3 eV^2,
+        x { a neutrino-mass extension at measured inputs [LITERATURE]:
+            dm2_21 ~ 7.5e-5 eV^2, |dm2_32| ~ 2.5e-3 eV^2,
             sin2th12 ~ 0.31, sin2th23 ~ 0.55, sin2th13 ~ 0.022;
-            ordering + Dirac/Majorana OPEN = class-internal }
-        x { any dark sector entering only via its pinned portal (E2/E3) }
-        x { any UV completion with the D15 low-energy shadow (E1) }
+            minimally dim-5 (Majorana) OR nu_R Yukawas (Dirac) —
+            nature / ordering / theta23-octant class-internal }
+        x { any dark sector with non-gravitational portals below
+            current bounds, entering via its pinned portal (E2/E3) }
+        x { any UV completion with the D15 FULL-PROFILE shadow (E1) }
         x { any admissible birth kernel below coherence bounds (E4/E5) }
-      SPLITTERS (future clicks that break each freedom): heavy-sector
-      clicks (E1); portal-coherence precision + direct detection (E2/E3);
-      ladder residuals / interferometric visibility (E4); 0nubb and
-      ordering data (neutrino); cosmological record-count precision (birth
-      kernel rate) [CONSISTENT today, not identified].
-  [PASS] E6 class statement + splitters printed
+      THE RECORD ALONE additionally tolerates: sub-bound intrinsic
+      collapse (GRW-1986 rate; splitter = the D21 ladder) and MOND/
+      AeST-class modified gravity (unadjudicated, F11; splitters =
+      low-acceleration / cluster-lensing / cosmological precision).
+      SPLITTERS: heavy-sector clicks (E1); portal-coherence precision +
+      direct detection (E2/E3); ladder residuals / interferometric
+      visibility (E4); 0nubb / JUNO-class ordering / octant data
+      (neutrino); cosmological record-count precision (birth kernel)
+      [CONSISTENT today, not identified].
+  [PASS] E6 survivor structure + splitters printed
 
 ALL CHECKS PASS (7/7: 6 substantive gates + 1 print gate)
