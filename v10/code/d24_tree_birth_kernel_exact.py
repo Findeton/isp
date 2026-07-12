@@ -112,18 +112,37 @@ for ch in ('B', 'C', 'D'):
 check("G1 exhibit: isometric growth — norm 1 and exact click normalization/"
       "positivity at every birth", ok1)
 
-# G2: construction-order gauge — all causal linear extensions agree
-ok2 = True
-ref = None; n_ext = 0
-for order in permutations(('B', 'C', 'D')):
-    if order.index('B') > order.index('D'):    # D's parent B must exist
-        continue
-    n_ext += 1
-    law = grow(TREE, order, GMAP).clicks()
-    if ref is None: ref = law
-    ok2 &= (law == ref)
-check("G2 construction-order gauge: all causal linear extensions give the "
-      "identical label-keyed click law", ok2, f"{n_ext} extensions")
+# G2: construction-order gauge — exhaustive over ALL 16 labeled rooted
+# trees on 4 registers: every causal linear extension gives the same law
+# (post-review upgrade; the general lemma is proved in the note §1).
+def rooted_trees_g2(children):
+    nodes = ['A'] + children
+    for parents in product(*[[p for p in nodes if p != ch] for ch in children]):
+        pm = dict(zip(children, parents))
+        good = True
+        for ch in children:
+            seen, cur = set(), ch
+            while cur != 'A':
+                if cur in seen or cur not in pm: good = False; break
+                seen.add(cur); cur = pm[cur]
+            if not good: break
+        if good:
+            yield pm
+ok2 = True; n_ext = 0; n_trees = 0
+for pm in rooted_trees_g2(['B', 'C', 'D']):
+    n_trees += 1
+    gm = {ch: g for ch, g in zip(sorted(pm), [F(9,25), F(16,25), F(576,625)])}
+    laws = set()
+    for order in permutations(pm.keys()):
+        if any(pm[ch] in pm and order.index(pm[ch]) > order.index(ch)
+               for ch in order):
+            continue
+        n_ext += 1
+        laws.add(tuple(sorted(grow(pm, order, gm).clicks().items())))
+    ok2 &= (len(laws) == 1)
+check("G2 construction-order gauge: for EVERY labeled rooted tree on 4 "
+      "registers, all causal linear extensions give the identical "
+      "label-keyed click law", ok2, f"{n_trees} trees, {n_ext} extensions")
 
 # G3: reception at birth + ledger balance (injectivity across growth)
 ok3 = True
@@ -136,12 +155,17 @@ for gB in CS:
             wv.birth(TREE[ch], ch, gm[ch])
             ok3 &= wv.marg1(ch) == gm[ch] * p_par   # content received from parent
 wa, wb = Web('A', PREP), Web('A', PREP2)
+ov0 = sum(a*b for a, b in zip(wa.psi, wb.psi))       # initial overlap
 ok3 &= wa.psi != wb.psi
 for ch in ('B', 'C', 'D'):
     wa.birth(TREE[ch], ch, GMAP[ch]); wb.birth(TREE[ch], ch, GMAP[ch])
     ok3 &= wa.psi != wb.psi                          # distinction never erased
+    ov = sum(a*b for a, b in zip(wa.psi, wb.psi))
+    ok3 &= (ov == ov0)   # isometry-grade ledger: overlap EXACTLY preserved
 check("G3 no silent creation: P(child=1) = g*P(parent=1) exactly at every "
-      "birth; root distinctions survive every growth step", ok3)
+      "birth; the preparation overlap <psi_a|psi_b> is EXACTLY preserved at "
+      "every birth (isometry-grade ledger, the D25 distinguishability form)",
+      ok3)
 
 # G4: fixed-carrier reduction — grown web == independent static constructor
 ok4 = True
@@ -192,13 +216,17 @@ for children, gassign in ((['B','C'], None), (['B','C','D'], None)):
         key = tuple(sorted(wv.clicks().items()))
         ok5 &= key not in laws                   # zero collisions
         laws[key] = pm
-        # recovery: ancestors from exact zero patterns, couplings from ratios
+        # recovery, CLICK-SIDE ONLY (post-review fix: no truth-side calls):
+        # ancestors from exact zero patterns; parent from recovered ancestor
+        # sets alone (nested-set rule); couplings from conditional ratios.
+        anc_rec = {'A': set()}
         for ch in pm:
-            anc = {u for u in (['A'] + children) if u != ch
-                   and wv.joint(ch, 1, u, 0) == 0 and wv.marg1(ch) > 0}
-            ok5 &= anc == ancestors_of(pm, ch)
-            par = [u for u in anc if (u == 'A' and len(anc) == 1) or
-                   (u != 'A' and u in pm and ancestors_of(pm, u) == anc - {u})]
+            anc_rec[ch] = {u for u in (['A'] + children) if u != ch
+                           and wv.joint(ch, 1, u, 0) == 0 and wv.marg1(ch) > 0}
+        for ch in pm:
+            ok5 &= anc_rec[ch] == ancestors_of(pm, ch)   # truth check, post-recovery
+            par = [u for u in anc_rec[ch]
+                   if anc_rec.get(u, set()) == anc_rec[ch] - {u}]
             ok5 &= len(par) == 1 and par[0] == pm[ch]
             ok5 &= wv.joint(ch, 1, pm[ch], 1) == gm[ch] * wv.marg1(pm[ch])
     total += len(trees)

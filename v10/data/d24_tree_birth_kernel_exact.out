@@ -1,7 +1,7 @@
 [d24 tree birth kernel — exact]
   [PASS] G1 exhibit: isometric growth — norm 1 and exact click normalization/positivity at every birth
-  [PASS] G2 construction-order gauge: all causal linear extensions give the identical label-keyed click law  (3 extensions)
-  [PASS] G3 no silent creation: P(child=1) = g*P(parent=1) exactly at every birth; root distinctions survive every growth step
+  [PASS] G2 construction-order gauge: for EVERY labeled rooted tree on 4 registers, all causal linear extensions give the identical label-keyed click law  (16 trees, 36 extensions)
+  [PASS] G3 no silent creation: P(child=1) = g*P(parent=1) exactly at every birth; the preparation overlap <psi_a|psi_b> is EXACTLY preserved at every birth (isometry-grade ledger, the D25 distinguishability form)
   [PASS] G4 reduction (wiring-grade): grown-web law == static-circuit law, exact byte equality
   [PASS] G5 identifiability: zero collisions + exact tree-and-coupling recovery over ALL labeled rooted trees  (3 trees (n=3) + 16 trees (n=4) = 19 laws)
   [PASS] G6 non-uniqueness: chain-growth and star-growth kernels both satisfy G1-G4 constraints yet print different click laws (extra physics)

@@ -1116,3 +1116,36 @@ by D24; F9/F10 remain open); D22 §6 F1 updated to match; README rewritten
 (campaign = Latest); LEDGER #129 carries the consolidated campaign entry
 including the D25 supersession. Next: the assembly hostile round (the
 goal's remaining DONE conjunct), then corrections, then the DONE check.
+
+## 2026-07-12 — Campaign hostile round 1 APPLIED (two internal streams + one external review); paper 19 restated at reviewed strength
+
+Reports: `reviews/campaign-round1-mathematics-rebuild-hostile-review.md`
+(1 MAJOR/6 MINOR/8 NIT — and PROOFS for the five highest-value attacks:
+tdist certificate sound, order-gauge lemma general, click-side parent
+rule, mixed-parent bridge, E2 subtree theorem), `reviews/campaign-round1-
+physics-assembly-hostile-review.md` (7 MAJOR/8 MINOR/4 NIT — all
+assembly-layer; receipts/pins/discipline clean), `reviews/campaign-
+round1-external-user-review.md` (the tautology/ontology/incompleteness
+objections; the Einstein list). All corrections applied at LEDGER #130.
+The three load-bearing repairs: (1) E1 SUPERSEDED — the original UV pair
+is coherence-split TODAY (48/125 vs 36/125); the repaired exhibit gates
+the FULL visible rho_AB (heavy-internal swaps; heavy split 2304/15625 vs
+82944/390625) with the original pair kept as the E1b honesty gate;
+(2) the uniqueness conjunct RETYPED — given NSE [POSITED], one class
+under the declared epsilon-convention; the record alone additionally
+tolerates sub-bound intrinsic collapse (GRW-1986) and MOND/AeST-class
+modified gravity, both with printed splitters; (3) the Busch supersession
+— D27 (5/5) exhibits the thermal receiver (distance-preserving, no single
+isometry, exact Busch form): admitted closures = mixtures of isometries
+with orthogonal ranges. d24 upgraded (exhaustive 16-tree/36-extension
+gauge; isometry-grade overlap ledger; click-side recovery) and rerun
+7/7. Paper 19 rewritten at reviewed strength with §8 "what is genuinely
+new" (external point 1 answered: no new constant — two functional-form
+predictions, five theorems, the quantified freedom map) and the
+growth/activation equivalence (external point 7 answered by G4). Paper
+18 §8 F1 and D22 §6 F1 carry the Busch wording; the (1-lambda) rate
+scoping fixed. New fronts: F11 MOND adjudication; F12 the kernel-
+selector problem (the birth-level D12 analog); F13 anomaly-ledger
+tracking (H0/S8, short-baseline, CDF W — named with dispositions).
+NEXT: the round-2 integrated delta pass (the goal's reviews conjunct),
+then the DONE audit.

@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — the complete-record-law campaign: D24/D25/D26 / Paper 19 (assembly round pending)
+## Latest — the complete-record-law campaign: D24–D27 / Paper 19 (round 1 applied; delta pass pending)
 
 Per the user-set goal (LOG, 2026-07-12), Paper 19 assembles the complete
 interactive record law (E_t, D, B) at the declared interface: D24 exhibits

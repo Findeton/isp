@@ -58,20 +58,57 @@ class Web:
             j = i | (1 << (n-1-q))
             tot += a * self.psi[j]
         return tot
+    def rho2(self, la, lb):
+        """Exact reduced density matrix on registers (la, lb) — the FULL
+        visible statistics: populations AND coherences."""
+        n = len(self.regs); qa, qb = self.regs.index(la), self.regs.index(lb)
+        mask = (2**n - 1) ^ ((1 << (n-1-qa)) | (1 << (n-1-qb)))
+        rho = {}
+        for i, x in enumerate(self.psi):
+            if x == 0: continue
+            for j, y in enumerate(self.psi):
+                if y == 0: continue
+                if (i & mask) != (j & mask): continue
+                key = ((i >> (n-1-qa)) & 1, (i >> (n-1-qb)) & 1,
+                       (j >> (n-1-qa)) & 1, (j >> (n-1-qb)) & 1)
+                rho[key] = rho.get(key, F(0)) + x*y
+        return rho
 
 print("[d26 interface equivalence — exact]")
 
-# E1: two UV completions, identical probed interface, distinct heavy sector
+# E1 (repaired, round-1 MAJOR): two UV completions with IDENTICAL full
+# visible density matrix rho_AB (populations AND coherences); heavy
+# sector differs. Chains A->H1->H2->H3->B, end couplings fixed, heavy-
+# INTERNAL couplings swapped.
+def uv_chain5(g_in, g_m1, g_m2, g_out):
+    w = Web(); w.birth('A', 'H1', g_in); w.birth('H1', 'H2', g_m1)
+    w.birth('H2', 'H3', g_m2); w.birth('H3', 'B', g_out)
+    return w
+u1 = uv_chain5(F(9,25), F(16,25), F(576,625), F(16,25))
+u2 = uv_chain5(F(9,25), F(576,625), F(16,25), F(16,25))
+ok1 = u1.rho2('A','B') == u2.rho2('A','B')
+h1, h2 = u1.zlaw(['H2']), u2.zlaw(['H2'])
+ok1 &= h1 != h2
+check("E1 UV equivalence (repaired): heavy-internal swaps give the IDENTICAL "
+      "full visible density matrix rho_AB — populations AND coherences; "
+      "heavy tables differ", ok1,
+      f"P(H2=1): {h1[(1,)]} vs {h2[(1,)]} — a heavy click splits the class")
+
+# E1b (honesty gate, round-1 MAJOR made load-bearing): the ORIGINAL
+# 3-register pair (9/25,16/25) vs (16/25,9/25) is population-equivalent
+# ONLY — a present-day light-sector COHERENCE click splits it.
 def uv_chain(g_ah, g_hb):
     w = Web(); w.birth('A', 'H', g_ah); w.birth('H', 'B', g_hb)
     return w
-u1, u2 = uv_chain(F(9,25), F(16,25)), uv_chain(F(16,25), F(9,25))
-ok1 = u1.zlaw(['A','B']) == u2.zlaw(['A','B'])
-h1, h2 = u1.zlaw(['H']), u2.zlaw(['H'])
-ok1 &= h1 != h2
-check("E1 UV equivalence: mediator completions (9/25,16/25) and (16/25,9/25) "
-      "give the IDENTICAL light-sector (A,B) click law; heavy tables differ",
-      ok1, f"P(H=1): {h1[(1,)]} vs {h2[(1,)]} — the future click that splits the class")
+o1, o2 = uv_chain(F(9,25), F(16,25)), uv_chain(F(16,25), F(9,25))
+okb = o1.zlaw(['A','B']) == o2.zlaw(['A','B'])
+cA1, cA2 = o1.offdiag('A'), o2.offdiag('A')
+okb &= (cA1 != cA2)
+check("E1b honesty: the original mediator pair is Z-POPULATION-equivalent "
+      "only — light-sector coherence splits it TODAY (the finite mirror of "
+      "EFT matching with power corrections: leading matched observables "
+      "agree; subleading low-energy fingerprints resolve the completion)",
+      okb, f"A-coherence {cA1} vs {cA2}")
 
 # E2: dark-interior invisibility (Z-law AND visible coherence)
 def dark_web(interior):
@@ -92,7 +129,9 @@ for interior in INTERIORS:
     if ref_z is None: ref_z, ref_c = z, c
     ok2 &= (z == ref_z and c == ref_c)
 check("E2 dark-interior invisibility: visible (A,B) Z-law AND A's coherence "
-      "are EXACTLY invariant under every dark-interior structure (portal fixed)",
+      "EXACTLY invariant under every dark-interior structure TESTED (portal "
+      "fixed; the universal is the subtree-channel theorem: any channel "
+      "supported on the dark subtree leaves rho_AB invariant)",
       ok2, f"{len(INTERIORS)} interiors")
 
 # E3: portal identifiability — populations blind, coherence sees
@@ -165,6 +204,6 @@ check("E6 class statement + splitters printed", True)
 
 print()
 total = PASS + FAIL
-print(f"ALL CHECKS PASS ({PASS}/{total}: 5 substantive gates + 1 print gate)"
+print(f"ALL CHECKS PASS ({PASS}/{total}: 6 substantive gates + 1 print gate)"
       if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)

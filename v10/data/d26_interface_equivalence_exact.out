@@ -1,6 +1,7 @@
 [d26 interface equivalence — exact]
-  [PASS] E1 UV equivalence: mediator completions (9/25,16/25) and (16/25,9/25) give the IDENTICAL light-sector (A,B) click law; heavy tables differ  (P(H=1): 144/625 vs 256/625 — the future click that splits the class)
-  [PASS] E2 dark-interior invisibility: visible (A,B) Z-law AND A's coherence are EXACTLY invariant under every dark-interior structure (portal fixed)  (4 interiors)
+  [PASS] E1 UV equivalence (repaired): heavy-internal swaps give the IDENTICAL full visible density matrix rho_AB — populations AND coherences; heavy tables differ  (P(H2=1): 2304/15625 vs 82944/390625 — a heavy click splits the class)
+  [PASS] E1b honesty: the original mediator pair is Z-POPULATION-equivalent only — light-sector coherence splits it TODAY (the finite mirror of EFT matching with power corrections: leading matched observables agree; subleading low-energy fingerprints resolve the completion)  (A-coherence 48/125 vs 36/125)
+  [PASS] E2 dark-interior invisibility: visible (A,B) Z-law AND A's coherence EXACTLY invariant under every dark-interior structure TESTED (portal fixed; the universal is the subtree-channel theorem: any channel supported on the dark subtree leaves rho_AB invariant)  (4 interiors)
       E3 honesty: visible Z-POPULATION clicks are portal-blind (dispersal
       does not move populations); the portal is pinned by COHERENCE clicks
       (X-visibility): A-coherence = 144/625, 108/625, 252/3125 — injective.
@@ -30,4 +31,4 @@
       kernel rate) [CONSISTENT today, not identified].
   [PASS] E6 class statement + splitters printed
 
-ALL CHECKS PASS (6/6: 5 substantive gates + 1 print gate)
+ALL CHECKS PASS (7/7: 6 substantive gates + 1 print gate)
