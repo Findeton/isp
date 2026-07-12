@@ -1072,3 +1072,31 @@ weak collapse at every rate, classical receivers excluded; dispersal
 admitted — with the experimental falsifier unchanged (the D21 ladder +
 attribution gate). Goal clause (3) grounding rule (b): satisfied at
 family grade.
+
+## 2026-07-12 — D26 RUN: the declared interface + surviving class — ALL GATES PASS (6/6, exit 0)
+
+`code/d26_interface_equivalence_exact.py` (pin b5aae2e, pre-run; output at
+`data/d26_interface_equivalence_exact.out`; one pre-commit patch: E5's
+vacuous twin replaced by the full 8-outcome closed-form gate, wiring leg
+deferred to D24 G4). E1 UV EQUIVALENCE exact exhibit: mediator completions
+(9/25,16/25) vs (16/25,9/25) — identical light-sector law, heavy tables
+differ (P(H=1) 144/625 vs 256/625 = the future click that splits the
+class): interface equivalence is decided by the effective portal product,
+not the UV wiring. E2 DARK-INTERIOR INVISIBILITY: visible Z-law AND
+visible coherence exactly invariant under 4 dark-interior structures at
+fixed portal. E3 PORTAL IDENTIFIABILITY with the honesty print: visible
+Z-POPULATION clicks are portal-blind (dispersal moves no populations);
+the portal is pinned by COHERENCE clicks (A-coherence 144/625, 108/625,
+252/3125 — injective). E4 THE BIRTH-DECOHERENCE BRIDGE: each birth
+contracts the parent's coherence by exactly sqrt(1-g), multiplicatively —
+births are NSE-compliant dispersal-decoherence events; the kernel's
+laboratory shadow is an anomalous-decoherence channel bounded by the
+existing coherence records [LITERATURE; consistency only, no rate
+claimed]. E5 zero-birth windows reproduce the fixed-carrier conditional
+measure (closed forms, all 8 outcomes). E6 THE SURVIVING CLASS printed
+with every internal freedom and its named future splitter (heavy clicks;
+portal precision; ladder/visibility; 0nubb/ordering; cosmological record-
+count). Goal state: clause (2) closed AT THE DECLARED INTERFACE (one
+class); clause (1) bridged to experiment (bounded, consistent). Next:
+paper 19 assembly + LEDGER #129 (the D25 supersession), then the review
+round the goal's DONE requires.

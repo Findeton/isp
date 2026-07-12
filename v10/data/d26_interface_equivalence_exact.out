@@ -1,0 +1,33 @@
+[d26 interface equivalence — exact]
+  [PASS] E1 UV equivalence: mediator completions (9/25,16/25) and (16/25,9/25) give the IDENTICAL light-sector (A,B) click law; heavy tables differ  (P(H=1): 144/625 vs 256/625 — the future click that splits the class)
+  [PASS] E2 dark-interior invisibility: visible (A,B) Z-law AND A's coherence are EXACTLY invariant under every dark-interior structure (portal fixed)  (4 interiors)
+      E3 honesty: visible Z-POPULATION clicks are portal-blind (dispersal
+      does not move populations); the portal is pinned by COHERENCE clicks
+      (X-visibility): A-coherence = 144/625, 108/625, 252/3125 — injective.
+  [PASS] E3 portal identifiability: Z-law invariant, coherence law injective in the portal coupling — what is probed is pinned
+  [PASS] E4 birth-decoherence bridge: each birth contracts the parent's coherence by exactly sqrt(1-g), multiplicatively — births are NSE-compliant dispersal-decoherence events (D25-admitted isometries)
+      E4 consequence [LITERATURE, consistency only]: the kernel's
+      laboratory shadow is an anomalous-decoherence channel; current
+      coherence records (matter-wave interferometry >1.7e5 Da; the D21
+      ladder discipline) bound (rate x coupling) onto probed systems.
+      Current nulls are CONSISTENT with any admissible kernel below the
+      bound; no quantitative rate is claimed (grounding rule).
+  [PASS] E5 tested-domain consistency: the zero-birth-window law equals the fixed-carrier conditional measure — full 8-outcome chain table gated against hand closed forms (wiring leg: D24 G4)
+      E6 THE SURVIVING CLASS AT THE DECLARED INTERFACE (current lab/
+      collider/solar-system + current cosmological/coherence records):
+        { D15 tested-domain restriction (identified, paper 18) }
+        x { dim-5 neutrino operator at measured inputs [LITERATURE]:
+            dm2_21 ~ 7.5e-5 eV^2, |dm2_32| ~ 2.4e-3 eV^2,
+            sin2th12 ~ 0.31, sin2th23 ~ 0.55, sin2th13 ~ 0.022;
+            ordering + Dirac/Majorana OPEN = class-internal }
+        x { any dark sector entering only via its pinned portal (E2/E3) }
+        x { any UV completion with the D15 low-energy shadow (E1) }
+        x { any admissible birth kernel below coherence bounds (E4/E5) }
+      SPLITTERS (future clicks that break each freedom): heavy-sector
+      clicks (E1); portal-coherence precision + direct detection (E2/E3);
+      ladder residuals / interferometric visibility (E4); 0nubb and
+      ordering data (neutrino); cosmological record-count precision (birth
+      kernel rate) [CONSISTENT today, not identified].
+  [PASS] E6 class statement + splitters printed
+
+ALL CHECKS PASS (6/6: 5 substantive gates + 1 print gate)
