@@ -987,3 +987,28 @@ State after the round: paper 18 stands at hostile-round-2 PASS with F1
 (the reception theorem) the open load-bearing delta and F8 (D24 tree
 receipt), F9 (Gamma(n) Mermin-order scaling), F10 (Oppenheim rival row)
 queued as the named next work.
+
+## 2026-07-12 — CAMPAIGN OPENED: the complete interactive record law (user /goal)
+
+Goal set by the user (verbatim in the session record; summary): exhibit the
+complete interactive record law — one covariant growth process (E_t, D, B) —
+with (1) a birth kernel (local, isometric, ledger-balanced, order-gauge),
+(2) the full graph + couplings whose tested-domain restriction reproduces
+the identified law and which supplies the record-demanded missing sectors
+and a UV completion, (3) the dispersal-only coherence clause with its
+falsifier, (4) declared record semantics + state; GROUNDING RULE: every
+clause IDENTIFIED (click-identifiability theorem + pin to real experimental
+records, untouched data, never V9) or PRINCIPLED (a stated physics
+principle that discriminates real rivals and carries an experimental
+falsifier); constants only from measurement; DONE = hostile reviews pass
+to terminal + no current experiment contradicts any clause + consistency
+receipts green + exactly one equivalence class survives at the declared
+interface, falsifiers printed.
+
+Campaign plan (receipt order): D24 the tree birth kernel (first exact
+clause-1 exhibit + identifiability; closes F8 and grounds clause 1's
+form); D25 the reception theorem (F1 — grounds clause 3 per the grounding
+rule); D26 clause-2 closure up to click-equivalence at the declared
+interface + the birth kernel's cosmological-shadow consistency; paper 19
+assembly; hostile reviews to terminal. D24 pin committed pre-receipt
+(this entry's commit).
