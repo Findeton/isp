@@ -1,0 +1,21 @@
+[d31a graph-blind stationarity no-go — exact]
+      grammar: none-free; at count u: u labelled births, u(u-1)
+      labelled directed interacts; weights depend on u only.
+  [PASS] A1 pair types at u = 2..6: bb and ii are identically covariant; the bi pair forces w_i(u+1) = w_i(u) exactly when birth weights are positive (the forcing equation instantiated)
+  [PASS] A2 violation exhibit: the normalized u-varying kernel w_i(u) = 1/(10u) breaks path-covariance on the bi pair at u = 2  (P1 = 3/200 vs P2 = 9/400)
+  [PASS] A3 the collapse: the constant-c kernel is covariant at every tested u BUT birth positivity fails at the computed u* — unbounded growth forces c = 0  (c = 1/10, u* = 4, w_b(u*) = -1/20)
+  [PASS] A4 the unique survivor: pure birth w_b(u) = 1/u — every length-3 path carries the identical product 1/24; 24 labelled paths; total mass exactly 1 (full path-covariance on the enumerated domain)
+      A5 COROLLARY [with D28 T2]: the stationary + path-covariant +
+      graph-blind class contains NO diamond-forming kernel — its only
+      member is pure birth, which has no common operational futures.
+      THE CONCLUSION AT ITS HONEST WIDTH (the external review's
+      narrowing): a stationary path-covariant kernel with interactions
+      must consult RICHER STATE THAN u — graph structure, degree, age,
+      motifs, or global invariants; LOCALITY IS NOT SPECIFICALLY
+      FORCED. Printed limits: none-ops excluded (the none arm changes
+      the equation — D31C tests it); bounded growth escapes (c > 0
+      admissible below a u-cap); birth positivity is a hypothesis;
+      per-labelled-opportunity weights with the stated counts assumed.
+  [PASS] A5 the corollary and limits printed
+
+ALL CHECKS PASS (5/5: 4 substantive gates + 1 print gate)

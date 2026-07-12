@@ -1,0 +1,17 @@
+[d31b the two causal structures — exact]
+  [PASS] B1 THE PORT-MAP HYPOTHESIS CONFIRMED: the port-dependency poset (explicit ports, total entangling-gate map, independent construction) equals the wire-DAG — battery webs + 3 grown collar webs, elementwise — D30's measured object IS the structural order
+  [PASS] B2 the diagnostic split: the port poset carries the root->last-op relation while operational influence is EXACTLY ZERO (the E5 cancellation; mid-history 576/625) — structural comparability is not operational influence; the influence graph is never called a poset  (I_mid = 576/625, I_end = 0)
+  [PASS] B3 influence within structure: every positive influence pair on the battery is port-comparable (no influence outside the structural order)
+  [PASS] B4 the multi-touch census on grown collar webs (256 events, 3 seeds): same-pair repeat interacts exist at scale — any influence reading of the structural order owes this exception bookkeeping (the E5 class needs >= 7 same-pair touches on the grid)  ((>=2, >=7) touches per web: [(45, 1), (37, 2), (43, 1)])
+      B5 THE FREEZE [structural grounds, per the external review]:
+      the PRIMARY causal order for all D32-class measurement is the
+      PORT-DEPENDENCY POSET == the wire-DAG (B1) — transitive and
+      acyclic by construction, alphabet-independent, and now
+      independently constructed twice. The OPERATIONAL-INFLUENCE
+      GRAPH is the declared DIAGNOSTIC: alphabet-relative, cancel-
+      lations recorded (B2/B4), transitivity never claimed. D30's
+      measured object is retroactively the structural order;
+      'directedness' was an alphabet-relative operational property.
+  [PASS] B5 the primary order frozen (port poset == wire-DAG); the influence graph = diagnostic
+
+ALL CHECKS PASS (5/5: 3 substantive gates + 2 print/report gates)

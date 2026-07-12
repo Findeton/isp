@@ -1495,3 +1495,47 @@ S^2 = mechanism test, card v2 fixed-decimal + environment-recorded).
 Two in-session nuances recorded in the review file: the port-map
 hypothesis, and covariance-as-declared-axis (not a filter) pending
 D31C.
+
+## 2026-07-12 — D31 RUN: the stationarity no-go, the two causal structures, graded feasibility — 15/15, exit 0
+
+Pin f0b2bc9 (pre-run; designed per the external plan review, LEDGER
+#136). **D31A (5/5) — THE GRAPH-BLIND STATIONARITY NO-GO, exhibit-grade
+with the in-note proof:** in the none-free unbounded-growth grammar, a
+stationary path-covariant kernel with u-only per-opportunity weights
+cannot assign positive weight to interactions — the bi pair forces
+w_i constant (gated at u = 2..6; violation exhibit; the constant-c
+collapse at the computed u* = 4 for c = 1/10); the unique survivor is
+pure birth w_b = 1/u (full covariance on the enumerated domain, 24
+paths, mass 1). COROLLARY with D28 T2: the stationary + covariant +
+graph-blind class contains NO diamond-forming kernel. THE CONCLUSION AT
+THE REVIEW'S WIDTH: richer state sensitivity is necessary — locality is
+NOT specifically forced; limits printed (none-free; bounded-growth
+escape; birth positivity; per-labelled-opportunity weights). **D31B
+(5/5) — THE PORT-MAP HYPOTHESIS CONFIRMED AND THE PRIMARY ORDER
+FROZEN:** the port-dependency poset (explicit ports, total entangling-
+gate map, independently constructed) EQUALS the wire-DAG elementwise on
+the battery webs AND three grown collar webs — D30's measured object is
+retroactively the STRUCTURAL order, and "directedness" was an alphabet-
+relative operational property; the E5 diagnostic split gated (port-
+comparable with influence exactly 0; mid-history 576/625); influence ⊆
+structure on the battery; THE MULTI-TOUCH CENSUS at scale: ~40 same-pair
+repeat interacts and 1-2 cancellation-capable (>= 7-touch) pairs per
+256-event collar web — the exception bookkeeping any influence reading
+owes is real, not hypothetical. THE FREEZE [B5]: primary order for all
+D32-class measurement = the port poset == wire-DAG; the operational-
+influence graph = the declared diagnostic, never a poset. **D31C (5/5)
+— RECONNAISSANCE FOUND AN OBSTRUCTION, NOT A CANDIDATE:** for normalized
+no-none kernels with multiplicity-insensitive class gradings (d_cover
+classes; age classes), path-covariance on the concrete bi pair forces
+Z(H+b) = Z(H+i) while Z(H+b) − Z(H+i) = f_b + 2f_i1 + 2f_i2 > 0 for
+every positive assignment — a birth strictly adds opportunities, a
+parallel-edge interact adds none: OBSTRUCTED (theorem-grade on the
+exhibited class; the degree-sensitive escape named open). THE NONE-ARM
+ESCAPE gated: with an absorbing idle weight (Z == 1), constant class
+weights are covariant trivially — covariance is BOUGHT by a web-size-
+dependent idle rate (the D28 kernels' none arm was uniform, not
+absorbing — why they fail). THE LANDSCAPE feeds D32's declared
+covariance column: obstructed / open (degree-sensitive) / trivial-at-a-
+price (none-absorbing) / teleological (K_flat). The arc delta pass is
+in flight (F5); D31's hostile round launches when it lands, folding
+both. D32 remains HELD per the external review.
