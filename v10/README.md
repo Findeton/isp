@@ -1,17 +1,25 @@
 # Relativistic ISP v10
 
-## Latest — D22/D23 / Paper 18 (NO-REVIEW DRAFT)
+## Latest — D22/D23 / Paper 18 (hostile round 1 applied)
 
-Paper 18 supplies the extra principle D20 said the objective requires —
-**No Silent Erasure** (the founding sealed-without-silent-structure clause
-applied to dynamics: losses must be received by records; sealing is
-dispersal only; no record-uncertifiable absolute scales) — selecting the
-Q-class at Paper 17's coherence fork with a parameter-free ladder-null
-falsifier, and assembles the identified interactive click law: the
-conditional measure of the D15 action at the measured couplings, with an
-exact new receipt (`code/d23_click_identifiability_exact.py`, 5/5) proving
-click statistics identify interaction graph and coupling. Identified, not
-derived; low-energy; hostile rounds pending (token-constrained).
+Paper 18 posits the candidate extra principle D20's warning names — D20
+paired "inventing an extra principle" with "not a fabricated proof"; the
+defense is that the posit is independently motivated, parameter-free-
+falsifiable, and not tuned to the data that vets it — **No Silent
+Erasure** (the corpus's no-silent discipline applied to dynamics: losses
+must be received by records; sealing is dispersal only), selecting the
+Q-class at Paper 17's coherence fork with a ladder-null falsifier, and
+assembles the identification: the currently measured clicks identify
+SM + effective gravity as the leading history generator over their
+tested energy domain (not the complete law at every energy), with an
+exact receipt (`code/d23_click_identifiability_exact.py`) proving click
+statistics identify interaction graph and coupling on an exact witness
+family (post-review: plus the tree class; boundary = boundary couplings,
+silent edges, in-degree >= 2). Hostile round 1 (three streams) applied
+2026-07-12: priority = strengthening-by-localization (Halliwell/GMH/
+Zurek/CDP named); clause (iii) demoted to corollary; falsifier carries
+the attribution rider; F1 (the reception theorem) is the open
+load-bearing delta. Reports: `reviews/d22-d23-paper18-round1-*`.
 
 - `note-d22-no-silent-erasure-principle.md`
 - `note-d23-click-identifiability-and-the-real-interaction-graph.md`

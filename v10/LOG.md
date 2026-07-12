@@ -897,3 +897,64 @@ The goal ("find the real interaction graph and couplings of the interactive clic
 ## 2026-07-12 — Paper 18 drafted (NO-REVIEW, on record)
 
 `relativistic-isp-v10-paper18-no-silent-erasure-and-the-identified-click-law.md`: the D22 principle (statement, the precise sense of "silent," the D12 self-test, the ladder-null falsifier, reality's current vote) + the D23 identification (the exact identifiability receipt; the assembled law; the "proven" standard stated without inflation; the ceiling; seven pinned hostile fronts). README updated.
+
+## 2026-07-12 — Hostile round 1 on D22/D23/Paper 18 (three streams) — applied
+
+Full hostile reviews run per user directive (mathematics/rebuild, physics/
+literature, ontology/assembly; reports in `reviews/d22-d23-paper18-round1-*`).
+Totals: 12 MAJOR / 25 MINOR / 18 NIT across streams; zero false receipt
+results — every MAJOR is claim-transcription/quantifier/formalization class.
+The receipt survived clean-room rebuild (all 12 distributions identical;
+closed forms proven as degree-<=2 polynomial identities; pin-before-run
+verified: de85a64 -> 81c7d86 byte-identical). All corrections applied to the
+paper, both notes, README and the receipt; ledgered at v8/LEDGER #126.
+
+Load-bearing outcomes. (1) F1 = the load-bearing delta, OPEN: "received by
+records" survives the branch-variable attack (s is fresh randomness — zero
+mutual information with the erased eta-distinction; C's record content is a
+strict coarse-graining of Q's; under X/Y settings s itself is unrecorded)
+and is formalizable at the ensemble level, but the pinned Stinespring wording
+was vacuous (every CPTP map dilates); the reception theorem
+(complementary-channel separation / in-ontology record-sector dilation)
+remains to be written. (2) Priority verdict: strengthening-by-localization —
+Halliwell (decoherence <=> records), GMH strong decoherence, Zurek quantum
+Darwinism, CDP purification occupy the ground; surviving deltas = D21-fork
+selection use, quarter-law metric, the F1 restriction, the factor-number
+ladder axis. (3) Clause (iii) DEMOTED to a corollary of (i)+(ii)
+(parameter-free DP slips it; a strong reading hits G/Lambda; exemption rule
+added). (4) The falsifier now carries the attribution rider (supersedes the
+D22 entry above: a nonzero residual falsifies the dispersal packet outright,
+the principle only after attribution to every certified receiver sector
+fails; null = zero within stated sensitivity, falsifiable-never-verifiable).
+(5) Rehabilitation requires a QUANTUM receiver: Oppenheim-class classical-
+quantum gravity violates (i) — silent erasure with a middleman; added as a
+named rival with its diffusion-floor falsifier. (6) Leg A quantifier fixed
+(supersedes the D23 entry above): injective on {star, chain} x (0,1) jointly
+and within each graph on [0,1]; the graphs necessarily coincide at s in
+{0,1}. Rebuild strengthened Leg A (all interior PAIRS separate; the tuned
+marginal fake dies at the two-record joint; no per-edge fake in an 11^4
+search) and characterized the honest class: rooted controlled-rotation TREES
+exactly recoverable; boundary = boundary couplings + silent edges (clicks
+certify the ACTIVATED subgraph) + in-degree >= 2. (7) The assembled claim is
+now stated at its defensible strength (user-directed, review-confirmed):
+the currently measured clicks identify SM + effective gravity as the leading
+history generator over their tested energy domain — NOT the complete click
+law at every energy ("assembled", not "closed", superseding the D23 entry's
+"closed at the only standard" wording); the D18 generator slots
+(state/measure/scheme/record dynamics) are restored to the box; the dark
+sector + neutrino-mass demand is explicit; S(I) = exp(-I) alone does not
+tell three records how to interact nor how a fourth is created (the D12
+lesson, now in §1). (8) Values refreshed: alpha_s(M_Z) = 0.1180 +/- 0.0009,
+m_H = 125.20 +/- 0.11 (PDG 2025), sin^2 theta-hat MS-bar label, kappa =
+8 pi G / c^4; mass record -> Na clusters > 1.7e5 Da (Pedalino, Nature 649,
+866 (2026)); Erven carries fair-sampling; founding-sentence quotation had no
+source — now cites the actual ancestors (v6 P3; v10 P1 §5.5; D1/D4).
+Receipt upgraded post-review (closed forms gated at ALL six grid points with
+the degree argument; notation harmonized to coupling g = sin^2; dead code
+removed; count relabeled 3 gates + 2 prints) and reran green: ALL CHECKS
+PASS (5/5: 3 substantive gates + 2 informational prints), exit 0.
+
+New fronts pinned in paper 18 §8: F8 tree-identifiability receipt (D24);
+F9 Gamma(n) Mermin-order CSL scaling (the separated prediction); F10
+Oppenheim-class on the D21 rival table. V9-holdout and geometry discipline:
+verified clean by all three streams.
