@@ -1,0 +1,12 @@
+[d27 Busch closure — exact]
+  [PASS] B0 upgraded certificate (Delta^3 = c*Delta): all D25 verdicts reproduced exactly
+  [PASS] B1 thermal receiver T(rho) = U(rho x I/2)U†: every pairwise trace distance preserved EXACTLY
+  [PASS] B2 T is NO single isometry (pure GHZ -> purity exactly 1/2) yet is exactly Busch form: 1/2 V0 rho V0† + 1/2 V1 rho V1†, isometries with mutually orthogonal ranges (V0†V1 = 0, V†V = I, verified)
+      => D25's characterization sentence ('= exactly the isometric
+      dilations') is refuted by exhibit; the Busch class (mixtures of
+      isometries with orthogonal ranges) is the correct one. All D25
+      EXCLUSIONS stand (B0/B4); only the characterization is corrected.
+  [PASS] B3 the flag receives nothing: branch weights (1/2, 1/2) for EVERY preparation; the E-flag marginal is preparation-independent
+  [PASS] B4 the admitted class is the Busch class: U, Q_disp, T preserve; C_bare, C_half, R_cl contract — every D25 exclusion unchanged
+
+ALL CHECKS PASS (5/5: 5 substantive gates)
