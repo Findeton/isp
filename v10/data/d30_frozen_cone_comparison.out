@@ -1,8 +1,9 @@
 [d30 frozen-kernel cone comparison]
       card sha256/16 COMPUTED and gated: af5f6b011d3c48f8;
       base seed 30260712; 10 seeds/cell; event-count targets (256, 512);
-      the measured object is the EVENT (op) order (D28b) — the
-      register relation is cyclic for re-touching kernels.
+      the measured object is the WIRE/CIRCUIT EVENT DAG (declared
+      physics — note §1; the register relation is cyclic for
+      re-touching kernels).
   [PASS] W1 growth integrity: every cell reached its event-count target; base seed printed, per-cell seeds formulaic in-code
   [PASS] W2 the tail signature at scale: K_collar's beyond-collar interact count is EXACTLY 0 in every run (the collar half restates the D28 static-metric theorem — the sampler has no far branch for it); K_tail's is positive  (tail far count: 457.0 per 3N-step growth RUN (arc-round label fix; the 512-event web contains ~100))
       W3 the ruler table (event order; card bands at matched N):
@@ -20,8 +21,9 @@
       W4 BRANCH 3: no frozen kernel enters a manifold band under
       the card's own bands — the round-0 BRANCH-1 headline is
       SUPERSEDED (K_collar is excluded from M^2 by d_hat at ~6
-      card-SD, by the matched-exponent chain constant at +61%
-      above the m_2 ceiling, and by interval abundance at ~10 SD).
+      card-SD, by the matched-exponent chain constant at +61.6%
+      vs the card and +45.5% above the m_2 = 2 asymptotic ceiling,
+      and by interval abundance at ~10 SD).
       THE POSITIVE RESIDUAL (the arc review's O-A; wording per the
       external plan review): K_collar produces an order with a
       STABLE FINITE-SCALE EFFECTIVE DIMENSION d_hat = 1.76 +- 0.10

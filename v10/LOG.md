@@ -1539,3 +1539,34 @@ covariance column: obstructed / open (degree-sensitive) / trivial-at-a-
 price (none-absorbing) / teleological (K_flat). The arc delta pass is
 in flight (F5); D31's hostile round launches when it lands, folding
 both. D32 remains HELD per the external review.
+
+## 2026-07-12 — THE ARC DELTA PASS DISCHARGED: PASS-WITH-RESIDUALS (0 MAJOR); residuals applied; the arc record is DELTA-CLEAN
+
+Report: `reviews/d28b-d29-d30-round2-delta-review.md` (the pass the
+external review named as owed at LEDGER #136 — "delta verification
+pending" is hereby SUPERSEDED). All five arc round-1 MAJORs verified
+faithful with independent rebuilds (the E5 cancellation re-derived
+exact-rationally on a THIRD engine architecture: the 8 co-axial cRy ops
+compose to the exact rational identity, 527^2 + 336^2 = 625^2; every W4
+card number recomputed: 6.25 card-SD, 10.06 SD, +61.6%, 8.74x); the
+BRANCH-1 -> BRANCH-3 supersession chain traceable end-to-end; the
+external review's four record repairs landed at every named locus
+('non-integer' survives only in append-only history; no live locus
+asserts BRANCH 1). Residuals applied (0 MAJOR / 3 MINOR / 3 NIT, all
+trace-completeness; LEDGER #138): note-d28b §2(iii) scoped in place
+(fixed-horizon cylinder consistency; the {K_flat^T} family is not
+projective across horizons); R4's second relabeling class was
+TAUTOLOGICAL — replaced by the genuine renamed-web merge test, which
+exposed that canon normalized label assignment but not name choice: the
+canon function UPGRADED to fresh-label isomorphism (present labels
+mapped to the canonical prefix; behavior unchanged on the enumerated
+domain — Phi tables identical), rerun 6/6; the d30 receipt header's
+"(D28b)" attribution — struck by M2 everywhere else — replaced with the
+wire/circuit-DAG declared-physics wording, rerun 5/5 BRANCH 3; the W4
+prose now separates +61.6% (vs the card) from +45.5% (above the m_2 = 2
+ceiling); the in-code 10.4% strings corrected to 10.1% and the d29
+count relabeled (7 substantive + 1 freeze gate), d29 rerun 8/8 with the
+INSTRUMENT CARD BYTE-IDENTICAL (git diff empty — the freeze held);
+box-4 clause (v)'s pseudo-SD folds into the O-E card-v2 schema (D32A).
+D31's hostile round launches now, folding verification of these
+residuals.

@@ -84,10 +84,14 @@ def g_apply(regs, edges, op):
         return regs + (child,), edges + (('b', op[1], child),)
     return regs, edges + (('i', op[1], op[2]),)
 def canon(regs, edges):
-    """Canonical form up to permutation of fresh labels."""
+    """Canonical form up to fresh-label ISOMORPHISM (arc-delta upgrade:
+    present fresh labels are mapped onto the canonical prefix z1..zk, so
+    name choice — not just assignment — is normalized; behavior on the
+    enumerated domain is unchanged, since the kernel assigns prefix names)."""
     fresh = [r for r in regs if r in FRESH]
+    targets = FRESH[:len(fresh)]
     best = None
-    for perm in permutations(fresh):
+    for perm in permutations(targets):
         m = dict(zip(fresh, perm))
         e2 = tuple(sorted((t, m.get(a, a), m.get(b, b)) for (t, a, b) in edges))
         r2 = tuple(sorted(m.get(r, r) for r in regs))
@@ -181,8 +185,10 @@ rAB1, eAB1 = g_apply(rA1, eA1, ('b', 'B'))     # z1 from A, z2 from B
 rB2, eB2 = g_apply(SEED_REGS, SEED_TE, ('b', 'B'))
 rBA2, eBA2 = g_apply(rB2, eB2, ('b', 'A'))     # z1 from B, z2 from A
 ok4 &= canon(rAB1, eAB1) == canon(rBA2, eBA2)
-# relabeling class 2: a single fresh label renamed (canonical-form identity)
-ok4 &= canon(rA1, eA1) in phi2[1]
+# relabeling class 2: a single fresh label renamed EXPLICITLY (arc-delta
+# fix: the earlier presence check was tautological) — the z2-named copy of
+# the z1-web must canon-merge with it
+ok4 &= canon(('R','A','B','z2'), SEED_TE + (('b','A','z2'),)) == canon(rA1, eA1)
 check("R4 the battery (arc-round upgrade): sealed protection, positive "
       "weights, the FIXED-HORIZON cylinder gate (step-1 marginal of the "
       "depth-2 law == the step-1 weights; the cross-horizon failure is "

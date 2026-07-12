@@ -196,7 +196,7 @@ check("V2 dimension: mean d_hat within ±0.35 of truth at N = 1024, every "
 
 # V3 (criterion REVISED post-run, DISCLOSED — no silent drift): the chain
 # constant shows the known slow finite-size drift toward m_d; the original
-# pre-registered ±10% cross-N stability bar FAILED at d = 4 (spread 10.4%
+# pre-registered ±10% cross-N stability bar FAILED at d = 4 (spread 10.1%
 # over 4x in N, hidden by 2-decimal print rounding). The honest instrument
 # is per-cell calibration: c_d(N) enters the card per (d, N) and D30
 # compares at MATCHED N. Revised gates: drift monotone-upward (the
@@ -213,7 +213,7 @@ check("V3 proper time (criterion revised, DISCLOSED in-code and in the LOG): "
       "per-cell calibration c_d(N) frozen in the card — D30 compares at "
       "matched N; cross-N drift monotone-upward per finite-size theory or "
       "<= 10%, and bounded by 15% (the original +-10% bar failed at d=4 at "
-      "10.4% — the disclosure)", ok3, "; ".join(det))
+      "10.1% — the disclosure)", ok3, "; ".join(det))
 
 # V4: spatial monotonicity at N = 1024
 ok4 = True
@@ -297,6 +297,6 @@ check("V8 the instrument card frozen (consumed by D30 unchanged)", True,
 
 print()
 total = PASS + FAIL
-print(f"ALL CHECKS PASS ({PASS}/{total}: 8 substantive gates)"
+print(f"ALL CHECKS PASS ({PASS}/{total}: 7 substantive gates + 1 freeze gate)"
       if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)

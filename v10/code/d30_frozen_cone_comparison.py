@@ -3,11 +3,11 @@
 d30_frozen_cone_comparison.py — v10 D30: the frozen-kernel cone comparison.
 Pin: note-d30 (committed pre-run). Frozen inputs: the D29 instrument card
 (af5f6b011d3c48f8) and the D28 kernel definitions. Growth is classical
-(kernel weights are graph-functions); the measured object is the EVENT
-(op) order — the D28b-repaired, well-posed causal order (the register
-relation is cyclic for re-touching kernels); webs grow until the event
-count matches the card's N. Float64 MC + numpy (declared). Gates W1-W5;
-exit 1 on any failure.
+(kernel weights are graph-functions); the measured object is the
+WIRE/CIRCUIT EVENT DAG — declared physics per note-d30 §1 (the register
+relation is cyclic for re-touching kernels; the D28b attribution was
+struck at the arc round); webs grow until the event count matches the
+card's N. Float64 MC + numpy (declared). Gates W1-W5; exit 1 on failure.
 """
 import json, math
 import numpy as np
@@ -151,8 +151,9 @@ assert _sha == "af5f6b011d3c48f8", f"card hash mismatch: {_sha}"
 print("[d30 frozen-kernel cone comparison]")
 print(f"      card sha256/16 COMPUTED and gated: {_sha};")
 print(f"      base seed {BASE_SEED}; {NSEEDS} seeds/cell; event-count targets {SIZES};")
-print("      the measured object is the EVENT (op) order (D28b) — the")
-print("      register relation is cyclic for re-touching kernels.")
+print("      the measured object is the WIRE/CIRCUIT EVENT DAG (declared")
+print("      physics — note §1; the register relation is cyclic for")
+print("      re-touching kernels).")
 
 results = {}
 ok1 = True; ok2 = True
@@ -241,8 +242,9 @@ if branch == 3:
     print("      W4 BRANCH 3: no frozen kernel enters a manifold band under")
     print("      the card's own bands — the round-0 BRANCH-1 headline is")
     print("      SUPERSEDED (K_collar is excluded from M^2 by d_hat at ~6")
-    print("      card-SD, by the matched-exponent chain constant at +61%")
-    print("      above the m_2 ceiling, and by interval abundance at ~10 SD).")
+    print("      card-SD, by the matched-exponent chain constant at +61.6%")
+    print("      vs the card and +45.5% above the m_2 = 2 asymptotic ceiling,")
+    print("      and by interval abundance at ~10 SD).")
     print("      THE POSITIVE RESIDUAL (the arc review's O-A; wording per the")
     print("      external plan review): K_collar produces an order with a")
     print("      STABLE FINITE-SCALE EFFECTIVE DIMENSION d_hat = 1.76 +- 0.10")
