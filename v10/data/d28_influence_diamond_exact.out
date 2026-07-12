@@ -1,0 +1,23 @@
+[d28 influence + diamond — exact]
+      alphabets printed: A = {no-op, prep|0>, prep|1>, Ry(3/5,4/5),
+      Ry(5/13,12/13)} (unconditioned replacements, no postselection);
+      Q = {Z, X} (tomographically complete for the real family;
+      enrichment of either alphabet can only enlarge the relation).
+  [PASS] T0 (A0a): birth == blank-activation-then-unitary, exact on the state (kinematic normal form; locality NOT claimed — A0c)
+  [PASS] T1 tree influence theorem: I(u->v) > 0 <=> v is a descendant of u through nonzero couplings — exhaustive over the 19-tree census; ancestor/incomparable zeros = no-signalling  (210 ordered pairs)
+  [PASS] T1b: a g = 0 edge blocks influence exactly; I is construction-order independent (gauge inherited from the law)
+  [PASS] T2 tree no-go: incomparable records have DISJOINT descendant sets and no common operational future — exhaustive over the census
+      T2 contrast [LITERATURE]: any two spacelike Minkowski events share
+      a common future (continuum theorem). Finite-sprinkling caveat: a
+      bounded window may lack the sampled common future — the finite
+      statistical gate is D29's, NOT this theorem. Conclusion: diamond-
+      forming cross-branch interaction is NECESSARY; A0a shows it is
+      representable after blank activation; representability is not
+      locality (A0c) — constraining it is K's job (receipt 2).
+  [PASS] T3a THE DIAMOND: A || B (I = 0 both ways), I(A->X) > 0, I(B->X) > 0; the full influence matrix equals the declared transitive closure  (I(A->X) = 102544/390625, I(B->X) = 212544/390625)
+  [PASS] T3b sealed values protected: A's and B's Z-diagonals exactly invariant through the interaction (nondemolition control); B's coherence ledger printed (dispersal, not value rewrite)  (B offdiag 192/625 -> 1344/15625)
+  [PASS] T3c gauge with interactions: all causal-compatible schedules give the identical label-canonical global state  (3 schedules)
+  [PASS] T3d synergy: the A-influence profile on X differs exactly across fixed B-settings — D carries genuine joint dependence, not two copies  (I_A|B=0 = 16/25, I_A|B=1 = 468/625)
+      non-additivity print: P(X=1 | A,B forced to 1) = 16/25 = sin^2(thA+thB); additive-naive g_AX + g_BX = 16/25 + 576/625 = 976/625 > 1.
+
+ALL CHECKS PASS (8/8: 8 substantive gates)
