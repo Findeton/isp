@@ -1114,3 +1114,58 @@ The user's challenge, adopted: content destruction was a stationarity shortcut, 
 **Verified clean:** all five receipts byte-reproduce; pin-ordering and fresh-seed discipline airtight; the free-web theorem and its control SOUND (rng exogeneity confirmed at code level); round 47's propagation genuine; **round 48's discovery — jump-free diffusion collapses the F-residual at z = −3.8/−3.7 BOTH conventions — robust to subsample redraws: "the program's best-supported new result."** The 48d PARKED verdict, however, does not survive instrument-robustness attack, and the corrections are applied here:
 
 **MAJOR-1 (volume conjunct instrument-suspect):** d_ball = 4.44 flips out of band on an alternate subsample (4.567), on window placement (4.47/4.65/5.71), and under a drift-fair τ (3.19 → UNDECIDED-INSTRUMENT under 45e's own rules); bootstrap P(in band) = 0.63; jackknife: 7/10 single-seed removals flip a conjunct. Corrected statement: **d_ball = 4.4 ± 0.2 at the pinned protocol; not robust; the volume conjunct is instrument-suspect pending O2.** **MAJOR-2 (my broken pin promise, owned):** the receipt-48 pin promised a dipole-drift disclosure; the receipt never computed it. The review supplies it: s_D(window)/s_D(calibration) = 1.55× at g = 0.18 (1.94× at 0.0625) — the diffusive class is NONSTATIONARY and this drift is MAJOR-1's mechanism. **MAJOR-3 ("round" overclaimed):** F_dom 1.203 is +0.117 (+6.5σ) above the round-reference MEAN — the webs are distinguishably less round than round, INSIDE the pre-registered 10%-over-band tolerance. All "ROUND"/"significantly-round" headlines (LEDGER #123/#124, LOG 48/48d, paper 8 §6) are corrected to: **"the residual anisotropy dropped ~45% (from the jump-class's +0.212 to +0.117) and the pre-registered parking criterion was met for the first time."** **MAJOR-4 (multiplicity):** g = 0.18 was the fifth look; the dom leg (z −1.96) passes only the uncorrected bar and fails every correction; **the m4 leg (z = −3.24, receipt-verified by the review) survives Bonferroni/5 — it is the load-bearing shape leg.** Minors applied: "forever" → "until the slot's next reset; never any other slot"; round-46's "STRUCTURAL" → "no detectable shrink over 16× at ±0.05 power (m4 hints downward at 1.6 SE)"; the 48i/48d nan influence lines annotated VESTIGIAL (empty loop; harmless, nothing reads it); the 48d checks were vacuous (verdict print-only — the replication receipt must gate in code); the S₄-criterion drift (window-1024 vs 45e's full-web) and the twin-band coding discrepancy disclosed; LOG-47's "matched to 0.001" → "consistent with no change at 3-seed power"; **the leak=sealing layer-2 re-tagged [POSITED-STRUCTURAL]** (the corpus's own λ=σ dissolution is the precedent warning) **and layer-3 corrected: Toner–Verstraete cannot fire on classical web data — the usable discriminator is the empirical sharing STRUCTURE of χ_AB against the TV quantum benchmark, with the CHSH null registered.** **THE PRESCRIBED QUEUE (review's O1–O5, adopted verbatim as the standing next steps): O1 the 24-seed replication with dual subsamples, rebuilt references, t-based z ≤ −2.33 both conventions, dual windows AND dual τ conventions on the volume leg, code-gated verdict; O2 the drift-matched volume instrument (validation-gated on drift-injected confetti BEFORE touching webs); O3 the coupled ladder at g = 0.18 (the sharpest falsifiable consequence: coupling should enable the averaging free webs provably lack); O4 the gap-to-mean roundness scan (+0.117 = the real remaining object); O5 the bridge pilot with the [POSITED] tag and the CHSH null.** LEDGER #125.
+
+## 2026-07-11 — construction-order gauge / interacting click law campaign: three hostile rounds, final underdetermination theorem
+
+User target: investigate fully whether construction-order gauge or a local click law is forced and find the final interacting dynamic law. Plan/pin first: `note-cg1-construction-order-gauge.md`. First receipts `cg1`–`cg3` (exact / dps120 / exact) all printed green but hostile round 1 independently reproduced them and returned MAJOR REVISION: unnormalized activities masqueraded as a stochastic diamond; next-event normalization was confused with nonlocality; survival, transport, no-signaling, and stems were separate/grafted modules; RN support additivity and recorded overlap were unproved. Promotion retracted to NOT-CERTIFIED.
+
+Every round-1 opening was pinned before execution. `cg4`–`cg7`: recurrent fixed-support process 6/6; marked/support exact 6/6 initially; RN chain rule/nonuniqueness 6/6; refinement template 5/5. Hostile round 2 accepted the underdetermination direction but found a real marked-canonicalization bug (outcomes did not follow lineage permutations), shallow projective/adaptive gates, no end-to-end trace, abstract c-witnesses, and overbroad renewal/nonexplosion language. Bug repaired (`cg5` 7/7).
+
+Final openings: `cg8` exact end-to-end trace 4/4 and `cg9` explicit RN/compensator models 4/4 at dps120. The trace includes common-cause root, local setting/seals, outcomes, RN block IDs, conservative joint transfer, parents, and renewal; unequal-rate queue/direct schedulers push forward to the same eight canonical histories of mass one. Explicit forward/reverse likelihood blocks realize c=0.2/0.7 at fixed lineage evidence totals 1.1/0.9 and different covariances 0.0299636/0.1371965. Final review: A PASS-WITH-CORRECTIONS (applied), C PASS, B found one last genuine restriction-functor bug (`projected-projected-*` under a 3-way crossing); projection made idempotent, E3 upgraded to a genuine three-lineage joint event, rerun 4/4, B PASS.
+
+**FINAL RESULT:** conditional on a covariant support/exposure process, a finite gauge-local classical recurrent click family exists and removes physical `b` at the tested quotient scope. But the current record principles do not select its coupling: shared evidence allocation c and conservative transfer g remain continuously free even with identical exact click marginals and the listed finite classical constraints. **Accepted as an underdetermination/no-selection theorem, not as the final unique law.** The missing next physics is a selector from actual sealed-holonomy likelihood/decoherence structure. Paper 9 review-passed at this scope. All `cg1`–`cg9` canonical outputs byte-reproduce; exact arithmetic or mpmath dps120 throughout.
+
+## 2026-07-12 — Paper 8 assembly hostile round 1 — MAJOR-REVISION applied
+
+Full hostile review of the assembly draft (report:
+`v9/reviews/paper8-round1-hostile-review.md`; part of the four-stream
+review directive that also covered v10 D22/D23/paper 18). Verdict: THE
+MEASUREMENTS STAND — number fidelity exhaustive on the load-bearing set,
+zero fabrications/transcriptions, funded-review numbers trace exactly,
+the lemma's algebra sound, Meyer 1993 verified against the primary
+source, instruments/tags/cross-refs correct — but the ASSEMBLY was
+unfaithful in four places, all repaired: (M1) the funded review's
+"forever" correction had been dropped — restored ("until that slot's
+next reset; never any other slot"); (M2) "growing witnessed order
+dimension"/"the witness ladder climbs" re-asserted #119's corrected
+claim — restored to ">= 5; growth with K unmeasured (S5 flat, S6
+unfound)" with the alpha = 0 scope on 45b's S5 and the 45d pointer;
+(M3) the abstract was frozen at round 46 (NOT-PARKED as the endpoint;
+conservation-churn future-tense) while §6 ran to 48d — item (6) added
+(the coupled-builder arc: 1 -> 3.6 -> 32 slots; diffusion z = -3.8;
+PARKED-AT-PROTOCOL with the instrument-robustness and +0.117/+6.5-sigma
+caveats); (M4) §8 orphaned §6's receipts — rounds 46-48d receipt list,
+LEDGER #121-#125 and the funded review's pin-verification added. MINORs:
+§7's "structural" power-scoped per #125; stale NO-REVIEW/unreviewed tags
+retagged [MEASURED, reviewed — LEDGER #125]; the F-side-window refusal
+sentence corrected to the receipt (S4 window-subsample only); the
+three-baselines confusion resolved by defining both metrics in §5
+(decision-line vs round-reference-mean); the round-47 sentence now
+carries the pin's redistribute-not-remove registration; 48d S4 carries
+the window-1024 criterion-drift disclosure; the impossibility lemma
+carries its priority paragraph (M3-case classical: Meyer's own S4-in-M3
+exhibit, Sidney-Sidney-Urrutia 1988, Brightwell-Winkler 1989; the all-d
+antipodal form + sprinkling corollary + crown connection are this
+program's; the withdrawn Mueller pointer restored as note-carried).
+NITs: dangling "3.6 +-" -> range 2-5/5 pairs; stray bold; "dimension-3
+refusals" -> 2-realizer refusals (order dim >= 3); delta defined as the
+inner-product gap; "0-dimensional shadow" -> finite-shadow statement;
+the obstruction list de-double-counted (+ diffusive-vs-ballistic);
+confetti-gate scope -> round-45-arc receipts; internal-review narration
+converted to authorship voice (house single-threaded style; the funded
+EXTERNAL review remains named); the anticorrelation clause restored
+(timelike-matter dials read less round). Openings queued (review §):
+the influence-duration receipt; a seeded S5/S6 hunt on the 48d class;
+one baselines table; the priority literature pass; O1-O3 stand
+mandatory; order-readability of F remains the sharpest instrument open.
+Ledgered at v8/LEDGER #127.
