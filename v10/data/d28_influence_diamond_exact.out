@@ -3,21 +3,28 @@
       Ry(5/13,12/13)} (unconditioned replacements, no postselection);
       Q = {Z, X} (tomographically complete for the real family;
       enrichment of either alphabet can only enlarge the relation).
-  [PASS] T0 (A0a): birth == blank-activation-then-unitary, exact on the state (kinematic normal form; locality NOT claimed — A0c)
+  [PASS] T0 engine-consistency exhibit for A0a: birth == blank-activation-then-unitary, exact on the state (the general factorization is the standard theorem [LITERATURE]; kinematic only; locality NOT claimed — A0c)
   [PASS] T1 tree influence theorem: I(u->v) > 0 <=> v is a descendant of u through nonzero couplings — exhaustive over the 19-tree census; ancestor/incomparable zeros = no-signalling  (210 ordered pairs)
   [PASS] T1b: a g = 0 edge blocks influence exactly; I is construction-order independent (gauge inherited from the law)
-  [PASS] T2 tree no-go: incomparable records have DISJOINT descendant sets and no common operational future — exhaustive over the census
+  [PASS] T2 tree no-go (hypothesis: NO post-birth interactions of any kind): incomparable records have DISJOINT descendant sets and no common operational future — exhaustive over the census
       T2 contrast [LITERATURE]: any two spacelike Minkowski events share
       a common future (continuum theorem). Finite-sprinkling caveat: a
       bounded window may lack the sampled common future — the finite
-      statistical gate is D29's, NOT this theorem. Conclusion: diamond-
-      forming cross-branch interaction is NECESSARY; A0a shows it is
-      representable after blank activation; representability is not
-      locality (A0c) — constraining it is K's job (receipt 2).
+      statistical gate is D29's, NOT this theorem. Conclusion (round-1
+      corrected wording): POST-BIRTH INTERACTION PER SE is NECESSARY
+      for common operational futures — cross-branch coupling is NOT
+      (the T2b mailbox exhibit); A0a shows the repair is representable
+      after blank activation; representability is not locality (A0c) —
+      constraining it is K's job (receipt 2).
+  [PASS] T2b the mailbox diamond: z1 || z2 (I = 0 both ways) yet both influence the later sibling z3 through writes on the shared PARENT — every interaction is a record-edge re-touch (K_collar-legal): cross-branch coupling is not what T2 makes necessary  (I(z1->z3) = 109296/9765625, I(z2->z3) = 109296/9765625)
   [PASS] T3a THE DIAMOND: A || B (I = 0 both ways), I(A->X) > 0, I(B->X) > 0; the full influence matrix equals the declared transitive closure  (I(A->X) = 102544/390625, I(B->X) = 212544/390625)
   [PASS] T3b sealed values protected: A's and B's Z-diagonals exactly invariant through the interaction (nondemolition control); B's coherence ledger printed (dispersal, not value rewrite)  (B offdiag 192/625 -> 1344/15625)
+      T3 durability: X's declared instrument is the Z-click and no op
+      follows the interaction — durable under the declared semantics;
+      the NSE opportunity-ledger conjunct is receipt 2's battery.
   [PASS] T3c gauge with interactions: all causal-compatible schedules give the identical label-canonical global state  (3 schedules)
   [PASS] T3d synergy: the A-influence profile on X differs exactly across fixed B-settings — D carries genuine joint dependence, not two copies  (I_A|B=0 = 16/25, I_A|B=1 = 468/625)
       non-additivity print: P(X=1 | A,B forced to 1) = 16/25 = sin^2(thA+thB); additive-naive g_AX + g_BX = 16/25 + 576/625 = 976/625 > 1.
+  [PASS] T4 the disturbance/influence split: on the re-touch web, active-pair I(c0->r0) = 0 exactly while the no-op-vs-active DISTURBANCE is 1152/3125 > 0 — the round-1 repin is load-bearing  (I = 0, disturbance = 1152/3125)
 
-ALL CHECKS PASS (8/8: 8 substantive gates)
+ALL CHECKS PASS (10/10: 10 substantive gates)

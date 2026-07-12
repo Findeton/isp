@@ -115,19 +115,36 @@ def queries(web, reg):
     return (p1,                      # Z: P(1)
             F(1,2) + od)             # X: P(+)
 
-ALPHA = [None, (F(1), F(0)), (F(0), F(1)), (F(3,5), F(4,5)), (F(5,13), F(12,13))]
+# Round-1 repin (physics M1): the influence sup runs over ACTIVE pairs only.
+# The no-op arm enters the separate DISTURBANCE relation — a no-op-vs-active
+# difference is back-action visibility through later re-touches, not
+# influence, and including it breaks antisymmetry on re-touching webs (the
+# T4 exhibit below).
+ALPHA_ACTIVE = [(F(1), F(0)), (F(0), F(1)), (F(3,5), F(4,5)), (F(5,13), F(12,13))]
 
 def influence(builder, u, v):
-    """I_{A,Q}(u -> v): max over intervention pairs and queries of |dP|.
+    """I_{A,Q}(u -> v): max over ACTIVE intervention pairs and queries.
     builder(intervention_map) -> DWeb; intervention applied at u's site
     immediately after u's birth."""
-    qs = [queries(builder({u: a}), v) for a in ALPHA]
+    qs = [queries(builder({u: a}), v) for a in ALPHA_ACTIVE]
     best = F(0)
     for i in range(len(qs)):
         for j in range(i+1, len(qs)):
             for k in (0, 1):
                 d = abs(qs[i][k] - qs[j][k])
                 if d > best: best = d
+    return best
+
+def disturbance(builder, u, v):
+    """The DISTURBANCE relation: max over (no-op, active) pairs — carried
+    separately from influence per the round-1 repin."""
+    q0 = queries(builder({}), v)
+    best = F(0)
+    for a in ALPHA_ACTIVE:
+        qa = queries(builder({u: a}), v)
+        for k in (0, 1):
+            d = abs(q0[k] - qa[k])
+            if d > best: best = d
     return best
 
 # ---- tree machinery (census import, D24 conventions) ----
@@ -182,8 +199,9 @@ w2 = DWeb([('A', PREP), ('B', (F(1), F(0)))])   # blank first...
 w2.interact('A', 'B', F(16,25))                  # ...then the unitary
 r1m = [row[:] for row in w1.rho]
 ok0 = all(r1m[i][j] == w2.rho[i][j] for i in range(4) for j in range(4))
-check("T0 (A0a): birth == blank-activation-then-unitary, exact on the state "
-      "(kinematic normal form; locality NOT claimed — A0c)", ok0)
+check("T0 engine-consistency exhibit for A0a: birth == blank-activation-then-"
+      "unitary, exact on the state (the general factorization is the standard "
+      "theorem [LITERATURE]; kinematic only; locality NOT claimed — A0c)", ok0)
 
 # T1: the tree influence theorem, exhaustive over the census
 ok1 = True; n_pairs = 0
@@ -234,15 +252,42 @@ for children in (['B','C'], ['B','C','D']):
                 ok2 &= not (descendants(pm, x) & descendants(pm, y))
                 for d in nodes:
                     ok2 &= not (influence(build, x, d) > 0 and influence(build, y, d) > 0)
-check("T2 tree no-go: incomparable records have DISJOINT descendant sets and "
-      "no common operational future — exhaustive over the census", ok2)
+check("T2 tree no-go (hypothesis: NO post-birth interactions of any kind): "
+      "incomparable records have DISJOINT descendant sets and no common "
+      "operational future — exhaustive over the census", ok2)
 print("      T2 contrast [LITERATURE]: any two spacelike Minkowski events share")
 print("      a common future (continuum theorem). Finite-sprinkling caveat: a")
 print("      bounded window may lack the sampled common future — the finite")
-print("      statistical gate is D29's, NOT this theorem. Conclusion: diamond-")
-print("      forming cross-branch interaction is NECESSARY; A0a shows it is")
-print("      representable after blank activation; representability is not")
-print("      locality (A0c) — constraining it is K's job (receipt 2).")
+print("      statistical gate is D29's, NOT this theorem. Conclusion (round-1")
+print("      corrected wording): POST-BIRTH INTERACTION PER SE is NECESSARY")
+print("      for common operational futures — cross-branch coupling is NOT")
+print("      (the T2b mailbox exhibit); A0a shows the repair is representable")
+print("      after blank activation; representability is not locality (A0c) —")
+print("      constraining it is K's job (receipt 2).")
+
+# T2b (round-1 M3): the MAILBOX diamond — an operational diamond with ZERO
+# cross-branch interactions: two siblings write on their shared parent
+# (record-edge re-touches, K_collar-legal), a later sibling reads.
+def mailbox_build(iv):
+    # both siblings are born BEFORE either writes (they stay incomparable);
+    # both write on the shared parent; the later sibling reads.
+    w = DWeb([('A', PREP)]); w.intervene('A', iv.get('A'))
+    w.birth('A', 'z1', F(16,25)); w.intervene('z1', iv.get('z1'))
+    w.birth('A', 'z2', F(16,25)); w.intervene('z2', iv.get('z2'))
+    w.interact('z1', 'A', F(9,25))
+    w.interact('z2', 'A', F(9,25))
+    w.birth('A', 'z3', F(16,25)); w.intervene('z3', iv.get('z3'))
+    return w
+I13 = influence(mailbox_build, 'z1', 'z3')
+I23 = influence(mailbox_build, 'z2', 'z3')
+I12 = influence(mailbox_build, 'z1', 'z2')
+I21 = influence(mailbox_build, 'z2', 'z1')
+ok2b = I13 > 0 and I23 > 0 and I12 == 0 and I21 == 0
+check("T2b the mailbox diamond: z1 || z2 (I = 0 both ways) yet both influence "
+      "the later sibling z3 through writes on the shared PARENT — every "
+      "interaction is a record-edge re-touch (K_collar-legal): cross-branch "
+      "coupling is not what T2 makes necessary", ok2b,
+      f"I(z1->z3) = {I13}, I(z2->z3) = {I23}")
 
 # T3: the minimal operational diamond, all gates
 G_AX, G_BX = F(16,25), F(576,625)
@@ -280,6 +325,9 @@ check("T3b sealed values protected: A's and B's Z-diagonals exactly invariant "
       "through the interaction (nondemolition control); B's coherence ledger "
       "printed (dispersal, not value rewrite)", ok3b,
       f"B offdiag {odB_pre} -> {odB_post}")
+print("      T3 durability: X's declared instrument is the Z-click and no op")
+print("      follows the interaction — durable under the declared semantics;")
+print("      the NSE opportunity-ledger conjunct is receipt 2's battery.")
 
 # T3c: gauge over all causal-compatible schedules (interactions included);
 # states compared LABEL-CANONICALLY (schedules place registers at different
@@ -316,8 +364,26 @@ check("T3d synergy: the A-influence profile on X differs exactly across fixed "
 print(f"      non-additivity print: P(X=1 | A,B forced to 1) = {pX11} = "
       "sin^2(thA+thB); additive-naive g_AX + g_BX = 16/25 + 576/625 = 976/625 > 1.")
 
+# T4 (round-1 M1): the re-touch exhibit — why the no-op arm is excluded
+# from influence. Parent r0 re-touches its child c0 after birth: active-pair
+# influence c0 -> r0 is EXACTLY ZERO, but the no-op-vs-active DISTURBANCE is
+# positive (the re-touch's back-action reads the correlation the intervention
+# destroyed). Influence with the no-op arm would break antisymmetry.
+def retouch_build(iv):
+    w = DWeb([('r0', PREP)]); w.intervene('r0', iv.get('r0'))
+    w.birth('r0', 'c0', F(576,625)); w.intervene('c0', iv.get('c0'))
+    w.interact('r0', 'c0', F(16,25))
+    return w
+I_cr = influence(retouch_build, 'c0', 'r0')
+D_cr = disturbance(retouch_build, 'c0', 'r0')
+ok4g = (I_cr == 0) and (D_cr == F(1152, 3125))
+check("T4 the disturbance/influence split: on the re-touch web, active-pair "
+      "I(c0->r0) = 0 exactly while the no-op-vs-active DISTURBANCE is "
+      "1152/3125 > 0 — the round-1 repin is load-bearing", ok4g,
+      f"I = {I_cr}, disturbance = {D_cr}")
+
 print()
 total = PASS + FAIL
-print(f"ALL CHECKS PASS ({PASS}/{total}: 8 substantive gates)"
+print(f"ALL CHECKS PASS ({PASS}/{total}: 10 substantive gates)"
       if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)

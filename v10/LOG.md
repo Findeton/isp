@@ -1238,3 +1238,60 @@ covariant kernels distinguishable. Paper 19 §9 F12 pointer updated
 (D28 opened = the kernel-selector program's first exact stage). D29
 (rulers) and D30 (frozen comparison) remain outlined, unopened.
 Hostile round on D28 launching next per the standing discipline.
+
+## 2026-07-12 — D28 hostile round 1 APPLIED (two streams); receipts upgraded and rerun green
+
+Reports: `reviews/d28-round1-{mathematics-rebuild,physics-foundations}-
+hostile-review.md` — math 2 MAJOR/6 MINOR/5 NIT, physics 4 MAJOR/10
+MINOR/7 NIT; ZERO false exact results (every number reproduced by three
+independent engines across the two streams); corrections at LEDGER #132.
+The load-bearing repairs, all receipt-carried: (1) THE ACTIVE-PAIR REPIN
+(physics M1): the no-op arm excised from influence into the separate
+DISTURBANCE relation — new gate T4 exhibits the re-touch web where
+active-pair I(c0->r0) = 0 exactly while disturbance = 1152/3125 (the
+reviewer's number reproduced); including no-op breaks antisymmetry on
+re-touching webs. (2) THE KICKBACK LEMMA (both streams, answering pinned
+F1): complex enrichment makes every interact gate a two-way channel
+(control coherence picks up Tr[rho_T R†]; real targets kill the J-term —
+why T3b's ledger is exactly x7/25) — exact witnesses I(X->B) =
+110592/390625, S_3 2-cycles; positive entries are alphabet-robust lower
+bounds, zeros are pinned-alphabet certificates EXCEPT the theorem-grade
+robust classes (tree zeros, spectator zeros — the WIRE-TIME LEMMA: robust
+under every TP intervention). T3a's closure equality and N10b's order
+reading scoped to the pin; D29/D30 must fix alphabets or measure the
+channel-robust subrelation. (3) THE MAILBOX EXHIBIT (physics M3): T2's
+conclusion corrected — POST-BIRTH INTERACTION PER SE is necessary, NOT
+cross-branch coupling: new gate T2b builds an operational diamond where
+every interaction is a record-edge re-touch of the shared parent
+(K_collar-legal; zeros complex-robust); T2's hypothesis now reads "no
+post-birth interactions of any kind" with the general 5-line proof
+(ancestor sets are chains in a forest). (4) RS PATH-COVARIANCE DISCLOSED
+(physics M4): new gate N11 — both kernels fail the Rideout-Sorkin
+covariance analog (same grown graph, different accretion orders: 1/40 vs
+1/25 collar; 2/81 vs 1/25 tail); RS births are multi-parent so common
+futures are NATIVE there (the obstruction is relative to the one-parent
+clause) — both caveats now in the priority paragraph; the successor
+front: an NSE-compliant RS-path-covariant kernel, or a proof that
+flags-observable makes path-equality wrong — the first exact shot at
+F12. (5) THE LOTTERY EXHIBIT (physics m4, closing F3): new gate N12 — a
+preparation-independent 1/2-1/2 lottery over NON-orthogonal isometries
+strictly contracts (D 1/2 -> 2/5): preparation-independence alone is not
+Busch-sufficient; recording the flag (= orthogonal ranges = recoverable
+k) is exactly what non-silence requires; A0c's "or" corrected to "with".
+(6) N10b upgraded to the FULL 30-pair interventional matrix at the
+pinned active alphabet (math M1/physics m10 — the spot-checks had cited
+the tree theorem outside its scope; the full gate replaces the unsound
+justification; the S_3 conclusion was independently re-proven by both
+streams before the repair). Also applied: 2/805 gated (tail(1/10));
+Ionescu-Tulcea labeling on N4; N6 renamed to the Busch WEIGHT half; N2
+widened (two relabeling classes); the S_n premise re-sourced as the
+5-line antipodal construction [EXACT-provable] (not v9-resident); K_self
+defined; T0 relabeled engine-consistency exhibit; the Busch
+completely-positive precision applied at SIX loci (note-d28, D27, D25,
+paper 19 §3, paper 18 §8 F1, D22 §6 F1); alphabets now printed in both
+receipts; apex renamed X. Receipts rerun: 10/10 and 12/12, exit 0.
+Standing openings: event-resolved influence (repairs the register-
+worldline cyclicity); the RS-covariant-NSE-kernel front; click-only
+kernel identifiability; the K_collar dimension-ceiling question (not
+pure birth — nothing pins it either way); the mailbox-vs-direct
+structural discriminator for D30.

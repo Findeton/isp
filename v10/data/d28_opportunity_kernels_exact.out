@@ -1,12 +1,15 @@
 [d28 opportunity kernels — exact]
+      alphabets (round-1: now printed here too): interventions =
+      ACTIVE replacements {|0>, |1>, Ry(3/5,4/5), Ry(5/13,12/13)},
+      no postselection; queries = {Z, X} per register.
   [PASS] N1 normalization: sum of opportunity weights = 1 exactly at every reachable history node, all three kernels
   [PASS] N2 history-isomorphism covariance: kernel weights invariant under register relabeling (exact multiset equality)
   [PASS] N3 nonzero null opportunity at every node; N5 non-explosion (at most one op per step, structural)
   [PASS] N7 sealed-algebra protection: zero weight on every op touching the sealed register, verified over all realized histories
-  [PASS] N4 projective/cylinder consistency: the depth-2 law marginalizes to the depth-1 law exactly
-  [PASS] N6 local-clock form + Busch flag gate: the opportunity-flag law is EXACTLY preparation-independent (recorded, non-silent randomness)
+  [PASS] N4 projective/cylinder consistency: the depth-2 law marginalizes to the depth-1 law exactly (structural: implied by N1 via Ionescu-Tulcea; kept as a smoke test)
+  [PASS] N6 preparation-swap invariance (the Busch WEIGHT half): the opportunity-flag law is EXACTLY preparation-independent; the orthogonality/recording half is declared, with N12 exhibiting why it is load-bearing
   [PASS] N8 construction-order gauge on realized webs: commuting recorded ops in either order give the identical label-keyed law
-  [PASS] N9 K-level identifiability: P_K distinct pairwise on {K_collar, K_tail(1/5), K_tail(1/10)} — beyond-collar interaction flags have probability 0 under collar, positive under tail  (total separating-event probability under K_tail(1/5): 2/405)
+  [PASS] N9 K-level identifiability: P_K distinct pairwise on {K_collar, K_tail(1/5), K_tail(1/10)} — beyond-collar interaction flags have probability 0 under collar, positive under tail  (separating-event probability: 2/405 under tail(1/5), 2/805 under tail(1/10))
       scope [pinned]: family-level injectivity of K -> P_K(observable
       histories); the general-K identifiability class is front F7.
       (D23 recovered a realized graph; this gates the KERNEL law.)
@@ -16,6 +19,15 @@
       upper bound — the repaired triage logic: witnesses are lower
       bounds and growth evidence; witness ABSENCE is never evidence
       without a registered power calculation (the v9 #119 lesson).
-  [PASS] N10b THE CEILING BROKEN: a 6-record forest with three cross-branch interactions realizes S_3 in its operational influence order (zeros a_i -/-> b_i and sideways spot-verified interventionally; edges positive; remaining pattern structural per the T1 theorem class) and S_3 admits NO 2-realizer (exhaustive) — order dimension >= 3 > 2: interactions strictly exceed the pure-birth bound  (48 linear extensions searched)
+  [PASS] N10b THE CEILING BROKEN: a 6-record forest with three cross-branch interactions realizes S_3 in its operational influence relation — ALL 30 ordered pairs gated interventionally at the pinned active alphabet (real family, {Z,X}; the relation is an order at this pin) — and S_3 admits NO 2-realizer (exhaustive) — order dimension >= 3 > 2: interactions strictly exceed the pure-birth bound  (30 pairs; 48 linear extensions searched)
+  [PASS] N11 RS path-covariance DISCLOSURE: the same grown graph along two accretion orders has different path probabilities under BOTH kernels — the growth measure depends on birth order (the global step clock is physical in these kernels), unlike Rideout-Sorkin covariance  (collar: 1/40 vs 1/25; tail: 2/81 vs 1/25)
+      N11 honest-delta print: RS births take arbitrary partial stems
+      (multi-parent) — common futures are NATIVE in RS growth; the D28
+      obstruction exists relative to the corpus's ONE-PARENT birth
+      clause. Whether an NSE-compliant, RS-path-covariant opportunity
+      kernel exists — or whether flags-observable makes path-equality
+      the wrong requirement — is the successor front (the first exact
+      shot at the kernel-selector problem, paper 19 F12).
+  [PASS] N12 the unrecorded-lottery exhibit (A0c receipt): a preparation-independent 1/2-1/2 lottery over NON-orthogonal isometries strictly contracts the eta-pair — NOT Busch-admissible: recording the flag (= orthogonal ranges) is exactly what non-silence requires  (D_in = 1/2, D_out = 2/5, range overlap = 1)
 
-ALL CHECKS PASS (10/10: 10 substantive gates)
+ALL CHECKS PASS (12/12: 12 substantive gates)
