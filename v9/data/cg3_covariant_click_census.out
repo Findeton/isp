@@ -1,0 +1,7 @@
+[cg3 — exact covariant click census]
+[PASS] S0 construction labels vary but unlabeled order/stems do not — linear extensions=8
+[PASS] S1 alternate linear extensions have exact equal total weight — weight=5/64
+[PASS] S2 influence is stem-readable; scheduler label is not
+[INFO] S3 reduced round-48 alternate schedulers: snapshots (Fraction(1, 1), Fraction(1, 1), Fraction(23, 16), Fraction(2, 1)) vs (Fraction(1, 1), Fraction(1, 1), Fraction(5, 4), Fraction(2, 1)); covariant-order-difference=False
+[PASS] S3 current-builder scheduler audit executed and classified — scheduler survives content; covariant survival printed, not pre-assumed
+CHECKS PASSED: 4/4

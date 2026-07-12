@@ -1,0 +1,18 @@
+{
+  "ceiling": "no BDG coefficient provenance, quantum measure, records, continuum or scale",
+  "checks_passed": 26,
+  "coefficient_packets": 16,
+  "distinct_phase_signatures": 16,
+  "orders": [
+    "antichain4",
+    "chain4",
+    "V3",
+    "Lambda3",
+    "diamond4"
+  ],
+  "schema": "d16-covariant-causal-action-exact-v1",
+  "scope": "finite strict causal orders and binary interval-action census",
+  "semantic_sha256": "a3931af2f999a7381b86792f03750420c3be411d83c7a0598cb6dfe6eb9e10a6",
+  "source_sha256": "861279c4057d294ded74a5bf601aaaa7a75286d277d44f26213ceb9a1ff48b37",
+  "verdict": "INTERVAL-ACTION-FAMILY-NONSELECTING"
+}

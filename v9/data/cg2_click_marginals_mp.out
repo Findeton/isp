@@ -1,0 +1,7 @@
+[cg2 — high-precision interacting click identities]
+[PASS] C0 exact scalar survival on the evidence grid — max residual=4.4292913e-122
+[PASS] C1 shared-shock law preserves Exp marginals and interacts — cov(unalarmed)=0.070695550577615031761
+[PASS] C2 refinement composition — max residual=6.7770359e-121
+[PASS] C3 disjoint scheduler gauge and overlapping recorded order — dis=0.0, symmetric=9.6814798e-122, overlap=0.00161708119973
+[PASS] C4 finite no-signaling joint-record gate — remote residual=0.0, joint change=0.075
+CHECKS PASSED: 5/5

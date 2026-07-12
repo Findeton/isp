@@ -1,0 +1,26 @@
+{
+  "ceiling": "finite/cylinder theorem; generator, interpretation and sigma-extension remain supplied",
+  "checks_passed": 30,
+  "d17_integrated_dependency_sha256": "5fffa4d676da38a64e61cdd3b01c031d6fa74d2e1119f72c35369ad7be40be57",
+  "generator_packet": [
+    "domain-fields",
+    "reference-measure",
+    "action",
+    "state",
+    "instruments"
+  ],
+  "interpretation_query_layer": [
+    "record-semantics",
+    "coarse-question",
+    "units"
+  ],
+  "operational_core": [
+    "typed-event-algebra",
+    "decoherence-functional"
+  ],
+  "schema": "d18-operational-history-core-exact-v2",
+  "scope": "finite typed histories, exact decoherence functionals and record cylinders",
+  "semantic_sha256": "e92b39b7308e6e51887ef073430e86608e96de863874fcf46b217f1d5d5dc779",
+  "source_sha256": "010c68757d259badab81667f1ff04c549e87aa32448027d884679ad864bc61b4",
+  "verdict": "FINITE-DECOHERENCE-FUNCTIONAL-SUFFICIENCY"
+}

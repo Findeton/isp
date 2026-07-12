@@ -1,0 +1,17 @@
+{
+  "arithmetic": "Python standard library Q(sqrt(2),i); no external dependencies",
+  "checks_passed": 21,
+  "predictions": {
+    "theta_pi_over_2": "0",
+    "theta_pi_over_4": "1/2"
+  },
+  "schema": "d13-finite-kernel-no-go-exact-v2",
+  "scope": "fixed operational diamond interval; finite local unitary kernels",
+  "semantic_sha256": "4eb19b0eb34bdc9cd910029cb3d4c22bb47d8d847e0fe12353a7b5eac69f2852",
+  "source_sha256": "1ea9969cb3e61b805e031ea7b3b025e3a1f88b56e268337824c6a6abcba1cf45",
+  "verdict": "FINITE-LOCAL-UNITARY-KERNEL-NONUNIQUENESS-PROVED",
+  "visible_memory_conditionals": {
+    "P(z=1|y=0,x=0)": "0",
+    "P(z=1|y=0,x=1)": "1"
+  }
+}

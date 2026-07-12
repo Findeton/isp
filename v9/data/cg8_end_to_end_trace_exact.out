@@ -1,0 +1,6 @@
+[cg8 — end-to-end exact marked trace]
+[PASS] E0 two fair scheduler implementations have identical canonical pushforward — canonical histories=8, total=1
+[PASS] E1 one trace integrates firing/outcome/transfer/ancestry/renewal
+[PASS] E2 cross-boundary marked restriction commutes with scheduler quotient
+[PASS] E3 marked restriction functor composition on a three-way crossing
+CHECKS PASSED: 4/4

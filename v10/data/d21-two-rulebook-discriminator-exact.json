@@ -1,0 +1,16 @@
+{
+  "candidate_c_purity": "1/2",
+  "candidate_q_purity": "1",
+  "ceiling": "complete fixed-carrier instrument laws, not complete cosmological generators",
+  "checks_passed": 40,
+  "mermin_c": "0",
+  "mermin_q": "4",
+  "schema": "d21-two-rulebook-discriminator-exact-v1",
+  "scope": "three spacelike binary record instruments on a fixed finite source carrier",
+  "semantic_sha256": "46f9e4ff8a6627f289a4786d2d5fd43c21e936c6a05f22c3e7a8a58be0c07533",
+  "shared_proper_pauli_observables": 37,
+  "source_sha256": "93dd24b415adfc59272df484dadeb73cf0d8f5abe0cc0ad65c9708b0b597eeb4",
+  "verdict": "FINITE-COMPLETE-RULEBOOK-DISCRIMINATOR",
+  "xxx_c": "0",
+  "xxx_q": "1"
+}

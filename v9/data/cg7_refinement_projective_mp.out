@@ -1,0 +1,7 @@
+[cg7 — refinement and projective consistency]
+[PASS] P0 Poisson refinement/Chapman-Kolmogorov — max n<30 residual=9.6814798e-122
+[PASS] P1 projective restriction of support-count law — residual=0.0
+[PASS] P2 normalized common-ancestor support creation kernel — no-branch/branch=0.6312836455/0.3687163545
+[PASS] P3 atomic joint seal differs from recorded private decomposition — only evidence-interval subdivision without an intermediate record is gauge
+[PASS] P4 locally finite incident-exposure certificate — partial sum=1.0, tail<=8.2718061e-25
+CHECKS PASSED: 5/5

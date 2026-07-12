@@ -1,0 +1,19 @@
+{
+  "arithmetic": "Q(sqrt(2),i), local reviewed dependency",
+  "checks_passed": 42,
+  "dependency_sha256": "1ea9969cb3e61b805e031ea7b3b025e3a1f88b56e268337824c6a6abcba1cf45",
+  "history_depths": [
+    1,
+    2,
+    3
+  ],
+  "nonmarkov": {
+    "P(z=1|y=0,x=0)": "0",
+    "P(z=1|y=0,x=1)": "1"
+  },
+  "schema": "d14-regional-amplitude-record-history-core-exact-v2",
+  "scope": "finite typed acyclic circuit diamonds FSDiam",
+  "semantic_sha256": "a8b22100a104b04069734bd563a8a3f1411e7772dafa1d0062baf019859658c7",
+  "source_sha256": "e0db2c65a7305ca92bf19fcaa0384e0d825b1a04a5590c0ca243e6192bebc425",
+  "verdict": "FINITE-REGIONAL-AMPLITUDE-TO-RECORDED-HISTORY-CORE-PASSED"
+}

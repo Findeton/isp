@@ -1,0 +1,23 @@
+{
+  "ceiling": "record instrument and projective towers supplied, not action-derived",
+  "checks_passed": 26,
+  "d14_dependency_sha256": "e0db2c65a7305ca92bf19fcaa0384e0d825b1a04a5590c0ca243e6192bebc425",
+  "d16_dependency_sha256": "861279c4057d294ded74a5bf601aaaa7a75286d277d44f26213ceb9a1ff48b37",
+  "fixed_action_phases": [
+    -1,
+    1
+  ],
+  "projective_depths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "schema": "d17-causal-action-measure-nonselection-exact-v1",
+  "scope": "two finite unlabeled causal alternatives; supplied D14 record/towers",
+  "semantic_sha256": "a5d2cb4dd4b7b065430bcb4aedc7c88daddf1df1ad84c970f1ae3b78cd7ee525",
+  "source_sha256": "305f532548db3734ed6d92896f98ea9803fbcc86a5786a402cfb6cff8a847d42",
+  "verdict": "CAUSAL-ACTION-TO-MEASURE-NONSELECTION"
+}

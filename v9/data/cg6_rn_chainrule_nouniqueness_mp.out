@@ -1,0 +1,8 @@
+[cg6 — RN/KL chain rule and nonuniqueness]
+[PASS] K0 conditional RN/KL chain rule — residual=2.4203699e-122, KL=0.23074715160117886302
+[PASS] K1 marginal KL misses pure correlation evidence — joint=0.36806420716849706991, marginal-sum=0.0
+[PASS] K2 duplicated shared support double-counts KL — one=0.19274475702175742988, duplicated=0.38548951404351485977
+[PASS] K3 typed shared-block-once repair — residual=9.6814798e-122
+[PASS] K4 continuum of inequivalent interacting laws at fixed Exp marginals — covariances=0.029963604985/0.137196509797
+[PASS] K5 conservative transport coefficient is not selected by click marginal — g=0.1/0.3, outputs=(3.6,2.4)/(2.8,3.2)
+CHECKS PASSED: 6/6

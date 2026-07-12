@@ -1,0 +1,9 @@
+[cg5 — exact marked histories and support bootstrap]
+[PASS] B0 support-local rules cannot bootstrap across components — finite cases=501; theorem is immediate from subset closure
+[PASS] B1 common-ancestor branching supplies a connected support seed — root/branch rule remains an explicit boundary law
+[PASS] B2 disjoint AB/BA quotient to one canonical marked history
+[PASS] B3 overlapping order becomes recorded ancestry
+[PASS] B4 event-based transport is conservative and marked — (Fraction(4, 1), Fraction(2, 1))->(Fraction(3, 1), Fraction(3, 1))
+[PASS] B5 bare stems can agree while marked histories differ
+[PASS] B6 lineage-owned parent/content/outcome ports relabel covariantly
+CHECKS PASSED: 7/7

@@ -1,0 +1,30 @@
+{
+  "arithmetic": "SymPy exact algebra; no floating-point predicates",
+  "checks": {
+    "diamond_gluing": true,
+    "disjoint_schedule_commutes": true,
+    "durable_records_decohere_exactly": true,
+    "exchange_and_number_symmetry_both": true,
+    "independent_frame_covariance": true,
+    "inequivalent_durable_prediction": true,
+    "maximal_entanglement_witness_both": true,
+    "overlap_order_is_physical": true,
+    "record_isometry": true,
+    "record_probabilities_normalized": true,
+    "same_local_generator": true,
+    "unitarity_both": true
+  },
+  "family": "U(theta)=exp(i theta X_ex)",
+  "members": {
+    "theta_pi_over_2": "iSWAP",
+    "theta_pi_over_4": "sqrt-iSWAP"
+  },
+  "predictions": {
+    "P_10_given_10_theta_pi_over_2": "0",
+    "P_10_given_10_theta_pi_over_4": "1/2",
+    "concurrence_witness_theta_pi_over_2": "1",
+    "concurrence_witness_theta_pi_over_4": "1"
+  },
+  "schema": "d13-local-action-family-exact-v1",
+  "verdict": "LOCAL-COVARIANT-ACTION-UNIQUENESS-REFUTED"
+}

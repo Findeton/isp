@@ -1,0 +1,12 @@
+{
+  "ceiling": "does not select nature's action or establish generally covariant gravity",
+  "checks_passed": 28,
+  "d13_dependency_sha256": "1ea9969cb3e61b805e031ea7b3b025e3a1f88b56e268337824c6a6abcba1cf45",
+  "d14_dependency_sha256": "e0db2c65a7305ca92bf19fcaa0384e0d825b1a04a5590c0ca243e6192bebc425",
+  "dictionary": "local action weights -> kernels -> environment seal -> records",
+  "schema": "d15-regulated-action-dictionary-exact-v1",
+  "scope": "finite Z2/qubit regional action; nongravitational",
+  "semantic_sha256": "12f73918e7876a2f423d1d4596163e787f52ac50332f2d59bb941c0381f499fe",
+  "source_sha256": "9f539129d5712d28b86d89637248a0fe3b60678fcc29fcddf2e5e675aa8fb4b9",
+  "verdict": "REGULATED-ACTION-DICTIONARY-WITNESS-PASSED"
+}

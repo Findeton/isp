@@ -1,0 +1,8 @@
+[cg4 — normalized recurrent marked support process]
+[PASS] R0 normalized recurrent support-count law — G(1)=1.0, means=['0.37', '0.61', '0.29']
+[PASS] R1 stopping-history renewal and exact lineage marginal — renewal residual=4.8407399e-121
+[PASS] R2 unequal raw race orders push forward to one unordered outcome — P(AB)=0.235294117647, P(BA)=0.764705882353, quotient=1
+[PASS] R3 disconnected-component semigroup factorization — residual=2.4203699e-122
+[PASS] R4 integrated two-sided no-signaling local-common-cause outcomes — remote residuals=9.6814798e-122/9.6814798e-122, CHSHmax=0.7
+[PASS] R5 finite-exposure nonexplosion certificate — mean=15.24, P(N>=100) bound=1.2861659e-45
+CHECKS PASSED: 6/6

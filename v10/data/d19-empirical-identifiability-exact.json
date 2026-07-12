@@ -1,0 +1,11 @@
+{
+  "carrier_dimension": 8,
+  "ceiling": "finite exact identifiability counterexample, not a census of physical UV theories",
+  "checks_passed": 20,
+  "schema": "d19-empirical-identifiability-exact-v1",
+  "scope": "eight classical complete histories; one/two-record training evidence",
+  "semantic_sha256": "d188a40340eca1148a8c957d8139e411748aacc355531a87f20ef6fbd9866856",
+  "source_sha256": "fdf804f29144513dcfe2398262213551e1c462c222118939d5587a5173331bdb",
+  "training_rank": 7,
+  "verdict": "FINITE-HISTORY-LAW-EMPIRICAL-NONIDENTIFIABILITY"
+}

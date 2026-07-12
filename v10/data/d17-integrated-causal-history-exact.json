@@ -1,0 +1,25 @@
+{
+  "causal_depths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "ceiling": "extension grammar, kernel and record commit supplied, not action-derived",
+  "checks_passed": 40,
+  "d14_dependency_sha256": "e0db2c65a7305ca92bf19fcaa0384e0d825b1a04a5590c0ca243e6192bebc425",
+  "d16_dependency_sha256": "861279c4057d294ded74a5bf601aaaa7a75286d277d44f26213ceb9a1ff48b37",
+  "d17_dependency_sha256": "305f532548db3734ed6d92896f98ea9803fbcc86a5786a402cfb6cff8a847d42",
+  "kernels": [
+    "equal",
+    "positive-envelope",
+    "inverse-orbit"
+  ],
+  "schema": "d17-integrated-causal-history-exact-v1",
+  "scope": "owned finite causal extensions and local records; supplied kernels",
+  "semantic_sha256": "bf465b07380b96350afb929ba661fe4309b002cfcb5142b9a495876b22a92987",
+  "source_sha256": "5fffa4d676da38a64e61cdd3b01c031d6fa74d2e1119f72c35369ad7be40be57",
+  "verdict": "INTEGRATED-CAUSAL-HISTORY-KERNEL-NONSELECTION"
+}

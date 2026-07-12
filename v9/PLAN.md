@@ -6,6 +6,23 @@
 
 ---
 
+## 2026-07-11 extension — construction-order gauge and the interacting click-law audit
+
+**Status: COMPLETE at the underdetermination boundary.** Pin/design note: `note-cg1-construction-order-gauge.md`. Paper: `relativistic-isp-v9-paper9-construction-order-gauge-click-law.md`. Receipts: `cg1`–`cg9` with canonical outputs in `v9/data/`. Arithmetic: exact rational/integer or `mpmath dps=120`; all nine outputs byte-reproduce.
+
+The planned target was the final interacting law. Three hostile rounds changed the result. Round 1 rejected unnormalized diamonds, a grafted no-signaling table, hidden overlap state, and unmarked stems. Round 2 accepted the nonuniqueness direction but found a typed-outcome covariance bug, shallow projective test, missing end-to-end trace, and abstract likelihood witnesses. Every opening was investigated before the next round. Final verification: referee A PASS-WITH-CORRECTIONS (applied), referee B PASS after one real restriction-functor blocker was found and repaired with an idempotent three-way crossing test, referee C PASS at the stated scope.
+
+Final result:
+
+1. `b` can be removed as physical time in a finite marked-trace template: unequal raw scheduler orders push forward to the same canonical marked partial-history distribution.
+2. Conditional on a covariant support/exposure process, a finite H-local classical recurrent family exists with exact conditional `exp(-Delta I)` renewal, typed RN blocks, common-cause outcomes, event-based conservation, and finite marked restriction consistency.
+3. A support-local rule cannot merge disconnected components; the root/branch support law remains boundary input.
+4. Explicit RN models with identical lineage evidence totals and all listed finite classical constraints admit different shared allocations/covariances, and conservative transfer remains independently free. **The current record principles do not select a unique interacting law.**
+
+The next valid target is therefore a selector, not another arbitrary builder: derive the support/exposure/outcome/transfer kernel from actual sealed-holonomy likelihood/decoherence structure, or prove the freedom fundamental. Paper 8's diffusion/cone queue remains downstream and unchanged.
+
+---
+
 ## 0. The state, and the target theorem
 
 **The target.** Paper 7 §5 already wrote the sentence that would discharge the 2D gate:
