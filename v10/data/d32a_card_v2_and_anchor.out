@@ -1,0 +1,11 @@
+[d32a card v2 + anchor]
+      env: python 3.8.20, numpy 1.23.5,
+      macOS-26.5.1-x86_64-i386-64bit; base seed 20260712.
+  [PASS] P1 card v2 built and frozen: fixed-decimal (12 sig digits), sorted keys, in-process determinism gate, environment recorded, per-cell SDs INCLUDING the controls at every N  (sha256/16 = b5e77c0c3196fbd2)
+  [PASS] P2 the ORDER-ONLY spatial estimator (quantile of longest-chain through common diamonds; coordinates only as validation ground truth): the >= 0.60 Spearman bar decided and card-recorded  (d3: CARD-CARRIED — rho = 0.859 on 20 pairs (naive-min mean 9.2 — the RW degeneracy axis, disclosed); d4: CARD-CARRIED — rho = 0.717 on 20 pairs (naive-min mean 6.0 — the RW degeneracy axis, disclosed))
+  [PASS] P3 midpoint-scaling validated: mean d_mid within ±0.35 of truth at N = 1024, every dimension (now receipt-carried, was review-external)  (d2: dmid 1.992±0.043 (n=20); d3: dmid 3.024±0.104 (n=20); d4: dmid 4.009±0.182 (n=20))
+  [PASS] P4 THE ANCHOR: the D30 collar cell regrown (frozen kernel, D30 seeds; the array-based sampler is deterministic, so the band is a reproduction gate) — d_hat within ±0.10 of 1.76; MM/midpoint concordance <= 0.15; M^2-exclusion re-verdict under card-v2 bands HOLDS  (d_MM = 1.756, d_mid = 1.630, M2 exclusion: |1.756-2| vs 3x0.040)
+  [PASS] P5 the determinized exception census (30 seeds, N = 256): the cancellation-capable (>= 7 same-pair-touch) rate with spread — the honest exception bookkeeping D32B consumes  (>=2: 41.9±3.4; >=7: 1.00±1.10 per web)
+  [PASS] P6 decision-stability audit: no decided gate verdict sits within rounding distance of its bar (12-digit serialization cannot flip any verdict)  (margins: ['-0.0959', '-0.0238', '+0.2586', '+0.1173', '-0.3416', '-0.3261', '-0.3407'])
+
+ALL CHECKS PASS (6/6: P1 freeze, P2 verdict-recorded, P3 midpoint bands, P4 the anchor, P5 census, P6 stability audit)

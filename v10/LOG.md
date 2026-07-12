@@ -1603,3 +1603,53 @@ receipts rerun green (15/15). D31 stands at: THE NO-GO [THEOREM,
 birth-positive graph-blind class]; THE FROZEN PRIMARY ORDER [two-line
 theorem + implementation gates]; THE OBSTRUCTION [two-condition scope]
 + the priced bounded-domain escape. Next: D32A per the held sequence.
+
+## 2026-07-12 — D32A receipt: attempt 1 CRASHED mid-run (recorded), fixed, attempt 2 launched
+Pin 54014d9 committed pre-run. Attempt 1: P1 PASSED (card v2 built,
+determinism gate green, sha 9db14d67346a6b0e — never frozen: the run
+died before completing, nothing committed or cited), then CRASH at P2:
+the spatial-estimator pair sampler drew spacelike pairs WITHOUT the
+order-only domain condition (a common diamond exists), got < 8 usable
+pairs at N = 1024, returned None, and the detail f-string threw
+TypeError. Two defects, both implementation-fidelity, no pinned bar
+touched: (1) the sampler now pre-filters candidate pairs by non-empty
+common past AND future — order-only conditions, literally the pin's
+estimator domain ("quantile over common-diamond pairs"); (2) pin (b)
+says the >= 0.60 bar DECIDES card-carried vs vacant and "either
+outcome is a result" — the draft treated bar-failure as receipt
+failure and never wrote the spatial row into the card; now the card
+carries spatial_orderonly rows (rho, naive-min, n_pairs, verdict) and
+P2 gates that the decision was reached and recorded. None-guards added
+at P4 (midpoint vacancy prints VACANT and fails the concordance gate
+honestly) and P6 (margins over decided verdicts only; P3 band margins
+added). Card sha WILL change (the new spatial rows) — no supersession
+owed, nothing was frozen. Attempt 2 running.
+
+## 2026-07-12 — D32A attempt 2 GREEN 6/6; card v2 FROZEN; the anchor holds at 1.756
+`code/d32a_card_v2_and_anchor.py` → `data/d32a_card_v2_and_anchor.out`,
+`data/d32_instrument_card_v2.json` FROZEN at sha256/16 b5e77c0c3196fbd2
+(fixed-decimal 12 sig digits, sorted keys; env recorded: python 3.8.20,
+numpy 1.23.5, macOS-26.5.1-x86_64; in-process determinism gate green;
+card v1 verified untouched at af5f6b011d3c48f8). P1 freeze ✓. P2 the
+D29 spatial vacancy FILLED: the order-only estimator (0.10-quantile of
+longest-chain through common diamonds, domain pre-filtered order-only)
+is CARD-CARRIED at both dimensions — rho = 0.859 (d=3), 0.717 (d=4) on
+20 pairs each, bar 0.60; naive-min means 9.2/6.0 disclosed (the RW
+degeneracy axis). P3 midpoint receipt-carried and validated: 1.992 ±
+0.043 / 3.024 ± 0.104 / 4.009 ± 0.182 vs truths 2/3/4 (bar ±0.35;
+worst deviation 0.024). P4 THE ANCHOR: d_MM = 1.756 — the D30 record
+REPRODUCED EXACTLY (the D30 grow is array-deterministic; the pin's F4
+concern belonged to the census grower, a different object — RESOLVED);
+MM/midpoint concordance |1.756 − 1.630| = 0.126 ≤ 0.15; M²-exclusion
+under card-v2 bands HOLDS (0.244 > 3×0.0400 = 0.120). P5 the extended
+determinized census (30 seeds, N = 256): ≥2-touch 41.9 ± 3.4, ≥7-touch
+1.00 ± 1.10 per web — consistent with #139's honest 0–3 range; the
+D32B bookkeeping input. P6 stability audit: tightest decided margin
+0.0238 (the concordance) — no rounding-flip risk anywhere. DISCLOSED
+AT COMMIT: (1) P6's margin list omits the M²-exclusion margin (by
+hand: 0.244 − 0.120 = 0.124 — no flip risk; audit-scope completeness
+fix owed to round 1); (2) F3 signal: the anchor midpoint reads 0.126
+LOW vs MM while the N = 1024 validation cells are unbiased — direction
+consistent with the pinned small-|I| bias front; (3) the anchor prints
+carry means only, no seed-spread SDs (round-1 candidate). Next:
+LEDGER #140, commit, hostile round 1. D32B stays HELD.
