@@ -1012,3 +1012,30 @@ rule); D26 clause-2 closure up to click-equivalence at the declared
 interface + the birth kernel's cosmological-shadow consistency; paper 19
 assembly; hostile reviews to terminal. D24 pin committed pre-receipt
 (this entry's commit).
+
+## 2026-07-12 — D24 RUN: the tree birth kernel — ALL GATES PASS (7/7, exit 0)
+
+`code/d24_tree_birth_kernel_exact.py` (pin 1ac43a8, pre-run; output
+committed at `data/d24_tree_birth_kernel_exact.out`). G1 isometric growth
+(norm 1, exact normalization/positivity at every birth). G2 CONSTRUCTION-
+ORDER GAUGE VERIFIED: all 3 causal linear extensions of {A->B, A->C, B->D}
+give the identical label-keyed click law — birth order is bookkeeping,
+receipt-grade. G3 NO SILENT CREATION: P(child=1) = g*P(parent=1) exactly
+at every birth across the coupling grid; root distinctions survive every
+growth step (ledger balances). G4 fixed-carrier reduction wiring-grade:
+grown-web law == independent static-constructor law, byte equality.
+G5 IDENTIFIABILITY over ALL labeled rooted trees on 3 and 4 registers
+(3 + 16 = 19 laws): zero collisions; exact recovery of every tree AND
+every coupling (ancestors from zero patterns, parents from ancestor-set
+minimality, couplings from conditional ratios). G6 NON-UNIQUENESS: chain-
+growth and star-growth kernels both satisfy all constraints, different
+laws — the constraints admit a family; the kernel is extra physics,
+empirically identifiable (paper-8 confirmed at birth level). G7 boundary:
+a birth to an unexcited parent is click-invisible (the newborn EXISTS
+with no click shadow — clicks certify the activated subtree); in-degree
+>= 2 is structurally impossible AT BIRTH (a newborn has one parent) —
+non-tree edges are post-birth interactions, outside the kernel class.
+Goal state: clause (1)'s FORM is now exhibit-grade (locality + isometry +
+ledger + order gauge all receipt-carried); the kernel's free data awaits
+empirical identification (D26 cosmological shadow). F8 (paper 18 §8)
+CLOSED by this receipt.

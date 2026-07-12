@@ -1,0 +1,15 @@
+[d24 tree birth kernel — exact]
+  [PASS] G1 exhibit: isometric growth — norm 1 and exact click normalization/positivity at every birth
+  [PASS] G2 construction-order gauge: all causal linear extensions give the identical label-keyed click law  (3 extensions)
+  [PASS] G3 no silent creation: P(child=1) = g*P(parent=1) exactly at every birth; root distinctions survive every growth step
+  [PASS] G4 reduction (wiring-grade): grown-web law == static-circuit law, exact byte equality
+  [PASS] G5 identifiability: zero collisions + exact tree-and-coupling recovery over ALL labeled rooted trees  (3 trees (n=3) + 16 trees (n=4) = 19 laws)
+  [PASS] G6 non-uniqueness: chain-growth and star-growth kernels both satisfy G1-G4 constraints yet print different click laws (extra physics)
+      G7 boundary: a birth to an unexcited parent is click-invisible:
+        root |0>: P(B=1) = 0 (the newborn EXISTS, has no click shadow — clicks certify the activated subtree)
+      G7 boundary: in-degree >= 2 is structurally impossible AT BIRTH
+        (a newborn has exactly one parent); non-tree edges arise only
+        as post-birth interactions — outside this kernel class.
+  [PASS] G7 boundary prints emitted
+
+ALL CHECKS PASS (7/7: 6 substantive gates + 1 print gate)
