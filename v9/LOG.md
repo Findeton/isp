@@ -1169,3 +1169,23 @@ the influence-duration receipt; a seeded S5/S6 hunt on the 48d class;
 one baselines table; the priority literature pass; O1-O3 stand
 mandatory; order-readability of F remains the sharpest instrument open.
 Ledgered at v8/LEDGER #127.
+
+## 2026-07-12 — The v9 review line CLOSED (user directive)
+
+User directive, verbatim: "stop the v9 review, as v9 actually didn't use
+a real interactive click law." Recorded as the binding scope statement:
+the v9 builders (churn / conservation / diffusion record webs) are
+exploratory record-SUBSTRATE dynamics — they are NOT the identified
+interactive click law (v10 D23/paper 18: the conditional measure of the
+D15 action at the measured couplings over its tested domain). The v9
+geometry results therefore stand as closed historical measurements about
+toy record substrates (consistent with the standing D20 PROTOCOL: closed
+historical evidence, not a holdout), and the paper-8 review stops at
+round 1. The round-2 delta review was already in flight at the directive
+and returned PASS-WITH-RESIDUALS; only its two mechanical v9 echo fixes
+were applied as closure hygiene (the §6 unbalanced bold introduced by the
+round-1 stray-bold deletion; §5's refusal phrasing mirrored to the
+abstract's corrected form) — LEDGER #128. Paper 8's status banner carries
+the scope + closure line. No further v9 review rounds will run; the
+funded review's O1–O5 queue remains recorded in this LOG but is NOT
+scheduled.

@@ -958,3 +958,32 @@ New fronts pinned in paper 18 §8: F8 tree-identifiability receipt (D24);
 F9 Gamma(n) Mermin-order CSL scaling (the separated prediction); F10
 Oppenheim-class on the D21 rival table. V9-holdout and geometry discipline:
 verified clean by all three streams.
+
+## 2026-07-12 — Round-2 integrated delta review: PASS-WITH-RESIDUALS; residuals applied; the round CLOSED
+
+Round 2 (report: `reviews/d22-d23-paper18-round2-integrated-delta-review.md`)
+verified all 16 round-1 MAJORs faithfully applied (v10 12/12; v9 4/4),
+spot-checked the load-bearing MINORs, reran the upgraded receipt green
+(5/5, exit 0, notation confirmed), checked every correction-introduced
+number exact (zero transcription errors), and confirmed the V9-holdout/
+geometry discipline clean. Residuals (2 MINOR + 5 NIT, all echo/
+completeness class, none load-bearing) applied at LEDGER #128: the P18 §6
+and D23 §4 falsifier echoes aligned with §2/§3's attribution rider; the
+Feldmann-Tumulka partition cited at the falsifiable-never-verifiable
+clause (P18 §2, D22 §3); paper 17 §8's Erven sentence now carries
+"fair-sampling assumed" (the round-1 physics stream's third locus — the
+first post-final edit to paper 17, LEDGER-recorded); clarified that
+Oppenheim is NAMED in D22 §2/P18 §2 while the D21-audit rival-table row
+remains QUEUED as F10.
+
+MID-ROUND USER DIRECTIVE, on record: "stop the v9 review, as v9 actually
+didn't use a real interactive click law." The v9 review line is CLOSED —
+the v9 builders are exploratory record-substrate dynamics, not the
+identified interactive click law (D23/paper 18); only the two mechanical
+v9 echo fixes from round 2 were applied (unbalanced bold; §5 refusal
+phrasing); no further v9 review rounds. Detail in v9/LOG.md.
+
+State after the round: paper 18 stands at hostile-round-2 PASS with F1
+(the reception theorem) the open load-bearing delta and F8 (D24 tree
+receipt), F9 (Gamma(n) Mermin-order scaling), F10 (Oppenheim rival row)
+queued as the named next work.
