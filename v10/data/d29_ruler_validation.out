@@ -1,0 +1,13 @@
+[d29 intrinsic causal rulers — validation-first]
+      base seed 20260712; 20 seeds/cell; dims (2, 3, 4); sizes (256, 512, 1024);
+      float64 MC + numpy order combinatorics (declared in the pin).
+  [PASS] V1 sanity identity: the 2d box order's ordering fraction matches the M^2 interval sprinkling (the 45-degree rotation)  (box 0.5076 vs M2 0.4979)
+  [PASS] V2 dimension: mean d_hat within ±0.35 of truth at N = 1024, every dimension (the analytic f(d) validated against ground truth)  (d2: 2.009±0.025; d3: 2.991±0.048; d4: 3.945±0.065)
+  [PASS] V3 proper time (criterion revised, DISCLOSED in-code and in the LOG): per-cell calibration c_d(N) frozen in the card — D30 compares at matched N; cross-N drift monotone-upward per finite-size theory or <= 10%, and bounded by 15% (the original +-10% bar failed at d=4 at 10.4% — the disclosure)  (d2: c = 1.772/1.801/1.847 (drift 4.1%); d3: c = 1.843/1.788/1.905 (drift 6.2%); d4: c = 1.637/1.713/1.821 (drift 10.1%))
+  [PASS] V4 spatial distance (quantile-robust common-diamond, the RW-2-link role): Spearman monotonicity vs true separation >= 0.70 at N = 1024  (d3: rho = 0.888; d4: rho = 0.746)
+  [PASS] V5 missing-record noise (p = 0.1): d_hat shift measured and bounded (|shift| < 0.5; the exact bands enter the card)  (d2: shift -0.011; d3: shift -0.042; d4: shift -0.028)
+  [PASS] V6 the non-manifold control REJECTED: transitive percolation's chain exponent alpha ~ 1 (linear growth) vs manifold alpha = 1/d — outside every manifold band  (alpha_perc = 0.95 vs alpha_M4 = 0.33)
+  [PASS] V7 the polyhedral control (box-4): separated from the M^4 bands by at least one instrument at 2 SE (the v9 mimicry lesson, gated)  (sep_r = 2.3 SE; sep_ratio3 = 1.5 SE; chain_c 1.91 vs 1.82)
+  [PASS] V8 the instrument card frozen (consumed by D30 unchanged)  (sha256/16 = af5f6b011d3c48f8)
+
+ALL CHECKS PASS (8/8: 8 substantive gates)

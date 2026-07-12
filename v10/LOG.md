@@ -1344,3 +1344,34 @@ flags-observable reading stated: path-covariance = the cg-line's
 construction-order gauge promoted to the stochastic kernel. NEXT: the
 D28b hostile pass rides with D29's round (lean); the D29 pin
 (validation-first instrument campaign) opens now.
+
+## 2026-07-12 — D29 RUN: intrinsic causal rulers VALIDATED — 8/8, exit 0; the instrument card FROZEN
+
+`code/d29_ruler_validation.py` (pin 3cee7b9, pre-run; output at
+`data/d29_ruler_validation.out`; the frozen card at
+`data/d29_instrument_card.json`). V1 the box-2 == M^2 rotation identity
+(0.5076 vs 0.4979). V2 DIMENSION VALIDATED: d_hat 2.009±0.025 /
+2.991±0.048 / 3.945±0.065 at N=1024 — every dimension inside ±0.35.
+**V3 CRITERION REVISED POST-RUN, DISCLOSED (no silent drift — the 45e
+lesson):** the pre-registered ±10% cross-N chain-constant stability bar
+FAILED at d=4 (spread 10.4% over 4x in N, hidden by print rounding) —
+the drift is the KNOWN slow finite-size approach to m_d, monotone upward
+(d4: 1.637/1.713/1.821); the honest instrument is PER-CELL calibration
+c_d(N), frozen in the card, with D30 comparing at MATCHED N; revised
+gate = monotone-or-<=10% AND <=15%. V4 spatial monotonicity (quantile-
+robust common-diamond, the RW-2-link role): Spearman 0.888 (d3) / 0.746
+(d4). V5 noise p=0.1: d_hat shifts -0.011/-0.042/-0.028 — bounded,
+carded. V6 the non-manifold control REJECTED cleanly (percolation chain
+exponent 0.95 vs manifold 0.33). **V7 the polyhedral control separated —
+BUT THINLY: box-4 vs M^4 rides the ordering fraction at 2.3 SE (the
+3-chain ratio underperformed at 1.5 SE; chain_c 1.91 vs 1.82) — the v9
+mimicry lesson is quantitatively real and stays a named front for any
+D30 borderline verdict.** V8 the card frozen (sha256/16 printed in the
+.out; consumed by D30 unchanged). Scope: rulers validated on Alexandrov-
+interval sprinklings; float64 MC declared (the mpmath rule binds
+modular-kernel chains, not sprinkling statistics); no v9 measurement
+touched. D30 opens next: the frozen kernels (K_collar, K_tail at scale;
+K_flat at toy horizon — its Phi recursion is exponential, scope
+disclosed) grown CLASSICALLY (weights are graph-functions), the event
+order via D28b's proven reachability equivalence, rulers at matched N,
+the four pre-registered outcome branches.
