@@ -191,7 +191,8 @@ print("[d28 influence + diamond — exact]")
 print("      alphabets printed: A = {no-op, prep|0>, prep|1>, Ry(3/5,4/5),")
 print("      Ry(5/13,12/13)} (unconditioned replacements, no postselection);")
 print("      Q = {Z, X} (tomographically complete for the real family;")
-print("      enrichment of either alphabet can only enlarge the relation).")
+print("      enrichment of either alphabet can only enlarge the relation —")
+print("      and can destroy antisymmetry: the kickback lemma, note §2).")
 
 # T0: A0a exhibit — isometric birth = blank activation + unitary (kinematic)
 w1 = DWeb([('A', PREP)]); w1.birth('A', 'B', F(16,25))
@@ -359,7 +360,7 @@ w11 = diamond_build({'A': (F(0), F(1)), 'B': (F(0), F(1))})
 pX11 = w11.r1('X')[1]
 ok3d = IA_b0 != IA_b1
 check("T3d synergy: the A-influence profile on X differs exactly across fixed "
-      "B-settings — D carries genuine joint dependence, not two copies", ok3d,
+      "B-settings — X carries genuine joint dependence, not two copies", ok3d,
       f"I_A|B=0 = {IA_b0}, I_A|B=1 = {IA_b1}")
 print(f"      non-additivity print: P(X=1 | A,B forced to 1) = {pX11} = "
       "sin^2(thA+thB); additive-naive g_AX + g_BX = 16/25 + 576/625 = 976/625 > 1.")

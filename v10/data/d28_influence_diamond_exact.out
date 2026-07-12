@@ -2,7 +2,8 @@
       alphabets printed: A = {no-op, prep|0>, prep|1>, Ry(3/5,4/5),
       Ry(5/13,12/13)} (unconditioned replacements, no postselection);
       Q = {Z, X} (tomographically complete for the real family;
-      enrichment of either alphabet can only enlarge the relation).
+      enrichment of either alphabet can only enlarge the relation —
+      and can destroy antisymmetry: the kickback lemma, note §2).
   [PASS] T0 engine-consistency exhibit for A0a: birth == blank-activation-then-unitary, exact on the state (the general factorization is the standard theorem [LITERATURE]; kinematic only; locality NOT claimed — A0c)
   [PASS] T1 tree influence theorem: I(u->v) > 0 <=> v is a descendant of u through nonzero couplings — exhaustive over the 19-tree census; ancestor/incomparable zeros = no-signalling  (210 ordered pairs)
   [PASS] T1b: a g = 0 edge blocks influence exactly; I is construction-order independent (gauge inherited from the law)
@@ -23,7 +24,7 @@
       follows the interaction — durable under the declared semantics;
       the NSE opportunity-ledger conjunct is receipt 2's battery.
   [PASS] T3c gauge with interactions: all causal-compatible schedules give the identical label-canonical global state  (3 schedules)
-  [PASS] T3d synergy: the A-influence profile on X differs exactly across fixed B-settings — D carries genuine joint dependence, not two copies  (I_A|B=0 = 16/25, I_A|B=1 = 468/625)
+  [PASS] T3d synergy: the A-influence profile on X differs exactly across fixed B-settings — X carries genuine joint dependence, not two copies  (I_A|B=0 = 16/25, I_A|B=1 = 468/625)
       non-additivity print: P(X=1 | A,B forced to 1) = 16/25 = sin^2(thA+thB); additive-naive g_AX + g_BX = 16/25 + 576/625 = 976/625 > 1.
   [PASS] T4 the disturbance/influence split: on the re-touch web, active-pair I(c0->r0) = 0 exactly while the no-op-vs-active DISTURBANCE is 1152/3125 > 0 — the round-1 repin is load-bearing  (I = 0, disturbance = 1152/3125)
 

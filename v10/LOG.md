@@ -1295,3 +1295,52 @@ worldline cyclicity); the RS-covariant-NSE-kernel front; click-only
 kernel identifiability; the K_collar dimension-ceiling question (not
 pure birth — nothing pins it either way); the mailbox-vs-direct
 structural discriminator for D30.
+
+## 2026-07-12 — D28 CLOSED (round-2 delta PASS after residuals) + D28b RUN (the D29 prerequisites, 10/10)
+
+D28 round 2 (report: `reviews/d28-round2-integrated-delta-review.md`): all
+six round-1 MAJORs verified faithfully applied — every correction-
+introduced number reproduced in a from-scratch complex-exact engine (a
+THIRD architecture); the round-0 LOG confirmed append-only; the Busch
+CP-precision at all six loci; the receipt-2 N12 overlap-gate hardcode was
+self-caught and fixed at 1a9f243 BEFORE the review (trace closed here per
+its NIT-2). Residuals applied at LEDGER #133: the note §4 static-metric
+lemma RESCOPED (the round-2 MAJOR — "influence between pairs at d_cover
+>= 2 has probability 0 forever under K_collar" was false, refuted by the
+note's own T2b at 109296/9765625 and any grandparent pair at 9216/15625;
+the TRUE permanent separation is at OPPORTUNITY/FLAG grade — direct
+beyond-collar opportunities have probability 0 forever; influence extends
+beyond the collar under BOTH kernels through mediated chains); the stale
+apex "D" in T3d's print fixed; the N10a print re-sourced to the antipodal
+construction; paper 19 F12 count updated (18/18 at opening, 22/22 after
+round 1) + the D28b trichotomy pointer; the enrichment-caveat print
+added. Receipts rerun: 10/10 + 12/12, exit 0. D28 stands CLOSED at:
+the corrected no-go (post-birth interaction per se), the diamond +
+mailbox exhibits, the disturbance/influence split, the kickback and
+wire-time lemmas, two complete kernels distinguishable at observable-
+history grade with the RS-covariance failure disclosed, and the
+dimension triage at the repaired logic.
+
+D28b (pin da605f3, pre-run; runs 3dc3d59; outputs committed): THE TWO
+D29 PREREQUISITES DELIVERED AT EXACT GRADE. Part 1 — EVENT-RESOLVED
+INFLUENCE (4/4): events = (register, epoch); the pinned conjecture
+holds on the full battery (25 event pairs: re-touch, mailbox with the
+worldline split, diamond, chain): I_ev > 0 <=> time-respecting op-chain
+reachability; the event relation is a STRICT PARTIAL ORDER (acyclicity
+gated — the register-level cyclicity was the shadow of quotienting
+worldlines to points, E4); D29's rulers have a well-posed order input.
+Part 2 — THE RS-COVARIANCE THEOREM (6/6): K_flat (the path-uniform
+kernel, weights Phi(H+o)/Phi(H) from completion counts) EXISTS at every
+finite horizon and is EXACTLY path-covariant (every accretion path to
+the same canonical web carries the identical product — exhaustive, 20
+final webs, 6 genuinely multi-path, total mass 1) and battery-compliant;
+the D28 kernels' violation re-gated (1/40 vs 1/25; 2/81 vs 1/25); THE
+TRUE RESIDUAL IS STATIONARITY (K_flat's step-1 weights: 9/26 at T=2 vs
+51/128 at T=3, exhibited). F12 SHARPENED TO A TRICHOTOMY on the record:
+{stationary + covariance-violating (collar/tail class)} vs
+{path-covariant + horizon-dependent (K_flat class)} vs {stationary AND
+covariant — existence open, the functional equation printed}. The
+flags-observable reading stated: path-covariance = the cg-line's
+construction-order gauge promoted to the stochastic kernel. NEXT: the
+D28b hostile pass rides with D29's round (lean); the D29 pin
+(validation-first instrument campaign) opens now.

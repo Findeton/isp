@@ -15,7 +15,8 @@
       (D23 recovered a realized graph; this gates the KERNEL law.)
   [PASS] N10a THE TREE UPPER BOUND, theorem-grade: the explicit mirror-DFS pair realizes every census tree order exactly — pure-birth order dimension <= 2, a scale-independent structural bound  (19 trees)
       => the pure-birth class is EXCLUDED for M4 (which requires
-      unbounded order dimension, the corpus's S_n theorem) by a PROVEN
+      unbounded order dimension — the S_n antipodal construction,
+      [EXACT-provable], carried in the note §4) by a PROVEN
       upper bound — the repaired triage logic: witnesses are lower
       bounds and growth evidence; witness ABSENCE is never evidence
       without a registered power calculation (the v9 #119 lesson).

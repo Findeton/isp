@@ -394,7 +394,8 @@ check("N10a THE TREE UPPER BOUND, theorem-grade: the explicit mirror-DFS "
       "dimension <= 2, a scale-independent structural bound", ok10a,
       f"{n_trees} trees")
 print("      => the pure-birth class is EXCLUDED for M4 (which requires")
-print("      unbounded order dimension, the corpus's S_n theorem) by a PROVEN")
+print("      unbounded order dimension — the S_n antipodal construction,")
+print("      [EXACT-provable], carried in the note §4) by a PROVEN")
 print("      upper bound — the repaired triage logic: witnesses are lower")
 print("      bounds and growth evidence; witness ABSENCE is never evidence")
 print("      without a registered power calculation (the v9 #119 lesson).")
