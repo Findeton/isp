@@ -1570,3 +1570,36 @@ INSTRUMENT CARD BYTE-IDENTICAL (git diff empty — the freeze held);
 box-4 clause (v)'s pseudo-SD folds into the O-E card-v2 schema (D32A).
 D31's hostile round launches now, folding verification of these
 residuals.
+
+## 2026-07-12 — D31 hostile round 1 APPLIED: zero gate flips; the no-go at THEOREM grade; two forward-corrections
+
+Report: `reviews/d31-round1-integrated-hostile-review.md` (2 MAJOR /
+6 MINOR / 5 NIT; all three deliverables survive; the #138 arc-delta
+residuals verified genuinely applied — the canon upgrade real, the d29
+card freeze held across environments). Corrections at LEDGER #139:
+**(M1) the d31b receipt was IRREPRODUCIBLE** — hash-salted set iteration
+fed the sampler; determinized (sorted adjacency), rerun green with the
+review's predicted census reproduced exactly: FORWARD-CORRECTION of the
+D31 entry above and LEDGER #137 — the honest per-web rate of
+cancellation-capable (>= 7-touch) pairs is **0-3, present in most
+sampled webs** (the "1-2 per web" was one process's draw; "~40
+repeat-pairs" survives). **(M2) the none-arm escape is BOUNDED-DOMAIN
+ONLY** — idle positivity dies at u* = 6 for the exhibited constants;
+Z == 1 re-imposes the bi forcing; at unbounded growth the arm collapses
+to pure-birth-plus-idle: FORWARD-CORRECTION of the landscape — the
+none-absorbing arm IS the bounded-growth escape, not a third route;
+D32's covariance column carries it bounded-domain-only. Also applied:
+"birth-positive" inline in the theorem (the birthless counterexample
+named); the §5 post-run addendum discharging the pin promise (THE
+FREEZE recorded: port poset == wire-DAG is the round's TWO-LINE THEOREM
+— both objects close the same next-op-on-wire generator; totality =
+the D28 kickback lemma at the pinned couplings); C2's scope corrected
+to TWO conditions (multiplicity-insensitivity AND birth-inertness —
+simple-degree/motif/component-size move to the OPEN arm); the family-
+(ii) descope recorded as the named debt (O3); C4's covariance
+quantifier (active-subproduct, none-free skeleton); B3 scoped to its
+six pinned pairs; A4's all-depth closure; dead code removed. All three
+receipts rerun green (15/15). D31 stands at: THE NO-GO [THEOREM,
+birth-positive graph-blind class]; THE FROZEN PRIMARY ORDER [two-line
+theorem + implementation gates]; THE OBSTRUCTION [two-condition scope]
++ the priced bounded-domain escape. Next: D32A per the held sequence.

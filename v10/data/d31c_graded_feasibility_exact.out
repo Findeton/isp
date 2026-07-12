@@ -3,25 +3,30 @@
       d_cover = 1, interact at d_cover >= 2}; the D28 seed domain.
   [PASS] C1 the forced equality: normalized path-covariance on the concrete bi pair holds iff Z(H+b) = Z(H+i) — instantiated over a positive weight grid
   [PASS] C2 THE OBSTRUCTION (family i): Z(H+b) - Z(H+i) = f_b + 2 f_i1 + 2 f_i2 > 0 for every positive weight assignment — a birth strictly adds opportunities while a parallel-edge interact adds none: NO positive stationary path-covariant kernel exists in the multiplicity-insensitive class-graded family (no-none, normalized)  (closed form verified on 27 grid points)
-      C2 scope: the argument needs only ONE interact that leaves the
-      opportunity landscape unchanged (parallel edges do, whenever
-      the grading is insensitive to edge multiplicity). It therefore
-      extends to ANY multiplicity-insensitive grading (age, motif,
-      component classes included). RECONNAISSANCE LIMIT: no unbounded
-      claim beyond the exhibited domain is made for families that
-      RESPOND to interacts (degree-sensitive gradings shift Z(H+i)
-      and reopen the equation) — that escape is front F3'.
+      C2 scope (round-1 corrected — TWO conditions, not one): the
+      argument needs (a) multiplicity-insensitivity (Z(H+i) = Z(H) —
+      parallel edges qualify) AND (b) BIRTH-INERTNESS of the existing
+      opportunity classes (a leaf birth must not reclassify old ops,
+      so Z(H+b) = Z(H) + the newborn's strictly positive mass).
+      d_cover classes, static-age classes and component indicators
+      satisfy both — OBSTRUCTED. Simple-graph degree, motif and
+      component-size gradings are multiplicity-insensitive but NOT
+      birth-inert (a leaf birth reclassifies the parent's old ops) —
+      they move to the OPEN arm with distance-degree (front F3').
+      RECONNAISSANCE LIMIT: no unbounded claim beyond the exhibited
+      domain for any family in the open arm.
   [PASS] C3 the extension: an age-graded family (young/old births) hits the same obstruction — the newborn's opportunities strictly enlarge Z while the parallel interact leaves it fixed
-  [PASS] C4 THE NONE-ARM ESCAPE: with a none op absorbing normalization (Z == 1; the idle weight f_n(H) = 1 - sum of active weights, positive on the tested webs), constant class weights are path-covariant trivially — covariance is BOUGHT by a web-size-dependent idle rate: the step clock becomes physical as an activity rate  (f_n at seed = 5/6, at H+b = 203/300)
+  [PASS] C4 THE NONE-ARM ESCAPE — BOUNDED-DOMAIN ONLY (round-1 M2): with a none op absorbing normalization (Z == 1), constant class weights give ACTIVE-SUBPRODUCT path-covariance on the none-free skeleton (the D28b R6 convention; none-padded full products are NOT order-invariant — the pads carry different f_n). The escape does NOT extend: idle positivity fails at u* = 6 for these constants (any 4-birth extension carries active mass 31/30 > 1), and generally u*f_b > 1 at finite u — while Z == 1 re-imposes the A1 forcing, so at unbounded growth the class carries NO interactions (the A3 collapse): THIS ESCAPE IS THE BOUNDED-GROWTH ESCAPE D31A already prices, not a third route  (f_n at seed = 5/6, at H+b = 203/300; ill-defined at u=6)
       C5 THE LANDSCAPE [feeds D32's declared covariance column]:
         no-none, normalized, multiplicity-insensitive grading:
           OBSTRUCTED (C2/C3 — theorem-grade on the exhibited class);
         degree-sensitive gradings: OPEN (the interact shifts Z —
           the equation reopens; front);
-        none-absorbing kernels: EXIST trivially (C4) at the declared
-          cost — a state-dependent idle rate (cf. the D28 kernels,
-          which carry a none arm AND fail covariance: their none
-          weight was uniform, not absorbing);
+        none-absorbing kernels: EXIST on BOUNDED DOMAINS ONLY (C4 —
+          constants encode a size cap; at unbounded growth the arm
+          collapses to pure-birth-plus-idle: it IS the bounded-growth
+          escape, not a third route; the D28 kernels' none weight was
+          uniform, not absorbing — a separate failure);
         K_flat-class (teleological Phi weights): EXIST, horizon-
           dependent (D28b R5).
       Path-covariance therefore remains a DECLARED STATUS COLUMN in

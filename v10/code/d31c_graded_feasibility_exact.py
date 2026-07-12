@@ -52,14 +52,18 @@ check("C2 THE OBSTRUCTION (family i): Z(H+b) - Z(H+i) = f_b + 2 f_i1 + "
       "positive stationary path-covariant kernel exists in the "
       "multiplicity-insensitive class-graded family (no-none, normalized)",
       ok2, f"closed form verified on {len(diffs)} grid points")
-print("      C2 scope: the argument needs only ONE interact that leaves the")
-print("      opportunity landscape unchanged (parallel edges do, whenever")
-print("      the grading is insensitive to edge multiplicity). It therefore")
-print("      extends to ANY multiplicity-insensitive grading (age, motif,")
-print("      component classes included). RECONNAISSANCE LIMIT: no unbounded")
-print("      claim beyond the exhibited domain is made for families that")
-print("      RESPOND to interacts (degree-sensitive gradings shift Z(H+i)")
-print("      and reopen the equation) — that escape is front F3'.")
+print("      C2 scope (round-1 corrected — TWO conditions, not one): the")
+print("      argument needs (a) multiplicity-insensitivity (Z(H+i) = Z(H) —")
+print("      parallel edges qualify) AND (b) BIRTH-INERTNESS of the existing")
+print("      opportunity classes (a leaf birth must not reclassify old ops,")
+print("      so Z(H+b) = Z(H) + the newborn's strictly positive mass).")
+print("      d_cover classes, static-age classes and component indicators")
+print("      satisfy both — OBSTRUCTED. Simple-graph degree, motif and")
+print("      component-size gradings are multiplicity-insensitive but NOT")
+print("      birth-inert (a leaf birth reclassifies the parent's old ops) —")
+print("      they move to the OPEN arm with distance-degree (front F3').")
+print("      RECONNAISSANCE LIMIT: no unbounded claim beyond the exhibited")
+print("      domain for any family in the open arm.")
 
 # C3: the multiplicity-insensitive extension, instantiated once more
 # (age-graded: weights by register age class — an interact changes no ages
@@ -84,12 +88,18 @@ p1 = fb * f1
 p2 = f1 * fb
 okpos = fn(2, 2, 0) > 0 and fn(3, 4, 2) > 0 and fn(2, 2, 0) < 1
 ok4 &= (p1 == p2) and okpos
-check("C4 THE NONE-ARM ESCAPE: with a none op absorbing normalization "
-      "(Z == 1; the idle weight f_n(H) = 1 - sum of active weights, "
-      "positive on the tested webs), constant class weights are path-"
-      "covariant trivially — covariance is BOUGHT by a web-size-dependent "
-      "idle rate: the step clock becomes physical as an activity rate",
-      ok4, f"f_n at seed = {fn(2,2,0)}, at H+b = {fn(3,4,2)}")
+check("C4 THE NONE-ARM ESCAPE — BOUNDED-DOMAIN ONLY (round-1 M2): with a "
+      "none op absorbing normalization (Z == 1), constant class weights "
+      "give ACTIVE-SUBPRODUCT path-covariance on the none-free skeleton "
+      "(the D28b R6 convention; none-padded full products are NOT order-"
+      "invariant — the pads carry different f_n). The escape does NOT "
+      "extend: idle positivity fails at u* = 6 for these constants (any "
+      "4-birth extension carries active mass 31/30 > 1), and generally "
+      "u*f_b > 1 at finite u — while Z == 1 re-imposes the A1 forcing, so "
+      "at unbounded growth the class carries NO interactions (the A3 "
+      "collapse): THIS ESCAPE IS THE BOUNDED-GROWTH ESCAPE D31A already "
+      "prices, not a third route",
+      ok4, f"f_n at seed = {fn(2,2,0)}, at H+b = {fn(3,4,2)}; ill-defined at u=6")
 
 # C5: the landscape for D32's admissibility axis
 print("      C5 THE LANDSCAPE [feeds D32's declared covariance column]:")
@@ -97,10 +107,11 @@ print("        no-none, normalized, multiplicity-insensitive grading:")
 print("          OBSTRUCTED (C2/C3 — theorem-grade on the exhibited class);")
 print("        degree-sensitive gradings: OPEN (the interact shifts Z —")
 print("          the equation reopens; front);")
-print("        none-absorbing kernels: EXIST trivially (C4) at the declared")
-print("          cost — a state-dependent idle rate (cf. the D28 kernels,")
-print("          which carry a none arm AND fail covariance: their none")
-print("          weight was uniform, not absorbing);")
+print("        none-absorbing kernels: EXIST on BOUNDED DOMAINS ONLY (C4 —")
+print("          constants encode a size cap; at unbounded growth the arm")
+print("          collapses to pure-birth-plus-idle: it IS the bounded-growth")
+print("          escape, not a third route; the D28 kernels' none weight was")
+print("          uniform, not absorbing — a separate failure);")
 print("        K_flat-class (teleological Phi weights): EXIST, horizon-")
 print("          dependent (D28b R5).")
 print("      Path-covariance therefore remains a DECLARED STATUS COLUMN in")

@@ -174,7 +174,6 @@ CANCEL = [('root','u',PREP), ('birth','u','c',F(9,25)),
 print("[d31b the two causal structures — exact]")
 
 # B1: the port-map hypothesis — port poset == wire-DAG, battery + grown webs
-rng_master = np.random.default_rng(31260712)
 def grow_collar(n_events, rng):
     regs = ['R', 'A', 'B']; sealed = {'R'}
     edges = [('R','A'), ('A','B')]
@@ -187,7 +186,8 @@ def grow_collar(n_events, rng):
         uns = [r for r in regs if r not in sealed]
         opts = [('none',)] + [('birth', y) for y in uns]
         for y in uns:
-            for x in adj[y]:
+            for x in sorted(adj[y]):     # round-1 M1: set iteration is hash-
+                # salted per process and fed the sampler — determinized
                 if x != y and x not in sealed: opts.append(('interact', y, x))
         pick = opts[rng.integers(0, len(opts))]
         if pick[0] == 'none': continue
@@ -234,9 +234,10 @@ for acts, pairs in ((DIAMOND, [('A',2,'X',5), ('B',3,'X',5), ('A',2,'B',5)]),
                       if participants(op)[-1] == u)
             jv = max(i for i, op in enumerate(acts) if v in participants(op))
             ok3 &= bool(Rp[iu, jv]) or iu == jv
-check("B3 influence within structure: every positive influence pair on the "
-      "battery is port-comparable (no influence outside the structural "
-      "order)", ok3)
+check("B3 influence within structure: on the six pinned battery pairs (four "
+      "active, two vacuous I = 0), every positive influence pair is "
+      "port-comparable — the general zeros are the wire-time lemma's "
+      "(Heisenberg pullback threads wires = port ancestry)", ok3)
 
 # B4: the multi-touch census — the E5 exception-rate bookkeeping at scale
 counts = []

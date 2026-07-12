@@ -4,10 +4,12 @@
   [PASS] A1 pair types at u = 2..6: bb and ii are identically covariant; the bi pair forces w_i(u+1) = w_i(u) exactly when birth weights are positive (the forcing equation instantiated)
   [PASS] A2 violation exhibit: the normalized u-varying kernel w_i(u) = 1/(10u) breaks path-covariance on the bi pair at u = 2  (P1 = 3/200 vs P2 = 9/400)
   [PASS] A3 the collapse: the constant-c kernel is covariant at every tested u BUT birth positivity fails at the computed u* — unbounded growth forces c = 0  (c = 1/10, u* = 4, w_b(u*) = -1/20)
-  [PASS] A4 the unique survivor: pure birth w_b(u) = 1/u — every length-3 path carries the identical product 1/24; 24 labelled paths; total mass exactly 1 (full path-covariance on the enumerated domain)
+  [PASS] A4 the unique survivor: pure birth w_b(u) = 1/u — the uniform product 1/24 across all 24 labelled length-3 paths (which implies equal products per web a fortiori); total mass exactly 1; and at every depth k the product is uniformly prod 1/(u0+j) — covariance closes at all depths, not depth 3
       A5 COROLLARY [with D28 T2]: the stationary + path-covariant +
-      graph-blind class contains NO diamond-forming kernel — its only
-      member is pure birth, which has no common operational futures.
+      BIRTH-POSITIVE graph-blind class contains NO diamond-forming
+      kernel — its only member is pure birth (round-1 m1: the
+      birthless kernel w_b = 0, w_i = 1/(u(u-1)) is covariant with
+      interactions — birth positivity is load-bearing and now inline).
       THE CONCLUSION AT ITS HONEST WIDTH (the external review's
       narrowing): a stationary path-covariant kernel with interactions
       must consult RICHER STATE THAN u — graph structure, degree, age,
