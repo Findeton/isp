@@ -519,16 +519,27 @@ def lottery(rho):
                 for (r2, a2) in v[j]:
                     out[r1][r2] += rho[i][j] * a1 * a2 / 2
     return out
-# careful: V1 maps |x> -> |x,0>: index 2*i; V2 maps |0> -> |0,0>, |1> -> c|1,0> + s|1,1>
+# V1 maps |x> -> |x,0>; V2 maps |0> -> |0,0>, |1> -> c|1,0> + s|1,1>.
+# The range-overlap gate is COMPUTED from the explicit isometry matrices
+# (round-2 self-catch: it was hardcoded), V1†V2 != 0 <=> non-orthogonal ranges.
+cL, sL = CS[F(576,625)]
+V1m = [[F(1),F(0)],[F(0),F(0)],[F(0),F(1)],[F(0),F(0)]]
+V2m = [[F(1),F(0)],[F(0),F(0)],[F(0),cL],[F(0),sL]]
+V1tV2 = [[sum(V1m[r][i]*V2m[r][j] for r in range(4)) for j in range(2)]
+         for i in range(2)]
+overlap_nonzero = any(V1tV2[i][j] != 0 for i in range(2) for j in range(2))
+i1 = [[sum(V1m[r][i]*V1m[r][j] for r in range(4)) for j in range(2)] for i in range(2)]
+i2 = [[sum(V2m[r][i]*V2m[r][j] for r in range(4)) for j in range(2)] for i in range(2)]
+I2 = [[F(1),F(0)],[F(0),F(1)]]
 d_in = tdist(rho_eta(F(1)), rho_eta(F(0)))
 d_out = tdist(lottery(rho_eta(F(1))), lottery(rho_eta(F(0))))
-overlap = F(1)                             # <V1 e0 | V2 e0> = <00|00> = 1
-ok12 = d_in == F(1,2) and d_out == F(2,5) and d_out < d_in and overlap != 0
+ok12 = d_in == F(1,2) and d_out == F(2,5) and d_out < d_in
+ok12 &= overlap_nonzero and i1 == I2 and i2 == I2   # isometries, ranges overlap
 check("N12 the unrecorded-lottery exhibit (A0c receipt): a preparation-"
       "independent 1/2-1/2 lottery over NON-orthogonal isometries strictly "
       "contracts the eta-pair — NOT Busch-admissible: recording the flag "
       "(= orthogonal ranges) is exactly what non-silence requires", ok12,
-      f"D_in = {d_in}, D_out = {d_out}, range overlap = {overlap}")
+      f"D_in = {d_in}, D_out = {d_out}, V1†V2[0][0] = {V1tV2[0][0]} != 0")
 
 print()
 total = PASS + FAIL

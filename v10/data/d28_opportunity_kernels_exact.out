@@ -28,6 +28,6 @@
       kernel exists — or whether flags-observable makes path-equality
       the wrong requirement — is the successor front (the first exact
       shot at the kernel-selector problem, paper 19 F12).
-  [PASS] N12 the unrecorded-lottery exhibit (A0c receipt): a preparation-independent 1/2-1/2 lottery over NON-orthogonal isometries strictly contracts the eta-pair — NOT Busch-admissible: recording the flag (= orthogonal ranges) is exactly what non-silence requires  (D_in = 1/2, D_out = 2/5, range overlap = 1)
+  [PASS] N12 the unrecorded-lottery exhibit (A0c receipt): a preparation-independent 1/2-1/2 lottery over NON-orthogonal isometries strictly contracts the eta-pair — NOT Busch-admissible: recording the flag (= orthogonal ranges) is exactly what non-silence requires  (D_in = 1/2, D_out = 2/5, V1†V2[0][0] = 1 != 0)
 
 ALL CHECKS PASS (12/12: 12 substantive gates)
