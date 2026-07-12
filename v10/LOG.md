@@ -1653,3 +1653,36 @@ LOW vs MM while the N = 1024 validation cells are unbiased — direction
 consistent with the pinned small-|I| bias front; (3) the anchor prints
 carry means only, no seed-spread SDs (round-1 candidate). Next:
 LEDGER #140, commit, hostile round 1. D32B stays HELD.
+
+## 2026-07-12 — D32A hostile round 1 LANDED: MAJOR-REVISION (2 MAJOR / 7 MINOR / 5 NIT; zero gate flips; zero false numbers); repairs PINNED pre-rerun
+Report: `reviews/d32a-round1-integrated-hostile-review.md`. The
+reviewer's independent rerun (928 s, card-recorded env) is
+BYTE-IDENTICAL end to end; the anchor reproduction verified at the
+strongest level (bitwise per-seed equality against a verbatim D30
+copy; seed formula 30260712+100·512+s, count 10, trim, and weight
+structure all match); the order-only claim line-audit clean; the
+M²-exclusion rule is D30 clause (i) verbatim and survives every
+stricter variant; P6's by-hand margin confirmed (0.123941). THE TWO
+MAJORS: (M1) the card-carried spatial verdict rests on UNPINNED
+conventions — index-tie-broken "Spearman" (not the named statistic;
+canonical tie-averaged gives 0.849/0.799, not 0.859/0.717) against
+frame-coordinate |dx| truth (an order-only instrument estimates the
+INVARIANT √(dx²−dt²), under which d = 4 reads 0.641 canonical / 0.584
+under the receipt's own tie handling — BELOW the bar: the four
+readings straddle it); (M2) the census grower silently re-implements
+d31b's (grown-acts-only N; z-padded names → different webs at shared
+seeds: [(40,4),(36,1),(42,3)] vs B4's [(41,3),(38,0),(41,1)]), and
+#140's "consistent with #139's 0–3 range" is CONTRADICTED by the
+receipt's own per-web data (range 0–4, max at seed 0) — WITHDRAWN,
+forward-corrected in note §6 and at the LEDGER on delta closure.
+Notable minors: the concordance margin is 0.50 × SE (≈30% fresh-seed
+failure rate — fragility now stated); the F3 small-|I|-bias
+attribution is quantitatively insufficient (measured bias −0.017 ±
+0.014, +1-share −0.0155, vs the 0.126 gap = 2.66 SE — a REAL
+non-manifold-order property, the §5 sentence superseded by §6); the
+≥7 census cut is alphabet-relative (6, or 5 with birth, if 576/625
+enters). All repairs PINNED in note §6 BEFORE the delta rerun; the
+deciding P2 statistic becomes canonical-Spearman × invariant-truth
+pooled over 3 fresh sprinklings × 40 pairs (bar 0.60 unchanged;
+bitwise replay of the original 20-pair stream gated; vacancy
+admissible); card v2.1 supersedes b5e77c0c3196fbd2 at closure.
