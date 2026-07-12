@@ -1462,3 +1462,36 @@ BRANCH 3. The arc stands at: rulers validated with named vacancies;
 kernels measured with everything frozen; the honest deliverable = the
 non-integer-dimension discovery + the exclusion machinery that caught
 its own headline.
+
+## 2026-07-12 — EXTERNAL REVIEW (the user) on the D31/D32 plan + the arc record: MAJOR REVISION — repairs applied; the arc's delta debt named and discharged
+
+Report recorded: `reviews/d31-plan-external-user-review.md`; LEDGER #136.
+RECORD REPAIRS (superseding the corresponding phrases in the arc-round
+LOG entry, LEDGER #135, and the d30 W4 print — receipt edited and rerun
+5/5): (1) the residual is "an order with a STABLE FINITE-SCALE EFFECTIVE
+DIMENSION d_hat ~ 1.76" — not "non-integer-dimension order" (the
+estimator is card-certified on integer-d sprinklings only; the
+fractional reading is estimator-defined, MM/midpoint-concordant);
+(2) "strongly excluded as a filament or M^2 by the registered
+finite-sample diagnostics" — not "provably"; (3) the arc status is
+ROUND-ONE REPAIRED, DELTA VERIFICATION PENDING — no separate delta
+report existed (the debt caught by the external review; the delta pass
+launched at this entry); (4) on the record verbatim: with D29's spatial
+row vacant, the arc has measured THE ORDER GEOMETRY OF A PARTICULAR
+EVENT DAG — not an emergent spatial metric or light cone. PLAN
+DISPOSITIONS: D31A narrowed (richer state sensitivity necessary — NOT
+specifically locality; the none-free/bounded-growth/birth-positivity/
+per-opportunity-weight limits printed); D31B rebuilt on the two-object
+architecture (port-dependency poset = primary, structural, transitive
+by construction; operational-influence graph = diagnostic, cancellations
+recorded, never called a poset; the primary order frozen on structural
+grounds BEFORE D32; the cRy port-map hypothesis — port poset == wire-DAG
+for entangling gates — gated, not assumed); D31C = reconnaissance only;
+D32 held until D31 closes (arithmetic corrected: the full grid is 27
+cells/540 growths; redesigned per the review: canonical seed + seed-
+forgetting test, joint M^2 verdicts, multiplicity handling, realized
+interaction fraction printed, spatial estimator validated before named,
+S^2 = mechanism test, card v2 fixed-decimal + environment-recorded).
+Two in-session nuances recorded in the review file: the port-map
+hypothesis, and covariance-as-declared-axis (not a filter) pending
+D31C.

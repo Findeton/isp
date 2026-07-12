@@ -22,15 +22,20 @@
       SUPERSEDED (K_collar is excluded from M^2 by d_hat at ~6
       card-SD, by the matched-exponent chain constant at +61%
       above the m_2 ceiling, and by interval abundance at ~10 SD).
-      THE POSITIVE RESIDUAL (the arc review's O-A): K_collar
-      produces a SELF-CONSISTENT NON-INTEGER-DIMENSION order —
-      d_hat = 1.76 +- 0.10 concordant between the MM inversion and
-      midpoint scaling (2^-1.756, review-verified), stable across
-      intervals and N, not a filament artifact (occupancy and
-      width profiles distinguish it from M^2; no argmax bias).
-      The sharpened F12 question is quantitative: what opportunity
-      structure moves d_hat -> 2 exactly — and is d_hat(kernel)
-      continuous in the kernel parameters?
+      THE POSITIVE RESIDUAL (the arc review's O-A; wording per the
+      external plan review): K_collar produces an order with a
+      STABLE FINITE-SCALE EFFECTIVE DIMENSION d_hat = 1.76 +- 0.10
+      — concordant between the MM inversion and midpoint scaling
+      (2^-1.756, review-verified), stable across intervals and N at
+      tested scale, and STRONGLY EXCLUDED as a filament or as M^2
+      by the registered finite-sample diagnostics (occupancy/width
+      profiles; no argmax bias). SCOPE: an EFFECTIVE-ORDER result —
+      the estimator is card-certified on integer-d sprinklings
+      only; and with the spatial row vacant, this arc has measured
+      the order geometry of a particular event DAG, NOT an emergent
+      spatial metric or light cone. The sharpened F12 question is
+      quantitative: what opportunity structure moves d_hat -> 2,
+      and is d_hat(kernel) continuous in the kernel parameters?
       W5 K_flat row [toy horizon T <= 3; scope: presence-only —
       exact path-covariance holds by D28b R3; its geometry at scale
       is unmeasurable without an approximation this receipt refuses
