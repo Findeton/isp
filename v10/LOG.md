@@ -1189,3 +1189,52 @@ falsifiers — nothing stronger. The law is paper 19 §4's survivor
 structure; what would kill it is paper 19 §7; what remains open is named
 (F9-F13, the kernel-selector problem, the Einstein list). CAMPAIGN
 CLOSED at the goal's standard.
+
+## 2026-07-12 — D28 RUN: diamond necessity + the opportunity law — 18/18 gates, exit 0
+
+Pin 1fe7aa9 (pre-run; user-approved goal verbatim in the note). Receipt 1
+(`d28_influence_diamond_exact.py`, 8/8; output committed): T0 the A0a
+kinematic normal form exhibited (birth == blank-activation-then-unitary,
+locality NOT claimed — the A0c debt stated); T1 THE TREE INFLUENCE
+THEOREM exhaustive over the census (210 ordered pairs): I(u->v) > 0 <=>
+v is a descendant through nonzero couplings — activation-independent,
+zeros = quantum no-signalling; T1b a g = 0 edge blocks exactly; I is
+construction-order independent; T2 THE TREE NO-GO: incomparable records
+have disjoint descendant sets and no common operational future
+(continuum contrast [LITERATURE] separated from the finite-sprinkling
+caveat, which is D29's) — diamond-forming cross-branch interaction is
+NECESSARY; T3 THE FIRST OPERATIONAL DIAMOND: A || B (I = 0 both ways),
+I(A->X) = 102544/390625 > 0, I(B->X) = 212544/390625 > 0, full influence
+matrix == the declared transitive closure, sealed values protected
+(Z-diagonals invariant; B's coherence ledger printed 192/625 ->
+1344/15625 — dispersal, not rewrite), gauge over all causal-compatible
+schedules with the interaction included (label-canonical density
+matrices), and the SYNERGY gate (A's influence profile on X differs
+exactly across fixed B-settings: 16/25 vs 468/625; non-additivity
+sin^2(thA+thB) = 16/25 vs additive-naive 976/625 > 1). Receipt 2
+(`d28_opportunity_kernels_exact.py`, 10/10): the complete opportunity
+package o = (none | birth | interact) with recorded flags on the sealed-
+seed domain; K_collar (intrinsic graph locality, d_cover <= 1) and
+K_tail (eps q^d beyond, eps = 1/5) pass the FULL gate battery —
+normalization per node, history-isomorphism covariance, nonzero null,
+cylinder consistency, non-explosion, local-clock form + THE BUSCH FLAG
+GATE (the opportunity-flag law exactly preparation-independent:
+recorded, non-silent randomness per A0c), sealed protection, gauge;
+K-LEVEL IDENTIFIABILITY: P_K pairwise distinct on {collar, tail(1/5),
+tail(1/10)} (separating event = any beyond-collar interaction flag;
+total probability 2/405 under tail(1/5)) — the kernel law, not the
+realized graph (the D23 distinction honored; general-K class = front
+F7); THE DIMENSION TRIAGE at the repaired logic: N10a the pure-birth
+class carries a PROVEN scale-independent upper bound (order dimension
+<= 2, explicit mirror-DFS realizer verified on all 19 census trees) =>
+excluded for M4 by theorem, not by witness absence; N10b interactions
+BREAK the ceiling — a 6-record forest with three cross-branch
+interactions realizes S_3 operationally (zeros spot-verified
+interventionally; 48 linear extensions searched, no 2-realizer) =>
+dim >= 3 > 2. K_self postponed with its named fixed-point debt.
+D28's goal statement is delivered at exact grade: the obstruction
+proven, the repair characterized (and WLOG by A0a), two complete
+covariant kernels distinguishable. Paper 19 §9 F12 pointer updated
+(D28 opened = the kernel-selector program's first exact stage). D29
+(rulers) and D30 (frozen comparison) remain outlined, unopened.
+Hostile round on D28 launching next per the standing discipline.

@@ -1,0 +1,21 @@
+[d28 opportunity kernels — exact]
+  [PASS] N1 normalization: sum of opportunity weights = 1 exactly at every reachable history node, all three kernels
+  [PASS] N2 history-isomorphism covariance: kernel weights invariant under register relabeling (exact multiset equality)
+  [PASS] N3 nonzero null opportunity at every node; N5 non-explosion (at most one op per step, structural)
+  [PASS] N7 sealed-algebra protection: zero weight on every op touching the sealed register, verified over all realized histories
+  [PASS] N4 projective/cylinder consistency: the depth-2 law marginalizes to the depth-1 law exactly
+  [PASS] N6 local-clock form + Busch flag gate: the opportunity-flag law is EXACTLY preparation-independent (recorded, non-silent randomness)
+  [PASS] N8 construction-order gauge on realized webs: commuting recorded ops in either order give the identical label-keyed law
+  [PASS] N9 K-level identifiability: P_K distinct pairwise on {K_collar, K_tail(1/5), K_tail(1/10)} — beyond-collar interaction flags have probability 0 under collar, positive under tail  (total separating-event probability under K_tail(1/5): 2/405)
+      scope [pinned]: family-level injectivity of K -> P_K(observable
+      histories); the general-K identifiability class is front F7.
+      (D23 recovered a realized graph; this gates the KERNEL law.)
+  [PASS] N10a THE TREE UPPER BOUND, theorem-grade: the explicit mirror-DFS pair realizes every census tree order exactly — pure-birth order dimension <= 2, a scale-independent structural bound  (19 trees)
+      => the pure-birth class is EXCLUDED for M4 (which requires
+      unbounded order dimension, the corpus's S_n theorem) by a PROVEN
+      upper bound — the repaired triage logic: witnesses are lower
+      bounds and growth evidence; witness ABSENCE is never evidence
+      without a registered power calculation (the v9 #119 lesson).
+  [PASS] N10b THE CEILING BROKEN: a 6-record forest with three cross-branch interactions realizes S_3 in its operational influence order (zeros a_i -/-> b_i and sideways spot-verified interventionally; edges positive; remaining pattern structural per the T1 theorem class) and S_3 admits NO 2-realizer (exhaustive) — order dimension >= 3 > 2: interactions strictly exceed the pure-birth bound  (48 linear extensions searched)
+
+ALL CHECKS PASS (10/10: 10 substantive gates)

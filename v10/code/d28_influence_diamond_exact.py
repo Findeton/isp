@@ -205,7 +205,6 @@ check("T1 tree influence theorem: I(u->v) > 0 <=> v is a descendant of u "
       "ancestor/incomparable zeros = no-signalling", ok1, f"{n_pairs} ordered pairs")
 
 # T1b: a g=0 edge blocks; order-independence of I
-w0 = DWeb([('A', PREP)])
 CS[F(0)] = (F(1), F(0))
 def build_g0(iv):
     w = DWeb([('A', PREP)]); w.intervene('A', iv.get('A'))
