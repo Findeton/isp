@@ -157,22 +157,38 @@ check("R3 PATH-COVARIANCE, exhaustive: every accretion path to the same "
       "canonical final web carries the IDENTICAL product; total mass 1",
       ok3, f"{len(paths_per_web)} final webs, {n_multi} genuinely multi-path")
 
-# R4: the battery on K_flat
+# R4: the battery on K_flat (arc-round M5 upgrade: the fixed-horizon
+# marginalization gate + two genuine relabeling classes)
 ok4 = True
 for key, (regs, edges) in reps2[0].items():
     for op in grammar(regs, SEED_SEALED):
         ok4 &= ('R' not in op[1:])                      # sealed protection
         ok4 &= kflat_weight(regs, edges, op, 0, phi2) > 0   # nonzero
-# label-covariance: weights are functions of the canonical form only
-r_a, e_a = g_apply(SEED_REGS, SEED_TE, ('b', 'A'))
-ok4 &= canon(r_a, e_a) in phi2[1]
-# preparation-independence: Phi and the weights are computed from
-# (regs, edges, sealed) alone — no quantum state enters the recursion
-# (structural; the flag law is state-free by construction)
-check("R4 the battery: sealed protection, strictly positive weights, "
-      "label-covariance via canonical forms, preparation-independence "
-      "(the recursion never consults a state — recorded, non-silent "
-      "randomness per A0c)", ok4)
+# fixed-horizon cylinder gate: the step-1 marginal of the depth-2 law
+# equals the step-1 weights AT THE SAME HORIZON (cross-horizon fails — R5)
+marg = {}
+for op in grammar(SEED_REGS, SEED_SEALED):
+    w1 = kflat_weight(SEED_REGS, SEED_TE, op, 0, phi2)
+    r2, e2 = g_apply(SEED_REGS, SEED_TE, op)
+    tot2 = sum(kflat_weight(r2, e2, op2, 1, phi2)
+               for op2 in grammar(r2, SEED_SEALED))
+    marg[op] = w1 * tot2
+    ok4 &= (marg[op] == w1)
+# relabeling class 1: two accretion orders birthing from A and B assign
+# fresh labels oppositely; canon merges them and Phi agrees
+rA1, eA1 = g_apply(SEED_REGS, SEED_TE, ('b', 'A'))
+rAB1, eAB1 = g_apply(rA1, eA1, ('b', 'B'))     # z1 from A, z2 from B
+rB2, eB2 = g_apply(SEED_REGS, SEED_TE, ('b', 'B'))
+rBA2, eBA2 = g_apply(rB2, eB2, ('b', 'A'))     # z1 from B, z2 from A
+ok4 &= canon(rAB1, eAB1) == canon(rBA2, eBA2)
+# relabeling class 2: a single fresh label renamed (canonical-form identity)
+ok4 &= canon(rA1, eA1) in phi2[1]
+check("R4 the battery (arc-round upgrade): sealed protection, positive "
+      "weights, the FIXED-HORIZON cylinder gate (step-1 marginal of the "
+      "depth-2 law == the step-1 weights; the cross-horizon failure is "
+      "R5's content, not a cylinder defect), and TWO relabeling classes "
+      "(opposite fresh-label assignments canon-merge with equal Phi; "
+      "single-label rename); preparation-independence structural", ok4)
 
 # R5: the STATIONARITY obstruction — horizon-dependence of the weights
 T3 = 3

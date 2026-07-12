@@ -1416,3 +1416,49 @@ the cone it imports?") now has its first measured answer — YES at
 (1+1) for the collar kernel, at validated-instrument grade, with 3+1
 open and the selector problem sharpened to: what opportunity structure
 lifts the dimension. D28b+D29+D30 hostile round launching next.
+
+## 2026-07-12 — THE ARC HOSTILE ROUND APPLIED: D30's BRANCH-1 SUPERSEDED -> BRANCH 3, with the non-integer-dimension residual as the honest positive
+
+Report: `reviews/d28b-d29-d30-round1-integrated-hostile-review.md` (5
+MAJOR / 9 MINOR / 6 NIT; total reproducibility — the reviewer regrew all
+60 webs and reproduced every number digit-for-digit; five wrong/mislabeled
+numbers found, ALL narration-side). Corrections applied at LEDGER #135:
+**(1) THE VERDICT FLIP: the D30 BRANCH-1 headline ("K_collar enters the
+M^2 band") was an artifact of the round-0 rule** — its chain clause
+compared incommensurable exponents (matched-exponent, collar c_2 = 2.91
+vs card 1.801: +61.5%, ABOVE the m_2 = 2 asymptotic ceiling — structural
+exclusion at every N) and its dimension clause used the 0.35 estimator-
+accuracy bar (8.75x the card's band; the collar sits -6.3 card-SD from
+M^2), with ratio3 measured-and-ignored (-10 SD). The corrected rule
+(card bands, matched-d exponent, ratio3 included) reran: **BRANCH 3 —
+no frozen kernel enters a manifold band. THE POSITIVE RESIDUAL, review-
+established: K_collar produces a SELF-CONSISTENT NON-INTEGER-DIMENSION
+order, d_hat = 1.76 +- 0.10, concordant between the MM inversion and
+midpoint scaling (2^-1.756), stable across intervals and N, and NOT a
+filament artifact (occupancy/width profiles; no argmax bias)** — the
+sharpened F12 question is now quantitative: what opportunity structure
+moves d_hat -> 2 exactly, and is d_hat(kernel) continuous. The LOG D30
+entry's and LEDGER #134's BRANCH-1/M^2-band/Lorentzian-band-cone
+sentences are SUPERSEDED accordingly. (2) The measured order OWNED as
+the wire/circuit DAG (declared physics; robust zeros) — the D28b
+attribution struck (31.5% relation gap; directed sensitivity d_hat ~
+3.2; the directed event poset = the named successor). (3) THE D28b
+CONJECTURE REPAIRED: false as first pinned — the same-pair cancellation
+counterexample (8 touches, half-angles summing 2*pi; reachability TRUE,
+I_ev = 0 exactly; now gated as E5, reviewer numbers reproduced: mid
+576/625, end 0) — the NON-DEGENERACY hypothesis added; battery results
+scope-true. (4) D29's spatial ruler vacancy disclosed (the delivered
+proxy consumes coordinates — no spatial/cone instrument exists for
+grown webs; the order-only repair + true 2-link named). (5) K_flat's
+battery completed (fixed-horizon cylinder gate; two relabeling classes)
+and F3 CLOSED by the review's graph-blindness recurrence Phi(u,t) =
+u Phi(u+1,t+1) + u(u-1) Phi(u,t+1) — which also makes the F12
+stationary-and-covariant question a FINITE computation. Narration fixes:
+the V3 spread is 10.1% not 10.4% (three loci); the K_tail far count is
+per growth RUN (~100 per 512-event web), not per web; receipt counts
+relabeled (d30 3+2; d29 7+1 at next touch); the d30 card sha now
+computed and gated. Receipts rerun green: d28b 5/5 + 6/6; d30 5/5
+BRANCH 3. The arc stands at: rulers validated with named vacancies;
+kernels measured with everything frozen; the honest deliverable = the
+non-integer-dimension discovery + the exclusion machinery that caught
+its own headline.

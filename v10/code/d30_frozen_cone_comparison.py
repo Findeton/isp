@@ -144,8 +144,12 @@ def max_interval_dim(M, min_size=64):
     sub = M[np.ix_(idx, idx)]
     return mm_dim(mm_fraction(sub)), size, False
 
+import hashlib
+_blob = open("v10/data/d29_instrument_card.json").read()
+_sha = hashlib.sha256(_blob.encode()).hexdigest()[:16]
+assert _sha == "af5f6b011d3c48f8", f"card hash mismatch: {_sha}"
 print("[d30 frozen-kernel cone comparison]")
-print(f"      card sha ok: consuming data/d29_instrument_card.json unchanged;")
+print(f"      card sha256/16 COMPUTED and gated: {_sha};")
 print(f"      base seed {BASE_SEED}; {NSEEDS} seeds/cell; event-count targets {SIZES};")
 print("      the measured object is the EVENT (op) order (D28b) — the")
 print("      register relation is cyclic for re-touching kernels.")
@@ -174,11 +178,13 @@ for kernel in ('collar', 'tail', 'birth'):
         if kernel == 'collar': ok2 &= all(f == 0 for f in fars)
         if kernel == 'tail' and N == max(SIZES): ok2 &= np.mean(fars) > 0
 check("W1 growth integrity: every cell reached its event-count target; "
-      "seeds fixed and printed", ok1)
+      "base seed printed, per-cell seeds formulaic in-code", ok1)
 check("W2 the tail signature at scale: K_collar's beyond-collar interact "
-      "count is EXACTLY 0 in every run; K_tail's is positive (the D28 "
-      "opportunity-grade separation, now at growth scale)", ok2,
-      f"tail far-rate at N=512: {results[('tail', 512)]['far_rate']:.1f} per web")
+      "count is EXACTLY 0 in every run (the collar half restates the D28 "
+      "static-metric theorem — the sampler has no far branch for it); "
+      "K_tail's is positive", ok2,
+      f"tail far count: {results[('tail', 512)]['far_rate']:.1f} per 3N-step "
+      "growth RUN (arc-round label fix; the 512-event web contains ~100)")
 
 # W3: the ruler table vs the card, at matched N
 print("      W3 the ruler table (event order; card bands at matched N):")
@@ -198,17 +204,24 @@ for kernel in ('collar', 'tail', 'birth'):
     print(f"        {kernel:>6} chain exponent alpha = {alphas[kernel]:.2f}")
 check("W3 rulers applied at matched N; the table printed", True)
 
-# W4: THE VERDICT (pre-registered rule; box-4 mimicry bar inherited)
+# W4: THE VERDICT — RULE REVISED at the arc hostile round, DISCLOSED:
+# the round-0 rule's clause (ii) compared incommensurable exponents
+# (c at measured d_hat vs the card's c at true d) and clause (i) used
+# the D29 estimator-accuracy bar (0.35) instead of the card's per-cell
+# band; ratio3 was measured but unused. Corrected clauses: (i) |d_hat - d|
+# <= 3 card-SD; (ii) MATCHED-d chain constant within 15%; (iii) alpha
+# within 1/d +- 0.10; (iv) ratio3 within 3 card-SD; (v) the box-4 bar.
 def enters_band(kernel):
     r = results[(kernel, 512)]
     for d in (2, 3, 4):
         cell = CARD["cells"][f"d{d}_N512"]
-        if abs(r["dhat"] - d) > 0.35: continue
-        if abs(r["chain_c"] - cell["chain_c"]) / cell["chain_c"] > 0.15: continue
+        if abs(r["dhat"] - d) > 3*cell["dhat_sd"]: continue
+        c_matched = r["L"] / 512**(1.0/d)
+        if abs(c_matched - cell["chain_c"]) / cell["chain_c"] > 0.15: continue
         if abs(alphas[kernel] - 1.0/d) > 0.10: continue
-        # (iv) the box-4 mimicry bar: separate from box-4 on >= 1 instrument
+        if abs(r["ratio3"] - cell["ratio3_mean"]) > 3*cell["ratio3_sd"]: continue
         b4 = CARD["controls"]["box4"]
-        sep = (abs(r["ratio3"] - b4["ratio3"]) > 2*0.05 or
+        sep = (abs(r["ratio3"] - b4["ratio3"]) > 2*0.95 or
                abs(r["chain_c"] - b4["chain_c"]) / b4["chain_c"] > 0.10)
         if not sep: continue
         return d
@@ -217,17 +230,28 @@ verdicts = {k: enters_band(k) for k in ('collar', 'tail', 'birth')}
 n_enter = sum(1 for v in verdicts.values() if v is not None)
 branch = 1 if n_enter == 1 else (2 if n_enter > 1 else 3)
 ok4 = verdicts['birth'] is None          # the falsifiable pipeline control
-check("W4 THE VERDICT by the pre-registered rule — and the pure-birth "
+r_c = results[('collar', 512)]
+c2_matched = r_c["L"] / 512**0.5
+check("W4 THE VERDICT (revised rule, disclosed) — and the pure-birth "
       "control (provably order-dimension <= 2) reads OUTSIDE every "
       "manifold band (the falsifiable pipeline gate)", ok4,
-      f"verdicts: {verdicts}; BRANCH {branch}")
+      f"verdicts: {verdicts}; BRANCH {branch}; collar matched-d c_2 = "
+      f"{c2_matched:.2f} vs card 1.801 (m_2 = 2 is the asymptotic ceiling)")
 if branch == 3:
-    print("      W4 BRANCH 3 (the pre-stated expectation): no frozen kernel")
-    print("      enters a manifold band at tested scale — the first frozen-")
-    print("      kernel cone measurement. Named causes per kernel printed in")
-    print("      W3 (which instrument excludes it). This is the sharpest")
-    print("      constraint yet on the F12 selector: uniform-weight intrinsic-")
-    print("      graph-locality kernels do not produce manifoldlike order.")
+    print("      W4 BRANCH 3: no frozen kernel enters a manifold band under")
+    print("      the card's own bands — the round-0 BRANCH-1 headline is")
+    print("      SUPERSEDED (K_collar is excluded from M^2 by d_hat at ~6")
+    print("      card-SD, by the matched-exponent chain constant at +61%")
+    print("      above the m_2 ceiling, and by interval abundance at ~10 SD).")
+    print("      THE POSITIVE RESIDUAL (the arc review's O-A): K_collar")
+    print("      produces a SELF-CONSISTENT NON-INTEGER-DIMENSION order —")
+    print("      d_hat = 1.76 +- 0.10 concordant between the MM inversion and")
+    print("      midpoint scaling (2^-1.756, review-verified), stable across")
+    print("      intervals and N, not a filament artifact (occupancy and")
+    print("      width profiles distinguish it from M^2; no argmax bias).")
+    print("      The sharpened F12 question is quantitative: what opportunity")
+    print("      structure moves d_hat -> 2 exactly — and is d_hat(kernel)")
+    print("      continuous in the kernel parameters?")
 
 # W5: the K_flat toy row (scope: presence only; Phi is exponential)
 print("      W5 K_flat row [toy horizon T <= 3; scope: presence-only —")
@@ -239,6 +263,6 @@ check("W5 the K_flat scope row printed", True)
 
 print()
 total = PASS + FAIL
-print(f"ALL CHECKS PASS ({PASS}/{total}: 4 substantive gates + 1 print gate)"
+print(f"ALL CHECKS PASS ({PASS}/{total}: 3 substantive gates + 2 print gates)"
       if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)

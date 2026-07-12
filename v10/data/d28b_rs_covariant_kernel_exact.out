@@ -4,7 +4,7 @@
   [PASS] R1 the D28 kernels violate path-covariance (N11 re-gated: collar 1/40 vs 1/25; tail 2/81 vs 1/25)
   [PASS] R2 K_flat normalization: weights sum to 1 exactly at every reachable history node (horizon T = 2)  (Phi(seed) = 26)
   [PASS] R3 PATH-COVARIANCE, exhaustive: every accretion path to the same canonical final web carries the IDENTICAL product; total mass 1  (20 final webs, 6 genuinely multi-path)
-  [PASS] R4 the battery: sealed protection, strictly positive weights, label-covariance via canonical forms, preparation-independence (the recursion never consults a state — recorded, non-silent randomness per A0c)
+  [PASS] R4 the battery (arc-round upgrade): sealed protection, positive weights, the FIXED-HORIZON cylinder gate (step-1 marginal of the depth-2 law == the step-1 weights; the cross-horizon failure is R5's content, not a cylinder defect), and TWO relabeling classes (opposite fresh-label assignments canon-merge with equal Phi; single-label rename); preparation-independence structural
   [PASS] R5 the stationarity obstruction: K_flat's step-1 weights at horizon T = 2 differ from horizon T = 3 — path-covariant, NOT stationary; the sharpened F12 choice is on the record  (w(birth A): 9/26 at T=2 vs 51/128 at T=3)
       R5 the sharpened kernel-selector (F12) statement: the selector
       must choose within {stationary + covariance-violating (the D28

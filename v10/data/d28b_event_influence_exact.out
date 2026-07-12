@@ -7,5 +7,6 @@
   [PASS] E2 the conjecture: event-resolved influence > 0 <=> time-respecting op-chain reachability — re-touch, mailbox (the worldline split), diamond, and chain webs, 25 event pairs
   [PASS] E3 acyclicity: the event-level relation (reachability form, = influence by E2) has no 2-cycles on any tested web — a strict partial order, unlike the register-level relation
   [PASS] E4 the worldline quotient: the D28 register-level relation is the support-max of the event-level relation — the round-1 register cyclicity was the shadow of quotienting worldlines to points
+  [PASS] E5 (arc round) the cancellation counterexample: reachability TRUE yet I_ev = 0 exactly at the final epoch, influence positive mid-history — the conjecture holds only under the NON-DEGENERACY hypothesis (no same-pair op-suffix composing to the identity channel); the battery results E1-E4 are scope-true (no tested web is degenerate)  (I_mid = 576/625, I_end = 0, reach = True)
 
-ALL CHECKS PASS (4/4: 4 substantive gates)
+ALL CHECKS PASS (5/5: 5 substantive gates)

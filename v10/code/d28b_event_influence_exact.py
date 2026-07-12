@@ -233,8 +233,31 @@ check("E4 the worldline quotient: the D28 register-level relation is the "
       "support-max of the event-level relation — the round-1 register "
       "cyclicity was the shadow of quotienting worldlines to points", ok4)
 
+# E5 (arc-round M3): THE CANCELLATION COUNTEREXAMPLE — the conjecture as
+# first pinned is FALSE without a non-degeneracy hypothesis. Eight
+# same-pair touches whose half-angles sum to 2*pi compose to the identity
+# channel: asin(3/5) + asin(4/5) = pi/2 exactly, so birth(9/25) + 3x
+# interact(9/25) + 4x interact(16/25) on one (u -> c) pair gives total
+# angle 4(asin(3/5) + asin(4/5)) = 2*pi — reachability TRUE, influence
+# EXACTLY ZERO at the final epoch (positive mid-history).
+CANCEL = [('root','u',PREP), ('birth','u','c',F(9,25)),
+          ('interact','u','c',F(9,25)), ('interact','u','c',F(9,25)),
+          ('interact','u','c',F(9,25)), ('interact','u','c',F(16,25)),
+          ('interact','u','c',F(16,25)), ('interact','u','c',F(16,25)),
+          ('interact','u','c',F(16,25))]
+I_end = I_ev(CANCEL, 'u', 1, 'c', len(CANCEL))
+I_mid = I_ev(CANCEL, 'u', 1, 'c', 3)
+R_end = 'c' in reach(CANCEL, 'u', 1, len(CANCEL))
+ok5 = (I_end == 0) and R_end and (I_mid > 0)
+check("E5 (arc round) the cancellation counterexample: reachability TRUE yet "
+      "I_ev = 0 exactly at the final epoch, influence positive mid-history — "
+      "the conjecture holds only under the NON-DEGENERACY hypothesis (no "
+      "same-pair op-suffix composing to the identity channel); the battery "
+      "results E1-E4 are scope-true (no tested web is degenerate)", ok5,
+      f"I_mid = {I_mid}, I_end = {I_end}, reach = {R_end}")
+
 print()
 total = PASS + FAIL
-print(f"ALL CHECKS PASS ({PASS}/{total}: 4 substantive gates)"
+print(f"ALL CHECKS PASS ({PASS}/{total}: 5 substantive gates)"
       if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)
