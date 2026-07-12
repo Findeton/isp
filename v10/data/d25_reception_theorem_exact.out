@@ -1,0 +1,19 @@
+[d25 reception theorem — exact]
+  [PASS] R1 inputs: block structures verified; D(rho_eta, rho_eta') = |d eta|/2, D(diag p, diag p') = |d p| exactly
+      invariant table (eta-pairs):  U: D_out = D_in;  Q_disp: D_out = D_in;
+      C_bare: D_out = 0;  C_half: D_out = D_in/2 (STRICT contraction yet
+      INJECTIVE — the ensemble-injectivity formalization FAILS to exclude
+      it, as pre-registered);  R_cl: D_out = 0.
+  [PASS] R2 the invariant: dispersal preserves total distinguishability exactly; C-class, weak collapse and classical receivers strictly contract
+  [PASS] R3 mimicry: Q_disp system marginal == C_bare output at every eta (proper shadows identical; only the receiver separates them)
+      R4 subtlety: E's own marginal is eta-INDEPENDENT (verified) —
+      reception is carried by S-E correlations, not the receiver marginal.
+  [PASS] R4 receiver necessity: S-only algebra fails to separate; the E-inclusive witness <XXXX> = eta exactly; E marginal eta-free
+  [PASS] R5 value/content split: R_cl preserves the diagonal (value) distance exactly and sends every eta (content) distance to zero — classical receivers are silent erasure with a middleman, theorem-grade
+  [PASS] R6 Kadison/Molnar on-family: a closure preserves all declared pair distances iff it is an isometric dilation [general theorem cited, LITERATURE; verified member by member here]
+      R7 ledger: eta pair (1, 1/2) under Q_disp — marginal-S distance 0, total distance 1/4 = D_in 1/4:
+      the entire subalgebra loss is exactly the correlation content with
+      the declared receiver (data processing balances the ledger).
+  [PASS] R7 ledger identity printed (marginal loss = receiver correlation, total preserved)
+
+ALL CHECKS PASS (7/7: 6 substantive gates + 1 print gate)

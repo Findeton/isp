@@ -1039,3 +1039,36 @@ Goal state: clause (1)'s FORM is now exhibit-grade (locality + isometry +
 ledger + order gauge all receipt-carried); the kernel's free data awaits
 empirical identification (D26 cosmological shadow). F8 (paper 18 §8)
 CLOSED by this receipt.
+
+## 2026-07-12 — D25 RUN: the reception theorem — ALL GATES PASS (7/7, exit 0); the pre-registered stake CONFIRMED
+
+`code/d25_reception_theorem_exact.py` (pin ca22b8e, pre-run; output at
+`data/d25_reception_theorem_exact.out`). THE FINDING (pre-registered in
+the pin, confirmed): ensemble injectivity — round 1's proposed F1
+formalization, and paper 18 §2's printed one — is TOO WEAK: C_half
+(weak intrinsic collapse, rho -> (1-l)rho + l Delta_Z) contracts every
+eta-distinguishability to D/2 — strictly positive, hence injective,
+hence NOT excluded by the injectivity form — while receiving the loss
+with NOTHING. The correct F1 formalization is the DISTINGUISHABILITY-
+ISOMETRY form: the closure preserves every pairwise trace distance on
+the total record ontology exactly; admitted closures = the isometric
+dilations = the dispersal class. SUPERSESSION: paper 18 §2 "closure
+injectivity on preparations" and §8 F1's ensemble-injectivity route are
+superseded (LEDGER #129 to carry it; the paper-19 assembly prints the
+corrected form). The invariant table (all exact): U and Q_disp PRESERVE
+(D_out = D_in); C_bare -> 0; C_half -> D_in/2 (silent, injective);
+R_cl -> 0. Also theorem-grade now: the mimicry (Q_disp's system marginal
+== C_bare's output at every eta — only the receiver separates dispersal
+from erasure); receiver necessity (S-only fails; <XXXX> = eta witnesses;
+E's own marginal is eta-INDEPENDENT — reception is correlational); the
+value/content split (R_cl preserves the diagonal/value distance exactly
+while sending every eta/content distance to zero — classical receivers
+are silent erasure with a middleman, computing the ontology stream's
+three-way split); the Kadison/Molnar leg verified member-by-member
+[general theorem LITERATURE, not re-proven]; the ledger identity
+(marginal loss = receiver correlation; total preserved). F1 CLOSED at
+family grade: NSE now discriminates real rivals by theorem — C-class,
+weak collapse at every rate, classical receivers excluded; dispersal
+admitted — with the experimental falsifier unchanged (the D21 ladder +
+attribution gate). Goal clause (3) grounding rule (b): satisfied at
+family grade.
