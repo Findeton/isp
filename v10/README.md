@@ -1,6 +1,27 @@
 # Relativistic ISP v10
 
-## Latest — D22/D23 / Paper 18 (hostile round 1 applied)
+## Latest — the complete-record-law campaign: D24/D25/D26 / Paper 19 (assembly round pending)
+
+Per the user-set goal (LOG, 2026-07-12), Paper 19 assembles the complete
+interactive record law (E_t, D, B) at the declared interface: D24 exhibits
+the first exact birth kernel (isometric, collar-local, ledger-balanced,
+construction-order gauge; family click-identifiable over all 19 labeled
+rooted trees; the kernel is extra physics — a family, not unique); D25
+closes F1 with the reception theorem (ensemble injectivity proved TOO WEAK
+— the C_half catch; NSE = distinguishability-isometry; C-class, weak
+collapse, classical receivers excluded exactly; value/content split now a
+theorem); D26 closes clause 2 at the declared interface (one surviving
+click-equivalence class; UV-pair, dark-interior and portal exhibits; the
+birth-decoherence bridge √(1−g) per birth bounds the kernel by existing
+coherence records). All 20 gates green, exit 0, pins pre-run. DONE audit:
+reviews = the open conjunct.
+
+- `note-d24-tree-birth-kernel-identifiability.md` + `code/d24_tree_birth_kernel_exact.py`
+- `note-d25-reception-theorem.md` + `code/d25_reception_theorem_exact.py`
+- `note-d26-interface-equivalence-closure.md` + `code/d26_interface_equivalence_exact.py`
+- `relativistic-isp-v10-paper19-the-complete-interactive-record-law-at-the-declared-interface.md`
+
+## Prior — D22/D23 / Paper 18 (hostile round 1 applied)
 
 Paper 18 posits the candidate extra principle D20's warning names — D20
 paired "inventing an extra principle" with "not a fabricated proof"; the

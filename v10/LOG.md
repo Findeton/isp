@@ -1100,3 +1100,19 @@ count). Goal state: clause (2) closed AT THE DECLARED INTERFACE (one
 class); clause (1) bridged to experiment (bounded, consistent). Next:
 paper 19 assembly + LEDGER #129 (the D25 supersession), then the review
 round the goal's DONE requires.
+
+## 2026-07-12 — Paper 19 DRAFTED: the complete interactive record law at the declared interface
+
+`relativistic-isp-v10-paper19-the-complete-interactive-record-law-at-the-
+declared-interface.md`: the campaign assembly at goal strength — §1 the
+interface and what "complete" can mean; §2 clause 1 (D24 + the D26 E4
+bridge); §3 clause 3 (D25, with the supersession of paper 18 §8 F1 / D22
+§6 F1 stated openly); §4 clause 2 (D26; THE LAW = the surviving click-
+equivalence class); §5 clause 4 (semantics + declared state); §6 the DONE
+audit (receipts green; no experimental contradiction at audit; one class;
+REVIEWS OPEN); §7 all falsifiers in one place; §8 pinned assembly fronts
+F1–F8. Paper 18 §8 updated (F1 closed by D25 with supersession; F8 closed
+by D24; F9/F10 remain open); D22 §6 F1 updated to match; README rewritten
+(campaign = Latest); LEDGER #129 carries the consolidated campaign entry
+including the D25 supersession. Next: the assembly hostile round (the
+goal's remaining DONE conjunct), then corrections, then the DONE check.
