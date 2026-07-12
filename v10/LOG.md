@@ -1375,3 +1375,44 @@ K_flat at toy horizon — its Phi recursion is exponential, scope
 disclosed) grown CLASSICALLY (weights are graph-functions), the event
 order via D28b's proven reachability equivalence, rulers at matched N,
 the four pre-registered outcome branches.
+
+## 2026-07-12 — D30 RUN: the frozen-kernel cone comparison — BRANCH 1, exit 0 (5/5)
+
+`code/d30_frozen_cone_comparison.py` (pin b94e759, pre-run; output at
+`data/d30_frozen_cone_comparison.out`; card af5f6b011d3c48f8 consumed
+unchanged; kernels at the D28 frozen values; NO tuning, no re-rolls).
+The measured object is the EVENT (op) order — the D28b-repaired causal
+order (the register relation is cyclic for re-touching kernels); webs
+grown CLASSICALLY (weights are graph-functions) to matched event counts
+{256, 512}, 10 seeds per cell. **THE VERDICT, by the pre-registered
+rule: BRANCH 1 — AGAINST the pre-stated branch-3 expectation. K_collar
+ENTERS THE M^2 BAND: d_hat = 1.76 ± 0.10 at N = 512 (max-interval
+protocol, healthy intervals ~203/512, zero web-level fallbacks), chain
+constant 1.88 vs the card's c_2(512) = 1.801 (within the 15% bar),
+chain exponent alpha = 0.46 vs 1/2 ± 0.1, and separated from the box-4
+mimicry signature — the first frozen opportunity kernel to read
+manifoldlike on validated instruments: intrinsic graph locality on a
+chain seed produces (1+1)-manifold-band causal order.** K_tail EXCLUDED
+(long-range-dominated at scale: ~457 beyond-collar interacts per
+512-event web — the far weight overwhelms; alpha = 0.38 outside every
+band pairing); the PURE-BIRTH control reads outside all bands with
+10/10 web-level fallbacks (max intervals ~18 — trees have no fat
+diamonds; the falsifiable pipeline gate PASSED); K_flat stays
+exact-grade only (presence row; its Phi recursion is exponential — no
+approximation smuggled). W2 at scale: K_collar's beyond-collar count
+is EXACTLY 0 in every run (the opportunity-grade separation).
+HONEST CAVEATS carried: (i) the band entered is M^2, NOT M^4 — nothing
+reaches 3+1; the collar kernel's 2d reading is consonant with its
+1d-chain seed + strict graph locality (the channel-manifold lesson:
+higher-dimensional order needs richer opportunity structure — exactly
+the F12 selector's next constraint); (ii) d_hat sits 0.24 below the
+band center (inside ±0.35; not centered); (iii) the verdict is
+scale-limited (N <= 512) and rides the pre-registered rule — the
+box-2 mimicry question (M^2 and box-2 are the same order class) is
+moot at d = 2 by the V1 identity, but the "genuinely Lorentzian vs
+quasi-1d-filament" reading is the named round-1 front. THE ARC
+DELIVERABLE: the D28->D30 bridge question ("can record growth generate
+the cone it imports?") now has its first measured answer — YES at
+(1+1) for the collar kernel, at validated-instrument grade, with 3+1
+open and the selector problem sharpened to: what opportunity structure
+lifts the dimension. D28b+D29+D30 hostile round launching next.

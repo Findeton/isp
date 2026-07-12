@@ -1,0 +1,27 @@
+[d30 frozen-kernel cone comparison]
+      card sha ok: consuming data/d29_instrument_card.json unchanged;
+      base seed 30260712; 10 seeds/cell; event-count targets (256, 512);
+      the measured object is the EVENT (op) order (D28b) — the
+      register relation is cyclic for re-touching kernels.
+  [PASS] W1 growth integrity: every cell reached its event-count target; seeds fixed and printed
+  [PASS] W2 the tail signature at scale: K_collar's beyond-collar interact count is EXACTLY 0 in every run; K_tail's is positive (the D28 opportunity-grade separation, now at growth scale)  (tail far-rate at N=512: 457.0 per web)
+      W3 the ruler table (event order; card bands at matched N):
+        collar N=256: d_hat 1.79±0.23 (interval ~125); chain_c 2.15; ratio3 21.80
+        collar N=512: d_hat 1.76±0.10 (interval ~203); chain_c 1.88; ratio3 34.41
+          tail N=256: d_hat 1.62±0.13 (interval ~194); chain_c 2.00; ratio3 38.19
+          tail N=512: d_hat 1.67±0.17 (interval ~391); chain_c 1.91; ratio3 72.46
+         birth N=256: d_hat 4.62±0.10 (interval ~14, 10/10 web-level); chain_c 4.70; ratio3 3.88
+         birth N=512: d_hat 5.22±0.10 (interval ~18, 10/10 web-level); chain_c 5.93; ratio3 4.67
+        collar chain exponent alpha = 0.46
+          tail chain exponent alpha = 0.38
+         birth chain exponent alpha = 0.33
+  [PASS] W3 rulers applied at matched N; the table printed
+  [PASS] W4 THE VERDICT by the pre-registered rule — and the pure-birth control (provably order-dimension <= 2) reads OUTSIDE every manifold band (the falsifiable pipeline gate)  (verdicts: {'collar': 2, 'tail': None, 'birth': None}; BRANCH 1)
+      W5 K_flat row [toy horizon T <= 3; scope: presence-only —
+      exact path-covariance holds by D28b R3; its geometry at scale
+      is unmeasurable without an approximation this receipt refuses
+      to smuggle]. The covariant member of the F12 trichotomy stays
+      exact-grade only.
+  [PASS] W5 the K_flat scope row printed
+
+ALL CHECKS PASS (5/5: 4 substantive gates + 1 print gate)
