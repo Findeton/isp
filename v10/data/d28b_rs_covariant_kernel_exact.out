@@ -1,0 +1,25 @@
+[d28b RS-covariant kernel — exact]
+      the path-covariance functional equation, for independent op
+      pairs: w(o1|H) w(o2|H+o1) = w(o2|H) w(o1|H+o2).
+  [PASS] R1 the D28 kernels violate path-covariance (N11 re-gated: collar 1/40 vs 1/25; tail 2/81 vs 1/25)
+  [PASS] R2 K_flat normalization: weights sum to 1 exactly at every reachable history node (horizon T = 2)  (Phi(seed) = 26)
+  [PASS] R3 PATH-COVARIANCE, exhaustive: every accretion path to the same canonical final web carries the IDENTICAL product; total mass 1  (20 final webs, 6 genuinely multi-path)
+  [PASS] R4 the battery: sealed protection, strictly positive weights, label-covariance via canonical forms, preparation-independence (the recursion never consults a state — recorded, non-silent randomness per A0c)
+  [PASS] R5 the stationarity obstruction: K_flat's step-1 weights at horizon T = 2 differ from horizon T = 3 — path-covariant, NOT stationary; the sharpened F12 choice is on the record  (w(birth A): 9/26 at T=2 vs 51/128 at T=3)
+      R5 the sharpened kernel-selector (F12) statement: the selector
+      must choose within {stationary + covariance-violating (the D28
+      collar/tail class), path-covariant + horizon-dependent (the
+      K_flat class), or a stationary-and-covariant kernel — whose
+      existence for this grammar is the remaining open question, the
+      functional equation printed at R1}.
+      R6 scope: K_flat is NONE-FREE by construction; a none step
+      changes path length, so path-covariance across accretion orders
+      is posed on the none-free skeleton (one more reason the D28
+      kernels, which carry the none arm, fail it). Flags-observable
+      reading: with the full flag sequence recorded, path-covariance
+      = the demand that bookkeeping order carry no probability — the
+      cg-line's construction-order gauge promoted to the stochastic
+      kernel; K_flat satisfies it, the D28 kernels do not.
+  [PASS] R6 scope prints emitted
+
+ALL CHECKS PASS (6/6: 5 substantive gates + 1 print gate)

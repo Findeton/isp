@@ -1,0 +1,11 @@
+[d28b event-resolved influence — exact]
+      events = (register, epoch); interventions = ACTIVE replacements
+      {|0>, |1>, Ry(3/5,4/5), Ry(5/13,12/13)} inserted at the event's
+      epoch; queries = {Z, X} on the circuit truncated at the query
+      epoch. Chain links: birth parent->child; interact control->target.
+  [PASS] E1 end-of-history equivalence: I_ev at (birth epoch -> final epoch) reproduces the D28 register-level verdicts on the diamond web
+  [PASS] E2 the conjecture: event-resolved influence > 0 <=> time-respecting op-chain reachability — re-touch, mailbox (the worldline split), diamond, and chain webs, 25 event pairs
+  [PASS] E3 acyclicity: the event-level relation (reachability form, = influence by E2) has no 2-cycles on any tested web — a strict partial order, unlike the register-level relation
+  [PASS] E4 the worldline quotient: the D28 register-level relation is the support-max of the event-level relation — the round-1 register cyclicity was the shadow of quotienting worldlines to points
+
+ALL CHECKS PASS (4/4: 4 substantive gates)
