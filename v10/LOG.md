@@ -1929,3 +1929,25 @@ no re-scope). B7: r-axis unsaturated (mean d_cover 1.00/1.65/2.31);
 α 0.46–0.61 descriptive; λ realized 0.70/0.81/0.89; ≥7-touch rises
 to 12.0/web at (r=1,λ=2,512) — the exception corner. Hostile round
 launched. D32C decision AFTER the round.
+
+## 2026-07-12 — D32B round 1 LANDED (2 MAJOR / 5 MINOR / 6 NIT; zero flips; zero false numbers); repairs QUEUED
+Report: `reviews/d32b-round1-hostile-review.md`. M1: the witness cell
+is 12/12 WHOLE-ORDER FALLBACK at both sizes (|I|max 32/50 < 64 — the
+interval estimator never ran there); the aggregate "31/240" print
+violated §9's per-cell disclosure (truth: WIT 12/12+12/12, r=1λ=½-256
+7/12, else 0); the cell is a lightly-perturbed BIRTH TREE (vs the
+birth control z ≈ −2.1/−2.4) — #146's covariance-axis sentence and
+the LOG's "interacts create massive comparability" are OVER-WIDE/
+CONTRADICTED: the honest reading is "the priced kernel is
+birth-dominated by construction (c = 1/(4N²)) and reads as a birth
+tree; NO-BAND". M2: the fresh anchor mean 1.908 sits INSIDE the 3σ M²
+MM band (0.092 < 0.120) — the d̂-leg of the M²-exclusion does NOT
+transport to fresh seeds; exclusion survives via chain_c (11.2σ) +
+ratio3 (9.6σ); #146 must say so. STRENGTHENED: monotone compression =
+all 36 adjacent comparisons strictly decreasing at both N, ALSO for
+d̂_mid; NO-BAND minimum entry threshold 10.4σ; anchor equivalence
+BITWISE (37 seeds); rerun byte-identical ×2 hash seeds; clean-room
+reproduced all 20 rows. Nine repairs queued (disclosure/scope class,
+no number changes): per-cell fallback print + rerun; #147
+forward-correction of the two record sentences; the M2 transport
+disclosure; notes/memory sync; then the D32C decision.
