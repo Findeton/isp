@@ -192,3 +192,73 @@ The receipt will be `code/d34c_nse_quantum_history_exact.py`, dependency-free, e
 - **QF7:** finite strong positivity need not extend to an infinite sigma algebra. The D18 extension warning is binding.
 
 No D35 cone/dimension run may consume d34c unless the hostile delta accepts both the theorem and this claim ceiling.
+
+## 12. d34c PROVISIONAL receipt (2026-07-13; hostile round pending) — FINITE-CYLINDER COMPATIBILITY EXISTS
+
+**Receipt:** `code/d34c_nse_quantum_history_exact.py` -> `data/d34c_nse_quantum_history_exact.out`, 10/10, dependency-free exact `Q(sqrt(2))`/rational arithmetic, SHA-256 `f3a5aa379e857370a35d794db67d8af1da7bf980fc342fab83b54020037389db`. The output is byte-identical under a fresh hash salt. C0–C8 are substantive; C9 is the dependent claim scorecard.
+
+### 12.1 The diamond is genuinely quantum and order-gauge
+
+The pinned circuit realizes the displayed functional exactly. `a=CNOT(S->R)` and the incomparable `b=Z_P` commute as full operators; the `ab` and `ba` constructions give the same eight branch vectors and the same `8x8` `D`. The shared-`S` `H/CNOT` reorder differs, so the equality is not a serializer accident or a claim that all construction order is gauge.
+
+For `h=(s,p,o)`,
+
+```text
+D(h,h')=(1/8) delta(s,s') delta(o,o')
+        (-1)^[p(1+s+o)+p'(1+s'+o')].
+```
+
+It is a normalized branch-vector Gram matrix. Its four blocks have exact spectra `(1/4,0)`, hence the full spectrum is four `1/4`s and four zeros. There are eight nonzero off-diagonal entries. Coarse-graining the unrecorded `p` gives `(P00,P01,P10,P11)=(0,1/2,1/2,0)`; summing fine diagonals instead gives `(1/4,1/4,1/4,1/4)`. Adding an orthogonal path receiver deletes precisely those off-diagonals and produces the latter law. Thus the lift is not a diagonal classical measure wearing quantum notation.
+
+Direct functionals at the `s`, `(s,p)`, and `(s,p,o)` cuts agree under exact incidence pushdown `8->4->2`. This proves finite restriction for the diamond, not extension to an infinite sigma algebra.
+
+### 12.2 What “sealed” means here
+
+After `a`, every **modeled** later operator is identity on `R`. Exact Heisenberg checks fix all four matrix units of the full `R` algebra. Separately, the source's `Z`-value projectors remain fixed while `X` phase content changes/disperses. Therefore the exhibit supports two precise statements:
+
+1. `R` is a fully frozen durable receiver because the model removes it from the future support;
+2. `S` is value-nondemolished but not algebra-frozen.
+
+It does not derive a universal criterion deciding when a real record becomes sealed, nor prove durability if future operations are allowed to touch `R`. QF5 remains a scope boundary, not a hidden theorem.
+
+### 12.3 The NSE theorem and why flags are load-bearing
+
+For any finite D34b cylinder partition with preparation-independent masses `mu(h)`, choose isometries `V_h` whose ranges are orthogonal because the first differing recorded event leaves an orthogonal event-local flag. Then
+
+```text
+Phi(rho)=sum_h mu(h) V_h rho V_h^dag
+```
+
+is trace-distance preserving on the total declared ontology:
+
+```text
+||Phi(Delta)||_1
+ = sum_h mu(h)||V_h Delta V_h^dag||_1
+ = (sum_h mu(h))||Delta||_1
+ = ||Delta||_1.
+```
+
+This is the Busch direct-sum form used by paper 19. The code instantiates the D34b one-neighbor kind weights `(1/4,1/4,1/2)`, proves `V_i^dag V_j=delta_ij I`, and exactly preserves three pair types including the noncommuting `|0>`/`|+>` pair. The analytic block-norm identity, not those three regressions, carries the all-state claim.
+
+Both hypotheses matter. Tracing/forgetting the flag in `1/2(rho+Zrho Z)` maps `|+>` and `|->` to the same state, contracting distance `1->0`. A branch choice made by inspecting the preparation fails affine linearity on the exact `|0>,|1>,I/2` witness. Content-dependent routing is therefore not forbidden, but it must itself be implemented as a larger recorded isometry; it cannot enter as an external state-reading lottery.
+
+### 12.4 The combined finite-cylinder object
+
+C8 constructs the bridge rather than merely checking its factors. At one and two local kind rings it forms
+
+```text
+D_comb((h,alpha),(h',beta))
+  = delta(h,h') mu(h) D_diamond(alpha,beta).
+```
+
+The explicit object is a direct-sum Gram functional. It normalizes exactly; its durable-click shadow is the D34b kind law; it retains the diamond's within-branch off-diagonal interference; and the 72-history depth-2 object pushes down exactly to the 24-history depth-1 object. The classical `9->3` kind restriction, local Stinespring completeness `sum K^dag K=I`, eligible-neighbor row normalization through local degree eight, and disconnected-product marginal are separately gated.
+
+The general finite-cylinder theorem is the same algebra: a nonnegative direct sum of strongly positive blocks is strongly positive; classical projectivity supplies the sum of extension masses; exhaustive local class operators supply quantum restriction. The theorem is for **finite measurable cylinder partitions** of the timed D34b process. It does not pretend that an exact continuum of timestamps is a countable orthonormal ket basis; a direct-integral/infinite-extension theorem is open.
+
+The notation `|h>` is not an implemented universe ledger. Each `h`-range is the tensor product of flags written at the events on the actors they touch. Distinct histories are orthogonal because their first differing local event flag is orthogonal. The sampler can still use one serialization, but neither its weights nor its isometries query the universe's live-record count.
+
+### 12.5 Provisional verdict and remaining debt
+
+**Provisional verdict:** `FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY PASS`. One chosen D34b actor family can be the durable classical sector of a non-diagonal, strongly positive quantum history law while total closure satisfies the posited NSE condition and the modeled seal is stable. This closes an existence/compatibility gap only.
+
+Still open: deriving the D34b weights, target rule, interaction unitary and record basis; coherent interference between different **durably recorded** growth histories; a full timed direct-integral and infinite quantum-measure extension; an intrinsic profinite quantum architecture; dynamic adjacency/component joining; a physical seal-formation law; Lorentz cones/dimension; and selection of nature's unique member. The classical `mu` and the local quantum operations remain chosen inputs. Independent hostile review must attack QF1–QF7 before this wording can become terminal.

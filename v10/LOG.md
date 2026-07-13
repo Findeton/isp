@@ -2472,3 +2472,22 @@ negative controls; actor-local sewing; hard scope ceiling. Success noun only:
 FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY. Infinite quantum extension,
 profinite architecture, coherent growth-history superposition, dynamic joining,
 derived weights/operations/basis, cones/dimension, and nature's law remain open.
+
+## 2026-07-13 — d34c PROVISIONAL GREEN 10/10: finite-cylinder NSE/quantum compatibility (LEDGER #166; hostile round launched)
+`code/d34c_nse_quantum_history_exact.py` -> matching output, exact
+Q(sqrt2)/rationals only, SHA256 f3a5aa379e857370a35d794db67d8af1da7bf980fc342fab83b54020037389db.
+C1: disjoint a/b commute; ab=ba branches/D; shared-S negative differs. C2:
+the pinned 8x8 D exact, Gram/normalized, spectrum 1/4x4 + 0x4. C3: eight
+offdiagonals are load-bearing — coherent coarse law (0,1/2,1/2,0), while
+diagonal-only/path-recorded gives 1/4x4. C4: cylinder 8->4->2 exact. C5:
+all four R matrix units fixed by the MODELED future (R never touched); source
+Z values fixed but X content disperses — separate seal nouns. C6: D34b kind
+weights in orthogonal flagged isometry ranges, three exact distance checks +
+the all-state block-norm theorem. C7: erase flag contracts |+>/|-> 1->0;
+state-reading branch choice non-affine. C8 constructs the combined object:
+direct-sum Gram, classical D34b kind shadow, within-block quantum interference,
+depth 2->1 exact (72->24); local row normalization/completeness and remote
+factor separately green. The general theorem is finite measurable cylinder
+partitions only; no continuum |t> fiction, direct integral/infinite extension
+open. PROVISIONAL noun: FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY, not a
+derivation/selector. Hostile round attacks QF1-QF7; findings -> #167+.
