@@ -2166,3 +2166,17 @@ layer cosmetics whose values the record carries; the 5.29 locus
 sentence names the D30 control envelope only, ruled honest as
 worded. Per the referee's stated condition this converts to
 DELTA-CLEAN with no further round: PAPER 20 IS TERMINAL.
+
+## 2026-07-13 — THE HISTORY-LAW PHASE OPENED (D33–D36; note-d33 PHASE PIN committed pre-receipt; the external proposal filed + adopted with amendments)
+The primitive changes: μ on complete typed histories first; K_μ by
+conditioning. The refined O7 (causal order physical / incomparable
+order gauge) adopted; D33 = the exact no-go re-audit under the
+refined gauge (pinned expectations: DEG/DDEG/motif survive via
+incomparable-only certificates; graph-blind RESTATED asymptotically —
+interaction density → 0; the seed-level escape exhibited); D34 = the
+existence program (projective + Harris; the seven conditions pinned;
+the NSE-locality tension named; Rideout–Sorkin anchor); D35 = the
+empirical wings (the local-scheduler compression re-test — is
+compression a law of interaction or of the lottery? — and the
+fixed-budget aligned PILOT); D36 = dynamic adjacency, HELD. Fronts
+HF1–HF6. D33 receipt next.
