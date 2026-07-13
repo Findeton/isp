@@ -2076,3 +2076,9 @@ FORESEEABLE pre-run and matched fr is UNREACHABLE in-family (max
 cannot be executed by an in-family successor; CF4's ALIGNED variant
 is the one arm that runs at healthy fr (the executable successor,
 named). Repairs queued; delta next; #150 at closure.
+
+## 2026-07-13 — D32C delta rerun GREEN 6/6 (zmin = 11.2σ receipt-carried, matching the round's value); LEDGER #150; referee delta-verification launched
+n_mid + mixture flags in the map (the starved cells honestly read as
+subset means); the C5 pairs carry mixture notes; NO-BAND's
+bar-independence is now in-receipt. #150 carries the three
+forward-corrections.
