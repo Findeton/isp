@@ -1979,3 +1979,36 @@ same order, flagged for the delta pass); corner strata 3.423 ± 0.114 /
 1.965 ± 0.226; floor-adjacency: exactly 1/12 at each (r=3, λ=2) size —
 the censoring caveat applies to the corner only. Per-cell fallbacks:
 WIT 12/12 both sizes, corner 7/12, else 0 — the §9 clause now honored.
+
+## 2026-07-13 — D32B delta pass: NOT-YET-CLEAN (2 MINOR / 5 NIT, content-inert); all findings applied; rerun 3 launched under the conversion condition
+The referee's delta section (report appended): all nine repairs
+verified applied; byte-identical rerun ×2 hash seeds; every repair
+number confirmed against their round-1 recomputations; the
+floor-censoring INSTRUMENTATION ruled the correct n6 branch (window
+[1.00, 1.05), worst-case cell-mean bias ≤ 0.004; "censoring
+strengthens compression" ruled directionally sound). FINDINGS APPLIED:
+(Δ-m1) the luck statistic mislabeled its dof — the labeled quantity
+(the RECORD family's 10-seed ddof-0 SD under the fresh sigma) is
+10·q on 9 dof ⇒ P = 0.012, not the printed 0.004; FORWARD-CORRECTIONS:
+#147's "the review's 0.008 used 12" was FALSE (they used 9 dof and
+forward-correct their own 0.008 → 0.012 in the delta section) — the
+#148 entry carries both corrections; all variants sit at 0.4–1.2%, the
+"partly seed-family luck" narration unaffected. (Δ-m2) two alpha
+conventions shared one name — now alpha_pairlog (the §9 block) vs
+alpha_logmean (BF3), with the convention line printed. NITS: the
+floor-adjacency count was knife-edge (decided by 2.3e-7) — the
+PER-CELL MINIMUM is now printed as the stable number, and NOTHING was
+actually censored this run (global min 0.0043 above the floor) — the
+43f99ac LOG phrase "fired on real floor-censoring" is FORWARD-
+CORRECTED to "fired on floor-ADJACENCY; the caveat is prophylactic";
+B6 relabeled [record] (its gate cannot fail); the §9 addendum's
+"≈ 0.0027/10" parenthetical corresponds to exact z = 3.643 (the
+receipt's operative band stays z = 3.5 as pinned — stated). The
+referee's conversion condition: green rerun + the chi²-dof fix + the
+alpha line ⇒ DELTA-CLEAN, no further round; the diff will also carry
+the minima print/labels — deviation from the literal one-line scope
+DISCLOSED here pre-run. D32C's §3 disposition owed at #148: the
+dense-scan arm is DECLINED WITH REASON (the direction is monotone
+compression at all 36 comparisons — a dense scan refines a falling
+curve, it cannot find a lifting direction); the S²-mechanism arm
+proceeds as the separately pinned hypothesis.

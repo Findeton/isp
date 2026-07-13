@@ -244,13 +244,15 @@ for N in SIZES:
 # at 1.05; per-cell floor-adjacent counts disclosed; readings in those
 # cells are UPPER BOUNDS under censoring. Ceiling gated hard.
 floor_cells = {}
+gmin, gmin_cell = None, None
 for key, rows in list(cells.items()) + [(('WIT', '-', N), wit[N])
                                         for N in SIZES]:
+    k = (f"WIT,N={key[2]}" if key[0] == 'WIT'
+         else f"r={key[0]},l={key[1]},N={key[2]}")
+    mn = min(x[0] for x in rows)
+    if gmin is None or mn < gmin: gmin, gmin_cell = mn, k
     n = sum(1 for x in rows if x[0] < 1.06)
-    if n:
-        k = (f"WIT,N={key[2]}" if key[0] == 'WIT'
-             else f"r={key[0]},l={key[1]},N={key[2]}")
-        floor_cells[k] = n
+    if n: floor_cells[k] = n
 ceil_ok = all(x[0] < 7.9 for rows in
               list(cells.values()) + [wit[N] for N in SIZES] for x in rows)
 ok2 = all(len(v) == NSEEDS for v in cells.values()) and \
@@ -264,9 +266,13 @@ check("B2 the grid + witness cells complete: 10 cells x 2 sizes x 12 seeds "
       f"per-cell fallbacks (|I| < 64 -> whole-order MM): "
       + (", ".join(f"{k}: {v}/12" for k, v in sorted(fb_cells.items()))
          or "none") + f"; all other cells 0; total {total_fallback}/240; "
-      f"floor-adjacent readings: "
+      f"floor-adjacent readings (< 1.06; the count is descriptive — the "
+      f"MINIMUM is the stable number): "
       + (", ".join(f"{k}: {v}/12" for k, v in sorted(floor_cells.items()))
-         or "none"))
+         or "none")
+      + f"; global min d_MM = {gmin:.6f} at {gmin_cell} "
+      f"({gmin - 1.05:.4f} above the 1.05 bracket floor — NOTHING censored "
+      f"this run; the caveat is prophylactic)")
 
 def stats(rows):
     dmm = np.array([x[0] for x in rows])
@@ -329,13 +335,16 @@ for r in RS:
         alphas = np.log2(st5["Ls"] / st2["Ls"])
         ase = float(alphas.std(ddof=1) / math.sqrt(len(alphas)))
         print(f"        r={r} lam={lam}: chain_c(d={dn}) = {cc:.3f} vs card "
-              f"{card_cc:.3f} | ratio3 {st5['r3']:.3f} | alpha "
+              f"{card_cc:.3f} | ratio3 {st5['r3']:.3f} | alpha_pairlog "
               f"{float(alphas.mean()):.3f}±{ase:.3f} | VIOLATING (D31/O3)")
 stw5, stw2 = stats(wit[512]), stats(wit[256])
 aw = np.log2(stw5["Ls"] / stw2["Ls"])
-print(f"        WITNESS: ratio3 {stw5['r3']:.3f} | alpha "
+print(f"        WITNESS: ratio3 {stw5['r3']:.3f} | alpha_pairlog "
       f"{float(aw.mean()):.3f}±{float(aw.std(ddof=1)/math.sqrt(len(aw))):.3f}"
       f" | COVARIANT-AT-CAP (priced; birth-dominated by construction)")
+print("        (alpha CONVENTIONS, Δ-m2: alpha_pairlog = mean of per-seed "
+      "paired log-slopes [this block]; BF3's alpha_logmean = the log of "
+      "cell-mean L ratios — up to ~0.03 apart; both descriptive)")
 # the minimum entry threshold (round-1 m2): the z-multiplier at which the
 # NEAREST cell/d would first enter all three bands jointly
 zmin = None
@@ -369,7 +378,9 @@ z_cc = abs(st_a["L"] / 512 ** 0.5 - c2["chain_c"]) / c2["chain_c_sd"]
 z_r3 = abs(st_a["r3"] - c2["ratio3_mean"]) / c2["ratio3_sd"]
 D30_SD = 0.101
 Fratio = (st_a["dmm"][1] / D30_SD) ** 2
-p_luck = chi2_cdf(11 * (D30_SD / st_a["dmm"][1]) ** 2, 11)
+# Δ-m1: the labeled quantity is the RECORD family's (10-seed, ddof-0) SD
+# under the fresh-family sigma -> statistic 10*q on 9 dof
+p_luck = chi2_cdf(10 * (D30_SD / st_a["dmm"][1]) ** 2, 9)
 se_mm = st_a["dmm"][1] / math.sqrt(NSEEDS)
 shift = (st_a["dmm"][0] - 1.756) / math.sqrt(se_mm**2 + (D30_SD/math.sqrt(10))**2)
 check("B3 the ANCHOR CELL on FRESH seeds (r=1, lam=1 IS K_collar, new seed "
@@ -384,8 +395,9 @@ check("B3 the ANCHOR CELL on FRESH seeds (r=1, lam=1 IS K_collar, new seed "
       f"= {fail_frac:.2f} (predicted ~0.30); M2 legs at fresh seeds: "
       f"d-hat z = {z_mm:.2f} (IN-band at 3 sigma), chain_c z = {z_cc:.1f}, "
       f"ratio3 z = {z_r3:.1f}; seed-family spread two-sided: F = "
-      f"{Fratio:.2f}, P(SD <= {D30_SD} | sigma = {st_a['dmm'][1]:.3f}) = "
-      f"{p_luck:.3f}")
+      f"{Fratio:.2f}, P(record 10-seed SD <= {D30_SD} | sigma = "
+      f"{st_a['dmm'][1]:.3f}) = {p_luck:.3f} (9 dof, record-family "
+      f"statistic — the Δ-m1 convention)")
 # round-1 m1: the corner cell is a two-estimator MIXTURE — strata printed
 corner = cells[(1, 0.5, 256)]
 who = [x[0] for x in corner if x[5]]; itv = [x[0] for x in corner if not x[5]]
@@ -485,6 +497,7 @@ total = PASS + FAIL
 print(f"ALL CHECKS PASS ({PASS}/{total}: B1 freeze-assert; B2 completeness "
       f"+ per-cell disclosure; B3 anchor replication + leg transport; B4 "
       f"witness at honest width; B5 the map + entry threshold [substantive]"
-      f"; B6 seed-forgetting [substantive]; B7 fronts [record])"
+      f"; B6 seed-forgetting [record — the verdict prints, the gate "
+      f"cannot fail]; B7 fronts [record])"
       if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)
