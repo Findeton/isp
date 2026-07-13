@@ -1951,3 +1951,19 @@ reproduced all 20 rows. Nine repairs queued (disclosure/scope class,
 no number changes): per-cell fallback print + rerun; #147
 forward-correction of the two record sentences; the M2 transport
 disclosure; notes/memory sync; then the D32C decision.
+
+## 2026-07-13 — D32B delta rerun attempt 1: the new bracket guard FIRED (real instrument physics, not a bug); n6 re-implemented as INSTRUMENTATION; delta rerun 2 launched
+The repaired receipt's first rerun exited 1 at B2: per-seed d̂_MM
+readings in the most compressed cells (r=3, λ=2: cell mean 1.105 ±
+0.043) dip below 1.06 — the validated MM instrument FLOOR-CENSORS at
+its 1.05 bisection bracket on near-chain webs. All map numbers
+reproduce exactly (spot-checked against the round-reviewed table).
+Per the round's n6 ("widen or instrument"): widening the bracket
+would de-validate the card lineage (every card d̂ was computed on
+[1.05, 8]), so the floor is INSTRUMENTED instead — per-cell
+floor-adjacent counts disclosed; affected cells' d̂_MM means carried
+as UPPER BOUNDS under censoring; the ceiling stays a hard gate.
+Committed pre-rerun; delta rerun 2 in flight. Note the physics: the
+compression corner genuinely approaches chain order (d̂ → 1), so
+floor-censoring strengthens, not weakens, the monotone-compression
+reading (the true corner values are ≤ the printed ones).

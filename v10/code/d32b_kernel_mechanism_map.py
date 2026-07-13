@@ -239,17 +239,34 @@ for key, rows in cells.items():
 for N in SIZES:
     n = sum(1 for x in wit[N] if x[5])
     if n: fb_cells[f"WIT,N={N}"] = n
-bracket_ok = all(1.06 < x[0] < 7.9 for rows in
-                 list(cells.values()) + [wit[N] for N in SIZES] for x in rows)
+# n6 INSTRUMENTED (not widened — widening the mm_dim bracket would
+# de-validate the card lineage): the validated instrument floor-censors
+# at 1.05; per-cell floor-adjacent counts disclosed; readings in those
+# cells are UPPER BOUNDS under censoring. Ceiling gated hard.
+floor_cells = {}
+for key, rows in list(cells.items()) + [(('WIT', '-', N), wit[N])
+                                        for N in SIZES]:
+    n = sum(1 for x in rows if x[0] < 1.06)
+    if n:
+        k = (f"WIT,N={key[2]}" if key[0] == 'WIT'
+             else f"r={key[0]},l={key[1]},N={key[2]}")
+        floor_cells[k] = n
+ceil_ok = all(x[0] < 7.9 for rows in
+              list(cells.values()) + [wit[N] for N in SIZES] for x in rows)
 ok2 = all(len(v) == NSEEDS for v in cells.values()) and \
-      all(len(wit[N]) == NSEEDS for N in SIZES) and bracket_ok
+      all(len(wit[N]) == NSEEDS for N in SIZES) and ceil_ok
 check("B2 the grid + witness cells complete: 10 cells x 2 sizes x 12 seeds "
       "= 240 growths; PER-CELL fallback disclosure (round-1 M1 — the §9 "
       "clause the aggregate print violated); no MM reading at the bracket "
-      "floor/ceiling", ok2,
+      "CEILING; floor-adjacency INSTRUMENTED per cell (readings < 1.06 — "
+      "such cells' d_MM means are upper bounds under the 1.05 bracket "
+      "censoring)", ok2,
       f"per-cell fallbacks (|I| < 64 -> whole-order MM): "
       + (", ".join(f"{k}: {v}/12" for k, v in sorted(fb_cells.items()))
-         or "none") + f"; all other cells 0; total {total_fallback}/240")
+         or "none") + f"; all other cells 0; total {total_fallback}/240; "
+      f"floor-adjacent readings: "
+      + (", ".join(f"{k}: {v}/12" for k, v in sorted(floor_cells.items()))
+         or "none"))
 
 def stats(rows):
     dmm = np.array([x[0] for x in rows])
