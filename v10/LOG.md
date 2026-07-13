@@ -1967,3 +1967,15 @@ Committed pre-rerun; delta rerun 2 in flight. Note the physics: the
 compression corner genuinely approaches chain order (d̂ → 1), so
 floor-censoring strengthens, not weakens, the monotone-compression
 reading (the true corner values are ≤ the printed ones).
+
+## 2026-07-13 — D32B delta rerun 2 GREEN 7/7: all nine repairs landed; LEDGER #147; referee delta-verification launched
+All round-supplied numbers now receipt-carried and matching the
+review's recomputations: minimum joint entry threshold 10.4σ (NO-BAND
+robustness on the record); M2 legs at fresh seeds d̂ z = 2.46
+(IN-band), chain_c 11.2σ, ratio3 9.6σ (the exclusion's carriers
+named); anchor mean shift +2.2 SE; two-sided luck F = 4.52, left-tail
+P ≈ 0.004 (dof convention: 11, ddof-0 SD — the review's 0.008 used 12;
+same order, flagged for the delta pass); corner strata 3.423 ± 0.114 /
+1.965 ± 0.226; floor-adjacency: exactly 1/12 at each (r=3, λ=2) size —
+the censoring caveat applies to the corner only. Per-cell fallbacks:
+WIT 12/12 both sizes, corner 7/12, else 0 — the §9 clause now honored.
