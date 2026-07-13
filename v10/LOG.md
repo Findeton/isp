@@ -2012,3 +2012,21 @@ dense-scan arm is DECLINED WITH REASON (the direction is monotone
 compression at all 36 comparisons — a dense scan refines a falling
 curve, it cannot find a lifting direction); the S²-mechanism arm
 proceeds as the separately pinned hypothesis.
+
+## 2026-07-13 — D32B rerun 3 GREEN 7/7: the conversion condition MET — D32B CLOSED (LEDGER #148); D32C OPENS
+All delta-2 findings receipt-carried: P(record 10-seed SD ≤ 0.101 |
+σ = 0.215) = 0.012 at the adjudicated 9-dof record-family convention;
+alpha_pairlog/alpha_logmean both named and printed; the global
+minimum d̂_MM = 1.054277 (0.0043 above the bracket floor — nothing
+censored, prophylactic caveat) replaces the knife-edge count as the
+stable number; B6 relabeled [record]. Per the referee's stated
+clearance condition (their delta section) this pass is DELTA-CLEAN
+with no further round. FORWARD-CORRECTIONS carried at #148: (1)
+#147's "the review's 0.008 used 12" was FALSE — the review used 9 dof
+imprecisely and forward-corrects its own 0.008 → 0.012; (2) the
+43f99ac LOG phrase "fired on real floor-censoring" over-stated —
+floor-ADJACENCY only. D32B IS CLOSED. The §3 disposition: the
+dense-scan arm DECLINED WITH REASON (monotone compression at 36/36 —
+a dense scan refines a falling curve; it cannot find a lifting
+direction); D32C = the S²-mechanism family (§3's separately pinned
+hypothesis), the pin to be written pre-receipt.
