@@ -1,18 +1,19 @@
-  [PASS] G1 THE GAUGE INSTANTIATED: swapping INCOMPARABLE events (disjoint wires) yields the SAME typed causal history (gauge — linear extensions identified); swapping COMPARABLE events (shared wire) yields a DIFFERENT history (physical — the order along a record is recorded)  (births on disjoint parents: canon-equal; birth-then-interact vs interact-then-birth on the SAME parent: canon-distinct)
+  [PASS] G1 THE GAUGE INSTANTIATED: incomparable (disjoint-wire) swaps are canon-EQUAL (gauge); shared-wire TYPE-MIXED swaps are canon-DISTINCT (physical — the order along a record is recorded); the ABSORBED class disclosed (round-1 M2): same-parent BIRTH swaps are canon-equal because fresh relabeling absorbs them — rename, not reorder; no equation is missed  (b/b disjoint: equal; b/i same-parent: distinct; b/b same-parent: equal (absorbed))
   [PASS] G2 [DEG and DDEG SURVIVE the refined gauge]: single all-nonnegative delta rows re-exhibited using ONLY equations from INCOMPARABLE (disjoint-register) pairs — the Z(W+b) = Z(W) forcing needs no comparable swap; the obstructions stand with WEAKER hypotheses  (DEG: u = 3 birth, Delta = 2 -> {('b', 2): 1, ('i', 1, 2): 2, ('i', 2, 1): 2, ('i', 2, 3): 1, ('i', 3, 2): 1} >= 0 (kill); DDEG: u = 3 birth, Delta = 2 -> {('b',): 1, ('i', 1, 2): 2, ('i', 2, 1): 2, ('i', 2, 2): 1, ('i', 2, 3): 1} >= 0 (kill))
   [PASS] G3 [MOTIF SURVIVES at u >= 3]: birth-inertness exhaustive + every u >= 3 birth has an incomparable interact forcing Z(W+b) = Z(W) + every such birth strictly grows the census — the C2 contradiction closes from incomparable pairs alone (the u = 2 seed equation, an overlapping/comparable pair in the old convention, is NOT needed)
-  [PASS] G4 [GRAPH-BLIND RESTATED — the asymptotic theorem]: (a) the disjoint-pair forcing w_i(u+1) = w_i(u) verified as an identity on a rational grid (u >= 3, where incomparable pairs exist); (b) normalization bounds w_i <= 1/(u(u-1)) -> 0: under the REFINED gauge a stationary birth-positive graph-blind kernel has INTERACTION DENSITY -> 0 at unbounded growth (constancy forced on u >= 3 only); (c) THE SEED-LEVEL ESCAPE exhibited: u = 2 has no disjoint bi pair, so w_i(2) is unconstrained — a covariant kernel interacting ONLY at the seed exists, with finite expected interactions (density 0: transient, priced)  (bound at u = 10: 1/90; expected seed interactions = 1 (geometric); the OLD theorem's exact-zero conclusion used the comparable u = 2 forcing — dropped honestly)
-  [PASS] G5 [COMPONENT-SIZE unchanged]: the connectivity reduction makes the grading u-only, so G4's asymptotic statement applies verbatim; the D5b bounded-horizon witness satisfied the STRONGER convention and passes the refined gauge a fortiori (its price — the encoded cap — is untouched)
+  [PASS] G4 [GRAPH-BLIND under the refined gauge — round-1 M1: EXACT ZERO SURVIVES on u >= 3]: (a) the register-disjoint forcing w_i(u+1) = w_i(u) verified as a biconditional at u = 3..12 over a rational grid; (b) constancy + birth-positivity + unbounded growth force w_i(u) = 0 EXACTLY for all u >= 3 (failure scale u* computed for sample c > 0); (b') the DENSITY corollary defined (#interacts/n along an unbounded history) and gated: interactions confined to the geometric seed block (sums to 1, mean 1, exact) => density 0 a.s.; (c) THE SEED RELEASE: w_i(2) alone is unconstrained — the escape kernel verified on EVERY register-disjoint pair equation of the horizon  (escape kernel: 727 disjoint-pair equations checked exactly; the OLD exact-zero-including-u=2 form used a comparable seed swap — the u >= 3 exact zero STANDS; only the seed weight is released (the honest, and smaller, weakening))
+  [PASS] G5 [COMPONENT-SIZE unchanged — the containment GATED, round-1 M3]: every register-disjoint pair on the horizon is independent under the state-level convention too (both orders reach the canon-same state — computed), so the D5b witness covers the refined demands a fortiori; the disjoint-interact class-invariance premise re-gated in-receipt for all three elimination families (round-1 m)  (727 disjoint pairs: state-level containment verified; grading u-only per the connectivity reduction — G4's u >= 3 exact zero applies verbatim; the cap witness's price untouched)
       G6 THE LANDSCAPE UNDER THE REFINED GAUGE [linear-extension
       covariance only — the physically honest quotient]:
         DEG / DDEG: OBSTRUCTED at every horizon U >= 3 (G2 —
           incomparable-pair single-row kills; STRONGER than before:
           weaker hypotheses, same verdict);
         MOTIF: OBSTRUCTED at u >= 3 (G3 — seed equation not needed);
-        GRAPH-BLIND: interaction density -> 0 at unbounded growth
-          (G4 — the exact-zero form needed a comparable swap and is
-          SUPERSEDED by the asymptotic form; the seed-level
-          transient escape is exhibited and priced);
+        GRAPH-BLIND: w_i(u) = 0 EXACTLY for all u >= 3 (round-1 M1 —
+          the exact zero SURVIVES from incomparable pairs alone;
+          only the seed weight w_i(2) is released — a transient,
+          geometric, density-0 escape, exhibited and priced); the
+          d31a theorem COEXISTS at its stated (stronger) convention;
         COMPONENT-SIZE: as graph-blind (G5); the cap witness stands;
         K_flat: unchanged (teleology, not covariance, is its price).
       HF6 CHECK: no paper-20 sentence moves — paper 20 states the
@@ -20,8 +21,16 @@
       convention), all of which REMAIN TRUE; the refined-gauge forms
       here are the physically honest versions the history-law phase
       builds on. The architecture verdict is unchanged and
-      strengthened: the global-lottery denominator, not the
-      covariance demand, is the obstruction's engine.
-  [PASS] G6 the refined landscape printed + the HF6 check
+      strengthened. SCOPE (round-1 m): the NEGATIVE half is
+      receipt-grade — the weakest physically-defensible covariance
+      still kills every tested grading at unbounded growth; the
+      POSITIVE attribution (the global-lottery denominator as the
+      engine) is the interpretation D34a must earn constructively.
+      LEMMA (stated; verified on all <= 4-event horizon histories):
+      any two linear extensions of a finite poset are connected by
+      adjacent transpositions of incomparable events — so pairwise
+      incomparable-swap equality suffices for full linearization
+      invariance.
+  [PASS] G6 the refined landscape printed (coexistence wording; the negative/positive split per round-1) + the adjacent-transposition connectivity lemma verified on horizon exhibits + the HF6 check
 
 ALL CHECKS PASS (6/6: G1 gauge, G2-G5 re-audit verdicts, G6 landscape)

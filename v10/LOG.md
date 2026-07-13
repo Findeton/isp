@@ -2201,3 +2201,30 @@ HF6: NO paper-20 sentence moves (kills stated at receipt scopes remain
 true); the architecture verdict STRENGTHENED — the global-lottery
 denominator, not the covariance demand, is the engine. Hostile round
 launched; D34a (the Harris lemma receipt) builds next.
+
+## 2026-07-13 — D33 round 1 APPLIED (3M/6m/3n, zero flips): the theorem came back STRONGER; rerun 6/6; LEDGER #155
+Report `reviews/d33-round1-hostile-review.md`. (M1, the consequential
+one) the referee's general-u symbolic rebuild shows EXACT ZERO
+survives on u ≥ 3 from incomparable pairs alone — my "asymptotic /
+density → 0" framing UNDER-claimed and used an undefined term; G4
+rewritten: the biconditional at u = 3..12 (positivity-respecting grid
+— the first rerun caught my own grid including a birth-zero point
+where the forcing degenerates, fixed with the hypothesis stated),
+the exact-zero gate (failure scale u* computed), the DENSITY corollary
+now DEFINED (#interacts/n along unbounded histories) and gated
+(geometric seed block: sum 1, mean 1, exact), and the escape kernel
+verified on EVERY register-disjoint pair equation of the horizon (727
+under the receipt's guards; the round's 1,357 counted a different
+pair domain — flagged for the delta to reconcile). (M2) G1's
+universal comparable-swap claim fixed: same-parent birth swaps are
+ABSORBED by fresh relabeling (rename ≠ reorder) — disclosed with the
+exhibit; dead code removed. (M3) G5's tautology replaced by the
+COMPUTED containment (every register-disjoint pair is state-level
+independent — 727 checked) + the class-invariance premise re-gated
+in-receipt. G6: coexistence wording (d31a stands at its stated
+convention); the engine sentence SPLIT — negative half receipt-grade
+(the weakest defensible covariance still kills every tested grading),
+positive attribution = D34a's to earn; the adjacent-transposition
+connectivity lemma stated and verified on horizon exhibits.
+FORWARD-CORRECTION at #155: #154's "SUPERSEDED by the asymptotic
+form" was wrong-shaped. Seed-independent across PYTHONHASHSEED 0/9.
