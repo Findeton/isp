@@ -2106,3 +2106,14 @@ results: the no-go complex, the instrument line + signature pair, the
 compression law. Hostile round next (fresh referee; scope: every
 number vs the terminal records; every scope-width vs #147/#150/#151;
 the single-threading discipline; the falsifiers' reproducibility).
+
+## 2026-07-13 — Paper 20 EXTERNAL USER REVIEW filed (six adoptions pinned in the triage header); paper edits HELD until the in-flight internal round lands (one integrated repair pass)
+`reviews/paper20-external-user-review.md`. The strongest item: THE
+FIXED-BUDGET DESIGN STANDARD for the aligned variant (redistribute a
+fixed interaction budget; shuffled-direction + direction-blind
+controls) — supersedes the #151 build note's weaker post-hoc
+matched-fr lesson. Also: §5 retitle (a positive test diagnosed
+confounded — not "designed negative"); the Paper-11-bridge non-test
+scope line; graph-blind (u-only) terminology; the regularity
+qualifier on "compression law"; the central-discovery paragraph
+adopted into §6.
