@@ -262,3 +262,59 @@ The notation `|h>` is not an implemented universe ledger. Each `h`-range is the 
 **Provisional verdict:** `FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY PASS`. One chosen D34b actor family can be the durable classical sector of a non-diagonal, strongly positive quantum history law while total closure satisfies the posited NSE condition and the modeled seal is stable. This closes an existence/compatibility gap only.
 
 Still open: deriving the D34b weights, target rule, interaction unitary and record basis; coherent interference between different **durably recorded** growth histories; a full timed direct-integral and infinite quantum-measure extension; an intrinsic profinite quantum architecture; dynamic adjacency/component joining; a physical seal-formation law; Lorentz cones/dimension; and selection of nature's unique member. The classical `mu` and the local quantum operations remain chosen inputs. Independent hostile review must attack QF1–QF7 before this wording can become terminal.
+
+## 13. d34c hostile round 1 (2026-07-13) — PROVISIONAL ACTOR-SEWING VERDICT REJECTED
+
+**Independent streams:** quantum mathematics `0B/3M/3m/1n`; NSE/seal `0B/4M/4m/2n`; history/locality architecture `1B/4M/3m/2n`. All reran the receipt under fresh salts and reproduced 10/10 plus SHA-256 exactly. There are zero false printed quantum numbers.
+
+**The exact core survives:** the diamond formula, rank-four Gram functional, load-bearing interference, `8->4->2` restriction, declared order gauge, Busch direct-sum theorem, unflagged/nonlinear negative controls, and the narrow support-excluded `R`-algebra check.
+
+**The bridge does not.** The C8 vectors are exactly `sqrt(mu(h))|h> tensor |psi_alpha>` with the **same** diamond branch in every kind block. The classical label never selects a quantum operation; the separately checked `k_ops`, target rows and flag tuples never enter the combined class operators. Therefore §12.4's “constructs the bridge rather than merely checking its factors,” the LOG's “not parallel factors,” and the provisional actor-family verdict are WITHDRAWN. The object is a spectator product that any classical law could carry.
+
+The round also rejects the timed width: a finite direct sum is not the missing continuous direct integral, while the untimed D34b DAGs lack an intrinsic inter-time restriction. C5 is renamed **support-excluded local receiver durability**; it does not freeze relational observables involving `R` or derive sealed holonomy. C3's path receiver must be constructed, not imposed by masking.
+
+**Honest round-1 verdict:** `EXACT DIAMOND + ABSTRACT BUSCH LIFT + SPECTATOR PRODUCT COMPATIBILITY PASS`; D34c remains open.
+
+## 14. d34c REPAIR PIN (2026-07-13; before replacement receipt) — ACTOR EVENTS MUST DO THE QUANTUM WORK
+
+The repair takes the stronger route, not the spectator downgrade. Its declared observation algebra is the **A-initiated local-ring stopping algebra through depth two**, a genuine coarse subalgebra of the D34b static-adjacency exemplar. It is not the full timed process, not an untimed `T->S` projective family, and not a direct-integral/profinite construction.
+
+### 14.1 Actual actor cylinder
+
+Start with live Ulam carriers `A,B` and preallocated inactive child slots. Enumerate A's local ring prefixes exactly:
+
+- birth `b(A,alpha_j)`, weight `1/4`, activates the next parent-local Ulam child;
+- interaction `i(A,x)`, weight `1/(4m)` for each of A's `m` eligible neighbors, with `x` an actual target and passive receiver;
+- idle `n(A)`, weight `1/2`.
+
+After birth, the neighbor count and target alternatives change. Each event carries initiator, A-local ring ordinal, kind, target/child, touched wires, shared event ID and causal predecessors. A's ring advances; a passive receiver's clock/ring does not. Depth `2->1` restriction must sum exact physical extensions, including the two `1/8` target branches after a birth.
+
+### 14.2 Event operations
+
+- **Idle:** exactly identity.
+- **Birth:** the D24 controlled rotation with `(cos,sin)=(4/5,3/5)` from A into a fresh Ulam-addressed child initialized in `|0>`; the child slot becomes active.
+- **Interaction:** a local circuit on the actual `A,target` carriers plus fresh event-local path/output ancillas. The pinned diamond's receiver is the target: `CNOT(A->target)`, an unrecorded path phase, `CZ(A,path)`, `H(path)`, and output copy. Its intermediate path stays unrecorded; its output/value is written into the interaction record on both touched actors.
+
+Thus birth/interact/idle labels select different composed class operators. The interaction's off-diagonal paths must change the later durable interaction-output law inside the same actor history; a common spectator factor cannot pass.
+
+### 14.3 Distributed flags and functional
+
+Represent the flag Hilbert space as a tensor product of actor-local mailbox bases. Birth writes one shared token on parent and child; interaction writes one shared token on initiator and receiver; idle writes only on A. The flag inner product is the product of mailbox Kronecker deltas. The token includes event ID, kind, target/child, durable quantum outcome and wire predecessor data, but excludes the unrecorded path and any global serialization number.
+
+Class branches are the actual sequential carrier vectors multiplied by square roots of the D34b local conditional weights and the factorized flag inner product. Strong positivity is therefore Gram/direct-sum, while path alternatives within one durable interaction record can interfere.
+
+### 14.4 Replacement gates
+
+1. Rebuild C3 with an explicit path receiver/copy isometry and recover the masked functional independently; gate its later support exclusion.
+2. Compute rank rather than increment it; mark C0 as a declaration scorecard and remove unused helpers.
+3. Enumerate the complete depth-one/two A-local actor cylinders, including Ulam births, changing degree, target identity, passive reception and predecessors. Recover exact masses one and `2->1` restriction.
+4. Compose the actual birth/interact/idle operations into every branch. The classical shadow after summing all quantum alternatives must equal the actor-cylinder mass for every history.
+5. Within every interaction block, reproduce the coherent-versus-recorded output signature; birth/idle blocks must contain no spectator diamond.
+6. Use factorized actor-mailbox inner products in the functional. Prove injectivity on durable physical histories modulo the deliberately unrecorded path.
+7. Gate local-degree Kraus completeness at `m=1,2` and carry the algebraic all-`m` identity.
+8. Apply the genuine second local instrument and require the full quantum functional to restrict depth `2->1` exactly.
+9. Construct a disjoint quantum actor factor and gate channel tensor factorization, remote marginal invariance, and A/P event commutation with serialization absent from flags.
+10. Scope NSE to quantum preparations in each fixed classical actor/graph sector; graph-sector superposition and the timed direct integral remain open.
+11. Check each modeled future operation separately on the quarantined receiver algebra and print a relational-observable negative control.
+
+**Maximum repair verdict:** `A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING PASS` plus the analytic finite-local-prefix induction theorem. This is a real action-level bridge on a D34b local stopping algebra, not yet the full timed actor law. A fresh three-stream hostile round and delta are mandatory.

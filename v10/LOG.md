@@ -2491,3 +2491,25 @@ factor separately green. The general theorem is finite measurable cylinder
 partitions only; no continuum |t> fiction, direct integral/infinite extension
 open. PROVISIONAL noun: FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY, not a
 derivation/selector. Hostile round attacks QF1-QF7; findings -> #167+.
+
+## 2026-07-13 — d34c round 1 REJECTS ACTOR-SEWING WIDTH; repair §14 pinned (LEDGER #167)
+Three independent streams: quantum math 0B/3M/3m/1n; NSE/seal
+0B/4M/4m/2n; architecture 1B/4M/3m/2n. All salted reruns and the
+f3a5...89db hash reproduce; zero false printed quantum numbers. C1-C7's
+core survives: exact non-diagonal diamond, rank-four Gram law, interference,
+8->4->2 restriction, Busch/NSE theorem and negative controls. C8 is REJECTED:
+its object is literally diag(mu_kind) tensor D_diamond. Kind labels never
+select quantum operations; k_ops/targets/flag tuples do not enter the class
+branches; 72->24 only marginalizes an unused iid kind. Therefore “not parallel
+factors,” “actor/history sewing,” “every finite timed cylinder,” and the
+provisional pass are withdrawn. Timed projectivity/direct integral unresolved;
+C5 narrows to support-excluded local receiver durability; C3's receiver was
+masked, not built. Honest survivor: EXACT DIAMOND + ABSTRACT BUSCH LIFT +
+SPECTATOR PRODUCT COMPATIBILITY; d34c open. Repair pinned before replacement
+code: actual A-local D34b ring prefixes depth1/2; named targets, degree 1/2,
+Ulam births, passive receptions and predecessors; idle I, D24 birth rotation,
+actual A-target diamond interaction; factorized actor mailbox flags; classical
+shadow recovery; genuine second-instrument restriction; local-degree
+completeness; explicit path receiver; disconnected quantum tensor factor and
+commutation. Scope deliberately local-stopping, not timed. Maximum noun:
+A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING + analytic finite-prefix induction.
