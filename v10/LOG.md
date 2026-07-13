@@ -1882,3 +1882,24 @@ correction (m3: #139's open-arm justification was false for motifs);
 note-d31 §7 + note-d32 §8 appended; dead line removed, fail-safe
 comment added (n2/n3). Rerun 7/7. Referee delta-verification next;
 then D32B (with the covariant cell).
+
+## 2026-07-12 — O3 delta applied: seed-independence PROVEN; O3 TERMINAL (DELTA-CLEAN per the report's clearance condition); LEDGER #145
+The delta pass (report appended by the referee): all seven repairs
+verified applied; every recomputation card-exact; my RAW exhibits
+verified entry-by-entry (different rows than the referee's S8 — both
+valid); D5b's 558 confirmed independently WITH the closed form
+558 = 1·6 + 2·36 + 4·120 and the identity argument for the 1710
+u = 5-start ii pairs. THE FINDING (Δ-m1, MINOR): the m1 repair itself
+reintroduced the d31b-M1 defect class — the RAW-kill prints rendered a
+set-union-ordered dict, so the .out was NOT byte-reproducible across
+PYTHONHASHSEED (gates 7/7 under every seed; content stable). FIXED at
+the source (delta_census iterates sorted). Δ-n1 (the u = 5 ii-identity
+sentence now in D5b's text), Δ-n2 (comp_classes guarded), Δ-n3
+("every horizon" qualified to U ≥ 3 at all sites incl. note-d31 §7 —
+U = 2 is the degenerate seed-only horizon). EVIDENCE: rerun 7/7;
+byte-identical across PYTHONHASHSEED 0 and 7; the diff against the
+cae4ed4 .out is confined to exactly the four corrected hunks (D2/D3
+dict ordering, the D5b sentence, the two D6 qualifiers). Per the
+report's stated clearance condition this converts the pass to
+DELTA-CLEAN with no further round: O3 IS TERMINAL. D32B build cleared
+(the phenomenological grid + the COVARIANT-AT-CAP cell).

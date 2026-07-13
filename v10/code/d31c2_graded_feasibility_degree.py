@@ -166,7 +166,10 @@ def delta_census(state, y, cls):
         if yy == y: st2 = s2; break
     c1, c2 = census(state, cls), census(st2, cls)
     d = {}
-    for k in set(c1) | set(c2):
+    # sorted: dict insertion (hence print) order must not consume the hash
+    # salt — the d31b-M1 defect class (LEDGER #139), caught recurring here
+    # by the O3 delta pass (Δ-m1)
+    for k in sorted(set(c1) | set(c2)):
         v = c2.get(k, 0) - c1.get(k, 0)
         if v: d[k] = v
     return d, st2
@@ -365,8 +368,9 @@ def raw_nonneg_row(reps, cls):
     strictest circuit-friendly independence reading), find a single
     all-nonnegative delta row with a positive entry: one such row alone
     contradicts Z(W+b) = Z(W) for positive weights, with NO merges and NO
-    overlap convention consumed. Deeper horizons contain these rows —
-    the negative verdicts extend a fortiori."""
+    overlap convention consumed. Every horizon U >= 3 contains these rows —
+    the negative verdicts extend a fortiori (U = 2 is the degenerate
+    seed-only horizon with no u >= 3 rows)."""
     for st in sorted(reps.values(), key=lambda s: (s[0], canon(s))):
         u = st[0] - 1
         if u < 3: continue
@@ -528,6 +532,7 @@ comp_classes = set()
 for st in reps.values():
     for op in opportunities(st): comp_classes.add(cls_COMP(st, op))
     for y, st2 in births(st):
+        if st2[0] - 1 > 5: continue   # Δ-n2: same guard as the class loop
         for op in opportunities(st2): comp_classes.add(cls_COMP(st2, op))
 wmap_comp = {cl: w_comp(cl) for cl in comp_classes}
 pos_ok = all(v > 0 for v in wmap_comp.values())
@@ -539,9 +544,13 @@ check("D5b [COMPONENT-SIZE at the HORIZON] EXISTS-candidate — the witness "
       "kernel w_i = c = 1/40, w_b(s) = (1 - (s-1)(s-2)c)/(s-1): positive, "
       "GENUINELY s-graded (w_b varies), Z == 1 identically, and exactly "
       "path-covariant on EVERY independent two-op pair of the horizon "
-      "(the same witness class works at any finite cap U with "
-      "c < 1/(U(U-1)); only unbounded u forces c = 0 — the D31A escape, "
-      "priced: c encodes the cap)", pos_ok and graded_ok and z_ok and cov_ok,
+      "(u <= 4 starts cover every in-domain non-identity pair: u = 5-start "
+      "interact-interact pairs are order-identities for ANY kernel — "
+      "interacts change no state and no class — and u = 5-start birth "
+      "pairs exit the guarded class domain; the same witness class works "
+      "at any finite cap U with c < 1/(U(U-1)); only unbounded u forces "
+      "c = 0 — the D31A escape, priced: c encodes the cap)",
+      pos_ok and graded_ok and z_ok and cov_ok,
       f"{npairs} independent pairs verified exactly; w_b(3..6) = "
       f"{w_comp(('b',3))}, {w_comp(('b',4))}, {w_comp(('b',5))}, "
       f"{w_comp(('b',6))}")
@@ -551,9 +560,10 @@ print("      D6 THE LANDSCAPE AFTER O3 [supersedes d31c C5's open arm]:")
 print("        multiplicity-insensitive + birth-inert gradings: OBSTRUCTED")
 print("          (d31c C2/C3 — d_cover, static-age, component-indicator);")
 print("        simple-graph degree: OBSTRUCTED AT THE HORIZON (D2 — and by")
-print("          the single-row + raw certificates, at EVERY horizon);")
+print("          the single-row + raw certificates, at every horizon")
+print("          U >= 3);")
 print("        distance-degree (family ii, the #139 debt O3): OBSTRUCTED AT")
-print("          THE HORIZON (D3 — same strength);")
+print("          THE HORIZON (D3 — same strength, every horizon U >= 3);")
 print("        tree-substrate motifs: OBSTRUCTED (D4 — never escaped")
 print("          birth-inertness; #139's open-arm clause was FALSE for")
 print("          motifs — corrected, see LEDGER #144);")
