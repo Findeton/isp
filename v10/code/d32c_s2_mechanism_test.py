@@ -181,7 +181,8 @@ def stats(rows):
                 fb=sum(1 for x in rows if x[5]),
                 mn=float(min(x[0] for x in rows)),
                 al=float(np.mean([x[7] for x in rows])),
-                fr=float(np.mean([x[8] for x in rows])), dmms=dmm)
+                fr=float(np.mean([x[8] for x in rows])), dmms=dmm,
+                n_mid=len(dmid))   # round-1 M2: the D32B field, restored
 
 print("[d32c the S2-mechanism test — §10 pin b6d8a9e]")
 blob = open("v10/data/d32_instrument_card_v2.json", "rb").read()
@@ -217,19 +218,34 @@ def joint_verdict(st, N):
                 > 3 * card["controls"][f"perc_N{N}"]["dhat_sd"]):
             return f"ENTERS-M{d}(z3.5,Bonf/7)"
     return "NO-BAND"
-print("      THE S2 MAP [cell -> pair | gap | verdict | mean-align | fr | "
-      ">=7]:")
+print("      THE S2 MAP [cell -> pair | gap | verdict | n_mid/12 | "
+      "mean-align | fr | >=7]  (round-1 M2: the midpoint column is a "
+      "SUBSET MEAN where n_mid < 12 — the starved regime shrinks the "
+      "maximal interval below the midpoint floor on some seeds; cells "
+      "with fb > 0 or n_mid < 12 are estimator MIXTURES, flagged *):")
+zmin = None
 for (k, pv, pi) in CELLS:
     for N in SIZES:
         st = stats(data[(k, pv, N)])
+        for d in (2, 3, 4):
+            c = card["cells"][f"d{d}_N{N}"]
+            zs = [abs(st["dmm"][0] - c["dhat_mean"]) / c["dhat_sd"],
+                  abs(st["L"] / N**(1.0/d) - c["chain_c"]) / c["chain_c_sd"],
+                  abs(st["r3"] - c["ratio3_mean"]) / c["ratio3_sd"]]
+            zmin = min(zmin, max(zs)) if zmin is not None else max(zs)
         tag = ("CONTROL k=0" if k == 0 else f"k={k} p={pv}") + f" N={N}"
-        print(f"        {tag:22s} ({st['dmm'][0]:.3f}±{st['dmm'][1]:.3f}, "
+        mix = "*" if (st["fb"] > 0 or st["n_mid"] < 12) else " "
+        print(f"        {tag:22s}{mix}({st['dmm'][0]:.3f}±{st['dmm'][1]:.3f}, "
               f"{st['dmid'][0]:.3f}±{st['dmid'][1]:.3f}) | "
               f"{st['gap'][0]:+.3f}±{st['gap'][1]:.3f} | "
-              f"{joint_verdict(st, N):22s} | {st['al']:+.3f} | "
-              f"{st['fr']:.3f} | {st['seven']:.1f}")
+              f"{joint_verdict(st, N):22s} | {st['n_mid']}/12 | "
+              f"{st['al']:+.3f} | {st['fr']:.3f} | {st['seven']:.1f}")
+ok3 = zmin is not None and zmin > 3.5
 check("C3 the map printed with verdicts (card-v2.2 joint rule, z = 3.5, "
-      "Bonferroni/7), per-cell alignment (CF2) and census column", True)
+      "Bonferroni/7), per-cell alignment (CF2), census column, n_mid, and "
+      "mixture flags; the MINIMUM JOINT ENTRY THRESHOLD carried (round-1: "
+      "NO-BAND is bar-independent)", ok3,
+      f"min over cells x d of the max leg-z = {zmin:.1f} sigma")
 
 st0 = {N: stats(data[(0, 0.0, N)]) for N in SIZES}
 b512 = (1.908, 0.215)   # the D32B anchor cell, fresh family (LEDGER #147)
@@ -265,9 +281,16 @@ if lift_fired:
         dzc = (stc["dmm"][0] - stz["dmm"][0]) / sec
         ok_rep = dzc > 2.0 and mono
         all_conf &= ok_rep
+        mixnote = ("" if (stats(data[(k, pv, 512)])["fb"] == 0
+                          and stc["fb"] == 0)
+                   else " [ESTIMATOR-MIXTURE cell — round-1 M2: the "
+                        "discovery/confirmation pair may mix whole-order "
+                        "and interval readings; interpret via the map's "
+                        "flags]")
         conf_txt.append(f"k={k},p={pv}: discovery dz = {dz:.2f}, "
                         f"confirmation dz = {dzc:.2f}, kappa-monotone = "
-                        f"{mono} -> {'CONFIRMED-LIFT' if ok_rep else 'UNREPLICATED'}")
+                        f"{mono} -> {'CONFIRMED-LIFT' if ok_rep else 'UNREPLICATED'}"
+                        + mixnote)
     check("C5 THE LIFT TEST (pre-registered bar: > 2x pooled SE above the "
           "control + kappa-monotonicity + FRESH-FAMILY replication per the "
           "45e/48d discipline)", True, "; ".join(conf_txt))
