@@ -2049,3 +2049,30 @@ pre-registration failure of the BAR, not of the runs — recorded as
 such); (3) the design lesson: any future lift bar must compare at
 MATCHED realized interaction fraction. Hostile round next with the
 confound as the central adjudication.
+
+## 2026-07-13 — D32C round 1 LANDED (3 MAJOR / 4 MINOR / 6 NIT; zero flips; zero false numbers): the starvation confound CONFIRMED both directions on referee-built evidence; repairs QUEUED
+Report: `reviews/d32c-round1-hostile-review.md`. Byte-identical rerun;
+every statistic reproduced (clean-room worst |Δ| = 2.75e-12). THE
+ADJUDICATION: (a) the referee BUILT the matched-fr control the bar
+lacked — it predicts 101–126% of every live cell's d̂_MM elevation:
+the ENTIRE lift is the fr collapse; fr follows the mean-field law
+fr = 2p·0.276^κ/(1 + 2p·0.276^κ) (control 2/3 exactly; the p = 0
+cells interact ONLY through the seed pair — exact); (b) the residual
+at matched fr EXISTS and is NEGATIVE at all six cells (−0.02..−0.55,
+Stouffer ≈ −4.8) — ANTI-LIFT, decomposed to the cross-clan seed-pair
+channel; the family cannot express S² geometry in bulk beyond the
+scalar 0.276^κ. NO-BAND is bar-independent (zmin = 11.2σ — supplied;
+the receipt dropped it, owed). THE THREE MAJORS: (M1) #149's campaign
+sentence RE-WIDENED the #147-WITHDRAWN covariance claim ("neither...
+horizon-covariance..." — #147 had scoped that to the priced coupling
+only) and "the one curve" is measurably approximate — #150
+forward-corrects; (M2) the starved regime BROKE the midpoint column
+(subset means down to 4/12 seeds; the n_mid field D32B carried was
+DELETED — "machinery verbatim" false exactly there; k=1,p=½,512 is a
+9/12 mixture whose discovery/confirmation pair mixed estimators, dz
+5.33 vs 31.01) — receipt repair + rerun; (M3) the confound was
+FORESEEABLE pre-run and matched fr is UNREACHABLE in-family (max
+0.356/0.133 at p = 1 vs control 0.667) — the pinned design lesson
+cannot be executed by an in-family successor; CF4's ALIGNED variant
+is the one arm that runs at healthy fr (the executable successor,
+named). Repairs queued; delta next; #150 at closure.
