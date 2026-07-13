@@ -2250,3 +2250,29 @@ delta's stated condition this is DELTA-CLEAN with no further round:
 D33 IS TERMINAL. D34a (the Harris lemma receipt) builds next on the
 adjudicated conventions (the event-poset comparability, the canon,
 the transposition lemma now swept, the escape-kernel equation domain).
+
+## 2026-07-13 — D34a GREEN 6/6 (first run + hygiene pass): THE FIRST HISTORY-LAW OBJECT (LEDGER #157)
+`code/d34a_harris_lemma_exact.py` → `data/...out` (pin note-d33 §2,
+34e68e2; the D33-adjudicated conventions). THE OBJECT: μ(H) = Π_e
+q(e | causal-past(e)) with the fixed-budget local law (birth 1/4;
+interact-total 1/4 split equally over unsealed collar neighbors —
+REDISTRIBUTION per the #152 standard; idle absorbs; initiator model;
+idles recorded as local events; R sealed). RESULTS, all exact at the
+law level: H1 linearization-independence — 2,872 multi-extension
+histories, every extension product a singleton, PLUS the factor-level
+lemma (incomparable adjacent swaps change no factor; with #156's
+swept transposition lemma this closes full invariance at depth ≤ 4);
+H2 restriction consistency — 1,448 record-extension sums exactly 1;
+H3 persistence — law-level masses 1/4, 1/4 size-independent BY
+CONSTRUCTION [exact] + race(400) births 109 / interacts 111 / idles
+180 [MEASURED, seed 70260713] (HF3 open beyond); H4 no-cap + remote
+locality — q(interact) = 1/8 exactly unchanged under a causally
+unrelated cluster; H5 THE LOTTERY CONTRAST [the positive engine half,
+EARNED]: the old global lottery on the SAME causal history gives
+1/320 vs 1/440 along two gauge-equivalent linearizations (NOT a law
+on causal histories at all) and dilutes the local conditional 1/8 →
+1/11 under a remote birth. H6 scorecard: conditions (1)(2)(3)(4)(6)
+receipt-grade at this depth; (5) NSE and (7) the quantum lift = d34b,
+named open. Hygiene: the H5 exploratory dead-ends removed pre-commit
+(the D33-round dead-code class); seed-independent across
+PYTHONHASHSEED 0/17. Hostile round launched (findings → #158).
