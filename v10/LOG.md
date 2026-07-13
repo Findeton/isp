@@ -1686,3 +1686,39 @@ deciding P2 statistic becomes canonical-Spearman × invariant-truth
 pooled over 3 fresh sprinklings × 40 pairs (bar 0.60 unchanged;
 bitwise replay of the original 20-pair stream gated; vacancy
 admissible); card v2.1 supersedes b5e77c0c3196fbd2 at closure.
+
+## 2026-07-12 — D32A delta rerun GREEN 6/6: all ten round-1 repairs applied; both spatial rows CARD-CARRIED under the DECLARED conventions; card v2.1 FROZEN
+`code/d32a_card_v2_and_anchor.py` (rewritten per note §6) →
+`data/d32_instrument_card_v2.json` FROZEN at sha256/16 0d33f81d67486a29
+(schema v2.1; SUPERSEDES b5e77c0c3196fbd2; generator sha
+2112030a1e991fba recorded IN the card per pin (a)'s dropped clause —
+m1). THE M1 RESOLUTION BY DATA: the deciding statistic (canonical
+tie-averaged Spearman vs INVARIANT proper distance, pooled over 3
+fresh sprinklings × 40 pairs, bar 0.60 unchanged) reads d3 = 0.814
+[CI95 0.727–0.879] and d4 = 0.787 [CI95 0.709–0.846] on 120 pairs
+each, P(<bar) = 0.000 both — BOTH CARD-CARRIED; the review's d4 flip
+scenario (0.584–0.641 on the original 20 pairs) was small-sample
+noise; the §6 advisory rule is NOT triggered. The attempt-2 stream
+replayed BITWISE (guard green; legacy rho equal to the frozen 12-digit
+values), and the 2×2 convention audit is receipt-carried (d3:
+0.859/0.849/0.798/0.814; d4: 0.717/0.798/0.583/0.641 — matching the
+review's scratch numbers to ±0.001, their driver's rank-tie
+implementation detail; the receipt's audit is canonical from here).
+Frame readings disclosed in-card (0.824/0.786). m3's F2 drift row:
+naive-min = d3: 6.80/7.85/9.25, d4: 4.55/5.40/5.80 across N =
+256/512/1024 — the naive-min GROWS with density: measured, disclosed,
+NOT a stable proxy (F2 evidence). P4 carries seed spreads (d_MM =
+1.756 ± 0.101, d_mid = 1.630 ± 0.127, paired diff 0.126 ± 0.150, SE
+0.047, concordance margin 0.50 SE) with the §6-corrected F3 sentence
+inline. P5 census record per §6: ordered 1.00 ± 1.10 per web, range
+0–4; unordered 4.17 ± 1.44 disclosed (matches the review's predicted
+value exactly); the D32B ensemble pinned in the grower docstring. P6
+audits ALL decided verdicts (8 margins; the exclusion margin +0.1239 =
+the review's by-hand 0.123941). P1 relabeled (serialization-idempotence
++ state-leakage recompute, d2_N256 rebuilt byte-equal; cross-process
+byte-identity credited to the round's independent rerun); card written
+only on pass (n4); EPS/Q vestige removed (n2); N from M.shape (n5);
+tally taxonomy (n1). Cell/control stats byte-consistent with v2 (P3
+prints identical — the card change is additive plus the spatial
+schema). Next: LEDGER #141, commit, reviewer delta-verification;
+D32B opens only after that pass.
