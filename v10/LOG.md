@@ -1842,3 +1842,43 @@ degree profiles, age-degree products), deeper horizons, O2 (the
 unified positivity-collapse lemma — two new instances here), and O7
 (order-as-recorded-history reopens the whole axis). Hostile round
 launched (fresh referee — theorem-grade receipt). LEDGER #143.
+
+## 2026-07-12 — O3 round 1 APPLIED (1 MAJOR / 4 MINOR / 4 NIT; zero gate flips): the component-size scope corrected (#144); three negatives STRENGTHENED; rerun 7/7
+Report: `reviews/d31c2-o3-round1-hostile-review.md` (fresh referee,
+full clean-room rebuild — enumeration confirmed as A000081 rooted
+trees 1/2/4/9, u=6 successors 20; every receipt count and both pair
+certificates re-derived verbatim; FM/rref audited sound; discipline
+verified). THE MAJOR (M1): COMPONENT-SIZE is horizon-FEASIBLE — the
+referee exhibited the witness kernel (w_i = c = 1/40 < 1/(U(U−1)),
+w_b(s) = (1−(s−1)(s−2)c)/(s−1), Z ≡ 1), machine-verified on all 2268
+independent two-op pairs (their engine; u ≤ 5 starts) — the
+obstruction holds AT UNBOUNDED GROWTH ONLY (the D5 reduction to D31A
+is sound at that scope; D31A's own A5 prints the bounded escape).
+#143's headline "ALL FOUR OBSTRUCTED at the u ≤ 5 horizon" and this
+LOG's earlier "EXHAUSTED-NEGATIVE at this horizon" were FALSE AS
+WRITTEN for that family (the same #143 entry's "at unbounded growth"
+landscape sentence was correct) — FORWARD-CORRECTED at #144; the §7(4)
+fork condition technically fired and is RESOLVED at note-d32 §8: the
+witness is the priced bounded-growth escape (c encodes the cap = a
+finite record universe — extra physics against the pinned
+unbounded-growth grammar), so D32B stays PHENOMENOLOGICAL by argument;
+ADOPTED: one honestly-labeled COVARIANT-AT-CAP comparison cell (the
+witness kernel) joins the D32B grid. THE STRENGTHENINGS (m1, now
+receipt-gated): DEG and DDEG are SINGLE-ROW infeasible post-merge
+(all-nonnegative deg-1-parent birth rows — the d31c C2 mechanism, O2's
+instance data) AND raw/disjoint-only single-row killed (no merges, no
+overlap convention consumed) ⇒ convention-robust,
+closure-depth-independent, horizon-monotone (a fortiori at every
+deeper horizon). Repairs applied: D5 re-scoped ("AT UNBOUNDED GROWTH
+ONLY"); D5b NEW GATE — the witness receipt-verified (558 pairs from
+u ≤ 4 starts, successor classes in-domain; the review's 2268 included
+u = 5 starts — scope difference disclosed, both exact); D1 gates BOTH
+halves of L1's premise (class-invariance of the disjoint interact —
+n1); phantom u=6 classes guarded out of the class set (honest counts:
+DEG 6, DDEG 3 merged — m2; DCAP docstring corrected); D6 limits scoped
+to the EXISTS side (m4: negatives are closure-depth-independent and
+horizon-monotone); note-d31 §5 carries the bracketed motif-clause
+correction (m3: #139's open-arm justification was false for motifs);
+note-d31 §7 + note-d32 §8 appended; dead line removed, fail-safe
+comment added (n2/n3). Rerun 7/7. Referee delta-verification next;
+then D32B (with the covariant cell).

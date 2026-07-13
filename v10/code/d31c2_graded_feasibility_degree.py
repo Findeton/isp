@@ -30,7 +30,15 @@ Conventions (pinned):
 - degree(v) = neighbor count in the simple graph, SEALED NEIGHBORS
   INCLUDED (graph-intrinsic); d_cover(y,x) = graph distance (paths
   through any node, sealed included), capped at 2; common-neighbor
-  count capped at 1; DCAP = 5 (no capping distortion at this horizon).
+  count capped at 1; DCAP = 5 — exact on the class-collection domain
+  (guarded to u <= 5 per round-1 m2; the cap WOULD bind at deg-6
+  u = 6 successors, which are excluded from the class set).
+Round-1 repairs applied (reviews/d31c2-o3-round1-hostile-review.md):
+the component-size verdict scoped to UNBOUNDED GROWTH with the
+horizon-EXISTS witness receipt-verified (D5b); minimal single-row
+certificates + disjoint-only robustness gated (in D2/D3); the
+class-invariance half of L1's premise gated (D1); limits re-scoped
+to the EXISTS side (D6).
 Gates D1-D6; exit 1 on any failure.
 """
 from fractions import Fraction as F
@@ -135,6 +143,10 @@ def cls_MOTIF(state, op):
     _, y, x = op
     return ('i', min(dist(state, y, x), 2), min(common_nbrs(state, y, x), 1))
 
+def cls_COMP(state, op):
+    s = state[0]        # component size = register count (all states connected)
+    return ('b', s) if op[0] == 'b' else ('i', s)
+
 def opportunities(state):
     n, _ = state
     ops = [('b', y) for y in range(1, n)]
@@ -231,7 +243,9 @@ def positive_solution(eqs, nvar):
                 w[j] = vals[free.index(j)]
             if w[j] <= 0: okv = False; break
         if okv: return True, w
-    return True, None   # feasible by FM; witness search inconclusive
+    # round-1 n3: this (True, None) fallback makes a genuinely feasible
+    # family print a FAILED gate (no witness found) — fail-safe direction
+    return True, None
 
 def _witness_grids(nf):
     from itertools import product as prod
@@ -258,6 +272,7 @@ def build_system(reps, cls):
     for st in reps.values():
         for op in opportunities(st): classes.add(cls(st, op))
         for y, st2 in births(st):
+            if st2[0] - 1 > 5: continue   # round-1 m2: no phantom u=6 classes
             for op in opportunities(st2): classes.add(cls(st2, op))
     classes = sorted(classes)
     idx = {c: i for i, c in enumerate(classes)}
@@ -321,7 +336,7 @@ def build_system(reps, cls):
 
 def verify_covariance(reps, cls, wmap):
     """Direct check: every independent 2-op pair at every horizon state,
-    both orders, exact normalized products equal."""
+    both orders, exact normalized products equal. Returns (ok, bad, npairs)."""
     def Z(st):
         return sum(wmap[cls(st, op)] for op in opportunities(st))
     def step(st, op):
@@ -329,19 +344,39 @@ def verify_covariance(reps, cls, wmap):
             for y, s2 in births(st):
                 if y == op[1]: return s2
         return st
+    npairs = 0
     for st in reps.values():
         if st[0] - 1 >= 5: continue
         ops = opportunities(st)
         for i1 in range(len(ops)):
             for i2 in range(i1 + 1, len(ops)):
                 o1, o2 = ops[i1], ops[i2]
-                if o1[0] == 'b' and o2[0] == 'b' and o1[1] == o2[1]: continue
                 s1, s2 = step(st, o1), step(st, o2)
                 if canon(step(s1, o2)) != canon(step(s2, o1)): continue
+                npairs += 1
                 lhs = (wmap[cls(st, o1)] / Z(st)) * (wmap[cls(s1, o2)] / Z(s1))
                 rhs = (wmap[cls(st, o2)] / Z(st)) * (wmap[cls(s2, o1)] / Z(s2))
-                if lhs != rhs: return False, (st, o1, o2)
-    return True, None
+                if lhs != rhs: return False, (st, o1, o2), npairs
+    return True, None, npairs
+
+def raw_nonneg_row(reps, cls):
+    """Round-1 m1: the ROBUSTNESS probe — in RAW (unmerged) classes, using
+    only u >= 3 births (each justified by a DISJOINT interact, the
+    strictest circuit-friendly independence reading), find a single
+    all-nonnegative delta row with a positive entry: one such row alone
+    contradicts Z(W+b) = Z(W) for positive weights, with NO merges and NO
+    overlap convention consumed. Deeper horizons contain these rows —
+    the negative verdicts extend a fortiori."""
+    for st in sorted(reps.values(), key=lambda s: (s[0], canon(s))):
+        u = st[0] - 1
+        if u < 3: continue
+        for y, st2 in births(st):
+            if st2[0] - 1 > 5: continue
+            d, _ = delta_census(st, y, cls)
+            if d and all(v >= 0 for v in d.values()) \
+                 and any(v > 0 for v in d.values()):
+                return st, y, d
+    return None
 
 print("[d31c2 O3 — the open-family exact search (degree / distance-degree /")
 print("      motif / component-size); normalized stationary class-graded")
@@ -353,17 +388,29 @@ by_u = {}
 for st in reps.values(): by_u.setdefault(st[0] - 1, []).append(st)
 ok1 = all(connected(st) for st in reps.values())
 disj = True
+inv = True
 for st in reps.values():
     u = st[0] - 1
     if u < 3: continue
-    for y in range(1, st[0]):
+    for y, st2 in births(st):
         found = any(op[0] == 'i' and y not in (op[1], op[2])
                     for op in opportunities(st))
         disj &= found
-ok1 &= disj
-check("D1 the horizon enumerated (states per u printed); ALL states "
-      "connected (the component-size reduction's premise); at every u >= 3 "
-      "state every birth has a DISJOINT interact (Layer 1's premise)", ok1,
+        if st2[0] - 1 > 5: continue
+        # round-1 n1: the load-bearing half of L1's premise — the DISJOINT
+        # interact's class is UNCHANGED by the birth (all three
+        # elimination-family class maps), gated exhaustively
+        for fam in (cls_DEG, cls_DDEG, cls_MOTIF):
+            for op in opportunities(st):
+                if op[0] == 'i' and y not in (op[1], op[2]):
+                    inv &= (fam(st, op) == fam(st2, op))
+ok1 &= disj and inv
+check("D1 the horizon enumerated (states per u printed; A000081 rooted-tree "
+      "counts); ALL states connected (the component-size reduction's "
+      "premise); at every u >= 3 state every birth has a DISJOINT interact "
+      "AND that interact's class is UNCHANGED by the birth for all three "
+      "elimination families — BOTH halves of Layer 1's premise gated "
+      "(round-1 n1)", ok1,
       "u->count: " + ", ".join(f"{u}:{len(v)}" for u, v in sorted(by_u.items())))
 
 # D2/D3: the two elimination families
@@ -384,24 +431,44 @@ for name, cls, gate in (("DEG (simple-graph degree)", cls_DEG, "D2"),
                     cert = (exhibits[a], exhibits[b], merged[nz[0][0]])
                     break
             if cert: break
+        # round-1 m1: the MINIMAL certificate — a single all-nonnegative
+        # merged row (one equation alone kills positivity) — and the
+        # convention-robustness probe (raw classes, disjoint-only pairs)
+        minrow = next(((ex, {k: v for k, v in zip(merged, r) if v != 0})
+                       for r, ex in zip(rows, exhibits)
+                       if all(x >= 0 for x in r) and any(x > 0 for x in r)),
+                      None)
+        rawrow = raw_nonneg_row(reps, cls)
+        okg = (minrow is not None) and (rawrow is not None)
         detail = (f"{len(merged)} merged classes (from {len(merges)} forced "
                   f"merges), {len(rows)} delta equations "
                   f"({skipped} unresolved seed rows skipped — sound); "
                   f"INFEASIBLE for positive weights: {wit}")
         if cert:
             (stA, yA, _), (stB, yB, _), zc = cert
-            detail += (f"; certificate pair: births at u = {stA[0]-1} vs "
-                       f"u = {stB[0]-1} webs force merged class {zc} = 0, "
-                       f"then positivity dies")
+            detail += (f"; pair certificate: births at u = {stA[0]-1} vs "
+                       f"u = {stB[0]-1} webs force merged class {zc} = 0")
+        if minrow:
+            (stM, yM, _), nzM = minrow
+            detail += (f"; MINIMAL single-row kill (u = {stM[0]-1} birth): "
+                       f"Delta = {nzM} >= 0 with positive mass — the d31c "
+                       f"C2 mechanism post-merge (O2 instance data)")
+        if rawrow:
+            stR, yR, dR = rawrow
+            detail += (f"; RAW disjoint-only single-row kill at u = "
+                       f"{stR[0]-1}: {dR} — the verdict needs NO merges and "
+                       f"NO overlap convention; deeper horizons contain "
+                       f"these rows (a fortiori)")
         check(f"{gate} [{name}] VERDICT: OBSTRUCTION-instance — the merged "
               f"covariance system (Layer 1 Z-invariance + Layer 2 forced "
               f"class-merges) admits NO positive solution on the horizon "
-              f"(exact Fourier-Motzkin)", True, detail)
+              f"(exact Fourier-Motzkin); minimal + convention-robust "
+              f"certificates gated (round-1 m1)", okg, detail)
     else:
         wmap = {c2: (wit[merged.index(rep_of[c2])] if wit else None)
                 for c2 in rep_of}
-        okv, bad = (verify_covariance(reps, cls, wmap) if wit
-                    else (False, None))
+        okv, bad, _ = (verify_covariance(reps, cls, wmap) if wit
+                       else (False, None, 0))
         wtxt = ("sample " + ", ".join(f"{c}={v}" for c, v in
                 zip(merged, wit)) if wit else "witness search inconclusive")
         check(f"{gate} [{name}] VERDICT: EXISTS-candidate — a positive "
@@ -434,38 +501,84 @@ check("D4 [MOTIF (distance x common-neighbor)] VERDICT: OBSTRUCTED by the "
       "RESOLVED-OBSTRUCTED (they never escaped birth-inertness)")
 
 # D5: COMP — the connectivity reduction (component size == n == u + 1 on
-# every reachable state, so the grading is a function of u alone)
+# every reachable state, so the grading is a function of u alone).
+# Round-1 M1: the obstruction holds AT UNBOUNDED GROWTH ONLY — at any
+# bounded horizon the family is FEASIBLE (D5b exhibits the witness).
 comp_is_u = all(connected(st) for st in reps.values())
-check("D5 [COMPONENT-SIZE] VERDICT: OBSTRUCTED-BY-REDUCTION — every "
-      "reachable state is connected (D1), so component size == register "
-      "count == u + 1 on the whole grammar: the grading is u-only == the "
-      "D31A graph-blind class, and the A-theorem (birth-positive stationary "
-      "path-covariant graph-blind => pure birth) kills interactions; "
-      "disconnected substrates are OUT OF HORIZON (no op disconnects)",
-      comp_is_u)
+check("D5 [COMPONENT-SIZE] VERDICT: OBSTRUCTED AT UNBOUNDED GROWTH ONLY "
+      "(round-1 M1 scope) — every reachable state is connected (D1), so "
+      "component size == register count == u + 1 on the whole grammar: the "
+      "grading is u-only == the D31A graph-blind class, and the A-theorem "
+      "(birth-positive stationary path-covariant graph-blind => pure birth) "
+      "kills interactions AS u GROWS WITHOUT BOUND; at every FINITE horizon "
+      "the family is feasible (D5b); disconnected substrates are OUT OF "
+      "HORIZON (no op disconnects)", comp_is_u)
 
-# D6: the landscape, hardened
+# D5b: the horizon-EXISTS witness (round-1 M1 — the pin's dichotomy
+# honored: EXISTS-candidate at the horizon + obstructed at unbounded
+# growth). The witness is EXACTLY D31A's priced bounded-growth escape:
+# c must know the size cap U (c < 1/(U(U-1))) — a size-capped record
+# universe, extra physics under the program's unbounded-growth grammar.
+C0 = F(1, 40)                       # < 1/(U(U-1)) at U = 5
+def w_comp(cl):
+    if cl[0] == 'i': return C0
+    s = cl[1]
+    return (1 - (s - 1) * (s - 2) * C0) / (s - 1)
+comp_classes = set()
+for st in reps.values():
+    for op in opportunities(st): comp_classes.add(cls_COMP(st, op))
+    for y, st2 in births(st):
+        for op in opportunities(st2): comp_classes.add(cls_COMP(st2, op))
+wmap_comp = {cl: w_comp(cl) for cl in comp_classes}
+pos_ok = all(v > 0 for v in wmap_comp.values())
+graded_ok = len({wmap_comp[cl] for cl in comp_classes if cl[0] == 'b'}) > 1
+z_ok = all(sum(wmap_comp[cls_COMP(st, op)] for op in opportunities(st)) == 1
+           for st in reps.values())
+cov_ok, bad_c, npairs = verify_covariance(reps, cls_COMP, wmap_comp)
+check("D5b [COMPONENT-SIZE at the HORIZON] EXISTS-candidate — the witness "
+      "kernel w_i = c = 1/40, w_b(s) = (1 - (s-1)(s-2)c)/(s-1): positive, "
+      "GENUINELY s-graded (w_b varies), Z == 1 identically, and exactly "
+      "path-covariant on EVERY independent two-op pair of the horizon "
+      "(the same witness class works at any finite cap U with "
+      "c < 1/(U(U-1)); only unbounded u forces c = 0 — the D31A escape, "
+      "priced: c encodes the cap)", pos_ok and graded_ok and z_ok and cov_ok,
+      f"{npairs} independent pairs verified exactly; w_b(3..6) = "
+      f"{w_comp(('b',3))}, {w_comp(('b',4))}, {w_comp(('b',5))}, "
+      f"{w_comp(('b',6))}")
+
+# D6: the landscape, hardened (round-1 m4: limits scoped to the EXISTS side)
 print("      D6 THE LANDSCAPE AFTER O3 [supersedes d31c C5's open arm]:")
 print("        multiplicity-insensitive + birth-inert gradings: OBSTRUCTED")
 print("          (d31c C2/C3 — d_cover, static-age, component-indicator);")
-print("        simple-graph degree: DECIDED ABOVE (D2);")
-print("        distance-degree (family ii, the #139 debt O3): DECIDED (D3);")
-print("        tree-substrate motifs: OBSTRUCTED (D4 — never escaped");
-print("          birth-inertness);")
-print("        component-size: OBSTRUCTED-BY-REDUCTION (D5 -> D31A);")
+print("        simple-graph degree: OBSTRUCTED AT THE HORIZON (D2 — and by")
+print("          the single-row + raw certificates, at EVERY horizon);")
+print("        distance-degree (family ii, the #139 debt O3): OBSTRUCTED AT")
+print("          THE HORIZON (D3 — same strength);")
+print("        tree-substrate motifs: OBSTRUCTED (D4 — never escaped")
+print("          birth-inertness; #139's open-arm clause was FALSE for")
+print("          motifs — corrected, see LEDGER #144);")
+print("        component-size: OBSTRUCTED AT UNBOUNDED GROWTH ONLY (D5 ->")
+print("          D31A); EXISTS at every finite horizon (D5b — the priced")
+print("          bounded-growth escape, c encodes the cap);")
 print("        none-absorbing: bounded-domain only (d31c C4 / #139 M2);")
 print("        K_flat teleological: horizon-dependent (D28b R5).")
-print("      RECONNAISSANCE LIMITS: the horizon is u <= 5, two-op")
-print("      covariance closure, the four pinned class maps, normalized")
-print("      stationary kernels; richer gradings (multi-radius degree")
-print("      profiles, age-degree products) and deeper horizons are NOT")
-print("      decided here. The O7 fork stands: all of this presumes the")
-print("      covariance quotient is physical (accretion order = gauge);")
-print("      if order is recorded history, the whole axis re-opens.")
-check("D6 the landscape printed with limits + the O7 pointer", True)
+print("      SCOPE OF THE LIMITS (round-1 m4): the u <= 5 horizon and the")
+print("      two-op closure weaken ONLY exists-side claims — every two-op")
+print("      equation is a NECESSARY condition of full path-covariance, so")
+print("      the three negative verdicts are closure-depth-independent and")
+print("      horizon-monotone (deeper systems contain these rows; MOTIF's")
+print("      inertness is a pendant-vertex lemma at all sizes). What is NOT")
+print("      decided here: richer gradings (multi-radius degree profiles,")
+print("      age-degree products) and the exists side beyond u <= 5. The O7")
+print("      fork stands: all of this presumes the covariance quotient is")
+print("      physical (accretion order = gauge); if order is recorded")
+print("      history, the whole axis re-opens.")
+check("D6 the landscape printed with EXISTS-side-scoped limits + the O7 "
+      "pointer", True)
 
 print()
 total = PASS + FAIL
 print(f"ALL CHECKS PASS ({PASS}/{total}: D1 structural, D2-D5 verdicts, "
-      f"D6 print)" if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
+      f"D5b the horizon witness, D6 print)"
+      if FAIL == 0 else f"FAILURES: {FAIL}/{total}")
 if FAIL: raise SystemExit(1)
