@@ -2276,3 +2276,28 @@ receipt-grade at this depth; (5) NSE and (7) the quantum lift = d34b,
 named open. Hygiene: the H5 exploratory dead-ends removed pre-commit
 (the D33-round dead-code class); seed-independent across
 PYTHONHASHSEED 0/17. Hostile round launched (findings → #158).
+
+## 2026-07-13 — D34a round 1 APPLIED (3M/6m/3n; zero false numbers, 1 false printed sentence + 3 false comments — all mine): #157 FORWARD-CORRECTED; rerun 7/7; LEDGER #158
+Report `reviews/d34a-round1-hostile-review.md`. THE CORRECTION: what
+exists at receipt grade is THE COVARIANT LOCAL WEIGHT SYSTEM — the
+DECISION HALF of a Harris factorization — not yet a measure. (M1) the
+draft H1 was VACUOUS (order entered only as multiplication sequence;
+the lottery passed it 2,872/2,872) → THE REAL GATE: resequence-and-
+recompute, 10,608 cases (matching the referee count exactly), mu
+invariant in all, THE LOTTERY AS FAILING CONTROL (fails 4,900). (M2)
+the printed "(restriction)_* mu_{n+1} = mu_n" was FALSE: the flat
+pushforward = |present|·mu (gated); Sigma mu over depth-1 = 2 (not 1)
+— reception placements are UNPRICED; only the per-record telescope
+holds (gated). (M3) THE RACE DOES NOT SAMPLE mu and the uniform actor
+draw is NOT gauge (H2b, owned): two linearizations of ONE causal
+history carry race probabilities at ratio 3/4 while mu = 1/128 at
+both — the deleted census denominator RE-ENTERS as 1/|present| in the
+actor layer (the dilution disease RELOCATED, not cured); the "gauge
+choice only" comment was false (fixed); HF2 undischarged. Minors:
+the remote sweep systematic (278 factors exactly unchanged); H6 at
+honest width. WHAT SURVIVES (referee-certified beyond my gates):
+canon-constancy of mu on all 2,926 classes; the 19,054-factor
+independent rebuild; the 18,618-case remote sweep; H5's lottery
+conviction UNCHANGED. d34b IS NOW THE MEASURE-COMPLETING STEP: the
+exponential-clock construction (reception placement priced by local
+time) + NSE + the quantum lift. Rerun 7/7, seeds 0/23 byte-identical.

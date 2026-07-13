@@ -127,33 +127,59 @@ def enumerate_histories(max_events, actors=('A', 'B')):
 
 HISTS = enumerate_histories(4)
 
-# H1: linearization-independence (the Harris lemma at finite depth)
+# H1 (round-1 M1: the draft gate was VACUOUS — mu_along never used the
+# order except as multiplication sequence, and the LOTTERY passed it
+# 2,872/2,872. The REAL gate: RESEQUENCE-AND-RECOMPUTE — rebuild the
+# act list in each linear extension's order, recompute the poset and
+# every factor from the resequenced list; the lottery rides along as
+# the FAILING CONTROL.)
+def mu_of(acts):
+    pred = event_poset(acts)
+    p = F(1)
+    for j in range(len(acts)):
+        p *= q_local(acts, pred, j)
+    return p
+def lottery_prob(acts, j):
+    """The OLD architecture: the global sequential lottery (w_none = 1,
+    w_birth = U, w_collar = |adjacent unsealed ordered pairs|), evaluated
+    on the FULL state at step j (everything before j in the given order)."""
+    A = {'R': {'A'}, 'A': {'R', 'B'}, 'B': {'A'}}
+    for op in acts[:j]:
+        if op[0] == 'b':
+            A.setdefault(op[1], set()).add(op[2])
+            A[op[2]] = {op[1]}
+    uns = sorted(r for r in A if r != 'R')
+    U = len(uns)
+    pairs = [(y, x) for y in uns for x in A[y] if x != 'R']
+    w_tot = 1 + U + len(pairs)
+    return F(1, w_tot)
+def lottery_of(acts):
+    p = F(1)
+    for j in range(len(acts)):
+        p *= lottery_prob(acts, j)
+    return p
 ok1 = True
-nchecked = 0
-worst = None
+nres = 0
+lot_fail = 0
 for h in HISTS:
     if len(h) < 2: continue
     exts = linear_extensions(h)
     if len(exts) < 2: continue
-    vals = {mu_along(h, e) for e in exts}
-    nchecked += 1
-    ok1 &= (len(vals) == 1)
-# the factor-level lemma: an adjacent incomparable swap changes no factor
-fac_ok = True
-for h in HISTS:
-    pred = event_poset(h)
-    for k in range(len(h) - 1):
-        if k in pred[k + 1] or (k + 1) in pred[k]: continue
-        # swap positions k, k+1 in the identity order
-        o1 = list(range(len(h))); o1[k], o1[k + 1] = o1[k + 1], o1[k]
-        fac_ok &= (mu_along(h, list(range(len(h)))) == mu_along(h, o1))
-check("H1 LINEARIZATION-INDEPENDENCE [the Harris lemma, exact]: mu(H) is "
-      "identical along EVERY linear extension of every enumerated history "
-      "(each event's conditional depends on its causal past only), and "
-      "adjacent incomparable swaps change NO factor — with the #156-swept "
-      "transposition lemma this closes full linearization invariance",
-      ok1 and fac_ok, f"{nchecked} multi-extension histories, all "
-      f"extension-products singletons; success condition (1) at this depth")
+    base = mu_of(h)
+    lot_base = lottery_of(h)
+    for e in exts:
+        h2 = [h[k] for k in e]
+        nres += 1
+        ok1 &= (mu_of(h2) == base)
+        if lottery_of(h2) != lot_base: lot_fail += 1
+check("H1 LINEARIZATION-INDEPENDENCE, THE REAL GATE (round-1 M1): mu "
+      "RECOMPUTED from the RESEQUENCED act list equals mu on the original "
+      "for every linear extension of every enumerated history; the GLOBAL "
+      "LOTTERY runs the same gate as the FAILING CONTROL (the draft's "
+      "order-argument gate was vacuous — the lottery passed it — "
+      "disclosed)", ok1 and lot_fail > 0,
+      f"{nres} resequence-and-recompute cases, mu invariant in all; the "
+      f"lottery control fails {lot_fail} of them")
 
 # H2: restriction consistency (per-record local normalization telescopes)
 ok2 = True
@@ -170,12 +196,63 @@ for h in HISTS:
             tot += q_local(h2, pred2, pred_len)
         ok2 &= (tot == 1)
         ncyl += 1
-check("H2 RESTRICTION CONSISTENCY [exact]: for every enumerated history "
-      "and every unsealed record, the record's next-local-action "
-      "conditional sums to 1 exactly — cylinder marginalization "
-      "telescopes; (restriction)_* mu_{n+1} = mu_n at this depth "
-      "(success condition (2))", ok2, f"{ncyl} record-extensions, all "
-      f"sums exactly 1")
+# round-1 M2: the draft printed "(restriction)_* mu_{n+1} = mu_n" — FALSE.
+# The truth, exhibited: summing mu over ALL one-event extensions gives
+# |present(h)| * mu(h) (each record contributes telescope 1), so mu is
+# NOT a measure on its own history space (Sigma mu over depth-1 = 2);
+# reception PLACEMENTS are unpriced. What IS gated: the per-record
+# telescope. The measure-completing clock/placement law is d34b's.
+ok2b = True
+s1 = F(0)
+for h in HISTS:
+    if len(h) == 1: s1 += mu_of(h)
+for h in HISTS:
+    if len(h) >= 3: continue
+    present = ['A', 'B'] + [op[2] for op in h if op[0] == 'b']
+    tot = F(0)
+    for y in present:
+        for op in options_for(h, y):
+            tot += mu_of(h + [op]) / mu_of(h)   # mu_of([]) == 1
+    ok2b &= (tot == len(present))
+check("H2 PER-RECORD CONSISTENCY [exact] + THE HONEST RESTATEMENT "
+      "(round-1 M2): each record's next-local-action conditional sums to "
+      "1 (the telescope — gated); but the FLAT pushforward over all "
+      "one-event extensions equals |present|*mu, NOT mu — mu = prod(q) is "
+      "the covariant WEIGHT SYSTEM (the decision half of a Harris "
+      "factorization), not yet a measure on typed causal histories; the "
+      "draft's printed restriction identity is WITHDRAWN; the clock/"
+      "placement law that prices receptions is the named d34b object",
+      ok2 and ok2b and s1 == 2,
+      f"{ncyl} record-sums exactly 1; flat pushforward = |present|*mu at "
+      f"every checked history; Sigma mu over depth-1 histories = {s1} "
+      f"(not 1)")
+
+# H2b (round-1 M3, OWNED): THE RACE DOES NOT SAMPLE mu AND ITS ACTOR
+# DRAW IS NOT GAUGE — the deleted census denominator re-enters as
+# 1/|present| in the actor layer (the dilution disease RELOCATED).
+def race_path_prob(acts):
+    p = F(1)
+    for j in range(len(acts)):
+        present = ['A', 'B'] + [op[2] for op in acts[:j] if op[0] == 'b']
+        pred = event_poset(acts)
+        p *= F(1, len(present)) * q_local(acts, pred, j)
+    return p
+hc = [('b', 'A', 'z1'), ('i', 'A', 'z1'), ('b', 'B', 'z2')]
+hd = [('b', 'A', 'z1'), ('b', 'B', 'z2'), ('i', 'A', 'z1')]
+rc, rd = race_path_prob(hc), race_path_prob(hd)
+ok2c = (rc != rd) and (mu_of(hc) == mu_of(hd))
+check("H2b THE RACE-vs-mu CONFRONTATION [exact, owned finding — round-1 "
+      "M3]: two linearizations of ONE typed causal history (mu-equal, "
+      "gauge-equal per D33) carry DIFFERENT race path probabilities — the "
+      "uniform actor draw is NOT gauge, so the race's induced law cannot "
+      "equal any function of the causal history (in particular not mu); "
+      "diagnosis: the 1/|present| actor factor is the global census "
+      "denominator RELOCATED, not removed; the draft's '# gauge choice "
+      "only' comment was FALSE (fixed); HF2 stands undischarged; the "
+      "exponential-clock (fixed-time) construction is the named route to "
+      "an actual measure (d34b)", ok2c,
+      f"race({'->'.join(o[0] for o in hc)}) = {rc} vs resequenced {rd} "
+      f"(ratio {rd/rc}); mu equal at {mu_of(hc)} both")
 
 # H3: persistence (exact at the law level + a MEASURED race trend)
 # law level: every record with an eligible partner carries interact mass
@@ -190,7 +267,9 @@ def race(n_events):
     nb = ni = 0
     for _ in range(n_events):
         present = ['A', 'B'] + [op[2] for op in acts if op[0] == 'b']
-        y = present[rng.integers(0, len(present))]   # gauge choice only
+        y = present[rng.integers(0, len(present))]   # NOT gauge (H2b) —
+        # this realization is a SAMPLER OF SOME LAW, not of mu; used here
+        # only for the persistence trend, which is law-level anyway
         opts = options_for(acts, y)
         pred = event_poset(acts + [('n', y)])
         ws = []
@@ -231,32 +310,32 @@ q_after = q_local(h_remote + [('i', 'A', 'z1')],
 # touches B's wire; A's events never touched B's wire here, so the
 # cluster is causally unrelated to A's interact: past unchanged.
 ok4 = (q_before == q_after) and q_before == F(1, 8)
+# round-1 m: the systematic sweep (not one exhibit) — every event of
+# every <= 3-event history, under a prepended remote 2-birth cluster on
+# an unrelated branch, keeps its factor exactly
+REMOTE = [('b', 'B', 'z8'), ('b', 'z8', 'z7')]
+nsweep = 0
+for h in HISTS:
+    if not (1 <= len(h) <= 3): continue
+    if any(op[1] in ('B', 'z8', 'z7') or op[2:] and op[2] in ('z8', 'z7')
+           for op in h):
+        continue          # keep the cluster causally unrelated (A-side only)
+    h2 = REMOTE + h
+    pred1, pred2 = event_poset(h), event_poset(h2)
+    for j in range(len(h)):
+        ok4 &= (q_local(h, pred1, j) == q_local(h2, pred2, j + 2))
+        nsweep += 1
 check("H4 NO-CAP + REMOTE LOCALITY [exact]: the law references no global "
       "size anywhere (coefficients 1/4, 1/4 constant; eligibility from the "
       "initiator's past subgraph only), and adding a causally unrelated "
       "remote cluster leaves the local conditional EXACTLY unchanged "
       "(success conditions (4) and (6))", ok4,
       f"q(interact A->z1 | past) = {q_before} before and after the remote "
-      f"cluster (A's eligible set at that event: {{B, z1}} -> 1/4 / 2)")
+      f"cluster; systematic sweep: {nsweep} A-side event factors exactly "
+      f"unchanged under the prepended remote cluster (round-1 m)")
 
 # H5: THE LOTTERY CONTRAST GATE — the positive half of the engine claim
-def lottery_prob(acts, j):
-    """The OLD architecture: the global sequential lottery (w_none = 1,
-    w_birth = U, w_collar = |adjacent unsealed ordered pairs|), evaluated
-    on the FULL state at step j (everything before j in the given order)."""
-    A = {'R': {'A'}, 'A': {'R', 'B'}, 'B': {'A'}}
-    for op in acts[:j]:
-        if op[0] == 'b':
-            A.setdefault(op[1], set()).add(op[2])
-            A[op[2]] = {op[1]}
-    uns = sorted(r for r in A if r != 'R')
-    U = len(uns)
-    pairs = [(y, x) for y in uns for x in A[y] if x != 'R']
-    w_tot = 1 + U + len(pairs)
-    op = acts[j]
-    if op[0] == 'b': return F(1, w_tot)
-    if op[0] == 'i': return F(1, w_tot)
-    return F(1, w_tot)
+# (lottery_prob defined above, shared with H1's failing control)
 # (a) linearization DEPENDENCE: pure-birth swaps leave the lottery's
 # step weights unchanged (w_tot depends only on counts), so the honest
 # exhibit is a type-mixed incomparable pair — an interact on A's side
@@ -286,18 +365,20 @@ check("H5 THE LOTTERY CONTRAST [exact — the positive half of the engine "
       f"{q_lot_before} -> {q_lot_after} under a remote birth")
 
 # H6: the conditions scorecard
-print("      H6 THE SCORECARD [note-d33 §2's seven conditions at this "
-      "depth]: (1) relabel + linearization invariance: H1 (+ #156's swept "
-      "lemma) — RECEIPT-GRADE at depth <= 4; (2) restriction consistency: "
-      "H2 — exact; (3) persistence: H3 — law-level exact, depth-400 "
-      "measured, HF3 open beyond; (4) no cap: H4; (6) remote locality: "
-      "H4; (5) NSE / sealed-record preservation and (7) the quantum "
-      "(decoherence-functional) lift: d34b's, NAMED AND OPEN. The engine "
-      "sentence's positive half is now constructive (H5): deleting the "
-      "global denominator yields a lawful object where the lottery was "
-      "not one.")
-check("H6 the scorecard printed (conditions (5), (7) named open — d34b)",
-      True)
+print("      H6 THE SCORECARD AT ITS HONEST WIDTH [round-1 corrected]: "
+      "what exists at receipt grade is THE COVARIANT LOCAL WEIGHT SYSTEM "
+      "— the DECISION HALF of a Harris factorization: (1) resequence-"
+      "invariant with the lottery as failing control (H1); per-record "
+      "consistent (H2); persistent, uncapped, remote-local (H3, H4). What "
+      "does NOT yet exist: THE MEASURE — mu is unnormalized on histories "
+      "(Sigma = |present|-weighted, H2), reception placements are "
+      "unpriced, and the uniform-actor race is NOT gauge (H2b: the census "
+      "denominator relocated). The measure-completing object is d34b's "
+      "EXPONENTIAL-CLOCK construction (placement priced by local time), "
+      "alongside (5) NSE/sealed-preservation and (7) the quantum lift — "
+      "all NAMED OPEN. H5 (the lottery conviction) survives unchanged.")
+check("H6 the honest scorecard printed (the weight system exists; the "
+      "measure is d34b's; conditions (5), (7) open)", True)
 
 print()
 total = PASS + FAIL
