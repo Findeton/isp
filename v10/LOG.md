@@ -2180,3 +2180,24 @@ empirical wings (the local-scheduler compression re-test — is
 compression a law of interaction or of the lottery? — and the
 fixed-budget aligned PILOT); D36 = dynamic adjacency, HELD. Fronts
 HF1–HF6. D33 receipt next.
+
+## 2026-07-13 — D33 GREEN 6/6 (first run): the no-go complex SURVIVES the refined gauge in strengthened form (LEDGER #154)
+`code/d33_gauge_reaudit_exact.py` → `data/...out` (pin 34e68e2
+pre-committed). G1: the gauge instantiated at event level —
+incomparable swaps canon-equal (gauge), shared-wire swaps
+canon-distinct (physical). G2: DEG and DDEG re-killed by single
+all-nonnegative rows built from INCOMPARABLE pairs only — weaker
+hypotheses, same verdicts. G3: MOTIF closes from u ≥ 3 alone (the
+seed's comparable-pair equation not needed). G4 THE RESTATED THEOREM:
+under linear-extension covariance, stationary birth-positive
+graph-blind kernels have w_i constant on u ≥ 3 (disjoint forcing,
+identity-verified on a rational grid) and w_i ≤ 1/(u(u−1)) → 0 —
+INTERACTION DENSITY VANISHES at unbounded growth; the exact-zero form
+needed a comparable swap and is SUPERSEDED; THE SEED-LEVEL ESCAPE
+exhibited and priced (u = 2 has no disjoint bi pair ⇒ w_i(2)
+unconstrained; interactions transient, geometric mean 1, density 0).
+G5: component-size verbatim; the D5b witness passes a fortiori. G6 +
+HF6: NO paper-20 sentence moves (kills stated at receipt scopes remain
+true); the architecture verdict STRENGTHENED — the global-lottery
+denominator, not the covariance demand, is the engine. Hostile round
+launched; D34a (the Harris lemma receipt) builds next.

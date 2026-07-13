@@ -1,0 +1,27 @@
+  [PASS] G1 THE GAUGE INSTANTIATED: swapping INCOMPARABLE events (disjoint wires) yields the SAME typed causal history (gauge — linear extensions identified); swapping COMPARABLE events (shared wire) yields a DIFFERENT history (physical — the order along a record is recorded)  (births on disjoint parents: canon-equal; birth-then-interact vs interact-then-birth on the SAME parent: canon-distinct)
+  [PASS] G2 [DEG and DDEG SURVIVE the refined gauge]: single all-nonnegative delta rows re-exhibited using ONLY equations from INCOMPARABLE (disjoint-register) pairs — the Z(W+b) = Z(W) forcing needs no comparable swap; the obstructions stand with WEAKER hypotheses  (DEG: u = 3 birth, Delta = 2 -> {('b', 2): 1, ('i', 1, 2): 2, ('i', 2, 1): 2, ('i', 2, 3): 1, ('i', 3, 2): 1} >= 0 (kill); DDEG: u = 3 birth, Delta = 2 -> {('b',): 1, ('i', 1, 2): 2, ('i', 2, 1): 2, ('i', 2, 2): 1, ('i', 2, 3): 1} >= 0 (kill))
+  [PASS] G3 [MOTIF SURVIVES at u >= 3]: birth-inertness exhaustive + every u >= 3 birth has an incomparable interact forcing Z(W+b) = Z(W) + every such birth strictly grows the census — the C2 contradiction closes from incomparable pairs alone (the u = 2 seed equation, an overlapping/comparable pair in the old convention, is NOT needed)
+  [PASS] G4 [GRAPH-BLIND RESTATED — the asymptotic theorem]: (a) the disjoint-pair forcing w_i(u+1) = w_i(u) verified as an identity on a rational grid (u >= 3, where incomparable pairs exist); (b) normalization bounds w_i <= 1/(u(u-1)) -> 0: under the REFINED gauge a stationary birth-positive graph-blind kernel has INTERACTION DENSITY -> 0 at unbounded growth (constancy forced on u >= 3 only); (c) THE SEED-LEVEL ESCAPE exhibited: u = 2 has no disjoint bi pair, so w_i(2) is unconstrained — a covariant kernel interacting ONLY at the seed exists, with finite expected interactions (density 0: transient, priced)  (bound at u = 10: 1/90; expected seed interactions = 1 (geometric); the OLD theorem's exact-zero conclusion used the comparable u = 2 forcing — dropped honestly)
+  [PASS] G5 [COMPONENT-SIZE unchanged]: the connectivity reduction makes the grading u-only, so G4's asymptotic statement applies verbatim; the D5b bounded-horizon witness satisfied the STRONGER convention and passes the refined gauge a fortiori (its price — the encoded cap — is untouched)
+      G6 THE LANDSCAPE UNDER THE REFINED GAUGE [linear-extension
+      covariance only — the physically honest quotient]:
+        DEG / DDEG: OBSTRUCTED at every horizon U >= 3 (G2 —
+          incomparable-pair single-row kills; STRONGER than before:
+          weaker hypotheses, same verdict);
+        MOTIF: OBSTRUCTED at u >= 3 (G3 — seed equation not needed);
+        GRAPH-BLIND: interaction density -> 0 at unbounded growth
+          (G4 — the exact-zero form needed a comparable swap and is
+          SUPERSEDED by the asymptotic form; the seed-level
+          transient escape is exhibited and priced);
+        COMPONENT-SIZE: as graph-blind (G5); the cap witness stands;
+        K_flat: unchanged (teleology, not covariance, is its price).
+      HF6 CHECK: no paper-20 sentence moves — paper 20 states the
+      kills at their receipt scopes (the receipts' stronger
+      convention), all of which REMAIN TRUE; the refined-gauge forms
+      here are the physically honest versions the history-law phase
+      builds on. The architecture verdict is unchanged and
+      strengthened: the global-lottery denominator, not the
+      covariance demand, is the obstruction's engine.
+  [PASS] G6 the refined landscape printed + the HF6 check
+
+ALL CHECKS PASS (6/6: G1 gauge, G2-G5 re-audit verdicts, G6 landscape)
