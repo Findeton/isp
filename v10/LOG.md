@@ -2375,3 +2375,33 @@ shared-wire cylinder `i(A,B) < b(B,alpha)` has probability 1/32, not
 The full timed path space is standard Borel; only its finite-
 observation shadow is literally profinite. d34c remains held until the
 repaired classical measure survives its hostile delta.
+
+## 2026-07-13 — d34b REPAIRED GREEN: exact 7/7 + literal actors 8/8; the classical Harris pushforward measure exists (LEDGER #162; hostile round launched)
+The §7-frozen repair is implemented entirely in v10. Rewritten
+`code/d34b_exponential_clocks_exact.py` -> matching data output: E1
+local alpha-bound ring/act cylinders (1/2,1/2,1/8; literal two-ring
+1/32), exact local-ring tails + wrong-value exclusions; E2 complete
+length-1/2 normalization/restriction and two-record product mass one;
+E3 THE CORRECTIVE CENTER, passive placement splits coarse 1/16 as
+1/32+1/32 (act 1/4 as 1/8+1/8), so bare prod(q) is NOT the physical
+wire-DAG measure; E4 the orbit-sum law (three representative weights
+1/2304,1/3072,1/3072 -> class 5/4608; exact depth-2/3 masses one,
+40/304 classes); E5 global-depth killed-chain n^-2 tail versus remote-
+independent local-time Exp/Erlang; E6 generator normalization, Yule
+nonexplosion/persistence, factorized remote tapes + the global-next
+1/2->1/4 negative control; E7 honest scorecard. NEW literal reference
+`code/d34b_actor_reference_high_precision.py` -> matching output: 100-
+decimal private deadlines; exact 256-bit marks; parent-local Ulam IDs;
+heap=scan pathwise (24 tapes, 387 events); numerical ties raise; passive
+reception leaves receiver clock/mark untouched; fixed-T and fixed-A-ring
+remote coupling 40/40 bit-identical while fixed-global-depth differs
+40/40; time restriction 24/24; independent rational oracle mass one
+(40 classes), 12,000-world comparison chi2=41.284 <109.654 and max
+|z|=2.204; clock/Yule controls green. Actor output byte-identical across
+hash salts 0/77. FORWARD-CORRECTION beyond #160: D34a's unequal-path-
+weight inference was too strong—q/k IS the exponential embedded chain
+and pushes forward by ORBIT SUM; D34a correctly rejected only prod(q) as
+the physical measure/global-next locality. Earned claim: a normalized,
+nonexplosive, fixed-time-projective classical marked actor-process law
+and its typed-history pushforward exist. Static adjacency, no component
+joining, chosen 1/4s; d34c NSE/quantum held. Fresh hostile round launched.
