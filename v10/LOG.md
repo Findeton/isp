@@ -2082,3 +2082,14 @@ n_mid + mixture flags in the map (the starved cells honestly read as
 subset means); the C5 pairs carry mixture notes; NO-BAND's
 bar-independence is now in-receipt. #150 carries the three
 forward-corrections.
+
+## 2026-07-13 — D32C delta stamp: NOT-CLEAN → CONVERTED at #151 (single entry, no rerun per the referee); D32C CLOSED TERMINAL; the D32 campaign is COMPLETE; paper 20 OPENS
+Byte-identity re-verified by the referee (fresh hash salt, 6/6). The
+conversion items are carried at #151: the Δ-m1 disclosure (the
+k=1,p=½,N=512 strata, report-supplied), the Δ-m2 scope qualifiers,
+and NAMED dispositions for every previously-silent minor/nit
+(deferral-with-reason to the aligned-variant successor receipt's
+build standards; silence eliminated). My process error stands
+recorded: I applied round findings from the notification summary
+instead of the report text — the discipline is now: repairs are
+applied FROM THE REPORT, and dispositions are enumerated per item.
