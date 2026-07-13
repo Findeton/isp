@@ -2145,3 +2145,24 @@ compression regularity"). External review adoptions: §5 retitled ("a
 positive mechanism test, diagnosed confounded"); the FIXED-BUDGET
 design standard (supersedes #151's build note); the paper-11-bridge
 non-test paragraph; the central-discovery paragraph in §6.
+
+## 2026-07-13 — Paper 20 delta CONVERTED per the stamped condition: PAPER 20 TERMINAL at series grade (LEDGER #153)
+The delta pass (0 MAJOR regressions / 5 one-clause MINORs / 3 NITs;
+all four round-1 MAJORs verified applied at core; every moved number
+digit-exact except one dash): Δ-m1 falsifier (iii) re-sorted —
+horizon-certified = degree/distance-degree/motif ONLY; graph-blind
+joins component-size in the unbounded-only clause (the constant-c
+kernel is its horizon witness); Δ-m2 the licenses closer scoped to
+GRID kernels (the witness cell's column is COVARIANT-AT-CAP); Δ-m3
+the witness N=256 midpoint restored (1.93 ± 0.21 — the dash belonged
+to the dcov column); Δ-m4 the closing inventory corrected ("the
+D31–D32 campaign's review chain"; BOTH determinizations named — d31b
+sampler #139, d31c2 print order #145); Δ-m5 the landscape carries
+d31c C2/C3's row and attributes graph-blind to D31A. NIT
+dispositions (the referee's one-clause standard): n1 (the κ = 2
+saturation branch 0.133), n2, n4, n5 DEFERRED-WITH-REASON — paper-
+layer cosmetics whose values the record carries; the 5.29 locus
+(the d32c reviewer's λ-scan, family 80260712+) NOT cited — the
+sentence names the D30 control envelope only, ruled honest as
+worded. Per the referee's stated condition this converts to
+DELTA-CLEAN with no further round: PAPER 20 IS TERMINAL.
