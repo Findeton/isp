@@ -1722,3 +1722,31 @@ tally taxonomy (n1). Cell/control stats byte-consistent with v2 (P3
 prints identical — the card change is additive plus the spatial
 schema). Next: LEDGER #141, commit, reviewer delta-verification;
 D32B opens only after that pass.
+
+## 2026-07-12 — external review #2 FILED + five adoptions PINNED (note §7); delta-2 cycle opens on the referee's delta verdict
+`reviews/d31-d32-external-user-review-2.md` filed verbatim with triage
+header. THE NEW CATCH (missed by round 1 and in-house): the v2.1 P2
+certification's pair-level bootstrap treats 120 pairs from 3
+sprinklings as independent — P(<bar) = 0.000 is overconfident;
+cluster-aware re-validation pinned (12 fresh sprinklings × 10 pairs
+per d, seeds BASE+20000+100d+k; sprinkling-level bootstrap + jackknife
+SE; bar 0.60 unchanged; advisory rule re-pinned onto cluster-level
+P(<bar) > 0.10; card v2.2 same path, v2.1 sha cited as provenance).
+Adopted wording: the spatial certification is rank MONOTONICITY only —
+an order-only RANKING instrument, no calibrated distance, no scaling
+law (card `certifies` field). Adopted reframe: the anchor deliverable
+is THE SIGNATURE PAIR (d̂_MM, d̂_mid) = (1.756 ± 0.101, 1.630 ± 0.127)
+— multi-exponent, decisively non-M²; single-number narration and
+D30's "MM/midpoint concordant" phrasing SUPERSEDED (LEDGER line owed
+at delta-2 closure). Adopted re-ordering: O3 (the D31C open-family
+exact search — simple degree, distance-degree, motif, component-size;
+receipt d31c2) runs BEFORE the grid; D32B renamed "the
+kernel-mechanism map (PHENOMENOLOGICAL)" — no cell a candidate law;
+if O3 finds a covariant interacting family, its signature map becomes
+D32B's primary axis. Named open O7: the covariance fork — if
+accretion order is itself recorded history, the covariance quotient
+is a physical hypothesis, not a necessity (the no-go's reach fork).
+Stale in the review (corrected): v2.1 + LEDGER #141 were already
+committed at 6090d55. Sequence: referee delta verdict (in flight) →
+delta-2 rerun (§7 pin) → delta-2 verification → LEDGER #142 →
+D32A CLOSED → O3 → D32B.
