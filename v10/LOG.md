@@ -2228,3 +2228,25 @@ positive attribution = D34a's to earn; the adjacent-transposition
 connectivity lemma stated and verified on horizon exhibits.
 FORWARD-CORRECTION at #155: #154's "SUPERSEDED by the asymptotic
 form" was wrong-shaped. Seed-independent across PYTHONHASHSEED 0/9.
+
+## 2026-07-13 — D33 delta CONVERTED per the stamped condition: D33 TERMINAL (LEDGER #156)
+All Δ-findings applied BY STRENGTHENING (the referee pre-verified both
+strengthenings): Δ-m1 the biconditional grid now has live
+(birth-positive) points at EVERY u in 3..12 (small-c points added;
+per-u live counts printed and gated ≥ 4) — the first fix had emptied
+u = 5..12 silently; Δ-m2 the "EVERY pair equation" sentence carries
+the both-successors-in-domain guard + the review-carried disposition
+of the 630 guard-dropped pairs (verified satisfied and w_i(2)-free);
+Δ-m3 the transposition lemma SWEPT over every ≤ 4-event act-history of
+the grammar — 3,774 histories, ALL extension graphs connected,
+MATCHING the referee's independent count exactly; Δ-n1 u* minimality
+gated (5/11/1001 printed); Δ-n2 live-counts consume the dead counter;
+Δ-n3 the geometric parameters derived from esc_w (pb = pi = 1/2);
+Δ-n4 DISPOSITION: the paper-20 §2.3 one-clause pointer (the
+receipts' state-level convention vs the refined-gauge form) is
+DEFERRED-WITH-REASON to paper 20's next touch — recorded here, not
+silent. Rerun 6/6, byte-identical across PYTHONHASHSEED 0/31. Per the
+delta's stated condition this is DELTA-CLEAN with no further round:
+D33 IS TERMINAL. D34a (the Harris lemma receipt) builds next on the
+adjudicated conventions (the event-poset comparability, the canon,
+the transposition lemma now swept, the escape-kernel equation domain).

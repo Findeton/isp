@@ -225,24 +225,33 @@ check("G3 [MOTIF SURVIVES at u >= 3]: birth-inertness exhaustive + every "
 def covariant_pair(wb_u, wi_u, wi_u1):
     return wb_u * wi_u1 == wi_u * wb_u
 ok4a = True
-npts = 0
+live = {}
+# Δ-m1: the grid must have LIVE (birth-positive) points at EVERY u in
+# 3..12 — small-c points added so the claimed range is genuinely covered
 for u in range(3, 13):
-    for cu, cu1 in product((F(1, 20), F(1, 7), F(3, 50)), repeat=2):
+    live[u] = 0
+    for cu, cu1 in product((F(1, 20), F(1, 7), F(3, 50), F(1, 200),
+                            F(1, 20000)), repeat=2):
         wb_u = (1 - u * (u - 1) * cu) / u
         if wb_u <= 0: continue   # birth-POSITIVITY is the theorem's
-        npts += 1                # hypothesis; at wb = 0 the forcing
+        live[u] += 1             # hypothesis; at wb = 0 the forcing
         ok4a &= covariant_pair(wb_u, cu, cu1) == (cu == cu1)  # degenerates
+ok4a &= all(live[u] >= 4 for u in range(3, 13))
 # (b) EXACT ZERO on u >= 3: constancy (a) forces w_i(u) = c for all
 # u >= 3; positivity of births requires u(u-1)c <= 1 at EVERY reachable
 # u; unbounded growth makes u arbitrary => c = 0 EXACTLY. Gate: for any
 # c = 1/M > 0 the failure scale u* with u*(u*-1) > M exists and is
 # computed; and c = 0 satisfies every equation.
 ok4b = True
+ustars = {}
 for M in (12, 100, 10**6):
     c = F(1, M)
     ustar = 3
     while ustar * (ustar - 1) * c <= 1: ustar += 1
-    ok4b &= (ustar * (ustar - 1) * c > 1)
+    ustars[M] = ustar
+    # Δ-n1: the real post-condition — u* is minimal: u*(u*-1) > M and
+    # (u*-1)(u*-2) <= M
+    ok4b &= (ustar * (ustar - 1) > M) and ((ustar - 1) * (ustar - 2) <= M)
 bounds = {u: F(1, u * (u - 1)) for u in range(3, 11)}
 ok4b &= all(bounds[u + 1] < bounds[u] for u in range(3, 10))
 # (b') THE DENSITY COROLLARY, defined and gated: density = the limit of
@@ -252,9 +261,9 @@ ok4b &= all(bounds[u + 1] < bounds[u] for u in range(3, 10))
 # the first birth) = (1/2)^k * (1/2): a.s. finitely many, so the density
 # is 0 along every unbounded history. Gate: the geometric law sums to 1
 # and has mean 1, exactly.
-psum = sum(F(1, 2)**k * F(1, 2) for k in range(200))
-pmean = sum(k * F(1, 2)**k * F(1, 2) for k in range(200))
-ok4d = (1 - psum < F(1, 10**50)) and (1 - pmean < F(1, 10**50))
+# (Δ-n3: the geometric density gate is computed AFTER esc_w's
+# definition below, with its parameters DERIVED from the kernel)
+
 # (c) THE SEED-LEVEL ESCAPE: interactions at u = 2 only. u = 2 has NO
 # register-disjoint bi pair (gated), so w_i(2) is UNCONSTRAINED; the
 # escape kernel (w_i(2) = 1/4, w_b(2) = 1/4; w_i = 0, w_b = 1/u on
@@ -288,6 +297,14 @@ for st in reps.values():
             esc_ok &= (lhs == rhs)
             npairs_checked += 1
 ok4c = no_disjoint_at_seed and esc_ok
+# Δ-n3: the seed race's geometric parameter derived from esc_w — total
+# birth mass vs total interact mass at the seed
+pb = sum(esc_w(seed, op) for op in opportunities(seed) if op[0] == 'b')
+pi = sum(esc_w(seed, op) for op in opportunities(seed) if op[0] == 'i')
+ok4d = (pb + pi == 1)
+psum = sum(pi**k * pb for k in range(200))
+pmean = sum(k * pi**k * pb for k in range(200))
+ok4d &= (1 - psum < F(1, 10**50)) and (F(pi, pb) - pmean < F(1, 10**50))
 check("G4 [GRAPH-BLIND under the refined gauge — round-1 M1: EXACT ZERO "
       "SURVIVES on u >= 3]: (a) the register-disjoint forcing w_i(u+1) = "
       "w_i(u) verified as a biconditional at u = 3..12 over a rational "
@@ -299,10 +316,16 @@ check("G4 [GRAPH-BLIND under the refined gauge — round-1 M1: EXACT ZERO "
       "a.s.; (c) THE SEED RELEASE: w_i(2) alone is unconstrained — the "
       "escape kernel verified on EVERY register-disjoint pair equation of "
       "the horizon", ok4a and ok4b and ok4c and ok4d,
+      f"live grid points per u (all >= 4; Δ-m1): "
+      f"{[live[u] for u in range(3, 13)]}; u* for c = 1/12, 1/100, 1e-6: "
+      f"{[ustars[M] for M in (12, 100, 10**6)]} (minimality gated; Δ-n1); "
       f"escape kernel: {npairs_checked} disjoint-pair equations checked "
-      f"exactly; the OLD exact-zero-including-u=2 form used a comparable "
-      f"seed swap — the u >= 3 exact zero STANDS; only the seed weight is "
-      f"released (the honest, and smaller, weakening)")
+      f"exactly UNDER THE BOTH-SUCCESSORS-IN-DOMAIN GUARD (Δ-m2: the 630 "
+      f"guard-dropped u = 5-start pairs were verified satisfied and "
+      f"w_i(2)-free by the round's delta — review-carried); geometric "
+      f"parameters derived from the kernel (pb = pi = 1/2; Δ-n3); the OLD "
+      f"exact-zero-including-u=2 form used a comparable seed swap — the "
+      f"u >= 3 exact zero STANDS; only the seed weight is released")
 
 # G5: component-size — round-1 M3: the tautological gate replaced by the
 # COMPUTED containment: every register-disjoint (refined-gauge) pair on
@@ -377,19 +400,24 @@ print("      any two linear extensions of a finite poset are connected by")
 print("      adjacent transpositions of incomparable events — so pairwise")
 print("      incomparable-swap equality suffices for full linearization")
 print("      invariance.")
+# the classical lemma (induction on inversions): any two linear
+# extensions of a finite poset are connected by adjacent transpositions
+# of incomparable elements. Δ-m3: swept over ALL act-histories of <= 4
+# events of this grammar (births on unsealed + ordered interacts), not
+# just exhibits.
 lemma_ok = True
+nhist = 0
 from itertools import permutations as _perms
-for acts0 in ([('b', 'A', 'z1'), ('b', 'B', 'z2'), ('i', 'A', 'B')],
-              [('b', 'A', 'z1'), ('b', 'A', 'z2'), ('b', 'B', 'z3')]):
+def _ext_connected(acts0):
     po0 = event_poset(acts0)
+    n = len(acts0)
     exts = []
-    for p in _perms(range(len(acts0))):
+    for p in _perms(range(n)):
         inv = {e: i for i, e in enumerate(p)}
-        if all(inv[i] < inv[j] for j in range(len(acts0)) for i in po0[j]):
+        if all(inv[i] < inv[j] for j in range(n) for i in po0[j]):
             exts.append(p)
-    # connectivity under adjacent incomparable transpositions
-    seen = {exts[0]}
-    frontier = [exts[0]]
+    extset = set(exts)
+    seen = {exts[0]}; frontier = [exts[0]]
     while frontier:
         cur = frontier.pop()
         for k in range(len(cur) - 1):
@@ -397,13 +425,25 @@ for acts0 in ([('b', 'A', 'z1'), ('b', 'B', 'z2'), ('i', 'A', 'B')],
             if a not in po0[b] and b not in po0[a]:
                 nxt = list(cur); nxt[k], nxt[k + 1] = b, a
                 nxt = tuple(nxt)
-                if nxt in {tuple(e) for e in exts} and nxt not in seen:
+                if nxt in extset and nxt not in seen:
                     seen.add(nxt); frontier.append(nxt)
-    lemma_ok &= (len(seen) == len(exts))
+    return len(seen) == len(exts)
+def _gen(acts, regs, k):
+    global lemma_ok, nhist
+    if acts:
+        nhist += 1
+        lemma_ok &= _ext_connected(acts)
+    if k == 4: return
+    opts = ([('b', r, f'z{len(regs) - 1}') for r in regs]
+            + [('i', y, x) for y in regs for x in regs if x != y])
+    for op in opts:
+        _gen(acts + [op], regs + ([op[2]] if op[0] == 'b' else []), k + 1)
+_gen([], ['A', 'B'], 0)
 check("G6 the refined landscape printed (coexistence wording; the "
       "negative/positive split per round-1) + the adjacent-transposition "
-      "connectivity lemma verified on horizon exhibits + the HF6 check",
-      lemma_ok)
+      "connectivity lemma (classical: induction on inversions) SWEPT over "
+      "every <= 4-event act-history of this grammar + the HF6 check",
+      lemma_ok, f"{nhist} histories swept, all extension graphs connected")
 
 print()
 total = PASS + FAIL
