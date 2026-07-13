@@ -1778,3 +1778,26 @@ bar 0.60 unchanged, advisory rule on cluster-level P(<bar) > 0.10;
 calibrated distance); THE SIGNATURE PAIR (d_MM, d_mid) prints; card
 schema v2.2 (same path; v2.1 in history; supersession at #142);
 v2.1's 3×40 pooled readings carried as provenance fields.
+
+## 2026-07-12 — delta-2 GREEN 6/6 (cluster-aware certification LANDED); delta-3 string-only rerun launched (version-label fix)
+Delta-2 results (all §7 gates): P2 CLUSTER-AWARE, both CARD-CARRIED —
+d3 pooled rho = 0.844 [cluster CI95 0.775–0.896; cluster P(<bar) =
+0.000; jackknife SE 0.034], d4 = 0.790 [0.699–0.861; 0.000; 0.044],
+120 pairs / 12 fresh sprinklings each; per-sprinkling spread honestly
+carried (minima 0.529/0.511 at 10 pairs — single-sprinkling readings
+are noisy; the certification is pooled + cluster-CI; D32B per-web
+consumption must respect the jk-SE noise scale). v2.1 provenance
+readings carried in-card (0.814/0.787). THE SIGNATURE PAIR printed at
+P4 (1.756 ± 0.101, 1.630 ± 0.127). P6 audits 8 margins incl. the
+exclusion (+0.1239) and the new pooled rhos (+0.2438/+0.1901). DEFECT
+CAUGHT AT GATE-CHECK (mine): the .out header and the P1 label still
+print "card v2.1" — two stale strings; the card's schema field
+(v2.2), §7 semantics, and generator sha are correct. DECISION:
+string-only fix + full rerun (delta-3) rather than a disclosed wart on
+the terminal record. PINNED EXPECTATION for delta-3: every number
+identical to delta-2 EXCEPT the generator sha (file bytes change) and
+therefore the card sha (the card embeds generator_sha256_16 — the
+price of self-referential provenance); the .out differs in the
+header/P1/sha lines only — gated by diff post-run. Delta-2's card sha
+d301f2604538ce53 (schema v2.2, generator 4dbb8c92be70cc9e) is
+SUPERSEDED on delta-3's green; #142 records the final pair.

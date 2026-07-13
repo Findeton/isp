@@ -267,7 +267,7 @@ def round12(x):
     if isinstance(x, list): return [round12(v) for v in x]
     return x
 
-print("[d32a card v2.1 + anchor — round-1 repairs applied (note §6)]")
+print("[d32a card v2.2 + anchor — §6 round-1 + §7 delta-2 repairs applied]")
 print(f"      env: python {sys.version.split()[0]}, numpy {np.__version__},")
 print(f"      {platform.platform()}; base seed {BASE}; generator {GEN_SHA}.")
 
@@ -423,7 +423,7 @@ ok1 &= all("ratio3_sd" in v and ("chain_c_sd" in v or "chain_c4_sd" in v)
 if ok1:
     with open("v10/data/d32_instrument_card_v2.json", "w") as f:
         f.write(blob1)
-check("P1 card v2.1 built and frozen (file written only on pass): %.12g "
+check("P1 card v2.2 built and frozen (file written only on pass): %.12g "
       "fixed-significant sorted-key serialization; in-process "
       "serialization-idempotence gate + state-leakage recompute (d2_N256 "
       "rebuilt byte-equal); environment AND generator sha recorded; per-cell "
