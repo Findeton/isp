@@ -2117,3 +2117,31 @@ confounded — not "designed negative"); the Paper-11-bridge non-test
 scope line; graph-blind (u-only) terminology; the regularity
 qualifier on "compression law"; the central-discovery paragraph
 adopted into §6.
+
+## 2026-07-13 — Paper 20: the INTEGRATED round-1 repair pass applied (internal round 4M/8m/6n + the external user review's six adoptions); LEDGER #152; delta verification next
+Internal round (report `reviews/paper20-round1-hostile-review.md`):
+transcription DIGIT-EXACT (~40 statistics audited, zero receipt-number
+errors); all four MAJORs assembly-class and REPAIRED: (M1) §2's
+licenses paragraph restored to "stationary", the false
+"any-interacting-kernel-breaks-covariance" sentence deleted, and BOTH
+priced covariant objects now carried — the cap-priced witness AND
+K_flat (teleological, D28b R5), with paper 19 §9's F12 trichotomy
+stated and its third leg marked closed across tested gradings; (M2)
+estimator-status disclosures restored (witness [whole-order-MM,
+12/12]; §5 midpoint subset-means + n_mid; the #151(i) strata
+4.747/1.829); (M3) falsifier (iii) re-targeted (unbounded growth in
+any tested class, or any horizon in the horizon-certified classes —
+the witness no longer falsifies it); (M4) the closing sentence
+corrected (one convention-dependent printed number WAS corrected:
+P = 0.004 → 0.012; one sampler determinization; scope sentences via
+supersession chains). Key minors: abstract clause order (graph-blind
+u-only theorem vs per-family scopes); the pure-birth anchor as a
+FAMILY (≈4.6–5.2 web-level, mid ≈ 1) with the witness a perturbed
+member; 41 → 41.5; the covariance bound separated from the
+collar-family clause (complete-graph, a bound not a comparison); the
+full terminal landscape carried; the census sentence added; title
+noun kept with the regularity qualifier (abstract + §4 retitled "The
+compression regularity"). External review adoptions: §5 retitled ("a
+positive mechanism test, diagnosed confounded"); the FIXED-BUDGET
+design standard (supersedes #151's build note); the paper-11-bridge
+non-test paragraph; the central-discovery paragraph in §6.
