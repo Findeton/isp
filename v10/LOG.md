@@ -2301,3 +2301,24 @@ independent rebuild; the 18,618-case remote sweep; H5's lottery
 conviction UNCHANGED. d34b IS NOW THE MEASURE-COMPLETING STEP: the
 exponential-clock construction (reception placement priced by local
 time) + NSE + the quantum lift. Rerun 7/7, seeds 0/23 byte-identical.
+
+## 2026-07-13 — D34a delta CONVERTED: D34a TERMINAL as THE WEIGHT-SYSTEM receipt (LEDGER #159)
+Conversion items applied: the honest noun in the docstring and header
+(WEIGHT SYSTEM, not measure); the sweep filter fixed (op[2] = 'B' now
+excluded — the 74 cluster-related factors are out; 174 purely
+unrelated factors, all exactly unchanged) + THE COLLAR-LOCALITY LEMMA
+stated in-code (the initiator's conditional depends only on its own
+past-cone adjacency); past_state's false step-count docstring fixed
+(m4(i), second-round survivor); ok3a disclosed as a single-instance
+probe with the law-level claim scoped to a coefficient audit (m2);
+H2b scoped to the race's PATH LAW with the class-level pushforward
+tables review-carried per the D33 precedent (Δ-n2). DISPOSITIONS
+(deferral-with-reason): m6 (H5 lottery-fidelity disclosures) and
+n1/n2 — receipt-internal cosmetics on a TERMINAL receipt; adopted as
+build standards for the d34b receipt. Rerun 7/7, byte-identical
+across PYTHONHASHSEED 0/41. Per the delta's stated condition:
+DELTA-CLEAN, no further round. D34a IS TERMINAL. NEXT: the d34b pin —
+THE MEASURE-COMPLETING STEP (exponential clocks: reception placement
+priced by local time; full restriction consistency; NSE/sealed
+preservation with the HF5 tension; the quantum decoherence-functional
+lift; HF2 ties-as-gauge).
