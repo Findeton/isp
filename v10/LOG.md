@@ -2452,3 +2452,23 @@ law + Ulam-coded typed-DAG pushforwards established; finite PRF actor reference
 concordant/pathwise local at tested width.** Open: intrinsic untimed
 projective/profinite architecture, dynamic adjacency/joining, derived
 coefficients, NSE, quantum lift. d34c may now open.
+
+## 2026-07-13 — d34c PIN: NSE/quantum compatibility, exact finite-cylinder scope (LEDGER #165)
+Pinned in note-d33 §11 before receipt code. Question: can the terminal D34b
+local-clock law be the durable-click sector of one strongly positive quantum
+history law while total closure is NSE, seals are stable, and no global
+scheduler returns? Architecture: preparation-independent local clock marks;
+event-local orthogonal durable flags (the notation |h> is their tensor
+product, not a universe ledger); local birth/interaction isometries; unrecorded
+between-click alternatives retain interference. Exact four-qubit diamond
+frozen: a=CNOT(S->R), b=Z_P incomparable/disjoint, c=CZ(S,P), d=H_P then
+CNOT(P->O), histories (s,p,o). Predicted D has 1/8 signed 2x2 blocks,
+eigenvalues 1/4,0, and coarse P(s,o)=1/2 delta(o,1-s), unlike diagonal-only
+1/4 each. Gates C0-C9: exact Q(sqrt2) circuit; order gauge + noncommuting
+control; strong positivity/normalization/coarse additivity; real interference;
+finite cylinder restriction; full-R seal and source-value preservation kept
+distinct; Busch flagged-isometry lift at D34b weights; unflagged/state-dependent
+negative controls; actor-local sewing; hard scope ceiling. Success noun only:
+FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY. Infinite quantum extension,
+profinite architecture, coherent growth-history superposition, dynamic joining,
+derived weights/operations/basis, cones/dimension, and nature's law remain open.

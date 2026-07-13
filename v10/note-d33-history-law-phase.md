@@ -101,3 +101,94 @@ Fresh executions are byte-identical to the committed data under `PYTHONHASHSEED=
 **TERMINAL VERDICT:** **D34b CLASSICAL MEASURE PASS — the normalized, nonexplosive, persistent ideal timed Harris law and its Ulam-coded typed-DAG pushforwards are established; the finite PRF actor reference is concordant and pathwise local at its tested width. An intrinsic untimed projective/profinite architecture, dynamic adjacency/component joining, derived coefficients, NSE, and a quantum lift remain open.**
 
 This closes the classical measure-completion phase. It does **not** identify the universe's final click law: it proves that one explicitly chosen static-adjacency actor family is a coherent local history law. d34c may now ask whether this law can carry paper 19's no-shrinkage/sealed-record requirements and a strongly positive quantum history functional without turning the local clocks back into a hidden global scheduler.
+
+## 11. d34c PIN (2026-07-13; before receipt) — THE NSE/QUANTUM COMPATIBILITY TEST
+
+### 11.1 The question and the claim ceiling
+
+D34b supplied a classical timed actor measure. Paper 19 supplied the **posited** No Silent Erasure (NSE) selector and the Busch characterization of trace-norm-isometric closures. D18 supplied finite/cylinder decoherence-functional sufficiency. None of those results yet proves that the same local actor architecture can carry all three structures at once.
+
+The precise d34c question is:
+
+> Can the D34b local-clock history law be realized as the durable-record sector of a strongly positive quantum history law whose total closure is NSE, whose sealed records are future-stable, and whose construction-order gauge requires no universe ledger?
+
+This is a compatibility/existence test, not a selector derivation. Even a complete pass will **not** derive the `1/4,1/4,1/2` weights, the interaction unitary, adjacency, component joining, a preferred record basis, NSE itself, or nature's unique history functional. It also cannot by itself establish an infinite quantum-measure extension.
+
+### 11.2 The candidate architecture, frozen
+
+There are two distinct kinds of alternatives.
+
+1. **Durable click alternatives:** every D34b local ring outcome is written to an event-local orthogonal flag on the touched record/environment sector. Different recorded click histories are therefore decoherent. The flags are distributed records, not one global history register; the single global ket `|h>` is notation for their tensor product.
+2. **Unrecorded quantum alternatives between clicks:** these retain off-diagonal decoherence-functional terms and may interfere. When one becomes a durable record, the corresponding local flag makes the relevant partition decoherent.
+
+At each local ring the mark distribution is preparation-independent. Idle is the identity; birth is a D24-style local isometry activating a fresh Ulam-addressed carrier; interaction is a local isometry/unitary on the touched carriers; and the typed outcome is appended as a durable orthogonal flag. Thus a finite branch has an isometry `V_h`. For a finite classical cylinder law `mu(h)`,
+
+```text
+Phi(rho) = sum_h mu(h) V_h rho V_h^dagger tensor |h><h|
+```
+
+is Busch form: preparation-independent weights and mutually orthogonal ranges. The general proof target is
+
+```text
+||Phi(Delta)||_1 = sum_h mu(h)||V_h Delta V_h^dagger||_1
+                 = ||Delta||_1.
+```
+
+Erasing the flags is a negative control: an unflagged random-unitary average may contract trace distance and is not NSE merely because each branch separately is unitary. State-dependent scheduler weights are outside this construction; unless implemented as a larger recorded isometry, they threaten linearity/NSE and require a new theorem.
+
+### 11.3 The exact operational diamond, frozen
+
+Use four qubits `(S,R,P,O)` and exact arithmetic in `Q(sqrt(2))`. Start in
+
+```text
+|+>_S |0>_R |+>_P |0>_O.
+```
+
+The diamond is:
+
+- `a = CNOT(S->R)`: create the durable receiver `R`;
+- `b = Z_P`: an operation incomparable with `a` and disjoint from it;
+- `c = CZ(S,P)`: the common future of `a,b`;
+- `d = H_P` followed by `CNOT(P->O)`: commit the output to `O`.
+
+The history alternatives are `h=(s,p,o)`: the durable `R` value after `a`, an **unrecorded** intermediate computational path `p` after `b`, and the durable output `O` after `d`. The predicted exact functional is
+
+```text
+D(h,h') = (1/8) delta(s,s') delta(o,o')
+          (-1)^[p(1+s+o)+p'(1+s'+o')].
+```
+
+Each fixed `(s,o)` block is `1/8 [[1,eta],[eta,1]]`, `eta=(-1)^(1+s+o)`, with eigenvalues `(1/4,0)`. Coarse-graining over the unrecorded path predicts
+
+```text
+P(s,o) = (1/2) delta(o,1-s),
+```
+
+whereas reading fine diagonals alone would falsely give `1/4` for every `(s,o)`. This is the nontrivial-interference gate. Since `a` and `b` are disjoint, `ab` and `ba` must give the identical functional. A shared-carrier noncommuting reorder is the negative control.
+
+### 11.4 Receipt gates
+
+The receipt will be `code/d34c_nse_quantum_history_exact.py`, dependency-free, exact, and fail closed.
+
+- **C0 — exact object typing:** separate the classical source law, durable click algebra, unrecorded path algebra, class operators, quantum functional, and NSE closure. No diagonal is read as a probability unless its partition is decoherent.
+- **C1 — exact circuit/order gauge:** construct the circuit in `Q(sqrt(2))`; prove `a b = b a`; compute both orders and require byte-identical branch vectors/functionals. A noncommuting shared-carrier reorder must differ.
+- **C2 — functional axioms:** derive all eight branch vectors and the displayed `D`; check Hermiticity, total normalization, exact Gram/strong positivity, rank/eigenvalue certificate, and additivity under incidence-matrix coarse graining.
+- **C3 — genuine interference:** coarse `(s,o)` probabilities must be `(1/2,0;0,1/2)` in the appropriate ordering, while diagonal-only aggregation gives four `1/4`s. Recording `p` in an orthogonal receiver must remove the off-diagonals and give the diagonal law.
+- **C4 — finite cylinder restriction:** directly compute the `s`, `(s,p)`, and `(s,p,o)` functionals and require the later functionals to push down by exact incidence matrices to the earlier ones.
+- **C5 — seal durability:** after event `a`, every future operator acts as identity on `R`; gate the full `R` matrix algebra in Heisenberg form. Also gate preservation of the source value projectors while allowing its phase content to disperse. These are declared separately; “sealed” is not allowed to slide between them.
+- **C6 — NSE/Busch lift:** prove the general orthogonal-isometry/direct-sum identity above and instantiate the D34b kind weights `(1/4,1/4,1/2)` with exact mutually orthogonal local flags. Gate trace-distance preservation on a noncommuting test family as regression, while labeling the all-state statement as the analytic block-norm theorem.
+- **C7 — negative controls:** remove the flags from `1/2(I rho I + Z rho Z)` and require `|+>` versus `|->` to contract from distance one to zero. Make a preparation-dependent classical branch rule fail affine linearity unless its choice is retained in an enlarged isometric ontology.
+- **C8 — actor/history sewing theorem:** for every finite D34b cylinder, compose only touched-carrier isometries and event-local flags. Show that classical restriction plus isometric exhaustiveness gives quantum-cylinder restriction, that disconnected actor families tensor-factor, and that no step queries a universe-wide live-record count. The finite diamond is the non-diagonal local factor; the durable D34b click sector remains diagonal.
+- **C9 — scope scorecard:** a pass may earn `FINITE-CYLINDER NSE/QUANTUM COMPATIBILITY`. It may not earn coherent superposition across distinct recorded growth histories, infinite quantum-measure extension, a constructed profinite quantum space, dynamic joining, derived coefficients/operations, preferred-basis derivation, Lorentz cones/dimension, or `THE universe law`.
+
+### 11.5 Hostile-review fronts, pre-registered
+
+- **QF1:** a global `|h>` flag may hide a universe ledger. The proof must factor it into event-local durable flags and distinguish notation from architecture.
+- **QF2:** a classical diagonal lift may be quantum in name only. C3 must exhibit nonzero off-diagonal history terms that change an observable coarse law.
+- **QF3:** strong positivity at one matrix is not projectivity. C4 and C8 are separate gates.
+- **QF4:** NSE of each branch does not imply NSE after forgetting which branch occurred. C6/C7 must make orthogonal durable flags load-bearing.
+- **QF5:** exact seal durability may hold only because `R` is never touched again. That is an honest model clause, not a derived universal seal law; the report must say so.
+- **QF6:** the construction can remain a compatibility family with primitive classical `mu`. It must not be narrated as a derivation of the quantum Born weights or of D34b's clock law.
+- **QF7:** finite strong positivity need not extend to an infinite sigma algebra. The D18 extension warning is binding.
+
+No D35 cone/dimension run may consume d34c unless the hostile delta accepts both the theorem and this claim ceiling.
