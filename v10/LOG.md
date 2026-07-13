@@ -1801,3 +1801,15 @@ price of self-referential provenance); the .out differs in the
 header/P1/sha lines only — gated by diff post-run. Delta-2's card sha
 d301f2604538ce53 (schema v2.2, generator 4dbb8c92be70cc9e) is
 SUPERSEDED on delta-3's green; #142 records the final pair.
+
+## 2026-07-12 — delta-3 GREEN: numbers-identical gate PASS; card v2.2 FINAL at e7bc80f0be08f537; D32A CLOSED (LEDGER #142, referee final pass launched)
+The string-only rerun landed exactly as pinned: the diff excluding
+sha/generator/version-label lines is EMPTY (gated in the launch
+command); header and P1 now read v2.2; card v2.2 FINAL sha256/16
+e7bc80f0be08f537, generator 6ca7db65b832614a. The full supersession
+chain for the D32 instrument card: v2 b5e77c0c3196fbd2 (#140) → v2.1
+0d33f81d67486a29 (#141) → v2.2-delta2 d301f2604538ce53 (superseded
+same-date, label defect) → v2.2-FINAL e7bc80f0be08f537 (#142). D32A
+CLOSED at #142 pending the referee's final delta-2/3 verification
+(any finding → #143 forward-correction). O3 (d31c2, held at 78c03af)
+runs next per the §7 sequence.

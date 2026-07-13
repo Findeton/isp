@@ -246,64 +246,96 @@
    "N512": 5.4
   }
  },
- "generator_sha256_16": "2112030a1e991fba",
- "schema": "v2.1",
+ "generator_sha256_16": "6ca7db65b832614a",
+ "schema": "v2.2",
  "sig_digits": 12,
  "spatial_orderonly": {
   "d3_N1024": {
-   "advisory_rule": "advisory-only if p_below_bar > 0.10 (note \u00a76)",
+   "advisory_rule": "advisory-only if cluster_p_below_bar > 0.10 (\u00a77)",
    "audit_20pair_2x2": {
     "canonical_frame": 0.849062649097,
     "canonical_invariant": 0.813590698424,
     "receipt_tie_frame": 0.858646616541,
     "receipt_tie_invariant": 0.798496240602
    },
-   "ci95": [
-    0.726726682688,
-    0.87906363763
+   "certifies": "rank MONOTONICITY over common-diamond pairs \u2014 an order-only spatial RANKING instrument; no absolute scale, no calibrated distance, no scaling law (\u00a77)",
+   "cluster_bootstrap_ci95": [
+    0.775137389143,
+    0.895882943832
    ],
+   "cluster_p_below_bar": 0.0,
    "domain": "common-diamond pairs (order-only pre-filter)",
+   "jackknife_se": 0.0335638232682,
    "n_pairs": 120,
-   "n_sprinklings": 3,
-   "naive_min_mean": 9.30833333333,
-   "p_below_bar": 0.0,
+   "n_sprinklings": 12,
+   "naive_min_mean": 9.68333333333,
    "rho_per_sprinkling": [
-    0.849992209966,
-    0.790901491433,
-    0.803644043613
+    0.832830594842,
+    0.95395905509,
+    0.780502314648,
+    0.796356262221,
+    0.84147905798,
+    0.844162289299,
+    0.857146816589,
+    0.936174537267,
+    0.762209291649,
+    0.675329831439,
+    0.529293411211,
+    0.944211153216
    ],
-   "rho_pooled": 0.814058559751,
-   "rho_pooled_frame_disclosed": 0.823871992491,
+   "rho_pooled": 0.843837005591,
+   "rho_pooled_frame_disclosed": 0.841071824574,
    "tie_convention": "average-ranks (canonical Spearman)",
    "truth_convention": "invariant proper distance sqrt(dx^2-dt^2)",
+   "v2_1_provenance": {
+    "card_sha256_16": "0d33f81d67486a29",
+    "note": "pair-level bootstrap superseded per \u00a77 \u2014 pairs cluster within sprinklings",
+    "rho_pooled_3x40": 0.814058559751
+   },
    "verdict": "CARD-CARRIED"
   },
   "d4_N1024": {
-   "advisory_rule": "advisory-only if p_below_bar > 0.10 (note \u00a76)",
+   "advisory_rule": "advisory-only if cluster_p_below_bar > 0.10 (\u00a77)",
    "audit_20pair_2x2": {
     "canonical_frame": 0.79847083392,
     "canonical_invariant": 0.641407288101,
     "receipt_tie_frame": 0.717293233083,
     "receipt_tie_invariant": 0.583458646617
    },
-   "ci95": [
-    0.709485534792,
-    0.845518185013
+   "certifies": "rank MONOTONICITY over common-diamond pairs \u2014 an order-only spatial RANKING instrument; no absolute scale, no calibrated distance, no scaling law (\u00a77)",
+   "cluster_bootstrap_ci95": [
+    0.699163016618,
+    0.860773313752
    ],
+   "cluster_p_below_bar": 0.0,
    "domain": "common-diamond pairs (order-only pre-filter)",
+   "jackknife_se": 0.0443781562795,
    "n_pairs": 120,
-   "n_sprinklings": 3,
-   "naive_min_mean": 6.08333333333,
-   "p_below_bar": 0.0,
+   "n_sprinklings": 12,
+   "naive_min_mean": 6.125,
    "rho_per_sprinkling": [
-    0.758258127644,
-    0.787404961749,
-    0.827109714123
+    0.932258631442,
+    0.511104354538,
+    0.617389822147,
+    0.77548290592,
+    0.633533455924,
+    0.668211593739,
+    0.821128463456,
+    0.848496492879,
+    0.697650499026,
+    0.935819200357,
+    0.562052682788,
+    0.953545136546
    ],
-   "rho_pooled": 0.786629123194,
-   "rho_pooled_frame_disclosed": 0.786317738256,
+   "rho_pooled": 0.790124420798,
+   "rho_pooled_frame_disclosed": 0.778320600277,
    "tie_convention": "average-ranks (canonical Spearman)",
    "truth_convention": "invariant proper distance sqrt(dx^2-dt^2)",
+   "v2_1_provenance": {
+    "card_sha256_16": "0d33f81d67486a29",
+    "note": "pair-level bootstrap superseded per \u00a77 \u2014 pairs cluster within sprinklings",
+    "rho_pooled_3x40": 0.786629123194
+   },
    "verdict": "CARD-CARRIED"
   }
  }
