@@ -2347,3 +2347,31 @@ conditions (1)(2)(3)(4)(6) at the MEASURE level at this depth; the
 Kolmogorov projective step STATED not claimed; (5) NSE + (7) quantum
 = d34c per the §6 disclosed re-scope. Seed-independent 0/13. Hostile
 round launched (findings → #161).
+
+## 2026-07-13 — d34b round 1 REJECTED AT STATED WIDTH (4M/6m/3n): #160 FORWARD-CORRECTED; repair §7 PINNED before delta code (LEDGER #161)
+Report `reviews/d34b-round1-hostile-review.md`. The clock construction
+survives; the receipt does not. Global `w{birth_count}` labels made
+three purportedly local cylinders depend on which record birthed
+first anywhere. Exact independent chains give limits 1/3 (K2-T1),
+1/12 (K2-T3), and 1/5 (K5), not 1/2, 1/8, 1/2; the committed code
+fails its own gates at depths 8, 29, 12. The depth-4 sandwich widths
+masked the error; the promised rate was absent; `mu`/`mu_act` and
+initiated prefixes/full causal down-sets were conflated; no mass gate
+closed the measure claim; K4 was a grep. K5 therefore anti-verified
+its headline for the event actually coded (remote pair: 1/3 -> 1/5).
+Survivors: all printed fractions are arithmetically correct; T2 is
+label-free and survives to depth 30; the exponential-clock object and
+the renewal/Harris argument remain viable. The §7 repair pin freezes:
+lineage-local alpha binding; own-record/fixed-time stopping; exact
+local-ring geometric tails (with the global-depth `n^-2` killed-chain
+tail explicitly separated) and wrong-value exclusions; full mass/restriction and
+passive-reception gates; literal actors with private keyed clocks and
+an independent exact DAG oracle; pathwise remote coupling; Yule
+nonexplosion/persistence; and the pushforward distinction (auxiliary
+interleavings are summed, not individually required equiprobable).
+The universal down-set formula is withdrawn more sharply: the minimal
+shared-wire cylinder `i(A,B) < b(B,alpha)` has probability 1/32, not
+`prod q=1/16`; the missing 1/2 is physical placement, not gauge.
+The full timed path space is standard Borel; only its finite-
+observation shadow is literally profinite. d34c remains held until the
+repaired classical measure survives its hostile delta.
