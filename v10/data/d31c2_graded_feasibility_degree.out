@@ -1,0 +1,28 @@
+[d31c2 O3 — the open-family exact search (degree / distance-degree /
+      motif / component-size); normalized stationary class-graded
+      kernels; horizon u <= 5 from the D28 seed; exact rationals]
+  [PASS] D1 the horizon enumerated (states per u printed); ALL states connected (the component-size reduction's premise); at every u >= 3 state every birth has a DISJOINT interact (Layer 1's premise)  (u->count: 2:1, 3:2, 4:4, 5:9)
+  [PASS] D2 [DEG (simple-graph degree)] VERDICT: OBSTRUCTION-instance — the merged covariance system (Layer 1 Z-invariance + Layer 2 forced class-merges) admits NO positive solution on the horizon (exact Fourier-Motzkin)  (10 merged classes (from 14 forced merges), 24 delta equations (0 unresolved seed rows skipped — sound); INFEASIBLE for positive weights: a variable is forced to 0 (empty positivity row); certificate pair: births at u = 2 vs u = 3 webs force merged class ('i', 1, 1) = 0, then positivity dies)
+  [PASS] D3 [DDEG (distance-degree, family ii)] VERDICT: OBSTRUCTION-instance — the merged covariance system (Layer 1 Z-invariance + Layer 2 forced class-merges) admits NO positive solution on the horizon (exact Fourier-Motzkin)  (4 merged classes (from 7 forced merges), 24 delta equations (0 unresolved seed rows skipped — sound); INFEASIBLE for positive weights: a variable is forced to 0 (empty positivity row); certificate pair: births at u = 2 vs u = 3 webs force merged class ('i', 2, 1) = 0, then positivity dies)
+  [PASS] D4 [MOTIF (distance x common-neighbor)] VERDICT: OBSTRUCTED by the C2 MECHANISM — leaf births NEVER reclassify existing interact classes on this grammar (exhaustive over the horizon: distances and common-neighbor counts of existing pairs are leaf-birth-invariant), so the family is birth-inert and multiplicity-insensitive: Z(W+b) - Z(W+i) = the newborn's strictly positive mass (d31c C2, verified: every birth strictly enlarges the census)  (the open-arm placement of tree-substrate motifs at #139 is hereby RESOLVED-OBSTRUCTED (they never escaped birth-inertness))
+  [PASS] D5 [COMPONENT-SIZE] VERDICT: OBSTRUCTED-BY-REDUCTION — every reachable state is connected (D1), so component size == register count == u + 1 on the whole grammar: the grading is u-only == the D31A graph-blind class, and the A-theorem (birth-positive stationary path-covariant graph-blind => pure birth) kills interactions; disconnected substrates are OUT OF HORIZON (no op disconnects)
+      D6 THE LANDSCAPE AFTER O3 [supersedes d31c C5's open arm]:
+        multiplicity-insensitive + birth-inert gradings: OBSTRUCTED
+          (d31c C2/C3 — d_cover, static-age, component-indicator);
+        simple-graph degree: DECIDED ABOVE (D2);
+        distance-degree (family ii, the #139 debt O3): DECIDED (D3);
+        tree-substrate motifs: OBSTRUCTED (D4 — never escaped
+          birth-inertness);
+        component-size: OBSTRUCTED-BY-REDUCTION (D5 -> D31A);
+        none-absorbing: bounded-domain only (d31c C4 / #139 M2);
+        K_flat teleological: horizon-dependent (D28b R5).
+      RECONNAISSANCE LIMITS: the horizon is u <= 5, two-op
+      covariance closure, the four pinned class maps, normalized
+      stationary kernels; richer gradings (multi-radius degree
+      profiles, age-degree products) and deeper horizons are NOT
+      decided here. The O7 fork stands: all of this presumes the
+      covariance quotient is physical (accretion order = gauge);
+      if order is recorded history, the whole axis re-opens.
+  [PASS] D6 the landscape printed with limits + the O7 pointer
+
+ALL CHECKS PASS (6/6: D1 structural, D2-D5 verdicts, D6 print)

@@ -1813,3 +1813,32 @@ same-date, label defect) → v2.2-FINAL e7bc80f0be08f537 (#142). D32A
 CLOSED at #142 pending the referee's final delta-2/3 verification
 (any finding → #143 forward-correction). O3 (d31c2, held at 78c03af)
 runs next per the §7 sequence.
+
+## 2026-07-12 — O3 RUN GREEN 6/6 (first official run): ALL FOUR OPEN FAMILIES OBSTRUCTED — the covariant-family search at this horizon is EXHAUSTED-NEGATIVE
+`code/d31c2_graded_feasibility_degree.py` → `data/d31c2_...out` (pins:
+note-d32 §7(4) + note-d31 §6, both pre-committed; D32A closed
+TERMINAL-CLEAN at 69c0df8 first — the §7 sequence honored). D1: the
+horizon = 16 states (u: 2→1, 3→2, 4→4, 5→9), all connected, the
+disjoint-interact premise verified at every u ≥ 3 birth. D2 [DEG]:
+OBSTRUCTION-instance — 14 forced merges → 10 classes, 24 Δ equations,
+0 seed rows skipped (all seed reclassifications already merged — the
+seed equations entered as implied); Fourier–Motzkin: INFEASIBLE
+("a variable forced to 0"); certificate pair: births at u = 2 vs
+u = 3 webs force merged class ('i',1,1) = 0, then positivity dies.
+D3 [DDEG = family (ii), the #139 debt]: OBSTRUCTION-instance — 7
+merges → 4 classes; certificate: ('i',2,1) forced to 0 (the d ≥ 2
+stratum dies first — the u-dependence of the newborn's far-interact
+mass). D4 [MOTIF]: OBSTRUCTED by the C2 mechanism — exhaustive over
+the horizon, leaf births NEVER reclassify existing pair distances or
+common-neighbor counts: tree-substrate motifs are birth-inert, so
+#139's open-arm placement is RESOLVED-OBSTRUCTED. D5 [COMPONENT-SIZE]:
+OBSTRUCTED-BY-REDUCTION (connectivity ⇒ component size ≡ u + 1 ⇒ the
+D31A graph-blind theorem). THE LANDSCAPE (D6, supersedes d31c C5's
+open arm): within everything tested, stationary + path-covariant +
+interacting + unbounded-growth has NO representative. Consequences:
+D32B proceeds PHENOMENOLOGICAL with full justification (no surviving
+family to map); escalations named — richer gradings (multi-radius
+degree profiles, age-degree products), deeper horizons, O2 (the
+unified positivity-collapse lemma — two new instances here), and O7
+(order-as-recorded-history reopens the whole axis). Hostile round
+launched (fresh referee — theorem-grade receipt). LEDGER #143.
