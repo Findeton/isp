@@ -2093,3 +2093,16 @@ build standards; silence eliminated). My process error stands
 recorded: I applied round findings from the notification summary
 instead of the report text — the discipline is now: repairs are
 applied FROM THE REPORT, and dispositions are enumerated per item.
+
+## 2026-07-13 — PAPER 20 DRAFTED (pre-round): "The geometry of record growth: instruments, no-gos, and the compression law"
+`relativistic-isp-v10-paper20-the-geometry-of-record-growth.md` —
+single-threaded per house style (the correction record stays in the
+LEDGER); every claim at its TERMINAL scope (#147/#150/#151 widths:
+static-metric-collar family scope, priced-coupling covariance bound,
+compression approximate, the pair as the object, ranking-only spatial
+certification); provenance labels per D20; §7 falsifiers printed with
+their recorded margins; successor arms ranked. Abstract = the three
+results: the no-go complex, the instrument line + signature pair, the
+compression law. Hostile round next (fresh referee; scope: every
+number vs the terminal records; every scope-width vs #147/#150/#151;
+the single-threading discipline; the falsifiers' reproducibility).
