@@ -18,8 +18,10 @@ THE OBJECT NOW GATED is the classical marked Harris process:
 
 prod(q) is used only for OWN-RING initiated prefixes; prod(qbar), with
 idles integrated out, only for OWN-ACT prefixes. Physical wire-DAG
-cylinders carry clock-placement factors. All probability gates below
-use Fraction; Decimal(100) is used only to print theorem cross-checks.
+cylinders carry clock-placement factors. All finite probability identities
+below use Fraction. E5's long recurrence table is a 100-decimal CROSS-CHECK
+of the analytic Yule-martingale lemma stated there; it is not an exact
+computer proof of the asymptotic.
 Gates E1--E7; exit 1 on any failure.
 """
 
@@ -328,7 +330,8 @@ ok3 = (
 check(
     "E3 PASSIVE-RECEPTION PLACEMENT [exact, corrective finding]: the "
     "coarse first-ring initiator cylinder has prod(q)=1/16 but each of "
-    "its two physical shared-B orders has mass 1/32 (act level 1/4 splits "
+    "its two physical shared-B RELATIVE-ORDER cylinders has mass 1/32 "
+    "(intervening events allowed; act level 1/4 splits "
     "as 1/8+1/8); a passive i(B,A) consumes no A ring yet is a predecessor "
     "of A's later birth. Therefore prod(q) is NOT the wire-DAG measure",
     ok3,
@@ -400,6 +403,14 @@ check(
 # ---------------------------------------------------------------------------
 # E5: the truncation variable matters. Global jump depth has a polynomial
 # killed-chain tail; local physical time has the remote-independent Erlang law.
+# ANALYTIC LEMMA (proof carried in note-d33 §9): with m=k0-1 non-target
+# records, exp(-t/4)M_t converges in L2 to W~Gamma(m,1). Their ring count is
+# asymptotic to 4W exp(t/4); target idles are lower order; and the independent
+# target-act time is Exp(1/2). Inversion plus dominated convergence gives
+# S_n ~ 16 E[W^2]n^-2 = 16k0(k0-1)n^-2 for k0>=2. (At k0=1 there is no
+# competing Yule population and the tail is geometric.) The recurrence is
+# exact; its
+# long Decimal table checks, but does not replace, that proof.
 
 def killed_survival_exact(k0, nmax):
     p = {k0: F(1)}
@@ -460,9 +471,11 @@ ok5 = (
     and time_tail_two > time_tail_one
 )
 check(
-    "E5 HONEST CONVERGENCE VARIABLE: the exact killed-chain recurrence "
-    "shows global-jump survival is decreasing with a remote-dependent "
-    "polynomial tail (n^2 S_n -> 16 k0(k0-1)); at fixed local physical "
+    "E5 HONEST CONVERGENCE VARIABLE [exact recurrence + THEOREM + "
+    "100-digit cross-check]: the killed chain is exactly normalized and "
+    "decreasing; the Yule-martingale lemma gives the remote-dependent "
+    "polynomial tail n^2 S_n -> 16 k0(k0-1) for k0>=2 (k0=1 is "
+    "geometric). At fixed local physical "
     "time the one-/two-act unfinished masses are the remote-INDEPENDENT "
     "Exp/Erlang tails exp(-t/2) and exp(-t/2)(1+t/2)",
     ok5,
@@ -477,58 +490,82 @@ check(
 # ---------------------------------------------------------------------------
 # E6: construction-level normalization, nonexplosion, persistence, locality.
 
-# At k clocks, sum_y (1/k) sum_o q_y(o) = 1. Check every oracle state.
+# At k clocks, sum_y (1/k) sum_o q_y(o) = 1. Check every oracle state,
+# including the full history-conditional next-kind law used by the SLLN.
 all_states = [s for s, _ in front3]
 row_ok = True
+type_ok = True
 for s in all_states:
     actors = sorted(s["actors"], key=skey)
     k = len(actors)
     row = F(0)
+    types = defaultdict(F)
     for y in actors:
-        row += F(1, k) * sum((q for _, _, q in oracle_options(s, y)), F(0))
+        for kind, target, q in oracle_options(s, y):
+            row += F(1, k) * q
+            types[kind] += F(1, k) * q
     row_ok &= row == 1
+    type_ok &= types == {"b": F(1, 4), "i": F(1, 4), "n": F(1, 2)}
 
-# Nonexplosion proof certificate: each dyadic block of sum 1/n is >= 1/2;
-# infinitely many blocks force divergence. Birth waiting means are 4/n.
+# Nonexplosion theorem. If X_n~Exp(n/4) are successive birth holding times,
+# E X_n=4/n and Var X_n=16/n^2. The dyadic blocks prove sum E X_n diverges.
+# The inequality 1/n^2 <= 1/[n(n-1)] makes the variance sum finite;
+# Kolmogorov's convergence theorem makes sum(X_n-E X_n) converge a.s., hence
+# sum X_n diverges a.s. Between births there are geometrically many total
+# rings (success probability 1/4), hence finitely many almost surely.
 dyadic = []
 for j in range(12):
     block = sum((F(1, n) for n in range(2 ** j, 2 ** (j + 1))), F(0))
     dyadic.append(block)
 dyadic_ok = all(x >= F(1, 2) for x in dyadic)
+variance_bound_ok = all(F(1, n * n) <= F(1, n * (n - 1))
+                        for n in range(2, 4097))
+variance_partial = sum((F(16, n * n) for n in range(1, 4097)), F(0))
+variance_bound_ok &= variance_partial < 32
 
 n0 = Decimal(2)
 T = Decimal(8)
 expected_population = n0 * (T / 4).exp()
 expected_rings = 4 * n0 * ((T / 4).exp() - 1)
 
-# Disconnected-component locality is product-measure/pathwise: source tapes
-# for A/B have the same coordinates whether P/Q exist. Gate the finite source
-# cylinder factorization exactly, and contrast the wrong global-next-actor
-# question (1/2 vs 1/4).
-local_tape_cyl = F(1, 4) * F(1, 2) * F(1, 4)
-remote_tape_cyl = F(1, 2) * F(1, 4)
-factorized = local_tape_cyl * remote_tape_cyl
+# Disconnected-component locality is a theorem of disjoint product source
+# coordinates plus a componentwise Harris map. The finite-coordinate check
+# below independently enumerates a local/remote joint alphabet and recovers
+# both marginals; A4 in the actor receipt performs the stronger pathwise test.
+local_alphabet = {"b": F(1, 4), "i": F(1, 4), "n": F(1, 2)}
+remote_alphabet = {"b": F(1, 4), "i": F(1, 4), "n": F(1, 2)}
+joint_tapes = {(a, b): p * q for a, p in local_alphabet.items()
+               for b, q in remote_alphabet.items()}
+local_marginal = {a: sum(joint_tapes[(a, b)] for b in remote_alphabet)
+                  for a in local_alphabet}
+remote_marginal = {b: sum(joint_tapes[(a, b)] for a in local_alphabet)
+                   for b in remote_alphabet}
+factorization_check = (sum(joint_tapes.values(), F(0)) == 1
+                       and local_marginal == local_alphabet
+                       and remote_marginal == remote_alphabet)
 global_next_seed2 = F(1, 2)
 global_next_seed4 = F(1, 4)
 
 ok6 = (
-    row_ok
-    and dyadic_ok
+    row_ok and type_ok
+    and dyadic_ok and variance_bound_ok
     and expected_population.is_finite()
     and expected_rings.is_finite()
-    and factorized == local_tape_cyl * remote_tape_cyl
+    and factorization_check
     and global_next_seed2 != global_next_seed4
     and sum(q for _, q in ring_options(1)) == 1
 )
 check(
     "E6 EXISTENCE/NONEXPLOSION/PERSISTENCE/REMOTE LOCALITY: every "
-    "embedded generator row normalizes; K(t) is Yule with birth rate k/4 "
-    "and the dyadic harmonic-block certificate proves no finite explosion; "
-    "birth/interact/idle ring masses stay 1/4,1/4,1/2; disconnected source "
+    "embedded generator row normalizes; K(t) is Yule with birth rate k/4, "
+    "and divergent means plus summable centered variances prove almost-sure "
+    "nonexplosion. Every history-conditional next-kind law is exactly "
+    "1/4,1/4,1/2, so the bounded martingale SLLN proves persistent empirical "
+    "densities. Disconnected source "
     "tapes factor exactly. Fixed GLOBAL-next-event probabilities change "
     "1/2 -> 1/4 and are printed as the rejected locality criterion",
     ok6,
-    f"{len(all_states)} depth-3 rows; min dyadic block="
+    f"{len(all_states)} depth-3 generator/type rows; min dyadic block="
     f"{dfrac(min(dyadic), 24)}; "
     f"E[N(8)]={expected_population:.30g}, E[rings<=8]={expected_rings:.30g}; "
     f"global-next A: {global_next_seed2}->{global_next_seed4}",
@@ -540,12 +577,15 @@ check(
 
 ok7 = FAIL == 0
 check(
-    "E7 CLASSICAL CLAIM LADDER: source noise is normalized/projective; "
-    "nonexplosion makes the finite-time marked path locally finite; the "
-    "physical typed-history law is its pushforward/orbit sum; initiated "
+    "E7 CLASSICAL CLAIM LADDER: ideal source noise and TIMED laws are "
+    "normalized/projective; nonexplosion makes finite-time paths locally "
+    "finite; each T has an Ulam-coded untimed typed-DAG pushforward/orbit "
+    "sum, and the full timed process has a complete-history pushforward; "
+    "initiated "
     "marginals are exactly local and disconnected components factor. "
-    "NOT CLAIMED: prod(q) on physical down-sets, a literally profinite "
-    "timed space, dynamic adjacency/component joining, derived 1/4 "
+    "NOT CLAIMED: an intrinsic inter-T restriction after timestamps are "
+    "erased, any constructed profinite shadow, prod(q) on physical down-"
+    "sets, dynamic adjacency/component joining, derived 1/4 "
     "coefficients, NSE, or a quantum lift",
     ok7,
 )

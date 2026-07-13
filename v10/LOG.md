@@ -2405,3 +2405,28 @@ the physical measure/global-next locality. Earned claim: a normalized,
 nonexplosive, fixed-time-projective classical marked actor-process law
 and its typed-history pushforward exist. Static adjacency, no component
 joining, chosen 1/4s; d34c NSE/quantum held. Fresh hostile round launched.
+
+## 2026-07-13 — d34b repaired hostile round APPLIED: core accepted, topology/executable width repaired; delta pending (LEDGER #163)
+Three independent reports filed: measure/topology 3M/5m/3n; actor code
+4M/6m/3n; asymptotic/numerical 2M/5m/2n. Zero false printed numbers,
+zero core probability falsifications, all original reruns green. CENTRAL
+ADJUDICATION: #162's ideal marked Harris measure is REAL; its profinite,
+untimed-projectivity, and exact-executable wording was too wide. §9 now
+names THREE objects: ideal source Omega; timed process X_T (projective
+under visible time restriction); per-T untimed Ulam-DAG pushforward G_T
+(exists, but has no intrinsic T->S map after times are erased). The
+present-tense profinite-shadow claim is WITHDRAWN pending an explicit
+finite inverse system. Nonexplosion proof completed (divergent holding-
+time means + summable centered variances; geometric rings between births).
+Persistence completed by the exact history-conditional kind vector and
+martingale SLLN, static/no-sealing scope. The n^-2 constant now has the
+Yule-martingale/Gamma proof (k0>=2; k0=1 geometric); Decimal is a 100-digit
+cross-check. Actor repairs: finite PRF reference separated from ideal iid
+clocks; natural grid ties acknowledged/fail-closed; flat Ulam paths +
+iterative encoding pass depth 6000 (closes reproduced depth-998 cap);
+incidence and oracle serializers separately coded; A5 full state; A7
+derived variances + NB finite-T distribution + mark/partner diagnostics;
+A6 bounded concordance only. Autonomous objects + central shared-event
+evaluator, no OS-mailbox claim. Frozen R2 full untimed restriction narrowed
+honestly. Rerun outputs update after the delta patch; delta referees asked
+to stamp the exact terminal wording before d34c opens.

@@ -4,19 +4,24 @@ d34b_actor_reference_high_precision.py — literal actor reference for the
 repaired D34b Harris process. Pin: note-d33 §7, before this file existed.
 
 This is deliberately NOT a program that first chooses one actor from a
-global list. Every actor owns a private counter-keyed clock/mark tape and
+global list. Every actor owns a private counter-addressed clock/mark tape and
 an absolute next-ring time. A heap and an independent scan-min engine are
-two serial implementations of the same autonomous actors.
+two serial implementations of the same autonomous actor semantics.
 
-Clocks use Decimal at 100 digits. Marks use exact 256-bit quartiles and
-unbiased rejection for partner ranks. Birth labels are parent-local Ulam
-addresses. Passive receptions touch both causal wires but never reset the
-receiver clock or consume its mark. Auxiliary times/global serialization
-are omitted from the physical DAG key.
+MODEL/IMPLEMENTATION SEPARATION: the theorem uses ideal iid Uniform/Exp
+coordinates. This executable uses a deterministic BLAKE2 PRF on a 256-bit
+grid and evaluates logarithms at 100 Decimal digits. It is a reproducible
+high-precision reference, not literally an independent continuous source:
+grid ties have tiny nonzero probability and are fail-closed by NumericalTie.
+Marks use exact 256-bit quartiles and unbiased rejection for partner ranks.
+Birth labels are flat parent-local Ulam paths. Passive receptions touch both
+causal wires but never reset the receiver clock or consume its mark.
+Auxiliary times/global serialization are omitted from the physical DAG key.
 
 The bounded exact oracle below has its own state transition code; it shares
 only the stable physical-key serializer with the actor implementation.
-Bounds in tests are verifier bounds, never model horizons. Gates A1--A8;
+Bounds in tests are verifier bounds, never horizons of the ideal model.
+Gates A1--A8;
 exit 1 on any failure.
 """
 
@@ -46,13 +51,30 @@ def check(label, ok, detail=""):
 
 
 def rid_key(rid):
-    return repr(rid)
+    if isinstance(rid, str):
+        return rid, ()
+    return rid[0], tuple(rid[1:])
+
+
+def rid_text(rid):
+    root, path = rid_key(rid)
+    return root if not path else root + "/" + ".".join(str(x) for x in path)
+
+
+def eid_key(eid):
+    return rid_key(eid[0]), eid[2]
+
+
+def child_id(parent, ordinal):
+    if ordinal < 1:
+        raise ValueError(ordinal)
+    if isinstance(parent, str):
+        return (parent, ordinal)
+    return parent + (ordinal,)
 
 
 def root_of(rid):
-    while isinstance(rid, tuple) and len(rid) == 3 and rid[1] == "c":
-        rid = rid[0]
-    return rid
+    return rid if isinstance(rid, str) else rid[0]
 
 
 def touched(kind, initiator, target):
@@ -66,16 +88,21 @@ def physical_event_key(events):
     addresses, not global event numbers. Auxiliary times are absent."""
     rows = []
     for e in events:
+        eid_text = f"{rid_text(e['eid'][0])}#r{e['eid'][2]}"
         rows.append((
-            repr(e["eid"]), e["kind"], repr(e["initiator"]),
-            repr(e["target"]), tuple(sorted(repr(p) for p in e["preds"])),
+            eid_text, e["kind"], rid_text(e["initiator"]),
+            None if e["target"] is None else rid_text(e["target"]),
+            tuple(sorted(f"{rid_text(p[0])}#r{p[2]}" for p in e["preds"])),
         ))
     return tuple(sorted(rows))
 
 
 def tape_uint(seed, rid, ring, domain, retry=0):
-    payload = (f"d34b-actor-v1|{seed}|{repr(rid)}|{ring}|{domain}|{retry}"
-               .encode("utf-8"))
+    root, path = rid_key(rid)
+    fields = [b"d34b-actor-v2", str(seed).encode(), root.encode(),
+              str(ring).encode(), domain.encode(), str(retry).encode()]
+    fields += [str(x).encode() for x in path]
+    payload = b"".join(len(x).to_bytes(4, "big") + x for x in fields)
     return int.from_bytes(hashlib.blake2b(payload, digest_size=32).digest(),
                           "big")
 
@@ -223,7 +250,7 @@ class World:
         ring_number = actor.ring_index
         if kind == "b":
             actor.birth_index += 1
-            child = (rid, "c", actor.birth_index)
+            child = child_id(rid, actor.birth_index)
             target = child
             if child in self.actors:
                 raise AssertionError("nonlocal birth-label collision")
@@ -265,7 +292,7 @@ class World:
         out = []
         for e in self.events:
             row = (e["eid"], e["kind"], e["initiator"], e["target"],
-                   tuple(sorted(e["preds"], key=rid_key)))
+                   tuple(sorted(e["preds"], key=eid_key)))
             if include_time:
                 row += (e["time"],)
             out.append(row)
@@ -273,10 +300,17 @@ class World:
 
 
 def reconstruct_preds(events):
+    """Separately coded incidence reconstruction: intentionally does not
+    call touched(), the producer helper."""
     last = {}
     out = {}
     for e in events:
-        wires = touched(e["kind"], e["initiator"], e["target"])
+        if e["kind"] == "n":
+            wires = (e["initiator"],)
+        elif e["kind"] in ("b", "i"):
+            wires = (e["initiator"], e["target"])
+        else:
+            raise AssertionError(e["kind"])
         out[e["eid"]] = frozenset(last[w] for w in wires if w in last)
         for w in wires:
             last[w] = e["eid"]
@@ -305,7 +339,7 @@ def project_shared(world, include_actor_state=False):
     rows = []
     for e in events:
         rows.append((e["eid"], e["kind"], e["initiator"], e["target"],
-                     tuple(sorted(e["preds"], key=rid_key)), e["time"]))
+                     tuple(sorted(e["preds"], key=eid_key)), e["time"]))
     if not include_actor_state:
         return tuple(rows)
     actors = []
@@ -314,6 +348,15 @@ def project_shared(world, include_actor_state=False):
         ns = tuple(sorted((x for x in a.neighbors if x in shared), key=rid_key))
         actors.append((rid, a.ring_index, a.birth_index, a.next_ring, ns))
     return tuple(rows), tuple(actors)
+
+
+def world_snapshot(world):
+    actors = []
+    for rid in sorted(world.actors, key=rid_key):
+        a = world.actors[rid]
+        actors.append((rid, a.sealed, a.ring_index, a.birth_index, a.next_ring,
+                       tuple(sorted(a.neighbors, key=rid_key))))
+    return world.event_rows(), tuple(actors)
 
 
 print("[d34b literal autonomous actors — 100-decimal reference]")
@@ -334,15 +377,18 @@ for seed in range(24):
     dag_count += len(h.events)
 check(
     "A1 LITERAL ACTORS / SERIALIZER GAUGE: private 100-decimal deadlines "
-    "run by heap and by independent scan-min are pathwise identical; the "
-    "stored wire-DAG agrees with an independent incidence reconstruction "
+    "run by heap and by separately implemented scan-min are pathwise "
+    "identical; the stored wire-DAG agrees with a separately coded incidence "
+    "reconstruction "
     "and is acyclic",
     ok1,
     f"24 tapes, {dag_count} events; every set traversal is structurally sorted",
 )
 
 
-# A2: artificial numerical tie is an error, never a label tie-break.
+# A2: ideal clocks tie with probability zero. Finite PRF-grid ties have tiny
+# positive probability and are an error, never a label tie-break. Flat IDs
+# carry no recursion-depth horizon.
 tie_world = World(991)
 same = Decimal("1.25")
 tie_world.actors["A"].next_ring = same
@@ -355,11 +401,18 @@ try:
     tie_world.peek_next()
 except NumericalTie:
     tie_raised = True
+deep = "A"
+for depth in range(6000):
+    deep = child_id(deep, 1)
+deep_ok = (root_of(deep) == "A" and len(rid_key(deep)[1]) == 6000
+           and isinstance(tape_uint(991, deep, 0, "depth-test"), int))
 check(
-    "A2 HF2: genuine continuous clocks tie with probability zero; an "
-    "artificial equal-Decimal deadline raises NumericalTie and is never "
-    "resolved by actor label",
-    tie_raised,
+    "A2 HF2 + NO SOFTWARE LINEAGE CAP: ideal continuous clocks tie with "
+    "probability zero; the 256-bit PRF grid has a nonzero tie bound and an "
+    "artificial equal deadline raises NumericalTie, never a label rule. "
+    "Flat Ulam paths encode/hash beyond depth 5000 without recursion",
+    tie_raised and deep_ok,
+    "pairwise PRF-grid tie probability <= 2^-256; depth tested=6000",
 )
 
 
@@ -383,7 +436,7 @@ ok3 = (
     reception["initiator"] == "B" and reception["target"] == "A"
     and a_before == a_after
     and reception["eid"] in birth["preds"]
-    and birth["target"] == ("A", "c", 1)
+    and birth["target"] == ("A", 1)
 )
 check(
     "A3 PASSIVE RECEPTION: forced i(B,A) changes A's causal wire but leaves "
@@ -426,15 +479,19 @@ check(
 restriction_ok = True
 restricted_events = 0
 for seed in range(24):
-    long = World(110000 + seed).run_time("5")
+    long = World(110000 + seed).run_time("2")
+    snap_at_2 = world_snapshot(long)
+    long.run_time("5")
     short = World(110000 + seed).run_time("2")
     prefix = tuple(row for row in long.event_rows()
                    if row[-1] <= Decimal(2))
     restriction_ok &= prefix == short.event_rows()
+    restriction_ok &= snap_at_2 == world_snapshot(short)
     restricted_events += len(prefix)
 check(
     "A5 FIXED-TIME PROJECTIVITY: one run to T=5 restricted to t<=2 is "
-    "bit-identical to a fresh run to T=2 on the same private tapes (the "
+    "bit-identical—including full actor/neighbor/next-deadline state—to a "
+    "fresh run to T=2 on the same private tapes (the "
     "physical restriction variable is time/source noise, not 'delete the "
     "last global event')",
     restriction_ok,
@@ -476,7 +533,8 @@ def o_move(s, y, kind, target):
     eid = (y, "r", z["actors"][y][0])
     if kind == "b":
         z["actors"][y][1] += 1
-        target = (y, "c", z["actors"][y][1])
+        ordinal = z["actors"][y][1]
+        target = (y, ordinal) if isinstance(y, str) else y + (ordinal,)
         z["actors"][target] = [0, 0]
         z["adj"][y].add(target)
         z["adj"][target] = {y}
@@ -490,12 +548,40 @@ def o_move(s, y, kind, target):
     return z
 
 
+def o_id_text(rid):
+    """Oracle-local serializer; intentionally independent of rid_text()."""
+    if isinstance(rid, str):
+        return rid
+    return str(rid[0]) + "/" + ".".join(str(x) for x in rid[1:])
+
+
+def o_event_key(events):
+    """Oracle-local physical serializer; intentionally independent of
+    physical_event_key()."""
+    rows = []
+    for event in events:
+        eid = event["eid"]
+        pred_text = []
+        for pred in event["preds"]:
+            pred_text.append(f"{o_id_text(pred[0])}#r{pred[2]}")
+        rows.append((
+            f"{o_id_text(eid[0])}#r{eid[2]}",
+            event["kind"],
+            o_id_text(event["initiator"]),
+            None if event["target"] is None else o_id_text(event["target"]),
+            tuple(sorted(pred_text)),
+        ))
+    return tuple(sorted(rows))
+
+
 def o_state_key(s):
-    actors = tuple(sorted((repr(r), tuple(v)) for r, v in s["actors"].items()))
-    adj = tuple(sorted((repr(r), tuple(sorted(repr(x) for x in xs)))
+    actors = tuple(sorted((o_id_text(r), tuple(v))
+                          for r, v in s["actors"].items()))
+    adj = tuple(sorted((o_id_text(r), tuple(sorted(o_id_text(x) for x in xs)))
                        for r, xs in s["adj"].items()))
-    last = tuple(sorted((repr(r), repr(e)) for r, e in s["last"].items()))
-    return actors, adj, physical_event_key(s["events"]), last
+    last = tuple(sorted((o_id_text(r), f"{o_id_text(e[0])}#r{e[2]}")
+                        for r, e in s["last"].items()))
+    return actors, adj, o_event_key(s["events"]), last
 
 
 def oracle(depth):
@@ -521,7 +607,7 @@ def oracle(depth):
         level = nxt
     classes = defaultdict(F)
     for s, p in level.values():
-        classes[physical_event_key(s["events"])] += p
+        classes[o_event_key(s["events"])] += p
     return dict(classes)
 
 
@@ -554,16 +640,17 @@ ok6 = (sum(exact2.values(), F(0)) == 1
        and chi2 < chi_bar and max_z < 6.0)
 check(
     "A6 INDEPENDENT EXACT ORACLE: the separately coded rational embedded "
-    "chain has mass one; 12,000 literal 100-decimal two-event actor worlds "
-    "land only in its canonical wire-DAG classes and clear conservative "
-    "chi-square/effectwise bars",
+    "chain and serializer have mass one; 12,000 finite-PRF, 100-decimal-"
+    "evaluated two-event actor worlds land only in its canonical wire-DAG "
+    "classes and clear conservative chi-square/effectwise bars. This is a "
+    "bounded concordance test, not equality of discrete and ideal clocks",
     ok6,
     f"classes={len(exact2)}, chi2={chi2:.3f} < {chi_bar:.3f}, max|z|="
     f"{max_z:.3f} < 6",
 )
 
 
-# A7: independent-clock statistics and Yule finite-time check.
+# A7: PRF-quality diagnostics and ideal-clock/Yule finite-time checks.
 winner_ok = True
 winner_detail = []
 clock_trials = 3000
@@ -590,46 +677,105 @@ child_trials = 4000
 for j in range(child_trials):
     seed = 800000 + j
     parent_post = tape_wait(seed, "A", 1)
-    child_first = tape_wait(seed, ("A", "c", 1), 0)
+    child_first = tape_wait(seed, ("A", 1), 0)
     child_wins += child_first < parent_post
 child_z = abs(child_wins - child_trials / 2) / math.sqrt(child_trials / 4)
 
-yule_trials = 500
+yule_trials = 2000
 pop_sum = 0
 ring_sum = 0
+pop_hist = Counter()
 for j in range(yule_trials):
     sim = World(900000 + j).run_time("4")
     pop_sum += len(sim._live())
+    pop_hist[len(sim._live())] += 1
     ring_sum += len(sim.events)
 mean_pop = pop_sum / yule_trials
 mean_rings = ring_sum / yule_trials
 target_pop = 2 * math.exp(1)
 target_rings = 8 * (math.exp(1) - 1)
-# Conservative finite-sample checks; the exact expectations/nonexplosion
-# theorem are carried by the exact receipt, not inferred from these runs.
-yule_ok = abs(mean_pop - target_pop) < 0.55 and abs(mean_rings - target_rings) < 1.1
-ok7 = winner_ok and child_z < 6 and yule_ok
+# Exact standard errors. N(4) is negative-binomial for a Yule process.
+var_pop = 2 * math.exp(1) * (math.exp(1) - 1)
+se_pop = math.sqrt(var_pop / yule_trials)
+pop_z = abs(mean_pop - target_pop) / se_pop
+
+# Total-ring second moment from the joint (N,R) generator, lambda=1/4:
+# dE[R]/dt=E[N], dE[NR]/dt=E[N^2]+lambda E[NR]+lambda E[N],
+# dE[R^2]/dt=2E[NR]+E[N].
+n0 = 2
+lam = 0.25
+T4 = 4.0
+E4 = math.exp(lam * T4)
+ring_second = (
+    n0 * (n0 + 1) * (E4 - 1) ** 2 / lam ** 2
+    - 2 * n0 * (1 - lam) * (E4 * (lam * T4 - 1) + 1) / lam ** 2
+    + n0 * (E4 - 1) / lam
+)
+var_rings = ring_second - target_rings ** 2
+se_rings = math.sqrt(var_rings / yule_trials)
+ring_z = abs(mean_rings - target_rings) / se_rings
+
+# Negative-binomial population distribution, bins 2..15 plus the tail.
+p0 = math.exp(-1)
+expected_bins = {}
+for n in range(2, 16):
+    expected_bins[n] = yule_trials * (n - 1) * p0 ** 2 * (1 - p0) ** (n - 2)
+expected_bins[16] = yule_trials - sum(expected_bins.values())
+observed_bins = {n: pop_hist.get(n, 0) for n in range(2, 16)}
+observed_bins[16] = sum(v for n, v in pop_hist.items() if n >= 16)
+yule_chi = sum((observed_bins[n] - expected_bins[n]) ** 2 / expected_bins[n]
+               for n in expected_bins)
+yule_df = len(expected_bins) - 1
+yule_bar = yule_df + 7 * math.sqrt(2 * yule_df)
+
+# Direct PRF quartile and unbiased-rank diagnostics (not proofs of iid source
+# noise). The rejection construction itself is exact on each uniform word.
+mark_trials = 50000
+kind_counts = [0, 0, 0, 0]
+for j in range(mark_trials):
+    kind_counts[tape_uint(950000, "A", j, "kind-audit") & 3] += 1
+kind_se = math.sqrt(mark_trials * .25 * .75)
+kind_z = max(abs(x - mark_trials / 4) for x in kind_counts) / kind_se
+partner_z = 0.0
+for mpart in (3, 7, 17):
+    counts = [0] * mpart
+    for j in range(mark_trials):
+        counts[tape_randbelow(960000 + mpart, "A", j, mpart)] += 1
+    se = math.sqrt(mark_trials * (1 / mpart) * (1 - 1 / mpart))
+    partner_z = max(partner_z,
+                    max(abs(x - mark_trials / mpart) for x in counts) / se)
+
+yule_ok = pop_z < 6 and ring_z < 6 and yule_chi < yule_bar
+ok7 = (winner_ok and child_z < 6 and yule_ok
+       and kind_z < 6 and partner_z < 6)
 check(
-    "A7 CLOCK/YULE HIGH-PRECISION CHECKS: frozen equal-rate actor winners "
-    "and minimum waits match 1/k and Exp(k); independent parent/child "
-    "post-birth clocks give P(child wins)=1/2; finite-time population and "
-    "ring means match the nonexplosive Yule formulas",
+    "A7 CLOCK/YULE/PRF CHECKS: frozen-grid actor winners and minimum waits "
+    "match the ideal 1/k and Exp(k) targets; parent/child post-birth clocks "
+    "match P(child wins)=1/2; finite-time population clears its exact "
+    "negative-binomial distribution and derived moment bars; ring counts "
+    "clear the joint-generator variance bar; mark quartiles and partner "
+    "ranks clear declared six-sigma diagnostics",
     ok7,
     "; ".join(winner_detail) + f"; child {child_wins}/{child_trials} "
-    f"(z={child_z:.2f}); N4={mean_pop:.3f}/{target_pop:.3f}, rings4="
-    f"{mean_rings:.3f}/{target_rings:.3f}",
+    f"(z={child_z:.2f}); N4={mean_pop:.3f}/{target_pop:.3f} z={pop_z:.2f}, "
+    f"rings4={mean_rings:.3f}/{target_rings:.3f} z={ring_z:.2f}; NB-chi="
+    f"{yule_chi:.2f}<{yule_bar:.2f}; kind/partner max|z|="
+    f"{kind_z:.2f}/{partner_z:.2f}",
 )
 
 
 # A8 dependent scorecard.
 ok8 = FAIL == 0
 check(
-    "A8 ACTOR-ARCHITECTURE SCORECARD: these are actual independent actor "
-    "objects with private state/clocks/tapes; the queue is only a faithful "
-    "serial evaluator. Earned here: pathwise scheduler equivalence, causal "
+    "A8 ACTOR-ARCHITECTURE SCORECARD: these are autonomous actor objects "
+    "with private state, deadlines, counters, and counter-addressed PRF "
+    "coordinates; one central evaluator atomically records shared events. "
+    "The ideal independent-clock law is the theorem, not the finite PRF. "
+    "Earned here: pathwise serializer equivalence, causal "
     "receptions, fixed-time projectivity, remote coupling, exact-oracle "
-    "agreement, and finite-time nonexplosion checks. Not claimed: OS-thread "
-    "parallelism, dynamic adjacency, component joining, or quantum NSE",
+    "concordance, and finite-time Yule checks. Not claimed: exact continuous "
+    "randomness in software, OS-thread/mailbox distribution, dynamic "
+    "adjacency, component joining, or quantum NSE",
     ok8,
 )
 
