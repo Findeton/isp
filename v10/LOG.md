@@ -2322,3 +2322,28 @@ THE MEASURE-COMPLETING STEP (exponential clocks: reception placement
 priced by local time; full restriction consistency; NSE/sealed
 preservation with the HF5 tension; the quantum decoherence-functional
 lift; HF2 ties-as-gauge).
+
+## 2026-07-13 — d34b GREEN 6/6: THE MEASURE-COMPLETING STEP holds at finite depth (LEDGER #160)
+`code/d34b_exponential_clocks_exact.py` → `data/...out` (pin note-d33
+§6, 53e8fb9 pre-committed). FIRST-RUN LESSON (pre-commit, recorded):
+K2's hand-literal targets (1/4, 1/8, 1/32) were MIS-DERIVED — the
+matched object is the ACT-PREFIX (idles excluded), so the measure is
+act-normalized (μ_act = Π q/actmass — the K3 idle-complement made
+operational), and at the seed A has ONE eligible partner (interact
+carries the full 1/4); targets are now COMPUTED from the formula,
+never hardcoded; the correct values (1/2, 1/2, 1/8). K5 had passed
+against the wrong target only because the 4-record sandwich is wide —
+both gates now bracket the same formula value. RESULTS (exact): K1
+the per-record algebra + telescope; K2 THE HARRIS LEMMA PROPER —
+sandwiches [lo, lo+inc] bracket μ_act at depths 2/3/4 and NARROW for
+all three targets (depth-4 e.g. [1157/4096·…] around 1/2); K3
+restriction on down-sets (act mass = 1/2 exactly; disjoint-cone
+FACTORIZATION μ(D_A ∪ D_B) = μ(D_A)·μ(D_B)); K4 HF2 DISCHARGED
+(continuous clocks: ties probability zero; no tie rule exists in the
+code — audited); K5 THE CRUX (KF2): with the remote pair P–Q inflating
+every 1/k, the local sandwich still brackets the SAME μ_act and
+narrows (slower — KF1's rate cost, printed); K6 the scorecard —
+conditions (1)(2)(3)(4)(6) at the MEASURE level at this depth; the
+Kolmogorov projective step STATED not claimed; (5) NSE + (7) quantum
+= d34c per the §6 disclosed re-scope. Seed-independent 0/13. Hostile
+round launched (findings → #161).
