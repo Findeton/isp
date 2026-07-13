@@ -1,0 +1,32 @@
+[d32b the kernel-mechanism map (PHENOMENOLOGICAL) — §9 pin 8b7271c]
+  [PASS] B1 card v2.2 loaded and sha-asserted (the D32A terminal freeze)  (sha256/16 = e7bc80f0be08f537)
+  [PASS] B2 the grid + witness cells complete: 10 cells x 2 sizes x 12 seeds = 240 growths (whole-order fallbacks counted)  (fallbacks (|I| < 64, whole-order MM used): 31/240)
+      THE MAP [cell -> SIGNATURE PAIR (d_MM±sd, d_mid±sd) | gap | verdict | realized-i-frac | mean-dcov | >=7/web]:
+        r=1 lam=0.5 N=256          (2.816±0.739, 1.762±0.221) | gap +1.054±0.765 | NO-BAND | 0.499 | 1.00 | 0.1
+        r=1 lam=0.5 N=512          (2.109±0.350, 1.952±0.394) | gap +0.157±0.149 | NO-BAND | 0.501 | 1.00 | 0.3
+        r=1 lam=1.0 N=256          (1.750±0.184, 1.631±0.201) | gap +0.120±0.125 | NO-BAND | 0.660 | 1.00 | 0.4
+        r=1 lam=1.0 N=512          (1.908±0.215, 1.779±0.243) | gap +0.129±0.230 | NO-BAND | 0.670 | 1.00 | 2.7
+        r=1 lam=2.0 N=256          (1.574±0.214, 1.488±0.218) | gap +0.086±0.087 | NO-BAND | 0.797 | 1.00 | 4.7
+        r=1 lam=2.0 N=512          (1.654±0.101, 1.522±0.075) | gap +0.131±0.093 | NO-BAND | 0.796 | 1.00 | 12.0
+        r=2 lam=0.5 N=256          (1.634±0.156, 1.515±0.144) | gap +0.119±0.095 | NO-BAND | 0.736 | 1.65 | 0.0
+        r=2 lam=0.5 N=512          (1.728±0.102, 1.617±0.155) | gap +0.110±0.119 | NO-BAND | 0.744 | 1.66 | 0.2
+        r=2 lam=1.0 N=256          (1.408±0.108, 1.361±0.155) | gap +0.047±0.095 | NO-BAND | 0.840 | 1.64 | 0.2
+        r=2 lam=1.0 N=512          (1.407±0.084, 1.316±0.095) | gap +0.091±0.068 | NO-BAND | 0.854 | 1.66 | 1.4
+        r=2 lam=2.0 N=256          (1.174±0.064, 1.108±0.071) | gap +0.066±0.031 | NO-BAND | 0.909 | 1.64 | 2.9
+        r=2 lam=2.0 N=512          (1.201±0.035, 1.139±0.059) | gap +0.062±0.037 | NO-BAND | 0.915 | 1.65 | 8.2
+        r=3 lam=0.5 N=256          (1.369±0.093, 1.261±0.109) | gap +0.107±0.044 | NO-BAND | 0.837 | 2.33 | 0.0
+        r=3 lam=0.5 N=512          (1.399±0.097, 1.316±0.114) | gap +0.083±0.066 | NO-BAND | 0.854 | 2.33 | 0.2
+        r=3 lam=1.0 N=256          (1.183±0.058, 1.116±0.076) | gap +0.067±0.044 | NO-BAND | 0.908 | 2.31 | 0.3
+        r=3 lam=1.0 N=512          (1.205±0.035, 1.137±0.049) | gap +0.067±0.032 | NO-BAND | 0.917 | 2.33 | 0.8
+        r=3 lam=2.0 N=256          (1.105±0.043, 1.088±0.047) | gap +0.017±0.014 | NO-BAND | 0.945 | 2.23 | 2.7
+        r=3 lam=2.0 N=512          (1.107±0.027, 1.058±0.020) | gap +0.049±0.020 | NO-BAND | 0.951 | 2.28 | 4.8
+        WITNESS(cov-at-cap) N=256  (4.535±0.093, 1.933±0.206) | gap +2.603±0.250 | NO-BAND | 0.075 | 0.00 | 0.0
+        WITNESS(cov-at-cap) N=512  (5.133±0.059, 1.983±0.208) | gap +3.149±0.214 | NO-BAND | 0.074 | 0.00 | 0.0
+  [PASS] B5 the corrected joint rule applied per cell (card-v2.2 bands; matched-d chain constant; ratio3; box-4/percolation separation; ENTRY at the Bonferroni-corrected z = 3.5 over the 10 cells) — either outcome is a result; single-dimension narration barred (the pair is the object)
+  [PASS] B3 the ANCHOR CELL on FRESH seeds (r=1, lam=1 IS K_collar; new seed family): the signature pair replicated and the §6 fragility prediction (~30% of fresh-seed draws fail the 0.15 concordance) MEASURED — reported, not gated on a bar  (pair (1.908±0.215, 1.779±0.243); per-seed |gap| > 0.15 fraction = 0.50 (predicted ≈ 0.30))
+  [PASS] B4 the COVARIANT-AT-CAP cell well-defined (positivity margin at the largest realizable s; Z == 1 exact by construction; complete-graph interacts — the BF1 confound disclosed in-table)  (1 - (s-1)(s-2)c at s = 515: 0.749; witness pair at 512 = (5.133±0.059, 1.983±0.208))
+  [PASS] B6 SEED-FORGETTING measured (star + triangle vs chain at three cells, N = 512): the pinned rule — any |Δd_MM| > 2 SE at a matched cell reads SEED-DEPENDENCE and re-scopes the map; verdict printed  (star@r1l1.0: dz = 0.52 SE; triangle@r1l1.0: dz = 0.92 SE; star@r1l0.5: dz = 0.60 SE; triangle@r1l0.5: dz = 0.67 SE; star@r3l2.0: dz = 0.59 SE; triangle@r3l2.0: dz = 0.66 SE -> chain-seed readings are seed-robust at this power)
+      B7 FRONTS: BF2 (r-saturation): mean accepted d_cover per r at N=512: r=1: 1.00, r=2: 1.65, r=3: 2.31; BF3: alpha (256->512 two-point, descriptive): r=1,l=0.5: 0.48, r=1,l=1.0: 0.49, r=1,l=2.0: 0.46, r=2,l=0.5: 0.55, r=2,l=1.0: 0.60, r=2,l=2.0: 0.55, r=3,l=0.5: 0.56, r=3,l=1.0: 0.51, r=3,l=2.0: 0.61; BF4 (lam proposal vs realized): l=0.5: 0.700, l=1.0: 0.814, l=2.0: 0.887
+  [PASS] B7 fronts BF2/BF3/BF4 measured and printed (BF1 in-table; BF5 = the §6 m7 alphabet scope, carried)
+
+ALL CHECKS PASS (7/7: B1 freeze-assert, B2 completeness, B3 anchor replication, B4 witness integrity, B5 the map, B6 seed-forgetting, B7 fronts)

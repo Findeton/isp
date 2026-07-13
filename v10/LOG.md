@@ -1903,3 +1903,29 @@ dict ordering, the D5b sentence, the two D6 qualifiers). Per the
 report's stated clearance condition this converts the pass to
 DELTA-CLEAN with no further round: O3 IS TERMINAL. D32B build cleared
 (the phenomenological grid + the COVARIANT-AT-CAP cell).
+
+## 2026-07-12 — D32B GREEN 7/7: THE KERNEL-MECHANISM MAP (LEDGER #146)
+`code/d32b_kernel_mechanism_map.py` (pin §9 8b7271c pre-committed;
+receipt committed pre-run 3d03546) → `data/d32b_...out`. THE MAP
+(12 seeds/cell, N ∈ {256,512}, card-v2.2 bands, Bonferroni z = 3.5):
+**d̂_MM falls MONOTONICALLY with both r and λ** — (r=1,λ=½): 2.11±0.35
+at 512 → (r=1,λ=1): 1.91±0.22 → (r=2,λ=1): 1.41±0.08 → (r=3,λ=2):
+1.107±0.027; **NO cell enters any manifold band**; the signature gap
+is positive at EVERY cell (MM > mid universally); the gap shrinks as
+density compresses the order toward chain-like d̂ ≈ 1.1. The F12
+quantitative reading at this grid: within the collar family MORE
+interaction (range or weight) LOWERS the effective dimension —
+the dimension-lifting mechanism toward M-like order is NOT in this
+family (feeds D32C's separately pinned S²-mechanism hypothesis).
+THE FRESH-SEED ANCHOR (B3): (1.908±0.215, 1.779±0.243) vs the
+D30-seed record (1.756±0.101, 1.630±0.127) — the record's tightness
+was partly seed-family luck; kernel-level SD ≈ 0.2; the §6 fragility
+prediction ~30% measured at 0.50 (WORSE — carried). THE WITNESS CELL
+(B4, covariant-at-cap, BF1 confound disclosed): (5.133±0.059,
+1.983±0.208), gap +3.15 — a few complete-graph interacts (realized
+fraction 0.074) create massive comparability; covariance-at-cap does
+NOT produce manifold-like order. B6: seed-robust (all dz ≤ 0.92 SE —
+no re-scope). B7: r-axis unsaturated (mean d_cover 1.00/1.65/2.31);
+α 0.46–0.61 descriptive; λ realized 0.70/0.81/0.89; ≥7-touch rises
+to 12.0/web at (r=1,λ=2,512) — the exception corner. Hostile round
+launched. D32C decision AFTER the round.
