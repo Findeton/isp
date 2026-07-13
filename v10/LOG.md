@@ -2513,3 +2513,21 @@ shadow recovery; genuine second-instrument restriction; local-degree
 completeness; explicit path receiver; disconnected quantum tensor factor and
 commutation. Scope deliberately local-stopping, not timed. Maximum noun:
 A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING + analytic finite-prefix induction.
+
+## 2026-07-13 — d34c action-level replacement GREEN 10/10; fresh hostile round required (LEDGER #168)
+The spectator product is gone. The replacement enumerates the complete
+A-initiated own-ring cylinders through depth two (3/10 classical histories;
+10/108 quantum class branches), with Ulam children, changing degree and target,
+passive reception and predecessors. Event labels now select the actor operation:
+idle=I; birth=D24 controlled rotation on the fresh child; interaction=the pinned
+diamond on A and the actual named target. Factorized actor-mailbox flags retain
+the unrecorded-path interference, every classical shadow is exact, and the
+genuinely composed second instrument restricts 108->10. Explicit path receiver,
+computed rank, per-operation receiver quarantine, degree normalization, remote
+quantum tensor factorization and disjoint commutation are exact. The algebraic
+Gram/completeness argument extends this chosen operation/flag family to every
+finite local prefix. Two salted reruns byte-match SHA256 a7cee727...c843720.
+PROVISIONAL maximum noun: A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING + finite-local-
+prefix induction. Full timed direct integral, untimed inverse system, graph-sector
+superposition, derived weights/operations/basis, joining, geometry and nature's
+law remain open. Fresh three-stream hostile review is mandatory; findings -> #169+.

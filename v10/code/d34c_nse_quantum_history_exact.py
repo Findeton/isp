@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""D34c exact receipt: NSE/quantum compatibility of the D34b actor law.
+"""D34c exact receipt: A-local actor/quantum sewing for the D34b law.
 
 Pin: note-d33-history-law-phase.md §11, commit f861328, before this file.
 
 This receipt does NOT derive the D34b weights or nature's quantum law.  It
-tests a compatibility construction at finite/cylinder scope:
+tests a compatibility construction on A's local-ring stopping algebra through
+depth two; incoming remote receptions are deliberately coarse-grained:
 
 * durable D34b click alternatives have event-local orthogonal flags;
 * unrecorded alternatives between clicks may retain interference;
@@ -17,9 +18,11 @@ arithmetic.  No float, eigensolver, random sample, or numerical tolerance is
 used.  Gates C0--C9; C9 is the dependent scope scorecard.  Exit 1 on failure.
 """
 
+from collections import defaultdict
 from dataclasses import dataclass
 from fractions import Fraction as F
 from itertools import product
+import math
 import sys
 
 
@@ -148,8 +151,38 @@ def matrix_from_apply(n, fn):
     return transpose(cols)
 
 
-def matrix_equal(a, b):
-    return a == b
+def kron_matrix(a, b):
+    return [[a[i][j] * b[r][c]
+             for j in range(len(a[0])) for c in range(len(b[0]))]
+            for i in range(len(a)) for r in range(len(b))]
+
+
+def rank_rational(a):
+    """Exact row rank for a matrix whose Q2 entries are rational."""
+    rows = []
+    for row in a:
+        if any(x.b != 0 for x in row):
+            raise ValueError("rank_rational received irrational entry")
+        rows.append([x.a for x in row])
+    rank = 0
+    col = 0
+    while rank < len(rows) and col < len(rows[0]):
+        pivot = next((r for r in range(rank, len(rows))
+                      if rows[r][col] != 0), None)
+        if pivot is None:
+            col += 1
+            continue
+        rows[rank], rows[pivot] = rows[pivot], rows[rank]
+        p = rows[rank][col]
+        rows[rank] = [x / p for x in rows[rank]]
+        for r in range(len(rows)):
+            if r == rank or rows[r][col] == 0:
+                continue
+            q = rows[r][col]
+            rows[r] = [x - q * y for x, y in zip(rows[r], rows[rank])]
+        rank += 1
+        col += 1
+    return rank
 
 
 NQ = 4
@@ -311,7 +344,7 @@ def incidence_coarse(dmat, labels, keyfn):
     return groups, mm(mm(inc, dmat), transpose(inc)), inc
 
 
-print("[d34c — exact NSE/quantum finite-cylinder compatibility]")
+print("[d34c — exact A-local actor/quantum sewing]")
 
 
 # C0: types and licensed questions.
@@ -320,7 +353,7 @@ unrecorded_fields = ("p",)
 types_ok = (len(HISTORIES) == 8 and durable_fields == ("s", "o")
             and unrecorded_fields == ("p",))
 check(
-    "C0 OBJECT TYPING: D34b clock/mark law, durable click fields, "
+    "C0 TYPE LEDGER [dependent declaration]: D34b clock/mark law, durable click fields, "
     "unrecorded path alternatives, class-operator branches, the quantum "
     "functional, and the NSE closure are separate objects; only decoherent "
     "record questions are licensed probabilities",
@@ -360,7 +393,6 @@ for i, (s, p, o) in enumerate(HISTORIES):
 hermitian = d_ab == transpose(d_ab)
 normalized = sum((sum(row, ZERO) for row in d_ab), ZERO) == ONE
 block_ok = True
-rank = 0
 for s, o in product((0, 1), repeat=2):
     ids = [HISTORIES.index((s, p, o)) for p in (0, 1)]
     block = [[d_ab[i][j] for j in ids] for i in ids]
@@ -369,7 +401,7 @@ for s, o in product((0, 1), repeat=2):
     vzero = [ONE, Q2(-eta)]
     block_ok &= mv(block, vplus) == [Q2(F(1, 4)) * x for x in vplus]
     block_ok &= mv(block, vzero) == [ZERO, ZERO]
-    rank += 1
+rank = rank_rational(d_ab)
 
 groups_so, d_so, inc_so = incidence_coarse(
     d_ab, HISTORIES, lambda h: (h[0], h[2])
@@ -403,7 +435,24 @@ for s, o in product((0, 1), repeat=2):
          for p in (0, 1)), ZERO
     )
 
-d_path_recorded = [
+# Explicit orthogonal path receiver Q.  After the p projector, CNOT(P->Q)
+# with Q initially |0> maps each four-qubit branch v_p to v_p tensor |p>.
+# The modeled future acts on the first four factors only, so Q is support-
+# excluded thereafter.  This independently constructs, rather than imposes,
+# the recorded functional.
+def append_path_receiver(v, p):
+    out = [ZERO] * (2 * len(v))
+    for i, x in enumerate(v):
+        out[2 * i + p] = x
+    return out
+
+
+recorded_vectors = [
+    append_path_receiver(branches_ab[i], HISTORIES[i][1])
+    for i in range(len(HISTORIES))
+]
+d_path_recorded = gram(recorded_vectors)
+masked_expected = [
     [d_ab[i][j] if HISTORIES[i][1] == HISTORIES[j][1] else ZERO
      for j in range(len(HISTORIES))]
     for i in range(len(HISTORIES))
@@ -423,8 +472,9 @@ check(
     prob_so == expected_so
     and all(x == Q2(F(1, 4)) for x in diag_only.values())
     and all(x == Q2(F(1, 4)) for x in recorded_prob.values())
-    and offdiag_nonzero == 8,
-    "coherent=(0,1/2,1/2,0); diagonal/recorded=(1/4)x4; offdiag=8",
+    and d_path_recorded == masked_expected and offdiag_nonzero == 8,
+    "coherent=(0,1/2,1/2,0); explicit Q-receiver=(1/4)x4; "
+    "Gram=masked D; offdiag=8",
 )
 
 
@@ -464,9 +514,13 @@ matrix_units = (
     [[ZERO, ZERO], [ZERO, ONE]],
 )
 full_r_stable = True
+each_future_stable = True
 for eij in matrix_units:
     ar = lifted_local(eij, R)
     full_r_stable &= mm(mm(transpose(u_future), ar), u_future) == ar
+    for name in ("b", "c", "hp", "dcopy"):
+        unow = OPS[name]
+        each_future_stable &= mm(mm(transpose(unow), ar), unow) == ar
 
 source_value_stable = True
 for ps in (P0, P1):
@@ -474,20 +528,25 @@ for ps in (P0, P1):
     source_value_stable &= mm(mm(transpose(u_total), aps), u_total) == aps
 x_s = lifted_local(X2, S)
 source_phase_changes = mm(mm(transpose(u_total), x_s), u_total) != x_s
+x_r = lifted_local(X2, R)
+xrxs = mm(x_r, x_s)
+relational_changes = mm(mm(transpose(OPS["c"]), xrxs), OPS["c"]) != xrxs
 check(
-    "C5 SEAL DURABILITY [exact, scoped]: after a creates R, the full R "
-    "matrix algebra is fixed by every modeled future operation because R "
-    "is never touched again. The source Z-value projectors are also preserved, while "
-    "source phase content may disperse; these two seal notions are not "
-    "conflated",
-    full_r_stable and source_value_stable and source_phase_changes,
-    "R: 4/4 matrix units fixed; S: P0/P1 fixed, X changed",
+    "C5 SUPPORT-EXCLUDED LOCAL RECEIVER [exact, scoped]: after a creates "
+    "R, each modeled future operation separately fixes the full local R "
+    "matrix algebra because R is never touched. Source Z-value projectors "
+    "survive while phase content disperses; a relational R-S observable "
+    "changes, so this is quarantine/local durability, not sealed holonomy",
+    full_r_stable and each_future_stable and source_value_stable
+    and source_phase_changes and relational_changes,
+    "R: 4/4 units fixed by 4/4 future ops; S:P0/P1 fixed,X changed; "
+    "X_R X_S changes",
 )
 
 
 # C6: exact Busch-form flagged lift at D34b weights.
 weights = (Q2(F(1, 4)), Q2(F(1, 4)), Q2(F(1, 2)))
-u_kinds = (I2, X2, Z2)
+test_unitaries = (I2, X2, Z2)
 
 
 def flagged_isometry(flag, u2):
@@ -498,7 +557,7 @@ def flagged_isometry(flag, u2):
     return out
 
 
-w_kinds = [flagged_isometry(k, u) for k, u in enumerate(u_kinds)]
+w_kinds = [flagged_isometry(k, u) for k, u in enumerate(test_unitaries)]
 orthogonal_ranges = True
 for i, wi in enumerate(w_kinds):
     for j, wj in enumerate(w_kinds):
@@ -538,8 +597,8 @@ def flagged_distance_certificate(rho, sigma, sqrt_c):
     for k, w in enumerate(weights):
         block = [[out_delta[2 * k + i][2 * k + j]
                   for j in range(2)] for i in range(2)]
-        expected = mscale(w, mm(mm(u_kinds[k], delta),
-                                transpose(u_kinds[k])))
+        expected = mscale(w, mm(mm(test_unitaries[k], delta),
+                                transpose(test_unitaries[k])))
         if block != expected:
             return False
         if square2(block) != mscale(w * w * c, I2):
@@ -555,13 +614,13 @@ nse_regression = (
     and flagged_distance_certificate(rho0, rhop, ROOT_HALF)
 )
 check(
-    "C6 NSE / BUSCH LIFT: the D34b weights (1/4,1/4,1/2) multiply "
+    "C6 ABSTRACT NSE / BUSCH LEMMA: fixed weights (1/4,1/4,1/2) multiply "
     "isometries with mutually orthogonal durable flag ranges. Exact "
     "noncommuting test pairs preserve trace distance; analytically the "
     "block trace norm sums to ||Delta||_1 for every input pair",
     sum(weights, ZERO) == ONE and orthogonal_ranges and nse_regression,
     "W_i^dag W_j=delta_ij I; three exact pair certificates; all-state "
-    "block-norm theorem",
+    "block-norm theorem; fixed classical seed/graph sector",
 )
 
 
@@ -578,13 +637,21 @@ unflag_plus = unflagged_dephase(rhop)
 unflag_minus = unflagged_dephase(rhom)
 unflag_contracts = unflag_plus == unflag_minus == [[HALF, ZERO], [ZERO, HALF]]
 
-# State-dependent branch choice: I for nonnegative <Z>, X otherwise.
+def state_reading_rule(rho):
+    """Forbidden control: inspect <Z>, choose I for >=0 and X otherwise."""
+    z = rho[0][0] - rho[1][1]
+    if z.b != 0:
+        raise ValueError("comparison witness must be rational")
+    u = I2 if z.a >= 0 else X2
+    return unitary_channel(u, rho)
+
+
 # On rho0/rho1 both outputs are rho0, while the equal mixture has <Z>=0
 # and is left as I/2.  Hence F((rho0+rho1)/2) != (F(rho0)+F(rho1))/2.
 rho_mix = mscale(HALF, madd(rho0, rho1))
-f0 = unitary_channel(I2, rho0)
-f1 = unitary_channel(X2, rho1)
-fmix = unitary_channel(I2, rho_mix)
+f0 = state_reading_rule(rho0)
+f1 = state_reading_rule(rho1)
+fmix = state_reading_rule(rho_mix)
 affine_rhs = mscale(HALF, madd(f0, f1))
 nonlinear = f0 == rho0 and f1 == rho0 and fmix == rho_mix
 nonlinear &= fmix != affine_rhs
@@ -599,141 +666,453 @@ check(
 )
 
 
-# C8: finite actor/cylinder sewing and remote factorization.
-kind_weights = {"b": F(1, 4), "i": F(1, 4), "n": F(1, 2)}
+# C8: actual A-local D34b actor cylinder, sequential quantum operations,
+# factorized mailboxes, and remote quantum factorization.  Scope is the
+# A-initiated local-ring stopping algebra through depth two—not timed X_T.
 
 
-def local_options(eligible):
-    if eligible < 1:
-        raise ValueError("static exemplar assumes an eligible neighbor")
-    return ([('b', None, F(1, 4))]
-            + [('i', j, F(1, 4 * eligible)) for j in range(eligible)]
+def actor_seed():
+    return {
+        "active": ("A", "B"),
+        "neighbors": {"A": {"B"}, "B": {"A"}},
+        "births": 0,
+        "rings": {"A": 0, "B": 0},
+        "last": {},
+        "events": (),
+    }
+
+
+def copy_actor_state(s):
+    return {
+        "active": tuple(s["active"]),
+        "neighbors": {a: set(xs) for a, xs in s["neighbors"].items()},
+        "births": s["births"],
+        "rings": dict(s["rings"]),
+        "last": dict(s["last"]),
+        "events": tuple(s["events"]),
+    }
+
+
+def actor_options(s):
+    ns = sorted(s["neighbors"]["A"])
+    child = f"A/{s['births'] + 1}"
+    return ([('b', child, F(1, 4))]
+            + [('i', x, F(1, 4 * len(ns))) for x in ns]
             + [('n', None, F(1, 2))])
 
 
-local_rows_normalize = all(
-    sum((w for _, _, w in local_options(m)), F(0)) == 1
-    for m in range(1, 9)
+def actor_step(s, option):
+    kind, target, weight = option
+    z = copy_actor_state(s)
+    z["rings"]["A"] += 1
+    eid = f"A#r{z['rings']['A']}"
+    if kind == "b":
+        z["births"] += 1
+        z["active"] = tuple(sorted(z["active"] + (target,)))
+        z["neighbors"].setdefault("A", set()).add(target)
+        z["neighbors"][target] = {"A"}
+        z["rings"][target] = 0
+    touched = ("A",) if kind == "n" else ("A", target)
+    preds = tuple(sorted({z["last"][a] for a in touched if a in z["last"]}))
+    event = (eid, kind, target, preds)
+    z["events"] += (event,)
+    for a in touched:
+        z["last"][a] = eid
+    return z, weight
+
+
+depth1_paths = [actor_step(actor_seed(), o) for o in actor_options(actor_seed())]
+depth2_paths = []
+for s1, m1 in depth1_paths:
+    for option in actor_options(s1):
+        s2, w2 = actor_step(s1, option)
+        depth2_paths.append((s2, m1 * w2))
+
+mass1 = {s["events"]: m for s, m in depth1_paths}
+mass2 = {s["events"]: m for s, m in depth2_paths}
+classical_restriction = all(
+    sum((m for evs, m in mass2.items() if evs[:1] == prefix), F(0)) == mass
+    for prefix, mass in mass1.items()
 )
-depth1 = {(k,): w for k, w in kind_weights.items()}
-depth2 = {(k1, k2): w1 * w2
-          for (k1, w1), (k2, w2) in product(kind_weights.items(), repeat=2)}
-restriction_ok = all(
-    sum((mass for word, mass in depth2.items() if word[0] == k), F(0))
-    == depth1[(k,)] for k in kind_weights
+row_normalization = all(
+    sum((w for _, _, w in actor_options(s)), F(0)) == 1
+    for s, _ in depth1_paths
 )
-
-joint_remote = {(wa, wp): ma * mp
-                for wa, ma in depth1.items() for wp, mp in depth1.items()}
-remote_ok = all(
-    sum((mass for (wa, _), mass in joint_remote.items() if wa == word), F(0))
-    == mass for word, mass in depth1.items()
+all_m_identity = all(
+    F(1, 4) + m * F(1, 4 * m) + F(1, 2) == 1
+    for m in range(1, 65)
 )
-
-# Local Stinespring completeness for the one-neighbor kind instrument.
-sqrt_weights = (Q2(F(1, 2)), Q2(F(1, 2)), ROOT_HALF)
-k_ops = [mscale(sq, u) for sq, u in zip(sqrt_weights, u_kinds)]
-completeness = zeros(2, 2)
-for k_op in k_ops:
-    completeness = madd(completeness, mm(transpose(k_op), k_op))
-
-local_flags = {
-    word: tuple(("A", ring + 1, kind) for ring, kind in enumerate(word))
-    for word in depth2
-}
-flag_injective = len(set(local_flags.values())) == len(depth2)
+after_birth = next(s for s, _ in depth1_paths if s["events"][0][1] == "b")
+degree_two_weights = sorted(
+    w for k, _, w in actor_options(after_birth) if k == "i"
+) == [F(1, 8), F(1, 8)]
 
 
-def embed_vector(v, block, nblocks, scale=ONE):
-    out = [ZERO] * (nblocks * len(v))
-    start = block * len(v)
-    for i, x in enumerate(v):
-        out[start + i] = scale * x
+# Universal activated-carrier reference for this bounded cylinder.
+AQ = 8
+ADIM = 1 << AQ
+ACTOR_Q = {"A": 0, "B": 1, "A/1": 2, "A/2": 3}
+PATH_Q = {1: 4, 2: 6}
+OUT_Q = {1: 5, 2: 7}
+
+
+def amask(q):
+    return 1 << (AQ - 1 - q)
+
+
+def abit(i, q):
+    return 1 if i & amask(q) else 0
+
+
+def ah(v, q):
+    out = [ZERO] * len(v)
+    m = amask(q)
+    for i in range(len(v)):
+        if not i & m:
+            j = i | m
+            out[i] = ROOT_HALF * (v[i] + v[j])
+            out[j] = ROOT_HALF * (v[i] - v[j])
     return out
 
 
-# Build the bridge object itself, not just its classical and quantum factors.
-# The durable kind flag makes different recorded click branches orthogonal;
-# inside each kind block the unrecorded p alternatives retain the diamond D.
-kinds = ("b", "i", "n")
-weight_by_kind = dict(zip(kinds, weights))
-sqrt_by_kind = dict(zip(kinds, sqrt_weights))
-combined1_labels = [(k,) + h for k in kinds for h in HISTORIES]
-combined1_vectors = [
-    embed_vector(branches_ab[HISTORIES.index(h)], kinds.index(k), 3,
-                 sqrt_by_kind[k])
-    for k in kinds for h in HISTORIES
-]
-d_combined1 = gram(combined1_vectors)
-combined1_normalized = sum(
-    (sum(row, ZERO) for row in d_combined1), ZERO
-) == ONE
-groups_kind, d_kind, _ = incidence_coarse(
-    d_combined1, combined1_labels, lambda z: z[0]
-)
-classical_shadow = {
-    k: d_kind[i][i] for i, k in enumerate(groups_kind)
-}
+def az(v, q):
+    return [(-x if abit(i, q) else x) for i, x in enumerate(v)]
 
-combined2_labels = [
-    (k1, k2) + h for k1 in kinds for k2 in kinds for h in HISTORIES
-]
-combined2_vectors = [
-    embed_vector(
-        branches_ab[HISTORIES.index(h)],
-        kinds.index(k1) * 3 + kinds.index(k2), 9,
-        sqrt_by_kind[k1] * sqrt_by_kind[k2],
+
+def acnot(v, control, target):
+    out = [ZERO] * len(v)
+    tm = amask(target)
+    for i, x in enumerate(v):
+        out[i ^ tm if abit(i, control) else i] = x
+    return out
+
+
+def acz(v, q1, q2):
+    return [(-x if abit(i, q1) and abit(i, q2) else x)
+            for i, x in enumerate(v)]
+
+
+def aproject(v, q, value):
+    return [x if abit(i, q) == value else ZERO for i, x in enumerate(v)]
+
+
+def acry(v, control, target, c=Q2(F(4, 5)), s=Q2(F(3, 5))):
+    out = [ZERO] * len(v)
+    tm = amask(target)
+    for i in range(len(v)):
+        if i & tm:
+            continue
+        j = i | tm
+        if abit(i, control):
+            out[i] = c * v[i] - s * v[j]
+            out[j] = s * v[i] + c * v[j]
+        else:
+            out[i], out[j] = v[i], v[j]
+    return out
+
+
+actor_initial = basis(ADIM, 0)
+actor_initial = ah(actor_initial, ACTOR_Q["A"])
+actor_initial = ah(actor_initial, PATH_Q[1])
+actor_initial = ah(actor_initial, PATH_Q[2])
+
+
+def sqrt_fraction_q2(x):
+    x = F(x)
+    rn, rd = math.isqrt(x.numerator), math.isqrt(x.denominator)
+    if rn * rn == x.numerator and rd * rd == x.denominator:
+        return Q2(F(rn, rd))
+    half = x / 2
+    rn, rd = math.isqrt(half.numerator), math.isqrt(half.denominator)
+    if rn * rn == half.numerator and rd * rd == half.denominator:
+        return Q2(0, F(rn, rd))
+    raise ValueError(f"sqrt outside Q(sqrt2): {x}")
+
+
+def interaction_branches(v, ring, target):
+    pathq, outq = PATH_Q[ring], OUT_Q[ring]
+    v = acnot(v, ACTOR_Q["A"], ACTOR_Q[target])
+    rows = []
+    for sval in (0, 1):
+        vs = aproject(v, ACTOR_Q[target], sval)
+        vs = az(vs, pathq)
+        for pval in (0, 1):
+            vp = aproject(vs, pathq, pval)
+            vp = acz(vp, ACTOR_Q["A"], pathq)
+            vp = ah(vp, pathq)
+            vp = acnot(vp, pathq, outq)
+            for oval in (0, 1):
+                rows.append(((sval, pval, oval), aproject(vp, outq, oval)))
+    return rows
+
+
+def mailbox_key(mailboxes):
+    return tuple(sorted((a, tuple(box)) for a, box in mailboxes.items()))
+
+
+def factorized_flag_inner(left, right):
+    """Inner product on tensor_a H_mailbox(a), never a global flag atom."""
+    for actor in set(left) | set(right):
+        if tuple(left.get(actor, ())) != tuple(right.get(actor, ())):
+            return ZERO
+    return ONE
+
+
+def write_event_flag(mailboxes, event, internal):
+    eid, kind, target, preds = event
+    out = {a: list(box) for a, box in mailboxes.items()}
+    if kind == "b":
+        out.setdefault(target, [])
+        token = (eid, kind, target, preds, None, None)
+        touched = ("A", target)
+    elif kind == "i":
+        sval, _, oval = internal
+        token = (eid, kind, target, preds, sval, oval)
+        touched = ("A", target)
+    else:
+        token = (eid, kind, None, preds, None, None)
+        touched = ("A",)
+    for a in touched:
+        out.setdefault(a, []).append(token)
+    return out
+
+
+def quantum_branches(events, mass):
+    rows = [{
+        "v": list(actor_initial),
+        "mailboxes": {"A": [], "B": []},
+        "internals": (),
+        "flag_prefixes": (),
+    }]
+    for ring, event in enumerate(events, 1):
+        kind, target = event[1], event[2]
+        nxt = []
+        for row in rows:
+            if kind == "b":
+                variants = [(None, acry(row["v"], ACTOR_Q["A"],
+                                         ACTOR_Q[target]))]
+            elif kind == "i":
+                variants = interaction_branches(row["v"], ring, target)
+            else:
+                variants = [(None, list(row["v"]))]
+            for internal, vnew in variants:
+                boxes = write_event_flag(row["mailboxes"], event, internal)
+                fkey = mailbox_key(boxes)
+                nxt.append({
+                    "v": vnew,
+                    "mailboxes": boxes,
+                    "internals": row["internals"] + (internal,),
+                    "flag_prefixes": row["flag_prefixes"] + (fkey,),
+                })
+        rows = nxt
+    scale = sqrt_fraction_q2(mass)
+    for row in rows:
+        row["v"] = [scale * x for x in row["v"]]
+        row["events"] = tuple(events)
+        row["mass"] = mass
+    return rows
+
+
+qbranches1 = []
+for state, mass in depth1_paths:
+    qbranches1.extend(quantum_branches(state["events"], mass))
+qbranches2 = []
+for state, mass in depth2_paths:
+    qbranches2.extend(quantum_branches(state["events"], mass))
+
+
+def actor_functional(branches):
+    out = zeros(len(branches), len(branches))
+    for i in range(len(branches)):
+        for j in range(len(branches)):
+            flag_ip = factorized_flag_inner(
+                branches[i]["mailboxes"], branches[j]["mailboxes"]
+            )
+            if flag_ip:
+                out[i][j] = inner(branches[i]["v"], branches[j]["v"])
+    return out
+
+
+d_actor1 = actor_functional(qbranches1)
+d_actor2 = actor_functional(qbranches2)
+
+
+def classical_shadow_from_d(dmat, branches):
+    out = {}
+    groups = defaultdict(list)
+    for i, row in enumerate(branches):
+        groups[row["events"]].append(i)
+    for key, ids in groups.items():
+        out[key] = sum((dmat[i][j] for i in ids for j in ids), ZERO)
+    return out
+
+
+shadow1 = classical_shadow_from_d(d_actor1, qbranches1)
+shadow2 = classical_shadow_from_d(d_actor2, qbranches2)
+shadow_ok = shadow1 == {k: Q2(v) for k, v in mass1.items()}
+shadow_ok &= shadow2 == {k: Q2(v) for k, v in mass2.items()}
+
+
+def prefix_label(row, n):
+    return (row["events"][:n], row["flag_prefixes"][n - 1],
+            row["internals"][:n])
+
+
+labels1 = [prefix_label(row, 1) for row in qbranches1]
+label1_pos = {label: i for i, label in enumerate(labels1)}
+labels_unique = len(label1_pos) == len(labels1)
+inc21 = zeros(len(qbranches1), len(qbranches2))
+for j, row in enumerate(qbranches2):
+    inc21[label1_pos[prefix_label(row, 1)]][j] = ONE
+d_actor2_down = mm(mm(inc21, d_actor2), transpose(inc21))
+quantum_restriction = d_actor2_down == d_actor1
+
+
+def durable_internal(x):
+    return None if x is None else (x[0], x[2])
+
+
+flag_factor_ok = True
+flag_groups = defaultdict(list)
+for row in qbranches2:
+    flag_groups[mailbox_key(row["mailboxes"])].append(row)
+for rows in flag_groups.values():
+    signatures = {
+        (r["events"], tuple(durable_internal(x) for x in r["internals"]))
+        for r in rows
+    }
+    flag_factor_ok &= len(signatures) == 1
+
+# Mailbox semantics: shared tokens on birth/interaction, idle on A only;
+# passive targets never advance an actor-local ring.
+mailbox_semantics = True
+for row in qbranches2:
+    boxes = row["mailboxes"]
+    for event, internal in zip(row["events"], row["internals"]):
+        eid, kind, target, preds = event
+        if kind == "i":
+            token = (eid, kind, target, preds, internal[0], internal[2])
+            mailbox_semantics &= token in boxes["A"] and token in boxes[target]
+        elif kind == "b":
+            token = (eid, kind, target, preds, None, None)
+            mailbox_semantics &= token in boxes["A"] and token in boxes[target]
+        else:
+            token = (eid, kind, None, preds, None, None)
+            mailbox_semantics &= token in boxes["A"]
+            mailbox_semantics &= all(token not in box for a, box in boxes.items()
+                                     if a != "A")
+for state, _ in depth2_paths:
+    mailbox_semantics &= all(r == 0 for a, r in state["rings"].items()
+                             if a != "A")
+
+# The actual first interaction block carries the diamond interference on A,B.
+first_i_key = next(k for k in mass1 if k[0][1] == "i")
+ids_i = [i for i, row in enumerate(qbranches1) if row["events"] == first_i_key]
+coherent_i = {}
+diagonal_i = {}
+for sval, oval in product((0, 1), repeat=2):
+    ids = [i for i in ids_i
+           if qbranches1[i]["internals"][0][0] == sval
+           and qbranches1[i]["internals"][0][2] == oval]
+    coherent_i[(sval, oval)] = sum(
+        (d_actor1[i][j] for i in ids for j in ids), ZERO
     )
-    for k1 in kinds for k2 in kinds for h in HISTORIES
-]
-d_combined2 = gram(combined2_vectors)
-combined1_keys, d_combined2_down, _ = incidence_coarse(
-    d_combined2, combined2_labels,
-    lambda z: (z[0], z[2], z[3], z[4]),
+    diagonal_i[(sval, oval)] = sum((d_actor1[i][i] for i in ids), ZERO)
+interaction_signature = coherent_i == {
+    (0, 0): ZERO, (0, 1): Q2(F(1, 8)),
+    (1, 0): Q2(F(1, 8)), (1, 1): ZERO,
+}
+interaction_signature &= all(v == Q2(F(1, 16)) for v in diagonal_i.values())
+
+# Birth and idle are genuinely different actor operations and have no
+# spectator diamond alternatives.  For the initial |+> parent, D24 g=9/25
+# gives P(child=1)=9/50; the branch carries classical mass 1/4.
+birth_key = next(k for k in mass1 if k[0][1] == "b")
+idle_key = next(k for k in mass1 if k[0][1] == "n")
+birth_rows = [r for r in qbranches1 if r["events"] == birth_key]
+idle_rows = [r for r in qbranches1 if r["events"] == idle_key]
+child_q = ACTOR_Q["A/1"]
+birth_child_one = sum(
+    (x * x for i, x in enumerate(birth_rows[0]["v"]) if abit(i, child_q)), ZERO
 )
-bridge_restricts = combined1_keys == combined1_labels
-bridge_restricts &= d_combined2_down == d_combined1
-bridge_has_interference = any(
-    d_combined1[i][j]
-    for i in range(len(combined1_labels))
-    for j in range(len(combined1_labels))
-    if i != j
-)
+event_ops_tied = len(birth_rows) == 1 and len(idle_rows) == 1
+event_ops_tied &= birth_child_one == Q2(F(9, 200))  # mass 1/4 * 9/50
+event_ops_tied &= idle_rows[0]["v"] == [ROOT_HALF * x for x in actor_initial]
+c45, s35 = Q2(F(4, 5)), Q2(F(3, 5))
+event_ops_tied &= c45 * c45 + s35 * s35 == ONE
+
+# Quantum remote factorization and construction-order gauge, carried on the
+# abstract flagged channel because the tensor identity is dimension-free.
+def product_flagged_channel(rhoa, rhob):
+    rhoab = kron_matrix(rhoa, rhob)
+    out = zeros(36, 36)
+    for wa, va in zip(weights, w_kinds):
+        for wb, vb in zip(weights, w_kinds):
+            vv = kron_matrix(va, vb)
+            out = madd(out, mscale(wa * wb,
+                                   mm(mm(vv, rhoab), transpose(vv))))
+    return out
+
+
+def partial_trace_second(a, da, db):
+    return [[sum((a[i * db + k][j * db + k] for k in range(db)), ZERO)
+             for j in range(da)] for i in range(da)]
+
+
+remote_joint = product_flagged_channel(rhop, rho0)
+remote_product = kron_matrix(density_channel_flagged(rhop),
+                             density_channel_flagged(rho0))
+remote_quantum_ok = remote_joint == remote_product
+remote_quantum_ok &= partial_trace_second(remote_joint, 6, 6) \
+    == density_channel_flagged(rhop)
+disjoint_commute = True
+for ua in test_unitaries:
+    for ub in test_unitaries:
+        left = kron_matrix(ua, I2)
+        right = kron_matrix(I2, ub)
+        disjoint_commute &= mm(left, right) == mm(right, left)
+
+actor_norm = sum((sum(row, ZERO) for row in d_actor2), ZERO) == ONE
+actor_counts = (len(mass1), len(mass2), len(qbranches1), len(qbranches2))
 check(
-    "C8 ACTOR/HISTORY SEWING: local eligible-neighbor rows normalize "
-    "without a universe census; exact kind cylinders restrict 9->3; "
-    "event-local flag strings distinguish histories; the local isometric "
-    "instrument is exhaustive; and a disconnected actor factor leaves the "
-    "local marginal unchanged. The explicit combined functional is a "
-    "direct-sum Gram form: its durable-click shadow is exactly the D34b "
-    "kind law, it retains within-branch quantum interference, and its "
-    "depth-2 functional pushes down exactly to depth 1",
-    local_rows_normalize and sum(depth1.values(), F(0)) == 1
-    and sum(depth2.values(), F(0)) == 1 and restriction_ok
-    and remote_ok and completeness == I2 and flag_injective
-    and combined1_normalized and classical_shadow == weight_by_kind
-    and bridge_restricts and bridge_has_interference,
-    "eligible m=1..8; masses 3/9; sum K^dag K=I; remote product marginal exact; "
-    "combined Gram 72->24",
+    "C8 ACTION-LEVEL A-LOCAL ACTOR/QUANTUM SEWING [exact]: complete "
+    "A-initiated ring cylinders (incoming remote receptions coarse-grained) "
+    "carry Ulam birth, changing degree/target, passive "
+    "reception and predecessors; idle I, D24 birth and actual A-target "
+    "diamond operations are composed into class branches. Tensor-factor "
+    "mailboxes preserve p-interference, recover every classical mass, and "
+    "the genuine second instrument restricts depth 2->1. Quantum remote "
+    "channels tensor-factor and disjoint events commute",
+    sum(mass1.values(), F(0)) == 1 and sum(mass2.values(), F(0)) == 1
+    and classical_restriction and row_normalization and all_m_identity
+    and degree_two_weights and actor_norm and shadow_ok and labels_unique
+    and quantum_restriction and flag_factor_ok and mailbox_semantics
+    and interaction_signature and event_ops_tied
+    and remote_quantum_ok and disjoint_commute,
+    f"classical/quantum depth counts={actor_counts}; degree2 i=1/8+1/8; "
+    "quantum 108->10; shadow/reception/flags/remote exact",
 )
 
 
 # C9: dependent scorecard.
 ok9 = FAIL == 0
 check(
-    "C9 CLAIM CEILING: earned only FINITE-CYLINDER NSE/QUANTUM "
-    "COMPATIBILITY for a chosen local isometry/flag family. Not earned: "
+    "C9 CLAIM CEILING [dependent scorecard]: earned only A-LOCAL DEPTH-2 "
+    "ACTOR/QUANTUM SEWING plus the algebraic finite-local-prefix induction "
+    "for a chosen operation/flag family. Not earned: the full timed D34b "
+    "quantum law, graph-sector superposition, "
     "derived weights or operations, a preferred basis, coherent "
     "superposition across distinct durable growth histories, infinite "
     "quantum-measure/profinite extension, dynamic joining, Lorentz cones, "
     "dimension, or THE universe law",
     ok9,
-    "C0-C8 green; D34b classical mu remains chosen input; NSE remains a posited selector",
+    "C1-C8 green; C0/C9 scorecards; local-ring stopping only; "
+    "D34b weights remain chosen and NSE posited",
 )
 
 
 print()
-print(f"ALL CHECKS PASS ({PASS}/{PASS + FAIL}: C0-C8 substantive; C9 dependent scorecard)"
+print(f"ALL CHECKS PASS ({PASS}/{PASS + FAIL}: C1-C8 substantive; C0/C9 dependent scorecards)"
       if FAIL == 0 else
       f"CHECKS FAILED ({PASS} pass, {FAIL} fail)")
 sys.exit(0 if FAIL == 0 else 1)

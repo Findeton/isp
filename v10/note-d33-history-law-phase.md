@@ -318,3 +318,46 @@ Class branches are the actual sequential carrier vectors multiplied by square ro
 11. Check each modeled future operation separately on the quarantined receiver algebra and print a relational-observable negative control.
 
 **Maximum repair verdict:** `A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING PASS` plus the analytic finite-local-prefix induction theorem. This is a real action-level bridge on a D34b local stopping algebra, not yet the full timed actor law. A fresh three-stream hostile round and delta are mandatory.
+
+## 15. d34c action-level replacement (2026-07-13) — PROVISIONAL, HOSTILE REVIEW REQUIRED
+
+The replacement receipt is green 10/10 with exact `Q(sqrt(2))` arithmetic; two fresh hash salts are byte-identical at SHA-256 `a7cee72762f4244a57b5a698b3eb7172c8d1826bfa52effe37625b1e4c843720`. This is not a revival of the rejected product witness. The classical event label now selects and composes the quantum operation on the actor carriers themselves.
+
+### 15.1 The finite actor object
+
+The observation algebra is frozen at A's first two **own local rings**. The A-local event tree is complete at that scope:
+
+- ring one has birth, interaction with B, and idle masses `(1/4,1/4,1/2)`;
+- after a birth, A has two eligible targets and the interaction mass splits as `1/8+1/8`;
+- Ulam children `A/1,A/2`, target identity, passive reception and wire predecessors are explicit;
+- passive targets receive the shared event token but their local ring counter does not advance;
+- incoming events initiated by actors other than A are coarse-grained, so this is not the complete timed D34b process.
+
+There are 3 classical depth-one histories and 10 depth-two histories, both of total mass one, with exact classical restriction. Their quantum refinements have 10 and 108 class branches respectively.
+
+### 15.2 Operations are now action-level
+
+Idle is identity. Birth applies the D24 controlled rotation with amplitudes `4/5,3/5` from A into the fresh Ulam carrier; its exact child-one mass is `1/4 x 9/50 = 9/200`. Interaction applies the pinned diamond to A and the actual named target: `CNOT(A->target)`, the unrecorded path operation, `CZ(A,path)`, `H(path)`, then output copy. The first interaction block therefore carries the exact coherent output `(0,1/8,1/8,0)` at its unconditioned actor mass, versus four diagonal cells `1/16`. Birth and idle have one branch each and contain no spectator diamond.
+
+The C3 control now constructs an explicit orthogonal path receiver and independently recomputes its Gram matrix; it equals the path-masked functional exactly. C5 checks each future operation separately. It earns only support-excluded local durability: all local R operators are fixed because R is untouched, while the relational observable `X_R X_S` changes.
+
+### 15.3 Distributed durable records and exact restriction
+
+The flag inner product is a product over actor-local mailbox bases, not a single universe-history atom. Birth writes the same durable event token on parent and child; interaction writes it on initiator and receiver; idle writes only on A. Tokens include local event identity, kind, target/child, predecessor data and durable quantum results; the unrecorded path is excluded. Thus distinct durable actor histories are orthogonal at their first differing local mailbox, while the path alternatives inside one durable interaction record remain coherent.
+
+The classical shadow of every quantum history block equals its D34b local-cylinder mass. More importantly, depth two is built by applying the second operation, not by appending an unused symbol. Incidence over all exhaustive second-ring alternatives sends the full `108 x 108` Gram functional exactly to the independently built `10 x 10` depth-one functional.
+
+### 15.4 Algebraic finite-local-prefix theorem
+
+Fix any finite local event tree of this form. At a leaf prefix `h`, let the next recorded alternatives be `e`, with preparation-independent conditional weights `q_e`, touched-carrier isometries `F_e`, and mutually orthogonal distributed durable flag ranges. Resolve any unrecorded internal alternatives inside `F_e` into class operators whose sum is `F_e`. Then:
+
+1. every finite-prefix functional is a Gram matrix, hence strongly positive;
+2. exhaustive extension restricts exactly because `sum_e q_e F_e^dagger F_e = (sum_e q_e) I = I`;
+3. composing another local instrument repeats the same identity, so the restriction result follows by induction for every finite local prefix in the chosen operation/flag family;
+4. disjoint touched-carrier operations commute, and tensor-product remote channels leave the local marginal invariant.
+
+This theorem does **not** construct the missing continuous-time direct integral, an intrinsic untimed inverse system, graph-sector superposition, or an infinite quantum measure. It also does not derive the weights, the operation family, the record basis, NSE, sealing, joining, spacetime dimension or nature's unique law.
+
+### 15.5 Provisional verdict
+
+The maximum noun frozen in §14 is provisionally earned: `A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING PASS`, plus the algebraic finite-local-prefix induction for a chosen operation/flag family. It means the local actor events can generate the quantum alternatives rather than carrying an unrelated quantum subsystem beside them. It does not yet mean that the full D34b timed actor universe has a quantum history law. Three fresh hostile streams must now attack the replacement; this section is nonterminal until their delta is clean.
