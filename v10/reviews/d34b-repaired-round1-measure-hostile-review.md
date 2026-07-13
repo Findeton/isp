@@ -24,3 +24,7 @@ The referee independently reconstructed the marked Harris process, the Yule none
 All core probabilities and exact fractions; the marked timed process; Yule and total-ring nonexplosion; alpha binding; initiated/physical algebra split; passive reception semantics; orbit sums; remote locality; the n^-2 constant; and the D34a unequal-representative correction.
 
 **Stamped terminal wording after repair:** D34b CLASSICAL MEASURE PASS — timed Harris law and Ulam-coded typed-DAG pushforward established; profinite physical-history architecture still open.
+
+## Delta verdict on `d0e7971`
+
+**NO BLOCKER / NO MAJOR; CORE DELTA-CLEAN.** The three-object separation, timed-only projectivity, profinite withdrawal, standard-Borel codomain, nonexplosion proof, persistence proof, relabeling scope, and analytic global-depth theorem are all substantively repaired. The conditional cleanup list was limited to the finite-PRF tie-bound wording, the oracle serializer/inert-`R` disclosures, and E5's tautological subgate; the terminal patch removes all four. No scientific conclusion changes.

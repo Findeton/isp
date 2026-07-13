@@ -24,3 +24,7 @@ Reproduction: both receipts passed and byte-matched under fresh hash salts. Larg
 ## SURVIVES
 
 Heap/scan pathwise equality; passive reception; parent-local naming at tested depth; fixed-T/local-ring remote coupling; timed restriction of event rows; rational oracle mass/classes; E1–E4 fractions; Yule formulas; and the ideal Harris/pushforward theorem.
+
+## Delta verdict on `d0e7971`
+
+**SUBSTANTIVELY DELTA-CLEAN — 0 BLOCKER / 0 MAJOR.** Both receipts reproduced byte-for-byte under fresh salts; flat identifiers survived depth 6000; intentionally corrupted producer-incidence and actor-serializer paths were caught by their separate checkers; A5 full state and A7's derived Yule controls passed. The remaining two minors/two nits were verification/narration only: E5's tautological tail check, use of `kind-audit` rather than the production `kind` domain, finite-PRF versus ideal-NB wording, and inert-`R` disclosure. The terminal patch closes each item.

@@ -18,8 +18,8 @@ Birth labels are flat parent-local Ulam paths. Passive receptions touch both
 causal wires but never reset the receiver clock or consume its mark.
 Auxiliary times/global serialization are omitted from the physical DAG key.
 
-The bounded exact oracle below has its own state transition code; it shares
-only the stable physical-key serializer with the actor implementation.
+The bounded exact oracle below has its own state transition code and its own
+physical-key serializer.
 Bounds in tests are verifier bounds, never horizons of the ideal model.
 Gates A1--A8;
 exit 1 on any failure.
@@ -386,9 +386,10 @@ check(
 )
 
 
-# A2: ideal clocks tie with probability zero. Finite PRF-grid ties have tiny
-# positive probability and are an error, never a label tie-break. Flat IDs
-# carry no recursion-depth horizon.
+# A2: ideal clocks tie with probability zero. Finite deterministic PRF-grid
+# ties are possible and are an error, never a label tie-break. No probability
+# bound for BLAKE2 outputs is claimed here. Flat IDs carry no recursion-depth
+# horizon.
 tie_world = World(991)
 same = Decimal("1.25")
 tie_world.actors["A"].next_ring = same
@@ -408,11 +409,12 @@ deep_ok = (root_of(deep) == "A" and len(rid_key(deep)[1]) == 6000
            and isinstance(tape_uint(991, deep, 0, "depth-test"), int))
 check(
     "A2 HF2 + NO SOFTWARE LINEAGE CAP: ideal continuous clocks tie with "
-    "probability zero; the 256-bit PRF grid has a nonzero tie bound and an "
+    "probability zero; the deterministic 256-bit PRF grid can tie and an "
     "artificial equal deadline raises NumericalTie, never a label rule. "
     "Flat Ulam paths encode/hash beyond depth 5000 without recursion",
     tie_raised and deep_ok,
-    "pairwise PRF-grid tie probability <= 2^-256; depth tested=6000",
+    "finite-grid tie fail-closed; no BLAKE2 probability theorem; "
+    "depth tested=6000",
 )
 
 
@@ -503,6 +505,9 @@ check(
 # Independent bounded exact embedded oracle (separate transition code).
 
 def o_seed():
+    # World also contains an inert sealed root R linked to A.  R owns no
+    # clock, is ineligible as an interaction target, and cannot appear in an
+    # event or event predecessor, so this event-DAG oracle suppresses it.
     return {
         "actors": {"A": [0, 0], "B": [0, 0]},  # rings, births
         "adj": {"A": {"B"}, "B": {"A"}},
@@ -651,6 +656,9 @@ check(
 
 
 # A7: PRF-quality diagnostics and ideal-clock/Yule finite-time checks.
+# These frozen, conservative bars are implementation diagnostics, not exact
+# familywise hypothesis tests or a proof that the PRF is iid.
+DIAGNOSTIC_Z_BAR = 8.0
 winner_ok = True
 winner_detail = []
 clock_trials = 3000
@@ -666,10 +674,11 @@ for k in (1, 2, 4, 8):
     mean_min = min_sum / clock_trials
     expected = Decimal(1) / k
     se_mean = expected / Decimal(clock_trials).sqrt()
-    winner_ok &= abs(mean_min - expected) < 8 * se_mean
+    winner_ok &= abs(mean_min - expected) < Decimal(DIAGNOSTIC_Z_BAR) * se_mean
     if k > 1:
         se_count = math.sqrt(clock_trials * (1 / k) * (1 - 1 / k))
-        winner_ok &= max(abs(c - clock_trials / k) for c in counts) < 7 * se_count
+        winner_ok &= (max(abs(c - clock_trials / k) for c in counts)
+                      < DIAGNOSTIC_Z_BAR * se_count)
     winner_detail.append(f"k{k}:mean-min={mean_min:.8g},counts={counts}")
 
 child_wins = 0
@@ -726,14 +735,14 @@ observed_bins[16] = sum(v for n, v in pop_hist.items() if n >= 16)
 yule_chi = sum((observed_bins[n] - expected_bins[n]) ** 2 / expected_bins[n]
                for n in expected_bins)
 yule_df = len(expected_bins) - 1
-yule_bar = yule_df + 7 * math.sqrt(2 * yule_df)
+yule_bar = yule_df + DIAGNOSTIC_Z_BAR * math.sqrt(2 * yule_df)
 
 # Direct PRF quartile and unbiased-rank diagnostics (not proofs of iid source
 # noise). The rejection construction itself is exact on each uniform word.
 mark_trials = 50000
 kind_counts = [0, 0, 0, 0]
 for j in range(mark_trials):
-    kind_counts[tape_uint(950000, "A", j, "kind-audit") & 3] += 1
+    kind_counts[tape_uint(950000, "A", j, "kind") & 3] += 1
 kind_se = math.sqrt(mark_trials * .25 * .75)
 kind_z = max(abs(x - mark_trials / 4) for x in kind_counts) / kind_se
 partner_z = 0.0
@@ -745,16 +754,18 @@ for mpart in (3, 7, 17):
     partner_z = max(partner_z,
                     max(abs(x - mark_trials / mpart) for x in counts) / se)
 
-yule_ok = pop_z < 6 and ring_z < 6 and yule_chi < yule_bar
-ok7 = (winner_ok and child_z < 6 and yule_ok
-       and kind_z < 6 and partner_z < 6)
+yule_ok = (pop_z < DIAGNOSTIC_Z_BAR and ring_z < DIAGNOSTIC_Z_BAR
+           and yule_chi < yule_bar)
+ok7 = (winner_ok and child_z < DIAGNOSTIC_Z_BAR and yule_ok
+       and kind_z < DIAGNOSTIC_Z_BAR and partner_z < DIAGNOSTIC_Z_BAR)
 check(
     "A7 CLOCK/YULE/PRF CHECKS: frozen-grid actor winners and minimum waits "
     "match the ideal 1/k and Exp(k) targets; parent/child post-birth clocks "
-    "match P(child wins)=1/2; finite-time population clears its exact "
-    "negative-binomial distribution and derived moment bars; ring counts "
+    "match P(child wins)=1/2; finite-time population clears the ideal law's "
+    "exact negative-binomial target and derived moment bars; ring counts "
     "clear the joint-generator variance bar; mark quartiles and partner "
-    "ranks clear declared six-sigma diagnostics",
+    "ranks clear one frozen eight-SD diagnostic bar (not an exact "
+    "familywise test)",
     ok7,
     "; ".join(winner_detail) + f"; child {child_wins}/{child_trials} "
     f"(z={child_z:.2f}); N4={mean_pop:.3f}/{target_pop:.3f} z={pop_z:.2f}, "

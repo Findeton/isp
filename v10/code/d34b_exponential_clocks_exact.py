@@ -28,6 +28,7 @@ Gates E1--E7; exit 1 on any failure.
 from collections import defaultdict
 from decimal import Decimal, getcontext
 from fractions import Fraction as F
+import math
 
 getcontext().prec = 100
 
@@ -457,6 +458,31 @@ scaled = {
 t = Decimal(8)
 time_tail_one = (-t / 2).exp()
 time_tail_two = time_tail_one * (1 + t / 2)
+
+
+def poisson_thinning_unfinished(t0, required_acts, terms=220):
+    """Construct the local unfinished mass from the source coordinates.
+
+    The record rings as a rate-one Poisson process and each ring is an act
+    with probability 1/2.  This sum is coded independently of the closed
+    Exp/Erlang formula above.  Remote clocks do not enter either construction:
+    that is the pathwise source-factorization theorem, not a numerical
+    equality inferred from this gate.
+    """
+    poisson_mass = (-t0).exp()
+    total = Decimal(0)
+    for rings in range(terms):
+        fewer = sum(
+            Decimal(math.comb(rings, acts)) / (Decimal(2) ** rings)
+            for acts in range(min(required_acts, rings + 1))
+        )
+        total += poisson_mass * fewer
+        poisson_mass *= t0 / Decimal(rings + 1)
+    return total
+
+
+series_tail_one = poisson_thinning_unfinished(t, 1)
+series_tail_two = poisson_thinning_unfinished(t, 2)
 ok5 = (
     all(F(3 * k - 1, 4 * k) + F(k - 1, 4 * k) + F(1, 2 * k) == 1
         for k in range(2, 257))
@@ -467,7 +493,8 @@ ok5 = (
     and surv4[64] > surv2[64]
     and abs(scaled[(2, 2048)] / Decimal(32) - 1) < Decimal("0.04")
     and abs(scaled[(4, 2048)] / Decimal(192) - 1) < Decimal("0.04")
-    and time_tail_one == (-t / 2).exp()  # same expression in remote world
+    and abs(series_tail_one - time_tail_one) < Decimal("1e-90")
+    and abs(series_tail_two - time_tail_two) < Decimal("1e-90")
     and time_tail_two > time_tail_one
 )
 check(
@@ -483,7 +510,9 @@ check(
     f"{dfrac(surv4_exact[32], 20)}; "
     "100-digit n^2 S_n " + ", ".join(
         f"k0={k},n={n}:{v:.18g}" for (k, n), v in sorted(scaled.items())
-    ) + f"; t=8 tails={time_tail_one:.18g}/{time_tail_two:.18g}",
+    ) + f"; t=8 closed/Poisson-series tails="
+    f"{time_tail_one:.18g}/{series_tail_one:.18g},"
+    f"{time_tail_two:.18g}/{series_tail_two:.18g}",
 )
 
 

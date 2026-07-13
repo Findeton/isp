@@ -2430,3 +2430,25 @@ A6 bounded concordance only. Autonomous objects + central shared-event
 evaluator, no OS-mailbox claim. Frozen R2 full untimed restriction narrowed
 honestly. Rerun outputs update after the delta patch; delta referees asked
 to stamp the exact terminal wording before d34c opens.
+
+## 2026-07-13 — d34b TERMINAL: three-stream delta clean; CLASSICAL MEASURE PASS (LEDGER #164)
+All three independent deltas returned zero BLOCKER / zero MAJOR: measure/
+topology CORE DELTA-CLEAN; actor/code SUBSTANTIVELY DELTA-CLEAN; asymptotic/
+numerical DELTA-CLEAN. Every conditional cleanup was applied, none deferred.
+E5 now reconstructs fixed-local-time tails independently by a 100-decimal
+Poisson/binomial thinning series (agreement with Exp/Erlang below 1e-90),
+with remote independence attributed to source factorization rather than a
+tautological equality. A2 makes no probability theorem about deterministic
+BLAKE2; finite-grid ties fail closed. The oracle's separate serializer and
+event-inert R suppression are explicit. A7 audits the production kind domain,
+compares against the ideal law's exact NB target, and labels its one frozen
+eight-SD bar as an implementation diagnostic, not exact familywise inference.
+The D34a q/k correction is fixed-embedded-depth; timed projectivity is D34b.
+Fresh salted reruns byte-match. Final hashes: exact
+47993cbcaf3d3a719ef868fd6a4d122b9b2d46e23555133d886185f79358740c
+(7/7); actor 59d28bc5db03cca5e30a81eaed09c1c42d7e51541f6ea7c3d078c9d59a75c2a3
+(8/8). **TERMINAL: normalized, nonexplosive, persistent ideal timed Harris
+law + Ulam-coded typed-DAG pushforwards established; finite PRF actor reference
+concordant/pathwise local at tested width.** Open: intrinsic untimed
+projective/profinite architecture, dynamic adjacency/joining, derived
+coefficients, NSE, quantum lift. d34c may now open.

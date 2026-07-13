@@ -19,3 +19,7 @@ Independently confirmed: the killed-chain recurrence; `S_n ~ 16 k0(k0-1)n^-2` fo
 - Call E3's two halves relative-order cylinders; call A1's checker separately implemented, not fully independent.
 
 The construction survives. The delta is about proof carriage and object boundaries, not the law's existence.
+
+## Delta verdict on `d0e7971`
+
+**DELTA-CLEAN.** The `n^-2` theorem and constant are now analytic and correctly scoped; nonexplosion and persistence are proof-complete; A7's population/ring moments and negative-binomial control are correct; timed versus untimed restrictions are cleanly separated; and fresh reruns match the committed outputs. The referee stamps the §9 terminal wording without qualification.
