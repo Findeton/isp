@@ -1,0 +1,25 @@
+[d32c the S2-mechanism test — §10 pin b6d8a9e]
+  [PASS] C1 card v2.2 loaded and sha-asserted  (sha256/16 = e7bc80f0be08f537)
+  [PASS] C2 the 7 cells complete (168 growths); per-cell fallbacks + minima disclosed (the D32B M1 discipline)  (fallbacks: k=1,p=0.0,N=256: 12/12, k=1,p=0.0,N=512: 12/12, k=1,p=0.25,N=256: 12/12, k=1,p=0.25,N=512: 12/12, k=1,p=0.5,N=256: 12/12, k=1,p=0.5,N=512: 9/12, k=2,p=0.0,N=256: 12/12, k=2,p=0.0,N=512: 12/12, k=2,p=0.25,N=256: 12/12, k=2,p=0.25,N=512: 12/12, k=2,p=0.5,N=256: 12/12, k=2,p=0.5,N=512: 12/12; global min d_MM = 1.3860)
+      THE S2 MAP [cell -> pair | gap | verdict | mean-align | fr | >=7]:
+        CONTROL k=0 N=256      (1.667±0.190, 1.507±0.154) | +0.160±0.163 | NO-BAND                | +0.984 | 0.665 | 0.9
+        CONTROL k=0 N=512      (2.017±0.248, 1.864±0.281) | +0.153±0.129 | NO-BAND                | +0.991 | 0.667 | 1.9
+        k=1 p=0.0 N=256        (4.384±0.173, 1.061±0.090) | +3.231±0.180 | NO-BAND                | -0.083 | 0.007 | 0.1
+        k=1 p=0.0 N=512        (5.079±0.160, 1.029±0.046) | +4.033±0.171 | NO-BAND                | -0.083 | 0.004 | 0.0
+        k=1 p=0.25 N=256       (4.207±0.201, 1.305±0.263) | +2.902±0.287 | NO-BAND                | +0.401 | 0.125 | 0.1
+        k=1 p=0.25 N=512       (4.806±0.184, 1.194±0.255) | +3.612±0.291 | NO-BAND                | +0.429 | 0.130 | 0.0
+        k=1 p=0.5 N=256        (4.144±0.273, 1.386±0.183) | +2.758±0.306 | NO-BAND                | +0.436 | 0.213 | 0.0
+        k=1 p=0.5 N=512        (4.018±1.276, 1.479±0.257) | +2.539±1.458 | NO-BAND                | +0.440 | 0.217 | 0.1
+        k=2 p=0.0 N=256        (4.491±0.164, 1.048±0.040) | +3.312±0.151 | NO-BAND                | -0.232 | 0.005 | 0.0
+        k=2 p=0.0 N=512        (5.212±0.097, 1.048±0.038) | +4.132±0.110 | NO-BAND                | -0.009 | 0.001 | 0.1
+        k=2 p=0.25 N=256       (4.482±0.193, 1.044±0.044) | +3.287±0.201 | NO-BAND                | +0.341 | 0.040 | 0.1
+        k=2 p=0.25 N=512       (5.000±0.120, 1.104±0.092) | +3.896±0.142 | NO-BAND                | +0.401 | 0.041 | 0.1
+        k=2 p=0.5 N=256        (4.442±0.165, 1.309±0.334) | +3.069±0.362 | NO-BAND                | +0.416 | 0.074 | 0.0
+        k=2 p=0.5 N=512        (5.015±0.169, 1.214±0.248) | +3.801±0.306 | NO-BAND                | +0.422 | 0.071 | 0.0
+  [PASS] C3 the map printed with verdicts (card-v2.2 joint rule, z = 3.5, Bonferroni/7), per-cell alignment (CF2) and census column
+  [PASS] C4 CF3: the k = 0 control vs the D32B anchor cell (matched kernel, different rng consumption via the direction draws + different seed family) — REPORTED, not gated to equality  (control 512 = (2.017±0.248) vs D32B (1.908±0.215): z = 1.15)
+  [PASS] C5 THE LIFT TEST (pre-registered bar: > 2x pooled SE above the control + kappa-monotonicity + FRESH-FAMILY replication per the 45e/48d discipline)  (k=1,p=0.0: discovery dz = 35.89, confirmation dz = 36.50, kappa-monotone = True -> CONFIRMED-LIFT; k=1,p=0.25: discovery dz = 31.27, confirmation dz = 28.13, kappa-monotone = True -> CONFIRMED-LIFT; k=1,p=0.5: discovery dz = 5.33, confirmation dz = 31.01, kappa-monotone = True -> CONFIRMED-LIFT; k=2,p=0.0: discovery dz = 41.52, confirmation dz = 41.16, kappa-monotone = True -> CONFIRMED-LIFT; k=2,p=0.25: discovery dz = 37.49, confirmation dz = 38.15, kappa-monotone = True -> CONFIRMED-LIFT; k=2,p=0.5: discovery dz = 34.54, confirmation dz = 38.66, kappa-monotone = True -> CONFIRMED-LIFT)
+      C6 FRONTS: CF1 the 12-vertex coarseness (48-point refinement named, not run); CF2 in-table (mean-align column); CF3 reported at C4; CF4 the anti-aligned sign is the pinned posit (aligned variant named, not run).
+  [PASS] C6 fronts printed
+
+ALL CHECKS PASS (6/6: C1 freeze-assert; C2 completeness [record]; C3 the map [substantive]; C4 CF3 [record]; C5 the lift test [substantive]; C6 fronts [record])

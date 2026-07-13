@@ -2030,3 +2030,22 @@ dense-scan arm DECLINED WITH REASON (monotone compression at 36/36 —
 a dense scan refines a falling curve; it cannot find a lifting
 direction); D32C = the S²-mechanism family (§3's separately pinned
 hypothesis), the pin to be written pre-receipt.
+
+## 2026-07-13 — D32C GREEN 6/6: the pre-registered bar fired CONFIRMED-LIFT ×6 — AND THE BAR WAS CONFOUNDED (identified same-date, pre-round); the honest verdict is NO-BAND + interaction starvation (LEDGER #149)
+Formal outcome: all six live cells cleared the §10 bar (discovery dz
+5.3–41.5; fresh-family confirmation dz 28–41; κ-monotone). THE
+CONFOUND (mine, before the round): the bar measured d̂_MM elevation
+above the control WITHOUT a realized-interaction-fraction control.
+Anti-aligned weighting + direction INHERITANCE ⇒ a nearly-aligned
+population (control mean-align +0.99) ⇒ compatibility weights collapse
+⇒ INTERACTS STARVE (fr 0.001–0.22 vs control 0.667) ⇒ the webs revert
+toward pure-birth trees — d̂_MM 4.1–5.2 with midpoint → 1.0 and gap →
++4 is EXACTLY the D32B witness/birth-tree signature, and the cells sit
+on the D32B fr-compression curve run backward. NO cell enters any
+manifold band. The honest §10 answers: (1) the pinned S² family does
+NOT produce M-like order — the primary hypothesis is NEGATIVE at this
+family; (2) "CONFIRMED-LIFT" is an artifact of bar design (a
+pre-registration failure of the BAR, not of the runs — recorded as
+such); (3) the design lesson: any future lift bar must compare at
+MATCHED realized interaction fraction. Hostile round next with the
+confound as the central adjudication.
