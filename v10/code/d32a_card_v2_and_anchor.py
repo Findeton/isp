@@ -3,15 +3,22 @@
 d32a_card_v2_and_anchor.py — v10 D32A: the deterministic card, the
 validated order-only estimators, the 1.76 anchor, and the exception
 census. Pin: note-d32-dimension-map.md §1 (committed pre-run) + §6
-round-1 repairs (committed pre-delta-rerun; report
-reviews/d32a-round1-integrated-hostile-review.md).
-Card v2.1: %.12g fixed-significant serialization, sorted keys,
+round-1 repairs + §7 delta-2 (external review #2 adoptions; both
+committed pre-rerun; reports reviews/d32a-round1-...md and
+reviews/d31-d32-external-user-review-2.md).
+Card v2.2: %.12g fixed-significant serialization, sorted keys,
 recorded numerical environment + generator sha, per-cell SDs INCLUDING
 the controls at every N and the chain constants. P2 conventions
-DECLARED per round-1 M1: canonical tie-averaged Spearman vs INVARIANT
-proper distance, pooled over 3 fresh sprinklings x 40 pairs (bar 0.60
-unchanged; the attempt-2 stream replayed bitwise as a guard; vacancy
-admissible). Float64 MC + numpy (declared); all seeds fixed.
+DECLARED per round-1 M1 + §7: canonical tie-averaged Spearman vs
+INVARIANT proper distance, pooled over 12 FRESH sprinklings x 10
+pairs, CLUSTER-AWARE uncertainty (sprinkling-level bootstrap +
+jackknife SE — the pair-level bootstrap of v2.1 treated clustered
+pairs as independent and is superseded); bar 0.60 unchanged; the
+attempt-2 stream replayed to the 12-digit freeze as a guard; vacancy
+admissible; the certification is rank MONOTONICITY only (an order-only
+RANKING instrument — no calibrated distance, no scaling law). The
+anchor deliverable is THE SIGNATURE PAIR (d_MM, d_mid) per §7.
+Float64 MC + numpy (declared); all seeds fixed.
 Gates P1-P6; exit 1 on any failure.
 """
 import json, math, hashlib, sys, platform
@@ -155,15 +162,31 @@ def avranks(v):
 def spearman_canonical(e, t):
     return float(np.corrcoef(avranks(e), avranks(t))[0, 1])
 
-def bootstrap_ci(e, t, rng, nboot=10000, bar=0.60):
-    """Pair bootstrap of the deciding statistic; returns (lo95, hi95, P(<bar))."""
-    e = np.asarray(e, float); t = np.asarray(t, float); n = len(e)
+def cluster_bootstrap(clusters, rng, nboot=10000, bar=0.60):
+    """SPRINKLING-level bootstrap (§7: pairs cluster within sprinklings —
+    resample the 12 clusters with replacement, pool, recompute the deciding
+    statistic). clusters = list of (est_list, truth_list).
+    Returns (lo95, hi95, P(<bar))."""
+    K = len(clusters)
     vals = np.empty(nboot)
     for b in range(nboot):
-        idx = rng.integers(0, n, n)
-        vals[b] = spearman_canonical(e[idx], t[idx])
+        ids = rng.integers(0, K, K)
+        e = [v for i in ids for v in clusters[i][0]]
+        t = [v for i in ids for v in clusters[i][1]]
+        vals[b] = spearman_canonical(e, t)
     lo, hi = np.quantile(vals, [0.025, 0.975])
     return float(lo), float(hi), float(np.mean(vals < bar))
+
+def cluster_jackknife(clusters):
+    """Leave-one-sprinkling-out jackknife SE of the pooled statistic (§7)."""
+    K = len(clusters)
+    rhos = []
+    for i in range(K):
+        e = [v for j in range(K) if j != i for v in clusters[j][0]]
+        t = [v for j in range(K) if j != i for v in clusters[j][1]]
+        rhos.append(spearman_canonical(e, t))
+    rhos = np.array(rhos); m = float(rhos.mean())
+    return math.sqrt((K - 1) / K * float(((rhos - m)**2).sum()))
 
 def max_interval(M, min_size=64):
     counts = (M @ M) * M
@@ -263,7 +286,7 @@ def cell_stats(mats):
             "dmid_sd": (np.std(md) if md else None),
             "n_mid": len(md)}
 
-card = {"schema": "v2.1", "base_seed": BASE, "sig_digits": 12,
+card = {"schema": "v2.2", "base_seed": BASE, "sig_digits": 12,
         "generator_sha256_16": GEN_SHA,
         "env": {"python": sys.version.split()[0], "numpy": np.__version__,
                 "platform": platform.platform()},
@@ -290,11 +313,16 @@ for N in SIZES:
         st["chain_c4_sd"] = st["L_sd"] / N**0.25
         card["controls"][f"{name}_N{N}"] = st
 
-# ---- the spatial estimator (round-1 M1 conventions) -----------------------
+# ---- the spatial estimator (round-1 M1 conventions; §7 cluster-aware) -----
 FROZEN_LEGACY = {3: 0.858646616541, 4: 0.717293233083}   # attempt-2 card rows
+# v2.1's 3x40 pooled readings (card 0d33f81d67486a29) — PROVENANCE citations:
+# the pair-level bootstrap under them treated clustered pairs as independent
+# and is superseded by the cluster-aware certification below (§7).
+FROZEN_V21_POOL = {3: 0.814058559751, 4: 0.786629123194}
 sp = {}
 for d in (3, 4):
-    # (A) bitwise replay of the attempt-2 stream (npairs = 20) + 2x2 audit
+    # (A) replay of the attempt-2 stream (npairs = 20) + 2x2 audit; the
+    # guard compares to the 12-digit freeze (|delta| < 1e-9)
     rng = np.random.default_rng(BASE + 777*d)
     ts, xs = sprinkle_interval(d, 1024, rng)
     M = causal_matrix(ts, xs)
@@ -305,24 +333,32 @@ for d in (3, 4):
              "receipt_tie_invariant": spearman_index(e0, ti0),
              "canonical_invariant": spearman_canonical(e0, ti0)}
     replay_ok = abs(legacy - FROZEN_LEGACY[d]) < 1e-9
-    # (B) the deciding validation: 3 fresh sprinklings x 40 pairs, pooled
-    E, TI, TF, MN, per_s = [], [], [], [], []
-    for k in (1, 2, 3):
-        rng = np.random.default_rng(BASE + 777*d + k)
+    # (B) the deciding validation (§7 delta-2): 12 FRESH sprinklings x 10
+    # pairs, pooled; uncertainty at the SPRINKLING level
+    clusters, MN, per_s = [], [], []
+    for k in range(12):
+        rng = np.random.default_rng(BASE + 20000 + 100*d + k)
         ts, xs = sprinkle_interval(d, 1024, rng)
         M = causal_matrix(ts, xs)
-        e, ti, tf, mn = spatial_pairs(ts, xs, M, rng, npairs=40)
-        per_s.append(spearman_canonical(e, ti) if len(e) >= 8 else None)
-        E += e; TI += ti; TF += tf; MN += mn
-    if len(E) >= 24:    # domain floor: 8/sprinkling as at attempt 2, pooled
+        e, ti, tf, mn = spatial_pairs(ts, xs, M, rng, npairs=10)
+        clusters.append((e, ti, tf))
+        per_s.append(spearman_canonical(e, ti) if len(e) >= 5 else None)
+        MN += mn
+    E = [v for c in clusters for v in c[0]]
+    TI = [v for c in clusters for v in c[1]]
+    TF = [v for c in clusters for v in c[2]]
+    inv_clusters = [(c[0], c[1]) for c in clusters]
+    if len(E) >= 60:    # §7-silent domain floor; immaterial at full yield
         rho = spearman_canonical(E, TI)
-        lo, hi, pbar = bootstrap_ci(E, TI, np.random.default_rng(BASE + 555*d))
+        lo, hi, pbar = cluster_bootstrap(inv_clusters,
+                                         np.random.default_rng(BASE + 555*d))
+        jk_se = cluster_jackknife(inv_clusters)
         rho_frame = spearman_canonical(E, TF)
     else:
-        rho = lo = hi = pbar = rho_frame = None
+        rho = lo = hi = pbar = jk_se = rho_frame = None
     sp[d] = dict(replay_ok=replay_ok, audit=audit, rho=rho, ci=(lo, hi),
-                 p_below=pbar, rho_frame=rho_frame, n=len(E), per_s=per_s,
-                 naive_min=(float(np.mean(MN)) if MN else None))
+                 p_below=pbar, jk_se=jk_se, rho_frame=rho_frame, n=len(E),
+                 per_s=per_s, naive_min=(float(np.mean(MN)) if MN else None))
 
 # (C) the naive-min drift row across N (round-1 m3; feeds F2)
 drift = {}
@@ -342,17 +378,27 @@ for d in (3, 4):
     verdict = ("CARD-CARRIED" if (s["rho"] is not None and s["rho"] >= 0.60)
                else "VACANT")
     card["spatial_orderonly"][f"d{d}_N1024"] = {
+        "certifies": ("rank MONOTONICITY over common-diamond pairs — an "
+                      "order-only spatial RANKING instrument; no absolute "
+                      "scale, no calibrated distance, no scaling law (§7)"),
         "domain": "common-diamond pairs (order-only pre-filter)",
         "tie_convention": "average-ranks (canonical Spearman)",
         "truth_convention": "invariant proper distance sqrt(dx^2-dt^2)",
         "rho_pooled": s["rho"],
-        "ci95": [s["ci"][0], s["ci"][1]],
-        "p_below_bar": s["p_below"], "n_pairs": s["n"], "n_sprinklings": 3,
+        "cluster_bootstrap_ci95": [s["ci"][0], s["ci"][1]],
+        "cluster_p_below_bar": s["p_below"],
+        "jackknife_se": s["jk_se"],
+        "n_pairs": s["n"], "n_sprinklings": 12,
         "rho_per_sprinkling": s["per_s"],
         "rho_pooled_frame_disclosed": s["rho_frame"],
         "audit_20pair_2x2": s["audit"],
         "naive_min_mean": s["naive_min"],
-        "advisory_rule": "advisory-only if p_below_bar > 0.10 (note §6)",
+        "v2_1_provenance": {
+            "rho_pooled_3x40": FROZEN_V21_POOL[d],
+            "card_sha256_16": "0d33f81d67486a29",
+            "note": ("pair-level bootstrap superseded per §7 — pairs "
+                     "cluster within sprinklings")},
+        "advisory_rule": "advisory-only if cluster_p_below_bar > 0.10 (§7)",
         "verdict": verdict}
 card["f2_naive_min_drift"] = drift
 
@@ -396,24 +442,30 @@ det = []
 for d in (3, 4):
     s = sp[d]; row = card["spatial_orderonly"][f"d{d}_N1024"]
     ok2 &= s["replay_ok"]
-    ok2 &= (s["rho"] is not None) or (s["n"] < 24)   # decision reached
+    ok2 &= (s["rho"] is not None) or (s["n"] < 60)   # decision reached
     a = s["audit"]
     piece = f"d{d}: {row['verdict']} — pooled rho = {fmt(s['rho'])}"
     if s["rho"] is not None:
-        piece += (f" [CI95 {s['ci'][0]:.3f},{s['ci'][1]:.3f}; "
-                  f"P(<bar) = {s['p_below']:.3f}] on {s['n']} pairs; "
-                  f"frame reading {fmt(s['rho_frame'])} (disclosed)")
-    piece += (f"; replay bitwise OK = {s['replay_ok']}; 20-pair 2x2 "
+        pers = [p for p in s["per_s"] if p is not None]
+        piece += (f" [cluster CI95 {s['ci'][0]:.3f},{s['ci'][1]:.3f}; "
+                  f"cluster P(<bar) = {s['p_below']:.3f}; jk SE = "
+                  f"{s['jk_se']:.3f}] on {s['n']} pairs / 12 sprinklings "
+                  f"(per-sprinkling rho {min(pers):.3f}..{max(pers):.3f}); "
+                  f"frame reading {fmt(s['rho_frame'])} (disclosed); v2.1 "
+                  f"3x40 provenance {FROZEN_V21_POOL[d]:.3f}")
+    piece += (f"; replay-to-freeze OK = {s['replay_ok']}; 20-pair 2x2 "
               f"(tie x truth) = {a['receipt_tie_frame']:.3f}/"
               f"{a['canonical_frame']:.3f}/{a['receipt_tie_invariant']:.3f}/"
               f"{a['canonical_invariant']:.3f}")
     det.append(piece)
-check("P2 spatial (order-only): conventions DECLARED per round-1 M1 — "
-      "canonical tie-averaged Spearman vs INVARIANT proper distance, pooled "
-      "over 3 fresh sprinklings x 40 pairs; bar 0.60 unchanged; the "
-      "attempt-2 20-pair stream replayed bitwise (guard); the >= 0.60 bar "
-      "decides CARD-CARRIED vs VACANT — either outcome recorded (pin (b))",
-      ok2, "; ".join(det))
+check("P2 spatial (order-only, certifies RANKING only — §7): canonical "
+      "tie-averaged Spearman vs INVARIANT proper distance, pooled over 12 "
+      "FRESH sprinklings x 10 pairs; CLUSTER-AWARE uncertainty "
+      "(sprinkling-level bootstrap + jackknife SE — v2.1's pair-level "
+      "bootstrap superseded); bar 0.60 unchanged; the attempt-2 20-pair "
+      "stream replayed to the 12-digit freeze (|delta| < 1e-9; guard); the "
+      ">= 0.60 bar decides CARD-CARRIED vs VACANT — either outcome recorded "
+      "(pin (b))", ok2, "; ".join(det))
 
 # ---- P3: midpoint-scaling bands on synthetic ground truth -----------------
 ok3 = True
@@ -450,16 +502,20 @@ ok4 = abs(d_anchor - 1.76) <= 0.10
 ok4 &= dmid_anchor is not None and abs(d_anchor - dmid_anchor) <= 0.15
 ok4 &= excl
 frag = ((0.15 - diff_m) / diff_se) if (diff_m is not None and diff_se) else None
-check("P4 THE ANCHOR: the D30 collar cell regrown (frozen kernel, D30 "
-      "seeds; array-deterministic sampler, so the band is a reproduction "
-      "gate) — d_hat within ±0.10 of 1.76; MM/midpoint concordance <= 0.15 "
+check("P4 THE ANCHOR — deliverable: THE SIGNATURE PAIR (d_MM, d_mid), a "
+      "multi-exponent, decisively non-M^2 order geometry (§7 — no single "
+      "dimension claimed that every manifold estimator must recover): the "
+      "D30 collar cell regrown (frozen kernel, D30 seeds; "
+      "array-deterministic sampler, so the band is a reproduction gate) — "
+      "d_MM within ±0.10 of 1.76; MM/midpoint concordance <= 0.15 "
       "(deterministic on the frozen seeds; replication fragility stated per "
       "§6); M^2-exclusion re-verdict under card bands HOLDS", ok4,
-      f"d_MM = {fmt(d_anchor)}±{fmt(sd_mm)}, d_mid = {fmt(dmid_anchor)}"
-      f"±{fmt(sd_mid)}, paired diff {fmt(diff_m)}±{fmt(diff_sd)} "
-      f"(SE {fmt(diff_se)}; concordance margin = {fmt(frag, 2)} SE — the "
-      f"0.126 gap is a real 2.66-SE property per §6, NOT the small-|I| "
-      f"bias); M2 exclusion: |{fmt(d_anchor)}-2| vs 3x{fmt(cell2['dhat_sd'])}")
+      f"SIGNATURE PAIR (d_MM, d_mid) = ({fmt(d_anchor)}±{fmt(sd_mm)}, "
+      f"{fmt(dmid_anchor)}±{fmt(sd_mid)}); paired diff {fmt(diff_m)}"
+      f"±{fmt(diff_sd)} (SE {fmt(diff_se)}; concordance margin = "
+      f"{fmt(frag, 2)} SE — the 0.126 gap is a real 2.66-SE property per "
+      f"§6, NOT the small-|I| bias); M2 exclusion: |{fmt(d_anchor)}-2| vs "
+      f"3x{fmt(cell2['dhat_sd'])}")
 
 # ---- P5: the exception census (round-1 M2 record; note §6 ensemble) -------
 def grow_census(n_events, rng):

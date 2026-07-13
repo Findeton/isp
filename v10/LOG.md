@@ -1750,3 +1750,31 @@ Stale in the review (corrected): v2.1 + LEDGER #141 were already
 committed at 6090d55. Sequence: referee delta verdict (in flight) →
 delta-2 rerun (§7 pin) → delta-2 verification → LEDGER #142 →
 D32A CLOSED → O3 → D32B.
+
+## 2026-07-12 — referee delta verdict: DELTA-CLEAN (0 MAJOR / 0 MINOR / 2 prose NITs); delta-2 receipt launched per §7
+The referee's delta section appended to
+`reviews/d32a-round1-integrated-hostile-review.md`: all ten round-1
+repairs verified landed faithfully at 6090d55, nothing dropped or
+weakened; a second independent end-to-end rerun (1253 s) byte-identical
+(card v2.1 sha 0d33f81d67486a29 on both committed and regenerated
+artifacts); every delta number recomputed card-exact in a
+repo-independent driver (pooled rhos 0.814058559751/0.786629123194;
+all per-sprinkling rhos ≥ 0.758; drift rows; unordered census); the
+±0.001 2×2 question RESOLVED — all eight audit values are
+BIT-IDENTICAL to the round-1 scratch numbers, the difference was print
+precision only. FORWARD-CORRECTION (the referee's n6): the previous
+LOG entry's attribution of the ±0.001 to "their driver's rank-tie
+implementation detail" was WRONG — superseded by this entry. n7
+adopted: "replayed bitwise" tightened to "replayed to the 12-digit
+freeze (|Δ| < 1e-9)" in the receipt's P2 text. The referee also
+corroborated the external cluster critique at the fully clustered
+reading: per-sprinkling means 0.8148/0.7909, t(2) = 12.0/9.6,
+one-sided p ≈ 0.0035/0.0054 — the CARD-CARRIED verdicts survive; only
+the "0.000" precision was overconfident. DELTA-2 LAUNCHED (§7,
+committed 494751c pre-run): 12 fresh sprinklings × 10 pairs per d
+(seeds BASE+20000+100d+k), sprinkling-level bootstrap + jackknife SE,
+bar 0.60 unchanged, advisory rule on cluster-level P(<bar) > 0.10;
+`certifies` = rank MONOTONICITY only (ranking instrument, no
+calibrated distance); THE SIGNATURE PAIR (d_MM, d_mid) prints; card
+schema v2.2 (same path; v2.1 in history; supersession at #142);
+v2.1's 3×40 pooled readings carried as provenance fields.
