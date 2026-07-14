@@ -482,3 +482,110 @@ The repair must explicitly compare its terminology with four primary results:
 
 After replacement, the same three reviewers must perform delta audits. A
 terminal statement requires closure of the blocker and every major finding.
+
+## 9. Repaired receipts (2026-07-13; delta review pending)
+
+The replacement receipts implement the frozen gates and are byte-identical
+under fresh hash salts:
+
+- classical: `13/13`, summary SHA-256
+  `9f9e59954bd1710e70c27d1fa6c5b285c50eec096dae21d433c04201092ac282`;
+- quantum: `10/10`, summary SHA-256
+  `cc496ff94d360c34ffb5f52b2e4ba57f342378d3807198a3a0f5d9ff01c4dce0`.
+
+### 9.1 Repaired classical theorem
+
+The ideal chosen D34b law is a time-homogeneous strong Markov process on its
+**complete global Harris configuration** `Z_t`. The exact generator is the sum
+of actor terms pinned in §8.2. Each term reads one initiator's local
+adjacency/eligibility and touches only initiator plus child/target; its row
+mass is one. With finitely many live actors at finite time, total intensity is
+finite. Independent Poisson increments and fresh preparation-independent mark
+streams supply the analytic strong-Markov theorem. The Decimal/PRF actor
+program remains a reference implementation, not the theorem's randomness.
+
+This does not produce the desired bounded local predictive state. The actual
+D34b gate now owns the obstruction: B's incoming rate to A changes
+`1/4 -> 1/8` when B births another neighbor, while A's tip/private state is
+unchanged. Passive `i(B,A)` adds one A-wire event and predecessor but zero
+A-own rings. A disconnected actor component leaves A's generator row
+unchanged. The established hierarchy is therefore:
+
+```text
+global Markov configuration
+  + support-local generator terms
+  + disconnected-factor locality
+  != bounded predictive state inside each record.
+```
+
+Only the event-outcome rank six and incidence arity two are uniformly bounded.
+Ulam identifier length, actor degree, total configuration, candidate boundary
+width, renewal age-vector width and observer belief complexity are not.
+
+The HMM repair computes the actual observed-history predictive quotient:
+`2,3,...,13` belief classes through depth 12, with the analytic injection
+`next-one=1/4+p/4`. Strong, declared-initial-law and actually failing
+lumpability are separately gated.
+
+### 9.2 Repaired clock theorem
+
+The clock table now says exactly:
+
+- a common rate scale leaves the embedded winner/order law unchanged;
+- at fixed numeric construction time `T`, it changes the law;
+- the compensated identity is
+  `Law_(c lambda)(Z_T)=Law_lambda(Z_(cT))`;
+- a nonlinear relabeling preserves an already realized order but does not
+  preserve homogeneous exponential hazards;
+- relative rates are physical inputs in a named heterogeneous D34b variant:
+  the marked shared-wire split changes from `(1/48,1/24)` to
+  `(1/32,1/32)`.
+
+The uniform-renewal repair closes the complete global graph-plus-age process:
+residual survival is `S(a+s)/S(a)`; a two-actor `(age_A,age_B)=(0,1)` race has
+winner law `(1/4,3/4)`; initiators reset, newborns start at zero and passive
+receivers do not reset. A local observer who does not know neighbor ages may
+still need a belief over them.
+
+### 9.3 Repaired quantum theorem
+
+The D34c coherent functional and the separately constructed recorded-path
+functional `D_rec=delta_(p,p')D` are both gated. Their durable laws remain
+`(0,1/2,1/2,0)` and four `1/4`s. This comparison is correctly named
+operational insufficiency of durable `s` across past instrument contexts.
+
+An independent Q8 gate now establishes quantum non-Markovianity for **one
+fixed finite process**. Starting from one correlated `P,E` state, past choices
+`I_P/X_P` are followed by the same `P=0` causal-break outcome and the same
+`P=0` repreparation, each with probability `1/2`. The reduced middle state is
+therefore `P0` in both cases. The same fixed future `CNOT(E->P)` gives `P0`
+versus `P1` with certainty. Past-instrument information survives the causal
+break in E.
+
+Retaining the joint `P,E` boundary state makes this finite total evolution an
+ordinary Markov update. Eliminating E gives the reduced multi-time process
+memory. Rebit `P0,P1,P+` tomography is stated only as single-state real-
+symmetric tomography. Forever disconnected trace-one product factors obey the
+analytic tensor/partial-trace identity; correlated or returning factors are
+not discarded.
+
+### 9.4 Repaired provisional verdict
+
+The maximum combined statement sent to delta review is:
+
+> **D34d GLOBAL-MARKOV / LOCAL-GENERATOR / OBSERVABLE-MEMORY
+> CHARACTERIZATION:** the chosen classical D34b law is strong Markov on its
+> complete global configuration and has support-local generator terms; visible
+> record processes are Markov or non-Markov according to the explicitly
+> law-scoped sufficiency/lumpability test; the finite quantum exhibit has a
+> fixed-process causal-break memory witness that is Markovized by retaining its
+> joint boundary state.
+
+Still open: a bounded all-future predictive collar for interacting SHARD, the
+complete timed D34b–D34c operator-valued law, universal/instrument-independent
+finite quantum memory, physical proper time, and derivation of rates or
+operations. The literature alignment and priority limits are recorded in
+`note-d34d-literature-audit.md`.
+
+This section is provisional until all three hostile delta streams accept the
+repairs.

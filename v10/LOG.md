@@ -2619,3 +2619,23 @@ U1-U7 are frozen in note-d34d §8 before code changes. Maximum repaired claim:
 D34b GLOBAL STRONG-MARKOV PROCESS WITH SUPPORT-LOCAL GENERATOR plus exact
 observable-memory/clock scopes; finite bounded local predictive state remains
 open unless separately constructed. Delta review mandatory; findings -> #174+.
+
+## 2026-07-13 — d34d repaired GREEN 13/13 classical + 10/10 quantum; delta pending (LEDGER #174)
+All round-1 repair gates are implemented and salted outputs byte-match. Classical
+SHA256 9f9e5995...ac282: observed predictive beliefs now print 2..13; strong,
+fixed-law and failing lumpability are separate; the actual ideal D34b state and
+support-local generator are built; independent Poisson increments/fresh marks
+carry global strong Markov. Actual locality gates own B->A 1/4->1/8 with A tip
+unchanged, passive reception own/wire/global counts 0/1/1, and disconnected
+invariance. Renewal graph+age closure, typed-DAG serializer, compensated
+Law_(c lambda,T)=Law_(lambda,cT), fixed-T/nonlinear failures, heterogeneous
+marked masses and bounded/unbounded capacity ledger all pass. Quantum SHA256
+cc496ff9...c4dce0: D_rec is constructed; cross-context insufficiency is
+rescoped; rebit tomography is narrow; one fixed three-slot process now passes
+the causal-break test (same middle P0/P0 -> future P0/P1); joint boundary and
+reduced process-memory architectures are separate. Literature audit confirms
+causal-state/lumpability/process-tensor structure is prior art; the D34b/D34c
+mapping and exact obstructions are the local contribution. PROVISIONAL combined
+noun: D34d GLOBAL-MARKOV / LOCAL-GENERATOR / OBSERVABLE-MEMORY
+CHARACTERIZATION. Bounded local collar, timed quantum lift, universal finite
+quantum memory, proper time and derived rates remain open. Three deltas required.

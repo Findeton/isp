@@ -19,7 +19,7 @@ The central controls are:
   required;
 * a genuinely disconnected environment factors out exactly.
 
-All arithmetic is fractions.  Gates Q1--Q6 are substantive; Q7 is the
+All arithmetic is fractions.  Gates Q1--Q9 are substantive; Q10 is the
 dependent scorecard.  Exit 1 on any failure.
 """
 
@@ -144,21 +144,34 @@ for s, o in product((0, 1), repeat=2):
     rank += 1
 
 
-def coarse_probability(s, o, keep_path_coherence):
+# The path-recorded experiment is a distinct functional constructed by an
+# orthogonal receiver, not a second reading of the coherent diagonal.
+D_RECORDED = [
+    [D[i][j] if HISTORIES[i][1] == HISTORIES[j][1] else F(0)
+     for j in range(len(HISTORIES))]
+    for i in range(len(HISTORIES))
+]
+
+
+def incidence_probability(functional, s, o):
     ids = [HISTORIES.index((s, p, o)) for p in (0, 1)]
-    if keep_path_coherence:
-        return sum(D[i][j] for i in ids for j in ids)
-    return sum(D[i][i] for i in ids)
+    return sum(functional[i][j] for i in ids for j in ids)
 
 
 coherent_joint = {
-    (s, o): coarse_probability(s, o, True)
+    (s, o): incidence_probability(D, s, o)
     for s, o in product((0, 1), repeat=2)
 }
 recorded_joint = {
-    (s, o): coarse_probability(s, o, False)
+    (s, o): incidence_probability(D_RECORDED, s, o)
     for s, o in product((0, 1), repeat=2)
 }
+recorded_functional_ok = (
+    D_RECORDED == transpose(D_RECORDED)
+    and sum(sum(row) for row in D_RECORDED) == 1
+    and all(D_RECORDED[i][j] == (F(1, 8) if i == j else F(0))
+            for i in range(8) for j in range(8))
+)
 q1_ok = (
     hermitian and normalized and block_psd_rank and rank == 4
     and coherent_joint == {
@@ -166,12 +179,14 @@ q1_ok = (
         (1, 0): F(1, 2), (1, 1): F(0),
     }
     and all(p == F(1, 4) for p in recorded_joint.values())
+    and recorded_functional_ok
 )
 check(
     "Q1 D34c FUNCTIONAL RECONSTRUCTION [exact]: the 8x8 history functional "
     "is normalized, Hermitian and four rank-one positive blocks; coherent "
-    "path coarse graining gives joint (0,1/2,1/2,0), while recording/dephasing "
-    "the path gives four 1/4 cells",
+    "path coarse graining gives joint (0,1/2,1/2,0); the independently built "
+    "orthogonal-receiver functional D_rec=delta_(p,p')D is normalized/positive "
+    "and gives four 1/4 cells",
     q1_ok,
     f"rank={rank}; coherent={coherent_joint}; recorded={recorded_joint}",
 )
@@ -240,10 +255,11 @@ classical_shadow_same = all(
 )
 q3_ok = quantum_lumpability_fails and classical_shadow_same
 check(
-    "Q3 QUANTUM OBSERVABLE NON-LUMPABILITY [exact]: the projection to the "
-    "durable classical s record merges operationally different complete "
-    "states; an allowed future H/output instrument separates them even though "
-    "their classical path shadows agree",
+    "Q3 DURABLE-RECORD OPERATIONAL INSUFFICIENCY ACROSS PAST INSTRUMENTS "
+    "[exact, rescoped]: the projection to durable s merges the coherent and "
+    "path-recorded contexts; a future H/output test separates them although "
+    "their classical path shadows agree. This cross-context result is not by "
+    "itself non-Markovianity of one fixed process",
     q3_ok,
     "same visible s and Z diagonal; future laws deterministic vs (1/2,1/2)",
 )
@@ -282,10 +298,10 @@ signature_injective = all(
 )
 q4_ok = tomography_ok and signature_injective
 check(
-    "Q4 FINITE OPERATIONAL PREDICTIVE CLOSURE [exact, scoped]: P0, P1 and "
-    "P+ statistics reconstruct every tested real symmetric qubit state "
-    "exactly, so retaining that carrier density matrix is sufficient for the "
-    "declared real one-qubit future instrument algebra",
+    "Q4 REBIT TOMOGRAPHIC EFFECT SET [exact, scoped]: for a real-symmetric "
+    "rho=[[a,b],[b,c]], P0,P1,P+ give a,c,(a+c+2b)/2 and reconstruct "
+    "b=p+-(p0+p1)/2. This is single-state rebit tomography, not a multi-time "
+    "instrument/process-closure theorem or a general complex-qubit result",
     q4_ok,
     f"{len(TEST_STATES)} states; 3-effect signatures reconstruct/inject exactly",
 )
@@ -323,7 +339,8 @@ check(
     "states have the same reduced carrier I/2, but a later local collar "
     "interaction sends them to certain P=0 and certain P=1; when old factors "
     "can return, the predictive state must retain the joint boundary/process "
-    "memory rather than only the record's reduced density matrix",
+    "state rather than only the record's reduced density matrix. Retaining E "
+    "and eliminating E are distinct architectures",
     q5_ok,
     "before: both I/2; after CNOT(E->P): P0 vs P1",
 )
@@ -365,21 +382,132 @@ check(
 
 q7_ok = PASS == 6 and FAIL == 0
 check(
-    "Q7 CLAIM SCORECARD [dependent]: the D34c finite diamond admits an "
-    "operational predictive-state reading, and its durable classical shadow "
-    "can be non-Markov because it omits coherence/correlation. The sufficient "
-    "state is the carrier or returning boundary/process state licensed by the "
-    "future algebra—not necessarily one record's density matrix. This does not "
-    "construct the timed direct integral, prove finite memory for every SHARD "
-    "law, or reduce quantum memory to a classical hidden chain",
+    "Q7 BASELINE QUANTUM SCORECARD [dependent, rescoped after round 1]: the "
+    "diamond, D_rec, record-insufficiency, rebit tomography, returning-boundary "
+    "and disconnected-factor witnesses pass. Cross-context insufficiency and "
+    "state tomography do not yet establish one fixed non-Markov process; the "
+    "causal-break replacement gate follows",
     q7_ok,
-    "maximum noun: FINITE D34c OPERATIONAL PREDICTIVE-STATE CHARACTERIZATION",
+    "round-1 survivor: D34c RECORD INSUFFICIENCY + REBIT BOUNDARY WITNESSES",
+)
+
+
+# ---------------------------------------------------------------------------
+# Q8: one fixed three-slot process and an operational causal break.
+
+def causal_break_p0_reprepare_p0(joint):
+    """Select P=0, discard P, and reprepare P=0; return prob and joint PE."""
+    # Basis |P,E>; P=0 block is indices 0,1.
+    probability = joint[0][0] + joint[1][1]
+    if probability == 0:
+        raise ValueError("zero causal-break outcome")
+    rho_e = [[joint[e][f] / probability for f in range(2)]
+             for e in range(2)]
+    return probability, kron(P0, rho_e)
+
+
+# One fixed process: initial correlated PE state, two allowed PAST instrument
+# choices I_P or X_P, the SAME middle causal-break outcome/repreparation, and
+# the SAME future CNOT(E->P) plus P readout.
+past_i_joint = RHO_CORRELATED
+past_x_joint = conjugate_permutation(RHO_CORRELATED, X_LOCAL)
+past_x_is_anti = past_x_joint == RHO_ANTICORRELATED
+
+break_prob_i, break_joint_i = causal_break_p0_reprepare_p0(past_i_joint)
+break_prob_x, break_joint_x = causal_break_p0_reprepare_p0(past_x_joint)
+break_local_i = partial_trace_second(break_joint_i, 2, 2)
+break_local_x = partial_trace_second(break_joint_x, 2, 2)
+
+future_i_joint = conjugate_permutation(break_joint_i, CNOT_E_TO_P)
+future_x_joint = conjugate_permutation(break_joint_x, CNOT_E_TO_P)
+future_i_local = partial_trace_second(future_i_joint, 2, 2)
+future_x_local = partial_trace_second(future_x_joint, 2, 2)
+
+q8_ok = (
+    past_x_is_anti
+    and break_prob_i == break_prob_x == F(1, 2)
+    and break_local_i == break_local_x == P0
+    and future_i_local == P0 and future_x_local == P1
+)
+check(
+    "Q8 FIXED THREE-SLOT OPERATIONAL NON-MARKOV WITNESS [exact]: in one "
+    "process, past choices I_P/X_P are followed by the same nonzero P=0 "
+    "causal-break outcome and the same P=0 repreparation (probability 1/2 in "
+    "both). The fixed future CNOT(E->P) then gives certain P=0 versus certain "
+    "P=1. Future statistics retain past-instrument dependence after the causal "
+    "break, establishing instrument-specific quantum process memory",
+    q8_ok,
+    "break probs=1/2,1/2; middle reduced state=P0,P0; future=P0,P1",
+)
+
+
+# ---------------------------------------------------------------------------
+# Q9: architecture fork and universal product-factor identity.
+
+# If E is retained, the joint PE density is the state and the displayed
+# future update is an ordinary deterministic Markov map.  If E is eliminated,
+# the equal reduced P0 middle states with different futures require a reduced
+# multi-time process description.  These are alternatives, not synonyms.
+joint_boundary_distinguishes = break_joint_i != break_joint_x
+reduced_middle_same = break_local_i == break_local_x
+reduced_future_differs = future_i_local != future_x_local
+
+# Algebraic product theorem: Tr[(E local tensor I)(rho local tensor sigma)]
+# = Tr(E rho) Tr(sigma) = Tr(E rho) for every trace-one sigma.  The matrix
+# regression uses a generic rational, nondiagonal trace-one factor in addition
+# to Q6's finite battery; the displayed factorization carries the universal
+# claim.  Initially correlated cross-component states are outside this product
+# theorem and must be retained through their reduced/joint state as licensed.
+sigma_generic = [[F(2, 3), F(1, 6)], [F(1, 6), F(1, 3)]]
+rho_generic = [[F(3, 4), F(1, 4)], [F(1, 4), F(1, 4)]]
+effect_generic = [[F(2, 3), F(1, 6)], [F(1, 6), F(1, 3)]]
+product_identity = (
+    trace(sigma_generic) == 1
+    and born(kron(effect_generic, eye(2)), kron(rho_generic, sigma_generic))
+    == born(effect_generic, rho_generic) * trace(sigma_generic)
+    and partial_trace_second(kron(rho_generic, sigma_generic), 2, 2)
+    == rho_generic
+)
+
+q9_ok = (
+    joint_boundary_distinguishes and reduced_middle_same
+    and reduced_future_differs and product_identity
+)
+check(
+    "Q9 JOINT-BOUNDARY / REDUCED-PROCESS FORK [exact + algebraic theorem]: "
+    "retaining E gives distinct joint PE predictive states and a closed unitary "
+    "update; eliminating E gives identical middle P states but different "
+    "futures and therefore reduced process memory. Forever disconnected "
+    "trace-one product factors obey the universal tensor/partial-trace identity; "
+    "initially correlated or returning factors are not silently discarded",
+    q9_ok,
+    "joint states differ; reduced middle same; future differs; generic product exact",
+)
+
+
+# ---------------------------------------------------------------------------
+# Q10: repaired quantum scorecard.
+
+q10_ok = PASS == 9 and FAIL == 0
+check(
+    "Q10 REPAIRED QUANTUM SCORECARD [dependent]: D34c supplies exact coherent "
+    "and path-recorded functionals; durable s is insufficient across declared "
+    "past instruments; Q8 separately proves operational non-Markovianity for "
+    "one fixed three-slot process after a causal break. A joint boundary state "
+    "Markovizes that finite process, while eliminating it requires reduced "
+    "multi-time memory. Rebit tomography remains single-state/instrument-"
+    "specific. No timed quantum law, universal finite Markov order, complex-"
+    "qubit closure or bounded SHARD memory is claimed",
+    q10_ok,
+    "maximum noun: FINITE FIXED-PROCESS QUANTUM MEMORY + REBIT BOUNDARY-STATE "
+    "CHARACTERIZATION",
 )
 
 summary = (
     f"gates={PASS}/{PASS + FAIL}; D-rank={rank}; "
     f"coherent={coherent_joint}; recorded={recorded_joint}; "
-    "returning_environment=I/2->P0|P1; remote_factor=exact"
+    "causal_break=P0,P0->P0|P1; returning_environment=I/2->P0|P1; "
+    "remote_factor=exact"
 )
 digest = hashlib.sha256(summary.encode("utf-8")).hexdigest()
 print(f"[SUMMARY] {summary}")
