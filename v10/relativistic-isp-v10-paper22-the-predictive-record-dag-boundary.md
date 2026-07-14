@@ -4,8 +4,8 @@
 
 ## Exact distributed sufficiency, unbounded width and a fixed-radius ancestry no-go
 
-**Status:** synthesis draft after terminal D34e note review; independent paper
-audit pending. **Date:** 2026-07-13.
+**Status:** revised after Paper 22 hostile round 1; closing paper delta pending.
+**Date:** 2026-07-13.
 
 ## Abstract
 
@@ -41,8 +41,8 @@ records, every complete fixed actor radius fails.  For each finite `r`, two
 positive-cylinder pasts have the same complete radius-`r` carrier but differ
 in one immutable event at distance `r+1`.  A common inward interaction
 subcylinder brings that exact pre-stop event, selected by structural actor role
-and wire ordinal, into A's future ancestry.  Its conditional probability is at
-least
+and own-ring ordinal, into A's future ancestry.  Its conditional probability
+is at least
 
 ```text
 p_r = [1/(8(r+3))]^(r+1) > 0
@@ -75,7 +75,9 @@ four statements.
 
 The first statement is a sufficient-carrier theorem, not a minimality theorem.
 The behavioral predictive quotient, a physical carrier of that quotient and
-the complete history remain distinct objects.
+the complete history remain distinct objects.  This law/query-relative
+predictive-state distinction is the computational-mechanics one [3]; the
+record-native carrier theorem is the D34e-specific question.
 
 ## 2. Frozen law and query scopes
 
@@ -226,11 +228,18 @@ pure-jump process.  The monotone own/wire counters define hitting times of
 that process, so the strong-Markov result extends from fixed time to the two
 local count stops.
 
+The use of a closed strong boundary refinement rather than an automatically
+minimal observed process follows the standard distinction between Markov
+lumpability and weaker law-relative aggregations [4].
+
 The physical updater consumes only old B3, an elapsed increment and one typed
 root/passive/silent event.  Nominal transport conjugates output marks,
 successor fields and fresh children.  Disjoint write supports commute.
 Regional messages give every actor row, endpoint port, event record and wire
-tip exactly one owner; shared edges, crossing events and opaque predecessor
+tip exactly one owner.  The validator checks both shared interface content and
+intrinsic owned-history integrity: event ownership/ordinals, internal
+predecessor visibility, acyclicity, counter/history agreement and maximal wire
+tips.  Shared edges, crossing events and genuinely external opaque predecessor
 references are validated before union.  These facts establish recursive
 closure, covariance and composition rather than merely one-step rate fitting.
 
@@ -339,7 +348,7 @@ h_interaction: D interacts with E.
 
 The differing event touches only D or D/E, outside the owned radius ball, so
 the complete `C_r` values agree.  The two events have the same structural D
-role and the same D-wire ordinal `k`; only their immutable kind differs.
+role and the same D-own-ring ordinal `k`; only their immutable kind differs.
 
 Now require the `r+1` child-to-parent interactions that propagate D's wire
 ancestry inward to A.  There are `r+3` active component actors and each
@@ -362,7 +371,7 @@ P(E_r | h_interaction)  = 0.
 ```
 
 The zero is not a moving-tip assertion.  Later D idles, interactions or births
-can change D's current tip, but cannot change the already sealed event at
+can change D's current tip, but cannot change the persistent immutable event at
 ordinal `k`.  The executable attacks later idles, later interactions,
 unrelated events and several later D events; independent review extends those
 attacks to fresh radii and longer interloper sequences.
@@ -400,7 +409,7 @@ escaping every fixed actor radius.
 
 ## 9. Exact receipt and hostile review
 
-The terminal executable is
+The candidate terminal executable is
 `v10/code/d34e_predictive_boundary_exact.py`.  Its standard-library receipt
 passes `13/13` with:
 
@@ -412,7 +421,7 @@ physical B3 row updates                      35,898;
 root/role output conjugacy states            2,927;
 disjoint construction swaps                 120,276;
 full typed regional compositions             159,734;
-malformed messages rejected                  6/6;
+malformed messages rejected                  9/9;
 moving-tip interloper attacks                16/16;
 unmarked classes at depth three/four         4/10.
 ```
@@ -421,13 +430,13 @@ The artifact hashes are:
 
 ```text
 code
-e66490560f7c38af746b6fea144a4356dfdb3630205eab9f46723ed8c830bff8
+1dd1a69be94a0fb614f909745e7db772ac5e5f134b97cbdcdf10c45a08f606c5
 
 stdout
-3d12f6191883ee3790c78498bae4bb1971144765341a354df587d33188f54498
+158c491d7376b165556364fee2f0266447e7f5becfdbda5a8f4ae600114e9fb7
 
 internal summary
-a53fa0c18a5905f282cea4c283ec3061c049ad7378a00f624906c1d68091d701
+9f9cea1886db0c889677fdb735b8cb9fc76ae4d2ba18b501242f58331795e017
 ```
 
 Three hostile rounds were required.  Round 1 exposed missing time/counter
@@ -439,6 +448,14 @@ ordinal, carries counter-bearing marks, parameterizes root transport, composes
 full event history, validates malformed messages and types capacity as
 bounded-proved, unbounded-proved or unknown.  All three closing streams return
 `0 blockers / 0 majors / 0 minors / 0 nits` at the declared ceiling.
+
+The terminal D34e note and three clean closing reviews are frozen at commit
+`d10ca52`; the second repaired executable/output were frozen at `6e6676b`.
+Paper-level review then opened three additional record-DAG corruptions.  The
+validator now also rejects internally owned opaque predecessors, predecessor
+cycles and stale wire tips while cross-checking actor ring/birth/wire counters,
+carrier parity and local-wire maximality.  These nine attacks and the revised
+hashes await the final paper delta.
 
 ## 10. Strong boundary refinement is not the minimal predictive quotient
 
@@ -481,6 +498,8 @@ controlled D34b-D34c process.  Without intervention-indexed kernels
 `P(r|I,h)`, D34e cannot define the intrinsic operational predictive boundary
 or assign SHARD `d_carrier`, `d_op` or `chi_cut`.  The correct verdict is
 `REFUSAL/UNDEFINED`, not a classical approximation to a missing quantum law.
+The operational criterion being reserved here is the intervention-indexed
+quantum Markov condition of the process-tensor framework [5].
 
 ## 12. Outcome table
 
@@ -505,7 +524,8 @@ one record                         too small;
 fixed-radius full-ancestry collar  too small;
 global universe state              unnecessarily large for C/L and for
                                    disconnected factors;
-distributed active star            exactly sufficient for the chosen C/L law;
+distributed active star            exact all-future screening for the chosen
+                                   C/L law;
 whole component                     sufficient ceiling for F;
 minimal adaptive F frontier         open.
 ```
@@ -557,8 +577,8 @@ a sufficient ceiling.
 The correct endpoint is therefore neither “one record is Markov” nor “the
 machine must know the whole universe.”  It is query-relative:
 
-> prediction lives on the smallest causal boundary that carries every piece
-> of history still capable of changing the licensed future.
+> prediction can live on a sufficient query-relative causal boundary carrying
+> the history still capable of changing the licensed future.
 
 D34e constructs one such boundary for C/L and proves that no fixed-radius
 version can do the same for F.  Finding the minimal adaptive full-ancestry
@@ -570,10 +590,16 @@ frontier is the next problem.
    memory*.
 2. D34e terminal note, `note-d34e-predictive-record-dag-boundary.md`.
 3. C. R. Shalizi and J. P. Crutchfield, *Computational Mechanics: Pattern and
-   Prediction, Structure and Simplicity*, Journal of Statistical Physics 104
-   (2001).
+   Prediction, Structure and Simplicity*, Journal of Statistical Physics 104,
+   817–879 (2001), DOI `10.1023/A:1010148903217`.  Background for predictive
+   equivalence/minimal causal states; no SHARD record-locality result is
+   attributed to it.
 4. B. Geiger and C. Temmel, *Lumpings of Markov Chains, Entropy Rate
    Preservation, and Higher-Order Lumpability*, Journal of Applied Probability
-   51 (2014).
+   51A, 368–388 (2014), DOI `10.1239/jap/1421763331`.  Background for strong
+   versus weaker/law-relative lumpability.
 5. F. A. Pollock et al., *Operational Markov Condition for Quantum Processes*,
-   Physical Review Letters 120, 040405 (2018).
+   Physical Review Letters 120, 040405 (2018), DOI
+   `10.1103/PhysRevLett.120.040405`.  Background for the intervention-indexed
+   operational quantum-memory criterion; no timed D34b-D34c lift is attributed
+   to it.

@@ -1030,6 +1030,17 @@ def message_key(message):
     )
 
 
+def parse_event_id(eid):
+    try:
+        owner, ordinal_text = eid.rsplit("#r", 1)
+        ordinal = int(ordinal_text)
+    except (AttributeError, ValueError):
+        raise ValueError("malformed event identifier")
+    if not owner or ordinal < 1 or eid != f"{owner}#r{ordinal}":
+        raise ValueError("noncanonical event identifier")
+    return owner, ordinal
+
+
 def validate_message(message):
     region = set(message["region"])
     if set(message["owned"]) != region or set(message["tips"]) != region:
@@ -1061,11 +1072,38 @@ def validate_message(message):
         **message["event_refs"], **message["owned_events"],
     }
     for eid, event in message["owned_events"].items():
-        if eid != event[0] or event[2] not in region:
+        owner, ordinal = parse_event_id(eid)
+        if eid != event[0] or event[2] not in region or owner != event[2]:
             raise ValueError("event ownership is not its initiator")
+        if ordinal < 1:
+            raise ValueError("invalid initiator ordinal")
     for eid, event in message["event_refs"].items():
-        if eid != event[0] or event[2] in region or not (set(event[5]) & region):
+        owner, _ordinal = parse_event_id(eid)
+        if (eid != event[0] or event[2] in region or owner != event[2]
+                or not (set(event[5]) & region)):
             raise ValueError("invalid crossing event reference")
+    for eid, event in visible_events.items():
+        _owner, ordinal = parse_event_id(eid)
+        kind, initiator, target, predecessors, touched = (
+            event[1], event[2], event[3], event[4], event[5]
+        )
+        if kind == "b":
+            schema_ok = target is not None and tuple(touched) == (initiator, target)
+        elif kind == "i":
+            schema_ok = target is not None and tuple(touched) == (initiator, target)
+        elif kind == "n":
+            schema_ok = target is None and tuple(touched) == (initiator,)
+        else:
+            schema_ok = False
+        if not schema_ok:
+            raise ValueError("event kind/target/touched schema mismatch")
+        for predecessor in predecessors:
+            predecessor_owner, predecessor_ordinal = parse_event_id(predecessor)
+            if predecessor not in visible_events and predecessor_owner in region:
+                raise ValueError("internally owned predecessor is opaque")
+            if (predecessor_owner == initiator
+                    and predecessor_ordinal >= ordinal):
+                raise ValueError("same-initiator predecessor is not earlier")
     expected_pred_refs = {
         predecessor
         for event in visible_events.values()
@@ -1074,10 +1112,71 @@ def validate_message(message):
     }
     if set(message["predecessor_refs"]) != expected_pred_refs:
         raise ValueError("opaque predecessor reference set mismatch")
+
+    # Visible predecessor graph must be acyclic.
+    colors = {}
+
+    def visit(eid):
+        color = colors.get(eid, 0)
+        if color == 1:
+            raise ValueError("visible event predecessor cycle")
+        if color == 2:
+            return
+        colors[eid] = 1
+        for predecessor in visible_events[eid][4]:
+            if predecessor in visible_events:
+                visit(predecessor)
+        colors[eid] = 2
+
+    for eid in visible_events:
+        visit(eid)
+
+    def visible_ancestors(eid):
+        seen = set()
+        stack = [eid]
+        while stack:
+            current = stack.pop()
+            if current in seen:
+                continue
+            seen.add(current)
+            stack.extend(
+                predecessor for predecessor in visible_events[current][4]
+                if predecessor in visible_events
+            )
+        return seen
+
     for actor, tip in message["tips"].items():
-        if tip is not None and (
-                tip not in visible_events or actor not in visible_events[tip][5]):
+        row = message["owned"][actor]
+        carrier, ring_count, birth_count, degree, wire_count_value = row
+        initiated = [
+            event for event in visible_events.values() if event[2] == actor
+        ]
+        initiated_ordinals = sorted(parse_event_id(event[0])[1] for event in initiated)
+        touching = [
+            event for event in visible_events.values() if actor in event[5]
+        ]
+        interaction_parity = sum(
+            event[1] == "i" for event in touching
+        ) % 2
+        if initiated_ordinals != list(range(1, ring_count + 1)):
+            raise ValueError("actor ring counter disagrees with owned events")
+        if sum(event[1] == "b" for event in initiated) != birth_count:
+            raise ValueError("actor birth counter disagrees with owned events")
+        if len(touching) != wire_count_value:
+            raise ValueError("actor wire counter disagrees with visible history")
+        if interaction_parity != carrier:
+            raise ValueError("actor carrier disagrees with interaction parity")
+        if sum(owner == actor for owner, _edge in message["ports"]) != degree:
+            raise ValueError("actor degree disagrees with owned ports")
+        if not touching:
+            if tip is not None:
+                raise ValueError("empty owned wire has nonempty tip")
+            continue
+        if tip not in visible_events or actor not in visible_events[tip][5]:
             raise ValueError("owned wire tip lacks its visible event")
+        tip_ancestors = visible_ancestors(tip)
+        if any(event[0] not in tip_ancestors for event in touching):
+            raise ValueError("stored wire tip is not maximal on owned wire")
     return True
 
 
@@ -1224,6 +1323,34 @@ duplicate_event_owner["owned_events"][event_id] = event_left["event_refs"][event
 del duplicate_event_owner["event_refs"][event_id]
 corruptions.append((duplicate_event_owner, event_right))
 
+internal_opaque_left = copy.deepcopy(event_left)
+internal_opaque_right = copy.deepcopy(event_right)
+internal_row = list(internal_opaque_right["owned_events"][event_id])
+internal_row[4] = ("B#r99",)
+internal_row = tuple(internal_row)
+internal_opaque_right["owned_events"][event_id] = internal_row
+internal_opaque_right["predecessor_refs"] = {"B#r99"}
+internal_opaque_left["event_refs"][event_id] = internal_row
+internal_opaque_left["predecessor_refs"] = {"B#r99"}
+corruptions.append((internal_opaque_left, internal_opaque_right))
+
+self_cycle_left = copy.deepcopy(event_left)
+self_cycle_right = copy.deepcopy(event_right)
+self_cycle_row = list(self_cycle_right["owned_events"][event_id])
+self_cycle_row[4] = (event_id,)
+self_cycle_row = tuple(self_cycle_row)
+self_cycle_right["owned_events"][event_id] = self_cycle_row
+self_cycle_right["predecessor_refs"] = set()
+self_cycle_left["event_refs"][event_id] = self_cycle_row
+self_cycle_left["predecessor_refs"] = set()
+corruptions.append((self_cycle_left, self_cycle_right))
+
+stale_state = d34b_step(d34b_step(seed_state(), "n", "A"), "n", "A")
+stale_left = region_message(stale_state, {"A"})
+stale_right = region_message(stale_state, {"B"})
+stale_left["tips"]["A"] = "A#r1"
+corruptions.append((stale_left, stale_right))
+
 for bad_left, bad_right in corruptions:
     rejected = False
     try:
@@ -1232,13 +1359,13 @@ for bad_left, bad_right in corruptions:
         rejected = True
     corruption_results.append(rejected)
 
-corruption_rejected = all(corruption_results) and len(corruption_results) == 6
+corruption_rejected = all(corruption_results) and len(corruption_results) == 9
 e7_ok = composition_ok and corruption_rejected and composition_checks > 150000
 check(
     "E7 TYPED COMPOSITION / OWNERSHIP [exact + set-union lemma]: actor rows "
     "endpoint ports, persistent events and wire tips have exactly one owner; "
     "shared graph/event references are validated; composition equals direct "
-    "regional projection and six malformed-message attacks are rejected",
+    "regional projection and nine malformed-message attacks are rejected",
     e7_ok,
     f"registered region pairs={composition_checks}; corruptions rejected="
     f"{sum(corruption_results)}/{len(corruption_results)}",
@@ -1406,7 +1533,7 @@ def event_ancestry(state, final_eid):
 def branch_f_event(state, path, pre_stop_ordinal):
     """Inspect one endpoint event fixed at the conditioning stop.
 
-    The selector is the structural remote role path[-1] plus its wire ordinal;
+    The selector is the structural remote role path[-1] plus its own-ring ordinal;
     it never follows the remote actor's later moving tip.
     """
     ancestry = event_ancestry(state, state["last"][path[0]])
@@ -1597,7 +1724,7 @@ e9_ok = all(
 check(
     "E9 BRANCH F COMPLETE-RADIUS NO-GO [Fraction-exact specimens + all-r "
     "analytic chain]: complete C_r carriers agree; one common structural, "
-    "gauge-invariant future event pins the pre-stop remote wire ordinal; its "
+    "gauge-invariant future event pins the pre-stop remote own-ring ordinal; its "
     "idle-branch probability is at least p_r>0 and its interaction-branch "
     "probability remains zero through moving-tip interlopers by immutability",
     e9_ok,

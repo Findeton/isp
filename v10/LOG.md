@@ -2742,7 +2742,7 @@ different bounded realization remains open. For full durable ancestry F, every
 complete finite radius C_r fails: equal carriers hide one pre-stop immutable
 event at distance `r+1`, while an inward subcylinder has
 `p_r=[1/(8(r+3))]^(r+1)>0` in the idle branch and zero in the interaction
-branch. The selector is structural D role + fixed wire ordinal, not a moving
+branch. The selector is structural D role + fixed own-ring ordinal, not a moving
 tip. The whole component is a sufficient growing ceiling, not proved
 necessary; disconnected factors are irrelevant at continuous/local stops.
 
@@ -2755,3 +2755,24 @@ tip interlopers. Three hostile rounds culminate in three closing deltas at
 v9 posterior and intrinsic timed quantum branches are refused. Paper 22 now
 synthesizes the theorem. Independent paper-level hostile audit remains before
 the synthesis noun is terminal.
+
+## 2026-07-13 — Paper 22 round 1 applied; record-DAG integrity strengthened (LEDGER #181)
+All three paper-level streams accept the four D34e theorems. Predictive/
+profinite reports 0B/0M/2m/1n; boundary/locality 0B/0M/2m/1n; ancestry/
+quantum is terminal-clean 0B/0M/0m/0n. Repairs applied: the Branch-F selector
+is correctly named structural actor role + own-ring ordinal (event IDs are
+`actor#r(own ring)`, not wire positions); the unproved smallest-boundary and
+sealing slogans are removed; exact screening is separated from minimality;
+the predictive-state, lumpability and process-tensor references are cited at
+claim sites with DOI/provenance; terminal D34e commit dependencies are named.
+
+The locality review also opened three coordinated malformed histories beyond
+the frozen six interface attacks. The validator is strengthened rather than
+the claim merely narrowed: event-id ownership/ordinals, internal predecessor
+visibility, DAG acyclicity, same-initiator chronology, ring/birth/wire counter
+agreement, carrier parity and maximal wire tips are now checked. Internally
+owned opaque predecessors, self-cycles and stale tips join the battery. Rerun
+stays 13/13 with 159,734/159,734 genuine regional compositions and 9/9
+corruptions rejected. Candidate final hashes: code `1dd1a69b...606c5`, stdout
+`158c491d...9fb7`, internal `9f9cea18...e017`. Three closing paper deltas are
+required before Paper 22 terminal status.

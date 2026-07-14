@@ -4,7 +4,10 @@
 hostile round 1; replacement protocol frozen in section 16; replacement
 receipt passes `13/13` in section 17 but was rejected by round 2; the second
 repair protocol is section 18, its `13/13` receipt is section 19, and all three
-closing deltas accept the declared theorem ceiling in section 20.
+closing deltas accept the declared theorem ceiling in section 20.  Paper-level
+round 1 preserved the science but opened an executable-integrity repair;
+sections 21--22 freeze that repair and its candidate receipt pending a closing
+paper delta.
 **Date:** 2026-07-13.
 
 **Parent:** Paper 21 section 10 at terminal commit `70e0b4d`.
@@ -748,7 +751,7 @@ rows are included in the same conjugacy regression.
 The common Branch-F selector is frozen at the conditioning stop as
 
 ```text
-(structural remote actor role D, D-wire ordinal k, immutable event D#rk).
+(structural remote actor role D, D-own-ring ordinal k, immutable event D#rk).
 ```
 
 The licensed future event is:
@@ -858,7 +861,8 @@ The role-labeled generator now accepts the distinguished root as an argument.
 Nominal transport checks output marks, successor carriers and fresh children
 on every registered state, including `A -> R` and `A/1 -> R/1`.
 
-The Branch-F selector is now `(remote structural role, pre-stop wire ordinal)`.
+The Branch-F selector is now
+`(remote structural role, pre-stop own-ring ordinal)`.
 The event searches the future A ancestry for that exact immutable event and
 the inward chain.  Four interloper families per registered radius—later remote
 idle, later remote interaction, unrelated A event, and several later remote
@@ -988,3 +992,27 @@ This is an integrity and provenance hardening pass.  It does not change the
 D34e theorem or outcome table.  A closing paper delta must reproduce the new
 hashes and independently reject all nine malformed messages before terminal
 publication status.
+
+## 22. Paper-level integrity repair receipt
+
+The strengthened executable remains `13/13`; the malformed-message battery is
+now `9/9`.  The new frozen-candidate hashes are:
+
+```text
+code SHA-256
+1dd1a69be94a0fb614f909745e7db772ac5e5f134b97cbdcdf10c45a08f606c5
+
+stdout file SHA-256
+158c491d7376b165556364fee2f0266447e7f5becfdbda5a8f4ae600114e9fb7
+
+internal summary SHA-256
+9f9cea1886db0c889677fdb735b8cb9fc76ae4d2ba18b501242f58331795e017
+```
+
+The extra gates reject an internally owned opaque predecessor, a self-cycle
+and a stale visible tip, in addition to the six prior interface/ownership
+corruptions.  Genuine regional composition remains `159,734/159,734`.
+Terminology now follows the actual event identifier: Branch F pins the remote
+actor's own-ring ordinal, not its wire position.  Paper 22 also removes every
+minimality/sealing overstatement and adds claim-local literature/provenance.
+Closing paper deltas remain required.
