@@ -2,8 +2,8 @@
 
 **Status:** sections 1--10 are the historical pin; a pre-receipt analytical
 self-attack rejects pinned T4 and freezes its anchored-echo replacement in
-section 11.  Section 12 is the provisional exact result awaiting independent
-hostile review.
+section 11.  Sections 12--13 record the provisional result and hostile round.
+Section 14 is the repaired result awaiting exact delta review.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34e / Paper 22 at commit `b457d42`.
@@ -178,7 +178,8 @@ Branch-F laws differ for all sufficiently small positive `Delta`.
 If a nonisomorphic equal-order emulator exists, T4 is false and its complete
 pair must be printed.
 
-### T5 — predictive injectivity and necessity
+### T5 — predictive injectivity and necessity (historical wording; repaired
+in sections 13.3 and 14)
 
 Let `B(h)` be any exact sufficient carrier for Branch F at the licensed scope.
 If T4 holds, then
@@ -188,9 +189,10 @@ B(h)=B(h')  implies  [K_A(h)]_g = [K_A(h')]_g.
 ```
 
 Thus the Branch-F predictive quotient is isomorphic to the full component
-configuration modulo gauge.  The literal component is sufficient; every exact
-alternative is a lossless recoding of its gauge class.  This is an
-information-necessity theorem, not a claim about one preferred data format.
+configuration modulo gauge.  The literal component is sufficient.  The pin's
+stronger wording that every exact alternative is a lossless recoding is
+superseded: every exact carrier must determine the quotient, while only
+minimal exact carriers are recodings of it.
 
 ### T6 — unbounded information lower bound
 
@@ -253,8 +255,10 @@ At each legal finite stop, D34b gives a finite component almost surely.  T5, if
 proved, concerns that finite current component and implies no uniform finite
 capacity over unbounded growth.
 
-The locally finite serialized marked-prefix tree has finite levels and an
-ordinary inverse-limit end space.  That observation alone does not establish:
+After forgetting elapsed-time marks, the locally finite discrete serialized
+event-content prefix tree has finite levels and an ordinary inverse-limit end
+space.  Full timed levels are uncountable and require an explicit topology or
+finite time quotients.  The discrete observation alone does not establish:
 
 - a construction-order-gauge quotient with canonical bonding maps;
 - an identification with the v9 unmarked stem spectrum;
@@ -363,18 +367,28 @@ rates divided by `q!`.
 
 ### 11.3 Replacement T4 — anchored component tomography
 
-Let `U^anchor_K(Delta)` be the exact gauge-invariant Branch-F trace of K's
-anchored echo by elapsed time `Delta`.
+Let `U^anchor_K(Delta)` be the Branch-F-measurable event that the initial
+future A-output prefix has K's exact gauge-invariant structural anchored-echo
+trace and its final specified A event occurs by elapsed time `Delta`.  It
+places no condition on later A outputs.  Let `S_K(Delta)` be the underlying
+event that the first q component rings are the chosen exact anchored path and
+the qth completes by Delta.  Branch F need not observe those silent component
+rings; they define a probability subevent only.
 
 ```text
-P(U^anchor_K(Delta) | K)
-  >= c_K Delta^q + O(Delta^(q+1)),  c_K>0.
+S_K(Delta) subset U^anchor_K(Delta);
+P(S_K(Delta) | K) = c_K Delta^q + O(Delta^(q+1)), c_K>0;
+liminf_(Delta->0) P(U^anchor_K(Delta) | K)/Delta^q >= c_K.
 ```
 
-For a non-gauge-isomorphic K':
+For a non-gauge-isomorphic K', first match any common rooted actor/event
+substructure to K.  An extra record on a matched actor persists into that
+actor's target touch.  For an extra subtree, the first unmatched actor's
+attachment birth touched a matched parent and persists into the parent's
+target touch, even if later records internal to the extra subtree remain
+hidden.  An altered matched record is immutable and likewise contaminates the
+trace.  These cases have zero support.  Otherwise:
 
-- an altered or extra immutable record makes the exact fingerprint
-  impossible; or
 - a missing record/actor/edge must be created before K's anchored operations
   with the relevant initiator ordinals can occur.
 
@@ -383,9 +397,7 @@ offset that catch-up event with an echo event that was already present before
 the stop.  Hence
 
 ```text
-P(U^anchor_K(Delta) | K') = 0
-or
-P(U^anchor_K(Delta) | K') = O(Delta^(q+1)).
+P(U^anchor_K(Delta) | K') = 0 or O(Delta^(q+1)).
 ```
 
 This is the repaired catch-up lemma.  It may not use a hidden pre/post mark on
@@ -430,18 +442,23 @@ the first decision row.
 4. **Tomography.** A fresh future A-idle event is a physical, Branch-F-visible
    anchor.  Broadcasting it once along every rooted edge and echoing once back
    uses `q=2n-1` future component rings, and every target operation contains
-   the anchor.  The target past realizes its exact anchored trace with positive
-   leading coefficient at order `Delta^q`.  A distinct past either has an
-   incompatible immutable marked record, or must create at least one missing
-   record, actor or edge before it can execute those anchored target
-   operations.  No anchored target operation can be borrowed from before the
-   stop because it contains the fresh event.  Its probability is therefore
-   zero or begins at order at least `Delta^(q+1)`.
+   the anchor.  The target past realizes an exact path subevent with positive
+   coefficient at order `Delta^q`, giving a positive liminf for the measurable
+   output-prefix cylinder.  A distinct past with an extra subtree exposes at
+   least its first attachment birth on a matched parent; another incompatible
+   immutable marked record is collected directly; or it must create at least
+   one missing record, actor or edge before it can execute those anchored
+   target operations.  No anchored target operation can be borrowed from
+   before the stop because it contains the fresh event.  Its prefix-cylinder
+   probability is therefore zero or begins at order at least
+   `Delta^(q+1)`.
 5. **Predictive identity.** Equality of complete Branch-F future laws would
    give equality on every anchored fingerprint.  The preceding discriminator
    makes that possible only for the same component gauge class.  Conversely,
    the fixed generator depends only on that class, so it is sufficient.  The
    minimal exact predictive state is thus `[K_A]_g` up to lossless recoding.
+   Every exact sufficient carrier determines that quotient; a nonminimal one
+   may also retain irrelevant extra information.
 6. **Unbounded information.** A chain with M structurally located binary
    idle/interaction choices gives `2^M` positive-probability gauge classes.
    The echo recovers all M choices.  Any exact carrier for Branch F therefore
@@ -458,7 +475,7 @@ redundancies, but it cannot identify two different classes.
 Executable:
 `code/d34f_component_tomography_exact.py`
 
-Committed stdout candidate:
+Replacement stdout candidate:
 `data/d34f_component_tomography_exact.out`
 
 ```text
@@ -478,11 +495,12 @@ binary family sizes                        2, 4, 8, 16, 32, 64
 finite gauge-class counts                  1, 6, 40, 304
 finite worst-case bit ceilings             0, 3, 6, 9
 receipt digest                             ee023eb38cbe5c61acd888128838e210a461eb636a553ed6142132a6bdbc29ee
-source SHA-256                             906687d7dae9776cb707dd040de8970c2aee72096b2e0a636f97e5bdb1e6182a
-stdout SHA-256                             ff2365ad8c5cf85d7e463d42b8a1f039b2a58d987229de3e606026f10c4a5eea
+source SHA-256                             0b518f6e742e4b24bd5a3e4a68e29127af27c7cd6acc13453ad5dba9031347ef
+stdout SHA-256                             de293509a4961d6a390f9fa80657aac7f76e04939e693277db60f07fac6d8fb2
 ```
 
-The saved stdout is byte-identical under Python hash seeds 17 and 65537.  All
+The original and repaired saved stdout are each hash-seed stable; the repaired
+candidate is byte-identical under seeds 271828 and 314159.  All
 discrete masses and coefficients are `Fraction` exact.  The reported
 exponential and Erlang values evaluate analytic formulas at 110-decimal
 working precision.  Enumeration is only a regression and counterexample
@@ -502,10 +520,11 @@ information grows without a uniform finite bound.
 
 This establishes neither that nature uses D34b nor that the physical universe
 is one enormous component.  It supplies no quantum operation law, causal
-speed, spacetime cone, dimensional result or value of G.  The serialized
-marked-prefix inverse-limit host is available, but its construction-order
-gauge quotient, identification with the v9 stem spectrum and continuity of
-the predictive map remain open.
+speed, spacetime cone, dimensional result or value of G.  Only the discrete
+event-content skeleton has the immediate serialized finite-prefix inverse-
+limit host.  A timed completion, its construction-order gauge quotient,
+identification with the v9 stem spectrum and continuity of the predictive map
+remain open.
 
 ## 13. Hostile round 1 and frozen repair protocol
 
@@ -585,3 +604,30 @@ remain `OPEN`.
 The replacement note and executable narration must implement these four
 repairs.  The exact probability engine and registered ledger need not change
 unless the replacement run or a delta review finds a substantive mismatch.
+
+## 14. Repaired result candidate
+
+The four round-1 repairs are now applied.
+
+- The observable discriminator is an initial Branch-F structural prefix
+  cylinder; the exact first-q-ring path is only its positive subevent.
+- The first-unmatched-attachment lemma closes extra remote branches without
+  falsely claiming that every internal extra record itself reaches A.
+- Every exact carrier determines the component gauge class; the minimal
+  predictive quotient, not every refinement, is its lossless recoding.
+- Only the discrete event-content prefix skeleton supplies the immediate
+  finite inverse tower.  The timed/profinite/v9 bridge remains open.
+
+Subject to exact delta review, the result remains:
+
+> **COMPONENT PREDICTIVE-IDENTITY / UNBOUNDED.** At every legal finite stop of
+> the chosen passive D34b law, exact prediction of complete future A-touching
+> ancestry determines A's whole finite connected-component history modulo
+> rooted marked gauge.  The component class is sufficient, the minimal exact
+> predictive quotient is isomorphic to it, and no uniform finite information
+> capacity exists over unbounded growth.
+
+This is the requested analytical boundary: for this exact query and this
+chosen law it scales with the whole component, rather than remaining a small
+collar.  It remains a theorem about the model, not a derivation of nature's
+interactive click law or of quantum/spacetime structure.

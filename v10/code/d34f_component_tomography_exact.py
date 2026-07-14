@@ -829,9 +829,9 @@ e8_ok = (
     and len(state_to_trace) > 100 and emulator_checks > 1000
 )
 check(
-    "E8 ANCHORED BRANCH-F FINGERPRINT INJECTIVITY / EQUAL-ORDER SEARCH "
+    "E8 ANCHORED BRANCH-F PREFIX INJECTIVITY / EQUAL-ORDER SEARCH "
     "[exact regression + all-finite anchored catch-up lemma]: canonical echo "
-    "traces separate every registered component gauge class and no tested "
+    "prefixes separate every registered component gauge class and no tested "
     "nonisomorphic past emulates an anchored target within its 2n-1 events",
     e8_ok,
     f"gauge classes/traces={len(state_to_trace)}/{len(trace_to_states)}; "
@@ -886,6 +886,31 @@ altered_after, _altered_mass, _altered_rates, altered_future, _aa, _af = run_anc
 )
 altered_trace = canonical_trace(altered_after, altered_future)
 
+# A remote extra idle may remain outside the target echo, but the first extra
+# branch's immutable attachment birth touched a matched parent and is forced
+# into the A ancestry.  This is the finite witness for the all-size
+# first-unmatched-attachment lemma.
+extra_branch = d34b_step(seed_state(), "b", "B")
+attachment_eid = extra_branch["events"][-1][0]
+extra_child = "B/1"
+extra_branch = d34b_step(extra_branch, "n", extra_child)
+remote_idle_eid = extra_branch["events"][-1][0]
+extra_after, _extra_rates, extra_future = apply_path(
+    extra_branch,
+    (("n", "A", None), ("i", "A", "B"), ("i", "B", "A")),
+)
+extra_trace = canonical_trace(extra_after, extra_future)
+extra_final_ancestry = ancestor_ids(extra_after, extra_after["last"]["A"])
+seed_anchor_after, _sam, _sar, seed_anchor_future, _saa, _saf = run_anchor_echo(
+    seed_state()
+)
+seed_anchor_trace = canonical_trace(seed_anchor_after, seed_anchor_future)
+attachment_witness_ok = (
+    remote_idle_eid not in extra_final_ancestry
+    and attachment_eid in extra_final_ancestry
+    and extra_trace != seed_anchor_trace
+)
+
 # Exact same-order failure of the historical bare-sweep T4.
 fork_base = d34b_step(d34b_step(seed_state(), "b", "B"), "b", "B")
 child_c, child_d = "B/1", "B/2"
@@ -937,6 +962,7 @@ catchup_ok = (
     and anchor_idle_leading == F(1, 192)
     and anchor_catchup_leading == F(1, 1536)
     and altered_trace != anchor_idle_trace
+    and attachment_witness_ok
 )
 e9_ok = catchup_ok
 check(
@@ -948,7 +974,8 @@ check(
     f"bare equal-order coefficients={ftext(bare_target_leading)}/"
     f"{ftext(bare_alt_leading)}; anchored q/q+1="
     f"{ftext(anchor_idle_leading)}/{ftext(anchor_catchup_leading)}; "
-    f"birth support={ftext(birth_leading)}/{ftext(birth_catchup_leading)}",
+    f"birth support={ftext(birth_leading)}/{ftext(birth_catchup_leading)}; "
+    "attachment witness=1/1",
 )
 
 
@@ -1053,7 +1080,7 @@ else:
 
 ceilings = {
     "finite component at every legal finite stop": True,
-    "serialized marked-prefix inverse-limit host": True,
+    "serialized discrete event-content prefix inverse-limit host": True,
     "construction-order-gauge bonding maps": False,
     "v9 stem-spectrum identification": False,
     "continuous predictive extension": False,
@@ -1063,7 +1090,7 @@ ceilings = {
 }
 expected_ceiling = (
     ceilings["finite component at every legal finite stop"]
-    and ceilings["serialized marked-prefix inverse-limit host"]
+    and ceilings["serialized discrete event-content prefix inverse-limit host"]
     and not any(list(ceilings.values())[2:])
 )
 e11_ok = (
@@ -1073,9 +1100,10 @@ e11_ok = (
 check(
     "E11 FIRST-APPLICABLE VERDICT / INFINITE CEILING: the anchored full "
     "Branch-F "
-    "predictive quotient is the finite current component gauge class up to "
-    "lossless recoding; no uniform capacity, gauge-quotient profinite bridge, "
-    "quantum boundary or spacetime consequence is inferred",
+    "minimal predictive quotient is the finite current component gauge class; "
+    "every exact carrier determines it, while nonminimal carriers may refine "
+    "it.  No uniform capacity, timed/gauge-quotient profinite bridge, quantum "
+    "boundary or spacetime consequence is inferred",
     e11_ok,
     f"verdict={verdict}; stronger inverse-limit/v9/quantum/geometry flags=OPEN",
 )

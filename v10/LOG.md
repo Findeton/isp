@@ -2875,3 +2875,22 @@ also narrowed to the discrete event-content skeleton—continuous elapsed-time
 marks need a separately constructed topology. These repairs do not alter the
 11/11 probability engine, predictive injectivity or unbounded information
 result. A repaired receipt and three exact deltas are required.
+
+## 2026-07-14 — D34f round-1 repairs applied; exact delta target (LEDGER #188)
+All four round-1 repairs are applied. The Branch-F observable is now an initial
+structural output-prefix cylinder completed by Delta; the exact first-q-ring
+echo path is a positive subevent, yielding the well-formed liminf lower bound.
+The all-finite proof now separates extra records on matched actors from extra
+subtrees and uses the first unmatched attachment birth as the unavoidable
+witness. Exact sufficient carriers determine the component gauge class;
+minimal carriers are its recodings, while refinements may retain more data.
+Only the discrete event-content skeleton receives an immediate finite inverse
+tower; timed/profinite/v9 continuity remains open.
+
+The receipt adds a sharp extra-leaf regression: the remote idle remains outside
+the target echo, but its attachment birth is inside and the target trace is
+different. Repaired runs at hash seeds 271828 and 314159 are byte-identical and
+pass 11/11. The scientific ledger and internal digest remain unchanged;
+candidate source/stdout hashes are `0b518f6e...47ef` and
+`de293509...8fb2`. Three independent exact deltas must now inspect this repair
+commit before D34f terminal status or Paper 23 drafting.
