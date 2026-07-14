@@ -20,7 +20,7 @@ CASES = (
     (
         ROOT / "v10/code/d36b_actor_record_refinement_exact.py",
         ROOT / "v10/data/d36b_actor_record_refinement_exact.out",
-        "f353ac2dcff2a7e1b80159cd5602b763669b0157439b09c5a92b50fb01c339b8",
+        "c2460ed8d48f06f5bebd5aba95440ff74af0a002a44ab7a0de6c1d4d1f0188a6",
     ),
 )
 SEEDS = ("17", "104729")

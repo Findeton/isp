@@ -18,7 +18,7 @@ from collections import defaultdict, deque
 from dataclasses import dataclass, field, replace
 from functools import lru_cache
 from pathlib import Path
-from typing import Dict, FrozenSet, Iterable, List, Mapping, Optional, Sequence, Tuple
+from typing import Dict, FrozenSet, Iterable, List, Mapping, Optional, Sequence, Tuple, Union
 
 
 HERE = Path(__file__).resolve().parent
@@ -301,7 +301,60 @@ class ActorWorld:
     fixture_name: str
     mode: str
     participants: Tuple[ParticipantActor, ...]
+    # Canonically sorted finite sparse registry.  Tuple position is serializer
+    # state only; live lookup, service and transport use structural attempt ID.
     transactions: Tuple[TransactionActor, ...]
+
+
+def sorted_transactions(
+    actors: Iterable[TransactionActor],
+) -> Tuple[TransactionActor, ...]:
+    result = tuple(sorted(actors, key=lambda actor: actor.attempt_id))
+    attempts = tuple(actor.attempt_id for actor in result)
+    if len(attempts) != len(set(attempts)):
+        raise AssertionError(("duplicate transaction attempt", attempts))
+    return result
+
+
+def transaction_actor(world: ActorWorld, attempt_id: str) -> TransactionActor:
+    matches = tuple(actor for actor in world.transactions if actor.attempt_id == attempt_id)
+    if len(matches) != 1:
+        raise AssertionError(("transaction structural lookup", attempt_id, len(matches)))
+    return matches[0]
+
+
+def transaction_by_carrier(world: ActorWorld, carrier: Record) -> TransactionActor:
+    matches = tuple(
+        actor for actor in world.transactions if actor.carrier.record_id == carrier.record_id
+    )
+    if len(matches) != 1:
+        raise AssertionError(("transaction carrier lookup", carrier.record_id, len(matches)))
+    return matches[0]
+
+
+def replace_transaction(world: ActorWorld, updated: TransactionActor) -> ActorWorld:
+    current = transaction_actor(world, updated.attempt_id)
+    if current.tx_index != updated.tx_index:
+        raise AssertionError(("transaction nominal address changed", current.tx_index, updated.tx_index))
+    return replace(
+        world,
+        transactions=sorted_transactions(
+            updated if actor.attempt_id == updated.attempt_id else actor
+            for actor in world.transactions
+        ),
+    )
+
+
+def append_transaction(world: ActorWorld, actor: TransactionActor) -> ActorWorld:
+    if any(existing.attempt_id == actor.attempt_id for existing in world.transactions):
+        raise AssertionError(("transaction attempt already registered", actor.attempt_id))
+    return replace(world, transactions=sorted_transactions(world.transactions + (actor,)))
+
+
+def only_transaction(world: ActorWorld) -> TransactionActor:
+    if len(world.transactions) != 1:
+        raise AssertionError(("expected one transaction", len(world.transactions)))
+    return world.transactions[0]
 
 
 @dataclass(frozen=True)
@@ -508,7 +561,15 @@ def open_actor_world(
                 sorted_mailbox(participant_mailboxes[participant]),
             )
         )
-    return ActorWorld(fixture_name, mode, tuple(participants), tuple(transactions)), tuple(opening_records)
+    return (
+        ActorWorld(
+            fixture_name,
+            mode,
+            tuple(participants),
+            sorted_transactions(transactions),
+        ),
+        tuple(opening_records),
+    )
 
 
 def born_open(state: BornPreState) -> Tuple[ActorWorld, Tuple[Record, ...]]:
@@ -1012,15 +1073,32 @@ def handle_transaction(
     return actor, (), (), False
 
 
-Service = Tuple[str, int, int]
+ActorAddress = Union[int, str]
+Service = Tuple[str, ActorAddress, int]
+
+
+def addressed_actor(
+    world: ActorWorld,
+    service: Service,
+) -> Union[ParticipantActor, TransactionActor]:
+    kind, address, _ = service
+    if kind == "P":
+        if not isinstance(address, int):
+            raise AssertionError(("participant structural address", address))
+        return world.participants[address]
+    if kind == "T":
+        if not isinstance(address, str):
+            raise AssertionError(("transaction structural address", address))
+        return transaction_actor(world, address)
+    raise AssertionError(kind)
 
 
 def services(world: ActorWorld) -> Tuple[Service, ...]:
     result = []
     for index, actor in enumerate(world.participants):
         result.extend(("P", index, message) for message in range(len(actor.mailbox)))
-    for index, actor in enumerate(world.transactions):
-        result.extend(("T", index, message) for message in range(len(actor.mailbox)))
+    for actor in world.transactions:
+        result.extend(("T", actor.attempt_id, message) for message in range(len(actor.mailbox)))
     return tuple(result)
 
 
@@ -1033,9 +1111,13 @@ def append_to_target(world: ActorWorld, envelope: Envelope) -> ActorWorld:
             actor, mailbox=sorted_mailbox(actor.mailbox + (envelope,))
         )
     elif envelope.target_kind == "T":
-        actor = transactions[envelope.target_index]
-        transactions[envelope.target_index] = replace(
-            actor, mailbox=sorted_mailbox(actor.mailbox + (envelope,))
+        actor = transaction_actor(world, envelope.attempt_id)
+        updated = replace(actor, mailbox=sorted_mailbox(actor.mailbox + (envelope,)))
+        transactions = list(
+            sorted_transactions(
+                updated if candidate.attempt_id == envelope.attempt_id else candidate
+                for candidate in transactions
+            )
         )
     else:
         raise AssertionError(envelope.target_kind)
@@ -1046,24 +1128,28 @@ def service_world(
     world: ActorWorld,
     service: Service,
 ) -> Tuple[ActorWorld, Tuple[Record, ...], bool]:
-    kind, actor_index, message_index = service
+    kind, actor_address, message_index = service
     participants = list(world.participants)
-    transactions = list(world.transactions)
     if kind == "P":
+        if not isinstance(actor_address, int):
+            raise AssertionError(("participant service address", actor_address))
+        actor_index = actor_address
         actor = participants[actor_index]
         envelope = actor.mailbox[message_index]
         actor_without = replace(actor, mailbox=actor.mailbox[:message_index] + actor.mailbox[message_index + 1 :])
         updated, outgoing, records, accepted = handle_participant(actor_without, actor_index, envelope)
         participants[actor_index] = updated
+        next_world = replace(world, participants=tuple(participants))
     elif kind == "T":
-        actor = transactions[actor_index]
+        if not isinstance(actor_address, str):
+            raise AssertionError(("transaction service address", actor_address))
+        actor = transaction_actor(world, actor_address)
         envelope = actor.mailbox[message_index]
         actor_without = replace(actor, mailbox=actor.mailbox[:message_index] + actor.mailbox[message_index + 1 :])
         updated, outgoing, records, accepted = handle_transaction(actor_without, envelope)
-        transactions[actor_index] = updated
+        next_world = replace_transaction(world, updated)
     else:
         raise AssertionError(kind)
-    next_world = replace(world, participants=tuple(participants), transactions=tuple(transactions))
     for outgoing_envelope in outgoing:
         next_world = append_to_target(next_world, outgoing_envelope)
     return next_world, records, accepted
@@ -1088,8 +1174,14 @@ def project_reference(world: ActorWorld) -> ref.FFState:
     applications = []
     acknowledgements = []
     incidence = ref.fixture_indices(fixture)
-    attempt_to_tx = {tx.attempt_id: tx_index for tx_index, tx in enumerate(world.transactions)}
-    for tx_index, tx in enumerate(world.transactions):
+    by_nominal_index = {tx.tx_index: tx for tx in world.transactions}
+    if set(by_nominal_index) != set(range(len(fixture))):
+        raise AssertionError(
+            ("reference adapter requires complete nominal fixture", set(by_nominal_index), len(fixture))
+        )
+    ordered_transactions = tuple(by_nominal_index[index] for index in range(len(fixture)))
+    attempt_to_tx = {tx.attempt_id: tx.tx_index for tx in ordered_transactions}
+    for tx_index, tx in enumerate(ordered_transactions):
         for participant in range(participant_count):
             if participant in incidence[tx_index]:
                 responses.append(tx.responses[participant])
@@ -1119,7 +1211,7 @@ def project_reference(world: ActorWorld) -> ref.FFState:
             for actor in world.participants
         ),
         responses=tuple(responses),
-        phases=tuple(actor.phase for actor in world.transactions),
+        phases=tuple(actor.phase for actor in ordered_transactions),
         applications=tuple(applications),
         acknowledgements=tuple(acknowledgements),
         pending=pending,
@@ -1201,18 +1293,19 @@ def validate_owned_wires(ledger: Mapping[str, Record]) -> None:
             raise AssertionError(("wire disconnected", owner, ids - visited))
 
 
-def validate_terminal_ledger(world: ActorWorld, ledger: Mapping[str, Record]) -> Tuple[int, int]:
-    projected = project_reference(world)
-    fixture = fixture_for(world.fixture_name)
-    if not ref.terminal_well_typed(fixture, projected):
-        raise AssertionError("terminal projection not typed")
+def validate_actor_ledger(world: ActorWorld, ledger: Mapping[str, Record]) -> Tuple[int, int]:
     maximum_arity = max((len(record.parents) for record in ledger.values()), default=0)
     if maximum_arity > 2:
         raise AssertionError(("parent arity", maximum_arity))
     validate_owned_wires(ledger)
-    for tx_index, actor in enumerate(world.transactions):
-        if actor.tx_index != tx_index:
-            raise AssertionError(("transaction actor/index mismatch", actor.tx_index, tx_index))
+    attempts = tuple(actor.attempt_id for actor in world.transactions)
+    nominal_indices = tuple(actor.tx_index for actor in world.transactions)
+    if len(attempts) != len(set(attempts)):
+        raise AssertionError(("duplicate structural actor", attempts))
+    if len(nominal_indices) != len(set(nominal_indices)):
+        raise AssertionError(("duplicate nominal transaction address", nominal_indices))
+    for actor in world.transactions:
+        tx_index = actor.tx_index
         if actor.close is None or actor.close.record_id not in ledger:
             raise AssertionError(("missing close", tx_index))
         ancestry = record_ancestors(ledger, actor.close.record_id) | {actor.close.record_id}
@@ -1233,6 +1326,14 @@ def validate_terminal_ledger(world: ActorWorld, ledger: Mapping[str, Record]) ->
             if not response_kinds.intersection({"APPLY", "RELEASE"}):
                 raise AssertionError(("missing application record", tx_index, participant))
     return len(ledger), maximum_arity
+
+
+def validate_terminal_ledger(world: ActorWorld, ledger: Mapping[str, Record]) -> Tuple[int, int]:
+    projected = project_reference(world)
+    fixture = fixture_for(world.fixture_name)
+    if not ref.terminal_well_typed(fixture, projected):
+        raise AssertionError("terminal projection not typed")
+    return validate_actor_ledger(world, ledger)
 
 
 @dataclass(frozen=True)
@@ -1298,8 +1399,8 @@ def actor_graph(fixture_name: str, mode: str) -> GraphSummary:
             terminals.append(source_projection)
         bare_services = []
         for service in available:
-            kind, actor_index, message_index = service
-            actor = world.participants[actor_index] if kind == "P" else world.transactions[actor_index]
+            _, _, message_index = service
+            actor = addressed_actor(world, service)
             envelope = actor.mailbox[message_index]
             bare = bare_message(envelope)
             bare_services.append(bare)
@@ -1374,10 +1475,10 @@ def actor_graph(fixture_name: str, mode: str) -> GraphSummary:
 
 
 def service_key(world: ActorWorld, service: Service) -> str:
-    kind, actor_index, message_index = service
-    actor = world.participants[actor_index] if kind == "P" else world.transactions[actor_index]
+    kind, actor_address, message_index = service
+    actor = addressed_actor(world, service)
     envelope = actor.mailbox[message_index]
-    return stable((kind, actor_index, envelope.public_fields()))
+    return stable((kind, actor_address, envelope.public_fields()))
 
 
 def run_policy(
@@ -1409,7 +1510,7 @@ def run_to_quiescence(
 ) -> ActorWorld:
     """Service only addressed actor mailboxes, continuing the supplied world."""
     while services(world):
-        by_actor: Dict[Tuple[str, int], List[Service]] = defaultdict(list)
+        by_actor: Dict[Tuple[str, ActorAddress], List[Service]] = defaultdict(list)
         for candidate in services(world):
             by_actor[(candidate[0], candidate[1])].append(candidate)
         local_heads = [
@@ -1419,7 +1520,11 @@ def run_to_quiescence(
         # The policies reverse only which actor mailbox is serviced.  Each
         # actor retains its own local mailbox order, so only incomparable
         # cross-actor construction order is gauged.
-        chosen = sorted(local_heads, key=lambda service: (service[0], service[1]), reverse=reverse)[0]
+        chosen = sorted(
+            local_heads,
+            key=lambda service: (service[0], stable(service[1])),
+            reverse=reverse,
+        )[0]
         world, records, accepted = service_world(world, chosen)
         if not accepted:
             raise AssertionError(("policy rejected", chosen))
@@ -1458,7 +1563,7 @@ def opening_relation_gate(fixture_name: str) -> Tuple[int, int, int]:
 
 def world_until_decision(mode: str = "BORN", carrier_epoch: int = 0) -> ActorWorld:
     world, _ = open_actor_world("single", mode, carrier_epoch=carrier_epoch)
-    while world.transactions[0].decision is None:
+    while only_transaction(world).decision is None:
         available = services(world)
         chosen = sorted(available, key=lambda service: service_key(world, service))[0]
         world, _, accepted = service_world(world, chosen)
@@ -1544,22 +1649,23 @@ def adversarial_gate() -> Tuple[int, int]:
     after, _, _, accepted = handle_participant(other, 1, prepare)
     rejected += int(not accepted and after == other)
 
-    transaction = world.transactions[0]
+    transaction = transaction_actor(world, prepare.attempt_id)
+    tx_index = transaction.tx_index
     cap = transaction.capabilities[0]
     response_record = make_record(
         "P",
         0,
         GRANT,
         (world.participants[0].version_record, transaction.carrier.record_id),
-        (0, transaction.attempt_id, transaction.body_digest, 0, 0, cap),
+        (tx_index, transaction.attempt_id, transaction.body_digest, 0, 0, cap),
     )
     valid_response = signed_envelope(
         GRANT,
         "P",
         0,
         "T",
-        0,
-        0,
+        tx_index,
+        tx_index,
         0,
         transaction.body_digest,
         0,
@@ -1582,15 +1688,15 @@ def adversarial_gate() -> Tuple[int, int]:
         0,
         GRANT,
         (world.participants[0].version_record, transaction.carrier.record_id),
-        (0, transaction.attempt_id, transaction.body_digest, 99, 99, cap),
+        (tx_index, transaction.attempt_id, transaction.body_digest, 99, 99, cap),
     )
     wrong_base = signed_envelope(
         GRANT,
         "P",
         0,
         "T",
-        0,
-        0,
+        tx_index,
+        tx_index,
         0,
         transaction.body_digest,
         0,
@@ -1626,7 +1732,7 @@ def adversarial_gate() -> Tuple[int, int]:
         0,
         GRANT,
         response_record.parents,
-        (0, transaction.attempt_id, transaction.body_digest, 0, 99, cap),
+        (tx_index, transaction.attempt_id, transaction.body_digest, 0, 99, cap),
     )
     if evidence_header(omitted_field_changed) != evidence_header(response_record):
         raise AssertionError("omitted-field control moved quotient header")
@@ -1636,7 +1742,7 @@ def adversarial_gate() -> Tuple[int, int]:
     rejected += int(not authentic(substituted) and not accepted and after_tx == transaction)
 
     decision_world = world_until_decision()
-    decision_tx = decision_world.transactions[0]
+    decision_tx = only_transaction(decision_world)
     decision_participant_index = next(
         index
         for index, actor in enumerate(decision_world.participants)
@@ -1709,9 +1815,11 @@ def adversarial_gate() -> Tuple[int, int]:
             if envelope.kind == COMMIT
         )
         new_actor = epoch_one.participants[new_index]
-        if epoch_zero.transactions[0].body_digest != epoch_one.transactions[0].body_digest:
+        epoch_zero_tx = only_transaction(epoch_zero)
+        epoch_one_tx = only_transaction(epoch_one)
+        if epoch_zero_tx.body_digest != epoch_one_tx.body_digest:
             raise AssertionError("same-base replay body differs")
-        if epoch_zero.transactions[0].attempt_id == epoch_one.transactions[0].attempt_id:
+        if epoch_zero_tx.attempt_id == epoch_one_tx.attempt_id:
             raise AssertionError("structural attempt did not change")
         attempted += 1
         after, outgoing, records, accepted = handle_participant(new_actor, new_index, old_commit)
@@ -1726,10 +1834,10 @@ def scheduler_gauge_gate() -> Tuple[int, str]:
     checks = 0
     hashes = []
     for first_index, first in enumerate(available):
-        first_actor = initial.participants[first[1]] if first[0] == "P" else initial.transactions[first[1]]
+        first_actor = addressed_actor(initial, first)
         first_envelope = first_actor.mailbox[first[2]]
         for second in available[first_index + 1 :]:
-            second_actor = initial.participants[second[1]] if second[0] == "P" else initial.transactions[second[1]]
+            second_actor = addressed_actor(initial, second)
             second_envelope = second_actor.mailbox[second[2]]
             if set(fixture[first_envelope.tx_index].participants) & set(
                 fixture[second_envelope.tx_index].participants
@@ -1762,7 +1870,7 @@ def append_rebase_attempt(
     dormant_slot: Optional[Record],
 ) -> Tuple[ActorWorld, Record]:
     """Open one supplied rebase attempt on the actual terminal actor world."""
-    old_tx = old_world.transactions[0]
+    old_tx = only_transaction(old_world)
     if old_tx.close is None or services(old_world):
         raise AssertionError("rebase requires one closed quiescent attempt")
     tx_index = 1
@@ -1842,15 +1950,12 @@ def append_rebase_attempt(
             )
             updated = replace(updated, mailbox=sorted_mailbox(updated.mailbox + (prepare,)))
         participants.append(updated)
-    return (
-        ActorWorld(
-            "continuation",
-            mode,
-            tuple(participants),
-            old_world.transactions + (new_tx,),
-        ),
-        carrier,
+    opened_world = replace(
+        old_world,
+        fixture_name="continuation",
+        participants=tuple(participants),
     )
+    return append_transaction(opened_world, new_tx), carrier
 
 
 def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, int, str]:
@@ -1887,7 +1992,7 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, in
 
         world = run_to_quiescence(world, ledger)
         validate_terminal_ledger(world, ledger)
-        old_tx = world.transactions[0]
+        old_tx = only_transaction(world)
         old_outcome = ref.committed_names(fixture_for("single"), project_reference(world))
         if old_outcome or tuple(actor.version for actor in world.participants) != current_versions:
             raise AssertionError("old-base attempt did not abort stale")
@@ -1923,7 +2028,7 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, in
         world = run_to_quiescence(world, ledger)
         validate_terminal_ledger(world, ledger)
         ledger_valid += 1
-        new_tx = world.transactions[1]
+        new_tx = transaction_by_carrier(world, carrier)
         outcome = ref.committed_names(fixture_for("continuation"), project_reference(world))
         if outcome != frozenset(("Q",)):
             raise AssertionError(("persistent rebase outcome", mode, outcome))
@@ -1988,7 +2093,7 @@ def sparse_slot_covariance_gate() -> Tuple[int, int, int, int, str]:
     append_records(ledger, opening)
     world = run_to_quiescence(world, ledger)
     validate_terminal_ledger(world, ledger)
-    old_tx = world.transactions[0]
+    old_tx = only_transaction(world)
     if old_tx.close is None:
         raise AssertionError("sparse-slot setup missing old close")
     actor = world.participants[0]
@@ -2062,6 +2167,284 @@ def sparse_slot_covariance_gate() -> Tuple[int, int, int, int, str]:
         )
         order_hashes.append(digest((tuple(kinds), tuple(created_ids))))
     return gap_acceptance, order_checks, typed_responses, no_padding, digest(tuple(order_hashes))
+
+
+def append_followup_attempt(
+    world: ActorWorld,
+    ledger: Dict[str, Record],
+    source: TransactionActor,
+    tx_index: int,
+    local_slot: int,
+    name: str,
+) -> Tuple[ActorWorld, Record]:
+    """Open one supplied attempt without allocating intervening global slots."""
+    if source.close is None or source.close.record_id not in ledger:
+        raise AssertionError("follow-up source must be durably closed")
+    if any(actor.tx_index == tx_index for actor in world.transactions):
+        raise AssertionError(("follow-up nominal address already present", tx_index))
+    members = source.members
+    participant_count = len(world.participants)
+    bases = tuple(
+        world.participants[participant].version if participant in members else -1
+        for participant in range(participant_count)
+    )
+    logical_tau = source.logical_tau
+    body_digest = digest((logical_tau, members, bases))
+    carrier = make_record(
+        "T",
+        tx_index,
+        "FOLLOWUP_BIRTH",
+        (source.close.record_id,),
+        (logical_tau, ("participant-local-slot", local_slot)),
+    )
+    append_records(ledger, (carrier,))
+    attempt_id = structural_attempt_id(carrier, body_digest)
+    capabilities = source.capabilities
+    if len(capabilities) != participant_count:
+        raise AssertionError(("follow-up capability arity", len(capabilities), participant_count))
+    responses = tuple(0 if participant in members else -1 for participant in range(participant_count))
+    acknowledgements = tuple(
+        0 if participant in members else -1 for participant in range(participant_count)
+    )
+    empty_evidence = tuple(None for _ in range(participant_count))
+    actor = TransactionActor(
+        name,
+        tx_index,
+        members,
+        bases,
+        body_digest,
+        attempt_id,
+        logical_tau,
+        carrier,
+        carrier.record_id,
+        capabilities,
+        responses,
+        empty_evidence,
+        tuple("" for _ in range(participant_count)),
+        ref.OPEN,
+        acknowledgements,
+        empty_evidence,
+        None,
+        None,
+        (),
+        (),
+    )
+    participants = list(world.participants)
+    for participant in members:
+        prepare = signed_envelope(
+            PREPARE,
+            "T",
+            tx_index,
+            "P",
+            participant,
+            tx_index,
+            participant,
+            body_digest,
+            bases[participant],
+            capabilities[participant],
+            attempt_id,
+            "",
+            carrier,
+        )
+        participants[participant] = replace(
+            participants[participant],
+            mailbox=sorted_mailbox(participants[participant].mailbox + (prepare,)),
+        )
+    return append_transaction(replace(world, participants=tuple(participants)), actor), carrier
+
+
+def service_matching_envelope(
+    world: ActorWorld,
+    ledger: Dict[str, Record],
+    actor_kind: str,
+    actor_address: ActorAddress,
+    attempt_id: str,
+    envelope_kind: str,
+) -> ActorWorld:
+    matches = []
+    for service in services(world):
+        if service[0] != actor_kind or service[1] != actor_address:
+            continue
+        actor = addressed_actor(world, service)
+        envelope = actor.mailbox[service[2]]
+        if envelope.attempt_id == attempt_id and envelope.kind == envelope_kind:
+            matches.append(service)
+    if len(matches) != 1:
+        raise AssertionError(
+            ("matching service census", actor_kind, actor_address, attempt_id, envelope_kind, matches)
+        )
+    world, records, accepted = service_world(world, matches[0])
+    if not accepted:
+        raise AssertionError(("matching service rejected", matches[0]))
+    append_records(ledger, records)
+    return world
+
+
+def closed_single_world() -> Tuple[ActorWorld, Dict[str, Record], TransactionActor]:
+    world, opening = open_actor_world("single", "BORN")
+    ledger: Dict[str, Record] = {}
+    append_records(ledger, opening)
+    world = run_to_quiescence(world, ledger)
+    validate_terminal_ledger(world, ledger)
+    return world, ledger, only_transaction(world)
+
+
+def sparse_full_ledger_gate() -> Tuple[int, int, int, int, int, int, int, int, str]:
+    """Close sparse attempts and check covariance under a disjoint insertion."""
+    gap_world, gap_ledger, gap_source = closed_single_world()
+    gap_world, gap_carrier = append_followup_attempt(
+        gap_world, gap_ledger, gap_source, 2, 2, "R"
+    )
+    if {actor.tx_index for actor in gap_world.transactions} != {0, 2}:
+        raise AssertionError("gap registry allocated padding")
+    gap_world = run_to_quiescence(gap_world, gap_ledger)
+    gap_records, gap_arity = validate_actor_ledger(gap_world, gap_ledger)
+    gap_actor = transaction_by_carrier(gap_world, gap_carrier)
+    gap_closed = int(
+        not services(gap_world)
+        and gap_actor.phase == ref.CLOSED
+        and gap_actor.close is not None
+        and gap_actor.decision is not None
+        and gap_actor.decision.kind == "DECISION_COMMIT"
+    )
+    gap_no_padding = int(
+        all(
+            not (record.owner_kind == "T" and record.owner_index == 1)
+            for record in gap_ledger.values()
+        )
+    )
+
+    order_runs = 0
+    typed_responses = 0
+    order_hashes = []
+    for order in ((1, 2), (2, 1)):
+        world, ledger, source = closed_single_world()
+        carriers: Dict[int, Record] = {}
+        for tx_index in (1, 2):
+            world, carriers[tx_index] = append_followup_attempt(
+                world,
+                ledger,
+                source,
+                tx_index,
+                tx_index,
+                "Q" if tx_index == 1 else "R",
+            )
+        attempts = {
+            tx_index: transaction_by_carrier(world, carrier).attempt_id
+            for tx_index, carrier in carriers.items()
+        }
+        for tx_index in order:
+            for participant in source.members:
+                world = service_matching_envelope(
+                    world,
+                    ledger,
+                    "P",
+                    participant,
+                    attempts[tx_index],
+                    PREPARE,
+                )
+        world = run_to_quiescence(world, ledger)
+        _, arity = validate_actor_ledger(world, ledger)
+        first = transaction_actor(world, attempts[order[0]])
+        second = transaction_actor(world, attempts[order[1]])
+        if (
+            first.phase != ref.CLOSED
+            or second.phase != ref.CLOSED
+            or first.decision is None
+            or second.decision is None
+            or first.decision.kind != "DECISION_COMMIT"
+            or second.decision.kind != "DECISION_ABORT"
+        ):
+            raise AssertionError(("full local-order outcomes", order, first, second))
+        response_records = tuple(
+            record
+            for record in ledger.values()
+            if record.kind in (GRANT, REJECT)
+            and len(record.payload) >= 2
+            and record.payload[1] in set(attempts.values())
+        )
+        if len(response_records) != 4:
+            raise AssertionError(("full typed-response census", order, len(response_records)))
+        if {
+            record.kind for record in response_records if record.payload[1] == first.attempt_id
+        } != {GRANT}:
+            raise AssertionError(("winning response type", order))
+        if {
+            record.kind for record in response_records if record.payload[1] == second.attempt_id
+        } != {REJECT}:
+            raise AssertionError(("losing response type", order))
+        typed_responses += len(response_records)
+        order_runs += 1
+        gap_arity = max(gap_arity, arity)
+        order_hashes.append(
+            digest(
+                tuple(
+                    sorted(
+                        (record.record_id, record.kind)
+                        for record in ledger.values()
+                        if record.payload
+                        and len(record.payload) >= 2
+                        and record.payload[1] in set(attempts.values())
+                    )
+                )
+            )
+        )
+
+    full_world, full_opening = open_actor_world("disjoint", "BORN")
+    remote = next(actor for actor in full_world.transactions if actor.name == "Q")
+    local_world = replace(
+        full_world,
+        participants=tuple(
+            replace(
+                participant,
+                mailbox=tuple(
+                    envelope
+                    for envelope in participant.mailbox
+                    if envelope.attempt_id != remote.attempt_id
+                ),
+            )
+            for participant in full_world.participants
+        ),
+        transactions=sorted_transactions(
+            actor for actor in full_world.transactions if actor.attempt_id != remote.attempt_id
+        ),
+    )
+    local_opening = tuple(
+        record for record in full_opening if record.record_id != remote.carrier.record_id
+    )
+    local_ledger: Dict[str, Record] = {}
+    append_records(local_ledger, local_opening)
+    local_world = run_to_quiescence(local_world, local_ledger)
+    _, local_arity = validate_actor_ledger(local_world, local_ledger)
+
+    full_ledger: Dict[str, Record] = {}
+    append_records(full_ledger, full_opening)
+    full_world = run_to_quiescence(full_world, full_ledger)
+    _, full_arity = validate_actor_ledger(full_world, full_ledger)
+    local_owners = {("P", 0), ("P", 1), ("T", 0)}
+    restricted_local = {
+        record_id: record
+        for record_id, record in local_ledger.items()
+        if (record.owner_kind, record.owner_index) in local_owners
+    }
+    restricted_full = {
+        record_id: record
+        for record_id, record in full_ledger.items()
+        if (record.owner_kind, record.owner_index) in local_owners
+    }
+    disjoint_equal = int(restricted_local == restricted_full)
+    maximum_arity = max(gap_arity, local_arity, full_arity)
+    return (
+        gap_closed,
+        gap_no_padding,
+        order_runs,
+        typed_responses,
+        disjoint_equal,
+        len(restricted_local),
+        gap_records,
+        maximum_arity,
+        digest((tuple(order_hashes), tuple(sorted(restricted_local.items())))),
+    )
 
 
 def clear_runtime_caches() -> None:
@@ -2240,6 +2623,38 @@ def main() -> None:
         f"no_global_slot_padding={no_padding}/2; order_family_sha256={sparse_hash}"
     )
 
+    (
+        full_gap_closed,
+        full_gap_no_padding,
+        full_order_runs,
+        full_typed_responses,
+        disjoint_insertion_equal,
+        restricted_local_records,
+        full_gap_records,
+        sparse_full_arity,
+        sparse_full_hash,
+    ) = sparse_full_ledger_gate()
+    science["sparse_full_ledgers"] = [
+        full_gap_closed,
+        full_gap_no_padding,
+        full_order_runs,
+        full_typed_responses,
+        disjoint_insertion_equal,
+        restricted_local_records,
+        full_gap_records,
+        sparse_full_arity,
+        sparse_full_hash,
+    ]
+    emit("[SPARSE FULL-LEDGER CLOSURE / DISJOINT INSERTION]")
+    emit(
+        f"gapped_tx2_closed={full_gap_closed}/1; no_tx1_actor_or_records={full_gap_no_padding}/1; "
+        f"both_complete_local_orders={full_order_runs}/2; "
+        f"typed_full_run_responses={full_typed_responses}/8; "
+        f"disjoint_insertion_exact_local_ledger={disjoint_insertion_equal}/1; "
+        f"restricted_local_records={restricted_local_records}; gapped_combined_records={full_gap_records}; "
+        f"max_parent_arity={sparse_full_arity}; family_sha256={sparse_full_hash}"
+    )
+
     participant_fields = tuple(ParticipantActor.__dataclass_fields__)
     transaction_fields = tuple(TransactionActor.__dataclass_fields__)
     gates["A6"] = "mailbox" in participant_fields and "mailbox" in transaction_fields
@@ -2270,6 +2685,14 @@ def main() -> None:
     gates["A10"] = tuple(gates) == tuple(f"A{index}" for index in range(10)) and all(gates.values())
     gates["A11"] = BASE_PATH.exists() and sha256(BASE_PATH.read_bytes()) == BASE_SHA256
     gates["A12"] = (gap_acceptance, local_orders, typed_responses, no_padding) == (1, 2, 4, 2)
+    gates["A13"] = (
+        full_gap_closed,
+        full_gap_no_padding,
+        full_order_runs,
+        full_typed_responses,
+        disjoint_insertion_equal,
+        sparse_full_arity,
+    ) == (1, 1, 2, 8, 1, 2)
     science["gates"] = gates
 
     source_hash = sha256(Path(__file__).read_bytes())

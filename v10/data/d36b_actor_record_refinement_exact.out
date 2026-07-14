@@ -17,14 +17,16 @@ incomparable_two-service_diamonds=4; both_orders_same_world_and_ledger=1; histor
 old_base_abort=2/2; rebased_commit=2/2; final_versions=2; same_world_prefix_preserved=2/2; combined_ledger_valid=2/2; old_close_below_new_close=2/2; stale_envelope_rejected=2/2; opening_predictive_state_preserved=2/2; participant_local_registration=2/2; combined_records=50; lineage_carriers_sha256=754a90581f491029b6878524187b0229145ed9bb3ff24590947b3a2f853f11c0
 [SPARSE STRUCTURAL-ATTEMPT SLOTS]
 global_index_gap_prepare_accepted=1/1; two_local_prepare_orders=2/2; typed_responses=4/4; no_global_slot_padding=2/2; order_family_sha256=43e49aa3790326a5fd153f29500879f3287507d4ff299baadfde5fbe11a06e1f
+[SPARSE FULL-LEDGER CLOSURE / DISJOINT INSERTION]
+gapped_tx2_closed=1/1; no_tx1_actor_or_records=1/1; both_complete_local_orders=2/2; typed_full_run_responses=8/8; disjoint_insertion_exact_local_ledger=1/1; restricted_local_records=13; gapped_combined_records=24; max_parent_arity=2; family_sha256=bebdcaa83877276fef663a2eb9f060edd25f5c15774647590e5ce11584b0fb89
 [OWNERSHIP / CLOCK SCOPE]
 participant_and_transaction_mailboxes_owned=1; handler_reads_only_addressed_actor=1; service_world_is_handler_plus_transport_macro=1; outgoing_delivery_updates_recipient_mailboxes=1
 remote_predecessor_ownership_proof=0; honest_record_generating_actor_scope=1
 time_rate_duration_fields=0; serializer_step_is_not_physical_time=1
 [HASHES]
-source_sha256=f353ac2dcff2a7e1b80159cd5602b763669b0157439b09c5a92b50fb01c339b8
-stdout_body_sha256=02375603f824efc74a6953b8d8e6d4a35c3a8f6cff964200e005e7c4752db9b7
-internal_science_sha256=6621a32688a27b0f55e99eddf570c7a2956d718e5bd4a37f95d48b3529403227
+source_sha256=c2460ed8d48f06f5bebd5aba95440ff74af0a002a44ab7a0de6c1d4d1f0188a6
+stdout_body_sha256=8ff25c88876bd48928e33e9c21c1b41f8968de390803bbed6896f7bbcb97dd19
+internal_science_sha256=7bee23d9ebf22b2a0112ec0677f3b584990ef9a09a4e4ef34b77e75e7bca53d0
 [GATES]
 A0=PASS
 A1=PASS
@@ -39,8 +41,9 @@ A9=PASS
 A10=PASS
 A11=PASS
 A12=PASS
+A13=PASS
 [VERDICT]
-PASS 13/13
+PASS 14/14
 CLOCK-FREE ACTOR-LOCAL APPEND-ONLY COORDINATION REFINEMENT / FAILURE-FREE CLOSED ATTEMPTS
 BORN and TOKEN are coordination-equivalent at the audited horizon, not ontologically identical
 opportunity, arbitration selection, crash recovery, unbounded completion and quantum join remain open
