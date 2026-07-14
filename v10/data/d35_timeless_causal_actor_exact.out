@@ -1,0 +1,54 @@
+[D35 timeless local causal-call exact receipt]
+ARITHMETIC: Fraction exact; Decimal reporting precision=120
+TIME VARIABLES: 0
+GLOBAL OPPORTUNITY NORMALIZERS: 0
+[Q1]
+q=3/8,1/4,1/4,1/8 birth_g=9/25
+recursive_branches=16 total=1/1
+A2_kind=birth:1/4,fork:1/8,idle:3/8,visit:1/4
+P(BD acquired at A2)=1/4=0.25000000000000000000000000000000000000000000000000
+E(transaction births)=25/64=0.39062500000000000000000000000000000000000000000000
+E(sum newborn P1 at birth)=106929/1562500=0.06843456000000000000000000000000000000000000000000
+actor_fifo_branches=16 distribution_atoms=16
+actor_lifo_branches=16 distribution_atoms=16
+actor_canonical_branches=16 distribution_atoms=16
+recursive_AB_BA_atoms=16 exact_equal=yes
+LDAP branches=16 aggregate_newpast_records=56 unqueried_branch_controls=2
+disconnected_branches=16 A_law_equal=yes remote_reads=0
+D24_birth_cells=12 marginal_identity=yes norms=1 Busch_scope=single-isometry-member
+projective_first_atoms=14 second_call_refinements=408 marginal_equal=yes
+deterministic_replays=24 scheduler_equal=yes malformed_rejected=5/5 replay_sha256=a2dd84624fc0fa9819d20e5cb6c0e76b985b60e938cd0c3416b70d6bd2689e5a
+[Q2]
+q=2/5,1/5,3/10,1/10 birth_g=16/25
+recursive_branches=16 total=1/1
+A2_kind=birth:1/5,fork:1/10,idle:2/5,visit:3/10
+P(BD acquired at A2)=1/4=0.25000000000000000000000000000000000000000000000000
+E(transaction births)=63/200=0.31500000000000000000000000000000000000000000000000
+E(sum newborn P1 at birth)=1080576/9765625=0.11065098240000000000000000000000000000000000000000
+actor_fifo_branches=16 distribution_atoms=16
+actor_lifo_branches=16 distribution_atoms=16
+actor_canonical_branches=16 distribution_atoms=16
+recursive_AB_BA_atoms=16 exact_equal=yes
+LDAP branches=16 aggregate_newpast_records=56 unqueried_branch_controls=2
+disconnected_branches=16 A_law_equal=yes remote_reads=0
+D24_birth_cells=12 marginal_identity=yes norms=1 Busch_scope=single-isometry-member
+projective_first_atoms=14 second_call_refinements=408 marginal_equal=yes
+deterministic_replays=24 scheduler_equal=yes malformed_rejected=5/5 replay_sha256=d389fdf0945282309e6688942efeadde5c97d9dbd6987c3c32a6ed5325fdbf66
+[NONSELECTION]
+birth_Q1=1/4 birth_Q2=1/5 different=yes
+visit_Q1=1/4 visit_Q2=3/10 different=yes
+BD_Q1=1/4 BD_Q2=1/4 equal=yes (registered accidental coarse-observable collision)
+both satisfy exact local normalization, actor rebuild, scheduler gauge, LDAP, D24/NSE-member, projectivity and rejection gates
+[COMPLETION AND CEILING]
+finite-call theorem: finite rooted pre-call tree + outward queries => finite completed A1--A2 diamond
+finite-prefix theorem: each query touches each pre-call actor at most once; actors and events remain finite after every finite root-wire prefix
+completed classical measure: countable iteration of normalized discrete rooted-tree kernels (Ionescu--Tulcea scope)
+not proved: cyclic/peer/disconnected joins, coherent graph-sector measure, v9 stem-spectrum identification, Lorentzian geometry, proper time, or nature's law
+[HASHES]
+source_sha256=06c997a195294991293fdedc9edce005a3f8ad1d23bfd8f73a5a08490163fa26
+internal_science_sha256=1f7b39ddaea634c1444695e5e536d528be45785e8c9997eba1388ed22cfe8aa6
+hash-seed note: the environment value is excluded from all science objects
+[VERDICT]
+PASS 18/18
+TIMELESS LOCAL NEXT-CLICK FAMILY / EXECUTABLE
+opportunity weights, birth coupling, root and omitted join sectors remain extra physics
