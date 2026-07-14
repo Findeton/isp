@@ -19,6 +19,7 @@ invented.  Exit 1 on any failed gate.
 """
 
 from collections import Counter, defaultdict, deque
+import copy
 from decimal import Decimal, getcontext
 from fractions import Fraction as F
 from functools import lru_cache
@@ -270,6 +271,12 @@ def row_output(kind, y, target, actor="A"):
     return None
 
 
+def coarse_output_mark(label, after):
+    if len(after) == 4:
+        return f"{label}:c{after[0]}:r{after[2]}:w{after[3]}"
+    return f"{label}:c{after[0]}"
+
+
 def global_projected_rows(state, actor="A", scoped=True):
     project = boundary_scoped if scoped else boundary_dyn
     before = project(state, actor)
@@ -280,9 +287,10 @@ def global_projected_rows(state, actor="A", scoped=True):
         label = row_output(kind, y, target, actor)
         if label is None and after == before:
             continue
-        # Silent neighbor births update the predictive state but are not part
-        # of the licensed C output alphabet.
-        marked_label = f"{label}:c{after[0]}" if label is not None else "tau"
+        # Silent neighbor births update the carrier but emit no A-wire record.
+        # The special None mark below is an internal CTMC transition, not an
+        # observable tau symbol in Branch C.
+        marked_label = coarse_output_mark(label, after) if label is not None else None
         rows[(marked_label, after)] += rate
     return rows
 
@@ -301,14 +309,18 @@ def boundary_formula_rows(boundary):
         return c, h
 
     rows = Counter()
-    rows[(f"A-birth:c{carrier}", pack(carrier, hist_add_one(hist), 1, 1))] += F(1, 4)
-    rows[(f"A-idle:c{carrier}", pack(carrier, hist, 1, 1))] += F(1, 2)
-    rows[(f"A-outgoing:c{1 - carrier}", pack(1 - carrier, hist, 1, 1))] += F(1, 4)
+    after_birth = pack(carrier, hist_add_one(hist), 1, 1)
+    after_idle = pack(carrier, hist, 1, 1)
+    after_outgoing = pack(1 - carrier, hist, 1, 1)
+    rows[(coarse_output_mark("A-birth", after_birth), after_birth)] += F(1, 4)
+    rows[(coarse_output_mark("A-idle", after_idle), after_idle)] += F(1, 2)
+    rows[(coarse_output_mark("A-outgoing", after_outgoing), after_outgoing)] += F(1, 4)
     for degree, count in hist:
         shifted = hist_shift(hist, degree, degree + 1)
-        rows[("tau", pack(carrier, shifted))] += F(count, 4)
-        rows[(f"incoming-to-A:c{1 - carrier}",
-              pack(1 - carrier, hist, 0, 1))] += F(count, 4 * degree)
+        rows[(None, pack(carrier, shifted))] += F(count, 4)
+        after_incoming = pack(1 - carrier, hist, 0, 1)
+        rows[(coarse_output_mark("incoming-to-A", after_incoming),
+              after_incoming)] += F(count, 4 * degree)
     return rows
 
 
@@ -338,38 +350,48 @@ def global_labeled_rows(state, actor="A"):
                     state["neighbors"][actor]
                 )
                 new_child = next(iter(new_neighbors))
-                label = f"A-birth:{new_child}:c{after[0]}"
+                label = (
+                    f"A-birth:{new_child}:c{after[0]}:r{after[1]}:w{after[3]}"
+                )
             elif kind == "n":
-                label = f"A-idle:c{after[0]}"
+                label = f"A-idle:c{after[0]}:r{after[1]}:w{after[3]}"
             else:
-                label = f"A-outgoing:{target}:c{after[0]}"
+                label = (
+                    f"A-outgoing:{target}:c{after[0]}:r{after[1]}:w{after[3]}"
+                )
         elif kind == "i" and target == actor:
-            label = f"incoming:{y}:c{after[0]}"
+            label = f"incoming:{y}:c{after[0]}:r{after[1]}:w{after[3]}"
         else:
             label = None
         if label is None and after == before:
             continue
-        rows[(label if label is not None else "tau", after)] += rate
+        rows[(label, after)] += rate
     return rows
 
 
-def labeled_formula_rows(boundary):
+def labeled_formula_rows(boundary, root="A"):
     carrier, a_rings, a_births, a_wire, neighbor_rows = boundary
     rows = Counter()
-    new_child = f"A/{a_births + 1}"
+    new_child = f"{root}/{a_births + 1}"
     after_birth_neighbors = tuple(sorted((*neighbor_rows, (new_child, 1, 0))))
     after_birth = (
         carrier, a_rings + 1, a_births + 1, a_wire + 1,
         after_birth_neighbors,
     )
-    rows[(f"A-birth:{new_child}:c{carrier}", after_birth)] += F(1, 4)
-    rows[(f"A-idle:c{carrier}",
-          (carrier, a_rings + 1, a_births, a_wire + 1,
-           neighbor_rows))] += F(1, 2)
+    rows[((
+        f"A-birth:{new_child}:c{carrier}:r{a_rings + 1}:w{a_wire + 1}",
+        after_birth,
+    ))] += F(1, 4)
+    after_idle = (
+        carrier, a_rings + 1, a_births, a_wire + 1, neighbor_rows,
+    )
+    rows[((
+        f"A-idle:c{carrier}:r{a_rings + 1}:w{a_wire + 1}", after_idle,
+    ))] += F(1, 2)
     degree_a = len(neighbor_rows)
     for neighbor, degree, neighbor_births in neighbor_rows:
         rows[(
-            f"A-outgoing:{neighbor}:c{1 - carrier}",
+            f"A-outgoing:{neighbor}:c{1 - carrier}:r{a_rings + 1}:w{a_wire + 1}",
             (1 - carrier, a_rings + 1, a_births, a_wire + 1,
              neighbor_rows),
         )] += F(1, 4 * degree_a)
@@ -380,11 +402,11 @@ def labeled_formula_rows(boundary):
             for name, d, births in neighbor_rows
         ))
         rows[(
-            "tau",
+            None,
             (carrier, a_rings, a_births, a_wire, shifted_rows),
         )] += F(1, 4)
         rows[(
-            f"incoming:{neighbor}:c{1 - carrier}",
+            f"incoming:{neighbor}:c{1 - carrier}:r{a_rings}:w{a_wire + 1}",
             (1 - carrier, a_rings, a_births, a_wire + 1,
              neighbor_rows),
         )] += F(1, 4 * degree)
@@ -524,16 +546,16 @@ check(
 
 
 # ---------------------------------------------------------------------------
-# E4: true coinductive finite predictive partitions and stopping scope.
+# E4: coinductive strong boundary-transition bisimulation and stopping scope.
 
 @lru_cache(maxsize=None)
-def carrier_predictive_signature(boundary, horizon):
-    """A rate/output signature with successor *classes*, never raw states."""
+def transition_bisimulation_signature(boundary, horizon):
+    """Strong CTMC signature; None is internal, never an A-wire output."""
     if horizon == 0:
         return ()
     aggregated = Counter()
     for (label, after), rate in boundary_formula_rows(boundary).items():
-        child_class = carrier_predictive_signature(after, horizon - 1)
+        child_class = transition_bisimulation_signature(after, horizon - 1)
         aggregated[(label, child_class)] += rate
     return tuple(sorted([
         (label, rate.numerator, rate.denominator, child_class)
@@ -549,7 +571,7 @@ for neighbor_count in range(1, 4):
             synthetic_boundaries.append((carrier, hist))
 
 synthetic_predictive_counts = tuple(
-    len({carrier_predictive_signature(boundary, horizon)
+    len({transition_bisimulation_signature(boundary, horizon)
          for boundary in synthetic_boundaries})
     for horizon in (1, 2, 3)
 )
@@ -557,7 +579,7 @@ registered_boundaries = tuple(sorted(
     {boundary_scoped(state) for state in enumerated_states}, key=repr
 ))
 registered_predictive_counts = tuple(
-    len({carrier_predictive_signature(boundary, horizon)
+    len({transition_bisimulation_signature(boundary, horizon)
          for boundary in registered_boundaries})
     for horizon in (1, 2, 3)
 )
@@ -578,7 +600,7 @@ for state in enumerated_states:
     before = boundary_scoped(state)
     for (label, after), _rate in global_projected_rows(state).items():
         delta = after[2] - before[2], after[3] - before[3]
-        kind = label.split(":", 1)[0]
+        kind = label.split(":", 1)[0] if label is not None else None
         expected = (
             (1, 1) if kind in {"A-birth", "A-idle", "A-outgoing"}
             else (0, 1) if kind == "incoming-to-A"
@@ -593,25 +615,32 @@ for state in enumerated_states:
 # actual monotone count rows used by those hitting sets.
 elapsed_origin = F(0)
 elapsed_increment = F(11, 8)
+b1_horizon_split = (
+    transition_bisimulation_signature((0, hist_left), 1)
+    == transition_bisimulation_signature((0, hist_right), 1)
+    and transition_bisimulation_signature((0, hist_left), 2)
+    != transition_bisimulation_signature((0, hist_right), 2)
+)
 e4_ok = (
     synthetic_predictive_counts == (106, 110, 110)
-    and registered_predictive_counts[0] <= registered_predictive_counts[1]
-    <= registered_predictive_counts[2]
+    and registered_predictive_counts == (111, 111, 111)
+    and b1_horizon_split
     and q_left == q_right
     and survival_left == survival_right
     and counter_rows_integrated
     and elapsed_origin + elapsed_increment == F(11, 8)
 )
 check(
-    "E4 TRUE FINITE PREDICTIVE PARTITIONS / RELATIVE-TIME STOPPING SCOPE "
-    "[exact + 100-decimal analytic regression]: signatures aggregate exact "
-    "rates by output and previous-horizon successor class (never raw state); "
-    "A-own/A-wire counters are in the projected CTMC; elapsed time is measured "
-    "from the conditioning stop",
+    "E4 STRONG BOUNDARY-TRANSITION BISIMULATION / RELATIVE-TIME STOPPING "
+    "[exact + 100-decimal analytic regression]: non-silent marks contain the "
+    "declared post carrier and own/wire counts; neighbor births are internal "
+    "None rows; signatures use previous-horizon classes, never raw state. This "
+    "is a sufficient-carrier stress test, not the weak/timed minimal quotient",
     e4_ok,
     f"registered states/classes={len(registered_boundaries)}/"
     f"{registered_predictive_counts}; synthetic stress classes="
-    f"{synthetic_predictive_counts}; q={ftext(q_left)}; next-boundary "
+    f"{synthetic_predictive_counts}; B1 H1-equal/H2-split={b1_horizon_split}; "
+    f"q={ftext(q_left)}; next-boundary "
     f"survival(1.375)={survival_left:.40E}",
 )
 
@@ -821,8 +850,49 @@ def mapped_row(row, mapping):
     return kind, mapping[y], None if target is None else mapping[target], rate
 
 
+def transport_name(name, mapping):
+    if name in mapping:
+        return mapping[name]
+    # Fresh Ulam children are transported functorially even though they are
+    # not present in the pre-event mapping table.
+    parents = sorted(mapping, key=len, reverse=True)
+    for parent in parents:
+        if name.startswith(parent + "/"):
+            return mapping[parent] + name[len(parent):]
+    raise KeyError(name)
+
+
+def transport_labeled_boundary(boundary, mapping):
+    carrier, rings, births, wire, rows = boundary
+    return carrier, rings, births, wire, tuple(sorted(
+        (transport_name(name, mapping), degree, neighbor_births)
+        for name, degree, neighbor_births in rows
+    ))
+
+
+def transport_role_label(label, mapping):
+    if label is None:
+        return None
+    parts = label.split(":")
+    if parts[0] in {"A-birth", "A-outgoing", "incoming"}:
+        parts[1] = transport_name(parts[1], mapping)
+    return ":".join(parts)
+
+
+def transport_labeled_rows(rows, mapping):
+    out = Counter()
+    for (label, after), rate in rows.items():
+        out[(
+            transport_role_label(label, mapping),
+            transport_labeled_boundary(after, mapping),
+        )] += rate
+    return out
+
+
 relabel_checks = 0
 relabel_ok = True
+role_output_checks = 0
+role_output_ok = True
 for state in enumerated_states:
     names = sorted(state["actors"])
     mapping = {
@@ -830,6 +900,16 @@ for state in enumerated_states:
         for index, name in enumerate(names)
     }
     renamed_before = renamed_state(state, mapping)
+    original_role_rows = global_labeled_rows(state, actor="A")
+    renamed_role_rows = global_labeled_rows(renamed_before, actor=mapping["A"])
+    transported_role_rows = transport_labeled_rows(original_role_rows, mapping)
+    closed_renamed_rows = labeled_formula_rows(
+        labeled_star_boundary(renamed_before, actor=mapping["A"]),
+        root=mapping["A"],
+    )
+    role_output_checks += 1
+    role_output_ok &= transported_role_rows == renamed_role_rows
+    role_output_ok &= closed_renamed_rows == renamed_role_rows
     for row in d34b_rates(state):
         kind, y, target, rate = row
         after = d34b_step(state, kind, y, target)
@@ -877,14 +957,20 @@ for state in enumerated_states:
             b3_carrier(right_then_left)
         )
 
-e6_ok = relabel_ok and swap_ok and relabel_checks > 30000 and swap_checks > 100000
+e6_ok = (
+    relabel_ok and role_output_ok and swap_ok
+    and relabel_checks > 30000 and role_output_checks == len(enumerated_states)
+    and swap_checks > 100000
+)
 check(
     "E6 TWO COVARIANCE GATES [exact finite regression + disjoint-support "
     "lemma]: nominal actor/Ulam relabeling extends to fresh children and "
-    "transports role outputs; disjoint record-DAG updates commute up to that "
+    "transports counter-bearing role outputs and fresh children; disjoint "
+    "record-DAG updates commute up to that "
     "gauge at the same elapsed-time stop",
     e6_ok,
-    f"relabel rows={relabel_checks}; disjoint swaps={swap_checks}",
+    f"relabel rows={relabel_checks}; role-output states={role_output_checks}; "
+    f"disjoint swaps={swap_checks}",
 )
 
 
@@ -907,9 +993,26 @@ def region_message(state, region):
                     len(state["neighbors"][neighbor]),
                     state["actors"][neighbor]["births"],
                 )
+    owned_events = {
+        event[0]: event for event in state["events"] if event[2] in region
+    }
+    event_refs = {
+        event[0]: event for event in state["events"]
+        if event[2] not in region and set(event[5]) & region
+    }
+    visible_ids = set(owned_events) | set(event_refs)
+    predecessor_refs = {
+        predecessor
+        for event in (*owned_events.values(), *event_refs.values())
+        for predecessor in event[4]
+        if predecessor not in visible_ids
+    }
+    tips = {actor: state["last"].get(actor) for actor in region}
     return {
         "region": region, "owned": owned, "refs": refs,
         "ports": ports, "edges": edges,
+        "owned_events": owned_events, "event_refs": event_refs,
+        "predecessor_refs": predecessor_refs, "tips": tips,
     }
 
 
@@ -920,10 +1023,67 @@ def message_key(message):
         tuple(sorted(message["refs"].items())),
         tuple(sorted(message["ports"].items(), key=repr)),
         tuple(sorted(message["edges"].items(), key=repr)),
+        tuple(sorted(message["owned_events"].items(), key=repr)),
+        tuple(sorted(message["event_refs"].items(), key=repr)),
+        tuple(sorted(message["predecessor_refs"])),
+        tuple(sorted(message["tips"].items())),
     )
 
 
+def validate_message(message):
+    region = set(message["region"])
+    if set(message["owned"]) != region or set(message["tips"]) != region:
+        raise ValueError("owned actor/tip set differs from region")
+    if set(message["refs"]) & region:
+        raise ValueError("owned actor also appears as external reference")
+    external_peers = set()
+    for edge, endpoints in message["edges"].items():
+        if edge != endpoints or len(edge) != 2 or not (set(edge) & region):
+            raise ValueError("malformed or phantom shared edge")
+        for owner in set(edge) & region:
+            peer = edge[0] if edge[1] == owner else edge[1]
+            port_key = (owner, edge)
+            expected_port = (owner, peer, edge)
+            if message["ports"].get(port_key) != expected_port:
+                raise ValueError("missing or malformed owned endpoint port")
+            if peer not in region:
+                external_peers.add(peer)
+    if set(message["refs"]) != external_peers:
+        raise ValueError("external actor rows do not match crossing ports")
+    for (owner, edge), (owner2, peer, edge2) in message["ports"].items():
+        if owner not in region or owner != owner2 or edge != edge2:
+            raise ValueError("phantom or multiply owned endpoint port")
+        if message["edges"].get(edge) != edge or set(edge) != {owner, peer}:
+            raise ValueError("port/edge endpoint mismatch")
+    if set(message["owned_events"]) & set(message["event_refs"]):
+        raise ValueError("event both owned and referenced")
+    visible_events = {
+        **message["event_refs"], **message["owned_events"],
+    }
+    for eid, event in message["owned_events"].items():
+        if eid != event[0] or event[2] not in region:
+            raise ValueError("event ownership is not its initiator")
+    for eid, event in message["event_refs"].items():
+        if eid != event[0] or event[2] in region or not (set(event[5]) & region):
+            raise ValueError("invalid crossing event reference")
+    expected_pred_refs = {
+        predecessor
+        for event in visible_events.values()
+        for predecessor in event[4]
+        if predecessor not in visible_events
+    }
+    if set(message["predecessor_refs"]) != expected_pred_refs:
+        raise ValueError("opaque predecessor reference set mismatch")
+    for actor, tip in message["tips"].items():
+        if tip is not None and (
+                tip not in visible_events or actor not in visible_events[tip][5]):
+            raise ValueError("owned wire tip lacks its visible event")
+    return True
+
+
 def compose_messages(left, right):
+    validate_message(left)
+    validate_message(right)
     if left["region"] & right["region"]:
         raise ValueError("composition receipt uses disjoint owned regions")
     region = left["region"] | right["region"]
@@ -957,13 +1117,47 @@ def compose_messages(left, right):
             raise ValueError("port/edge typing failure")
         if set(edge) != {owner, peer}:
             raise ValueError("port endpoints disagree with shared edge")
-    return {
+    owned_events = dict(left["owned_events"])
+    for eid, event in right["owned_events"].items():
+        if eid in owned_events:
+            raise ValueError("event has duplicate initiator ownership")
+        owned_events[eid] = event
+    event_refs = {}
+    for source in (left["event_refs"], right["event_refs"]):
+        for eid, event in source.items():
+            if eid in event_refs and event_refs[eid] != event:
+                raise ValueError("inconsistent crossing event content")
+            event_refs[eid] = event
+    for eid, event in owned_events.items():
+        if eid in event_refs:
+            if event_refs[eid] != event:
+                raise ValueError("owned/referenced event content mismatch")
+            del event_refs[eid]
+    tips = dict(left["tips"])
+    for actor, tip in right["tips"].items():
+        if actor in tips:
+            raise ValueError("wire tip has duplicate owner")
+        tips[actor] = tip
+    visible_events = {**event_refs, **owned_events}
+    predecessor_refs = {
+        predecessor
+        for event in visible_events.values()
+        for predecessor in event[4]
+        if predecessor not in visible_events
+    }
+    out = {
         "region": region,
         "owned": owned,
         "refs": refs,
         "ports": ports,
         "edges": edges,
+        "owned_events": owned_events,
+        "event_refs": event_refs,
+        "predecessor_refs": predecessor_refs,
+        "tips": tips,
     }
+    validate_message(out)
+    return out
 
 
 composition_checks = 0
@@ -994,32 +1188,60 @@ for state in enumerated_states:
             composition_checks += 1
             composition_ok &= message_key(composed) == message_key(direct)
 
-# Fail closed on inconsistent duplicate shared-edge metadata.
-corruption_rejected = False
+# Fail closed on malformed messages and inconsistent shared metadata.
+corruption_results = []
 corrupt_state = seed_state()
 left = region_message(corrupt_state, {"A"})
 right = region_message(corrupt_state, {"B"})
-bad_right = {
-    key: (dict(value) if isinstance(value, dict) else value)
-    for key, value in right.items()
-}
-bad_right["edges"] = dict(right["edges"])
 shared_edge = edge_key("A", "B")
-bad_right["edges"][shared_edge] = ("A", "CORRUPT")
-try:
-    compose_messages(left, bad_right)
-except ValueError:
-    corruption_rejected = True
+corruptions = []
+missing_port = copy.deepcopy(left)
+del missing_port["ports"][("A", shared_edge)]
+corruptions.append((missing_port, right))
+phantom = copy.deepcopy(left)
+phantom_edge = edge_key("A", "Z")
+phantom["edges"][phantom_edge] = phantom_edge
+phantom["ports"][("Z", phantom_edge)] = ("Z", "A", phantom_edge)
+corruptions.append((phantom, right))
+bad_reference = copy.deepcopy(left)
+bad_reference["refs"]["B"] = (99, 99)
+corruptions.append((bad_reference, right))
+bad_edge = copy.deepcopy(right)
+bad_edge["edges"][shared_edge] = ("A", "CORRUPT")
+corruptions.append((left, bad_edge))
 
+event_state = d34b_step(seed_state(), "i", "B", "A")
+event_left = region_message(event_state, {"A"})
+event_right = region_message(event_state, {"B"})
+event_id = event_state["events"][-1][0]
+bad_event = copy.deepcopy(event_right)
+row = list(bad_event["owned_events"][event_id])
+row[1] = "n"
+bad_event["owned_events"][event_id] = tuple(row)
+corruptions.append((event_left, bad_event))
+duplicate_event_owner = copy.deepcopy(event_left)
+duplicate_event_owner["owned_events"][event_id] = event_left["event_refs"][event_id]
+del duplicate_event_owner["event_refs"][event_id]
+corruptions.append((duplicate_event_owner, event_right))
+
+for bad_left, bad_right in corruptions:
+    rejected = False
+    try:
+        compose_messages(bad_left, bad_right)
+    except ValueError:
+        rejected = True
+    corruption_results.append(rejected)
+
+corruption_rejected = all(corruption_results) and len(corruption_results) == 6
 e7_ok = composition_ok and corruption_rejected and composition_checks > 150000
 check(
     "E7 TYPED COMPOSITION / OWNERSHIP [exact + set-union lemma]: actor rows "
-    "and endpoint ports have exactly one owner; shared edges and external rows "
-    "are validated; composition equals direct regional projection and corrupt "
-    "duplicate edge metadata is rejected",
+    "endpoint ports, persistent events and wire tips have exactly one owner; "
+    "shared graph/event references are validated; composition equals direct "
+    "regional projection and six malformed-message attacks are rejected",
     e7_ok,
-    f"registered region pairs={composition_checks}; corruption rejected="
-    f"{corruption_rejected}",
+    f"registered region pairs={composition_checks}; corruptions rejected="
+    f"{sum(corruption_results)}/{len(corruption_results)}",
 )
 
 
@@ -1046,9 +1268,12 @@ capacity_ledger = {
     "actor/reference count": "1+d_A; d_A external rows",
     "owned A-side endpoint ports": "d_A; unbounded support",
     "shared incident edges": "d_A; unbounded support",
+    "root carrier bit": "1 bit",
     "neighbor degree bits": "sum_x ceil(log2(degree(x)+1))",
+    "neighbor birth-ordinal bits": "sum_x ceil(log2(births(x)+1))",
     "A own/birth/wire counter bits": "sum ceil(log2(counter+1))",
-    "nominal identifiers/handles": "d_A+1 names; encoding-dependent, unbounded",
+    "nominal identifier bits": "UTF-8 reference receipt; encoding-dependent",
+    "port/edge handle bits": "4*d_A*ceil(log2(d_A+1)) in reference table",
     "elapsed time": "one relative continuous coordinate; ideal precision uncalibrated",
     "renewal ages": "absent only for chosen exponential law",
     "bounded alternative/minimality": "OPEN; only this B3 is proved unbounded",
@@ -1063,15 +1288,28 @@ probe_degree_bits = sum(
     max(1, degree.bit_length())
     for degree, _births in capacity_probe["neighbors"].values()
 )
+probe_neighbor_birth_bits = sum(
+    max(1, births.bit_length())
+    for _degree, births in capacity_probe["neighbors"].values()
+)
 probe_counter_bits = sum(
     max(1, value.bit_length()) for value in capacity_probe["root_row"][1:]
 )
+probe_identifier_bits = sum(
+    8 * len(name.encode("utf-8"))
+    for name in (capacity_probe["root"], *capacity_probe["neighbors"])
+)
+probe_handle_width = max(1, probe_degree.bit_length())
+probe_port_edge_handle_bits = 4 * probe_degree * probe_handle_width
 capacity_formulas_ok = (
     len(capacity_probe["ports"]) == probe_degree
     and len(capacity_probe["edges"]) == probe_degree
     and len(capacity_probe["neighbors"]) == probe_degree
     and probe_degree_bits >= probe_degree
+    and probe_neighbor_birth_bits >= probe_degree
     and probe_counter_bits >= 3
+    and probe_identifier_bits > 0
+    and probe_port_edge_handle_bits >= 4 * probe_degree
 )
 
 # The analytic theorem is the row partition in note section 6: for arbitrary
@@ -1086,7 +1324,7 @@ analytic_partition_hypotheses = (
             for rate in boundary_formula_rows(boundary).values())
     and e5_ok and e6_ok and e7_ok
     and capacity_formulas_ok
-    and len(capacity_ledger) == 10
+    and len(capacity_ledger) == 13
 )
 e8_ok = (
     analytic_partition_hypotheses
@@ -1101,8 +1339,10 @@ check(
     "physical carrier and minimality remain open",
     e8_ok,
     f"Poisson(T=1,m=20)={poisson_probs[-1]:.32E}; capacity fields="
-    f"{len(capacity_ledger)}; probe d/degree-bits/counter-bits="
-    f"{probe_degree}/{probe_degree_bits}/{probe_counter_bits}",
+    f"{len(capacity_ledger)}; probe d/root-bit/degree-bits/neighbor-birth-bits/"
+    f"counter-bits/id-bits/port-edge-handle-bits={probe_degree}/1/"
+    f"{probe_degree_bits}/{probe_neighbor_birth_bits}/{probe_counter_bits}/"
+    f"{probe_identifier_bits}/{probe_port_edge_handle_bits}",
 )
 
 
@@ -1163,42 +1403,39 @@ def event_ancestry(state, final_eid):
     return tuple(sorted((event_map[eid] for eid in seen), key=repr))
 
 
-def structural_inward_endpoint(state, path):
-    """Follow the selected child->parent interaction predecessor chain."""
-    event_map = {event[0]: event for event in state["events"]}
-    current = event_map[state["last"][path[0]]]
-    for index in range(1, len(path)):
-        child, parent = path[index], path[index - 1]
-        if not (current[1] == "i" and current[2] == child
-                and current[3] == parent):
-            return None
-        predecessor_events = [event_map[eid] for eid in current[4]]
-        if index < len(path) - 1:
-            next_child = path[index + 1]
-            matches = [
-                event for event in predecessor_events
-                if event[1] == "i" and event[2] == next_child
-                and event[3] == child
-            ]
-        else:
-            # The pre-existing tip of the remote endpoint is the unique
-            # predecessor initiated by that endpoint and not its birth event.
-            matches = [
-                event for event in predecessor_events
-                if event[2] == child and event[1] in {"n", "i"}
-            ]
-        if len(matches) != 1:
-            return None
-        current = matches[0]
-    return current
+def branch_f_event(state, path, pre_stop_ordinal):
+    """Inspect one endpoint event fixed at the conditioning stop.
 
-
-def branch_f_event(state, path):
-    endpoint = structural_inward_endpoint(state, path)
-    if endpoint is None:
-        return False
+    The selector is the structural remote role path[-1] plus its wire ordinal;
+    it never follows the remote actor's later moving tip.
+    """
     ancestry = event_ancestry(state, state["last"][path[0]])
-    return endpoint in ancestry and endpoint[1] == "n"
+    event_map = {event[0]: event for event in ancestry}
+    selected_id = f"{path[-1]}#r{pre_stop_ordinal}"
+    selected = event_map.get(selected_id)
+    inward_chain_present = all(
+        any(
+            event[1] == "i" and event[2] == path[index]
+            and event[3] == path[index - 1]
+            for event in ancestry
+        )
+        for index in range(1, len(path))
+    )
+    return (
+        inward_chain_present and selected is not None
+        and selected[2] == path[-1] and selected[1] == "n"
+    )
+
+
+def propagate_inward(state, path):
+    out = state
+    mass = F(1)
+    for index in range(len(path) - 1, 0, -1):
+        child = path[index]
+        parent = path[index - 1]
+        mass *= event_rate(out, "i", child, parent) / len(active_actors(out))
+        out = d34b_step(out, "i", child, parent)
+    return out, mass
 
 
 def grow_chain_branch(radius):
@@ -1224,6 +1461,9 @@ def grow_chain_branch(radius):
     interact_mass = history_mass * p_interact
     idle_branch_eid = idle_branch["last"][distant]
     interact_branch_eid = interact_branch["last"][distant]
+    pre_stop_ordinal = idle_branch["actors"][distant]["ring"]
+    if pre_stop_ordinal != interact_branch["actors"][distant]["ring"]:
+        raise AssertionError("paired endpoint ordinals differ")
 
     idle_carrier = complete_radius_carrier(idle_branch, "A", radius)
     interact_carrier = complete_radius_carrier(interact_branch, "A", radius)
@@ -1236,23 +1476,10 @@ def grow_chain_branch(radius):
             interact_branch, "A", radius):
         raise AssertionError("branch leaked inside registered radius")
 
-    future_mass = F(1)
-    idle_future = idle_branch
-    interact_future = interact_branch
-    for index in range(len(path) - 1, 0, -1):
-        child = path[index]
-        parent = path[index - 1]
-        p_step = event_rate(idle_future, "i", child, parent) / len(
-            active_actors(idle_future)
-        )
-        p_step_other = event_rate(interact_future, "i", child, parent) / len(
-            active_actors(interact_future)
-        )
-        if p_step != p_step_other:
-            raise AssertionError("paired propagation masses differ")
-        future_mass *= p_step
-        idle_future = d34b_step(idle_future, "i", child, parent)
-        interact_future = d34b_step(interact_future, "i", child, parent)
+    idle_future, future_mass = propagate_inward(idle_branch, path)
+    interact_future, other_future_mass = propagate_inward(interact_branch, path)
+    if future_mass != other_future_mass:
+        raise AssertionError("paired propagation masses differ")
 
     final_idle = idle_future["last"]["A"]
     final_interact = interact_future["last"]["A"]
@@ -1274,8 +1501,43 @@ def grow_chain_branch(radius):
     )
     timed_lower = dfrac(expected_mass) * erlang_cdf
 
-    query_idle = branch_f_event(idle_future, path)
-    query_interact = branch_f_event(interact_future, path)
+    query_idle = branch_f_event(idle_future, path, pre_stop_ordinal)
+    query_interact = branch_f_event(interact_future, path, pre_stop_ordinal)
+
+    # Hostile moving-tip battery.  Later endpoint/unrelated events may alter
+    # the immediate tip but cannot change the selected pre-stop ordinal.
+    interloper_sequences = (
+        (("n", distant, None),),
+        (("i", distant, leaf),),
+        (("n", "A", None),),
+        (("n", distant, None), ("i", distant, leaf),
+         ("n", distant, None), ("n", distant, None)),
+    )
+    interloper_results = []
+    selected_interact_record = next(
+        event for event in interact_branch["events"]
+        if event[0] == interact_branch_eid
+    )
+    selected_record_immutable = True
+    for sequence in interloper_sequences:
+        idle_interposed = idle_branch
+        interact_interposed = interact_branch
+        for kind, initiator, target in sequence:
+            idle_interposed = d34b_step(idle_interposed, kind, initiator, target)
+            interact_interposed = d34b_step(
+                interact_interposed, kind, initiator, target
+            )
+        idle_interposed, _ = propagate_inward(idle_interposed, path)
+        interact_interposed, _ = propagate_inward(interact_interposed, path)
+        interloper_results.append((
+            branch_f_event(idle_interposed, path, pre_stop_ordinal),
+            branch_f_event(interact_interposed, path, pre_stop_ordinal),
+        ))
+        current_selected = next(
+            event for event in interact_interposed["events"]
+            if event[0] == interact_branch_eid
+        )
+        selected_record_immutable &= current_selected == selected_interact_record
 
     # Gauge regression: transport the final graph and structural path together.
     mapping = {
@@ -1283,7 +1545,8 @@ def grow_chain_branch(radius):
         for index, actor in enumerate(sorted(idle_future["actors"]))
     }
     query_gauge = branch_f_event(
-        renamed_state(idle_future, mapping), [mapping[a] for a in path]
+        renamed_state(idle_future, mapping), [mapping[a] for a in path],
+        pre_stop_ordinal,
     ) == query_idle
 
     return {
@@ -1298,7 +1561,16 @@ def grow_chain_branch(radius):
         "interact_kind": record_interact[1],
         "query_idle": query_idle,
         "query_interact": query_interact,
-        "immutable_zero": record_interact[1] == "i",
+        "selector_same": (
+            idle_branch_eid == interact_branch_eid
+            == f"{distant}#r{pre_stop_ordinal}"
+        ),
+        "immutable_zero": (
+            record_interact[1] == "i" and selected_record_immutable
+            and all(idle_value and not interact_value
+                    for idle_value, interact_value in interloper_results)
+        ),
+        "interloper_checks": len(interloper_results),
         "query_gauge": query_gauge,
         "ancestry_distinct": ancestry_idle != ancestry_interact,
     }
@@ -1315,7 +1587,9 @@ e9_ok = all(
     and row["interact_kind"] == "i"
     and row["query_idle"]
     and not row["query_interact"]
+    and row["selector_same"]
     and row["immutable_zero"]
+    and row["interloper_checks"] == 4
     and row["query_gauge"]
     and row["ancestry_distinct"]
     for row in radius_witnesses
@@ -1323,8 +1597,9 @@ e9_ok = all(
 check(
     "E9 BRANCH F COMPLETE-RADIUS NO-GO [Fraction-exact specimens + all-r "
     "analytic chain]: complete C_r carriers agree; one common structural, "
-    "gauge-invariant future ancestry event E_r has idle-branch probability at "
-    "least p_r>0 and interaction-branch probability zero by immutability",
+    "gauge-invariant future event pins the pre-stop remote wire ordinal; its "
+    "idle-branch probability is at least p_r>0 and its interaction-branch "
+    "probability remains zero through moving-tip interlopers by immutability",
     e9_ok,
     "embedded lower bounds=" + ",".join(
         f"r{row['radius']}:{ftext(row['embedded_lower'])}"
@@ -1598,6 +1873,9 @@ OUTCOMES = (
     "CANDIDATE-CLASS OBSTRUCTION",
     "FINITE-DOMAIN ONLY",
 )
+CAPACITY_BOUNDED = "BOUNDED_PROVED"
+CAPACITY_UNBOUNDED = "UNBOUNDED_PROVED"
+CAPACITY_UNKNOWN = "UNKNOWN"
 
 
 def decide_branch(branch):
@@ -1605,13 +1883,16 @@ def decide_branch(branch):
     core = all(branch[key] for key in (
         "screening", "closure", "covariance", "composition"
     ))
+    capacity_missing_for_pass = (
+        core and branch["capacity_status"] == CAPACITY_UNKNOWN
+    )
+    # Each row predicate is independent.  Selection, not predicate mutation,
+    # implements Paper 21's first-applicable priority.
     raw = (
-        not branch["required_inputs"],
-        core and branch["bounded"]
-        and not branch["whole_necessary"] and not branch["global_necessary"],
-        core and not branch["bounded"]
-        and not branch["whole_necessary"] and not branch["global_necessary"],
-        branch["whole_necessary"] and not branch["global_necessary"],
+        not branch["required_inputs"] or capacity_missing_for_pass,
+        core and branch["capacity_status"] == CAPACITY_BOUNDED,
+        core and branch["capacity_status"] == CAPACITY_UNBOUNDED,
+        branch["whole_necessary"],
         branch["global_necessary"],
         branch["universal_exclusion"],
         branch["candidate_obstruction"],
@@ -1620,8 +1901,8 @@ def decide_branch(branch):
     selected_index = next((index for index, value in enumerate(raw) if value), None)
     if selected_index is None:
         raise AssertionError(f"no Paper-21 outcome for {branch['scope']}")
-    # The emitted outcome predicates are made mutually exclusive by priority;
-    # this also makes a skipped earlier row executable rather than narrative.
+    # The emitted row is one-hot even when several independent later
+    # predicates are true; collision tests below exercise that priority.
     one_hot = tuple(index == selected_index for index in range(len(OUTCOMES)))
     if sum(one_hot) != 1 or any(raw[index] for index in range(selected_index)):
         raise AssertionError("first-applicable outcome failure")
@@ -1636,7 +1917,7 @@ def branch(scope, **flags):
         "closure": False,
         "covariance": False,
         "composition": False,
-        "bounded": False,
+        "capacity_status": CAPACITY_UNKNOWN,
         "whole_necessary": False,
         "global_necessary": False,
         "universal_exclusion": False,
@@ -1652,12 +1933,12 @@ branches = {
     "C coarse A-wire / B3": branch(
         "(mu_D34b,A,Q_C,passive,S_elapsed/count,C_B3)",
         screening=e8_ok, closure=e5_ok, covariance=e6_ok,
-        composition=e7_ok, bounded=False,
+        composition=e7_ok, capacity_status=CAPACITY_UNBOUNDED,
     ),
     "L role-labeled A-wire / B3": branch(
         "(mu_D34b,A,Q_L,passive,S_elapsed/count,C_B3)",
         screening=e8_ok, closure=e5_ok, covariance=e6_ok,
-        composition=e7_ok, bounded=False,
+        composition=e7_ok, capacity_status=CAPACITY_UNBOUNDED,
     ),
     "F full ancestry / complete radius family": branch(
         "(mu_D34b,A,Q_F,passive,S_A-wire,{C_r:r finite})",
@@ -1666,7 +1947,8 @@ branches = {
     "F full ancestry / whole component": branch(
         "(mu_D34b,A,Q_F,passive,S_continuous/local,C_component)",
         screening=e10_ok, closure=e10_ok, covariance=e6_ok,
-        composition=component_carrier_gates["typed composition"], bounded=False,
+        composition=component_carrier_gates["typed composition"],
+        capacity_status=CAPACITY_UNBOUNDED,
     ),
     "v9 stem posterior factor": branch(
         "(mu_D34b,A,Q_C/L/F,passive,S_online,C_Xstem-posterior)",
@@ -1685,18 +1967,35 @@ branch_verdicts = {name: result[0] for name, result in branch_decisions.items()}
 decision_unit_cases = (
     (branch("row1", required_inputs=False), OUTCOMES[0]),
     (branch("row2", screening=True, closure=True, covariance=True,
-            composition=True, bounded=True), OUTCOMES[1]),
+            composition=True, capacity_status=CAPACITY_BOUNDED), OUTCOMES[1]),
     (branch("row3", screening=True, closure=True, covariance=True,
-            composition=True, bounded=False), OUTCOMES[2]),
+            composition=True, capacity_status=CAPACITY_UNBOUNDED), OUTCOMES[2]),
     (branch("row4", whole_necessary=True), OUTCOMES[3]),
     (branch("row5", global_necessary=True), OUTCOMES[4]),
     (branch("row6", universal_exclusion=True), OUTCOMES[5]),
     (branch("row7", candidate_obstruction=True), OUTCOMES[6]),
     (branch("row8", finite_domain=True), OUTCOMES[7]),
 )
+decision_collision_cases = (
+    (branch("row1-over-row8", required_inputs=False, finite_domain=True),
+     OUTCOMES[0]),
+    (branch("row2-over-row4", screening=True, closure=True, covariance=True,
+            composition=True, capacity_status=CAPACITY_BOUNDED,
+            whole_necessary=True), OUTCOMES[1]),
+    (branch("row3-over-row7", screening=True, closure=True, covariance=True,
+            composition=True, capacity_status=CAPACITY_UNBOUNDED,
+            candidate_obstruction=True), OUTCOMES[2]),
+    (branch("row4-over-row5", whole_necessary=True, global_necessary=True),
+     OUTCOMES[3]),
+    (branch("row6-over-row7", universal_exclusion=True,
+            candidate_obstruction=True), OUTCOMES[5]),
+    (branch("capacity-unknown-refuses", screening=True, closure=True,
+            covariance=True, composition=True,
+            capacity_status=CAPACITY_UNKNOWN), OUTCOMES[0]),
+)
 decision_machine_ok = all(
     decide_branch(specimen)[0] == expected
-    for specimen, expected in decision_unit_cases
+    for specimen, expected in (*decision_unit_cases, *decision_collision_cases)
 )
 
 expected_verdicts = {
@@ -1715,8 +2014,9 @@ e13_ok = (
 )
 check(
     "E13 EXECUTABLE FIRST-APPLICABLE SCORECARD: every branch carries its "
-    "(mu,A,Q,I,S,C), all eight Paper-21 rows are unit-tested in priority order, "
-    "and exactly one emitted outcome applies; B4 is sufficient/growing but not "
+    "(mu,A,Q,I,S,C), all eight Paper-21 rows and six predicate collisions are "
+    "tested in priority order, and bounded/unbounded/unknown capacity is typed; "
+    "B4 is sufficient/growing but not "
     "necessary, while complete finite-radius C_r is universally excluded",
     e13_ok,
     "; ".join(f"{name}={verdict}" for name, verdict in branch_verdicts.items()),
@@ -1727,10 +2027,13 @@ summary = (
     f"gates={PASS}/{PASS + FAIL}; levels={','.join(map(str, level_counts))}; "
     f"states={len(enumerated_states)}; collisions={lumpability_collisions}; "
     f"rate_gap={ftext(derivative_gap)}; "
-    f"predictive={','.join(map(str, synthetic_predictive_counts))}; "
+    f"strong_classes={','.join(map(str, registered_predictive_counts))}; "
+    f"synthetic={','.join(map(str, synthetic_predictive_counts))}; "
     f"b3_updates={physical_update_checks}; swaps={swap_checks}; "
-    f"composition={composition_checks}; "
+    f"composition={composition_checks}; corruptions={sum(corruption_results)}/"
+    f"{len(corruption_results)}; "
     f"radius_lower={','.join(ftext(row['embedded_lower']) for row in radius_witnesses)}; "
+    f"interlopers={sum(row['interloper_checks'] for row in radius_witnesses)}; "
     f"prefix_classes={len(push3)},{len(push4)}; quantum=REFUSAL"
 )
 digest = hashlib.sha256(summary.encode("utf-8")).hexdigest()

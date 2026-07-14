@@ -2,7 +2,9 @@
 
 **Status:** historical pin through section 14; provisional receipt rejected by
 hostile round 1; replacement protocol frozen in section 16; replacement
-receipt passes `13/13` in section 17 and awaits independent delta review.
+receipt passes `13/13` in section 17 but was rejected by round 2; the second
+repair protocol is section 18 and its `13/13` receipt awaits closing review in
+section 19.
 **Date:** 2026-07-13.
 
 **Parent:** Paper 21 section 10 at terminal commit `70e0b4d`.
@@ -814,3 +816,72 @@ No source claim is terminal until the repaired endpoint selector survives a
 fresh interloper attack, the counter-bearing/root-covariant output kernel is
 reproduced, and the full-history composition and capacity/verdict hardening
 receive independent hostile deltas.
+
+## 19. Second replacement receipt before closing review
+
+The second replacement passes `13/13`; salts `17` and `65537` byte-match the
+committed stdout.  Artifact hashes are:
+
+```text
+code SHA-256
+e66490560f7c38af746b6fea144a4356dfdb3630205eab9f46723ed8c830bff8
+
+stdout file SHA-256
+3d12f6191883ee3790c78498bae4bb1971144765341a354df587d33188f54498
+
+internal summary SHA-256
+a53fa0c18a5905f282cea4c283ec3061c049ad7378a00f624906c1d68091d701
+```
+
+The exact replacement ledger is:
+
+```text
+registered strong boundary-transition classes: 111,111,111;
+synthetic internal stress classes:              106,110,110;
+explicit B1 stress:                             H1 equal, H2 split;
+physical B3 updates:                            35,898;
+root/role output-conjugacy states:               2,927;
+disjoint construction swaps:                    120,276;
+full typed regional compositions:               159,734;
+malformed message attacks rejected:             6/6;
+moving-tip ancestry interlopers:                 16/16;
+finite unmarked classes at depth 3/4:            4/10.
+```
+
+The observable/internal distinction is now explicit.  Counter-bearing
+non-silent marks are part of the durable C/L output.  Neighbor births are
+internal `None` transitions in a strong CTMC bisimulation stress test.  The
+`111` counts are not called the canonical weak/timed predictive quotient; B3
+is a proved sufficient carrier and minimality remains open.
+
+The role-labeled generator now accepts the distinguished root as an argument.
+Nominal transport checks output marks, successor carriers and fresh children
+on every registered state, including `A -> R` and `A/1 -> R/1`.
+
+The Branch-F selector is now `(remote structural role, pre-stop wire ordinal)`.
+The event searches the future A ancestry for that exact immutable event and
+the inward chain.  Four interloper families per registered radius—later remote
+idle, later remote interaction, unrelated A event, and several later remote
+events—leave the idle branch true and the interaction branch false.  Thus the
+zero no longer follows the moving tip.
+
+Regional composition now owns persistent events by initiator, carries crossing
+event references, predecessor references and wire tips, and validates them
+alongside actors, ports and shared edges.  Six malformed-message attacks cover
+missing ports, phantom ownership, inconsistent external rows, corrupt shared
+edges, corrupt shared event contents and duplicate event ownership.
+
+The capacity receipt now includes root carrier, neighbor degree and birth-
+ordinal integers, counters, identifier bytes and port/edge handle costs.  Its
+representative values are
+
+```text
+d/root-bit/degree-bits/neighbor-birth-bits/counter-bits/id-bits/handle-bits
+= 5/1/5/5/9/112/60.
+```
+
+The verdict engine uses `BOUNDED_PROVED`, `UNBOUNDED_PROVED` and `UNKNOWN`.
+All eight outcome rows and six overlapping-predicate cases are exercised.  The
+scientific dispositions remain those pinned in section 18.6, but this section
+is not terminal until the three independent closing deltas reproduce and
+accept the exact output, endpoint and full-history gates.
