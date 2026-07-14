@@ -4,8 +4,8 @@
 
 ## Predictive states, observable non-Markovianity and construction clocks in SHARD
 
-**Status:** terminal-paper round-1 scientific core accepted; minor scope and
-provenance repairs applied, final delta audit pending. **Date:** 2026-07-13.
+**Status:** terminal accepted after three independent hostile streams and
+three clean deltas. **Date:** 2026-07-13.
 
 ## Abstract
 

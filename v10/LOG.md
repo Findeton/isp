@@ -2670,3 +2670,27 @@ insufficiency 1/4->1/8; law-scoped observable memory; construction-clock
 transformation table; fixed-process quantum causal-break memory; boundary-state
 Markovization; bounded collar/proper time/timed quantum law still open.
 Terminal paper audit required before final noun.
+
+## 2026-07-13 — paper 21 terminal accepted; predictive-boundary target sharpened (LEDGER #178)
+Three independent terminal hostile streams accept the scientific core. Round 1
+reported mathematics 0B/0M/0m/0n, locality/physics 0B/0M/4m/2n, and quantum/
+literature 0B/0M/2m/3n. All requested scope and provenance repairs were applied:
+the generator is now explicitly bounded-write but actor-star-read-local with
+possibly unbounded degree; record-graph locality is not promoted to Lorentz/
+light-cone locality; distributed state is not claimed to be literal hardware
+actors; the Barandes reading is restricted to the chosen D34b exemplar; the
+generic causal-break witness is not presented as a D34b-D34c embedding; and the
+D34c 14/14 terminal dependency is carried. All three round-2 deltas are
+DELTA-CLEAN 0B/0M/0m/0n with fresh salted reproduction.
+
+The external causal-boundary opening is accepted in its corrected form. A
+whole marked stem/past, an active collar, the law/query/instrument-relative
+predictive quotient, and the v9 profinite stem spectrum are distinct. The
+canonical minimal object is the predictive quotient; an active collar is only
+a candidate physical carrier, and no factorization through marked stem data or
+map to the profinite stem spectrum is yet proved. Final noun: D34d
+GLOBAL-MARKOV / ACTOR-STAR-LOCAL-GENERATOR / OBSERVABLE-MEMORY
+CHARACTERIZATION FOR THE CHOSEN D34b EXEMPLAR. The next exact investigation is
+whether that quotient has a record-carried boundary/process realization, and
+if so whether its width is bounded and projectively compatible across finite
+stems.
