@@ -3592,3 +3592,25 @@ The actor returns `PASS 12/12` with source/stdout identifiers
 `5655238...b5eff` and `e732169...8fd1b`; external replay returns `PASS 8/8`.
 Focused hostile closing review remains required before D36 terminal status or
 Paper 25.
+
+## 2026-07-14 — D36 round 4 exposes the global-ordinal leak (LEDGER #217)
+
+Round four reproduces every receipt.  Probability/capacity and focused
+locality close cleanly; ancestry closes all round-three findings but returns
+one fresh major.  The participant-local slot predicate still requires
+`tx_index == len(applications)`, although `tx_index` is the transaction's
+global simulator position.
+
+An exact three-attempt counterexample keeps one valid carrier/body prepare
+unchanged.  It rejects at participant A while global index one is absent and
+accepts after transaction one is serviced.  Thus inserting a causally
+unrelated transaction or reversing valid prepare delivery can change A's
+local law.  Global construction order has leaked back into physical
+admissibility.
+
+The repair must replace dense global-index arrays as physical participant
+state with sparse structural-attempt keys or participant-local causal slots.
+It must prove disjoint-insertion invariance and accept/respond to two valid
+local prepares in either delivery order without global padding.  The global
+array may survive only inside the reference-analysis projection.  Paper 25
+remains withheld.

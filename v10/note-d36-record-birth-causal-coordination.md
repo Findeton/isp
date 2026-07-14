@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-3 REPAIRS EXECUTED; FOCUSED HOSTILE CLOSING DELTA REQUIRED.
+**Status:** ROUND-4 HOSTILE DELTA OPEN; GLOBAL-ORDINAL SLOT LEAK MUST BE REMOVED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -1065,3 +1065,47 @@ The actor and replay receipts return `PASS 12/12` and `PASS 8/8`.
 Probability, arbitration, opportunity, failure recovery, infinite completion,
 quantum realization and spacetime consequences remain untouched and open.
 This is again a repair candidate, not permission to write Paper 25.
+
+## 24. Round-four hostile opening ledger
+
+All three lanes reproduce commit `da9942d`.  Probability/capacity and the
+focused locality lane close at `0B/0M/0m/0n`.  The ancestry lane closes every
+round-three finding but returns one fresh finite major:
+
+```text
+blockers 0; majors 1; minors 0; nits 0.
+```
+
+Participant-local registration is real at the audited second epoch.  The
+opening changes only transport mailboxes; the participant recomputes the
+carrier/body attempt, allocates and records its slots locally; side-authorized
+non-carrier labels reject; the 24/26-record ledgers remain valid; and the
+remote-predecessor limitation is honestly outside the theorem.
+
+The new defect is the allocation predicate
+
+```text
+envelope.tx_index == len(actor.applications).
+```
+
+`tx_index` is the position of the transaction in the global simulator tuple,
+not a participant-local causal key.  A valid carrier-derived transaction 2
+relevant to A rejects while A has one local slot, then the unchanged prepare
+accepts after transaction 1 is serviced.  Equivalently, inserting an unrelated
+transaction elsewhere can renumber A's next interaction and change A's local
+response despite no new causal evidence reaching A.  The counterexample uses
+only three attempts and lies inside the finite capacity pin.
+
+This is exactly the construction-order gauge returning as physics.  Padding
+all missing global indices would restore the forbidden regional state write;
+forcing every lower index through A would require a global census.  Neither is
+acceptable.  The physical participant state must instead be a sparse finite
+map keyed by structural attempt identity (or by a participant-local slot
+carried on A's own capability/wire).  The reference projection may retain
+global array positions solely as analysis coordinates.
+
+The next receipt must prove two gates before another review: inserting a
+disjoint transaction leaves A's acceptance and emitted response unchanged up
+to structural relabeling, and two valid locally relevant prepares delivered in
+either order both receive typed local responses without slot padding or a
+global lower-index prerequisite.  Paper 25 remains withheld.
