@@ -3824,3 +3824,20 @@ birth/arbitration family. It carries D26's BORN-sector visibility constraint,
 the recorded-click randomness discipline, D33 covariance, D34 anti-dilution
 and the D23/D31/D32 quantum preregistration. The exact-receipt candidate status
 leaves D37 hostile review and independent paper-level review open.
+
+## 2026-07-14 — D37 hostile round 1 freezes one receipt major (LEDGER #228)
+
+`reviews/d37-round1-regional-specification-hostile-review.md` audits frozen
+commit `6a4a217` and returns `0B/1M/3m/0n`. The exact receipt reproduces under
+two fresh hash seeds, and clean-room enumerations independently recover the
+K1 path-five counts `20:24 = 5:6` and the joint-mode denominator `93` with
+Q marginals `34/93,25/93,34/93` and selection `6/31`.
+
+The major is receipt strength: K3, K2 and the joint family compare complete
+disconnected product laws, while K1 checks only a selected-set marginal plus
+the product atom count. The implemented independent component-order law
+appears correct, but S8 does not gate full marked-law equality. The minors are
+Theorem 1's unused/redundant Markov premise, K2's unprinted radius-two demand
+collar and S4's failure to require a nonempty retained K1 witness. D37 and
+Paper 26 remain candidates; repair and a focused D37 closing delta precede the
+still-open independent paper review.
