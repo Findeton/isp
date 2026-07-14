@@ -2547,3 +2547,19 @@ incoming reception; independent-tip merge; actual disconnected actor pair;
 partition/census/incidence/all-m hardening. New maximum noun is FINITE TYPED-DAG
 ACTOR/QUANTUM SEWING WITH BOUNDED EVENT RECORDS. The complete timed D34b quantum
 measure and infinite incoming marginal remain explicitly open. Findings -> #170+.
+
+## 2026-07-13 — d34c bounded-event-record repair GREEN 14/14; delta required (LEDGER #170)
+Round-2 repairs are implemented with exact Q(sqrt2) arithmetic, output SHA256
+8349459e...270cd0 under two fresh salts. The old 3/10,10/108 tree is honestly
+conditioned on suppressed non-A events. Append-only actor mailboxes are removed:
+each event adds one immutable bounded factor from a six-symbol outcome alphabet;
+typed incidence carries at most two predecessor links. The exact arbitrary-input
+instrument uses C_(x,r,p), coherent K_(x,r)=sum_p C, fresh-record W_x and 16x16
+closure identities for idle, D24 birth, both interaction targets and degree-1/2
+scheduler rows. An incoming i(B,A) changes A without consuming A's ring; independent
+A/B tips merge with both predecessors and are serialization-gauge exactly. A real
+disconnected interaction x birth actor pair commutes on 64/64 bases and leaves the
+local diamond functional unchanged. Provisional noun: FINITE TYPED-DAG ACTOR/
+QUANTUM SEWING WITH BOUNDED EVENT RECORDS + conditional finite-down-set theorem.
+Timed operator-valued D34b measure/infinite incoming marginal remain open. Fresh
+three-stream hostile delta is mandatory; findings -> #171+.

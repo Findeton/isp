@@ -393,3 +393,41 @@ The repair does **not** pretend to perform the unbounded incoming-event marginal
 The exact receipt must instantiate this theorem on: the original consecutive-A tree; an incoming-reception cylinder; a two-tip merge diamond; and two disconnected actor components. This supplies finite typed-DAG compatibility, not the probability marginal over all timed D34b histories.
 
 **Maximum repaired noun:** `FINITE TYPED-DAG ACTOR/QUANTUM SEWING PASS WITH BOUNDED EVENT RECORDS`, plus the conditional finite-down-set induction theorem. **Still open:** the operator-valued timed/direct-integral lift of the complete D34b measure; the actual infinite incoming-reception marginal; intrinsic untimed/profinite restriction; graph-sector superposition; derived weights, operations, basis or NSE; sealing, joining, geometry and nature's law. A fresh three-stream delta is mandatory.
+
+## 17. d34c bounded-record repair (2026-07-13) — PROVISIONAL GREEN 14/14
+
+The §16 target is implemented in `code/d34c_nse_quantum_history_exact.py`. Two fresh hash salts reproduce byte-identical output SHA-256 `8349459eb2ff077578f8a9d08a761b12b98997430d9e1fd2134af83a49270cd0`. C1–C7 remain unchanged in substance; C8–C12 are the repaired actor architecture.
+
+### 17.1 Honest disposition of the old tree
+
+The `3/10` classical and `10/108` quantum trees are retained and renamed the **consecutive-A-initiated conditioned specimen**. They are complete only when non-A events are suppressed. Its exact classical shadows, changing-degree `1/8+1/8`, outgoing-target passive reception, interference and genuine `108->10` restriction survive. No line now calls it the timed D34b A-local marginal.
+
+### 17.2 Fresh bounded event records
+
+Append-only actor mailboxes are removed. Every event allocates one new event-record factor with a fixed six-element local evidence alphabet: birth, idle, or interaction with one of four durable `(s,o)` results. The unrecorded path `p` is absent and remains coherent. Initiator, target and at most two predecessor references belong to the bounded-degree typed incidence relation, not to an ever-growing evidence string inside an actor. Old event factors are immutable/support-excluded; the total web can grow by adding records while each record's local outcome rank stays bounded.
+
+The receipt compares the fresh-record and durable-physical-signature partitions in both directions. It requires exactly one record per event, local content in the six-element alphabet, predecessor indegree at most two, and every prefix record factor to persist unchanged in the final product.
+
+### 17.3 Correct all-state instrument
+
+The receipt now constructs the operator objects omitted in round 2. On a common four-actor input sector `A,B,C,D`, where `B,C` are possible existing targets and `D` is a distinct fresh child, interaction class operators are indexed by scheduler option `x`, durable result `r=(s,o)` and unrecorded path `p`. It forms
+
+`K_(x,r) = sum_p C_(x,r,p)`
+
+before squaring, then places different `r` values in orthogonal fresh event-record ranges. Exact `16x16` identities verify `W_x^dag W_x=I` for idle, D24 birth and interaction with either target. The degree-one and degree-two weighted scheduler closures are exactly identity for arbitrary inputs. The calculation also confirms that individual durable-result operators are not isometries—the round-2 typing correction is load-bearing.
+
+### 17.4 Reception, physical merge and actual actor gauge
+
+An explicit `i(B,A)` advances B's private ring while leaving A's at zero, changes A's carrier probability from `P(A=1)=0` to `1/2`, writes a fresh reception record, updates both wire tips to `B#r1`, and becomes the predecessor of A's next event.
+
+A separate merge specimen gives A and B independent idle tips and then performs `i(A,B)`. Its direct predecessor set is exactly `{A#r1,B#r1}`. Swapping the incomparable A/B idles changes only auxiliary serialization: the canonical typed DAG, actor state, event-record product and every quantum class branch agree exactly. Shared-wire order remains physical.
+
+### 17.5 Actual disconnected actor factor
+
+On disconnected components `A--B` and `P--Q`, A performs the actual diamond interaction with B while P performs the actual D24 birth into `P/1`. The operations commute on all 64 carrier basis vectors; all eight interaction class branches agree under both serializations; the canonical actor/event-record state agrees; and the remote birth leaves the complete local diamond functional exactly equal to `D_diamond`. The former abstract `I/X/Z` actor-level surrogate is no longer used for this gate.
+
+### 17.6 Provisional theorem and ceiling
+
+Given a finite typed wire-DAG and the declared hypotheses, class vectors with fresh event factors give a Gram functional and therefore strong positivity. Correctly typed exhaustive event instruments give `sum_x q_x W_x^dag W_x=I`; induction restricts every finite extension to its earlier down-set. Disjoint event maps commute by tensor support, while the merge specimen shows why shared-wire order is not gauge.
+
+**Provisional maximum noun:** `FINITE TYPED-DAG ACTOR/QUANTUM SEWING PASS WITH BOUNDED EVENT RECORDS`, plus the conditional finite-down-set theorem for the chosen operation family. This is still not the timed operator-valued D34b measure. In particular, it does not sum the unbounded positive-measure incoming histories before an A stopping time. The complete direct integral, infinite marginal, untimed/profinite restriction, graph-sector superposition, derived operation law, sealing and geometry remain open. Three hostile delta streams must now decide whether §17 is terminal.

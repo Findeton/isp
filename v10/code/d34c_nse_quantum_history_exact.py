@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""D34c exact receipt: A-local actor/quantum sewing for the D34b law.
+"""D34c exact receipt: finite typed-DAG actor/quantum sewing.
 
 Pin: note-d33-history-law-phase.md §11, commit f861328, before this file.
 
 This receipt does NOT derive the D34b weights or nature's quantum law.  It
-tests a compatibility construction on A's local-ring stopping algebra through
-depth two; incoming remote receptions are deliberately coarse-grained:
+tests a compatibility construction on finite typed D34b wire-DAGs.  The
+original consecutive-A depth-two skeleton is retained as one exact specimen;
+incoming receptions, a two-tip merge and a disconnected actor factor are
+separate explicit specimens.  No timed incoming-event marginal is claimed:
 
 * durable D34b click alternatives have event-local orthogonal flags;
 * unrecorded alternatives between clicks may retain interference;
@@ -344,7 +346,7 @@ def incidence_coarse(dmat, labels, keyfn):
     return groups, mm(mm(inc, dmat), transpose(inc)), inc
 
 
-print("[d34c — exact A-local actor/quantum sewing]")
+print("[d34c — exact finite typed-DAG actor/quantum sewing]")
 
 
 # C0: types and licensed questions.
@@ -671,12 +673,17 @@ check(
 # A-initiated local-ring stopping algebra through depth two—not timed X_T.
 
 
-def actor_seed():
+def actor_seed(pairs=(("A", "B"),)):
+    actors = sorted({a for pair in pairs for a in pair})
+    neighbors = {a: set() for a in actors}
+    for a, b in pairs:
+        neighbors[a].add(b)
+        neighbors[b].add(a)
     return {
-        "active": ("A", "B"),
-        "neighbors": {"A": {"B"}, "B": {"A"}},
-        "births": 0,
-        "rings": {"A": 0, "B": 0},
+        "active": tuple(actors),
+        "neighbors": neighbors,
+        "births": {a: 0 for a in actors},
+        "rings": {a: 0 for a in actors},
         "last": {},
         "events": (),
     }
@@ -686,46 +693,48 @@ def copy_actor_state(s):
     return {
         "active": tuple(s["active"]),
         "neighbors": {a: set(xs) for a, xs in s["neighbors"].items()},
-        "births": s["births"],
+        "births": dict(s["births"]),
         "rings": dict(s["rings"]),
         "last": dict(s["last"]),
         "events": tuple(s["events"]),
     }
 
 
-def actor_options(s):
-    ns = sorted(s["neighbors"]["A"])
-    child = f"A/{s['births'] + 1}"
+def actor_options(s, initiator):
+    ns = sorted(s["neighbors"][initiator])
+    child = f"{initiator}/{s['births'][initiator] + 1}"
     return ([('b', child, F(1, 4))]
             + [('i', x, F(1, 4 * len(ns))) for x in ns]
             + [('n', None, F(1, 2))])
 
 
-def actor_step(s, option):
+def actor_step(s, initiator, option):
     kind, target, weight = option
     z = copy_actor_state(s)
-    z["rings"]["A"] += 1
-    eid = f"A#r{z['rings']['A']}"
+    z["rings"][initiator] += 1
+    eid = f"{initiator}#r{z['rings'][initiator]}"
     if kind == "b":
-        z["births"] += 1
+        z["births"][initiator] += 1
         z["active"] = tuple(sorted(z["active"] + (target,)))
-        z["neighbors"].setdefault("A", set()).add(target)
-        z["neighbors"][target] = {"A"}
+        z["neighbors"].setdefault(initiator, set()).add(target)
+        z["neighbors"][target] = {initiator}
+        z["births"][target] = 0
         z["rings"][target] = 0
-    touched = ("A",) if kind == "n" else ("A", target)
+    touched = (initiator,) if kind == "n" else (initiator, target)
     preds = tuple(sorted({z["last"][a] for a in touched if a in z["last"]}))
-    event = (eid, kind, target, preds)
+    event = (eid, initiator, kind, target, preds)
     z["events"] += (event,)
     for a in touched:
         z["last"][a] = eid
     return z, weight
 
 
-depth1_paths = [actor_step(actor_seed(), o) for o in actor_options(actor_seed())]
+depth1_paths = [actor_step(actor_seed(), "A", o)
+                for o in actor_options(actor_seed(), "A")]
 depth2_paths = []
 for s1, m1 in depth1_paths:
-    for option in actor_options(s1):
-        s2, w2 = actor_step(s1, option)
+    for option in actor_options(s1, "A"):
+        s2, w2 = actor_step(s1, "A", option)
         depth2_paths.append((s2, m1 * w2))
 
 mass1 = {s["events"]: m for s, m in depth1_paths}
@@ -735,16 +744,13 @@ classical_restriction = all(
     for prefix, mass in mass1.items()
 )
 row_normalization = all(
-    sum((w for _, _, w in actor_options(s)), F(0)) == 1
+    sum((w for _, _, w in actor_options(s, "A")), F(0)) == 1
     for s, _ in depth1_paths
 )
-all_m_identity = all(
-    F(1, 4) + m * F(1, 4 * m) + F(1, 2) == 1
-    for m in range(1, 65)
-)
-after_birth = next(s for s, _ in depth1_paths if s["events"][0][1] == "b")
+all_m_identity = F(1, 4) + F(1, 4) + F(1, 2) == 1
+after_birth = next(s for s, _ in depth1_paths if s["events"][0][2] == "b")
 degree_two_weights = sorted(
-    w for k, _, w in actor_options(after_birth) if k == "i"
+    w for k, _, w in actor_options(after_birth, "A") if k == "i"
 ) == [F(1, 8), F(1, 8)]
 
 
@@ -829,16 +835,16 @@ def sqrt_fraction_q2(x):
     raise ValueError(f"sqrt outside Q(sqrt2): {x}")
 
 
-def interaction_branches(v, ring, target):
-    pathq, outq = PATH_Q[ring], OUT_Q[ring]
-    v = acnot(v, ACTOR_Q["A"], ACTOR_Q[target])
+def interaction_branches(v, interaction_index, initiator, target):
+    pathq, outq = PATH_Q[interaction_index], OUT_Q[interaction_index]
+    v = acnot(v, ACTOR_Q[initiator], ACTOR_Q[target])
     rows = []
     for sval in (0, 1):
         vs = aproject(v, ACTOR_Q[target], sval)
         vs = az(vs, pathq)
         for pval in (0, 1):
             vp = aproject(vs, pathq, pval)
-            vp = acz(vp, ACTOR_Q["A"], pathq)
+            vp = acz(vp, ACTOR_Q[initiator], pathq)
             vp = ah(vp, pathq)
             vp = acnot(vp, pathq, outq)
             for oval in (0, 1):
@@ -846,63 +852,85 @@ def interaction_branches(v, ring, target):
     return rows
 
 
-def mailbox_key(mailboxes):
-    return tuple(sorted((a, tuple(box)) for a, box in mailboxes.items()))
+def canonical_graph(events):
+    """Typed DAG key with auxiliary serialization erased."""
+    return tuple(sorted(events, key=lambda event: event[0]))
 
 
-def factorized_flag_inner(left, right):
-    """Inner product on tensor_a H_mailbox(a), never a global flag atom."""
-    for actor in set(left) | set(right):
-        if tuple(left.get(actor, ())) != tuple(right.get(actor, ())):
+def event_record_key(records):
+    return tuple(sorted(records.items()))
+
+
+def physical_record_key(events, records):
+    return canonical_graph(events), event_record_key(records)
+
+
+def factorized_record_inner(left_events, left_records,
+                            right_events, right_records):
+    """Product inner product over fresh event-record factors.
+
+    Event incidence is a classical typed graph sector.  Each event node carries
+    one bounded local outcome factor; no actor owns an append-only mailbox.
+    """
+    if canonical_graph(left_events) != canonical_graph(right_events):
+        return ZERO
+    for eid in set(left_records) | set(right_records):
+        if left_records.get(eid) != right_records.get(eid):
             return ZERO
     return ONE
 
 
-def write_event_flag(mailboxes, event, internal):
-    eid, kind, target, preds = event
-    out = {a: list(box) for a, box in mailboxes.items()}
-    if kind == "b":
-        out.setdefault(target, [])
-        token = (eid, kind, target, preds, None, None)
-        touched = ("A", target)
-    elif kind == "i":
-        sval, _, oval = internal
-        token = (eid, kind, target, preds, sval, oval)
-        touched = ("A", target)
-    else:
-        token = (eid, kind, None, preds, None, None)
-        touched = ("A",)
-    for a in touched:
-        out.setdefault(a, []).append(token)
+def write_event_record(records, event, internal):
+    """Allocate one fresh bounded record factor for one typed graph node."""
+    eid, _, kind, _, _ = event
+    out = dict(records)
+    if eid in out:
+        raise ValueError("event record slot reused")
+    durable = None if kind != "i" else (internal[0], internal[2])
+    # Initiator, target and at most two predecessor links live in the typed
+    # incidence relation.  Local quantum evidence is the bounded alphabet
+    # {birth, idle, interaction x (s,o)}; p is deliberately absent.
+    out[eid] = (kind, durable)
     return out
 
 
-def quantum_branches(events, mass):
+def quantum_branches(events, mass, initial=None):
+    initial = actor_initial if initial is None else initial
     rows = [{
-        "v": list(actor_initial),
-        "mailboxes": {"A": [], "B": []},
+        "v": list(initial),
+        "records": {},
         "internals": (),
-        "flag_prefixes": (),
+        "record_prefixes": (),
     }]
-    for ring, event in enumerate(events, 1):
-        kind, target = event[1], event[2]
+    interaction_index = 0
+    for event in events:
+        _, initiator, kind, target, _ = event
+        if initiator not in ACTOR_Q or (target is not None
+                                        and target not in ACTOR_Q):
+            raise ValueError("finite carrier does not contain typed actor")
+        if kind == "i":
+            interaction_index += 1
         nxt = []
         for row in rows:
             if kind == "b":
-                variants = [(None, acry(row["v"], ACTOR_Q["A"],
+                variants = [(None, acry(row["v"], ACTOR_Q[initiator],
                                          ACTOR_Q[target]))]
             elif kind == "i":
-                variants = interaction_branches(row["v"], ring, target)
+                variants = interaction_branches(
+                    row["v"], interaction_index, initiator, target
+                )
             else:
                 variants = [(None, list(row["v"]))]
             for internal, vnew in variants:
-                boxes = write_event_flag(row["mailboxes"], event, internal)
-                fkey = mailbox_key(boxes)
+                records = write_event_record(row["records"], event, internal)
+                rkey = physical_record_key(
+                    tuple(events[:len(row["internals"]) + 1]), records
+                )
                 nxt.append({
                     "v": vnew,
-                    "mailboxes": boxes,
+                    "records": records,
                     "internals": row["internals"] + (internal,),
-                    "flag_prefixes": row["flag_prefixes"] + (fkey,),
+                    "record_prefixes": row["record_prefixes"] + (rkey,),
                 })
         rows = nxt
     scale = sqrt_fraction_q2(mass)
@@ -925,8 +953,9 @@ def actor_functional(branches):
     out = zeros(len(branches), len(branches))
     for i in range(len(branches)):
         for j in range(len(branches)):
-            flag_ip = factorized_flag_inner(
-                branches[i]["mailboxes"], branches[j]["mailboxes"]
+            flag_ip = factorized_record_inner(
+                branches[i]["events"], branches[i]["records"],
+                branches[j]["events"], branches[j]["records"],
             )
             if flag_ip:
                 out[i][j] = inner(branches[i]["v"], branches[j]["v"])
@@ -954,7 +983,8 @@ shadow_ok &= shadow2 == {k: Q2(v) for k, v in mass2.items()}
 
 
 def prefix_label(row, n):
-    return (row["events"][:n], row["flag_prefixes"][n - 1],
+    return (canonical_graph(row["events"][:n]),
+            row["record_prefixes"][n - 1],
             row["internals"][:n])
 
 
@@ -972,41 +1002,49 @@ def durable_internal(x):
     return None if x is None else (x[0], x[2])
 
 
-flag_factor_ok = True
-flag_groups = defaultdict(list)
-for row in qbranches2:
-    flag_groups[mailbox_key(row["mailboxes"])].append(row)
-for rows in flag_groups.values():
-    signatures = {
-        (r["events"], tuple(durable_internal(x) for x in r["internals"]))
-        for r in rows
-    }
-    flag_factor_ok &= len(signatures) == 1
+def durable_signature(row):
+    return (canonical_graph(row["events"]),
+            tuple(durable_internal(x) for x in row["internals"]))
 
-# Mailbox semantics: shared tokens on birth/interaction, idle on A only;
-# passive targets never advance an actor-local ring.
-mailbox_semantics = True
+
+# Equality of the fresh-record partition and the durable physical-signature
+# partition is checked in both directions, with p deliberately omitted.
+record_partition_ok = True
+for left in qbranches2:
+    for right in qbranches2:
+        same_records = physical_record_key(
+            left["events"], left["records"]
+        ) == physical_record_key(right["events"], right["records"])
+        record_partition_ok &= same_records == (
+            durable_signature(left) == durable_signature(right)
+        )
+
+# Each event allocates one bounded local evidence factor and never mutates an
+# earlier factor.  Typed incidence contains at most two predecessor links.
+fresh_record_capacity = True
+allowed_contents = {
+    ("b", None), ("n", None),
+    *(("i", (s, o)) for s, o in product((0, 1), repeat=2)),
+}
 for row in qbranches2:
-    boxes = row["mailboxes"]
-    for event, internal in zip(row["events"], row["internals"]):
-        eid, kind, target, preds = event
-        if kind == "i":
-            token = (eid, kind, target, preds, internal[0], internal[2])
-            mailbox_semantics &= token in boxes["A"] and token in boxes[target]
-        elif kind == "b":
-            token = (eid, kind, target, preds, None, None)
-            mailbox_semantics &= token in boxes["A"] and token in boxes[target]
-        else:
-            token = (eid, kind, None, preds, None, None)
-            mailbox_semantics &= token in boxes["A"]
-            mailbox_semantics &= all(token not in box for a, box in boxes.items()
-                                     if a != "A")
+    fresh_record_capacity &= len(row["records"]) == len(row["events"])
+    fresh_record_capacity &= set(row["records"].values()) <= allowed_contents
+    fresh_record_capacity &= all(len(event[4]) <= 2 for event in row["events"])
+    final_items = set(event_record_key(row["records"]))
+    for _, prefix_items in row["record_prefixes"]:
+        fresh_record_capacity &= set(prefix_items) <= final_items
+
+# Outgoing targets are passive: only A's private initiated ring advances in
+# this conditioned skeleton, while the shared event belongs to both wires via
+# typed incidence.
+outgoing_target_passive = True
 for state, _ in depth2_paths:
-    mailbox_semantics &= all(r == 0 for a, r in state["rings"].items()
-                             if a != "A")
+    outgoing_target_passive &= all(
+        r == 0 for a, r in state["rings"].items() if a != "A"
+    )
 
 # The actual first interaction block carries the diamond interference on A,B.
-first_i_key = next(k for k in mass1 if k[0][1] == "i")
+first_i_key = next(k for k in mass1 if k[0][2] == "i")
 ids_i = [i for i, row in enumerate(qbranches1) if row["events"] == first_i_key]
 coherent_i = {}
 diagonal_i = {}
@@ -1027,8 +1065,8 @@ interaction_signature &= all(v == Q2(F(1, 16)) for v in diagonal_i.values())
 # Birth and idle are genuinely different actor operations and have no
 # spectator diamond alternatives.  For the initial |+> parent, D24 g=9/25
 # gives P(child=1)=9/50; the branch carries classical mass 1/4.
-birth_key = next(k for k in mass1 if k[0][1] == "b")
-idle_key = next(k for k in mass1 if k[0][1] == "n")
+birth_key = next(k for k in mass1 if k[0][2] == "b")
+idle_key = next(k for k in mass1 if k[0][2] == "n")
 birth_rows = [r for r in qbranches1 if r["events"] == birth_key]
 idle_rows = [r for r in qbranches1 if r["events"] == idle_key]
 child_q = ACTOR_Q["A/1"]
@@ -1041,78 +1079,412 @@ event_ops_tied &= idle_rows[0]["v"] == [ROOT_HALF * x for x in actor_initial]
 c45, s35 = Q2(F(4, 5)), Q2(F(3, 5))
 event_ops_tied &= c45 * c45 + s35 * s35 == ONE
 
-# Quantum remote factorization and construction-order gauge, carried on the
-# abstract flagged channel because the tensor identity is dimension-free.
-def product_flagged_channel(rhoa, rhob):
-    rhoab = kron_matrix(rhoa, rhob)
-    out = zeros(36, 36)
-    for wa, va in zip(weights, w_kinds):
-        for wb, vb in zip(weights, w_kinds):
-            vv = kron_matrix(va, vb)
-            out = madd(out, mscale(wa * wb,
-                                   mm(mm(vv, rhoab), transpose(vv))))
+# Generic exact qubit operations used for the arbitrary-input instrument and
+# the actual disconnected-actor specimens below.
+def gmask(nq, q):
+    return 1 << (nq - 1 - q)
+
+
+def gbit(i, nq, q):
+    return 1 if i & gmask(nq, q) else 0
+
+
+def gh(v, nq, q):
+    out = [ZERO] * len(v)
+    m = gmask(nq, q)
+    for i in range(len(v)):
+        if not i & m:
+            j = i | m
+            out[i] = ROOT_HALF * (v[i] + v[j])
+            out[j] = ROOT_HALF * (v[i] - v[j])
     return out
 
 
-def partial_trace_second(a, da, db):
-    return [[sum((a[i * db + k][j * db + k] for k in range(db)), ZERO)
-             for j in range(da)] for i in range(da)]
+def gz(v, nq, q):
+    return [(-x if gbit(i, nq, q) else x) for i, x in enumerate(v)]
 
 
-remote_joint = product_flagged_channel(rhop, rho0)
-remote_product = kron_matrix(density_channel_flagged(rhop),
-                             density_channel_flagged(rho0))
-remote_quantum_ok = remote_joint == remote_product
-remote_quantum_ok &= partial_trace_second(remote_joint, 6, 6) \
-    == density_channel_flagged(rhop)
-disjoint_commute = True
-for ua in test_unitaries:
-    for ub in test_unitaries:
-        left = kron_matrix(ua, I2)
-        right = kron_matrix(I2, ub)
-        disjoint_commute &= mm(left, right) == mm(right, left)
+def gcnot(v, nq, control, target):
+    out = [ZERO] * len(v)
+    tm = gmask(nq, target)
+    for i, x in enumerate(v):
+        out[i ^ tm if gbit(i, nq, control) else i] = x
+    return out
 
-actor_norm = sum((sum(row, ZERO) for row in d_actor2), ZERO) == ONE
-actor_counts = (len(mass1), len(mass2), len(qbranches1), len(qbranches2))
-check(
-    "C8 ACTION-LEVEL A-LOCAL ACTOR/QUANTUM SEWING [exact]: complete "
-    "A-initiated ring cylinders (incoming remote receptions coarse-grained) "
-    "carry Ulam birth, changing degree/target, passive "
-    "reception and predecessors; idle I, D24 birth and actual A-target "
-    "diamond operations are composed into class branches. Tensor-factor "
-    "mailboxes preserve p-interference, recover every classical mass, and "
-    "the genuine second instrument restricts depth 2->1. Quantum remote "
-    "channels tensor-factor and disjoint events commute",
-    sum(mass1.values(), F(0)) == 1 and sum(mass2.values(), F(0)) == 1
-    and classical_restriction and row_normalization and all_m_identity
-    and degree_two_weights and actor_norm and shadow_ok and labels_unique
-    and quantum_restriction and flag_factor_ok and mailbox_semantics
-    and interaction_signature and event_ops_tied
-    and remote_quantum_ok and disjoint_commute,
-    f"classical/quantum depth counts={actor_counts}; degree2 i=1/8+1/8; "
-    "quantum 108->10; shadow/reception/flags/remote exact",
+
+def gcz(v, nq, q1, q2):
+    return [(-x if gbit(i, nq, q1) and gbit(i, nq, q2) else x)
+            for i, x in enumerate(v)]
+
+
+def gproject(v, nq, q, value):
+    return [x if gbit(i, nq, q) == value else ZERO
+            for i, x in enumerate(v)]
+
+
+def gcry(v, nq, control, target,
+         c=Q2(F(4, 5)), s=Q2(F(3, 5))):
+    out = [ZERO] * len(v)
+    tm = gmask(nq, target)
+    for i in range(len(v)):
+        if i & tm:
+            continue
+        j = i | tm
+        if gbit(i, nq, control):
+            out[i] = c * v[i] - s * v[j]
+            out[j] = s * v[i] + c * v[j]
+        else:
+            out[i], out[j] = v[i], v[j]
+    return out
+
+
+def from_columns(cols):
+    return transpose(cols)
+
+
+def operator_closure(ops):
+    width = len(ops[0][0])
+    out = zeros(width, width)
+    for op in ops:
+        out = madd(out, mm(transpose(op), op))
+    return out
+
+
+# Correct C_(x,r,p) -> K_(x,r) -> W_x typing on a universal local sector:
+# actor slots A,B,C,D are the common 16-dimensional input.  At degree two B,C
+# are existing targets and D is the next fresh child; birth acts on A,D while
+# interaction acts on A,B or A,C after adjoining fresh P,O.
+BASE_DIM = 16
+birth_operator = matrix_from_apply(
+    BASE_DIM, lambda v: gcry(v, 4, 0, 3)
+)
+idle_operator = eye(BASE_DIM)
+
+
+def embed_interaction_input(j):
+    # Preserve A,B,C,D; append P=|+>, O=|0>.
+    out = [ZERO] * 64
+    out[j << 2] = ROOT_HALF
+    out[(j << 2) | 2] = ROOT_HALF
+    return out
+
+
+def interaction_class_operator(target, sval, pval, oval):
+    cols = []
+    for j in range(BASE_DIM):
+        v = embed_interaction_input(j)
+        v = gcnot(v, 6, 0, target)
+        v = gproject(v, 6, target, sval)
+        v = gz(v, 6, 4)
+        v = gproject(v, 6, 4, pval)
+        v = gcz(v, 6, 0, 4)
+        v = gh(v, 6, 4)
+        v = gcnot(v, 6, 4, 5)
+        cols.append(gproject(v, 6, 5, oval))
+    return from_columns(cols)
+
+
+interaction_k = {}
+interaction_closure = {}
+for target in (1, 2):
+    ks = []
+    for sval, oval in product((0, 1), repeat=2):
+        c0 = interaction_class_operator(target, sval, 0, oval)
+        c1 = interaction_class_operator(target, sval, 1, oval)
+        kso = madd(c0, c1)  # p is summed coherently, before Gram squaring.
+        interaction_k[(target, sval, oval)] = kso
+        ks.append(kso)
+    interaction_closure[target] = operator_closure(ks)
+
+birth_closure = mm(transpose(birth_operator), birth_operator)
+idle_closure = mm(transpose(idle_operator), idle_operator)
+event_instruments_are_isometries = (
+    birth_closure == eye(BASE_DIM)
+    and idle_closure == eye(BASE_DIM)
+    and interaction_closure[1] == eye(BASE_DIM)
+    and interaction_closure[2] == eye(BASE_DIM)
+)
+durable_result_not_isometry = any(
+    mm(transpose(op), op) != eye(BASE_DIM)
+    for op in interaction_k.values()
+)
+scheduler_degree1 = madd(
+    madd(mscale(Q2(F(1, 4)), birth_closure),
+         mscale(Q2(F(1, 4)), interaction_closure[1])),
+    mscale(Q2(F(1, 2)), idle_closure),
+)
+scheduler_degree2 = madd(
+    madd(mscale(Q2(F(1, 4)), birth_closure),
+         mscale(Q2(F(1, 8)), interaction_closure[1])),
+    madd(mscale(Q2(F(1, 8)), interaction_closure[2]),
+         mscale(Q2(F(1, 2)), idle_closure)),
+)
+scheduler_operator_complete = (
+    scheduler_degree1 == eye(BASE_DIM)
+    and scheduler_degree2 == eye(BASE_DIM)
 )
 
 
-# C9: dependent scorecard.
-ok9 = FAIL == 0
+# Harden the original conditioned consecutive-A specimen.
+actor_norm = sum((sum(row, ZERO) for row in d_actor2), ZERO) == ONE
+actor_counts = (len(mass1), len(mass2), len(qbranches1), len(qbranches2))
+incidence_structure = actor_counts == (3, 10, 10, 108)
+incidence_structure &= all(
+    sum((inc21[i][j] for i in range(len(inc21))), ZERO) == ONE
+    for j in range(len(inc21[0]))
+)
+incidence_structure &= all(any(inc21[i][j] for j in range(len(inc21[0])))
+                           for i in range(len(inc21)))
 check(
-    "C9 CLAIM CEILING [dependent scorecard]: earned only A-LOCAL DEPTH-2 "
-    "ACTOR/QUANTUM SEWING plus the algebraic finite-local-prefix induction "
-    "for a chosen operation/flag family. Not earned: the full timed D34b "
-    "quantum law, graph-sector superposition, "
-    "derived weights or operations, a preferred basis, coherent "
-    "superposition across distinct durable growth histories, infinite "
-    "quantum-measure/profinite extension, dynamic joining, Lorentz cones, "
+    "C8 CONSECUTIVE-A-INITIATED DEPTH-2 ACTION-SEWING [exact, "
+    "conditioned specimen]: with non-A events suppressed, Ulam birth, "
+    "changing degree/target, outgoing-target passive reception and "
+    "predecessors are exact; idle, D24 birth and actual-target interaction "
+    "operations compose. Every classical shadow is recovered and the real "
+    "second instrument restricts 108->10",
+    sum(mass1.values(), F(0)) == 1 and sum(mass2.values(), F(0)) == 1
+    and classical_restriction and row_normalization and all_m_identity
+    and degree_two_weights and actor_norm and shadow_ok and labels_unique
+    and quantum_restriction and incidence_structure
+    and outgoing_target_passive and interaction_signature and event_ops_tied,
+    "conditioned/no incoming events; counts=(3,10,10,108); "
+    "degree2 i=1/8+1/8; 108->10 exact",
+)
+
+check(
+    "C9 BOUNDED EVENT RECORDS + ACTUAL-FAMILY NSE INSTRUMENT [exact]: each "
+    "event creates one fresh bounded outcome factor and bounded-degree typed "
+    "links; no actor mailbox grows. The durable signature and record "
+    "partitions coincide modulo p. Correctly typed K_(x,r)=sum_p C_(x,r,p) "
+    "gives W_x^dag W_x=I for idle, D24 birth and both interaction targets; "
+    "degree-1/2 scheduler closures are I for arbitrary inputs",
+    fresh_record_capacity and record_partition_ok
+    and event_instruments_are_isometries and durable_result_not_isometry
+    and scheduler_operator_complete and all_m_identity,
+    "one factor/event; local alphabet=6; indegree<=2; operator closures "
+    "16x16 exact; fresh degree-2 birth slot distinct from both targets; "
+    "m*(1/4m)=1/4 for every positive m",
+)
+
+
+def physical_actor_state_key(state):
+    return (
+        tuple(state["active"]),
+        tuple(sorted((a, tuple(sorted(xs)))
+                     for a, xs in state["neighbors"].items())),
+        tuple(sorted(state["births"].items())),
+        tuple(sorted(state["rings"].items())),
+        tuple(sorted(state["last"].items())),
+        canonical_graph(state["events"]),
+    )
+
+
+def branch_vector_map(rows):
+    return {
+        (physical_record_key(row["events"], row["records"]),
+         row["internals"]): row["v"]
+        for row in rows
+    }
+
+
+# Incoming reception: B rings, touches A, and changes A's carrier/record wire
+# without consuming A's private ring; A's next event inherits B#r1.
+incoming_state, _ = actor_step(
+    actor_seed(), "B", ("i", "A", F(1, 4))
+)
+incoming_then_a, _ = actor_step(
+    incoming_state, "A", ("n", None, F(1, 2))
+)
+incoming_initial = basis(ADIM, 0)
+incoming_initial = ah(incoming_initial, ACTOR_Q["B"])
+incoming_initial = ah(incoming_initial, PATH_Q[1])
+incoming_initial = ah(incoming_initial, PATH_Q[2])
+incoming_rows = quantum_branches(
+    incoming_then_a["events"], F(1), initial=incoming_initial
+)
+incoming_sum = [sum((row["v"][i] for row in incoming_rows), ZERO)
+                for i in range(ADIM)]
+incoming_a_one = sum(
+    (x * x for i, x in enumerate(incoming_sum)
+     if abit(i, ACTOR_Q["A"])), ZERO
+)
+incoming_ok = (
+    incoming_state["rings"]["A"] == 0
+    and incoming_state["rings"]["B"] == 1
+    and incoming_state["last"]["A"] == "B#r1"
+    and incoming_state["last"]["B"] == "B#r1"
+    and incoming_then_a["rings"]["A"] == 1
+    and incoming_then_a["events"][-1][4] == ("B#r1",)
+    and len(incoming_rows) == 8
+    and all(len(row["records"]) == 2 for row in incoming_rows)
+    and inner(incoming_sum, incoming_sum) == ONE
+    and incoming_a_one == HALF
+)
+
+# Two independent private tips merge into one shared interaction.  Swapping
+# the incomparable idles is gauge; the final interaction has both predecessors.
+merge_ab, _ = actor_step(actor_seed(), "A", ("n", None, F(1)))
+merge_ab, _ = actor_step(merge_ab, "B", ("n", None, F(1)))
+merge_ab, _ = actor_step(merge_ab, "A", ("i", "B", F(1)))
+merge_ba, _ = actor_step(actor_seed(), "B", ("n", None, F(1)))
+merge_ba, _ = actor_step(merge_ba, "A", ("n", None, F(1)))
+merge_ba, _ = actor_step(merge_ba, "A", ("i", "B", F(1)))
+merge_event = next(e for e in merge_ab["events"] if e[0] == "A#r2")
+merge_rows_ab = quantum_branches(merge_ab["events"], F(1))
+merge_rows_ba = quantum_branches(merge_ba["events"], F(1))
+merge_ok = (
+    merge_event[4] == ("A#r1", "B#r1")
+    and physical_actor_state_key(merge_ab) == physical_actor_state_key(merge_ba)
+    and branch_vector_map(merge_rows_ab) == branch_vector_map(merge_rows_ba)
+)
+check(
+    "C10 INCOMING RECEPTION + TWO-TIP MERGE / ACTOR GAUGE [exact]: an "
+    "incoming i(B,A) advances B but not A, changes A's carrier and becomes "
+    "A's next predecessor. Independent A#r1/B#r1 tips then merge at "
+    "i(A,B); both incomparable serializations give the identical typed DAG, "
+    "fresh records and quantum class branches",
+    incoming_ok and merge_ok,
+    "incoming A-ring 0->0, P(A=1) 0->1/2; merge preds={A#r1,B#r1}; "
+    "serialization erased exactly",
+)
+
+
+# Actual disconnected actors: A performs the diamond interaction on B while P
+# performs the D24 birth on P/1.  The two event maps use disjoint carriers.
+REMOTE_Q = 6
+REMOTE_DIM = 1 << REMOTE_Q
+
+
+def remote_interaction_full(v):
+    v = gcnot(v, REMOTE_Q, 0, 1)
+    v = gz(v, REMOTE_Q, 2)
+    v = gcz(v, REMOTE_Q, 0, 2)
+    v = gh(v, REMOTE_Q, 2)
+    return gcnot(v, REMOTE_Q, 2, 3)
+
+
+def remote_interaction_class(v, sval, pval, oval):
+    v = gcnot(v, REMOTE_Q, 0, 1)
+    v = gproject(v, REMOTE_Q, 1, sval)
+    v = gz(v, REMOTE_Q, 2)
+    v = gproject(v, REMOTE_Q, 2, pval)
+    v = gcz(v, REMOTE_Q, 0, 2)
+    v = gh(v, REMOTE_Q, 2)
+    v = gcnot(v, REMOTE_Q, 2, 3)
+    return gproject(v, REMOTE_Q, 3, oval)
+
+
+def remote_birth_full(v):
+    return gcry(v, REMOTE_Q, 4, 5)
+
+
+remote_operator_commutes = all(
+    remote_birth_full(remote_interaction_full(basis(REMOTE_DIM, j)))
+    == remote_interaction_full(remote_birth_full(basis(REMOTE_DIM, j)))
+    for j in range(REMOTE_DIM)
+)
+remote_initial = basis(REMOTE_DIM, 0)
+for q in (0, 2, 4):
+    remote_initial = gh(remote_initial, REMOTE_Q, q)
+remote_labels = list(product((0, 1), repeat=3))
+remote_order_ib = [
+    remote_birth_full(remote_interaction_class(remote_initial, *h))
+    for h in remote_labels
+]
+remote_order_bi = [
+    remote_interaction_class(remote_birth_full(remote_initial), *h)
+    for h in remote_labels
+]
+remote_d = zeros(8, 8)
+for i, left in enumerate(remote_labels):
+    for j, right in enumerate(remote_labels):
+        if left[0] == right[0] and left[2] == right[2]:
+            remote_d[i][j] = inner(remote_order_ib[i], remote_order_ib[j])
+
+remote_ab, _ = actor_step(
+    actor_seed((("A", "B"), ("P", "Q"))),
+    "A", ("i", "B", F(1)),
+)
+remote_ab, _ = actor_step(
+    remote_ab, "P", ("b", "P/1", F(1)),
+)
+remote_ba, _ = actor_step(
+    actor_seed((("A", "B"), ("P", "Q"))),
+    "P", ("b", "P/1", F(1)),
+)
+remote_ba, _ = actor_step(
+    remote_ba, "A", ("i", "B", F(1)),
+)
+
+
+def remote_record_key(events, internal):
+    records = {}
+    for event in events:
+        event_internal = internal if event[2] == "i" else None
+        records = write_event_record(records, event, event_internal)
+    return physical_record_key(events, records)
+
+
+remote_record_orders_equal = all(
+    remote_record_key(remote_ab["events"], h)
+    == remote_record_key(remote_ba["events"], h)
+    for h in remote_labels
+)
+remote_actor_ok = (
+    remote_operator_commutes
+    and remote_order_ib == remote_order_bi
+    and remote_d == d_ab
+    and physical_actor_state_key(remote_ab) == physical_actor_state_key(remote_ba)
+    and remote_record_orders_equal
+    and all(len(event[4]) == 0 for event in remote_ab["events"])
+)
+check(
+    "C11 ACTUAL DISCONNECTED ACTOR FACTOR / REMOTE MARGINAL [exact]: on "
+    "A--B disjoint from P--Q, the actual A-target diamond and P-to-P/1 D24 "
+    "birth commute on every carrier basis vector. Both serializations give "
+    "the same typed actor state and class branches; the remote unitary leaves "
+    "the complete local diamond functional unchanged",
+    remote_actor_ok,
+    "actual interaction x birth; 64/64 basis commutation; 8/8 branches; "
+    "joint local marginal=D_diamond",
+)
+
+finite_dag_theorem_hypotheses = (
+    fresh_record_capacity and record_partition_ok
+    and event_instruments_are_isometries and scheduler_operator_complete
+    and incoming_ok and merge_ok and remote_actor_ok
+)
+check(
+    "C12 FINITE TYPED-DAG / DOWN-SET THEOREM [algebraic proof + exact "
+    "specimens]: Gram positivity follows from class vectors with one fresh "
+    "bounded event factor per node. Exhaustive extension restricts because "
+    "sum_x q_x W_x^dag W_x=I; induction covers every finite down-set. "
+    "Record-disjoint incomparable maps commute, while shared-wire order and "
+    "two-tip merges are physical",
+    finite_dag_theorem_hypotheses,
+    "conditioned A tree + incoming reception + merge + disconnected actors; "
+    "full timed direct integral not consumed",
+)
+
+
+# C13: dependent scorecard.
+ok13 = FAIL == 0
+check(
+    "C13 CLAIM CEILING [dependent scorecard]: earned only FINITE TYPED-DAG "
+    "ACTOR/QUANTUM SEWING WITH BOUNDED EVENT RECORDS plus conditional finite-"
+    "down-set induction for the chosen operation family. Not earned: the "
+    "timed operator-valued D34b measure or infinite incoming marginal, "
+    "untimed/profinite restriction, graph-sector superposition, derived "
+    "weights/operations/basis/NSE, sealing, joining, Lorentz cones, "
     "dimension, or THE universe law",
-    ok9,
-    "C1-C8 green; C0/C9 scorecards; local-ring stopping only; "
-    "D34b weights remain chosen and NSE posited",
+    ok13,
+    "C1-C12 green; C0/C13 scorecards; D34b weights and operations chosen; "
+    "NSE remains a posited selector",
 )
 
 
 print()
-print(f"ALL CHECKS PASS ({PASS}/{PASS + FAIL}: C1-C8 substantive; C0/C9 dependent scorecards)"
+print(f"ALL CHECKS PASS ({PASS}/{PASS + FAIL}: C1-C12 substantive; C0/C13 dependent scorecards)"
       if FAIL == 0 else
       f"CHECKS FAILED ({PASS} pass, {FAIL} fail)")
 sys.exit(0 if FAIL == 0 else 1)
