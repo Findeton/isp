@@ -684,3 +684,133 @@ completion factor and are not advertised as total event probabilities.
 This section is still provisional.  It does not promote the result beyond the
 replacement protocol until all three independent delta streams inspect the
 new carrier schema, stopping theorem, ancestry event and decision priority.
+
+## 18. Hostile round 2 and second replacement protocol
+
+The first replacement is not terminal.  All three delta streams reproduced
+its bytes and preserved the physical B3 construction, but each found an exact
+output-typing or proof-hardening defect:
+
+```text
+predictive/profinite: 0 blockers / 1 major / 1 minor / 0 nits;
+boundary/locality:    0 blockers / 1 major / 3 minors / 0 nits;
+ancestry/quantum:     0 blockers / 1 major / 2 minors / 0 nits.
+```
+
+The following second repair is frozen before the executable is edited.
+
+### 18.1 Observable marks versus internal boundary transitions
+
+The live Branch-C/L query keeps post-event A-own and A-wire counters.  Every
+non-silent A-wire output mark must therefore contain
+
+```text
+(elapsed time, kind/direction, post carrier, post own count, post wire count)
+```
+
+and Branch L additionally carries the incident role.  With the absolute
+counter values retained, the `111` registered scoped states have exact finite
+strong-transition class counts `(111,111,111)`, not `(29,29,29)`.
+
+A neighbor birth is an internal boundary-state transition, not an A-wire
+output.  The finite coinduction is therefore renamed a **strong boundary-
+transition bisimulation stress test**: internal rows are typed as silent, not
+advertised as observable `tau` records.  No claim is made that this strong
+refinement is the canonical weak/timed predictive quotient of the observed
+A-wire process.  The all-future result needs only an exact sufficient carrier;
+minimal predictive quotient remains open.  Computing the weak timed quotient
+would require eliminating arbitrarily many hidden neighbor births and is a
+separate investigation.
+
+The B1 pair `{2,3,6}` versus `{2,4,4}` is gated directly: equal at one internal
+transition horizon and distinct at two, alongside the already exact observable
+`Lf` proof.  The synthetic `(106,110,110)` stress family is not said to contain
+that pair.
+
+### 18.2 Root/role output covariance
+
+The role-labeled closed generator is parameterized by its distinguished root,
+not hard-coded to literal `A`.  Under a nominal map `g`, the receipt must check
+
+```text
+T_g Rows_root = Rows_(g root) T_g
+```
+
+on output marks, successor carriers and fresh Ulam children.  The semantic
+output role remains “the distinguished root”; participant handles and a fresh
+child `root/n` are transported.  Counter-bearing marks and silent internal
+rows are included in the same conjugacy regression.
+
+### 18.3 Endpoint-pinned full-ancestry event
+
+The common Branch-F selector is frozen at the conditioning stop as
+
+```text
+(structural remote actor role D, D-wire ordinal k, immutable event D#rk).
+```
+
+The licensed future event is:
+
+> the future A record contains the selected inward interaction chain and its
+> ancestry contains that exact pre-stop event, whose kind is idle.
+
+It must not follow D's moving tip.  The interaction branch is zero because the
+selected ordinal already names an immutable interaction record.  The idle
+branch contains the earlier exact positive subcylinder.  In addition to the
+registered radii and relabeling transport, the receipt must insert later D
+idles, later D interactions, unrelated events and several consecutive D events
+before propagation; none may change the selected pre-stop kind or the zero.
+
+### 18.4 Full B4 history composition
+
+Regional physical messages are extended from actors/ports/edges to:
+
+- exactly-once owned event records, owned by their initiator;
+- validated crossing/shared event references;
+- owned wire tips;
+- predecessor identifiers, opaque only when their owner is outside the region.
+
+Typed union must compose these fields to the direct full-region restriction.
+The validator runs before union and rejects missing owned ports, phantom
+owners, edges without required endpoint ports, inconsistent external rows,
+corrupt shared edges/events and duplicate event ownership.  Only then may B4
+consume the composition flag for its sufficient growing-carrier row.
+
+### 18.5 Complete capacity and verdict typing
+
+The B3 ledger adds neighbor birth-ordinal bits, the root carrier bit, explicit
+port/edge/identifier counts and a declared reference encoding cost.  It prints
+the representative values rather than only the number of ledger rows.  The
+physics claim remains encoding-independent: the constructed B3 is unbounded
+because its incident actor/port count has unbounded support.
+
+Capacity status is three-way:
+
+```text
+BOUNDED_PROVED / UNBOUNDED_PROVED / UNKNOWN.
+```
+
+Paper-21 row 2 requires the first, row 3 the second.  `UNKNOWN` cannot inherit
+row 3 from a default Boolean.  Each outcome predicate is calculated
+independently; the first true row is selected.  Unit tests include overlapping
+later predicates, so priority is tested rather than assumed.  Impossible flag
+combinations may instead fail explicitly, but may not silently suppress an
+earlier row.
+
+### 18.6 Second-delta claim ceiling
+
+The physical result remains eligible for the same ceiling only after these
+gates pass:
+
+```text
+C/L B3: all-future sufficient growing carrier, POINTWISE;
+        no minimal/weak predictive quotient claimed;
+F C_r:  no exact realization in the declared complete finite-radius family;
+F B4:   sufficient all-future growing ceiling, not necessary;
+v9 and intrinsic quantum: REFUSAL/UNDEFINED at their declared widths.
+```
+
+No source claim is terminal until the repaired endpoint selector survives a
+fresh interloper attack, the counter-bearing/root-covariant output kernel is
+reproduced, and the full-history composition and capacity/verdict hardening
+receive independent hostile deltas.
