@@ -791,3 +791,98 @@ Q2 still pass while disagreeing, so inherited SHARD/ISP principles have not
 selected the right opportunity or birth-parameter law.  This section is a
 candidate terminal result until the independent hostile delta round closes
 the exact repair claims.
+
+## 16. Hostile round 2 and frozen closing protocol
+
+**Round-2 verdict:** delta not clean.  The independent lanes report:
+
+```text
+probability/projectivity       0B / 1M / 0m / 0n
+causal locality/actor          1B / 3M / 1m / 1 scope note
+birth/quantum/ontology         0B / 2M / 1m / 0n
+```
+
+Reports:
+
+- `reviews/d35-round2-probability-projectivity-delta-review.md`;
+- `reviews/d35-round2-causal-locality-actor-delta-review.md`;
+- `reviews/d35-round2-birth-quantum-ontology-delta-review.md`.
+
+The probability lane independently confirms all 16 complete cylinders, all
+408 second-call refinements, 3,180 old-event equality checks per cell,
+root-wire persistence and Ionescu--Tulcea completion on the labeled rooted
+state space.  Fresh seeds reproduce both repaired receipts and the corrected
+441-file corpus audit.  D24's newborn instant and exact isometry also survive.
+The normal generated actor runs remain scheduler invariant.
+
+Terminal promotion is nevertheless rejected.  The following openings are
+frozen before any closing code:
+
+1. **Issued-capability blocker.**  A child query reconstructed from the
+   model's deterministic public edge-key formula, but absent from the
+   requester's open call, is accepted.  Each target must own an exact incoming
+   issuance set; knowledge of structural addresses cannot manufacture one.
+2. **Event-alpha major.**  `physical_event_id` retains raw seed names.  A
+   consistent five-event seed-DAG renaming changes the purported quotient law.
+3. **Prevalidation major.**  A genuine query paired with an invalid option
+   consumes the capability and writes a transfer before typed-leg rejection.
+4. **Flagged-instrument major.**  The printed gate checks unflagged operators
+   of incompatible dimensions plus distinct Python labels.  It constructs no
+   common input, spectator extensions, support-changing output direct sum,
+   flagged injections or cross-range zeros.  Provenance labels are not by
+   themselves orthogonal quantum factors.
+5. **Remote-evidence major.**  The source intervention is A's own bit copied
+   to A2, including idle/birth branches with route `(root,)`.  It does not
+   show evidence originating at B/C/D returning only on a queried route.
+6. **Shared-state/ordinal major.**  The statement that mailbox selection is
+   the only global operation is false: the executable uses a shared exact
+   event/carrier collector and an externally supplied transaction ordinal.
+   The former may be an honest joint-state audit representation; the latter
+   must be derived from root-owned causal succession.  Neither is metric time.
+7. **Rejection-state minor.**  Normal service dequeues before validation, so a
+   rejected envelope changes volatile mailbox state.  The repair must either
+   peek/ack or narrow the unchanged claim explicitly to durable record state.
+8. **Scope opening.**  Repeated root calls condition on A initiating.  The
+   model answers the causal contents of A's next rooted update; it does not
+   select a next initiator for a root-free universe or sew overlapping
+   peer-initiated diamonds.
+
+The closing executable is frozen as a new companion, not an in-place erasure
+of D35b.  It must:
+
+```text
+maintain actor-owned issued-incoming capability sets;
+validate the whole LocalOption before any durable mutation;
+derive call/event ordinals from root-owned wire succession;
+canonicalize the complete supplied seed event DAG and rerun 16/408 alpha tests;
+construct exact common-input flagged direct-sum operators for all five root options;
+separate bounded local outcome rank from unbounded structural provenance;
+place a source bit at non-A actor D and compare queried, unqueried and disconnected interventions;
+make volatile rejection semantics explicit and test them honestly;
+rerun every inherited D35b gate under two independent hash seeds.
+```
+
+The direct-sum construction may use exact rational Gram identities rather
+than floating square roots: for common-input isometries `V_o` and orthogonal
+injections `J_o`, verify
+
+```text
+V_o^dag V_o = I;
+(J_o V_o)^dag (J_p V_p) = 0 for o != p;
+sum_o q_o (J_o V_o)^dag (J_o V_o) = I.
+```
+
+The non-A intervention must not merely change a digest.  The returned payload
+must be an explicit durable A2 field, must bind every accepted adjacent return,
+and must differ under `do(D=0)`/`do(D=1)` only on histories whose completed
+query tree reaches D.  The paired history probabilities themselves may remain
+equal; an interventionist acquisition claim requires the conditional A2
+record content to change, not necessarily the action weights.
+
+Even a clean close can earn only the supplied rooted nested-call family.  The
+root-free object suggested by the review is a compatible local specification
+on finite causal diamonds: each boundary-conditioned diamond kernel must agree
+with restrictions and overlaps of larger diamonds.  Such a DLR/projective
+family could define a global history measure without selecting a global next
+event or assigning proper times.  D35 does not silently claim that missing
+overlap theorem.

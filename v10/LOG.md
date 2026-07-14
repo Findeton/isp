@@ -3097,3 +3097,30 @@ source/receipt hashes `49e1de97...63a` and `fde217ca...fc6`. The result ceiling
 is still TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE. Q1/Q2 nonselection,
 root/ownership/capability assumptions, peer/cycle/join sectors and coherent
 graph-sector dynamics remain open. Independent hostile delta review is next.
+
+## 2026-07-14 — D35 round 2 rejects terminal promotion (LEDGER #198)
+The exact probability core survives independent reconstruction: both repaired
+receipts are seed-stable; Q1/Q2 have all 16 full cylinders, 408 second-call
+refinements and 3,180 old-event equality checks per cell; the labeled rooted
+Ionescu--Tulcea completion and D24 newborn instant pass. Normal generated actor
+runs are scheduler invariant. The corrected 441-file audit is clean.
+
+The delta is not clean. A structurally reconstructible but unissued child
+query is accepted because the target owns no issued-incoming token set. Raw
+seed-event names remain in the physical key, so full event alpha-renaming
+changes the quotient law. Invalid local choices can mutate capability/transfer
+state before rejection. The alleged flagged Busch gate checks incompatible-
+shape unflagged matrices and label cardinality, not one common-input direct-sum
+instrument. The payload intervention is an A-local self-copy, not evidence
+originating at D and returning conditionally on a queried route. A supplied
+Network transaction integer and shared event/carrier collector also make the
+“only global operation is mailbox choice” sentence false; dequeue-before-
+reject changes volatile state.
+
+All openings are frozen before a D35c closing companion. It must add actor-
+owned issuance, whole-option prevalidation, root-owned causal ordinals,
+structural seed-event canonicalization, exact common-input flagged operators,
+a non-A queried/unqueried/disconnected intervention, and honest rejection/
+joint-state wording. Repeated A-root calls remain conditional: the root-free
+future target is an overlap-consistent local specification on causal diamonds,
+not a global next-event race or per-record proper-time process.
