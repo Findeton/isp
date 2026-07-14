@@ -3789,3 +3789,38 @@ least one compatible global classical measure for K3, K2 and the joint family
 on every supplied countable locally finite opportunity complex at their
 finite-range scopes. Uniqueness, K1 completion, generated opportunity
 complexes, selected couplings and the quantum lift remain open.
+
+## 2026-07-14 — D37 oriented-interface registry repaired before Paper 26 freeze (LEDGER #226)
+
+The pre-paper structural audit found that D37's first green registry used the
+two-edge disjoint-factorization fixture but had not separately registered
+D36's actual two-proposal no-conflict disjoint cell. It also treated
+orientation as prose rather than an executable interface mark. The theorem
+and all previously printed family values survive, but candidate promotion is
+withheld until the registered object matches the pin.
+
+The repaired receipt now contains eight graphs, 28 vertices, 19 conflict
+edges, 196 nonempty regions and 23 oriented interface rows. The five D36 cells
+derive their conflict edges from the exact participant-role sets; every region
+carries participant bases and carrier parents as incoming data, lateral
+conflict roles, and generated mode/selection clicks. Oriented relabeling is a
+sixth covariance family. The fresh receipt remains `PASS 9/9`: K3 moves to
+`508/7,098/138`; K2 moves to `188/165/1,224`; every K1, cover, joint-mode and
+D26 value is unchanged. New source/stdout/science hashes are
+`815589b...a5f9d`, `ab69b2b...33c16` and `cf99974...df0bf`.
+
+## 2026-07-14 — Paper 26 exact-receipt candidate drafted (LEDGER #227)
+
+Paper 26 is drafted as *Admissible regional history specifications:
+finite-cover consistency, global completion, and birth and arbitration as
+conditionals*. It synthesizes the fixed D37 result without promoting it to a
+unique selector or a generated universe law.
+
+The paper proves the finite K3 fixed-odds theorem at its exact premise width,
+the K2 blocker/demand specification theorem, the finite marked-K1 tower and
+its path-five nonlocality counterexample, the triple-cover obstruction, and
+the countable locally finite completion theorem for K3, K2 and the joint
+birth/arbitration family. It carries D26's BORN-sector visibility constraint,
+the recorded-click randomness discipline, D33 covariance, D34 anti-dilution
+and the D23/D31/D32 quantum preregistration. The exact-receipt candidate status
+leaves D37 hostile review and independent paper-level review open.

@@ -1,6 +1,45 @@
 # Relativistic ISP v10
 
-## Latest — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
+## Latest — D37 / Paper 26 (exact-receipt candidate; hostile review open)
+
+D37 constructs the classical regional object queued by Papers 24 and 25.
+Finite oriented opportunity regions carry normalized conditional kernels with
+explicit boundary data. Nested DLR composition, finite-cover descent,
+relabeling covariance and disconnected anti-dilution are exact gates. The
+receipt passes `9/9` and is byte-identical under two hash seeds. Its eight-graph
+registry separates D36's actual no-conflict disjoint cell from the two-edge
+factorization fixture and carries 23 executable incoming/lateral/generated
+interface rows.
+
+The result is a family, not a unique selector. K3 passes 508 intrinsic
+conditionals, 7,098 nested towers and 138 boundary mixtures; hard exclusion,
+positive feasible support, a Markov boundary and fixed unblocked odds force
+its vertex-activity form. K2 nevertheless survives as a progressing
+independent-plus-dominating hard constraint once the boundary carries accepted
+blockers and unmet domination demands. Marked K1 composes finitely but fails
+one-hop output locality on a retained five-path witness, so no infinite K1
+completion is claimed.
+
+One joint law carries `NO_BIRTH/TOKEN/BORN` modes and selected/rejected
+arbitration clicks. At the symmetric path point it gives Q-mode probabilities
+`34/93,25/93,34/93` and selection `6/31` from the same normalized table. D26
+makes the BORN sector observable: at `g=9/25`, the joint Q visibility factor is
+`431/465`. A compactness theorem supplies at least one compatible global
+classical measure for K3, K2 and the joint family on every supplied countable
+locally finite opportunity complex at their stated finite-range scopes.
+
+The candidate noun is **CLASSICAL REGIONAL HISTORY SPECIFICATION FAMILY /
+FINITE-COVER AND COUNTABLE LOCALLY FINITE COMPLETION / SUPPLIED OPPORTUNITY
+COMPLEX AND COUPLINGS / NONSELECTING**. The law still does not generate the
+opportunity complex, select activities or mode weights, close the action
+bridge, prove uniqueness, or supply the quantum join.
+
+- `note-d37-regional-history-specifications.md`
+- `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`
+- `code/d37_regional_history_specification_exact.py`
+- `data/d37_regional_history_specification_exact.out`
+
+## Prior — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
 
 D36 supplies the first authenticated actor-record realization of overlapping
 finite transaction attempts in V10.  Exclusive version-bound promises,

@@ -440,26 +440,31 @@ data/d37_regional_history_specification_exact.out
 The source, stdout-body and internal-science hashes are respectively
 
 ```text
-9bd1de3f1794f4f1612c91884bf85c3ad9c7b0b79ddcb23d2b8c0fb219e479f6
-fd85aea255249bac3a34d077a43b479c6613f3e8868c1b283b7018ae40c8c9dd
-4ed713c1c3ab5801305e40f539b77e6c4ff6340a2eb2076c2aadfab3d5ebf98f
+815589b997f191278cd78bf63d6a35ccb5d2f9f39dd361711f7331c1577a5f9d
+ab69b2b11f9b21c1edd348122509b63cf709db1718ad7174c216f3a21db33c16
+cf9997407d8cb8b974f442ab341b7f4d3e6a1b3d3db3c43c6c4207189c0df0bf
 ```
 
 Fresh executions under `PYTHONHASHSEED=17` and `104729` are byte-identical.
 
 ### 13.1 The representation result is a family
 
-K3 passes `498` intrinsic regional-condition checks, `7,058` nested DLR tower
-checks and `132` boundary-mixture checks at activities one and two.  The
+The structural registry contains eight graphs, including both D36's actual
+two-proposal no-conflict disjoint cell and the separate two-edge factorization
+fixture.  Twenty-three oriented interface rows carry participant bases,
+carrier parents and generated mode/selection clicks.
+
+K3 passes `508` intrinsic regional-condition checks, `7,098` nested DLR tower
+checks and `138` boundary-mixture checks at activities one and two.  The
 finite forcing theorem survives exactly at its pinned width: hard exclusion,
 positive feasible support, Markov boundary sufficiency and fixed unblocked
 odds reconstruct the global vertex-activity law.  The context-dependent odds
 negative control prints both `2` and `4`; overlap consistency alone therefore
 does not receive credit for the Gibbs form.
 
-K2 does not die.  Its independence-plus-domination factor law passes `185`
-blocker/demand conditionals over `162` distinct sufficient boundaries and
-`1,219` nested DLR towers.  Raw triangle-to-edge restriction is
+K2 does not die.  Its independence-plus-domination factor law passes `188`
+blocker/demand conditionals over `165` distinct sufficient boundaries and
+`1,224` nested DLR towers.  Raw triangle-to-edge restriction is
 
 ```text
 larger triangle restricted   {}:1/3, {P}:1/3, {Q}:1/3;

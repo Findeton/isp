@@ -59,8 +59,9 @@ GRAPHS: Dict[str, Graph] = {
         ("P", "Q", "R"),
         (("P", "Q"), ("Q", "R"), ("P", "R")),
     ),
-    "disjoint": graph(
-        "disjoint",
+    "d36_disjoint": graph("d36_disjoint", ("P", "Q"), ()),
+    "two_pairs": graph(
+        "two_pairs",
         ("P", "Q", "R", "S"),
         (("P", "Q"), ("R", "S")),
     ),
@@ -76,6 +77,109 @@ GRAPHS: Dict[str, Graph] = {
         (("A", "B"), ("B", "C"), ("C", "D"), ("D", "E"), ("E", "F"), ("F", "G")),
     ),
 }
+
+
+@dataclass(frozen=True)
+class OrientedCell:
+    name: str
+    proposals: Tuple[Tuple[str, Tuple[str, ...]], ...]
+
+    @property
+    def vertices(self) -> Tuple[str, ...]:
+        return tuple(name for name, _ in self.proposals)
+
+    def participants(self, proposal: str) -> Tuple[str, ...]:
+        return dict(self.proposals)[proposal]
+
+
+ORIENTED_CELLS: Dict[str, OrientedCell] = {
+    "pair": OrientedCell("pair", (("P", ("A", "B")), ("Q", ("A", "B")))),
+    "path": OrientedCell(
+        "path",
+        (("P", ("A", "B")), ("Q", ("B", "C")), ("R", ("C", "D"))),
+    ),
+    "triangle": OrientedCell(
+        "triangle",
+        (("P", ("A", "B")), ("Q", ("B", "C")), ("R", ("C", "A"))),
+    ),
+    "d36_disjoint": OrientedCell(
+        "d36_disjoint",
+        (("P", ("A", "B")), ("Q", ("C", "D"))),
+    ),
+    "partial": OrientedCell(
+        "partial",
+        (("P", ("A", "B", "C")), ("Q", ("C", "D"))),
+    ),
+}
+
+
+def graph_from_cell(cell: OrientedCell) -> Graph:
+    edges = []
+    for (left, left_participants), (right, right_participants) in combinations(cell.proposals, 2):
+        if set(left_participants) & set(right_participants):
+            edges.append((left, right))
+    return graph(cell.name, cell.vertices, edges)
+
+
+def oriented_interface(
+    cell: OrientedCell,
+    region: FrozenSet[str],
+) -> Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
+    inside_participants = {
+        participant
+        for proposal in region
+        for participant in cell.participants(proposal)
+    }
+    incoming = tuple(sorted(
+        [("base", participant) for participant in inside_participants]
+        + [("carrier_parent", proposal) for proposal in region]
+    ))
+    outside = set(cell.vertices) - region
+    lateral = tuple(sorted(
+        proposal
+        for proposal in outside
+        if inside_participants & set(cell.participants(proposal))
+    ))
+    generated = tuple(sorted(
+        [("mode_click", proposal) for proposal in region]
+        + [("selection_click", proposal) for proposal in region]
+    ))
+    return incoming, lateral, generated
+
+
+def rename_cell(
+    cell: OrientedCell,
+    proposal_rename: Mapping[str, str],
+    participant_rename: Mapping[str, str],
+) -> OrientedCell:
+    return OrientedCell(
+        f"{cell.name}-renamed",
+        tuple(
+            (
+                proposal_rename[proposal],
+                tuple(participant_rename[participant] for participant in participants),
+            )
+            for proposal, participants in cell.proposals
+        ),
+    )
+
+
+def push_oriented_interface(
+    interface: Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]],
+    proposal_rename: Mapping[str, str],
+    participant_rename: Mapping[str, str],
+) -> Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
+    incoming, lateral, generated = interface
+    pushed_incoming = tuple(sorted(
+        (
+            tag,
+            participant_rename[value] if tag == "base" else proposal_rename[value],
+        )
+        for tag, value in incoming
+    ))
+    pushed_lateral = tuple(sorted(proposal_rename[value] for value in lateral))
+    pushed_generated = tuple(sorted((tag, proposal_rename[value]) for tag, value in generated))
+    return pushed_incoming, pushed_lateral, pushed_generated
 
 
 Selected = FrozenSet[str]
@@ -919,11 +1023,26 @@ def covariance_checks() -> int:
     if push_mode(joint_mode_law(g, mode_weights, Fraction(2)), rename) != joint_mode_law(renamed, mode_weights, Fraction(2)):
         raise AssertionError("mode covariance")
     checks += 1
+    cell = ORIENTED_CELLS["path"]
+    participant_rename = {"A": "k", "B": "m", "C": "n", "D": "q"}
+    renamed_cell = rename_cell(cell, rename, participant_rename)
+    if graph_from_cell(renamed_cell) != renamed:
+        raise AssertionError("oriented graph covariance")
+    for region in regions(g):
+        renamed_region = frozenset(rename[vertex] for vertex in region)
+        expected = push_oriented_interface(
+            oriented_interface(cell, region),
+            rename,
+            participant_rename,
+        )
+        if oriented_interface(renamed_cell, renamed_region) != expected:
+            raise AssertionError((region, "oriented interface covariance"))
+    checks += 1
     return checks
 
 
 def anti_dilution_checks() -> Tuple[int, int, int, int]:
-    union = GRAPHS["disjoint"]
+    union = GRAPHS["two_pairs"]
     left_graph = graph("left", ("P", "Q"), (("P", "Q"),))
     right_graph = graph("right", ("R", "S"), (("R", "S"),))
     left = frozenset(left_graph.vertices)
@@ -1015,31 +1134,58 @@ def main() -> None:
     emit("ARITHMETIC: integers/Fractions only; machine enumeration is not physical order")
     emit("SCOPE: supplied finite opportunity complexes; classical countable completion requires the stated proof")
 
-    registered = tuple(GRAPHS[name] for name in ("pair", "path", "triangle", "disjoint", "partial", "path5", "path7"))
+    registered = tuple(
+        GRAPHS[name]
+        for name in (
+            "pair",
+            "path",
+            "triangle",
+            "d36_disjoint",
+            "partial",
+            "two_pairs",
+            "path5",
+            "path7",
+        )
+    )
     vertex_total = sum(len(g.vertices) for g in registered)
     edge_total = sum(len(g.edges) for g in registered)
     region_total = sum(len(regions(g)) for g in registered)
     automorphisms = {g.name: graph_automorphisms(g) for g in registered}
-    gates["S0"] = vertex_total == 26 and edge_total == 19 and region_total == 193 and all(value > 0 for value in automorphisms.values())
-    science["objects"] = [vertex_total, edge_total, region_total, automorphisms]
+    orientation_rows = []
+    orientation_valid = True
+    for name, cell in ORIENTED_CELLS.items():
+        orientation_valid &= graph_from_cell(cell) == GRAPHS[name]
+        for region in regions(GRAPHS[name]):
+            orientation_rows.append((name, tuple(sorted(region)), oriented_interface(cell, region)))
+    orientation_hash = hashlib.sha256(stable(orientation_rows).encode()).hexdigest()
+    gates["S0"] = (
+        vertex_total == 28
+        and edge_total == 19
+        and region_total == 196
+        and len(orientation_rows) == 23
+        and orientation_valid
+        and all(value > 0 for value in automorphisms.values())
+    )
+    science["objects"] = [vertex_total, edge_total, region_total, automorphisms, orientation_hash]
     emit("[REGISTERED OPPORTUNITY COMPLEXES]")
     emit(f"graphs={len(registered)}; vertices={vertex_total}; conflict_edges={edge_total}; nonempty_regions={region_total}")
-    emit(f"automorphism_counts={stable(automorphisms)}; structural_labels_not_physical_slots=1")
+    emit(f"automorphism_counts={stable(automorphisms)}; oriented_interface_rows={len(orientation_rows)}; orientation_sha256={orientation_hash}")
+    emit("incoming_carrier_parents=1; participant_base_interfaces=1; generated_mode_selection_clicks=1; structural_labels_not_physical_slots=1")
 
     k3_conditionals = 0
     k3_towers = 0
     k3_mixtures = 0
-    for name in ("pair", "path", "triangle", "disjoint", "partial", "path5"):
+    for name in ("pair", "path", "triangle", "d36_disjoint", "partial", "two_pairs", "path5"):
         for activity in (Fraction(1), Fraction(2)):
             conditional, tower, mixture = k3_full_checks(GRAPHS[name], activity)
             k3_conditionals += conditional
             k3_towers += tower
             k3_mixtures += mixture
-    disjoint = GRAPHS["disjoint"]
+    disjoint = GRAPHS["two_pairs"]
     left = graph("left", ("P", "Q"), (("P", "Q"),))
     right = graph("right", ("R", "S"), (("R", "S"),))
     k3_factor = hard_core(disjoint, Fraction(2)) == product_binary(hard_core(left, Fraction(2)), hard_core(right, Fraction(2)))
-    gates["S1"] = k3_conditionals > 0 and k3_towers > 0 and k3_mixtures == 132 and k3_factor
+    gates["S1"] = k3_conditionals > 0 and k3_towers > 0 and k3_mixtures == 138 and k3_factor
     science["k3"] = [k3_conditionals, k3_towers, k3_mixtures]
     emit("[K3 FULL FINITE SPECIFICATION]")
     emit(f"intrinsic_conditionals={k3_conditionals}; nested_DLR_towers={k3_towers}; boundary_mixtures={k3_mixtures}")
@@ -1062,7 +1208,7 @@ def main() -> None:
     k2_conditionals = 0
     k2_boundaries = 0
     k2_towers = 0
-    for name in ("pair", "path", "triangle", "disjoint", "partial", "path5"):
+    for name in ("pair", "path", "triangle", "d36_disjoint", "partial", "two_pairs", "path5"):
         checks, boundaries = k2_boundary_checks(GRAPHS[name])
         k2_conditionals += checks
         k2_boundaries += boundaries
@@ -1151,10 +1297,10 @@ def main() -> None:
 
     covariance = covariance_checks()
     anti_sizes = anti_dilution_checks()
-    gates["S8"] = covariance == 5 and all(size > 0 for size in anti_sizes)
+    gates["S8"] = covariance == 6 and all(size > 0 for size in anti_sizes)
     science["covariance"] = [covariance, anti_sizes]
     emit("[COVARIANCE / ANTI-DILUTION]")
-    emit(f"relabel_covariance_families={covariance}/5; disconnected_local_factorizations=4/4; atom_counts={anti_sizes}")
+    emit(f"relabel_covariance_families={covariance}/6; disconnected_local_factorizations=4/4; atom_counts={anti_sizes}")
     emit("boundary_widths=K3:one-hop-blockers,K2:blockers+domination-demands,K1:recorded-component-priority")
 
     source_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
