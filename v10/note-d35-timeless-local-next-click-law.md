@@ -597,3 +597,118 @@ This is not terminal until the three hostile streams decide whether the actor
 implementation is genuinely local at its declared scope, the projective/
 completion proof is sound, and the D24/quantum wording stays within what the
 executable actually represents.
+
+## 14. Hostile round 1 and frozen replacement protocol
+
+**Round-1 verdict:** promotion rejected.  The three independent lanes report:
+
+```text
+probability/projectivity       0B / 0M / 1m / 1n
+causal locality/actor          1B / 2M / 1m / 0n
+birth/quantum/ontology         0B / 2M / 1m / 2n
+```
+
+Reports:
+
+- `reviews/d35-round1-probability-projectivity-hostile-review.md`;
+- `reviews/d35-round1-causal-locality-actor-hostile-review.md`;
+- `reviews/d35-round1-birth-quantum-ontology-hostile-review.md`.
+
+All three reproduce the frozen receipts byte-for-byte under fresh salts.  The
+finite rooted recursive kernel, all exact probabilities, finite-call theorem,
+strict-tree scheduler theorem, D24 marginal instant and Ionescu--Tulcea
+completion argument survive.  Row 2 nevertheless fails at the pinned O7/O6
+width because the actor and physical-evidence/flag implementations do not.
+
+### 14.1 Frozen openings
+
+1. **Capability blocker:** an unissued but syntactically local query can mutate
+   B before its missing continuation is rejected; a requester-free B query can
+   be declared the root result while A remains at A1; an old B tip can be
+   accepted as a completed return with no B call.
+2. **Not actor-owned:** the alleged mailbox rebuild uses one global `World`,
+   pending list and continuation table; actors own neither mailboxes nor
+   outstanding calls.
+3. **Identifier channel:** a disconnected event named `E0:r` makes the A kernel
+   fail by collision.  Local fresh identity is absent.
+4. **No physical quotient gate:** scheduler equality retains nominal names and
+   construction paths; alpha-relabeling covariance is not tested.
+5. **Coarse E7:** the advertised full first cylinder is checked only after a
+   16-to-14 next-A projection, although the review independently confirms the
+   complete 16-atom/408-refinement equality.
+6. **Flag/NSE overclaim:** `Event.flag` is a classical string outside the
+   carrier.  No orthogonal output ranges, arbitrary-input completeness or
+   Busch trace-isometric mixture are implemented.
+7. **Structural not physical LDAP:** nested D events directly cite A1 while
+   the A-to-B-to-D query route is ephemeral.  The receipt proves constructed
+   ancestry, not a carried evidence channel.
+8. **Multi-leg typing:** initiator, ordered target legs, operation/coupling and
+   kind-specific arity/ownership are constructor assumptions, not fail-closed
+   history fields.
+9. **Corpus omission/self-opening:** the antecedent selector's broad
+   `"paper24"` exclusion accidentally omits V3, V4, V6 and V7 Paper 24.  Its
+   title truncation also creates the review's three trailing spaces.  The
+   437-file count is withdrawn pending a corrected rerun.
+
+### 14.2 Replacement architecture (frozen before code)
+
+The replacement is a separate companion executable
+`code/d35b_capability_actor_exact.py`; the rejected candidate remains in the
+record.  It may import the exact recursive/quantum primitives only after
+hash-locking source `06c997a1...3fa26`.  It must implement:
+
+1. **actor ownership:** every logical actor owns its tip, typed port table,
+   mailbox, used-capability set and outstanding-call table; the serializer may
+   choose only which nonempty mailbox to service;
+2. **authenticated capabilities:** every query is a one-use capability signed
+   by the shared owned-edge key (the root by its root key), naming component,
+   transaction, root, requester/target, port, path, slot, held lower tip,
+   payload and parent call; validation occurs before mutation;
+3. **return binding:** a return names the issued child capability and a result
+   event that records that capability; the parent accepts only the exact open
+   actor-owned slot and consumes it once;
+4. **root typing:** only the distinguished root actor can issue a top-level
+   call/result;
+5. **physical route/payload:** every event retains the complete locally
+   adjacent capability route, initiator, ordered typed legs, operation,
+   coupling and an immutable evidence payload.  Consecutive route hops must be
+   owned parent/child edges.  A declared source-bit intervention must reach A2
+   through a queried route and fail on an unqueried/disconnected route;
+6. **local identities:** event/newborn identities carry an unforgeable supplied
+   component namespace plus actor-local structural address; disconnected
+   nominal strings cannot collide.  The namespace is root data, not derived;
+7. **port covariance:** owned edges carry transported local port identities.
+   A nontrivial actor/event alpha-renaming must give the same quotient history
+   distribution with no nominal name in the quotient key;
+8. **full projectivity:** E7 compares all 16 complete first-call cylinders over
+   all 408 second-call refinements, separately printing the 14-atom coarse
+   projection and immutable-event/root-wire persistence;
+9. **flagged CQ instrument:** every event has one fresh physical orthogonal
+   record-factor label including action and typed legs.  Exact operator gates
+   must establish idle, D24 birth, visit and fork isometries on arbitrary
+   inputs, local `sum q V^dag V=I`, mutually orthogonal flag ranges and durable
+   factor persistence.  The earned quantum noun is a classical-output/direct-
+   sum Busch mixture with conditional carrier isometries, not coherent
+   superposition over graph sectors;
+10. **adversarial battery:** the three hostile capability forgeries, negative
+    and cross-continuation slots, replay, malformed direct merges, disconnected
+    colliding display names, arbitrary remote content and independent root
+    namespaces all reject or factor before mutation;
+11. **grown execution:** all first-call output states receive a second exact
+    actor rebuild under FIFO/LIFO/canonical policies, and a deterministic
+    multi-call growth run agrees across serializers; and
+12. **current status/hygiene:** correct the stale top status, branch-cell
+    wording, corpus selector and truncation whitespace; rerun independent hash
+    seeds and both relevant diff checks.
+
+The replacement still does not seek cycles, peers, mutually initiating calls,
+disconnected joins or a root-free law.  If the protocol passes, the maximum
+noun remains
+
+```text
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+```
+
+with Q, g, root/ownership, capability/evidence grammar and missing sectors
+supplied.  A favorable replacement cannot be called the universe's complete
+interactive click law.

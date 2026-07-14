@@ -3039,3 +3039,33 @@ peer/cycle/join sectors remain extra physics. The classical completed-history
 measure follows by countable iteration of normalized finite rooted-state
 kernels; coherent graph-sector completion and arbitrary mutually initiating
 actors do not. Three independent hostile streams are now mandatory.
+
+## 2026-07-14 — D35 round 1 rejects actor promotion; replacement frozen (LEDGER #196)
+Three independent hostile lanes reproduce every exact candidate number and
+preserve the finite rooted recursive law, strict-tree gauge theorem, D24 birth
+instant and completed classical measure. They nevertheless reject promotion:
+probability `0B/0M/1m/1n`, locality/actor `1B/2M/1m/0n`, and birth/quantum
+`0B/2M/1m/2n`.
+
+The blocking counterexamples are concrete. An unissued authorized-looking
+query mutates B before rejection; a requester-free B query can become a root
+result while A stays at A1; and old tip BD can impersonate a completed return.
+The implementation has a single global queue/continuation table rather than
+actor-owned mailboxes, a disconnected `E0:r` can collide with A's generated
+name, and no alpha-quotient gate exists. E7 checks a 14-atom coarse shadow
+rather than the full 16 atoms. Event flags are strings rather than orthogonal
+record factors, and nested query routes disappear while A1 is written directly
+into remote ancestry. Multi-leg roles are not retained fail-closed.
+
+A self-audit also finds the 437-file corpus count false: the future-Paper-24
+exclusion removed four historical Paper 24 files; title truncation causes
+three trailing-space failures. The count is withdrawn.
+
+Before any repair, D35 freezes a separate capability-actor replacement:
+actor-owned mailboxes/outstanding calls; one-use authenticated query/return
+capabilities; retained local routes and intervention payloads; component/local
+identities; alpha covariance; full-cylinder projectivity; explicit typed legs;
+orthogonal direct-sum event factors and arbitrary-input instrument identities;
+adversarial forgery/name tests; second-call actor rebuilds and multi-call
+growth. The maximum post-repair noun remains a supplied TIMELESS ROOTED
+NESTED-CALL FAMILY, not a peer universe law.
