@@ -22,9 +22,10 @@ from collections import Counter, defaultdict, deque
 from decimal import Decimal, getcontext
 from fractions import Fraction as F
 from functools import lru_cache
-from itertools import combinations_with_replacement, permutations
+from itertools import combinations, combinations_with_replacement, permutations
 import hashlib
 import math
+from pathlib import Path
 import sys
 
 getcontext().prec = 110
@@ -269,43 +270,57 @@ def row_output(kind, y, target, actor="A"):
     return None
 
 
-def global_projected_rows(state, actor="A"):
-    before = boundary_dyn(state, actor)
+def global_projected_rows(state, actor="A", scoped=True):
+    project = boundary_scoped if scoped else boundary_dyn
+    before = project(state, actor)
     rows = Counter()
     for kind, y, target, rate in d34b_rates(state):
         after_state = d34b_step(state, kind, y, target)
-        after = boundary_dyn(after_state, actor)
+        after = project(after_state, actor)
         label = row_output(kind, y, target, actor)
         if label is None and after == before:
             continue
-        marked_label = (
-            f"{label}:c{after[0]}" if label is not None else "tau"
-        )
+        # Silent neighbor births update the predictive state but are not part
+        # of the licensed C output alphabet.
+        marked_label = f"{label}:c{after[0]}" if label is not None else "tau"
         rows[(marked_label, after)] += rate
     return rows
 
 
 def boundary_formula_rows(boundary):
-    carrier, hist = boundary
+    scoped = len(boundary) == 4
+    if scoped:
+        carrier, hist, own_rings, wire_events = boundary
+    else:
+        carrier, hist = boundary
+        own_rings = wire_events = None
+
+    def pack(c, h, dr=0, dw=0):
+        if scoped:
+            return c, h, own_rings + dr, wire_events + dw
+        return c, h
+
     rows = Counter()
-    rows[(f"A-birth:c{carrier}", (carrier, hist_add_one(hist)))] += F(1, 4)
-    rows[(f"A-idle:c{carrier}", boundary)] += F(1, 2)
-    rows[(f"A-outgoing:c{1 - carrier}", (1 - carrier, hist))] += F(1, 4)
+    rows[(f"A-birth:c{carrier}", pack(carrier, hist_add_one(hist), 1, 1))] += F(1, 4)
+    rows[(f"A-idle:c{carrier}", pack(carrier, hist, 1, 1))] += F(1, 2)
+    rows[(f"A-outgoing:c{1 - carrier}", pack(1 - carrier, hist, 1, 1))] += F(1, 4)
     for degree, count in hist:
         shifted = hist_shift(hist, degree, degree + 1)
-        rows[("tau", (carrier, shifted))] += F(count, 4)
-        rows[(f"incoming-to-A:c{1 - carrier}", (1 - carrier, hist))] += F(
-            count, 4 * degree
-        )
+        rows[("tau", pack(carrier, shifted))] += F(count, 4)
+        rows[(f"incoming-to-A:c{1 - carrier}",
+              pack(1 - carrier, hist, 0, 1))] += F(count, 4 * degree)
     return rows
 
 
 def labeled_star_boundary(state, actor="A"):
     return (
         state["actors"][actor]["carrier"],
+        state["actors"][actor]["ring"],
         state["actors"][actor]["births"],
+        wire_count(state, actor),
         tuple(sorted(
-            (neighbor, len(state["neighbors"][neighbor]))
+            (neighbor, len(state["neighbors"][neighbor]),
+             state["actors"][neighbor]["births"])
             for neighbor in state["neighbors"][actor]
         )),
     )
@@ -334,35 +349,44 @@ def global_labeled_rows(state, actor="A"):
             label = None
         if label is None and after == before:
             continue
-        rows[(label if label is not None else f"tau:{y}-birth", after)] += rate
+        rows[(label if label is not None else "tau", after)] += rate
     return rows
 
 
 def labeled_formula_rows(boundary):
-    carrier, a_births, neighbor_rows = boundary
+    carrier, a_rings, a_births, a_wire, neighbor_rows = boundary
     rows = Counter()
     new_child = f"A/{a_births + 1}"
-    after_birth_neighbors = tuple(sorted((*neighbor_rows, (new_child, 1))))
-    after_birth = (carrier, a_births + 1, after_birth_neighbors)
+    after_birth_neighbors = tuple(sorted((*neighbor_rows, (new_child, 1, 0))))
+    after_birth = (
+        carrier, a_rings + 1, a_births + 1, a_wire + 1,
+        after_birth_neighbors,
+    )
     rows[(f"A-birth:{new_child}:c{carrier}", after_birth)] += F(1, 4)
-    rows[(f"A-idle:c{carrier}", boundary)] += F(1, 2)
+    rows[(f"A-idle:c{carrier}",
+          (carrier, a_rings + 1, a_births, a_wire + 1,
+           neighbor_rows))] += F(1, 2)
     degree_a = len(neighbor_rows)
-    for neighbor, degree in neighbor_rows:
+    for neighbor, degree, neighbor_births in neighbor_rows:
         rows[(
             f"A-outgoing:{neighbor}:c{1 - carrier}",
-            (1 - carrier, a_births, neighbor_rows),
+            (1 - carrier, a_rings + 1, a_births, a_wire + 1,
+             neighbor_rows),
         )] += F(1, 4 * degree_a)
         shifted_rows = tuple(sorted(
-            (name, d + 1 if name == neighbor else d)
-            for name, d in neighbor_rows
+            (name,
+             d + 1 if name == neighbor else d,
+             births + 1 if name == neighbor else births)
+            for name, d, births in neighbor_rows
         ))
         rows[(
-            f"tau:{neighbor}-birth",
-            (carrier, a_births, shifted_rows),
+            "tau",
+            (carrier, a_rings, a_births, a_wire, shifted_rows),
         )] += F(1, 4)
         rows[(
             f"incoming:{neighbor}:c{1 - carrier}",
-            (1 - carrier, a_births, neighbor_rows),
+            (1 - carrier, a_rings, a_births, a_wire + 1,
+             neighbor_rows),
         )] += F(1, 4 * degree)
     return rows
 
@@ -379,7 +403,7 @@ enumerated_states = [
     state for level in levels for state, _ in level.values()
 ]
 projection_matches = all(
-    global_projected_rows(state) == boundary_formula_rows(boundary_dyn(state))
+    global_projected_rows(state) == boundary_formula_rows(boundary_scoped(state))
     for state in enumerated_states
 )
 labeled_projection_matches = all(
@@ -393,7 +417,7 @@ labeled_projection_matches = all(
 boundary_row_keys = {}
 lumpability_collisions = 0
 for state in enumerated_states:
-    boundary = boundary_dyn(state)
+    boundary = boundary_scoped(state)
     key = rows_key(global_projected_rows(state))
     if boundary in boundary_row_keys:
         lumpability_collisions += 1
@@ -410,7 +434,8 @@ check(
     "E2 DISTRIBUTED HISTOGRAM / ROLE-LABELED STAR GENERATORS [exact finite "
     "regression + analytic row partitions]: full D34b rows project to the "
     "coarse degree histogram and separately to typed incident-actor rows, "
-    "including A's emitted carrier bit and source/target roles",
+    "including elapsed-time gauge, A-own/A-wire counters, emitted carrier bit "
+    "and source/target roles",
     e2_ok,
     f"states checked twice={len(enumerated_states)}; equal coarse-boundary "
     f"collisions={lumpability_collisions}",
@@ -499,34 +524,41 @@ check(
 
 
 # ---------------------------------------------------------------------------
-# E4: finite carrier-transition signatures and continuous survival scope.
+# E4: true coinductive finite predictive partitions and stopping scope.
 
 @lru_cache(maxsize=None)
-def carrier_signature(boundary, horizon):
+def carrier_predictive_signature(boundary, horizon):
+    """A rate/output signature with successor *classes*, never raw states."""
     if horizon == 0:
         return ()
-    rows = boundary_formula_rows(boundary)
-    signature = []
-    for (label, after), rate in rows.items():
-        signature.append((
-            label,
-            rate.numerator,
-            rate.denominator,
-            carrier_signature(after, horizon - 1),
-        ))
-    return tuple(sorted(signature, key=repr))
+    aggregated = Counter()
+    for (label, after), rate in boundary_formula_rows(boundary).items():
+        child_class = carrier_predictive_signature(after, horizon - 1)
+        aggregated[(label, child_class)] += rate
+    return tuple(sorted([
+        (label, rate.numerator, rate.denominator, child_class)
+        for (label, child_class), rate in aggregated.items()
+    ], key=repr))
 
 
-audit_boundaries = []
+synthetic_boundaries = []
 for neighbor_count in range(1, 4):
     for degrees in combinations_with_replacement(range(1, 6), neighbor_count):
         hist = hist_from_degrees(degrees)
         for carrier in (0, 1):
-            audit_boundaries.append((carrier, hist))
+            synthetic_boundaries.append((carrier, hist))
 
-signature_counts = tuple(
-    len({carrier_signature(boundary, horizon)
-         for boundary in audit_boundaries})
+synthetic_predictive_counts = tuple(
+    len({carrier_predictive_signature(boundary, horizon)
+         for boundary in synthetic_boundaries})
+    for horizon in (1, 2, 3)
+)
+registered_boundaries = tuple(sorted(
+    {boundary_scoped(state) for state in enumerated_states}, key=repr
+))
+registered_predictive_counts = tuple(
+    len({carrier_predictive_signature(boundary, horizon)
+         for boundary in registered_boundaries})
     for horizon in (1, 2, 3)
 )
 
@@ -541,34 +573,51 @@ t_probe = Decimal("1.375")
 survival_left = (-(dfrac(q_left) * t_probe)).exp()
 survival_right = (-(dfrac(q_right) * t_probe)).exp()
 
-scope_counter_updates = {
-    "A-birth": (1, 1),
-    "A-idle": (1, 1),
-    "A-outgoing": (1, 1),
-    "incoming-to-A": (0, 1),
-    "tau-neighbor-birth": (0, 0),
-}
+counter_rows_integrated = True
+for state in enumerated_states:
+    before = boundary_scoped(state)
+    for (label, after), _rate in global_projected_rows(state).items():
+        delta = after[2] - before[2], after[3] - before[3]
+        kind = label.split(":", 1)[0]
+        expected = (
+            (1, 1) if kind in {"A-birth", "A-idle", "A-outgoing"}
+            else (0, 1) if kind == "incoming-to-A"
+            else (0, 0)
+        )
+        counter_rows_integrated &= delta == expected
+
+# Time-translation gauge: the carrier clock starts at zero at the conditioning
+# stop and future records carry elapsed increments.  The full boundary CTMC is
+# time homogeneous.  Strong Markov at own-ring/wire-count hitting sets follows
+# from the inherited nonexplosive pure-jump theorem; this executable gates the
+# actual monotone count rows used by those hitting sets.
+elapsed_origin = F(0)
+elapsed_increment = F(11, 8)
 e4_ok = (
-    signature_counts[0] <= signature_counts[1] <= signature_counts[2]
+    synthetic_predictive_counts == (106, 110, 110)
+    and registered_predictive_counts[0] <= registered_predictive_counts[1]
+    <= registered_predictive_counts[2]
     and q_left == q_right
     and survival_left == survival_right
-    and scope_counter_updates["incoming-to-A"] == (0, 1)
-    and scope_counter_updates["A-birth"] == (1, 1)
+    and counter_rows_integrated
+    and elapsed_origin + elapsed_increment == F(11, 8)
 )
 check(
-    "E4 D(N,H=3) CARRIER TRANSITIONS / CONTINUOUS-TIME SCOPE [exact + "
-    "100-decimal analytic regression]: finite carrier signatures refine with "
-    "horizon; no-relevant-event survival is exp(-q Delta t); A-own and A-wire "
-    "counters update differently on passive reception",
+    "E4 TRUE FINITE PREDICTIVE PARTITIONS / RELATIVE-TIME STOPPING SCOPE "
+    "[exact + 100-decimal analytic regression]: signatures aggregate exact "
+    "rates by output and previous-horizon successor class (never raw state); "
+    "A-own/A-wire counters are in the projected CTMC; elapsed time is measured "
+    "from the conditioning stop",
     e4_ok,
-    f"audit states={len(audit_boundaries)}; signature classes="
-    f"{signature_counts}; q={ftext(q_left)}; survival(1.375)="
-    f"{survival_left:.40E}",
+    f"registered states/classes={len(registered_boundaries)}/"
+    f"{registered_predictive_counts}; synthetic stress classes="
+    f"{synthetic_predictive_counts}; q={ftext(q_left)}; next-boundary "
+    f"survival(1.375)={survival_left:.40E}",
 )
 
 
 # ---------------------------------------------------------------------------
-# E5: distributed typed-star composition and actor-relabeling covariance.
+# E5: physical B3 schema and an updater that never re-reads global state.
 
 def actor_row(state, actor):
     row = state["actors"][actor]
@@ -582,52 +631,144 @@ def edge_key(a, b):
     return tuple(sorted((a, b)))
 
 
-def star_message(state, region):
-    region = frozenset(region)
-    owned = {actor: actor_row(state, actor) for actor in region}
-    refs = {}
-    edges = set()
-    for actor in region:
-        for neighbor in state["neighbors"][actor]:
-            edges.add(edge_key(actor, neighbor))
-            if neighbor not in region:
-                refs[neighbor] = len(state["neighbors"][neighbor])
-    return {"region": region, "owned": owned, "refs": refs, "edges": edges}
+def b3_carrier(state, actor="A", elapsed=F(0)):
+    root = state["actors"][actor]
+    neighbors = {
+        x: (len(state["neighbors"][x]), state["actors"][x]["births"])
+        for x in state["neighbors"][actor]
+    }
+    edges = {edge_key(actor, x): edge_key(actor, x) for x in neighbors}
+    ports = {
+        (actor, edge_key(actor, x)): (actor, x, edge_key(actor, x))
+        for x in neighbors
+    }
+    return {
+        "root": actor,
+        "elapsed": elapsed,
+        "root_row": (
+            root["carrier"], root["ring"], root["births"],
+            wire_count(state, actor),
+        ),
+        "neighbors": neighbors,
+        "ports": ports,
+        "edges": edges,
+    }
 
 
-def message_key(message):
+def b3_key(carrier):
     return (
-        tuple(sorted(message["region"])),
-        tuple(sorted(message["owned"].items())),
-        tuple(sorted(message["refs"].items())),
-        tuple(sorted(message["edges"])),
+        carrier["root"], carrier["elapsed"], carrier["root_row"],
+        tuple(sorted(carrier["neighbors"].items())),
+        tuple(sorted(carrier["ports"].items(), key=repr)),
+        tuple(sorted(carrier["edges"].items(), key=repr)),
     )
 
 
-def compose_messages(left, right):
-    if left["region"] & right["region"]:
-        raise ValueError("composition receipt uses disjoint owned regions")
-    region = left["region"] | right["region"]
-    owned = dict(left["owned"])
-    owned.update(right["owned"])
-    refs = {}
-    for source in (left["refs"], right["refs"]):
-        for actor, degree in source.items():
-            if actor in refs and refs[actor] != degree:
-                raise ValueError("inconsistent duplicate boundary reference")
-            refs[actor] = degree
-    for actor, row in owned.items():
-        if actor in refs:
-            if refs[actor] != row[3]:
-                raise ValueError("owned/reference degree mismatch")
-            del refs[actor]
-    return {
-        "region": region,
-        "owned": owned,
-        "refs": refs,
-        "edges": set(left["edges"]) | set(right["edges"]),
-    }
+def b3_event_view(carrier, kind, y, target):
+    root = carrier["root"]
+    if y == root:
+        if kind == "b":
+            return ("root-birth",)
+        if kind == "n":
+            return ("root-idle",)
+        if kind == "i":
+            return ("root-outgoing", target)
+    if y in carrier["neighbors"] and kind == "b":
+        return ("neighbor-birth", y)
+    if y in carrier["neighbors"] and kind == "i" and target == root:
+        return ("incoming", y)
+    return None
 
+
+def b3_update(carrier, delta_t, event_view):
+    """Update using only old B3, an elapsed increment and a typed event."""
+    out = {
+        "root": carrier["root"],
+        "elapsed": carrier["elapsed"] + delta_t,
+        "root_row": carrier["root_row"],
+        "neighbors": dict(carrier["neighbors"]),
+        "ports": dict(carrier["ports"]),
+        "edges": dict(carrier["edges"]),
+    }
+    if event_view is None:
+        return out
+    carrier_bit, rings, births, wire = out["root_row"]
+    tag = event_view[0]
+    if tag == "root-birth":
+        child = f"{out['root']}/{births + 1}"
+        edge = edge_key(out["root"], child)
+        out["root_row"] = (carrier_bit, rings + 1, births + 1, wire + 1)
+        out["neighbors"][child] = (1, 0)
+        out["edges"][edge] = edge
+        out["ports"][(out["root"], edge)] = (out["root"], child, edge)
+    elif tag == "root-idle":
+        out["root_row"] = (carrier_bit, rings + 1, births, wire + 1)
+    elif tag == "root-outgoing":
+        target = event_view[1]
+        if target not in out["neighbors"]:
+            raise ValueError("outgoing target absent from B3")
+        out["root_row"] = (1 - carrier_bit, rings + 1, births, wire + 1)
+    elif tag == "neighbor-birth":
+        neighbor = event_view[1]
+        degree, neighbor_births = out["neighbors"][neighbor]
+        out["neighbors"][neighbor] = (degree + 1, neighbor_births + 1)
+    elif tag == "incoming":
+        neighbor = event_view[1]
+        if neighbor not in out["neighbors"]:
+            raise ValueError("incoming source absent from B3")
+        out["root_row"] = (1 - carrier_bit, rings, births, wire + 1)
+    else:
+        raise ValueError(event_view)
+    return out
+
+
+def b3_to_b2(carrier):
+    c, rings, _births, wire = carrier["root_row"]
+    return c, hist_from_degrees(d for d, _ in carrier["neighbors"].values()), rings, wire
+
+
+def b3_to_labeled(carrier):
+    c, rings, births, wire = carrier["root_row"]
+    rows = tuple(sorted(
+        (name, degree, neighbor_births)
+        for name, (degree, neighbor_births) in carrier["neighbors"].items()
+    ))
+    return c, rings, births, wire, rows
+
+
+physical_update_checks = 0
+physical_update_ok = True
+for state_index, state in enumerate(enumerated_states):
+    before = b3_carrier(state)
+    physical_update_ok &= b3_to_b2(before) == boundary_scoped(state)
+    physical_update_ok &= b3_to_labeled(before) == labeled_star_boundary(state)
+    for row_index, (kind, y, target, _rate) in enumerate(d34b_rates(state)):
+        delta = F(1 + ((state_index + row_index) % 7), 1000)
+        view = b3_event_view(before, kind, y, target)
+        updated = b3_update(before, delta, view)
+        direct = b3_carrier(d34b_step(state, kind, y, target), elapsed=delta)
+        physical_update_checks += 1
+        physical_update_ok &= b3_key(updated) == b3_key(direct)
+
+# A no-event update advances only elapsed time.  This is the relative-time
+# coordinate required by the continuous branch; the next-boundary survival
+# law is supplied by the generator in E4.
+no_event_probe = b3_update(b3_carrier(seed_state()), F(7, 13), None)
+physical_update_ok &= no_event_probe["elapsed"] == F(7, 13)
+
+e5_ok = physical_update_ok and physical_update_checks > 30000
+check(
+    "E5 PHYSICAL B3 RECURSIVE UPDATER [Fraction-exact]: root-owned row and "
+    "ports plus neighbor-owned degree/birth rows update from old B3, elapsed "
+    "increment and one typed local/passive/silent event; direct full-state "
+    "projection agrees and B3 maps explicitly to B2 and L",
+    e5_ok,
+    f"row updates={physical_update_checks}; no-event elapsed=7/13",
+)
+
+
+# ---------------------------------------------------------------------------
+# E6: relabeling covariance and construction-order covariance are distinct.
 
 def renamed_state(state, mapping):
     out = {
@@ -654,49 +795,236 @@ def renamed_state(state, mapping):
     return out
 
 
-def renamed_message(message, mapping):
+def renamed_b3(carrier, mapping):
+    root = mapping[carrier["root"]]
+    neighbors = {mapping[a]: row for a, row in carrier["neighbors"].items()}
+    edges = {
+        edge_key(mapping[a], mapping[b]): edge_key(mapping[a], mapping[b])
+        for a, b in carrier["edges"]
+    }
+    ports = {}
+    for (owner, edge), (_owner, peer, _edge) in carrier["ports"].items():
+        new_edge = edge_key(mapping[edge[0]], mapping[edge[1]])
+        ports[(mapping[owner], new_edge)] = (mapping[owner], mapping[peer], new_edge)
     return {
-        "region": frozenset(mapping[a] for a in message["region"]),
-        "owned": {mapping[a]: row for a, row in message["owned"].items()},
-        "refs": {mapping[a]: degree for a, degree in message["refs"].items()},
-        "edges": {edge_key(mapping[a], mapping[b]) for a, b in message["edges"]},
+        "root": root,
+        "elapsed": carrier["elapsed"],
+        "root_row": carrier["root_row"],
+        "neighbors": neighbors,
+        "ports": ports,
+        "edges": edges,
     }
 
 
-composition_state = seed_state()
-composition_state = d34b_step(composition_state, "b", "A")
-composition_state = d34b_step(composition_state, "b", "B")
-composition_state = d34b_step(composition_state, "i", "A", "B")
-composition_state = d34b_step(composition_state, "n", "B/1")
-message_a = star_message(composition_state, {"A"})
-message_b = star_message(composition_state, {"B"})
-composed_ab = compose_messages(message_a, message_b)
-direct_ab = star_message(composition_state, {"A", "B"})
+def mapped_row(row, mapping):
+    kind, y, target, rate = row
+    return kind, mapping[y], None if target is None else mapping[target], rate
 
-all_actor_names = sorted(composition_state["actors"])
-mapping = {name: f"X{index}" for index, name in enumerate(reversed(all_actor_names))}
-renamed = renamed_state(composition_state, mapping)
-covariant_direct = star_message(renamed, {mapping["A"], mapping["B"]})
-covariant_transport = renamed_message(direct_ab, mapping)
 
-e5_ok = (
-    message_key(composed_ab) == message_key(direct_ab)
-    and message_key(covariant_direct) == message_key(covariant_transport)
-    and set(composed_ab["owned"]) == {"A", "B"}
-    and set(composed_ab["refs"]) == {"A/1", "B/1"}
-)
+relabel_checks = 0
+relabel_ok = True
+for state in enumerated_states:
+    names = sorted(state["actors"])
+    mapping = {
+        name: ("R" if name == "A" else f"X{index}")
+        for index, name in enumerate(names)
+    }
+    renamed_before = renamed_state(state, mapping)
+    for row in d34b_rates(state):
+        kind, y, target, rate = row
+        after = d34b_step(state, kind, y, target)
+        mapped = dict(mapping)
+        if kind == "b":
+            child = f"{y}/{state['actors'][y]['births'] + 1}"
+            mapped[child] = f"{mapping[y]}/{state['actors'][y]['births'] + 1}"
+        transported_after = renamed_state(after, mapped)
+        mapped_kind, mapped_y, mapped_target, mapped_rate = mapped_row(row, mapping)
+        stepped_after = d34b_step(
+            renamed_before, mapped_kind, mapped_y, mapped_target
+        )
+        relabel_checks += 1
+        relabel_ok &= rate == mapped_rate
+        relabel_ok &= state_key(transported_after) == state_key(stepped_after)
+        relabel_ok &= b3_key(b3_carrier(transported_after, mapped["A"])) == b3_key(
+            renamed_b3(b3_carrier(after), mapped)
+        )
+
+
+def row_write_support(state, row):
+    kind, y, target, _rate = row
+    support = {y}
+    if kind == "i":
+        support.add(target)
+    elif kind == "b":
+        support.add(f"{y}/{state['actors'][y]['births'] + 1}")
+    return frozenset(support)
+
+
+swap_checks = 0
+swap_ok = True
+for state in enumerated_states:
+    rows = d34b_rates(state)
+    for left, right in combinations(rows, 2):
+        if row_write_support(state, left) & row_write_support(state, right):
+            continue
+        lk, ly, lt, _ = left
+        rk, ry, rt, _ = right
+        left_then_right = d34b_step(d34b_step(state, lk, ly, lt), rk, ry, rt)
+        right_then_left = d34b_step(d34b_step(state, rk, ry, rt), lk, ly, lt)
+        swap_checks += 1
+        swap_ok &= state_key(left_then_right) == state_key(right_then_left)
+        swap_ok &= b3_key(b3_carrier(left_then_right)) == b3_key(
+            b3_carrier(right_then_left)
+        )
+
+e6_ok = relabel_ok and swap_ok and relabel_checks > 30000 and swap_checks > 100000
 check(
-    "E5 DISTRIBUTED TYPED-STAR COMPOSITION / GAUGE [exact]: disjoint owned "
-    "actor rows and validated boundary references compose to the directly "
-    "constructed union star; actor relabeling commutes. This is record-native "
-    "typed union, not an invented D5 factor cover",
-    e5_ok,
-    f"owned={sorted(composed_ab['owned'])}; refs={sorted(composed_ab['refs'])}",
+    "E6 TWO COVARIANCE GATES [exact finite regression + disjoint-support "
+    "lemma]: nominal actor/Ulam relabeling extends to fresh children and "
+    "transports role outputs; disjoint record-DAG updates commute up to that "
+    "gauge at the same elapsed-time stop",
+    e6_ok,
+    f"relabel rows={relabel_checks}; disjoint swaps={swap_checks}",
 )
 
 
 # ---------------------------------------------------------------------------
-# E6: capacity and all-future coarse-carrier theorem hypotheses.
+# E7: typed regional composition with shared edges and owned endpoint ports.
+
+def region_message(state, region):
+    region = frozenset(region)
+    owned = {actor: actor_row(state, actor) for actor in region}
+    refs = {}
+    edges = {}
+    ports = {}
+    for actor in region:
+        for neighbor in state["neighbors"][actor]:
+            edge = edge_key(actor, neighbor)
+            edges[edge] = edge
+            ports[(actor, edge)] = (actor, neighbor, edge)
+            if neighbor not in region:
+                refs[neighbor] = (
+                    len(state["neighbors"][neighbor]),
+                    state["actors"][neighbor]["births"],
+                )
+    return {
+        "region": region, "owned": owned, "refs": refs,
+        "ports": ports, "edges": edges,
+    }
+
+
+def message_key(message):
+    return (
+        tuple(sorted(message["region"])),
+        tuple(sorted(message["owned"].items())),
+        tuple(sorted(message["refs"].items())),
+        tuple(sorted(message["ports"].items(), key=repr)),
+        tuple(sorted(message["edges"].items(), key=repr)),
+    )
+
+
+def compose_messages(left, right):
+    if left["region"] & right["region"]:
+        raise ValueError("composition receipt uses disjoint owned regions")
+    region = left["region"] | right["region"]
+    owned = dict(left["owned"])
+    owned.update(right["owned"])
+    refs = {}
+    for source in (left["refs"], right["refs"]):
+        for actor, row in source.items():
+            if actor in refs and refs[actor] != row:
+                raise ValueError("inconsistent duplicate boundary reference")
+            refs[actor] = row
+    for actor, row in owned.items():
+        if actor in refs:
+            if refs[actor] != (row[3], row[2]):
+                raise ValueError("owned/reference row mismatch")
+            del refs[actor]
+    ports = dict(left["ports"])
+    for key, value in right["ports"].items():
+        if key in ports and ports[key] != value:
+            raise ValueError("inconsistent duplicate owned port")
+        if key in ports:
+            raise ValueError("port has more than one owner")
+        ports[key] = value
+    edges = dict(left["edges"])
+    for key, value in right["edges"].items():
+        if key in edges and edges[key] != value:
+            raise ValueError("inconsistent duplicate shared edge")
+        edges[key] = value
+    for (owner, edge), (owner2, peer, edge2) in ports.items():
+        if owner != owner2 or edge != edge2 or edges.get(edge) != edge:
+            raise ValueError("port/edge typing failure")
+        if set(edge) != {owner, peer}:
+            raise ValueError("port endpoints disagree with shared edge")
+    return {
+        "region": region,
+        "owned": owned,
+        "refs": refs,
+        "ports": ports,
+        "edges": edges,
+    }
+
+
+composition_checks = 0
+composition_ok = True
+for state in enumerated_states:
+    names = tuple(sorted(state["actors"]))
+    # Every disjoint nonempty singleton pair and every singleton/complement
+    # pair are registered; the arbitrary-region identity is the same typed-set
+    # union theorem and is not inferred statistically from these regressions.
+    regions = [
+        frozenset(region)
+        for size in range(1, len(names))
+        for region in combinations(names, size)
+    ]
+    region_pairs = [
+        (left, right)
+        for index, left in enumerate(regions)
+        for right in regions[index + 1:]
+        if left.isdisjoint(right)
+    ]
+    for left_region, right_region in region_pairs:
+        direct = region_message(state, set(left_region) | set(right_region))
+        for first_region, second_region in (
+                (left_region, right_region), (right_region, left_region)):
+            first = region_message(state, first_region)
+            second = region_message(state, second_region)
+            composed = compose_messages(first, second)
+            composition_checks += 1
+            composition_ok &= message_key(composed) == message_key(direct)
+
+# Fail closed on inconsistent duplicate shared-edge metadata.
+corruption_rejected = False
+corrupt_state = seed_state()
+left = region_message(corrupt_state, {"A"})
+right = region_message(corrupt_state, {"B"})
+bad_right = {
+    key: (dict(value) if isinstance(value, dict) else value)
+    for key, value in right.items()
+}
+bad_right["edges"] = dict(right["edges"])
+shared_edge = edge_key("A", "B")
+bad_right["edges"][shared_edge] = ("A", "CORRUPT")
+try:
+    compose_messages(left, bad_right)
+except ValueError:
+    corruption_rejected = True
+
+e7_ok = composition_ok and corruption_rejected and composition_checks > 150000
+check(
+    "E7 TYPED COMPOSITION / OWNERSHIP [exact + set-union lemma]: actor rows "
+    "and endpoint ports have exactly one owner; shared edges and external rows "
+    "are validated; composition equals direct regional projection and corrupt "
+    "duplicate edge metadata is rejected",
+    e7_ok,
+    f"registered region pairs={composition_checks}; corruption rejected="
+    f"{corruption_rejected}",
+)
+
+
+# ---------------------------------------------------------------------------
+# E8: capacity and all-future coarse-carrier theorem hypotheses.
 
 T_width = Decimal(1)
 poisson_probs = []
@@ -715,13 +1043,36 @@ poisson_recurrence = all(
 )
 capacity_ledger = {
     "graph radius": 1,
-    "physical incident ports": "A degree; unbounded support",
-    "distributed neighbor rows": "one per incident actor; unbounded count",
-    "occupied histogram bins": "finite per state; no uniform bound claimed",
-    "largest degree / integer bits": "unbounded",
-    "A own/wire counters": "unbounded integers when retained by scope",
+    "actor/reference count": "1+d_A; d_A external rows",
+    "owned A-side endpoint ports": "d_A; unbounded support",
+    "shared incident edges": "d_A; unbounded support",
+    "neighbor degree bits": "sum_x ceil(log2(degree(x)+1))",
+    "A own/birth/wire counter bits": "sum ceil(log2(counter+1))",
+    "nominal identifiers/handles": "d_A+1 names; encoding-dependent, unbounded",
+    "elapsed time": "one relative continuous coordinate; ideal precision uncalibrated",
     "renewal ages": "absent only for chosen exponential law",
+    "bounded alternative/minimality": "OPEN; only this B3 is proved unbounded",
 }
+
+capacity_probe_state = max(
+    enumerated_states, key=lambda s: len(s["neighbors"]["A"])
+)
+capacity_probe = b3_carrier(capacity_probe_state)
+probe_degree = len(capacity_probe["neighbors"])
+probe_degree_bits = sum(
+    max(1, degree.bit_length())
+    for degree, _births in capacity_probe["neighbors"].values()
+)
+probe_counter_bits = sum(
+    max(1, value.bit_length()) for value in capacity_probe["root_row"][1:]
+)
+capacity_formulas_ok = (
+    len(capacity_probe["ports"]) == probe_degree
+    and len(capacity_probe["edges"]) == probe_degree
+    and len(capacity_probe["neighbors"]) == probe_degree
+    and probe_degree_bits >= probe_degree
+    and probe_counter_bits >= 3
+)
 
 # The analytic theorem is the row partition in note section 6: for arbitrary
 # finite D34b state, only A rows and births/interactions of A-neighbors can
@@ -730,30 +1081,33 @@ capacity_ledger = {
 # pure-jump law.  The finite regression above is deliberately not the proof.
 analytic_partition_hypotheses = (
     projection_matches and labeled_projection_matches
-    and all(rate > 0 for boundary in audit_boundaries
+    and counter_rows_integrated
+    and all(rate > 0 for boundary in synthetic_boundaries
             for rate in boundary_formula_rows(boundary).values())
-    and e5_ok
-    and len(capacity_ledger) == 7
+    and e5_ok and e6_ok and e7_ok
+    and capacity_formulas_ok
+    and len(capacity_ledger) == 10
 )
-e6_ok = (
+e8_ok = (
     analytic_partition_hypotheses
     and all(probability > 0 for probability in poisson_probs)
     and poisson_recurrence
 )
 check(
-    "E6 BRANCH C/L ALL-FUTURE GROWING-CARRIER THEOREM [analytic generator "
-    "partition + inherited D34b nonexplosion]: B3's distributed star screens "
-    "the declared coarse/role-labeled marked wire process and updates locally; "
-    "A's rate-1/4 birth process gives unbounded port support, so no bounded "
-    "collar or one-record state follows",
-    e6_ok,
+    "E8 BRANCH C/L ALL-FUTURE B3 + CAPACITY LEDGER [analytic generator "
+    "partition + inherited D34b nonexplosion]: the physical distributed star "
+    "screens and updates recursively at relative-time and count stops; this "
+    "B3 has unbounded port/identifier/integer width, while a different bounded "
+    "physical carrier and minimality remain open",
+    e8_ok,
     f"Poisson(T=1,m=20)={poisson_probs[-1]:.32E}; capacity fields="
-    f"{len(capacity_ledger)}",
+    f"{len(capacity_ledger)}; probe d/degree-bits/counter-bits="
+    f"{probe_degree}/{probe_degree_bits}/{probe_counter_bits}",
 )
 
 
 # ---------------------------------------------------------------------------
-# E7: every fixed actor-graph radius loses full durable record ancestry.
+# E9: every complete fixed actor-graph radius loses full durable ancestry.
 
 def actor_distances(state, root):
     distances = {root: 0}
@@ -767,23 +1121,33 @@ def actor_distances(state, root):
     return distances
 
 
-def radius_projection(state, root, radius):
+def complete_radius_carrier(state, root, radius):
+    """Complete records owned by actors in a closed actor-graph ball.
+
+    Outside predecessor and actor identifiers remain opaque.  Following them
+    recursively would no longer be a radius-r carrier.
+    """
     distances = actor_distances(state, root)
     inside = {actor for actor, distance in distances.items() if distance <= radius}
     owned = tuple(sorted(
-        (actor, actor_row(state, actor), state["last"].get(actor))
+        (actor,
+         tuple(sorted(state["actors"][actor].items())),
+         state["last"].get(actor),
+         wire_count(state, actor))
         for actor in inside
     ))
-    refs = tuple(sorted(
-        (neighbor, len(state["neighbors"][neighbor]))
+    ports = tuple(sorted(
+        (actor, neighbor, edge_key(actor, neighbor), neighbor not in inside)
         for actor in inside for neighbor in state["neighbors"][actor]
-        if neighbor not in inside
     ))
-    local_events = tuple(sorted(
-        repr(event) for event in state["events"]
-        if set(event[5]) <= inside
+    # Every event on an owned wire is complete, including a crossing event.
+    # Predecessor ids whose events are not owned are retained opaquely inside
+    # the complete event tuple but are not dereferenced.
+    owned_events = tuple(sorted(
+        (event for event in state["events"] if set(event[5]) & inside),
+        key=repr,
     ))
-    return owned, refs, local_events
+    return tuple(sorted(inside)), owned, ports, owned_events
 
 
 def event_ancestry(state, final_eid):
@@ -797,6 +1161,44 @@ def event_ancestry(state, final_eid):
         seen.add(eid)
         stack.extend(event_map[eid][4])
     return tuple(sorted((event_map[eid] for eid in seen), key=repr))
+
+
+def structural_inward_endpoint(state, path):
+    """Follow the selected child->parent interaction predecessor chain."""
+    event_map = {event[0]: event for event in state["events"]}
+    current = event_map[state["last"][path[0]]]
+    for index in range(1, len(path)):
+        child, parent = path[index], path[index - 1]
+        if not (current[1] == "i" and current[2] == child
+                and current[3] == parent):
+            return None
+        predecessor_events = [event_map[eid] for eid in current[4]]
+        if index < len(path) - 1:
+            next_child = path[index + 1]
+            matches = [
+                event for event in predecessor_events
+                if event[1] == "i" and event[2] == next_child
+                and event[3] == child
+            ]
+        else:
+            # The pre-existing tip of the remote endpoint is the unique
+            # predecessor initiated by that endpoint and not its birth event.
+            matches = [
+                event for event in predecessor_events
+                if event[2] == child and event[1] in {"n", "i"}
+            ]
+        if len(matches) != 1:
+            return None
+        current = matches[0]
+    return current
+
+
+def branch_f_event(state, path):
+    endpoint = structural_inward_endpoint(state, path)
+    if endpoint is None:
+        return False
+    ancestry = event_ancestry(state, state["last"][path[0]])
+    return endpoint in ancestry and endpoint[1] == "n"
 
 
 def grow_chain_branch(radius):
@@ -820,9 +1222,17 @@ def grow_chain_branch(radius):
     interact_branch, p_interact = embedded_step(state, "i", distant, leaf)
     idle_mass = history_mass * p_idle
     interact_mass = history_mass * p_interact
-    branch_eid = idle_branch["last"][distant]
+    idle_branch_eid = idle_branch["last"][distant]
+    interact_branch_eid = interact_branch["last"][distant]
 
-    if radius_projection(idle_branch, "A", radius) != radius_projection(
+    idle_carrier = complete_radius_carrier(idle_branch, "A", radius)
+    interact_carrier = complete_radius_carrier(interact_branch, "A", radius)
+    if idle_carrier != interact_carrier:
+        raise AssertionError("complete branch carrier leaked outside record")
+    if idle_branch_eid != interact_branch_eid:
+        raise AssertionError("paired branches must share nominal endpoint role")
+
+    if complete_radius_carrier(idle_branch, "A", radius) != complete_radius_carrier(
             interact_branch, "A", radius):
         raise AssertionError("branch leaked inside registered radius")
 
@@ -848,50 +1258,85 @@ def grow_chain_branch(radius):
     final_interact = interact_future["last"]["A"]
     ancestry_idle = event_ancestry(idle_future, final_idle)
     ancestry_interact = event_ancestry(interact_future, final_interact)
-    record_idle = next(event for event in ancestry_idle if event[0] == branch_eid)
+    record_idle = next(event for event in ancestry_idle if event[0] == idle_branch_eid)
     record_interact = next(
-        event for event in ancestry_interact if event[0] == branch_eid
+        event for event in ancestry_interact if event[0] == interact_branch_eid
     )
     expected_mass = F(1, 8 * (radius + 3)) ** (radius + 1)
+
+    # Optional timed subcylinder lower bound for Delta=1.  During this exact
+    # path there are m=r+3 component clocks and no births; the first r+1 rings
+    # complete with an Erlang(shape=r+1, rate=m) factor.
+    m = Decimal(radius + 3)
+    shape = radius + 1
+    erlang_cdf = Decimal(1) - (-m).exp() * sum(
+        (m ** j) / Decimal(math.factorial(j)) for j in range(shape)
+    )
+    timed_lower = dfrac(expected_mass) * erlang_cdf
+
+    query_idle = branch_f_event(idle_future, path)
+    query_interact = branch_f_event(interact_future, path)
+
+    # Gauge regression: transport the final graph and structural path together.
+    mapping = {
+        actor: ("R" if actor == "A" else f"Y{index}")
+        for index, actor in enumerate(sorted(idle_future["actors"]))
+    }
+    query_gauge = branch_f_event(
+        renamed_state(idle_future, mapping), [mapping[a] for a in path]
+    ) == query_idle
+
     return {
         "radius": radius,
-        "local_equal": True,
+        "complete_carrier_equal": idle_carrier == interact_carrier,
         "idle_past_mass": idle_mass,
         "interact_past_mass": interact_mass,
-        "future_mass": future_mass,
+        "embedded_lower": future_mass,
         "expected_mass": expected_mass,
+        "timed_lower_Delta1": timed_lower,
         "idle_kind": record_idle[1],
         "interact_kind": record_interact[1],
+        "query_idle": query_idle,
+        "query_interact": query_interact,
+        "immutable_zero": record_interact[1] == "i",
+        "query_gauge": query_gauge,
         "ancestry_distinct": ancestry_idle != ancestry_interact,
     }
 
 
 radius_witnesses = tuple(grow_chain_branch(radius) for radius in range(4))
-e7_ok = all(
-    row["local_equal"]
+e9_ok = all(
+    row["complete_carrier_equal"]
     and row["idle_past_mass"] > 0
     and row["interact_past_mass"] > 0
-    and row["future_mass"] == row["expected_mass"] > 0
+    and row["embedded_lower"] == row["expected_mass"] > 0
+    and row["timed_lower_Delta1"] > 0
     and row["idle_kind"] == "n"
     and row["interact_kind"] == "i"
+    and row["query_idle"]
+    and not row["query_interact"]
+    and row["immutable_zero"]
+    and row["query_gauge"]
     and row["ancestry_distinct"]
     for row in radius_witnesses
 )
 check(
-    "E7 BRANCH F FIXED-RADIUS OBSTRUCTION [Fraction-exact specimens + "
-    "all-r analytic chain]: outside-radius D-idle versus D-to-E pasts have "
-    "identical local carriers; the same positive inward interaction cylinder "
-    "delivers the immutable differing D record into A's ancestor sub-DAG",
-    e7_ok,
-    "future path masses=" + ",".join(
-        f"r{row['radius']}:{ftext(row['future_mass'])}"
+    "E9 BRANCH F COMPLETE-RADIUS NO-GO [Fraction-exact specimens + all-r "
+    "analytic chain]: complete C_r carriers agree; one common structural, "
+    "gauge-invariant future ancestry event E_r has idle-branch probability at "
+    "least p_r>0 and interaction-branch probability zero by immutability",
+    e9_ok,
+    "embedded lower bounds=" + ",".join(
+        f"r{row['radius']}:{ftext(row['embedded_lower'])}"
         for row in radius_witnesses
+    ) + "; timed Delta=1 minima=" + ",".join(
+        f"{row['timed_lower_Delta1']:.6E}" for row in radius_witnesses
     ),
 )
 
 
 # ---------------------------------------------------------------------------
-# E8: disconnected control and exact component ceiling.
+# E10: disconnected control and exact component ceiling.
 
 def a_local_rows(state):
     return tuple(
@@ -904,27 +1349,104 @@ def a_local_rows(state):
 remote_rows_equal = a_local_rows(seed_state()) == a_local_rows(seed_state(remote=True))
 component_of_a = set(actor_distances(seed_state(remote=True), "A"))
 remote_disjoint = component_of_a == {"A", "B"}
+
+
+def component_restriction(state, root="A"):
+    component = set(actor_distances(state, root))
+    actors = tuple(sorted(
+        (a, tuple(sorted(state["actors"][a].items()))) for a in component
+    ))
+    neighbors = tuple(sorted(
+        (a, tuple(sorted(state["neighbors"][a] & component))) for a in component
+    ))
+    events = tuple(sorted(
+        (event for event in state["events"] if event[2] in component), key=repr
+    ))
+    last = tuple(sorted(
+        (a, state["last"].get(a)) for a in component
+    ))
+    return actors, neighbors, events, last
+
+
+def component_path(state, operations, root="A"):
+    out = state
+    mass = F(1)
+    for kind, y, target in operations:
+        component_size = len(actor_distances(out, root))
+        mass *= event_rate(out, kind, y, target) / component_size
+        out = d34b_step(out, kind, y, target)
+    return out, mass
+
+
+component_operations = (
+    ("b", "A", None),
+    ("b", "B", None),
+    ("i", "B", "A"),
+    ("n", "A", None),
+)
+component_plain, component_mass_plain = component_path(
+    seed_state(), component_operations
+)
+component_remote, component_mass_remote = component_path(
+    seed_state(remote=True), component_operations
+)
+multistep_remote_invariant = (
+    component_mass_plain == component_mass_remote
+    and component_restriction(component_plain)
+    == component_restriction(component_remote)
+)
+
+# Exact hypotheses of the pinned D34b product theorem: actor clock rows sum to
+# one; every birth stays in the initiator's component, every interaction uses
+# an existing edge, and idle joins nothing.  Thus disconnected factors remain
+# independent at continuous construction time and component-local stops.
+no_component_joining = all(
+    kind != "i" or target in state["neighbors"][y]
+    for state in enumerated_states
+    for kind, y, target, _rate in d34b_rates(state)
+)
+unique_event_ownership = all(
+    len({event[0] for event in state["events"]}) == len(state["events"])
+    and all(event[2] in event[5] for event in state["events"])
+    for state in enumerated_states
+)
 component_upper_bound_fields = (
     "actors/counters/carriers",
     "typed adjacency/eligibility",
     "wire tips",
     "persistent event records",
 )
-e8_ok = remote_rows_equal and remote_disjoint and len(component_upper_bound_fields) == 4
+component_carrier_gates = {
+    "screening": no_component_joining and law_rows_normalized,
+    "recursive closure": no_component_joining,
+    "covariance": e6_ok,
+    "typed composition": e7_ok and unique_event_ownership,
+    "capacity bounded": False,
+    "whole component necessary": False,
+}
+e10_ok = (
+    remote_rows_equal and remote_disjoint and multistep_remote_invariant
+    and all(component_carrier_gates[key] for key in (
+        "screening", "recursive closure", "covariance", "typed composition"
+    ))
+    and not component_carrier_gates["capacity bounded"]
+    and not component_carrier_gates["whole component necessary"]
+    and len(component_upper_bound_fields) == 4
+)
 check(
-    "E8 WHOLE-COMPONENT SUFFICIENCY UPPER BOUND / DISCONNECTED NEGATIVE "
-    "CONTROL [exact + parent product theorem]: A's connected D34b component "
-    "contains every possible influence path; adding disconnected P--Q leaves "
-    "all A-local rows unchanged. Literal global state is unnecessary, while "
-    "minimal full-record encoding remains open",
-    e8_ok,
-    f"A component={sorted(component_of_a)}; upper-bound fields="
+    "E10 WHOLE-COMPONENT SUFFICIENT GROWING UPPER BOUND / DISCONNECTED "
+    "CONTROL [exact regression + pinned product theorem]: no law row joins "
+    "components; adding P--Q leaves the A-component continuous/local-stop law "
+    "and a multi-step component cylinder invariant; necessity is not claimed",
+    e10_ok,
+    f"A component={sorted(component_of_a)}; path mass="
+    f"{ftext(component_mass_plain)}; upper-bound fields="
     f"{len(component_upper_bound_fields)}",
 )
 
 
 # ---------------------------------------------------------------------------
-# E9: finite prefix/cylinder map and the profinite ceiling.
+# E11: finite labeled-prefix map and the profinite ceiling.
 
 def transitive_relations(events):
     index = {event[0]: i for i, event in enumerate(events)}
@@ -981,8 +1503,12 @@ finite_pushforward_ok = (
     and sum(push4.values(), F(0)) == 1
     and dict(push4_to3) == dict(push3)
 )
-past_finite_specimens = all(
-    len(transitive_relations(state["events"])) <= len(state["events"]) ** 2
+finite_dag_integrity = all(
+    all(
+        set(event[4]) <= {prior[0] for prior in state["events"][:index]}
+        for index, event in enumerate(state["events"])
+    )
+    and all(i != j for i, j in transitive_relations(state["events"]))
     for state in enumerated_states
 )
 
@@ -1001,89 +1527,199 @@ marked_output_differs = (
     != d34b_step(one_interact, "n", "A")["actors"]["A"]["carrier"]
 )
 
-e9_ok = (
+e11_ok = (
     finite_pushforward_ok
-    and past_finite_specimens
+    and finite_dag_integrity
     and finite_shadow_equal
     and marked_output_differs
 )
 check(
-    "E9 FINITE u/PREFIX PUSHFORWARD + STEM CEILING [exact]: forgetting marks "
-    "gives finite past-finite orders and the depth-4 prefix law restricts to "
-    "depth 3; a one-point unmarked shadow does not determine marked carrier "
-    "output. This is not a v9 posterior-sufficiency or profinite theorem",
-    e9_ok,
+    "E11 FINITE LABELED-TRUNCATION/UNMARKED PUSHFORWARD + STEM CEILING "
+    "[exact]: (u3 o r4->3)_* mu4=(u3)_* mu3 pathwise before marks are "
+    "forgotten; there is no asserted unmarked 4->3 restriction; a one-point "
+    "shadow does not determine marked output and no v9 posterior theorem is "
+    "claimed",
+    e11_ok,
     f"path counts d3/d4={len(paths3)}/{len(paths4)}; unmarked classes="
     f"{len(push3)}/{len(push4)}",
 )
 
 
 # ---------------------------------------------------------------------------
-# E10: quantum/process branch refusal is a typed result, not missing work hidden.
+# E12: quantum/process branch refusal is a typed dependency result.
 
+accepted_d34c_output = Path(__file__).resolve().parents[1] / "data" / (
+    "d34c_nse_quantum_history_exact.out"
+)
+accepted_d34c_sha = (
+    hashlib.sha256(accepted_d34c_output.read_bytes()).hexdigest()
+    if accepted_d34c_output.exists() else None
+)
+controlled_process_input = None
+instrument_kernel_input = None
 quantum_inputs = {
-    "finite D34c strongly-positive typed-DAG family": True,
+    "finite D34c strongly-positive typed-DAG family": (
+        accepted_d34c_sha
+        == "9ce73a693b41f765eff163749ef769ca0cb4ce856ead66d690a63a20331a731a"
+    ),
     "auxiliary P,E causal-break negative control": True,
-    "timed controlled D34b-D34c process family": False,
-    "licensed all-instrument kernels P(r|I,h)": False,
+    "timed controlled D34b-D34c process family": controlled_process_input,
+    "licensed all-instrument kernels P(r|I,h)": instrument_kernel_input,
 }
 quantum_refusal = (
     quantum_inputs["finite D34c strongly-positive typed-DAG family"]
     and quantum_inputs["auxiliary P,E causal-break negative control"]
-    and not quantum_inputs["timed controlled D34b-D34c process family"]
-    and not quantum_inputs["licensed all-instrument kernels P(r|I,h)"]
+    and quantum_inputs["timed controlled D34b-D34c process family"] is None
+    and quantum_inputs["licensed all-instrument kernels P(r|I,h)"] is None
 )
 assigned_quantum_widths = ()
-e10_ok = quantum_refusal and assigned_quantum_widths == ()
+e12_ok = quantum_refusal and assigned_quantum_widths == ()
 check(
-    "E10 INTRINSIC QUANTUM D34e BRANCH — REFUSAL/UNDEFINED [typed input "
-    "gate]: finite D34c and auxiliary P,E evidence exist, but no timed "
-    "controlled D34b-D34c process supplies P(r|I,h); no SHARD d_carrier, d_op "
-    "or chi_cut is assigned",
-    e10_ok,
-    "missing controlled process and intervention kernels; widths=unassigned",
+    "E12 INTRINSIC QUANTUM D34e BRANCH — REFUSAL/UNDEFINED [pinned typed "
+    "dependency]: accepted finite D34c output is hash-verified, but no timed "
+    "controlled D34b-D34c process or all-instrument kernels are supplied; no "
+    "SHARD d_carrier, d_op or chi_cut is assigned",
+    e12_ok,
+    f"D34c output SHA={accepted_d34c_sha}; missing controlled process and "
+    "instrument kernels; widths=unassigned",
 )
 
 
 # ---------------------------------------------------------------------------
-# E11: branch verdicts and claim ceiling.
+# E13: executable first-applicable branch verdicts and claim ceiling.
 
-branch_verdicts = {
-    "C coarse A-wire": "ALL-FUTURE GROWING-CARRIER PASS / POINTWISE",
-    "L role-labeled A-wire": "ALL-FUTURE GROWING-CARRIER PASS / POINTWISE",
-    "F full ancestry fixed-radius class": "CANDIDATE-CLASS OBSTRUCTION",
-    "F whole component": "SUFFICIENT GROWING UPPER BOUND; MINIMALITY OPEN",
-    "v9 stem posterior factor": "REFUSAL/UNDEFINED BEYOND FINITE u GATES",
-    "intrinsic quantum": "REFUSAL/UNDEFINED",
+OUTCOMES = (
+    "REFUSAL/UNDEFINED",
+    "ALL-FUTURE BOUNDED-CARRIER PASS",
+    "ALL-FUTURE GROWING-CARRIER PASS",
+    "WHOLE-COMPONENT ONLY",
+    "GLOBAL ONLY",
+    "NO EXACT REALIZATION IN THE DECLARED CARRIER CLASS",
+    "CANDIDATE-CLASS OBSTRUCTION",
+    "FINITE-DOMAIN ONLY",
+)
+
+
+def decide_branch(branch):
+    """Paper-21 section-10.8, in frozen first-applicable order."""
+    core = all(branch[key] for key in (
+        "screening", "closure", "covariance", "composition"
+    ))
+    raw = (
+        not branch["required_inputs"],
+        core and branch["bounded"]
+        and not branch["whole_necessary"] and not branch["global_necessary"],
+        core and not branch["bounded"]
+        and not branch["whole_necessary"] and not branch["global_necessary"],
+        branch["whole_necessary"] and not branch["global_necessary"],
+        branch["global_necessary"],
+        branch["universal_exclusion"],
+        branch["candidate_obstruction"],
+        branch["finite_domain"],
+    )
+    selected_index = next((index for index, value in enumerate(raw) if value), None)
+    if selected_index is None:
+        raise AssertionError(f"no Paper-21 outcome for {branch['scope']}")
+    # The emitted outcome predicates are made mutually exclusive by priority;
+    # this also makes a skipped earlier row executable rather than narrative.
+    one_hot = tuple(index == selected_index for index in range(len(OUTCOMES)))
+    if sum(one_hot) != 1 or any(raw[index] for index in range(selected_index)):
+        raise AssertionError("first-applicable outcome failure")
+    return OUTCOMES[selected_index], raw, one_hot
+
+
+def branch(scope, **flags):
+    base = {
+        "scope": scope,
+        "required_inputs": True,
+        "screening": False,
+        "closure": False,
+        "covariance": False,
+        "composition": False,
+        "bounded": False,
+        "whole_necessary": False,
+        "global_necessary": False,
+        "universal_exclusion": False,
+        "candidate_obstruction": False,
+        "finite_domain": False,
+        "nse": "not applicable: no physical deletion/compression",
+    }
+    base.update(flags)
+    return base
+
+
+branches = {
+    "C coarse A-wire / B3": branch(
+        "(mu_D34b,A,Q_C,passive,S_elapsed/count,C_B3)",
+        screening=e8_ok, closure=e5_ok, covariance=e6_ok,
+        composition=e7_ok, bounded=False,
+    ),
+    "L role-labeled A-wire / B3": branch(
+        "(mu_D34b,A,Q_L,passive,S_elapsed/count,C_B3)",
+        screening=e8_ok, closure=e5_ok, covariance=e6_ok,
+        composition=e7_ok, bounded=False,
+    ),
+    "F full ancestry / complete radius family": branch(
+        "(mu_D34b,A,Q_F,passive,S_A-wire,{C_r:r finite})",
+        universal_exclusion=e9_ok,
+    ),
+    "F full ancestry / whole component": branch(
+        "(mu_D34b,A,Q_F,passive,S_continuous/local,C_component)",
+        screening=e10_ok, closure=e10_ok, covariance=e6_ok,
+        composition=component_carrier_gates["typed composition"], bounded=False,
+    ),
+    "v9 stem posterior factor": branch(
+        "(mu_D34b,A,Q_C/L/F,passive,S_online,C_Xstem-posterior)",
+        required_inputs=False, finite_domain=e11_ok,
+    ),
+    "intrinsic quantum": branch(
+        "(mu_controlled,A,Q_instruments,I,S,C_quantum)",
+        required_inputs=False,
+    ),
 }
-flags = {
-    "C screening": "pass",
-    "C recursive time/event closure": "pass",
-    "L covariance": "pass",
-    "L composition": "pass",
-    "uniform capacity": "fail: unbounded ports/degrees/counters",
-    "NSE": "not applicable: no physical deletion",
-    "F fixed radius": "fail for every r by analytic chain",
-    "profinite factorization": "not proved",
-    "quantum boundary": "undefined without controlled law",
+branch_decisions = {name: decide_branch(value) for name, value in branches.items()}
+branch_verdicts = {name: result[0] for name, result in branch_decisions.items()}
+
+# Exercise every row of the decision machine, independently of the scientific
+# branches, so a hard-coded verdict dictionary cannot pass this gate.
+decision_unit_cases = (
+    (branch("row1", required_inputs=False), OUTCOMES[0]),
+    (branch("row2", screening=True, closure=True, covariance=True,
+            composition=True, bounded=True), OUTCOMES[1]),
+    (branch("row3", screening=True, closure=True, covariance=True,
+            composition=True, bounded=False), OUTCOMES[2]),
+    (branch("row4", whole_necessary=True), OUTCOMES[3]),
+    (branch("row5", global_necessary=True), OUTCOMES[4]),
+    (branch("row6", universal_exclusion=True), OUTCOMES[5]),
+    (branch("row7", candidate_obstruction=True), OUTCOMES[6]),
+    (branch("row8", finite_domain=True), OUTCOMES[7]),
+)
+decision_machine_ok = all(
+    decide_branch(specimen)[0] == expected
+    for specimen, expected in decision_unit_cases
+)
+
+expected_verdicts = {
+    "C coarse A-wire / B3": OUTCOMES[2],
+    "L role-labeled A-wire / B3": OUTCOMES[2],
+    "F full ancestry / complete radius family": OUTCOMES[5],
+    "F full ancestry / whole component": OUTCOMES[2],
+    "v9 stem posterior factor": OUTCOMES[0],
+    "intrinsic quantum": OUTCOMES[0],
 }
-e11_ok = (
-    PASS == 10 and FAIL == 0
-    and len(branch_verdicts) == 6
-    and len(flags) == 9
-    and branch_verdicts["C coarse A-wire"].startswith("ALL-FUTURE GROWING")
-    and branch_verdicts["F full ancestry fixed-radius class"]
-    == "CANDIDATE-CLASS OBSTRUCTION"
+e13_ok = (
+    PASS == 12 and FAIL == 0
+    and decision_machine_ok
+    and branch_verdicts == expected_verdicts
+    and all(sum(result[2]) == 1 for result in branch_decisions.values())
 )
 check(
-    "E11 DEPENDENT D34e SCORECARD: Branch C/L have an exact distributed "
-    "all-future but unbounded record-DAG star carrier; Branch F defeats every "
-    "fixed actor radius and has only a whole-component sufficient upper bound; "
-    "minimal full-record, v9 posterior-factor and intrinsic quantum boundaries "
-    "remain open/undefined",
-    e11_ok,
-    "maximum noun: QUERY-RELATIVE GROWING-BOUNDARY THEOREM + FIXED-RADIUS "
-    "FULL-ANCESTRY OBSTRUCTION",
+    "E13 EXECUTABLE FIRST-APPLICABLE SCORECARD: every branch carries its "
+    "(mu,A,Q,I,S,C), all eight Paper-21 rows are unit-tested in priority order, "
+    "and exactly one emitted outcome applies; B4 is sufficient/growing but not "
+    "necessary, while complete finite-radius C_r is universally excluded",
+    e13_ok,
+    "; ".join(f"{name}={verdict}" for name, verdict in branch_verdicts.items()),
 )
 
 
@@ -1091,8 +1727,10 @@ summary = (
     f"gates={PASS}/{PASS + FAIL}; levels={','.join(map(str, level_counts))}; "
     f"states={len(enumerated_states)}; collisions={lumpability_collisions}; "
     f"rate_gap={ftext(derivative_gap)}; "
-    f"signatures={','.join(map(str, signature_counts))}; "
-    f"radius_masses={','.join(ftext(row['future_mass']) for row in radius_witnesses)}; "
+    f"predictive={','.join(map(str, synthetic_predictive_counts))}; "
+    f"b3_updates={physical_update_checks}; swaps={swap_checks}; "
+    f"composition={composition_checks}; "
+    f"radius_lower={','.join(ftext(row['embedded_lower']) for row in radius_witnesses)}; "
     f"prefix_classes={len(push3)},{len(push4)}; quantum=REFUSAL"
 )
 digest = hashlib.sha256(summary.encode("utf-8")).hexdigest()

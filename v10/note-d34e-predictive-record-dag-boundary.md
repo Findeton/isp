@@ -1,7 +1,8 @@
 # D34e — the predictive record-DAG boundary
 
 **Status:** historical pin through section 14; provisional receipt rejected by
-hostile round 1; replacement protocol frozen in section 16 before repair code.
+hostile round 1; replacement protocol frozen in section 16; replacement
+receipt passes `13/13` in section 17 and awaits independent delta review.
 **Date:** 2026-07-13.
 
 **Parent:** Paper 21 section 10 at terminal commit `70e0b4d`.
@@ -615,3 +616,71 @@ typed quantum refusal; and the executable first-applicable scorecard.
 No terminal paper is written until all three hostile streams review the
 replacement delta and every major finding is either closed or explicitly
 lowers the claim.
+
+## 17. Replacement receipt before hostile delta review
+
+The replacement executable passes `13/13`.  Runs under
+`PYTHONHASHSEED=17,65537` are byte-identical.  The frozen artifacts are:
+
+```text
+code SHA-256
+e3d3daee3297174183b970299df3289a03ce5491349aa1c43acc2a3a14d26533
+
+stdout file SHA-256
+b168723596fde346b227e6e96f9a00d0304740a498f834809d42afbab346f9bc
+
+internal summary SHA-256
+88ce0efb91521151d098bc8f68a132cf6b4fc3278d9be032785817a2452714c3
+```
+
+The replacement closes the round-1 defects at receipt level:
+
+- the scoped coarse carrier includes A-own and A-wire counts, while time is
+  explicitly elapsed from the conditioning stop;
+- the finite predictive stress partition is coinductive and gives
+  `(106,110,110)`, including the expected horizon-two B1 split;
+- an independent physical B3 updater matches direct projection on `35,898`
+  full-state rows;
+- relabeling/fresh-name covariance and `120,276` disjoint-update swaps pass as
+  separate gates;
+- typed composition passes `159,734` ordered region pairs and rejects a
+  corrupted duplicate shared edge;
+- the complete radius carrier `C_r`, the common event `E_r`, its exact
+  embedded lower bound and immutable zero are executable;
+- the finite unmarked result is the labeled-truncation commuting diagram;
+- the accepted finite D34c output is hash-pinned while the intrinsic quantum
+  branch still refuses the absent controlled process;
+- the decision machine unit-tests all eight Paper-21 rows before scoring the
+  six scientific branches.
+
+The provisional replacement dispositions are:
+
+```text
+C coarse / physical B3:             ALL-FUTURE GROWING-CARRIER PASS,
+L role-labeled / physical B3:       ALL-FUTURE GROWING-CARRIER PASS,
+F / complete finite-radius family:  NO EXACT REALIZATION IN THE DECLARED
+                                     CARRIER CLASS,
+F / whole connected component:      ALL-FUTURE GROWING-CARRIER PASS
+                                     as a sufficient ceiling only,
+v9 posterior bridge:                REFUSAL/UNDEFINED,
+intrinsic timed quantum boundary:    REFUSAL/UNDEFINED.
+```
+
+The exact fixed-radius embedded lower bounds remain
+
+```text
+r=0: 1/24,
+r=1: 1/1024,
+r=2: 1/64000,
+r=3: 1/5308416,
+p_r = [1/(8(r+3))]^(r+1).
+```
+
+For `Delta=1`, the optional high-precision timed subcylinder lower bounds are
+approximately `3.959221e-2`, `8.871307e-4`, `1.367731e-5` and
+`1.598963e-7`.  They multiply the exact embedded mass by the named Erlang
+completion factor and are not advertised as total event probabilities.
+
+This section is still provisional.  It does not promote the result beyond the
+replacement protocol until all three independent delta streams inspect the
+new carrier schema, stopping theorem, ancestry event and decision priority.
