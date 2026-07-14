@@ -245,7 +245,8 @@ check(
 
 # Observer projection retains only s.  Two complete states above one visible s
 # (coherent path versus inaccessible path record/environment) have unequal
-# next visible output instruments, so this projection is not lumpable.
+# next visible output instruments, so the durable record is operationally
+# insufficient across these declared past-instrument contexts.
 record_projection_operationally_insufficient = all(
     coherent_output[s] != recorded_output[s] for s in (0, 1)
 )

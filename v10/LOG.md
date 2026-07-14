@@ -2651,3 +2651,12 @@ complete construction-time filtration; renewal race has an independent direct
 integral; quantum rank/lumpability names are repaired. Classical stays 13/13
 with summary hash 9f9e...ac282; quantum stays 10/10 cc496...c4dce0. Final
 quantum and locality deltas required before paper/terminal noun.
+
+## 2026-07-13 — d34d locality final clean; last quantum wording nit removed (LEDGER #176)
+Locality/clock final delta is unqualified DELTA-CLEAN 0B/0M/0m/0n: sealed R
+eligibility, full pathwise rate/horizon birth+reception coupling,
+construction-time filtration and independent renewal integral all close.
+Quantum final delta is scientifically clean but reported 0B/0M/0m/1n because
+one source comment still said “not lumpable” for the cross-context comparison.
+The comment is now corrected to durable-record operational insufficiency.
+Final textual quantum delta, then synthesis paper and terminal audit.

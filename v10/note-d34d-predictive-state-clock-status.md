@@ -624,3 +624,17 @@ are nevertheless applied before terminal synthesis:
 Only the affected quantum and locality/clock streams require one final delta.
 No result is terminal until those files are clean and the terminal paper is
 checked against this claim ceiling.
+
+## 11. Final-delta status before synthesis (2026-07-13)
+
+The locality/clock final audit is unqualified `DELTA-CLEAN — 0B/0M/0m/0n`.
+It independently accepted sealed-target eligibility, the pathwise source-clock
+coupling, construction-time filtration wording and the independent renewal
+integral.
+
+The quantum final audit accepted every substantive result and the rank-name
+repair but found one stale source comment that still called the cross-context
+comparison “not lumpable”: `0B/0M/0m/1n`. That comment has been replaced by
+the correct “operationally insufficient across declared past-instrument
+contexts” wording. One final textual quantum delta remains before the terminal
+paper and verdict.
