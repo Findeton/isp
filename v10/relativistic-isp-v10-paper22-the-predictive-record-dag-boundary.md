@@ -4,8 +4,8 @@
 
 ## Exact distributed sufficiency, unbounded width and a fixed-radius ancestry no-go
 
-**Status:** closing scientific delta accepted; narrow bibliographic delta
-pending after the exact metadata repair.
+**Status:** terminal accepted after independent scientific, narrow-repair and
+string/hygiene deltas.
 **Date:** 2026-07-13.
 
 ## Abstract
@@ -410,7 +410,7 @@ escaping every fixed actor radius.
 
 ## 9. Exact receipt and hostile review
 
-The candidate terminal executable is
+The terminal executable is
 `v10/code/d34e_predictive_boundary_exact.py`.  Its standard-library receipt
 passes `13/13` with:
 

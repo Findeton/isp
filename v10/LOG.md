@@ -2797,3 +2797,11 @@ records and the validator ceiling. Boundary/locality and ancestry/quantum are
 hard-break spaces in its already committed round-2 review fail commit-range
 `git diff --check`. Those spaces are removed; Paper 22 is byte-identical. One
 final string/hygiene delta remains before the terminal noun.
+
+## 2026-07-13 — Paper 22 string/hygiene delta clean; terminal status candidate frozen (LEDGER #184)
+All three final string streams are 0B/0M/0m/0n. The commit-range whitespace
+audit is clean and scientific Paper 22 SHA `e33c0ad9...8576` is reproduced.
+Only two publication-status strings now change: the paper becomes terminal and
+its executable is no longer called a candidate. Candidate terminal paper SHA
+is `ed0d4646748901044b4d0e2f2849986372ec2bcab2c14bccf10fc184629cf6c4`.
+An exact status-only delta remains before archival.

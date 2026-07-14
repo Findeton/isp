@@ -1070,3 +1070,25 @@ fail.  They are removed without changing the review's words or verdict.  Paper
 22 remains byte-identical at SHA-256
 `e33c0ad9294ff1411f49e7d32dc640c9047d3a7603e954219703f23031bf8576`.
 A final string/hygiene delta is required before terminal status.
+
+## 25. String/hygiene closure and terminal-status candidate
+
+The three final string streams against `4a764f9` are all clean:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 0 minors / 0 nits;
+boundary/locality:    0 blockers / 0 majors / 0 minors / 0 nits;
+ancestry/quantum:     0 blockers / 0 majors / 0 minors / 0 nits.
+```
+
+They verify a clean commit-range whitespace audit and unchanged scientific
+Paper 22 SHA `e33c0ad9...8576`.  The only remaining publication mutation sets
+the paper status to terminal and replaces “candidate terminal executable” by
+“terminal executable.”  The resulting candidate terminal Paper 22 SHA-256 is
+
+```text
+ed0d4646748901044b4d0e2f2849986372ec2bcab2c14bccf10fc184629cf6c4
+```
+
+No theorem, receipt, citation, scope or executable changed.  One exact
+status-string delta must reproduce this hash before terminal archival.
