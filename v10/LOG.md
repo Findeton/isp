@@ -3763,3 +3763,29 @@ conditionals of one finite functional while leaving all weights supplied.
 D26's exact coherence shadow constrains the BORN sector, and all randomness
 must be carried by durable clicks. The classical campaign pre-registers, but
 does not attempt, the D23/D31/D32-limited quantum join.
+
+## 2026-07-14 — D37 exact regional specification family executes (LEDGER #225)
+
+The standard-library exact receipt passes `9/9` and is byte-identical under
+`PYTHONHASHSEED=17/104729`. K3 passes 498 intrinsic conditionals, 7,058 nested
+DLR towers and 132 boundary mixtures. Its global vertex-activity law is forced
+only under the pinned hard-exclusion, positive-support, Markov-boundary and
+fixed-local-odds premises; a context-dependent odds control prevents the
+receipt from crediting overlap consistency alone.
+
+The classification is wider than K3. K2's independent-plus-dominating hard
+constraint passes 185 conditionals over 162 blocker/demand boundaries and
+1,219 towers, so progress survives regional consistency. Marked K1 passes its
+finite tower but retains a path-five counterexample to one-hop output locality:
+the same empty accepted collar gives `{A}:5/11,{B}:6/11` under exterior `{D}`
+and `{B}:1` under `{E}`. Its infinite quasilocal completion is not claimed.
+
+The joint `NO_BIRTH/TOKEN/BORN` plus arbitration law passes 166 intrinsic
+conditionals, 238 towers and 33 finite-cover checks. At the symmetric path
+point it gives Q-mode probabilities `34/93,25/93,34/93` and selection `6/31`
+from one normalized table. D26 at `g=9/25` gives the exact joint-Q visibility
+factor `431/465`; no rate is inferred. A compactness proof establishes at
+least one compatible global classical measure for K3, K2 and the joint family
+on every supplied countable locally finite opportunity complex at their
+finite-range scopes. Uniqueness, K1 completion, generated opportunity
+complexes, selected couplings and the quantum lift remain open.

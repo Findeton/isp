@@ -1,7 +1,9 @@
 # D37 — admissible regional history specifications
 
-**Status:** CAMPAIGN PIN (pre-receipt), 2026-07-14.  This note is committed
-before `code/d37_regional_history_specification_exact.py` is run.
+**Status:** EXACT FINITE RECEIPT PASS `9/9`; classical completion theorem at
+the supplied countable locally finite opportunity-complex scope; hostile
+review pending.  The campaign pin was committed at `b06ba1a` before
+`code/d37_regional_history_specification_exact.py` was run.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
 
@@ -418,3 +420,145 @@ The working Paper 26 title is deliberately theorem-safe:
 “Overlap consistency forces the Gibbs form” may replace the subtitle only if
 the receipt and proof establish the precise representation theorem at the
 claimed support and locality width.
+
+## 13. First exact execution
+
+The receipt passes all nine frozen gates:
+
+```text
+S0 S1 S2 S3 S4 S5 S6 S7 S8    PASS
+verdict                              PASS 9/9
+```
+
+Primary artifacts:
+
+```text
+code/d37_regional_history_specification_exact.py
+data/d37_regional_history_specification_exact.out
+```
+
+The source, stdout-body and internal-science hashes are respectively
+
+```text
+9bd1de3f1794f4f1612c91884bf85c3ad9c7b0b79ddcb23d2b8c0fb219e479f6
+fd85aea255249bac3a34d077a43b479c6613f3e8868c1b283b7018ae40c8c9dd
+4ed713c1c3ab5801305e40f539b77e6c4ff6340a2eb2076c2aadfab3d5ebf98f
+```
+
+Fresh executions under `PYTHONHASHSEED=17` and `104729` are byte-identical.
+
+### 13.1 The representation result is a family
+
+K3 passes `498` intrinsic regional-condition checks, `7,058` nested DLR tower
+checks and `132` boundary-mixture checks at activities one and two.  The
+finite forcing theorem survives exactly at its pinned width: hard exclusion,
+positive feasible support, Markov boundary sufficiency and fixed unblocked
+odds reconstruct the global vertex-activity law.  The context-dependent odds
+negative control prints both `2` and `4`; overlap consistency alone therefore
+does not receive credit for the Gibbs form.
+
+K2 does not die.  Its independence-plus-domination factor law passes `185`
+blocker/demand conditionals over `162` distinct sufficient boundaries and
+`1,219` nested DLR towers.  Raw triangle-to-edge restriction is
+
+```text
+larger triangle restricted   {}:1/3, {P}:1/3, {Q}:1/3;
+direct edge K2                    {P}:1/2, {Q}:1/2.
+```
+
+The mismatch is exactly repaired by the exterior blocker and unmet-domination
+data.  Thus progress is compatible with regional consistency; the safe-symbol
+K3 theorem is not a classification of every progressing specification.
+
+K1 also survives as a finite conditional specification once its sampled
+component priority and exterior outcomes are retained as durable marks.  Its
+six path atoms pass `35` distinct marked conditional towers and reproduce
+`{Q}:1/3`, `{P,R}:2/3`.  It is not one-hop output-local.  On the five-path,
+for region `{A,B}`, the two exterior selected sets `{D}` and `{E}` expose the
+same empty accepted one-hop collar but give
+
+```text
+exterior {D}   {A}:5/11, {B}:6/11;
+exterior {E}             {B}:1.
+```
+
+This is the retained boundary-width counterexample.  K1's finite marked tower
+does not earn an infinite quasilocal completion.
+
+### 13.2 Finite covers and the joint opportunity law
+
+K3, K2 and marked K1 each pass `33` registered finite-cover overlap checks.
+The permanent negative gate also survives: three pairwise anticorrelation
+laws have matching uniform singleton overlaps but zero triple joint support.
+
+The joint `NO_BIRTH/TOKEN/BORN` plus arbitration family has `93` atoms at the
+equal-weight point.  Across two parameter points it passes `166` intrinsic
+conditionals, `134` one-site conditionals and `238` nested DLR towers.  At the
+equal-weight path point,
+
+```text
+P_Q(BORN)       = 34/93;
+P_Q(TOKEN)      = 34/93;
+P_Q(NO_BIRTH)   = 25/93;
+P_Q(selected)   = 6/31.
+```
+
+Those are conditionals and marginals of one normalized table.  There is no
+second birth or arbitration lottery.  They are not selected numbers: changing
+the mode weights or activity gives another admitted member.
+
+At `g=9/25`, D26 gives `sqrt(1-g)=4/5`.  Three realized same-line BORN events
+therefore give visibility factor `64/125`; the equal-mode three-opportunity
+mixture gives `2744/3375`.  The same joint path table predicts the single-Q
+factor `431/465`.  These are exact observable maps from a supplied member,
+not a universal birth rate.
+
+### 13.3 Classical countable completion theorem
+
+**Theorem.**  Let `C` be a supplied countable locally finite opportunity
+complex.  At the stated finite-range scopes, the K3 feasible-support family,
+the K2 independent-dominating family and the joint birth-mode/arbitration
+family each admit at least one compatible global classical measure.  The
+theorem does not assert uniqueness.
+
+**Proof.**  Each vertex has a finite alphabet.  K3 exclusion, K2 independence
+plus domination, and the joint mode/selection constraints are closed local
+conditions.  Their admissible configuration spaces are therefore closed
+subsets of the compact product alphabet.  They are nonempty: all rejected is
+admissible for K3; a greedy enumeration supplies a maximal independent set for
+K2; and all `NO_BIRTH` is admissible for the joint family.
+
+Fix one admissible exterior configuration and exhaust `C` by finite regions
+`D_n`.  The finite kernels define normalized measures
+`mu_n=gamma_Dn(.|exterior)`, extended by the fixed exterior.  Compactness gives
+a weakly convergent subsequence.  For every fixed finite `D` and cylinder
+observable `f`, local finiteness makes `gamma_D f` depend on only a finite
+collar: one hop for K3, the blocker plus domination-demand collar for K2, and
+one hop plus local mode data for the joint family.  Hence `gamma_D f` is
+continuous on the admitted configuration space.  For all sufficiently large
+`n`, finite specification consistency gives
+
+```text
+mu_n(gamma_D f) = mu_n(f).
+```
+
+Passing to the subsequential limit yields `mu(gamma_D f)=mu(f)` for every
+finite `D` and cylinder `f`.  Therefore `mu` belongs to `G(gamma)`.  ∎
+
+This is a root-free completion on a **supplied** locally finite opportunity
+complex.  D37 does not generate that complex, derive its couplings, prove
+uniqueness or phase structure, or complete K1 at infinite width.
+
+## 14. Post-receipt candidate noun
+
+```text
+CLASSICAL REGIONAL HISTORY SPECIFICATION FAMILY /
+FINITE-COVER AND COUNTABLE LOCALLY FINITE COMPLETION /
+SUPPLIED OPPORTUNITY COMPLEX AND COUPLINGS /
+NONSELECTING.
+```
+
+The safe Paper 26 title remains the working title in section 12.  The stronger
+“overlap consistency forces the Gibbs form” title is rejected: the fixed-odds
+K3 theorem is exact, but K2 and finite marked K1 survive with richer boundary
+data.
