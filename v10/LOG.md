@@ -3353,3 +3353,23 @@ three proposals, incident degree two, finite priority chunks). Quantum join,
 unbounded capacity, online root-free completion and selection of the priority
 law remain prohibited claims. Three independent architecture attacks have
 been commissioned before implementation; three hostile lanes follow the run.
+
+### D36 pre-receipt amendment from the independent locality attack
+
+Before code, the attractive “version evidence without held locks plus
+simultaneous validation” sentence is withdrawn. A safe grant must remain an
+exclusive version-bound promise until commit/abort—semantically a reservation.
+Deadlock freedom comes from fail-fast rejection of busy participants, followed
+by a monotone T decision, participant-local apply/release records,
+acknowledgements and a final T closure seal. The theorem assumes authenticated
+reliable delivery, failure-free actors/coordinator and fairness; it does not
+give retry/starvation freedom.
+
+The upper seal is also split honestly. The local protocol's `Close(T)` advances
+only T's wire after all participant-local applies; it is a causal summary, not
+a multiwire mutation. A simultaneous validate-and-advance transition is kept
+only as an atomic regional oracle control (the D35 shared `sync_tips` pattern),
+and partial-application states are explicit in the local arm. Gates expand to
+21, adding fail-fast termination, causal closure, oracle attribution and the
+crash/no-fair-delivery blocking counterexample. This amendment precedes every
+receipt run.

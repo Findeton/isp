@@ -158,53 +158,79 @@ participants can adopt different conflicting proposals, leaving partial
 commits.  This is the exact countermodel to hiding atomicity in “simultaneous
 validation.”
 
-### P3 — exclusive grants without common arbitration
+### P3 — exclusive grants that wait
 
-Each participant grants at most one proposal per base version.  This prevents
-two overlapping transactions from collecting complete grant sets, but the
-triangle admits the split vote
+Each participant grants at most one proposal per base version and holds that
+promise while the transaction waits.  This prevents two overlapping
+transactions from collecting complete grant sets, but the triangle admits
 
 ```text
 A grants P;  B grants Q;  C grants R.
 ```
 
-No transaction has every grant and no transition remains if grants are
-irrevocable.  Held-lock circular wait is gone; coordination deadlock remains.
+If a busy participant merely waits, every transaction holds one promise and
+awaits another.  This is the same coordination deadlock in immutable-record
+clothing.  Calling the promise “version evidence” does not change its lock
+semantics.
 
-### P4 — closed batch plus a common strict arbitration order
+### P4 — exclusive fail-fast prepare/abort/apply/close
+
+This is the positive strictly actor-local protocol at the first finite scope:
+
+1. an initiator locally births `T0` and sends authenticated prepares to its
+   fixed finite participants;
+2. participant `i` handles the prepare in one local wire event, granting iff
+   its exact tip is current, it is authorized and its promise slot is free;
+   the grant installs an exclusive promise until T's unique decision;
+3. a busy or stale participant replies with an immediate typed rejection—it
+   never waits for another transaction;
+4. T records one monotone commit decision after all grants or abort after any
+   rejection;
+5. T sends the decision; each participant locally appends `Apply_i` or
+   `Release_i` and acknowledges; and
+6. only after every acknowledgement does T append `Close(T)` as the causal
+   upper closure seal.
+
+Under authenticated reliable messages, failure-free actors/coordinator and
+fair delivery, every finite attempt commits or aborts.  Split grants cause
+aborts and releases rather than circular wait.  The protocol is safe because
+the exclusive promise survives from grant through apply/release.  It does not
+prove retry success or starvation freedom, and the promise is a reservation
+even though no mutex object is stored.
+
+The closure seal advances only T's wire.  Participant wires advance through
+their own local apply/release records.  The closed diamond is macro-atomic as a
+completed history; no single local click is claimed to mutate several wires.
+
+### P5 — atomic multiwire oracle control
+
+As a comparison, admit one primitive operation that simultaneously validates
+and advances every participant tip.  It is safe by definition and resembles
+D35's shared-world `sync_tips` transition.  The receipt must label it an
+atomic regional oracle, not a derivation from local tickets.  Comparing P4 and
+P5 exposes the intermediate partial-application states that the oracle hides.
+
+### P6 — closed batch plus a common strict arbitration order
 
 A supplied finite boundary seal declares the contender batch closed.  Every
 proposal carries a common, physically readable strict priority mark.  Process
 proposals from greatest to least mark, accepting a proposal iff its complete
-participant set remains unused.  Equivalently, participants compare all
-incident contenders after the close and successive winning rounds remove
-conflicts.
+participant set remains unused.  This returns a maximal independent set and
+provides a finite arbitration **specification** for P4 attempts.
 
-For a finite conflict graph this returns a maximal independent set.  It should
-prove:
+The batch-close record solves the unknown-future-contender problem and the
+common strict mark supplies symmetry breaking.  Neither comes from freshness.
+The accepted set may be realized through P4's local commit/abort/apply/close
+diamonds; no multiwire mutation is implied.
 
-```text
-safety                 no two commits share a claimed base version;
-progress               every nonempty closed component commits at least one;
-deadlock freedom        no held resource crosses a wait;
-construction gauge     message/service order does not change the marked result;
-disjoint commutation    disconnected batches factor and remain unordered;
-stale safety            a changed base tip invalidates the old grant;
-typed failure           every loser is rejected, stale or rebased explicitly.
-```
+### P7 — online priority without a close
 
-The premises are load-bearing.  The batch-close record solves the unknown-
-future-contender problem.  The common strict mark supplies symmetry breaking.
-The exclusive bounded multi-tip commit supplies atomicity.  Birth may carry
-these objects; it does not derive any of them.
-
-### P5 — online priority without a close
-
-If a participant commits after seeing the currently greatest proposal, a later
-higher contender can invalidate it; if it waits for every possible higher
-contender, it cannot know that none will arrive.  The receipt must exhibit the
-serializer-dependent or nonterminating fork.  D36 does not claim an online
-root-free law from the closed-batch theorem.
+If a participant decides after seeing the currently greatest proposal, a later
+higher contender can invalidate the claim; if it waits for every possible
+higher contender, it cannot know none will arrive.  The safe P4 alternative is
+weaker: a successful exclusive prepare closes the cited participant tip and
+makes unseen proposals stale.  Priority biases observed conflicts; it is not a
+census of all concurrent/future contenders.
 
 ## 7. Exact structural theorems and no-gos
 
@@ -238,29 +264,53 @@ necessary.
 The same argument applies to a transitive symmetric conflict orbit whenever
 no nonempty feasible subset is automorphism-invariant.
 
-### N5 — exclusive grants do not imply progress
+### N5 — exclusive waiting grants do not imply progress
 
-P3's triangle split vote is terminal without revocation/retry/arbitration.
-Removing Coffman circular wait is not a liveness theorem.
+P3's triangle split vote is terminal when busy participants wait.  Exclusive
+evidence is a reservation; removing a mutex data type has not removed the
+wait-for cycle.  P4 escapes only by fail-fast rejection and abort/release.
 
-### T1 — closed ordered-batch theorem
+### N6 — one-seal multiwire locality obstruction
+
+If a local transition may append only its addressed actor's wire, no T-local
+event can also be the successor on several participant wires.  A joint
+successor is an additional bounded regional instrument.  Otherwise participant
+apply records and their intermediate states are physical.
+
+### T1 — safe fail-fast causal-attempt theorem
+
+For a fixed finite participant set, authenticated reliable messages, local
+atomic wire appends, exclusive version-bound promises held until one monotone
+T decision, immediate reject when busy, failure-free actors/coordinator and
+fair delivery, every attempt terminates commit or abort.  No stale or double
+consumption is possible, no wait-for cycle exists, and disjoint attempts
+commute when identities, randomness and supports are disjoint.  No numerical
+clock enters.  Retry termination and starvation freedom do not follow.
+
+### T2 — causal closure decomposition
+
+Every successful P4 macro-transaction has the append-only diamond
+
+```text
+participant lower tips -> proposal/prepares -> grants -> commit decision
+ -> participant apply records -> acknowledgements -> T closure seal.
+```
+
+Participant actors remain active and every immutable past record remains.
+`Close(T)` is locally generable from T's causal past and summarizes the closed
+diamond; it is not an atomic multiwire mutation.  The construction lies outside
+D24's one-parent content theorem at the join/application layer.
+
+### T3 — closed ordered-batch theorem
 
 On every finite closed conflict graph with a strict common proposal order, the
 greedy accepted set is feasible, maximal and nonempty when proposals exist.
 The result depends only on the marked graph, not the machine serializer.
 Disjoint components factor because their relative internal orders determine
-their outputs independently.
+their outputs independently.  Each selected attempt may then be realized by
+P4.
 
-### T2 — persistent-participant upper-seal theorem
-
-`C_T` may be a multi-parent upper seal whose ancestry contains `T0`, every
-exact grant and every claimed lower tip.  Participant actors/registers remain
-active and their immutable past records remain present; their wires advance
-through `C_T` or typed adoption successors.  The theorem does **not** say one
-unchanging record is mutable forever, and it lies outside D24's one-parent
-birth theorem.
-
-### T3 — finite-horizon eliminability test
+### T4 — finite-horizon eliminability test
 
 Compare two protocols with identical validation, priority and atomic-seal
 semantics:
@@ -402,20 +452,23 @@ G1  structural identity alpha covariance and nominal-freshness no-go;
 G2  P0 circular-deadlock witness and born-ticket isomorphism;
 G3  P1 reusable-grant double-commit witness;
 G4  atomic-oracle attribution and P2 split-adoption witness;
-G5  P3 exclusive-grant split-vote witness;
-G6  T1 safety, maximality, progress and all serializer permutations;
-G7  stale evidence rejection and explicit typed loser records;
-G8  disjoint commutation and full product factorization;
-G9  deterministic automorphism no-go;
-G10 exact K1/K2 laws and their separating event;
-G11 K3 normalization, DLR conditionals and supplied-lambda separation;
-G12 finite-bit tie/retry arithmetic and almost-sure scope;
-G13 raw restriction failure plus boundary-mixture repair;
-G14 three-way hyperedge and triple-cover consistency counterexample;
-G15 born/token finite-horizon bisimulation;
-G16 upper-seal ancestry/persistence and D24 one-parent scope separation;
-G17 bounded-capacity census, with every nonuniform bound disclosed;
-G18 deterministic replay, source/stdout/internal hashes.
+G5  P3 exclusive-wait split-vote/deadlock witness;
+G6  P4 fail-fast attempt safety and termination under fair delivery;
+G7  P4 partial-application states and causal closure ancestry;
+G8  P5 atomic-oracle comparison and attribution;
+G9  T3 safety, maximality, progress and all serializer permutations;
+G10 stale evidence rejection and explicit typed loser records;
+G11 disjoint commutation and full product factorization;
+G12 deterministic automorphism no-go;
+G13 exact K1/K2 laws and their separating event;
+G14 K3 normalization, DLR conditionals and supplied-lambda separation;
+G15 finite-bit tie/retry arithmetic and almost-sure scope;
+G16 raw restriction failure plus boundary-mixture repair;
+G17 three-way hyperedge and triple-cover consistency counterexample;
+G18 born/token finite-horizon bisimulation;
+G19 bounded-capacity census, with every nonuniform bound disclosed;
+G20 crash/no-fair-delivery blocking counterexample;
+G21 deterministic replay, source/stdout/internal hashes.
 ```
 
 ## 13. Decision rows
@@ -441,9 +494,10 @@ Apply the first earned row:
 Expected honest result before execution: rows 2 and 3 may both apply at
 different meanings.  Birth is likely a useful record-native coordination
 carrier, yet finite-horizon computationally eliminable.  The missing physical
-primitive is expected to sharpen to an overlap-consistent bounded-arity
-exclusive multi-tip seal plus a covariant selection law—not a clock and not a
-ticket alone.
+structure is expected to sharpen to exclusive version-bound causal promises,
+a local apply/ack/closure grammar and a covariant overlap-selection law.  A
+single multiwire seal is an alternative regional oracle, not something tickets
+derive—not a clock and not a ticket alone.
 
 ## 14. Review protocol
 
