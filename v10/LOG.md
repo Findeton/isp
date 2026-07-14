@@ -3010,3 +3010,32 @@ and three hostile review streams. Six decision rows distinguish a uniquely
 selected timeless law, an executable family, nonlocal normalization, finite-
 trace-only status, no-go and refusal. Geometry, proper time, v9 identification
 and nature's law are outside the result ceiling.
+
+## 2026-07-14 — D35 timeless actor family candidate executed (LEDGER #195)
+The fresh antecedent audit content-hashes 437 pre-D35 primary papers/notes
+(423 category-relevant) at corpus stream SHA
+`84d6fb2...27485`. The D35 candidate replaces a proper-time/rate race by a
+locally completed causal call diamond. A queried actor idles, births through
+D24, visits one owned child, or forks to two; child evidence returns along the
+licensed ports and A2 is the upper seal. Realized reach is binary ancestry;
+pre-click probability is the sum over locally factorized completed diamonds.
+
+The exact no-third-party implementation supplies an independent recursive
+enumerator and logical actor/mailbox machine. Q1 and Q2 each produce 16
+completed branches with total mass one; FIFO, LIFO, canonical and reverse
+child/gate schedules agree exactly; the two-call marginal is projective over
+408 refinements per parameter cell; disconnected controls make zero remote
+reads; five malformed-message classes reject; all D24 birth marginals and
+norms are exact. Hash seeds 17 and 65537 are byte-identical at 18/18. Candidate
+source/stdout/science hashes are `06c997a1...3fa26`, `24a5cdfe...11656` and
+`1f7b39dd...e8aa6`.
+
+The result is deliberately nonunique. Q1/Q2 both pass yet predict birth
+probabilities `1/4` versus `1/5`, visit probabilities `1/4` versus `3/10`, and
+different expected birth/content observables. Provisional row:
+TIMELESS LOCAL NEXT-CLICK FAMILY / EXECUTABLE for the rooted nested-call
+grammar. Root, ownership orientation, opportunity weights, D24 coupling and
+peer/cycle/join sectors remain extra physics. The classical completed-history
+measure follows by countable iteration of normalized finite rooted-state
+kernels; coherent graph-sector completion and arbitrary mutually initiating
+actors do not. Three independent hostile streams are now mandatory.

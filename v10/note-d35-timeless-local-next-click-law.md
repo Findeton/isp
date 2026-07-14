@@ -456,3 +456,144 @@ An exact positive result earns row 2 only if the actor-message implementation
 uses no whole-component probability normalization and the completed rooted-tree
 extension proof survives hostile review.  A computer work queue is a serializer
 of pending incomparable messages, never a physical time coordinate.
+
+## 13. Provisional exact result before hostile review
+
+The candidate executable at commit `674fb46` passes `18/18` under hash seeds
+17 and 65537 with byte-identical output.  Candidate hashes are:
+
+```text
+source  06c997a195294991293fdedc9edce005a3f8ad1d23bfd8f73a5a08490163fa26
+stdout  24a5cdfe35e1a85b25929217def4bede01e57169a14789392e7e5a7947a11656
+science 1f7b39ddaea634c1444695e5e536d528be45785e8c9997eba1388ed22cfe8aa6
+```
+
+The two independently implemented paths agree exactly:
+
+```text
+recursive call-tree enumerator
+actor mailboxes + query/return messages + waiting continuations
+```
+
+Each has 16 completed branches on the registered specimen.  FIFO, LIFO and
+canonical pending-message policies have the same 16-atom canonical history
+distribution in Q1 and Q2.  Reverse child evaluation and reverse
+shared-control quantum-gate evaluation also agree exactly.  The serializer
+therefore changes neither causal history, probability nor carrier state in
+the audited domain.
+
+### 13.1 Finite-call theorem
+
+Let `T` be a finite rooted actor tree and let queries move strictly from a
+vertex to zero, one or two distinct children.  Then every query terminates
+after finitely many cells.
+
+**Proof.** Induct on subtree height.  A leaf can only idle or birth because
+unavailable visit/fork mass is folded into idle; both close immediately, and
+the newborn is not queried inside the same call.  At a nonleaf, idle/birth
+close immediately.  Visit/fork invoke one/two strict child subtrees, which
+terminate by induction, after which one local merge closes.  ∎
+
+Every actor is queried at most once in one call, so at most `|T|` events and
+`|T|` newborn actors are added.  No rate, duration, compact time interval or
+subcriticality assumption is used.
+
+### 13.2 Normalization and construction-gauge theorem
+
+At each queried actor the exact local menu sums to one.  Applying the preceding
+height induction, the sum over every completed call tree is therefore one.
+Its weight is the product of the local menu and local port-selection factors.
+Two incomparable child subtrees have disjoint actors, event identifiers and
+carrier targets; swapping their evaluation order permutes scalar factors and
+commuting tensor operations only.  Fork return rotations share the control and
+have disjoint targets, so the D24 shared-control commutation lemma applies.
+Thus every machine linear extension of one call DAG has the same physical
+weight and state.
+
+This is stronger than the receipt's finite enumeration within the frozen
+rooted-tree grammar.  It is not extended to cycles, overlapping peer calls or
+unowned joins, where the independence premise can fail.
+
+### 13.3 Completed classical history measure
+
+After a completed root call, use A2 as the lower tip for the next call.  The
+finite-call theorem maps every finite rooted state to a normalized countable
+discrete kernel on finite rooted states.  Starting from the supplied root law,
+Ionescu--Tulcea therefore gives a probability measure on the infinite sequence
+of completed root-call states.  Every finite prefix contains finitely many
+actors/events by induction.  Pushing each sequence to its persistent event DAG
+gives the corresponding classical history law.
+
+This earns a completed-history measure for this **rooted nested-call grammar**.
+It does not prove a measure for arbitrary mutually initiating actor calls,
+cycles, joins or coherent superpositions of graph sectors.  The root-wire
+index is an intrinsic succession order of A records, not seconds or a global
+event counter; nevertheless the rooted ownership architecture is substantive
+extra physics and may be too restrictive for nature.
+
+### 13.4 LDAP and the probability of “reaching A”
+
+All transaction events in all 32 registered Q1/Q2 branches occur in
+`Anc(A2) minus Anc(A1)`.  The negative control in which A visits only C never
+acquires B's newer `BD` record.  Changing a disconnected P--Q component leaves
+the A law exactly fixed and produces zero P/Q local reads.
+
+Thus the model resolves the earlier ambiguity:
+
+```text
+realized statement: e either is or is not in A2's new causal past;
+probabilistic statement: before the diamond is sampled, sum the weights of
+                         completed diamonds in which e is in that set.
+```
+
+No arrival probability is assigned after a particular history has already
+been realized.
+
+### 13.5 Birth result
+
+Every live newborn is created by a fresh one-parent D24 controlled rotation.
+Across the 24 enumerated birth cells, exact normalization and
+
+```text
+P(child=1 at birth) = g P(parent=1 before birth)
+```
+
+hold.  The controlled maps are isometries and the return maps are unitary, so
+the executable lies inside the D25/D27 admitted reception class.  Classical
+event identities supply fresh immutable bounded-alphabet flags; the code does
+not claim a coherent sum over alternative support graphs.
+
+The answer to “the right birth kernel” is consequently two-layered:
+
+1. D24 is a valid exact one-parent **newborn-content** family and is the right
+   inherited kernel for this frozen tree exhibit;
+2. neither `q_birth`, `g`, the root, nor the omitted bridge/peer sectors are
+   selected, and the Busch class is broader than D24.
+
+There is not yet one uniquely derived universal birth kernel.
+
+### 13.6 Exact nonselection
+
+Both Q1 and Q2 pass every positive gate, while
+
+```text
+P_Q1(A2 is birth) = 1/4,   P_Q2(A2 is birth) = 1/5;
+P_Q1(A2 is visit) = 1/4,   P_Q2(A2 is visit) = 3/10.
+```
+
+Their expected transaction-birth counts are `25/64` and `63/200`, and their
+expected summed newborn-one masses are `106929/1562500` and
+`1080576/9765625`.  The coarse probability that old `BD` reaches A happens to
+equal `1/4` in both cells; that collision is printed rather than used to hide
+the other discriminators.
+
+The provisional decision is therefore row 2:
+
+```text
+TIMELESS LOCAL NEXT-CLICK FAMILY / EXECUTABLE
+```
+
+This is not terminal until the three hostile streams decide whether the actor
+implementation is genuinely local at its declared scope, the projective/
+completion proof is sound, and the D24/quantum wording stays within what the
+executable actually represents.
