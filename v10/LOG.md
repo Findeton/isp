@@ -2823,3 +2823,34 @@ D34b reachability. D34b derivation, the minimal weak/timed quotient, an
 adaptive F frontier, v9 posterior screening, controlled quantum memory and
 spacetime geometry remain open. Direct successor: the adaptive full-ancestry
 causal frontier.
+
+## 2026-07-14 — D34f provisional exact component tomography (LEDGER #186)
+D34f attacks the adaptive-frontier opening analytically for the chosen D34b
+law and complete durable-ancestry Branch F. The initial bare post-order
+fingerprint was false as pinned: two nonisomorphic conditioning cuts reproduce
+the same final ancestry in three future rings, with exact leading coefficients
+`1/1152` and `1/576`. This was found before the receipt and frozen at
+`eea9474`; the sweep remains a valid returnability proof but not a universal
+tomographic discriminator.
+
+The repaired construction creates one fresh future A-idle anchor, broadcasts
+it once over every rooted birth-tree edge, and echoes it once inward. Its
+`q=2n-1` target events all contain the fresh anchor, so none can be borrowed
+from before the conditioning stop. A distinct past either conflicts in an
+immutable record or needs at least one catch-up event, giving zero support or
+small-time order at least `q+1` against the target's positive order `q`.
+Together with persistent-wire collection and marked-DAG reconstruction, this
+makes the Branch-F predictive quotient injective on the whole component gauge
+class, up to lossless recoding. A `2^M` positive-cylinder family gives the
+unbounded M-bit lower bound.
+
+The provisional executable passes 11/11 gates over 2,927 enumerated states,
+20,148 wire incidences, 2,927 anchored echoes, 351 gauge classes and 7,410
+direct equal-or-lower-order emulator attempts with none found. It explicitly
+retains the bare-sweep counterexample. Candidate source/stdout hashes are
+`906687d7...182a` / `ff2365ad...5eea`; internal digest
+`ee023eb3...9ee`. The analytical proof, not the finite census, owns the
+all-finite claim. Provisional noun: COMPONENT PREDICTIVE-IDENTITY / UNBOUNDED
+FOR EXACT BRANCH F UNDER THE CHOSEN PASSIVE D34b LAW. Three independent hostile
+streams are required before terminal status; v9/profinite, quantum and
+spacetime bridges remain open.

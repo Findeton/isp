@@ -2,7 +2,8 @@
 
 **Status:** sections 1--10 are the historical pin; a pre-receipt analytical
 self-attack rejects pinned T4 and freezes its anchored-echo replacement in
-section 11.  No D34f receipt or result exists at this commit.
+section 11.  Section 12 is the provisional exact result awaiting independent
+hostile review.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34e / Paper 22 at commit `b457d42`.
@@ -407,3 +408,101 @@ R6 rerun gauge/fingerprint/catch-up attacks on the anchored trace.
 Only the anchored theorem may feed T5, T6 and the row-1 verdict.  The bare
 sweep remains a valid returnability construction and probability lower bound,
 not a universal tomographic discriminator.
+
+## 12. Provisional exact result
+
+### 12.1 Analytical result
+
+For the chosen finite D34b component and Branch F, the repaired targets imply
+the first decision row.
+
+1. **Persistence.** Each event touching a wire is a predecessor of the current
+   tip of that wire.  A later touch names that tip as a predecessor, so the
+   whole old wire ancestry persists inductively.
+2. **Returnability.** Root the finite birth tree at A.  After all child
+   subtrees have been collected, one child-to-parent interaction transfers
+   that entire accumulated ancestry to the parent.  Post-order induction
+   therefore puts every old component event into the final A-touching event.
+3. **Reconstruction.** The fixed seed plus the complete persistent marked DAG
+   recovers actors, birth edges, initiator ordinals, carrier parity and maximal
+   wire tips.  It therefore recovers `[K_A]_g`; duplicate cached fields need
+   not be retained separately.
+4. **Tomography.** A fresh future A-idle event is a physical, Branch-F-visible
+   anchor.  Broadcasting it once along every rooted edge and echoing once back
+   uses `q=2n-1` future component rings, and every target operation contains
+   the anchor.  The target past realizes its exact anchored trace with positive
+   leading coefficient at order `Delta^q`.  A distinct past either has an
+   incompatible immutable marked record, or must create at least one missing
+   record, actor or edge before it can execute those anchored target
+   operations.  No anchored target operation can be borrowed from before the
+   stop because it contains the fresh event.  Its probability is therefore
+   zero or begins at order at least `Delta^(q+1)`.
+5. **Predictive identity.** Equality of complete Branch-F future laws would
+   give equality on every anchored fingerprint.  The preceding discriminator
+   makes that possible only for the same component gauge class.  Conversely,
+   the fixed generator depends only on that class, so it is sufficient.  The
+   minimal exact predictive state is thus `[K_A]_g` up to lossless recoding.
+6. **Unbounded information.** A chain with M structurally located binary
+   idle/interaction choices gives `2^M` positive-probability gauge classes.
+   The echo recovers all M choices.  Any exact carrier for Branch F therefore
+   has at least `2^M` states on this family and needs at least M worst-case
+   bits.
+
+The result is deliberately not phrased as “every database field is
+necessary.”  It is an injectivity theorem for the component's rooted marked
+isomorphism class: any exact alternative representation may compress
+redundancies, but it cannot identify two different classes.
+
+### 12.2 Exact receipt
+
+Executable:
+`code/d34f_component_tomography_exact.py`
+
+Committed stdout candidate:
+`data/d34f_component_tomography_exact.out`
+
+```text
+gates                                      11/11 PASS
+reachable labeled levels                  1, 6, 40, 304, 2576
+cumulative states                         2927
+wire incidences                           20148
+sorted/reverse bare sweeps                2927 / 2927
+anchored echoes                           2927
+renaming/gauge checks                     351
+registered gauge classes/traces           351 / 351
+direct continuation emulator attempts     7410
+equal-or-lower-order emulators             0
+bare equal-order counterexample           1/1152 versus 1/576
+anchored target/catch-up coefficients      1/192 versus 1/1536
+binary family sizes                        2, 4, 8, 16, 32, 64
+finite gauge-class counts                  1, 6, 40, 304
+finite worst-case bit ceilings             0, 3, 6, 9
+receipt digest                             ee023eb38cbe5c61acd888128838e210a461eb636a553ed6142132a6bdbc29ee
+source SHA-256                             906687d7dae9776cb707dd040de8970c2aee72096b2e0a636f97e5bdb1e6182a
+stdout SHA-256                             ff2365ad8c5cf85d7e463d42b8a1f039b2a58d987229de3e606026f10c4a5eea
+```
+
+The saved stdout is byte-identical under Python hash seeds 17 and 65537.  All
+discrete masses and coefficients are `Fraction` exact.  The reported
+exponential and Erlang values evaluate analytic formulas at 110-decimal
+working precision.  Enumeration is only a regression and counterexample
+search; the six analytical steps above own the all-finite theorem.
+
+### 12.3 Provisional verdict and ceiling
+
+The first-applicable result is:
+
+> **COMPONENT PREDICTIVE-IDENTITY / UNBOUNDED — provisional pending the D34f
+> hostile round.**
+
+For exact complete durable ancestry under this particular passive law, the
+mathematical boundary is not a small collar.  It is the entire connected
+component history modulo gauge and lossless coding, and its required
+information grows without a uniform finite bound.
+
+This establishes neither that nature uses D34b nor that the physical universe
+is one enormous component.  It supplies no quantum operation law, causal
+speed, spacetime cone, dimensional result or value of G.  The serialized
+marked-prefix inverse-limit host is available, but its construction-order
+gauge quotient, identification with the v9 stem spectrum and continuity of
+the predictive map remain open.
