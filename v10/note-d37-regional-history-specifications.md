@@ -440,8 +440,8 @@ data/d37_regional_history_specification_exact.out
 The source, stdout-body and internal-science hashes are respectively
 
 ```text
-815589b997f191278cd78bf63d6a35ccb5d2f9f39dd361711f7331c1577a5f9d
-ab69b2b11f9b21c1edd348122509b63cf709db1718ad7174c216f3a21db33c16
+8a8772f878d725ce1f22acc703cd23accd531ca0ebb8a08af2bc01eca92f7f4a
+91a0cb3a85aca73d4cc78266ef29f0a4bdac8cf7a44406a7e258a3d71bb7f5c7
 cf9997407d8cb8b974f442ab341b7f4d3e6a1b3d3db3c43c6c4207189c0df0bf
 ```
 
@@ -456,15 +456,20 @@ carrier parents and generated mode/selection clicks.
 
 K3 passes `508` intrinsic regional-condition checks, `7,098` nested DLR tower
 checks and `138` boundary-mixture checks at activities one and two.  The
-finite forcing theorem survives exactly at its pinned width: hard exclusion,
-positive feasible support, Markov boundary sufficiency and fixed unblocked
-odds reconstruct the global vertex-activity law.  The context-dependent odds
-negative control prints both `2` and `4`; overlap consistency alone therefore
-does not receive credit for the Gibbs form.
+finite forcing theorem is narrower than the pin's redundant premise list:
+exact positive feasible support and fixed feasible-addition odds reconstruct
+the global vertex-activity law.  The accepted one-hop Markov boundary is a
+separately checked K3 locality property, not an additional premise used by
+the deletion-path proof.  The context-dependent odds negative control prints
+both `2` and `4`; overlap consistency alone therefore does not receive credit
+for the Gibbs form.
 
 K2 does not die.  Its independence-plus-domination factor law passes `188`
 blocker/demand conditionals over `165` distinct sufficient boundaries and
-`1,224` nested DLR towers.  Raw triangle-to-edge restriction is
+`1,224` nested DLR towers.  Its sufficient boundary is radius two: deciding
+whether a rejected distance-one exterior vertex remains an unmet demand may
+inspect a selected neighbor at distance two.  Raw triangle-to-edge
+restriction is
 
 ```text
 larger triangle restricted   {}:1/3, {P}:1/3, {Q}:1/3;
@@ -538,10 +543,10 @@ Fix one admissible exterior configuration and exhaust `C` by finite regions
 `mu_n=gamma_Dn(.|exterior)`, extended by the fixed exterior.  Compactness gives
 a weakly convergent subsequence.  For every fixed finite `D` and cylinder
 observable `f`, local finiteness makes `gamma_D f` depend on only a finite
-collar: one hop for K3, the blocker plus domination-demand collar for K2, and
-one hop plus local mode data for the joint family.  Hence `gamma_D f` is
-continuous on the admitted configuration space.  For all sufficiently large
-`n`, finite specification consistency gives
+collar: one hop for K3, the radius-two blocker plus domination-demand collar
+for K2, and one hop plus local mode data for the joint family.  Hence
+`gamma_D f` is continuous on the admitted configuration space.  For all
+sufficiently large `n`, finite specification consistency gives
 
 ```text
 mu_n(gamma_D f) = mu_n(f).
@@ -567,3 +572,18 @@ The safe Paper 26 title remains the working title in section 12.  The stronger
 “overlap consistency forces the Gibbs form” title is rejected: the fixed-odds
 K3 theorem is exact, but K2 and finite marked K1 survive with richer boundary
 data.
+
+## 15. Hostile-round-one repair checkpoint
+
+The first D37 self-hostile review at frozen commit `6a4a217` returns
+`0B/1M/3m/0n`.  Its clean-room reconstruction recovers the K1 path-five
+counts `20:24` and the joint-mode denominator `93`; the family result and all
+printed scientific values survive.
+
+The receipt repair makes S8 compare the complete marked K1 law on two
+disconnected edges with the exact product of the two component-priority laws.
+S4 now fails closed if the one-hop K1 witness is absent.  The K2 boundary is
+printed and stated as radius two.  Paper 26 demotes the unused Markov premise
+from Theorem 1 while retaining K3's one-hop Markov boundary as a separate
+locality property.  A focused D37 closing delta is still required; the
+independent Paper 26 review remains open regardless of that delta.

@@ -314,6 +314,21 @@ def priority_output(dist: PriorityDistribution) -> BinaryDistribution:
     return dict(answer)
 
 
+def product_priority(
+    left: PriorityDistribution,
+    right: PriorityDistribution,
+) -> PriorityDistribution:
+    answer: Dict[PriorityAtom, Fraction] = defaultdict(Fraction)
+    for left_atom, left_probability in left.items():
+        for right_atom, right_probability in right.items():
+            atom = PriorityAtom(
+                left_atom.orders + right_atom.orders,
+                left_atom.selected | right_atom.selected,
+            )
+            answer[atom] += left_probability * right_probability
+    return dict(answer)
+
+
 def restrict_binary(dist: BinaryDistribution, region: FrozenSet[str]) -> BinaryDistribution:
     answer: Dict[Selected, Fraction] = defaultdict(Fraction)
     for selected, probability in dist.items():
@@ -1059,10 +1074,12 @@ def anti_dilution_checks() -> Tuple[int, int, int, int]:
 
     k1_union = priority_law(union)
     k1_left = priority_law(left_graph)
+    k1_right = priority_law(right_graph)
+    k1_product = product_priority(k1_left, k1_right)
+    if k1_union != k1_product:
+        raise AssertionError("K1 full marked anti-dilution")
     if restrict_binary(priority_output(k1_union), left) != priority_output(k1_left):
         raise AssertionError("K1 anti-dilution")
-    if len(k1_union) != len(k1_left) * len(priority_law(right_graph)):
-        raise AssertionError("K1 component marks")
 
     weights = {"NO_BIRTH": Fraction(1), "TOKEN": Fraction(2), "BORN": Fraction(3)}
     mode_union = joint_mode_law(union, weights, Fraction(2))
@@ -1234,6 +1251,7 @@ def main() -> None:
         and raw_k1[0] != raw_k1[1]
         and priority_towers > 0
         and complete_click_atoms == len(path_priority)
+        and bool(one_hop_witness)
     )
     science["k1"] = [dist_signature(path_k1), priority_towers, complete_click_atoms, one_hop_witness]
     emit("[K1 RECORDED-PRIORITY LIFT]")
@@ -1301,7 +1319,7 @@ def main() -> None:
     science["covariance"] = [covariance, anti_sizes]
     emit("[COVARIANCE / ANTI-DILUTION]")
     emit(f"relabel_covariance_families={covariance}/6; disconnected_local_factorizations=4/4; atom_counts={anti_sizes}")
-    emit("boundary_widths=K3:one-hop-blockers,K2:blockers+domination-demands,K1:recorded-component-priority")
+    emit("boundary_widths=K3:one-hop-blockers,K2:two-hop-blockers+domination-demands,K1:recorded-component-priority")
 
     source_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     body_hash = hashlib.sha256(("\n".join(out) + "\n").encode()).hexdigest()

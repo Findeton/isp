@@ -3841,3 +3841,21 @@ Theorem 1's unused/redundant Markov premise, K2's unprinted radius-two demand
 collar and S4's failure to require a nonempty retained K1 witness. D37 and
 Paper 26 remain candidates; repair and a focused D37 closing delta precede the
 still-open independent paper review.
+
+## 2026-07-14 — D37 hostile-round-one repairs execute (LEDGER #229)
+
+The D37 receipt now compares the complete `PriorityAtom` law on two
+disconnected edges against the exact product of the two independently marked
+component laws. S4 also requires its retained path-five witness to be
+nonempty, and S8 prints K2's blocker/demand boundary as radius two. The
+receipt remains `PASS 9/9`; every scientific value and the internal science
+hash are unchanged. The new source/stdout-body hashes are
+`8a8772f...7f4a` and `91a0cb3...7f5c7`.
+
+Paper 26's Theorem 1 is repaired to use exactly the premises in its proof:
+positive support on every feasible state and fixed feasible-addition odds.
+K3's one-hop Markov boundary remains a separate locality property. The K2
+sections now explain why deriving an unmet demand reads a radius-two collar,
+and the countable continuity and anti-dilution claims use that exact width.
+D37 hostile closure still awaits a focused delta; independent paper review
+remains open.

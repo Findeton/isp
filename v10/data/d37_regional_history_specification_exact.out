@@ -33,10 +33,10 @@ equal_mode_three_opportunity_expected_shadow=2744/3375; joint_Q_expected_factor=
 D26_constrains_BORN_sector=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0
 [COVARIANCE / ANTI-DILUTION]
 relabel_covariance_families=6/6; disconnected_local_factorizations=4/4; atom_counts=(9, 4, 4, 441)
-boundary_widths=K3:one-hop-blockers,K2:blockers+domination-demands,K1:recorded-component-priority
+boundary_widths=K3:one-hop-blockers,K2:two-hop-blockers+domination-demands,K1:recorded-component-priority
 [HASHES]
-source_sha256=815589b997f191278cd78bf63d6a35ccb5d2f9f39dd361711f7331c1577a5f9d
-stdout_body_sha256=ab69b2b11f9b21c1edd348122509b63cf709db1718ad7174c216f3a21db33c16
+source_sha256=8a8772f878d725ce1f22acc703cd23accd531ca0ebb8a08af2bc01eca92f7f4a
+stdout_body_sha256=91a0cb3a85aca73d4cc78266ef29f0a4bdac8cf7a44406a7e258a3d71bb7f5c7
 internal_science_sha256=cf9997407d8cb8b974f442ab341b7f4d3e6a1b3d3db3c43c6c4207189c0df0bf
 [GATES]
 S0=PASS

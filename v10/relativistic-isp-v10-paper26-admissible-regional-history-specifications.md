@@ -30,19 +30,19 @@ or uniqueness of a global measure are kept as three separate statements.
 
 On the D36 conflict cells, the feasible-support hard-core family K3 passes
 `508` intrinsic conditional checks, `7,098` nested DLR towers and `138`
-boundary-mixture checks at two activities.  Under hard exclusion, positive
-feasible support, Markov boundary sufficiency and fixed unblocked local odds,
-the global finite law is forced to have vertex-activity hard-core form.  The
-last three hypotheses are load-bearing: overlap consistency alone does not
-force that form.
+boundary-mixture checks at two activities.  Exact positive feasible support
+and fixed feasible-addition odds force the global finite law to have
+vertex-activity hard-core form.  The resulting K3 kernel separately has an
+accepted one-hop Markov boundary.  Overlap consistency alone does not force
+either the support or the numerical odds.
 
 Progress is not excluded.  K2's uniform maximal-feasible-set law is the
-explicit hard constraint “independent and dominating.”  Once its boundary
-carries accepted blockers and unmet exterior domination demands, it passes
-`188` conditional checks over `165` boundaries and `1,224` DLR towers.  K1
-also has a finite marked specification when its component priority click is
-retained, but it is not one-hop output-local.  A path-five witness gives two
-exteriors with the same empty accepted collar and different local laws:
+explicit hard constraint “independent and dominating.”  Once its radius-two
+boundary carries accepted blockers and unmet exterior domination demands, it
+passes `188` conditional checks over `165` boundaries and `1,224` DLR towers.
+K1 also has a finite marked specification when its component priority click
+is retained, but it is not one-hop output-local.  A path-five witness gives
+two exteriors with the same empty accepted collar and different local laws:
 `{A}:5/11,{B}:6/11` versus `{B}:1`.  No infinite quasilocal completion is
 claimed for K1.
 
@@ -298,12 +298,11 @@ statistical regional law rather than a progress protocol.
 **Theorem 1.**  On a finite conflict graph, suppose a binary law:
 
 1. has exactly the feasible configurations as positive support;
-2. has the Markov boundary property;
-3. has context-independent unblocked odds
+2. has fixed feasible-addition odds: for every feasible `x` not containing
+   `v` for which `x union {v}` is feasible,
 
 ```text
-P(x_v=1 | no selected neighbor, exterior) /
-P(x_v=0 | no selected neighbor, exterior) = lambda_v.      (6)
+mu(x union {v}) / mu(x) = lambda_v.                         (6)
 ```
 
 Then the law is exactly (5).
@@ -318,6 +317,12 @@ mu(x) / mu(0) = product_(v:x_v=1) lambda_v.
 
 The value is independent of deletion order because multiplication commutes.
 Normalization gives (5).  ∎
+
+Equation (6) is equivalently the full-exterior one-site conditional-odds
+statement on positive feasible support.  A separate Markov premise is not
+used: context independence already supplies the ratio needed by the proof.
+K3's accepted one-hop Markov boundary remains a separately checked locality
+property of its regional kernel.
 
 The theorem does not say overlap consistency alone forces K3.  D37 retains a
 context-sensitive feasible-support control whose unblocked odds take values
@@ -369,6 +374,12 @@ blockers   accepted exterior neighbors that forbid local selections;
 demands    rejected exterior collar vertices not already dominated outside
            and therefore requiring a selected neighbor inside D.
 ```
+
+This is a radius-two boundary relative to `D`.  A blocker is selected at
+distance one.  To decide whether a rejected distance-one exterior vertex
+still carries a demand, the boundary constructor must inspect its selected
+exterior neighbors, which can lie at distance two.  The resulting demand bit
+is then the sufficient compressed datum delivered to `D`.
 
 Given those data, the local kernel is uniform on assignments that are
 independent, dominate every unblocked rejected interior vertex and meet every
@@ -664,9 +675,9 @@ gives a weakly convergent subsequence.
 
 For a fixed finite region `D` and cylinder observable `f`, `gamma_D f` depends
 on finitely many exterior coordinates.  For K3 this is the accepted one-hop
-collar.  For K2 it is the finite blocker and domination-demand collar.  For
-(11) it is the one-hop conflict collar and local modes.  Local finiteness is
-essential here.  Therefore `gamma_D f` is continuous on the admitted
+collar.  For K2 it is the radius-two blocker and domination-demand collar.
+For (11) it is the one-hop conflict collar and local modes.  Local finiteness
+is essential here.  Therefore `gamma_D f` is continuous on the admitted
 configuration space.
 
 For all sufficiently large `n`, finite specification consistency gives
@@ -724,9 +735,11 @@ On two disconnected conflict edges, K3, K2, component-marked K1 and equation
 conditional on the first edge.  D37 reports `4/4` disconnected
 factorizations.
 
-This is the D34 locality requirement at the registered width: there is no
-universe-wide denominator.  It does not turn K1's connected-component
-dependency into a bounded collar.
+This is the D34 locality requirement at each registered width: K3 and (11)
+use a one-hop conflict collar, K2 uses its radius-two blocker/demand collar,
+and K1 retains the connected-component priority mark.  There is no
+universe-wide denominator.  Factorization does not turn K1's
+connected-component dependency into a bounded collar.
 
 ### 11.3 Randomness is recorded
 
@@ -830,8 +843,8 @@ The exact receipt uses only standard-library integers and `Fraction`.  Its
 source, stdout-body and internal-science hashes are
 
 ```text
-source    815589b997f191278cd78bf63d6a35ccb5d2f9f39dd361711f7331c1577a5f9d
-stdout    ab69b2b11f9b21c1edd348122509b63cf709db1718ad7174c216f3a21db33c16
+source    8a8772f878d725ce1f22acc703cd23accd531ca0ebb8a08af2bc01eca92f7f4a
+stdout    91a0cb3a85aca73d4cc78266ef29f0a4bdac8cf7a44406a7e258a3d71bb7f5c7
 science   cf9997407d8cb8b974f442ab341b7f4d3e6a1b3d3db3c43c6c4207189c0df0bf
 ```
 
@@ -896,11 +909,12 @@ global measures on supplied countable locally finite opportunity complexes.
 
 The classification refuses an attractive overstatement.  Overlap consistency
 does not force one Gibbs member or eliminate progress.  K3 is forced only
-after hard exclusion, positive feasible support, a Markov boundary and fixed
-unblocked odds are supplied.  K2 remains a valid regional specification once
-the boundary carries unmet domination obligations.  K1 remains valid
-finitely with recorded component priorities but exposes a path-five failure
-of one-hop output locality.
+after exact positive feasible support and fixed feasible-addition odds are
+supplied; its one-hop Markov boundary is a separate locality property.  K2
+remains a valid regional specification once its radius-two boundary carries
+unmet domination obligations.  K1 remains valid finitely with recorded
+component priorities but exposes a path-five failure of one-hop output
+locality.
 
 Record birth is now located cleanly.  `NO_BIRTH`, `TOKEN` and `BORN` can be
 alternatives inside the same normalized functional that supplies arbitration.

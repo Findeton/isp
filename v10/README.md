@@ -12,13 +12,14 @@ factorization fixture and carries 23 executable incoming/lateral/generated
 interface rows.
 
 The result is a family, not a unique selector. K3 passes 508 intrinsic
-conditionals, 7,098 nested towers and 138 boundary mixtures; hard exclusion,
-positive feasible support, a Markov boundary and fixed unblocked odds force
-its vertex-activity form. K2 nevertheless survives as a progressing
-independent-plus-dominating hard constraint once the boundary carries accepted
-blockers and unmet domination demands. Marked K1 composes finitely but fails
-one-hop output locality on a retained five-path witness, so no infinite K1
-completion is claimed.
+conditionals, 7,098 nested towers and 138 boundary mixtures; exact positive
+feasible support and fixed feasible-addition odds force its vertex-activity
+form, while its one-hop Markov boundary is a separate locality property. K2
+nevertheless survives as a progressing independent-plus-dominating hard
+constraint once its radius-two boundary carries accepted blockers and unmet
+domination demands. Marked K1 composes finitely but fails one-hop output
+locality on a retained five-path witness, so no infinite K1 completion is
+claimed.
 
 One joint law carries `NO_BIRTH/TOKEN/BORN` modes and selected/rejected
 arbitration clicks. At the symmetric path point it gives Q-mode probabilities
