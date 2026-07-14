@@ -2986,3 +2986,27 @@ approximate ancestry or a physical return-limiting principle such as sealing,
 attenuation or causal speed. Timed profinite/v9, quantum generation,
 spacetime cones, dimension, units, G and the actual interactive click law
 remain open.
+
+## 2026-07-14 — D35 timeless local next-click investigation pinned (LEDGER #194)
+D35 opens after terminal D34f/Paper 23. The target is a strong record-native
+causal acquisition principle and next-A probability law with no global or
+per-record numerical time. The primitive candidate is a projectively
+consistent measure on marked causal histories; A2 is the next A-wire successor
+and newly acquired evidence is `Anc(A2) minus Anc(A1)`. Realized acquisition
+is binary; pre-click probabilities are completed-history cylinder ratios.
+
+The pin prevents a known category error: D24 already supplies an exact
+isometric, collar-local, construction-order-gauge, click-identifiable
+one-parent birth-content family. It does not select which collar/opportunity
+fires or the coupling `g_e`. D1/D2 support nonselection and D28's opportunity
+kernel remain load-bearing. D35 must combine opportunity selection q with the
+D24 kernel B inside one history law, not relabel B as the missing global
+selector.
+
+The campaign requires a fresh hash-complete V1--V10 primary-artifact census,
+exact cylinder/projectivity/covariance gates, a real actor/tip-local simulator
+with multiple machine schedulers, live birth/interaction/ancestry/A stopping,
+and three hostile review streams. Six decision rows distinguish a uniquely
+selected timeless law, an executable family, nonlocal normalization, finite-
+trace-only status, no-go and refusal. Geometry, proper time, v9 identification
+and nature's law are outside the result ceiling.
