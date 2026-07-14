@@ -1051,3 +1051,22 @@ two bibliography substitutions, the validator-scope sentence and candidate
 Paper 22 SHA-256
 `e33c0ad9294ff1411f49e7d32dc640c9047d3a7603e954219703f23031bf8576`
 before the paper status becomes terminal.
+
+## 24. Narrow delta and final hygiene repair
+
+The narrow delta against `a074608` verifies the candidate Paper 22 SHA, both
+bibliography corrections and the validator-ceiling sentence.  Its dispositions
+are:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 0 minors / 1 nit;
+boundary/locality:    0 blockers / 0 majors / 0 minors / 0 nits;
+ancestry/quantum:     0 blockers / 0 majors / 0 minors / 0 nits.
+```
+
+The sole nit is outside the paper: two Markdown hard-break spaces in the
+committed round-2 predictive review made the commit-range `git diff --check`
+fail.  They are removed without changing the review's words or verdict.  Paper
+22 remains byte-identical at SHA-256
+`e33c0ad9294ff1411f49e7d32dc640c9047d3a7603e954219703f23031bf8576`.
+A final string/hygiene delta is required before terminal status.

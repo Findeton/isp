@@ -1,8 +1,8 @@
 # Paper 22 round 2 — predictive/profinite closing hostile delta
 
-**Frozen target:** commit `8e820cc2464eeefeabafe49ed64246e98d51ce4a`  
+**Frozen target:** commit `8e820cc2464eeefeabafe49ed64246e98d51ce4a`.
 **Compared against:** commit `c236a6f` and
-`paper22-round1-predictive-profinite-hostile-review.md`  
+`paper22-round1-predictive-profinite-hostile-review.md`.
 **Verdict:** **SCIENTIFIC DELTA ACCEPTED; ONE BIBLIOGRAPHIC REPAIR REQUIRED —
 0 blockers / 0 majors / 1 minor / 0 nits.**
 

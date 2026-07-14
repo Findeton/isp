@@ -2789,3 +2789,11 @@ declared composition invariants on genuine regional projections, not arbitrary
 D34b generative reachability. Candidate Paper 22 SHA-256 is
 `e33c0ad9294ff1411f49e7d32dc640c9047d3a7603e954219703f23031bf8576`.
 A narrow exact-paper delta is required before the terminal noun.
+
+## 2026-07-13 — Paper 22 narrow delta science-clean; two-space hygiene repair frozen (LEDGER #183)
+The exact-paper delta verifies SHA `e33c0ad9...8576`, both repaired source
+records and the validator ceiling. Boundary/locality and ancestry/quantum are
+0B/0M/0m/0n. Predictive/profinite is 0B/0M/0m/1n only because two Markdown
+hard-break spaces in its already committed round-2 review fail commit-range
+`git diff --check`. Those spaces are removed; Paper 22 is byte-identical. One
+final string/hygiene delta remains before the terminal noun.
