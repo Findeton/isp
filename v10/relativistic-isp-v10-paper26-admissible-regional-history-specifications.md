@@ -4,8 +4,8 @@
 
 ## Finite-cover consistency, global completion, and birth and arbitration as conditionals
 
-**Status:** EXACT-RECEIPT CANDIDATE after D37 `PASS 9/9`; D37 hostile review
-and independent paper-level review remain open.
+**Status:** EXACT-RECEIPT CANDIDATE after D37 `PASS 9/9` and hostile closure
+at `0B/0M/0m/0n`; independent paper-level review remains open.
 **Date:** 2026-07-14.
 
 ## Abstract

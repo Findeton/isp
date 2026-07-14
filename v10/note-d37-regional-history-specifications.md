@@ -1,8 +1,9 @@
 # D37 — admissible regional history specifications
 
 **Status:** EXACT FINITE RECEIPT PASS `9/9`; classical completion theorem at
-the supplied countable locally finite opportunity-complex scope; hostile
-review pending.  The campaign pin was committed at `b06ba1a` before
+the supplied countable locally finite opportunity-complex scope; D37 hostile
+stream closed at `0B/0M/0m/0n`; independent Paper 26 review open.  The
+campaign pin was committed at `b06ba1a` before
 `code/d37_regional_history_specification_exact.py` was run.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
@@ -585,5 +586,6 @@ disconnected edges with the exact product of the two component-priority laws.
 S4 now fails closed if the one-hop K1 witness is absent.  The K2 boundary is
 printed and stated as radius two.  Paper 26 demotes the unused Markov premise
 from Theorem 1 while retaining K3's one-hop Markov boundary as a separate
-locality property.  A focused D37 closing delta is still required; the
-independent Paper 26 review remains open regardless of that delta.
+locality property.  The focused D37 closing delta now closes the D37 stream
+at `0B/0M/0m/0n`.  The independent Paper 26 review remains open regardless
+of that closure.

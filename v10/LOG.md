@@ -3859,3 +3859,18 @@ sections now explain why deriving an unmet demand reads a radius-two collar,
 and the countable continuity and anti-dilution claims use that exact width.
 D37 hostile closure still awaits a focused delta; independent paper review
 remains open.
+
+## 2026-07-14 — D37 hostile stream closes cleanly (LEDGER #230)
+
+`reviews/d37-round2-regional-specification-closing-delta.md` audits repair
+commit `94de860` and returns `0B/0M/0m/0n`. Fresh executions under two new hash
+seeds are byte-identical to the frozen receipt. The complete marked K1 product
+has four atoms—one for each independent pair of component orders—with exact
+mass `1/4` each; S8 now compares that law atom by atom. S4 requires its
+path-five witness, K2's radius-two width is printed and used, and Theorem 1's
+premises match its proof.
+
+D37 may now be described as hostile-closed at its stated scope. Paper 26
+remains an exact-receipt candidate because the independent paper-level review
+is still open; that reviewer is pre-registered to rederive at least one K1
+path-five atom and one joint `34/93`-family count.

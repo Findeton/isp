@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D37 / Paper 26 (exact-receipt candidate; hostile review open)
+## Latest — D37 / Paper 26 (D37 hostile-closed; independent paper review open)
 
 D37 constructs the classical regional object queued by Papers 24 and 25.
 Finite oriented opportunity regions carry normalized conditional kernels with
@@ -35,10 +35,18 @@ COMPLEX AND COUPLINGS / NONSELECTING**. The law still does not generate the
 opportunity complex, select activities or mode weights, close the action
 bridge, prove uniqueness, or supply the quantum join.
 
+The D37 hostile stream closes at `0B/0M/0m/0n` after requiring complete
+marked-K1 product equality, making the path-five witness fail-closed, stating
+K2's radius-two boundary and removing Theorem 1's redundant Markov premise.
+This does not close the independent Paper 26 review, which must separately
+rederive at least one K1 path-five atom and one joint `34/93`-family count.
+
 - `note-d37-regional-history-specifications.md`
 - `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`
 - `code/d37_regional_history_specification_exact.py`
 - `data/d37_regional_history_specification_exact.out`
+- `reviews/d37-round1-regional-specification-hostile-review.md`
+- `reviews/d37-round2-regional-specification-closing-delta.md`
 
 ## Prior — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
 
