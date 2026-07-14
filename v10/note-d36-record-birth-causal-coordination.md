@@ -510,3 +510,49 @@ After the exact receipt, independent hostile lanes attack:
 Every blocker/major is frozen before repair.  The synthesis paper is written
 only after the D36 result survives focused deltas.  Paper-level hostile review
 then runs separately.
+
+## 15. First exploratory receipt and self-audit
+
+The first implementation executes `PASS 22/22` over exact integers/Fractions.
+It prints:
+
+```text
+held-lock graph                 45 states, 69 edges, 1 circular deadlock;
+exclusive-wait triangle        2 split-vote deadlocks / 8 assignments;
+fail-fast pair                 1,113 states, 2,984 edges, 8 terminals;
+fail-fast triangle             34,637 states, 140,028 edges, 17 terminals;
+fail-fast disjoint             289 states, 816 edges, 1 terminal;
+fail-fast partial overlap      1,517 states, 5,162 edges, 2 terminals;
+closed priority serializers    8,976 exact checks;
+K1 path law                    {Q}:1/3, {P,R}:2/3;
+K2 path law                    {Q}:1/2, {P,R}:1/2;
+finite-bit unique rows         1/2, 3/4, 3/8, 21/32;
+raw K1 restriction             2/3 vs direct 1/2;
+hard-core boundary repair      exact;
+```
+
+Provisional source/stdout/science hashes are
+
+```text
+407a11c13505c79d2db10d12438c2d9a212e06bd349ee5a63fab8ff16bd57673
+c4483a3151f9e8352c37915747b5e4fb09bd24150c3cf637c614a02f025b8d51
+0a81851fb746811d745856a07a68308ec94577ebfa1e2b1640ae122f0cb86a94.
+```
+
+This is **not** the review candidate.  The coordinator's pre-hostile self-audit
+freezes four repairs:
+
+1. G10's terminal typing expression contains a vacuous empty-state quantifier;
+   replace it with explicit response/application/ack checks on every terminal.
+2. The born/token result currently duplicates core state indices by a
+   presentation tag; rebuild the two labeled transition graphs and exhibit the
+   explicit projection/bisimulation on every node and edge.
+3. Add the three-participant cyclic local-order witness
+   `R<P<Q<R`; independent participant queues do not define an acyclic global
+   serialization.
+4. Reconcile the prose's “21 gates” with labels G0--G21 (`22` gates), and make
+   clear that fail-fast terminal-state multiplicities are state counts, not a
+   probability distribution over service orders.
+
+The first source and receipt remain as an auditable provisional checkpoint.
+No scientific noun is promoted until a strengthened rerun and hostile review.

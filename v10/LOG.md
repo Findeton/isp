@@ -3373,3 +3373,23 @@ and partial-application states are explicit in the local arm. Gates expand to
 21, adding fail-fast termination, causal closure, oracle attribution and the
 crash/no-fair-delivery blocking counterexample. This amendment precedes every
 receipt run.
+
+## 2026-07-14 — D36 first exact run green, self-audit withholds review (LEDGER #208)
+
+The first D36 implementation prints `PASS 22/22` using exact integers and
+Fractions. It reproduces the registered negative controls (45-state lock graph
+with one circular deadlock; reusable-grant double commit; split adoption; two
+exclusive-wait split votes) and enumerates the positive failure-free fail-fast
+state graphs (pair 1,113; triangle 34,637; disjoint 289; partial overlap 1,517),
+all with zero terminal deadlocks and explicit partial-application states. A
+closed common-priority batch passes 8,976 serializers. K1/K2 separate exactly
+on the path (`2/3` vs `1/2` for `{P,R}`); hard-core DLR, finite-bit retry,
+boundary-mixture, hyperedge, cover and capacity rows pass.
+
+Promotion is withheld before external review because the coordinator found
+four receipt issues: G10 contains a vacuous terminal-typing quantifier; the
+born/token bisimulation is too syntactic; the cyclic local-queue order witness
+is absent; and prose says 21 while G0--G21 is 22 gates. These are frozen before
+repair. Provisional source/stdout/science hashes are `407a11c...57673`,
+`c4483a3...8d51`, `0a81851...6a94`. The provisional code/receipt remain in Git;
+the strengthened exact rerun precedes hostile review.
