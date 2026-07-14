@@ -3320,3 +3320,36 @@ terminal D35 note SHA-256 is
 `ab8506281161c6add0c7d2e2aae3034bb1f0ce958f2fcbfad145daf7fdccebfe`.
 README now names D35/Paper 24 as latest and carries the overlap architecture as
 the next foundational target before any new cone/dimension campaign.
+
+## 2026-07-14 — D36 record-birth coordination protocol pinned (LEDGER #207)
+
+D36 opens from the user's proposed transaction-record investigation, with one
+load-bearing correction: record birth, version validation, arbitration and
+atomic multi-tip commit are distinct primitives. The target is whether a born
+transaction actor adds causal coordination power over matched immutable
+proposal/grant records, not whether tickets can be credited for a protocol
+whose real work is performed by an assumed atomic commit.
+
+The probability-free ladder is frozen before code: held-lock baseline and its
+born-ticket isomorph; reusable read-only grants (double-commit attack);
+participant-local adoption (split-commit attack); exclusive grants (triangle
+split-vote attack); closed finite conflict batch with a supplied common strict
+order and exclusive bounded-arity upper seal (positive theorem); and online
+priority without a close (unknown-future-contender attack). The exact ontology
+uses immutable proposal/grant/reject/rebase/commit records and distinguishes
+persistent actor wires from individual records and from D24 support birth.
+
+The expected theorem complex is pinned: nominal-freshness and deterministic
+symmetry no-gos; birth-alone deadlock no-go; read-only-ticket insufficiency;
+exclusive-grant nonprogress; finite closed ordered-batch safety/maximality/
+progress/gauge; persistent-participant upper seal; and born-token finite-
+horizon bisimulation. Probabilistic arms are uniform random priority, uniform
+maximal independent sets, hard-core regional kernels, and finite-bit typed
+retries. Raw restriction is expected to fail when an external blocker is
+forgotten; an explicit boundary-mixture repair is gated.
+
+The receipt is exact rational and bounded (`arity<=3`, four participants,
+three proposals, incident degree two, finite priority chunks). Quantum join,
+unbounded capacity, online root-free completion and selection of the priority
+law remain prohibited claims. Three independent architecture attacks have
+been commissioned before implementation; three hostile lanes follow the run.
