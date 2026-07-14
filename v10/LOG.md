@@ -3707,3 +3707,27 @@ The focused coordinator delta is `0B/0M/0m/0n` and makes no independence
 claim: both review rounds disclose coordinator authorship.  Paper 25 is a
 **COORDINATOR-CLOSED CANDIDATE**.  Independent paper-level hostile review
 remains open before terminal acceptance.
+
+## 2026-07-14 — Paper 25 round-3 separate-session review FILED (LEDGER #211)
+`reviews/paper25-round3-separate-session-review.md` (a third disclosed
+coordinator-lineage lane, NOT the independent stream §19 leaves open).
+Verdict: 0B / 1M / 4m / 2n; zero false printed numbers (K1/K2 path
+laws re-derived by hand; counts cross-checked). THE MAJOR is a
+material OMISSION, not an error: the corpus already contains a
+PHYSICAL BORN/TOKEN discriminator — D26's birth-decoherence bridge
+(every physical birth contracts parent coherence by √(1−g); TOKEN
+activation performs no birth isometry) — which (i) strengthens §8.3's
+non-eliminability from bookkeeping to a MEASURABLE observable, (ii)
+makes §12.1's unbounded retry lineages physically priced (the D26
+lab-shadow budget bounds retry rates — a falsifier-grade cross-layer
+constraint), (iii) gives the eliminability horizon physical content.
+Minors: the click-outcome realization of arbitration marks (the
+randomness-monopoly conformance candidate for N4's required
+stochastic law); the action-bridge open (are K1/K2/K3/q_birth
+conditionals of an exp(−I)-class measure? — paper-16 constraints);
+the seal-vocabulary disambiguation (Close(T) ≠ V6 dispersal seal);
+the D23 in-degree ≥ 2 identifiability inheritance at the future
+quantum join (+ the D31/D32 cancellation census). All repairs
+wording/scope — no receipt touches. Repairs to be applied as
+authorship per house style; the independent paper-level stream
+remains open.
