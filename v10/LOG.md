@@ -3412,3 +3412,29 @@ Two clean reruns are byte-identical.  The strengthened receipt remains
 `CLOCK-FREE LOCAL TRANSACTION COORDINATION / SAFE, NONSELECTING,
 FAILURE-FREE`.  This is the round-one hostile-review candidate, not yet a
 terminal claim.
+
+## 2026-07-14 — D36 round 1 rejects record-native promotion (LEDGER #210)
+
+Three independent hostile lanes reproduce commit `5f6cd7f` byte-for-byte
+under six fresh hash seeds, including all four state-graph counts and
+`PASS 22/22`, but return `0B/7M/6m/2n`.  The fail-fast reference safety core
+survives.  Promotion fails because the executable is not yet the actor-local,
+append-only record system named by the note.
+
+The frozen majors are: G18 is two decorated copies of the same pair graph;
+P4's mutable summary is not linked to generated immutable event DAGs; `tau`
+forges exact remote-tip knowledge absent from one-parent T0's ancestry; the
+two-party closure's arity-three census fails when extended naively to the
+admitted three-party transaction; the global FFState/bare-message table does
+not implement actor ownership or authentication and accepts forged response
+triples; K1 factors only after its physical global order mark is discarded;
+and the four-proposal factorization fixture is absent from the printed maximum-
+three capacity census.
+
+Six minors and two nits freeze stronger nominal identity checks, D24 graph-
+shape-only scope, fixed-batch/one-version and reservation-safety wording,
+unique-greatest versus complete-order retry, four disclosed zero-mass DLR
+boundaries, P6/T3 attribution and status/provenance repairs.  The coordinator
+adds two nonvacuity repairs: construct G2's claimed ticket isomorphism and
+replace `G21=True` with an executable replay/integrity gate.  Reviews remain
+immutable; repair begins only after this ledger commit.  Paper 25 is withheld.
