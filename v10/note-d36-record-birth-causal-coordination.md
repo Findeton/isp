@@ -1230,11 +1230,11 @@ external deterministic replay  PASS 8/8
 The terminal deterministic identifiers are:
 
 ```text
-actor source  c2460ed8d48f06f5bebd5aba95440ff74af0a002a44ab7a0de6c1d4d1f0188a6
-actor stdout  f9744a6d2186c46bbaa3f154d332a4e4ac855f1ed6ecd0e5cfe2bb3e1fef8e12
+actor source  57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b
+actor stdout  eaf2e535b475b9f3fafe080175a5399e2748c0a554ed768f470869cfdf291b48
 actor science 7bee23d9ebf22b2a0112ec0677f3b584990ef9a09a4e4ef34b77e75e7bca53d0
-replay source 67d195268b517d80dcf81bb10b0b5926e7a20cdbad961e0fd7bf80f57e535a7d
-replay stdout 677848c97ac628ac9a53e75343f47b6bc4748243cc421f3037e2a985713fafad
+replay source af3d773e11095bd125126a01028ffc83c7c91129fc6c921faa52dd173287ce98
+replay stdout 9324aec40ad8f184058d75ea2870ed9628823971ee7ca0e591e28b5af0b06110
 ```
 
 The focused round-six ancestry delta closes at `0B/0M/0m/0n`.  D36 is
@@ -1246,3 +1246,20 @@ result is equally important: birth supplies durable causal carrier structure,
 not the opportunity, conflict-boundary, arbitration, retry, crash-recovery,
 quantum-join or root-free global history law.  Paper 25 may now synthesize
 exactly this boundary.
+
+## 28. Paper-triggered pure disjoint-absence strengthening
+
+Paper 25's first coordinator-hostile audit noticed that A13's absent-Q branch
+removed Q's actor, carrier and prepares but inherited Q-specific predictive
+entries on the disconnected C/D participant actors from the common fixture
+constructor.  Those unreachable entries could not affect the already exact
+A/B/P ledger restriction, but they made the phrase “Q absent” stronger than
+the literal comparator.
+
+The control now removes Q's application entry, response entry, capability,
+authorization and mailbox state from C and D as well as Q's actor and carrier.
+The other branch installs and closes Q normally.  The exact A13 tuple,
+restricted 13-record local ledger and family hash remain byte-identical.  All
+actor gates still pass `14/14`; the two-process replay remains `8/8`.  This is
+a strengthening of the negative control, not a change to D36's theorem or
+scope.  The identifiers above are the resulting terminal hashes.

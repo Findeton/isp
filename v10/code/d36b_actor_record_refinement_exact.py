@@ -2397,13 +2397,33 @@ def sparse_full_ledger_gate() -> Tuple[int, int, int, int, int, int, int, int, s
         participants=tuple(
             replace(
                 participant,
+                application_entries=tuple(
+                    entry
+                    for entry in participant.application_entries
+                    if entry[0] != remote.attempt_id
+                ),
+                response_entries=tuple(
+                    entry
+                    for entry in participant.response_entries
+                    if entry[0] != remote.attempt_id
+                ),
+                capabilities=tuple(
+                    capability
+                    for capability in participant.capabilities
+                    if capability != remote.capabilities[participant_index]
+                ),
+                authorizations=tuple(
+                    authorization
+                    for authorization in participant.authorizations
+                    if authorization[0] != remote.attempt_id
+                ),
                 mailbox=tuple(
                     envelope
                     for envelope in participant.mailbox
                     if envelope.attempt_id != remote.attempt_id
                 ),
             )
-            for participant in full_world.participants
+            for participant_index, participant in enumerate(full_world.participants)
         ),
         transactions=sorted_transactions(
             actor for actor in full_world.transactions if actor.attempt_id != remote.attempt_id

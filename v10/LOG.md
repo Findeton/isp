@@ -3663,3 +3663,15 @@ carrier and is coordination-quotient-equivalent to dormant activation at the
 audited horizon; it does not select opportunity, arbitration, retry, crash
 recovery, quantum join or a root-free global law.  Paper 25 may now synthesize
 that exact positive and negative boundary.
+
+## 2026-07-14 — Paper 25 hostile audit strengthens D36's absent-Q control (LEDGER #221)
+
+The Paper 25 coordinator-hostile review finds that A13's local-only disjoint
+branch still retained Q-specific predictive entries on disconnected C/D
+actors, although Q's actor, carrier and mailboxes were absent.  The exact
+A/B/P ledger equality was valid, but “pure Q absence” was not literal.  The
+control now removes Q's application, response, capability and authorization
+entries too.  A13's tuple and family hash remain unchanged, including 13 exact
+local records.  Actor and replay receipts remain `PASS 14/14` and `PASS 8/8`;
+new actor source/stdout hashes are `57ff22a...b376b` and
+`eaf2e53...91b48`.  No theorem width changes.
