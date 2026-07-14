@@ -3569,3 +3569,26 @@ handler-plus-transport macro unless delivery is split into separate events;
 remote predecessor ownership remains an honest-actor scope unless a bounded
 ancestry proof is carried.  Paper 25 remains withheld pending a focused
 closing delta.
+
+## 2026-07-14 — D36 participant-local opening executes (LEDGER #216)
+
+The rebase opening no longer installs participant-owned slots or
+authorizations.  Carrier birth appends only the T carrier and routes prepares;
+an exact snapshot gate proves every participant predictive field is unchanged
+before its addressed service in both BORN and TOKEN modes.  Each prepare
+handler now recomputes the attempt label from exact carrier ID plus body,
+allocates its own bounded slots, registers the attempt and appends its local
+response record.
+
+A deliberately non-carrier-derived attempt with a matching injected side
+authorization now rejects, raising the unchanged-before-mutation battery to
+`14/14`.  Both persistent ledgers again validate and place the old close below
+the new close; local registration and pre-service predictive preservation pass
+`2/2` each.  `service_world` is explicitly a handler-plus-transport macro, not
+a literal one-object transition, and remote predecessor-wire validation is
+limited to honest record-generating actors.
+
+The actor returns `PASS 12/12` with source/stdout identifiers
+`5655238...b5eff` and `e732169...8fd1b`; external replay returns `PASS 8/8`.
+Focused hostile closing review remains required before D36 terminal status or
+Paper 25.

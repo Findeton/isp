@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-3 HOSTILE DELTA OPEN; PARTICIPANT-LOCAL ATTEMPT OPENING REQUIRED.
+**Status:** ROUND-3 REPAIRS EXECUTED; FOCUSED HOSTILE CLOSING DELTA REQUIRED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -1005,3 +1005,63 @@ bounded local ancestry proof is added.
 No Paper 25 is permitted.  The participant-local registration gate and an
 honest transport-macro scope repair must execute, then receive another focused
 closing delta.
+
+## 23. Participant-local opening repair
+
+The rebase helper no longer changes participant application slots, response
+slots or authorization tables.  At carrier birth it appends only the T-owned
+carrier and routes a prepare envelope.  An exact gate snapshots every
+participant and verifies that version, heads, promises, application/response
+slots, capabilities, authorizations and used-message state remain byte-equal
+until that participant services its own prepare (`2/2` carrier modes).
+
+The participant handler now admits a new bounded slot only when the incoming
+transaction index is its next local slot, the stable route capability was
+already carried, and the attempt label equals
+
+```text
+Attempt(carrier, body) = SHA256("structural-attempt", exact carrier ID, body digest).
+```
+
+Because the body digest already commits the member set and requested bases,
+this formula is locally recomputable from the exact carrier and body in the
+addressed envelope.  The same local event then allocates the application and
+response slots, stores the attempt-specific authorization, and appends the
+participant's typed grant or rejection record.  No independent regional
+authorization installation remains.
+
+The exact negative gate injects a matching side-table authorization for a
+deliberately non-carrier-derived attempt label.  The participant still rejects
+it before mutation because the carrier equation fails.  The full battery is
+now `14/14`.  Both persistent continuations additionally print:
+
+```text
+opening participant predictive state preserved   2 / 2;
+participant-local attempt registration            2 / 2;
+combined ledgers valid                             2 / 2;
+old close below new close                         2 / 2.
+```
+
+The transport granularity and remote ancestry ceiling are now explicit rather
+than silently promoted.  `handle_participant` and `handle_transaction` read
+only the addressed actor.  `service_world` is named a **handler-plus-transport
+macro** because it subsequently places outgoing envelopes into recipient
+mailboxes; it is not claimed to change only one actor object.  The theorem is
+also limited to honest record-generating actors under ideal authentication.
+The receiver does not receive an independently checkable proof of the entire
+remote predecessor wire; Byzantine remote ancestry validation remains open.
+
+The new deterministic identifiers are:
+
+```text
+actor source  56552383fa42f446b1de925109489b0f180ee880b62a383ed0f97ba8727b5eff
+actor stdout  e73216911555fbbfb38fbe67538e9119a2bcb5eddf6e0a697b8804e0df38fd1b
+actor science 2ca6dbb3d998fe87f991c3df26ef036bd9e606f0dd024f0e0c0191b772d72f7e
+replay source a8d3f4554a86bffa9faa4d79ab2c7975aacdb957e585512ede2ba9a7e5c886d8
+replay stdout 363eb0825999b082a0f34eb899eacf59ca645b6f386a61d67afeff42e83681cd
+```
+
+The actor and replay receipts return `PASS 12/12` and `PASS 8/8`.
+Probability, arbitration, opportunity, failure recovery, infinite completion,
+quantum realization and spacetime consequences remain untouched and open.
+This is again a repair candidate, not permission to write Paper 25.

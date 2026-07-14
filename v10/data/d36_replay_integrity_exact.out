@@ -1,4 +1,4 @@
 [D36 independent replay/integrity receipt]
 d36_birth_coordination_exact.py: source_sha256=2a05f24529d716d6a8780d20ed5eba05fae6e3ac73ffdd490528b2be5b273683; stdout_sha256=868c57325101f683c8cea58be1226a04ede361212c76e93471529e993e515c17; seeds=('17', '104729'); byte_identical=1
-d36b_actor_record_refinement_exact.py: source_sha256=748128631ff32268a9d0f5c8f74306189a9d371752569e06f87f2a0c2ca0214a; stdout_sha256=8ee46d53a1f392222b4e60e10ead369a831661f272120e090a2166985edfcf43; seeds=('17', '104729'); byte_identical=1
+d36b_actor_record_refinement_exact.py: source_sha256=56552383fa42f446b1de925109489b0f180ee880b62a383ed0f97ba8727b5eff; stdout_sha256=e73216911555fbbfb38fbe67538e9119a2bcb5eddf6e0a697b8804e0df38fd1b; seeds=('17', '104729'); byte_identical=1
 PASS 8/8

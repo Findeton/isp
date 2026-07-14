@@ -65,6 +65,11 @@ def digest(value: object) -> str:
     return sha256(stable(value).encode())
 
 
+def structural_attempt_id(carrier: "Record", body_digest: str) -> str:
+    """Attempt label locally recomputable from exact carrier and body."""
+    return digest(("structural-attempt", carrier.record_id, body_digest))
+
+
 PREPARE = "PREPARE"
 GRANT = "GRANT"
 REJECT = "REJECT"
@@ -415,9 +420,7 @@ def open_actor_world(
             raise AssertionError(mode)
         opening_records.append(carrier)
         body_digest = digest((logical_tau, members, bases[tx_index]))
-        attempt_id = digest(
-            ("structural-attempt", carrier.record_id, body_digest, members, bases[tx_index])
-        )
+        attempt_id = structural_attempt_id(carrier, body_digest)
         responses = tuple(0 if p in members else -1 for p in range(count))
         acknowledgements = tuple(0 if p in members else -1 for p in range(count))
         evidence = tuple(None for _ in range(count))
@@ -564,6 +567,17 @@ def bounded_merge(
 
 
 def participant_accepts_prepare(actor: ParticipantActor, envelope: Envelope) -> bool:
+    authorization = (
+        envelope.tx_index,
+        envelope.attempt_id,
+        envelope.body_digest,
+        envelope.base_version,
+        envelope.capability,
+    )
+    locally_allocatable = (
+        envelope.tx_index == len(actor.applications)
+        and len(actor.response_records) == len(actor.applications)
+    )
     return (
         envelope.kind == PREPARE
         and envelope.target_kind == "P"
@@ -572,18 +586,13 @@ def participant_accepts_prepare(actor: ParticipantActor, envelope: Envelope) -> 
         and envelope.sender_kind == "T"
         and envelope.sender_index == envelope.tx_index
         and envelope.capability in actor.capabilities
-        and (
-            envelope.tx_index,
-            envelope.attempt_id,
-            envelope.body_digest,
-            envelope.base_version,
-            envelope.capability,
-        )
-        in actor.authorizations
+        and (authorization in actor.authorizations or locally_allocatable)
         and envelope.evidence.owner_kind == "T"
         and envelope.evidence.owner_index == envelope.tx_index
         and envelope.evidence.kind
         in ("T0_BIRTH", "SLOT_ACTIVATION", "T1_REBASE_BIRTH", "REBASE_ACTIVATION")
+        and envelope.attempt_id
+        == structural_attempt_id(envelope.evidence, envelope.body_digest)
         and envelope.evidence.record_id
         == digest(
             (
@@ -644,6 +653,18 @@ def handle_participant(
     if envelope.kind == PREPARE:
         if not participant_accepts_prepare(actor, envelope):
             return actor, (), (), False
+        authorization = (
+            envelope.tx_index,
+            envelope.attempt_id,
+            envelope.body_digest,
+            envelope.base_version,
+            envelope.capability,
+        )
+        authorizations = actor.authorizations
+        if envelope.tx_index == len(applications):
+            applications.append(0)
+            response_records.append("")
+            authorizations = tuple(sorted(authorizations + (authorization,)))
         if applications[envelope.tx_index] != 0:
             return actor, (), (), False
         grant = actor.version == envelope.base_version and actor.promise == -1
@@ -684,10 +705,12 @@ def handle_participant(
             head_record=evidence.record_id,
             promise=envelope.tx_index if grant else actor.promise,
             promise_attempt=envelope.attempt_id if grant else actor.promise_attempt,
+            applications=tuple(applications),
             response_records=tuple(
                 evidence.record_id if index == envelope.tx_index else value
                 for index, value in enumerate(response_records)
             ),
+            authorizations=authorizations,
             used=add_used(actor.used, envelope),
         )
         return updated, (response,), (evidence,), True
@@ -1434,6 +1457,43 @@ def adversarial_gate() -> Tuple[int, int]:
     after, _, _, accepted = handle_participant(participant, 0, unissued)
     rejected += int(not accepted and after == participant)
 
+    # Even a matching side-table tuple cannot override the participant's
+    # carrier-derived local attempt calculation.
+    arbitrary_attempt = digest(("not-carrier-derived", prepare.attempt_id))
+    side_authorization = (
+        prepare.tx_index,
+        arbitrary_attempt,
+        prepare.body_digest,
+        prepare.base_version,
+        prepare.capability,
+    )
+    side_authorized_actor = replace(
+        participant,
+        authorizations=tuple(sorted(participant.authorizations + (side_authorization,))),
+    )
+    side_authorized_prepare = signed_envelope(
+        PREPARE,
+        prepare.sender_kind,
+        prepare.sender_index,
+        prepare.target_kind,
+        prepare.target_index,
+        prepare.tx_index,
+        prepare.participant_index,
+        prepare.body_digest,
+        prepare.base_version,
+        prepare.capability,
+        arbitrary_attempt,
+        "",
+        prepare.evidence,
+    )
+    attempted += 1
+    after, outgoing, records, accepted = handle_participant(
+        side_authorized_actor, 0, side_authorized_prepare
+    )
+    rejected += int(
+        not accepted and after == side_authorized_actor and not outgoing and not records
+    )
+
     attempted += 1
     other = world.participants[1]
     after, _, _, accepted = handle_participant(other, 1, prepare)
@@ -1686,7 +1746,7 @@ def append_rebase_attempt(
     else:
         raise AssertionError(mode)
     append_records(ledger, (carrier,))
-    attempt_id = digest(("structural-attempt", carrier.record_id, body_digest, members, bases))
+    attempt_id = structural_attempt_id(carrier, body_digest)
     capabilities = old_tx.capabilities
     responses = tuple(0 if participant in members else -1 for participant in range(len(old_world.participants)))
     acknowledgements = tuple(
@@ -1718,23 +1778,7 @@ def append_rebase_attempt(
 
     participants = []
     for participant_index, actor in enumerate(old_world.participants):
-        applications = actor.applications + (
-            0 if participant_index in members else -1,
-        )
-        response_records = actor.response_records + ("",)
-        authorization = (
-            tx_index,
-            attempt_id,
-            body_digest,
-            bases[participant_index],
-            capabilities[participant_index],
-        )
-        updated = replace(
-            actor,
-            applications=applications,
-            response_records=response_records,
-            authorizations=tuple(sorted(actor.authorizations + (authorization,))),
-        )
+        updated = actor
         if participant_index in members:
             prepare = signed_envelope(
                 PREPARE,
@@ -1764,7 +1808,7 @@ def append_rebase_attempt(
     )
 
 
-def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, str]:
+def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, int, str]:
     old_bases = ((0, 0),)
     current_versions = (1, 1)
     stale_count = 0
@@ -1773,6 +1817,8 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, str]:
     ledger_valid = 0
     ancestry_count = 0
     stale_replay_rejected = 0
+    opening_predictive_preserved = 0
+    local_registration = 0
     total_records = 0
     lineage_ids = []
     final_versions = set()
@@ -1807,7 +1853,29 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, str]:
         stale_count += 1
         old_prefix = dict(ledger)
 
+        prior_participants = world.participants
         world, carrier = append_rebase_attempt(world, ledger, mode, dormant_slot)
+        predictive_fields = (
+            "name",
+            "version",
+            "version_record",
+            "head_record",
+            "promise",
+            "promise_attempt",
+            "applications",
+            "response_records",
+            "capabilities",
+            "authorizations",
+            "used",
+        )
+        if all(
+            all(getattr(before, field_name) == getattr(after, field_name) for field_name in predictive_fields)
+            and len(after.mailbox) == len(before.mailbox) + 1
+            for before, after in zip(prior_participants, world.participants)
+        ):
+            opening_predictive_preserved += 1
+        else:
+            raise AssertionError("opening changed participant predictive state")
         world = run_to_quiescence(world, ledger)
         validate_terminal_ledger(world, ledger)
         ledger_valid += 1
@@ -1820,6 +1888,15 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, str]:
             raise AssertionError("rebased versions")
         final_versions.add(versions[0])
         rebase_count += 1
+        if all(
+            len(actor.applications) == 2
+            and len(actor.response_records) == 2
+            and any(authorization[0] == 1 for authorization in actor.authorizations)
+            for actor in world.participants
+        ):
+            local_registration += 1
+        else:
+            raise AssertionError("prepare handlers did not register attempt locally")
         if old_tx.logical_tau != new_tx.logical_tau or old_tx.attempt_id == new_tx.attempt_id:
             raise AssertionError("logical lineage / structural attempt separation")
         if old_tx.body_digest == new_tx.body_digest:
@@ -1848,6 +1925,8 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, str]:
         ledger_valid,
         ancestry_count,
         stale_replay_rejected,
+        opening_predictive_preserved,
+        local_registration,
         total_records,
         digest((total_records, tuple(lineage_ids))),
     )
@@ -1872,7 +1951,10 @@ def main() -> None:
 
     emit("[D36b authenticated actor-record refinement — exact receipt]")
     emit(f"locked_reference_sha256={BASE_SHA256}")
-    emit("SCOPE: supplied finite closed attempts; ideal authentication; no numerical time")
+    emit(
+        "SCOPE: supplied finite closed attempts; ideal authentication; "
+        "honest record-generating actors; no numerical time"
+    )
 
     graph_rows = {}
     opening_rows = {}
@@ -1942,7 +2024,7 @@ def main() -> None:
     )
 
     rejected, attempted = adversarial_gate()
-    gates["A3"] = rejected == attempted == 13
+    gates["A3"] = rejected == attempted == 14
     science["attacks"] = [rejected, attempted]
     emit("[AUTHENTICATION / REPLAY ATTACKS]")
     emit(
@@ -1950,7 +2032,7 @@ def main() -> None:
         "forged_response=1; wrong_base=1; forged_decision=1; forged_ack=1; "
         "prepare_replay=1; duplicate_apply=1; unissued_capability=1; disconnected_lookalike=1; "
         "parent_deletion=1; omitted_field_substitution=1; nonexistent_decision_parent=1; "
-        "same_base_cross_attempt_replay=2"
+        "same_base_cross_attempt_replay=2; side_authorized_noncarrier_attempt=1"
     )
 
     gauge_checks, gauge_hash = scheduler_gauge_gate()
@@ -1970,6 +2052,8 @@ def main() -> None:
         ledger_valid,
         old_close_ancestry,
         stale_replay,
+        opening_predictive,
+        local_registered,
         continuation_records,
         lineage_id,
     ) = continuation_gate()
@@ -1981,7 +2065,9 @@ def main() -> None:
         ledger_valid,
         old_close_ancestry,
         stale_replay,
-    ) == (2, 2, 2, 2, 2, 2, 2)
+        opening_predictive,
+        local_registered,
+    ) == (2, 2, 2, 2, 2, 2, 2, 2, 2)
     science["continuation"] = [
         stale,
         rebase,
@@ -1990,6 +2076,8 @@ def main() -> None:
         ledger_valid,
         old_close_ancestry,
         stale_replay,
+        opening_predictive,
+        local_registered,
         continuation_records,
         lineage_id,
     ]
@@ -1998,6 +2086,8 @@ def main() -> None:
         f"old_base_abort={stale}/2; rebased_commit={rebase}/2; final_versions={final_version}; "
         f"same_world_prefix_preserved={prefix_preserved}/2; combined_ledger_valid={ledger_valid}/2; "
         f"old_close_below_new_close={old_close_ancestry}/2; stale_envelope_rejected={stale_replay}/2; "
+        f"opening_predictive_state_preserved={opening_predictive}/2; "
+        f"participant_local_registration={local_registered}/2; "
         f"combined_records={continuation_records}; lineage_carriers_sha256={lineage_id}"
     )
 
@@ -2011,7 +2101,11 @@ def main() -> None:
     )
     science["ownership"] = [participant_fields, transaction_fields]
     emit("[OWNERSHIP / CLOCK SCOPE]")
-    emit("participant_and_transaction_mailboxes_owned=1; network_only_selects_addressed_mailbox=1")
+    emit(
+        "participant_and_transaction_mailboxes_owned=1; handler_reads_only_addressed_actor=1; "
+        "service_world_is_handler_plus_transport_macro=1; outgoing_delivery_updates_recipient_mailboxes=1"
+    )
+    emit("remote_predecessor_ownership_proof=0; honest_record_generating_actor_scope=1")
     emit("time_rate_duration_fields=0; serializer_step_is_not_physical_time=1")
 
     gates["A8"] = max(
