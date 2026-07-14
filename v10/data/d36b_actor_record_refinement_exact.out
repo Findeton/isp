@@ -15,14 +15,16 @@ reject_before_durable_mutation=14/14; forged_response=1; wrong_base=1; forged_de
 incomparable_two-service_diamonds=4; both_orders_same_world_and_ledger=1; history_family_sha256=f24953ce6b59a1989830fb1ebcb442ae395c251c8d704199c951393de0cae86f
 [TWO-EPOCH STALE / REBASE CONTINUATION]
 old_base_abort=2/2; rebased_commit=2/2; final_versions=2; same_world_prefix_preserved=2/2; combined_ledger_valid=2/2; old_close_below_new_close=2/2; stale_envelope_rejected=2/2; opening_predictive_state_preserved=2/2; participant_local_registration=2/2; combined_records=50; lineage_carriers_sha256=754a90581f491029b6878524187b0229145ed9bb3ff24590947b3a2f853f11c0
+[SPARSE STRUCTURAL-ATTEMPT SLOTS]
+global_index_gap_prepare_accepted=1/1; two_local_prepare_orders=2/2; typed_responses=4/4; no_global_slot_padding=2/2; order_family_sha256=43e49aa3790326a5fd153f29500879f3287507d4ff299baadfde5fbe11a06e1f
 [OWNERSHIP / CLOCK SCOPE]
 participant_and_transaction_mailboxes_owned=1; handler_reads_only_addressed_actor=1; service_world_is_handler_plus_transport_macro=1; outgoing_delivery_updates_recipient_mailboxes=1
 remote_predecessor_ownership_proof=0; honest_record_generating_actor_scope=1
 time_rate_duration_fields=0; serializer_step_is_not_physical_time=1
 [HASHES]
-source_sha256=56552383fa42f446b1de925109489b0f180ee880b62a383ed0f97ba8727b5eff
-stdout_body_sha256=dc0c1f4993638e4819d2d64968ed3d6b4c68eefbb0a749d629af1779d6087c03
-internal_science_sha256=2ca6dbb3d998fe87f991c3df26ef036bd9e606f0dd024f0e0c0191b772d72f7e
+source_sha256=f353ac2dcff2a7e1b80159cd5602b763669b0157439b09c5a92b50fb01c339b8
+stdout_body_sha256=02375603f824efc74a6953b8d8e6d4a35c3a8f6cff964200e005e7c4752db9b7
+internal_science_sha256=6621a32688a27b0f55e99eddf570c7a2956d718e5bd4a37f95d48b3529403227
 [GATES]
 A0=PASS
 A1=PASS
@@ -36,8 +38,9 @@ A8=PASS
 A9=PASS
 A10=PASS
 A11=PASS
+A12=PASS
 [VERDICT]
-PASS 12/12
+PASS 13/13
 CLOCK-FREE ACTOR-LOCAL APPEND-ONLY COORDINATION REFINEMENT / FAILURE-FREE CLOSED ATTEMPTS
 BORN and TOKEN are coordination-equivalent at the audited horizon, not ontologically identical
 opportunity, arbitration selection, crash recovery, unbounded completion and quantum join remain open

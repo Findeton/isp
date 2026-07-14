@@ -263,12 +263,11 @@ class ParticipantActor:
     version: int
     version_record: str
     head_record: str = field(compare=False, hash=False)
-    promise: int
     promise_attempt: str
-    applications: Tuple[int, ...]
-    response_records: Tuple[str, ...] = field(compare=False, hash=False)
+    application_entries: Tuple[Tuple[str, int], ...]
+    response_entries: Tuple[Tuple[str, str], ...] = field(compare=False, hash=False)
     capabilities: Tuple[str, ...]
-    authorizations: Tuple[Tuple[int, str, str, int, str], ...]
+    authorizations: Tuple[Tuple[str, int, str, int, str], ...]
     used: Tuple[str, ...]
     mailbox: Tuple[Envelope, ...]
 
@@ -477,8 +476,8 @@ def open_actor_world(
         )
         authorizations = tuple(
             (
-                tx_index,
                 transactions[tx_index].attempt_id,
+                tx_index,
                 transactions[tx_index].body_digest,
                 transactions[tx_index].base_versions[participant],
                 transactions[tx_index].capabilities[participant],
@@ -492,10 +491,17 @@ def open_actor_world(
                 versions[participant],
                 seeds[participant].record_id,
                 seeds[participant].record_id,
-                -1,
                 "",
-                tuple(-1 if participant not in members else 0 for members in ref.fixture_indices(fixture)),
-                tuple("" for _ in fixture),
+                tuple(
+                    (transactions[tx_index].attempt_id, 0)
+                    for tx_index, members in enumerate(ref.fixture_indices(fixture))
+                    if participant in members
+                ),
+                tuple(
+                    (transactions[tx_index].attempt_id, "")
+                    for tx_index, members in enumerate(ref.fixture_indices(fixture))
+                    if participant in members
+                ),
                 tuple(sorted(caps)),
                 authorizations,
                 (),
@@ -535,6 +541,30 @@ def add_used(used: Tuple[str, ...], envelope: Envelope) -> Tuple[str, ...]:
     return tuple(sorted(set(used) | {envelope.envelope_id}))
 
 
+def sparse_value(entries: Sequence[Tuple[str, object]], attempt_id: str, default: object) -> object:
+    for key, value in entries:
+        if key == attempt_id:
+            return value
+    return default
+
+
+def sparse_has(entries: Sequence[Tuple[str, object]], attempt_id: str) -> bool:
+    return any(key == attempt_id for key, _ in entries)
+
+
+def sparse_set(
+    entries: Sequence[Tuple[str, object]],
+    attempt_id: str,
+    value: object,
+) -> Tuple[Tuple[str, object], ...]:
+    if not sparse_has(entries, attempt_id):
+        return tuple(sorted(tuple(entries) + ((attempt_id, value),)))
+    return tuple(
+        (key, value if key == attempt_id else old_value)
+        for key, old_value in entries
+    )
+
+
 def bounded_merge(
     owner_index: int,
     stage: str,
@@ -568,15 +598,15 @@ def bounded_merge(
 
 def participant_accepts_prepare(actor: ParticipantActor, envelope: Envelope) -> bool:
     authorization = (
-        envelope.tx_index,
         envelope.attempt_id,
+        envelope.tx_index,
         envelope.body_digest,
         envelope.base_version,
         envelope.capability,
     )
     locally_allocatable = (
-        envelope.tx_index == len(actor.applications)
-        and len(actor.response_records) == len(actor.applications)
+        not sparse_has(actor.application_entries, envelope.attempt_id)
+        and not sparse_has(actor.response_entries, envelope.attempt_id)
     )
     return (
         envelope.kind == PREPARE
@@ -590,7 +620,13 @@ def participant_accepts_prepare(actor: ParticipantActor, envelope: Envelope) -> 
         and envelope.evidence.owner_kind == "T"
         and envelope.evidence.owner_index == envelope.tx_index
         and envelope.evidence.kind
-        in ("T0_BIRTH", "SLOT_ACTIVATION", "T1_REBASE_BIRTH", "REBASE_ACTIVATION")
+        in (
+            "T0_BIRTH",
+            "SLOT_ACTIVATION",
+            "T1_REBASE_BIRTH",
+            "REBASE_ACTIVATION",
+            "FOLLOWUP_BIRTH",
+        )
         and envelope.attempt_id
         == structural_attempt_id(envelope.evidence, envelope.body_digest)
         and envelope.evidence.record_id
@@ -622,8 +658,8 @@ def participant_accepts_decision(actor: ParticipantActor, envelope: Envelope) ->
         and envelope.sender_index == envelope.tx_index
         and envelope.capability in actor.capabilities
         and (
-            envelope.tx_index,
             envelope.attempt_id,
+            envelope.tx_index,
             envelope.body_digest,
             envelope.base_version,
             envelope.capability,
@@ -635,7 +671,8 @@ def participant_accepts_decision(actor: ParticipantActor, envelope: Envelope) ->
         and len(envelope.evidence.parents) == 1
         and envelope.evidence.payload[:2] == (envelope.attempt_id, envelope.body_digest)
         and len(envelope.evidence.payload) == 3
-        and envelope.response_record_id == actor.response_records[envelope.tx_index]
+        and envelope.response_record_id
+        == sparse_value(actor.response_entries, envelope.attempt_id, "")
         and bool(envelope.response_record_id)
         and valid_record(envelope.evidence)
         and authentic(envelope)
@@ -648,26 +685,28 @@ def handle_participant(
     actor_index: int,
     envelope: Envelope,
 ) -> Tuple[ParticipantActor, Tuple[Envelope, ...], Tuple[Record, ...], bool]:
-    applications = list(actor.applications)
-    response_records = list(actor.response_records)
+    application_entries = actor.application_entries
+    response_entries = actor.response_entries
     if envelope.kind == PREPARE:
         if not participant_accepts_prepare(actor, envelope):
             return actor, (), (), False
         authorization = (
-            envelope.tx_index,
             envelope.attempt_id,
+            envelope.tx_index,
             envelope.body_digest,
             envelope.base_version,
             envelope.capability,
         )
         authorizations = actor.authorizations
-        if envelope.tx_index == len(applications):
-            applications.append(0)
-            response_records.append("")
+        if not sparse_has(application_entries, envelope.attempt_id):
+            application_entries = sparse_set(application_entries, envelope.attempt_id, 0)
+            response_entries = sparse_set(response_entries, envelope.attempt_id, "")
             authorizations = tuple(sorted(authorizations + (authorization,)))
-        if applications[envelope.tx_index] != 0:
+        if sparse_value(application_entries, envelope.attempt_id, -1) != 0:
             return actor, (), (), False
-        grant = actor.version == envelope.base_version and actor.promise == -1
+        if sparse_value(response_entries, envelope.attempt_id, ""):
+            return actor, (), (), False
+        grant = actor.version == envelope.base_version and not actor.promise_attempt
         response_kind = GRANT if grant else REJECT
         response_code = 1 if grant else 2
         evidence = make_record(
@@ -703,12 +742,10 @@ def handle_participant(
         updated = replace(
             actor,
             head_record=evidence.record_id,
-            promise=envelope.tx_index if grant else actor.promise,
             promise_attempt=envelope.attempt_id if grant else actor.promise_attempt,
-            applications=tuple(applications),
-            response_records=tuple(
-                evidence.record_id if index == envelope.tx_index else value
-                for index, value in enumerate(response_records)
+            application_entries=application_entries,
+            response_entries=sparse_set(
+                response_entries, envelope.attempt_id, evidence.record_id
             ),
             authorizations=authorizations,
             used=add_used(actor.used, envelope),
@@ -718,27 +755,24 @@ def handle_participant(
     if envelope.kind in (COMMIT, ABORT):
         if not participant_accepts_decision(actor, envelope):
             return actor, (), (), False
-        if applications[envelope.tx_index] != 0:
+        if sparse_value(application_entries, envelope.attempt_id, -1) != 0:
             return actor, (), (), False
         if envelope.kind == COMMIT:
             if (
-                actor.promise != envelope.tx_index
-                or actor.promise_attempt != envelope.attempt_id
+                actor.promise_attempt != envelope.attempt_id
                 or actor.version != envelope.base_version
             ):
                 return actor, (), (), False
             application_code = 1
             application_kind = "APPLY"
             next_version = actor.version + 1
-            next_promise = -1
             next_promise_attempt = ""
         else:
             application_code = 2
             application_kind = "RELEASE"
             next_version = actor.version
-            next_promise = -1 if actor.promise == envelope.tx_index else actor.promise
             next_promise_attempt = (
-                "" if actor.promise == envelope.tx_index else actor.promise_attempt
+                "" if actor.promise_attempt == envelope.attempt_id else actor.promise_attempt
             )
         application = make_record(
             "P",
@@ -755,7 +789,9 @@ def handle_participant(
                 envelope.response_record_id,
             ),
         )
-        applications[envelope.tx_index] = application_code
+        application_entries = sparse_set(
+            application_entries, envelope.attempt_id, application_code
+        )
         acknowledgement = signed_envelope(
             ACK,
             "P",
@@ -777,9 +813,8 @@ def handle_participant(
             version=next_version,
             version_record=application.record_id if application_code == 1 else actor.version_record,
             head_record=application.record_id,
-            promise=next_promise,
             promise_attempt=next_promise_attempt,
-            applications=tuple(applications),
+            application_entries=application_entries,
             used=add_used(actor.used, envelope),
         )
         return updated, (acknowledgement,), (application,), True
@@ -1053,11 +1088,18 @@ def project_reference(world: ActorWorld) -> ref.FFState:
     applications = []
     acknowledgements = []
     incidence = ref.fixture_indices(fixture)
+    attempt_to_tx = {tx.attempt_id: tx_index for tx_index, tx in enumerate(world.transactions)}
     for tx_index, tx in enumerate(world.transactions):
         for participant in range(participant_count):
             if participant in incidence[tx_index]:
                 responses.append(tx.responses[participant])
-                applications.append(world.participants[participant].applications[tx_index])
+                applications.append(
+                    sparse_value(
+                        world.participants[participant].application_entries,
+                        tx.attempt_id,
+                        0,
+                    )
+                )
                 acknowledgements.append(tx.acknowledgements[participant])
             else:
                 responses.append(-1)
@@ -1072,7 +1114,10 @@ def project_reference(world: ActorWorld) -> ref.FFState:
     )
     return ref.FFState(
         versions=tuple(actor.version for actor in world.participants),
-        promises=tuple(actor.promise for actor in world.participants),
+        promises=tuple(
+            -1 if not actor.promise_attempt else attempt_to_tx[actor.promise_attempt]
+            for actor in world.participants
+        ),
         responses=tuple(responses),
         phases=tuple(actor.phase for actor in world.transactions),
         applications=tuple(applications),
@@ -1461,8 +1506,8 @@ def adversarial_gate() -> Tuple[int, int]:
     # carrier-derived local attempt calculation.
     arbitrary_attempt = digest(("not-carrier-derived", prepare.attempt_id))
     side_authorization = (
-        prepare.tx_index,
         arbitrary_attempt,
+        prepare.tx_index,
         prepare.body_digest,
         prepare.base_version,
         prepare.capability,
@@ -1860,10 +1905,9 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, in
             "version",
             "version_record",
             "head_record",
-            "promise",
             "promise_attempt",
-            "applications",
-            "response_records",
+            "application_entries",
+            "response_entries",
             "capabilities",
             "authorizations",
             "used",
@@ -1889,9 +1933,9 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, in
         final_versions.add(versions[0])
         rebase_count += 1
         if all(
-            len(actor.applications) == 2
-            and len(actor.response_records) == 2
-            and any(authorization[0] == 1 for authorization in actor.authorizations)
+            len(actor.application_entries) == 2
+            and len(actor.response_entries) == 2
+            and any(authorization[0] == new_tx.attempt_id for authorization in actor.authorizations)
             for actor in world.participants
         ):
             local_registration += 1
@@ -1930,6 +1974,94 @@ def continuation_gate() -> Tuple[int, int, int, int, int, int, int, int, int, in
         total_records,
         digest((total_records, tuple(lineage_ids))),
     )
+
+
+def sparse_slot_covariance_gate() -> Tuple[int, int, int, int, str]:
+    """No global-index contiguity and typed responses in both local orders."""
+    world, opening = open_actor_world(
+        "single",
+        "BORN",
+        participant_versions=(1, 1),
+        requested_bases=((0, 0),),
+    )
+    ledger: Dict[str, Record] = {}
+    append_records(ledger, opening)
+    world = run_to_quiescence(world, ledger)
+    validate_terminal_ledger(world, ledger)
+    old_tx = world.transactions[0]
+    if old_tx.close is None:
+        raise AssertionError("sparse-slot setup missing old close")
+    actor = world.participants[0]
+    member = 0
+    bases = tuple(1 if participant in old_tx.members else -1 for participant in range(2))
+    body_digest = digest((old_tx.logical_tau, old_tx.members, bases))
+    capability = old_tx.capabilities[member]
+
+    def prepare(tx_index: int, local_slot: int) -> Envelope:
+        carrier = make_record(
+            "T",
+            tx_index,
+            "FOLLOWUP_BIRTH",
+            (old_tx.close.record_id,),
+            (old_tx.logical_tau, ("participant-local-slot", local_slot)),
+        )
+        attempt_id = structural_attempt_id(carrier, body_digest)
+        return signed_envelope(
+            PREPARE,
+            "T",
+            tx_index,
+            "P",
+            member,
+            tx_index,
+            member,
+            body_digest,
+            bases[member],
+            capability,
+            attempt_id,
+            "",
+            carrier,
+        )
+
+    prepare_one = prepare(1, 1)
+    prepare_two = prepare(2, 2)
+
+    # The exact index-two prepare is admitted without global index-one padding.
+    after_gap, gap_outgoing, gap_records, gap_accepted = handle_participant(
+        actor, member, prepare_two
+    )
+    gap_acceptance = int(
+        gap_accepted
+        and len(gap_outgoing) == len(gap_records) == 1
+        and gap_outgoing[0].kind == GRANT
+        and sparse_has(after_gap.application_entries, prepare_two.attempt_id)
+        and not sparse_has(after_gap.application_entries, prepare_one.attempt_id)
+    )
+
+    order_checks = 0
+    typed_responses = 0
+    no_padding = 0
+    order_hashes = []
+    for first, second in ((prepare_one, prepare_two), (prepare_two, prepare_one)):
+        current = actor
+        kinds = []
+        created_ids = []
+        for envelope in (first, second):
+            current, outgoing, records, accepted = handle_participant(current, member, envelope)
+            if not accepted or len(outgoing) != 1 or len(records) != 1:
+                raise AssertionError(("sparse local order rejected", envelope.tx_index))
+            kinds.append(outgoing[0].kind)
+            created_ids.append(records[0].record_id)
+            typed_responses += int(outgoing[0].kind in (GRANT, REJECT))
+        if kinds != [GRANT, REJECT]:
+            raise AssertionError(("sparse order response kinds", kinds))
+        order_checks += 1
+        attempts = {first.attempt_id, second.attempt_id}
+        no_padding += int(
+            attempts.issubset({key for key, _ in current.application_entries})
+            and len(current.application_entries) == len(actor.application_entries) + 2
+        )
+        order_hashes.append(digest((tuple(kinds), tuple(created_ids))))
+    return gap_acceptance, order_checks, typed_responses, no_padding, digest(tuple(order_hashes))
 
 
 def clear_runtime_caches() -> None:
@@ -2091,6 +2223,23 @@ def main() -> None:
         f"combined_records={continuation_records}; lineage_carriers_sha256={lineage_id}"
     )
 
+    gap_acceptance, local_orders, typed_responses, no_padding, sparse_hash = (
+        sparse_slot_covariance_gate()
+    )
+    science["sparse_slots"] = [
+        gap_acceptance,
+        local_orders,
+        typed_responses,
+        no_padding,
+        sparse_hash,
+    ]
+    emit("[SPARSE STRUCTURAL-ATTEMPT SLOTS]")
+    emit(
+        f"global_index_gap_prepare_accepted={gap_acceptance}/1; "
+        f"two_local_prepare_orders={local_orders}/2; typed_responses={typed_responses}/4; "
+        f"no_global_slot_padding={no_padding}/2; order_family_sha256={sparse_hash}"
+    )
+
     participant_fields = tuple(ParticipantActor.__dataclass_fields__)
     transaction_fields = tuple(TransactionActor.__dataclass_fields__)
     gates["A6"] = "mailbox" in participant_fields and "mailbox" in transaction_fields
@@ -2120,6 +2269,7 @@ def main() -> None:
     ) == 56
     gates["A10"] = tuple(gates) == tuple(f"A{index}" for index in range(10)) and all(gates.values())
     gates["A11"] = BASE_PATH.exists() and sha256(BASE_PATH.read_bytes()) == BASE_SHA256
+    gates["A12"] = (gap_acceptance, local_orders, typed_responses, no_padding) == (1, 2, 4, 2)
     science["gates"] = gates
 
     source_hash = sha256(Path(__file__).read_bytes())

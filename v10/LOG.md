@@ -3614,3 +3614,23 @@ It must prove disjoint-insertion invariance and accept/respond to two valid
 local prepares in either delivery order without global padding.  The global
 array may survive only inside the reference-analysis projection.  Paper 25
 remains withheld.
+
+## 2026-07-14 — D36 sparse structural-attempt state executes (LEDGER #218)
+
+Physical participant state is no longer a dense array keyed by the global
+transaction tuple.  Promise, application status, exact response and
+authorization are keyed by structural attempt identity in finite sparse
+entries.  Global transaction addresses survive only as nominal routing and
+reference-projection coordinates; they no longer gate local allocation.
+
+The round-four counterexample is inverted into a positive gate.  A valid
+address-two prepare is accepted with address one absent and creates no padding.
+Two valid locally relevant prepares delivered in either order each receive a
+typed response: first grant, then busy rejection.  Exact rows are `1/1` gap
+acceptance, `2/2` orders, `4/4` responses and `2/2` no-padding.
+
+All fixed graph projections, persistent ledgers and earlier negative gates
+remain green.  The actor now returns `PASS 13/13` with source/stdout hashes
+`f353ac2...339b8` and `1c72a2d...c5fc4`; external replay returns `PASS 8/8`.
+Focused hostile closing review remains mandatory before terminal D36 or Paper
+25.

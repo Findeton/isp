@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-4 HOSTILE DELTA OPEN; GLOBAL-ORDINAL SLOT LEAK MUST BE REMOVED.
+**Status:** ROUND-4 REPAIR EXECUTED; SPARSE-SLOT HOSTILE CLOSING DELTA REQUIRED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -1109,3 +1109,62 @@ disjoint transaction leaves A's acceptance and emitted response unchanged up
 to structural relabeling, and two valid locally relevant prepares delivered in
 either order both receive typed local responses without slot padding or a
 global lower-index prerequisite.  Paper 25 remains withheld.
+
+## 25. Sparse structural-attempt repair
+
+The participant actor no longer stores dense physical arrays indexed by the
+world transaction tuple.  Its live coordination state is now:
+
+```text
+promise_attempt       one structural attempt ID or empty;
+application_entries   finite sparse (attempt ID -> 0/Apply/Release) entries;
+response_entries      finite sparse (attempt ID -> exact response record) entries;
+authorizations        finite entries keyed first by structural attempt ID.
+```
+
+The transaction's integer address survives in envelopes and in the reference
+projection as a nominal routing/analysis coordinate.  It does not decide
+whether the participant may allocate an entry.  A new prepare is locally
+allocatable exactly when its structural attempt is absent from A's sparse
+application and response domains; carrier/body derivation, stable capability,
+exact-message and replay checks still apply.  `project_reference()` derives
+the old dense promise/application arrays from structural attempt IDs only when
+comparing with the frozen finite reference checker.
+
+The round-four counterexample is now an exact positive gate.  Starting from
+one closed attempt, the checker constructs valid carrier-derived prepares at
+nominal transaction addresses one and two.  Address two is accepted directly
+while address one is absent; no padding entry is created.  It then delivers
+the two locally relevant prepares in both orders.  In each order the first
+receives a typed grant and the second a typed rejection because the exclusive
+promise is already occupied:
+
+```text
+global-index-gap prepare accepted        1 / 1;
+local prepare delivery orders            2 / 2;
+typed responses                           4 / 4;
+no global slot padding                    2 / 2.
+```
+
+Thus delivery order may select which compatible attempt receives A's one
+exclusive grant, as it must before arbitration is supplied, but it cannot make
+a valid prepare disappear without a response.  Inserting an unrelated global
+transaction no longer changes local admissibility.  The physical sparse tables
+remain finite under D36's supplied finite boundary; no uniform bounded-state
+or infinite-history theorem is added.
+
+All prior gates remain green.  The reference returns `PASS 22/22`; the actor
+companion now returns `PASS 13/13`; external replay returns `PASS 8/8`.  New
+deterministic identifiers are:
+
+```text
+actor source  f353ac2dcff2a7e1b80159cd5602b763669b0157439b09c5a92b50fb01c339b8
+actor stdout  1c72a2d132add307fc49514d52ed6d82e88b42b3ce114fd6d8e3c996c79c5fc4
+actor science 6621a32688a27b0f55e99eddf570c7a2956d718e5bd4a37f95d48b3529403227
+replay source b76adbe744c278b3d91a2f3f2a4be0c278a2bad40982ea54f9a10a867719519f
+replay stdout 554369b4f93057f3d838f891c19f49ebb92f4eae35f2afc6703dc7efa62d9a33
+```
+
+This repair changes no probability, selector, clock, quantum or spacetime
+claim.  A focused hostile closing delta is still required before D36 can be
+declared terminal or Paper 25 begun.
