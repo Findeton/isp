@@ -3743,3 +3743,23 @@ future quantum join. The service-order cross-reference and status noun
 are harmonized. Review-round cataloguing has been removed from the paper
 body per house style. No executable, receipt or printed count changed;
 the independent paper-level stream remains open.
+
+## 2026-07-14 — D37 / Paper 26 regional-specification campaign PINNED (LEDGER #224)
+
+`note-d37-regional-history-specifications.md` freezes the next constructive
+campaign before its receipt runs. The target is construction and
+classification, not a pre-awarded unique selector: DLR-style conditional
+kernels on oriented causal regions, exact finite-cover descent, explicit
+compatible global measures and a named residual family.
+
+The theorem ladder separates specification consistency, Gibbs/potential
+representation and global completion. K3 receives the safe-support
+fixed-local-odds forcing gate; K2 receives an explicit maximal-independent-set
+blocker/demand boundary lift; K1 receives recorded component-priority marks
+and a boundary-width test. The receipt must decide whether progress laws
+survive after sufficient boundary data are retained. The joint alphabet
+`NO_BIRTH/TOKEN/BORN` makes birth-mode and arbitration probabilities
+conditionals of one finite functional while leaving all weights supplied.
+D26's exact coherence shadow constrains the BORN sector, and all randomness
+must be carried by durable clicks. The classical campaign pre-registers, but
+does not attempt, the D23/D31/D32-limited quantum join.
