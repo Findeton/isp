@@ -3463,3 +3463,33 @@ control and prints `independent_actor_bisimulation=0`.  The frozen major on
 actor ownership, authentication, immutable DAG generation and an independent
 born/token continuation comparison remains open; no synthesis paper is
 started.
+
+## 2026-07-14 — D36b actor-record refinement executes (LEDGER #212)
+
+The independent D36b companion closes the round-one architectural target at
+candidate strength.  Participant and transaction actors own separate
+mailboxes, state slots, issued capabilities and used-envelope sets.  Typed
+ideal-authenticated envelopes carry sender/recipient, body digest, base,
+capability and predecessor record; handlers consult only the addressed actor
+plus that envelope.  Eight forged/wrong-base/replay/disconnected attacks now
+reject before durable mutation.
+
+For BORN and TOKEN separately, the actor coordination quotient projects
+edge-for-edge onto the repaired reference graphs in all four fixtures:
+`1,113/2,984/8`, `34,637/140,028/17`, `289/816/1`, and
+`1,517/5,162/2`.  All 297,980 combined edges emit a checked immutable record
+delta.  Complete append-only ledgers are replayed for all 56 terminal quotient
+states; owned record wires are linear, closure ancestry is complete, maximum
+parent arity is two and maximum terminal ledger size is 39.  Four disjoint
+two-service diamonds commute at full-ledger level.
+
+Independent BORN and TOKEN opening transitions have equal coordination
+projections but unequal support-record observables.  The earned statement is
+therefore coordination equivalence, not ontological identity.  Both modes also
+pass an old-base abort followed by a version-one rebase/commit to version two,
+with a bounded lineage link.  The companion returns `PASS 12/12` with
+source/stdout/science hashes `5813304...996ba`, `8e2e9b9...8b41d`, and
+`ab275cc...193a4`.  The external two-process replay checker passes `8/8` under
+seeds 17 and 104729.  Candidate verdict is `CLOCK-FREE ACTOR-LOCAL APPEND-ONLY
+COORDINATION REFINEMENT / FAILURE-FREE CLOSED ATTEMPTS`; hostile delta review
+is mandatory before Paper 25.

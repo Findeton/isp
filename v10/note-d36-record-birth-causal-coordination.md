@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-1 REFERENCE REPAIRED; ACTOR/RECORD COMPANION OPEN.
+**Status:** ROUND-1 REPAIRS EXECUTED; HOSTILE DELTA REVIEW REQUIRED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -332,11 +332,14 @@ TOKEN      activate a pre-supplied dormant transaction slot or carry tau in
            immutable participant-local proposal/grant records.
 ```
 
-After forgetting inactive-slot and born/token presentation fields, their full
-finite state graphs and declared participant/commit observables should be
-bisimilar.  Passing proves birth is representational at this bounded scope,
-not ontologically absent at all scales.  A failure must print the first support
-observable that distinguishes them.
+After forgetting inactive-slot and born/token presentation fields, their
+independently generated authenticated actor **coordination quotients** and
+declared participant/commit observables should be bisimilar.  Their full record
+algebras are expected to differ: BORN contains a new support record while
+TOKEN contains a pre-existing dormant slot and an activation record.  Passing
+proves only that fresh support is not required for this protocol's bounded
+coordination behavior.  It does not make birth representational in every
+observable or ontologically absent at all scales.
 
 ## 8. Time-free probabilistic arbitration
 
@@ -734,3 +737,95 @@ definition-level **reference-presentation control**, and explicitly prints
 `independent_actor_bisimulation=0`.  The actor/mailbox/append-only-history
 companion must now earn the stronger noun on all four fixtures plus a
 continuation horizon before D36 can return to hostile review.
+
+## 19. Authenticated actor-record repair result
+
+The companion `code/d36b_actor_record_refinement_exact.py` independently
+rebuilds P4 from participant actors and transaction actors.  Each actor owns
+its local version/promise or response/decision/ack slots, authenticated
+capabilities, used-envelope set and mailbox.  The simulator's only global
+operation is choosing one addressed nonempty mailbox to service; no handler
+reads another actor's live state.  This is logical actor locality, not a claim
+that Python launched independent operating-system processes.
+
+Every prepare, grant/reject, decision and acknowledgement envelope carries a
+typed sender, recipient, transaction/body digest, protected base, issued
+capability and signed predecessor record.  All eight hostile cases reject
+before durable mutation:
+
+```text
+forged response; wrong-base grant; forged decision; forged ack;
+prepare replay; duplicate application; unissued capability;
+disconnected lookalike.                                  8 / 8
+```
+
+The actor graph is explicitly quotiented by the authenticated envelope header,
+not by complete record bytes.  This prevents causal-record presentation from
+being mistaken for the coordination state.  The stronger record checks run in
+parallel:
+
+- all `297,980` BORN+TOKEN actor edges emit a valid typed record delta with
+  parent arity at most two;
+- one complete immutable ledger is replayed for every one of the `56` terminal
+  coordination-quotient states;
+- every parent exists before use, all earlier record bytes remain identical,
+  all grant/reject/apply/release records survive, and every `Close(T)` contains
+  its transaction records in its ancestry;
+- each participant and transaction owner's records form one linear wire;
+- the largest terminal ledger has 39 records; and
+- four exact two-service diamonds show that swapping genuinely incomparable
+  disjoint actor services changes neither actor world nor full ledger.  This
+  does not gauge alternative services at one actor.
+
+The edgewise forgetful projection is exact for both carrier presentations:
+
+```text
+fixture    reference states/edges/terminals    BORN             TOKEN
+pair              1,113 /   2,984 /  8         identical         identical
+triangle         34,637 / 140,028 / 17         identical         identical
+disjoint            289 /     816 /  1         identical         identical
+partial overlap    1,517 /   5,162 /  2         identical         identical
+```
+
+BORN and TOKEN have separate pre-proposal types and separate opening
+transitions.  The coordination projection agrees in every fixture, but the
+full support-record observable deliberately disagrees.  Thus the earned result
+is:
+
+> **At this supplied finite horizon, fresh support is not what supplies P4's
+> coordination power.  Birth and dormant activation implement the same
+> coordination quotient, while remaining ontologically distinguishable record
+> processes.**
+
+The requested continuation is also executed in both modes.  Starting from
+participant version one, an old-base attempt rejects through the normal actor
+path; a version-one rebase then commits and advances both participants to
+version two.  A bounded two-parent `REBASE_LINK` retains the old closure and
+new carrier, while logical lineage stays fixed and attempt identity changes.
+
+The companion passes `12/12`.  Two fresh hash-seed runs are byte-identical:
+
+```text
+source  5813304446d267dc3d08f520f4db991bf6bdb94ae45b1f96a5e0cc2a094996ba
+stdout  8e2e9b9ad6de8ad7ebef4554c2eef32f20b1ffead33a7af6f89f6251e0d8b41d
+science ab275cc69ef529bceba96c7cb484232a5c4b661e9cd1a902c695067bd04193a4
+```
+
+The separate two-process replay checker runs the reference and companion under
+seeds 17 and 104729, compares all four outputs to committed receipts and passes
+`8/8`.  Its source SHA-256 is
+`878f0a1daa08db30974bf06e7075a9952faa18d569d74286eea2ed51011f2ec6`.
+
+The repaired candidate verdict is:
+
+> **CLOCK-FREE ACTOR-LOCAL APPEND-ONLY COORDINATION REFINEMENT /
+> FAILURE-FREE CLOSED ATTEMPTS.**
+
+“Safe” remains the longer predicate: no incompatible closed commits consume
+one protected base, no admitted application uses a stale/unpromised base, and
+every fully serviced failure-free attempt closes commit or abort.  It is not
+linearizable multiwire visibility, crash recovery, starvation freedom or an
+unbounded online theorem.  Ideal authentication, capabilities, fixed attempt
+bodies and mailbox service are supplied.  The birth opportunity law,
+arbitration selector, crash/failure detector, root-free infinite completion,
+`B_g`/NSE quantum realization and spacetime consequences remain open.
