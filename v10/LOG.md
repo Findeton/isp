@@ -3198,3 +3198,26 @@ Seeds 17/65537 are byte-identical at `18/18`. Source/stdout/science hashes are
 `9ef59099...6e28`, `2150ddec...3574`, `79e29b8f...f26c`. The maximum noun is
 unchanged: TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE, not a root-free
 overlap-consistent universe law. Narrow independent terminal deltas are next.
+
+## 2026-07-14 — D35 terminal accepted at rooted scope (LEDGER #202)
+All three D35d closing deltas return `0B/0M/0m/0n`. Independent probes confirm
+typed supplied/generated identity domains, ordinary and adversarial
+16/408/408 covariance, immediate/late/newborn display collisions, eight-call
+completion, six non-bit early rejections with full object equality, all
+generated-actor ownership invariants, exact connected/disconnected source
+gadget isomorphism, reach masses `1/16` and `3/40`, the 8-to-48 instrument and
+all D24 rows.
+
+D35 is terminal as TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE. “Next A”
+is a causal successor/upper seal, not an elapsed-time race. Reach is binary in
+a realized history and probabilistic before completion by summing the local
+weights of diamonds containing the return path. The executable is a logical
+actor/mailbox simulation with construction-order gauge and a disclosed shared
+event-DAG/joint-carrier representation.
+
+No unique law is selected: Q1/Q2 disagree on birth, visit and causal reach.
+Root, ownership, laminar capabilities, q and g remain supplied. The next
+theory target is an overlap-consistent local specification for peer-initiated
+causal diamonds; only after that root-free law exists should D28--D32 cone,
+dimension and many-clocks/few-factors implications be measured. Paper 24 may
+now synthesize the terminal result.

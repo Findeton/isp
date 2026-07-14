@@ -1,6 +1,7 @@
 # D35 — timeless local next-click law
 
-**Status:** ROUND-2 CLOSING EXECUTED; independent closing review pending.
+**Status:** TERMINAL ACCEPTED at the rooted nested-call scope after three clean
+independent typed-identity closing deltas.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34f / Paper 23 at commit `de51b4e`.
@@ -1189,3 +1190,82 @@ sectors, derive a global history law from SHARD alone, recover spacetime or
 identify nature's law.  A narrow independent delta must accept typed freshness,
 early root validation and the isomorphic disconnected fixture before this
 section becomes terminal.
+
+## 20. Terminal hostile close
+
+All three round-4 deltas are clean:
+
+```text
+typed covariance/completion      0B / 0M / 0m / 0n
+root validation/locality         0B / 0M / 0m / 0n
+evidence/quantum/birth            0B / 0M / 0m / 0n
+```
+
+Reports:
+
+- `reviews/d35-round4-typed-covariance-closing-delta.md`;
+- `reviews/d35-round4-root-validation-locality-closing-delta.md`;
+- `reviews/d35-round4-evidence-quantum-closing-delta.md`.
+
+The covariance lane independently verifies disjoint supplied/generated
+identity value types, ordinary 16/408/408 alpha projectivity, immediate and
+late display collisions, all 16 newborn-collision branches, eight-call
+serializer equality and the countable completed rooted-history measure.
+
+The locality lane probes six non-bit root inputs in both Q cells and finds the
+complete serialized object unchanged on every rejection.  It rebuilds all six
+closing cases, every generated actor over all 16 first histories and 408
+refinements, reciprocal ownership keys, current tips and eight-call typed
+birth continuity.  The shared-joint-state/rooted scope remains explicit.
+
+The evidence/quantum lane proves an exact marked graph isomorphism between the
+connected `A -> B -> D` source ancestry and disconnected `u -> v -> w` control
+at bits zero and one, with no cross-component incidence.  The disconnected
+intervention preserves both the A projection and the complete connected
+16-atom distribution.  It re-derives reach masses `1/16` and `3/40`, all
+8-to-48 operator identities and every D24 marginal row.
+
+The terminal D35 decision is therefore:
+
+```text
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+```
+
+### 20.1 What is closed
+
+1. A's next click needs no numerical time: it is A1's first causal wire
+   successor and the upper seal of a completed finite local call diamond.
+2. Realized evidence reach is binary.  Its pre-click probability is the exact
+   measure of completed diamonds containing the licensed adjacent return path.
+3. A logical actor/mailbox simulator can implement the supplied laminar law;
+   its service order is gauge, not a physical global commit sequence.
+4. One D-origin bounded datum reaches A2 exactly on queried paths, with
+   disconnected and unqueried nonleakage.
+5. D24 is compatible as the conditional newborn-content isometry inside one
+   common-input classical-output variable-support instrument.
+6. The finite rooted kernels are normalized, fully projective and extend to a
+   completed classical rooted-history measure.
+7. Typed freshness makes the supplied/generated kernel alpha safe at the
+   declared grammar.
+
+### 20.2 What is not closed
+
+1. Q1 and Q2 both pass but disagree on birth, visit and causal reach; no
+   inherited principle selects `q` or `g`.
+2. The root A, ownership orientation, laminar request protocol and capability
+   grammar are supplied physics.
+3. No overlap-consistency theorem exists for peer-initiated causal diamonds,
+   cycles, joins or disconnected-component birth.
+4. The exact quantum state is evaluated jointly; independent actor-owned
+   storage of an entangled state and coherent superposition of support graphs
+   are not proved.
+5. Profinite completion, v9 cones/dimension, units, G and proper time are not
+   derived.  Profinite machinery may preserve a future overlap-consistent
+   family but cannot select it.
+
+The most pressing next theory target is consequently not another clock.  It
+is the **causal-diamond specification problem**: characterize and, if possible,
+select normalized local birth/interaction instruments whose kernels agree on
+every restriction and overlap.  Only after that root-free history law exists
+should its grown causal webs be returned to the D28--D32 cone, dimension and
+“many clocks, few factors” tests.
