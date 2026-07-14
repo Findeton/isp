@@ -219,28 +219,40 @@ def lock_transitions(
     return tuple(answers)
 
 
-def enumerate_lock_graph() -> Tuple[int, int, LockState, int]:
+def enumerate_lock_graph() -> Tuple[int, int, LockState, int, int]:
     # P: A,B; Q: B,C; R: C,A
     orders = ((0, 1), (1, 2), (2, 0))
     initial = LockState((-1, -1, -1), (0, 0, 0), (False, False, False))
     queue = deque([initial])
     seen = {initial}
-    edges = 0
+    graph_edges: set[Tuple[LockState, LockState]] = set()
     deadlocks = []
     witness = LockState((0, 1, 2), (1, 1, 1), (False, False, False))
     while queue:
         state = queue.popleft()
         next_states = lock_transitions(state, orders)
-        edges += len(next_states)
         if not next_states and not all(state.committed):
             deadlocks.append(state)
         for next_state in next_states:
+            graph_edges.add((state, next_state))
             if next_state not in seen:
                 seen.add(next_state)
                 queue.append(next_state)
     if witness not in seen or witness not in deadlocks:
         raise AssertionError("registered circular wait not reached")
-    return len(seen), edges, witness, len(deadlocks)
+    # N2 compares the same held-resource semantics after adding an inert born
+    # ticket carrier.  Construct the labeled graph and check the forgetful map
+    # on every state and edge instead of merely printing the isomorphism.
+    tickets = ("P-ticket", "Q-ticket", "R-ticket")
+    born_nodes = {("BORN-TICKETS", tickets, state) for state in seen}
+    born_edges = {
+        (("BORN-TICKETS", tickets, source), ("BORN-TICKETS", tickets, target))
+        for source, target in graph_edges
+    }
+    projected_nodes = {node[2] for node in born_nodes}
+    projected_edges = {(source[2], target[2]) for source, target in born_edges}
+    ticket_isomorphism = int(projected_nodes == seen and projected_edges == graph_edges)
+    return len(seen), len(graph_edges), witness, len(deadlocks), ticket_isomorphism
 
 
 # ---------------------------------------------------------------------------
@@ -633,7 +645,50 @@ def rename_distribution(dist: Distribution, rename: Mapping[str, str]) -> Distri
     }
 
 
-def disjoint_factorization_gate() -> Tuple[int, Distribution]:
+def conflict_components(fixture: Fixture) -> Tuple[Tuple[str, ...], ...]:
+    names = tuple(tx.name for tx in fixture)
+    edges = conflict_edges(fixture)
+    unseen = set(names)
+    components = []
+    while unseen:
+        root = min(unseen)
+        stack = [root]
+        component = set()
+        while stack:
+            name = stack.pop()
+            if name in component:
+                continue
+            component.add(name)
+            unseen.discard(name)
+            stack.extend(
+                other
+                for edge in edges
+                if name in edge
+                for other in edge
+                if other != name and other not in component
+            )
+        components.append(tuple(sorted(component)))
+    return tuple(sorted(components))
+
+
+def component_order_atoms(fixture: Fixture) -> Tuple[Tuple[Tuple[str, ...], ...], ...]:
+    components = conflict_components(fixture)
+    return tuple(product(*(tuple(permutations(component)) for component in components)))
+
+
+def component_order_kernel(fixture: Fixture) -> Distribution:
+    mapping = tx_map(fixture)
+    counts: Dict[Outcome, int] = defaultdict(int)
+    for atom in component_order_atoms(fixture):
+        accepted: set[str] = set()
+        for component_order in atom:
+            component_fixture = tuple(mapping[name] for name in component_order)
+            accepted.update(greedy(component_fixture, component_order))
+        counts[frozenset(accepted)] += 1
+    return normalized(counts)
+
+
+def disjoint_factorization_gate() -> Tuple[int, Distribution, int, int, int]:
     union = disjoint_union_fixture()
     left = FIXTURES["pair"]
     right = (Tx("R", ("C", "D")), Tx("S", ("C", "D")))
@@ -649,6 +704,25 @@ def disjoint_factorization_gate() -> Tuple[int, Distribution]:
         if lhs != rhs:
             raise AssertionError((lhs, rhs))
         checks += 1
+
+    # The physical K1 mark is one independently sampled strict order per
+    # connected conflict component.  A four-name presentation permutation has
+    # 24 atoms, but its cross-component shuffles are construction gauge: after
+    # quotienting, four component-order atoms each have multiplicity six.
+    components = conflict_components(union)
+    component_atoms = component_order_atoms(union)
+    quotient_counts: Dict[Tuple[Tuple[str, ...], ...], int] = defaultdict(int)
+    for global_order in permutations(tuple(tx.name for tx in union)):
+        quotient = tuple(
+            tuple(name for name in global_order if name in component)
+            for component in components
+        )
+        quotient_counts[quotient] += 1
+    shuffle_multiplicities = set(quotient_counts.values())
+    if len(component_atoms) != 4 or len(quotient_counts) != 4 or shuffle_multiplicities != {6}:
+        raise AssertionError((component_atoms, quotient_counts))
+    if component_order_kernel(union) != random_greedy_kernel(union):
+        raise AssertionError("component K1 pushforward")
     shared_coin = {
         frozenset(("P", "R")): Fraction(1, 2),
         frozenset(("Q", "S")): Fraction(1, 2),
@@ -660,13 +734,14 @@ def disjoint_factorization_gate() -> Tuple[int, Distribution]:
     }
     if shared_coin == fair_pair_product:
         raise AssertionError("shared coin negative control failed")
-    return checks, shared_coin
+    return checks, shared_coin, len(component_atoms), len(tuple(permutations(tuple(tx.name for tx in union)))), 6
 
 
-def hard_core_dlr_gate(fixture: Fixture, activity: Fraction) -> int:
+def hard_core_dlr_gate(fixture: Fixture, activity: Fraction) -> Tuple[int, int]:
     dist = hard_core_kernel(fixture, activity)
     mapping = tx_map(fixture)
     checks = 0
+    skipped = 0
     names = tuple(mapping)
     for target in names:
         others = tuple(name for name in names if name != target)
@@ -676,6 +751,7 @@ def hard_core_dlr_gate(fixture: Fixture, activity: Fraction) -> int:
             mass1 = dist.get(boundary | {target}, Fraction(0))
             denominator = mass0 + mass1
             if denominator == 0:
+                skipped += 1
                 continue
             neighbor_accepted = any(
                 name in boundary and conflict(mapping[target], mapping[name])
@@ -685,7 +761,7 @@ def hard_core_dlr_gate(fixture: Fixture, activity: Fraction) -> int:
             if mass1 / denominator != expected:
                 raise AssertionError((target, boundary, mass1 / denominator, expected))
             checks += 1
-    return checks
+    return checks, skipped
 
 
 def restriction_gate() -> Tuple[Distribution, Distribution, Distribution, int]:
@@ -730,7 +806,17 @@ def finite_bit_unique_probability(contenders: int, mark_values: int) -> Fraction
     )
 
 
-def finite_bit_gate() -> Tuple[Tuple[int, int, Fraction, Fraction], ...]:
+def finite_bit_complete_order_probability(contenders: int, mark_values: int) -> Fraction:
+    falling = 1
+    for offset in range(contenders):
+        falling *= mark_values - offset
+    return Fraction(max(falling, 0), mark_values ** contenders)
+
+
+def finite_bit_gate() -> Tuple[
+    Tuple[Tuple[int, int, Fraction, Fraction], ...],
+    Tuple[Tuple[int, int, Fraction], ...],
+]:
     rows = []
     expected = {
         (2, 2): Fraction(1, 2),
@@ -747,7 +833,19 @@ def finite_bit_gate() -> Tuple[Tuple[int, int, Fraction, Fraction], ...]:
     # pair; independent retry makes the unresolved cylinder shrink exactly.
     if (1 - expected[(2, 2)]) ** 5 != Fraction(1, 32):
         raise AssertionError("retry cylinder")
-    return tuple(rows)
+    strict_expected = {
+        (2, 2): Fraction(1, 2),
+        (2, 4): Fraction(3, 4),
+        (3, 2): Fraction(0),
+        (3, 4): Fraction(3, 8),
+    }
+    strict_rows = []
+    for key, value in strict_expected.items():
+        actual = finite_bit_complete_order_probability(*key)
+        if actual != value:
+            raise AssertionError((key, actual, value))
+        strict_rows.append((key[0], key[1], actual))
+    return tuple(rows), tuple(strict_rows)
 
 
 def symmetry_no_go() -> Tuple[Tuple[Outcome, ...], Tuple[Outcome, ...]]:
@@ -789,46 +887,85 @@ def three_way_and_cover_gate() -> Tuple[int, int]:
 # Record/identity/upper-seal scope gates
 
 
-def structural_identity_gate() -> Tuple[int, str]:
+def structural_identity_gate() -> Tuple[int, str, str, int]:
     lower = ("event", "A", 7)
-    participant_bases = (("A", "A7"), ("B", "B3"), ("C", "C5"))
-    tau = ("proposal", lower, 0, ("initiator", "peer", "peer"), participant_bases)
+    # T0 can name only stable capabilities already carried by its initiator.
+    # Exact remote current tips arrive later in authenticated grant records and
+    # belong to the version-bound attempt identity, not logical tau.
+    participant_caps = (("A", "self", 0), ("B", "peer", 0), ("C", "peer", 1))
+    tau = ("logical-transaction", lower, 0, ("initiator", "peer", "peer"), participant_caps)
+    grant_bases = (("A", "A7"), ("B", "B3"), ("C", "C5"))
+    attempt = ("version-bound-attempt", tau, grant_bases)
     rename = {"A": "x", "B": "z", "C": "y"}
     renamed_tau = (
-        "proposal",
+        "logical-transaction",
         ("event", rename[lower[1]], lower[2]),
         0,
         tau[3],
-        tuple((rename[actor], record.replace(actor, rename[actor])) for actor, record in participant_bases),
+        tuple((rename[actor], role, port) for actor, role, port in participant_caps),
     )
     expected = (
-        "proposal",
+        "logical-transaction",
         ("event", "x", 7),
         0,
         ("initiator", "peer", "peer"),
-        (("x", "x7"), ("z", "z3"), ("y", "y5")),
+        (("x", "self", 0), ("z", "peer", 0), ("y", "peer", 1)),
     )
     if renamed_tau != expected:
         raise AssertionError((renamed_tau, expected))
-    # Nominal freshness: input used={A}; swap x<->y fixes input but moves the
-    # alleged deterministic fresh result x.
-    nominal_contradictions = 1
-    return nominal_contradictions, hashlib.sha256(stable(tau).encode()).hexdigest()
+
+    # Nominal freshness: the transposition x<->y fixes the used input {A} but
+    # moves the alleged deterministic unused output x.
+    used = frozenset(("A",))
+    swap = {"A": "A", "x": "y", "y": "x"}
+    alleged = "x"
+    nominal_contradictions = int(
+        frozenset(swap[item] for item in used) == used and swap[alleged] != alleged
+    )
+
+    # Structural output slots separate identities without printable-name
+    # choice.  Check a small collision battery over two lower tips/two slots.
+    identities = {
+        ("logical-transaction", ("event", "A", ordinal), slot, tau[3], participant_caps)
+        for ordinal in (7, 8)
+        for slot in (0, 1)
+    }
+    collision_free = int(len(identities) == 4)
+    return (
+        nominal_contradictions,
+        hashlib.sha256(stable(tau).encode()).hexdigest(),
+        hashlib.sha256(stable(attempt).encode()).hexdigest(),
+        collision_free,
+    )
 
 
 def upper_seal_gate() -> Tuple[int, int, int, str]:
     parents = {
         "A0": (),
         "B0": (),
+        "C0": (),
         "T0": ("A0",),  # one-parent proposal birth
         "GA": ("A0", "T0"),
         "GB": ("B0", "T0"),
-        "DT": ("T0", "GA", "GB"),
+        "GC": ("C0", "T0"),
+        "RGA": ("T0", "GA"),
+        "RGB": ("T0", "GB"),
+        "RGC": ("T0", "GC"),
+        "RM1": ("RGA", "RGB"),
+        "RM2": ("RM1", "RGC"),
+        "DT": ("RM2",),
         "A1": ("A0", "DT"),
         "B1": ("B0", "DT"),
+        "C1": ("C0", "DT"),
         "AckA": ("A1",),
         "AckB": ("B1",),
-        "CloseT": ("DT", "AckA", "AckB"),
+        "AckC": ("C1",),
+        "RA": ("DT", "AckA"),
+        "RB": ("DT", "AckB"),
+        "RC": ("DT", "AckC"),
+        "AM1": ("RA", "RB"),
+        "AM2": ("AM1", "RC"),
+        "CloseT": ("AM2",),
     }
 
     def ancestors(node: str) -> FrozenSet[str]:
@@ -842,7 +979,7 @@ def upper_seal_gate() -> Tuple[int, int, int, str]:
             stack.extend(parents[current])
         return frozenset(answer)
 
-    required = frozenset(("A0", "B0", "T0", "GA", "GB", "DT", "A1", "B1", "AckA", "AckB"))
+    required = frozenset(parents) - {"CloseT"}
     close_ancestors = ancestors("CloseT")
     if not required.issubset(close_ancestors):
         raise AssertionError(required - close_ancestors)
@@ -850,7 +987,7 @@ def upper_seal_gate() -> Tuple[int, int, int, str]:
         raise AssertionError("proposal is not one-parent")
     # Closure is not the participant successor: A1/B1 are separate local apply
     # records and exist in the closure's past.
-    if "CloseT" in parents["A1"] or "CloseT" in parents["B1"]:
+    if any("CloseT" in parents[name] for name in ("A1", "B1", "C1")):
         raise AssertionError("closure mutated participant wire")
     max_parent_arity = max(len(value) for value in parents.values())
     graph_hash = hashlib.sha256(stable(parents).encode()).hexdigest()
@@ -985,16 +1122,19 @@ def cyclic_local_order_gate() -> Tuple[Tuple[Tuple[str, str], ...], int]:
 
 
 def capacity_gate() -> Tuple[int, int, int, int, int]:
-    max_arity = max(len(tx.participants) for fixture in FIXTURES.values() for tx in fixture)
-    max_participants = max(len(participant_names(fixture)) for fixture in FIXTURES.values())
-    max_proposals = max(len(fixture) for fixture in FIXTURES.values())
+    # Inventory every fixture passed to any gate, including the auxiliary
+    # four-proposal disjoint-factorization region.
+    all_fixtures = tuple(FIXTURES.values()) + (disjoint_union_fixture(),)
+    max_arity = max(len(tx.participants) for fixture in all_fixtures for tx in fixture)
+    max_participants = max(len(participant_names(fixture)) for fixture in all_fixtures)
+    max_proposals = max(len(fixture) for fixture in all_fixtures)
     max_incident = max(
         sum(participant in tx.participants for tx in fixture)
-        for fixture in FIXTURES.values()
+        for fixture in all_fixtures
         for participant in participant_names(fixture)
     )
     priority_bits = 2
-    if (max_arity, max_participants, max_proposals, max_incident, priority_bits) != (3, 4, 3, 2, 2):
+    if (max_arity, max_participants, max_proposals, max_incident, priority_bits) != (3, 4, 4, 2, 2):
         raise AssertionError("capacity pin moved")
     return max_arity, max_participants, max_proposals, max_incident, priority_bits
 
@@ -1020,22 +1160,27 @@ def main() -> None:
     emit("ARITHMETIC: integers/Fractions only; no numerical time")
     emit("SCOPE: bounded finite regions; failure-free fair-delivery theorem; quantum join open")
 
-    nominal_no_go, tau_hash = structural_identity_gate()
+    nominal_no_go, tau_hash, attempt_hash, collision_free = structural_identity_gate()
     alpha_checks, alpha_map = alpha_covariance_gate()
-    gates["G0"] = nominal_no_go == 1
+    gates["G0"] = nominal_no_go == 1 and collision_free == 1
     gates["G1"] = alpha_checks == 4
-    science["identity"] = [nominal_no_go, tau_hash, alpha_checks, alpha_map]
+    science["identity"] = [nominal_no_go, tau_hash, attempt_hash, collision_free, alpha_checks, alpha_map]
     emit("[ONTOLOGY / IDENTITY]")
-    emit(f"nominal_freshness_contradictions={nominal_no_go}; structural_tau_sha256={tau_hash}")
+    emit(
+        f"nominal_freshness_contradictions={nominal_no_go}; "
+        f"structural_tau_sha256={tau_hash}; version_attempt_sha256={attempt_hash}; "
+        f"structural_collision_free={collision_free}"
+    )
+    emit("logical_tau_contains_stable_capabilities_not_remote_current_tips=1")
     emit(f"alpha_covariant_kernels={alpha_checks}/4; alpha_map={alpha_map}")
 
-    lock_states, lock_edges, lock_witness, lock_deadlocks = enumerate_lock_graph()
-    gates["G2"] = lock_deadlocks > 0
-    science["locks"] = [lock_states, lock_edges, lock_deadlocks, lock_witness.held]
+    lock_states, lock_edges, lock_witness, lock_deadlocks, ticket_isomorphism = enumerate_lock_graph()
+    gates["G2"] = lock_deadlocks > 0 and ticket_isomorphism == 1
+    science["locks"] = [lock_states, lock_edges, lock_deadlocks, lock_witness.held, ticket_isomorphism]
     emit("[HELD-LOCK CONTROL]")
     emit(
         f"states={lock_states}; edges={lock_edges}; deadlocks={lock_deadlocks}; "
-        f"circular_wait_held={lock_witness.held}; born_ticket_projection=same_graph"
+        f"circular_wait_held={lock_witness.held}; born_ticket_graph_isomorphism={ticket_isomorphism}"
     )
 
     double_commit, atomic_orders, split_adoption, stale_rejections = stale_and_atomic_gate()
@@ -1110,13 +1255,28 @@ def main() -> None:
         for result in failfast_results.values()
     )
 
-    disjoint_checks, shared_coin = disjoint_factorization_gate()
-    gates["G11"] = disjoint_checks == 4
-    science["factorization"] = [disjoint_checks, dist_text(shared_coin)]
+    disjoint_checks, shared_coin, component_atoms, global_atoms, shuffle_multiplicity = disjoint_factorization_gate()
+    gates["G11"] = (
+        disjoint_checks == 4
+        and component_atoms == 4
+        and global_atoms == 24
+        and shuffle_multiplicity == 6
+    )
+    science["factorization"] = [
+        disjoint_checks,
+        dist_text(shared_coin),
+        component_atoms,
+        global_atoms,
+        shuffle_multiplicity,
+    ]
     emit("[DISJOINT FACTORIZATION]")
     emit(
         f"independent_kernel_products={disjoint_checks}/4; "
         f"shared_coin_negative_control={dist_text(shared_coin)}"
+    )
+    emit(
+        f"physical_component_order_atoms={component_atoms}; global_presentation_orders={global_atoms}; "
+        f"gauge_shuffles_per_component_atom={shuffle_multiplicity}"
     )
 
     feasible_sets, invariant_sets = symmetry_no_go()
@@ -1140,25 +1300,43 @@ def main() -> None:
     emit(f"K2_path={dist_text(path_k2)}")
     emit("separating_event={P,R}: K1=2/3 K2=1/2; selector=UNSELECTED")
 
-    dlr_checks = hard_core_dlr_gate(FIXTURES["path"], Fraction(1)) + hard_core_dlr_gate(FIXTURES["path"], Fraction(2))
+    dlr_one = hard_core_dlr_gate(FIXTURES["path"], Fraction(1))
+    dlr_two = hard_core_dlr_gate(FIXTURES["path"], Fraction(2))
+    dlr_checks = dlr_one[0] + dlr_two[0]
+    dlr_skips = dlr_one[1] + dlr_two[1]
     k3_one = hard_core_kernel(FIXTURES["path"], Fraction(1))
     k3_two = hard_core_kernel(FIXTURES["path"], Fraction(2))
-    gates["G14"] = dlr_checks > 0 and k3_one != k3_two
-    science["k3"] = [dlr_checks, dist_text(k3_one), dist_text(k3_two)]
+    gates["G14"] = dlr_checks == 20 and dlr_skips == 4 and k3_one != k3_two
+    science["k3"] = [dlr_checks, dlr_skips, dist_text(k3_one), dist_text(k3_two)]
     emit("[HARD-CORE REGIONAL FAMILY]")
-    emit(f"DLR_conditionals={dlr_checks}; lambda1={dist_text(k3_one)}")
+    emit(
+        f"DLR_positive_mass_conditionals={dlr_checks}; "
+        f"DLR_zero_mass_boundaries_skipped={dlr_skips}; lambda1={dist_text(k3_one)}"
+    )
     emit(f"lambda2={dist_text(k3_two)}; lambda_unselected=1")
 
-    finite_rows = finite_bit_gate()
-    gates["G15"] = len(finite_rows) == 4
-    science["finite_bits"] = [[k, m, ftext(u), ftext(expectation)] for k, m, u, expectation in finite_rows]
+    finite_rows, strict_rows = finite_bit_gate()
+    gates["G15"] = len(finite_rows) == 4 and len(strict_rows) == 4
+    science["finite_bits"] = [
+        [[k, m, ftext(u), ftext(expectation)] for k, m, u, expectation in finite_rows],
+        [[k, m, ftext(probability)] for k, m, probability in strict_rows],
+    ]
     emit("[FINITE-BIT RETRY]")
     for contenders, mark_values, unique, expectation in finite_rows:
         emit(
-            f"contenders={contenders}; mark_values={mark_values}; unique={ftext(unique)}; "
+            f"single_winner_contenders={contenders}; mark_values={mark_values}; "
+            f"unique_greatest={ftext(unique)}; "
             f"expected_attempts={ftext(expectation)}"
         )
-    emit("pair_1bit_unresolved_after_5=1/32; eventual_resolution=almost_sure_not_bounded")
+    for contenders, mark_values, probability in strict_rows:
+        emit(
+            f"complete_order_contenders={contenders}; mark_values={mark_values}; "
+            f"all_distinct={ftext(probability)}"
+        )
+    emit(
+        "pair_1bit_unresolved_after_5=1/32; almost_sure_resolution_is_conditional_on_"
+        "continued_iid_retry_opportunities=1; bounded_worst_case=0"
+    )
 
     greedy_restricted, greedy_direct, k3_restricted, boundary_repairs = restriction_gate()
     gates["G16"] = greedy_restricted != greedy_direct and boundary_repairs == 1
@@ -1191,16 +1369,16 @@ def main() -> None:
         edge_match,
         observable_match,
     ]
-    emit("[BORN / TOKEN MATCHED CONTROL]")
+    emit("[BORN / TOKEN REFERENCE-PRESENTATION CONTROL]")
     emit(
         f"projected_states={bisim_states}; projected_edges={bisim_edges}; "
         f"terminal_observable_classes={bisim_observables}; edge_relation_equal={edge_match}; "
-        f"participant_commit_observables_equal={observable_match}"
+        f"participant_commit_observables_equal={observable_match}; independent_actor_bisimulation=0"
     )
 
     seal_nodes, seal_ancestors, max_parent_arity, seal_hash = upper_seal_gate()
     capacity = capacity_gate()
-    gates["G19"] = capacity == (3, 4, 3, 2, 2) and max_parent_arity == 3
+    gates["G19"] = capacity == (3, 4, 4, 2, 2) and max_parent_arity <= 2
     science["seal_capacity"] = [seal_nodes, seal_ancestors, max_parent_arity, seal_hash, capacity]
     emit("[CAUSAL CLOSURE / CAPACITY]")
     emit(
@@ -1223,7 +1401,8 @@ def main() -> None:
         "positive_theorem_requires_failure_free_fair_delivery=1"
     )
 
-    gates["G21"] = True
+    prior_gate_names = tuple(gates) == tuple(f"G{index}" for index in range(21))
+    gates["G21"] = prior_gate_names and all(isinstance(value, bool) and value for value in gates.values())
     science["gates"] = gates
     science_hash = hashlib.sha256(stable(science).encode()).hexdigest()
     source_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -1242,8 +1421,8 @@ def main() -> None:
         emit(f"FAIL {len(gates)-len(failed)}/{len(gates)}; failed={failed}")
         raise SystemExit(1)
     emit(f"PASS {len(gates)}/{len(gates)}")
-    emit("CLOCK-FREE LOCAL TRANSACTION COORDINATION / SAFE, NONSELECTING, FAILURE-FREE")
-    emit("born records are durable causal carriers but finite-horizon coordination power is token-equivalent")
+    emit("CLOCK-FREE FINITE REFERENCE TRANSITION SYSTEM / CLOSED-ATTEMPT RESERVATION-SAFE")
+    emit("actor-local durable-record refinement and independent born/token comparison are separate gates")
     emit("arbitration, batch/eligibility boundary, retry fairness, opportunity law and quantum join remain open")
 
 

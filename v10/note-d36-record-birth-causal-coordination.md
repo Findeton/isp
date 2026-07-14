@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-1 MAJOR REPAIR; FROZEN OPENING LEDGER.
+**Status:** ROUND-1 REFERENCE REPAIRED; ACTOR/RECORD COMPANION OPEN.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -78,13 +78,16 @@ finite exhibit it is the typed structural identity
 
 ```text
 tau = (initiator lower-tip identity, bounded local output slot,
-       ordered capability roles, referenced participant base tips).
+       ordered capability roles, stable participant capabilities).
 ```
 
 Relabeling records relabels `tau`; printable spelling has no priority.  This is
 a finite exhibit, not a root-free global freshness theorem.  A transaction may
 name only participant records reached through existing capabilities.  Naming a
 disconnected participant would already assume the missing bridge/join law.
+Exact participant current tips are not in `tau`: authenticated grant records
+bind them later into a separate version-bound **attempt identity**.  A rebase
+keeps the logical transaction lineage while creating a new attempt identity.
 
 ## 4. Capacity pin
 
@@ -93,7 +96,7 @@ The exact campaign uses bounded cells:
 ```text
 transaction arity                    at most 3;
 participants in a fixture            at most 4;
-proposals in one closed batch         at most 3;
+proposals in one audited region       at most 4;
 incident contenders per participant  at most 2;
 priority chunk                        b in {1,2} bits per retry record;
 record parents/evidence fields        explicitly enumerated, no hidden list;
@@ -175,7 +178,8 @@ semantics.
 
 ### P4 — exclusive fail-fast prepare/abort/apply/close
 
-This is the positive strictly actor-local protocol at the first finite scope:
+This is the positive finite reference semantics intended for an independent
+actor-local refinement:
 
 1. an initiator locally births `T0` and sends authenticated prepares to its
    fixed finite participants;
@@ -210,16 +214,19 @@ D35's shared-world `sync_tips` transition.  The receipt must label it an
 atomic regional oracle, not a derivation from local tickets.  Comparing P4 and
 P5 exposes the intermediate partial-application states that the oracle hides.
 
-### P6 — closed batch plus a common strict arbitration order
+### P6 — closed batch plus component-local strict arbitration orders
 
 A supplied finite boundary seal declares the contender batch closed.  Every
-proposal carries a common, physically readable strict priority mark.  Process
-proposals from greatest to least mark, accepting a proposal iff its complete
+connected conflict component carries one physically readable strict proposal
+order.  Proposals in disconnected components are incomparable; a global
+presentation shuffle between them is construction gauge.  Process each
+component from greatest to least mark, accepting a proposal iff its complete
 participant set remains unused.  This returns a maximal independent set and
 provides a finite arbitration **specification** for P4 attempts.
 
-The batch-close record solves the unknown-future-contender problem and the
-common strict mark supplies symmetry breaking.  Neither comes from freshness.
+The batch-close record solves the unknown-future-contender problem and each
+component-local strict mark supplies symmetry breaking.  Neither comes from
+freshness.
 The accepted set may be realized through P4's local commit/abort/apply/close
 diamonds; no multiwire mutation is implied.
 
@@ -277,9 +284,10 @@ event can also be the successor on several participant wires.  A joint
 successor is an additional bounded regional instrument.  Otherwise participant
 apply records and their intermediate states are physical.
 
-### T1 — safe fail-fast causal-attempt theorem
+### T1 — closed-attempt reservation-safety theorem
 
-For a fixed finite participant set, authenticated reliable messages, local
+For a supplied fixed finite batch of base-version-zero attempts, authenticated
+reliable messages, local
 atomic wire appends, exclusive version-bound promises held until one monotone
 T decision, immediate reject when busy, failure-free actors/coordinator and
 fair delivery, every attempt terminates commit or abort.  No stale or double
@@ -303,12 +311,15 @@ D24's one-parent content theorem at the join/application layer.
 
 ### T3 — closed ordered-batch theorem
 
-On every finite closed conflict graph with a strict common proposal order, the
+On every finite closed conflict graph with a strict proposal order on each
+connected component, the
 greedy accepted set is feasible, maximal and nonempty when proposals exist.
 The result depends only on the marked graph, not the machine serializer.
-Disjoint components factor because their relative internal orders determine
-their outputs independently.  Each selected attempt may then be realized by
-P4.
+Disjoint components factor at the full physical-mark level because their
+orders are sampled separately.  A global permutation is only a presentation:
+on two two-proposal components its 24 orders quotient to four component-order
+atoms, with six gauge shuffles per atom.  Each selected attempt may then be
+realized by P4.
 
 ### T4 — finite-horizon eliminability test
 
@@ -335,10 +346,11 @@ race in seconds.
 ### K1 — uniform random strict order plus greedy acceptance
 
 On a finite closed batch, sample every strict proposal order with probability
-`1/n!`, then apply T1.  The order is a physical arbitration mark, not machine
+`1/n!` within each connected conflict component, then apply P6/T3's greedy
+rule.  Each component order is a physical arbitration mark, not machine
 service order.  The induced kernel is automorphism-covariant and factors on
-disconnected conflict components because relative orders on disjoint subsets
-are independent.
+disconnected conflict components at both marked-history and accepted-set
+levels.
 
 ### K2 — uniform maximal-independent-set law
 
@@ -356,7 +368,8 @@ kappa_b(W) proportional to 1[W feasible] * lambda^|W|.
 ```
 
 This family is exactly normalized, covariant and factorizes on disjoint
-components.  Its single-site conditional is local on the conflict graph:
+components.  Its single-site conditional is local on the conflict graph for
+every admissible positive-mass outside configuration:
 
 ```text
 P(T accepted | all neighbors rejected) = lambda/(1+lambda);
@@ -368,17 +381,21 @@ specification, not by itself a progress protocol.  `lambda` is supplied.
 
 ### Finite-bit retry
 
-For `k` symmetric contenders drawing one `b`-bit mark from `M=2^b` values, the
-probability of a unique greatest mark is
+For a fixed finite **single-winner** contest of `k` symmetric contenders
+drawing one `b`-bit mark from `M=2^b` values, the probability of a unique
+greatest mark is
 
 ```text
 U(k,M) = k/M^k * sum_{s=0}^{M-1} s^(k-1).
 ```
 
-Ties create an explicit unresolved/retry record.  With independent retries,
+Ties create an explicit unresolved/retry record.  Conditional on the law
+actually supplying a continued iid retry opportunity after every tie,
 unresolved probability after `n` attempts is `(1-U)^n`, so resolution is
 almost sure and expected attempts equal `1/U`.  The worst-case number of retry
-records is unbounded even though every record has bounded capacity.
+records is unbounded even though every record has bounded capacity.  This is
+not a complete strict-order sampler: the one-chunk probability that all marks
+are distinct is `(M)_k/M^k`, which the receipt prints separately.
 
 More generally, almost-sure lineage success requires a declared conditional
 lower bound or product criterion; it is not implied by deadlock freedom.
@@ -439,7 +456,8 @@ needs a D25/D27-admissible variable-support instrument with orthogonal durable
 outcome sectors for commit/reject/retry and a declared join map.  A priority
 that changes dynamics cannot be free metadata; it must be boundary evidence or
 a normalized recorded physical outcome.  D36's first receipt is classical and
-structural.  It tests D24 compatibility but does not claim the quantum join.
+structural.  It tests only D24's one-parent **graph shape**; no `B_g`/NSE
+operator gate is executed here, and no quantum join is claimed.
 
 ## 12. Exact receipt gates
 
@@ -465,10 +483,12 @@ G14 K3 normalization, DLR conditionals and supplied-lambda separation;
 G15 finite-bit tie/retry arithmetic and almost-sure scope;
 G16 raw restriction failure plus boundary-mixture repair;
 G17 three-way hyperedge and triple-cover consistency counterexample;
-G18 born/token finite-horizon bisimulation;
+G18 reference-presentation equality, with independent actor bisimulation in a
+    separately hash-locked companion;
 G19 bounded-capacity census, with every nonuniform bound disclosed;
 G20 crash/no-fair-delivery blocking counterexample;
-G21 deterministic replay, source/stdout/internal hashes.
+G21 nonvacuous gate-census/integrity check, source/stdout/internal hashes;
+    two-process replay and committed-receipt equality run externally.
 ```
 
 ## 13. Decision rows
@@ -672,3 +692,45 @@ arbitration remains unselected.
 ```
 
 Repairs proceed only from this ledger.  Paper 25 remains unwritten.
+
+## 18. Reference-semantics repair checkpoint
+
+The numerical/reference executable is repaired first and deliberately
+downgraded while the actor companion remains open.  It now prints:
+
+```text
+PASS 22/22
+CLOCK-FREE FINITE REFERENCE TRANSITION SYSTEM /
+CLOSED-ATTEMPT RESERVATION-SAFE
+```
+
+This checkpoint closes the reference-side findings:
+
+- G2 constructs and projects the complete 45-state/69-edge inert-ticket graph;
+- `tau` contains stable carried capabilities, while exact remote tips appear
+  only in the later version-bound attempt identity;
+- the arity-three success closure uses a 25-node bounded merge chain with all
+  24 prior nodes below `CloseT` and maximum parent arity two;
+- every named and auxiliary fixture is inventoried, honestly raising the
+  audited proposal maximum from three to four;
+- K1's physical mark is a product of connected-component orders; the old
+  four-name presentation has 24 shuffles quotienting to four physical atoms,
+  six shuffles each;
+- K3 prints 20 positive-mass DLR checks and four zero-mass exclusions;
+- unique-greatest single-winner retry and complete strict-order probability
+  are separate exact rows; and
+- G21 checks the entire preceding gate census instead of assigning `True`.
+
+Two fresh runs are byte-identical.  The repaired reference identifiers are:
+
+```text
+source  dad183c2e303b0315fa7f452ab1c197569d6983332696421d70f04ba5b3d0743
+stdout  3478d1447ee54a33599d9d1e3b00b63cfa323ed7df1a44e3915b13da62545093
+science a373d10d90a6f3063aff02f06dcd92e62a6225981fef291272fbf38cd1e71314
+```
+
+G18 is no longer narrated as an earned bisimulation.  It is labeled a
+definition-level **reference-presentation control**, and explicitly prints
+`independent_actor_bisimulation=0`.  The actor/mailbox/append-only-history
+companion must now earn the stronger noun on all four fixtures plus a
+continuation horizon before D36 can return to hostile review.

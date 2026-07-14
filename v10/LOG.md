@@ -3438,3 +3438,28 @@ boundaries, P6/T3 attribution and status/provenance repairs.  The coordinator
 adds two nonvacuity repairs: construct G2's claimed ticket isomorphism and
 replace `G21=True` with an executable replay/integrity gate.  Reviews remain
 immutable; repair begins only after this ledger commit.  Paper 25 is withheld.
+
+## 2026-07-14 — D36 reference semantics repaired and downgraded (LEDGER #211)
+
+The round-one reference-side repairs execute `PASS 22/22`, but the verdict is
+intentionally narrowed to `CLOCK-FREE FINITE REFERENCE TRANSITION SYSTEM /
+CLOSED-ATTEMPT RESERVATION-SAFE` until the actor/record companion exists.  G2
+now projects the complete inert-ticket lock graph.  Logical `tau` contains
+stable capabilities rather than causally unavailable remote tips; a separate
+attempt identity binds exact grant tips.  The three-party closure is a 25-node
+bounded chain with parent arity two and every earlier record below CloseT.
+
+The capacity census now includes auxiliary fixtures and reports four proposals.
+K1's physical mark is one independent strict order per connected component;
+the 24 global presentation orders quotient to four atoms with six gauge
+shuffles apiece.  K3 discloses 20 positive-mass DLR checks and four zero-mass
+skips.  Finite-bit unique-greatest and complete-order probabilities are
+separate.  G21 validates the preceding gate census rather than assigning a
+constant.  Two runs are byte-identical; source/stdout/science hashes are
+`dad183c...d0743`, `3478d14...45093`, `a373d10...71314`.
+
+G18 is explicitly downgraded to a definition-level reference-presentation
+control and prints `independent_actor_bisimulation=0`.  The frozen major on
+actor ownership, authentication, immutable DAG generation and an independent
+born/token continuation comparison remains open; no synthesis paper is
+started.

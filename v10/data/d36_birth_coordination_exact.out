@@ -2,10 +2,11 @@
 ARITHMETIC: integers/Fractions only; no numerical time
 SCOPE: bounded finite regions; failure-free fair-delivery theorem; quantum join open
 [ONTOLOGY / IDENTITY]
-nominal_freshness_contradictions=1; structural_tau_sha256=e52feadcb337532bbc93ae0913c8e147fd5d83de394642a81c95bfba8c0ee70d
+nominal_freshness_contradictions=1; structural_tau_sha256=a0cb5191011e7999576f020550f423a693ffe898f2bf6207bd5d429c827c8606; version_attempt_sha256=c7f0080b8bc8e1cc37d2e2e870039f72abdf354a9c6fd9a30c5a6eb62713f911; structural_collision_free=1
+logical_tau_contains_stable_capabilities_not_remote_current_tips=1
 alpha_covariant_kernels=4/4; alpha_map={"P":"X","Q":"Z","R":"Y"}
 [HELD-LOCK CONTROL]
-states=45; edges=69; deadlocks=1; circular_wait_held=(0, 1, 2); born_ticket_projection=same_graph
+states=45; edges=69; deadlocks=1; circular_wait_held=(0, 1, 2); born_ticket_graph_isomorphism=1
 [TICKET / ATOMICITY ATTACKS]
 read_only_double_commit=1; atomic_oracle_safe_orders=2/2; participant_split_adoption=1; stale_photo_rejections=1
 [EXCLUSIVE-WAIT TRIANGLE]
@@ -22,6 +23,7 @@ atomic_oracle_hides_partial_apply=1; local_close_waits_for_all_acks=1
 priority_cells=18; message_serializer_checks=8976; all_equal_greedy=1; all_safe_maximal_nonempty=1
 [DISJOINT FACTORIZATION]
 independent_kernel_products=4/4; shared_coin_negative_control={P,R}:1/2, {Q,S}:1/2
+physical_component_order_atoms=4; global_presentation_orders=24; gauge_shuffles_per_component_atom=6
 [DETERMINISTIC SYMMETRY NO-GO]
 safe_feasible_pair_sets=((), ('P',), ('Q',)); swap_invariant_safe_sets=((),); nonempty_deterministic_equivariant_winner=0
 [PROBABILISTIC ARBITRATION]
@@ -29,31 +31,35 @@ K1_path={Q}:1/3, {P,R}:2/3
 K2_path={Q}:1/2, {P,R}:1/2
 separating_event={P,R}: K1=2/3 K2=1/2; selector=UNSELECTED
 [HARD-CORE REGIONAL FAMILY]
-DLR_conditionals=20; lambda1={}:1/5, {P}:1/5, {Q}:1/5, {R}:1/5, {P,R}:1/5
+DLR_positive_mass_conditionals=20; DLR_zero_mass_boundaries_skipped=4; lambda1={}:1/5, {P}:1/5, {Q}:1/5, {R}:1/5, {P,R}:1/5
 lambda2={}:1/11, {P}:2/11, {Q}:2/11, {R}:2/11, {P,R}:4/11; lambda_unselected=1
 [FINITE-BIT RETRY]
-contenders=2; mark_values=2; unique=1/2; expected_attempts=2
-contenders=2; mark_values=4; unique=3/4; expected_attempts=4/3
-contenders=3; mark_values=2; unique=3/8; expected_attempts=8/3
-contenders=3; mark_values=4; unique=21/32; expected_attempts=32/21
-pair_1bit_unresolved_after_5=1/32; eventual_resolution=almost_sure_not_bounded
+single_winner_contenders=2; mark_values=2; unique_greatest=1/2; expected_attempts=2
+single_winner_contenders=2; mark_values=4; unique_greatest=3/4; expected_attempts=4/3
+single_winner_contenders=3; mark_values=2; unique_greatest=3/8; expected_attempts=8/3
+single_winner_contenders=3; mark_values=4; unique_greatest=21/32; expected_attempts=32/21
+complete_order_contenders=2; mark_values=2; all_distinct=1/2
+complete_order_contenders=2; mark_values=4; all_distinct=3/4
+complete_order_contenders=3; mark_values=2; all_distinct=0
+complete_order_contenders=3; mark_values=4; all_distinct=3/8
+pair_1bit_unresolved_after_5=1/32; almost_sure_resolution_is_conditional_on_continued_iid_retry_opportunities=1; bounded_worst_case=0
 [REGIONAL RESTRICTION]
 K1_path_to_edge={P}:2/3, {Q}:1/3; K1_direct_edge={P}:1/2, {Q}:1/2
 K3_path_to_edge={}:2/5, {P}:2/5, {Q}:1/5; explicit_R_boundary_mixture_repairs=1
 [HYPEREDGE / FINITE COVER]
 three_way_forbidden_with_all_pairs_allowed=1; pairwise_anticorrelation_joint_support=0
-[BORN / TOKEN MATCHED CONTROL]
-projected_states=1113; projected_edges=2984; terminal_observable_classes=3; edge_relation_equal=1; participant_commit_observables_equal=1
+[BORN / TOKEN REFERENCE-PRESENTATION CONTROL]
+projected_states=1113; projected_edges=2984; terminal_observable_classes=3; edge_relation_equal=1; participant_commit_observables_equal=1; independent_actor_bisimulation=0
 [CAUSAL CLOSURE / CAPACITY]
-closure_nodes=11; closure_ancestors=10; max_parent_arity=3; closure_sha256=b05a409298aaab0417d3bf96d41a3ed5a22779e864c2af854838e38884b2b611
-max_tx_arity=3; max_participants=4; max_proposals=3; max_incident=2; priority_bits=2
+closure_nodes=25; closure_ancestors=24; max_parent_arity=2; closure_sha256=450648aee8fd8d57f7fc46576898def91f4d080bfac476e10d8313ddd3657179
+max_tx_arity=3; max_participants=4; max_proposals=4; max_incident=2; priority_bits=2
 proposal_birth_one_parent=1; participant_apply_local=1; quantum_join_derived=0
 [FAILURE / FAIRNESS SCOPE]
 coordinator_loss_can_block_promise=1; safe_unilateral_expiry_without_detector=0; positive_theorem_requires_failure_free_fair_delivery=1
 [HASHES]
-source_sha256=f1b2c5010812e08f560876a570fc06693d59633de03421b0fed5ff5e5c3daed0
-stdout_body_sha256=c5258f02d8f9763708e9355a304295e6c94a7c85aac39dde22c1d3f0b826c1c7
-internal_science_sha256=872a38acd65f7ebcb122a50f6713da53ae119764c7449387b1b55efe27acf04b
+source_sha256=dad183c2e303b0315fa7f452ab1c197569d6983332696421d70f04ba5b3d0743
+stdout_body_sha256=4cb4e7975d806189d71c81d2a001e7c201acca55d0a45abb9f40647b989da96e
+internal_science_sha256=a373d10d90a6f3063aff02f06dcd92e62a6225981fef291272fbf38cd1e71314
 [GATES]
 G0=PASS
 G1=PASS
@@ -79,6 +85,6 @@ G20=PASS
 G21=PASS
 [VERDICT]
 PASS 22/22
-CLOCK-FREE LOCAL TRANSACTION COORDINATION / SAFE, NONSELECTING, FAILURE-FREE
-born records are durable causal carriers but finite-horizon coordination power is token-equivalent
+CLOCK-FREE FINITE REFERENCE TRANSITION SYSTEM / CLOSED-ATTEMPT RESERVATION-SAFE
+actor-local durable-record refinement and independent born/token comparison are separate gates
 arbitration, batch/eligibility boundary, retry fairness, opportunity law and quantum join remain open
