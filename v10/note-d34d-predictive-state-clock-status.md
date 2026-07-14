@@ -1,8 +1,10 @@
 # D34d — predictive state, observable memory and clock status
 
-**Status:** INVESTIGATION PIN (pre-receipt), 2026-07-13. This note is
-frozen after D34c's terminal finite typed-DAG compatibility result and before
-any D34d executable or numerical receipt. It incorporates the external desired
+**Status:** ROUND-1 REPAIR PIN, 2026-07-13. Sections 1–6 were frozen after
+D34c's terminal finite typed-DAG compatibility result and before any D34d
+executable or numerical receipt. Section 7 records the provisional receipt;
+section 8 records its independent rejection and freezes the repair before the
+replacement executables. The investigation incorporates the external desired
 theorem relayed by the user, but does **not** adopt that theorem as stated.
 
 ## 1. The question
@@ -331,3 +333,152 @@ The hostile round must attack at least:
 - whether any finite-memory/locality language exceeds the receipts.
 
 No terminal theorem is claimed before those reviews and their delta pass.
+
+## 8. Hostile round 1 and the replacement pin (2026-07-13)
+
+### 8.1 Verdict: exact arithmetic survives; the local/Markov width does not
+
+Three independent streams reran the receipts and independently rebuilt their
+central calculations:
+
+- probability/history law: `MAJOR REVISION — 0B/5M/3m/2n`;
+- quantum/process memory: `MAJOR REVISION — 0B/2M/4m/2n`;
+- locality/clock architecture: `REJECT AT STATED WIDTH — 1B/5M/4m/2n`.
+
+Every printed fraction and matrix survived. The receipt files reproduced
+byte-for-byte under fresh salts. The combined provisional noun is nevertheless
+withdrawn pending repair.
+
+The blocker is architectural. The complete current D34b Harris configuration
+is a global state of a locally generated process. Calling that configuration
+“distributed” does not prove that one record, or a bounded collar around it,
+screens its future. In the actual D34b grammar, B sends an incoming interaction
+to its neighbor A at rate `1/4` when `deg(B)=1`; after B births a second
+neighbor, the rate is `1/8`, even if A's own tip and private clock state are
+unchanged. A's tip alone is therefore not predictive.
+
+Four further distinctions are load-bearing:
+
+1. P2 classified three pure hidden states, not the predictive equivalence
+   classes of observed histories. The latter have exactly `2,3,...,13`
+   reachable belief states through depths `1..12` in the chosen specimen.
+2. Strong lumpability (all initial laws), law-relative/weak Markovity and the
+   demonstrated failure for one initial law are different statements.
+3. A scalar exponential survival identity does not itself construct the full
+   D34b generator or a local stopping filtration. The renewal control proved
+   age necessity but not age-augmented sufficiency.
+4. The quantum coherent/path-recorded comparison uses two different past
+   instrument contexts. It proves durable-record operational insufficiency,
+   not non-Markovianity of one fixed quantum process. Rebit tomography is also
+   a one-state algebra result, not a multi-time process theorem.
+
+### 8.2 Classical replacement gates — frozen before code
+
+The replacement classical receipt must contain the following independent
+gates.
+
+- **R1 — observed-history predictive quotient.** Enumerate every positive
+  observed word through depth 12, compute its exact posterior belief, quotient
+  by future-law equivalence, and print `2,3,...,13`. Prove that for current
+  record zero, belief `(p,1-p,0)` has next-one probability `1/4+p/4`, so the
+  distinct beliefs are genuinely predictive classes. Keep hidden state,
+  posterior state and durable record as separate rows.
+- **R2 — three lumpability scopes.** Gate a strongly lumpable positive
+  control; a chain that is not strongly lumpable but is Markov for a declared
+  initial law because the offending state is unreachable; and the actual
+  uniform-initial witness `3/8 != 7/20`. No unqualified “exact divide” is
+  permitted.
+- **R3 — the actual ideal D34b state and generator.** Define `Z_t`: active
+  Ulam actors, private ring/birth counters, typed adjacency, wire tips/event
+  history, eligibility/seal status and any modeled carrier fields. For bounded
+  cylinder `f`, gate the support-local generator
+
+  ```text
+  Lf(z) = sum_y [
+      1/4 (f(B_y z)-f(z))
+    + sum_(x in N_y) 1/(4 deg(y)) (f(I_yx z)-f(z))
+    + 1/2 (f(N_y z)-f(z)) ].
+  ```
+
+  The analytic theorem must attach to the ideal independent Poisson/mark
+  product source: independent increments plus local measurable updates make
+  `Z_t` a time-homogeneous strong Markov process at physical stopping times.
+  The finite Decimal/PRF actor is only an implementation regression.
+- **R4 — locality hierarchy, including the counterexample.** Gate the actual
+  D34b `deg(B)=1 -> 2` incoming-rate change `1/4 -> 1/8`, passive reception
+  without A-ring reset, and disconnected-factor invariance. State the earned
+  hierarchy exactly: `Z_t` is global; each generator term has bounded touched
+  support; A's tip is insufficient; no fixed finite/bounded all-future collar
+  is yet proved. A future finite-horizon/growing-boundary theorem remains an
+  open, not an implication of R3.
+- **R5 — stopping dictionary.** Separate fixed construction time, A-own-ring
+  count, A-wire-event count (including passive receptions), fixed global event
+  count and the untimed order skeleton. Carry the terminal D34b locality
+  theorem only at its licensed stopping scopes.
+- **R6 — renewal sufficiency.** For independent uniform-renewal actors, build
+  the age-augmented piecewise-deterministic state. Gate
+  `P(R>s | age=a)=S(a+s)/S(a)`, a two-actor residual race, initiator reset,
+  newborn age zero and passive-receiver no-reset. Prove conditional closure on
+  graph plus the complete age vector; keep local observers' hidden-age belief
+  as a separate issue.
+- **R7 — time/order transformation table.** Rebuild an actual typed-DAG
+  canonicalizer for two incomparable actor events. Gate: serializer orbit
+  invariance; common-rate identity `Law_(c lambda)(Z_T)=Law_lambda(Z_(cT))`;
+  failure of invariance at fixed numeric `T`; invariance of embedded winner
+  order under common scaling; order preservation but homogeneous-law change
+  under nonlinear timestamp relabeling; and an explicitly named heterogeneous-
+  rate D34b variant with marked shared-wire masses `(1/48,1/24)` versus
+  `(1/32,1/32)`.
+- **R8 — capacity ledger.** Print bounded event-outcome rank/incidence arity
+  separately from unbounded Ulam identifier length, actor degree/edge census,
+  connected-boundary width, clock-age vector and posterior-belief complexity.
+  No global configuration may be called one finite-capacity record.
+- **R9 — scorecard.** The maximum classical noun is `D34b GLOBAL STRONG-
+  MARKOV PROCESS WITH SUPPORT-LOCAL GENERATOR + EXACT OBSERVABLE-MEMORY
+  CHARACTERIZATION`. A bounded local predictive state remains open unless an
+  additional receipt actually constructs it.
+
+### 8.3 Quantum replacement gates — frozen before code
+
+- **U1 — harden the recorded-path functional.** Construct
+  `D_rec(h,h')=delta_(p,p')D(h,h')`, then gate normalization, strong positivity
+  and its incidence coarse graining. Do not obtain a second experiment by
+  merely relabeling the diagonal of the first.
+- **U2 — rescope the existing comparison.** Rename it `durable-record
+  operational insufficiency across declared past instruments`. It is not the
+  fixed-process non-Markov gate.
+- **U3 — fixed three-slot causal-break witness.** Use one process with initial
+  correlated `P,E` state. The past choices `I_P` and `X_P`, followed by the
+  same nonzero middle causal-break outcome `P=0` and the same repreparation
+  `P=0`, leave `E=0` and `E=1`; the fixed future `CNOT(E->P)` must give certain
+  `P=0` and certain `P=1`. This earns operational non-Markovianity of one
+  fixed process.
+- **U4 — tomography scope.** Prove algebraically that `P0,P1,P+` reconstruct
+  an arbitrary real-symmetric two-level operator. Call this a rebit
+  tomographic effect set, not a multi-time instrument or general qubit result.
+- **U5 — architecture fork.** Report separately: retaining joint `P,E` makes
+  the displayed total update Markov; eliminating E requires a reduced
+  multi-time process tensor and exhibits memory by U3. These are alternative
+  representations, not synonyms.
+- **U6 — remote theorem.** State and gate the analytic tensor/partial-trace
+  identity for arbitrary trace-one product remote factors and local effects.
+  Declare whether initial cross-component correlations are excluded.
+- **U7 — scorecard.** No timed/direct-integral quantum law, universal finite
+  memory theorem, or general-instrument finite Markov order may be claimed.
+
+### 8.4 Literature alignment to carry
+
+The repair must explicitly compare its terminology with four primary results:
+
+- Shalizi–Crutchfield causal states: predictive equivalence classes are the
+  minimal representation for accurate future prediction;
+- Geiger–Temmel lumping: strong `k`-lumpability concerns every initial law and
+  must not be confused with a stationary or fixed-law property;
+- Pollock et al.'s operational Markov condition: quantum memory requires a
+  multi-time/causal-break criterion;
+- Taranto et al.'s quantum Markov order: non-Markov processes cannot have
+  finite Markov order for every possible instrument, so finite quantum memory
+  claims must remain instrument-specific.
+
+After replacement, the same three reviewers must perform delta audits. A
+terminal statement requires closure of the blocker and every major finding.

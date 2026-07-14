@@ -2599,3 +2599,23 @@ PROVISIONAL noun: PREDICTIVE-STATE / OBSERVABLE-MEMORY / CLOCK-STATUS
 CHARACTERIZATION FOR THE CHOSEN D34b-D34c FAMILY. No universal finite-local-
 Markov theorem, physical clock derivation, proper time or timed quantum lift is
 claimed. Three hostile streams mandatory; findings -> #173+.
+
+## 2026-07-13 — d34d round 1 REJECTS local/Markov width; replacement pinned (LEDGER #173)
+All exact outputs reproduce, but the three hostile streams reject the combined
+noun: probability 0B/5M/3m/2n; quantum 0B/2M/4m/2n; locality/clock
+1B/5M/4m/2n. The blocker is the missing local predictive state. The complete
+D34b Harris configuration is a global Markov state with local update terms, not
+a proved bounded collar: in the actual grammar B->A incoming rate changes
+1/4->1/8 when B gains a child while A's own tip is unchanged. Other mandatory
+repairs: quotient observed beliefs (counts 2..13, not the three pure hidden
+states); separate strong/fixed-law/failing lumpability; build the actual D34b
+state/generator/stopping scopes; complete age-augmented renewal sufficiency;
+replace toy serializer/rate gates by typed-DAG and horizon-rescaling gates;
+carry bounded/unbounded capacity fields. Quantum Q3 is cross-context record
+insufficiency, not one-process non-Markovianity; add an exact fixed three-slot
+causal-break process, harden D_rec, keep tomography rebit-only, and separate
+joint-boundary from reduced process-tensor descriptions. Repair gates R1-R9 and
+U1-U7 are frozen in note-d34d §8 before code changes. Maximum repaired claim:
+D34b GLOBAL STRONG-MARKOV PROCESS WITH SUPPORT-LOCAL GENERATOR plus exact
+observable-memory/clock scopes; finite bounded local predictive state remains
+open unless separately constructed. Delta review mandatory; findings -> #174+.
