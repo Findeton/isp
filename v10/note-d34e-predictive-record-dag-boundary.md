@@ -374,3 +374,82 @@ Maximum possible result of this pin:
 > time or universe law follows.
 
 The receipt and hostile reviews may force a lower ceiling.
+
+## 15. Provisional receipt before hostile review
+
+`v10/code/d34e_predictive_boundary_exact.py` currently passes `11/11` and its
+stdout byte-matches under `PYTHONHASHSEED=17,65537` with file SHA-256
+`81dc0a289631f97961a661fda9ce3b3aed36b40e298024173cbc693998eb2586`.
+The internal summary digest is
+`48d83ba568052d4822278f43efe0c3a268e268e6372e642219b6b400c027d3fd`.
+
+The provisional result is query-relative.
+
+### 15.1 Coarse and role-labeled local wire branches
+
+The full generator projects exactly to both:
+
+- the covariant state `(A carrier, multiset of neighbor degrees)`; and
+- the role-labeled distributed star carrying each incident actor and its
+  degree.
+
+All `2,927` reachable states through global embedded depth four agree with the
+closed formulas, with `2,898` repeated coarse-boundary comparisons.  The
+analytic row partition is not depth-limited: only A's own rows and births or
+incoming interactions of its current neighbors can change the projected state
+or output.  The inherited D34b nonexplosion theorem then supplies the unique
+all-future marked pure-jump projection.
+
+The state is local in graph radius but not bounded in physical width.  A's
+births form a rate-`1/4` Poisson process, so the number of incident ports has
+unbounded support at every positive construction time and grows without bound
+along an infinite realization.  Provisional Branch C/L verdict:
+
+```text
+ALL-FUTURE GROWING-CARRIER PASS / POINTWISE.
+```
+
+### 15.2 Exact compression failures
+
+The D34d one-record obstruction survives.  A stronger D34e witness shows that
+even the complete current rate summary is not recursively sufficient:
+
+```text
+{2,3,6} and {2,4,4}
+```
+
+both give current aggregate incoming rate `1/4`, but their infinitesimal
+incoming-rate derivatives are `61/1344` and `11/240`, differing by `1/2240`.
+Both pasts are reachable with positive exact cylinder mass.
+
+### 15.3 Full durable ancestry
+
+For radii `0,1,2,3`, exact outside-radius record pairs and inward interaction
+paths give future cylinder masses
+
+```text
+1/24, 1/1024, 1/64000, 1/5308416.
+```
+
+The general radius-`r` mass is `[1/(8(r+3))]^(r+1)>0`.  Thus every fixed
+actor-graph radius loses some full durable A-record ancestry.  The whole
+connected component is a sufficient growing upper bound and disconnected
+components factor, but no theorem yet identifies the minimal full-record
+encoding.  Provisional Branch-F disposition is fixed-radius
+`CANDIDATE-CLASS OBSTRUCTION`, not whole-component necessity.
+
+### 15.4 Stem/profinite and quantum ceilings
+
+Finite mark-forgetting produces `4` unmarked order classes at depth three and
+`10` at depth four; depth-four prefix restriction exactly recovers the
+depth-three pushforward.  This checks only the finite candidate map.  It does
+not construct the adapted posterior on the v9 completed-history stem spectrum
+or prove that the posterior screens any D34e branch.
+
+The intrinsic quantum branch returns `REFUSAL/UNDEFINED`: D34c's finite
+functionals and the auxiliary `P,E` witness do not supply the missing timed,
+controlled D34b-D34c process family.
+
+Three independent hostile streams are required before any provisional noun is
+promoted: predictive/probability/profinite; locality/record/capacity; and
+full-ancestry/quantum/process scope.
