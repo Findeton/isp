@@ -2914,3 +2914,20 @@ analytical information-boundary theorem, not a literal centralized memory or
 real-universe-size claim. The timed/profinite/v9 bridge, quantum law,
 spacetime/round-cone consequences and derivation of nature's click law remain
 open. Paper 23 may now synthesize the result under a separate hostile audit.
+
+## 2026-07-14 — Paper 23 candidate synthesis drafted (LEDGER #190)
+Paper 23, *The whole component is the exact ancestry boundary*, synthesizes
+terminal D34f. It proves wire persistence and postorder returnability, prints
+the exact bare-sweep counterexample, separates the Branch-F prefix cylinder U
+from its exact anchored path subevent S, and gives the first-unmatched-
+attachment and q+1 catch-up lemmas. It then identifies the minimal exact
+predictive quotient with the rooted marked component class and proves the
+unbounded M-bit family. The paper explicitly distinguishes information
+necessity from centralized storage or execution and explains why the boundary
+can shrink only after a finite-horizon/approximation change or a physical
+sealing, attenuation or causal-speed principle.
+
+The receipt and all D34f hostile counts are carried with exact hashes. Timed
+profinite, v9, quantum, spacetime, dimension, units and G claims remain open.
+Candidate Paper 23 requires three independent paper-level hostile streams
+before any terminal status.
