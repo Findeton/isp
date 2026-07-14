@@ -610,7 +610,10 @@ P(r | I,h) = K^I_(tau,A)(h,{r}).
 
 The declared instrument family must state whether adaptive choices and
 entangled ancillas are allowed. A future D34b-D34c process object could supply
-these kernels; notation alone cannot derive them from the passive D34b law.
+these kernels; notation alone cannot derive them from the passive D34b law. If
+an intervention occurs before the conditioning stop, the branch must use its
+controlled past law or a declared dominating measure rather than silently
+reusing passive `mu`.
 
 Stopping scope is part of the quotient. D34e must preregister separate algebras
 for fixed construction time, A-own-ring count and A-wire-event count, the last
@@ -636,18 +639,25 @@ and stopping-relative. It is not automatically a record, graph neighborhood,
 stem type or finite object.
 
 Let `B_A(h)` be a measurable encoder into a declared finite or standard-Borel
-carrier space. It is sufficient only when measurable kernels `Kbar^I` exist
-such that
+carrier space. In the almost-sure branch, freeze one common `mu`-full reachable
+set `H_0`. It is sufficient only when measurable kernels `Kbar^I` exist such
+that
 
 ```text
-K^I_(tau,A)(h,.) = Kbar^I_(tau,A)(B_A(h),.)  mu-a.s.
+K^I_(tau,A)(h,.) = Kbar^I_(tau,A)(B_A(h),.)
+    for every h in H_0 and every licensed I.
 ```
 
-for every licensed `I`; omit `I` in the passive branch. Setwise, this implies
+Omit `I` in the passive branch. A finite or countable determining instrument/
+query family permits a common `H_0` by intersection; an uncountable family
+requires a jointly regular version or a determining subfamily plus an
+extension theorem.
+The alternative pointwise branch supplies kernels on every legal reachable
+state. Setwise, on the declared branch domain, factorization implies
 `B_A(h)=B_A(h') => h~pred h'`. A sufficient carrier may store redundant
 information. It is an exact minimal realization only if the converse also
 holds on its realized support, up to a measurable carrier relabeling and
-declared gauge.
+declared gauge. Every theorem and verdict is labeled `A.S.` or `POINTWISE`.
 
 ### 10.3 Predictive screening is not physical erasure
 
@@ -681,8 +691,9 @@ does not derive a physical record-native carrier.
 
 For one frozen scope, the desired theorem would construct `B_A` and prove:
 
-1. **screening:** the measurable kernel factorization above on all reachable
-   histories;
+1. **screening:** the measurable kernel factorization above on the common
+   `H_0` for an `A.S.` theorem, or on all legal reachable histories for a
+   `POINTWISE` theorem;
 2. **recursive time/event closure:** for consecutive declared update stops
    `tau<tau'`, a declared update of the form
 
@@ -725,10 +736,17 @@ The v9 stem spectrum has a different domain. Let
 
 ```text
 Omega_marked  = completed marked histories,
-u             = mark-forgetting/causet map,
+u             = candidate mark-forgetting/causet map,
 phi           = v9 Borel evaluation map from completed causets to X_stem,
 pi_n          = finite covtree-resolution map.
 ```
+
+Before using `u`, gate that the forgotten D34b event/wire order lies in the
+past-finite completed-causet domain used by v9, that `u` is well defined under
+the declared event/Ulam relabeling gauge, that it is Borel measurable for the
+chosen history codings, and that the conditional completion law pushes forward
+through it. Failure of any gate refuses this bridge branch rather than the
+passive predictive investigation.
 
 A current finite past `h` has many completions and therefore does not determine
 one point of `X_stem`; treating it as one would leak future information. Given
@@ -753,8 +771,12 @@ requires commuting finite-level maps, compatibility and adaptedness. The v9
 map is Borel, not generally continuous, so measurable almost-sure sufficiency
 must be separated from a stronger continuous profinite realization. Even a
 continuous real-valued function on a profinite space need not factor exactly
-through one finite level. Continuous/unbounded marks require finite observable
-partitions or a separately declared compact marked topology.
+through one finite level. Continuous or unbounded marks require explicit finite
+observable quotients or a separately declared marked topology. If the marked
+carrier is called profinite, that topology must itself be realized as an
+inverse limit of finite discrete quotients, equivalently with the required
+Stone/light-profinite properties. A general compact marked topology defines a
+different compact bridge and is not automatically profinite.
 
 Profinite structure can host compatible finite data; it selects neither the
 law, grammar, encoder nor physical carrier. Rogue fibers matter to a proposed
@@ -773,17 +795,20 @@ a process tensor or comb. D34e must not call several inequivalent ranks one
 “memory rank.” At minimum it must report separately:
 
 ```text
-d_carrier = minimal retained memory Hilbert dimension under the declared
-            record/port ownership constraints,
+d_carrier = minimal Hilbert dimension over record-native retained carriers
+            under the declared record/port ownership constraints,
 d_op      = real or complex dimension of the span of conditional operational
             boundary functionals,
-chi_cut   = operator-Schmidt/bond rank of the conditional comb across one
-            explicitly named cut.
+chi_cut   = operator-Schmidt rank of the conditional comb Choi operator under
+            one explicitly named tensor bipartition.
 ```
 
 Density-operator rank, channel Choi/Kraus rank and minimal ancilla-memory
 dimension are additional distinct quantities and may not substitute for these
-without a theorem.
+without a theorem. The last is minimized over the declared unrestricted comb/
+process realizations, unlike the record-native ownership-constrained
+`d_carrier`; “bond rank” is used only if a separate tensor-network convention
+has been declared.
 
 The quantum consistency ledger is also typed:
 
@@ -794,8 +819,12 @@ The quantum consistency ledger is also typed:
 3. every conditional comb Choi operator is positive semidefinite, obeys its
    causal trace constraints and has compatible marginals under the named
    trace/link maps;
-4. any physical encoder/update channel is separately completely positive and
-   causal.
+4. a deterministic encoder/update is completely positive, trace preserving
+   and causal; for an outcome-resolved update instrument, each branch is
+   completely positive and trace nonincreasing and the branch sum is trace
+   preserving and causal. A normalized conditional update is derived by
+   conditioning and is not asserted to be a linear channel. The ports, trace/
+   link convention and use of subnormalized boundary states must be fixed.
 
 The auxiliary `P,E` witness only demonstrates that a reduced one-time state
 can fail and supplies a negative control for D34e. It neither constructs nor
@@ -837,26 +866,34 @@ horizon.
 
 ### 10.8 Frozen outcome classes
 
-The first applicable row is the verdict; rows are therefore mutually
-exclusive:
+Freeze each branch as `(mu,A,Q,I,S,C)`, where `C` is the declared physical
+carrier class and `I` is omitted passively. The first applicable row within
+that branch is the verdict; rows are therefore mutually exclusive. Every
+emitted theorem label also states `A.S.` or `POINTWISE`:
 
 1. **REFUSAL/UNDEFINED** — conditional version, controlled law, interface
    typing, stopping algebra or factor cover required by the attempted claim is
    missing.
 2. **ALL-FUTURE BOUNDED-CARRIER PASS** — one declared record-native carrier
    has screening, time/event closure, covariance, composition and a uniform
-   physical capacity bound for all licensed futures and reachable pasts.
+   physical capacity bound for all licensed futures and every past in the
+   declared `A.S.` or `POINTWISE` branch domain.
 3. **ALL-FUTURE GROWING-CARRIER PASS** — such a recursively closed carrier is
    proved, but its physical width is unbounded; this row excludes a theorem
    that the whole component/global state is necessary.
-4. **WHOLE-COMPONENT/GLOBAL ONLY** — a theorem proves necessity at the declared
-   law/query/instrument scope.
-5. **NO RECORD-CARRIED EXACT REALIZATION** — a theorem excludes every member
-   of the preregistered physical carrier class, not merely the tested finite
-   list.
-6. **CANDIDATE-CLASS OBSTRUCTION** — reachable exact witnesses kill every
+4. **WHOLE-COMPONENT ONLY** — a theorem proves that the complete connected-
+   component state is necessary at the declared scope; irrelevant disconnected
+   global factors are excluded.
+5. **GLOBAL ONLY** — a theorem proves that even the complete connected
+   component is insufficient and the declared complete global state is
+   necessary.
+6. **NO EXACT REALIZATION IN THE DECLARED CARRIER CLASS** — a theorem excludes
+   every member of `C`, not merely the tested finite list. Universal “no
+   record-carried realization” language is reserved for a theorem quantifying
+   over the full physically admitted carrier class.
+7. **CANDIDATE-CLASS OBSTRUCTION** — reachable exact witnesses kill every
    tested candidate family, without excluding untested carriers.
-7. **FINITE-DOMAIN ONLY** — a survivor is sufficient only on registered
+8. **FINITE-DOMAIN ONLY** — a survivor is sufficient only on registered
    `D(N,H,Q,I,S)` cells; no all-size/all-future theorem is proved.
 
 Covariance, composition, capacity and NSE receive separate pass/fail/not-
