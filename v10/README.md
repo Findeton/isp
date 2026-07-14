@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D34f / Paper 23 (terminal candidate)
+## Latest — D34f / Paper 23 (terminal accepted)
 
 D34f closes Paper 22's adaptive full-ancestry opening for the explicitly
 chosen passive D34b law. Every old event in A's connected component is

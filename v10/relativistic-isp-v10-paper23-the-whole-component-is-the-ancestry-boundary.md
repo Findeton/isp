@@ -4,8 +4,8 @@
 
 ## Anchored tomography, predictive identity and unbounded information
 
-**Status:** terminal candidate after three clean independent paper-level
-hostile streams; exact status delta pending.
+**Status:** terminal accepted after three clean independent paper-level
+hostile streams and three clean final string/hygiene deltas.
 **Date:** 2026-07-14.
 
 ## Abstract
