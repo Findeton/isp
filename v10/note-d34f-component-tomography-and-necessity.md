@@ -1,7 +1,8 @@
 # D34f — component tomography and full-ancestry necessity
 
-**Status:** preregistered analytical protocol; no D34f executable, receipt or
-result exists at this commit.
+**Status:** sections 1--10 are the historical pin; a pre-receipt analytical
+self-attack rejects pinned T4 and freezes its anchored-echo replacement in
+section 11.  No D34f receipt or result exists at this commit.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34e / Paper 22 at commit `b457d42`.
@@ -291,3 +292,118 @@ attack:
 Every major opening is frozen before repair.  Fresh deltas must inspect the
 exact repaired commit.  Paper 23 is written only after the D34f theorem ceiling
 survives these reviews.
+
+## 11. Pre-receipt self-attack and anchored-echo replacement
+
+The bare component sweep in pinned T4 does **not** support its advertised
+`m` versus `m+1` catch-up lemma.  The stop is not a mark inside an ancestral
+record, and two different past cuts of one later record DAG can consume the
+same number of future rings.
+
+### 11.1 Exact equal-order counterexample to bare-sweep T4
+
+Start with A--B.  Let B birth two children C and D.  Compare:
+
+```text
+K:   D idles before the stop;
+     after the stop sweep C->B, D->B, B->A.
+
+K':  C->B occurs before the stop;
+     after the stop run D-idle, D->B, B->A.
+```
+
+The two pasts are not gauge-isomorphic.  Nevertheless the final B-to-A event
+has the same complete unmarked-by-stop ancestry in both branches.  Each branch
+uses three future rings.  Their leading coefficients differ (`1/1152` versus
+`1/576`), so this pair is still predictively distinguishable, but the pinned
+claim that every nonisomorphic past is zero or `O(Delta^(m+1))` is false.
+
+This opening does not affect wire persistence, component reconstruction,
+returnability or the information family.  It rejects T4, T5 and the row-1
+verdict until a replacement discriminator is proved.
+
+### 11.2 Frozen replacement — fresh-anchor broadcast and echo
+
+For a finite component K with `n` actors, replace the bare fingerprint by an
+**anchored echo**:
+
+1. append one fresh A-idle event `a_*` after the conditioning stop;
+2. broadcast `a_*` outward from A by one parent-to-child interaction on every
+   rooted tree edge, in preorder;
+3. collect inward by one child-to-parent interaction on every edge, in
+   postorder; and
+4. read the complete Branch-F trace of all future A-touching events through
+   the final echo into A.
+
+The echo has
+
+```text
+q = 1 + 2(n-1) = 2n-1
+```
+
+future events.  Every broadcast and collection event has the fresh anchor in
+its ancestry.  Therefore none of those exact event records can have occurred
+before the stop.
+
+For one frozen preorder/postorder pair its exact embedded component-clock mass
+is
+
+```text
+p_echo(K)
+ = 1/(2n)
+   * product_(parent->child outward) 1/[4 n degree(parent)]
+   * product_(child->parent inward)  1/[4 n degree(child)]
+ > 0.
+```
+
+Multiplication by `ErlangCDF(q,n,Delta)` gives the exact registered timed
+subcylinder.  The leading coefficient is the product of the continuous event
+rates divided by `q!`.
+
+### 11.3 Replacement T4 — anchored component tomography
+
+Let `U^anchor_K(Delta)` be the exact gauge-invariant Branch-F trace of K's
+anchored echo by elapsed time `Delta`.
+
+```text
+P(U^anchor_K(Delta) | K)
+  >= c_K Delta^q + O(Delta^(q+1)),  c_K>0.
+```
+
+For a non-gauge-isomorphic K':
+
+- an altered or extra immutable record makes the exact fingerprint
+  impossible; or
+- a missing record/actor/edge must be created before K's anchored operations
+  with the relevant initiator ordinals can occur.
+
+Because every target echo event contains the newly created `a_*`, K' cannot
+offset that catch-up event with an echo event that was already present before
+the stop.  Hence
+
+```text
+P(U^anchor_K(Delta) | K') = 0
+or
+P(U^anchor_K(Delta) | K') = O(Delta^(q+1)).
+```
+
+This is the repaired catch-up lemma.  It may not use a hidden pre/post mark on
+old ancestry records; the only temporal discriminator is the observable fresh
+A event and elapsed future time already present in Branch F.
+
+### 11.4 Replacement gates
+
+The executable must now additionally:
+
+```text
+R1 reproduce the equal-order bare-sweep counterexample exactly;
+R2 construct the anchored echo on every enumerated component;
+R3 verify every echo event contains the fresh anchor;
+R4 verify the echo collects every pre-stop event;
+R5 verify exact embedded/timed mass and small-time coefficient;
+R6 rerun gauge/fingerprint/catch-up attacks on the anchored trace.
+```
+
+Only the anchored theorem may feed T5, T6 and the row-1 verdict.  The bare
+sweep remains a valid returnability construction and probability lower bound,
+not a universal tomographic discriminator.
