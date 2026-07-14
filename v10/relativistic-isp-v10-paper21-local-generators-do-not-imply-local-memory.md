@@ -4,10 +4,9 @@
 
 ## Predictive states, observable non-Markovianity and construction clocks in SHARD
 
-**Status:** D34d scientific core terminal accepted after three independent
-hostile streams and three clean deltas; the first exact-next-target pin was
-hostile-rejected and the repaired pin awaits focused delta audit. **Date:**
-2026-07-13.
+**Status:** terminal accepted. The D34d scientific core and the section 10
+exact-next-target pin each passed three independent hostile streams; the target
+chain ends in three unqualified clean closing deltas. **Date:** 2026-07-13.
 
 ## Abstract
 
@@ -946,6 +945,9 @@ The terminal evidence base is:
 | probability/history delta | `DELTA-CLEAN — 0B/0M/0m/0n` |
 | locality/clock final delta | `DELTA-CLEAN — 0B/0M/0m/0n` |
 | quantum/process textual final delta | `DELTA-CLEAN — 0B/0M/0m/0n` |
+| section 10 predictive/profinite closing delta | `DELTA-CLEAN / UNQUALIFIED CLOSURE — 0B/0M/0m/0n` |
+| section 10 boundary/locality closing delta | `DELTA-CLEAN / UNQUALIFIED CLOSURE — 0B/0M/0m/0n` |
+| section 10 quantum/process closing delta | `DELTA-CLEAN — 0B/0M/0m/0n` |
 
 All discrete probability and matrix gates are exact. Continuous exponential
 values are 100-decimal regressions of separately stated analytic identities.

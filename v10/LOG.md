@@ -2694,3 +2694,32 @@ CHARACTERIZATION FOR THE CHOSEN D34b EXEMPLAR. The next exact investigation is
 whether that quotient has a record-carried boundary/process realization, and
 if so whether its width is bounded and projectively compatible across finite
 stems.
+
+## 2026-07-13 — paper 21 exact D34e target terminal-clean (LEDGER #179)
+Paper 21 now develops the next target in a dedicated reviewed section rather
+than only naming it in the verdict. The first pin was hostile-rejected without
+reopening D34d: predictive screening had been conflated with NSE, continuous-
+time survival/passive crossings were missing, intervention laws were inferred
+from passive mu, finite prefixes were treated too closely to completed stem-
+spectrum points, finite enumeration lacked a current-size bound, and quantum
+memory/positivity types were underspecified.
+
+The repaired target separates passive conditional kernels from supplied
+controlled/process families; fixes one common almost-sure domain or a pointwise
+branch; freezes local stopping algebras and D(N,H,Q,I,S); separates predictive
+omission from physical erasure; requires time/no-event/passive-crossing closure;
+types D5 messages as conditional supplied-factor candidates; and freezes eight
+mutually exclusive, carrier-class-scoped outcomes. The v9 bridge now uses an
+adapted posterior measure over completed stem-spectrum points, with a gated
+candidate D34b-to-causet map, rather than assigning the current past a future-
+leaking spectrum point. General compact marked carriers are not called
+profinite without a finite-discrete inverse-limit/Stone realization. Quantum
+widths d_carrier, d_op and chi_cut are separate; strong positivity, projective
+consistency, comb causality and CP instrument-branch conditions are separately
+typed.
+
+Three hostile target streams required major revision, three first deltas closed
+all majors with local minors, and three closing deltas are unqualified clean at
+0B/0M/0m/0n. Final section-10 ceiling: D34e TARGET IDENTIFIED; PREDICTIVE
+RECORD-DAG BOUNDARY UNCONSTRUCTED. The target is now ready to become a separate
+D34e pin/receipt campaign; no boundary-existence result has been claimed.
