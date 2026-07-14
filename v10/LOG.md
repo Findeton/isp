@@ -3124,3 +3124,35 @@ a non-A queried/unqueried/disconnected intervention, and honest rejection/
 joint-state wording. Repeated A-root calls remain conditional: the root-free
 future target is an overlap-consistent local specification on causal diamonds,
 not a global next-event race or per-record proper-time process.
+
+## 2026-07-14 — D35c closing companion executes (LEDGER #199)
+D35c closes the frozen round-2 cases without erasing D35b. Actors now own exact
+issued-incoming sets; unissued structural lookalikes reject. Whole local
+options and identities validate before durable mutation, and peek/ack service
+leaves rejected envelopes queued. Five closing cases are unchanged `5/5`,
+while the inherited D35b battery remains `9/9`. A's transaction ordinal is
+derived from A's own successor state and is explicitly causal identity, not
+elapsed time.
+
+Complete actor plus six-event seed-DAG relabeling gives the same 16 physical
+atoms in Q1/Q2. Both renamed and original laws pass full 16/408/408
+projectivity/persistence. At the degree-two root, five exact isometries share
+the same 8-dimensional input, embed into one 48-dimensional direct-sum output,
+have 10/10 zero cross Grams and exact weighted completeness. Bounded outcome
+rank four is separated from structural incidence and unbounded provenance.
+
+A new D-only source seal repairs the vacuous A-self-copy intervention. Six of
+16 histories query `A->B->D`; ten do not. Paired `do(D=0/1)` laws keep the same
+support and probabilities, while the carried return bit/source changes the
+durable A2 record iff D was queried. An isomorphic disconnected source leaves
+the A projection fixed. Every first state still grows under three serializers;
+eight-call replays end at actor-owned ordinal eight.
+
+Seeds 17/65537 are byte-identical at `16/16`. Candidate source/stdout/science
+hashes are `50f1e710...9c765`, `d8f0ef0c...b6f42`, `da82ce3c...5aebf`.
+The shared event DAG and exact joint entangled vector are disclosed as audit/
+joint-state representations, not hidden central probability normalization or
+independent OS actors. The maximum candidate noun remains TIMELESS ROOTED
+NESTED-CALL FAMILY / EXECUTABLE. The root-free target is compatibility on
+overlapping finite causal-diamond kernels; q, g and the family remain
+unselected. Independent closing review is mandatory before Paper 24.

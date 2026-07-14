@@ -1,0 +1,38 @@
+[D35c exact closing companion]
+prior_source_sha256=fa6d69e6d6b85620d19da8e80899dba4a3a5f976fb6e0b3fcfb7b1224a253c4d
+ARITHMETIC: Fraction exact
+DURATION/RATE/NUMERICAL-PROPER-TIME VARIABLES: 0
+root call ordinal: actor-owned causal successor label, not elapsed time
+GLOBAL OPPORTUNITY NORMALIZERS: 0
+SHARED JOINT AUDIT: persistent event DAG + exact entangled carrier vector
+[Q1]
+actor_serializers=fifo:16,lifo:16,canonical:16 atoms=16 total=1/1
+A2_kind=birth:1/4,fork:1/8,idle:3/8,visit:1/4
+actor_event_alpha_atoms=16 equal=yes renamed_projectivity=16/408/408
+full_first_atoms=16 second_refinements=408 event_payload_persistence=408 marginal_equal=yes
+common_input_dim=8 direct_sum_output_dim=48 structural_alternatives=5 bounded_local_outcome_rank=4 cross_range_zero=10/10 weighted_gram_identity=yes
+closing_rejections=5/5 whole_state_unchanged=5/5 rejected_envelope_still_queued=1/1 inherited=9/9
+D_source_queried_histories=6 unqueried_histories=10 authenticated_return_hop_checks=18 disconnected_projection_equal=1 do_D0_to_D1_changes_A2_iff_queried=yes
+grown_scheduler_checks=32 multi_call_replay=8 root_owned_causal_ordinal=8 exact_equal=yes
+[Q2]
+actor_serializers=fifo:16,lifo:16,canonical:16 atoms=16 total=1/1
+A2_kind=birth:1/5,fork:1/10,idle:2/5,visit:3/10
+actor_event_alpha_atoms=16 equal=yes renamed_projectivity=16/408/408
+full_first_atoms=16 second_refinements=408 event_payload_persistence=408 marginal_equal=yes
+common_input_dim=8 direct_sum_output_dim=48 structural_alternatives=5 bounded_local_outcome_rank=4 cross_range_zero=10/10 weighted_gram_identity=yes
+closing_rejections=5/5 whole_state_unchanged=5/5 rejected_envelope_still_queued=1/1 inherited=9/9
+D_source_queried_histories=6 unqueried_histories=10 authenticated_return_hop_checks=18 disconnected_projection_equal=1 do_D0_to_D1_changes_A2_iff_queried=yes
+grown_scheduler_checks=32 multi_call_replay=8 root_owned_causal_ordinal=8 exact_equal=yes
+[NONSELECTION]
+birth_Q1=1/4 birth_Q2=1/5; visit_Q1=1/4 visit_Q2=3/10
+[SCOPE]
+proved: supplied A-rooted laminar nested-call history family; logical actor mailboxes; structural CAP plus D-origin carried bit; common-input classical-output CQ instrument
+shared representation: one persistent event DAG and exact joint entangled carrier vector; not OS processes and not a distributed quantum-state storage theorem
+open: root-free initiator law; overlapping peers/cycles/joins; diamond-specification overlap; Q/g/root/ownership derivation; coherent graph-sector sum; v9 bridge; spacetime; nature's law
+[HASHES]
+source_sha256=50f1e710cc04de3576b24bd5e7414764f1dea1ebb86f0b0b5747d2b18109c765
+internal_science_sha256=da82ce3ca611fd2e51f0d0e4fd3a36ec74edb895c279e9f6bcd48ac8ceb5aebf
+[VERDICT]
+PASS 16/16
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+not a root-free universe law; opportunity weights and birth coupling remain unselected

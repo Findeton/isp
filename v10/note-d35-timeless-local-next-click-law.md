@@ -1,6 +1,6 @@
 # D35 — timeless local next-click law
 
-**Status:** ROUND-1 REPAIR EXECUTED; hostile delta review pending.
+**Status:** ROUND-2 CLOSING EXECUTED; independent closing review pending.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34f / Paper 23 at commit `de51b4e`.
@@ -886,3 +886,173 @@ with restrictions and overlaps of larger diamonds.  Such a DLR/projective
 family could define a global history measure without selecting a global next
 event or assigning proper times.  D35 does not silently claim that missing
 overlap theorem.
+
+## 17. D35c closing result before independent review
+
+The separate closing companion is
+`code/d35c_local_specification_exact.py`, with receipt
+`data/d35c_local_specification_exact.out`.  It hash-locks D35b at
+`fa6d69e6...253c4d` and leaves both rejected predecessors unchanged.  Hash
+seeds 17 and 65537 are byte-identical.  Candidate hashes are:
+
+```text
+source   50f1e710cc04de3576b24bd5e7414764f1dea1ebb86f0b0b5747d2b18109c765
+stdout   d8f0ef0c4320ff58badcff6ce6916fe7a3f4adb94b58de8afd95c4aa09bb6f42
+science  da82ce3ca611fd2e51f0d0e4fd3a36ec74edb895c279e9f6bcd48ac8ceb5aebf
+```
+
+The candidate passes `16/16` at exact rational grade.
+
+### 17.1 Local causal probability result
+
+The physically meaningful statement is now:
+
+> Given A1 and the supplied A-rooted local call grammar, A2 is the upper seal
+> of the finite completed call diamond.  An evidence bit is in A2 exactly when
+> its adjacent query/return chain is part of that diamond.  Before completion,
+> the probability is the sum of the exact local-menu products of precisely
+> those completed diamonds.
+
+This contains no duration.  The integer on A's calls is derived from A's own
+successor count and used only for fresh structural identity; it is causal
+ordinal data, not seconds, a rate or a proper-time variable.  FIFO, LIFO and
+canonical machine service orders give the same 16-atom law in each parameter
+cell.  Thus no global commit order is physical within the laminar grammar.
+
+A new D-only source seal makes the transport test nonvacuous.  In each Q cell,
+six of the 16 complete histories query D through `A -> B -> D`; ten do not.
+Under paired `do(D=0)` and `do(D=1)` interventions, structural support and
+every branch probability remain identical.  The durable A2 bit and D-source
+identity change in exactly the six queried histories and in none of the ten
+unqueried histories.  Each child return carries the bit and source set inside
+the return envelope, bound by the evidence digest/signature; the parent does
+not infer it merely from the machine service order.  Changing an isomorphic
+disconnected source leaves the A2 projected law fixed.  This earns a concrete
+operational acquisition theorem for one bounded classical evidence channel,
+not for arbitrary quantum information or every ancestral correlation.
+
+### 17.2 Fail-closed actor result
+
+Each actor now owns the exact set of incoming capabilities actually issued to
+it.  A structural lookalike absent from that set rejects.  The full local menu,
+typed legs, event identity and newborn identity validate before the issued
+token is consumed or a transfer is recorded.  Five closing cases—including a
+genuine token paired with invalid choices—leave the complete logical state
+unchanged.  Service peeks first and acknowledges only after success, so a
+rejected envelope stays queued for explicit policy rather than disappearing
+silently.  The inherited nine D35b cases still pass `9/9`.
+
+This is logical actor locality, not a claim that Python created independent OS
+processes.  The exact simulator deliberately maintains one shared persistent
+event-DAG audit and one exact joint carrier vector, because entangled quantum
+states need not factor into actor-owned wavefunctions.  The stochastic action
+menu and admissible ports are actor local; the shared objects record the joint
+physical history/state.  A separate distributed tensor-network implementation
+would be an engineering/theorem target, not an earned D35 result.
+
+### 17.3 Complete event alpha quotient and projectivity
+
+Seed-event identity is now the recursively marked rooted causal structure,
+not the raw strings `A0`, `AB`, `AC`, `BD`, `A1` or `D-source-seal`.  A joint
+renaming of all actor display names, all six seed events, every predecessor
+reference and every tip reproduces the same 16 physical atoms in Q1 and Q2.
+On that renamed presentation the full 16 first cylinders again equal the
+exact marginal of 408 second-call refinements, with 408 persistence checks.
+The unrenamed 16/408/408 gate separately passes.
+
+This is a canonicalization theorem only for the declared finite supplied seed
+class.  It is not a general efficient graph-isomorphism algorithm for every
+possible root-free history.
+
+### 17.4 Common-input variable-support instrument
+
+At the initial degree-two root, all five alternatives are now maps from the
+same eight-dimensional `A tensor B tensor C` input.  Idle is extended over the
+two spectators; the two visits act on their named target and as identity on
+the other; fork acts on all three; birth maps the same input to a
+16-dimensional sector with one fresh child.  Their five output sectors form
+one explicit 48-dimensional direct sum.
+
+Exact matrices establish:
+
+```text
+five self-Gram identities on the common 8-dimensional input;
+10/10 cross-alternative Gram matrices equal zero;
+sum_o q_o W_o^dag W_o = I_8 exactly.
+```
+
+The bounded local outcome alphabet has rank four—idle, birth, visit, fork.
+The five degree-two alternatives additionally contain structural port
+incidence.  Unbounded transaction/path/address provenance is retained
+separately and is not called a bounded local flag.  The earned noun is a
+classical-output common-input direct-sum quantum instrument at the registered
+local sector, with branchwise D24/unitary carrier maps.  A coherent amplitude
+sum over alternative support graphs remains open.
+
+### 17.5 Birth answer
+
+The closing does not turn D24 into a uniqueness theorem.  It sharpens the
+factorization:
+
+```text
+local opportunity instrument: q_idle, q_birth, q_visit, q_fork and port choice;
+conditional newborn content:  D24 B_g on the selected birth alternative.
+```
+
+Q1 and Q2 satisfy the same causal, projective, actor, quantum and transport
+gates but retain
+
+```text
+P_Q1(A2 birth)=1/4, P_Q2(A2 birth)=1/5;
+P_Q1(A2 visit)=1/4, P_Q2(A2 visit)=3/10.
+```
+
+Therefore neither strong causal locality, no proper time, construction gauge,
+D24/D25/D27 reception, sealed records, diamonds nor the existing profinite
+work selects the numerical birth opportunity or coupling.  The “right birth
+kernel” known here is a valid family plus explicit unselected parameters, not
+one derived universal law.
+
+### 17.6 What a real time-free universe simulation still needs
+
+D35c is a real executable sampler of its supplied A-rooted family, but it is
+not yet a real root-free universe simulation.  It repeatedly asks A to open a
+call.  It never decides, from the physical law, whether A, B or another actor
+initiates an overlapping transaction.
+
+The corpus suggests the correct time-free replacement for a global next-event
+race.  For every finite causal diamond D and admissible boundary record b,
+specify a normalized local kernel
+
+```text
+gamma_D(interior marked history | boundary b).
+```
+
+The kernels must be local, covariant and compatible: sampling a larger
+diamond and restricting it to a smaller one must equal sampling the smaller
+one directly; two overlapping diamonds must give the same law on their shared
+region.  If those finite specifications are projectively consistent and
+tight/continuous at the required ceiling, they define a global history
+measure.  Then “A's next click” is a marginal of the finite diamonds whose
+upper seal is A2.  No global actor is selected to go next and no proper-time
+race is required.
+
+The current nested calls form a laminar, nonoverlapping special case, so their
+consistency is easy.  The next foundational problem is the overlap theorem for
+peer-initiated diamonds with births and shared quantum instruments.  That is
+where locality, diamonds, whole histories and the profinite finite-stem idea
+actually meet.  Profinite completion could preserve a compatible family; as
+Papers 4/8 and D3 already proved, it cannot choose the family or repair an
+incompatible one.
+
+### 17.7 Candidate decision
+
+Subject to independent closing review, D35c earns:
+
+```text
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+```
+
+It does not earn a selected history law, the right universal birth numbers, a
+root-free local universe simulation, proper time, Lorentzian geometry, v9
+cone/dimension implications, G or nature's interactive click law.
