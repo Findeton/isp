@@ -15,12 +15,12 @@ CASES = (
     (
         ROOT / "v10/code/d36_birth_coordination_exact.py",
         ROOT / "v10/data/d36_birth_coordination_exact.out",
-        "dad183c2e303b0315fa7f452ab1c197569d6983332696421d70f04ba5b3d0743",
+        "2a05f24529d716d6a8780d20ed5eba05fae6e3ac73ffdd490528b2be5b273683",
     ),
     (
         ROOT / "v10/code/d36b_actor_record_refinement_exact.py",
         ROOT / "v10/data/d36b_actor_record_refinement_exact.out",
-        "5813304446d267dc3d08f520f4db991bf6bdb94ae45b1f96a5e0cc2a094996ba",
+        "748128631ff32268a9d0f5c8f74306189a9d371752569e06f87f2a0c2ca0214a",
     ),
 )
 SEEDS = ("17", "104729")

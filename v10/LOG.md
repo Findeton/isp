@@ -3518,3 +3518,30 @@ scope row.  The actor-owned mailbox architecture and finite reference
 projection survive.  The actor-record verdict does not: exact-evidence and
 attempt authentication plus one genuine persistent continuation are required
 before another hostile delta or Paper 25.
+
+## 2026-07-14 — D36 round-two exact repairs execute (LEDGER #214)
+
+The rejected coordination header is retained only as a finite-state quotient.
+Physical signatures now commit the exact evidence record ID, a carrier-derived
+structural attempt ID and the participant's exact response-record binding.
+Attempt IDs propagate through authorizations, promises, envelopes and all
+post-carrier records.  Parent deletion, omitted-payload substitution,
+nonexistent-parent decision splice and two same-body/same-base cross-attempt
+replays join the hostile battery; all `13/13` attacks reject before mutation.
+
+The stale/rebase gate is no longer a set union.  Each carrier mode now runs one
+persistent actor world and ledger: the stale attempt aborts, then a distinct
+transaction actor opens on the actual terminal participant heads and commits.
+Both modes preserve the complete old prefix, pass the combined owned-wire and
+closure validators, place the old close below the new close, reject an old
+envelope after rebase and finish at participant version two.  The two ledgers
+contain 50 records in total.
+
+The reference's G20 row is explicitly labeled a static scope assertion, and
+the actor's 297,980 edge checks are explicitly representative coordination-
+quotient lifts; no full-history census or extra construction gauge is claimed.
+Reference, actor and external replay gates pass `22/22`, `12/12`, and `8/8`.
+New source/stdout identifiers are `2a05f24...273683`/`868c573...15c17` for
+the reference and `7481286...0214a`/`8ee46d5...fcf43` for the actor.  This is
+a repair candidate only; hostile closing delta remains mandatory and Paper 25
+is still withheld.

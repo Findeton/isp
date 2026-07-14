@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-2 HOSTILE DELTA OPEN; EXACT-EVIDENCE AND CONTINUATION REPAIR REQUIRED.
+**Status:** ROUND-2 REPAIRS EXECUTED; HOSTILE CLOSING DELTA REQUIRED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -877,3 +877,88 @@ single-attempt projection.  It does prevent the candidate actor-record verdict
 and Paper 25.  Repairs begin only from this frozen ledger: exact evidence and
 attempt authentication first, then one genuinely persistent stale/rebase
 history, then a new hostile closing delta.
+
+## 21. Exact-evidence and persistent-continuation repair
+
+The round-two blocker and major are now repaired in the executables, but not
+yet promoted past candidate strength.
+
+The actor companion separates two algebras that the rejected version had
+conflated.  `public_fields()` remains the reduced finite-state coordination
+label.  The physical signature instead commits:
+
+```text
+sender and recipient;
+transaction and participant address;
+body and protected base;
+stable route capability;
+carrier-derived structural attempt ID;
+participant response-record binding where applicable;
+exact carried record ID, which commits complete payload and parents.
+```
+
+The carrier-derived attempt ID is stored in the participant authorization,
+active promise, every envelope and every post-carrier record.  Each
+participant retains the exact response record for its attempt; a decision is
+accepted only when its attempt and participant-response binding match.  The
+coordination graph may still quotient those exact bytes, but authentication no
+longer does.
+
+The hostile battery expands from eight to thirteen cases.  In addition to the
+original forged, stale, replay and capability attacks, it now changes a
+record's parents under an unchanged signature, changes the payload field that
+the quotient deliberately omits, splices a decision onto a nonexistent
+parent, and replays same-body/same-base decisions across two different carrier
+attempts in both BORN and TOKEN modes.  All `13/13` reject before actor
+mutation or output-record creation.
+
+The stale/rebase exhibit is rebuilt as one world and one ledger per carrier
+mode.  A stale version-zero attempt begins on version-one participant actors,
+rejects and closes.  The version-one attempt is then opened on those exact
+terminal actors: participant heads, used-envelope sets, capability state and
+old record bytes persist.  The rebased attempt uses a distinct transaction
+owner and a new carrier descending from the old close.  In TOKEN mode its
+carrier additionally activates a dormant slot that existed before the first
+attempt.  Both complete ledgers pass parent-before-use, immutable-prefix,
+owned-wire and closure-ancestry validation:
+
+```text
+old-base abort                         2 / 2;
+rebased commit                         2 / 2;
+unchanged old prefix                   2 / 2;
+complete combined ledger valid         2 / 2;
+old close below new close              2 / 2;
+old envelope rejected after rebase     2 / 2;
+final participant version              2;
+combined records across both modes    50.
+```
+
+The reference checker now labels G20 honestly as a static failure-scope
+assertion.  The actor receipt likewise renames its `297,980` checks as
+**representative coordination-quotient edges**.  The 56 complete ledgers
+remain one path lift per terminal quotient state, not all full causal
+histories.  Same-transaction service-order histories are retained as
+potentially distinct physical histories; no new gauge claim is made.
+
+Fresh deterministic identifiers are:
+
+```text
+reference source  2a05f24529d716d6a8780d20ed5eba05fae6e3ac73ffdd490528b2be5b273683
+reference stdout  868c57325101f683c8cea58be1226a04ede361212c76e93471529e993e515c17
+reference science a373d10d90a6f3063aff02f06dcd92e62a6225981fef291272fbf38cd1e71314
+
+actor source      748128631ff32268a9d0f5c8f74306189a9d371752569e06f87f2a0c2ca0214a
+actor stdout      8ee46d53a1f392222b4e60e10ead369a831661f272120e090a2166985edfcf43
+actor science     c9fb8f5e75fb635f6dade6c2e176959d96a2451465d2813d4afe72ceb757f19d
+
+replay source     3cbf013bbb1766fbc8e304be33ebcec3d3783f8f5fedc6fc6b7f3a62e7c8ef95
+replay stdout     c69b25e39df2f7ac478643ec2a9716c02ff924c02636fcce6211d0c4d1dee94e
+```
+
+The reference returns `PASS 22/22`, the actor companion `PASS 12/12`, and the
+external checker `PASS 8/8` under hash seeds 17 and 104729.  The surviving
+scope is unchanged: this is a supplied finite, failure-free coordination
+family.  It does not select birth opportunity, participant discovery,
+arbitration, retry fairness, crashes, an unbounded history law, the quantum
+join or spacetime geometry.  Independent closing review must now attack only
+this delta; Paper 25 remains withheld.

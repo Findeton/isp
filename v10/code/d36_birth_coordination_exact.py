@@ -1396,7 +1396,7 @@ def main() -> None:
     science["failure_scope"] = [crash_blocking, unilateral_expiry]
     emit("[FAILURE / FAIRNESS SCOPE]")
     emit(
-        f"coordinator_loss_can_block_promise={crash_blocking}; "
+        f"static_scope_assertion=1; coordinator_loss_can_block_promise={crash_blocking}; "
         f"safe_unilateral_expiry_without_detector={unilateral_expiry}; "
         "positive_theorem_requires_failure_free_fair_delivery=1"
     )

@@ -1,5 +1,5 @@
 [D36b authenticated actor-record refinement — exact receipt]
-locked_reference_sha256=dad183c2e303b0315fa7f452ab1c197569d6983332696421d70f04ba5b3d0743
+locked_reference_sha256=2a05f24529d716d6a8780d20ed5eba05fae6e3ac73ffdd490528b2be5b273683
 SCOPE: supplied finite closed attempts; ideal authentication; no numerical time
 pair: reference=1113/2984/8; BORN=1113/2984/8; TOKEN=1113/2984/8; terminal_ledgers=8+8; edge_record_checks=2984+2984; max_records=26; max_parent_arity=2
 triangle: reference=34637/140028/17; BORN=34637/140028/17; TOKEN=34637/140028/17; terminal_ledgers=17+17; edge_record_checks=140028+140028; max_records=39; max_parent_arity=2
@@ -8,20 +8,20 @@ partial: reference=1517/5162/2; BORN=1517/5162/2; TOKEN=1517/5162/2; terminal_le
 [BORN / TOKEN OBSERVABLE ALGEBRAS]
 coordination_projection_equal_all_fixtures=1
 full_support_record_algebra_equal=0; birth_and_dormant_activation_remain_ontologically_distinct
-actor_graph_quotient=typed_authenticated_envelope_headers; every_edge_emits_checked_record_delta=1; one_complete_append_only_ledger_per_terminal_quotient_state=1
+actor_graph_quotient=typed_coordination_headers; exact_record_ids_signed_separately=1; every_representative_edge_emits_checked_record_delta=1; one_complete_append_only_ledger_per_terminal_quotient_state=1
 [AUTHENTICATION / REPLAY ATTACKS]
-reject_before_durable_mutation=8/8; forged_response=1; wrong_base=1; forged_decision=1; forged_ack=1; prepare_replay=1; duplicate_apply=1; unissued_capability=1; disconnected_lookalike=1
+reject_before_durable_mutation=13/13; forged_response=1; wrong_base=1; forged_decision=1; forged_ack=1; prepare_replay=1; duplicate_apply=1; unissued_capability=1; disconnected_lookalike=1; parent_deletion=1; omitted_field_substitution=1; nonexistent_decision_parent=1; same_base_cross_attempt_replay=2
 [DISJOINT SCHEDULER GAUGE]
-incomparable_two-service_diamonds=4; both_orders_same_world_and_ledger=1; history_family_sha256=976f58a047d3cc513a8a1491a141b57aeec807b8a1a7dc75719c94f162e85c5c
+incomparable_two-service_diamonds=4; both_orders_same_world_and_ledger=1; history_family_sha256=3c3a6d8f261d7a3c6245378d6fddedae7de4e5b0a0897a259d87c009546ac654
 [TWO-EPOCH STALE / REBASE CONTINUATION]
-old_base_abort=2/2; rebased_commit=2/2; final_versions=2; combined_records=52; rebase_link=ddf15673b05200fbef99886be741c2559a5a45adc94d3c908c76fe825928412d
+old_base_abort=2/2; rebased_commit=2/2; final_versions=2; same_world_prefix_preserved=2/2; combined_ledger_valid=2/2; old_close_below_new_close=2/2; stale_envelope_rejected=2/2; combined_records=50; lineage_carriers_sha256=098f4bd1ea3eb78371b50f23b6cc97bd4e49436a8e8fbc4ed48a3fa32d3ac5a3
 [OWNERSHIP / CLOCK SCOPE]
 participant_and_transaction_mailboxes_owned=1; network_only_selects_addressed_mailbox=1
 time_rate_duration_fields=0; serializer_step_is_not_physical_time=1
 [HASHES]
-source_sha256=5813304446d267dc3d08f520f4db991bf6bdb94ae45b1f96a5e0cc2a094996ba
-stdout_body_sha256=aff1bda30fdd4d7841a8bb248c8623c9ca2926c135bb3bf235b32cf6c58771d6
-internal_science_sha256=ab275cc69ef529bceba96c7cb484232a5c4b661e9cd1a902c695067bd04193a4
+source_sha256=748128631ff32268a9d0f5c8f74306189a9d371752569e06f87f2a0c2ca0214a
+stdout_body_sha256=f147e3afd77c81971a86136ebaa8e6add87bb0ce5988f4e5c152d66750757b47
+internal_science_sha256=c9fb8f5e75fb635f6dade6c2e176959d96a2451465d2813d4afe72ceb757f19d
 [GATES]
 A0=PASS
 A1=PASS
