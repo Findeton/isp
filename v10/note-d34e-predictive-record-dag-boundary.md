@@ -1,6 +1,8 @@
 # D34e — the predictive record-DAG boundary
 
-**Status:** preregistration before D34e receipt code.  **Date:** 2026-07-13.
+**Status:** historical pin through section 14; provisional receipt rejected by
+hostile round 1; replacement protocol frozen in section 16 before repair code.
+**Date:** 2026-07-13.
 
 **Parent:** Paper 21 section 10 at terminal commit `70e0b4d`.
 
@@ -453,3 +455,163 @@ controlled D34b-D34c process family.
 Three independent hostile streams are required before any provisional noun is
 promoted: predictive/probability/profinite; locality/record/capacity; and
 full-ancestry/quantum/process scope.
+
+## 16. Hostile round 1 and frozen replacement protocol
+
+The three independent reviews reproduced the provisional stdout exactly and
+found no counterexample to the histogram generator, the distributed-star
+construction, the B0/B1 obstructions, the all-radius ancestry idea, the
+component ceiling or the quantum refusal.  They nevertheless reject the
+provisional `11/11` and its theorem label:
+
+```text
+predictive/profinite: 0 blockers / 2 majors / 1 minor / 1 nit;
+boundary/locality:    0 blockers / 2 majors / 4 minors / 1 nit;
+ancestry/quantum:     0 blockers / 2 majors / 3 minors / 2 nits.
+```
+
+The following repairs are frozen before the replacement executable is edited.
+
+### 16.1 Time and stopping convention
+
+Branch C/L future records retain **elapsed time from the conditioning stop**,
+not an absolute construction timestamp.  Histories related by a common time
+translation are identified.  This is sufficient for the time-homogeneous
+Poisson law and avoids pretending that a continuously precise absolute clock
+is a finite record field.  A-own-ring and A-wire-event counts are appended to
+the actual projected carrier and updated in its generator rows.  Their hitting
+times use the inherited strong-Markov theorem for the complete boundary CTMC;
+the simple exponential gate refers only to the next full boundary transition.
+
+### 16.2 Finite predictive partition
+
+The registered finite state domain is the set of distinct coarse boundaries
+actually reached through global embedded depth four.  Horizon signatures are
+computed coinductively from output labels, exact rates and the **previous-
+horizon successor class**, aggregating rows entering the same class.  Raw
+successor states are forbidden in a predictive signature.  The separate
+synthetic 110-state family may be retained only as a named stress test; it is
+not called `D(N=4)`.
+
+### 16.3 Physical B3 schema and updater
+
+The B3 carrier at A is frozen as:
+
+```text
+A-owned carrier, own-ring/birth/wire counters and incident endpoint ports;
+one external endpoint row per current neighbor carrying its nominal role,
+current eligible degree and its locally owned birth ordinal;
+one shared edge identifier with two endpoint-port records;
+elapsed time from the conditioning stop, supplied as an update increment.
+```
+
+Nominal actor names are presentation labels.  Gauge maps fix the distinguished
+A role, transport old names and extend functorially to Ulam children.  The
+replacement receipt must implement an updater that consumes only the old B3
+carrier, elapsed/survival data and one typed local/passive/silent event; it
+must compare that update with direct projection of every enumerated full-state
+row.  It must also print the maps B3-to-B2 and B3-to-the-role-labeled quotient.
+
+### 16.4 Two covariance gates and typed composition
+
+Relabeling covariance and construction-order covariance are separate.  The
+receipt must check both actor/fresh-name transport and both serializations of
+every registered pair of disjoint write-support events.  The analytic theorem
+is that disjoint touched/created actor and event-record supports commute up to
+the same nominal-name transport; finite pairs are a regression.
+
+Composition treats an edge as one shared typed object and its two endpoint
+ports as separately owned incidence records.  Typed union must validate every
+duplicated edge field and exactly-once port ownership, reject corrupted
+duplicates, and agree with direct projection for every registered disjoint
+region pair, not one specimen.
+
+### 16.5 Complete fixed-radius carrier and Branch-F event
+
+For the obstruction, `C_r(h)` is the complete physical restriction owned by
+actors in the closed graph ball of radius `r`: full actor rows and endpoint
+ports; every event on an owned wire, including cross-cut events; complete event
+contents; and typed predecessor references, retained as opaque identifiers
+when the referenced event is not owned.  The carrier may not recursively
+dereference an opaque outside identifier, since that would cease to be a
+radius restriction.
+
+The two pasts put the differing immutable D-tip event wholly outside all owned
+wires, so their complete `C_r` values agree.  The common future query `E_r` is
+record-only and gauge-invariant:
+
+> at the next A-wire event reached by the structurally selected inward chain,
+> the durable ancestry contains that chain and its pre-existing remote
+> endpoint event has kind idle.
+
+The exact consecutive embedded path is a subcylinder.  Therefore the receipt
+must distinguish
+
+```text
+P(E_r | h_idle) >= p_r = [1/(8(r+3))]^(r+1) > 0,
+P(E_r | h_interaction) = 0
+```
+
+by immutability.  The fractions are embedded-chain lower bounds, not timed
+cylinder probabilities.  For a continuous interval `Delta>0`, an optional
+positive lower bound is obtained by multiplying `p_r` by the Erlang completion
+factor for the first `r+1` component rings; it is not needed as an equality.
+The theorem applies to this explicitly frozen complete radius-carrier family,
+not to every imaginable bounded encoding.
+
+### 16.6 Component, finite-unmarked and quantum scope
+
+The whole connected component is tested only as a sufficient growing upper
+bound.  Its recursive update and covariance follow from the pinned D34b
+independent-Poisson/no-joining theorem; disconnected invariance is licensed at
+continuous construction time and component-local stops, never fixed global
+event depth.  No necessity noun is allowed.
+
+The finite unmarked diagram is named exactly:
+
+```text
+(u_3 o r_(4->3))_* mu_4 = (u_3)_* mu_3,
+```
+
+where truncation occurs on the labeled committed prefix before marks are
+forgotten.  No unmarked `4 -> 3` restriction, completed-history or v9
+posterior theorem is inferred.  The intrinsic quantum branch pins the accepted
+finite D34c dependency but remains `REFUSAL/UNDEFINED` because the timed
+controlled D34b-D34c process and all-instrument kernels do not exist.
+
+### 16.7 Executable first-applicable decision rule
+
+Every branch is represented as `(mu,A,Q,I,S,C)` plus explicit screening,
+closure, covariance, composition, bounded-capacity, necessity, universal-
+exclusion and finite-domain flags.  The executable evaluates Paper 21's eight
+outcomes in their frozen priority order and asserts that the emitted row is the
+first applicable row.  Expected repaired dispositions are pinned as:
+
+```text
+C/L via B3:              ALL-FUTURE GROWING-CARRIER PASS / POINTWISE,
+F complete radius C_r:   NO EXACT REALIZATION IN THE DECLARED CARRIER CLASS,
+F whole component B4:    ALL-FUTURE GROWING-CARRIER PASS / POINTWISE
+                         (sufficient upper bound; no necessity),
+v9 posterior bridge:     REFUSAL/UNDEFINED beyond the finite diagram,
+intrinsic quantum:       REFUSAL/UNDEFINED.
+```
+
+The F-radius row is permitted only if the repaired `C_r` equality and common
+future-event proof quantify over every finite `r` in the frozen family.  The
+B4 row is not evidence that the whole component is necessary.  For C/L, the
+constructed B3 is unbounded; existence of a different bounded physical carrier
+and minimality remain open.
+
+### 16.8 Replacement gates
+
+The replacement receipt must fail closed on: chosen-law normalization;
+full-to-coarse and full-to-labeled generator projection including counters;
+B0/B1 witnesses; correct coinductive finite partitions; physical B3 recursive
+updates; relabeling covariance; disjoint-update covariance; typed composition
+and corruption rejection; capacity/identifier ledger; complete `C_r` plus
+`E_r`; component ceiling; the finite labeled-truncation/unmarked diagram;
+typed quantum refusal; and the executable first-applicable scorecard.
+
+No terminal paper is written until all three hostile streams review the
+replacement delta and every major finding is either closed or explicitly
+lowers the claim.
