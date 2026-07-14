@@ -361,3 +361,35 @@ This theorem does **not** construct the missing continuous-time direct integral,
 ### 15.5 Provisional verdict
 
 The maximum noun frozen in §14 is provisionally earned: `A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING PASS`, plus the algebraic finite-local-prefix induction for a chosen operation/flag family. It means the local actor events can generate the quantum alternatives rather than carrying an unrelated quantum subsystem beside them. It does not yet mean that the full D34b timed actor universe has a quantum history law. Three fresh hostile streams must now attack the replacement; this section is nonterminal until their delta is clean.
+
+## 16. d34c hostile round 2 (2026-07-13) — ACTION-LEVEL CORE ACCEPTED; D34b-MARGINAL WIDTH REJECTED
+
+**Independent streams:** quantum mathematics `0B/2M/4m/2n`; NSE/seal `0B/2M/5m/2n`; actor/history/locality architecture `1B/3M/3m/2n`. All three reran commit `d634f3d` under fresh salts and reproduced SHA-256 `a7cee72762f4244a57b5a698b3eb7172c8d1826bfa52effe37625b1e4c843720`. No exact fraction, branch count, rank, interference value or restriction equality was falsified.
+
+### 16.1 What survives
+
+The round-1 spectator blocker is closed. Birth, interaction and idle select and compose different operations on the named actor carriers. The D24 `9/200` birth witness, interaction interference, factorized finite-depth flag Gram form, classical shadows and genuine `108->10` second-instrument restriction are exact. The diamond, explicit receiver equivalence, strongly positive functional, scoped R-quarantine, abstract Busch lemma and negative controls also survive.
+
+### 16.2 The common rejection
+
+“Incoming receptions coarse-grained” is false. The executable suppresses every non-A-initiated event. A positive-measure incoming `i(B,A)` in D34b changes A's wire predecessor, durable record and quantum carrier without advancing A's private ring. Deleting that event is neither conditioning disclosed in the noun nor marginalization. Therefore §§14–15 and LEDGER #168 do not establish the A-local stopped marginal of the timed D34b process.
+
+The honest current noun is only `CONSECUTIVE-A-INITIATED DEPTH-2 ACTION-SEWING WITNESS`, conditional on no intervening incoming touched-wire event. The broader D34b-marginal wording is withdrawn pending an actual continuous-time/infinite-sum construction.
+
+### 16.3 Other repairs forced by the round
+
+1. **Finite record capacity:** append-only actor mailboxes cannot support the all-finite-prefix theorem. Every event must instead create a fresh bounded-capacity durable event-record factor, linked to the touched actor wires. Old event factors remain support-excluded; an actor need retain only its current wire tip, not an ever-growing local evidence register.
+2. **Correct instrument typing:** for scheduler option `x`, durable result `r=(s,o)` and coherent internal path `p`, define `C_(x,r,p)`, `K_(x,r)=sum_p C_(x,r,p)`, and the flagged event isometry `W_x=sum_r |record(x,r)> tensor K_(x,r)`. The required identities are `sum_r K_(x,r)^dag K_(x,r)=I`, hence `W_x^dag W_x=I`, followed by `sum_x q_x W_x^dag W_x=I`. Durable-result operators are not individually isometries. These identities must be operator-gated for arbitrary inputs, not inferred from one initial vector.
+3. **Physical reception and merge:** construct an incoming `i(B,A)` that changes A's wire/carrier but not A's private ring, then construct independent A and B tips followed by `i(A,B)` with both direct predecessors. The two serializations of the incomparable first events must give the same carrier state, event-record product and typed DAG after serialization is erased.
+4. **Actual remote actor factor:** use a disconnected `P--Q` actor pair with the same birth/interact/idle operation family. Gate both event orders, tensor-channel factorization and local marginal invariance; the abstract C6 `I/X/Z` surrogate no longer earns the actor-level clause.
+5. **Gate hardening:** compare durable-signature and event-record partitions both ways; fail closed on the frozen census and incidence-column structure; carry the symbolic all-positive-`m` normalization proof; distinguish a branchwise receiver embedding from a literally time-ordered receiver circuit.
+
+### 16.4 Replacement scope pinned before code
+
+The repair does **not** pretend to perform the unbounded incoming-event marginal before A's second private ring. Instead it changes the structural theorem to the object the finite construction can honestly support:
+
+> Given any finite typed D34b wire-DAG, preparation-independent scheduler weights, touched-carrier event instruments of the correctly typed form above, and one fresh bounded durable event-record factor per event, the associated class-operator functional is strongly positive and consistent under finite down-set restriction. Operations on record-disjoint incomparable events commute; shared-wire order and predecessor merges remain physical.
+
+The exact receipt must instantiate this theorem on: the original consecutive-A tree; an incoming-reception cylinder; a two-tip merge diamond; and two disconnected actor components. This supplies finite typed-DAG compatibility, not the probability marginal over all timed D34b histories.
+
+**Maximum repaired noun:** `FINITE TYPED-DAG ACTOR/QUANTUM SEWING PASS WITH BOUNDED EVENT RECORDS`, plus the conditional finite-down-set induction theorem. **Still open:** the operator-valued timed/direct-integral lift of the complete D34b measure; the actual infinite incoming-reception marginal; intrinsic untimed/profinite restriction; graph-sector superposition; derived weights, operations, basis or NSE; sealing, joining, geometry and nature's law. A fresh three-stream delta is mandatory.

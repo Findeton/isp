@@ -2531,3 +2531,19 @@ PROVISIONAL maximum noun: A-LOCAL DEPTH-2 ACTOR/QUANTUM SEWING + finite-local-
 prefix induction. Full timed direct integral, untimed inverse system, graph-sector
 superposition, derived weights/operations/basis, joining, geometry and nature's
 law remain open. Fresh three-stream hostile review is mandatory; findings -> #169+.
+
+## 2026-07-13 — d34c round 2: action-level core accepted, D34b-marginal width rejected (LEDGER #169)
+Three independent streams reproduced the exact receipt/hash with zero false
+numbers: quantum math 0B/2M/4m/2n; NSE/seal 0B/2M/5m/2n; architecture
+1B/3M/3m/2n. The spectator defect is closed and the true 108->10 action-level
+restriction survives. Shared rejection: incoming i(B,A) receptions have positive
+D34b measure and change A's wire, record and carrier; the code suppresses them
+rather than coarse-graining them. Current noun narrows to a consecutive-A-
+initiated conditioned witness. The all-prefix theorem also used unbounded actor
+mailboxes and mis-typed durable outcomes as isometries; actor-level remote/gauge
+tests were abstract surrogates. Repair pinned in note-d33 §16 before code:
+fresh bounded event-record factors; C_(x,r,p)->K_(x,r)->W_x operator identities;
+incoming reception; independent-tip merge; actual disconnected actor pair;
+partition/census/incidence/all-m hardening. New maximum noun is FINITE TYPED-DAG
+ACTOR/QUANTUM SEWING WITH BOUNDED EVENT RECORDS. The complete timed D34b quantum
+measure and infinite incoming marginal remain explicitly open. Findings -> #170+.
