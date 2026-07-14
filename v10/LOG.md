@@ -3731,3 +3731,15 @@ quantum join (+ the D31/D32 cancellation census). All repairs
 wording/scope — no receipt touches. Repairs to be applied as
 authorship per house style; the independent paper-level stream
 remains open.
+
+Authorship application: Paper 25 now cites D26's exact
+`sqrt(1-g)` one-parent birth shadow, states the conditional visibility
+and retry-coherence budget without inventing a register-to-laboratory
+rate, realizes arbitration marks as recorded click outcomes, and leaves
+the action-to-history bridge explicit. It also disambiguates `Close(T)`
+from a V6 dispersal seal and preregisters D23's multi-input
+identifiability boundary plus the D31/D32 cancellation census for any
+future quantum join. The service-order cross-reference and status noun
+are harmonized. Review-round cataloguing has been removed from the paper
+body per house style. No executable, receipt or printed count changed;
+the independent paper-level stream remains open.

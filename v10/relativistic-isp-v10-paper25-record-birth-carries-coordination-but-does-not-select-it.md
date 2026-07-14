@@ -4,8 +4,8 @@
 
 ## A clock-free append-only transaction protocol, a finite-horizon eliminability theorem, and the missing arbitration law
 
-**Status:** COORDINATOR-CLOSED CANDIDATE after terminal D36 and one disclosed
-self-hostile paper review; independent paper-level review remains open.
+**Status:** COORDINATOR-LINEAGE REVIEWED CANDIDATE after terminal D36;
+independent paper-level review remains open.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -48,7 +48,17 @@ causal evidence.  It does not supply the protocol's finite-horizon
 coordination power.  That power lies in the exclusive fail-fast reservation
 and causal closure structure.
 
-A five-round repair campaign removes three hidden global oracles: exact
+The full corpus already supplies a stronger physical discriminator.  If a
+BORN transaction carrier is realized by D24/D26's one-parent birth instrument
+at nonzero coupling `g`, the initiator's reduced coherence is multiplied by
+exactly `sqrt(1-g)` per birth.  The matched TOKEN executable contains no birth
+isometry.  In a quantum matched control where dormant activation is
+coherence-neutral, it has no such shadow.  BORN/TOKEN equivalence is therefore
+not only broken by record identity: on this admitted quantum carrier
+realization it is broken by a laboratory visibility observable.  This bridge
+prices birth-bearing retry lineages without changing any classical D36 gate.
+
+The structural repair campaign removes three hidden global oracles: exact
 evidence must be signed; a continuation must grow one persistent ledger; and
 participant per-attempt entries plus transaction routing must be keyed by the
 carrier-derived structural attempt rather than a global transaction ordinal.
@@ -66,7 +76,8 @@ broader hard-core regional statistical family also survives but need not make
 progress.  Raw regional restriction fails without boundary data, and pairwise
 overlap consistency does not guarantee a joint finite-cover law.  Birth
 opportunity, batch closure, arbitration, retry fairness, crash recovery,
-quantum joining and root-free history completion remain extra physics.
+the action-to-history bridge, quantum joining and root-free history completion
+remain extra physics.
 
 The terminal D36 result is therefore neither “birth is merely notation” nor
 “birth solves distributed coordination.”  Its exact statement is:
@@ -418,6 +429,11 @@ wires; Close does not retroactively mutate them or become their common wire
 successor.  It is T's causally justified summary of the completed protocol
 diamond.
 
+Here “Close,” “closure seal” and “upper seal” name only this causal upper
+summary.  `Close(T)` is not a V6 dispersal seal: it carries no seal rate
+`sigma`, Bhattacharyya-coefficient attenuation or quarter-law
+`-ln BC = sigma/4` semantics.
+
 The implementation is therefore macro-atomic only as a completed history.
 Intermediate partial-application records are physical and appear in the
 reference state graphs.  A primitive one-step multiwire oracle would hide
@@ -529,6 +545,9 @@ The 297,980 edge checks are one authenticated causal representative per
 coordination-quotient edge.  The 56 ledgers are one complete path lift per
 terminal quotient state.  They are not a census of every exact record history;
 different same-actor service orders may produce distinct valid record IDs.
+Section 9.3 supplies the explicit two-history gate: reversing the locally first
+prepare changes the winning attempt and its exact record history while both
+attempts still receive typed responses and close.
 
 ### 7.3 Negative authentication battery
 
@@ -593,12 +612,43 @@ contains a pre-existing dormant slot and activation.  Their exact record
 identities and ancestry are observably distinct.  No isomorphism of complete
 record algebras is claimed.
 
+D26 supplies a dynamical discriminator when the classical carrier is lifted
+through its admitted one-parent birth instrument.  Tracing out the newborn
+multiplies the parent's coherence by exactly
+
+```text
+c(g) = sqrt(1-g),
+```
+
+for arbitrary mixed or entangled parents, multiplicatively over successive
+births.  Thus a BORN carrier with `g>0` leaves an anomalous-decoherence shadow
+on the initiator degree of freedom.  A TOKEN activation that merely activates
+pre-existing capacity and is coherence-neutral contributes factor one.  The
+distinction is then laboratory-class and dynamical, not only bookkeeping in
+record IDs.
+
+This statement is a conformance bridge, not a hidden quantum completion of
+D36.  The classical TOKEN executable has no Hilbert-space activation map, and
+a different physical activation dynamics would have to declare and test its
+own shadow.  D26 also supplies no universal register-to-laboratory dictionary
+or quantitative retry rate.  What is exact is the conditional visibility law:
+after `N` birth-bearing carriers on the probed interfering degree of freedom,
+
+```text
+V_N / V_0 = (1-g)^(N/2).
+```
+
+Consequently the finite-horizon qualifier has physical content.  At every
+monitored horizon with `N>0` and `g>0`, the D26 realization distinguishes BORN
+from coherence-neutral TOKEN even though the D36 coordination quotient cannot.
+
 The conclusion is therefore asymmetric:
 
 ```text
 birth is useful physical carrier structure             yes;
 birth is the source of P4's audited coordination power no;
 birth is eliminable from every record observable       no;
+birth is eliminable from D26 visibility observables    no, for g>0;
 birth is eliminable in an unbounded universe           not proved.
 ```
 
@@ -680,6 +730,20 @@ Therefore a nonempty safe deterministic winner requires physical asymmetry,
 or the law must be stochastic.  A fresh nominal spelling is not acceptable
 asymmetry because relabeling can move it.
 
+The corpus-conforming candidate for that stochastic input is a **recorded
+click outcome**, not an external coin or the simulator's mailbox order.  K1's
+component order could be carried by one finite `n!`-outcome arbitration click,
+or constructed from recorded finite marks with every tie and retry retained.
+The `b`-bit retry cell can use `b` recorded binary outcomes per contender.  A
+quantum realization must receive those outcome distinctions through the same
+NSE-compliant record interface as every other physical click.
+
+This identifies where randomness may live without selecting its law.  Once a
+complete history functional is supplied, its click conditionals already give
+the arbitration probabilities; there is no second lottery.  D36 does not
+derive the relevant instrument, its coupling or its outcome weights, so K1,
+K2 and K3 remain alternative supplied kernels.
+
 ### 10.2 K1 — component-local random order
 
 On each connected conflict component, sample a strict proposal order uniformly
@@ -735,6 +799,29 @@ feasibility and disjoint-factorization requirements do not uniquely select an
 arbitration law.  K1 and K2 already separate on the path; K3 supplies a wider
 unselected activity family.  P4 safely realizes a supplied selected attempt
 set or supplied delivery history but does not choose its distribution.
+
+### 10.6 The action-to-history bridge remains open
+
+Paper 16 fixes the conformance condition.  A supplied complete classical
+history measure or decoherence functional already determines `q_birth`, K1,
+K2, K3 and every other licensed click conditional.  A local action alone does
+not select that functional: boundary state, orbit/gauge measure or contour,
+record instruments and continuation data remain part of the rulebook.
+
+Paper 18's `S(I)=exp(-I)` is likewise a survival law for a supplied
+opportunity, not a selector of the opportunity or interaction.  Paper 25
+therefore leaves an explicit action bridge open:
+
+```text
+either  q_birth and the arbitration kernels are derived as conditionals of
+        one projective whole-history functional built from the D15 action
+        packet and its required boundary/measure/record data;
+
+or      they are separately posited additions, and the break from action-level
+        selection is declared rather than hidden.
+```
+
+The present finite kernels establish neither arm.
 
 ## 11. Batch closure, restriction and overlap
 
@@ -801,6 +888,25 @@ resolution and expected attempts follow only after the continued retry
 opportunity is supplied.  The worst-case number of bounded retry records is
 unbounded.
 
+Birth-bearing retries are not physically free under the D26 realization.  If
+each retry creates a new BORN carrier with the same nonzero `g` on the same
+probed interfering degree of freedom, define the measured coherence cost
+
+```text
+B_N = -ln(V_N/V_0) = N[-(1/2) ln(1-g)].
+```
+
+An experimental visibility budget `B_N <= B_max` therefore bounds the allowed
+product of retry-birth count and coupling.  A coherence-neutral TOKEN retry
+does not pay this particular birth cost.  This is a falsifier-grade difference
+between the carrier ontologies that the classical coordination receipt cannot
+see.
+
+It is not a universal numerical retry-rate prediction.  Translating the bound
+to a rate needs a register-to-system dictionary, a monitored dwell interval
+and separation from ordinary environmental decoherence.  D26 supplies the
+functional form and parent/attachment selectivity, not those extra data.
+
 ### 12.2 Failure-free is load-bearing
 
 If a transaction coordinator disappears after participants grant, their
@@ -849,12 +955,34 @@ proof or entangled joining map is supplied for that protocol.
 Therefore `proposal_birth_one_parent=1` and `quantum_join_derived=0` must remain
 together.  A quantum realization is a separate investigation.
 
+That investigation begins with two inherited preregistrations.  First, D23's
+click-identifiability theorem is exact on rooted controlled-rotation trees but
+has an in-degree-`>=2` boundary: angle addition breaks the cascade
+reconstruction and leaves relative coupling signs invisible to the same
+Z-click data.  A transaction join has precisely the multi-input shape that can
+cross this boundary.  Its graph and couplings may therefore be only partially
+click-identifiable unless the future specification adds richer instruments.
+
+Second, D31 distinguishes structural dependency from operational influence:
+repeated same-pair interactions can cancel at the pinned observable alphabet.
+D32's registered cancellation-capable census uses the `>=7` ordered
+same-pair-touch threshold at the grown single-angle alphabet; when the
+`576/625` third-gate coupling is admitted, the necessary threshold can fall to
+six, or five when the birth rotation also participates.  These thresholds are
+alphabet-specific diagnostics, not universal constants.  Any quantum lift of
+P4 must carry or rerun this cancellation census rather than infer operational
+influence from transaction ancestry alone.
+
 ### 13.3 Birth remains physical
 
 The eliminability theorem is about one coordination quotient.  In the full
 record ontology, a born support can participate in other future observables,
 carry quantum content, change capacity and seed new causal descendants.  None
 of those observables is erased by the finite matched control.
+
+Section 8.3 makes one such observable explicit: under the D26 carrier
+realization, BORN changes the initiator's measurable visibility by
+`sqrt(1-g)` per birth while coherence-neutral TOKEN does not.
 
 The correct interpretation is not “birth is fake.”  It is:
 
@@ -979,10 +1107,14 @@ Does a skipped global transaction address work?        yes, through full close
 Do disjoint insertions change exact local records?      no, in the audited cell
 Are BORN and TOKEN full record algebras identical?      no
 Are their audited coordination quotients equivalent?   yes
+Can D26 visibility distinguish BORN from TOKEN?         yes, conditionally for g>0
 Is arbitration selected?                               no
+Is corpus-conforming arbitration randomness recorded?  yes, as click outcomes
+Are q_birth/K1/K2/K3 derived from the action packet?    no; bridge open
 Is retry fairness derived?                             no
 Are crashes handled?                                   no
 Is the quantum join derived?                           no
+Is the future join fully Z-click identifiable?          not guaranteed at in-degree >=2
 Is a root-free global history law completed?           no
 ```
 
@@ -1007,7 +1139,9 @@ while agreeing in the audited coordination quotient.  The protocol's work is
 performed by exclusive version-bound promises, fail-fast typed rejection, a
 unique decision, local application and acknowledgement closure.  Even that
 protocol does not tell nature which opportunity appears or which contender
-wins.
+wins.  Under the D26 quantum carrier realization the distinction is also
+measurable: each nontrivial BORN carrier spends initiator coherence while
+coherence-neutral TOKEN does not.
 
 The strongest candidate noun is therefore:
 
@@ -1025,80 +1159,36 @@ geometry, dimension, units or gravitational coupling.
 The next constructive target is the one D36 deliberately leaves exposed: an
 oriented overlap-consistent regional history specification that supplies
 opportunities and arbitration, agrees on every finite cover, admits a global
-completion and can then be tested for a genuine quantum realization.  Only
-after that architecture exists can record birth be assessed as part of a
-root-free universe law rather than as the carrier of one supplied finite
-coordination diamond.
-
-## 19. Paper-level hostile review and repair
-
-The candidate draft was frozen at `64f0bf9` and subjected to one disclosed
-coordinator self-hostile review:
-
-```text
-blockers  0
-majors    2
-minors    3
-nits      1
-```
-
-The report is
-`reviews/paper25-round1-coordinator-hostile-review.md`.  It is not represented
-as an independent lane.
-
-The two majors were paper-scope failures, not failures of D36's safety core.
-First, the decision table conflated sparse participant per-attempt state and
-structural transaction routing with participant actor identity.  The repaired
-paper now states that participant roles are a fixed supplied interface
-addressed by role index and capability; participant discovery and insertion
-covariance are unproved.  Second, the disjoint comparator removed Q's actor,
-carrier and mailboxes but retained Q-specific predictive entries on remote C/D
-actors.  The strengthened committed gate removes those entries too.  A13's
-exact tuple, 13-record restriction and family hash remain unchanged; actor and
-replay receipts remain `PASS 14/14` and `PASS 8/8`.
-
-The minor repairs position D36 against Gray--Lamport transaction-commit
-background without importing fault tolerance, distinguish K1/K2 progressing
-arbitration from nonprogressing K3, and identify authorization tables as
-derived caches rather than an unimplemented record kind.  The nit now calls
-the transaction collection a tuple representation of a finite keyed registry.
-
-The strongest paper status after these repairs is **coordinator-closed
-candidate**, not independently terminal.  The theorem and receipts are frozen;
-an independent paper-level hostile stream may still challenge the synthesis.
-
-## 20. Coordinator closing delta
-
-The focused delta
-`reviews/paper25-round2-coordinator-closing-delta.md` checks repaired manuscript
-commit `6424361` and strengthened D36 commit `4282521`.  It reproduces the
-reference, actor and replay receipts, verifies all six frozen dispositions and
-returns:
-
-```text
-blockers  0
-majors    0
-minors    0
-nits      0
-```
-
-Both paper review rounds disclose coordinator authorship.  The clean delta
-therefore closes the internal hostile loop requested for this draft, but does
-not impersonate independent acceptance.  Paper 25 remains a
-**coordinator-closed candidate** at the exact noun and nonclaims stated above.
+completion and is shown either to descend from one action/history functional
+or to break from it explicitly.  Its quantum realization must use recorded
+click outcomes for arbitration, respect D23's multi-input identifiability
+boundary and carry D31/D32's cancellation census.  Only after that architecture
+exists can record birth be assessed as part of a root-free universe law rather
+than as the carrier of one supplied finite coordination diamond.
 
 ## References
 
-1. Relativistic ISP v10 Paper 19, *The complete interactive record law at the
+1. Relativistic ISP v10 Paper 15, *From action to records without a global
+   clock*.
+2. Relativistic ISP v10 Paper 16, *The rulebook is the history law, not the
+   action alone*.
+3. Relativistic ISP v10 Paper 18, *No silent erasure and the identified click
+   law*.
+4. Relativistic ISP v10 Paper 19, *The complete interactive record law at the
    declared interface*.
-2. Relativistic ISP v10 Paper 21, *Local generators do not imply local
+5. D26 interface note, `note-d26-interface-equivalence-closure.md`.
+6. Relativistic ISP v10 Paper 21, *Local generators do not imply local
    memory*.
-3. Relativistic ISP v10 Paper 22, *The predictive record-DAG boundary*.
-4. Relativistic ISP v10 Paper 23, *The whole component is the exact ancestry
+7. Relativistic ISP v10 Paper 22, *The predictive record-DAG boundary*.
+8. Relativistic ISP v10 Paper 23, *The whole component is the exact ancestry
    boundary*.
-5. Relativistic ISP v10 Paper 24, *A's next click is the upper seal of a causal
+9. Relativistic ISP v10 Paper 24, *A's next click is the upper seal of a causal
    call diamond, not the winner of a clock race*.
-6. D36 terminal note, `note-d36-record-birth-causal-coordination.md`.
-7. J. Gray and L. Lamport, *Consensus on Transaction Commit*, ACM Transactions
+10. D23 interaction-identifiability note,
+   `note-d23-click-identifiability-and-the-real-interaction-graph.md`.
+11. D31 and D32 notes, `note-d31-stationarity-nogo-and-the-two-causal-structures.md`
+    and `note-d32-dimension-map.md`.
+12. D36 terminal note, `note-d36-record-birth-causal-coordination.md`.
+13. J. Gray and L. Lamport, *Consensus on Transaction Commit*, ACM Transactions
    on Database Systems 31(1), 133--160 (2006), MSR-TR-2003-96;
    [Microsoft Research publication page](https://www.microsoft.com/en-us/research/publication/consensus-on-transaction-commit/).

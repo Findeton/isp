@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D36 / Paper 25 (coordinator-closed candidate; independent review open)
+## Latest — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
 
 D36 supplies the first authenticated actor-record realization of overlapping
 finite transaction attempts in V10.  Exclusive version-bound promises,
@@ -25,15 +25,26 @@ durable carrier, but the protocol's coordination power comes from exclusive
 fail-fast reservation and causal closure, while opportunity and arbitration
 remain unselected.  K1 and K2 disagree on the path, K3 remains a supplied
 regional family, raw restriction needs boundary data and pairwise overlap does
-not guarantee a joint cover law.  Retry fairness, crash recovery, participant
-discovery, quantum joining, root-free completion and spacetime consequences
-remain open.
+not guarantee a joint cover law.  Under D26's admitted quantum carrier bridge,
+each nontrivial BORN carrier also contracts the initiator's coherence by
+`sqrt(1-g)`, whereas a coherence-neutral dormant TOKEN control has no such
+shadow.  Birth-bearing retries are therefore physically priced, although D26
+does not supply a universal retry rate.
 
-One disclosed coordinator self-hostile review returned `0B/2M/3m/1n`; all
-findings were repaired, including a pure absent-Q strengthening, and the
-focused coordinator delta closes at `0B/0M/0m/0n`.  This is not represented as
-independent paper acceptance.  The paper's status is therefore
-**COORDINATOR-CLOSED CANDIDATE**, not terminal accepted.
+Corpus-conforming arbitration randomness must enter as durable click outcomes,
+not an external coin or service order.  Whether `q_birth` and K1/K2/K3 descend
+as conditionals of one complete action/history functional remains open.  A
+future quantum join must also respect D23's in-degree-`>=2` identifiability
+boundary and rerun D31/D32's alphabet-specific cancellation census.  Retry
+fairness, crash recovery, participant discovery, quantum joining, root-free
+completion and spacetime consequences remain open.
+
+The coordinator authorship loop closed at `0B/0M/0m/0n`.  A subsequent
+separate-session coordinator-lineage audit returned `0B/1M/4m/2n`, verified
+every printed number and produced only wording and scope repairs, including
+the D26 physical discriminator above.  Neither lane is represented as
+independent paper acceptance.  Paper 25 is therefore a
+**COORDINATOR-LINEAGE REVIEWED CANDIDATE**, not terminal accepted.
 
 - `note-d36-record-birth-causal-coordination.md`
 - `relativistic-isp-v10-paper25-record-birth-carries-coordination-but-does-not-select-it.md`
@@ -46,6 +57,7 @@ independent paper acceptance.  The paper's status is therefore
 - `reviews/d36-round6-ancestry-terminal-delta.md`
 - `reviews/paper25-round1-coordinator-hostile-review.md`
 - `reviews/paper25-round2-coordinator-closing-delta.md`
+- `reviews/paper25-round3-separate-session-review.md`
 
 ## Latest — D35 / Paper 24 (terminal accepted at rooted scope)
 
