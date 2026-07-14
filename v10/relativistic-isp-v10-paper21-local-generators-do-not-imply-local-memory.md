@@ -5,8 +5,9 @@
 ## Predictive states, observable non-Markovianity and construction clocks in SHARD
 
 **Status:** D34d scientific core terminal accepted after three independent
-hostile streams and three clean deltas; the new exact-next-target section is
-awaiting a focused delta audit. **Date:** 2026-07-13.
+hostile streams and three clean deltas; the first exact-next-target pin was
+hostile-rejected and the repaired pin awaits focused delta audit. **Date:**
+2026-07-13.
 
 ## Abstract
 
@@ -570,149 +571,300 @@ It does not settle:
 The cone/dimension campaign should consume a future completed interacting law
 only after those missing structures are made explicit.
 
-## 10. Exact next target: the predictive causal boundary
+## 10. Exact next target: the predictive record-DAG boundary
 
 The next investigation must not begin by declaring that one record, a fixed
-graph-radius neighborhood or an intuitively drawn shell is the state. The
-canonical object is fixed first by the chosen law and the future questions;
-only afterward may one prove that this object has a physical carrier on a
-causal boundary.
+graph-radius neighborhood or an intuitively drawn shell is the state. It must
+first type the law and future questions, construct the resulting predictive
+quotient, and only then ask whether current records on an active interface
+realize it. “Causal boundary” below means a boundary in the record/wire causal
+DAG. It does not mean a spacetime light cone, Lorentz covariance, finite
+propagation speed or physical proper time.
 
-### 10.1 Law-relative regional predictive quotient
+### 10.1 Passive and operational scopes are different inputs
 
-Fix:
-
-- a complete marked history law `mu` and a version of its conditional laws;
-- a declared region `A` at an admissible construction-time stopping scope;
-- a class `Q_A` of licensed future interventions and readouts involving A;
-- typed identifications whenever two candidate histories have differently
-  named but isomorphic interfaces.
-
-For complete marked pasts `h` and `h'`, define
+The first D34e branch is **passive D34b prediction**. Fix the supplied marked
+history measure `mu`, its completed natural filtration, a declared region `A`,
+a stopping algebra `S`, and a measure-determining class `E_A` of licensed
+future events/readouts. A chosen regular conditional kernel is
 
 ```text
-h ~_(mu,A,Q) h'
-    iff
-Law_mu(q | h) = Law_mu(q | h')  for every q in Q_A.
+K_(tau,A)(h,E) = mu(future of A lies in E | F_tau)(h),  E in E_A.
 ```
 
-The class `[h]_(mu,A,Q)` is the canonical regional predictive state at that
-scope. It is law-, query- and instrument-relative. It is not automatically a
-record, graph neighborhood, stem type or finite object. Null histories require
-the already declared conditional version rather than an arbitrary ratio.
+This kernel is canonical only `mu`-almost surely. If pointwise claims on all
+legal configurations are needed, the generator or controlled kernel must be
+declared there independently. Exact counterexamples must use reachable
+positive-cylinder pasts or that declared pointwise kernel, never arbitrary
+values assigned to a null history.
 
-### 10.2 What would make a collar sufficient and minimal
-
-Let `B_A(h)` be a candidate message encoded in current records on a declared
-active collar. It is **sufficient** only if
+An **operational or quantum branch** requires more input. A passive `mu` does
+not determine the response to a deliberately applied intervention. Supply a
+causal family `{K^I_(tau,A)}` indexed by licensed classical policies or quantum
+instrument sequences `I`. With typed ports and durable outcome words `r`, the
+operational data are
 
 ```text
-B_A(h) = B_A(h')  implies  h ~_(mu,A,Q) h'.
+P(r | I,h) = K^I_(tau,A)(h,{r}).
 ```
 
-Equivalently, the predictive quotient must be recoverable from the boundary
-message. A sufficient carrier may store redundant information. It is an exact
-minimal realization only when the converse also holds, up to declared carrier
-relabeling or gauge.
+The declared instrument family must state whether adaptive choices and
+entangled ancillas are allowed. A future D34b-D34c process object could supply
+these kernels; notation alone cannot derive them from the passive D34b law.
 
-“Record-carried” is a physical restriction, not a license to hide the whole
+Stopping scope is part of the quotient. D34e must preregister separate algebras
+for fixed construction time, A-own-ring count and A-wire-event count, the last
+including passive receptions. Fixed global event depth is an auxiliary
+enumeration control and a locality-negative control, not a regional stopping
+rule. Every predictive class and carrier witness must print its law,
+region/query, intervention and stopping scopes.
+
+### 10.2 Predictive quotient and measurable boundary factorization
+
+At the passive scope define
+
+```text
+h ~pred h'  iff
+K_(tau,A)(h,E) = K_(tau,A)(h',E)  for every E in E_A.
+```
+
+At the controlled scope replace `K` by every supplied `K^I`; equivalently
+require `P(r|I,h)=P(r|I,h')` for every licensed `I,r`. Typed
+identifications are required when two realized interfaces have different names
+but are isomorphic. The class `[h]_pred` is law-, region-, query-, instrument-
+and stopping-relative. It is not automatically a record, graph neighborhood,
+stem type or finite object.
+
+Let `B_A(h)` be a measurable encoder into a declared finite or standard-Borel
+carrier space. It is sufficient only when measurable kernels `Kbar^I` exist
+such that
+
+```text
+K^I_(tau,A)(h,.) = Kbar^I_(tau,A)(B_A(h),.)  mu-a.s.
+```
+
+for every licensed `I`; omit `I` in the passive branch. Setwise, this implies
+`B_A(h)=B_A(h') => h~pred h'`. A sufficient carrier may store redundant
+information. It is an exact minimal realization only if the converse also
+holds on its realized support, up to a measurable carrier relabeling and
+declared gauge.
+
+### 10.3 Predictive screening is not physical erasure
+
+“Record-carried” is a physical restriction, not permission to hide the whole
 past in one arbitrary real number. The encoder and update must use declared
-record types, ports, ranks and ownership rules; every continuous or unbounded
-field must be disclosed explicitly, and finite per-click content must not be
-promoted to a uniform boundary-capacity theorem. The active collar may include
-open wire tips, cross-cut factor scopes, eligible incident actors, renewal ages
-when the clock law needs them, and quantum carrier legs when the licensed
-instruments can detect them. Deep sealed records may be eliminated only after
-every influence they can have on licensed futures is exported into the
-message. This is the predictive form of no silent erasure.
+record types, ports, ownership rules and carrier resources. Every continuous
+or unbounded field must be disclosed, and finite per-click content must not be
+promoted to a uniform boundary-capacity theorem.
 
-### 10.3 Desired theorem—or exact obstruction
+Two ledgers remain separate:
 
-For the chosen interacting law, the desired predictive-boundary theorem would
-construct `B_A` and prove all of the following:
+```text
+omit a sealed record from B_A
+    allowed after predictive screening is proved; the record still persists
+    in the complete global history,
 
-1. **screening:** the complete past affects every licensed future of A only
-   through `B_A`;
-2. **recursive closure:** after a licensed event `e`, the new boundary state is
-   obtained from the old boundary state and the records touched or created by
-   `e`, without rereading a hidden global history;
-3. **construction covariance:** disjoint incomparable updates give the same
-   physical boundary state in either construction presentation;
-4. **composition:** adjacent regional messages compose by the typed collar
-   contraction rules without duplicate ownership or invented factors;
-5. **minimality:** equality of boundary states agrees with predictive
-   equivalence, or the precisely measured redundancy is reported;
-6. **capacity:** boundary width is counted in physical ports, finite-state
-   capacity and classical/quantum rank, not only by an abstract encoding
-   cardinality.
+physically delete or compress a sealed record
+    requires a separate NSE/isometric carrier theorem preserving every
+    protected distinguishability, not only the selected future probabilities.
+```
 
-Failure is scientifically informative. One exact pair of pasts with the same
-candidate collar but different licensed future laws refutes that collar. D34d's
-`1/4 -> 1/8` pair has already refuted the one-record candidate. The remaining
-possibilities include a bounded collar, an unbounded but growing causal
-boundary, a whole-component state for sufficiently rich questions, or no
-record-carried exact realization for the declared law and instrument class.
+An active candidate may include open wire tips, cross-cut factor scopes,
+eligible incident actors, renewal ages and quantum carrier legs. A fixed graph
+radius is not a bounded-capacity result because actor degree is unbounded. A
+D5-style typed factor message is only a conditional candidate: D34e must
+construct or explicitly supply and audit the complete factor cover, scopes,
+values, interface embeddings and exactly-once ownership. Contraction alone
+does not derive a physical record-native carrier.
 
-### 10.4 The finite-to-profinite bridge that would actually be required
+### 10.4 Desired theorem—or exact obstruction
 
-Two inverse structures must not be conflated. The labeled committed-prefix
-tower is the natural carrier for online next-event conditioning. The v9 stem
-spectrum/covtree instead refines covariant questions about which finite stems
-occur in a completed causal history. Its level is an observable resolution,
-not the number of committed clicks.
+For one frozen scope, the desired theorem would construct `B_A` and prove:
 
-A genuine bridge to the v9 profinite stem spectrum therefore requires more
-than the word “boundary.” One must prove:
+1. **screening:** the measurable kernel factorization above on all reachable
+   histories;
+2. **recursive time/event closure:** for consecutive declared update stops
+   `tau<tau'`, a declared update of the form
 
-1. finite **marked** predictive quotients or finite observable partitions at
-   every declared resolution;
-2. compatibility of those quotients under the relevant restriction/refinement
-   maps;
-3. that conditional future laws are constant on the stem-spectrum fibers that
-   are being identified, including any rogue fibers relevant to the lift;
-4. cylinder continuity or the precise measurability needed to extend the
-   finite predictive data to the chosen inverse limit;
-5. a pushforward or lift of the supplied history law—not merely a topology.
+   ```text
+   B_A(tau') = U(B_A(tau), Delta t, survival/no-event data,
+                 event or declared batch e, passive/cross-boundary input,
+                 touched or created boundary records),
+   ```
 
-If these gates hold, an inverse limit can host a compatible hierarchy of
-predictive boundary readouts. Profinite structure still does not select `mu`,
-the event grammar or the boundary encoder. If continuous marks or unbounded
-carrier data do not factor through finite partitions, the resulting object is
-not automatically profinite.
+   including deterministic age flow for renewal clocks and events initiated
+   outside A; an embedded-chain version must state exactly which waiting-time
+   information it quotients away;
+3. **construction covariance:** at the same stopping scope, disjoint
+   incomparable record-DAG updates give gauge-equivalent physical boundary
+   states in either allowed construction presentation;
+4. **conditional composition:** adjacent messages obey D5-style typed
+   contraction after the required physical factor cover and ownership data
+   have been constructed or explicitly assumed;
+5. **minimality:** boundary equality agrees with predictive equivalence, or
+   the retained redundancy is reported;
+6. **capacity:** every carrier is reported by graph radius, actor/record count,
+   open-port count, finite-state count where finite, continuous dimension and
+   precision where applicable, explicit unbounded fields, identifier cost and
+   the separately typed quantum widths below.
 
-### 10.5 Quantum version
+One reachable same-carrier/different-future pair refutes a candidate at its
+declared scope. D34d's `1/4 -> 1/8` pair already refutes the one-record
+candidate. Failure of a finite candidate list does not prove that no other
+record carrier exists.
 
-Quantum predictive equivalence must compare the probabilities of every
-licensed sequence of interventions, not merely reduced density matrices at one
-time. A retained boundary may therefore carry a joint operator state on open
-legs; after that boundary is eliminated, the corresponding predictive object
-may be a process tensor or comb. The quantum investigation must determine
-whether a finite record-carried realization exists, its minimal operator-space
-or memory rank, and whether its restriction maps remain strongly positive.
-The finite `P,E` witness in section 7 proves the need for such memory but does
-not construct the SHARD boundary process.
+### 10.5 The online-to-profinite bridge
 
-### 10.6 D34e decision protocol
+The labeled global prefix tower is an auxiliary source-level construction
+presentation. It serializes incomparable events and its global depth is
+census-dependent. Any physical regional carrier must descend to timed past-
+closed restrictions or typed-DAG/down-set data and pass construction
+covariance.
 
-The exact investigation should proceed before stochastic scaling:
+The v9 stem spectrum has a different domain. Let
 
-1. enumerate finite marked D34b pasts and their exact embedded finite-event-
-   horizon future laws; treat fixed continuous-time horizons separately with
-   analytic identities and certified high-precision evaluation;
-2. refine the histories into predictive-equivalence classes as the licensed
-   future horizon and intervention set grow;
-3. test, in order, one-record, fixed-radius, active-open-port and D5 typed-
-   factor-message carriers;
-4. print exact same-carrier/different-future witnesses for every failed
-   candidate;
-5. prove recursive update and typed composition for any survivor;
-6. audit boundary width versus stem size and only then test compatible inverse-
-   limit and quantum lifts.
+```text
+Omega_marked  = completed marked histories,
+u             = mark-forgetting/causet map,
+phi           = v9 Borel evaluation map from completed causets to X_stem,
+pi_n          = finite covtree-resolution map.
+```
 
-The finite campaign can establish bounded-horizon sufficiency or exact
-obstructions. Promotion to all licensed futures requires a theorem—such as
-stabilization with a proved closure rule—not extrapolation from the enumerated
-horizons. This is the pinned target for D34e; it is not a result of D34d.
+A current finite past `h` has many completions and therefore does not determine
+one point of `X_stem`; treating it as one would leak future information. Given
+a supplied completion law, the canonical adapted stem-spectrum datum is
+instead the posterior measure
+
+```text
+nu_tau(h) = (phi o u)_* mu(completion in . | F_tau)(h),
+nu_(tau,n)(h) = (pi_n)_* nu_tau(h).
+```
+
+Three possible claims must then be proved separately:
+
+1. a completed-history observable factors measurably through `phi`;
+2. the online regional predictive kernel factors through the posterior
+   `nu_tau` without future leakage;
+3. the online boundary state has its own adapted compatible finite/profinite
+   realization.
+
+The third may define a new inverse limit. Identifying it with v9 `X_stem`
+requires commuting finite-level maps, compatibility and adaptedness. The v9
+map is Borel, not generally continuous, so measurable almost-sure sufficiency
+must be separated from a stronger continuous profinite realization. Even a
+continuous real-valued function on a profinite space need not factor exactly
+through one finite level. Continuous/unbounded marks require finite observable
+partitions or a separately declared compact marked topology.
+
+Profinite structure can host compatible finite data; it selects neither the
+law, grammar, encoder nor physical carrier. Rogue fibers matter to a proposed
+completed-history lift, not by themselves to the current online state.
+
+### 10.6 Quantum boundary types and widths
+
+For every licensed typed instrument sequence `I` and durable outcome word `r`,
+quantum predictive equivalence compares `P(r|I,h)`. Those probabilities
+must arise by contracting the supplied conditional process/decoherence object
+with licensed instruments, never from unlicensed fine-history diagonals.
+
+If relevant boundary degrees are retained, the carrier may be a joint operator
+state on open legs. If they are eliminated, the predictive description may be
+a process tensor or comb. D34e must not call several inequivalent ranks one
+“memory rank.” At minimum it must report separately:
+
+```text
+d_carrier = minimal retained memory Hilbert dimension under the declared
+            record/port ownership constraints,
+d_op      = real or complex dimension of the span of conditional operational
+            boundary functionals,
+chi_cut   = operator-Schmidt/bond rank of the conditional comb across one
+            explicitly named cut.
+```
+
+Density-operator rank, channel Choi/Kraus rank and minimal ancilla-memory
+dimension are additional distinct quantities and may not substitute for these
+without a theorem.
+
+The quantum consistency ledger is also typed:
+
+1. each finite history functional `D_n` is normalized, Hermitian and strongly
+   positive;
+2. the declared restriction/incidence map obeys
+   `R_(n+1->n)(D_(n+1))=D_n` exactly;
+3. every conditional comb Choi operator is positive semidefinite, obeys its
+   causal trace constraints and has compatible marginals under the named
+   trace/link maps;
+4. any physical encoder/update channel is separately completely positive and
+   causal.
+
+The auxiliary `P,E` witness only demonstrates that a reduced one-time state
+can fail and supplies a negative control for D34e. It neither constructs nor
+proves the necessity of a process-memory carrier for the SHARD boundary.
+
+### 10.7 Finite exact audit domain
+
+Before code, freeze
+
+```text
+D(N,H,Q,I,S)
+```
+
+where `N` bounds current-past size, `H` bounds future depth or time, `Q` is the
+query/event family, `I` is the intervention family when supplied, and `S` is
+the stopping algebra. Enumeration earns only `D(N,H,Q,I,S)`-sufficiency. The
+families must be nested before their predictive partitions are said to refine.
+
+The finite campaign should:
+
+1. enumerate reachable finite embedded marked-history types and their exact
+   future laws, while treating continuous event times and fixed-time horizons
+   separately by analytic identities and certified high-precision evaluation;
+2. test one-record, fixed-radius, active-open-port and conditional D5-style
+   factor-message candidates;
+3. print exact same-carrier/different-future witnesses for failed candidates;
+4. print the complete capacity ledger—never equate fixed radius with bounded
+   width;
+5. test recursive flow/event updates, passive crossings, construction
+   covariance and conditional composition for survivors;
+6. report physical width against current-past size and resolution separately;
+   correlate it with v9 stem rank only after a bridge is proved.
+
+Fixed global event depth remains a named negative/control, not evidence of
+regional screening. Promotion beyond `D(N,H,Q,I,S)` requires two distinct
+theorems: induction/closure for arbitrary reachable current size, and
+compatible limiting kernels or proved stabilization for arbitrary future
+horizon.
+
+### 10.8 Frozen outcome classes
+
+The first applicable row is the verdict; rows are therefore mutually
+exclusive:
+
+1. **REFUSAL/UNDEFINED** — conditional version, controlled law, interface
+   typing, stopping algebra or factor cover required by the attempted claim is
+   missing.
+2. **ALL-FUTURE BOUNDED-CARRIER PASS** — one declared record-native carrier
+   has screening, time/event closure, covariance, composition and a uniform
+   physical capacity bound for all licensed futures and reachable pasts.
+3. **ALL-FUTURE GROWING-CARRIER PASS** — such a recursively closed carrier is
+   proved, but its physical width is unbounded; this row excludes a theorem
+   that the whole component/global state is necessary.
+4. **WHOLE-COMPONENT/GLOBAL ONLY** — a theorem proves necessity at the declared
+   law/query/instrument scope.
+5. **NO RECORD-CARRIED EXACT REALIZATION** — a theorem excludes every member
+   of the preregistered physical carrier class, not merely the tested finite
+   list.
+6. **CANDIDATE-CLASS OBSTRUCTION** — reachable exact witnesses kill every
+   tested candidate family, without excluding untested carriers.
+7. **FINITE-DOMAIN ONLY** — a survivor is sufficient only on registered
+   `D(N,H,Q,I,S)` cells; no all-size/all-future theorem is proved.
+
+Covariance, composition, capacity and NSE receive separate pass/fail/not-
+applicable flags. NSE is not applicable unless physical deletion/compression
+is proposed. No partial scores are averaged into a bounded-collar headline.
+
+The present status is **D34e TARGET IDENTIFIED; PREDICTIVE RECORD-DAG BOUNDARY
+UNCONSTRUCTED**. This is a pinned investigation, not a D34d result.
 
 ## 11. Literature alignment and priority
 
