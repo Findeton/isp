@@ -1,36 +1,45 @@
 # Relativistic ISP v10
 
-## Latest — D34e / Paper 22 (terminal accepted)
+## Latest — D34f / Paper 23 (terminal candidate)
 
-D34e answers the predictive-boundary question for the explicitly chosen
-passive D34b law.  A single actor record is too small, but a distributed typed
-radius-one star exactly screens the declared coarse and role-labeled future of
-A.  That carrier is graph-local yet unbounded in memory.  For the stronger
-query retaining complete durable ancestry, every complete fixed actor radius
-fails: a persistent event outside the radius can later return through an
-inward interaction chain.  The whole connected component is a sufficient
-growing ceiling, but its necessity and the minimal adaptive frontier remain
-open.
+D34f closes Paper 22's adaptive full-ancestry opening for the explicitly
+chosen passive D34b law. Every old event in A's connected component is
+returnable by a postorder interaction sweep. A bare sweep does not identify
+the past: D34f found an exact equal-order alternative-cut counterexample before
+the receipt. The repaired construction creates one fresh future A anchor,
+broadcasts it outward and echoes it inward. Its `q=2n-1` target events all
+contain the anchor. A different past either exposes an immutable first
+attachment witness or needs at least one catch-up event, separating small-time
+orders `q` and `q+1`.
 
-The exact standard-library receipt passes `13/13`, including `159,734` genuine
-regional compositions, `9/9` registered corruption rejections and the
-all-finite-radius analytic obstruction.  Three independent hostile streams
-closed the note, paper, repair and terminal-status deltas at zero remaining
-findings.  The validator is deliberately scoped to declared invariants on
-genuine regional projections; it is not a complete D34b reachability
-recognizer.  D34e does not derive D34b, a quantum process, the v9 posterior
-bridge, spacetime cones, dimension or `G`.
+Therefore the complete Branch-F future law identifies the whole rooted marked
+component class. That class is the minimal exact predictive quotient; every
+exact sufficient carrier determines it, although a nonminimal carrier may
+retain extra data. A `2^M` positive-cylinder family proves an M-bit worst-case
+lower bound for every M. The exact analytical ancestry boundary is thus
+component-sized and unbounded over growth—not a small collar, a private record
+database or a global execution algorithm.
 
-- `note-d34e-predictive-record-dag-boundary.md`
-- `relativistic-isp-v10-paper22-the-predictive-record-dag-boundary.md`
-- `code/d34e_predictive_boundary_exact.py`
-- `data/d34e_predictive_boundary_exact.out`
-- `reviews/paper22-round5-*`
+The standard-library receipt passes `11/11` over 2,927 states, 20,148 wire
+incidences, 2,927 anchored echoes and 7,410 registered emulator attempts. It
+retains the false bare-sweep witness and the repaired first-attachment witness.
+Three D34f closing deltas and all three Paper 23 hostile streams are
+`0B/0M/0m/0n`. The result remains chosen-law and exact-query relative. Timed
+profinite/v9, quantum, spacetime, dimension, units, `G` and derivation of the
+real interactive click law remain open.
 
-The direct successor is the adaptive full-ancestry causal frontier: construct
-or exclude a recursively updated carrier smaller than the whole component but
-not restricted to any fixed actor radius.  The weak/timed minimal predictive
-quotient is a separate second target.
+- `note-d34f-component-tomography-and-necessity.md`
+- `relativistic-isp-v10-paper23-the-whole-component-is-the-ancestry-boundary.md`
+- `code/d34f_component_tomography_exact.py`
+- `data/d34f_component_tomography_exact.out`
+- `reviews/d34f-round2-*`
+- `reviews/paper23-round1-*`
+
+The direct successor is no longer another exact adaptive-collar search inside
+D34b. It is either a finite-horizon/approximate ancestry frontier or a physical
+principle—sealing, attenuation or causal speed—that genuinely limits what old
+information can return. Any surviving law must then rerun the v9 cone and
+dimension diagnostics.
 
 ## Prior — the complete-record-law campaign: D24–D27 / Paper 19 (historical snapshot)
 

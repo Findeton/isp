@@ -4,8 +4,8 @@
 
 ## Anchored tomography, predictive identity and unbounded information
 
-**Status:** candidate synthesis of terminal D34f; independent paper-level
-hostile review required.
+**Status:** terminal candidate after three clean independent paper-level
+hostile streams; exact status delta pending.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -518,6 +518,15 @@ All three exact closing deltas returned `0/0/0/0`.  Added attacks include:
   emulator.
 
 The terminal D34f note and closing reviews are frozen at commit `398077e`.
+
+The candidate synthesis itself was then reviewed independently at commit
+`540ddf1`.  Predictive/profinite, boundary/locality and ancestry/quantum
+streams each returned `0 blockers / 0 majors / 0 minors / 0 nits`.  Their new
+attacks include all 35,898 reachable transition rows for nonlocal writes or
+old-record mutation, 351 disconnected controls covering 3,682 A-component
+rate rows, attachment directly at A, deeper alternative cuts and the fixed-
+time `2^M` construction.  No source repair was requested.  Only the terminal-
+status and review-accounting strings differ from that accepted candidate.
 
 ## 12. What “the boundary is huge” means
 
