@@ -3242,3 +3242,25 @@ partially overlapping peer regions. Such a family could define a root-free
 history measure without a global next-event race or per-record clocks. The
 current laminar A-rooted family is its solved special case; profinite machinery
 could preserve but cannot select it. Paper-level hostile review is now required.
+
+## 2026-07-14 — Paper 24 round 1 withholds promotion (LEDGER #204)
+Three independent paper lanes reproduce every terminal D35d number but report
+`0B/2M/3m/1n`, `0B/2M/6m/1n` and `0B/3M/2m/3n`. The main equation incorrectly
+multiplies the base q tuple at leaves/degree-one actors instead of the
+degree-dependent effective menu with unavailable mass folded into idle. The
+paper also promotes a realized call acquisition region into an unproved
+predictive boundary and calls the overlap target precise before defining its
+oriented interfaces, restriction/composition kernels, finite-cover joint
+extension and completion space.
+
+Corpus synthesis overstates D31: its no-go forces state richer than the
+unsealed count under its covariance fork, not locality. The historical corpus
+receipt remains 441/427 with stream `b0e4c7e0...41b7`, but its live scanner now
+includes Paper 24 and aborts at 442; the repair must use a pinned pre-D35 git
+tree, not another filename exclusion.
+
+Secondary repairs include A2-existence/positive-mass conditioning, registered
+alpha scope, separate termination premises, root-local 8D carrier wording,
+upper-seal title, shared evaluator, positive-source set, nonexhaustive global
+selection examples, `S^2` and review-count wording. Terminal D35 is untouched;
+Paper 24 stays draft until focused deltas close.

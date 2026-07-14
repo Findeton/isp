@@ -806,3 +806,59 @@ birth/quantum lanes.  The terminal round closes with nine zeroes:
 ```
 
 Paper-level hostile review remains required before this synthesis is terminal.
+
+## 15. Paper-level hostile round 1
+
+**Verdict:** terminal D35 survives; Paper 24 promotion is withheld.
+
+```text
+probability/mathematics          0B / 2M / 3m / 1n
+causal interpretation            0B / 2M / 6m / 1n
+birth/quantum/corpus              0B / 3M / 2m / 3n
+```
+
+Reports:
+
+- `reviews/paper24-round1-probability-mathematics-hostile-review.md`;
+- `reviews/paper24-round1-causal-interpretation-hostile-review.md`;
+- `reviews/paper24-round1-birth-quantum-corpus-hostile-review.md`.
+
+Every D35d receipt number, the D24/D27 inheritance, the 8-to-48 instrument,
+D-origin pairing, disconnected control, reach probabilities and completed
+rooted measure reproduce independently.  The paper nevertheless contains
+four load-bearing synthesis defects and several narrower wording errors.
+
+The frozen repairs are:
+
+1. replace the false degree-independent branch product by the effective
+   degree-dependent menu, including folded unavailable visit/fork mass;
+2. withdraw the unproved predictive-boundary inference: D35 constructs a
+   finite realized acquisition/stopping region while its pre-call kernel still
+   conditions on the complete typed rooted state;
+3. downgrade the overlap object from a precise/solved specification to a
+   candidate architecture, and define the missing oriented region category,
+   incoming/generated interfaces, boundary transport, kernel composition,
+   coherent finite-cover joint extensions and global completion obligations;
+4. restore D31's actual width: under its none-free, birth-positive,
+   unbounded-growth covariance fork it forces state sensitivity richer than
+   the unsealed count, not locality specifically;
+5. freeze the 441-file corpus boundary at a pre-D35 git tree rather than scan
+   the live folder, which now adds Paper 24 and aborts at 442 files;
+6. condition the generic reach ratio on positive cylinder mass and A2
+   existence, or supply a cemetery outcome;
+7. restrict alpha/collision language to the declared six-event seed and
+   reachable rooted grammar;
+8. attribute normalization, termination and covariance to their distinct
+   premises;
+9. describe the eight-dimensional carrier as the root-local A/B/C sector,
+   with D and other factors as identity spectators;
+10. replace “rooted universe,” identify A2 as the upper seal rather than the
+    whole diamond, disclose the shared evaluator wherever actor locality is
+    summarized, call `output_sources` the positive-source set, and replace the
+    global-normalizer/clock dichotomy by the broader statement that any one-
+    next-actor rule adds global selection structure; and
+11. repair `S^2` notation and the terminal review-count wording.
+
+No code-level D35d theorem is reopened.  The corpus repair changes only the
+historical audit's manifest mechanism and its source/receipt hashes; the
+historical 441/427 content stream must remain byte-identical.
