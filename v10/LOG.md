@@ -3634,3 +3634,32 @@ remain green.  The actor now returns `PASS 13/13` with source/stdout hashes
 `f353ac2...339b8` and `1c72a2d...c5fc4`; external replay returns `PASS 8/8`.
 Focused hostile closing review remains mandatory before terminal D36 or Paper
 25.
+
+## 2026-07-14 — D36 round 5 closes local state but finds dense actor routing (LEDGER #219)
+
+The probability/capacity/replay and locality lanes close at `0B/0M/0m/0n`.
+Ancestry closes the participant-state defect but returns `0B/1M/0m/0n`.
+Although address-two prepare admission is sparse, transaction actors still
+live in a dense tuple and response transport indexes that tuple by nominal
+address.  A valid gapped response therefore crashes before transaction
+closure; A12 exercised only the participant handler.  The terminal gate must
+route by structural attempt, close tx2 without tx1, complete both local prepare
+orders and preserve exact local records under a disjoint insertion.
+
+## 2026-07-14 — D36 structural routing terminal, Paper 25 permitted (LEDGER #220)
+
+Commit `c481f82` removes tuple position from live transaction lookup, service,
+delivery and replacement.  A13 closes a gapped tx2 with no tx1 actor or
+record, completes both competing prepare orders with `8/8` typed responses,
+and proves that inserting `Q(C,D)` leaves all 13 exact local `P(A,B)` records
+unchanged.  Maximum parent arity remains two.  Reference, actor and replay
+receipts are `PASS 22/22`, `PASS 14/14` and `PASS 8/8`; actor source/stdout are
+`c2460ed...188a6` and `f9744a6...f8e12`.  The focused ancestry terminal delta
+is `0B/0M/0m/0n`.
+
+D36 is terminal only at the supplied-finite, failure-free,
+ideal-authentication, honest-record-actor scope.  Birth is a durable causal
+carrier and is coordination-quotient-equivalent to dormant activation at the
+audited horizon; it does not select opportunity, arbitration, retry, crash
+recovery, quantum join or a root-free global law.  Paper 25 may now synthesize
+that exact positive and negative boundary.

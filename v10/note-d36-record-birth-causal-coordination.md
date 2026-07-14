@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-4 REPAIR EXECUTED; SPARSE-SLOT HOSTILE CLOSING DELTA REQUIRED.
+**Status:** TERMINAL ACCEPTED AT THE SUPPLIED-FINITE, FAILURE-FREE ACTOR-RECORD SCOPE.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -1168,3 +1168,81 @@ replay stdout 554369b4f93057f3d838f891c19f49ebb92f4eae35f2afc6703dc7efa62d9a33
 This repair changes no probability, selector, clock, quantum or spacetime
 claim.  A focused hostile closing delta is still required before D36 can be
 declared terminal or Paper 25 begun.
+
+## 26. Round-five closing ledger
+
+The three round-five lanes reproduce the sparse participant-state repair.
+Probability/capacity/replay and locality close at `0B/0M/0m/0n`.  Ancestry
+closes the round-four participant-admission defect but exposes one remaining
+major in the surrounding actor world.
+
+The participant handler accepts a valid structural attempt at nominal address
+two with address one absent.  Its emitted response, however, is routed by
+`transactions[envelope.target_index]`.  Transaction actors still inhabit a
+dense tuple, so ordinary delivery to address two crashes unless tuple entries
+zero and one exist.  A12 called the handler directly and therefore did not
+prove transport, decision, application, acknowledgement or closure ancestry.
+
+The required final repair is exact: live transaction lookup, service and
+delivery must use the carrier-derived attempt identity; a gapped address-two
+attempt must run through ordinary transport to a valid close without an
+address-one actor or record; both local prepare orders must be complete typed
+histories; and inserting an independent attempt must preserve the exact local
+ledger.  Paper 25 remains withheld until that focused delta closes.
+
+## 27. Structural actor routing and terminal D36 result
+
+The transaction registry is now a canonically serialized finite sparse set.
+Its physical lookup key is the structural attempt ID.  Transaction services
+carry that ID, response transport resolves `envelope.attempt_id`, and actor
+replacement preserves the same structural key.  Tuple order is used only for
+deterministic serialization.  The nominal integer transaction address remains
+inside typed records and in the deliberately dense frozen-reference adapter;
+it no longer indexes the live registry.
+
+New A13 runs the round-five counterexample through the whole protocol:
+
+```text
+gapped tx2 closes with no tx1 actor or record       1 / 1;
+complete competing-attempt local orders             2 / 2;
+typed responses across those complete histories     8 / 8;
+disjoint insertion preserves exact local ledger     1 / 1;
+restricted exact local records                          13;
+gapped combined ledger records                          24;
+maximum parent arity                                     2.
+```
+
+In each competing-attempt history the locally first attempt receives grants
+and closes commit; the other receives typed busy rejections and closes abort.
+The order therefore supplies an outcome at this probability-free layer, but
+no stochastic arbitration selector is inferred.  In the disjoint fixture,
+adding and closing `Q(C,D)` leaves every complete byte and record ID on
+`P(A,B)`'s participant and transaction wires unchanged.
+
+All previous exact results remain green:
+
+```text
+reference model                 PASS 22/22
+actor-record refinement         PASS 14/14
+external deterministic replay  PASS 8/8
+```
+
+The terminal deterministic identifiers are:
+
+```text
+actor source  c2460ed8d48f06f5bebd5aba95440ff74af0a002a44ab7a0de6c1d4d1f0188a6
+actor stdout  f9744a6d2186c46bbaa3f154d332a4e4ac855f1ed6ecd0e5cfe2bb3e1fef8e12
+actor science 7bee23d9ebf22b2a0112ec0677f3b584990ef9a09a4e4ef34b77e75e7bca53d0
+replay source 67d195268b517d80dcf81bb10b0b5926e7a20cdbad961e0fd7bf80f57e535a7d
+replay stdout 677848c97ac628ac9a53e75343f47b6bc4748243cc421f3037e2a985713fafad
+```
+
+The focused round-six ancestry delta closes at `0B/0M/0m/0n`.  D36 is
+terminal at its declared boundary.  Its positive result is an actor-local,
+append-only, clock-free reservation protocol for supplied finite attempts
+under ideal authentication, honest record-generating actors, reliable
+messages, failure-free operation and fair complete servicing.  Its negative
+result is equally important: birth supplies durable causal carrier structure,
+not the opportunity, conflict-boundary, arbitration, retry, crash-recovery,
+quantum-join or root-free global history law.  Paper 25 may now synthesize
+exactly this boundary.
