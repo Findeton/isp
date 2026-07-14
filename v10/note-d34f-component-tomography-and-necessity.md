@@ -506,3 +506,82 @@ speed, spacetime cone, dimensional result or value of G.  The serialized
 marked-prefix inverse-limit host is available, but its construction-order
 gauge quotient, identification with the v9 stem spectrum and continuity of
 the predictive map remain open.
+
+## 13. Hostile round 1 and frozen repair protocol
+
+Three independent streams reproduced the exact receipt at fresh hash seeds
+and attacked arbitrary component sizes, different conditioning cuts, extra
+and missing actors, hidden remote rings, nominal gauge, disconnected factors,
+small-time order and the quantum/profinite ceiling.  No equal-or-lower-order
+anchored emulator was found.  Their exact counts are:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 2 minors / 0 nits;
+boundary/locality:    0 blockers / 0 majors / 0 minors / 0 nits;
+ancestry/quantum:     0 blockers / 0 majors / 2 minors / 0 nits.
+```
+
+The following four repairs are frozen before source or receipt changes.
+
+### 13.1 Observable prefix cylinder versus exact path subevent
+
+Define the Branch-F-measurable event as
+
+```text
+U^anchor_K(Delta)
+ = {the initial future A-output prefix has K's canonical structural anchored
+    echo trace, and its final specified A event occurs by elapsed Delta}.
+```
+
+The exact event that the first `q` component rings follow the prescribed
+anchor/broadcast/echo path is a subevent `S_K(Delta)`, not identical to U.
+The repaired statement must be
+
+```text
+S_K(Delta) subset U^anchor_K(Delta);
+P_K(S_K(Delta)) = c_K Delta^q + O(Delta^(q+1));
+liminf_(Delta->0) P_K(U^anchor_K(Delta))/Delta^q >= c_K > 0;
+P_K'(U^anchor_K(Delta)) = 0 or O(Delta^(q+1)).
+```
+
+This removes the ill-formed inequality with an unsigned big-O remainder and
+does not require Branch F to observe silent component rings.
+
+### 13.2 First-unmatched-attachment lemma
+
+The repaired all-finite proof must not claim that every extra remote record is
+itself collected by K's target echo.  After matching K's rooted actor/event
+substructure inside K':
+
+- an extra record on a matched actor persists into that actor's target touch;
+- if K' has an extra actor or subtree, choose the first unmatched actor on a
+  birth-tree path out of the matched structure.  Its immutable attachment
+  birth touched a matched parent.  The target echo touches that parent, so the
+  attachment record persists into the Branch-F trace even when later records
+  wholly inside the extra subtree remain outside it; and
+- an altered record on a matched wire is likewise immutable and collected.
+
+Thus a proper extension or incompatible marked DAG has zero support for the
+exact target prefix.  A strict prefix needs at least one catch-up ring in
+addition to all q anchor-cone nodes.
+
+### 13.3 Minimal versus nonminimal exact carriers
+
+Tomographic injectivity proves that every deterministic exact sufficient
+carrier **determines** `[K_A]_g`.  A sufficient carrier may nevertheless be a
+strict refinement carrying irrelevant extra data.  Only the minimal exact
+predictive quotient is isomorphic to `[K_A]_g`, and only minimal exact
+carriers are lossless recodings of that quotient.
+
+### 13.4 Timed versus discrete inverse limits
+
+The available finite-level inverse tower is only the discrete serialized
+event-content skeleton after elapsed-time marks are forgotten.  Full timed
+prefix levels are uncountable.  A timed marked completion requires an explicit
+topology or finite observable time partitions; calling it profinite requires
+finite-discrete quotients.  Timed predictive continuity and the v9 bridge
+remain `OPEN`.
+
+The replacement note and executable narration must implement these four
+repairs.  The exact probability engine and registered ledger need not change
+unless the replacement run or a delta review finds a substantive mismatch.

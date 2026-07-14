@@ -2854,3 +2854,24 @@ all-finite claim. Provisional noun: COMPONENT PREDICTIVE-IDENTITY / UNBOUNDED
 FOR EXACT BRANCH F UNDER THE CHOSEN PASSIVE D34b LAW. Three independent hostile
 streams are required before terminal status; v9/profinite, quantum and
 spacetime bridges remain open.
+
+## 2026-07-14 — D34f hostile round 1 accepts core; four minors frozen (LEDGER #187)
+Three independent streams reproduce commit `4c24987` at fresh hash seeds and
+retain the anchored component-identity theorem. Counts are predictive/
+profinite 0B/0M/2m/0n, boundary/locality 0B/0M/0m/0n and ancestry/quantum
+0B/0M/2m/0n. Arbitrary-pair attacks cover different actor counts, strict
+prefixes, incomparable marked DAGs, alternative conditioning cuts, hidden
+post-stop rings, nominal transport and disconnected controls. A separate
+expanded locality search makes 17,390 canonical comparisons with no
+equal-or-lower-order emulator.
+
+Four repairs are frozen before implementation: define the measurable initial
+Branch-F prefix cylinder U separately from the exact first-q-ring subevent S
+used for its lower bound; replace the unsigned big-O inequality by a liminf
+statement; prove the first-unmatched-attachment lemma for extra subtrees; and
+state that every exact carrier determines the component class while only
+minimal exact carriers are lossless recodings. The finite inverse tower is
+also narrowed to the discrete event-content skeleton—continuous elapsed-time
+marks need a separately constructed topology. These repairs do not alter the
+11/11 probability engine, predictive injectivity or unbounded information
+result. A repaired receipt and three exact deltas are required.
