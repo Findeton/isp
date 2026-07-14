@@ -1,11 +1,10 @@
 # Relativistic ISP v10 paper 24
 
-# The next click is a causal diamond, not a clock race
+# A's next click is the upper seal of a causal call diamond, not the winner of a clock race
 
-## A time-free local probability law, an executable rooted universe and the missing overlap principle
+## A time-free rooted family, an executable logical-actor sampler and the missing overlap architecture
 
-**Status:** paper draft after terminal D35; independent paper-level hostile
-review pending.
+**Status:** revised after paper-level hostile round 1; focused deltas pending.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -29,8 +28,10 @@ We then construct and execute a supplied A-rooted nested-call family.  A local
 actor may idle, create one D24 child, query one owned child or query two.
 Queries move strictly outward on a finite ownership tree and returns move
 inward.  A2 is the upper seal.  No elapsed time, rate or global opportunity
-normalizer occurs.  Exact local normalization proves finite termination and
-construction-order covariance.  Countable iteration gives a completed
+normalizer occurs.  Degree-dependent effective local menus normalize exactly;
+strict child descent proves finite termination; commuting incomparable maps
+and bound return slots prove construction-order covariance.  Countable
+iteration gives a completed
 classical rooted-history measure.
 
 The terminal implementation is a logical actor/mailbox simulator with
@@ -59,12 +60,14 @@ NSE and profinite principles do not yet determine nature's numerical birth or
 interaction law.  The terminal result is a **TIMELESS ROOTED NESTED-CALL
 FAMILY / EXECUTABLE**, not a root-free universe law.
 
-The missing object is now precise: an overlap-consistent local specification
-on all finite causal diamonds.  Larger and smaller diamond kernels, and two
-overlapping peer-initiated diamonds, must induce the same law on their common
-region.  Such a family could define a global history measure without a global
-next-event race or per-record proper times.  The present laminar construction
-is its first solved special case.
+A candidate architecture is now identified: an overlap-consistent local
+specification on oriented finite causal regions.  It still requires a region
+category, incoming/generated boundary interfaces, transport and restriction
+maps, conditional kernel-composition identities, coherent joint extensions
+on every finite cover and a global completion theorem.  Such a family might
+define a global history measure without a global next-event race or per-record
+proper times.  The present laminar construction is a motivating example, not
+yet a proved special case of that undefined general architecture.
 
 ## 1. The answer in ordinary language
 
@@ -78,7 +81,7 @@ hand-offs ending at that new A record.
 Second, evidence does not arrive with a fractional probability after the
 history has occurred.  In one realized history it either arrived or it did
 not.  Probability describes our law over the different complete causal
-diamonds that could become A's next update.
+call diamonds whose upper seal is A's next update.
 
 Third, record birth has two distinct questions:
 
@@ -106,12 +109,26 @@ fine print.
 
 ### 2.1 Audit boundary
 
-D35's deterministic inventory content-hashes all 441 primary papers and notes
-present in V1--V10 before D35.  Of these, 427 meet at least one registered
+D35's deterministic inventory reads the repository tree at the pinned
+pre-D35 commit
+
+```text
+fc074b9ec4f2c9ecdef28b61c623d89d08e76432.
+```
+
+It content-hashes all 441 primary papers and notes present in V1--V10 at that
+cutoff.  Of these, 427 meet at least one registered
 causal/birth/time/history/simulation category.  The corpus stream is
 
 ```text
 b0e4c7e0be1c8587b5f3b35e36a834fa8f485cf4bd7cfbb61331017bcd1541b7.
+```
+
+The inventory source and receipt hashes are
+
+```text
+445687217819ca8bd39ea881e12795dd472120700bbfe2c2a6055deafbcf0a21
+7f998dea113694b132082bb87cbc4053123788c3411d1b65468e4caccb864182.
 ```
 
 The audit corrects an earlier selector that accidentally omitted four
@@ -139,9 +156,10 @@ The V1--V10 record supports these conclusions:
 7. D24 supplies an exact one-parent birth-content family, D25/D27 place it
    inside a broader distinguishability-isometric reception class, and D28
    leaves the opportunity kernel open;
-8. D31 excludes a stationary, covariant, diamond-forming graph-blind kernel on
-   unbounded growth, pushing any serious selector toward local graph/collar
-   structure;
+8. under its none-free, birth-positive, unbounded-growth covariance fork, D31
+   excludes a stationary path-covariant interacting kernel whose weights see
+   only the unsealed-register count; a survivor must see state richer than
+   that count, but D31 alone does not force that richer state to be local;
 9. D34f/Paper 23 proves that exact complete durable-ancestry prediction under
    the chosen D34b law can require A's whole connected component; and
 10. none of those results supplies the full root-free interactive history law.
@@ -218,12 +236,16 @@ observable.  The two must not be conflated.
 
 ### 3.4 Probability of reaching A
 
-If mu is a completed-history law and H0 is the present finite history, then
+If mu is a completed-history law, `[H0]` is the cylinder of completions of the
+present finite history and `mu([H0]) > 0`, adjoin the cemetery value
+`A2 = bottom` for completions in which A never has a strict successor.  Reach
+is false on that value.  Then
 
 ```text
 P(e reaches A2 | H0)
-  = mu({H extends H0: e enters A2 through a licensed path})
-    / mu({H extends H0}).
+  = mu({H in [H0]: A2 != bottom and
+                    e enters A2 through a licensed path})
+    / mu([H0]).
 ```
 
 There is no random “amount of arrival” inside one H.  The event in braces is a
@@ -291,13 +313,28 @@ Let
 q = (q_idle,q_birth,q_visit,q_fork),  sum q = 1.
 ```
 
-For a completed call diamond D,
+Let `d_v` be v's number of eligible owned child ports at the instant v is
+queried.  The effective local menu is
 
 ```text
-P(D | H,A1)
-  = product over queried actors v of
-      q(action at v) / number of selected v-local port sets.
+p_v(idle)       = q_idle + 1[d_v=0] q_visit + 1[d_v<2] q_fork;
+p_v(birth)      = q_birth;
+p_v(visit j)    = q_visit/d_v                     if d_v >= 1;
+p_v(fork {j,k}) = q_fork/binomial(d_v,2)          if d_v >= 2.
 ```
+
+Unavailable alternatives are absent, not zero-weight members of a later
+renormalization.  These displayed probabilities sum to one at every degree.
+For a completed call diamond D with local marked choices `o_v`,
+
+```text
+P(D | H,A1) = product over queried actors v of p_v(o_v | local state at v).
+```
+
+For example, Q1 gives `(idle,birth)=(3/4,1/4)` at a leaf and
+`(idle,birth,visit-child)=(1/2,1/4,1/4)` at degree one.  Q2 gives
+`(4/5,1/5)` at a leaf and `(1/2,1/5,3/10)` at degree one.  These are the
+effective weights used by the exact enumeration.
 
 All factors are local.  Scalar factors from incomparable child branches
 commute.  The local quantum gates on disjoint children commute, and the two
@@ -374,8 +411,10 @@ coupling.
 
 ## 6. The common-input quantum instrument
 
-The root initially carries three qubits, A, B and C, so its common input has
-dimension eight.  The five local alternatives are:
+The registered root-local sector contains the A, B and C carrier factors, so
+its common input has dimension eight.  The full initial carrier also contains
+D; D and every factor external to this root-local instrument are identity
+spectators.  The five local alternatives are:
 
 ```text
 idle;
@@ -427,13 +466,15 @@ Every child return explicitly carries:
 ```text
 the result event;
 the bounded output bit;
-the set of source identities;
+the set of positive-source identities;
 an evidence digest binding those fields;
 the exact issued call to which it responds.
 ```
 
 B's merge consumes D's carried return; B's return carries the merged datum to
-A; A2 stores it durably.
+A; A2 stores it durably.  A queried source with bit zero remains visible in
+the authenticated capability route and provenance, even though it is absent
+from the positive-source set called `output_sources` in the implementation.
 
 ### 7.2 Binary reach
 
@@ -446,8 +487,9 @@ There are 16 completed histories in each Q cell:
 
 In every paired history the action tree and probability are unchanged by the
 bit intervention.  A2 differs under `do(D=0/1)` in all six queried histories
-and in none of the ten unqueried histories.  The D source identity follows the
-same rule.
+and in none of the ten unqueried histories.  The D capability route follows
+the same queried/unqueried rule; the positive-source set contains D only in
+the queried `D=1` member of a pair.
 
 This is a limited but genuine operational influence result.  It concerns one
 declared classical datum and one supplied transport grammar.  It does not say
@@ -532,8 +574,10 @@ disconnected controls.
 Consequently a supplied event may be displayed using the printable string of
 a future generated event without collision.  Exact tests cover immediate
 call-one collision, delayed call-five collision and a supplied actor displayed
-as the future root-newborn string.  Ordinary actor/event alpha renaming and
-all collision cases preserve the physical law.
+as the future root-newborn string.  Within the declared six-event supplied
+seed and its reachable rooted grammar, ordinary actor/event alpha renaming
+and these registered cross-domain collision classes preserve the physical
+law.  No general graph-canonization theorem is claimed.
 
 ### 8.3 Shared exact state
 
@@ -543,10 +587,13 @@ probabilities do not compare spacelike opportunities.  It is a mathematical
 representation of joint ancestry and entanglement.
 
 The implementation is not a multiprocessing benchmark.  Running each actor in
-an OS process would not make the law more local.  The scientific test is that
-changing the serializer does not change the physical distribution and that
-local transitions consult only their declared actor/collar data.  A genuinely
-distributed tensor-network implementation remains a separate target.
+an OS process would not make the law more local.  The scientific tests are
+that changing the serializer does not change the physical distribution and
+that menu selection, capability admissibility and the chosen local factors
+consult only the declared actor/owned-port data.  The selected maps are
+nevertheless evaluated by a shared joint-carrier and event-DAG engine.  A
+genuinely distributed tensor-network implementation remains a separate
+target.
 
 ### 8.4 Exact terminal receipt
 
@@ -610,14 +657,17 @@ constant rate.
 Paper 23's whole-component necessity theorem used a different law and a harder
 query: exact complete ancestry under D34b with persistent unattenuated records
 and no physical return limiter.  D35 supplies a selected finite call diamond
-whose upper seal closes after its issued returns.  The predictive boundary is
-therefore the completed call boundary for this conditional query.
+whose upper seal closes after its issued returns.  This proves a finite
+realized acquisition/stopping region for that call.  It does **not** prove
+that the call boundary is sufficient, let alone minimal, for predicting the
+next call: D35's pre-call kernel is defined on the complete typed rooted state.
 
 There is no contradiction.  D35 changes the law by adding a return-limiting
 causal protocol and asks for the contents of one selected A2, not every future
-full-ancestry observable under D34b.  The result validates the user's proposed
-“below-A-click” causal boundary as an analytical object, while showing that its
-size and probability depend on the supplied history law.
+full-ancestry observable under D34b.  The two results do not yet compare
+minimal predictive-boundary sizes.  What D35 validates is the user's proposed
+“below-A-click” region as an analytical causal object whose realized extent
+and probability depend on the supplied history law.
 
 ## 10. Profinite meaning
 
@@ -644,10 +694,12 @@ of that nonselection.
 
 ### 11.1 The global-next-event trap
 
-If one insists that exactly one actor in the whole universe must be chosen as
-the next actor, its local weights must be compared and normalized across the
-ready set, or one must introduce a race of clocks.  The former is global; the
-latter reintroduces rate/proper-time data.
+If one insists that exactly one actor in the whole universe must be declared
+next, one has added a global selection rule.  Ready-set normalization and a
+race of clocks are two examples; a preferred priority, total order,
+deterministic scheduler or other global chooser would be additional examples.
+The issue is the one-next-actor structure, not a two-way normalizer/clock
+dichotomy.
 
 The time-free alternative is not to make global construction order physical.
 Define a probability law on causal partial histories, allow incomparable local
@@ -672,31 +724,58 @@ No elapsed-time variable will solve those consistency problems by itself.
 
 ### 11.3 The causal-diamond specification problem
 
-For every finite causal region D with admissible boundary record b, seek a
-normalized kernel
+This is a candidate architecture, not yet a defined SHARD object.  It first
+needs a category of oriented finite causal regions and variable-support
+embeddings.  Each region D must distinguish an incoming interface `I_D`, a
+generated outgoing or upper interface `O_D`, and any lateral interface through
+which it is sewn to peers.  Write
 
 ```text
-gamma_D(interior marked history | boundary b).
+B_D        admissible incoming/lateral boundary data;
+Omega_D    admitted marked interior histories and generated outputs;
+beta_D     boundary extraction from a realized regional history;
+r_E,D      restriction/transport from a larger region E to D;
+gamma_D    a normalized kernel B_D -> Prob(Omega_D).
 ```
 
-The family must satisfy:
+When `D` embeds in `E`, the boundary seen by D can itself be random after the
+part of E outside D is generated.  A transport kernel `nu_E->D` must therefore
+carry the larger conditioning data to possible smaller boundary data.  The
+classical composition law should have the form
 
-1. **locality:** gamma_D consults only the causal boundary/collar and inherited
-   sufficient marks;
-2. **restriction:** sampling a larger region and forgetting down to D agrees
-   with gamma_D;
-3. **overlap:** two peer regions give the same marginal on their intersection;
-4. **covariance:** actor/event display names and machine linear extensions are
-   gauge;
-5. **variable-support quantum consistency:** births and interactions form one
-   normalized positive instrument across admitted support sectors;
-6. **finite local ancestry/nonexplosion:** every finite upper record has a
-   finite causal past; and
-7. **completion:** compatible finite laws extend to a global history measure.
+```text
+(r_E,D)_* gamma_E(. | b_E)
+  = integral gamma_D(. | b_D) nu_E->D(db_D | b_E),
+```
 
-The D35 rooted calls are laminar: regions are nested or disjoint, never partly
-overlapping.  They solve the easiest nontrivial subfamily of this specification
-problem.
+with domains, measurability and orientation made explicit.  A quantum version
+requires the corresponding completely positive/strongly positive
+disintegration, not merely classical equality of outcome probabilities.
+
+Pairwise agreement on overlaps is necessary but not sufficient.  Three
+binary regions can each demand pairwise inequality; every pair has a valid
+joint law, but no joint assignment can make all three pairs unequal.  The
+candidate architecture therefore needs a coherent joint extension on every
+finite cover, including higher-overlap compatibility and positivity.  It then
+still needs a global history space plus existence, and preferably
+uniqueness/tightness, of a completion measure.
+
+Only after these objects exist can one state the intended physical gates:
+
+1. boundary sufficiency/locality for the declared regional observable;
+2. conditional restriction and kernel composition under embeddings;
+3. coherent finite-cover extension, not pairwise overlap alone;
+4. covariance under actor/event relabeling and construction-order gauge;
+5. one normalized positive variable-support instrument for births and
+   interactions;
+6. finite local ancestry and nonexplosion; and
+7. global completion.
+
+D35's calls are laminar—nested or disjoint, never partly overlapping—and its
+reachable kernels satisfy their internal rooted restriction checks.  They are
+a motivating finite model.  They are not yet a proved special case of this
+general architecture, because the region category, boundary extraction and
+embedding into it have not been defined.
 
 ### 11.4 The selection question
 
@@ -709,8 +788,10 @@ NSE/distinguishability preservation;
 restriction naturality and strong positivity;
 diamond/holonomy composition;
 stationarity or a controlled replacement for it;
-local graph/collar dependence forced by D31;
-channel-manifold symmetry such as the S2 many-clocks/few-factors structure;
+state sensitivity richer than the unsealed-count scalar forced by D31 at its
+  stated none-free, birth-positive, unbounded-growth scope;
+a separately imposed causal-locality/collar principle;
+channel-manifold symmetry such as the S^2 many-clocks/few-factors structure;
 and empirical causal-web geometry.
 ```
 
@@ -730,7 +811,7 @@ The correct order of work is:
 2. prove a completed history measure and construction-order quotient;
 3. grow causal webs under frozen candidate laws;
 4. measure both directed influence order and circuit/wire order;
-5. return to cone anisotropy, dimension, scale ladders and S2 channel symmetry;
+5. return to cone anisotropy, dimension, scale ladders and `S^2` channel symmetry;
 6. only then ask how metres, seconds and G emerge.
 
 The interactive law will affect the v9 cone and dimension results because it
@@ -745,9 +826,10 @@ The accepted result is:
 TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE.
 ```
 
-It proves that numerical proper time is not logically required to define the
-probabilities of A's next record.  A completed causal-diamond law is enough.
-It supplies one exact local actor realization, one operational remote-evidence
+It proves, within the supplied A-rooted grammar, that numerical proper time is
+not logically required to define the probabilities of A's next record.  A
+completed call-diamond law is enough.  It supplies one exact logical-actor
+realization with a shared joint evaluator, one operational remote-evidence
 test, one variable-support quantum instrument and one completed rooted-history
 measure.
 
@@ -797,7 +879,8 @@ and late root-input validation.
 ```
 
 Four D35 review rounds contain independent probability, locality and
-birth/quantum lanes.  The terminal round closes with nine zeroes:
+birth/quantum lanes.  The terminal round closes with three clean lane
+verdicts:
 
 ```text
 0B/0M/0m/0n
@@ -862,3 +945,45 @@ The frozen repairs are:
 No code-level D35d theorem is reopened.  The corpus repair changes only the
 historical audit's manifest mechanism and its source/receipt hashes; the
 historical 441/427 content stream must remain byte-identical.
+
+## 16. Round-1 repair receipt
+
+All eleven frozen repairs have been applied.  In particular:
+
+1. Section 4.4 now uses the normalized degree-dependent effective menu and
+   prints the Q1/Q2 leaf and degree-one checks.
+2. Section 9.3 claims only a finite realized acquisition/stopping region; no
+   predictive sufficiency or minimality theorem is inferred.
+3. Section 11.3 now lists the missing region category, three boundary roles,
+   history/boundary spaces, extraction and restriction maps, a conditional
+   kernel-composition identity, arbitrary finite-cover coherence and global
+   completion.  The laminar D35 family is motivating, not yet embedded.
+4. D31 is restricted to its actual conclusion: count-only state is excluded
+   at the stated covariance fork; causal locality remains an additional
+   principle.
+5. The corpus program reads the pinned pre-D35 tree at commit
+   `fc074b9ec4f2c9ecdef28b61c623d89d08e76432`.  Seeds 17 and 65537 produce
+   byte-identical receipts: 441 primary, 427 relevant, unchanged stream
+   `b0e4c7e0...41b7`, source `44568721...0a21`, receipt
+   `7f998dea...4182`, `PASS 6/6`.
+6. The generic reach conditional requires positive present-cylinder mass and
+   assigns nonappearance of A2 to a cemetery outcome with reach false.
+7. Alpha/collision covariance is restricted to the supplied six-event seed,
+   its reachable rooted grammar and the registered collision classes.
+8. Normalization follows from the effective menu, termination from strict
+   child descent, and construction covariance from commuting incomparable
+   factors plus authenticated returns.
+9. The 8D common input is identified as the root-local A/B/C sector; D and
+   external factors are identity spectators.
+10. A2 is consistently the upper seal, the logical actors use a disclosed
+    shared joint evaluator, `output_sources` is a positive-source set, and a
+    global next actor is recognized as extra selection structure rather than
+    a normalizer/clock dichotomy.
+11. `S^2` notation and the three-lane terminal-review count are corrected.
+
+The unchanged terminal D35d executable was rerun after the paper repairs.  Its
+receipt remains byte-identical at source hash `9ef59099...6e28`, stdout hash
+`2150ddec...3574`, science hash `79e29b8f...f26c` and `PASS 18/18`.
+
+Focused independent hostile deltas now decide paper-level closure.  They may
+reopen the synthesis but not silently rewrite terminal D35.

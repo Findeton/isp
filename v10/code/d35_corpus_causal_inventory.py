@@ -11,10 +11,12 @@ from __future__ import annotations
 
 import hashlib
 import re
+import subprocess
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
+CUTOFF_COMMIT = "fc074b9ec4f2c9ecdef28b61c623d89d08e76432"
 
 # Filled after the first deterministic census and then frozen.
 EXPECTED_FILES = 441
@@ -96,7 +98,6 @@ def sha256(data: bytes) -> str:
 
 def primary_artifact(path: Path) -> bool:
     """Select papers and notes, excluding reviews/code/data and D35 self."""
-    rel = path.relative_to(ROOT).as_posix()
     if any(part in {"reviews", "code", "data", "audit"} for part in path.parts):
         return False
     name = path.name.lower()
@@ -111,13 +112,42 @@ def clean_field(value: str, limit: int = 180) -> str:
     return " ".join(value.strip().split())[:limit].rstrip().replace("|", "/")
 
 
+def cutoff_manifest() -> list[Path]:
+    """Read the exact pre-D35 path boundary from the pinned repository tree."""
+    raw = subprocess.check_output(
+        [
+            "git",
+            "ls-tree",
+            "-r",
+            "--name-only",
+            CUTOFF_COMMIT,
+            "--",
+            *(f"v{version}" for version in range(1, 11)),
+        ],
+        cwd=ROOT,
+        text=True,
+    )
+    return sorted(
+        (
+            ROOT / rel
+            for rel in raw.splitlines()
+            if rel and primary_artifact(ROOT / rel)
+        ),
+        key=lambda path: path.relative_to(ROOT).as_posix(),
+    )
+
+
+def cutoff_bytes(path: Path) -> bytes:
+    """Read content from the pinned tree, never from the live working tree."""
+    rel = path.relative_to(ROOT).as_posix()
+    return subprocess.check_output(
+        ["git", "cat-file", "blob", f"{CUTOFF_COMMIT}:{rel}"],
+        cwd=ROOT,
+    )
+
+
 def main() -> None:
-    paths = []
-    for version in range(1, 11):
-        base = ROOT / f"v{version}"
-        for suffix in ("*.md", "*.tex"):
-            paths.extend(path for path in base.rglob(suffix) if primary_artifact(path))
-    paths = sorted(set(paths), key=lambda path: path.relative_to(ROOT).as_posix())
+    paths = cutoff_manifest()
 
     stream = hashlib.sha256()
     rows = []
@@ -126,7 +156,7 @@ def main() -> None:
     relevant = 0
 
     for path in paths:
-        data = path.read_bytes()
+        data = cutoff_bytes(path)
         rel = path.relative_to(ROOT).as_posix()
         stream.update(rel.encode("utf-8") + b"\0" + data + b"\0")
         text = data.decode("utf-8", errors="replace")
@@ -154,6 +184,7 @@ def main() -> None:
     print("[d35 pre-investigation causal/birth/time corpus inventory]")
     print(f"PRIMARY FILES: {len(paths)}")
     print(f"CATEGORY-RELEVANT FILES: {relevant}")
+    print(f"PRE-D35 CUTOFF COMMIT: {CUTOFF_COMMIT}")
     print(f"CORPUS STREAM SHA256: {corpus_hash}")
     print(f"INVENTORY SOURCE SHA256: {sha256(Path(__file__).read_bytes())}")
     for name in CATEGORIES:
@@ -173,7 +204,8 @@ def main() -> None:
     print("PASS 3: every file retains title, line count and scope-guard count")
     print("PASS 4: reviews/code/data are excluded from the primary-artifact census")
     print("PASS 5: D35 self-files are excluded from the antecedent stream")
-    print("VERDICT: PASS 5/5")
+    print("PASS 6: later papers/notes are excluded by the pinned pre-D35 tree")
+    print("VERDICT: PASS 6/6")
 
 
 if __name__ == "__main__":

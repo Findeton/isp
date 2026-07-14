@@ -3264,3 +3264,29 @@ alpha scope, separate termination premises, root-local 8D carrier wording,
 upper-seal title, shared evaluator, positive-source set, nonexhaustive global
 selection examples, `S^2` and review-count wording. Terminal D35 is untouched;
 Paper 24 stays draft until focused deltas close.
+
+## 2026-07-14 — Paper 24 round-1 repairs applied (LEDGER #205)
+
+The false branch product is replaced by the exact degree-dependent effective
+menu, including the Q1/Q2 leaf and degree-one normalization rows. The generic
+reach conditional now requires positive present-cylinder mass and uses a
+cemetery A2 outcome for nonappearance. Alpha/collision claims are restricted
+to the declared seed/reachable grammar; the 8D input is root-local A/B/C with
+D as an identity spectator; source-set, shared-evaluator, upper-seal, global-
+selection and review-count language is corrected.
+
+The Paper 23 comparison now earns only a finite realized acquisition/stopping
+region, not predictive sufficiency or minimality. The root-free overlap target
+is explicitly a candidate architecture requiring an oriented region category,
+incoming/generated/lateral interfaces, boundary and history spaces,
+restriction transport, conditional kernel composition, coherent positive
+extensions on arbitrary finite covers, and a global completion theorem. D35
+is motivating rather than a proved special case. D31 is restored to its actual
+count-only no-go scope; locality remains an additional physical principle.
+
+The historical census is frozen at pre-D35 commit
+`fc074b9ec4f2c9ecdef28b61c623d89d08e76432`. Seeds 17/65537 reproduce a
+byte-identical 441/427 receipt and unchanged corpus stream
+`b0e4c7e0...41b7`; new source/receipt hashes are `44568721...0a21` and
+`7f998dea...4182`, `PASS 6/6`. The unchanged terminal D35d executable reruns
+byte-identically at `PASS 18/18`. Focused paper deltas are next.

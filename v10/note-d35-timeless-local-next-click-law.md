@@ -772,11 +772,13 @@ the computer service order is construction gauge and no duration, rate,
 proper-time variable or global opportunity normalization is present.
 
 The corrected corpus audit now includes the four historical Paper 24 files
-wrongly omitted by the first selector.  It reports 441 primary artifacts, 427
-category-relevant artifacts, corpus stream hash
-`b0e4c7e0...41b7`, source hash `49e1de97...63a` and receipt hash
-`fde217ca...fc6`; independent hash seeds agree and the truncation whitespace
-defect is absent.
+wrongly omitted by the first selector.  Its manifest is frozen at pre-D35 git
+commit `fc074b9ec4f2c9ecdef28b61c623d89d08e76432`, so later papers cannot enter
+the antecedent census.  It reports 441 primary artifacts, 427 category-
+relevant artifacts, corpus stream hash `b0e4c7e0...41b7`, source hash
+`44568721...0a21` and receipt hash `7f998dea...4182`; independent hash seeds
+agree, the truncation whitespace defect is absent, and the sixth gate confirms
+that later papers/notes are excluded by the pinned tree.
 
 The result remains deliberately narrower than the generic D35 row-2 label:
 
@@ -1021,30 +1023,32 @@ not yet a real root-free universe simulation.  It repeatedly asks A to open a
 call.  It never decides, from the physical law, whether A, B or another actor
 initiates an overlapping transaction.
 
-The corpus suggests the correct time-free replacement for a global next-event
-race.  For every finite causal diamond D and admissible boundary record b,
-specify a normalized local kernel
+The corpus suggests a candidate time-free replacement for a global next-event
+race.  It is not yet a defined SHARD architecture.  For every oriented finite
+causal region D and admissible boundary record b, one would seek a normalized
+local kernel
 
 ```text
 gamma_D(interior marked history | boundary b).
 ```
 
-The kernels must be local, covariant and compatible: sampling a larger
-diamond and restricting it to a smaller one must equal sampling the smaller
-one directly; two overlapping diamonds must give the same law on their shared
-region.  If those finite specifications are projectively consistent and
-tight/continuous at the required ceiling, they define a global history
-measure.  Then “A's next click” is a marginal of the finite diamonds whose
-upper seal is A2.  No global actor is selected to go next and no proper-time
-race is required.
+The region category, incoming/generated/lateral interfaces, boundary
+extraction, restriction transport and conditional kernel-composition law must
+first be defined.  Pairwise agreement on overlaps is not sufficient: every
+finite cover needs a coherent positive joint extension.  Only after a global
+history space and an existence theorem are supplied would “A's next click” be
+a marginal of regions whose upper seal is A2, without selecting a global next
+actor or adding a proper-time race.
 
-The current nested calls form a laminar, nonoverlapping special case, so their
-consistency is easy.  The next foundational problem is the overlap theorem for
-peer-initiated diamonds with births and shared quantum instruments.  That is
-where locality, diamonds, whole histories and the profinite finite-stem idea
-actually meet.  Profinite completion could preserve a compatible family; as
-Papers 4/8 and D3 already proved, it cannot choose the family or repair an
-incompatible one.
+The current nested calls are laminar and their internal rooted consistency is
+easy.  They motivate the candidate architecture but are not yet a proved
+special case, because no embedding into the missing region category has been
+defined.  The next foundational problem is the overlap theorem for peer-
+initiated regions with births and shared quantum instruments.  That is where
+locality, diamonds, whole histories and the profinite finite-stem idea could
+meet.  Profinite completion could preserve a compatible family; as Papers 4/8
+and D3 already proved, it cannot choose the family or repair an incompatible
+one.
 
 ### 17.7 Candidate decision
 
@@ -1269,3 +1273,21 @@ select normalized local birth/interaction instruments whose kernels agree on
 every restriction and overlap.  Only after that root-free history law exists
 should its grown causal webs be returned to the D28--D32 cone, dimension and
 “many clocks, few factors” tests.
+
+### 20.3 Paper-level scope corrections
+
+Paper 24's independent hostile round does not reopen the terminal executable,
+but it narrows two interpretations of this note.  First, a completed call is a
+finite realized acquisition/stopping region; the D35 kernel still conditions
+on the complete typed rooted state, so predictive-boundary sufficiency and
+minimality are not proved.  Second, an overlap-consistent regional law is only
+a candidate architecture until its oriented region category, interfaces,
+boundary extraction, restriction/transport kernels, coherent finite-cover
+extensions and global completion are defined.  The laminar D35 family
+motivates that architecture but is not yet a proved special case of it.
+
+The corpus audit is also frozen at the pre-D35 tree
+`fc074b9ec4f2c9ecdef28b61c623d89d08e76432`, preventing later papers from
+entering the antecedent stream.  The terminal census remains 441/427 with
+unchanged stream `b0e4c7e0...41b7`, source `44568721...0a21`, receipt
+`7f998dea...4182` and `PASS 6/6` under independent hash seeds.

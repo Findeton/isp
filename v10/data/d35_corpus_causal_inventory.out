@@ -1,8 +1,9 @@
 [d35 pre-investigation causal/birth/time corpus inventory]
 PRIMARY FILES: 441
 CATEGORY-RELEVANT FILES: 427
+PRE-D35 CUTOFF COMMIT: fc074b9ec4f2c9ecdef28b61c623d89d08e76432
 CORPUS STREAM SHA256: b0e4c7e0be1c8587b5f3b35e36a834fa8f485cf4bd7cfbb61331017bcd1541b7
-INVENTORY SOURCE SHA256: 49e1de97450a83763aa478bedacc8c13793af7e569bafe79acb9045f858d663a
+INVENTORY SOURCE SHA256: 445687217819ca8bd39ea881e12795dd472120700bbfe2c2a6055deafbcf0a21
 CATEGORY causal_order: files=201 hits=2076
 CATEGORY next_click: files=109 hits=519
 CATEGORY time_clock: files=184 hits=958
@@ -462,4 +463,5 @@ PASS 2: every category records file and hit counts
 PASS 3: every file retains title, line count and scope-guard count
 PASS 4: reviews/code/data are excluded from the primary-artifact census
 PASS 5: D35 self-files are excluded from the antecedent stream
-VERDICT: PASS 5/5
+PASS 6: later papers/notes are excluded by the pinned pre-D35 tree
+VERDICT: PASS 6/6
