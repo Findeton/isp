@@ -932,3 +932,59 @@ A second independent opening is the canonical weak/timed predictive quotient
 of the observed C/L process after internal neighbor births are eliminated.
 Neither opening changes the terminal sufficient-carrier and fixed-radius
 theorems proved here.
+
+## 21. Paper-level integrity opening and frozen repair
+
+Paper 22 round 1 preserves all four scientific theorems.  Its three hostile
+streams report:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 2 minors / 1 nit;
+boundary/locality:    0 blockers / 0 majors / 2 minors / 1 nit;
+ancestry/quantum:     0 blockers / 0 majors / 0 minors / 0 nits.
+```
+
+One review opened a deeper validator attack that the terminal note reviews had
+not tried.  The composition identity remains exact for genuine regional
+projections, but the validator accepted three coordinated malformed histories:
+an opaque predecessor whose encoded owner was already inside the region, a
+self-cycle, and a stale visible wire tip.  Before Paper 22 is terminal, the
+executable will strengthen intrinsic regional-history validation rather than
+merely narrow the manuscript.
+
+The repair is frozen as follows.
+
+1. Parse every event identifier as `initiator#r(own-ring ordinal)` and require
+   agreement with the event initiator.
+2. Require an opaque predecessor's encoded initiator to lie outside the owned
+   region; an internally owned predecessor must be visible.
+3. Reject visible predecessor cycles and non-increasing same-initiator ring
+   ordinals.
+4. For every owned actor, require initiated event ordinals `1..ring`, birth
+   count equal to the actor birth ordinal, visible touching-event count equal
+   to its wire count, interaction parity equal to its carrier bit, and the
+   stored tip to be the unique local-wire maximum whose ancestry contains
+   every earlier visible event on that wire.
+5. Add the three coordinated corruptions to the existing six-field battery and
+   regenerate the receipt hashes.
+
+The ancestry selector terminology is also corrected everywhere.  The event ID
+`D#rk` uses D's **own-ring ordinal**, not its position on D's wire; passive
+incoming events can make those ordinals differ.  The proof is unchanged
+because the paired pasts share the same structural D role and own-ring ordinal.
+
+Paper prose will then:
+
+- remove the unproved “smallest boundary” slogan and use “a sufficient query-
+  relative boundary”;
+- replace “already sealed” with “persistent immutable” because the chosen law
+  has no dynamic sealing;
+- distinguish exact screening from minimality;
+- cite the predictive-state, lumpability and operational-memory references at
+  the claims they contextualize, with DOI/provenance metadata;
+- state the terminal note/review commit chain explicitly.
+
+This is an integrity and provenance hardening pass.  It does not change the
+D34e theorem or outcome table.  A closing paper delta must reproduce the new
+hashes and independently reject all nine malformed messages before terminal
+publication status.
