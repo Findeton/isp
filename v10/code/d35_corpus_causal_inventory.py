@@ -17,10 +17,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 # Filled after the first deterministic census and then frozen.
-EXPECTED_FILES = 437
-EXPECTED_RELEVANT = 423
+EXPECTED_FILES = 441
+EXPECTED_RELEVANT = 427
 EXPECTED_CORPUS_SHA256 = (
-    "84d6fb20bf780d268ba825c38120e4754abdfce30e448a6df6ad66993fc27485"
+    "b0e4c7e0be1c8587b5f3b35e36a834fa8f485cf4bd7cfbb61331017bcd1541b7"
 )
 
 CATEGORIES = {
@@ -100,7 +100,7 @@ def primary_artifact(path: Path) -> bool:
     if any(part in {"reviews", "code", "data", "audit"} for part in path.parts):
         return False
     name = path.name.lower()
-    if "d35" in name or "paper24" in name:
+    if "d35" in name:
         return False
     is_paper = name.startswith("relativistic-isp-") and "paper" in name
     is_note = name.startswith("note-") or name.startswith("design-note-")
@@ -108,7 +108,7 @@ def primary_artifact(path: Path) -> bool:
 
 
 def clean_field(value: str, limit: int = 180) -> str:
-    return " ".join(value.strip().split())[:limit].replace("|", "/")
+    return " ".join(value.strip().split())[:limit].rstrip().replace("|", "/")
 
 
 def main() -> None:

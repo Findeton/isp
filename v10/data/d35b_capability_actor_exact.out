@@ -1,0 +1,41 @@
+[D35b capability-authenticated actor repair]
+base_source_sha256=06c997a195294991293fdedc9edce005a3f8ad1d23bfd8f73a5a08490163fa26
+ARITHMETIC: Fraction exact; Decimal precision=120
+TIME VARIABLES: 0
+GLOBAL OPPORTUNITY NORMALIZERS: 0
+[Q1]
+actor_owned_fifo_branches=16 atoms=16 total=1/1
+actor_owned_lifo_branches=16 atoms=16 total=1/1
+actor_owned_canonical_branches=16 atoms=16 total=1/1
+A2_kind=birth:1/4,fork:1/8,idle:3/8,visit:1/4
+authenticated_routes=44 unqueried_route_controls=2 do_source_0_to_A2=0 do_source_1_to_A2=1
+remote_collision_display=ROOT-CAP-0::E0:r scoped_storage=yes A_distribution_equal=yes remote_reads=0
+alpha_relabel_atoms=16 quotient_equal=yes
+full_first_atoms=16 coarse_first_atoms=7 second_refinements=408 persistence_checks=408 full_marginal_equal=yes
+operator_isometries=4/4 local_options=5 orthogonal_local_flags=5 completed_flag_histories=16 sum_q_VdagV=I
+malformed_capability_or_event_rejected=9/9 pre_mutation_unchanged=9/9
+grown_second_call_scheduler_checks=32 multi_call_replay=8 calls actors=6 events=19 exact_equal=yes
+[Q2]
+actor_owned_fifo_branches=16 atoms=16 total=1/1
+actor_owned_lifo_branches=16 atoms=16 total=1/1
+actor_owned_canonical_branches=16 atoms=16 total=1/1
+A2_kind=birth:1/5,fork:1/10,idle:2/5,visit:3/10
+authenticated_routes=44 unqueried_route_controls=2 do_source_0_to_A2=0 do_source_1_to_A2=1
+remote_collision_display=ROOT-CAP-0::E0:r scoped_storage=yes A_distribution_equal=yes remote_reads=0
+alpha_relabel_atoms=16 quotient_equal=yes
+full_first_atoms=16 coarse_first_atoms=7 second_refinements=408 persistence_checks=408 full_marginal_equal=yes
+operator_isometries=4/4 local_options=5 orthogonal_local_flags=5 completed_flag_histories=16 sum_q_VdagV=I
+malformed_capability_or_event_rejected=9/9 pre_mutation_unchanged=9/9
+grown_second_call_scheduler_checks=32 multi_call_replay=8 calls actors=8 events=16 exact_equal=yes
+[NONSELECTION]
+birth_Q1=1/4 birth_Q2=1/5; visit_Q1=1/4 visit_Q2=3/10
+[SCOPE]
+proved: capability-authenticated actor-owned rooted nested-call classical history family; structural+declared classical payload acquisition; flagged direct-sum Busch instrument compatibility
+open: cycles, peers, mutually initiating/overlapping calls, disconnected joins, coherent graph-sector sum, root/capability/q/g derivation, v9 spectrum map, spacetime, proper time, nature's law
+[HASHES]
+source_sha256=fa6d69e6d6b85620d19da8e80899dba4a3a5f976fb6e0b3fcfb7b1224a253c4d
+internal_science_sha256=3d6703f6ef4fcc84588bf8927d32621052733b6652c27225553fa97772ed3679
+[VERDICT]
+PASS 18/18
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+opportunity weights, coupling, root/ownership and omitted sectors remain extra physics

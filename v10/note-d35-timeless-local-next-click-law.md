@@ -1,6 +1,6 @@
 # D35 — timeless local next-click law
 
-**Status:** PIN before corpus receipt, derivation, simulation or result.
+**Status:** ROUND-1 REPAIR EXECUTED; hostile delta review pending.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34f / Paper 23 at commit `de51b4e`.
@@ -258,12 +258,12 @@ only after the D35 theorem ceiling survives exact deltas.
 
 The deterministic antecedent inventory is
 `code/d35_corpus_causal_inventory.py` with receipt
-`data/d35_corpus_causal_inventory.out`.  It content-hashes all 437 primary
-paper/note artifacts in V1--V10 existing before D35; 423 hit at least one
+`data/d35_corpus_causal_inventory.out`.  It content-hashes all 441 primary
+paper/note artifacts in V1--V10 existing before D35; 427 hit at least one
 registered causal/birth/time category.  The frozen corpus stream hash is
 
 ```text
-84d6fb20bf780d268ba825c38120e4754abdfce30e448a6df6ad66993fc27485
+b0e4c7e0be1c8587b5f3b35e36a834fa8f485cf4bd7cfbb61331017bcd1541b7
 ```
 
 The fresh audit is routed through the accepted D13 522-file action ledger and
@@ -552,7 +552,7 @@ been realized.
 ### 13.5 Birth result
 
 Every live newborn is created by a fresh one-parent D24 controlled rotation.
-Across the 24 enumerated birth cells, exact normalization and
+Across the 24 enumerated birth branch-cell incidences, exact normalization and
 
 ```text
 P(child=1 at birth) = g P(parent=1 before birth)
@@ -712,3 +712,82 @@ TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
 with Q, g, root/ownership, capability/evidence grammar and missing sectors
 supplied.  A favorable replacement cannot be called the universe's complete
 interactive click law.
+
+## 15. Capability-actor replacement result before delta review
+
+The frozen companion now executes at registered source hash
+
+```text
+fa6d69e6d6b85620d19da8e80899dba4a3a5f976fb6e0b3fcfb7b1224a253c4d
+```
+
+Hash seeds 17 and 65537 produce byte-identical receipts.  The stdout and
+internal-science hashes are:
+
+```text
+stdout   8afc279b5ace76a2c7e043dc043d4b450f14536e262d353333d86c08899e304a
+science  3d6703f6ef4fcc84588bf8927d32621052733b6652c27225553fa97772ed3679
+```
+
+The replacement passes `18/18`.  For each of Q1 and Q2, three serializers
+produce the same 16 exact physical atoms with total mass one.  The complete
+16-cylinder first-call law is the exact marginal of all 408 second-call
+refinements; the separately printed coarse shadow has 7 atoms.  Every one of
+the 408 retained-event/root-wire checks passes.
+
+This is now an actor-owned implementation at the declared scope.  Each actor
+owns its mailbox, current tip, port table, used capabilities and open calls.
+The sampler's only global operation is choosing one nonempty mailbox to
+service; FIFO, LIFO and canonical choices have the same quotient law.  Queries
+and returns carry authenticated, one-use, call-bound capabilities.  Nine
+forgery or malformed-event classes reject before mutation.  A disconnected
+component with a colliding display name and arbitrary content does not change
+the A law or get read.  Nontrivial actor-name relabeling leaves the
+port-addressed physical quotient exactly unchanged.
+
+Every accepted transaction event retains the full adjacent capability route,
+typed legs, action, coupling, evidence digest and source payload.  The Q1 and
+Q2 receipts each check 44 authenticated route incidences and two unqueried
+controls.  Intervening on the declared source payload from 0 to 1 changes A2's
+retained payload from 0 to 1; an unqueried or disconnected route does not.
+This earns both structural CAP ancestry and a declared classical carried-
+payload influence claim.  It does not derive the payload alphabet or promote
+all ancestry to interventionist causation.
+
+The quantum layer now uses fresh orthogonal action/leg output flags rather
+than metadata strings alone.  Idle, D24 birth, visit and fork pass exact
+arbitrary-input isometry gates; the five local alternatives have orthogonal
+flag ranges and satisfy `sum q V^dag V = I`.  All 16 complete histories have
+distinct persistent flag histories.  The earned description is a classical-
+output/direct-sum Busch instrument with conditional carrier isometries.  It is
+not a coherent sum over changing graph sectors and does not select D24 over
+the wider D25/D27 class.
+
+All 16 first-call output states in each cell receive a second actor-local call
+under FIFO and LIFO and match canonical exactly, giving 32 grown scheduler
+checks per cell.  Eight-call deterministic replays agree across serializers.
+This is a real executable growth sampler for a supplied rooted ownership tree;
+the computer service order is construction gauge and no duration, rate,
+proper-time variable or global opportunity normalization is present.
+
+The corrected corpus audit now includes the four historical Paper 24 files
+wrongly omitted by the first selector.  It reports 441 primary artifacts, 427
+category-relevant artifacts, corpus stream hash
+`b0e4c7e0...41b7`, source hash `49e1de97...63a` and receipt hash
+`fde217ca...fc6`; independent hash seeds agree and the truncation whitespace
+defect is absent.
+
+The result remains deliberately narrower than the generic D35 row-2 label:
+
+```text
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+```
+
+It is not a root-free peer law.  Cycles, simultaneous/mutually initiating
+calls, joins of previously disconnected components, coherent support-sector
+sums, the capability/ownership ontology, opportunity weights, coupling, v9
+stem-spectrum bridge, cones, dimension and nature's law remain open.  Q1 and
+Q2 still pass while disagreeing, so inherited SHARD/ISP principles have not
+selected the right opportunity or birth-parameter law.  This section is a
+candidate terminal result until the independent hostile delta round closes
+the exact repair claims.

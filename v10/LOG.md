@@ -3069,3 +3069,31 @@ orthogonal direct-sum event factors and arbitrary-input instrument identities;
 adversarial forgery/name tests; second-call actor rebuilds and multi-call
 growth. The maximum post-repair noun remains a supplied TIMELESS ROOTED
 NESTED-CALL FAMILY, not a peer universe law.
+
+## 2026-07-14 — D35 capability-actor replacement executes (LEDGER #197)
+The frozen round-1 repair is now an exact actor-owned implementation rather
+than a central continuation table. Each logical actor owns its mailbox, tip,
+ports, used capabilities and open calls. Authenticated one-use query/return
+capabilities bind component, transaction, route, held lower tip, parent call,
+slot and source payload; all nine registered forgeries or malformed event
+types reject before mutation. Retained provenance now includes the complete
+adjacent route, typed legs, coupling, evidence digest and payload. A source
+0/1 intervention is carried to A2, while unqueried and disconnected controls
+do not enter its law.
+
+Q1 and Q2 each have 16 exact atoms and total mass one under FIFO, LIFO and
+canonical mailbox servicing. All 408 second-call refinements marginalize to
+the full 16-cylinder first law, with 408 persistence checks; actor relabeling
+and colliding disconnected display names leave the physical quotient fixed.
+The direct-sum quantum gate now has orthogonal durable action/leg flags, exact
+idle/birth/visit/fork isometries and `sum q VdagV=I`. Every first-call state is
+grown through a second actor call, and eight-call serializer replays agree.
+Seeds 17/65537 are byte-identical at `18/18`; source/stdout/science hashes are
+`fa6d69e6...253c4d`, `8afc279b...e304a`, `3d6703f6...3679`.
+
+The repaired corpus audit also restores the four omitted historical Paper 24
+artifacts: 441 primary, 427 relevant, corpus stream `b0e4c7e0...41b7`, with
+source/receipt hashes `49e1de97...63a` and `fde217ca...fc6`. The result ceiling
+is still TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE. Q1/Q2 nonselection,
+root/ownership/capability assumptions, peer/cycle/join sectors and coherent
+graph-sector dynamics remain open. Independent hostile delta review is next.
