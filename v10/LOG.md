@@ -2639,3 +2639,15 @@ mapping and exact obstructions are the local contribution. PROVISIONAL combined
 noun: D34d GLOBAL-MARKOV / LOCAL-GENERATOR / OBSERVABLE-MEMORY
 CHARACTERIZATION. Bounded local collar, timed quantum lift, universal finite
 quantum memory, proper time and derived rates remain open. Three deltas required.
+
+## 2026-07-13 — d34d delta 1: core clean; sealed/rate-path cleanup applied (LEDGER #175)
+Probability is DELTA-CLEAN 0B/0M/0m/0n. Quantum is substantively clean
+0B/0M/0m/2n; locality/clock is core clean 0B/0M/2m/2n. Original blocker and
+all majors are closed. Every residue is applied: eligible-neighbor rows now
+exclude sealed initiators and targets, with explicit R--A--B no-R and A->B=1/4
+gate; full common-rate/horizon equivalence carries the source-wait scaling
+induction plus exact birth/reception times (1,2)->(1/2,1); stopping scope is the
+complete construction-time filtration; renewal race has an independent direct
+integral; quantum rank/lumpability names are repaired. Classical stays 13/13
+with summary hash 9f9e...ac282; quantum stays 10/10 cc496...c4dce0. Final
+quantum and locality deltas required before paper/terminal noun.

@@ -402,7 +402,8 @@ gates.
 
   The analytic theorem must attach to the ideal independent Poisson/mark
   product source: independent increments plus local measurable updates make
-  `Z_t` a time-homogeneous strong Markov process at physical stopping times.
+  `Z_t` a time-homogeneous strong Markov process at stopping times of the
+  complete construction-time filtration.
   The finite Decimal/PRF actor is only an implementation regression.
 - **R4 — locality hierarchy, including the counterexample.** Gate the actual
   D34b `deg(B)=1 -> 2` incoming-rate change `1/4 -> 1/8`, passive reception
@@ -541,6 +542,12 @@ The clock table now says exactly:
   the marked shared-wire split changes from `(1/48,1/24)` to
   `(1/32,1/32)`.
 
+The full compensated identity is carried by a pathwise source coupling, not
+only the zero-ring regression: divide every preassigned exponential wait by
+`c`, retain the same marks and Ulam addresses, and induct over births. An exact
+nontrivial specimen couples A's birth followed by B's passive reception at
+times `(1,2)` to the same typed DAG at `(1/2,1)` under `c=2`.
+
 The uniform-renewal repair closes the complete global graph-plus-age process:
 residual survival is `S(a+s)/S(a)`; a two-actor `(age_A,age_B)=(0,1)` race has
 winner law `(1/4,3/4)`; initiators reset, newborns start at zero and passive
@@ -589,3 +596,31 @@ operations. The literature alignment and priority limits are recorded in
 
 This section is provisional until all three hostile delta streams accept the
 repairs.
+
+## 10. Delta round 1 and final cleanup (2026-07-13)
+
+The first repaired delta returned:
+
+- probability/history: `DELTA-CLEAN — 0B/0M/0m/0n`;
+- quantum/process: `SUBSTANTIVELY DELTA-CLEAN — 0B/0M/0m/2n`;
+- locality/clock: `CORE DELTA-CLEAN — 0B/0M/2m/2n`.
+
+The original blocker and every round-1 major are closed. All remaining items
+are nevertheless applied before terminal synthesis:
+
+1. The D34b generator now defines eligible neighbors by excluding sealed
+   targets as well as sealed initiators. An explicit `R--A--B` seed gates no
+   `R` event/target row and keeps `A->B=1/4`.
+2. The rate–horizon identity now includes the pathwise source-clock induction
+   and an executable birth-plus-passive-reception coupling, not only a no-ring
+   cylinder.
+3. “Physical stopping time” is replaced by “stopping time of the complete
+   construction-time filtration.”
+4. The renewal race's second derivation is now the direct exact integral, not
+   a duplicate function call.
+5. The quantum rank certificate is named `rank_from_block_proof`; stale Q3
+   “lumpability” source names are removed.
+
+Only the affected quantum and locality/clock streams require one final delta.
+No result is terminal until those files are clean and the terminal paper is
+checked against this claim ceiling.

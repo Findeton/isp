@@ -517,7 +517,10 @@ def d34b_rates(state):
     for y in sorted(state["actors"]):
         if state["actors"][y]["sealed"]:
             continue
-        neighbors = sorted(state["neighbors"][y])
+        neighbors = sorted(
+            x for x in state["neighbors"][y]
+            if not state["actors"][x]["sealed"]
+        )
         rows.append(("b", y, None, F(1, 4)))
         if not neighbors:
             raise ValueError("the chosen D34b exemplar requires eligibility")
@@ -544,7 +547,8 @@ def d34b_step(state, kind, y, target=None):
         out["neighbors"][target] = {y}
         touched = (y, target)
     elif kind == "i":
-        if target not in out["neighbors"][y]:
+        if (target not in out["neighbors"][y]
+                or out["actors"][target]["sealed"]):
             raise ValueError("ineligible target")
         touched = (y, target)
         # The classical receipt records that a carrier update occurs without
@@ -588,6 +592,16 @@ def d34b_state_key(state):
 
 seed = d34b_seed()
 seed_remote = d34b_seed(remote=True)
+
+# Actual eligibility control from the actor architecture: an event-inert
+# sealed root R is adjacent to A but cannot initiate or receive an interaction.
+sealed_root_seed = d34b_seed()
+sealed_root_seed["actors"]["R"] = {
+    "ring": 0, "births": 0, "sealed": True, "carrier": 0,
+}
+sealed_root_seed["neighbors"]["R"] = {"A"}
+sealed_root_seed["neighbors"]["A"].add("R")
+
 rate_rows_current_only = d34b_rates(seed) == d34b_rates(d34b_copy(seed))
 per_actor_normalized = all(
     actor_rate_mass(seed_remote, actor) == 1
@@ -610,6 +624,12 @@ poisson_theorem_hypotheses = (
     "measurable support-local updates",
     "finite intensity on every finite configuration",
 )
+sealed_rows = d34b_rates(sealed_root_seed)
+sealed_eligibility_ok = (
+    event_rate(sealed_root_seed, "i", "A", "B") == F(1, 4)
+    and not any(y == "R" or target == "R"
+                for _, y, target, _ in sealed_rows)
+)
 
 p8_ok = (
     rate_rows_current_only
@@ -618,6 +638,7 @@ p8_ok = (
     and event_rate(seed, "b", "A") == F(1, 4)
     and event_rate(seed, "i", "A", "B") == F(1, 4)
     and event_rate(seed, "n", "A") == F(1, 2)
+    and sealed_eligibility_ok
     and len(z_fields) == 5 and len(poisson_theorem_hypotheses) == 4
 )
 check(
@@ -626,10 +647,12 @@ check(
     "carriers; each actor contributes birth 1/4, neighbor interactions totaling "
     "1/4, and idle 1/2. Independent Poisson increments/fresh marks with "
     "support-local measurable updates give the ideal process the strong Markov "
-    "property at physical stopping times",
+    "property at stopping times of the complete construction-time filtration; "
+    "an adjacent sealed root is excluded from initiator and target rows",
     p8_ok,
     f"fields={len(z_fields)}; hypotheses={len(poisson_theorem_hypotheses)}; "
-    f"Seed4 total intensity={total_intensity}; every actor row=1",
+    f"Seed4 total intensity={total_intensity}; every active row=1; "
+    "sealed R absent and A->B=1/4",
 )
 
 
@@ -718,10 +741,9 @@ age_kernel_1 = (
     uniform_race_a_first(F(0), F(1)),
     F(1) - uniform_race_a_first(F(0), F(1)),
 )
-age_kernel_2 = (
-    uniform_race_a_first(F(0), F(1)),
-    F(1) - uniform_race_a_first(F(0), F(1)),
-)
+# Independent direct integral for L_A=2,L_B=1:
+# int_0^1 (1/L_A)(1-r/L_B) dr = 1/4.
+age_kernel_direct = (F(1, 4), F(3, 4))
 
 # At elapsed 1/2, B rings and interacts into passive A.  B resets; A does not.
 elapsed = F(1, 2)
@@ -739,7 +761,7 @@ joint_survival = (
 p10_ok = (
     residual_survival_uniform(F(0), F(1, 2)) == F(3, 4)
     and residual_survival_uniform(F(1), F(1, 2)) == F(1, 2)
-    and age_kernel_1 == age_kernel_2 == (F(1, 4), F(3, 4))
+    and age_kernel_1 == age_kernel_direct == (F(1, 4), F(3, 4))
     and sum(age_kernel_1, F(0)) == 1
     and ages_after_b_to_a == {"A": F(1, 2), "B": F(0)}
     and newborn_age == 0 and joint_survival == F(3, 8)
@@ -788,6 +810,63 @@ no_ring_rate1_t2 = Decimal(-4).exp()   # rate 1 at transformed horizon cT=2
 fixed_t_changes = no_ring_rate1_t1 != no_ring_rate2_t1
 rescaled_horizon_identity = no_ring_rate2_t1 == no_ring_rate1_t2
 
+
+def coupled_birth_reception_trace(rate_scale, horizon):
+    """One exact source-tape coupling under wait -> wait/rate_scale.
+
+    The base tape makes A birth A/1 at construction time 1 and B passively
+    interact into A at time 2.  All later waits are beyond the horizon.
+    Retaining marks/Ulam addresses while dividing every preassigned wait by c
+    is the pathwise source coupling behind the full-law identity; induction
+    over each birth extends the same coupling to the complete nonexplosive path.
+    """
+    waits = {
+        "A": (F(1), F(10)),
+        "B": (F(2), F(10)),
+        "A/1": (F(10),),
+    }
+    marks = {
+        "A": (("b", None), ("n", None)),
+        "B": (("i", "A"), ("n", None)),
+        "A/1": (("n", None),),
+    }
+    state = d34b_seed()
+    index = {"A": 0, "B": 0}
+    deadlines = {
+        "A": waits["A"][0] / rate_scale,
+        "B": waits["B"][0] / rate_scale,
+    }
+    event_times = []
+    while deadlines:
+        actor, when = min(deadlines.items(), key=lambda row: (row[1], row[0]))
+        if when > horizon:
+            break
+        del deadlines[actor]
+        j = index[actor]
+        kind, target = marks[actor][j]
+        state = d34b_step(state, kind, actor, target)
+        event_times.append(when)
+        index[actor] = j + 1
+        if index[actor] < len(waits[actor]):
+            deadlines[actor] = when + waits[actor][index[actor]] / rate_scale
+        if kind == "b":
+            child = state["events"][-1][3]
+            index[child] = 0
+            deadlines[child] = when + waits[child][0] / rate_scale
+    return state, tuple(event_times)
+
+
+base_coupled_state, base_coupled_times = coupled_birth_reception_trace(F(1), F(2))
+scaled_coupled_state, scaled_coupled_times = coupled_birth_reception_trace(F(2), F(1))
+pathwise_rate_horizon_coupling = (
+    d34b_state_key(base_coupled_state) == d34b_state_key(scaled_coupled_state)
+    and physical_dag_key(base_coupled_state) == physical_dag_key(scaled_coupled_state)
+    and base_coupled_times == tuple(F(2) * t for t in scaled_coupled_times)
+    and tuple(event[1] for event in base_coupled_state["events"]) == ("b", "i")
+    and base_coupled_state["actors"]["A"]["ring"] == 1
+    and base_coupled_state["actors"]["B"]["ring"] == 1
+)
+
 # Nonlinear coordinate u=t^2 maps Exp(1) survival to exp(-sqrt(u)), not Exp(1)
 # survival exp(-u).  At u=4 these are exp(-2) and exp(-4).
 nonlinear_transformed_survival = Decimal(-2).exp()
@@ -810,6 +889,7 @@ transformation_table = {
     "common scale / embedded order": scaled_ab == order_ab,
     "common scale / fixed numeric T": not fixed_t_changes,
     "common scale / transformed horizon cT": rescaled_horizon_identity,
+    "common scale / coupled birth-reception path": pathwise_rate_horizon_coupling,
     "nonlinear timestamp / realized order": monotone_order_preserved,
     "nonlinear timestamp / homogeneous law": not nonlinear_law_changes,
     "relative rates / shared wire": hetero_12 != hetero_22,
@@ -818,6 +898,7 @@ transformation_table = {
 p11_ok = (
     typed_serializer_gauge and shared_order_physical
     and fixed_t_changes and rescaled_horizon_identity and nonlinear_law_changes
+    and pathwise_rate_horizon_coupling
     and hetero_12 == (F(1, 48), F(1, 24))
     and hetero_22 == (F(1, 32), F(1, 32))
     and transformation_table == {
@@ -825,6 +906,7 @@ p11_ok = (
         "common scale / embedded order": True,
         "common scale / fixed numeric T": False,
         "common scale / transformed horizon cT": True,
+        "common scale / coupled birth-reception path": True,
         "nonlinear timestamp / realized order": True,
         "nonlinear timestamp / homogeneous law": False,
         "relative rates / shared wire": True,
@@ -834,11 +916,13 @@ check(
     "P11 TYPED-DAG / TIME-TRANSFORMATION TABLE [exact + 100-decimal exp]: "
     "actual disjoint actor serializations canonicalize identically while shared-"
     "wire orders differ; common rate scaling preserves embedded order and obeys "
-    "Law_(c lambda,T)=Law_(lambda,cT), but changes the fixed-T law; nonlinear "
+    "Law_(c lambda,T)=Law_(lambda,cT), including an exactly coupled birth then "
+    "passive-reception path, but changes the fixed-T law; nonlinear "
     "time maps preserve realized order but not homogeneous hazards; the named "
     "heterogeneous D34b variant gives marked masses (1/48,1/24) vs (1/32,1/32)",
     p11_ok,
-    f"table={transformation_table}; hetero={hetero_12}->{hetero_22}",
+    f"table={transformation_table}; coupled times={base_coupled_times}->"
+    f"{scaled_coupled_times}; hetero={hetero_12}->{hetero_22}",
 )
 
 

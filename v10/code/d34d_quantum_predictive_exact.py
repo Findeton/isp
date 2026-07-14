@@ -130,7 +130,7 @@ for i, (s, p, o) in enumerate(HISTORIES):
 hermitian = D == transpose(D)
 normalized = sum(sum(row) for row in D) == 1
 block_psd_rank = True
-rank = 0
+rank_from_block_proof = 0
 for s, o in product((0, 1), repeat=2):
     ids = [HISTORIES.index((s, p, o)) for p in (0, 1)]
     block = [[D[i][j] for j in ids] for i in ids]
@@ -141,7 +141,7 @@ for s, o in product((0, 1), repeat=2):
         block[0][0] >= 0 and block[1][1] >= 0
         and det == 0 and block[0][0] + block[1][1] == F(1, 4)
     )
-    rank += 1
+    rank_from_block_proof += 1
 
 
 # The path-recorded experiment is a distinct functional constructed by an
@@ -173,7 +173,7 @@ recorded_functional_ok = (
             for i in range(8) for j in range(8))
 )
 q1_ok = (
-    hermitian and normalized and block_psd_rank and rank == 4
+    hermitian and normalized and block_psd_rank and rank_from_block_proof == 4
     and coherent_joint == {
         (0, 0): F(0), (0, 1): F(1, 2),
         (1, 0): F(1, 2), (1, 1): F(0),
@@ -188,7 +188,7 @@ check(
     "orthogonal-receiver functional D_rec=delta_(p,p')D is normalized/positive "
     "and gives four 1/4 cells",
     q1_ok,
-    f"rank={rank}; coherent={coherent_joint}; recorded={recorded_joint}",
+    f"rank={rank_from_block_proof}; coherent={coherent_joint}; recorded={recorded_joint}",
 )
 
 
@@ -240,12 +240,13 @@ check(
 
 
 # ---------------------------------------------------------------------------
-# Q3: operational/instrument lumpability, not classical diagonal lumpability.
+# Q3: cross-context durable-record insufficiency, distinct from the fixed-
+# process operational Markov test in Q8.
 
 # Observer projection retains only s.  Two complete states above one visible s
 # (coherent path versus inaccessible path record/environment) have unequal
 # next visible output instruments, so this projection is not lumpable.
-quantum_lumpability_fails = all(
+record_projection_operationally_insufficient = all(
     coherent_output[s] != recorded_output[s] for s in (0, 1)
 )
 classical_shadow_same = all(
@@ -253,7 +254,7 @@ classical_shadow_same = all(
     == tuple(RHO_MIXED[i][i] for i in range(2))
     for s in (0, 1)
 )
-q3_ok = quantum_lumpability_fails and classical_shadow_same
+q3_ok = record_projection_operationally_insufficient and classical_shadow_same
 check(
     "Q3 DURABLE-RECORD OPERATIONAL INSUFFICIENCY ACROSS PAST INSTRUMENTS "
     "[exact, rescoped]: the projection to durable s merges the coherent and "
@@ -504,7 +505,7 @@ check(
 )
 
 summary = (
-    f"gates={PASS}/{PASS + FAIL}; D-rank={rank}; "
+    f"gates={PASS}/{PASS + FAIL}; D-rank={rank_from_block_proof}; "
     f"coherent={coherent_joint}; recorded={recorded_joint}; "
     "causal_break=P0,P0->P0|P1; returning_environment=I/2->P0|P1; "
     "remote_factor=exact"
