@@ -2660,3 +2660,13 @@ Quantum final delta is scientifically clean but reported 0B/0M/0m/1n because
 one source comment still said “not lumpable” for the cross-context comparison.
 The comment is now corrected to durable-record operational insufficiency.
 Final textual quantum delta, then synthesis paper and terminal audit.
+
+## 2026-07-13 — d34d scientific deltas all clean; paper 21 drafted (LEDGER #177)
+Quantum textual final delta is DELTA-CLEAN 0B/0M/0m/0n. Probability,
+locality/clock and quantum/process streams are now unqualified clean. Paper 21,
+“Local generators do not imply local memory,” synthesizes: complete D34b
+global configuration strong Markov; support-local generator; A-tip
+insufficiency 1/4->1/8; law-scoped observable memory; construction-clock
+transformation table; fixed-process quantum causal-break memory; boundary-state
+Markovization; bounded collar/proper time/timed quantum law still open.
+Terminal paper audit required before final noun.

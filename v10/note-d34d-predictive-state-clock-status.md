@@ -638,3 +638,11 @@ comparison “not lumpable”: `0B/0M/0m/1n`. That comment has been replaced by
 the correct “operationally insufficient across declared past-instrument
 contexts” wording. One final textual quantum delta remains before the terminal
 paper and verdict.
+
+## 12. Scientific deltas clean; paper audit pending (2026-07-13)
+
+The quantum textual delta is now `DELTA-CLEAN — 0B/0M/0m/0n`. All three
+scientific streams are clean. Paper 21, *Local generators do not imply local
+memory*, synthesizes the accepted result without widening it. D34d becomes
+terminal only after an independent paper-level audit confirms its theorems,
+receipt table, literature/priority language and open-problem ledger.
