@@ -1,15 +1,15 @@
 # Paper 24 round 1 — probability/mathematics hostile review
 
 **Frozen target:** commit
-`a680c06749c2c25bbd6ce28098c4afdae6c1e51a`  
+`a680c06749c2c25bbd6ce28098c4afdae6c1e51a`
 **Manuscript:**
-`relativistic-isp-v10-paper24-the-next-click-is-a-causal-diamond-not-a-clock-race.md`  
+`relativistic-isp-v10-paper24-the-next-click-is-a-causal-diamond-not-a-clock-race.md`
 **Comparison base:** terminal D35 commit
 `2a6d7d2`, terminal implementation commit `d414c56`, the frozen D35 note,
-receipt and hostile reviews  
+receipt and hostile reviews
 **Review lane:** exact probability, cylinders, projectivity, scheduler
 covariance, Ionescu--Tulcea completion, Markov scope, typed alpha quotient,
-causal-diamond specification and profinite scope  
+causal-diamond specification and profinite scope
 **Verdict:** **MAJOR REPAIR — THE EXECUTABLE D35 RESULT SURVIVES, BUT THE
 PAPER'S GENERAL BRANCH-WEIGHT FORMULA IS FALSE AND ITS CLAIMED PREDICTIVE
 BOUNDARY/OVERLAP SPECIFICATION IS NOT YET MATHEMATICALLY DEFINED.**

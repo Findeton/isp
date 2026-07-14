@@ -1,6 +1,53 @@
 # Relativistic ISP v10
 
-## Latest — D34f / Paper 23 (terminal accepted)
+## Latest — D35 / Paper 24 (terminal accepted at rooted scope)
+
+D35 answers the user's causal question without introducing a global commit
+clock, a per-record proper-time variable or a Poisson race.  For A's current
+record A1, A2 is its first wire successor and the upper seal of a finite
+operational call diamond.  A datum reaches A2 exactly when a licensed adjacent
+transfer chain enters A2's newly acquired causal past.  Reach is binary in a
+realized history; before completion its probability is the measure of the
+completed call diamonds containing that chain.
+
+The exact executable is a supplied A-rooted nested-call family.  Logical actors
+own tips, ports, mailboxes and call-bound return slots; one disclosed shared
+engine evaluates the persistent event DAG and joint entangled carrier.  FIFO,
+LIFO and canonical service produce the same 16 physical histories, and the
+first law is the exact marginal of 408 second-call refinements.  D-origin
+evidence reaches A2 in 6/16 support histories, with exact mass `1/16` in Q1 and
+`3/40` in Q2; an isomorphic disconnected source gadget has no effect.  The
+root-local classical-output instrument is exact from dimension 8 to 48, with
+all five self Grams equal to identity and all ten cross Grams zero.  The
+terminal receipt remains `PASS 18/18`.
+
+Birth is now cleanly split into two layers.  D24 supplies an admitted
+one-parent conditional newborn-content isometry `B_g`; it does not select the
+birth opportunity, `g`, root, ownership or peer/join sectors.  Q1 and Q2 pass
+every gate while disagreeing on birth (`1/4` vs `1/5`), visit (`1/4` vs
+`3/10`) and causal reach, so the inherited SHARD/ISP principles still do not
+select nature's numerical law.
+
+The accepted noun is **TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE**, not a
+root-free universe law.  Three independent paper lanes close after focused
+deltas.  The next foundational target is to define—not merely name—an
+overlap-consistent regional history architecture: oriented causal regions,
+incoming/generated/lateral interfaces, restriction transport, conditional
+kernel composition, coherent positive extensions on every finite cover and a
+global completion theorem.  Only after candidate root-free laws pass that gate
+should their grown webs be returned to the D28–D32 cone, dimension and `S^2`
+many-clocks/few-factors tests.
+
+- `note-d35-timeless-local-next-click-law.md`
+- `relativistic-isp-v10-paper24-the-next-click-is-a-causal-diamond-not-a-clock-race.md`
+- `code/d35d_typed_identity_terminal_exact.py`
+- `data/d35d_typed_identity_terminal_exact.out`
+- `code/d35_corpus_causal_inventory.py`
+- `data/d35_corpus_causal_inventory.out`
+- `reviews/paper24-round1-*`
+- `reviews/paper24-round2-*`
+
+## Prior — D34f / Paper 23 (terminal accepted)
 
 D34f closes Paper 22's adaptive full-ancestry opening for the explicitly
 chosen passive D34b law. Every old event in A's connected component is

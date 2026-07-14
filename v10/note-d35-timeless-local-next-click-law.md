@@ -83,13 +83,16 @@ The structural principle under test is:
 > record transfers.  Construction order, nominal adjacency and correlation
 > through a common older cause do not by themselves constitute acquisition.
 
-The realized relation is binary.  The pre-click probability is the cylinder
-ratio
+The realized relation is binary.  Let `[H0]` be the cylinder of completions of
+the present finite history and assume `mu([H0]) > 0`.  Assign `A2 = bottom` to
+completions in which A has no strict successor and declare reach false there.
+The pre-click probability is the cylinder ratio
 
 ```text
 P(e reaches A2 | H0)
- = mu({completed H extending H0: e in NewPast_A(A1,A2(H))})
-   / mu({completed H extending H0}).
+ = mu({H in [H0]: A2 != bottom and
+                   e in NewPast_A(A1,A2(H)) by a licensed path})
+   / mu([H0]).
 ```
 
 No elapsed time occurs.  “Before the next A click” is the local stopping

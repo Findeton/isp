@@ -4,7 +4,8 @@
 
 ## A time-free rooted family, an executable logical-actor sampler and the missing overlap architecture
 
-**Status:** revised after paper-level hostile round 1; focused deltas pending.
+**Status:** TERMINAL ACCEPTED at the rooted nested-call scope after independent
+paper-level hostile review and clean focused closing deltas.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -589,11 +590,13 @@ representation of joint ancestry and entanglement.
 The implementation is not a multiprocessing benchmark.  Running each actor in
 an OS process would not make the law more local.  The scientific tests are
 that changing the serializer does not change the physical distribution and
-that menu selection, capability admissibility and the chosen local factors
-consult only the declared actor/owned-port data.  The selected maps are
-nevertheless evaluated by a shared joint-carrier and event-DAG engine.  A
-genuinely distributed tensor-network implementation remains a separate
-target.
+that menu probabilities and target-leg selection use the addressed actor's
+owned ports and the supplied Q cell.  Capability admission additionally
+verifies the carried call-boundary fields against the target's issued set,
+adjacent edge/route, requester held tip and shared rooted-call registers.  The
+selected quantum maps are evaluated by the disclosed shared joint-carrier and
+event-DAG engine.  A genuinely distributed tensor-network implementation
+remains a separate target.
 
 ### 8.4 Exact terminal receipt
 
@@ -662,9 +665,9 @@ realized acquisition/stopping region for that call.  It does **not** prove
 that the call boundary is sufficient, let alone minimal, for predicting the
 next call: D35's pre-call kernel is defined on the complete typed rooted state.
 
-There is no contradiction.  D35 changes the law by adding a return-limiting
-causal protocol and asks for the contents of one selected A2, not every future
-full-ancestry observable under D34b.  The two results do not yet compare
+There is no contradiction.  D35 instead uses a different supplied, return-
+limited causal grammar and asks for the contents of one selected A2, not every
+future full-ancestry observable under D34b.  The two results do not yet compare
 minimal predictive-boundary sizes.  What D35 validates is the user's proposed
 “below-A-click” region as an analytical causal object whose realized extent
 and probability depend on the supplied history law.
@@ -888,7 +891,8 @@ verdicts:
 0B/0M/0m/0n.
 ```
 
-Paper-level hostile review remains required before this synthesis is terminal.
+Paper-level hostile round 1 and its repair receipt follow; focused closing
+deltas decide paper-level promotion.
 
 ## 15. Paper-level hostile round 1
 
@@ -987,3 +991,37 @@ receipt remains byte-identical at source hash `9ef59099...6e28`, stdout hash
 
 Focused independent hostile deltas now decide paper-level closure.  They may
 reopen the synthesis but not silently rewrite terminal D35.
+
+## 17. Paper-level terminal close
+
+The three independent closing lanes report:
+
+```text
+probability/projectivity                    0B / 0M / 0m / 0n
+birth/quantum/corpus main                   0B / 0M / 0m / 1n
+birth/quantum/corpus editorial delta        0B / 0M / 0m / 0n
+causal locality main                        0B / 0M / 1m / 2n
+causal locality repair delta                0B / 0M / 0m / 0n
+D35-note cemetery consistency delta         0B / 0M / 0m / 0n
+```
+
+The birth-lane nit was a stale chronology sentence.  The locality minor was an
+actor/port-only description of capability admission; the repaired text now
+discloses carried call-boundary, adjacent requester and shared rooted-call
+register checks.  Its two nits were the “adding a limiter” wording and four
+archived Markdown hardbreak spaces.  Independent deltas verify that each
+repair is isolated and that the D35d receipt remains byte-identical at
+`PASS 18/18`.
+
+Paper 24 is therefore terminal at exactly this noun:
+
+```text
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE.
+```
+
+The closing reviews do not promote it to a root-free, overlap-consistent,
+selected or physical-universe law.  They accept the sharp result that a
+supplied A-rooted history law can define A's next-record probabilities and
+binary licensed evidence acquisition without any numerical proper-time
+variable, while leaving the numerical opportunity/birth selector and the
+root-free overlap architecture open.

@@ -3290,3 +3290,33 @@ byte-identical 441/427 receipt and unchanged corpus stream
 `b0e4c7e0...41b7`; new source/receipt hashes are `44568721...0a21` and
 `7f998dea...4182`, `PASS 6/6`. The unchanged terminal D35d executable reruns
 byte-identically at `PASS 18/18`. Focused paper deltas are next.
+
+## 2026-07-14 — D35 / Paper 24 TERMINAL ACCEPTED at rooted scope (LEDGER #206)
+
+The round-2 probability/projectivity lane closes `0B/0M/0m/0n` after fresh
+exact derivation of the degree-dependent menu, Q1/Q2 reach arithmetic,
+cylinder projectivity, cemetery conditional and fixed-Q rooted completion. The
+birth/quantum/corpus lane closes scientifically at `0B/0M/0m/1n`; its sole
+stale chronology sentence is repaired and independently delta-closed at
+`0B/0M/0m/0n`. The causal-locality lane reports `0B/0M/1m/2n`; the paper now
+discloses the call-boundary/requester/shared-register checks used by capability
+admission, describes D35 as a different supplied grammar, and removes four
+archived Markdown hardbreak spaces. Its focused delta is `0B/0M/0m/0n`. A
+final note-only cemetery-consistency delta is also `0B/0M/0m/0n`.
+
+The accepted noun remains **TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE**.
+The strong result is that a supplied A-rooted completed-history law defines
+A2 as the upper seal of a finite call diamond and assigns exact probabilities
+to binary licensed evidence acquisition without global or per-record numerical
+time. It is not a selected q/g law, root-free overlap law, distributed quantum
+storage theorem, spacetime model or law of nature.
+
+Final exact reruns are byte-identical: D35d source/stdout/science
+`9ef59099...6e28` / `2150ddec...3574` / `79e29b8f...f26c`, `PASS 18/18`;
+pinned-tree corpus source/receipt/stream `44568721...0a21` /
+`7f998dea...4182` / `b0e4c7e0...41b7`, 441/427 and `PASS 6/6`. Final Paper
+24 SHA-256 is `3e7693f1bf9f4854d862084eb0fddd627a3bed389b1f92423c7c16c11b7ab108`;
+terminal D35 note SHA-256 is
+`ab8506281161c6add0c7d2e2aae3034bb1f0ce958f2fcbfad145daf7fdccebfe`.
+README now names D35/Paper 24 as latest and carries the overlap architecture as
+the next foundational target before any new cone/dimension campaign.
