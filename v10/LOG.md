@@ -2723,3 +2723,35 @@ all majors with local minors, and three closing deltas are unqualified clean at
 0B/0M/0m/0n. Final section-10 ceiling: D34e TARGET IDENTIFIED; PREDICTIVE
 RECORD-DAG BOUNDARY UNCONSTRUCTED. The target is now ready to become a separate
 D34e pin/receipt campaign; no boundary-existence result has been claimed.
+
+## 2026-07-13 — D34e terminal note accepted; Paper 22 drafted (LEDGER #180)
+D34e resolves the Paper-21 target for the chosen passive static D34b law at a
+query-relative, unbounded-carrier ceiling. The coarse C and role-labeled L
+future A-wire laws factor pointwise through a physical distributed radius-one
+typed star B3: A owns carrier/counters/ports; incident actors own degree/birth
+rows; shared edges and event references compose by validated typed union. The
+arbitrary-state generator partition and inherited nonexplosion give an all-
+future process at fixed time and A-own/A-wire hitting stops. B3 is not a
+histogram stored in A and the centralized Python evaluator is not a hardware-
+actor claim.
+
+Exact obstructions: B0 misses B->A `1/4 -> 1/8`; B1 gives equal current rate
+`1/4` on `{2,3,6}` and `{2,4,4}` but `Lf=61/1344` versus `11/240`. B3 itself
+has unbounded port/identifier/integer width because A births at rate `1/4`; a
+different bounded realization remains open. For full durable ancestry F, every
+complete finite radius C_r fails: equal carriers hide one pre-stop immutable
+event at distance `r+1`, while an inward subcylinder has
+`p_r=[1/(8(r+3))]^(r+1)>0` in the idle branch and zero in the interaction
+branch. The selector is structural D role + fixed wire ordinal, not a moving
+tip. The whole component is a sufficient growing ceiling, not proved
+necessary; disconnected factors are irrelevant at continuous/local stops.
+
+The second repaired receipt is 13/13 with source SHA `e6649056...0bff8`, stdout
+SHA `3d12f619...54498`, internal digest `a53fa0c...d701`; it reports 35,898 B3
+updates, 2,927 role-output conjugacy states, 120,276 disjoint swaps, 159,734
+full-history compositions, 6/6 malformed-message rejections and 16/16 moving-
+tip interlopers. Three hostile rounds culminate in three closing deltas at
+0B/0M/0m/0n. Finite unmarked work remains only the labeled-truncation diagram;
+v9 posterior and intrinsic timed quantum branches are refused. Paper 22 now
+synthesizes the theorem. Independent paper-level hostile audit remains before
+the synthesis noun is terminal.
