@@ -230,3 +230,104 @@ The desired theorem can become a genuine SHARD theorem only after replacing
 “appropriately enlarged local state” with a precise record-carried sufficiency
 condition and replacing “generally non-Markovian” with the exact failure of a
 declared lumpability condition.
+
+## 7. Provisional exact receipts (2026-07-13; hostile review required)
+
+Two dependency-free receipts are green under two fresh hash salts:
+
+- `code/d34d_predictive_clock_exact.py` ->
+  `data/d34d_predictive_clock_exact.out`: 7/7, summary SHA-256
+  `31e924d568af3bc59f7cd08fbaefe2e6bb1e7c357d1e7951e0312ab94810cbc3`;
+- `code/d34d_quantum_predictive_exact.py` ->
+  `data/d34d_quantum_predictive_exact.out`: 7/7, summary SHA-256
+  `898b8a0039748760d83a151e93abdf6d01fb66888245d4d3626f8e95ac6bcf01`.
+
+These are provisional until the three hostile streams and any required delta
+round close.
+
+### 7.1 Classical result
+
+The proposed theorem splits exactly as predicted by the pin.
+
+1. **Full-history Markovization passes but is global/trivial.** In the exact
+   non-Markov specimen, using the whole visible word as the state closes the
+   next-step law, but its positive state count grows
+   `2,3,5,8,13,21` through depths one to six.
+2. **The visible-record process can genuinely have memory.** Histories `10`
+   and `00` end in the same current record `0`, while their next-`1`
+   probabilities are exactly `3/8` and `7/20`. Their posterior predictive
+   states are respectively `(1/2,1/2,0)` and `(2/5,3/5,0)`.
+3. **Lumpability is the divide.** A separate positive control has a closed
+   two-record quotient; the witness fails because its two hidden `record=0`
+   states have group rows `(1/2,1/2)` and `(3/4,1/4)`.
+4. **Local closure is architectural, not automatic.** An independent remote
+   factor sums out of the local transition exactly. By contrast, at fixed
+   global event count A's chance to ring changes from `1/2` to `1/4` when the
+   remote census changes. This confirms again that global jump count is the
+   wrong locality stopping rule.
+
+For the chosen D34b exponential construction, memorylessness removes residual
+clock age: the full current distributed actor configuration (live graph/tips,
+carrier state and the licensed fresh local mark law) closes the future law. A
+uniform-renewal control has next-half-unit ring probability `1/4` at age zero
+and `1/2` at age one, so the same live configuration is insufficient unless
+clock age is added. Thus Markov versus non-Markov can depend on what the state
+retains; it is not an intrinsic label attached to the record noun alone.
+
+### 7.2 Clock verdict
+
+The exponential `t` remains **construction time in the chosen law**. A common
+rate rescaling changes units and leaves untimed race probabilities unchanged.
+A pathwise increasing relabeling of already realized timestamps preserves
+order. Neither fact makes independent relative rate changes gauge: on a shared
+wire the exact A-first probability changes from `1/3` to `1/2`. Local ring
+ordinal, causal order, construction `t` and emergent proper time therefore
+remain distinct. D34d does not derive seconds or a proper-time ruler.
+
+### 7.3 Quantum result and the stronger boundary-state warning
+
+The D34c diamond supplies the quantum non-lumpability witness directly. For a
+fixed durable `s`, the coherent path carrier and the path-recorded/dephased
+alternative have the same path-basis diagonal. The next H/output instrument is
+nevertheless deterministic `o=1-s` in the first case and uniform in the
+second. Summing the exact D34c functional gives joint probabilities
+`(0,1/2,1/2,0)` versus four `1/4`s.
+
+A real-qubit density matrix is a sufficient predictive state for the declared
+isolated real-qubit future algebra: the exact `P0,P1,P+` signature reconstructs
+it. But this does **not** generalize to one record's reduced state when an old
+factor can return. Two joint carrier/environment states with the same reduced
+`I/2` are sent by a later boundary CNOT to certain `P=0` and certain `P=1`.
+The predictive state must then retain the joint collar/process memory. A truly
+disconnected remote factor, by contrast, traces out of all local future
+statistics exactly.
+
+This is the main conceptual advance over the external desired theorem:
+
+> the appropriate Markov state is the minimal operational boundary state that
+> screens the licensed future—not necessarily a finite state inside each
+> record, and not the whole universe history. Observable non-Markovianity is
+> what appears when the chosen record projection fails to retain that boundary
+> state.
+
+### 7.4 Provisional noun and live review fronts
+
+**Provisional combined noun:** `PREDICTIVE-STATE / OBSERVABLE-MEMORY /
+CLOCK-STATUS CHARACTERIZATION FOR THE CHOSEN D34b–D34c FAMILY`.
+
+The hostile round must attack at least:
+
+- whether the classical witness establishes strong or only initial-law
+  non-lumpability and whether the narration keeps them distinct;
+- whether the D34b closure claim has retained every changing actor variable
+  and uses a genuinely local stopping algebra;
+- whether exponential clock memorylessness is being confused with derivation
+  or physical time;
+- whether `P0,P1,P+` tomography is scoped only to real one-qubit states;
+- whether the returning-environment example demands a process tensor/joint
+  boundary state rather than being narrated as failure of density matrices;
+- whether the D34c decoherence-functional calculation licenses every stated
+  probability partition;
+- whether any finite-memory/locality language exceeds the receipts.
+
+No terminal theorem is claimed before those reviews and their delta pass.

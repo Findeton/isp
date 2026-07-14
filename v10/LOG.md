@@ -2578,3 +2578,24 @@ functionals with fresh bounded-rank event outcomes; incoming reception, two-tip
 merge and actor construction gauge are explicit. Still open: timed operator-valued
 D34b measure/direct integral, infinite incoming marginal, untimed/profinite
 restriction, graph-sector superposition and derived rates/operations. D34d may open.
+
+## 2026-07-13 — d34d provisional exact characterization GREEN 7/7 + 7/7 (LEDGER #172)
+The committed D34d pin is now executed in two dependency-free exact receipts,
+byte-identical under two hash salts. Classical SHA256 31e924d5...10cbc3:
+complete-history Markovization closes but its state count grows 2,3,5,8,13,21;
+histories 10/00 have the same present record yet exact next-1 laws 3/8 vs 7/20;
+a strong-lumpability positive control and the non-lumpable witness separate the
+theorem; disconnected factors marginalize locally while fixed-global-event race
+shares change with the remote census. Exponential memorylessness removes clock
+age for the chosen D34b state, whereas a renewal control needs age (1/4 vs 1/2);
+common rate scaling is units, but relative rates alter shared-wire order 1/3->1/2.
+Quantum SHA256 898b8a00...bcf01: the D34c coherent diamond law
+(0,1/2,1/2,0) versus four 1/4 cells is reconstructed; a durable s/Z-diagonal
+projection is operationally non-lumpable; real-qubit P0/P1/P+ tomography closes
+the declared finite algebra. Stronger warning: equal reduced I/2 states give
+opposite outcomes when an old environment returns, so the sufficient state may
+be a joint collar/process memory; truly disconnected remote factors trace out.
+PROVISIONAL noun: PREDICTIVE-STATE / OBSERVABLE-MEMORY / CLOCK-STATUS
+CHARACTERIZATION FOR THE CHOSEN D34b-D34c FAMILY. No universal finite-local-
+Markov theorem, physical clock derivation, proper time or timed quantum lift is
+claimed. Three hostile streams mandatory; findings -> #173+.
