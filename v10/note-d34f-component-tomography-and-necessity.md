@@ -1,9 +1,9 @@
 # D34f — component tomography and full-ancestry necessity
 
-**Status:** sections 1--10 are the historical pin; a pre-receipt analytical
-self-attack rejects pinned T4 and freezes its anchored-echo replacement in
-section 11.  Sections 12--13 record the provisional result and hostile round.
-Section 14 is the repaired result awaiting exact delta review.
+**Status:** **D34f TERMINAL.** Sections 1--10 are the historical pin; the
+pre-receipt self-attack and anchored replacement are in section 11; sections
+12--14 record the provisional result, frozen repairs and repaired theorem;
+section 15 records three clean closing deltas.
 **Date:** 2026-07-14.
 
 **Parent:** terminal D34e / Paper 22 at commit `b457d42`.
@@ -618,7 +618,7 @@ The four round-1 repairs are now applied.
 - Only the discrete event-content prefix skeleton supplies the immediate
   finite inverse tower.  The timed/profinite/v9 bridge remains open.
 
-Subject to exact delta review, the result remains:
+The exact deltas accept the result:
 
 > **COMPONENT PREDICTIVE-IDENTITY / UNBOUNDED.** At every legal finite stop of
 > the chosen passive D34b law, exact prediction of complete future A-touching
@@ -631,3 +631,38 @@ This is the requested analytical boundary: for this exact query and this
 chosen law it scales with the whole component, rather than remaining a small
 collar.  It remains a theorem about the model, not a derivation of nature's
 interactive click law or of quantum/spacetime structure.
+
+## 15. Closing deltas and terminal disposition
+
+All three independent deltas against repaired commit `04ddda8` are clean:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 0 minors / 0 nits;
+boundary/locality:    0 blockers / 0 majors / 0 minors / 0 nits;
+ancestry/quantum:     0 blockers / 0 majors / 0 minors / 0 nits.
+```
+
+Fresh executions reproduce `11/11`, source SHA
+`0b518f6e742e4b24bd5a3e4a68e29127af27c7cd6acc13453ad5dba9031347ef`,
+stdout SHA
+`de293509a4961d6a390f9fa80657aac7f76e04939e693277db60f07fac6d8fb2`
+and internal digest
+`ee023eb38cbe5c61acd888128838e210a461eb636a553ed6142132a6bdbc29ee`.
+
+The new hostile batteries include 1,096 extra-subtree placements with zero
+prefix emulators, a two-level extra branch whose internal records remain
+hidden while its first attachment birth is forced visible, a strict
+`S subset U` interleaving with the same A-output prefix in q+1 rings, later-cut
+anchor tests, disconnected-rate controls and 17,390 expanded canonical trace
+comparisons with zero equal-or-lower-order emulator.
+
+Terminal noun:
+
+> **WHOLE-COMPONENT MINIMAL EXACT PREDICTIVE QUOTIENT FOR COMPLETE DURABLE
+> ANCESTRY UNDER THE CHOSEN PASSIVE D34b LAW, WITH UNBOUNDED WORST-CASE
+> INFORMATION OVER GROWTH.**
+
+The discrete event-content inverse tower is the only profinite-adjacent object
+earned here.  Timed completion, the construction-order quotient, v9 stem-
+spectrum identification, the quantum process, spacetime cones, dimension, G
+and derivation of the interactive click law remain open.

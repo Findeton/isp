@@ -2894,3 +2894,23 @@ pass 11/11. The scientific ledger and internal digest remain unchanged;
 candidate source/stdout hashes are `0b518f6e...47ef` and
 `de293509...8fb2`. Three independent exact deltas must now inspect this repair
 commit before D34f terminal status or Paper 23 drafting.
+
+## 2026-07-14 — D34f TERMINAL ACCEPTED (LEDGER #189)
+All three closing deltas against repaired commit `04ddda8` are
+0B/0M/0m/0n. Fresh executions reproduce 11/11, source/stdout hashes
+`0b518f6e...47ef` / `de293509...8fb2` and unchanged internal digest
+`ee023eb3...9ee`. The strengthened attacks include 1,096 extra-subtree
+placements with zero prefix emulators, a two-level hidden branch whose first
+attachment birth is forced visible, a q+1 hidden-interleaving realization
+proving the observable U cylinder strictly contains the exact S path, later-
+cut anchor controls, disconnected clock controls and 17,390 expanded canonical
+comparisons with zero equal-or-lower-order emulator.
+
+Terminal noun: WHOLE-COMPONENT MINIMAL EXACT PREDICTIVE QUOTIENT FOR COMPLETE
+DURABLE ANCESTRY UNDER THE CHOSEN PASSIVE D34b LAW, WITH UNBOUNDED WORST-CASE
+INFORMATION OVER GROWTH. Every exact sufficient carrier determines the rooted
+marked component class; only minimal carriers are its recodings. This is an
+analytical information-boundary theorem, not a literal centralized memory or
+real-universe-size claim. The timed/profinite/v9 bridge, quantum law,
+spacetime/round-cone consequences and derivation of nature's click law remain
+open. Paper 23 may now synthesize the result under a separate hostile audit.
