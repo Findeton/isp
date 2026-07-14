@@ -4,8 +4,8 @@
 
 ## A clock-free append-only transaction protocol, a finite-horizon eliminability theorem, and the missing arbitration law
 
-**Status:** CANDIDATE DRAFT after terminal D36; paper-level hostile review is
-open.
+**Status:** COORDINATOR-CLOSED CANDIDATE after terminal D36 and one disclosed
+self-hostile paper review; independent paper-level review remains open.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -50,22 +50,23 @@ and causal closure structure.
 
 A five-round repair campaign removes three hidden global oracles: exact
 evidence must be signed; a continuation must grow one persistent ledger; and
-participant plus transaction state must be keyed by the carrier-derived
-structural attempt rather than a global transaction ordinal.  The terminal
-gate closes a transaction at nominal address two with no address-one actor or
-record, completes both competing local prepare orders with typed responses,
-and proves that inserting an independent transaction leaves all exact local
-record bytes unchanged.
+participant per-attempt entries plus transaction routing must be keyed by the
+carrier-derived structural attempt rather than a global transaction ordinal.
+Participant actor roles themselves remain a supplied finite interface.  The
+terminal gate closes a transaction at nominal address two with no address-one
+actor or record, completes both competing local prepare orders with typed
+responses, and proves that inserting an independent transaction leaves all
+exact local record bytes unchanged.
 
 The result remains nonselecting.  A symmetric conflict pair has no nonempty
-safe deterministic equivariant winner.  Three exact stochastic candidates
-survive: component-local random order plus greedy acceptance, a uniform law on
-maximal feasible sets, and a hard-core regional family.  They disagree on a
-three-proposal path.  Raw regional restriction also fails without boundary
-data, and pairwise overlap consistency does not guarantee a joint finite-cover
-law.  Birth opportunity, batch closure, arbitration, retry fairness, crash
-recovery, quantum joining and root-free history completion remain extra
-physics.
+safe deterministic equivariant winner.  Two exact progressing arbitration
+kernels survive—component-local random order plus greedy acceptance and a
+uniform law on maximal feasible sets—and disagree on a three-proposal path.  A
+broader hard-core regional statistical family also survives but need not make
+progress.  Raw regional restriction fails without boundary data, and pairwise
+overlap consistency does not guarantee a joint finite-cover law.  Birth
+opportunity, batch closure, arbitration, retry fairness, crash recovery,
+quantum joining and root-free history completion remain extra physics.
 
 The terminal D36 result is therefore neither “birth is merely notation” nor
 “birth solves distributed coordination.”  Its exact statement is:
@@ -176,6 +177,16 @@ what remains after birth presentation is quotiented;
 and which probability law is still missing.
 ```
 
+The closest standard protocol background is transaction commit.  Gray and
+Lamport describe traditional Two-Phase Commit, its zero-fault relation to
+Paxos Commit and the fault-tolerance distinction between them.  D36 is not a
+new fault-tolerant commit algorithm and does not identify P4 with either full
+specification.  Its failure-free coordinator/participant decision pattern is
+in that background family; its contribution is the record ontology,
+carrier-control comparison, actor-local refinement and construction-ordinal
+audit.  Paxos-style consensus, replicated coordinators and crash recovery are
+not imported.
+
 ## 3. Immutable record ontology
 
 ### 3.1 Persistent actors and records
@@ -183,8 +194,12 @@ and which probability law is still missing.
 A participant actor A is a persistent typed identity with a succession of
 immutable records on one owned wire.  A transaction actor T likewise owns one
 wire beginning at its carrier.  Mutable simulator fields such as “current
-tip,” “promise” or “phase” are caches of the state derived from those durable
-records; past records themselves never change.
+tip,” “promise,” “phase,” sparse application/response tables and locally
+registered authorization tuples are caches of state derived from
+authenticated carriers, envelopes and emitted durable records; past records
+themselves never change.  Local authorization registration has a durable
+witness in the verified carrier/prepare and typed participant response—it is
+not a separate `AUTHORIZATION` record type.
 
 The principal record types are:
 
@@ -236,11 +251,19 @@ response_entries      finite attempt -> exact response record map;
 authorizations        finite attempt-first authenticated entries.
 ```
 
-Transaction actors also inhabit a finite sparse registry keyed by structural
-attempt.  Canonical tuple order is only deterministic serialization.  The
+Transaction actors also inhabit a tuple representation of a finite sparse
+keyed registry.  Lookup is by structural attempt; canonical tuple order is only
+deterministic serialization, not a constant-time data-structure claim.  The
 integer transaction address remains a typed nominal coordinate in records and
 in the frozen finite reference adapter, but it neither admits a participant
 entry nor locates a live transaction actor.
+
+Participant actor identity is narrower.  D36 supplies a fixed finite
+participant interface, and participant transport addresses those supplied
+roles by index and capability.  The theorem does not prove participant
+discovery or covariance under inserting and renumbering participant actors.
+The construction-order repair concerns participant **per-attempt entries**,
+global transaction ordinals and transaction-actor routing.
 
 The sparse maps are finite because the theorem supplies a finite attempt
 family.  They are not uniformly bounded over unbounded growth.
@@ -634,6 +657,11 @@ participant seeds.  Another also contains and closes `Q(C,D)`.  Restriction to
 the A, B and P owner wires yields exactly the same 13 complete records,
 including IDs, payloads, parents and signatures.
 
+The absent-Q branch removes Q's actor, carrier, prepares and Q-specific
+application, response, capability and authorization entries on C/D.  It is
+therefore a pure absent remote-transaction control, not merely a dormant remote
+mailbox comparison.
+
 Thus a serializer may interleave the remote component, but no remote insertion
 changes local physics.  This is full-ledger covariance, not merely equality of
 a reduced state label.
@@ -922,12 +950,12 @@ reference source  2a05f24529d716d6a8780d20ed5eba05fae6e3ac73ffdd490528b2be5b2736
 reference stdout  868c57325101f683c8cea58be1226a04ede361212c76e93471529e993e515c17
 reference science a373d10d90a6f3063aff02f06dcd92e62a6225981fef291272fbf38cd1e71314
 
-actor source      c2460ed8d48f06f5bebd5aba95440ff74af0a002a44ab7a0de6c1d4d1f0188a6
-actor stdout      f9744a6d2186c46bbaa3f154d332a4e4ac855f1ed6ecd0e5cfe2bb3e1fef8e12
+actor source      57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b
+actor stdout      eaf2e535b475b9f3fafe080175a5399e2748c0a554ed768f470869cfdf291b48
 actor science     7bee23d9ebf22b2a0112ec0677f3b584990ef9a09a4e4ef34b77e75e7bca53d0
 
-replay source     67d195268b517d80dcf81bb10b0b5926e7a20cdbad961e0fd7bf80f57e535a7d
-replay stdout     677848c97ac628ac9a53e75343f47b6bc4748243cc421f3037e2a985713fafad
+replay source     af3d773e11095bd125126a01028ffc83c7c91129fc6c921faa52dd173287ce98
+replay stdout     9324aec40ad8f184058d75ea2870ed9628823971ee7ca0e591e28b5af0b06110
 ```
 
 The terminal D36 review stream ends with a focused structural-routing delta at
@@ -939,21 +967,23 @@ silently rewriting those terminal artifacts.
 ```text
 Question                                              Answer
 ----------------------------------------------------  ------------------------
-Can born proposal records be useful causal carriers? yes
-Does nominal ticket birth remove held-wait deadlock? no
-Can immutable read-only grants ensure exclusive use? no
-Can exclusive waiting grants ensure progress?        no
-Can exclusive fail-fast attempts close without time? yes, at stated scope
-Are participant and transaction identities local?    structural attempt keyed
-Does a skipped global transaction address work?      yes, through full close
-Do disjoint insertions change exact local records?    no, in the audited cell
-Are BORN and TOKEN full record algebras identical?    no
-Are their audited coordination quotients equivalent? yes
-Is arbitration selected?                             no
-Is retry fairness derived?                           no
-Are crashes handled?                                 no
-Is the quantum join derived?                         no
-Is a root-free global history law completed?         no
+Can born proposal records be useful causal carriers?   yes
+Does nominal ticket birth remove held-wait deadlock?   no
+Can immutable read-only grants ensure exclusive use?   no
+Can exclusive waiting grants ensure progress?          no
+Can exclusive fail-fast attempts close without time?   yes, at stated scope
+Are participant per-attempt entries structurally keyed? yes
+Is transaction routing structurally attempt keyed?     yes
+Are participant roles discovered/insertion-covariant?  no; supplied fixed roles
+Does a skipped global transaction address work?        yes, through full close
+Do disjoint insertions change exact local records?      no, in the audited cell
+Are BORN and TOKEN full record algebras identical?      no
+Are their audited coordination quotients equivalent?   yes
+Is arbitration selected?                               no
+Is retry fairness derived?                             no
+Are crashes handled?                                   no
+Is the quantum join derived?                           no
+Is a root-free global history law completed?           no
 ```
 
 ## 18. Candidate paper-level conclusion
@@ -966,10 +996,11 @@ attempt has complete causal ancestry.
 
 The repair history matters to the theorem.  Exact record ancestry must be
 authenticated, continuations must grow one real ledger, participant
-registration must occur in the addressed event, and both participant and
-transaction registries must be keyed by structural attempt rather than global
-construction ordinal.  Once those conditions hold, skipped nominal addresses
-and disjoint insertions are physically harmless.
+registration must occur in the addressed event, and participant per-attempt
+tables plus the transaction registry must be keyed by structural attempt
+rather than global transaction construction ordinal.  Once those conditions
+hold, skipped nominal transaction addresses and disjoint transaction
+insertions are physically harmless at the audited cells.
 
 But birth is not the missing law.  BORN and TOKEN differ as record ontologies
 while agreeing in the audited coordination quotient.  The protocol's work is
@@ -999,6 +1030,43 @@ after that architecture exists can record birth be assessed as part of a
 root-free universe law rather than as the carrier of one supplied finite
 coordination diamond.
 
+## 19. Paper-level hostile review and repair
+
+The candidate draft was frozen at `64f0bf9` and subjected to one disclosed
+coordinator self-hostile review:
+
+```text
+blockers  0
+majors    2
+minors    3
+nits      1
+```
+
+The report is
+`reviews/paper25-round1-coordinator-hostile-review.md`.  It is not represented
+as an independent lane.
+
+The two majors were paper-scope failures, not failures of D36's safety core.
+First, the decision table conflated sparse participant per-attempt state and
+structural transaction routing with participant actor identity.  The repaired
+paper now states that participant roles are a fixed supplied interface
+addressed by role index and capability; participant discovery and insertion
+covariance are unproved.  Second, the disjoint comparator removed Q's actor,
+carrier and mailboxes but retained Q-specific predictive entries on remote C/D
+actors.  The strengthened committed gate removes those entries too.  A13's
+exact tuple, 13-record restriction and family hash remain unchanged; actor and
+replay receipts remain `PASS 14/14` and `PASS 8/8`.
+
+The minor repairs position D36 against Gray--Lamport transaction-commit
+background without importing fault tolerance, distinguish K1/K2 progressing
+arbitration from nonprogressing K3, and identify authorization tables as
+derived caches rather than an unimplemented record kind.  The nit now calls
+the transaction collection a tuple representation of a finite keyed registry.
+
+The strongest paper status after these repairs is **coordinator-closed
+candidate**, not independently terminal.  The theorem and receipts are frozen;
+an independent paper-level hostile stream may still challenge the synthesis.
+
 ## References
 
 1. Relativistic ISP v10 Paper 19, *The complete interactive record law at the
@@ -1011,4 +1079,6 @@ coordination diamond.
 5. Relativistic ISP v10 Paper 24, *A's next click is the upper seal of a causal
    call diamond, not the winner of a clock race*.
 6. D36 terminal note, `note-d36-record-birth-causal-coordination.md`.
-
+7. J. Gray and L. Lamport, *Consensus on Transaction Commit*, ACM Transactions
+   on Database Systems 31(1), 133--160 (2006), MSR-TR-2003-96;
+   [Microsoft Research publication page](https://www.microsoft.com/en-us/research/publication/consensus-on-transaction-commit/).
