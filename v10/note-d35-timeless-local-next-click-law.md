@@ -1129,3 +1129,63 @@ P_Q2(D reaches A2) = 3/40.
 These unequal values are a sharper nonselection observable: causal locality
 defines which completed diamonds count, while the supplied Q cell determines
 their total probability.
+
+## 19. D35d typed-identity terminal candidate
+
+The terminal companion is
+`code/d35d_typed_identity_terminal_exact.py`, with receipt
+`data/d35d_typed_identity_terminal_exact.out`.  It hash-locks D35c at
+`50f1e710...9c765`.  Seeds 17 and 65537 are byte-identical.  Candidate hashes:
+
+```text
+source   9ef590992e04beec0672a3772d41e1e01cde8315b65b7cd0aaa207a649c56e28
+stdout   2150ddecfe92d3d0f2db6505a3e3ccc1c5c8685a4a2ea5a0497280939a023574
+science  79e29b8fd5f5a294b3c2faf438ffcca45434ec78af55b4150324b9939a03f26c
+```
+
+The exact receipt passes `18/18` in Q1 and Q2.  Supplied actors, generated
+actors, supplied events, generated events and disconnected-control identities
+are distinct value types.  Display text is no longer storage identity.  Three
+previously fatal alpha cases now pass:
+
+```text
+seed display equals the call-one generated-event print form: 16/408/408;
+seed display equals the call-five print form: six calls complete;
+actor D display equals the root-newborn print form: all 16 branches normalize.
+```
+
+Ordinary joint actor/event renaming separately passes 16/408/408.  The
+registered unrenamed law passes 16/408/408, all first states receive second
+calls under all serializers, and eight-call replays agree.
+
+The public root constructor now rejects non-bit payloads before writing a call
+ordinal, root field, issuance set or mailbox.  The closing battery is `6/6`
+whole-state unchanged plus the inherited `9/9`; rejected service still retains
+the envelope for an explicit policy.
+
+The disconnected control is now an exact marked copy of D's ancestral source
+gadget: one seed actor event, two successive one-parent seed births and one
+terminal source seal.  Only its disconnection and typed control domain differ.
+Changing its bit leaves the A2 projection exactly fixed.  The connected
+intervention retains six queried and ten unqueried histories, with 18 carried
+return-hop checks.  Exact reach probabilities are printed as `1/16` and
+`3/40`.
+
+The common-input instrument and D24 results are unchanged: input dimension 8,
+direct-sum output dimension 48, five alternatives, bounded operation rank 4,
+ten zero cross Grams and exact weighted identity.  Typed storage affects no
+carrier amplitude or local probability.
+
+The candidate terminal decision remains:
+
+```text
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+```
+
+It is now alpha-safe at the supplied and generated identity boundary, but it
+is still rooted, laminar and conditional on A initiating.  It does not close
+overlapping diamond specifications, choose Q or g, generate coherent support
+sectors, derive a global history law from SHARD alone, recover spacetime or
+identify nature's law.  A narrow independent delta must accept typed freshness,
+early root validation and the isomorphic disconnected fixture before this
+section becomes terminal.

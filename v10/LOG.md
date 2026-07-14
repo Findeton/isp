@@ -3178,3 +3178,23 @@ replace the structurally different remote fixture with an isomorphic
 disconnected source-seal control. The receipt will print the exact reach
 probabilities `1/16` in Q1 and `3/40` in Q2. No scientific noun above TIMELESS
 ROOTED NESTED-CALL FAMILY / EXECUTABLE is permitted.
+
+## 2026-07-14 — D35d typed terminal candidate executes (LEDGER #201)
+D35d replaces nominal freshness with disjoint typed domains for supplied and
+generated actors/events plus disconnected controls. The call-one collision now
+passes full 16/408/408 projectivity, the call-five collision completes six
+calls, and the future-newborn actor display collision preserves all 16
+normalized branches in Q1/Q2. Ordinary full alpha renaming and unrenamed
+16/408/408 separately pass.
+
+Root non-bit input now rejects before mutation, lifting the closing battery to
+`6/6` unchanged while inherited cases remain `9/9`. The disconnected control
+is an isomorphic copy of D's seed/birth/birth/source-seal ancestor gadget.
+Connected D evidence reaches A2 in six histories and is blocked in ten; exact
+reach mass is `1/16` in Q1 and `3/40` in Q2, with 18 carried-hop checks and
+disconnected projection equality.
+
+Seeds 17/65537 are byte-identical at `18/18`. Source/stdout/science hashes are
+`9ef59099...6e28`, `2150ddec...3574`, `79e29b8f...f26c`. The maximum noun is
+unchanged: TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE, not a root-free
+overlap-consistent universe law. Narrow independent terminal deltas are next.

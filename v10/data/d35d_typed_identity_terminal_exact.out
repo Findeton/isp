@@ -1,0 +1,39 @@
+[D35d typed-identity terminal companion]
+prior_source_sha256=50f1e710cc04de3576b24bd5e7414764f1dea1ebb86f0b0b5747d2b18109c765
+ARITHMETIC: Fraction exact
+DURATION/RATE/NUMERICAL-PROPER-TIME VARIABLES: 0
+root call ordinal: actor-owned causal successor label, not elapsed time
+GLOBAL OPPORTUNITY NORMALIZERS: 0
+IDENTITY DOMAINS: supplied/generated actor/event/control are disjoint types
+[Q1]
+serializers=fifo:16,lifo:16,canonical:16 atoms=16 total=1/1
+A2_kind=birth:1/4,fork:1/8,idle:3/8,visit:1/4
+ordinary_actor_event_alpha=16 equal=yes renamed_projectivity=16/408/408
+typed_display_collision_projectivity=16/408/408 late_collision_calls=6/6 newborn_display_collision=pass
+full_first_atoms=16 second_refinements=408 event_payload_persistence=408 marginal_equal=yes
+common_input_dim=8 direct_sum_output_dim=48 alternatives=5 bounded_outcome_rank=4 cross_zero=10/10 weighted_identity=yes
+closing_rejections=6/6 whole_state_unchanged=6/6 rejected_queued=1/1 inherited=9/9
+D_queried_histories=6 D_unqueried_histories=10 P_D_reaches_A2=1/16 return_hops=18 isomorphic_disconnected_projection_equal=1
+grown_scheduler_checks=32 multi_call_replay=8 root_owned_ordinal=8 exact_equal=yes
+[Q2]
+serializers=fifo:16,lifo:16,canonical:16 atoms=16 total=1/1
+A2_kind=birth:1/5,fork:1/10,idle:2/5,visit:3/10
+ordinary_actor_event_alpha=16 equal=yes renamed_projectivity=16/408/408
+typed_display_collision_projectivity=16/408/408 late_collision_calls=6/6 newborn_display_collision=pass
+full_first_atoms=16 second_refinements=408 event_payload_persistence=408 marginal_equal=yes
+common_input_dim=8 direct_sum_output_dim=48 alternatives=5 bounded_outcome_rank=4 cross_zero=10/10 weighted_identity=yes
+closing_rejections=6/6 whole_state_unchanged=6/6 rejected_queued=1/1 inherited=9/9
+D_queried_histories=6 D_unqueried_histories=10 P_D_reaches_A2=3/40 return_hops=18 isomorphic_disconnected_projection_equal=1
+grown_scheduler_checks=32 multi_call_replay=8 root_owned_ordinal=8 exact_equal=yes
+[NONSELECTION]
+birth_Q1=1/4 birth_Q2=1/5; visit_Q1=1/4 visit_Q2=3/10; reach_Q1=1/16 reach_Q2=3/40
+[SCOPE]
+proved: typed alpha-safe supplied A-rooted laminar nested-call family; logical actor protocol; D-origin bounded evidence; common-input CQ instrument
+open: overlapping/root-free diamond specification; peer/cycle/join sectors; Q/g/root selection; coherent graph support; v9 bridge; spacetime; nature's law
+[HASHES]
+source_sha256=9ef590992e04beec0672a3772d41e1e01cde8315b65b7cd0aaa207a649c56e28
+internal_science_sha256=79e29b8fd5f5a294b3c2faf438ffcca45434ec78af55b4150324b9939a03f26c
+[VERDICT]
+PASS 18/18
+TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
+not a root-free universe law; q, g, root and overlap law remain unselected
