@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-1 REPAIRS EXECUTED; HOSTILE DELTA REVIEW REQUIRED.
+**Status:** ROUND-2 HOSTILE DELTA OPEN; EXACT-EVIDENCE AND CONTINUATION REPAIR REQUIRED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -829,3 +829,51 @@ unbounded online theorem.  Ideal authentication, capabilities, fixed attempt
 bodies and mailbox service are supplied.  The birth opportunity law,
 arbitration selector, crash/failure detector, root-free infinite completion,
 `B_g`/NSE quantum realization and spacetime consequences remain open.
+
+## 20. Round-two hostile opening ledger
+
+Three independent closing lanes froze the candidate at commit `63314a2` and
+reproduced the reference, actor and external-replay receipts.  The
+probability/capacity lane closes with no finding.  The ancestry lane returns
+`0B/2M/2m/0n`; the locality lane returns `1B/1M/1m/1n`.  Before deduplication
+the round therefore records:
+
+```text
+blockers 1; majors 3; minors 3; nits 1.
+```
+
+Two failures are load-bearing and overlap across the hostile lanes.
+
+1. **Exact evidence and attempt identity are not authenticated.**  The
+   signature binds the reduced coordination header, not the exact carried
+   record ID, parents or omitted payload field.  A same-header record with a
+   different ancestry remains authentic and mutates the receiver.  Moreover,
+   the body/capability/authorization tuple omits the carrier attempt: a valid
+   same-base epoch-zero decision is accepted by an epoch-one participant.
+   The reduced header may remain a graph-quotient key, but the physical
+   signature must commit the complete record and a structural attempt ID.
+2. **The claimed continuation is two fresh histories joined afterward.**
+   `continuation_gate()` initializes the stale and rebased attempts
+   independently, unions their ledgers and appends `REBASE_LINK`.  In both
+   BORN and TOKEN modes the combined object fails `validate_owned_wires`;
+   participant seeds branch, the transaction owner has multiple roots and
+   same-owner parents, and the old close is not below the new close.  The next
+   attempt must be opened from the actual terminal actors and ledger, preserve
+   used-envelope/capability state and old bytes, and pass the complete ledger
+   validators.
+
+The surviving scope repairs are also frozen rather than inflated.  The 56
+terminal ledgers and 297,980 edge checks are one causal lift per coordination-
+quotient terminal/edge, not a census of every full record history.  Opposite
+same-transaction response orders can share the declared `ActorWorld` quotient
+while producing different valid ledgers and decision IDs.  Capabilities,
+fixed attempt bodies, finite structural slots and cryptographic collision
+resistance remain supplied finite-fixture assumptions, not a root-free
+freshness theorem.  Finally, G20 is still a static failure-scope assertion,
+not an executed crash trace.
+
+No finding changes the probability-free reference core or the honest
+single-attempt projection.  It does prevent the candidate actor-record verdict
+and Paper 25.  Repairs begin only from this frozen ledger: exact evidence and
+attempt authentication first, then one genuinely persistent stale/rebase
+history, then a new hostile closing delta.

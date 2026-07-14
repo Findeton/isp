@@ -3493,3 +3493,28 @@ source/stdout/science hashes `5813304...996ba`, `8e2e9b9...8b41d`, and
 seeds 17 and 104729.  Candidate verdict is `CLOCK-FREE ACTOR-LOCAL APPEND-ONLY
 COORDINATION REFINEMENT / FAILURE-FREE CLOSED ATTEMPTS`; hostile delta review
 is mandatory before Paper 25.
+
+## 2026-07-14 — D36 round 2 finds an authentication blocker (LEDGER #213)
+
+Three independent hostile lanes reproduce all frozen D36 receipts.  The
+probability/capacity/replay lane closes at `0B/0M/0m/0n`; ancestry returns
+`0B/2M/2m/0n`; locality returns `1B/1M/1m/1n`.  Their raw aggregate is
+`1B/3M/3m/1n`, with two overlapping load-bearing failures.
+
+First, the signature protects only a reduced coordination header.  Exact
+record identity, parents, one omitted payload field and the carrier attempt
+are outside the authenticated statement.  Exact counterexamples splice a
+different-parent record under an unchanged authentic signature and replay a
+valid same-base epoch-zero decision into epoch one; both mutate durable actor
+state.  Second, the stale/rebase gate runs two freshly initialized worlds,
+unions their ledgers and appends a post-hoc link.  Both BORN and TOKEN unions
+fail the existing owned-wire validator, and the old close is absent from the
+new close's ancestry.
+
+The 56 ledgers and 297,980 edge checks are also pinned as representative
+coordination-quotient lifts rather than all full histories; finite structural
+identity/capability provenance remains supplied; and G20 remains a static
+scope row.  The actor-owned mailbox architecture and finite reference
+projection survive.  The actor-record verdict does not: exact-evidence and
+attempt authentication plus one genuine persistent continuation are required
+before another hostile delta or Paper 25.
