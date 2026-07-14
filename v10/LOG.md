@@ -2563,3 +2563,18 @@ local diamond functional unchanged. Provisional noun: FINITE TYPED-DAG ACTOR/
 QUANTUM SEWING WITH BOUNDED EVENT RECORDS + conditional finite-down-set theorem.
 Timed operator-valued D34b measure/infinite incoming marginal remain open. Fresh
 three-stream hostile delta is mandatory; findings -> #171+.
+
+## 2026-07-13 — d34c TERMINAL: finite typed-DAG compatibility pass (LEDGER #171)
+Three deltas: quantum math 0B/0M/0m/0n DELTA-CLEAN; NSE/seal 0B/0M/0m
+DELTA-CLEAN; architecture CORE DELTA-CLEAN 0B/0M/3m/3n. All small corrections
+applied: fine internal alternatives keyed by local event ID; bounded means six-state
+outcome rank plus incidence in/out arity <=2, not bounded Ulam/address bit length;
+the shared-carrier=>wire-comparable=>incomparable-support-disjoint lemma is explicit
+and gated; stale scope/provenance comments fixed; incoming P(A=1)=0 baseline gated.
+Fresh salted output byte-matches SHA256 9ce73a69...31a731a, 14/14. TERMINAL noun:
+D34c FINITE TYPED-DAG COMPATIBILITY PASS — the chosen birth/idle/interaction
+family yields strongly-positive, finite-down-set-consistent quantum history
+functionals with fresh bounded-rank event outcomes; incoming reception, two-tip
+merge and actor construction gauge are explicit. Still open: timed operator-valued
+D34b measure/direct integral, infinite incoming marginal, untimed/profinite
+restriction, graph-sector superposition and derived rates/operations. D34d may open.

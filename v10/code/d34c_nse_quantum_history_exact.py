@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """D34c exact receipt: finite typed-DAG actor/quantum sewing.
 
-Pin: note-d33-history-law-phase.md §11, commit f861328, before this file.
+Pins: note-d33-history-law-phase.md §11 / commit f861328 (original), and
+§16 / commit 9cd9ac4 (bounded-event-record repair), both before their code.
 
 This receipt does NOT derive the D34b weights or nature's quantum law.  It
 tests a compatibility construction on finite typed D34b wire-DAGs.  The
@@ -668,9 +669,9 @@ check(
 )
 
 
-# C8: actual A-local D34b actor cylinder, sequential quantum operations,
-# factorized mailboxes, and remote quantum factorization.  Scope is the
-# A-initiated local-ring stopping algebra through depth two—not timed X_T.
+# C8: conditioned consecutive-A initiated specimen with sequential quantum
+# operations.  Non-A events are suppressed; this is not the timed D34b
+# A-local stopping marginal.
 
 
 def actor_seed(pairs=(("A", "B"),)):
@@ -985,7 +986,11 @@ shadow_ok &= shadow2 == {k: Q2(v) for k, v in mass2.items()}
 def prefix_label(row, n):
     return (canonical_graph(row["events"][:n]),
             row["record_prefixes"][n - 1],
-            row["internals"][:n])
+            tuple(sorted(
+                (event[0], internal)
+                for event, internal in zip(row["events"][:n],
+                                           row["internals"][:n])
+            )))
 
 
 labels1 = [prefix_label(row, 1) for row in qbranches1]
@@ -1004,7 +1009,10 @@ def durable_internal(x):
 
 def durable_signature(row):
     return (canonical_graph(row["events"]),
-            tuple(durable_internal(x) for x in row["internals"]))
+            tuple(sorted(
+                (event[0], durable_internal(internal))
+                for event, internal in zip(row["events"], row["internals"])
+            )))
 
 
 # Equality of the fresh-record partition and the durable physical-signature
@@ -1033,6 +1041,24 @@ for row in qbranches2:
     final_items = set(event_record_key(row["records"]))
     for _, prefix_items in row["record_prefixes"]:
         fresh_record_capacity &= set(prefix_items) <= final_items
+
+
+def incidence_arity_ok(events):
+    successors = defaultdict(set)
+    for event in events:
+        eid, _, _, _, preds = event
+        if len(preds) > 2:
+            return False
+        for pred in preds:
+            successors[pred].add(eid)
+    return all(len(ids) <= 2 for ids in successors.values())
+
+
+# In this grammar each event touches at most two wires.  It can therefore have
+# at most one immediate successor on each touched wire: in/out arity <= 2.
+fresh_record_capacity &= all(
+    incidence_arity_ok(row["events"]) for row in qbranches2
+)
 
 # Outgoing targets are passive: only A's private initiated ring advances in
 # this conditioned skeleton, while the shared event belongs to both wires via
@@ -1252,8 +1278,8 @@ check(
 )
 
 check(
-    "C9 BOUNDED EVENT RECORDS + ACTUAL-FAMILY NSE INSTRUMENT [exact]: each "
-    "event creates one fresh bounded outcome factor and bounded-degree typed "
+    "C9 BOUNDED-RANK EVENT OUTCOMES + ACTUAL-FAMILY NSE INSTRUMENT [exact]: "
+    "each event creates one fresh finite-rank outcome factor and bounded-arity typed "
     "links; no actor mailbox grows. The durable signature and record "
     "partitions coincide modulo p. Correctly typed K_(x,r)=sum_p C_(x,r,p) "
     "gives W_x^dag W_x=I for idle, D24 birth and both interaction targets; "
@@ -1261,7 +1287,8 @@ check(
     fresh_record_capacity and record_partition_ok
     and event_instruments_are_isometries and durable_result_not_isometry
     and scheduler_operator_complete and all_m_identity,
-    "one factor/event; local alphabet=6; indegree<=2; operator closures "
+    "one factor/event; local alphabet=6; in/out arity<=2; structural address "
+    "length not claimed bounded; operator closures "
     "16x16 exact; fresh degree-2 birth slot distinct from both targets; "
     "m*(1/4m)=1/4 for every positive m",
 )
@@ -1282,7 +1309,10 @@ def physical_actor_state_key(state):
 def branch_vector_map(rows):
     return {
         (physical_record_key(row["events"], row["records"]),
-         row["internals"]): row["v"]
+         tuple(sorted(
+             (event[0], internal)
+             for event, internal in zip(row["events"], row["internals"])
+         ))): row["v"]
         for row in rows
     }
 
@@ -1304,6 +1334,10 @@ incoming_rows = quantum_branches(
 )
 incoming_sum = [sum((row["v"][i] for row in incoming_rows), ZERO)
                 for i in range(ADIM)]
+incoming_initial_a_one = sum(
+    (x * x for i, x in enumerate(incoming_initial)
+     if abit(i, ACTOR_Q["A"])), ZERO
+)
 incoming_a_one = sum(
     (x * x for i, x in enumerate(incoming_sum)
      if abit(i, ACTOR_Q["A"])), ZERO
@@ -1318,6 +1352,7 @@ incoming_ok = (
     and len(incoming_rows) == 8
     and all(len(row["records"]) == 2 for row in incoming_rows)
     and inner(incoming_sum, incoming_sum) == ONE
+    and incoming_initial_a_one == ZERO
     and incoming_a_one == HALF
 )
 
@@ -1336,6 +1371,8 @@ merge_ok = (
     merge_event[4] == ("A#r1", "B#r1")
     and physical_actor_state_key(merge_ab) == physical_actor_state_key(merge_ba)
     and branch_vector_map(merge_rows_ab) == branch_vector_map(merge_rows_ba)
+    and incidence_arity_ok(merge_ab["events"])
+    and incidence_arity_ok(merge_ba["events"])
 )
 check(
     "C10 INCOMING RECEPTION + TWO-TIP MERGE / ACTOR GAUGE [exact]: an "
@@ -1437,6 +1474,8 @@ remote_actor_ok = (
     and physical_actor_state_key(remote_ab) == physical_actor_state_key(remote_ba)
     and remote_record_orders_equal
     and all(len(event[4]) == 0 for event in remote_ab["events"])
+    and incidence_arity_ok(remote_ab["events"])
+    and incidence_arity_ok(remote_ba["events"])
 )
 check(
     "C11 ACTUAL DISCONNECTED ACTOR FACTOR / REMOTE MARGINAL [exact]: on "
@@ -1449,21 +1488,61 @@ check(
     "joint local marginal=D_diamond",
 )
 
+def touched_actors(event):
+    _, initiator, kind, target, _ = event
+    return {initiator} if kind == "n" else {initiator, target}
+
+
+def carrier_support_lemma(events):
+    by_id = {event[0]: event for event in events}
+    memo = {}
+
+    def ancestors(eid):
+        if eid not in memo:
+            out = set()
+            for pred in by_id[eid][4]:
+                out.add(pred)
+                out.update(ancestors(pred))
+            memo[eid] = out
+        return memo[eid]
+
+    for left, right in product(events, repeat=2):
+        if left[0] >= right[0]:
+            continue
+        if touched_actors(left) & touched_actors(right):
+            if (left[0] not in ancestors(right[0])
+                    and right[0] not in ancestors(left[0])):
+                return False
+    return True
+
+
+support_lemma_specimens = all(
+    carrier_support_lemma(events)
+    for events in [
+        *(row["events"] for row in qbranches2),
+        incoming_then_a["events"], merge_ab["events"], merge_ba["events"],
+        remote_ab["events"], remote_ba["events"],
+    ]
+)
+
 finite_dag_theorem_hypotheses = (
     fresh_record_capacity and record_partition_ok
     and event_instruments_are_isometries and scheduler_operator_complete
     and incoming_ok and merge_ok and remote_actor_ok
+    and support_lemma_specimens
 )
 check(
     "C12 FINITE TYPED-DAG / DOWN-SET THEOREM [algebraic proof + exact "
     "specimens]: Gram positivity follows from class vectors with one fresh "
     "bounded event factor per node. Exhaustive extension restricts because "
     "sum_x q_x W_x^dag W_x=I; induction covers every finite down-set. "
-    "Record-disjoint incomparable maps commute, while shared-wire order and "
-    "two-tip merges are physical",
+    "Events sharing a carrier are comparable along its wire, so incomparable "
+    "events have disjoint carrier support and commute; shared-wire order and "
+    "two-tip merges remain physical",
     finite_dag_theorem_hypotheses,
-    "conditioned A tree + incoming reception + merge + disconnected actors; "
-    "full timed direct integral not consumed",
+    "wire-support lemma gated on every specimen; conditioned A tree + "
+    "incoming reception + merge + disconnected actors; timed direct "
+    "integral not consumed",
 )
 
 
@@ -1471,7 +1550,7 @@ check(
 ok13 = FAIL == 0
 check(
     "C13 CLAIM CEILING [dependent scorecard]: earned only FINITE TYPED-DAG "
-    "ACTOR/QUANTUM SEWING WITH BOUNDED EVENT RECORDS plus conditional finite-"
+    "ACTOR/QUANTUM SEWING WITH BOUNDED-RANK EVENT OUTCOMES plus conditional finite-"
     "down-set induction for the chosen operation family. Not earned: the "
     "timed operator-valued D34b measure or infinite incoming marginal, "
     "untimed/profinite restriction, graph-sector superposition, derived "

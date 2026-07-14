@@ -402,11 +402,11 @@ The §16 target is implemented in `code/d34c_nse_quantum_history_exact.py`. Two 
 
 The `3/10` classical and `10/108` quantum trees are retained and renamed the **consecutive-A-initiated conditioned specimen**. They are complete only when non-A events are suppressed. Its exact classical shadows, changing-degree `1/8+1/8`, outgoing-target passive reception, interference and genuine `108->10` restriction survive. No line now calls it the timed D34b A-local marginal.
 
-### 17.2 Fresh bounded event records
+### 17.2 Fresh bounded-rank event outcomes
 
-Append-only actor mailboxes are removed. Every event allocates one new event-record factor with a fixed six-element local evidence alphabet: birth, idle, or interaction with one of four durable `(s,o)` results. The unrecorded path `p` is absent and remains coherent. Initiator, target and at most two predecessor references belong to the bounded-degree typed incidence relation, not to an ever-growing evidence string inside an actor. Old event factors are immutable/support-excluded; the total web can grow by adding records while each record's local outcome rank stays bounded.
+Append-only actor mailboxes are removed. Every event allocates one new event-record factor with a fixed six-element local evidence alphabet: birth, idle, or interaction with one of four durable `(s,o)` results. The unrecorded path `p` is absent and remains coherent. Initiator, target and predecessor/successor references belong to a typed incidence relation with in-degree and immediate out-degree at most two, not to an ever-growing evidence string inside an actor. Old event factors are immutable/support-excluded; the total web can grow by adding records while each record's local outcome rank and incidence arity stay bounded. Ulam addresses and local ring ordinals may grow in serialized description length; they are structural identities, and no uniform bound on those identifier bits is claimed.
 
-The receipt compares the fresh-record and durable-physical-signature partitions in both directions. It requires exactly one record per event, local content in the six-element alphabet, predecessor indegree at most two, and every prefix record factor to persist unchanged in the final product.
+The receipt compares the fresh-record and durable-physical-signature partitions in both directions. Fine internal alternatives are keyed by their local event IDs before canonical comparison, so swapping two incomparable interactions cannot leave an auxiliary tuple order in the class label. It requires exactly one record per event, local content in the six-element alphabet, incidence in/out arity at most two, and every prefix record factor to persist unchanged in the final product.
 
 ### 17.3 Correct all-state instrument
 
@@ -428,6 +428,22 @@ On disconnected components `A--B` and `P--Q`, A performs the actual diamond inte
 
 ### 17.6 Provisional theorem and ceiling
 
-Given a finite typed wire-DAG and the declared hypotheses, class vectors with fresh event factors give a Gram functional and therefore strong positivity. Correctly typed exhaustive event instruments give `sum_x q_x W_x^dag W_x=I`; induction restricts every finite extension to its earlier down-set. Disjoint event maps commute by tensor support, while the merge specimen shows why shared-wire order is not gauge.
+Given a finite typed wire-DAG and the declared hypotheses, class vectors with fresh event factors give a Gram functional and therefore strong positivity. Correctly typed exhaustive event instruments give `sum_x q_x W_x^dag W_x=I`; induction restricts every finite extension to its earlier down-set. The wire-support lemma is explicit: in this grammar, two events sharing an actor/carrier are comparable along that actor's wire; consequently incomparable events have disjoint touched-carrier support and their maps commute. The merge specimen shows why shared-wire order is not gauge.
 
-**Provisional maximum noun:** `FINITE TYPED-DAG ACTOR/QUANTUM SEWING PASS WITH BOUNDED EVENT RECORDS`, plus the conditional finite-down-set theorem for the chosen operation family. This is still not the timed operator-valued D34b measure. In particular, it does not sum the unbounded positive-measure incoming histories before an A stopping time. The complete direct integral, infinite marginal, untimed/profinite restriction, graph-sector superposition, derived operation law, sealing and geometry remain open. Three hostile delta streams must now decide whether §17 is terminal.
+**Provisional maximum noun:** `FINITE TYPED-DAG ACTOR/QUANTUM SEWING PASS WITH BOUNDED-RANK EVENT OUTCOMES`, plus the conditional finite-down-set theorem for the chosen operation family. This is still not the timed operator-valued D34b measure. In particular, it does not sum the unbounded positive-measure incoming histories before an A stopping time. The complete direct integral, infinite marginal, untimed/profinite restriction, graph-sector superposition, derived operation law, sealing and geometry remain open. Three hostile delta streams must now decide whether §17 is terminal.
+
+## 18. d34c terminal delta (2026-07-13) — FINITE TYPED-DAG COMPATIBILITY PASS
+
+**Independent deltas:** quantum mathematics `DELTA-CLEAN — 0B/0M/0m/0n`; NSE/seal `DELTA-CLEAN — 0B/0M/0m` with two non-blocking precision notes; architecture `CORE DELTA-CLEAN — 0B/0M/3m/3n`. Every architecture item was applied rather than deferred:
+
+1. unrecorded internal alternatives are event-ID-keyed before canonical comparison;
+2. “bounded” is narrowed to local outcome rank and incidence arity, with identifier-bit length explicitly unbounded/not claimed;
+3. the shared-carrier-comparable therefore incomparable-carrier-disjoint wire-support lemma is stated and specimen-gated;
+4. the stale A-local comment and replacement-pin provenance are corrected;
+5. the incoming baseline `P(A=1)=0` is now explicitly gated before the exact `1/2` after-value.
+
+The NSE notes are also carried: `m(1/(4m))=1/4` is an algebraic all-positive-`m` proof, not misdescribed as a symbolic software gate; evidence-factor rank and structural incidence remain distinct. Fresh executions under two new salts are byte-identical at SHA-256 `9ce73a693b41f765eff163749ef769ca0cb4ce856ead66d690a63a20331a731a`.
+
+**TERMINAL VERDICT:** **D34c FINITE TYPED-DAG COMPATIBILITY PASS — for the chosen birth/idle/interaction family, finite typed actor DAGs admit strongly positive, finite-down-set-consistent quantum history functionals with one fresh bounded-rank event-outcome factor per click; incoming reception, two-tip merging and actor-level construction gauge are explicitly realized.**
+
+This closes the finite conditional quantum-sewing question. It does **not** close the timed history-law question: the operator-valued/direct-integral lift of the complete D34b measure, the unbounded incoming-event marginal, intrinsic untimed/profinite restrictions, graph-sector superposition and the derivation of the physical operation/rate law remain open. Those distinctions control the next phase rather than being absorbed into the terminal noun.
