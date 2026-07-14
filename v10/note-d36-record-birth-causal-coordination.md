@@ -556,3 +556,53 @@ freezes four repairs:
 
 The first source and receipt remain as an auditable provisional checkpoint.
 No scientific noun is promoted until a strengthened rerun and hostile review.
+
+## 16. Strengthened exact review candidate
+
+All four self-audit repairs were made without changing the frozen fixtures,
+protocol or 22 verdict gates.  Two clean reruns are byte-identical and give:
+
+```text
+all fail-fast terminal states explicitly typed       28 / 28;
+fail-fast transition graphs directed acyclic         4 / 4;
+cyclic local order R<P<Q<R global serializations     0;
+born/token projected nodes                           1,113 / 1,113;
+born/token projected edges                           2,984 / 2,984;
+born/token terminal observable classes               3 / 3;
+verdict                                               PASS 22/22.
+```
+
+The fail-fast terminal multiplicities (`8,17,1,2`) count distinct canonical
+terminal *states*.  No probability measure over asynchronous delivery orders
+has been supplied, so those counts are not probabilities.  The actual
+probability results remain K1--K3 and the finite-bit rows, all computed with
+exact `Fraction` arithmetic.
+
+The born/token statement is also deliberately narrow.  The checker constructs
+two labeled transition graphs: one whose transaction carriers are immutable
+structural proposal records, and one whose carriers are activated pre-existing
+bounded slots.  Erasing only that carrier presentation maps every node and
+every edge in both graphs to the same coordination graph, and preserves the
+three terminal commit-observable classes.  Thus record birth adds persistence,
+addressability and causal evidence, but it has not yet added finite-horizon
+coordination power.  This is a matched-control bisimulation, not a theorem that
+birth is eliminable in an unbounded universe.
+
+Hashes are:
+
+```text
+source  f1b2c5010812e08f560876a570fc06693d59633de03421b0fed5ff5e5c3daed0
+stdout  0bf500873acdc71bb68c5b7d9012b89310941c879f59b013105db1f0e00fccea
+science 872a38acd65f7ebcb122a50f6713da53ae119764c7449387b1b55efe27acf04b
+```
+
+The unchanged candidate verdict is:
+
+> **CLOCK-FREE LOCAL TRANSACTION COORDINATION / SAFE, NONSELECTING,
+> FAILURE-FREE.**
+
+It means the local record grammar can represent safe completed attempts and
+exactly exposes partial application, but only under failure-free fair delivery.
+It does not select arbitration, define the closed eligibility boundary, prove
+starvation freedom, derive the opportunity/birth law, or generate the quantum
+instrument.  Independent hostile review now attacks those exact boundaries.

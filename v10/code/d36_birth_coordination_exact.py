@@ -413,21 +413,85 @@ class FFResult:
     states: int
     edges: int
     terminals: int
+    typed_terminals: int
     outcomes: Tuple[Tuple[Tuple[str, ...], int], ...]
     partial_application_states: int
     deadlocks: int
+    acyclic: bool
 
 
-def enumerate_failfast(fixture: Fixture) -> FFResult:
+def terminal_well_typed(fixture: Fixture, state: FFState) -> bool:
+    """Check the complete response/decision/apply/ack type at a terminal."""
+    if state.pending or not all(phase == CLOSED for phase in state.phases):
+        return False
+    participant_count = len(participant_names(fixture))
+    incidence = fixture_indices(fixture)
+    for tx_index, members in enumerate(incidence):
+        member_slots = [slot(tx_index, p, participant_count) for p in members]
+        responses = [state.responses[index] for index in member_slots]
+        applications = [state.applications[index] for index in member_slots]
+        acknowledgements = [state.acknowledgements[index] for index in member_slots]
+        if not all(response in (1, 2) for response in responses):
+            return False
+        if not all(acknowledgement == 1 for acknowledgement in acknowledgements):
+            return False
+        if all(response == 1 for response in responses):
+            if not all(application == 1 for application in applications):
+                return False
+        elif not all(application == 2 for application in applications):
+            return False
+    return True
+
+
+def failfast_graph(fixture: Fixture) -> Tuple[set[FFState], set[Tuple[FFState, FFState]]]:
+    """Materialize the exact state graph, with one edge per distinct delivery."""
     initial = initial_failfast(fixture)
     queue = deque([initial])
     seen = {initial}
-    edges = 0
+    graph_edges: set[Tuple[FFState, FFState]] = set()
+    while queue:
+        state = queue.popleft()
+        if not state.pending:
+            continue
+        prior = None
+        for index, message in enumerate(state.pending):
+            if message == prior:
+                continue
+            prior = message
+            next_state = ff_deliver(fixture, state, index)
+            graph_edges.add((state, next_state))
+            if next_state not in seen:
+                seen.add(next_state)
+                queue.append(next_state)
+    return seen, graph_edges
+
+
+def directed_acyclic(nodes: set[FFState], edges: set[Tuple[FFState, FFState]]) -> bool:
+    successors: Dict[FFState, set[FFState]] = defaultdict(set)
+    indegree = {node: 0 for node in nodes}
+    for source, target in edges:
+        if target not in successors[source]:
+            successors[source].add(target)
+            indegree[target] += 1
+    queue = deque(node for node, degree in indegree.items() if degree == 0)
+    visited = 0
+    while queue:
+        node = queue.popleft()
+        visited += 1
+        for target in successors[node]:
+            indegree[target] -= 1
+            if indegree[target] == 0:
+                queue.append(target)
+    return visited == len(nodes)
+
+
+def enumerate_failfast(fixture: Fixture) -> FFResult:
+    seen, graph_edges = failfast_graph(fixture)
     terminal_outcomes: Dict[Tuple[str, ...], int] = defaultdict(int)
     partial = 0
     deadlocks = 0
-    while queue:
-        state = queue.popleft()
+    typed_terminals = 0
+    for state in seen:
         failfast_safety(fixture, state)
         for tx_index, phase in enumerate(state.phases):
             if phase == COMMIT:
@@ -442,26 +506,16 @@ def enumerate_failfast(fixture: Fixture) -> FFResult:
                 deadlocks += 1
             else:
                 terminal_outcomes[tuple(sorted(committed_names(fixture, state)))] += 1
-            continue
-        # Equal messages are not expected, but selecting each distinct message
-        # avoids artificial multiplicity.
-        prior = None
-        for index, message in enumerate(state.pending):
-            if message == prior:
-                continue
-            prior = message
-            next_state = ff_deliver(fixture, state, index)
-            edges += 1
-            if next_state not in seen:
-                seen.add(next_state)
-                queue.append(next_state)
+                typed_terminals += int(terminal_well_typed(fixture, state))
     return FFResult(
         states=len(seen),
-        edges=edges,
+        edges=len(graph_edges),
         terminals=sum(terminal_outcomes.values()),
+        typed_terminals=typed_terminals,
         outcomes=tuple(sorted(terminal_outcomes.items())),
         partial_application_states=partial,
         deadlocks=deadlocks,
+        acyclic=directed_acyclic(seen, graph_edges),
     )
 
 
@@ -803,18 +857,58 @@ def upper_seal_gate() -> Tuple[int, int, int, str]:
     return len(parents), len(close_ancestors), max_parent_arity, graph_hash
 
 
-def born_token_bisimulation_gate() -> Tuple[int, int, int]:
-    result = enumerate_failfast(FIXTURES["pair"])
-    # Each core state/edge has a BORN presentation and a TOKEN presentation.
-    # Projection erases only the presentation tag, leaving the same graph.
-    born_states = {("BORN", index) for index in range(result.states)}
-    token_states = {("TOKEN", index) for index in range(result.states)}
-    projected_born = {index for _, index in born_states}
-    projected_token = {index for _, index in token_states}
-    if projected_born != projected_token:
-        raise AssertionError("state projection")
-    # Edge structure is inherited one-for-one from the core enumerator.
-    return len(projected_born), result.edges, result.terminals
+def born_token_bisimulation_gate() -> Tuple[int, int, int, int, int]:
+    fixture = FIXTURES["pair"]
+    core_nodes, core_edges = failfast_graph(fixture)
+
+    # The presentations differ in ontology.  BORN has immutable transaction
+    # records with structural headers; TOKEN has pre-existing bounded slots.
+    # Both carry exactly the same coordination payload in this matched control.
+    born_header = tuple(
+        ("proposal", tx.name, tuple(tx.participants), ("base", 0)) for tx in fixture
+    )
+    token_slots = tuple(("slot", index, tuple(tx.participants)) for index, tx in enumerate(fixture))
+    born_nodes = {("BORN", born_header, state) for state in core_nodes}
+    token_nodes = {("TOKEN", token_slots, state) for state in core_nodes}
+    born_edges = {
+        (("BORN", born_header, source), ("BORN", born_header, target))
+        for source, target in core_edges
+    }
+    token_edges = {
+        (("TOKEN", token_slots, source), ("TOKEN", token_slots, target))
+        for source, target in core_edges
+    }
+
+    projected_born_nodes = {node[2] for node in born_nodes}
+    projected_token_nodes = {node[2] for node in token_nodes}
+    projected_born_edges = {(source[2], target[2]) for source, target in born_edges}
+    projected_token_edges = {(source[2], target[2]) for source, target in token_edges}
+    if projected_born_nodes != core_nodes or projected_token_nodes != core_nodes:
+        raise AssertionError("node projection")
+    if projected_born_edges != core_edges or projected_token_edges != core_edges:
+        raise AssertionError("edge projection")
+    if projected_born_edges != projected_token_edges:
+        raise AssertionError("transition projection")
+
+    born_terminal_observables = {
+        tuple(sorted(committed_names(fixture, state)))
+        for state in projected_born_nodes
+        if not state.pending
+    }
+    token_terminal_observables = {
+        tuple(sorted(committed_names(fixture, state)))
+        for state in projected_token_nodes
+        if not state.pending
+    }
+    if born_terminal_observables != token_terminal_observables:
+        raise AssertionError("observable projection")
+    return (
+        len(core_nodes),
+        len(core_edges),
+        len(born_terminal_observables),
+        int(projected_born_edges == projected_token_edges),
+        int(born_terminal_observables == token_terminal_observables),
+    )
 
 
 def stale_and_atomic_gate() -> Tuple[int, int, int, int]:
@@ -874,6 +968,20 @@ def exclusive_split_vote_gate() -> Tuple[int, int, Tuple[Tuple[str, str], ...]]:
     ]:
         raise AssertionError("split witness")
     return split_count, winner_count, witness
+
+
+def cyclic_local_order_gate() -> Tuple[Tuple[Tuple[str, str], ...], int]:
+    """Three locally valid queue comparisons need not have a global order."""
+    edges = (("R", "P"), ("P", "Q"), ("Q", "R"))
+    vertices = ("P", "Q", "R")
+    global_serializations = tuple(
+        order
+        for order in permutations(vertices)
+        if all(order.index(before) < order.index(after) for before, after in edges)
+    )
+    if global_serializations:
+        raise AssertionError(global_serializations)
+    return edges, len(global_serializations)
 
 
 def capacity_gate() -> Tuple[int, int, int, int, int]:
@@ -941,20 +1049,40 @@ def main() -> None:
     )
 
     split_count, winner_count, split_witness = exclusive_split_vote_gate()
-    gates["G5"] = split_count == 2 and winner_count == 6
-    science["exclusive_wait"] = [split_count, winner_count, split_witness]
+    cyclic_edges, global_serializations = cyclic_local_order_gate()
+    gates["G5"] = split_count == 2 and winner_count == 6 and global_serializations == 0
+    science["exclusive_wait"] = [
+        split_count,
+        winner_count,
+        split_witness,
+        cyclic_edges,
+        global_serializations,
+    ]
     emit("[EXCLUSIVE-WAIT TRIANGLE]")
     emit(
         f"assignments=8; winner_assignments={winner_count}; split_vote_deadlocks={split_count}; "
         f"witness={split_witness}"
     )
+    emit(f"cyclic_local_order={cyclic_edges}; compatible_global_serializations={global_serializations}")
 
     failfast_results = {name: enumerate_failfast(FIXTURES[name]) for name in ("pair", "triangle", "disjoint", "partial")}
-    gates["G6"] = all(result.deadlocks == 0 and result.terminals > 0 for result in failfast_results.values())
+    gates["G6"] = all(
+        result.deadlocks == 0 and result.terminals > 0 and result.acyclic
+        for result in failfast_results.values()
+    )
     gates["G7"] = all(result.partial_application_states > 0 for result in failfast_results.values())
     gates["G8"] = atomic_orders == 2 and failfast_results["pair"].partial_application_states > 0
     science["failfast"] = {
-        name: [result.states, result.edges, result.terminals, result.outcomes, result.partial_application_states, result.deadlocks]
+        name: [
+            result.states,
+            result.edges,
+            result.terminals,
+            result.typed_terminals,
+            result.outcomes,
+            result.partial_application_states,
+            result.deadlocks,
+            result.acyclic,
+        ]
         for name, result in failfast_results.items()
     }
     emit("[FAIL-FAST LOCAL ATTEMPTS]")
@@ -962,8 +1090,10 @@ def main() -> None:
         emit(
             f"{name}: states={result.states}; edges={result.edges}; terminals={result.terminals}; "
             f"outcomes={result.outcomes}; partial_apply_states={result.partial_application_states}; "
-            f"deadlocks={result.deadlocks}"
+            f"deadlocks={result.deadlocks}; typed_terminals={result.typed_terminals}; "
+            f"transition_DAG={int(result.acyclic)}"
         )
+    emit("outcome multiplicities count canonical terminal states; they are not service-order probabilities")
     emit("atomic_oracle_hides_partial_apply=1; local_close_waits_for_all_acks=1")
 
     serializer_checks, serializer_deliveries = serializer_gate()
@@ -976,14 +1106,9 @@ def main() -> None:
     )
 
     gates["G10"] = stale_rejections == 1 and all(
-        all(phase == CLOSED for phase in state.phases)
-        for fixture in (FIXTURES["pair"],)
-        for state in []
+        result.typed_terminals == result.terminals
+        for result in failfast_results.values()
     )
-    # The empty nested quantifier above deliberately leaves the exact terminal
-    # typing to enumerate_failfast's terminal invariant; stale rejection is the
-    # independent gate value.
-    gates["G10"] = gates["G10"] and all(result.deadlocks == 0 for result in failfast_results.values())
 
     disjoint_checks, shared_coin = disjoint_factorization_gate()
     gates["G11"] = disjoint_checks == 4
@@ -1051,13 +1176,26 @@ def main() -> None:
         f"pairwise_anticorrelation_joint_support={joint_support}"
     )
 
-    bisim_states, bisim_edges, bisim_terminals = born_token_bisimulation_gate()
-    gates["G18"] = bisim_states > 0 and bisim_edges > 0 and bisim_terminals > 0
-    science["bisimulation"] = [bisim_states, bisim_edges, bisim_terminals]
+    bisim_states, bisim_edges, bisim_observables, edge_match, observable_match = born_token_bisimulation_gate()
+    gates["G18"] = (
+        bisim_states > 0
+        and bisim_edges > 0
+        and bisim_observables > 0
+        and edge_match == 1
+        and observable_match == 1
+    )
+    science["bisimulation"] = [
+        bisim_states,
+        bisim_edges,
+        bisim_observables,
+        edge_match,
+        observable_match,
+    ]
     emit("[BORN / TOKEN MATCHED CONTROL]")
     emit(
         f"projected_states={bisim_states}; projected_edges={bisim_edges}; "
-        f"projected_terminals={bisim_terminals}; participant_commit_observables_equal=1"
+        f"terminal_observable_classes={bisim_observables}; edge_relation_equal={edge_match}; "
+        f"participant_commit_observables_equal={observable_match}"
     )
 
     seal_nodes, seal_ancestors, max_parent_arity, seal_hash = upper_seal_gate()

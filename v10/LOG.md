@@ -3370,7 +3370,7 @@ only T's wire after all participant-local applies; it is a causal summary, not
 a multiwire mutation. A simultaneous validate-and-advance transition is kept
 only as an atomic regional oracle control (the D35 shared `sync_tips` pattern),
 and partial-application states are explicit in the local arm. Gates expand to
-21, adding fail-fast termination, causal closure, oracle attribution and the
+22, adding fail-fast termination, causal closure, oracle attribution and the
 crash/no-fair-delivery blocking counterexample. This amendment precedes every
 receipt run.
 
@@ -3393,3 +3393,22 @@ is absent; and prose says 21 while G0--G21 is 22 gates. These are frozen before
 repair. Provisional source/stdout/science hashes are `407a11c...57673`,
 `c4483a3...8d51`, `0a81851...6a94`. The provisional code/receipt remain in Git;
 the strengthened exact rerun precedes hostile review.
+
+## 2026-07-14 — D36 strengthened exact candidate green (LEDGER #209)
+
+All four frozen self-audit repairs are implemented without moving the protocol
+or verdict gates.  Every one of the 28 canonical terminal states across the
+four fail-fast fixtures now passes explicit response/application/ack typing;
+all four complete transition graphs are directed acyclic graphs.  The exact
+`R<P<Q<R` local-order cycle admits zero global serializations.  The born/token
+control now constructs both labeled state-and-edge graphs and verifies the
+projection on all 1,113 states and 2,984 edges, as well as all three terminal
+commit-observable classes.  Terminal multiplicities are explicitly identified
+as canonical state counts, not delivery-order probabilities.
+
+Two clean reruns are byte-identical.  The strengthened receipt remains
+`PASS 22/22`, with source/stdout/science hashes `f1b2c50...daed0`,
+`0bf5008...fccea`, and `872a38a...f04b`.  Scientific verdict remains
+`CLOCK-FREE LOCAL TRANSACTION COORDINATION / SAFE, NONSELECTING,
+FAILURE-FREE`.  This is the round-one hostile-review candidate, not yet a
+terminal claim.

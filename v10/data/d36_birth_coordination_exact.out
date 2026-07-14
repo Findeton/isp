@@ -10,11 +10,13 @@ states=45; edges=69; deadlocks=1; circular_wait_held=(0, 1, 2); born_ticket_proj
 read_only_double_commit=1; atomic_oracle_safe_orders=2/2; participant_split_adoption=1; stale_photo_rejections=1
 [EXCLUSIVE-WAIT TRIANGLE]
 assignments=8; winner_assignments=6; split_vote_deadlocks=2; witness=(('A', 'P'), ('B', 'Q'), ('C', 'R'))
+cyclic_local_order=(('R', 'P'), ('P', 'Q'), ('Q', 'R')); compatible_global_serializations=0
 [FAIL-FAST LOCAL ATTEMPTS]
-pair: states=1113; edges=2984; terminals=8; outcomes=(((), 2), (('P',), 3), (('Q',), 3)); partial_apply_states=232; deadlocks=0
-triangle: states=34637; edges=140028; terminals=17; outcomes=(((), 2), (('P',), 5), (('Q',), 5), (('R',), 5)); partial_apply_states=9420; deadlocks=0
-disjoint: states=289; edges=816; terminals=1; outcomes=((('P', 'Q'), 1),); partial_apply_states=120; deadlocks=0
-partial: states=1517; edges=5162; terminals=2; outcomes=((('P',), 1), (('Q',), 1)); partial_apply_states=518; deadlocks=0
+pair: states=1113; edges=2984; terminals=8; outcomes=(((), 2), (('P',), 3), (('Q',), 3)); partial_apply_states=232; deadlocks=0; typed_terminals=8; transition_DAG=1
+triangle: states=34637; edges=140028; terminals=17; outcomes=(((), 2), (('P',), 5), (('Q',), 5), (('R',), 5)); partial_apply_states=9420; deadlocks=0; typed_terminals=17; transition_DAG=1
+disjoint: states=289; edges=816; terminals=1; outcomes=((('P', 'Q'), 1),); partial_apply_states=120; deadlocks=0; typed_terminals=1; transition_DAG=1
+partial: states=1517; edges=5162; terminals=2; outcomes=((('P',), 1), (('Q',), 1)); partial_apply_states=518; deadlocks=0; typed_terminals=2; transition_DAG=1
+outcome multiplicities count canonical terminal states; they are not service-order probabilities
 atomic_oracle_hides_partial_apply=1; local_close_waits_for_all_acks=1
 [CLOSED ORDERED BATCH]
 priority_cells=18; message_serializer_checks=8976; all_equal_greedy=1; all_safe_maximal_nonempty=1
@@ -41,7 +43,7 @@ K3_path_to_edge={}:2/5, {P}:2/5, {Q}:1/5; explicit_R_boundary_mixture_repairs=1
 [HYPEREDGE / FINITE COVER]
 three_way_forbidden_with_all_pairs_allowed=1; pairwise_anticorrelation_joint_support=0
 [BORN / TOKEN MATCHED CONTROL]
-projected_states=1113; projected_edges=2984; projected_terminals=8; participant_commit_observables_equal=1
+projected_states=1113; projected_edges=2984; terminal_observable_classes=3; edge_relation_equal=1; participant_commit_observables_equal=1
 [CAUSAL CLOSURE / CAPACITY]
 closure_nodes=11; closure_ancestors=10; max_parent_arity=3; closure_sha256=b05a409298aaab0417d3bf96d41a3ed5a22779e864c2af854838e38884b2b611
 max_tx_arity=3; max_participants=4; max_proposals=3; max_incident=2; priority_bits=2
@@ -49,9 +51,9 @@ proposal_birth_one_parent=1; participant_apply_local=1; quantum_join_derived=0
 [FAILURE / FAIRNESS SCOPE]
 coordinator_loss_can_block_promise=1; safe_unilateral_expiry_without_detector=0; positive_theorem_requires_failure_free_fair_delivery=1
 [HASHES]
-source_sha256=407a11c13505c79d2db10d12438c2d9a212e06bd349ee5a63fab8ff16bd57673
-stdout_body_sha256=4bbed95395b12e24add657ff97146964ca63f6cdb5252955b2306c7ede084400
-internal_science_sha256=0a81851fb746811d745856a07a68308ec94577ebfa1e2b1640ae122f0cb86a94
+source_sha256=f1b2c5010812e08f560876a570fc06693d59633de03421b0fed5ff5e5c3daed0
+stdout_body_sha256=c5258f02d8f9763708e9355a304295e6c94a7c85aac39dde22c1d3f0b826c1c7
+internal_science_sha256=872a38acd65f7ebcb122a50f6713da53ae119764c7449387b1b55efe27acf04b
 [GATES]
 G0=PASS
 G1=PASS
