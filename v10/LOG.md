@@ -3156,3 +3156,25 @@ independent OS actors. The maximum candidate noun remains TIMELESS ROOTED
 NESTED-CALL FAMILY / EXECUTABLE. The root-free target is compatibility on
 overlapping finite causal-diamond kernels; q, g and the family remain
 unselected. Independent closing review is mandatory before Paper 24.
+
+## 2026-07-14 — D35 round 3 freezes typed-freshness close (LEDGER #200)
+Independent reconstruction accepts D35c's probability arithmetic, 16/408
+projectivity on ordinary complete renamings, common 8-to-48 direct-sum
+instrument, D24 instant, issued actor protocol, D-origin carried evidence and
+honest A-rooted/shared-joint-state scope. The lanes report `0B/1M/0m/0n`,
+`0B/0M/1m/0n` and `0B/0M/1m/0n`.
+
+The remaining major is a hidden raw-name channel in allocation. Renaming a
+seed event to the future call-one generated string preserves the complete
+first law but makes call two reject; targeting call five delays failure to the
+sixth call. Renaming actor D to the future root-newborn string makes the birth
+branch reject. Thus `physical_key` is structural but the transition kernel is
+not fully alpha-equivariant.
+
+The terminal companion is frozen to use disjoint typed supplied/generated
+actor/event domains and to test immediate, late and newborn display collisions
+in both Q cells. It will also reject a non-bit root input before mutation and
+replace the structurally different remote fixture with an isomorphic
+disconnected source-seal control. The receipt will print the exact reach
+probabilities `1/16` in Q1 and `3/40` in Q2. No scientific noun above TIMELESS
+ROOTED NESTED-CALL FAMILY / EXECUTABLE is permitted.

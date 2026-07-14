@@ -1056,3 +1056,76 @@ TIMELESS ROOTED NESTED-CALL FAMILY / EXECUTABLE
 It does not earn a selected history law, the right universal birth numbers, a
 root-free local universe simulation, proper time, Lorentzian geometry, v9
 cone/dimension implications, G or nature's interactive click law.
+
+## 18. Hostile round 3 and frozen typed-identity close
+
+**Round-3 verdict:** the quantum and locality repairs substantially pass, but
+terminal covariance is again withheld:
+
+```text
+probability/covariance          0B / 1M / 0m / 0n
+causal locality/fail-closed     0B / 0M / 1m / 0n
+quantum/birth/ontology          0B / 0M / 1m / 0n
+```
+
+Reports:
+
+- `reviews/d35-round3-probability-covariance-final-review.md`;
+- `reviews/d35-round3-causal-locality-final-review.md`;
+- `reviews/d35-round3-quantum-birth-final-review.md`.
+
+The quantum lane independently reconstructs the five common-input maps with
+output dimensions `16,8,8,8,8`, their 48-by-8 flagged injections, all five
+self Grams, all ten cross zeros, spectator placement and exact weighted
+identity.  It also confirms the D24 instant and the six queried/ten unqueried
+D-origin paired histories.  The locality lane confirms issued ownership,
+prevalidation, peek/ack, carried return fields, local menus, shared-joint-state
+scope and actor-owned causal ordinal.  Fresh independent seeds reproduce the
+candidate receipt.
+
+Three openings are frozen before the terminal companion:
+
+1. **Typed-freshness major.**  The structural `physical_key` is name-free, but
+   the generator allocates future event/newborn storage with raw strings.  A
+   complete seed rename `A0 -> EROOT-CAP-0::T1:r` leaves the first 16-atom law
+   equal and makes the second call reject.  Renaming to the call-five string
+   makes calls zero through four pass and the sixth reject.  Renaming actor D
+   to `NROOT-CAP-0::T0:r` makes the root-birth branch reject.  Hence the kernel,
+   unlike its reporting key, does not descend to the full alpha quotient.
+2. **Root-input minor.**  `start_root_call(request_payload=2)` writes the
+   transaction state, enqueues and advances A's ordinal before later rejection.
+   The bit alphabet must validate at the public boundary before mutation.
+3. **Disconnected-control wording minor.**  The remote fixture proves
+   disconnection invariance but is not isomorphic to the connected D source
+   seal.  Either remove “isomorphic” or build a typed disconnected copy of the
+   source-seal component.  The terminal protocol chooses the stronger latter
+   control.
+
+The final companion must put identities in disjoint structural types:
+
+```text
+supplied actor identity;
+generated actor identity = (component, root causal ordinal, call path);
+supplied event identity;
+generated event identity = (component, root causal ordinal, call path);
+disconnected-control identity.
+```
+
+Display strings may be alpha-renamed to any text, including the printable form
+of a future generated identity, without storage collision.  The companion
+must repeat the next-call, late-call and newborn collision probes in Q1/Q2,
+the original and renamed 16/408 projectivity gates and multi-call replay.
+It must validate the root bit before all writes and compare two genuinely
+isomorphic source-seal components under disconnected `do(0/1)`.
+
+The terminal receipt should additionally print the exact causal reach
+probability, not only the number of histories.  Direct summation already gives
+
+```text
+P_Q1(D reaches A2) = 1/16;
+P_Q2(D reaches A2) = 3/40.
+```
+
+These unequal values are a sharper nonselection observable: causal locality
+defines which completed diamonds count, while the supplied Q cell determines
+their total probability.
