@@ -2,8 +2,9 @@
 
 **Status:** EXACT FINITE RECEIPT PASS `9/9`; classical completion theorem at
 the supplied countable locally finite opportunity-complex scope; D37 hostile
-stream closed at `0B/0M/0m/0n`; independent Paper 26 review open.  The
-campaign pin was committed at `b06ba1a` before
+stream closed at `0B/0M/0m/0n`; independent Paper 26 review filed and
+promotion withheld at `1B/5M/6m/3n`.  The campaign pin was committed at
+`b06ba1a` before
 `code/d37_regional_history_specification_exact.py` was run.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.

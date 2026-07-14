@@ -4,8 +4,9 @@
 
 ## Finite-cover consistency, global completion, and birth and arbitration as conditionals
 
-**Status:** EXACT-RECEIPT CANDIDATE after D37 `PASS 9/9` and hostile closure
-at `0B/0M/0m/0n`; independent paper-level review remains open.
+**Status:** INDEPENDENT REVIEW WITHHELD at `1B/5M/6m/3n` against frozen
+commit `23a4ae0`; D37 remains `PASS 9/9` and hostile-closed.  No review repair
+has yet been applied.
 **Date:** 2026-07-14.
 
 ## Abstract

@@ -3874,3 +3874,23 @@ D37 may now be described as hostile-closed at its stated scope. Paper 26
 remains an exact-receipt candidate because the independent paper-level review
 is still open; that reviewer is pre-registered to rederive at least one K1
 path-five atom and one joint `34/93`-family count.
+
+## 2026-07-14 — Paper 26 independent review withholds promotion (LEDGER #231)
+
+`reviews/paper26-round1-independent-review.md` aggregates three fresh isolated
+reviewer lanes against frozen commit `23a4ae0` and returns `1B/5M/6m/3n`.
+All D37 numbers and hashes reproduce. Independent derivations recover the K1
+path-five order counts `56,20,24,20`, the `5/11--6/11` conditional, the joint
+mode denominator `93`, Q-mode counts `34,25,34` and Q selection `18/93`.
+Theorems 1--3 survive at the locally finite pairwise conflict-graph scope.
+
+The blocker is structural. Paper 26 declares
+`C=(V,E_conf,parent,type)` and an oriented causal-history specification, but
+the executable supplies an undirected conflict graph plus participant labels
+and self-keyed `carrier_parent` placeholders. It has no typed parent/event
+DAG, causal restriction or event-poset covariance. The five majors cover the
+consequent D33 covariance, D34 anti-dilution, D26 parent-line observable and
+D36 click-record overclaims, plus S2's failure to evaluate the 30 advertised
+probability ratios. Six scope/evidence minors and three wording nits remain.
+No repair is applied; promotion stays withheld pending a causal-carrier or
+systematic theorem-narrowing decision and a focused independent closing delta.
