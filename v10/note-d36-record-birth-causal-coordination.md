@@ -1,6 +1,6 @@
 # D36 — record birth as causal coordination
 
-**Status:** ROUND-2 REPAIRS EXECUTED; HOSTILE CLOSING DELTA REQUIRED.
+**Status:** ROUND-3 HOSTILE DELTA OPEN; PARTICIPANT-LOCAL ATTEMPT OPENING REQUIRED.
 **Date:** 2026-07-14.
 **Parent:** terminal D35 / Paper 24 at commit `8b589e2`.
 
@@ -962,3 +962,46 @@ family.  It does not select birth opportunity, participant discovery,
 arbitration, retry fairness, crashes, an unbounded history law, the quantum
 join or spacetime geometry.  Independent closing review must now attack only
 this delta; Paper 25 remains withheld.
+
+## 22. Round-three hostile opening ledger
+
+The three closing lanes reproduce commit `e80ca6a`.  Probability/capacity and
+external replay close at `0B/0M/0m/0n`.  Ancestry returns `0B/1M/1m/0n`, and
+locality returns `0B/1M/1m/0n`.  The raw count is therefore
+`0B/2M/2m/0n`; after merging the shared opening, it is one major and two
+minors.
+
+The reviews close the round-two blocker and continuation defect.  Exact record
+substitution now changes the authenticated statement; same-body/base messages
+cannot cross carrier attempts; and both 24-record BORN and 26-record TOKEN
+histories preserve their old prefixes, linear wires and old-close ancestry.
+The representative-quotient wording and static G20 labeling also survive.
+
+The remaining major is earlier in the opening relation.  The rebase helper
+directly extends every participant's `applications`, `response_records` and
+`authorizations` tuples before any participant event, while the only appended
+record is the T-owned carrier.  That side installation is operational: remove
+only the injected authorization and the same carried prepare rejects.  Supply
+an arbitrary attempt string together with a matching side authorization and
+it can close.  Therefore carrier derivation is presently a constructor
+convention, not a participant-checked local invariant.
+
+The repair is forced: the already carried stable route capability and exact
+carrier must let each participant validate the attempt label, allocate its
+bounded slots and register the attempt **inside its own prepare-handling
+event**.  The opening helper may create the T carrier and route envelopes, but
+it may not change participant predictive fields.  The attempt label must be
+locally recomputable from the exact carrier and the body the participant sees.
+
+Two narrower ceilings are frozen.  First, `service_world` is a handler-plus-
+transport macro: one handler changes durable addressed state, then the driver
+inserts its outgoing envelopes into recipient mailboxes.  Either split network
+delivery into its own transitions or name this granularity honestly.  Second,
+the receiver checks the exact signed response record but not an independently
+carried proof that its other parent belongs to the claimed remote owner wire;
+the present theorem must stay within honest record-generating actors unless a
+bounded local ancestry proof is added.
+
+No Paper 25 is permitted.  The participant-local registration gate and an
+honest transport-macro scope repair must execute, then receive another focused
+closing delta.

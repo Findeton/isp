@@ -3545,3 +3545,27 @@ New source/stdout identifiers are `2a05f24...273683`/`868c573...15c17` for
 the reference and `7481286...0214a`/`8ee46d5...fcf43` for the actor.  This is
 a repair candidate only; hostile closing delta remains mandatory and Paper 25
 is still withheld.
+
+## 2026-07-14 — D36 round 3 isolates the opening oracle (LEDGER #215)
+
+All three lanes reproduce `e80ca6a`.  Probability/capacity closes cleanly;
+ancestry and locality each return `0B/1M/1m/0n`.  The round-two exact-record
+and persistent-ledger failures are closed: cross-carrier messages reject, and
+the 24-record BORN and 26-record TOKEN histories preserve prefixes, linear
+wires and old-close ancestry.
+
+The shared remaining major is an unrecorded regional opening oracle.
+`append_rebase_attempt` directly installs new application/response slots and
+an exact authorization tuple into every participant before any participant
+event.  Removing only that tuple toggles the same prepare from accepted to
+rejected, while a matching side tuple can admit a non-carrier-derived attempt.
+Carrier-derived identity is therefore not yet a local acceptance invariant.
+
+The next exact repair must leave all participant predictive fields unchanged
+at carrier birth.  Each addressed prepare handler must locally recompute the
+attempt label from the exact carrier/body, allocate its own bounded slots and
+record its authorization.  The service driver is also to be labeled as a
+handler-plus-transport macro unless delivery is split into separate events;
+remote predecessor ownership remains an honest-actor scope unless a bounded
+ancestry proof is carried.  Paper 25 remains withheld pending a focused
+closing delta.
