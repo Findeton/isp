@@ -3,8 +3,8 @@
 **Status:** historical pin through section 14; provisional receipt rejected by
 hostile round 1; replacement protocol frozen in section 16; replacement
 receipt passes `13/13` in section 17 but was rejected by round 2; the second
-repair protocol is section 18 and its `13/13` receipt awaits closing review in
-section 19.
+repair protocol is section 18, its `13/13` receipt is section 19, and all three
+closing deltas accept the declared theorem ceiling in section 20.
 **Date:** 2026-07-13.
 
 **Parent:** Paper 21 section 10 at terminal commit `70e0b4d`.
@@ -885,3 +885,50 @@ All eight outcome rows and six overlapping-predicate cases are exercised.  The
 scientific dispositions remain those pinned in section 18.6, but this section
 is not terminal until the three independent closing deltas reproduce and
 accept the exact output, endpoint and full-history gates.
+
+## 20. Terminal D34e note disposition
+
+The three independent closing streams are unqualified clean:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 0 minors / 0 nits;
+boundary/locality:    0 blockers / 0 majors / 0 minors / 0 nits;
+ancestry/quantum:     0 blockers / 0 majors / 0 minors / 0 nits.
+```
+
+They independently reproduced the code/output hashes, the `13/13` gate set
+and the internal summary digest.  Additional attacks extended the generator
+projection through global depth five (`26,727` cumulative states), tested
+fresh roots and multi-event B3 paths, checked three-region associativity,
+expanded malformed messages, and ran fresh radii with later births, seven
+remote idles, alternating remote interactions and unrelated inner events.  No
+counterexample remained at the declared scope.
+
+The terminal D34e result is therefore:
+
+> **QUERY-RELATIVE ALL-FUTURE GROWING RECORD-DAG BOUNDARY FOR THE CHOSEN
+> PASSIVE D34b C/L QUERIES, PLUS A COMPLETE FINITE-RADIUS NO-GO FOR FULL
+> DURABLE ANCESTRY.**  The physical B3 star is a pointwise sufficient,
+> recursively closed, covariant and composable carrier, but its width is
+> unbounded.  The complete radius family `{C_r:r<infinity}` cannot screen full
+> A-record ancestry.  The whole connected component is a sufficient growing
+> ceiling; its necessity and the minimal full-ancestry frontier remain open.
+
+This terminal noun does **not** identify B3 with the minimal predictive
+quotient, compute the weak/timed quotient, find a bounded alternative, derive
+the chosen D34b rulebook, prove a v9 stem-posterior factorization, construct the
+timed controlled D34b-D34c process, define intrinsic quantum boundary widths,
+or derive a Lorentzian light cone, proper time, spacetime dimension, `G` or the
+universe click law.
+
+The next load-bearing theoretical opening is no longer “local record or global
+history.”  It is:
+
+> Does Branch F admit an adaptive growing causal frontier—smaller than the
+> literal component and not confined to any fixed actor radius—that carries
+> exactly the immutable records still capable of returning to A?
+
+A second independent opening is the canonical weak/timed predictive quotient
+of the observed C/L process after internal neighbor births are eliminated.
+Neither opening changes the terminal sufficient-carrier and fixed-radius
+theorems proved here.
