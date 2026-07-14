@@ -1,5 +1,52 @@
 # Relativistic ISP v10
 
+## Latest — D36 / Paper 25 (coordinator-closed candidate; independent review open)
+
+D36 supplies the first authenticated actor-record realization of overlapping
+finite transaction attempts in V10.  Exclusive version-bound promises,
+immediate typed rejection when busy or stale, one transaction decision, local
+apply/release records, acknowledgements and a final close give a clock-free
+append-only protocol.  Under supplied finite attempts, ideal authentication,
+honest record-generating actors, reliable messages, failure-free operation and
+fair complete servicing, every attempt closes commit or abort.  The theorem is
+reservation-safe and deadlock-free at that scope; it is not crash tolerant,
+starvation-free or a global history law.
+
+The exact reference, actor and replay receipts are `PASS 22/22`, `PASS 14/14`
+and `PASS 8/8`.  BORN and TOKEN independently reproduce the same coordination
+quotients on pair, triangle, disjoint and partial-overlap fixtures, while their
+full support-record algebras remain distinct.  Sparse structural-attempt state
+and routing close a gapped tx2 without tx1, complete both local prepare orders
+with `8/8` typed responses and preserve all 13 exact local records under a pure
+disjoint transaction insertion.
+
+Paper 25 synthesizes the positive and negative result: record birth is a real
+durable carrier, but the protocol's coordination power comes from exclusive
+fail-fast reservation and causal closure, while opportunity and arbitration
+remain unselected.  K1 and K2 disagree on the path, K3 remains a supplied
+regional family, raw restriction needs boundary data and pairwise overlap does
+not guarantee a joint cover law.  Retry fairness, crash recovery, participant
+discovery, quantum joining, root-free completion and spacetime consequences
+remain open.
+
+One disclosed coordinator self-hostile review returned `0B/2M/3m/1n`; all
+findings were repaired, including a pure absent-Q strengthening, and the
+focused coordinator delta closes at `0B/0M/0m/0n`.  This is not represented as
+independent paper acceptance.  The paper's status is therefore
+**COORDINATOR-CLOSED CANDIDATE**, not terminal accepted.
+
+- `note-d36-record-birth-causal-coordination.md`
+- `relativistic-isp-v10-paper25-record-birth-carries-coordination-but-does-not-select-it.md`
+- `code/d36_birth_coordination_exact.py`
+- `data/d36_birth_coordination_exact.out`
+- `code/d36b_actor_record_refinement_exact.py`
+- `data/d36b_actor_record_refinement_exact.out`
+- `code/d36_replay_integrity_exact.py`
+- `data/d36_replay_integrity_exact.out`
+- `reviews/d36-round6-ancestry-terminal-delta.md`
+- `reviews/paper25-round1-coordinator-hostile-review.md`
+- `reviews/paper25-round2-coordinator-closing-delta.md`
+
 ## Latest — D35 / Paper 24 (terminal accepted at rooted scope)
 
 D35 answers the user's causal question without introducing a global commit

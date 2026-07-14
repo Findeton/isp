@@ -3675,3 +3675,35 @@ entries too.  A13's tuple and family hash remain unchanged, including 13 exact
 local records.  Actor and replay receipts remain `PASS 14/14` and `PASS 8/8`;
 new actor source/stdout hashes are `57ff22a...b376b` and
 `eaf2e53...91b48`.  No theorem width changes.
+
+## 2026-07-14 — Paper 25 candidate drafted and hostile findings frozen (LEDGER #222)
+
+Paper 25 is frozen at `64f0bf9` with the title *Record birth carries
+coordination but does not select it*.  It synthesizes D36's actor-local
+failure-free closure theorem, BORN/TOKEN coordination-quotient equivalence,
+full record-algebra inequality, sparse routing repair and arbitration
+nonselection.  The candidate noun is `CLOCK-FREE ACTOR-LOCAL APPEND-ONLY
+COORDINATION / SUPPLIED FINITE FAILURE-FREE ATTEMPTS / NONSELECTING`.
+
+One disclosed coordinator self-hostile review returns `0B/2M/3m/1n`; it is not
+an independent lane.  The majors separate participant per-attempt state and
+transaction routing from the still-supplied indexed participant registry, and
+require the pure absent-Q control recorded in LEDGER #221.  Minors require
+transaction-commit literature positioning, K1/K2 versus K3 progress language
+and an honest authorization-cache description; one nit makes the tuple-backed
+registry literal.
+
+## 2026-07-14 — Paper 25 coordinator loop closes cleanly (LEDGER #223)
+
+Repaired manuscript commit `6424361` addresses all six frozen findings.  It
+explicitly limits participant identity to supplied fixed roles, positions P4
+against Gray--Lamport transaction-commit background without importing Paxos
+or crash tolerance, distinguishes two progressing arbitration kernels from
+the nonprogressing K3 family, and identifies authorization tables as derived
+caches.  D36 commit `4282521` supplies the pure absent-Q comparator while
+preserving every A13 value.
+
+The focused coordinator delta is `0B/0M/0m/0n` and makes no independence
+claim: both review rounds disclose coordinator authorship.  Paper 25 is a
+**COORDINATOR-CLOSED CANDIDATE**.  Independent paper-level hostile review
+remains open before terminal acceptance.

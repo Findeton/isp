@@ -1067,6 +1067,26 @@ The strongest paper status after these repairs is **coordinator-closed
 candidate**, not independently terminal.  The theorem and receipts are frozen;
 an independent paper-level hostile stream may still challenge the synthesis.
 
+## 20. Coordinator closing delta
+
+The focused delta
+`reviews/paper25-round2-coordinator-closing-delta.md` checks repaired manuscript
+commit `6424361` and strengthened D36 commit `4282521`.  It reproduces the
+reference, actor and replay receipts, verifies all six frozen dispositions and
+returns:
+
+```text
+blockers  0
+majors    0
+minors    0
+nits      0
+```
+
+Both paper review rounds disclose coordinator authorship.  The clean delta
+therefore closes the internal hostile loop requested for this draft, but does
+not impersonate independent acceptance.  Paper 25 remains a
+**coordinator-closed candidate** at the exact noun and nonclaims stated above.
+
 ## References
 
 1. Relativistic ISP v10 Paper 19, *The complete interactive record law at the
