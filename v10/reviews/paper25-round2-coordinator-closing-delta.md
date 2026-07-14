@@ -167,4 +167,3 @@ review rounds were authored by the coordinator, it does not establish the
 stronger repository convention of independent multi-lane paper acceptance.
 Paper 25 should remain a coordinator-closed candidate until such review is
 performed.
-
