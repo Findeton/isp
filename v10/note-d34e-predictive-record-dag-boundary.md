@@ -7,7 +7,8 @@ repair protocol is section 18, its `13/13` receipt is section 19, and all three
 closing deltas accept the declared theorem ceiling in section 20.  Paper-level
 round 1 preserved the science but opened an executable-integrity repair;
 sections 21--22 freeze that repair and its candidate receipt pending a closing
-paper delta.
+paper delta.  Sections 23--26 carry the paper-level repair chain and terminal
+acceptance.
 **Date:** 2026-07-13.
 
 **Parent:** Paper 21 section 10 at terminal commit `70e0b4d`.
@@ -1092,3 +1093,49 @@ ed0d4646748901044b4d0e2f2849986372ec2bcab2c14bccf10fc184629cf6c4
 
 No theorem, receipt, citation, scope or executable changed.  One exact
 status-string delta must reproduce this hash before terminal archival.
+
+## 26. Terminal Paper 22 archival
+
+The three independent status-only deltas against `aee572f` are unqualified
+clean:
+
+```text
+predictive/profinite: 0 blockers / 0 majors / 0 minors / 0 nits;
+boundary/locality:    0 blockers / 0 majors / 0 minors / 0 nits;
+ancestry/quantum:     0 blockers / 0 majors / 0 minors / 0 nits.
+```
+
+They reproduce final Paper 22 SHA-256
+`ed0d4646748901044b4d0e2f2849986372ec2bcab2c14bccf10fc184629cf6c4`,
+verify the exact two-string publication delta and find no scientific or
+artifact drift.  A fresh salt-`999983` execution independently remains
+byte-identical to the committed output:
+
+```text
+code SHA-256
+1dd1a69be94a0fb614f909745e7db772ac5e5f134b97cbdcdf10c45a08f606c5
+
+stdout SHA-256
+158c491d7376b165556364fee2f0266447e7f5becfdbda5a8f4ae600114e9fb7
+
+internal summary SHA-256
+9f9cea1886db0c889677fdb735b8cb9fc76ae4d2ba18b501242f58331795e017
+```
+
+The terminal D34e/Paper 22 result is therefore unchanged from section 20:
+
+> For the chosen passive D34b law, a distributed radius-one typed star is an
+> exact all-future growing carrier for the declared coarse and role-labeled A
+> futures.  It is unbounded in width.  No complete fixed actor radius carries
+> full durable A ancestry.  The complete connected component is sufficient,
+> but neither necessary nor minimal by any proved theorem.
+
+The validator checks the enumerated composition invariants of genuine
+regional projections; it is not a generative-reachability recognizer.  The
+chosen D34b law remains an input, and the v9 posterior, controlled quantum and
+spacetime branches remain open/refused at their declared scopes.
+
+The direct next investigation is the adaptive full-ancestry causal frontier:
+construct or exclude a recursively updated carrier smaller than the complete
+component but not confined to any fixed actor radius.  The canonical
+weak/timed predictive quotient is a separate second target.

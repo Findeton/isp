@@ -1,6 +1,38 @@
 # Relativistic ISP v10
 
-## Latest — the complete-record-law campaign: D24–D27 / Paper 19 (round 1 applied; delta pass pending)
+## Latest — D34e / Paper 22 (terminal accepted)
+
+D34e answers the predictive-boundary question for the explicitly chosen
+passive D34b law.  A single actor record is too small, but a distributed typed
+radius-one star exactly screens the declared coarse and role-labeled future of
+A.  That carrier is graph-local yet unbounded in memory.  For the stronger
+query retaining complete durable ancestry, every complete fixed actor radius
+fails: a persistent event outside the radius can later return through an
+inward interaction chain.  The whole connected component is a sufficient
+growing ceiling, but its necessity and the minimal adaptive frontier remain
+open.
+
+The exact standard-library receipt passes `13/13`, including `159,734` genuine
+regional compositions, `9/9` registered corruption rejections and the
+all-finite-radius analytic obstruction.  Three independent hostile streams
+closed the note, paper, repair and terminal-status deltas at zero remaining
+findings.  The validator is deliberately scoped to declared invariants on
+genuine regional projections; it is not a complete D34b reachability
+recognizer.  D34e does not derive D34b, a quantum process, the v9 posterior
+bridge, spacetime cones, dimension or `G`.
+
+- `note-d34e-predictive-record-dag-boundary.md`
+- `relativistic-isp-v10-paper22-the-predictive-record-dag-boundary.md`
+- `code/d34e_predictive_boundary_exact.py`
+- `data/d34e_predictive_boundary_exact.out`
+- `reviews/paper22-round5-*`
+
+The direct successor is the adaptive full-ancestry causal frontier: construct
+or exclude a recursively updated carrier smaller than the whole component but
+not restricted to any fixed actor radius.  The weak/timed minimal predictive
+quotient is a separate second target.
+
+## Prior — the complete-record-law campaign: D24–D27 / Paper 19 (historical snapshot)
 
 Per the user-set goal (LOG, 2026-07-12), Paper 19 assembles the complete
 interactive record law (E_t, D, B) at the declared interface, at the

@@ -2805,3 +2805,21 @@ Only two publication-status strings now change: the paper becomes terminal and
 its executable is no longer called a candidate. Candidate terminal paper SHA
 is `ed0d4646748901044b4d0e2f2849986372ec2bcab2c14bccf10fc184629cf6c4`.
 An exact status-only delta remains before archival.
+
+## 2026-07-13 — D34e / Paper 22 TERMINAL ACCEPTED (LEDGER #185)
+All three status-only deltas against `aee572f` are 0B/0M/0m/0n. Final Paper 22
+SHA is `ed0d4646...f6c4`; only the reviewed terminal-status strings differ from
+the previously accepted paper. A fresh salt-999983 execution is byte-identical
+to committed stdout, with 13/13 gates, 159,734 genuine regional compositions,
+9/9 registered corruptions and internal digest `9f9cea18...e017`.
+
+Terminal noun: QUERY-RELATIVE ALL-FUTURE GROWING RECORD-DAG BOUNDARY FOR THE
+CHOSEN PASSIVE D34b C/L QUERIES, PLUS A COMPLETE FIXED-RADIUS NO-GO FOR FULL
+DURABLE ANCESTRY. B3 is sufficient, recursively closed, covariant, composable
+and unbounded. Every declared complete C_r fails for Branch F; B4 is a
+sufficient growing ceiling, not proved necessary. The validator certifies
+declared interface/history invariants on genuine projections, not arbitrary
+D34b reachability. D34b derivation, the minimal weak/timed quotient, an
+adaptive F frontier, v9 posterior screening, controlled quantum memory and
+spacetime geometry remain open. Direct successor: the adaptive full-ancestry
+causal frontier.
