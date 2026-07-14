@@ -3221,3 +3221,24 @@ theory target is an overlap-consistent local specification for peer-initiated
 causal diamonds; only after that root-free law exists should D28--D32 cone,
 dimension and many-clocks/few-factors implications be measured. Paper 24 may
 now synthesize the terminal result.
+
+## 2026-07-14 — Paper 24 synthesis drafted (LEDGER #203)
+Paper 24, “The next click is a causal diamond, not a clock race,” synthesizes
+terminal D35. It leads with the causal rather than metric answer: A2 is A1's
+first wire successor/upper seal; realized reach is binary; pre-click reach
+probability is the measure of completed local diamonds containing the licensed
+return path. Numerical proper time is unnecessary.
+
+The paper preserves the two-layer birth result (`q_birth` opportunity versus
+D24 `B_g` content), the exact Q1/Q2 nonselection, logical actor/shared-joint-
+state simulation scope, 16/408 projectivity, typed alpha covariance, D-origin
+intervention, reach masses `1/16` and `3/40`, 8-to-48 instrument and completed
+rooted-history measure. It explicitly reconciles D35's finite call boundary
+with Paper 23's whole-component theorem under the different D34b law/query.
+
+The central theory opening is named the causal-diamond specification problem:
+normalized local variable-support kernels must agree under restriction and on
+partially overlapping peer regions. Such a family could define a root-free
+history measure without a global next-event race or per-record clocks. The
+current laminar A-rooted family is its solved special case; profinite machinery
+could preserve but cannot select it. Paper-level hostile review is now required.
