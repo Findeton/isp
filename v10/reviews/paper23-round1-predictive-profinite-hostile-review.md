@@ -1,13 +1,13 @@
 # Paper 23 round 1 — predictive/profinite hostile review
 
-**Frozen target:** commit `540ddf164438335a9ce14e849e43168f9af338b3`  
+**Frozen target:** commit `540ddf164438335a9ce14e849e43168f9af338b3`
 **Manuscript:**
-`relativistic-isp-v10-paper23-the-whole-component-is-the-ancestry-boundary.md`  
+`relativistic-isp-v10-paper23-the-whole-component-is-the-ancestry-boundary.md`
 **Comparison base:** terminal D34f commit
 `398077e4b9008c3f203e06ac32ebffebdf817564`, its frozen exact artifacts and
-all six D34f round-1/round-2 reviews  
+all six D34f round-1/round-2 reviews
 **Review lane:** probability, predictive quotient, information lower bound,
-review provenance and profinite ceiling  
+review provenance and profinite ceiling
 **Verdict:** **ACCEPT AT DECLARED SCOPE — 0 blockers / 0 majors / 0 minors /
 0 nits.**
 
