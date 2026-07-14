@@ -2776,3 +2776,16 @@ stays 13/13 with 159,734/159,734 genuine regional compositions and 9/9
 corruptions rejected. Candidate final hashes: code `1dd1a69b...606c5`, stdout
 `158c491d...9fb7`, internal `9f9cea18...e017`. Three closing paper deltas are
 required before Paper 22 terminal status.
+
+## 2026-07-13 — Paper 22 closing science accepted; narrow citation delta frozen (LEDGER #182)
+Three independent deltas against `8e820cc` preserve all four D34e theorems and
+reproduce the `13/13` receipt, code/stdout/internal hashes, all 159,734 genuine
+regional compositions and 9/9 registered corruptions. Boundary/locality is
+0B/0M/0m/0n; predictive/profinite and ancestry/quantum are each 0B/0M/1m/0n
+for the same bibliographic defect only. The Shalizi--Crutchfield DOI is repaired
+to `10.1023/A:1010388907793`; Geiger--Temmel is repaired to *J. Appl. Probab.*
+51(4), 1114--1132 (2014). The validator ceiling is now explicit: it checks the
+declared composition invariants on genuine regional projections, not arbitrary
+D34b generative reachability. Candidate Paper 22 SHA-256 is
+`e33c0ad9294ff1411f49e7d32dc640c9047d3a7603e954219703f23031bf8576`.
+A narrow exact-paper delta is required before the terminal noun.

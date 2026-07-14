@@ -4,7 +4,8 @@
 
 ## Exact distributed sufficiency, unbounded width and a fixed-radius ancestry no-go
 
-**Status:** revised after Paper 22 hostile round 1; closing paper delta pending.
+**Status:** closing scientific delta accepted; narrow bibliographic delta
+pending after the exact metadata repair.
 **Date:** 2026-07-13.
 
 ## Abstract
@@ -454,8 +455,12 @@ The terminal D34e note and three clean closing reviews are frozen at commit
 Paper-level review then opened three additional record-DAG corruptions.  The
 validator now also rejects internally owned opaque predecessors, predecessor
 cycles and stale wire tips while cross-checking actor ring/birth/wire counters,
-carrier parity and local-wire maximality.  These nine attacks and the revised
-hashes await the final paper delta.
+carrier parity and local-wire maximality.  The closing scientific delta
+reproduced all nine attacks and the revised hashes.  The validator certifies
+these declared invariants on the composition interface; it is not a complete
+recognizer for whether an arbitrary fabricated history is reachable under
+D34b.  The composition theorem is the typed-union identity on genuine
+regional projections.
 
 ## 10. Strong boundary refinement is not the minimal predictive quotient
 
@@ -591,13 +596,13 @@ frontier is the next problem.
 2. D34e terminal note, `note-d34e-predictive-record-dag-boundary.md`.
 3. C. R. Shalizi and J. P. Crutchfield, *Computational Mechanics: Pattern and
    Prediction, Structure and Simplicity*, Journal of Statistical Physics 104,
-   817–879 (2001), DOI `10.1023/A:1010148903217`.  Background for predictive
+   817–879 (2001), DOI `10.1023/A:1010388907793`.  Background for predictive
    equivalence/minimal causal states; no SHARD record-locality result is
    attributed to it.
 4. B. Geiger and C. Temmel, *Lumpings of Markov Chains, Entropy Rate
    Preservation, and Higher-Order Lumpability*, Journal of Applied Probability
-   51A, 368–388 (2014), DOI `10.1239/jap/1421763331`.  Background for strong
-   versus weaker/law-relative lumpability.
+   51(4), 1114–1132 (2014), DOI `10.1239/jap/1421763331`.  Background for
+   strong versus weaker/law-relative lumpability.
 5. F. A. Pollock et al., *Operational Markov Condition for Quantum Processes*,
    Physical Review Letters 120, 040405 (2018), DOI
    `10.1103/PhysRevLett.120.040405`.  Background for the intervention-indexed
