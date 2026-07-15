@@ -590,12 +590,23 @@ def append_view(view: RegionView, event: Record) -> RegionView:
 
 
 @dataclass(frozen=True)
+class NeighborRow:
+    degree: int
+    births: int
+
+    def __post_init__(self) -> None:
+        if self.degree < 1 or self.births < 0:
+            raise ValueError("invalid projected neighbor row")
+
+
+@dataclass(frozen=True)
 class Star:
     root: str
     root_row: ActorRow
-    neighbors: Tuple[Tuple[str, ActorRow], ...]
+    neighbors: Tuple[Tuple[str, NeighborRow], ...]
+    elapsed: Fraction
 
-    def neighbor_map(self) -> Dict[str, ActorRow]:
+    def neighbor_map(self) -> Dict[str, NeighborRow]:
         return dict(self.neighbors)
 
 
@@ -607,10 +618,10 @@ def star_from_history(history: History, root: str = "A") -> Star:
     neighbors = []
     for left, right in derived.edges:
         if left == root:
-            neighbors.append((right, rows[right]))
+            neighbors.append((right, NeighborRow(rows[right].degree, rows[right].births)))
         elif right == root:
-            neighbors.append((left, rows[left]))
-    return Star(root, rows[root], tuple(sorted(neighbors)))
+            neighbors.append((left, NeighborRow(rows[left].degree, rows[left].births)))
+    return Star(root, rows[root], tuple(sorted(neighbors)), Fraction())
 
 
 def star_rates(star: Star) -> Dict[Tuple[str, str], Fraction]:
@@ -645,23 +656,28 @@ def star_step(star: Star, action: Tuple[str, str]) -> Star:
         birth = root.births + 1
         child = f"{star.root}/{birth}"
         root = ActorRow(root.carrier, root.rings + 1, birth, root.degree + 1, root.wire_events + 1)
-        neighbors[child] = ActorRow(0, 0, 0, 1, 1)
+        neighbors[child] = NeighborRow(1, 0)
     elif tag == "ROOT_IDLE":
         root = ActorRow(root.carrier, root.rings + 1, root.births, root.degree, root.wire_events + 1)
     elif tag == "ROOT_OUT":
-        neighbor = neighbors[target]
         root = ActorRow(1 - root.carrier, root.rings + 1, root.births, root.degree, root.wire_events + 1)
-        neighbors[target] = ActorRow(1 - neighbor.carrier, neighbor.rings, neighbor.births, neighbor.degree, neighbor.wire_events + 1)
     elif tag == "NEIGHBOR_BIRTH":
         neighbor = neighbors[target]
-        neighbors[target] = ActorRow(neighbor.carrier, neighbor.rings + 1, neighbor.births + 1, neighbor.degree + 1, neighbor.wire_events + 1)
+        neighbors[target] = NeighborRow(neighbor.degree + 1, neighbor.births + 1)
     elif tag == "INCOMING":
-        neighbor = neighbors[target]
         root = ActorRow(1 - root.carrier, root.rings, root.births, root.degree, root.wire_events + 1)
-        neighbors[target] = ActorRow(1 - neighbor.carrier, neighbor.rings + 1, neighbor.births, neighbor.degree, neighbor.wire_events + 1)
     else:
         raise AssertionError(tag)
-    return Star(star.root, root, tuple(sorted(neighbors.items())))
+    return Star(star.root, root, tuple(sorted(neighbors.items())), star.elapsed)
+
+
+def timed_star_step(
+    star: Star, action: Optional[Tuple[str, str]], delta: Fraction
+) -> Star:
+    if delta < 0:
+        raise AssertionError("negative relative-time increment")
+    after = star if action is None else star_step(star, action)
+    return replace(after, elapsed=star.elapsed + delta)
 
 
 PathAction = Tuple[str, str]
@@ -709,11 +725,12 @@ def reachable_stars() -> Tuple[Star, ...]:
 # Exact receipt gates.
 
 
-def cylinder_checks() -> Tuple[int, int, int, int, Tuple[str, ...]]:
+def cylinder_checks() -> Tuple[int, int, int, int, int, Tuple[str, ...]]:
     normalized = 0
     projective = 0
     atoms = 0
     holding = 0
+    timed_updates = 0
     initial_rates = []
     for star in reachable_stars():
         distributions = {depth: cylinder_distribution(star, depth) for depth in (1, 2, 3)}
@@ -724,7 +741,6 @@ def cylinder_checks() -> Tuple[int, int, int, int, Tuple[str, ...]]:
                 raise AssertionError("finite-cylinder normalization/support")
             normalized += 1
             atoms += len(distribution)
-            holding += len(distribution)
         for high, low in ((3, 2), (2, 1), (3, 1)):
             if prefix_marginal(distributions[high], low) != distributions[low]:
                 raise AssertionError("direct finite-cylinder restriction")
@@ -732,9 +748,36 @@ def cylinder_checks() -> Tuple[int, int, int, int, Tuple[str, ...]]:
         staged = prefix_marginal(prefix_marginal(distributions[3], 2), 1)
         if staged != distributions[1]:
             raise AssertionError("staged cylinder restriction")
+        frontier = (star,)
+        for _ in range(3):
+            next_frontier = []
+            for state in frontier:
+                rates_here = star_rates(state)
+                total_here = sum(rates_here.values(), Fraction())
+                integrated_race_mass = sum(
+                    (rate / total_here for rate in rates_here.values()), Fraction()
+                )
+                if total_here <= 0 or integrated_race_mass != 1:
+                    raise AssertionError("competing-exponential holding normalization")
+                holding += 1
+                next_frontier.extend(star_step(state, action) for action in rates_here)
+            frontier = tuple(next_frontier)
+        no_event = timed_star_step(star, None, Fraction(7, 13))
+        if no_event.elapsed != star.elapsed + Fraction(7, 13) or replace(
+            no_event, elapsed=star.elapsed
+        ) != star:
+            raise AssertionError("relative-time no-event update")
+        timed_updates += 1
+        for action in star_rates(star):
+            timed = timed_star_step(star, action, Fraction(1, 100))
+            if timed.elapsed != Fraction(1, 100) or replace(
+                timed, elapsed=star.elapsed
+            ) != star_step(star, action):
+                raise AssertionError("relative-time event update")
+            timed_updates += 1
         total = sum(star_rates(star).values(), Fraction())
         initial_rates.append(ftext(total))
-    return normalized, projective, atoms, holding, tuple(initial_rates)
+    return normalized, projective, atoms, holding, timed_updates, tuple(initial_rates)
 
 
 def action_wires(star: Star, action: PathAction) -> FrozenSet[str]:
@@ -755,10 +798,15 @@ def generator_and_locality_checks() -> Tuple[int, int, int, int, int, int]:
     star = reachable_stars()[0]
     for degree in range(1, 13):
         neighbors = tuple(
-            (f"N{index}", ActorRow(0, index, index, 1 + index, index))
+            (f"N{index}", NeighborRow(1 + index, index))
             for index in range(degree)
         )
-        specimen = Star("A", ActorRow(0, degree - 1, degree - 1, degree, degree - 1), neighbors)
+        specimen = Star(
+            "A",
+            ActorRow(0, degree - 1, degree - 1, degree, degree - 1),
+            neighbors,
+            Fraction(),
+        )
         for action in star_rates(specimen):
             arity = len(action_wires(specimen, action))
             if arity > 2:
@@ -1029,7 +1077,7 @@ def main() -> None:
         print(line)
 
     emit("[D38b record-closed oriented finite-cylinder repair — exact receipt]")
-    emit("ARITHMETIC: integer/Fraction exact; exponential holding laws represented by exact rates")
+    emit("ARITHMETIC: integer/Fraction exact; competing-exponential race masses integrated as rate/total-rate")
     emit("SCOPE: chosen D34b finite reachable histories; actor-star projection; classical positive cylinders only")
 
     locks = locked_antecedents()
@@ -1039,12 +1087,19 @@ def main() -> None:
     emit(f"antecedent_locks={stable(locks)}")
     emit("spatial_DLR=NOT_CLAIMED; null_boundary_version=NOT_PROVED; Paper26_K_membership=NOT_CLAIMED; chosen_coefficients_selected=0")
 
-    normalized, projective, atoms, holding, rates = cylinder_checks()
-    gates["R1"] = normalized == 12 and projective == 12 and atoms > 0 and holding == atoms
-    science["cylinders"] = [normalized, projective, atoms, holding, rates]
+    normalized, projective, atoms, holding, timed_updates, rates = cylinder_checks()
+    gates["R1"] = (
+        normalized == 12
+        and projective == 12
+        and atoms == 1760
+        and holding > 0
+        and timed_updates > 0
+    )
+    science["cylinders"] = [normalized, projective, atoms, holding, timed_updates, rates]
     emit("[ORIENTED FINITE-CYLINDER REGIONAL FAMILY]")
     emit(f"reachable_boundaries=4; depth_1_2_3_normalizations={normalized}/12; direct_prefix_restrictions={projective}/12; positive_path_atoms={atoms}")
-    emit(f"exact_holding_rate_rows={rates}; exponential_density_normalizations={holding}; staged_r31_equals_r21_r32=4/4")
+    emit(f"exact_holding_rate_rows={rates}; competing_exponential_integral_checks={holding}; elapsed_and_no_event_updates={timed_updates}; staged_r31_equals_r21_r32=4/4")
+    emit("neighbor_projection=(actor,degree,own_birth_count); silent_neighbor_idle_and_off_root_interaction_integrated_out=1")
 
     locality = generator_and_locality_checks()
     gates["R2"] = locality == (258, 2, 4, 3, 7, 2)

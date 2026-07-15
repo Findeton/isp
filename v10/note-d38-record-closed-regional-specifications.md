@@ -218,7 +218,9 @@ unbounded worst-case information width.  D38b verifies the chosen-D34b
 instance only by hash-locked inheritance from D34f; the general criterion is
 an analytical implication, not a finite receipt theorem.
 
-The receipt must show that the assumptions are load-bearing, not decorative.
+The abstract controls below illustrate ways to change the query or law.  They
+do not prove that the strengthened premises are individually minimal;
+assumption minimality remains open.
 
 ### Escape E1 — finite horizon
 
@@ -425,6 +427,10 @@ It reports `PASS 9/9` with the following repaired controls:
 oriented depth-1/2/3 positive-cylinder family     12 normalizations,
                                                   12 direct restrictions,
                                                   1,760 positive atoms;
+closed D34e star projection                       neighbor identity, degree
+                                                  and own-birth count only;
+holding/relative time                             220 exact race integrals,
+                                                  30 elapsed/no-event updates;
 record-derived physical history                   no cached state or tips;
 typed D34b births                                 child row, edge, two ports,
                                                   clock address in the event;
@@ -445,10 +451,10 @@ capacity                                           radius/actors/records/ports/
 Six seed runs are byte-identical.  The exact hashes are:
 
 ```text
-source SHA-256:          e82198adfc22c633ca0c68197efcbec2cc0407f3abd3d81717a6d430dbe9dece
-stdout-body SHA-256:     6c11b1400ff6a82f1c02c12e96a9e73c354dda4da4a0565d9d5620664fb4b152
-science SHA-256:         60d0c359923cbf501b425e9f7d43ab1577279ae148b3d46a1014d0aa95140182
-complete-output SHA-256: b97b47e2b5c8375883c6093e0eda9b59978192c64e56989165211e08934e7d1e
+source SHA-256:          2ec7e9ca7b359805ab5ce6e4e96211bff09d8750e53fd022fef515d627cb46c8
+stdout-body SHA-256:     a44819106b73abe4ada19bd0082ea95b11035c9dc91bb24e07d5ca2d78688857
+science SHA-256:         8c28eb12e9434900832f0f202180714891822c0b48a223c819d53af2d1cc13ca
+complete-output SHA-256: f1785b456c913dde0d86a577377061a04f7963bf331cf50b8421da8690f9f9cb
 ```
 
 The earned positive noun is deliberately narrower than round one:

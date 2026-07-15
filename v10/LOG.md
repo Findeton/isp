@@ -4120,3 +4120,25 @@ D38b passes `9/9` and is byte-identical under seeds `0`, `1`, `2`, `17`,
 `101` and `999`.  Source, stdout-body, science and complete-output hashes are
 `e82198ad...dece`, `6c11b140...b152`, `60d0c359...0182` and
 `b97b47e2...7d1e`.  A focused hostile delta remains open before Paper 27.
+
+## 2026-07-14 — D38b adopts the exact closed D34e star projection (LEDGER #244)
+
+The focused probability and corpus lanes agree on one local repair-level
+major.  D38b retained each neighbor's full actor row while thinning away
+neighbor idle and off-root interaction events that change the extra carrier,
+ring and wire fields.  The action probabilities were correct, but the printed
+star itself was not a closed projected state.
+
+D38b now keeps full rows only in the physical record history.  Its regional
+star carries exactly the D34e B3 neighbor fields: actor identity, degree and
+own-birth count.  Silent neighbor events are integrated out.  The receipt also
+replaces an atom counter mislabeled as a density check with 220 exact
+competing-exponential integral identities and adds 30 relative elapsed-time
+and no-event updates.  All 1,760 path atoms and 12 direct plus four staged
+restrictions remain unchanged.
+
+The output remains `PASS 9/9` and byte-identical under six hash seeds.  Source,
+stdout-body, science and complete hashes are `2ec7e9ca...46c8`,
+`a4481910...8857`, `8c28eb12...13ca` and `f1785b45...f9cb`.  README's stale
+physical-seal and unconditional-D26 headline wording is removed.  A fresh
+focused closing delta is still required.

@@ -12,12 +12,12 @@ the next input boundary, and an explicit capacity/coherence ledger.
 The central theorem target is a separation, not a blanket no-go.  The chosen
 D34b law has bounded touched/write arity and actor-star-local update rows, while
 its exact unlimited-horizon Branch-F predictive quotient is the rooted marked
-component class and has unbounded information width.  Finite horizon,
-irreversible operational sealing, bounded growth and epsilon-thresholded
-attenuation are explicit escape controls.  Nonzero attenuation alone does not
-collapse an exact infinite-precision quotient.  D26 prices BORN boundary
-maintenance by `(1-g)^(N/2)`; coherence-neutral TOKEN capacity remains a
-distinct control.
+component class and has unbounded information width.  Finite horizon, a
+hypothetical exact-zero operational cut, a finite marked-history cap and
+epsilon-thresholded attenuation illustrate possible escape scopes.  Nonzero
+attenuation alone does not collapse an exact infinite-precision quotient.  If
+a later bridge identifies maintenance records with same-line D26 BORN
+carriers, D26 prices those births by `(1-g)^(N/2)`; no such bridge is supplied.
 
 The first D38 receipt was reproducible but architecturally false.  Three
 hostile lanes returned `2B/7M/1m/0n`: cached state/tips admitted forks and
@@ -35,6 +35,9 @@ and duplicates—reject with an unchanged immutable store.
 
 The oriented depth-1/2/3 cylinder family passes 12 normalizations, 12 direct
 prefix restrictions, four staged restrictions and 1,760 positive path atoms.
+Its neighbor state is the exact D34e B3 `(actor,degree,own-birth-count)`
+projection; 220 exact competing-exponential integrals and 30 elapsed/no-event
+updates close the relevant-time row.
 Record transport passes two genuine nested direct/staged squares, one
 update/restriction naturality square and disjoint insertion commutation, using
 typed `EXTERNAL(source_record_id)` parent references.  The predictive claim is
@@ -44,7 +47,7 @@ is not identified, and D26 is only a conditional interface pending a
 record-to-parent-line bridge.
 
 D38b is `PASS 9/9`, byte-identical under six hash seeds, with complete output
-SHA-256 `b97b47e2...7d1e`.  A focused hostile delta is required before Paper 27
+SHA-256 `f1785b45...f9cb`.  A focused hostile delta is required before Paper 27
 drafting.
 
 - `note-d38-record-closed-regional-specifications.md`
