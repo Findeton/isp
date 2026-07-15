@@ -1,6 +1,6 @@
 # D38 — record-closed regional specifications and predictive width
 
-**Status:** D38 ROUND ONE REJECTED; D38b REPAIR `PASS 9/9`; focused hostile delta open.
+**Status:** HOSTILE-REVIEWED EXACT-RECEIPT CANDIDATE; D38b `PASS 9/9`; closing delta `0B/0M/0m/0n`.
 **Date:** 2026-07-14.
 **Parents:** terminal Papers 21--24, coordinator-lineage reviewed Paper 25,
 independently reviewed Paper 26,
@@ -474,8 +474,11 @@ CHOSEN D34b / NONSELECTING.
 
 Spatial DLR, null-boundary versions, Paper 26 K-family membership, a generic
 physical sealing model, the D26 updater bridge, timed inverse limits,
-unimodular selection and quantum joins remain open.  A focused hostile delta
-must close both round-one blockers before Paper 27 is drafted.
+unimodular selection and quantum joins remain open.
+
+`reviews/d38-round2-record-closed-specification-closing-delta.md` audits frozen
+commit `be310e2`.  All three lanes return `0B/0M/0m/0n`; D38b is therefore
+hostile-closed at the complete-finite-witness scope and may support Paper 27.
 
 ## 13. Promotion gates
 

@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D38b / Paper 27 (architectural repair candidate; focused delta open)
+## Latest — D38b / Paper 27 (hostile-reviewed exact-receipt candidate)
 
 D38 asks when a regional specification generates and authenticates the records
 that its own later conditionals require as boundary data.  The pinned object is
@@ -50,8 +50,9 @@ is not identified, and D26 is only a conditional interface pending a
 record-to-parent-line bridge.
 
 D38b is `PASS 9/9`, byte-identical under six hash seeds, with complete output
-SHA-256 `28e76708...4f7d`.  A focused hostile delta is required before Paper 27
-drafting.
+SHA-256 `28e76708...4f7d`.  The final three-lane delta on frozen commit
+`be310e2` returns `0B/0M/0m/0n`; the narrowed complete-finite-witness result is
+hostile-closed and may support Paper 27.
 
 - `note-d38-record-closed-regional-specifications.md`
 - `code/d38_record_closed_specification_exact.py`
@@ -59,6 +60,7 @@ drafting.
 - `code/d38b_record_closed_specification_exact.py`
 - `data/d38b_record_closed_specification_exact.out`
 - `reviews/d38-round1-record-closed-specification-hostile-review.md`
+- `reviews/d38-round2-record-closed-specification-closing-delta.md`
 
 ## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)
 

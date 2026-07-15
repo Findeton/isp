@@ -4163,3 +4163,23 @@ remains open and is printed as such.
 D38b remains `PASS 9/9`.  Source, stdout-body, science and complete hashes are
 `c48e3171...1eeb`, `35371f27...507d`, `1aa0201d...3005` and
 `28e76708...4f7d`.  A fresh causal closing delta is required before Paper 27.
+
+## 2026-07-14 — D38b hostile stream closes cleanly (LEDGER #246)
+
+`reviews/d38-round2-record-closed-specification-closing-delta.md` audits frozen
+commit `be310e2`.  Probability/projectivity, causal record integrity/regional
+transport and corpus/scope lanes all return `0B/0M/0m/0n`.
+
+The final receipt reproduces 12 normalizations, 12 direct and four staged
+finite-cylinder restrictions, 1,760 positive atoms, 220 exact race integrals,
+30 elapsed/no-event updates, 18/18 immutable failure rejections, two nested
+record restrictions, update naturality, disjoint insertion and the witnessed
+same-frontier branch rejection.  Independent exhaustive enumeration of all
+16,384 `D subset E subset F` assignments on the seven-record specimen finds
+zero cocycle or parent-totality mismatch.
+
+D38b is promoted to hostile-reviewed exact-receipt candidate at the explicit
+complete-finite-admission-witness scope.  A smaller localized certificate,
+spatial DLR, null-boundary versions, physical sealing, the D26 updater bridge,
+timed inverse limits, all-transport unimodularity, coupling selection and the
+quantum join remain open.  Paper 27 drafting may begin.
