@@ -1,5 +1,22 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — Paper 29 independent review withholds promotion (LEDGER #271)
+
+`reviews/paper29-round1-independent-hostile-review.md` freezes authorship
+commit `e14bf4f`, re-derives every headline number and returns
+`0 BLOCKERS / 1 MAJOR / 3 MINOR / 1 NIT`.
+
+The major is a missing Theorem 1 hypothesis: the displayed conditionals divide
+by `mu([Ha])` and `mu([Hb])`, so both intermediate cylinders must be positive
+in addition to `mu([H])`.  The receipts already gate those denominators.
+
+The minors require a harmonic directed-multigraph formulation for the h-ratio
+square theorem, current-corpus nonconstruction wording rather than actual
+D15 nonuniqueness, and an explicitly declared quotient before serial masses
+are summed.  “Sixteen registered no-signalling marginal checks” closes the
+count-label nit.  No receipt value or central conclusion changes; independent
+closing review is required after authorship repair.
+
 ## 2026-07-15 — Paper 29 authorship candidate drafted (LEDGER #270)
 
 `relativistic-isp-v10-paper29-where-the-action-cocycle-lives.md` converts the
