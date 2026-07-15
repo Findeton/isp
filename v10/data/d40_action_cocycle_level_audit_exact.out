@@ -1,0 +1,58 @@
+[D40 where the action cocycle lives — exact level audit]
+ARITHMETIC: integer/Fraction/Q(sqrt2) exact; no floating theorem
+[R0 LOCKS / TYPED LEVELS]
+antecedent_locks=12/12; distinct_level_constructors=7/7
+[R1 CLASSICAL CYLINDER DESCENT / FINITE SUFFICIENCY]
+positive_measure_squares=1024/1024; sufficient_control=1/1; insufficient_control=1/1; fibre_dependence_visible=1/1
+theorem=COMMON_REFINED_CYLINDER_IMPLIES_EQUAL_CONDITIONAL_PRODUCTS; coarse_kernel_iff_fibre_laws_agree
+[R2 OPERATOR / DECOHERENCE-FUNCTIONAL INTERCHANGE]
+disjoint_operator=1/1; branch_vectors=1/1; functional=1/1; shared_support_negative=1/1; restrictions=1/1
+[R3 DECOHERENT DURABLE-RECORD DESCENT]
+decoherent_record_measures=2/2; refined_click_squares=8/8; positive_denominators=16/16; load_bearing_hypotheses=5/5
+[R4 INTERFERENCE / RECORD-INSTRUMENT CONTROL]
+coherent_law=1/1; orthogonal_path_record_law=1/1; nonzero_offdiagonals=8; laws_differ=1/1
+classification=SCALAR_DESCENT_REQUIRES_DECLARED_DECOHERENT_RECORD_ALGEBRA
+[R5 PAPER 28 SQUARE ADJUDICATION]
+projected_star_products=1/18,2/33; same_final_star=1/1
+complete_serial_products=1/32,1/48; same_typed_DAG=1/1; same_event_set=1/1; same_record_store=1/1
+typed_DAG_pushforward_mass=5/96; equals_serial_sum=1/1; total_depth2_serial_merges=4
+classification=LEVEL_MISMATCH_SERIAL_WEIGHTS_SUM_TO_ONE_TYPED_DAG_ATOM
+Paper28_action_filter_nonmembership=SURVIVES; probability_inconsistency=NOT_INFERRED
+[R6 POSITIVE COMPLETION-RATIO / h-RATIO FORM]
+count_rows=7/7; count_terminals=8/8; classical_rows=7/7; classical_terminals=8/8
+Born_rows=12/12; Born_terminals=16/16; D39_completion_rows=21; squares=78/78; terminal_paths=179
+K_flat_shape=GENERAL_POSITIVE_h_RATIO; Born_uniqueness_or_selection=NOT_INFERRED
+[R7 EXACT BELL/CHSH ARCHITECTURE FIXTURE]
+correlators=1/1; CHSH=2*sqrt2; spacelike_interchanges=4/4; Gram_forms=4/4; normalized=4/4
+no_signalling_marginals=16/16; refined_click_cocycles=16/16; erased_setting_boundary_negative=1/1
+hidden_conditionals=1/2+1/4*sqrt2,1/2+-1/4*sqrt2; join_needed_for_entanglement=NO; D23_in_degree_result=IDENTIFIABILITY_CEILING
+[R8 IDENTIFIED-LAW DICTIONARY AUDIT]
+corpus_dictionary_markers=8/8; same_operator_fixture_distinct_record_laws=1/1; full_D15_click_law_executed=0
+identified_low_energy_action=RETAINED; executable_record_closed_D15_law=NOT_ESTABLISHED
+[R9 UNIVERSALITY AUDIT]
+unique_class_assignments=1/1; class_counts=[["BRIDGE_DEPENDENT_OR_OPEN",3],["CLASSICAL_GENERATOR_SPECIFIC",3],["DECOHERENT_RECORD_UNIVERSAL",1],["GRAMMAR_INFORMATION",4],["QUANTUM_FUNCTIONAL_SPECIFIC",1]]
+[R10 D26 EXPERIMENTAL HANDOFF]
+g=9/25; one_BORN_visibility=4/5; three_BORN_visibility=64/125; exact_bridge_checks=4/4
+preregistered_protocol_fields=6/6; new_lab_data=0; TOKEN_birth_isometry=ABSENT_IN_DECLARED_MODEL
+[HASHES]
+source_sha256=3930ae7abd704763767ececcf2b0de8e4ad5926143211e981e90d389cb88b9d5
+stdout_body_sha256=d25d1520a870813b09e6a72a597e515644eb8c0de1987686b272914838fa7bbb
+internal_science_sha256=5f501de58c437b5ad0c19ee02a68abfdcbfdac274bdbe197be915f3c6145d15d
+[GATES]
+R0=PASS
+R1=PASS
+R2=PASS
+R3=PASS
+R4=PASS
+R5=PASS
+R6=PASS
+R7=PASS
+R8=PASS
+R9=PASS
+R10=PASS
+[VERDICT]
+PASS 11/11
+PRIMARY=LEVEL_MISMATCH_AT_SERIAL_TO_TYPED_DAG_DESCENT
+PHYSICAL_AUDIT=UNRESOLVED_D15_DICTIONARY
+FINITE ACTION/DF-TO-DECOHERENT-RECORD DESCENT THEOREM; EXACT BELL ARCHITECTURE FIXTURE
+full D15 execution, generated quantum content bridge, physical clock calibration and new experiment remain open

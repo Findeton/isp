@@ -1,5 +1,32 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40 first exact level audit passes 11/11 (LEDGER #262)
+
+`code/d40_action_cocycle_level_audit_exact.py` and its byte-identical stdout
+execute all R0--R10 gates.  Source, stdout-body, internal-science and complete-
+output hashes are `3930ae7a...9d5`, `d25d1520...7bbb`,
+`5f501de5...15d` and `7f00c920...64a`.
+
+The finite descent theorem checks 1,024 classical refined-cylinder squares,
+two exact decoherent record measures and the D34c operator/functional fixture.
+The interference control retains `(0,1/2,1/2,0)` for an unrecorded path and
+`(1/4)x4` after an orthogonal path record.
+
+The D38b adjudication reproduces `1/18 != 2/33` on the projected star.  The
+complete serial event weights are `1/32` and `1/48`; both paths have the same
+event IDs, final authenticated store and typed causal DAG.  The DAG atom has
+mass `5/96`, their exact sum.  Thus Paper 28's classical action-variety
+nonmembership survives, while interpreting the square as a probability
+inconsistency is rejected as a serial-to-DAG level mismatch.
+
+The exact Bell column gives `CHSH=2*sqrt(2)`, 16 no-signalling marginals and
+16 refined click cocycles; erasing a setting makes the boundary insufficient.
+K-flat is a general positive h-ratio form.  The D15 audit retains the
+identified low-energy action but finds the state/instrument/grammar/clock
+dictionaries still supplied.  D26's `4/5` BORN visibility law is handed off as
+a preregistered discriminator without new data.  First hostile review is open;
+Paper 29 remains held.
+
 ## 2026-07-15 — D40 action-cocycle level audit pinned (LEDGER #261)
 
 `note-d40-where-the-action-cocycle-lives.md` freezes the confrontation between

@@ -1,22 +1,32 @@
 # Relativistic ISP v10
 
-## Latest — D40 level audit pinned before execution
+## Latest — D40 exact level audit candidate (`PASS 11/11`)
 
-D40 asks where the action cocycle actually lives before Paper 28's exact
-`1/18 != 2/33` obstruction is given a physical interpretation.  It separates
-operator interchange, decoherence-functional consistency, durable-record
-cylinders, serial histories, causal-DAG pushforwards, regional boundary
-sufficiency and classical increment potentials.
+D40 separates operator interchange, decoherence-functional consistency,
+durable-record cylinders, serial histories, causal-DAG pushforwards, regional
+boundary sufficiency and classical increment potentials.  Its first exact
+receipt passes all eleven preregistered gates; independent hostile review is
+open and Paper 29 remains held.
 
-The frozen eleven-gate receipt will prove the finite descent theorem, re-enumerate the
-D38b square at serial and DAG levels, execute an exact Bell/CHSH architecture
-fixture, audit which D33--D39 results are grammar-universal versus toy-law
-specific, and expose the supplied dictionaries still separating D15's
-identified low-energy action content from an executable record-closed click
-law.  It also pre-registers the D26 BORN/TOKEN visibility discriminator.
-Paper 29 is held until the receipt and its first independent hostile review.
+The receipt reproduces Paper 28's `1/18 != 2/33` projected-star products.  The
+complete serial weights are `1/32` and `1/48`; both serializations contain the
+same event identities and push to the same typed causal DAG, whose law has
+mass `5/96`, their exact sum.  Paper 28's classical action-filter nonmembership
+survives, but probability inconsistency does not follow.  The primary result
+is a serial-to-DAG level mismatch.
+
+The quantum column gives exact `CHSH=2*sqrt(2)`, no-signalling and refined
+record cocycles, while a setting-erasure control fails boundary sufficiency.
+K-flat is classified as a general positive h-ratio completion form, not a
+uniquely Born object.  D15's low-energy action identification survives, but
+the supplied state, measure, record-instrument, grammar and clock dictionaries
+still block an executable record-closed D15 law.  D26's `4/5` per-BORN
+visibility discriminator is preregistered for lab handoff; no data are claimed.
 
 - `note-d40-where-the-action-cocycle-lives.md`
+- `note-d40-first-exact-receipt.md`
+- `code/d40_action_cocycle_level_audit_exact.py`
+- `data/d40_action_cocycle_level_audit_exact.out`
 
 ## Prior — Paper 28 independently reviewed exact-receipt candidate
 
