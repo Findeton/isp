@@ -1,5 +1,18 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40b two-probability-space repair pinned (LEDGER #264)
+
+`note-d40b-hostile-repair.md` freezes the round-one repair before source.  It
+requires distinct constructors and pushforwards for Paper 28's projected
+first-relevant-event star law and D39b's complete first-two-global-event
+embedded jump law.  Their unordered masses are respectively `23/198` and
+`5/96`; they may not be substituted for one another.
+
+The delta also fixes the global object's depth-two scope, adds an exact Bell
+Gram quadratic-form control, renames R9 as a typed corpus claim ledger rather
+than a universality theorem, and repairs negative-radical rendering.  Paper 29
+remains held for execution and independent closing review.
+
 ## 2026-07-15 — D40 hostile round one finds one probability-space major (LEDGER #263)
 
 `reviews/d40-round1-independent-hostile-review.md` freezes commit `d11ba91`,
