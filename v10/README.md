@@ -18,7 +18,15 @@ finite functional-to-record descent ladder, preserves Paper 28's exact flat-
 action nonmembership while rejecting probability inconsistency, executes the
 exact Bell architecture column, classifies K-flat as a general positive
 `h`-ratio and audits the still-supplied D15 state/instrument/grammar/clock
-dictionary.  Independent paper-level review is open.
+dictionary.
+
+The first paper-level review returned `0B / 1M / 3m / 1n`.  Authorship now
+requires positive initial and intermediate cylinder masses in Theorem 1,
+states the h-ratio theorem on a harmonic acyclic directed multigraph, treats
+the D15 result as absence of a corpus construction rather than proved D15
+nonuniqueness, and makes both quotient maps explicit.  The no-signalling count
+is labeled as sixteen registered checks.  Independent closing review remains
+open; no receipt number changed.
 
 The repair types two probability spaces separately.  Paper 28's projected
 first-relevant-event star law has 28 serial paths and 17 unordered action

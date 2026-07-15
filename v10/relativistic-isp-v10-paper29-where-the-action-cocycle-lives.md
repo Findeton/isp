@@ -21,8 +21,8 @@ This paper identifies the missing level theorem.  Operator interchange lives
 on class operators.  Strong positivity and restriction live on the
 decoherence functional.  A scalar click cocycle descends only when the queried
 record algebra decoheres, both routes name one refined cylinder or one
-declared pushforward atom, the conditioning denominator is positive and the
-regional boundary is sufficient.  For a positive refined cylinder measure,
+declared pushforward atom, every displayed conditioning cylinder has positive
+mass and the regional boundary is sufficient.  For a positive refined cylinder measure,
 the descended equality is the elementary identity
 
 ```text
@@ -40,8 +40,8 @@ survives, but no probability-law inconsistency follows: an unordered atom
 sums serialization preimages; it does not require their weights to be equal.
 
 An exact Bell fixture supplies the quantum column: `CHSH=2sqrt(2)`, four
-spacelike operator interchanges, sixteen no-signalling marginals, sixteen
-refined click cocycles and 320 exact Gram-positivity controls.  Erasing a
+spacelike operator interchanges, sixteen registered no-signalling marginal
+checks, sixteen refined click cocycles and 320 exact Gram-positivity controls.  Erasing a
 measurement-setting record makes the boundary insufficient.  K-flat's
 completion form is shown to be a general positive `h`-ratio, not a uniquely
 Born signature.  Finally, the identified-law audit reaches a negative but
@@ -136,7 +136,7 @@ Seven constructors are kept distinct throughout.
 | `HISTORY_PAIR` | pair `(alpha,beta)` in a finite history algebra | Hermiticity, strong positivity, additive restriction |
 | `RECORD_CYLINDER` | decoherent durable history atom | positive projective measure |
 | `SERIAL_PATH` | one evaluation or event serialization | ordered conditional product |
-| `CAUSAL_DAG_ATOM` | quotient retaining typed events and causal parents | sum of serial preimage masses |
+| `CAUSAL_DAG_ATOM` | declared quotient retaining typed events and causal parents | sum of serial preimage masses under that quotient |
 | `REGIONAL_BOUNDARY` | statistic supplied to a local conditional | fibre sufficiency/lumpability |
 | `ACTION_INCREMENT` | Paper 28's classical edge weight | flat square on the registered action complex |
 
@@ -161,7 +161,16 @@ terminal state.
 
 ### Theorem 1 — refined cylinder cocycle
 
-If `mu([H])>0` and both routes denote the same refined cylinder, then
+If
+
+```text
+mu([H])>0,
+mu([Ha])>0,
+mu([Hb])>0,
+[Hab]=[Hba],
+```
+
+then
 
 ```text
 mu([Ha])/mu([H]) * mu([Hab])/mu([Ha])
@@ -178,9 +187,9 @@ P(a|H) P(b|Ha) = P(b|H) P(a|Hb).
 #### Proof
 
 Each product telescopes to the ratio of the common refined cylinder mass to
-the initial cylinder mass.  Positivity makes every displayed conditional
-well-defined.  No Markov property, time coordinate or action representation
-is needed.  ∎
+the initial cylinder mass.  The three stated positivity hypotheses make every
+displayed conditional well-defined.  No Markov property, time coordinate or
+action representation is needed.  ∎
 
 The receipt verifies 1,024 instances: every positive four-atom integer
 measure with atom weights in `{1,2,3,4}`, and every choice of the two binary
@@ -288,7 +297,7 @@ The load-bearing hypotheses are:
 1. exclusive and exhaustive durable alternatives;
 2. decoherence of the queried record algebra;
 3. one common refined cylinder or a declared pushforward atom;
-4. positive conditioning denominator;
+4. positive mass for every displayed conditioning cylinder;
 5. sufficient declared boundary.
 
 The Markov boundary condition that appeared opaque in earlier regional
@@ -356,13 +365,17 @@ P(B-birth then idle) = (1/6)(4/11) = 2/33.
 ```
 
 The receipt enumerates all 28 registered serialized depth-two star paths and
-pushes them to 17 unordered action atoms.  The two displayed paths have the
-same unordered typed actions and final canonical star.  Their target atom has
-mass
+pushes them through a declared mathematical projection to 17 unordered action
+atoms.  The two displayed paths have the same unordered typed actions and
+final canonical star.  Their target atom has mass
 
 ```text
 1/18 + 2/33 = 23/198.
 ```
+
+This star projection is registered for the finite comparison.  Unlike the
+complete global record quotient below, it is not proved to be a derived
+physical gauge.
 
 ### 6.2 Complete first-two-global-event embedded jump law
 
@@ -400,10 +413,11 @@ stationary/infinite completion.
 ### Theorem 3 — flat-action nonmembership without inconsistency
 
 On the registered Paper 28 action complex, chosen projected D38b is not a
-member of the flat action-cocycle variety.  Nevertheless, both the projected
-star law and complete global embedded jump law give normalized unordered
-pushforwards in which the common atom is the sum of its two serial preimages.
-Therefore the failed flat square is not a probability-law inconsistency.
+member of the flat action-cocycle variety.  Nevertheless, under the two
+declared star/global quotient maps, the projected star law and complete global
+embedded jump law give normalized unordered pushforwards in which the common
+atom is the sum of its two serial preimages.  Therefore the failed flat square
+is not a probability-law inconsistency.
 
 #### Proof
 
@@ -420,37 +434,40 @@ the click-level shadow of the physical action.
 
 ## 7. K-flat is an h-ratio, not a quantum fingerprint
 
-Let a finite acyclic completion tree have positive terminal weights `W(t)`.
-For a prefix `x`, define the continuation weight
+Let `G` be a finite acyclic directed multigraph with positive terminal weights
+`W(t)`.  Define a positive continuation potential backward by
 
 ```text
-h(x) = sum_{t extends x} W(t).
+h(t) = W(t)                                  for terminal t,
+h(x) = sum_{e:x->y} h(y)                    otherwise,
 ```
 
-Then define
+where outgoing edge multiplicity is counted.  Equivalently, `h(x)` is the sum
+of terminal weights over all continuation paths from `x`.  Define
 
 ```text
-K_h(y|x) = h(y)/h(x)
+K_h(e|x) = h(y)/h(x),       e:x->y.
 ```
-
-for a one-step child `y` of `x`.
 
 ### Theorem 4 — positive completion ratio
 
-Every row `K_h(.|x)` normalizes, and the product along a terminal path `t`
+Every edge row `K_h(.|x)` normalizes, and the product along a terminal path
+ending at `t`
 telescopes to
 
 ```text
 W(t)/h(root).
 ```
 
-Any two paths to the same refined prefix have the same telescoped ratio.
+More generally, any two directed paths with the same initial and final states
+have the same telescoped ratio `h(final)/h(initial)`.
 
 #### Proof
 
-The child continuation sets partition the parent's continuation set, so the
-child `h` values sum to `h(x)`.  Multiplying successive ratios cancels every
-intermediate `h`.  ∎
+The defining harmonic identity makes the outgoing edge row sum to one.
+Multiplying successive edge ratios cancels every intermediate `h`; only the
+endpoint ratio remains.  A path-unrolled completion tree is the equivalent
+tree representation.  ∎
 
 D40 checks the theorem for uniform continuation count, nonuniform positive
 classical terminal weights and exact Bell/Born terminal weights.  D39's
@@ -504,7 +521,8 @@ c^T G c = ||sum_i c_i v_i||^2 >= 0.
 ### 8.2 Records
 
 Every local outcome marginal is `1/2`, independent of the remote setting:
-sixteen exact no-signalling marginal checks.  Given the complete setting and
+sixteen registered exact no-signalling marginal checks, with repeated local
+marginals across setting pairs.  Given the complete setting and
 outcome records, all sixteen two-click products telescope to the same joint
 record cylinder, exactly as Theorem 1 requires.
 
@@ -579,23 +597,25 @@ all eight admissions; its constructive control is stronger: one exact
 operator fixture admits two different click laws depending on whether the
 path receiver exists.
 
-### Theorem 5 — identified action does not yet imply an executable record-closed law
+### Theorem 5 — record-closure of the identified action is not established
 
-Within the current corpus, D15's identified low-energy action content does
-not uniquely determine a finite durable-record instrument or a self-generated
-record grammar.  Consequently the chosen physical action has not been proved
-to induce one of Paper 26's regional specifications or Paper 27's
-record-closed laws.
+Within the current corpus, no theorem maps D15's identified low-energy action
+content, together with derived rather than supplied state and instrument data,
+to a self-generated record grammar.  Consequently the chosen physical action
+has not been proved to induce one of Paper 26's regional specifications or
+Paper 27's record-closed laws.
 
 #### Proof
 
-The D34c control gives two distinct record laws over one operational fixture,
-so the operator data alone do not select the instrument.  Papers 15 and 18
+The D34c control gives two distinct record laws over one finite operational
+fixture, so an action-to-record map is not automatic.  Papers 15 and 18
 explicitly retain state, measure, record and unit slots.  D34b lacks D15 field
 roles and generated D36 conflict content.  Therefore no corpus theorem
 constructs the claimed map.  ∎
 
 This is an unresolved dictionary, not a refutation of the identified action.
+It is not a theorem that two fully specified D15 record-closed completions
+exist; actual D15-level nonuniqueness remains open.
 It is also the reason the “quantum selection column” cannot yet classify the
 physical law itself.  We can prove the level theorem and exact quantum
 fixtures; we cannot silently install a universe-scale D15 instrument.
@@ -700,8 +720,9 @@ The paper's claims have finite failure modes.
 
 ### F1 — refined descent
 
-Find a positive refined cylinder measure and a common refined cylinder for
-which the two conditional products differ.  This would contradict Theorem 1.
+Find a positive refined cylinder measure with all three displayed conditioning
+cylinders positive and a common refined terminal cylinder for which the two
+conditional products differ.  This would contradict Theorem 1.
 
 ### F2 — boundary sufficiency
 
@@ -759,8 +780,9 @@ control.
 
 The hostile-closed receipts establish:
 
-1. **Refined cylinder descent.** Positive common refined cylinders give equal
-   conditional products; 1,024 exact controls pass.
+1. **Refined cylinder descent.** Common refined cylinders with positive
+   initial and intermediate conditioning masses give equal conditional
+   products; 1,024 exact controls pass.
 2. **Finite boundary sufficiency.** A boundary kernel exists exactly when
    pushed next laws are constant on every boundary fibre.
 3. **Functional sewing.** Disjoint operator interchange, exact Gram

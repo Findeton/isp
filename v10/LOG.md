@@ -1,5 +1,20 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — Paper 29 authorship repair applied (LEDGER #272)
+
+Paper 29 now requires `mu([H])`, `mu([Ha])` and `mu([Hb])` all positive before
+printing the refined conditional cocycle.  This matches D40's sixteen positive
+denominator gates.
+
+The h-ratio theorem is reformulated on a finite acyclic directed multigraph
+with harmonic continuation potential and outgoing-edge multiplicity, so
+reconvergent square paths telescope nonvacuously.  The identified-law theorem
+now states only that record-closure is not established in the corpus; actual
+D15-level nonuniqueness remains open.  Both star/global quotient maps are
+declared, the star quotient is not promoted to physical gauge, and the Bell
+count is sixteen registered marginal checks.  Independent closing paper
+review remains open; all receipt values are unchanged.
+
 ## 2026-07-15 — Paper 29 independent review withholds promotion (LEDGER #271)
 
 `reviews/paper29-round1-independent-hostile-review.md` freezes authorship
