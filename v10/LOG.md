@@ -4228,7 +4228,7 @@ weak/timed minimal quotient remains open.  Necessary unbounded worst-case
 width is retained exactly where Paper 23 proves it, for the unlimited-horizon
 Branch-F current-component quotient.  Record restriction now discloses omitted
 current frontier heads as well as causal parents; the future quantum join is
-pre-registered under Paper 23's in-degree-at-least-two identifiability ceiling;
+pre-registered under D23's in-degree-at-least-two identifiability ceiling;
 NSE is marked `[POSITED]` but not used; and Paper 26 is only an architectural
 analogy absent a D37/D38b comparison map.  A focused independent closing delta
 is required before promotion.

@@ -174,7 +174,7 @@ with Paper 26's K1, K2, K3 or joint transaction family.
 
 The construction is classical.  It defines no intervention-indexed quantum
 process, no quantum join operation and no quantum record-closed specification.
-Any future quantum join inherits Paper 23's in-degree-at-least-two
+Any future quantum join inherits D23's in-degree-at-least-two
 click-identifiability ceiling.
 
 ## 3. Record-closed finite-cylinder presentation
