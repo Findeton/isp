@@ -4355,3 +4355,25 @@ no D38b quantum join or V6 seal is inferred.
 
 The terminal receipt is `PASS 10/10`.  Its first hostile review remains open,
 and Paper 28 drafting remains held.
+
+## 2026-07-15 — D39 hostile round one rejects the first receipt (LEDGER #252)
+
+`reviews/d39-round1-selection-identifiability-hostile-review.md` freezes commit
+`a9af380` and reproduces its `PASS 10/10` output, but returns
+`4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`.  Promotion is withheld and Paper 28
+remains held.
+
+The central defects are exact.  R1 never imports D37 and maps D38b into a local
+renaming that retains the complete-witness digest.  H1 accepts an authentic-
+looking A--B edge credential with a foreign source and mutates state; a forged
+partial release also frees one lock from a legitimate two-wire attempt.  R5
+classifies only a four-number one-square toy with a hardcoded rank.  R7's O-U
+law is a normalized actor-by-mode outer product, while its O-L collision is a
+tautological self-equality.
+
+Further majors require exhaustive certificate cells, automorphism covariance
+in the transport classification, actual pinned-alphabet response calculations,
+an exact D36 vocabulary and honest inherited-regression labels.  The D34b
+conflict-vacuity result, H0 staleness counterexample, exact `1/18` versus
+`2/33` action obstruction, D26 factors, tail lesson and D31B cancellation all
+survive.  Repair must precede manuscript drafting.

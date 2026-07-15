@@ -1,13 +1,21 @@
 # Relativistic ISP v10
 
-## Latest — D39 first exact receipt (`PASS 10/10`; hostile round open)
+## Latest — D39 first receipt rejected in hostile round one
 
 D39 asks what classifies and empirically identifies record-closed laws.  The
 first exact receipt now passes all ten gates reproducibly.  Its thesis remains
 classification followed by identifiability: uniqueness, a residual family,
 emptiness and exact nonselection are all admissible outcomes.  Paper 28 is
-still held until the first hostile round is filed and any central blocker is
-repaired.
+still held.  The first hostile round reproduces the arithmetic but returns
+`4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`; repair is required before drafting.
+
+The central failures are architectural.  The first Level-A map never imports
+D37 and retains a global witness digest; H1 accepts a same-edge credential with
+a foreign source and permits forged partial release; R5 classifies only one
+abstract commuting square; and R7 substitutes an actor-by-mode product table
+for the promised gauge-pushed typed causal-DAG law.  The transport gate also
+omits automorphism covariance and the operational wing prints, but does not
+use, the pinned preparation/query alphabet.
 
 The Level-A D38b-to-D37-interface functor is constructed on the finite cells:
 12/12 pushed kernels normalize, 12/12 nested restrictions commute and 1,760
@@ -67,6 +75,7 @@ before paper claims are written.
 
 - `note-d39-selecting-record-closed-laws.md`
 - `note-d39-first-exact-receipt.md`
+- `reviews/d39-round1-selection-identifiability-hostile-review.md`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 
