@@ -1,5 +1,21 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40 independently closes cleanly (LEDGER #269)
+
+`reviews/d40c-round3-independent-closing-review.md` freezes delta commit
+`154088f`, reproduces complete-output hash `a73a8687...a475` under a fresh seed
+and returns `0 BLOCKERS / 0 MAJOR / 0 MINOR / 0 NIT`.
+
+All four direct and twelve transitive runtime locks pass; all seven level
+constructors and exact `(28,17,44,40,4)` census remain fixed.  The star
+unordered atom has mass `23/198`; the separate global typed-DAG atom has mass
+`5/96`; both equal their two serial preimages' sums and both laws normalize.
+Paper 28's flat-action nonmembership survives without probability
+inconsistency.  The Bell fixture, general h-ratio result, unresolved D15
+dictionary and D26 no-data handoff retain their declared scopes.  D40 is
+promoted to an independently reviewed exact-receipt candidate.  Paper 29 may
+begin.
+
 ## 2026-07-15 — D40c closes provenance and census gates (LEDGER #268)
 
 `code/d40c_receipt_integrity_delta_exact.py` returns `PASS 4/4`.  It locks its

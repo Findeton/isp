@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D40c closing delta candidate (`PASS 4/4`)
+## Latest — D40 independently closed exact-receipt candidate
 
 D40 separates operator interchange, decoherence-functional consistency,
 durable-record cylinders, serial histories, causal-DAG pushforwards, regional
@@ -9,8 +9,9 @@ passed 11/11; hostile review found `0B / 1M / 3m / 1n`.  D40b repaired those
 findings at `PASS 5/5`.  Round two confirmed the mathematics but found one
 transitive-lock major and one exact-census minor.  D40c closes both at
 `PASS 4/4`: 12/12 transitive antecedents, 7/7 typed levels and the exact
-`(28,17,44,40,4)` census.  Independent final review is open; Paper 29 remains
-held.
+`(28,17,44,40,4)` census.  Independent final review on commit `154088f`
+returns `0B / 0M / 0m / 0n`.  D40 is promoted at its declared finite scope;
+Paper 29 may begin.
 
 The repair types two probability spaces separately.  Paper 28's projected
 first-relevant-event star law has 28 serial paths and 17 unordered action
@@ -42,6 +43,7 @@ visibility discriminator is preregistered for lab handoff; no data are claimed.
 - `note-d40c-exact-closing-delta.md`
 - `code/d40c_receipt_integrity_delta_exact.py`
 - `data/d40c_receipt_integrity_delta_exact.out`
+- `reviews/d40c-round3-independent-closing-review.md`
 
 ## Prior — Paper 28 independently reviewed exact-receipt candidate
 
