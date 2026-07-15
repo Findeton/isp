@@ -4077,3 +4077,46 @@ SHA-256 values are `5e426166...604c`, `d8517f70...6ba7`,
 `540a0559...7522` and `b0e61b08...c3f6`.  D38 is an exact-receipt candidate,
 not yet hostile-reviewed.  The result neither selects D34b's coefficients nor
 supplies null-boundary, infinite-unimodular or quantum completions.
+
+## 2026-07-14 — D38 hostile round one rejects the central object (LEDGER #242)
+
+Three independent lanes reproduce D38's complete output but return aggregate
+`2B/7M/1m/0n`.  Cached state and tip maps are authoritative enough to admit
+rollback, stale replay, incompatible forks, disconnected authentic events,
+retargeted edges, fabricated current rows, cross-wire ancestry and duplicate
+tip keys.  The printed restriction cocycles define no restriction map at all:
+R1 is a temporal first-coordinate marginal identity and R3 only commutes
+updates on unrelated Python tuple components.
+
+Majors require genuine Ulam child/incidence generation, a complete capacity
+ledger, D34f's first-unmatched/prefix-separation premises, removal of the
+inverse-limit claim, honest abstract escape controls, a conditional-only D26
+interface and relabeling of the inherited anchor regression.  The note also
+corrects Paper 25's status.  Promotion is withheld; the frozen review is
+`reviews/d38-round1-record-closed-specification-hostile-review.md`.
+
+## 2026-07-14 — D38b replaces the blocked architecture (LEDGER #243)
+
+`code/d38b_record_closed_specification_exact.py` is a new repair receipt, not
+an edit that hides D38's failure.  The physical history has no authoritative
+cache or tip map: it derives unique actor rows, heads and incidence from an
+authenticated typed DAG.  Birth records carry a canonical Ulam child row,
+edge, two ports and child clock address.  A monotone used-event store rejects
+18/18 candidate and whole-history attacks with byte-identical failed
+transactions.
+
+The positive-cylinder layer now has explicit oriented depth-1/2/3 regions:
+12 normalizations, 12 direct prefix restrictions, four staged squares and
+1,760 positive atoms.  Record transport implements typed external-parent
+references and passes two nested direct/staged restrictions, one
+update/restriction naturality square and disjoint insertion commutation.
+D34f is inherited only as the finite-stop current-component quotient; its
+timed/infinite inverse limit remains open.  Escape controls are labeled
+abstract, V6 sealing is not identified, D26 is conditional on a missing
+record-to-parent-line bridge, and the capacity ledger separates radius,
+actors, records, ports, parent arity, identifiers and elapsed marks.
+
+D38b passes `9/9` and is byte-identical under seeds `0`, `1`, `2`, `17`,
+`101` and `999`.  Source, stdout-body, science and complete-output hashes are
+`e82198ad...dece`, `6c11b140...b152`, `60d0c359...0182` and
+`b97b47e2...7d1e`.  A focused hostile delta remains open before Paper 27.

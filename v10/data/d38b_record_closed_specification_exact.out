@@ -1,0 +1,52 @@
+[D38b record-closed oriented finite-cylinder repair — exact receipt]
+ARITHMETIC: integer/Fraction exact; exponential holding laws represented by exact rates
+SCOPE: chosen D34b finite reachable histories; actor-star projection; classical positive cylinders only
+[LOCKS / REPAIRED CLAIM SPLIT]
+antecedent_locks={"D26":"a9b1f1704578178218750ecbafa737763ff3968ca246939a1d6aece79930575c","D34b":"7fe587e0e2f3fccb8b88362f70e201c4cbecdc6a99984c792699695f67b558f4","D34e":"1dd1a69be94a0fb614f909745e7db772ac5e5f134b97cbdcdf10c45a08f606c5","D34e-data":"158c491d7376b165556364fee2f0266447e7f5becfdbda5a8f4ae600114e9fb7","D34f":"0b518f6e742e4b24bd5a3e4a68e29127af27c7cd6acc13453ad5dba9031347ef","D34f-data":"de293509a4961d6a390f9fa80657aac7f76e04939e693277db60f07fac6d8fb2","D36b":"57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b","D38":"5e42616679dcebff464e25dffa62dad4d52a6f399e7bac420ce16ea3b236604c","D38-data":"b0e61b087451f216db1696ece836453f5ba403667fbdb5043a67ce17e070c3f6"}
+spatial_DLR=NOT_CLAIMED; null_boundary_version=NOT_PROVED; Paper26_K_membership=NOT_CLAIMED; chosen_coefficients_selected=0
+[ORIENTED FINITE-CYLINDER REGIONAL FAMILY]
+reachable_boundaries=4; depth_1_2_3_normalizations=12/12; direct_prefix_restrictions=12/12; positive_path_atoms=1760
+exact_holding_rate_rows=('3/2', '3/2', '2', '15/8'); exponential_density_normalizations=1760; staged_r31_equals_r21_r32=4/4
+[TYPED D34b RECORD GENERATION / LOCAL SUPPORT]
+action_rows=258; maximum_touched_actors=2; generated_actors_edges_records=4,3,7; typed_birth_incidence=2/2
+birth_payload=child_row+edge+two_ports+clock_address; passive_reception_does_not_consume_receiver_ring=1
+[RECORD-DERIVED HEADS / MONOTONE AUTHENTICATION]
+whole_history_and_candidate_attacks_rejected=18/18; byte_identical_failed_transactions=18/18; used_event_registry_after_valid_append=1
+authoritative_cached_state=0; authoritative_tip_map=0; forks_replays_rollbacks_cross_wire_disconnected_duplicate_heads_reject=1
+[NESTED RECORD RESTRICTION / UPDATE NATURALITY]
+direct_equals_staged_nested_restrictions=2/2; update_restriction_naturality=1/1; disjoint_insertion_commutation=1/1; external_parent_slots=5
+omitted_parents=typed_EXTERNAL(source_record_id); source_records_immutable=1; pairwise_only_not_promoted=1
+[HASH-LOCKED PREDICTIVE THEOREM REGRESSION]
+p_r_r0_to_r8=('1/24', '1/1024', '1/64000', '1/5308416', '1/550731776', '1/68719476736', '1/10030613004288', '1/1677721600000000', '1/316478381828866048'); 2^M_M1_to_M10=(2, 4, 8, 16, 32, 64, 128, 256, 512, 1024); q_equals_2n_minus_1=(3, 5, 7, 9, 11, 13, 15, 17, 19)
+finite_stop_predictive_quotient=rooted_marked_current_component_class; timed_or_infinite_predictive_inverse_limit=OPEN
+old_generic_PGRAQS_criterion=REJECTED_UNDERHYPOTHESIZED; strengthened_prefix_separation_criterion=ANALYTIC_ONLY; D34f_instance=INHERITED_NOT_RECOMPUTED
+[ABSTRACT QUERY-VARIANT CONTROLS]
+finite_horizon_projection=1; hypothetical_exact_zero_read_cut=1; nonzero_exact_attenuation_distinctions=12/12; epsilon_merges=9/12; finite_marked_history_cap=64
+existing_V6_physical_seal_identification=0; assumption_minimality_theorem=OPEN; bounded_actor_population_alone_bounds_history=0
+[D26 CONDITIONAL FALSIFIER INTERFACE]
+same_line_BORN_table_N0_to_N8=('1', '4/5', '16/25', '64/125', '256/625', '1024/3125', '4096/15625', '16384/78125', '65536/390625'); dormant_TOKEN_control=('1', '1', '1', '1', '1', '1', '1', '1', '1')
+conditional_statement=IF bridge(N same-line BORN,g=9/25), THEN V_N/V_0=(4/5)^N; D38b_record_to_D26_parent_line_bridge=OPEN; maintenance_rate=NOT_INFERRED
+[CAPACITY LEDGER / FINITE BALANCE]
+specimen_radius_actors_records_ports_parent_arity=1,6,7,10,2
+identifier_capacity=UNBOUNDED; elapsed_mark_capacity=CONTINUOUS; family_total_width=UNBOUNDED
+finite_uniform_root_mass_balances=3/3; deterministic_center_negative=1; center_sent_received=1,3
+all_transport_unimodularity=NOT_PROVED; infinite_completion=OPEN; coupling_selection=OPEN; quantum_join=UNDEFINED
+[HASHES]
+source_sha256=e82198adfc22c633ca0c68197efcbec2cc0407f3abd3d81717a6d430dbe9dece
+stdout_body_sha256=6c11b1400ff6a82f1c02c12e96a9e73c354dda4da4a0565d9d5620664fb4b152
+internal_science_sha256=60d0c359923cbf501b425e9f7d43ab1577279ae148b3d46a1014d0aa95140182
+[GATES]
+R0=PASS
+R1=PASS
+R2=PASS
+R3=PASS
+R4=PASS
+R5=PASS
+R6=PASS
+R7=PASS
+R8=PASS
+[VERDICT]
+PASS 9/9
+AUTHENTICATED RECORD-CLOSED ORIENTED FINITE-CYLINDER PRESENTATION / CHOSEN D34b / NONSELECTING
+BOUNDED LOCAL EVENT SUPPORT COEXISTS WITH UNBOUNDED EXACT FINITE-STOP PREDICTIVE WIDTH
+generic criterion, physical sealing, D26 updater bridge, timed inverse limit, unimodular selection and quantum join remain open

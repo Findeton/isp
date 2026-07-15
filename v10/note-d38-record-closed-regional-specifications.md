@@ -1,8 +1,9 @@
 # D38 — record-closed regional specifications and predictive width
 
-**Status:** EXACT RECEIPT CANDIDATE; `PASS 9/9`; hostile review open.
+**Status:** D38 ROUND ONE REJECTED; D38b REPAIR `PASS 9/9`; focused hostile delta open.
 **Date:** 2026-07-14.
-**Parents:** terminal Papers 21--24, independently reviewed Papers 25--26,
+**Parents:** terminal Papers 21--24, coordinator-lineage reviewed Paper 25,
+independently reviewed Paper 26,
 terminal D34b/D34e/D34f, terminal D35 and terminal D36.
 
 ## 1. Question
@@ -101,8 +102,10 @@ not claim Byzantine or cryptographic security.
 
 ### C5 — restriction and update cocycle
 
-For `D contained in E contained in F`, record restriction is parent-closed and
-boundary updates commute with nested transport.  In insertion notation,
+For `D contained in E contained in F`, record restriction is parent-total:
+every retained parent is either retained internally or represented by a typed
+`EXTERNAL(source_record_id)` boundary reference.  Boundary updates commute
+with nested transport.  In insertion notation,
 
 ```text
 U_b(eta_1 then eta_2) = U_(U_b(eta_1))(eta_2),
@@ -125,8 +128,10 @@ to import a new boundary ontology to continue.  This is the precise content of
 Graph radius, actor/record/port count, parent arity, identifier cost,
 continuous marks and total information width are reported separately.  A
 finite record is not promoted to a uniform finite-capacity theorem.
-Boundary-maintenance births are physical and inherit D26's coherence cost;
-pre-existing coherence-neutral TOKEN capacity is a distinct control.
+Any boundary-maintenance record physically bridged to a D26 same-line BORN
+carrier inherits D26's coherence cost; no such bridge is automatic.
+Pre-existing coherence-neutral TOKEN capacity is a distinct conditional
+control.
 
 ## 4. Positive target: an induced D34b presentation
 
@@ -165,16 +170,16 @@ The theorem target is deliberately limited:
 
 ## 5. Predictive exhaustion target
 
-For the full durable-ancestry Branch F query, let `Q_n` be the predictive
-quotient at a finite component/horizon level and let the bonding maps forget
-later detail.  Paper 23 supplies the analytical endpoint:
+For the full durable-ancestry Branch F query, Paper 23 supplies the analytical
+endpoint at every licensed finite stop:
 
 ```text
-inverse-limit exact predictive boundary = rooted marked component class.
+finite-stop exact predictive quotient = current rooted marked component class.
 ```
 
-D38 will restate this as an exhaustion theorem for record-closed
-specifications, not rerun it as a finite-radius claim.  The receipt must carry:
+D38 restates this as an unbounded-width theorem over reachable finite stops,
+not as a timed or infinite predictive inverse-limit claim.  The receipt must
+carry:
 
 1. Paper 22's positive fixed-radius witnesses
    `p_r=[1/(8(r+3))]^(r+1)`;
@@ -196,15 +201,22 @@ P  typed old records persist immutably in wire ancestry;
 G  reachable connected histories have unbounded distinguishable growth;
 R  a finite positive-probability local transport path can return every old
    attachment to the distinguished future boundary;
-A  a fresh authenticated anchor makes the return path an observable cylinder;
-Q  the query asks exact typed ancestry at unlimited horizon;
+A  for every finite legal K and nonisomorphic K', a Branch-F-measurable fresh
+   anchored prefix U_K(Delta) has positive leading order q(K) under K and is
+   zero or order at least q(K)+1 under K'; this includes first-unmatched,
+   altered-record and missing-record catch-up cases;
+Q  the query asks exact typed ancestry and elapsed future time at unlimited
+   horizon, and the marked DAG reconstructs K;
 S  no irreversible seal, exact horizon or zero-influence cut blocks return.
 ```
 
-Under `P,G,R,A,Q,S`, the anchored tomography proof makes the complete rooted
-marked component class the exact predictive quotient.  The `2^M` family gives
-unbounded worst-case information width.  If the law also has bounded local
-update arity, both facts hold simultaneously; that is the separation theorem.
+The criterion also requires component autonomy: the current component class
+screens the declared future law.  Under these strengthened premises, anchored
+prefix separation makes distinct component classes predictively distinct,
+while autonomy makes the class sufficient.  The `2^M` family then gives
+unbounded worst-case information width.  D38b verifies the chosen-D34b
+instance only by hash-locked inheritance from D34f; the general criterion is
+an analytical implication, not a finite receipt theorem.
 
 The receipt must show that the assumptions are load-bearing, not decorative.
 
@@ -216,10 +228,11 @@ horizon without deleting the old record.
 
 ### Escape E2 — irreversible operational seal
 
-A seal may preserve the record ontologically while forbidding every later
-read/transport at the declared alphabet.  This breaks `R` or `S`.  No Silent
-Erasure still protects the global record; it does not require the future A
-interface to serve it.
+A hypothetical exact-zero operational cut may preserve the record
+ontologically while forbidding every later read/transport at the declared
+alphabet.  This breaks `R` or `S`.  D38b uses this only as an abstract query
+variant.  It does not identify V6 dispersal or any existing D34b mechanism
+with such a physical seal; Paper 23 leaves that construction open.
 
 ### Escape E3 — attenuation
 
@@ -230,9 +243,10 @@ threshold.  The receipt must include both controls.
 
 ### Escape E4 — bounded growth
 
-A fixed finite population bounds capacity for that model.  It does not refute
-component identity on the finite state space; it removes the uniform-in-growth
-quantifier.
+A cap on the complete reachable marked-history state space, total record count
+or query horizon bounds capacity for that capped model.  A fixed actor
+population alone does not: two actors can accumulate unbounded append-only
+history.
 
 ## 7. Ontological and operational width
 
@@ -254,20 +268,21 @@ physical deletion.
 
 ## 8. Boundary upkeep and the D26 falsifier
 
-If maintenance of a record-closed boundary creates `N` BORN summary carriers
-on one probed parent degree with coupling `g`, D26 gives
+If a future physical bridge identifies `N` record-boundary maintenance events
+with controlled BORN carriers on one specified coherent parent line at
+coupling `g`, D26 gives
 
 ```text
 V_N/V_0 = (1-g)^(N/2),
 B_N = -ln(V_N/V_0) = N[-(1/2)ln(1-g)].
 ```
 
-At `g=9/25`, the exact visibility factor is `(4/5)^N`.  A measured visibility
-budget therefore constrains the product of boundary-maintenance birth count
-and coupling.  A coherence-neutral dormant TOKEN contributes factor one but
-requires pre-existing capacity.  Bounded per-record capacity plus unbounded
-predictive width therefore requires unbounded record count, physical births,
-or a declared escape from the exact query.
+At `g=9/25`, the conditional visibility factor is `(4/5)^N`.  A measured
+visibility budget could then constrain the identified birth count and
+coupling.  A coherence-neutral dormant TOKEN contributes factor one but
+requires pre-existing capacity.  D38b supplies no record-to-system dictionary,
+coherent parent line or BORN classification, so generic record maintenance is
+not priced by this table.
 
 This is not a universal rate.  A rate needs a record-to-system dictionary,
 monitored duration and environmental-decoherence control.
@@ -353,7 +368,7 @@ locally normalized but root-biased negative control, and leave infinite
 unimodular completion/selection open.  Print the quantum, sealing-rate,
 spacetime and action-bridge ceilings.
 
-## 11. First exact execution
+## 11. First exact execution and hostile rejection
 
 The pinned executable and committed stdout now exist:
 
@@ -362,7 +377,8 @@ code/d38_record_closed_specification_exact.py
 data/d38_record_closed_specification_exact.out
 ```
 
-The result is `PASS 9/9`.  Its frozen headline controls are:
+The first implementation reported `PASS 9/9`.  Its frozen headline controls
+were:
 
 ```text
 R0  seven source/data antecedent locks and the three-object claim split;
@@ -376,10 +392,8 @@ R7  (4/5)^N through N=8 with coherence-neutral TOKEN controls;
 R8  three finite mass-transport balances and one root-biased negative.
 ```
 
-The updater reconstructs the cached star state from authenticated typed tip
-records before applying the next row.  Its two-component cocycle is executed
-in both orders; it is not a same-expression comparison.  Six executions under
-hash seeds `0`, `1`, `2`, `17`, `101` and `999` are byte-identical.
+Six executions under hash seeds `0`, `1`, `2`, `17`, `101` and `999` were
+byte-identical.  Reproducibility did not rescue the architecture.
 
 ```text
 source SHA-256:        5e42616679dcebff464e25dffa62dad4d52a6f399e7bac420ce16ea3b236604c
@@ -388,12 +402,68 @@ science SHA-256:       540a05596b8c9286ae32ef4de4ac36cd95992756f4ae85a3b46e03607
 complete-output SHA-256: b0e61b087451f216db1696ece836453f5ba403667fbdb5043a67ce17e070c3f6
 ```
 
-This is finite receipt evidence plus inherited analytical theorems, not a new
-all-size proof.  It does not select D34b's coefficients, prove a null-boundary
-version, identify the result with Paper 26's K families, construct an infinite
-unimodular completion or define a quantum regional join.
+`reviews/d38-round1-record-closed-specification-hostile-review.md` returns
+`2B/7M/1m/0n` and rejects promotion.  Cached state/tips admitted forks,
+rollbacks and fabricated current rows; no regional restriction map existed;
+neighbor birth did not generate typed child incidence; the capacity ledger
+was incomplete; the criterion was underhypothesized; the inverse-limit claim
+exceeded D34f; toy escape and D26 tables were overpromoted; and the anchor gate
+was inherited rather than recomputed.
 
-## 12. Promotion gates
+## 12. D38b architectural repair
+
+D38b replaces the blocked implementation rather than editing its receipt:
+
+```text
+code/d38b_record_closed_specification_exact.py
+data/d38b_record_closed_specification_exact.out
+```
+
+It reports `PASS 9/9` with the following repaired controls:
+
+```text
+oriented depth-1/2/3 positive-cylinder family     12 normalizations,
+                                                  12 direct restrictions,
+                                                  1,760 positive atoms;
+record-derived physical history                   no cached state or tips;
+typed D34b births                                 child row, edge, two ports,
+                                                  clock address in the event;
+durable hostile battery                           18/18 rejected with an
+                                                  unchanged immutable store;
+nested regional transport                         2 direct/staged squares,
+                                                  1 update-naturality square,
+                                                  typed external parents;
+predictive theorem                                finite-stop quotient only,
+                                                  D34f inherited, inverse
+                                                  limit open;
+escape and D26 controls                           explicitly abstract and
+                                                  conditional;
+capacity                                           radius/actors/records/ports/
+                                                  parent arity separated.
+```
+
+Six seed runs are byte-identical.  The exact hashes are:
+
+```text
+source SHA-256:          e82198adfc22c633ca0c68197efcbec2cc0407f3abd3d81717a6d430dbe9dece
+stdout-body SHA-256:     6c11b1400ff6a82f1c02c12e96a9e73c354dda4da4a0565d9d5620664fb4b152
+science SHA-256:         60d0c359923cbf501b425e9f7d43ab1577279ae148b3d46a1014d0aa95140182
+complete-output SHA-256: b97b47e2b5c8375883c6093e0eda9b59978192c64e56989165211e08934e7d1e
+```
+
+The earned positive noun is deliberately narrower than round one:
+
+```text
+AUTHENTICATED RECORD-CLOSED ORIENTED FINITE-CYLINDER PRESENTATION /
+CHOSEN D34b / NONSELECTING.
+```
+
+Spatial DLR, null-boundary versions, Paper 26 K-family membership, a generic
+physical sealing model, the D26 updater bridge, timed inverse limits,
+unimodular selection and quantum joins remain open.  A focused hostile delta
+must close both round-one blockers before Paper 27 is drafted.
+
+## 13. Promotion gates
 
 D38 may support Paper 27 only if all nine receipt gates pass and independent
 review closes the following attack lanes:
@@ -414,17 +484,17 @@ obstruction.  It may not claim:
 - that D34b is nature's law; or
 - any quantum regional join.
 
-## 13. Candidate outcome rows
+## 14. Candidate outcome rows
 
 ```text
-RECORD-CLOSED REGIONAL SPECIFICATION / CHOSEN-LAW EXISTENCE:
-  positive-cylinder regional presentation and recursive record boundary pass.
+RECORD-CLOSED ORIENTED FINITE-CYLINDER PRESENTATION / CHOSEN-LAW EXISTENCE:
+  positive-cylinder projective family and recursive typed record history pass.
 
 LOCAL-UPDATE / PREDICTIVE-WIDTH SEPARATION:
   bounded touched arity coexists with unbounded exact Branch-F width.
 
-CONDITIONAL PREDICTIVE-WIDTH OBSTRUCTION:
-  component quotient under P,G,R,A,Q,S; escape variants explicit.
+CHOSEN-LAW PREDICTIVE-WIDTH OBSTRUCTION:
+  finite-stop component quotient and M-bit family inherited from D34f.
 
 SUPPLIED/UNSELECTED:
   seed, D34b coefficients, action bridge and root-free completion remain data.
@@ -433,7 +503,7 @@ REFUSAL/UNDEFINED:
   quantum record-closed specification and physical sealing rate.
 ```
 
-## 14. Literature anchor
+## 15. Literature anchor
 
 The DLR/specification background remains Dobrushin (1970), Lanford--Ruelle
 (1969) and Georgii (2011), as cited by Paper 26.  The root-free balance language

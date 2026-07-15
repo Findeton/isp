@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D38 / Paper 27 (exact receipt candidate; hostile review open)
+## Latest — D38b / Paper 27 (architectural repair candidate; focused delta open)
 
 D38 asks when a regional specification generates and authenticates the records
 that its own later conditionals require as boundary data.  The pinned object is
@@ -19,24 +19,40 @@ collapse an exact infinite-precision quotient.  D26 prices BORN boundary
 maintenance by `(1-g)^(N/2)`; coherence-neutral TOKEN capacity remains a
 distinct control.
 
-The first D38 receipt passes all nine pinned gates.  Four chosen-D34b star
-cells carry 29 positive embedded-jump atoms and 29 exact two-step tower checks;
-258 action rows touch at most two actors while the radius-one boundary width
-grows through 12 registered neighbors.  The typed updater reconstructs its
-cached state from boundary records, closes five successive updates, passes two
-restriction/insertion cocycles and rejects all 14 forged, replayed or
-retargeted mutations before durable change.  Predictive controls carry nine
-positive `p_r` witnesses, `2^M` families through `M=10`, `q=2n-1` through 19
-events and the frozen Paper 23 anchor coefficients.  All escape, D26 upkeep
-and finite balance controls pass.
+The first D38 receipt was reproducible but architecturally false.  Three
+hostile lanes returned `2B/7M/1m/0n`: cached state/tips admitted forks and
+fabricated current rows, no nested regional restriction existed, neighbor
+birth did not generate typed incidence, and the receipt overclaimed its
+capacity, inverse-limit, escape, D26 and inherited-anchor evidence.  It is
+retained only as the frozen round-one target.
 
-The receipt is byte-identical under six hash seeds and has complete SHA-256
-`b0e61b08...c3f6`.  It remains an exact-receipt candidate: the three pinned
-hostile lanes and Paper 27 drafting are still open.
+D38b is the replacement.  Its event DAG has no authoritative cached state or
+tip map; unique heads and actor rows are derived from authenticated records.
+Each birth carries a Ulam child row, edge, two ports and a clock address.
+Eighteen candidate and whole-history attacks—including forks, replay,
+rollback, disconnected records, retargeted seed incidence, fabricated rows
+and duplicates—reject with an unchanged immutable store.
+
+The oriented depth-1/2/3 cylinder family passes 12 normalizations, 12 direct
+prefix restrictions, four staged restrictions and 1,760 positive path atoms.
+Record transport passes two genuine nested direct/staged squares, one
+update/restriction naturality square and disjoint insertion commutation, using
+typed `EXTERNAL(source_record_id)` parent references.  The predictive claim is
+now exactly Paper 23's finite-stop current-component quotient and unbounded
+worst-case width; timed/infinite inverse limits remain open.  Physical sealing
+is not identified, and D26 is only a conditional interface pending a
+record-to-parent-line bridge.
+
+D38b is `PASS 9/9`, byte-identical under six hash seeds, with complete output
+SHA-256 `b97b47e2...7d1e`.  A focused hostile delta is required before Paper 27
+drafting.
 
 - `note-d38-record-closed-regional-specifications.md`
 - `code/d38_record_closed_specification_exact.py`
 - `data/d38_record_closed_specification_exact.out`
+- `code/d38b_record_closed_specification_exact.py`
+- `data/d38b_record_closed_specification_exact.out`
+- `reviews/d38-round1-record-closed-specification-hostile-review.md`
 
 ## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)
 
