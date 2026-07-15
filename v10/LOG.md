@@ -4417,3 +4417,23 @@ conditions.
 
 D39b is an exact repair candidate.  Independent closing review remains open,
 and Paper 28 remains held.
+
+## 2026-07-15 — D39b round two finds one comparison major (LEDGER #254)
+
+`reviews/d39b-round2-hostile-repair-review.md` freezes commit `b3ce58c` and
+reproduces D39b, including independent modular action ranks 246 at two primes,
+the 410 certificate comparisons, 24 hostile rejections, 78/78 normalized
+completion squares and the typed O-U census.  The round-one protocol exploits
+remain closed.
+
+The review returns `0 BLOCKERS / 1 MAJOR / 2 MINOR / 1 NIT`.  The shared
+interface omits the D37 carrier namespace, so 38 source regions produce only
+32 distinct target objects.  Calling that map an embedding is false.  The
+repair must add a local carrier namespace without restoring a global D38b
+witness hash, then gate 38/38 distinct images.
+
+The minors require an explicit safety/existence-only scope for atomic
+certificate collection and preservation of the distinction between the
+unnormalized rank-246 increment variety and the separate normalized
+horizon-three completion kernel.  The output's H1 validation label also needs
+to name its schema/acyclicity content.  Paper 28 remains held pending delta.

@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D39b hostile repair candidate (`PASS 10/10`)
+## Latest — D39b closing review finds one comparison major
 
 D39 asks what classifies and empirically identifies record-closed laws.  The
 first exact receipt now passes all ten gates reproducibly.  Its thesis remains
@@ -8,7 +8,9 @@ classification followed by identifiability: uniqueness, a residual family,
 emptiness and exact nonselection are all admissible outcomes.  Paper 28 is
 still held.  The first hostile round reproduced the arithmetic but returned
 `4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`.  D39b repairs that target and awaits
-an independent closing review before drafting.
+an independent closing review before drafting.  Round two reproduces the
+repair but withholds promotion: 38 D37 source regions collapse to 32 interface
+objects because the carrier namespace is absent.
 
 The repair constructs a shared regional-interface category with an actual
 38-object D37 embedding and no global witness field.  H1 is a typed causal
@@ -85,6 +87,7 @@ before paper claims are written.
 - `note-d39b-hostile-repair.md`
 - `code/d39b_record_closed_law_selection_exact.py`
 - `data/d39b_record_closed_law_selection_exact.out`
+- `reviews/d39b-round2-hostile-repair-review.md`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 
