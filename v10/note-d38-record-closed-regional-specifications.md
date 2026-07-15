@@ -1,6 +1,6 @@
 # D38 — record-closed regional specifications and predictive width
 
-**Status:** CAMPAIGN PIN; frozen before the first D38 receipt execution.
+**Status:** EXACT RECEIPT CANDIDATE; `PASS 9/9`; hostile review open.
 **Date:** 2026-07-14.
 **Parents:** terminal Papers 21--24, independently reviewed Papers 25--26,
 terminal D34b/D34e/D34f, terminal D35 and terminal D36.
@@ -353,7 +353,47 @@ locally normalized but root-biased negative control, and leave infinite
 unimodular completion/selection open.  Print the quantum, sealing-rate,
 spacetime and action-bridge ceilings.
 
-## 11. Promotion gates
+## 11. First exact execution
+
+The pinned executable and committed stdout now exist:
+
+```text
+code/d38_record_closed_specification_exact.py
+data/d38_record_closed_specification_exact.out
+```
+
+The result is `PASS 9/9`.  Its frozen headline controls are:
+
+```text
+R0  seven source/data antecedent locks and the three-object claim split;
+R1  4/4 normalized star kernels, 29 positive atoms, 29 tower checks;
+R2  258 local action rows, maximum two touched actors, width through 12;
+R3  five recursive updates, 19 records, two cocycles, 14/14 attacks rejected;
+R4  p_r through r=8, 2^M through M=10, q=2n-1 through q=19;
+R5  bare 1/1152 vs 1/576 and anchored 1/192 vs 1/1536 controls;
+R6  horizon, operational seal, exact/epsilon attenuation and growth controls;
+R7  (4/5)^N through N=8 with coherence-neutral TOKEN controls;
+R8  three finite mass-transport balances and one root-biased negative.
+```
+
+The updater reconstructs the cached star state from authenticated typed tip
+records before applying the next row.  Its two-component cocycle is executed
+in both orders; it is not a same-expression comparison.  Six executions under
+hash seeds `0`, `1`, `2`, `17`, `101` and `999` are byte-identical.
+
+```text
+source SHA-256:        5e42616679dcebff464e25dffa62dad4d52a6f399e7bac420ce16ea3b236604c
+stdout-body SHA-256:   d8517f7024f7c024872372cf8b076a01687a836e4f59d450ddbadd8c971f6ba7
+science SHA-256:       540a05596b8c9286ae32ef4de4ac36cd95992756f4ae85a3b46e036071347522
+complete-output SHA-256: b0e61b087451f216db1696ece836453f5ba403667fbdb5043a67ce17e070c3f6
+```
+
+This is finite receipt evidence plus inherited analytical theorems, not a new
+all-size proof.  It does not select D34b's coefficients, prove a null-boundary
+version, identify the result with Paper 26's K families, construct an infinite
+unimodular completion or define a quantum regional join.
+
+## 12. Promotion gates
 
 D38 may support Paper 27 only if all nine receipt gates pass and independent
 review closes the following attack lanes:
@@ -374,7 +414,7 @@ obstruction.  It may not claim:
 - that D34b is nature's law; or
 - any quantum regional join.
 
-## 12. Candidate outcome rows
+## 13. Candidate outcome rows
 
 ```text
 RECORD-CLOSED REGIONAL SPECIFICATION / CHOSEN-LAW EXISTENCE:
@@ -393,7 +433,7 @@ REFUSAL/UNDEFINED:
   quantum record-closed specification and physical sealing rate.
 ```
 
-## 13. Literature anchor
+## 14. Literature anchor
 
 The DLR/specification background remains Dobrushin (1970), Lanford--Ruelle
 (1969) and Georgii (2011), as cited by Paper 26.  The root-free balance language

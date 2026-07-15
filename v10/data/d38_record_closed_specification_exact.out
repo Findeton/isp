@@ -1,0 +1,50 @@
+[D38 record-closed regional specifications — exact finite receipt]
+ARITHMETIC: integers/Fractions for every discrete and rational claim; logs remain symbolic
+SCOPE: chosen D34b positive-cylinder/embedded-star presentation; exact unlimited Branch-F criterion; classical only
+[LOCKED ANTECEDENTS / CLAIM SPLIT]
+source_and_data_locks={"D26":"a9b1f1704578178218750ecbafa737763ff3968ca246939a1d6aece79930575c","D34b":"7fe587e0e2f3fccb8b88362f70e201c4cbecdc6a99984c792699695f67b558f4","D34e":"1dd1a69be94a0fb614f909745e7db772ac5e5f134b97cbdcdf10c45a08f606c5","D34e-data":"158c491d7376b165556364fee2f0266447e7f5becfdbda5a8f4ae600114e9fb7","D34f":"0b518f6e742e4b24bd5a3e4a68e29127af27c7cd6acc13453ad5dba9031347ef","D34f-data":"de293509a4961d6a390f9fa80657aac7f76e04939e693277db60f07fac6d8fb2","D36b":"57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b"}
+local_update_collar!=sufficient_boundary!=predictive_quotient; D34b_coefficients_selected=0; nature_law_claim=0
+[POSITIVE FINITE-CYLINDER REGIONAL KERNELS]
+normalized_embedded_star_kernels=4/4; positive_atoms=29; nested_tower_checks=29; holding_rates=('3/2', '11/8', '41/24', '2')
+kernel=boundary-relevant embedded D34b jump chain + exact holding rate; null_boundary_versions=NOT_PROVED; Paper26_K_membership=NOT_CLAIMED
+[BOUNDED LOCAL UPDATES / GROWING BOUNDARY]
+touched_arity_checks=258; maximum_touched_actors=2; radius_one_width_control=12; disconnected_insertion_unchanged=1
+bounded_update_radius=1; bounded_memory=0; bounded_degree=0; Lorentz_locality=NOT_CLAIMED
+[AUTHENTICATED RECORD-CLOSED STAR UPDATER]
+seed_to_boundary_updates=5; final_record_count=19; max_parent_arity=2; restriction_and_insertion_cocycles=2/2
+record_only_state_reconstruction=1; forged_replayed_retargeted_boundary_mutations_rejected=14/14; reject_before_durable_mutation=1; ideal_authentication_scope=1
+[PREDICTIVE EXHAUSTION / WIDTH LOWER BOUND]
+fixed_radius_positive_witnesses=('1/24', '1/1024', '1/64000', '1/5308416', '1/550731776', '1/68719476736', '1/10030613004288', '1/1677721600000000', '1/316478381828866048'); radii=0..8
+binary_family_sizes=(2, 4, 8, 16, 32, 64, 128, 256, 512, 1024); M_bit_controls=1..10; anchor_lengths_q=2n-1:(3, 5, 7, 9, 11, 13, 15, 17, 19)
+inverse_limit_boundary=rooted_marked_component_class; finite_receipt_is_regression_not_all_size_proof=1
+[FRESH-ANCHOR HOSTILE DISCRIMINATOR]
+bare_equal_order_coefficients=1/1152,1/576; bare_sweep_universal_order_proof=0
+anchored_q_vs_q_plus_1_coefficients=1/192,1/1536; first_unmatched_attachment=1/1; equal_or_lower_order_emulators=0
+[LOAD-BEARING ESCAPE CONTROLS]
+finite_horizon_escape=1; irreversible_operational_seal_escape=1; nonzero_exact_attenuation_distinctions=12/12
+epsilon_attenuation_merged_depths=9/12; bounded_growth_states_bits=64,6; ontological_record_deleted=0
+[D26 BOUNDARY-UPKEEP ACCOUNTING]
+BORN_visibility_factors_N0_to_N8=('1', '4/5', '16/25', '64/125', '256/625', '1024/3125', '4096/15625', '16384/78125', '65536/390625'); TOKEN_controls=('1', '1', '1', '1', '1', '1', '1', '1', '1')
+symbolic_budget=B_N=N[-(1/2)ln(1-g)]; V_N/V_0=(1-g)^(N/2); universal_boundary_maintenance_rate=0; record_to_system_dictionary=OPEN
+[FINITE MASS-TRANSPORT BALANCE / CEILINGS]
+uniform_root_graphs_balanced=3/3; locally_normalized_root_biased_negative=1; biased_sent_received=1,3
+infinite_unimodular_completion=OPEN; coupling_selection=OPEN; action_bridge=OPEN; quantum_record_closed_specification=UNDEFINED; sealing_rate=UNDEFINED
+[HASHES]
+source_sha256=5e42616679dcebff464e25dffa62dad4d52a6f399e7bac420ce16ea3b236604c
+stdout_body_sha256=d8517f7024f7c024872372cf8b076a01687a836e4f59d450ddbadd8c971f6ba7
+internal_science_sha256=540a05596b8c9286ae32ef4de4ac36cd95992756f4ae85a3b46e036071347522
+[GATES]
+R0=PASS
+R1=PASS
+R2=PASS
+R3=PASS
+R4=PASS
+R5=PASS
+R6=PASS
+R7=PASS
+R8=PASS
+[VERDICT]
+PASS 9/9
+RECORD-CLOSED REGIONAL SPECIFICATION / CHOSEN-LAW POSITIVE-CYLINDER EXISTENCE / FAMILY NOT SELECTOR
+BOUNDED LOCAL UPDATE ARITY COEXISTS WITH UNBOUNDED EXACT PREDICTIVE WIDTH
+component obstruction is conditional on persistence,growth,returnability,anchor,exact unlimited query,no seal; quantum and root-free selection remain open

@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D38 / Paper 27 (campaign pin; receipt not started)
+## Latest — D38 / Paper 27 (exact receipt candidate; hostile review open)
 
 D38 asks when a regional specification generates and authenticates the records
 that its own later conditionals require as boundary data.  The pinned object is
@@ -19,13 +19,24 @@ collapse an exact infinite-precision quotient.  D26 prices BORN boundary
 maintenance by `(1-g)^(N/2)`; coherence-neutral TOKEN capacity remains a
 distinct control.
 
-The first D38 receipt is pinned at nine gates: locked antecedents,
-positive-cylinder D34b kernels, local-update/growing-boundary separation,
-authenticated record closure, predictive exhaustion, the fresh-anchor
-discriminator, escape controls, D26 upkeep and finite mass-transport balance.
-No receipt has run and no Paper 27 theorem is yet claimed.
+The first D38 receipt passes all nine pinned gates.  Four chosen-D34b star
+cells carry 29 positive embedded-jump atoms and 29 exact two-step tower checks;
+258 action rows touch at most two actors while the radius-one boundary width
+grows through 12 registered neighbors.  The typed updater reconstructs its
+cached state from boundary records, closes five successive updates, passes two
+restriction/insertion cocycles and rejects all 14 forged, replayed or
+retargeted mutations before durable change.  Predictive controls carry nine
+positive `p_r` witnesses, `2^M` families through `M=10`, `q=2n-1` through 19
+events and the frozen Paper 23 anchor coefficients.  All escape, D26 upkeep
+and finite balance controls pass.
+
+The receipt is byte-identical under six hash seeds and has complete SHA-256
+`b0e61b08...c3f6`.  It remains an exact-receipt candidate: the three pinned
+hostile lanes and Paper 27 drafting are still open.
 
 - `note-d38-record-closed-regional-specifications.md`
+- `code/d38_record_closed_specification_exact.py`
+- `data/d38_record_closed_specification_exact.out`
 
 ## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)
 

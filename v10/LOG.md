@@ -4058,3 +4058,22 @@ attenuation must fail to erase exact identity.  D26 prices BORN boundary
 maintenance, while root-free mass-transport/unimodular selection remains open.
 
 No D38 code or receipt exists at this ledger entry.
+
+## 2026-07-14 — D38 first exact receipt executes (LEDGER #241)
+
+The campaign pinned at `490a0b6` now has its first executable and committed
+stdout.  `code/d38_record_closed_specification_exact.py` passes `9/9`:
+seven antecedent locks; four normalized chosen-D34b embedded-star kernels with
+29 positive atoms and 29 nested tower checks; 258 local action rows touching
+at most two actors; an authenticated recursive updater with record-only state
+reconstruction, five updates, 19 records, two restriction/insertion cocycles
+and 14/14 rejected attacks; predictive witnesses through `r=8`, `M=10` and
+`q=19`; the frozen Paper 23 anchor discriminator; all declared escape
+controls; D26 upkeep through `N=8`; and finite mass-transport controls.
+
+Six runs under hash seeds `0`, `1`, `2`, `17`, `101` and `999` are
+byte-identical.  Source, stdout-body, internal-science and complete-output
+SHA-256 values are `5e426166...604c`, `d8517f70...6ba7`,
+`540a0559...7522` and `b0e61b08...c3f6`.  D38 is an exact-receipt candidate,
+not yet hostile-reviewed.  The result neither selects D34b's coefficients nor
+supplies null-boundary, infinite-unimodular or quantum completions.
