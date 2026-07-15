@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D37 / Paper 26 (typed-carrier repair candidate; closing review pending)
+## Latest — D37 / Paper 26 (independently reviewed exact-receipt candidate)
 
 D37 constructs the classical regional object queued by Papers 24 and 25.
 Finite typed opportunity regions carry normalized conditional kernels, and a
@@ -66,8 +66,9 @@ one 28-event history exactly to independent 15- and 13-event component
 histories; S2 asserts every distinct feasible-addition edge; and S7 gates all
 27 visibility histories. The frozen common-root audit returned
 `0B/1M/1m/0n`; the only findings were a stale 140-event census and deleted
-chain description in the D37 note. Both are repaired. Promotion remains
-withheld until a string-only delta closes them.
+chain description in the D37 note. Both were repaired at `a1ba7c9`. Two
+independent string-only lanes then returned `0B/0M/0m/0n`; the independent
+Paper 26 stream is closed at its stated scope.
 
 - `note-d37-regional-history-specifications.md`
 - `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`
@@ -78,6 +79,7 @@ withheld until a string-only delta closes them.
 - `reviews/paper26-round1-independent-review.md`
 - `reviews/paper26-round2-typed-carrier-closing-delta.md`
 - `reviews/paper26-round3-common-root-closing-delta.md`
+- `reviews/paper26-round4-common-root-string-closing-delta.md`
 
 ## Prior — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
 

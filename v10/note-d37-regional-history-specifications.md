@@ -1,6 +1,6 @@
 # D37 — admissible regional history specifications
 
-**Status:** INDEPENDENT-REVIEW REPAIR CANDIDATE; exact typed-causal receipt
+**Status:** INDEPENDENTLY REVIEWED EXACT-RECEIPT CANDIDATE; exact typed-causal receipt
 `PASS 9/9`; classical completion theorem at the supplied countable typed
 carrier / locally finite pairwise-conflict scope.  The original D37 hostile
 stream closed at `0B/0M/0m/0n`; the subsequent independent Paper 26 review
@@ -11,8 +11,9 @@ countable-identity defects.  The second-round repairs were frozen at
 `e66cc1e`; a fresh three-lane delta returned `1B/1M/0m/1n` and exposed one
 shared-line naturality defect plus its hidden tuple-order source.  The
 common-root repair at `9f50a8a` removes both.  Its three-lane audit returned
-`0B/1M/1m/0n`, with only two stale lines in this note; those are now repaired,
-but promotion still requires a string-only closing delta.  The campaign pin was committed at
+`0B/1M/1m/0n`, with only two stale lines in this note; those were repaired at
+`a1ba7c9`, and two independent string-only lanes then returned
+`0B/0M/0m/0n`.  The independent stream is closed.  The campaign pin was committed at
 `b06ba1a` before the first receipt execution.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
@@ -763,5 +764,6 @@ multiplies the parent-coherence factors without a physical transaction order.
 The updated receipt remains `PASS 9/9`.  The frozen common-root audit is filed
 as `reviews/paper26-round3-common-root-closing-delta.md` at
 `0B/1M/1m/0n`; its only findings were the stale 140-event census and deleted
-chain description repaired above.  This is authorship repair, not review
-closure; a string-only delta is required.
+chain description repaired above.  The frozen string-only delta at `a1ba7c9`
+then returned `0B/0M/0m/0n` in both lanes.  Paper 26/D37 is independently
+reviewed at the stated scope.

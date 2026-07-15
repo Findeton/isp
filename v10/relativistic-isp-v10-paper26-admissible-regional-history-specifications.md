@@ -4,7 +4,7 @@
 
 ## Finite-cover consistency, global completion, and birth and arbitration as conditionals
 
-**Status:** INDEPENDENT-REVIEW REPAIR CANDIDATE.  The frozen round-one review
+**Status:** INDEPENDENTLY REVIEWED EXACT-RECEIPT CANDIDATE.  The frozen round-one review
 at commit `23a4ae0` returned `1B/5M/6m/3n`.  Its typed-carrier blocker and
 listed repairs were implemented at `e3161f5`; the focused round-two delta
 returned `1B/3M/4m/0n` and found K1 restriction, D26-line, D36-adapter and
@@ -13,8 +13,9 @@ three-lane delta returned `1B/1M/0m/1n` because shared parent lines were
 silently ordered by proposal enumeration and failed proper restriction.  The
 common-root repair at `9f50a8a` removes that hidden order and D37 remains
 `PASS 9/9`.  Its three-lane audit returned `0B/1M/1m/0n`, with only two stale
-lines in the D37 note; those are repaired and promotion now requires a
-string-only closing delta.
+lines in the D37 note; those were repaired at `a1ba7c9`, and two independent
+string-only lanes then returned `0B/0M/0m/0n`.  The independent stream is
+closed at the stated scope.
 **Date:** 2026-07-14.
 
 ## Abstract
