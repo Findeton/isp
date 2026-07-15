@@ -1,21 +1,22 @@
 # Relativistic ISP v10
 
-## Latest — Paper 28 authorship exact-receipt candidate
+## Latest — Paper 28 independently reviewed exact-receipt candidate
 
 Paper 28 is drafted as *Selecting record-closed laws*.  Its first independent
-paper-level review returns `0B / 2M / 3m / 1n`; promotion is withheld while a
-focused exact delta strengthens the touched-wire certificate theorem and the
-action-cocycle quotient.  D39c now passes `5/5`: all 410 proposals are
-invariant under projection to at most two existing touched wires, all 155
-state-potential columns lie in the cocycle kernel and the connected algebraic
-quotient has dimension one.  Closing paper review remains open.
+paper-level review returned `0B / 2M / 3m / 1n`.  D39c closes that round at
+`PASS 5/5`: all 410 proposals are invariant under projection to at most two
+existing touched wires, all 155 state-potential columns lie in the cocycle
+kernel and the connected algebraic quotient has dimension one.  Independent
+closing review on frozen theorem commit `ec42440` returns
+`0B / 0M / 0m / 0n`; Paper 28 is promoted at its declared finite classical
+scope.
 
 The architectural result is a namespaced shared-interface span, not a direct
 D37/D38b equivalence.  It preserves 38/38 supplied-region objects, 72 strict
 restriction compositions, D38b restriction/update naturality and twelve
-normalized pushed cylinders with 1,760 positive atoms in aggregate.  The content bridge is
-still absent: chosen D34b generates no typed D36 proposal conflict, so no
-nonvacuous K-family law is induced.
+normalized pushed cylinders with 1,760 positive atoms in aggregate.  The
+content bridge is still absent: chosen D34b generates no typed D36 proposal
+conflict, so no nonvacuous K-family law is induced.
 
 The localized admission result is a typed causal
 prepare/grant/decision/apply-or-release/ack certificate.  On the exhausted
@@ -53,6 +54,7 @@ alphabet-, tolerance- and tail-dependent.
 - `reviews/d39b-round3-closing-delta.md`
 - `relativistic-isp-v10-paper28-selecting-record-closed-laws.md`
 - `reviews/paper28-round1-independent-hostile-review.md`
+- `reviews/paper28-round2-independent-closing-delta.md`
 - `note-d39c-paper28-closure-delta.md`
 - `code/d39c_paper28_closure_delta_exact.py`
 - `data/d39c_paper28_closure_delta_exact.out`

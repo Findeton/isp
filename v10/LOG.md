@@ -4559,3 +4559,26 @@ Paper 28 incorporates the delta, labels the normalized 78-square object as a
 separate initial depth-three completion registry and reports the
 one-dimensional quotient without promoting state potentials to physical
 gauge.  Independent closing paper review remains open.
+
+## 2026-07-15 — Paper 28 independently closes cleanly (LEDGER #260)
+
+`reviews/paper28-round2-independent-closing-delta.md` freezes theorem commit
+`ec42440`, reproduces D39c `PASS 5/5` and complete-output hash
+`b045e405...955f` under fresh seeds, and returns
+`0 BLOCKERS / 0 MAJOR / 0 MINOR / 0 NIT`.
+
+The closing review confirms 410/410 touched-wire projected collections,
+certificates, causal validations and successor/oracle equalities at maximum
+existing touched-wire width two.  It independently verifies all 155
+state-potential columns in the cocycle kernel, coboundary rank 154, one
+transition component and a one-dimensional algebraic quotient.  It also closes
+the generated-row typing, retained-through-R complete-tail convention,
+separate depth-three normalization scope and 1,760-atom aggregate label.
+
+Paper 28 is promoted to an independently reviewed exact-receipt candidate for
+its declared finite classical comparison, admission, action/root
+classification and registered identifiability theorems.  Conditional
+equivalence, generated D36 conflict/K membership, all-history locality,
+asynchronous liveness, physical endpoint gauge, full-complex normalization,
+stationary/infinite completion, global continuous identification, clock
+calibration, quantum joining and V6 sealing remain open.

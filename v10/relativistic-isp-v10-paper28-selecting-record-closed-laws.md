@@ -4,11 +4,12 @@
 
 ## Comparison spans, finite balance, action obstructions and empirical identifiability
 
-**Status:** AUTHORSHIP EXACT-RECEIPT CANDIDATE AFTER ROUND-ONE REPAIR.  D39's
+**Status:** INDEPENDENTLY REVIEWED EXACT-RECEIPT CANDIDATE.  D39's
 first receipt was rejected at `4B/5M/3m/1n`.  D39b repaired the target and
 closed at `0B/0M/0m/0n`.  Independent Paper 28 round one on frozen commit
 `e77fb2f` returned `0B/2M/3m/1n`.  D39c supplies the focused exact repair at
-`PASS 5/5`; independent paper closing review remains open.
+`PASS 5/5`; independent closing review on frozen theorem commit `ec42440`
+returns `0B/0M/0m/0n`.
 **Date:** 2026-07-15.
 
 ## Abstract
@@ -755,7 +756,9 @@ internal science        5f81c5b4a4cc3f58e6e282c6d98fdc0d9271228c95c95ea25c0c6f47
 complete stdout         b045e405e5035b2ac039d86de9cbda8d013162c63964b5a581f745df98a3955f
 ```
 
-Independent paper closing review remains a separate stream.
+Independent closing review on frozen theorem commit `ec42440` returns
+`0 BLOCKERS / 0 MAJOR / 0 MINOR / 0 NIT`.  The theorem is promoted at its
+declared finite classical scope.
 
 ## 10. Decision table
 
@@ -781,7 +784,7 @@ Independent paper closing review remains a separate stream.
 | Does positive attenuation alone bound operational width? | **No**; the complete tail must be summable. |
 | Is a D38b quantum join or physical V6 seal constructed? | **No.** |
 
-## 11. Candidate conclusion
+## 11. Conclusion
 
 The paper began with a selection question and ends with a classification of why
 selection is still incomplete.
