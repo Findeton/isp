@@ -4258,3 +4258,59 @@ predictive-width separation.  Localized admission, spatial DLR, null-boundary
 versions, timed inverse limits, physical sealing, the D26 bridge,
 all-transport unimodularity, root-free completion, coupling selection and the
 quantum join remain open.
+
+## 2026-07-15 — D39 record-closed-law selection campaign pinned (LEDGER #250)
+
+`note-d39-selecting-record-closed-laws.md` freezes the receipt campaign for
+Paper 28, *Selecting record-closed laws: comparison, unimodularity and
+empirical identifiability*, before any D39 executable or paper draft exists.
+The thesis is classification followed by identifiability; a unique law,
+residual family, empty class or exact nonselection are all permitted outcomes.
+
+The comparison map is split.  Level A targets a finite structure-preserving
+functor from D38b record regions into D37's underlying oriented regional
+interface, carrying external causal parents to incoming rows, external current
+frontier heads to lateral rows, and cylinder kernels by pushforward while
+preserving restriction and update.  It is not an equivalence or K-family
+membership theorem.  Level B is explicitly unavailable for chosen D34b:
+parent-child birth edges persist, but the law emits no D36 proposal against a
+base version and hence no contended conflict cell.  Generating D36's full
+proposal/grant ontology inside a record-closed stochastic law remains the
+content bridge.
+
+The admission campaign tests a static owner-signed current-head certificate
+per touched wire before any stronger object.  An asynchronous stale-claim
+control is load-bearing.  If H0 fails through freshness or replay, H1 uses
+carrier-derived attempt keys and one-use owner-local grants in D36's discipline;
+it may not import the complete finite witness.  Soundness, completeness,
+successor-state equality and twenty hostile mutations are frozen.  Either a
+localized certificate or an exact global-dependency counterexample is a valid
+result.
+
+The selection layer intersects record closure and Level-A naturality with
+action/history cocycles and a complete finite all-transport basis over doubly
+rooted marked orbits.  Finite conditional-uniform-root classification is kept
+separate from compatibility with generated histories and from an infinite
+unimodular completion.  The last remains open unless constructed.
+
+Six observable classes are declared before computation.  Complete typed
+untimed records target actor-rate, mode-weight and target-allocation ratios;
+common intensity scaling is a null direction.  Construction-time delays can
+identify a construction hazard, but seconds and absolute physical rates need a
+declared record-to-system clock bridge.  D26 pricing additionally needs the
+same-line BORN/parent/system dictionary.  Reduced star records receive their
+own rank/collision audit.
+
+The operational wing reuses D28/D31B's pinned active preparations and `{Z,X}`
+queries only as a conditional interface; no D38b quantum join is inferred.
+At rational tolerance it gates complete-tail summability, including a branching
+negative control, and retains Paper 27's refusal that nonzero attenuation
+merges an exact infinite-precision quotient or automatically realizes V6
+sealing.
+
+The first integrated target is
+`code/d39_record_closed_law_selection_exact.py` with stdout in
+`data/d39_record_closed_law_selection_exact.out`.  Ten gates R0--R9 and three
+independent hostile lanes are pinned.  Paper 28 drafting waits until that
+receipt executes and hostile round one is filed; a central blocker must be
+repaired first.
