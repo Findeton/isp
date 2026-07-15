@@ -15,8 +15,8 @@ birth_payload=child_row+edge+two_ports+clock_address; passive_reception_does_not
 whole_history_and_candidate_attacks_rejected=18/18; byte_identical_failed_transactions=18/18; used_event_registry_after_valid_append=1
 authoritative_cached_state=0; authoritative_tip_map=0; forks_replays_rollbacks_cross_wire_disconnected_duplicate_heads_reject=1
 [NESTED RECORD RESTRICTION / UPDATE NATURALITY]
-direct_equals_staged_nested_restrictions=2/2; update_restriction_naturality=1/1; disjoint_insertion_commutation=1/1; external_parent_slots=5
-omitted_parents=typed_EXTERNAL(source_record_id); source_records_immutable=1; pairwise_only_not_promoted=1
+direct_equals_staged_nested_restrictions=2/2; update_restriction_naturality=1/1; disjoint_insertion_commutation=1/1; external_parent_and_frontier_slots=5
+regional_same_frontier_branch_rejected=1/1; omitted_records=typed_EXTERNAL(source_record_id); complete_finite_record_witness=1; smaller_admission_certificate=OPEN
 [HASH-LOCKED PREDICTIVE THEOREM REGRESSION]
 p_r_r0_to_r8=('1/24', '1/1024', '1/64000', '1/5308416', '1/550731776', '1/68719476736', '1/10030613004288', '1/1677721600000000', '1/316478381828866048'); 2^M_M1_to_M10=(2, 4, 8, 16, 32, 64, 128, 256, 512, 1024); q_equals_2n_minus_1=(3, 5, 7, 9, 11, 13, 15, 17, 19)
 finite_stop_predictive_quotient=rooted_marked_current_component_class; timed_or_infinite_predictive_inverse_limit=OPEN
@@ -33,9 +33,9 @@ identifier_capacity=UNBOUNDED; elapsed_mark_capacity=CONTINUOUS; family_total_wi
 finite_uniform_root_mass_balances=3/3; deterministic_center_negative=1; center_sent_received=1,3
 all_transport_unimodularity=NOT_PROVED; infinite_completion=OPEN; coupling_selection=OPEN; quantum_join=UNDEFINED
 [HASHES]
-source_sha256=2ec7e9ca7b359805ab5ce6e4e96211bff09d8750e53fd022fef515d627cb46c8
-stdout_body_sha256=a44819106b73abe4ada19bd0082ea95b11035c9dc91bb24e07d5ca2d78688857
-internal_science_sha256=8c28eb12e9434900832f0f202180714891822c0b48a223c819d53af2d1cc13ca
+source_sha256=c48e317189a160d445af374346deb3199caed0ae222430260a55e2a6ef731eeb
+stdout_body_sha256=35371f270a4ec0f018b4a386bf49694e99c136170e4ca9fb272c597cbc5d507d
+internal_science_sha256=1aa0201d20af064ab30173679b91d9437ceaf5f32a2aea1d19b72527ed593005
 [GATES]
 R0=PASS
 R1=PASS

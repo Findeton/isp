@@ -40,14 +40,17 @@ projection; 220 exact competing-exponential integrals and 30 elapsed/no-event
 updates close the relevant-time row.
 Record transport passes two genuine nested direct/staged squares, one
 update/restriction naturality square and disjoint insertion commutation, using
-typed `EXTERNAL(source_record_id)` parent references.  The predictive claim is
-now exactly Paper 23's finite-stop current-component quotient and unbounded
+typed `EXTERNAL(source_record_id)` parent references.  Its finite receipt
+carries a complete authenticated record-history witness so a regional append
+can prove it advances the exact frontier; a smaller admission certificate is
+open.  Competing same-frontier branches reject.  The predictive claim is now
+exactly Paper 23's finite-stop current-component quotient and unbounded
 worst-case width; timed/infinite inverse limits remain open.  Physical sealing
 is not identified, and D26 is only a conditional interface pending a
 record-to-parent-line bridge.
 
 D38b is `PASS 9/9`, byte-identical under six hash seeds, with complete output
-SHA-256 `f1785b45...f9cb`.  A focused hostile delta is required before Paper 27
+SHA-256 `28e76708...4f7d`.  A focused hostile delta is required before Paper 27
 drafting.
 
 - `note-d38-record-closed-regional-specifications.md`

@@ -4142,3 +4142,24 @@ stdout-body, science and complete hashes are `2ec7e9ca...46c8`,
 `a4481910...8857`, `8c28eb12...13ca` and `f1785b45...f9cb`.  README's stale
 physical-seal and unconditional-D26 headline wording is removed.  A fresh
 focused closing delta is still required.
+
+## 2026-07-14 — D38b regional append receives an admitted-history witness (LEDGER #245)
+
+The final causal delta finds one remaining blocker at commit `8170d41`.
+Whole histories and nested restrictions are sound, but `append_view()` could
+union two individually authentic events from the same prior head because the
+view carried parent labels without an authenticated current frontier.
+
+The repaired `RegionView` now carries its complete finite authenticated record
+history as an explicit admission witness, together with the derived frontier
+and incidence.  Validation recomputes the witness state and requires every
+retained record and every typed external reference to belong to it.  Regional
+append must equal the exact next typed event at that frontier, advances the
+witness, and rejects a competing seed-IDLE/seed-INTERACTION branch.  Direct and
+staged restriction, update naturality and disjoint insertion still pass.  This
+establishes finite existence; a smaller localized admission certificate
+remains open and is printed as such.
+
+D38b remains `PASS 9/9`.  Source, stdout-body, science and complete hashes are
+`c48e3171...1eeb`, `35371f27...507d`, `1aa0201d...3005` and
+`28e76708...4f7d`.  A fresh causal closing delta is required before Paper 27.

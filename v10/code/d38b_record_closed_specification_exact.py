@@ -511,6 +511,9 @@ class ViewRecord:
 class RegionView:
     records: Tuple[ViewRecord, ...]
     external_refs: Tuple[Hashable, ...]
+    frontier: Tuple[Tuple[str, Hashable], ...]
+    edges: Tuple[Tuple[str, str], ...]
+    witness: History
 
     def source_map(self) -> Dict[Hashable, Record]:
         return {record.source.record_id: record.source for record in self.records}
@@ -519,7 +522,16 @@ class RegionView:
 Restrictable = Union[History, RegionView]
 
 
-def view_from_source_map(source_map: Mapping[Hashable, Record]) -> RegionView:
+def view_from_source_map(
+    source_map: Mapping[Hashable, Record], witness: History
+) -> RegionView:
+    derived = derive(witness)
+    witness_map = {record.record_id: record for record in witness.records}
+    if any(
+        record_id not in witness_map or witness_map[record_id] != record
+        for record_id, record in source_map.items()
+    ):
+        raise AssertionError("regional source lacks admitted history witness")
     allowed = frozenset(source_map)
     view_records = []
     external = set()
@@ -533,7 +545,16 @@ def view_from_source_map(source_map: Mapping[Hashable, Record]) -> RegionView:
                 resolved.append(("EXTERNAL", parent))
                 external.add(parent)
         view_records.append(ViewRecord(record, tuple(resolved)))
-    answer = RegionView(tuple(view_records), tuple(sorted(external, key=repr)))
+    external.update(
+        head for _actor, head in derived.heads if head not in allowed
+    )
+    answer = RegionView(
+        tuple(view_records),
+        tuple(sorted(external, key=repr)),
+        derived.heads,
+        derived.edges,
+        witness,
+    )
     validate_view(answer)
     return answer
 
@@ -542,18 +563,28 @@ def restrict_records(source: Restrictable, allowed: FrozenSet[Hashable]) -> Regi
     if isinstance(source, History):
         source_map = {record.record_id: record for record in source.records}
         derive(source)
+        witness = source
     else:
         validate_view(source)
         source_map = source.source_map()
+        witness = source.witness
     if not allowed <= set(source_map):
         raise AssertionError("restriction cannot recover an omitted record")
-    return view_from_source_map({record_id: source_map[record_id] for record_id in allowed})
+    return view_from_source_map(
+        {record_id: source_map[record_id] for record_id in allowed}, witness
+    )
 
 
 def validate_view(view: RegionView) -> None:
+    derived = derive(view.witness)
+    witness = {record.record_id: record for record in view.witness.records}
     source = view.source_map()
     if len(source) != len(view.records):
         raise AssertionError("duplicate regional source")
+    if view.frontier != derived.heads or view.edges != derived.edges:
+        raise AssertionError("regional frontier is not its admitted witness frontier")
+    if any(record_id not in witness or witness[record_id] != record for record_id, record in source.items()):
+        raise AssertionError("regional source is not in admitted witness")
     external = set(view.external_refs)
     if external & set(source):
         raise AssertionError("external reference leaked inside")
@@ -572,17 +603,31 @@ def validate_view(view: RegionView) -> None:
                 raise AssertionError("missing internal regional parent")
             if tag == "EXTERNAL":
                 seen_external.add(resolved)
-    if seen_external != external:
+    seen_external.update(
+        head for _actor, head in view.frontier if head not in source
+    )
+    if seen_external != external or any(record_id not in witness for record_id in external):
         raise AssertionError("external regional reference census")
 
 
 def append_view(view: RegionView, event: Record) -> RegionView:
     validate_view(view)
     records = view.source_map()
-    if event.record_id in records or not authentic(event):
+    universe = {record.record_id for record in view.witness.records}
+    if event.record_id in universe or not authentic(event):
         raise AssertionError("regional append collision")
+    payload = event.payload_map()
+    expected = expected_event(
+        derive(view.witness),
+        str(payload["event_kind"]),
+        str(payload["initiator"]),
+        None if payload["target"] == "NONE" else str(payload["target"]),
+    )
+    if event != expected:
+        raise AssertionError("regional append is not the exact frontier successor")
+    witness = add_event(view.witness, event)
     records[event.record_id] = event
-    return view_from_source_map(records)
+    return view_from_source_map(records, witness)
 
 
 # ---------------------------------------------------------------------------
@@ -939,7 +984,7 @@ def authentication_checks() -> Tuple[int, int, int, int]:
     return rejected, attempted, durable, len(advanced.used_events)
 
 
-def restriction_checks() -> Tuple[int, int, int, int]:
+def restriction_checks() -> Tuple[int, int, int, int, int]:
     store = initial_store()
     store = execute(store, "IDLE", "A")
     store = execute(store, "IDLE", "B")
@@ -977,8 +1022,23 @@ def restriction_checks() -> Tuple[int, int, int, int]:
     right_history = add_event(add_event(disjoint.history, event_b), event_a)
     if left_history != right_history or derive(left_history) != derive(right_history):
         raise AssertionError("disjoint insertion commutation")
+
+    seed = seed_history()
+    seed_ids = frozenset(record.record_id for record in seed.records)
+    seed_view = restrict_records(seed, seed_ids)
+    seed_derived = derive(seed)
+    idle = expected_event(seed_derived, "IDLE", "A")
+    competing = expected_event(seed_derived, "INTERACTION", "A", "B")
+    advanced_view = append_view(seed_view, idle)
+    regional_branch_rejected = 0
+    try:
+        append_view(advanced_view, competing)
+    except AssertionError:
+        regional_branch_rejected = 1
+    if regional_branch_rejected != 1:
+        raise AssertionError("regional same-frontier branch admitted")
     external_slots = len(direct_d.external_refs) + len(direct_c.external_refs) + len(direct.external_refs)
-    return 2, 1, 1, external_slots
+    return 2, 1, 1, external_slots, regional_branch_rejected
 
 
 def predictive_inheritance_checks() -> Tuple[Tuple[str, ...], Tuple[int, ...], Tuple[int, ...], int]:
@@ -1116,11 +1176,15 @@ def main() -> None:
     emit("authoritative_cached_state=0; authoritative_tip_map=0; forks_replays_rollbacks_cross_wire_disconnected_duplicate_heads_reject=1")
 
     restriction = restriction_checks()
-    gates["R4"] = restriction[0:3] == (2, 1, 1) and restriction[3] > 0
+    gates["R4"] = (
+        restriction[0:3] == (2, 1, 1)
+        and restriction[3] > 0
+        and restriction[4] == 1
+    )
     science["restriction"] = restriction
     emit("[NESTED RECORD RESTRICTION / UPDATE NATURALITY]")
-    emit(f"direct_equals_staged_nested_restrictions={restriction[0]}/2; update_restriction_naturality={restriction[1]}/1; disjoint_insertion_commutation={restriction[2]}/1; external_parent_slots={restriction[3]}")
-    emit("omitted_parents=typed_EXTERNAL(source_record_id); source_records_immutable=1; pairwise_only_not_promoted=1")
+    emit(f"direct_equals_staged_nested_restrictions={restriction[0]}/2; update_restriction_naturality={restriction[1]}/1; disjoint_insertion_commutation={restriction[2]}/1; external_parent_and_frontier_slots={restriction[3]}")
+    emit(f"regional_same_frontier_branch_rejected={restriction[4]}/1; omitted_records=typed_EXTERNAL(source_record_id); complete_finite_record_witness=1; smaller_admission_certificate=OPEN")
 
     witnesses, families, anchors, inherited = predictive_inheritance_checks()
     gates["R5"] = len(witnesses) == 9 and families[-1] == 1024 and anchors[-1] == 19 and inherited == 1

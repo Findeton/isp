@@ -438,7 +438,8 @@ durable hostile battery                           18/18 rejected with an
                                                   unchanged immutable store;
 nested regional transport                         2 direct/staged squares,
                                                   1 update-naturality square,
-                                                  typed external parents;
+                                                  typed external parents and
+                                                  exact-frontier witness;
 predictive theorem                                finite-stop quotient only,
                                                   D34f inherited, inverse
                                                   limit open;
@@ -451,11 +452,18 @@ capacity                                           radius/actors/records/ports/
 Six seed runs are byte-identical.  The exact hashes are:
 
 ```text
-source SHA-256:          2ec7e9ca7b359805ab5ce6e4e96211bff09d8750e53fd022fef515d627cb46c8
-stdout-body SHA-256:     a44819106b73abe4ada19bd0082ea95b11035c9dc91bb24e07d5ca2d78688857
-science SHA-256:         8c28eb12e9434900832f0f202180714891822c0b48a223c819d53af2d1cc13ca
-complete-output SHA-256: f1785b456c913dde0d86a577377061a04f7963bf331cf50b8421da8690f9f9cb
+source SHA-256:          c48e317189a160d445af374346deb3199caed0ae222430260a55e2a6ef731eeb
+stdout-body SHA-256:     35371f270a4ec0f018b4a386bf49694e99c136170e4ca9fb272c597cbc5d507d
+science SHA-256:         1aa0201d20af064ab30173679b91d9437ceaf5f32a2aea1d19b72527ed593005
+complete-output SHA-256: 28e76708b6c72cf874aedf9700a6bd1756220e1cb4bf8be3e096e632b66b4f7d
 ```
+
+The regional view carries its complete finite authenticated history as an
+explicit admission witness.  Validation recomputes the current frontier and
+incidence from that witness; regional append must be the exact next typed
+event and advances the witness.  A competing event from the same prior head
+rejects.  This proves finite existence but not a smaller localized admission
+certificate, which remains open.
 
 The earned positive noun is deliberately narrower than round one:
 
