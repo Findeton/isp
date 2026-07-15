@@ -199,6 +199,7 @@ ORIENTED_CELLS: Dict[str, OrientedCell] = {
 
 
 BASE_RECORD = "BASE_RECORD"
+PARENT_LINE_ROOT = "PARENT_LINE_ROOT"
 OPPORTUNITY_PARENT = "OPPORTUNITY_PARENT"
 DORMANT_TOKEN = "DORMANT_TOKEN"
 MODE_CLICK = "MODE_CLICK"
@@ -213,18 +214,21 @@ def base_record_id(participant: str) -> Tuple[Hashable, ...]:
     return canonical_id(BASE_RECORD, participant, 0)
 
 
+def parent_line_root_id(parent_line: str) -> Tuple[Hashable, ...]:
+    return canonical_id(PARENT_LINE_ROOT, parent_line)
+
+
 def opportunity_parent_id(
     proposal: str,
     parent_line: str,
     proposal_type: str,
-    predecessor: Hashable = "",
 ) -> Tuple[Hashable, ...]:
     return canonical_id(
         OPPORTUNITY_PARENT,
         proposal,
         parent_line,
         proposal_type,
-        predecessor,
+        parent_line_root_id(parent_line),
     )
 
 
@@ -253,6 +257,14 @@ def oriented_interface(
         [
             (BASE_RECORD, participant, base_record_id(participant))
             for participant in inside_participants
+        ]
+        + [
+            (
+                PARENT_LINE_ROOT,
+                parent_line,
+                parent_line_root_id(parent_line),
+            )
+            for parent_line in sorted({cell.parent_line(proposal) for proposal in region})
         ]
         + [
             (
@@ -319,6 +331,15 @@ def push_oriented_interface(
     renamed_cell: OrientedCell,
 ) -> Tuple[Tuple[Tuple[str, str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
     incoming, lateral, generated = interface
+    renamed_lines: Dict[str, str] = {}
+    for kind, role, record_id in incoming:
+        if kind != OPPORTUNITY_PARENT:
+            continue
+        old_line = record_id[2][1]
+        new_line = renamed_cell.parent_line(proposal_rename[role])
+        if old_line in renamed_lines and renamed_lines[old_line] != new_line:
+            raise AssertionError("line renaming is not functional")
+        renamed_lines[old_line] = new_line
     pushed_incoming = tuple(sorted(
         (
             kind,
@@ -326,6 +347,12 @@ def push_oriented_interface(
             base_record_id(participant_rename[role]),
         )
         if kind == BASE_RECORD
+        else (
+            kind,
+            renamed_lines[role],
+            parent_line_root_id(renamed_lines[role]),
+        )
+        if kind == PARENT_LINE_ROOT
         else (
             kind,
             proposal_rename[role],
@@ -354,6 +381,7 @@ def interface_content_valid(
         for participant in cell.participants(proposal)
     }
     base_rows = tuple(row for row in incoming if row[0] == BASE_RECORD)
+    line_root_rows = tuple(row for row in incoming if row[0] == PARENT_LINE_ROOT)
     parent_rows = tuple(row for row in incoming if row[0] == OPPORTUNITY_PARENT)
     base_ok = {
         (role, record_id) for _, role, record_id in base_rows
@@ -373,6 +401,12 @@ def interface_content_valid(
         )
         for proposal in region
     }
+    line_root_ok = {
+        (role, record_id) for _, role, record_id in line_root_rows
+    } == {
+        (parent_line, parent_line_root_id(parent_line))
+        for parent_line in {cell.parent_line(proposal) for proposal in region}
+    }
     distinct_parent_ids = len({record_id for _, _, record_id in parent_rows}) == len(region)
     actual_lateral = {
         proposal
@@ -385,11 +419,15 @@ def interface_content_valid(
     )
     return (
         base_ok
+        and line_root_ok
         and parent_ok
         and distinct_parent_ids
         and set(lateral) == actual_lateral
         and generated_ok
-        and len(incoming) == len(participants) + len(region)
+        and len(incoming)
+        == len(participants)
+        + len(region)
+        + len({cell.parent_line(proposal) for proposal in region})
     )
 
 
@@ -973,18 +1011,29 @@ def opportunity_parent_event(
     cell: OrientedCell,
     proposal: str,
     parent_line: str,
-    predecessor: Hashable = "",
-    shared_line: bool = False,
 ) -> CausalEvent:
     proposal_type = cell.proposal_type(proposal)
+    line_root = parent_line_root_id(parent_line)
     return CausalEvent(
-        opportunity_parent_id(proposal, parent_line, proposal_type, predecessor),
+        opportunity_parent_id(proposal, parent_line, proposal_type),
         OPPORTUNITY_PARENT,
         proposal,
         f"source:{proposal}",
-        f"parent-line:{parent_line}" if shared_line else f"proposal:{proposal}",
-        (predecessor,) if predecessor else (),
+        f"proposal:{proposal}",
+        (line_root,),
         (("parent_line", parent_line), ("proposal_type", proposal_type)),
+    )
+
+
+def parent_line_root_event(parent_line: str) -> CausalEvent:
+    return CausalEvent(
+        parent_line_root_id(parent_line),
+        PARENT_LINE_ROOT,
+        "",
+        f"source-line:{parent_line}",
+        f"parent-line:{parent_line}",
+        (),
+        (("parent_line", parent_line),),
     )
 
 
@@ -1136,8 +1185,10 @@ def build_typed_history(
     })
     bases = {participant: append(base_event(participant)) for participant in participants}
 
-    line_counts = Counter(cell.parent_line(proposal) for proposal in cell.vertices)
-    line_predecessor: Dict[str, Hashable] = {}
+    line_roots = {
+        parent_line: append(parent_line_root_event(parent_line))
+        for parent_line in sorted(set(dict(cell.parent_lines).values()))
+    }
 
     priority_for: Dict[str, CausalEvent] = {}
     if priority_orders is not None:
@@ -1169,9 +1220,9 @@ def build_typed_history(
             cell,
             proposal,
             parent_line,
-            line_predecessor.get(parent_line, ""),
-            line_counts[parent_line] > 1,
         ))
+        if parent.parents != (line_roots[parent_line].event_id,):
+            raise AssertionError("opportunity parent/root mismatch")
         token = append(dormant_token_event(proposal, parent_line)) if mode == "TOKEN" else None
         mode_parents = (
             (parent.event_id, token.event_id)
@@ -1217,11 +1268,6 @@ def build_typed_history(
                 },
             ))
             attempt = d36_attempt
-
-        if line_counts[parent_line] > 1:
-            line_predecessor[parent_line] = (
-                carrier.event_id if carrier is not None else mode_click.event_id
-            )
 
         selection_parents = [carrier.event_id if carrier is not None else mode_click.event_id]
         if proposal in priority_for:
@@ -1336,52 +1382,37 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
                 or record.event_id != base_record_id(participant)
             ):
                 raise AssertionError("base record legality")
+        elif record.kind == PARENT_LINE_ROOT:
+            parent_line = payload.get("parent_line", "")
+            if (
+                record.parents
+                or record.proposal
+                or set(payload) != {"parent_line"}
+                or parent_line not in set(dict(cell.parent_lines).values())
+                or record.owner != f"source-line:{parent_line}"
+                or record.wire != f"parent-line:{parent_line}"
+                or record.event_id != parent_line_root_id(parent_line)
+            ):
+                raise AssertionError("parent-line root legality")
         elif record.kind == OPPORTUNITY_PARENT:
             declared_line = cell.parent_line(record.proposal) if record.proposal in cell.vertices else ""
-            line_proposals = tuple(
-                proposal
-                for proposal in cell.vertices
-                if cell.parent_line(proposal) == declared_line
-            )
-            line_index = line_proposals.index(record.proposal) if record.proposal in line_proposals else -1
-            expected_predecessor: Hashable = ""
-            if line_index > 0:
-                previous_proposal = line_proposals[line_index - 1]
-                previous = next(
-                    candidate
-                    for candidate in records
-                    if candidate.proposal == previous_proposal
-                    and candidate.kind
-                    in (BORN_CARRIER, TOKEN_ACTIVATION, MODE_CLICK)
-                    and (
-                        candidate.kind != MODE_CLICK
-                        or not any(
-                            other.proposal == previous_proposal
-                            and other.kind in (BORN_CARRIER, TOKEN_ACTIVATION)
-                            for other in records
-                        )
-                    )
-                )
-                expected_predecessor = previous.event_id
+            expected_root = parent_line_root_id(declared_line)
             if (
                 record.proposal not in cell.vertices
                 or set(payload) != {"parent_line", "proposal_type"}
                 or record.owner != f"source:{record.proposal}"
                 or payload["parent_line"] != declared_line
-                or record.parents != ((expected_predecessor,) if expected_predecessor else ())
-                or record.wire
-                != (
-                    f"parent-line:{declared_line}"
-                    if len(line_proposals) > 1
-                    else f"proposal:{record.proposal}"
-                )
+                or len(parents) != 1
+                or parents[0].kind != PARENT_LINE_ROOT
+                or parents[0].event_id != expected_root
+                or record.parents != (expected_root,)
+                or record.wire != f"proposal:{record.proposal}"
             ):
                 raise AssertionError("opportunity parent legality")
             expected = opportunity_parent_id(
                 record.proposal,
                 payload["parent_line"],
                 payload["proposal_type"],
-                expected_predecessor,
             )
             if record.event_id != expected or payload["proposal_type"] != cell.proposal_type(record.proposal):
                 raise AssertionError("opportunity parent identity")
@@ -1629,7 +1660,7 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
         else:
             raise AssertionError(("unknown causal event type", record.kind))
 
-        if record.kind not in (BASE_RECORD, OPPORTUNITY_PARENT, DORMANT_TOKEN):
+        if record.kind not in (BASE_RECORD, PARENT_LINE_ROOT, OPPORTUNITY_PARENT, DORMANT_TOKEN):
             expected_id = event_id(
                 record.kind,
                 record.proposal,
@@ -1675,6 +1706,14 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
         or {record.proposal for record in opportunity_records} != set(cell.vertices)
     ):
         raise AssertionError("opportunity parent coverage")
+    line_root_records = [record for record in records if record.kind == PARENT_LINE_ROOT]
+    declared_lines = set(dict(cell.parent_lines).values())
+    if (
+        len(line_root_records) != len(declared_lines)
+        or {record.payload_map()["parent_line"] for record in line_root_records}
+        != declared_lines
+    ):
+        raise AssertionError("parent-line root coverage")
     dormant_records = [record for record in records if record.kind == DORMANT_TOKEN]
     if (
         len(dormant_records) != sum(mode == "TOKEN" for mode in modes.values())
@@ -1806,11 +1845,21 @@ def restrict_typed_history(
     proposals: FrozenSet[str],
     participants: FrozenSet[str],
 ) -> Tuple[CausalEvent, ...]:
+    retained_line_roots = {
+        parent
+        for record in records
+        if record.kind == OPPORTUNITY_PARENT and record.proposal in proposals
+        for parent in record.parents
+    }
     return tuple(sorted(
         (
             record
             for record in records
             if record.proposal in proposals
+            or (
+                record.kind == PARENT_LINE_ROOT
+                and record.event_id in retained_line_roots
+            )
             or (
                 record.kind == PRIORITY_CLICK
                 and set(record.payload_map()["component"].split(",")) <= proposals
@@ -1857,6 +1906,53 @@ def causal_disjoint_restriction_checks() -> Tuple[int, int, int, int]:
     return 2, len(full), len(left), len(right)
 
 
+def shared_parent_line_restriction_checks() -> Tuple[int, int]:
+    line = "shared:restriction-control"
+    full_cell = oriented_cell(
+        "shared-line-full",
+        (("P", ("A", "B")), ("Q", ("C", "D"))),
+        {"P": line, "Q": line},
+    )
+    modes = {"P": "BORN", "Q": "TOKEN"}
+    full = build_typed_history(full_cell, modes, frozenset(("P", "Q")))
+
+    checks = 0
+    for proposal, participants in (("P", ("A", "B")), ("Q", ("C", "D"))):
+        local_cell = oriented_cell(
+            f"shared-line-{proposal}",
+            ((proposal, participants),),
+            {proposal: line},
+        )
+        local = build_typed_history(
+            local_cell,
+            {proposal: modes[proposal]},
+            frozenset((proposal,)),
+        )
+        restricted = restrict_typed_history(
+            full,
+            frozenset((proposal,)),
+            frozenset(participants),
+        )
+        validate_typed_history(local_cell, restricted)
+        if restricted != local:
+            raise AssertionError("shared parent-line restriction naturality")
+        checks += 1
+
+    reversed_cell = oriented_cell(
+        "shared-line-reversed",
+        tuple(reversed(full_cell.proposals)),
+        {"P": line, "Q": line},
+    )
+    reversed_history = build_typed_history(
+        reversed_cell,
+        modes,
+        frozenset(("P", "Q")),
+    )
+    if reversed_history != full:
+        raise AssertionError("shared line depends on proposal declaration order")
+    return checks, len(full)
+
+
 def line_shadow(
     records: Sequence[CausalEvent],
     parent_line: str,
@@ -1901,6 +1997,35 @@ def typed_legality_negative_checks() -> int:
 
     single = oriented_cell("single-negative", (("P", ("A", "B")),))
     born_selected = build_typed_history(single, {"P": "BORN"}, frozenset(("P",)))
+    require_rejection(lambda: validate_typed_history(
+        single,
+        tuple(record for record in born_selected if record.kind != PARENT_LINE_ROOT),
+    ))
+
+    declared_root = next(record for record in born_selected if record.kind == PARENT_LINE_ROOT)
+    declared_parent = next(record for record in born_selected if record.kind == OPPORTUNITY_PARENT)
+    forged_root = parent_line_root_event("forged:parent-line")
+    forged_parent = CausalEvent(
+        declared_parent.event_id,
+        declared_parent.kind,
+        declared_parent.proposal,
+        declared_parent.owner,
+        declared_parent.wire,
+        (forged_root.event_id,),
+        declared_parent.payload,
+    )
+    require_rejection(lambda: validate_typed_history(
+        single,
+        tuple(
+            forged_root
+            if record == declared_root
+            else forged_parent
+            if record == declared_parent
+            else record
+            for record in born_selected
+        ),
+    ))
+
     require_rejection(lambda: validate_typed_history(
         single,
         tuple(record for record in born_selected if record.kind != OPPORTUNITY_PARENT),
@@ -2226,17 +2351,16 @@ def visibility_checks() -> Tuple[Fraction, Fraction, Fraction, Fraction, int]:
     for history in histories:
         modes = dict(zip(cell.vertices, history))
         records = build_typed_history(cell, modes, frozenset())
-        by_id = {record.event_id: record for record in records}
-        cache: Dict[Hashable, FrozenSet[Hashable]] = {}
-        for record in records:
-            causal_ancestors(record.event_id, by_id, cache)
-        born_records = [record for record in records if record.kind == BORN_CARRIER]
-        if any(
-            left.event_id not in cache[right.event_id]
-            and right.event_id not in cache[left.event_id]
-            for left, right in combinations(born_records, 2)
+        line_roots = [record for record in records if record.kind == PARENT_LINE_ROOT]
+        opportunity_records = [
+            record for record in records if record.kind == OPPORTUNITY_PARENT
+        ]
+        if (
+            len(line_roots) != 1
+            or line_roots[0].payload_map()["parent_line"] != "probe:shared-parent-line"
+            or any(record.parents != (line_roots[0].event_id,) for record in opportunity_records)
         ):
-            raise AssertionError("same-parent-line births are not causally comparable")
+            raise AssertionError("D26 opportunities do not share a declared parent-line root")
         shadow = line_shadow(records, "probe:shared-parent-line", coherence)
         expected += Fraction(1, 27) * shadow
         if all(mode != "BORN" for mode in history) and shadow != 1:
@@ -2619,9 +2743,9 @@ def main() -> None:
         and interface_content_checks == 38
         and orientation_valid
         and typed_history_cells == 6
-        and typed_event_total == 104
+        and typed_event_total == 120
         and typed_prepare_total == 19
-        and typed_illegal_rejections == 7
+        and typed_illegal_rejections == 9
         and canonical_ids == (1000, 1000, 1000)
         and automorphisms
         == {
@@ -2652,9 +2776,9 @@ def main() -> None:
     emit(f"graphs={len(registered)}; vertices={vertex_total}; conflict_edges={edge_total}; nonempty_regions={region_total}")
     emit(f"automorphism_counts={stable(automorphisms)}; oriented_interface_rows={len(orientation_rows)}; orientation_sha256={orientation_hash}")
     emit(f"interface_content_checks={interface_content_checks}/38; typed_causal_histories={typed_history_cells}/6; typed_events={typed_event_total}; signed_D36_prepare_records={typed_prepare_total}")
-    emit(f"typed_illegal_histories_rejected={typed_illegal_rejections}/7; missing_parent=1; duplicate_mode=1; forged_attempt=1; forged_signature=1; wrong_priority=1; conflict=1; cross_TOKEN=1")
+    emit(f"typed_illegal_histories_rejected={typed_illegal_rejections}/9; missing_line_root=1; wrong_line_root=1; missing_parent=1; duplicate_mode=1; forged_attempt=1; forged_signature=1; wrong_priority=1; conflict=1; cross_TOKEN=1")
     emit(f"canonical_tuple_ID_controls={canonical_ids}; SHA256_role=serialization_checksum_only; actor_indices=injective_arbitrary_precision")
-    emit("distinct_parent_record_ids=1; explicit_parent_lines=1; explicit_event_types=1; causal_parent_bound=2; structural_labels_not_physical_slots=1")
+    emit("distinct_parent_record_ids=1; canonical_parent_line_roots=1; explicit_parent_lines=1; explicit_event_types=1; causal_parent_bound=2; structural_labels_not_physical_slots=1")
 
     k3_conditionals = 0
     k3_towers = 0
@@ -2733,7 +2857,7 @@ def main() -> None:
         and raw_k1[0] != raw_k1[1]
         and priority_towers == 35
         and complete_click_atoms == len(path_priority) == 6
-        and typed_k1 == (6, 140, 20, 18, 6)
+        and typed_k1 == (6, 158, 20, 18, 6)
         and bool(one_hop_witness)
     )
     science["k1"] = [
@@ -2806,7 +2930,7 @@ def main() -> None:
         and swap_checks == len(equal_dist) == 93
         and mode_cover == 33
         and typed_mode_histories == 93
-        and typed_mode_events == 1683
+        and typed_mode_events == 1962
         and typed_mode_prepares == 156
         and typed_dormant_tokens == 106
         and birth_marginal == {
@@ -2857,9 +2981,9 @@ def main() -> None:
         and typed_joint_q_visibility == joint_q_visibility
         and visibility_history_checks == 27
         and complete_click_atoms == len(path_priority)
-        and typed_k3 == (5, 105, 10, 15)
-        and typed_k2 == (2, 44, 6, 6)
-        and typed_k1 == (6, 140, 20, 18, 6)
+        and typed_k3 == (5, 120, 10, 15)
+        and typed_k2 == (2, 50, 6, 6)
+        and typed_k1 == (6, 158, 20, 18, 6)
     )
     science["visibility"] = [
         coupling,
@@ -2875,7 +2999,7 @@ def main() -> None:
     emit("[D26 VISIBILITY / CLICK SOURCE]")
     emit(f"g={ftext(coupling)}; sqrt_1_minus_g={ftext(coherence)}; three_same_line_BORN_shadow={ftext(all_born_shadow)}")
     emit(f"equal_mode_three_opportunity_expected_shadow={ftext(expected_shadow)}; joint_Q_expected_factor={ftext(joint_q_visibility)}; typed_parent_line_history_checks={visibility_history_checks}; TOKEN_NO_BIRTH_factor=1")
-    emit("D26_parent_line_declared_and_causally_chained=1; comparable_same_line_BORN=1; coherence_neutral_TOKEN_control=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0")
+    emit("D26_shared_parent_line_root=1; commuting_BORN_shadow_product=1; coherence_neutral_TOKEN_control=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0")
     emit("[TYPED CLICK / PREPARE ADAPTERS]")
     emit(f"K3_histories_events_prepares_tokens={typed_k3}; K2_histories_events_prepares_tokens={typed_k2}")
     emit(f"K1_histories_events_prepares_tokens_priority_clicks={typed_k1}; exact_D36_attempt_key=evidence_record_id+body_digest; signed_PREPARE_parent_bound=2")
@@ -2887,15 +3011,20 @@ def main() -> None:
     causal_restrictions, full_causal_events, left_causal_events, right_causal_events = (
         causal_disjoint_restriction_checks()
     )
+    shared_line_restrictions, shared_line_full_events = (
+        shared_parent_line_restriction_checks()
+    )
     gates["S8"] = (
         covariance == 6
         and anti_sizes == (9, 4, 4, 441)
-        and linear_extensions == 70
+        and linear_extensions == 96
         and same_wire_pairs == 6
         and linear_extension_digest
-        == "00023ba8f09b771b2e2a748f9944a43829eb48ca3845a18b8cfdb9a795e67881"
+        == "02060449df7a6126ed064f496f580a0f4524b38b3bd684adb760174cd2ff47ff"
         and causal_restrictions == 2
-        and (full_causal_events, left_causal_events, right_causal_events) == (24, 13, 11)
+        and (full_causal_events, left_causal_events, right_causal_events) == (28, 15, 13)
+        and shared_line_restrictions == 2
+        and shared_line_full_events == 18
     )
     science["covariance"] = [
         covariance,
@@ -2907,11 +3036,14 @@ def main() -> None:
         full_causal_events,
         left_causal_events,
         right_causal_events,
+        shared_line_restrictions,
+        shared_line_full_events,
     ]
     emit("[COVARIANCE / ANTI-DILUTION]")
     emit(f"relabel_covariance_families={covariance}/6; disconnected_local_factorizations=4/4; atom_counts={anti_sizes}")
     emit(f"D33_linear_extension_serializations={linear_extensions}; same_wire_comparable_pairs={same_wire_pairs}; canonical_DAG_digest={linear_extension_digest}")
     emit(f"D34_causal_restrictions={causal_restrictions}/2; typed_event_counts=full:{full_causal_events},left:{left_causal_events},right:{right_causal_events}")
+    emit(f"shared_parent_line_restrictions={shared_line_restrictions}/2; declaration_order_covariance=1; full_typed_events={shared_line_full_events}")
     emit("boundary_widths=K3:one-hop-blockers,K2:two-hop-blockers+domination-demands,K1:recorded-component-priority")
 
     source_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()

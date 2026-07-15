@@ -7,8 +7,11 @@ stream closed at `0B/0M/0m/0n`; the subsequent independent Paper 26 review
 froze `1B/5M/6m/3n` at commit `23a4ae0`.  Its causal-carrier blocker and listed
 receipt/wording repairs were implemented at `e3161f5`; the focused delta then
 returned `1B/3M/4m/0n` and exposed K1 restriction, D26-line, D36-adapter and
-countable-identity defects.  Those second-round authorship repairs are now
-implemented, but promotion still requires a fresh focused closing delta.  The campaign pin was committed at
+countable-identity defects.  The second-round repairs were frozen at
+`e66cc1e`; a fresh three-lane delta returned `1B/1M/0m/1n` and exposed one
+shared-line naturality defect plus its hidden tuple-order source.  The present
+common-root repair removes both, but promotion still requires another focused
+closing delta.  The campaign pin was committed at
 `b06ba1a` before the first receipt execution.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
@@ -92,14 +95,16 @@ C = (V, E_conf, Part, parentLine, proposalType).
 `V` is a finite set of structurally identified opportunity roles;
 `E_conf` is the D36 pairwise incompatibility graph; `Part` gives exact
 participant roles; `parentLine` and `proposalType` retain causal orientation
-and record semantics.  A region carries participant-base identities, distinct
-typed opportunity-parent identities, lateral conflicting proposals and
-generated event types.  The machine's enumeration order is not part of `C`.
+and record semantics.  A region carries participant-base identities,
+canonical shared parent-line roots, distinct typed opportunity-parent
+identities, lateral conflicting proposals and generated event types.  The
+machine's enumeration order is not part of `C`.
 
 A deterministic map `F_D` realizes K3, K2 and joint-family atoms as immutable
 typed event DAGs with injective tagged canonical-tuple IDs, owners, wires,
 typed payloads and at most two causal parents.  SHA-256 is a finite
-serialization checksum only.  Its vocabulary is `BASE_RECORD`, `OPPORTUNITY_PARENT`,
+serialization checksum only.  Its vocabulary is `BASE_RECORD`,
+`PARENT_LINE_ROOT`, `OPPORTUNITY_PARENT`,
 optional explicit `DORMANT_TOKEN`, `MODE_CLICK`, `BORN_CARRIER` or
 `TOKEN_ACTIVATION`, optional K1 `PRIORITY_CLICK`, `SELECTION_CLICK`, and signed
 exact `D36_PREPARE`.  Legality checks acyclicity, same-wire comparability,
@@ -359,8 +364,9 @@ birth-mode and arbitration conditionals from the same joint table.
 ### S7 — D26 and click-source anchors
 
 Use a rational `sqrt(1-g)` and gate the history-by-history visibility shadow
-on an implemented causally chained parent line, its expectation under the registered finite
-law and the multiplicative same-line formula.  TOKEN is the explicit
+on opportunities descending from one declared parent-line root, its
+expectation under the registered finite law and the multiplicative
+commuting-child formula.  TOKEN is the explicit
 coherence-neutral dormant-support control.  Build typed K3/K2/K1 histories,
 record each K1 priority as a click and verify every actual D36b envelope by
 participant acceptance.
@@ -472,13 +478,13 @@ data/d37_regional_history_specification_exact.out
 The source, stdout-body and internal-science hashes are respectively
 
 ```text
-dd5f8991569353e8b865370ffde0d9fef49ee5ba03e49505865a9c6fbfbc805c
-be36426e043f1b7c96af989a7e6c82c8760b4ce3b303f25e1a4c8e17b59d9900
-b57af3d7b0c35a2edb3b21caee8f2452dfcbb63f7320bf9ce3e135cc308b36da
+b15e577bfdf03e1bc78628d9d934bab1e604da9f4b62f7c6372fa61dca7fcbd9
+df5aa182d432206642ed3440d8d0b7f4cc9e971bd2d014811b9fea9e47391c16
+82a2dac6a1f9c5352ea05309b1ae24f38098924c5be595f5b6dfb49960fdf126
 ```
 
 The complete receipt hash is
-`1a8b94e24ce5b1901acd5dc5ff658ccd0420906d788d2b2a0684ce4162880ef4`.
+`20d4b2f6add6db3296f221c184be539dd62c66ada81f32418b9288bebf778ed8`.
 Fresh executions under hash seeds `0`, `1`, `17`, `42`, `104729` and
 `271828` are
 byte-identical.
@@ -488,14 +494,14 @@ byte-identical.
 The structural registry contains eight graphs, including both D36's actual
 two-proposal no-conflict disjoint cell and the separate two-edge factorization
 fixture.  Thirty-eight oriented interface rows carry exact participant bases,
-distinct typed opportunity parents, explicit parent lines/types, lateral
+canonical parent-line roots, distinct typed opportunity parents, explicit parent lines/types, lateral
 proposals and generated mode/selection click types.  All `38/38` rows pass
-content validation.  S0 realizes six fixture histories with 104 typed events
+content validation.  S0 realizes six fixture histories with 120 typed events
 and 19 participant-accepted D36b prepares.  The full K3/K2/K1/joint battery
 accepts `10+6+20+156=192` actual D36b envelopes, and three 1,000-item controls
-gate canonical record IDs and injective actor indices.  S0 rejects `7/7`
-illegal mutations covering a
-missing parent, duplicate mode, forged attempt, forged signature, wrong K1
+gate canonical record IDs and injective actor indices.  S0 rejects `9/9`
+illegal mutations covering a missing and a wrong parent-line root, a missing
+parent, duplicate mode, forged attempt, forged signature, wrong K1
 priority, conflicting selection and cross-proposal TOKEN ancestry.
 
 K3 passes `508` intrinsic regional-condition checks, `7,098` nested DLR tower
@@ -622,6 +628,12 @@ imported D36b carrier/envelope adapter remains the separately gated finite
 append interface: its locked evidence IDs are SHA-based and are not used as a
 countable injectivity premise.  ∎
 
+No line enumeration is added in the countable union.  One canonical root is
+keyed by each supplied line ID; opportunity parents depend only on their own
+typed content and that root; restriction retains referenced roots.  The
+same-line singleton squares and declaration-order reversal are the finite
+controls for this naturality claim.
+
 This is a root-free completion on a **supplied** typed carrier with a locally
 finite pairwise conflict graph.  D37 does not generate that carrier, derive its couplings, prove
 uniqueness or phase structure, or complete K1 at infinite width.
@@ -668,13 +680,13 @@ The blocker and majors are addressed as follows:
 1. S0 now checks 38 typed incoming/lateral/generated interfaces and realizes
    actual event DAGs with distinct parent-record identities, types, owners,
    wires, causal parents, acyclicity and same-wire comparability.
-2. D33 covariance enumerates all 70 linear extensions of one typed BORN
+2. D33 covariance enumerates all 96 linear extensions of one typed BORN
    history; all are valid serializations of one canonical DAG while six
    same-wire event pairs remain comparable.  This is not a second actor replay.
-3. D34 anti-dilution restricts one 24-event two-component history to exact
-   independently realized 13- and 11-event component histories.
-4. D26 visibility reads actual causally comparable `BORN_CARRIER` ancestry on
-   a carrier-declared common parent line across 27 typed controls; TOKEN uses
+3. D34 anti-dilution restricts one 28-event two-component history to exact
+   independently realized 15- and 13-event component histories.
+4. D26 visibility reads `BORN_CARRIER` descendants of one canonical shared
+   parent-line root across 27 typed controls; TOKEN uses
    an explicit pre-existing coherence-neutral `DORMANT_TOKEN` record.
 5. K3, K2 and the joint family pass through immutable mode/selection clicks
    and actual D36b carrier records/envelopes.  Every registered prepare is
@@ -712,8 +724,8 @@ numbers, but withheld promotion for four real interface defects:
 The present authorship repair takes the narrow K1 branch and the constructive
 branches elsewhere.  K1 remains a finite marked probability specification
 with complete-carrier typed witnesses, but is excluded from typed proper-
-region transport.  The D26 fixture declares one shared parent line and chains
-successive parent records through the previous mode/carrier result.  D37 locks
+region transport.  The D26 fixture declares one shared parent line and every
+opportunity parent descends from its canonical root.  D37 locks
 the D36b source, constructs admitted `T0_BIRTH`/`SLOT_ACTIVATION` evidence and
 signed envelopes, and requires `participant_accepts_prepare()` on every
 registered prepare.  Theorem-level record IDs are injective tagged canonical
@@ -724,3 +736,27 @@ linear-extension-serialization wording replaces the two remaining overclaims.
 
 This section records authorship repair, not independent closure.  Promotion
 still requires a fresh focused delta on this second repair.
+
+## 18. Shared-line closing delta and common-root repair
+
+The fresh three-lane audit of frozen commit `e66cc1e` reproduced every exact
+probability and D36 gate, but promotion remained withheld.  Its aggregate was
+`1B/1M/0m/1n`: the countable typed core and finite regional maps were not
+natural under restriction when multiple opportunities shared a parent line,
+because `build_typed_history()` silently chained them in `cell.vertices`
+order.  That order was not a field of `C`, the incoming interfaces did not
+carry it and a proper restriction orphaned the first retained opportunity.
+The nit restores Paper 22's full title.
+
+The repair does not add a hidden order.  Every declared line `ell` now has one
+canonical `PARENT_LINE_ROOT(ell)` incoming record, and every proposal-specific
+`OPPORTUNITY_PARENT(v)` has that root as its sole parent.  Restrictions retain
+exactly the line roots referenced by retained proposals.  Two same-line
+full-to-singleton restrictions now equal independently built histories, and
+reversing proposal declaration order leaves the full DAG identical.  Missing
+and wrong line roots are separate negative gates.  D26 uses the common parent
+degree directly: the distinct newborn maps commute, and tracing their children
+multiplies the parent-coherence factors without a physical transaction order.
+
+The updated receipt remains `PASS 9/9`.  This is authorship repair, not review
+closure; another frozen focused delta is required.

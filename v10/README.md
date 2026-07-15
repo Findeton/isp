@@ -10,8 +10,8 @@ proper-region transport. Nested DLR composition, three-path marginal descent,
 linear-extension covariance and causal anti-dilution are exact gates. The
 receipt passes `9/9` and is byte-identical under six hash seeds. Its eight-graph
 registry carries 38 checked incoming/lateral/generated interfaces; S0 realizes
-six fixture histories with 104 typed events and 19 participant-accepted D36b
-prepares, and rejects all seven registered illegal-history mutations.
+six fixture histories with 120 typed events and 19 participant-accepted D36b
+prepares, and rejects all nine registered illegal-history mutations.
 
 The result is a family, not a unique selector. K3 passes 508 intrinsic
 conditionals, 7,098 nested towers and 138 boundary mixtures; exact positive
@@ -52,15 +52,20 @@ repair implemented a typed causal event DAG. A focused closing delta then
 returned `1B/3M/4m/0n`: K1 proper restriction orphaned its priority root, the
 D26 line was label-only, the D36 tuple was not an actual imported adapter, and
 finite digests could not carry the countable identity theorem. The second
-authorship repair now narrows K1 to complete-carrier typed atoms, causally
-chains a declared shared D26 line, imports locked D36b records/envelopes and
+authorship repair narrowed K1 to complete-carrier typed atoms, imported locked
+D36b records/envelopes and
 requires actual participant acceptance, and uses injective tagged tuples plus
-arbitrary-precision actor encodings for theorem identities. All 70 linear
-extensions have one canonical DAG digest while preserving same-wire order;
-D34 restriction maps one 24-event history exactly to independent 13- and
-11-event component histories; S2 asserts every distinct feasible-addition
-edge; and S7 gates all 27 visibility histories. Promotion remains withheld
-until a fresh focused independent delta validates this repair.
+arbitrary-precision actor encodings for theorem identities. A fresh delta on
+that frozen repair returned `1B/1M/0m/1n`: its D26 line was implicitly ordered
+by proposal enumeration and failed proper restriction. The present repair
+uses one canonical `PARENT_LINE_ROOT` per declared line instead. Every
+opportunity parent descends from it, restrictions retain it, both same-line
+singleton squares pass, and declaration-order reversal leaves the DAG fixed.
+All 96 linear extensions have one canonical DAG digest; D34 restriction maps
+one 28-event history exactly to independent 15- and 13-event component
+histories; S2 asserts every distinct feasible-addition edge; and S7 gates all
+27 visibility histories. Promotion remains withheld until another focused
+independent delta validates this common-root repair.
 
 - `note-d37-regional-history-specifications.md`
 - `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`

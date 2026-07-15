@@ -8,9 +8,11 @@
 at commit `23a4ae0` returned `1B/5M/6m/3n`.  Its typed-carrier blocker and
 listed repairs were implemented at `e3161f5`; the focused round-two delta
 returned `1B/3M/4m/0n` and found K1 restriction, D26-line, D36-adapter and
-countable-identity defects.  Those second-round authorship repairs are now
-implemented and D37 remains `PASS 9/9`; promotion still requires a fresh
-focused closing delta.
+countable-identity defects.  Those repairs were frozen at `e66cc1e`; a fresh
+three-lane delta returned `1B/1M/0m/1n` because shared parent lines were
+silently ordered by proposal enumeration and failed proper restriction.  The
+present common-root repair removes that hidden order and D37 remains `PASS
+9/9`; promotion still requires another focused closing delta.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -125,7 +127,7 @@ which compatible carriers succeed?    arbitration.
 ```
 
 It does not need to choose one actor as the globally next actor.  Incomparable
-regional events remain incomparable in the represented event poset; all 70
+regional events remain incomparable in the represented event poset; all 96
 linear-extension serializations of the D33 test history validate the same
 immutable DAG and produce one canonical digest, while comparable events
 sharing one wire stay ordered.  This is a serialization-gauge gate, not a
@@ -239,15 +241,17 @@ Thirty-eight oriented interface rows make the causal words executable.  For
 each region they carry:
 
 ```text
-incoming     exact participant-base records and one distinct typed parent per proposal;
+incoming     exact participant bases, canonical parent-line roots and one
+             distinct typed opportunity parent per proposal;
 lateral      exterior proposals sharing a participant with the region;
 generated    one mode click and one selection click per interior proposal.
 ```
 
 S0 checks the content of all 38 rows fail-closed, not merely their count or
-hash.  It also realizes six complete fixture histories containing 104 typed
-events and 19 signed D36 `PREPARE` envelopes.  Seven negative mutations are
-all rejected: a missing parent, duplicate mode branch, forged attempt, forged
+hash.  It also realizes six complete fixture histories containing 120 typed
+events and 19 signed D36 `PREPARE` envelopes.  Nine negative mutations are
+all rejected: a missing or wrong parent-line root, a missing opportunity
+parent, duplicate mode branch, forged attempt, forged
 signature, wrong K1 priority result, conflicting selection and cross-proposal
 TOKEN ancestry.
 
@@ -272,8 +276,9 @@ event vocabulary and immediate ancestry are:
 
 ```text
 BASE_RECORD          root for one participant version;
-OPPORTUNITY_PARENT   distinct typed supplied parent record, chained when a
-                     fixture declares a common parent line;
+PARENT_LINE_ROOT     one canonical incoming record per declared parent line;
+OPPORTUNITY_PARENT   distinct typed supplied parent record
+                     <- its declared parent-line root;
 DORMANT_TOKEN        explicit pre-existing coherence-neutral support root;
 MODE_CLICK           <- opportunity parent, and dormant token exactly for TOKEN;
 BORN_CARRIER         <- BORN mode click;
@@ -312,10 +317,14 @@ Gamma_D = (F_D)_* gamma_D.                                            (P)
 ```
 
 Causal restriction keeps exactly the events whose proposals and participant
-bases lie in the retained component, plus a component priority click only when
-its whole component is retained.  On the registered disjoint carrier the two
-typed restrictions equal the independently realized left and right histories
-event-for-event.  This is the executable restriction square behind the
+bases lie in the retained component, the canonical line roots referenced by
+those opportunity parents, and a component priority click only when its whole
+component is retained.  On the registered disjoint carrier the two typed
+restrictions equal the independently realized left and right histories
+event-for-event.  On a separate two-opportunity shared-line control, both
+full-to-singleton restrictions equal independent realizations and reversing
+proposal declaration order leaves the full DAG unchanged.  These are the
+executable restriction squares behind the
 probability-level factorization; no claim is made here for a generated random
 opportunity carrier.  Proper K1 subregions are excluded from this typed
 restriction statement: deleting the exterior of a connected priority
@@ -584,7 +593,7 @@ finite-range locality.
 ### 6.3 Exact scope
 
 The six marked path atoms pass 35 distinct conditional towers.  Their typed
-complete-carrier realizations contain six priority clicks, 140 events and 20
+complete-carrier realizations contain six priority clicks, 158 events and 20
 signed D36 prepares; legality recomputes every selected set from its recorded
 order.  They are full-carrier typed witnesses, not a region-indexed causal
 pushforward: proper restriction currently drops a load-bearing component
@@ -699,7 +708,7 @@ three-path marginal checks         33
 BORN/TOKEN exchange atoms          93 at the symmetric point.
 ```
 
-At that symmetric point the pushforward contains 93 typed histories, 1,683
+At that symmetric point the pushforward contains 93 typed histories, 1,962
 events, 106 explicit dormant-token records and 156 signed exact D36 prepares.
 
 ### 8.3 WHEN, WHY and HOW
@@ -738,12 +747,14 @@ C_ell(h) = product_(e a BORN_CARRIER in h with parentLine(e)=ell) c_e. (12)
 ```
 
 The typed DAG supplies the line predicate in (12): each `BORN_CARRIER`
-inherits `parent_line` from its distinct `OPPORTUNITY_PARENT`.  The registered
-three-opportunity control declares one common parent line in its carrier;
-successive opportunity-parent records are chained through the preceding
-mode/carrier result, so every pair of BORN carriers on that line is causally
-comparable.  The validator rejects a parent line different from the carrier's
-declaration.  TOKEN uses the
+inherits `parent_line` from its distinct `OPPORTUNITY_PARENT`, and that parent
+has the canonical `PARENT_LINE_ROOT(ell)` as its sole predecessor.  The
+registered three-opportunity control declares one common parent line in its
+carrier, so all three opportunity parents descend from one actual shared
+root.  Their distinct one-parent newborn maps commute; tracing the children
+therefore multiplies the parent-coherence factors without selecting a physical
+transaction order.  The validator rejects a parent line different from the
+carrier's declaration.  TOKEN uses the
 explicit coherence-neutral dormant-support control and NO_BIRTH has no
 carrier, so both contribute factor one to this birth channel.  A different
 physical TOKEN activation would have to declare and test its own dynamics.
@@ -848,6 +859,13 @@ carrier/envelope adapter remains the separately gated finite append interface:
 its locked evidence IDs are SHA-based and are not used as a countable
 injectivity premise.  ∎
 
+Shared parent lines do not add an exhaustion order to this construction.  The
+line-root ID depends only on the supplied structural line ID, each opportunity
+parent depends only on its own content and that root, and finite restriction
+retains every root referenced by a retained opportunity.  The same-line
+restriction and declaration-order gates are the finite executable controls for
+this naturality statement.
+
 ### 10.3 What completion does not select
 
 The theorem proves nonemptiness, not uniqueness.  Different subsequences,
@@ -880,9 +898,9 @@ joint birth/arbitration.
 ```
 
 The typed carrier adds D33's stronger event-poset gate.  A one-proposal BORN
-history with two participant prepares has 70 linear extensions.  Replaying
-all 70 as valid serializations produces one identical canonical DAG digest;
-the gate does not re-execute actor operations in 70 service orders.  At the same
+history with two participant prepares has 96 linear extensions.  Replaying
+all 96 as valid serializations produces one identical canonical DAG digest;
+the gate does not re-execute actor operations in 96 service orders.  At the same
 time, the six pairs of events that share a wire are causally comparable, so
 the test does not quotient physical same-wire order.  Machine enumeration is
 therefore presentation gauge; causal order is not.
@@ -894,13 +912,18 @@ equation (11) each factor exactly.  Adding the remote component changes no
 local marginal or conditional on the first edge.  D37 reports `4/4`
 probability factorizations.
 
-The stronger D34 gate builds one 24-event history over both components,
+The stronger D34 gate builds one 28-event history over both components,
 including distinct typed opportunity parents, participant bases, a BORN/TOKEN
-mixture and signed prepares.  Causal restriction gives a 13-event left and an
-11-event right history, exactly equal to histories realized independently on
+mixture and signed prepares.  Causal restriction gives a 15-event left and a
+13-event right history, exactly equal to histories realized independently on
 those components.  Both typed restriction squares pass.  Thus the registered
 anti-dilution witness is causal-record disconnection, not mere graph
 nonadjacency.
+
+A separate shared-line gate is not an anti-dilution test.  It verifies the
+regional transport itself: both full-to-singleton restrictions retain the
+same canonical parent-line root and equal independent singleton realizations,
+and reversing proposal declaration order leaves the full history unchanged.
 
 This is the D34 locality requirement at each registered width: K3 and (11)
 use a one-hop conflict collar, K2 uses its radius-two blocker/demand collar,
@@ -918,9 +941,9 @@ longer merely click-labeled coordinates.
 On the three-path controls, the adapter realizes:
 
 ```text
-K3    5 histories / 105 events / 10 signed prepares / 15 dormant tokens;
-K2    2 histories /  44 events /  6 signed prepares /  6 dormant tokens;
-K1    6 histories / 140 events / 20 signed prepares / 18 dormant tokens /
+K3    5 histories / 120 events / 10 signed prepares / 15 dormant tokens;
+K2    2 histories /  50 events /  6 signed prepares /  6 dormant tokens;
+K1    6 histories / 158 events / 20 signed prepares / 18 dormant tokens /
       6 recorded component-priority clicks.
 ```
 
@@ -1034,10 +1057,10 @@ The exact receipt uses only standard-library integers and `Fraction`.  Its
 source, stdout-body and internal-science hashes are
 
 ```text
-source    dd5f8991569353e8b865370ffde0d9fef49ee5ba03e49505865a9c6fbfbc805c
-stdout    be36426e043f1b7c96af989a7e6c82c8760b4ce3b303f25e1a4c8e17b59d9900
-science   b57af3d7b0c35a2edb3b21caee8f2452dfcbb63f7320bf9ce3e135cc308b36da
-complete  1a8b94e24ce5b1901acd5dc5ff658ccd0420906d788d2b2a0684ce4162880ef4
+source    b15e577bfdf03e1bc78628d9d934bab1e604da9f4b62f7c6372fa61dca7fcbd9
+stdout    df5aa182d432206642ed3440d8d0b7f4cc9e971bd2d014811b9fea9e47391c16
+science   82a2dac6a1f9c5352ea05309b1ae24f38098924c5be595f5b6dfb49960fdf126
+complete  20d4b2f6add6db3296f221c184be539dd62c66ada81f32418b9288bebf778ed8
 ```
 
 Executions under hash seeds `0`, `1`, `17`, `42`, `104729` and `271828` are
@@ -1046,10 +1069,11 @@ byte-identical.  The registered-object header is:
 ```text
 graphs=8; vertices=28; conflict_edges=19; nonempty_regions=196;
 oriented_interface_rows=38; interface_content_checks=38/38;
-typed_causal_histories=6/6; typed_events=104; signed_D36_prepare_records=19.
-typed_illegal_histories_rejected=7/7.
+typed_causal_histories=6/6; typed_events=120; signed_D36_prepare_records=19.
+typed_illegal_histories_rejected=9/9.
 canonical_tuple_ID_controls=(1000,1000,1000).
 D36_participant_accepts_PREPARE=10+6+20+156=192.
+shared_parent_line_restrictions=2/2; declaration_order_covariance=1.
 ```
 
 The receipt verdict is:
@@ -1062,8 +1086,8 @@ S3=PASS  K2 maximal-support lift
 S4=PASS  K1 recorded-priority probability lift, full atoms and counterexample
 S5=PASS  three-path marginal descent and triple-cover obstruction
 S6=PASS  joint birth/arbitration functional
-S7=PASS  D26 chained lineage plus accepted D36b PREPARE adapters
-S8=PASS  relabeling and event-poset serialization covariance; causal anti-dilution
+S7=PASS  D26 shared parent-line root plus accepted D36b PREPARE adapters
+S8=PASS  relabeling and event-poset serialization covariance; restriction naturality
 
 PASS 9/9.
 ```
@@ -1101,7 +1125,7 @@ Paper 25 ended with a local coordination cell and a missing regional law.
 Paper 26 supplies the first exact classical version of that law at a useful
 scope.  Finite oriented regions carry normalized conditional kernels and the
 K3, K2 and joint-family pushforwards carry immutable typed event DAGs.  Nested composition,
-three-path marginal descent, 70-extension event-poset covariance and exact
+three-path marginal descent, 96-extension event-poset covariance and exact
 causal restriction on disconnected components are executable gates.  K3, K2
 and a joint birth/arbitration family admit global measures on supplied
 countable typed carriers with locally finite pairwise conflict graphs.
@@ -1152,7 +1176,8 @@ like?”  It is precise:
    declared interface*.
 5. Relativistic ISP v10 Paper 21, *Local generators do not imply local
    memory*.
-6. Relativistic ISP v10 Paper 22, *The predictive record-DAG boundary*.
+6. Relativistic ISP v10 Paper 22, *The predictive record-DAG boundary of a
+   chosen click law*.
 7. Relativistic ISP v10 Paper 23, *The whole component is the exact ancestry
    boundary*.
 8. Relativistic ISP v10 Paper 24, *A's next click is the upper seal of a causal

@@ -3970,3 +3970,34 @@ is `PASS 9/9`, byte-identical under seeds `0`, `1`, `17`, `42`, `104729` and
 `271828`; its source, stdout-body, internal-science and complete-receipt hashes
 are `dd5f8991...805c`, `be36426e...9900`, `b57af3d7...36da` and
 `1a8b94e2...0ef4`.  This is authorship repair, not independent closure.
+
+## 2026-07-14 — Paper 26 shared-line delta withholds promotion (LEDGER #235)
+
+Three independent lanes audit frozen commit `e66cc1e` and reproduce every
+probability, D36b and checksum gate.  Their aggregate is `1B/1M/0m/1n`.
+The blocker is shared-line restriction: a retained opportunity can point to a
+removed earlier carrier.  The major identifies the cause—`cell.vertices`
+enumeration silently supplied a physical predecessor order absent from
+`C=(V,E_conf,Part,parentLine,proposalType)`.  Reversing declaration order
+changes the DAG, and incoming interfaces do not carry the invented order.
+The nit restores Paper 22's full title.  Promotion remains withheld.
+
+## 2026-07-14 — D37 replaces hidden line order with canonical roots (LEDGER #236)
+
+Every declared parent line now contributes one canonical
+`PARENT_LINE_ROOT(ell)` incoming record.  Each distinct proposal-specific
+`OPPORTUNITY_PARENT` has that root as its sole causal parent.  Regional
+restriction retains the roots referenced by retained proposals; both
+full-to-singleton squares on a two-opportunity shared line equal independent
+realizations, and reversing proposal declaration order leaves the full DAG
+unchanged.  Missing and wrong line roots are separately rejected.
+
+D26 now reads a genuine shared parent degree without imposing transaction
+order.  The distinct newborn maps commute, so tracing their children
+multiplies the parent-coherence factors.  The receipt remains `PASS 9/9`: S0
+has 120 typed events and `9/9` negative mutations; D33 has 96 serializations;
+D34 has `28 -> 15+13` events; K3/K2/K1 typed event counts are `120/50/158`;
+the 93 joint atoms contain 1,962 events.  Source, stdout-body, science and
+complete hashes are `b15e577b...fcbd9`, `df5aa182...91c16`,
+`82a2dac6...df126` and `20d4b2f6...8ed8`.  This is authorship repair pending a
+fresh focused delta.
