@@ -91,7 +91,7 @@ Paper 28     ce625405657e539e1cdb77c4d0e3713d73422f6094797a6b420ea7209f5e067f
 Any mismatch fails closed.  D40 may import exact finite constructions from
 these files but may not silently upgrade their theorem ceilings.
 
-## 4. Exact gates
+## 4. Exact gates (R0--R10: eleven gates)
 
 ### R0 — lock and vocabulary gate
 
@@ -301,4 +301,3 @@ that record-native clocks determine SI seconds;
 new laboratory evidence;
 or a unique law of nature.
 ```
-

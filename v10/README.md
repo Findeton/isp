@@ -8,7 +8,7 @@ operator interchange, decoherence-functional consistency, durable-record
 cylinders, serial histories, causal-DAG pushforwards, regional boundary
 sufficiency and classical increment potentials.
 
-The frozen receipt will prove the finite descent theorem, re-enumerate the
+The frozen eleven-gate receipt will prove the finite descent theorem, re-enumerate the
 D38b square at serial and DAG levels, execute an exact Bell/CHSH architecture
 fixture, audit which D33--D39 results are grammar-universal versus toy-law
 specific, and expose the supplied dictionaries still separating D15's

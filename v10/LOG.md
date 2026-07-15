@@ -9,7 +9,7 @@ record-closed architecture.  It refuses to read Paper 28's exact
 pushforwards, refined durable cylinders and regional boundary sufficiency are
 separated.
 
-The ten-gate receipt will prove classical cylinder descent and finite
+The eleven-gate receipt will prove classical cylinder descent and finite
 lumpability, reuse D34c for operator/functional interchange and interference
 controls, adjudicate the D38b square, classify K-flat as a general h-ratio
 completion form, execute an exact Bell/CHSH fixture, audit the missing D15
