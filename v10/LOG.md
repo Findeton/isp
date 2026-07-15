@@ -3937,3 +3937,36 @@ the corrected Paper 15 title and exact typed D33/D34/D26/D36 bridges.
 This ledger is authorship repair, not review closure.  The frozen independent
 review remains unchanged and promotion remains withheld pending a focused
 independent closing delta on the repaired carrier and claims.
+
+## 2026-07-14 — Paper 26 typed-carrier delta finds a second repair seam (LEDGER #233)
+
+`reviews/paper26-round2-typed-carrier-closing-delta.md` audits frozen repair
+commit `e3161f5` and returns `1B/3M/4m/0n`.  The probability tables and all
+headline numbers remain exact.  The blocker is K1's claimed proper-region
+typed transport: restricting a complete history can orphan the recorded
+component-priority root.  The majors are a label-only D26 shared line, a D36
+lookalike tuple rather than the imported participant-acceptance path, and
+finite SHA identities inside a countable theorem.  The minors tighten D33,
+S2, S7 and parent/wire wording.  Promotion remains withheld.
+
+## 2026-07-14 — Paper 26 second typed-carrier repair executes (LEDGER #234)
+
+D37 now limits K1's typed claim to complete-carrier atoms, while retaining its
+finite marked probability specification and explicit failure of bounded
+output locality.  The D26 fixture declares one shared parent line and causally
+chains successive opportunity parents through the previous carrier result.
+The finite D36 bridge imports the locked D36b implementation, constructs its
+actual `T0_BIRTH` or `SLOT_ACTIVATION` carrier and signed `Envelope`, and gates
+all 192 registered prepares on `participant_accepts_prepare()`.
+
+Theorem-level event identities are injective tagged canonical tuples and
+actor labels use an injective arbitrary-precision encoding; SHA-256 is only a
+finite serialization checksum.  The countable pushforward is correspondingly
+scoped to the causal core through recorded selection, while the exact D36b
+append adapter remains a separately audited finite interface.  S2 enumerates
+every distinct feasible-addition edge, S7 asserts all 27 visibility histories,
+and D33 is stated as linear-extension serialization covariance.  The receipt
+is `PASS 9/9`, byte-identical under seeds `0`, `1`, `17`, `42`, `104729` and
+`271828`; its source, stdout-body, internal-science and complete-receipt hashes
+are `dd5f8991...805c`, `be36426e...9900`, `b57af3d7...36da` and
+`1a8b94e2...0ef4`.  This is authorship repair, not independent closure.

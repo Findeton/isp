@@ -6,8 +6,11 @@
 
 **Status:** INDEPENDENT-REVIEW REPAIR CANDIDATE.  The frozen round-one review
 at commit `23a4ae0` returned `1B/5M/6m/3n`.  Its typed-carrier blocker and
-all listed review repairs have now been addressed in D37, which remains
-`PASS 9/9`; promotion still requires a focused independent closing delta.
+listed repairs were implemented at `e3161f5`; the focused round-two delta
+returned `1B/3M/4m/0n` and found K1 restriction, D26-line, D36-adapter and
+countable-identity defects.  Those second-round authorship repairs are now
+implemented and D37 remains `PASS 9/9`; promotion still requires a fresh
+focused closing delta.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -25,8 +28,12 @@ This paper constructs representative admitted classical regional-history
 families and characterizes K3 at an explicit premise width.  The primitive
 object is not a global next-event lottery.  It is a family
 `gamma_D(.|b_D)` of conditional kernels on finite typed opportunity regions,
-together with deterministic causal realization maps `F_D`.  Their
-pushforwards `Gamma_D=(F_D)_*gamma_D` are laws on immutable typed event DAGs.
+together with deterministic causal realization maps `F_D` for K3, K2 and the
+joint birth/arbitration family.  Their pushforwards
+`Gamma_D=(F_D)_*gamma_D` are laws on immutable typed event DAGs.  K1's finite
+marked probability specification and complete-carrier typed atoms are
+retained, but a causal-parent-closed restriction transport for proper K1
+subregions is not claimed.
 Properness, normalization and nested composition give a
 Dobrushin--Lanford--Ruelle-style specification relative to an admitted compact
 configuration space.  A global law is any measure `mu` satisfying
@@ -69,8 +76,10 @@ coherence-neutral TOKEN control.
 For K3, K2 and the joint birth/arbitration family, a compactness argument gives
 at least one compatible global classical measure on every supplied countable
 locally finite pairwise conflict graph at the stated finite-range scope.  Its
-typed causal pushforward gives the corresponding history law on the supplied
-carrier.
+typed causal-core pushforward through the recorded selection clicks gives the
+corresponding history law on the supplied carrier.  The exact imported D36b
+append adapter is a separately audited finite interface; its locked SHA-based
+evidence identities are not promoted to a countable injectivity claim.
 Uniqueness is not proved and need not hold.  The result unifies D33--D34's
 missing untimed regional measure architecture with D35--D36's missing
 opportunity-and-arbitration object, but it does not generate the opportunity
@@ -117,8 +126,10 @@ which compatible carriers succeed?    arbitration.
 
 It does not need to choose one actor as the globally next actor.  Incomparable
 regional events remain incomparable in the represented event poset; all 70
-linear extensions of the D33 test history replay to the same immutable
-history digest, while comparable events sharing one wire stay ordered.
+linear-extension serializations of the D33 test history validate the same
+immutable DAG and produce one canonical digest, while comparable events
+sharing one wire stay ordered.  This is a serialization-gauge gate, not a
+second actor-operation replay theorem.
 
 The paper's main negative result is equally important.  Regional consistency
 does not select one numerical family.  It admits at least a nonprogressing
@@ -252,13 +263,17 @@ A regional atom is not itself passed to D36.  A deterministic realization map
 F_D : (boundary, mode, arbitration mark, selected set) -> H_D              (F)
 ```
 
-constructs an immutable event DAG `H_D`.  Every event has a digest identity,
-a type, owner, wire, at most two causal parents and typed payload.  The legal
+constructs an immutable event DAG `H_D`.  Every theorem-level event identity
+is an injective tagged canonical tuple of its finite typed content.  SHA-256 is
+used only as a finite receipt/serialization checksum, never as the identity
+space in the countable theorem.  Every event also has a type, owner, wire, at
+most two causal parents and typed payload.  The legal
 event vocabulary and immediate ancestry are:
 
 ```text
 BASE_RECORD          root for one participant version;
-OPPORTUNITY_PARENT   distinct typed supplied parent root;
+OPPORTUNITY_PARENT   distinct typed supplied parent record, chained when a
+                     fixture declares a common parent line;
 DORMANT_TOKEN        explicit pre-existing coherence-neutral support root;
 MODE_CLICK           <- opportunity parent, and dormant token exactly for TOKEN;
 BORN_CARRIER         <- BORN mode click;
@@ -271,8 +286,10 @@ D36_PREPARE          <- selected click plus exact participant base.
 Legality rejects missing parents, cycles, same-wire incomparable records,
 conflicting selections, mode/carrier mismatches and incomplete click coverage.
 K1 additionally recomputes greedy selection from the recorded component order.
-Every selected proposal generates one authenticated `D36_PREPARE` per
-participant.  Its structural-attempt key is exactly
+Every selected proposal generates one authenticated D36b `Record`/`Envelope`
+pair per participant, and D36b's `participant_accepts_prepare()` accepts it
+before the corresponding `D36_PREPARE` event is credited.  Its
+structural-attempt key is exactly
 
 ```text
 attempt = H(carrier_record_id, body_digest),
@@ -282,13 +299,13 @@ and the signed envelope binds that attempt, carrier, body, participant,
 base-record version zero, route capability, sender/target roles, selected
 click and application code.  Its authenticated tuple uses D36b's exact
 `PREPARE` field order and signature formula: sender kind `T`, target kind `P`,
-content-derived integer actor indices for the structural proposal and
+injectively encoded arbitrary-precision integer actor indices for the structural proposal and
 participant labels, blank response record, carrier as evidence and application
 code zero.  These indices are identities, not admission ordinals.  Thus the
 adapter uses D36's repaired carrier-derived attempt rather than a global
 ordinal.
 
-The history law is the pushforward
+For K3, K2 and equation (11), the history law is the pushforward
 
 ```text
 Gamma_D = (F_D)_* gamma_D.                                            (P)
@@ -300,7 +317,10 @@ its whole component is retained.  On the registered disjoint carrier the two
 typed restrictions equal the independently realized left and right histories
 event-for-event.  This is the executable restriction square behind the
 probability-level factorization; no claim is made here for a generated random
-opportunity carrier.
+opportunity carrier.  Proper K1 subregions are excluded from this typed
+restriction statement: deleting the exterior of a connected priority
+component would orphan retained selection clicks unless a separate typed
+priority-boundary transport were constructed.
 
 ### 3.3 Kernel axioms
 
@@ -564,8 +584,11 @@ finite-range locality.
 ### 6.3 Exact scope
 
 The six marked path atoms pass 35 distinct conditional towers.  Their typed
-pushforward contains six priority clicks, 140 events and 20 signed D36
-prepares; legality recomputes every selected set from its recorded order.  All
+complete-carrier realizations contain six priority clicks, 140 events and 20
+signed D36 prepares; legality recomputes every selected set from its recorded
+order.  They are full-carrier typed witnesses, not a region-indexed causal
+pushforward: proper restriction currently drops a load-bearing component
+priority parent.  All
 priority marks and all selected/rejected bits are present before projection.  Raw
 path-to-edge restriction remains `2/3` versus `1/3`, rather than the direct
 edge's `1/2` versus `1/2`.
@@ -715,7 +738,12 @@ C_ell(h) = product_(e a BORN_CARRIER in h with parentLine(e)=ell) c_e. (12)
 ```
 
 The typed DAG supplies the line predicate in (12): each `BORN_CARRIER`
-inherits `parent_line` from its distinct `OPPORTUNITY_PARENT`.  TOKEN uses the
+inherits `parent_line` from its distinct `OPPORTUNITY_PARENT`.  The registered
+three-opportunity control declares one common parent line in its carrier;
+successive opportunity-parent records are chained through the preceding
+mode/carrier result, so every pair of BORN carriers on that line is causally
+comparable.  The validator rejects a parent line different from the carrier's
+declaration.  TOKEN uses the
 explicit coherence-neutral dormant-support control and NO_BIRTH has no
 carrier, so both contribute factor one to this birth channel.  A different
 physical TOKEN activation would have to declare and test its own dynamics.
@@ -756,8 +784,9 @@ whose incompatibility relation is a locally finite pairwise conflict graph
 and whose per-opportunity participant, parent-line and type data are finite.
 At their stated finite-range scopes, K3, K2 and the joint birth/arbitration
 family (11) each admit at least one compatible global classical measure on its
-admitted configuration subshift.  The deterministic typed realization has a
-corresponding pushforward measure on countable causal histories.
+admitted configuration subshift.  The deterministic typed core realization
+through recorded selection has a corresponding pushforward measure on
+countable causal histories.
 
 ### 10.2 Proof
 
@@ -806,11 +835,18 @@ mu(gamma_D f) = mu(f)
 for every finite `D` and cylinder `f`.  Hence `mu` belongs to `G(gamma)`.
 
 For K3 and K2 use the declared coherence-neutral TOKEN carrier at each
-opportunity; for (11) use its sampled mode.  Apply the same local event rules
-as `F_D`, with stable content-derived identities and shared participant bases,
-and take their countable union.  Local finiteness and the parent bound give a
+opportunity; for (11) use its sampled mode.  Apply the same local core event
+rules as `F_D` through each `SELECTION_CLICK`, with injective tagged canonical
+tuple identities and shared participant bases, and take their countable union.
+Participant and transaction labels are injected into arbitrary-precision
+natural numbers, not hashed into a finite identity space.  Local finiteness
+and the parent bound give a
 well-defined countable acyclic history.  Its law is `F_*mu`; every finite
-cylinder agrees with the corresponding `Gamma_D` pushforward.  ∎
+cylinder agrees with the corresponding core `Gamma_D` pushforward.  Finite
+SHA-256 values are checksums only.  In particular, the exact imported D36b
+carrier/envelope adapter remains the separately gated finite append interface:
+its locked evidence IDs are SHA-based and are not used as a countable
+injectivity premise.  ∎
 
 ### 10.3 What completion does not select
 
@@ -845,7 +881,8 @@ joint birth/arbitration.
 
 The typed carrier adds D33's stronger event-poset gate.  A one-proposal BORN
 history with two participant prepares has 70 linear extensions.  Replaying
-all 70 produces one identical content-derived history digest.  At the same
+all 70 as valid serializations produces one identical canonical DAG digest;
+the gate does not re-execute actor operations in 70 service orders.  At the same
 time, the six pairs of events that share a wire are causally comparable, so
 the test does not quotient physical same-wire order.  Machine enumeration is
 therefore presentation gauge; causal order is not.
@@ -891,7 +928,11 @@ Each `D36_PREPARE` has the exact carrier-derived structural-attempt identity,
 base-version binding, issued route capability, ideal signature and typed
 sender/target roles described in section 3.2.  Two prepares for one selected
 proposal share the attempt but target their own participant bases.  This
-closes the finite append adapter at D36's ideal-authentication scope; it does
+is no longer a locally imitated field tuple: the receipt imports the locked
+D36b implementation, constructs its admitted `T0_BIRTH` or `SLOT_ACTIVATION`
+evidence `Record`, signs its actual `Envelope`, and requires
+`participant_accepts_prepare()` for all 192 registered prepares.  This closes
+the finite append adapter at D36's ideal-authentication scope; it does
 not add crash or Byzantine tolerance.
 
 The probability law is not an unrecorded external coin and not mailbox
@@ -940,8 +981,8 @@ The regional law and the transaction protocol occupy different layers:
 gamma / mu    supplies opportunity modes, recorded marks and a feasible
               selected set;
 
-F             appends typed carrier/mode/selection records and signed exact
-              D36 PREPARE envelopes keyed by H(carrier,body);
+F             appends typed carrier/mode/selection records and finite signed
+              exact D36 PREPARE envelopes keyed by H(carrier,body);
 
 D36 P4        authenticates the selected attempts, reserves exact versions,
               commits or aborts, applies locally, acknowledges and closes.
@@ -993,13 +1034,13 @@ The exact receipt uses only standard-library integers and `Fraction`.  Its
 source, stdout-body and internal-science hashes are
 
 ```text
-source    104eee846131a91fa3edea70211d0206d728640f6f9f086081362f13b47a539d
-stdout    f126da4f7fbc541645bddd88dacebd088539ac1781a1f518cad7bc39a64fad38
-science   2c4f7681310345ccc2e60107f0b11f93b8006a3fae62abc7a439bf38fd7dc142
-complete  13e2df5dbd31d1b54afaaf9ca336fa6a92d52754382b591ce411cf22495f78a3
+source    dd5f8991569353e8b865370ffde0d9fef49ee5ba03e49505865a9c6fbfbc805c
+stdout    be36426e043f1b7c96af989a7e6c82c8760b4ce3b303f25e1a4c8e17b59d9900
+science   b57af3d7b0c35a2edb3b21caee8f2452dfcbb63f7320bf9ce3e135cc308b36da
+complete  1a8b94e24ce5b1901acd5dc5ff658ccd0420906d788d2b2a0684ce4162880ef4
 ```
 
-Executions under hash seeds `0`, `1`, `17`, `42` and `104729` are
+Executions under hash seeds `0`, `1`, `17`, `42`, `104729` and `271828` are
 byte-identical.  The registered-object header is:
 
 ```text
@@ -1007,6 +1048,8 @@ graphs=8; vertices=28; conflict_edges=19; nonempty_regions=196;
 oriented_interface_rows=38; interface_content_checks=38/38;
 typed_causal_histories=6/6; typed_events=104; signed_D36_prepare_records=19.
 typed_illegal_histories_rejected=7/7.
+canonical_tuple_ID_controls=(1000,1000,1000).
+D36_participant_accepts_PREPARE=10+6+20+156=192.
 ```
 
 The receipt verdict is:
@@ -1016,11 +1059,11 @@ S0=PASS  typed interfaces and causal histories
 S1=PASS  K3 full finite specification
 S2=PASS  safe-support fixed-odds forcing
 S3=PASS  K2 maximal-support lift
-S4=PASS  K1 recorded-priority lift and boundary counterexample
+S4=PASS  K1 recorded-priority probability lift, full atoms and counterexample
 S5=PASS  three-path marginal descent and triple-cover obstruction
 S6=PASS  joint birth/arbitration functional
-S7=PASS  D26 lineage plus typed click/PREPARE adapters
-S8=PASS  relabeling and event-poset covariance; causal anti-dilution
+S7=PASS  D26 chained lineage plus accepted D36b PREPARE adapters
+S8=PASS  relabeling and event-poset serialization covariance; causal anti-dilution
 
 PASS 9/9.
 ```
@@ -1031,7 +1074,7 @@ PASS 9/9.
 Question                                                   Answer
 ---------------------------------------------------------  ------------------------
 Is a regional conditional object now defined?              yes, classically
-Is its finite typed causal pushforward implemented?         yes
+Is its finite typed causal pushforward implemented?         yes for K3/K2/joint
 Does it obey finite nested composition?                     yes, on audited families
 Does pairwise cover agreement guarantee a joint?            no
 Does fixed-odds safe-support locality force K3?              yes, at stated scope
@@ -1039,6 +1082,7 @@ Does overlap consistency alone force K3?                    no
 Can a progressing maximal-set law be regional?              yes, K2 with demands
 Is raw induced-subgraph restriction sufficient?             no
 Does finite marked K1 compose?                              yes
+Does K1 have typed proper-region restriction transport?     no; full-carrier atoms only
 Is K1 one-hop output-local?                                 no
 Is infinite K1 completion proved?                           no
 Are birth mode and arbitration in one finite functional?    yes
@@ -1055,8 +1099,8 @@ Is a quantum regional join supplied?                        no
 
 Paper 25 ended with a local coordination cell and a missing regional law.
 Paper 26 supplies the first exact classical version of that law at a useful
-scope.  Finite oriented regions carry normalized conditional kernels and
-their pushforwards carry immutable typed event DAGs.  Nested composition,
+scope.  Finite oriented regions carry normalized conditional kernels and the
+K3, K2 and joint-family pushforwards carry immutable typed event DAGs.  Nested composition,
 three-path marginal descent, 70-extension event-poset covariance and exact
 causal restriction on disconnected components are executable gates.  K3, K2
 and a joint birth/arbitration family admit global measures on supplied
@@ -1067,9 +1111,10 @@ does not force one Gibbs member or eliminate progress.  K3 is forced only
 after exact positive feasible support and fixed feasible-addition odds are
 supplied; its one-hop Markov boundary is a separate locality property.  K2
 remains a valid regional specification once its radius-two boundary carries
-unmet domination obligations.  K1 remains valid finitely with recorded
-component priorities but exposes a path-five failure of one-hop output
-locality.
+unmet domination obligations.  K1 remains valid as a finite marked
+probability specification and has complete-carrier typed witnesses, but lacks
+a typed proper-region restriction transport and exposes a path-five failure
+of one-hop output locality.
 
 Record birth is now located cleanly.  `NO_BIRTH`, `TOKEN` and `BORN` can be
 alternatives inside the same normalized functional that supplies arbitration.

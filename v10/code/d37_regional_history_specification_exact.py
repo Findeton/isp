@@ -8,8 +8,10 @@ never interpreted as physical time or as an arbitration mark.
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import math
+import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from fractions import Fraction
@@ -19,6 +21,16 @@ from typing import Callable, Dict, FrozenSet, Hashable, Iterable, Mapping, Seque
 
 
 ROOT = Path(__file__).resolve().parents[2]
+D36B_PATH = ROOT / "v10" / "code" / "d36b_actor_record_refinement_exact.py"
+D36B_SHA256 = "57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b"
+
+if hashlib.sha256(D36B_PATH.read_bytes()).hexdigest() != D36B_SHA256:
+    raise RuntimeError("D36b actor adapter source hash mismatch")
+_D36B_SPEC = importlib.util.spec_from_file_location("d36b_adapter_locked", D36B_PATH)
+assert _D36B_SPEC and _D36B_SPEC.loader
+d36b = importlib.util.module_from_spec(_D36B_SPEC)
+sys.modules["d36b_adapter_locked"] = d36b
+_D36B_SPEC.loader.exec_module(d36b)
 
 
 def stable(value: object) -> str:
@@ -31,6 +43,22 @@ def ftext(value: Fraction) -> str:
 
 def digest(value: object) -> str:
     return hashlib.sha256(stable(value).encode()).hexdigest()
+
+
+def canonical_id(kind: str, *fields: Hashable) -> Tuple[Hashable, ...]:
+    """Injective theorem-level identity on finite typed content.
+
+    SHA-256 remains a receipt/serialization checksum only.  The tagged tuple
+    itself is the mathematical record identity, so countably many distinct
+    finite contents do not collide by construction.
+    """
+    return ("D37_CANONICAL_ID", kind, fields)
+
+
+def injective_actor_index(kind: str, label: str) -> int:
+    """Inject finite UTF-8 structural labels into arbitrary-precision N."""
+    payload = stable(("D37_ACTOR_INDEX", kind, label)).encode()
+    return int.from_bytes(b"\x01" + payload, "big")
 
 
 @dataclass(frozen=True)
@@ -181,16 +209,27 @@ SELECTION_CLICK = "SELECTION_CLICK"
 D36_PREPARE = "D36_PREPARE"
 
 
-def base_record_id(participant: str) -> str:
-    return digest((BASE_RECORD, participant, 0))
+def base_record_id(participant: str) -> Tuple[Hashable, ...]:
+    return canonical_id(BASE_RECORD, participant, 0)
 
 
-def opportunity_parent_id(proposal: str, parent_line: str, proposal_type: str) -> str:
-    return digest((OPPORTUNITY_PARENT, proposal, parent_line, proposal_type))
+def opportunity_parent_id(
+    proposal: str,
+    parent_line: str,
+    proposal_type: str,
+    predecessor: Hashable = "",
+) -> Tuple[Hashable, ...]:
+    return canonical_id(
+        OPPORTUNITY_PARENT,
+        proposal,
+        parent_line,
+        proposal_type,
+        predecessor,
+    )
 
 
-def dormant_token_id(proposal: str, parent_line: str) -> str:
-    return digest((DORMANT_TOKEN, proposal, parent_line, "coherence-neutral"))
+def dormant_token_id(proposal: str, parent_line: str) -> Tuple[Hashable, ...]:
+    return canonical_id(DORMANT_TOKEN, proposal, parent_line, "coherence-neutral")
 
 
 def graph_from_cell(cell: OrientedCell) -> Graph:
@@ -755,7 +794,18 @@ def product_binary(
 
 def forcing_checks(g: Graph, activity: Fraction) -> Tuple[int, int, Tuple[str, ...]]:
     dist = hard_core(g, activity)
-    ratio_checks = 0
+    ratio_edges = set()
+    for selected in dist:
+        for vertex in g.vertices:
+            if vertex in selected:
+                continue
+            candidate = selected | {vertex}
+            if candidate not in dist:
+                continue
+            if dist[candidate] / dist[selected] != activity:
+                raise AssertionError((g.name, selected, candidate, "single-flip ratio"))
+            ratio_edges.add((selected, candidate))
+
     reconstructed_weights: Dict[Selected, Fraction] = {}
     for selected in dist:
         weight = Fraction(1)
@@ -764,11 +814,8 @@ def forcing_checks(g: Graph, activity: Fraction) -> Tuple[int, int, Tuple[str, .
             candidate = current | {vertex}
             if not feasible(g, candidate):
                 raise AssertionError("bad reconstruction path")
-            if dist[candidate] / dist[current] != activity:
-                raise AssertionError((g.name, current, candidate, "single-flip ratio"))
             weight *= activity
             current = candidate
-            ratio_checks += 1
         reconstructed_weights[selected] = weight
     reconstructed = normalize(reconstructed_weights)
     if reconstructed != dist:
@@ -796,7 +843,7 @@ def forcing_checks(g: Graph, activity: Fraction) -> Tuple[int, int, Tuple[str, .
     feasible_support = {selected for selected in all_subsets(path.vertices) if feasible(path, selected)}
     if set(maximal_support) == feasible_support or frozenset() in maximal_support:
         raise AssertionError("maximal support negative control")
-    return ratio_checks, len(reconstructed), tuple(sorted(ftext(x) for x in odds))
+    return len(ratio_edges), len(reconstructed), tuple(sorted(ftext(x) for x in odds))
 
 
 def raw_restriction_failures() -> Tuple[object, object]:
@@ -866,12 +913,12 @@ MODES = ("NO_BIRTH", "TOKEN", "BORN")
 
 @dataclass(frozen=True)
 class CausalEvent:
-    event_id: str
+    event_id: Hashable
     kind: str
     proposal: str
     owner: str
     wire: str
-    parents: Tuple[str, ...]
+    parents: Tuple[Hashable, ...]
     payload: Tuple[Tuple[str, object], ...]
 
     def payload_map(self) -> Dict[str, object]:
@@ -883,10 +930,10 @@ def event_id(
     proposal: str,
     owner: str,
     wire: str,
-    parents: Tuple[str, ...],
+    parents: Tuple[Hashable, ...],
     payload: Tuple[Tuple[str, object], ...],
-) -> str:
-    return digest((kind, proposal, owner, wire, parents, payload))
+) -> Tuple[Hashable, ...]:
+    return canonical_id("CAUSAL_EVENT", kind, proposal, owner, wire, parents, payload)
 
 
 def event(
@@ -894,7 +941,7 @@ def event(
     proposal: str,
     owner: str,
     wire: str,
-    parents: Sequence[str],
+    parents: Sequence[Hashable],
     payload: Mapping[str, object],
 ) -> CausalEvent:
     normalized_parents = tuple(parents)
@@ -926,15 +973,17 @@ def opportunity_parent_event(
     cell: OrientedCell,
     proposal: str,
     parent_line: str,
+    predecessor: Hashable = "",
+    shared_line: bool = False,
 ) -> CausalEvent:
     proposal_type = cell.proposal_type(proposal)
     return CausalEvent(
-        opportunity_parent_id(proposal, parent_line, proposal_type),
+        opportunity_parent_id(proposal, parent_line, proposal_type, predecessor),
         OPPORTUNITY_PARENT,
         proposal,
         f"source:{proposal}",
-        f"proposal:{proposal}",
-        (),
+        f"parent-line:{parent_line}" if shared_line else f"proposal:{proposal}",
+        (predecessor,) if predecessor else (),
         (("parent_line", parent_line), ("proposal_type", proposal_type)),
     )
 
@@ -959,54 +1008,109 @@ def event_body_digest(
         (participant, base_record_id(participant))
         for participant in cell.participants(proposal)
     )
-    return digest(("d36-body", proposal, cell.participants(proposal), bases))
-
-
-def structural_attempt_id(carrier_event_id: str, body_digest: str) -> str:
-    return digest(("structural-attempt", carrier_event_id, body_digest))
+    return d36b.digest(("d37-d36-body", proposal, cell.participants(proposal), bases))
 
 
 def structural_actor_index(kind: str, label: str) -> int:
-    return int(digest(("structural-actor-index", kind, label)), 16)
+    return injective_actor_index(kind, label)
 
 
-def route_capability_id(
-    tx_index: int,
-    participant_index: int,
-    actor_name: str,
-) -> str:
-    return digest(("issued-route-capability", tx_index, participant_index, actor_name))
-
-
-def prepare_signature(fields: Mapping[str, object]) -> str:
-    authenticated = tuple(
-        fields[name]
-        for name in (
-            "kind",
-            "sender_kind",
-            "sender_index",
-            "target_kind",
-            "target_index",
-            "tx_index",
-            "participant_index",
-            "body_digest",
-            "base_version",
-            "capability",
-            "attempt_id",
-            "response_record_id",
-            "evidence_record_id",
-            "application_code",
-        )
+def d36_carrier_record(
+    cell: OrientedCell,
+    proposal: str,
+    mode: str,
+    parent_line: str,
+) -> object:
+    """Build the exact D36b carrier record used by the downstream envelope."""
+    tx_index = structural_actor_index("T", proposal)
+    initiator = cell.participants(proposal)[0]
+    initiator_index = structural_actor_index("P", initiator)
+    seed = d36b.make_record("P", initiator_index, "SEED", (), (initiator, 0))
+    payload = (
+        "d37-regional-adapter",
+        proposal,
+        parent_line,
+        event_body_digest(cell, proposal),
     )
-    key = digest(("ideal-auth-key", fields["sender_kind"], fields["sender_index"]))
-    return digest(("ideal-signature", key, authenticated))
+    if mode == "BORN":
+        return d36b.make_record(
+            "T",
+            tx_index,
+            "T0_BIRTH",
+            (seed.record_id,),
+            payload,
+        )
+    if mode == "TOKEN":
+        slot = d36b.make_record(
+            "T",
+            tx_index,
+            "DORMANT_SLOT",
+            (),
+            ("d37-regional-adapter", proposal, parent_line),
+        )
+        return d36b.make_record(
+            "T",
+            tx_index,
+            "SLOT_ACTIVATION",
+            (slot.record_id, seed.record_id),
+            payload,
+        )
+    raise AssertionError(("D36 carrier mode", mode))
+
+
+def d36_prepare_adapter(
+    cell: OrientedCell,
+    proposal: str,
+    participant: str,
+    mode: str,
+    parent_line: str,
+) -> Tuple[object, object, object]:
+    """Return an exact D36b Record/Envelope/ParticipantActor acceptance cell."""
+    tx_index = structural_actor_index("T", proposal)
+    participant_index = structural_actor_index("P", participant)
+    evidence = d36_carrier_record(cell, proposal, mode, parent_line)
+    body_digest = event_body_digest(cell, proposal)
+    attempt_id = d36b.structural_attempt_id(evidence, body_digest)
+    capability = d36b.capability_id(tx_index, participant_index, participant)
+    envelope = d36b.signed_envelope(
+        d36b.PREPARE,
+        "T",
+        tx_index,
+        "P",
+        participant_index,
+        tx_index,
+        participant_index,
+        body_digest,
+        0,
+        capability,
+        attempt_id,
+        "",
+        evidence,
+        0,
+    )
+    seed = d36b.make_record("P", participant_index, "SEED", (), (participant, 0))
+    actor = d36b.ParticipantActor(
+        participant,
+        0,
+        seed.record_id,
+        seed.record_id,
+        "",
+        (),
+        (),
+        (capability,),
+        (),
+        (),
+        (envelope,),
+    )
+    if not d36b.participant_accepts_prepare(actor, envelope):
+        raise AssertionError("D36 participant rejected regional PREPARE adapter")
+    return evidence, envelope, actor
 
 
 def build_typed_history(
     cell: OrientedCell,
     modes: Mapping[str, str],
     selected: Selected,
-    parent_line_override: Mapping[str, str] | None = None,
     priority_orders: Sequence[Sequence[str]] | None = None,
 ) -> Tuple[CausalEvent, ...]:
     if set(modes) != set(cell.vertices) or any(mode not in MODES for mode in modes.values()):
@@ -1017,7 +1121,7 @@ def build_typed_history(
     if any(modes[proposal] == "NO_BIRTH" for proposal in selected):
         raise AssertionError("selected absent opportunity")
 
-    answer: Dict[str, CausalEvent] = {}
+    answer: Dict[Hashable, CausalEvent] = {}
 
     def append(record: CausalEvent) -> CausalEvent:
         if record.event_id in answer and answer[record.event_id] != record:
@@ -1031,6 +1135,9 @@ def build_typed_history(
         for participant in cell.participants(proposal)
     })
     bases = {participant: append(base_event(participant)) for participant in participants}
+
+    line_counts = Counter(cell.parent_line(proposal) for proposal in cell.vertices)
+    line_predecessor: Dict[str, Hashable] = {}
 
     priority_for: Dict[str, CausalEvent] = {}
     if priority_orders is not None:
@@ -1057,12 +1164,14 @@ def build_typed_history(
 
     for proposal in cell.vertices:
         mode = modes[proposal]
-        parent_line = (
-            parent_line_override[proposal]
-            if parent_line_override is not None
-            else cell.parent_line(proposal)
-        )
-        parent = append(opportunity_parent_event(cell, proposal, parent_line))
+        parent_line = cell.parent_line(proposal)
+        parent = append(opportunity_parent_event(
+            cell,
+            proposal,
+            parent_line,
+            line_predecessor.get(parent_line, ""),
+            line_counts[parent_line] > 1,
+        ))
         token = append(dormant_token_event(proposal, parent_line)) if mode == "TOKEN" else None
         mode_parents = (
             (parent.event_id, token.event_id)
@@ -1088,6 +1197,8 @@ def build_typed_history(
         attempt = ""
         if mode != "NO_BIRTH":
             carrier_kind = BORN_CARRIER if mode == "BORN" else TOKEN_ACTIVATION
+            d36_evidence = d36_carrier_record(cell, proposal, mode, parent_line)
+            d36_attempt = d36b.structural_attempt_id(d36_evidence, body_digest)
             carrier = append(event(
                 carrier_kind,
                 proposal,
@@ -1096,13 +1207,21 @@ def build_typed_history(
                 (mode_click.event_id,),
                 {
                     "body_digest": body_digest,
+                    "d36_attempt_id": d36_attempt,
+                    "d36_evidence_kind": d36_evidence.kind,
+                    "d36_evidence_record_id": d36_evidence.record_id,
                     "mode": mode,
                     "parent_line": parent_line,
                     "source_parent": parent.event_id,
                     "token_control": "coherence-neutral" if mode == "TOKEN" else "not-token",
                 },
             ))
-            attempt = structural_attempt_id(carrier.event_id, body_digest)
+            attempt = d36_attempt
+
+        if line_counts[parent_line] > 1:
+            line_predecessor[parent_line] = (
+                carrier.event_id if carrier is not None else mode_click.event_id
+            )
 
         selection_parents = [carrier.event_id if carrier is not None else mode_click.event_id]
         if proposal in priority_for:
@@ -1125,31 +1244,36 @@ def build_typed_history(
                 raise AssertionError("prepare without carrier")
             for participant in cell.participants(proposal):
                 base = bases[participant]
-                tx_index = structural_actor_index("T", proposal)
-                participant_index = structural_actor_index("P", participant)
+                evidence, envelope, _actor = d36_prepare_adapter(
+                    cell,
+                    proposal,
+                    participant,
+                    mode,
+                    parent_line,
+                )
+                if envelope.attempt_id != attempt or evidence.record_id != d36_evidence.record_id:
+                    raise AssertionError("D36 adapter/carrier mismatch")
                 prepare_fields = {
-                    "application_code": 0,
-                    "attempt_id": attempt,
+                    "application_code": envelope.application_code,
+                    "attempt_id": envelope.attempt_id,
                     "base_record": base.event_id,
-                    "base_version": 0,
-                    "body_digest": body_digest,
-                    "capability": route_capability_id(
-                        tx_index,
-                        participant_index,
-                        participant,
-                    ),
-                    "evidence_record_id": carrier.event_id,
-                    "kind": "PREPARE",
-                    "participant_index": participant_index,
-                    "response_record_id": "",
-                    "sender_index": tx_index,
-                    "sender_kind": "T",
+                    "base_version": envelope.base_version,
+                    "body_digest": envelope.body_digest,
+                    "capability": envelope.capability,
+                    "carrier_event_id": carrier.event_id,
+                    "d36_evidence_kind": evidence.kind,
+                    "evidence_record_id": evidence.record_id,
+                    "kind": envelope.kind,
+                    "participant_index": envelope.participant_index,
+                    "response_record_id": envelope.response_record_id,
+                    "sender_index": envelope.sender_index,
+                    "sender_kind": envelope.sender_kind,
                     "selected_click": selection.event_id,
-                    "target_index": participant_index,
-                    "target_kind": "P",
-                    "tx_index": tx_index,
+                    "signature": envelope.signature,
+                    "target_index": envelope.target_index,
+                    "target_kind": envelope.target_kind,
+                    "tx_index": envelope.tx_index,
                 }
-                prepare_fields["signature"] = prepare_signature(prepare_fields)
                 append(event(
                     D36_PREPARE,
                     proposal,
@@ -1165,16 +1289,16 @@ def build_typed_history(
 
 
 def causal_ancestors(
-    event_key: str,
-    by_id: Mapping[str, CausalEvent],
-    cache: Dict[str, FrozenSet[str]],
-    active: FrozenSet[str] = frozenset(),
-) -> FrozenSet[str]:
+    event_key: Hashable,
+    by_id: Mapping[Hashable, CausalEvent],
+    cache: Dict[Hashable, FrozenSet[Hashable]],
+    active: FrozenSet[Hashable] = frozenset(),
+) -> FrozenSet[Hashable]:
     if event_key in cache:
         return cache[event_key]
     if event_key in active:
         raise AssertionError("causal cycle")
-    answer: set[str] = set()
+    answer: set[Hashable] = set()
     for parent in by_id[event_key].parents:
         answer.add(parent)
         answer.update(causal_ancestors(parent, by_id, cache, active | {event_key}))
@@ -1191,7 +1315,7 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
     if any(parent not in by_id for record in records for parent in record.parents):
         raise AssertionError("missing causal parent")
 
-    cache: Dict[str, FrozenSet[str]] = {}
+    cache: Dict[Hashable, FrozenSet[Hashable]] = {}
     for record in records:
         causal_ancestors(record.event_id, by_id, cache)
 
@@ -1213,18 +1337,51 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
             ):
                 raise AssertionError("base record legality")
         elif record.kind == OPPORTUNITY_PARENT:
+            declared_line = cell.parent_line(record.proposal) if record.proposal in cell.vertices else ""
+            line_proposals = tuple(
+                proposal
+                for proposal in cell.vertices
+                if cell.parent_line(proposal) == declared_line
+            )
+            line_index = line_proposals.index(record.proposal) if record.proposal in line_proposals else -1
+            expected_predecessor: Hashable = ""
+            if line_index > 0:
+                previous_proposal = line_proposals[line_index - 1]
+                previous = next(
+                    candidate
+                    for candidate in records
+                    if candidate.proposal == previous_proposal
+                    and candidate.kind
+                    in (BORN_CARRIER, TOKEN_ACTIVATION, MODE_CLICK)
+                    and (
+                        candidate.kind != MODE_CLICK
+                        or not any(
+                            other.proposal == previous_proposal
+                            and other.kind in (BORN_CARRIER, TOKEN_ACTIVATION)
+                            for other in records
+                        )
+                    )
+                )
+                expected_predecessor = previous.event_id
             if (
-                record.parents
-                or record.proposal not in cell.vertices
+                record.proposal not in cell.vertices
                 or set(payload) != {"parent_line", "proposal_type"}
                 or record.owner != f"source:{record.proposal}"
-                or record.wire != f"proposal:{record.proposal}"
+                or payload["parent_line"] != declared_line
+                or record.parents != ((expected_predecessor,) if expected_predecessor else ())
+                or record.wire
+                != (
+                    f"parent-line:{declared_line}"
+                    if len(line_proposals) > 1
+                    else f"proposal:{record.proposal}"
+                )
             ):
                 raise AssertionError("opportunity parent legality")
             expected = opportunity_parent_id(
                 record.proposal,
                 payload["parent_line"],
                 payload["proposal_type"],
+                expected_predecessor,
             )
             if record.event_id != expected or payload["proposal_type"] != cell.proposal_type(record.proposal):
                 raise AssertionError("opportunity parent identity")
@@ -1278,6 +1435,9 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
                 or set(payload)
                 != {
                     "body_digest",
+                    "d36_attempt_id",
+                    "d36_evidence_kind",
+                    "d36_evidence_record_id",
                     "mode",
                     "parent_line",
                     "source_parent",
@@ -1289,12 +1449,25 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
                 raise AssertionError("carrier parent legality")
             expected_mode = "BORN" if record.kind == BORN_CARRIER else "TOKEN"
             mode_payload = parents[0].payload_map()
+            d36_evidence = d36_carrier_record(
+                cell,
+                record.proposal,
+                expected_mode,
+                payload["parent_line"],
+            )
+            d36_attempt = d36b.structural_attempt_id(
+                d36_evidence,
+                payload["body_digest"],
+            )
             if (
                 payload["mode"] != expected_mode
                 or mode_payload["mode"] != expected_mode
                 or payload["body_digest"] != event_body_digest(cell, record.proposal)
                 or payload["parent_line"] != mode_payload["parent_line"]
                 or payload["source_parent"] != mode_payload["source_parent"]
+                or payload["d36_evidence_kind"] != d36_evidence.kind
+                or payload["d36_evidence_record_id"] != d36_evidence.record_id
+                or payload["d36_attempt_id"] != d36_attempt
                 or payload["token_control"]
                 != ("coherence-neutral" if expected_mode == "TOKEN" else "not-token")
             ):
@@ -1349,10 +1522,7 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
             expected_attempt = (
                 ""
                 if mode == "NO_BIRTH"
-                else structural_attempt_id(
-                    main_parents[0].event_id,
-                    main_parents[0].payload_map()["body_digest"],
-                )
+                else main_parents[0].payload_map()["d36_attempt_id"]
             )
             if payload["attempt_id"] != expected_attempt:
                 raise AssertionError("selection attempt identity")
@@ -1373,6 +1543,8 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
                     "base_version",
                     "body_digest",
                     "capability",
+                    "carrier_event_id",
+                    "d36_evidence_kind",
                     "evidence_record_id",
                     "kind",
                     "participant_index",
@@ -1416,32 +1588,42 @@ def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -
             if len(carrier_candidates) != 1:
                 raise AssertionError("prepare carrier ancestry")
             carrier = carrier_candidates[0]
-            expected_attempt = structural_attempt_id(carrier.event_id, payload["body_digest"])
-            unsigned = dict(payload)
-            signature = unsigned.pop("signature", "")
+            mode = carrier.payload_map()["mode"]
+            evidence, envelope, actor = d36_prepare_adapter(
+                cell,
+                record.proposal,
+                participant,
+                mode,
+                carrier.payload_map()["parent_line"],
+            )
+            expected_attempt = envelope.attempt_id
             if (
-                payload["evidence_record_id"] != carrier.event_id
+                payload["carrier_event_id"] != carrier.event_id
+                or payload["d36_evidence_kind"] != evidence.kind
+                or payload["evidence_record_id"] != evidence.record_id
                 or record.proposal != selection.proposal
                 or record.owner != f"transaction:{record.proposal}"
                 or record.wire != f"transport:{record.proposal}->{participant}"
                 or payload["selected_click"] != selection.event_id
-                or payload["kind"] != "PREPARE"
-                or payload["sender_kind"] != "T"
-                or payload["sender_index"] != tx_index
-                or payload["target_kind"] != "P"
-                or payload["target_index"] != participant_index
-                or payload["tx_index"] != tx_index
-                or payload["response_record_id"]
-                or payload["application_code"] != 0
-                or payload["base_version"] != 0
+                or payload["kind"] != envelope.kind
+                or payload["sender_kind"] != envelope.sender_kind
+                or payload["sender_index"] != envelope.sender_index
+                or payload["target_kind"] != envelope.target_kind
+                or payload["target_index"] != envelope.target_index
+                or payload["tx_index"] != envelope.tx_index
+                or payload["participant_index"] != envelope.participant_index
+                or payload["response_record_id"] != envelope.response_record_id
+                or payload["application_code"] != envelope.application_code
+                or payload["base_version"] != envelope.base_version
+                or payload["body_digest"] != envelope.body_digest
                 or payload["body_digest"] != carrier.payload_map()["body_digest"]
                 or payload["body_digest"] != event_body_digest(cell, record.proposal)
                 or payload["attempt_id"] != expected_attempt
                 or selection.payload_map()["attempt_id"] != expected_attempt
                 or participant not in cell.participants(record.proposal)
-                or payload["capability"]
-                != route_capability_id(tx_index, participant_index, participant)
-                or signature != prepare_signature(unsigned)
+                or payload["capability"] != envelope.capability
+                or payload["signature"] != envelope.signature
+                or not d36b.participant_accepts_prepare(actor, envelope)
             ):
                 raise AssertionError("prepare structural attempt binding")
         else:
@@ -2032,18 +2214,29 @@ def visibility_checks() -> Tuple[Fraction, Fraction, Fraction, Fraction, int]:
         raise AssertionError("Pythagorean coupling")
     equal_mode = {mode: Fraction(1, 3) for mode in MODES}
     histories = tuple(product(MODES, repeat=3))
-    cell = ORIENTED_CELLS["path"]
-    shared_line = {proposal: "probe:shared-parent-line" for proposal in cell.vertices}
+    base_cell = ORIENTED_CELLS["path"]
+    shared_line = {proposal: "probe:shared-parent-line" for proposal in base_cell.vertices}
+    cell = oriented_cell(
+        "path-shared-parent-line",
+        base_cell.proposals,
+        shared_line,
+    )
     expected = Fraction(0)
     history_checks = 0
     for history in histories:
         modes = dict(zip(cell.vertices, history))
-        records = build_typed_history(
-            cell,
-            modes,
-            frozenset(),
-            shared_line,
-        )
+        records = build_typed_history(cell, modes, frozenset())
+        by_id = {record.event_id: record for record in records}
+        cache: Dict[Hashable, FrozenSet[Hashable]] = {}
+        for record in records:
+            causal_ancestors(record.event_id, by_id, cache)
+        born_records = [record for record in records if record.kind == BORN_CARRIER]
+        if any(
+            left.event_id not in cache[right.event_id]
+            and right.event_id not in cache[left.event_id]
+            for left, right in combinations(born_records, 2)
+        ):
+            raise AssertionError("same-parent-line births are not causally comparable")
         shadow = line_shadow(records, "probe:shared-parent-line", coherence)
         expected += Fraction(1, 27) * shadow
         if all(mode != "BORN" for mode in history) and shadow != 1:
@@ -2327,6 +2520,31 @@ def typed_priority_history_checks(
     return histories, events, prepares, dormant_tokens, priority_clicks
 
 
+def canonical_identity_checks() -> Tuple[int, int, int]:
+    bases = {base_record_id(f"participant:{index}") for index in range(1000)}
+    parents = {
+        opportunity_parent_id(
+            f"proposal:{index}",
+            f"line:{index}",
+            "TRANSACTION_OPPORTUNITY",
+        )
+        for index in range(1000)
+    }
+    actors = {
+        structural_actor_index("P", f"participant:{index}")
+        for index in range(1000)
+    }
+    if not all(
+        isinstance(identifier, tuple)
+        and identifier[:2] == ("D37_CANONICAL_ID", BASE_RECORD)
+        for identifier in bases
+    ):
+        raise AssertionError("theorem-level base IDs are not canonical tuples")
+    if not all(index >= 0 for index in actors):
+        raise AssertionError("injective actor index range")
+    return len(bases), len(parents), len(actors)
+
+
 def binary_text(dist: BinaryDistribution) -> str:
     return ", ".join(
         f"{{{','.join(sorted(atom))}}}:{ftext(probability)}"
@@ -2345,7 +2563,7 @@ def main() -> None:
 
     emit("[D37 admissible regional history specifications — exact finite receipt]")
     emit("ARITHMETIC: integers/Fractions only; machine enumeration is not physical order")
-    emit("SCOPE: supplied typed parent/port opportunity carriers over pairwise conflict graphs; countable completion requires the stated proof")
+    emit("SCOPE: supplied typed parent/wire opportunity carriers over pairwise conflict graphs; countable completion requires the stated proof")
 
     registered = tuple(
         GRAPHS[name]
@@ -2391,6 +2609,7 @@ def main() -> None:
         typed_event_total += len(typed_history)
         typed_prepare_total += sum(record.kind == D36_PREPARE for record in typed_history)
     typed_illegal_rejections = typed_legality_negative_checks()
+    canonical_ids = canonical_identity_checks()
     orientation_hash = hashlib.sha256(stable(orientation_rows).encode()).hexdigest()
     gates["S0"] = (
         vertex_total == 28
@@ -2403,6 +2622,7 @@ def main() -> None:
         and typed_event_total == 104
         and typed_prepare_total == 19
         and typed_illegal_rejections == 7
+        and canonical_ids == (1000, 1000, 1000)
         and automorphisms
         == {
             "d36_disjoint": 2,
@@ -2426,12 +2646,14 @@ def main() -> None:
         typed_event_total,
         typed_prepare_total,
         typed_illegal_rejections,
+        canonical_ids,
     ]
     emit("[REGISTERED TYPED OPPORTUNITY CARRIERS]")
     emit(f"graphs={len(registered)}; vertices={vertex_total}; conflict_edges={edge_total}; nonempty_regions={region_total}")
     emit(f"automorphism_counts={stable(automorphisms)}; oriented_interface_rows={len(orientation_rows)}; orientation_sha256={orientation_hash}")
     emit(f"interface_content_checks={interface_content_checks}/38; typed_causal_histories={typed_history_cells}/6; typed_events={typed_event_total}; signed_D36_prepare_records={typed_prepare_total}")
     emit(f"typed_illegal_histories_rejected={typed_illegal_rejections}/7; missing_parent=1; duplicate_mode=1; forged_attempt=1; forged_signature=1; wrong_priority=1; conflict=1; cross_TOKEN=1")
+    emit(f"canonical_tuple_ID_controls={canonical_ids}; SHA256_role=serialization_checksum_only; actor_indices=injective_arbitrary_precision")
     emit("distinct_parent_record_ids=1; explicit_parent_lines=1; explicit_event_types=1; causal_parent_bound=2; structural_labels_not_physical_slots=1")
 
     k3_conditionals = 0
@@ -2526,7 +2748,8 @@ def main() -> None:
     emit(f"path_to_edge_raw={binary_text(raw_k1[0])}; direct_edge={binary_text(raw_k1[1])}; finite_marked_DLR_towers={priority_towers}")
     emit(f"recorded_priority_and_all_outcomes={complete_click_atoms}/{len(path_priority)}; one_hop_output_counterexample={stable(one_hop_witness)}")
     emit(f"typed_priority_histories={typed_k1[0]}; typed_events={typed_k1[1]}; signed_exact_D36_prepare_records={typed_k1[2]}; dormant_TOKEN_records={typed_k1[3]}; recorded_priority_clicks={typed_k1[4]}")
-    emit("K1_infinite_quasilocal_completion=NOT_PROVED; finite_boundary_class=recorded_component_priority+exterior_outcomes")
+    emit("K1_typed_scope=complete-carrier-atoms-only; proper-region-parent-closed-transport=NOT_PROVED")
+    emit("K1_infinite_quasilocal_completion=NOT_PROVED; finite_probability_boundary_class=recorded_component_priority+exterior_outcomes")
 
     pairwise_overlap, triple_support, pair_atoms = anticorrelation_cover()
     path_k3_cover = cover_checks(GRAPHS["path"].vertices, hard_core(GRAPHS["path"], Fraction(2)), binary_projection)
@@ -2632,6 +2855,7 @@ def main() -> None:
         and expected_shadow == Fraction(2744, 3375)
         and joint_q_visibility == Fraction(431, 465)
         and typed_joint_q_visibility == joint_q_visibility
+        and visibility_history_checks == 27
         and complete_click_atoms == len(path_priority)
         and typed_k3 == (5, 105, 10, 15)
         and typed_k2 == (2, 44, 6, 6)
@@ -2651,10 +2875,11 @@ def main() -> None:
     emit("[D26 VISIBILITY / CLICK SOURCE]")
     emit(f"g={ftext(coupling)}; sqrt_1_minus_g={ftext(coherence)}; three_same_line_BORN_shadow={ftext(all_born_shadow)}")
     emit(f"equal_mode_three_opportunity_expected_shadow={ftext(expected_shadow)}; joint_Q_expected_factor={ftext(joint_q_visibility)}; typed_parent_line_history_checks={visibility_history_checks}; TOKEN_NO_BIRTH_factor=1")
-    emit("D26_parent_line_attached=1; coherence_neutral_TOKEN_control=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0")
+    emit("D26_parent_line_declared_and_causally_chained=1; comparable_same_line_BORN=1; coherence_neutral_TOKEN_control=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0")
     emit("[TYPED CLICK / PREPARE ADAPTERS]")
     emit(f"K3_histories_events_prepares_tokens={typed_k3}; K2_histories_events_prepares_tokens={typed_k2}")
-    emit(f"K1_histories_events_prepares_tokens_priority_clicks={typed_k1}; exact_attempt_key=carrier_id+body_digest; signed_PREPARE_parent_bound=2")
+    emit(f"K1_histories_events_prepares_tokens_priority_clicks={typed_k1}; exact_D36_attempt_key=evidence_record_id+body_digest; signed_PREPARE_parent_bound=2")
+    emit(f"D36_participant_accepts_PREPARE=K3:{typed_k3[2]},K2:{typed_k2[2]},K1:{typed_k1[2]},joint:{typed_mode_prepares}; locked_D36b_sha256={D36B_SHA256}")
 
     covariance = covariance_checks()
     anti_sizes = anti_dilution_checks()
@@ -2668,7 +2893,7 @@ def main() -> None:
         and linear_extensions == 70
         and same_wire_pairs == 6
         and linear_extension_digest
-        == "dfa0994db74254fc2095d4bb69ad1c20baa52e4e7a86f3699f104b585beaf501"
+        == "00023ba8f09b771b2e2a748f9944a43829eb48ca3845a18b8cfdb9a795e67881"
         and causal_restrictions == 2
         and (full_causal_events, left_causal_events, right_causal_events) == (24, 13, 11)
     )
@@ -2685,7 +2910,7 @@ def main() -> None:
     ]
     emit("[COVARIANCE / ANTI-DILUTION]")
     emit(f"relabel_covariance_families={covariance}/6; disconnected_local_factorizations=4/4; atom_counts={anti_sizes}")
-    emit(f"D33_linear_extensions={linear_extensions}; same_wire_comparable_pairs={same_wire_pairs}; replay_digest={linear_extension_digest}")
+    emit(f"D33_linear_extension_serializations={linear_extensions}; same_wire_comparable_pairs={same_wire_pairs}; canonical_DAG_digest={linear_extension_digest}")
     emit(f"D34_causal_restrictions={causal_restrictions}/2; typed_event_counts=full:{full_causal_events},left:{left_causal_events},right:{right_causal_events}")
     emit("boundary_widths=K3:one-hop-blockers,K2:two-hop-blockers+domination-demands,K1:recorded-component-priority")
 
@@ -2704,7 +2929,7 @@ def main() -> None:
     emit("[VERDICT]")
     emit(f"{'PASS' if passed == len(gates) else 'FAIL'} {passed}/{len(gates)}")
     emit("CLASSICAL TYPED CAUSAL REGIONAL SPECIFICATION / SUPPLIED OPPORTUNITY CARRIER / FAMILY NOT SELECTOR")
-    emit("K3 fixed-odds forcing survives; K2 progress survives with domination boundary; K1 finite marked lift is wider-boundary")
+    emit("K3 fixed-odds forcing survives; K2 progress survives; K1 is a finite marked probability lift with full-carrier typed atoms only")
     emit("countable completion proof, selected couplings, generated typed opportunity carrier and quantum lift remain separate claims")
     if passed != len(gates):
         raise SystemExit(1)

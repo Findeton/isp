@@ -5,8 +5,10 @@
 carrier / locally finite pairwise-conflict scope.  The original D37 hostile
 stream closed at `0B/0M/0m/0n`; the subsequent independent Paper 26 review
 froze `1B/5M/6m/3n` at commit `23a4ae0`.  Its causal-carrier blocker and listed
-receipt/wording repairs are implemented here, but promotion still requires a
-focused independent closing delta.  The campaign pin was committed at
+receipt/wording repairs were implemented at `e3161f5`; the focused delta then
+returned `1B/3M/4m/0n` and exposed K1 restriction, D26-line, D36-adapter and
+countable-identity defects.  Those second-round authorship repairs are now
+implemented, but promotion still requires a fresh focused closing delta.  The campaign pin was committed at
 `b06ba1a` before the first receipt execution.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
@@ -94,15 +96,19 @@ and record semantics.  A region carries participant-base identities, distinct
 typed opportunity-parent identities, lateral conflicting proposals and
 generated event types.  The machine's enumeration order is not part of `C`.
 
-A deterministic map `F_D` realizes every admitted atom as an immutable typed
-event DAG with content-derived IDs, owners, wires, typed payloads and at most
-two causal parents.  Its vocabulary is `BASE_RECORD`, `OPPORTUNITY_PARENT`,
+A deterministic map `F_D` realizes K3, K2 and joint-family atoms as immutable
+typed event DAGs with injective tagged canonical-tuple IDs, owners, wires,
+typed payloads and at most two causal parents.  SHA-256 is a finite
+serialization checksum only.  Its vocabulary is `BASE_RECORD`, `OPPORTUNITY_PARENT`,
 optional explicit `DORMANT_TOKEN`, `MODE_CLICK`, `BORN_CARRIER` or
 `TOKEN_ACTIVATION`, optional K1 `PRIORITY_CLICK`, `SELECTION_CLICK`, and signed
 exact `D36_PREPARE`.  Legality checks acyclicity, same-wire comparability,
-mode/carrier ancestry, selection feasibility, K1 greedy replay and the exact
-D36 structural-attempt binding `H(carrier_id,body_digest)`.  The typed history
-law is the pushforward `Gamma_D=(F_D)_*gamma_D`.
+mode/carrier ancestry and selection feasibility.  The D36 bridge builds actual
+locked D36b carrier `Record`s and signed `Envelope`s and requires participant
+acceptance.  The typed history law is the pushforward
+`Gamma_D=(F_D)_*gamma_D`.  K1 retains full-carrier typed atoms and greedy
+replay, but is excluded from this region-indexed pushforward until a typed
+priority-boundary restriction transport is constructed.
 
 The first arbitration alphabet is binary:
 
@@ -327,13 +333,14 @@ maximal feasible sets.  Enumerate the sufficient blocker/demand boundary,
 gate every positive conditional and nested composition, and print any raw
 restriction failure separately from the lifted result.
 
-### S4 — K1 recorded-mark lift
+### S4 — K1 recorded-mark probability lift
 
-Reproduce the D36 K1 pushforward from strict component priority marks, the
+Reproduce the K1 marked law and complete-carrier typed realization from strict component priority marks, the
 `1/3` versus `1/2` path separation and the raw path-to-edge failure.  Gate the
-finite marked conditional tower.  Search registered paths for a counterexample
+finite marked conditional tower and complete-carrier typed atoms.  Search registered paths for a counterexample
 to one-hop output-only boundary sufficiency; if found, retain it.  Do not
-promote finite marked consistency to infinite quasilocality.
+promote finite marked consistency to a typed proper-region restriction or
+infinite quasilocality.
 
 ### S5 — three-path marginal descent
 
@@ -352,15 +359,16 @@ birth-mode and arbitration conditionals from the same joint table.
 ### S7 — D26 and click-source anchors
 
 Use a rational `sqrt(1-g)` and gate the history-by-history visibility shadow
-on an implemented parent line, its expectation under the registered finite
+on an implemented causally chained parent line, its expectation under the registered finite
 law and the multiplicative same-line formula.  TOKEN is the explicit
 coherence-neutral dormant-support control.  Build typed K3/K2/K1 histories,
-record each K1 priority as a click and verify every signed D36 prepare.
+record each K1 priority as a click and verify every actual D36b envelope by
+participant acceptance.
 
 ### S8 — covariance and anti-dilution
 
-Gate relabeling covariance for every family, equality over every linear
-extension of one typed event poset while preserving same-wire order, and exact
+Gate relabeling covariance for every family, canonical serialization over
+every linear extension of one typed event poset while preserving same-wire order, and exact
 typed causal restriction on both components of a disconnected insertion.
 Print the precise boundary width/class for K3, K2 and K1.
 
@@ -464,14 +472,15 @@ data/d37_regional_history_specification_exact.out
 The source, stdout-body and internal-science hashes are respectively
 
 ```text
-104eee846131a91fa3edea70211d0206d728640f6f9f086081362f13b47a539d
-f126da4f7fbc541645bddd88dacebd088539ac1781a1f518cad7bc39a64fad38
-2c4f7681310345ccc2e60107f0b11f93b8006a3fae62abc7a439bf38fd7dc142
+dd5f8991569353e8b865370ffde0d9fef49ee5ba03e49505865a9c6fbfbc805c
+be36426e043f1b7c96af989a7e6c82c8760b4ce3b303f25e1a4c8e17b59d9900
+b57af3d7b0c35a2edb3b21caee8f2452dfcbb63f7320bf9ce3e135cc308b36da
 ```
 
 The complete receipt hash is
-`13e2df5dbd31d1b54afaaf9ca336fa6a92d52754382b591ce411cf22495f78a3`.
-Fresh executions under hash seeds `0`, `1`, `17`, `42` and `104729` are
+`1a8b94e24ce5b1901acd5dc5ff658ccd0420906d788d2b2a0684ce4162880ef4`.
+Fresh executions under hash seeds `0`, `1`, `17`, `42`, `104729` and
+`271828` are
 byte-identical.
 
 ### 13.1 The representation result is a family
@@ -482,7 +491,10 @@ fixture.  Thirty-eight oriented interface rows carry exact participant bases,
 distinct typed opportunity parents, explicit parent lines/types, lateral
 proposals and generated mode/selection click types.  All `38/38` rows pass
 content validation.  S0 realizes six fixture histories with 104 typed events
-and 19 signed D36 prepares, and rejects `7/7` illegal mutations covering a
+and 19 participant-accepted D36b prepares.  The full K3/K2/K1/joint battery
+accepts `10+6+20+156=192` actual D36b envelopes, and three 1,000-item controls
+gate canonical record IDs and injective actor indices.  S0 rejects `7/7`
+illegal mutations covering a
 missing parent, duplicate mode, forged attempt, forged signature, wrong K1
 priority, conflicting selection and cross-proposal TOKEN ancestry.
 
@@ -525,10 +537,12 @@ exterior {D}   {A}:5/11, {B}:6/11;
 exterior {E}             {B}:1.
 ```
 
-This is the retained boundary-width counterexample.  The K1 pushforward also
+This is the retained boundary-width counterexample.  The K1 complete-carrier realization also
 contains six immutable priority-click records, 140 typed events and 20 signed
 exact D36 prepares; legality recomputes selection from each recorded order.
-K1's finite marked tower does not earn an infinite quasilocal completion.
+It is not a proper-region typed pushforward: deleting a component exterior
+would orphan the retained selection click's priority parent.  K1's finite
+marked tower does not earn an infinite quasilocal completion.
 
 ### 13.2 Finite covers and the joint opportunity law
 
@@ -556,7 +570,10 @@ At `g=9/25`, D26 gives `sqrt(1-g)=4/5`.  Three realized same-line BORN events
 therefore give visibility factor `64/125`; the equal-mode three-opportunity
 mixture gives `2744/3375`.  The same joint path table predicts the single-Q
 factor `431/465`.  The receipt derives those factors from actual typed
-`BORN_CARRIER` records on an explicit parent line, relative to explicit
+`BORN_CARRIER` records on a carrier-declared parent line.  Successive
+opportunity-parent records are chained through the previous mode/carrier
+result, making every pair of BORN carriers on that line causally comparable;
+an undeclared-line substitution rejects.  The comparison is relative to explicit
 coherence-neutral `DORMANT_TOKEN` controls.  These are exact observable maps
 from a supplied member, not a universal birth rate.
 
@@ -567,8 +584,10 @@ incompatibility relation is a locally finite pairwise conflict graph.  At the
 stated finite-range scopes, the K3 feasible-support family, the K2
 independent-dominating family and the joint birth-mode/arbitration family each
 admit at least one compatible global classical measure on the admitted
-configuration subshift.  Its deterministic realization supplies the
-corresponding typed causal-history pushforward.  The theorem does not assert
+configuration subshift.  Its deterministic core realization through the
+recorded selection clicks supplies the corresponding typed causal-history
+pushforward.  The finite imported D36b append adapter is not promoted to a
+countable collision-free identity theorem.  The theorem does not assert
 uniqueness.
 
 **Proof.**  Each vertex has a finite alphabet.  K3 exclusion, K2 independence
@@ -594,8 +613,14 @@ mu_n(gamma_D f) = mu_n(f).
 
 Passing to the subsequential limit yields `mu(gamma_D f)=mu(f)` for every
 finite `D` and cylinder `f`.  Therefore `mu` belongs to `G(gamma)`.  Applying
-the local content-derived realization rules and taking their countable union
-gives the typed pushforward measure.  ∎
+the local core realization rules through each `SELECTION_CLICK`, with
+injective tagged canonical-tuple event IDs
+and injective arbitrary-precision integer actor encodings, then taking their
+countable union, gives the typed pushforward measure.  SHA-256 values in the
+receipt are serialization checksums, not theorem-level identities.  The exact
+imported D36b carrier/envelope adapter remains the separately gated finite
+append interface: its locked evidence IDs are SHA-based and are not used as a
+countable injectivity premise.  ∎
 
 This is a root-free completion on a **supplied** typed carrier with a locally
 finite pairwise conflict graph.  D37 does not generate that carrier, derive its couplings, prove
@@ -642,22 +667,20 @@ The blocker and majors are addressed as follows:
 
 1. S0 now checks 38 typed incoming/lateral/generated interfaces and realizes
    actual event DAGs with distinct parent-record identities, types, owners,
-   ports/wires, causal parents, acyclicity and same-wire comparability.
+   wires, causal parents, acyclicity and same-wire comparability.
 2. D33 covariance enumerates all 70 linear extensions of one typed BORN
-   history; all replay to one digest while six same-wire event pairs remain
-   comparable.
+   history; all are valid serializations of one canonical DAG while six
+   same-wire event pairs remain comparable.  This is not a second actor replay.
 3. D34 anti-dilution restricts one 24-event two-component history to exact
    independently realized 13- and 11-event component histories.
-4. D26 visibility reads actual `BORN_CARRIER.parent_line` ancestry across 27
-   typed controls; TOKEN uses an explicit pre-existing coherence-neutral
-   `DORMANT_TOKEN` record.
-5. K3, K2, K1 and the joint family all pass through immutable mode/selection
-   clicks and signed exact D36 prepares.  K1 priority is a `PRIORITY_CLICK`,
-   and selection is recomputed from its recorded order.  Attempts are keyed by
-   `H(carrier_id,body_digest)`, never a global ordinal.  The prepare uses
-   D36b's authenticated field order/signature formula, content-derived integer
-   actor identities, blank response evidence and application code zero.
-6. S2 directly evaluates all 30 advertised exact probability ratios.
+4. D26 visibility reads actual causally comparable `BORN_CARRIER` ancestry on
+   a carrier-declared common parent line across 27 typed controls; TOKEN uses
+   an explicit pre-existing coherence-neutral `DORMANT_TOKEN` record.
+5. K3, K2 and the joint family pass through immutable mode/selection clicks
+   and actual D36b carrier records/envelopes.  Every registered prepare is
+   accepted by D36b's participant validator.  K1 has the same complete-carrier
+   typed atoms but no typed proper-region restriction claim.
+6. S2 directly evaluates all 30 distinct feasible-addition probability ratios.
 
 The six minors and three nits are also applied: the paper claims
 representative construction plus a premise-bounded K3 characterization;
@@ -670,3 +693,34 @@ This is authorship repair, not a self-closing review.  The frozen round-one
 file remains unchanged, and a focused independent delta must re-run the typed
 carrier, D33/D34/D26/D36 bridges, S2 ratios and claim scope before Paper 26 can
 be promoted.
+
+## 17. Focused independent delta and second repair
+
+The focused three-lane delta on frozen commit `e3161f5` returned an aggregate
+`1B/3M/4m/0n`.  It confirmed the probability theorems and all headline
+numbers, but withheld promotion for four real interface defects:
+
+1. proper K1 restriction orphaned the retained selection click's component-
+   priority parent;
+2. D26's first shared-line fixture grouped three root labels without a causal
+   common-line realization;
+3. the first D36 bridge copied D36-shaped fields without constructing a D36b
+   `Record`/`Envelope` accepted by a participant; and
+4. finite SHA-256 event and actor identities could not support the asserted
+   countable typed pushforward.
+
+The present authorship repair takes the narrow K1 branch and the constructive
+branches elsewhere.  K1 remains a finite marked probability specification
+with complete-carrier typed witnesses, but is excluded from typed proper-
+region transport.  The D26 fixture declares one shared parent line and chains
+successive parent records through the previous mode/carrier result.  D37 locks
+the D36b source, constructs admitted `T0_BIRTH`/`SLOT_ACTIVATION` evidence and
+signed envelopes, and requires `participant_accepts_prepare()` on every
+registered prepare.  Theorem-level record IDs are injective tagged canonical
+tuples, actor labels are injected into arbitrary-precision naturals and
+SHA-256 is demoted to checksum use.  S2 now visits all 30 distinct addition
+edges, S7 asserts all 27 visibility histories, and parent/wire plus
+linear-extension-serialization wording replaces the two remaining overclaims.
+
+This section records authorship repair, not independent closure.  Promotion
+still requires a fresh focused delta on this second repair.

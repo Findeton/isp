@@ -4,13 +4,14 @@
 
 D37 constructs the classical regional object queued by Papers 24 and 25.
 Finite typed opportunity regions carry normalized conditional kernels, and a
-deterministic realization map pushes every admitted atom to an immutable event
-DAG. Nested DLR composition, three-path marginal descent, event-poset
-covariance and causal anti-dilution are exact gates. The receipt passes `9/9`
-and is byte-identical under five hash seeds. Its eight-graph registry carries
-38 checked incoming/lateral/generated interfaces; S0 realizes six fixture
-histories with 104 typed events and 19 signed D36 prepares, and rejects all seven
-registered illegal-history mutations.
+deterministic realization map pushes every K3, K2 and joint-family atom to an
+immutable event DAG; K1 retains complete-carrier typed atoms but no typed
+proper-region transport. Nested DLR composition, three-path marginal descent,
+linear-extension covariance and causal anti-dilution are exact gates. The
+receipt passes `9/9` and is byte-identical under six hash seeds. Its eight-graph
+registry carries 38 checked incoming/lateral/generated interfaces; S0 realizes
+six fixture histories with 104 typed events and 19 participant-accepted D36b
+prepares, and rejects all seven registered illegal-history mutations.
 
 The result is a family, not a unique selector. K3 passes 508 intrinsic
 conditionals, 7,098 nested towers and 138 boundary mixtures; exact positive
@@ -32,6 +33,9 @@ the joint Q visibility factor is `431/465`. A compactness theorem supplies at
 least one compatible global classical measure and typed-history pushforward
 for K3, K2 and the joint family on each supplied countable typed carrier with
 a locally finite pairwise conflict graph at the stated finite-range scope.
+The countable typed-history statement covers the injectively identified causal
+core through recorded selection; the exact D36b append adapter is a separate
+finite receipt interface because its locked evidence identities are SHA-based.
 
 The candidate noun is **CLASSICAL TYPED CAUSAL REGIONAL SPECIFICATION FAMILY /
 FINITE SPECIFICATION AND COUNTABLE LOCALLY FINITE PAIRWISE-CONFLICT COMPLETION /
@@ -43,16 +47,20 @@ The D37 hostile stream closes at `0B/0M/0m/0n` after requiring complete
 marked-K1 product equality, making the path-five witness fail-closed, stating
 K2's radius-two boundary and removing Theorem 1's redundant Markov premise.
 The subsequent independent Paper 26 review reproduced the arithmetic and
-Theorems 1--3 but withheld promotion at `1B/5M/6m/3n`.  The constructive
-repair now implements its required typed parent/port event DAG. All 70 linear
-extensions of the D33 fixture replay identically while same-wire order is
-preserved; D34 restriction maps one 24-event history exactly to independent
-13- and 11-event component histories; D26 reads actual parent-line ancestry;
-and K3/K2/K1/joint atoms emit immutable clicks and exact signed D36 prepares
-keyed by `H(carrier_id,body_digest)`. S2 now evaluates all 30 probability
-ratios directly and the review's scope/wording repairs are applied. Promotion
-remains withheld until a focused independent closing delta validates this
-repair.
+Theorems 1--3 but withheld promotion at `1B/5M/6m/3n`.  Its first constructive
+repair implemented a typed causal event DAG. A focused closing delta then
+returned `1B/3M/4m/0n`: K1 proper restriction orphaned its priority root, the
+D26 line was label-only, the D36 tuple was not an actual imported adapter, and
+finite digests could not carry the countable identity theorem. The second
+authorship repair now narrows K1 to complete-carrier typed atoms, causally
+chains a declared shared D26 line, imports locked D36b records/envelopes and
+requires actual participant acceptance, and uses injective tagged tuples plus
+arbitrary-precision actor encodings for theorem identities. All 70 linear
+extensions have one canonical DAG digest while preserving same-wire order;
+D34 restriction maps one 24-event history exactly to independent 13- and
+11-event component histories; S2 asserts every distinct feasible-addition
+edge; and S7 gates all 27 visibility histories. Promotion remains withheld
+until a fresh focused independent delta validates this repair.
 
 - `note-d37-regional-history-specifications.md`
 - `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`
@@ -61,6 +69,7 @@ repair.
 - `reviews/d37-round1-regional-specification-hostile-review.md`
 - `reviews/d37-round2-regional-specification-closing-delta.md`
 - `reviews/paper26-round1-independent-review.md`
+- `reviews/paper26-round2-typed-carrier-closing-delta.md`
 
 ## Prior — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
 
