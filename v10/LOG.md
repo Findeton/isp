@@ -3894,3 +3894,46 @@ D36 click-record overclaims, plus S2's failure to evaluate the 30 advertised
 probability ratios. Six scope/evidence minors and three wording nits remain.
 No repair is applied; promotion stays withheld pending a causal-carrier or
 systematic theorem-narrowing decision and a focused independent closing delta.
+
+## 2026-07-14 — D37 implements the genuine typed causal carrier (LEDGER #232)
+
+The constructive response to Paper 26's frozen independent review is now
+implemented.  D37's supplied carrier is
+`C=(V,E_conf,Part,parentLine,proposalType)`, and every admitted atom has a
+deterministic pushforward to an immutable typed event DAG.  Legal histories
+contain exact participant bases, distinct typed opportunity parents, optional
+pre-existing coherence-neutral dormant tokens, mode/carrier/selection clicks,
+recorded K1 priority clicks and signed exact D36 prepares.  Every record has a
+content-derived ID, owner, wire, typed payload and at most two causal parents;
+the validator rejects cycles, missing ancestry, same-wire incomparability,
+mode/carrier mismatch, infeasible selections, incorrect K1 greedy replay and
+any prepare not bound to `H(carrier_id,body_digest)` plus its exact base,
+capability, roles and ideal signature.  The prepare adapter uses D36b's exact
+authenticated field order and signature formula, content-derived integer actor
+identities, blank response record and application code zero.
+
+The receipt remains `PASS 9/9`.  S0 checks `38/38` typed interfaces and six
+fixture histories totaling 104 events and 19 signed prepares; it also rejects
+`7/7` missing-parent, duplicate-mode, forged-attempt, forged-signature,
+wrong-priority, conflicting-selection and cross-TOKEN mutations.  K1's six path
+atoms realize 140 events, 20 prepares and six priority clicks; K2 and K3 use
+the same typed adapter.  The symmetric joint family realizes 93 histories,
+1,683 events, 106 dormant-token records and 156 prepares.  D26 evaluates 27
+actual same-parent-line histories.  D33 enumerates all 70 linear extensions of
+one typed history and obtains one replay digest while retaining six comparable
+same-wire pairs.  D34 restricts a 24-event disconnected history exactly to
+independently built 13- and 11-event components.  S2 now directly asserts all
+30 exact feasible-addition probability ratios; all other gates assert their
+complete expected censuses.
+
+The exact source, stdout-body, internal-science and complete-receipt hashes are
+respectively `104eee84...539d`, `f126da4f...ad38`, `2c4f7681...c142` and
+`13e2df5d...78a3`.  Runs under hash seeds `0`, `1`, `17`, `42` and `104729`
+are byte-identical.  Paper 26 and the D37 note now state representative
+construction rather than exhaustive classification, pairwise-conflict and
+admitted-subshift completion scope, three-path marginal descent, Q marginals,
+the corrected Paper 15 title and exact typed D33/D34/D26/D36 bridges.
+
+This ledger is authorship repair, not review closure.  The frozen independent
+review remains unchanged and promotion remains withheld pending a focused
+independent closing delta on the repaired carrier and claims.

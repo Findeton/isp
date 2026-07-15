@@ -1,11 +1,13 @@
 # D37 — admissible regional history specifications
 
-**Status:** EXACT FINITE RECEIPT PASS `9/9`; classical completion theorem at
-the supplied countable locally finite opportunity-complex scope; D37 hostile
-stream closed at `0B/0M/0m/0n`; independent Paper 26 review filed and
-promotion withheld at `1B/5M/6m/3n`.  The campaign pin was committed at
-`b06ba1a` before
-`code/d37_regional_history_specification_exact.py` was run.
+**Status:** INDEPENDENT-REVIEW REPAIR CANDIDATE; exact typed-causal receipt
+`PASS 9/9`; classical completion theorem at the supplied countable typed
+carrier / locally finite pairwise-conflict scope.  The original D37 hostile
+stream closed at `0B/0M/0m/0n`; the subsequent independent Paper 26 review
+froze `1B/5M/6m/3n` at commit `23a4ae0`.  Its causal-carrier blocker and listed
+receipt/wording repairs are implemented here, but promotion still requires a
+focused independent closing delta.  The campaign pin was committed at
+`b06ba1a` before the first receipt execution.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
 
@@ -18,16 +20,18 @@ Paper 25 queues one constructive object:
 > global completion.
 
 D37 does not pre-register that one unique functional will be selected.  The
-record predicts the opposite.  The target is construction and classification:
+record predicts the opposite.  The target is representative construction and
+premise-bounded characterization:
 
-> classify the classical regional specifications admitted by explicit
-> finite-cover, covariance, locality, click-record and reception constraints;
-> construct compatible global measures where possible; and name every
-> coupling or completion freedom that survives.
+> construct classical regional specifications admitted by explicit
+> marginal-descent, covariance, locality, click-record and reception
+> constraints; characterize K3 at its stated premise width; construct
+> compatible global measures where possible; and name every coupling or
+> completion freedom that survives.
 
 The likely family is the result, not an under-delivery.  A later selection
 paper would then have a sharp target: select or identify the coupling data of
-the classified family, including the action-to-history bridge.  Paper 16's
+the constructed families, including the action-to-history bridge.  Paper 16's
 warning remains load-bearing: `S(I)=exp(-I)` for a supplied opportunity is not
 by itself a normalized history measure or a selector.
 
@@ -77,17 +81,28 @@ The first does not imply the other two without additional hypotheses.
 
 ## 3. Finite classical carrier
 
-The first exact carrier is a supplied finite opportunity/conflict complex
+The exact carrier is a supplied finite typed opportunity carrier
 
 ```text
-C = (V, E_conf, parent, type).
+C = (V, E_conf, Part, parentLine, proposalType).
 ```
 
 `V` is a finite set of structurally identified opportunity roles;
-`E_conf` is the D36 incompatibility graph; `parent` and `type` retain causal
-orientation and record semantics.  A region is a finite role subset together
-with every incident boundary half-edge and carried parent/type data.  The
-machine's enumeration order is not part of `C`.
+`E_conf` is the D36 pairwise incompatibility graph; `Part` gives exact
+participant roles; `parentLine` and `proposalType` retain causal orientation
+and record semantics.  A region carries participant-base identities, distinct
+typed opportunity-parent identities, lateral conflicting proposals and
+generated event types.  The machine's enumeration order is not part of `C`.
+
+A deterministic map `F_D` realizes every admitted atom as an immutable typed
+event DAG with content-derived IDs, owners, wires, typed payloads and at most
+two causal parents.  Its vocabulary is `BASE_RECORD`, `OPPORTUNITY_PARENT`,
+optional explicit `DORMANT_TOKEN`, `MODE_CLICK`, `BORN_CARRIER` or
+`TOKEN_ACTIVATION`, optional K1 `PRIORITY_CLICK`, `SELECTION_CLICK`, and signed
+exact `D36_PREPARE`.  Legality checks acyclicity, same-wire comparability,
+mode/carrier ancestry, selection feasibility, K1 greedy replay and the exact
+D36 structural-attempt binding `H(carrier_id,body_digest)`.  The typed history
+law is the pushforward `Gamma_D=(F_D)_*gamma_D`.
 
 The first arbitration alphabet is binary:
 
@@ -96,10 +111,10 @@ x_v = 1   the opportunity is selected;
 x_v = 0   it is not selected.
 ```
 
-Every `x_v` is a durable click outcome.  A selected set is feasible iff no
-conflict edge has both endpoints selected.  Later sections add physical
-opportunity modes without treating mathematical role labels as dormant
-physical records.
+Every `x_v` becomes a durable `SELECTION_CLICK`.  A selected set is feasible
+iff no conflict edge has both endpoints selected.  Later sections add
+physical opportunity modes without treating mathematical role labels as
+dormant physical records.
 
 ## 4. Three arbitration families and the representation fork
 
@@ -153,7 +168,7 @@ which rejected exterior collar vertices still require domination from inside.
 ```
 
 The receipt decides whether this lift satisfies exact regional composition.
-If it does, progress survives overlap consistency and the classification is
+If it does, progress survives overlap consistency and the admitted family is
 strictly wider than K3.
 
 ### 4.3 K1: recorded priority marks
@@ -207,12 +222,12 @@ mu(mode,x) proportional to
     1[x feasible].
 ```
 
-This is an existence/classification carrier, not nature's selected law.  Its
+This is a representative construction, not nature's selected law.  Its
 conditionals jointly answer whether an opportunity is absent, TOKEN or BORN
 and whether a present opportunity is selected.  The mode weights and
 activities remain supplied coupling data.
 
-D24 supplies `B_g` only after the BORN alternative is selected.  D26 gives
+D24 supplies `B_g` only after the BORN mode occurs.  D26 gives
 each realized same-line birth history the observable
 
 ```text
@@ -232,13 +247,15 @@ anticorrelation cover remains a required negative gate: every pair admits a
 normalized law with uniform singleton marginals, while no positive joint law
 exists on the triple.
 
-For a finite opportunity complex, each registered global joint law supplies a
-compatible finite completion by construction.  The receipt must nonetheless
-recover it from regional conditionals and verify every finite-cover marginal,
-so that “global law exists” is not a relabeling of the input table.
+For a finite typed carrier, each registered global joint law supplies a
+compatible finite completion by construction.  The receipt's deliberately
+narrow S5 check projects those joints through the two- and three-region covers
+of the three-path.  It verifies 99 marginal-descent identities; it neither
+reconstructs a joint from arbitrary regional marginals nor enumerates every
+cover of every registered graph.
 
-For a supplied countable locally finite opportunity complex, the analytical
-completion target is narrower and explicit:
+For a supplied countable typed carrier with a locally finite pairwise conflict
+graph, the analytical completion target is narrower and explicit:
 
 - finite alphabet and finite-range closed hard constraints;
 - quasilocal regional kernels;
@@ -266,7 +283,7 @@ Every admitted family must pass:
 
 1. actor/opportunity relabeling covariance;
 2. invariance under machine enumeration of incomparable roles;
-3. exact factorization on disconnected opportunity complexes;
+3. exact factorization and causal restriction on disconnected typed carriers;
 4. unchanged local conditionals after inserting a disconnected remote cell;
 5. boundary dependence only through the declared collar or dependency data;
 6. durable click records for every stochastic arbitration mark and outcome.
@@ -283,8 +300,9 @@ library integers and `Fraction`.  It will fail closed.
 ### S0 — registered objects
 
 Rebuild the D36 pair, path, triangle, disjoint and partial conflict cells plus
-at least one longer path needed to test boundary width.  Check graph
-incidence, automorphisms, region enumeration and exact normalization.
+the longer boundary-width paths.  Check graph incidence, automorphisms, region
+enumeration, all typed interface contents, event-DAG legality, exact signed
+D36 prepare binding and the expected census.
 
 ### S1 — K3 full finite specification
 
@@ -296,8 +314,9 @@ factorization.
 
 ### S2 — finite forcing theorem
 
-Gate the local odds on every registered boundary and independently reconstruct
-the global K3 weights by single-site flip ratios.  Include negative controls
+Directly evaluate every exact probability ratio
+`mu(x union {v})/mu(x)=lambda_v` on the registered feasible additions and
+reconstruct the global K3 weights.  Include negative controls
 with context-dependent odds and maximal-support zeros; neither may be
 misclassified as the fixed-odds safe-support theorem.
 
@@ -316,32 +335,34 @@ finite marked conditional tower.  Search registered paths for a counterexample
 to one-hop output-only boundary sufficiency; if found, retain it.  Do not
 promote finite marked consistency to infinite quasilocality.
 
-### S5 — finite-cover descent
+### S5 — three-path marginal descent
 
-Gate every registered cover of the finite test complexes against the global
-joint.  Retain the pairwise-anticorrelation/no-triple-joint counterexample and
-distinguish overlap agreement, cover extendability and global completion.
+Gate the two- and three-region covers of the three-path against each supplied
+global joint.  Retain the pairwise-anticorrelation/no-triple-joint
+counterexample and distinguish this marginal sanity check from cover
+reconstruction, extendability and global completion.
 
 ### S6 — joint birth/arbitration conditionals
 
 Enumerate the `NO_BIRTH/TOKEN/BORN` joint family at two parameter points.
-Gate normalization, regional composition, BORN/TOKEN exchange symmetry when
+Gate normalization, regional composition, BORN/TOKEN exchange symmetry only when
 their supplied weights match, disjoint factorization and derivation of both
 birth-mode and arbitration conditionals from the same joint table.
 
 ### S7 — D26 and click-source anchors
 
-Use a rational `sqrt(1-g)` and gate the history-by-history visibility shadow,
-its expectation under the registered finite law and the multiplicative
-same-line retry formula.  TOKEN and NO_BIRTH pay no D26 birth cost.  Verify
-that every K1 priority and every selected/rejected result is present in the
-recorded atom before projection.
+Use a rational `sqrt(1-g)` and gate the history-by-history visibility shadow
+on an implemented parent line, its expectation under the registered finite
+law and the multiplicative same-line formula.  TOKEN is the explicit
+coherence-neutral dormant-support control.  Build typed K3/K2/K1 histories,
+record each K1 priority as a click and verify every signed D36 prepare.
 
 ### S8 — covariance and anti-dilution
 
-Gate relabeling covariance for every family and pathwise equality of local
-conditionals after a disconnected insertion.  Print the precise boundary
-width/class for K3, K2 and K1 rather than calling them all local.
+Gate relabeling covariance for every family, equality over every linear
+extension of one typed event poset while preserving same-wire order, and exact
+typed causal restriction on both components of a disconnected insertion.
+Print the precise boundary width/class for K3, K2 and K1.
 
 ## 9. Claim ladder
 
@@ -357,14 +378,15 @@ S4 pass
   finite recorded-mark K1 specification only at the boundary width printed;
 
 S5--S6 pass
-  finite-cover and joint birth/arbitration construction on supplied complexes;
+  three-path marginal descent and joint birth/arbitration construction;
 
 S7--S8 pass
-  corpus-conforming observational and covariance interface.
+  corpus-conforming typed click/PREPARE, lineage, event-poset covariance and
+  causal anti-dilution interface.
 ```
 
 No finite receipt proves that nature uses any member, selects its activities,
-derives them from the D15 action packet, generates the opportunity complex,
+derives them from the D15 action packet, generates the typed opportunity carrier,
 or has a unique global completion.
 
 ## 10. Quantum and geometry scope
@@ -442,25 +464,34 @@ data/d37_regional_history_specification_exact.out
 The source, stdout-body and internal-science hashes are respectively
 
 ```text
-8a8772f878d725ce1f22acc703cd23accd531ca0ebb8a08af2bc01eca92f7f4a
-91a0cb3a85aca73d4cc78266ef29f0a4bdac8cf7a44406a7e258a3d71bb7f5c7
-cf9997407d8cb8b974f442ab341b7f4d3e6a1b3d3db3c43c6c4207189c0df0bf
+104eee846131a91fa3edea70211d0206d728640f6f9f086081362f13b47a539d
+f126da4f7fbc541645bddd88dacebd088539ac1781a1f518cad7bc39a64fad38
+2c4f7681310345ccc2e60107f0b11f93b8006a3fae62abc7a439bf38fd7dc142
 ```
 
-Fresh executions under `PYTHONHASHSEED=17` and `104729` are byte-identical.
+The complete receipt hash is
+`13e2df5dbd31d1b54afaaf9ca336fa6a92d52754382b591ce411cf22495f78a3`.
+Fresh executions under hash seeds `0`, `1`, `17`, `42` and `104729` are
+byte-identical.
 
 ### 13.1 The representation result is a family
 
 The structural registry contains eight graphs, including both D36's actual
 two-proposal no-conflict disjoint cell and the separate two-edge factorization
-fixture.  Twenty-three oriented interface rows carry participant bases,
-carrier parents and generated mode/selection clicks.
+fixture.  Thirty-eight oriented interface rows carry exact participant bases,
+distinct typed opportunity parents, explicit parent lines/types, lateral
+proposals and generated mode/selection click types.  All `38/38` rows pass
+content validation.  S0 realizes six fixture histories with 104 typed events
+and 19 signed D36 prepares, and rejects `7/7` illegal mutations covering a
+missing parent, duplicate mode, forged attempt, forged signature, wrong K1
+priority, conflicting selection and cross-proposal TOKEN ancestry.
 
 K3 passes `508` intrinsic regional-condition checks, `7,098` nested DLR tower
 checks and `138` boundary-mixture checks at activities one and two.  The
 finite forcing theorem is narrower than the pin's redundant premise list:
-exact positive feasible support and fixed feasible-addition odds reconstruct
-the global vertex-activity law.  The accepted one-hop Markov boundary is a
+exact positive feasible support and 30 directly evaluated fixed
+feasible-addition probability ratios reconstruct 25 global states and the
+vertex-activity law.  The accepted one-hop Markov boundary is a
 separately checked K3 locality property, not an additional premise used by
 the deletion-path proof.  The context-dependent odds negative control prints
 both `2` and `4`; overlap consistency alone therefore does not receive credit
@@ -494,12 +525,14 @@ exterior {D}   {A}:5/11, {B}:6/11;
 exterior {E}             {B}:1.
 ```
 
-This is the retained boundary-width counterexample.  K1's finite marked tower
-does not earn an infinite quasilocal completion.
+This is the retained boundary-width counterexample.  The K1 pushforward also
+contains six immutable priority-click records, 140 typed events and 20 signed
+exact D36 prepares; legality recomputes selection from each recorded order.
+K1's finite marked tower does not earn an infinite quasilocal completion.
 
 ### 13.2 Finite covers and the joint opportunity law
 
-K3, K2 and marked K1 each pass `33` registered finite-cover overlap checks.
+K3, K2 and marked K1 each pass `33` three-path marginal-descent checks.
 The permanent negative gate also survives: three pairwise anticorrelation
 laws have matching uniform singleton overlaps but zero triple joint support.
 
@@ -515,23 +548,28 @@ P_Q(NO_BIRTH)   = 25/93;
 P_Q(selected)   = 6/31.
 ```
 
-Those are conditionals and marginals of one normalized table.  There is no
+Those are marginals of one normalized regional conditional table.  There is no
 second birth or arbitration lottery.  They are not selected numbers: changing
 the mode weights or activity gives another admitted member.
 
 At `g=9/25`, D26 gives `sqrt(1-g)=4/5`.  Three realized same-line BORN events
 therefore give visibility factor `64/125`; the equal-mode three-opportunity
 mixture gives `2744/3375`.  The same joint path table predicts the single-Q
-factor `431/465`.  These are exact observable maps from a supplied member,
-not a universal birth rate.
+factor `431/465`.  The receipt derives those factors from actual typed
+`BORN_CARRIER` records on an explicit parent line, relative to explicit
+coherence-neutral `DORMANT_TOKEN` controls.  These are exact observable maps
+from a supplied member, not a universal birth rate.
 
 ### 13.3 Classical countable completion theorem
 
-**Theorem.**  Let `C` be a supplied countable locally finite opportunity
-complex.  At the stated finite-range scopes, the K3 feasible-support family,
-the K2 independent-dominating family and the joint birth-mode/arbitration
-family each admit at least one compatible global classical measure.  The
-theorem does not assert uniqueness.
+**Theorem.**  Let `C` be a supplied countable typed opportunity carrier whose
+incompatibility relation is a locally finite pairwise conflict graph.  At the
+stated finite-range scopes, the K3 feasible-support family, the K2
+independent-dominating family and the joint birth-mode/arbitration family each
+admit at least one compatible global classical measure on the admitted
+configuration subshift.  Its deterministic realization supplies the
+corresponding typed causal-history pushforward.  The theorem does not assert
+uniqueness.
 
 **Proof.**  Each vertex has a finite alphabet.  K3 exclusion, K2 independence
 plus domination, and the joint mode/selection constraints are closed local
@@ -555,18 +593,20 @@ mu_n(gamma_D f) = mu_n(f).
 ```
 
 Passing to the subsequential limit yields `mu(gamma_D f)=mu(f)` for every
-finite `D` and cylinder `f`.  Therefore `mu` belongs to `G(gamma)`.  ∎
+finite `D` and cylinder `f`.  Therefore `mu` belongs to `G(gamma)`.  Applying
+the local content-derived realization rules and taking their countable union
+gives the typed pushforward measure.  ∎
 
-This is a root-free completion on a **supplied** locally finite opportunity
-complex.  D37 does not generate that complex, derive its couplings, prove
+This is a root-free completion on a **supplied** typed carrier with a locally
+finite pairwise conflict graph.  D37 does not generate that carrier, derive its couplings, prove
 uniqueness or phase structure, or complete K1 at infinite width.
 
 ## 14. Post-receipt candidate noun
 
 ```text
-CLASSICAL REGIONAL HISTORY SPECIFICATION FAMILY /
-FINITE-COVER AND COUNTABLE LOCALLY FINITE COMPLETION /
-SUPPLIED OPPORTUNITY COMPLEX AND COUPLINGS /
+CLASSICAL TYPED CAUSAL REGIONAL SPECIFICATION FAMILY /
+FINITE SPECIFICATION AND COUNTABLE LOCALLY FINITE PAIRWISE-CONFLICT COMPLETION /
+SUPPLIED OPPORTUNITY CARRIER AND COUPLINGS /
 NONSELECTING.
 ```
 
@@ -590,3 +630,43 @@ from Theorem 1 while retaining K3's one-hop Markov boundary as a separate
 locality property.  The focused D37 closing delta now closes the D37 stream
 at `0B/0M/0m/0n`.  The independent Paper 26 review remains open regardless
 of that closure.
+
+## 16. Independent-review typed-carrier repair
+
+The frozen Paper 26 independent review at commit `23a4ae0` returned
+`1B/5M/6m/3n`.  It reproduced every probability count and accepted Theorems
+1--3, but correctly found that the executable object was still an annotated
+undirected conflict graph.  The present repair takes the constructive branch.
+
+The blocker and majors are addressed as follows:
+
+1. S0 now checks 38 typed incoming/lateral/generated interfaces and realizes
+   actual event DAGs with distinct parent-record identities, types, owners,
+   ports/wires, causal parents, acyclicity and same-wire comparability.
+2. D33 covariance enumerates all 70 linear extensions of one typed BORN
+   history; all replay to one digest while six same-wire event pairs remain
+   comparable.
+3. D34 anti-dilution restricts one 24-event two-component history to exact
+   independently realized 13- and 11-event component histories.
+4. D26 visibility reads actual `BORN_CARRIER.parent_line` ancestry across 27
+   typed controls; TOKEN uses an explicit pre-existing coherence-neutral
+   `DORMANT_TOKEN` record.
+5. K3, K2, K1 and the joint family all pass through immutable mode/selection
+   clicks and signed exact D36 prepares.  K1 priority is a `PRIORITY_CLICK`,
+   and selection is recomputed from its recorded order.  Attempts are keyed by
+   `H(carrier_id,body_digest)`, never a global ordinal.  The prepare uses
+   D36b's authenticated field order/signature formula, content-derived integer
+   actor identities, blank response evidence and application code zero.
+6. S2 directly evaluates all 30 advertised exact probability ratios.
+
+The six minors and three nits are also applied: the paper claims
+representative construction plus a premise-bounded K3 characterization;
+Theorem 3 is explicitly pairwise-graph and admitted-subshift relative; S5 is
+named three-path marginal descent; exact expected censuses fail closed; the Q
+values are marginals; the Paper 15 title, vertex-path wording and symmetric
+exchange scope are corrected.
+
+This is authorship repair, not a self-closing review.  The frozen round-one
+file remains unchanged, and a focused independent delta must re-run the typed
+carrier, D33/D34/D26/D36 bridges, S2 ratios and claim scope before Paper 26 can
+be promoted.

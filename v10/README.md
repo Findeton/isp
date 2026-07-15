@@ -1,15 +1,16 @@
 # Relativistic ISP v10
 
-## Latest — D37 / Paper 26 (independent review withheld: 1B/5M/6m/3n)
+## Latest — D37 / Paper 26 (typed-carrier repair candidate; closing review pending)
 
 D37 constructs the classical regional object queued by Papers 24 and 25.
-Finite oriented opportunity regions carry normalized conditional kernels with
-explicit boundary data. Nested DLR composition, finite-cover descent,
-relabeling covariance and disconnected anti-dilution are exact gates. The
-receipt passes `9/9` and is byte-identical under two hash seeds. Its eight-graph
-registry separates D36's actual no-conflict disjoint cell from the two-edge
-factorization fixture and carries 23 executable incoming/lateral/generated
-interface rows.
+Finite typed opportunity regions carry normalized conditional kernels, and a
+deterministic realization map pushes every admitted atom to an immutable event
+DAG. Nested DLR composition, three-path marginal descent, event-poset
+covariance and causal anti-dilution are exact gates. The receipt passes `9/9`
+and is byte-identical under five hash seeds. Its eight-graph registry carries
+38 checked incoming/lateral/generated interfaces; S0 realizes six fixture
+histories with 104 typed events and 19 signed D36 prepares, and rejects all seven
+registered illegal-history mutations.
 
 The result is a family, not a unique selector. K3 passes 508 intrinsic
 conditionals, 7,098 nested towers and 138 boundary mixtures; exact positive
@@ -22,27 +23,36 @@ locality on a retained five-path witness, so no infinite K1 completion is
 claimed.
 
 One joint law carries `NO_BIRTH/TOKEN/BORN` modes and selected/rejected
-arbitration clicks. At the symmetric path point it gives Q-mode probabilities
+arbitration clicks. `BORN_CARRIER` and activation of an explicit pre-existing
+coherence-neutral `DORMANT_TOKEN` are different event types. At the symmetric
+path point the Q marginals are
 `34/93,25/93,34/93` and selection `6/31` from the same normalized table. D26
-makes the BORN sector observable: at `g=9/25`, the joint Q visibility factor is
-`431/465`. A compactness theorem supplies at least one compatible global
-classical measure for K3, K2 and the joint family on every supplied countable
-locally finite opportunity complex at their stated finite-range scopes.
+makes the BORN sector observable on its represented parent line: at `g=9/25`,
+the joint Q visibility factor is `431/465`. A compactness theorem supplies at
+least one compatible global classical measure and typed-history pushforward
+for K3, K2 and the joint family on each supplied countable typed carrier with
+a locally finite pairwise conflict graph at the stated finite-range scope.
 
-The candidate noun is **CLASSICAL REGIONAL HISTORY SPECIFICATION FAMILY /
-FINITE-COVER AND COUNTABLE LOCALLY FINITE COMPLETION / SUPPLIED OPPORTUNITY
-COMPLEX AND COUPLINGS / NONSELECTING**. The law still does not generate the
-opportunity complex, select activities or mode weights, close the action
+The candidate noun is **CLASSICAL TYPED CAUSAL REGIONAL SPECIFICATION FAMILY /
+FINITE SPECIFICATION AND COUNTABLE LOCALLY FINITE PAIRWISE-CONFLICT COMPLETION /
+SUPPLIED OPPORTUNITY CARRIER AND COUPLINGS / NONSELECTING**. The law still does not generate the
+opportunity carrier, select activities or mode weights, close the action
 bridge, prove uniqueness, or supply the quantum join.
 
 The D37 hostile stream closes at `0B/0M/0m/0n` after requiring complete
 marked-K1 product equality, making the path-five witness fail-closed, stating
 K2's radius-two boundary and removing Theorem 1's redundant Markov premise.
-The subsequent independent Paper 26 review reproduces the arithmetic and
-Theorems 1--3 but withholds promotion at `1B/5M/6m/3n`.  Its blocker is that
-the executable carries an annotated pairwise conflict graph, not the typed
-parent/event DAG required by the paper's oriented causal-history claim.  No
-review repair has yet been applied.
+The subsequent independent Paper 26 review reproduced the arithmetic and
+Theorems 1--3 but withheld promotion at `1B/5M/6m/3n`.  The constructive
+repair now implements its required typed parent/port event DAG. All 70 linear
+extensions of the D33 fixture replay identically while same-wire order is
+preserved; D34 restriction maps one 24-event history exactly to independent
+13- and 11-event component histories; D26 reads actual parent-line ancestry;
+and K3/K2/K1/joint atoms emit immutable clicks and exact signed D36 prepares
+keyed by `H(carrier_id,body_digest)`. S2 now evaluates all 30 probability
+ratios directly and the review's scope/wording repairs are applied. Promotion
+remains withheld until a focused independent closing delta validates this
+repair.
 
 - `note-d37-regional-history-specifications.md`
 - `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`

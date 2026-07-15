@@ -10,7 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
-from collections import defaultdict
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from fractions import Fraction
 from itertools import combinations, permutations, product
@@ -27,6 +27,10 @@ def stable(value: object) -> str:
 
 def ftext(value: Fraction) -> str:
     return str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
+
+
+def digest(value: object) -> str:
+    return hashlib.sha256(stable(value).encode()).hexdigest()
 
 
 @dataclass(frozen=True)
@@ -83,6 +87,21 @@ GRAPHS: Dict[str, Graph] = {
 class OrientedCell:
     name: str
     proposals: Tuple[Tuple[str, Tuple[str, ...]], ...]
+    parent_lines: Tuple[Tuple[str, str], ...]
+    proposal_types: Tuple[Tuple[str, str], ...]
+
+    def __post_init__(self) -> None:
+        vertices = self.vertices
+        if len(set(vertices)) != len(vertices):
+            raise ValueError("duplicate oriented proposal")
+        if set(dict(self.parent_lines)) != set(vertices):
+            raise ValueError("parent-line domain")
+        if set(dict(self.proposal_types)) != set(vertices):
+            raise ValueError("proposal-type domain")
+        if any(not participants for _, participants in self.proposals):
+            raise ValueError("proposal without participants")
+        if any(kind != "TRANSACTION_OPPORTUNITY" for _, kind in self.proposal_types):
+            raise ValueError("unsupported opportunity type")
 
     @property
     def vertices(self) -> Tuple[str, ...]:
@@ -91,26 +110,87 @@ class OrientedCell:
     def participants(self, proposal: str) -> Tuple[str, ...]:
         return dict(self.proposals)[proposal]
 
+    def parent_line(self, proposal: str) -> str:
+        return dict(self.parent_lines)[proposal]
+
+    def proposal_type(self, proposal: str) -> str:
+        return dict(self.proposal_types)[proposal]
+
+
+def oriented_cell(
+    name: str,
+    proposals: Sequence[Tuple[str, Sequence[str]]],
+    parent_lines: Mapping[str, str] | None = None,
+) -> OrientedCell:
+    normalized = tuple((proposal, tuple(participants)) for proposal, participants in proposals)
+    vertices = tuple(proposal for proposal, _ in normalized)
+    lines = {
+        proposal: (
+            parent_lines[proposal]
+            if parent_lines is not None
+            else f"line:{proposal}"
+        )
+        for proposal in vertices
+    }
+    return OrientedCell(
+        name,
+        normalized,
+        tuple((proposal, lines[proposal]) for proposal in vertices),
+        tuple((proposal, "TRANSACTION_OPPORTUNITY") for proposal in vertices),
+    )
+
 
 ORIENTED_CELLS: Dict[str, OrientedCell] = {
-    "pair": OrientedCell("pair", (("P", ("A", "B")), ("Q", ("A", "B")))),
-    "path": OrientedCell(
+    "pair": oriented_cell("pair", (("P", ("A", "B")), ("Q", ("A", "B")))),
+    "path": oriented_cell(
         "path",
         (("P", ("A", "B")), ("Q", ("B", "C")), ("R", ("C", "D"))),
     ),
-    "triangle": OrientedCell(
+    "triangle": oriented_cell(
         "triangle",
         (("P", ("A", "B")), ("Q", ("B", "C")), ("R", ("C", "A"))),
     ),
-    "d36_disjoint": OrientedCell(
+    "d36_disjoint": oriented_cell(
         "d36_disjoint",
         (("P", ("A", "B")), ("Q", ("C", "D"))),
     ),
-    "partial": OrientedCell(
+    "partial": oriented_cell(
         "partial",
         (("P", ("A", "B", "C")), ("Q", ("C", "D"))),
     ),
+    "two_pairs": oriented_cell(
+        "two_pairs",
+        (
+            ("P", ("A", "B")),
+            ("Q", ("A", "B")),
+            ("R", ("C", "D")),
+            ("S", ("C", "D")),
+        ),
+    ),
 }
+
+
+BASE_RECORD = "BASE_RECORD"
+OPPORTUNITY_PARENT = "OPPORTUNITY_PARENT"
+DORMANT_TOKEN = "DORMANT_TOKEN"
+MODE_CLICK = "MODE_CLICK"
+BORN_CARRIER = "BORN_CARRIER"
+TOKEN_ACTIVATION = "TOKEN_ACTIVATION"
+PRIORITY_CLICK = "PRIORITY_CLICK"
+SELECTION_CLICK = "SELECTION_CLICK"
+D36_PREPARE = "D36_PREPARE"
+
+
+def base_record_id(participant: str) -> str:
+    return digest((BASE_RECORD, participant, 0))
+
+
+def opportunity_parent_id(proposal: str, parent_line: str, proposal_type: str) -> str:
+    return digest((OPPORTUNITY_PARENT, proposal, parent_line, proposal_type))
+
+
+def dormant_token_id(proposal: str, parent_line: str) -> str:
+    return digest((DORMANT_TOKEN, proposal, parent_line, "coherence-neutral"))
 
 
 def graph_from_cell(cell: OrientedCell) -> Graph:
@@ -124,15 +204,29 @@ def graph_from_cell(cell: OrientedCell) -> Graph:
 def oriented_interface(
     cell: OrientedCell,
     region: FrozenSet[str],
-) -> Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
+) -> Tuple[Tuple[Tuple[str, str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
     inside_participants = {
         participant
         for proposal in region
         for participant in cell.participants(proposal)
     }
     incoming = tuple(sorted(
-        [("base", participant) for participant in inside_participants]
-        + [("carrier_parent", proposal) for proposal in region]
+        [
+            (BASE_RECORD, participant, base_record_id(participant))
+            for participant in inside_participants
+        ]
+        + [
+            (
+                OPPORTUNITY_PARENT,
+                proposal,
+                opportunity_parent_id(
+                    proposal,
+                    cell.parent_line(proposal),
+                    cell.proposal_type(proposal),
+                ),
+            )
+            for proposal in region
+        ]
     ))
     outside = set(cell.vertices) - region
     lateral = tuple(sorted(
@@ -141,8 +235,8 @@ def oriented_interface(
         if inside_participants & set(cell.participants(proposal))
     ))
     generated = tuple(sorted(
-        [("mode_click", proposal) for proposal in region]
-        + [("selection_click", proposal) for proposal in region]
+        [(MODE_CLICK, proposal) for proposal in region]
+        + [(SELECTION_CLICK, proposal) for proposal in region]
     ))
     return incoming, lateral, generated
 
@@ -161,25 +255,103 @@ def rename_cell(
             )
             for proposal, participants in cell.proposals
         ),
+        tuple(
+            (
+                proposal_rename[proposal],
+                (
+                    f"line:{proposal_rename[proposal]}"
+                    if line == f"line:{proposal}"
+                    else f"renamed:{line}"
+                ),
+            )
+            for proposal, line in cell.parent_lines
+        ),
+        tuple(
+            (proposal_rename[proposal], proposal_type)
+            for proposal, proposal_type in cell.proposal_types
+        ),
     )
 
 
 def push_oriented_interface(
-    interface: Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]],
+    interface: Tuple[Tuple[Tuple[str, str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]],
     proposal_rename: Mapping[str, str],
     participant_rename: Mapping[str, str],
-) -> Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
+    renamed_cell: OrientedCell,
+) -> Tuple[Tuple[Tuple[str, str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]]:
     incoming, lateral, generated = interface
     pushed_incoming = tuple(sorted(
         (
-            tag,
-            participant_rename[value] if tag == "base" else proposal_rename[value],
+            kind,
+            participant_rename[role],
+            base_record_id(participant_rename[role]),
         )
-        for tag, value in incoming
+        if kind == BASE_RECORD
+        else (
+            kind,
+            proposal_rename[role],
+            opportunity_parent_id(
+                proposal_rename[role],
+                renamed_cell.parent_line(proposal_rename[role]),
+                renamed_cell.proposal_type(proposal_rename[role]),
+            ),
+        )
+        for kind, role, _ in incoming
     ))
     pushed_lateral = tuple(sorted(proposal_rename[value] for value in lateral))
     pushed_generated = tuple(sorted((tag, proposal_rename[value]) for tag, value in generated))
     return pushed_incoming, pushed_lateral, pushed_generated
+
+
+def interface_content_valid(
+    cell: OrientedCell,
+    region: FrozenSet[str],
+    interface: Tuple[Tuple[Tuple[str, str, str], ...], Tuple[str, ...], Tuple[Tuple[str, str], ...]],
+) -> bool:
+    incoming, lateral, generated = interface
+    participants = {
+        participant
+        for proposal in region
+        for participant in cell.participants(proposal)
+    }
+    base_rows = tuple(row for row in incoming if row[0] == BASE_RECORD)
+    parent_rows = tuple(row for row in incoming if row[0] == OPPORTUNITY_PARENT)
+    base_ok = {
+        (role, record_id) for _, role, record_id in base_rows
+    } == {
+        (participant, base_record_id(participant)) for participant in participants
+    }
+    parent_ok = {
+        (role, record_id) for _, role, record_id in parent_rows
+    } == {
+        (
+            proposal,
+            opportunity_parent_id(
+                proposal,
+                cell.parent_line(proposal),
+                cell.proposal_type(proposal),
+            ),
+        )
+        for proposal in region
+    }
+    distinct_parent_ids = len({record_id for _, _, record_id in parent_rows}) == len(region)
+    actual_lateral = {
+        proposal
+        for proposal in set(cell.vertices) - region
+        if participants & set(cell.participants(proposal))
+    }
+    generated_ok = set(generated) == (
+        {(MODE_CLICK, proposal) for proposal in region}
+        | {(SELECTION_CLICK, proposal) for proposal in region}
+    )
+    return (
+        base_ok
+        and parent_ok
+        and distinct_parent_ids
+        and set(lateral) == actual_lateral
+        and generated_ok
+        and len(incoming) == len(participants) + len(region)
+    )
 
 
 Selected = FrozenSet[str]
@@ -592,6 +764,8 @@ def forcing_checks(g: Graph, activity: Fraction) -> Tuple[int, int, Tuple[str, .
             candidate = current | {vertex}
             if not feasible(g, candidate):
                 raise AssertionError("bad reconstruction path")
+            if dist[candidate] / dist[current] != activity:
+                raise AssertionError((g.name, current, candidate, "single-flip ratio"))
             weight *= activity
             current = candidate
             ratio_checks += 1
@@ -688,6 +862,958 @@ def find_k1_one_hop_counterexample() -> object:
 
 
 MODES = ("NO_BIRTH", "TOKEN", "BORN")
+
+
+@dataclass(frozen=True)
+class CausalEvent:
+    event_id: str
+    kind: str
+    proposal: str
+    owner: str
+    wire: str
+    parents: Tuple[str, ...]
+    payload: Tuple[Tuple[str, object], ...]
+
+    def payload_map(self) -> Dict[str, object]:
+        return dict(self.payload)
+
+
+def event_id(
+    kind: str,
+    proposal: str,
+    owner: str,
+    wire: str,
+    parents: Tuple[str, ...],
+    payload: Tuple[Tuple[str, object], ...],
+) -> str:
+    return digest((kind, proposal, owner, wire, parents, payload))
+
+
+def event(
+    kind: str,
+    proposal: str,
+    owner: str,
+    wire: str,
+    parents: Sequence[str],
+    payload: Mapping[str, object],
+) -> CausalEvent:
+    normalized_parents = tuple(parents)
+    normalized_payload = tuple(sorted(payload.items()))
+    return CausalEvent(
+        event_id(kind, proposal, owner, wire, normalized_parents, normalized_payload),
+        kind,
+        proposal,
+        owner,
+        wire,
+        normalized_parents,
+        normalized_payload,
+    )
+
+
+def base_event(participant: str) -> CausalEvent:
+    return CausalEvent(
+        base_record_id(participant),
+        BASE_RECORD,
+        "",
+        f"participant:{participant}",
+        f"participant:{participant}",
+        (),
+        (("participant", participant), ("version", "0")),
+    )
+
+
+def opportunity_parent_event(
+    cell: OrientedCell,
+    proposal: str,
+    parent_line: str,
+) -> CausalEvent:
+    proposal_type = cell.proposal_type(proposal)
+    return CausalEvent(
+        opportunity_parent_id(proposal, parent_line, proposal_type),
+        OPPORTUNITY_PARENT,
+        proposal,
+        f"source:{proposal}",
+        f"proposal:{proposal}",
+        (),
+        (("parent_line", parent_line), ("proposal_type", proposal_type)),
+    )
+
+
+def dormant_token_event(proposal: str, parent_line: str) -> CausalEvent:
+    return CausalEvent(
+        dormant_token_id(proposal, parent_line),
+        DORMANT_TOKEN,
+        proposal,
+        f"token:{proposal}",
+        f"token:{proposal}",
+        (),
+        (("control", "coherence-neutral"), ("parent_line", parent_line)),
+    )
+
+
+def event_body_digest(
+    cell: OrientedCell,
+    proposal: str,
+) -> str:
+    bases = tuple(
+        (participant, base_record_id(participant))
+        for participant in cell.participants(proposal)
+    )
+    return digest(("d36-body", proposal, cell.participants(proposal), bases))
+
+
+def structural_attempt_id(carrier_event_id: str, body_digest: str) -> str:
+    return digest(("structural-attempt", carrier_event_id, body_digest))
+
+
+def structural_actor_index(kind: str, label: str) -> int:
+    return int(digest(("structural-actor-index", kind, label)), 16)
+
+
+def route_capability_id(
+    tx_index: int,
+    participant_index: int,
+    actor_name: str,
+) -> str:
+    return digest(("issued-route-capability", tx_index, participant_index, actor_name))
+
+
+def prepare_signature(fields: Mapping[str, object]) -> str:
+    authenticated = tuple(
+        fields[name]
+        for name in (
+            "kind",
+            "sender_kind",
+            "sender_index",
+            "target_kind",
+            "target_index",
+            "tx_index",
+            "participant_index",
+            "body_digest",
+            "base_version",
+            "capability",
+            "attempt_id",
+            "response_record_id",
+            "evidence_record_id",
+            "application_code",
+        )
+    )
+    key = digest(("ideal-auth-key", fields["sender_kind"], fields["sender_index"]))
+    return digest(("ideal-signature", key, authenticated))
+
+
+def build_typed_history(
+    cell: OrientedCell,
+    modes: Mapping[str, str],
+    selected: Selected,
+    parent_line_override: Mapping[str, str] | None = None,
+    priority_orders: Sequence[Sequence[str]] | None = None,
+) -> Tuple[CausalEvent, ...]:
+    if set(modes) != set(cell.vertices) or any(mode not in MODES for mode in modes.values()):
+        raise AssertionError("typed mode domain")
+    g = graph_from_cell(cell)
+    if not feasible(g, selected):
+        raise AssertionError("typed selected conflict")
+    if any(modes[proposal] == "NO_BIRTH" for proposal in selected):
+        raise AssertionError("selected absent opportunity")
+
+    answer: Dict[str, CausalEvent] = {}
+
+    def append(record: CausalEvent) -> CausalEvent:
+        if record.event_id in answer and answer[record.event_id] != record:
+            raise AssertionError("causal event collision")
+        answer[record.event_id] = record
+        return record
+
+    participants = sorted({
+        participant
+        for proposal in cell.vertices
+        for participant in cell.participants(proposal)
+    })
+    bases = {participant: append(base_event(participant)) for participant in participants}
+
+    priority_for: Dict[str, CausalEvent] = {}
+    if priority_orders is not None:
+        for raw_order in priority_orders:
+            order = tuple(raw_order)
+            component = tuple(sorted(order))
+            priority = append(event(
+                PRIORITY_CLICK,
+                "",
+                f"arbitration-component:{','.join(component)}",
+                f"priority:{','.join(component)}",
+                (),
+                {
+                    "component": ",".join(component),
+                    "order": ",".join(order),
+                },
+            ))
+            for proposal in component:
+                if proposal in priority_for:
+                    raise AssertionError("duplicate priority component")
+                priority_for[proposal] = priority
+        if set(priority_for) != set(cell.vertices):
+            raise AssertionError("priority component coverage")
+
+    for proposal in cell.vertices:
+        mode = modes[proposal]
+        parent_line = (
+            parent_line_override[proposal]
+            if parent_line_override is not None
+            else cell.parent_line(proposal)
+        )
+        parent = append(opportunity_parent_event(cell, proposal, parent_line))
+        token = append(dormant_token_event(proposal, parent_line)) if mode == "TOKEN" else None
+        mode_parents = (
+            (parent.event_id, token.event_id)
+            if token is not None
+            else (parent.event_id,)
+        )
+        mode_click = append(event(
+            MODE_CLICK,
+            proposal,
+            f"opportunity:{proposal}",
+            f"proposal:{proposal}",
+            mode_parents,
+            {
+                "mode": mode,
+                "parent_line": parent_line,
+                "source_parent": parent.event_id,
+                "token_support": token.event_id if token is not None else "",
+            },
+        ))
+
+        carrier: CausalEvent | None = None
+        body_digest = event_body_digest(cell, proposal)
+        attempt = ""
+        if mode != "NO_BIRTH":
+            carrier_kind = BORN_CARRIER if mode == "BORN" else TOKEN_ACTIVATION
+            carrier = append(event(
+                carrier_kind,
+                proposal,
+                f"transaction:{proposal}",
+                f"proposal:{proposal}",
+                (mode_click.event_id,),
+                {
+                    "body_digest": body_digest,
+                    "mode": mode,
+                    "parent_line": parent_line,
+                    "source_parent": parent.event_id,
+                    "token_control": "coherence-neutral" if mode == "TOKEN" else "not-token",
+                },
+            ))
+            attempt = structural_attempt_id(carrier.event_id, body_digest)
+
+        selection_parents = [carrier.event_id if carrier is not None else mode_click.event_id]
+        if proposal in priority_for:
+            selection_parents.append(priority_for[proposal].event_id)
+        selection = append(event(
+            SELECTION_CLICK,
+            proposal,
+            f"arbitration:{proposal}",
+            f"proposal:{proposal}",
+            tuple(selection_parents),
+            {
+                "attempt_id": attempt,
+                "mode": mode,
+                "selected": "1" if proposal in selected else "0",
+            },
+        ))
+
+        if proposal in selected:
+            if carrier is None:
+                raise AssertionError("prepare without carrier")
+            for participant in cell.participants(proposal):
+                base = bases[participant]
+                tx_index = structural_actor_index("T", proposal)
+                participant_index = structural_actor_index("P", participant)
+                prepare_fields = {
+                    "application_code": 0,
+                    "attempt_id": attempt,
+                    "base_record": base.event_id,
+                    "base_version": 0,
+                    "body_digest": body_digest,
+                    "capability": route_capability_id(
+                        tx_index,
+                        participant_index,
+                        participant,
+                    ),
+                    "evidence_record_id": carrier.event_id,
+                    "kind": "PREPARE",
+                    "participant_index": participant_index,
+                    "response_record_id": "",
+                    "sender_index": tx_index,
+                    "sender_kind": "T",
+                    "selected_click": selection.event_id,
+                    "target_index": participant_index,
+                    "target_kind": "P",
+                    "tx_index": tx_index,
+                }
+                prepare_fields["signature"] = prepare_signature(prepare_fields)
+                append(event(
+                    D36_PREPARE,
+                    proposal,
+                    f"transaction:{proposal}",
+                    f"transport:{proposal}->{participant}",
+                    (selection.event_id, base.event_id),
+                    prepare_fields,
+                ))
+
+    result = tuple(sorted(answer.values(), key=lambda record: record.event_id))
+    validate_typed_history(cell, result)
+    return result
+
+
+def causal_ancestors(
+    event_key: str,
+    by_id: Mapping[str, CausalEvent],
+    cache: Dict[str, FrozenSet[str]],
+    active: FrozenSet[str] = frozenset(),
+) -> FrozenSet[str]:
+    if event_key in cache:
+        return cache[event_key]
+    if event_key in active:
+        raise AssertionError("causal cycle")
+    answer: set[str] = set()
+    for parent in by_id[event_key].parents:
+        answer.add(parent)
+        answer.update(causal_ancestors(parent, by_id, cache, active | {event_key}))
+    cache[event_key] = frozenset(answer)
+    return cache[event_key]
+
+
+def validate_typed_history(cell: OrientedCell, records: Sequence[CausalEvent]) -> None:
+    by_id = {record.event_id: record for record in records}
+    if len(by_id) != len(records):
+        raise AssertionError("duplicate causal event ID")
+    if any(len(record.parents) > 2 for record in records):
+        raise AssertionError("causal parent bound")
+    if any(parent not in by_id for record in records for parent in record.parents):
+        raise AssertionError("missing causal parent")
+
+    cache: Dict[str, FrozenSet[str]] = {}
+    for record in records:
+        causal_ancestors(record.event_id, by_id, cache)
+
+    for record in records:
+        payload = record.payload_map()
+        if len(payload) != len(record.payload):
+            raise AssertionError("duplicate causal payload key")
+        parents = tuple(by_id[parent] for parent in record.parents)
+        if record.kind == BASE_RECORD:
+            participant = payload.get("participant", "")
+            if (
+                record.parents
+                or record.proposal
+                or set(payload) != {"participant", "version"}
+                or payload["version"] != "0"
+                or record.owner != f"participant:{participant}"
+                or record.wire != f"participant:{participant}"
+                or record.event_id != base_record_id(participant)
+            ):
+                raise AssertionError("base record legality")
+        elif record.kind == OPPORTUNITY_PARENT:
+            if (
+                record.parents
+                or record.proposal not in cell.vertices
+                or set(payload) != {"parent_line", "proposal_type"}
+                or record.owner != f"source:{record.proposal}"
+                or record.wire != f"proposal:{record.proposal}"
+            ):
+                raise AssertionError("opportunity parent legality")
+            expected = opportunity_parent_id(
+                record.proposal,
+                payload["parent_line"],
+                payload["proposal_type"],
+            )
+            if record.event_id != expected or payload["proposal_type"] != cell.proposal_type(record.proposal):
+                raise AssertionError("opportunity parent identity")
+        elif record.kind == DORMANT_TOKEN:
+            if (
+                record.parents
+                or record.proposal not in cell.vertices
+                or set(payload) != {"control", "parent_line"}
+                or payload.get("control") != "coherence-neutral"
+                or record.owner != f"token:{record.proposal}"
+                or record.wire != f"token:{record.proposal}"
+                or record.event_id
+                != dormant_token_id(record.proposal, payload["parent_line"])
+            ):
+                raise AssertionError("dormant token legality")
+        elif record.kind == MODE_CLICK:
+            opportunity_parents = [parent for parent in parents if parent.kind == OPPORTUNITY_PARENT]
+            token_parents = [parent for parent in parents if parent.kind == DORMANT_TOKEN]
+            if (
+                len(opportunity_parents) != 1
+                or len(opportunity_parents) + len(token_parents) != len(parents)
+                or set(payload)
+                != {"mode", "parent_line", "source_parent", "token_support"}
+                or record.owner != f"opportunity:{record.proposal}"
+                or record.wire != f"proposal:{record.proposal}"
+            ):
+                raise AssertionError("mode parent legality")
+            opportunity = opportunity_parents[0]
+            if (
+                opportunity.proposal != record.proposal
+                or payload["mode"] not in MODES
+                or payload["parent_line"] != opportunity.payload_map()["parent_line"]
+                or payload["source_parent"] != opportunity.event_id
+            ):
+                raise AssertionError("mode payload legality")
+            if payload["mode"] == "TOKEN":
+                if (
+                    len(token_parents) != 1
+                    or token_parents[0].proposal != record.proposal
+                    or token_parents[0].payload_map()["parent_line"] != payload["parent_line"]
+                    or payload["token_support"] != token_parents[0].event_id
+                ):
+                    raise AssertionError("TOKEN support ancestry")
+            elif token_parents or payload["token_support"]:
+                raise AssertionError("non-TOKEN dormant support")
+        elif record.kind in (BORN_CARRIER, TOKEN_ACTIVATION):
+            if (
+                len(parents) != 1
+                or parents[0].kind != MODE_CLICK
+                or parents[0].proposal != record.proposal
+                or set(payload)
+                != {
+                    "body_digest",
+                    "mode",
+                    "parent_line",
+                    "source_parent",
+                    "token_control",
+                }
+                or record.owner != f"transaction:{record.proposal}"
+                or record.wire != f"proposal:{record.proposal}"
+            ):
+                raise AssertionError("carrier parent legality")
+            expected_mode = "BORN" if record.kind == BORN_CARRIER else "TOKEN"
+            mode_payload = parents[0].payload_map()
+            if (
+                payload["mode"] != expected_mode
+                or mode_payload["mode"] != expected_mode
+                or payload["body_digest"] != event_body_digest(cell, record.proposal)
+                or payload["parent_line"] != mode_payload["parent_line"]
+                or payload["source_parent"] != mode_payload["source_parent"]
+                or payload["token_control"]
+                != ("coherence-neutral" if expected_mode == "TOKEN" else "not-token")
+            ):
+                raise AssertionError("carrier mode legality")
+            expected_id = event_id(
+                record.kind,
+                record.proposal,
+                record.owner,
+                record.wire,
+                record.parents,
+                record.payload,
+            )
+            if record.event_id != expected_id:
+                raise AssertionError("carrier immutable identity")
+        elif record.kind == PRIORITY_CLICK:
+            if record.parents or record.proposal or set(payload) != {"component", "order"}:
+                raise AssertionError("priority click root legality")
+            component = tuple(payload.get("component", "").split(","))
+            order = tuple(payload.get("order", "").split(","))
+            if (
+                not component
+                or tuple(sorted(component)) != component
+                or len(set(component)) != len(component)
+                or len(set(order)) != len(order)
+                or set(order) != set(component)
+                or component not in connected_components(graph_from_cell(cell))
+                or record.owner != f"arbitration-component:{','.join(component)}"
+                or record.wire != f"priority:{','.join(component)}"
+            ):
+                raise AssertionError("priority click component/order legality")
+        elif record.kind == SELECTION_CLICK:
+            priority_parents = [parent for parent in parents if parent.kind == PRIORITY_CLICK]
+            main_parents = [parent for parent in parents if parent.kind != PRIORITY_CLICK]
+            if (
+                len(main_parents) != 1
+                or len(priority_parents) > 1
+                or main_parents[0].proposal != record.proposal
+                or set(payload) != {"attempt_id", "mode", "selected"}
+                or payload["selected"] not in ("0", "1")
+                or record.owner != f"arbitration:{record.proposal}"
+                or record.wire != f"proposal:{record.proposal}"
+            ):
+                raise AssertionError("selection parent legality")
+            mode = payload["mode"]
+            allowed_parent = MODE_CLICK if mode == "NO_BIRTH" else (
+                BORN_CARRIER if mode == "BORN" else TOKEN_ACTIVATION
+            )
+            if main_parents[0].kind != allowed_parent:
+                raise AssertionError("selection mode ancestry")
+            if mode != main_parents[0].payload_map()["mode"]:
+                raise AssertionError("selection mode payload")
+            expected_attempt = (
+                ""
+                if mode == "NO_BIRTH"
+                else structural_attempt_id(
+                    main_parents[0].event_id,
+                    main_parents[0].payload_map()["body_digest"],
+                )
+            )
+            if payload["attempt_id"] != expected_attempt:
+                raise AssertionError("selection attempt identity")
+            if priority_parents:
+                order = tuple(priority_parents[0].payload_map()["order"].split(","))
+                if record.proposal not in order:
+                    raise AssertionError("selection priority ancestry")
+            if mode == "NO_BIRTH" and payload["selected"] != "0":
+                raise AssertionError("selected no-birth")
+        elif record.kind == D36_PREPARE:
+            if (
+                len(parents) != 2
+                or set(payload)
+                != {
+                    "application_code",
+                    "attempt_id",
+                    "base_record",
+                    "base_version",
+                    "body_digest",
+                    "capability",
+                    "evidence_record_id",
+                    "kind",
+                    "participant_index",
+                    "response_record_id",
+                    "sender_index",
+                    "sender_kind",
+                    "selected_click",
+                    "signature",
+                    "target_index",
+                    "target_kind",
+                    "tx_index",
+                }
+            ):
+                raise AssertionError("prepare parent count")
+            selection = next((parent for parent in parents if parent.kind == SELECTION_CLICK), None)
+            base = next((parent for parent in parents if parent.kind == BASE_RECORD), None)
+            if selection is None or base is None or selection.payload_map()["selected"] != "1":
+                raise AssertionError("prepare evidence ancestry")
+            participant_names = sorted({
+                name
+                for proposal in cell.vertices
+                for name in cell.participants(proposal)
+            })
+            participant_index = payload["participant_index"]
+            participant_matches = [
+                name
+                for name in participant_names
+                if structural_actor_index("P", name) == participant_index
+            ]
+            if not isinstance(participant_index, int) or len(participant_matches) != 1:
+                raise AssertionError("prepare participant index")
+            participant = participant_matches[0]
+            tx_index = structural_actor_index("T", record.proposal)
+            if base.event_id != base_record_id(participant) or payload["base_record"] != base.event_id:
+                raise AssertionError("prepare base binding")
+            carrier_candidates = [
+                by_id[ancestor]
+                for ancestor in cache[selection.event_id]
+                if by_id[ancestor].kind in (BORN_CARRIER, TOKEN_ACTIVATION)
+            ]
+            if len(carrier_candidates) != 1:
+                raise AssertionError("prepare carrier ancestry")
+            carrier = carrier_candidates[0]
+            expected_attempt = structural_attempt_id(carrier.event_id, payload["body_digest"])
+            unsigned = dict(payload)
+            signature = unsigned.pop("signature", "")
+            if (
+                payload["evidence_record_id"] != carrier.event_id
+                or record.proposal != selection.proposal
+                or record.owner != f"transaction:{record.proposal}"
+                or record.wire != f"transport:{record.proposal}->{participant}"
+                or payload["selected_click"] != selection.event_id
+                or payload["kind"] != "PREPARE"
+                or payload["sender_kind"] != "T"
+                or payload["sender_index"] != tx_index
+                or payload["target_kind"] != "P"
+                or payload["target_index"] != participant_index
+                or payload["tx_index"] != tx_index
+                or payload["response_record_id"]
+                or payload["application_code"] != 0
+                or payload["base_version"] != 0
+                or payload["body_digest"] != carrier.payload_map()["body_digest"]
+                or payload["body_digest"] != event_body_digest(cell, record.proposal)
+                or payload["attempt_id"] != expected_attempt
+                or selection.payload_map()["attempt_id"] != expected_attempt
+                or participant not in cell.participants(record.proposal)
+                or payload["capability"]
+                != route_capability_id(tx_index, participant_index, participant)
+                or signature != prepare_signature(unsigned)
+            ):
+                raise AssertionError("prepare structural attempt binding")
+        else:
+            raise AssertionError(("unknown causal event type", record.kind))
+
+        if record.kind not in (BASE_RECORD, OPPORTUNITY_PARENT, DORMANT_TOKEN):
+            expected_id = event_id(
+                record.kind,
+                record.proposal,
+                record.owner,
+                record.wire,
+                record.parents,
+                record.payload,
+            )
+            if record.event_id != expected_id:
+                raise AssertionError("immutable event identity")
+
+    for left, right in combinations(records, 2):
+        if left.wire != right.wire:
+            continue
+        if left.event_id not in cache[right.event_id] and right.event_id not in cache[left.event_id]:
+            raise AssertionError(("same-wire incomparability", left.wire, left.kind, right.kind))
+
+    mode_records = [record for record in records if record.kind == MODE_CLICK]
+    selection_records = [record for record in records if record.kind == SELECTION_CLICK]
+    modes = {record.proposal: record.payload_map()["mode"] for record in mode_records}
+    selections = {
+        record.proposal: record.payload_map()["selected"] == "1"
+        for record in selection_records
+    }
+    if set(modes) != set(cell.vertices) or set(selections) != set(cell.vertices):
+        raise AssertionError("mode/selection click coverage")
+    if len(mode_records) != len(cell.vertices) or len(selection_records) != len(cell.vertices):
+        raise AssertionError("duplicate mode/selection click")
+    participants = {
+        participant
+        for proposal in cell.vertices
+        for participant in cell.participants(proposal)
+    }
+    if {
+        record.payload_map()["participant"]
+        for record in records
+        if record.kind == BASE_RECORD
+    } != participants:
+        raise AssertionError("participant base coverage")
+    opportunity_records = [record for record in records if record.kind == OPPORTUNITY_PARENT]
+    if (
+        len(opportunity_records) != len(cell.vertices)
+        or {record.proposal for record in opportunity_records} != set(cell.vertices)
+    ):
+        raise AssertionError("opportunity parent coverage")
+    dormant_records = [record for record in records if record.kind == DORMANT_TOKEN]
+    if (
+        len(dormant_records) != sum(mode == "TOKEN" for mode in modes.values())
+        or {record.proposal for record in dormant_records}
+        != {proposal for proposal, mode in modes.items() if mode == "TOKEN"}
+    ):
+        raise AssertionError("dormant token coverage")
+    carrier_records = [
+        record
+        for record in records
+        if record.kind in (BORN_CARRIER, TOKEN_ACTIVATION)
+    ]
+    if (
+        len(carrier_records) != sum(mode != "NO_BIRTH" for mode in modes.values())
+        or {record.proposal for record in carrier_records}
+        != {proposal for proposal, mode in modes.items() if mode != "NO_BIRTH"}
+    ):
+        raise AssertionError("carrier coverage")
+    selected = frozenset(proposal for proposal, value in selections.items() if value)
+    if not feasible(graph_from_cell(cell), selected):
+        raise AssertionError("typed arbitration feasibility")
+    priority_records = [record for record in records if record.kind == PRIORITY_CLICK]
+    if priority_records:
+        priority_orders = tuple(
+            tuple(record.payload_map()["order"].split(","))
+            for record in sorted(
+                priority_records,
+                key=lambda item: item.payload_map()["component"],
+            )
+        )
+        priority_components = tuple(
+            tuple(record.payload_map()["component"].split(","))
+            for record in sorted(
+                priority_records,
+                key=lambda item: item.payload_map()["component"],
+            )
+        )
+        if (
+            priority_components != connected_components(graph_from_cell(cell))
+            or selected != greedy(graph_from_cell(cell), priority_orders)
+            or any(
+                len(
+                    [
+                        parent
+                        for parent in by_id[selection.event_id].parents
+                        if by_id[parent].kind == PRIORITY_CLICK
+                    ]
+                )
+                != 1
+                for selection in selection_records
+            )
+        ):
+            raise AssertionError("recorded priority arbitration law")
+    prepare_counts = Counter(
+        record.proposal for record in records if record.kind == D36_PREPARE
+    )
+    for proposal in cell.vertices:
+        expected = len(cell.participants(proposal)) if proposal in selected else 0
+        if prepare_counts[proposal] != expected:
+            raise AssertionError("D36 prepare coverage")
+
+
+def topological_orders(records: Sequence[CausalEvent]) -> Tuple[Tuple[str, ...], ...]:
+    by_id = {record.event_id: record for record in records}
+    answer: list[Tuple[str, ...]] = []
+
+    def visit(prefix: Tuple[str, ...], remaining: FrozenSet[str]) -> None:
+        if not remaining:
+            answer.append(prefix)
+            return
+        done = set(prefix)
+        available = sorted(
+            key for key in remaining if set(by_id[key].parents) <= done
+        )
+        if not available:
+            raise AssertionError("topological extension dead end")
+        for key in available:
+            visit(prefix + (key,), remaining - {key})
+
+    visit((), frozenset(by_id))
+    return tuple(answer)
+
+
+def replay_history(records: Sequence[CausalEvent], order: Sequence[str]) -> str:
+    by_id = {record.event_id: record for record in records}
+    if set(order) != set(by_id) or len(order) != len(by_id):
+        raise AssertionError("linear extension domain")
+    seen: set[str] = set()
+    for key in order:
+        if not set(by_id[key].parents) <= seen:
+            raise AssertionError("linear extension violates parent order")
+        seen.add(key)
+    return digest(tuple(sorted(
+        (
+            record.event_id,
+            record.kind,
+            record.proposal,
+            record.owner,
+            record.wire,
+            record.parents,
+            record.payload,
+        )
+        for record in records
+    )))
+
+
+def linear_extension_covariance() -> Tuple[int, int, str]:
+    cell = oriented_cell("single", (("P", ("A", "B")),))
+    records = build_typed_history(cell, {"P": "BORN"}, frozenset(("P",)))
+    orders = topological_orders(records)
+    digests = {replay_history(records, order) for order in orders}
+    if len(orders) <= 1 or len(digests) != 1:
+        raise AssertionError("D33 linear-extension covariance")
+    by_id = {record.event_id: record for record in records}
+    cache: Dict[str, FrozenSet[str]] = {}
+    for record in records:
+        causal_ancestors(record.event_id, by_id, cache)
+    comparable_same_wire = sum(
+        1
+        for left, right in combinations(records, 2)
+        if left.wire == right.wire
+        and (left.event_id in cache[right.event_id] or right.event_id in cache[left.event_id])
+    )
+    return len(orders), comparable_same_wire, next(iter(digests))
+
+
+def restrict_typed_history(
+    records: Sequence[CausalEvent],
+    proposals: FrozenSet[str],
+    participants: FrozenSet[str],
+) -> Tuple[CausalEvent, ...]:
+    return tuple(sorted(
+        (
+            record
+            for record in records
+            if record.proposal in proposals
+            or (
+                record.kind == PRIORITY_CLICK
+                and set(record.payload_map()["component"].split(",")) <= proposals
+            )
+            or (
+                record.kind == BASE_RECORD
+                and record.payload_map()["participant"] in participants
+            )
+        ),
+        key=lambda record: record.event_id,
+    ))
+
+
+def causal_disjoint_restriction_checks() -> Tuple[int, int, int, int]:
+    full_cell = ORIENTED_CELLS["two_pairs"]
+    full_modes = {"P": "BORN", "Q": "TOKEN", "R": "BORN", "S": "NO_BIRTH"}
+    full = build_typed_history(full_cell, full_modes, frozenset(("P", "R")))
+
+    left_cell = oriented_cell("left", (("P", ("A", "B")), ("Q", ("A", "B"))))
+    left = build_typed_history(
+        left_cell,
+        {"P": "BORN", "Q": "TOKEN"},
+        frozenset(("P",)),
+    )
+    right_cell = oriented_cell("right", (("R", ("C", "D")), ("S", ("C", "D"))))
+    right = build_typed_history(
+        right_cell,
+        {"R": "BORN", "S": "NO_BIRTH"},
+        frozenset(("R",)),
+    )
+
+    left_restriction = restrict_typed_history(
+        full,
+        frozenset(("P", "Q")),
+        frozenset(("A", "B")),
+    )
+    right_restriction = restrict_typed_history(
+        full,
+        frozenset(("R", "S")),
+        frozenset(("C", "D")),
+    )
+    if left_restriction != left or right_restriction != right:
+        raise AssertionError("D34 causal anti-dilution")
+    return 2, len(full), len(left), len(right)
+
+
+def line_shadow(
+    records: Sequence[CausalEvent],
+    parent_line: str,
+    coherence: Fraction,
+) -> Fraction:
+    born = sum(
+        record.kind == BORN_CARRIER
+        and record.payload_map()["parent_line"] == parent_line
+        for record in records
+    )
+    return coherence ** born
+
+
+def typed_mode_history_checks(
+    dist: "ModeDistribution",
+    cell: OrientedCell,
+) -> Tuple[int, int, int, int]:
+    histories = 0
+    events = 0
+    prepares = 0
+    dormant_tokens = 0
+    for atom in dist:
+        records = build_typed_history(cell, atom.mode_map(), atom.selected)
+        histories += 1
+        events += len(records)
+        prepares += sum(record.kind == D36_PREPARE for record in records)
+        dormant_tokens += sum(record.kind == DORMANT_TOKEN for record in records)
+    return histories, events, prepares, dormant_tokens
+
+
+def typed_legality_negative_checks() -> int:
+    rejected = 0
+
+    def require_rejection(action: Callable[[], object]) -> None:
+        nonlocal rejected
+        try:
+            action()
+        except AssertionError:
+            rejected += 1
+            return
+        raise AssertionError("typed illegality admitted")
+
+    single = oriented_cell("single-negative", (("P", ("A", "B")),))
+    born_selected = build_typed_history(single, {"P": "BORN"}, frozenset(("P",)))
+    require_rejection(lambda: validate_typed_history(
+        single,
+        tuple(record for record in born_selected if record.kind != OPPORTUNITY_PARENT),
+    ))
+
+    opportunity = next(record for record in born_selected if record.kind == OPPORTUNITY_PARENT)
+    sibling_mode = event(
+        MODE_CLICK,
+        "P",
+        "opportunity:P",
+        "proposal:P",
+        (opportunity.event_id,),
+        {
+            "mode": "NO_BIRTH",
+            "parent_line": opportunity.payload_map()["parent_line"],
+            "source_parent": opportunity.event_id,
+            "token_support": "",
+        },
+    )
+    require_rejection(lambda: validate_typed_history(single, born_selected + (sibling_mode,)))
+
+    born_rejected = build_typed_history(single, {"P": "BORN"}, frozenset())
+    selection = next(record for record in born_rejected if record.kind == SELECTION_CLICK)
+    forged_selection = event(
+        SELECTION_CLICK,
+        selection.proposal,
+        selection.owner,
+        selection.wire,
+        selection.parents,
+        {"attempt_id": "forged", "mode": "BORN", "selected": "0"},
+    )
+    require_rejection(lambda: validate_typed_history(
+        single,
+        tuple(forged_selection if record == selection else record for record in born_rejected),
+    ))
+
+    prepare = next(record for record in born_selected if record.kind == D36_PREPARE)
+    forged_prepare_payload = prepare.payload_map()
+    forged_prepare_payload["signature"] = "FORGED"
+    forged_prepare = event(
+        prepare.kind,
+        prepare.proposal,
+        prepare.owner,
+        prepare.wire,
+        prepare.parents,
+        forged_prepare_payload,
+    )
+    require_rejection(lambda: validate_typed_history(
+        single,
+        tuple(forged_prepare if record == prepare else record for record in born_selected),
+    ))
+
+    path = ORIENTED_CELLS["path"]
+    require_rejection(lambda: build_typed_history(
+        path,
+        {proposal: "TOKEN" for proposal in path.vertices},
+        frozenset(("Q",)),
+        priority_orders=(("P", "Q", "R"),),
+    ))
+    pair = ORIENTED_CELLS["pair"]
+    require_rejection(lambda: build_typed_history(
+        pair,
+        {proposal: "BORN" for proposal in pair.vertices},
+        frozenset(pair.vertices),
+    ))
+
+    no_birth = build_typed_history(
+        path,
+        {proposal: "NO_BIRTH" for proposal in path.vertices},
+        frozenset(),
+    )
+    q_parent = next(
+        record
+        for record in no_birth
+        if record.kind == OPPORTUNITY_PARENT and record.proposal == "Q"
+    )
+    p_token = dormant_token_event("P", path.parent_line("P"))
+    cross_token_mode = event(
+        MODE_CLICK,
+        "Q",
+        "opportunity:Q",
+        "proposal:Q",
+        (q_parent.event_id, p_token.event_id),
+        {
+            "mode": "TOKEN",
+            "parent_line": q_parent.payload_map()["parent_line"],
+            "source_parent": q_parent.event_id,
+            "token_support": p_token.event_id,
+        },
+    )
+    require_rejection(lambda: validate_typed_history(
+        path,
+        (cross_token_mode, p_token) + no_birth,
+    ))
+    return rejected
 
 
 @dataclass(frozen=True)
@@ -881,6 +2007,24 @@ def visibility_expectation_for_vertex(
     )
 
 
+def typed_visibility_expectation_for_vertex(
+    dist: ModeDistribution,
+    cell: OrientedCell,
+    vertex: str,
+    coherence: Fraction,
+) -> Fraction:
+    parent_line = cell.parent_line(vertex)
+    return sum(
+        probability
+        * line_shadow(
+            build_typed_history(cell, atom.mode_map(), atom.selected),
+            parent_line,
+            coherence,
+        )
+        for atom, probability in dist.items()
+    )
+
+
 def visibility_checks() -> Tuple[Fraction, Fraction, Fraction, Fraction, int]:
     coupling = Fraction(9, 25)
     coherence = Fraction(4, 5)
@@ -888,11 +2032,19 @@ def visibility_checks() -> Tuple[Fraction, Fraction, Fraction, Fraction, int]:
         raise AssertionError("Pythagorean coupling")
     equal_mode = {mode: Fraction(1, 3) for mode in MODES}
     histories = tuple(product(MODES, repeat=3))
+    cell = ORIENTED_CELLS["path"]
+    shared_line = {proposal: "probe:shared-parent-line" for proposal in cell.vertices}
     expected = Fraction(0)
     history_checks = 0
     for history in histories:
-        born_count = sum(mode == "BORN" for mode in history)
-        shadow = coherence ** born_count
+        modes = dict(zip(cell.vertices, history))
+        records = build_typed_history(
+            cell,
+            modes,
+            frozenset(),
+            shared_line,
+        )
+        shadow = line_shadow(records, "probe:shared-parent-line", coherence)
         expected += Fraction(1, 27) * shadow
         if all(mode != "BORN" for mode in history) and shadow != 1:
             raise AssertionError("TOKEN/NO_BIRTH shadow")
@@ -1049,6 +2201,7 @@ def covariance_checks() -> int:
             oriented_interface(cell, region),
             rename,
             participant_rename,
+            renamed_cell,
         )
         if oriented_interface(renamed_cell, renamed_region) != expected:
             raise AssertionError((region, "oriented interface covariance"))
@@ -1131,6 +2284,49 @@ def priority_atom_complete(atom: PriorityAtom, g: Graph) -> bool:
     )
 
 
+def typed_binary_history_checks(
+    dist: BinaryDistribution,
+    cell: OrientedCell,
+) -> Tuple[int, int, int, int]:
+    histories = 0
+    events = 0
+    prepares = 0
+    dormant_tokens = 0
+    modes = {proposal: "TOKEN" for proposal in cell.vertices}
+    for selected in dist:
+        records = build_typed_history(cell, modes, selected)
+        histories += 1
+        events += len(records)
+        prepares += sum(record.kind == D36_PREPARE for record in records)
+        dormant_tokens += sum(record.kind == DORMANT_TOKEN for record in records)
+    return histories, events, prepares, dormant_tokens
+
+
+def typed_priority_history_checks(
+    dist: PriorityDistribution,
+    cell: OrientedCell,
+) -> Tuple[int, int, int, int, int]:
+    histories = 0
+    events = 0
+    prepares = 0
+    dormant_tokens = 0
+    priority_clicks = 0
+    modes = {proposal: "TOKEN" for proposal in cell.vertices}
+    for atom in dist:
+        records = build_typed_history(
+            cell,
+            modes,
+            atom.selected,
+            priority_orders=atom.orders,
+        )
+        histories += 1
+        events += len(records)
+        prepares += sum(record.kind == D36_PREPARE for record in records)
+        dormant_tokens += sum(record.kind == DORMANT_TOKEN for record in records)
+        priority_clicks += sum(record.kind == PRIORITY_CLICK for record in records)
+    return histories, events, prepares, dormant_tokens, priority_clicks
+
+
 def binary_text(dist: BinaryDistribution) -> str:
     return ", ".join(
         f"{{{','.join(sorted(atom))}}}:{ftext(probability)}"
@@ -1149,7 +2345,7 @@ def main() -> None:
 
     emit("[D37 admissible regional history specifications — exact finite receipt]")
     emit("ARITHMETIC: integers/Fractions only; machine enumeration is not physical order")
-    emit("SCOPE: supplied finite opportunity complexes; classical countable completion requires the stated proof")
+    emit("SCOPE: supplied typed parent/port opportunity carriers over pairwise conflict graphs; countable completion requires the stated proof")
 
     registered = tuple(
         GRAPHS[name]
@@ -1170,24 +2366,73 @@ def main() -> None:
     automorphisms = {g.name: graph_automorphisms(g) for g in registered}
     orientation_rows = []
     orientation_valid = True
+    interface_content_checks = 0
+    typed_history_cells = 0
+    typed_event_total = 0
+    typed_prepare_total = 0
     for name, cell in ORIENTED_CELLS.items():
         orientation_valid &= graph_from_cell(cell) == GRAPHS[name]
         for region in regions(GRAPHS[name]):
-            orientation_rows.append((name, tuple(sorted(region)), oriented_interface(cell, region)))
+            interface = oriented_interface(cell, region)
+            if not interface_content_valid(cell, region, interface):
+                raise AssertionError((name, region, "typed interface content"))
+            interface_content_checks += 1
+            orientation_rows.append((name, tuple(sorted(region)), interface))
+        selected: set[str] = set()
+        for proposal in cell.vertices:
+            if not (neighbors(GRAPHS[name], proposal) & selected):
+                selected.add(proposal)
+        typed_history = build_typed_history(
+            cell,
+            {proposal: "BORN" for proposal in cell.vertices},
+            frozenset(selected),
+        )
+        typed_history_cells += 1
+        typed_event_total += len(typed_history)
+        typed_prepare_total += sum(record.kind == D36_PREPARE for record in typed_history)
+    typed_illegal_rejections = typed_legality_negative_checks()
     orientation_hash = hashlib.sha256(stable(orientation_rows).encode()).hexdigest()
     gates["S0"] = (
         vertex_total == 28
         and edge_total == 19
         and region_total == 196
-        and len(orientation_rows) == 23
+        and len(orientation_rows) == 38
+        and interface_content_checks == 38
         and orientation_valid
-        and all(value > 0 for value in automorphisms.values())
+        and typed_history_cells == 6
+        and typed_event_total == 104
+        and typed_prepare_total == 19
+        and typed_illegal_rejections == 7
+        and automorphisms
+        == {
+            "d36_disjoint": 2,
+            "pair": 2,
+            "partial": 2,
+            "path": 2,
+            "path5": 2,
+            "path7": 2,
+            "triangle": 6,
+            "two_pairs": 8,
+        }
     )
-    science["objects"] = [vertex_total, edge_total, region_total, automorphisms, orientation_hash]
-    emit("[REGISTERED OPPORTUNITY COMPLEXES]")
+    science["objects"] = [
+        vertex_total,
+        edge_total,
+        region_total,
+        automorphisms,
+        orientation_hash,
+        interface_content_checks,
+        typed_history_cells,
+        typed_event_total,
+        typed_prepare_total,
+        typed_illegal_rejections,
+    ]
+    emit("[REGISTERED TYPED OPPORTUNITY CARRIERS]")
     emit(f"graphs={len(registered)}; vertices={vertex_total}; conflict_edges={edge_total}; nonempty_regions={region_total}")
     emit(f"automorphism_counts={stable(automorphisms)}; oriented_interface_rows={len(orientation_rows)}; orientation_sha256={orientation_hash}")
-    emit("incoming_carrier_parents=1; participant_base_interfaces=1; generated_mode_selection_clicks=1; structural_labels_not_physical_slots=1")
+    emit(f"interface_content_checks={interface_content_checks}/38; typed_causal_histories={typed_history_cells}/6; typed_events={typed_event_total}; signed_D36_prepare_records={typed_prepare_total}")
+    emit(f"typed_illegal_histories_rejected={typed_illegal_rejections}/7; missing_parent=1; duplicate_mode=1; forged_attempt=1; forged_signature=1; wrong_priority=1; conflict=1; cross_TOKEN=1")
+    emit("distinct_parent_record_ids=1; explicit_parent_lines=1; explicit_event_types=1; causal_parent_bound=2; structural_labels_not_physical_slots=1")
 
     k3_conditionals = 0
     k3_towers = 0
@@ -1202,7 +2447,12 @@ def main() -> None:
     left = graph("left", ("P", "Q"), (("P", "Q"),))
     right = graph("right", ("R", "S"), (("R", "S"),))
     k3_factor = hard_core(disjoint, Fraction(2)) == product_binary(hard_core(left, Fraction(2)), hard_core(right, Fraction(2)))
-    gates["S1"] = k3_conditionals > 0 and k3_towers > 0 and k3_mixtures == 138 and k3_factor
+    gates["S1"] = (
+        k3_conditionals == 508
+        and k3_towers == 7098
+        and k3_mixtures == 138
+        and k3_factor
+    )
     science["k3"] = [k3_conditionals, k3_towers, k3_mixtures]
     emit("[K3 FULL FINITE SPECIFICATION]")
     emit(f"intrinsic_conditionals={k3_conditionals}; nested_DLR_towers={k3_towers}; boundary_mixtures={k3_mixtures}")
@@ -1216,10 +2466,14 @@ def main() -> None:
         forcing_ratio_checks += ratios
         forcing_states += states
         contextual_odds = odds
-    gates["S2"] = forcing_ratio_checks > 0 and forcing_states > 0 and len(contextual_odds) >= 2
+    gates["S2"] = (
+        forcing_ratio_checks == 30
+        and forcing_states == 25
+        and contextual_odds == ("2", "4")
+    )
     science["forcing"] = [forcing_ratio_checks, forcing_states, contextual_odds]
     emit("[SAFE-SUPPORT FIXED-ODDS FORCING]")
-    emit(f"single_flip_ratio_checks={forcing_ratio_checks}; reconstructed_states={forcing_states}; global_weight_reconstruction=1")
+    emit(f"exact_single_flip_probability_ratios={forcing_ratio_checks}; reconstructed_states={forcing_states}; global_weight_reconstruction=1")
     emit(f"context_dependent_odds_negative={contextual_odds}; maximal_support_negative=1; overlap_alone_forces_Gibbs=0")
 
     k2_conditionals = 0
@@ -1231,7 +2485,12 @@ def main() -> None:
         k2_boundaries += boundaries
         k2_towers += binary_tower_checks(uniform_maximal(GRAPHS[name]), GRAPHS[name])
     raw_k1, raw_k2 = raw_restriction_failures()
-    gates["S3"] = k2_conditionals > 0 and k2_towers > 0 and raw_k2[0] != raw_k2[1]
+    gates["S3"] = (
+        k2_conditionals == 188
+        and k2_boundaries == 165
+        and k2_towers == 1224
+        and raw_k2[0] != raw_k2[1]
+    )
     science["k2"] = [k2_conditionals, k2_boundaries, k2_towers, dist_signature(raw_k2[0]), dist_signature(raw_k2[1])]
     emit("[K2 MAXIMAL-SUPPORT LIFT]")
     emit(f"blocker_demand_conditionals={k2_conditionals}; distinct_boundaries={k2_boundaries}; nested_DLR_towers={k2_towers}")
@@ -1243,21 +2502,30 @@ def main() -> None:
     path_k2 = uniform_maximal(GRAPHS["path"])
     priority_towers = priority_tower_checks(path_priority, GRAPHS["path"])
     complete_click_atoms = sum(priority_atom_complete(atom, GRAPHS["path"]) for atom in path_priority)
+    typed_k1 = typed_priority_history_checks(path_priority, ORIENTED_CELLS["path"])
     one_hop_witness = find_k1_one_hop_counterexample()
     gates["S4"] = (
         path_k1[frozenset(("Q",))] == Fraction(1, 3)
         and path_k1[frozenset(("P", "R"))] == Fraction(2, 3)
         and path_k2[frozenset(("Q",))] == Fraction(1, 2)
         and raw_k1[0] != raw_k1[1]
-        and priority_towers > 0
-        and complete_click_atoms == len(path_priority)
+        and priority_towers == 35
+        and complete_click_atoms == len(path_priority) == 6
+        and typed_k1 == (6, 140, 20, 18, 6)
         and bool(one_hop_witness)
     )
-    science["k1"] = [dist_signature(path_k1), priority_towers, complete_click_atoms, one_hop_witness]
+    science["k1"] = [
+        dist_signature(path_k1),
+        priority_towers,
+        complete_click_atoms,
+        typed_k1,
+        one_hop_witness,
+    ]
     emit("[K1 RECORDED-PRIORITY LIFT]")
     emit(f"path_K1={binary_text(path_k1)}; path_K2={binary_text(path_k2)}; marked_atoms={len(path_priority)}")
     emit(f"path_to_edge_raw={binary_text(raw_k1[0])}; direct_edge={binary_text(raw_k1[1])}; finite_marked_DLR_towers={priority_towers}")
     emit(f"recorded_priority_and_all_outcomes={complete_click_atoms}/{len(path_priority)}; one_hop_output_counterexample={stable(one_hop_witness)}")
+    emit(f"typed_priority_histories={typed_k1[0]}; typed_events={typed_k1[1]}; signed_exact_D36_prepare_records={typed_k1[2]}; dormant_TOKEN_records={typed_k1[3]}; recorded_priority_clicks={typed_k1[4]}")
     emit("K1_infinite_quasilocal_completion=NOT_PROVED; finite_boundary_class=recorded_component_priority+exterior_outcomes")
 
     pairwise_overlap, triple_support, pair_atoms = anticorrelation_cover()
@@ -1265,10 +2533,16 @@ def main() -> None:
     path_k2_cover = cover_checks(GRAPHS["path"].vertices, path_k2, binary_projection)
     path_k1_cover = cover_checks(GRAPHS["path"].vertices, path_priority, priority_projection)
     cover_total = path_k3_cover + path_k2_cover + path_k1_cover
-    gates["S5"] = cover_total > 0 and pairwise_overlap == 1 and triple_support == 0
+    gates["S5"] = (
+        cover_total == 99
+        and path_k3_cover == path_k2_cover == path_k1_cover == 33
+        and pairwise_overlap == 1
+        and triple_support == 0
+        and pair_atoms == 6
+    )
     science["covers"] = [cover_total, path_k3_cover, path_k2_cover, path_k1_cover, pairwise_overlap, triple_support]
-    emit("[FINITE-COVER DESCENT]")
-    emit(f"global_joint_cover_overlap_checks={cover_total}; K3={path_k3_cover}; K2={path_k2_cover}; K1_marked={path_k1_cover}")
+    emit("[THREE-PATH MARGINAL DESCENT]")
+    emit(f"global_joint_path_overlap_checks={cover_total}; K3={path_k3_cover}; K2={path_k2_cover}; K1_marked={path_k1_cover}")
     emit(f"pairwise_anticorrelation_laws={pair_atoms}; singleton_overlaps_agree={pairwise_overlap}; triple_joint_support={triple_support}")
 
     mode_points = (
@@ -1292,33 +2566,127 @@ def main() -> None:
     birth_marginal = marginal_mode_probability(equal_dist, "Q")
     arbitration_marginal = selected_probability(equal_dist, "Q")
     joint_q_visibility = visibility_expectation_for_vertex(equal_dist, "Q", Fraction(4, 5))
-    gates["S6"] = mode_conditionals > 0 and mode_towers > 0 and swap_checks == len(equal_dist) and mode_cover > 0
-    science["modes"] = [mode_conditionals, mode_one_sites, mode_towers, mode_atoms, swap_checks, mode_cover, birth_marginal, arbitration_marginal, joint_q_visibility]
+    (
+        typed_mode_histories,
+        typed_mode_events,
+        typed_mode_prepares,
+        typed_dormant_tokens,
+    ) = typed_mode_history_checks(
+        equal_dist,
+        ORIENTED_CELLS["path"],
+    )
+    gates["S6"] = (
+        mode_conditionals == 166
+        and mode_one_sites == 134
+        and mode_towers == 238
+        and mode_atoms == 186
+        and swap_checks == len(equal_dist) == 93
+        and mode_cover == 33
+        and typed_mode_histories == 93
+        and typed_mode_events == 1683
+        and typed_mode_prepares == 156
+        and typed_dormant_tokens == 106
+        and birth_marginal == {
+            "NO_BIRTH": Fraction(25, 93),
+            "TOKEN": Fraction(34, 93),
+            "BORN": Fraction(34, 93),
+        }
+        and arbitration_marginal == Fraction(6, 31)
+    )
+    science["modes"] = [
+        mode_conditionals,
+        mode_one_sites,
+        mode_towers,
+        mode_atoms,
+        swap_checks,
+        mode_cover,
+        birth_marginal,
+        arbitration_marginal,
+        joint_q_visibility,
+        typed_mode_histories,
+        typed_mode_events,
+        typed_mode_prepares,
+        typed_dormant_tokens,
+    ]
     emit("[JOINT BIRTH / ARBITRATION FUNCTIONAL]")
     emit(f"intrinsic_conditionals={mode_conditionals}; one_site_conditionals={mode_one_sites}; nested_DLR_towers={mode_towers}; atoms={mode_atoms}")
-    emit(f"BORN_TOKEN_exchange_atoms={swap_checks}; finite_cover_checks={mode_cover}; Q_mode_marginal={stable({k:ftext(v) for k,v in sorted(birth_marginal.items())})}")
+    emit(f"BORN_TOKEN_exchange_atoms_at_symmetric_point={swap_checks}; three_path_cover_checks={mode_cover}; Q_mode_marginal={stable({k:ftext(v) for k,v in sorted(birth_marginal.items())})}")
     emit(f"Q_selected_marginal={ftext(arbitration_marginal)}; Q_D26_expected_factor={ftext(joint_q_visibility)}; q_birth_and_arbitration_from_same_table=1; weights_selected=0")
+    emit(f"typed_history_atoms={typed_mode_histories}; typed_events={typed_mode_events}; dormant_TOKEN_records={typed_dormant_tokens}; signed_exact_D36_prepare_records={typed_mode_prepares}")
 
     coupling, coherence, all_born_shadow, expected_shadow, visibility_history_checks = visibility_checks()
+    typed_joint_q_visibility = typed_visibility_expectation_for_vertex(
+        equal_dist,
+        ORIENTED_CELLS["path"],
+        "Q",
+        coherence,
+    )
+    typed_k3 = typed_binary_history_checks(
+        hard_core(GRAPHS["path"], Fraction(2)),
+        ORIENTED_CELLS["path"],
+    )
+    typed_k2 = typed_binary_history_checks(path_k2, ORIENTED_CELLS["path"])
     gates["S7"] = (
         coherence * coherence == 1 - coupling
         and all_born_shadow == Fraction(64, 125)
         and expected_shadow == Fraction(2744, 3375)
         and joint_q_visibility == Fraction(431, 465)
+        and typed_joint_q_visibility == joint_q_visibility
         and complete_click_atoms == len(path_priority)
+        and typed_k3 == (5, 105, 10, 15)
+        and typed_k2 == (2, 44, 6, 6)
+        and typed_k1 == (6, 140, 20, 18, 6)
     )
-    science["visibility"] = [coupling, coherence, all_born_shadow, expected_shadow, visibility_history_checks]
+    science["visibility"] = [
+        coupling,
+        coherence,
+        all_born_shadow,
+        expected_shadow,
+        visibility_history_checks,
+        typed_joint_q_visibility,
+        typed_k3,
+        typed_k2,
+        typed_k1,
+    ]
     emit("[D26 VISIBILITY / CLICK SOURCE]")
     emit(f"g={ftext(coupling)}; sqrt_1_minus_g={ftext(coherence)}; three_same_line_BORN_shadow={ftext(all_born_shadow)}")
-    emit(f"equal_mode_three_opportunity_expected_shadow={ftext(expected_shadow)}; joint_Q_expected_factor={ftext(joint_q_visibility)}; history_checks={visibility_history_checks}; TOKEN_NO_BIRTH_factor=1")
-    emit("D26_constrains_BORN_sector=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0")
+    emit(f"equal_mode_three_opportunity_expected_shadow={ftext(expected_shadow)}; joint_Q_expected_factor={ftext(joint_q_visibility)}; typed_parent_line_history_checks={visibility_history_checks}; TOKEN_NO_BIRTH_factor=1")
+    emit("D26_parent_line_attached=1; coherence_neutral_TOKEN_control=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0")
+    emit("[TYPED CLICK / PREPARE ADAPTERS]")
+    emit(f"K3_histories_events_prepares_tokens={typed_k3}; K2_histories_events_prepares_tokens={typed_k2}")
+    emit(f"K1_histories_events_prepares_tokens_priority_clicks={typed_k1}; exact_attempt_key=carrier_id+body_digest; signed_PREPARE_parent_bound=2")
 
     covariance = covariance_checks()
     anti_sizes = anti_dilution_checks()
-    gates["S8"] = covariance == 6 and all(size > 0 for size in anti_sizes)
-    science["covariance"] = [covariance, anti_sizes]
+    linear_extensions, same_wire_pairs, linear_extension_digest = linear_extension_covariance()
+    causal_restrictions, full_causal_events, left_causal_events, right_causal_events = (
+        causal_disjoint_restriction_checks()
+    )
+    gates["S8"] = (
+        covariance == 6
+        and anti_sizes == (9, 4, 4, 441)
+        and linear_extensions == 70
+        and same_wire_pairs == 6
+        and linear_extension_digest
+        == "dfa0994db74254fc2095d4bb69ad1c20baa52e4e7a86f3699f104b585beaf501"
+        and causal_restrictions == 2
+        and (full_causal_events, left_causal_events, right_causal_events) == (24, 13, 11)
+    )
+    science["covariance"] = [
+        covariance,
+        anti_sizes,
+        linear_extensions,
+        same_wire_pairs,
+        linear_extension_digest,
+        causal_restrictions,
+        full_causal_events,
+        left_causal_events,
+        right_causal_events,
+    ]
     emit("[COVARIANCE / ANTI-DILUTION]")
     emit(f"relabel_covariance_families={covariance}/6; disconnected_local_factorizations=4/4; atom_counts={anti_sizes}")
+    emit(f"D33_linear_extensions={linear_extensions}; same_wire_comparable_pairs={same_wire_pairs}; replay_digest={linear_extension_digest}")
+    emit(f"D34_causal_restrictions={causal_restrictions}/2; typed_event_counts=full:{full_causal_events},left:{left_causal_events},right:{right_causal_events}")
     emit("boundary_widths=K3:one-hop-blockers,K2:two-hop-blockers+domination-demands,K1:recorded-component-priority")
 
     source_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -1335,9 +2703,9 @@ def main() -> None:
     passed = sum(gates.values())
     emit("[VERDICT]")
     emit(f"{'PASS' if passed == len(gates) else 'FAIL'} {passed}/{len(gates)}")
-    emit("CLASSICAL FINITE REGIONAL SPECIFICATION / SUPPLIED OPPORTUNITY COMPLEX / FAMILY NOT SELECTOR")
+    emit("CLASSICAL TYPED CAUSAL REGIONAL SPECIFICATION / SUPPLIED OPPORTUNITY CARRIER / FAMILY NOT SELECTOR")
     emit("K3 fixed-odds forcing survives; K2 progress survives with domination boundary; K1 finite marked lift is wider-boundary")
-    emit("countable completion proof, selected couplings, generated opportunity complex and quantum lift remain separate claims")
+    emit("countable completion proof, selected couplings, generated typed opportunity carrier and quantum lift remain separate claims")
     if passed != len(gates):
         raise SystemExit(1)
 

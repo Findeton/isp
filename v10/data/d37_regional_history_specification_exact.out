@@ -1,15 +1,17 @@
 [D37 admissible regional history specifications — exact finite receipt]
 ARITHMETIC: integers/Fractions only; machine enumeration is not physical order
-SCOPE: supplied finite opportunity complexes; classical countable completion requires the stated proof
-[REGISTERED OPPORTUNITY COMPLEXES]
+SCOPE: supplied typed parent/port opportunity carriers over pairwise conflict graphs; countable completion requires the stated proof
+[REGISTERED TYPED OPPORTUNITY CARRIERS]
 graphs=8; vertices=28; conflict_edges=19; nonempty_regions=196
-automorphism_counts={"d36_disjoint":2,"pair":2,"partial":2,"path":2,"path5":2,"path7":2,"triangle":6,"two_pairs":8}; oriented_interface_rows=23; orientation_sha256=651c620efbfe9a364dd17c8e5bba517d07e48bd9cb78d803eebca62519cfa25d
-incoming_carrier_parents=1; participant_base_interfaces=1; generated_mode_selection_clicks=1; structural_labels_not_physical_slots=1
+automorphism_counts={"d36_disjoint":2,"pair":2,"partial":2,"path":2,"path5":2,"path7":2,"triangle":6,"two_pairs":8}; oriented_interface_rows=38; orientation_sha256=02da8776fcd3d70d88f37bc1c4c634b04a11326402b24d8bcb7dcea01b4eacb8
+interface_content_checks=38/38; typed_causal_histories=6/6; typed_events=104; signed_D36_prepare_records=19
+typed_illegal_histories_rejected=7/7; missing_parent=1; duplicate_mode=1; forged_attempt=1; forged_signature=1; wrong_priority=1; conflict=1; cross_TOKEN=1
+distinct_parent_record_ids=1; explicit_parent_lines=1; explicit_event_types=1; causal_parent_bound=2; structural_labels_not_physical_slots=1
 [K3 FULL FINITE SPECIFICATION]
 intrinsic_conditionals=508; nested_DLR_towers=7098; boundary_mixtures=138
 disconnected_factorization=1; activities=(1,2); boundary_class=accepted_one_hop_neighbors
 [SAFE-SUPPORT FIXED-ODDS FORCING]
-single_flip_ratio_checks=30; reconstructed_states=25; global_weight_reconstruction=1
+exact_single_flip_probability_ratios=30; reconstructed_states=25; global_weight_reconstruction=1
 context_dependent_odds_negative=('2', '4'); maximal_support_negative=1; overlap_alone_forces_Gibbs=0
 [K2 MAXIMAL-SUPPORT LIFT]
 blocker_demand_conditionals=188; distinct_boundaries=165; nested_DLR_towers=1224
@@ -19,25 +21,32 @@ progress_survives_regional_consistency=1; safe_rejected_symbol=0; explicit_hard_
 path_K1={Q}:1/3, {P,R}:2/3; path_K2={Q}:1/2, {P,R}:1/2; marked_atoms=6
 path_to_edge_raw={P}:2/3, {Q}:1/3; direct_edge={P}:1/2, {Q}:1/2; finite_marked_DLR_towers=35
 recorded_priority_and_all_outcomes=6/6; one_hop_output_counterexample=["path5",["A","B"],[],["D"],["E"],[["{\"selected\":[\"A\"]}","5/11"],["{\"selected\":[\"B\"]}","6/11"]],[["{\"selected\":[\"B\"]}","1"]]]
+typed_priority_histories=6; typed_events=140; signed_exact_D36_prepare_records=20; dormant_TOKEN_records=18; recorded_priority_clicks=6
 K1_infinite_quasilocal_completion=NOT_PROVED; finite_boundary_class=recorded_component_priority+exterior_outcomes
-[FINITE-COVER DESCENT]
-global_joint_cover_overlap_checks=99; K3=33; K2=33; K1_marked=33
+[THREE-PATH MARGINAL DESCENT]
+global_joint_path_overlap_checks=99; K3=33; K2=33; K1_marked=33
 pairwise_anticorrelation_laws=6; singleton_overlaps_agree=1; triple_joint_support=0
 [JOINT BIRTH / ARBITRATION FUNCTIONAL]
 intrinsic_conditionals=166; one_site_conditionals=134; nested_DLR_towers=238; atoms=186
-BORN_TOKEN_exchange_atoms=93; finite_cover_checks=33; Q_mode_marginal={"BORN":"34/93","NO_BIRTH":"25/93","TOKEN":"34/93"}
+BORN_TOKEN_exchange_atoms_at_symmetric_point=93; three_path_cover_checks=33; Q_mode_marginal={"BORN":"34/93","NO_BIRTH":"25/93","TOKEN":"34/93"}
 Q_selected_marginal=6/31; Q_D26_expected_factor=431/465; q_birth_and_arbitration_from_same_table=1; weights_selected=0
+typed_history_atoms=93; typed_events=1683; dormant_TOKEN_records=106; signed_exact_D36_prepare_records=156
 [D26 VISIBILITY / CLICK SOURCE]
 g=9/25; sqrt_1_minus_g=4/5; three_same_line_BORN_shadow=64/125
-equal_mode_three_opportunity_expected_shadow=2744/3375; joint_Q_expected_factor=431/465; history_checks=27; TOKEN_NO_BIRTH_factor=1
-D26_constrains_BORN_sector=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0
+equal_mode_three_opportunity_expected_shadow=2744/3375; joint_Q_expected_factor=431/465; typed_parent_line_history_checks=27; TOKEN_NO_BIRTH_factor=1
+D26_parent_line_attached=1; coherence_neutral_TOKEN_control=1; universal_rate_from_visibility=0; hidden_service_order_randomness=0
+[TYPED CLICK / PREPARE ADAPTERS]
+K3_histories_events_prepares_tokens=(5, 105, 10, 15); K2_histories_events_prepares_tokens=(2, 44, 6, 6)
+K1_histories_events_prepares_tokens_priority_clicks=(6, 140, 20, 18, 6); exact_attempt_key=carrier_id+body_digest; signed_PREPARE_parent_bound=2
 [COVARIANCE / ANTI-DILUTION]
 relabel_covariance_families=6/6; disconnected_local_factorizations=4/4; atom_counts=(9, 4, 4, 441)
+D33_linear_extensions=70; same_wire_comparable_pairs=6; replay_digest=dfa0994db74254fc2095d4bb69ad1c20baa52e4e7a86f3699f104b585beaf501
+D34_causal_restrictions=2/2; typed_event_counts=full:24,left:13,right:11
 boundary_widths=K3:one-hop-blockers,K2:two-hop-blockers+domination-demands,K1:recorded-component-priority
 [HASHES]
-source_sha256=8a8772f878d725ce1f22acc703cd23accd531ca0ebb8a08af2bc01eca92f7f4a
-stdout_body_sha256=91a0cb3a85aca73d4cc78266ef29f0a4bdac8cf7a44406a7e258a3d71bb7f5c7
-internal_science_sha256=cf9997407d8cb8b974f442ab341b7f4d3e6a1b3d3db3c43c6c4207189c0df0bf
+source_sha256=104eee846131a91fa3edea70211d0206d728640f6f9f086081362f13b47a539d
+stdout_body_sha256=f126da4f7fbc541645bddd88dacebd088539ac1781a1f518cad7bc39a64fad38
+internal_science_sha256=2c4f7681310345ccc2e60107f0b11f93b8006a3fae62abc7a439bf38fd7dc142
 [GATES]
 S0=PASS
 S1=PASS
@@ -50,6 +59,6 @@ S7=PASS
 S8=PASS
 [VERDICT]
 PASS 9/9
-CLASSICAL FINITE REGIONAL SPECIFICATION / SUPPLIED OPPORTUNITY COMPLEX / FAMILY NOT SELECTOR
+CLASSICAL TYPED CAUSAL REGIONAL SPECIFICATION / SUPPLIED OPPORTUNITY CARRIER / FAMILY NOT SELECTOR
 K3 fixed-odds forcing survives; K2 progress survives with domination boundary; K1 finite marked lift is wider-boundary
-countable completion proof, selected couplings, generated opportunity complex and quantum lift remain separate claims
+countable completion proof, selected couplings, generated typed opportunity carrier and quantum lift remain separate claims
