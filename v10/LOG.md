@@ -1,5 +1,21 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40b closes the typed probability-space repair (LEDGER #265)
+
+`code/d40b_probability_space_repair_exact.py` returns `PASS 5/5`.  The Paper
+28 projected star law has 28 serial paths, 17 unordered action atoms and target
+mass `1/18 + 2/33 = 23/198`.  The complete depth-two embedded jump law has 44
+serial paths, 40 typed causal-DAG atoms, four merges and target mass
+`1/32 + 1/48 = 5/96`.  Both pushforwards normalize, their constructors are
+distinct and cross-object mass equality is forbidden.
+
+The global result is explicitly fixed-depth, with timed Harris cylinders,
+arbitrary-down-set projectivity and stationary/infinite completion unclaimed.
+Bell Gram positivity now has 320/320 exact quadratic-form controls.  R9 is
+typed as a twelve-row corpus claim ledger with no universality theorem, and
+negative-radical rendering is repaired.  Independent closing review remains
+open; Paper 29 remains held.
+
 ## 2026-07-15 — D40b two-probability-space repair pinned (LEDGER #264)
 
 `note-d40b-hostile-repair.md` freezes the round-one repair before source.  It

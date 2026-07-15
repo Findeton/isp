@@ -1,0 +1,34 @@
+[D40b hostile repair — typed probability spaces]
+ARITHMETIC: integer/Fraction/Q(sqrt2) exact; no floating theorem
+[C0 LOCKS]
+antecedent_locks=5/5
+[C1 TWO TYPED PROBABILITY SPACES]
+STAR_RELEVANT_SERIAL=1/18,2/33; same_STAR_UNORDERED_ACTION_ATOM=1/1; preimages=2
+STAR_UNORDERED_ACTION_ATOM_mass=23/198; equals_star_serial_sum=1/1; star_pushforward_normalized=1/1
+GLOBAL_SERIAL_EVENT=1/32,1/48; same_GLOBAL_TYPED_DAG_ATOM=1/1; preimages=2; same_event_set=1/1; same_store=1/1
+GLOBAL_TYPED_DAG_ATOM_mass=5/96; equals_global_serial_sum=1/1; global_pushforward_normalized=1/1
+cross_object_mass_equality=NOT_REQUIRED; substitution_forbidden=1
+[C2 FIXED-DEPTH SCOPE]
+star_serial_paths=28; star_unordered_atoms=17; global_serial_paths=44; global_typed_DAG_atoms=40; global_merges=4
+global_object=REGISTERED_DEPTH_TWO_EMBEDDED_JUMP_PUSHFORWARD; timed_Harris_cylinder=NOT_CLAIMED; arbitrary_downset_projectivity=NOT_CLAIMED; stationary_infinite_completion=NOT_CLAIMED
+[C3 BELL GRAM POSITIVITY]
+settings=4/4; symmetric_Grams=4/4; normalized_Grams=4/4; exact_quadratic_form_controls=320/320
+proof_for_arbitrary_real_c=c^T_G_c=norm(sum_i_c_i_v_i)^2>=0
+[C4 TYPED CORPUS CLAIM LEDGER / RENDERING]
+unique_claim_rows=1/1; ledger_rows=12/12; universality_theorem=0
+erased_setting_conditionals=1/2+1/4*sqrt2,1/2-1/4*sqrt2
+[HASHES]
+source_sha256=892fc4e445b29bcc56aec8e1622d4bc84e527a511e0daf74ee3ead71d82ea68e
+stdout_body_sha256=9aadc4930236bf38fb86cc0aa6632bb2f80971869c4334f34559246c465e949c
+internal_science_sha256=8e39b18e2039482e36db5351cd892d2225b74a9fd9d95433a0233aa43e258b68
+[GATES]
+C0=PASS
+C1=PASS
+C2=PASS
+C3=PASS
+C4=PASS
+[VERDICT]
+PASS 5/5
+TWO-SPACE SERIAL-TO-UNORDERED PUSHFORWARD THEOREM
+PAPER28_FLAT_ACTION_NONMEMBERSHIP_WITHOUT_PROBABILITY_INCONSISTENCY
+FINITE_BELL_GRAM_POSITIVITY_CONTROL; UNRESOLVED_D15_DICTIONARY

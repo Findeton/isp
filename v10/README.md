@@ -1,19 +1,21 @@
 # Relativistic ISP v10
 
-## Latest — D40 exact level audit candidate (`PASS 11/11`)
+## Latest — D40b hostile repair candidate (`PASS 5/5`)
 
 D40 separates operator interchange, decoherence-functional consistency,
 durable-record cylinders, serial histories, causal-DAG pushforwards, regional
-boundary sufficiency and classical increment potentials.  Its first exact
-receipt passes all eleven preregistered gates; independent hostile review is
-open and Paper 29 remains held.
+boundary sufficiency and classical increment potentials.  Its first receipt
+passed 11/11; hostile review found `0B / 1M / 3m / 1n`.  D40b closes the
+findings at `PASS 5/5`; independent closing review is open and Paper 29 remains
+held.
 
-The receipt reproduces Paper 28's `1/18 != 2/33` projected-star products.  The
-complete serial weights are `1/32` and `1/48`; both serializations contain the
-same event identities and push to the same typed causal DAG, whose law has
-mass `5/96`, their exact sum.  Paper 28's classical action-filter nonmembership
-survives, but probability inconsistency does not follow.  The primary result
-is a serial-to-DAG level mismatch.
+The repair types two probability spaces separately.  Paper 28's projected
+first-relevant-event star law has 28 serial paths and 17 unordered action
+atoms; the target receives `1/18 + 2/33 = 23/198`.  The complete first-two-
+global-event embedded jump law has 44 serial paths and 40 typed DAG atoms; its
+target receives `1/32 + 1/48 = 5/96`.  Both pushforwards normalize.  Paper 28's
+classical action-filter nonmembership survives, but probability inconsistency
+does not follow: an unordered atom sums serialization weights.
 
 The quantum column gives exact `CHSH=2*sqrt(2)`, no-signalling and refined
 record cocycles, while a setting-erasure control fails boundary sufficiency.
@@ -27,6 +29,11 @@ visibility discriminator is preregistered for lab handoff; no data are claimed.
 - `note-d40-first-exact-receipt.md`
 - `code/d40_action_cocycle_level_audit_exact.py`
 - `data/d40_action_cocycle_level_audit_exact.out`
+- `reviews/d40-round1-independent-hostile-review.md`
+- `note-d40b-hostile-repair.md`
+- `note-d40b-exact-repair-receipt.md`
+- `code/d40b_probability_space_repair_exact.py`
+- `data/d40b_probability_space_repair_exact.out`
 
 ## Prior — Paper 28 independently reviewed exact-receipt candidate
 
