@@ -1,5 +1,24 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40 hostile round one finds one probability-space major (LEDGER #263)
+
+`reviews/d40-round1-independent-hostile-review.md` freezes commit `d11ba91`,
+reproduces D40 byte-identically under two fresh hash seeds and returns
+`0 BLOCKERS / 1 MAJOR / 3 MINOR / 1 NIT`.
+
+The major is precise: `1/18` and `2/33` belong to the projected first-relevant-
+event star law, while `1/32` and `1/48` belong to the complete first-two-global-
+event embedded jump law.  The latter pushes to `5/96`; the former must be
+separately pushed to `23/198`.  Crossing those objects leaves the proposed
+level-mismatch result plausible but not receipt-complete at its headline law.
+
+The minors require fixed-depth scope for the global pushforward, an explicit
+Gram-positivity proof label, and treatment of R9 as a typed corpus claim ledger
+rather than a derived universality theorem.  The exact negative-radical
+rendering is a nit.  The descent, interference, Bell, K-flat, D15-dictionary
+and D26-handoff results otherwise survive.  Paper 29 remains held for a
+focused D40b delta.
+
 ## 2026-07-15 — D40 first exact level audit passes 11/11 (LEDGER #262)
 
 `code/d40_action_cocycle_level_audit_exact.py` and its byte-identical stdout
