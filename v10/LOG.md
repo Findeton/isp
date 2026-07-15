@@ -1,5 +1,12 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40c receipt-integrity delta pinned (LEDGER #267)
+
+`note-d40c-closing-delta.md` freezes a four-gate repair: lock D40b and its
+review, execute D40's twelve transitive antecedent hashes and seven level
+constructors, gate the exact `(28,17,44,40,4)` census, and preserve both target
+masses, normalizations and scope zeros.  No scientific value may change.
+
 ## 2026-07-15 — D40b round two withholds closure on provenance (LEDGER #266)
 
 `reviews/d40b-round2-independent-review.md` freezes repair commit `25e44e5`,
