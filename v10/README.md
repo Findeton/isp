@@ -1,11 +1,30 @@
 # Relativistic ISP v10
 
-## Latest — D39 / Paper 28 selection campaign (pinned before execution)
+## Latest — D39 first exact receipt (`PASS 10/10`; hostile round open)
 
 D39 asks what classifies and empirically identifies record-closed laws.  The
-campaign is pinned before any executable, stdout receipt or Paper 28 draft.
-Its thesis is classification followed by identifiability: uniqueness, a
-residual family, emptiness and exact nonselection are all admissible outcomes.
+first exact receipt now passes all ten gates reproducibly.  Its thesis remains
+classification followed by identifiability: uniqueness, a residual family,
+emptiness and exact nonselection are all admissible outcomes.  Paper 28 is
+still held until the first hostile round is filed and any central blocker is
+repaired.
+
+The Level-A D38b-to-D37-interface functor is constructed on the finite cells:
+12/12 pushed kernels normalize, 12/12 nested restrictions commute and 1,760
+positive atoms survive.  Level B remains open because all five chosen D34b
+histories generate no D36 proposal conflict.  H0 static signed heads fail the
+asynchronous staleness control; H1 one-use attempt-bound owner grants match the
+complete oracle on birth, idle and interaction and reject 20/20 hostile cases
+with unchanged failed transactions.
+
+Selection does not collapse to a point.  The action cocycle has a residual
+positive family, while chosen projected D38b itself fails the declared square
+with exact products `1/18` and `2/33`.  The complete finite transport basis
+forces uniform conditional rooting on all three registered graph cells and
+rejects degree bias, but no infinite unimodular completion is constructed.
+Complete typed untimed records identify the registered actor/mode ratios only
+projectively; reduced-star records retain a silent-rate collision and absolute
+physical scale remains clock-bridge-dependent.
 
 The D37/D38b comparison is split at two levels.  D39 first targets a finite
 structure-preserving functor from authenticated D38b record regions to the
@@ -26,7 +45,7 @@ staleness, replay, retargeting, fork and partial-apply attacks are pinned.
 
 Selection conditions are action/history compatibility and finite all-transport
 unimodularity, both classified rather than assumed to choose a point.  The
-receipt will exhaust the doubly rooted orbit basis on its finite marked cells,
+receipt exhausts the doubly rooted orbit basis on its finite marked cells,
 while infinite root-free completion remains open.  Observable classes are
 frozen before identification: complete typed untimed records, reduced local
 records, construction-time records, calibrated clock-bridged records, D26
@@ -42,11 +61,14 @@ controls and does not identify them with a physical V6 seal or a D38b quantum
 join.
 
 Paper 28's projected title is *Selecting record-closed laws: comparison,
-unimodularity and empirical identifiability*.  Drafting is held until the first
-integrated D39 receipt executes and its first independent hostile round is
-filed; central blockers must be repaired before paper claims are written.
+unimodularity and empirical identifiability*.  Drafting remains held until the
+first independent hostile round is filed; central blockers must be repaired
+before paper claims are written.
 
 - `note-d39-selecting-record-closed-laws.md`
+- `note-d39-first-exact-receipt.md`
+- `code/d39_record_closed_law_selection_exact.py`
+- `data/d39_record_closed_law_selection_exact.out`
 
 ## Prior — D38b / Paper 27 (independently reviewed exact-receipt candidate)
 

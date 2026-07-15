@@ -4314,3 +4314,44 @@ The first integrated target is
 independent hostile lanes are pinned.  Paper 28 drafting waits until that
 receipt executes and hostile round one is filed; a central blocker must be
 repaired first.
+
+## 2026-07-15 — D39 first exact receipt passes 10/10 (LEDGER #251)
+
+`code/d39_record_closed_law_selection_exact.py` executes the ten pinned D39
+gates with exact integer/`Fraction` arithmetic.  Its frozen stdout is
+`data/d39_record_closed_law_selection_exact.out`.  Five hash seeds reproduce
+the complete stdout hash `36f6984f...b64c`; source, stdout-body and internal-
+science hashes are `3f976eff...0e06`, `3586e702...4c91` and
+`51cdf3a2...e1b5`.
+
+The finite Level-A comparison functor passes 12 pushed-kernel normalizations,
+12 nested restrictions, 1,760 positive atoms and ten triple-cover negative
+controls.  Level B remains genuinely open: five chosen D34b histories have
+empty D36 proposal-conflict images, so no generated K-family member is claimed.
+
+The static H0 signed-head certificate is rejected by an asynchronous stale-
+but-authentic interleaving.  H1's one-use, carrier-derived, attempt-bound grants
+match the complete oracle for birth, idle and interaction and reject all twenty
+hostile attacks without mutating failed transactions.  This is finite-cell
+sufficiency only, not a global certificate-locality theorem.
+
+The action calculation classifies 32 positive integer cocycle packets against
+224 normalization-only counterexamples.  Chosen projected D38b fails the
+declared commuting square with products `1/18` and `2/33`, leaving the action
+bridge open.  The complete finite doubly-rooted transport basis forces uniform
+conditional roots on all three registered cells and rejects three degree-
+biased controls; mixture weights and infinite unimodular completion remain
+free/open.  The executable's pre-freeze diagnostic was corrected from the
+irrelevant labeled-vertex rank `n-1` to the covariant rooted-isomorphism-orbit
+rank required by the pinned theorem.
+
+On the registered complete typed untimed family, 432 packets form 275
+projective actor/mode classes with zero residual collisions.  Common scale is
+null, the reduced-star silent-neighbor collision survives, construction-time
+hazards do not become physical seconds without a clock bridge, and D26 pricing
+remains conditional on O-V.  Pinned-alphabet operational controls preserve all
+exact nonzero distinctions and distinguish summable from nonsummable tails;
+no D38b quantum join or V6 seal is inferred.
+
+The terminal receipt is `PASS 10/10`.  Its first hostile review remains open,
+and Paper 28 drafting remains held.

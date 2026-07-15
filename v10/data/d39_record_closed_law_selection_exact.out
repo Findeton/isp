@@ -1,0 +1,62 @@
+[D39 selecting record-closed laws — first exact receipt]
+ARITHMETIC: integer/Fraction exact; symbolic hazards only; no floating theorem
+SCOPE: finite classical registered cells; Paper 28 HELD pending hostile round one
+[LOCKS / TWO-LEVEL SCOPE / DECLARED OBSERVABLES]
+antecedent_locks={"D23":"b648c0edd04a4709970a4d849cd10ace6601dc75ab8eaad0746daa1ce343c41e","D26":"a9b1f1704578178218750ecbafa737763ff3968ca246939a1d6aece79930575c","D26-data":"88a5461f2304415db69d4decc4b89b95195d928e79e8feeb73aeefca74c59633","D28":"dab14a28885bc7a40517d4a953a6538d631f3f281bfba522ab47a3ab33191ff5","D28-data":"e7d1c3a88019d9350fca192ca800497d57067937418fff86e7d04572f9bc4278","D31b":"450eef885a72401767550d24b3f5b141736973300fe0bbd17093bb13032a8190","D31b-data":"521576e81ced965d363492eb78f4fb2e38bd1e396749195a1a201738b87f48ff","D36b":"57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b","D37":"b15e577bfdf03e1bc78628d9d934bab1e604da9f4b62f7c6372fa61dca7fcbd9","D37-data":"20d4b2f6add6db3296f221c184be539dd62c66ada81f32418b9288bebf778ed8","D38b":"c48e317189a160d445af374346deb3199caed0ae222430260a55e2a6ef731eeb","D38b-data":"28e76708b6c72cf874aedf9700a6bd1756220e1cb4bf8be3e096e632b66b4f7d","D39-pin":"36c8c28a45fc6bb4069f16b2ed04045d7ed433eec2634f9af1d62987b850c948","Paper26":"8a3517aa9138ab9eec1cad04286a990ef84e52cd778a4dcce31ee9cadab67bb4","Paper27":"fa99123315f7394bc9a3e3af04d520b705a5a3ac059cf2834d3756b31fd9e118"}
+comparison=LEVEL_A_FUNCTOR_TARGET; generated_conflict=LEVEL_B_OPEN; equivalence=NOT_CLAIMED; K_membership=NOT_CLAIMED
+observables=O-U_TYPED_UNTIMED_CAUSAL_DAG,O-L_REDUCED_STAR,O-T_CONSTRUCTION_TIME,O-C_CLOCK_BRIDGED,O-V_D26_VISIBILITY,O-P_PINNED_OPERATIONAL
+[LEVEL-A D38b -> D37-INTERFACE COMPARISON FUNCTOR]
+identity_composition_update_naturality=1,2,1; typed_external_parent_and_frontier_rows=5
+pushed_kernel_normalizations=12/12; nested_prefix_restrictions=12/12; positive_atoms=1760
+triple_cover_negative_checks=10/10; functor_equivalence=0; K_family_membership=0; complete_witness_metadata_retained=1
+[LEVEL-B GENERATED-CONFLICT VACUITY]
+registered_D34b_histories=5; empty_contested_conflict_images=5; false_next-event-as-proposal_rejected=1
+future_D36_vocabulary_rows=8; chosen_D34b_generated_PROPOSAL_rows=0; induced_K_member=OPEN
+[H0 STATIC SIGNED-HEAD CERTIFICATE]
+valid_oracle_agreement=1/1; static_certificate_accepts_once-authentic_stale_claim=1/1; complete_oracle_rejects_stale=1/1; failed_oracle_transaction_unchanged=1/1
+H0=REJECTED_BY_ASYNCHRONOUS_STALENESS; signature_proves_issuance_not_present_currentness
+[H1 ONE-USE ATTEMPT-BOUND PER-WIRE GRANTS]
+valid_birth_idle_interaction=3/3; successor_state_matches_complete_oracle=3/3
+hostile_attacks_rejected=20/20; byte_identical_failed_transactions=20/20; replay_and_stale_controls=1,1; used_attempts_after_valid_sequence=3
+H1=FINITE_REGISTERED_SUFFICIENT; touched_wire_owner_grants_only; complete_history_in_certificate=0; global_locality_theorem=NOT_YET_CLAIMED
+[ACTION/HISTORY COMPATIBILITY CLASSIFICATION]
+positive_integer_packets_satisfying_cocycle=32; normalization_only_counterexamples=224; log_linear_rank=1; positive_solution_dimension=3
+chosen_D38b_projected_square_products=1/18,2/33; equal_final_boundary=1; projected_embedded_action_cocycle=FAIL
+interpretation=PROJECTED_RELEVANT_EVENT_KERNEL_NOT_PROVED_TO_DESCEND_TO_DECLARED_ACTION_QUOTIENT; action_bridge_selection=OPEN
+[FINITE ALL-TRANSPORT UNIMODULAR CLASSIFICATION]
+doubly_rooted_isomorphism_orbits=18; covariant_root_orbit_rank_complete_graphs=3/3; uniform_conditional_roots_pass=3/3
+degree_biased_roots_reject=3/3; arbitrary_unrooted_mixture_components_balanced=2/2; infinite_unimodular_completion_constructed=0
+[GAUGE-PUSHED UNTYPED/TYPED UNTIMED IDENTIFIABILITY]
+typed_parameter_packets=432; projective_actor_mode_classes=275; residual_projective_collisions=0
+common_scale_relative_actor_mode_separation_checks=3/3; Paper21_shared_wire_masses_1_2=('1/48', '1/24'); masses_2_2=('1/32', '1/32')
+O-L_silent_neighbor_rate_collision=1/1; auxiliary_incomparable_global_serialization_observed=0
+[TIMED SCALE / CLOCK BRIDGE / D26 CONDITIONAL]
+common_scale_untimed_null=1/1; construction_hazard_scale_separated=1/1; unknown_bridge_equal_observed_hazard=3/2; fixed_bridge_second_hazard=2
+same_line_BORN_N0_to_N8=('1', '4/5', '16/25', '64/125', '256/625', '1024/3125', '4096/15625', '16384/78125', '65536/390625'); dormant_TOKEN=('1', '1', '1', '1', '1', '1', '1', '1', '1'); three_BORN=64/125
+absolute_physical_rate_without_clock_bridge=UNIDENTIFIED; D26_maintenance_rate_without_O-V=NOT_INFERRED
+[PINNED-ALPHABET OPERATIONAL WIDTH]
+active_preparations=(|0>,|1>,Ry(3/5,4/5),Ry(5/13,12/13)); queries=(Z,X); real_state_family=1
+epsilon=1/64; exact_nonzero_distances=12/12; single_path_cutoff=6; branching_summable_cutoff=6; nonsummable_shell_witnesses=12/12
+D31B_exact_cancellation=1/1; mid_history_influence=576/625; hypothetical_exact_zero_cut=1/1
+D38b_quantum_join=UNDEFINED; V6_physical_seal_identification=0; W_ont_erasure=NOT_CLAIMED
+[HASHES]
+source_sha256=3f976eff94a28ee7cd8551b37ddad1fab81b358dcadad3e9e37dba3fac520e06
+stdout_body_sha256=3586e702a55a9cada88e111b5886d2b974ef4fadba18d6f9561a48199d4e4c91
+internal_science_sha256=51cdf3a29872a097f8a492353728a207afd3fe40dcef2e8166ada90b761de1b5
+[GATES]
+R0=PASS
+R1=PASS
+R2=PASS
+R3=PASS
+R4=PASS
+R5=PASS
+R6=PASS
+R7=PASS
+R8=PASS
+R9=PASS
+[VERDICT]
+PASS 10/10
+LEVEL-A REGIONAL COMPARISON FUNCTOR / LEVEL-B GENERATED CONFLICT OPEN
+H0 STATIC HEAD CLAIM REJECTED / H1 ONE-USE PER-WIRE GRANT SUFFICIENT ON REGISTERED FINITE CELLS
+FINITE ALL-TRANSPORT ROOT CLASSIFICATION / PROJECTIVE UNTIMED RATIO IDENTIFIABILITY / PHYSICAL SCALE BRIDGE-DEPENDENT
+chosen projected action cocycle, infinite completion, generated K member, quantum join and physical sealing remain open
