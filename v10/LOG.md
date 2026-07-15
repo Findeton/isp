@@ -4232,3 +4232,29 @@ pre-registered under D23's in-degree-at-least-two identifiability ceiling;
 NSE is marked `[POSITED]` but not used; and Paper 26 is only an architectural
 analogy absent a D37/D38b comparison map.  A focused independent closing delta
 is required before promotion.
+
+## 2026-07-14 — Paper 27 independently closes cleanly (LEDGER #249)
+
+`reviews/paper27-round2-independent-closing-delta.md` freezes the final target
+at commit `3ff7ed2e1b04173862d1ba4ef46058a7e7039dd0`.  Probability/projectivity,
+causal/software realization and corpus/scope/literature lanes all return
+`0B/0M/0m/0n`.  The corpus lane's one residual pre-freeze provenance minor is
+repaired: the future join's in-degree-at-least-two click-identifiability
+ceiling belongs to Investigation D23, not Paper 23.
+
+D38b remains `PASS 9/9` with source, stdout-body, science and complete hashes
+`c48e3171...1eeb`, `35371f27...507d`, `1aa0201d...3005` and
+`28e76708...4f7d`.  No receipt number changes.  The independent delta confirms
+12 normalizations, 12 direct restrictions, four staged restrictions, 1,760
+positive atoms, 220 race integrals and 30 elapsed/no-event updates, together
+with authentication `(18,18,18,1)`, restriction `(2,1,1,5,1)` and capacity
+`(1,6,7,10,2,UNBOUNDED,CONTINUOUS,UNBOUNDED)` under the repaired field meanings.
+
+Paper 27 is promoted to independently reviewed exact-receipt candidate for its
+authenticated record-closed oriented finite-cylinder presentation of chosen
+D34b after the supplied seed, with a complete finite admission witness, and
+for the bounded-local-event-support/unbounded exact finite-stop Branch-F
+predictive-width separation.  Localized admission, spatial DLR, null-boundary
+versions, timed inverse limits, physical sealing, the D26 bridge,
+all-transport unimodularity, root-free completion, coupling selection and the
+quantum join remain open.

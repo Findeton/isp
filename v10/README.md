@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D38b / Paper 27 (hostile-reviewed exact-receipt candidate)
+## Latest — D38b / Paper 27 (independently reviewed exact-receipt candidate)
 
 D38 asks when a regional specification generates and authenticates the records
 that its own later conditionals require as boundary data.  The pinned object is
@@ -71,7 +71,9 @@ current-component quotient.  Compact star state is separated from witness
 incidence, external parent/frontier references are both disclosed, the D23
 join wording and NSE provenance are repaired, and the Paper 26 relation is
 architectural rather than a claimed comparison theorem.  A focused independent
-closing delta remains open.
+closing delta on frozen commit `3ff7ed2` returns `0B/0M/0m/0n`, promoting
+Paper 27 at its declared complete-finite-admission-witness, oriented positive
+finite-cylinder and exact finite-stop Branch-F scope.
 
 - `note-d38-record-closed-regional-specifications.md`
 - `code/d38_record_closed_specification_exact.py`
@@ -81,6 +83,7 @@ closing delta remains open.
 - `reviews/d38-round1-record-closed-specification-hostile-review.md`
 - `reviews/d38-round2-record-closed-specification-closing-delta.md`
 - `reviews/paper27-round1-independent-review.md`
+- `reviews/paper27-round2-independent-closing-delta.md`
 - `relativistic-isp-v10-paper27-the-boundary-is-made-of-records.md`
 
 ## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)

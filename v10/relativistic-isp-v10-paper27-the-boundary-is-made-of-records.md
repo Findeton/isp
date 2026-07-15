@@ -4,10 +4,12 @@
 
 ## Record-closed finite-cylinder laws, bounded local events and unbounded predictive width
 
-**Status:** EXACT-RECEIPT CANDIDATE; independent closing delta open.
+**Status:** INDEPENDENTLY REVIEWED EXACT-RECEIPT CANDIDATE.
 D38 round one was rejected at `2B/7M/1m/0n`.  Its replacement D38b is
 `PASS 9/9`; the final three-lane hostile delta on frozen commit `be310e2`
 returns `0B/0M/0m/0n` at the complete-finite-admission-witness scope.
+The final three-lane paper closing delta on frozen commit `3ff7ed2` also
+returns `0B/0M/0m/0n`.
 **Date:** 2026-07-14.
 
 ## Abstract
@@ -655,6 +657,13 @@ weak gates but hostile review returned `2B/7M/1m/0n`.  D38b replaced the
 architecture, then repaired the silent-neighbor projection and regional
 frontier certificate.  The final three-lane closing delta on `be310e2` returns
 `0B/0M/0m/0n`.
+
+Independent paper review on draft commit `049d173` returned `0B/2M/5m/3n`
+with the core intact.  The authorship repair at `e844734` closes reconstruction
+scope, C/L nonminimality, compact-star incidence and the remaining corpus
+stitches.  Commit `3ff7ed2` corrects D23 provenance.  The final three-lane
+paper delta on that frozen commit returns `0B/0M/0m/0n`; its review record is
+`reviews/paper27-round2-independent-closing-delta.md`.
 
 ## 11. Decision table
 
