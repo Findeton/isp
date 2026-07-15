@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D39b namespace delta repaired; final review pending
+## Latest — D39b independently closing-reviewed exact-receipt candidate
 
 D39 asks what classifies and empirically identifies record-closed laws.  The
 first exact receipt now passes all ten gates reproducibly.  Its thesis remains
@@ -10,8 +10,9 @@ still held.  The first hostile round reproduced the arithmetic but returned
 `4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`.  D39b repairs that target and awaits
 an independent closing review before drafting.  Round two reproduced the
 repair but found that 38 D37 source regions collapsed to 32 interface objects.
-The delta adds a local carrier namespace and now gates 38/38 distinct images;
-the final closing review remains open.
+The delta adds a local carrier namespace and now gates 38/38 distinct images.
+Round three returns `0B / 0M / 0m / 0n`; Paper 28 may now begin at the declared
+finite scope.
 
 The repair constructs a shared regional-interface category with an actual
 38-object D37 embedding and no global witness field.  H1 is a typed causal
@@ -89,6 +90,7 @@ before paper claims are written.
 - `code/d39b_record_closed_law_selection_exact.py`
 - `data/d39b_record_closed_law_selection_exact.out`
 - `reviews/d39b-round2-hostile-repair-review.md`
+- `reviews/d39b-round3-closing-delta.md`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 

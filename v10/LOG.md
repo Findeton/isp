@@ -4457,3 +4457,22 @@ The regenerated D39b receipt remains `PASS 10/10`.  Source, stdout-body,
 science and complete-output hashes are `22fbda6a...58d3`,
 `44f8c201...90f7`, `e9bf38ab...6ec5` and `3e3ec1b1...85ea`.  Final closing
 review remains open; Paper 28 remains held.
+
+## 2026-07-15 — D39b closes hostile review (LEDGER #256)
+
+`reviews/d39b-round3-closing-delta.md` freezes commit `dc16c96`, reproduces
+complete-output hash `3e3ec1b1...85ea` under a seventh seed and returns
+`0 BLOCKERS / 0 MAJOR / 0 MINOR / 0 NIT`.
+
+The namespace delta gives 38 distinct images for 38 D37 regions without
+restoring a global witness field; all 72 strict compositions remain exact.
+The certificate output now says safety/existence and names full causal protocol
+validation.  The action output keeps the unnormalized rank-246 variety separate
+from the normalized horizon-three kernel.  All receipt numbers otherwise
+remain unchanged.
+
+D39b is promoted to an independently closing-reviewed exact-receipt candidate.
+Paper 28 may begin only at the finite registered theorem surface; Level-B
+generated conflicts, chosen-D38b action membership, stationary/infinite
+completion, global identifiability, physical clock, quantum join and sealing
+remain open.
