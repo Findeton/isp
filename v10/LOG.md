@@ -4503,3 +4503,26 @@ classes, while untyped and reduced-star controls collide.  Absolute physical
 scale remains clock-bridge-dependent; D26 pricing and operational width retain
 their declared visibility/alphabet/tolerance bridges.  Independent paper-level
 review is opened against the frozen authorship commit.
+
+## 2026-07-15 — Paper 28 independent round one withholds promotion (LEDGER #258)
+
+`reviews/paper28-round1-independent-hostile-review.md` freezes authorship
+commit `e77fb2f`, reproduces D39b `PASS 10/10` and returns
+`0 BLOCKERS / 2 MAJOR / 3 MINOR / 1 NIT`.  The paper's finite comparison,
+certificate, action obstruction, root classification and projective
+identification results survive.
+
+The first major requires the proposed locality theorem to run on a ledger
+projected to the touched current wire rows/heads and, for interaction, the one
+authenticated edge source.  D39b's existing 410 comparisons start from a
+complete derived ledger, so per-wire protocol records alone do not prove
+projection invariance.  The second major observes that the 155-dimensional
+cocycle kernel and rank-154 state-potential image predict a one-dimensional
+algebraic quotient; inclusion and quotient dimension must be exact gates, with
+no automatic promotion of endpoint potentials to physical gauge.
+
+The minors require a declared generated-row sum type for action-kernel
+pushforwards, an explicit `sum_(r>R)` summable-tail gate and wording that the 78
+normalized squares belong to the separate initial depth-three completion
+registry.  The 1,760-atom aggregate label is a nit.  A focused D39c delta and
+authorship repair are required before closing paper review.

@@ -2,9 +2,10 @@
 
 ## Latest — Paper 28 authorship exact-receipt candidate
 
-Paper 28 is drafted as *Selecting record-closed laws*.  It turns D39b's
-hostile-closed receipt into a classification-and-identification theorem at the
-declared finite classical scope.  Independent paper-level review remains open.
+Paper 28 is drafted as *Selecting record-closed laws*.  Its first independent
+paper-level review returns `0B / 2M / 3m / 1n`; promotion is withheld while a
+focused exact delta strengthens the touched-wire certificate theorem and the
+action-cocycle quotient.
 
 The architectural result is a namespaced shared-interface span, not a direct
 D37/D38b equivalence.  It preserves 38/38 supplied-region objects, 72 strict
@@ -45,6 +46,7 @@ alphabet-, tolerance- and tail-dependent.
 - `reviews/d39b-round2-hostile-repair-review.md`
 - `reviews/d39b-round3-closing-delta.md`
 - `relativistic-isp-v10-paper28-selecting-record-closed-laws.md`
+- `reviews/paper28-round1-independent-hostile-review.md`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 
