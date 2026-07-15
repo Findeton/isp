@@ -1,5 +1,19 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40b round two withholds closure on provenance (LEDGER #266)
+
+`reviews/d40b-round2-independent-review.md` freezes repair commit `25e44e5`,
+reproduces the output under two fresh hash seeds and returns
+`0 BLOCKERS / 1 MAJOR / 1 MINOR / 0 NIT`.
+
+The round-one mathematics is closed: `23/198` and `5/96` belong to distinct
+normalized pushforwards, and all scope, Bell-positivity, claim-ledger and
+rendering repairs hold.  The remaining major is receipt integrity: importing
+the frozen D40 source does not execute its twelve transitive D34c/D39b
+antecedent locks.  The minor requires exact gating of the printed
+`(28,17,44,40,4)` census instead of positivity only.  A focused D40c delta is
+required; Paper 29 remains held.
+
 ## 2026-07-15 — D40b closes the typed probability-space repair (LEDGER #265)
 
 `code/d40b_probability_space_repair_exact.py` returns `PASS 5/5`.  The Paper
