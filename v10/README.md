@@ -1,6 +1,33 @@
 # Relativistic ISP v10
 
-## Latest — D37 / Paper 26 (independently reviewed exact-receipt candidate)
+## Latest — D38 / Paper 27 (campaign pin; receipt not started)
+
+D38 asks when a regional specification generates and authenticates the records
+that its own later conditionals require as boundary data.  The pinned object is
+a **record-closed regional specification**: physical record boundary,
+query-relative screening, recursive generation after a finite seed,
+authentication, restriction/update cocycles, closure of output support into
+the next input boundary, and an explicit capacity/coherence ledger.
+
+The central theorem target is a separation, not a blanket no-go.  The chosen
+D34b law has bounded touched/write arity and actor-star-local update rows, while
+its exact unlimited-horizon Branch-F predictive quotient is the rooted marked
+component class and has unbounded information width.  Finite horizon,
+irreversible operational sealing, bounded growth and epsilon-thresholded
+attenuation are explicit escape controls.  Nonzero attenuation alone does not
+collapse an exact infinite-precision quotient.  D26 prices BORN boundary
+maintenance by `(1-g)^(N/2)`; coherence-neutral TOKEN capacity remains a
+distinct control.
+
+The first D38 receipt is pinned at nine gates: locked antecedents,
+positive-cylinder D34b kernels, local-update/growing-boundary separation,
+authenticated record closure, predictive exhaustion, the fresh-anchor
+discriminator, escape controls, D26 upkeep and finite mass-transport balance.
+No receipt has run and no Paper 27 theorem is yet claimed.
+
+- `note-d38-record-closed-regional-specifications.md`
+
+## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)
 
 D37 constructs the classical regional object queued by Papers 24 and 25.
 Finite typed opportunity regions carry normalized conditional kernels, and a

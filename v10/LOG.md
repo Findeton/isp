@@ -4037,3 +4037,24 @@ its declared supplied-carrier, finite-specification and countable locally
 finite pairwise-conflict scope.  Couplings and opportunity roles remain
 unselected/supplied, the exact D36b adapter remains finite and no quantum join
 is claimed.
+
+## 2026-07-14 — D38 record-closed specification campaign is pinned (LEDGER #240)
+
+`note-d38-record-closed-regional-specifications.md` freezes Paper 27's receipt
+campaign before execution.  The target is not a universal obstruction to
+finite-range regional kernels.  It is a separation theorem: bounded local
+update arity can coexist with an exact unlimited-horizon predictive boundary
+of unbounded information width.
+
+The pin defines record closure through physical boundary realization,
+screening, recursive generation, D36-style authentication, nested
+restriction/update cocycles, support closure and disclosed capacity/upkeep.
+It targets a positive-cylinder regional presentation of the chosen D34b law,
+then imports Papers 22--23's star boundary, fixed-radius witnesses, fresh
+anchor and `2^M` lower bound into a conditional predictive-width criterion.
+Finite horizon, irreversible operational sealing, bounded growth and
+epsilon-attenuation are load-bearing escape controls; nonzero exact
+attenuation must fail to erase exact identity.  D26 prices BORN boundary
+maintenance, while root-free mass-transport/unimodular selection remains open.
+
+No D38 code or receipt exists at this ledger entry.
