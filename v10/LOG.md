@@ -4476,3 +4476,30 @@ Paper 28 may begin only at the finite registered theorem surface; Level-B
 generated conflicts, chosen-D38b action membership, stationary/infinite
 completion, global identifiability, physical clock, quantum join and sealing
 remain open.
+
+## 2026-07-15 — Paper 28 authorship candidate drafted (LEDGER #257)
+
+`relativistic-isp-v10-paper28-selecting-record-closed-laws.md` converts D39b's
+hostile-closed receipt into the paper *Selecting record-closed laws:
+comparison spans, finite balance, action obstructions and empirical
+identifiability*.
+
+The paper proves only a namespaced shared-interface span between the D37 and
+D38b finite registries.  It explicitly withholds conditional equivalence and
+the Level-B content bridge because chosen D34b generates no contended D36
+proposal carrier.  Typed causal H1 closes finite admission safety/existence on
+47 histories and 410 next events, with 24 hostile attacks rejecting unchanged;
+asynchronous liveness and global certificate locality remain open.
+
+The selection theorem is a classification.  The 401-variable cocycle matrix
+has 344 distinct rows and rank 246, leaving a 155-dimensional positive
+unnormalized increment variety.  Chosen projected D38b violates 337 registered
+squares.  A separate finite-horizon completion kernel supplies one normalized
+example.  Finite all-transport balance forces uniform conditional rooting but
+does not select unrooted mixture weights or an infinite completion.
+
+Typed untimed causal-DAG records identify all 49 registered projective ratio
+classes, while untyped and reduced-star controls collide.  Absolute physical
+scale remains clock-bridge-dependent; D26 pricing and operational width retain
+their declared visibility/alphabet/tolerance bridges.  Independent paper-level
+review is opened against the frozen authorship commit.

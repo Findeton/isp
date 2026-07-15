@@ -1,87 +1,40 @@
 # Relativistic ISP v10
 
-## Latest — D39b independently closing-reviewed exact-receipt candidate
+## Latest — Paper 28 authorship exact-receipt candidate
 
-D39 asks what classifies and empirically identifies record-closed laws.  The
-first exact receipt now passes all ten gates reproducibly.  Its thesis remains
-classification followed by identifiability: uniqueness, a residual family,
-emptiness and exact nonselection are all admissible outcomes.  Paper 28 is
-still held.  The first hostile round reproduced the arithmetic but returned
-`4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`.  D39b repairs that target and awaits
-an independent closing review before drafting.  Round two reproduced the
-repair but found that 38 D37 source regions collapsed to 32 interface objects.
-The delta adds a local carrier namespace and now gates 38/38 distinct images.
-Round three returns `0B / 0M / 0m / 0n`; Paper 28 may now begin at the declared
-finite scope.
+Paper 28 is drafted as *Selecting record-closed laws*.  It turns D39b's
+hostile-closed receipt into a classification-and-identification theorem at the
+declared finite classical scope.  Independent paper-level review remains open.
 
-The repair constructs a shared regional-interface category with an actual
-38-object D37 embedding and no global witness field.  H1 is a typed causal
-prepare/grant/decision/apply-or-release/ack protocol: 410/410 exhaustive finite
-oracle comparisons agree and 24/24 hostile attacks reject.  The computed
-action complex has 401 variables and rank 246; chosen D38b fails 337 registered
-squares, while a separate finite-horizon completion kernel supplies one
-normalized representative.  Orbit-level transports restore covariance.
+The architectural result is a namespaced shared-interface span, not a direct
+D37/D38b equivalence.  It preserves 38/38 supplied-region objects, 72 strict
+restriction compositions, D38b restriction/update naturality and twelve
+normalized pushed cylinders with 1,760 positive atoms.  The content bridge is
+still absent: chosen D34b generates no typed D36 proposal conflict, so no
+nonvacuous K-family law is induced.
 
-The identification wing now executes D38b paths and quotients their typed
-causal DAGs.  Its 72 packets form 49 projective ratio classes and 49 typed laws
-with no registered collision; the untyped and reduced-star projections retain
-exact collisions.  Absolute scale remains clock-bridge-dependent.
+The localized admission result is a typed causal
+prepare/grant/decision/apply-or-release/ack certificate.  On the exhausted
+depth-zero-to-two registry it agrees with the complete oracle in 410/410 cases
+and rejects 24/24 hostile attacks without mutation.  This is finite
+certificate existence and safety, not asynchronous liveness or an all-history
+locality theorem.
 
-The Level-A D38b-to-D37-interface functor is constructed on the finite cells:
-12/12 pushed kernels normalize, 12/12 nested restrictions commute and 1,760
-positive atoms survive.  Level B remains open because all five chosen D34b
-histories generate no D36 proposal conflict.  H0 static signed heads fail the
-asynchronous staleness control; H1 one-use attempt-bound owner grants match the
-complete oracle on birth, idle and interaction and reject 20/20 hostile cases
-with unchanged failed transactions.
+Selection does not collapse to one law.  The computed action complex has 401
+variables, 344 distinct rows and rank 246, leaving a 155-dimensional positive
+unnormalized increment variety.  Chosen projected D38b violates 337 registered
+squares, including `1/18 != 2/33`.  A separate horizon-three completion kernel
+is normalized and square-consistent; no stationary or infinite member is
+constructed.  Finite all-transport balance forces uniform rooting conditional
+on each finite unrooted marked network, while mixture weights and infinite
+unimodular completion remain free.
 
-Selection does not collapse to a point.  The action cocycle has a residual
-positive family, while chosen projected D38b itself fails the declared square
-with exact products `1/18` and `2/33`.  The complete finite transport basis
-forces uniform conditional rooting on all three registered graph cells and
-rejects degree bias, but no infinite unimodular completion is constructed.
-Complete typed untimed records identify the registered actor/mode ratios only
-projectively; reduced-star records retain a silent-rate collision and absolute
-physical scale remains clock-bridge-dependent.
-
-The D37/D38b comparison is split at two levels.  D39 first targets a finite
-structure-preserving functor from authenticated D38b record regions to the
-oriented regional interface underlying D37.  Typed omitted causal parents map
-to incoming boundary rows, omitted current frontier heads map to lateral rows,
-and positive cylinder kernels push forward while restriction and update remain
-natural.  This is not an equivalence or K-family theorem.  Chosen D34b emits no
-D36 proposal/base-version contention, so its generated conflict/arbitration
-image is degenerate.  A contentful comparison would require a future record-
-closed law to generate D36's proposal/grant ontology itself.
-
-The locality campaign attempts a static owner-signed current-head certificate
-per touched wire first.  A mandatory stale-claim interleaving may refute it.  If
-so, D39 tests a carrier-derived, one-use, attempt-bound owner grant without
-reintroducing a complete history.  Either positive certificate or smallest
-global-dependency counterexample is an admissible result; twenty forgery,
-staleness, replay, retargeting, fork and partial-apply attacks are pinned.
-
-Selection conditions are action/history compatibility and finite all-transport
-unimodularity, both classified rather than assumed to choose a point.  The
-receipt exhausts the doubly rooted orbit basis on its finite marked cells,
-while infinite root-free completion remains open.  Observable classes are
-frozen before identification: complete typed untimed records, reduced local
-records, construction-time records, calibrated clock-bridged records, D26
-visibility records and the inherited D28/D31B operational alphabet.  Untimed
-records target intensity and mode-weight ratios; a common absolute scale needs
-a declared clock bridge.
-
-Operational width is tested only at the pinned preparation/query alphabet and
-an explicit rational tolerance.  Nonzero distinctions remain exact at zero
-tolerance; positive-tolerance bounds must control the complete omitted tail,
-not one attenuated record.  D39 includes summable and nonsummable growth
-controls and does not identify them with a physical V6 seal or a D38b quantum
-join.
-
-Paper 28's projected title is *Selecting record-closed laws: comparison,
-unimodularity and empirical identifiability*.  Drafting remains held until the
-first independent hostile round is filed; central blockers must be repaired
-before paper claims are written.
+The identification wing executes typed D38b causal DAGs.  Its 72 packets form
+49 projective ratio classes and exactly 49 typed O-U laws with no registered
+collision.  Untyped and reduced-star observables retain exact collisions, and
+absolute physical scale still requires a clock bridge.  D26 pricing remains
+conditional on a same-line BORN dictionary; operational width remains
+alphabet-, tolerance- and tail-dependent.
 
 - `note-d39-selecting-record-closed-laws.md`
 - `note-d39-first-exact-receipt.md`
@@ -91,6 +44,7 @@ before paper claims are written.
 - `data/d39b_record_closed_law_selection_exact.out`
 - `reviews/d39b-round2-hostile-repair-review.md`
 - `reviews/d39b-round3-closing-delta.md`
+- `relativistic-isp-v10-paper28-selecting-record-closed-laws.md`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 
