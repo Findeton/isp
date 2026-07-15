@@ -11,8 +11,10 @@ returned `1B/3M/4m/0n` and found K1 restriction, D26-line, D36-adapter and
 countable-identity defects.  Those repairs were frozen at `e66cc1e`; a fresh
 three-lane delta returned `1B/1M/0m/1n` because shared parent lines were
 silently ordered by proposal enumeration and failed proper restriction.  The
-present common-root repair removes that hidden order and D37 remains `PASS
-9/9`; promotion still requires another focused closing delta.
+common-root repair at `9f50a8a` removes that hidden order and D37 remains
+`PASS 9/9`.  Its three-lane audit returned `0B/1M/1m/0n`, with only two stale
+lines in the D37 note; those are repaired and promotion now requires a
+string-only closing delta.
 **Date:** 2026-07-14.
 
 ## Abstract

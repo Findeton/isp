@@ -4001,3 +4001,24 @@ the 93 joint atoms contain 1,962 events.  Source, stdout-body, science and
 complete hashes are `b15e577b...fcbd9`, `df5aa182...91c16`,
 `82a2dac6...df126` and `20d4b2f6...8ed8`.  This is authorship repair pending a
 fresh focused delta.
+
+## 2026-07-14 — Paper 26 common-root science closes; note prose remains (LEDGER #237)
+
+`reviews/paper26-round3-common-root-closing-delta.md` audits frozen commit
+`9f50a8a`.  Hostile evidence returns `0B/0M/0m/0n`; probability/countable
+review finds no scientific defect; the corpus lane returns `0B/1M/1m/0n` for
+two stale D37-note lines only.  Expanded controls cover all seven nonempty
+shared-line subregions, all six declaration permutations, 875 restriction
+comparisons, 750 permutation comparisons, seven interface relabelings and
+missing/foreign/retargeted/cross-line roots.  All pass.  Promotion remains
+withheld for the note repair.
+
+## 2026-07-14 — D37 note adopts the common-root account (LEDGER #238)
+
+The stale K1 census is corrected from 140 to 158 typed events.  The deleted
+same-line chain/comparability paragraph is replaced by the implemented
+common-root account: distinct opportunity parents descend from one canonical
+line root, the newborn maps commute on distinct child factors and traced
+parent-coherence contractions multiply without transaction order.  No code,
+receipt, number or scientific claim changes.  A string-only closing delta is
+still required.

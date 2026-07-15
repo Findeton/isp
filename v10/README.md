@@ -64,8 +64,10 @@ singleton squares pass, and declaration-order reversal leaves the DAG fixed.
 All 96 linear extensions have one canonical DAG digest; D34 restriction maps
 one 28-event history exactly to independent 15- and 13-event component
 histories; S2 asserts every distinct feasible-addition edge; and S7 gates all
-27 visibility histories. Promotion remains withheld until another focused
-independent delta validates this common-root repair.
+27 visibility histories. The frozen common-root audit returned
+`0B/1M/1m/0n`; the only findings were a stale 140-event census and deleted
+chain description in the D37 note. Both are repaired. Promotion remains
+withheld until a string-only delta closes them.
 
 - `note-d37-regional-history-specifications.md`
 - `relativistic-isp-v10-paper26-admissible-regional-history-specifications.md`
@@ -75,6 +77,7 @@ independent delta validates this common-root repair.
 - `reviews/d37-round2-regional-specification-closing-delta.md`
 - `reviews/paper26-round1-independent-review.md`
 - `reviews/paper26-round2-typed-carrier-closing-delta.md`
+- `reviews/paper26-round3-common-root-closing-delta.md`
 
 ## Prior — D36 / Paper 25 (coordinator-lineage reviewed candidate; independent review open)
 

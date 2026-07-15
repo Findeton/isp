@@ -9,9 +9,10 @@ receipt/wording repairs were implemented at `e3161f5`; the focused delta then
 returned `1B/3M/4m/0n` and exposed K1 restriction, D26-line, D36-adapter and
 countable-identity defects.  The second-round repairs were frozen at
 `e66cc1e`; a fresh three-lane delta returned `1B/1M/0m/1n` and exposed one
-shared-line naturality defect plus its hidden tuple-order source.  The present
-common-root repair removes both, but promotion still requires another focused
-closing delta.  The campaign pin was committed at
+shared-line naturality defect plus its hidden tuple-order source.  The
+common-root repair at `9f50a8a` removes both.  Its three-lane audit returned
+`0B/1M/1m/0n`, with only two stale lines in this note; those are now repaired,
+but promotion still requires a string-only closing delta.  The campaign pin was committed at
 `b06ba1a` before the first receipt execution.
 **Parents:** terminal D34b/D34c, terminal D35/Paper 24, terminal D36 and the
 coordinator-lineage reviewed Paper 25.
@@ -544,7 +545,7 @@ exterior {E}             {B}:1.
 ```
 
 This is the retained boundary-width counterexample.  The K1 complete-carrier realization also
-contains six immutable priority-click records, 140 typed events and 20 signed
+contains six immutable priority-click records, 158 typed events and 20 signed
 exact D36 prepares; legality recomputes selection from each recorded order.
 It is not a proper-region typed pushforward: deleting a component exterior
 would orphan the retained selection click's priority parent.  K1's finite
@@ -576,10 +577,11 @@ At `g=9/25`, D26 gives `sqrt(1-g)=4/5`.  Three realized same-line BORN events
 therefore give visibility factor `64/125`; the equal-mode three-opportunity
 mixture gives `2744/3375`.  The same joint path table predicts the single-Q
 factor `431/465`.  The receipt derives those factors from actual typed
-`BORN_CARRIER` records on a carrier-declared parent line.  Successive
-opportunity-parent records are chained through the previous mode/carrier
-result, making every pair of BORN carriers on that line causally comparable;
-an undeclared-line substitution rejects.  The comparison is relative to explicit
+`BORN_CARRIER` records descending through their distinct opportunity parents
+from one canonical carrier-declared `PARENT_LINE_ROOT`.  The child maps act on
+distinct newborn factors and commute, so their traced parent-coherence
+contractions multiply without selecting a transaction order; an undeclared-
+line substitution rejects.  The comparison is relative to explicit
 coherence-neutral `DORMANT_TOKEN` controls.  These are exact observable maps
 from a supplied member, not a universal birth rate.
 
@@ -758,5 +760,8 @@ and wrong line roots are separate negative gates.  D26 uses the common parent
 degree directly: the distinct newborn maps commute, and tracing their children
 multiplies the parent-coherence factors without a physical transaction order.
 
-The updated receipt remains `PASS 9/9`.  This is authorship repair, not review
-closure; another frozen focused delta is required.
+The updated receipt remains `PASS 9/9`.  The frozen common-root audit is filed
+as `reviews/paper26-round3-common-root-closing-delta.md` at
+`0B/1M/1m/0n`; its only findings were the stale 140-event census and deleted
+chain description repaired above.  This is authorship repair, not review
+closure; a string-only delta is required.
