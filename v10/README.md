@@ -1,21 +1,27 @@
 # Relativistic ISP v10
 
-## Latest — D39 first receipt rejected in hostile round one
+## Latest — D39b hostile repair candidate (`PASS 10/10`)
 
 D39 asks what classifies and empirically identifies record-closed laws.  The
 first exact receipt now passes all ten gates reproducibly.  Its thesis remains
 classification followed by identifiability: uniqueness, a residual family,
 emptiness and exact nonselection are all admissible outcomes.  Paper 28 is
-still held.  The first hostile round reproduces the arithmetic but returns
-`4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`; repair is required before drafting.
+still held.  The first hostile round reproduced the arithmetic but returned
+`4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`.  D39b repairs that target and awaits
+an independent closing review before drafting.
 
-The central failures are architectural.  The first Level-A map never imports
-D37 and retains a global witness digest; H1 accepts a same-edge credential with
-a foreign source and permits forged partial release; R5 classifies only one
-abstract commuting square; and R7 substitutes an actor-by-mode product table
-for the promised gauge-pushed typed causal-DAG law.  The transport gate also
-omits automorphism covariance and the operational wing prints, but does not
-use, the pinned preparation/query alphabet.
+The repair constructs a shared regional-interface category with an actual
+38-object D37 embedding and no global witness field.  H1 is a typed causal
+prepare/grant/decision/apply-or-release/ack protocol: 410/410 exhaustive finite
+oracle comparisons agree and 24/24 hostile attacks reject.  The computed
+action complex has 401 variables and rank 246; chosen D38b fails 337 registered
+squares, while a separate finite-horizon completion kernel supplies one
+normalized representative.  Orbit-level transports restore covariance.
+
+The identification wing now executes D38b paths and quotients their typed
+causal DAGs.  Its 72 packets form 49 projective ratio classes and 49 typed laws
+with no registered collision; the untyped and reduced-star projections retain
+exact collisions.  Absolute scale remains clock-bridge-dependent.
 
 The Level-A D38b-to-D37-interface functor is constructed on the finite cells:
 12/12 pushed kernels normalize, 12/12 nested restrictions commute and 1,760
@@ -76,6 +82,9 @@ before paper claims are written.
 - `note-d39-selecting-record-closed-laws.md`
 - `note-d39-first-exact-receipt.md`
 - `reviews/d39-round1-selection-identifiability-hostile-review.md`
+- `note-d39b-hostile-repair.md`
+- `code/d39b_record_closed_law_selection_exact.py`
+- `data/d39b_record_closed_law_selection_exact.out`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 

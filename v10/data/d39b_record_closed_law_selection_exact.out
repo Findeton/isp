@@ -1,0 +1,71 @@
+[D39b selecting record-closed laws — hostile repair exact receipt]
+ARITHMETIC: integer/Fraction exact; no floating theorem
+SCOPE: finite classical repair; Paper 28 HELD pending closing review
+[LOCKS / REPAIR SCOPE]
+antecedent_locks={"D26":"a9b1f1704578178218750ecbafa737763ff3968ca246939a1d6aece79930575c","D26-data":"88a5461f2304415db69d4decc4b89b95195d928e79e8feeb73aeefca74c59633","D28":"dab14a28885bc7a40517d4a953a6538d631f3f281bfba522ab47a3ab33191ff5","D28-data":"e7d1c3a88019d9350fca192ca800497d57067937418fff86e7d04572f9bc4278","D31b":"450eef885a72401767550d24b3f5b141736973300fe0bbd17093bb13032a8190","D31b-data":"521576e81ced965d363492eb78f4fb2e38bd1e396749195a1a201738b87f48ff","D36b":"57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b","D37":"b15e577bfdf03e1bc78628d9d934bab1e604da9f4b62f7c6372fa61dca7fcbd9","D37-data":"20d4b2f6add6db3296f221c184be539dd62c66ada81f32418b9288bebf778ed8","D38b":"c48e317189a160d445af374346deb3199caed0ae222430260a55e2a6ef731eeb","D38b-data":"28e76708b6c72cf874aedf9700a6bd1756220e1cb4bf8be3e096e632b66b4f7d","D39-pin":"36c8c28a45fc6bb4069f16b2ed04045d7ed433eec2634f9af1d62987b850c948","D39-rejected":"3f976eff94a28ee7cd8551b37ddad1fab81b358dcadad3e9e37dba3fac520e06","D39-rejected-data":"36f6984f4ca68c895d0b64573f87e749cb4fcf9bbfbf5ffac59cc92615a1b64c","D39-round1":"4d0ab3b11c57cef82bb45dc213f5b2b4bc9dadde8dbbfc51aa90d8ad8e835a43"}
+comparison=SHARED_D37_INTERFACE_SCHEMA_FUNCTOR; D37_CONDITIONAL_EQUIVALENCE=NOT_CLAIMED
+generated_conflict=LEVEL_B_OPEN; infinite_completion=OPEN; clock_quantum_seal_bridges=OPEN
+[SHARED REGIONAL-INTERFACE CATEGORY / ACTUAL D37 EMBEDDING]
+D37_interface_objects=38; identities=38/38; strict_compositions=72/72; D38_identity_composition=1,2/2
+D38_direct_staged_restrictions=2/2; update_naturality=1/1; typed_boundary_rows=6
+pushed_normalizations=12/12; pushed_prefixes=12/12; positive_atoms=1760
+triple_cover_nonextension_witness=1/1; global_witness_fields_in_target=0; equivalence=0; K_membership=0
+[LEVEL-B GENERATED-CONFLICT VACUITY / LOCKED D36 VOCABULARY]
+registered_histories=5; empty_generated_conflict_images=5; false_next-event_relabel_rejected=1
+D36_transaction_carrier_kinds=3; protocol_kinds=8; locked_constant_match=1/1
+proposal_role=BORN_OR_TOKEN_TRANSACTION_CARRIER; generated_K_member=OPEN
+[H0 STATIC HEAD ADJUDICATION]
+valid_agreement=1/1; once_authentic_stale_still_verifies=1/1; oracle_rejects_stale=1/1; stores_unchanged_on_reject=1/1
+H0=REJECTED; issuance_authentication_is_not_currentness
+[H1 TYPED CAUSAL PER-WIRE ADMISSION]
+registered_histories=47; valid_proposals=410; oracle_agreements=410/410; successor_matches=410/410
+causal_protocol_parent_closures=410/410; hostile_rejections=24/24; byte_identical_failures=24/24
+records=HEAD_PREPARE>HEAD_GRANT>DECISION>(APPLY|RELEASE)>ACK; edge_source_bound=1; all_or_none_release=1
+H1=SUFFICIENT_ON_EXHAUSTED_DEPTH_0_TO_2_REGISTRY; global_all_history_locality=NOT_CLAIMED
+[COMPUTED FINITE ACTION COMPLEX]
+canonical_states=155; local_transition_variables=401; distinct_cocycle_rows=344; exact_rank=246
+positive_log_weight_dimension=155; coboundary_rank=154; unit_unnormalized_positive_representative=1/1
+chosen_D38b_square_equalities=169; violations=337; initial_obstruction=1/18,2/33
+finite_horizon_completion_kernel_normalizations=21/21; cocycle_squares=78/78; terminal_paths=179
+classification=RESIDUAL_UNNORMALIZED_INCREMENT_VARIETY_WITH_FINITE_HORIZON_NORMALIZED_REPRESENTATIVE; chosen_D38b_member=NO_ON_REGISTERED_ACTION_QUOTIENT; stationary_infinite_member=OPEN
+[ORBIT-LEVEL FINITE ALL-TRANSPORT CLASSIFICATION]
+doubly_rooted_orbit_census=18; reduced_rank_complete=3/3; uniform_vertex_root_laws=3/3
+degree_biased_rejections=3/3; noncovariant_label_controls_rejected=3/3; free_unrooted_mixtures=2/2
+infinite_unimodular_completion_constructed=0
+[GAUGE-PUSHED TYPED UNTIMED CAUSAL-DAG IDENTIFIABILITY]
+parameter_packets=72; projective_ratio_classes=49; typed_DAG_laws=49; typed_residual_collisions=0
+untyped_laws=28; untyped_colliding_laws=21; serial_paths_merged_by_DAG_gauge=288
+common_scale_null=1/1; actual_O_L_silent_actor_collision=1/1; O_U_atoms_at_control=10; O_L_atoms=5
+one_silent_step_closure_checks=10/10
+result=REGISTERED_PROJECTIVE_INJECTIVITY_ONLY; global_identifiability=OPEN
+[TIMED SCALE / CLOCK BRIDGE / D26 CONDITIONAL]
+untimed_scaled_law_equal=1/1; construction_hazards=12,36; separated=1/1
+unknown_clock_equal_observed_hazard=6; bridge_null=1/1; fixed_bridge_separates=1/1
+same_line_BORN_N0_to_N8=('1', '4/5', '16/25', '64/125', '256/625', '1024/3125', '4096/15625', '16384/78125', '65536/390625'); dormant_TOKEN=('1', '1', '1', '1', '1', '1', '1', '1', '1'); inherited_D26_regression=1/1
+absolute_physical_scale=CLOCK_BRIDGE_DEPENDENT; maintenance_rate_without_O_V=NOT_INFERRED
+[PINNED D28/D31B ALPHABET RESPONSE / COMPLETE-TAIL CONTROLS]
+active_preparations=4; active_pairs=6; response_separated_pairs=6/6; attenuated_nonzero_pair_depths=72/72
+epsilon=1/64; single_path_cutoff=6; summable_branching_cutoff=6; nonsummable_shells=12/12
+D31B_exact_cancellation=1/1; mid_history_influence=576/625; inherited_alphabet_cancellation_regression=1/1
+D38b_quantum_join=UNDEFINED; V6_seal_identification=0; exact_ontological_erasure=NOT_CLAIMED
+[HASHES]
+source_sha256=a90ce18b355a1168f442b140fbd702d40178d10b7a66f314f09dc2426c190704
+stdout_body_sha256=b0243bb4232901034ade4ca64ef92d9995ebae222c98d1ed84ad99267228d392
+internal_science_sha256=fba6b4a88bb4b7ae536cd92350e74a4b375b6699887a435acc669695089b95e0
+[GATES]
+R0=PASS
+R1=PASS
+R2=PASS
+R3=PASS
+R4=PASS
+R5=PASS
+R6=PASS
+R7=PASS
+R8=PASS
+R9=PASS
+[VERDICT]
+PASS 10/10
+SHARED D37 INTERFACE-SCHEMA FUNCTOR / LEVEL-B GENERATED CONFLICT OPEN
+H0 REJECTED / TYPED CAUSAL H1 SUFFICIENT ON EXHAUSTED FINITE REGISTRY
+RESIDUAL INCREMENT VARIETY WITH FINITE-HORIZON NORMALIZED REPRESENTATIVE / FINITE UNIFORM-ROOT CLASSIFICATION / REGISTERED PROJECTIVE O-U IDENTIFIABILITY
+chosen D38b action membership, infinite completion, global identification, clock, quantum and sealing bridges remain open

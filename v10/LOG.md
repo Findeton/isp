@@ -4377,3 +4377,43 @@ an exact D36 vocabulary and honest inherited-regression labels.  The D34b
 conflict-vacuity result, H0 staleness counterexample, exact `1/18` versus
 `2/33` action obstruction, D26 factors, tail lesson and D31B cancellation all
 survive.  Repair must precede manuscript drafting.
+
+## 2026-07-15 — D39b repairs hostile round one (LEDGER #253)
+
+`code/d39b_record_closed_law_selection_exact.py` replaces the rejected D39
+receipt and returns reproducible `PASS 10/10`; frozen stdout is
+`data/d39b_record_closed_law_selection_exact.out`.  Six hash seeds reproduce
+complete-output SHA-256 `309aeec4...575ce`.  Source, stdout-body and internal-
+science hashes are `a90ce18b...0704`, `b0243bb4...392` and
+`fba6b4a8...95e0`.
+
+The comparison claim is narrowed and implemented.  D37 and D38b both embed in
+a shared typed regional-interface category with no global witness field.  All
+38 registered D37 objects pass identity and all 72 strict compositions; the
+D38b restriction/update cells and 12 normalized/12 projective pushed cylinders
+pass.  This is a comparison span, not conditional equivalence or K membership.
+
+H1 now consists of typed causal prepare, grant, decision, apply/release and ack
+records.  Edge credentials bind the authenticated source, release is all-or-
+none, and the validator checks parent closure, acyclicity, schemas, payloads
+and signatures.  The 47-history depth-zero-to-two registry supplies 410 valid
+next events; every certificate/oracle result and successor agrees.  All 24
+hostile attacks reject unchanged.
+
+The action complex has 155 states, 401 variables, 344 distinct rows and exact
+rank 246.  Its unnormalized positive variety has dimension 155; chosen D38b
+fails 337 of 506 registered squares, including `1/18 != 2/33`.  A separate
+depth-three completion kernel normalizes 21 rows and passes 78/78 squares over
+179 terminal paths.  No stationary or infinite member is claimed.  Reduced
+orbit-level transports prove uniform finite roots on three cells while leaving
+unrooted mixtures and infinite completion free.
+
+Actual two-event D38b path enumeration produces 49 typed causal-DAG laws for
+49 projective actor/mode classes with zero registered collision and merges 288
+serial paths.  The untyped projection has 21 colliding laws; a real silent-
+actor O-L pair passes ten silent-step closure checks.  Clock scale, D26 pricing,
+operational tails, quantum joining and sealing retain their declared bridge
+conditions.
+
+D39b is an exact repair candidate.  Independent closing review remains open,
+and Paper 28 remains held.
