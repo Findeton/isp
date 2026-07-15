@@ -4,7 +4,7 @@
 
 ## Record-closed finite-cylinder laws, bounded local events and unbounded predictive width
 
-**Status:** EXACT-RECEIPT CANDIDATE; independent paper-level review open.
+**Status:** EXACT-RECEIPT CANDIDATE; independent closing delta open.
 D38 round one was rejected at `2B/7M/1m/0n`.  Its replacement D38b is
 `PASS 9/9`; the final three-lane hostile delta on frozen commit `be310e2`
 returns `0B/0M/0m/0n` at the complete-finite-admission-witness scope.
@@ -24,19 +24,22 @@ This paper closes that interface at a deliberately finite and classical
 scope.  A **record-closed oriented finite-cylinder presentation** consists of
 a typed append-only event history, a query-relative record boundary, positive
 finite-cylinder kernels, record restriction with typed external-parent
-references and an updater whose output is admitted input for the next
-cylinder.  Every current actor row and wire head is derived from authenticated
-records.  Birth emits a canonical Ulam child row, edge, two ports and child
-clock address.  Regional append is accepted only when it advances an explicit
-complete finite authenticated-history witness.  This proves existence; it
-does not prove a smaller localized admission certificate.
+and external-frontier references, and an updater whose output is admitted
+input for the next cylinder.  Every current discrete actor row, wire head and
+simple-edge incidence is derived from authenticated records.  Birth emits a
+canonical Ulam child row, edge, two ports and child clock address.  Regional
+append is accepted only when it advances an explicit complete finite
+authenticated-history witness.  This proves existence; it does not prove a
+smaller localized admission certificate.  Realized future exponential marks,
+historical occurrence times and a stored global port map are not reconstructed.
 
-For the chosen D34b law, the root boundary is the D34e distributed star.  The
-root carries its carrier, ring, birth and wire counts; each neighbor contributes
-only identity, degree and own-birth count; incident edges and ports are typed
-incidence; and elapsed time is relative to the conditioning stop.  Neighbor
-idle and off-root interaction events are silent for this quotient.  The
-relevant holding rate is
+For the chosen D34b law, one proved sufficient root carrier is the D34e
+distributed star.  Its compact kernel state carries the root's carrier, ring,
+birth and wire counts, each neighbor's identity, degree and own-birth count,
+and elapsed time relative to the conditioning stop.  The complete record
+witness carries the incidence from which its edges and ports are reconstructed.
+Neighbor idle and off-root interaction events are silent for the compact
+quotient.  The relevant holding rate is
 
 ```text
 q_A = 1 + degree(A)/4 + sum_(x adjacent A) 1/[4 degree(x)].
@@ -56,13 +59,14 @@ The main structural theorem is a separation, not a no-go for local kernels:
 bounded local event support does not imply bounded predictive width.
 ```
 
-D34b events touch at most two actors and the C/L boundary has graph radius
-one.  Its width is nevertheless unbounded over growth.  For the stronger
-exact unlimited-horizon Branch-F ancestry query, Paper 23 proves at every
-legal finite stop that the minimal predictive quotient is the current rooted
-marked component class.  Its `2^M` family forces at least M worst-case bits.
-This is a finite-stop theorem; a timed or infinite predictive inverse-limit
-identification remains open.
+D34b events touch at most two actors.  One proved sufficient C/L carrier has
+graph radius one and unbounded width over growth; neither a bounded alternative
+nor the weak/timed minimal C/L quotient is ruled out.  For the stronger exact
+unlimited-horizon Branch-F ancestry query, Paper 23 proves at every licensed
+finite stop that the minimal predictive quotient is the current rooted marked
+component class.  Its `2^M` family necessarily forces at least M worst-case
+bits.  This is a finite-stop theorem; a timed or infinite predictive
+inverse-limit identification remains open.
 
 An abstract anchored-prefix criterion isolates what the ancestry proof uses:
 component sufficiency, persistent reconstructible records and, for every two
@@ -79,10 +83,12 @@ Likewise D26 prices maintenance only if a future bridge identifies particular
 records with repeated same-line BORN carriers; no such bridge or maintenance
 rate is derived here.
 
-The result therefore joins D34's generated law to Paper 26's boundary
-language, but it does not select D34b's rates, construct spatial DLR kernels,
-prove null-boundary versions, identify a smaller admission certificate,
-derive an infinite unimodular completion, or supply a quantum regional join.
+The result therefore gives D34's generated law an oriented boundary
+presentation architecturally analogous to Paper 26's language, but it does not
+prove a D37/D38b comparison map, select D34b's rates, construct spatial DLR
+kernels, prove null-boundary versions, identify a smaller admission
+certificate, derive an infinite unimodular completion, or supply a quantum
+regional join.
 
 ## 1. The answer in ordinary language
 
@@ -101,11 +107,12 @@ chosen process generates the records its next finite cylinders use.
 
 The second result prevents a familiar shortcut.  Local event dynamics do not
 promise small predictive memory.  One D34b event touches one actor or one
-incident pair.  The boundary needed for a coarse A-wire future is a radius-one
-star.  Yet the number of neighbors, ports and identifiers is unbounded.  If
-the future query is upgraded to complete persistent ancestry forever, the
-minimal exact predictor is larger still: the whole current component history
-up to rooted marked isomorphism.
+incident pair.  One proved sufficient physical carrier for a coarse A-wire
+future is a radius-one star, whose number of neighbors, ports and identifiers
+is unbounded.  Whether a different bounded C/L carrier exists remains open.
+If the future query is upgraded to complete persistent ancestry forever, the
+minimal exact predictor is necessarily the whole current component history up
+to rooted marked isomorphism.
 
 Those statements concern different widths of the same law.  They are not a
 contradiction:
@@ -132,7 +139,8 @@ The chosen neighbor is uniform.  Birth creates a fresh parent-local Ulam
 child.  Interaction touches both causal wires but does not consume the
 receiver's clock or mark.  Idle touches only the initiator wire.  Edges and
 event ancestry persist.  The connected finite seed is `A--B`; the accepted
-D34b nonexplosion theorem makes every finite stop finite almost surely.
+D34b nonexplosion theorem makes every licensed stop land in a finite
+configuration almost surely.
 
 These coefficients and the seed are model data.  Nothing in this paper
 selects them as nature's law.
@@ -142,7 +150,8 @@ selects them as nature's law.
 The proof keeps four objects separate:
 
 1. the complete typed record history `H`;
-2. the current generative configuration reconstructed from `H`;
+2. the current discrete actor rows, wire heads and simple-edge incidence
+   reconstructed from `H`;
 3. the D34e actor-star boundary `B_A(H)` for the C/L queries; and
 4. the rooted marked component class `[K_A(H)]_g` for Branch F.
 
@@ -150,6 +159,11 @@ The complete history can be a validation witness without being the minimal
 boundary.  The star can be a sufficient boundary without being bounded in
 capacity.  The component class can be the minimal Branch-F quotient without
 being read before every local click.
+
+The reconstruction claim is discrete.  Historical event occurrence times and
+already realized future exponential deadlines or marks are not stored or
+recovered.  Clock addresses seed the chosen law's future exponential sampling;
+relative elapsed time is a separate oriented-boundary coordinate.
 
 ### 2.3 Classical and oriented
 
@@ -159,7 +173,9 @@ not a kernel version on probability-zero boundaries and not an identification
 with Paper 26's K1, K2, K3 or joint transaction family.
 
 The construction is classical.  It defines no intervention-indexed quantum
-process, no D23 join operation and no quantum record-closed specification.
+process, no quantum join operation and no quantum record-closed specification.
+Any future quantum join inherits Paper 23's in-degree-at-least-two
+click-identifiability ceiling.
 
 ## 3. Record-closed finite-cylinder presentation
 
@@ -192,15 +208,18 @@ advances.
 
 There is no authoritative cached state or tip map.  Validation topologically
 replays the authenticated DAG, requires one comparable successor chain per
-wire and derives the unique rows, heads and incidence.  A monotone used-event
-set prevents rollback from turning a used event into a fresh one.
+wire and derives the unique discrete rows, heads and simple-edge incidence.  A
+monotone used-event set prevents rollback from turning a used event into a
+fresh one.  The replay does not recover historical occurrence times, realized
+future exponential marks or a stored port map; future marks are supplied by
+the chosen clock law at the typed clock addresses.
 
 ### 3.2 The D34e star boundary
 
-For a distinguished root A, write
+For a distinguished root A, the compact executable kernel state is
 
 ```text
-B_A = (root row, elapsed time, neighbor rows, incident edges, root ports).
+B_A^kernel = (root row, elapsed time, neighbor rows).
 ```
 
 The root row contains carrier, own-ring count, own-birth count and wire-event
@@ -210,6 +229,12 @@ only
 ```text
 (actor identity, degree, own-birth count).
 ```
+
+Incidence is not an additional field in the compact `Star`.  The complete
+authenticated witness derives simple edges; seed and birth payloads carry two
+oriented endpoint ports per edge.  Hence the root-owned B3 port map is
+reconstructible in this simple-tree sector, while a complete witness counts
+both endpoint incidences.
 
 That width is deliberate.  A neighbor idle or interaction not involving A
 can change the neighbor's carrier, ring and wire fields, but cannot change the
@@ -307,6 +332,11 @@ staged restriction agree:
 r_(F,D) = r_(E,D) o r_(F,E),     D contained in E contained in F.
 ```
 
+The view's external-reference census also includes every current authenticated
+witness-frontier head omitted from the retained region.  Thus the typed
+boundary contains omitted causal-parent references and omitted current
+frontier references; both categories retain their immutable source IDs.
+
 D38b's finite regional view additionally carries the complete authenticated
 history as an explicit admission witness.  The current frontier and incidence
 are re-derived from that witness.  Regional append must equal the exact next
@@ -319,13 +349,13 @@ A smaller localized admission certificate remains open.
 
 ### Theorem 1 — chosen-law record closure
 
-For every legal finite history of the chosen D34b process and every positive
-finite actor-star cylinder:
+For every finite history admitted by the chosen D34b process and every
+positive finite actor-star cylinder:
 
-1. the current physical configuration and heads are determined by the typed
-   record DAG;
+1. the current discrete actor rows, wire heads and simple-edge incidence are
+   determined by the typed record DAG;
 2. every next admitted event emits the records needed to determine its
-   successor configuration;
+   successor discrete boundary state;
 3. `B_A` screens the declared C/L relevant-event future and updates from its
    old value, relative elapsed increment and one typed event;
 4. the kernels `gamma_(b,n)` are normalized and projective under prefix
@@ -342,8 +372,10 @@ finite-cylinder presentation after its supplied finite seed.
 Items 1 and 2 follow by induction on the event DAG.  Seed rows and incidence
 are fixed.  An accepted event names the current touched-wire heads, so adding
 it preserves acyclicity and gives one new head on each touched wire.  Its exact
-post-rows determine the successor state.  Birth's Ulam ordinal makes the child
-identity fresh and supplies its incidence and clock address.
+post-rows determine the successor discrete boundary state.  Birth's Ulam
+ordinal makes the child identity fresh and supplies its incidence and clock
+address.  Future exponential deadlines and marks are sampled by the supplied
+clock law; they are not part of this reconstruction theorem.
 
 Item 3 is the D34e generator partition.  The five retained row types above
 exhaust every event that can change `B_A`; every omitted event preserves it.
@@ -351,10 +383,11 @@ The rates are functions of the root row and neighbor degree/birth rows.
 
 Item 4 follows from normalization of `kappa` and repeated conditional
 composition.  Exact competing-exponential integration supplies the timed
-normalization.  Item 5 follows because an omitted original parent receives
-the same `EXTERNAL(source_record_id)` whether it is omitted in one restriction
-or an earlier stage.  For item 6, both paths append the same exact witnessed
-successor and then apply the same immutable source-ID classification.  ∎
+normalization.  Item 5 follows because an omitted original parent or current
+frontier head receives the same external source reference whether it is
+omitted in one restriction or an earlier stage.  For item 6, both paths append
+the same exact witnessed successor and then apply the same immutable source-ID
+classification.  ∎
 
 ## 4. What the theorem does not make small
 
@@ -362,13 +395,14 @@ successor and then apply the same immutable source-ID classification.  ∎
 
 The star boundary has graph radius one.  It does not have a uniform number of
 neighbor rows, ports, edges, identifiers or counter bits.  A's birth process
-has unbounded support at every positive construction time and diverges over an
-infinite realization.  Paper 22 therefore proves that its physical B3 carrier
-has unbounded width.
+has unbounded support at every positive construction time and diverges almost
+surely over an infinite realization.  Paper 22 therefore proves that its
+constructed physical B3 carrier has unbounded width.
 
 D38b's receipt reports the fields separately.  One specimen has radius one,
-six boundary actors, seven physical history records, ten oriented incident
-ports and maximum causal parent arity two.  Across the family, identifier and
+six boundary actors, seven physical history records, ten oriented endpoint-
+port incidences over five edges and maximum causal parent arity two.  Its
+compact root B3 has five root-owned ports.  Across the family, identifier and
 total width are unbounded and the ideal elapsed coordinate is continuous.
 
 ### 4.2 Full ancestry uses a different boundary
@@ -389,21 +423,23 @@ stores a global ledger.
 For the chosen D34b law:
 
 1. every physical event touches at most two actors;
-2. the C/L sufficient boundary is actor-star-local but has unbounded width;
+2. one constructed physical carrier sufficient for the C/L query is
+   actor-star-local and has unbounded width over growth, while its weak/timed
+   minimal quotient and any different bounded carrier remain open;
 3. at every licensed finite stop the exact Branch-F predictive quotient is
    `[K_A]_g`; and
 4. for every M there are `2^M` reachable component classes with pairwise
    different Branch-F conditional laws.
 
-Therefore bounded local event support coexists with unbounded exact
-predictive information width.
+Therefore bounded local event support coexists with necessarily unbounded
+exact Branch-F predictive information width.
 
 ### Proof
 
 Item 1 is immediate from birth, idle and interaction arities.  Item 2 is Paper
-22's B3 sufficiency and growth theorem.  Item 3 is Paper 23's anchored
-tomography theorem.  Its depth-marked binary family gives item 4 and forces at
-least M worst-case bits.  ∎
+22's B3 sufficiency and growth theorem; it is not a C/L minimality theorem.
+Item 3 is Paper 23's anchored tomography theorem.  Its depth-marked binary
+family gives item 4 and forces at least M worst-case bits.  ∎
 
 This theorem says nothing about a completed infinite history point.  D34f
 explicitly leaves the timed or infinite predictive inverse-limit bridge open.
@@ -429,8 +465,8 @@ Assume:
 
 1. the conditional future law factors through K;
 2. K is reconstructible from the retained persistent records; and
-3. for every K and every nonisomorphic K', there are a measurable future
-   prefix `U_K(Delta)` and integer `q(K)` such that
+3. for every K there are a measurable future prefix `U_K(Delta)` and integer
+   `q(K)` such that, for every nonisomorphic K',
 
 ```text
 liminf_(Delta downarrow 0)
@@ -479,8 +515,9 @@ W_op       information needed for one alphabet, horizon and error tolerance.
 
 For exact unsealed Branch F at unlimited horizon, the finite-stop theorem
 identifies both with the current component quotient.  Changing the query can
-make `W_op` smaller without deleting the record protected by No Silent
-Erasure.
+make `W_op` smaller while the chosen D34b law's persistent records remain in
+the history.  The broader No Silent Erasure principle is `[POSITED]` and is not
+needed for this statement.
 
 The following are distinct modifications:
 
@@ -566,8 +603,10 @@ Paper 27:
 
 Paper 27 does not prove that D34b belongs to Paper 26's K families.  Its
 regions are future cylinders and finite record restrictions, not the supplied
-conflict regions of D37.  The unification is architectural: conditional laws,
-boundary data and their causal realization now live in one record ontology.
+conflict regions of D37, and no D37/D38b comparison map is constructed.  The
+relation is an architectural analogy.  Internally to D38b, its conditional
+laws, boundary data and causal realization live in one generated record
+ontology.
 
 ## 10. Exact receipt and review history
 
@@ -622,10 +661,10 @@ frontier certificate.  The final three-lane closing delta on `be310e2` returns
 | Question | Result |
 |---|---|
 | Does chosen D34b have a record-realized oriented positive-cylinder presentation? | **Yes**, after the supplied finite seed and at positive finite-cylinder scope. |
-| Are its actor rows and heads derived from records? | **Yes** in the D38b finite model. |
+| Are its discrete actor rows, heads and simple-edge incidence derived from records? | **Yes** in the D38b finite model; future deadlines/marks and historical occurrence times are not. |
 | Does birth generate typed child incidence? | **Yes**: child row, edge, ports and clock address. |
 | Do cylinder restrictions compose? | **Yes** for the oriented prefix family. |
-| Do finite record restrictions compose? | **Yes** with typed external source references. |
+| Do finite record restrictions compose? | **Yes** with typed external parent/frontier source references. |
 | Is regional append locally certified by a small boundary? | **Open**; the receipt uses a complete finite witness. |
 | Does bounded event arity imply bounded predictive width? | **No** for chosen D34b. |
 | Is the exact Branch-F quotient an infinite inverse-limit component? | **Open**; only the finite-stop current-component theorem is closed. |
@@ -641,18 +680,21 @@ Paper 26 built a boundary language on a supplied complex.  D34b built a
 generator whose predictive boundaries were known but not presented as one
 record-closed regional object.  The finite classical interface now exists.
 
-The boundary is made of records in a literal sense.  Current rows and heads
-are recovered from authenticated event ancestry.  Birth writes the new
-actor's incidence.  The star kernel reads record-realized fields.  Its output
-is valid input for the next cylinder.  Nested record restriction preserves
-omitted causal parents as typed external references, and witnessed regional
-append cannot fork one current head.
+The boundary is made of records in a literal, discrete sense.  Current rows,
+heads and simple-edge incidence are recovered from authenticated event
+ancestry.  Birth writes the new actor's incidence.  The star kernel reads
+record-realized fields.  Its output is valid input for the next cylinder.
+Nested record restriction preserves omitted causal parents and omitted current
+frontier heads as typed external references, and witnessed regional append
+cannot fork one current head.  Future clock marks remain supplied by the law.
 
 The same construction also makes the program's central locality distinction
 unavoidable.  A law can change at most two actors per event while requiring
-an unbounded-width boundary for exact prediction.  For coarse A-wire futures,
-that boundary is a growing radius-one star.  For complete ancestry forever,
-the finite-stop predictive identity is the whole current component class.
+unbounded information for exact unlimited-horizon Branch-F prediction.  For
+coarse A-wire futures, one proved sufficient carrier is the growing radius-one
+B3 star, but its minimality is open.  For complete ancestry forever, the
+finite-stop predictive identity is necessarily the whole current component
+class.
 
 The surviving result is therefore:
 

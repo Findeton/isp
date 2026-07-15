@@ -4206,3 +4206,29 @@ keeps physical sealing and the D26 maintenance bridge open, and does not claim
 spatial DLR, null-boundary versions, timed inverse limits, all-transport
 unimodularity, coupling selection or a quantum join.  Independent paper-level
 review remains open.
+
+## 2026-07-14 — Paper 27 independent review repaired in authorship (LEDGER #248)
+
+The independent paper review frozen at commit `049d173` returns
+`0B/2M/5m/3n`, with D38b reproduced at `PASS 9/9`, complete-output SHA-256
+`28e76708...4f7d`, and the paper's record-closure, projectivity and Branch-F
+core intact.  The review is
+`reviews/paper27-round1-independent-review.md`.
+
+The authorship repair narrows D38b reconstruction to current discrete actor
+rows, wire heads and simple-edge incidence.  It explicitly excludes historical
+occurrence times, realized future exponential marks/deadlines and a stored port
+map.  The compact executable star is separated from witness-carried incidence,
+and the ten-port specimen is identified as two endpoint incidences on each of
+five edges, versus five root-owned B3 ports.
+
+The C/L claim is also corrected: Paper 22's growing B3 is one proved sufficient
+physical carrier, not a minimality theorem, and a different bounded carrier or
+weak/timed minimal quotient remains open.  Necessary unbounded worst-case
+width is retained exactly where Paper 23 proves it, for the unlimited-horizon
+Branch-F current-component quotient.  Record restriction now discloses omitted
+current frontier heads as well as causal parents; the future quantum join is
+pre-registered under Paper 23's in-degree-at-least-two identifiability ceiling;
+NSE is marked `[POSITED]` but not used; and Paper 26 is only an architectural
+analogy absent a D37/D38b comparison map.  A focused independent closing delta
+is required before promotion.

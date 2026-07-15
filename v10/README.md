@@ -61,7 +61,17 @@ event support can coexist with unbounded exact finite-stop predictive width.
 Its anchored-prefix lemma uses the repaired small-time-order premise, and the
 paper explicitly leaves the smaller admission certificate, spatial DLR,
 inverse-limit, sealing, D26 bridge, unimodular selection and quantum join open.
-Independent paper-level review has not started.
+Independent paper review returned `0B/2M/5m/3n` with the core intact.  The
+authorship repair now limits reconstruction to discrete actor rows, wire heads
+and simple-edge incidence; future clock marks and historical occurrence times
+remain supplied/unreconstructed.  It also restores the decisive carrier
+distinction: B3 is one sufficient unbounded C/L realization whose minimality
+is open, whereas unlimited-horizon Branch F has the necessarily unbounded
+current-component quotient.  Compact star state is separated from witness
+incidence, external parent/frontier references are both disclosed, the D23
+join wording and NSE provenance are repaired, and the Paper 26 relation is
+architectural rather than a claimed comparison theorem.  A focused independent
+closing delta remains open.
 
 - `note-d38-record-closed-regional-specifications.md`
 - `code/d38_record_closed_specification_exact.py`
@@ -70,6 +80,7 @@ Independent paper-level review has not started.
 - `data/d38b_record_closed_specification_exact.out`
 - `reviews/d38-round1-record-closed-specification-hostile-review.md`
 - `reviews/d38-round2-record-closed-specification-closing-delta.md`
+- `reviews/paper27-round1-independent-review.md`
 - `relativistic-isp-v10-paper27-the-boundary-is-made-of-records.md`
 
 ## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)
