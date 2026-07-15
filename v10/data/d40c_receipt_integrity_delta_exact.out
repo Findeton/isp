@@ -1,0 +1,25 @@
+[D40c receipt-integrity closing delta]
+ARITHMETIC: integer/Fraction exact; no floating theorem
+[C0 DIRECT LOCKS]
+direct_locks=4/4
+[C1 D40 TRANSITIVE RUNTIME LOCKS]
+transitive_antecedent_locks=12/12; typed_level_constructors=7/7
+[C2 EXACT TWO-SPACE CENSUS]
+star_serial_paths=28/28; star_unordered_atoms=17/17; global_serial_paths=44/44; global_typed_DAG_atoms=40/40; global_merges=4/4
+[C3 SCIENCE-INVARIANCE / SCOPE]
+star_mass=23/198; star_equals_serial_sum=1/1; star_normalized=1/1
+global_mass=5/96; global_equals_serial_sum=1/1; global_normalized=1/1
+timed_Harris_cylinder=0; arbitrary_downset_projectivity=0; stationary_infinite_completion=0
+[HASHES]
+source_sha256=9ede91edd5f3d4868df00e6b3d6bf30c61160ce9a5dd27734f70e97c244285e4
+stdout_body_sha256=38755041bcf19dec43dea5078e00901e137c27d492d09f0dcc5600787eafe0ee
+internal_science_sha256=3f9d2a34a9102295c2fb0f2a24ceb9953ce55e02a580ef8aae7ba01aa31cd3e5
+[GATES]
+C0=PASS
+C1=PASS
+C2=PASS
+C3=PASS
+[VERDICT]
+PASS 4/4
+D40b_TRANSITIVE_PROVENANCE_AND_EXACT_CENSUS_CLOSED
+scientific_theorem_and_numbers=UNCHANGED

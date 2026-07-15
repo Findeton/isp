@@ -1,5 +1,15 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40c closes provenance and census gates (LEDGER #268)
+
+`code/d40c_receipt_integrity_delta_exact.py` returns `PASS 4/4`.  It locks its
+four direct parents, executes D40's 12/12 transitive runtime antecedent hashes
+and 7/7 typed level constructors, and gates the exact star/global census
+`(28,17,44,40,4)`.  The two target masses remain `23/198` and `5/96`, both
+equal their serial sums and both pushforwards remain normalized.  Timed Harris,
+arbitrary-down-set and stationary/infinite claims remain zero.  Independent
+final review is open; Paper 29 remains held.
+
 ## 2026-07-15 — D40c receipt-integrity delta pinned (LEDGER #267)
 
 `note-d40c-closing-delta.md` freezes a four-gate repair: lock D40b and its

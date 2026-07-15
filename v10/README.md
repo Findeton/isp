@@ -1,12 +1,15 @@
 # Relativistic ISP v10
 
-## Latest — D40b hostile repair candidate (`PASS 5/5`)
+## Latest — D40c closing delta candidate (`PASS 4/4`)
 
 D40 separates operator interchange, decoherence-functional consistency,
 durable-record cylinders, serial histories, causal-DAG pushforwards, regional
 boundary sufficiency and classical increment potentials.  Its first receipt
-passed 11/11; hostile review found `0B / 1M / 3m / 1n`.  D40b closes the
-findings at `PASS 5/5`; independent closing review is open and Paper 29 remains
+passed 11/11; hostile review found `0B / 1M / 3m / 1n`.  D40b repaired those
+findings at `PASS 5/5`.  Round two confirmed the mathematics but found one
+transitive-lock major and one exact-census minor.  D40c closes both at
+`PASS 4/4`: 12/12 transitive antecedents, 7/7 typed levels and the exact
+`(28,17,44,40,4)` census.  Independent final review is open; Paper 29 remains
 held.
 
 The repair types two probability spaces separately.  Paper 28's projected
@@ -34,6 +37,11 @@ visibility discriminator is preregistered for lab handoff; no data are claimed.
 - `note-d40b-exact-repair-receipt.md`
 - `code/d40b_probability_space_repair_exact.py`
 - `data/d40b_probability_space_repair_exact.out`
+- `reviews/d40b-round2-independent-review.md`
+- `note-d40c-closing-delta.md`
+- `note-d40c-exact-closing-delta.md`
+- `code/d40c_receipt_integrity_delta_exact.py`
+- `data/d40c_receipt_integrity_delta_exact.out`
 
 ## Prior — Paper 28 independently reviewed exact-receipt candidate
 
