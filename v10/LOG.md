@@ -1,5 +1,23 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — D40 action-cocycle level audit pinned (LEDGER #261)
+
+`note-d40-where-the-action-cocycle-lives.md` freezes the confrontation between
+the identified amplitude/decoherence-functional law and the classical
+record-closed architecture.  It refuses to read Paper 28's exact
+`1/18 != 2/33` as a physical failure until serial histories, typed causal-DAG
+pushforwards, refined durable cylinders and regional boundary sufficiency are
+separated.
+
+The ten-gate receipt will prove classical cylinder descent and finite
+lumpability, reuse D34c for operator/functional interchange and interference
+controls, adjudicate the D38b square, classify K-flat as a general h-ratio
+completion form, execute an exact Bell/CHSH fixture, audit the missing D15
+state/instrument/grammar dictionaries, sort the phase's universality claims
+and pre-register the D26 BORN/TOKEN visibility discriminator.  Paper 29 and
+its title are held until the exact receipt survives independent hostile
+review.
+
 ## 2026-07-11 — Investigation 1 complete
 
 Investigation 1 tested whether no-silent boundary residue could supply the

@@ -1,6 +1,24 @@
 # Relativistic ISP v10
 
-## Latest — Paper 28 independently reviewed exact-receipt candidate
+## Latest — D40 level audit pinned before execution
+
+D40 asks where the action cocycle actually lives before Paper 28's exact
+`1/18 != 2/33` obstruction is given a physical interpretation.  It separates
+operator interchange, decoherence-functional consistency, durable-record
+cylinders, serial histories, causal-DAG pushforwards, regional boundary
+sufficiency and classical increment potentials.
+
+The frozen receipt will prove the finite descent theorem, re-enumerate the
+D38b square at serial and DAG levels, execute an exact Bell/CHSH architecture
+fixture, audit which D33--D39 results are grammar-universal versus toy-law
+specific, and expose the supplied dictionaries still separating D15's
+identified low-energy action content from an executable record-closed click
+law.  It also pre-registers the D26 BORN/TOKEN visibility discriminator.
+Paper 29 is held until the receipt and its first independent hostile review.
+
+- `note-d40-where-the-action-cocycle-lives.md`
+
+## Prior — Paper 28 independently reviewed exact-receipt candidate
 
 Paper 28 is drafted as *Selecting record-closed laws*.  Its first independent
 paper-level review returned `0B / 2M / 3m / 1n`.  D39c closes that round at
