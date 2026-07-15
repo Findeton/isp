@@ -4526,3 +4526,36 @@ pushforwards, an explicit `sum_(r>R)` summable-tail gate and wording that the 78
 normalized squares belong to the separate initial depth-three completion
 registry.  The 1,760-atom aggregate label is a nit.  A focused D39c delta and
 authorship repair are required before closing paper review.
+
+## 2026-07-15 — D39c and Paper 28 authorship repair round one (LEDGER #259)
+
+`code/d39c_paper28_closure_delta_exact.py` locks the closing-reviewed D39b
+source and output and returns `PASS 5/5`.  Its source, stdout-body, internal-
+science and complete-output hashes are `d07951a8...61ea`,
+`4e52df05...8ddb`, `5f81c5b4...150a` and `b045e405...955f`.
+
+The touched-wire delta repeats all 410 proposals after deleting every
+untouched actor row, head, edge and edge source.  Projected collection succeeds
+410/410, projected/full certificates agree 410/410, causal validation passes
+410/410 and the projected successor equals the projected complete oracle
+410/410.  Birth and idle use one existing wire; interaction uses two plus the
+one authenticated incidence source.  This proves finite projection invariance
+on the exhausted registry, not asynchronous liveness or an all-history
+induction.
+
+The action delta checks all 155 state-potential columns against the exact
+344-row cocycle matrix.  All lie in the kernel; the transition graph is
+connected, the coboundary image has rank 154 and the algebraic cocycle quotient
+has dimension one.  Endpoint-potential observational gauge remains bridge-
+dependent.
+
+D39c also declares distinct `D38_RECORD` and `D38_ACTION` generated-row
+constructors, types all 1,760 aggregate pushed atoms, and gates 156 exact
+finite-plus-remainder identities for
+`sum_(r>R) 2^r 4^-r=2^-R`.  The retained-through-R cutoff at `epsilon=1/64`
+is exactly six.
+
+Paper 28 incorporates the delta, labels the normalized 78-square object as a
+separate initial depth-three completion registry and reports the
+one-dimensional quotient without promoting state potentials to physical
+gauge.  Independent closing paper review remains open.

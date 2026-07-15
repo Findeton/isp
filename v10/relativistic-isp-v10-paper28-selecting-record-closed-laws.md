@@ -4,11 +4,11 @@
 
 ## Comparison spans, finite balance, action obstructions and empirical identifiability
 
-**Status:** AUTHORSHIP EXACT-RECEIPT CANDIDATE.  D39's first receipt was
-rejected at `4B/5M/3m/1n`.  D39b repaired the target; its round-two review
-returned `0B/1M/2m/1n`, and the namespaced closing delta on frozen commit
-`dc16c96` returned `0B/0M/0m/0n`.  Independent paper-level review remains
-open.
+**Status:** AUTHORSHIP EXACT-RECEIPT CANDIDATE AFTER ROUND-ONE REPAIR.  D39's
+first receipt was rejected at `4B/5M/3m/1n`.  D39b repaired the target and
+closed at `0B/0M/0m/0n`.  Independent Paper 28 round one on frozen commit
+`e77fb2f` returned `0B/2M/3m/1n`.  D39c supplies the focused exact repair at
+`PASS 5/5`; independent paper closing review remains open.
 **Date:** 2026-07-15.
 
 ## Abstract
@@ -28,7 +28,8 @@ rows.  The finite D37 registry has 38 nonempty regions, 38 distinct target
 images, 38 identities and 72 strict three-level restriction compositions.
 The D38b side passes identity, two compositions, two direct/staged
 restrictions and update naturality.  Twelve pushed finite-cylinder laws
-normalize, twelve prefix restrictions commute and 1,760 positive atoms remain.
+normalize, twelve prefix restrictions commute and 1,760 positive atoms remain
+in aggregate.
 The target retains no complete-witness identity.  This is an architecture-level
 comparison span, not a D37/D38b conditional equivalence or K-family theorem.
 
@@ -47,14 +48,19 @@ Every grant parents its prepare and certified head; interaction credentials
 bind the authenticated edge source; release is all-or-none.  On an exhausted
 depth-zero-to-two registry of 47 histories and 410 valid next events, H1 agrees
 with the complete-witness oracle and produces the same successor rows, heads
-and incidence in all 410 cases.  Twenty-four hostile attacks reject without
-mutation.  This is certificate existence and safety at the finite registry,
-not asynchronous liveness or a global locality theorem.
+and incidence in all 410 cases.  D39c then deletes every untouched row, head,
+edge and edge source: all 410 projected collections produce the same
+certificate and projected successor, with at most two existing wires.
+Twenty-four hostile attacks reject without mutation.  This is touched-wire
+projection invariance, certificate existence and safety at the finite
+registry, not asynchronous liveness or an all-history locality theorem.
 
 Selection itself does not collapse to one law.  The registered local action
 complex has 155 canonical states, 401 transition variables and 344 distinct
 cocycle rows of exact rank 246.  Its positive unnormalized log-weight variety
-has dimension 155; action coboundaries have rank 154.  Chosen projected D38b
+has dimension 155; all 155 state-potential columns lie in the kernel, their
+image has rank 154 and the connected algebraic quotient has dimension one.
+This does not make endpoint potentials a physical gauge.  Chosen projected D38b
 satisfies 169 commuting squares and violates 337.  The smallest displayed
 obstruction is
 
@@ -65,9 +71,10 @@ P(neighbor-birth then idle)=2/33,
 ```
 
 although both paths reach the same declared star boundary.  A separate
-depth-three completion construction gives one normalized finite-horizon
-kernel: 21 rows normalize and all 78 commuting squares agree over 179 terminal
-paths.  No stationary or infinite action-compatible member is constructed.
+initial-state depth-three completion registry gives one normalized finite-
+horizon kernel: 21 rows normalize and all 78 commuting squares agree over 179
+terminal paths.  It is not a normalized member of the full action complex.  No
+stationary or infinite action-compatible member is constructed.
 
 Root-free balance supplies a second, independent filter.  Conditional on a
 finite unrooted marked network, covariance and the all-transport mass-
@@ -97,16 +104,18 @@ identifies repeated same-line BORN carriers; at `g=9/25` three such births give
 `64/125`, whereas dormant TOKEN remains coherence-neutral.  At the inherited
 D28/D31B alphabet, all six active preparation pairs are separated by `{Z,X}`;
 all 72 finite attenuated pair/depth distances remain nonzero.  Positive-
-tolerance width depends on the complete omitted tail: the single-path and
-summable-branching cutoffs are six at `epsilon=1/64`, while nonsummable shells
-never close in the twelve-depth control.  No D38b quantum join or V6 sealing
-rate is inferred.
+tolerance width depends on the complete omitted tail.  With shells through R
+retained, `sum_(r>R) 2^r 4^-r=2^-R`; the single-path and summable-branching
+cutoffs are six at `epsilon=1/64`, while nonsummable shells never close in the
+twelve-depth control.  No D38b quantum join or V6 sealing rate is inferred.
 
 The result is therefore a classification-and-identification theorem, not a
-derivation of one physical law.  Finite action compatibility leaves a residual
-increment variety; finite mass transport fixes conditional roots but not
+derivation of one physical law.  Finite action compatibility leaves a
+155-dimensional raw increment variety and a one-dimensional algebraic quotient
+by state potentials; finite mass transport fixes conditional roots but not
 unrooted mixture weights; typed records identify registered ratios but not
-physical scale.  Chosen D38b itself fails the declared action quotient.  The
+physical scale.  Chosen D38b itself fails the declared commuting-square
+cocycle on the star-boundary quotient.  The
 remaining selection question is sharper than before: construct a generated
 conflict law and a stationary or infinite action-compatible, root-free
 completion, then use clock, visibility and click data to identify the
@@ -147,10 +156,11 @@ information.
 
 The selection result is also mixed by design.  Action compatibility has
 solutions, so it is not an impossibility theorem.  Chosen projected D38b is
-not one of those solutions on the registered quotient, so the criterion is
-not decorative.  Finite root balance has a unique conditional answer—uniform
-rooting—but leaves the distribution of unrooted networks free.  Typed untimed
-records distinguish the finite ratio grid, but a common clock scale is absent.
+not one of those solutions on the registered star-boundary complex, so the
+criterion is not decorative.  Finite root balance has a unique conditional
+answer—uniform rooting—but leaves the distribution of unrooted networks free.
+Typed untimed records distinguish the finite ratio grid, but a common clock
+scale is absent.
 
 So the best available answer is not one formula.  It is a set of filters and a
 map of their residual freedoms.
@@ -226,7 +236,10 @@ D37 incoming rows retain base records, parent-line roots and opportunity
 parents.  Lateral rows retain exterior proposals sharing a participant with
 the interior.  Generated rows retain mode and selection clicks.  D38b incoming
 rows retain omitted causal parents; lateral rows retain omitted current
-frontier references; generated rows retain the typed record/action role.
+frontier references.  D39c makes the D38b generated field an explicit sum
+type: restriction views carry `D38_RECORD(kind:digest)` rows, while pushed
+star kernels carry `D38_ACTION(tag,target)` outcome rows.  The two constructors
+share the generated-row slot but are not identified.
 
 ### 3.2 Restriction morphisms
 
@@ -251,8 +264,9 @@ On the D39b registry:
 3. the D38b chain passes identity, two compositions and two direct/staged
    restrictions;
 4. D38b append commutes with restriction on the registered update square;
-5. 12 pushed cylinder laws normalize and 12 prefix restrictions commute;
-6. the pushed support contains 1,760 positive atoms; and
+5. 12 pushed D38b action-outcome laws normalize and 12 prefix restrictions
+   commute;
+6. their pushed supports contain 1,760 positive atoms in aggregate; and
 7. pairwise cover agreement remains insufficient, by the three-bit
    anticorrelation nonextension witness.
 
@@ -264,11 +278,13 @@ descent on internal rows plus deterministic boundary reclassification.
 Identity and composition therefore reduce to exact equality of namespaced
 typed tuples; D39b exhausts the registered diagrams.
 
-For a D38b depth-n action path, the pushforward replaces each action with its
-typed generated-row image and sums preimages.  The registered atom map is
-injective, so positivity is retained.  Normalization follows by summing the
-source cylinder, and prefix restriction commutes with the pointwise path map.
-The exact receipt checks all listed rows.  The anticorrelation witness has
+For a D38b depth-n star-kernel path, the pushforward replaces each action with
+its declared `D38_ACTION` generated-row image and sums preimages.  The
+registered atom map is injective, so positivity is retained.  Normalization
+follows by summing the source cylinder, and prefix restriction commutes with
+the pointwise path map.  This probability pushforward is on the D38b leg; no
+D37/D38b kernel equivalence is inferred.  The exact receipt checks all listed
+rows.  The anticorrelation witness has
 normalized pair laws and matching singleton marginals but no three-bit atom,
 so pairwise agreement is not a cover theorem.  ∎
 
@@ -323,13 +339,17 @@ valid next events                410
 certificate/oracle agreements    410/410
 successor-state agreements       410/410
 protocol validations             410/410
+full/projected certificates      410/410
+projected successor agreements   410/410
+maximum existing touched wires     2
 hostile rejections               24/24
 unchanged failed transactions    24/24.
 ```
 
 Therefore H1 is sound and complete relative to the complete-witness oracle on
-that registry and produces the same discrete rows, heads and simple-edge
-incidence.
+that registry, produces the same discrete rows, heads and simple-edge
+incidence, and is invariant there under deletion of every untouched verifier
+row, head, edge and edge source.
 
 ### Proof
 
@@ -338,6 +358,13 @@ birth, idle and oriented incident interaction through depth two, deduplicating
 equal record histories.  For each valid next event, H1 is issued from the
 current owner rows and heads, validated, applied and compared with D38b's
 complete-history transaction.  Equality is exact.
+
+D39c repeats every proposal with a verifier ledger projected before
+collection.  Birth and idle retain only the initiator's current row and head.
+Interaction retains the two participant rows and heads plus their one
+authenticated edge source.  The projected and full collections issue the same
+certificate, and projected commit equals the corresponding projection of the
+oracle successor in all 410 cases.
 
 The hostile battery mutates signatures, owners, wires, event bodies, targets,
 grant census, row digests, attempts, edge sources, edge endpoints, birth
@@ -350,9 +377,9 @@ pre-transaction ledger.  ∎
 
 `collect_h1` constructs a complete certificate in one checking transaction.
 The theorem does not model asynchronous message arrival, timeouts, fair
-delivery, crash recovery or legitimate partial-grant recovery.  Nor does depth
-two prove all-history locality.  These are separate distributed-protocol and
-induction problems.
+delivery, crash recovery or legitimate partial-grant recovery.  Projection
+invariance through depth two is not an all-history induction.  These are
+separate distributed-protocol and induction problems.
 
 ## 5. Selection conditions are filters
 
@@ -380,7 +407,10 @@ local transition variables          401
 distinct cocycle rows               344
 exact rank                           246
 positive log-weight dimension       155
-action-coboundary rank               154.
+action-coboundary rank               154
+included state-potential columns 155/155
+transition components                  1
+algebraic quotient dimension            1.
 ```
 
 The unit unnormalized packet is a positive representative.  The chosen D38b
@@ -409,17 +439,19 @@ new total is `11/8`, and the reverse product is
 ```
 
 Both orders reach the same declared star boundary.  Thus chosen projected
-D38b is not action-compatible on this quotient.
+D38b is not action-compatible on this declared star-boundary action complex.
 
-Separately, a depth-three completion count defines
+Separately, on the initial-state depth-three completion registry, a terminal
+continuation count defines
 
 ```text
 p_H(e|z) = Z_{H-1}(ez)/Z_H(z),
 ```
 
 where Z is the number of terminal continuations.  It normalizes 21 finite-
-horizon rows and satisfies all 78 registered square products over 179 terminal
-paths.
+horizon rows and satisfies all 78 squares in that separate registry over 179
+terminal paths.  It is not asserted to normalize the full four-seed action
+complex.
 
 ### Proof
 
@@ -428,7 +460,13 @@ seeds and one successor layer.  Each commuting square contributes its integer
 coefficient row.  Exact rational elimination gives rank 246; independent
 elimination modulo `1000003` and `1000033` gives the same rank.  Hence the
 homogeneous solution dimension is `401-246=155`.  The incidence image of state
-potentials has rank 154.
+potentials has rank 154.  D39c constructs each of the 155 state-potential
+columns `log w(s,e)=phi(es)-phi(s)` and checks all 155 against the complete
+cocycle matrix.  The transition graph is connected.  Therefore
+
+```text
+dim(ker cocycle / im coboundary) = 155-154 = 1.         (2)
+```
 
 The chosen products are evaluated from the exact normalized D38b star kernels;
 the displayed square is a direct derivation.  For the completion kernel,
@@ -437,12 +475,21 @@ a commuting square, the two-step product telescopes to
 `Z_{H-2}(e2 e1 z)/Z_H(z)`, proving equality when the terminal boundary agrees.
 The receipt exhausts the finite rows.  ∎
 
+### Corollary 3.1 — registered algebraic cocycle quotient
+
+Modulo state-potential increments, the registered unnormalized action-cocycle
+space is one-dimensional.  This is an algebraic quotient, not yet an
+observational quotient.  Multiplying path weights by an endpoint-potential
+ratio cancels when endpoints are conditioned on, but can alter an
+unconditioned endpoint distribution.  No physical gauge identification is
+made without an observable/conditioning bridge.
+
 ### 5.2 Root-free mass transport
 
 For a finite marked network G rooted at o, the mass-transport principle is
 
 ```text
-E sum_v F(G,o,v) = E sum_v F(G,v,o)                    (2)
+E sum_v F(G,o,v) = E sum_v F(G,v,o)                    (3)
 ```
 
 for every nonnegative covariant transport F.  Covariance means that F depends
@@ -451,25 +498,25 @@ on a doubly rooted isomorphism class, not arbitrary vertex labels.
 ### Theorem 4 — finite conditional root law
 
 Conditional on one finite unrooted marked network G, every covariant root law
-satisfying (2) is uniform over vertices.  Equivalently, if O_i are the vertex
+satisfying (3) is uniform over vertices.  Equivalently, if O_i are the vertex
 orbits of Aut(G), then
 
 ```text
-P(root in O_i | G) = |O_i|/|V(G)|.                    (3)
+P(root in O_i | G) = |O_i|/|V(G)|.                    (4)
 ```
 
 ### Proof
 
 For two vertex orbits O_i and O_j, use the covariant transport that sends one
 unit from every vertex in O_i to every vertex in O_j.  Its expected outgoing
-mass is `p_i |O_j|`; its expected incoming mass is `p_j |O_i|`.  Equation (2)
+mass is `p_i |O_j|`; its expected incoming mass is `p_j |O_i|`.  Equation (3)
 gives
 
 ```text
 p_i/|O_i| = p_j/|O_j|.
 ```
 
-The equality for every pair of orbits and normalization imply (3).  ∎
+The equality for every pair of orbits and normalization imply (4).  ∎
 
 The D39b regression exhausts 18 doubly rooted orbits on three marked cells.
 The reduced transport matrix has rank `number of root orbits minus one` in all
@@ -480,10 +527,12 @@ vectors are excluded before mass transport is tested.
 
 Theorem 4 fixes the conditional root inside each finite unrooted network.  It
 does not fix mixture weights among different networks.  Theorem 3 classifies
-an unnormalized finite increment variety and supplies one finite-horizon
-normalized kernel.  It does not construct a stationary infinite kernel.  No
-theorem proves that one joint law satisfies record closure, action
-compatibility, infinite root-free balance and D34b's selected coefficients.
+an unnormalized finite increment variety, its one-dimensional algebraic
+quotient and a normalized kernel on a separate initial depth-three registry.
+It does not normalize the full action complex or construct a stationary
+infinite kernel.  No theorem proves that one joint law satisfies record
+closure, action compatibility, infinite root-free balance and D34b's selected
+coefficients.
 
 ## 6. Identification relative to records
 
@@ -493,7 +542,7 @@ On the registered positive family, an event initiated by actor a in mode m and
 eligible target role t has intensity
 
 ```text
-lambda(a,m,t|z) = rho_a beta_m q_t(a,m|z),             (4)
+lambda(a,m,t|z) = rho_a beta_m q_t(a,m|z),             (5)
 ```
 
 where q is the declared uniform incident-target allocation.  Born actors
@@ -598,11 +647,18 @@ nonzero differences by `2^-r` leaves all 72 pair/depth values nonzero for
 `1<=r<=12`.  Exact predictive identity therefore does not merge at any finite
 depth in this attenuation model.
 
-At tolerance `epsilon=1/64`, the complete omitted tail matters.  A single path
-with tail `2^-R` and a branching family with `N_r=2^r`, per-record attenuation
-`4^-r`, both fall below tolerance at R=6.  If instead attenuation is `2^-r`,
-each shell contributes one and no tail cutoff exists.  A per-record bound is
-not a width theorem without growth control.
+At tolerance `epsilon=1/64`, the complete omitted tail matters.  Radius R
+retains shells through R.  A single path has tail `2^-R`; for the branching
+family with `N_r=2^r` and per-record attenuation `4^-r`,
+
+```text
+sum_(r>R) N_r 4^-r = sum_(r>R) 2^-r = 2^-R.
+```
+
+D39c gates 156 exact finite-plus-remainder instances of this identity.  Both
+controls first fall below tolerance at R=6.  If instead per-record attenuation
+is `2^-r`, each shell contributes one and no tail cutoff exists.  A per-record
+bound is not a width theorem without growth control.
 
 The D31B exact cancellation returns zero final influence after a nonzero
 `576/625` intermediate value.  This keeps structural ancestry and operational
@@ -617,9 +673,10 @@ that warning constructive: action consistency is a nontrivial filter, but it
 does not supply normalization, completion or empirical scale.
 
 Papers 21--23 separated local update arity from predictive memory.  Nothing
-here reverses that distinction.  H1 localizes finite admission evidence per
-touched wire at bounded event arity; it does not bound the unlimited-horizon
-predictive quotient.
+here reverses that distinction.  H1 is projection-invariant on the exhausted
+finite registry at at most two existing touched wires; it supplies neither an
+all-history induction nor a bound on the unlimited-horizon predictive
+quotient.
 
 Paper 25 supplied the conflict-safe execution ontology.  Paper 26 supplied
 regional laws on that supplied ontology.  Paper 27 supplied record closure for
@@ -629,7 +686,8 @@ conflict carrier on which Paper 26's arbitration families could act.
 
 The selected coefficients of D34b therefore occupy an awkward but informative
 position.  They define the record-closed law studied by Papers 21--23 and 27,
-yet their projected relevant-event kernel fails this paper's action quotient.
+yet their projected relevant-event kernel fails this paper's declared cocycle
+condition.
 That does not refute D34b as a supplied stochastic generator.  It refutes the
 claim that the chosen projection already descends to the declared
 construction-order-independent action functional.
@@ -670,8 +728,34 @@ internal science        e9bf38ab0a85f3995db3e2e7c00363ad1363820960063a20b00f2043
 complete stdout         3e3ec1b1ab0459bddc5106e1ba4fe459741af264bfb0c725c8d9edd41ddf85ea
 ```
 
-Seven hash seeds reproduce the complete output.  Paper-level review remains a
-separate stream.
+Seven hash seeds reproduce the complete output.
+
+### 9.3 Paper round one and D39c
+
+Independent Paper 28 round one froze authorship commit `e77fb2f` and returned
+
+```text
+0 BLOCKERS / 2 MAJOR / 3 MINOR / 1 NIT.
+```
+
+The first major observed that D39b issued per-wire records while its verifier
+ledger still contained all finite rows and edges.  The second observed that
+the 155-dimensional cocycle kernel and rank-154 coboundary image left an
+unstated and ungated one-dimensional quotient.  The minors required a declared
+kernel-outcome row constructor, an explicit complete-tail convention and
+separation of the 78-square initial depth-three completion registry from the
+full action complex.
+
+D39c closes those exact deltas at `PASS 5/5`.  Its frozen hashes are
+
+```text
+source                  d07951a8f43d04d6c6cea347967fd2db3f6e465553d9fcee5cc15369dd8861ea
+stdout body             4e52df05ff24eda92dec76da5c0c55e371364f588cf9398f9064e021b9348ddb
+internal science        5f81c5b4a4cc3f58e6e282c6d98fdc0d9271228c95c95ea25c0c6f474ec6150a
+complete stdout         b045e405e5035b2ac039d86de9cbda8d013162c63964b5a581f745df98a3955f
+```
+
+Independent paper closing review remains a separate stream.
 
 ## 10. Decision table
 
@@ -681,11 +765,12 @@ separate stream.
 | Is there a D37/D38b conditional equivalence? | **No theorem.** |
 | Does chosen D34b generate contended D36 proposals? | **No** on the registered histories; its conflict image is empty. |
 | Is H0 sufficient? | **No**; authentic claims can become stale. |
-| Is localized H1 sufficient? | **Yes** for safety/existence on the exhausted depth-zero-to-two registry. |
+| Is localized H1 sufficient? | **Yes** for projection invariance and safety/existence on the exhausted depth-zero-to-two registry. |
 | Is asynchronous liveness proved? | **No.** |
 | Does action compatibility have positive finite solutions? | **Yes**, as an unnormalized residual increment variety. |
-| Is there a normalized example? | **Yes**, one separate finite-horizon completion kernel. |
-| Is chosen projected D38b action-compatible? | **No** on the registered quotient; 337 square violations. |
+| What remains modulo state-potential increments? | **One algebraic dimension** on the registered complex; physical gauge is not inferred. |
+| Is there a normalized example? | **Yes**, on the separate initial depth-three completion registry, not the full action complex. |
+| Is chosen projected D38b action-compatible? | **No** on the registered star-boundary complex; 337 square violations. |
 | Does finite all-transport balance select the conditional root? | **Yes**: uniform over vertices. |
 | Does it select unrooted mixture weights? | **No.** |
 | Is an infinite unimodular completion constructed? | **No.** |
@@ -702,15 +787,17 @@ The paper began with a selection question and ends with a classification of why
 selection is still incomplete.
 
 The architectural gap narrows to a finite shared-interface span.  The
-admission gap narrows to a typed causal certificate that is exact on an
-exhausted registry.  Action compatibility becomes a computed matrix rather
-than the word `exp(-I)`.  Root-free balance becomes a complete finite
+admission gap narrows to a typed causal certificate that is projection-
+invariant and exact on an exhausted registry.  Action compatibility becomes a
+computed matrix with a one-dimensional algebraic quotient rather than the word
+`exp(-I)`.  Root-free balance becomes a complete finite
 conditional-root theorem rather than one illustrative transport.
 Identifiability becomes a statement about typed causal-DAG tables rather than
 an informal appeal to rates.
 
-None of those results chooses one universe law.  The action variety retains
-freedom and chosen projected D38b fails it.  Uniform rooting leaves the
+None of those results chooses one universe law.  The raw action variety retains
+freedom, its state-potential quotient retains one algebraic dimension and
+chosen projected D38b fails it.  Uniform rooting leaves the
 unrooted network distribution free.  Typed untimed records identify a finite
 ratio grid while physical scale remains clock-dependent.  Visibility and
 operational width constrain only laws connected to their declared bridges.
@@ -719,9 +806,10 @@ The strongest honest noun is therefore:
 
 ```text
 NAMESPACED FINITE REGIONAL-INTERFACE COMPARISON SPAN /
-TYPED CAUSAL FINITE-REGISTRY ADMISSION CERTIFICATE /
-RESIDUAL UNNORMALIZED ACTION-INCREMENT VARIETY WITH ONE NORMALIZED
-FINITE-HORIZON REPRESENTATIVE /
+TYPED CAUSAL TOUCHED-WIRE-PROJECTION FINITE-REGISTRY ADMISSION CERTIFICATE /
+RESIDUAL UNNORMALIZED ACTION-INCREMENT VARIETY WITH A ONE-DIMENSIONAL
+ALGEBRAIC STATE-POTENTIAL QUOTIENT AND ONE SEPARATE INITIAL-DEPTH-THREE
+NORMALIZED KERNEL /
 FINITE UNIFORM-ROOT MASS-TRANSPORT CLASSIFICATION /
 REGISTERED PROJECTIVE TYPED O-U IDENTIFIABILITY /
 NONSELECTING BEYOND THE DECLARED FINITE SCOPE.
@@ -754,11 +842,12 @@ couplings of one generated law.
 9. Relativistic ISP v10 Paper 27, *The boundary is made of records*.
 10. D39 pin, `note-d39-selecting-record-closed-laws.md`.
 11. D39b repair note, `note-d39b-hostile-repair.md`.
-12. D. Aldous and R. Lyons, “Processes on Unimodular Random Networks,”
+12. D39c closure note, `note-d39c-paper28-closure-delta.md`.
+13. D. Aldous and R. Lyons, “Processes on Unimodular Random Networks,”
     *Electronic Journal of Probability* 12 (2007), 1454--1508,
     doi:`10.1214/EJP.v12-463`.
-13. N. Chandgotia and T. Meyerovitch, “Markov random fields, Markov cocycles
+14. N. Chandgotia and T. Meyerovitch, “Markov random fields, Markov cocycles
     and the 3-colored chessboard,” *Israel Journal of Mathematics* 215 (2016),
     909--964; `arXiv:1305.0808`.
-14. H.-O. Georgii, *Gibbs Measures and Phase Transitions*, second edition, de
+15. H.-O. Georgii, *Gibbs Measures and Phase Transitions*, second edition, de
     Gruyter (2011).

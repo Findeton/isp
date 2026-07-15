@@ -1,0 +1,32 @@
+[D39c Paper 28 hostile-round closure delta]
+ARITHMETIC: integer/Fraction exact; no floating theorem
+D39b_source_sha256=22fbda6a9189a2f46cf64c0f33b943b952e702fce30828a37b6d462f5a1458d3
+D39b_complete_output_sha256=3e3ec1b1ab0459bddc5106e1ba4fe459741af264bfb0c725c8d9edd41ddf85ea
+[DECLARED D38b KERNEL-OUTCOME GENERATED ROWS]
+pushed_laws=12/12; prefix_rows=12/12; aggregate_positive_atoms=1760; typed_atoms=1760/1760
+generated_row_sum_type=D38_RECORD|D38_ACTION; conditional_equivalence=NOT_INFERRED
+[H1 TOUCHED-WIRE PROJECTION INVARIANCE]
+proposals=410; collections=410/410; full_vs_projected_certificates=410/410
+causal_validations=410/410; projected_successor_matches=410/410; maximum_existing_touched_wires=2
+scope=EXHAUSTED_DEPTH_0_TO_2_REGISTRY; asynchronous_liveness_and_all_history_induction=OPEN
+[ACTION COBOUNDARY INCLUSION / ALGEBRAIC QUOTIENT]
+states=155; variables=401; cocycle_rank=246; kernel_dimension=155
+coboundary_rank=154; included_basis_columns=155/155; transition_components=1; quotient_dimension=1
+endpoint_potential_observational_gauge=BRIDGE_DEPENDENT; physical_equivalence=NOT_INFERRED
+[RETAINED-THROUGH-R COMPLETE TAIL]
+maximum_response_distance=1; epsilon=1/64; exact_geometric_identities=156/156
+sum_r_gt_R_of_2^r*4^-r=2^-R; least_cutoff=6; minimal=1/1; nonsummable_shells=12/12
+[HASHES]
+source_sha256=d07951a8f43d04d6c6cea347967fd2db3f6e465553d9fcee5cc15369dd8861ea
+stdout_body_sha256=4e52df05ff24eda92dec76da5c0c55e371364f588cf9398f9064e021b9348ddb
+internal_science_sha256=5f81c5b4a4cc3f58e6e282c6d98fdc0d9271228c95c95ea25c0c6f474ec6150a
+[GATES]
+C0=PASS
+C1=PASS
+C2=PASS
+C3=PASS
+C4=PASS
+[VERDICT]
+PASS 5/5
+FINITE TOUCHED-WIRE H1 PROJECTION THEOREM / ONE-DIMENSIONAL ALGEBRAIC ACTION-COCYCLE QUOTIENT
+conditional equivalence, all-history locality, physical endpoint gauge and infinite completion remain open

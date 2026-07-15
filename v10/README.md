@@ -5,30 +5,36 @@
 Paper 28 is drafted as *Selecting record-closed laws*.  Its first independent
 paper-level review returns `0B / 2M / 3m / 1n`; promotion is withheld while a
 focused exact delta strengthens the touched-wire certificate theorem and the
-action-cocycle quotient.
+action-cocycle quotient.  D39c now passes `5/5`: all 410 proposals are
+invariant under projection to at most two existing touched wires, all 155
+state-potential columns lie in the cocycle kernel and the connected algebraic
+quotient has dimension one.  Closing paper review remains open.
 
 The architectural result is a namespaced shared-interface span, not a direct
 D37/D38b equivalence.  It preserves 38/38 supplied-region objects, 72 strict
 restriction compositions, D38b restriction/update naturality and twelve
-normalized pushed cylinders with 1,760 positive atoms.  The content bridge is
+normalized pushed cylinders with 1,760 positive atoms in aggregate.  The content bridge is
 still absent: chosen D34b generates no typed D36 proposal conflict, so no
 nonvacuous K-family law is induced.
 
 The localized admission result is a typed causal
 prepare/grant/decision/apply-or-release/ack certificate.  On the exhausted
 depth-zero-to-two registry it agrees with the complete oracle in 410/410 cases
-and rejects 24/24 hostile attacks without mutation.  This is finite
-certificate existence and safety, not asynchronous liveness or an all-history
-locality theorem.
+and remains exact in 410/410 cases after deleting every untouched verifier
+row, head, edge and edge source.  It rejects 24/24 hostile attacks without
+mutation.  This is finite projection invariance, certificate existence and
+safety, not asynchronous liveness or an all-history locality theorem.
 
 Selection does not collapse to one law.  The computed action complex has 401
 variables, 344 distinct rows and rank 246, leaving a 155-dimensional positive
 unnormalized increment variety.  Chosen projected D38b violates 337 registered
-squares, including `1/18 != 2/33`.  A separate horizon-three completion kernel
-is normalized and square-consistent; no stationary or infinite member is
-constructed.  Finite all-transport balance forces uniform rooting conditional
-on each finite unrooted marked network, while mixture weights and infinite
-unimodular completion remain free.
+squares, including `1/18 != 2/33`; modulo state-potential increments the
+algebraic quotient has dimension one.  A separate initial depth-three
+completion kernel is normalized and square-consistent, but does not normalize
+the full action complex.  No stationary or infinite member is constructed.
+Finite all-transport balance forces uniform rooting conditional on each finite
+unrooted marked network, while mixture weights and infinite unimodular
+completion remain free.
 
 The identification wing executes typed D38b causal DAGs.  Its 72 packets form
 49 projective ratio classes and exactly 49 typed O-U laws with no registered
@@ -47,6 +53,9 @@ alphabet-, tolerance- and tail-dependent.
 - `reviews/d39b-round3-closing-delta.md`
 - `relativistic-isp-v10-paper28-selecting-record-closed-laws.md`
 - `reviews/paper28-round1-independent-hostile-review.md`
+- `note-d39c-paper28-closure-delta.md`
+- `code/d39c_paper28_closure_delta_exact.py`
+- `data/d39c_paper28_closure_delta_exact.out`
 - `code/d39_record_closed_law_selection_exact.py`
 - `data/d39_record_closed_law_selection_exact.out`
 
