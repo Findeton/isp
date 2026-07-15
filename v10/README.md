@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — Paper 29 authorship candidate
+## Latest — Paper 29 independently reviewed exact-receipt candidate
 
 D40 separates operator interchange, decoherence-functional consistency,
 durable-record cylinders, serial histories, causal-DAG pushforwards, regional
@@ -25,8 +25,9 @@ requires positive initial and intermediate cylinder masses in Theorem 1,
 states the h-ratio theorem on a harmonic acyclic directed multigraph, treats
 the D15 result as absence of a corpus construction rather than proved D15
 nonuniqueness, and makes both quotient maps explicit.  The no-signalling count
-is labeled as sixteen registered checks.  Independent closing review remains
-open; no receipt number changed.
+is labeled as sixteen registered checks.  Independent closing review on
+commit `a8b3478` returns `0B / 0M / 0m / 0n`; no receipt number changed.
+Paper 29 is promoted at its declared finite scope.
 
 The repair types two probability spaces separately.  Paper 28's projected
 first-relevant-event star law has 28 serial paths and 17 unordered action
@@ -60,6 +61,8 @@ visibility discriminator is preregistered for lab handoff; no data are claimed.
 - `data/d40c_receipt_integrity_delta_exact.out`
 - `reviews/d40c-round3-independent-closing-review.md`
 - `relativistic-isp-v10-paper29-where-the-action-cocycle-lives.md`
+- `reviews/paper29-round1-independent-hostile-review.md`
+- `reviews/paper29-round2-independent-closing-review.md`
 
 ## Prior — Paper 28 independently reviewed exact-receipt candidate
 

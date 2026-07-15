@@ -1,5 +1,23 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — Paper 29 independently closes cleanly (LEDGER #273)
+
+`reviews/paper29-round2-independent-closing-review.md` freezes theorem commit
+`a8b3478`, re-derives the complete number surface and returns
+`0 BLOCKERS / 0 MAJOR / 0 MINOR / 0 NIT`.
+
+The closing review confirms all three positive conditioning masses in Theorem
+1, the harmonic directed-multigraph h-ratio theorem, current-corpus
+nonconstruction scope for the D15 result, declared star/global quotient maps
+and the registered no-signalling count label.  The star/global masses remain
+`23/198` and `5/96`; Bell remains `CHSH=2sqrt2`; all 320 Gram controls, 78/78
+completion squares and D26 `4/5,64/125` values are unchanged.
+
+Paper 29 is promoted to an independently reviewed exact-receipt candidate at
+its finite theorem surface.  Full D15 execution, generated quantum conflict
+content, physical record instrument, stationary/infinite completion,
+record-native clock calibration and new experimental data remain open.
+
 ## 2026-07-15 — Paper 29 authorship repair applied (LEDGER #272)
 
 Paper 29 now requires `mu([H])`, `mu([Ha])` and `mu([Hb])` all positive before
