@@ -4183,3 +4183,26 @@ complete-finite-admission-witness scope.  A smaller localized certificate,
 spatial DLR, null-boundary versions, physical sealing, the D26 updater bridge,
 timed inverse limits, all-transport unimodularity, coupling selection and the
 quantum join remain open.  Paper 27 drafting may begin.
+
+## 2026-07-14 — Paper 27 exact-receipt candidate drafted (LEDGER #247)
+
+`relativistic-isp-v10-paper27-the-boundary-is-made-of-records.md` synthesizes
+the hostile-closed D38b result without broadening it.  The positive theorem is
+an authenticated record-closed oriented finite-cylinder presentation of the
+chosen D34b law after its supplied seed.  The D34e star gives the closed
+relevant generator, exact holding law and projective cylinders; finite record
+restriction uses typed external references and witnessed exact-frontier
+append.  The complete finite witness is disclosed, and a smaller localized
+admission certificate remains open.
+
+The second theorem separates bounded local event support from predictive
+width.  Papers 22--23 supply the growing radius-one C/L boundary and the exact
+finite-stop Branch-F current-component quotient with `2^M` lower bounds.  A
+repaired anchored-prefix lemma states the actual small-time-order separation
+premise rather than treating the existence of a fresh anchor as sufficient.
+
+The paper calls escape controls illustrative rather than premise-minimal,
+keeps physical sealing and the D26 maintenance bridge open, and does not claim
+spatial DLR, null-boundary versions, timed inverse limits, all-transport
+unimodularity, coupling selection or a quantum join.  Independent paper-level
+review remains open.

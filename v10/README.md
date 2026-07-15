@@ -54,6 +54,15 @@ SHA-256 `28e76708...4f7d`.  The final three-lane delta on frozen commit
 `be310e2` returns `0B/0M/0m/0n`; the narrowed complete-finite-witness result is
 hostile-closed and may support Paper 27.
 
+Paper 27 is now drafted as *The boundary is made of records*.  It proves the
+chosen-law record-closure theorem at oriented positive finite-cylinder scope,
+then combines Papers 22--23 into the separation theorem that bounded local
+event support can coexist with unbounded exact finite-stop predictive width.
+Its anchored-prefix lemma uses the repaired small-time-order premise, and the
+paper explicitly leaves the smaller admission certificate, spatial DLR,
+inverse-limit, sealing, D26 bridge, unimodular selection and quantum join open.
+Independent paper-level review has not started.
+
 - `note-d38-record-closed-regional-specifications.md`
 - `code/d38_record_closed_specification_exact.py`
 - `data/d38_record_closed_specification_exact.out`
@@ -61,6 +70,7 @@ hostile-closed and may support Paper 27.
 - `data/d38b_record_closed_specification_exact.out`
 - `reviews/d38-round1-record-closed-specification-hostile-review.md`
 - `reviews/d38-round2-record-closed-specification-closing-delta.md`
+- `relativistic-isp-v10-paper27-the-boundary-is-made-of-records.md`
 
 ## Prior — D37 / Paper 26 (independently reviewed exact-receipt candidate)
 
