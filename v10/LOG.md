@@ -1,5 +1,26 @@
 # Relativistic ISP v10 log
 
+## 2026-07-15 — Paper 29 authorship candidate drafted (LEDGER #270)
+
+`relativistic-isp-v10-paper29-where-the-action-cocycle-lives.md` converts the
+independently closed D40 theorem surface into the paper *Where the action
+cocycle lives: functional consistency, decoherent-record descent, and the
+first architecture audit of the identified law*.
+
+The paper proves the typed descent ladder from operator interchange through a
+decoherence functional to sufficient-boundary record conditionals.  It keeps
+the projected star mass `23/198` separate from the complete global typed-DAG
+mass `5/96`: Paper 28's flat-action nonmembership survives, while probability
+inconsistency is rejected.  The exact Bell column gives `CHSH=2sqrt(2)`,
+no-signalling, refined click cocycles and a setting-erasure boundary negative.
+
+K-flat is classified as a general positive h-ratio.  The identified D15 low-
+energy action is retained, but the state, measure, record instrument,
+generated grammar and clock dictionary remain supplied, so record-closure is
+not established.  D26's `4/5` BORN/TOKEN visibility discriminator is handed
+off without new data.  Independent paper-level review is opened against the
+frozen authorship commit.
+
 ## 2026-07-15 — D40 independently closes cleanly (LEDGER #269)
 
 `reviews/d40c-round3-independent-closing-review.md` freezes delta commit

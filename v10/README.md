@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D40 independently closed exact-receipt candidate
+## Latest — Paper 29 authorship candidate
 
 D40 separates operator interchange, decoherence-functional consistency,
 durable-record cylinders, serial histories, causal-DAG pushforwards, regional
@@ -12,6 +12,13 @@ transitive-lock major and one exact-census minor.  D40c closes both at
 `(28,17,44,40,4)` census.  Independent final review on commit `154088f`
 returns `0B / 0M / 0m / 0n`.  D40 is promoted at its declared finite scope;
 Paper 29 may begin.
+
+Paper 29 is now drafted as *Where the action cocycle lives*.  It proves the
+finite functional-to-record descent ladder, preserves Paper 28's exact flat-
+action nonmembership while rejecting probability inconsistency, executes the
+exact Bell architecture column, classifies K-flat as a general positive
+`h`-ratio and audits the still-supplied D15 state/instrument/grammar/clock
+dictionary.  Independent paper-level review is open.
 
 The repair types two probability spaces separately.  Paper 28's projected
 first-relevant-event star law has 28 serial paths and 17 unordered action
@@ -44,6 +51,7 @@ visibility discriminator is preregistered for lab handoff; no data are claimed.
 - `code/d40c_receipt_integrity_delta_exact.py`
 - `data/d40c_receipt_integrity_delta_exact.out`
 - `reviews/d40c-round3-independent-closing-review.md`
+- `relativistic-isp-v10-paper29-where-the-action-cocycle-lives.md`
 
 ## Prior — Paper 28 independently reviewed exact-receipt candidate
 
