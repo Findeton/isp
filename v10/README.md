@@ -1,6 +1,6 @@
 # Relativistic ISP v10
 
-## Latest — D39b closing review finds one comparison major
+## Latest — D39b namespace delta repaired; final review pending
 
 D39 asks what classifies and empirically identifies record-closed laws.  The
 first exact receipt now passes all ten gates reproducibly.  Its thesis remains
@@ -8,9 +8,10 @@ classification followed by identifiability: uniqueness, a residual family,
 emptiness and exact nonselection are all admissible outcomes.  Paper 28 is
 still held.  The first hostile round reproduced the arithmetic but returned
 `4 BLOCKERS / 5 MAJOR / 3 MINOR / 1 NIT`.  D39b repairs that target and awaits
-an independent closing review before drafting.  Round two reproduces the
-repair but withholds promotion: 38 D37 source regions collapse to 32 interface
-objects because the carrier namespace is absent.
+an independent closing review before drafting.  Round two reproduced the
+repair but found that 38 D37 source regions collapsed to 32 interface objects.
+The delta adds a local carrier namespace and now gates 38/38 distinct images;
+the final closing review remains open.
 
 The repair constructs a shared regional-interface category with an actual
 38-object D37 embedding and no global witness field.  H1 is a typed causal

@@ -4437,3 +4437,23 @@ certificate collection and preservation of the distinction between the
 unnormalized rank-246 increment variety and the separate normalized
 horizon-three completion kernel.  The output's H1 validation label also needs
 to name its schema/acyclicity content.  Paper 28 remains held pending delta.
+
+## 2026-07-15 — D39b namespace and scope delta repaired (LEDGER #255)
+
+D39b now carries a local interface namespace: `D37:<cell>` on the D37 side and
+the fixed D38b source-family namespace on the record side.  The target still
+contains no global witness or completion identity.  All 38 D37 source regions
+now have 38 distinct interface images, while all 38 identities and 72 strict
+restriction compositions remain exact.
+
+The H1 output is renamed `causal_protocol_validations` and explicitly limits
+the result to certificate existence and safety on the exhausted depth-zero-to-
+two registry; asynchronous liveness, fair delivery, timeout and partial-grant
+recovery remain unproved.  The action terminal noun continues to separate the
+unnormalized rank-246 increment variety from the normalized finite-horizon
+completion kernel.
+
+The regenerated D39b receipt remains `PASS 10/10`.  Source, stdout-body,
+science and complete-output hashes are `22fbda6a...58d3`,
+`44f8c201...90f7`, `e9bf38ab...6ec5` and `3e3ec1b1...85ea`.  Final closing
+review remains open; Paper 28 remains held.

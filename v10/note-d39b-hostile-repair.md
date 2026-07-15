@@ -13,10 +13,10 @@ open.  Paper 28 remains held.
 source  = code/d39b_record_closed_law_selection_exact.py
 stdout  = data/d39b_record_closed_law_selection_exact.out
 
-source_sha256           = a90ce18b355a1168f442b140fbd702d40178d10b7a66f314f09dc2426c190704
-stdout_body_sha256      = b0243bb4232901034ade4ca64ef92d9995ebae222c98d1ed84ad99267228d392
-internal_science_sha256 = fba6b4a88bb4b7ae536cd92350e74a4b375b6699887a435acc669695089b95e0
-complete_stdout_sha256  = 309aeec45af0ea337b97e916c897ebb1c7808a7e78421f808f64b92c5f9575ce
+source_sha256           = 22fbda6a9189a2f46cf64c0f33b943b952e702fce30828a37b6d462f5a1458d3
+stdout_body_sha256      = 44f8c2010f7d8b6a94f8bc9fc38de696aa734766b01f1ee3cb4b2e3e705c90f7
+internal_science_sha256 = e9bf38ab0a85f3995db3e2e7c00363ad1363820960063a20b00f204386776ec5
+complete_stdout_sha256  = 3e3ec1b1ab0459bddc5106e1ba4fe459741af264bfb0c725c8d9edd41ddf85ea
 ```
 
 Seeds `0`, `1`, `17`, `101`, `999` and `314159` reproduce the complete stdout
@@ -30,9 +30,11 @@ with the object actually constructible now.
 
 Both locked D37 regions and D38b record restrictions map into one typed
 regional-interface category carrying internal, incoming, lateral and generated
-rows.  The target contains no complete-witness field.  All 38 nonempty regions
-of the six locked D37 carriers pass identity; all 72 strict three-level
-restriction compositions commute.  The registered D38b chain passes identity,
+rows.  The target contains no complete-witness field.  A local carrier
+namespace preserves all 38 D37 source objects as 38 distinct target images.
+All 38 nonempty regions of the six locked D37 carriers pass identity; all 72
+strict three-level restriction compositions commute.  The registered D38b
+chain passes identity,
 two compositions, two direct/staged restrictions and update naturality.
 Twelve pushed cylinders normalize, twelve prefix restrictions commute and
 1,760 positive atoms remain.
@@ -87,7 +89,10 @@ produces the identical successor rows, heads and incidence on all 410.  The
 release attacks; all reject with byte-identical failed transactions.
 
 This is an exhaustive theorem on the declared finite registry.  It is not a
-global all-history certificate-locality theorem.
+global all-history certificate-locality theorem.  `collect_h1` constructs the
+complete certificate in one checking transaction; the result is an admission-
+certificate existence and safety theorem, not asynchronous liveness, fair
+delivery, timeout or partial-grant recovery.
 
 ## 5. What the selection conditions actually classify
 

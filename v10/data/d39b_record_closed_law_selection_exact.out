@@ -2,11 +2,11 @@
 ARITHMETIC: integer/Fraction exact; no floating theorem
 SCOPE: finite classical repair; Paper 28 HELD pending closing review
 [LOCKS / REPAIR SCOPE]
-antecedent_locks={"D26":"a9b1f1704578178218750ecbafa737763ff3968ca246939a1d6aece79930575c","D26-data":"88a5461f2304415db69d4decc4b89b95195d928e79e8feeb73aeefca74c59633","D28":"dab14a28885bc7a40517d4a953a6538d631f3f281bfba522ab47a3ab33191ff5","D28-data":"e7d1c3a88019d9350fca192ca800497d57067937418fff86e7d04572f9bc4278","D31b":"450eef885a72401767550d24b3f5b141736973300fe0bbd17093bb13032a8190","D31b-data":"521576e81ced965d363492eb78f4fb2e38bd1e396749195a1a201738b87f48ff","D36b":"57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b","D37":"b15e577bfdf03e1bc78628d9d934bab1e604da9f4b62f7c6372fa61dca7fcbd9","D37-data":"20d4b2f6add6db3296f221c184be539dd62c66ada81f32418b9288bebf778ed8","D38b":"c48e317189a160d445af374346deb3199caed0ae222430260a55e2a6ef731eeb","D38b-data":"28e76708b6c72cf874aedf9700a6bd1756220e1cb4bf8be3e096e632b66b4f7d","D39-pin":"36c8c28a45fc6bb4069f16b2ed04045d7ed433eec2634f9af1d62987b850c948","D39-rejected":"3f976eff94a28ee7cd8551b37ddad1fab81b358dcadad3e9e37dba3fac520e06","D39-rejected-data":"36f6984f4ca68c895d0b64573f87e749cb4fcf9bbfbf5ffac59cc92615a1b64c","D39-round1":"4d0ab3b11c57cef82bb45dc213f5b2b4bc9dadde8dbbfc51aa90d8ad8e835a43"}
-comparison=SHARED_D37_INTERFACE_SCHEMA_FUNCTOR; D37_CONDITIONAL_EQUIVALENCE=NOT_CLAIMED
+antecedent_locks={"D26":"a9b1f1704578178218750ecbafa737763ff3968ca246939a1d6aece79930575c","D26-data":"88a5461f2304415db69d4decc4b89b95195d928e79e8feeb73aeefca74c59633","D28":"dab14a28885bc7a40517d4a953a6538d631f3f281bfba522ab47a3ab33191ff5","D28-data":"e7d1c3a88019d9350fca192ca800497d57067937418fff86e7d04572f9bc4278","D31b":"450eef885a72401767550d24b3f5b141736973300fe0bbd17093bb13032a8190","D31b-data":"521576e81ced965d363492eb78f4fb2e38bd1e396749195a1a201738b87f48ff","D36b":"57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b","D37":"b15e577bfdf03e1bc78628d9d934bab1e604da9f4b62f7c6372fa61dca7fcbd9","D37-data":"20d4b2f6add6db3296f221c184be539dd62c66ada81f32418b9288bebf778ed8","D38b":"c48e317189a160d445af374346deb3199caed0ae222430260a55e2a6ef731eeb","D38b-data":"28e76708b6c72cf874aedf9700a6bd1756220e1cb4bf8be3e096e632b66b4f7d","D39-pin":"36c8c28a45fc6bb4069f16b2ed04045d7ed433eec2634f9af1d62987b850c948","D39-rejected":"3f976eff94a28ee7cd8551b37ddad1fab81b358dcadad3e9e37dba3fac520e06","D39-rejected-data":"36f6984f4ca68c895d0b64573f87e749cb4fcf9bbfbf5ffac59cc92615a1b64c","D39-round1":"4d0ab3b11c57cef82bb45dc213f5b2b4bc9dadde8dbbfc51aa90d8ad8e835a43","D39b-round2":"faf143182556e6924f4d4d2bea2933367658af678f43f63ddc20c148456cb00e"}
+comparison=SHARED_D37_INTERFACE_SCHEMA_SPAN; D37_CONDITIONAL_EQUIVALENCE=NOT_CLAIMED
 generated_conflict=LEVEL_B_OPEN; infinite_completion=OPEN; clock_quantum_seal_bridges=OPEN
 [SHARED REGIONAL-INTERFACE CATEGORY / ACTUAL D37 EMBEDDING]
-D37_interface_objects=38; identities=38/38; strict_compositions=72/72; D38_identity_composition=1,2/2
+D37_interface_objects=38; distinct_namespaced_images=38/38; identities=38/38; strict_compositions=72/72; D38_identity_composition=1,2/2
 D38_direct_staged_restrictions=2/2; update_naturality=1/1; typed_boundary_rows=6
 pushed_normalizations=12/12; pushed_prefixes=12/12; positive_atoms=1760
 triple_cover_nonextension_witness=1/1; global_witness_fields_in_target=0; equivalence=0; K_membership=0
@@ -19,9 +19,9 @@ valid_agreement=1/1; once_authentic_stale_still_verifies=1/1; oracle_rejects_sta
 H0=REJECTED; issuance_authentication_is_not_currentness
 [H1 TYPED CAUSAL PER-WIRE ADMISSION]
 registered_histories=47; valid_proposals=410; oracle_agreements=410/410; successor_matches=410/410
-causal_protocol_parent_closures=410/410; hostile_rejections=24/24; byte_identical_failures=24/24
+causal_protocol_validations=410/410; hostile_rejections=24/24; byte_identical_failures=24/24
 records=HEAD_PREPARE>HEAD_GRANT>DECISION>(APPLY|RELEASE)>ACK; edge_source_bound=1; all_or_none_release=1
-H1=SUFFICIENT_ON_EXHAUSTED_DEPTH_0_TO_2_REGISTRY; global_all_history_locality=NOT_CLAIMED
+H1=SAFETY_AND_CERTIFICATE_EXISTENCE_ON_EXHAUSTED_DEPTH_0_TO_2_REGISTRY; asynchronous_liveness_and_global_all_history_locality=NOT_CLAIMED
 [COMPUTED FINITE ACTION COMPLEX]
 canonical_states=155; local_transition_variables=401; distinct_cocycle_rows=344; exact_rank=246
 positive_log_weight_dimension=155; coboundary_rank=154; unit_unnormalized_positive_representative=1/1
@@ -49,9 +49,9 @@ epsilon=1/64; single_path_cutoff=6; summable_branching_cutoff=6; nonsummable_she
 D31B_exact_cancellation=1/1; mid_history_influence=576/625; inherited_alphabet_cancellation_regression=1/1
 D38b_quantum_join=UNDEFINED; V6_seal_identification=0; exact_ontological_erasure=NOT_CLAIMED
 [HASHES]
-source_sha256=a90ce18b355a1168f442b140fbd702d40178d10b7a66f314f09dc2426c190704
-stdout_body_sha256=b0243bb4232901034ade4ca64ef92d9995ebae222c98d1ed84ad99267228d392
-internal_science_sha256=fba6b4a88bb4b7ae536cd92350e74a4b375b6699887a435acc669695089b95e0
+source_sha256=22fbda6a9189a2f46cf64c0f33b943b952e702fce30828a37b6d462f5a1458d3
+stdout_body_sha256=44f8c2010f7d8b6a94f8bc9fc38de696aa734766b01f1ee3cb4b2e3e705c90f7
+internal_science_sha256=e9bf38ab0a85f3995db3e2e7c00363ad1363820960063a20b00f204386776ec5
 [GATES]
 R0=PASS
 R1=PASS
@@ -65,7 +65,7 @@ R8=PASS
 R9=PASS
 [VERDICT]
 PASS 10/10
-SHARED D37 INTERFACE-SCHEMA FUNCTOR / LEVEL-B GENERATED CONFLICT OPEN
+SHARED D37 INTERFACE-SCHEMA SPAN / LEVEL-B GENERATED CONFLICT OPEN
 H0 REJECTED / TYPED CAUSAL H1 SUFFICIENT ON EXHAUSTED FINITE REGISTRY
 RESIDUAL INCREMENT VARIETY WITH FINITE-HORIZON NORMALIZED REPRESENTATIVE / FINITE UNIFORM-ROOT CLASSIFICATION / REGISTERED PROJECTIVE O-U IDENTIFIABILITY
 chosen D38b action membership, infinite completion, global identification, clock, quantum and sealing bridges remain open

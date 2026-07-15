@@ -44,6 +44,10 @@ LOCKS = {
         ROOT / "v10/reviews/d39-round1-selection-identifiability-hostile-review.md",
         "4d0ab3b11c57cef82bb45dc213f5b2b4bc9dadde8dbbfc51aa90d8ad8e835a43",
     ),
+    "D39b-round2": (
+        ROOT / "v10/reviews/d39b-round2-hostile-repair-review.md",
+        "faf143182556e6924f4d4d2bea2933367658af678f43f63ddc20c148456cb00e",
+    ),
     "D36b": (
         ROOT / "v10/code/d36b_actor_record_refinement_exact.py",
         "57ff22ab4711b63d476192c2ff19b02bb7f76fda5124b4d1afd23d30a20b376b",
@@ -150,6 +154,7 @@ GeneratedRow = Tuple[str, str]
 
 @dataclass(frozen=True)
 class InterfaceObject:
+    namespace: str
     internal: Tuple[InternalRow, ...]
     incoming: Tuple[IncomingRow, ...]
     lateral: Tuple[str, ...]
@@ -157,6 +162,8 @@ class InterfaceObject:
 
 
 def validate_interface(obj: InterfaceObject) -> None:
+    if not obj.namespace:
+        raise AssertionError("missing local carrier namespace")
     ids = [row[0] for row in obj.internal]
     if len(ids) != len(set(map(repr, ids))):
         raise AssertionError("duplicate internal interface row")
@@ -218,7 +225,7 @@ def d38_interface(view) -> InterfaceObject:
             for row in view.records
         )
     )
-    answer = InterfaceObject(internal, incoming, lateral, generated)
+    answer = InterfaceObject("D38b", internal, incoming, lateral, generated)
     validate_interface(answer)
     return answer
 
@@ -239,6 +246,7 @@ def d37_interface(cell, region: FrozenSet[str]) -> InterfaceObject:
         )
     )
     answer = InterfaceObject(
+        f"D37:{cell.name}",
         internal,
         tuple(incoming),
         tuple(lateral),
@@ -363,6 +371,7 @@ def comparison_checks() -> Tuple[int, ...]:
     d37_identity = 0
     d37_composition = 0
     d37_object_count = 0
+    d37_image_ids = set()
     for cell in d37.ORIENTED_CELLS.values():
         regions = tuple(
             frozenset(proposal for bit, proposal in enumerate(cell.vertices) if mask & (1 << bit))
@@ -370,6 +379,7 @@ def comparison_checks() -> Tuple[int, ...]:
         )
         objects = {region: d37_interface(cell, region) for region in regions}
         d37_object_count += len(objects)
+        d37_image_ids.update(object_id(obj) for obj in objects.values())
         d37_identity += sum(
             int(identity_morphism(obj).source == identity_morphism(obj).target)
             for obj in objects.values()
@@ -470,6 +480,7 @@ def comparison_checks() -> Tuple[int, ...]:
         cover[2],
         global_witness_fields,
         d37_object_count,
+        len(d37_image_ids),
     )
 
 
@@ -2213,18 +2224,18 @@ def main() -> None:
     emit("SCOPE: finite classical repair; Paper 28 HELD pending closing review")
 
     locks = locked_antecedents()
-    gates["R0"] = len(locks) == 15
+    gates["R0"] = len(locks) == 16
     science["locks"] = locks
     emit("[LOCKS / REPAIR SCOPE]")
     emit(f"antecedent_locks={stable(locks)}")
-    emit("comparison=SHARED_D37_INTERFACE_SCHEMA_FUNCTOR; D37_CONDITIONAL_EQUIVALENCE=NOT_CLAIMED")
+    emit("comparison=SHARED_D37_INTERFACE_SCHEMA_SPAN; D37_CONDITIONAL_EQUIVALENCE=NOT_CLAIMED")
     emit("generated_conflict=LEVEL_B_OPEN; infinite_completion=OPEN; clock_quantum_seal_bridges=OPEN")
 
     comparison = comparison_checks()
-    gates["R1"] = comparison == (38, 72, 1, 2, 2, 1, 6, 12, 12, 1760, 1, 0, 38)
+    gates["R1"] = comparison == (38, 72, 1, 2, 2, 1, 6, 12, 12, 1760, 1, 0, 38, 38)
     science["comparison"] = comparison
     emit("[SHARED REGIONAL-INTERFACE CATEGORY / ACTUAL D37 EMBEDDING]")
-    emit(f"D37_interface_objects={comparison[12]}; identities={comparison[0]}/{comparison[12]}; strict_compositions={comparison[1]}/72; D38_identity_composition={comparison[2]},{comparison[3]}/2")
+    emit(f"D37_interface_objects={comparison[12]}; distinct_namespaced_images={comparison[13]}/{comparison[12]}; identities={comparison[0]}/{comparison[12]}; strict_compositions={comparison[1]}/72; D38_identity_composition={comparison[2]},{comparison[3]}/2")
     emit(f"D38_direct_staged_restrictions={comparison[4]}/2; update_naturality={comparison[5]}/1; typed_boundary_rows={comparison[6]}")
     emit(f"pushed_normalizations={comparison[7]}/12; pushed_prefixes={comparison[8]}/12; positive_atoms={comparison[9]}")
     emit(f"triple_cover_nonextension_witness={comparison[10]}/1; global_witness_fields_in_target={comparison[11]}; equivalence=0; K_membership=0")
@@ -2249,9 +2260,9 @@ def main() -> None:
     science["certificate"] = certificate
     emit("[H1 TYPED CAUSAL PER-WIRE ADMISSION]")
     emit(f"registered_histories={certificate[0]}; valid_proposals={certificate[1]}; oracle_agreements={certificate[2]}/{certificate[1]}; successor_matches={certificate[3]}/{certificate[1]}")
-    emit(f"causal_protocol_parent_closures={certificate[4]}/{certificate[1]}; hostile_rejections={certificate[6]}/{certificate[5]}; byte_identical_failures={certificate[7]}/{certificate[5]}")
+    emit(f"causal_protocol_validations={certificate[4]}/{certificate[1]}; hostile_rejections={certificate[6]}/{certificate[5]}; byte_identical_failures={certificate[7]}/{certificate[5]}")
     emit("records=HEAD_PREPARE>HEAD_GRANT>DECISION>(APPLY|RELEASE)>ACK; edge_source_bound=1; all_or_none_release=1")
-    emit("H1=SUFFICIENT_ON_EXHAUSTED_DEPTH_0_TO_2_REGISTRY; global_all_history_locality=NOT_CLAIMED")
+    emit("H1=SAFETY_AND_CERTIFICATE_EXISTENCE_ON_EXHAUSTED_DEPTH_0_TO_2_REGISTRY; asynchronous_liveness_and_global_all_history_locality=NOT_CLAIMED")
 
     action = action_checks()
     gates["R5"] = (
@@ -2334,7 +2345,7 @@ def main() -> None:
     passed = sum(gates.values())
     emit("[VERDICT]")
     emit(f"{'PASS' if passed == len(gates) else 'FAIL'} {passed}/{len(gates)}")
-    emit("SHARED D37 INTERFACE-SCHEMA FUNCTOR / LEVEL-B GENERATED CONFLICT OPEN")
+    emit("SHARED D37 INTERFACE-SCHEMA SPAN / LEVEL-B GENERATED CONFLICT OPEN")
     emit("H0 REJECTED / TYPED CAUSAL H1 SUFFICIENT ON EXHAUSTED FINITE REGISTRY")
     emit("RESIDUAL INCREMENT VARIETY WITH FINITE-HORIZON NORMALIZED REPRESENTATIVE / FINITE UNIFORM-ROOT CLASSIFICATION / REGISTERED PROJECTIVE O-U IDENTIFIABILITY")
     emit("chosen D38b action membership, infinite completion, global identification, clock, quantum and sealing bridges remain open")
