@@ -4897,3 +4897,23 @@ block — the D41-turn entries are henceforth cited as #274 (pin),
 #275 (consolidations), #276 (d41c+D42), #277 (D41 green); the round
 report = #278. d41d repair receipt = the next work; paper-30
 decision waits on its delta.
+
+## 2026-07-15 — d41d repair GREEN 7/7 (LEDGER #279); delta-verification launched
+All three blockers + five majors repaired BY STRENGTHENING: R2 the
+FUNCTIONAL-LEVEL D26 gate (click between the functional's own U-steps
+suppresses EXACTLY the site-1-membership-distinguishing pairs by
+EXACTLY 4/5 — 729 pairs, worst dev 1.05e-81; honest width inline: the
+VALUE is D24's, the benchmark contributes WHICH pairs = the record
+basis = the restored EIGHTH residue); R3 a real NSE gate (10 distances
+preserved exactly; the lossy-renormalized negative control REJECTED at
+0.26 — first-run lesson: orthogonal pairs can't serve as controls);
+R4 the click-count clock CONSTRUCTED + the real refit gate (refit
+against click-native abscissae reproduces s^4/s^6 numerically;
+cross-point ratio refit-invariant and = the EXACT Fraction-derived
+16/19); R5 grammar linearity EARNED at 4 sites (16-dim ladder exact);
+R6 the honest use-site census with the omission self-test; R1 Taylor
+unitarity gated (8.43e-81, matching the round's measurement); R7 the
+corrected scorecard: 2 GENERATED / 5 IRREDUCIBLE / 1 COLLAPSED with
+the eighth item declared and the obstruction scope stated (zero FOUND,
+none SOUGHT). Seed-independent 0/11. Delta to the round referee next;
+paper-30 decision on its verdict.

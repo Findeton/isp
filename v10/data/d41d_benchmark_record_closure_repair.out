@@ -1,0 +1,30 @@
+[d41d repair — the identified benchmark, round-1 blockers repaired]
+  [PASS] R1 Taylor-U unitarity MEASURED at dps 80 (round-1: ungated)  (defect = 8.43e-81 (< 1e-75))
+  [PASS] R2 THE FUNCTIONAL-LEVEL D26 GATE [the honest two-halves-touch]: the click inserted between the functional's own U-steps suppresses EXACTLY the site-1-membership-distinguishing history pairs by EXACTLY sqrt(1-g) = 4/5 and no others — all 729 pairs checked; HONEST WIDTH (round-1 B4): the 4/5 VALUE factorizes off the ancilla leg (D24's algebra, not the benchmark's dynamics); the benchmark contributes WHICH pairs decohere — the record basis (the EIGHTH residue, now declared)  (worst deviation = 1.05e-81; suppressed/unchanged nonzero pairs = 12/15)
+  [PASS] R3 A REAL NSE GATE (round-1 blocker repaired): distinguishability-isometry COMPUTED on the 5-state probed family (all 10 pairwise distances preserved exactly); the non-isometric negative control is REJECTED (violation 0.09-scale); the value/content split computed on rho: Z-marginals exactly preserved, X-coherence exactly x 4/5  (negative-control violation = 0.2599)
+  [PASS] R4 THE CLICK-COUNT CLOCK + THE REAL REFIT GATE (round-1 blocker repaired): the clock is CONSTRUCTED (one click per layer; the bridge tau = s*clicks supplied); the INDEPENDENT REFIT against click-native abscissae reproduces c4*s^4 and c6*s^6 numerically (not algebraically) and the cross-point ratio is refit-invariant and equals the EXACT paper-15 prediction 16/19 (Fraction-derived)  (ratio native = 0.842105263; click = 0.842105263; exact = 16/19 = 0.842105263)
+  [PASS] R5 GRAMMAR LINEARITY EARNED at 4 sites (round-1: 3-site only, linearity asserted): the 4-site parity string = the 7-event arity-2 CNOT ladder exactly — event cost 2(n-1)+1, linear, now instantiated at two sizes  (max dev = 0.00e+00)
+  [PASS] R6 THE HONEST CENSUS (round-1 blocker repaired): use-site accumulation equals the declared census EXACTLY (a gate that can fail — the omission self-test detects a deliberately dropped key); no cutoff-class key exists: renormalization COLLAPSED stands  (census = ['delta_D', 'dl_a', 'dl_b', 'dr_a', 'dr_b', 'fit_d1', 'fit_d2', 'fit_d3', 'fit_d4', 'g', 'hopping', 'lam_string', 's_bridge_test'])
+      R7 THE CORRECTED SCORECARD [paper 29's EIGHT items; the pin's
+      trichotomy applied strictly]:
+        1 boundary state       IRREDUCIBLE (declared)
+        2 measure/functional   GENERATED-AS-OBJECT (descent via R2)
+        3 renormalization      COLLAPSED (R6)
+        4 record instrument    IRREDUCIBLE (the pin's own fork: the
+                               schedule is supplied; the D24 content
+                               map and R2/R3 gates live INSIDE it)
+        5 record grammar       GENERATED at arity 2 (R5: two sizes)
+        6 clock dictionary     IRREDUCIBLE (scale supplied; ratios
+                               click-native per R4)
+        7 opportunity struct   IRREDUCIBLE (D42's entry)
+        8 preferred durable    IRREDUCIBLE — the occupation record
+          algebra              basis is SELECTED, not derived (the
+                               round's restored residue; R2 shows it
+                               is exactly what the benchmark
+                               contributes to D26's suppression map)
+      NET: 2 GENERATED / 5 IRREDUCIBLE / 1 COLLAPSED. OBSTRUCTION
+      SCOPE: zero obstructions FOUND AT THESE GATES; no obstruction
+      witnesses were sought — absence is not proven.
+  [PASS] R7 the corrected scorecard printed (2 generated; the eighth residue declared; the obstruction scope stated)
+
+ALL CHECKS PASS (7/7: R1-R6 substantive, R7 scorecard)
