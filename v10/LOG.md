@@ -5169,3 +5169,18 @@ pair 4 + 1/64 under the extended budget; G5 the generated star
 10/10 (genesis idle 1/2, all-open lines, merge/delivery/rescue qs);
 G6 delivery joins 8,250 + arb joins 384; G8 sender/receiver/version/
 merge-winner separations. Hostile round next (fresh referee).
+
+## 2026-07-18 — d42b2 pin committed (LEDGER #292); pipelined during
+## the d42b1 round
+Front 4: both kernel draws + the merge click refine EXACTLY into
+chains of elementary recorded clicks — K1 = uniform selection clicks
+on the initiator wire (chain weight 1/|C|!, greedy deterministic,
+pushforward = the composite); K2 = binary membership clicks with
+exact MIS-count conditionals (recorded, non-uniform — DECLARED, and
+itself a new K1-vs-K2 discriminator, noted for the second-grammar
+protocol); merge click already elementary. Budget factorization:
+refinement lives inside the arb sector share. Record basis becomes
+FINER; which basis nature seals = empirical, deferred to the lift
+with per-type NSE gates. Gates E1-E7 pinned (path exactness; all
+censused component shapes; the refined mini-fixture with resequence
+invariance; the factorization identity). Receipt next.
