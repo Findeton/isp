@@ -81,3 +81,42 @@ observable of the refinement, noted for d42b7's second-grammar
 protocol). RF3 the refined grammar is exhibited on the MINI-fixture
 only (full-family click-refined enumeration is a blow-up; declared,
 not needed for the exactness claims).
+
+## 5. Round-1 amendments (2026-07-18; round frozen at #294)
+
+**B1 (M5 — the click chain's carrier semantics, DECLARED: the
+multi-event reading).** The chain-opening click is JOIN-TYPED:
+carriers = C's proposers (the component first exists as a record at
+the join — d42a A4; an initiator-wire-only click 1 would be
+A7-inadmissible), with C in the event data per A6's ckey convention;
+it carries the FIRST selection. Subsequent clicks ride the
+initiator's wire (their enabled sets — the remaining proposals — are
+then past-computable from the opening join + prior clicks).
+Acceptance is deterministic given the completed chain and creates the
+version. The sector share is fixed at the chain-opening join, from
+ITS past (D computed there), and the refinement lives inside that
+share. §2's "prior clicks ride the initiator's wire" sentence was
+UNDER-SPECIFIED as to click 1 — superseded by this paragraph.
+**Carried question, NAMED (the refinement's batch-closure analogue,
+paper 25 §11.1 class): MID-CHAIN DRIFT — component growth, base
+supersession, or delivery arriving between clicks; the fixture-level
+receipts hold the environment quiescent mid-chain and say so; the
+full refined grammar must legislate it.**
+
+**B2 (M2 pin drift — forward correction).** Pinned E4's "triangle" is
+UNREALIZABLE in-grammar under the binary payload rule (the census's
+structural corollary) and is run as a declared ABSTRACT CONTROL: a
+graph exercised outside the grammar, where K1's chains land on the 3
+singleton MIS at exactly 1/3 each and K2's conditionals {1/3, 2/3}
+provide K2's ONLY <= 3 non-uniformity witness. A {0,1,2}-payload
+grammar WOULD realize the triangle — the exclusion's scope is the
+binary rule, declared.
+
+**B3 (declarations).** (i) "Five shapes" counts LABELED patterns; the
+isomorphism-class count is 3 (singleton, edge, path/star class) —
+both printed. (ii) K2's binary-decision chain is CANONICAL-ORDER-
+RELATIVE: different decision orders give different per-click
+conditionals for the same MIS (referee witness on P4); the order is
+part of the refined record basis, declared. (iii) The E2/E7 gates
+gain an independently implemented greedy (shared-map blindness
+repair); E6 runs on the real canonical-DAG machinery.
