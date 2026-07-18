@@ -5025,3 +5025,34 @@ upgrade). Note §6 appended (forward corrections + the ADOPTED pair:
 Yb+ single ion raw + Arndt Talbot-Lau mass axis; successors Sr/
 levitated). d41c next = step (3) bridge declarations, held until the
 D42 line settles.
+
+## 2026-07-18 — d42a ROUND 1 FROZEN (LEDGER #286): 1 BLOCKER / 2 MAJOR
+## / 4 minor / 2 nit — the sixth kill, and it is the headline object
+Report: reviews/d42a-round1-hostile-review.md (frozen verbatim; 4-seed
+byte-identical reruns; clean-room rebuild reproduces every printed
+number; mutation tests confirm exit-1 plumbing and G3i fallibility).
+F1 BLOCKER (CONFIRMED): candidates_for() draws arb candidates from the
+GLOBAL record view while admissible() is past-local — 1,016 admissible-
+but-omitted singleton self-arbs over ARM-1; the enumerated family is a
+proper sub-family selected by an UNPINNED batch-close mark (paper 25
+§11.1's object, computed from the global record, gauge-dependent);
+witness 2: the family is not linear-extension-closed; witness 3: the
+receipt family exhibits an UNDECLARED per-initiator normalization
+(11,502/11,502 sums = 1) that the pinned law itself VIOLATES (5/4 at
+1,016 actor-points) — the placement problem breaks per-initiator
+sub-normalization at depth 2, masked by the filter. Pin-faithful
+numbers: families 6,471/6,589; ARM-2 forks 72, ARM-1 424; orphans
+2,088/1,960; joins 3,096. F2 MAJOR: pin §2's arb carrier list
+("+ base") contradicts A2/G4c — base-as-carrier gives forks = 0; the
+receipt silently implements proposers + v' only. F3 MAJOR: pinned
+G1's enabled-SET invariance never computed; false for the operative
+enumerator. Minors: G3ii ARM-1-only; fork/orphan census mis-scoped
+(ARM-1 uncensused); G8 gates 3/7 distinctions; L1 census-only — the
+referee SUPPLIED the all-depths proof (theorem now). Nits: 761
+double-counts SIG1; latent sort fragility. SURVIVES UNCONDITIONALLY:
+the kernel block (2/3 vs 1/2, TV 1/6, 1/3072, 1/4096), depth-2
+census 4, mu(seed) 1/64, the 7-branch battery, G4a's causal-vs-auth
+split, A5' = 3/4 three ways, K1 faithful to paper 25 §10.2, caps
+honest, seeds, plumbing. Repairs R1-R8 prescribed, most pre-verified;
+R1-A (complete the enumerator to the past-local relation) adopted
+next with the 5/4 support-level break DECLARED.
