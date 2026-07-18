@@ -5230,3 +5230,26 @@ E2/E7 shared-map blindness; {0,1,2} control realizes the triangle
 controls), K2 well-definedness every order, census TRUE (independent
 + all-19-poset widened sweep), finer basis real under the actual
 canon, #152 reading defensible, plumbing sound. Repairs next.
+
+## 2026-07-18 — d42b2 round-1 repairs GREEN 8/8 (LEDGER #295);
+## delta-verification launched
+The repaired receipt (seed-independent 0/53) replaces every convicted
+gate with grammar-driven ones: the CENSUS gated (5 labeled / sizes
+1,1,3 / triangle-freeness / the {0,1,2} boundary control realizes
+the triangle / 3 iso classes); K2 EXTERNALLY ANCHORED (paper 25
+§10.3 path literals 1/2-1/2; the K1-support == MIS cross-tie on all
+7 domain shapes — kills both mutation classes; the abstract triangle
+carries K2's non-uniformity witness, conditionals {1/3, 2/3};
+decision-order relativity exhibited on P4 and declared basis-
+relative per B3-ii); THE CLICK FIXTURE ON THE REAL GRAMMAR (B1
+join-typed opening click; sector x chain pushforward == the real
+composite admissible() q per winner, 1/8; every factor invariant
+over all 12 linear extensions with an alien actor; chain canons
+distinct under the real canon); THE CONCURRENT TWO-CHAIN CASE (the
+round-1 crash class) now real and green — two disjoint components'
+chains interleaved three ways, every factor from its own past (the
+gate caught a genuine ka-branch bug in-build: hardcoded pair edges —
+fixed to ckey-derived edges); THE SECTOR LAYER against the real
+admissible() at D=1 (merge 1/8) AND the referee's D=2 point (arb AND
+merge exactly 1/16 = (1/4)/2 x 1/2). Delta to the round referee
+next.

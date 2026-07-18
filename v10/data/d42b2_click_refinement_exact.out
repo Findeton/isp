@@ -1,16 +1,16 @@
-[d42b2 — elementary-click refinement: exact receipt]
-  banner: EXACT Fractions; shapes swept over ALL connected
-  0/1-payload-realizable conflict graphs on <= 3 proposals;
-  the mini-fixture reuses the d42b1 sector arithmetic by hand-
-  anchored values (self-contained, RF3).
-  realizable connected shapes (n <= 3): 5
-  [PASS] E1 the path P-Q-R: 6 chains at exactly 1/6 (clicks 1/3, 1/2, 1); pushforward == composite == paper 25 §10 (2/3 vs 1/3)  (pushforward = [(['P', 'R'], '2/3'), (['Q'], '1/3')])
-  [PASS] E2 K1 refinement exact on EVERY realizable connected shape (n <= 3, all payload-realizable edge patterns)  (shapes = 5; realizability itself gated by construction (edge iff payloads differ))
-  [PASS] E4 K2 refinement: binary membership chains with exact MIS-count conditionals land on each MIS at exactly 1/#MIS (recorded, non-uniform — DECLARED per pin RF2)  (shapes = 5; conditionals in (0,1] exact)
-  [PASS] E3 the refined mini-fixture: sector share x chain == the d42b1 composite arb q exactly (1/8 per winner); click weights invariant under alien-event interleaving (4 gauge positions)  (refined totals = 1/8, 1/8; extensions = 4)
-  [PASS] E5 the merge click: value-conflict pair click is ALREADY elementary (uniform binary, 1/2; d42b1-anchored q = 1/8); equal-value merge deterministic (q = sector share)  (binds d42b1 RF5)
-  [PASS] E6 the refined record basis is FINER: distinct click orders are distinct records even when the pushforward winner set is identical — the composite coarsens; fine-vs-coarse is EMPIRICAL, deferred to d42b4 with per-type NSE gates (pin RF1)  (orders (P,Q,R) vs (P,R,Q): same winner {P,R}, distinct click records)
-  [PASS] E7 #152-form conservation: every click weight = 1/(remaining count) exactly; chain product = 1/|C|!; the budget factorization (sector share x chain) == (sector share x composite) identically on every shape  (shapes = 5)
+[d42b2 — elementary-click refinement: ROUND-1 REPAIRED receipt]
+  banner: EXACT; the d42b1 admission layer EMBEDDED (verbatim
+  semantics); click fixtures on the REAL poset with the B1
+  join-typed opening click; environment QUIESCENT mid-chain
+  (B1 carried question, declared).
+  [PASS] CENSUS (M1 repaired): 5 labeled shapes with per-size counts (1, 1, 3); triangle-free THEOREM of the binary payload rule gated; the {0,1,2} boundary control DOES realize the triangle; iso classes = 3 (B3-i)  (sizes = {1: 1, 2: 1, 3: 3}; triangle-free = True; 3-payload realizes triangle = True; iso classes = 3)
+  [PASS] E1 the path: 6 chains at exactly 1/6 (clicks 1/3, 1/2, 1); pushforward == composite == paper 25 §10.2 (2/3 vs 1/3); both greedy implementations agree  (hard literals + independent greedy)
+  [PASS] E2/E7a K1 exact on every censused shape + the ABSTRACT triangle and P4 controls; K1-support == MIS cross-tie (M2-ii, kills both greedy- and MIS-corruption mutations); #152 click form exact throughout  (domain = 7 shapes (5 censused + 2 abstract controls))
+  [PASS] E4 K2 anchored (M2 repaired): path pushforward == paper 25 §10.3 literals (1/2, 1/2); exact 1/#MIS on every shape + controls; the triangle carries K2's non-uniformity witness (conditionals 1/3, 2/3 — B2); decision-order relativity EXHIBITED and declared part of the record basis (B3-ii)  (triangle conditionals = ['1', '1/2', '1/3', '2/3']; order-relativity on P4 = True)
+  [PASS] CLICK FIXTURE (M3/M5 repaired): the B1 join-typed opening click on the REAL d42b1 poset; sector x chain pushforward == the real composite admissible() q per winner (1/8); every click factor invariant over ALL 12 linear extensions (alien actor floating); chain canons distinct  (refined pushforward = composite = ['1/8', '1/8']; 12 extensions per chain)
+  [PASS] CONCURRENT CHAINS (the case that crashed the round-1 toy): two disjoint components' click chains interleaved three ways — every factor computed from its own past, invariant across interleavings  (sequential both orders + alternating; 6 click factors each)
+  [PASS] SECTOR LAYER (M4 repaired): gated against the real admissible() — merge at D = 1 prices 1/8; at the referee's D = 2 record point BOTH the arb and the merge price exactly 1/16 = (1/4)/2 x 1/2 (the factorization at a non-trivial share; E5's literal theater replaced)  (merge D1 = 1/8; arb D2 = 1/16; merge D2 = 1/16)
+  [PASS] E6 finer basis on the REAL canon: distinct click orders with the SAME winner set are distinct canonical DAGs; sealing question EMPIRICAL (RF1, d42b4)  (orders (P,Q,R) vs (P,R,Q), winner {P,R} both)
 
-[SUMMARY] 7 PASS / 0 FAIL
-[VERDICT] d42b2 GREEN: the kernel draws refine exactly into elementary recorded clicks (K1 uniform chains; K2 recorded non-uniform chains, declared); the merge click was already elementary; the refinement preserves every composite weight inside the sector share and exposes a finer record basis — which basis nature seals is empirical (d42b4).
+[SUMMARY] 8 PASS / 0 FAIL
+[VERDICT] d42b2 GREEN (round-1 repaired): the refinement is exact ON THE REAL GRAMMAR — join-typed opening click, factor invariance over all extensions incl. concurrent chains, the sector factorization at D = 1 and D = 2, K2 externally anchored, the census gated; mid-chain drift = the named carried question (B1).
