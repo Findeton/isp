@@ -4,6 +4,10 @@
   ARM-2T (A,B,C) depth<=3; deep gates on constructed chains
   SIG-FM and SIG-KR (admission-exact at every prefix); weight-
   system level only — placement is d42b3's; ladder per A7/A7'.
+  MERGE-SECTOR VACUITY declared: 0 merge events and 0 enabled
+  pairs in-family at caps (reconciliation demand REQUIRES
+  transport depth — C2); merge physics rides the constructed
+  chains + the F3 censuses below.
   family sizes [MEASURED, first run — round to anchor]: ARM-1T = 3969; ARM-2T = 3424
   [PASS] L1 live-triple uniqueness tripwire (the A8 theorem extends: delivery only adds knowledge, blocking is monotone — pin P5)  (violations = 0 over 7393)
   [PASS] SIG-FM admissible end-to-end (fork via blind self-arbs of a CONFLICTING pair; two deliveries; merge; rescue re-proposal)  (8 events, every admission past-relative)
@@ -16,9 +20,15 @@
   [PASS] G2 conflict genesis: depth-2 conflict census hand-derived; mu(seed pair) exact under the EXTENDED budget (props split unchanged by the new sectors)  (depth-2 conflict histories = 4 (expect 4); mu = 1/64 = 1/64)
   [PASS] G5 kernels on the GENERATED objects: the 3-proposal star (payloads 0,1,1) gives K1 {B,C} 2/3 vs {A} 1/3 exact; the value-conflicted merge pair clicks at exactly 1/4 x 1/2 each winner (B's view: 1 pair, 0 components)  (star K1 = 2/3 / 1/3; merge qs = [Fraction(1, 8), Fraction(1, 8)])
   [PASS] G7 the extended battery: 10 hand-derived q values across every sector branch (genesis idle 1/2 and the merge/delivery lines are NEW physics of this pin)  (battery 10/10 exact)
-  [PASS] G9 the 1 + k/4 ladder survives the extension (P5): deliver and merge sectors are initiator-view (never blind); blindness remains join-view arbs only  (ARM-1T: 1 at 7514, 5/4 at 424; ARM-2T: 1 at 9588, 5/4 at 576, 3/2 at 72, 7/4 at 36 [MEASURED, first run])
-  [PASS] G6 joins: arbs and deliveries censused (deliveries are the new join species); D23/NSE/D25/D27 + Hegerfeldt = lift obligations  (arb joins = 384, delivery joins = 8250)
-  [PASS] G8 record basis extended: sender/receiver, delivered version, and merge winner distinctions separate canonical DAGs  (3 new separations + d42a's carry)
+  [PASS] G9 the ladder IN-FAMILY AT CAPS (C1 re-scope: a general-depth ladder theorem is OPEN, d42b3's constraint set) + the W6 mechanical decomposition: propose/deliver sectors exactly 1/4-or-0, every candidate ckey group exactly 1/4, totals reconstructed from sectors  (ARM-1T: 1 at 7514, 5/4 at 424; ARM-2T: 1 at 9588, 5/4 at 576, 3/2 at 72, 7/4 at 36; W6 points = 18210, 0 violations)
+  [PASS] F1 REGRESSION (the round-1 blocker healed): the relay+blind-seal witnesses h5 and h11 — every event admissible; under the C1 admission-based pricing EVERY per-actor sum is exactly 1 (round 1: 3/4 and 7/8 under own-view pricing)  (h5 sums = ['1', '1', '1']; h11 sums = ['1', '1', '1'])
+  [PASS] R2b the EQUAL-VALUES merge branch: single 'both' option at exactly 1/4 (D = 1, no kernel click)  (q = 1/4)
+  [PASS] §2 CHAINED RECONCILIATION censused: after the merge, the late-delivered third fork pairs with v_m exactly ({(vD0, v_m)}); equal-values branch 'both' at 1/4; value-conflicted branch clicks at 1/8  (pairs = 1; q_equal = 1/4, q_conflict = 1/8)
+  [PASS] RF2 DOUBLE-MERGE censused (and the merge CARRIER gated: under the deleted fossil regs_of the second merge would share a wire and die): both merges of one pk admissible, the second still admissible after the first (blind), incomparable, distinct records  (the merge-level fork species is real grammar)
+  [PASS] G3/G4 PORTS discharged: pair-arb iff-sweep (ARM-1T), the rescue family sweep (every created-version proposal is held via participation-or-delivery in its own past), and the causal-vs-authentication-only staleness split  (iff 0 violations (TRANSPORT SERIALIZATION discovered by the sweep: 60 in-family histories where a delivery chains the proposals into comparability and the conflict is PREVENTED — the d42a serialized control is now grammatical); rescue sweep both arms; causal rejects, auth-only admits)
+  [PASS] P2/P4 FAMILY CENSUSES printed and gated: in-family two-arb observer pasts = 0 AT CAPS (a two-arb past needs 5 events — depth note; the constructed SIG-FM carries the physics); orphan censuses per arm; P4's blind-iff-arbitrable sweep anomaly-free  (two-arb in-family = 0; orphans ARM-1T = 464, ARM-2T = 72; P4 anomalies = 0)
+  [PASS] G6 joins censused (the VALUES are the content; the >0 gate is a printer — declared per the d42a-F6 precedent); D23/NSE/D25/D27 + Hegerfeldt = lift obligations  (arb joins = 384 (anchor 384), delivery joins = 8250 (anchor 8250, round-1 referee-verified))
+  [PASS] G8 record basis extended: sender/receiver, delivered version, and merge winner distinctions separate canonical DAGs (event-tuple-embedding truisms, declared per the d42a-F6 precedent)  (3 new separations + d42a's carry)
 
-[SUMMARY] 14 PASS / 0 FAIL
-[VERDICT] d42b1 GREEN: delivery and merge are generated, priced record events; fork-freeness exposed as a starvation artifact (P2), reconciliation demand generated at two-fork pasts (P3), orphan starvation resolved informationally (P4), starvation theorem exact (P1), L1 and the ladder stable (P5).
+[SUMMARY] 20 PASS / 0 FAIL
+[VERDICT] d42b1 GREEN (round-1 repaired): delivery and merge are generated, priced record events under ADMISSION-BASED pricing (C1; the h5/h11 witnesses heal to 1); fork-freeness = a starvation artifact (P2); reconciliation generated (P3) and CHAINED (C2 census); orphans informational (P4, family-swept); P1 exact; L1 stable; the ladder verified in-family at caps with the general-depth theorem OPEN for d42b3.

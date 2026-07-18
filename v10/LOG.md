@@ -5340,3 +5340,32 @@ protected by zero gates. SURVIVES: all printed numbers; the
 mechanical ladder law at 18,210 in-family points; P1/P2/P3/P4's
 constructed-chain physics; L1 + the all-depths proof; generator
 completeness. Repairs R1-R6 next.
+
+## 2026-07-18 — d42b1 round-1 repairs GREEN 20/20 (LEDGER #300);
+## delta-verification launched
+Repaired receipt seed-independent (0/41), ~14 s, against pin +
+C1-C2. R1 THE PRICING LAYER IS NOW THE ADMISSION RELATION:
+admissible_arb_ckeys() probes the admission relation for sector
+availability and the merge denominator (joint-record dependence
+declared per C1); the referee's h5/h11 witnesses added as
+REGRESSION GATES — every per-actor sum exactly 1 (round 1: 3/4 and
+7/8); in-family spectra/censuses unchanged (referee pre-verified
+0/500). R2 battery + 2 pin-listed branches (all-open idle 1/4 at
+SIG-FM[:6]; equal-values merge 1/4). R3 all pinned censuses
+discharged: chained reconciliation (the 10-event third-fork chain:
+post-merge pairs exactly {(vD0, v_m)}; 'both' 1/4 / conflicted 1/8);
+RF2 double-merge (admissible, blind-second, incomparable, canon-
+distinct — GATING the merge carrier: the F6 fossil law dies here);
+pair-arb iff port — WHICH DISCOVERED TRANSPORT SERIALIZATION: 60
+in-family histories where a delivery chains the proposals into
+comparability and the conflict is PREVENTED (the d42a serialized
+control is now grammatical, in-family; conflict genesis requires
+concurrency to SURVIVE transport); rescue family sweep; staleness/
+auth-only port; orphan censuses (ARM-1T 464 / ARM-2T 72); P2
+in-family two-arb census = 0 at caps (depth note); P4 blind-iff-
+arbitrable sweep 0 anomalies (blind = CURRENT own view — the first
+predicate wrongly used issuance past, caught by the gate). R4 P3
+k<=8. R5 the dead fossil regs_of DELETED. G9 upgraded to the W6
+mechanical decomposition + C1 re-scope (in-family at caps +
+witnesses healed; general-depth ladder OPEN -> d42b3). G6 anchored
+(384/8,250); G8 truism declaration added. Delta next.

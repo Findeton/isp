@@ -72,16 +72,6 @@ def regs_of(op):
     k = op[0]
     if k == 'p' or k == 'n': return frozenset([op[1]])
     if k == 'd': return frozenset([op[1], op[2]])
-    if k == 'm': return frozenset([op[1], mname(op[2], None, op[1])[:2]
-                                   + (op[2],)])
-    props = {t[0] for t in op[2]}
-    base = next(iter(op[2]))[1]
-    return frozenset(props | {vname(base, op[3], op[1])})
-
-def regs_of(op):
-    k = op[0]
-    if k == 'p' or k == 'n': return frozenset([op[1]])
-    if k == 'd': return frozenset([op[1], op[2]])
     if k == 'm':
         return frozenset([op[1], ('mw', op[1], op[2])])
     props = {t[0] for t in op[2]}
@@ -259,8 +249,38 @@ def own_view(acts, a):
     pred = event_poset(acts2)
     return View(acts2, pred, pred[len(acts2) - 1])
 
+def admissible_arb_ckeys(acts, a, actors):
+    """Distinct ckeys with an ADMISSIBLE arb event for initiator a —
+    the C1 repair: sector availability and the merge denominator are
+    the admission relation, probed, not the own-view component list.
+    Joint-record dependence DECLARED (C1: the availability bit, like
+    the component, first exists at the join — the d34b face)."""
+    pred = event_poset(acts)
+    full = View(acts, pred, set(range(len(acts))))
+    live_by_base = {}
+    for i, op in full.live.items():
+        live_by_base.setdefault(op[2], []).append(i)
+    out = set()
+    for b in sorted(live_by_base, key=repr):
+        idxs = sorted(live_by_base[b])
+        n = len(idxs)
+        for smask in range(1, 1 << n):
+            S = [idxs[i] for i in range(n) if smask >> i & 1]
+            ck = triples(full, frozenset(S))
+            if ck in out: continue
+            m = len(S)
+            hit = False
+            for wmask in range(1, 1 << m):
+                W = frozenset(S[i] for i in range(m) if wmask >> i & 1)
+                ok, _ = admissible(acts, ('r', a, ck, triples(full, W)),
+                                   actors)
+                if ok: hit = True; break
+            if hit: out.add(ck)
+    return out
+
 def admissible(acts, e, actors, law=PK1):
-    """Past-relative admission + the pinned local weight."""
+    """Past-relative admission + the pinned local weight (C1: the
+    pricing layer IS the admission relation)."""
     acts2 = acts + [e]
     j = len(acts2) - 1
     pred = event_poset(acts2)
@@ -269,8 +289,8 @@ def admissible(acts, e, actors, law=PK1):
     if kind == 'n':
         a = e[1]
         has_p = bool(prop_options_in_view(view, a))
-        has_am = bool(arb_components_in_view(view, a)
-                      or view.merge_pairs(a))
+        has_am = bool(view.merge_pairs(a)
+                      or admissible_arb_ckeys(acts, a, actors))
         has_d = bool(deliver_options_in_view(view, a, actors))
         return True, (1 - (F(1, 4) if has_p else 0)
                       - (F(1, 4) if has_am else 0)
@@ -289,7 +309,8 @@ def admissible(acts, e, actors, law=PK1):
         return True, F(1, 4) / len(opts)
     if kind == 'm':
         a, pk, w = e[1], e[2], e[3]
-        D = len(arb_components_in_view(view, a)) + len(view.merge_pairs(a))
+        D = (len(admissible_arb_ckeys(acts, a, actors))
+             + len(view.merge_pairs(a)))
         if pk not in view.merge_pairs(a): return False, None
         v1, v2 = pk
         if value_of(v1) != value_of(v2):
@@ -404,6 +425,10 @@ print("  caps (RF3/RF5, tuned + printed): ARM-1T (A,B) depth<=4,")
 print("  ARM-2T (A,B,C) depth<=3; deep gates on constructed chains")
 print("  SIG-FM and SIG-KR (admission-exact at every prefix); weight-")
 print("  system level only — placement is d42b3's; ladder per A7/A7'.")
+print("  MERGE-SECTOR VACUITY declared: 0 merge events and 0 enabled")
+print("  pairs in-family at caps (reconciliation demand REQUIRES")
+print("  transport depth — C2); merge physics rides the constructed")
+print("  chains + the F3 censuses below.")
 
 AB = ('A', 'B'); ABC = ('A', 'B', 'C')
 ARM1, CACHE1 = enumerate_family(AB, 4)
@@ -480,7 +505,7 @@ def merge_opts_at(h, actors):
 m_before = merge_opts_at(SIG_FM[:5], ABC)   # only dA delivered
 m_after = merge_opts_at(SIG_FM[:6], ABC)    # both delivered
 iff_m = True
-for k in range(len(SIG_FM)):
+for k in range(len(SIG_FM) + 1):
     opts = merge_opts_at(SIG_FM[:k], ABC)
     should = (k >= 6 and k < 7)  # exactly after both deliveries, before mB
     if k >= 7: should = False    # pair superseded by the merge itself
@@ -642,6 +667,9 @@ battery = [
        frozenset({tA}))], ('n', 'A'), AB), F(1, 2),
      "post-arb idle: props open on v1, deliver open, arb+merge closed "
      "(v0 not arb-created, no pair)"),
+    ((SIG_FM[:6], ('n', 'B'), ABC), F(1, 4),
+     "ALL-OPEN idle (the pin-listed branch round 1 omitted): props "
+     "open on the delivered forks, pair enabled, deliver open"),
 ]
 ok7, det7 = True, []
 for (ctx, e, acts_t), want, why in battery:
@@ -670,11 +698,218 @@ def on_ladder(v):
     return v >= 1 and ((v - 1) * 4).denominator == 1
 spec1 = ", ".join(f"{v} at {c1[v]}" for v in sorted(c1))
 spec2 = ", ".join(f"{v} at {c2[v]}" for v in sorted(c2))
-check("G9 the 1 + k/4 ladder survives the extension (P5): deliver and "
-      "merge sectors are initiator-view (never blind); blindness "
-      "remains join-view arbs only",
-      all(on_ladder(v) for v in set(c1) | set(c2)),
-      f"ARM-1T: {spec1}; ARM-2T: {spec2} [MEASURED, first run]")
+ok_w6, w6_pts = True, 0
+for fam, cache, actors_t in ((ARM1, CACHE1, AB), (ARM2, CACHE2, ABC)):
+    for h in fam:
+        cands = cache[tuple(h)]
+        for a in actors_t:
+            mine = [(e, q) for e, q in cands if e[1] == a]
+            w6_pts += 1
+            ps = sum(q for e, q in mine if e[0] == 'p')
+            ds = sum(q for e, q in mine if e[0] == 'd')
+            groups = {}
+            for e, q in mine:
+                if e[0] == 'r':
+                    groups[e[2]] = groups.get(e[2], F(0)) + q
+                if e[0] == 'm':
+                    groups[('PAIRS',)] = groups.get(('PAIRS',),
+                                                    F(0)) + q
+            tot = sum(q for e, q in mine)
+            m = len(groups)
+            ok_w6 &= ps in (F(0), F(1, 4)) and ds in (F(0), F(1, 4))
+            ok_w6 &= all(gs == F(1, 4) for gs in groups.values())
+            ok_w6 &= (tot == 1 + F(max(m - 1, 0), 4)) if m else \
+                (tot in (F(1, 4), F(1, 2), F(3, 4), F(1)))
+            ok_w6 &= tot == sum(
+                (F(1, 4) if ps else F(0), F(1, 4) if ds else F(0),
+                 sum(groups.values()),
+                 next(q for e, q in mine if e[0] == 'n')))
+check("G9 the ladder IN-FAMILY AT CAPS (C1 re-scope: a general-depth "
+      "ladder theorem is OPEN, d42b3's constraint set) + the W6 "
+      "mechanical decomposition: propose/deliver sectors exactly "
+      "1/4-or-0, every candidate ckey group exactly 1/4, totals "
+      "reconstructed from sectors",
+      all(on_ladder(v) for v in set(c1) | set(c2)) and ok_w6,
+      f"ARM-1T: {spec1}; ARM-2T: {spec2}; W6 points = {w6_pts}, "
+      "0 violations")
+
+# ---- the F1 regression witnesses (referee-constructed, C1-healed) ----------
+tB_ = ('B', V0, 1)
+h5 = [pA0, ('p', 'B', V0, 1), ('d', 'B', 'C', V0), ('d', 'C', 'A', V0),
+      ('r', 'B', frozenset({tB_}), frozenset({tB_}))]
+ok_h5 = all(admissible(h5[:j], h5[j], ABC)[0] for j in range(len(h5)))
+sums5 = [sum(q for e, q in candidates_for(h5, ABC) if e[1] == a)
+         for a in ABC]
+tAv1, tBv1 = ('A', v1, 1), ('B', v1, 0)
+h11 = SIG_FM[:6] + [('p', 'B', v1, 0), ('p', 'A', v1, 1),
+                    ('d', 'A', 'C', v1), ('d', 'C', 'B', vC),
+                    ('r', 'A', frozenset({tAv1}), frozenset({tAv1}))]
+ok_h11 = all(admissible(h11[:j], h11[j], ABC)[0] for j in range(len(h11)))
+sums11 = [sum(q for e, q in candidates_for(h11, ABC) if e[1] == a)
+          for a in ABC]
+check("F1 REGRESSION (the round-1 blocker healed): the relay+blind-"
+      "seal witnesses h5 and h11 — every event admissible; under the "
+      "C1 admission-based pricing EVERY per-actor sum is exactly 1 "
+      "(round 1: 3/4 and 7/8 under own-view pricing)",
+      ok_h5 and ok_h11 and all(x == F(1) for x in sums5 + sums11),
+      f"h5 sums = {[str(x) for x in sums5]}; "
+      f"h11 sums = {[str(x) for x in sums11]}")
+
+# ---- F3 repairs: the pinned censuses and ports, discharged -----------------
+# equal-values merge (the second missing battery branch, R2)
+pC0e = ('p', 'C', V0, 0)
+tC0 = ('C', V0, 0)
+rC0 = ('r', 'C', frozenset({tC0}), frozenset({tC0}))
+vC0 = vname(V0, frozenset({tC0}), 'C')
+EQ6 = [pA0, pC0e, rA, rC0, ('d', 'A', 'B', v1), ('d', 'C', 'B', vC0)]
+PKe = tuple(sorted((v1, vC0), key=repr))
+ok_eq, q_eq = admissible(EQ6, ('m', 'B', PKe, 'both'), ABC)
+check("R2b the EQUAL-VALUES merge branch: single 'both' option at "
+      "exactly 1/4 (D = 1, no kernel click)",
+      ok_eq and q_eq == F(1, 4), f"q = {q_eq}")
+
+# chained reconciliation census (§2's clause, now discharged)
+pD0 = ('p', 'D', V0, 0)
+tD0 = ('D', V0, 0)
+rD0 = ('r', 'D', frozenset({tD0}), frozenset({tD0}))
+vD0 = vname(V0, frozenset({tD0}), 'D')
+ABCD = ('A', 'B', 'C', 'D')
+CH = [pA0, pC1, pD0, rA, rC, rD0, dA, dC,
+      ('m', 'B', PK, v1), ('d', 'D', 'B', vD0)]
+ok_ch = all(admissible(CH[:j], CH[j], ABCD)[0] for j in range(len(CH)))
+predCH = event_poset(CH)
+viewCH = View(CH, predCH, set(range(len(CH))))
+vm_ch = mname(PK, value_of(v1), 'B')
+pairs_after = viewCH.merge_pairs('B')
+want_pair = tuple(sorted((vD0, vm_ch), key=repr))
+ok_chq, q_ch = admissible(CH, ('m', 'B', want_pair, 'both'), ABCD)
+CHc = CH[:8] + [('m', 'B', PK, vC), ('d', 'D', 'B', vD0)]
+vm_c = mname(PK, value_of(vC), 'B')
+wc = tuple(sorted((vD0, vm_c), key=repr))
+ok_cc, q_cc = admissible(CHc, ('m', 'B', wc, vD0), ABCD)
+check("§2 CHAINED RECONCILIATION censused: after the merge, the late-"
+      "delivered third fork pairs with v_m exactly ({(vD0, v_m)}); "
+      "equal-values branch 'both' at 1/4; value-conflicted branch "
+      "clicks at 1/8",
+      ok_ch and pairs_after == [want_pair] and ok_chq
+      and q_ch == F(1, 4) and ok_cc and q_cc == F(1, 8),
+      f"pairs = 1; q_equal = {q_ch}, q_conflict = {q_cc}")
+
+# RF2 double-merge census — GATES the merge carrier (the F6 fossil dies)
+H7 = SIG_FM[:6] + [('d', 'C', 'A', vC)]
+mA2 = ('m', 'A', PK, v1)
+mB2 = ('m', 'B', PK, v1)
+H9 = H7 + [mB2]
+ok_dm1 = admissible(H7, mA2, ABC)[0] and admissible(H7, mB2, ABC)[0]
+ok_dm2, _ = admissible(H9, mA2, ABC)
+H10 = H9 + [mA2]
+predH = event_poset(H10)
+iB = len(H9) - 1; iA = len(H10) - 1
+incomp = (iB not in predH[iA]) and (iA not in predH[iB])
+check("RF2 DOUBLE-MERGE censused (and the merge CARRIER gated: under "
+      "the deleted fossil regs_of the second merge would share a "
+      "wire and die): both merges of one pk admissible, the second "
+      "still admissible after the first (blind), incomparable, "
+      "distinct records",
+      ok_dm1 and ok_dm2 and incomp
+      and canon(H10[:-1]) != canon(H9[:-1] + [mA2]),
+      "the merge-level fork species is real grammar")
+
+# pair-arb iff port (d42a G3i) + rescue family sweep + staleness port
+iff_pa = True
+n_serialized = 0
+SIGCK = frozenset({tA, ('B', V0, 1)})
+for h in ARM1:
+    has_pair = any(e for e, q in CACHE1[tuple(h)]
+                   if e[0] == 'r' and e[2] == SIGCK)
+    both_present = (pA0 in h and ('p', 'B', V0, 1) in h
+                    and not any(e[0] == 'r' and set(e[2]) & set(SIGCK)
+                                for e in h))
+    incomp = False
+    if both_present:
+        pred = event_poset(h)
+        i1, i2 = h.index(pA0), h.index(('p', 'B', V0, 1))
+        incomp = (i1 not in pred[i2]) and (i2 not in pred[i1])
+        if not incomp: n_serialized += 1
+    if has_pair != (both_present and incomp): iff_pa = False
+resc = True
+for fam, actors_t in ((ARM1, AB), (ARM2, ABC)):
+    for h in fam:
+        pred = event_poset(h)
+        view = View(h, pred, set(range(len(h))))
+        for j, e in enumerate(h):
+            if e[0] != 'p' or e[2] == V0: continue
+            sub = View(h, pred, pred[j])
+            if e[2] not in sub.holdings(e[1]): resc = False
+H4s = [pA0, ('p', 'B', V0, 1),
+       ('r', 'A', SIGCK, frozenset({tA}))]
+stale = ('p', 'A', V0, 1)
+ok_st = not admissible(H4s, stale, AB)[0]
+def auth_only(acts, e):
+    acts2 = acts + [e]
+    pred = event_poset(acts2)
+    view = View(acts2, pred, pred[len(acts2) - 1])
+    b = e[2]
+    exists = (b == V0) or (b in view.created)
+    unblocked = not any(op[1] == e[1] and op[2] == b
+                        for op in view.live.values())
+    return exists and unblocked
+check("G3/G4 PORTS discharged: pair-arb iff-sweep (ARM-1T), the "
+      "rescue family sweep (every created-version proposal is held "
+      "via participation-or-delivery in its own past), and the "
+      "causal-vs-authentication-only staleness split",
+      iff_pa and resc and ok_st and auth_only(H4s, stale),
+      f"iff 0 violations (TRANSPORT SERIALIZATION discovered by the "
+      f"sweep: {n_serialized} in-family histories where a delivery "
+      "chains the proposals into comparability and the conflict is "
+      "PREVENTED — the d42a serialized control is now grammatical); "
+      "rescue sweep both arms; causal rejects, auth-only admits")
+
+# orphan + P2 + P4 family censuses
+def orphan_census(fam):
+    n_orph = n_anom = 0
+    for h in fam:
+        pred = event_poset(h)
+        view = View(h, pred, set(range(len(h))))
+        for i, op in view.live.items():
+            if op[2] not in view.superseded: continue
+            sub = View(h, pred, pred[i])
+            blind = op[2] not in sub.superseded
+            if blind: n_orph += 1
+    return n_orph, n_anom
+orA, _ = orphan_census(ARM1)
+orB, _ = orphan_census(ARM2)
+two_arb = 0
+for fam in (ARM1, ARM2):
+    for h in fam:
+        pred = event_poset(h)
+        for j in range(len(h)):
+            sub = View(h, pred, pred[j] | {j})
+            per = {}
+            for i, op in sub.arbs.items():
+                per.setdefault(next(iter(op[2]))[1], []).append(i)
+            if any(len(v) > 1 for v in per.values()): two_arb += 1
+p4_anom = 0
+for fam, actors_t in ((ARM1, AB), (ARM2, ABC)):
+    for h in fam:
+        pred = event_poset(h)
+        view = View(h, pred, set(range(len(h))))
+        for i, op in view.live.items():
+            if op[2] != V0 or V0 not in view.superseded: continue
+            ov = own_view(h, op[1])
+            blind = V0 not in ov.superseded
+            tri = (op[1], op[2], op[3])
+            ok_sa, _ = admissible(h, ('r', op[1], frozenset({tri}),
+                                      frozenset({tri})), actors_t)
+            if ok_sa != blind: p4_anom += 1
+check("P2/P4 FAMILY CENSUSES printed and gated: in-family two-arb "
+      "observer pasts = 0 AT CAPS (a two-arb past needs 5 events — "
+      "depth note; the constructed SIG-FM carries the physics); "
+      "orphan censuses per arm; P4's blind-iff-arbitrable sweep "
+      "anomaly-free",
+      two_arb == 0 and p4_anom == 0 and orA + orB > 0,
+      f"two-arb in-family = {two_arb}; orphans ARM-1T = {orA}, "
+      f"ARM-2T = {orB}; P4 anomalies = {p4_anom}")
 
 # ---- G6/G8: joins + record basis -------------------------------------------
 join_arbs = join_dels = 0
@@ -686,20 +921,25 @@ for h in ARM1 + ARM2:
 c_send = canon([('d', 'A', 'B', V0)]) != canon([('d', 'B', 'A', V0)])
 c_ver = canon(SIG_FM[:5]) != canon(SIG_FM[:4] + [('d', 'A', 'B', V0)])
 c_mw = canon(SIG_FM[:7]) != canon(SIG_FM[:6] + [('m', 'B', PK, vC)])
-check("G6 joins: arbs and deliveries censused (deliveries are the new "
-      "join species); D23/NSE/D25/D27 + Hegerfeldt = lift obligations",
-      join_arbs + join_dels > 0,
-      f"arb joins = {join_arbs}, delivery joins = {join_dels}")
+check("G6 joins censused (the VALUES are the content; the >0 gate is "
+      "a printer — declared per the d42a-F6 precedent); D23/NSE/"
+      "D25/D27 + Hegerfeldt = lift obligations",
+      join_arbs == 384 and join_dels == 8250,
+      f"arb joins = {join_arbs} (anchor 384), delivery joins = "
+      f"{join_dels} (anchor 8250, round-1 referee-verified)")
 check("G8 record basis extended: sender/receiver, delivered version, "
-      "and merge winner distinctions separate canonical DAGs",
+      "and merge winner distinctions separate canonical DAGs (event-"
+      "tuple-embedding truisms, declared per the d42a-F6 precedent)",
       c_send and c_ver and c_mw, "3 new separations + d42a's carry")
 
 print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d42b1 GREEN: delivery and merge are generated, priced "
-      "record events; fork-freeness exposed as a starvation artifact "
-      "(P2), reconciliation demand generated at two-fork pasts (P3), "
-      "orphan starvation resolved informationally (P4), starvation "
-      "theorem exact (P1), L1 and the ladder stable (P5).")
+print("[VERDICT] d42b1 GREEN (round-1 repaired): delivery and merge "
+      "are generated, priced record events under ADMISSION-BASED "
+      "pricing (C1; the h5/h11 witnesses heal to 1); fork-freeness "
+      "= a starvation artifact (P2); reconciliation generated (P3) "
+      "and CHAINED (C2 census); orphans informational (P4, family-"
+      "swept); P1 exact; L1 stable; the ladder verified in-family "
+      "at caps with the general-depth theorem OPEN for d42b3.")
