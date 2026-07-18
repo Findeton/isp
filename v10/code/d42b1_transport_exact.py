@@ -747,7 +747,7 @@ h11 = SIG_FM[:6] + [('p', 'B', v1, 0), ('p', 'A', v1, 1),
 ok_h11 = all(admissible(h11[:j], h11[j], ABC)[0] for j in range(len(h11)))
 sums11 = [sum(q for e, q in candidates_for(h11, ABC) if e[1] == a)
           for a in ABC]
-h12 = h11 + [('p', 'C', vC, 0)]
+h12 = h11 + [('p', 'B', vC, 0)]
 ok_h12 = all(admissible(h12[:j], h12[j], ABC)[0] for j in range(len(h12)))
 sums12 = [sum(q for e, q in candidates_for(h12, ABC) if e[1] == a)
           for a in ABC]

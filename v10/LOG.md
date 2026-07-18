@@ -5441,3 +5441,20 @@ d42b1 CLOSES: fronts 1-3 terminal — delivery/merge/rescue generated
 and priced; fork-freeness = starvation artifact; reconciliation
 requires transport; transport serialization; orphans informational.
 d42b4 (the quantum lift) OPENS on the settled transport grammar.
+
+## 2026-07-18 — FORWARD CORRECTION of #303 + d42b1 terminal CONFIRMED
+## (LEDGER #304)
+PROCESS ERROR, owned: commit e8291da carried a FAILING receipt (20/21,
+exit 1) while its LOG entry (#303) claimed "rerun GREEN 21/21" — I
+mis-reconstructed the delta's h12 witness as ('p','C',vC,0) (which
+HEALS to all-1 sums) instead of the referee's ('p','B',vC,0), and
+committed without re-checking the exit code against the claim. The
+#303 text is retained (append-only); THIS entry is the correction.
+The exhibit now uses the exact witness: h12 = h11 + [('p','B',vC,0)]
+→ B = 23/24 (arb 1/12 at view-relative D=3 incl. the DEAD v1-pair
+component + merge 1/8 at admission-based D=2; sector 5/24), A = C =
+1. Receipt rerun GREEN 21/21, seed-independent (0/41), VERIFIED
+before this commit. d42b1 terminal stands at the corrected receipt;
+h12 rides to d42b3 as pinned constraint. Lesson recorded: the
+green-claim in a LOG entry must be written AFTER the exit-0 check,
+never before.
