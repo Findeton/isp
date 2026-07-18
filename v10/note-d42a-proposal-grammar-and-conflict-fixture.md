@@ -188,3 +188,13 @@ against v' enabled only in histories containing the arb (unchanged);
 (iv) the deletion control (unchanged). Consequence declared: after
 proposing, a participant's own view holds a singleton component, so its
 idle weight is 1/2, not 3/4.
+
+**A5' (forward correction, found BY the receipt's G7 battery).** A5's
+final consequence sentence — "after proposing, a participant's idle
+weight is 1/2, not 3/4" — was FALSE, an arithmetic slip: after
+proposing on v0, the PROPOSE sector closes (the A3 blocker holds until
+resolution and v0 is the only held base), so idle = 1 − 1/4 = 3/4 via
+the open arb sector alone. The law text itself (§2 as amended) was
+unambiguous and is unchanged; only the derived remark was wrong. The
+both-sectors-open idle branch (1/2) and the both-closed branch (1) are
+unreachable at fixture depths — declared, not gated.

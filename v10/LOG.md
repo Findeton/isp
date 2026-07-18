@@ -4985,3 +4985,27 @@ forced grammar (the uncontested-acceptance path), falsifying G3's
 pair-component iff-sweep + declared singleton path + unchanged
 re-proposal/deletion controls; idle-weight consequence declared.
 Receipt runs strictly against the pin + A1-A5.
+
+## 2026-07-15 — d42a receipt GREEN 15/15 (LEDGER #284); A5' pin
+## correction; hostile round next
+The generated-conflict receipt (v10/code/d42a_generated_conflict_
+exact.py, EXACT Fractions, seed-independent 0/17) runs 15/15 against
+the pin + A1-A5'. Families: ARM-1 depth<=5 = 5,751 histories; ARM-2
+depth<=4 = 5,761. Gate highlights: G1 resequence-and-recompute
+(admission + every mu factor + canonical typed DAG invariant; 761
+histories, 2,421 resequencings incl. both signatures); G2 depth-2
+conflict census = 4 hand-derived + mu(seed pair) = 1/64 exact; G3
+pair-arb iff-sweep + deletion control family-wide; G4a causal-vs-
+authentication-only staleness split exhibited (paper 28 H1 load-
+bearing); G4b orphan census 1,128; G4c forks 48, per-observer
+freeness gated on ONE-STEP EXTENSIONS (432 candidates; the in-family
+sweep alone cannot fail at depth 4 — self-caught pre-round along
+with the G7 identity-gate, both convicted classes); G5 the GENERATED
+path component discriminates K1 (2/3) vs K2 (1/2), TV = 1/6, batch
+weights 1/3072 / 1/4096 exact hand values; G6 joins 2,808; G7 the
+hand-anchored 7-branch q battery — WHICH CAUGHT A PIN DEFECT: A5's
+idle-1/2 consequence remark was FALSE (propose sector closes under
+the A3 blocker; true value 3/4) — pin forward-corrected as A5', law
+text unchanged; G8 record-basis separations + gauge identity. L1
+live-triple uniqueness 0/11,512. Round next: fresh hostile referee
+on pin + receipt + out.
