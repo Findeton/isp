@@ -5382,3 +5382,39 @@ predicted (on the generated triangle K1 == K2 == 1/3 uniform — the
 K-choice becomes undecidable on triangle-rich records; the path
 keeps discriminating in both grammars). Receipt after the d42b1/
 d42b3 rounds settle.
+
+## 2026-07-18 — d42b3 ROUND 1 FROZEN (LEDGER #302): 1B/3M/2m/2n —
+## AND THE DISCRETE TS-CONDITION IS DECIDED AT DEPTH 4
+Report: reviews/d42b3-round1-hostile-review.md. Zero false numbers
+(every quantity reproduced; layer semantically verbatim over 6,470 +
+1,200 probes). F1 BLOCKER: T3 as pinned was ill-posed (normalization
+clause never stated), its gate a tautology (== G-T2's mu-equality),
+and "OPEN" was WRONG — the fixture DECIDES it. THE REFEREE COMPUTED
+THE TS-SYSTEM (the commissioned escalation): on the depth-4 cut
+complex (427 canonical classes, 202 diamonds, factor-invariance 0):
+RATIO-PRESERVING PLACEMENT IS REFUTED — Z = N forced and 36 diamonds
+violate chain-consistency (2 bad components; T2's witness = one
+certificate). GRADIENT (h-transform) PLACEMENT IS SOLVED AT EVERY
+FINITE DEPTH — backward recursion, Z(empty) = 64/1037 at unit
+boundary, per-cut normalization exact at all 215 interior histories,
+the witness pair equalizes at 1/2074, 313-parameter boundary freedom
+— BUT 21/114 cuts (the root included: 16/133 vs 32/257) must deform
+WITHIN-CUT RATIOS, and no boundary choice avoids it. THE NEW SHARP
+OBJECT: classical completion exists ⟺ within-cut ratios deform —
+the completion collides with exactly the L1 ratio structure. Honest
+residues: infinite-volume positive-harmonic existence; whether ratio
+deformation is physical (the lift is the only RATIO-PRESERVING
+normalized completion — F4's corrected dichotomy). F2: my "N is not
+cut-attached" was FALSE — N IS cut-attached (0/427) but NOT A
+GRADIENT (chain-products foliation-dependent) — STRENGTHENS T2. F3:
+T1's wording refuted by the degenerate zero-class filter (kills all
+join arbitration); true with the positivity hypothesis (nesting
+argument machine-verified). F5: L1's 28-case sweep was a constant-q
+corner — true as a THEOREM (referee proof); empirical content
+begins where factors vary. F6: L2 quantization depth-scoped;
+additivity d42a-delta-carried. Round-2 target posed: the
+actor-factored intermediate class. Repairs R1-R8 next (~2 s exact,
+pre-verified). R8 note, d42a-owned forward-correction: the d42a
+delta's "32,884 actor-points" vs the anchored spectra sum 32,709 —
+delta = 175, a count-domain wording slip in that ledger entry; the
+spectra themselves were and remain the anchored values.
