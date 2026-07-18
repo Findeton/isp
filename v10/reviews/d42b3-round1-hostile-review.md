@@ -464,3 +464,233 @@ loop can increment `viol_l2` twice per actor-point (ladder + bad group)
 - `semantic_diff.py`: layer faithfulness (0 mismatches; 6,470 + 1,200
   probes). `diff_layer.py`: AST inventory (shared/dropped defs).
 - `mutant1.py`/`mutant2.py`: exit-1 plumbing (both 4/1, exit 1).
+
+---
+
+# DELTA VERIFICATION (2026-07-18, against HEAD 229c34f: pin amendments
+# D1-D6 at 5ac26b0/#305, repaired receipt GREEN 8/8 at 229c34f/#306)
+
+**VERDICT: NOT CLEAN — 1 MAJOR / 1 minor / 4 nit (+3 notes). Every
+number lands on the referee anchors** (all six commissioned points
+verified below; reruns PYTHONHASHSEED 0 and 61 byte-identical to the
+committed .out, exit 0). The MAJOR is a one-sentence defect with a
+one-line repair: the receipt's final [VERDICT] line is STALE ROUND-1
+TEXT that contradicts the repaired receipt's own banner and gates. On
+that repair (plus, recommended in the same touch, the minor's
+three-line de-vacuation) this delta is CLEAN and d42b3 is terminal-fit:
+the decided-TS structure itself is safe — every constituent number was
+independently reconfirmed this round.
+
+## The six commissioned points
+
+**(1) R1 — CONFIRMED on both gates; conventions verified honest.**
+D1(i): the receipt's dedupe key `(canon(h), frozenset({e1, e2}))` IS my
+counting convention — my round-1 key was
+`(base-class, frozenset({repr(e), repr(f)}))`, identical semantics
+(distinct events have distinct reprs here); its both-orders-IN-FAMILY
+membership test is equivalent to my both-orders-admissible test because
+the family is the admission relation's BFS closure at this depth.
+202 diamonds / 36 violations land exactly. D1(ii): the receipt's
+forward-mass recursion Z'(h) = Sigma q Z'(h+e), boundary 1, is the
+EXACT reciprocal of my round-1 normalizer: verified Z'(h) * Z_mine(class(h))
+== 1 at ALL 1,191 sequences (0 violations), so Z'(empty) = 1037/64 =
+1/(64/1037) and the printed convention note ("every ratio-level
+quantity identical") is TRUE — the completed kernels coincide
+identically. Anchors land: interior histories 215, witness weights
+1/2074 = 1/2074, interior classes 114, deformed 21 with the root
+included. The two root exhibits are THE SAME COMPLETION displayed as
+different quantities, reconciled exactly: my successor-normalizer
+values (16/133 proposals, 32/257 idles; referee convention) map to the
+receipt's extreme normalized weights via P = q * Z(c)/Z(c+e):
+(1/8)(64/1037)/(16/133) = 133/2074 and (3/4)(64/1037)/(32/257) =
+771/2074 — verified algebraically and numerically (root weights sum to
+1: 4 x 133/2074 + 2 x 771/2074 = 1). No flag beyond the labeling nit
+(D-n4 below).
+
+**(2) R2 — CONFIRMED.** D2 gates N's class-constancy, 0 violations over
+the 427 classes (anchor met; matches my round-1 Part D exactly), placed
+BEFORE D1(i) so the diamond census's per-sequence N reads are licensed.
+
+**(3) R3 — CONFIRMED.** The nesting gate checks exactly my
+machine-verified argument: A's candidate set at [pA0] nests in the set
+at [pA0,pB1], shared weights equal, extra mass exactly 1/4 over 2 blind
+events (re-verified: both extras are 'r' candidates at 1/8). D3
+declares the zero-class exclusion with the right reason (it abolishes
+joint arbitration). The positivity hypothesis is now stated in the pin.
+
+**(4) R5/R6/R7 — substantively landed, with two wording nits.** L1:
+census demoted to tripwire, theorem status declared, tested-factor
+disclosure printed (28/0; "every tested factor = 1/8" — exact). But see
+D-n2: the label's compression "all same-branch factors are constant
+1/8" is false as worded for the n-branch (3/4) and r-branch (1/4, 1/8),
+D6 slightly misstates which fact my proof establishes, and the full
+q-spectrum the pin promises is not printed. L2: scoped exactly per my
+R6 (single-component join views; additivity d42a-delta-carried,
+untested in this 2-actor family) — clean. K1 banner: present with the
+max-component assert — but see D-n3 ("gated" overclaims; assert is not
+a check and PK1 == PK2 itself is never computed in-receipt; it is true,
+my round-1 0/1,048).
+
+**(5) D4 and D1's v6 attachment — supported, one epistemic qualifier
+recommended.** D4's first two clauses are precisely the decided
+theorems (ratio-preserving UNSOLVABLE; classical completions exist but
+deform ratios or attach non-cut data). The third clause ("the LIFT is
+the only ratio-preserving normalized completion") matches my own R4
+prescription verbatim — so no conviction — but on delta reflection it
+should carry its epistemic status explicitly: what is DECIDED is the
+negative half (no classical cut-attached sequential completion is
+ratio-preserving + normalized); that the lift IS one, and is the ONLY
+one across all non-cut-attached schemes, is the program's standing
+expectation with the burden now assigned to d42b4. Recommended wording:
+"the lift is the only CANDIDATE ratio-preserving normalized completion
+left standing — d42b4's burden" (D-note-A). D1's v6 identification now
+attaches to the decided two-class statement as a pin declaration
+outside any gate — exactly my R1 prescription; correctly a declaration
+(no computed bridge), correctly placed.
+
+**(6) D5 (h12) — graded WELL-POSED as a pin obligation; provenance
+verified; one attribution correction for the record.** Source
+verification: d42b1's receipt reruns byte-identical, exit 0, 21/21;
+the N1 exhibit gate prints h12 sums ['1', '23/24', '1'] with exactly
+D5's semantics (a DEAD component inflates the live singleton's
+view-relative arb denominator; the admission-based arb-D fix is
+unavailable — it flattens the anchored 5/4 spectra; the general-depth
+ladder is FALSE under current pricing). As a completion constraint for
+the round-2 actor-factored target the obligation is well-formed and
+correctly owned: note that h12's defect (sum 23/24, excess -1/24) is
+BELOW 1 and NOT quarter-quantized — so on the extended grammar the
+excess density is not the d42a ladder at all, which (i) independently
+confirms my F6 scoping of L2, (ii) is automatically absorbed by the
+gradient recursion (it normalizes ANY positive q-field — no ladder
+assumption anywhere in it), and (iii) puts the real load on the
+ratio-preserving/actor-factored analyses, which consume the actual
+N-field. Round-2 execution is feasible: rerun the diamond census and
+the gradient recursion on the 7,393-history transport family with
+h12's cut in-domain. ATTRIBUTION, for the record: h12 is the
+d42b1-delta referee's witness (N1, LOG #303/#304) — the pin and LOG
+attribute it correctly; the hand-off message's phrase "your
+h12-from-d42b1" conflates the two referee streams. No repo
+defect; recorded so the provenance chain stays exact (D-note-C).
+
+## Findings
+
+**D-M1 — MAJOR (CONFIRMED): the .out's final [VERDICT] line is stale
+round-1 text asserting the superseded status.** It reads "... the
+discrete TS-condition defined with per-pair solvability and the global
+cocycle question OPEN, identified with v6 paper 1's residue (T3) ..."
+— contradicting, within the same file, the banner ("ROUND-1 REPAIRED
+REVISION: T3 DECIDED (D1)"), gate D1(i) ("the ratio-preserving discrete
+TS-condition FAILS"), gate D1(ii), and pin D1 ("supersedes §1-T3's
+'OPEN'"). The verdict line is the receipt's highest-visibility
+sentence — the one LOG entries and future readers quote — and it
+currently reasserts the exact claim this round's repairs retired. This
+is the false-printed-sentence class (my round-1 F2; the program's
+zero-false-sentences standard), and it is precisely the claim-vs-artifact
+class the fresh #304 lesson names. Repair R-D1 (one line), replacement
+text supplied below.
+
+**D-m1 — minor (CONFIRMED): D1(ii)'s ok_norm conjunct is vacuous, and
+the load-bearing invariant it gestures at (Z's class-constancy = rep-
+independence = foliation invariance beyond the witness) is ungated.**
+The receipt defines Z[h] for interior h AS the sum
+`Sigma q * Z[h+e]`, then ok_norm re-evaluates the same sum over the
+same dict and compares — it passes by construction for ANY recursion
+output. Probe: rebuilding the recursion from an arbitrary boundary
+(7 everywhere) still passes the identical check. (That probe's witness
+weight is also 1/2074 — a uniform boundary rescale is gauge, by
+linearity of the forward recursion; my round-1 NON-uniform boundary
+gave 1/3802 — so the conjunct distinguishes nothing either way.) What
+IS substantive and currently unverified in-receipt: Z takes one value
+per canonical class (rep-independence), which is what licenses the
+class-keyed deformation census and extends foliation invariance beyond
+the gated witness pair. The fact is SAFE — verified this delta: 0
+violations over all 427 classes — but the receipt should own it.
+Repair R-D2 (three lines, pre-verified: exactly my round-1
+construction).
+
+**D-n1 — nit: dead scaffold in the banner block.** `for _h in FAM:
+_v = full_view(_h) if False else None` — `full_view` is undefined
+(never evaluated; dead branch) and the loop assigns None 1,191 times.
+The program's own dead-code hygiene class (d34a pre-commit standard).
+Delete two lines.
+
+**D-n2 — nit: G-L1's label compression is false as worded; D6's proof
+attribution is slightly off; the pinned q-spectrum is not printed.**
+The label says "all same-branch factors are constant 1/8" — the
+n-branch is 3/4 and the r-branch takes 1/4 and 1/8; only the TESTED
+(p) branch is 1/8, which the detail states correctly. Also D6 cites the
+constancy as the referee proof's content; my F5 proof establishes L1 at
+ALL depths from factor past-locality — branch-constancy is the separate
+depth-4 empirical fact that makes the SWEEP tautological. And D6
+promises "the q-spectrum disclosure printed" — the full spectrum
+(p: 1/8 x 2,420; r: 1/4 x 1,172, 1/8 x 496; n: 3/4 x 2,382) appears
+nowhere in the .out. One-line label fix + one print.
+
+**D-n3 — nit: the banner's "PK1 == PK2 on every ARM-1 component (max
+size 2; gated)" overstates.** Only max-component-size == 2 is checked,
+via a bare `assert` (not a check(); silent under python -O); PK1 == PK2
+itself is never computed in-receipt. The inference size<=2 => kernels
+coincide is valid (and I verified 0/1,048 directly in round 1), but
+"gated" should either become true (one check() comparing the kernels
+over the component census — cheap) or the word should soften to
+"asserted via max-size".
+
+**D-n4 — nit: pin/receipt convention split is honest but unlabeled on
+the pin side.** Pin D1 states Z(empty) = 64/1037 and the root exhibit
+(16/133 vs 32/257) in the REFEREE convention without saying so; the
+receipt computes the reciprocal (1037/64) and prints normalized weights
+(133/2074, 771/2074), with its note. All four numbers are correct and
+mutually consistent (verified); a reader moving pin -> .out meets two
+unexplained mismatches. One parenthetical in D1 fixes it ("referee
+convention; the receipt's forward-mass Z is the reciprocal; its root
+exhibit shows the induced normalized weights").
+
+**Notes (no conviction).** (A) D4's third clause: add the epistemic
+qualifier (see point 5) — it is my own R4 wording, sharpened on
+reflection. (B) The pin header's "the d42b1 extension inherits by the
+same arguments — carried" is now superseded IN PART by D5 (the ladder
+does NOT inherit — h12); acceptable under the append-only amendment
+convention (the A2/A5' precedent), scope it in any future revision.
+(C) The h12 attribution conflation in the hand-off message (see point
+6) — repo artifacts are correct; recorded here so the referee-stream
+provenance stays exact.
+
+## Prescribed repairs (all pre-verified)
+
+- **R-D1 (D-M1).** Replace the [VERDICT] line with decided-status text,
+  e.g.: "d42b3 GREEN (round-1 repaired): actor-local counterterms
+  impossible for support-preserving re-weightings (T1+D3);
+  cut-normalization reconvicted, N cut-attached but not a gradient
+  (T2+D2); THE DISCRETE TS-CONDITION DECIDED AT DEPTH 4 —
+  ratio-preserving placement REFUTED (36/202 diamonds), gradient
+  placement SOLVED at finite depth with unavoidable ratio deformation
+  (21/114, root included) (D1); ratio locality a theorem at this depth
+  (L1+D6); the obstruction density exact-1/4 scoped to
+  single-component join views (L2+D6); h12 carried as the extended-
+  grammar completion constraint (D5)." Rerun, re-commit .out.
+- **R-D2 (D-m1).** Key Z by canonical class (or add the class-constancy
+  check over all 1,191 sequences: 3 lines) and keep the all-histories
+  normalization sweep — it becomes the non-vacuous rep-independence
+  gate; anchors unchanged (0/427, pre-verified this delta).
+- **R-D3..R-D6 (D-n1..D-n4).** The four one-liners above.
+
+## Delta reproduction inventory
+
+- Reruns: `PYTHONHASHSEED={0,61} python3
+  v10/code/d42b3_placement_exact.py` -> byte-identical to the committed
+  .out, exit 0, 8/8. `python3 v10/code/d42b1_transport_exact.py` ->
+  byte-identical, exit 0, 21/21, h12 sums ['1','23/24','1'].
+- Scratchpad delta script (inline): reciprocal identity 0/1,191;
+  receipt-Z class-constancy 0/427; root-exhibit mapping (16/133,
+  32/257) -> (133/2074, 771/2074) with weight sum 1; ok_norm vacuity
+  probe (arbitrary boundary 7: conjunct still passes); nesting numbers
+  (shared equal; extra 1/4 over 2 'r' events).
+
+**Disposition:** all round-1 findings are repaired or correctly
+declared on the anchors; the decided-TS structure is fully
+reconfirmed; ONE new defect blocks: the stale verdict sentence (D-M1).
+On R-D1 (+ recommended R-D2 in the same touch) and a green rerun, this
+delta is CLEAN, d42b3 is fit to go terminal — front 5 closed with the
+TS-condition DECIDED at depth 4 — and d42b5/d42b6 (fronts 7-9) open on
+the decided structure, carrying D5's h12 constraint and the
+actor-factored round-2 target.

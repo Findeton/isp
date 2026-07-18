@@ -267,9 +267,6 @@ print("  h-transform below are the referee-pre-verified computations.")
 AB = ('A', 'B')
 FAM, CACHE = enumerate_family(AB, 4)
 print(f"  family: {len(FAM)} histories (the d42a depth<=4 slice)")
-_maxc = 0
-for _h in FAM:
-    _v = full_view(_h) if False else None
 _maxc = max((len(comp) for _h in FAM
              for _b, comp in View(_h, event_poset(_h),
                                   set(range(len(_h)))).components()),
@@ -415,8 +412,11 @@ for L in (3, 2, 1, 0):
         Z[tuple(h)] = sum(q * Z[tuple(h + [e])]
                           for e, q in CACHE[tuple(h)])
 interior = [h for h in FAM if len(h) <= 3]
-ok_norm = all(sum(q * Z[tuple(h + [e])] for e, q in CACHE[tuple(h)])
-              == Z[tuple(h)] for h in interior)
+# per-cut normalization Sum q*Z(h+e)/Z(h) = 1 is the recursion's
+# DEFINING identity (cannot fail; delta D-m1) — the real gate is
+# Z's class-constancy (gauge-invariance of the completion):
+ok_norm = all(len({Z[tuple(h)] for h in mem}) == 1
+              for mem in classes.values())
 def gweight(seq):
     p = F(1)
     for j in range(len(seq)):
@@ -485,7 +485,8 @@ check("G-L1 RATIO LOCALITY (a THEOREM at this depth — referee proof "
       "kept as tripwire)",
       tested_l1 > 0 and viol_l1 == 0,
       f"tested = {tested_l1}, violations = {viol_l1}; q-spectrum "
-      "disclosure: every tested factor = 1/8 (constant branch)")
+      "disclosure: every tested p-branch factor = 1/8 (the tested "
+      "corner; n/r branches vary — D6 scope)")
 
 # ---- G-L2: the obstruction density -----------------------------------------
 viol_l2 = pts = 0
@@ -528,9 +529,14 @@ print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d42b3 GREEN: actor-local counter-terms impossible "
-      "(T1); cut-normalization reconvicted as the lottery (T2); the "
-      "discrete TS-condition defined with per-pair solvability and "
-      "the global cocycle question OPEN, identified with v6 paper "
-      "1's residue (T3); ratio locality and the quarter-quantized "
-      "obstruction density established as exact laws (L1, L2).")
+print("[VERDICT] d42b3 GREEN (round-1 repaired): the discrete "
+      "TS-condition is DECIDED at depth 4 — ratio-preserving "
+      "placement REFUTED (36/202 diamonds; Z = N forced), gradient "
+      "placement SOLVED at every finite depth with the unavoidable "
+      "within-cut ratio-deformation cost (21/114 classes, root "
+      "included); support-preserving actor-local counterterms "
+      "impossible (T1+D3); N cut-attached but not a gradient (T2/"
+      "D2); the LIFT is the only ratio-preserving normalized "
+      "completion CANDIDATE (d42b4's burden); ratio locality and "
+      "the scoped obstruction density exact (L1, L2); the v6 "
+      "residue attaches to the decided form.")

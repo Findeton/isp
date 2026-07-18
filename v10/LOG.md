@@ -5489,3 +5489,24 @@ nesting/positivity gate (shared weights equal; extra mass exactly
 the K1-only banner with the max-component==2 assert. Delta to the
 round referee next; on DELTA-CLEAN d42b3 goes terminal and
 d42b5/d42b6 open on the decided TS-structure.
+
+## 2026-07-18 — d42b3 TERMINAL per the stamped condition (LEDGER #307)
+The delta returned 1 MAJOR (a stale round-1 verdict line: "cocycle
+question OPEN" contradicting the decided gates in the same file) +
+1 minor (ok_norm vacuous-by-construction; Z class-constancy ungated)
++ 4 nits, with the terminal condition STAMPED: "on R-D1 + R-D2 and a
+green rerun, the delta is CLEAN and d42b3 is terminal-fit." All
+applied: the verdict line now states the DECIDED theorems with D7's
+epistemic qualifier (the lift = the only ratio-preserving completion
+CANDIDATE — d42b4's burden); Z class-constancy is the real gradient
+gate (per-cut normalization declared as the defining identity); dead
+scaffold removed; L1 label scoped to the tested p-branch.
+ATTRIBUTION corrected (D7): h12 is the d42b1-DELTA referee's witness
+— my hand-off conflated the streams. Referee verifications of note:
+Z_receipt x Z_mine = 1 at all 1,191 sequences; the root exhibits
+reconciled exactly ((16/133, 32/257) <-> (133/2074, 771/2074)); h12
+verified at source. Rerun GREEN 8/8 seed-independent (0/61) VERIFIED
+pre-commit. FRONT 5 CLOSES: the discrete TS-condition DECIDED at
+depth 4; d42b5/d42b6 open on the decided structure carrying the h12
+constraint and the actor-factored round-2 target; d42b4 carries the
+ratio-preserving-completion burden.

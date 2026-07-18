@@ -148,3 +148,12 @@ scoped to single-component join views (the d42a delta's
 parenthetical); additivity (k >= 2) is d42a-delta-carried, untested
 in this 2-actor family. The kernel is fixed to K1; PK1 == PK2 on
 every ARM-1 component (max size 2) — immaterial, declared.
+
+**D7 (delta corrections).** D4's third clause carries the epistemic
+qualifier: the lift is the only ratio-preserving normalized completion
+CANDIDATE — exhibiting it is d42b4's burden, not this front's result.
+ATTRIBUTION corrected: h12 (D5) is the d42b1-DELTA referee's N1
+witness (my hand-off wrongly said "your h12" to this front's referee —
+streams conflated; recorded). Z's gauge-invariance (class-constancy)
+is the real gradient-side gate; per-cut normalization is the
+recursion's defining identity, declared not gated.
