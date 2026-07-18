@@ -5199,3 +5199,34 @@ RF5 discharged: already elementary). E6 the finer record basis
 exhibited (distinct click orders, same winner, distinct canonical
 DAGs) — fine-vs-coarse EMPIRICAL, deferred to the lift's NSE gates.
 Hostile round next (fresh referee, parallel to d42b1's).
+
+## 2026-07-18 — d42b2 ROUND 1 FROZEN (LEDGER #294): 0B/5M/6m/3n,
+## zero false numbers
+Report: reviews/d42b2-round1-hostile-review.md (frozen; independent
+chain enumerators + the real d42b1 machinery driven directly; 4-seed
+byte-identity; mutation suite). M1 the five-shape/no-triangle census
+was PRINT-ONLY (triangle-adding and n=3-dropping mutations both stay
+7/7 green). M2 K2 had NO EXTERNAL ANCHOR (dropping mis_of maximality
+stays green — self-consistency only; paper 25 §10.3's 1/2-1/2
+ungated) + pin drift: pinned E4 promised "triangle", silently
+dropped. M3 E3(iii)'s resequence gate was a cannot-fail toy — and
+the ONE contentful case (concurrent alien click = §10.2 cross-
+component gauge lifted to chains) CRASHES it (ZeroDivision); the
+law-level claim itself referee-CONFIRMED with real machinery (12
+extensions, pushforward 1/8 == composite). M4 the sector layer was
+literals end-to-end (E5 literal x literal — "RF5 discharged" touched
+no d42b1 object; E7(b) a tautology); the VALUES all verified against
+the real admissible(), including the referee's D=2 point: arb AND
+merge price 1/16 = (1/4)/2 x 1/2. M5 PIN-LEVEL: click-chain carriers
+unpinned and the pinned "clicks ride the initiator's wire" sentence
+CONTRADICTS d42a A4 at click 1 (the component first exists at the
+join) — the multi-event reading with a JOIN-TYPED chain-opening
+click pre-verified by the referee's fixture. Minors: five = labeled
+patterns (3 iso classes); K2 non-uniformity witness-free in the
+tested domain (lives on the abstract triangle: conditionals 1/3,
+2/3); K2 decision-order-relativity to declare; E6 hand-rolled canon;
+E2/E7 shared-map blindness; {0,1,2} control realizes the triangle
+(scope = the binary rule). SURVIVES: all K1 exactness (5 shapes + 3
+controls), K2 well-definedness every order, census TRUE (independent
++ all-19-poset widened sweep), finer basis real under the actual
+canon, #152 reading defensible, plumbing sound. Repairs next.
