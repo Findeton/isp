@@ -127,3 +127,51 @@ refinement into elementary clicks is d42b's. RF4 the root-free
 completion attempt and any action-level (flat-square, paper 28/29
 levels) check are campaign fronts, NOT this receipt's. RF5 depth caps
 are declared in the receipt banner; any cap is printed, never silent.
+
+## 6. Pre-receipt amendments (forward corrections, 2026-07-15 — found at
+## first executable contact, BEFORE the receipt ran; §§1–5 text retained)
+
+**A1 (carriers).** A proposal's carrier set is {a} ALONE — the proposal
+is a local record event on the proposer's wire referencing a HELD COPY
+of b. Version wires are touched only by arb events. Rationale: with b
+as a shared carrier, wire closure would chain same-base proposals into
+comparability and conflict would be grammatically impossible. Holdings:
+a holds v0 (genesis) plus v'(r) for every arb r in a's past with a in
+proposers(C_r); versions propagate ONLY through participation — there
+is no delivery event in this grammar (declared; delivery is a d42b
+front).
+
+**A2 (fork honesty; supersedes §2's "fork-free by construction" —
+that claim was FALSE as stated).** Admission is past-relative, so
+INCOMPARABLE arbs on one base are grammatical: optimistic replication
+forks, exactly as in distributed version control. What IS enforced and
+gated: NO observer past contains two arbs on the same base
+(per-observer-past fork-freeness, exact sweep). Incomparable forks are
+CENSUSED as a declared phenomenon; reconciliation/merge is a d42b
+front. Version identity carries (base, value, authors, initiator) so
+incomparable forks are distinct records (initiator disambiguates:
+same-initiator double-arb is blocked past-relatively).
+
+**A3 (proposal re-admission).** The prior-proposal blocker applies to
+UNRESOLVED priors only: a prior ('p', a, b, .) in past(e) blocks iff it
+is not resolved (member of an arb'd component) in past(e). This makes
+the G4 causal branch REACHABLE: after the arb, a same-actor re-proposal
+on the superseded base has staleness as its SOLE blocker (the causal
+certificate rejects; the authentication-only check admits). Supersession
+still blocks re-proposal on the old base, so no proposal spam reopens.
+
+**A4 (G7 restated; the joint-event placement problem surfaces here and
+is INHERITED, not solved — consistent with §1).** Budget-split
+denominators: the propose split uses the INITIATOR'S view; the arb
+split uses past(e) (the join's own past — the initiator alone cannot
+see the component; the join is precisely where it first exists as a
+record). Consequently GLOBAL per-step normalization is NOT claimed —
+that is d34b's placement problem, declared open. G7 gates what is
+exactly true: (a) propose-sector normalization in the initiator's view;
+(b) kernel normalization sum_w P_K(w|C) = 1 exactly, both kernels,
+every encountered component; (c) conservation — every weight has the
+pinned total/count form. **G2 sharpened:** the zero-conflict-without-
+incomparability half is DEFINITIONAL (declared, not gated); the gates
+are the hand-derivable depth-2 conflict census (= 4 exactly) and
+positive mu-weight of a conflict history (mu([pA0, pB1]) = 1/64
+exactly under the pinned law).

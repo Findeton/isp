@@ -4962,3 +4962,18 @@ G1-G8 pinned exact (resequence invariance; serialized-control zero
 conflicts; deletion control; causal-vs-auth-only staleness; kernel
 discrimination; join census; budget telescope; record basis per the
 D41 eighth residue). Receipt next, STRICTLY against this pin.
+
+## 2026-07-15 — d42a pin AMENDED pre-receipt (LEDGER #282): four defects
+## at first executable contact
+A1 proposals carry {a} only (shared version wire would chain
+same-base proposals — conflict grammatically impossible; holdings
+propagate through participation; no delivery event, declared d42b).
+A2 "fork-free by construction" was FALSE — incomparable arbs fork;
+enforced+gated = per-observer-past fork-freeness; forks censused,
+version identity gains initiator. A3 prior-proposal blocker frees on
+resolution (makes G4's causal-staleness branch reachable and sole-
+blocker isolated). A4 the joint-event placement problem surfaces in
+the arb denominator — global per-step normalization NOT claimed
+(d34b inherited); G7 restated to the exactly-true trio; G2 sharpened
+(definitional half declared; gates = depth-2 census 4 + mu = 1/64).
+Receipt next against the amended pin.
