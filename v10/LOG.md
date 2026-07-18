@@ -5122,3 +5122,25 @@ support-level face of the d34b placement problem. d42b fronts OPEN:
 delivery events; merge/reconciliation; orphan starvation; the
 elementary-click refinement of the K1 order draw; the quantum lift
 (NSE/D25/D27 + D23 + Hegerfeldt due there).
+
+## 2026-07-18 — d42b CAMPAIGN OPENED (user: all fronts 1-9 + cross-
+## cuts, then paper 30); d42b1 pin committed (LEDGER #290)
+Execution order pinned: d42b1 = fronts 1-3 as ONE grammar extension
+(transport-and-reconciliation); d42b2 = front 4 (elementary K1
+clicks, pipelined); d42b3 = front 5 (placement/measure on the full
+grammar); d42b4 = front 6 (quantum lift); d42b5 = fronts 7-8; d42b6
+= front 9 (continuum shadows); d42b7 = cross-cuts (second grammar +
+dimension probe); then paper 30. d42b1 pins FIVE predictions before
+the receipt: P1 starvation theorem (delivery-free non-participants
+never hold created versions); P2 THE LOAD-BEARING ONE — delivery
+KILLS per-observer fork-freeness (the d42a theorem is an artifact of
+the starved sub-grammar); P3 the merge opportunity is generated
+exactly at two-fork observer pasts; P4 orphans are informational
+(delivered supersession KILLS, delivered successor RESCUES); P5 L1
+and the 1+k/4 ladder survive (deliver/merge sectors initiator-view,
+never blind). Grammar: ('d',s,r,v) carriers {s,r} (delivery = a join
+of knowledge; re-delivery physical); ('m',a,pkey,w) carriers {a,v_m}
+(merge is single-holder local reconciliation, git-exact; pair kernel
+1/2 recorded click); budgets propose 1/4 + arb-and-merge 1/4 +
+deliver 1/4 + idle absorber (genesis idle 1/2, all-open 1/4).
+SIG-FM 8-event fork-merge chain carries the deep gates (RF5).
