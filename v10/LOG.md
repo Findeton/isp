@@ -5184,3 +5184,18 @@ FINER; which basis nature seals = empirical, deferred to the lift
 with per-type NSE gates. Gates E1-E7 pinned (path exactness; all
 censused component shapes; the refined mini-fixture with resequence
 invariance; the factorization identity). Receipt next.
+
+## 2026-07-18 — d42b2 receipt GREEN 7/7 (LEDGER #293); round next
+v10/code/d42b2_click_refinement_exact.py, EXACT, seed-independent
+(0/53), <1 s. E1 the path: 6 chains at exactly 1/6 (clicks 1/3, 1/2,
+1), pushforward == composite == paper 25 §10 (2/3 vs 1/3). E2/E4/E7:
+K1 uniform chains and K2 MIS-count binary chains exact on EVERY
+payload-realizable connected shape (n <= 3: exactly FIVE — the 0/1
+payload rule FORBIDS triangles, an implicit structural census); the
+budget factorization identity holds shape-wide. E3 the refined
+mini-fixture reproduces the d42b1 composite arb q (1/8 per winner)
+with alien-interleave invariance. E5 the merge click binding (d42b1
+RF5 discharged: already elementary). E6 the finer record basis
+exhibited (distinct click orders, same winner, distinct canonical
+DAGs) — fine-vs-coarse EMPIRICAL, deferred to the lift's NSE gates.
+Hostile round next (fresh referee, parallel to d42b1's).

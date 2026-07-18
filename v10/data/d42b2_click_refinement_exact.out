@@ -1,0 +1,16 @@
+[d42b2 — elementary-click refinement: exact receipt]
+  banner: EXACT Fractions; shapes swept over ALL connected
+  0/1-payload-realizable conflict graphs on <= 3 proposals;
+  the mini-fixture reuses the d42b1 sector arithmetic by hand-
+  anchored values (self-contained, RF3).
+  realizable connected shapes (n <= 3): 5
+  [PASS] E1 the path P-Q-R: 6 chains at exactly 1/6 (clicks 1/3, 1/2, 1); pushforward == composite == paper 25 §10 (2/3 vs 1/3)  (pushforward = [(['P', 'R'], '2/3'), (['Q'], '1/3')])
+  [PASS] E2 K1 refinement exact on EVERY realizable connected shape (n <= 3, all payload-realizable edge patterns)  (shapes = 5; realizability itself gated by construction (edge iff payloads differ))
+  [PASS] E4 K2 refinement: binary membership chains with exact MIS-count conditionals land on each MIS at exactly 1/#MIS (recorded, non-uniform — DECLARED per pin RF2)  (shapes = 5; conditionals in (0,1] exact)
+  [PASS] E3 the refined mini-fixture: sector share x chain == the d42b1 composite arb q exactly (1/8 per winner); click weights invariant under alien-event interleaving (4 gauge positions)  (refined totals = 1/8, 1/8; extensions = 4)
+  [PASS] E5 the merge click: value-conflict pair click is ALREADY elementary (uniform binary, 1/2; d42b1-anchored q = 1/8); equal-value merge deterministic (q = sector share)  (binds d42b1 RF5)
+  [PASS] E6 the refined record basis is FINER: distinct click orders are distinct records even when the pushforward winner set is identical — the composite coarsens; fine-vs-coarse is EMPIRICAL, deferred to d42b4 with per-type NSE gates (pin RF1)  (orders (P,Q,R) vs (P,R,Q): same winner {P,R}, distinct click records)
+  [PASS] E7 #152-form conservation: every click weight = 1/(remaining count) exactly; chain product = 1/|C|!; the budget factorization (sector share x chain) == (sector share x composite) identically on every shape  (shapes = 5)
+
+[SUMMARY] 7 PASS / 0 FAIL
+[VERDICT] d42b2 GREEN: the kernel draws refine exactly into elementary recorded clicks (K1 uniform chains; K2 recorded non-uniform chains, declared); the merge click was already elementary; the refinement preserves every composite weight inside the sector share and exposes a finer record basis — which basis nature seals is empirical (d42b4).
