@@ -5253,3 +5253,25 @@ fixed to ckey-derived edges); THE SECTOR LAYER against the real
 admissible() at D=1 (merge 1/8) AND the referee's D=2 point (arb AND
 merge exactly 1/16 = (1/4)/2 x 1/2). Delta to the round referee
 next.
+
+## 2026-07-18 — d42b3 pin committed (LEDGER #296): placement = two
+## no-gos + two laws + THE DISCRETE TS-CONDITION (front 5 ≡ front 9)
+The campaign's conceptual centerpiece, pinned: a placement completion
+= a cut-attached normalizer Z making the normalized transfer
+FOLIATION-CHANGE INVARIANT; the naive N = Σq fails it (T2: the A7
+witness pair — one canonical DAG, mu 1/256 both, cut products 1/2048
+vs 1/2560, N jumping 2 → 5/2 — d34a-H5's lottery conviction
+reproduced on the GENERATED opportunity structure); T1 actor-local
+counter-terms are impossible (identical own-view, different sums —
+the excess lives in join-view data the actor cannot see); T3 global
+Z-existence = whether the ladder excess is a COBOUNDARY (cocycle on
+the cut complex) = THE DISCRETE TOMONAGA-SCHWINGER INTEGRABILITY
+CONDITION, identified as the object whose continuum shadow is v6
+paper 1's gravity-sector residue. Positive laws: L1 ratio locality
+(mu-ratios stable under common extensions with shared past-views —
+paper 28's ratios-only structure as the weight system's invariant
+content); L2 the obstruction density is component-additive and
+quarter-quantized (each blind group exactly 1/4). Pre-registered:
+if the TS-condition fails globally, classical placement is
+UNSOLVABLE and the lift is the only completion — itself a theorem-
+class outcome. Receipt next.
