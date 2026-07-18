@@ -677,10 +677,10 @@ for (ctx, e, acts_t), want, why in battery:
     good = ok and q == want
     ok7 &= good
     det7.append(('ok' if good else f'MISMATCH(got {q})') + ':' + why)
-check("G7 the extended battery: 10 hand-derived q values across every "
+check("G7 the extended battery: 11 hand-derived q values across every "
       "sector branch (genesis idle 1/2 and the merge/delivery lines "
       "are NEW physics of this pin)",
-      ok7, "battery 10/10 exact" if ok7 else
+      ok7, "battery 11/11 exact" if ok7 else
       "; ".join(x for x in det7 if x.startswith('MISMATCH')))
 
 # ---- G9: the ladder on the extended grammar --------------------------------
@@ -719,7 +719,7 @@ for fam, cache, actors_t in ((ARM1, CACHE1, AB), (ARM2, CACHE2, ABC)):
             ok_w6 &= ps in (F(0), F(1, 4)) and ds in (F(0), F(1, 4))
             ok_w6 &= all(gs == F(1, 4) for gs in groups.values())
             ok_w6 &= (tot == 1 + F(max(m - 1, 0), 4)) if m else \
-                (tot in (F(1, 4), F(1, 2), F(3, 4), F(1)))
+                (tot == F(1))
             ok_w6 &= tot == sum(
                 (F(1, 4) if ps else F(0), F(1, 4) if ds else F(0),
                  sum(groups.values()),
@@ -747,6 +747,22 @@ h11 = SIG_FM[:6] + [('p', 'B', v1, 0), ('p', 'A', v1, 1),
 ok_h11 = all(admissible(h11[:j], h11[j], ABC)[0] for j in range(len(h11)))
 sums11 = [sum(q for e, q in candidates_for(h11, ABC) if e[1] == a)
           for a in ABC]
+h12 = h11 + [('p', 'C', vC, 0)]
+ok_h12 = all(admissible(h12[:j], h12[j], ABC)[0] for j in range(len(h12)))
+sums12 = [sum(q for e, q in candidates_for(h12, ABC) if e[1] == a)
+          for a in ABC]
+check("N1 EXHIBIT (the delta's residual leak, DECLARED and carried "
+      "to d42b3): h12 = h11 + one admissible proposal — B's sum is "
+      "23/24, OFF-ladder under the current pricing (a dead component "
+      "still inflates the live singleton's view-relative arb "
+      "denominator); the admission-based arb-D fix is UNAVAILABLE "
+      "(it flattens the anchored 5/4 spectra) — the general-depth "
+      "ladder is FALSE under current pricing, a d42b3 completion "
+      "constraint, not an open hope",
+      ok_h12 and sorted(sums12)[0] == F(23, 24)
+      and sums12.count(F(1)) == 2,
+      f"h12 sums = {[str(x) for x in sums12]}")
+
 check("F1 REGRESSION (the round-1 blocker healed): the relay+blind-"
       "seal witnesses h5 and h11 — every event admissible; under the "
       "C1 admission-based pricing EVERY per-actor sum is exactly 1 "
@@ -867,16 +883,14 @@ check("G3/G4 PORTS discharged: pair-arb iff-sweep (ARM-1T), the "
 
 # orphan + P2 + P4 family censuses
 def orphan_census(fam):
-    n_orph = n_anom = 0
+    n_orph = 0
     for h in fam:
         pred = event_poset(h)
         view = View(h, pred, set(range(len(h))))
         for i, op in view.live.items():
             if op[2] not in view.superseded: continue
-            sub = View(h, pred, pred[i])
-            blind = op[2] not in sub.superseded
-            if blind: n_orph += 1
-    return n_orph, n_anom
+            n_orph += 1
+    return n_orph, 0
 orA, _ = orphan_census(ARM1)
 orB, _ = orphan_census(ARM2)
 two_arb = 0

@@ -5418,3 +5418,26 @@ pre-verified). R8 note, d42a-owned forward-correction: the d42a
 delta's "32,884 actor-points" vs the anchored spectra sum 32,709 —
 delta = 175, a count-domain wording slip in that ledger entry; the
 spectra themselves were and remain the anchored values.
+
+## 2026-07-18 — d42b1 TERMINAL: delta DELTA-CLEAN (LEDGER #303)
+0 findings / 5 notes. Referee upgrades: in-family invariance of the
+C1 pricing verified in FULL (old-vs-new candidate sets identical at
+all 7,393 histories); the fossil-carrier mutant now FAILS (RF2 gates
+the carrier, 19/1); the 60 serialized histories independently
+reproduced (all contain a delivery; 0 without — mechanism
+confirmed); orphans 464/72 exact; mutants fire with more teeth (M2
+16/4, M3 13/7). Notes applied + rerun GREEN 21/21 seed-independent:
+N2 battery label 11; N3 W6 m=0 arm tightened to ==1; N5 dead filter
+removed; N4 recorded — pin C2 names the 9-event/vC0 fixture, the
+receipt runs the equivalent 10-event/vD0 chain (referee-verified
+identical up to renaming). N1 THE RESIDUAL LEAK, now the receipt's
+own exhibit gate: h12 = h11 + one proposal → B = 23/24 OFF-ladder (a
+dead component inflates the live singleton's view-relative arb D);
+the admission-based arb-D fix is UNAVAILABLE (flattens the anchored
+5/4 spectra) — the general-depth ladder is FALSE under current
+pricing; h12 CARRIED TO d42b3 as a completion constraint (the
+gradient completion must also price dead-component inflation).
+d42b1 CLOSES: fronts 1-3 terminal — delivery/merge/rescue generated
+and priced; fork-freeness = starvation artifact; reconciliation
+requires transport; transport serialization; orphans informational.
+d42b4 (the quantum lift) OPENS on the settled transport grammar.

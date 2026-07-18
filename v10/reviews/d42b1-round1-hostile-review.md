@@ -456,3 +456,192 @@ the ported-gate list (F3).
   (holdings leak → P1 800 violations + P3/G5, exit 1), `mutant3.py`
   (supersession blockers dropped → P2 violations 4 + P4 + G7, exit 1),
   `mutant_regs.py` (F6/X4).
+
+---
+
+# DELTA VERIFICATION (2026-07-18, against HEAD 89f53a7: pin C1-C2 at
+# 4d25245, repaired receipt GREEN 20/20 at #300; round-1 body above
+# untouched)
+
+**VERDICT: DELTA-CLEAN — 0 findings (5 notes, no conviction).** All five
+commissioned points verified; every number I was asked to anchor
+reproduces in fully independent recomputation; the round-1 witnesses are
+healed; the round-1 fossil-carrier mutant that passed 14/14 is now
+convicted by the RF2 gate. Reruns: PYTHONHASHSEED {0, 7, 42, 31337} all
+byte-identical to the committed .out, exit 0, ~13 s (consistent with LOG
+#300's 0/41). Scripts: scratchpad `delta1.py` (old-vs-new caches + all
+independent rebuilds), `dm1-4.py` (mutants); round-1 `indep_lib.py`
+drives every cross-engine line.
+
+**(1) R1 — CONFIRMED, and upgraded.** `admissible_arb_ckeys()` implements
+the three C1 clauses verbatim (availability bit and merge denominator =
+the admission relation, probed; arb events unchanged; no recursion — the
+arb branch never calls the probe; the full-live generation inside the
+probe is complete by the A8 carrier argument verified in round 1). The
+h5/h11 regression gates use my chains event-for-event; under the new
+pricing every per-actor sum is exactly 1 (my recomputation agrees), with
+the healing mechanism decomposed and confirmed: h5's A-idle is now 3/4
+(the dead sector no longer docked), h11's B-merge clicks are 1/8 each
+(D_m = 0 admissible ckeys + 1 pair). In-family invariance VERIFIED IN
+FULL, not sampled: the old (1624c4c) and new receipts' candidate
+(event, weight) sets are identical at ALL 7,393 histories — my round-1
+0/500 standard upgraded to 0/7,393 — so families (3,969/3,424), spectra
+({1: 7,514, 5/4: 424} / {1: 9,588, 5/4: 576, 3/2: 72, 7/4: 36}), and
+every census are unchanged by construction, and the W6 mechanical
+decomposition gate (18,210 points, 0 violations) is now IN the receipt.
+C1's joint-record-dependence declaration is accurate and placed on the
+A4 precedent as prescribed; the P5/G9 re-scope ("in-family at caps +
+witnesses healed; general-depth OPEN → d42b3") is exactly right — and,
+per note N1 below, NECESSARY: the general-depth ladder is not merely
+unproven under the C1 pricing, it is false, and the re-scope is what
+keeps the receipt honest.
+
+**(2) R2 — CONFIRMED.** The battery now contains the all-open idle
+branch (`('n','B')` at SIG-FM[:6] = 1/4; my engine agrees) and the
+separate R2b gate carries the equal-values merge on the EQ6 chain
+(payload-0 forks by A and C, both delivered to B): single 'both' option
+at exactly 1/4 — my engine agrees on the whole chain and the value.
+(Label slip: note N2.)
+
+**(3) R3 — CONFIRMED on every item.**
+- *Chained reconciliation:* the receipt's 10-event ABCD chain (third
+  fork by D, delivered AFTER B's merge) is admissible end-to-end in my
+  engine; post-merge `merge_pairs(B)` is exactly {(vD0, v_m)}; 'both'
+  1/4, conflicted 1/8 — equivalent to my round-1 9-event W4 chain up to
+  renaming (both now verified). Pin-text slip: note N4.
+- *RF2 double-merge:* both merges of one pk admissible at H7, the second
+  still admissible blind after the first, incomparable, canon-distinct —
+  my engine agrees line by line. THE CARRIER IS NOW GATED: my rebuilt
+  fossil mutant (`dm4.py`, merge carrier `('v','m',pk)` without
+  initiator) fails RF2 — 19/1, exit 1 — where the round-1 receipt stayed
+  14/14 GREEN. The F6 hazard is closed.
+- *Pair-arb iff + TRANSPORT SERIALIZATION:* independent rebuild over my
+  own family: iff violations 0, serialized histories exactly **60**,
+  minimal exhibit `[('n','B'), pB1, ('d','B','A',v0), pA0]` — and all 60
+  contain a delivery (0 without: a 2-actor join predating both proposals
+  is necessarily a delivery), confirming the mechanism. The discovery's
+  framing is CORRECT and graded valuable: the naive d42a predicate
+  implicitly assumed both-present ⟹ incomparable, which is a THEOREM of
+  the delivery-free grammar and false under transport; the corrected
+  predicate is the pin's own conflict definition (incomparability
+  required), i.e. a faithful port, not a weakening. "The d42a serialized
+  control is now grammatical" is accurate — serialization has moved from
+  an external sub-family selection to an event-generated phenomenon, and
+  "conflict genesis requires concurrency to SURVIVE transport" (LOG
+  #300) is the right slogan.
+- *Rescue family sweep:* discharged as the necessary-direction census
+  (every created-version proposal preceded by holding in the proposer's
+  past — 0 violations); sufficiency remains carried by generator
+  completeness (round-1 omission sweep) + the SIG-KR exact iff exhibit.
+  Acceptable division of labor.
+- *Staleness/auth-only port:* causal rejects the A3-freed re-proposal on
+  the dead base (supersession isolated as sole blocker — prior resolved,
+  base superseded), my independent issuance-only reimplementation
+  admits it. Two-sided, as in d42a.
+- *Orphan censuses:* independently reproduced EXACTLY — ARM-1T **464**,
+  ARM-2T **72** (sum 536 = the P4 sweep's domain). The receipt's `blind`
+  filter inside `orphan_census` is dead in-family (0 issuance-superseded
+  instances — admission forbids them; verified), see note N5.
+- *P2 census:* in-family two-arb pasts = 0 printed with the depth note —
+  matches my round-1 unprinted census.
+- *P4 blind-iff-arbitrable:* independent rebuild, 536 points, 0
+  anomalies — the corrected predicate (blindness in the CURRENT own
+  view, not the issuance past) is the right one; the coordinator's
+  report that the first predicate produced 72 anomalies is consistent
+  with my D8 scope probe: currency matters exactly when later joins
+  deliver the supersession. Out-of-family counterpoint documented: at
+  h5, A is blind-now yet CANNOT self-seal (the visible pair blocks the
+  singleton) — so blind-iff-arbitrable is a capped-family law; the
+  printed FAMILY-CENSUS scoping is consistent, keep it scoped if ever
+  promoted.
+
+**(4) R4/R5/G6/G8 — CONFIRMED.** P3's loop now runs k ≤ 8 (the k = 8
+endpoint = 0, as I pre-verified). Exactly one `regs_of` remains (the
+fossil deleted). G6 is anchored to my 384/8,250 with the printer-gate
+declaration; G8 carries the truism declaration per the d42a-F6
+precedent. The G7/G9/verdict wording matches the C1 re-scope.
+
+**(5) Sensitivity mutants — ALL STILL FIRE, with more teeth.**
+M1 (wrong expectation) → G2 only, 19/1, exit 1. M2 (holdings leak) →
+P1 + P3 + G5 + **G6** (the anchored census now also catches the family
+distortion), 16/4, exit 1. M3 (supersession blockers dropped) → **7
+gates** (P2, P4, G7, G9/W6, the G3/G4 ports, the family censuses, G6),
+13/7, exit 1 — round 1 fired 3. M4 (fossil carrier) → RF2, 19/1,
+exit 1 (round 1: GREEN). The repair enlarged the tripwire surface.
+
+## Notes (no conviction)
+
+- **N1 (the residual arb-denominator leak — hand to d42b3 as a pinned
+  constraint).** The C1 pricing heals h5/h11 and everything in-family,
+  but clause (iii) ("arb events unchanged") leaves the ARB event's own
+  denominator view-relative, and the two conventions still collide one
+  layer deeper: h12 = h11 + [('p','B',vC,0)] — every event admissible
+  under the NEW receipt — gives B's sum **23/24** (off-ladder;
+  `on_ladder` False). Decomposition (receipt's own numbers, my
+  arithmetic confirmed): B's live singleton {tBvC} prices at
+  D_arb = 2 own-view components (one DEAD: the join-killed v1 pair) +
+  1 pair = 3 → 1/12, while the merge prices at D_m = 1 admissible ckey
+  + 1 pair = 2 → 1/8; sector 5/24 ≠ 1/4. NO PRINTED SENTENCE IS
+  FALSIFIED — the receipt claims the ladder in-family at caps plus the
+  two named witnesses, and declares the general-depth theorem OPEN;
+  h12 sharpens that declaration to: the general-depth ladder is FALSE
+  under the current pricing, not merely unproven. The obvious next fix
+  (arb D = admissible ckeys too) is NOT available: it flattens the
+  anchored blind 5/4–7/4 spectra (verified in round 1 — the 56-point
+  X1 experiment), so reconciling view-relative arb pricing with
+  admission-based availability is a genuine d42b3-class problem. My own
+  round-1 R1(iii) is implicated in the leak's survival — R1 was
+  prescribed (and pre-verified) exactly as far as the named witnesses
+  and the family, with the general theorem left open; h12 is why that
+  caution was load-bearing. Recommend: record h12 in the d42b3 pin as
+  a third witness/constraint.
+- **N2 (battery label).** The battery now has ELEVEN entries; the G7
+  label still says "10 hand-derived q values" and the .out detail
+  "battery 10/10 exact". One-word fix at the terminal commit.
+- **N3 (W6 gate's m = 0 arm).** The in-receipt W6 clause allows
+  `tot in {1/4, 1/2, 3/4, 1}` when an actor has no arb/merge
+  candidates. In-family the arm is dead (round-1 W6: every m = 0 point
+  has tot = 1 exactly), but as written it would PASS an h5-class
+  in-family regression (sum 3/4 with an empty sector) if caps ever
+  rise. Tighten to `tot == 1`.
+- **N4 (C2 wording).** Pin C2 describes "the 9-event third-fork chain
+  ... {(vC0, v_m)}" (my round-1 W4 fixture); the receipt implements the
+  10-event ABCD chain with vD0. Both are verified true (round 1 mine;
+  this delta theirs, cross-engine); the pin's census sentence should
+  name the fixture the receipt actually runs.
+- **N5 (hygiene).** `orphan_census`'s `blind` filter and second return
+  value are dead in-family (verified: 0 issuance-superseded instances —
+  admission forbids the class the filter would exclude); harmless,
+  delete or comment at leisure.
+
+## Disposition
+
+All round-1 findings (1 BLOCKER / 2 MAJOR / 2 minor / 2 nit) are
+repaired or correctly declared; no new findings; five notes, none a
+conviction (N2/N4 are one-line wording fixes recommendable at the
+terminal commit; N3 a gate tightening; N1 a declared-open-problem
+sharpening with a mechanical witness; N5 hygiene). **DELTA-CLEAN.
+d42b1 is fit to go terminal**, with the settled transport grammar
+carrying: admission-based pricing (C1) with its declared joint-record
+face; the healed h5/h11 witnesses as regression gates; the transport-
+serialization phenomenon (60 histories, independently anchored); the
+chained-reconciliation and double-merge censuses (the merge carrier now
+gate-protected); and the h12 constraint handed to d42b3. d42b4 (the
+quantum lift: NSE/D25/D27 + D23 + Hegerfeldt obligations) opens on this
+grammar.
+
+## Delta reproduction inventory
+
+- Reruns: `PYTHONHASHSEED={0,7,42,31337} python3
+  v10/code/d42b1_transport_exact.py` → byte-identical to the committed
+  .out, exit 0, ~13 s.
+- `delta1.py`: D1 old-vs-new full-cache equality (0/7,393); D2 h5/h11
+  healing + decomposition; D3 h12 (23/24, off-ladder, sector split
+  1/12 + 1/8); D4 all-open idle + EQ6 cross-engine; D5 chained CH
+  (ABCD) + RF2 cross-engine; D6 pair-arb iff + the 60 serialized
+  histories (independent, with the delivery-necessity check); D7
+  orphans 464/72 (independent) + dead-filter proof; D8 P4 sweep (536
+  points, 0 anomalies) + the h5 scope counterpoint; D9 staleness/
+  auth-only with an independent issuance-only implementation.
+- Mutants: `dm1.py` 19/1; `dm2.py` 16/4; `dm3.py` 13/7; `dm4.py`
+  (fossil carrier) 19/1 via RF2 — all exit 1.
