@@ -120,6 +120,7 @@ check("R2 THE FUNCTIONAL-LEVEL D26 GATE [the honest two-halves-touch]: the "
       "residue, now declared)", ok2,
       f"worst deviation = {float(worst):.2e}; suppressed/unchanged nonzero "
       f"pairs = {npairs_s}/{npairs_u}")
+ok2 = ok2 and npairs_s > 0                 # N1: vacuous-census guard
 
 # R3: A REAL NSE GATE (round-1 blocker: the old cross gate was identically
 # zero for any inputs). Distinguishability-isometry COMPUTED on a probed
@@ -144,7 +145,8 @@ for i in range(5):
         ok3 &= fabs(d0 - d1) < TOL
 # negative control: a genuinely non-isometric (lossy-then-renormalized)
 # channel must FAIL the gate on a NON-ORTHOGONAL pair (first-run lesson:
-# an orthogonal pair keeps distance 1 under any linear map)
+# an orthogonal pair keeps distance 1 under any orthogonality-preserving
+# map, this diagonal contraction included)
 M = matrix(3, 3); M[0, 0] = mpc(1); M[1, 1] = mpf(1) / 2; M[2, 2] = mpc(1)
 def normed(v):
     nrm = sqrt(sum(fabs(v[i, 0]) ** 2 for i in range(v.rows)))
@@ -172,9 +174,10 @@ check("R3 A REAL NSE GATE (round-1 blocker repaired): distinguishability-"
 # the defect series against click-native relabeled abscissae and verify
 # the refit itself reproduces the s-scaling and the invariant ratio.
 def defect_samples(dl, dr):
-    ref = bench.tri_diagonal([dl, 0.0, dr], [(0, 1), (1, 2)], 1.0)
-    L = bench.tri_diagonal([dl, 0.0, dr], [(0, 1)], 1.0)
-    R = bench.tri_diagonal([dl, 0.0, dr], [(1, 2)], 1.0)
+    hop = rec("hopping", 1.0)
+    ref = bench.tri_diagonal([dl, 0.0, dr], [(0, 1), (1, 2)], hop)
+    L = bench.tri_diagonal([dl, 0.0, dr], [(0, 1)], hop)
+    R = bench.tri_diagonal([dl, 0.0, dr], [(1, 2)], hop)
     deltas = [rec("fit_d1", 0.010), rec("fit_d2", 0.012),
               rec("fit_d3", 0.014), rec("fit_d4", 0.016)]
     vals = []
@@ -185,7 +188,8 @@ def defect_samples(dl, dr):
     return deltas, vals
 s = rec("s_bridge_test", 3.0)
 pts = {}
-for tag, dl, dr in (("a", 0.6, 2.2), ("b", rec("dl_b", 0.3), rec("dr_b", 1.1))):
+for tag, dl, dr in (("a", rec("dl_a", 0.6), rec("dr_a", 2.2)),
+                    ("b", rec("dl_b", 0.3), rec("dr_b", 1.1))):
     deltas, vals = defect_samples(dl, dr)
     c4, c6, _, _ = bench.fit_even_power_series(deltas, vals, [4, 6, 8, 10])
     taus = [d / s for d in deltas]           # click-native relabeling

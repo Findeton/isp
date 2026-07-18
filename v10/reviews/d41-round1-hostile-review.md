@@ -429,7 +429,7 @@ MAJOR-3) are scope inflations, not numerical falsities.
    D41 LEDGER entries #274-#277 (m4); print before/after coherence (m5);
    sweep the nits.
 
-## 13. The commissioned question
+## 13. The commissioned question (round 1)
 
 **Does B4's in-benchmark D26 claim survive at its printed width?  No.**
 "The birth-decoherence bridge derived in-benchmark, not imported" is, as
@@ -446,3 +446,157 @@ in-benchmark statement whose benchmark content is the *record-basis
 selection*, never the number.  That, not the current headline, is the
 honest shape of the program's first contact between its two halves — and
 it is one inserted isometry away from being receipt-true.
+
+---
+
+## 14. Delta verification of the d41d repair receipt — DELTA-CLEAN
+
+**Delta target:** commit `183e78e9e63e18fde041146e6e361313c6e368f1` (HEAD).
+**Repair source:** `v10/code/d41d_benchmark_record_closure_repair.py`, SHA-256
+`ab1aa8d70c1b7961a403a7eec4030afe5533d85e17c5f2e31952099c0e7ca8e4`.
+**Repair stdout:** `v10/data/d41d_benchmark_record_closure_repair.out`, SHA-256
+`0f8eefe89799835a02391a3b6c249c2525cd4852775a63f4c5f26ce1a2c8fabc`.
+**Date:** 2026-07-18.
+**Delta verdict:** `0 BLOCKERS / 0 MAJOR / 0 MINOR / 3 NIT` + 2 carried
+obligations.  **DELTA-CLEAN.**  All three blockers and all five majors are
+repaired, in every case by the strengthening this review pre-verified.  The
+round-one report above is retained unmodified as history (this section is
+append-only).  Reproduction: exit 0, byte-identical to the committed stdout
+under `PYTHONHASHSEED=7` and `101`; the receipt is RNG-free, so
+seed-independence is structural.  The original `d41_...exact.py/.out` and
+this report were untouched by the repair commit (verified by diff).
+
+### 14.1 R2 — the functional-level D26 gate: verified; deviation reconciled
+
+The construction is the one this review pre-verified in §2 (click between
+the functional's own U-steps; all 729 pairs; suppression by exactly 4/5 on
+exactly the site-1-membership-distinguishing pairs).  The printed pair
+census 12/15 is correct both combinatorially (h0 = 1 forced by psi; final
+slots must match; 4 of 9 ordered middle pairs distinguish, times 3 finals =
+12 suppressed; 15 = 27 − 12 nonzero unchanged) and numerically.
+
+**Deviation reconciliation (1.05e-81 vs the round's < 1.4e-82): VARIANT,
+not a finding.**  With the receipt's own Taylor U (couplings embedded from
+binary floats 0.6/2.2), *both* the receipt's kron pipeline and this
+review's per-ancilla-block pipeline give worst deviation `1.0542e-81` —
+identical, and matching the printed 1.05e-81.  The round-one 1.3178e-82
+came from this review's independent U built by *eigendecomposition* over
+decimal-rational couplings — a different dps-80 rounding path, not a
+different mathematics.  Both figures are rounding-floor artifacts sitting
+more than 20 orders below the 1e-60 gate.  The honest-width sentence is
+inline and faithful to §2's prescription verbatim (the 4/5 VALUE is D24's
+algebra; the benchmark contributes WHICH pairs — the record basis, the
+eighth residue).
+
+### 14.2 R3 — a real NSE gate: verified; the negative-control fix graded correct
+
+All 10 = C(5,2) pairwise distances on the probed family are preserved with
+worst deviation `0.0` at dps 80.  The negative control is genuine: analytic
+violation `|sqrt(1/2) − sqrt(1/5)| = 0.25989319` matches the printed
+0.2599, and the gate threshold 1/100 can fail.  The first-run lesson is
+empirically confirmed: I reran the *orthogonal* basis pair under the same
+diagonal control — violation exactly `0.0`, so the original control was
+indeed incapable of rejecting, and the fix (a non-orthogonal pair, overlap
+1/sqrt(2)) is both correct and necessary.  Grade: correct fix, honestly
+recorded.  The value/content split is now computed on rho: Z-marginals
+preserved exactly (worst err 0.0), X-coherence exactly `0.4 = CTH/2`.  The
+round-one vacuous cross gate is gone entirely.  Pin item 4(c) is
+discharged.
+
+### 14.3 R4 — the click-count clock and refit gate: now a computation
+
+Yes — a computation, no longer an identity.  The refit against click-native
+abscissae is an independent Vandermonde solve whose s-scaling *emerges*
+numerically; recomputed margins: c4 relative deviation `3.3e-15` / `1.9e-15`
+(gate 1e-8), c6 `3.8e-11` / `1.8e-11` (gate 1e-6), ratio agreement
+`1.7e-11` (gate 2e-9), `|native − 16/19| = 2.1e-10` (gate 5e-7) — every
+gate can fail and sits 3-4 orders above the achieved error.  The Fraction
+derivation of the exact ratio re-verified: `(26/15)/(247/120) = 208/247 =
+16/19`.  The exact-rational anchor also substantially discharges round-one
+m2 (the float pipeline is now checked against an exact prediction).  The
+clock is a *declared* dictionary (one click per layer; bridge supplied) and
+item 6 is scored IRREDUCIBLE accordingly — consistent with the pin's fork;
+no generation claim is made.
+
+### 14.4 R6 — the census: it can fail (demonstrated), value-complete, one coverage nit
+
+Failability demonstrated by mutation: (A) removing the `rec()` wrapper on
+"g" -> R6 `[FAIL]`, exit 1; (B) introducing an undeclared key -> R6
+`[FAIL]`, exit 1.  The 13 declared keys are value-complete for every model
+parameter in the file.  Coverage nit (N3 below): four use sites carry
+unwrapped literals that coincide with censused values — point-a's
+`(0.6, 2.2)` at the R4 loop and `defect_samples`' hard-coded hopping
+`1.0`/middle `0.0`.  Demonstrated: mutating the unwrapped `0.6 -> 0.7`
+*evades* R6 (still passes) but is caught by R4's exact-16/19 gate (exit 1)
+— defense-in-depth holds for every such site (hopping drift likewise
+breaks the exact ratio), so the exposure is theoretical.  Precision knobs
+(dps, Taylor order, TOL) and probe/control artifacts are legitimately
+outside the census's declared scope (cutoff-class data).
+
+### 14.5 R5, R1 — verified
+
+R5: the 4-site string equals the 7-event ladder exactly (`0.00e+00` at dps
+80); independently re-confirmed by bit-exact parity algebra; cost
+`2(n−1)+1` now instantiated at two sizes, as owed.  R1: gated unitarity
+defect `8.43e-81` equals this review's round-one measurement (8.4338e-81)
+exactly; gate < 1e-75 can fail; consistent with the truncation bound
+1.6e-88 at `rho(H)*delta_D = 0.798`.
+
+### 14.6 R7 — the corrected scorecard satisfies the verdict-alphabet and scope majors
+
+Yes.  Eight items (paper 29 §9.2's census restored); strict trichotomy with
+qualifications as annotations only; item 4 IRREDUCIBLE per the pin's own
+fork; item 6 IRREDUCIBLE (scale supplied); NET `2 GENERATED / 5 IRREDUCIBLE
+/ 1 COLLAPSED` — exactly the honest count §5/§12 prescribed.  The eighth
+residue is declared with the correct width tie-in (the record basis is what
+the benchmark contributes to D26's suppression map).  The obstruction
+sentence is exactly the prescribed rescope ("zero obstructions FOUND AT
+THESE GATES; no obstruction witnesses were sought — absence is not
+proven").  The inflating "closer to record-closed" headline is gone.  R7's
+`check(True)` is an unconditional print, but it is now labeled as a
+scorecard print and the ALL-CHECKS line discloses "R1-R6 substantive, R7
+scorecard" — acceptable.
+
+### 14.7 The #278 numbering forward-correction — adequate
+
+The LOG re-keys by declaration (append-only): the D41-turn entries are
+henceforth #274 (pin), #275 (consolidations), #276 (d41c+D42), #277 (D41
+green), #278 (this report), #279 (d41d), with the map stated in the #278
+entry and repeated in both commit messages.  Adequate; more honest than
+rewriting an append-only log.  Residue accepted as-is: the old block
+headers still literally read #261-#264, stale by design — any future
+citation must use the forward map.
+
+### 14.8 Delta nits and carried obligations
+
+- **N1** — R2's `ok2` does not assert `npairs_s > 0`; an all-zero
+  functional would pass vacuously.  The printed 12/15 evidences
+  non-vacuity and U's unitarity is gated by R1, so the exposure is
+  theoretical.  Add `ok2 &= npairs_s > 0`.
+- **N2** — R3's comment "an orthogonal pair keeps distance 1 under any
+  linear map" is over-broad: true when the pair are singular vectors of
+  the control (as here — verified violation 0.0), false for general M
+  (`<a|M^dag M|b>` need not vanish).  Scope the comment to the diagonal
+  control.
+- **N3** — the four unwrapped census use sites of §14.4; wrap them (or
+  assert-same-value) for closure.
+- **Carried obligation 1** — the d41b Bin-T / second-grammar label (RF3):
+  the sweeping sentence that triggered it is deleted, so per d41b's own
+  protocol the obligation now binds at *paper-30 abstract* time — every
+  fixture-level result here is Bin T until a second grammar instantiates
+  it.
+- **Carried obligation 2** — the superseded original receipt
+  (`d41_benchmark_record_closure_exact.py/.out`) remains in-tree with its
+  round-one headline, as history.  Correct under LOG #278/#279, but paper
+  30 must cite d41d's gates and scorecard, never the original's B4/B6/B3
+  labels.
+
+### 14.9 Delta conclusion
+
+Every blocker repaired by the pre-verified stronger computation; every
+major repaired at the prescribed width; all repairs independently
+recomputed and reconciled; the corrected scorecard is the honest one.
+False numerical results in d41d: **0**.  **DELTA-CLEAN.**  D41 may go
+terminal at the corrected scorecard (2 GENERATED / 5 IRREDUCIBLE / 1
+COLLAPSED over paper 29's eight items, zero obstruction witnesses sought),
+and the paper-30 decision opens, carrying obligations 1 and 2.

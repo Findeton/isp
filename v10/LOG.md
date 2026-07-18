@@ -4917,3 +4917,28 @@ corrected scorecard: 2 GENERATED / 5 IRREDUCIBLE / 1 COLLAPSED with
 the eighth item declared and the obstruction scope stated (zero FOUND,
 none SOUGHT). Seed-independent 0/11. Delta to the round referee next;
 paper-30 decision on its verdict.
+
+## 2026-07-15 — D41 TERMINAL: delta-verification DELTA-CLEAN (LEDGER #280)
+The round-1 referee's delta pass on d41d at 183e78e: 0 BLOCKERS /
+0 MAJOR / 0 MINOR / 3 NIT, false numerical results ZERO; report
+§14 appended (round-1 body untouched). Highlights: the 1.05e-81 vs
+1.4e-82 R2 deviation reconciled as VARIANT (identical 1.0542e-81 on
+both pipelines with the receipt's Taylor U; the round figure came from
+an eigendecomposition U — different dps-80 rounding path, both 20+
+orders under gate); R3's first-run orthogonal-pair trap confirmed
+empirically by the referee; R4 certified A COMPUTATION (independent
+Vandermonde refit, every gate demonstrated fallible); R6 demonstrated
+fallible by mutation, with R4's exact-16/19 gate catching the census's
+four unwrapped drift sites. All three nits APPLIED and rerun GREEN 7/7
+seed-independent (7/101): N1 vacuous-census guard on R2; N2 the
+orthogonality-preserving scope on the R3 comment; N3 the refit-loop
+literals census-wrapped under their declared keys. D41 CLOSES at the
+corrected scorecard: 2 GENERATED (measure/contour, grammar) /
+5 IRREDUCIBLE (boundary state, record instrument, record basis, clock,
+opportunity structure) / 1 COLLAPSED (renormalization); obstruction
+scope: zero found, none sought. CARRIED OBLIGATIONS (bind at paper-30
+abstract time): (1) every fixture result is Bin T until a second
+grammar (d41b protocol); (2) cite d41d's gates and scorecard only —
+never the superseded B4/B6/B3 labels. The paper-30 decision OPENS;
+D42's entry condition (item-7 verdict: opportunity structure
+IRREDUCIBLE) is now MET.
