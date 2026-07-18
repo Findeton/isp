@@ -5311,3 +5311,32 @@ grammar; sector factorization grammar-computed at D=1 and D=2; the
 finer record basis real; the census gated with binary-rule scope.
 Carried: mid-chain drift (full refinement), fine-vs-coarse basis +
 forced-click ontology (d42b4), #152-form gloss (next pin touch).
+
+## 2026-07-18 — d42b1 ROUND 1 FROZEN (LEDGER #299): 1B/2M/2m/2n
+Report: reviews/d42b1-round1-hostile-review.md (458 lines; clean-room
+rebuild anchors EVERY printed number; 9,168-probe hostile omission
+sweep 0/0/0 — the generator layer is clean; three sensitivity
+mutants all fire). F1 BLOCKER: the PRICING layer is not the
+admission relation — the idle's has_am bit and the merge denominator
+count OWN-VIEW components unfiltered by admission (the d42a
+conviction class, relocated from the generator to the pricing layer)
+— and the ladder dies OFF-CAP downward: h5 (depth 5: relayed
+knowledge + blind seal — the sector opens with ZERO admissible
+events; A's sum 3/4, the 1/4 destroyed not absorbed) and h11 (depth
+11: live merge at D_own=2 against a join-dead arb half; B's sum 7/8,
+off the quarter grid). THE PHYSICS: P2's own starvation/relay
+structure breaks P5's pricing — the celebrated phenomenon and the
+refuting witness are the same mechanism. P5/G9/LOG #291 were
+capped-census claims, wider than computation. Referee PRE-VERIFIED
+the admission-based repair: both witnesses re-price to ALL SUMS 1;
+in-family invisible (0/500). F2: the battery omits two pin-listed
+branches (all-open idle 1/4 at SIG-FM[:6]; equal-values merge 1/4 —
+both verified). F3: 8+ pinned censuses/ports undischarged; the merge
+machinery is enumeration-VACUOUS (0 merge events in 7,393 histories
+— reconciliation demand REQUIRES transport, itself a nice corollary)
+and the DEAD twin regs_of (F6) is a wrong carrier law that kills
+RF2's fork species while the receipt stays 14/14 — the carrier is
+protected by zero gates. SURVIVES: all printed numbers; the
+mechanical ladder law at 18,210 in-family points; P1/P2/P3/P4's
+constructed-chain physics; L1 + the all-depths proof; generator
+completeness. Repairs R1-R6 next.
