@@ -1,0 +1,24 @@
+[d42b1 — transport and reconciliation: exact receipt]
+  banner: EXACT Fractions; genesis v0 = declared boundary;
+  caps (RF3/RF5, tuned + printed): ARM-1T (A,B) depth<=4,
+  ARM-2T (A,B,C) depth<=3; deep gates on constructed chains
+  SIG-FM and SIG-KR (admission-exact at every prefix); weight-
+  system level only — placement is d42b3's; ladder per A7/A7'.
+  family sizes [MEASURED, first run — round to anchor]: ARM-1T = 3969; ARM-2T = 3424
+  [PASS] L1 live-triple uniqueness tripwire (the A8 theorem extends: delivery only adds knowledge, blocking is monotone — pin P5)  (violations = 0 over 7393)
+  [PASS] SIG-FM admissible end-to-end (fork via blind self-arbs of a CONFLICTING pair; two deliveries; merge; rescue re-proposal)  (8 events, every admission past-relative)
+  [PASS] P2 fork-freeness is a STARVATION ARTIFACT: the SIG-FM observer (B, post-deliveries) holds TWO same-base arbs in its past; the delivery-free sub-family stays at exact zero  (two-arb observer pasts on SIG-FM = 3; delivery-free violations in-family = 0 — the d42a G4c theorem is the delivery-free special case (pin P1/P2))
+  [PASS] P3 the merge opportunity is GENERATED exactly at the two-fork observer past: absent before the second delivery, present after, gone once merged (prefix-exact iff on SIG-FM)  (options after both deliveries = 2 (the two winner choices of the value-conflicted pair); merge q = [Fraction(1, 8), Fraction(1, 8)])
+  [PASS] P4 orphans are INFORMATIONAL: before the delivery B can seal its orphan (blind self-arb admissible); the ONE delivery both KILLS it (supersession now in B's past) and RESCUES B (the v1 re-proposal enabled exactly at the delivery record)  (kill: True->False; rescue: False->True; rescue q = 1/8)
+  [PASS] P1 the starvation theorem: in every delivery-free history, every created holding belongs to a participant of its creating event (non-participants NEVER acquire created versions)  (violations = 0 (proof: holdings clauses are participation-or-delivery only — pin P1))
+  [PASS] G1 resequence-and-recompute (admission + every factor + canon) over every linear extension of the declared slice + all SIG-FM prefixes  (3638 distinct histories, 7509 resequencings)
+  [PASS] G1b enabled-(event, weight) gauge invariance at every resequenced record point (delta-note-i standard)  (candidate-set points = 7509)
+  [PASS] G2 conflict genesis: depth-2 conflict census hand-derived; mu(seed pair) exact under the EXTENDED budget (props split unchanged by the new sectors)  (depth-2 conflict histories = 4 (expect 4); mu = 1/64 = 1/64)
+  [PASS] G5 kernels on the GENERATED objects: the 3-proposal star (payloads 0,1,1) gives K1 {B,C} 2/3 vs {A} 1/3 exact; the value-conflicted merge pair clicks at exactly 1/4 x 1/2 each winner (B's view: 1 pair, 0 components)  (star K1 = 2/3 / 1/3; merge qs = [Fraction(1, 8), Fraction(1, 8)])
+  [PASS] G7 the extended battery: 10 hand-derived q values across every sector branch (genesis idle 1/2 and the merge/delivery lines are NEW physics of this pin)  (battery 10/10 exact)
+  [PASS] G9 the 1 + k/4 ladder survives the extension (P5): deliver and merge sectors are initiator-view (never blind); blindness remains join-view arbs only  (ARM-1T: 1 at 7514, 5/4 at 424; ARM-2T: 1 at 9588, 5/4 at 576, 3/2 at 72, 7/4 at 36 [MEASURED, first run])
+  [PASS] G6 joins: arbs and deliveries censused (deliveries are the new join species); D23/NSE/D25/D27 + Hegerfeldt = lift obligations  (arb joins = 384, delivery joins = 8250)
+  [PASS] G8 record basis extended: sender/receiver, delivered version, and merge winner distinctions separate canonical DAGs  (3 new separations + d42a's carry)
+
+[SUMMARY] 14 PASS / 0 FAIL
+[VERDICT] d42b1 GREEN: delivery and merge are generated, priced record events; fork-freeness exposed as a starvation artifact (P2), reconciliation demand generated at two-fork pasts (P3), orphan starvation resolved informationally (P4), starvation theorem exact (P1), L1 and the ladder stable (P5).

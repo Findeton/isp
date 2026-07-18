@@ -5144,3 +5144,28 @@ of knowledge; re-delivery physical); ('m',a,pkey,w) carriers {a,v_m}
 1/2 recorded click); budgets propose 1/4 + arb-and-merge 1/4 +
 deliver 1/4 + idle absorber (genesis idle 1/2, all-open 1/4).
 SIG-FM 8-event fork-merge chain carries the deep gates (RF5).
+
+## 2026-07-18 — d42b1 receipt GREEN 14/14 (LEDGER #291); round next
+v10/code/d42b1_transport_exact.py, EXACT Fractions, seed-independent
+(0/41), ~10 s. ALL FIVE PINNED PREDICTIONS CONFIRMED: P1 starvation
+theorem exact (0 violations, delivery-free sweep); P2 THE HEADLINE —
+the SIG-FM observer (B, after two deliveries from incomparable fork
+branches) holds TWO same-base arbs in its past (3 such observer
+pasts on the chain; delivery-free sub-family exact 0) — d42a's
+per-observer fork-freeness IS a starvation artifact, its G4c theorem
+the delivery-free special case; P3 the merge opportunity generated
+EXACTLY at the two-fork past (prefix-exact iff on SIG-FM: absent
+before the second delivery, 2 winner options after, gone once
+merged; q = 1/8 each); P4 orphans informational — ONE delivery both
+kills (blind self-seal True->False) and rescues (v1 re-proposal
+False->True, q = 1/8); P5 L1 tripwire 0/7,393 + the 1+k/4 ladder
+holds (ARM-1T {1: 7,514, 5/4: 424}; ARM-2T {1: 9,588, 5/4: 576,
+3/2: 72, 7/4: 36} — deliver/merge sectors never blind, MEASURED
+first run). Families ARM-1T 3,969 / ARM-2T 3,424 (MEASURED, round
+to anchor); G1/G1b ported at the delta-note-i standard (3,638
+distinct, 7,509 resequencings incl. all SIG-FM prefixes); G2 seed
+pair 4 + 1/64 under the extended budget; G5 the generated star
+(0,1,1) K1 = 2/3 vs 1/3 + the merge click 1/4 x 1/2; G7 battery
+10/10 (genesis idle 1/2, all-open lines, merge/delivery/rescue qs);
+G6 delivery joins 8,250 + arb joins 384; G8 sender/receiver/version/
+merge-winner separations. Hostile round next (fresh referee).
