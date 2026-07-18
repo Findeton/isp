@@ -4820,3 +4820,22 @@ sealing-grammar width; dynamic-adjacency compression; alphabet-stable
 action obstruction; H1 generality), and pins the second-grammar
 protocol — no Bin-U claim enters a paper abstract without a second
 instantiation or the single-grammar label.
+
+## 2026-07-15 — The D26 laboratory discriminator note FILED (d41c) + D42 PINNED-HELD (LEDGER #263)
+d41c executes paper 29's hand-off: the (1−g)^{N/2} law in instrument
+variables (N·κ(g) ≤ δ; κ(9/25) ≈ 0.2231), a four-platform
+representative table [LITERATURE, to verify], the mass/complexity
+scaling axis as the discriminator against ordinary decoherence, the
+confound budget (environmental subtraction; TOKEN neutrality; the
+value/content probe basis; the O-V bridge declaration), the falsifier
+statement (functional form as signature; nulls back-pressure every
+D34-class q_birth), and the five-step proposal-grade path with the
+deep-research verification pass named as step 1. D42 pinned and HELD
+behind D41: the conflict-generating record-closed law with its double
+mandate stated once — paper 28's content bridge AND v6 paper 1's
+gravity reopening condition (the two residues as continuum shadows);
+requirements carried in (fixed-budget randomness, D23 join limit,
+cancellation census, NSE gates, authentication, second-grammar
+protocol, Hegerfeldt). PUBLICATION LEDGER note: walsh-delta is
+registered at ZENODO (user, this date) — the external-contact track's
+first artifact is live; arXiv is not in use for this program.
