@@ -4805,3 +4805,18 @@ D42 dependency); the record instrument (item 4) is THE contested
 center — generation attempted under D24/D25/D27/NSE gates with the
 failing clause printed on the honest fork. Receipt next; hostile
 round on green.
+
+## 2026-07-15 — Consolidations FILED: the nonselection pentad (d41a) + the universality audit (d41b) (LEDGER #262)
+Two citable notes, no new receipts. d41a states the theorem-complex
+once (five instances, four frameworks: v9 Thm 5.1; v10 paper 16;
+paper 25 §10; paper 28 Thms 3-5; paper 29's ladder + supplied-item
+audit) with the moral and its scope guards — selection-by-principle
+failed five independent ways, identification-by-measurement succeeded
+once; the empirical turn is the program's own logic. d41b sorts Arc
+IV into Bin U (argued universal: the width separation, component
+boundary, uniform rooting, the ladder, reception, the refined gauge),
+Bin T (toy-relative: every specific rate and census), Bin X (untested:
+sealing-grammar width; dynamic-adjacency compression; alphabet-stable
+action obstruction; H1 generality), and pins the second-grammar
+protocol — no Bin-U claim enters a paper abstract without a second
+instantiation or the single-grammar label.
