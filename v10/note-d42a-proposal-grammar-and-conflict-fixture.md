@@ -175,3 +175,16 @@ incomparability half is DEFINITIONAL (declared, not gated); the gates
 are the hand-derivable depth-2 conflict census (= 4 exactly) and
 positive mu-weight of a conflict history (mu([pA0, pB1]) = 1/64
 exactly under the pinned law).
+
+**A5 (uncontested acceptance; G3 restated).** A singleton live proposal
+IS a (trivial) component, so its proposer may self-arbitrate — this is
+the grammar's uncontested-acceptance path (without it no version is
+ever created conflict-free), and it makes §4-G3's "no arb before the
+second proposal" FALSE as written. G3 restated: (i) the PAIR-component
+arb option exists iff BOTH proposals are in the record (exact
+iff-sweep); (ii) singleton self-arb is declared grammar (its winner
+draw is deterministic, P_K = 1 under both kernels); (iii) re-proposal
+against v' enabled only in histories containing the arb (unchanged);
+(iv) the deletion control (unchanged). Consequence declared: after
+proposing, a participant's own view holds a singleton component, so its
+idle weight is 1/2, not 3/4.

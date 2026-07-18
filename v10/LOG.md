@@ -4977,3 +4977,11 @@ the arb denominator — global per-step normalization NOT claimed
 (d34b inherited); G7 restated to the exactly-true trio; G2 sharpened
 (definitional half declared; gates = depth-2 census 4 + mu = 1/64).
 Receipt next against the amended pin.
+
+## 2026-07-15 — d42a amendment A5 pre-receipt (LEDGER #283)
+Fifth defect at executable contact: singleton self-arbitration is
+forced grammar (the uncontested-acceptance path), falsifying G3's
+"no arb before the second proposal" as written. G3 restated to the
+pair-component iff-sweep + declared singleton path + unchanged
+re-proposal/deletion controls; idle-weight consequence declared.
+Receipt runs strictly against the pin + A1-A5.
