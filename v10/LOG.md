@@ -4839,3 +4839,32 @@ cancellation census, NSE gates, authentication, second-grammar
 protocol, Hegerfeldt). PUBLICATION LEDGER note: walsh-delta is
 registered at ZENODO (user, this date) — the external-contact track's
 first artifact is live; arXiv is not in use for this program.
+
+## 2026-07-15 — D41 GREEN 7/7: the identified benchmark's record-closure scorecard — ZERO OBSTRUCTED (LEDGER #264)
+`code/d41_benchmark_record_closure_exact.py` (pin 01b22e1; fixture
+conventions IMPORTED from the paper-15 validator — no reconstruction;
+mpmath dps 80 + the validator's own float fit; seed-independent 0/7).
+First-run lesson: B2's interference threshold was mis-calibrated at
+the fit-scale step (0.0008 < 1/1000) — the functional's step is now a
+DECLARED separate choice (0.3; interference 0.6086; mass 1 to 1e-60).
+THE SCORECARD: (1) boundary state IRREDUCIBLE (8/8 sign-block census;
+paper-16 clause); (2) the decoherence functional GENERATED-AS-OBJECT
+(27 class operators; Gram positivity structural; descent CONDITIONAL
+on records — the paper-29 ladder honored in-fixture); (3)
+renormalization COLLAPSED (no such datum exists — the census gate);
+(4) THE RECORD INSTRUMENT SPLIT: content GENERATED (D24 controlled
+rotation at the PINNED g = 9/25; isometry exact; Busch trivial;
+readout sectors orthogonal to 1e-60) — **D26 DERIVED IN-BENCHMARK:
+the click multiplies matter coherence by sqrt(1-g) = 4/5 EXACTLY** —
+schedule SUPPLIED (the failing clause = the opportunity kernel K, the
+same organ D28/paper-19-F12 named); (5) the grammar GENERATED AT
+ARITY 2 (the parity-prefix STRING term = an exact CNOT-ladder
+composite, < 1e-60, cost linear in prefix — the fixture's genuinely
+interacting organ closes in record grammar); (6) the clock: RATIOS
+GENERATED / SCALE SUPPLIED (cross-point c6/c4 ratio invariant to
+1e-12 under rescaling; absolutes scale s^4 — paper-28 Thm 5
+instantiated); (7) opportunity structure IRREDUCIBLE (D42's entry
+condition). NET: 3 generated, 3 irreducible-declared, 1 collapsed,
+0 OBSTRUCTED. Every residue lands on the corpus's three named organs
+(K; the boundary; the clock bridge) — now confirmed AT the identified
+law's smallest fixture. Hostile round launched (findings → #265).

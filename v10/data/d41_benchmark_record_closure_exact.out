@@ -1,0 +1,31 @@
+[d41 record-closure of the identified benchmark — v1 paper 15 fixture]
+  [PASS] B1 BOUNDARY STATE — verdict IRREDUCIBLE at scope: the lambda sign-block census (8/8 blocks define the reduced Hamiltonian exactly); the block CHOICE is supplied per paper 16's boundary clause — no record law here produces it; DECLARED, not smuggled  (8 blocks; verdict IRREDUCIBLE)
+  [PASS] B2 MEASURE — the finite decoherence functional CONSTRUCTED on the strip (27 two-step class operators; Gram form => strong positivity structural): total mass 1 at dps 80; BARE histories carry genuine interference (off-diagonal mass printed) — per the paper-29 ladder, NO click law descends until B4's instrument decoheres the queried algebra; verdict: GENERATED-AS-OBJECT, descent CONDITIONAL  (|sum D - 1| < 1e-60; sum|offdiag| = 0.6086)
+  [PASS] B3 RENORMALIZATION — verdict COLLAPSED AT SCOPE: the complete parameter census of every constructed object contains no cutoff or renormalization datum (finite-dimensional fixture); the first supplied item that VANISHES at benchmark scope  (census = ['dps', 'electric', 'hopping', 'lambdas', 'mass', 'trotter_delta'])
+  [PASS] B4 THE RECORD INSTRUMENT — SPLIT VERDICT: content map GENERATED (the D24 controlled rotation at the PINNED g = 9/25; isometry exact at dps 80; Busch class trivially; distinguishability-isometry by dilation; readout sectors exactly orthogonal => the functional decoheres on the recorded alphabet); D26 INSTANTIATED ON THE IDENTIFIED FIXTURE — the click multiplies matter coherence by sqrt(1-g) = 4/5 EXACTLY (the birth-decoherence bridge derived in-benchmark, not imported); the click SCHEDULE (when/which site) remains SUPPLIED — the failing clause is the OPPORTUNITY KERNEL K, the same extra-physics organ the whole corpus names (D28/paper 19 F12): verdict GENERATED-CONTENT / SUPPLIED-SCHEDULE  (coherence factor = 0.8000000000 = 4/5; record-sector overlap < 1e-60)
+  [PASS] B5 THE GRAMMAR DICTIONARY — verdict GENERATED AT ARITY 2 WITH DISCLOSED COMPOSITE COST: hops are arity-2 interact events; the parity-prefix STRING term (the fixture's genuinely interacting organ, arity s+1 as a generator) decomposes EXACTLY into a CNOT-ladder conjugated single-site phase — all record events arity <= 2, event-count cost linear in the prefix (disclosed); verified on the full 8-dim occupation space at dps 80  (max |string - ladder| = 0.00e+00)
+  [PASS] B6 THE CLOCK DICTIONARY — verdict RATIOS GENERATED, SCALE BRIDGE-DEPENDENT (paper 28 Thm 5 instantiated on the fixture): the exchange-defect coefficients recomputed by the validator's OWN machinery at two parameter points (c4 = t^4 both; c6 matches the paper-15 prediction); under clock rescaling the cross-point ratio of c6/c4 is EXACTLY invariant while absolute coefficients are not — record-native (layer-counted) time identifies ratios; absolute physical rate awaits the declared clock bridge (d41c RF5)  (c4 = 1.000000/1.000000; c6/c4 ratio invariant to 1e-12; absolutes scale by s^4 = 81)
+  [PASS] B7 OPPORTUNITY STRUCTURE — verdict IRREDUCIBLE at scope: the bond list [(0,1),(1,2)] (the lattice) is supplied; no record law here generates which interactions are OFFERED — the fixture's analog of the supplied opportunity complex; dischargeable only by D42-class dynamics (the pinned dependency)
+
+      SCORECARD [the seven paper-29 items at fixture scope]:
+        1 boundary state      IRREDUCIBLE (declared; census 8/8)
+        2 measure/functional  GENERATED-AS-OBJECT (descent conditional
+                              on B4's records — the ladder honored)
+        3 renormalization     COLLAPSED (no such datum exists here)
+        4 record instrument   GENERATED-CONTENT (D24 @ pinned g;
+                              D26's 4/5 derived in-benchmark) /
+                              SUPPLIED-SCHEDULE (the failing clause
+                              = the opportunity kernel K)
+        5 record grammar      GENERATED at arity 2 (string term =
+                              exact CNOT-ladder composite, cost
+                              linear in prefix, disclosed)
+        6 clock dictionary    RATIOS GENERATED / SCALE SUPPLIED
+        7 opportunity struct  IRREDUCIBLE (D42's entry condition)
+      NET: 3 generated (2 with disclosed splits), 3 irreducible-
+      declared, 1 collapsed, 0 OBSTRUCTED — the identified fixture
+      is CLOSER to record-closed than the audit's raw list read;
+      every residue lands on K, the boundary, or the clock bridge —
+      the corpus's three named organs, now confirmed AT the
+      identified law's smallest fixture.
+
+ALL CHECKS PASS (7/7: B1-B7 verdict gates)
