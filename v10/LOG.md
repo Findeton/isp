@@ -5369,3 +5369,16 @@ k<=8. R5 the dead fossil regs_of DELETED. G9 upgraded to the W6
 mechanical decomposition + C1 re-scope (in-family at caps +
 witnesses healed; general-depth ladder OPEN -> d42b3). G6 anchored
 (384/8,250); G8 truism declaration added. Delta next.
+
+## 2026-07-18 — d42b7 pin committed (LEDGER #301)
+The cross-cut front: the SECOND GRAMMAR G3 (ternary payloads {0,1,2},
+same text otherwise — the d41b Bin-T protocol executed) + the
+dimension PILOT (declared pilot; verdicts out of scope). Pinned:
+U1 forms expected to lift (opportunity generation, the ladder +
+quarter density, ratio locality, L1, delivery-free fork-freeness);
+V1 values expected toy-relative (census 4->12, mu(seed) 1/64->1/144,
+triangles REALIZABLE in G3); N1 NEW: kernel-degenerate components
+predicted (on the generated triangle K1 == K2 == 1/3 uniform — the
+K-choice becomes undecidable on triangle-rich records; the path
+keeps discriminating in both grammars). Receipt after the d42b1/
+d42b3 rounds settle.
