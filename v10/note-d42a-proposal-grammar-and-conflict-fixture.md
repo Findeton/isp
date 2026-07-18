@@ -198,3 +198,46 @@ the open arb sector alone. The law text itself (§2 as amended) was
 unambiguous and is unchanged; only the derived remark was wrong. The
 both-sectors-open idle branch (1/2) and the both-closed branch (1) are
 unreachable at fixture depths — declared, not gated.
+
+## 7. Round-1 amendments (2026-07-18; round frozen at #286; repairs by
+## strengthening — R1-A/R2 adopted)
+
+**A6 (arb carriers; corrects §2's list — F2).** An arbitration event's
+carriers are C's PROPOSERS plus the NEW version v' ONLY. The base enters
+as event DATA (the ckey triples), never as a carrier wire: base-as-
+carrier would chain all same-base arbs into comparability and make A2's
+fork phenomenon grammatically impossible (referee-verified: ARM-2 forks
+would be 0 and G4c would fail). §2's original carrier sentence is
+superseded; the receipt's semantics were already A6's.
+
+**A7 (the opportunity set is the past-local admission relation — F1,
+repair arm R1-A).** The generated arbitration opportunity at a record
+point is defined by ADMISSION (past-relative, §2 + A5(ii)) and by
+NOTHING ELSE. Any enumeration must be a superset generator filtered by
+admission; a global-record filter is an UNPINNED batch-close mark
+(paper 25 §11.1's object smuggled back in, gauge-dependent) and is
+FORBIDDEN. Consequences, declared: (i) the family is closed under
+linear extensions (gauge order is bookkeeping for the SUPPORT, not
+just the factors — this is what pinned G1's enabled-set clause always
+demanded; it is now gated); (ii) blind self-arbitration is real
+grammar: a proposer may seal its singleton while a causally invisible
+conflict exists elsewhere — the fork/orphan/merge physics of A2 at the
+opportunity level; (iii) **the placement problem has a support-level
+face, DECLARED: under the pinned law, per-initiator weight sums exceed
+1 (value exactly 5/4) at every record point where an initiator's own
+view holds a sealable singleton while the join view holds the pair —
+1,016 actor-points over ARM-1. Per-initiator sub-normalization FAILS
+at depth 2. This is d34b's placement problem, not a receipt defect;
+it is now censused, not masked.** The receipt's round-1 family
+(5,751/5,761) was the batch-close sub-family; the pinned-grammar
+families are larger (referee pre-verified 6,471/6,589) and every
+kernel-level result is unchanged on them.
+
+**A8 (L1 is a theorem — F7, referee-supplied proof, recorded).** No
+history of the grammar (§2 + A1-A3, A6 carriers) contains two
+proposals ('p', a, b, ·): a first proposal lies on a's wire, hence in
+past(e) of any later a-event e on the same base; if unresolved in
+past(e), A3 blocks e; if resolved, the resolving arb's ckey contains
+its triple, so that arb's base is b, b is superseded in past(e), and
+admission blocks e. QED. Live triples are therefore unique at ALL
+depths; the receipt's census remains as a regression tripwire only.

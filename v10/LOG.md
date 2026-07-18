@@ -5056,3 +5056,15 @@ split, A5' = 3/4 three ways, K1 faithful to paper 25 §10.2, caps
 honest, seeds, plumbing. Repairs R1-R8 prescribed, most pre-verified;
 R1-A (complete the enumerator to the past-local relation) adopted
 next with the 5/4 support-level break DECLARED.
+
+## 2026-07-18 — d42a pin amendments A6-A8 (LEDGER #287)
+A6: arb carriers = proposers + v' only, base is event data (F2's
+pin-internal inconsistency corrected to the receipt's — and the
+physics' — reading). A7: the opportunity set IS the past-local
+admission relation; global-record filters forbidden as unpinned
+batch-close marks; family extension-closure now demanded and gated;
+blind self-arb declared real grammar; THE 5/4 SUPPORT-LEVEL FACE OF
+THE PLACEMENT PROBLEM DECLARED (per-initiator sub-normalization fails
+at depth 2 under the pinned law — d34b's problem, now censused not
+masked). A8: L1 recorded as an all-depths theorem (referee's proof).
+Repair receipt next against pin + A1-A8.
