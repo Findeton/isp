@@ -417,3 +417,126 @@ run, 0 on ARM-2).
 - Mutations: `mutant_plumbing.py` (G2a expectation 4→5 → 14/1, exit 1);
   `mutant_enum.py` (drop multi-member arb candidates → G3i and G6 FAIL,
   exit 1, G3i domain shrinks to 4,071 — the family is enumerator-relative).
+
+---
+
+# DELTA VERIFICATION (2026-07-18, against HEAD 1c43561: pin A6-A8 + A7'
+# at de43d6f/#287, repaired receipt GREEN 18/18 at #288)
+
+**VERDICT: DELTA-CLEAN — 0 findings (2 notes, no conviction).** All eight
+commissioned points verified; every number I was asked to check reproduces
+in fully independent recomputation; the round-1 witnesses are healed; a
+regression mutation restoring the round-1 batch-close filter is convicted
+by six gates. Reruns: PYTHONHASHSEED {0, 5, 77, 424242} all byte-identical
+to the committed .out, exit 0, ~12 s (consistent with LOG's 0/23 claim).
+Scripts: scratchpad `d42a_delta_witness.py` (receipt's own defs),
+`d42a_delta_indep.py` (my clean-room round-1 lib), `mutant_batchclose.py`.
+
+**(1) R1-A — CONFIRMED, superset property empirically and analytically.**
+Witness 1 healed: `selfA` is generated at `[pA0,pB1]` (and still
+admissible at 1/4). Omission sweep rerun over the NEW family on a
+DELIBERATELY WIDER universe than the generator's (all nonempty subsets of
+ALL proposals — live or resolved — per base, times all nonempty winner
+subsets, all actors) across all 8,460 arb-containing histories of both
+arms: 91,228 candidate checks, **0 admissible-but-omitted events** (the
+round-1 count was 1,016) and **0 admissible events with a resolved ckey
+member**. The docstring's full-live restriction argument is SOUND and is
+exactly the A8 carrier logic: an admissible arb's ckey members are live in
+its past; any full-record resolver of a member carries that member's
+proposer (A6), whose wire is among the candidate's carriers, so the
+resolver would lie in the candidate's past and kill liveness —
+contradiction; hence admissible ckeys are automatically full-live, and
+restricting generation to full-live subsets loses nothing. The proposal
+sector is complete for the same reason (a held base's creating arb is on
+the holder's wire, hence in `full.arbs`, hence in the bases loop). Graded:
+correct, and now empirically confirmed on the wider universe.
+
+**(2) G0 — CONFIRMED.** Families 6,471 / 6,589, equal to my round-1
+pin-faithful enumerator's output regenerated today from my own code.
+
+**(3) G1b — CONFIRMED; F3 and the pin's enabled-set clause DISCHARGED
+with margin.** My independent recount: 2,875 candidate-set points over the
+856-history g1_set, 0 invariance violations — and my check is STRICTER
+than the receipt's (I compare (event, weight) pairs; the receipt compares
+event sets, with weights covered by G1's member factors plus
+past-locality). Witness 2 healed: both orders of `[pA0, selfA, pB1]` are
+in-family. Beyond the receipt's witness-point closure gate I ran a
+FULL-FAMILY extension-closure sweep — every linear extension of every one
+of the 13,060 histories in both arms is in-family: **0 misses**. The
+family is the admission relation's extension-closed BFS closure in fact,
+not just at the witness.
+
+**(4) G9 + A7' — CONFIRMED; the witness-3 defect is now honestly
+declared.** My independent spectra (own generator, own weights):
+ARM-1 exactly {1 x 11,926, 5/4 x 1,016}; ARM-2 exactly {1 x 16,539,
+5/4 x 1,824, 3/2 x 936, 7/4 x 468} — both match the printed values,
+ARM-2 correctly labeled MEASURED (first census). The A7' ladder law
+verified mechanically over all 32,884 actor-points: every per-initiator
+sum equals 1 + (m-1)/4 where m = the number of distinct admissible arb
+ckeys for that initiator (0 violations); every per-ckey candidate group
+carries mass exactly 1/4 (0 violations — the join-view denominator is
+always 1 at these depths, per the one-live-proposal-per-actor corollary of
+A8); and own-view arb-sector-openness coincides with m >= 1 everywhere
+(0 mismatches) — which is precisely A7''s "own-view sectors always sum to
+exactly 1" clause. The 7/4 exhibit reproduces: at [pA0,pB1,pC0] the
+per-actor sums are (3/2, 7/4, 3/2), the central path actor blind-priced in
+both pairs plus the triple. Round-1's masked normalization is gone and
+gated against restoration (`max(c2) > 1` plus the anchored ARM-1
+spectrum).
+
+**(5) Per-arm censuses — CONFIRMED.** My independent values: forks
+ARM-2 = 72 (anchored) / ARM-1 = 424 (printed MEASURED — matches my
+round-1 prediction); orphans 2,088 / 1,960 likewise; joins 3,096
+(anchored); G4c one-step extensions over both arms' forked histories
+(72 + 424 of them): 3,032 candidates, 0 violations. Also re-verified on
+the new family: conflict histories ARM-1 = 3,316; components both arms =
+12,552; observer violations 0; L1 0/13,060.
+
+**(6) R4/R6/R7/R8 — CONFIRMED.** G3ii swept over BOTH arms (my
+independent sweep: 0 and 0). G8 now gates five isolated separations; the
+component-isolated pair [pA0,pB1,selfA] vs [pA0,pB1,SIG_ARB] holds
+initiator and winners fixed and differs in ckey alone (both histories
+in-family post-repair), and the base/authors corollary declaration is
+honest (neither is isolable all-else-equal at these depths; both separate
+via the event-tuple embedding). L1: pin A8 records my round-1 proof
+correctly (the case split — A3 blocks a live prior, supersession blocks a
+resolved one — is faithfully stated) and the receipt now cites it as the
+warrant with the census demoted to tripwire. g1_set deduped: 856 distinct
+(the growth from round-1's 760 is the enlarged family, not the dedup),
+2,875 resequencings — both recomputed independently.
+
+**(7) A6 — F2 HEALED.** The pin's carrier sentence now reads proposers +
+new version only, base as event data, with §2's original sentence
+explicitly superseded and my fork-would-be-zero evidence recorded. This
+matches the receipt's unchanged `regs_of` exactly.
+
+**(8) Kernel block / battery / G4a — CONFIRMED unchanged-green.** The
+gates' code is untouched by the repair (diff-verified); the printed values
+(census 4, mu 1/64, K1 2/3-1/3, K2 1/2-1/2, TV 1/6, 1/3072, 1/4096,
+battery 7/7, G4a causal-rejects/auth-admits) are identical to round 1 and
+were all verified by my independent code then; the family-dependent ones
+(G2a census = 4, G7 kernel normalization now over 12,552 components)
+reproduce on the enlarged family in my rebuild.
+
+**Regression mutation (my addition).** Restoring the round-1 batch-close
+filter (full-view components only) into the current receipt: **6 gates
+FAIL — G0 (5,751/5,761), G1b (witness closure), G4b (orphans 1,128),
+G4c (forks 48), G6 (joins 2,808), G9 (ARM-1 spectrum collapses to {1})**
+— exit 1. The new battery convicts the old enumerator outright; the
+blocker class is gate-protected.
+
+**Notes (no conviction):** (i) G1b compares candidate EVENT sets across
+extensions; weights are covered by past-locality plus G1's member
+factors, and my stricter with-weights variant passes at all 2,875 points
+— consider tightening to (event, weight) pairs for free. (ii) G9's ARM-2
+spectrum counts are printed as MEASURED and not yet anchored — correct
+labeling for a first census; they are now referee-reproduced (this
+delta) and can be promoted to anchors in any future revision.
+
+**Disposition:** all round-1 findings (1 BLOCKER / 2 MAJOR / 4 minor /
+2 nit) are repaired or correctly declared; no new findings. **DELTA-CLEAN.
+d42a is fit to go terminal**; d42b's fronts (delivery events,
+merge/reconciliation, orphan starvation, the elementary-click refinement,
+the quantum lift) open on the settled grammar, which now carries the
+declared 1 + k/4 support-level face of the d34b placement problem rather
+than a mask over it.

@@ -407,16 +407,17 @@ for h in g1_set:
         actors_h = ('A', 'B', 'C')
     else:
         actors_h = ('A', 'B')
-    base_set = frozenset(e for e, q in candidates_for(h, actors_h))
+    base_set = frozenset(candidates_for(h, actors_h))
     for ext in linear_extensions(h):
         acts2 = [h[i] for i in ext]
-        set2 = frozenset(e for e, q in candidates_for(acts2, actors_h))
+        set2 = frozenset(candidates_for(acts2, actors_h))
         set_points += 1
         if set2 != base_set: ok1b = False
 w2a, w2b = [pA0, SELFA, pB1], [pA0, pB1, SELFA]
 closure_ok = (tuple(w2a) in arm1_keys) and (tuple(w2b) in arm1_keys)
-check("G1b enabled-set gauge invariance (candidate sets recomputed at "
-      "every linear extension) + witness-2 extension closure: both "
+check("G1b enabled-set gauge invariance ((event, weight) PAIRS recomputed "
+      "at every linear extension — the delta note (i) tightening) + "
+      "witness-2 extension closure: both "
       "orders of the blind self-arb history are in-family",
       ok1b and closure_ok,
       f"candidate-set points checked = {set_points}; witness pair "
@@ -676,8 +677,10 @@ check("G9 the support-level placement face (A7/A7'): per-initiator "
       "sums = 1 everywhere is NOT restored (the round-1 mask is gone)",
       all(on_ladder(v) for v in set(c1) | set(c2))
       and set(c1) == {F(1), F(5, 4)} and c1[F(5, 4)] == 1016
-      and max(c2) > F(1),
-      f"ARM-1: {spec1} (5/4 expect 1016); ARM-2: {spec2} [MEASURED; "
+      and c2 == {F(1): 16539, F(5, 4): 1824, F(3, 2): 936,
+                 F(7, 4): 468},
+      f"ARM-1: {spec1} (5/4 expect 1016); ARM-2: {spec2} (referee-"
+      "reproduced, ANCHORED; "
       "3/2 = outer path actor, 7/4 = central actor blind-priced in "
       "both pairs + the triple]; per-initiator sub-normalization "
       "FAILS at depth 2 under the pinned law — d34b's placement "
