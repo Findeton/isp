@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """
 d42a_generated_conflict_exact.py — v10 D42a: the generated-proposal
-grammar + the smallest conflict fixtures. Pin: note-d42a (5e3f2cf)
-with pre-receipt amendments A1-A5 (frozen at e851a72). EXACT: every
-weight a Fraction; every gate exact equality (zero tolerance).
+grammar + the smallest conflict fixtures. Pin: note-d42a with
+amendments A1-A5' (e851a72) + round-1 amendments A6-A8 (de43d6f;
+round frozen at #286). EXACT: every weight a Fraction; every gate
+exact equality (zero tolerance). ROUND-1 REPAIRS IN THIS REVISION:
+R1-A the enumerator completed to the past-local admission relation
+(the global-record component filter — an unpinned batch-close mark —
+removed); G1b enabled-set gauge invariance + extension closure; G9
+the declared 5/4 support-level placement census; per-arm fork/orphan
+censuses; G8 extended; G6/G0 anchored to the round's pre-verified
+pinned-grammar numbers; L1 cited as the A8 theorem.
 
 THE SPLIT CLAIM (pin §1): batch/conflict/opportunity GENERATED from
 the record; kernel law (K1/K2, paper 25 §10), genesis boundary, and
@@ -78,8 +85,11 @@ class View:
             self.resolved |= set(op[2])
             self.superseded.add(next(iter(op[2]))[1])
         self.pred = pred
-        # live proposal events: triple not resolved (triples are unique
-        # among live proposals — asserted globally by the L1 census)
+        # live proposal events: triple not resolved. Triple uniqueness
+        # is an ALL-DEPTHS THEOREM (pin A8, referee-supplied proof: a
+        # same-base re-proposal is blocked by A3 if the prior is live
+        # and by supersession if resolved); the L1 census below is a
+        # regression tripwire, not the warrant.
         self.live = {i: op for i, op in self.props.items()
                      if (op[1], op[2], op[3]) not in self.resolved}
 
@@ -223,13 +233,25 @@ def admissible(acts, e, law=PK1):
     return True, F(1, 4) / len(comps) * law(ckey, et)[wkey]
 
 def candidates_for(acts, actors):
-    """All admissible next events (superset generation + past-relative
-    admission filter)."""
+    """All admissible next events. A TRUE superset generator filtered by
+    past-relative admission ONLY (pin A7; the round-1 blocker was a
+    global-record component filter here — an unpinned batch-close mark
+    that silently dropped 1,016 admissible blind self-arbs over ARM-1).
+    Arb candidates now range over EVERY nonempty subset S of full-view
+    live proposals per base and every nonempty W within S; admissible()
+    alone decides (component match + MIS check in the candidate's own
+    past). Restricting S to full-LIVE proposals loses nothing: a
+    full-resolved proposal's resolving arb lies on every one of its
+    proposers' wires, hence in any candidate past that includes that
+    proposer — the proposal is resolved there too (A8 carrier logic)."""
     pred = event_poset(acts)
     full = View(acts, pred, set(range(len(acts))))
     bases = {V0} | {vname(next(iter(op[2]))[1], op[3], op[1])
                     for op in full.arbs.values()}
     out = []
+    live_by_base = {}
+    for i, op in full.live.items():
+        live_by_base.setdefault(op[2], []).append(i)
     for a in actors:
         for b in sorted(bases, key=repr):
             for x in (0, 1):
@@ -237,31 +259,41 @@ def candidates_for(acts, actors):
                 ok, q = admissible(acts, e)
                 if ok: out.append((e, q))
         seen = set()
-        for base, comp in full.components():
-            ck = triples(full, comp)
-            et = edge_triples_of(full, comp)
-            for w in mis_of(ck, et):
-                e = ('r', a, ck, w)
-                if e in seen: continue
-                seen.add(e)
-                ok, q = admissible(acts, e)
-                if ok: out.append((e, q))
+        for b in sorted(live_by_base, key=repr):
+            idxs = sorted(live_by_base[b])
+            n = len(idxs)
+            for smask in range(1, 1 << n):
+                S = [idxs[i] for i in range(n) if smask >> i & 1]
+                ck = triples(full, frozenset(S))
+                m = len(S)
+                for wmask in range(1, 1 << m):
+                    W = frozenset(S[i] for i in range(m) if wmask >> i & 1)
+                    e = ('r', a, ck, triples(full, W))
+                    if e in seen: continue
+                    seen.add(e)
+                    ok, q = admissible(acts, e)
+                    if ok: out.append((e, q))
         e = ('n', a)
         ok, q = admissible(acts, e)
         out.append((e, q))
     return out
 
 def enumerate_family(actors, max_events):
+    """BFS closure of the admission relation; also returns the candidate
+    set at EVERY history (max-depth included) for the A7 5/4 census."""
     out = [[]]
+    cache = {}
     frontier = [[]]
     while frontier:
         h = frontier.pop()
+        cands = candidates_for(h, actors)
+        cache[tuple(h)] = cands
         if len(h) >= max_events: continue
-        for e, q in candidates_for(h, actors):
+        for e, q in cands:
             h2 = h + [e]
             out.append(h2)
             frontier.append(h2)
-    return out
+    return out, cache
 
 def mu_of(acts, law=PK1):
     p = F(1)
@@ -303,10 +335,15 @@ print("  kernel law is SUPPLIED-alternative (K1/K2, paper 25 §10) and")
 print("  the weight system is computed under BOTH; joint-placement")
 print("  normalization is d34b's problem, INHERITED, not claimed.")
 
-ARM1 = enumerate_family(('A', 'B'), 5)
-ARM2 = enumerate_family(('A', 'B', 'C'), 4)
+ARM1, CACHE1 = enumerate_family(('A', 'B'), 5)
+ARM2, CACHE2 = enumerate_family(('A', 'B', 'C'), 4)
 print(f"  family sizes: ARM-1 depth<=5: {len(ARM1)}; "
       f"ARM-2 depth<=4: {len(ARM2)}")
+check("G0 the pinned-grammar family sizes (round-1 pre-verified: the "
+      "batch-close sub-family was 5,751/5,761)",
+      len(ARM1) == 6471 and len(ARM2) == 6589,
+      f"ARM-1 = {len(ARM1)} (expect 6471); ARM-2 = {len(ARM2)} "
+      "(expect 6589)")
 
 # L1: the uniqueness lemma behind triple-identity (census, must hold)
 dup = 0
@@ -319,19 +356,26 @@ check("L1 live-triple uniqueness (identity lemma for ckeys)", dup == 0,
       f"violations = {dup} over {len(ARM1) + len(ARM2)} histories")
 
 # ---- G1: closure/resequence-and-recompute ----------------------------------
-g1_set = ([h for h in ARM1 if len(h) <= 3]
+g1_pre = ([h for h in ARM1 if len(h) <= 3]
           + [h for h in ARM1 if len(h) == 4 and any(e[0] == 'r' for e in h)])
 pA0, pB1 = ('p', 'A', V0, 0), ('p', 'B', V0, 1)
 SIG_CK = frozenset({('A', V0, 0), ('B', V0, 1)})
 SIG_ARB = ('r', 'A', SIG_CK, frozenset({('A', V0, 0)}))
 V1 = vname(V0, frozenset({('A', V0, 0)}), 'A')
 SIG1 = [pA0, pB1, SIG_ARB, ('p', 'B', V1, 1)]
-g1_set.append(SIG1)
+g1_pre.append(SIG1)
+SELFA = ('r', 'A', frozenset({('A', V0, 0)}), frozenset({('A', V0, 0)}))
 CK3 = frozenset({('A', V0, 0), ('B', V0, 1), ('C', V0, 0)})
 PRC = frozenset({('A', V0, 0), ('C', V0, 0)})
 SIG2 = [('p', 'A', V0, 0), ('p', 'B', V0, 1), ('p', 'C', V0, 0),
         ('r', 'A', CK3, PRC)]
-g1_set.append(SIG2)
+g1_pre.append(SIG2)
+seen_h = set()
+g1_set = []
+for h in g1_pre:
+    if tuple(h) not in seen_h:
+        seen_h.add(tuple(h))
+        g1_set.append(h)
 ok1, tested = True, 0
 for h in g1_set:
     qs = [admissible(h[:j], h[j])[1] for j in range(len(h))]
@@ -347,7 +391,36 @@ for h in g1_set:
         tested += 1
 check("G1 resequence-and-recompute: admission, every mu factor, and the "
       "canonical typed DAG invariant over every linear extension",
-      ok1, f"{len(g1_set)} histories, {tested} resequencings")
+      ok1, f"{len(g1_set)} distinct histories, {tested} resequencings")
+
+# G1b (round-1 F3/R3 + A7): the ENABLED-SET gate the pin always
+# prescribed — the candidate set at a record point is gauge-invariant
+# (recomputed from every linear extension's reordering), and the family
+# is closed under linear extensions at the round's witness point (the
+# old enumerator failed exactly here: [pA0,pB1,selfA] was excluded
+# while its gauge-equivalent [pA0,selfA,pB1] was in-family).
+ok1b, set_points = True, 0
+arm1_keys = {tuple(h) for h in ARM1}
+for h in g1_set:
+    if any(e[1] == 'C' or (e[0] == 'r' and any(t[0] == 'C' for t in e[2]))
+           for e in h):
+        actors_h = ('A', 'B', 'C')
+    else:
+        actors_h = ('A', 'B')
+    base_set = frozenset(e for e, q in candidates_for(h, actors_h))
+    for ext in linear_extensions(h):
+        acts2 = [h[i] for i in ext]
+        set2 = frozenset(e for e, q in candidates_for(acts2, actors_h))
+        set_points += 1
+        if set2 != base_set: ok1b = False
+w2a, w2b = [pA0, SELFA, pB1], [pA0, pB1, SELFA]
+closure_ok = (tuple(w2a) in arm1_keys) and (tuple(w2b) in arm1_keys)
+check("G1b enabled-set gauge invariance (candidate sets recomputed at "
+      "every linear extension) + witness-2 extension closure: both "
+      "orders of the blind self-arb history are in-family",
+      ok1b and closure_ok,
+      f"candidate-set points checked = {set_points}; witness pair "
+      f"in-family = {closure_ok}")
 
 # ---- G2: conflict genesis --------------------------------------------------
 d2 = [h for h in ARM1 if len(h) == 2 and conflicts_in(h)]
@@ -378,7 +451,7 @@ check("G3i the PAIR arb option exists iff both proposals live in the "
       "record (family-wide iff-sweep)", ok3a and iff_ok,
       f"sweep over {len(ARM1)} histories")
 resweep = True
-for h in ARM1:
+for h in ARM1 + ARM2:
     for k, ev in enumerate(h):
         if ev[0] == 'p' and ev[2][0] == 'v' and ev[2] != V0:
             if not any(e[0] == 'r' and vname(next(iter(e[2]))[1], e[3],
@@ -387,7 +460,7 @@ for h in ARM1:
                 resweep = False
 check("G3ii deletion control: every re-proposal against a created "
       "version has its creating arb strictly earlier in the record",
-      resweep, "family-wide sweep")
+      resweep, "sweep over BOTH arms")
 
 # ---- G4: staleness — causal vs authentication-only -------------------------
 H4 = [pA0, pB1, SIG_ARB]
@@ -412,51 +485,55 @@ check("G4a causal certificate rejects the post-arb stale re-proposal "
       "paper 28 H1 exhibited load-bearing")
 H4c = [pA0, pB1, SIG_ARB, ('p', 'C', V0, 0)]
 okC, qC = admissible(H4c[:3], H4c[3])
-orphans = 0
-for h in ARM2:
-    pred = event_poset(h)
-    view = View(h, pred, set(range(len(h))))
-    glob_sup = view.superseded
-    for i, op in view.live.items():
-        if op[2] in glob_sup:
-            sub = View(h, pred, pred[i])
-            if op[2] not in sub.superseded: orphans += 1
+def orphan_count(fam):
+    n = 0
+    for h in fam:
+        pred = event_poset(h)
+        view = View(h, pred, set(range(len(h))))
+        glob_sup = view.superseded
+        for i, op in view.live.items():
+            if op[2] in glob_sup:
+                sub = View(h, pred, pred[i])
+                if op[2] not in sub.superseded: n += 1
+    return n
+orphans2, orphans1 = orphan_count(ARM2), orphan_count(ARM1)
 check("G4b optimistic concurrency: the third actor's concurrent "
-      "proposal on the superseded base is ADMISSIBLE (orphan census)",
-      okC and orphans > 0, f"orphan proposals in ARM-2: {orphans}")
-forks = 0
-observer_viol = 0
-for h in ARM2:
-    pred = event_poset(h)
-    view = View(h, pred, set(range(len(h))))
-    arb_bases = {}
-    for i, op in view.arbs.items():
-        arb_bases.setdefault(next(iter(op[2]))[1], []).append(i)
-    for base, lst in arb_bases.items():
-        if len(lst) > 1: forks += 1
-    for j in range(len(h)):
-        sub = View(h, pred, pred[j] | {j})
-        per = {}
-        for i, op in sub.arbs.items():
-            per.setdefault(next(iter(op[2]))[1], []).append(i)
-        if any(len(v) > 1 for v in per.values()): observer_viol += 1
+      "proposal on the superseded base is ADMISSIBLE; orphans censused "
+      "PER ARM (round-1 F5)",
+      okC and orphans2 == 2088 and orphans1 > 0,
+      f"orphans ARM-2 = {orphans2} (expect 2088, round-1 pre-verified); "
+      f"ARM-1 = {orphans1} [MEASURED, first census]")
+def fork_and_observer(fam):
+    fk, ov, fh = 0, 0, []
+    for h in fam:
+        pred = event_poset(h)
+        view = View(h, pred, set(range(len(h))))
+        arb_bases = {}
+        for i, op in view.arbs.items():
+            arb_bases.setdefault(next(iter(op[2]))[1], []).append(i)
+        forked_here = False
+        for base, lst in arb_bases.items():
+            if len(lst) > 1: fk += 1; forked_here = True
+        if forked_here: fh.append(h)
+        for j in range(len(h)):
+            sub = View(h, pred, pred[j] | {j})
+            per = {}
+            for i, op in sub.arbs.items():
+                per.setdefault(next(iter(op[2]))[1], []).append(i)
+            if any(len(v) > 1 for v in per.values()): ov += 1
+    return fk, ov, fh
+forks2, ov2, fork_h2 = fork_and_observer(ARM2)
+forks1, ov1, fork_h1 = fork_and_observer(ARM1)
+forks, observer_viol = forks2, ov2 + ov1
 # The depth-4 in-family sweep alone cannot fail (a violating event
 # needs 5 events) — the REAL gate extends every forked history one
 # step: participation-only holdings must prevent any single event
 # from collecting two same-base arbs in its past (a delivery leak in
 # the grammar would fail this).
 ext_checked = ext_viol = 0
-fork_hists = []
-for h in ARM2:
-    pred = event_poset(h)
-    view = View(h, pred, set(range(len(h))))
-    per = {}
-    for i, op in view.arbs.items():
-        per.setdefault(next(iter(op[2]))[1], []).append(i)
-    if any(len(v) > 1 for v in per.values()):
-        fork_hists.append(h)
-for h in fork_hists:
-    for e, q in candidates_for(h, ('A', 'B', 'C')):
+for h, acts_set in ([(h, ('A', 'B', 'C')) for h in fork_h2]
+                    + [(h, ('A', 'B')) for h in fork_h1]):
+    for e, q in candidates_for(h, acts_set):
         h2 = h + [e]
         pred2 = event_poset(h2)
         sub = View(h2, pred2, pred2[len(h)] | {len(h)})
@@ -465,15 +542,15 @@ for h in fork_hists:
             per.setdefault(next(iter(op[2]))[1], []).append(i)
         ext_checked += 1
         if any(len(v) > 1 for v in per.values()): ext_viol += 1
-check("G4c fork honesty (A2): forks exist and are censused; no "
-      "observer past holds two same-base arbs — gated on the one-step "
-      "EXTENSIONS of every forked history (the in-family sweep alone "
-      "cannot fail at depth 4; the extension gate can)",
-      forks > 0 and observer_viol == 0 and ext_checked > 0
-      and ext_viol == 0,
-      f"forked histories = {forks}; in-family violations = "
-      f"{observer_viol}; extension candidates checked = {ext_checked}, "
-      f"violations = {ext_viol}")
+check("G4c fork honesty (A2): forks censused PER ARM (round-1 F5); "
+      "no observer past holds two same-base arbs — gated on the "
+      "one-step EXTENSIONS of every forked history in BOTH arms",
+      forks2 == 72 and forks1 > 0 and observer_viol == 0
+      and ext_checked > 0 and ext_viol == 0,
+      f"fork (history,base) pairs: ARM-2 = {forks2} (expect 72, "
+      f"round-1 pre-verified), ARM-1 = {forks1} [MEASURED]; in-family "
+      f"observer violations = {observer_viol}; extension candidates = "
+      f"{ext_checked}, violations = {ext_viol}")
 
 # ---- G5: kernel nonvacuity + discrimination (ARM-2) ------------------------
 h3 = [('p', 'A', V0, 0), ('p', 'B', V0, 1), ('p', 'C', V0, 0)]
@@ -517,8 +594,9 @@ for h in ARM1 + ARM2:
                 joins += 1
 check("G6 join census: arbitration events with incomparable proposal "
       "pairs in their past (in-degree >= 2) exist",
-      joins > 0, f"join events = {joins}; D23/NSE/D25/D27 + Hegerfeldt "
-      "= d42b carried obligations (declared)")
+      joins == 3096, f"join events = {joins} (expect 3096, round-1 "
+      "pre-verified); D23/NSE/D25/D27 + Hegerfeldt = d42b carried "
+      "obligations (declared)")
 
 # ---- G7: what is exactly true (A4) -----------------------------------------
 # A sum of (1/4)/n over n options is an arithmetic identity (the
@@ -569,24 +647,69 @@ check("G7 the hand-anchored q battery (7 branches incl. the A5' "
       "battery: " + "; ".join(x for x in det
                               if x.startswith('MISMATCH')))
 
+# ---- G9: the A7 support-level placement census -----------------------------
+# Under the pinned law, per-initiator weight sums EXCEED 1 exactly where
+# an initiator's own view holds a sealable singleton while a join view
+# holds a larger component (the blind self-arb + the pair, value 5/4;
+# with two join layers, 3/2). Round 1 proved the old enumerator's
+# global filter MASKED this (its family showed sums = 1 everywhere).
+# A7 declares it: this is d34b's placement problem at the SUPPORT
+# level, censused here, not normalized away.
+def sum_census(fam, cache, actors):
+    counts = {}
+    for h in fam:
+        cands = cache[tuple(h)]
+        for a in actors:
+            tot = sum(q for e, q in cands if e[1] == a)
+            counts[tot] = counts.get(tot, 0) + 1
+    return counts
+c1 = sum_census(ARM1, CACHE1, ('A', 'B'))
+c2 = sum_census(ARM2, CACHE2, ('A', 'B', 'C'))
+def on_ladder(v):
+    return v >= 1 and ((v - 1) * 4).denominator == 1
+spec1 = ", ".join(f"{v} at {c1[v]}" for v in sorted(c1))
+spec2 = ", ".join(f"{v} at {c2[v]}" for v in sorted(c2))
+check("G9 the support-level placement face (A7/A7'): per-initiator "
+      "sums sit on the quarter-integer ladder 1 + k/4 (k = causally "
+      "blind join layers; own-view sectors always sum to exactly 1); "
+      "ARM-1 spectrum exactly {1, 5/4} with the round-anchored 1,016; "
+      "sums = 1 everywhere is NOT restored (the round-1 mask is gone)",
+      all(on_ladder(v) for v in set(c1) | set(c2))
+      and set(c1) == {F(1), F(5, 4)} and c1[F(5, 4)] == 1016
+      and max(c2) > F(1),
+      f"ARM-1: {spec1} (5/4 expect 1016); ARM-2: {spec2} [MEASURED; "
+      "3/2 = outer path actor, 7/4 = central actor blind-priced in "
+      "both pairs + the triple]; per-initiator sub-normalization "
+      "FAILS at depth 2 under the pinned law — d34b's placement "
+      "problem, DECLARED not normalized away")
+
 # ---- G8: record basis (the D41 eighth residue) -----------------------------
+c_prop = canon([pA0]) != canon([('p', 'B', V0, 0)])
+c_comp = canon([pA0, pB1, SELFA]) != canon([pA0, pB1, SIG_ARB])
 c_pay = canon([pA0, pB1]) != canon([pA0, ('p', 'B', V0, 0)])
 arbB = ('r', 'B', SIG_CK, frozenset({('A', V0, 0)}))
 c_init = canon([pA0, pB1, SIG_ARB]) != canon([pA0, pB1, arbB])
 arbW = ('r', 'A', SIG_CK, frozenset({('B', V0, 1)}))
 c_win = canon([pA0, pB1, SIG_ARB]) != canon([pA0, pB1, arbW])
 c_gauge = canon([pA0, pB1]) == canon([pB1, pA0])
-check("G8 record basis: payload, initiator, and winner distinctions "
-      "separate canonical DAGs; gauge reorder does not",
-      c_pay and c_init and c_win and c_gauge,
-      "declared distinctions: proposer, base, payload, component, "
-      "winners, authors, initiator")
+check("G8 record basis: proposer, payload, component (same winners, "
+      "same initiator — isolated), initiator, and winner distinctions "
+      "separate canonical DAGs; gauge reorder does not (round-1 R6: "
+      "base/authors separate by the same event-tuple embedding, "
+      "corollary, not isolable all-else-equal at these depths)",
+      c_prop and c_pay and c_comp and c_init and c_win and c_gauge,
+      "5 isolated separations gated + gauge identity")
 
 print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d42a GREEN: the batch, the conflict, the arbitration "
-      "opportunity, and the re-proposal opportunity are GENERATED from "
-      "the record under the pinned grammar; the kernel law, the genesis "
-      "boundary, and the measure completion remain SUPPLIED (declared).")
+print("[VERDICT] d42a GREEN (round-1 repaired): the batch, the "
+      "conflict, the arbitration opportunity, and the re-proposal "
+      "opportunity are GENERATED from the record under the past-local "
+      "pinned grammar — the family IS the admission relation's "
+      "extension-closed BFS closure, gated as such; the kernel law, "
+      "the genesis boundary, and the measure completion remain "
+      "SUPPLIED (declared), and the placement problem's support-level "
+      "face (the 1 + k/4 ladder, up to 7/4) is CENSUSED, not "
+      "normalized away.")

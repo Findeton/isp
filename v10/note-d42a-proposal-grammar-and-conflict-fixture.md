@@ -241,3 +241,16 @@ past(e), A3 blocks e; if resolved, the resolving arb's ckey contains
 its triple, so that arb's base is b, b is superseded in past(e), and
 admission blocks e. QED. Live triples are therefore unique at ALL
 depths; the receipt's census remains as a regression tripwire only.
+
+**A7' (forward correction, found by the repaired receipt's own G9).**
+A7's value clause was ARM-1-scoped. The general support-level law: a
+per-initiator sum equals 1 + k/4, where k counts the ADDITIONAL join
+components the pinned law prices for that initiator beyond its own
+view (its own view's sectors always sum to exactly 1 — that is what
+the round-1 masked family displayed). ARM-1's maximum is k = 1 (the
+blind self-arb vs the pair: 5/4, at the referee-anchored 1,016
+actor-points). ARM-2 reaches k = 2 (3/2: an outer path actor priced
+in its pair AND the triple) and k = 3 (7/4: the CENTRAL path actor is
+blind-priced in both pair views and the triple). The receipt gates
+the quarter-integer ladder plus the anchored ARM-1 spectrum and
+prints ARM-2's full spectrum as MEASURED.

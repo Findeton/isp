@@ -5068,3 +5068,28 @@ THE PLACEMENT PROBLEM DECLARED (per-initiator sub-normalization fails
 at depth 2 under the pinned law — d34b's problem, now censused not
 masked). A8: L1 recorded as an all-depths theorem (referee's proof).
 Repair receipt next against pin + A1-A8.
+
+## 2026-07-18 — d42a ROUND-1 REPAIRS GREEN 18/18 (LEDGER #288);
+## delta-verification launched
+The repaired receipt runs 18/18 seed-independent (0/23, ~12 s)
+against pin + A1-A8 + A7'. R1-A: candidates_for completed to the
+past-local admission relation (arb candidates = every subset of
+full-live proposals per base x every winner subset; admissible alone
+decides — the global batch-close filter is GONE); every referee
+pre-verified pinned-grammar number reproduced EXACTLY: families
+6,471/6,589 (G0 anchored); ARM-2 forks 72 + ARM-1 424; orphans
+2,088 + 1,960; joins 3,096; L1 13,060. NEW G1b: enabled-set gauge
+invariance (2,875 candidate-set points across all linear extensions)
++ witness-2 closure (both orders of the blind-self-arb history
+in-family — the round's non-closure healed). NEW G9: the A7/A7'
+support-level census — per-initiator sums on the 1 + k/4 ladder;
+ARM-1 spectrum exactly {1 x 11,926, 5/4 x 1,016 (round-anchored)};
+ARM-2 MEASURED first: {1 x 16,539, 5/4 x 1,824, 3/2 x 936, 7/4 x
+468} — A7's 5/4 clause was the MINIMAL face (A7' correction, caught
+by the gate itself); sub-normalization fails at depth 2 under the
+pinned law, DECLARED as d34b's support-level face, no longer masked.
+Per-arm fork/orphan censuses (R5), G3ii both arms (R4), G8 five
+isolated separations incl. the component-isolated pair (R6), L1
+cited as the A8 theorem (R7), g1_set deduped 856 distinct (R8).
+Kernel block/battery/G4a unchanged-green throughout. Delta to the
+round-1 referee next; d42a terminal on its verdict.
