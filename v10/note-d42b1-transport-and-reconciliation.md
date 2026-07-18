@@ -138,3 +138,43 @@ claim: everything stays at weight-system level; the placement front
 (d42b3) owns normalization. RF5 the elementary-click refinement of
 kernel draws (front 4) is d42b2's, running in parallel; its result
 binds the merge click too.
+
+## 6. Round-1 amendments (2026-07-18; round frozen at #299)
+
+**C1 (F1 — the pricing layer IS the admission relation).** A7's
+command ("the opportunity set is the past-local admission relation
+and NOTHING ELSE") binds the PRICING layer, not only the generator:
+(i) the idle docks the arb-and-merge 1/4 iff an ADMISSIBLE arb event
+or an enabled merge pair exists for the initiator; (ii) the merge
+denominator D = #distinct admissible arb ckeys + #enabled merge
+pairs; (iii) arb events unchanged (their own past is already the A4
+join view). §2's own-view availability reading is SUPERSEDED — it
+destroyed budget off-cap (h5: a sector open with zero admissible
+events, sum 3/4; h11: a live merge split against a join-dead arb
+half, sum 7/8; both referee-constructed, both healed to exactly 1 by
+this amendment, in-family invisible at 0/500). DECLARED (the A4
+precedent): the availability bit, like the component, first exists
+at the join — the repaired idle has JOINT-RECORD dependence; this is
+the d34b placement face appearing in the pricing layer, censused not
+hidden. **P5's ladder claim RE-SCOPED: verified in-family at the
+declared caps + the constructed witnesses healed; a general-depth
+ladder theorem is OPEN and belongs to d42b3's constraint set.**
+Physics note, recorded: the refuting mechanism IS P2's relay
+structure — knowledge transported past a blind seal. Transport
+breaks starvation AND naive pricing at once.
+
+**C2 (F2/F3 — the pin's discharge list corrected).** §2's "the
+battery gates these exactly" was false (two listed branches missing;
+now gated: all-open idle 1/4 at SIG-FM[:6]; equal-values merge 1/4).
+§2's "chained reconciliation ... censused" and RF2's "censused"
+pointed at censuses that did not exist — now they do (the 9-event
+third-fork chain: post-merge pairs exactly {(vC0, v_m)}, both value
+branches; the double-merge fork species: admissible, incomparable,
+canon-distinct — this census also GATES the merge carrier choice,
+under which the F6 fossil law dies). The merge sector is
+enumeration-VACUOUS at caps (0 merge events in-family; corollary,
+recorded: delivery-free ⟹ co-participated creations are
+wire-comparable ⟹ no pairs — RECONCILIATION DEMAND REQUIRES
+TRANSPORT); declared in the banner. P2's in-family census printed
+(0 at caps; a two-arb past needs 5 events). G9 upgraded to the
+mechanical decomposition gate (the d42a delta standard).
