@@ -4793,3 +4793,15 @@ equivalence, generated D36 conflict/K membership, all-history locality,
 asynchronous liveness, physical endpoint gauge, full-complex normalization,
 stationary/infinite completion, global continuous identification, clock
 calibration, quantum joining and V6 sealing remain open.
+
+## 2026-07-15 — D41 CAMPAIGN PINNED: record-closure of the identified benchmark (LEDGER #261)
+`note-d41-record-closure-of-the-identified-benchmark.md` committed
+pre-receipt. The program's two halves meet on the v1 paper-15 fixture:
+paper 29's seven supplied items each get a GENERATED / IRREDUCIBLE /
+OBSTRUCTED verdict at exact two-bond-strip scope. Expected shape:
+renormalization COLLAPSES at scope (the fixture's virtue); boundary
+state and opportunity structure IRREDUCIBLE (paper-16 discipline; the
+D42 dependency); the record instrument (item 4) is THE contested
+center — generation attempted under D24/D25/D27/NSE gates with the
+failing clause printed on the honest fork. Receipt next; hostile
+round on green.
