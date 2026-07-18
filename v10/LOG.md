@@ -5009,3 +5009,19 @@ the A3 blocker; true value 3/4) — pin forward-corrected as A5', law
 text unchanged; G8 record-basis separations + gauge identity. L1
 live-triple uniqueness 0/11,512. Round next: fresh hostile referee
 on pin + receipt + out.
+
+## 2026-07-18 — d41c step (1) EXECUTED, step (2) pair adopted
+## (LEDGER #285)
+Deep-research platform verification filed at reviews/d41c-step1-
+platform-verification.md (25-entry primary-source list, July-2026
+currency; MEASURED/FIT/PROJECTED tags throughout; negative searches
+recorded). Seven corrections to the note's §2 table — worst: the
+levitated row overstated measured coherence by 1.4–4.4 orders AND
+has no visibility observable (re-labeled PROJECTED wholesale); in
+our favor: mass record 25→143-197 kDa (Pedalino Nature Jan-2026),
+AI dwell 1-10→70 s (Panda 2024). Two missed platforms added (Eu:YSO
+6-h ensemble — best raw, bridge-hostile; Sr clock — cleanest
+upgrade). Note §6 appended (forward corrections + the ADOPTED pair:
+Yb+ single ion raw + Arndt Talbot-Lau mass axis; successors Sr/
+levitated). d41c next = step (3) bridge declarations, held until the
+D42 line settles.
