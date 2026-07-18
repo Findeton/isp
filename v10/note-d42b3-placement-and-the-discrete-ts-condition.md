@@ -80,3 +80,71 @@ the cocycle statement printed; global existence declared OPEN.
 G-L1 ratio locality swept (deterministic triple selection over the
 d42a family; zero violations). G-L2 excess = quarter-quantized blind
 count, family-wide (both arms), zero violations.
+
+## 4. Round-1 amendments (2026-07-18; round frozen at #302; the
+## condition is DECIDED at depth 4)
+
+**D1 (F1 — T3 re-posed and DECIDED; supersedes §1-T3's "OPEN").** A
+placement completion, stated with the normalization clause: cut data
+Z > 0 with the transfer q'(e|h) = q(e|h)·Z(h+e)/Z(h) required (a)
+per-cut normalized (Σ q' = 1) and (b) foliation-invariant. TWO
+CLASSES, both decided on the depth-4 complex (427 canonical classes,
+202 diamonds): **(i) RATIO-PRESERVING (within-cut ratios untouched)
+— REFUTED: Z = N is forced and 36 diamonds violate chain-consistency
+(two bad components; G-T2's witness is one certificate). THEOREM.
+(ii) GRADIENT (h-transform) — SOLVED at every finite depth:** the
+backward recursion from a unit boundary gives Z(∅) = 64/1037,
+positivity throughout, per-cut normalization at all 215 interior
+histories, the A7 witness pair equalizing at 1/2074, with
+313-parameter boundary freedom — **at the unavoidable cost of
+WITHIN-CUT RATIO DEFORMATION at 21/114 interior cut classes, the
+root included (16/133 vs 32/257); no boundary choice avoids it.**
+Honest residues: infinite-volume positive-harmonic existence; whether
+ratio deformation is physical given G-L1. Round-2 decidable target:
+the actor-factored intermediate class. The v6 paper 1 identification
+ATTACHES TO THE DECIDED STATEMENT: the continuum shadow of
+"ratio-preserving TS fails / gradient TS holds at finite volume with
+ratio deformation" is the reopening condition's discrete form.
+
+**D2 (F2 — T2's diagnosis corrected, STRENGTHENING).** The printed
+"N is NOT cut-attached data" was FALSE: N is constant on all 427
+canonical classes (gated now). The true statement: N IS cut-attached
+but NOT A DISCRETE GRADIENT — its chain-products are foliation-
+dependent (it double-counts the blind layer along foliations that
+expose it). T2 stands, generalized from one witness to the 36-diamond
+census.
+
+**D3 (F3 — T1 gains its positivity hypothesis).** The no-go as
+worded was refuted by the degenerate ZERO-CLASS counterterm (the
+own-view component filter: gauge-invariant, restores sums ≡ 1 — by
+exactly L2's k·(1/4) — and kills ALL join arbitration). T1 holds for
+SUPPORT-PRESERVING (strictly positive) counterterms — the nesting
+argument (subset candidates, equal shared weights, positive extra
+mass) now printed and gated. The zero class is declared excluded:
+a completion that abolishes joint arbitration abolishes the physics
+it was meant to normalize.
+
+**D4 (F4 — the pre-registration corrected).** §2's dichotomy was too
+strong. Corrected: ratio-preserving classical placement is
+UNSOLVABLE (decided); classical completions EXIST but must deform
+within-cut ratios (gradient class) or attach non-cut data; **the
+LIFT is the only ratio-preserving normalized completion** — the
+sharpened bridge to d42b4.
+
+**D5 (the d42b1-delta hand-off: h12 as the third witness).** The
+transport grammar's h12 (d42b1 #304: one dead component inflating a
+live singleton's view-relative arb denominator; sum 23/24, off-
+ladder; the admission-based arb-D fix flattens the anchored blind
+spectra) is PINNED here as a completion constraint: any Z must
+price dead-component inflation on the EXTENDED grammar too; the
+general-depth ladder is FALSE under current pricing, so the
+completion problem, not the pricing patch, owns the reconciliation.
+
+**D6 (F5/F6/F7 declarations).** L1 is a THEOREM at depth <= 4 (all
+same-branch factors constant; referee proof recorded); its empirical
+content begins where factors vary — census demoted to tripwire with
+the q-spectrum disclosure printed. L2's exact-1/4 quantization is
+scoped to single-component join views (the d42a delta's
+parenthetical); additivity (k >= 2) is d42a-delta-carried, untested
+in this 2-actor family. The kernel is fixed to K1; PK1 == PK2 on
+every ARM-1 component (max size 2) — immaterial, declared.

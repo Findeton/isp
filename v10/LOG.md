@@ -5458,3 +5458,17 @@ before this commit. d42b1 terminal stands at the corrected receipt;
 h12 rides to d42b3 as pinned constraint. Lesson recorded: the
 green-claim in a LOG entry must be written AFTER the exit-0 check,
 never before.
+
+## 2026-07-18 — d42b3 amendments D1-D6 (LEDGER #305): the decided
+## theorems absorbed; h12 pinned as the third witness
+D1 T3 re-posed with the normalization clause and DECIDED (ratio-
+preserving REFUTED / gradient SOLVED-at-finite-depth with the 21/114
+deformation cost; v6 identification attached to the decided form).
+D2 N is cut-attached but not a gradient (strengthens T2). D3 T1 +
+positivity (zero-class excluded: it abolishes joint arbitration).
+D4 the lift = the only ratio-preserving normalized completion. D5
+h12 pinned (dead-component inflation = a completion constraint; the
+general-depth ladder FALSE under current pricing). D6 L1 theorem /
+L2 scoping / K1-only declarations. Receipt repairs next (the two
+computed gates, referee-pre-verified anchors: 202 diamonds / 36
+violations; Z(empty) = 64/1037; 215 interior; 1/2074; 21/114).
