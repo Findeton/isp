@@ -4942,3 +4942,23 @@ grammar (d41b protocol); (2) cite d41d's gates and scorecard only —
 never the superseded B4/B6/B3 labels. The paper-30 decision OPENS;
 D42's entry condition (item-7 verdict: opportunity structure
 IRREDUCIBLE) is now MET.
+
+## 2026-07-15 — D42 RELEASED; d42a grammar pin committed (LEDGER #281)
+D42's entry condition met at #280 (item-7 opportunity structure
+IRREDUCIBLE defines the demand). d42a pins the generated-proposal
+grammar: typed events prop/arb/idle over participant+version wires
+(d34a poset conventions; #152 fixed budgets propose 1/4 + arbitrate
+1/4 + idle absorber; initiator in the type), the H1 CAUSAL admission
+certificate with optimistic concurrency (orphans declared), conflict
+= same-base incomparable payload-distinct pairs, arb-as-acceptance
+fork-free, kernel laws K1 (order-click + greedy) and K2 (uniform
+maximal) SUPPLIED-alternative per paper 25 §10 with the batch now
+GENERATED — the split claim: batch/conflict/opportunity generated,
+kernel law + genesis boundary + measure completion inherited-supplied
+(d34b placement problem declared open). Two arms: ARM-1 minimal
+two-actor conflict + generated re-proposal; ARM-2 three-actor path
+P-Q-R discriminating K1 (2/3) vs K2 (1/2), TV exactly 1/6. Gates
+G1-G8 pinned exact (resequence invariance; serialized-control zero
+conflicts; deletion control; causal-vs-auth-only staleness; kernel
+discrimination; join census; budget telescope; record basis per the
+D41 eighth residue). Receipt next, STRICTLY against this pin.
