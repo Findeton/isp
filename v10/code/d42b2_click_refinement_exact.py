@@ -606,12 +606,19 @@ for hx in inter:
             got[(e[0], e[2], e[3] if e[0] != 'ka' else 'ka')] = q
     vals.append(got)
 okcc &= all(v == vals[0] for v in vals)
+okcc &= sorted(vals[0].values()) == [F(1, 8), F(1, 8),
+                                     F(1), F(1), F(1), F(1)]
+# delta note (1): the embedded maximality filter must be load-bearing —
+# a NON-maximal winner on the generated pair component must reject
+okcc &= admissible([pA0, pB1], ('r', 'A', frozenset({tA, tB}),
+                                frozenset()), ('A', 'B'))[0] is False
 check("CONCURRENT CHAINS (the case that crashed the round-1 toy): "
       "two disjoint components' click chains interleaved three ways — "
       "every factor computed from its own past, invariant across "
       "interleavings",
       okcc and len(vals[0]) == 6,
-      "sequential both orders + alternating; 6 click factors each")
+      "sequential both orders + alternating; 6 click factors anchored "
+      "(1/8 x2, 1 x4); non-maximal winner REJECTED (delta note 1)")
 
 # ---- M4 repair: the sector layer against the real grammar ------------------
 pC1 = ('p', 'C', V0, 1)

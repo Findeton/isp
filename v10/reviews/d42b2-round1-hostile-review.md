@@ -431,3 +431,143 @@ nowhere.
 The exactness mathematics of this front is correct and now
 independently confirmed; what the round demands before TERMINAL is
 that the receipt's gates be made as honest as its numbers.
+
+---
+
+# DELTA VERIFICATION (same referee, 2026-07-18) — round-1 body above untouched
+
+**Objects:** repaired receipt at e03e0a0 (GREEN 8/8), pin amendments
+B1–B3 (565af48), LOG #294/#295. Method: 4-seed rerun; embedded-layer
+fidelity (textual + functional); the round-1 mutation battery adapted
+to the repaired receipt; independent recomputation of every new
+fixture with my own poset/weight code and the ORIGINAL d42b1 module.
+
+## VERDICT: DELTA-CLEAN — 0 findings / 2 notes / 2 carried nits
+
+Every MAJOR and every minor is verified applied at core. All numbers
+digit-exact. 4 seeds (0/1/42/31337) byte-identical to the committed
+.out, exit 0, 0.06 s.
+
+## Per-finding disposition
+
+- **M1 DISCHARGED (census gated).** The five asserts are present and
+  correct (len 5; per-size {1:1, 2:1, 3:3}; triangle-freeness; the
+  {0,1,2} boundary control realizes the triangle; iso classes 3).
+  Mutation reruns: **MA2 (triangle wrongly added) now FAILS the census
+  gate, exit 1; MB2 (n=3 shapes dropped) FAILS, exit 1** — both were
+  7/7 green in round 1.
+- **M2 DISCHARGED (K2 anchored).** Paper 25 §10.3 path literals
+  (1/2, 1/2) hard-gated; the K1-support == MIS cross-tie runs on all 7
+  domain shapes; the triangle runs as the B2-declared ABSTRACT control
+  and carries the non-uniformity witness (conditionals {1/3, 2/3},
+  gated). Mutation reruns: **MG2 (mis_abs maximality dropped) now
+  fails TWO gates (E2 cross-tie + E4 literals), exit 1** (was green);
+  **ME2a (greedy corrupted alone) fails FOUR gates** via the greedy2
+  cross-check (E1, E2, click fixture, concurrent), exit 1; **ME2c (all
+  three greedy copies corrupted consistently) dies on E1's hard
+  literal** (KeyError, exit 1) — even the strongest consistent
+  corruption is caught. B2 also repairs the round-1 pin drift (the
+  pinned "triangle" now runs, as a declared abstract control with the
+  binary-rule scope stated).
+- **M3 DISCHARGED (real machinery).** The toy loop is gone; the click
+  fixture runs on the real poset. My independent recomputation (own
+  regs/poset/extension enumerator/weights): 12 linear extensions per
+  chain (the alien actor floating), every factor invariant under
+  recompute, pushforward = 1/8 per winner **== the ORIGINAL d42b1
+  module's composite admissible() q**, chain canons distinct under the
+  real canon.
+- **M4 DISCHARGED (sector real).** The receipt's fixtures reproduce on
+  the ORIGINAL module: merge at D = 1 prices 1/8; at the D = 2 record
+  point BOTH the arb and the merge price exactly
+  1/16 = (1/4)/2 x 1/2. E5's literal theater is replaced by these
+  grammar-driven gates.
+- **M5 DISCHARGED (B1).** The amendment declares the multi-event
+  reading with exactly the pre-verified semantics: join-typed opening
+  click (carriers = C's proposers; A4-consistent; C in event data per
+  A6), the opening carries the first selection AND the sector share
+  computed from ITS OWN past; continuations on the initiator's wire
+  (now genuinely past-computable); deterministic version-creating
+  acceptance; §2's under-specified sentence explicitly superseded;
+  **mid-chain drift NAMED as the refinement's batch-closure analogue
+  (paper 25 §11.1 class)** with fixture quiescence declared in the
+  receipt banner. This is the prescribed repair, executed.
+- **Embedded-layer fidelity (the M3/M4 precondition):** textual — all
+  shared functions IDENTICAL to d42b1's (modulo one docstring and a
+  trailing comment); the operative second regs_of kept verbatim with
+  the three new click branches (ko = proposers join; kc = initiator
+  wire; ka = initiator + created version). Functional — driving BOTH
+  admissible() implementations over d42b1's own candidates_for
+  enumeration (depth-3 two-actor family) plus raw inadmissible probes:
+  **4,012 comparisons, 0 mismatches.** "Verbatim semantics" holds.
+- **Concurrent two-chain case (the round-1 M-F crash class):**
+  verified independently with my own poset code — three interleavings,
+  all six factors invariant AND equal to the hand-derived values
+  (ko 1/8, kc 1, ka 1 per chain); both components' composite arb q
+  == 1/8 confirmed through the ORIGINAL module in the 4-actor context
+  (so the ko factors are the real sector shares, not just invariant);
+  every BASE2 context event is admissible event-by-event in the
+  original grammar with hand-checkable qs
+  (1/8, 1/4, 1/24, 1/8, 1/8, 1/8, 1/8). The committed ka branch is
+  ckey-derived as the coordinator states (the in-build hardcoded-edges
+  bug is not present in the committed code).
+- **minors m1–m6 DISCHARGED:** m1 labeled/iso both printed and gated
+  (B3-i); m2 the witness gated on the declared control (B2); m3
+  order-relativity gated on P4 and declared basis-relative (B3-ii) —
+  independently re-verified: MIS {a,c} clicks (2/3, 1, 1/2, 1) sorted
+  vs (1/3, 1, 1, 1) reversed, products both 1/3; m4 E6 on the real
+  canon; m5 greedy2 genuinely independent (adjacency-dict, reversed
+  accumulation) and cross-tied; m6 sector placement declared at the
+  opening click (B1). n1 (dead conditional) removed by the rewrite.
+
+## Notes (2, non-blocking)
+
+- **Note 1 (residual, pre-verified probe supplied).** The EMBEDDED
+  grammar layer's `gmis_of` maximality filter is exercised only in the
+  positive direction: mutating it to return all independent sets
+  leaves the receipt 8/8 green (the fixtures never offer a non-maximal
+  winner; gPK1 does not consult it). This is regression-protection,
+  not correctness — fidelity to the original is separately verified
+  (0/4,012), and grammar-side admission gating is d42b1's receipt's
+  jurisdiction. One pre-verified gate line closes it: on the generated
+  path [pA0, pB1', pC0''], `admissible(('r','A',ck3,{tA}))` must be
+  `(False, None)` (non-maximal winner rejected; the maximal {A,C}
+  prices at 1/4 x 2/3 = 1/6). Against the mutant this probe crashes
+  (KeyError in gPK1 lookup) — exit != 0 either way.
+- **Note 2 (carried with B1).** The ka acceptance reconstructs
+  component edges from ckey TRIPLES (base equality + payload
+  difference) — EXACT on the entire n <= 3 realizable domain (round-1
+  widened sweep: any within-component different-payload pair is an
+  edge at these sizes, else the component splits), divergent only for
+  n >= 4 comparability-deleted components (P4-class), unreachable by
+  the fixtures. The full refined grammar must legislate the click
+  data's component representation alongside mid-chain drift — same
+  carried bucket as B1's named question. Relatedly, the concurrent
+  gate checks factor invariance + count but not the 1/8 values; the
+  values are anchored for chain A by the single-chain fixture and now
+  independently confirmed for chain C (above) — a one-line value
+  assert would be a nicety, not a need.
+
+## Carried nits (dispositions recorded; compatible with DELTA-CLEAN)
+
+- **n2 (open).** Forced (q = 1) outcomes are recorded clicks in the
+  K1/K2 chains but "no click" at the equal-value merge — the
+  convention is record-basis content for d42b4; declare it there.
+- **n3 (open).** The "#152-form = uniform over the enabled set" gloss
+  (pin §2-K1, inherited by the E2/E7a label) still coexists with the
+  RF2 reading (#152 = recordedness + fixed budget); one clarifying
+  clause at the next pin touch.
+
+## Closing statement
+
+Per the stated condition this is **DELTA-CLEAN with no further
+round: D42B2 IS TERMINAL** (front 4 closed). What is now established
+at receipt grade, on the real grammar: both kernel draws and the
+merge click refine exactly into elementary recorded clicks; the
+refinement preserves every composite weight inside the (now
+grammar-computed) sector share at D = 1 and D = 2; the refined record
+basis is strictly finer under the real canon; the census of realizable
+conflict shapes is gated with the triangle exclusion scoped to the
+binary payload rule. The mid-chain-drift question (with the ka
+component-representation corollary, Note 2) rides to the full
+refinement; the fine-vs-coarse basis question rides to d42b4's
+per-type NSE gates.

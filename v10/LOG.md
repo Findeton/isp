@@ -5292,3 +5292,22 @@ G-L2 the obstruction density: excess = (#blind groups)/4, every
 group exactly 1/4, 2,382 actor-points 0 violations, k-spectrum
 {0: 2,134, 1: 248}. Round next (fresh referee; three streams then
 in flight: d42b1 R1, d42b2 delta, d42b3 R1).
+
+## 2026-07-18 — d42b2 TERMINAL: delta DELTA-CLEAN (LEDGER #298)
+0 findings / 2 notes / 2 carried nits; report delta section appended
+(round-1 body untouched). Referee verification highlights: the
+embedded layer verbatim-faithful (textual + 4,012 functional
+comparisons, 0 mismatches); the click fixture independently rebuilt
+(12 extensions factor-invariant, pushforward == the ORIGINAL
+module's composite); the concurrent case hand-verified (BASE2
+admissible event-by-event, qs 1/8, 1/4, 1/24, 1/8 x4); the D=2
+1/16 points reproduced on the original module; mutation batteries
+now bite (census MA2/MB2 fail; MG2 fails two gates; ME2a fails four
+via the independent greedy). Both delta notes APPLIED and rerun
+GREEN 8/8 seed-independent (0/53): the non-maximal-winner rejection
+probe (maximality filter load-bearing) + the concurrent factors
+anchored in-gate. FRONT 4 CLOSES: the refinement exact on the real
+grammar; sector factorization grammar-computed at D=1 and D=2; the
+finer record basis real; the census gated with binary-rule scope.
+Carried: mid-chain drift (full refinement), fine-vs-coarse basis +
+forced-click ontology (d42b4), #152-form gloss (next pin touch).
