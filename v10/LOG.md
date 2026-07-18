@@ -4868,3 +4868,32 @@ condition). NET: 3 generated, 3 irreducible-declared, 1 collapsed,
 0 OBSTRUCTED. Every residue lands on the corpus's three named organs
 (K; the boundary; the clock bridge) — now confirmed AT the identified
 law's smallest fixture. Hostile round launched (findings → #265).
+
+## 2026-07-15 — D41 round 1 WITHHOLDS promotion (3B/5M/5m/4n); repairs FROZEN; LEDGER numbering forward-corrected (entries #274–#277 lineage)
+Report `reviews/d41-round1-hostile-review.md`. Zero false numbers;
+one false printed artifact (B3's "complete census" — B1 used mass
+0.5/electric 0.3 vs the census's 1.0/0.5; delta_D, lam2, g and the
+B6 points missing). BLOCKERS: B4's NSE cross gate is identically
+zero for ANY inputs (disjoint support — vacuous); the "D26 DERIVED
+in-benchmark" headline is WIDER than the computation (D24's own
+overlap algebra; no benchmark datum enters the factor); B6's
+invariance clause is an arithmetic identity and the pinned
+click-count clock was never constructed; B3's gate cannot fail.
+MAJORS: verdict-alphabet drift (item 4 = IRREDUCIBLE per the pin's
+own fork ⇒ honest NET 2 generated, not 3); "ZERO OBSTRUCTED"
+unscoped; THE EIGHTH RESIDUE — paper 29 §9.2's preferred-durable-
+algebra slot, dropped by the pin's seven: the occupation record
+basis was silently pre-selected, falsifying "every residue lands on
+K/boundary/clock"; B1's generation attempt undischarged; B5
+reinterpreted (the ladder identity itself CONFIRMED + 4-site
+linearity). REFEREE-VERIFIED REPAIRS pre-computed: the functional-
+level D26 gate (click inserted between B2's U-steps suppresses
+exactly the site-1-distinguishing pairs by exactly 4/5, < 1.4e-82;
+the benchmark contributes WHICH pairs — the record basis — never
+the value); the real B6 refit gate (rescaled refit vs native within
+2e-11; exact ratio 16/19); the honest census. NUMBERING
+FORWARD-CORRECTION: my #261–#264 collide with the D40/paper-29
+block — the D41-turn entries are henceforth cited as #274 (pin),
+#275 (consolidations), #276 (d41c+D42), #277 (D41 green); the round
+report = #278. d41d repair receipt = the next work; paper-30
+decision waits on its delta.
