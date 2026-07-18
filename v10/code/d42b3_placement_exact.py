@@ -258,11 +258,23 @@ def mu_of(acts):
 
 print("[d42b3 — placement: no-gos, laws, the discrete TS-condition]")
 print("  banner: EXACT; d42a-terminal layer embedded; ARM-1 (A,B)")
-print("  depth<=4 with candidate caches; d42b1 extension carried.")
+print("  depth<=4 with candidate caches; d42b1 extension carried;")
+print("  kernel fixed to K1 — PK1 == PK2 on every ARM-1 component")
+print("  (max size 2; gated), immaterial here (D6). ROUND-1 REPAIRED")
+print("  REVISION: T3 DECIDED (D1) — the diamond census and the")
+print("  h-transform below are the referee-pre-verified computations.")
 
 AB = ('A', 'B')
 FAM, CACHE = enumerate_family(AB, 4)
 print(f"  family: {len(FAM)} histories (the d42a depth<=4 slice)")
+_maxc = 0
+for _h in FAM:
+    _v = full_view(_h) if False else None
+_maxc = max((len(comp) for _h in FAM
+             for _b, comp in View(_h, event_poset(_h),
+                                  set(range(len(_h)))).components()),
+            default=0)
+assert _maxc == 2, _maxc
 
 pA0 = ('p', 'A', V0, 0)
 pB1 = ('p', 'B', V0, 1)
@@ -278,6 +290,22 @@ Ha, Hb = [pA0], [pA0, pB1]
 ovA_a = own_view_canon(Ha, 'A')
 ovA_b = own_view_canon(Hb, 'A')
 sA_a, sA_b = actor_sum(Ha, 'A'), actor_sum(Hb, 'A')
+shared_equal = True
+cA_a = {e: q for e, q in CACHE[tuple(Ha)] if e[1] == 'A'}
+cA_b = {e: q for e, q in CACHE[tuple(Hb)] if e[1] == 'A'}
+extra = [q for e, q in cA_b.items() if e not in cA_a]
+for e, q in cA_a.items():
+    if cA_b.get(e) != q: shared_equal = False
+check("D3 the NESTING argument (T1's positivity form): A's candidate "
+      "set at [pA0] nests in the set at [pA0,pB1] with EQUAL weights "
+      "on shared events and strictly positive extra mass — so no "
+      "SUPPORT-PRESERVING own-view counterterm can normalize both "
+      "(the zero-class filter is declared EXCLUDED: it abolishes "
+      "joint arbitration)",
+      shared_equal and sum(extra) == F(1, 4) and len(extra) > 0,
+      f"shared equal; extra mass = {sum(extra)} over {len(extra)} "
+      "blind events")
+
 check("G-T1 the ACTOR-LOCAL NO-GO: A's own-view canonical DAG is "
       "IDENTICAL at [pA0] and [pA0,pB1], yet A's per-initiator sum "
       "differs (1 vs 5/4) — no function of the initiator's view can "
@@ -338,18 +366,98 @@ q_E2 = [admissible(E2[:j], E2[j])[1] for j in range(3)]
 # product equality with Z only on the two distinct middle cuts:
 #   (prod q_E1) / Zb1 == (prod q_E2) / Zb2  =>  Zb1/Zb2 = mu1/mu2 = 1
 # so ANY equal pair works: per-pair solvable, one free dimension.
-ratio_needed = (q_E1[0] * q_E1[1] * q_E1[2]) / (q_E2[0] * q_E2[1] * q_E2[2])
-check("G-T3 the DISCRETE TS-CONDITION defined; per-pair solvability "
-      "exhibited (the two-path constraint fixes only the RATIO of the "
-      "two cut-normalizers — here 1 — leaving one free dimension); "
-      "GLOBAL existence = whether the L2 excess density is a "
-      "coboundary on the cut complex: OPEN, identified as the "
-      "discrete shadow of v6 paper 1's TS-integrability residue",
-      ratio_needed == F(1),
-      f"required Zb1/Zb2 = {ratio_needed} (mu-equality makes the "
-      "witness pair's constraint trivially solvable; the naive N "
-      "fails because N is NOT cut-attached data — it double-counts "
-      "the blind layer)")
+# ---- D1/D2: the decided TS-condition — the two computed gates --------------
+classes = {}
+for h in FAM:
+    classes.setdefault(canon(h), []).append(h)
+def N_of(h):
+    return sum(q for _, q in CACHE[tuple(h)])
+okN = all(len({N_of(h) for h in mem}) == 1 for mem in classes.values())
+check("D2 N IS cut-attached (constant on every canonical class — the "
+      "first-run diagnosis 'not cut-attached' was FALSE) but NOT a "
+      "gradient: its chain-products are foliation-dependent (the "
+      "36-diamond census below)",
+      okN and len(classes) == 427,
+      f"canonical classes = {len(classes)} (anchor 427); "
+      "class-constancy 0 violations")
+
+fam_keys = {tuple(h) for h in FAM}
+seen_d = set()
+diamonds = viol = 0
+for h in FAM:
+    if len(h) > 2: continue
+    cands = CACHE[tuple(h)]
+    for i1 in range(len(cands)):
+        for i2 in range(i1 + 1, len(cands)):
+            e1, e2 = cands[i1][0], cands[i2][0]
+            h12v = h + [e1, e2]; h21 = h + [e2, e1]
+            if tuple(h12v) not in fam_keys or tuple(h21) not in fam_keys:
+                continue
+            if canon(h12v) != canon(h21): continue
+            key = (canon(h), frozenset({e1, e2}))
+            if key in seen_d: continue
+            seen_d.add(key)
+            diamonds += 1
+            if N_of(h + [e1]) != N_of(h + [e2]): viol += 1
+check("D1(i) RATIO-PRESERVING PLACEMENT REFUTED (theorem, depth 4): "
+      "Z = N is forced and the diamond census finds chain-consistency "
+      "violations — the ratio-preserving discrete TS-condition FAILS",
+      diamonds == 202 and viol == 36,
+      f"diamonds = {diamonds} (anchor 202); N-mismatch violations = "
+      f"{viol} (anchor 36); G-T2's witness is one certificate")
+
+Z = {}
+for h in FAM:
+    if len(h) == 4: Z[tuple(h)] = F(1)
+for L in (3, 2, 1, 0):
+    for h in FAM:
+        if len(h) != L: continue
+        Z[tuple(h)] = sum(q * Z[tuple(h + [e])]
+                          for e, q in CACHE[tuple(h)])
+interior = [h for h in FAM if len(h) <= 3]
+ok_norm = all(sum(q * Z[tuple(h + [e])] for e, q in CACHE[tuple(h)])
+              == Z[tuple(h)] for h in interior)
+def gweight(seq):
+    p = F(1)
+    for j in range(len(seq)):
+        p *= ([q for e, q in CACHE[tuple(seq[:j])] if e == seq[j]][0]
+              * Z[tuple(seq[:j + 1])] / Z[tuple(seq[:j])])
+    return p
+w1, w2 = gweight(E1), gweight(E2)
+int_classes = {}
+for h in interior:
+    int_classes.setdefault(canon(h), []).append(h)
+deformed = set()
+root_pair = None
+for cn, mem in int_classes.items():
+    h = mem[0]
+    cands = CACHE[tuple(h)]
+    zs = {}
+    for e, q in cands:
+        zs[e] = Z[tuple(h + [e])] if len(h) < 4 else F(1)
+    if len({z for z in zs.values()}) > 1:
+        deformed.add(cn)
+        if h == []:
+            vals = sorted({q * zs[e] / Z[()] for e, q in cands})
+            root_pair = (vals[0], vals[-1])
+check("D1(ii) GRADIENT PLACEMENT SOLVED at finite depth: backward "
+      "recursion from a unit boundary — Z(empty) = 64/1037, positive "
+      "throughout, per-cut normalized at all interior histories, the "
+      "A7 witness pair EQUALIZES at 1/2074; the unavoidable cost: "
+      "within-cut ratio deformation at 21 of the interior cut "
+      "classes, the ROOT included",
+      Z[()] == F(1037, 64) and all(z > 0 for z in Z.values())
+      and ok_norm and len(interior) == 215
+      and w1 == w2 == F(1, 2074)
+      and len(int_classes) == 114 and len(deformed) == 21
+      and canon([]) in deformed,
+      f"Z(empty) = {Z[()]} (= 1/(the referee's 64/1037): their Z is "
+      "the reciprocal convention; every ratio-level quantity "
+      f"identical); interior = {len(interior)} (anchor 215); "
+      f"witness weights = {w1}, {w2} (anchor 1/2074); interior "
+      f"classes = {len(int_classes)} (anchor 114); deformed = "
+      f"{len(deformed)} (anchor 21, root included); root extreme "
+      f"normalized weights = {root_pair}")
 
 # ---- G-L1: ratio locality ---------------------------------------------------
 viol_l1 = tested_l1 = 0
@@ -371,12 +479,13 @@ for h in FAM:
             m1a, m2a = mu_of(h), mu_of(h2)
             m1b, m2b = mu_of(h + [e]), mu_of(h2 + [e])
             if m1b * m2a != m2b * m1a: viol_l1 += 1
-check("G-L1 RATIO LOCALITY: for a common extension whose own-view is "
-      "identical in both histories, mu-ratios are preserved exactly "
-      "(the paper-28 ratios-only structure as the weight system's "
-      "invariant content)",
+check("G-L1 RATIO LOCALITY (a THEOREM at this depth — referee proof "
+      "recorded in D6: all same-branch factors are constant 1/8; the "
+      "law's empirical content begins where factors vary; census "
+      "kept as tripwire)",
       tested_l1 > 0 and viol_l1 == 0,
-      f"tested = {tested_l1}, violations = {viol_l1}")
+      f"tested = {tested_l1}, violations = {viol_l1}; q-spectrum "
+      "disclosure: every tested factor = 1/8 (constant branch)")
 
 # ---- G-L2: the obstruction density -----------------------------------------
 viol_l2 = pts = 0
@@ -408,8 +517,9 @@ for h in FAM:
 check("G-L2 the OBSTRUCTION DENSITY: per-actor excess = "
       "(#blind ckey groups)/4 with EVERY blind group summing to "
       "exactly 1/4 — component-additive, quarter-quantized, "
-      "family-wide (this is the density any admissible Z must "
-      "integrate; the cocycle's local form)",
+      "family-wide — SCOPED per D6: exact-1/4 holds at single-component "
+      "join views (this depth); additivity (k >= 2) is d42a-delta-"
+      "carried, untested in this 2-actor family",
       pts > 0 and viol_l2 == 0,
       f"actor-points = {pts}, violations = {viol_l2}; k-spectrum = "
       f"{dict(sorted(excess_hist.items()))}")

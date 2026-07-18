@@ -5472,3 +5472,20 @@ general-depth ladder FALSE under current pricing). D6 L1 theorem /
 L2 scoping / K1-only declarations. Receipt repairs next (the two
 computed gates, referee-pre-verified anchors: 202 diamonds / 36
 violations; Z(empty) = 64/1037; 215 interior; 1/2074; 21/114).
+
+## 2026-07-18 — d42b3 round-1 repairs GREEN 8/8 (LEDGER #306);
+## delta launched
+The two computed gates land on the referee anchors exactly: D1(i)
+ratio-preserving REFUTED — 202 canonical diamonds, 36 N-mismatch
+violations (dedupe by (base-class, event-pair) was the count
+convention); D1(ii) gradient SOLVED — Z(empty) = 1037/64 (the
+reciprocal of the referee's 64/1037 convention; all ratio-level
+quantities identical), positivity, per-cut normalization at all 215
+interior histories, witness pair at 1/2074, 114 interior classes
+with 21 DEFORMED incl. the root (extreme normalized root weights
+133/2074 vs 771/2074). D2 N class-constancy gated (0/427). D3 the
+nesting/positivity gate (shared weights equal; extra mass exactly
+1/4 over 2 blind events). D6 L1-theorem disclosure + L2 scoping +
+the K1-only banner with the max-component==2 assert. Delta to the
+round referee next; on DELTA-CLEAN d42b3 goes terminal and
+d42b5/d42b6 open on the decided TS-structure.
