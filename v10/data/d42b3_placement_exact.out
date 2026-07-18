@@ -1,0 +1,12 @@
+[d42b3 — placement: no-gos, laws, the discrete TS-condition]
+  banner: EXACT; d42a-terminal layer embedded; ARM-1 (A,B)
+  depth<=4 with candidate caches; d42b1 extension carried.
+  family: 1191 histories (the d42a depth<=4 slice)
+  [PASS] G-T1 the ACTOR-LOCAL NO-GO: A's own-view canonical DAG is IDENTICAL at [pA0] and [pA0,pB1], yet A's per-initiator sum differs (1 vs 5/4) — no function of the initiator's view can serve as the normalizing counter-term (the excess lives in join-view data the actor cannot see)  (own-view canons equal = True; sums = 1, 5/4)
+  [PASS] G-T2 CUT-NORMALIZATION IS THE LOTTERY, reconvicted on the generated grammar: the A7 witness pair is ONE canonical DAG with mu = 1/256 under both orders, but the cut-normalized products DIFFER exactly (1/2048 vs 1/2560; N jumps 2 -> 5/2 when the blind pair becomes visible) — d34a-H5's conviction, reproduced  (mu = 1/256; cut products = 1/2048 vs 1/2560; N-sequences = ['2', '2', '2'] vs ['2', '2', '5/2'])
+  [PASS] G-T3 the DISCRETE TS-CONDITION defined; per-pair solvability exhibited (the two-path constraint fixes only the RATIO of the two cut-normalizers — here 1 — leaving one free dimension); GLOBAL existence = whether the L2 excess density is a coboundary on the cut complex: OPEN, identified as the discrete shadow of v6 paper 1's TS-integrability residue  (required Zb1/Zb2 = 1 (mu-equality makes the witness pair's constraint trivially solvable; the naive N fails because N is NOT cut-attached data — it double-counts the blind layer))
+  [PASS] G-L1 RATIO LOCALITY: for a common extension whose own-view is identical in both histories, mu-ratios are preserved exactly (the paper-28 ratios-only structure as the weight system's invariant content)  (tested = 28, violations = 0)
+  [PASS] G-L2 the OBSTRUCTION DENSITY: per-actor excess = (#blind ckey groups)/4 with EVERY blind group summing to exactly 1/4 — component-additive, quarter-quantized, family-wide (this is the density any admissible Z must integrate; the cocycle's local form)  (actor-points = 2382, violations = 0; k-spectrum = {0: 2134, 1: 248})
+
+[SUMMARY] 5 PASS / 0 FAIL
+[VERDICT] d42b3 GREEN: actor-local counter-terms impossible (T1); cut-normalization reconvicted as the lottery (T2); the discrete TS-condition defined with per-pair solvability and the global cocycle question OPEN, identified with v6 paper 1's residue (T3); ratio locality and the quarter-quantized obstruction density established as exact laws (L1, L2).

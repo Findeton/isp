@@ -5275,3 +5275,20 @@ quarter-quantized (each blind group exactly 1/4). Pre-registered:
 if the TS-condition fails globally, classical placement is
 UNSOLVABLE and the lift is the only completion — itself a theorem-
 class outcome. Receipt next.
+
+## 2026-07-18 — d42b3 receipt GREEN 5/5 (LEDGER #297); round next
+v10/code/d42b3_placement_exact.py, EXACT, seed-independent (0/61),
+0.5 s; d42a-terminal layer embedded, ARM-1 depth<=4 (1,191
+histories; the d42a delta already verified the ladder law at depth 5
+across 32,884 actor-points — cited, not re-run). G-T1 the
+actor-local no-go EXACT (identical own-view canons, sums 1 vs 5/4).
+G-T2 the cut-lottery reconviction EXACT on the A7 witness pair (one
+canonical DAG, mu 1/256 both; cut products 1/2048 vs 1/2560;
+N-sequences (2,2,2) vs (2,2,5/2)). G-T3 the discrete TS-condition:
+per-pair constraint fixes only the normalizer RATIO (= 1 here, by
+mu-equality); global existence = the coboundary question, OPEN,
+identified with v6 paper 1's TS residue. G-L1 ratio locality 28/0.
+G-L2 the obstruction density: excess = (#blind groups)/4, every
+group exactly 1/4, 2,382 actor-points 0 violations, k-spectrum
+{0: 2,134, 1: 248}. Round next (fresh referee; three streams then
+in flight: d42b1 R1, d42b2 delta, d42b3 R1).
