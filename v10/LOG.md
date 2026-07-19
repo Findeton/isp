@@ -6272,3 +6272,30 @@ the pincer stands for cut/initiator-attached channels; E-A excluded
 by visibility; the foliation face and the measure side remain open
 and separate. The N-program is 4/4 TERMINAL: d43a (#340), d43d
 (#342), d43b, d43c (here). Synthesis note next.
+
+## 2026-07-19 — the N-program SYNTHESIS (LEDGER #345)
+note-d43e-n-program-synthesis.md written — no new receipts; every
+claim cited to a terminal unit. The four settled statements: S1
+(d43a) the collar bracket's operator RAY is rule-independent —
+rule-relative data is constants only (kappa(1/2) = 13/2304,
+kappa(1) = -1/72; the sign flip = the shared-generator no-go); S2
+(d43b) residue 1 DECIDED on the computed window on the grammar's
+own six-state chain (lambda = 2; root-free certificate YES;
+mass-transport exact; both closure-theorem ingredients
+receipt-gated); S3 (d43c) the arbitration operator EXISTS at
+fixture scale ({V_single, V_pair} constructed; Born = K1; menus
+reconstructed at both cuts; E-A excluded); S4 (d43d) transport
+GENERATES dimension at actor-width >= 4 (S3 sharply at six actors;
+width not event count is the axis). Meta-result recorded: all four
+original headlines corrected by their rounds, three positive
+reversals — the adversarial cycle as the result-producing step.
+Corpus effect: audit joints A2 discharged at ray level; the click
+law's completion has a decided core; the quantum horn is
+constructive; dimension has a mechanism. Imports: [I1] partially
+landed + relocated to transport scope; [I2] landed as
+visibility-not-scheduling; [I3]-[I5] unspent. Seven successors
+NAMED, none started (closure theorem; [I1]-at-transport;
+multi-author-arb corner; LT slab theorem + kappa(m) zero crossing +
+p15 cross-check; the d42b4 reception census; horn 2's foliation +
+measure arms; the paper-31-class decision = the user's). This
+closes the "go ahead, N1-N4" instruction (#328).
