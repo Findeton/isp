@@ -6061,3 +6061,34 @@ clause, T5 = the smeared computation with the round's exact anchors
 adopted-with-confirmation, completeness checks) applied; rerun in
 progress. Successors named: the LT log-smeared finite-slab theorem;
 κ(m) exact (the zero crossing); the interacting p15 cross-check.
+
+## 2026-07-19 — FORWARD CORRECTION of #333 + d43d ROUND 1 FROZEN
+## (LEDGER #337): THE HEADLINE INVERTS — TRANSPORT GENERATES
+## DIMENSION
+Report: reviews/d43d-round1-hostile-review.md (0B/4M/3m/2n; the
+port itself is CLEAN — all six chain D* values digit-for-digit vs
+the committed v8 code; every printed number true). #333's headline
+"TRANSPORT DOES NOT GENERATE DIMENSION" is FALSE (the #304-class
+correction): F1 the referee's W6 witness — SIX deliveries of v0
+among 6 actors, every event admissible per the committed layer
+(q = 1/20 each) — has event poset EXACTLY S3, rejected by both the
+committed v8 oracle and the receipt's port. n = 6 is the theoretical
+minimum (no 3D poset on <= 5 elements); the S3 threshold is SHARPLY
+6 actors for pure transport (analytic crown-slot bound); 4-actor
+transport already fails dim<=2 at n = 6 (witness W4); 3-actor pure
+transport stays 2D through 10 events (exhaustive); 2-actor is 2D at
+ALL depths (width <= 2 — provable). F2: my chain suite could not
+test the question — 5/6 chains have WIDTH <= 2 where dim <= 2 is a
+theorem before the run; capability is WIDTH, not event count. F3:
+the NG2 median line was wrong under its own label (true at-or-below
+mass ~ 49.4%; the modal dmin 21/64 IS the median) + the malformed
+double-slash print. F4: the pinned 4,231 anchor was never run
+in-receipt yet #333 recorded it as verified (record-integrity; the
+fact itself referee-confirmed true, ~7 s). Minors: NG3 zero
+mutation coverage (merge-deletion mutant passes); the parity check
+vacuous-as-labeled; the cross-n "CH most volume-faithful" violates
+the same-n discipline; the pin's "n = 8..11" for an n = 4..12
+suite. THE PHYSICS: the dimension question REVERSES — delivery
+joins among >= 4 actors generate 3D order structure; the paper-20
+dynamic fork acquires a POSITIVE mechanism (transport width), with
+multi-author arbs the declared untested corner. Repairs next.
