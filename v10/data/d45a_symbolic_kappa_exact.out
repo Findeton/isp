@@ -1,0 +1,152 @@
+[d45a — the symbolic-m closure of kappa: the identification pipeline
+  run with the mass as a FORMAL VARIABLE]
+  banner: EXACT symbolic arithmetic — every matrix entry is a pair of
+  polynomials in m (real, imaginary) with Fraction coefficients; the
+  Delta-series is a list of such pairs; ZERO floats (no mpmath import,
+  no float literal, no tolerance — every gate is polynomial equality).
+  Scope: the committed d44d SINGLETON identification, ORD = 4, L = 12,
+  both rules (EXC read at Delta^2, LT at Delta^4), tau over r = 1..4 —
+  the tau_D_sg0/kappa_pipeline code path ported structurally; the slab
+  arms are m-pointwise-verified at #353 and inherit by the A5 weight-
+  independence note (declared NOT re-run symbolically; pin section 4).
+  DIVISION AUDIT (the pin's failure mode, verified in the port): the
+  only divisions anywhere are by integer constants — the 1/2 hopping
+  normalization and the 1/k! factorials, entering as exact Fractions;
+  the Neumann inversion starts at the identity (gated constant-free
+  below by assertion); the polynomial layer defines NO division of
+  polynomials, so an m-dependent division would raise TypeError.
+  Exact-zero dropping replaces the committed numeric dust drops (an
+  identically-zero entry carries no information; mathematically inert).
+  Regression sources (read-only): the KTAB rationals from
+  v10/data/d44d_slab_kappa_exact.out (KG2) and the REF_LT signed
+  channel table from v10/code/d44d_slab_kappa_exact.py (T5).
+  Ring-homomorphism note (YG0): evaluation m -> m0 is a homomorphism
+  Q[m] -> Q, so the derived polynomials evaluated at m0 ARE the
+  pipeline outputs at mass m0; agreement with the committed grid is
+  the regression content.
+  Deterministic: no RNG, no wall clock, no environment reads; sorted
+  iteration at every print; rerun byte-identical (YG4).
+
+[Y-PORT — port fidelity of the symbolic builders]
+  [PASS] PF1 the generalized region collar builder == the singleton builder entrywise as POLYNOMIAL PAIRS (lam = 1 and 1/2), and both give the free H on the empty region
+  [PASS] PF2 the symbolic H is Hermitian as a polynomial-pair matrix; the mass enters ONLY linearly on the diagonal (deg-1 real polynomials with zero constant term); every hopping entry is a pure-imaginary m-free constant  (72 nonzero entries)
+
+[Y-PIPE — the symbolic pipeline: U_free, Gamma, Neumann inverse, per-site J, tau/D]
+  [PASS] PIPE-1 Gamma(U_free) has Delta^0 == identity exactly (the Neumann precondition; N = Gamma - I is constant-free by assertion inside the inversion)
+  [PASS] PIPE-2 Gamma(U_free) and its Neumann inverse are REAL polynomial matrices (every imaginary polynomial identically zero) — |U|^2 realness holds symbolically  (Gfi: 120 nonzero series entries)
+  EXC identification done (tau over r = 1..4, read at Delta^2)
+  LT identification done (tau over r = 1..4, read at Delta^4)
+
+[YG0 — regression: the derived polynomials evaluated on the committed grid]
+  m       committed KTAB      symbolic kappa(m) eval   EXC eval
+  1/16        258313/9437184      258313/9437184 [==]     1 [==]
+  1/4              793/36864           793/36864 [==]     1 [==]
+  1/2                13/2304             13/2304 [==]     1 [==]
+  5/8           -1991/589824        -1991/589824 [==]     1 [==]
+  1                    -1/72               -1/72 [==]     1 [==]
+  3/2               253/2304            253/2304 [==]     1 [==]
+  2                    11/18               11/18 [==]     1 [==]
+  [PASS] YG0-A the symbolic LT D(0,0) evaluated at m = 1/2 and m = 1 gives 13/2304 and -1/72 EXACTLY, and at 5 more committed grid masses reproduces the committed KTAB rationals exactly  (7 masses, exact Fraction equality, zero tolerance)
+  [PASS] YG0-B the symbolic EXC D(0,0) evaluated at every one of the 7 grid masses equals 1 exactly (the committed KG2-B mass-blindness)
+
+[YG1 — THE DERIVATION: symbolic tau tables and the collapse]
+  EXC tau channels (delta, s, s') -> polynomial in m [exact Fraction coefficients]:
+    delta=-2 (s,s')=(0,0) [same]: (-1/4)*m^0
+    delta=-2 (s,s')=(1,1) [same]: (-1/4)*m^0
+    delta=-1 (s,s')=(0,1) [flip]: (1/2)*m^0
+    delta=-1 (s,s')=(1,0) [flip]: (1/2)*m^0
+    delta=+1 (s,s')=(0,1) [flip]: (-1/2)*m^0
+    delta=+1 (s,s')=(1,0) [flip]: (-1/2)*m^0
+    delta=+2 (s,s')=(0,0) [same]: (1/4)*m^0
+    delta=+2 (s,s')=(1,1) [same]: (1/4)*m^0
+  EXC D entries (polynomials in m):
+    D(0, 0) = (1)*m^0
+    D(0, 1) = (-1)*m^0
+    D(1, 0) = (-1)*m^0
+    D(1, 1) = (1)*m^0
+  [PASS] YG1-A EXC collapse: D == 1*(I - sigma_x) IDENTICALLY IN m — all four entries are the CONSTANT polynomials (1, -1, -1, 1); the EXC side is mass-blind as a theorem, not per-mass
+  LT tau channels (delta, s, s') -> polynomial in m [exact Fraction coefficients]:
+    delta=-4 (s,s')=(0,0) [same]: (-1/512)*m^0
+    delta=-4 (s,s')=(1,1) [same]: (-1/512)*m^0
+    delta=-3 (s,s')=(0,1) [flip]: (1/256)*m^0 + (-3/256)*m^2
+    delta=-3 (s,s')=(1,0) [flip]: (1/256)*m^0 + (-3/256)*m^2
+    delta=-2 (s,s')=(0,0) [same]: (-7/2304)*m^0 + (5/192)*m^2 + (-1/64)*m^4
+    delta=-2 (s,s')=(1,1) [same]: (-7/2304)*m^0 + (5/192)*m^2 + (-1/64)*m^4
+    delta=-1 (s,s')=(0,1) [flip]: (5/2304)*m^0 + (-13/768)*m^2 + (1/32)*m^4
+    delta=-1 (s,s')=(1,0) [flip]: (5/2304)*m^0 + (-13/768)*m^2 + (1/32)*m^4
+    delta=+1 (s,s')=(0,1) [flip]: (-5/2304)*m^0 + (13/768)*m^2 + (-1/32)*m^4
+    delta=+1 (s,s')=(1,0) [flip]: (-5/2304)*m^0 + (13/768)*m^2 + (-1/32)*m^4
+    delta=+2 (s,s')=(0,0) [same]: (7/2304)*m^0 + (-5/192)*m^2 + (1/64)*m^4
+    delta=+2 (s,s')=(1,1) [same]: (7/2304)*m^0 + (-5/192)*m^2 + (1/64)*m^4
+    delta=+3 (s,s')=(0,1) [flip]: (-1/256)*m^0 + (3/256)*m^2
+    delta=+3 (s,s')=(1,0) [flip]: (-1/256)*m^0 + (3/256)*m^2
+    delta=+4 (s,s')=(0,0) [same]: (1/512)*m^0
+    delta=+4 (s,s')=(1,1) [same]: (1/512)*m^0
+  LT D entries (polynomials in m):
+    D(0, 0) = (1/36)*m^0 + (-5/48)*m^2 + (1/16)*m^4
+    D(0, 1) = (-1/36)*m^0 + (5/48)*m^2 + (-1/16)*m^4
+    D(1, 0) = (-1/36)*m^0 + (5/48)*m^2 + (-1/16)*m^4
+    D(1, 1) = (1/36)*m^0 + (-5/48)*m^2 + (1/16)*m^4
+  DERIVED: kappa(m) = D_LT(0,0) = (1/36)*m^0 + (-5/48)*m^2 + (1/16)*m^4
+  [PASS] YG1-B LT collapse: D == kappa(m)*(I - sigma_x) with ONE polynomial kappa(m) — D(1,1) == D(0,0), D(0,1) == D(1,0) == -D(0,0) as polynomial-pair identities
+  [PASS] YG1-C THE ALL-m IDENTITY: kappa(m) - (9m^4 - 15m^2 + 4)/144 == the ZERO polynomial (every coefficient zero) — the D44d hull-verified quartic is now DERIVED for all m  (difference polynomial = 0)
+  [PASS] YG1-D the symbolic LT tau table evaluated at m = 1/2 and m = 1 reproduces the committed REF_LT signed channel values exactly (set equality of nonzero channels AND exact values)  (the d44d T5 table is the m-evaluation of these polynomials)
+
+[YG2 — the ray identity in m: every off-ray component vanishes as a POLYNOMIAL]
+  [PASS] YG2-A off-ray components of BOTH rules' identified operators are the ZERO polynomial: D00 - D11 == 0 (sigma_z), D01 - D10 == 0 (sigma_y), D00 + D01 == 0 (the I/sigma_x ray closure) — the collapse is an all-m theorem, not pointwise  (EXC: D00-D11 == 0, D01-D10 == 0, D00+D01 == 0; LT: D00-D11 == 0, D01-D10 == 0, D00+D01 == 0)
+  [PASS] YG2-B REALITY as polynomials: every A-coefficient entry, every tau channel, and every D entry of both rules has identically-zero imaginary polynomial
+  [PASS] YG2-C delta-odd IN m: tau(-delta,s,s') == -tau(delta,s,s') as a polynomial identity in every channel of both rules (the committed B6 anchor upgraded to all m)
+  [PASS] YG2-D sub-onset validity as polynomials: J^EXC order 1 and J^LT orders 1-3 are ZERO polynomial matrices at every site used; Delta^0 == identity exactly  (EXC: orders (1,) zero at sites [0, 1, 2, 3, 4], Delta^0 == I; LT: orders (1, 2, 3) zero at sites [0, 1, 2, 3, 4, 5], Delta^0 == I)
+  [PASS] YG2-E completeness as polynomials: the EXC commutators at r = 3, 4 vanish identically (the r = 1..4 sum is EXACTLY the r = 1..2 kernel sum) and the LT completeness slot [A(0), A(5)] == 0 — the r = 1..4 identification is complete for both rules at all m  (entry counts: EXC r=3: 0, EXC r=4: 0, LT r=5: 0)
+
+[YG3 — structural origin: which channels carry which factors]
+  the D(0,0) combination is D00 = sum_delta delta*tau(delta,0,0); channel content:
+    delta=-4: tau = (-1/512)*m^0
+              delta*tau = (1/128)*m^0
+    delta=-2: tau = (-7/2304)*m^0 + (5/192)*m^2 + (-1/64)*m^4
+              delta*tau = (7/1152)*m^0 + (-5/96)*m^2 + (1/32)*m^4
+    delta=+2: tau = (7/2304)*m^0 + (-5/192)*m^2 + (1/64)*m^4
+              delta*tau = (7/1152)*m^0 + (-5/96)*m^2 + (1/32)*m^4
+    delta=+4: tau = (1/512)*m^0
+              delta*tau = (1/128)*m^0
+  the delta-weighted combination (same channels): (1/36)*m^0 + (-5/48)*m^2 + (1/16)*m^4
+  the flip-channel combination (D(0,1)): (-1/36)*m^0 + (5/48)*m^2 + (-1/16)*m^4
+  [PASS] YG3-A the delta-weighted same-channel combination == kappa(m) and the flip-channel combination == -kappa(m), reassembled independently from the printed channel polynomials
+  exact factorization over Q of each channel polynomial and of kappa (x = m^2):
+    tau(delta=-4, same): CONSTANT in m = -1/512
+    tau(delta=-2, same): in x = m^2: ((-7)*x^0 + (60)*x^1 + (-36)*x^2)/2304
+      quadratic-in-m^2 route: disc = 2592 (not a perfect square) — irreducible over Q
+    tau(delta=+2, same): in x = m^2: ((7)*x^0 + (-60)*x^1 + (36)*x^2)/2304
+      quadratic-in-m^2 route: disc = 2592 (not a perfect square) — irreducible over Q
+    tau(delta=+4, same): CONSTANT in m = 1/512
+    tau(delta=-3, flip): in x = m^2: ((1)*x^0 + (-3)*x^1)/256
+      linear in x: exact rational root x = 1/3
+      rational x-roots as m^2-factors: (3*m^2 - 1)
+    tau(delta=-1, flip): in x = m^2: ((5)*x^0 + (-39)*x^1 + (72)*x^2)/2304
+      quadratic-in-m^2 route: disc = 81 = 9^2 (perfect square) -> exact rational roots x = 5/24, 1/3
+      rational x-roots as m^2-factors: (24*m^2 - 5) * (3*m^2 - 1)
+    tau(delta=+1, flip): in x = m^2: ((-5)*x^0 + (39)*x^1 + (-72)*x^2)/2304
+      quadratic-in-m^2 route: disc = 81 = 9^2 (perfect square) -> exact rational roots x = 5/24, 1/3
+      rational x-roots as m^2-factors: (24*m^2 - 5) * (3*m^2 - 1)
+    tau(delta=+3, flip): in x = m^2: ((-1)*x^0 + (3)*x^1)/256
+      linear in x: exact rational root x = 1/3
+      rational x-roots as m^2-factors: (3*m^2 - 1)
+    kappa(m): in x = m^2: ((4)*x^0 + (-15)*x^1 + (9)*x^2)/144
+      quadratic-in-m^2 route: disc = 81 = 9^2 (perfect square) -> exact rational roots x = 1/3, 4/3
+      rational x-roots as m^2-factors: (3*m^2 - 1) * (3*m^2 - 4)
+  kappa factorization statement: 144*kappa(m) = (3*m^2 - 1)*(3*m^2 - 4)  [exact expansion check: True]
+  [PASS] YG3-B the exact factorization: kappa(m) == (3m^2 - 1)(3m^2 - 4)/144 by exact polynomial expansion, with the rational x-roots 1/3 and 4/3 found by the integer-discriminant route (81 = 9^2)  (zero crossings at m^2 = 1/3 and m^2 = 4/3 for ALL m — no hull)
+  STRUCTURAL ORIGIN (the exhibited polynomial algebra, exact):
+    same sector -> D(0,0): tau(+-2) = +-(36m^4 - 60m^2 + 7)/2304 [irreducible over Q, disc 2592] and tau(+-4) = +-1/512 [constant];
+    by delta-oddness D(0,0) = 4*tau(2) + 8*tau(4) = [4*(36m^4 - 60m^2 + 7) + 36]/2304 — the constant channel shifts the bracket 7 -> 16, and 36m^4 - 60m^2 + 16 = 4*(3m^2 - 1)*(3m^2 - 4): the factorization EXISTS IN NO SINGLE same channel; it is CREATED by the delta-weighted addition of the constant tau(4) channel.
+    flip sector -> D(0,1): tau(+-1) = -+(3m^2 - 1)*(24m^2 - 5)/2304 and tau(+-3) = +-(3m^2 - 1)/256 — the factor (3m^2 - 1) is a COMMON FACTOR of every flip channel; D(0,1) = 2*tau(1) + 6*tau(3) = (3m^2 - 1)*(64 - 48m^2)/2304 = -(3m^2 - 1)*(3m^2 - 4)/144: the second factor (3m^2 - 4) emerges from the weighted sum.
+  [PASS] YG3-C which channels carry which factors, gated by exact expansion: tau(4,same) == 1/512; tau(2,same) == (36m^4 - 60m^2 + 7)/2304; tau(3,flip) == (3m^2 - 1)/256; tau(1,flip) == -(3m^2 - 1)(24m^2 - 5)/2304; and the sector recombinations 4*tau(2) + 8*tau(4) == kappa(m), 2*tau(1) + 6*tau(3) == -kappa(m)  ((3m^2 - 1) sits in every flip channel; (3m^2 - 4) only in the sums)
+
+[YG4 — purity and determinism]
+  [PASS] YG4-A ZERO floats: mpmath never imported; a recursive type walk over every retained object (H, Gfi, every cached J series, both tau tables, both D matrices, kappa) finds 0 float objects and Fraction coefficients only  (floats = 0, Fraction coefficients walked = 1590)
+  [PASS] YG4-B tolerance-free banner: every gate above is exact equality of polynomial pairs (tuples of Fractions); no TOL constant exists in this receipt; determinism: no RNG, no wall clock, no environment reads, sorted iteration at every print — rerun byte-identical (verified externally with PYTHONHASHSEED 0 and 7)
+
+[SUMMARY] 20 PASS / 0 FAIL
+[YG1 VERDICT] the singleton identification at ORD 4, L 12 is now a THEOREM for ALL m at fixture scale: EXC D = 1*(I - sigma_x) identically; LT D = kappa(m)*(I - sigma_x) with kappa(m) = (9*m^4 - 15*m^2 + 4)/144 = (3*m^2 - 1)*(3*m^2 - 4)/144 as an exact polynomial identity — the D44d hull caveat is CLOSED (the 28-point verification was the shadow of this identity).
+[YG3 VERDICT] structural origin (gated at YG3-C): D(0,0) is fed ONLY by the same-spin channels — 4*tau(2,same) + 8*tau(4,same) with tau(2) = (36m^4 - 60m^2 + 7)/2304 IRREDUCIBLE over Q and tau(4) = 1/512 constant; the factorization lives in NO single same channel — the constant channel's +9 shift of the bracket (7 -> 16) CREATES 36m^4 - 60m^2 + 16 = 4*(3m^2 - 1)*(3m^2 - 4). In the flip sector (3m^2 - 1) is a COMMON FACTOR of every channel (tau(+-3) = +-(3m^2 - 1)/256; tau(+-1) = -+(3m^2 - 1)*(24m^2 - 5)/2304) and (3m^2 - 4) emerges from the weighted sum 2*tau(1) + 6*tau(3) = -kappa(m), closing the (I - sigma_x) ray. The two zero crossings have DIFFERENT channel origins: m^2 = 1/3 kills every flip channel identically; m^2 = 4/3 kills only the combinations.
+[VERDICT] d45a delivered: the symbolic-m closure holds — YG0 regression exact on 7 committed grid masses; YG1 the all-m collapse identities; YG2 off-ray/reality/sub-onset/delta-odd/completeness all vanish as polynomials; YG3 the factorization exhibited exactly; YG4 zero floats. kappa(m) = (3*m^2 - 1)*(3*m^2 - 4)/144 for ALL m at fixture scale (ORD 4, L 12, singleton; slab arms inherit pointwise per #353 + A5, declared not re-run).

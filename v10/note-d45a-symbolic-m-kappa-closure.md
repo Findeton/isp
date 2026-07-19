@@ -69,3 +69,26 @@ inherit by A5's weight-independence note — re-running them
 symbolically is optional and declared either way).  No claim beyond
 the fixture; the smeared interacting successor (with its g = 0
 column) is untouched by this unit.
+
+## 5. First-run amendments (2026-07-19, pre-round)
+
+**A1 (declared inert deviations).** Exact-zero dropping replaces the
+committed pipeline's numeric dust drops (inert: exact arithmetic);
+the slab arms are NOT re-run symbolically (pin §4's optional clause
+taken — they inherit pointwise per #353 + its A5
+weight-independence note). The division audit confirmed while
+porting: only integer-constant divisions anywhere; the pin's
+non-polynomial failure mode was structurally excluded.
+
+**A2 (one gate beyond the pin: YG3-C).** Channel-factorization
+identities by exact expansion — the sharpened "which channels carry
+which factors" deliverable: in the FLIP sector (3m^2 - 1) is a
+common factor of EVERY channel (tau(+-1,f) = -+(3m^2-1)(24m^2-5)/2304;
+tau(+-3,f) = +-(3m^2-1)/256), so m^2 = 1/3 kills every flip channel
+IDENTICALLY, while (3m^2 - 4) emerges only in the combination
+2 tau(1) + 6 tau(3) = -kappa(m); in the SAME sector no single
+channel factorizes (tau(+-2,s) = +-(36m^4-60m^2+7)/2304 irreducible
+over Q, disc 2592) — the constant tau(+-4,s) = +-1/512 shifts the
+bracket 7 -> 16, creating 4(3m^2-1)(3m^2-4). The two zero crossings
+have DIFFERENT channel origins: m^2 = 1/3 is a per-channel kill;
+m^2 = 4/3 exists only in the weighted sums.

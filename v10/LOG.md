@@ -6644,3 +6644,30 @@ D44e (wave 2 opens; no dependency on D44a). D44f stays gated on
 D44a's conversion (the uniqueness upgrade); D44b last. D44a build
 still in flight. The S4/W8 flagged candidate is SUPERSEDED by
 D45b (the all-n form).
+
+## 2026-07-19 — D45a receipt GREEN 20/20 (LEDGER #357); round 1
+## commissioned. THE QUARTIC IS DERIVED — ALL-M, ZERO FLOATS
+Build delivered (builder-agent; verified pre-commit: independent
+rerun exit 0 BYTE-IDENTICAL; 20 PASS / 0 FAIL; ~0.5 s; seeds 0/7 +
+unseeded byte-identical; the symbolic tau channels hand-checked
+against the committed numeric tables at m = 1/2 — all four match).
+THE HEADLINE: kappa(m) = (1/36) - (5/48)m^2 + (1/16)m^4 DERIVED as
+an exact polynomial identity by running the identification pipeline
+with m FORMAL (poly-complex pairs over Fraction; 1,590 rational
+coefficients; ZERO floats, no mpmath import; tolerance-free
+banner); kappa(m) - (9m^4 - 15m^2 + 4)/144 == THE ZERO POLYNOMIAL —
+the D44d hull caveat is CLOSED (the 28-point verification was the
+shadow of this identity); EXC D == 1*(I - sigma_x) IDENTICALLY;
+every off-ray component, imaginary part, delta-odd defect,
+sub-onset order, and completeness commutator vanishes AS A
+POLYNOMIAL (YG2) — the ray collapse is an all-m theorem at fixture
+scale. THE STRUCTURAL ORIGIN (YG3 + the beyond-pin YG3-C): flip
+sector — (3m^2 - 1) is a COMMON FACTOR of every channel (m^2 = 1/3
+kills each flip channel identically); (3m^2 - 4) emerges only in
+the combinations (2 tau(1) + 6 tau(3) = -kappa); same sector — no
+single channel factorizes (tau(2,s) irreducible over Q); the
+CONSTANT channel tau(4,s) = 1/512 shifts the bracket 7 -> 16
+creating 4(3m^2-1)(3m^2-4). The two crossings have DIFFERENT
+channel origins. YG0 regression: 7 committed grid masses reproduced
+exactly. Note §5 A1-A2. ROUND 1 COMMISSIONED next. D45b/D44e/D44a
+builds in flight.
