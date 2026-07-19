@@ -370,3 +370,171 @@ pre-verified to pass; replace "seed-independent (0/7)" with
   flip ∓1/1024, δ=±4 same ±1/512; at m = 1: ∓19/1152, ∓17/2304,
   ±1/128, ±1/512 — note the near-field sign scramble vs EXC's
   δ=±1 flip ∓1/2, δ=±2 same ±1/4).
+
+---
+
+# Round-1 delta verification (2026-07-19, HEAD f413804)
+
+**Scope:** the applied repairs (pin §7 amendments B1–B5; repaired
+receipt; new .out; LOG #336/#338) against my round-1 prescriptions
+R1–R5, plus the two commissioned delta items: the τ-table
+orientation reconciliation and the χ0 confirmation. Method: fresh
+2× rerun of the repaired receipt (byte-identical to each other AND
+to the committed .out; exit 0; 7/7 PASS), full diff review of
+96ca550→f413804 on the d43a objects, machine-checked reconciliation
+(`delta_check.py` in the session scratchpad), my round-1 exact
+tables as reference. Round-1 body above untouched.
+
+## VERDICT: DELTA-CLEAN ON SUBSTANCE — 0 substantive / 4 minor /
+## 2 nit artifact findings, none verdict-affecting, repairs one-line
+
+Every part of the settled statement is confirmed on my side. The
+five R-items are applied in substance; the residual findings are
+transcription/scope/labeling defects that do not gate terminality.
+
+## THE COMMISSIONED RECONCILIATION (τ-table orientation): SAME
+## OBJECT, SAME CONVENTION, SIGN-FOR-SIGN — CONFIRMED
+
+There is NO orientation-convention difference between the two
+computations. Both use δ = (column site − row site), minimal image
+(receipt T5: `delta_ = (sj - si) % L`, fold at L/2 — identical to
+mine). Machine-check result: the receipt's PRINTED τ^LT tables
+(.out lines 11–12) equal my exact tables ENTRY-FOR-ENTRY WITH
+SIGNS at both masses (every decimal is the exact rational to all
+printed digits). τ is δ-ODD in every channel — τ(−δ,ch) = −τ(δ,ch)
+— provable (commutator antisymmetry + translation covariance give
+σ over [A_0,A_{−r}] at δ = minus σ over [A_0,A_r] at −δ; the spin
+channels are pairwise equal, 01 = 10 and 00 = 11), and verified
+exactly on both tables. What actually differs is the receipt's
+HARD-CODED transcription `REF_LT`: exactly two entries per mass —
+(−2,'same') and (−4,'same') — carry the +δ sign (a δ-even copy of
+my appendix's ∓/± notation; the flip channels were transcribed
+correctly). REF vs exact: m = 1/2: (−2,s) −23/9216 vs +23/9216,
+(−4,s) +1/512 vs −1/512; m = 1: (−2,s) −17/2304 vs +17/2304,
+(−4,s) +1/512 vs −1/512. The magnitude multisets are unaffected
+(machine-checked equal), so the convention-free gate passed
+soundly. My appendix's ± notation reads upper-with-upper (δ = +|δ|
+takes the top sign); under that reading my printed notation, my
+full tables, and the receipt's computed tables are one object.
+
+## χ0 (the second layer): STANDS — and the gate is prescribed
+
+Confirmed on my side, exact, re-verified in the delta machine-check
+from the round's rational χ tables: χ0^LT = (13/2304)·(I − σx) at
+m = 1/2 and (−1/72)·(I − σx) at m = 1 — THE SAME κ as the D-layer
+at both masses — and χ0^exc = 1·(I − σx) = D^exc (the ½∂xβ : β∂x
+ratio of K_∥ reproduced). χ0 is anchor-invariant (Σ_δ τ = 0
+channel-wise) and, since χ is δ-EVEN (χ(−δ) = χ(δ), visible in the
+tables), the χ0 collapse is orientation-invariant — convention-free
+by construction. **Prescribed χ0 gate (pre-verified to pass):**
+per rule compute σ_r(δ,s,s') = Σ_i [A_0,A_r]_{(i,s),(i+δ,s')} and
+m1_r(δ,s,s') = Σ_i i·[A_0,A_r]_{(i,s),(i+δ,s')} (row-site offset i
+from 0, minimal image); χ(δ) = Σ_{r>0} r·(r·σ_r(δ) − 2·m1_r(δ));
+gate Σ_δ χ(δ) == κ·(I − σx) with THE SAME κ as the D gate, both
+masses, plus χ0^exc == D^exc. Expected channel tables (exact):
+χ^exc: δ=±1 flip −1/2, δ=±2 same +1/2. χ^LT(m=1/2): δ=0 same
+−1/48, δ=±1 flip +157/9216, δ=±2 same −11/4608, δ=±3 flip
+−61/3072, δ=±4 same +1/64. χ^LT(m=1): δ=0 same +5/192, δ=±1 flip
+−13/1152, δ=±2 same −41/1152, δ=±3 flip +7/384, δ=±4 same +1/64.
+
+## Per-item verification
+
+**R1/B1 — APPLIED.** §7-B1 states the identity E^LT[Δ⁸] =
+[A^LT_R, A^LT_S] with the even-ladder premise; the .out verdict
+line re-labels T4 as "= T2 extended to d=1 + the d=3 corollary";
+"T4, not T2, decides" is gone. (Residue: D4 below.)
+
+**R2/B2 — APPLIED (substance).** The T2 verdict line now prints the
+max-orbit spectrum per d=2 cell; both cells recover ALL THREE exact
+ratio classes ({−5/256, −137/2304, +79/2304} and {−3/128, −7/288,
++13/576} — complete against my round-1 spectra); the representative
+is deterministic (`max(sorted(Be), ...)`); LOG #336 notes the #332
+list as non-canonical. (Residue: D2 below.)
+
+**R3/B3 — APPLIED.** Pin §4's STRUCTURED clause restated as
+proportional CHANNEL MOMENTS in the p7 F/S/T basis with zero
+residual, my verdict-robustness verification cited (still DIVERGENT
+— correct). (Residue: D5 below.)
+
+**R4/B4 — APPLIED AND CONFIRMED (the centerpiece).** T5 ports my
+construction faithfully (verified line-by-line: the full Σ_i
+translation sum, r ∈ {1..4}, the δ-binning, D = Σ δ·τ). Their
+independent mpmath path reproduces: EXC D-collapse = exactly
+1·(I − σx); LT D-collapse = κ(m)·(I − σx), κ = 13/2304 and −1/72
+gated as exact Fractions; the sign flip gated. Cross-confirmation
+is genuine and now bidirectional (their port vs my Fractions; my
+delta check of their printed tables). B4's re-scope text matches my
+F4 prescription including the withdrawal of the blanket obligation
+and the three named successors.
+
+**R5/B5 — PARTIALLY APPLIED.** Odd-order + off-support completeness
+checks added and green (scope caveat D3); "pre-registered" scoped to
+T2 in §7-B5 with the retro-fit owned; determinism language adopted
+(and re-verified here: 2 fresh runs byte-identical to the committed
+.out). NOT done despite B5's text: dead code removal and the §5
+precision text (D6).
+
+## Delta findings
+
+**D1 — minor.** `REF_LT` carries 4 mis-transcribed signs (the
+(−2,s)/(−4,s) entries per mass, δ-even'd; details above). No false
+pass (the gate compares magnitudes only), but the hard-coded signed
+reference is wrong data in the receipt, and the magnitude-cover
+gate is weaker than its PASS label ("tables match"): it iterates
+REF keys only (extra/spurious channels would go unchecked) and uses
+per-ref `any()` cover, not multiset equality. Repair (pre-verified
+to pass): fix the four signs (or derive REF(−δ,ch) = −REF(δ,ch));
+upgrade the gate to SIGNED entrywise equality plus a no-extra-keys
+check — the convention is proven shared, so signed equality is now
+safe and strictly stronger.
+
+**D2 — minor.** The orbit spectrum is deduped by mpf-string: at
+(m=1, d=2) the printed orbit has FOUR elements — −7/288 appears
+twice as ...558 and ...559 (1-ulp variants of one exact rational).
+The exact spectrum has three ratios. Orbit membership also uses
+exact float equality (`fabs(Be[k]) == mx`), which is ulp-fragile
+(it happened to capture all classes — verified complete against my
+exact spectra). Repair: dedupe and membership at TOL, or
+rationalize (e.g., `Fraction(str(...)).limit_denominator`) before
+set-forming.
+
+**D3 — minor.** The B5 odd-order completeness gate runs OUTSIDE the
+(m, d) loop on the leaked `El` — it certifies odd-order vanishing
+for the LAST cell only (m=1, d=3), while the PASS label says "ODD
+orders of E^LT vanish" generically. The fact is true at ALL cells
+(my round-1 exact verification, both masses, d ∈ {1,2,3}, both L),
+so no false pass; repair: accumulate `odd_ok` inside the loop.
+
+**D4 — nit.** The T4 check line still reads "pin §6 — the orphan's
+actual question", contradicting B1/B4 (under the amendments the
+orphan is decided at T5/ray level; the [VERDICT] line has it
+right). One-string fix.
+
+**D5 — nit.** The coordinator's item (3) describes the receipt's
+strip as "retained as a labeled boundary-block proxy," but no such
+label exists in the receipt (no "proxy"/"boundary-block" string);
+the substance lives in pin B3 only. One-comment fix.
+
+**D6 — minor.** B5 overclaims twice: "Dead code removed" — it is
+not (`m_scale_series` line 77, `CRl, CSl` line 230, `Ce = {}` line
+310 all present at f413804); "§5's precision is corrected" — §5's
+text still reads dps 80 / 1e-40 / Vandermonde with no forward
+pointer to B5 (append-only amendment via §7 is an acceptable
+convention, but §5 read alone misstates the as-run spec, and B5's
+wording claims more than was done). Repair: delete the three dead
+items; add a one-line "(superseded by §7-B5: as-run dps 50 /
+1e-30 / series)" pointer in §5.
+
+## Terminal statement — ENDORSED
+
+With D1–D6 recorded (none substantive, none verdict-affecting),
+d43a is terminal-compatible on this review's side with the settled
+statement as phrased: **the bracket RAY is rule-independent — both
+rules collapse under the corpus's own continuum identification to
+K_∥[β] = (β∂x + ½∂xβ)(I − α), with one per-mass constant across
+both derivative layers, κ(1/2) = 13/2304, κ(1) = −1/72; the sign
+flip is the c² > 0 no-go on any shared-generator class;
+rule-relativity is real and lives at the constants (and at every
+lattice-entrywise comparison). Successors: the LT-side log-smeared
+finite-slab theorem; κ(m) as an exact function with the zero
+crossing located; the interacting p15-fixture cross-check.**

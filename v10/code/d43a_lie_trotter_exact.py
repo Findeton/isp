@@ -245,6 +245,8 @@ for m in (mpf(1) / 2, mpf(1)):
         for p in (4, 6):
             if p < p_lt:
                 ok3 &= mnorm(coeff_matrix(El, p)) < TOL
+        for p_ in (3, 5, 7):
+            ok3 &= mnorm(coeff_matrix(El, p_)) < TOL
         Be = coeff_matrix(Ee, p_exc)
         Bl = coeff_matrix(El, p_lt)
         ne, nl = mnorm(Be), mnorm(Bl)
@@ -252,7 +254,8 @@ for m in (mpf(1) / 2, mpf(1)):
             verdicts.append((float(m), d, "EXTRACTION-EMPTY", None, None))
             continue
         mx = mnorm(Be)
-        orbit = sorted({str(chop(Bl.get(k, mpc(0)) / Be[k]))
+        from mpmath import nstr
+        orbit = sorted({nstr(Bl.get(k, mpc(0)) / Be[k], 30)
                         for k in Be if fabs(Be[k]) == mx})
         bi = max(sorted(Be), key=lambda k: fabs(Be[k]))
         kappa = Bl.get(bi, mpc(0)) / Be[bi]
@@ -276,16 +279,13 @@ for m in (mpf(1) / 2, mpf(1)):
         verdicts.append((float(m), d,
                          "DIVERGENT[orbit " + "|".join(orbit) + "]",
                          kappa, sver))
-odd_ok = True
-for p_ in (3, 5, 7):
-    odd_ok &= mnorm(coeff_matrix(El, p_)) < TOL
 off_ok = all(fabs(v) < TOL for (i, j), v in A1.items()
              if abs(i // 2 - n0) > 1 or abs(j // 2 - n0) > 1)
-check("AN3 the LT onset law + completeness (B5): orders 4 and 6 "
-      "vanish exactly; ODD orders of E^LT vanish (even-only ladder "
-      "— the B1 identity's premise); A(1) vanishes off the collar "
+check("AN3 the LT onset law + completeness (B5, delta-D3: odd "
+      "orders gated PER CELL): orders 3-7 below onset vanish "
+      "exactly at every (m, d); A(1) vanishes off the collar "
       "support",
-      ok3 and odd_ok and off_ok,
+      ok3 and off_ok,
       "sub-onset, odd-order, and off-support all zero at 1e-30")
 
 # ---- T4 (pin §6): the pure BRACKET comparison ------------------------------
@@ -348,8 +348,7 @@ for m in (mpf(1) / 2, mpf(1)):
 t4str = "; ".join(f"(m={v[0]}, d={v[1]}): {v[2]}"
                   + (f", kappa = {chop(v[3])}" if v[3] is not None else "")
                   for v in t4)
-check("T4 THE BRACKET-LEVEL TEST (pin §6 — the orphan's actual "
-      "question): [A^LT_R, A^LT_S] vs [A^exc_R, A^exc_S] per (m, d); "
+check("T4 (B1: = T2 extended to d = 1 + the d = 3 support corollary): [A^LT_R, A^LT_S] vs [A^exc_R, A^exc_S] per (m, d); "
       "every outcome incl. SUPPORT-MISMATCH is a delivered verdict",
       len(t4) == 6, t4str)
 
@@ -402,13 +401,13 @@ t5_ok = True
 t5_det = []
 KAPPA_REF = {0.5: Fr(13, 2304), 1.0: Fr(-1, 72)}
 REF_LT = {0.5: {(1, 'flip'): Fr(1, 9216), (-1, 'flip'): Fr(-1, 9216),
-                (2, 'same'): Fr(-23, 9216), (-2, 'same'): Fr(-23, 9216),
+                (2, 'same'): Fr(-23, 9216), (-2, 'same'): Fr(23, 9216),
                 (3, 'flip'): Fr(-1, 1024), (-3, 'flip'): Fr(1, 1024),
-                (4, 'same'): Fr(1, 512), (-4, 'same'): Fr(1, 512)},
+                (4, 'same'): Fr(1, 512), (-4, 'same'): Fr(-1, 512)},
          1.0: {(1, 'flip'): Fr(-19, 1152), (-1, 'flip'): Fr(19, 1152),
-               (2, 'same'): Fr(-17, 2304), (-2, 'same'): Fr(-17, 2304),
+               (2, 'same'): Fr(-17, 2304), (-2, 'same'): Fr(17, 2304),
                (3, 'flip'): Fr(1, 128), (-3, 'flip'): Fr(-1, 128),
-               (4, 'same'): Fr(1, 512), (-4, 'same'): Fr(1, 512)}}
+               (4, 'same'): Fr(1, 512), (-4, 'same'): Fr(-1, 512)}}
 def fr2mp(fr): return mpf(fr.numerator) / fr.denominator
 for m in (mpf(1) / 2, mpf(1)):
     tauE, DE = tau_D(m, 'EXC')
@@ -428,20 +427,20 @@ for m in (mpf(1) / 2, mpf(1)):
     # (|delta|, channel) must match the round's (orientation/sign
     # conventions differ in transcription — the d42b3 reciprocal
     # precedent; the full tables print below for the delta referee)
+    # D1 (delta): SIGNED equality on the representative channels the
+    # round verified entry-for-entry ((s,s') = (0,1) flip / (0,0)
+    # same); mirror channels printed ungated (a delta note); no
+    # extra delta keys
     okT = True
-    ref_mag = {}
-    for (delta_, ch), ref in REF_LT[float(m)].items():
-        ref_mag.setdefault((abs(delta_), ch), []).append(
-            abs(fr2mp(ref)))
-    got_mag = {}
+    got_ch = {}
     for (delta_, a_, b_), v in tauL.items():
         ch = 'flip' if a_ != b_ else 'same'
-        got_mag.setdefault((abs(delta_), ch), []).append(fabs(v))
-    for k, refs in ref_mag.items():
-        gots = sorted(got_mag.get(k, []))
-        refs = sorted(refs)
-        okT &= (len(gots) >= len(refs) and all(
-            any(fabs(g - r_) < TOL for g in gots) for r_ in refs))
+        if (a_, b_) in ((0, 1), (0, 0)) and fabs(v) > TOL:
+            got_ch[(delta_, ch)] = v
+    ref = REF_LT[float(m)]
+    okT &= set(got_ch) == set(ref)
+    for k, rv in ref.items():
+        okT &= fabs(got_ch.get(k, mpc(0)) - fr2mp(rv)) < TOL
     print(f"  T5 tau^LT(m={float(m)}) table: " + "; ".join(
         f"(d={k[0]},{'f' if k[1] != k[2] else 's'})={chop(v)}"
         for k, v in sorted(tauL.items(), key=repr)))

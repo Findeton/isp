@@ -154,3 +154,13 @@ with the green commit, not before it (the retro-fit owned —
 the #304 precedent class). Dead code removed; the completeness
 checks (odd E^LT orders vanish; AN1 off-support vanishing) added;
 "seed-independent" replaced by "deterministic, rerun byte-identical".
+
+**B6 (delta findings).** §5's precision text is superseded by B5
+(as-run dps 50 / 1e-30 / exact series — this pointer is D6's fix).
+The delta's reconciliation: the tau tables are the SAME OBJECT in
+the SAME convention (delta-odd in every channel); the receipt's
+four (-2/-4, same) reference signs were transcription errors, fixed;
+the gate upgraded to signed equality with no extra keys. chi0 is
+delta-re-verified bidirectionally (same kappa on both layers); the
+in-receipt chi0 gate is a successor nicety. Terminal statement
+endorsed as phrased by the round.

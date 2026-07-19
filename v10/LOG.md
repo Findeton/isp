@@ -6146,3 +6146,23 @@ FLP-partial refinement; the label-translation-quotient answer
 (pure relabeling does NOT close — 15 vs 16; pad-shift + renewal
 translation lands exactly on the SIX-state partition). Repairs
 next: adopt the six-state Perron package and the V-construction.
+
+## 2026-07-19 — d43a TERMINAL: delta DELTA-CLEAN on substance
+## (LEDGER #340)
+The delta endorsed terminal with 4 minors/2 nits recorded: the tau
+tables are the SAME OBJECT in the SAME convention (delta-odd every
+channel; my four (-2/-4, same) REF signs were transcription errors —
+fixed; the gate upgraded to signed equality on the round-verified
+representative channels with zero-filtering and no extra keys); D2
+orbit dedupe at fixed precision (nstr 30); D3 odd-order completeness
+gated PER CELL; D4 stale label fixed; B6 pin pointer added; chi0
+delta-re-verified bidirectionally (same kappa both layers; the
+in-receipt chi0 gate = a successor nicety). Rerun GREEN 7/7,
+deterministic byte-identical (0/31), VERIFIED pre-commit. d43a
+TERMINAL — THE SETTLED STATEMENT: the free core's exchange bracket
+RAY is rule-independent (K_par = (beta dx + 1/2 dx beta)(I - sigma_x)
+with one per-mass constant across both derivative layers; kappa(1/2)
+= 13/2304, kappa(1) = -1/72); THE SIGN FLIP = the c^2 > 0 no-go on
+shared generators; rule-relativity lives at the constants only.
+Successors: the LT log-smeared finite-slab theorem; exact kappa(m)
++ the zero crossing; the interacting p15 cross-check.
