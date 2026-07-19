@@ -5925,3 +5925,14 @@ test: B^LT ∝ B^exc (one κ per (d,m))? Three pre-registered verdicts
 (PROPORTIONAL / STRUCTURED per the p8 decomposition / DIVERGENT =
 the alarm) — the receipt exits 0 on any exact verdict; exit 1 only
 on anchor/extraction breakage. Receipt next.
+
+## 2026-07-19 — D43d (N4) pin committed (LEDGER #329)
+The v8 canonical-D* instrument (papers 12/13; committed g2/i1/i2/j1
+algorithms, extraction-ported) aimed at the generated families with
+the honest n<=5 scope (vacuous gate, floor-dominated D*, nan
+statistics — descriptors and same-n rankings only) AND the new
+verdict-capable question at chain scale: the constructed transport
+chains (n = 8..12) CAN fail dim<=2 — are generated record orders
+two-clock configurations, or does transport generate dimension?
+Pre-registered open. Port-fidelity anchors: S3 rejection; 219/4231
+all-pass; the exact n=5 D* range [1/4, 7/20]. Receipt next.
