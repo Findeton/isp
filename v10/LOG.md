@@ -6326,3 +6326,23 @@ frozen round's own reduction). ROUND 1 COMMISSIONED next (fresh
 referee; full number sweep against receipts; report to
 reviews/paper31-round1-hostile-review.md). Independent paper-level
 review OPEN until that round converts.
+
+## 2026-07-19 — D44 CAMPAIGN OPENED: the six successors pinned
+## (LEDGER #347); execution gated on paper-31 terminal
+User mandate (2026-07-19): "after those paper 31 reviews, work on
+all the 1-6 successors." Seven pins committed (pins strictly before
+receipts): note-d44-successor-program.md (mandate, waves, gating) +
+D44a closure theorem (the sigma-abstraction route: menu
+factorization CG1, transition determinism CG2, ABSTRACTION-SPACE BFS
+CG3 as the depth-free step, pumping normal form CG4, Perron re-run
+CG5, negative controls CG6; failure modes pre-registered incl. the
+>6-states reversal case); D44b transport-scope invariance (d42b1
+layer; reopening prediction TG3 pre-registered; runs LAST); D44c
+multi-author-arb dimension (the structural fork pinned: native
+cover-two vs the component law; exhaustive width 3 + guided 4..6);
+D44d slab smeared theorem + exact kappa(m) + zero crossing +
+interacting cross-check (KG1-KG3); D44e per-type reception census
+(RG0-RG4 incl. the (actor,base) key upgrade); D44f foliation face +
+measure side (the two-order ensemble comparison FG1-FG4; the
+forcing sweep + reduction map MG1-MG3). NO D44 receipt runs before
+paper 31 converts (round 1 returned while pinning; repairs next).
