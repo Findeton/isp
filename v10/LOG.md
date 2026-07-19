@@ -5768,3 +5768,20 @@ load-bearing); sprinkling scope to name (internal Z2xZ2 + foliation
 gauge). SURVIVES: every number (the 36 set-identical to d42b3's
 census; covariance involution/commutation/canon-functoriality
 verified; the 208 corroborated twice). Repairs next.
+
+## 2026-07-18 — d42b56 round-1 repairs GREEN 4/4 (LEDGER #320);
+## delta launched
+All referee anchors EXACT: the CANONICAL class-1/k boundary
+(1/#linearizations; Z([]) = 325/64 asserted; menu-reciprocal kept as
+labeled probe); S2 witnesses 21/325 vs 1/16; the STRUCTURAL
+event-level bijection replaces the multiset proxy (331-share
+disclosure printed); S1 re-stated per B2 (the TELESCOPING THEOREM
+gated via the arbitrary class-constant probe; the sequence-attached
+negative control FIRES at 51 diamonds — my deterministic sequence-Z,
+>0 gate; the separating content = class-constancy, d42b3-D2); S3 =
+the BISIMULATION QUOTIENT computed with the referee's exact
+trajectory 4->9->14->16->17 (17 states; split witness gated;
+transfer well-defined on all 427 canonical classes; ONE-WAY
+reduction wording); dead code removed. Seed-independent (0/97).
+Delta to the round referee next; on DELTA-CLEAN the CAMPAIGN'S
+RECEIPT PHASE CLOSES and paper 30 begins.

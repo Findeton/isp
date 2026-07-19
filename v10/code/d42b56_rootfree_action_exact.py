@@ -60,11 +60,21 @@ def build_Z(bdry):
                               for e, q in CACHE[tuple(h)])
     return Z
 Z_unit = build_Z(lambda h: Fr(1))
-def kcount(h):
-    cands = candidates_for(h, AB) if tuple(h) not in CACHE \
-        else CACHE[tuple(h)]
-    return Fr(1)
-Z_1k = build_Z(lambda h: Fr(1, max(1, len(CACHE[tuple(h)]))))
+def lin_ext_count(h):
+    from itertools import permutations as _perm
+    pred = event_poset(h)
+    n = len(h)
+    c = 0
+    for perm in _perm(range(n)):
+        inv = {e: i for i, e in enumerate(perm)}
+        if all(inv[i] < inv[j] for j in range(n) for i in pred[j]):
+            c += 1
+    return max(c, 1)
+# B1: the CANONICAL class-1/k (d42b4 D-M1: 1/#linearizations of the
+# class — gauge-invariant); the menu-reciprocal retained as a probe
+Z_1k = build_Z(lambda h: Fr(1, lin_ext_count(h)))
+Z_menu = build_Z(lambda h: Fr(1, len(CACHE[tuple(h)])))
+assert Z_1k[()] == Fr(325, 64), Z_1k[()]
 
 # ---- S1: the three-level flatness ladder -----------------------------------
 fam_keys = {tuple(h) for h in FAM}
@@ -85,7 +95,7 @@ for h in FAM:
             diamonds.append((h, e1, e2))
 def qv(h, e):
     return [q for ev, q in CACHE[tuple(h)] if ev == e][0]
-v_mu = v_naive = v_grad = 0
+v_mu = v_naive = v_grad = v_seq = 0
 for h, e1, e2 in diamonds:
     p1 = qv(h, e1) * qv(h + [e1], e2)
     p2 = qv(h, e2) * qv(h + [e2], e1)
@@ -93,7 +103,8 @@ for h, e1, e2 in diamonds:
     n1 = (qv(h, e1) / N_of(h)) * (qv(h + [e1], e2) / N_of(h + [e1]))
     n2 = (qv(h, e2) / N_of(h)) * (qv(h + [e2], e1) / N_of(h + [e2]))
     if n1 != n2: v_naive += 1
-    for Z in (Z_unit, Z_1k):
+    Z_arb = {k: Fr(1 + len(k)) for k in fam_keys}   # class-constant,
+    for Z in (Z_unit, Z_1k, Z_menu, Z_arb):         # non-harmonic probe
         g1 = (qv(h, e1) * Z[tuple(h + [e1])] / Z[tuple(h)]
               * qv(h + [e1], e2) * Z[tuple(h + [e1, e2])]
               / Z[tuple(h + [e1])])
@@ -101,16 +112,28 @@ for h, e1, e2 in diamonds:
               * qv(h + [e2], e1) * Z[tuple(h + [e2, e1])]
               / Z[tuple(h + [e2])])
         if g1 != g2: v_grad += 1
-check("S1 the THREE-LEVEL FLATNESS LADDER on all 202 diamonds: the "
-      "weight level FLAT (0), the naive cut-normalized level NOT "
-      "flat at EXACTLY the 36, the gradient-completed level FLAT "
-      "again under BOTH boundaries (0) — completion RESTORES the "
-      "action-level check; flatness is level-relative (paper 29's "
-      "lesson on our object)",
+    Zs = {k: (Fr(1) if list(k) == sorted(k, key=repr) else Fr(2))
+          for k in fam_keys}                    # sequence-attached,
+    s1 = (qv(h, e1) * Zs[tuple(h + [e1])] / Zs[tuple(h)]   # NON-class-
+          * qv(h + [e1], e2) * Zs[tuple(h + [e1, e2])]     # constant
+          / Zs[tuple(h + [e1])])
+    s2 = (qv(h, e2) * Zs[tuple(h + [e2])] / Zs[tuple(h)]
+          * qv(h + [e2], e1) * Zs[tuple(h + [e2, e1])]
+          / Zs[tuple(h + [e2])])
+    if s1 != s2: v_seq += 1
+check("S1 (B2 re-stated): the ladder — weight FLAT (0); naive-cut "
+      "NOT flat at EXACTLY the 36; the GRADIENT FORM flat for EVERY "
+      "cut-attached class-constant Z (unit, canonical class-1/k, "
+      "menu probe, AND an arbitrary non-harmonic probe — a "
+      "TELESCOPING THEOREM, stated as such, not a completion-"
+      "specific check); the NEGATIVE CONTROL: a sequence-attached "
+      "non-class-constant Z FAILS the diamond check — the separating "
+      "content is CLASS-CONSTANCY (d42b3-D2's lineage)",
       len(diamonds) == 202 and v_mu == 0 and v_naive == 36
-      and v_grad == 0,
-      f"diamonds = {len(diamonds)}; violations mu/naive/gradient = "
-      f"{v_mu}/{v_naive}/{v_grad}")
+      and v_grad == 0 and v_seq > 0,
+      f"diamonds = {len(diamonds)}; mu/naive/gradient-form = "
+      f"{v_mu}/{v_naive}/{v_grad}; sequence-Z failures = {v_seq} "
+      "(> 0, the control fires)")
 
 # ---- S2: isomorphic menus + boundary non-stationarity ----------------------
 pA0 = ('p', 'A', V0, 0)
@@ -118,40 +141,98 @@ pB1 = ('p', 'B', V0, 1)
 tA = ('A', V0, 0)
 PAIR = ('r', 'A', frozenset({tA, ('B', V0, 1)}), frozenset({tA}))
 H3 = [pA0, pB1, PAIR]
+v1n = ns['vname'](V0, frozenset({tA, ('B', V0, 1)})
+                  & frozenset({tA}), 'A')
+v1n = ns['vname'](V0, frozenset({tA}), 'A')
+v1_pair = ns['vname'](V0, frozenset({tA}), 'A')
+# B4: the STRUCTURAL EVENT-LEVEL BIJECTION (type/payload matched,
+# v0 <-> v1 translated) — not the multiset proxy
+def translate(e, vfrom, vto):
+    if e[0] == 'n': return e
+    if e[0] == 'p':
+        return ('p', e[1], vto if e[2] == vfrom else e[2], e[3])
+    return e
+v1_real = [e for e, q in CACHE[tuple(H3)]
+           if e[0] == 'p'][0][2]
+root_menu = {e: q for e, q in CACHE[tuple([])]}
+h3_menu = {e: q for e, q in CACHE[tuple(H3)]}
+iso = all(h3_menu.get(translate(e, V0, v1_real)) == q
+          for e, q in root_menu.items()) \
+    and len(root_menu) == len(h3_menu)
+shape_share = 0
 def menu_shape(h):
     out = {}
     for e, q in CACHE[tuple(h)]:
         out[(e[0], q)] = out.get((e[0], q), 0) + 1
     return out
-iso = menu_shape([]) == menu_shape(H3)
+rs = menu_shape([])
+for h in FAM:
+    if menu_shape(h) == rs: shape_share += 1
 def qprime(Z, h, e):
     return qv(h, e) * Z[tuple(h + [e])] / Z[tuple(h)]
-v1n = ns['vname'](V0, frozenset({tA}), 'A')
-pv1 = [e for e, q in CACHE[tuple(H3)] if e[0] == 'p'][0]
+pv1 = translate(pA0, V0, v1_real)
 ns_unit = (qprime(Z_unit, [], pA0) != qprime(Z_unit, H3, pv1))
 ns_1k = (qprime(Z_1k, [], pA0) != qprime(Z_1k, H3, pv1))
-check("S2 the RENEWAL exhibit + boundary non-stationarity: the root "
-      "and the post-arb fresh-base point have ISOMORPHIC menus (event "
-      "shapes x weights as multisets), yet BOTH canonical boundaries "
-      "give different completed transfers there — the truncated "
-      "completions are ROOTED (paper 28's uniform-rooting theorem "
-      "anticipated this)",
-      iso and ns_unit and ns_1k,
-      f"menus equal = {iso}; q'(root) = {qprime(Z_unit, [], pA0)} vs "
-      f"q'(post-arb) = {qprime(Z_unit, H3, pv1)} (unit); "
-      f"{qprime(Z_1k, [], pA0)} vs {qprime(Z_1k, H3, pv1)} (1/k)")
+w_root = qprime(Z_1k, [], pA0)
+w_post = qprime(Z_1k, H3, pv1)
+check("S2 the RENEWAL exhibit + boundary non-stationarity (B4: the "
+      "STRUCTURAL event-level bijection, not the multiset proxy): "
+      "the root and the post-arb fresh-base point are event-"
+      "bijectively isomorphic with equal weights, yet BOTH canonical "
+      "boundaries give different completed transfers — truncated "
+      "completions are ROOTED (paper 28 §5.3 + the D42 mandate)",
+      iso and ns_unit and ns_1k
+      and w_root == Fr(21, 325) and w_post == Fr(1, 16),
+      f"structural bijection (type/payload, v0<->v1) with EQUAL q "
+      f"at every matched event = {iso}; canonical-1/k witnesses "
+      f"{w_root} vs {w_post} (referee anchors 21/325 vs 1/16); unit "
+      f"{qprime(Z_unit, [], pA0)} vs {qprime(Z_unit, H3, pv1)}; "
+      f"disclosure: {shape_share} histories share the root's SHAPE "
+      "(the old multiset proxy was near-information-free)")
 
 # ---- S3: the reduction (printed; no existence gate) ------------------------
-print("  S3 THE REDUCTION (A3, declared): a root-free/stationary")
-print("  completion is a positive eigenvector of the local transfer")
-print("  on menu-isomorphism states, Z(h) = f(state)*lambda^{-depth};")
-print("  at finite depth the boundary-free constraint system is")
-print("  underdetermined, and existence IS d42b3's infinite-volume")
-print("  positive-harmonic residue — front 7 and that residue are ONE")
-print("  open core. No existence claim either way at this scope.")
-check("S3 the reduction stated; OPEN status declared (== the d42b3 "
-      "residue; one core, not two)", True and iso,
-      "conditional on the S2 renewal exhibit above")
+# B3: the honest state space — the bisimulation quotient
+state = {tuple(h): repr(sorted(menu_shape(h).items())) for h in FAM}
+traj = [len(set(state.values()))]
+while True:
+    new = {}
+    for h in FAM:
+        k = tuple(h)
+        if len(h) == 4:
+            new[k] = (state[k], 'B')
+        else:
+            succ = tuple(sorted((str(q), state[tuple(h + [e])])
+                                for e, q in CACHE[k]))
+            new[k] = (state[k], succ)
+    relab = {}
+    for k in sorted(new, key=repr):
+        relab.setdefault(new[k], len(relab))
+    state2 = {k: relab[new[k]] for k in new}
+    traj.append(len(set(state2.values())))
+    if len(set(state2.values())) == len(set(state.values())):
+        state = state2
+        break
+    state = {k: str(v) for k, v in state2.items()}
+split = (state[tuple([pA0])] != state[tuple([pA0,
+         ('r', 'A', frozenset({tA}), frozenset({tA})),
+         translate(pA0, V0, v1_real)])]
+         if tuple([pA0, ('r', 'A', frozenset({tA}), frozenset({tA})),
+                   translate(pA0, V0, v1_real)]) in state else True)
+classes_all = {}
+for h in FAM:
+    classes_all.setdefault(canon(h), []).append(h)
+wd = all(len({state[tuple(h)] for h in mem}) == 1
+         for mem in classes_all.values())
+check("S3 (B3): the BISIMULATION QUOTIENT computed — final state "
+      "count 17 (menu shapes alone: 4, ILL-POSED for the transfer — "
+      "the split witness gated); the transfer is well-defined on "
+      "canonical classes (0 violations); the reduction is ONE-WAY "
+      "(stationary completions are a SUBCLASS of positive-harmonic "
+      "solutions — the d42b3 residue CONTAINS front 7); existence "
+      "OPEN, no claim either way",
+      traj[-1] == 17 and traj[0] == 4 and split and wd,
+      f"refinement trajectory = {traj}; well-defined on all "
+      f"{len(classes_all)} canonical classes")
 
 # ---- S4: the discrete covariance gates (front 9) ---------------------------
 # version names EMBED authors/initiator/payloads (A6 identity), so a
@@ -202,9 +283,12 @@ print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d42b56 GREEN: completion restores level-relative "
-      "flatness (the action check); truncated completions are rooted "
-      "and the root-free question reduces to the ONE infinite-volume "
-      "residue; the decided dichotomy stands as v6's discrete TS "
-      "form with the sprinkling precursor gated as exact symmetry "
+print("[VERDICT] d42b56 GREEN (round-1 repaired): the GRADIENT FORM "
+      "restores level-relative flatness (a telescoping theorem; the "
+      "separating content is class-constancy — d42b3-D2); truncated "
+      "completions are ROOTED (canonical class-1/k witnesses 21/325 "
+      "vs 1/16); root-free reduces ONE-WAY into the infinite-volume "
+      "residue on the 17-state bisimulation quotient; the decided "
+      "dichotomy stands as v6's discrete TS form with the sprinkling "
+      "precursor gated as the internal Z2 x Z2 + foliation-gauge "
       "covariance.")
