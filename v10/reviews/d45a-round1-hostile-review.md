@@ -339,3 +339,166 @@ git show 2f1a3cc:v10/note-d45a-symbolic-m-kappa-closure.md   # == current §1–
 - **The record:** anchors byte-checked against committed artifacts;
   LOG #357 faithful; the surviving weakness is MAJOR-1's synthetic PASS
   in the ledger, repairable without touching a single number.
+
+---
+
+# DELTA VERIFICATION (round-1 repairs, LOG #360, commit 4edc109)
+
+**Delta verdict: DELTA-CLEAN.** All six findings discharged as applied;
+the repaired YG4-B is a genuine gate with demonstrated teeth; M5 is now
+caught by PIPE-4; the biquadratic split check is sound and complete for
+its branch; the record corrections are faithful. One NEW finding at nit
+(delta-nit-1: an uppercase-`1J` complex literal evades the token scan —
+demonstrated live, no exposure in the committed source, one-character
+fix). The terminal condition is met from this referee's side.
+
+## Discharge audit
+
+- **MAJOR-1 — DISCHARGED.** YG4-B (receipt lines 917–940) is now a
+  token-level self-scan: `tokenize` over `open(__file__)`, NAME tokens
+  intersected with {TOL, mpmath, random, datetime, getenv, environ},
+  non-hex/oct/bin NUMBER tokens required free of `.eEj`; strings and
+  comments excluded by the tokenizer so the probe's own label (which
+  names TOL and mpmath) cannot self-trip — verified working: the
+  committed run is green while the label mentions both. **Teeth
+  demonstrated on the repaired receipt:** delta-mutant MD1
+  (`_SMUGGLED = 1.5` inserted) → exit 1, YG4-B FAIL; MD2 (`TOL = 10`)
+  → exit 1, YG4-B FAIL. My independent stricter scan of the committed
+  source confirms: 421 NUMBER tokens (matches the printed count), zero
+  containing any of `. e E j J`, banned-name intersection empty. The
+  byte-identity claim is correctly OUT of the gate (an external
+  protocol line, seeds 0/7 — which this delta re-verified). Note §6 B1
+  owns the violation in full — including that pre-commit PASS-count
+  verification cannot catch gate vacuity (protocol note) — and its
+  cited precedent is real (LOG 6130: d43b F-B3, a check(True)
+  conviction). LOG #360 forward-corrects #357's "GREEN 20/20" to "19
+  computed + 1 declared as committed; 22 computed as repaired."
+- **The commissioned attack on the new gate — CAN it be fooled?** At
+  the margins, yes, and one route is live: **delta-nit-1 (NEW, nit).**
+  The literal scan checks the character set `.eEj` but Python also
+  accepts uppercase-J complex literals: delta-mutant MD3
+  (`_SMUGGLED = 1J`) runs **22/22 PASS, exit 0 — silent green** while
+  the gate's label claims "NO float or complex NUMBER literal". The
+  runtime walk is also blind to it (complex is neither float nor
+  Fraction; unknown leaf types are silently ignored). No exposure: the
+  committed source is clean under my J-inclusive scan, and FLOAT
+  literal coverage is complete (Python float literals require `.` or
+  `e/E`, both checked). Fix: one character (`.eEjJ`, or lower() the
+  token string) at next touch.
+  **Deny-list judgment (as commissioned):** for THIS receipt the
+  deny-list + runtime walk combination closes the routes that matter —
+  the walk now spans the ENTIRE dataflow chain end-to-end (H → U_free →
+  Gam_free → Gfi → every cached J → tau/D/kappa/target; FRACS 1590 →
+  2886), every gate compares walked structures, and any runtime-
+  constructed float retained anywhere in that chain is counted
+  (np.float64 included — it subclasses float). The residual structural
+  gaps are: transient floats used only in a condition (none exist; all
+  gate inputs are walked structures), and non-float-subclass numeric
+  types (complex, Decimal, np.float32, mpf) which the walk ignores
+  rather than rejects. **Prescribed allow-list form (successor-binding,
+  optional here):** invert `type_walk` — count every leaf NOT in
+  {Fraction, int, str} as a violation and gate the count == 0. One-line
+  change; converts the walk from "no floats seen" to "nothing but exact
+  types present", closing every type-smuggling route this referee can
+  construct, including MD3's class if such a value ever reached a
+  walked structure.
+- **minor-1 — DISCHARGED.** The disc print is now scoped ("irreducible
+  over Q AS A QUADRATIC IN x = m^2 ... the m-quartic could a priori
+  still split — checked next", .out lines 120/123) and the biquadratic
+  m-split check runs in-receipt (receipt lines 760–781), printing NONE
+  for both tau(±2, same) rows. **Algebra audited:** the check tests
+  a2(m² + cm + d)(m² − cm + d) via d² = a0/a2, c² = 2d − a1/a2, both
+  signs of d, rational-square tests by exact isqrt on reduced
+  numerator/denominator (Fraction auto-reduction makes the
+  per-component square test valid), c ≠ 0 enforced via c² > 0 (c = 0
+  is the even-even split, already refuted by the non-square disc in
+  this branch). **Branch-context completeness verified:** with a
+  non-square x-disc there are no rational x-roots, hence no linear
+  m-factors and no even-even quadratic splits; a 1×3 split forces
+  m | q, i.e. a0 = 0, which never reaches this branch (a0 = 0 ⇒ disc =
+  a1², a perfect square); so the conjugate pair is the ONLY remaining
+  factorization pattern — exactly what is tested. **Mechanically
+  cross-checked against sympy factor_list on 6 cases** including the
+  round's counterexample class: m⁴+4 → EXISTS (reducible), m⁴+2m²+9 →
+  EXISTS, m⁴+m²+1 → EXISTS, m⁴−3m²+1 → EXISTS, 4m⁴+8m²+9 → EXISTS
+  (all confirmed reducible by sympy), 36m⁴−60m²+7 → NONE (confirmed
+  irreducible) — 6/6 agreement. The YG3 VERDICT's "IRREDUCIBLE over Q"
+  for tau(2,same) is now supported by in-receipt computation.
+- **minor-2 — DISCHARGED.** PIPE-3 (Δ¹-freeness of Γ(U_free) as a
+  polynomial statement) and PIPE-4 (Gfi · Γ(U_free) == I as a
+  truncated series, diagonal Δ⁰ == 1 with higher orders zero AND all
+  off-diagonal entries zero; absent-entry-as-zero semantics correct)
+  are real gates at receipt lines 453–466. **M5 re-run against the
+  repaired receipt: exit 1 with 2 FAILs — PIPE-4 AND YG2-E** — the
+  round's single-gate margin is now two independent gates, one of them
+  (PIPE-4) directly at the defect's site rather than four stages
+  downstream.
+- **nits 1–3 — DISCHARGED.** YG4-A walks U_free/Gam_free (label
+  updated and now accurate; the printed count moved 1590 → 2886,
+  consistent with the two added structures; LOG #360 carries the
+  forward-correction context). YG2-B covers LT site 5 (`range(6)` for
+  LT — the realness sweep now spans every retained site of both
+  rules). YG3-A's label now says "recombined from the retained channel
+  objects ... the independent rebuild is the frozen round's" — exactly
+  the honest description.
+- **nit-4 — residual disposition ACCEPTED.** The round required no
+  action; the biquadratic addition touches `factor_report` but
+  introduces no NEW green-executed dead code beyond the inherent
+  reducible-case arms (the EXISTS path and the square-r0 sub-branches
+  are unreachable for these inputs by mathematical necessity — a
+  checker for reducibility must contain the reducible arm). Those arms
+  were exercised externally by this delta's 6-case battery. The
+  TypeError banner claim stands as round-1 verified.
+
+## Mechanical verification
+
+- `git diff fd91814 4edc109` on the d45a paths contains EXACTLY the
+  enumerated repairs and nothing else: receipt = 6 hunks (PIPE-3/4
+  insert; YG2-B widen + label; factor_report scope wording + split
+  check; YG3-A label; YG4-A walk + label; YG4-B rebuild — no
+  arithmetic upstream of the tau/D derivation touched); .out = the
+  matching regions only (PIPE lines, YG2-B/YG3-A/YG4 labels, the two
+  scoped disc lines + two NONE lines, SUMMARY 20 → 22); note = §6
+  B1–B4 appended, §1–5 byte-untouched; LOG additive. This round-1
+  review body was committed BYTE-INTACT at 4edc109 (341 lines; zero
+  worktree-vs-commit diff before this delta section was appended).
+- Repaired receipt re-run twice at delta time: PYTHONHASHSEED=0 from
+  repo root and PYTHONHASHSEED=7 from `v10/` — both exit 0, **22 PASS
+  / 0 FAIL**, both **BYTE-IDENTICAL** to the committed
+  `v10/data/d45a_symbolic_kappa_exact.out`. The new `open(__file__)`
+  self-read is invocation-relative and cwd-robust as exercised (the
+  v10/ run is the witness).
+- LOG #360's summary of the round is faithful row-by-row: the sympy
+  rebuild (own collar, 5-term Neumann WITH product gate), the 8 fresh
+  masses by name, channel-level triple concordance on two engines,
+  10/10 mutants, the referee-proved irreducibility, the 0B/1M/2m/4n
+  tally, and the ownership framing of the MAJOR (including the
+  protocol note that pre-commit verification cannot catch vacuity).
+
+## Delta mutation table (repaired receipt, scratchpad copies)
+
+| # | mutation | expectation | result |
+|---|---|---|---|
+| M5 (re-run) | Neumann budget `ORD//2+1` → `ORD//2−1` | PIPE-4 must now catch it | **exit 1**, 2 FAIL (PIPE-4 + YG2-E) — margin closed |
+| MD1 | `_SMUGGLED = 1.5` inserted | YG4-B literal scan | **exit 1**, 1 FAIL (YG4-B) |
+| MD2 | `TOL = 10` inserted | YG4-B name scan | **exit 1**, 1 FAIL (YG4-B) |
+| MD3 | `_SMUGGLED = 1J` inserted | label says complex excluded | **exit 0, 22/22 — SILENT GREEN**: delta-nit-1's live demonstration (`.eEj` misses uppercase J; walk blind to complex) |
+
+## Terminal-statement check
+
+The stamped conversion statement was audited clause-by-clause against
+the artifacts: the identity kappa(m) = (9m⁴ − 15m² + 4)/144 =
+(3m² − 1)(3m² − 4)/144 derived as an exact all-m polynomial identity at
+fixture scale (ORD 4, L 12) — round-1 rebuild + this delta's 22/22;
+"zero floats" — the repaired self-scan + the full-dataflow runtime walk
++ this referee's J-inclusive independent scan; the ray collapse and all
+auxiliary vanishings as polynomials — YG1/YG2 + the frozen round's
+independent reproduction; the channel-resolved factor origins
+((3m² − 1) common to the flip sector; (3m² − 4) combination-only; the
+tau(4) bracket shift 7 → 16) — YG3-C + the round's hand/CAS rederivation;
+the hull-caveat closure with the 28-point verification as the identity's
+shadow — YG0's exact regression plus the round's out-of-hull triple
+concordance at 8 fresh masses. Every clause is supported. No objection
+to conversion on this statement. Recorded for the terminal row:
+delta-nit-1 (the one-character `J` fix) and the allow-list walk as the
+successor-binding purity-gate form.

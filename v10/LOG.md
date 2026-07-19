@@ -6805,3 +6805,33 @@ abstract chain's bisimilarity — six states, transfer T, all
 depths; the Perron decision transfers — RESIDUE 1 IS DECIDED AT
 d42a SCOPE OUTRIGHT. Transport = D44b (unchanged). ROUND 1
 COMMISSIONED next; on conversion D44f UNGATES.
+
+## 2026-07-19 — D45a TERMINAL (LEDGER #362)
+Delta verdict (appended to reviews/d45a-round1-hostile-review.md,
+round-1 body byte-intact): DELTA-CLEAN — MAJOR-1's repaired gate
+has DEMONSTRATED TEETH (the referee's MD1 float-literal and MD2
+TOL mutants both exit 1 at YG4-B; self-trip design verified; 421
+integer NUMBER tokens independently confirmed); minor-1's
+split-check audited against the full conjugate-pair pattern class
+(6/6 sympy concordance incl. the referee's counterexample family);
+minor-2's M5 mutant now fails TWO independent gates (PIPE-4 at the
+defect site + YG2-E); all nits discharged (walk 1590 -> 2886
+coefficients); mechanical diff exactly the enumerated repairs;
+seeds byte-identical from root and v10/. ONE new delta nit,
+APPLIED AT CONVERSION: the '.eEj' character class missed uppercase
+J (the referee's _SMUGGLED = 1J demonstration ran silent-green) —
+now '.eEjJ'; rerun 22/22 exit 0, seeds byte-identical, VERIFIED
+pre-commit. SUCCESSOR BINDING recorded (the referee's prescription,
+adopted): future purity gates use the ALLOW-LIST walk form (reject
+any leaf not in {Fraction, int, str}) — closes complex/Decimal/
+np-scalar/transient-construction smuggling routes categorically.
+TERMINAL — THE SETTLED STATEMENT (referee-audited clause-by-
+clause): kappa(m) = (9m^4 - 15m^2 + 4)/144 =
+(3m^2 - 1)(3m^2 - 4)/144 is DERIVED as an exact all-m polynomial
+identity at fixture scale (ORD 4, L = 12), zero floats, with the
+ray collapse and all auxiliary vanishings holding as polynomials;
+the factor origins are channel-resolved ((3m^2 - 1) common to the
+flip sector — m^2 = 1/3 is a per-channel kill; (3m^2 - 4)
+combination-only — m^2 = 4/3 exists only in the weighted sums; the
+tau(4) bracket shift 7 -> 16); THE D44D HULL CAVEAT IS CLOSED —
+the 28-point verification was the shadow of this identity.

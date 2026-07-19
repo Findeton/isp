@@ -921,7 +921,7 @@ _numbers = [t.string for t in _toks if t.type == tokenize.NUMBER
             and not t.string.lower().startswith(("0x", "0o", "0b"))]
 _banned = {"TOL", "mpmath", "random", "datetime", "getenv", "environ"}
 _clean_names = not (_names & _banned)
-_no_float_lit = all(all(ch not in s for ch in ".eEj")
+_no_float_lit = all(all(ch not in s for ch in ".eEjJ")
                     for s in _numbers)
 check("YG4-B tolerance-free banner, NOW SELF-VERIFYING (round-1 MAJOR-1 "
       "repaired — the previous form was check(True)): a token-level "
