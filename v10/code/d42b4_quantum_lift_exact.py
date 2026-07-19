@@ -98,26 +98,24 @@ for seq, m in seqs:
          tuple(e for e in seq if e[1] == 'B'))
     w_mu[w] = w_mu.get(w, Fr(0)) + m
 Zword = sum(w_mu.values())
-# coherent: |sum sqrt(mu)|^2 within word fibers
-Zcoh = Fr(0)
-for w, m in w_mu.items():
-    members = [mm for seq, mm in seqs
-               if (tuple(e for e in seq if e[1] == 'A'),
-                   tuple(e for e in seq if e[1] == 'B')) == w]
-    s = sum(sqrt(mrat(mm)) for mm in members)
-    Zcoh_term = s * s
-    Zcoh = Zcoh + Fr(0)  # placeholder; exact below
+# coherent: |sum sqrt(mu)|^2 within word fibers. At depth 2 the
+# word fibers coincide with canonical classes (bijective; 23 == 23)
+# and members share one mu, so Z_coh = sum n^2 * m is EXACT-rational
+# — the Fraction side (delta D-m2):
+Zcoh_fr = Fr(0)
 zcoh_f = mpf(0)
 for w in w_mu:
     members = [mm for seq, mm in seqs
                if (tuple(e for e in seq if e[1] == 'A'),
                    tuple(e for e in seq if e[1] == 'B')) == w]
-    s = sum(sqrt(mrat(mm)) for mm in members)
-    zcoh_f += s * s
+    assert len({mm for mm in members}) == 1
+    n, m = len(members), members[0]
+    Zcoh_fr += n * n * m
+    ss = sum(sqrt(mrat(mm)) for mm in members)
+    zcoh_f += ss * ss
 ok_e3 = (Zword == Zseq                     # word = a partition: lossless
-         and Zclass != Zseq
-         and fabs(zcoh_f - mrat(Zclass)) > TOL
-         and fabs(zcoh_f - mrat(Zseq)) > TOL)
+         and Zclass == Fr(3) and Zseq == Fr(4) and Zcoh_fr == Fr(6)
+         and fabs(zcoh_f - mrat(Zcoh_fr)) < TOL)
 check("E3 the AGGREGATION TRILEMMA on the TRUE family: three "
       "inequivalent lift normalizations — class-diagonal (3) / "
       "sequence-partition (4; word aggregation is a partition, so "
@@ -126,7 +124,7 @@ check("E3 the AGGREGATION TRILEMMA on the TRUE family: three "
       "fine-vs-coarse question at the HISTORY level, OPEN",
       ok_e3,
       f"Z_class = {Zclass}, Z_seq = Z_word = {Zseq}, Z_coherent = "
-      f"{chop(zcoh_f)} [TRUE-family values; the referee round-1 "
+      f"{Zcoh_fr} (Fraction) = {chop(zcoh_f)} (mp) [TRUE-family, ASSERTED; the referee round-1 "
       "anchors 11/4, 15/4, 23/4 were computed on the chimera — the "
       "trilemma survives with corrected numbers, delta to verify]")
 
@@ -148,13 +146,16 @@ for i in range(DIM):
         mr = mu_class[cl[i]] / mu_class[cl[j]]
         npairs += 1
         ok_ratio &= fabs(br - mrat(mr)) < TOL
-check("THE ENDPOINT LIFT, honestly stated (E1): Born == mu/Z_class "
-      "on the FULL quadratic pair sweep — this IS the gradient "
-      "completion at unit boundary in Hilbert dress (division by "
-      "sqrt(Z), not 'unitarity'); NO evasion claim attaches",
-      okB and ok_ratio,
+check("THE ENDPOINT LIFT, honestly stated (E1 + delta D-M1): Born == "
+      "mu/Z_class on the FULL quadratic pair sweep — this IS the "
+      "classical gradient completion at the 1/k BOUNDARY in Hilbert "
+      "dress (the referee's identification: Z([]) = 3, pushforward = "
+      "mu/3, per-cut normalized, positive; the round-1 'unit "
+      "boundary' clause was the WORD-basis object's — bases are "
+      "boundary choices); NO evasion claim attaches",
+      okB and ok_ratio and Zclass == Fr(3),
       f"classes = {DIM}; all {npairs} ratio pairs exact; normalizer "
-      f"= explicit sqrt(Z_class = {Zclass})")
+      f"= explicit sqrt(Z_class = {Zclass}) — asserted == 3")
 
 # ---- THE PINCER (E1): the arb-layer operator problem, exhibited ------------
 def menu(h, a):
@@ -234,7 +235,6 @@ for i1 in range(DIM_O):
         else:
             cross_ct += 1
             ok_cen &= fabs(v) < TOL
-fine_off = mpf(0)   # fine sealing: diagonal by construction, stated
 check("THE 1/6 DISCRIMINATOR, COMPLETE census (all 15 order pairs): "
       "7 same-fiber pairs at EXACTLY 1/6 under coarse sealing, 8 "
       "cross-fiber at exactly 0; fine sealing kills all off-diagonals "

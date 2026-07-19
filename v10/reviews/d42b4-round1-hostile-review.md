@@ -543,3 +543,243 @@ rerun this front can return with an honest result: either a real
 joint-carrier discharge at the A7 diamond, or the theorem-grade statement
 that the quantum completion problem BEGINS at the arb layer — which is
 where d42b3 left the classical one.
+
+---
+
+# DELTA VERIFICATION (2026-07-18, against HEAD 62ada95: round frozen
+# #310; pin amendments E1-E3 at 958e4b8; rebuilt receipt GREEN 8/8 at
+# 62ada95/#311)
+
+**VERDICT: NOT CLEAN — 1 MAJOR / 2 minor / 3 nit. Every commissioned
+number lands on the referee anchors** (reruns PYTHONHASHSEED 0, 61, 71
+byte-identical to the committed .out, exit 0; 20/20 independent delta
+checks green, Fraction-exact; two exit-1 mutations fail through the
+check path). The retraction is real and complete in the governed sense;
+the pincer is carried faithfully; the true family and the corrected
+trilemma verify exactly. The MAJOR is a one-clause defect in the
+rebuild's central honest-restatement gate: the class-basis lift is
+identified with the gradient completion "AT UNIT BOUNDARY", and that
+boundary attribution is FALSE for the chosen basis — computed both ways
+below. The repair is one clause plus a LOG forward-correction; it does
+NOT reopen the retraction (the corrected identification is still a
+classical gradient completion — if anything the repair strengthens E1).
+On R-D1 (+ recommended R-D2/R-D3 in the same touch) and a green rerun,
+this delta is CLEAN and d42b4 is terminal-fit AS RE-SCOPED.
+
+## The six commissioned points
+
+**(1) B1/B2 retraction — COMPLETE, one boundary clause excepted (the
+MAJOR, below).** Grep of receipt + .out: no surviving evasion claim
+("no trilemma evasion" / "NO evasion claim attaches" / "not
+'unitarity'" are the only matches). The commutation gate is gone;
+nothing pretends to foliation invariance; the round-1 dead operator
+toolkit (dag/mul/kron/eye/embedA/embedB/initv) is removed. The pin's
+§1 survives as append-only text with E1 naming and retracting exactly
+its claim ("§1's 'evades the trilemma by unitarity' equivocated") —
+the d42b3-D1 supersession pattern, correctly executed for §1 (but not
+for §2/§3's stale items — D-n3). The endpoint gate now runs the FULL
+quadratic sweep (253 = C(23,2) pairs — the stride complaint repaired)
+and STATES the construction as classical. The remaining defect is not
+an evasion claim but a misidentification of WHICH classical completion
+it is (D-M1).
+
+**(2) THE PINCER — CONFIRMED faithful to R1, honestly carried.**
+Single-sourcing verified two ways: the exec'd d42b3-head machinery
+agrees with a direct import of the original d42a module on
+candidates_for (events AND weights) at all four A7-region cuts ([],
+[pA0], [pA0,pB1], [pA0,selfA]), on the full depth-2 family (32
+sequences, identical mus), on canon over all 32 sequences, and on the
+A7 witness mus (1/256 = 1/256, both sources). The gate's content
+matches my R1 arithmetic exactly: A's menus 2 events summing 1 at
+[pA0] vs 4 events summing 5/4 at [pA0,pB1]; SELFA present in both;
+exactly 2 blind pair branches, both gated INADMISSIBLE at the early
+cut via admissible() — the strongest form of the branch-set horn. The
+three-horn conclusion is printed with OPEN status and round-2
+ownership; the theorem-grade statement ("THE QUANTUM COMPLETION
+PROBLEM BEGINS AT THE ARB LAYER") is carried honestly — it claims the
+exhibit and the problem, not a solution. Mutation rmut1 (5/4 → 4/3
+expectation) fails the gate and exits 1: the pincer numbers are
+genuinely gated against the committed machinery.
+
+**(3) E2 — CONFIRMED.** 32 sequences, Z_seq = 4, 23 canonical classes,
+every class single-mu (gauge constancy gated) — all referee anchors,
+reproduced independently from both sources. Words ↔ classes are
+BIJECTIVE on this family (23 = 23; per-actor words determine the
+depth-2 canonical DAG here) — worth one printed line, since it is why
+the word and class BASES coincide at depth 2 while their AMPLITUDE
+conventions still differ (that difference is exactly E3).
+
+**(4) E3 — CONFIRMED on the true family; chimera reconciliation
+EXACT; one pin-side mislabel (D-m1).** Fraction-exact this delta:
+Z_class = 3, Z_seq = Z_word = 4 (word aggregation is a partition —
+verified), Z_coherent = 6; linearization spectrum {k=1: 14 classes,
+k=2: 9}. Chimera reconciliation: rebuilding the round-1 toy, the same
+three conventions give 11/4 (class) / 15/4 (sequence = word) / 23/4
+(coherent) — my round-1 anchors were exactly these, computed on the
+chimera as my report stated; the receipt's bracketed reconciliation
+note is accurate. The mixed/pure Born-ratio structure (r / 2r / 4r)
+carries over. The receipt's E3 formulation is correct; the PIN's E3
+parenthetical is not (D-m1).
+
+**(5) Survivors upgraded — CONFIRMED.** The COMPLETE 1/6 census: all
+15 pairs classified and gated (7 same-fiber at exactly 1/6 including
+the Q-fiber internal pair; 8 cross-fiber at exactly 0) — matches my
+round-1 census exactly. The FULL fiber gate: size-4 fiber gated (the
+pin's "two orders" called false in the gate label — correct), 6
+internal overlap-1 pairs + 4 cross checks against the Q
+representative; the label's "every fiber-vs-{Q} pair" (8 pairs) rests
+on the ungated Q-record identity for the remaining 4 — I verified all
+8 directly (true; D-n3 notes the gap). The fine-instrument 0 is now
+STATED as by-construction ("diagonal instrument — stated, not read
+off an unwritten matrix") — honest; the vestigial `fine_off = mpf(0)`
+remains as dead code (D-n1). NSE re-scoped exactly per my R6 second
+arm: basis-copy form gated (10 pairs + the real 0.2599... control),
+per-type census a DECLARED carried obligation with the reason (carrier
+/data structures differ) printed in the gate label; the verdict line
+no longer overclaims.
+
+**(6) Plumbing — sound, one hazard noted.** Seeds 0/61/71
+byte-identical to the committed .out, exit 0 (LOG "0/71" consistent).
+Exit-1 by design: rmut1 (pincer expectation) and rmut2 (family-size
+expectation) both fail through check() and exit 1. The exec
+single-sourcing is fidelity-verified (point 2). Hazard: the receipt
+opens 'v10/code/d42b3_placement_exact.py' RELATIVE — it runs only
+from the repo root (probe: from v10/, FileNotFoundError, exit 1 —
+fail-safe, never false-green); the slice marker ('print("[d42b3') is
+brittle against d42b3 edits but d42b3 is TERMINAL/frozen — acceptable,
+one path-anchoring line would remove the hazard entirely (D-n2).
+
+## Findings
+
+**D-M1 — MAJOR (CONFIRMED, computed both ways): the class-basis lift
+is NOT the gradient completion "at unit boundary" — the boundary
+attribution in the central gate label and LOG #311 is false; the
+correct identification is the 1/k boundary.** The unit-boundary
+gradient completion is a measure on SEQUENCES (chains of cuts):
+P(seq) = mu/Z_seq. Its class pushforward is k·mu_class/4 — for the 9
+mixed classes, mu/2 — whereas the rebuilt state's Born diagonal is
+mu_class/3. Computed this delta on the true family via the receipt's
+own forward-mass convention: unit boundary gives Z([]) = 4 and
+pushforward k·mu/4 ≠ mu/3; boundary Z(top-class) = 1/#linearizations
+gives Z([]) = 3 = Z_class, class pushforward EXACTLY mu/3, and the
+induced kernel is per-cut normalized at the root and every depth-1
+cut — a bona fide classical gradient completion with a positive
+boundary inside d42b3's finite-depth solution family. So the honest
+identification is: **word/sequence-partition lift ↔ unit-boundary
+completion (that was round 1's object — pin E1's own sentence, which
+is about the retracted round-1 object, is CORRECT); class-basis lift
+↔ the 1/k-boundary completion.** The rebuild switched basis (rightly,
+to the gauge-invariant object) but transported the unit-boundary
+clause with it. False-printed-clause class (the campaign's printed-
+sentence standard; the D-M1 precedent) at three loci: the endpoint
+gate label ("at unit boundary"), LOG #311's narrative, and — loosely,
+without the boundary — the .out banner and verdict line ("THE
+gradient completion", definite article). THE RETRACTION IS UNAFFECTED:
+both identifications are classical completions; no evasion reopens;
+E3's trilemma is in fact SHARPENED — the three lift bases correspond
+to three different boundary choices of the SAME classical gradient
+family (1/k ↔ class, 1 ↔ sequence/word, and the coherent object,
+which is no gradient completion at all), which is a cleaner statement
+of "which basis carries amplitude is an open physical question" than
+the pin currently has. Repair R-D1 (one clause + LOG forward-
+correction per the #304 precedent), pre-verified above.
+
+**D-m1 — minor (CONFIRMED): pin E3's parenthetical mislabels the
+sequence slot and drops the chimera qualifier.** "Sequence-, word-,
+and canonical-class-based lift bases give observably inequivalent
+states (Z = 23/4 / 15/4 / 11/4)": the sequence-basis normalizer is
+15/4 — EQUAL to the word basis (the partition identity the receipt's
+own E3 gate states); 23/4 is the COHERENT word aggregation, not a
+sequence-based state. The pin also quotes the chimera-family values
+without the "chimera" qualifier the receipt's detail adds (true-family
+values 3 / 4 / 6). One-parenthetical repair (R-D2), e.g.: "class /
+sequence-partition (= word) / coherent = 11/4 / 15/4 / 23/4 on the
+round-1 chimera; 3 / 4 / 6 on the true family".
+
+**D-m2 — minor (CONFIRMED): the label-anchor values 3 and 6 are
+printed but never asserted, and Z_coherent has no Fraction side.** E2
+gates 32 / Z_seq = 4 / gauge constancy; E3 gates only pairwise
+inequivalence (Z_word == Z_seq, Z_class != Z_seq, coherent != both).
+Z_class == 3 and Z_coherent == 6 — the numbers in both labels — are
+tripwires (visible in details) not gates: a canon regression could
+drift Z_class with E2/E3 still green. And Z_coherent, a rational
+quantity (Σ k²·mu = 6 exactly), is computed only in mpf — against the
+banner's "Fraction cross-checks on every rational quantity" (the
+Fraction computation is two lines: k²·mu over classes). Repair R-D3
+(three lines), anchors pre-verified this delta.
+
+**D-n1 — nit: fresh dead code in the repair commit.** The E3
+placeholder loop (the first members/`Zcoh_term` loop: computes s·s and
+discards it; `Zcoh = Zcoh + Fr(0)` with the comment "placeholder;
+exact below" — below is the mpf version, not an exact one) and
+`fine_off = mpf(0)` (assigned, never used). The round-1 F9 class
+recurring in the rebuild itself; delete ~10 lines.
+
+**D-n2 — nit: cwd-dependence.** Relative open of the d42b3 source;
+runs only from the repo root; fail-safe (verified: exit 1, no
+false-green possible). Anchor the path from __file__ (one line).
+
+**D-n3 — nit: supersession naming and two label-vs-computation
+slivers.** (i) E1 names §1's retracted claim but not §2/§3's stale
+promises (F-PAIR "depth <= 3 ... both instruments"; the QG1/QG3
+commutation gates; QG7 "every constructed map") — the d42b3-D1
+precedent names its targets; one sentence in a future pin touch.
+(ii) The fiber gate claims "every fiber-vs-{Q} pair orthogonal" (8
+pairs) and checks 4 (vs one Q representative) — the remaining 4
+follow from the Q-record identity, which is itself ungated; verified
+all 8 directly this delta (true). (iii) The kernel gate's detail
+prints the literal text "diag = (2/3, 1/3) at 1e-60; norm = 1" rather
+than computed values — entailed by the gated facts (the two diagonal
+checks sum to the norm), but the norm is no longer directly gated in
+the rebuild.
+
+## Prescribed repairs (pre-verified)
+
+- **R-D1 (D-M1).** In the endpoint gate label, replace "the gradient
+  completion at unit boundary in Hilbert dress" with "a classical
+  gradient completion in Hilbert dress (boundary Z(top) =
+  1/#linearizations in this receipt's forward-mass convention; the
+  UNIT boundary yields the sequence-partition object — round 1's
+  word-basis lift)". Optionally gate it (six lines: the forward-mass
+  recursion with 1/k boundary, Z([]) == 3, pushforward == Born — all
+  anchors above). Add a LOG forward-correction line for #311's "at
+  unit boundary" clause (the #304 precedent). Banner/verdict "the
+  gradient completion" → "a gradient completion". Rerun, recommit
+  .out.
+- **R-D2 (D-m1).** Fix pin E3's parenthetical (wording above).
+- **R-D3 (D-m2).** Assert Zclass == Fr(3); compute Z_coherent as a
+  Fraction (Σ k²·mu) and assert == 6, keeping the mpf as cross-check.
+- **R-D4 (D-n1/D-n2/D-n3).** Delete the dead placeholder loop and
+  fine_off; anchor the exec path from __file__; name §2/§3's
+  superseded items in the next pin touch; either check the 4
+  remaining cross pairs (two lines) or say "4 checked + Q-record
+  identity"; compute the kernel gate's detail values.
+
+## Delta reproduction inventory
+
+- Reruns: `PYTHONHASHSEED={0,61,71} python3
+  v10/code/d42b4_quantum_lift_exact.py` (from repo root) →
+  byte-identical to the committed .out, exit 0, 8/8.
+- `delta_d42b4.py` (scratchpad; 20/20): exec-vs-import fidelity
+  (candidates_for at 4 cuts; 32-sequence family; canon on all 32; A7
+  mus both sources); E2/E3 anchors (32 / 4 / 23 / single-mu / 3 / 6 /
+  {k=1:14, k=2:9} / word-class bijection / 253-pair Fraction sweep);
+  the boundary computation (unit → pushforward k·mu/4 ≠ mu/3; 1/k →
+  Z([]) = 3, pushforward == mu/3, per-cut normalization); chimera
+  reconciliation (11/4, 15/4, 23/4); pin-E3 mislabel check; F-PATH
+  censuses (7 × 1/6, 8 × 0; fiber 6 + 8).
+- `rmut1.py` (pincer 5/4 → 4/3): [FAIL] on the pincer gate, exit 1.
+  `rmut2.py` (32 → 33): [FAIL] on E2, exit 1. Cwd probe: run from
+  v10/ → FileNotFoundError, exit 1 (fail-safe).
+
+**Disposition:** the rebuild does what the round demanded — headline
+retracted, pincer adopted and gated from the single-sourced machinery,
+true family in, trilemma corrected, censuses completed, NSE re-scoped
+— and every number is on the anchors. ONE new defect blocks: the
+unit-boundary misattribution in the central honest-restatement gate
+(D-M1), a one-clause repair whose correction strengthens the
+retraction rather than weakening it. On R-D1 (+ R-D2/R-D3 recommended
+in the same touch) and a green rerun, this delta is CLEAN: d42b4 goes
+terminal AS RE-SCOPED — the arb-layer lift is the named open problem
+(round 2 of this front or d42c-class), and d42b5/d42b6/d42b7 may
+proceed on the re-scoped base.

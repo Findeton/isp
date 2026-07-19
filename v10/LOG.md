@@ -5598,3 +5598,26 @@ chimera-family value) / coherent 6. Survivors upgraded: the COMPLETE
 checks — the pin's "two orders" was false); NSE re-scoped to the
 basis-copy form with per-type census a carried obligation. Delta to
 the round referee next.
+
+## 2026-07-18 — FORWARD CORRECTION of #311 + d42b4 TERMINAL per the
+## stamped condition (LEDGER #312)
+Delta: 1 MAJOR / 2 minor / 3 nit, condition stamped ("on R-D1
+(+R-D2/R-D3) and a green rerun, DELTA-CLEAN — d42b4 terminal-fit AS
+RE-SCOPED"). THE CORRECTION (#311's clause was false; #304-precedent
+forward-correction): the class-basis endpoint lift is the gradient
+completion at the 1/k BOUNDARY (Z([]) = 3, pushforward mu/3, per-cut
+normalized, positive — referee pre-verified), NOT the unit boundary
+(that is the word/sequence-basis object); the retraction unaffected
+— every identified object is classical. THE SHARPENING (E3'): the
+aggregation trilemma = class and sequence bases as two BOUNDARY
+CHOICES of one classical gradient family + the coherent non-gradient
+object; the chimera parenthetical slots corrected (23/4 was
+coherent). Repairs applied: Zclass == 3 asserted in-gate; the
+coherent Fraction side (Z_coh = Σ n²m = 6 exact; fibers ≡ classes at
+depth 2, 23 == 23); dead code removed. Rerun GREEN 8/8
+seed-independent (0/71) VERIFIED pre-commit. d42b4 TERMINAL AS
+RE-SCOPED: the front's results = the kernel-layer lift, the complete
+1/6 instrument-pair census, the full-fiber D23 limit, the NSE
+basis-copy form, the trilemma-as-boundary-choices, and THE ARB-LAYER
+LIFT AS THE NAMED OPEN PROBLEM (the pincer; round-2/d42c target).
+Fronts 1-6 all settled; d42b5/d42b6/d42b7 proceed.

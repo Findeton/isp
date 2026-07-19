@@ -111,3 +111,15 @@ declared OPEN alongside it; the rebuilt receipt uses the
 canonical-class basis (the gauge-invariant classical object) and
 STATES it as the gradient-completion-in-Hilbert-dress, claiming no
 evasion.
+
+**E3' (delta corrections, D-M1/D-m1).** E3's parenthetical mislabeled
+the slots: on the chimera family 23/4 was the COHERENT aggregation
+and 15/4 the sequence(=word) basis; on the true family the values
+are class 3 / sequence=word 4 / coherent 6. THE SHARPENING (D-M1):
+the class and sequence bases are BOUNDARY CHOICES of one classical
+gradient family — the class basis realizes the 1/k boundary (Z([]) =
+3, pushforward mu/3), the sequence/word basis the unit boundary; the
+coherent aggregation is the one non-gradient object. #311's "unit
+boundary" clause was false for the class basis (forward-corrected at
+#312 per the #304 precedent); the retraction (E1) is unaffected —
+every identified object is classical.
