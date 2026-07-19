@@ -10,7 +10,8 @@ Relativistic ISP series, v10 paper 31.
 quantitative claim is bound to a committed source: one of the four
 terminal receipts of this campaign (outputs under `v10/data/`), or —
 where an in-line tag says so — the committed campaign record (LOG, pins,
-frozen review files).  Independent paper-level review remains open.
+frozen review files).  Independent paper-level review: round 1 + delta,
+frozen at `reviews/paper31-round1-hostile-review.md`.
 **Date:** 2026-07-19.
 
 ## Abstract
@@ -598,7 +599,7 @@ Two transport configurations decide the question [EXACT]:
   dimension 3 (minimum size; not unique at six elements — `W4` below
   is a second).
   The generated grammar, running pure transport at width 6, realizes
-  the first non-two-dimensional order.  It FAILS `dim <= 2`.
+  a minimum-size order of dimension 3.  It FAILS `dim <= 2`.
 - **W4.**  Four actors (the widest committed chain's own actor count)
   suffice: a six-event configuration with exact admissible weights
   `(1/12, 1/12, 1/8, 1/8, 1/12, 1/12)` and predecessors

@@ -463,3 +463,176 @@ a delta, not a re-review. The zero-false-physics-numbers streak
 holds; the paper's discipline failure is confined to two glosses and
 the methods note's precision sentence — the exact places where prose
 outran the receipts.
+
+---
+
+# Delta verification (round 2) — repairs at HEAD 32330f0 (LOG #348)
+
+**Object:** the repaired
+`v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md`
+(129-line delta over 3da9a63, reviewed hunk-by-hunk from
+`git diff 3da9a63 32330f0`); LOG #347/#348. Round-1 body above
+untouched. **Method:** every one of the 17 applications located in
+the diff and read in final context; leftover-phrase greps over the
+repaired paper (zero hits for the convicted wordings); the three
+coupling points re-verified (recount arithmetic; the §2.2/§2.3 orbit
+cross-pointer against the frozen d43a review's F2 spectra; the §8
+precision sentence clause-by-clause against the receipt sources and
+`.out`s); the v8 titles compared verbatim against the v8 files' own
+header lines; `git diff 3da9a63 32330f0 -- v10/code v10/data`
+confirmed EMPTY (no receipt or output touched — round 1's four
+byte-identical reruns remain current and no re-execution is needed);
+every number inside a changed hunk re-checked against round 1's
+verified values.
+
+## VERDICT: DELTA-CLEAN — 17/17 discharged, recount verified,
+## 0 new findings above nit (1 nit + 1 zero-action reading note)
+
+## Item-by-item
+
+- **B1 — DISCHARGED.** §7 item 7 now reads "the mass at which the LT
+  rule's identified transport operator vanishes at this order (the
+  sign flip's guaranteed crossing)", with `kappa(m) = 1` (agreement
+  with EXC) explicitly separated as "not established either way by
+  the record". Mathematically correct on both halves; matches the
+  prescription.
+- **B2 — DISCHARGED.** The "≥ 27 digits" figure is gone (grep-clean).
+  The replacement §8 sentence is verified clause-by-clause: dps 50 /
+  `TOL = 1e-30` / `ORD = 12` (d43a source, lines 26–28); the
+  exact-rational values record-confirmed (frozen d43a review: "my
+  Fraction rebuild confirms every receipt quantity exactly"); dps 50
+  / `1e-40` for d43c with defects `0.0` at working precision (`.out`
+  PG3-E1/E2/R4); "the exact-`Fraction` layers behind the gates carry
+  no tolerance at all" — true of d43b (all-Fraction), d43c's
+  menu/kernel layer, and d43d's exact D\*. (The d43c lossy CONTROL is
+  a designed non-zero, outside the "measured defects" clause's scope
+  as worded — no conflict.)
+- **M1 — DISCHARGED.** §3.5: "the intended induction is exactly
+  this: that every deep history is … Assembling the two gated
+  identities into that induction is a theorem statement … left open
+  here." The conclusion is now conditional content of the named open
+  theorem; matches the prescription nearly verbatim.
+- **M2 — DISCHARGED.** §5.4 retagged "[EXACT, cited to the committed
+  campaign record]" — now provenance-true (frozen d43d delta item 7
+  + LOG #342).
+- **M3 — DISCHARGED.** §2.1 and §8 both describe the ladder as
+  dps-50 series arithmetic at `1e-30` gates with the exact rational
+  values confirmed by the frozen round's independent exact-rational
+  rebuild; the "[EXACT, values record-confirmed]" qualified tag is
+  house style (round-1 §2.1 already carried qualified [EXACT] tags);
+  "floating amplitudes only where isometry defects are measured" is
+  gone (grep-clean).
+- **m1 — DISCHARGED.** "(at `d = 3`: six distinct channel ratios;
+  twelve LT residual entries outside the basis)" — correctly scoped
+  to the frozen review F3(iii) computation.
+- **m2 — DISCHARGED.** The §2.3 parenthetical labels the d = 2
+  kappas "deterministic max-orbit representatives" and points to
+  "the §2.2 table's" orbits — the §2.2 table does carry exactly the
+  two full d = 2 max-orbit spectra. See the reading note below on
+  the d = 1 clause (verified correct; zero action).
+- **m3 — DISCHARGED.** "(the second layer per the frozen review
+  record)" on the two-derivative-layers clause; "[THEOREM at fixture
+  scale, per the frozen review record]" on the `E^LT[Delta^8]`
+  identity. Both provenance-true (frozen d43a review F1 + delta χ0
+  section; LOG #340).
+- **m4 + m5 — DISCHARGED, RECOUNT VERIFIED.** §1.3's intro says
+  "five statements" and the list has exactly five items (counted):
+  (1) §5.7/§9 17-states; (2) §7.2 pilot null; (3) §6.2 pincer scope;
+  (4) §8.3 premise — with "the conclusion (no continuum claim)
+  stands with its premise updated", accurate against paper 30 §8.3's
+  actual text; (5) §7.2 depth axis — accurate (width ≥ 4 at six
+  events; width ≤ 2 never). §6 reconciles: two scaffolding
+  supersessions (§3, §5) + three scope sharpenings named
+  individually, "All five are stated in §1.3 and gated in the
+  receipts" — the gate mapping checks: NC4 (item 1), NG3b (item 2),
+  PG2 + PG3 (item 3), PG3-E1..E5 (item 4), NG3 widths + NG3b
+  (item 5). The deviation from round-1's m4 one-liner is exactly the
+  m5 interaction and is the better resolution.
+- **m6 — DISCHARGED at all three sites.** Abstract: "a minimum-size
+  order of dimension 3"; §5.3: "the standard minimal example of
+  dimension 3 (minimum size; not unique at six elements — `W4` below
+  is a second)"; §6: "the standard minimal example of dimension 3".
+  All correct (and the W4-as-second-witness clause is
+  receipt-consistent). One trailing residual: D-n1 below.
+- **m7 — DISCHARGED.** Both v8 titles now verbatim — compared
+  character-for-character against the v8 files' own header lines
+  ("The 2D sufficiency theorem: a canonical realizer, the rank
+  embedding, and an intrinsic quantitative characterization of
+  volume-faithful record orders"; "Do records measure positive? The
+  two-clock frame, the natural-supply sweep, and the Gibbs
+  reconnaissance"), with the Theorem-2.1 gloss accurate.
+- **m8 — DISCHARGED.** Abstract: "with the EXC constant exactly 1 at
+  both masses and one per-mass LT constant: …" — correct.
+- **n1 — DISCHARGED.** "the d43b/d43c pair additionally verified
+  byte-identical across hash seeds 0/7/11/61" — matches LOG #344.
+- **n2 — DISCHARGED.** The coda now reads "nearest open surface" and
+  enumerates the arbitration-alone dimension question,
+  transport-scope invariance, and the standing empirical/breadth
+  items — consistent with the paper's own §7 ledger.
+- **n3 — DISCHARGED.** "the nonzero shifted eigenvalues … satisfy
+  `u^2 = 1/4` (the full dominant-class spectrum is `{1, 3/2, 2}`)" —
+  the spectrum was verified exactly in round 1's probe (charpoly
+  zeros at 1, 3/2, 2).
+- **n4 — DISCHARGED.** §5.2: "with the `(b, chi)` two-clock
+  certificate computed in-receipt and exact canonical `D*` values
+  (…)" — "computed in-receipt" is exactly right (the ranks are
+  computed; the `.out` does not print them — the known frozen-round
+  residual on the terminal receipt, not the paper's to repair).
+
+## Coupling spot-checks (commissioned)
+
+All three clean; no adjacent number or cross-reference broken.
+Numbers inside changed hunks re-verified against round-1 values:
+the abstract kappas, `1/20`, the §2.3 table (untouched), the §5.2
+D\* list (untouched), the W6/W4 data (untouched), seeds 0/7/11/61,
+`{1, 3/2, 2}`, the five-count, and the §8 PASS table (untouched).
+Leftover-phrase grep over the repaired paper: zero hits for "27
+digits", "the two chain receipts", "[EXACT, gated]", "agree to this
+order", "three statements", "first order that breaks", "floating
+amplitudes only", "the minimal order of dimension", "exact rational
+coefficients".
+
+## Record observations — disposition ENDORSED
+
+LOG #348's forward-correction of #342 states the facts exactly (only
+the chain-scale half of D1.3 was applied; the committed print stands
+and decodes as `below = 8 / wsum = 1037/64 = 512/1037`), assigns the
+cosmetic print repair to D44c's natural touch of the d43d machinery,
+and notes NG4's `check(True)` status. **This referee agrees with
+leaving the terminal d43d receipt untouched**: the defect is
+cosmetic, its decode is unambiguous and now on the record, and
+re-opening a frozen terminal receipt for a print string would trade
+a real discipline (the freeze) for a nil one — the round-1
+classification ("for the next natural touch") is honored precisely.
+
+## Residuals (non-blocking)
+
+- **D-n1 — nit (the only new finding):** §5.3's W6 bullet still ends
+  "realizes the first non-two-dimensional order" — the "first"
+  phrasing class of m6, at a site round 1 did not list. It is now
+  disambiguated by the new "(minimum size; not unique at six
+  elements — `W4` below is a second)" parenthetical one line above,
+  so it reads as first-by-size; optional one-word polish ("a
+  minimum-size non-two-dimensional order") at the next natural
+  touch. Not blocking.
+- **D-note — zero action (reading verified):** §2.3's "the `d = 1`
+  orbits are single-ratio" is correct in the passage's own sense —
+  "orbit" throughout §2.2–2.3 is the maximal-magnitude entry orbit
+  (the §2.2 table's column header defines it), and the d = 1 max
+  orbits are single-ratio (frozen review F2). The FULL d = 1 ratio
+  spectra have 5 classes — a different object, not the one named.
+  Recorded so no future reader mistakes the clause for a
+  full-spectrum claim.
+
+## Terminal endorsement
+
+**DELTA-CLEAN.** All 17 round-1 findings are correctly discharged;
+the supersession recount (5 = 2 scaffolding + 3 sharpenings) is
+verified against both §1.3 and §6; the applications introduced
+nothing above nit; no receipt, output, or delivered number changed.
+Per the stamped terminal condition, **paper 31 converts to terminal**
+as: "EXACT-RECEIPT PAPER at the declared finite scope; independent
+paper-level review: round 1 + delta, frozen at
+`reviews/paper31-round1-hostile-review.md`." The
+zero-false-physics-numbers record now extends through the paper and
+its repair.

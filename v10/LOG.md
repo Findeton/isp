@@ -6389,3 +6389,27 @@ the round: d43d NG4 remains check(True) (disclosure gate,
 round-1-disclosed, corpus-tolerated). DELTA to the round-1 referee
 commissioned; terminal condition: delta-clean on the 17 applications
 with no new findings.
+
+## 2026-07-19 — PAPER 31 TERMINAL (LEDGER #349); the D44 gate OPENS
+Delta verdict (appended to reviews/paper31-round1-hostile-review.md,
+round-1 body untouched): DELTA-CLEAN — 17/17 discharged, the §1.3/§6
+recount verified item-by-item with the gate mapping (NC4 / NG3b /
+PG2+PG3 / PG3-E1..E5 / NG3+NG3b), v8 titles verified verbatim,
+coupling checks clean, no receipt/data drift (diff empty under
+v10/code + v10/data), record observations endorsed (d43d stays
+frozen; #348's forward-correction states the facts exactly). ZERO
+new findings above nit. The one delta nit D-n1 applied at
+conversion: §5.3's trailing sentence now "realizes a minimum-size
+order of dimension 3" (the "first" phrasing retired at its last
+site). The delta's zero-action reading note recorded here: "the
+d = 1 orbits are single-ratio" is correct in the passage's
+maximal-orbit sense; the full d = 1 spectra carry 5 ratio classes —
+a different object (no paper change; noted so no reader misparses).
+Status line stamped: "Independent paper-level review: round 1 +
+delta, frozen at reviews/paper31-round1-hostile-review.md."
+PAPER 31 IS TERMINAL: the zero-false-physics-numbers record extends
+through the paper and its repair (~270 items swept, 269 verified,
+the one failure the retired fit-era margin figure — now deleted).
+THE D44 EXECUTION GATE IS OPEN (program pin #347): wave 1 (D44a
+closure theorem; D44d slab kappa(m); D44c arb-dimension) launches
+now; wave 2 (D44f, D44e, D44b last) follows conversions.
