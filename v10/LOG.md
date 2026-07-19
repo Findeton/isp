@@ -5805,3 +5805,13 @@ GREEN 4/4 seed-independent VERIFIED pre-commit. d42b56 TERMINAL.
 **THE CAMPAIGN: NINE UNITS, NINE HOSTILE ROUNDS + DELTAS, ZERO
 FALSE NUMERICAL RESULTS. Fronts 1-9 + the cross-cut all closed.
 Paper 30 begins on the settled record.**
+
+## 2026-07-18 — PAPER 30 OPENED (LEDGER #322): the committed skeleton
+Title: "The Generated Record and Its Completion." Draft abstract +
+the eight-section plan committed, every section bound to its
+terminal receipts (#289/#298/#304/#307/#312/#316/#321); carried
+obligations honored in the header (Bin-T-until-breadth with the one
+second grammar run; d41d-only citation). The full single-threaded
+prose is the next work item; house style binds (internal reviews are
+authorship — no correction-round cataloguing in the paper; the
+LOG/reviews record carries that history).
