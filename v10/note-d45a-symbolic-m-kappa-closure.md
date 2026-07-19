@@ -92,3 +92,41 @@ over Q, disc 2592) — the constant tau(+-4,s) = +-1/512 shifts the
 bracket 7 -> 16, creating 4(3m^2-1)(3m^2-4). The two zero crossings
 have DIFFERENT channel origins: m^2 = 1/3 is a per-channel kill;
 m^2 = 4/3 exists only in the weighted sums.
+
+## 6. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d45a-round1-hostile-review.md: PASS-AS-RESCOPED,
+## 0B/1M/2m/4n; all headlines survived a from-scratch sympy rebuild
+## + 8 out-of-hull masses on two engines + 10/10 mutants)
+
+**B1 (MAJOR-1 — a check(True) violation, OWNED).** YG4-B as
+committed at #357 was check(..., True) — unfalsifiable by
+construction, in direct violation of the no-check(True) law this
+program convicted at d43b F-B3, and it passed MY pre-commit
+verification (the PASS-count check does not catch gate vacuity —
+noted for the verification protocol). Every content claim behind it
+was true (referee-verified externally), but the gate was not a
+gate. REPAIRED: YG4-B is now a token-level source self-scan
+(tokenizer excludes strings/comments so the probe cannot
+self-trip): no banned name {TOL, mpmath, random, datetime, getenv,
+environ}, no float/complex NUMBER literal (421 integer tokens
+scanned); byte-identity remains an external protocol line, no
+longer inside any gate's claim. #357's "GREEN 20/20" reading is
+forward-corrected at #360: as-committed it was 19 computed + 1
+declared; as-repaired it is 22 computed.
+
+**B2 (minor-1 — the irreducibility inference scoped).** The disc
+route decides irreducibility only AS A QUADRATIC IN x = m^2; the
+print now says so, and a biquadratic m-split check (m^2 +- cm + d
+over Q, c != 0: d^2 = a0/a2, 2d - c^2 = a1/a2) runs and returns
+NONE — tau(2,same)'s numerator is irreducible over Q in m as well,
+now by receipt computation (the round had proved it externally).
+
+**B3 (minor-2 — the Neumann preconditions gated).** PIPE-3 gates
+Delta^1-freeness of Gamma(U_free); PIPE-4 gates
+Gfi . Gamma(U_free) == I as a truncated series — closing the
+single-gate margin the round exhibited with its M5 mutant.
+
+**B4 (nits).** YG4-A's walk now includes U_free and Gamma_free;
+YG2-B now covers LT site 5; YG3-A's label says "recombined from
+the retained channel objects" (the independent rebuild is the
+frozen round's). Receipt now 22 PASS / 0 FAIL.

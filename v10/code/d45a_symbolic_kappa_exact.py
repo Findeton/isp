@@ -450,6 +450,20 @@ check("PIPE-2 Gamma(U_free) and its Neumann inverse are REAL polynomial "
       "matrices (every imaginary polynomial identically zero) — |U|^2 "
       "realness holds symbolically", gam_real_ok and gfi_real_ok,
       f"Gfi: {len(Gfi)} nonzero series entries")
+d1_free_ok = all(pc_is0(v[1]) for v in Gam_free.values())
+check("PIPE-3 (round-1 minor-2a) Gamma(U_free) is Delta^1-FREE as a "
+      "polynomial statement (the Neumann remainder N = Gamma - I starts "
+      "at Delta^2 — gated, no longer asserted)", d1_free_ok)
+_prod = m_mul_sym(Gfi, Gam_free)
+prod_id_ok = (all(_prod.get((i, i), s_zero())[0] == PC_ONE
+                  and all(pc_is0(_prod[(i, i)][k]) for k in range(1, ORD + 1))
+                  for i in range(DIM))
+              and all(all(pc_is0(v[k]) for k in range(ORD + 1))
+                      for (i, j), v in _prod.items() if i != j))
+check("PIPE-4 (round-1 minor-2b) Gfi . Gamma(U_free) == I as a truncated "
+      "series of polynomial matrices (the inverse verified by product, "
+      "closing the single-gate margin the round exhibited via its M5 "
+      "mutant)", prod_id_ok)
 
 JCACHE = {}
 def J_region_sym(site, rule):
@@ -595,12 +609,14 @@ for D in (DE, DL):
     for v in D.values():
         yg2_real_ok &= v[1] == ()
 for rule in ('EXC', 'LT'):
-    for r in range(5):
+    sites_b = range(6) if rule == 'LT' else range(5)
+    for r in sites_b:
         for v in A_sym(r, rule).values():
             yg2_real_ok &= v[1] == ()
-check("YG2-B REALITY as polynomials: every A-coefficient entry, every tau "
-      "channel, and every D entry of both rules has identically-zero "
-      "imaginary polynomial", yg2_real_ok)
+check("YG2-B REALITY as polynomials: every A-coefficient entry (all "
+      "retained sites of both rules — round-1 nit: LT site 5 now "
+      "included), every tau channel, and every D entry has "
+      "identically-zero imaginary polynomial", yg2_real_ok)
 
 yg2_odd_ok = True
 for tau in (tauE, tauL):
@@ -737,7 +753,32 @@ def factor_report(label, p):
                   f"{rr[1]}")
         else:
             print(f"      quadratic-in-m^2 route: disc = {disc} (not a "
-                  f"perfect square) — irreducible over Q")
+                  f"perfect square) — irreducible over Q AS A QUADRATIC "
+                  f"IN x = m^2 (round-1 minor-1 scope; the disc "
+                  f"inference decides x-factorization only; the "
+                  f"m-quartic could a priori still split into "
+                  f"quadratics in m — checked next)")
+            a0, a1, a2 = ic
+            # biquadratic split a2*m^4 + a1*m^2 + a0 =
+            # a2*(m^2 + c*m + d)(m^2 - c*m + d) needs d^2 = a0/a2 and
+            # 2d - c^2 = a1/a2 with rational c, d; c = 0 is the disc
+            # route already refuted, so require c != 0 rational:
+            bi_split = False
+            r0 = Fr(a0, a2)
+            if r0 >= 0:
+                dn, dd = r0.numerator, r0.denominator
+                sn, sd = math.isqrt(dn), math.isqrt(dd)
+                if sn * sn == dn and sd * sd == dd:
+                    for d_ in (Fr(sn, sd), Fr(-sn, sd)):
+                        c2 = 2 * d_ - Fr(a1, a2)
+                        if c2 > 0:
+                            cn, cd = c2.numerator, c2.denominator
+                            qn, qd = math.isqrt(cn), math.isqrt(cd)
+                            if qn * qn == cn and qd * qd == cd:
+                                bi_split = True
+            print(f"      biquadratic m-split (m^2 +- c m + d over Q, "
+                  f"c != 0): {'EXISTS' if bi_split else 'NONE'} -> "
+                  f"{'REDUCIBLE in m' if bi_split else 'irreducible over Q in m as well'}")
     else:
         roots, resid = strip_rational_roots(ic)
         if roots:
@@ -777,8 +818,10 @@ for (d_, a_, b_) in sorted(tauL):
         flip_comb = pc_add(flip_comb, pc_iscale(tauL[(d_, a_, b_)], d_))
 print(f"  the flip-channel combination (D(0,1)): {pc_str(flip_comb)}")
 check("YG3-A the delta-weighted same-channel combination == kappa(m) and "
-      "the flip-channel combination == -kappa(m), reassembled "
-      "independently from the printed channel polynomials",
+      "the flip-channel combination == -kappa(m), recombined from the "
+      "retained channel objects (round-1 nit: same in-memory objects, "
+      "not an independent rebuild — the independent rebuild is the "
+      "frozen round's)",
       comb == DL.get((0, 0), PCZ) and comb[0] == KAPPA_SYM
       and flip_comb == DL.get((0, 1), PCZ)
       and flip_comb[0] == p_neg(KAPPA_SYM))
@@ -859,17 +902,39 @@ for key in sorted(JCACHE):
     type_walk(JCACHE[key])
 for v in Gfi.values():
     type_walk(v)
+for m_obj in (U_free, Gam_free):
+    for v in m_obj.values():
+        type_walk(v)
 check("YG4-A ZERO floats: mpmath never imported; a recursive type walk "
-      "over every retained object (H, Gfi, every cached J series, both "
-      "tau tables, both D matrices, kappa) finds 0 float objects and "
-      "Fraction coefficients only", no_mp and FLOATS[0] == 0
+      "over every retained object (H, U_free, Gamma_free, Gfi, every "
+      "cached J series, both tau tables, both D matrices, kappa) finds "
+      "0 float objects and Fraction coefficients only (round-1 nit: "
+      "U_free/Gamma_free now walked)", no_mp and FLOATS[0] == 0
       and FRACS[0] > 0,
       f"floats = {FLOATS[0]}, Fraction coefficients walked = {FRACS[0]}")
-check("YG4-B tolerance-free banner: every gate above is exact equality of "
-      "polynomial pairs (tuples of Fractions); no TOL constant exists in "
-      "this receipt; determinism: no RNG, no wall clock, no environment "
-      "reads, sorted iteration at every print — rerun byte-identical "
-      "(verified externally with PYTHONHASHSEED 0 and 7)", True)
+import tokenize
+import io
+_src = open(__file__).read()
+_toks = list(tokenize.generate_tokens(io.StringIO(_src).readline))
+_names = {t.string for t in _toks if t.type == tokenize.NAME}
+_numbers = [t.string for t in _toks if t.type == tokenize.NUMBER
+            and not t.string.lower().startswith(("0x", "0o", "0b"))]
+_banned = {"TOL", "mpmath", "random", "datetime", "getenv", "environ"}
+_clean_names = not (_names & _banned)
+_no_float_lit = all(all(ch not in s for ch in ".eEj")
+                    for s in _numbers)
+check("YG4-B tolerance-free banner, NOW SELF-VERIFYING (round-1 MAJOR-1 "
+      "repaired — the previous form was check(True)): a token-level "
+      "self-scan of this source (strings and comments excluded by the "
+      "tokenizer, so the probe cannot self-trip) finds NO name in "
+      "{TOL, mpmath, random, datetime, getenv, environ} and NO float "
+      "or complex NUMBER literal (math is imported for exact integer "
+      "gcd/isqrt only); every gate above is exact equality of "
+      "polynomial pairs (rerun byte-identity stays an externally "
+      "verified protocol line, seeds 0/7 — not this gate's claim)",
+      _clean_names and _no_float_lit and len(_numbers) > 0,
+      f"banned names absent = {_clean_names}; integer-only NUMBER "
+      f"tokens = {_no_float_lit} ({len(_numbers)} scanned)")
 
 # ============================================================================
 print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")

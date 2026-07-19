@@ -6736,3 +6736,33 @@ grains (|C| >= 3 chains; re-merge; transport depth-4) — RG4's
 cannot-gate set is EMPTY (A6). The d42b4 R6 carried obligation is
 DISCHARGED at fixture scope. Note §5 A1-A7. ROUND 1 COMMISSIONED
 next. In flight: D45a + D45b rounds, D44a build.
+
+## 2026-07-19 — d45a round 1: PASS-AS-RESCOPED (0B/1M/2m/4n);
+## repairs applied (LEDGER #360); FORWARD-CORRECTION of #357; delta
+## commissioned
+The round (frozen: reviews/d45a-round1-hostile-review.md): ALL
+headlines survived — a from-scratch SYMPY rebuild (own collar
+construction, 5-term Neumann WITH a product gate) reproduced both
+tau tables, both collapses, the zero-polynomial identity, every
+YG2 vanishing and every YG3-C factorization IDENTICALLY IN M;
+out-of-hull TRIPLE CONCORDANCE at 8 fresh masses (m = 3, 7/2, 5,
+8/3, 23/8, 9, 1/32, -1) at CHANNEL level on two engines (the
+referee's exact rebuild + the committed d44d mpmath pipeline
+exec'd unmodified); every YG3-C expansion/disc/bracket-shift
+re-derived by hand; 10/10 mutants exit 1; 36m^4 - 60m^2 + 7
+proved irreducible over Q by the referee. THE MAJOR (owned in
+full, note §6 B1): YG4-B was check(True) — the no-check(True) law
+violated in a receipt I verified and committed; the PASS-count
+pre-commit check does not catch gate vacuity (protocol note).
+FORWARD-CORRECTION of #357: "GREEN 20/20" was 19 computed + 1
+declared as committed. REPAIRS (verified pre-commit: rerun exit 0,
+22 PASS / 0 FAIL, seeds 0/7 byte-identical): YG4-B rebuilt as a
+token-level source self-scan (421 integer NUMBER tokens; banned
+names absent; probe self-trip impossible by tokenizer design);
+PIPE-3/PIPE-4 gate the Neumann preconditions (Delta^1-freeness;
+Gfi . Gamma == I by product — the round's M5 single-gate margin
+closed); the irreducibility print scoped to x = m^2 with the
+biquadratic m-split check added (returns NONE — irreducible in m
+too, now in-receipt); YG4-A walks U_free/Gamma_free; YG2-B covers
+LT site 5; YG3-A's label honest. Note §6 B1-B4. DELTA to the d45a
+referee next.
