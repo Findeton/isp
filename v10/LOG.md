@@ -6031,3 +6031,33 @@ mechanical discharge. CONSEQUENCE: residue 2's operator question is
 answered at fixture scale; the completion burden separates cleanly
 onto residue 1 — THE TWO RESIDUES ARE NOW ONE. Seed-independent
 (0/11). Round next (with d43b's, after the a/d rounds return).
+
+## 2026-07-19 — d43a ROUND 1 FROZEN (LEDGER #336): 0B/4M/3m/2n,
+## zero false numbers — AND THE SMEARED ANSWER COMPUTED: THE
+## BRACKET RAY IS RULE-INDEPENDENT; THE ALARM RE-AIMED
+Report: reviews/d43a-round1-hostile-review.md (independent exact
+Gaussian-rational rebuild at L=12 AND L=14, threshold-free). F1: my
+§6 T4/T2 distinction was mathematically EMPTY — E^LT[Δ⁸] equals the
+pure bracket exactly (even-only ladder; referee-proved all cells).
+F2: the d=2 kappas were argmax tie-break artifacts — the max orbit
+carries THREE exact ratios per cell; DIVERGENT unaffected; the #332
+kappa list is non-canonical (noted forward). F3: the pin-literal
+strip was vacuous; under the p8-FAITHFUL channel-moment clause the
+verdict is STILL DIVERGENT (six distinct ratios, 12 LT residuals) —
+robust under all three strip definitions. F4 + THE CENTERPIECE: the
+commissioned smeared comparison COMPUTED — both rules collapse to
+THE SAME TANGENTIAL RAY K_par[β] = (β∂x + ½∂xβ)(I − α) with one
+per-mass constant: κ(1/2) = 13/2304, κ(1) = −1/72; THE SIGN FLIP =
+a new no-go (no shared-generator c²>0 class underlies both rules —
+bracket-ray universality holds WITHOUT that mechanism). RE-SCOPE:
+#332's blanket downstream obligation WITHDRAWN — constants are
+rule-class data, operators are not; the foundation HOLDS at the
+operator level. Minors: the d=3 support-mismatch is a filtration
+triviality; precision drift (pinned 80/1e-40 vs run 50/1e-30); the
+§6 T4 pre-registration was retro-fitted (entered with the green
+commit — owned, the #304 class). Amendments B1-B5 + repairs
+(the ratio-spectrum reporting, the channel-moment STRUCTURED
+clause, T5 = the smeared computation with the round's exact anchors
+adopted-with-confirmation, completeness checks) applied; rerun in
+progress. Successors named: the LT log-smeared finite-slab theorem;
+κ(m) exact (the zero crossing); the interacting p15 cross-check.

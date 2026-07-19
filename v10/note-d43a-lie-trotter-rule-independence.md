@@ -105,3 +105,52 @@ commutators C^rule_d = [A^rule_R, A^rule_S] for d in {1, 2, 3}; test
 C^LT_d proportional to C^exc_d (one constant per (m, d); the same
 three-way verdict). T4, not T2, decides the orphan; T2's raw-defect
 divergence stands as its own delivered finding.
+
+## 7. Round-1 amendments (2026-07-19; round frozen at #336)
+
+**B1 (F1 — the T4/T2 distinction was empty).** §6's cross-terms
+rationale was FALSE: E^LT[Δ⁸] = [A^LT_R, A^LT_S] EXACTLY (the J^LT
+ladder is even-only; only (4,4) contributes) — referee-proved at
+d = 1, 2, 3, both masses, both L. T4 is T2 extended to d = 1 plus
+the d = 3 support corollary; nothing more.
+
+**B2 (F2 — kappas are orbit representatives).** The per-cell d = 2
+"kappa" was an argmax tie-break artifact: the max-magnitude orbit
+carries THREE exact ratios ({−137/2304, −5/256, +79/2304} at
+m = 1/2; {−7/288, −3/128, +13/576} at m = 1). DIVERGENT is
+unaffected; kappa reporting is replaced by the full spectrum + the
+orbit-free channel-moment ratios. LOG #332's kappa list is
+non-canonical (forward-noted).
+
+**B3 (F3 — STRUCTURED restated).** §4's strip clause was vacuous as
+worded (empty EXC strips). Restated p8-faithfully: STRUCTURED =
+proportional CHANNEL MOMENTS in the p7 strip basis (F/S/T) with
+zero residual outside the basis. Under the repaired clause the
+verdict is STILL DIVERGENT (six distinct channel ratios; 12 LT
+residual entries — referee-verified), so the delivered outcome
+stands with the clause corrected.
+
+**B4 (F4 — THE SMEARED ANSWER; the alarm re-aimed).** The round
+computed the corpus's own v2 p1 §5 continuum identification for
+both rules: the lattice channel data genuinely differ (LT carries
+δ = ±3, ±4 channels), but everything collapses to the SAME
+tangential operator ray K_par[β] = (β∂x + ½∂xβ)(I − α) at leading
+order, with ONE per-mass constant across both derivative layers:
+κ(1/2) = 13/2304, κ(1) = −1/72. THE SIGN FLIP is a new no-go: no
+shared-generator Theorem-3 class (c² > 0) can underlie both rules —
+bracket-ray universality holds WITHOUT that mechanism. RE-SCOPE:
+rule-relativity is real at lattice-entrywise scope (normalization
+and sign of the constant); the bracket's OPERATOR CONTENT is
+rule-independent at this order. The blanket downstream re-scoping
+obligation of #332 is WITHDRAWN and replaced by: (i) constants are
+rule-class data, operators are not; (ii) named successors — the
+LT-side log-smeared finite-slab theorem; κ(m) as an exact function
+(locate the zero crossing); the interacting p15-fixture cross-check.
+
+**B5 (F6-F9 — process/precision).** §5's precision is corrected to
+the as-run dps 50 / 1e-30 / exact-series (the pinned 80/1e-40 was
+the fit-era spec). "Pre-registered" scopes to T2; §6's T4 entered
+with the green commit, not before it (the retro-fit owned —
+the #304 precedent class). Dead code removed; the completeness
+checks (odd E^LT orders vanish; AN1 off-support vanishing) added;
+"seed-independent" replaced by "deterministic, rerun byte-identical".
