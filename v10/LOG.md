@@ -5742,3 +5742,29 @@ names embed authors/payloads, the relabel maps must recurse into
 base fields — 208 histories went inadmissible under the naive maps;
 also the first detail string HARDCODED "0 violations" — replaced
 with computed counters). Round next (the campaign's last).
+
+## 2026-07-18 — d42b56 ROUND 1 FROZEN (LEDGER #319): 0B/3M/2m/1n,
+## all CONFIRMED-computed; zero false numbers (NINE rounds)
+Report: reviews/d42b56-round1-hostile-review.md. F1: the receipt's
+"1/k" was 1/menu-size — an UNPINNED boundary wearing the canonical
+label (the record's 1/k, d42b4 D-M1, is 1/#linearizations-of-class:
+Z([]) = 325/64, not 11477/3840); repair pre-verified (class-1/k: S1
+flat, S2 witnesses 21/325 vs 1/16, robust). F2: S1's gradient leg is
+CANNOT-FAIL BY TELESCOPING (any cut-attached class-constant Z passes
+0/202; the honest theorem: the h-transform FORM restores flatness;
+the separating fact is d42b3-D2 — N is not a gradient; the negative
+controls: a sequence-attached Z fails 198/202, a non-class-constant
+recursion 69/202); the pin's "any boundary" clause false
+unqualified. F3: A3's menu-state transfer ILL-POSED (4 shapes, one
+splits into 2 transfer profiles); the honest state space = the
+17-STATE BISIMULATION QUOTIENT (4->9->14->16->17); the reduction is
+ONE-WAY (stationary ⊂ positive-harmonic); S3's gate was
+check(True) — decorative. F4: the iso proxy near-information-free
+(331 share the root's shape; 175 structural, 31 exact) though the
+pinned pair IS structurally isomorphic with all-bijection-robust
+non-stationarity (referee-strengthened). F5 dead code; F6 the
+paper-28 Thm-4 cite atmospheric (§5.3 + the D42 mandate are
+load-bearing); sprinkling scope to name (internal Z2xZ2 + foliation
+gauge). SURVIVES: every number (the 36 set-identical to d42b3's
+census; covariance involution/commutation/canon-functoriality
+verified; the 208 corroborated twice). Repairs next.
