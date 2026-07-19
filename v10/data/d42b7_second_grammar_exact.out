@@ -1,0 +1,24 @@
+[d42b7 — the second grammar G3 + the dimension pilot]
+  banner: EXACT; binary layer exec'd from the committed d42b3
+  receipt; ternary = the SAME namespace with only the payload
+  alphabet overridden (isolation by construction); both
+  families depth <= 3 (declared cap); dimension = PILOT only.
+  families (depth<=3): binary = 215; ternary = 405 [MEASURED]
+  [PASS] GG1 G3 closure + enabled-(event, weight) gauge invariance on the depth<=2 slice (the delta-note-i standard, ported)  (candidate-set points = 93)
+  [PASS] GG2 the V1 TOY-RELATIVE values exhibited: depth-2 conflict census 4 -> 12 (ordered seed pairs x 6 payload pairs); mu(seed) 1/64 -> 1/144 (the propose split 1/8 -> 1/12)  (census = 12; mu3 = 1/144; mu2 = 1/64)
+  [PASS] GG3 the U1 FORM lifts: the 1 + k/4 ladder holds in BOTH grammars (two-of-two; universality per d41b still needs breadth — declared)  (binary spectrum = {'1': 374, '5/4': 56}; ternary = {'1': 642, '5/4': 168})
+  [PASS] GG4 N1 CONFIRMED: on the ternary triangle K1 == K2 == uniform 1/3 over the three singleton MIS (KERNEL DEGENERACY — the K-choice is undecidable on triangle components); the path still discriminates 2/3 vs 1/2 in G3 — discrimination is COMPONENT-SHAPE-DEPENDENT  (triangle: 3 MIS at 1/3 each; path: K1 = 2/3, K2 = 1/2)
+  GG5 BIN TABLE (the d41b deliverable):
+    opportunity generation / closure ......... LIFTED (2-of-2)
+    the 1+k/4 ladder + quarter density ....... LIFTED (2-of-2)
+    L1 uniqueness (A8 proof payload-blind) .... LIFTED (2-of-2)
+    depth-2 census (4 vs 12) ................. TOY-RELATIVE
+    mu(seed) (1/64 vs 1/144) ................. TOY-RELATIVE
+    triangle realizability (no vs yes) ....... TOY-RELATIVE
+    K1-vs-K2 discrimination .................. SHAPE-DEPENDENT
+      (paths discriminate everywhere; triangles degenerate)
+  [PASS] GG5 the bin table printed: forms lift, values are toy-relative, kernel discrimination is component-shape-dependent (one alphabet variant = one second grammar; Bin U needs breadth — pin §5)  (table above)
+  [PASS] GG6 the DIMENSION PILOT [PILOT — no verdicts, pin §3]: mu-weighted ordering fractions well-defined in [0,1]; the static chain baseline is exactly 1; generated adjacency sits strictly below it in both grammars  (binary OF = 386/771; ternary OF = 290/579; chain = 1 [MEASURED, PILOT])
+
+[SUMMARY] 6 PASS / 0 FAIL
+[VERDICT] d42b7 GREEN: the d41b protocol executed — the generation forms and the ladder LIFT to the second grammar; the values are toy-relative as predicted; kernel degeneracy on ternary triangles makes K-discrimination shape-dependent (N1 confirmed); the dimension pilot is well-defined and verdict-free.

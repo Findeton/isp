@@ -5621,3 +5621,20 @@ RE-SCOPED: the front's results = the kernel-layer lift, the complete
 basis-copy form, the trilemma-as-boundary-choices, and THE ARB-LAYER
 LIFT AS THE NAMED OPEN PROBLEM (the pincer; round-2/d42c target).
 Fronts 1-6 all settled; d42b5/d42b6/d42b7 proceed.
+
+## 2026-07-18 — d42b7 receipt GREEN 6/6 (LEDGER #313); round next
+v10/code/d42b7_second_grammar_exact.py, EXACT, seed-independent
+(0/83): the d41b protocol EXECUTED. Layer isolation by construction
+(binary exec'd from the committed d42b3 head; ternary = the same
+namespace with only the payload alphabet overridden). Families
+(depth<=3): binary 215 / ternary 405. GG2 the toy-relative values
+exhibited: census 4 -> 12; mu(seed) 1/64 -> 1/144. GG3 the 1+k/4
+ladder LIFTS (two-of-two grammars; breadth still needed for Bin U —
+declared). GG4 N1 CONFIRMED: the ternary triangle is KERNEL-
+DEGENERATE (K1 == K2 == 1/3 over three singleton MIS — the K-choice
+undecidable on triangle components) while the path discriminates
+2/3 vs 1/2 in both grammars — discrimination is COMPONENT-SHAPE-
+DEPENDENT. GG5 the bin table printed. GG6 the dimension PILOT:
+mu-weighted ordering fractions 386/771 (binary) / 290/579 (ternary)
+vs the exact-1 chain baseline — both near 1/2, verdict-free as
+pinned. Round next.
