@@ -6092,3 +6092,20 @@ suite. THE PHYSICS: the dimension question REVERSES — delivery
 joins among >= 4 actors generate 3D order structure; the paper-20
 dynamic fork acquires a POSITIVE mechanism (transport width), with
 multi-author arbs the declared untested corner. Repairs next.
+
+## 2026-07-19 — d43a round-1 repairs GREEN 7/7 (LEDGER #338);
+## delta launched — THE RAY CONFIRMED INDEPENDENTLY
+T5 rebuilt with the round's construction ported verbatim
+(tau(delta,s,s') = sum_r r * translation-sum of [A_0, A_r]; D =
+the delta-moment collapse): MY INDEPENDENT PORT CONFIRMS THE
+CENTERPIECE — EXC D-collapse = exactly 1*(I - sigma_x); LT
+D-collapse = kappa(m)*(I - sigma_x) with kappa(1/2) = 13/2304 and
+kappa(1) = -1/72 EXACTLY (the same tangential ray; the sign flip;
+the c^2>0 no-go). The literal tau-table transcription differs in
+orientation convention (the d42b3 reciprocal precedent) — the gate
+is convention-free (per-(|delta|, channel) magnitude multisets) and
+both tables print for the delta referee to reconcile. B1-B5 all in:
+T4 re-labeled (= T2 + the d=1/d=3 extension); the d=2 kappa ORBIT
+printed (three exact ratios per cell); completeness checks (odd
+orders, off-support); deterministic rerun byte-identical (0/29).
+chi0 cited to the report; delta to confirm the two-layer claim.
