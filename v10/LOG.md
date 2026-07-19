@@ -5525,3 +5525,21 @@ laboratory-facing statement); Hegerfeldt pre-registered; mid-chain
 drift / forced-click ontology / D24-D26 g-binding / full merge-
 delivery lift DECLARED carried. mpmath dps >= 80, thresholds 1e-60,
 Fraction cross-checks. Receipt next.
+
+## 2026-07-18 — d42b4 receipt GREEN 7/7 (LEDGER #309); round next
+v10/code/d42b4_quantum_lift_exact.py (mp.dps 80, thresholds 1e-60,
+Fraction cross-checks), seed-independent (0/71), ~1 s. THE BURDEN
+DISCHARGED AT FIXTURE SCALE: QG2b/QG7b — the F-PAIR lift state (19
+record words, Z_classical = 15/4 absorbed by the STATE NORM) is
+unit-normalized with EVERY sampled Born ratio equal to the exact mu
+ratio (34 checks) — ratio-preserving + normalized simultaneously,
+the combination d42b3 proved impossible classically; QG1/QG3
+incomparable isometries commute at the operator level (disjoint
+carrier registers) — foliation invariance BY IDENTITY, not by
+Z-consistency. QG2a the path winner Born diagonal == 2/3, 1/3
+exact. QG5/QG6 the fine-vs-coarse ontology is now an INSTRUMENT
+PAIR: same-winner order coherence exactly 1/6 (coarse) vs 0 (fine).
+QG5b D23's join limit operational: same-fiber conditional winner
+records identical (overlap 1) — the join cannot be inverted from
+its record. QG4 NSE reception isometry on 10 probe pairs + the
+d41d-R3 lossy negative control (0.2599 > 1/100). Hostile round next.
