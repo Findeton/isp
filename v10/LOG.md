@@ -5815,3 +5815,20 @@ second grammar run; d41d-only citation). The full single-threaded
 prose is the next work item; house style binds (internal reviews are
 authorship — no correction-round cataloguing in the paper; the
 LOG/reviews record carries that history).
+
+## 2026-07-18 — PAPER 30 FULL DRAFT COMMITTED (LEDGER #323)
+"The Generated Record and Its Completion" — 1,088 lines, single-
+threaded per house style (no round cataloguing; every result in
+final form with receipt citation; provenance labels throughout;
+Bin-T two-of-two language; d41d-only for D41). All quantitative
+claims bound to the seven terminal receipts' committed .out files;
+the writer's five flags adjudicated: (1) the h12 sector
+decomposition re-attributed to LOG #304 (the sum stays
+exhibit-gate-sourced); (2) the 133/2074<->16/133 reciprocal gloss
+retained with both conventions printed; (3) paths 108=ternary/
+36=binary per the #315/#316 reconciliation; (4) §1 renders the A7
+discipline as its three positive binding faces (house style);
+(5) LOG-only join masses omitted from the pilot section. Spot-checks
+against .outs pass (1/48; 21/325 vs 1/16; 1,016). Status line
+honest: "independent paper-level review remains open" — the
+paper-level hostile round launches next.
