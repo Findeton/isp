@@ -5576,3 +5576,25 @@ d42b3 decided structure. FLAGSHIP R1 PRE-VERIFIED: the honest
 A7-diamond arithmetic anchored from the committed d42a machinery —
 round 2 returns either a genuine joint-carrier discharge or the
 theorem-grade statement. Repairs next.
+
+## 2026-07-18 — d42b4 round-1 rebuild GREEN 8/8 (LEDGER #311);
+## delta launched
+The rebuilt receipt (seed-independent 0/71) makes the HONEST claims:
+the endpoint lift on the canonical-class basis == the gradient
+completion at unit boundary in Hilbert dress (explicit sqrt(Z_class)
+division; all 253 Born-mu ratio pairs exact on the FULL quadratic
+sweep; no evasion claim); THE PINCER exhibited from the committed
+d42a machinery (menus 2-events-sum-1 vs 4-events-sum-5/4; the blind
+pair branches inadmissible at the early cut — a cut-independent arb
+operator is impossible, cut-dependent breaks carriers, dilation
+re-imports cut data): the quantum completion problem BEGINS AT THE
+ARB LAYER, OPEN, round-2 target. E2: the TRUE family (32 sequences,
+Z_seq = 4, referee anchors; the pricing layer exec'd from the
+committed d42b3 receipt — single source). E3 corrected on the true
+family: the trilemma is class-diagonal 3 / sequence-partition 4
+(word aggregation is a partition — the round-1 15/4 was a
+chimera-family value) / coherent 6. Survivors upgraded: the COMPLETE
+1/6 census (7 same-fiber + 8 cross); the FULL fiber (4 orders, 6+4
+checks — the pin's "two orders" was false); NSE re-scoped to the
+basis-copy form with per-type census a carried obligation. Delta to
+the round referee next.
