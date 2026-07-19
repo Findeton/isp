@@ -6523,3 +6523,27 @@ verdict line rescoped in-receipt; the scan order printed; the
 verdict-content/byte-diff design stated in-banner; the hull header
 fixed to [1/16, 2]; the grid-point-root guard added; dead
 kg3_arrive removed. Note §5 B1-B3. DELTA to the d44d referee next.
+
+## 2026-07-19 — D44d TERMINAL (LEDGER #353)
+Delta verdict (appended to reviews/d44d-round1-hostile-review.md;
+round-1 body byte-intact): DELTA-CLEAN — every discharge verified
+(the rescoped KG3 line audited claim-by-claim incl. the d43a T2/T4
+citation against the committed .out and the g = 0 control re-run at
+delta time byte-identical; the printed scan order verified
+loop-by-loop; the banner taxonomy checked against all 17 gates; the
+grid-root guard type-safe with a TRUE unreachability comment); the
+mechanical diff = exactly the enumerated repairs, no arithmetic
+touched; two delta reruns byte-identical (hashseed 0 from root,
+hashseed 7 from v10/). New findings: NONE. TERMINAL — THE SETTLED
+STATEMENT (as stamped and referee-audited): the log-smeared
+finite-slab theorem HOLDS at fixture scale on the composite arm
+(slab-width independence of the ray and constant);
+kappa(m) = (3m^2 - 1)(3m^2 - 4)/144 EXACTLY on the hull [1/16, 2]
+with crossings at m = 1/sqrt(3) and 2/sqrt(3) (the LT operator's
+vanishing points); the block-arm EXC ((w+1)/2)^2 normalization law
+recorded; the raw-bracket divergence at the interacting point is
+GRAIN-INHERITED (g = 0 concurs); ray-level arrival under interaction
+UNDECIDED — the smeared interacting identification with a g = 0
+column is the named successor. Successor 4 of the user's six: DONE
+(KG1+KG2 arms; the KG3 arm re-aimed honestly). D44c round + D44a
+build in flight.

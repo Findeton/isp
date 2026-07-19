@@ -314,3 +314,109 @@ Environment: python 3.8.20, mpmath 1.3.0 (receipt); probes use stdlib
 - **KG3:** attacked as a possible collar artifact with two alternative
   splits — the verdict is robust; the surviving weakness is
   interpretive (MAJOR-1), not numerical.
+
+---
+
+# DELTA VERIFICATION (round-1 repairs, LOG #352, commit bce458e)
+
+**Delta verdict: DELTA-CLEAN.** All findings discharged as applied; the
+rescoped KG3 wording is accurate claim-by-claim; no new findings above
+nit (none at nit either). The terminal condition is met from this
+referee's side.
+
+## Discharge audit
+
+- **MAJOR-1 — DISCHARGED.** The new KG3 verdict line (receipt lines
+  1112–1120; .out line 214) was audited claim-by-claim: (i)
+  "divergence PERSISTS at the interacting point" — receipt cells +
+  my round-1 exact reproduction; (ii) "the free core is ALSO divergent
+  at this grain — d43a T2/T4" — verified against the committed d43a
+  .out: T4 is DIVERGENT at exactly the KG3 cells d = 1, 2 (d = 3 is
+  SUPPORT-MISMATCH, correctly not claimed), T2 DIVERGENT at d = 2, 3;
+  (iii) "the round's g = 0 control on this fixture concurs" — I re-ran
+  probe 3 at delta time: output identical to the frozen round's
+  (DIVERGENT/DIVERGENT at g = 0, receipt collar, exact classification).
+  I am comfortable with the record-citation: it is tagged as the
+  round's control, the frozen round-1 body above documents the probe
+  (collar, pairs, exact classification, reproduction appendix), and
+  the attribution chain (receipt line -> pin §5 B1 -> this file)
+  follows the d43a "cited to the report" precedent; (iv)
+  "grain-inherited, not an interaction effect" follows from (ii)+(iii);
+  (v) "RAY-level ... UNDECIDED ... successor with a g = 0 column"
+  matches pin §5 B1. Pin §5 B1 owns the pin's oversold §1 clause by
+  name; LOG #352 retires #350's KG3 sentence verbatim and states the
+  corrected reading. This is the full prescription of MAJOR-1,
+  including the successor g = 0 column.
+- **minor-1 — DISCHARGED.** The scan order is now printed in the KG2
+  section header (.out line 135), BEFORE the table and census, and I
+  verified it against the implementation loop-by-loop: x-poly
+  `range(0, 8)` = deg 0..7; m-poly `range(0, 14)` = deg 0..13;
+  rationals `tot in range(1, 13)`, `dd in range(1, 7)`,
+  `dn = tot - dd` with 0 <= dn <= 6 = den deg 1..6 / num deg 0..6 by
+  total degree, x then m; the `NPTS >= 2*(#unknowns)` skip rule; first
+  exact hit stops (each later family runs only `if hit is None`). The
+  census's "(scan order declared above)" now has a true referent in
+  the printed record.
+- **minor-2 — DISCHARGED.** The banner statement (.out lines 9–12) was
+  checked against the full 17-gate inventory: every exit gate falls
+  under the enumerated anchors/extraction/recognition/collapse-form
+  taxonomy (SG0-PF, AN1–AN4, T5, KG1-T/A/B/C, KG2-A/B/C/D,
+  KG3-A/B/C), and the complementary claim — clean-cell collapse
+  constants and verdict lines are delivered content whose integrity
+  rides on SG5 byte-identity — is exactly the M5/M8 mutant behavior
+  demonstrated in round 1. One taxonomy observation, no action needed:
+  KG2-B's "EXC constant = 1 at every grid mass" is a constant gate,
+  classifiable under "anchors" (the d43a mass-independent EXC anchor
+  extended); the banner's error direction, if any, is conservative
+  (understates what is exit-gated).
+- **nit-1 — DISCHARGED.** KG2 header now "the hull [1/16, 2]".
+- **nit-4 — DISCHARGED.** `direct_bisect_64` now delivers an exact
+  grid-point root explicitly (receipt lines 892–896). The
+  unreachability comment is TRUE: the identified quartic's roots
+  m = 1/sqrt(3), 2/sqrt(3) are irrational while every grid mass is
+  rational, so `KTAB.get(m) == 0` cannot fire for this receipt (and
+  `None == 0` is False, so the guard is type-safe). The branch is dead
+  in the green run — confirmed by byte-identity of the KG2-D region.
+- **kg3_arrive removal — verified**: the variable's only use was the
+  retired verdict sentence; no other reference existed.
+- **B3 residual disposition — ACCEPTED.** BOTH-ZERO class listing,
+  the structurally-trivial EXC order-1 slab-scope sub-onset gate, and
+  the recognize() margin are recorded in pin §5 B3 as known residuals
+  with no code change. All three were no-exposure nits in round 1;
+  recording without code churn is the right disposition.
+
+## Mechanical verification
+
+- `git diff 0bd927c bce458e` on the d44d paths contains EXACTLY the
+  enumerated repairs and nothing else: receipt = 4 hunks (banner
+  insert; KG2 header + scan-order print; direct_bisect_64 guard; KG3
+  verdict rewrite + kg3_arrive deletion — no arithmetic touched);
+  .out = the three matching regions; pin = §5 B1–B3 appended (§1–4
+  untouched); LOG = additive (#351 D44c is a different unit, touching
+  no d44d path). This round-1 review body was committed BYTE-INTACT
+  (316 lines, zero worktree-vs-bce458e diff above this delta section).
+- Repaired receipt re-run twice at delta time: PYTHONHASHSEED=0 from
+  repo root and PYTHONHASHSEED=7 from `v10/` — both exit 0, 17
+  PASS / 0 FAIL, both BYTE-IDENTICAL to the committed
+  `v10/data/d44d_slab_kappa_exact.out`.
+- Probe 3 re-run: byte-identical to the round-1 output (g = 0 control
+  stands).
+- LOG #352's summary of the round (11 masses / 6 off-grid, 9 KG1
+  cells, L=18 trap, 3 weight families, 18/18 verbatim port, 8 mutants
+  0 silent-green, M5/M8 by-design) matches the frozen round-1 body;
+  the forward-correction of #350 quotes and retires the exact
+  sentence this round faulted.
+
+## Terminal-statement check
+
+The stamped conversion statement was audited against the artifacts:
+the composite-arm slab-width independence (ray and constant), the
+factorization (3m^2-1)(3m^2-4)/144 = (9m^4-15m^2+4)/144 with
+crossings 1/sqrt(3), 2/sqrt(3) (the points where the LT tangential
+coefficient vanishes), the hull scoping [1/16, 2], the block-arm EXC
+((w+1)/2)^2 law, the grain-inherited reading with the g = 0
+concurrence, and the undecided ray-level successor with its g = 0
+column — every clause is supported by the receipt, the frozen round,
+and this delta. No objection to conversion on this statement.
+
+**DELTA-CLEAN — d44d may convert to TERMINAL.**
