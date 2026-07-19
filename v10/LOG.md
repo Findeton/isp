@@ -6346,3 +6346,46 @@ interacting cross-check (KG1-KG3); D44e per-type reception census
 measure side (the two-order ensemble comparison FG1-FG4; the
 forcing sweep + reduction map MG1-MG3). NO D44 receipt runs before
 paper 31 converts (round 1 returned while pinning; repairs next).
+
+## 2026-07-19 — paper 31 round-1 repairs APPLIED (LEDGER #348);
+## delta commissioned; forward-correction of #342
+Round 1 (reviews/paper31-round1-hostile-review.md, frozen): REVISE —
+2 BLOCKER / 3 MAJOR / 8 minor / 4 nit; ~270 quantitative items
+swept, 269 verified, ZERO false physics numbers (the one failed
+number was the retired fit-era margin figure). All 17 findings
+applied to the paper:
+B1 the zero-crossing gloss corrected (kappa = 0 is where LT's
+identified operator VANISHES — the sign flip's guaranteed crossing —
+not where the rules agree; kappa = 1 noted as the separate,
+unestablished agreement point); B2 the ">= 27 digits" fit-era margin
+DELETED, replaced by the as-run statement (dps 50 vs 1e-30/1e-40;
+defects zero at working precision; Fraction layers tolerance-free);
+M1 the closure-theorem conclusion no longer asserted ("the intended
+induction is exactly this: ..."); M2 the vname-vacuousness retagged
+[EXACT, cited to the committed campaign record]; M3 d43a's
+arithmetic described as-run (dps-50 series at 1e-30 gates; exact
+rational VALUES record-confirmed by the frozen round's rebuild) in
+§2.1 and §8. minors: m1 the 6-ratios/12-residuals scoped to d = 3;
+m2 the d = 2 T4 kappas labeled max-orbit representatives; m3 the
+chi0 both-layers clause + the E^LT[D8] identity tagged to the frozen
+review record; m4+m5 the supersession ledger now FIVE items (adding
+paper-30 §8.3's premise and §7.2's wrong axis) with §6 reconciled;
+m6 S3 = "standard minimal example / minimum-size" at all three
+sites (W4 = a second 6-element dim-3 order); m7 the real v8
+p12/p13 titles; m8 the abstract's constants clause (EXC = 1 both
+masses; LT per-mass). nits: n1 "the d43b/d43c pair, seeds
+0/7/11/61"; n2 the coda's open-surface sentence enumerates the full
+§7 ledger; n3 the dominant-class spectrum {1, 3/2, 2} stated; n4
+the two-clock certificate vs canonical-D* conflation fixed.
+FORWARD-CORRECTION of #342 (the round's record observation,
+accepted): #342's "The D1.3 cosmetic (the malformed median print ->
+512/1037 ~ 0.4937) and the legacy chain-scale print applied"
+OVERSTATED — only the chain-scale half was applied; the committed
+d43d receipt still prints the malformed "8/1037/64" (which decodes
+correctly: below = 8, wsum = 1037/64, ratio 512/1037 ~ 0.4937). The
+print repair is assigned to D44c's natural touch of the d43d
+machinery; the terminal d43d receipt stays frozen. Also noted per
+the round: d43d NG4 remains check(True) (disclosure gate,
+round-1-disclosed, corpus-tolerated). DELTA to the round-1 referee
+commissioned; terminal condition: delta-clean on the 17 applications
+with no new findings.

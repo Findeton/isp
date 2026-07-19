@@ -32,8 +32,9 @@ collar-excision and Lie–Trotter admission rules produce lattice defect
 coefficients that are genuinely non-proportional (exact rational orbit
 spectra, mass-dependent), yet under the corpus's own continuum
 identification both collapse onto the *same* tangential operator ray
-`K_par = (beta d_x + (1/2) d_x beta)(I - alpha)`, with one per-mass
-constant each: `kappa(1/2) = 13/2304`, `kappa(1) = -1/72`.  The sign
+`K_par = (beta d_x + (1/2) d_x beta)(I - alpha)`, with the EXC
+constant exactly 1 at both masses and one per-mass LT constant:
+`kappa(1/2) = 13/2304`, `kappa(1) = -1/72`.  The sign
 flip is itself a theorem: no shared generator of the corpus's
 positive-square class can underlie both rules — rule-relative data is
 constants, never structure.  **Second**, the intrinsic state object of
@@ -58,7 +59,7 @@ initiator-local-coin family is a function of an own view that is
 identical at both cuts while the required branch sets differ.
 **Fourth**, transport generates dimension: six deliveries among six
 actors, each admissible at exactly `1/20`, realize the three-crown `S3`
-— the first order that breaks two-dimensionality — and four actors
+— a minimum-size order of dimension 3 — and four actors
 suffice at six events; two actors never leave dimension two (a width
 theorem), and three actors do not through ten events.  Actor width, not
 event count, is the capability axis.  The residue ledger is updated:
@@ -128,7 +129,7 @@ the methods note binding every number above to its receipt.
 
 ### 1.3 Supersessions
 
-This paper supersedes three statements of the earlier record, each in
+This paper supersedes five statements of the earlier record, each in
 the body where the mathematics lives:
 
 - Paper 30 §5.7/§9 residue 1, "17 states at the decided depth": the 17
@@ -142,6 +143,16 @@ the body where the mathematics lives:
   attached *channels*.  The three horns stand there; the constructed
   family of §4 lives in the typed class the horns do not reach, and
   the randomized class is excluded (§4.2).
+- Paper 30 §8.3, "until the step operator exists at the discrete
+  arbitration layer, there is nothing to take a limit of": the
+  existence face is discharged at fixture scale (§4), so the
+  continuum gate transfers to the foliation/commutation face and the
+  measure side — the conclusion (no continuum claim) stands with its
+  premise updated.
+- Paper 30 §7.2, "the full probe needs depth beyond enumeration": the
+  wrong axis — §5 shows the capability axis is actor width (six
+  events suffice at width `>= 4`; depth alone never suffices at
+  width `<= 2`).
 
 Provenance labels as in the series: [THEOREM] proved at the declared
 scope; [EXACT] machine-verified identity in exact arithmetic;
@@ -169,8 +180,10 @@ lattice of `L = 12` sites, two-component spinors, `alpha = sigma_x`,
 defect for two regions is the group commutator
 `E_{R,S} = J_R J_S J_R^{-1} J_S^{-1}`, with singletons `R = {n_0}`,
 `S = {n_0 + d}`.  All expansions below are truncated power series in
-`Delta` to order 12 with exact rational coefficients — there is no
-fitting anywhere in the receipt [EXACT].
+`Delta` to order 12 — series arithmetic at `mpmath dps 50` against
+`1e-30` gates, with the coefficients' exact rational values confirmed
+by the frozen round's independent exact-rational rebuild; there is no
+fitting anywhere in the receipt [EXACT, values record-confirmed].
 
 Anchors reproduced before any new content runs: the EXC singleton
 coefficient `A^(1)` with the documented exact entries (diagonal `1/2`
@@ -198,8 +211,8 @@ orbit yields exact rational ratio spectra [EXACT]:
 | `m = 1, d = 3` | `{-11/24}` (one ratio; strip deviation `~0.45`) | DIVERGENT |
 
 Strip-channel moments (the p7/p8 basis) are likewise non-proportional
-(six distinct channel ratios; twelve LT residual entries outside the
-basis).  If the comparison stopped at the lattice-entrywise level, the
+(at `d = 3`: six distinct channel ratios; twelve LT residual entries
+outside the basis).  If the comparison stopped at the lattice-entrywise level, the
 foundation alarm would stand: the defect structure is rule-relative,
 with mass-dependent exact ratios.
 
@@ -213,8 +226,8 @@ anchors.  Extract `A^rule_R` = the leading one-region `J` coefficient
 makes this comparison exact rather than extrapolated: the LT one-region
 ladder is even-only, so at the LT onset order the *entire* defect
 coefficient is the pure bracket — `E^LT[Delta^8] = [A^LT_R, A^LT_S]`
-with no admixture [THEOREM at fixture scale].  The verdicts per
-`(m, d)` [EXACT]:
+with no admixture [THEOREM at fixture scale, per the frozen review
+record].  The verdicts per `(m, d)` [EXACT]:
 
 | cell | `[A^LT_R, A^LT_S]` vs `[A^exc_R, A^exc_S]` |
 |---|---|
@@ -223,6 +236,10 @@ with no admixture [THEOREM at fixture scale].  The verdicts per
 | `m = 1, d = 1` | DIVERGENT, `kappa = +19/384` |
 | `m = 1, d = 2` | DIVERGENT, `kappa = +13/576` |
 | `m = 1/2, d = 3` and `m = 1, d = 3` | SUPPORT-MISMATCH: the EXC bracket vanishes identically at `d = 3` while the LT bracket does not |
+
+(the `d = 2` kappas are the deterministic max-orbit representatives —
+the full `d = 2` orbits are the §2.2 table's; the `d = 1` orbits are
+single-ratio.)
 
 So at every lattice grain the answer is the same: the two rules do not
 share defect coefficients, and the LT rule populates channels the EXC
@@ -253,7 +270,8 @@ lattice differences collapse [EXACT]:
 
 Both rules land on the *same tangential operator ray*
 `K_par[beta] = (beta d_x + (1/2) d_x beta)(I - alpha)`, with one
-per-mass constant for the LT rule across both derivative layers.  This
+per-mass constant for the LT rule across both derivative layers (the
+second layer per the frozen review record).  This
 is the decision of Q1: **the operator content of the collar bracket is
 rule-independent at this order; what is rule-relative is a scalar**
 [THEOREM at fixture scale].
@@ -368,9 +386,10 @@ On `T`, everything residue 1 requires at this scope is exact and small
 
 - **Spectrum.**  The dominant class `{2, 4, 5}` (Tarjan decomposition;
   `{0, 1, 3}` is transient and carries the renewal loop `3 -> 0`).  Its
-  characteristic polynomial vanishes at `lambda = 2`; indeed
-  `u = lambda - 3/2` satisfies `u^2 = 1/4` — the spectrum is rational,
-  and no numerical eigensolve enters anywhere.
+  characteristic polynomial vanishes at `lambda = 2`; indeed the
+  nonzero shifted eigenvalues `u = lambda - 3/2` satisfy `u^2 = 1/4`
+  (the full dominant-class spectrum is `{1, 3/2, 2}`) — the spectrum
+  is rational, and no numerical eigensolve enters anywhere.
 - **Uniqueness of the dominant class.**  `det(2I - M_transient) = 3/32
   > 0` and the resolvent `(2I - M_transient)^{-1}` is entrywise
   nonnegative, with exact rows `(8/3, 8/3, 2/3)`, `(2/3, 8/3, 2/3)`,
@@ -419,11 +438,11 @@ receipt-gated:
    unique shared non-superseded base and root-identical one-step menus
    under their own base substitution [EXACT].
 
-Between them: every deep history is, up to idle padding and base
-renaming, a concatenation of copies of the finite window already
-decided.  What remains is to assemble the two gated identities into the
-induction — a theorem statement, not a computation, and it is left
-open here.
+Between them, the intended induction is exactly this: that every deep
+history is, up to idle padding and base renaming, a concatenation of
+copies of the finite window already decided.  Assembling the two gated
+identities into that induction is a theorem statement, not a
+computation, and it is left open here.
 
 At transport scope the picture will change and is declared: deliveries
 reopen the absorbing sector (diverged holdings can reconverge), the
@@ -558,10 +577,10 @@ pairs and is disclosed as not run.
 ### 5.2 Width is the capability axis
 
 The committed constructed chains — the deep exhibits that carry the
-grammar's physics beyond enumeration reach — all pass `dim <= 2` and
-deliver two-clock certificates with exact canonical values
-(`SIG_KR: 23/64`; `h5: 1/4`; `SIG_FM: 79/256`; `CH: 83/400`;
-`h11: 1/4`; `h12: 145/576`) [EXACT].  But this sample cannot decide
+grammar's physics beyond enumeration reach — all pass `dim <= 2`,
+with the `(b, chi)` two-clock certificate computed in-receipt and
+exact canonical `D*` values (`SIG_KR: 23/64`; `h5: 1/4`;
+`SIG_FM: 79/256`; `CH: 83/400`; `h11: 1/4`; `h12: 145/576`) [EXACT].  But this sample cannot decide
 the dimension question, for a structural reason: five of the six have
 order width `<= 2` (widths `2,2,2,3,2,2`), and **an order of width
 `<= 2` has dimension `<= 2` by theorem** [LITERATURE: Dilworth-type;
@@ -575,7 +594,9 @@ Two transport configurations decide the question [EXACT]:
 - **W6.**  Six delivery events among six actors, arranged so that each
   is admissible with weight exactly `1/20`, produce the event poset
   with predecessor structure `[[], [], [], [1,2], [0,2], [0,1]]` —
-  *exactly the three-crown `S3`*, the minimal order of dimension 3.
+  *exactly the three-crown `S3`*, the standard minimal example of
+  dimension 3 (minimum size; not unique at six elements — `W4` below
+  is a second).
   The generated grammar, running pure transport at width 6, realizes
   the first non-two-dimensional order.  It FAILS `dim <= 2`.
 - **W4.**  Four actors (the widest committed chain's own actor count)
@@ -607,7 +628,7 @@ multi-author arbitrations.  The candidate alternative corner
 (version-name recurrence) is mechanically vacuous — exact-repeat
 arbitrations and same-base re-proposals are inadmissible under the
 grammar — so "multi-author arbitration events" is exactly the residual
-scope [EXACT, gated].  Whether arbitration alone (no transport) can
+scope [EXACT, cited to the committed campaign record].  Whether arbitration alone (no transport) can
 also generate dimension is open there and named in §7.
 
 ## 6. What the four decisions jointly establish
@@ -649,15 +670,19 @@ embarrassment — a program about records in spacetime with no positive
 statement about dimension at the identified-law grain — is replaced by
 a mechanism with sharp thresholds: width-2 confinement is a theorem,
 width-4 transport breaks two-dimensionality at six events, and width-6
-pure transport realizes the minimal three-dimensional order exactly.
+pure transport realizes the standard minimal example of dimension 3
+exactly.
 The two-clock certificates of the committed chains are re-scoped
 honestly as width-limited facts, not evidence about the grammar.
 
 Jointly: every load-bearing joint interrogated held or improved.  None
 of the four decisions weakens a committed claim; two of them
 (§3, §5) supersede committed *scaffolding* (the 17-state carrier, the
-pilot's null) in the direction of more structure, and the supersessions
-are stated in §1.3 and gated in the receipts.
+pilot's null) in the direction of more structure, and the remaining
+supersessions (§1.3) are scope sharpenings — the pincer's channel
+scope, §8.3's premise, §7.2's axis — under which the committed
+conclusions stand.  All five are stated in §1.3 and gated in the
+receipts.
 
 ## 7. The residue ledger, updated
 
@@ -708,8 +733,11 @@ addition: decide whether arbitration alone generates dimension.
 **7.  The finite-slab smeared theorem and `kappa(m)`.**  Promote §2.4's
 fixture-scale ray collapse to a theorem for log-smeared test functions
 on finite slabs; compute `kappa(m)` as an exact function and locate its
-zero crossing — the mass at which the two admission rules agree to this
-order *including* the constant, a distinguished point of the fixture.
+zero crossing — the mass at which the LT rule's identified transport
+operator vanishes at this order (the sign flip's guaranteed crossing),
+a distinguished point of the fixture.  (Whether `kappa(m) = 1` —
+agreement with the EXC constant — occurs anywhere is a separate
+question, not established either way by the record.)
 Entry condition: the slab construction over the committed series
 machinery; then the interacting-fixture cross-check.
 
@@ -722,17 +750,19 @@ where the boundary machinery earns its import.
 ## 8. Methods note
 
 Every quantitative claim above is bound to a committed
-exit-1-by-design receipt, deterministic (rerun byte-identical; the two
-chain receipts additionally verified byte-identical across hash
-seeds), adversarially reviewed to terminal status through the
+exit-1-by-design receipt, deterministic (rerun byte-identical; the
+d43b/d43c pair additionally verified byte-identical across hash seeds
+0/7/11/61), adversarially reviewed to terminal status through the
 campaign's standard cycle, and stated at its as-run precision: exact
 rational arithmetic (`Fraction`) wherever grammar weights, transfers,
-spectra, and menus appear; exact truncated power-series arithmetic
-(order 12, rational coefficients) for the defect ladders of §2 — no
-fitting anywhere; floating amplitudes only where isometry defects are
-measured, at `mpmath dps 50` against thresholds `1e-30`/`1e-40` with
-`>= 27` digits of margin at every gate.  The receipt surface of this
-paper:
+spectra, and menus appear; series arithmetic at `mpmath dps 50`
+against `1e-30` gates for the order-12 defect ladders of §2, with the
+coefficients' exact rational values confirmed by the frozen round's
+independent exact-rational rebuild — no fitting anywhere; `mpmath dps
+50` against `1e-40` for the d43c isometry layer, where the measured
+defects are zero at working precision.  The exact-`Fraction` layers
+behind the gates carry no tolerance at all.  The receipt surface of
+this paper:
 
 ```text
 v10/code/d43a_lie_trotter_exact.py    PASS  7/7   rule-independence (S1)
@@ -771,11 +801,13 @@ claimed (rule-relative only in a scalar), and the record orders are
 richer than measured (dimension appears the moment transport has four
 actors to work across).
 
-The program's open surface is now three theorems and a census: pump
-the window (residue 1), commute the family (residue 2), smear the slab
-(`kappa(m)`), and count the reception types.  Every one has its
-premises, its fixtures, or its instrument already committed.  That is
-what this campaign was for.
+The program's nearest open surface is three theorems and a census —
+pump the window (residue 1), commute the family (residue 2), smear the
+slab (`kappa(m)`), count the reception types — with the
+arbitration-alone dimension question, transport-scope invariance, and
+the ledger's standing empirical and breadth items behind them.  Every
+one has its premises, its fixtures, or its instrument already
+committed.  That is what this campaign was for.
 
 ## References
 
@@ -785,9 +817,12 @@ what this campaign was for.
    admission rules; the deferred Lie–Trotter comparison); v1 Paper 8
    (the `lambda`-family within-class result); v2 Paper 1 (the
    one-region coefficient anchors and the continuum identification).
-3. Relativistic ISP v8 Paper 12, *the canonical star-discrepancy
-   instrument*; v8 Paper 13, *two-clock universality* (the `b`/`chi`
-   rank certificate).
+3. Relativistic ISP v8 Paper 12, *The 2D sufficiency theorem: a
+   canonical realizer, the rank embedding, and an intrinsic
+   quantitative characterization of volume-faithful record orders*;
+   v8 Paper 13, *Do records measure positive?  The two-clock frame,
+   the natural-supply sweep, and the Gibbs reconnaissance* (Theorem
+   2.1: two-clock universality, the `b`/`chi` ranks).
 4. D43 campaign pins and terminal notes,
    `note-d43-corpus-audit-and-the-next-step.md`,
    `note-d43a-lie-trotter-rule-independence.md`,
