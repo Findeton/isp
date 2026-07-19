@@ -5936,3 +5936,15 @@ chains (n = 8..12) CAN fail dim<=2 — are generated record orders
 two-clock configurations, or does transport generate dimension?
 Pre-registered open. Port-fidelity anchors: S3 rejection; 219/4231
 all-pass; the exact n=5 D* range [1/4, 7/20]. Receipt next.
+
+## 2026-07-19 — D43b (N2) pin committed (LEDGER #330)
+Residue 1 attacked via the intrinsic state chain: IF the bisimulation
+quotient stabilizes under depth growth (pre-registered open), residue
+1 REDUCES to finite Perron-Frobenius and is DECIDED (existence via
+Perron on the recurrent core; uniqueness by dominant classes; λ
+certified by exact polynomial sign changes); if it grows, the renewal
+decomposition is delivered as the Martin datum [I1]. Anchor: the
+intrinsic map must reproduce the committed 17-state partition
+exactly. MG4 = the root-free certificate (the completed transfer
+equal at root and renewal states — d42b56's S2 healed); MG5 = the
+mass-transport identity at state-chain scope. Receipt next.
