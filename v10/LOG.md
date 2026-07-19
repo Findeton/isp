@@ -5912,3 +5912,16 @@ pincer; sheaf-contextuality cohomology for the obstruction; Arrow-
 type selection impossibility for the kernel; thermodynamic
 formalism for the deformation cost. Next-step program N1-N5 pinned,
 N1 = the Lie-Trotter stress test FIRST. Awaiting user direction.
+
+## 2026-07-19 — D43a (N1) pin committed (LEDGER #328): the
+## Lie-Trotter rule-independence test
+The A2 orphan executed at its original grain: EXC vs LT onset-
+renormalized exchange brackets on the v1 free core (conventions
+ported verbatim: Γ = Born-squared, J = Γ(U_loc)Γ(U_free)⁻¹, E =
+LRL⁻¹R⁻¹; H_D per v1 p1 α=σx/β=σz; LT = bulk-then-collar product).
+Anchors: v2 p1's exact A⁽¹⁾ entries; v1 p1's ±1/8 commutator case;
+the LT Δ^{2max(4,d)} onset law; one λ-family c-scaling point. The
+test: B^LT ∝ B^exc (one κ per (d,m))? Three pre-registered verdicts
+(PROPORTIONAL / STRUCTURED per the p8 decomposition / DIVERGENT =
+the alarm) — the receipt exits 0 on any exact verdict; exit 1 only
+on anchor/extraction breakage. Receipt next.
