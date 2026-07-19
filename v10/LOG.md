@@ -5948,3 +5948,14 @@ intrinsic map must reproduce the committed 17-state partition
 exactly. MG4 = the root-free certificate (the completed transfer
 equal at root and renewal states — d42b56's S2 healed); MG5 = the
 mass-transport identity at state-chain scope. Receipt next.
+
+## 2026-07-19 — D43c (N3) pin committed (LEDGER #331)
+The pincer vs the two escape classes: E-A randomized (Ben-Or-shaped
+click-conditioned families — hazard: the firing predicate may
+relocate cut-dependence) and E-B comb-typed (the component as a
+licensed classical input wire — exactly the committed d42b2
+join-typed opening click's shape; a pass = THE FOURTH DOOR as an
+existence exhibit, with the measure side explicitly relocated to
+residue 1, not solved). Requirements R1-R5 pinned from the record
+(the pincer menus, carrier licensing, kernel weights, NSE, no
+smuggled cut data). Pre-registered open. Receipt after d43b.
