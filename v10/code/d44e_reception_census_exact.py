@@ -368,10 +368,16 @@ check("RG0b-iv FIXTURES VALID against the layer (10 fixtures: the "
       "two-chain triple, the SIG-chain merge points, + the DECLARED "
       "receipt-built value-equal pair FXD): every non-click event "
       "admissible in place; the committed d42b2-M4 anchors re-gated "
-      "(merge@D1 = 1/8 both winners; arb@D2 = merge@D2 = 1/16); the "
-      "value-equal branch DERIVED (w = 'both' forced at q = 1/4; a "
-      "named winner refused); distinct click orders = distinct "
-      "canons (committed fact re-gated)",
+      "(merge@D1 = 1/8 both winners; arb@D2 = merge@D2 = 1/16). "
+      "PROVENANCE (round-1 M-2): these prices are the d42b2-"
+      "EMBEDDED transport head's — PRE-#300 d42b1 text whose merge "
+      "denominator DIVERGES from the terminal d42b1 (D2H: 1/16 "
+      "embedded vs 1/24 terminal); the anchors gate the embedded "
+      "layer AS COMMITTED, and the reconciliation is a standing "
+      "corpus obligation (LOG #363). The value-equal branch DERIVED "
+      "(w = 'both' forced at q = 1/4; a named winner refused); "
+      "distinct click orders = distinct canons (committed fact "
+      "re-gated)",
       val_ok and okm1 and qm1 == F(1, 8) and okm1b
       and qm1b == F(1, 8) and oka2 and qa2 == F(1, 16) and okm2
       and qm2 == F(1, 16) and okbo and qbo == F(1, 4)
@@ -396,6 +402,32 @@ check("RG0 COMPLETE (the RG0 gate): every record instance across "
       and all_realized == sorted(TYPES) and ok_xreg,
       f"total instances = {N_ALL} (family {n_ev_fam}+{n_v_fam}; "
       f"fixtures {n_ev_fix}+{n_v_fix}); realized types 11/11")
+
+_DIST_REF = {'p': 40, 'r': 23, 'n': 3, 'd': 4, 'm': 3, 'ko': 3,
+             'kc': 3, 'ka': 3, 'v0': 1, 'v.arb': 20, 'v.mrg': 3}
+check("RG0-ANCHOR (round-1 minor repair) the headline splits as "
+      "EXACT EXPECTATIONS (previously print-only): family events "
+      "p 2128 / r 748 / n 1626; family versions v0 1191 / "
+      "v.arb 748; fixture instances 90 + 36; total 6567; the "
+      "per-type distinct-record counts",
+      fam_ev_ct['p'] == 2128 and fam_ev_ct['r'] == 748
+      and fam_ev_ct['n'] == 1626 and fam_v_ct['v0'] == 1191
+      and fam_v_ct['v.arb'] == 748 and n_ev_fix == 90
+      and n_v_fix == 36 and N_ALL == 6567
+      and {T: len(dist_all[T]) for T in TYPES} == _DIST_REF,
+      f"splits gated; distinct = { {T: len(dist_all[T]) for T in sorted(TYPES)} }")
+
+_alien = ('z', 'A')
+_alien_match = [T for T in TYPES if PREDS[T](_alien)]
+check("RG0-SCOPE (round-1 minor repair) GENERATOR-SCOPED "
+      "completeness, stated and negatively controlled: both "
+      "committed layers' kind dispatch is OPEN at the else branch "
+      "(an alien-tagged event is admissible there at 1/4-family "
+      "prices), so 'completeness by construction' claims coverage "
+      "of LAYER-GENERATED records only; the censused predicates "
+      "REJECT an alien tag (zero matches) rather than absorb it",
+      _alien_match == [],
+      f"alien ('z', 'A') matched by {_alien_match or 'no censused type'}")
 
 # ==== RG1: the per-type carrier/data table, read from the layer =============
 ACTORS = ('A', 'B', 'C', 'D')
@@ -530,10 +562,13 @@ check("RG1 the CARRIER/DATA TABLE read mechanically from the layer "
       "(regs_of per A1/A6 on every realized instance; arity constant "
       "per type; the (actor,base) census key TOTAL on all 11 types; "
       "A6 single-base coherence on every keyed ckey; merge-pair "
-      "base coherence); STRUCTURAL READ: r/ka creation writes the "
-      "version INTO the creator's registers, while m creation is "
-      "WIRE-MEDIATED (the created mname is absent from regs_of(m); "
-      "it enters via View.created) — printed, not assumed",
+      "base coherence); STRUCTURAL READ (round-1 minor wording): "
+      "r/ka creation writes the version INTO the creator's "
+      "registers, while the merge-created mname is absent from "
+      "regs_of(m) — a WRITE-ONCE wire never read downstream at the "
+      "tested grain (mname occurs in ZERO realized input slots "
+      "family+fixture-wide); mediation is via View.created — "
+      "printed, not assumed",
       ok_arity and ok_key and ok_mpair and ok_vreg and ok_mwire,
       "arity/keys/base-coherence all clean; the m wire-mediation "
       "census fact printed above")
@@ -577,10 +612,11 @@ def app3(v):
     return [M3[i] * v[i] for i in range(3)]
 viol3 = fabs(pdist(vp3, basis3(0)) - pdist(app3(vp3), app3(basis3(0))))
 check("RG2-0 REGRESSION ANCHOR: the committed d42b4 basis-copy "
-      "reception form re-run verbatim (3-dim, 5 probes, 10 pairs "
-      "preserved at 1e-40) and the d41d-R3 lossy control fires at "
-      "the COMMITTED 0.2599... value, matched to 1e-40 against the "
-      "committed literal",
+      "reception form, faithfully RE-IMPLEMENTED (round-1 nit: not "
+      "a verbatim re-run; 3-dim, 5 probes, 10 pairs preserved at "
+      "1e-40) and the d41d-R3 lossy control fires at the COMMITTED "
+      "0.2599... value, matched to 1e-40 against the committed "
+      "literal (TRUNCATED, not rounded, at its 80th digit)",
       ok10 and viol3 > mpf(1) / 100 and fabs(viol3 - LIT2599) < TOL,
       f"control violation = {chop(viol3)}")
 
@@ -716,6 +752,32 @@ check("RG2-v.arb DELIVERED STRUCTURAL FINDING: the creator imprint "
       f"multi-creator-imprint versions = {len(multi_cr)}")
 coll_va = run_type('v.arb', " [family + SIG grain; key shadow]")
 coll_vm = run_type('v.mrg', " [SIG-chain grain; key shadow]")
+
+# round-1 M-1 repair: the per-type structure ANCHORED IN-GATE (the
+# copy-form template e_rec -> e_rec (x) e_imprint is isometric for
+# ANY imprint by construction, so the per-type CONTENT lives in
+# these counts — previously print-anchored only; a constant-imprint
+# mutant ran silent-green against the prints):
+_coll_counts = {'p': len(coll_p), 'r': len(coll_r),
+                'd': len(coll_d), 'm': len(coll_m),
+                'ko': len(coll_ko), 'kc': len(coll_kc),
+                'ka': len(coll_ka), 'v.arb': len(coll_va),
+                'v.mrg': len(coll_vm)}
+_COLL_REF = {'p': 309, 'r': 0, 'd': 1, 'm': 1, 'ko': 1, 'kc': 1,
+             'ka': 0, 'v.arb': 17, 'v.mrg': 3}
+check("RG2-ANCHOR (round-1 M-1 repair) the per-type imprint "
+      "structure as EXACT EXPECTATIONS: collision counts per type "
+      "== the committed census (p 309; d/m/ko/kc 1 each; v.arb 17; "
+      "v.mrg 3; r and ka INJECTIVE = 0), and the multi-creator "
+      "version count == 4 exactly. SCOPE, stated as the round "
+      "prescribed: the reception maps are ONE shared copy-form "
+      "template evaluated on per-type carrier/data (the D25 form); "
+      "they are NOT layer-semantic reception dynamics — the "
+      "per-type physics is carried by these anchored counts and "
+      "the carrier/data table, not by the template's isometry",
+      _coll_counts == _COLL_REF and len(multi_cr) == 4,
+      f"collision counts = {_coll_counts}; multi-creator = "
+      f"{len(multi_cr)}")
 
 # the two receptionless expectations, GATED (exact, classical):
 n_recs = sorted(dist_all['n'], key=crepr)
@@ -866,15 +928,17 @@ print("[VERDICT] d44e GREEN — the per-type reception census is "
       "type; empty-at-family types printed and realized at the "
       "fixture grain); the carrier/data table is READ from the "
       "layer with the (actor,base) census key EXECUTED (d42b7-N1); "
-      "every type's reception form is gated on its OWN carrier/"
-      "data structure per D25/D27 — nine types isometric at 1e-40 "
-      "with genuinely firing lossy controls (the 0.2599...-class "
-      "diagonal control everywhere; the structural imprint-shadow "
-      "control wherever the carrier imprint collides — p, m, ko, "
-      "kc, d, v.arb, v.mrg), and the noop/genesis receptionless "
-      "expectations gated exactly; d43c's V_single/V_pair record "
-      "sides re-derive as censused instances with Born = K1 from "
-      "the layer; gating-completeness is NARROWER than census-"
-      "completeness by exactly the three declared grains (|C| >= 3 "
-      "chains, re-merge, transport depth) — no shared-form "
-      "shortcut, no declared-but-ungated type.")
+      "the reception layer, SCOPED per round-1 M-1: one shared "
+      "copy-form template (the D25 form, isometric by construction) "
+      "evaluated on each type's OWN carrier/data structure, with "
+      "the per-type physics carried by the GATED imprint anchors "
+      "(RG2-ANCHOR: collision counts, injectivity, the 4 "
+      "multi-creator versions) and firing lossy controls per type "
+      "— NOT layer-semantic reception dynamics; the noop/genesis "
+      "receptionless expectations gated exactly; d43c's V_single/"
+      "V_pair record sides re-derive as censused instances with "
+      "Born = K1 from the layer; gating-completeness is NARROWER "
+      "than census-completeness by exactly the three declared "
+      "grains (|C| >= 3 chains, re-merge, transport depth); the "
+      "d42b4-R6 obligation is DISCHARGED ON ITS CENSUS ARM — the "
+      "reception-dynamics arm is typed here and remains open.")

@@ -6835,3 +6835,37 @@ flip sector — m^2 = 1/3 is a per-channel kill; (3m^2 - 4)
 combination-only — m^2 = 4/3 exists only in the weighted sums; the
 tau(4) bracket shift 7 -> 16); THE D44D HULL CAVEAT IS CLOSED —
 the 28-point verification was the shadow of this identity.
+
+## 2026-07-19 — d44e round 1: REVISE 0B/2M/4m/3n; repairs applied
+## (LEDGER #363); a CORPUS OBLIGATION discovered; delta commissioned
+The round (frozen: reviews/d44e-round1-hostile-review.md): every
+numerical headline reproduced by an independent 32-check verifier
+(AST kind-scan vs regex; strict full-shape classifier vs tag
+predicates; all 6,567 instances re-classified with ZERO
+disagreements; 0.2599... = 1/sqrt(2) - 1/sqrt(5) = the committed
+80-digit literal; all four commissioned mutant classes + the
+referee's fake-ninth-kind source mutant die at the right gates).
+ZERO false numbers. THE TWO MAJORS, both repaired (rerun 49 PASS /
+0 FAIL, seeds byte-identical, VERIFIED pre-commit): (M-1) the 27
+per-type isometry gates were construction-tautologies (the copy
+template is isometric for ANY imprint; the referee's
+constant-imprint mutant ran silent-green against the prints) —
+REPAIRED with RG2-ANCHOR (collision counts / injectivity /
+multi-creator == 4 as exact expectations) + the honest scope in
+the verdict (one shared D25-form template on per-type
+carrier/data; NOT reception dynamics; R6 discharged ON ITS CENSUS
+ARM, the dynamics arm typed and open). (M-2) note A5's "identical
+text" was FALSE — the d42b2-EMBEDDED transport head is PRE-#300
+d42b1 text carrying the merge-denominator rule d42b1's own round
+convicted; divergence on this unit's own anchor: D2H merge 1/16
+embedded vs 1/24 terminal. A5 retracted (note §6 B2); RG0b-iv now
+provenance-labeled. **STANDING CORPUS OBLIGATION (new, the
+round's discovery): the d42b2-embedded transport head was never
+reconciled with post-#300 d42b1 anywhere in the corpus — the
+click-layer fixtures price merges under the CONVICTED
+denominator. Reconciliation routed to the board (with N5-class
+housekeeping; user's call on priority).** Minors applied:
+RG0-ANCHOR (splits + distinct counts in-gate); RG0-SCOPE
+(generator-scoped completeness + the alien-tag negative control);
+wire-mediation wording; RG2-0 relabel. Note §6 B1-B4. DELTA to
+the d44e referee next.

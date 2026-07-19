@@ -104,3 +104,50 @@ distinct exactly as pinned.
 function of the version (4 multi-creator versions in the family);
 (ii) merge creation is WIRE-MEDIATED (mname absent from
 regs_of(m)) — both printed as findings, not failures.
+
+## 6. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d44e-round1-hostile-review.md: REVISE, 0B/2M/4m/3n; every
+## numerical headline reproduced by the referee's independent
+## 32-check verifier — zero false numbers)
+
+**B1 (M-1 — the per-type gates were construction-tautologies;
+repaired in-gate).** The copy-form template e_rec -> e_rec (x)
+e_imprint is isometric for ANY imprint function, so the 27 per-type
+isometry gates could not fail on imprint content — the referee's
+constant-imprint mutant ran 46/46 silent-green while the printed
+"INJECTIVE imprints" flipped to 253 colliding pairs. REPAIRED:
+RG2-ANCHOR gates the per-type structure as exact expectations
+(collision counts p 309 / d 1 / m 1 / ko 1 / kc 1 / v.arb 17 /
+v.mrg 3; r and ka injective = 0; multi-creator versions == 4), and
+the verdict + this note now SCOPE the reception layer honestly: one
+shared copy-form template (the D25 form) evaluated on per-type
+carrier/data — NOT layer-semantic reception dynamics; the R6
+obligation is DISCHARGED ON ITS CENSUS ARM; the reception-dynamics
+arm is typed and remains open.
+
+**B2 (M-2 — A5's "identical text" was FALSE; forward-corrected).**
+The d42b2-embedded transport head is PRE-#300 d42b1 text: its merge
+denominator is the rule d42b1's own round-1 F1 convicted and
+repaired, and the divergence shows on this unit's own anchor —
+D2H merge prices 1/16 (embedded) vs 1/24 (terminal d42b1). A5's
+claim is retracted; the receipt's RG0b-iv now carries the
+provenance label (the anchors gate the embedded layer AS
+COMMITTED); the d42b2-embedded-head reconciliation is a STANDING
+CORPUS OBLIGATION recorded at LOG #363 (never reconciled post-#300
+anywhere in the corpus — the round's discovery).
+
+**B3 (minors).** The headline splits and per-type distinct counts
+are now anchored in-gate (RG0-ANCHOR); generator-scoped
+completeness stated with a firing negative control (RG0-SCOPE: the
+layers' kind dispatch is open at the else branch — alien tags
+admissible but REJECTED by every censused predicate); the
+wire-mediation wording corrected (write-once, never read
+downstream at the tested grain; mediation via View.created; the
+unrealized stratum is broader — mname in zero realized input
+slots); RG2-0 relabeled (faithful re-implementation; truncated
+literal).
+
+**B4 (nits, dispositions).** The thin-basis crash paths fire only
+in post-gate-failure mutant states (fail-safe, never false-green) —
+recorded, not guarded; the LOG "literal matched at 1e-40" claim
+holds at RG2-0 (where it is gated) — wording noted.
