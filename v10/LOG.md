@@ -5858,3 +5858,17 @@ set (forced-click ontology, D24/D26 g-binding, (actor,base) upgrade,
 the actor-factored round-2 target — never discharged, now recorded),
 §5.7 level conflation, the abstract's 17-state attachment. Repairs
 (exact text in the report) being applied; delta next.
+
+## 2026-07-18 — paper 30 round-1 repairs APPLIED (LEDGER #325);
+## delta launched
+All F1-F4 + m1-m10 + concrete nits applied with the report's exact
+text (applier verification: all four prescribed greps clean; 1,120
+lines; one title block). Two applier placement judgments FLAGGED for
+the delta: (i) the A7' scope clause appended at the box end (the
+literal reading; also scopes the own-view sentence h12's 5/24
+violates); (ii) §5.1's "strictly positive cut data Z" -> "strictly
+positive data Z" — the applier's own one-word deletion, forced by
+F2-arm-(ii)'s requirement that the restated demand (b) bind (the
+up-front cut-data declaration would foreclose it). m3's reference-10
+provenance uses the committed d34a/d34b RECEIPTS as pointers (no
+corpus notes exist — verified). Delta to the paper referee next.

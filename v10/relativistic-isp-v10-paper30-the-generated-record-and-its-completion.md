@@ -8,8 +8,8 @@
 Relativistic ISP series, v10 paper 30.
 **Status:** EXACT-RECEIPT PAPER at the declared finite scope.  Every
 quantitative claim is bound to one of seven committed terminal receipts
-(`v10/code/d42a_generated_conflict_exact.py` through
-`v10/code/d42b56_rootfree_action_exact.py`; outputs under `v10/data/`).
+(outputs under `v10/data/`) or, where stated, to the committed campaign
+record (LOG, pins, frozen review files).
 Independent paper-level review remains open.
 **Date:** 2026-07-18.
 
@@ -22,8 +22,12 @@ nothing is scheduled, supplied, or batch-closed.  The opportunity set is the
 past-local admission relation and nothing else; that principle binds the
 enumerator, the pricing layer, and the law's conduct beyond enumeration
 caps, and it forces an honest support-level face of the placement problem:
-per-initiator weight sums sit on the exact quarter-integer ladder `1 + k/4`,
-where `k` counts causally blind join layers.
+per-initiator weight sums sit on the exact quarter-integer ladder `1 + k/4`
+at every record point of the enumerated families (and on the constructed
+deep exhibits `h5`/`h11`), where `k` counts causally blind join layers; one
+constructed configuration (`h12`) lies off the ladder, and the
+general-depth ladder is false under current pricing — its reconciliation is
+carried to the completion problem.
 
 On this generated structure we decide the classical completion problem for
 the record weight system.  A completion that is per-cut normalized,
@@ -38,15 +42,16 @@ included [EXACT].  The discrete Tomonaga–Schwinger integrability condition
 for the record functional is thereby decided at fixture depth, and its
 gradient-side flatness is a telescoping theorem whose separating content is
 class-constancy.  Truncated completions are rooted; the root-free question
-reduces one-way into a single infinite-volume positive-harmonic residue on a
-17-state bisimulation quotient.
+reduces one-way into a single infinite-volume positive-harmonic residue on
+the bisimulation quotient (17 states at the decided depth).
 
 The quantum lift preserves ratios and normalizes globally, but it is the
-classical gradient completion at the `1/k` boundary in Hilbert dress — bases
-are boundary choices — and its step operator at the arbitration layer faces
-a three-horn obstruction: cut-independent operators reproduce the
-arbitration-killing zero class, cut-dependent operators require carrier
-overlap with the blind wire, and dilations re-import cut data.  The quantum
+classical gradient completion at the `1/k` boundary in Hilbert dress — the
+class and sequence bases are the two classical boundary choices — and its
+step operator at the arbitration layer faces a three-horn obstruction:
+cut-independent operators reproduce the arbitration-killing zero class,
+cut-dependent operators require carrier overlap with the blind wire, and
+dilations re-import cut data.  The quantum
 completion problem therefore begins exactly where the classical one stopped.
 What the lift does establish is the kernel-layer lift (the arbitration
 click structure lifts exactly, `2/3`–`1/3`), a complete
@@ -67,13 +72,19 @@ empirically flagged fine-versus-coarse sealing choice with its exact
 
 Paper 25 ended its coordination analysis with a deliberate split: its
 arbitration kernels K1 and K2 "require a supplied finite contender batch"
-and "remain alternative supplied kernels."  Paper 28 constructed the typed
+and (with K3) "remain alternative supplied kernels."  Paper 28 constructed the typed
 causal admission certificate (H1) but exhibited no generated conflict for
 it to govern: five chosen histories of the prior generator produce no typed
 participant base-version proposal, hence no contended conflict cell, and
 the induced arbitration law is vacuous.  Paper 29's architecture audit
-then isolated the next object: the smallest record-closed generator in
-which content, conflict, and durable records are one executable object.
+then isolated the next object: "the smallest record-closed quantum
+generator in which content, conflict, entangling interaction, dynamic
+adjacency and durable records are one executable object."  This paper
+builds the classical core of that object — content, conflict, and
+durable records as one executable grammar — and locates exactly where
+its quantum completion begins (§6); the entangling-interaction and
+adjacency clauses are the arbitration-layer residue and the dimension
+pilot respectively (§9 item 2, §7.2).
 The benchmark record-closure audit of the identified law (the d41d
 receipt) fixed the entry condition from the other side: of paper 29's
 eight supplied slots, the opportunity structure is IRREDUCIBLE — no
@@ -354,9 +365,9 @@ event class.  The join censuses make the structure quantitative:
 3,096 arbitration joins with in-degree `>= 2` in the base family, 384
 arbitration joins and 8,250 delivery joins in the transport family
 [EXACT].  Every successor version carries its join in its past.  The
-identifiability limit at joins (D23) and the reception gates
-(NSE/D25/D27) are obligations of the quantum lift and are discharged at
-their operational scope in §6.
+identifiability limit at joins (D23) and the reception gates (No Silent
+Erasure (NSE)/D25/D27) are obligations of the quantum lift and are
+discharged at their operational scope in §6.
 
 ## 3. The kernel layer
 
@@ -462,7 +473,10 @@ the failure is structured.  Its exact form:
 > **A7' (the ladder).**  A per-initiator weight sum at a record point
 > equals `1 + k/4`, where `k` counts the additional join components the
 > pinned law prices for that initiator beyond its own view.  The
-> initiator's own view's sectors always sum to exactly 1.
+> initiator's own view's sectors always sum to exactly 1 — at the record
+> points of the enumerated families (in-family at the declared caps;
+> §4.4 exhibits the off-ladder `h12` configuration, and the
+> general-depth ladder is false under current pricing).
 
 The blind self-arbitration of §1.4 is the minimal case: an initiator's
 own view holds a sealable singleton while the join view holds the pair,
@@ -482,7 +496,7 @@ violations [EXACT].
 Per-initiator sub-normalization therefore fails at depth 2 under the
 pinned law.  This is not a defect of the receipts; it is the
 support-level face of the corpus's standing placement problem (the d34b
-inheritance declared in §1.2), now censused instead of masked.
+inheritance declared in the receipt banners), now censused instead of masked.
 
 ### 4.2 The obstruction density [EXACT, scope declared]
 
@@ -551,7 +565,7 @@ dead-component inflation.  This is residue item 6 (§9).
 
 ### 5.1 The completion problem, posed exactly
 
-A **placement completion** is strictly positive cut data `Z` with the
+A **placement completion** is strictly positive data `Z` with the
 transfer
 
 ```text
@@ -559,8 +573,11 @@ q'(e|h) = q(e|h) . Z(h+e) / Z(h),
 ```
 
 required to be (a) per-cut normalized (`sum_e q'(e|h) = 1`) and
-(b) foliation-invariant (equal chain products over all linear extensions
-of every history).  The existence of a globally consistent `Z` is the
+(b) foliation-invariant: the completed conditional is a function of the
+record alone (class-constant) — equivalently, chain products agree
+across the linear extensions of every history.  For class-constant `Z`
+the gradient form makes this automatic (§5.5's telescoping theorem).
+The existence of a globally consistent `Z` is the
 **discrete Tomonaga–Schwinger integrability condition** for the record
 functional: per-diamond the two-path constraint is solvable and
 underdetermined; the global question is whether the ladder excess of §4
@@ -570,14 +587,13 @@ diamonds — the condition is **decided**.
 
 ### 5.2 Ratio-preserving completions do not exist [THEOREM]
 
-If `q'` must preserve within-cut ratios, then `Z(h+e)/Z(h)` is constant
-across the candidates at `h`, and per-cut normalization forces
-`Z = N`, the frontier sum.  But `N`'s chain products are
-foliation-dependent: **36 of the 202 canonical diamonds violate chain
-consistency** [EXACT], the violations lying in two canonical components,
-with §4.3's witness pair one certificate among them.  A completion that
-is per-cut normalized, foliation-invariant, and within-cut
-ratio-preserving is classically impossible at this depth.
+Ratio preservation forces `Z(h+e)/Z(h) = 1/N(h)`; no cut function has
+these increments, because `N`'s chain products are foliation-dependent:
+**36 of the 202 canonical diamonds refute integrability** [EXACT], the
+violations lying in two diamond-connected components [per the committed
+review record], with §4.3's witness pair one certificate among them.  A
+completion that is per-cut normalized, foliation-invariant, and
+within-cut ratio-preserving is classically impossible at this depth.
 
 ### 5.3 Gradient completions exist at every finite depth [EXACT]
 
@@ -589,7 +605,8 @@ receipt's convention (the reciprocal convention carries `64/1037`; every
 ratio-level quantity is identical), positivity throughout, per-cut
 normalization at all 215 interior histories — the recursion's defining
 identity — and the §4.3 witness pair *equalizes* at `1/2074` under both
-orders [EXACT].  The boundary freedom is 313-dimensional.
+orders [EXACT].  The boundary freedom is 313-dimensional [per the
+committed review record, LOG #302].
 
 The unavoidable cost: **within-cut ratio deformation at 21 of the 114
 interior cut classes, the root included** [EXACT].  At the root, the
@@ -660,8 +677,8 @@ matched witnesses price `21/325` versus `1/16`; at the unit boundary,
 depth-non-stationary: **rooted**, as the uniform-rooting analysis of
 paper 28 §5.3 anticipated at the level of root laws.  Sharpness
 disclosure: among the 1,191 histories, 331 share the root's bare menu
-shape, 175 are structurally isomorphic to it, and 31 exactly so; the
-exhibit uses the strongest (structural event-level) notion [EXACT].
+shape, 175 are structurally isomorphic to it, and 31 exactly so [pin B4];
+the exhibit uses the strongest (structural event-level) notion [EXACT].
 
 ### 5.7 The one-way reduction to the infinite-volume core
 
@@ -674,8 +691,9 @@ with the fixed point confirmed by one further step, on which the
 transfer is well-defined (0 violations over all 427 canonical classes)
 [EXACT].  A stationary completion is a positive-eigenvector solution
 `Z(h) = f(state(h)) . lambda^(-depth(h))` of the local transfer on this
-quotient; at finite depth the constraint system has rank 114 of 427,
-leaving the 313 boundary freedoms of §5.3.
+quotient.  At finite depth the backward recursion determines the 114
+interior classes from the 313 terminal ones (LOG #302), leaving the 313
+boundary freedoms of §5.3.
 
 The reduction is **one-way**: stationary completions are a *subclass* of
 positive-harmonic solutions.  The infinite-volume positive-harmonic
@@ -701,8 +719,8 @@ But this object must be named correctly: **the endpoint lift is the
 classical gradient completion at the `1/k` boundary in Hilbert dress.**
 Dividing by `sqrt(Z)` is the flat pushforward, not "normalization by
 unitarity"; the classical gradient family already achieves globally
-normalized endpoint weights with endpoint ratios.  The lift-basis
-choices are exactly the classical boundary choices [EXACT]:
+normalized endpoint weights with endpoint ratios.  The class and
+sequence bases are the two classical boundary choices [EXACT]:
 
 ```text
 lift basis                    Z        classical identity
@@ -765,9 +783,9 @@ pairs exactly `0`; under fine (order-sealed) records every off-diagonal
 is `0` by construction — a diagonal instrument [EXACT].  Which sealing
 nature applies stays EMPIRICAL: the lift supplies the instrument pair,
 not the verdict.  (The numerical coincidence with §3.1's
-total-variation distance — both `1/6` — is an artifact of `3! = 6` on
-the path; the two are distinct observables: one separates supplied
-kernel laws, the other separates record ontologies.)
+total-variation distance — both equal `1/6` on this fixture; the two
+are distinct observables: one separates supplied kernel laws, the other
+separates record ontologies.)
 
 **The D23 fiber.**  From the coarse record, histories are identifiable
 only up to the greedy fiber: the `{P,R}` fiber contains four click
@@ -780,7 +798,7 @@ cannot be inverted from its coarse record.
 **The reception form.**  The basis-copy reception map is a
 distinguishability isometry on the probed family — 10 pairwise distances
 preserved — and the lossy-renormalized negative control fails as it
-must, at violation `0.2599...` (dps 80) against the `1/100` threshold
+must, at violation `0.25989...` (dps 80) against the `1/100` threshold
 [EXACT].  Extension per record type to the transport alphabet (delivery,
 merge) is declared and carried; Hegerfeldt is pre-registered as the
 continuum hazard for any timed operator lift, and no timed or continuum
@@ -802,7 +820,8 @@ Families at the declared depth `<= 3` cap: binary 215, ternary 405
 strength):**
 
 - opportunity generation and extension closure (iff-sweeps, enabled-set
-  gauge invariance) [EXACT];
+  gauge invariance) (depth `<= 2` slice, 93 points; the iff-sweeps
+  family-wide) [EXACT];
 - the `1 + k/4` ladder: binary spectrum `{1: 374, 5/4: 56}`, ternary
   `{1: 642, 5/4: 168}` [EXACT];
 - the quarter-quantized obstruction density (every blind group exactly
@@ -840,7 +859,8 @@ word "universal" beyond this paragraph's scoped sense.
 
 ### 7.2 The dimension pilot's honest null
 
-Paper 20's dynamic-adjacency fork — does *generated* adjacency change
+Paper 20's dynamic-metric fork (its successor arm (2)), posed for
+generated adjacency in the d42b7 pin — does *generated* adjacency change
 the effective dimension signature? — gets its first generated-grammar
 data point, declared as a pilot.  The `mu`-weighted mean ordering
 fraction (comparable pairs over all pairs) is `386/771` for the binary
@@ -865,8 +885,9 @@ Tomonaga–Schwinger integrable — equivalently, whether it carries a
 Lorentz-invariant microcausal record correlation `f(s^2)` — and (ii)
 whether division events are forced to sprinkle the substrate
 Lorentz-invariantly.  Both were continuum questions about an object the
-corpus did not yet possess: an interacting covariant generator with a
-generated opportunity complex.  Sections 1–5 built that object at finite
+corpus did not yet possess: an interacting covariant generator
+(covariant in the §8.2 sense) with a generated opportunity complex.
+Sections 1–5 built that object at finite
 scope, and the correspondence is now exact rather than aspirational.
 
 Residue (i)'s discrete form is §5's decided dichotomy.  The
@@ -912,8 +933,9 @@ boundary and its entry condition — the specific act that would move it.
 The one analytic remainder of the decided TS-condition: existence (and
 the solution class) of a strictly positive harmonic solution of the
 local transfer in infinite volume.  At every finite depth the gradient
-class solves the completion problem with 313-parameter boundary freedom;
-truncated completions are rooted (§5.6); stationary (root-free)
+class solves the completion problem with 313-parameter boundary freedom
+[per the committed review record, LOG #302]; truncated completions are
+rooted (§5.6); stationary (root-free)
 completions are a subclass of positive-harmonic solutions (§5.7), so
 this residue *contains* the root-free question one-way.  Entry
 condition: pose the eigen-problem `Z = f(state) . lambda^(-depth)` on
@@ -972,13 +994,19 @@ extended grammar must price dead-component inflation — the constraint is
 pinned to the completion problem (residue 1's finite-depth side), not to
 a pricing patch.
 
+Pin-level carried obligations — the forced-click ontology, the D24/D26 g-binding
+(d42c class), the (actor,base) census-key upgrade, and the actor-factored
+intermediate completion class (subsumed by residue 1's finite-depth side if
+the authors so adjudicate) — remain recorded in the pins and LOG.
+
 ### 9.1 Methods note
 
 Every quantitative claim in this paper is bound to a committed
 exit-1-by-design receipt in exact arithmetic (rational `Fraction`s
 throughout; mpmath at `dps >= 80` with `1e-60` thresholds where stated),
-seed-independent, and adversarially reviewed to terminal status.  The
-receipt surface:
+seed-independent, and adversarially reviewed to terminal status — or,
+where stated, to the committed campaign record (LOG, pins, frozen
+review files).  The receipt surface:
 
 ```text
 v10/code/d42a_generated_conflict_exact.py    PASS 18/18   the generated grammar
@@ -997,9 +1025,9 @@ say so.  D41 results are cited only through the d41d repair receipt.
 
 ### 9.2 Coda
 
-Three papers ago the program had a coordination protocol whose batch,
-conflict, and opportunity were supplied from outside, and an identified
-low-energy law whose opportunity structure an audit had just declared
+Five papers ago the program had a coordination protocol whose batch,
+conflict, and opportunity were supplied from outside; one audit ago, an
+identified low-energy law's opportunity structure was declared
 irreducible.  This paper replaced the supplied structure with a
 generated one and then did the thing generated structure is for: it made
 the completion problem well-posed enough to decide.
@@ -1063,7 +1091,10 @@ exact statements, and that is what this campaign was for.
     `note-d23-click-identifiability-and-the-real-interaction-graph.md`;
     D25 reception theorem, `note-d25-reception-theorem.md`; D26
     interface note, `note-d26-interface-equivalence-closure.md`; D27
-    Busch closure, `note-d27-busch-closure-of-the-reception-theorem.md`.
+    Busch closure, `note-d27-busch-closure-of-the-reception-theorem.md`;
+    d34a census-denominator conviction, cited through its receipt
+    `v10/code/d34a_harris_lemma_exact.py`; d34b joint-placement normalization,
+    cited through its receipt `v10/code/d34b_exponential_clocks_exact.py`.
 11. S. Tomonaga, "On a Relativistically Invariant Formulation of the
     Quantum Theory of Wave Fields," *Progress of Theoretical Physics* 1
     (1946), 27–42.
