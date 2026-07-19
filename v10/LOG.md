@@ -5832,3 +5832,29 @@ discipline as its three positive binding faces (house style);
 against .outs pass (1/48; 21/325 vs 1/16; 1,016). Status line
 honest: "independent paper-level review remains open" — the
 paper-level hostile round launches next.
+
+## 2026-07-18 — PAPER 30 ROUND 1 FROZEN (LEDGER #324): 0B/4M/10m/5n,
+## ZERO FALSE NUMBERS — the sweep: 226/226 claim instances matched
+Report: reviews/paper30-round1-hostile-review.md (449 lines). The
+number-fidelity sweep checked 226 claim instances (~170 distinct
+quantities): 226 matched, 0 mismatched — 218 receipt-bound, 8 bound
+to the committed campaign record (1 flagged in-line, 7 not — F3).
+All four MAJORs statement-level: F1 the ladder unscoped in the
+abstract/§4.1 (the adjudicated "in-family at caps" + the h12
+falsity must appear where the ladder is stated); F2 §5.1/§5.2
+formalism mismatch (demand (b) vacuous under the printed transfer;
+"forces Z = N" doesn't typecheck — repair arm (ii): the divisor-
+increment restatement); F3 the source-binding sentence overclaims
+(five campaign-record-only quantities; amend + four in-line tags);
+F4 §1.1 trimmed paper 29 §17's target quote of exactly the three
+undelivered clauses (quantum / entangling interaction / dynamic
+adjacency) — restored quote names what the paper delivers (the
+classical core) and where the rest lives. Minors: term drift,
+dangling xrefs, the NSE expansion, the K3 quote splice, bases-vs-
+boundary scoping (the coherent object is NOT a boundary choice),
+GG1's depth<=2 scope, paper 20's fork is the DYNAMIC-METRIC fork
+(the pin's coinage resolved), the residue ledger's pin-level carried
+set (forced-click ontology, D24/D26 g-binding, (actor,base) upgrade,
+the actor-factored round-2 target — never discharged, now recorded),
+§5.7 level conflation, the abstract's 17-state attachment. Repairs
+(exact text in the report) being applied; delta next.
