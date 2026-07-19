@@ -6166,3 +6166,19 @@ with one per-mass constant across both derivative layers; kappa(1/2)
 shared generators; rule-relativity lives at the constants only.
 Successors: the LT log-smeared finite-slab theorem; exact kappa(m)
 + the zero crossing; the interacting p15 cross-check.
+
+## 2026-07-19 — d43d round-1 repairs GREEN 6/6 (LEDGER #341);
+## delta launched
+The inverted headline is now the receipt's own gated content: NG3b
+adopts the round's witnesses permanently — W6 (six deliveries among
+six actors, every event admissible at exactly 1/20) has event poset
+EXACTLY S3 (preds [[],[],[],[1,2],[0,2],[0,1]]) and FAILS dim<=2;
+W4 (four actors, CH's own count) fails at six events with the
+round's exact weights (1/12 x2, 1/8 x2, 1/12 x2). NG3 carries the
+WIDTH DIAGNOSTIC (5/6 chains width <= 2 — dim <= 2 a priori; only
+CH width 3 was live). F3 the median line repaired (at-or-below the
+true median value, ties included, ~49.4% of mu-mass); F4 the 4,231
+anchor now IN-RECEIPT; NG3c the SIG_FM canonical-D* anchor (79/256)
+gives structural mutation coverage; the cross-n comparison
+withdrawn from the verdict. Pin amendments C1-C2. Deterministic
+(0/19). Delta to the round referee next.

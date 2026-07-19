@@ -237,6 +237,8 @@ def all_posets(n):
 
 P4 = all_posets(4)
 ok4 = len(P4) == 219 and all(dim_le_2(C)[0] for C in P4)
+P5 = all_posets(5)
+ok5 = len(P5) == 4231 and all(dim_le_2(C)[0] for C in P5)
 rng = set()
 ident = list(range(5))
 for sig in permutations(range(5)):
@@ -246,8 +248,9 @@ check("NG1 PORT FIDELITY: S3 (6 elements) REJECTED by dim<=2; all "
       "219 labeled 4-posets PASS; the full 120-permutation n=5 D* "
       "range = [1/4, 7/20] exactly (the extraction's committed "
       "anchors)",
-      (not okS3) and ok4 and ok5rng,
-      f"S3 dim<=2 = {okS3}; n=4 posets = {len(P4)}; n=5 range = "
+      (not okS3) and ok4 and ok5 and ok5rng,
+      f"S3 dim<=2 = {okS3}; n=4 posets = {len(P4)}; n=5 posets = "
+      f"{len(P5)} all-pass (F4: now IN-RECEIPT); n=5 range = "
       f"[{min(rng)}, {max(rng)}]")
 
 # ---- the d42 layers ---------------------------------------------------------
@@ -284,8 +287,8 @@ for h, m in recs:
     fam_scores.append((dmin, m))
 w_mean = sum(d * m for d, m in fam_scores) / wsum
 land_mean = sum(land4) / len(land4)
-below = sum(m for d, m in fam_scores
-            if sum(1 for x in land4 if x <= d) <= len(land4) // 2)
+med = sorted(land4)[len(land4) // 2]
+below = sum(m for d, m in fam_scores if d <= med)
 check("NG2 the exact n=4 landscape (219 posets, min-over-"
       "orientations D*) + the d42a depth-4 family sweep "
       "(mu-weighted; descriptors ONLY per pin §1)",
@@ -348,11 +351,68 @@ for name, h in chains:
                 f"(~{float(dcan):.4f}); two-clock (b, chi) = ranks "
                 "delivered")
 n_rej = sum(1 for r in rows if "REJECTED" in r)
-check("NG3 THE CHAIN SUITE (pre-registered open): dim<=2 verdict "
-      "per constructed transport chain; parity invariance exact on "
-      "every 2D chain",
-      len(rows) == 6 and ok3,
-      " | ".join(rows))
+def width_of(C):
+    n = len(C)
+    best = 0
+    for mask in range(1 << n):
+        elems = [i for i in range(n) if mask >> i & 1]
+        if all(not C[i][j] and not C[j][i]
+               for i in elems for j in elems if i < j):
+            best = max(best, len(elems))
+    return best
+widths = {name: width_of(poset_of(h, ns1)) for name, h in chains}
+check("NG3 THE CHAIN SUITE + the WIDTH DIAGNOSTIC (F2: capability "
+      "is width, not event count — 5/6 chains have width <= 2 where "
+      "dim <= 2 is a THEOREM before the run; only CH was live)",
+      len(rows) == 6 and ok3
+      and sum(1 for w in widths.values() if w <= 2) == 5
+      and widths['CH'] == 3,
+      " | ".join(rows) + f" | widths = {sorted(widths.items())}")
+
+# NG3b (F1, the round's witnesses as PERMANENT gates): transport
+# GENERATES dimension — W6 (6 actors) is EXACTLY S3; W4 (4 actors,
+# CH's own count) is a non-S3 3-irreducible; every event admissible
+# per the committed layer with the round's exact weights.
+W6 = [('d', 'C', 'E', V0), ('d', 'A', 'F', V0), ('d', 'B', 'D', V0),
+      ('d', 'A', 'B', V0), ('d', 'C', 'D', V0), ('d', 'E', 'F', V0)]
+A6 = ('A', 'B', 'C', 'D', 'E', 'F')
+adm6 = [ns1['admissible'](W6[:j], W6[j], A6) for j in range(6)]
+ok_w6 = all(a for a, q in adm6) and all(q == Fr(1, 20)
+                                        for a, q in adm6)
+C_w6 = poset_of(W6, ns1)
+d2_w6, _ = dim_le_2(C_w6)
+preds_w6 = [sorted(i for i in range(6) if C_w6[i][j])
+            for j in range(6)]
+is_s3 = (preds_w6 == [[], [], [], [1, 2], [0, 2], [0, 1]])
+W4 = [('d', 'A', 'C', V0), ('d', 'B', 'D', V0), ('p', 'A', V0, 0),
+      ('p', 'C', V0, 1), ('d', 'A', 'B', V0), ('d', 'C', 'D', V0)]
+A4 = ('A', 'B', 'C', 'D')
+adm4 = [ns1['admissible'](W4[:j], W4[j], A4) for j in range(6)]
+wref = [Fr(1, 12), Fr(1, 12), Fr(1, 8), Fr(1, 8), Fr(1, 12),
+        Fr(1, 12)]
+ok_w4 = all(a for a, q in adm4) and [q for a, q in adm4] == wref
+d2_w4, _ = dim_le_2(poset_of(W4, ns1))
+check("NG3b TRANSPORT GENERATES DIMENSION (F1, the round's "
+      "witnesses gated): W6 — six deliveries among six actors, "
+      "every event admissible at exactly 1/20 — has event poset "
+      "EXACTLY S3 and FAILS dim<=2; W4 — FOUR actors (CH's own "
+      "count) — fails at six events with the round's exact weights; "
+      "thresholds per the frozen round: 2-actor 2D always (width), "
+      "3-actor 2D through 10 events, 4-actor fails at 6 (the #333 "
+      "headline stands INVERTED, forward-corrected at #337)",
+      ok_w6 and (not d2_w6) and is_s3 and ok_w4 and (not d2_w4),
+      f"W6 admissible x6 at 1/20, poset preds = {preds_w6} (S3), "
+      f"dim<=2 = {d2_w6}; W4 admissible with the round weights, "
+      f"dim<=2 = {d2_w4}")
+
+# NG3c (mutation-coverage anchor): SIG_FM's canonical D* anchored —
+# structure-corrupting mutants now bite
+sig_C = poset_of(SIG_FM, ns1)
+ok_sig, ranks_sig = dim_le_2(sig_C)
+d_sig = star_discrepancy_exact(emb(*ranks_sig)) if ok_sig else None
+check("NG3c the SIG_FM anchor (round-minor repair: structural "
+      "mutation coverage): canonical D* == 79/256 exactly",
+      ok_sig and d_sig == Fr(79, 256), f"D* = {d_sig}")
 print(f"  NG3 outcome: {n_rej}/6 chains REJECTED (dim > 2) — "
       + ("TRANSPORT GENERATES DIMENSION at chain scale"
          if n_rej else "every constructed chain is a TWO-CLOCK "
@@ -369,7 +429,8 @@ print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — port/anchor breakage; exit 1")
     sys.exit(1)
-print("[VERDICT] d43d delivered: port-faithful D* instrument; the "
-      "n<=4 family = descriptors only (floor-dominated, disclosed); "
-      f"the chain-scale dimension question ANSWERED: {n_rej}/6 "
-      "rejections — see NG3.")
+print("[VERDICT] d43d delivered (round-1 repaired): port-faithful "
+      "D* instrument; the n<=4 family = descriptors only; "
+      f"the chain-scale suite was WIDTH-BLIND (NG3); the dimension "
+      "question is answered POSITIVELY by NG3b: transport generates "
+      "dimension at actor-width >= 4 (S3 at 6 actors).")
