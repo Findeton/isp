@@ -6182,3 +6182,21 @@ anchor now IN-RECEIPT; NG3c the SIG_FM canonical-D* anchor (79/256)
 gives structural mutation coverage; the cross-n comparison
 withdrawn from the verdict. Pin amendments C1-C2. Deterministic
 (0/19). Delta to the round referee next.
+
+## 2026-07-19 — d43d TERMINAL: delta DELTA-CLEAN on substance
+## (LEDGER #342)
+All four MAJORs + the coverage minor discharged (the witnesses
+tuple-exact and independently re-proved; the widths {2,2,2,3,2,2}
+independently recomputed; all three round-1 mutants now exit 1; the
+4,231 in-receipt). BONUS CLOSURE: the untested corner is provably
+MINIMAL — the vname-recurrence corner is mechanically vacuous
+(exact-repeat arbs and same-base re-proposals inadmissible), so
+"multi-author arbitrations" is exactly the residual scope. The
+D1.3 cosmetic (the malformed median print -> 512/1037 ~ 0.4937) and
+the legacy chain-scale print applied; rerun GREEN 6/6 deterministic
+VERIFIED pre-commit. d43d TERMINAL — THE SETTLED STATEMENT:
+TRANSPORT GENERATES DIMENSION at actor-width >= 4 (S3 sharply at 6
+actors for pure transport; 3-actor 2D through 10 events; 2-actor
+never by width); the D* instrument port-faithful digit-for-digit;
+the family sweep descriptors-only at its floor-dominated scale;
+multi-author arbitrations = the (provably minimal) untested corner.

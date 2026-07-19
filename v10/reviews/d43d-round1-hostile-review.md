@@ -394,3 +394,100 @@ untested), and for whatever natural-family analysis constrains width to 2."
 w=3 clean to depth 10; w=4/5/6 fail at depth 6), mut1/mut2 exit 1, mut3 exit 0
 (the F5 exhibit). Independent wsum cross-check via the committed `enumerate_family`
 plus flow conservation (1037/64 twice). Nothing in the pinned object was modified.*
+
+---
+
+# Delta verification (round 2) — repairs at HEAD b4d164b (#341)
+
+**Object:** the repaired `v10/code/d43d_dstar_generated_exact.py` + committed `.out`
+(6/6 PASS), pin amendments C1–C2 (`note-d43d` §3), LOG #337 (round frozen,
+forward-correction of #333) and #341. Round-1 body above untouched.
+**Instrument:** `scriptF_delta.py` (scratchpad) — re-verification of every repaired
+gate against this round's own machinery (committed d42b1 layer + committed v8 g2
+oracle), the three round-1 mutants rebuilt against the repaired source, determinism.
+
+**Verdict: DELTA-CLEAN on substance — 0 new defects; all four MAJORs and the
+gate-coverage minor discharged. ONE residual minor (the F3 print format, below) +
+two cosmetic nits; none gate-relevant, none blocking terminal.**
+
+## D1. Item-by-item
+
+1. **NG3b (F1 — the witnesses gated): VERIFIED.** The receipt's `W6` and `W4` are
+   tuple-exact to the round's witnesses. Independent re-verification through the
+   committed layer (stronger than the receipt's own gate — admissibility AND
+   `candidates_for` membership): W6 admissible ×6 at exactly 1/20; W4 at
+   1/12, 1/12, 1/8, 1/8, 1/12, 1/12. W6 preds `[[],[],[],[1,2],[0,2],[0,1]]` = S3;
+   both posets REJECTED by the committed v8 g2 oracle; the receipt's gate values
+   (`d2_w6 = d2_w4 = False`, `is_s3 = True`) agree. The check text carries the
+   thresholds (2-actor never / 3-actor through 10 / 4-actor at 6) cited to the
+   frozen round, with #333 marked forward-corrected at #337. Correct.
+2. **NG3 width diagnostic (F2): VERIFIED.** Receipt `width_of` (exhaustive
+   antichain) reproduces this round's measurements exactly —
+   `{SIG_KR:2, h5:2, SIG_FM:2, CH:3, h11:2, h12:2}` — and the gate now REQUIRES
+   5/6 ≤ 2 ∧ CH = 3; the label owns the width-blindness ("capability is width,
+   not event count ... only CH was live").
+3. **NG2 median line (F3): SEMANTICS REPAIRED, FORMAT NOT.** The condition is now
+   `d <= med` with `med = land4[109] = 21/64` — at-or-below the true median VALUE,
+   ties included — and the mass is 8, i.e. **512/1037 ≈ 0.4937 of wsum**, matching
+   the round's ~49.4%. RESIDUAL (minor): the `.out` still prints the double-slash
+   triple `= 8/1037/64` (`{below}/{wsum}` with Fraction wsum) — F3 defect (3)
+   verbatim; no parseable fraction or percentage appears in the output, while LOG
+   #341 quotes "~49.4%" as if printed. One-line fix, pre-verified:
+   print `f"{Fr(below)/wsum} (~{float(Fr(below)/wsum):.4f}) of wsum"`
+   → `512/1037 (~0.4937)`.
+4. **NG1 n=5 anchor (F4): VERIFIED.** `all_posets(5)` runs in-receipt; `len == 4231`
+   and all-pass are inside the NG1 PASS condition (`ok5`); the `.out` discloses
+   "n=5 posets = 4231 all-pass (F4: now IN-RECEIPT)". LOG #341's record now
+   matches an executed check.
+5. **NG3c + mutation coverage (F5): DISCHARGED.** All three round-1 mutants rebuilt
+   against the repaired source now exit 1: oracle lobotomy (4/6, NG1+NG3b bite —
+   NG3b is itself new coverage), star-closure drop (3/6), and the round's exhibit,
+   the SIG_FM merge-deletion mutant, now **fails NG3c (5/6, exit 1)** — the 79/256
+   anchor does its job (and matches the committed-v8 value verified in round 1).
+6. **Pin amendments C1–C2: VERIFIED PRESENT AND ACCURATE.** C1 owns the width axis,
+   adopts the witnesses, states the thresholds with the 3-actor bound correctly
+   scoped ("not through ten events"), answers §1's question POSITIVELY, records
+   the #333→#337 forward-correction, and owns the n-range error ("n = 8..11"
+   mis-stating the n = 4..12 suite). C2 covers the median repair, 4,231
+   in-receipt, the SIG_FM anchor, the cross-n withdrawal from the verdict
+   (same-n discipline), and re-reads "seed-independent" as deterministic. The
+   repaired verdict line states the settled result correctly ("transport
+   generates dimension at actor-width >= 4 (S3 at 6 actors)").
+7. **Untested corner: PRESENT and — upgrade — now provably MINIMAL.** C1 declares
+   multi-author arbitrations the untested corner. The round-1 scope note had
+   flagged a second candidate corner (an exact-repeat arb riding its
+   predecessor's vname register as an extra wire). Delta-verified: that corner is
+   VACUOUS — the initiator's own chain always contains its earlier arb, the base
+   is superseded in its view, and both the exact-repeat arb and the same-base
+   re-proposal are inadmissible per the committed `admissible()` (checked
+   mechanically). vname/mw registers are therefore provably one-shot, and
+   "multi-author arbitrations" is exactly the residual corner — the pin's scope
+   is not just present but sharp.
+
+## D2. Plumbing
+
+Repaired receipt rerun: byte-identical to the committed `.out`; PYTHONHASHSEED ∈
+{0, 7, 424242} → byte-identical (consistent with #341's "Deterministic (0/19)").
+Exit-1 machinery verified via the three mutants above.
+
+## D3. Residuals (non-blocking)
+
+- **minor (the only substantive one):** F3 defect (3) — the malformed
+  `8/1037/64` print — survives the repair; fix pre-verified in D1.3. LOG #341's
+  "~49.4%" is the LOG's gloss, not the receipt's output, until this line is
+  patched.
+- nit: the legacy print "NG3 outcome: 0/6 chains REJECTED ... (paper 13
+  universality holds at chain scale)" survives verbatim below NG3c, including
+  the now-dead dichotomy branch; true of the six chains and disambiguated by the
+  repaired verdict line, but the phrase "universality holds" earns its keep only
+  with the width-blindness clause one line above it.
+- nit: NG2's PASS condition still gates none of its descriptor numbers (unchanged
+  round-1 posture; consistent with "descriptors ONLY").
+
+**DELTA-CLEAN on substance. With the D1.3 one-liner (or an explicit acceptance of
+the print as a documented cosmetic residual), d43d is fit for terminal with the
+settled statement: transport generates dimension at actor-width ≥ 4 (S3 sharply
+at 6 actors for pure transport; 3-actor pure transport 2D through 10 events,
+multi-author arbs the declared — and now provably minimal — untested corner);
+the D* instrument is port-faithful digit-for-digit; the family sweep is
+descriptors-only at its floor-dominated scale.**

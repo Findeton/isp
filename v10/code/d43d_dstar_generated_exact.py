@@ -415,9 +415,9 @@ check("NG3c the SIG_FM anchor (round-minor repair: structural "
       ok_sig and d_sig == Fr(79, 256), f"D* = {d_sig}")
 print(f"  NG3 outcome: {n_rej}/6 chains REJECTED (dim > 2) — "
       + ("TRANSPORT GENERATES DIMENSION at chain scale"
-         if n_rej else "every constructed chain is a TWO-CLOCK "
-         "configuration (paper 13 universality holds at chain "
-         "scale)"))
+         if n_rej else "the SIX CHAINS are two-clock configurations "
+         "(width-limited sample — the dimension verdict is NG3b's, "
+         "not this line's)"))
 
 check("NG4 disclosures: statistical layer nan (zero qualifying "
       "pairs at n <= 12 with exp_k >= 10 unverified here — the "
