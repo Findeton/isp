@@ -102,3 +102,41 @@ sector and the class structure changes — that is D44b's problem, not
 a gap here).  Two actors; the committed admission layer executed
 from the committed receipt; exact Fractions throughout; determinism
 gated.
+
+## 6. First-run amendments (2026-07-19, pre-round; both deviations
+## are GATED obstructions, nothing silently weakened)
+
+**A1 (CG3's pinned landing was provably unsatisfiable; the repaired
+route lands the theorem).** "BFS reaches exactly 6" is impossible
+for ANY CG1-sound sigma: menu-exactness forces sigma to separate
+histories that are probabilistically BISIMILAR but menu-distinct —
+the gated witness CG3b: [pA0, pB0] and [pA0, pB0, selfA, pA(v1,0)]
+are both intrinsic class 2 with different renamed menus (one vs two
+base tokens from self-arbs). NOT the pin-§4 reversal mode (no
+seventh intrinsic state). The repaired route: the depth-free BFS
+CLOSES AT 36 sigma-states (max representative length 6; reachable
+set == cache-realized set exactly); the EXACT bisimulation quotient
+of the closed 36-state chain has SIX classes, blockwise equal to
+the committed intrinsic partition, with induced transfer == T_REF
+(rows constant across all 36). By CG1 + CG2 the intrinsic partition
+at EVERY depth is the pullback of the abstract chain's bisimilarity
+— the all-depth six-state statement, through the quotient.
+
+**A2 (CG4's "length <= 3" clause false as written; the surviving
+pumping content gated).** 17/36 sigma-states have NO realization
+below length 4 (divergence needs two arbs + two proposals; the
+diverged sector has no renewal points at d42a scope — no
+deliveries), witness [pB1, selfB, pB(v1,1), pA0] = its own
+reduction; 1,832 histories in <=3-realizable states cannot be
+carried there by pad+renewal moves alone. What the theorem needs
+survives and is gated: the reduction mechanism (pad deletion +
+renewal truncation with MG6-style back-substitution) is valid,
+sigma-preserving, and idempotent on ALL 34,375 (0 failures), and
+every INTRINSIC CLASS is realized on the len <= 3 window.
+
+**A3 (minor).** CG6a's baseline reads against the delivered closure
+(dead-keeping sigma: 67 cache values, no closure within a 61-state
+budget vs the delivered 36); CG6b's variant drops the component
+data jointly with the payload distinction that generates it (at
+this scope conflict edges are payload-generated — SG2's
+incomparability invariant).

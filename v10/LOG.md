@@ -6766,3 +6766,42 @@ biquadratic m-split check added (returns NONE — irreducible in m
 too, now in-receipt); YG4-A walks U_free/Gamma_free; YG2-B covers
 LT site 5; YG3-A's label honest. Note §6 B1-B4. DELTA to the d45a
 referee next.
+
+## 2026-07-19 — D44a receipt GREEN 24/24 (LEDGER #361); round 1
+## commissioned. THE CLOSURE THEOREM LANDS — RESIDUE 1 DECIDED AT
+## d42a SCOPE, ALL DEPTHS (through the gated quotient)
+Wave-1's deepest build delivered (builder-agent; verified
+pre-commit: independent rerun exit 0 BYTE-IDENTICAL; 24 PASS /
+0 FAIL; ~20 s; seeds 0/7 byte-identical). THE ROUTE, as repaired
+in-flight (both deviations GATED, note §6 A1-A3): sigma = per-actor
+non-superseded holding (gated singleton-or-empty) + live-proposal
+triples with the committed conflict structure + superseded marks
+restricted to referenced bases, modulo base renaming (canonical
+minimum over base bijections; the renaming-invariance probe
+promoted to gate SG3: all 215 root-vs-H3 pairs sigma-equal).
+CG1: menu is a FUNCTION of sigma — 34,375 histories, 36 classes,
+ZERO exceptions, entrywise renamed menus with exact weights.
+CG2: transitions a function of (sigma, renamed event) — 34,374/0,
+160 abstract keys. CG3: the depth-free BFS CLOSES AT 36 STATES
+(the pinned six-state landing is PROVABLY UNSATISFIABLE for any
+menu-exact sigma — CG3b's witness: bisimilar-but-menu-distinct
+class-2 pair; NOT the reversal mode, no seventh intrinsic state);
+the EXACT bisimulation quotient of the closed chain = SIX classes
+BLOCKWISE EQUAL to the committed partition, induced transfer ==
+T_REF (rows constant across all 36 abstract states). CG5: the full
+Perron package re-derived on the abstract chain (lambda = 2;
+det 3/32; the anchored resolvent rows; forced extension; ROOT ==
+RENEWAL as one sigma-state; conflict row {1/7, 3/4, 3/28};
+pi = (1,1,2)/4 exact). CG4: the reduction mechanism valid,
+sigma-preserving, idempotent on all 34,375 (the pinned <= 3 clause
+FALSE as written — 17/36 sigma-states need length >= 4, the
+diverged sector has no renewals at this scope; replaced by the
+gated surviving content: every INTRINSIC CLASS realized at
+len <= 3). CG6 controls: dead-keeping sigma diverges past budget;
+edge-dropping sigma fails CG1 on the exhibited pair; stratification
+cited. THE THEOREM (proof note at conversion): by CG1 + CG2 the
+intrinsic partition at EVERY depth is the pullback of the closed
+abstract chain's bisimilarity — six states, transfer T, all
+depths; the Perron decision transfers — RESIDUE 1 IS DECIDED AT
+d42a SCOPE OUTRIGHT. Transport = D44b (unchanged). ROUND 1
+COMMISSIONED next; on conversion D44f UNGATES.
