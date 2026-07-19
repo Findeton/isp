@@ -5994,3 +5994,40 @@ chain scale); parity invariance exact; CH is the most volume-
 faithful record measured (83/400 ~ 0.2075). Statistical layer NOT
 RUN (nan-disclosure per the canon). Seed-independent (0/7). Round
 next.
+
+## 2026-07-19 — d43b receipt GREEN 3/3 (LEDGER #334): NO
+## STABILIZATION at depths 4-6 — the Martin datum delivered
+MG1 anchor exact (the committed 17-state partition, trajectory
+4-9-14-16-17). MG2 pre-registered outcome: the quotient GROWS —
+full (boundary-coarse) counts 17/23/29 at depths 4/5/6; the induced
+partition on the depth<=4 sub-family still refines (19 by depth-5,
+20 by depth-6; induced-on-5 by-6 = 25). The finite Perron reduction
+therefore AWAITS deeper closure or the true intrinsic frontier map
+(pin §2's second arm — the label-blind refinement may be separating
+renewal-isomorphic states by distance-to-boundary; the slow +1
+growth of the induced partition is consistent with eventual
+convergence, undecided). Delivered per pin §3: the growth
+trajectory = the Martin datum [I1]. Seed-independent (0/7).
+Successors named: depth-7 probe; the intrinsic map arm.
+
+## 2026-07-19 — d43c receipt GREEN 4/4 (LEDGER #335): E-A FAILS,
+## E-B PASSES — THE FOURTH DOOR EXISTS at fixture scale
+PG1 baseline exact (menus 1-vs-3 arb events; sums 1 vs 5/4; pair
+branches inadmissible early). PG2 E-A (Ben-Or-shaped randomized)
+FAILS by a two-fact theorem: the initiator's own view is IDENTICAL
+at the two cuts (G-T1 recomputed) while the required branch sets
+DIFFER — an initiator-local-coin family is a function of the own
+view; any repair reads the join (the pinned hazard exhibited). THE
+FLP IMPORT IS PARTIAL: the obstruction is VISIBILITY, not
+adversarial scheduling. PG3 E-B (the past-local-indexed comb {V_C};
+= the committed A6/d42b2-B1 join-typed structure re-typed as one
+higher-order operation) PASSES R1-R5: menus reproduced exactly from
+the admission relation; licensed carriers only; committed kernel
+weights; the NSE battery + control (0.2599); the classical index =
+past-local event data, not cut data. PG4 scope: the pincer's three
+horns stand unrefuted for cut/initiator-attached CHANNELS; the
+door was in the grammar since A6 — what is new is the typing + the
+mechanical discharge. CONSEQUENCE: residue 2's operator question is
+answered at fixture scale; the completion burden separates cleanly
+onto residue 1 — THE TWO RESIDUES ARE NOW ONE. Seed-independent
+(0/11). Round next (with d43b's, after the a/d rounds return).

@@ -1,0 +1,14 @@
+[d43b — residue 1 via the intrinsic state chain]
+  banner: EXACT; d42a layer from the committed d42b3 receipt;
+  depths 4/5/6 full enumerations; interior-state comparison;
+  stabilization PRE-REGISTERED open; on closure: exact
+  Perron-Frobenius (Faddeev-LeVerrier + Tarjan + sign-change
+  bisection); no infinite-volume claim beyond the decided
+  quotient scope (pin §4).
+  [PASS] MG1 ANCHOR: the depth-4 bisimulation reproduces the committed 17-state partition (trajectory 4-9-14-16-17)  (states = 17; trajectory = [4, 9, 14, 16, 17, 17])
+  state counts (full, boundary-coarse): depth 4/5/6 = (17, 23, 29); induced-on-depth<=4: by-5 = 19, by-6 = 20; induced-on-depth<=5 by-6 = 25
+  [PASS] MG2 THE STABILIZATION QUESTION (pre-registered open): the depth-5 and depth-6 refinements induce the SAME partition on the depth<=4 sub-family (two consecutive agreements = the stabilization criterion at margin 1)  (AGREE = False; the MG2 verdict is the printed outcome either way — this check gates only that the comparison ran on both depths)
+  [PASS] MG2-outcome: NO STABILIZATION at margin-1/depths 4-6 — the growth trajectory + induced counts are the delivered Martin datum (pin §3: 'deliver the growth trajectory'); the Perron reduction awaits deeper closure or the true intrinsic map  (induced-on-4: by-5 = 19, by-6 = 20, agree = False; induced-on-5 by-6 = 25)
+
+[SUMMARY] 3 PASS / 0 FAIL
+[VERDICT] d43b delivered — see MG2 for the stabilization outcome and (on closure) MG3-MG5 for the Perron decision, the root-renewal identity, and the mass-transport witness.

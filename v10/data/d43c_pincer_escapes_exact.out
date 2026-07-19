@@ -1,0 +1,12 @@
+[d43c — the pincer vs the escape classes]
+  banner: grammar weights exact Fractions (committed d42b3
+  layer); isometries at mp.dps 50 / 1e-40; PG2/PG3 verdicts
+  PRE-REGISTERED; no continuum claim; Hegerfeldt untouched;
+  the measure side stays with residue 1 (pin §4).
+  [PASS] PG1 the pincer baseline (committed d42b4 exhibit re-run): A's arb menu = 1 event at the early cut vs 3 at the join (self + 2 pair winners); full sums 1 vs 5/4; the pair branches inadmissible early  (menus 1/3; sums 1/5/4)
+  [PASS] PG2 E-A FAILS (delivered verdict): A's own view is IDENTICAL at the two cuts (the committed G-T1 fact, recomputed) while the required arb branch sets DIFFER — an initiator-local-coin-indexed family is a function of the own view and cannot emit both menus; any repair reads the join, relocating cut-dependence into the firing predicate. The FLP/Ben-Or analogy is PARTIAL: the obstruction is VISIBILITY, not adversarial scheduling (import I2 refined)  (own views equal = True; branch sets differ = True)
+  [PASS] PG3 E-B PASSES R1-R5 (delivered verdict — THE FOURTH DOOR at fixture scale): the past-local-indexed comb {V_C} (the committed A6/d42b2-B1 join-typed structure, re-typed as one higher-order operation) reproduces both menus exactly from the admission relation (R1), acts on licensed carriers only (R2), carries the committed kernel weights (R3), passes the NSE battery + control (R4), and its classical index is past-local event data, not cut data (R5)  (R1 True R2 True R3 True R4 True R5 True; control = 0.25989318568658958511900962835859379219671226576617)
+  [PASS] PG4 SCOPE (the honesty gate): the fourth door is an EXISTENCE exhibit at fixture scale — the pincer's three horns classified cut/initiator-attached CHANNELS and stand unrefuted there; the comb is JOIN-attached with the component as licensed input (the grammar carried this door since A6; what is new is the higher-order TYPING + the mechanical R1-R5 discharge). The MEASURE side (the comb family's classical weights) is residue 1, untouched; fine-vs-coarse sealing rides along; no continuum claim; Hegerfeldt untouched  (pin §4 verbatim scope)
+
+[SUMMARY] 4 PASS / 0 FAIL
+[VERDICT] d43c delivered: E-A FAILS (visibility, not scheduling — the randomization escape does not transfer; the FLP import is partial); E-B PASSES R1-R5 — the arb-layer operator EXISTS at fixture scale as a past-local-indexed comb; residue 2's operator question is answered at this scope, and the completion burden cleanly separates onto residue 1 (the measure) — the two residues are now ONE.
