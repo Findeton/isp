@@ -6493,3 +6493,33 @@ the declared deviations (cap 6 + growth table; register-word dedup
 with sampled soundness 11,664/0; single-universe F-CROSS design;
 constructed-arb conventions; F-LAM caps; AG0b). ROUND 1
 COMMISSIONED next; D44a build still in flight.
+
+## 2026-07-19 — d44d round 1: PASS-AS-RESCOPED (0B/1M/2m/5n);
+## repairs applied (LEDGER #352); FORWARD-CORRECTION of #350's KG3
+## sentence; delta commissioned
+The round (frozen: reviews/d44d-round1-hostile-review.md): the
+QUARTIC SURVIVED — from-scratch exact-Fraction recomputation at 11
+masses incl. 6 OFF-GRID, all equal (9m^4-15m^2+4)/144; the
+solve-3/verify-25 path confirmed genuine; KG1 recomputed at 9 cells
+incl. the block laws and the contaminated cell exactly; an L=18 wrap
+trap held; THREE alternative weight families all give 13/2304 (A5
+verified mechanically); kernel spans verified; 18/18 ported
+functions verbatim; 8 mutants, 0 silent-green (M5/M8 exit-0 BY
+PRE-REGISTERED DESIGN with verdict-text flips caught by byte-diff;
+M8 proved the non-fit fallback live). THE ONE MAJOR (accepted in
+full, B1): the KG3 DIVERGENT verdict is real and collar-robust but
+GRAIN-INHERITED — the referee's g = 0 control on the same fixture is
+ALSO divergent, as is the free core at this grain (d43a T2/T4) — so
+the cell measures the grain, not the interaction.
+FORWARD-CORRECTION of #350: its sentence "at the raw
+singleton-bracket grain the free-core ray universality does NOT
+arrive at the interacting fixture" is RETIRED; the accurate
+statement: the raw-bracket divergence persists at the interacting
+point exactly as at g = 0; ray-level arrival under interaction is
+UNDECIDED pending the smeared interacting identification (successor;
+its pin must carry a g = 0 column). Repairs applied (receipt +
+rerun, 17/17, seeds byte-identical, VERIFIED pre-commit): the KG3
+verdict line rescoped in-receipt; the scan order printed; the
+verdict-content/byte-diff design stated in-banner; the hull header
+fixed to [1/16, 2]; the grid-point-root guard added; dead
+kg3_arrive removed. Note §5 B1-B3. DELTA to the d44d referee next.

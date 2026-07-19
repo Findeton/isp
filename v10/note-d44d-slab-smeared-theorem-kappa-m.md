@@ -111,3 +111,38 @@ index n0 (the gauge string through n0) + incident bonds; pairs
 the validator's committed point (m, g) = (7/10, 1/2), t = 1,
 lambda = (9/10, -2/5, 11/10, 1/5). The pin left these to the
 receipt.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d44d-round1-hostile-review.md: PASS-AS-RESCOPED,
+## 0B/1M/2m/5n)
+
+**B1 (MAJOR-1 — the KG3 framing rescoped; the finding accepted in
+full).** The DIVERGENT/DIVERGENT verdict is exactly reproduced and
+collar-convention-robust (three collar conventions agree), BUT the
+round's g = 0 control on the same fixture is ALSO divergent, and the
+free core was already divergent at this grain (d43a T2/T4). The
+divergence is GRAIN-INHERITED, not interaction-specific; the pin §1
+KG3 clause "decides whether the free-core ray universality even
+ARRIVES at the interacting fixture's grain" OVERSOLD the instrument.
+Corrected reading (now in the receipt's KG3 verdict line): the raw
+singleton-bracket divergence persists at the interacting point
+exactly as at g = 0; whether RAY-level universality survives
+interaction is UNDECIDED here and belongs to the smeared interacting
+identification — the declared successor, whose pin must include a
+g = 0 column. LOG #350's KG3 sentence is forward-corrected at #352.
+
+**B2 (minor-1/minor-2 — self-auditability).** The KG2 ansatz scan
+order is now PRINTED in the .out (was code-comment-only); the banner
+now states as designed that clean-cell collapse constants and
+verdict lines are DELIVERED-VERDICT content whose integrity rides on
+byte-identical determinism (the M5/M8 mutant class flips text, not
+exit — caught by byte-diff), with the exit-gated layer enumerated.
+
+**B3 (nits owned).** The KG2 header now prints the true hull
+[1/16, 2] (was "(0, 2]"); direct_bisect_64 now handles an exact
+grid-point root explicitly (unreachable for the identified quartic —
+roots irrational — guarded anyway); the BOTH-ZERO verdict class
+omission from A6, the structurally-trivial ungated EXC order-1
+sub-onset at slab scope, and the data-dependent recognize() margin
+(6 orders spare here, auditable) are recorded as known residuals —
+no code change.

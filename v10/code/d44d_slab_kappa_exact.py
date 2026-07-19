@@ -300,6 +300,10 @@ print("  a Delta^p coefficient of series products/inverses depends only on input
 print("  orders <= p; gated below at 1e-40 entrywise and on the kappa anchors).")
 print("  Exit 1 ONLY on anchor/extraction breakage; KG1 w-dependence, KG2 non-fit,")
 print("  and every KG3 verdict are pre-registered DELIVERED outcomes at exit 0.")
+print("  Round-1 minor-2, stated as designed: clean-cell collapse CONSTANTS and")
+print("  all verdict lines are DELIVERED-VERDICT content, not exit gates — their")
+print("  integrity rides on byte-identical determinism of this .out (SG5); the")
+print("  exit-gated layer is anchors/extraction/recognition/collapse-form only.")
 print("  Deterministic: no RNG, no wall clock; rerun byte-identical (SG5).")
 print()
 print("  PINNED TEST-WEIGHT FAMILY (KG1; declared BEFORE any verdict):")
@@ -636,7 +640,13 @@ print("  [KG1 WRAP RECORD] the 8 declared L=12 LT wrap cells (finite-seam "
           f"(L={a},m={b},w={ww},{ar}): {cs}" for a, b, ww, ar, cs in wrap_cells))
 
 # ============================================================================
-print("\n[KG2 — exact kappa(m) at ORD 4, L 12: 28 rational masses on (0, 2]]")
+print("\n[KG2 — exact kappa(m) at ORD 4, L 12: 28 rational masses on "
+      "the hull [1/16, 2]]")
+print("  ansatz scan order (round-1 minor-1: now PRINTED, not "
+      "code-comment-only): polynomials in x = m^2 deg 0..7; "
+      "polynomials in m deg 0..13; rationals P/Q in x then in m, den "
+      "deg 1..6, num deg 0..6, by total degree; every candidate must "
+      "satisfy NPTS >= 2*(#unknowns); first exact hit stops.")
 set_phase(4, 12)
 MGRID = [Fr(1, 16), Fr(1, 8), Fr(3, 16), Fr(1, 4), Fr(3, 8), Fr(7, 16),
          Fr(1, 2), Fr(13, 24), Fr(9, 16), Fr(5, 8), Fr(11, 16), Fr(17, 24),
@@ -879,6 +889,11 @@ def direct_bisect_64():
     """Fit-independent: refine every adjacent-grid sign change to width
     <= 1/64 by exact bisection on DIRECTLY computed kappas."""
     out = []
+    for m in MGRID:
+        if KTAB.get(m) == 0:
+            out.append((m, m))  # exact root AT a grid point (round-1
+            # nit guard; unreachable for the identified quartic, whose
+            # roots are irrational)
     for i in range(len(MGRID) - 1):
         ka, kb = KTAB[MGRID[i]], KTAB[MGRID[i + 1]]
         if ka is None or kb is None or ka * kb >= 0: continue
@@ -1094,13 +1109,15 @@ if cross_brackets:
                  "vs -1/72 at m=1) is the two-crossing structure of an "
                  "exact quartic. No claim outside the hull.")
 print("[KG2 VERDICT] " + kg2_verdict + "." + sign_note)
-kg3_arrive = all(v == "PROPORTIONAL" for _, v in kg3_verdicts)
 print("[KG3 VERDICT] " + "; ".join(f"d={d}: {v}" for d, v in kg3_verdicts)
-      + " — at the raw singleton-bracket grain the free-core bracket-ray "
-      "universality " + ("ARRIVES at" if kg3_arrive else "does NOT arrive "
-      "at") + " the interacting fixture (pre-registered open; the smeared "
-      "interacting identification remains the declared successor, not "
-      "attempted here).")
+      + " — the raw singleton-bracket divergence PERSISTS at the "
+      "interacting point (round-1 MAJOR-1 rescope: the free core is "
+      "ALSO divergent at this grain — d43a T2/T4, and the round's "
+      "g = 0 control on this fixture concurs — so this cell measures "
+      "grain-inherited divergence, not an interaction effect; whether "
+      "RAY-level universality survives interaction is UNDECIDED here "
+      "and belongs to the smeared interacting identification, the "
+      "declared successor, with a g = 0 column).")
 kg1_short = ("GREEN on every wrap-clean cell in BOTH slab readings"
              if (comp_green and blk_lt_ok and blk_exc_law)
              else "delivered with deviations as printed")
