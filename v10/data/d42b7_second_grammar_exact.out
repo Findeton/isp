@@ -5,11 +5,11 @@
   families depth <= 3 (declared cap); dimension = PILOT only.
   families (depth<=3): binary = 215; ternary = 405 [MEASURED]
   [PASS] GG1 G3 closure + enabled-(event, weight) gauge invariance on the depth<=2 slice (the delta-note-i standard, ported)  (candidate-set points = 93)
-  [PASS] GG2 the V1 TOY-RELATIVE values exhibited: depth-2 conflict census 4 -> 12 (ordered seed pairs x 6 payload pairs); mu(seed) 1/64 -> 1/144 (the propose split 1/8 -> 1/12)  (census = 12; mu3 = 1/144; mu2 = 1/64)
+  [PASS] GG2 the V1 TOY-RELATIVE values exhibited: depth-2 conflict census 4 -> 12 (ordered seed pairs x 6 payload pairs); mu(seed) 1/64 -> 1/144 (the propose split 1/8 -> 1/12)  (census = 12 vs 4 (binary COMPUTED, not carried); mu3 = 1/144; mu2 = 1/64)
   [PASS] GG3 the U1 FORM lifts: the 1 + k/4 ladder holds in BOTH grammars (two-of-two; universality per d41b still needs breadth — declared)  (binary spectrum = {'1': 374, '5/4': 56}; ternary = {'1': 642, '5/4': 168})
   [PASS] GG4a GENERATED components (M1 repaired, referee anchors): the ternary 3-actor family contains EXACTLY 36 K3 histories at mu 1/1728 each (mass 1/48), ALL kernel-degenerate at 1/3; the binary family has ZERO triangles (pigeonhole theorem of the binary rule); generated paths discriminate 2/3 vs 1/2 in both  (ternary K3 = 36 (mass 1/48); binary K3 = 0; generated paths = 108/36)
   [PASS] GG4 N1 CONFIRMED: on the ternary triangle K1 == K2 == uniform 1/3 over the three singleton MIS (KERNEL DEGENERACY — the K-choice is undecidable on triangle components); the path still discriminates 2/3 vs 1/2 in G3 — discrimination is COMPONENT-SHAPE-DEPENDENT  (triangle: 3 MIS at 1/3 each; path: K1 = 2/3, K2 = 1/2)
-  [PASS] GG3b the pinned U1 gates DISCHARGED in both grammars (M2 repaired): the obstruction density (tot == 1 + k_blind/4 with every blind group exactly 1/4), L1 uniqueness, and the pair-arb iff sweeps (incl. the ternary 0-2 pair)  (density/L1/iff all green, two-of-two grammars)
+  [PASS] GG3b the pinned U1 gates DISCHARGED in both grammars (M2 + delta D-1, the full five): the obstruction density (every blind group exactly 1/4), L1 uniqueness, the pair-arb iff sweeps (incl. the ternary 0-2 pair), RATIO LOCALITY (ported d42b3 G-L1 form), and delivery-free per-observer FORK-FREENESS  (density/L1/iff green; ratio locality tested 4/18, 0 violations; fork-freeness 0 violations both grammars)
   GG5 BIN TABLE (mechanical; status = the row's gate):
     opportunity generation / closure............. LIFTED (2-of-2)
     the 1+k/4 ladder............................. LIFTED (2-of-2)

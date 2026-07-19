@@ -138,11 +138,15 @@ check("GG1 G3 closure + enabled-(event, weight) gauge invariance on "
       ok1 and pts > 0, f"candidate-set points = {pts}")
 
 # GG2: the V1 toy-relative values
-d2conf = 0
-for h in FAM3:
-    if len(h) != 2: continue
-    view = G3['View'](h, G3['event_poset'](h), {0, 1})
-    if view.edges(set(view.props)): d2conf += 1
+def d2census(fam, ns):
+    n = 0
+    for h in fam:
+        if len(h) != 2: continue
+        view = ns['View'](h, ns['event_poset'](h), {0, 1})
+        if view.edges(set(view.props)): n += 1
+    return n
+d2conf = d2census(FAM3, G3)
+d2conf_b = d2census(FAM2, B2)
 pA0 = ('p', 'A', V0, 0)
 pB1 = ('p', 'B', V0, 1)
 ok_mu, q1 = G3['admissible']([], pA0)
@@ -154,9 +158,10 @@ mu_seed2 = qb1 * qb2
 check("GG2 the V1 TOY-RELATIVE values exhibited: depth-2 conflict "
       "census 4 -> 12 (ordered seed pairs x 6 payload pairs); "
       "mu(seed) 1/64 -> 1/144 (the propose split 1/8 -> 1/12)",
-      d2conf == 12 and mu_seed3 == Fr(1, 144)
+      d2conf == 12 and d2conf_b == 4 and mu_seed3 == Fr(1, 144)
       and mu_seed2 == Fr(1, 64),
-      f"census = {d2conf}; mu3 = {mu_seed3}; mu2 = {mu_seed2}")
+      f"census = {d2conf} vs {d2conf_b} (binary COMPUTED, not "
+      f"carried); mu3 = {mu_seed3}; mu2 = {mu_seed2}")
 
 # GG3: the U1 forms in BOTH grammars — ladder + density
 def ladder_check(fam, cache, ns):
@@ -223,12 +228,11 @@ check("GG4a GENERATED components (M1 repaired, referee anchors): the "
       "binary family has ZERO triangles (pigeonhole theorem of the "
       "binary rule); generated paths discriminate 2/3 vs 1/2 in both",
       k3_3 == 36 and mass3 == Fr(1, 48) and deg3
-      and k3_2 == 0 and paths3 > 0 and pok3 and paths2 > 0 and pok2,
+      and k3_2 == 0 and paths3 == 108 and pok3
+      and paths2 == 36 and pok2,
       f"ternary K3 = {k3_3} (mass {mass3}); binary K3 = {k3_2}; "
       f"generated paths = {paths3}/{paths2}")
 
-# the abstract exhibits retained as controls
-h3 = [('p', 'A', V0, 0), ('p', 'B', V0, 1)]
 # abstract control triples (retained; the GENERATED gate is above):
 tri = frozenset({('A', V0, 0), ('B', V0, 1), ('C', V0, 2)})
 et_tri = frozenset({tuple(sorted((a, b))) for a in tri for b in tri
@@ -303,13 +307,47 @@ def iff_gate(fam, cache, ns, x1, x2):
 ok_iff = (iff_gate(FAM2, C2, B2, 0, 1)
           and iff_gate(FAM3, C3, G3, 0, 1)
           and iff_gate(FAM3, C3, G3, 0, 2))
-check("GG3b the pinned U1 gates DISCHARGED in both grammars (M2 "
-      "repaired): the obstruction density (tot == 1 + k_blind/4 with "
-      "every blind group exactly 1/4), L1 uniqueness, and the "
-      "pair-arb iff sweeps (incl. the ternary 0-2 pair)",
+def ratio_loc_gate(fam, ns, payloads):
+    tested = 0
+    for h in fam:
+        if len(h) != 1 or h[0][0] != 'p': continue
+        for h2 in ([('p', 'A', V0, x)] for x in payloads):
+            h2 = list(h2)
+            if h2 == h or h2[0][1] != h[0][1]: continue
+            for x in payloads:
+                e = ('p', 'B', V0, x)
+                ok1x, q1x = ns['admissible'](h, e)
+                ok2x, q2x = ns['admissible'](h2, e)
+                if not (ok1x and ok2x): continue
+                if ns['own_view_canon'](h + [e], 'B') != \
+                   ns['own_view_canon'](h2 + [e], 'B'): continue
+                tested += 1
+                m1a, m2a = ns['mu_of'](h), ns['mu_of'](h2)
+                m1b, m2b = ns['mu_of'](h + [e]), ns['mu_of'](h2 + [e])
+                if m1b * m2a != m2b * m1a: return 0
+    return tested
+rl2 = ratio_loc_gate(FAM2, B2, (0, 1))
+rl3 = ratio_loc_gate(FAM3, G3, (0, 1, 2))
+def fork_free_gate(fam, ns):
+    for h in fam:
+        pred = ns['event_poset'](h)
+        for j in range(len(h)):
+            view = ns['View'](h, pred, pred[j] | {j})
+            per = {}
+            for i, op in view.arbs.items():
+                per.setdefault(next(iter(op[2]))[1], []).append(i)
+            if any(len(v) > 1 for v in per.values()): return False
+    return True
+check("GG3b the pinned U1 gates DISCHARGED in both grammars (M2 + "
+      "delta D-1, the full five): the obstruction density (every "
+      "blind group exactly 1/4), L1 uniqueness, the pair-arb iff "
+      "sweeps (incl. the ternary 0-2 pair), RATIO LOCALITY (ported "
+      "d42b3 G-L1 form), and delivery-free per-observer FORK-FREENESS",
       ok_d2 and ok_d3 and l1_gate(FAM2, B2) and l1_gate(FAM3, G3)
-      and ok_iff,
-      "density/L1/iff all green, two-of-two grammars")
+      and ok_iff and rl2 > 0 and rl3 > 0
+      and fork_free_gate(FAM2, B2) and fork_free_gate(FAM3, G3),
+      f"density/L1/iff green; ratio locality tested {rl2}/{rl3}, 0 "
+      "violations; fork-freeness 0 violations both grammars")
 
 # GG5 (R3/B1 repaired): the bin table is MECHANICAL — each status
 # is computed from its gate's outcome; an unearned row cannot print

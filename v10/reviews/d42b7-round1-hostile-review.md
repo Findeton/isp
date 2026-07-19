@@ -507,3 +507,176 @@ join masses. The named next fronts inherit: the carrier-level third
 grammar (pin §5), the superset-generator condition at transport
 depths (§2.3's caveat), and h12's standing general-depth ladder
 constraint.
+
+---
+
+# D42b7 delta — verification of the round-1 repairs (appended; the
+# round-1 body above is untouched)
+
+**Delta round:** 2026-07-18, against HEAD ce8b0b7 (repaired receipt
+GREEN 9/9, #315; round-1 report frozen at e653b3e #314 — verified
+byte-untouched since the freeze). Method: 3 reruns (plain +
+PYTHONHASHSEED 0, 13) byte-compared to the committed .out; an
+independent recount of every NEW anchor (scratchpad
+`d42b7/verify_delta.py`); the strong-census and full-sweep versions
+of the new gates rerun on the new caches; all five round-1 mutants
+rebuilt from the REPAIRED source and rerun; the d42a committed L1
+census consulted for calibration. Nothing modified except this
+appended section.
+
+## DELTA VERDICT: 0 BLOCKER / 0 MAJOR / 1 minor / 3 nits —
+## CLEAN ON D-1 (one bookkeeping touch); the mathematics is closed
+
+## 1. Repairs verified, point by point (all referee-recomputed)
+
+- **R1/M1 (GG4a) — DISCHARGED.** The components are now GENERATED:
+  3-actor depth-3 enumerations in BOTH grammars, in-receipt. My
+  recount: ternary K3 = 36 histories with EVERY per-history mu ==
+  1/1728 individually (the receipt gates count + mass = 1/48, which
+  jointly pin the mean; the per-history value is hereby re-anchored
+  on the referee record), all 36 kernel-degenerate (3 singleton MIS,
+  K1 = 1/3 each); binary K3 = 0; generated paths 108 (ternary) / 36
+  (binary), every one at K1 = 2/3 vs K2 = 1/2 via the max-value +
+  |MIS| == 2 pinning (adequate: support in 2 MIS summing to 1 forces
+  {2/3, 1/3}). **Path-count reconciliation:** no discrepancy — the
+  receipt prints ternary/binary ("108/36"), my round-1 hand-off
+  listed binary/ternary ("36/108"); the assignment is identical
+  (ternary 108, binary 36; hand-derivations 18x6 and 6x6). The
+  abstract triples are retained and now labeled as controls (GG4).
+- **R2/M2 (GG3b) — DISCHARGED 3 of 5 (see D-1).** Density: the
+  receipt's gate is the full pinned law (tot == 1 + k_blind/4 with
+  every blind group exactly 1/4, own-view blindness per actor-point)
+  — my independent own-view recomputation agrees family-wide, both
+  grammars. L1: the receipt's l1_gate is a VERBATIM port of the d42a
+  committed census ("L1 live-triple uniqueness — identity lemma for
+  ckeys", d42a receipt lines 348–356) — so it IS the established
+  census, correctly ported; calibration note N1 below records that
+  this census form keys triples while the A8 THEOREM keys (actor,
+  base). Iff: the three named-pair instances ((0,1) both grammars +
+  the ternary (0,2)) verified; my FULL sweep (every payload pair
+  derived from live structure, including ternary (1,2) and reversed
+  assignments) passes on the new caches — the named instances are a
+  sound subsample. **Ratio locality and fork-freeness are NOT in the
+  repaired receipt** (verified semantically — the only gate bodies
+  are density_gate/l1_gate/iff_gate + GG3c anchors; the grep hits on
+  "ratio" are substrings of "generation"/"arbitration"). Both rerun
+  green by the referee on the new caches (ratio-locality 28/90
+  tested 0/0; fork sweep 0). This is D-1.
+- **R3/B1 (GG5) — DISCHARGED.** The table is mechanical: every
+  status string is computed from its row's gate boolean (code-read:
+  rows/toy lists of (name, gate-outcome) pairs; all_rows enters the
+  GG5 check; the SHAPE-DEPENDENT row is tied to GG4a's deg3/pok3).
+  An unearned row CANNOT print, and the FAILED path is demonstrated
+  live: mutant E's rerun prints "pair-arb iff sweeps ..... FAILED"
+  in the table while other rows keep earned statuses, GG5 fails,
+  exit 1. The triangle row is now "0 vs 36 generated" and gated by
+  GG4a's censuses — earned.
+- **R4/M3 (GG3c) — DISCHARGED.** Winner-weight anchor verified: at
+  the seed pair exactly 4 pair-arb candidates (2 initiators x 2
+  winners — event identity forces the full set at len 4), each
+  exactly 1/8. **Blind mass = 14 CONFIRMED with anatomy:** 14 = 28
+  live-pair histories x 1/2 cache-sum each (4 depth-2 conflict pairs
+  + 24 pair-plus-idle depth-3 histories; note the quantity is a
+  cache-weight sum, not a mu-mass — correctly named "exact" and
+  gated nonzero). Families 215/405 now anchored in-gate. The ladder
+  spectra histograms remain print-only, but the density gate now
+  checks every actor-point's tot against its own-view k — pointwise
+  stronger than anchoring the histogram; accepted.
+- **Mutant reruns (the round-1 escapees):** B (kernel 3:1,
+  group-sums preserved) — round 1 exit 0, now **exit 1 at GG3c
+  alone** (the designed anchor). E (blind pair-arbitration deleted)
+  — round 1 exit 0, now **exit 1 at FOUR gates** (GG3b iff, GG5
+  mechanical table, GG3c blind mass, GG6 OF-1/2 > 0): defense in
+  depth. A, C, D still exit 1 (A now dies at four gates including
+  GG4a — the alphabet is visible to the generated census too).
+- **GG6 (the F6 minor) — SATISFIED.** The label now carries the
+  affine-readout disclosure (spectrum {1/3, 2/3, 1}; the
+  binary/ternary difference IS the blind-join mass; no dimension
+  verdict); OF-1/2 printed exactly (1/1542, 1/1158); the chain
+  declared in-family at mu 3/128; the round-1 "strictly below"
+  decoration is gone, replaced by OF-1/2 > 0 — which my
+  decomposition confirms is a genuine join-mass anchor (mutant E
+  lands on OF = 1/2 exactly and dies here). Verified arithmetic:
+  masses {1/3: 6, 2/3: 1/32, 1: 2} and {6, 1/24, 2}; the fixture
+  coincidence 3·m(OF=1) == m(OF=1/3) makes OF-1/2 = mj/(6·wsum)
+  a PURE join-mass readout at this depth — the disclosure's claim
+  is exact, not approximate.
+- **Plumbing:** 3/3 reruns byte-identical to the committed .out,
+  exit 0, 9/9; the round-1 report untouched since #314 (git-diff
+  empty); worktree clean.
+
+## 2. Delta findings
+
+**D-1 (minor, the one open item).** Two of the five runnable pinned
+gates remain undischarged IN-RECEIPT: ratio locality (pin §4-GG3
+names it) and the per-observer fork-freeness sweep (pin §2-U1).
+Both are green on the referee record, twice (round 1 and this
+delta, on the new caches). The receipt's own GG3b label honestly
+names only the three it runs — but **LOG #315 says "the five
+runnable pinned gates discharged both grammars", which overcounts
+by two.** Under the append-only convention this is the #303/#304
+precedent class (LOG claim vs artifact). Repair, either arm
+acceptable: (a) port the two sweeps (round-1 code, ~35 lines total,
+pre-verified green) and rerun; or (b) a forward-correction LOG
+entry stating the true count (three in-receipt: density, L1, iff)
+and declaring ratio locality + fork-freeness referee-carried with
+this report as the record. On (a) or (b), D-1 closes.
+
+**D-n1 (nit).** The bin-table census row still carries the
+uncomputed binary "4" in its name (gate backs the 12 and the mu
+values; the 4 is d42a-G2a-carried + referee-verified — one line
+would compute it).
+
+**D-n2 (nit).** GG4a gates path counts only as > 0 (108/36 are
+print-only; the per-path kernel sweep covers the substance; my
+recount anchors the values on this record).
+
+**D-n3 (nit).** Dead bindings persist (base_prop, base_cand, h3 —
+h3 sits under a "retained as controls" comment but is itself never
+used); the R5 recommendation to convert base_* into an in-receipt
+binary-equivalence gate remains open and remains a good idea.
+
+**N1 (calibration note, no conviction — corpus-wide).** The
+established L1 census form (d42a lines 348–356, ported here)
+verifies LIVE-TRIPLE uniqueness, which is A8's stated CONSEQUENCE
+("identity lemma for ckeys") and fires on the natural breakage
+(A3-blocker deletion reintroduces same-payload duplicates). It does
+not test the A8 theorem's own key: my probe shows it passes the
+A8-violating fake [(p,A,V0,0), (p,A,V0,1)] (distinct triples, same
+(actor, base)), which only a payload-refined blocker mutation could
+produce in-family. My strong census (keyed (actor, base) over ALL
+proposals) passes both families, both rounds. Recommend upgrading
+the census key corpus-wide at the next touch of either receipt; no
+current result depends on the difference.
+
+## 3. The coordinator's question 6 (GG1 slice)
+
+Full-depth closure need NOT be in-receipt for terminal: the d42a
+precedent gated the invariance battery + witness-point closure, not
+family-wide closure; the full-depth fact for BOTH grammars is on
+this record (round 1 §6.4: 501/965 extension points, 286/560
+nontrivial, 0 violations including mu invariance — a strictly
+stronger sweep than any committed gate), and the depth<=2 slice is
+itself pinned ("on the declared slice"). Non-blocking
+recommendation, standing: rename GG1's label word "closure" to what
+the gate computes (candidate-set gauge invariance), or add the
+3-line in-family membership check on the existing 93-point slice.
+
+## 4. Disposition
+
+DELTA-CLEAN ON D-1. Every repair is verified with independent
+recomputation; the two round-1 escape mutants die at the designed
+anchors; the mechanical table demonstrably cannot print an unearned
+status; the pilot's disclosure is exact arithmetic. One bookkeeping
+touch stands between this delta and terminal: close D-1 by arm (a)
+or (b). With D-1 closed, d42b7 TERMINAL is supported on this
+record: the d41b cross-cut executed with earned statuses — forms
+lifted two-of-two (ladder + density + closure-slice + L1 + iff),
+values toy-relative as pinned (4->12, 1/64->1/144, 0-vs-36
+triangles), kernel degeneracy GENERATED (36 at 1/48, all 1/3),
+discrimination component-shape-dependent, dimension pilot honest
+(affine-readout disclosure, verdict-free) — and the campaign closes
+to d42b5/d42b6 + paper 30 carrying the named residues (the
+carrier-level third grammar, the superset-generator condition at
+transport depths, h12's general-depth ladder constraint, and N1's
+census-key upgrade).

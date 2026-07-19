@@ -5680,3 +5680,27 @@ blind pair mass nonzero; families 215/405 anchored — the referee's
 kernel-ratio and delete-blind mutants now die). GG6 carries the
 affine-readout disclosure (the OF mean = a join-mass census readout;
 no dimension verdict). Seed-independent 0/83. Delta next.
+
+## 2026-07-18 — FORWARD CORRECTION of #315 + d42b7 TERMINAL
+## (LEDGER #316)
+CORRECTION (the #303/#304 precedent class, caught by the delta's
+semantic grep): #315's "five runnable pinned gates discharged" was
+an OVERCOUNT at commit time — only three were in-receipt (my "ratio"
+claims were substring hits of "generation"/"arbitration"). Taken the
+stronger repair arm: RATIO LOCALITY (the d42b3 G-L1 form; tested
+4/18 across the grammars, 0 violations) and delivery-free
+per-observer FORK-FREENESS (0 violations both) are now PORTED
+IN-RECEIPT — the five are true as of THIS commit, not #315. Nits
+applied: the binary census COMPUTED in-receipt (4, not carried);
+path counts anchored exactly (108/36); dead bindings removed. Delta
+highlights: blind mass 14 verified with anatomy (28 live-pair
+histories x 1/2); mutant B dies at GG3c alone, mutant E at FOUR
+gates (defense in depth); the paths "36/108 vs 108/36" print-order
+reconciled (same assignment). Rerun GREEN 9/9 seed-independent
+(0/83) VERIFIED pre-commit. d42b7 TERMINAL: the d41b cross-cut
+executed with earned statuses; named residues carried — the
+carrier-level THIRD grammar, the superset-generator condition at
+transport depths, h12, and the referee's (actor,base) census-key
+upgrade (corpus-wide note). THE CAMPAIGN BOARD: fronts 1-6 + the
+cross-cut ALL TERMINAL; remaining d42b5 (fronts 7-8) + d42b6
+(front 9) + paper 30.
