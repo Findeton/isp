@@ -6200,3 +6200,32 @@ actors for pure transport; 3-actor 2D through 10 events; 2-actor
 never by width); the D* instrument port-faithful digit-for-digit;
 the family sweep descriptors-only at its floor-dominated scale;
 multi-author arbitrations = the (provably minimal) untested corner.
+
+## 2026-07-19 — d43b + d43c round-1 rebuilds GREEN (LEDGER #343);
+## delta launched
+Both receipts rebuilt per the frozen d43bc round (applier-executed,
+verified; no referee anchor failed to reproduce). d43b (17 PASS):
+the delivered object = the UNIFORM-LOOKAHEAD INTRINSIC partition —
+stabilizes at SIX states at t = 2 (|P_t| window tables anchored;
+blockwise agreement t = 2, 3, 4); the exact 6x6 transfer
+well-defined on all 215 members and equal to the referee matrix
+(row sums 2,2,2,5/2,2,2 — the conflict state carries the 5/4
+excess); MG3: Tarjan gives transient {0,1,3} + closed {2,4,5};
+LAMBDA = 2 EXACT with T f = 2 f at f = (4/3,4/3,1,7/3,1,1) and the
+forced transient extension; MG4 ROOT == RENEWAL (class 0 at every
+t); MG5 mass-transport EXACT with pi = (1/4,1/4,1/2). The old
+boundary-marked 17/23/29 computation retained as the GATED NEGATIVE
+CONTROL (pad-shift 12,942/0; the 17->6 stratification map onto;
+gauge invariance 5,548 + 1,565 classes / 0). RESIDUE 1 IS DECIDED
+ON THE COMPUTED WINDOW; the renewal-pumping closure theorem (two
+exhibited ingredients) = the named successor. d43c (11 PASS): the
+{V_C} family CONSTRUCTED — V_pair (4x1) and V_single (2x1) as
+Acceptance o OpeningClick; isometry defects 0.0 at 1e-40; Born =
+K1 exactly (1/2-1/2 pair; 1 singleton); THE MENU RECONSTRUCTION:
+(past-local index x budget share) x (the SAME cut-independent
+matrices at both cuts) == the committed menus exactly (1/4 early;
+1/4 + 1/8 + 1/8 at the join); "the two residues are now ONE" and
+"answered" WITHDRAWN (note §5 C3) — the honest statement: horn 2's
+open arm TYPED AND CONSTRUCTED at fixture scale; E-A exclusion
+stands strengthened. Both deterministic across seeds; the round's
+slip-through mutants now exit 1. Delta to the d43bc referee next.

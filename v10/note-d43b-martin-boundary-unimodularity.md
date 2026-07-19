@@ -78,3 +78,88 @@ the extended transport grammar's chain is the named successor. A
 closure result decides residue 1 AT THIS GRAMMAR'S SCOPE (two-of-two
 breadth discipline applies); the infinite-volume claim for the
 physical law inherits only the FORM. Hegerfeldt untouched.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at LOG #339;
+## report: reviews/d43bc-round1-hostile-review.md)
+
+**A1 (F-B1, BLOCKER — owned): the pinned §2 map was never built,
+and fails its own anchor clause.** The receipt substituted the
+boundary-marked truncation refinement (the d42b56-S3 algorithm
+re-run at depths 4/5/6) for §2's intrinsic frontier map, so MG1
+gated the algorithm's self-reproduction — circular as an anchor.
+And §2's anchor clause is UNSATISFIABLE for the pinned map,
+provably from the committed data: by the pad-shift theorem
+(appending a noop leaves the candidate menu identical — events and
+weights — family-wide; 12,942 checks, 0 violations) any
+horizon-free map puts [], [n], [nn], [nnn], [nnnn] in ONE state
+where the committed 17 assigns FIVE distinct blocks, and co-classes
+H3 with [nnn] (equal remaining horizon, not equal structure) — so
+the pinned map is COARSER than the 17 there; simultaneously the 17
+merges structurally distinct states in three mixing blocks ({0,4}
+x2, {1,5} x1) — FINER there. Forward correction to §2 and LOG #330:
+the committed 17 is a truncation-stratified object of the depth-4
+complex — the intrinsic map must NOT reproduce it. The 17 remains
+the REGRESSION anchor for the truncation algorithm (d42b56-S3's own
+scope and its gated split witness survive untouched — the split is
+a genuine intrinsic split, classes 1 vs 5).
+
+**A2 (F-B2 — the round's central result reversed): the 17/23/29
+growth was HORIZON STRATIFICATION, not the Martin datum.** All nine
+run-6 states realized only at len >= 5 are noop-padded copies of
+len<=4 structures (the pad-shift theorem); the boundary-coarse
+counts grow +6 per depth — exactly one new stratum per intrinsic
+class per level. The TRUE object is the referee's UNIFORM-LOOKAHEAD
+INTRINSIC partition (P_0 = menu shape; P_{t+1} = one probabilistic-
+bisimulation refinement; NO boundary marker; horizon uniform in h):
+it STABILIZES AT SIX STATES at lookahead t = 2 on every window
+computable from the receipt's own cache (|P_t| tables [4,4,5,5,5] /
+[4,5,6,6] / [4,5,6] at cutoffs 2/3/4; P_t = P_{t+1} blockwise for
+t >= 2), with depth-7 confirmation (179,783 histories; P_3 == P_2
+on len<=4, still six). The six states, by shortest representatives:
+0 quiescent/shared base (root, all pads, H3, renewals); 1 one live
+proposal; 2 two non-conflicting live proposals; 3 THE CONFLICT PAIR
+([pA0, pB1]); 4 diverged holdings, quiescent; 5 diverged holdings,
+one live proposal.
+
+**A3 (supersession of the delivered MG2 verdict): on the six-state
+object MG3-MG5 DECIDE residue 1 on the window.** The exact 6x6
+transfer is well-defined per state (rows constant on all 215 len<=3
+members; row sums = the per-cut N, 5/2 at the conflict state);
+lambda = 2 EXACTLY (u = lambda - 3/2 satisfies u^2 = 1/4 — rational
+spectrum); ONE dominant class {2,4,5} (Tarjan; the transient radius
+3/2 + (1/32)^(1/3) ~ 1.815 < 2, certified exactly by the
+nonnegative resolvent (2I - M_t)^{-1}); positive eigenvector
+f = (4,4,3,7,3,3)/3 with the transient extension FORCED by the
+resolvent — existence AND uniqueness up to scale; ROOT = RENEWAL
+STATE (MG4 = YES: P_t([]) = P_t(H3) at every t — the boundary-
+frozen split was the truncation marker's artifact); the completed
+transfer per-state normalized exactly (conflict row {1/7, 3/4,
+3/28}); mass-transport EXACT with pi = (1,1,2)/4 on the dominant
+class — no residual (MG5). Scope, stated honestly: closure is
+VERIFIED on every computed window; the all-depth closure statement
+awaits the RENEWAL-PUMPING CLOSURE THEOREM — the named successor —
+whose two ingredients are now exhibited exactly: (i) the pad-shift
+identity (gated in-receipt, 12,942/0) and (ii) the renewal subtree
+isomorphism (H3's subtree isomorphic to the root tree to depth 3
+under base substitution, 215 nodes, with the 144-point clean-slate
+renewal census — referee-verified). Residue 1's Perron reduction is
+DECIDED at this grammar's scope on that window; the Martin-boundary
+import [I1] machinery is not needed here — it relocates to the
+d42b1 transport grammar, where deliveries reopen the absorbing
+sector and the class structure will change.
+
+**A4 (F-B3/F-B5/F-B6 — the gate discipline): the previously-
+check(True) gates are replaced by mechanical ones.** Round 1 proved
+the delivered datum was ungated (MG2 and MG2-outcome were
+unconditional passes; a one-character cutoff mutant printed
+corrupted counts inside a self-contradictory verdict and exited
+green; MG4 in the unreached branch was check(True)). The rebuilt
+receipt anchors every delivered count as an expectation (17/23/29;
+induced 19/20/25), gates refinement monotonicity, codes THREE
+consecutive intrinsic agreements (t = 2, 3, 4) in place of the
+half-coded margin-1 criterion, gates MG4 as a real state equality,
+re-gates gauge constancy at the new depths (5,548 canonical classes
+at depth 6, 1,565 at depth 5, 0 violations), and retains the old
+label-blind computation only as the documented NEGATIVE CONTROL
+with the 17 -> 6 stratification map gated (14 pure blocks + the
+three mixing blocks, onto all six). No check(True) remains.
