@@ -109,3 +109,46 @@ requires one, declared if so).  The d42b1 committed layer,
 path-anchored.  Caps declared and printed.  Minkowski-dimension
 certificates and statistical estimators are successors under §1's
 doctrine, not touched here.
+
+## 6. First-run amendments (2026-07-19, pre-round; declared
+## deviations)
+
+**A1 (the ZG1 dichotomy resolved by a THIRD horn).** The pin's N = 3
+dichotomy (>10 events OR a blocking clause) resolved sharper:
+Charron-Bost's pattern is FULLY ADMISSIBLE at N = 3, 4, 5 (no
+clause fires; the blocking-clause prober is live, cross-checked on
+synthetic violations) yet DIMENSION-SILENT — the designated events
+violate the crown at 5/9/14 pairs (diagonal hits u_i > a_i plus a
+total chain on the uppers) and each whole CB(N) poset is dim <= 2,
+so by monotonicity no dimension-N induced subposet exists. Sharp
+fact: each CB(N) poset contains exactly ONE N-antichain (a crown
+needs two disjoint). The divergence with her model is SEMANTIC, not
+legislative: her one-way send/receive vs the grammar's two-carrier
+JOIN BACK-FLOW (a delivery joins BOTH registers, creating
+comparability into the sender's later cone). At N = 3 the port
+sits at 9 <= 10 events and is 2D — consistent with the frozen d43d
+round; the >10-events horn survives conditionally.
+
+**A2 (the constructor's design fact).** The pin-anticipated
+single-hop hub design PROVABLY LEAKS through sender-wire reuse
+(comparabilities among uppers); the working constructor is the
+TWO-HOP DEDICATED-COURIER FIREWALL: each upper's sender receives
+its n-1 minima chains through dedicated couriers, so no crown
+carrier appears in another crown element's cone. f(n): actors
+n^2 + 3n; events 2n^2; measured width 2n - 1; uniform exact weight
+1/(4(n^2 + 3n - 1)) per event (1/68, 1/108, 1/156, 1/212 at
+n = 3, 4, 5, 6).
+
+**A3 (width oracle).** Brute-force width is infeasible above 16
+elements; the receipt adds Koenig/Dilworth matching width,
+CROSS-GATED against the ported brute on the small cases.
+
+**A4 (caps).** n = 6 completed (no cap invoked); the 4,231-poset
+n = 5 oracle sweep cited to the committed record, not rerun; the
+219 sweep re-gated in-receipt.
+
+**A5 (mutation sanity, scratchpad-only).** Constructor corruption
+lands in ZG4 ceiling outcomes AT EXIT 0 — the #354 witness-branch
+binding is genuinely wired (both horns are delivered outcomes);
+oracle/weight corruption exits 1 as breakage. §1's scoping held:
+no Minkowski/spacetime-dimension claim anywhere in the receipt.

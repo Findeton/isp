@@ -6671,3 +6671,36 @@ creating 4(3m^2-1)(3m^2-4). The two crossings have DIFFERENT
 channel origins. YG0 regression: 7 committed grid masses reproduced
 exactly. Note §5 A1-A2. ROUND 1 COMMISSIONED next. D45b/D44e/D44a
 builds in flight.
+
+## 2026-07-19 — D45b receipt GREEN 40/40 (LEDGER #358); round 1
+## commissioned. THE WITNESS HORN: UNBOUNDED ORDER DIMENSION —
+## S_n AT EVERY TESTED n BY ONE UNIFORM CONSTRUCTOR
+Build delivered (builder-agent; verified pre-commit: independent
+rerun exit 0 BYTE-IDENTICAL; 40 PASS / 0 FAIL + 9 delivered
+outcomes; seeds 0/7 + unseeded byte-identical). THE HEADLINE: the
+transport grammar is NOT dimension-confined — S_n is realized as an
+induced subposet of an admissible pure-transport record at EVERY
+n in {3, 4, 5, 6} by ONE uniform constructor (the two-hop
+dedicated-courier firewall; the single-hop hub design provably
+leaks through sender-wire reuse): actors n^2 + 3n, events 2n^2,
+width 2n - 1, uniform exact weight 1/(4(n^2 + 3n - 1)); every event
+admission-checked; crown carrier pairs gated pairwise disjoint;
+induced matrices == the S_n references exactly; n = 3 lands in the
+W6 class by matrix equality. THE ALL-N SCHEMA delivered (closed
+forms gated at 4/4 base cases; step n -> n+1 = +2n+4 actors, +4n+2
+events; prefix-blind admissibility schema) — the §7 proof note is
+the author's at conversion. THE NECESSARY CONDITION FOR ANY
+ROUND-CONE (>= 2+1) READING HOLDS at the tested ladder — as ORDER
+dimension only, per the pin §1 doctrine (no spacetime claim
+anywhere; the Minkowski-dimension instruments remain successors).
+ZG1: the Charron-Bost port is FULLY ADMISSIBLE at N = 3, 4, 5 yet
+DIMENSION-SILENT (her designated events violate the crown; each
+CB(N) poset is 2D with exactly ONE N-antichain where a crown needs
+two) — her f(N) = N route is closed by the grammar's two-carrier
+JOIN BACK-FLOW semantics, NOT by an admission clause; the crown
+price is paid in dedicated couriers (f(n) quadratic, not linear).
+The pin's N = 3 dichotomy resolved by this third horn. Note §6
+A1-A5 (incl. the Koenig/Dilworth width oracle cross-gated; n = 6
+uncapped; the #354 witness-branch binding verified genuinely wired
+by mutation). ROUND 1 COMMISSIONED next. D44e/D44a builds + the
+D45a round in flight.

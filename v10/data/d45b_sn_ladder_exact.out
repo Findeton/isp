@@ -1,0 +1,372 @@
+[d45b — the S_n ladder: polyhedral confinement or unbounded
+  clock complexity]
+  banner: ORDER-dimension claims ONLY (pin SS1 binds: a
+  1+1-escape detector and clock-complexity grade — NO
+  Minkowski/spacetime-dimension claim anywhere in this
+  receipt; unbounded S_n growth is NECESSARY-not-sufficient
+  for any >= 2+1 reading; the physical ladder is successor
+  work).  The d42b1 transport layer exec'd path-anchored from
+  the committed receipt (single source); the g2 dim<=2 oracle
+  + brute width ported code-faithfully from the committed
+  d43d receipt; Koenig/Dilworth matching width cross-gated on
+  every candidate with <= 16 elements plus the full 219-poset
+  n=4 sweep, matching-only beyond (declared).  EXACT
+  Fractions.  Pure transport: deliveries + idles only — no
+  arbs (d44c settled their confinement), no merges.  Caps
+  declared in-line; ZG2 runs n = 3, 4, 5, 6 (the n = 6 arm
+  completed — no cap invoked).  EXIT DESIGN (#354 binding):
+  witness and ceiling horns are BOTH exit-0 delivered
+  outcomes; exit 1 only on anchor/oracle/admission-internal
+  breakage.  dim(S_n) = n is CITED [LITERATURE], not
+  re-proved; the dim<=2 oracle decides the mechanical gates.
+  [PASS] ANCHOR A1: the committed d42b1 transport layer exec'd path-anchored (prefix marker found; all required symbols bound; genesis V0 == ('v', 'v0'); delivery carriers regs_of(('d', s, r, v)) == {s, r})  (marker at char 16129; source lines = 959)
+[ZG0 re-anchor: oracle, width, W6 regression, S_n references]
+  [PASS] ZG0.1 ORACLE ANCHORS: S3 (6 elements) REJECTED by the ported dim<=2 oracle; all 219 labeled 4-posets PASS (in-receipt recompute); the 4,231-poset n=5 sweep cited from the committed d43d NG1 (declared, not rerun)  (S3 dim<=2 = False; n=4 posets = 219, all pass = True)
+  [PASS] ZG0.2 WIDTH CROSS-GATE: Koenig/Dilworth matching width == ported brute width on ALL 219 labeled 4-posets  (219/219 equal)
+  [PASS] ZG0.3 W6 REGRESSION (the frozen d43d witness): six genesis deliveries among six actors, every event admissible at exactly 1/20 AND present in the committed candidates_for superset; event poset preds == S3; poset matrix == crown_ref(3) EXACTLY; FAILS dim<=2; width 3 (both diagnostics)  (preds = [[], [], [], [1, 2], [0, 2], [0, 1]]; dim<=2 = False)
+  [PASS] ZG0.4 S_n REFERENCE MATRICES n = 3..6: constructed combinatorially (2n elements; upper_i > min_j iff j != i; no other relations); defining pairwise relations gated by independent re-derivation + degree/matching structure; ALL fail dim<=2 (dim(S_n) = n >= 3 cited [LITERATURE]); width == n on both diagnostics  (S3: defining-relations True, dim<=2 False, width 3 (brute 3) | S4: defining-relations True, dim<=2 False, width 4 (brute 4) | S5: defining-relations True, dim<=2 False, width 5 (brute 5) | S6: defining-relations True, dim<=2 False, width 6 (brute 6))
+  ZG0 note (the n < 6 vacuity floor, cited): every poset on <= 5 elements has dim <= 2 (committed d43d NG1: 219 labeled 4-posets re-gated here + 4,231 labeled 5-posets in the committed .out) — so 2n = 6 crown events is the SIZE FLOOR for any dimension witness; W6 sits exactly on it.
+[ZG1 the Charron-Bost port: her dimension-N pattern at N actors, N = 3, 4, 5]
+  Pattern (reconstructed, the natural message-pattern family [LITERATURE: Charron-Bost 1991 — for every N there are N-process point-to-point computations of causal-order dimension N]): processes P_1..P_N; min block a_i = the first event on P_i (an idle mark); then for each i a ROUND targeting hub P_{i-1 (cyclic)}: every process j not in {i, hub} sends its state to the hub (one delivery each — the grammar's fused send/receive), so the upper mark u_i (an idle on the hub) sits above the min blocks of all j != i; P_i itself never contacts the hub before u_i, so a_i should stay outside u_i's cone.  In her one-way-message model this family forces dimension N.  Every event admission-checked via the committed admissible() with its exact weight.
+  [PASS] ZG1.0 BLOCKING-CLAUSE MACHINERY LIVE: the clause prober names d-clauses 1/2/3 on synthetic violations, each cross-checked REJECTED by the committed admissible(); prober-vs-admissible consistency is further gated on every ZG1/ZG2 event below  (('d', 'm0', 'm0')... -> d-clause 1 (self-delivery barred: r == s); ('d', 'm0', 'ZZ')... -> d-clause 2 (receiver not an actor: r not in actors); ('d', 'm0', 'm1')... -> d-clause 3 ((r, v) not in the sender-view deliver options))
+  ---- ZG1 N = 3 --------------------------------------------
+    e00 ('n', 'P1')  q = 1/2  a_1
+    e01 ('n', 'P2')  q = 1/2  a_2
+    e02 ('n', 'P3')  q = 1/2  a_3
+    e03 ('d', 'P2', 'P3', ('v', 'v0'))  q = 1/8
+    e04 ('n', 'P3')  q = 1/2  u_1
+    e05 ('d', 'P3', 'P1', ('v', 'v0'))  q = 1/8
+    e06 ('n', 'P1')  q = 1/2  u_2
+    e07 ('d', 'P1', 'P2', ('v', 'v0'))  q = 1/8
+    e08 ('n', 'P2')  q = 1/2  u_3
+  [PASS] ZG1.3a EVERY EVENT ADMISSIBLE at N = 3 (9 events: 6 idles at exactly 1/2, 3 deliveries at exactly 1/8); prober agrees with admissible() on every event; NO blocking clause fired  (first_block = None)
+    marks: a_i = e00..e02 (idles on P_1..P_3); u_1 = e04 (idle on P3); u_2 = e06 (idle on P1); u_3 = e08 (idle on P2)
+    designated-marks induced matrix vs S_3 reference: 5 violated pairs:
+      a_2 < u_2: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      a_3 < u_3: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      u_1 < u_2: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_1 < u_3: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_2 < u_3: FORBIDDEN comparability (uppers must be pairwise incomparable)
+    whole-poset dim<=2 = True; width = 3 (brute 3)
+    direct induced-S_3 search: 3-antichain census = 1; crowns found = 0 (a crown needs TWO disjoint 3-antichains)
+  [PASS] ZG1.3b INTERNAL CONSISTENCY at N = 3: the dim<=2 certificate and the direct crown search agree (dim<=2 TRUE would be CONTRADICTED by any induced S_N, dimension monotone under induced subposets [LITERATURE, standard]); width diagnostics agree where both run  (dim<=2 = True; crowns = None; antichains = 1)
+  [PASS] ZG1.3c width-vs-brute agreement at N = 3  (width = 3, brute = 3)
+  [OUTCOME ZG1 N=3] ADMISSIBLE — the admission-clause horn is REFUTED at N = 3: all 9 events admitted with exact weights; the pattern's designated marks FAIL the crown by 5 violated pairs (the fused delivery back-flows the hub's accumulated past into every later contact); the whole 9-event poset has dim<=2 = True, so NO induced subposet of any dimension > 2 exists (monotonicity) — her dimension-3 lower bound does NOT transfer under the port.
+  [OUTCOME ZG1 N=3 DICHOTOMY (pin SS3)] DECIDED: the admission-clause horn is DEAD (all 9 events admitted; the prober names no clause).  The port sits at 9 <= 10 events and is 2D — exactly what the frozen d43d round (3-actor transport 2D through 10 events) requires; so at 3 actors any realization of her dimension-3 order needs > 10 events IF it exists at all — and the divergence mechanism is SEMANTIC, not admissive: her one-way send/receive splits into two events on two wires; the grammar's delivery is ONE two-carrier join, so every contact back-flows the receiver's accumulated past into the sender's future cone (the violated pairs above are precisely the back-flow edges).  ZG2 shows where the crown price is actually paid: dedicated couriers, not more rounds.
+  ---- ZG1 N = 4 --------------------------------------------
+    e00 ('n', 'P1')  q = 1/2  a_1
+    e01 ('n', 'P2')  q = 1/2  a_2
+    e02 ('n', 'P3')  q = 1/2  a_3
+    e03 ('n', 'P4')  q = 1/2  a_4
+    e04 ('d', 'P2', 'P4', ('v', 'v0'))  q = 1/12
+    e05 ('d', 'P3', 'P4', ('v', 'v0'))  q = 1/12
+    e06 ('n', 'P4')  q = 1/2  u_1
+    e07 ('d', 'P3', 'P1', ('v', 'v0'))  q = 1/12
+    e08 ('d', 'P4', 'P1', ('v', 'v0'))  q = 1/12
+    e09 ('n', 'P1')  q = 1/2  u_2
+    e10 ('d', 'P1', 'P2', ('v', 'v0'))  q = 1/12
+    e11 ('d', 'P4', 'P2', ('v', 'v0'))  q = 1/12
+    e12 ('n', 'P2')  q = 1/2  u_3
+    e13 ('d', 'P1', 'P3', ('v', 'v0'))  q = 1/12
+    e14 ('d', 'P2', 'P3', ('v', 'v0'))  q = 1/12
+    e15 ('n', 'P3')  q = 1/2  u_4
+  [PASS] ZG1.4a EVERY EVENT ADMISSIBLE at N = 4 (16 events: 8 idles at exactly 1/2, 8 deliveries at exactly 1/12); prober agrees with admissible() on every event; NO blocking clause fired  (first_block = None)
+    marks: a_i = e00..e03 (idles on P_1..P_4); u_1 = e06 (idle on P4); u_2 = e09 (idle on P1); u_3 = e12 (idle on P2); u_4 = e15 (idle on P3)
+    designated-marks induced matrix vs S_4 reference: 9 violated pairs:
+      a_2 < u_2: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      a_3 < u_3: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      a_4 < u_4: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      u_1 < u_2: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_1 < u_3: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_1 < u_4: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_2 < u_3: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_2 < u_4: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_3 < u_4: FORBIDDEN comparability (uppers must be pairwise incomparable)
+    whole-poset dim<=2 = True; width = 4 (brute 4)
+    direct induced-S_4 search: 4-antichain census = 1; crowns found = 0 (a crown needs TWO disjoint 4-antichains)
+  [PASS] ZG1.4b INTERNAL CONSISTENCY at N = 4: the dim<=2 certificate and the direct crown search agree (dim<=2 TRUE would be CONTRADICTED by any induced S_N, dimension monotone under induced subposets [LITERATURE, standard]); width diagnostics agree where both run  (dim<=2 = True; crowns = None; antichains = 1)
+  [PASS] ZG1.4c width-vs-brute agreement at N = 4  (width = 4, brute = 4)
+  [OUTCOME ZG1 N=4] ADMISSIBLE — the admission-clause horn is REFUTED at N = 4: all 16 events admitted with exact weights; the pattern's designated marks FAIL the crown by 9 violated pairs (the fused delivery back-flows the hub's accumulated past into every later contact); the whole 16-event poset has dim<=2 = True, so NO induced subposet of any dimension > 2 exists (monotonicity) — her dimension-4 lower bound does NOT transfer under the port.
+  ---- ZG1 N = 5 --------------------------------------------
+    e00 ('n', 'P1')  q = 1/2  a_1
+    e01 ('n', 'P2')  q = 1/2  a_2
+    e02 ('n', 'P3')  q = 1/2  a_3
+    e03 ('n', 'P4')  q = 1/2  a_4
+    e04 ('n', 'P5')  q = 1/2  a_5
+    e05 ('d', 'P2', 'P5', ('v', 'v0'))  q = 1/16
+    e06 ('d', 'P3', 'P5', ('v', 'v0'))  q = 1/16
+    e07 ('d', 'P4', 'P5', ('v', 'v0'))  q = 1/16
+    e08 ('n', 'P5')  q = 1/2  u_1
+    e09 ('d', 'P3', 'P1', ('v', 'v0'))  q = 1/16
+    e10 ('d', 'P4', 'P1', ('v', 'v0'))  q = 1/16
+    e11 ('d', 'P5', 'P1', ('v', 'v0'))  q = 1/16
+    e12 ('n', 'P1')  q = 1/2  u_2
+    e13 ('d', 'P1', 'P2', ('v', 'v0'))  q = 1/16
+    e14 ('d', 'P4', 'P2', ('v', 'v0'))  q = 1/16
+    e15 ('d', 'P5', 'P2', ('v', 'v0'))  q = 1/16
+    e16 ('n', 'P2')  q = 1/2  u_3
+    e17 ('d', 'P1', 'P3', ('v', 'v0'))  q = 1/16
+    e18 ('d', 'P2', 'P3', ('v', 'v0'))  q = 1/16
+    e19 ('d', 'P5', 'P3', ('v', 'v0'))  q = 1/16
+    e20 ('n', 'P3')  q = 1/2  u_4
+    e21 ('d', 'P1', 'P4', ('v', 'v0'))  q = 1/16
+    e22 ('d', 'P2', 'P4', ('v', 'v0'))  q = 1/16
+    e23 ('d', 'P3', 'P4', ('v', 'v0'))  q = 1/16
+    e24 ('n', 'P4')  q = 1/2  u_5
+  [PASS] ZG1.5a EVERY EVENT ADMISSIBLE at N = 5 (25 events: 10 idles at exactly 1/2, 15 deliveries at exactly 1/16); prober agrees with admissible() on every event; NO blocking clause fired  (first_block = None)
+    marks: a_i = e00..e04 (idles on P_1..P_5); u_1 = e08 (idle on P5); u_2 = e12 (idle on P1); u_3 = e16 (idle on P2); u_4 = e20 (idle on P3); u_5 = e24 (idle on P4)
+    designated-marks induced matrix vs S_5 reference: 14 violated pairs:
+      a_2 < u_2: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      a_3 < u_3: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      a_4 < u_4: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      a_5 < u_5: FORBIDDEN comparability (crown diagonal must stay incomparable)
+      u_1 < u_2: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_1 < u_3: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_1 < u_4: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_1 < u_5: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_2 < u_3: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_2 < u_4: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_2 < u_5: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_3 < u_4: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_3 < u_5: FORBIDDEN comparability (uppers must be pairwise incomparable)
+      u_4 < u_5: FORBIDDEN comparability (uppers must be pairwise incomparable)
+    whole-poset dim<=2 = True; width = 5 (matching only; > 16 elements, declared)
+    direct induced-S_5 search: 5-antichain census = 1; crowns found = 0 (a crown needs TWO disjoint 5-antichains)
+  [PASS] ZG1.5b INTERNAL CONSISTENCY at N = 5: the dim<=2 certificate and the direct crown search agree (dim<=2 TRUE would be CONTRADICTED by any induced S_N, dimension monotone under induced subposets [LITERATURE, standard]); width diagnostics agree where both run  (dim<=2 = True; crowns = None; antichains = 1)
+  [PASS] ZG1.5c width diagnostic delivered at N = 5 (matching-only beyond 16 elements, declared)  (width = 5, brute = None)
+  [OUTCOME ZG1 N=5] ADMISSIBLE — the admission-clause horn is REFUTED at N = 5: all 25 events admitted with exact weights; the pattern's designated marks FAIL the crown by 14 violated pairs (the fused delivery back-flows the hub's accumulated past into every later contact); the whole 25-event poset has dim<=2 = True, so NO induced subposet of any dimension > 2 exists (monotonicity) — her dimension-5 lower bound does NOT transfer under the port.
+[ZG2 the uniform family W(n): S_n as an INDUCED SUBPOSET of a generated transport record, n = 3, 4, 5, 6]
+  Constructor (two-hop dedicated-courier firewall; every event a genesis delivery): actors m_j, M_j (minima wire pairs), c_i_j (one dedicated courier per (upper i, minimum j != i)), h_i (upper hubs), t_i (upper targets) — n^2 + 3n actors.  Events in order: MIN_j = ('d', m_j, M_j) [n crown minima, pairwise-disjoint carrier pairs]; hop 1 PU(i,j) = ('d', m_j, c_i_j) for j != i [each sender wire m_j feeds only FRESH couriers, so wire m_j's cone stays {MIN_j + its own pickups} — no foreign minima back-flow]; hop 2 SH(i,j) = ('d', c_i_j, h_i) [hub h_i accumulates exactly the minima j != i]; U_i = ('d', h_i, t_i) [n crown uppers, pairwise-disjoint carrier pairs, disjoint from all minima pairs].  2n^2 events.  Certification is by INDUCED SUBPOSET on the 2n crown events (pin SS3: for n >= 4 the uppers sit above n - 1 >= 3 minima — beyond the 2-carrier capacity — so intermediates are REQUIRED; dimension is monotone under induced subposets [LITERATURE, standard]; dim(S_n) = n cited, not re-proved).
+  ---- ZG2 n = 3 --------------------------------------------
+    e00 ('d', 'm0', 'M0', ('v', 'v0'))  q = 1/68  MIN_0
+    e01 ('d', 'm1', 'M1', ('v', 'v0'))  q = 1/68  MIN_1
+    e02 ('d', 'm2', 'M2', ('v', 'v0'))  q = 1/68  MIN_2
+    e03 ('d', 'm1', 'c0_1', ('v', 'v0'))  q = 1/68
+    e04 ('d', 'm2', 'c0_2', ('v', 'v0'))  q = 1/68
+    e05 ('d', 'm0', 'c1_0', ('v', 'v0'))  q = 1/68
+    e06 ('d', 'm2', 'c1_2', ('v', 'v0'))  q = 1/68
+    e07 ('d', 'm0', 'c2_0', ('v', 'v0'))  q = 1/68
+    e08 ('d', 'm1', 'c2_1', ('v', 'v0'))  q = 1/68
+    e09 ('d', 'c0_1', 'h0', ('v', 'v0'))  q = 1/68
+    e10 ('d', 'c0_2', 'h0', ('v', 'v0'))  q = 1/68
+    e11 ('d', 'c1_0', 'h1', ('v', 'v0'))  q = 1/68
+    e12 ('d', 'c1_2', 'h1', ('v', 'v0'))  q = 1/68
+    e13 ('d', 'c2_0', 'h2', ('v', 'v0'))  q = 1/68
+    e14 ('d', 'c2_1', 'h2', ('v', 'v0'))  q = 1/68
+    e15 ('d', 'h0', 't0', ('v', 'v0'))  q = 1/68  U_0
+    e16 ('d', 'h1', 't1', ('v', 'v0'))  q = 1/68  U_1
+    e17 ('d', 'h2', 't2', ('v', 'v0'))  q = 1/68  U_2
+    crown indices: minima = [0, 1, 2], uppers = [15, 16, 17]
+  [PASS] ZG2.3a EVERY EVENT ADMISSIBLE at n = 3: all 18 genesis deliveries admitted by the committed admissible() at the UNIFORM exact weight 1/(4(A-1)) = 1/68 (A = 18 actors; holdings stay {v0} everywhere); prober agrees on every event  (18 events x q = 1/68)
+  [PASS] ZG2.3b CROWN CARRIER DISCIPLINE at n = 3: the 2n crown events have pairwise-DISJOINT carrier pairs (regs_of gated — two deliveries sharing any carrier are comparable, so this is necessary for the crown's incomparabilities)  (2n = 6 carrier pairs pairwise disjoint)
+  [PASS] ZG2.3c THE INDUCED CROWN at n = 3: the full pairwise comparability matrix of the 6 designated events == the S_n reference EXACTLY (all 4n^2 entries)  (matrix 6x6 equal)
+  [PASS] ZG2.3d WHOLE-POSET DIMENSION GATE at n = 3: the full 18-event poset FAILS dim<=2 (consistent with the induced S_n + monotonicity; an oracle PASS here would be oracle/anchor breakage)  (dim<=2 = False)
+  [PASS] ZG2.3e WIDTH + MEASURE at n = 3: width >= n (sanity: dim <= width, so an S_n-dimension record NEEDS width >= n); mu = q^events exactly  (width = 5 (matching only; > 16 elements, declared); mu = (1/68)^18 (denominator 33 digits))
+  [OUTCOME ZG2 n=3] WITNESS — S_3 REALIZED as an induced subposet of an admissible pure-transport record: 18 actors, 18 events, width 5, every event at exact weight 1/68; the whole poset fails dim<=2 (order dimension >= 3 by monotonicity + dim(S_n) = n [LITERATURE]).
+  [PASS] ZG2.3f the n = 3 arm LANDS IN THE W6 CLASS (pin ZG2): W(3)'s induced crown matrix == crown_ref(3) == the committed W6 witness's full poset matrix — the same order S3, here realized through intermediates (W6 itself is the carrier-capacity-minimal member: 6 events, the ZG0 size floor)  (matrices equal)
+  ---- ZG2 n = 4 --------------------------------------------
+    e00 ('d', 'm0', 'M0', ('v', 'v0'))  q = 1/108  MIN_0
+    e01 ('d', 'm1', 'M1', ('v', 'v0'))  q = 1/108  MIN_1
+    e02 ('d', 'm2', 'M2', ('v', 'v0'))  q = 1/108  MIN_2
+    e03 ('d', 'm3', 'M3', ('v', 'v0'))  q = 1/108  MIN_3
+    e04 ('d', 'm1', 'c0_1', ('v', 'v0'))  q = 1/108
+    e05 ('d', 'm2', 'c0_2', ('v', 'v0'))  q = 1/108
+    e06 ('d', 'm3', 'c0_3', ('v', 'v0'))  q = 1/108
+    e07 ('d', 'm0', 'c1_0', ('v', 'v0'))  q = 1/108
+    e08 ('d', 'm2', 'c1_2', ('v', 'v0'))  q = 1/108
+    e09 ('d', 'm3', 'c1_3', ('v', 'v0'))  q = 1/108
+    e10 ('d', 'm0', 'c2_0', ('v', 'v0'))  q = 1/108
+    e11 ('d', 'm1', 'c2_1', ('v', 'v0'))  q = 1/108
+    e12 ('d', 'm3', 'c2_3', ('v', 'v0'))  q = 1/108
+    e13 ('d', 'm0', 'c3_0', ('v', 'v0'))  q = 1/108
+    e14 ('d', 'm1', 'c3_1', ('v', 'v0'))  q = 1/108
+    e15 ('d', 'm2', 'c3_2', ('v', 'v0'))  q = 1/108
+    e16 ('d', 'c0_1', 'h0', ('v', 'v0'))  q = 1/108
+    e17 ('d', 'c0_2', 'h0', ('v', 'v0'))  q = 1/108
+    e18 ('d', 'c0_3', 'h0', ('v', 'v0'))  q = 1/108
+    e19 ('d', 'c1_0', 'h1', ('v', 'v0'))  q = 1/108
+    e20 ('d', 'c1_2', 'h1', ('v', 'v0'))  q = 1/108
+    e21 ('d', 'c1_3', 'h1', ('v', 'v0'))  q = 1/108
+    e22 ('d', 'c2_0', 'h2', ('v', 'v0'))  q = 1/108
+    e23 ('d', 'c2_1', 'h2', ('v', 'v0'))  q = 1/108
+    e24 ('d', 'c2_3', 'h2', ('v', 'v0'))  q = 1/108
+    e25 ('d', 'c3_0', 'h3', ('v', 'v0'))  q = 1/108
+    e26 ('d', 'c3_1', 'h3', ('v', 'v0'))  q = 1/108
+    e27 ('d', 'c3_2', 'h3', ('v', 'v0'))  q = 1/108
+    e28 ('d', 'h0', 't0', ('v', 'v0'))  q = 1/108  U_0
+    e29 ('d', 'h1', 't1', ('v', 'v0'))  q = 1/108  U_1
+    e30 ('d', 'h2', 't2', ('v', 'v0'))  q = 1/108  U_2
+    e31 ('d', 'h3', 't3', ('v', 'v0'))  q = 1/108  U_3
+    crown indices: minima = [0, 1, 2, 3], uppers = [28, 29, 30, 31]
+  [PASS] ZG2.4a EVERY EVENT ADMISSIBLE at n = 4: all 32 genesis deliveries admitted by the committed admissible() at the UNIFORM exact weight 1/(4(A-1)) = 1/108 (A = 28 actors; holdings stay {v0} everywhere); prober agrees on every event  (32 events x q = 1/108)
+  [PASS] ZG2.4b CROWN CARRIER DISCIPLINE at n = 4: the 2n crown events have pairwise-DISJOINT carrier pairs (regs_of gated — two deliveries sharing any carrier are comparable, so this is necessary for the crown's incomparabilities)  (2n = 8 carrier pairs pairwise disjoint)
+  [PASS] ZG2.4c THE INDUCED CROWN at n = 4: the full pairwise comparability matrix of the 8 designated events == the S_n reference EXACTLY (all 4n^2 entries)  (matrix 8x8 equal)
+  [PASS] ZG2.4d WHOLE-POSET DIMENSION GATE at n = 4: the full 32-event poset FAILS dim<=2 (consistent with the induced S_n + monotonicity; an oracle PASS here would be oracle/anchor breakage)  (dim<=2 = False)
+  [PASS] ZG2.4e WIDTH + MEASURE at n = 4: width >= n (sanity: dim <= width, so an S_n-dimension record NEEDS width >= n); mu = q^events exactly  (width = 7 (matching only; > 16 elements, declared); mu = (1/108)^32 (denominator 66 digits))
+  [OUTCOME ZG2 n=4] WITNESS — S_4 REALIZED as an induced subposet of an admissible pure-transport record: 28 actors, 32 events, width 7, every event at exact weight 1/108; the whole poset fails dim<=2 (order dimension >= 4 by monotonicity + dim(S_n) = n [LITERATURE]).
+  ---- ZG2 n = 5 --------------------------------------------
+    e00 ('d', 'm0', 'M0', ('v', 'v0'))  q = 1/156  MIN_0
+    e01 ('d', 'm1', 'M1', ('v', 'v0'))  q = 1/156  MIN_1
+    e02 ('d', 'm2', 'M2', ('v', 'v0'))  q = 1/156  MIN_2
+    e03 ('d', 'm3', 'M3', ('v', 'v0'))  q = 1/156  MIN_3
+    e04 ('d', 'm4', 'M4', ('v', 'v0'))  q = 1/156  MIN_4
+    e05 ('d', 'm1', 'c0_1', ('v', 'v0'))  q = 1/156
+    e06 ('d', 'm2', 'c0_2', ('v', 'v0'))  q = 1/156
+    e07 ('d', 'm3', 'c0_3', ('v', 'v0'))  q = 1/156
+    e08 ('d', 'm4', 'c0_4', ('v', 'v0'))  q = 1/156
+    e09 ('d', 'm0', 'c1_0', ('v', 'v0'))  q = 1/156
+    e10 ('d', 'm2', 'c1_2', ('v', 'v0'))  q = 1/156
+    e11 ('d', 'm3', 'c1_3', ('v', 'v0'))  q = 1/156
+    e12 ('d', 'm4', 'c1_4', ('v', 'v0'))  q = 1/156
+    e13 ('d', 'm0', 'c2_0', ('v', 'v0'))  q = 1/156
+    e14 ('d', 'm1', 'c2_1', ('v', 'v0'))  q = 1/156
+    e15 ('d', 'm3', 'c2_3', ('v', 'v0'))  q = 1/156
+    e16 ('d', 'm4', 'c2_4', ('v', 'v0'))  q = 1/156
+    e17 ('d', 'm0', 'c3_0', ('v', 'v0'))  q = 1/156
+    e18 ('d', 'm1', 'c3_1', ('v', 'v0'))  q = 1/156
+    e19 ('d', 'm2', 'c3_2', ('v', 'v0'))  q = 1/156
+    e20 ('d', 'm4', 'c3_4', ('v', 'v0'))  q = 1/156
+    e21 ('d', 'm0', 'c4_0', ('v', 'v0'))  q = 1/156
+    e22 ('d', 'm1', 'c4_1', ('v', 'v0'))  q = 1/156
+    e23 ('d', 'm2', 'c4_2', ('v', 'v0'))  q = 1/156
+    e24 ('d', 'm3', 'c4_3', ('v', 'v0'))  q = 1/156
+    e25 ('d', 'c0_1', 'h0', ('v', 'v0'))  q = 1/156
+    e26 ('d', 'c0_2', 'h0', ('v', 'v0'))  q = 1/156
+    e27 ('d', 'c0_3', 'h0', ('v', 'v0'))  q = 1/156
+    e28 ('d', 'c0_4', 'h0', ('v', 'v0'))  q = 1/156
+    e29 ('d', 'c1_0', 'h1', ('v', 'v0'))  q = 1/156
+    e30 ('d', 'c1_2', 'h1', ('v', 'v0'))  q = 1/156
+    e31 ('d', 'c1_3', 'h1', ('v', 'v0'))  q = 1/156
+    e32 ('d', 'c1_4', 'h1', ('v', 'v0'))  q = 1/156
+    e33 ('d', 'c2_0', 'h2', ('v', 'v0'))  q = 1/156
+    e34 ('d', 'c2_1', 'h2', ('v', 'v0'))  q = 1/156
+    e35 ('d', 'c2_3', 'h2', ('v', 'v0'))  q = 1/156
+    e36 ('d', 'c2_4', 'h2', ('v', 'v0'))  q = 1/156
+    e37 ('d', 'c3_0', 'h3', ('v', 'v0'))  q = 1/156
+    e38 ('d', 'c3_1', 'h3', ('v', 'v0'))  q = 1/156
+    e39 ('d', 'c3_2', 'h3', ('v', 'v0'))  q = 1/156
+    e40 ('d', 'c3_4', 'h3', ('v', 'v0'))  q = 1/156
+    e41 ('d', 'c4_0', 'h4', ('v', 'v0'))  q = 1/156
+    e42 ('d', 'c4_1', 'h4', ('v', 'v0'))  q = 1/156
+    e43 ('d', 'c4_2', 'h4', ('v', 'v0'))  q = 1/156
+    e44 ('d', 'c4_3', 'h4', ('v', 'v0'))  q = 1/156
+    e45 ('d', 'h0', 't0', ('v', 'v0'))  q = 1/156  U_0
+    e46 ('d', 'h1', 't1', ('v', 'v0'))  q = 1/156  U_1
+    e47 ('d', 'h2', 't2', ('v', 'v0'))  q = 1/156  U_2
+    e48 ('d', 'h3', 't3', ('v', 'v0'))  q = 1/156  U_3
+    e49 ('d', 'h4', 't4', ('v', 'v0'))  q = 1/156  U_4
+    crown indices: minima = [0, 1, 2, 3, 4], uppers = [45, 46, 47, 48, 49]
+  [PASS] ZG2.5a EVERY EVENT ADMISSIBLE at n = 5: all 50 genesis deliveries admitted by the committed admissible() at the UNIFORM exact weight 1/(4(A-1)) = 1/156 (A = 40 actors; holdings stay {v0} everywhere); prober agrees on every event  (50 events x q = 1/156)
+  [PASS] ZG2.5b CROWN CARRIER DISCIPLINE at n = 5: the 2n crown events have pairwise-DISJOINT carrier pairs (regs_of gated — two deliveries sharing any carrier are comparable, so this is necessary for the crown's incomparabilities)  (2n = 10 carrier pairs pairwise disjoint)
+  [PASS] ZG2.5c THE INDUCED CROWN at n = 5: the full pairwise comparability matrix of the 10 designated events == the S_n reference EXACTLY (all 4n^2 entries)  (matrix 10x10 equal)
+  [PASS] ZG2.5d WHOLE-POSET DIMENSION GATE at n = 5: the full 50-event poset FAILS dim<=2 (consistent with the induced S_n + monotonicity; an oracle PASS here would be oracle/anchor breakage)  (dim<=2 = False)
+  [PASS] ZG2.5e WIDTH + MEASURE at n = 5: width >= n (sanity: dim <= width, so an S_n-dimension record NEEDS width >= n); mu = q^events exactly  (width = 9 (matching only; > 16 elements, declared); mu = (1/156)^50 (denominator 110 digits))
+  [OUTCOME ZG2 n=5] WITNESS — S_5 REALIZED as an induced subposet of an admissible pure-transport record: 40 actors, 50 events, width 9, every event at exact weight 1/156; the whole poset fails dim<=2 (order dimension >= 5 by monotonicity + dim(S_n) = n [LITERATURE]).
+  ---- ZG2 n = 6 --------------------------------------------
+    e00 ('d', 'm0', 'M0', ('v', 'v0'))  q = 1/212  MIN_0
+    e01 ('d', 'm1', 'M1', ('v', 'v0'))  q = 1/212  MIN_1
+    e02 ('d', 'm2', 'M2', ('v', 'v0'))  q = 1/212  MIN_2
+    e03 ('d', 'm3', 'M3', ('v', 'v0'))  q = 1/212  MIN_3
+    e04 ('d', 'm4', 'M4', ('v', 'v0'))  q = 1/212  MIN_4
+    e05 ('d', 'm5', 'M5', ('v', 'v0'))  q = 1/212  MIN_5
+    e06 ('d', 'm1', 'c0_1', ('v', 'v0'))  q = 1/212
+    e07 ('d', 'm2', 'c0_2', ('v', 'v0'))  q = 1/212
+    e08 ('d', 'm3', 'c0_3', ('v', 'v0'))  q = 1/212
+    e09 ('d', 'm4', 'c0_4', ('v', 'v0'))  q = 1/212
+    e10 ('d', 'm5', 'c0_5', ('v', 'v0'))  q = 1/212
+    e11 ('d', 'm0', 'c1_0', ('v', 'v0'))  q = 1/212
+    e12 ('d', 'm2', 'c1_2', ('v', 'v0'))  q = 1/212
+    e13 ('d', 'm3', 'c1_3', ('v', 'v0'))  q = 1/212
+    e14 ('d', 'm4', 'c1_4', ('v', 'v0'))  q = 1/212
+    e15 ('d', 'm5', 'c1_5', ('v', 'v0'))  q = 1/212
+    e16 ('d', 'm0', 'c2_0', ('v', 'v0'))  q = 1/212
+    e17 ('d', 'm1', 'c2_1', ('v', 'v0'))  q = 1/212
+    e18 ('d', 'm3', 'c2_3', ('v', 'v0'))  q = 1/212
+    e19 ('d', 'm4', 'c2_4', ('v', 'v0'))  q = 1/212
+    e20 ('d', 'm5', 'c2_5', ('v', 'v0'))  q = 1/212
+    e21 ('d', 'm0', 'c3_0', ('v', 'v0'))  q = 1/212
+    e22 ('d', 'm1', 'c3_1', ('v', 'v0'))  q = 1/212
+    e23 ('d', 'm2', 'c3_2', ('v', 'v0'))  q = 1/212
+    e24 ('d', 'm4', 'c3_4', ('v', 'v0'))  q = 1/212
+    e25 ('d', 'm5', 'c3_5', ('v', 'v0'))  q = 1/212
+    e26 ('d', 'm0', 'c4_0', ('v', 'v0'))  q = 1/212
+    e27 ('d', 'm1', 'c4_1', ('v', 'v0'))  q = 1/212
+    e28 ('d', 'm2', 'c4_2', ('v', 'v0'))  q = 1/212
+    e29 ('d', 'm3', 'c4_3', ('v', 'v0'))  q = 1/212
+    e30 ('d', 'm5', 'c4_5', ('v', 'v0'))  q = 1/212
+    e31 ('d', 'm0', 'c5_0', ('v', 'v0'))  q = 1/212
+    e32 ('d', 'm1', 'c5_1', ('v', 'v0'))  q = 1/212
+    e33 ('d', 'm2', 'c5_2', ('v', 'v0'))  q = 1/212
+    e34 ('d', 'm3', 'c5_3', ('v', 'v0'))  q = 1/212
+    e35 ('d', 'm4', 'c5_4', ('v', 'v0'))  q = 1/212
+    e36 ('d', 'c0_1', 'h0', ('v', 'v0'))  q = 1/212
+    e37 ('d', 'c0_2', 'h0', ('v', 'v0'))  q = 1/212
+    e38 ('d', 'c0_3', 'h0', ('v', 'v0'))  q = 1/212
+    e39 ('d', 'c0_4', 'h0', ('v', 'v0'))  q = 1/212
+    e40 ('d', 'c0_5', 'h0', ('v', 'v0'))  q = 1/212
+    e41 ('d', 'c1_0', 'h1', ('v', 'v0'))  q = 1/212
+    e42 ('d', 'c1_2', 'h1', ('v', 'v0'))  q = 1/212
+    e43 ('d', 'c1_3', 'h1', ('v', 'v0'))  q = 1/212
+    e44 ('d', 'c1_4', 'h1', ('v', 'v0'))  q = 1/212
+    e45 ('d', 'c1_5', 'h1', ('v', 'v0'))  q = 1/212
+    e46 ('d', 'c2_0', 'h2', ('v', 'v0'))  q = 1/212
+    e47 ('d', 'c2_1', 'h2', ('v', 'v0'))  q = 1/212
+    e48 ('d', 'c2_3', 'h2', ('v', 'v0'))  q = 1/212
+    e49 ('d', 'c2_4', 'h2', ('v', 'v0'))  q = 1/212
+    e50 ('d', 'c2_5', 'h2', ('v', 'v0'))  q = 1/212
+    e51 ('d', 'c3_0', 'h3', ('v', 'v0'))  q = 1/212
+    e52 ('d', 'c3_1', 'h3', ('v', 'v0'))  q = 1/212
+    e53 ('d', 'c3_2', 'h3', ('v', 'v0'))  q = 1/212
+    e54 ('d', 'c3_4', 'h3', ('v', 'v0'))  q = 1/212
+    e55 ('d', 'c3_5', 'h3', ('v', 'v0'))  q = 1/212
+    e56 ('d', 'c4_0', 'h4', ('v', 'v0'))  q = 1/212
+    e57 ('d', 'c4_1', 'h4', ('v', 'v0'))  q = 1/212
+    e58 ('d', 'c4_2', 'h4', ('v', 'v0'))  q = 1/212
+    e59 ('d', 'c4_3', 'h4', ('v', 'v0'))  q = 1/212
+    e60 ('d', 'c4_5', 'h4', ('v', 'v0'))  q = 1/212
+    e61 ('d', 'c5_0', 'h5', ('v', 'v0'))  q = 1/212
+    e62 ('d', 'c5_1', 'h5', ('v', 'v0'))  q = 1/212
+    e63 ('d', 'c5_2', 'h5', ('v', 'v0'))  q = 1/212
+    e64 ('d', 'c5_3', 'h5', ('v', 'v0'))  q = 1/212
+    e65 ('d', 'c5_4', 'h5', ('v', 'v0'))  q = 1/212
+    e66 ('d', 'h0', 't0', ('v', 'v0'))  q = 1/212  U_0
+    e67 ('d', 'h1', 't1', ('v', 'v0'))  q = 1/212  U_1
+    e68 ('d', 'h2', 't2', ('v', 'v0'))  q = 1/212  U_2
+    e69 ('d', 'h3', 't3', ('v', 'v0'))  q = 1/212  U_3
+    e70 ('d', 'h4', 't4', ('v', 'v0'))  q = 1/212  U_4
+    e71 ('d', 'h5', 't5', ('v', 'v0'))  q = 1/212  U_5
+    crown indices: minima = [0, 1, 2, 3, 4, 5], uppers = [66, 67, 68, 69, 70, 71]
+  [PASS] ZG2.6a EVERY EVENT ADMISSIBLE at n = 6: all 72 genesis deliveries admitted by the committed admissible() at the UNIFORM exact weight 1/(4(A-1)) = 1/212 (A = 54 actors; holdings stay {v0} everywhere); prober agrees on every event  (72 events x q = 1/212)
+  [PASS] ZG2.6b CROWN CARRIER DISCIPLINE at n = 6: the 2n crown events have pairwise-DISJOINT carrier pairs (regs_of gated — two deliveries sharing any carrier are comparable, so this is necessary for the crown's incomparabilities)  (2n = 12 carrier pairs pairwise disjoint)
+  [PASS] ZG2.6c THE INDUCED CROWN at n = 6: the full pairwise comparability matrix of the 12 designated events == the S_n reference EXACTLY (all 4n^2 entries)  (matrix 12x12 equal)
+  [PASS] ZG2.6d WHOLE-POSET DIMENSION GATE at n = 6: the full 72-event poset FAILS dim<=2 (consistent with the induced S_n + monotonicity; an oracle PASS here would be oracle/anchor breakage)  (dim<=2 = False)
+  [PASS] ZG2.6e WIDTH + MEASURE at n = 6: width >= n (sanity: dim <= width, so an S_n-dimension record NEEDS width >= n); mu = q^events exactly  (width = 11 (matching only; > 16 elements, declared); mu = (1/212)^72 (denominator 168 digits))
+  [OUTCOME ZG2 n=6] WITNESS — S_6 REALIZED as an induced subposet of an admissible pure-transport record: 54 actors, 72 events, width 11, every event at exact weight 1/212; the whole poset fails dim<=2 (order dimension >= 6 by monotonicity + dim(S_n) = n [LITERATURE]).
+[ZG3 the general-n schema]
+  [PASS] ZG3.1 SCHEMA CLOSED FORMS gated at the base cases n = 3, 4, 5, 6: actors(n) = n^2 + 3n; events(n) = 2n^2 (n minima + n(n-1) hop-1 + n(n-1) hop-2 + n uppers); crown = the first n and last n events; per-event weight = 1/(4(n^2 + 3n - 1)) UNIFORM over the whole history (gated event-by-event above)  (4/4 base cases match the closed forms)
+  ZG3 schema (the parameter counts as functions of n):
+    actors(n)  = n^2 + 3n   [m_j, M_j, h_i, t_i: 4n; couriers c_i_j: n(n-1)]
+    events(n)  = 2n^2       [n + n(n-1) + n(n-1) + n]
+    weight(n)  = 1/(4(n^2 + 3n - 1)) per event, uniform;
+      mu(n)    = weight(n)^(2n^2)
+    crown(n)   = events 0..n-1 (MIN_j) and 2n^2-n..2n^2-1 (U_i)
+    width measured at the base cases: f(3) = 5, f(4) = 7, f(5) = 9, f(6) = 11  [MEASURED = 2n - 1 at all four base cases; each >= n as dim <= width requires; the all-n width formula is NOT claimed]
+    step n -> n+1: add actors m_n, M_n, h_n, t_n + couriers c_n_j, c_i_n (2n + 4 actors); add MIN_n, hop-1/hop-2 rows PU/SH(n, j) and columns PU/SH(i, n), U_n (4n + 2 events).
+    the admissibility schema is PREFIX-BLIND: every event is a genesis delivery ('d', s, r, v0) with s != r in the actor tuple; in a pure genesis-delivery history every actor's holdings stay {v0} (a delivery of v0 adds no new version), so the sender-view option set is always the full {(r, v0): r != s} of size A - 1 and d-clauses 1-3 cannot fire — gated mechanically at all 172 events of the four base cases (the all-n induction is the SS6 proof note, written at conversion by the author, not claimed by this receipt).
+  [OUTCOME ZG3] the constructor is UNIFORM in n: closed-form schema delivered with 4/4 mechanical base cases; the all-n statement is a [THEOREM candidate] carrying these receipts (author's proof note at conversion).
+[ZG4 the ceiling arm]
+  ZG4 NOT FIRED: no admission clause and no unrealizable pairwise relation anywhere in ZG2 (the obstruction machinery is live — exercised by ZG1.0's synthetic clause exhibits and the ZG2 branch structure — but the record went to the witness horn at every n).
+[ZG5 accounting: f(n) censused vs Charron-Bost's f(N) = N]
+    n | actors | events | width | per-event weight | mu
+    3 |     18 |     18 |     5 | 1/68 | (1/68)^18
+    4 |     28 |     32 |     7 | 1/108 | (1/108)^32
+    5 |     40 |     50 |     9 | 1/156 | (1/156)^50
+    6 |     54 |     72 |    11 | 1/212 | (1/212)^72
+  Charron-Bost comparison [LITERATURE]: her model realizes dimension N with f(N) = N processes and one-way messages; the transport grammar REFUSES that route (ZG1: the fused two-carrier delivery back-flows the hub's past — all events admissible, order confined to dim <= 2 at N = 3, 4, 5 actors) and pays instead n^2 + 3n actors / 2n^2 fused joins for the same crown (ZG2).  At n = 3 the committed record's minimal witness is W6: 6 actors / 6 events — the ZG0 size floor; the uniform constructor is NOT claimed minimal at any n.
+[ZG6 discipline]
+  [PASS] ZG6.1 width diagnostic ran on EVERY candidate poset (W6, S_3..S_6 references, CB(3/4/5), W(3/4/5/6)); brute-vs-matching cross-gated on all 219 4-posets + every candidate with <= 16 elements; the n < 6 vacuity CITED (ZG0 note: no poset on <= 5 elements exceeds dim 2, so 6 events is the witness size floor)  (diagnostics delivered in-line above)
+  [PASS] ZG6.2 scoping discipline (pin SS1): every dimension claim in this receipt is ORDER dimension of a generated event poset — a 1+1-escape/clock-complexity statement; NO Minkowski or spacetime-dimension claim is made anywhere; unbounded S_n growth = NECESSARY-not-sufficient for any >= 2+1 reading; Minkowski-dimension certificates and statistical estimators are named successors, untouched here  (scope held by construction)
+  [PASS] ZG6.3 exit design (#354 binding): witness and ceiling are both exit-0 delivered outcomes (the ZG2 branch structure above; the ceiling branch prints its obstruction and continues); exit 1 is reserved for anchor/oracle/admission-internal breakage = any FAIL in this tally  (wired as stated)
+
+[SUMMARY] 40 PASS / 0 FAIL; 9 delivered outcomes
+[VERDICT] d45b delivered — THE WITNESS HORN: the transport grammar is NOT dimension-confined at the tested ladder.  S_n is realized as an induced subposet of an admissible pure-transport generated record at every n in {3, 4, 5, 6} by ONE uniform constructor (actors n^2 + 3n, events 2n^2, uniform exact weights), with the general-n schema delivered (ZG3) — the necessary condition for any round-cone reading HOLDS at the base cases, as ORDER dimension only (pin SS1).  The Charron-Bost port (ZG1) is fully admissible yet dimension-silent at N = 3, 4, 5 actors — her f(N) = N route is closed by the fused-join back-flow, NOT by an admission clause; the grammar's crown price is paid in dedicated couriers instead.  Exit 0.
