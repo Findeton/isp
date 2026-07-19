@@ -5785,3 +5785,23 @@ transfer well-defined on all 427 canonical classes; ONE-WAY
 reduction wording); dead code removed. Seed-independent (0/97).
 Delta to the round referee next; on DELTA-CLEAN the CAMPAIGN'S
 RECEIPT PHASE CLOSES and paper 30 begins.
+
+## 2026-07-18 — d42b56 TERMINAL: delta DELTA-CLEAN (LEDGER #321);
+## THE D42B RECEIPT PHASE CLOSES
+The delta discharged all findings: lin_ext_count == |canonical
+class| on all 1,191 (my implementation IS the referee's member-count
+boundary); the boundary assert has teeth (the menu-reciprocal mutant
+dies printing the round-1 wrong-object value); the telescoping probe
+genuinely class-constant AND non-harmonic; the negative control
+valid with teeth (neutered-control mutant dies); the 51-vs-57
+sequence-count is representative-dependent (gauge-breaking by
+design; nit wording applied); the bisimulation partition IDENTICAL
+block-by-block to the referee's kind-aware construction; the wd
+flag's first delta-run scare was a bug in the REFEREE'S checker
+(non-canonical repr), resolved 0/114; 8-seed byte-identity. Nits
+applied (dead v1n/v1_pair, unused import, dead guard, the inverted
+fallback polarity, the representative-dependence clause) and rerun
+GREEN 4/4 seed-independent VERIFIED pre-commit. d42b56 TERMINAL.
+**THE CAMPAIGN: NINE UNITS, NINE HOSTILE ROUNDS + DELTAS, ZERO
+FALSE NUMERICAL RESULTS. Fronts 1-9 + the cross-cut all closed.
+Paper 30 begins on the settled record.**

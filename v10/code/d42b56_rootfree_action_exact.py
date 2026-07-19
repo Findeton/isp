@@ -6,7 +6,6 @@ layer exec'd from the committed d42b3 receipt (single source).
 """
 import sys
 from fractions import Fraction as Fr
-from itertools import permutations
 
 PASS = FAIL = 0
 def check(label, ok, detail=""):
@@ -69,7 +68,7 @@ def lin_ext_count(h):
         inv = {e: i for i, e in enumerate(perm)}
         if all(inv[i] < inv[j] for j in range(n) for i in pred[j]):
             c += 1
-    return max(c, 1)
+    return c
 # B1: the CANONICAL class-1/k (d42b4 D-M1: 1/#linearizations of the
 # class — gauge-invariant); the menu-reciprocal retained as a probe
 Z_1k = build_Z(lambda h: Fr(1, lin_ext_count(h)))
@@ -133,7 +132,9 @@ check("S1 (B2 re-stated): the ladder — weight FLAT (0); naive-cut "
       and v_grad == 0 and v_seq > 0,
       f"diamonds = {len(diamonds)}; mu/naive/gradient-form = "
       f"{v_mu}/{v_naive}/{v_grad}; sequence-Z failures = {v_seq} "
-      "(> 0, the control fires)")
+      "(> 0, the control fires; the count is REPRESENTATIVE-DEPENDENT — "
+      "the control is gauge-breaking by design, unlike the class-"
+      "invariant 36)")
 
 # ---- S2: isomorphic menus + boundary non-stationarity ----------------------
 pA0 = ('p', 'A', V0, 0)
@@ -141,10 +142,6 @@ pB1 = ('p', 'B', V0, 1)
 tA = ('A', V0, 0)
 PAIR = ('r', 'A', frozenset({tA, ('B', V0, 1)}), frozenset({tA}))
 H3 = [pA0, pB1, PAIR]
-v1n = ns['vname'](V0, frozenset({tA, ('B', V0, 1)})
-                  & frozenset({tA}), 'A')
-v1n = ns['vname'](V0, frozenset({tA}), 'A')
-v1_pair = ns['vname'](V0, frozenset({tA}), 'A')
 # B4: the STRUCTURAL EVENT-LEVEL BIJECTION (type/payload matched,
 # v0 <-> v1 translated) — not the multiset proxy
 def translate(e, vfrom, vto):
@@ -217,7 +214,7 @@ split = (state[tuple([pA0])] != state[tuple([pA0,
          ('r', 'A', frozenset({tA}), frozenset({tA})),
          translate(pA0, V0, v1_real)])]
          if tuple([pA0, ('r', 'A', frozenset({tA}), frozenset({tA})),
-                   translate(pA0, V0, v1_real)]) in state else True)
+                   translate(pA0, V0, v1_real)]) in state else False)
 classes_all = {}
 for h in FAM:
     classes_all.setdefault(canon(h), []).append(h)

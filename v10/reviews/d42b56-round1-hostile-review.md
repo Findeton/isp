@@ -394,3 +394,171 @@ anything, sharper: the ladder becomes a theorem with its mechanism
 stated, the renewal exhibit becomes structural, and front 7's
 reduction lands on an explicit 17-state quotient with the honest
 one-way arrow into the ONE positive-harmonic residue.
+
+---
+
+# DELTA VERIFICATION (2026-07-18, against HEAD 19e9974: pin amendments
+# B1-B4 at 9ab4a10, repaired receipt + .out + LOG #319/#320)
+
+**VERDICT: DELTA-CLEAN.** Every repair verified by independent
+recomputation; every referee anchor lands; all three MAJORs
+discharged; the pre-flagged vestige exists and is recorded below with
+four nit-grade notes — none touches a printed number or a gate's
+honesty. Method: 8-seed rerun battery (PYTHONHASHSEED 0/97/12345/1/2/
+3/4/42 — ALL byte-identical to the committed .out, exit 0; LOG "0/97"
+consistent), an independent delta verifier (own linear-extension
+counter, own Z recursions, own bijection/bisimulation constructions,
+own control-Z counts), an exact replication of the receipt's own
+enumeration for the representative-sensitive control, and a
+three-mutant battery (D/E/F). Scripts in the session scratchpad
+(`delta_verify_d42b56.py`, `mutD/E/F.py`).
+
+## D-1 (F1) — DISCHARGED, computed both ways
+
+The boundary is now the CANONICAL class-1/k. Verified at depth:
+`lin_ext_count(h)` == |canonical class(h)| for ALL 1191 histories (0
+mismatches — every linear extension of every family poset is itself
+generated and admissible, so the receipt's per-history
+linear-extension implementation and my round-1 member-count
+implementation are THE SAME boundary, and it is class-constant/
+gauge-invariant as labeled). My own recursion under it reproduces
+Z_1k on every history and Z_1k([]) = 325/64 — now asserted IN-CODE,
+and the assert has teeth: mutant D (boundary silently swapped back to
+the menu reciprocal) dies at the assert with exit 1, printing exactly
+the round-1 wrong-object value 11477/3840 — the round-1 mutant-C
+silent-collapse escape is closed. S2's gate now anchors the witnesses
+21/325 vs 1/16 in the check condition (my pre-verified anchors; unit
+133/2074 vs 1/16 printed). The menu reciprocal is retained relabeled
+as a probe inside the S1 sweep only — de-canonized as prescribed.
+
+## D-2 (F2) — DISCHARGED; the conviction class is resolved by
+## honest labeling plus a firing control
+
+S1 now states the gradient leg as a TELESCOPING THEOREM and gates
+form-generality: my sweep confirms 0/202 under unit, canonical
+class-1/k, the menu probe, AND the receipt's arbitrary probe
+Z = 1 + depth — which I verified is genuinely class-constant (depth
+is a class invariant) and genuinely non-harmonic (the root equation
+fails), so the sweep now exhibits exactly the theorem's scope: any
+cut-attached Z, harmonic or not. The NEGATIVE CONTROL fires: the
+receipt's deterministic sorted-vs-unsorted sequence-Z is a valid
+instance of the non-class-constant class (118 classes carry both
+Z-values), and mutant E (control neutered to a constant) prints
+"sequence-Z failures = 0" and dies through the `v_seq > 0` gate,
+exit 1 — the control has teeth. The separating content is credited
+to class-constancy (d42b3-D2's lineage) in the check label, the pin
+(B2, which also qualifies "any boundary" to cut-attached
+class-constant and correctly records my 198/202 instance), and the
+verdict line. One representative-dependence note (D-n2 below) on the
+printed count.
+
+## D-3 (F3) — DISCHARGED; the quotient verified against my own
+## construction, partition-identical
+
+S3 now computes the bisimulation quotient. I replicated the
+receipt's algorithm (kind-free successor keys (q, state), string
+relabeling, depth-4 absorbing) independently: trajectory
+[4, 9, 14, 16, 17, 17], fixpoint 17 — exactly the committed detail.
+Separately my round-1 KIND-AWARE construction (successor keys
+(kind, q, state)) lands 17 with the IDENTICAL partition
+(block-by-block equality verified) — the receipt's kind-free keys
+lose nothing at this depth, because its stage-wise states carry the
+shape lineage and my refinement provably refines theirs stage-wise,
+so equal fixpoint counts force equal partitions. The split witness
+([pA0] vs [pA0, selfA, p-on-v1]) is IN the family (the fallback
+branch is dead — see D-n4) and the states differ at the fixpoint;
+the wd gate holds (canonical classes sit inside bisim states, 0
+straddles) and the label's literal claim is true by my direct
+recomputation of the outgoing (q, target-class) multisets: 0/114
+interior classes (my first delta run flagged this line, but the
+defect was in MY checker — repr(frozenset) is not a canonical key;
+with stable class ids the receipt's claim verifies cleanly). The
+one-way wording (stationary ⊂ positive-harmonic; the residue
+CONTAINS front 7) is in the pin (B3), the check label, and the
+verdict line; the rank/313 stays a referee anchor cited in the pin —
+consistent with the d42b3 precedent (its 313 was likewise
+review-carried). Existence remains declared OPEN, no claim either
+way.
+
+## D-4 (F4/F6) — DISCHARGED
+
+The multiset proxy is replaced by the STRUCTURAL event-level
+bijection: root menu -> H3 menu under v0 -> v1 translation with
+equal q at every matched event plus size equality — re-verified in
+both directions with my own map; no r-events exist in either menu,
+so the translate r-passthrough is unreachable. The 331-share
+disclosure is printed (my census: 331 exact), and the pin's B4
+records the full 331/175/31 weakness census. Mutant F (translation
+broken to identity) dies exit 1 — by IndexError at the q-lookup
+before the S2 check line rather than through a clean [FAIL]:
+fail-safe, never false-green. Citations switched to paper 28 §5.3 +
+the D42 mandate; the sprinkling precursor's scope is named (internal
+Z2 x Z2 + foliation gauge, not spacetime symmetry) in pin and
+verdict. pv1 is now translate(pA0), the sigma-partner by
+construction — the round-1 positional-grab robustness concern is
+structurally closed.
+
+## D-5 (F5) — largely discharged; the pre-flagged vestige EXISTS
+
+`kcount` is gone. The coordinator's pre-flag is confirmed: **lines
+144-147 carry a dead v1n DOUBLE-ASSIGN plus a dead `v1_pair`** — the
+first v1n binding computes vname over `{tA,tB} & {tA}` (= {tA}, the
+same value) and is immediately overwritten; all three bindings are
+unused. The A6 identity they were meant to carry — that the menu-read
+fresh base equals the arb-created name — is factually TRUE (I
+re-verified v1_real == vname(V0,{tA},'A')) but remains UNWIRED: one
+line (`assert v1_real == v1n`) wires it and two deletions close the
+vestige. Also still present: the unused top-level `permutations`
+import (line 9; `lin_ext_count` uses its own local import) and the
+dead `max(c, 1)` guard (the identity order is always a valid linear
+extension). Non-blocking.
+
+## Delta notes (nit grade, recorded for the terminal state)
+
+- **D-n1.** The v1n/v1_pair vestige above — one wire-in line + two
+  deletions whenever the file is next touched.
+- **D-n2.** The control count 51 is REPRESENTATIVE-DEPENDENT: the
+  control Z breaks gauge-invariance by design, so per-diamond
+  verdicts depend on which class representative is evaluated. My
+  independent enumeration (BFS-suffix representatives) gives 57;
+  replicating the receipt's exact enumeration (DFS family order,
+  i1<i2 first-seen dedupe) gives exactly 51, seed-stable both ways.
+  Unlike the 36 (a class-invariant census), "51" is a property of
+  the receipt's evaluated representatives — one clause in the detail
+  ("of the evaluated representatives") would prevent misreading; the
+  `> 0` gate itself is enumeration-robust and honest.
+- **D-n3.** Latent seed hazard, structurally unreachable here: the
+  control's `sorted(k, key=repr)` reprs r-events, whose frozensets
+  iterate in hash order. It cannot fire at depth <= 4 because
+  diamond-evaluated tuples never contain two SAME-INITIATOR
+  r-events (per-actor per-base live-proposal uniqueness), so every
+  r-vs-r comparison resolves at the initiator character before any
+  frozenset — confirmed empirically by the 8-seed byte-identity. If
+  the control is ever lifted to deeper families, key it canonically.
+- **D-n4.** The split gate's `else True` fallback has inverted
+  polarity (witness-not-found would PASS vacuously); the branch is
+  dead — I verified the witness IS in the family — but on any future
+  edit it should read False.
+- **D-n5.** LOG #319 and pin amendments B1-B4 are faithful to the
+  round-1 report (numbers, censuses, and attributions all match,
+  including my 198/202 instance and the 331/175/31 census).
+
+## Disposition
+
+DELTA-CLEAN. All three MAJORs are discharged with independent
+recomputation landing every anchor (325/64; 21/325 vs 1/16; 0/202
+across four Z regimes; a firing control with teeth; trajectory
+4->9->14->16->17 with partition-identical fixpoints; 0/114; 331);
+the two minors are resolved (structural bijection; dead code
+removed) up to the pre-flagged vestige and nit notes above, none of
+which touches a gated number. The mutant battery kills all three
+designed escapes, including the round-1 silent-boundary-collapse
+class. On this record d42b56 is TERMINAL-supportable: the ladder
+stands as a stated telescoping theorem with class-constancy as the
+separating content, the renewal exhibit is structural and
+non-stationarity canonical-boundary-anchored, front 7 reduces
+one-way onto the 17-state quotient into the ONE infinite-volume
+positive-harmonic residue (OPEN, as declared), and the continuum
+shadows remain scope-honest declarations with exact discrete
+covariance gates. Zero false numbers, nine rounds — the campaign's
+receipt phase closes clean.
