@@ -339,3 +339,137 @@ actually gated (M-1), anchor the print-carried per-type structure
 (M-1/m-1), and route the d42b1/d42b2 transport-pricing divergence to
 the board as a named corpus-level carried question. With those applied,
 the unit is PASS-grade at its pinned scope.
+
+---
+
+# Delta verification (round-1 repairs) — LOG #363, commit 6b2720b
+
+**Referee: same as round 1. Round-1 body above untouched.**
+
+## VERDICT: DELTA-CLEAN — all repairs verified live; 0 new findings
+## above nit (2 delta-nits recorded). TERMINAL CONVERSION ENDORSED.
+
+## Mechanical
+
+- `git diff 2a289e5 6b2720b` on the d44e paths = exactly the enumerated
+  repairs and nothing else: receipt (RG0b-iv provenance label;
+  RG0-ANCHOR; RG0-SCOPE; RG1 wire-mediation reword; RG2-0 relabel;
+  RG2-ANCHOR; verdict rescope — predicates of all pre-existing gates
+  unchanged), note §6 B1–B4 appended (§1–5 frozen), .out (3 new PASS
+  lines + the relabeled lines + verdict + summary 46→49). The layer
+  sources d42b2/d42b3 are untouched, so all round-1 layer-mutant
+  results carry over.
+- Rerun: exit 0, **49 PASS / 0 FAIL**, byte-identical to the committed
+  .out; PYTHONHASHSEED 0 and 7 byte-identical; cwd-robust (run from
+  `/`, byte-identical); scratch-relocated copy 49/49.
+- The committed copy of this review file is byte-identical to the
+  referee's round-1 text (0 diff lines vs HEAD).
+- LOG #363's summary of the round is faithful: the verdict/tallies, the
+  32-check verifier, "zero false numbers", both MAJORs as found, the
+  silent-green mutant, the D2H 1/16-vs-1/24 divergence, and the
+  standing corpus obligation are all stated as delivered — no
+  overstatement found.
+
+## M-1 discharge — VERIFIED, including the decisive mutant rerun
+
+**MUT-F2 (the round-1 silent-green mutant, rerun against the repaired
+receipt):** `shadow_of` → constant `'X'` now **FAILs RG2-ANCHOR and
+exits 1 (48/1)** — the per-type imprint structure is gate-anchored
+exactly as prescribed: collision vector {p 309, r 0, d 1, m 1, ko 1,
+kc 1, ka 0, v.arb 17, v.mrg 3} and `multi-creator == 4` as exact
+expectations, with the r/ka injectivity carried as the anchored zeros.
+Basis sizes are covered by RG0-ANCHOR's per-type distinct counts
+(basis = the distinct set). The round-1 gate-invisibility defect is
+closed.
+
+**Scope wording — judged ADEQUATE; the conviction is discharged.**
+The verdict now states, in-gate (RG2-ANCHOR) and in the verdict line:
+one shared copy-form template (the D25 form, "isometric by
+construction") evaluated on per-type carrier/data; NOT layer-semantic
+reception dynamics; the per-type physics carried by the anchored counts
+and the carrier/data table, not by the template's isometry; the
+d42b4-R6 obligation DISCHARGED ON ITS CENSUS ARM with the dynamics arm
+typed and open. The misleadable phrase "no shared-form shortcut" is
+removed from the verdict; its sole survival is pin §1 line 19 — frozen
+pre-registration text, superseded in-context by §6 B1, which is this
+corpus's convention for pin history. No sharper language required.
+
+## M-2 record — VERIFIED ACCURATE (one conservative-omission nit)
+
+Note §6 B2 retracts A5's "identical text" and states the finding as
+found: pre-#300 provenance; the convicted-then-repaired merge
+denominator; the D2H divergence (1/16 embedded vs 1/24 terminal); the
+receipt's RG0b-iv now carries the provenance label and gates the
+embedded layer AS COMMITTED (predicate unchanged — correct, since the
+anchors are d42b2's committed numbers); LOG #363 records the
+reconciliation as a **standing corpus obligation** with the round
+credited ("never reconciled post-#300 anywhere in the corpus — the
+round's discovery") and routes it to the board. All statements match
+the referee's evidence.
+
+- **d-n1 (delta-nit):** B2/RG0b-iv omit the round-1 clause that the
+  FORM-level census is unaffected (admissibility bits, regs_of, and
+  record shapes agree between the embedded and terminal heads — 63/63
+  comparable form outcomes; the divergence is confined to the
+  merge/idle pricing denominators). The omission is conservative (the
+  retraction reads broader than necessary, not narrower), and the
+  precise statement is on the record in §M-2 above — one sentence in
+  B2 if the note is touched again.
+
+## Minors — VERIFIED
+
+- **RG0-ANCHOR:** splits 2128/748/1626, versions 1191/748, fixtures
+  90+36, total 6567, and all eleven distinct counts now in-gate;
+  positioned after RG0 COMPLETE and before RG1, so any basis-thinning
+  now fails a census gate before reaching the thin-basis code paths.
+- **RG0-SCOPE:** probe shape ADEQUATE — the alien tag is what every
+  censused predicate dispatches on, and the referee confirms both the
+  2-tuple `('z','A')` and the layer-admissible r-shaped 4-tuple
+  `('z','A',CK,{tA})` (admissible at 1/8 — reconfirmed on the committed
+  head) are matched by ZERO censused predicates. The gate genuinely
+  fires: a predicate-widening mutant (`PREDS['r']` accepting tag 'z')
+  **FAILs RG0-SCOPE, exit 1 (48/1)**. The label's generator-scoped
+  completeness sentence states the round's m-2 exactly.
+- **Wire-mediation reword:** "WRITE-ONCE wire never read downstream at
+  the tested grain; mediation via View.created; mname in zero realized
+  input slots family+fixture-wide" — matches the round-1 finding's
+  content (all three facts referee-verified in round 1).
+  **d-n2 (delta-nit):** the "zero realized input slots" clause is
+  asserted in the RG1 label but computed nowhere in the receipt (the
+  gated predicate covers only regs_of(m)); referee-verified true, but a
+  ~4-line scan over all realized records' slots would make it
+  printed-not-asserted, per the receipt's own discipline.
+- **RG2-0 relabel:** "faithfully RE-IMPLEMENTED... (TRUNCATED, not
+  rounded, at its 80th digit)" — accurate on both counts.
+
+## Nits — B4 disposition ACCEPTED
+
+With RG0-ANCHOR in place ahead of RG1/RG2, the thin-basis crash paths
+are unreachable without a prior genuine gate FAIL — "fail-safe, never
+false-green" is now true (and is *stronger* than at round 1, when only
+the classifier gates stood upstream). Recorded-not-guarded is
+acceptable; no guard prescribed. The B4 note on the LOG literal-match
+wording closes n-2.
+
+## Delta mutation table (scratch copies; committed files untouched)
+
+| Mutant | Change | Gate that fires | Exit |
+|---|---|---|---|
+| MUT-F2 | `shadow_of` → constant (round-1 silent-green rerun) | **RG2-ANCHOR FAIL** (48/1) | 1 |
+| MUT-W | `PREDS['r']` widened to absorb tag 'z' | **RG0-SCOPE FAIL** (48/1) | 1 |
+
+## Terminal statement
+
+All four stamped conditions hold: MUT-F is now caught at RG2-ANCHOR;
+the scope wording is adequate; the M-2 record is accurate; no new
+findings above nit. This referee **endorses TERMINAL** with the
+coordinator's statement as worded: the per-type reception census is
+delivered and census-complete at fixture scope (11 types derived from
+the grammar; 6,567 instances; the (actor,base) key executed; per-type
+imprint structure gated); the reception layer is the shared D25
+copy-form template on per-type carrier/data with gated per-type anchors
+— reception DYNAMICS remain open and typed; the d42b4-R6 obligation is
+discharged on its census arm; the d42b2-embedded transport head's
+pre-#300 pricing is a standing corpus reconciliation obligation
+(LOG #363). The two delta-nits (d-n1, d-n2) are one-sentence /
+four-line touches if the artifacts are ever reopened; neither blocks.

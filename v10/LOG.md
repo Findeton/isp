@@ -6869,3 +6869,30 @@ RG0-ANCHOR (splits + distinct counts in-gate); RG0-SCOPE
 (generator-scoped completeness + the alien-tag negative control);
 wire-mediation wording; RG2-0 relabel. Note §6 B1-B4. DELTA to
 the d44e referee next.
+
+## 2026-07-19 — D44e TERMINAL (LEDGER #364)
+Delta verdict (appended to reviews/d44e-round1-hostile-review.md,
+round-1 body byte-untouched): DELTA-CLEAN, terminal conversion
+endorsed — MUT-F2 (the round's silent-green constant-imprint
+mutant) now FAILS RG2-ANCHOR exit 1; the predicate-widening mutant
+FAILS RG0-SCOPE exit 1; the scope wording judged adequate with no
+sharper language required ("no shared-form shortcut" survives only
+in the frozen pin §1, superseded per house convention); M-2's
+record accurate; RG0-ANCHOR's position upgrades the thin-basis
+disposition to actually-unreachable-without-prior-FAIL. Two delta
+nits recorded for any future reopening (B2's omitted
+"form-level census unaffected: 63/63 comparable outcomes agree —
+divergence is pricing-only" clause, stated here for the record;
+the mname-zero-input-slots clause label-asserted,
+referee-verified). TERMINAL — THE SETTLED STATEMENT (as stamped
+and endorsed): the per-type reception census is delivered and
+census-complete at fixture scope (11 types derived from the
+grammar; 6,567 instances; the (actor,base) key executed; per-type
+imprint structure gated); the reception layer is the shared D25
+copy-form template on per-type carrier/data with gated per-type
+anchors — reception DYNAMICS remain open and typed; the d42b4-R6
+obligation is discharged on its census arm; the d42b2-embedded
+transport head's pre-#300 pricing is a STANDING CORPUS
+RECONCILIATION OBLIGATION (#363). Successor 5 of the user's six:
+DONE. Remaining: D44a round (in flight), D45b repairs (in
+progress), D44f (ungates on D44a), D44b (last).
