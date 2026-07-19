@@ -370,3 +370,112 @@ author's discretion. On application this review expects delta-clean: the
 headline, the law, and every number survive hostile recomputation; the review's
 own contribution (funnel lemma + dense dedup + beyond-cap sweeps) is offered for
 the successor's use.
+
+---
+
+# DELTA — round-1 conversions verified (2026-07-19; LOG #354, commit d6fba23)
+
+**Scope:** verification of the applied conversions per the coordinator's request.
+Round-1 body above: UNTOUCHED (git-verified: the committed review at d6fba23 is
+this file's round-1 text verbatim, 372 lines, diff empty). Receipt frozen per this
+round's own disposition.
+
+## D0 — mechanical
+
+- `git diff 6d8a74b d6fba23 -- v10/code/d44c_arb_dimension_exact.py
+  v10/data/d44c_arb_dimension_exact.out` = **empty**: the receipt and its `.out`
+  are untouched since #351. d6fba23 adds exactly three things: the LOG #354 row
+  (+38), pin §6 B1–B4 (+47), and this review file (+372, verbatim). Working tree
+  clean. VERIFIED.
+- LOG #354's summary of the round is **faithful**: every number it carries
+  (1,237 fully-checked nodes + 340 sampled; dense dedup 0/1,131,500; oracle
+  219+4,231+900 at 0 disagreements; F-CROSS cell-for-cell; 6/6 mutants exit 1;
+  27,600 triple-pool placements; view-delayed cover-two starving at the second
+  cover; beyond-cap 954,288 exact, w4/5/6 to depths 8/11/14, idle 7–8 stratum)
+  matches the frozen round exactly. VERIFIED.
+
+## D1 — B1 / F1 (MAJOR): ACCURATE, correctly weighted
+
+The ownership wording states all four load-bearing facts exactly as convicted:
+witness horn unreachable at exit 0 via the census gates' own PASS conjuncts;
+banner's "either horn exits 0" false of the code; the WITNESS-HORN verdict print
+dead code; the "anchor/port breakage" mislabel in the counterfactual. It neither
+minimizes (kept MAJOR, "owned", "not implemented as stated") nor overstates (the
+obstruction outcome correctly declared unaffected, citing this round's
+independent no-witness verification including beyond caps — which is what the
+round did). The successor binding ("must wire the witness branch as a genuine
+exit-0 delivered outcome", naming the S4/W8 candidate) implements prescribed-fix
+route (a) and is the stricter, correct choice. CLEAN.
+
+## D2 — B2 / F2: arithmetic VERIFIED, corrected object correctly named
+
+1,213,372 = 551,928 + 224,580 + 436,864; the 44,244 no-idle width-3 histories
+(≤ 6 events; 6+30+180+1,356+7,176+35,496 — re-verified) appear in all three
+families under the universe-free `admissible()`; excess = 2 × 44,244 = 88,488;
+**DISTINCT = 1,124,884** (both computation routes agree). #354 names #351's
+summed "1,213,372 label-level histories" as the corrected object explicitly, and
+B2 correctly leaves the per-family counts standing. CLEAN.
+
+## D3 — B3 / F3: ACCURATE
+
+Recorded exactly as found: claim true, gate absent, AG2c's own label cited, the
+340-state dim-check attributed as referee-carried (zero failures). CLEAN.
+
+## D4 — B4: the funnel lemma statement ENDORSED as written; referee-carried
+## citation accepted, with the paper-grade condition named
+
+- The lemma wording — "S3 is impossible as an induced subposet at EVERY width
+  and depth" — matches the frozen round's §4 statement verbatim in scope:
+  neither weakened nor widened. The tested-scale remainder ("only for non-S3
+  3-irreducible patterns") is exactly the round's residual-scoping sentence.
+  One dependency clarification for the record (no wording change needed —
+  B4's "five clauses ... plus a stronger SIXTH ... yielding the FUNNEL LEMMA"
+  is accurate read as the clauses jointly): the lemma's proof uses clauses
+  1–4 + the sixth (no common upper bound over incomparable arbs) + the funnel
+  property of up-sets (up(B) funnels through the first arb after B on its
+  author's chain); the sixth clause alone is the crown-killer for arb bottoms,
+  the funnel handles proposal/idle bottoms and mixed cases.
+- B4 correctly separates the epistemic registers: "provably ALL-SCALE" attaches
+  to the proofs; "(0 violations mechanically)" attaches to the tested-family
+  gates. Not conflated. The dense-dedup and beyond-cap items match the round's
+  numbers exactly (0/1,131,500; 954,288 confirming the receipt's declared
+  estimate; w4 d8 / w5 d11 / w6 d14; idle 7–8).
+- **Referee-anchor question, answered:** referee-carried citation (this frozen
+  round as the record) is ACCEPTABLE to this referee for the terminal stamp,
+  the pin record, and successor pins — consistent with the corpus convention.
+  **Named condition for paper-grade use** (any paper asserting the sixth
+  clause, the funnel lemma, or the dense-dedup upgrade as results): promote to
+  an in-receipt mechanical gate first, on the d43d-NG3b precedent (the review-
+  carried W6/W4 witnesses became permanent receipt gates before paper use).
+  Concretely: (a) gate the sixth clause and the up-cone-confinement form (the
+  round's T2/T3 checks) at zero violations over the three committed families
+  inside a committed receipt; (b) record the funnel lemma as a stated theorem
+  with its proof note — the gate anchors the mechanical corroboration; the
+  all-scale content is carried by the proof, and the receipt must say so
+  rather than imply an all-scale sweep.
+- n1–n3 dispositions recorded accurately (corpus-tolerated AG5 flag; AG1b
+  label referee-verified; clause-(iv) per-word-class equivalence). CLEAN.
+
+## D5 — terminal-statement annotations (nit-level, for the conversion row;
+## endorsement not conditioned on rewording)
+
+The stamped terminal statement is endorsed with two readings recorded:
+
+1. The pre-colon headline clause ("arbitration structure alone does not
+   generate order-dimension > 2") inherits the tail's scoping: scale-free for
+   the S3 pattern (the lemma), TESTED-SCALE for non-S3 3-irreducible routes.
+   If the terminal row can keep "scale-free for S3, tested-scale otherwise"
+   adjacent to the headline clause, a quote-miner has nothing.
+2. "Transport's dimension mechanism unique at tested scales" is read as
+   "unique among the grammar's cross-chain join mechanisms (transport d/m vs
+   arbitration r), at the tested scales" — which is what d43d NG3b + this
+   unit jointly establish.
+
+## Delta verdict
+
+**DELTA-CLEAN.** The four amendment blocks are accurate; the funnel-lemma
+wording is endorsed as written; the referee-carried convention is accepted with
+the paper-grade promotion condition named (D4); receipt and `.out` untouched;
+LOG #354 faithful; ZERO new findings above nit (the two D5 annotations are
+readings, not defects). The stamped terminal condition is met: **d44c may
+convert to TERMINAL** with the coordinator's statement, read per D5.

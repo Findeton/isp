@@ -6585,3 +6585,33 @@ F-CROSS post-X states — the referee dim-checked all 340: zero
 failures (referee-carried). Receipt frozen per the round's
 disposition (all numbers true; repairs are record-level). Pin §6
 B1-B4. DELTA to the d44c referee next.
+
+## 2026-07-19 — D44c TERMINAL (LEDGER #355)
+Delta verdict (appended to reviews/d44c-round1-hostile-review.md,
++109 lines after the untouched round-1 body): DELTA-CLEAN — receipt
+and .out untouched since 6d8a74b (git-verified); #354's summary
+faithful on every number; B1-B4 verified (F2 arithmetic both
+routes: 1,213,372 - 2 x 44,244 = 1,124,884; the funnel lemma stated
+VERBATIM to the frozen round; the referee-carried citation ACCEPTED
+for terminal/pin/successor use with the PAPER-GRADE promotion
+condition named: an in-receipt gate of the sixth clause + up-cone
+confinement (round T2/T3) over the committed families + the lemma
+as a theorem-with-proof-note — the d43d-NG3b path). Zero new
+findings above nit; two nit-level readings recorded as annotations
+(the headline inherits the tail's scoping; "unique" =
+unique-among-the-grammar's-join-mechanisms). TERMINAL — THE SETTLED
+STATEMENT (as stamped, with the delta's D5 annotations): arbitration
+structure alone does not generate order-dimension > 2 — zero
+dim<=2 failures across 1,124,884 distinct label-level histories
+plus all referee beyond-cap sweeps; the COMPONENT-CONFINEMENT LAW
+(five gated clauses + the round's sixth: no common upper bound for
+incomparable arbs) with the FUNNEL LEMMA making the S3 pattern
+impossible at EVERY width and depth (scale-free for S3;
+tested-scale for non-S3 3-irreducible routes); transport's
+dimension mechanism unique among the grammar's join mechanisms at
+tested scales; the witness-horn exit-design defect owned at #354
+and BINDING on successor dimension receipts. Successor 3 of the
+user's six: DONE. Wave-1 remainder: D44a build in flight. The
+S4/W8 dimension-4 capability receipt remains the flagged candidate
+awaiting user go (outside the six; the witness-branch binding and
+the paper-grade promotion path both attach to it).
