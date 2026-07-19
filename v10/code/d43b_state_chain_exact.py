@@ -43,6 +43,9 @@ exec(_src[:_src.index('print("[d42b3')], ns)
 V0 = ns['V0']
 candidates_for = ns['candidates_for']
 canon = ns['canon']
+vname = ns['vname']
+View = ns['View']
+event_poset = ns['event_poset']
 AB = ('A', 'B')
 
 print("[d43b — residue 1 via the intrinsic state chain (round-1 "
@@ -339,6 +342,57 @@ check("MG5 the MASS-TRANSPORT identity, EXACT (no residual, no "
       f"pi T == 2 pi exact = {left_ok}; exact stationarity = "
       f"{stat_ok}")
 
+# ---- MG6: delta D-r1 — ingredient (ii) receipt-carried -------------
+V1 = vname(V0, frozenset({tA}), 'A')
+def _sub_v(b, tgt):
+    return tgt if b == V0 else ('v', _sub_v(b[1], tgt), b[2], b[3],
+                                b[4])
+def _sub_e(e, tgt):
+    if e[0] == 'p':
+        return ('p', e[1], _sub_v(e[2], tgt), e[3])
+    if e[0] == 'r':
+        return ('r', e[1],
+                frozenset((t[0], _sub_v(t[1], tgt), t[2])
+                          for t in e[2]),
+                frozenset((t[0], _sub_v(t[1], tgt), t[2])
+                          for t in e[3]))
+    return e
+ROOT3 = [h for h in FAM if len(h) <= 3]
+H3T = {tuple(h[3:]) for h in FAM if tuple(h[:3]) == tuple(H3)}
+IMG = {tuple(_sub_e(e, V1) for e in h) for h in ROOT3}
+iso_nodes = (len(ROOT3) == 215 and len(IMG) == 215 and IMG == H3T)
+iso_menus = all(
+    {_sub_e(e, V1): q for e, q in CACHE[tuple(h)]}
+    == dict(CACHE[tuple(H3) + tuple(_sub_e(x, V1) for x in h)])
+    for h in FAM if len(h) <= 3)
+REN = [h for h in FAM if len(h) <= 4 and CLS[tuple(h)] == 0
+       and any(e[0] == 'r' for e in h)]
+ROOTMENU = CACHE[tuple([])]
+ren_ok = True
+for h in REN:
+    vw = View(h, event_poset(h), set(range(len(h))))
+    shared = (vw.holdings('A') & vw.holdings('B')) - vw.superseded
+    if len(shared) != 1:
+        ren_ok = False; break
+    tgt = next(iter(shared))
+    if {_sub_e(e, tgt): q for e, q in ROOTMENU} != dict(
+            CACHE[tuple(h)]):
+        ren_ok = False; break
+check("MG6 (delta D-r1) the RENEWAL SUBTREE ISOMORPHISM, "
+      "receipt-gated: base substitution v0 -> v1 maps the root tree "
+      "ONTO the H3 subtree — 215 == 215 nodes — with menus "
+      "event-bijective and q-EQUAL at every node incl. the depth-3 "
+      "shell (extends d42b56-S2's one-step bijection two levels); "
+      "and ALL clean-slate renewal points at len <= 4 (class 0 "
+      "carrying an arb; each with a UNIQUE shared non-superseded "
+      "base) have root-identical one-step menus under their own base "
+      "substitution — the 144-point census. Closure-theorem "
+      "ingredient (ii) joins (i) (NC3) as receipt-carried",
+      iso_nodes and iso_menus and len(REN) == 144 and ren_ok,
+      f"nodes {len(ROOT3)} == {len(H3T)}, image == subtree = "
+      f"{iso_nodes}; q-equal menus all nodes = {iso_menus}; renewal "
+      f"census = {len(REN)}; per-point menu identity = {ren_ok}")
+
 # ========= SECTION B — the negative control (the round-1 object) ====
 # The first build's boundary-marked truncation quotient (the
 # committed d42b56-S3 algorithm at depths 4/5/6), retained with its
@@ -504,9 +558,10 @@ print("[VERDICT] d43b round-1 rebuilt, GREEN: the uniform-lookahead "
       "renewal state, and the mass-transport identity EXACT — "
       "residue 1's Perron reduction is DECIDED on the computed "
       "window at this grammar's scope, pending the renewal-pumping "
-      "closure theorem (ingredients exhibited: the pad-shift "
-      "identity, gated in NC3; the renewal subtree isomorphism to "
-      "depth 3, referee-verified). The old boundary-marked growth "
+      "closure theorem (BOTH ingredients receipt-gated: the "
+      "pad-shift identity in NC3; the renewal subtree isomorphism + "
+      "the 144-point census in MG6 — delta D-r1). The old "
+      "boundary-marked growth "
       "17/23/29 stands as the gated NEGATIVE CONTROL: horizon "
       "stratification, healed exactly onto the six (NC4). [I1]'s "
       "Martin machinery relocates to the d42b1 transport grammar "

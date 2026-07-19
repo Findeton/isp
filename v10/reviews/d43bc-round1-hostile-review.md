@@ -682,3 +682,186 @@ machinery. On R-B1-R-B4 / R-C1-R-C3 and green reruns, both fronts
 return strengthened: residue 1 DECIDED at d42a scope (with the
 transport-grammar successor named), and the fourth door an actual
 exhibited operator family instead of a type annotation.
+
+---
+
+# DELTA VERIFICATION (2026-07-19, against HEAD 0169def: round frozen
+# #339; pin amendments §5 on both notes; receipts rebuilt at #343 —
+# d43b 17 PASS, d43c 11 PASS)
+
+**VERDICT: DELTA-CLEAN — 0 blocking findings / 1 recommendation /
+2 nits.** Every commissioned number and object verifies; the rebuilds
+are faithful adoptions of the round-1 findings, constructions, and
+scope language; the round-1 slip-through mutant classes now exit 1;
+the withdrawals are complete. Both units are terminal-fit as
+re-scoped. Method: reruns on 4 hash seeds each; the rebuilt d43b
+exec'd in-process and compared BLOCKWISE against this referee's own
+from-scratch reconstruction; independent recomputation of every new
+inline claim; a six-mutant battery on scratch copies; cwd probes.
+Scripts: `delta_d43b.py`, `b2mut1-3.py`, `c2mut1-3.py` (scratchpad).
+
+## The ten commissioned points
+
+**(1) The delivered d43b object — CONFIRMED BLOCK-IDENTICAL.** The
+receipt's P construction (one depth-6 enumeration, `__file__`-anchored
+exec, no boundary marker) reproduces my round-1 partition exactly:
+P_2 on len<=4, P_1 on len<=5, P_3 on len<=3 all blockwise equal to my
+independent rebuild; the |P_t| window tables [4,4,5,5,5] / [4,5,6,6] /
+[4,5,6] match; MG2b's agreement dict {0:F, 1:F, 2:T, 3:T, 4:T} is my
+round-1 agreement pattern (three consecutive agreements now coded —
+F-B5 repaired); the six representatives land in six distinct classes
+labeled 0-5 in my round-1 semantic order (CLS verified rep-by-rep).
+MG0's cumulative census [1,7,39,215,1191,6471,34375] anchored.
+
+**(2) MG2d — CONFIRMED.** Well-defined on all 215 len<=3 members;
+the gated rows equal my round-1 transfer EXACTLY (both `rows` and
+`T_REF` == my matrix; row sums 2,2,2,5/2,2,2). The rows are computed
+from the raw cache q's over the partition, independent of the
+signature construction — the right non-circular design.
+
+**(3) MG3 — CONFIRMED, with the new inline claims independently
+recomputed.** Tarjan: {0,1,3} transient / {2,4,5} closed (dominant
+row-closure and transient->dominant flow both gated). charpoly_dom(2)
+= 0 and T f = 2 f exact at f = (4/3,4/3,1,7/3,1,1) — my round-1
+eigen-identities. NEW in the rebuild and now referee-verified: det(2I
+− M_transient) = 3/32 (independent cofactor expansion agrees) and the
+resolvent (2I − M_t)^{-1} entrywise >= 0 (independent adjugate: rows
+(8/3,8/3,2/3), (2/3,8/3,2/3), (8/3,8/3,8/3) — all nonnegative), which
+is a RIGOROUS M-matrix certificate of rho_transient < 2, cleaner than
+my round-1 cycle-product argument; the forced extension (4/3, 4/3,
+7/3) reproduces through my independent inverse. MG3d's completed rows
+and the conflict-row anchor {1/7, 3/4, 3/28} match round 1.
+
+**(4) MG4/MG5 — CONFIRMED.** Root == renewal == class 0 at every
+t <= 3 (now a REAL gate; F-B3 repaired); pi = (1/4,1/4,1/2) with
+pi T = 2 pi and exact stationarity — my round-1 eigen-script facts,
+now receipt-carried with no tolerance.
+
+**(5) The negative-control section — CONFIRMED, and the slip-through
+class is dead.** MG1 correctly re-scoped as the truncation-algorithm
+regression anchor (17, trajectory 4-9-14-16-17); NC1 anchors the
+round-1 delivered counts as expectations (17/23/29; 19/20/25); NC2
+gates monotonicity + the margin-1 disagreement as the documented
+artifact; NC3 gates the pad-shift theorem (12,942/0) with the
+five-blocks-one-class exhibit and the H3/[nnn] co-classing; NC4 gates
+the 17 -> 6 stratification map (14 pure + exactly the three mixing
+blocks, onto); NC5 re-gates gauge constancy (5,548 depth-6 classes —
+and the new depth-5 count 1,565 independently confirmed). **The
+round-1 one-character cutoff mutant (b2mut1) now FAILS NC1 + NC2 and
+exits 1** — the exact mutation that went green in round 1. A transfer
+-anchor tilt (b2mut2) fails MG2d and exits 1. A third mutant dropping
+q from the P-signature (b2mut3) stays green — VERIFIED
+SEMANTICS-PRESERVING (the partition is block-identical with or
+without q on this data, since the weight multiset is already pinned
+by the shape seed; and the passing gates — six classes, distinct
+reps, rows == T_REF — would force any object change to fail): correct
+acceptance of an equivalent implementation, not a gap. grep: no
+check(True, ...) remains in either receipt.
+
+**(6) The A3 scope wording — FAITHFUL.** "Residue 1's Perron
+reduction is DECIDED at this grammar's scope on that window, pending
+the renewal-pumping closure theorem" with the two ingredients named
+— (i) the pad-shift identity, gated in-receipt; (ii) the renewal
+subtree isomorphism to depth 3 + the 144-point census,
+referee-verified and cited as such — is exactly my round-1 statement,
+neither weakened nor widened. The depth-7 confirmation is cited with
+an honest "cited, not rerun here" label (acceptable; ~3 min if ever
+in-lined). See D-r1 for the one receipt-carried upgrade worth making.
+
+**(7) The d43c PG3 objects — CONFIRMED SAME AS MINE.** V_pair (4x1)
+and V_single (2x1) are entry-for-entry my round-1 construction
+(Acceptance o OpeningClick, the |C|=2 chain = one click + acceptance);
+matrix-product gate; isometry defects 0.0 at 1e-40 for both V's AND
+all four factors; Born == PK1 recomputed from the layer (1/2-1/2;
+deterministic singleton) with the dyadic values tied to the matrices;
+the menu reconstruction — (admissible-ckey index x budget share
+Fr(1,4)/#components read from the layer's own past-view machinery,
+NOT from the composite menu) x (V_C Born splits) — equals the
+committed menus at BOTH cuts exactly in Fractions, with index sets
+{single} vs {single, pair}: my E3/E4, adopted with a cleaner
+share() derivation. Non-circularity holds: matrices -> Born (vs PK1)
+-> reconstruction (vs menus), each leg against a different committed
+source.
+
+**(8) The withdrawals — COMPLETE.** Note §5 C3 withdraws "the two
+residues are now ONE" and "answered" by name; the new verdict line
+states the exact R-C2 language ("residue 2's OPERATOR-EXISTENCE face
+is discharged at fixture scale ... the residues remain SEPARATE";
+"the fourth door is horn 2's open arm, now typed past-locally and
+exhibited"); the horn-2 price is now GATED on carriers (PG3-E5:
+V_pair touches both proposers — commutation-by-disjointness
+forfeited at joins, foliation face open); pin-PG2's second arm is
+answered in the verdict ("E-A reduces to E-B, which PG3
+adjudicates") per C4, and C4 carries the distributional-form +
+clock-robustness strengthening. LOG #343's narrative matches the
+artifacts.
+
+**(9) The round-1 slip-through mutants — ALL DEAD.** Born-tilt
+(c2mut1, PK1 -> 1/3-2/3, the class round-1's tautological R1 could
+not see): FAILS PG3-E3 + PG3-E4 + PG3-R3, exit 1. The comb_menu
+substitution has no analog (comb_menu is retired); its closest
+successor-class mutants both die: BORN reconstruction sabotage
+(c2mut3, 1/3-2/3): FAILS E3 + E4, exit 1; operator amplitude tilt
+(c2mut2, 1/sqrt2 -> 1/sqrt3): FAILS E2 (isometry) + E3, exit 1 —
+the operator itself is now load-bearing.
+
+**(10) R4's re-scope — ACCEPTABLE AS IS.** It now tests the
+constructed object (orthogonal winner+version outputs; acceptance
+distance preservation at 1e-40; a lossy control that genuinely fires)
+— exactly my R-C1 prescription's first arm. The full per-type
+reception census is d42b4's carried obligation (F5/R6 of that round)
+and is not d43c's to declare; nothing here touches or widens it.
+
+## Findings
+
+**D-r1 — recommendation (non-blocking):** the closure theorem's
+ingredient (ii) — the renewal subtree isomorphism (H3 subtree ==
+root tree to depth 3 under base substitution; 215 nodes; 144
+clean-slate points) — is referee-carried and cited, while ingredient
+(i) is receipt-gated. A ~20-line in-receipt gate would make both
+ingredients receipt-carried before the successor theorem leans on
+them. Not blocking: the citation is labeled, the fact is verified,
+and the corpus's referee-anchor convention covers it.
+
+**D-n1 — nit:** PG3-E5's first conjunct (`ops1[0] is ops2[0]`) and
+PG4's `sorted(VFAM) == [1, 2]` are construction-trivial (the family
+dict is defined once; the identity cannot fail). The load-bearing
+cut-independence content is carried by E4 (menu match at both cuts
+with differing index sets) and the carrier facts — fine; the two
+trivial conjuncts just should not be read as independent evidence.
+
+**D-n2 — nit:** the d43b banner's "all gates mechanical" is true of
+this receipt, with MG2a/verdict citing two referee-side facts
+(depth-7; the subtree isomorphism) under explicit labels — covered
+by D-r1; no wording change required.
+
+## Delta reproduction inventory
+
+- Reruns: PYTHONHASHSEED={0,7,11,61} on both rebuilt receipts ->
+  byte-identical to the committed .outs, exit 0 (d43b ~21 s, d43c
+  ~0.15 s). Cwd probes: both run from `v10/` byte-identical, exit 0
+  — F-B8 repaired and verified POSITIVE.
+- `delta_d43b.py` (10/10): in-process exec (17/0); P_1/P_2/P_3
+  blockwise vs my from-scratch rebuild; CLS rep labeling; rows ==
+  T_REF == my matrix; det = 3/32 by cofactors; adjugate resolvent
+  >= 0; forced extension (4/3,4/3,7/3); depth-5 canonical count
+  1,565; no-check(True) grep.
+- Mutants (scratch copies, `_here` re-anchored to the repo):
+  b2mut1 (cutoff off-by-one) -> NC1+NC2 FAIL, exit 1. b2mut2
+  (T_REF[3][0] tilt) -> MG2d FAIL, exit 1. b2mut3 (q dropped from
+  signature) -> 17/0 green, PROVEN semantics-preserving (blockwise
+  P_1/P_2 identity verified both ways). c2mut1 (PK1 tilt) ->
+  E3+E4+R3 FAIL, exit 1. c2mut2 (amplitude tilt) -> E2+E3 FAIL,
+  exit 1. c2mut3 (BORN tilt) -> E3+E4 FAIL, exit 1.
+
+**Disposition: DELTA-CLEAN. Both units go TERMINAL as re-scoped:**
+d43b with "residue 1 decided on the computed window (lambda = 2
+exact; root-free certificate YES) at d42a scope, pending the
+renewal-pumping closure theorem (both ingredients exhibited; [I1]
+relocates to the transport grammar)"; d43c with "the arbitration
+operator exists at fixture scale as the constructed past-local-
+indexed family {V_single, V_pair}; the pincer stands for
+cut/initiator-attached channels; E-A excluded by visibility; the
+foliation face and the measure side remain open and separate." D-r1
+is recommended in the next natural touch of d43b, not as a
+condition.

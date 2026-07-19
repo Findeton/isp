@@ -163,3 +163,33 @@ at depth 6, 1,565 at depth 5, 0 violations), and retains the old
 label-blind computation only as the documented NEGATIVE CONTROL
 with the 17 -> 6 stratification map gated (14 pure blocks + the
 three mixing blocks, onto all six). No check(True) remains.
+
+**A5 (delta verdict, 2026-07-19): DELTA-CLEAN; D-r1 applied — both
+closure-theorem ingredients now receipt-carried.** The combined
+delta on the rebuilt d43b+d43c came back 0 blocking / 1
+recommendation / 2 nits: the referee re-derived the partition
+blockwise from scratch (block-identical, six classes in round-1
+order), recomputed the transfer rows from the raw cache q's against
+T_REF, INDEPENDENTLY re-proved the dominant-class certificate by
+cofactor determinant 3/32 + entrywise-nonnegative adjugate
+resolvent, confirmed root == renewal at every t and the exact
+mass-transport identity, and killed the round-1 slip-through mutant
+class (the one-character cutoff mutant now fails NC1+NC2, exit 1; a
+transfer tilt fails MG2d; the one green mutant is PROVEN
+semantics-preserving). The single recommendation D-r1 — ingredient
+(ii) referee-carried while (i) was receipt-gated — is applied here:
+the new MG6 gates the renewal subtree isomorphism (base
+substitution v0 -> v1 maps the root tree ONTO the H3 subtree, 215
+== 215 nodes, menus event-bijective and q-equal at every node
+including the depth-3 shell) and the 144-point clean-slate renewal
+census (every class-0 point carrying an arb at len <= 4 has a
+unique shared non-superseded base and root-identical one-step menus
+under its own base substitution). 18 PASS / 0 FAIL; seeds
+0/7/11/61 byte-identical; a non-recursing-substitution mutant fails
+MG6 exit 1 (the subtree arm catches it — nested bases appear only
+in deep continuations; the census arm alone would not, which is why
+both arms are conjoined). TERMINAL as endorsed: residue 1 decided
+on the computed window (lambda = 2 exact; root-free certificate
+YES) at d42a scope, pending the renewal-pumping closure theorem
+(both ingredients exhibited AND gated; [I1] relocates to the
+transport grammar).

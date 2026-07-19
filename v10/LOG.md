@@ -6229,3 +6229,46 @@ matrices at both cuts) == the committed menus exactly (1/4 early;
 open arm TYPED AND CONSTRUCTED at fixture scale; E-A exclusion
 stands strengthened. Both deterministic across seeds; the round's
 slip-through mutants now exit 1. Delta to the d43bc referee next.
+
+## 2026-07-19 — d43bc DELTA-CLEAN; D-r1 applied (MG6); d43b + d43c
+## TERMINAL (LEDGER #344)
+The combined delta returned 0 blocking / 1 recommendation / 2 nits;
+all ten commissioned points verified. The referee: partition
+BLOCK-IDENTICAL to an independent from-scratch rebuild; transfer
+rows recomputed from raw cache q's == T_REF (non-circular); the
+dominant-class certificate INDEPENDENTLY re-proved (cofactor det =
+3/32; adjugate resolvent entrywise >= 0 — an M-matrix proof,
+cleaner than the review's own cycle-product bound); root == renewal
+and mass-transport confirmed; NC1-NC5 verified with the depth-5
+count 1,565 independently reproduced; the round-1 slip-through
+mutant class DEAD (cutoff mutant -> NC1+NC2 FAIL exit 1; transfer
+tilt -> MG2d FAIL; the single green mutant PROVEN
+semantics-preserving — correct acceptance). d43c: V_single/V_pair
+entry-for-entry the referee's own construction; withdrawals
+complete; PK1/BORN/amplitude tilts all fail E2-E4/R3 exit 1 — the
+operator is load-bearing. Seeds 0/7/11/61 byte-identical both
+receipts; cwd probes pass from v10/ (F-B8 verified repaired).
+D-r1 APPLIED at delta (non-blocking, taken anyway): NEW GATE MG6 —
+the renewal subtree isomorphism receipt-carried: base substitution
+v0 -> v1 maps the root tree ONTO the H3 subtree (215 == 215 nodes;
+menus event-bijective, q-EQUAL at every node incl. the depth-3
+shell) + the 144-point clean-slate renewal census (each point a
+UNIQUE shared non-superseded base; root-identical one-step menus
+under its own substitution). d43b now 18 PASS / 0 FAIL; seeds
+0/7/11/61 byte-identical VERIFIED pre-commit; a
+non-recursing-substitution mutant fails MG6 exit 1 (the subtree arm
+catches nested bases; the census arm alone would not — conjoined by
+design). Both closure-theorem ingredients are now receipt-gated
+(NC3 + MG6). Note §5 A5 records the delta. D-n1/D-n2 noted, no
+action (construction-trivial conjuncts not read as evidence; banner
+covered by D-r1).
+TERMINAL, both units, as endorsed: d43b — RESIDUE 1 DECIDED ON THE
+COMPUTED WINDOW (lambda = 2 exact; root-free certificate YES) at
+d42a scope, pending the renewal-pumping closure theorem (both
+ingredients exhibited AND gated; [I1] relocates to the transport
+grammar). d43c — THE ARBITRATION OPERATOR EXISTS at fixture scale
+as the constructed past-local-indexed family {V_single, V_pair};
+the pincer stands for cut/initiator-attached channels; E-A excluded
+by visibility; the foliation face and the measure side remain open
+and separate. The N-program is 4/4 TERMINAL: d43a (#340), d43d
+(#342), d43b, d43c (here). Synthesis note next.
