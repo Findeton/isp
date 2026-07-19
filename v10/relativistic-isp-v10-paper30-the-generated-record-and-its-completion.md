@@ -7,9 +7,9 @@
 **Author:** Felix Robles Elvira (ORCID 0009-0009-2017-4394).
 Relativistic ISP series, v10 paper 30.
 **Status:** EXACT-RECEIPT PAPER at the declared finite scope.  Every
-quantitative claim is bound to one of seven committed terminal receipts
-(outputs under `v10/data/`) or, where stated, to the committed campaign
-record (LOG, pins, frozen review files).
+quantitative claim is bound to a committed source: one of the seven
+terminal receipts (outputs under `v10/data/`), or — where an in-line tag
+says so — the committed campaign record (LOG, pins, frozen review files).
 Independent paper-level review remains open.
 **Date:** 2026-07-18.
 
@@ -565,7 +565,8 @@ dead-component inflation.  This is residue item 6 (§9).
 
 ### 5.1 The completion problem, posed exactly
 
-A **placement completion** is strictly positive data `Z` with the
+A **placement completion** is strictly positive data `Z` on record
+prefixes with the
 transfer
 
 ```text
@@ -996,8 +997,7 @@ a pricing patch.
 
 Pin-level carried obligations — the forced-click ontology, the D24/D26 g-binding
 (d42c class), the (actor,base) census-key upgrade, and the actor-factored
-intermediate completion class (subsumed by residue 1's finite-depth side if
-the authors so adjudicate) — remain recorded in the pins and LOG.
+intermediate completion class (a completion-class sharpening of residue 1's finite-depth side) — remain recorded in the pins and LOG.
 
 ### 9.1 Methods note
 

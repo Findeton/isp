@@ -447,3 +447,145 @@ statement-level; no computation is touched), the paper is terminal-fit.
 5. m1–m10, n1–n5 as listed; none touches a number.
 
 — frozen, paper-level round 1.
+
+---
+
+# Delta-verification (round 1 repairs, HEAD f34ced1, paper 1,120 lines)
+
+**Scope:** the #325 repair commit checked edit-by-edit against the round-1
+prescriptions; the two applier placement judgments adjudicated; the grep
+battery rerun; every quantity introduced by the repairs re-verified at
+source.  Round-1 body above untouched (zero diff since the #324 commit).
+
+## Verdict: DELTA-CLEAN — 0 findings / 4 notes (one a carried round-1 nit).
+## Paper 30 is terminal-fit.
+
+## Repair verification
+
+- **F1 — VERIFIED.**  The abstract's ladder sentence and the §4.1 A7' box
+  carry the prescribed scoped text exactly (enumerated families + h5/h11;
+  h12 off-ladder; general-depth false; reconciliation carried to the
+  completion problem).
+- **F2 — VERIFIED (arm ii).**  §5.2 now reads "Ratio preservation forces
+  `Z(h+e)/Z(h) = 1/N(h)`; no cut function has these increments, because
+  `N`'s chain products are foliation-dependent: 36 of the 202 canonical
+  diamonds refute integrability" — the prescribed increment restatement,
+  with m1's "diamond-connected components" and the F3 source tag folded
+  in.  Demand (b) is restated as class-constancy with the telescoping
+  note, verbatim per prescription; (b) now binds.
+- **F3 — VERIFIED.**  Status header and §9.1 carry the campaign-record
+  clause; the four in-line tags are placed (§5.2 review-record; §5.3 and
+  §9 item 1 LOG #302; §5.6 pin B4); §5.7's rank sentence is replaced with
+  the prescribed backward-recursion text and split per m9 (quotient
+  sentence and class-level sentence now separate).  The abstract's
+  untagged 313 is acceptable: abstract numbers recapitulate tagged body
+  claims, and the binding sentence's "where stated" points at the body
+  sites.
+- **F4 — VERIFIED.**  The paper-29 §17 quotation is restored verbatim
+  (checked word-for-word against paper 29) with the prescribed
+  honest-delivery clause (§6 pointer; entangling-interaction and
+  adjacency assigned to §9 item 2 and §7.2).
+- **m1–m10 — ALL VERIFIED** against the prescriptions: diamond-connected
+  components (m1); "declared in the receipt banners" (m2); NSE expanded
+  at §2.5 first use + reference-10 provenance (m3 — adjudicated below);
+  "(with K3)" splice repair (m4); "the class and sequence bases are the
+  two classical boundary choices" at both the abstract and §6.1 (m5);
+  "(depth `<= 2` slice, 93 points; the iff-sweeps family-wide)" (m6 —
+  93 re-verified against the GG1 `.out`); "Paper 20's dynamic-metric
+  fork (its successor arm (2)), posed for generated adjacency in the
+  d42b7 pin" (m7 — arm (2) re-verified against paper 20's successor-arm
+  list); the pin-level carried-obligations paragraph after item 6 (m8 —
+  voice note D-N2 below); m9 via the F3 split; "(17 states at the
+  decided depth)" (m10).
+- **Nits: n1 ("0.25989..." — matches the `.out` digits), n2 ("Five
+  papers ago … one audit ago"), n4 ("both equal `1/6` on this fixture"),
+  n5 ("(covariant in the §8.2 sense)") — VERIFIED.  n3 was not applied
+  (carried; note D-N4).**
+
+## Adjudication 1 (coordinator item 2): §5.1 "strictly positive cut data
+## `Z`" → "strictly positive data `Z`" — the deletion is CORRECT
+
+The applier's reasoning is the round-1 F2 analysis itself: the round-1
+body says of the original (b) that "the definition says 'cut data',
+killing that reading."  Under arm (ii), (b)-as-class-constancy is a
+*constraint* only if `Z` a priori ranges over prefix-attached data; an
+up-front cut-data declaration would make (b) tautological again and
+would also contradict §5.5's negative control (a sequence-attached `Z`
+failing 51 diamonds is only expressible if sequence-attached `Z` is in
+the candidate class).  §5.1 does not need a different opening — it needs
+one more word of typing (note D-N1): the bare "data `Z`" leaves the
+domain implicit (the transfer's `Z(h)`/`Z(h+e)` usage and §5.5's
+cut-attached/sequence-attached taxonomy recover it, but the noun should
+say it).
+
+## Adjudication 2 (coordinator item 6): the A7' scope clause at the END
+## of the box — ACCEPTED, and in fact REQUIRED
+
+The applier's observation is substantively correct and repairs a gap in
+the round-1 prescription itself.  At h12 the box's *second* sentence is
+also violated: B's own-view-priced arbitrate-and-merge sector prices
+`1/12 + 1/8 = 5/24` (LOG #304), so B's own-view sectors sum to `23/24`,
+not 1 — the own-view sentence is exactly as h12-exposed as the ladder
+sentence.  A clause placed adjacent to the ladder sentence only (the
+round-1 wording "append to A7'" read narrowly) would have scoped
+sentence 1 and left sentence 2 as a new unqualified false claim.
+End-of-box placement scopes the own-view sentence grammatically, and the
+ladder sentence is scoped by the clause's own content ("the
+general-depth ladder is false under current pricing"), which forecloses
+any unqualified reading of sentence 1.  Optional strengthening (not
+required): open the clause "— both statements at the record points of
+the enumerated families …".
+
+## Adjudication 3 (coordinator item 5): reference-10's d34a/d34b
+## provenance via the committed receipts — ACCEPTABLE
+
+No `note-d34a`/`note-d34b` files exist; the receipts are the units'
+committed carriers, and both were verified to carry the cited content:
+`d34a_harris_lemma_exact.py` carries the lottery/census-denominator
+lineage in its gate text, and `d34b_exponential_clocks_exact.py` carries
+the placement content ("cylinders carry clock-placement factors"; the E3
+PASSIVE-RECEPTION PLACEMENT gate).  Citing through receipts is the
+established pattern of reference 9 (d41d).  Correct as applied.
+
+## Grep battery + voice check — CLEAN
+
+No review-round narration in the paper's voice: the only
+"convict"-family hits are the round-1-cleared d34a-lineage usages
+(§4.3 "reconvicted", "census-denominator conviction" — corpus lineage,
+not campaign narration); "universal" remains confined to §7's scoped
+sense; the "[per the committed review record …]" tags are source
+citations sanctioned by the amended binding sentences, not narration;
+the methods note's "adversarially reviewed to terminal status" remains
+the one sanctioned sentence.  Quantities introduced by the repairs all
+re-verified at source (93; 0.25989...; successor arm (2); the two d34a/
+d34b receipt paths exist).  LOG #324/#325 present; report round-1 body
+byte-identical since #324.
+
+## Notes (none blocks terminal; apply or carry per the #298 precedent)
+
+- **D-N1.**  §5.1: "strictly positive data `Z`" → "strictly positive
+  data `Z` on record prefixes".  Types the domain the arm-(ii) reading
+  needs; one phrase, no claim change.
+- **D-N2.**  §9 pin-level paragraph: "(subsumed by residue 1's
+  finite-depth side if the authors so adjudicate)" is review-voice
+  inside the paper — the round-1 prescription's parenthetical shipped
+  verbatim (the round's own defect, not the applier's).  Adjudicate it:
+  "(a completion-class sharpening of residue 1's finite-depth side)".
+- **D-N3.**  §9.1: "…adversarially reviewed to terminal status — or,
+  where stated, to the committed campaign record" momentarily parses as
+  "reviewed … to the record".  Smooth: "— or bound, where stated, to
+  the committed campaign record".
+- **D-N4 (carried round-1 n3).**  "the aggregation-trilemma boundary
+  choice" (§9 item 3) is still never introduced in §6.1.  One-line fix:
+  in §6.1, "The three normalizations are observably inequivalent (the
+  aggregation trilemma); …" — or drop the name in item 3.
+
+## Terminal statement
+
+All four MAJORs and all applied minors/nits land exactly on the
+prescriptions or improve them (Adjudication 2); zero new numbers, zero
+scope changes, zero narrative leaks.  **DELTA-CLEAN.  On this stamp
+paper 30 is TERMINAL-FIT as repaired**; the four notes are wording
+polish at the authors' discretion and require no re-review.
+
+— delta appended; round-1 body untouched.

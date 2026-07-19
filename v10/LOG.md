@@ -5872,3 +5872,22 @@ F2-arm-(ii)'s requirement that the restated demand (b) bind (the
 up-front cut-data declaration would foreclose it). m3's reference-10
 provenance uses the committed d34a/d34b RECEIPTS as pointers (no
 corpus notes exist — verified). Delta to the paper referee next.
+
+## 2026-07-18 — PAPER 30 TERMINAL (LEDGER #326): delta DELTA-CLEAN —
+## THE USER-AUTHORIZED PROGRAM CLOSES
+The paper delta: 0 findings / 4 notes. Both applier judgments
+ADJUDICATED CORRECT — the "cut"-deletion matched the referee's own
+round-1 analysis, and the A7'-box end placement was REQUIRED (h12
+violates the own-view sentence too; adjacent placement would have
+minted a new unqualified false claim — the applier caught a gap in
+the referee's own prescription). The paper-29 §17 quote verified
+word-for-word; repair-introduced quantities re-verified at source;
+reference-10's receipt provenance accepted; voice clean. The three
+concrete notes applied pre-terminal (Z typed on record prefixes; the
+review-voice parenthetical replaced with the referee's text; the
+binding sentence's or-clause smoothed); D-N4 carried (the
+aggregation-trilemma naming nit). PAPER 30 TERMINAL at this commit.
+**THE PROGRAM ("run all d42b fronts 1-9 + cross cuts, then paper
+30") IS COMPLETE: nine campaign units terminal (#298-#321), the
+terminal paper (#323-#326), TEN hostile rounds + deltas, ZERO false
+numerical results across the entire record.**
