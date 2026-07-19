@@ -6547,3 +6547,41 @@ UNDECIDED — the smeared interacting identification with a g = 0
 column is the named successor. Successor 4 of the user's six: DONE
 (KG1+KG2 arms; the KG3 arm re-aimed honestly). D44c round + D44a
 build in flight.
+
+## 2026-07-19 — d44c round 1: REVISE 0B/1M/2m/3n; the headline
+## STRENGTHENED; forward-corrections applied (LEDGER #354); delta
+## commissioned
+The round (frozen: reviews/d44c-round1-hostile-review.md): every
+census/mass/class/width/death number reproduced by independent
+reimplementation; the enumerator verified complete against a strict
+syntactic superset (0 missed at 1,237 fully-checked nodes + 340
+sampled); the register-word dedup upgraded to a DENSE audit — 0
+mismatches over all 1,131,500 arb-containing histories; the oracle
+cross-validated against a definition-level brute checker (219 +
+4,231 + 900, 0 disagreements); F-CROSS reproduced cell-for-cell;
+6/6 mutants exit 1; the referee's own crown attempts all dead
+(27,600 triple-pool placements; a view-delayed cover-two
+construction admissible but starving at the second cover);
+BEYOND-CAP sweeps all green (exhaustive no-idle width-3 depth 8 =
+954,288 exactly as the receipt estimated; random probes w4/5/6 to
+depths 8/11/14; idle depth-7/8 stratum). THE ROUND'S THEOREM
+UPGRADE: the five confinement clauses are provably ALL-SCALE, plus
+the SIXTH (incomparable arbs share no upper bound) => the FUNNEL
+LEMMA: S3 IS IMPOSSIBLE AS AN INDUCED SUBPOSET AT EVERY WIDTH AND
+DEPTH — the obstruction is now scale-free for the S3 pattern;
+tested-scale scoping remains only for non-S3 3-irreducible
+patterns. FORWARD-CORRECTIONS (this row): (F1 MAJOR, owned) the
+receipt's witness horn was UNREACHABLE AT EXIT 0 — a witness would
+have tripped the census PASS conjuncts and exited 1 mislabeled as
+breakage; the banner's "either horn exits 0" was false of the code
+and the witness-horn verdict print is dead code; the obstruction
+outcome is unaffected (referee-verified no witness, incl. beyond
+caps); successor dimension receipts must wire the witness branch as
+a real exit-0 outcome. (F2) #351's "1,213,372 label-level
+histories" TRIPLE-COUNTS the 44,244 shared no-idle width-3 <= 6
+histories: DISTINCT = 1,124,884; per-family counts stand. (F3) the
+"every constructor state" clause was true but ungated for the 340
+F-CROSS post-X states — the referee dim-checked all 340: zero
+failures (referee-carried). Receipt frozen per the round's
+disposition (all numbers true; repairs are record-level). Pin §6
+B1-B4. DELTA to the d44c referee next.

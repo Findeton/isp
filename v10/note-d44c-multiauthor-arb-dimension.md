@@ -111,3 +111,50 @@ equality (no symmetry assumption).
 REPRODUCING the full NG2 computation in this receipt (below = 8,
 wsum = 1037/64, ratio = 512/1037 ~ 0.4937; all committed anchors
 exact); the terminal d43d receipt untouched.
+
+## 6. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d44c-round1-hostile-review.md: REVISE, 0B/1M/2m/3n; the
+## headline SURVIVES and is STRENGTHENED)
+
+**B1 (F1 MAJOR — the witness horn's exit design, owned).** The
+banner's "either horn exits 0" is FALSE of the code: a dim > 2
+witness would trip the census gates' own PASS conjuncts
+(witness-is-None / zero-failure counts), abort, and exit 1 labeled
+"anchor/port breakage"; the WITNESS-HORN verdict print is dead code.
+The delivered OBSTRUCTION verdict is unaffected (no witness exists —
+referee-verified independently, including beyond the caps), but the
+pre-registration claim was not implemented as stated. Owned as a
+decision-procedure defect; receipt frozen per the round's own
+disposition (all numbers true); forward-corrected at LOG #354. Any
+successor dimension receipt (incl. the S4/W8 candidate) must wire
+the witness branch as a genuine exit-0 delivered outcome.
+
+**B2 (F2 minor — the distinct-history count).** "1,213,372
+label-level histories" triple-counts the 44,244 no-idle width-3
+histories (<= 6 events) shared by AG1/AG1b/AG2b under the
+universe-free admissible(): DISTINCT histories = 1,124,884. The
+per-family counts stand individually; the summed claim is
+forward-corrected at #354.
+
+**B3 (F3 minor — a true claim with an absent gate).** The verdict's
+"every constructor state" clause: the 340 F-CROSS post-X states were
+never dim-checked in-receipt (AG2c's label says so). The referee
+rebuilt and dim-checked all 340: ZERO failures — the claim is TRUE,
+referee-carried; the gate's absence is recorded.
+
+**B4 (the round's positive deliveries — referee-carried, cited as
+such).** (i) The dedup soundness upgraded from 1-in-97 sampling to a
+DENSE audit: 0 mismatches over ALL 1,131,500 arb-containing
+histories. (ii) Beyond-cap sweeps all green: exhaustive width-3
+no-idle depth 8 (954,288 — the receipt's declared estimate verified
+exactly); random probes widths 4/5/6 to depths 8/11/14; the
+idle-containing depth-7/8 stratum. (iii) The five clauses are
+provably ALL-SCALE theorems, plus a stronger SIXTH clause —
+incomparable arbs have NO COMMON UPPER BOUND (0 violations
+mechanically) — yielding the round's FUNNEL LEMMA: **S3 is
+impossible as an induced subposet at EVERY width and depth.** The
+tested-scale scoping therefore remains necessary only for non-S3
+3-irreducible patterns. (iv) n1-n3 recorded: AG5 is check(True)
+(corpus-tolerated, flagged); the AG1b mint-tower label
+referee-verified true; clause (iv) gated per word class (equivalent
+under the now-proven class-invariance).
