@@ -6109,3 +6109,40 @@ T4 re-labeled (= T2 + the d=1/d=3 extension); the d=2 kappa ORBIT
 printed (three exact ratios per cell); completeness checks (odd
 orders, off-support); deterministic rerun byte-identical (0/29).
 chi0 cited to the report; delta to confirm the two-layer claim.
+
+## 2026-07-19 — d43bc ROUND 1 FROZEN (LEDGER #339): both headlines
+## corrected — RESIDUE 1 DECIDED ON THE WINDOW; THE OPERATOR BUILT
+Report: reviews/d43bc-round1-hostile-review.md (d43b 2B/2M/2m/2n;
+d43c 1B/1M/2m/2n; zero false internal numbers; 4-seed byte-identity
+each). D43B: F-B1 the pinned intrinsic map was never built (MG1
+gated the d42b56 algorithm against itself; the pinned frontier map
+fails the pin's own anchor clause). F-B2 THE REVERSAL: the 17/23/29
+growth is PURE HORIZON STRATIFICATION — all "new" states are
+noop-padded copies (the pad-shift theorem, 12,942 checks); the
+uniform-lookahead INTRINSIC partition stabilizes at SIX STATES
+(t = 2; depth-7 confirmation at 179,783 histories; margins >= 2
+blockwise stable); MG3-MG5 executed on the correct object give
+**lambda = 2 EXACT, f = (4,4,3,7,3,3)/3, one dominant class
+{2,4,5}, ROOT = RENEWAL STATE, exact mass-transport — residue 1's
+Perron reduction DECIDED on the window**, pending the small
+renewal-pumping closure theorem whose two ingredients (pad
+identity; renewal subtree isomorphism to depth 3) are exhibited.
+F-B3 my Martin-datum delivery was UNGATED (check(True); a one-char
+mutant prints corrupted counts and exits green). F-B4 the renewal
+decomposition never delivered. D43C: F-C1 PG3 was EXTENSIONAL
+THEATER (R1 literally x == x; the comb_menu/arb_menu mutant is
+byte-identical; no operator existed) — THE REFEREE BUILT IT:
+V_single/V_pair = Acceptance-compose-OpeningClick (d42b2-B1) from
+committed machinery — isometries at 1e-40, Born = K1, menu
+reconstruction (past-local index x operator) == the committed menus
+at both cuts, CUT-INDEPENDENT matrices, 15/15 green (~40 lines,
+pre-verified). F-C2 "the two residues are now ONE" and "answered"
+are WITHDRAWN (nothing was answered without the operator; horn 2's
+foliation face does not relocate). F-C3 the "fourth door" is horn
+2's explicitly-open arm, TYPED — and now CONSTRUCTED — not a new
+door around closed ones. SURVIVES: the E-A exclusion theorem
+(strengthened: distributional form + clock robustness); the
+FLP-partial refinement; the label-translation-quotient answer
+(pure relabeling does NOT close — 15 vs 16; pad-shift + renewal
+translation lands exactly on the SIX-state partition). Repairs
+next: adopt the six-state Perron package and the V-construction.
