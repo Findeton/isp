@@ -5664,3 +5664,19 @@ below" cannot-fail; the chain is in-family at mu 3/128). SURVIVES:
 the isolation claim CERTIFIED three ways (textual/behavioral/
 superset, 0 mismatches at all 620 histories); families/censuses/
 spectra/plumbing. Repairs R1-R5 all pre-verified green; applying.
+
+## 2026-07-18 — d42b7 round-1 repairs GREEN 9/9 (LEDGER #315);
+## delta launched
+R1/M1: the components are now GENERATED — the 3-actor ternary family
+contains EXACTLY 36 K3 histories (mu 1/1728, mass 1/48), all
+kernel-degenerate at 1/3; binary ZERO by pigeonhole; generated paths
+108/36 all discriminating (referee anchors exact). R2/M2: the five
+runnable pinned gates discharged both grammars (density with every
+blind group exactly 1/4; L1; the pair-arb iffs incl. the ternary 0-2
+pair). R3/B1: the bin table is MECHANICAL — every status entry is
+its gate's computed outcome; unearned rows impossible. R4/M3:
+structural anchors gated (pair-arb winner weights exactly 4 x 1/8;
+blind pair mass nonzero; families 215/405 anchored — the referee's
+kernel-ratio and delete-blind mutants now die). GG6 carries the
+affine-readout disclosure (the OF mean = a join-mass census readout;
+no dimension verdict). Seed-independent 0/83. Delta next.
