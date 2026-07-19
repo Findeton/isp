@@ -5638,3 +5638,29 @@ DEPENDENT. GG5 the bin table printed. GG6 the dimension PILOT:
 mu-weighted ordering fractions 386/771 (binary) / 290/579 (ternary)
 vs the exact-1 chain baseline — both near 1/2, verdict-free as
 pinned. Round next.
+
+## 2026-07-18 — d42b7 ROUND 1 FROZEN (LEDGER #314): 1B/3M/3m/1n —
+## zero false numbers (the streak holds at SEVEN rounds)
+Report: reviews/d42b7-round1-hostile-review.md. B1: GG5's bin table
+— the d41b protocol's DELIVERABLE — printed "LIFTED (2-of-2)" for
+rows whose second-grammar gates never ran, behind check(True) (the
+conviction class at the deliverable itself; every row's CONTENT
+referee-verified true). M1: pin said GENERATED, receipt constructed
+(a 3-proposal component cannot exist in a 2-actor family); repair
+pre-verified — the 3-actor run yields EXACTLY 36 generated ternary
+K3 histories (mu 1/1728 each, mass 1/48), all kernel-degenerate at
+1/3; the binary control 0 BY PIGEONHOLE; generated paths 36/108 all
+2/3-vs-1/2. M2: GG3 delivered one quarter of the pinned list; the
+five runnable missing gates all PASS when run (density with every
+blind group exactly 1/4; ratio locality; iff/L1/fork sweeps). M3: no
+structural anchors (kernel-ratio and delete-blind-arbs mutants ran
+green); CREDIT: the ladder's tot>=1 caught mutant C via
+CO-AUTHORSHIP components — a robustness discovery. Minors: GG1 93 =
+61 reflexive + 32 real, closure-membership unchecked (true at full
+depth 501/965); GG6's mean is an AFFINE READOUT of the join-mass
+census (spectrum {1/3, 2/3, 1}; the whole binary/ternary difference
+= join mass 1/32 vs 1/24; OF-1/2 = 1/1542 vs 1/1158; "strictly
+below" cannot-fail; the chain is in-family at mu 3/128). SURVIVES:
+the isolation claim CERTIFIED three ways (textual/behavioral/
+superset, 0 mismatches at all 620 histories); families/censuses/
+spectra/plumbing. Repairs R1-R5 all pre-verified green; applying.
