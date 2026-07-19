@@ -75,3 +75,39 @@ entries equal at 1e-60). QG4 NSE sweeps per record type + negative
 control. QG5 the coarse fiber (equal reduced states) vs fine
 (orthogonal). QG6 the 1/6 off-diagonal (coarse) vs 0 (fine). QG7
 unitarity/isometry checks on every constructed map (1e-60).
+
+## 4. Round-1 amendments (2026-07-18; round frozen at #310)
+
+**E1 (B1/B2 — the pinned Q1 claim RETRACTED as stated).** §1's
+"evades the trilemma by unitarity" equivocated: d42b3's refutation
+concerns PER-CUT normalization with WITHIN-CUT ratios; a globally
+normalized endpoint state with endpoint ratios is the classical
+gradient completion at unit boundary, in Hilbert dress — no evasion.
+THE TRUE STATE (the referee's pincer, adopted as the pin's own): a
+lifted ARB step operator must be either cut-independent (then it
+reproduces D3's arb-killing zero class), cut-dependent (then its
+support overlaps the blind wire — the carrier structure breaks), or
+dilated (then cut data reappears in the ancilla). **The quantum
+completion problem BEGINS at the arb layer, where the classical one
+stopped. OPEN, now precisely posed; round 2's decidable target.**
+What d42b4 DOES establish: the kernel-layer lift (the arb's internal
+click structure lifts exactly; 2/3-1/3), the fine-vs-coarse
+instrument pair with the COMPLETE census (7 same-fiber pairs at
+exactly 1/6; 8 cross-fiber at 0), the fiber/D23 limit re-scoped to
+the full fiber, and the NSE reception form for basis-copy records
+(per-type extension declared, not censused).
+
+**E2 (F3 — the chimera owned).** My toy pricing reproduced the exact
+A5'-refuted idle value (1/2 post-proposal; the true value is 3/4)
+and excluded the declared self-arb — the same error class the
+campaign already corrected once. The rebuilt family is the TRUE
+d42a depth-2 slice: 32 sequences, Z = 4 (referee-anchored).
+
+**E3 (F4 — the aggregation trilemma is a NEW OBJECT).** Sequence-,
+word-, and canonical-class-based lift bases give observably
+inequivalent states (Z = 23/4 / 15/4 / 11/4). Which basis carries
+amplitude is the fine-vs-coarse question at the HISTORY level —
+declared OPEN alongside it; the rebuilt receipt uses the
+canonical-class basis (the gauge-invariant classical object) and
+STATES it as the gradient-completion-in-Hilbert-dress, claiming no
+evasion.

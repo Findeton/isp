@@ -5543,3 +5543,36 @@ QG5b D23's join limit operational: same-fiber conditional winner
 records identical (overlap 1) — the join cannot be inverted from
 its record. QG4 NSE reception isometry on 10 probe pairs + the
 d41d-R3 lossy negative control (0.2599 > 1/100). Hostile round next.
+
+## 2026-07-18 — d42b4 ROUND 1 FROZEN (LEDGER #310): 2B/4M/2m/2n —
+## the headline RETRACTED; the true state is theorem-shaped
+Report: reviews/d42b4-round1-hostile-review.md (zero false internal
+numbers; 28/28 independent checks; 3-seed byte-identity). B1 THE
+EQUIVOCATION: d42b3 refuted PER-CUT normalization + WITHIN-CUT
+ratios; the receipt exhibited GLOBAL normalization + ENDPOINT ratios
+— which the classical gradient completion ALREADY achieves at unit
+boundary (P ∝ mu); dividing by sqrt(Z) is the flat pushforward in
+Hilbert dress, not "normalization by unitarity"; sabotaged pricing
+runs 7/7 green. B2 the commutation gate was SCALAR commutativity
+(dead operator toolkit; a non-isometric VB passes) — and at the A7
+cut the disjoint-carrier mechanism is REFUTED by the referee's
+PINCER: a cut-independent arb operator reproduces D3's arb-killing
+zero class; a cut-dependent one needs carrier overlap; dilation
+brings cut data back. THE QUANTUM COMPLETION PROBLEM BEGINS AT THE
+ARB LAYER — exactly where the classical one stopped. F3 the F-PAIR
+family was a CHIMERA: my toy idle used the A5'-REFUTED 1/2 (the
+exact error A5' fixed, reproduced by me) and excluded the self-arb;
+true depth-2: 32 sequences, Z = 4. F4 the word aggregation is a
+THIRD convention (Z = 11/4 class / 15/4 word / 23/4 coherent —
+observably inequivalent) silently resolving the fine-vs-coarse
+question the same receipt declares empirical. F5/F8 NSE declaration
++ fixture drift + the false scope banner ("arb lifted" — no grammar
+arb is lifted anywhere). SURVIVES: the F-PATH kernel-layer lift
+(2/3-1/3 exact); the 1/6 discriminator with the referee's COMPLETED
+census (7 same-fiber pairs at exactly 1/6, 8 cross-fiber at 0;
+robust to the click-chain refinement); the fiber/D23 statement
+re-scoped; the NSE positive half + the real 0.2599 control; the
+d42b3 decided structure. FLAGSHIP R1 PRE-VERIFIED: the honest
+A7-diamond arithmetic anchored from the committed d42a machinery —
+round 2 returns either a genuine joint-carrier discharge or the
+theorem-grade statement. Repairs next.
