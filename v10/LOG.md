@@ -5723,3 +5723,22 @@ covariance of the generated complex (actor-exchange +
 payload-relabeling gates; Z class-constancy cited); continuum limits
 NOT claimed (Hegerfeldt; the arb-layer problem gates operator
 routes). Receipt next.
+
+## 2026-07-18 — d42b56 receipt GREEN 4/4 (LEDGER #318); round next
+v10/code/d42b56_rootfree_action_exact.py, EXACT, seed-independent
+(0/97). S1 THE THREE-LEVEL FLATNESS LADDER on all 202 diamonds:
+weight level FLAT (0), naive cut-normalized NOT flat at EXACTLY the
+36, gradient-completed FLAT under BOTH boundaries (0) — completion
+RESTORES the action-level check; flatness is level-relative (paper
+29's lesson, now on our object). S2 the RENEWAL exhibit: the root
+and the post-arb fresh-base point have isomorphic menus; both
+canonical boundaries break stationarity there (exact q' witnesses) —
+truncated completions are ROOTED (paper 28 anticipated). S3 the
+reduction declared: root-free = positive-eigenvector on menu states;
+front 7 ≡ d42b3's infinite-volume residue — ONE open core. S4 the
+covariance gates: actor-exchange + payload-flip are exact measure
+isomorphisms family-wide (0/0 over 1,191; in-build catch: version
+names embed authors/payloads, the relabel maps must recurse into
+base fields — 208 histories went inadmissible under the naive maps;
+also the first detail string HARDCODED "0 violations" — replaced
+with computed counters). Round next (the campaign's last).

@@ -1,0 +1,19 @@
+[d42b56 — root-free, the action ladder, the shadows]
+  banner: EXACT; d42a layer exec'd from the committed d42b3
+  receipt; depth <= 4 (the decided complex); no existence
+  claim on the infinite-volume core (A3, declared OPEN).
+  family: 1191 (must be 1191)
+  [PASS] S1 the THREE-LEVEL FLATNESS LADDER on all 202 diamonds: the weight level FLAT (0), the naive cut-normalized level NOT flat at EXACTLY the 36, the gradient-completed level FLAT again under BOTH boundaries (0) — completion RESTORES the action-level check; flatness is level-relative (paper 29's lesson on our object)  (diamonds = 202; violations mu/naive/gradient = 0/36/0)
+  [PASS] S2 the RENEWAL exhibit + boundary non-stationarity: the root and the post-arb fresh-base point have ISOMORPHIC menus (event shapes x weights as multisets), yet BOTH canonical boundaries give different completed transfers there — the truncated completions are ROOTED (paper 28's uniform-rooting theorem anticipated this)  (menus equal = True; q'(root) = 133/2074 vs q'(post-arb) = 1/16 (unit); 6055/91816 vs 1/14 (1/k))
+  S3 THE REDUCTION (A3, declared): a root-free/stationary
+  completion is a positive eigenvector of the local transfer
+  on menu-isomorphism states, Z(h) = f(state)*lambda^{-depth};
+  at finite depth the boundary-free constraint system is
+  underdetermined, and existence IS d42b3's infinite-volume
+  positive-harmonic residue — front 7 and that residue are ONE
+  open core. No existence claim either way at this scope.
+  [PASS] S3 the reduction stated; OPEN status declared (== the d42b3 residue; one core, not two)  (conditional on the S2 renewal exhibit above)
+  [PASS] S4 the DISCRETE COVARIANCE gates (front 9's sprinkling precursor): actor-exchange and payload-relabeling are exact measure isomorphisms of the generated complex, family-wide; Z class-constancy (foliation gauge) re-cited from d42b3; the CONTINUUM limits are NOT claimed (Hegerfeldt pre-registered; the arb-layer problem gates operator routes — d42b4 E1)  (actor-exchange 0 violations / payload-flip 0 violations over 1191 histories (counters COMPUTED — the first build hardcoded the detail))
+
+[SUMMARY] 4 PASS / 0 FAIL
+[VERDICT] d42b56 GREEN: completion restores level-relative flatness (the action check); truncated completions are rooted and the root-free question reduces to the ONE infinite-volume residue; the decided dichotomy stands as v6's discrete TS form with the sprinkling precursor gated as exact symmetry covariance.
