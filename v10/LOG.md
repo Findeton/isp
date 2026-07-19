@@ -6413,3 +6413,41 @@ the one failure the retired fit-era margin figure — now deleted).
 THE D44 EXECUTION GATE IS OPEN (program pin #347): wave 1 (D44a
 closure theorem; D44d slab kappa(m); D44c arb-dimension) launches
 now; wave 2 (D44f, D44e, D44b last) follows conversions.
+
+## 2026-07-19 — D44d receipt GREEN 17/17 (LEDGER #350); round 1
+## commissioned. kappa(m) IS AN EXACT QUARTIC
+Wave-1 build delivered (builder-agent; artifacts verified pre-commit:
+independent rerun exit 0 BYTE-IDENTICAL to the committed .out; 17
+PASS / 0 FAIL; ~2 min). THE HEADLINES:
+KG2 — **kappa(m) = (9m^4 - 15m^2 + 4)/144 = (3m^2-1)(3m^2-4)/144
+EXACTLY**: identified by exact x-poly[2] ansatz solved from 3 of 28
+rational-mass grid points and verified with ZERO tolerance on the
+remaining 25 (9.3x overdetermination; all 28 kappas exact rationals,
+max residual 2.7e-51); reproduces the committed anchors
+(13/2304 at m=1/2; -1/72 at m=1; hand-checked also 11/18 at m=2);
+EXACT zero crossings m = 1/sqrt(3) and m = 2/sqrt(3), both confirmed
+fit-independently by pipeline sign flips on 1/64-wide brackets
+([9/16,37/64] and [73/64,37/32]) — the d43a sign flip is the
+two-crossing structure of an exact quartic. Hull [1/16, 2]; no claim
+outside it.
+KG1 — the log-smeared finite-slab theorem HOLDS at fixture scale on
+the COMPOSITE arm (the v2 p1 §7 reading): every wrap-clean cell at
+w in {1,2,3,4}, L in {12,16}, both masses collapses to the SINGLETON
+ray and constant (EXC = 1; LT = kappa(m)) — slab-width INDEPENDENCE,
+zero deviation. DELIVERED FINDING on the BLOCK arm: the literal
+block-region EXC normalization = ((w+1)/2)^2 exactly (1, 9/4, 4,
+25/4; mass/L-independent) while the ray is unchanged and LT is
+w-independent. Wrap census exact (8 L=12 LT cells seam-contaminated,
+excluded with the support lemma + nonzero completeness-slot witness).
+KG3 — the interacting cross-check: DIVERGENT at both cells
+(d = 1, 2) at the validator's committed point (m,g) = (7/10, 1/2) —
+at the raw singleton-bracket grain the free-core ray universality
+does NOT arrive at the interacting fixture (pre-registered open;
+the smeared interacting identification = the declared successor).
+SG0 regression all green at ORD 12 (anchors, tau tables delta-odd
+per-channel gate added). Pin §4 amendments A1-A6 record the
+receipt's declared deviations (two-arm KG1; r_max; wrap exclusion;
+exact ORD-4 truncation gated; weight-family independence note; KG3
+conventions). Determinism: 4 runs byte-identical (3 builder + 1
+verify). ROUND 1 COMMISSIONED next; D44a/D44c builds still in
+flight.

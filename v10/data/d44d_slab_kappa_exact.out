@@ -1,0 +1,210 @@
+[d44d — the slab smeared theorem, exact kappa(m), the interacting cross-check]
+  banner: exact truncated-series arithmetic (the d43a machinery, ported
+  verbatim); mp.dps = 50; threshold 1e-30; SG0 at ORD = 12 / L = 12 (the
+  d43a code path, re-anchored); KG1/KG2/KG3 at ORD = 4 (EXACT truncation:
+  a Delta^p coefficient of series products/inverses depends only on input
+  orders <= p; gated below at 1e-40 entrywise and on the kappa anchors).
+  Exit 1 ONLY on anchor/extraction breakage; KG1 w-dependence, KG2 non-fit,
+  and every KG3 verdict are pre-registered DELIVERED outcomes at exit 0.
+  Deterministic: no RNG, no wall clock; rerun byte-identical (SG5).
+
+  PINNED TEST-WEIGHT FAMILY (KG1; declared BEFORE any verdict):
+  log-uniform site weights over the slab: for width w, phi_j =
+  (1/(j+1)) / H_w at site base+j, j = 0..w-1, H_w = sum_{k=1..w} 1/k.
+  Exact values: w=1: (1); w=2: (2/3, 1/3); w=3: (6/11, 3/11, 2/11);
+  w=4: (12/25, 6/25, 4/25, 3/25).
+  The weights enter as the v2 p1 SS7 log-smeared slab observable read at
+  leading coefficient order (log J_n = Delta^p A_n + h.o., so the SS7
+  log-smear IS the phi-weighted singleton-coefficient sum at this order):
+    COMPOSITE arm:  Abar_w(b) = sum_{j<w} phi_j A^rule_{{b+j}}.
+  The pin's literal 'regions R = contiguous blocks' reading is run as the
+    BLOCK arm:      A^rule_{R_w(b)},  R_w(b) = {b..b+w-1},
+                    C_R = sum_{n in R} m beta_n + sum_{bonds meeting R} k.
+  Identification (both arms): the d43a tau first-moment construction on
+  the pair at bases (0, r): tau(delta,s,s') = sum_{r=1..rmax} r *
+  sum_i [A(0), A(r)]_{(i,s),(i+delta,s')}; D(s,s') = sum_delta delta*tau;
+  rmax = w+1 (EXC) / w+3 (LT) = the exact kernel-support bound; the
+  rmax+1 completeness slot is gated ZERO on every wrap-clean cell.
+  Declared: by translation covariance the phi-weighted mean pair
+  separation equals the base separation r exactly, so on wrap-clean
+  lattices the composite-arm collapse constant is weight-family
+  independent (the cancellation-order content of the conversion note);
+  the log-uniform family is the pinned instance run here.
+
+  WRAP CENSUS (support lemma, declared BEFORE verdicts): the LT defect
+  kernel of either arm spans sites [b-2, b+w+1]; the pair at separation r
+  is seam-free iff r <= w+3 (front bound) and r < L-(w+3) (back bound).
+  At L=12 these overlap for w in {3,4}: the LT cells (L=12, w=3|4,
+  COMPOSITE|BLOCK) are WRAP-CONTAMINATED — excluded from the theorem
+  gate, delivered with flag WRAP, with the L=16 twins carrying the clean
+  statement. All EXC cells (kernel [b-1, b+w], rmax = w+1) and all L=16
+  cells are seam-free.
+
+  SG4 FLOAT ENTRY POINTS (enumerated): (1) all series arithmetic is
+  mpmath binary at dps 50 (rational inputs with non-power-of-2
+  denominators are 1e-50-rounded on entry; hence gates at 1e-30, never
+  equality on mpf); (2) kappa/constant recognition: exact binary value ->
+  Fraction via continued-fraction best approximation, denominator cap
+  1e15, gated |x - p/q| < 1e-30 (max residual and max denominator
+  reported in SG4); downstream ansatz solve/verify runs in EXACT Fraction
+  arithmetic with ZERO tolerance on the recognized rationals; (3) the KG3
+  fixture constants (7/10, 1/2, 9/10, -2/5, 11/10, 1/5) enter as dps-50
+  mpf. No other float entry points exist.
+
+[SG0 — regression at ORD 12, L 12: the d43a anchors, same code path]
+  (SG0 re-runs the d43a ANCHORS; the d43a T2/T4 verdict deliveries are
+   committed results and are not re-delivered here.)
+  [PASS] SG0-PF the generalized region collar builder == the d43a singleton builder entrywise (lam = 1 and 1/2), exact
+  [PASS] AN1 the EXC singleton A(1): diag 1/2 at n0, 1/4 at n0+-1, -1/4 spin-flip off-diagonals, same-spin zero, columns sum zero (v2 p1 exact entries)  (exact at 1e-30)
+  [PASS] AN4 the lambda family at lam = 1/2: A(1)_lam = (3/4) A(1) entrywise (c_lam = lam(2-lam))  (all entries)
+  [PASS] AN2 the documented d = 1 EXC defect: Delta^4 entry ((0,up),(1,dn)) = -1/8 exactly, transpose +1/8, same-spin 0 (v1 p1's worked case)  (entry = -0.125)
+  [PASS] AN3 the LT onset law + completeness: E^LT orders 3-7 below onset vanish exactly at every (m, d in {2,3}); A(1) vanishes off the collar support  (sub-onset, odd-order, and off-support all zero at 1e-30)
+  [PASS] T5 anchors re-run: EXC D = 1*(I - sigma_x) exactly; LT D = kappa(m)*(I - sigma_x) with kappa(1/2) = 13/2304, kappa(1) = -1/72 (sign flip); the LT tau tables match the committed signed channel values; delta-odd verified in every channel of both rules  (m=0.5: EXC D=(I-sx) True; LT D=13/2304*(I-sx) True; table True; delta-odd True; m=1.0: EXC D=(I-sx) True; LT D=-1/72*(I-sx) True; table True; delta-odd True)
+
+[KG1 — slabs at ORD 4: both arms, w in {1,2,3,4}, L in {12,16}]
+  (L = 16 RUN: exact-series cost at ORD 4 permits it — declared.)
+  [PASS] KG1-T the ORD-reduction is exact: A^LT (m=1/2, n0=3, L=12) at ORD 12 == at ORD 4 entrywise  (max dev = 0.0 (gate 1e-40))
+  L=12 m=0.5 w=1 COMPOSITE EXC: c =            1  ray=T  slot(r=3) = 0.0  [clean]
+  L=12 m=0.5 w=1 COMPOSITE LT: c =      13/2304  ray=T  slot(r=5) = 0.0  [clean]
+  L=12 m=0.5 w=2 COMPOSITE EXC: c =            1  ray=T  slot(r=4) = 0.0  [clean]
+  L=12 m=0.5 w=2 COMPOSITE LT: c =      13/2304  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=0.5 w=2 BLOCK     EXC: c =          9/4  ray=T  slot(r=4) = 0.0  [clean]
+  L=12 m=0.5 w=2 BLOCK     LT: c =      13/2304  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=0.5 w=3 COMPOSITE EXC: c =            1  ray=T  slot(r=5) = 0.0  [clean]
+  L=12 m=0.5 w=3 COMPOSITE LT: c =  3229/278784  ray=T  slot(r=7) = 0.000387  [WRAP]
+  L=12 m=0.5 w=3 BLOCK     EXC: c =            4  ray=T  slot(r=5) = 0.0  [clean]
+  L=12 m=0.5 w=3 BLOCK     LT: c =     151/2304  ray=T  slot(r=7) = 0.00212  [WRAP]
+  L=12 m=0.5 w=4 COMPOSITE EXC: c =            1  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=0.5 w=4 COMPOSITE LT: c =  7643/288000  ray=T  slot(r=8) = 0.000345  [WRAP]
+  L=12 m=0.5 w=4 BLOCK     EXC: c =         25/4  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=0.5 w=4 BLOCK     LT: c =    1079/9216  ray=T  slot(r=8) = 0.00163  [WRAP]
+  L=12 m=1.0 w=1 COMPOSITE EXC: c =            1  ray=T  slot(r=3) = 0.0  [clean]
+  L=12 m=1.0 w=1 COMPOSITE LT: c =        -1/72  ray=T  slot(r=5) = 0.0  [clean]
+  L=12 m=1.0 w=2 COMPOSITE EXC: c =            1  ray=T  slot(r=4) = 0.0  [clean]
+  L=12 m=1.0 w=2 COMPOSITE LT: c =        -1/72  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=1.0 w=2 BLOCK     EXC: c =          9/4  ray=T  slot(r=4) = 0.0  [clean]
+  L=12 m=1.0 w=2 BLOCK     LT: c =        -1/72  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=1.0 w=3 COMPOSITE EXC: c =            1  ray=T  slot(r=5) = 0.0  [clean]
+  L=12 m=1.0 w=3 COMPOSITE LT: c =   -277/34848  ray=T  slot(r=7) = 0.000533  [WRAP]
+  L=12 m=1.0 w=3 BLOCK     EXC: c =            4  ray=T  slot(r=5) = 0.0  [clean]
+  L=12 m=1.0 w=3 BLOCK     LT: c =      53/1152  ray=T  slot(r=7) = 0.00358  [WRAP]
+  L=12 m=1.0 w=4 COMPOSITE EXC: c =            1  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=1.0 w=4 COMPOSITE LT: c =   1409/72000  ray=T  slot(r=8) = 0.000637  [WRAP]
+  L=12 m=1.0 w=4 BLOCK     EXC: c =         25/4  ray=T  slot(r=6) = 0.0  [clean]
+  L=12 m=1.0 w=4 BLOCK     LT: c =     281/2304  ray=T  slot(r=8) = 0.00651  [WRAP]
+  L=16 m=0.5 w=1 COMPOSITE EXC: c =            1  ray=T  slot(r=3) = 0.0  [clean]
+  L=16 m=0.5 w=1 COMPOSITE LT: c =      13/2304  ray=T  slot(r=5) = 0.0  [clean]
+  L=16 m=0.5 w=2 COMPOSITE EXC: c =            1  ray=T  slot(r=4) = 0.0  [clean]
+  L=16 m=0.5 w=2 COMPOSITE LT: c =      13/2304  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=0.5 w=2 BLOCK     EXC: c =          9/4  ray=T  slot(r=4) = 0.0  [clean]
+  L=16 m=0.5 w=2 BLOCK     LT: c =      13/2304  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=0.5 w=3 COMPOSITE EXC: c =            1  ray=T  slot(r=5) = 0.0  [clean]
+  L=16 m=0.5 w=3 COMPOSITE LT: c =      13/2304  ray=T  slot(r=7) = 0.0  [clean]
+  L=16 m=0.5 w=3 BLOCK     EXC: c =            4  ray=T  slot(r=5) = 0.0  [clean]
+  L=16 m=0.5 w=3 BLOCK     LT: c =      13/2304  ray=T  slot(r=7) = 0.0  [clean]
+  L=16 m=0.5 w=4 COMPOSITE EXC: c =            1  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=0.5 w=4 COMPOSITE LT: c =      13/2304  ray=T  slot(r=8) = 0.0  [clean]
+  L=16 m=0.5 w=4 BLOCK     EXC: c =         25/4  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=0.5 w=4 BLOCK     LT: c =      13/2304  ray=T  slot(r=8) = 0.0  [clean]
+  L=16 m=1.0 w=1 COMPOSITE EXC: c =            1  ray=T  slot(r=3) = 0.0  [clean]
+  L=16 m=1.0 w=1 COMPOSITE LT: c =        -1/72  ray=T  slot(r=5) = 0.0  [clean]
+  L=16 m=1.0 w=2 COMPOSITE EXC: c =            1  ray=T  slot(r=4) = 0.0  [clean]
+  L=16 m=1.0 w=2 COMPOSITE LT: c =        -1/72  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=1.0 w=2 BLOCK     EXC: c =          9/4  ray=T  slot(r=4) = 0.0  [clean]
+  L=16 m=1.0 w=2 BLOCK     LT: c =        -1/72  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=1.0 w=3 COMPOSITE EXC: c =            1  ray=T  slot(r=5) = 0.0  [clean]
+  L=16 m=1.0 w=3 COMPOSITE LT: c =        -1/72  ray=T  slot(r=7) = 0.0  [clean]
+  L=16 m=1.0 w=3 BLOCK     EXC: c =            4  ray=T  slot(r=5) = 0.0  [clean]
+  L=16 m=1.0 w=3 BLOCK     LT: c =        -1/72  ray=T  slot(r=7) = 0.0  [clean]
+  L=16 m=1.0 w=4 COMPOSITE EXC: c =            1  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=1.0 w=4 COMPOSITE LT: c =        -1/72  ray=T  slot(r=8) = 0.0  [clean]
+  L=16 m=1.0 w=4 BLOCK     EXC: c =         25/4  ray=T  slot(r=6) = 0.0  [clean]
+  L=16 m=1.0 w=4 BLOCK     LT: c =        -1/72  ray=T  slot(r=8) = 0.0  [clean]
+  [PASS] KG1-A the w = 1 cells reproduce the singleton anchors at both L (EXC: 1; LT: 13/2304 at m=1/2, -1/72 at m=1)  (exact at 1e-30)
+  [PASS] KG1-B LT sub-onset validity at slab scope: J^LT orders 1-3 vanish for singletons and every block width at both L, both masses  (all below 1e-30)
+  [PASS] KG1-C extraction complete: every wrap-clean cell has exact ray collapse D = c*(I - sigma_x) and a ZERO completeness slot; every clean constant recognized as an exact rational  (56 cells (48 clean + 8 declared WRAP))
+  [KG1 THEOREM] composite arm: HOLDS: COMPOSITE (the SS7 log-smeared slab): every wrap-clean cell collapses to the SINGLETON ray and constant — EXC = 1 and LT = kappa(m) at ALL w in {1,2,3,4} (all w at L=16; w <= 2 plus all EXC at L=12): slab-width INDEPENDENCE
+  [KG1 BLOCK ARM] LT = kappa(m) w-INDEPENDENT at every clean cell; EXC = ((w+1)/2)^2 exactly (1, 9/4, 4, 25/4; mass- and L-independent) — DELIVERED FINDING: the literal block-region EXC normalization carries the collar-length square while its ray is unchanged and the LT constant is untouched
+  [KG1 WRAP RECORD] the 8 declared L=12 LT wrap cells (finite-seam artifacts, not theorem statements; their L=16 twins are clean and collapse exactly): (L=12,m=0.5,w=3,COMPOSITE): 3229/278784; (L=12,m=0.5,w=3,BLOCK): 151/2304; (L=12,m=0.5,w=4,COMPOSITE): 7643/288000; (L=12,m=0.5,w=4,BLOCK): 1079/9216; (L=12,m=1.0,w=3,COMPOSITE): -277/34848; (L=12,m=1.0,w=3,BLOCK): 53/1152; (L=12,m=1.0,w=4,COMPOSITE): 1409/72000; (L=12,m=1.0,w=4,BLOCK): 281/2304
+
+[KG2 — exact kappa(m) at ORD 4, L 12: 28 rational masses on (0, 2]]
+  m        kappa(m) (recognized exact)        kappa(m) (dps-50)
+  1/16             258313/9437184  0.0273718304104275173611111111111
+  1/8                15433/589824  0.0261654324001736111111111111111
+  3/16             228313/9437184  0.0241929160224066840277777777778
+  1/4                   793/36864  0.0215115017361111111111111111111
+  3/8                 8473/589824  0.0143653021918402777777777777778
+  7/16              95593/9437184  0.0101293987698025173611111111111
+  1/2                     13/2304  0.00564236111111111111111111111111
+  13/24             13777/5308416  0.00259531280140817901234567901235
+  9/16              10153/9437184  0.00107585059271918402777777777778
+  5/8                -1991/589824  -0.00337558322482638888888888888889
+  11/16            -70727/9437184  -0.00749450259738498263888888888889
+  17/24            -46463/5308416  -0.00875270513840663580246913580247
+  3/4                  -407/36864  -0.0110405815972222222222222222222
+  19/24            -68783/5308416  -0.0129573492356288580246913580247
+  13/16           -129767/9437184  -0.0137506061130099826388888888889
+  7/8                -9047/589824  -0.0153384738498263888888888888889
+  15/16           -146231/9437184  -0.0154951943291558159722222222222
+  23/24            -80543/5308416  -0.0151726993513695987654320987654
+  1                         -1/72  -0.0138888888888888888888888888889
+  17/16            -95927/9437184  -0.0101647906833224826388888888889
+  9/8                -2327/589824  -0.00394524468315972222222222222222
+  5/4                   649/36864  0.0176052517361111111111111111111
+  11/8               31993/589824  0.0542416042751736111111111111111
+  3/2                    253/2304  0.109809027777777777777777777778
+  13/8              111193/589824  0.188518948025173611111111111111
+  7/4                 10873/36864  0.294949001736111111111111111111
+  15/8              256009/589824  0.434043036566840277777777777778
+  2                         11/18  0.611111111111111111111111111111
+  [PASS] KG2-A the anchor masses reproduce the committed singleton kappas exactly: kappa(1/2) = 13/2304, kappa(1) = -1/72
+  [PASS] KG2-B ray collapse D = kappa*(I - sigma_x) at EVERY grid mass, both rules; EXC constant = 1 at EVERY grid mass (the EXC side is mass-blind)  (all 28 masses at 1e-30)
+  [PASS] KG2-C every grid kappa recognized as an exact rational (denominator cap 1e15, residual gate 1e-30)  (max residual 2.67e-51, max den 9437184)
+  ansatz census (scan order declared above): x-poly[0]: no; x-poly[1]: no; x-poly[2]: EXACT on all 28 points
+  IDENTIFIED (delivered): kappa(m) = (1/36)*m^0 + (-5/48)*m^2 + (1/16)*m^4
+  integer numerator polynomial N(x), x = m^2 (denominator 144): (4)*x^0 + (-15)*x^1 + (9)*x^2
+  overdetermination: 28 points / 3 coefficients = 28/3x (>= 2x pinned); solved from the first 3 grid points, verified with ZERO tolerance on the remaining 25
+  discriminant = 81 = 9^2 (perfect square): N(x) has EXACT RATIONAL roots x = 1/3, 4/3
+  factorization check: N(x) == 9*(x - (1/3))*(x - (4/3)) : True
+  equivalently 144*kappa(m) = (3*m^2 - 1)*(3*m^2 - 4) (exact expansion check: True)
+  crossings as reals: m*1 = sqrt(1/3) = 0.5773502691896257645091488; m*2 = sqrt(4/3) = 1.154700538379251529018298
+  the pinned sign-change bracket (1/2, 1) in m (<-> (1/4, 1) in x) contains m^2 = 1/3; the other crossing (m^2 = 4/3) lies outside the pinned bracket — delivered
+  direct sign bracket [9/16, 37/64] (width 1/64, derived from the identified root, evaluated by the PIPELINE not the fit): kappa = 10153/9437184 -> -135047/2415919104  sign flip: True
+  direct sign bracket [73/64, 37/32] (width 1/64, derived from the identified root, evaluated by the PIPELINE not the fit): kappa = -4720727/2415919104 -> 33913/150994944  sign flip: True
+  [PASS] KG2-D the identified form verified exactly on the full grid; every zero crossing confirmed by DIRECT pipeline evaluation on a derived 1/64-wide rational bracket  (kappa(m) = (9*m^4 - 15*m^2 + 4)/144 with EXACT zero crossings at m^2 = 1/3 and m^2 = 4/3, i.e. m = sqrt(1/3) and m = sqrt(4/3))
+
+[KG3 — the interacting cross-check at ORD 4 (pre-registered open)]
+  fixture: the root validator's minimal interacting gauge-matter
+  occupation Hamiltonian, 4 sites, open chain, committed point
+  (m, g) = (7/10, 1/2), t = 1, lambdas = (9/10, -2/5, 11/10, 1/5);
+  basis = the validator's particle_basis order (site 0 = MSB);
+  H = sum_n m*(-1)^n n_n - g * sum_n lambda_n * prod_{s<=n}(-1)^{n_s}
+      - t * sum_bonds hop  (conventions read from the validator).
+  region collar (declared): C_{n0} = the site's mass term + the
+  electric term of INDEX n0 (the gauge string through n0) + the
+  hopping bonds incident to n0; B = H - C. Pairs (declared):
+  d=1: R={1}, S={2}; d=2: R={1}, S={3}. STRUCTURED (declared) =
+  proportional within every particle-number sector block with
+  per-sector constants; DIVERGENT = some sector non-proportional.
+  [PASS] KG3-A the interacting H is Hermitian (real symmetric) as built  (max dev 0.0)
+  d=1 (R={1}, S={2}): DIVERGENT   |C^exc| = 2.0, |C^LT| = 0.88668056, off-N-block max = 0.0
+    sector N=1: ref kappa = 0.019584375, rel dev = 0.963179
+    sector N=2: ref kappa = -0.07001388888888888888888889, rel dev = 0.921038
+    sector N=3: ref kappa = -0.2369545138888888888888889, rel dev = 1.21725
+  d=2 (R={1}, S={3}): DIVERGENT   |C^exc| = 1.0, |C^LT| = 0.95269722, off-N-block max = 0.0
+    sector N=1: ref kappa = -0.8534527777777777777777778, rel dev = 1.55642
+    sector N=2: ref kappa = 0.03526388888888888888888889, rel dev = 1.0
+    sector N=3: ref kappa = -0.8151972222222222222222222, rel dev = 1.44589
+  [PASS] KG3-B extraction validity: sub-onset J orders vanish (EXC order 1; LT orders 1-3) and all four leading coefficients are exactly N-block-diagonal  (at 1e-30)
+  [PASS] KG3-C the pre-registered verdict delivered at both cells (any of PROPORTIONAL/STRUCTURED/DIVERGENT/SUPPORT-MISMATCH/BOTH-ZERO is a delivered outcome)  (d=1: DIVERGENT; d=2: DIVERGENT)
+
+[SG4 — precision honesty]
+  mp.dps = 50; gate threshold 1e-30; commutator dust drop 1e-45 (d43a-ported); truncation gate 1e-40.
+  recognition census over ALL recognized rationals (KG1 constants + KG2 kappas + sign brackets): max residual = 2.67e-51, max denominator = 2415919104 (cap 1000000000000000).
+  float entry points: as enumerated in the banner (dps-50 series arithmetic; recognition layer; KG3 decimal fixture constants). The ansatz solve/verify layer is EXACT Fraction arithmetic end-to-end.
+
+[SUMMARY] 17 PASS / 0 FAIL
+[KG1 VERDICT] the log-smeared finite-slab theorem at fixture scale: HOLDS: COMPOSITE (the SS7 log-smeared slab): every wrap-clean cell collapses to the SINGLETON ray and constant — EXC = 1 and LT = kappa(m) at ALL w in {1,2,3,4} (all w at L=16; w <= 2 plus all EXC at L=12): slab-width INDEPENDENCE. Block arm: LT = kappa(m) w-INDEPENDENT at every clean cell; EXC = ((w+1)/2)^2 exactly (1, 9/4, 4, 25/4; mass- and L-independent) — DELIVERED FINDING: the literal block-region EXC normalization carries the collar-length square while its ray is unchanged and the LT constant is untouched.
+[KG2 VERDICT] kappa(m) = (9*m^4 - 15*m^2 + 4)/144 with EXACT zero crossings at m^2 = 1/3 and m^2 = 4/3, i.e. m = sqrt(1/3) and m = sqrt(4/3). On the grid hull [1/16, 2]: kappa > 0 below the first crossing, kappa < 0 between the crossings, kappa > 0 above the second — the d43a sign flip (13/2304 at m=1/2 vs -1/72 at m=1) is the two-crossing structure of an exact quartic. No claim outside the hull.
+[KG3 VERDICT] d=1: DIVERGENT; d=2: DIVERGENT — at the raw singleton-bracket grain the free-core bracket-ray universality does NOT arrive at the interacting fixture (pre-registered open; the smeared interacting identification remains the declared successor, not attempted here).
+[VERDICT] d44d delivered: SG0 anchors re-run green; KG1 slab-width independence GREEN on every wrap-clean cell in BOTH slab readings (with the block-arm EXC ((w+1)/2)^2 normalization law and the 8 declared L=12 LT wrap cells as recorded findings); KG2 kappa(m) = (9*m^4 - 15*m^2 + 4)/144 with EXACT zero crossings at m^2 = 1/3 and m^2 = 4/3, i.e. m = sqrt(1/3) and m = sqrt(4/3); KG3 d=1: DIVERGENT, d=2: DIVERGENT.

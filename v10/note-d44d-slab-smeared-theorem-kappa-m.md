@@ -70,3 +70,44 @@ Free core at slab scope (KG1/KG2); ONE interacting point (KG3) —
 the interacting result, whatever it is, is a single-fixture
 statement.  No continuum claim beyond the identification the corpus
 already owns; no claim about masses outside the grid's hull.
+
+## 4. First-run amendments (2026-07-19, pre-round; the receipt's
+## declared deviations, owned as pin gaps)
+
+**A1 (two-arm KG1).** The pin's "regions = contiguous blocks" and
+B4's log-smeared slab (v2 p1 §7 builds slabs from SINGLETON maps
+under a test-weight profile) are DIFFERENT constructions. The
+receipt runs both, pinned in-banner: COMPOSITE (the §7 reading — the
+theorem arm) and BLOCK (the literal reading). The theorem statement
+attaches to the COMPOSITE arm; the BLOCK arm's EXC = ((w+1)/2)^2
+exact collar-length-square normalization is a delivered finding.
+
+**A2 (separation range).** r_max = w+1 (EXC) / w+3 (LT) — the exact
+kernel-support bound — with an r_max+1 completeness slot gated zero
+on clean cells. The pin left the r-range unspecified.
+
+**A3 (wrap exclusion).** At L = 12 the LT kernel span [b-2, b+w+1]
+meets the periodic seam for w in {3,4}; those 8 LT cells are
+seam-contaminated (support lemma; the completeness slot's nonzero
+value is the empirical wrap witness), excluded from the theorem gate
+and delivered exactly; the L = 16 twins are clean. The pin's grid
+implicitly assumed all L = 12 cells usable.
+
+**A4 (ORD = 4 beyond KG2).** The pin's order-reduction clause named
+KG2 only; the receipt runs KG1/KG3 at ORD 4 as an EXACT truncation
+(gated: ORD-12 vs ORD-4 leading-coefficient deviation = 0.0 at
+1e-40); SG0 stays at ORD 12.
+
+**A5 (weight-family independence).** By translation covariance the
+phi-weighted mean pair separation equals r exactly, so the
+composite-arm collapse constant is weight-family independent at this
+moment order — declared in-banner; log-uniform
+(phi_j = (1/(j+1))/H_w) is the pinned instance actually run. This is
+the cancellation-order content for the §5 conversion note.
+
+**A6 (KG3 conventions).** Collar = mass at n0 + the electric term of
+index n0 (the gauge string through n0) + incident bonds; pairs
+({1},{2}) and ({1},{3}); STRUCTURED = per-N-sector proportionality;
+the validator's committed point (m, g) = (7/10, 1/2), t = 1,
+lambda = (9/10, -2/5, 11/10, 1/5). The pin left these to the
+receipt.
