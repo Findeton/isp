@@ -5704,3 +5704,22 @@ transport depths, h12, and the referee's (actor,base) census-key
 upgrade (corpus-wide note). THE CAMPAIGN BOARD: fronts 1-6 + the
 cross-cut ALL TERMINAL; remaining d42b5 (fronts 7-8) + d42b6
 (front 9) + paper 30.
+
+## 2026-07-18 — d42b5/6 pin committed (LEDGER #317)
+Fronts 7-9 as one unit on the decided TS structure. A1 the
+three-level flatness ladder (weight flat / naive-cut NOT flat at
+exactly the 36 / gradient-completed flat again — completion RESTORES
+the action-level check; paper 29's level lesson on our object). A2
+boundary non-stationarity: the root and the post-arb fresh-base
+point have isomorphic menus (the grammar's renewal structure); both
+canonical boundaries break stationarity there — truncated
+completions are ROOTED (paper 28's theorem anticipated it). A3 THE
+REDUCTION: root-free completion = a positive-eigenvector problem on
+menu-isomorphism states; front 7's question ≡ d42b3's
+infinite-volume positive-harmonic residue — ONE open core. A4 the
+continuum shadows: the decided dichotomy IS v6 paper 1's TS residue
+in discrete form; sprinkling's discrete precursor = symmetry
+covariance of the generated complex (actor-exchange +
+payload-relabeling gates; Z class-constancy cited); continuum limits
+NOT claimed (Hegerfeldt; the arb-layer problem gates operator
+routes). Receipt next.
