@@ -5891,3 +5891,24 @@ aggregation-trilemma naming nit). PAPER 30 TERMINAL at this commit.
 30") IS COMPLETE: nine campaign units terminal (#298-#321), the
 terminal paper (#323-#326), TEN hostile rounds + deltas, ZERO false
 numerical results across the entire record.**
+
+## 2026-07-18 — D43: the v1-v10 not-from-memory audit + next-step pin
+## (LEDGER #327)
+Three independent survey passes (v1-v5 / v6-v8 / v9-v10) read from
+disk post-paper-30. Pinned verdicts: the v1 anchor claims no lab
+physics (d41a wording overstates); THE LIE-TROTTER ORPHAN (rule-
+independence of the click-law coefficients untested since v1 —
+the most consequential cheap decidable); the v6-paper-1 discrete-TS
+identification is PARTIAL (path-independence face only — no
+Lorentz/f(s²)/operator content; §8.1 headline needs a clause); the
+#128 discontinuity (all geometry positives on the retired toy
+lane); zero supersession markers in v1-v5 + v6 unswept for Renou;
+undervalued ancestors (v1 p17/p12 = the proto grammar; v8 p12/p13
+= a theorem-backed dimension instrument unused by the pilot).
+Candidate far-field imports pinned [POSITED]: Martin boundary +
+unimodularity/mass-transport for residue 1 (+ the sprinkling
+residue); FLP/randomized-consensus + process-matrix combs for the
+pincer; sheaf-contextuality cohomology for the obstruction; Arrow-
+type selection impossibility for the kernel; thermodynamic
+formalism for the deformation cost. Next-step program N1-N5 pinned,
+N1 = the Lie-Trotter stress test FIRST. Awaiting user direction.
