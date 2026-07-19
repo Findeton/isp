@@ -6299,3 +6299,30 @@ multi-author-arb corner; LT slab theorem + kappa(m) zero crossing +
 p15 cross-check; the d42b4 reception census; horn 2's foliation +
 measure arms; the paper-31-class decision = the user's). This
 closes the "go ahead, N1-N4" instruction (#328).
+
+## 2026-07-19 — PAPER 31 FULL DRAFT (LEDGER #346); round 1 commissioned
+User direction: "immediately make paper 31 based on D42/43" (the
+paper-31-class decision = MADE). Draft:
+relativistic-isp-v10-paper31-four-decisions-at-the-joints.md ("Four
+decisions at the joints: rule-independence of the collar bracket, the
+six-state renewal chain, the constructed arbitration operator, and
+dimension from transport"). Scope = the D43 N-program on the D42
+record; every quantitative claim bound to the four terminal receipts
+(d43a 7/7, d43b 18/18, d43c 11/11, d43d 6/6) or cited in-line to the
+committed campaign record. Single-threaded voice per the standing
+style (internal reviews are authorship; no correction-round
+cataloguing). §1.3 SUPERSESSIONS stated explicitly (A5 hygiene
+applied): paper-30 §5.7/§9 "17 states" -> the six-state intrinsic
+carrier; §7.2 pilot null -> superseded positively; §6.2 pincer ->
+scoped to cut/initiator-attached channels. §7 = the residue ledger
+updated (residues 1/2 restated as the closure theorem + the foliation
+face; two new items: the finite-slab kappa(m) theorem, transport-scope
+invariance). Numbers hand-verified pre-draft: the tau tables reproduce
+kappa(1/2) = 13/2304 and kappa(1) = -1/72 by direct summation; the
+resolvent rows satisfy (2I - M_t) R = I exactly; the completed
+conflict row {1/7, 3/4, 3/28} sums to 1; the d43d median print
+decoded (below = 8, wsum = 1037/64 -> ratio 512/1037 ~ 49.4%, the
+frozen round's own reduction). ROUND 1 COMMISSIONED next (fresh
+referee; full number sweep against receipts; report to
+reviews/paper31-round1-hostile-review.md). Independent paper-level
+review OPEN until that round converts.
