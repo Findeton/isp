@@ -6704,3 +6704,35 @@ A1-A5 (incl. the Koenig/Dilworth width oracle cross-gated; n = 6
 uncapped; the #354 witness-branch binding verified genuinely wired
 by mutation). ROUND 1 COMMISSIONED next. D44e/D44a builds + the
 D45a round in flight.
+
+## 2026-07-19 — D44e receipt GREEN 46/46 (LEDGER #359); round 1
+## commissioned. THE PER-TYPE RECEPTION CENSUS DELIVERED
+Wave-2 build delivered (builder-agent; verified pre-commit:
+independent rerun exit 0 BYTE-IDENTICAL; 46 PASS / 0 FAIL; ~1.5 s;
+seeds 0/7 + unseeded byte-identical). THE DELIVERABLE: the 11-type
+inventory DERIVED from the committed grammar (8 event kinds — the
+source scan yields n/p/r + d/ka/kc/ko/m — + 3 version constructors
+v0/v.arb/v.mrg), census-COMPLETE: all 6,567 record instances across
+the 1,191-member depth-4 family + the click/SIG fixtures classify
+into EXACTLY one type (zero unclassified, zero multi-match; empty-
+at-family types printed and realized at fixture grain: 90 + 36
+instances). The carrier/data table READ from the layer; the
+(actor,base) census-key upgrade EXECUTED (strong census 0/1191;
+the A8-fake inadmissible). RG2: all NINE amplitude-carrying types
+isometric at 1e-40 (max dev 0.0) with genuinely firing lossy
+controls per type (the 0.2599...-class diagonal control everywhere
+— the committed literal matched at 1e-40; the structural
+imprint-shadow control firing wherever carrier imprints collide:
+p 309 pairs / d 1 / m 1 / ko 1 / kc 1 / v.arb 17 / v.mrg 3; r and
+ka have INJECTIVE realized imprints); n and v0 receptionless
+expectations gated exactly. RG3: V_single/V_pair record sides
+re-derived as censused instances (Born = K1 from the layer; inputs
+p, legs ko/kc, outputs r + ka + v.arb; ZERO out-of-census forms).
+DELIVERED FINDINGS (A7): the creator imprint is NOT a function of
+the version (4 multi-creator versions); merge creation is
+WIRE-MEDIATED (mname absent from regs_of(m)). Gating-completeness
+narrower than census-completeness by EXACTLY the three declared
+grains (|C| >= 3 chains; re-merge; transport depth-4) — RG4's
+cannot-gate set is EMPTY (A6). The d42b4 R6 carried obligation is
+DISCHARGED at fixture scope. Note §5 A1-A7. ROUND 1 COMMISSIONED
+next. In flight: D45a + D45b rounds, D44a build.

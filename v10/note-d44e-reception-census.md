@@ -68,3 +68,39 @@ Fixture scope (the committed depth-4 d42a family + the click-layer
 fixtures + SIG-chain grains as declared); the D25/D27 theorems are
 cited as the reception REQUIREMENTS, not re-proved.  Exact
 arithmetic; mp.dps 50 / 1e-40 only where amplitudes enter.
+
+## 5. First-run amendments (2026-07-19, pre-round; the receipt's
+## declared deviations)
+
+**A1 (kc as the eighth event kind).** Pin §2 named "opening click;
+acceptance"; RG0's grammar derivation yields the continuation click
+kc as its own type — censused (the derivation outranks the pin's
+enumeration frame, per RG0's own design).
+
+**A2 (the FXD probe fixture).** The m-type 'both' branch (value-
+equal delivered pair; w = 'both' forced; q = 1/4 derived; named
+winner refused) is realized by a receipt-built, non-committed probe
+fixture, declared in the gate label.
+
+**A3 (probe caps).** The mp isometry gates cap probe bases at 12
+per type (declared); every exact census runs on the full basis.
+
+**A4 (click pricing).** ko/kc/ka carry no layer-weighted probe (the
+click pricer lives past the embedded banner slice) — weights cited
+to the committed record, not re-priced.
+
+**A5 (conventions).** Version-instance convention printed (genesis
+once per member + one per creating position; ka-written vnames
+censused at fixtures); transport d/m semantics sourced from the
+d42b2-embedded d42b1-verbatim head (identical text, declared).
+
+**A6 (RG4's shape).** The "type that cannot be gated" set is EMPTY;
+the residuals are three declared GRAINS of gated types (|C| >= 3
+chains; re-merge; transport depth-4), each its own gated
+declaration line — census-completeness vs gating-completeness kept
+distinct exactly as pinned.
+
+**A7 (delivered findings).** (i) The creator imprint is NOT a
+function of the version (4 multi-creator versions in the family);
+(ii) merge creation is WIRE-MEDIATED (mname absent from
+regs_of(m)) — both printed as findings, not failures.
