@@ -84,3 +84,24 @@ named successor if T2 returns PROPORTIONAL/STRUCTURED. Precision:
 mp.dps = 80; fits on Δ ∈ {3,4,5,6,7}×10⁻² (Vandermonde exact-solve
 pattern); thresholds 1e-40 (Δ⁸ coefficients at these Δ are ≥ 1e-13
 — 27 digits of margin).
+
+## 6. First-run amendment (2026-07-19, pre-round; the E-level verdict
+## stands, the bracket-level test added)
+
+**A1 (the E/bracket distinction, found at first exact run).** T2 as
+pinned compared the full defect coefficients B^rule at each rule's
+onset. Delivered exactly (series arithmetic, all anchors 1e-30):
+DIVERGENT at all four (m, d) cells with EXACT RATIONAL mass-dependent
+ratios (kappa = -137/2304, -13/48, -7/288, -11/24) and O(1) strip
+deviations — the raw defects are genuinely non-proportional. BUT the
+LT defect at Delta^8 is NOT the pure exchange bracket: it mixes
+[A^LT_R, A^LT_S] with second-order one-region cross terms. The
+orphan's actual question ("the same tangential bracket after onset
+renormalization and continuum identification") lives at the
+ONE-REGION-COEFFICIENT COMMUTATOR level — v2 p1's own object.
+**T4 (added):** extract A^rule_R = the leading one-region J
+coefficient (EXC at Delta^2, LT at Delta^4); compute the direct
+commutators C^rule_d = [A^rule_R, A^rule_S] for d in {1, 2, 3}; test
+C^LT_d proportional to C^exc_d (one constant per (m, d); the same
+three-way verdict). T4, not T2, decides the orphan; T2's raw-defect
+divergence stands as its own delivered finding.

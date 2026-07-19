@@ -1,0 +1,14 @@
+[d43d — canonical D* on the generated families]
+  banner: g2/i1/i2 algorithms extraction-ported; EXACT
+  Fraction D*; the d42 layers exec'd from committed receipts;
+  NO manifoldlikeness verdicts at n <= 5 (pin §1); the NG3
+  chain dimension outcome is PRE-REGISTERED open; statistical
+  layer nan-DISCLOSED (zero qualifying pairs at these n).
+  [PASS] NG1 PORT FIDELITY: S3 (6 elements) REJECTED by dim<=2; all 219 labeled 4-posets PASS; the full 120-permutation n=5 D* range = [1/4, 7/20] exactly (the extraction's committed anchors)  (S3 dim<=2 = False; n=4 posets = 219; n=5 range = [1/4, 7/20])
+  [PASS] NG2 the exact n=4 landscape (219 posets, min-over-orientations D*) + the d42a depth-4 family sweep (mu-weighted; descriptors ONLY per pin §1)  (landscape D* in [19/64, 25/64], mean 4735/14016 (~0.3378); family mu-weighted mean D* = 23595/66368 (~0.3555); mu-mass at-or-below landscape median = 0/1037/64 [MEASURED, descriptor])
+  [PASS] NG3 THE CHAIN SUITE (pre-registered open): dim<=2 verdict per constructed transport chain; parity invariance exact on every 2D chain  (SIG_KR(n=4): 2D, D* in [23/64, 23/64] over 2 orientations; canonical 23/64 (~0.3594); two-clock (b, chi) = ranks delivered | h5(n=5): 2D, D* in [1/4, 1/4] over 2 orientations; canonical 1/4 (~0.2500); two-clock (b, chi) = ranks delivered | SIG_FM(n=8): 2D, D* in [79/256, 79/256] over 2 orientations; canonical 79/256 (~0.3086); two-clock (b, chi) = ranks delivered | CH(n=10): 2D, D* in [83/400, 83/400] over 4 orientations; canonical 83/400 (~0.2075); two-clock (b, chi) = ranks delivered | h11(n=11): 2D, D* in [1/4, 1/4] over 2 orientations; canonical 1/4 (~0.2500); two-clock (b, chi) = ranks delivered | h12(n=12): 2D, D* in [145/576, 145/576] over 2 orientations; canonical 145/576 (~0.2517); two-clock (b, chi) = ranks delivered)
+  NG3 outcome: 0/6 chains REJECTED (dim > 2) — every constructed chain is a TWO-CLOCK configuration (paper 13 universality holds at chain scale)
+  [PASS] NG4 disclosures: statistical layer nan (zero qualifying pairs at n <= 12 with exp_k >= 10 unverified here — the layer is NOT RUN, per the pin's nan-disclosure convention); no manifoldlikeness verdict anywhere in this receipt  (scope per pin §1)
+
+[SUMMARY] 4 PASS / 0 FAIL
+[VERDICT] d43d delivered: port-faithful D* instrument; the n<=4 family = descriptors only (floor-dominated, disclosed); the chain-scale dimension question ANSWERED: 0/6 rejections — see NG3.

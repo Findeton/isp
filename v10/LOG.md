@@ -5959,3 +5959,38 @@ existence exhibit, with the measure side explicitly relocated to
 residue 1, not solved). Requirements R1-R5 pinned from the record
 (the pincer menus, carrier licensing, kernel weights, NSE, no
 smuggled cut data). Pre-registered open. Receipt after d43b.
+
+## 2026-07-19 — d43a receipt GREEN 6/6 (LEDGER #332): THE ORPHAN
+## ANSWERED — the free-core bracket is RULE-RELATIVE at the lattice
+## level
+Series revision (exact order-12 series arithmetic replaced the
+first build's fits after the fit floor broke the anchors at ~1e-13
+— caught in-build); all anchors exact at 1e-30 (v2 p1's A(1)
+entries; c_lam = 3/4 at lam = 1/2; the documented -1/8 case; the LT
+Delta^8 onset law). Seed-independent (0/7). T2 (raw defect):
+DIVERGENT at all four (m, d) cells with EXACT RATIONAL mass-
+dependent ratios (-137/2304, -13/48, -7/288, -11/24) and O(1) strip
+deviations. T4 (the pure bracket, the pin-§6 amendment — the
+orphan's actual question): DIVERGENT at d = 1, 2 (kappas -5/384,
+79/2304, 19/384, 13/576 — mass-dependent) and SUPPORT-MISMATCH at
+d = 3 BOTH masses (the LT bracket nonzero where the EXC bracket
+exactly vanishes — the onset classes differ even in bracket
+support). VERDICT per the pre-registration: the foundation alarm at
+lattice level; the named escape = structured cancellation in the
+smooth-smeared continuum limit (the successor test); downstream
+coefficient claims carry the re-scoping obligation pending the
+round. Round next.
+
+## 2026-07-19 — d43d receipt GREEN 4/4 (LEDGER #333): TRANSPORT
+## DOES NOT GENERATE DIMENSION at chain scale
+Port fidelity exact (S3 rejected; 219/4231 all-pass; the n=5 D*
+range [1/4, 7/20] exact). NG2 descriptors: the n=4 landscape D* in
+[19/64, 25/64]; the d42a family mu-weighted mean 23595/66368
+(~0.3555) [MEASURED, descriptor only — floor-dominated, disclosed].
+NG3 THE ANSWER: 0/6 constructed transport chains rejected — every
+chain (SIG_KR 4, h5 5, SIG_FM 8, CH 10, h11 11, h12 12) is a 2D
+order = a TWO-CLOCK configuration (paper 13 universality holds at
+chain scale); parity invariance exact; CH is the most volume-
+faithful record measured (83/400 ~ 0.2075). Statistical layer NOT
+RUN (nan-disclosure per the canon). Seed-independent (0/7). Round
+next.
