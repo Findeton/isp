@@ -5510,3 +5510,18 @@ pre-commit. FRONT 5 CLOSES: the discrete TS-condition DECIDED at
 depth 4; d42b5/d42b6 open on the decided structure carrying the h12
 constraint and the actor-factored round-2 target; d42b4 carries the
 ratio-preserving-completion burden.
+
+## 2026-07-18 — d42b4 pin committed (LEDGER #308)
+Front 6: the lift's burden is now DERIVED (d42b3 D4/D7): exhibit
+normalized + foliation-invariant + ratio-preserving simultaneously —
+classically impossible — via the mechanism: global state-norm
+normalization (no cut-attached Z), incomparable isometries commuting
+by the carrier structure (disjoint registers), Born = mu/Σmu. Plus:
+NSE/D25/D27 sweeps per record type (d41d-R3 standard with negative
+controls); D23 at joins as the coarse-instrument greedy-fiber
+degeneracy; the FINE-vs-COARSE click discriminator becomes an
+observable (off-diagonal 1/6 coarse vs 0 fine — a D26-class
+laboratory-facing statement); Hegerfeldt pre-registered; mid-chain
+drift / forced-click ontology / D24-D26 g-binding / full merge-
+delivery lift DECLARED carried. mpmath dps >= 80, thresholds 1e-60,
+Fraction cross-checks. Receipt next.
