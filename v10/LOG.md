@@ -6451,3 +6451,45 @@ exact ORD-4 truncation gated; weight-family independence note; KG3
 conventions). Determinism: 4 runs byte-identical (3 builder + 1
 verify). ROUND 1 COMMISSIONED next; D44a/D44c builds still in
 flight.
+
+## 2026-07-19 — D44c receipt GREEN 15/15 (LEDGER #351); round 1
+## commissioned. ARBITRATION DOES NOT GENERATE DIMENSION — THE
+## COMPONENT-CONFINEMENT LAW
+Wave-1 build delivered (builder-agent; verified pre-commit:
+independent rerun exit 0 BYTE-IDENTICAL; 15 PASS / 0 FAIL; ~3 min;
+seeds 0/7 + unseeded byte-identical). THE VERDICT — the pin §2
+structural fork decided on the OBSTRUCTION horn: arbitration
+structure ALONE does not generate order-dimension > 2 at the tested
+scales. Evidence: ZERO dim<=2 failures across 1,213,372 label-level
+p/r/n histories (exhaustive width 3 full grammar to 6 events;
+no-idle width 3 to 7; no-idle width 4 to 6 — the sharp transport
+contrast: at 4 actors / 6 events transport FAILS dim<=2 per d43d
+NG3b W4 while arbitration NEVER does) + every constructor state at
+widths 3..6. THE MECHANISM, gated with zero violations (AG3, the
+COMPONENT-CONFINEMENT LAW): (i) arb pools form a LAMINAR family;
+(ii) same-base arbs have disjoint pools; (iii) per-actor pools are
+nested decreasing with base = the vname of that actor's previous
+arb; (iv) the chain law — register-sharing events are comparable,
+so incomparable arbs are pool-disjoint and poset width <= actor
+width; (v) vname registers are single-writer. The S3 crown's
+overlap pattern ({A,B}/{A,F}/{B,D}) is NON-LAMINAR — and exactly
+those pool pairs die: the crown programs P1-P5 starve at their
+pinned points (P1: the bottom row realizes at q = 1/8 x3, width 6,
+top row starves — zero arb candidates in the terminal census);
+F-CROSS: 8,400 Y-attempts (840 ordered pairs x 4 contexts x bases)
+ALL dead with the per-slot death census anchored; width-4 bit sweep
+1,920/0; zero pool-crossing arb candidates at all 340 cached
+post-X states; F-LAM: all 1,597 laminar layouts (widths 3..6,
+n <= 14) fully admissible with zero dim failures — arbitration
+REALIZES WIDTH (three pairwise-incomparable cross-authored arbs)
+but cannot convert width into dimension. TRANSPORT'S MECHANISM
+STATUS SHARPENS TOWARD UNIQUENESS; S4 stands unwidened. AG0 port
+re-anchor green (S3/219/4,231/[1/4,7/20]/W6); AG0b executes the
+#348-assigned d43d print repair by reproduction (below = 8,
+wsum = 1037/64, ratio 512/1037; terminal d43d untouched); AG4
+evidence stratum non-empty everywhere (Dilworth tripwire); AG5
+vacuity cited with in-receipt proof. Pin §5 amendments A1-A6 record
+the declared deviations (cap 6 + growth table; register-word dedup
+with sampled soundness 11,664/0; single-universe F-CROSS design;
+constructed-arb conventions; F-LAM caps; AG0b). ROUND 1
+COMMISSIONED next; D44a build still in flight.

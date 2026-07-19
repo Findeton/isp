@@ -71,3 +71,43 @@ delivers whichever the enumeration proves.
 p/r/n events only (the d42a layer; transport events excluded by
 construction — that mechanism is S4's, already decided).  Widths
 3..6, caps declared and printed.  Exact Fractions; the oracle exact.
+
+## 5. First-run amendments (2026-07-19, pre-round; the receipt's
+## declared deviations, owned as pin gaps)
+
+**A1 (AG1 cap 6, not 8).** Measured growth ~9.0x/level
+(9/75/639/5,865/54,489/490,851; depth 7 ~ 4.4M ~ 45 min enumeration
+alone). Declared in-receipt with the table; compensated by the
+declared exhaustive subfamilies AG1b (no-idle width 3, depth 7;
+depth 8 declined and declared) and AG2b (no-idle width 4, depth 6).
+
+**A2 (register-word dim-dedup).** Dimension checked once per
+actor-register-word class; sound because vname registers are
+single-writer (the law's clause (v)) hence pred-inert; soundness
+re-sampled every 97th arb-containing history against the full
+committed builder (11,664 recomputations, zero mismatches); both
+canon() and label-level censuses printed.
+
+**A3 (AG2c single-universe design).** The main F-CROSS sweep runs
+the 6-actor universe over all 840 ordered overlapping non-nested
+pool pairs, subsuming width 3..5 patterns via the mechanical
+universe-independence of the committed 2-arg admissible(); gated by
+the width-3 dual-universe re-run (the 'global' context excluded from
+the identity gate — universe-dependent by content). The at-state
+candidates_for census runs on non-interleaved states only
+(interleaved states are per-pair; their crossing potential IS the
+Y-attempt) — declared.
+
+**A4 (constructed arbs).** AG2 candidates built via admissible()
+with the full wkey-subset sweep (the pin's SIG-chain convention);
+lex-min connected bit rule declared (wkey/bits never affect holders
+or the poset); full bit sweep at width 4 (1,920 attempts).
+
+**A5 (F-LAM caps).** Laminar layouts capped at <= 3 pools, sizes
+{2, 3, w-root}, n <= 14; dim/width memoized by exact C-matrix
+equality (no symmetry assumption).
+
+**A6 (AG0b).** The LOG #348-assigned d43d print repair executed by
+REPRODUCING the full NG2 computation in this receipt (below = 8,
+wsum = 1037/64, ratio = 512/1037 ~ 0.4937; all committed anchors
+exact); the terminal d43d receipt untouched.
