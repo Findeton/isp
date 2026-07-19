@@ -6615,3 +6615,32 @@ user's six: DONE. Wave-1 remainder: D44a build in flight. The
 S4/W8 dimension-4 capability receipt remains the flagged candidate
 awaiting user go (outside the six; the witness-branch binding and
 the paper-grade promotion path both attach to it).
+
+## 2026-07-19 — D45 AUTHORIZED AND PINNED (LEDGER #356); wave 2
+## opens with D44e
+User go ("go ahead") on the two-unit proposal (its dimension design
+CORRECTED by the user's own observation — "3+1 spacetime is not 4
+clocks, it's infinite clocks", literature-confirmed: Meyer's
+DM-vs-Minkowski coincidence exactly at 2; crowns of every size
+embed in M^{>=2+1} by the antipodal construction => infinite DM
+dimension; FFT 1999 dimension-3 non-sphere-orders). Pins committed:
+D45a (note-d45a-symbolic-m-kappa-closure.md) — derive kappa(m) as
+an ALL-M polynomial identity by running the pipeline with m formal
+(feasibility checked: mass linear on the diagonal; Neumann
+inversion division-free; kappa a polynomial), gates YG0-YG4 incl.
+the structural origin of (3m^2-1)(3m^2-4); D45b
+(note-d45b-sn-ladder-polyhedral-confinement.md) — THE SCOPING
+DOCTRINE §1 (order dimension = 1+1-escape detector +
+clock-complexity grade, NEVER a spacetime-dimension estimator;
+unbounded S_n growth NECESSARY-not-sufficient for >= 2+1; the
+physical ladder = Minkowski dimension + statistical estimators,
+successors) binding on all dimension claims in the line, + the
+question: uniform W(n) family realizing S_n at width f(n) for all
+n, or a CEILING (polyhedral-confinement no-go); gates ZG0-ZG6
+incl. the Charron-Bost port at N = 3/4/5 (the divergence point
+with d43d's 3-actor-2D-through-10) and the #354 witness-branch
+binding (both horns exit 0). Builds launched: D45a, D45b, and
+D44e (wave 2 opens; no dependency on D44a). D44f stays gated on
+D44a's conversion (the uniqueness upgrade); D44b last. D44a build
+still in flight. The S4/W8 flagged candidate is SUPERSEDED by
+D45b (the all-n form).
