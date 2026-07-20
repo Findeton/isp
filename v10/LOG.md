@@ -7277,3 +7277,22 @@ corrections (quantifiers, vacuous gates, print-only facts) each
 carried by name. Six successors named, none started; the
 paper-32-class decision + papers 30/31 route + N5 = the user's.
 THE USER'S "work on all the 1-6 successors" INSTRUCTION IS CLOSED.
+
+## 2026-07-19 — PAPER 32 FULL DRAFT (LEDGER #376); REVIEW
+## DEFERRED BY USER DIRECTION
+relativistic-isp-v10-paper32-the-boundary-of-closure.md written
+(author-direct, no builder; the d44b delta's synthesis flags
+respected throughout — caps on every fact, H1-conditionality
+always paired with transport-open, escape != non-stabilization,
+the corrected census sentence, no per-candidate-bites citation, no
+depth-5+ prediction, the transport six an ECHO not the d42a six).
+Structure: §2 the closure theorem + its exact boundary; §3
+dimension (no-go + ladder + schedule resolution + the binding
+doctrine); §4 the quantum layer (census, initiator-tag foliation,
+forced sector conditional); §5 the regulator (slab + the derived
+quartic); §6 the residue ledger (H1 at its head); §7 methods (the
+eight-receipt surface, PASS counts 30/14/15/17/49/29/22/49); §8
+coda. STATUS LINE DECLARES: independent paper-level review NOT YET
+COMMISSIONED (user: token budget) — the paper must not be cited as
+review-hardened until its round converts; THE PAPER-32 ROUND IS
+THE FIRST ITEM OF THE NEXT REVIEW BUDGET.
