@@ -13313,3 +13313,5 @@ confinement.  It proves that, after all closed finite-table work is spent,
 the adaptive Branch-A route requires a new same-law certificate or witness.
 The next paper should therefore be a certificate campaign, not another
 bookkeeping audit.
+
+--- ERRATUM/SUPERSESSION (added 2026-07-19, D46h/N5; audit verdict A5, LOG #379) --- This paper's conditional-closure framing of the adaptive Branch-A routes (the "clean conditional closure" status language and the Section 57 positive-route export) is superseded by Paper 25 (`relativistic-isp-v3-paper25-actual-law-screened-conditional-influence-campaign.md`), whose Theorem 16.8 (five-option truth-status theorem) proves that the current v3 corpus supplies none of the five same-law sources and neither proves nor falsifies any Branch-A option.

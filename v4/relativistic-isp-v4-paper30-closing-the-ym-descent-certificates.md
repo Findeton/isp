@@ -3219,3 +3219,5 @@ content and receipt exhaustion}\\
 \end{array}
 }
 $$
+
+--- ERRATUM/SUPERSESSION (added 2026-07-19, D46h/N5; audit verdict A5, LOG #379) --- This paper's headline upgrade of the Yang-Mills descent to CLOSED_{ISP ontology} is superseded: Papers 39-45 reopen the closure as CONDITIONAL (paper 39's standalone construction is explicitly "not an unconditional proof"; paper 40 reduces the fixed-IR confinement route to the open analytic input `H_3sec(R, ζ_R)`; paper 45 classifies that input as an open research program).

@@ -1118,3 +1118,18 @@ exact statements, and that is what this campaign was for.
     D. A. Meyer, *The Dimension of Causal Sets*, PhD thesis, MIT (1988).
 20. K. G. Larsen and A. Skou, "Bisimulation through probabilistic
     testing," *Information and Computation* 94 (1991), 1–28.
+
+## Erratum (2026-07-19, D46h/N5)
+
+Section 8.1's claim that "the correspondence is now exact rather than
+aspirational" requires a corrective clause, per the D43 audit verdict A3
+(LOG #379) and paper 31 §1.3's supersession ledger: the discrete
+Tomonaga–Schwinger-form identification is PARTIAL. What Sections 1–5
+establish is the foliation path-independence face of v6 paper 1's residue
+(i) only — the discrete TS integrability dichotomy on the generated
+opportunity complex at finite scope. It carries none of the residue's
+continuum content: no Lorentz invariance, no microcausality, no
+`f(s^2)` record-correlation structure, and no operator content — exactly
+the Clay-hard part of R4, which remains untouched. The correspondence is
+exact ON THE PATH-INDEPENDENCE FACE and open on every other face; §8.1
+should be read with that scope restriction throughout.

@@ -69,3 +69,16 @@ Each instance is exactly as wide as its terminal locus (finite scopes,
 declared families); none proves that NO principle outside the tested
 families selects; N-V's supplied-item list is an audit, not an
 impossibility. The pentad is a pattern with five proofs, not a sixth proof.
+
+## Forward correction (added 2026-07-19, D46h/N5; audit verdict A1, LOG #379)
+
+The pentad's "empirical" / "measured couplings" wording above OVERSTATES.
+Per the D43 audit verdict A1 (v1 anchor honesty): the v1 p15/18/19 lineage
+claims no laboratory physics — the "measured couplings over a tested domain"
+there are values NUMERICALLY EXTRACTED from the fixture's own matrices
+(relative error 1e-15..1e-6), not laboratory measurements. The wording is
+hereby corrected to "fixture-extracted": the only selection events in the
+program's history are fixture-extracted identifications (papers 15/18/19),
+and the moral above should be read as identification-by-fixture-extraction,
+not identification-by-laboratory-measurement. The pentad's five negative
+instances are untouched by this correction.

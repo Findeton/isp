@@ -7344,3 +7344,34 @@ pre-#300-priced number ever becomes load-bearing in a terminal
 claim (none is: the d44e round's 63/63 form-level verification,
 referee-carried). D46a's build is in flight; D46h (the N5 batch)
 is next in the housekeeping interleave.
+
+## 2026-07-19 — D46h DISCHARGED: THE N5 BATCH EXECUTED (LEDGER
+## #379); purely additive (32 insertions, 0 deletions)
+The four-item batch (carried since the D43 audit; user: "don't
+forget about the N5"), applier-executed and diff-verified additive:
+(1) A5 ERRATA RETROFIT — v3 paper 23's conditional-closure framing
+marked SUPERSEDED by paper 25 (Thm 16.8 five-option undecidability,
+Cor 16.10 freeze; in-file block + v3/ERRATA.md, paper 24 noted as
+intermediate); v4 paper 30's CLOSED_{ISP ontology} upgrade marked
+SUPERSEDED-to-CONDITIONAL by papers 39-45 (39 "not an unconditional
+proof"; 40 reduces to the open input H_3sec(R, zeta_R); 45 = open
+program; in-file block + v4/ERRATA.md with papers 31/36/37 listed
+as inheriting restatement loci, deliberately unmarked). (2) v6
+RENOU SWEEP — repo-wide grep (names, co-authors, phrases, Nature
+600/625, PRL 040403): ZERO Renou citations in any v6 paper; two
+near-misses classified NOT substantive (companion-B's
+complex-over-real selector = a seal-blindness input, consistent;
+paper 28's "real quantum hardware" = the Google dataset); the
+sweep, method, and classification recorded in v6/ERRATA.md
+pointing at the v7 paper-16 retirement record. (3) d41a WORDING
+(A1) — forward-correction appended to note-d41a-nonselection-
+pentad.md: "empirical"/"measured couplings" -> FIXTURE-EXTRACTED
+(rel. err 1e-15..1e-6; no laboratory physics claimed); the five
+negative instances untouched. (4) PAPER-30 §8.1 (A3) — the Erratum
+section appended: the discrete TS-form identification is PARTIAL
+(the foliation path-independence face only; no Lorentz/
+microcausality/f(s^2)/operator content — R4's Clay-hard part
+untouched), aligned with paper 31 §1.3. THE N5 OBLIGATION IS
+DISCHARGED. Remaining ladder: D46a in flight; then D46b-f;
+paper-32 round first on budget reopen; d41c step 3 = the separate
+queued user decision.
