@@ -7407,3 +7407,16 @@ menus discharges H1 AND H2 depth-free, and with D44a §8 RESIDUE 1
 IS DECIDED OUTRIGHT AT d42a SCOPE — **GREEN-UNREVIEWED: not
 citable as review-hardened until the D46a round (queued behind
 paper-32's) converts; transport scope open regardless (D46b).**
+
+## 2026-07-19 — D46c PINNED AND ORDERED BEFORE D46b (LEDGER #381;
+## user direction "can we do c before b?" — yes, independent)
+The ladder program amended (c -> b). note-d46c-minkowski-
+certificates.md pinned: POSITIVE M^{2+1} causal-order certificates
+only (rational events, exact squared-interval checks both
+directions; not-found = OPEN, never negative); KG0 the exact
+checker + 1+1 regressions + a firing broken-certificate control;
+KG1 the S_3..S_6 crowns via the rationalized antipodal
+construction; KG2 the committed witnesses (W6; the W(n) courier
+records) with attempt census; KG3 doctrine compliance (no
+spacetime claim, no negative claim, sphere rung = successor); KG4
+purity/determinism/GREEN-UNREVIEWED. Build launched.

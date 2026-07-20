@@ -67,3 +67,7 @@ first) -> terminal.  Standing bindings: allow-list purity gates
 (#362); witness branches exit-0 (#354); no transport-scope citation
 of the per-candidate distinction (#374); the d44b delta's synthesis
 flags govern all quoted campaign facts.
+
+## Amendment (2026-07-19, user direction): execution order D46c
+BEFORE D46b (they are independent; c is token-lighter). Order now:
+a (done, green-unreviewed) -> c -> b -> d -> e -> f; g/h discharged.
