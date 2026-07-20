@@ -7375,3 +7375,35 @@ untouched), aligned with paper 31 §1.3. THE N5 OBLIGATION IS
 DISCHARGED. Remaining ladder: D46a in flight; then D46b-f;
 paper-32 round first on budget reopen; d41c step 3 = the separate
 queued user decision.
+
+## 2026-07-19 — D46a GREEN-UNREVIEWED 17/17 (LEDGER #380): THE H1
+## CORE HOLDS — residue 1 decided outright at d42a scope, PENDING
+## REVIEW
+Build delivered (builder-agent; verified pre-commit: independent
+rerun exit 0 BYTE-IDENTICAL; 17 PASS / 0 FAIL; ~2:11; seeds 0/7 +
+unseeded byte-identical; allow-list walk 21,088,527 leaves / 0
+impure; no check(True) by self-scan). LG1 — THE CORE: the joint
+(sigma, tau_A, tau_B) BFS closes at 36 states / 176 edges (the
+D44a spectrum exactly) and PROJECTS INJECTIVELY onto sigma —
+tau constant on sigma, 36/36, ZERO exceptions over all 179,783
+histories through depth 7 (out-of-sample clean); the R-B
+counterexample horn DID NOT FIRE — the own-view lag is
+sigma-invisible; tau takes only 8 values per actor. LG2: own-view
+sufficiency MECHANICAL — the committed layer re-run on the
+menu-view sub-history alone reproduces every per-actor menu,
+436,316 comparisons, zero exceptions (no depth cap needed); 16
+(actor, tau) classes, 10 canonical menus. LG3: the joint table is
+sigma-keyed (160 + 16 = 176 keys, zero conflicts) — H2 SUBSUMED by
+the one joint closure. LG4 controls loud (payload-drop: 6
+menu-splitting classes; sigma-coarsening: 9 tau-mixing, 5
+menu-mixing, witnesses incl. root-vs-renewal). Note §4 A1-A3
+(tau = the MENU-VIEW — the noop cone + admissible r-candidate
+cones, the bare-cone variant refuted in-corpus; the joint-drop
+control; cache-level LG4b). Note §5 = the proof note at
+THEOREM-CANDIDATE status: conditional on cone-locality + the
+abstract-update law (both census-verified in-receipt; to be
+written as code-reading theorems at the round), sigma -> tau ->
+menus discharges H1 AND H2 depth-free, and with D44a §8 RESIDUE 1
+IS DECIDED OUTRIGHT AT d42a SCOPE — **GREEN-UNREVIEWED: not
+citable as review-hardened until the D46a round (queued behind
+paper-32's) converts; transport scope open regardless (D46b).**

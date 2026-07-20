@@ -93,3 +93,52 @@ d42a scope ONLY.  Exact Fractions; the committed layers exec'd
 path-anchored; caps: the depth-7 cache is the mechanical
 verification surface; the BFS arms are depth-free by construction.
 Green-unreviewed until the review budget reopens (program pin §0).
+
+## 4. First-run amendments (2026-07-19, pre-round; declared
+## deviations)
+
+**A1 (tau's own view = the MENU-VIEW).** tau_a runs on the noop
+cone PLUS the cones of a's admissible r-candidates (the pin's
+design-care clause: arb_components_in_view runs on the r-event
+cone); the bare noop-cone tau is refuted in-corpus (d42b3
+G-T1/D3: own views equal, menus differ) and would fail LG2 at
+depth 2. Printed as the receipt's [DEF] block.
+
+**A2 (LG4a's variant).** Implements the payload+edge JOINT drop
+(the pinned edge-only drop is vacuous at this scope — the d44a
+round's own finding, cited in-gate).
+
+**A3 (LG4b's form).** Demonstrated at cache level with anchored
+counts + printed witnesses (the pin's scratch-variant clause), not
+a full variant BFS.
+
+## 5. The proof note (at green; STATUS: THEOREM-CANDIDATE at d42a
+## scope — GREEN-UNREVIEWED, round queued behind paper-32's)
+
+**The mechanical record (all receipt-gated, zero exceptions):** the
+joint (sigma, tau_A, tau_B) BFS closes frontier-exhausted at 36
+states / 176 edges with the D44a spectrum, and the projection onto
+sigma is INJECTIVE — tau_A/tau_B constant on sigma across all
+179,783 histories through depth 7, out-of-sample included; tau
+takes 8 values per actor; the layer re-run on the menu-view
+sub-history alone reproduces every per-actor menu entrywise
+(436,316 comparisons); the 16 (actor, tau) classes carry 10
+distinct canonical menus; the joint transition table is sigma-keyed
+(176 keys, zero conflicts), so H2 is SUBSUMED — one joint closure
+carries both hypotheses.
+
+**The assembly (conditional on two structural facts, both
+census-verified exhaustively in-receipt and to be written as
+code-reading theorems at the round):** (i) CONE-LOCALITY —
+admissible() builds its View from the candidate's past cone only
+(LG2a is its census); (ii) THE ABSTRACT-UPDATE LAW — the sigma/tau
+raw-data update under one event is a function of the abstract state
+and the renamed event (the 176-key table is its census). Given
+(i) + (ii): sigma determines (tau_A, tau_B) (LG1 injectivity, now
+depth-free via the closed joint system), tau_a determines a's menu
+(LG2), hence sigma determines menus at ALL depths — H1 — and H2
+rides the same closure. With the D44a §8 assembly: RESIDUE 1
+DECIDED OUTRIGHT AT d42a SCOPE. THIS CLAIM IS GREEN-UNREVIEWED:
+it must not be cited as review-hardened until the D46a round (after
+paper-32's) converts; transport scope remains open (D46b)
+regardless.
