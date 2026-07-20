@@ -357,3 +357,121 @@ Scratchpad: `/private/tmp/claude-501/-Users-felixrobles-workspace/82d34949-326c-
 referee-carried counterexample and sharpened positive facts), F2/F3/F4 repairs at
 delta or conversion, nits at the author's discretion. The receipt itself can
 stay frozen: every gated number in it is true.*
+
+---
+
+# DELTA VERIFICATION — round-1 repairs (commit c686ff2, LOG #365)
+
+**Round-1 body above: untouched (byte-verified — the committed review file is the
+referee's round-1 text verbatim; working tree clean at HEAD).**
+
+## Verdict: DELTA-CLEAN — d45b may convert to TERMINAL
+
+Every discharge verified by execution; the two declared deviations adjudicated
+(one now closed outright by delta-time verification, one confirmed in-scope);
+zero new findings above nit. The mechanical diff 4a304ce → c686ff2 on the d45b
+paths (LOG +46, receipt +372/−73, .out +60, note +86 → 240 total, + this review
+file committed verbatim) was read in full and contains exactly the enumerated
+repairs — no arithmetic, no ZG0/ZG2/ZG3/ZG4 gate logic touched.
+
+## D1 — discharge verification
+
+- **F1 (MAJOR) — DISCHARGED, receipt-gated.** ZG1S reproduces the referee sweep
+  in-receipt from an independent implementation of the mark rule: ZG1S.1
+  identity-reproduction gate (ported CB(4) event-for-event, marks [6,9,12,15] —
+  matches the referee's rule by construction and by outcome); ZG1S.2 **exactly
+  248/40,320** (the referee's number, reproduced); ZG1S.3 min crown violations
+  == 4; ZG1S.4 248/248 S3-free by direct search + monotonicity for the 40,072;
+  ZG1S.5 the frozen-appendix exemplar reproduced event-for-event, re-admitted
+  event-by-event at the ZG1 weights, dim<=2 == False, 5 violations; ZG1S.6/7
+  bare-delivery sweeps (40,320 + 6) and the N = 3 marked sweep (6) all 2D —
+  idles load-bearing, N = 3 genuinely silent; N = 5's 582/4,000 correctly kept
+  REVIEW-CARRIED (RNG-free receipt). All numbers match the frozen round exactly.
+  The rescopes landed everywhere the round named them: the three ZG1 outcome
+  texts, ZG5's prose, the final verdict (both F1-quoted sentences replaced), and
+  LOG #365 forward-corrects #358's two sentences BY NAME.
+- **F1 mechanism story — FAITHFUL.** The rewritten N = 3 dichotomy outcome now
+  states precisely the round's finding: the violated pairs are SCHEDULE facts
+  (one-way split under the same schedule reproduces the violation sets verbatim,
+  referee-verified at N = 3, 4, 5 — correctly scoped); the true divergence is
+  EXPRESSIBILITY (sends-before-receives realizes the crown in her model at
+  N = 3, 4, referee-verified — correctly scoped; inexpressible under fusion).
+  No residue of the "back-flow edges" attribution anywhere.
+- **F2 — DISCHARGED and delta-mutation-verified.** ZG1.Nd anchors (events
+  9/16/25; violations 5/9/14; ported-schedule dim<=2 == True as explicitly
+  SCHEDULE-SPECIFIC anchors — the right epistemic status post-F1; census == 1;
+  no induced crown). **Delta MUT7 rerun (hub mirror, P_{i+1} for P_{i−1}): exit
+  1 with 4 named FAILs — ZG1.3d, ZG1.4d, ZG1.5d, ZG1S.5.** The round's
+  silent-green hole is closed.
+- **F3 — DISCHARGED and delta-mutation-verified.** ZG6.2 is a live token-level
+  self-scan (4 token lines, 0 undisclaimed; split-literal tokens avoid
+  self-trigger). **Delta MUT8 (an added undisclaimed line "…estimates the
+  Minkowski dimension of the universe"): exit 1 at ZG6.2** — the scan genuinely
+  fires. ZG6.3 demoted to a printed note, no longer counted; every remaining
+  PASS is mechanical. Tally arithmetic checks: 40 − 1 (ZG6.3) + 3 (ZG1.Nd) + 7
+  (ZG1S) = 49.
+- **F4 + nits — DISCHARGED.** Note §7 records the A2 correction with the
+  referee's actual mechanism (crown-DIAGONAL leak, n=3: 1 / n=4: 2, ZERO
+  upper–upper; "provably" downgraded to referee-verified, honestly marked
+  REFEREE-CARRIED/unreceipted); banner determinism line added (N1); proof-note
+  pointer fixed to §8 in receipt, note, and LOG (N2); ZG6.1 label aligned to its
+  boolean, with the no-brute-width-on-W(n) fact now stated in-gate (N3).
+
+## D2 — deviations adjudicated
+
+1. **Per-schedule admissibility not re-gated in the 40,320 sweep: ACCEPTED —
+   and now CLOSED.** The in-receipt justification (idle absorption is
+   unconditional in the committed layer; genesis deliveries are prefix-blind,
+   with the schema gated mechanically at all 172 base-case events) is sound,
+   and the exemplar is re-gated event-by-event. Beyond acceptance, this delta
+   MECHANICALLY re-admitted every event of ALL 248 dim>2 schedules through the
+   committed `admissible()`: **248/248 fully admissible, every event at the
+   ZG1 weights (idles 1/2, deliveries 1/12)**. The deviation is thereby
+   discharged outright, not merely carried. (Annotation, nit-level: LOG #365's
+   parenthesis "the referee verified all 248" was, at round-1 time, exact for
+   the definition-level DIMENSION verdicts; admissibility was
+   exemplar-mechanical + schema-semantic. As of this delta it is exact for
+   admissibility too.)
+2. **ZG5 prose + final verdict rescoped beyond the enumerated task list: NOT
+   OVERREACH.** Both sentences were quoted verbatim in round-1 F1 and their
+   rescope was explicitly prescribed there ("the ZG5 prose, the verdict
+   sentence"); leaving them would have left the refuted claim standing in the
+   committed record. The new texts are faithful to the round.
+
+## D3 — mechanical verification
+
+- Reruns from repo root: unseeded + PYTHONHASHSEED=0 + PYTHONHASHSEED=7 — all
+  three BYTE-IDENTICAL to the committed `.out`; exit 0; 49 PASS / 0 FAIL / 10
+  delivered outcomes; ~29 s (matches the declared runtime).
+- Diff scope: exactly the five files above; no d45b artifact touched after
+  c686ff2 (verified against HEAD 33ab0ef).
+- LOG #365's summary of the round is faithful (verdict counts, the F1 story,
+  the witness-horn inventory, the forward-correction), with the one nit-level
+  annotation in D2.1. "note §7 (240 lines)" = the note's new total length —
+  correct (240).
+- Wording audit of the new claims: "reach dimension 3 at N = 4" is
+  exemplar-witnessed (the round pinned the exemplar at EXACTLY 3; all 248 are
+  gated dim > 2) — accurate as stated.
+
+## D4 — new findings
+
+**None above nit.** The two nit-level annotations (D2.1 LOG parenthesis; D3
+wording note) require no action.
+
+## D5 — terminal endorsement
+
+The stamped terminal condition is MET: MUT7-class corruption is caught (exit 1,
+four named anchors), the sweep gates reproduce the frozen round exactly, the
+mechanism story is faithful, both deviations are adjudicated (one closed, one
+in-scope), and no new findings above nit exist. The referee endorses conversion
+to TERMINAL with the coordinator's stamped statement, each clause of which this
+round and delta verified: the S_n witness ladder by the uniform courier-firewall
+constructor (actors n²+3n, events 2n², width 2n−1 — widths certificate-proven in
+round 1); unbounded order dimension at the tested ladder as ORDER dimension only
+(§1 doctrine held, now mechanically scanned); the all-n schema with the §8 proof
+note at conversion; the Charron-Bost comparison schedule-resolved (crown dead
+under every schedule; sends-first inexpressible under fusion; dimension route
+open at N ≥ 4, 248/40,320 receipt-gated, idles load-bearing); the ceiling horn
+did not fire.
+
+*Delta closed. — the d45b round-1 referee*

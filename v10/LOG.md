@@ -6983,3 +6983,31 @@ depths, despite the own-view lag) is the NAMED RESIDUAL — IF it
 holds, the pullback argument delivers the six-state chain and the
 full Perron package at ALL depths, stated as the conditional it
 is. DELTA to the d44a referee next.
+
+## 2026-07-19 — D45b TERMINAL (LEDGER #367); the §8 all-n proof
+## note written
+Delta verdict (appended to reviews/d45b-round1-hostile-review.md,
+round-1 body untouched): DELTA-CLEAN — every discharge verified BY
+EXECUTION (the sweep reproduced from the referee's own frozen
+numbers; MUT7 now exits 1 with four named FAILs; MUT8 dies at the
+live ZG6.2 self-scan; the tally arithmetic checks); the
+admissibility deviation CLOSED BY THE REFEREE THEMSELVES (all 248
+dim>2 schedules mechanically re-admitted through the committed
+layer — 248/248 fully admissible at the ZG1 weights); the
+ZG5/verdict rescopes adjudicated not-overreach; two nit
+annotations recorded. TERMINAL — THE SETTLED STATEMENT (as
+stamped and endorsed): the transport grammar realizes S_n as an
+induced subposet at every n in {3, 4, 5, 6} by ONE uniform
+courier-firewall constructor (actors n^2 + 3n, events 2n^2, width
+2n - 1) — UNBOUNDED ORDER DIMENSION at the tested ladder, the
+necessary condition for any round-cone reading, as ORDER dimension
+only per the §1 doctrine; the all-n schema delivered with the
+induction as the §8 proof note (written at this conversion:
+prefix-blind admissibility + the courier cone topology + carrier
+disjointness => S_n induced for EVERY n, at the schema level with
+the receipt-carried base); the Charron-Bost comparison
+SCHEDULE-RESOLVED (her designated crown dies under every schedule;
+her sends-first schedule inexpressible under fusion; the dimension
+route on her multiset OPEN at N >= 4 — 248/40,320 receipt-gated —
+with idle marks LOAD-BEARING); the ceiling horn did not fire.
+Successor 2 of the D45 pair: DONE. Both D45 units now terminal.

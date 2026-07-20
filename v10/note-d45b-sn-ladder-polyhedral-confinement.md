@@ -238,3 +238,54 @@ above 16 elements, declared).
 dimension passes on <= 16-element posets) put the rerun at ~31 s
 from repo root — well under the 6-minute target; the receipt
 remains RNG-free and byte-deterministic.
+
+## 8. The all-n proof note (at conversion, per ZG3; the terminal
+## obligation)
+
+**[THEOREM, all n >= 3, at the schema level — receipt-carried base
+n = 3, 4, 5, 6; the induction is this note's argument on the gated
+premises.]  For every n >= 3 the constructor W(n) (the two-hop
+dedicated-courier firewall; actors n^2 + 3n, events 2n^2, uniform
+weight 1/(4(n^2 + 3n - 1))) is fully admissible in the d42b1
+transport grammar and its event poset contains S_n as an induced
+subposet; hence the generated record orders have unbounded
+Dushnik-Miller dimension — order dimension only, per §1's binding
+doctrine.**
+
+Proof. (i) ADMISSIBILITY IS PREFIX-BLIND ON THIS FAMILY: every
+W(n) event is an idle or a genesis-v0 delivery; in the committed
+layer an idle is unconditionally admissible at weight 1/2 and a
+genesis-v0 delivery ('d', s, r, v0) is admissible at the
+sender-view budget weight whenever r is another actor — holdings
+remain {v0} for every actor at every prefix (deliveries of v0
+change no holding set), so the admission state relevant to these
+events is identical at all prefixes.  The receipt gates this
+schema (the prefix-blindness gate; 22 permutations probed at
+round 1 by the referee) and the exact closed-form weights at all
+four base cases; the weight formula 1/(4(n^2 + 3n - 1)) is the
+layer's deliver-budget rule at n^2 + 3n actors, gated at
+n = 3..6 and structurally actor-count-only.  (ii) THE CONE
+TOPOLOGY: registers are per-actor; two events are comparable iff
+a register chain connects them.  The firewall routes minimum j's
+chain to upper i's sender through the courier pair dedicated to
+(i, j), j != i, and through nothing else; so upper_i's down-cone
+intersected with the crown set is exactly {min_j : j != i} — the
+S_n covering pattern — at every n, by the same finite argument
+(each courier pair touches exactly one minimum wire and one upper
+hub wire; gated as carrier-pair disjointness at the base cases).
+(iii) THE INCOMPARABILITIES: the 2n crown events have pairwise
+disjoint carrier pairs and no routed chain connects any two of
+them (the firewall's defining property, gated blockwise at the
+base cases); minima are pairwise incomparable, uppers pairwise
+incomparable, and upper_i is not above min_i.  (i)-(iii) give the
+induced matrix == S_n's for every n; dim(S_n) = n [LITERATURE]
+and dimension is monotone under induced subposets, so the whole
+record's order dimension is >= n.  QED (the step n -> n+1 adds
+2n + 4 actors and 4n + 2 events inside the same schema — the
+closed forms gated at the base).
+
+Scope: the theorem is about ORDER dimension (the 1+1-escape /
+clock-complexity ladder); it carries NO Minkowski or
+spacetime-dimension content (§1 binds).  The witness family is
+hand-constructed; typicality under the completed measure is
+D44b-successor territory.
