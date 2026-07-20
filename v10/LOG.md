@@ -7118,3 +7118,43 @@ exit 0, seeds byte-identical; one applier construction slip — N2's
 spurious sqrt(2) factors — caught by MG1-e itself failing, fixed).
 Note §5 B1-B4. DELTA next. D44b's build DELIVERED meanwhile
 (conversion follows its own cycle).
+
+## 2026-07-19 — D44b receipt GREEN 13/13 (LEDGER #371); round 1
+## commissioned. THE CAMPAIGN-FINAL UNIT: REOPENING CONFIRMED;
+## THE TRANSPORT CHAIN ESCAPES ITS WINDOW
+The last build delivered (builder-agent; verified pre-commit:
+independent rerun exit 0 BYTE-IDENTICAL; 13 PASS / 0 FAIL; ~7 s;
+seeds 0/7 byte-identical; the #362 allow-list purity walk, 0
+violations; no check(True)). TG0: the committed d42b1 layer
+re-anchored (ARM-1T 3,969 cumulative [1,9,69,521,3969]; ARM-2T
+3,424; orphan/conflict/join censuses reproduced). TG1 — the
+outcome lands BETWEEN the pre-registered horns: WINDOW-CONSISTENT
+STABILIZATION, NOT CLOSURE. |P_t| tables [2,2,2,2]/[5,6,6]/[9,11]/
+[13]; agreement t = 1, 2; SIX classes on the len <= 2 window (a
+transport-scope echo of the d42a six — a DIFFERENT object); the
+refinement is real (gated split pair [pA0] vs [pA0, d(A->B, v0)]:
+identical menu shapes, rows differing in exactly (1/8, class 3)).
+TG2: WELL-DEFINED at the intrinsic level on the deepest
+well-defined window (0/6 failing) — while menu-shape factorization
+FAILS deeper (2/9; the exhibit gated): the transport grammar
+genuinely breaks the d42a shortcut. TG3 — THE REOPENING PREDICTION
+CONFIRMED IN-FAMILY: [pA0, blind self-seal, deliver v1 to B],
+3 events, EXACT WEIGHT 1/256; the diverged prefix reconverges to
+shared holdings by ONE delivery; 124 reconverging pairs / 1,044
+diverged histories; the d42a absorption is STRUCTURALLY
+UNREPRODUCIBLE at transport scope (the diverged class's delivery
+row carries weight into a non-diverged class — gated). TG4/TG5 do
+not fire, for a SHARPER reason than predicted: not
+non-stabilization but ESCAPE — 68 transitions from len <= 2
+parents land in 5 classes first realized at len 3 (exhibit gated);
+no closed exact transfer at the feasible caps; the genuine
+Perron/mass-transport implementations sit in the conditional
+branch, dead at this cap BY MEASUREMENT. TG6: the d43b classifier
+fails blindly (0/3,969 transport menus match any d42a shape).
+TG7: THE CAMPAIGN'S CLOSING SCOPE STATEMENT, printed and gated —
+the D44a closure theorem covers EXACTLY the delivery-free grammar;
+transport-scope closure is OPEN with [I1]'s Martin/R-theory
+machinery the named successor; no infinite-volume claim. Note §4
+A1-A3. ROUND 1 COMMISSIONED next. With this, ALL SIX of the
+user's successors have delivered receipts; d44f + d44b rounds are
+the campaign's last open cycles.

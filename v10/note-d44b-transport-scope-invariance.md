@@ -67,3 +67,28 @@ either way).  Weight-system level; no measure claim.  Exact
 Fractions throughout.  This unit CLOSES the campaign: its outcome
 states exactly what the closure theorem (D44a) does and does not
 cover, and where the imported boundary machinery must enter.
+
+## 4. First-run amendments (2026-07-19, pre-round; declared
+## deviations)
+
+**A1 (TG1's third horn).** The pin's stabilize-or-not dichotomy
+resolved between its horns: WINDOW-CONSISTENT STABILIZATION WITHOUT
+CLOSURE — the per-candidate partition (the d43b operator verbatim;
+the #366 per-candidate lesson applied) agrees blockwise at t = 1, 2
+on its windows and lands at SIX classes on len <= 2 (a
+transport-scope echo of the d42a six, a DIFFERENT object), but the
+window chain ESCAPES: 68 transitions from len <= 2 parents land in
+5 classes first realized only at len 3. Both the growth table and
+the split + escape exhibits are gated deliverables.
+
+**A2 (caps as measured).** ARM-1T at depth 4 (3,969 histories,
+cumulative [1,9,69,521,3969]) carries the intrinsic program;
+ARM-2T at depth 3 (3,424) runs census + purity + menu-count only
+(the intrinsic program not run there — declared). The printed
+summary carries a < 600 s boolean instead of wall seconds (byte-
+identity); ~7 s measured.
+
+**A3 (TG3's fallback unused).** The reopening witness exists
+IN-FAMILY (3 events, weight 1/256; 124 reconverging pairs among
+1,044 diverged histories) — the above-cap SIG-chain fallback was
+not needed.
