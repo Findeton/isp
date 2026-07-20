@@ -7086,3 +7086,35 @@ completed cross-component weights are FORCED to the decided
 completion's values; the all-depth form is conditional on the H1
 structural lemma (residue 1's final named gap). Note §4 A1-A5.
 ROUND 1 COMMISSIONED next. D44b (the last unit) queues behind.
+
+## 2026-07-19 — d44f round-1 repairs APPLIED (LEDGER #370);
+## FORWARD-CORRECTIONS of #369; delta commissioned
+Round (frozen: reviews/d44f-round1-hostile-review.md, REVISE
+1B/1M/3m/4n): FG2 SURVIVED FULLY (independent advance-rule rebuild:
+both ensembles reproduced, 1/3 unerased match, 3/3 erased equality,
+marginal invariance; A1 proven FORCED not convenient; A3's vacuity
+true — 0 posable swaps over all 1,191; 8/8 mutual exclusion; all
+MG2 anchors; the reduction = identification at its disclosed sector
+scope; 7/7 mutants; no check(True) receipt or ancestry). THE
+BLOCKER (B1, repaired): the forcing sweep missed the SIGN SECTOR —
+four referee tilts slip all four gates, every one with EXACTLY ZERO
+squared-amplitude content; MG1-d RESCOPED to |amp|^2 content, the
+new MG1-e gates the four sign tilts (slip + zero |amp|^2), the
+false global-scale clause retired. FORWARD-CORRECTIONS of #369:
+(i) "the physics (winners, weights, amplitudes) is
+foliation-invariant" OVERREACHED — records are the physics and the
+initiator tag is record data that PROPAGATES (post-arb vname init
+slots); the honest sentence: INITIATOR-ERASED content is invariant
+and the residual foliation datum is itself record data; (ii) the
+"committed anchors reproduced" clause covered new-in-receipt
+q'/lambda values; (iii) the MG1 claim "seven tilt directions ALL
+convicted" holds only with nonzero-|amp|^2 scope. Minors applied:
+MG2-d relabeled (the HORIZON-STABLE forced object is the SECTOR
+CONDITIONAL (1/2,1/4,1/4)); MG2-d2 gates the depth-5 horizon
+in-receipt (6,471; Z doubles; identical conditional; different
+absolute q' = (8/101, 4/101, 4/101)); MG2-f's constant labeled
+cited. Receipt now 29 PASS / 0 FAIL (verified pre-commit: rerun
+exit 0, seeds byte-identical; one applier construction slip — N2's
+spurious sqrt(2) factors — caught by MG1-e itself failing, fixed).
+Note §5 B1-B4. DELTA next. D44b's build DELIVERED meanwhile
+(conversion follows its own cycle).

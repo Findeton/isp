@@ -112,3 +112,46 @@ in-receipt (the d43c exec slice stops before d42b3's enumeration),
 anchored to the committed numbers (Z(genesis) = 1037/64; family
 1,191; the root completed weight 133/2074 = paper 30 §5.3's
 printed extreme) BEFORE use.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d44f-round1-hostile-review.md: REVISE, 1B/1M/3m/4n)
+
+**B1 (BLOCKER-1 — the forcing sweep did not span its tilt space;
+rescoped and gated).** The referee constructed four sign tilts
+slipping ALL FOUR gates (the sign group {+-1}^3 on amplitudes);
+every one carries EXACTLY ZERO squared-amplitude content
+(referee-verified, now gated). The pinned "every non-trivial tilt
+is convicted" lemma was FALSE as stated; MG1-d is RESCOPED to
+|amp|^2 content (the forced object is the WEIGHTS) and the new
+MG1-e adopts the referee's four tilts as the sign-sector gate
+(all-gates-slipped AND zero |amp|^2 each); MG1-d's false "only
+surviving freedom is the global scale, which MG2-e cancels" clause
+is retired (ISO convicts scales; MG2-e's lambda scales the z
+multipliers — a different object). The battery is real-valued;
+complex phases belong to the same zero-|amp|^2 gauge sector
+(declared in-gate). FG2/MG2 untouched by the finding.
+
+**B2 (MAJOR-1 — the LOG's foliation sentence, forward-corrected at
+#370).** "The physics (winners, weights, amplitudes) is
+foliation-invariant" overreached the program's own record ontology:
+records ARE the physics, the initiator tag is record data, and the
+tag propagates (post-arb proposal menus differ in the vname init
+slot — referee-verified). The honest form: INITIATOR-ERASED content
+is invariant; the residual foliation datum is ITSELF RECORD DATA.
+
+**B3 (minors).** MG2-d relabeled: the absolute q' = (2/23, 1/23,
+1/23) is depth-4-horizon-bound; the HORIZON-STABLE forced object is
+the SECTOR CONDITIONAL (1/2, 1/4, 1/4) — the new MG2-d2 gates the
+referee's depth-5 check in-receipt (family 6,471; join Z = 4;
+early Z = 8; identical sector conditional; different absolute q');
+MG2-f's depth bound labeled as the cited D44a constant; #369's
+"committed anchors reproduced" clause covered new-in-receipt
+q'/lambda values — corrected at #370.
+
+**B4 (nits, recorded).** FG2-c gates 4 of the 8 exclusion pairs
+(the referee verified all 8 block — referee-carried); amp slots
+compared as strings with the numeric 1e-40 check backing; the
+battery is real-only (a unitary complex-phase family would be
+spuriously convicted — the scope is declared in MG1-e's label);
+the MENU gate checks A's rows (B's join menu is the same object by
+the committed symmetry — referee-verified).

@@ -583,15 +583,58 @@ check("MG1-c NO SILENT ACCEPTANCE, demonstrated live: under the "
       f"all-convicted = {sweep_reduced} (would exit 1 if it were the "
       "battery)")
 
-check("MG1-d THE FORCING CONCLUSION: every pinned non-trivial "
-      "per-component re-weighting violates a committed gate — the "
-      "operator layer FORCES the classical cross-component weights "
-      "(each V_C's Born split sums to 1; the only surviving freedom "
-      "is the global scale, which MG2-e cancels): the family cannot "
-      "carry a measure tilt",
+check("MG1-d THE FORCING CONCLUSION, RESCOPED (round-1 BLOCKER-1): "
+      "every pinned non-trivial re-weighting WITH NONZERO "
+      "SQUARED-AMPLITUDE CONTENT violates a committed gate — the "
+      "operator layer FORCES the classical cross-component WEIGHTS "
+      "(the |amp|^2 data; each V_C's Born split sums to 1); the "
+      "surviving freedom is the SIGN/PHASE SECTOR (MG1-e: gauge on "
+      "amplitudes carrying EXACTLY ZERO |amp|^2 content — invisible "
+      "to weights by construction): the family cannot carry a "
+      "MEASURE tilt",
       all(conv[n] for n, _, _ in TILTS[1:])
       and all(sum(BORN[k]) == Fr(1) for k in (1, 2)),
-      "6/6 non-trivial tilts convicted; Born sums = 1, 1")
+      "6/6 nonzero-|amp|^2 tilts convicted; Born sums = 1, 1")
+
+# round-1 BLOCKER-1: the referee's four sign tilts, adopted — the
+# battery's gate-passing set is the sign group {+-1}^3 on amplitudes,
+# and every member carries zero squared-amplitude content:
+W0REF = tilt_family()
+def amp2_dev(W):
+    d = mpf(0)
+    for k in ((1, 1), (2, 1), (2, 2)):
+        M, M0 = W[k], W0REF[k]
+        for i in range(M.rows):
+            d = max(d, fabs(M[i, 0] ** 2 - M0[i, 0] ** 2))
+    return d
+NTILTS = [
+    ("N1 cut-symmetric singleton sign",
+     tilt_family(f1=mpf(-1), g1=mpf(-1))),
+    ("N2 within-pair relative sign",
+     tilt_family(f2=pair_matrix(-1 / sqrt(2), 1 / sqrt(2)))),
+    ("N3 pair global sign", tilt_family(f2=mpf(-1))),
+    ("N4 joint sign",
+     tilt_family(f1=mpf(-1), g1=mpf(-1), f2=mpf(-1))),
+]
+ne_ok = True
+for name, W in NTILTS:
+    fired = battery(W)
+    d2v = amp2_dev(W)
+    print(f"    {name}: fired = {fired if fired else '[]'}; "
+          f"|amp^2| dev = {chop(d2v)}")
+    ne_ok = ne_ok and (fired == []) and (d2v < TOL)
+check("MG1-e THE SIGN SECTOR (round-1 BLOCKER-1, the referee's "
+      "tilts adopted as the gate): all four sign tilts slip ALL "
+      "FOUR committed gates AND carry exactly ZERO squared-"
+      "amplitude content — the gate-passing freedom is the sign "
+      "group {+-1}^3 acting on amplitudes, a GAUGE sector with no "
+      "|amp|^2 (hence no weight/measure) content; the pinned "
+      "'every non-trivial tilt is convicted' lemma was FALSE as "
+      "stated and is superseded by MG1-d's rescoped form (the "
+      "battery is real-valued; complex phases belong to the same "
+      "zero-|amp|^2 gauge sector — declared, not swept)",
+      ne_ok,
+      "4/4 sign tilts: all gates slipped, |amp^2| dev = 0")
 
 # ============ MG2 — the reduction map ===============================
 print("\n[MG2 — the measure side reduces to residue 1, cut by cut]")
@@ -705,17 +748,53 @@ sector_ratios = [share(H2, e) * b * z_committed[c] / Nsec
 qprime = [admissible(H2, e)[1] * ZS[e] / Z[tuple(H2)]
           for e, c, b in CUTS[1][1]]
 qp_norm = [x / sum(qprime) for x in qprime]
-check("MG2-d the COMMITTED instantiation: plugging the recomputed "
-      "committed multipliers (z_single, z_pair) = (2, 2) into the "
-      "fixture side reproduces the committed completed arb-sector "
-      "conditionals exactly — q'(self, pairA, pairB | H2) = (2/23, "
-      "1/23, 1/23), sector-normalized (1/2, 1/4, 1/4) on both sides "
-      "of the dictionary",
+check("MG2-d the COMMITTED instantiation (round-1 minor-1 relabel): "
+      "plugging the recomputed committed multipliers (z_single, "
+      "z_pair) = (2, 2) into the fixture side reproduces the "
+      "committed completed arb-sector conditionals exactly — "
+      "q'(self, pairA, pairB | H2) = (2/23, 1/23, 1/23) AT THE "
+      "DEPTH-4 HORIZON (the absolute q' is horizon-bound), "
+      "sector-normalized (1/2, 1/4, 1/4) on both sides — THE "
+      "HORIZON-STABLE FORCED OBJECT IS THE SECTOR CONDITIONAL",
       qprime == [Fr(2, 23), Fr(1, 23), Fr(1, 23)]
       and sector_ratios == qp_norm
       and sector_ratios == [Fr(1, 2), Fr(1, 4), Fr(1, 4)],
       f"q' = {[str(x) for x in qprime]}; sector-normalized = "
       f"{[str(x) for x in sector_ratios]}")
+
+# round-1 minor-1: the depth-5 horizon recomputation, in-receipt —
+# absolute q' shifts with the horizon; the sector conditional does not:
+FAM5, CACHE5 = enumerate_family(AB, 5)
+Z5 = {}
+for h in FAM5:
+    if len(h) == 5:
+        Z5[tuple(h)] = Fr(1)
+for L in (4, 3, 2, 1, 0):
+    for h in FAM5:
+        if len(h) != L:
+            continue
+        Z5[tuple(h)] = sum(q * Z5[tuple(h + [e])]
+                           for e, q in CACHE5[tuple(h)])
+ZS5 = {e: Z5[tuple(H2 + [e])] for e in
+       (SELFA, PAIRA, PAIRB, SELFB, BPAIRA, BPAIRB)}
+qprime5 = [admissible(H2, e)[1] * ZS5[e] / Z5[tuple(H2)]
+           for e, c, b in CUTS[1][1]]
+qp5_norm = [x / sum(qprime5) for x in qprime5]
+check("MG2-d2 (round-1 minor-1, the referee's depth-5 check "
+      "in-receipt): at the depth-5 horizon the multipliers double "
+      "(all six join successors Z = 4; early Z = 8; family 6,471) "
+      "and the ABSOLUTE q' changes — but the sector-normalized "
+      "conditional is IDENTICALLY (1/2, 1/4, 1/4): the forced "
+      "object that survives horizon change is the SECTOR "
+      "CONDITIONAL; component-constancy of z is per-horizon",
+      len(FAM5) == 6471
+      and all(z == Fr(4) for z in ZS5.values())
+      and Z5[tuple(H1 + [SELFA])] == Fr(8)
+      and qp5_norm == [Fr(1, 2), Fr(1, 4), Fr(1, 4)]
+      and qprime5 != qprime,
+      f"Z5(join succ) all 4; early Z5 = {Z5[tuple(H1 + [SELFA])]}; "
+      f"sector-normalized = {[str(x) for x in qp5_norm]}; absolute "
+      f"q'5 = {[str(x) for x in qprime5]} != depth-4 q'")
 
 lam = Fr(7, 3)
 scale_ok = True
@@ -759,11 +838,14 @@ print("    this receipt adds no claim beyond verified depth.")
 depth_ok = (len(H1) == 1 and len(H2) == 2)
 check("MG2-f the uniqueness upgrade's arithmetic content is in "
       "scope: the fixture's cuts lie at depths 1 and 2, strictly "
-      "inside D44a's exhaustively verified depth (7) — the "
-      "conditional statement above rests on gates MG2-c/MG2-e plus "
-      "the CITED terminal record (LOG #368), and on nothing else",
+      "inside D44a's exhaustively verified depth (7 — the D44a "
+      "receipt-carried scope constant, CITED from LOG #368, not "
+      "computed here; round-1 minor-2 declared) — the conditional "
+      "statement above rests on gates MG2-c/MG2-e plus the cited "
+      "terminal record, and on nothing else",
       depth_ok and red_ok and scale_ok,
-      "depths (1, 2) <= 7; reduction + scale-cancellation gated")
+      "depths (1, 2) <= 7 (cited); reduction + scale-cancellation "
+      "gated")
 
 # ============ MG3 — honesty + purity ================================
 print("\n[MG3 — honesty and purity]")
