@@ -7047,3 +7047,42 @@ Perron package on the quotient); THE DEPTH-FREE STRUCTURAL LEMMA
 conclusion exactly conditional on it; the pumping route retired for
 the closure-quotient route. Successor 1 of the user's six: DONE.
 D44f UNGATES NOW; D44b remains last.
+
+## 2026-07-19 — D44f receipt GREEN 27/27 (LEDGER #369); round 1
+## commissioned. THE FOLIATION FACE RESOLVES TO ONE DATUM; THE
+## MEASURE SIDE REDUCES WITH THE UNIQUENESS UPGRADE
+Wave-2 build delivered (builder-agent; verified pre-commit:
+independent rerun exit 0 BYTE-IDENTICAL; 27 PASS / 0 FAIL; ~0.5 s;
+seeds 0/7 byte-identical; no check(True), grep-verified). ARM F —
+FG2 delivered the UNEQUAL horn with a SHARP RESOLUTION: the two
+cut-advance orders' terminal ensembles differ in EXACTLY ONE DATUM
+— the INITIATOR TAG of the join arbitration. Initiator-ERASED
+ensembles are entrywise EQUAL; winner marginals and
+(weight, amplitude) multisets are ORDER-INVARIANT (Born and
+isometry ACQUITTED by gate); the fork is forced by CARRIER
+LICENSING + admission (the pair arb's carriers = both proposers =>
+shared carriers put each actor's pair opportunity in the other's
+past — mutual exclusion 4/4; §5-C3's forfeited commutation now a
+FIRING gate). The foliation's forced choice is WHO INITIATES —
+nothing else; the physics (winners, weights, amplitudes) is
+foliation-invariant at fixture scale. FG3 disjoint control passes
+with its overlapped mutant failing the same gate; FG4 anchors the
+A7 witness (sequential same-initiator order choice is VACUOUS in
+this grammar — declared). ARM M — MG1: seven tilt directions ALL
+convicted (the battery needed FOUR committed gates: the
+cut-asymmetric sign tilt T5 slips isometry+Born+menu and dies only
+at CUTIND — the pin's three-gate parenthetical amended per its own
+no-silent-acceptance clause, A4; the reduced battery demonstrably
+fails on T5). MG2: the SEVEN-ROW REDUCTION DICTIONARY gated —
+share x Born <-> bare weight; the multiplier Z component-constant
+(all six join successors Z = 2, early cut Z = 4); normalizers
+equal EXACTLY because each Born split sums to 1; committed anchors
+reproduced (Z(genesis) = 1037/64; root completed weight 133/2074 =
+paper 30 §5.3's extreme; q' = (2/23, 1/23, 1/23) sector-normalized
+(1/2, 1/4, 1/4) on both sides; lambda = 7/3 cancels identically).
+THE UNIQUENESS UPGRADE, printed at its honest scope: the reduction
++ D44a TERMINAL (#368) => at verified-depth scope the family's
+completed cross-component weights are FORCED to the decided
+completion's values; the all-depth form is conditional on the H1
+structural lemma (residue 1's final named gap). Note §4 A1-A5.
+ROUND 1 COMMISSIONED next. D44b (the last unit) queues behind.

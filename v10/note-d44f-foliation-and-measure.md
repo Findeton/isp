@@ -78,3 +78,37 @@ The pair-plus-path fixture (and the width-3 fixture for FG3 if
 runtime permits); grammar = d42a terminal + the d42b2 click layer;
 realized component sizes {1, 2}; Hegerfeldt untouched; no continuum
 claim.  Exact Fractions; amplitudes mp.dps 50 at 1e-40.
+
+## 4. First-run amendments (2026-07-19, pre-round; the receipt's
+## declared deviations)
+
+**A1 (FG1's advance rule).** The two-order comparison branches the
+ARB SECTOR only (proposal/idle candidates not advanced) — the pin's
+"arb resolves, then remaining opportunities" reading, declared
+in-receipt.
+
+**A2 (FG3's fixture).** The disjoint control uses the same-value
+two-singleton fixture [pA0, pB0] (genuinely disjoint components at
+one cut) instead of width-3 — the pin's "if runtime permits" clause
+taken in the cheap direction; the overlapped mutant fails the same
+gate (a firing negative control).
+
+**A3 (FG4's realization).** Strictly-sequential same-initiator
+opportunities admit NO posable order choice in this grammar (each
+needs the previous event's output register) — FG4 anchors the
+committed A7 witness pair (mu = 1/256) and declares the vacuity in
+the gate label.
+
+**A4 (MG1's fourth gate — required by the pin's own
+no-silent-acceptance clause).** The pin's parenthetical named three
+committed gates (isometry / Born / menu); the cut-asymmetric sign
+tilt T5 slips ALL THREE and is caught only by CUTIND (d43c
+PG3-E5's same-matrices-at-both-cuts) — the battery therefore runs
+FOUR committed gates, and MG1-c demonstrates the reduced 3-gate
+battery failing the sweep on T5 (no silent acceptance, live).
+
+**A5 (MG2's recomputation).** The depth-4 Z recursion is recomputed
+in-receipt (the d43c exec slice stops before d42b3's enumeration),
+anchored to the committed numbers (Z(genesis) = 1037/64; family
+1,191; the root completed weight 133/2074 = paper 30 §5.3's
+printed extreme) BEFORE use.

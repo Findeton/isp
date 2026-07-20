@@ -1,0 +1,111 @@
+[d44f — the foliation face and the measure side]
+  banner: classical weights, menus, Z-multipliers, ratios,
+  and the MG2 dictionary are EXACT Fractions (the committed
+  d42b3 layer, __file__-anchored). FLOAT ENTRY POINTS,
+  enumerated exhaustively: (1) the d43c V-family matrices and
+  branch-amplitude products (mp.dps 50, compared at 1e-40);
+  (2) the MG1 tilt amplitudes (same discipline). Nothing
+  else leaves Fractions; MG3 gates this with the d45a-form
+  ALLOW-LIST purity walk (LOG #362 successor binding) plus a
+  gated trip control. FG2 was PRE-REGISTERED OPEN (either
+  horn a result, exit 0); the computation delivered the
+  UNEQUAL horn, which the receipt now gates as an anchor —
+  exit 1 = breakage/anchor failure only, never a horn
+  preference. No continuum claim; Hegerfeldt untouched;
+  fixture scale.
+
+[FG0 — the committed d43c objects re-anchored]
+  [PASS] FG0-a V_single (2x1) and V_pair (4x1) rebuilt as Acceptance o OpeningClick (the committed d43c PG3-E1 construction) and ISOMETRIC at 1e-40  (max V^T V - I defect = 0.0)
+  [PASS] FG0-b BORN = K1 (the committed d43c PG3-E3 anchor): V_pair's squared branch amplitudes are 1/2-1/2 = PK1 on the 2-conflict (recomputed from the layer) and V_single's branch is deterministic = PK1 on the singleton, at 1e-40  (PK1(pair) = 1/2-1/2, PK1(single) = 1: True)
+  [PASS] FG0-c the committed menus, exact in Fractions: A's arb menu at the early cut = {self: 1/4}; at the join = {self: 1/4, pair winners: 1/8 + 1/8} (the d43c PG3-E4/R3 anchor); B's join menu is the mirror {self: 1/4, pair winners: 1/8 + 1/8}  (1/4 early; 1/4 + 1/8 + 1/8 at the join, both actors)
+  [PASS] FG0-d the menu FACTORIZATION (past-local share x exact Born split) reproduces every committed arb weight at both cuts, both actors, exactly — the d43c E4 reconstruction re-anchored  (q = (1/4 / #components(own view)) x Born, 7/7 events)
+  [PASS] FG0-e the FG1 precondition: at the join cut BOTH actors hold admissible arbitration opportunities on the SAME component (ckey {A0,B1}, initiators A and B) — and none of the four pair events is admissible at the early cut  (the overlapping-visibility configuration is live)
+
+[FG1 — the two cut-advance orders through the V-family]
+  A-first terminal ensemble (3 branches):
+    r[A|ck={A0,B1}|w={A0}]  weight 1/8  amp 0.707106781187
+    r[A|ck={A0,B1}|w={B1}]  weight 1/8  amp 0.707106781187
+    r[A|ck={A0}|w={A0}] r[B|ck={B1}|w={B1}]  weight 1/16  amp 1.0
+  B-first terminal ensemble (3 branches):
+    r[B|ck={A0,B1}|w={A0}]  weight 1/8  amp 0.707106781187
+    r[B|ck={A0,B1}|w={B1}]  weight 1/8  amp 0.707106781187
+    r[B|ck={B1}|w={B1}] r[A|ck={A0}|w={A0}]  weight 1/16  amp 1.0
+  [PASS] FG1-a both branch trees computed to termination: 3 terminal branches each (self-then-self at 1/16; the two pair winners at 1/8, after which the other actor's arb menu is EMPTY — the pair arbitration resolves the whole component); total classical arb-sector weight 5/16 under BOTH orders, exact  (3 vs 3 branches; totals 5/16 = 5/16)
+  [PASS] FG1-b the entrywise comparison is computed on the committed canonical form: the (canonical record, weight, amplitude) multisets share exactly 1 of 3 entries (the self-then-self branch — its two orders are ONE canonical record: the intermediate ordering is bookkeeping, said precisely); the (weight, amplitude) multisets WITHOUT records are equal at 1e-40  (canonical-entry matches = 1/3; weight-amp multisets equal; max amp deviation = 0.0)
+
+[FG2 — the verdict on the foliation face]
+  the two orders' terminal ensembles equal: False
+  [PASS] FG2-a the verdict is UNEQUAL (pre-registered open; this horn delivered): the terminal-state ensembles differ — 2 of 3 canonical records disagree across the orders  (the obstruction is exhibited entry-by-entry below)
+  the obstruction, entry-by-entry (A-first only vs B-first only):
+    A-first: r[A|ck={A0,B1}|w={A0}] (weight 1/8)  vs  B-first: r[B|ck={A0,B1}|w={A0}] (weight 1/8); same winner, same weight, amps equal at 1e-40; records differ in the initiator
+    A-first: r[A|ck={A0,B1}|w={B1}] (weight 1/8)  vs  B-first: r[B|ck={A0,B1}|w={B1}] (weight 1/8); same winner, same weight, amps equal at 1e-40; records differ in the initiator
+  [PASS] FG2-b the obstruction is EXACTLY the initiator slot: erasing the initiator tag from arbitration events in the canonical DAGs (the poset structure kept intact) makes the two ensembles ENTRYWISE EQUAL — and the (ckey, winner) marginal multisets are equal un-erased. The winner set, the weights, and the amplitudes are order-invariant; the records differ only in WHO initiates the pair arbitration (and hence which version register carries the winner)  (erased ensembles equal = True; winner marginals equal = True)
+  [PASS] FG2-c ATTRIBUTION, part 1 (carrier licensing + admission structure CONVICTED): the two actors' pair opportunities are MUTUALLY EXCLUSIVE — each is admissible at the join but inadmissible after the other fires — because the pair arbitration's licensed carriers are BOTH proposers' registers (A4/A6: shared carriers {A, B}), which places either actor's pair arb in the other's event past, where the resolved component blocks re-arbitration. This is note-d43c §5 C3's forfeited commutation-by-disjointness, now a firing gate  (mutual exclusion 4/4; shared carriers = ['A', 'B']; A's pair arb lies in B's pair-arb past = True)
+  [PASS] FG2-d ATTRIBUTION, part 2 (Born weights and isometry ACQUITTED): the weight-amplitude content is order-invariant (FG1-b) and the winner marginals agree (FG2-b) — the difference is NOT forced by the Born = K1 kernel or the isometry requirement; it is forced by the event identity's initiator attachment under carrier-licensed mutual exclusion. THE CHOICE A FOLIATION WOULD HAVE TO MAKE, stated exactly: which actor initiates the join arbitration — nothing else  (obstruction confined to the initiator slot + its version register)
+
+[FG3 — disjoint components commute; the overlapped mutant fails the gate]
+  [PASS] FG3-a the DISJOINT control PASSES: at the same-value cut [pA0, pB0] the full view holds TWO disjoint singleton components ({A0} and {B0}); the two self-arbitrations commute EXACTLY — both orders admissible, one canonical record, equal mu (= 1/1024) — the disjointness lemma as a firing gate  (canon equal + mu equal = True; mu = 1/1024)
+  [PASS] FG3-b the OVERLAPPED mutant FAILS the SAME gate (the gated negative control — the gate demonstrably can fail): the two actors' pair arbitrations on the SHARED component do not commute — each order's second event is INADMISSIBLE (the first resolves the component)  (orders admissible = False/False)
+
+[FG4 — order irrelevance where no ambiguity exists]
+  [PASS] FG4 the same-initiator sequential control: where NO overlap ambiguity exists (A's self-arb reads only its own singleton component), order is irrelevant — the committed A7 witness pair is ONE canonical record with mu = 1/256 under both orders (the d42b3 G-T2 anchor) and A's arb weight is 1/4 at both positions; the V-family applies the SAME V_single with amplitude 1 in both. Strictly-sequential same-initiator opportunities admit no order choice at all (each requires the previous event's output register), declared  (canon equal; mu = 1/256 = 1/256; q = 1/4 both cuts)
+
+[MG1 — the forcing sweep: per-component amplitude tilts]
+  the pinned tilt directions (spanning the component index at
+  both cuts: T1/T2 per-component scale, T3 within-pair, T4
+  pair-vs-singleton, T5/T6 cut-asymmetric) and the battery's
+  convictions:
+    T0 trivial (the committed family): fired = []
+    T1 pair-scale 9/10 (component-index tilt at the join): fired = ['ISO', 'BORN', 'MENU']
+    T2 singleton-scale 11/10 (component-index tilt, both cuts): fired = ['ISO', 'BORN', 'MENU']
+    T3 within-pair rotation (3/5, 4/5) — isometry-preserving: fired = ['BORN', 'MENU']
+    T4 cross-component transfer (singleton x 1/sqrt(2) both cuts, pair x sqrt(3/2)) — arb-sector TOTAL preserved at the join: fired = ['ISO', 'BORN', 'MENU']
+    T5 cut-asymmetric sign (join singleton = -V_single): fired = ['CUTIND']
+    T6 cut-asymmetric singleton scale 4/5 (join only): fired = ['ISO', 'BORN', 'MENU', 'CUTIND']
+  [PASS] MG1-a the trivial tilt is NOT convicted (the battery has a live green baseline — no false convictions) and EVERY non-trivial tilt IS convicted by at least one named committed gate  (T0:NONE; T1:ISO+BORN+MENU; T2:ISO+BORN+MENU; T3:BORN+MENU; T4:ISO+BORN+MENU; T5:CUTIND; T6:ISO+BORN+MENU+CUTIND)
+  [PASS] MG1-b the conviction table's load-bearing rows: T3 (isometry-PRESERVING within-pair rotation) is convicted by BORN+MENU, not ISO — the kernel, not unitarity, pins the within-pair split; T4 (cross-component transfer that PRESERVES the arb-sector total, = 1/2 exactly) is convicted by ISO+BORN+MENU — moving weight BETWEEN components cannot be hidden in the total; T5 (pure sign at one cut) is convicted by CUTIND ALONE  (T4 arb-sector total = 1/2 at 1e-40 (dev 0.0), yet convicted)
+  [PASS] MG1-c NO SILENT ACCEPTANCE, demonstrated live: under the REDUCED battery {ISO, BORN, MENU} the T5 sign tilt slips ALL gates and the sweep gate FAILS (all-convicted is False) — the wiring that would catch an all-gate-slipping tilt is exercised, not narrated; the full battery's CUTIND row is load-bearing  (reduced-battery T5 convictions = []; reduced sweep all-convicted = False (would exit 1 if it were the battery))
+  [PASS] MG1-d THE FORCING CONCLUSION: every pinned non-trivial per-component re-weighting violates a committed gate — the operator layer FORCES the classical cross-component weights (each V_C's Born split sums to 1; the only surviving freedom is the global scale, which MG2-e cancels): the family cannot carry a measure tilt  (6/6 non-trivial tilts convicted; Born sums = 1, 1)
+
+[MG2 — the measure side reduces to residue 1, cut by cut]
+  [PASS] MG2-a the committed completion re-anchored from the layer (unit boundary, depth 4): Z(empty) = 1037/64, Z([pA0]) = 133/16, Z([pA0,pB1]) = 23/4, and the root completed weight q'(pA0|empty) = (1/8)(133/16)/(1037/64) = 133/2074 — paper 30 §5.3's printed root extreme, reproduced exactly  (family = 1191 (anchor 1191); root completed = 133/2074)
+  [PASS] MG2-b the committed multipliers at the fixture's arb cuts are COMPONENT-CONSTANT: at the join, ALL SIX arb successors (both initiators, both components) carry Z = 2 exactly; at the early cut, Z = 4 — so the committed completion datum lies in the per-component class the operator family can express (the dictionary's z_C is well-defined; this is a computed fact about the committed Z, not a definition)  (Z(join arb successors) = ['2', '2', '2', '2', '2', '2']; Z(early arb successor) = 4)
+  THE DICTIONARY (completion side <-> fixture side):
+    cut h                          <-> arb cut (H1 early; H2 join)
+    successor event e              <-> component-branch (C, w)
+    bare weight q(e|h)             <-> share s_C x Born_C(w)  [gated FG0-d]
+    multiplier Z(h+e)              <-> z_C, component-constant  [gated MG2-b]
+    normalizer Z(h) = sum q Z      <-> N = sum_C s_C z_C (sector)
+    completed q'(e|h) = q Z/Z(h)   <-> w(C,w) = s_C Born_C(w) z_C / N
+    within-cut ratio q':q'         <-> s z Born : s' z' Born'
+  [PASS] MG2-c the REDUCTION, gated cut-by-cut in Fractions: for every probe multiplier tuple (5 tuples, both cuts) the cross-component assignment problem — weights s_C z_C Born_C / N with COMPONENT-SUM normalizer N = sum_C s_C z_C — coincides ENTRYWISE with the committed completion's within-cut transfer q Z / Z restricted to the arb sector, whose normalizer is the BRANCH sum sum_e q z: the two normalizers are EQUAL exactly because each V_C's Born split sums to 1 (the sector's branch sum collapses to the component sum). SAME normalizers, SAME ratio constraints: horn 2's measure side IS residue 1's within-cut object at the fixture's cuts — arithmetically, not metaphorically  (5 probes x 2 cuts x all branches + share constancy, exact)
+  [PASS] MG2-d the COMMITTED instantiation: plugging the recomputed committed multipliers (z_single, z_pair) = (2, 2) into the fixture side reproduces the committed completed arb-sector conditionals exactly — q'(self, pairA, pairB | H2) = (2/23, 1/23, 1/23), sector-normalized (1/2, 1/4, 1/4) on both sides of the dictionary  (q' = ['2/23', '1/23', '1/23']; sector-normalized = ['1/2', '1/4', '1/4'])
+  [PASS] MG2-e the UNIQUENESS MECHANISM at fixture scale: the global scale lambda — the ONLY freedom MG1's sweep leaves the operator layer — cancels from every assigned weight (w(lambda z) = w(z), exact, all probes, both cuts): given the completion's multipliers, the cross-component weights are DETERMINED  (lambda = 7/3 cancels identically)
+  THE UNIQUENESS UPGRADE (conditional; scope-honest):
+    MG2-c reduces the family's cross-component weight problem
+    to residue 1's within-cut completion object at the
+    fixture's cuts (depth <= 2). D44a is TERMINAL at LOG #368:
+    residue 1 is DECIDED AT EVERY VERIFIED DEPTH at d42a
+    scope (exhaustive through depth 7; sigma menu-exact and
+    transition-deterministic with zero exceptions over 179,783
+    histories; the completed transfer q' exists on the
+    six-state quotient). THEREFORE, at verified-depth scope,
+    the family's completed cross-component weights are FORCED
+    to the decided completion's values: the reduction (MG2-c)
+    maps the family's freedom onto the completion's, the
+    decided completion fixes the multipliers there, and the
+    residual global scale cancels (MG2-e). CONDITIONAL: the
+    all-depth form awaits the depth-free structural lemma
+    (H1, with H0/H2) — residue 1's FINAL NAMED GAP, open;
+    this receipt adds no claim beyond verified depth.
+  [PASS] MG2-f the uniqueness upgrade's arithmetic content is in scope: the fixture's cuts lie at depths 1 and 2, strictly inside D44a's exhaustively verified depth (7) — the conditional statement above rests on gates MG2-c/MG2-e plus the CITED terminal record (LOG #368), and on nothing else  (depths (1, 2) <= 7; reduction + scale-cancellation gated)
+
+[MG3 — honesty and purity]
+  [PASS] MG3-a FIXTURE SCALE, mechanical: the realized component sizes across the fixture's arb menus are exactly {1, 2} and the V-family covers precisely those; the dictionary was PRINTED (7 rows) and each substantive row is gated (FG0-d bare weights; MG2-b multipliers; MG2-c normalizers and ratios); NO CONTINUUM CLAIM — the reduction, the forcing sweep, and the FG2 obstruction are statements about the pair-plus-path fixture on the d42a-terminal grammar with the d42b2 click layer; Hegerfeldt untouched  (realized |C| = [1, 2]; dictionary rows = 7)
+  [PASS] MG3-b the ALLOW-LIST purity walk (the d45a successor binding, LOG #362 — allow-list form, NOT a deny-list): every leaf of every retained classical structure (menus, Born tables, both FG1 ensembles' records and weights, the committed Z values, the probes, the completed weights, the dictionary) is in {Fraction, int, str}; zero violations  (violations = 0; allowed leaves walked = 307)
+  [PASS] MG3-c the purity walk's TRIP CONTROL (the gate can fail): a deliberately polluted structure containing one mpf leaf is convicted by the same walk with the mpf named  (tripped = [('root[]', 'mpf')])
+
+[SUMMARY] 27 PASS / 0 FAIL
+[VERDICT] d44f GREEN — both arms delivered at fixture scale.
+  ARM F (FG2: the UNEQUAL horn, pre-registered open): the two cut-advance orders through the constructed V-family do NOT produce equal terminal ensembles — the obstruction is exhibited entry-by-entry and is EXACTLY the initiator slot of the join arbitration (and the version register it names): weights, amplitudes, and winner marginals are order-invariant (Born = K1 and isometry ACQUITTED), initiator-erased ensembles are entrywise EQUAL, and the fork is forced by carrier licensing (A4/A6: the pair arb's carriers are both proposers) making the two actors' opportunities mutually exclusive (note-d43c §5 C3's forfeited commutation, now a firing gate). The choice a foliation would have to make: WHO initiates the join arbitration — nothing else. Disjoint components commute exactly (FG3, with the overlapped mutant failing the same gate); same-initiator sequencing is order-irrelevant where unambiguous (FG4, the committed A7 witness pair at mu = 1/256).
+  ARM M: the forcing sweep convicts EVERY pinned non-trivial per-component tilt by a named committed gate (ISO / BORN / MENU / CUTIND; the isometry-preserving within-pair rotation dies at BORN+MENU; the total-preserving cross-component transfer dies at ISO+BORN+MENU; the sign tilt dies at CUTIND alone, and the reduced battery demonstrably lets it slip — no silent acceptance). MG2: the cross-component weight problem at the fixture's cuts IS residue 1's within-cut completion object — same normalizers, same ratio constraints, gated in Fractions with the committed Z recomputed (Z(empty) = 1037/64; root completed weight 133/2074 = paper 30 §5.3's printed extreme; the fixture's arb multipliers component-constant at 2 and 4). THE UNIQUENESS UPGRADE, at its honest conditional scope (D44a TERMINAL, LOG #368): at verified-depth scope the family's completed cross-component weights are FORCED to the decided completion's values; the all-depth form remains exactly conditional on the depth-free structural lemma (H1 with H0/H2) — residue 1's final named gap. Fixture scale; no continuum claim; Hegerfeldt untouched.
