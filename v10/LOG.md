@@ -7296,3 +7296,35 @@ coda. STATUS LINE DECLARES: independent paper-level review NOT YET
 COMMISSIONED (user: token budget) — the paper must not be cited as
 review-hardened until its round converts; THE PAPER-32 ROUND IS
 THE FIRST ITEM OF THE NEXT REVIEW BUDGET.
+
+## 2026-07-19 — D46 THE LADDER OPENED (LEDGER #377): program pin +
+## D46a pinned; review budget CLOSED (paper-32 round = first item
+## when it reopens)
+User direction: paper 32 written unreviewed (#376); "then start
+with the ladder... remember all the steps... don't forget about
+the N5." Pins committed: note-d46-ladder-program.md — THE LADDER,
+all steps: D46a the H1 structural lemma (FIRST; proof-work,
+token-light); D46b [I1] Martin/R-theory at transport; D46c
+Minkowski-dimension certificates (circle-order rung, positive
+certificates only); D46d typicality under the completed measure
+(the corpus's first declared-seed sampled study; Myrheim-Meyer-
+class estimators); D46e the smeared interacting identification
+WITH the g = 0 column; D46f reception dynamics (the census's
+typed-open arm + horn-2 commutation beyond fixture scale); D46g
+the embedded-head reconciliation (#363 obligation); D46h THE N5
+HOUSEKEEPING BATCH (the A5 errata retrofit v1-v5; the v6 Renou
+sweep; the d41a "empirical" wording; the paper-30 §8.1 corrective
+clause) — d41c step 3 listed as the separate queued user decision.
+TOKEN DISCIPLINE DECLARED IN-PIN: receipts may go GREEN-UNREVIEWED
+with that status in banner + LOG; nothing green-unreviewed cited
+as review-hardened; the PAPER-32 ROUND precedes any ladder round
+when the budget reopens. D46a pinned
+(note-d46a-h1-structural-lemma.md): the statement; the
+nontriviality (the own-view lag must be MENU-INVISIBLE); routes
+R-A (own-view abstractions tau_A/tau_B; the JOINT (sigma, tau)
+BFS closure as the depth-free step; menu factorization through
+tau) and R-B (lag characterization — with the counterexample horn
+a delivered outcome); gates LG0-LG5; H2's status to be determined
+and declared (LG3). Standing bindings restated (allow-list #362;
+witness branches #354; no transport per-candidate citation #374;
+the d44b synthesis flags).
