@@ -547,7 +547,7 @@ t4_total = (share(H2, SELFA) * born_of(W4[(2, 1)], 1)[frozenset({tA})]
                + born_of(W4[(2, 2)], 2)[frozenset({tB})]))
 check("MG1-a the trivial tilt is NOT convicted (the battery has a "
       "live green baseline — no false convictions) and EVERY "
-      "non-trivial tilt IS convicted by at least one named committed "
+      "PINNED non-trivial tilt IS convicted by at least one named committed "
       "gate",
       conv[TILTS[0][0]] == [] and all(conv[n] for n, _, x in TILTS[1:]),
       "; ".join(f"{n.split()[0]}:{'+'.join(conv[n]) if conv[n] else 'NONE'}"
@@ -810,9 +810,11 @@ for h, sector in CUTS:
         for e, c, b in sector:
             scale_ok = scale_ok and (s_of[c] * b * zc[c] / Nz
                                      == s_of[c] * b * zl[c] / Nl)
-check("MG2-e the UNIQUENESS MECHANISM at fixture scale: the global "
-      "scale lambda — the ONLY freedom MG1's sweep leaves the "
-      "operator layer — cancels from every assigned weight "
+check("MG2-e the UNIQUENESS MECHANISM at fixture scale (label "
+      "aligned with MG1-d/e per delta r-m1): the global scale "
+      "lambda on the MULTIPLIERS z — a freedom of the completion "
+      "side, distinct from MG1's amplitude sectors — cancels from "
+      "every assigned weight "
       "(w(lambda z) = w(z), exact, all probes, both cuts): given "
       "the completion's multipliers, the cross-component weights "
       "are DETERMINED",
@@ -828,7 +830,8 @@ print("    transition-deterministic with zero exceptions over 179,783")
 print("    histories; the completed transfer q' exists on the")
 print("    six-state quotient). THEREFORE, at verified-depth scope,")
 print("    the family's completed cross-component weights are FORCED")
-print("    to the decided completion's values: the reduction (MG2-c)")
+print("    to the decided completion's SECTOR CONDITIONAL (the")
+print("    horizon-stable object, MG2-d/d2): the reduction (MG2-c)")
 print("    maps the family's freedom onto the completion's, the")
 print("    decided completion fixes the multipliers there, and the")
 print("    residual global scale cancels (MG2-e). CONDITIONAL: the")

@@ -7158,3 +7158,36 @@ machinery the named successor; no infinite-volume claim. Note §4
 A1-A3. ROUND 1 COMMISSIONED next. With this, ALL SIX of the
 user's successors have delivered receipts; d44f + d44b rounds are
 the campaign's last open cycles.
+
+## 2026-07-19 — D44f TERMINAL (LEDGER #372)
+Delta verdict (appended to reviews/d44f-round1-hostile-review.md):
+CLEAN except one residual minor r-m1, TERMINAL ENDORSED on its
+micro-repair — the sign-sector gate verified NON-FOOLABLE both ways
+(the referee's D1 nonzero-|amp|^2 admixture pinned as an N-tilt
+fails MG1-e exit 1; their D2 reproduction of the applier's
+spurious-sqrt(2) N2 confirms the pre-commit catch was real); MG2-d2
+confirmed against their own depth-5 numbers incl. Z5(H2) = 101/8;
+the MAJOR-1 grep clean; one committed-N4 note (N1*N3, not their
+N4 verbatim — immaterial, the four generate the full {+-1}^3,
+referee-verified). R-M1 + NITS APPLIED AT CONVERSION (verified
+pre-commit: rerun 29/29 exit 0, seeds byte-identical, zero "ONLY
+freedom" strings): MG2-e's label aligned (lambda scales the
+completion-side MULTIPLIERS — distinct from MG1's amplitude
+sectors; the retired clause's twin removed); the uniqueness-upgrade
+print says SECTOR CONDITIONAL (r-n2); MG1-a says PINNED (r-n1).
+TERMINAL — THE SETTLED STATEMENT (per the stamp, with r-n3's
+phrasing): the foliation face resolves at fixture scale to a
+SINGLE RECORD DATUM — the initiator tag of the join arbitration
+(forced by carrier licensing; mutual exclusion); initiator-ERASED
+content is order-invariant (winners, weights, amplitudes) and the
+residual foliation datum is ITSELF RECORD DATA; the forcing sweep
+establishes that the operator family cannot carry a measure tilt
+in its squared-amplitude content, with the sign/phase gauge sector
+as the surviving freedom (the {+-1}^3 exhaustiveness
+characterization referee-carried); the measure side reduces
+arithmetically to residue 1's within-cut object (the seven-row
+dictionary), and with D44a terminal the family's completed
+cross-component weights are FORCED to the decided completion's
+SECTOR CONDITIONAL at verified-depth scope — the all-depth form
+conditional on H1. Successor 6 of the user's six: DONE. The
+campaign's last open cycle: the d44b round.

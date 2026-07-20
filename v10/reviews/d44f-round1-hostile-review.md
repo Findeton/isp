@@ -273,3 +273,114 @@ requires one forward-corrected LOG sentence. The FG2 resolution, the FG3/FG4
 controls, the reduction dictionary, and the uniqueness upgrade's conditional
 scope all survived hostile recomputation unchanged; with the MG1 rescope the
 unit's delivered physics (weights forced; foliation datum = initiator) stands.
+
+---
+
+# DELTA VERIFICATION (round 1 → repairs at LOG #370, commit fdb85e9)
+
+**Round-1 body above untouched.** Same referee; every repair re-verified by
+independent computation (scratchpad `delta_checks.py` + reruns).
+
+## Delta verdict: CLEAN except ONE residual minor (r-m1) — TERMINAL ENDORSED
+## conditional on the one-line MG2-e label micro-repair
+
+### Mechanical verification — all clean
+
+- `git diff d1f468f fdb85e9` touches exactly the five d44f paths (receipt,
+  .out, note §5, LOG #370, this review file committed verbatim — head/tail
+  byte-checked against my round-1 text); the LOG delta is #370 only.
+- Rerun: exit 0, **29 PASS / 0 FAIL**, BYTE-IDENTICAL to the committed .out;
+  PYTHONHASHSEED 0 and 7 from a foreign cwd: byte-identical.
+- LOG #370 is faithful to the round record (1B/1M/3m/4n, the acquittal list,
+  the forward-corrections by name), and self-discloses the applier's N2
+  construction slip — see D2 below, where I reproduce that slip and confirm
+  MG1-e catches it.
+
+### BLOCKER-1 repair — VERIFIED, and the new gate is non-foolable
+
+- MG1-d rescoped to squared-amplitude content; the false global-scale clause
+  is gone FROM MG1-d; MG1-e adopts the four sign tilts with the dual
+  condition (all four gates slipped AND |amp²| dev = 0 at 1e-40). The .out
+  rows match my round-1 table exactly.
+- Adoption fidelity note: N4 as committed is `f1=g1=-1, f2=-1` (= N1·N3),
+  not my round-1 N4 (N1 × pair-branch-B sign) — not "verbatim," but
+  immaterial: I verified the adopted {N1, N2, N3, N4} generate the FULL sign
+  group {±1}³, so sector coverage is intact.
+- Non-foolability, tested as requested (delta mutants, all from the committed
+  source):
+  | delta mutant | result |
+  |---|---|
+  | D1 nonzero-\|amp²\| admixture pinned as an N-tilt (`f1=-9/10`) | CAUGHT — MG1-e FAILs (fired = ISO+BORN+MENU+CUTIND ≠ [], dev = 0.19), exit 1: a measure-carrying tilt cannot be smuggled into the sign sector |
+  | D2 the applier's reported slip reproduced (N2 = `pair_matrix(-1, 1)`, spurious √2) | CAUGHT — MG1-e FAILs, exit 1: confirms the pre-commit catch reported in LOG #370 was real |
+  | D3 zero-dev conjunct dropped from the MG1-e wiring | exits 0 — EXPECTED, not a finding: the mutant is semantics-preserving on the committed inputs (the four tilts genuinely have dev 0). The conjunct is belt-and-suspenders: a gate-slipping tilt with nonzero \|amp²\| cannot exist (BORN pins the support entries, ISO kills off-support rows at tolerance), so its load is carried jointly with the fired==[] conjunct, which D1 exercises |
+
+### MAJOR-1 repair — VERIFIED
+
+Grep over receipt / .out / note / LOG #370: the only surviving occurrence of
+"foliation-invariant" in the d44f artifacts is note §5 B2 QUOTING the retired
+sentence in order to correct it. LOG #370's corrected form matches my
+prescribed sentence. No overreaching foliation-invariance sentence survives.
+
+### minors — VERIFIED, including my own depth-5 numbers
+
+- MG2-d relabel (horizon-bound absolute q'; sector conditional = the
+  horizon-stable forced object): present and correct.
+- MG2-d2 vs my independent depth-5 recomputation: family 6,471 ✓; all six
+  join successors Z = 4 ✓; early Z = 8 ✓; sector-normalized (1/2, 1/4, 1/4)
+  identical ✓; and the NEW committed number — absolute q'₅ = (8/101, 4/101,
+  4/101) — I verified from the layer: Z₅(H2) = 101/8, q'₅ exactly as
+  printed, ≠ depth-4 q'. All match.
+- MG2-f's depth-7 constant now labeled as cited-not-computed ✓; #369's
+  anchors-clause corrected at #370 ✓.
+
+### nits — dispositions CONFIRMED
+
+§5 B4 records all four with the referee-carried verifications correctly
+attributed (FG2-c 8/8; string-compare backed by the numeric 1e-40 check;
+real-only battery scope now declared in MG1-e's label; MENU/B-menu symmetry).
+
+### Residual findings
+
+**r-m1 (minor — the one item blocking an unconditional DELTA-CLEAN).**
+MG2-e's PASSED gate label (receipt line 814; .out line 89) still reads "the
+global scale lambda — the ONLY freedom MG1's sweep leaves the operator
+layer — cancels...". Round 1's BLOCKER-1 diagnosis named this exact
+conflation (MG2-e's λ scales the z MULTIPLIERS, a different object; MG1's
+sweep leaves the SIGN sector, gated three gates earlier). The repair retired
+the clause in MG1-d but left its twin in MG2-e, so two green labels now
+contradict each other about what MG1's sweep leaves. Zero numerical content
+is affected (λ-cancellation on z is true and gated). **Prescribed micro-
+repair (one line + .out regen):** "the global scale lambda on the
+MULTIPLIERS — the residual dictionary-side freedom after MG1's rescoped
+sweep (whose amplitude-side residue is the sign sector, MG1-e) — cancels...".
+
+**r-n1 (nit).** MG1-a's label still says "EVERY non-trivial tilt IS
+convicted" — list-scoped in context by its own detail string (T1–T6) and now
+disambiguated by MG1-e two rows below; "EVERY pinned" would close it.
+
+**r-n2 (nit).** The final [VERDICT] paragraph still says weights "FORCED to
+the decided completion's values"; MG2-d/d2 now establish the forced object
+is the SECTOR CONDITIONAL — the verdict prose lags the gates it summarizes.
+
+**r-n3 (nit — on the proposed terminal statement).** "the sign/phase gauge
+sector as the exactly-characterized surviving freedom": the receipt GATES
+membership + zero-measure-content of four generators of {±1}³; the
+EXHAUSTIVENESS of the characterization (solution set = committed family mod
+{±1}³) is referee-carried analysis (BORN pins support, ISO kills
+off-support), not a gate. Carry it as referee-carried, mirroring the FG2-c
+8/8 convention, or phrase "with the sign sector gated as surviving freedom
+(exact characterization referee-carried)".
+
+## Disposition
+
+DELTA-CLEAN on every commissioned check: the sign-sector gate is correct and
+non-foolable in both directions (D1, D2), no overreaching sentence survives,
+MG2-d2 matches the referee's own depth-5 numbers to the fraction, mechanics
+byte-clean, LOG #370 faithful. One residual minor (r-m1): the BLOCKER-1 fix
+was applied to MG1-d but its twin clause in MG2-e's label was missed —
+wording only, no computation affected. **TERMINAL ENDORSED conditional on
+the r-m1 one-line micro-repair (+ .out regeneration and rerun), per the
+campaign's established micro-repair convention (cf. #368's D1 pattern);
+r-n1–r-n3 at the applier's discretion.** With r-m1 applied, the stamped
+terminal statement is accurate to the artifacts, subject to r-n3's
+"referee-carried" phrasing on exhaustiveness.
