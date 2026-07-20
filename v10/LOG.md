@@ -7220,3 +7220,35 @@ subset claim — the pairs END non-diverged; the accurate census:
 1,044 diverged histories; 124 (history, delivery) reconverging
 pairs over 84 distinct diverged prefixes with 4 distinct minimal
 chains. Note §5 B1-B5. DELTA to the d44b referee next.
+
+## 2026-07-19 — D44b TERMINAL (LEDGER #374): THE CAMPAIGN'S FINAL
+## CONVERSION
+Delta verdict (appended to reviews/d44b-round1-hostile-review.md):
+DELTA-CLEAN — all by execution (the m5 mutant now exits 1 at the
+gated control set; all four anchors equal the referee's numbers;
+the decomposition independently recounted with their own
+classifiers — 124 pairs / 84 prefixes / 4 minimal at 1/256 / 44
+sharing — with one definitional note verified equal both ways at
+this cap; the true-parent diff exactly the enumerated repairs;
+LOG #373 quotes the round accurately; the terminal statement
+adjudicated clause-by-clause with no clause exceeding the caps).
+TERMINAL — as stamped: at transport scope the REOPENING PREDICTION
+IS CONFIRMED IN-FAMILY (1,044 diverged; 124 reconverging pairs
+over 84 distinct diverged prefixes; 4 distinct minimal 3-event
+chains at 1/256; every pair-history ENDS non-diverged) and the
+d42a absorption is a DELIVERYLESSNESS ARTIFACT; the intrinsic
+chain is window-consistent at six len <= 2 classes (an ECHO of,
+not identical to, the d42a six) but ESCAPES its windows (68
+transitions into 5 classes first realized at len 3) — no closed
+exact transfer at the feasible caps, the Perron branch live but
+unfired BY MEASUREMENT; menu-shape factorization fails at
+transport scope; THE CLOSING SCOPE STATEMENT: the D44a closure
+theorem covers EXACTLY the delivery-free grammar; transport-scope
+closure is OPEN with [I1]'s Martin/R-theory machinery the named
+successor. The referee's synthesis-note flags are BINDING on the
+synthesis (caps on every quoted fact; H1-conditionality paired
+with transport-open; escape != non-stabilization; the precise
+unreproducibility scope; the #373 census sentence; the five
+must-avoid items incl. no per-candidate-bites-at-transport
+citation and no depth-5+ prediction). ALL EIGHT CAMPAIGN UNITS
+(D44a-f + D45a/b) ARE TERMINAL. Synthesis next.

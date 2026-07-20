@@ -349,3 +349,117 @@ escape, and the closing scope statement all survive independent
 rebuild unchanged. After F1/F2 this referee expects
 PASS-AS-RESCOPED on the delta; the campaign can close on this
 boundary with its armor matching its prose.
+
+---
+
+# DELTA VERDICT (appended 2026-07-20; round-1 body above untouched): DELTA-CLEAN — TERMINAL ENDORSED
+
+**Object:** the round-1 repairs as committed at 6182b35 (LOG #373).
+Diff base verified against the TRUE parent f642a6f (the earlier
+4c2c308..6182b35 span also contains the d44f #372 commit — not
+this unit's; the repair commit itself touches ONLY d44b paths plus
+LOG #373 plus the frozen round-1 review). Every discharge verified
+by execution.
+
+## D1. Discharge verification, by round-1 label
+
+- **F1 (MAJOR) — DISCHARGED BY THE REFEREE'S OWN MUTANT.** TG6b now
+  gates `len(shapes0) == 4` (line 610). The m5 mutant
+  (`shapes0 = set()`) was REBUILT from the repaired source and
+  rerun: **exit 1, TG6b [FAIL]** — the silent-green conviction is
+  closed by the prescribed one-line fix.
+- **F2 — DISCHARGED.** All four anchors present and equal to the
+  referee's round-1 numbers: `n_div == 1044` (TG3a),
+  `len(recon) == 124` (TG3b), ARM-2T shapes `== 11` (the new TG1s
+  gate — a print became a gate, 13 -> 14 PASS), d42a shapes `== 4`
+  (TG6b).
+- **F3 — DISCHARGED, decomposition INDEPENDENTLY RECOUNTED.** The
+  new TG3b conjuncts gate: 124 pairs; 84 distinct diverged
+  prefixes `{h[:j]}`; 4 distinct minimal 3-event chains
+  `{h[:j+1] : j+1 == 3}`. Referee recount (own classifiers):
+  124 / 84 / 4 EQUAL, plus: the 4 minimal chains all carry weight
+  exactly 1/256, and 44 of the 124 pairs share them (the
+  coordinator's parenthetical checks). One definitional note for
+  the record: the gate's 84 counts diverged prefixes `h[:j]`; the
+  round-1 review's 84 counted reconverging chains `h[:j+1]` — the
+  referee verified BOTH censuses equal 84 at this cap (the
+  chain -> prefix map is count-preserving here), so gate, review,
+  and terminal statement are mutually consistent as worded. Note §5
+  B3 and LOG #373's forward-correction of #371 state exactly the
+  round's finding (including that all pairs END non-diverged), and
+  §5 B3 honestly records the repair-time pairs-vs-distinct slip
+  that the new gate itself caught (exit 1 until corrected) — the
+  anchor did its job before the referee ever saw it.
+- **F4 — DISCHARGED.** The criterion drift is declared at the STAB
+  definition site (code comment, lines 195–198) and in note §5 B4:
+  two agreements, the second on a 9-history window; the d43b F-B5
+  three-consecutive standard unmeetable at cap.
+- **N1 — DISCHARGED.** The tautological `FIRE == (STAB and wd1 and
+  not ESC)` conjuncts are removed from the TG5 and TG7 checks; the
+  values survive only in detail strings (correct place). N2/N3
+  recorded in §5 B5, including verbatim the warning this referee
+  required: no successor may cite d44b as proof the per-candidate
+  distinction bites at transport scope.
+
+## D2. Mechanical verification
+
+`git diff f642a6f 6182b35` on the d44b code = exactly the
+enumerated repairs (F4 comment; TG1s gate; TG3a/TG3b/TG6b
+anchors; the two tautology removals) — nothing else moved; the
+.out diff is the three corresponding lines plus SUMMARY 13 -> 14.
+Reruns: plain + PYTHONHASHSEED 0 + 7, all exit 0, 14 PASS /
+0 FAIL, all three BYTE-IDENTICAL to the committed .out. The
+committed round-1 review is byte-identical to this referee's
+frozen text (0-line diff). LOG #373 checked line-by-line against
+this review: every attributed round-1 fact is accurately quoted
+(the hand-derived 1/8 x 1/4 x 1/8, the min-length-3 verification,
+the two-toy branch probe, the matched-window 1/5 observation).
+
+## D3. The terminal statement, adjudicated
+
+Every clause of the stamped terminal statement is gated and
+referee-verified: the census sentence uses the corrected
+decomposition (124 pairs over 84 prefixes, 4 minimal at 1/256);
+"an echo of, not identical to, the d42a six" carries TG6; the
+escape clause is capped ("at the feasible caps");
+"live-but-unfired by measurement" is proven by the round-1 branch
+probe; "menu-shape factorization fails at transport scope" is an
+existence claim carried by a cap-independent exhibit (admissible
+as worded); the closing scope statement is the round-1-adjudicated
+CLEAN sentence. No clause says more than the caps reach.
+**DELTA-CLEAN. d44b TERMINAL ENDORSED.**
+
+## D4. Flags for the campaign synthesis note (requested)
+
+MUST INCLUDE wherever the corresponding result is cited:
+(i) the caps — every six-class/escape/TG2 fact is ARM-1T
+depth <= 4 (ARM-2T is census-only, depth 3, intrinsic program NOT
+run); (ii) D44a's all-depth side is CONDITIONAL ON H1 whenever the
+closure theorem is quoted, and its coverage sentence must travel
+as the pair (covers exactly the delivery-free grammar) + (transport
+closure OPEN, [I1] Martin/R-theory the named successor);
+(iii) the escape/non-stabilization distinction — the transport
+result is "window-consistent BUT not closed", two different
+measured predicates; (iv) the precise scope of "structurally
+unreproducible": no transfer respecting the layer's per-candidate
+weights can hold an absorbing purely-diverged sector containing
+the witness configuration — not a statement about arbitrary
+coarse-grainings; (v) the #373 census sentence (never #371's
+"among" form), with the fact that all 124 pair-histories end
+non-diverged.
+
+MUST AVOID: (a) citing d44b as evidence the per-candidate-vs-
+aggregate distinction bites at transport scope (extensionally null
+at cap — m1 byte-identical; §5 B5); (b) "stabilizes at six states"
+without the window qualifier — the d43b three-agreement standard is
+unmeetable at cap and was NOT met; (c) merging the transport six
+and the d42a six into one "six-state chain" narrative (TG6 gates
+their alienness); (d) any depth-5+ prediction about transport
+closure in either direction; (e) treating the 11 len <= 3 classes
+or the 13 depth-4 menu shapes as refinement-tested objects (they
+are not, beyond the stated lookaheads).
+
+**Referee tallies after delta: 0 BLOCKER / 0 MAJOR open / 0 minor
+open / 2 nit (N2 diagnostic set-vs-multiset, N3 recorded-null —
+both recorded in §5 B5, neither blocking). The campaign's final
+unit closes with its armor matching its prose.**
