@@ -92,3 +92,41 @@ identity); ~7 s measured.
 IN-FAMILY (3 events, weight 1/256; 124 reconverging pairs among
 1,044 diverged histories) — the above-cap SIG-chain fallback was
 not needed.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d44b-round1-hostile-review.md: REVISE, 0B/1M/3m/3n; all
+## five headlines survived the referee's from-scratch rebuild)
+
+**B1 (F1 MAJOR — the vacuously-satisfiable negative control,
+repaired).** TG6b's d42a shape-control set was gated only through
+its consequences (a `shapes0 = set()` mutant ran silent-green);
+the control-set size is now gated (len == 4).
+
+**B2 (F2 — the print-only counts, anchored).** The diverged census
+(1,044), the reconverging-pair count (124), the ARM-2T shape count
+(11, now the gate TG1s), and the d42a shape count (4, in B1's
+gate) are exact expectations.
+
+**B3 (F3 — the census wording corrected + the decomposition
+gated).** "124 reconverging pairs among 1,044 diverged histories"
+was FALSE as a subset claim: every reconverging (history, delivery)
+pair ENDS non-diverged; 124 carries suffix multiplicity — the
+gated decomposition: 84 distinct diverged prefixes; 4 DISTINCT
+minimal (3-event) reconverging chains, all at weight 1/256 (44
+pairs share them). LOG #371's phrasing forward-corrected at #373.
+(One coordinator slip caught by the gate itself during repair: the
+minimal-chain conjunct first counted PAIRS (44), not distinct
+chains (4) — the receipt failed exit 1 until corrected; recorded.)
+
+**B4 (F4 — the criterion drift, declared).** STAB = two blockwise
+agreements (the second on a 9-history window); the d43b F-B5
+three-consecutive standard is UNMEETABLE at this cap (only two
+nontrivial lookaheads exist) — now declared at the definition site.
+
+**B5 (nits).** The tautological FIRE-conjuncts removed from TG5/TG7
+(the definition restated only in detail strings); the split-pair
+diagnostic prints a set-symmetric difference while the gate is
+multiset-exact (recorded); the per-class-aggregate mutant is
+EXTENSIONALLY NULL at this cap (recorded so no successor cites
+d44b as proof the per-candidate distinction bites at transport
+scope — it does not, here, by measurement).

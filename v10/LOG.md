@@ -7191,3 +7191,32 @@ cross-component weights are FORCED to the decided completion's
 SECTOR CONDITIONAL at verified-depth scope — the all-depth form
 conditional on H1. Successor 6 of the user's six: DONE. The
 campaign's last open cycle: the d44b round.
+
+## 2026-07-19 — d44b round-1 repairs APPLIED (LEDGER #373);
+## FORWARD-CORRECTION of #371's census phrasing; delta commissioned
+Round (frozen: reviews/d44b-round1-hostile-review.md, REVISE
+0B/1M/3m/3n): ALL FIVE headlines survived the referee's
+from-scratch partition rebuild (different data structures; every
+gated number reproduced incl. the witness weight re-derived by
+hand as 1/8 x 1/4 x 1/8; the escape's 5 classes verified
+min-length 3; the conditional Perron branch PROVEN LIVE on two
+synthetic closed chains — exact lambda = 1 on one, a certified
+sqrt(2) bracket on the other; no check(True)); the closing scope
+statement adjudicated CLEAN clause-by-clause. Favorable referee
+observation: TG2's contrast is CONSERVATIVE (menu-shape already
+fails 1/5 on the matched window). REPAIRS (verified pre-commit:
+rerun 14 PASS / 0 FAIL exit 0; seeds byte-identical): the F1 MAJOR
+(TG6b's control set was vacuously satisfiable — a shapes0-emptying
+mutant ran silent-green; len == 4 now gated); the F2 print-only
+counts anchored (1,044; 124; ARM-2T 11 as TG1s; d42a 4); the F3
+decomposition gated (84 distinct diverged prefixes; 4 DISTINCT
+minimal chains at 1/256 — one coordinator slip during repair
+caught by the gate itself: pairs-vs-distinct, exit 1 until fixed);
+the F4 criterion drift declared at the STAB site (two agreements;
+the d43b three-consecutive standard unmeetable at cap); the N1
+tautological conjuncts removed. FORWARD-CORRECTION of #371: "124
+reconverging pairs among 1,044 diverged histories" was false as a
+subset claim — the pairs END non-diverged; the accurate census:
+1,044 diverged histories; 124 (history, delivery) reconverging
+pairs over 84 distinct diverged prefixes with 4 distinct minimal
+chains. Note §5 B1-B5. DELTA to the d44b referee next.

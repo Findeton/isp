@@ -192,6 +192,10 @@ print(f"  TG1 blockwise agreement P_t vs P_(t+1) per window: "
                   f"({wsizes[t]} h): {agree[t]}"
                   + ("" if t in nontriv else " [TRIVIAL WINDOW]")
                   for t in range(CAP1)))
+# round-1 F4 declaration: STAB = TWO blockwise agreements (t = 1, 2;
+# the second on a 9-history window) — the d43b F-B5 three-consecutive
+# standard is UNMEETABLE at this cap (only two nontrivial lookaheads
+# exist); the criterion drift is declared, not silent.
 STAB = all(agree[t] for t in nontriv if t >= 1) and len(
     [t for t in nontriv if t >= 1]) >= 2
 
@@ -257,10 +261,11 @@ check("TG1 STABILIZATION VERDICT — WINDOW-CONSISTENT STABILIZATION, "
       f"agreements = {agree}; six on len<=2 window; split exhibit "
       "at t = 0 with equal menus, unequal rows")
 n_shapes2 = len({menu_shape(C2[tuple(h)]) for h in ARM2})
-print(f"  ARM-2T supplementary datum (census-anchored scope only, "
-      f"pin §3): distinct menu shapes on the depth-3 family = "
-      f"{n_shapes2}; the ARM-2T intrinsic program is NOT run "
-      f"(cap declared; TG7)")
+check("TG1s ARM-2T supplementary datum ANCHORED (round-1 F2; "
+      "census scope only, pin §3): distinct menu shapes on the "
+      "depth-3 family == 11; the ARM-2T intrinsic program is NOT "
+      "run (cap declared; TG7)",
+      n_shapes2 == 11, f"shapes = {n_shapes2}")
 
 # ==== TG2 — transfer well-definedness on the deepest windows ========
 def wd_test(t_cls, parent_cap):
@@ -342,7 +347,9 @@ n_div = sum(1 for v in DIV.values() if v)
 check("TG3a divergence exists in-family (the d43b state-4/5 pattern "
       "instantiated at transport scope: unequal non-superseded "
       "holdings between A and B in the full view)",
-      n_div > 0, f"diverged histories in ARM-1T = {n_div}")
+      n_div == 1044,
+      f"diverged histories in ARM-1T = {n_div} (anchored, round-1 "
+      f"F2)")
 if recon:
     hW, jW = recon[0]
     wpref = hW[:jW]
@@ -372,7 +379,11 @@ check("TG3b THE REOPENING PREDICTION CONFIRMED IN-FAMILY (the "
       bool(recon) and len(recon[0][0][:recon[0][1] + 1]) == 3
       and weight_of(recon[0][0][:recon[0][1] + 1]) == Fr(1, 256)
       and DIV[tuple(recon[0][0][:recon[0][1]])]
-      and not DIV[tuple(recon[0][0][:recon[0][1] + 1])],
+      and not DIV[tuple(recon[0][0][:recon[0][1] + 1])]
+      and len(recon) == 124
+      and len({tuple(h[:j]) for h, j in recon}) == 84
+      and len({tuple(h[:j + 1]) for h, j in recon
+               if j + 1 == 3}) == 4,
       f"reconverging (history, delivery) pairs in-family = "
       f"{len(recon)}; witness weight = "
       f"{weight_of(recon[0][0][:recon[0][1] + 1]) if recon else None}")
@@ -570,8 +581,7 @@ else:
     check("TG5 does not fire (conditional on TG4), reason recorded; "
           "consistency: the firing flag equals the measured "
           "conjunction STAB and wd1 and window-closure",
-          (not FIRE) and FIRE == (STAB and wd1 and not ESC)
-          and set(reasons) == {'TG4', 'TG5'},
+          (not FIRE) and set(reasons) == {'TG4', 'TG5'},
           f"FIRE = {FIRE}; STAB = {STAB}; wd1 = {wd1}; "
           f"closed = {not ESC}")
 
@@ -597,7 +607,7 @@ check("TG6b NEGATIVE CONTROL: the six-state d43b classifier applied "
       "shape set (deliveries are always enabled at transport scope) "
       "— the d42a six-state result CANNOT be silently reused here",
       hW6 is not None and shpW not in shapes0 and has_d(shpW)
-      and n_d0 == 0 and all_alien == 0,
+      and n_d0 == 0 and all_alien == 0 and len(shapes0) == 4,
       f"d42a distinct shapes = {len(shapes0)} (with 'd': {n_d0}); "
       f"ARM-1T menus matching any d42a shape = {all_alien}/3969")
 
@@ -632,8 +642,7 @@ check("TG7 caps + honesty mechanically consistent: the declared "
       CAP1 == 4 and CAP2 == 3
       and max(len(h) for h in ARM1) == CAP1
       and max(len(h) for h in ARM2) == CAP2
-      and (FIRE or sorted(reasons) == ['TG4', 'TG5'])
-      and FIRE == (STAB and wd1 and not ESC),
+      and (FIRE or sorted(reasons) == ['TG4', 'TG5']),
       f"caps = ({CAP1}, {CAP2}); reasons recorded = "
       f"{sorted(reasons)}; FIRE = {FIRE}")
 
