@@ -6896,3 +6896,49 @@ transport head's pre-#300 pricing is a STANDING CORPUS
 RECONCILIATION OBLIGATION (#363). Successor 5 of the user's six:
 DONE. Remaining: D44a round (in flight), D45b repairs (in
 progress), D44f (ungates on D44a), D44b (last).
+
+## 2026-07-19 — d45b round-1 repairs APPLIED (LEDGER #365);
+## FORWARD-CORRECTION of #358's ZG1 sentences; delta commissioned
+The round (frozen: reviews/d45b-round1-hostile-review.md, REVISE
+0B/1M/3m/3n): THE WITNESS HORN SURVIVED EVERYTHING — the referee
+rebuilt n = 3..6 from scratch (independent poset semantics; own
+S_n references; 28-pair audit at n = 4, 66-pair at n = 6, zero
+deviations; all 172 events re-admitted with weights re-derived
+from the budget rule; dim > 2 established at DEFINITION level by
+exhaustive linear-extension-pair search at n = 3, 4, 5 and a
+verified monotonicity chain at 6; widths PROVEN 2n - 1 by
+chain-partition + antichain certificates). THE MAJOR (F1): my
+"dimension-silent / her route closed by join back-flow semantics"
+was a SCHEDULE fact stated as a pattern fact — the referee swept
+all 8! = 40,320 marked schedules of CB(4)'s own admissible
+multiset + marks: 248 have order dimension > 2 (definition-level
+verified; exemplar exactly 3), 582/4,000 sampled at N = 5; N = 3
+genuinely silent. FORWARD-CORRECTION of #358: its sentences "the
+Charron-Bost port is fully admissible yet DIMENSION-SILENT at
+N = 3, 4, 5" and "her f(N) = N route is closed by the two-carrier
+JOIN BACK-FLOW semantics" are RETIRED — the accurate statement:
+her designated CROWN dies under every schedule (min 4 violations
+at N = 4; her sends-before-receives schedule, which realizes the
+crown in the one-way model, is INEXPRESSIBLE under fusion — the
+true semantic divergence); the DIMENSION route on her multiset is
+OPEN at N >= 4 (schedule-dependent); the idle marks are
+LOAD-BEARING (bare deliveries never escape two clocks). REPAIRS
+APPLIED (applier-agent; verified pre-commit: independent rerun
+exit 0 BYTE-IDENTICAL; 49 PASS / 0 FAIL / 10 outcomes; ~29 s; 4
+runs byte-identical): ZG1S gates the ENTIRE sweep in-receipt (248
+reproduced EXACTLY from an independent implementation of the mark
+rule; identity-reproduction gate; min violations 4/3; 248/248
+S_3-free by direct search + monotonicity for the rest; the
+exemplar admissible at the ZG1 weights with 5 violations; bare
+sweeps 40,320 + 6 + 6 all 2D; N = 5 cited, no RNG in-receipt);
+F2's per-N anchors added (kills the round's MUT7); the N = 3
+dichotomy outcome rewritten to the expressibility mechanism;
+ZG6.2 now a live self-scan gate, ZG6.3 demoted to print (the
+campaign's THIRD check(True) class conviction — d45a YG4-B, now
+d45b ZG6.2/6.3; the protocol lesson stands); ZG5 + final verdict
+rescoped (they carried the F1-refuted sentence verbatim); banner
+determinism line; note §7 (240 lines). Declared deviations for
+the delta: per-schedule admissibility not re-gated in the sweep
+(idle-absorption + prefix-blind schema justification in-receipt;
+the referee verified all 248); the ZG5/verdict rescopes beyond
+the task list. DELTA to the d45b referee next.

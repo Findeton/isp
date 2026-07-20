@@ -152,3 +152,89 @@ lands in ZG4 ceiling outcomes AT EXIT 0 — the #354 witness-branch
 binding is genuinely wired (both horns are delivered outcomes);
 oracle/weight corruption exits 1 as breakage. §1's scoping held:
 no Minkowski/spacetime-dimension claim anywhere in the receipt.
+
+## 7. Round-1 amendments (2026-07-19, post-review; the review:
+## `v10/reviews/d45b-round1-hostile-review.md` — 0 BLOCKER / 1
+## MAJOR / 3 minor / 3 nit; repairs applied to the receipt, rerun)
+
+**F1 (MAJOR — the schedule-sweep reversal, now receipt-gated in
+ZG1S).** The committed ZG1 headline — "fully admissible yet
+DIMENSION-SILENT at N = 3, 4, 5; her f(N) = N route is closed by the
+fused-join back-flow" — was a SCHEDULE-SPECIFIC fact presented as a
+pattern-level fact, and it is FALSE as generalized.  The receipt ran
+ONE schedule per N (the sequential-round port); her asynchronous
+model has no round barrier.  The new ZG1S block reruns the
+referee's sweep IN-RECEIPT: all 8! = 40,320 orderings of CB(4)'s 8
+fused deliveries with the pattern's own marks (the referee's rule;
+the identity permutation gated to reproduce the ported history
+event-for-event).  Result, now gated: EXACTLY 248/40,320 marked
+schedules are dim > 2 at N = 4 (the referee's number, reproduced);
+the referee's exemplar (6,3,1,2,0,7,4,5) is reproduced from the
+frozen appendix, fully admissible at the ZG1 weights, dim<=2 ==
+False.  N = 5: 582/4,000 sampled dim > 2 stays REFEREE-CARRIED
+(RNG-sampled in the review; no RNG in-receipt).  N = 3:
+exhaustively silent (all 6 marked and 6 bare orderings 2D, gated).
+What survives SCHEDULE-INDEPENDENTLY (gated): the designated crown
+DIES under every schedule (minimum 4 violations over all 40,320 at
+N = 4; 3 over all 6 at N = 3); NO induced S_3 exists anywhere in
+the sweep (the 248 searched directly, the rest by monotonicity);
+the BARE deliveries never escape two clocks — the idle marks are
+LOAD-BEARING for the escape.  A1's "DIMENSION-SILENT" must
+henceforth be read with the schedule scope; ZG1's per-N outcome,
+ZG5, and the verdict text are rescoped accordingly.
+
+**F1 (mechanism rescope).** A1's/the outcome's attribution of the
+violated pairs to "the back-flow edges" of the fused join was
+CONFOUNDED: the referee showed that splitting every fused delivery
+into send;receive UNDER THE SAME SCHEDULE reproduces the
+violated-pair sets VERBATIM in her one-way model at N = 3, 4, 5 —
+they are SCHEDULE facts.  The true semantic divergence is
+EXPRESSIBILITY: her crown-realizing schedule is
+sends-before-receives (referee-verified to realize the crown
+exactly in the one-way model at N = 3, 4), and the grammar's fused
+two-carrier join makes that schedule INEXPRESSIBLE (a send cannot
+precede its own receive).  The N = 3 dichotomy outcome text now
+says this.
+
+**F2 (the ZG1 science gated).** The ported CB facts were
+print-only (the referee's MUT7 hub mirror flipped CB(5)'s
+dimension and still ran 40/40 green).  New per-N gates ZG1.Nd
+anchor as exact expectations: event counts 9/16/25, designated-mark
+violation counts 5/9/14, the ported schedules' dim<=2 == True
+(schedule-specific anchors, per F1), single-N-antichain census
+== 1, no induced crown.  MUT7-class corruptions now exit 1.
+
+**F3 (the vacuous PASSes).** ZG6.2 is now a MECHANICAL self-scan:
+every source line containing the physical-geometry tokens must
+also carry a disclaimer marker (NEVER / NO / successor); the scan
+is gated live (4 token lines, 0 undisclaimed).  ZG6.3 is DEMOTED
+to a printed note citing the §6 A5 mutant demonstrations (and the
+referee's MUT1–MUT6 confirmation); it no longer counts a PASS.
+Every remaining PASS is mechanical: the rerun tallies 49 PASS / 0
+FAIL / 10 delivered outcomes.
+
+**F4 (A2's single-hop claim corrected).** §6 A2's "PROVABLY LEAKS
+through sender-wire reuse (comparabilities among uppers)" named
+the wrong mechanism and carried no receipt.  Referee-verified (and
+recorded here as REFEREE-CARRIED, unreceipted): the natural
+single-hop rendering leaks on the crown DIAGONAL (a_j < u_i
+violations via m-wire → h-wire back-chains; n = 3: 1, n = 4: 2),
+with ZERO upper–upper comparabilities — the uppers stay pairwise
+incomparable.  "Provably" is downgraded to referee-verified; a
+gated single-hop construction is conversion-work if wanted.
+
+**Nits.** N1: the banner now carries the determinism line
+("determinism: external protocol, seeds 0/7 verified — the d45a
+convention"); this round's rerun re-verified byte-identity
+(2 runs + PYTHONHASHSEED=0/7).  N2: the proof-note pointer is
+fixed — with this §7, the all-n proof note at conversion becomes
+**§8** (the receipt now prints "the SS8 proof note"; pin §4 ZG3's
+"§6" is superseded).  N3: ZG6.1's label is aligned to what its
+boolean verifies (delivery/census only; the cross-gates ran
+inline; no W(n) poset gets a brute width check — matching-only
+above 16 elements, declared).
+
+**Runtime note.** The in-receipt sweeps (2 × 40,320 poset +
+dimension passes on <= 16-element posets) put the rerun at ~31 s
+from repo root — well under the 6-minute target; the receipt
+remains RNG-free and byte-deterministic.
