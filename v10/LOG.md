@@ -7252,3 +7252,28 @@ unreproducibility scope; the #373 census sentence; the five
 must-avoid items incl. no per-candidate-bites-at-transport
 citation and no depth-5+ prediction). ALL EIGHT CAMPAIGN UNITS
 (D44a-f + D45a/b) ARE TERMINAL. Synthesis next.
+
+## 2026-07-19 — THE D44/D45 CAMPAIGN SYNTHESIS (LEDGER #375)
+note-d44-d45-campaign-synthesis.md written under the d44b delta's
+BINDING flags (caps on every quoted fact; H1-conditionality always
+paired with transport-open; escape != non-stabilization; the
+precise unreproducibility scope; the corrected census sentence;
+the five must-avoid items respected). THE CAMPAIGN: eight units,
+eight terminals (D44a #368, D44b #374, D44c #355, D44d #353,
+D44e #364, D44f #372, D45a #362, D45b #367), every one through
+pin -> receipt -> hostile round -> repairs -> delta. The four
+joint achievements: (1) residue 1 decided at every verified depth,
+one lemma (H1) from closed, with the theorem's boundary exactly
+the delivery-free grammar and transport reopening confirmed; (2)
+dimension fully mechanized — arbitration confined all-scale,
+transport ceiling-free with the all-n constructor, the
+order-vs-Minkowski doctrine binding; (3) the quantum layer welded
+to the classical completion — census complete, foliation = one
+record datum, weights forced to the sector conditional at
+verified-depth scope; (4) the foundation regulator-closed —
+kappa(m) derived for all m with channel-resolved factor origins.
+Meta-record: ZERO false numbers across the campaign; the rounds'
+corrections (quantifiers, vacuous gates, print-only facts) each
+carried by name. Six successors named, none started; the
+paper-32-class decision + papers 30/31 route + N5 = the user's.
+THE USER'S "work on all the 1-6 successors" INSTRUCTION IS CLOSED.
