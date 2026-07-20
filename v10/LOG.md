@@ -6942,3 +6942,44 @@ the delta: per-schedule admissibility not re-gated in the sweep
 (idle-absorption + prefix-blind schema justification in-receipt;
 the referee verified all 248); the ZG5/verdict rescopes beyond
 the task list. DELTA to the d45b referee next.
+
+## 2026-07-19 — d44a round-1 repairs APPLIED (LEDGER #366);
+## FORWARD-CORRECTION of #361's quantifier; delta commissioned
+The round (frozen: reviews/d44a-round1-hostile-review.md, REVISE
+0B/2M/5m/3n): every number right; the assembly reconstructed and
+found conditionally correct with the ALL-DEPTH QUANTIFIER
+UNDISCHARGED (F1) — CG1/CG2 were exhaustive at depth <= 6 with no
+structural lemma making them depth-free (nontrivial: admissibility
+runs on OWN views that lag the full view sigma records — the
+receipt's own W2 witness exhibits the lag); the pin's pumping
+engine was correctly killed by A2 and nothing had replaced it. The
+referee's own depth-7 sweep (145,408 histories, out-of-sample):
+ZERO anomalies. FORWARD-CORRECTION of #361: its "RESIDUE 1 DECIDED
+AT d42a SCOPE, ALL DEPTHS / OUTRIGHT" (and the commit message's
+"all depths") OVERSTATED — retired; the accurate statement is
+below. F2: the quotient had been computed with a per-CLASS
+aggregate where the committed partition uses per-candidate
+(weight, target-class) MULTISETS — the referee ran the correct
+operator: identical blocks. REPAIRS APPLIED (applier-agent;
+verified pre-commit: independent rerun exit 0 BYTE-IDENTICAL; 30
+PASS / 0 FAIL; ~2 min 17 s): CG7a-e make depth 7 RECEIPT-CARRIED
+(145,408 histories from 27,904 parents, census anchored; 0 new
+sigma states; CG1 0 exceptions; CG2 0 violations with 16 new keys,
+176 total anchored; all 36 states >= 2 witnesses, min 1,200;
+row-constancy covering all 36); CG3f gates the PER-CANDIDATE
+quotient (trajectory [4,5,6,6], blocks == QPART; CG3c relabeled
+aggregated); CG3a gates frontier exhaustion + the rep-length
+spectrum (the round's m6 capped-BFS mutant now fails); CG4
+relabeled MECHANISM EXHIBIT off the assembly route (F5); CG6a at
+budget 200 (still open at 201 — "cut at budget, not tuned"); note
+§7 records F3 (sigma's superseded marks + post-renaming sort
+proven partition-null on the cache — defensive over-specification,
+recorded not slimmed) and F7 (the pin §4 sketch's
+refinement-direction inversion). THE SETTLED QUANTIFIER SENTENCE
+(as the receipt now prints): residue 1 is decided at EVERY
+VERIFIED DEPTH (exhaustive through depth 7 in-receipt); the
+DEPTH-FREE STRUCTURAL LEMMA (menu factorization from sigma at all
+depths, despite the own-view lag) is the NAMED RESIDUAL — IF it
+holds, the pullback argument delivers the six-state chain and the
+full Perron package at ALL depths, stated as the conditional it
+is. DELTA to the d44a referee next.

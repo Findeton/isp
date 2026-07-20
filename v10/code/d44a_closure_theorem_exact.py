@@ -14,10 +14,12 @@ data) + the superseded marks restricted to bases still carrying
 holdings or live proposals — modulo base renaming (canonical form =
 minimum over base bijections of the post-renaming-sorted
 serialization; genesis and renewal bases identified by the
-renaming). CG1 and CG2 hold EXACTLY (zero exceptions on all 34,375).
-BFS on sigma-space from sigma([]) TERMINATES at 36 states with no
-depth cap — the depth-free closure — and the 36 realize exactly the
-cache's sigma values.
+renaming). CG1 and CG2 hold EXACTLY (zero exceptions on all 34,375,
+and — round-1 extension — on the full 145,408-history depth-7
+family, out-of-sample). BFS on sigma-space from sigma([]) TERMINATES
+at 36 states with the frontier exhausted — the depth-free closure —
+and the 36 realize exactly the cache's sigma values, with ZERO new
+sigma-states at depth 7.
 
 TWO PIN CLAUSES ARE PROVABLY UNSATISFIABLE AS WRITTEN and are
 delivered as gated obstructions + the repaired route (forward
@@ -37,8 +39,10 @@ mechanical gate):
   partition, with induced transfer == T_REF. This is NOT the pin §4
   reversal mode: no seventh intrinsic state exists — the fine states
   merge under the gated exact quotient, and the closure theorem's
-  conclusion (six states at ALL depths, transfer T, Perron package)
-  is delivered THROUGH the quotient (CG5 runs on it).
+  conclusion (six states at every VERIFIED depth, transfer T, Perron
+  package) is delivered THROUGH the quotient (CG5 runs on it; the
+  all-depth quantifier is CONDITIONAL on the named structural
+  menu-factorization lemma — round-1 F1/R2, note §7).
  (A2) CG4's "length <= 3" normal form is false as written: 17 of the
   36 sigma-states have NO realization below length 4 (divergence
   needs two arbs + two proposals; gated census), and the reduction
@@ -61,8 +65,6 @@ import sys
 from collections import defaultdict
 from fractions import Fraction as Fr
 from itertools import permutations
-
-sys.setrecursionlimit(400000)
 
 PASS = FAIL = 0
 def check(label, ok, detail=""):
@@ -96,6 +98,15 @@ print("  exhibited + quotient-window realization; CG5 = the Perron")
 print("  package on the quotient transfer; CG6 = negative controls.")
 print("  Deviations A1/A2 are forward corrections, printed above and")
 print("  gated below — no clause was silently weakened.")
+print("  Round-1 amendments (frozen review d44a-round1, note §7):")
+print("  the depth-7 out-of-sample extension gated in-receipt (CG7a-")
+print("  CG7e, all 145,408 depth-7 histories); the COMMITTED per-")
+print("  candidate quotient operator gated (CG3f, round-1 F2); BFS")
+print("  frontier exhaustion gated (CG3a, round-1 F4); CG4 relabeled")
+print("  as the mechanism exhibit off the assembly route (round-1")
+print("  F5); the verdict rescoped to EVERY VERIFIED DEPTH with the")
+print("  structural menu-factorization lemma as the NAMED RESIDUAL")
+print("  (round-1 F1, route R2).")
 
 # ---- SG0: one enumeration, census re-anchored ----------------------
 FAM = [[]]
@@ -413,6 +424,7 @@ for h in FAM:
     groups[SIG[tuple(h)]].append(tuple(h))
 cg1_bad = []
 cg1_hist = 0
+CLASS_MENU = {}
 for sg in sorted(groups):
     menus = set()
     for hk in groups[sg]:
@@ -420,6 +432,7 @@ for sg in sorted(groups):
         cg1_hist += 1
     if len(menus) > 1:
         cg1_bad.append((sg, sorted(groups[sg], key=len)[:2]))
+    CLASS_MENU[sg] = min(menus)
 if cg1_bad:
     print("  [CG1 SPLITTING PAIR]", cg1_bad[0])
 check("CG1 MENU FACTORIZATION, exhaustive on the entire cache: "
@@ -478,26 +491,41 @@ check("CG2 TRANSITION DETERMINISM, exhaustive on the cache: "
 SROOT = SIG[()]
 REP = {SROOT: ()}
 bfs_q = [SROOT]
+n_expanded = 0
+n_bfs_edges = 0
 while bfs_q:
     s = bfs_q.pop(0)
     hk = REP[s]
+    n_expanded += 1
     for e, q in cands_of(hk):
+        n_bfs_edges += 1
         s2 = canon_sigma(hk + (e,))
         if s2 not in REP:
             REP[s2] = hk + (e,)
             bfs_q.append(s2)
 maxrep = max(len(r) for r in REP.values())
+rep_spec = defaultdict(int)
+for r in REP.values():
+    rep_spec[len(r)] += 1
 check("CG3a THE DEPTH-FREE CLOSURE: BFS on sigma-space from "
       "sigma([]) using one representative per class (licensed by "
-      "CG2) TERMINATES — no depth cap appears in the search; the "
-      "reachable set has exactly 36 states (max representative "
-      "length 6) and coincides EXACTLY with the sigma values "
-      "realized on the cache (nothing new beyond depth 6, nothing "
-      "cached left unreached)",
+      "CG2) TERMINATES WITH THE FRONTIER EXHAUSTED — every one of "
+      "the 36 reachable representatives was EXPANDED (round-1 F4: "
+      "a capped/budget-stopped BFS cannot pass this gate silently); "
+      "the reachable set has exactly 36 states, the representative-"
+      "length spectrum is anchored {0:1, 1:4, 2:6, 3:8, 4:9, 5:4, "
+      "6:4} (max 6 — the minimal ABSTRACT realization lengths, a "
+      "property of the chain, not a cap), and the set coincides "
+      "EXACTLY with the sigma values realized on the cache",
       len(REP) == 36 and maxrep == 6
+      and n_expanded == 36 and not bfs_q
+      and dict(rep_spec) == {0: 1, 1: 4, 2: 6, 3: 8, 4: 9, 5: 4,
+                             6: 4}
       and set(REP) == set(SIG.values()),
-      f"reachable = {len(REP)}; max rep len = {maxrep}; reachable "
-      f"== cache-realized = {set(REP) == set(SIG.values())}")
+      f"reachable = {len(REP)}; expanded = {n_expanded}; traversed "
+      f"edges = {n_bfs_edges}; rep-length spectrum = "
+      f"{dict(sorted(rep_spec.items()))}; reachable == "
+      f"cache-realized = {set(REP) == set(SIG.values())}")
 
 W1 = (pA0, pB0)
 W2 = (pA0, pB0, SELFA, ('p', 'A', V1, 0))
@@ -545,9 +573,12 @@ while True:
     if stable: break
 check("CG3c the EXACT bisimulation quotient of the closed 36-state "
       "chain (P_0 = menu shape, refined by exact successor-class "
-      "weight vectors to stability — the same operator that defines "
-      "the committed partition, run on the abstract chain): "
-      "trajectory 4-5-6-6, SIX classes",
+      "weight vectors AGGREGATED PER CLASS to stability — round-1 "
+      "F2 correction: this is NOT the committed partition's "
+      "operator, which refines by PER-CANDIDATE (weight, successor-"
+      "class) multisets; the committed operator is gated separately "
+      "in CG3f and lands identical blocks): trajectory 4-5-6-6, "
+      "SIX classes",
       qtraj == [4, 5, 6, 6] and len(set(QPART.values())) == 6,
       f"trajectory = {qtraj}")
 
@@ -592,7 +623,145 @@ check("CG3e the INDUCED TRANSFER equals T_REF: quotient-class "
       f"abstract rows well-defined = {tq_ok}; TQ == T_REF = "
       f"{TQ == T_REF}")
 
-# ============ SECTION E — CG4: the pumping normal form ==============
+# round-1 F2: the COMMITTED per-candidate refinement operator, run
+# on the same 36-state chain (the d43b operator ported in §B refines
+# by the multiset of (weight, successor-class) PER CANDIDATE, not by
+# per-class aggregates; the theorem needs THIS operator's fixed
+# point).
+PC = relabel(shape36)
+pctraj = [len(set(PC.values()))]
+while True:
+    nxt = {}
+    for s, r in REP.items():
+        succ = tuple(sorted((str(q), PC[canon_sigma(r + (e,))])
+                            for e, q in cands_of(r)))
+        nxt[s] = (PC[s], succ)
+    nxt = relabel(nxt)
+    pctraj.append(len(set(nxt.values())))
+    pc_stable = (len(set(nxt.values())) == len(set(PC.values())))
+    PC = nxt
+    if pc_stable: break
+check("CG3f [round-1 F2] the COMMITTED PER-CANDIDATE operator on "
+      "the abstract chain: refining the 36 states by per-candidate "
+      "(weight, successor-class) MULTISETS — the actual operator of "
+      "the committed intrinsic partition (d43b port, §B), finer-or-"
+      "equal per step than CG3c's aggregation — has trajectory "
+      "4-5-6-6 and lands on blocks IDENTICAL to CG3c's QPART: the "
+      "two operators' fixed points coincide on this chain, closing "
+      "the operator-identification gap",
+      pctraj == [4, 5, 6, 6] and len(set(PC.values())) == 6
+      and blocks(PC) == blocks(QPART),
+      f"trajectory = {pctraj}; blocks == QPART = "
+      f"{blocks(PC) == blocks(QPART)}")
+
+# ===== SECTION D2 — CG7: the depth-7 out-of-sample extension ========
+# Round-1 F1, route R2: the enumeration extended ONE LEVEL past the
+# committed cache (every child of every depth-6 history), and every
+# load-bearing gate re-run there. The committed depth-6 gates above
+# are untouched; this block is strictly additional evidence that the
+# closure holds OUT-OF-SAMPLE — it does not discharge the all-depth
+# quantifier (the structural lemma remains the named residual).
+D7 = []
+for h in FAM:
+    if len(h) != 6: continue
+    hk = tuple(h)
+    for e, q in CACHE[hk]:
+        D7.append(hk + (e,))
+n_d6 = sum(1 for h in FAM if len(h) == 6)
+SIG7 = {}
+d7_new_states = set()
+for hk in D7:
+    s7 = canon_sigma(hk)
+    SIG7[hk] = s7
+    if s7 not in REP:
+        d7_new_states.add(s7)
+check("CG7a DEPTH-7 CLOSURE, out-of-sample: all 145,408 depth-7 "
+      "histories (children of the 27,904 depth-6 cache members — "
+      "the referee-sweep census, re-anchored) have sigma INSIDE the "
+      "closed 36 — ZERO new sigma-states one full level beyond the "
+      "committed cache",
+      len(D7) == 145408 and n_d6 == 27904
+      and len(SIG7) == 145408 and not d7_new_states,
+      f"depth-7 histories = {len(D7)}; depth-6 parents = {n_d6}; "
+      f"new sigma-states = {len(d7_new_states)}")
+
+cg7_menu_bad = 0
+for hk in D7:
+    if canon_menu(hk) != CLASS_MENU[SIG7[hk]]:
+        cg7_menu_bad += 1
+check("CG7b MENU FACTORIZATION AT DEPTH 7 (CG1 extended): every "
+      "depth-7 canonical menu equals its sigma-class's canonical "
+      "menu from the depth-6 pass — 145,408 menus, ZERO exceptions "
+      "(the own-view-lag subtlety holds one level out-of-sample)",
+      cg7_menu_bad == 0,
+      f"violations = {cg7_menu_bad}")
+
+NEW_T = {}
+cg7_tr_bad = 0
+n_tr7 = 0
+for hk in D7:
+    h6, e = hk[:-1], hk[-1]
+    n_tr7 += 1
+    key = canon_pair(h6, e)
+    tgt = SIG7[hk]
+    if key in TRANS:
+        if TRANS[key] != tgt: cg7_tr_bad += 1
+    elif key in NEW_T:
+        if NEW_T[key] != tgt: cg7_tr_bad += 1
+    else:
+        NEW_T[key] = tgt
+check("CG7c TRANSITION DETERMINISM AT 6->7 (CG2 extended): all "
+      "145,408 depth-6->7 transitions are deterministic in "
+      "(sigma, e-up-to-renaming); 16 NEW abstract keys appear "
+      "beyond the cached 160 (176 total — the committed CG2 did "
+      "NOT cover this level; the referee count, re-anchored), each "
+      "consistent across all its instances, and ZERO mismatches "
+      "against the cached keys",
+      n_tr7 == 145408 and cg7_tr_bad == 0
+      and len(NEW_T) == 16 and len(TRANS) + len(NEW_T) == 176,
+      f"transitions = {n_tr7}; violations = {cg7_tr_bad}; new keys "
+      f"= {len(NEW_T)}; total keys = {len(TRANS) + len(NEW_T)}")
+
+wit_count = defaultdict(int)
+for h in FAM:
+    wit_count[SIG[tuple(h)]] += 1
+for hk in D7:
+    wit_count[SIG7[hk]] += 1
+min_wit = min(wit_count.values())
+check("CG7d WITNESS MULTIPLICITY: on the extended (depth <= 7) "
+      "family every one of the 36 sigma-states has at least TWO "
+      "realizing witnesses — no state (in particular none of the "
+      "four minlen-6 states) rests on a single history",
+      len(wit_count) == 36 and min_wit >= 2,
+      f"states = {len(wit_count)}; min witnesses = {min_wit}")
+
+row7_bad = 0
+len6_states = set()
+for h in FAM:
+    if len(h) != 6: continue
+    hk = tuple(h)
+    s6 = SIG[hk]
+    len6_states.add(s6)
+    row = defaultdict(Fr)
+    for e, q in CACHE[hk]:
+        row[SIG7[hk + (e,)]] += q
+    if dict(row) != WROW[s6]: row7_bad += 1
+check("CG7e SIGMA-ROW CONSTANCY (CG3d-class), ALL 36 STATES: every "
+      "one of the 27,904 depth-6 histories has an outgoing sigma-"
+      "row EQUAL to its state's representative row WROW, and the "
+      "len-6 instances cover ALL 36 states — the single-witness "
+      "rows of the four minlen-6 states are closed by their full "
+      "depth-7 instance sets",
+      row7_bad == 0 and len6_states == set(REP),
+      f"row violations = {row7_bad}; states covered = "
+      f"{len(len6_states)}")
+
+# ==== SECTION E — CG4: the reduction mechanism (exhibit) ============
+# Round-1 F5: CG4a/CG4b are INDEPENDENT STRUCTURAL EXHIBITS — the
+# reduction mechanism's validity and the A2 obstruction — NOT part
+# of the delivered assembly route (the pin's pumping route was
+# superseded by the quotient route, §6 A1/A2). Only CG4c's window
+# realization enters the delivered proof.
 def unsub_v(x, b):
     """MG6's substitution, inverted: the renewal base b (a version
     name) is replaced by the genesis base V0, recursively through
@@ -657,7 +826,8 @@ for h in FAM:
     if any(e[0] == 'n' for e in r): red_ok_form = False
     if any(canon_sigma(r[:k]) == SROOT for k in range(1, len(r))):
         red_ok_form = False
-check("CG4a the REDUCTION IS VALID on all 34,375 cached histories: "
+check("CG4a [MECHANISM EXHIBIT — off the assembly route, round-1 "
+      "F5] the REDUCTION IS VALID on all 34,375 cached histories: "
       "zero mechanism failures (every clean-slate prefix had a "
       "unique shared non-superseded base; every substitution step "
       "verified sigma-preserving — NC3's identity and MG6's "
@@ -683,10 +853,16 @@ n_le3 = sum(v for k, v in lens_spec.items() if k <= 3)
 n_gap = sum(1 for h in FAM
             if minlen[SIG[tuple(h)]] <= 3
             and len(REDMEMO[tuple(h)]) > 3)
-check("CG4b the PINNED <=3 CLAUSE IS FALSE, exhibited (deviation "
+check("CG4b [MECHANISM EXHIBIT — off the assembly route, round-1 "
+      "F5] the PINNED <=3 CLAUSE IS FALSE, exhibited (deviation "
       "A2): the reduced-length spectrum is {0: 3727, 1: 5828, "
       "2: 6708, 3: 7200, 4: 6816, 5: 3328, 6: 768} — 23,463 of "
-      "34,375 reach length <= 3, maximum 6; SEVENTEEN of the 36 "
+      "34,375 reach length <= 3, maximum 6 ON THE CACHE (a cache "
+      "artifact, NOT a normal-form bound: over the unbounded family "
+      "the reduction has unbounded image, since the diverged sector "
+      "admits no clean-slate truncation points at d42a scope — "
+      "which is exactly why the pumping route cannot power the "
+      "all-depth step); SEVENTEEN of the 36 "
       "sigma-states have NO realization below length 4 (shortest-"
       "realization census {0:1, 1:4, 2:6, 3:8, 4:9, 5:4, 6:4}); "
       "the gated witness [pB1, selfB, pB(v1,1), pA0] is length-4, "
@@ -875,16 +1051,18 @@ while qa:
         if s2 not in repa:
             repa[s2] = hk + (e,)
             qa.append(s2)
-    if len(repa) > 60:
+    if len(repa) > 200:
         a_closed = False
         break
 check("CG6a KEEPING MENU-INVISIBLE DEAD STRUCTURE BLOWS UP THE "
       "BFS (the abstraction is not trivially finite-valued): the "
       "dead-keeping variant already takes 67 > 36 values on the "
-      "cache alone, and its BFS fails to close within a 61-state "
-      "budget (each renewal pumps the dead count — unbounded "
-      "growth), while the delivered sigma closes at 36",
-      len(va) == 67 and len(repa) == 61 and not a_closed
+      "cache alone, and its BFS is STILL OPEN at 201 states under "
+      "a 200-state budget — CUT AT BUDGET, not tuned (round-1 N2: "
+      "the referee verified non-closure at this budget; each "
+      "renewal pumps the dead count — unbounded growth), while the "
+      "delivered sigma closes at 36 with the frontier exhausted",
+      len(va) == 67 and len(repa) == 201 and not a_closed
       and len(REP) == 36,
       f"cache values = {len(va)}; budget states = {len(repa)}; "
       f"closed = {a_closed}")
@@ -935,32 +1113,44 @@ print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — gate breakage; exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d44a GREEN — THE RENEWAL-PUMPING CLOSURE THEOREM "
-      "at d42a scope: the pin-2 local-state abstraction sigma "
-      "(holdings pattern + live-proposal/conflict structure + "
-      "carried superseded marks, modulo base renaming) determines "
-      "menus exactly (CG1, 34,375/0) and transitions exactly (CG2, "
-      "34,374/0, 160 keys), and its depth-free BFS CLOSES at 36 "
-      "states realized precisely by the depth-6 cache (CG3a). The "
+print("[VERDICT] d44a GREEN — THE CLOSURE THEOREM at d42a scope, "
+      "decided at EVERY VERIFIED DEPTH: the pin-2 local-state "
+      "abstraction sigma (holdings pattern + live-proposal/conflict "
+      "structure + carried superseded marks, modulo base renaming) "
+      "determines menus exactly (CG1: 34,375/0 on the cache; CG7b: "
+      "145,408/0 at depth 7) and transitions exactly (CG2: "
+      "34,374/0, 160 keys; CG7c: 145,408/0 at 6->7, 176 keys "
+      "total), and its depth-free BFS CLOSES at 36 states with the "
+      "frontier exhausted (CG3a), realized precisely by the depth-6 "
+      "cache with ZERO new sigma-states at depth 7 (CG7a). The "
       "pinned six-state landing is impossible for ANY menu-exact "
       "sigma (CG3b's witness: bisimilarity merges menu-distinct "
-      "states), and the repaired route lands the theorem: the "
+      "states), and the repaired route lands the decision: the "
       "EXACT bisimulation quotient of the closed chain has SIX "
-      "classes, blockwise equal to the committed intrinsic "
-      "partition with transfer T_REF (CG3c-e). By CG1+CG2 the "
-      "intrinsic partition at EVERY depth is the pullback of the "
-      "abstract chain's bisimilarity — six states, transfer T, at "
-      "all depths — and the entire Perron package holds there: "
-      "lambda = 2 exact, unique dominant class {2,4,5} (det 3/32, "
-      "anchored nonnegative resolvent), f = (4,4,3,7,3,3)/3 with "
-      "forced extension, root = renewal AS ONE SIGMA-STATE, "
-      "pi = (1,1,2)/4 mass transport exact (CG5). The pumping "
-      "reduction is valid and gated everywhere (CG4a) with the "
-      "pinned <=3 clause replaced by its exhibited obstruction + "
-      "quotient-window realization (CG4b/c, deviation A2). "
-      "Controls: dead-keeping sigma diverges past the budget, "
-      "edge-dropping sigma fails CG1 on the exhibited pair, and "
-      "the stratification control is cited (CG6). Residue 1's "
-      "decided-on-the-window reading UPGRADES to decided at d42a "
-      "scope, all depths; transport (deliveries reopening the "
-      "absorbing sector) remains D44b's problem.")
+      "classes under BOTH the aggregated operator (CG3c) and the "
+      "COMMITTED per-candidate operator (CG3f — identical blocks), "
+      "blockwise equal to the committed intrinsic partition with "
+      "transfer T_REF (CG3d-e), and the entire Perron package holds "
+      "there: lambda = 2 exact, unique dominant class {2,4,5} (det "
+      "3/32, anchored nonnegative resolvent), f = (4,4,3,7,3,3)/3 "
+      "with forced extension, root = renewal AS ONE SIGMA-STATE, "
+      "pi = (1,1,2)/4 mass transport exact (CG5). THE QUANTIFIER, "
+      "honestly (round-1 F1, route R2): residue 1 is decided at "
+      "EVERY VERIFIED DEPTH (exhaustive through depth 7 "
+      "in-receipt); the depth-free structural lemma (menu "
+      "factorization from sigma at all depths — nontrivial because "
+      "admissibility runs on own views that lag the full view) is "
+      "the NAMED RESIDUAL. IF the lemma holds, CG1/CG2 become "
+      "depth-free laws and the pullback argument delivers the "
+      "six-state chain, transfer T, and the full Perron package at "
+      "ALL depths — stated as the conditional it is. The reduction "
+      "machinery is the mechanism exhibit, off the delivered "
+      "assembly route (CG4a/b, deviation A2 + round-1 F5); only "
+      "CG4c's window realization enters the proof. Controls: "
+      "dead-keeping sigma stays open at a 200-state budget (cut at "
+      "budget, not tuned), edge-dropping sigma fails CG1 on the "
+      "exhibited pair, and the stratification control is cited "
+      "(CG6). Residue 1's decided-on-the-window reading UPGRADES "
+      "to decided at every verified depth at d42a scope; transport "
+      "(deliveries reopening the absorbing sector) remains D44b's "
+      "problem.")

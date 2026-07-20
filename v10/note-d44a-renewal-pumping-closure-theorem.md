@@ -140,3 +140,103 @@ budget vs the delivered 36); CG6b's variant drops the component
 data jointly with the payload distinction that generates it (at
 this scope conflict edges are payload-generated — SG2's
 incomparability invariant).
+
+## 7. Round-1 amendments (2026-07-19, post-round; frozen review
+## `v10/reviews/d44a-round1-hostile-review.md` — REVISE, 0 blocker /
+## 2 major; every number in the receipt reproduced by the referee)
+
+**F1 (MAJOR — the all-depth quantifier was NOT discharged as
+committed; route R2 applied, depth-7 now receipt-carried).** The
+delivered proof consumed CG1/CG2 as universally quantified premises,
+but they were verified exhaustively on the depth-6 cache only, and
+the pumping engine the pin designed to discharge the quantifier
+(CG4) was — correctly — killed by deviation A2 and replaced by
+nothing: "ALL DEPTHS / OUTRIGHT" was an extrapolation, not a theorem
+as delivered. Repair (R2 + the referee's depth-7 sweep carried
+in-receipt as CG7a–CG7e): the enumeration is extended one full
+level — all 145,408 depth-7 histories (children of the 27,904
+depth-6 cache members) — and gated: ZERO new sigma-states (closure
+holds out-of-sample), ZERO CG1 exceptions (menu factorization) and
+ZERO CG2 exceptions (transition determinism) on the extended set
+with the 16 new abstract keys anchored (176 total — the committed
+CG2 provably did NOT cover this level), every one of the 36 states
+carried by >= 2 witnesses (min 1,200), and sigma-row constancy
+covering ALL 36 states from their full len-6 instance sets. The
+verdict is rescoped to the honest form: residue 1 is decided at
+EVERY VERIFIED DEPTH (exhaustive through depth 7 in-receipt); the
+depth-free STRUCTURAL LEMMA — menu factorization from sigma at all
+depths — is the NAMED RESIDUAL and successor target (F1-R1). The
+lemma is nontrivial precisely because admissibility runs on OWN
+views that LAG the full view sigma is built from (witness W2: B's
+own view still holds V0 unsuperseded with pB0 live while the full
+view has V0 superseded); nothing yet proves the own-view lag is
+sigma-recoverable at depth 8+. The conditional assembly statement
+stands as a conditional: IF the lemma holds, CG1/CG2 become
+depth-free laws and the pullback argument delivers the six-state
+chain, transfer T, and the Perron package at ALL depths.
+
+**F2 (MAJOR — the quotient operator was not the committed one).**
+CG3c's "same operator" label was false: the committed intrinsic
+partition refines by PER-CANDIDATE (weight, successor-class)
+multisets (d43b lines 92–100; the receipt's own §B port), while
+CG3c aggregates weight per class — finer-or-equal per step, and the
+theorem needs the per-candidate fixed point. Repaired: CG3c's label
+corrected, and the committed per-candidate operator is now gated on
+the same 36-chain (CG3f): trajectory [4, 5, 6, 6], blocks IDENTICAL
+to CG3c's QPART — the two fixed points coincide here, closing the
+identification in-receipt rather than in the review.
+
+**F3 (minor — sigma is over-specified; recorded, not repaired).**
+The referee's mutation battery proved three briefed corruption
+classes extensionally NULL on the cache: dropping the post-renaming
+sort in ser's live entry (m1), dropping the superseded marks
+entirely (m2), and dropping the previous-class component from the
+quotient refinement tuple (m4) each leave the induced sigma
+partition and quotient pullback blockwise IDENTICAL to the
+committed ones. So §2 bullet-3's marks and the serialization
+discipline are DEFENSIVE OVER-SPECIFICATION at d42a scope on the
+cache — finer-or-equal data, same blocks, harmless for soundness
+but not load-bearing there; the silent-green mutants are
+demonstrated-null, not missed tripwires. Recorded as committed
+corpus fact; sigma is NOT slimmed (the marks may matter beyond this
+scope, and the genuine corruptions of the same machineries — m10
+kill-the-minimization, m9 merge-two-states — fail 7 and 10 gates
+respectively).
+
+**F4 (minor — the closure gate was outcome-anchored).** A capped
+BFS (mutant m6: representatives below length 6 never expanded —
+deleting the receipt's only beyond-cache verification) passed every
+gate silently. Repaired: CG3a now gates FRONTIER EXHAUSTION
+explicitly — every one of the 36 reachable representatives expanded,
+empty frontier at termination (not a budget stop) — and anchors the
+representative-length spectrum {0:1, 1:4, 2:6, 3:8, 4:9, 5:4, 6:4}
+(max 6) plus prints the traversed edge count (176).
+
+**F5 (minor — CG4 relabeled honestly).** The delivered assembly
+uses CG4a/CG4b nowhere; the pin's pumping route was superseded by
+the quotient route (§6 A1/A2). CG4a/CG4b are now labeled MECHANISM
+EXHIBITS off the assembly route (the reduction's validity + the A2
+obstruction), CG4b's "maximum 6" spectrum is marked as a CACHE
+artifact (over the unbounded family the reduction has unbounded
+image — the diverged sector admits no clean-slate truncation
+points, which is exactly why the pumping route could not power the
+all-depth step), and CG4c alone carries the assembly load (the
+window-realization leg).
+
+**F7 (pin correction).** Pin §4's sketch inverted the refinement
+direction: CG1+CG2 imply sigma-equal histories are intrinsically
+equal, i.e. SIGMA REFINES THE INTRINSIC partition (as the receipt's
+SB3 states correctly), not the converse. The delivered route
+depends on the correct direction throughout.
+
+**Nits.** CG6a's budget raised to 200: the dead-keeping variant is
+STILL OPEN at 201 states — cut at budget, not tuned (referee-
+verified; the old 61 was cap+1, a budget artifact). The vestigial
+`sys.setrecursionlimit(400000)` removed. CG6b stands as delivered —
+§6 A3 owns the substitution (the pinned edge-only drop was vacuous
+as specified: at this scope the edges are derivable from the live
+triples plus SG2's incomparability invariant; N1 recorded).
+
+Post-repair receipt: 30 PASS / 0 FAIL (24 committed gates untouched
++ CG3f + CG7a–e), exit 0, deterministic (two runs + PYTHONHASHSEED
+0/7 byte-identical), ~2 min single-threaded.
