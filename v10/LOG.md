@@ -7328,3 +7328,19 @@ a delivered outcome); gates LG0-LG5; H2's status to be determined
 and declared (LG3). Standing bindings restated (allow-list #362;
 witness branches #354; no transport per-candidate citation #374;
 the d44b synthesis flags).
+
+## 2026-07-19 — D46g DISCHARGED (LEDGER #378): the embedded head
+## formally versioned as d42b1@pre-#300
+note-d46g-embedded-head-reconciliation.md commits the resolution of
+the #363 standing obligation WITHOUT editing any frozen artifact:
+the d42b2-embedded transport head is the named frozen layer version
+d42b1@pre-#300; the terminal receipts gate it AS COMMITTED (the
+d44e RG0b-iv provenance label already in place); BINDING RULE — any
+NEW consumer of transport pricing MUST exec the terminal d42b1 head
+(the d43d/d44b/d45b pattern), and citing a click-fixture merge
+price requires the "@pre-#300" qualifier. The re-pricing receipt is
+REGISTERED as the named contingency, mandatory only if a
+pre-#300-priced number ever becomes load-bearing in a terminal
+claim (none is: the d44e round's 63/63 form-level verification,
+referee-carried). D46a's build is in flight; D46h (the N5 batch)
+is next in the housekeeping interleave.
