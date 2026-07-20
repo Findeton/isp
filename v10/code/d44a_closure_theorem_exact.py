@@ -515,10 +515,14 @@ check("CG3a THE DEPTH-FREE CLOSURE: BFS on sigma-space from "
       "the reachable set has exactly 36 states, the representative-"
       "length spectrum is anchored {0:1, 1:4, 2:6, 3:8, 4:9, 5:4, "
       "6:4} (max 6 — the minimal ABSTRACT realization lengths, a "
-      "property of the chain, not a cap), and the set coincides "
-      "EXACTLY with the sigma values realized on the cache",
+      "property of the chain, not a cap), the TRAVERSED-EDGE count "
+      "== 176 (delta D1: previously print-only — a depth-cap mutant "
+      "passed with 160; now gated, the deficit of 16 being exactly "
+      "the depth-6->7 keys), and the set coincides EXACTLY with the "
+      "sigma values realized on the cache",
       len(REP) == 36 and maxrep == 6
       and n_expanded == 36 and not bfs_q
+      and n_bfs_edges == 176
       and dict(rep_spec) == {0: 1, 1: 4, 2: 6, 3: 8, 4: 9, 5: 4,
                              6: 4}
       and set(REP) == set(SIG.values()),

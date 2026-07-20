@@ -425,3 +425,174 @@ Scratchpad: `/private/tmp/claude-501/-Users-felixrobles-workspace/
 [THEOREM] tag survives as written or forward-corrects to
 verified-depth scope; F2's gate is ten lines; F3–F7, N1–N3 are
 text/gate hygiene. The computations need no repair.
+
+---
+
+# DELTA — round-1 repairs at 33ab0ef (LOG #366), referee verification
+
+**Date:** 2026-07-19 (same referee; round-1 body above untouched).
+**Object:** commit 33ab0ef; d44a paths verified unchanged between
+33ab0ef and current HEAD.
+
+## DELTA VERDICT: ONE RESIDUAL (D1, minor) — NOT YET CLEAN; terminal conversion endorsed CONDITIONAL on a one-line repair + one LOG sentence correction
+
+Every discharge verified except F4's: the round's m6 mutant STILL
+passes the repaired receipt (D1 below — refuting LOG #366's "the
+round's m6 capped-BFS mutant now fails" and the delta request's own
+stamped terminal condition "m6 caught"). Materiality is LOW because
+CG7a now subsumes the deleted verification content; the fix is one
+line. Nothing else above nit.
+
+## Discharge verification, item by item
+
+**F1 / route R2 (CG7a–e): DISCHARGED.** Every anchor equals my
+round-1 sweep number exactly: 145,408 depth-7 histories from 27,904
+depth-6 parents (== my P1 census); 0 new sigma-states (P1); CG7b 0
+menu exceptions against the depth-6 class menus (P4); CG7c 0
+determinism violations, 16 new abstract keys, 176 total (P2); CG7e
+0 row violations with all 36 states covered by their len-6
+instances (P3 — closes the single-witness rows of the four minlen-6
+states). CG7d: gate enforces min witnesses >= 2; printed min 1,200
+— referee recount CONFIRMS: 36 states, minimum 1,200 (three
+smallest 1,200/1,200/1,200), total 179,783. Total exhaustively
+verified histories now 34,375 + 145,408 = 179,783, receipt-carried
+— the terminal statement's number is exact.
+
+**F1 quantifier rescope: DISCHARGED.** The receipt verdict and .out
+carry "ALL depths" only inside the explicit conditional ("IF the
+lemma holds ... — stated as the conditional it is"); the structural
+menu-factorization lemma is the NAMED RESIDUAL with the own-view-
+lag nontriviality stated. Grep of receipt/.out/note: the remaining
+unconditioned occurrences are confined to frozen pin history — note
+§1 [TARGET], §4 sketch, §6 A1 (all pre-round text, superseded by §7
+per the house pins-frozen/forward-correction convention; §7 F1
+names and retires "ALL DEPTHS / OUTRIGHT" explicitly). No live
+unconditioned claim survives. LOG #366 forward-corrects #361 by
+name, including the commit message.
+
+**F2 (CG3f): DISCHARGED.** The committed PER-CANDIDATE operator now
+gated on the 36-chain: trajectory [4, 5, 6, 6], blocks == QPART —
+matching my independent per-candidate run exactly; CG3c's label
+corrected to "AGGREGATED PER CLASS ... NOT the committed
+partition's operator".
+
+**F4 (CG3a): PARTIAL — see D1.** The new anchors (n_expanded == 36,
+empty frontier, rep-length spectrum {0:1, 1:4, 2:6, 3:8, 4:9, 5:4,
+6:4} == the abstract minlen census, set equality) are all correct
+and strictly strengthen the round-1 gate, and they DO catch
+budget-stop corruption (referee mutant m6b — break after 32 pops —
+exits 1 at CG3a, 29/1). They do not catch the round's actual
+mutant class (depth cap).
+
+**F5: DISCHARGED.** CG4a/CG4b relabeled [MECHANISM EXHIBIT — off
+the assembly route]; CG4b's "maximum 6" now marked a CACHE
+artifact with the unbounded-image reason stated.
+
+**F3 / F7 (note §7): DISCHARGED.** The nullity results recorded as
+demonstrated (partition-null on the cache), with the correct
+retain-don't-slim justification (marks may matter beyond scope; the
+genuine corruptions m10/m9 fail 7/10 gates); the pin §4
+refinement-direction inversion owned.
+
+**N2 / N3: DISCHARGED.** CG6a at budget 200, still open at 201 —
+matches my round-1 budget-200 verification; label now says cut at
+budget. The vestigial recursionlimit removed.
+
+**Mechanical: DISCHARGED (with D1's caveat on one LOG sentence).**
+git diff 3995fb8 -> 33ab0ef on the d44a paths = exactly the
+enumerated repairs; NO round-1 gate condition weakened (checked
+against the removed-lines diff: only docstring/label text, the
+recursionlimit, and the CG6a budget change — CG3a strictly
+stronger, CG6a equivalent-strength); 30 = 24 committed + CG3f +
+CG7a-e; fresh rerun exit 0, 30 PASS / 0 FAIL, BYTE-IDENTICAL to
+the committed .out; PYTHONHASHSEED=0 and PYTHONHASHSEED=7 both
+byte-identical (cwds v10/code and /private); ~2 min 17 s wall
+confirmed. LOG
+#366's account of the round is faithful (verdict counts, F1/F2
+attribution, forward-correction of #361) EXCEPT the m6 sentence
+(D1).
+
+## D1 (minor; blocks the stamped terminal condition): the F4 repair gates queue POPS, not expansions — the round's m6 mutant still exits 0
+
+The repaired CG3a increments `n_expanded` at POP time, before the
+loop body a depth-cap mutant skips; the traversed-edge count (176)
+is PRINT-ONLY. The faithful reproduction of round-1 m6 against
+33ab0ef (`if len(hk) >= 6: continue` inserted after the increment —
+identical semantics: the four length-6 representatives are never
+expanded) runs to **exit 0, 30 PASS / 0 FAIL**, printing "traversed
+edges = 160" in its CG3a detail line versus the committed 176 —
+the deficit of 16 is exactly CG7c's 16 depth-6->7 keys: visibly
+wrong in stdout, invisible to the exit code. LOG #366's "the
+round's m6 capped-BFS mutant now fails" is therefore FALSE and
+needs a forward correction at next touch. (The budget-stop variant
+m6b IS caught: exit 1 at CG3a.)
+
+Materiality is LOW: CG7a now verifies sigma-closure over ALL
+145,408 depth-7 histories — a strict superset of the checks the
+capped BFS deletes — so the defect is a TRIPWIRE gap, not an
+evidence gap (this is also why I rate D1 minor rather than major).
+**Prescribed one-line fix:** promote the edge count to a gated
+anchor — `n_bfs_edges == 176` — optionally noting 176 == CG7c's
+total key count (a nontrivial cross-consistency: every abstract
+(state, event) pair is traversed exactly once from the
+representatives).
+
+## For the §8 conditional-assembly proof note (requested guidance)
+
+MUST include:
+1. **The hypothesis as a conjunction.** "Menu factorization from
+   sigma" names only CG1's form. State the lemma as: *sigma is a
+   CONGRUENCE for the admission layer at every depth* — (H0) the
+   SG2 invariants hold at every depth (own-alive singleton, live
+   proposals on the proposer's own alive base, conflict
+   incomparability: without these sigma is not even well-defined);
+   (H1) sigma-equal implies canonical-menu-equal, entrywise with
+   weights; (H2) successor sigma is a function of (sigma, event up
+   to renaming). H2 is NOT a consequence of H1; the current §7 and
+   verdict sentence "IF the lemma holds, CG1/CG2 become depth-free
+   laws" silently folds H0/H2 into H1's name — the §8 statement
+   must not.
+2. **The induction stated explicitly** (round-1 review §1, L4):
+   base = menu shape is a function of the canonical menu; step at
+   depth D consumes H1/H2 at depth D; conclusion P_t = pi_t o
+   sigma for every t, with pi_t the PER-CANDIDATE refinement on
+   the 36-chain.
+3. **The quotient in the statement must be CG3f's per-candidate
+   fixed point**, with CG3c cited as coinciding (not the reverse).
+4. **Direct-verification scope stated:** blockwise intrinsic
+   equality is computed at len <= 4 in-receipt (CG3d, 28/36
+   states) and len <= 5 by the referee (32/36); the four minlen-6
+   states' intrinsic classifications at their own depths follow
+   only from the conditional argument — say so.
+5. **The uniform-lookahead fact** that P_t(h) depends only on h's
+   t-step subtree (this is what makes pi_t well-defined on the
+   abstract chain and why no depth-window dependence survives in
+   the pullback).
+
+MUST avoid: any unconditioned all-depth sentence anywhere in the
+note; "renewal-pumping" as the operative mechanism (historical
+unit label only, with the A2 obstruction cited); treating CG7's
+depth-7 evidence as a premise of the proof (it is out-of-sample
+evidence, not part of the conditional derivation); minimality
+claims for sigma's marks or serialization (the F3 nullity record
+stands).
+
+## Terminal statement
+
+The stamped terminal statement is accurate as worded (179,783 =
+34,375 + 145,408, receipt-carried; six-class per-candidate quotient
+with T_REF; full Perron package; the lemma as residue 1's final
+named gap with the conclusion exactly conditional on it; pumping
+retired for the closure-quotient route). **Conversion is endorsed
+as soon as the two D1 micro-repairs land:** (i) gate
+`n_bfs_edges == 176` in CG3a; (ii) forward-correct LOG #366's m6
+sentence. Everything else is DELTA-CLEAN.
+
+## Delta reproduction appendix
+
+Same scratchpad as round 1: `delta_run1.out` / `delta_seed0.out` /
+`delta_seed7.out` (reruns; diffed against the committed .out),
+`delta_m6.out` + `m6_delta_full.out` (the D1 mutant, regenerated
+from the 33ab0ef source), `delta_finish.out` (seed7 + m6b
+budget-stop + witness recount), `mutants/m6_delta_bfs_cap.py`,
+`mutants/m6b_delta_budget_stop.py`.

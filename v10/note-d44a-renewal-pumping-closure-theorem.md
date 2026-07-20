@@ -240,3 +240,54 @@ triples plus SG2's incomparability invariant; N1 recorded).
 Post-repair receipt: 30 PASS / 0 FAIL (24 committed gates untouched
 + CG3f + CG7a–e), exit 0, deterministic (two runs + PYTHONHASHSEED
 0/7 byte-identical), ~2 min single-threaded.
+
+## 8. The conditional-assembly proof note (at conversion; per the
+## delta's guidance)
+
+**THE HYPOTHESIS is a conjunction of three depth-indexed laws** (none
+implies another; the receipt verifies all three exhaustively through
+depth 7, 179,783 histories, zero exceptions — that verification is
+EVIDENCE for the hypothesis, never a premise of this argument):
+- **(H0)** the SG2 view invariants hold at every depth (own-view
+  alive holding a singleton; non-superseded holdings inside it; live
+  proposals on the proposer's base; conflicting live pairs
+  incomparable);
+- **(H1)** menu factorization: menu(h), as a renamed event-multiset
+  with exact weights, is a function of sigma(h) at every depth —
+  nontrivial because admissibility runs on OWN views that lag the
+  full view sigma records (the W2 witness exhibits the lag);
+- **(H2)** transition determinism: sigma(h + [e]) is a function of
+  (sigma(h), renamed e) at every depth — NOT a consequence of (H1).
+
+**THE CONDITIONAL THEOREM.** Assume (H0)-(H2). Then: (i) by the
+gated frontier-exhausted BFS (CG3a: 36 states, 176 edges), sigma
+takes exactly 36 values on ALL histories of every depth — the step
+at depth D consumes (H1)/(H2) at depth D: a depth-D history's sigma
+is reached from a depth-(D-1) sigma by one (H2)-determined
+transition, and no transition leaves the closed set. (ii) The
+intrinsic partition (P_0 = menu shape; P_{t+1} = one
+probabilistic-bisimulation refinement; the committed PER-CANDIDATE
+(weight, target-class)-multiset operator, whose fixed point on the
+abstract chain is gated at CG3f: trajectory [4,5,6,6], blocks ==
+QPART) is, at every depth, the pullback of the abstract chain's
+bisimilarity: by induction on lookahead t — base: (H1) gives
+sigma-equal => equal menu shape; step: (H1)+(H2) give sigma-equal
+=> equal per-candidate (weight, class_t)-multisets — sigma-equal
+histories are intrinsically equivalent at every t; and the abstract
+fixed point (reached at t = 2, stable thereafter — the
+uniform-lookahead fact) has SIX classes with transfer T_REF.
+(iii) The Perron package on the quotient (lambda = 2; unique
+dominant class; f unique up to scale; root = renewal as one
+sigma-state; pi mass transport exact — all gated at CG5) is then
+the completion decision at every depth. QED (conditional).
+
+**Direct-verification scope, declared:** blockwise equality of the
+pullback with the committed intrinsic partition is COMPUTED at
+len <= 4 in-receipt and len <= 5 by the frozen round's referee; the
+four minlen-6 sigma-states are classified only via the conditional
+argument. The pumping route is NOT a mechanism of this proof (it is
+retired as the §6-A2-gated obstruction exhibit); no minimality is
+claimed for sigma's superseded marks or serialization (the §7 F3
+nullity records stand). The all-depth conclusion is EXACTLY as
+conditional as (H0)-(H2); discharging (H1) — the depth-free
+structural lemma — is residue 1's final named gap.

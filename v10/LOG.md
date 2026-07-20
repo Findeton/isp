@@ -7011,3 +7011,39 @@ her sends-first schedule inexpressible under fusion; the dimension
 route on her multiset OPEN at N >= 4 — 248/40,320 receipt-gated —
 with idle marks LOAD-BEARING); the ceiling horn did not fire.
 Successor 2 of the D45 pair: DONE. Both D45 units now terminal.
+
+## 2026-07-19 — D44a TERMINAL (LEDGER #368); delta D1 micro-repair
+## applied; FORWARD-CORRECTION of #366's m6 sentence
+Delta verdict (appended to reviews/d44a-round1-hostile-review.md):
+one residual D1 (minor) then TERMINAL ENDORSED — all discharges
+verified against the referee's own round-1 numbers (CG7a-e anchors
+equal their sweep exactly; the 179,783 total confirmed by their
+recount; CG3f matches their per-candidate run; the quantifier
+conditional everywhere with frozen-pin history superseded per house
+convention). D1: #366's sentence "the round's m6 capped-BFS mutant
+now fails" was FALSE — the F4 repair gated queue POPS while the
+traversed-edge count stayed print-only; the referee's faithful m6
+re-run exited 0 printing 160 edges vs the committed 176 (the
+deficit = exactly CG7c's 16 depth-6->7 keys); the budget-stop
+variant WAS caught; materiality low (CG7a's out-of-sample closure
+strictly subsumes what a capped BFS deletes). FORWARD-CORRECTED
+here; MICRO-REPAIR APPLIED per the delta's pre-authorization
+(n_bfs_edges == 176 now gated in CG3a; rerun 30/30 exit 0, seeds
+byte-identical, VERIFIED pre-commit). THE §8 CONDITIONAL-ASSEMBLY
+PROOF NOTE written per the delta's guidance (the hypothesis as the
+(H0)/(H1)/(H2) conjunction — H2 not a consequence of H1; the
+induction stated with the step consuming H1/H2 at depth D; CG3f's
+per-candidate fixed point as the quotient in the statement; the
+direct-verification scope declared incl. the four minlen-6 states;
+CG7 as evidence never premise; no pumping-as-mechanism; no
+sigma-minimality claims). TERMINAL — THE SETTLED STATEMENT (as
+stamped and endorsed): RESIDUE 1 IS DECIDED AT EVERY VERIFIED
+DEPTH at d42a scope (exhaustive through depth 7, receipt-carried:
+sigma menu-exact and transition-deterministic with ZERO exceptions
+over 179,783 histories; the 36-state closure holding out-of-sample;
+the six-class per-candidate quotient with transfer T_REF; the full
+Perron package on the quotient); THE DEPTH-FREE STRUCTURAL LEMMA
+(H1, with H0/H2) is residue 1's FINAL NAMED GAP, the all-depth
+conclusion exactly conditional on it; the pumping route retired for
+the closure-quotient route. Successor 1 of the user's six: DONE.
+D44f UNGATES NOW; D44b remains last.
