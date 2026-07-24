@@ -7490,3 +7490,19 @@ unconditional gate (concatenated needles), mechanical scope gate
 (caps bind; D44b's open verdict untouched). Note §4. Ladder: a, c,
 b done (all GREEN-UNREVIEWED); remaining d (typicality), e
 (smeared interacting + g = 0), f (reception dynamics).
+
+## 2026-07-19 — D46d PINNED (LEDGER #385): the typicality experiment
+note-d46d-typicality.md — the decisive dimension-line unit:
+capability is settled (D45b), typicality is not. Gates TY0-TY5:
+layer + D46b measure re-anchored; TY1 EXACT typicality over the
+full ARM-1T depth-4 family under the kernel-completed path measure
+(event-kind counts, DISTINCT-ACTOR width proxy, poset width where
+cheap); TY2 the width-mass question (mass at each k, and at the
+maximum realizable k) delivered either way; TY3 the SAMPLED
+extension with DECLARED SEEDS and pools (all sampled numbers
+labelled [SAMPLED], the exact/sampled separation itself a gate —
+the corpus's first sampled study, hence also a METHOD unit); TY4
+the courier-shape mass comparison ("does the measure favour what
+the constructor builds"); TY5 doctrine + purity + determinism.
+Scope: horizon-scoped throughout; no infinite-volume or
+spacetime-dimension claim. Build next.
