@@ -53,3 +53,56 @@ ONE interacting point (the validator's committed values),
 singleton regions, the committed orders.  A collapse verdict here
 is a fixture-scale statement about the identified operator, not a
 theorem about interacting theories.
+
+## 4. Result (2026-07-19; GREEN-UNREVIEWED) — 19 PASS / 0 FAIL
+
+**SG0/SG1 anchors green:** the free-core ray collapse re-runs
+through the ported pipeline (EXC D = 1.(I - sigma_x); LT D =
+kappa(m).(I - sigma_x) with 13/2304 and -1/72; the committed tau
+tables, delta-odd, the d45a polynomial in exact Fractions), and
+d44d's KG3 raw-bracket anchors are reproduced exactly.
+
+**SG2 — the smeared comparison at the interacting fixture does NOT
+collapse.** 3 cells x 5 channel readings x 2 couplings = 30
+evaluations / 60 identified operators. Census: COLLAPSE 0,
+STRUCTURED 0, NO-COLLAPSE 18, SUPPORT-MISMATCH 3, BOTH-ZERO 9
+(relative deviations 0.147-1.434 against a 1e-30 gate; no
+per-sector proportionality either, hence NO-COLLAPSE rather than
+STRUCTURED).
+
+**SG3 — THE VERDICT, computed not narrated: THE FAILURE IS GRAIN,
+NOT INTERACTION.** All 9 discriminating (cell, reading) pairs are
+NO-COLLAPSE **at g = 0 as well** — the fixture's grain (4-site
+open chain, occupation basis, no translation average) already
+destroys the collapse before any coupling is switched on. D44d's
+§5 B1 lesson reproduced one level up, now at the
+identified-OPERATOR level rather than the raw bracket.
+Structurally: **the EXC column is exactly coupling-blind** (gated
+at 8e-51) because the Delta^2 coefficient cannot see the diagonal
+of H, which is exactly where the electric gauge-string term lives
+— so g reaches the comparison ONLY through LT. The measured
+interaction effect: 9/9 reference constants shifted by exact
+rationals, 246 moved channels, with per-cell censuses printed as
+union = SHARED(grain) + MOVED(interaction). **The one
+interaction-SPECIFIC structure:** the staggered-parity content of
+the LT operator is identically zero at g = 0 and is CREATED by the
+coupling in all three cells (4 channels created, 0 shared); at
+base 0 it sits exactly on the free-core ray form c.(I - sigma_x)
+with c = -1589/4500 — not a common-ray statement (the EXC side of
+that channel vanishes identically), but the sharpest
+interaction-generated structure the fixture exposes.
+
+**Therefore the ray-universality question remains UNDECIDED for
+interacting theories** — and it is now undecided for a NAMED
+reason: this fixture cannot decide it, because its grain destroys
+the collapse at g = 0. The successor is a fixture with the
+free-core's symmetry (translation-averaged / periodic, momentum or
+translation-covariant channels) at nonzero coupling; only there
+does the comparison carry interaction content.
+
+**SG4:** dps-50 as run with the full SG2 layer recomputed at
+dps 80 (agreement 1.88e-49); 75/75 delivered scalars recognized as
+exact rationals (max denominator 4,320,000); allow-list purity
+398 leaves / 0 impure; self-scan needles concatenated; 3 runs
+byte-identical. Deviations D1-D3 + the canonical-reference-channel
+rule are declared in-banner.

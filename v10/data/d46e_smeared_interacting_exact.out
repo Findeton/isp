@@ -1,0 +1,302 @@
+[d46e — the smeared interacting identification, with the g = 0 column]
+  banner: GREEN-UNREVIEWED — the hostile round is deferred per the D46
+  program pin (token budget); this receipt must not be cited as
+  review-hardened until its round converts (paper-32's round precedes
+  it).
+
+  PRECISION AS RUN: exact truncated-series arithmetic (the d43a/d44d
+  machinery, ported verbatim); mp.dps = 50 binary throughout the series
+  layer; gate threshold 1e-30; commutator dust drop 1e-45 (d43a-ported);
+  SG0 at ORD = 12 / L = 12 (the d44d SG0 code path); SG1/SG2/SG3 at
+  ORD = 4 / DIM = 16 (the d44d KG3 phase, EXACT truncation: a Delta^p
+  coefficient of series products/inverses depends only on input orders
+  <= p).  SG4 re-runs the whole SG2/SG3 layer at mp.dps = 80 and gates
+  every delivered constant to agree with the dps-50 run at 1e-30.
+  FLOAT ENTRY POINTS (enumerated): (1) the series layer is mpmath binary
+  at dps 50 / 80 — the fixture rationals (7/10, 1/2, 9/10, -2/5, 11/10,
+  1/5) are rounded on entry, hence every gate is a 1e-30 threshold and
+  never an mpf equality; (2) the recognition layer maps a dps-50 real to
+  a Fraction by bounded-denominator best approximation (cap 1e15,
+  accepted only at residual < 1e-30; census in SG4).  No others.
+  Deterministic: no RNG, no wall clock, no hash-ordered output (every
+  iteration is over an explicit list or a sorted key list; all dict keys
+  are ints/int-tuples).  Rerun byte-identical (SG4).
+
+  THE PIN'S QUESTION (note-d46e §1): at the free core BOTH admission
+  rules collapse, under the corpus's continuum identification, onto the
+  SAME tangential operator ray with rule-relative constants only.  At
+  the interacting fixture the RAW singleton-bracket comparison DIVERGES
+  — but D44d's round showed that divergence is GRAIN-INHERITED (present
+  at g = 0 too).  Does the SMEARED (identified-operator) comparison
+  collapse onto a common ray?  Every interacting cell below is printed
+  beside its own g = 0 twin from the same pipeline.
+
+  THE IDENTIFICATION AT THE INTERACTING FIXTURE (declared BEFORE any
+  verdict).  The corpus construction is the tau FIRST MOMENT
+    tau(delta, ch) = sum_{r in rs} r * sum_{entries in channel ch with
+                     displacement delta} [A(b), A(b+r)]_{uv},
+    D(ch) = sum_delta delta * tau(delta, ch)          (d43a/d44d/d45a),
+  ported with the two free-core structures replaced by their fixture
+  analogues, both declared here: (i) DISPLACEMENT — the free core reads
+  delta off the site index of the matrix entry; on the occupation basis
+  the analogue is the OCCUPATION DIPOLE displacement delta(u,v) =
+  X(v) - X(u), X(u) = sum_n n*u_n (a hop across one bond shifts X by
+  exactly 1, so this reduces to the free-core lattice displacement on
+  the one-particle sector); (ii) CHANNEL — the free core's channel is
+  the spinor pair (s, s') and the residual index i is SUMMED.  The
+  occupation basis has no site/spin factorization, so a FAMILY of
+  channel readings is pre-registered, coarse to fine, and EVERY one is
+  reported:
+    FULL — no summation at all (channel = the entry itself): the finest
+           reading, grading-free.  A collapse here implies a collapse in
+           every coarsening; a NON-collapse here does NOT imply one.
+    ROW / COL — sum over the column / row partner at fixed row / column
+           state (the 'dipole current' carried by each configuration).
+    PAR  — channel = (X(u) mod 2, X(v) mod 2), the staggered-sublattice
+           analogue of the free-core spinor pair: a 2x2 object directly
+           comparable to the free-core ray form c*(I - sigma_x).
+    SEC  — channel = the particle-number sector N (the block label of
+           the D44d KG3 extraction gate).
+  Cells: base b and separation set rs in {(b=0, rs=1,2,3), (b=0,
+  rs=1,2), (b=1, rs=1,2)}; the last is the d44d KG3 pair set
+  (R={1},S={2}) and (R={1},S={3}) exactly.  Regions are SINGLETONS.
+
+  RAY VERDICT CLASSES (pre-registered; all are delivered outcomes at
+  exit 0): COLLAPSE = D^LT = c * D^EXC over the whole channel set with
+  ONE constant c (relative deviation < 1e-30) — the free-core outcome;
+  STRUCTURED = proportional within every particle-number sector with
+  per-sector constants but not globally; SUPPORT-MISMATCH = one rule's
+  identified operator vanishes identically in that channel while the
+  other does not (no common ray is even definable); BOTH-ZERO = both
+  vanish; NO-COLLAPSE = neither.
+  The reported constant c is read off a CANONICAL reference channel —
+  the str-least channel attaining max |D^EXC| within relative 1e-25 —
+  because exact ties for that maximum occur here and a bare argmax
+  would make the printed number precision-dependent; the VERDICT CLASS
+  is reference-free (proportionality does not depend on which channel
+  normalizes it), and SG4-A gates the whole layer at dps 80.
+  A NO-COLLAPSE is a finding, not a failure — but per the D44d §5 B1
+  lesson it is meaningless without its
+  g = 0 twin, which is why SG3 separates GRAIN (what the g = 0 twin
+  already does) from the INTERACTION EFFECT (the computed difference).
+
+  DECLARED PIN DEVIATIONS (owned in-receipt): (D1) the fixture is a
+  4-site OPEN chain, so there is no translation average and no
+  completeness slot beyond r = 3 — the r-range is the full available
+  range at each base, and the three cells above are its full sweep;
+  (D2) the channel-reading FAMILY above is this receipt's construction —
+  the pin says 'the same tau first-moment construction', which fixes the
+  moment but not the fixture's channel analogue, so all five readings
+  are run and reported rather than one being privileged; (D3) ONE
+  interacting point (pin §3) and ONE collar convention (d44d A6) — the
+  three-convention robustness sweep is D44d's, not re-run here.
+
+[SG0 — free-core regression through the ported pipeline (ORD 12, L 12)]
+  [PASS] SG0-PF port fidelity: the region-collar builder == the singleton collar builder entrywise (lam = 1 and 1/2), exact
+  [PASS] SG0-A the EXC singleton A(1) (d44d AN1): diag 1/2 at n0, 1/4 at n0+-1, -1/4 spin-flip off-diagonals, same-spin zero, columns sum zero  (exact at 1e-30)
+  [PASS] SG0-B THE FREE-CORE RAY COLLAPSE re-run (d44d T5 / d45a YG1): both admission rules' identified operators land on the SAME ray (I - sigma_x) with rule-relative constants — EXC = 1, LT = kappa(m) with kappa(1/2) = 13/2304 and kappa(1) = -1/72 (sign flip); the committed signed tau channel tables reproduced; delta-odd in every channel of both rules; the d45a polynomial (9m^4 - 15m^2 + 4)/144 agrees at both anchors in EXACT Fraction arithmetic  (m=0.5: EXC D = 1*(I - sx) True; LT D = 13/2304*(I - sx) True; tau table True; delta-odd True; d45a poly True; m=1.0: EXC D = 1*(I - sx) True; LT D = -1/72*(I - sx) True; tau table True; delta-odd True; d45a poly True)
+  [SG0 NOTE] this is the behaviour the interacting cells below are compared against: ONE ray, TWO rule-relative constants.
+
+[SG1 — the interacting fixture, its extraction-validity gates, and the d44d KG3 re-anchor (ORD 4, DIM 16)]
+  fixture (d44d KG3, ported): the root validator's minimal interacting
+  gauge-matter occupation Hamiltonian, 4 sites, open chain, committed
+  point (m, g) = (7/10, 1/2), t = 1, lambda = (9/10, -2/5, 11/10, 1/5);
+  basis = the validator's particle_basis order (site 0 = MSB);
+  H = sum_n m*(-1)^n n_n - g * sum_n lambda_n * prod_{s<=n}(-1)^{n_s}
+      - t * sum_bonds hop.  Region collar (d44d A6): C_{n0} = the
+  site's mass term + the electric term of INDEX n0 + the hopping bonds
+  incident to n0; B = H - C.  The g = 0 twin is the SAME builder with
+  the coupling set to zero — one code path, two columns.
+  [PASS] SG1-A the interacting H is Hermitian (real symmetric) as built (d44d KG3-A)  (max dev 0.0)
+  [PASS] SG1-B the g = 0 twin is the SAME fixture with the coupling removed: the two Hamiltonians differ ONLY on the diagonal (the electric gauge-string term) and differ there by a computed nonzero amount — the twin is neither a copy nor a different model  (max diagonal deviation = 13/10; max off-diagonal deviation = 0.0)
+  raw bracket d=1 (R={1}, S={2}): DIVERGENT   |C^exc| = 2.0, |C^LT| = 0.88668056, off-N-block max = 0.0  [d44d re-anchor: True]
+    sector N=1: ref kappa = 0.019584375, rel dev = 0.963179
+    sector N=2: ref kappa = -0.07001388888888888888888889, rel dev = 0.921038
+    sector N=3: ref kappa = -0.2369545138888888888888889, rel dev = 1.21725
+  raw bracket d=2 (R={1}, S={3}): DIVERGENT   |C^exc| = 1.0, |C^LT| = 0.95269722, off-N-block max = 0.0  [d44d re-anchor: True]
+    sector N=1: ref kappa = -0.8534527777777777777777778, rel dev = 1.55642
+    sector N=2: ref kappa = 0.03526388888888888888888889, rel dev = 1.0
+    sector N=3: ref kappa = -0.8151972222222222222222222, rel dev = 1.44589
+  [PASS] SG1-C extraction validity (d44d KG3-B): sub-onset J orders vanish (EXC order 1; LT orders 1-3) and every leading coefficient is exactly particle-number-block-diagonal  (all below 1e-30)
+  [PASS] SG1-D the d44d KG3 RE-ANCHOR: both raw-bracket cells reproduce the committed verdict DIVERGENT with the committed bracket norms (|C^exc| = 2 and 1 exactly; |C^LT| = 0.88668056 and 0.95269722 at 1e-8) and all six committed per-sector reference constants (1e-20) and relative deviations (1e-5, the printed 6-significant-digit width)  (d=1: DIVERGENT; d=2: DIVERGENT)
+
+[SG2 — THE CORE: the corpus identification applied to the interacting one-region coefficients, both rules, g = 1/2 AND g = 0]
+  Per cell: the identified operator norms and the RAY verdict, interacting column then its g = 0 twin.
+  --- cell base b=0, separations r = 1,2,3 
+    FULL g=1/2: |D^EXC| =              6.0 (24 ch)  |D^LT| =          5.11875 (52 ch)  -> NO-COLLAPSE                c =        1856189/4320000  reldev = 1.10151
+         sector N=1: c =        -744131/4320000  reldev = 1.0
+         sector N=2: c =        1856189/4320000  reldev = 1.27993
+         sector N=3: c =          54989/4320000  reldev = 1.0
+    FULL g=0  : |D^EXC| =              6.0 (24 ch)  |D^LT| =         3.525625 (52 ch)  -> NO-COLLAPSE                c =        1738327/4320000  reldev = 1.30828
+         sector N=1: c =         288127/4320000  reldev = 1.0
+         sector N=2: c =        1738327/4320000  reldev = 1.45818
+         sector N=3: c =         288127/4320000  reldev = 1.0
+    ROW  g=1/2: |D^EXC| =              6.0 (12 ch)  |D^LT| =    3.61442916667 (14 ch)  -> NO-COLLAPSE                c =         867463/1440000  reldev = 0.829261
+         sector N=1: c =        1779469/4320000  reldev = 0.981529
+         sector N=2: c =         867463/1440000  reldev = 0.257402
+         sector N=3: c =        2242589/4320000  reldev = 0.608671
+    ROW  g=0  : |D^EXC| =              6.0 (12 ch)  |D^LT| =    3.34698194444 (14 ch)  -> NO-COLLAPSE                c =          204703/480000  reldev = 0.615272
+         sector N=1: c =        2409827/4320000  reldev = 0.497525
+         sector N=2: c =          204703/480000  reldev = 0.616799
+         sector N=3: c =        2409827/4320000  reldev = 0.497525
+    COL  g=1/2: |D^EXC| =              6.0 (12 ch)  |D^LT| =    4.41514652778 (14 ch)  -> NO-COLLAPSE                c =          -92993/160000  reldev = 1.26701
+         sector N=1: c =         664669/4320000  reldev = 1.12929
+         sector N=2: c =          -92993/160000  reldev = 1.45284
+         sector N=3: c =         455789/4320000  reldev = 1.07169
+    COL  g=0  : |D^EXC| =              6.0 (12 ch)  |D^LT| =    3.55588402778 (14 ch)  -> NO-COLLAPSE                c =          -86299/160000  reldev = 1.22571
+         sector N=1: c =        -587173/4320000  reldev = 0.885328
+         sector N=2: c =          -86299/160000  reldev = 1.34678
+         sector N=3: c =        -587173/4320000  reldev = 0.885328
+    PAR  g=1/2: |D^EXC| =              0.0 ( 0 ch)  |D^LT| =   0.353111111111 ( 4 ch)  -> SUPPORT-MISMATCH(EXC-zero) c =                      -  reldev = -
+    PAR  g=0  : |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+    SEC  g=1/2: |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+    SEC  g=0  : |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+  --- cell base b=0, separations r = 1,2 
+    FULL g=1/2: |D^EXC| =              6.0 (24 ch)  |D^LT| =    2.23695972222 (52 ch)  -> NO-COLLAPSE                c =         699389/4320000  reldev = 1.43424
+         sector N=1: c =         363469/4320000  reldev = 1.14253
+         sector N=2: c =         699389/4320000  reldev = 1.43424
+         sector N=3: c =        1162589/4320000  reldev = 1.57921
+    FULL g=0  : |D^EXC| =              6.0 (24 ch)  |D^LT| =         2.173125 (52 ch)  -> NO-COLLAPSE                c =        -225773/4320000  reldev = 1.0
+         sector N=1: c =         388627/4320000  reldev = 1.0
+         sector N=2: c =        -225773/4320000  reldev = 1.01177
+         sector N=3: c =         388627/4320000  reldev = 1.0
+    ROW  g=1/2: |D^EXC| =              6.0 (12 ch)  |D^LT| =        2.7015125 (14 ch)  -> NO-COLLAPSE                c =          216121/480000  reldev = 1.02602
+         sector N=1: c =         534619/4320000  reldev = 0.750116
+         sector N=2: c =          216121/480000  reldev = 1.02602
+         sector N=3: c =         997739/4320000  reldev = 0.723663
+    ROW  g=0  : |D^EXC| =              6.0 (12 ch)  |D^LT| =        2.5587875 (14 ch)  -> NO-COLLAPSE                c =          204703/480000  reldev = 0.600328
+         sector N=1: c =        1115477/4320000  reldev = 0.571074
+         sector N=2: c =          204703/480000  reldev = 0.600328
+         sector N=3: c =        1115477/4320000  reldev = 0.571074
+    COL  g=1/2: |D^EXC| =              6.0 (12 ch)  |D^LT| =    2.85341805556 (14 ch)  -> NO-COLLAPSE                c =        -680437/1440000  reldev = 0.278058
+         sector N=1: c =       -1845581/4320000  reldev = 0.245736
+         sector N=2: c =        -680437/1440000  reldev = 0.27985
+         sector N=3: c =       -2054461/4320000  reldev = 0.180887
+    COL  g=0  : |D^EXC| =              6.0 (12 ch)  |D^LT| =    3.61322638889 (14 ch)  -> NO-COLLAPSE                c =          -86299/160000  reldev = 0.342338
+         sector N=1: c =       -2601523/4320000  reldev = 0.290167
+         sector N=2: c =          -86299/160000  reldev = 0.38222
+         sector N=3: c =       -2601523/4320000  reldev = 0.290167
+    PAR  g=1/2: |D^EXC| =              0.0 ( 0 ch)  |D^LT| =   0.353111111111 ( 4 ch)  -> SUPPORT-MISMATCH(EXC-zero) c =                      -  reldev = -
+    PAR  g=0  : |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+    SEC  g=1/2: |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+    SEC  g=0  : |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+  --- cell base b=1, separations r = 1,2 (= the d44d KG3 pair set R={1},S={2} and R={1},S={3})
+    FULL g=1/2: |D^EXC| =              6.0 (40 ch)  |D^LT| =    2.60524583333 (50 ch)  -> NO-COLLAPSE                c =       -1175441/4320000  reldev = 0.987837
+         sector N=1: c =       -1175441/4320000  reldev = 1.13368
+         sector N=2: c =         290083/4320000  reldev = 0.931821
+         sector N=3: c =           42247/480000  reldev = 1.2027
+    FULL g=0  : |D^EXC| =              6.0 (40 ch)  |D^LT| =    1.90275902778 (50 ch)  -> NO-COLLAPSE                c =        -180973/4320000  reldev = 0.933951
+         sector N=1: c =        -180973/4320000  reldev = 0.933951
+         sector N=2: c =        -124573/4320000  reldev = 1.03095
+         sector N=3: c =         -53773/4320000  reldev = 0.980375
+    ROW  g=1/2: |D^EXC| =              5.0 (14 ch)  |D^LT| =    2.94875416667 (14 ch)  -> NO-COLLAPSE                c =        -177167/3600000  reldev = 1.06676
+         sector N=1: c =        -230591/3600000  reldev = 1.03045
+         sector N=2: c =          707701/960000  reldev = 0.96807
+         sector N=3: c =        -177167/3600000  reldev = 1.01714
+    ROW  g=0  : |D^EXC| =              5.0 (14 ch)  |D^LT| =    2.20919166667 (14 ch)  -> NO-COLLAPSE                c =         416089/1440000  reldev = 0.770682
+         sector N=1: c =         416089/1440000  reldev = 0.85491
+         sector N=2: c =          265103/480000  reldev = 1.2475
+         sector N=3: c =         416089/1440000  reldev = 0.85491
+    COL  g=1/2: |D^EXC| =              5.0 (14 ch)  |D^LT| =    2.82624583333 (14 ch)  -> NO-COLLAPSE                c =       -1780367/3600000  reldev = 0.742345
+         sector N=1: c =       -1564991/3600000  reldev = 0.744683
+         sector N=2: c =         -678299/960000  reldev = 0.327618
+         sector N=3: c =       -1780367/3600000  reldev = 0.809247
+    COL  g=0  : |D^EXC| =              5.0 (14 ch)  |D^LT| =    3.41857986111 (14 ch)  -> NO-COLLAPSE                c =        -984551/1440000  reldev = 0.146674
+         sector N=1: c =        -984551/1440000  reldev = 0.146674
+         sector N=2: c =         -119499/160000  reldev = 0.252396
+         sector N=3: c =        -984551/1440000  reldev = 0.146674
+    PAR  g=1/2: |D^EXC| =              0.0 ( 0 ch)  |D^LT| =   0.933333333333 ( 4 ch)  -> SUPPORT-MISMATCH(EXC-zero) c =                      -  reldev = -
+    PAR  g=0  : |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+    SEC  g=1/2: |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+    SEC  g=0  : |D^EXC| =              0.0 ( 0 ch)  |D^LT| =              0.0 ( 0 ch)  -> BOTH-ZERO                  c =                      -  reldev = -
+  The PAR channel object entrywise (the 2x2 directly comparable to the free-core ray form c*(I - sigma_x)):
+    b=0 r<=3 EXC g=1/2: (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=0 r<=3 LT  g=1/2: (0,0) = -1589/4500  (0,1) = 1589/4500  (1,0) = 1589/4500  (1,1) = -1589/4500   on the free-core ray: YES, c = -1589/4500
+    b=0 r<=3 EXC g=0  : (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=0 r<=3 LT  g=0  : (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=0 r<=2 EXC g=1/2: (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=0 r<=2 LT  g=1/2: (0,0) = -1589/4500  (0,1) = 1589/4500  (1,0) = 1589/4500  (1,1) = -1589/4500   on the free-core ray: YES, c = -1589/4500
+    b=0 r<=2 EXC g=0  : (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=0 r<=2 LT  g=0  : (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=1 r<=2 EXC g=1/2: (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=1 r<=2 LT  g=1/2: (0,0) = 511/1125  (0,1) = -1561/2250  (1,0) = -1561/2250  (1,1) = 14/15   on the free-core ray: no
+    b=1 r<=2 EXC g=0  : (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+    b=1 r<=2 LT  g=0  : (0,0) = 0  (0,1) = 0  (1,0) = 0  (1,1) = 0   on the free-core ray: no
+  [PASS] SG2-A the sweep is complete and every verdict is drawn from the pre-registered class list, each carrying either a computed relative deviation or an explicit support statement (3 cells x 5 channel readings x 2 couplings)  (30 (cell, reading, coupling) evaluations; 60 identified operators)
+  [PASS] SG2-B the ZERO-SUM LEMMA, gated: every leading region coefficient has vanishing row AND column sums (Gamma(U) = |U|^2 is doubly stochastic for unitary U, so its order-p>0 coefficients annihilate the all-ones vector on both sides) — therefore any FULLY summed first moment vanishes identically, and the SEC reading is BOTH-ZERO at every cell and both couplings by structure, not by accident  (max row/col sum over all 32 coefficients = 3.74e-50; SEC BOTH-ZERO at all 6 (cell, coupling) pairs)
+  [PASS] SG2-C channel-coarsening consistency: each coarser reading equals the exact fiber sum of the FULL reading (the identification is linear in the channel partition — a binning-integrity gate over all cells, rules and couplings)  (max deviation = 1.28e-49)
+  [PASS] SG2-D reality: every identified operator entry is real (the free-core D-reality property survives to the interacting fixture)  (max |Im| = 0.0)
+  [SG2 CENSUS] over the 30 (cell, reading, coupling) evaluations: COLLAPSE 0; STRUCTURED 0; NO-COLLAPSE 18; SUPPORT-MISMATCH 3; BOTH-ZERO 9.
+  [SG2 VERDICT] NO COMMON RAY at the interacting fixture under ANY reading of the channel family: in the three discriminating readings (FULL, ROW, COL) the two admission rules' identified operators are NOT proportional — not globally (relative deviations 0.146674 to 1.43424, gate 1e-30) and not even per particle-number sector, so the verdict is NO-COLLAPSE and not STRUCTURED; the SEC reading is annihilated by the zero-sum lemma (SG2-B) and carries no discrimination; the PAR reading has an identically zero EXC side, so no common ray is definable there.
+
+[SG3 — the g = 0 column: GRAIN (shared with g = 0) separated from the INTERACTION EFFECT (the computed difference)]
+  For every identified operator: the interaction increment Delta = D(g=1/2) - D(g=0) is computed channel by channel over the union of supports and its census printed — SHARED channels (|Delta| < 1e-30) are GRAIN, MOVED channels are the INTERACTION EFFECT, split into CREATED (zero at g = 0, nonzero at g = 1/2), DESTROYED (the reverse) and SHIFTED (nonzero on both sides, different).
+  --- cell b=0 r<=3
+    FULL EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 2.138211768e-50  |Delta|/|D(0)| = 3.5636863e-51   channels: 24 = GRAIN(shared) 24 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    FULL LT : |D(g)| =         5.11875  |D(0)| =        3.525625  |Delta| =        2.990625  |Delta|/|D(0)| =   0.84825386   channels: 52 = GRAIN(shared)  2 + INTERACTION(moved) 50 [created 0, destroyed 0, shifted 50]
+    ROW  EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 3.207317652e-50  |Delta|/|D(0)| = 5.3455294e-51   channels: 12 = GRAIN(shared) 12 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    ROW  LT : |D(g)| =     3.614429167  |D(0)| =     3.346981944  |Delta| =     1.253290278  |Delta|/|D(0)| =   0.37445385   channels: 14 = GRAIN(shared)  0 + INTERACTION(moved) 14 [created 0, destroyed 0, shifted 14]
+    COL  EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 3.207317652e-50  |Delta|/|D(0)| = 5.3455294e-51   channels: 12 = GRAIN(shared) 12 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    COL  LT : |D(g)| =     4.415146528  |D(0)| =     3.555884028  |Delta| =     2.319348611  |Delta|/|D(0)| =   0.65225654   channels: 14 = GRAIN(shared)  0 + INTERACTION(moved) 14 [created 0, destroyed 0, shifted 14]
+    PAR  EXC: |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    PAR  LT : |D(g)| =    0.3531111111  |D(0)| =             0.0  |Delta| =    0.3531111111  |Delta|/|D(0)| =            -   channels:  4 = GRAIN(shared)  0 + INTERACTION(moved)  4 [created 4, destroyed 0, shifted 0]
+    SEC  EXC: |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    SEC  LT : |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+  --- cell b=0 r<=2
+    FULL EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 2.138211768e-50  |Delta|/|D(0)| = 3.5636863e-51   channels: 24 = GRAIN(shared) 24 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    FULL LT : |D(g)| =     2.236959722  |D(0)| =        2.173125  |Delta| =     1.284947222  |Delta|/|D(0)| =   0.59129006   channels: 52 = GRAIN(shared)  2 + INTERACTION(moved) 50 [created 0, destroyed 0, shifted 50]
+    ROW  EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 3.207317652e-50  |Delta|/|D(0)| = 5.3455294e-51   channels: 12 = GRAIN(shared) 12 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    ROW  LT : |D(g)| =       2.7015125  |D(0)| =       2.5587875  |Delta| =     1.164331944  |Delta|/|D(0)| =   0.45503268   channels: 14 = GRAIN(shared)  0 + INTERACTION(moved) 14 [created 0, destroyed 0, shifted 14]
+    COL  EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 3.207317652e-50  |Delta|/|D(0)| = 5.3455294e-51   channels: 12 = GRAIN(shared) 12 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    COL  LT : |D(g)| =     2.853418056  |D(0)| =     3.613226389  |Delta| =     1.567473611  |Delta|/|D(0)| =    0.4338155   channels: 14 = GRAIN(shared)  0 + INTERACTION(moved) 14 [created 0, destroyed 0, shifted 14]
+    PAR  EXC: |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    PAR  LT : |D(g)| =    0.3531111111  |D(0)| =             0.0  |Delta| =    0.3531111111  |Delta|/|D(0)| =            -   channels:  4 = GRAIN(shared)  0 + INTERACTION(moved)  4 [created 4, destroyed 0, shifted 0]
+    SEC  EXC: |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    SEC  LT : |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+  --- cell b=1 r<=2
+    FULL EXC: |D(g)| =             6.0  |D(0)| =             6.0  |Delta| = 2.138211768e-50  |Delta|/|D(0)| = 3.5636863e-51   channels: 40 = GRAIN(shared) 40 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    FULL LT : |D(g)| =     2.605245833  |D(0)| =     1.902759028  |Delta| =     2.353894444  |Delta|/|D(0)| =    1.2370954   channels: 50 = GRAIN(shared)  0 + INTERACTION(moved) 50 [created 0, destroyed 0, shifted 50]
+    ROW  EXC: |D(g)| =             5.0  |D(0)| =             5.0  |Delta| = 3.207317652e-50  |Delta|/|D(0)| = 6.4146353e-51   channels: 14 = GRAIN(shared) 14 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    ROW  LT : |D(g)| =     2.948754167  |D(0)| =     2.209191667  |Delta| =     2.297780556  |Delta|/|D(0)| =    1.0401001   channels: 14 = GRAIN(shared)  0 + INTERACTION(moved) 14 [created 0, destroyed 0, shifted 14]
+    COL  EXC: |D(g)| =             5.0  |D(0)| =             5.0  |Delta| = 3.207317652e-50  |Delta|/|D(0)| = 6.4146353e-51   channels: 14 = GRAIN(shared) 14 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    COL  LT : |D(g)| =     2.826245833  |D(0)| =     3.418579861  |Delta| =     1.977219444  |Delta|/|D(0)| =   0.57837451   channels: 14 = GRAIN(shared)  0 + INTERACTION(moved) 14 [created 0, destroyed 0, shifted 14]
+    PAR  EXC: |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    PAR  LT : |D(g)| =    0.9333333333  |D(0)| =             0.0  |Delta| =    0.9333333333  |Delta|/|D(0)| =            -   channels:  4 = GRAIN(shared)  0 + INTERACTION(moved)  4 [created 4, destroyed 0, shifted 0]
+    SEC  EXC: |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+    SEC  LT : |D(g)| =             0.0  |D(0)| =             0.0  |Delta| =             0.0  |Delta|/|D(0)| =            -   channels:  0 = GRAIN(shared)  0 + INTERACTION(moved)  0 [created 0, destroyed 0, shifted 0]
+  [PASS] SG3-A the grain/interaction partition is exhaustive and disjoint at every (cell, reading, rule): SHARED + MOVED = the support union, CREATED + DESTROYED <= MOVED — and the interaction is VISIBLE (the total moved-channel count is nonzero, so the g = 0 column is a real control and not a copy of the interacting one)  (30 (cell, reading, rule) partitions; total moved channels = 246)
+  Verdict-level twin relation (the SG2 class and constant at g = 1/2 beside the g = 0 twin):
+    b=0 r<=3 FULL: g=1/2 NO-COLLAPSE                c =        1856189/4320000 | g=0 NO-COLLAPSE                c =        1738327/4320000 | delta c =          58931/2160000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=0 r<=3 ROW : g=1/2 NO-COLLAPSE                c =         867463/1440000 | g=0 NO-COLLAPSE                c =          204703/480000 | delta c =          126677/720000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=0 r<=3 COL : g=1/2 NO-COLLAPSE                c =          -92993/160000 | g=0 NO-COLLAPSE                c =          -86299/160000 | delta c =            -3347/80000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=0 r<=3 PAR : g=1/2 SUPPORT-MISMATCH(EXC-zero) c =                      - | g=0 BOTH-ZERO                  c =                      - | delta c =                      - | INTERACTION-SPECIFIC (BOTH-ZERO -> SUPPORT-MISMATCH(EXC-zero))
+    b=0 r<=3 SEC : g=1/2 BOTH-ZERO                  c =                      - | g=0 BOTH-ZERO                  c =                      - | delta c =                      - | GRAIN (class shared; no ray constant is defined)
+    b=0 r<=2 FULL: g=1/2 NO-COLLAPSE                c =         699389/4320000 | g=0 NO-COLLAPSE                c =        -225773/4320000 | delta c =         462581/2160000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=0 r<=2 ROW : g=1/2 NO-COLLAPSE                c =          216121/480000 | g=0 NO-COLLAPSE                c =          204703/480000 | delta c =             1903/80000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=0 r<=2 COL : g=1/2 NO-COLLAPSE                c =        -680437/1440000 | g=0 NO-COLLAPSE                c =          -86299/160000 | delta c =           48127/720000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=0 r<=2 PAR : g=1/2 SUPPORT-MISMATCH(EXC-zero) c =                      - | g=0 BOTH-ZERO                  c =                      - | delta c =                      - | INTERACTION-SPECIFIC (BOTH-ZERO -> SUPPORT-MISMATCH(EXC-zero))
+    b=0 r<=2 SEC : g=1/2 BOTH-ZERO                  c =                      - | g=0 BOTH-ZERO                  c =                      - | delta c =                      - | GRAIN (class shared; no ray constant is defined)
+    b=1 r<=2 FULL: g=1/2 NO-COLLAPSE                c =       -1175441/4320000 | g=0 NO-COLLAPSE                c =        -180973/4320000 | delta c =        -248617/1080000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=1 r<=2 ROW : g=1/2 NO-COLLAPSE                c =        -177167/3600000 | g=0 NO-COLLAPSE                c =         416089/1440000 | delta c =         -270531/800000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=1 r<=2 COL : g=1/2 NO-COLLAPSE                c =       -1780367/3600000 | g=0 NO-COLLAPSE                c =        -984551/1440000 | delta c =         454007/2400000 | GRAIN class, CONSTANT SHIFTED by the interaction
+    b=1 r<=2 PAR : g=1/2 SUPPORT-MISMATCH(EXC-zero) c =                      - | g=0 BOTH-ZERO                  c =                      - | delta c =                      - | INTERACTION-SPECIFIC (BOTH-ZERO -> SUPPORT-MISMATCH(EXC-zero))
+    b=1 r<=2 SEC : g=1/2 BOTH-ZERO                  c =                      - | g=0 BOTH-ZERO                  c =                      - | delta c =                      - | GRAIN (class shared; no ray constant is defined)
+  [PASS] SG3-B every (cell, reading) pair carries a twin label re-derived from the stored constants (a label says 'constant shared' iff the recomputed difference is below 1e-30, and says GRAIN iff the two verdict classes are literally equal)  (15 labelled (cell, reading) pairs)
+  [SG3 CENSUS] 12/15 (cell, reading) pairs share their verdict CLASS with the g = 0 twin (9 of them with a constant the interaction shifts); 3/15 are INTERACTION-SPECIFIC. In the three discriminating readings (FULL/ROW/COL) 9/9 share the class; the PAR reading contributes 3 interaction-specific pairs.
+  [PASS] SG3-C the EXC COLUMN IS COUPLING-BLIND, gated: the EXC leading (Delta^2) region coefficient is entrywise IDENTICAL at g = 1/2 and g = 0, hence so is every EXC identified operator in every reading. Mechanism (exact, order by order): Gamma = |U|^2, so at Delta^2 the off-diagonal entry is |H_ij|^2 and the diagonal entry is -sum_{k != i} |H_ik|^2 — the diagonal of H (which is where the electric gauge-string term and ONLY it lives in this fixture, SG1-B) cancels out of the modulus at this order. The interaction therefore enters the ray comparison ONLY through the LT side  (max coefficient deviation = 8.02e-51; max identified-operator deviation = 3.21e-50)
+  [SG3 VERDICT] the D44d §5 B1 lesson holds at the IDENTIFIED-operator level too: the failure to collapse is GRAIN, not interaction. In all 9 discriminating (cell, reading) pairs the g = 0 twin is NO-COLLAPSE exactly as the interacting cell is; what the interaction changes there is only the reference constant (9/9 constants shifted, every shift printed above as an exact rational). The one genuinely INTERACTION-SPECIFIC structure in the whole sweep is the PAR channel: the staggered-parity content of the LT identified operator is IDENTICALLY ZERO at g = 0 and is CREATED by the coupling in all 3 cells (4 channels created per cell, zero shared) — and at base b = 0 that created content lies EXACTLY on the free-core ray form c*(I - sigma_x) with c = -1589/4500, while at b = 1 it does not (511/1125, -1561/2250, -1561/2250, 14/15 — symmetric but not proportional to I - sigma_x). It is NOT a common-ray statement: the EXC side of that channel vanishes identically (SG3-C), so only one of the two admission rules has an operator there.
+
+[SG4 — precision as run, determinism, purity, self-scan]
+  mp.dps as run = 50 for every number above; gate threshold 1e-30; commutator dust drop 1e-45; free-core phase ORD 12 / L 12; interacting phase ORD 4 / DIM 16.
+  [PASS] SG4-A precision stability: the ENTIRE SG2 layer recomputed at mp.dps = 80 reproduces every identified-operator entry, every ray constant and every verdict class of the dps-50 run — the delivered numbers are not precision artefacts  (max deviation across all 60 operators and 30 verdicts = 1.88e-49 (gate 1e-30); verdict classes identical: True)
+  [PASS] SG4-B exactness of the delivered scalars: every ray constant, every interaction shift delta c and every PAR-channel entry printed above is recognized as an EXACT rational at residual < 1e-30 (bounded-denominator best approximation, cap 1e15) — the fixture is rational and the identification is a finite integer-weighted sum, so these are exact values, not decimals  (75/75 recognized; max residual = 1.88e-49; max denominator = 4320000 (cap 1000000000000000))
+  [PASS] SG4-C the ALLOW-LIST PURITY WALK (#362 form) over the delivered exact layer (every verdict class, twin label, recognized ray constant, interaction shift, PAR entry and census count): every leaf is Fraction / int / str / bool / None — no float, no mpf, no Decimal, no numpy scalar survives into the delivered exact record; the mpmath series layer is a DECLARED float entry point (banner) and is deliberately not in this walk  (leaves = 398; impure = 0)
+  [PASS] SG4-D self-scan: no vacuous gate anywhere in this receipt — the forbidden always-true check patterns (built here by string concatenation so the scan cannot match itself) have ZERO source occurrences, and every check above carries a predicate computed from the run  (occurrences across 4 needles = 0; source length = 60342 bytes)
+  [PASS] SG4-E determinism: no RNG is loaded, no wall clock is read, and no output ordering depends on hash randomization (every dict key is an int or a tuple of ints, and every printed iteration runs over an explicit list or a str-sorted key list) — rerun byte-identical under any PYTHONHASHSEED  ('random' loaded: False; modules touched by this receipt: mpmath, fractions, sys, os)
+
+[SUMMARY] 19 PASS / 0 FAIL
+[SG0 VERDICT] the free core, re-run through this receipt's pipeline: ONE ray, TWO rule-relative constants — EXC D = 1*(I - sigma_x), LT D = kappa(m)*(I - sigma_x), kappa(1/2) = 13/2304, kappa(1) = -1/72, the d45a polynomial agreeing at both anchors in exact Fraction arithmetic.
+[SG1 VERDICT] the d44d KG3 interacting fixture and its extraction-validity gates are re-anchored exactly: d=1: DIVERGENT, d=2: DIVERGENT at the raw-bracket level, with the committed bracket norms and all six committed per-sector reference constants reproduced.
+[SG2 VERDICT] NO COMMON RAY at the interacting fixture under ANY reading of the channel family: in the three discriminating readings (FULL, ROW, COL) the two admission rules' identified operators are NOT proportional — not globally (relative deviations 0.146674 to 1.43424, gate 1e-30) and not even per particle-number sector, so the verdict is NO-COLLAPSE and not STRUCTURED; the SEC reading is annihilated by the zero-sum lemma (SG2-B) and carries no discrimination; the PAR reading has an identically zero EXC side, so no common ray is definable there.
+[SG3 VERDICT] the D44d §5 B1 lesson holds at the IDENTIFIED-operator level too: the failure to collapse is GRAIN, not interaction. In all 9 discriminating (cell, reading) pairs the g = 0 twin is NO-COLLAPSE exactly as the interacting cell is; what the interaction changes there is only the reference constant (9/9 constants shifted, every shift printed above as an exact rational). The one genuinely INTERACTION-SPECIFIC structure in the whole sweep is the PAR channel: the staggered-parity content of the LT identified operator is IDENTICALLY ZERO at g = 0 and is CREATED by the coupling in all 3 cells (4 channels created per cell, zero shared) — and at base b = 0 that created content lies EXACTLY on the free-core ray form c*(I - sigma_x) with c = -1589/4500, while at b = 1 it does not (511/1125, -1561/2250, -1561/2250, 14/15 — symmetric but not proportional to I - sigma_x). It is NOT a common-ray statement: the EXC side of that channel vanishes identically (SG3-C), so only one of the two admission rules has an operator there.
+[VERDICT] d46e GREEN-UNREVIEWED (the hostile round is deferred per the D46 program pin; paper-32's round precedes it) — THE PIN'S QUESTION IS ANSWERED IN THE NEGATIVE, AND THE ANSWER IS GRAIN, NOT INTERACTION. Smearing does NOT rescue the ray at the interacting fixture: applying the corpus's own tau first-moment identification (D = sum_delta delta*tau) to the interacting one-region coefficients leaves the two admission rules' identified operators non-proportional in every discriminating reading of the pre-registered channel family, globally AND per particle-number sector, at relative deviations of order 1 against a 1e-30 gate — so the free core's collapse (SG0) does not survive to this fixture in any form the identification can see. BUT the g = 0 column, which this unit exists to carry, shows the SAME NO-COLLAPSE at zero coupling in all 9 discriminating (cell, reading) pairs: the failure is a property of the fixture's GRAIN (4-site open chain, occupation basis, no translation average), exactly as D44d's round found for the raw bracket, and it is NOT an interaction effect. What the interaction actually does is measured, not narrated: (i) it leaves the ENTIRE EXC column invariant — the Delta^2 coefficient is exactly blind to the diagonal of H, which is where the electric gauge-string term and only it lives, so the coupling reaches the comparison solely through the LT side (SG3-C); (ii) it shifts every one of the 9 reference constants by an exact rational, all printed; (iii) it CREATES, out of nothing, the staggered-parity (PAR) content of the LT identified operator — identically zero at g = 0 in all three cells, four channels created in each — and at base b = 0 that created content sits EXACTLY on the free-core ray form c*(I - sigma_x) with c = -1589/4500, though at b = 1 it does not, and in neither case is it a common-ray statement because the EXC side of that channel vanishes identically. SCOPE, stated flatly: one interacting point, one collar convention, singleton regions, three base/separation cells, five channel readings, ORD 4 — a fixture-scale statement about the identified operator, never a theorem about interacting theories; and the negative result is reading-relative in exactly the way SG2's family makes auditable (a collapse under the FULL reading would have implied one under every coarsening; the converse does not hold, and the SEC coarsening is annihilated outright by the zero-sum lemma). The successor question this leaves on the ladder: a fixture whose grain ADMITS the free-core collapse at g = 0 — i.e. one with the translation average the identification was built on — is what would make the interacting comparison discriminating at all.

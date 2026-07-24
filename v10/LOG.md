@@ -7585,3 +7585,41 @@ with a firing trip control, determinism by reversed-traversal hash,
 concatenated needles. Note §4 records the deviations (stronger
 outcomes; PROBE-DD; the vacuous second control kept as a printed
 declaration). Ladder: a, b, c, d, f done; e in flight.
+
+## 2026-07-19 — D46e GREEN-UNREVIEWED 19/19 (LEDGER #389): THE
+## INTERACTING FAILURE IS GRAIN, NOT INTERACTION — THE LADDER'S
+## LAST STEP CLOSES
+Verified pre-commit: rerun exit 0 BYTE-IDENTICAL; 19 PASS / 0 FAIL;
+25 s; 3 runs byte-identical. SG0/SG1: the free-core ray collapse
+and d44d's KG3 anchors re-run exactly through the ported pipeline.
+SG2: 3 cells x 5 channel readings x 2 couplings = 30 evaluations,
+60 identified operators — COLLAPSE 0, STRUCTURED 0, NO-COLLAPSE
+18, SUPPORT-MISMATCH 3, BOTH-ZERO 9 (deviations 0.147-1.434 vs a
+1e-30 gate; no per-sector proportionality either). **SG3 THE
+VERDICT: THE FAILURE IS GRAIN, NOT INTERACTION — all 9
+discriminating cells are NO-COLLAPSE AT g = 0 TOO**; the fixture's
+grain (4-site open chain, occupation basis, no translation
+average) destroys the collapse before any coupling is switched on
+— D44d's #352 lesson reproduced one level up, at the
+identified-OPERATOR level. STRUCTURAL: the EXC column is EXACTLY
+coupling-blind (gated 8e-51 — the Delta^2 coefficient cannot see
+H's diagonal, where the electric gauge-string term lives), so g
+reaches the comparison ONLY through LT. Measured interaction
+effect: 9/9 constants shifted by exact rationals, 246 moved
+channels, per-cell censuses printed as union = SHARED(grain) +
+MOVED(interaction). THE ONE INTERACTION-SPECIFIC STRUCTURE: the
+staggered-parity content of the LT operator is identically zero at
+g = 0 and is CREATED by the coupling in all three cells; at base 0
+it sits exactly on the free-core ray form c.(I - sigma_x) with
+c = -1589/4500 (not a common-ray statement — the EXC side
+vanishes identically). CONSEQUENCE: ray-universality under
+interaction remains UNDECIDED, now for a NAMED reason — this
+fixture cannot decide it; the successor is a
+translation-covariant/periodic interacting fixture with
+momentum-type channels, where the comparison would carry
+interaction content. SG4: dps-50 as run cross-checked at dps 80
+(1.88e-49), 75/75 scalars exact rationals, purity 398/0, needles
+concatenated. Note §4. **THE D46 LADDER IS COMPLETE: a, b, c, d,
+e, f all delivered GREEN-UNREVIEWED; g and h discharged. THE
+REVIEW BUDGET NOW REOPENS — paper-32's round FIRST, per the
+standing order.**
