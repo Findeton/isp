@@ -142,3 +142,60 @@ DECIDED OUTRIGHT AT d42a SCOPE. THIS CLAIM IS GREEN-UNREVIEWED:
 it must not be cited as review-hardened until the D46a round (after
 paper-32's) converts; transport scope remains open (D46b)
 regardless.
+
+## 6. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d46ac-round1-hostile-review.md: REVISE, 2B/4M/6m/1n).
+## §5's ASSEMBLY IS RETIRED — see B1/B2 below; §5 stands only as
+## the superseded first attempt.
+
+**B1 (BLOCKER A1 — the assembly was INVALID; owned).** §5 claimed
+that two structural facts — (i) cone-locality and (ii) the
+abstract-update law — suffice to discharge H1. They do not. (i)
+gives only menu(h, a) = menu(own-sub-history, a); (ii) gives only
+sigma -> tau. NEITHER gives the second arrow tau -> menus, which
+is an UNDECLARED THIRD CONDITIONAL. The referee machine-checked
+the gap: a mutant swapping the layer's weight for a different
+CONE-LOCAL weight leaves LG1a/b/c, LG2a, LG3a/b passing while
+LG2b/LG2c FAIL — so (i) + (ii) do not entail H1. §5's closing
+sentence "RESIDUE 1 DECIDED OUTRIGHT AT d42a SCOPE" is WITHDRAWN.
+
+**B2 (BLOCKER A2 — (H0) was silently dropped).** D44a §8's
+hypothesis is the conjunction (H0) + (H1) + (H2); §5 listed two
+conditionals and lost (H0). The honest hypothesis set after this
+round is (H0) + (ii) + (the tau -> menus arrow) — still THREE,
+none discharged.
+
+**B3 (MAJOR A3 — "H2 SUBSUMED" was inverted).** The abstract-update
+law (ii) IS H2; it is not a consequence of H1, exactly as D44a §8
+states. The claim that one joint closure carries both hypotheses
+is withdrawn.
+
+**B4 (MAJOR A4 — tau is NOT an own-view object; the pin's target
+is REFUTED).** The MENU-VIEW (A1) strictly exceeds the actor's own
+(noop) cone on 1,016 of 12,942 histories (7.9%), and in ALL 1,016
+the extra events are OPPONENT-AUTHORED — precisely the "join-view
+data the actor cannot see" that A1 itself cited from d42b3 G-T1.
+Moreover 104 of 2,224 own-view classes carry DIFFERENT menus. So
+pin §2's target ("prove tau_a(h) is a function of sigma(h) with
+tau an OWN-VIEW abstraction") is refuted as stated: the object
+that works is not an own-view object. These counts are now gated
+in-receipt.
+
+**B5 (A5/A6 — gate hygiene).** LG2a is a tautology of sub_of's
+definition (relabelled/replaced, and A1's design choice given its
+missing control); three "independent anchors" were injectivity
+restated (relabelled).
+
+**B6 — WHAT SURVIVES, exactly.** The MECHANICAL CORE stands and is
+independently confirmed: the joint (sigma, tau_A, tau_B) closure
+at 36 states / 176 edges with the D44a spectrum; the INJECTIVE
+projection onto sigma (tau constant on sigma) with zero exceptions
+over 179,783 histories; menu factorization through tau (436,316
+comparisons); cone-locality confirmed a GENUINE code-reading
+theorem; the menu view idempotent (0/12,942); all eight cited D44a
+anchors verbatim; byte-identical rerun. **What does NOT survive is
+the ASSEMBLY**: H1 is NOT discharged, and residue 1 remains
+DECIDED AT EVERY VERIFIED DEPTH (D44a #368) — exactly where paper
+32 left it — with the H1 gap open and now SHARPER: the missing
+piece is the tau -> menus arrow at all depths, plus (H0), plus
+(ii). Forward-corrected at LOG #394.

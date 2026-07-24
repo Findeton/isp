@@ -7759,3 +7759,58 @@ any interruption:
    transport scope.
 Standing user decisions unaffected: the publication route for
 papers 30/31/32 (all terminal).
+
+## 2026-07-19 — (D46a + D46c) ROUND 1: REVISE / REVISE (LEDGER
+## #394); TWO BLOCKERS EACH-SIDE, ONE POSITIVE REVERSAL;
+## FORWARD-CORRECTIONS of #380 and #382
+The batched round (frozen: reviews/d46ac-round1-hostile-review.md,
+712 lines).
+**D46a — REVISE (2B/4M/6m/1n). THE MECHANICAL CORE STANDS; THE
+ASSEMBLY DOES NOT.** (A1, BLOCKER) my §5 assembly was INVALID:
+cone-locality + the abstract-update law do NOT entail H1 — they
+give menu(h,a) = menu(sub,a) and sigma -> tau, but NOT the
+tau -> menus arrow, an undeclared THIRD conditional; the referee
+machine-checked the gap with a cone-local weight-swap mutant that
+leaves seven gates passing while LG2b/LG2c fail. (A2, BLOCKER)
+(H0) was silently dropped from D44a §8's conjunction. (A3) "H2
+SUBSUMED" is INVERTED — the abstract-update law IS H2. (A4) tau is
+NOT an own-view object: the menu view strictly exceeds the actor's
+noop cone on 1,016/12,942 histories (7.9%), the extra events
+OPPONENT-AUTHORED in all 1,016 (the very join-view data the pin
+cited as invisible), and 104/2,224 own-view classes carry
+different menus — pin §2's target REFUTED as stated. (A5/A6) gate
+tautologies relabelled.
+**FORWARD-CORRECTION of #380: its sentence "RESIDUE 1 DECIDED
+OUTRIGHT AT d42a SCOPE" (conditional on two structural facts) is
+WITHDRAWN. Residue 1 stands exactly where D44a #368 and paper 32
+put it — DECIDED AT EVERY VERIFIED DEPTH — with H1 open and now
+SHARPER: the missing piece is the tau -> menus arrow at all
+depths, plus (H0), plus the abstract-update law.** What survives,
+referee-confirmed: the joint closure at 36/176 with the D44a
+spectrum; the INJECTIVE projection (zero exceptions over 179,783);
+menu factorization through tau (436,316 comparisons);
+cone-locality as a genuine code-reading theorem; menu-view
+idempotence 0/12,942; all eight cited D44a anchors verbatim;
+byte-identical rerun. Note §6 B1-B6.
+**D46c — REVISE (1B/4M/6m/1n). THE HEADLINE SURVIVES; THE OPEN IS
+DISCHARGED BY THE REFEREE.** The W6 certificate was rebuilt
+independently (own poset, own coordinates, own checker: 0
+violations on all 30 pairs) with the record's order dimension
+pinned at EXACTLY 3. (C1, BLOCKER) nothing controlled the
+SPACELIKE half: a one-directional-checker mutant ran 11/0, exit 0,
+zero OPEN, and printed a FABRICATED "W(3) certified on all 306
+pairs" headline — the incomparability half is now controlled.
+**(C2, MAJOR, A POSITIVE REVERSAL) the referee FOUND an exact
+rational M^{2+1} certificate for the FULL 18-event W(3) courier
+record (denominator 64), verified on all 306 pairs by their
+checker AND by this receipt's own verify(). FORWARD-CORRECTION of
+#382: the OPEN is retired — the courier record IS certified in 2+1
+— and my "the difficulty sits at the chain-accumulation pairs, the
+courier firewall's signature" localization is WITHDRAWN AS FALSE:
+both searched families fixed all minima at t = 0 and forced a
+common upper height, neither of which is necessary. The failure
+was my parameterization's, not the record's.** (C3/C4/C5) the
+first-violation census was scan-order biased; KG0-b regressed an
+ad-hoc realizer rather than a committed 2D chain; the purity
+"813 leaves" was a mutable-default artifact (true 281). Note §6
+B1-B4. Receipt repairs are with an applier; deltas follow.

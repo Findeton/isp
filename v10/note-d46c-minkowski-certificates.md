@@ -94,3 +94,48 @@ certificate control. The full 18-event W(3) courier record is
 OPEN per A3. Doctrine held throughout: certificates are statements
 about the CAUSAL ORDER's embeddability; the sphere (3+1) rung and
 typicality are named successors (D46d).
+
+## 6. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d46ac-round1-hostile-review.md: REVISE, 1B/4M/6m/1n)
+
+**B1 (THE HEADLINE SURVIVES, independently verified).** The
+referee rebuilt the W6 poset from scratch (= the committed d43d
+anchor = the crown S_3), pinned its order dimension independently
+at EXACTLY 3 (so "beyond the two-clock rung" is earned, not
+assumed), and re-verified the certificate with their OWN
+coordinates and their OWN checker: 0 violations on all 30 ordered
+pairs. The S_3..S_6 M/T values, the minimal-denominator property,
+the 13,236 tuple count, the 1/68 weight and the S_3 subposet are
+all confirmed; no negative embeddability claim appears anywhere.
+
+**B2 (MAJOR C2 — THE OPEN IS DISCHARGED; a POSITIVE REVERSAL, and
+my localization was FALSE).** The referee FOUND an exact rational
+M^{2+1} certificate for the FULL 18-event W(3) courier record
+(hill-climb, rationalized at denominator 64), verified on all 306
+ordered pairs by their checker AND by this receipt's own verify().
+Consequences, owned: (i) KG2-b's OPEN is retired — the record IS
+certified; (ii) §4 A3's and §5's "the difficulty sits at the
+CHAIN-ACCUMULATION pairs — the courier firewall's own signature"
+is WITHDRAWN as FALSE: the two searched families failed only
+because BOTH fix all minima at t = 0 and force a common upper
+height T, neither of which is necessary. The failure was my
+parameterization's, not the record's. Forward-corrected at LOG
+#394.
+
+**B3 (BLOCKER C1 — nothing controlled the SPACELIKE direction).**
+KG0-c exercised only the causal half: a mutant whose verify checks
+`order => causal` alone ran 11 PASS / 0 FAIL, exit 0, ZERO OPEN,
+and printed a FABRICATED headline claiming W(3) certified on all
+306 pairs. The incomparability half is now controlled in-receipt.
+
+**B4 (C3/C4/C5 + minors).** The first-violation census was
+scan-order biased (all buckets in i-block 0; the all-violation
+census is dominated by L-vs-C pairs and the top printed bucket was
+the crown diagonal, not a chain pair) — replaced by an
+order-independent census; KG0-b's regression used an ad-hoc
+realizer rather than a committed 2D chain (now a committed chain,
+or declared); KG4-a's "813 leaves" was a mutable-default
+accumulation artifact (true count 281 — corrected); the relative
+_SRC path, family-B's dropped dc, the console count mismatch, the
+3-of-614-line KG3-a scan, and the un-regated "not 1+1" half are
+repaired or declared.
