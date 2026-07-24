@@ -42,7 +42,9 @@ reopening prediction is confirmed inside the enumerated family
 pairs over 84 distinct diverged prefixes; 4 distinct minimal
 three-event chains at exact weight 1/256; every reconverging
 pair-history ends non-diverged), and the intrinsic chain is
-window-consistent at six classes on its shallow window — an echo of,
+window-consistent from lookahead 1 onward (the t = 0 refinement
+splits, as the receipt records) at six classes on its shallow
+window — an echo of,
 not identical to, the delivery-free six — while ESCAPING its
 windows: 68 transitions land in 5 classes first realized one level
 deeper.  No prediction is made about deeper closure.
@@ -96,7 +98,8 @@ operator's vanishing point and quarantined the kappa = 1 question,
 so the correction here is that there are TWO crossings, not one,
 and that kappa = 1 is now decidable from the all-m identity; paper 31's "decided on the
 computed window" reading of residue 1 is upgraded, not reversed.
-Paper 31 §7 item 2's entry condition is discharged by §4.2-4.3;
+Paper 31 §7 item 2's entry condition is discharged by §4.1-4.3
+(its census face by §4.1, its operator faces by §4.2-4.3);
 its item 5 addition (does arbitration alone generate dimension?) is
 decided negatively by §3.1; and its item 1 clause "no computation
 remains at this scope" is FALSIFIED — the closure route needed the
@@ -109,12 +112,14 @@ dimension as a step toward spacetime dimensionality.
 ### 2.1 The abstraction and the closure [D44a]
 
 Define sigma(h) from the full view of a history: each actor's
-non-superseded holding (provably singleton-or-empty at this scope,
-gated), the live-proposal triples with their conflict-component
+non-superseded holding (singleton-or-empty at this scope — gated,
+and used in §2.2 as the (H0) hypothesis it is, not as an
+independent theorem), the live-proposal triples with their conflict-component
 structure, and superseded marks restricted to referenced bases —
 all modulo base renaming (canonical minimum over base bijections).
-Then, verified exhaustively over the ENTIRE families at depths
-<= 6 and <= 7 (34,375 and 145,408 histories; 179,783 in all)
+Then, verified exhaustively over the ENTIRE depth-<= 6 family and
+the ENTIRE depth-7 LEVEL (34,375 and 145,408 histories; 179,783 in
+all)
 [EXACT]:
 
 - **menu exactness:** equal sigma implies identical renamed menus,
@@ -207,7 +212,8 @@ six events with idles and to seven without; width 4 to six without)
 plus every constructor state at widths 3-6 (the 340 post-cross
 states were dim-checked in the frozen round, not in-receipt —
 referee-carried).  The mechanism is the
-COMPONENT-CONFINEMENT LAW (gated, zero violations): arbitration
+COMPONENT-CONFINEMENT LAW (the first five gated, zero violations; the sixth
+referee-carried): arbitration
 pools form a laminar family; same-base pools are disjoint; each
 actor's pools nest through its own minted versions; register
 sharing forces comparability (poset width <= actor width); version
@@ -277,7 +283,10 @@ Eleven record types, derived from the committed grammar by source
 scan (eight event kinds, three version constructors);
 census-complete: all 6,567 record instances across the 1,191-member
 depth-4 family and the click/transport fixtures classify into
-exactly one type, zero unclassified, zero multi-match [EXACT]; the
+exactly one type, zero unclassified, zero multi-match [EXACT] —
+while the GATING is narrower than the census by exactly three
+declared grains (components of size >= 3, re-merge, transport
+depth); the
 (actor, base) census key executed (0/1,191 violations); per-type
 imprint structure gated (collision counts; injectivity; exactly 4
 multi-creator versions).  The reception layer is one shared
@@ -376,7 +385,16 @@ interacting identification with a g = 0 column.
    obligation: the click layer embeds pre-repair transport pricing
    (one merge price differs, 1/16 vs 1/24, exhibited); form-level
    results are unaffected.
-7. Paper 30's residues 3 (fine-vs-coarse sealing, empirical), 4
+7. **The funnel lemma's paper-grade promotion.**  §3.1's
+   scale-free no-go for the crown pattern is REFEREE-CARRIED: the
+   receipt gates five confinement clauses, while the sixth clause
+   and the lemma live in the frozen round.  Entry condition (LOG
+   #355): an in-receipt gate of the sixth clause and of up-cone
+   confinement over the committed families, plus the lemma written
+   as a theorem-with-proof-note.  Until then the multi-author
+   corner is decided at TESTED SCALE with the crown case
+   referee-carried — not a closed no-go.
+8. Paper 30's residues 3 (fine-vs-coarse sealing, empirical), 4
    (mid-chain drift), and 6 (`h12` dead-component pricing — the one
    configuration off the ladder under current pricing) stand
    unchanged; its residue 5 (grammar breadth) stands with the
@@ -419,7 +437,7 @@ as committed, the defect is owned on the record and the receipt
 left frozen, and the binding governs successors only.  Negative
 controls are gates, not narration.  Across the
 campaign's rounds and deltas: hundreds of independently recomputed
-values, zero false numbers; the corrections were quantifiers,
+values, zero false numbers; the corrections were mostly quantifiers,
 vacuous gates, and print-only facts — logged in every case, and
 repaired except where the round itself directed otherwise (D44f's
 BLOCKER, repaired; D44c's decision-procedure defect, owned and
@@ -436,7 +454,7 @@ its completion being closed outright; one imported machinery
 scope; and the dimension question has passed from "can it?" (yes at the
 tested ladder, by exactly one mechanism, in ORDER dimension only) to "does it, typically?"
 — a question about the theory's own measure.  The quantum layer no
-longer floats: its weights are the completion's, its foliation
+longer floats: its weights are the completion's at verified-depth scope, its foliation
 freedom is one tag of authorship, and its remaining questions are
 residue 1's.  Every claim above carries its cap; the next paper
 should need fewer.
@@ -460,5 +478,7 @@ should need fewer.
    anchors.
 5. B. Dushnik, E. W. Miller, Amer. J. Math. 63 (1941); K. G.
    Larsen, A. Skou, Inf. Comput. 94 (1991); J. L. Doob, *Classical
-   Potential Theory* (1984) — order dimension, probabilistic
-   bisimulation, the h-transform/Martin boundary.
+   Potential Theory* (1984); D. Aldous, R. Lyons, *Processes on
+   unimodular random networks*, EJP 12 (2007) — order dimension,
+   probabilistic bisimulation, the h-transform/Martin boundary, and
+   the mass-transport principle invoked in §2.1.

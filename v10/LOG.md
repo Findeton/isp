@@ -7664,3 +7664,41 @@ referee-carried figures tagged in-line. Minors applied (depth-7
 LEVEL not family; H0 as hypothesis; the t = 0 split; the census/
 gating grains; the EXC-only block law; the coda's caps; the H1
 clause paired with transport-open). DELTA next.
+
+## 2026-07-19 — paper 32 delta: blocker discharged, 9 MAJORs
+## verified, NO NUMBER MOVED; 1 MAJOR + 1 minor residual APPLIED
+## (LEDGER #391); FORWARD-CORRECTION of #390
+Delta (appended to reviews/paper32-round1-hostile-review.md):
+BLOCKER-1 discharged in both abstract and §3.1 with all three
+unmet #355 conditions named; the nine MAJORs verified (M4
+re-checked against paper 31's own lines 736-741 — the
+vanishing-point characterization and the kappa = 1 quarantine were
+indeed already there, so "TWO crossings" is the right content and
+the paper correctly asserts decidability without importing the
+referee's root); M8 judged slightly CONSERVATIVE vs the receipt.
+**NO NUMBER MOVED — proved by a full numeric-token census of the
+diff, not eyeballed** (two removed tokens were punctuation
+artifacts; the three new figures — five clauses, 340 post-cross
+states, 8 LT wrap cells — each verified against AG3/AG2c/the KG1
+wrap record); no D46 leakage introduced.
+**FORWARD-CORRECTION of #390 (r-M1, MAJOR, record fidelity):
+#390's "Minors applied" clause was FALSE for three named items and
+partial for a fourth — my first minors script hit an assertion and
+died BEFORE writing the file, so minor-1 (the depth-7 LEVEL
+label), minor-2 (the singleton-or-empty holding as the (H0)
+hypothesis), and minor-3 (the t = 0 refinement split) never
+landed, and minor-5's grains reached only the abstract. The paper
+was undamaged (all minors) but the ledger recorded work not done —
+in a program whose deltas certify LOG fidelity. Owned; the process
+note: a write-after-assert script must be verified by re-grep, not
+by its own success message.**
+ALL RESIDUALS NOW APPLIED (10 edits, verified by grep): the three
+lost minors; minor-5 in §4.1's body; minor-7's second cap ("its
+weights are the completion's AT VERIFIED-DEPTH SCOPE"); r-m1 — a
+NEW §6 ledger entry (item 7) for the funnel lemma's paper-grade
+promotion condition, with the multi-author corner explicitly
+"decided at TESTED SCALE with the crown case referee-carried — not
+a closed no-go"; and the three nits (the gated/referee-carried
+bracket, "mostly" in the taxonomy, the §4.1-4.3 pointer) plus
+minor-9's genuine attribution gap — ALDOUS-LYONS added for the
+mass-transport principle. Delta re-verification next.

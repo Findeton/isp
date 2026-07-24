@@ -806,3 +806,345 @@ sed -n '131,163p' v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.
 grep -n "^\*\*[0-9]\." v10/relativistic-isp-v10-paper30-the-generated-record-and-its-completion.md
 #   paper 30 §9 residues 1..6; residue 6 = h12 dead-component pricing (MAJOR-6)
 ```
+
+---
+---
+
+# DELTA VERIFICATION (round 1 → repairs at LOG #390, commit d6e2bc0)
+
+**Round-1 body above untouched.** Object re-read at commit `d6e2bc0`
+(working tree clean; paper diff = 91 insertions / 25 deletions, prose and
+tagging only). Verified against the same eight terminal receipts/.outs, the
+frozen rounds, papers 30/31, and LOG ##353–390.
+
+## DELTA VERDICT: BLOCKER DISCHARGED, all nine MAJORs verified, NO NUMBER MOVED — but NOT CLEAN: one MAJOR residual (record fidelity at LOG #390) and one minor residual (BLOCKER-1's ledger clause). **Terminal conversion ENDORSED CONDITIONAL** on r-M1 + r-m1.
+
+---
+
+## Mechanical verification
+
+**No number moved — confirmed exhaustively, not by inspection.** Full numeric
+token census of the pre-repair (`1610689`) and post-repair (`d6e2bc0`)
+versions:
+
+- **Removed:** exactly two tokens, `1,` and `4,` — both punctuation-adjacency
+  artifacts (`width 2n - 1,` → `width 2n - 1 at the base cases [...],`;
+  `widths 1-4,` → `widths 1-4 at L = 16 and ...`). **No value deleted.**
+- **Added:** LOG references 354 ×2, 355 ×2; `340`; `12`/`16` (the lattice
+  sizes); `8` (the wrap cells); `31` ×2 (paper-31 citations); section-number
+  digits. **No value altered.**
+
+All 61 round-1 sweep entries re-checked present and unchanged; the eight PASS
+counts still match their `.out` `[SUMMARY]` lines (30/14/15/17/49/29/22/49).
+
+**The three quantities newly introduced by the repairs are correct:**
+
+| new figure | claim | source | verdict |
+|---|---|---|---|
+| "five clauses" / "five-clause" | the receipt-gated part of the law | d44c `.out` AG3 gates "(i)–(v)" | ✅ |
+| "340 post-cross states" | referee-carried dim-check | `note-d44c` B3; `.out` AG2c "cached post-X states = 340" | ✅ |
+| "8 remaining LT cells" | the seam-contaminated exclusions | d44d `.out` `[KG1 WRAP RECORD]` (8 declared L=12 LT cells) | ✅ |
+
+**No D46 leakage introduced.** Re-scanned: the strings `d46`/`D46` remain
+absent from the paper; §6's ledger is still the #375 successor list. The six
+D46 units that landed *after* the draft and *before* these repairs (#380 D46a,
+#382 D46c, #384 D46b, #386 D46d, #388 D46f, #389 D46e) left no trace. Clean.
+
+---
+
+## Findings by round-1 label
+
+### BLOCKER-1 — DISCHARGED (substance), with one un-applied fix component
+
+Fix (a) applied in **both** required places, and applied well:
+
+- Abstract: "a five-clause **receipt-gated** component-confinement law, with a
+  **referee-carried** sixth clause and funnel lemma … — referee-carried, not
+  receipt-gated: **the paper-grade promotion condition recorded at LOG #355 is
+  not yet met**".
+- §3.1: the `[THEOREM …]` tag is gone, replaced by "**[REFEREE-CARRIED, frozen
+  round; the receipt gates five clauses, the sixth and the lemma are
+  review-record content, and the paper-grade promotion condition of LOG #355 —
+  an in-receipt sixth-clause and up-cone gate plus a theorem-with-proof-note —
+  is NOT yet met**; tested-scale scope remains for non-crown 3-irreducible
+  patterns]".
+
+This is exactly the demotion the round prescribed, and it names all three
+unmet conditions rather than gesturing at them. The misrepresentation is
+gone from the public record. **Discharged.**
+
+**Residual r-m1 (minor) — fix component (c) not applied.** Round 1 prescribed
+"(a) or (b), **plus (c)**: add the funnel lemma's status to §6's ledger either
+way — as it stands the ledger implies nothing is outstanding on the dimension
+no-go side." §6 was edited (items 1 and 7) but no such entry was added, and
+§6.7's new sentence — "the multi-author-arbitration corner **is decided**" —
+now reads, in the ledger, as a fully closed no-go. A reader who consults only
+the residue ledger still gets the pre-repair impression. **Prescribed
+one-line fix:** append to §6 item 7, or add as §6 item 8 —
+"**The funnel lemma's promotion.** LOG #355's paper-grade condition (an
+in-receipt gate of the sixth confinement clause and up-cone confinement over
+the committed families, plus the lemma as a theorem-with-proof-note) is open;
+until it is met the scale-free S3 obstruction of §3.1 is referee-carried."
+
+**Residual r-n1 (nit).** §3.1's body sentence still opens "The mechanism is
+the COMPONENT-CONFINEMENT LAW **(gated, zero violations)**:" and then lists
+six items, the sixth introduced as "the round's sixth clause". The closing
+bracket corrects this ("the receipt gates five clauses"), so no reader is
+misled — but two clauses of one sentence now disagree. "(five clauses gated
+in-receipt, zero violations)" closes it for free.
+
+### MAJOR-1 — DISCHARGED
+
+§7 now: "The witness-branch binding (LOG #354) **was CREATED BY a failure**:
+D44c's witness horn was unreachable at exit 0 as committed, the defect is
+owned on the record and the receipt left frozen, and the binding governs
+successors only." Checked against LOG #354 and `note-d44c` §6 B1: accurate on
+every clause, including "receipt frozen per the round's own disposition" and
+the successor-only scope. The false universal is gone.
+
+**Checked for friction, none found:** §7 now contains both "the dimension
+units' horn outcomes are DELIVERED-VERDICT content at exit 0" (M2's exception
+2) and "D44c's witness horn was unreachable at exit 0". These are consistent —
+the exception describes *delivered* outcomes (D44c's obstruction verdict,
+D45b's witness and ceiling branches per ZG6.3), the M1 sentence the
+*undelivered* branch. No repair needed.
+
+### MAJOR-2 — DISCHARGED
+
+"Every quantitative claim is bound to a committed receipt that **exits 1 on
+breakage — with two declared exceptions**: D44d's per-cell collapse CONSTANTS
+(including §5's ((w+1)/2)^2 EXC law) and the dimension units' horn outcomes
+are DELIVERED-VERDICT content at exit 0, their integrity resting on
+byte-identical determinism rather than on a failing gate."
+
+Matches d44d's banner ("clean-cell collapse CONSTANTS and all verdict lines
+are DELIVERED-VERDICT content, not exit gates … their integrity rides on
+byte-identical determinism") and the frozen round's minor-2 (the M5 mutant
+passing 17/17 at exit 0). The exception is named at exactly the place §5 cites
+it. Under-inclusive nowhere that matters: d44b's escape/diverged counts and
+d44e's censuses *are* gate-backed, so the "two exceptions" list covers every
+non-gated quantity the paper actually cites.
+
+### MAJOR-3 — DISCHARGED (with one word left)
+
+§7 now: "… — logged in every case, and **repaired except where the round
+itself directed otherwise** (D44f's BLOCKER, repaired; D44c's
+decision-procedure defect, owned and left in the frozen receipt with the
+successor binding carrying the fix)."
+
+The false "each repaired" is gone and both named items are accurate (d44f
+BLOCKER-1 repaired at #370/#372; d44c F1 owned and frozen at #354).
+
+**Residual r-n2 (nit).** The leading taxonomy is unchanged — "the corrections
+were quantifiers, vacuous gates, and print-only facts" — so the sentence still
+asserts a three-class exhaustive list and then names two items outside it
+(a blocker-level scope error; a decision-procedure defect), with D44e's
+discovered corpus obligation (#363, carried at §6.6) outside it as well.
+One word closes it: "the corrections were **mostly** quantifiers, vacuous
+gates, and print-only facts".
+
+### MAJOR-4 — DISCHARGED, and verified against both sources the request named
+
+§1.3 now: "paper 31 §7 item 7's zero-crossing successor is discharged — and
+sharpened: **paper 31 already characterized the crossing as the LT operator's
+vanishing point and quarantined the kappa = 1 question**, so the correction
+here is that there are **TWO crossings, not one**, and that kappa = 1 is now
+decidable from the all-m identity".
+
+- **Against paper 31's actual text** (lines 736–741): "locate its zero
+  crossing — the mass at which the LT rule's identified transport operator
+  vanishes at this order (the sign flip's guaranteed crossing) … (Whether
+  `kappa(m) = 1` — agreement with the EXC constant — occurs anywhere is a
+  separate question, not established either way by the record.)" — the repair
+  is faithful on both halves, and the singular "its zero crossing" is exactly
+  what "TWO crossings, not one" corrects (d44d KG2: m² = 1/3 and m² = 4/3,
+  the second outside the pinned bracket).
+- **Against my referee computation:** the paper asserts *decidability*, not a
+  value — the correct and conservative choice, since the root is referee-only.
+  My computation stands as recorded in round 1 (9x² − 15x − 140 = 0 in x = m²,
+  discriminant 5265, single positive root x = (15 + √5265)/18 ≈ 4.8645,
+  m ≈ 2.2056 — outside D44d's grid hull, inside D45a's all-m scope). The
+  paper introduces **no new number here**, so nothing referee-only entered the
+  record. Correct handling.
+
+### MAJOR-5 — DISCHARGED
+
+All three additions present and accurate: item 2's entry condition discharged;
+item 5's addition "decided negatively by §3.1"; item 1's "no computation
+remains at this scope" marked **FALSIFIED** with the reason ("the closure
+route needed the whole §2.1 abstraction, and H1 remains").
+
+**Residual r-n3 (nit).** Item 2 had *two* faces — (i) the foliation/commutation
+face and (ii) the per-type reception census (paper 31 §7 item 2: "the per-type
+reception census carried by the lift campaign … the obligation is recorded and
+untouched here"). The repair cites "§4.2-4.3", which covers face (i) and the
+measure side but points away from §4.1, where face (ii) is discharged.
+"§4.1-4.3" is exact.
+
+### MAJOR-6 — DISCHARGED
+
+§6.7 now restores residue 6 ("`h12` dead-component pricing — the one
+configuration off the ladder under current pricing", faithful to paper 30 §9
+item 6 / §4.4) and scopes residue 5 correctly ("stands with the §3.1
+sharpening (the multi-author-arbitration corner is decided, the carrier-level
+third grammar and the superset-generator condition remain)"). The ledger is
+now complete against paper 30's six residues.
+
+### MAJOR-7 — DISCHARGED
+
+§3.2: "width 2n - 1 **at the base cases [MEASURED — the width formula is NOT
+claimed at all n]**", moved out of the schema parenthesis and ahead of the
+all-n theorem sentence. This is verbatim the receipt's own declaration
+(d45b `.out` line 387). The `[MEASURED]` label declared in §1 now has a
+referent, which also retires half of round-1 minor-10.
+
+### MAJOR-8 — DISCHARGED
+
+§5: "at every wrap-clean cell (**widths 1-4 at L = 16 and w <= 2 at L = 12,
+where the 8 remaining LT cells are declared seam-contaminated**; both masses)".
+Checked against `[KG1 THEOREM]` ("all w at L=16; w <= 2 plus all EXC at L=12")
+and `[KG1 WRAP RECORD]` (the 8 cells): the repair is correct and in fact
+slightly **conservative** — it does not claim the L = 12 EXC cells at w = 3, 4,
+which the receipt does gate as clean. Under-claiming is acceptable; if the
+author wants the receipt's full strength, "and at L = 12 all EXC cells plus
+LT at w <= 2, the 8 remaining LT cells being declared seam-contaminated" is
+available. Not a finding.
+
+Also in §5: "((w+1)/2)^2 normalization law **ON THE EXC SIDE ONLY (the LT
+constant stays width-independent there)**" — round-1 minor-6 discharged.
+
+### MAJOR-9 — DISCHARGED
+
+Both figures tagged: "1,124,884 distinct **[the distinct-history count is the
+LOG #354 forward-correction of the receipt's summed figure; referee-carried]**"
+and "every constructor state at widths 3-6 **(the 340 post-cross states were
+dim-checked in the frozen round, not in-receipt — referee-carried)**". The
+convention declared in §1 is now applied where the stakes are highest.
+(Typographic only: the first bracket splits "1,124,884 distinct" from
+"admissible … histories"; moving it after "histories" reads better.)
+
+---
+
+## Residual finding above nit
+
+### r-M1 (MAJOR — record fidelity) — LOG #390's "Minors applied" clause is false for three of the seven items it names, and partial for a fourth
+
+LOG #390 states: "Minors applied (**depth-7 LEVEL not family; H0 as
+hypothesis; the t = 0 split**; the census/gating grains; the EXC-only block
+law; the coda's caps; the H1 clause paired with transport-open)." Verified
+line by line against the repaired paper:
+
+| claimed applied | round-1 label | actual state at d6e2bc0 |
+|---|---|---|
+| depth-7 LEVEL not family | minor-1 | **NOT applied** — §2.1 still reads "over the ENTIRE families at depths <= 6 and <= 7 (34,375 and 145,408 histories)" |
+| H0 as hypothesis | minor-2 | **NOT applied** — §2.1 still reads "(provably singleton-or-empty at this scope, gated)" |
+| the t = 0 split | minor-3 | **NOT applied** — §2.3 still reads "agrees blockwise at its computable lookaheads" |
+| the census/gating grains | minor-5 | **PARTIAL** — added to the abstract; §4.1's body is unchanged and still says only "census-complete" |
+| the EXC-only block law | minor-6 | applied ✅ |
+| the coda's caps | (not minor-7) | the **dimension** sentence was capped ("yes at the tested ladder … in ORDER dimension only") — a good addition, but minor-7's target, the coda's "**its weights are the completion's**", is unchanged and still drops both the verified-depth and fixture-scale caps |
+| the H1 clause paired with transport-open | — | applied ✅ (not a round-1 finding; a correct addition) |
+
+The paper is not damaged by this — every un-applied item is a minor, and
+minors are at the applier's discretion under the campaign's convention. What
+*is* damaged is the ledger: #390 records work that was not done, in a program
+whose deltas certify that "the LOG summary is faithful on every point"
+(#355, #370, #372 precedent). This is the same class of defect the campaign
+forward-corrects by name.
+
+**Prescribed fix — either route:**
+(i) apply the four items (each is one line: "the entire family at depth <= 6
+(34,375) and the full depth-7 level (145,408; 179,783 in all)"; "verified
+family-wide at the gated depths — this is (H0) of §2.2, not a proved lemma";
+"agrees blockwise at t = 1 and t = 2 on their shallow windows, the t = 0 → 1
+refinement genuinely splitting"; the three grains in §4.1's body; and, if
+wanted, "its weights are the completion's at verified depth and fixture
+scale"); **or**
+(ii) forward-correct LOG #390 with a row naming exactly which minors were
+applied and which were declined at the applier's discretion.
+
+Route (i) is cheaper and leaves no correction to carry.
+
+---
+
+## Round-1 items left un-applied and NOT claimed (recorded, applier's discretion)
+
+No finding attaches to these; they are listed so the frozen record is complete:
+**minor-4** (§6.2's rendering of the binding d44b flag — still the version that
+sits in tension with TG2's "the intrinsic refinement is load-bearing"),
+**minor-8** (§2.1's blockwise equality: len <= 4 in-receipt / len <= 5
+referee-carried), **minor-9** (references: FLP and Ben-Or still cited and still
+unused in the body; Aldous–Lyons still absent though mass transport is asserted
+in §2.1 and the abstract; Charron-Bost still without title, venue or year),
+**minor-10** (half-retired: `[MEASURED]` now has a referent via MAJOR-7;
+`[POSITED]` remains declared-and-unused, and the new `[REFEREE-CARRIED]`
+bracket tag used in §3.1 is not in §1's declared label list — one word in §1
+adds it), **nit-1** (§3.3 "reach order dimension 3" vs the `dim>2` gate),
+**nit-2** (§4.3 "a seven-row gated dictionary" — 7 rows printed, substantive
+rows gated), **nit-3** (§1's "LOG ##353-374" double hash).
+
+Of these, only minor-9's Aldous–Lyons omission is an *attribution* gap rather
+than a wording preference; the mass-transport principle is asserted twice and
+credited nowhere.
+
+---
+
+## Disposition
+
+**The blocker is discharged and the nine majors are accurately applied. No
+number moved — verified by full token census, not by reading. No D46 leakage
+was introduced. No new finding above nit arises from the repairs themselves.**
+
+The delta is **not clean** on two counts, both cheap:
+
+1. **r-M1 (MAJOR)** — LOG #390 records four minor repairs that were not made
+   (three not at all, one partially). Apply them, or forward-correct the ledger
+   row.
+2. **r-m1 (minor)** — BLOCKER-1's fix component (c) is outstanding: §6's
+   residue ledger carries no entry for LOG #355's unmet paper-grade promotion
+   condition, so the ledger alone still reads as though the dimension no-go is
+   closed.
+
+**TERMINAL CONVERSION ENDORSED CONDITIONAL on r-M1 and r-m1**, per the
+campaign's established micro-repair convention (cf. the d44a delta's "one-line
+repair + one LOG sentence correction" and the d44f delta's r-m1 pattern);
+r-n1–r-n3 and the un-applied minors at the applier's discretion. With those
+two applied, the stamped status line — "Independent paper-level review: round 1
++ delta, frozen at reviews/paper32-round1-hostile-review.md" — is accurate to
+the artifacts, and the ledger's note that the D46 ladder units remain
+green-unreviewed and are not part of this paper is confirmed correct by this
+review's own scan.
+
+---
+
+## Delta reproduction appendix
+
+```bash
+cd /Users/felixrobles/workspace/isp
+git log --oneline -1                     # d6e2bc0
+git status --porcelain                   # empty
+git show d6e2bc0 -- v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md
+
+# no-number-moved proof (full numeric token census, both versions)
+git show 1610689:v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md > /tmp/p32_old.md
+python3 - <<'PY'
+import re, collections
+pat = re.compile(r'\d[\d,]*(?:/\d+)?')
+old = collections.Counter(pat.findall(open('/tmp/p32_old.md').read()))
+new = collections.Counter(pat.findall(open(
+    'v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md').read()))
+print("REMOVED:", sorted((old-new).items()))   # [('1,',1), ('4,',1)] — punctuation only
+print("ADDED  :", sorted((new-old).items()))   # LOG refs, 340, 12/16, 8, section digits
+PY
+
+# the three new figures
+grep -n "(i)   LAMINARITY\|(v)   VNAME\|cached post-X states\|KG1 WRAP RECORD" \
+     v10/data/d44c_arb_dimension_exact.out v10/data/d44d_slab_kappa_exact.out
+
+# r-M1: the four minors claimed applied
+grep -n "depths$\|<= 6 and <= 7\|provably singleton-or-empty\|computable lookaheads\|census-complete" \
+     v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md
+sed -n '/LEDGER #390/,$p' v10/LOG.md | grep -n "Minors applied"
+
+# ladder-hazard re-scan
+grep -c "d46\|D46" v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md   # 0
+```
