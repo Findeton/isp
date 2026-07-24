@@ -65,3 +65,40 @@ ARM-1T exact at depth 4; sampled beyond with declared seeds and
 pools.  The measure is the finite-horizon kernel of D46b (the
 completed transfer at the stated horizon) — NOT an infinite-volume
 object; every typicality statement is horizon-scoped and says so.
+
+## 4. Result (2026-07-19; author-built, GREEN-UNREVIEWED)
+
+11 PASS / 0 FAIL, 1 delivered outcome; seeds byte-identical.
+
+**TY1/TY2 — EXACT.** The completed path measure is proper (sums to
+1) at every enumerable pool.  Top-width mass: 0.961 (2 actors,
+depth 4), 0.450 (3, 3), 0.108 (4, 3), 0.019 (5, 2).  These are
+DEPTH-LIMITED by construction — touching k actors needs at least
+k/2 events — so the shallow caps mechanically suppress width; the
+profile is reported per pool with that caveat gated in the label.
+Event-kind mass shows the measure is IDLE-HEAVY (about half of all
+event mass is idle at every pool) — the same idles D45b found
+LOAD-BEARING for the dimension escape.
+
+**TY3 — the calibration and the sampled arm.** The completed
+kernel is not computable beyond the enumerable caps, so the
+sampled arm uses the LOCAL-NORMALIZED law — calibrated exactly
+against the completed kernel where both exist: maximum width-mass
+gap 3457/9464832 (~0.0004).  [SAMPLED] with N = 4,000 and declared
+seed: 4 actors/depth 6 -> width 4 mass 0.608; 5/8 -> width 5 mass
+0.557; 6/8 -> width 4+ mass 0.981, full width 6 mass 0.307.  The
+estimator is gated reproducible (same seed identical, different
+seed different).
+
+**TY4/TY — THE READING.** WIDTH SPREADS WITH DEPTH UNDER THE
+THEORY'S OWN LAW: at D45b's own constructor scale (6 actors, 8
+events) 98% of the sampled mass sits at or above the dimension
+threshold width 4.  The measure does not concentrate on narrow
+records — dimension-capable width is TYPICAL-IN-THE-MAKING at the
+sampled horizon.  NOT answered here, and the named successor:
+whether a typical wide record actually REALIZES a crown (a
+per-record dimension test under the measure).
+
+**Scope.** Horizon-scoped throughout; actor width is an
+ORDER-dimension-capability proxy under the §1 doctrine; no
+infinite-volume and no dimension-of-the-world claim.

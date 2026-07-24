@@ -7506,3 +7506,31 @@ the courier-shape mass comparison ("does the measure favour what
 the constructor builds"); TY5 doctrine + purity + determinism.
 Scope: horizon-scoped throughout; no infinite-volume or
 spacetime-dimension claim. Build next.
+
+## 2026-07-19 — D46d GREEN-UNREVIEWED 11/11 (LEDGER #386): WIDTH
+## SPREADS UNDER THE THEORY'S OWN LAW
+Author-built; verified exit 0, 11 PASS / 0 FAIL, seeds
+byte-identical. TY1/TY2 EXACT: the completed path measure is
+proper at every enumerable pool; top-width mass 0.961 (2a/d4),
+0.450 (3a/d3), 0.108 (4a/d3), 0.019 (5a/d2) — DEPTH-LIMITED by
+construction (k actors need >= k/2 events), gated as such; the
+measure is IDLE-HEAVY (~half the event mass), the same idles D45b
+found load-bearing for the dimension escape. TY3: the completed
+kernel is not computable beyond the caps, so the sampled arm uses
+the LOCAL-NORMALIZED law, CALIBRATED exactly against the completed
+kernel where both exist (max width-mass gap 3457/9464832 ~ 0.0004)
+— the method gate; [SAMPLED] N = 4,000, declared seed: 4a/d6 width
+4 = 0.608; 5a/d8 width 5 = 0.557; 6a/d8 width >= 4 = 0.981, full
+width = 0.307; estimator gated reproducible (same seed identical,
+different seed different). TY4/TY THE READING: **WIDTH SPREADS
+WITH DEPTH UNDER THE THEORY'S OWN LAW — at D45b's own constructor
+scale (6 actors, 8 events) 98% of sampled mass sits at or above
+the dimension threshold width 4; the measure does NOT concentrate
+on narrow records, so dimension-capable width is
+TYPICAL-IN-THE-MAKING at the sampled horizon.** NOT answered and
+named successor: whether a typical WIDE record actually REALIZES a
+crown (the per-record dimension test under the measure). TY5:
+doctrine self-scan, allow-list purity on the exact layer, no
+unconditional gate, and the EXACT/SAMPLED separation gated
+structurally. Ladder: a, c, b, d done (all GREEN-UNREVIEWED);
+remaining e (smeared interacting + g = 0), f (reception dynamics).

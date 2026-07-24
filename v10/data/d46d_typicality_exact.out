@@ -1,0 +1,44 @@
+[d46d — typicality under the completed measure]
+  banner: GREEN-UNREVIEWED (D46 program pin; paper-32's round
+  precedes this unit's).  TY1/TY2/TY4-exact are EXACT
+  Fractions over the FULL committed ARM-1T depth-4 family
+  under the D46b kernel-completed path measure; TY3 is
+  SAMPLED with DECLARED seeds and pools and every sampled
+  number is labelled [SAMPLED] — the exact/sampled
+  separation is itself a gate (TY5).  Horizon-scoped
+  throughout: the measure is the finite-horizon kernel, NOT
+  an infinite-volume object; no boundary, no infinite-volume,
+  and no spacetime-dimension claim appears (note-d45b §1
+  binds: ORDER dimension only, a clock-complexity grade).
+  [PASS] TY0 the committed layer, family, and D46b measure re-anchored BEFORE any typicality statement: ARM-1T cumulative sizes [1, 9, 69, 521, 3969]; the finite-horizon potential G_4(root) = 1035/64 (the #384 value)  (cumulative = [1, 9, 69, 521, 3969]; G_4(root) = 1035/64)
+  [PASS] TY1-a THE PATH MEASURE IS PROPER: the kernel-completed path probabilities over ALL 3,448 depth-4 histories sum to EXACTLY 1 (verified, not assumed — the measure this unit's typicality statements are taken under)  (depth-4 histories = 3448; total mass = 1)
+
+[TY1/TY2 — EXACT typicality: what the measure weighs]
+    pool 2 actors, depth 4 (3448 terminal histories): mass by DISTINCT ACTORS TOUCHED -> k=1: 0.0391, k=2: 0.9609
+      exact mass at the maximum realizable k = 2: 221/230  (~0.960870); kinds by mass: {'d': 0.991, 'n': 1.987, 'p': 0.854, 'r': 0.167}
+    pool 3 actors, depth 3 (3189 terminal histories): mass by DISTINCT ACTORS TOUCHED -> k=1: 0.0467, k=2: 0.5035, k=3: 0.4498
+      exact mass at the maximum realizable k = 3: 130/289  (~0.449827); kinds by mass: {'d': 0.747, 'n': 1.495, 'p': 0.696, 'r': 0.062}
+    pool 4 actors, depth 3 (13400 terminal histories): mass by DISTINCT ACTORS TOUCHED -> k=1: 0.0263, k=2: 0.3568, k=3: 0.5094, k=4: 0.1075
+      exact mass at the maximum realizable k = 4: 994/9243  (~0.107541); kinds by mass: {'d': 0.748, 'n': 1.496, 'p': 0.709, 'r': 0.048}
+    pool 5 actors, depth 2 (1215 terminal histories): mass by DISTINCT ACTORS TOUCHED -> k=1: 0.1125, k=2: 0.6062, k=3: 0.2625, k=4: 0.0187
+      exact mass at the maximum realizable k = 4: 3/160  (~0.018750); kinds by mass: {'d': 0.5, 'n': 1.0, 'p': 0.487, 'r': 0.013}
+  [PASS] TY1-b/TY2 THE EXACT WIDTH-MASS PROFILE at every enumerable pool (2 actors/depth 4, 3/depth 3, 4/depth 3, 5/depth 2): each path measure sums to EXACTLY 1 and the mass by number of DISTINCT ACTORS TOUCHED is computed exactly — the width axis is the one the dimension mechanism needs (D44c/D45b: width, not event count, is the capability axis)  (profiles computed = 4; all measures proper = True)
+  [PASS] TY2-b THE WIDTH-MASS VERDICT, delivered either way: the exact mass sitting at the MAXIMUM realizable actor-width of each pool is reported per pool; the concentration reading (is the top-width mass below one half everywhere?) is computed, not assumed  (2a/d4: top-width mass = 0.9609; 3a/d3: top-width mass = 0.4498; 4a/d3: top-width mass = 0.1075; 5a/d2: top-width mass = 0.0187)
+
+[TY3 — the sampled extension: declared law, seeds, pools]
+  [PASS] TY3-a THE CALIBRATION (the method gate): the LOCAL-NORMALIZED law — the only law samplable beyond the enumerable caps, since the completed kernel needs the whole subtree — is compared EXACTLY against the completed kernel on the 4-actor depth-3 family, where both are computable; the maximum width-mass discrepancy is reported so every [SAMPLED] number below carries its known calibration error  (local law proper = True; max width-mass gap vs the completed kernel = 3457/9464832 (~0.0004))
+    [SAMPLED] pool 4, depth 6, N = 4000, seed = 20260719: width distribution -> k=1: 0.0005, k=2: 0.0330, k=3: 0.3588, k=4: 0.6078
+    [SAMPLED] pool 5, depth 8, N = 4000, seed = 20260719: width distribution -> k=2: 0.0010, k=3: 0.0615, k=4: 0.3807, k=5: 0.5567
+    [SAMPLED] pool 6, depth 8, N = 4000, seed = 20260719: width distribution -> k=2: 0.0003, k=3: 0.0190, k=4: 0.1985, k=5: 0.4755, k=6: 0.3068
+  [PASS] TY3-b THE SAMPLED WIDTH DISTRIBUTIONS are delivered with their law, size, and seeds DECLARED ([SAMPLED] labels everywhere; never conflated with the exact profiles above), and the estimator is REPRODUCIBLE: the same seed reproduces the identical histogram, a different seed does not (the sampler is genuinely stochastic, not a disguised constant)  (seed-20260719 reproducible = True; seed-7 differs = True)
+  [PASS] TY4 THE CONSTRUCTOR-SHAPE COMPARISON [SAMPLED, proxy]: at the 6-actor pool over 8 events — the scale at which D45b's courier constructor realizes S_3 — the sampled mass at actor-width >= 4 (the D44c/d43d dimension threshold) and at the full width 6 is reported; the constructor's own records are exact-weight objects (1/212-class at n = 6), so this line answers the honest question 'does the LAW go where the CONSTRUCTION goes' at the sampled horizon, as a PROXY (actor width, not a per-record dimension test)  ([SAMPLED] mass(width >= 4) = 0.9808; mass(width = 6) = 0.3068; N = 4000, seed = 20260719)
+  [OUTCOME TY] EXACT (enumerable caps): the completed measure's top-width mass falls as the pool grows — 0.961 (2 actors, depth 4), 0.450 (3, 3), 0.108 (4, 3), 0.019 (5, 2) — but these are DEPTH-LIMITED: touching k actors needs at least k/2 events, so shallow caps mechanically suppress width. [SAMPLED] at depth 8 with 6 actors the width >= 4 mass is 0.981 and full width is 0.307, so width SPREADS with depth rather than collapsing. The honest reading at this scope: the law does not concentrate on narrow records — dimension-capable width is TYPICAL-IN-THE-MAKING at the sampled horizon — while the per-record dimension question (does a typical wide record actually realize a crown?) is NOT answered here and is the named successor.
+
+[TY5 — doctrine, purity, determinism]
+  [PASS] TY5-a DOCTRINE (note-d45b §1 binds): every line naming the physical arena carries a disclaimer marker; this unit measures ACTOR WIDTH under the law — a clock-complexity proxy — and makes no dimension-of-the-world claim  (undisclaimed lines = none)
+  [PASS] TY5-b ALLOW-LIST PURITY on the EXACT layer (the #362 binding): every leaf of every exact profile, potential, and path mass is in {Fraction, int, str, bool} — floats appear only in printed ~approximations and in the [SAMPLED] frequencies, which are labelled as such  (exact leaves walked = 71916, impure = 0)
+  [PASS] TY5-c no unconditional gate (self-scan; needles built by concatenation so the gate cannot self-trip)  (needle hits = none)
+  [PASS] TY5-d THE EXACT/SAMPLED SEPARATION IS STRUCTURAL: every sampled quantity is produced by sample_widths (seeded) and printed under a [SAMPLED] label with its N and seed, while every exact quantity is a Fraction from the enumerable families; the calibration gate TY3-a quantifies the only bridge between them  (calibration gap = 0.00037 < 0.01)
+
+[SUMMARY] 11 PASS / 0 FAIL  (1 delivered outcome(s))
+[VERDICT] d46d GREEN-UNREVIEWED: typicality is measured, not assumed. The completed path measure is proper at every enumerable pool, and the EXACT width-mass profiles are delivered (top-width mass 0.961 / 0.450 / 0.108 / 0.019 as the pool grows at the shallow caps those pools allow — depth-limited by construction, since touching k actors needs at least k/2 events). The local-normalized law is calibrated against the completed kernel to a maximum width-mass gap of ~0.0004 where both are exact, licensing the sampled extension: at 6 actors over 8 events — D45b's own constructor scale — [SAMPLED] mass at actor-width >= 4 (the dimension threshold) is 0.98 and at full width 0.31. WIDTH SPREADS WITH DEPTH UNDER THE THEORY'S OWN LAW: the measure does not concentrate on narrow records, so dimension-capable width is typical-in-the-making at the sampled horizon. What is NOT answered here, and is the named successor: whether a typical wide record actually REALIZES a crown (a per-record dimension test under the measure). Horizon-scoped throughout; ORDER-dimension proxy only; no infinite-volume and no dimension-of-the-world claim. Not review-hardened until the D46d round converts (paper-32's round precedes it).
