@@ -7463,3 +7463,30 @@ sector-normalized, verdict delivered either way); the growth
 parameter G_D/G_{D-1} vs the delivery-free lambda = 2; root vs
 renewal Martin-style at the gated 1/256 reconvergence witness;
 purity/determinism/no-infinite-volume-claim. Build next.
+
+## 2026-07-19 — D46b GREEN-UNREVIEWED 12/12 (LEDGER #384): [I1]
+## INSTANTIATED AT TRANSPORT SCOPE — four findings
+Author-built; verified exit 0, 12 PASS / 0 FAIL, seeds
+byte-identical. (1) MB1 THE LADDER SURVIVES TRANSPORT: the
+per-history menu weight sums are EXACTLY the delivery-free values
+{2: 3757, 5/2: 212} — the quarter-quantized ladder is not a
+deliverylessness artifact. (2) MB2/MB4 THE GROWTH PARAMETER
+EXCEEDS 2 AND RISES: G_2 = 4, G_3 = 257/32, G_4 = 1035/64; ratios
+257/128 (~2.0078) then 1035/514 (~2.0136) — the delivery-free
+lambda = 2 is a LOWER NEIGHBOUR of transport's growth, deliveries
+adding branching exactly as the reopening implies. (3) MB3 THE
+KERNEL CANDIDATES are proper at every horizon (sum 1 exactly) and
+their drift CONTRACTS: 1/1028 (D2->D3), 191/265995 (D3->D4),
+ratio ~0.738/level — CAUCHY-CONSISTENT with a limit kernel (the
+object [I1] would formalize), recorded as evidence at three
+horizons, NOT a convergence proof and NOT a boundary-existence
+claim. (4) MB5 THE DELIVERY-FREE root = renewal IDENTITY DOES NOT
+TRANSFER: at the gated 1/256 reconvergence witness (re-admitted
+in-receipt) the kernel's sector masses DIFFER from the root's —
+reconvergence restores HOLDINGS without restoring the FUTURE,
+which is exactly why transport-scope closure stays open and what a
+transport closure theorem must supply. MB6: allow-list purity, no
+unconditional gate (concatenated needles), mechanical scope gate
+(caps bind; D44b's open verdict untouched). Note §4. Ladder: a, c,
+b done (all GREEN-UNREVIEWED); remaining d (typicality), e
+(smeared interacting + g = 0), f (reception dynamics).

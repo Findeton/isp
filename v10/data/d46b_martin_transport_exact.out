@@ -1,0 +1,40 @@
+[d46b — Martin/R-theory at transport scope]
+  banner: GREEN-UNREVIEWED — the hostile round is deferred
+  per the D46 program pin (token budget); not citable as
+  review-hardened until its round converts (paper-32 first).
+  EXACT Fractions everywhere; the committed d42b1 transport
+  layer exec'd path-anchored.  NO infinite-volume and NO
+  boundary-existence claim: this unit computes finite-horizon
+  potentials, their kernel candidates, and the exact
+  horizon-stability verdict at the reachable caps — nothing
+  more.  The d44f lesson binds the reading: absolute
+  completed weights are horizon-bound; the conditional is
+  the candidate for the physical object.
+  [PASS] MB0 the committed ARM-1T family re-anchored from the layer: cumulative sizes [1, 9, 69, 521, 3969] (the D44b/d42b1 census) with per-history candidate caches  (cumulative = [1, 9, 69, 521, 3969])
+  [PASS] MB1 THE TRANSPORT LADDER: the exact per-history menu weight sum takes finitely many values across the whole family, censused with multiplicities — the transport analogue of the delivery-free per-cut N (which was 2, with the conflict state's 5/2 excess)  (distinct sums = {'2': 3757, '5/2': 212})
+  [PASS] MB2 the finite-horizon potentials computed by exact backward recursion at D = 2, 3, 4 — the root values are exact rationals (the transport analogue of the delivery-free Z)  (G_2 = 4; G_3 = 257/32; G_4 = 1035/64)
+  [PASS] MB4 THE GROWTH PARAMETER: the exact successive potential ratios G_D(root)/G_(D-1)(root) — the R-theoretic branching datum at transport scope, to be compared with the delivery-free lambda = 2 (D44a, cited)  (G_3/G_2 = 257/128 (~2.007812); G_4/G_3 = 1035/514 (~2.013619); delivery-free lambda = 2 [cited])
+
+[MB3 — the kernel candidates and their horizon stability]
+    kernel sums (normalization): D=3 -> 1; D=4 -> 1
+    sector masses by event kind: D=3 -> {'d': '64/257', 'n': '128/257', 'p': '65/257'}
+    sector masses by event kind: D=4 -> {'d': '257/1035', 'n': '514/1035', 'p': '88/345'}
+  [PASS] MB3-a the kernel candidates are PROPER at both horizons: k_D(.|root) sums to 1 exactly at D = 3 and D = 4 (the potentials' defining recursion, verified not assumed)  (sums = 1, 1)
+  [PASS] MB3-b THE HORIZON-STABILITY VERDICT AT THE ROOT, delivered either way: the absolute kernel values and the per-kind sector masses are compared EXACTLY between horizons D = 3 and D = 4; the maximum drift and its argmax are censused (the d44f lesson: absolute completed weights are horizon-bound — the question is whether anything is not)  (absolute kernels equal = False; sector masses equal = False; max drift = 191/265995 (~0.000718) at n-event)
+  [OUTCOME MB3] BOTH the absolute kernel and its per-kind sector masses DRIFT between the computed horizons: at transport scope the finite-horizon kernel has not stabilized by D = 4 — the escape structure (D44b) reaching the potentials themselves. The drift is censused above; no boundary claim is made in either direction.
+
+[MB5 — root vs the D44b reconvergence point]
+  [PASS] MB5-a the D44b reconvergence witness re-admitted through the committed layer: [pA0, blind self-seal, deliver v1 to B], every event admissible, chain weight exactly 1/256 (the gated D44b/#374 value, reproduced here before any kernel comparison)  (chain weight = 1/256)
+  [PASS] MB5-b ROOT vs RENEWAL AT TRANSPORT SCOPE, decided at the computed horizon: the kernel at the reconvergence point is compared with the root's — per-kind sector masses and support, exactly (the delivery-free identity root = renewal, D44a's MG4, has NO automatic transport analogue: this gate measures whether one holds at the reachable horizon)  (witness kernel sums to 1; kinds at root = ['d', 'n', 'p']; at the witness = ['d', 'n', 'p']; sector masses equal = False)
+  [OUTCOME MB5] the reconvergence point's kernel DIFFERS FROM the root's in per-kind sector mass at the computed horizon — the transport analogue of the delivery-free root = renewal identity is thereby REFUTED at this scope (a horizon-scoped measurement, not a boundary theorem).
+    drift D2->D3 = 1/1028 (~0.000973); D3->D4 = 191/265995 (~0.000718); ratio = 764/1035 (~0.7382)
+  [PASS] MB3-c THE DRIFT TREND (the R-theoretic/Martin convergence datum): the successive root-kernel drifts are compared EXACTLY across the three reachable horizons; a SHRINKING drift is Cauchy-consistent evidence that a limit kernel may exist — evidence at three horizons, NOT a convergence proof and NOT a boundary-existence claim (the caps bind)  (shrinking = True; contraction ratio = ~0.7382)
+  [OUTCOME MB3-c] the root kernel's horizon drift SHRINKS by a factor ~0.738 per level across the three reachable horizons — Cauchy-consistent with a limit kernel, which is exactly what [I1]'s Martin machinery would formalize; no existence claim is made here.
+
+[MB6 — purity, determinism, scope]
+  [PASS] MB6-a ALLOW-LIST PURITY (the #362 successor binding): every leaf of every potential, kernel, sector mass, and census is in {Fraction, int, str, bool} — floats appear ONLY in human-readable ~approximations inside detail strings, never in a gated quantity  (leaves walked = 187, impure = 0)
+  [PASS] MB6-b no unconditional gate (self-scan, needles built by concatenation so the gate cannot self-trip)  (needle hits = none)
+  [PASS] MB6-c SCOPE, mechanical: every result above is a FINITE-HORIZON measurement at the committed ARM-1T caps (D <= 4); the receipt asserts no boundary existence, no infinite-volume statement, and no transport-scope closure — D44b's open verdict stands untouched  (cap = 4; delivered outcomes = 3)
+
+[SUMMARY] 12 PASS / 0 FAIL  (3 delivered outcomes)
+[VERDICT] d46b GREEN-UNREVIEWED: [I1]'s machinery is now INSTANTIATED at transport scope in its honest finite-horizon form. THE LADDER SURVIVES TRANSPORT: the per-history menu weight sum takes exactly the delivery-free values {2, 5/2} (3,757 / 212) — the quarter-quantized structure is not a deliverylessness artifact. THE GROWTH PARAMETER EXCEEDS 2 and rises with the horizon (257/128, then 1035/514), so the delivery-free lambda = 2 is a LOWER neighbour, not the transport value. THE KERNEL CANDIDATES are proper at every horizon and their drift SHRINKS level over level — Cauchy-consistent with a limit kernel (evidence at three horizons; no existence claim). AND THE DELIVERY-FREE root = renewal IDENTITY DOES NOT TRANSFER: the kernel at the 1/256 reconvergence witness differs from the root's in sector mass — reconvergence restores holdings without restoring the FUTURE, which is precisely why transport-scope closure (D44b) stays open. Not review-hardened until the D46b round converts (paper-32's round precedes it).
