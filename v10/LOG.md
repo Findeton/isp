@@ -7451,3 +7451,15 @@ smallest-denominator search; the two families; the needle
 discipline) and §5. GREEN-UNREVIEWED: not citable as
 review-hardened until the D46c round (queued behind paper-32's).
 Ladder: a done, c done, next b (Martin-at-transport), then d/e/f.
+
+## 2026-07-19 — D46b PINNED (LEDGER #383)
+note-d46b-martin-at-transport.md: the honest form of [I1] at
+transport scope — finite-horizon POTENTIALS G_D and their RATIOS
+(Martin-kernel candidates k_D(e|h) = q G_D(h+e)/G_D(h)), with the
+d44f binding that the horizon-stable object is the physical one.
+Gates MB0-MB6: census re-anchor; the transport ladder (menu weight
+sums); G_D at D = 2, 3, 4; THE KERNEL at two horizons (absolute vs
+sector-normalized, verdict delivered either way); the growth
+parameter G_D/G_{D-1} vs the delivery-free lambda = 2; root vs
+renewal Martin-style at the gated 1/256 reconvergence witness;
+purity/determinism/no-infinite-volume-claim. Build next.
