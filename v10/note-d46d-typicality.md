@@ -102,3 +102,57 @@ per-record dimension test under the measure).
 **Scope.** Horizon-scoped throughout; actor width is an
 ORDER-dimension-capability proxy under the §1 doctrine; no
 infinite-volume and no dimension-of-the-world claim.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d46bd-round1-hostile-review.md: REVISE, 2B/4M/5m/2n).
+## THE HEADLINE IS RETIRED AS A NEAR-TAUTOLOGY.
+
+**B1 (BLOCKER D-A1 — "width spreads with depth" CANNOT FAIL).**
+The headline chained four EXACT numbers under the COMPLETED law at
+four different (pool, depth) pairs to one SAMPLED number under the
+LOCAL law at a fifth, and switched statistic on the way (top-width
+-> the fixed threshold 4). Worse, the claim is a near-tautology:
+touched-width is MONOTONE NON-DECREASING in depth, so "width
+spreads with depth" cannot fail — and a control that cannot fail
+is not evidence. The referee built the like-for-like series (same
+pool, same law, growing depth): pool 6 touched-width >= 4 runs
+0.027, 0.242, 0.578, 0.903, 0.978, 1.000 by depth 10. **The
+DISCRIMINATING scalings point the OTHER WAY:** at fixed depth 8
+the FULL-width mass COLLAPSES across pools 4-8 (0.782, 0.568,
+0.333, 0.137, 0.037), and on the diagonal depth = 2 x pool it
+falls 0.867 -> 0.623 (touched) and 0.340 -> 0.073
+(delivery-joined). **CORRECTED READING: what is typical-in-the-
+making is dimension >= 3 — NOT D45b's unbounded dimension.**
+
+**B2 (BLOCKER D-A2 — "the theory's OWN law" is not established).**
+The committed d42b1 layer's own docstring says "Weight-system
+level only (RF4): NO MEASURE CLAIM; the placement front owns
+normalization", and menus sum to 2 or 5/2. This unit used TWO
+different normalizations — lookahead-completed for the exact arm,
+local for the sampled arm — and called both "the theory's own
+law". Withdrawn: every typicality statement must name the exact
+normalization it is taken under.
+
+**B3 (MAJOR — the proxy counts IDLERS).** actors_touched counts an
+actor as touched by an IDLE, and the measure is ~50% idle. On a
+non-idle proxy the headline 0.981 / 0.307 becomes 0.672 / 0.077;
+on a delivery-joined proxy, 0.432 / 0.030. §4's presentation of
+idle-heaviness as SUPPORT for the reading is withdrawn — it is
+partly what produced the number.
+
+**B4 (MAJORs).** width >= 4 is NECESSARY NOT SUFFICIENT for
+dimension, so 0.98 UPPER-BOUNDS the dimension mass — the direction
+was never stated; TY1 and TY4 each implemented half their pin (the
+delivery-pattern half and "poset width" dropped); the doctrine
+scan exempted any line containing "not", through which the referee
+smuggled an explicit spacetime-dimension claim (mutant d5); three
+gates cannot fire.
+
+**B5 — WHAT SURVIVED THE ATTACK (reported as such by the
+referee).** The CALIBRATION horn did NOT fire: the completed-vs-
+local gap was computed at 14 (pool, depth) pairs including both
+sampled pools at depth 3 (2.73e-4 and 2.84e-4) and could not be
+made to grow. The sampler is sound (the 1e-9 grid's bias is
+<= ~1e-7 per path; an N = 20,000 check matches the exact profile
+to ~1 s.e.). TY3-b genuinely fires. Doctrine compliance holds in
+substance. Forward-corrected at LOG #398.

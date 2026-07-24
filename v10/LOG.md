@@ -7922,3 +7922,80 @@ closed injective joint system and the menu factorization — and H1
 NOT discharged; residue 1 stands at D44a #368's reading with the
 gap sharpened. ROUND 1 OF 3 IS COMPLETE (D46a + D46c both
 terminal). NEXT: round 2 of 3 — (D46b + D46d).
+
+## 2026-07-19 — (D46b + D46d) ROUND 1: REVISE / REVISE (LEDGER
+## #398); FIVE BLOCKERS; **THREE DELIVERED FINDINGS REVERSE**;
+## FORWARD-CORRECTIONS of #384 and #386
+The batched round (frozen: reviews/d46bd-round1-hostile-review.md,
+872 lines). This is the campaign's hardest round to date and it
+overturns claims I reported as results.
+
+**D46b — REVISE (3B/4M/6m/2n). TWO OF FOUR FINDINGS REVERSE.**
+(B-A1) MB5's "root != renewal at transport" was a HORIZON-MISMATCH
+ARTIFACT: kernel(G_D, h) uses an ABSOLUTE cap, so a
+remaining-horizon-4 root kernel was compared against a
+remaining-horizon-1 witness kernel (at r = 1 the kernel is just
+the normalized menu). At MATCHED remaining horizon the witness's
+sector masses are EXACTLY the root's at r = 1, 2, 3. **#384's "the
+delivery-free root = renewal identity DOES NOT TRANSFER" is
+WITHDRAWN — it DOES transfer at matched horizon at this scope; the
+gloss "reconvergence restores HOLDINGS but not the FUTURE" is
+withdrawn with it.** (B-A2) MB4 reverses with the WRONG SIGN:
+lambda = 2 is an EIGENVALUE compared against finite-horizon
+ratios; the referee rebuilt the DELIVERY-FREE family and its
+finite-horizon ratios are LARGER than transport's (delivery-free
+G_4 = 1037/64 vs transport 1035/64), so **#384's "deliveries add
+branching / the delivery-free lambda = 2 is a LOWER NEIGHBOUR" is
+WITHDRAWN**; and "AND RISES" is FALSIFIED — transport peaks at
+D = 5 (2.015942) and turns down at D = 6 (2.015741). (B-A3) three
+gates are tautologies (r23 > 0; two isinstance checks) while
+MB6-b certifies "no unconditional gate"; mutants b5/b6/b7 flip
+every surviving headline at 12 PASS / exit 0. (MAJOR) **the unit
+reported a NEGATIVE where its own PINNED object gives a POSITIVE**
+— the pin's MB3 object is the d44f SECTOR-NORMALIZED CONDITIONAL,
+never computed; the referee computed it and it is EXACTLY
+HORIZON-STABLE at the root (r = 1..6). (MAJOR) MB5-a did not
+identify the witness (delivering v0 has the same 1/256 weight);
+"~0.738 per level" is one datum (true sequence 0.738, 0.399,
+0.086). **SURVIVING AND STRENGTHENED:** MB1's ladder {2: 3757,
+5/2: 212} confirmed independently and extended to depth 5; and THE
+CONTRACTION CLAIM IS TRUE — reproduced in L-infinity/L1/
+sector-L-infinity out to D = 6 and uniformly over the family at
+fixed relative horizon (3/110, 3/253, 373/69230, 2333/1838829),
+stronger than the receipt claimed and previously ungated.
+
+**D46d — REVISE (2B/4M/5m/2n). THE HEADLINE IS RETIRED.**
+(D-A1) "WIDTH SPREADS WITH DEPTH UNDER THE THEORY'S OWN LAW"
+chained four EXACT numbers under the COMPLETED law at four
+different (pool, depth) pairs to ONE SAMPLED number under the
+LOCAL law at a fifth, switching statistic (top-width -> the fixed
+threshold 4) — and is a NEAR-TAUTOLOGY: touched-width is MONOTONE
+NON-DECREASING in depth, so the claim CANNOT FAIL. The referee's
+like-for-like series (pool 6, same law, growing depth) runs 0.027,
+0.242, 0.578, 0.903, 0.978, 1.000 by depth 10, while the
+DISCRIMINATING scalings point the OTHER WAY: at fixed depth 8 the
+FULL-width mass collapses across pools 4-8 (0.782, 0.568, 0.333,
+0.137, 0.037) and on the diagonal depth = 2 x pool it falls
+0.867 -> 0.623 (touched) and 0.340 -> 0.073 (delivery-joined).
+**#386's headline is WITHDRAWN; the corrected reading is that what
+is typical-in-the-making is DIMENSION >= 3, NOT D45b's unbounded
+dimension.** (D-A2) "the theory's OWN law" is not established: the
+committed d42b1 docstring says "Weight-system level only (RF4): NO
+MEASURE CLAIM", and the unit used TWO normalizations
+(lookahead-completed and local) while calling both the theory's
+law. (MAJOR) the proxy COUNTS IDLERS — the headline 0.981/0.307
+becomes 0.672/0.077 (non-idle) and 0.432/0.030 (delivery-joined);
+**#386's presentation of idle-heaviness as SUPPORT is withdrawn —
+it is partly what produced the number.** (MAJORs) width >= 4 is
+NECESSARY NOT SUFFICIENT so 0.98 UPPER-BOUNDS the dimension mass
+(direction never stated); TY1/TY4 each implement half their pin;
+the doctrine scan exempted any line containing "not" and a mutant
+smuggled an explicit spacetime-dimension claim through it.
+**ATTACKS THAT FAILED, reported as such by the referee:** the
+CALIBRATION horn did NOT fire (14 (pool, depth) pairs; both
+sampled pools at depth 3 give 2.73e-4 and 2.84e-4; it could not be
+made to grow); the sampler is sound (bias <= ~1e-7 per path;
+N = 20,000 matches the exact profile to ~1 s.e.); TY3-b genuinely
+fires; doctrine compliance holds in substance.
+Notes §5 both units. Receipt repairs are with an applier; the
+corrected readings will be gated, not narrated.

@@ -101,3 +101,60 @@ theorem would have to supply.
 measurement at the committed caps (D <= 4); no boundary existence,
 no infinite-volume statement, no transport closure claimed;
 D44b's open verdict stands untouched.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d46bd-round1-hostile-review.md: REVISE, 3B/4M/6m/2n).
+## TWO OF THE FOUR DELIVERED FINDINGS REVERSE.
+
+**B1 (BLOCKER B-A1 — MB5 REVERSES; the finding was a HORIZON
+ARTIFACT).** kernel(G_D, h) used an ABSOLUTE depth cap, so §4's
+comparison set a remaining-horizon-4 ROOT kernel against a
+remaining-horizon-1 WITNESS kernel — at r = 1 the "kernel" is just
+the normalized menu. At MATCHED remaining horizon the witness's
+per-kind sector masses are EXACTLY the root's at r = 1, 2, 3.
+**"THE DELIVERY-FREE root = renewal IDENTITY DOES NOT TRANSFER" IS
+WITHDRAWN — it DOES transfer at matched horizon at this scope.**
+The vivid gloss built on it — "reconvergence restores HOLDINGS but
+not the FUTURE" — is WITHDRAWN with it. (Separately: the 1/256
+witness was never in the root's sigma-state, so D44a predicts
+nothing about it either way.)
+
+**B2 (BLOCKER B-A2 — MB4 REVERSES, with the WRONG SIGN).** Three
+defects in one sentence: (i) lambda = 2 is an EIGENVALUE and was
+compared against FINITE-HORIZON ratios; (ii) the referee rebuilt
+the DELIVERY-FREE family from the committed d42b3 layer — its
+finite-horizon ratios are LARGER than transport's at every horizon
+where they differ (delivery-free G_4 = 1037/64 vs transport
+1035/64), so **"deliveries add branching" has the WRONG SIGN**;
+(iii) "AND RISES" is FALSIFIED at the next horizon — transport
+peaks at D = 5 (2.015942) and turns DOWN at D = 6 (2.015741).
+**The whole MB4 reading is WITHDRAWN.**
+
+**B3 (BLOCKER B-A3 — three tautological gates).** r23 > 0,
+isinstance(drift, Fr), isinstance(d23, Fr) — while MB6-b certified
+"no unconditional gate". The referee's mutants b5/b6/b7 flip all
+three surviving headlines at 12 PASS / exit 0, with the static
+VERDICT string then contradicting the OUTCOME printed above it.
+
+**B4 (MAJOR — the unit reported a NEGATIVE where its own PINNED
+object gives a POSITIVE).** The pin's MB3 object (per the d44f
+lesson) is the SECTOR-NORMALIZED CONDITIONAL; §4 never computed
+it, reporting instead that "both the absolute kernel and the
+per-kind sector masses DRIFT". The referee computed the pinned
+object: it is EXACTLY HORIZON-STABLE at the root (r = 1..6). The
+drift reading is therefore reported against the wrong object.
+
+**B5 (MAJOR — MB5-a did not identify the witness;
+"~0.738 per level" was one datum).** Delivering v0 instead of v1
+carries the same 1/256 weight and passed the old gate. The true
+contraction sequence is 0.738, 0.399, 0.086 — not a constant rate.
+
+**B6 — WHAT SURVIVES, and is STRENGTHENED.** MB1 stands: the
+transport ladder is exactly {2: 3757, 5/2: 212}, confirmed
+independently on both sides and extended to depth 5 — **the
+quarter-quantized ladder is not a deliverylessness artifact.** And
+**THE CONTRACTION CLAIM IS TRUE**: the referee reproduced it in
+L-infinity, L1 and sector-L-infinity, out to D = 6, and UNIFORMLY
+over the family at fixed relative horizon (3/110, 3/253,
+373/69230, 2333/1838829) — stronger than the receipt claimed, and
+previously ungated. Forward-corrected at LOG #398.
