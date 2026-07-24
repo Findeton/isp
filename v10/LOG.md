@@ -7534,3 +7534,21 @@ doctrine self-scan, allow-list purity on the exact layer, no
 unconditional gate, and the EXACT/SAMPLED separation gated
 structurally. Ladder: a, c, b, d done (all GREEN-UNREVIEWED);
 remaining e (smeared interacting + g = 0), f (reception dynamics).
+
+## 2026-07-19 — D46e + D46f PINNED (LEDGER #387); builds launched
+note-d46e-smeared-interacting.md: the D44d successor with the
+MANDATORY g = 0 column — does the SMEARED identification at the
+interacting fixture collapse onto a common ray as it does at the
+free core? Gates SG0-SG4 (free-core regression; the ported
+validator fixture + extraction validity; the smeared comparison at
+the interacting point AND at g = 0 by the same pipeline; the
+interaction effect separated from the grain effect structurally;
+precision/determinism/purity). note-d46f-reception-dynamics.md:
+the census's typed-open arm — the ACTUAL layer state-update per
+record type (RD1 a function of the censused data), its NSE/D25/D27
+compliance as DYNAMICS with a firing lossy control (RD2), and
+COMPOSABILITY of two receptions in either order with the exact
+obstruction where they do not commute (RD3, the D44f foliation
+lesson at reception grain), plus honesty/purity/determinism (RD4).
+Both GREEN-UNREVIEWED; the review budget reopens after this pair,
+paper-32's round FIRST.
