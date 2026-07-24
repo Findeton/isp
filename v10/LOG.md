@@ -7420,3 +7420,34 @@ construction; KG2 the committed witnesses (W6; the W(n) courier
 records) with attempt census; KG3 doctrine compliance (no
 spacetime claim, no negative claim, sphere rung = successor); KG4
 purity/determinism/GREEN-UNREVIEWED. Build launched.
+
+## 2026-07-19 — D46c GREEN-UNREVIEWED 11/11 + 1 OPEN (LEDGER #382):
+## THE FIRST GEOMETRIC REALIZATION BEYOND THE TWO-CLOCK RUNG
+Author-built (the agent build died on a model limit; rebuilt
+directly). Verified: exit 0; 11 PASS / 0 FAIL; seeds byte-identical.
+KG0: the exact rational M^{2+1} checker (squared intervals; no
+square roots, no floats in any gated quantity) regression-anchored
+on the 1+1 rung (a realizer-built 2D poset certified by light-cone
+coordinates) with a FIRING broken-certificate control. KG1: the
+standard examples S_3, S_4, S_5, S_6 CERTIFIED by the rationalized
+antipodal construction (unit-circle rational directions; heights
+T = 3/2, 3/2, 5/3, 7/4 with max|d_i+d_j|^2 <= T^2 < 4) — the
+doctrine's argument turned into a machine-checked construction.
+**KG2-a: THE COMMITTED W6 WITNESS IS CERTIFIED IN M^{2+1}** — the
+d43d NG3b transport record (six deliveries, six actors, each
+admissible at exactly 1/20, rebuilt from the committed d42b1
+layer) has crown shape and its transported certificate verifies
+exactly on all 30 ordered pairs: the first generated record with a
+2+1 causal-order certificate. KG2-b OPEN: the 18-event W(3)
+courier record received no certificate from TWO structured
+placement families (13,236 exact tuples); the census localizes the
+difficulty at the CHAIN-ACCUMULATION pairs (the courier firewall's
+signature) — declared OPEN, never a negative embeddability claim
+(pin KG3; recognition is hard). KG3 doctrine self-scans + KG4
+allow-list purity (813 leaves) and no-unconditional-gate self-scan
+(needles built by concatenation — the d45b self-trip lesson).
+Note §4 A1-A4 (float-guided direction SELECTION declared; T by
+smallest-denominator search; the two families; the needle
+discipline) and §5. GREEN-UNREVIEWED: not citable as
+review-hardened until the D46c round (queued behind paper-32's).
+Ladder: a done, c done, next b (Martin-at-transport), then d/e/f.

@@ -1,0 +1,44 @@
+[d46c — M^{2+1} causal-order certificates (positive only)]
+  banner: GREEN-UNREVIEWED — the hostile round is deferred
+  per the D46 program pin (token budget); this receipt must
+  not be cited as review-hardened until its round converts
+  (paper-32's round precedes it).  EXACT Fractions only:
+  certificates are rational (t, x, y) triples and every
+  causal test is a squared-interval comparison — no square
+  roots, no floats in any gated quantity.  POSITIVE
+  certificates only: a not-found is a DECLARED OPEN outcome,
+  NEVER a negative embeddability claim (pin KG3).  The
+  sphere (3+1) rung is explicitly OUT OF SCOPE (successor).
+  Doctrine (note-d45b §1, binding): a certificate is a
+  statement about the CAUSAL ORDER's embeddability, not a
+  claim — never — that generated records ARE spacetime.
+  [PASS] KG0-a the rational direction set: every listed vector is an EXACT unit vector (a^2 + b^2 == 1 in Fractions) — the antipodal construction needs no irrational data  (8 seeds -> 68 exact unit vectors in the spread pool)
+  [PASS] KG0-b THE 1+1 REGRESSION: a 2-dimensional poset built from a realizer pair (5 elements) receives its M^{1+1} certificate by light-cone coordinates t = (u+v)/2, x = (u-v)/2, y = 0 — verified by the SAME checker, all 20 ordered pairs, both directions (the two-clock rung, where order dimension and Minkowski dimension coincide, and no further — note-d45b §1)  (witness = None)
+  [PASS] KG0-c THE CHECKER FIRES (negative control): perturbing one certificate point by +7 in t breaks the verification — the checker is not vacuous  (broken at ordered pair (0, 2, True))
+
+[KG1 — the standard examples S_n via the rationalized antipodal construction]
+    S_3: max_(j!=i) |d_i+d_j|^2 = 3136/2809; T = 3/2; T^2 = 9/4; certificate verifies = True
+    S_4: max_(j!=i) |d_i+d_j|^2 = 2; T = 3/2; T^2 = 9/4; certificate verifies = True
+    S_5: max_(j!=i) |d_i+d_j|^2 = 98/37; T = 5/3; T^2 = 25/9; certificate verifies = True
+    S_6: max_(j!=i) |d_i+d_j|^2 = 162/53; T = 7/4; T^2 = 49/16; certificate verifies = True
+  [PASS] KG1 THE CROWNS ARE CERTIFIED IN M^{2+1}: S_3, S_4, S_5, S_6 each receive an EXACT rational certificate (minima on the unit circle at t = 0; each upper at the ANTIPODE of its non-dominated minimum at rational height T with max_(j!=i)|d_i+d_j|^2 <= T^2 < 4), verified in both directions on all ordered pairs — the doctrine's antipodal argument made a rational, machine-checked construction  (S_3: T = 3/2; S_4: T = 3/2; S_5: T = 5/3; S_6: T = 7/4)
+
+[KG2 — certificates ATTEMPTED for the committed witnesses]
+  [PASS] KG2-a THE COMMITTED W6 WITNESS IS CERTIFIED IN M^{2+1}: the d43d NG3b record (six deliveries among six actors, each admissible at exactly 1/20, rebuilt from the committed d42b1 layer) has crown shape, and transporting the KG1 antipodal certificate along that shape verifies EXACTLY on all 30 ordered pairs — the first generated record with a machine-checked 2+1 causal-order certificate  (admissible x6 at 1/20; crown shape n = 3; certificate verifies = True)
+  [PASS] KG2-b0 the committed W(3) courier record rebuilt from the layer: 18 events over 18 actors, every event admissible at the uniform weight 1/68, and the induced subposet on the 6 crown elements is exactly S_3 (the d45b ZG2 anchors, re-derived here before any embedding is attempted)  (events = 18; actors = 18; weight = 1/68)
+    family B (hub-clustered): 9396 exact tuples tried; certificate found = False
+    W(3): no certificate in the searched family — 3840 exact parameter tuples; the most frequent first-violated (layer_i, layer_j, required) buckets: [((0, 15, False), 5664), ((0, 3, True), 1964), ((0, 12, True), 1916), ((0, 12, False), 1872)]
+  [OPEN KG2-b] the committed W(3) courier record (18 events) received NO certificate from either placement family searched here — family A (interpolating, 3840 tuples) and family B (hub-clustered, 9396 tuples), 13236 exact rational parameter tuples in all. This is an OPEN outcome, NOT a negative embeddability claim: two structured families are not the space of embeddings, and recognition is hard [pin KG3]. What the census does show is WHERE the difficulty sits: the dominant first-violations are CHAIN-ACCUMULATION pairs (a minimum required below a LATE member of a hub chain while spacelike from that hub's earlier members) — the courier firewall's own signature. The crown INDUCED SUBPOSET of this record IS certified (KG1/KG2-a); whether the full 18-event order admits a 2+1 certificate, or first needs a higher rung, is the successor question.
+  [PASS] KG2-b the W(3) attempt is DELIVERED with its census (the OPEN outcome is a result, not a failure — pin KG3): the searched family is nonempty, every tuple was checked exactly, and the first-violation buckets are printed  (tuples = 13236; buckets = 10)
+
+[KG3 — doctrine compliance and scope]
+  [PASS] KG3-a NO CLAIM OF THE PHYSICAL KIND: every source line naming the physical arena or the Meyer-dimension notion carries a disclaimer/scope marker (self-scan with split needles so the scanner cannot self-trip) — a certificate is a statement about the CAUSAL ORDER's embeddability, never about what generated records ARE  (undisclaimed lines = none)
+  [PASS] KG3-b NO NEGATIVE CLAIM: every not-found is routed through declare_open (the OPEN ledger), and no line of source or OPEN text asserts non-embeddability (split needles)  (open outcomes recorded = 1; negative assertions = 0)
+  [SCOPE] the sphere-order (3+1) rung is OUT OF SCOPE here (named successor); typicality under the completed measure is D46d's; no manifold or estimator claim appears in this receipt.
+
+[KG4 — purity and determinism]
+  [PASS] KG4-a ALLOW-LIST PURITY (the #362 successor binding): every leaf of every certificate, direction, and pool object is in {Fraction, int, str, bool} — floats appear ONLY inside the search-time direction ordering (declared in spread()'s docstring) and never in a gated quantity  (leaves walked = 813, impure = 0)
+  [PASS] KG4-b no unconditional gate: the source contains no check(<literal true>) form (self-scan with needles built by concatenation so the gate cannot self-trip; the campaign's four convictions bind)  (needle hits = none)
+
+[SUMMARY] 11 PASS / 0 FAIL  (1 declared OPEN outcome(s))
+[VERDICT] d46c GREEN-UNREVIEWED: the exact rational M^{2+1} checker is regression-anchored on the 1+1 rung with a firing control; the standard examples S_3..S_6 are CERTIFIED by the rationalized antipodal construction; and the committed W6 witness — a generated transport record of order dimension 3 — is CERTIFIED in 2+1 Minkowski causal order, the first geometric realization of a generated record beyond the two-clock rung. The W(3) courier record's full 18-event order is delivered per the OPEN ledger above. Positive certificates only; no negative embeddability claim; the sphere rung and typicality are named successors. NOT review-hardened until the D46c round converts (paper-32's round precedes it).

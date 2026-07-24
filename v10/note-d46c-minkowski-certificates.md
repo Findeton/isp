@@ -47,3 +47,50 @@ Finite rational certificates at fixture scale; exact integer/
 rational arithmetic only (squared-interval comparisons — no square
 roots needed). Typicality is D46d's; transport-scope machinery
 untouched.
+
+## 4. First-run amendments (2026-07-19, pre-round; author-built,
+## GREEN-UNREVIEWED)
+
+**A1 (direction selection uses floats as a SEARCH heuristic).**
+spread(n) orders the rational-unit-vector pool by atan2 and picks
+the nearest candidate to each equal-spacing target — floats appear
+ONLY in that selection; every SELECTED vector is an exact rational
+unit vector (gated) and every certificate check is exact Fractions.
+Declared in the function's docstring and in KG4-a's label.
+
+**A2 (T by smallest-denominator search).** The crown height is the
+smallest-denominator rational T with max|d_i+d_j|^2 <= T^2 < 4
+(exact search over denominators) — T = 3/2 (S_3, S_4), 5/3 (S_5),
+7/4 (S_6).
+
+**A3 (KG2-b ran TWO families, both open).** Family A
+(interpolating: courier layers placed on the segment from the
+minimum toward the upper's antipode) and family B (hub-clustered:
+each hub's C-layer near that hub's own antipode, the chain TIMES
+crossing the distance threshold) — 3,840 + 9,396 = 13,236 exact
+rational parameter tuples, no certificate. The census localizes
+the difficulty: the dominant first-violations are
+CHAIN-ACCUMULATION pairs (a minimum required below a LATE member
+of a hub chain while spacelike from that hub's earlier members) —
+the courier firewall's own signature. DECLARED OPEN, never a
+negative embeddability claim.
+
+**A4 (self-scan needles).** KG3-a/b and KG4-b build their needles
+by concatenation and carry marker words, so the discipline scanners
+cannot self-trip (the d45b ZG6.2 lesson).
+
+## 5. Result (GREEN-UNREVIEWED; round queued behind paper-32's)
+
+11 PASS / 0 FAIL, 1 declared OPEN. **The first geometric
+realization of a generated record beyond the two-clock rung: the
+committed W6 witness — the transport record whose order dimension
+is 3 — is CERTIFIED in M^{2+1} causal order**, exactly, on all 30
+ordered pairs, by transporting the rationalized antipodal
+certificate along its crown shape. The standard examples S_3..S_6
+are certified likewise (T = 3/2, 3/2, 5/3, 7/4 on unit-circle
+directions). The checker is regression-anchored on the 1+1 rung
+(light-cone coordinates from a realizer pair) with a firing broken-
+certificate control. The full 18-event W(3) courier record is
+OPEN per A3. Doctrine held throughout: certificates are statements
+about the CAUSAL ORDER's embeddability; the sphere (3+1) rung and
+typicality are named successors (D46d).
