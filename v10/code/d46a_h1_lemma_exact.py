@@ -31,23 +31,34 @@ would be the delivered object at exit 0 (pin §3-§4 discipline).
 
 H2'S STATUS (LG3, DECLARED): the joint transition is deterministic
 keyed by (sigma, renamed e) ALONE (160 cache keys + 16 depth-6->7
-keys = 176, zero conflicts) — so on the closed system H2 needs no
-separate closure: sigma-injectivity makes the joint BFS and the
-sigma BFS the SAME 36-state/176-edge object, and H2 is subsumed by
-the same joint-closure conditional that powers LG1.
+keys = 176, zero conflicts), so sigma-injectivity makes the joint
+BFS and the sigma BFS the SAME 36-state/176-edge object, and H2
+HOLDS AT EVERY VERIFIED DEPTH by census.
 
-WHAT REMAINS FOR THE PIN-§5 PROOF NOTE (the author writes it; the
-receipt only gates the mechanical parts): (i) cone-locality as a
-THEOREM — the committed admissible() builds its View from the
-candidate's past cone only, so a downward-closed sub-history
-containing that cone reproduces the candidate and its weight
-verbatim (LG2a is this claim's exhaustive depth-7 census); (ii) the
-abstract-update law — joint-transition determinism at ALL depths
-(LG1a/LG3 verify it exhaustively through depth 7; the note must
-argue the sigma/tau raw-data update under one event is a function
-of the abstract state and the renamed event). Given (i)+(ii), the
-closed injective joint system delivers H1 and H2 at every depth and
-the D44a §8 assembly closes residue 1 outright at d42a scope.
+ROUND-1 CORRECTIONS (note §6 B1-B4; LOG #394) — binding on every
+reading of this receipt:
+  * H1 IS NOT DISCHARGED.  The earlier claim that TWO structural
+    facts — (i) cone-locality and (ii) the abstract-update law —
+    suffice is WITHDRAWN AS INVALID: (i) gives menu(h, a) =
+    menu(own-sub-history, a), (ii) gives sigma -> tau, and NEITHER
+    gives the tau -> menus arrow, an UNDECLARED THIRD CONDITIONAL
+    (the round's cone-local weight-swap witness leaves seven gates
+    passing while LG2b/LG2c fail).
+  * (H0) was silently dropped from D44a §8's conjunction; the
+    honest hypothesis set is (H0) + the abstract-update law + the
+    tau -> menus arrow — THREE, none discharged.
+  * "H2 SUBSUMED" is WITHDRAWN AS INVERTED: the abstract-update law
+    IS H2 (D44a §8 states H2 is not a consequence of H1).
+  * tau is NOT an own-view object: the menu view strictly exceeds
+    a's noop cone on 1,016/12,942 histories (7.9%), the extra
+    events OPPONENT-AUTHORED in all 1,016, and 104/2,224 own-view
+    classes carry different menus (TG2a/b/c) — pin §2's target is
+    REFUTED AS WRITTEN.
+  * RESIDUE 1 therefore stands where D44a #368 and paper 32 put it:
+    DECIDED AT EVERY VERIFIED DEPTH, with the H1 gap open and
+    sharpened.  What this receipt delivers is the MECHANICAL CORE
+    (the closed injective joint system and the menu factorization),
+    not the lemma.
 
 Banner: EXACT Fractions; deterministic (every canonical form is a
 post-renaming-sorted plain-tuple serialization; witness prints go
@@ -690,10 +701,14 @@ print("  [LG3 DECLARATION] H2's status, determined: H2 (sigma-"
       "system and the sigma transition system are THE SAME "
       "36-state/176-edge object (LG1b == D44a CG3a anchors), and "
       "LG3a/LG3b show the transition table is sigma-keyed with "
-      "zero conflicts at every verified depth. H2 is subsumed by "
-      "the same joint-closure conditional that powers LG1: the "
-      "pin-§5 note discharges H1 and H2 from ONE abstract-update "
-      "law (docstring item ii), not two.")
+      "zero conflicts at every verified depth. ROUND-1 CORRECTION "
+      "(note §6 B3; LOG #394): the earlier reading — that H2 is "
+      "SUBSUMED and that ONE abstract-update law discharges H1 "
+      "and H2 together — is WITHDRAWN AS INVERTED. The "
+      "abstract-update law IS H2 (D44a §8: H2 is not a "
+      "consequence of H1); these gates establish that H2 HOLDS AT "
+      "EVERY VERIFIED DEPTH by census, not that it is discharged "
+      "as a law.")
 
 # ---- LG1d/LG2c/LG3b: the depth-7 out-of-sample extension -----------
 # One full level past the committed cache (the D44a round-1 F1/R2
@@ -976,20 +991,27 @@ print("[VERDICT] d46a GREEN-UNREVIEWED (the hostile round is "
       "values per actor; zero exceptions at every verified "
       "depth). The R-B counterexample horn did NOT fire. H2's "
       "status DECLARED (LG3): the transition table is sigma-keyed "
-      "(160 + 16 = 176 keys, zero conflicts), so H2 is subsumed "
-      "by the same joint closure — one abstract-update law powers "
-      "both. Controls: the component/payload-dropped tau variant "
+      "(160 + 16 = 176 keys, zero conflicts) — the earlier "
+      "reading 'H2 is subsumed, one law powers both' is WITHDRAWN "
+      "as inverted (note §6 B3); the law IS H2, verified by "
+      "census at every verified depth. Controls: the component/payload-dropped tau variant "
       "merges 16 -> 10 classes with 6 menu-splitting (LG4a); the "
       "holdings+superseded-dropped sigma coarsening yields 13 "
       "classes with 9 tau-mixing and 5 menu-mixing (LG4b) — both "
       "fail loudly, the delivered abstractions do not. WHAT THIS "
-      "RECEIPT DOES NOT CLAIM: the all-depth quantifier is NOT "
-      "discharged mechanically — depth-free H1 now rests on "
-      "exactly two structural facts for the pin-§5 proof note: "
-      "(i) cone-locality of the layer's per-candidate computation "
-      "(LG2a's census, to be written as a code-reading theorem) "
-      "and (ii) the abstract-update law (joint-transition "
-      "determinism as a law; LG1a/LG3's census). Given (i)+(ii), "
-      "sigma -> (tau_A, tau_B) -> menus closes H1 AND H2 at every "
-      "depth and the D44a §8 assembly decides residue 1 OUTRIGHT "
-      "at d42a scope; transport scope remains D46b's problem.")
+      "RECEIPT DOES NOT CLAIM — ROUND-1 CORRECTED (note §6 B1/B2; "
+      "LOG #394): the all-depth quantifier is NOT discharged, and "
+      "the earlier claim that TWO structural facts suffice is "
+      "WITHDRAWN AS INVALID. Cone-locality gives menu(h, a) = "
+      "menu(own-sub-history, a); the abstract-update law gives "
+      "sigma -> tau; NEITHER gives the tau -> menus arrow — an "
+      "UNDECLARED THIRD CONDITIONAL (the round's cone-local "
+      "weight-swap witness leaves seven gates passing while "
+      "LG2b/LG2c fail). (H0) was also silently dropped from D44a "
+      "§8's conjunction. The honest hypothesis set is (H0) + the "
+      "abstract-update law + the tau -> menus arrow — THREE, none "
+      "discharged. RESIDUE 1 STANDS WHERE D44a #368 AND PAPER 32 "
+      "PUT IT: decided at EVERY VERIFIED DEPTH, the H1 gap open "
+      "and sharpened; and tau is NOT an own-view object "
+      "(TG2a/b/c), so pin §2's target is refuted as written. "
+      "Transport scope remains D46b's problem.")

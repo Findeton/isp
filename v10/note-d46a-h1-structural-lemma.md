@@ -10,7 +10,8 @@ unreviewed until the budget reopens; paper-32's round first).
 
 ## 1. The statement
 
-**[TARGET — H1] At d42a scope (two actors, p/r/n, the committed
+**[TARGET — H1; SUPERSEDED AS WRITTEN — §8 B4 refutes the
+own-view framing, and H1 is NOT discharged]**  ** At d42a scope (two actors, p/r/n, the committed
 admission layer): for ALL histories h, h' of ANY depth,
 sigma(h) = sigma(h') implies menu(h) and menu(h') are identical as
 renamed event-multisets with exact weights.**  With the committed
@@ -94,8 +95,8 @@ path-anchored; caps: the depth-7 cache is the mechanical
 verification surface; the BFS arms are depth-free by construction.
 Green-unreviewed until the review budget reopens (program pin §0).
 
-## 4. First-run amendments (2026-07-19, pre-round; declared
-## deviations)
+## 6. First-run amendments (2026-07-19, pre-round; declared
+## deviations)  [A1's design choice is now CONTROLLED — see §9]
 
 **A1 (tau's own view = the MENU-VIEW).** tau_a runs on the noop
 cone PLUS the cones of a's admissible r-candidates (the pin's
@@ -112,8 +113,9 @@ round's own finding, cited in-gate).
 counts + printed witnesses (the pin's scratch-variant clause), not
 a full variant BFS.
 
-## 5. The proof note (at green; STATUS: THEOREM-CANDIDATE at d42a
-## scope — GREEN-UNREVIEWED, round queued behind paper-32's)
+## 7. The proof note — **[SUPERSEDED — see §8 B1/B2: the assembly
+## is INVALID and this section's conclusion is WITHDRAWN. Retained
+## verbatim as the superseded first attempt.]**
 
 **The mechanical record (all receipt-gated, zero exceptions):** the
 joint (sigma, tau_A, tau_B) BFS closes frontier-exhausted at 36
@@ -143,12 +145,12 @@ it must not be cited as review-hardened until the D46a round (after
 paper-32's) converts; transport scope remains open (D46b)
 regardless.
 
-## 6. Round-1 amendments (2026-07-19; round frozen at
+## 8. Round-1 amendments (2026-07-19; round frozen at
 ## reviews/d46ac-round1-hostile-review.md: REVISE, 2B/4M/6m/1n).
-## §5's ASSEMBLY IS RETIRED — see B1/B2 below; §5 stands only as
+## §7's ASSEMBLY IS RETIRED — see B1/B2 below; §7 stands only as
 ## the superseded first attempt.
 
-**B1 (BLOCKER A1 — the assembly was INVALID; owned).** §5 claimed
+**B1 (BLOCKER A1 — the assembly was INVALID; owned).** §7 claimed
 that two structural facts — (i) cone-locality and (ii) the
 abstract-update law — suffice to discharge H1. They do not. (i)
 gives only menu(h, a) = menu(own-sub-history, a); (ii) gives only
@@ -160,7 +162,7 @@ LG2b/LG2c FAIL — so (i) + (ii) do not entail H1. §5's closing
 sentence "RESIDUE 1 DECIDED OUTRIGHT AT d42a SCOPE" is WITHDRAWN.
 
 **B2 (BLOCKER A2 — (H0) was silently dropped).** D44a §8's
-hypothesis is the conjunction (H0) + (H1) + (H2); §5 listed two
+hypothesis is the conjunction (H0) + (H1) + (H2); §7 listed two
 conditionals and lost (H0). The honest hypothesis set after this
 round is (H0) + (ii) + (the tau -> menus arrow) — still THREE,
 none discharged.
@@ -200,7 +202,7 @@ DECIDED AT EVERY VERIFIED DEPTH (D44a #368) — exactly where paper
 piece is the tau -> menus arrow at all depths, plus (H0), plus
 (ii). Forward-corrected at LOG #394.
 
-## 7. Round-1 repairs APPLIED (2026-07-19; 21 PASS / 0 FAIL)
+## 9. Round-1 repairs APPLIED (2026-07-19; 21 PASS / 0 FAIL)
 
 The A4 census facts are now GATED, reproducing the referee exactly
 over the 12,942 actor-histories at depth <= 5: TG2a the menu view
@@ -215,4 +217,4 @@ depth 2 (by depth 8/48/192) — so the menu-view choice is now
 justified by a firing gate rather than by assertion.  LG1a/LG1b/
 LG3a are relabelled in-gate as COROLLARIES of LG1c's injectivity
 rather than independent corroboration.  The verdict text about H1
-and the assembly is the author's and is governed by §6.
+and the assembly is the author's and is governed by §8.

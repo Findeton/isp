@@ -7850,3 +7850,41 @@ bare-noop-cone variant breaks: 248 violations in 2,382
 comparisons, first at depth 2, by depth 8/48/192); LG1a/LG1b/LG3a
 relabelled as corollaries of injectivity. Notes §7 both units.
 DELTAS to the d46ac referee next.
+
+## 2026-07-19 — D46c TERMINAL (LEDGER #396); D46a delta BLOCKER D1
+## APPLIED (the receipt's own prose contradicted its retraction)
+**D46c: DELTA CLEAN -> TERMINAL.** The referee re-ran their c6
+mutant against the repaired receipt (exit 1, 13 PASS / 1 FAIL at
+KG0-d — the silent green gone), verified W3_CERT is their
+Appendix-B coordinates VERBATIM by programmatic compare with
+honest provenance in three places and NO in-receipt-discovery
+claim, re-derived the purity count component-wise (368 correct for
+the grown object list; their 281 was right for the old one), and
+matched KG2-a2 to their own order-dimension derivation. TERMINAL
+STATEMENT: the exact rational M^{2+1} checker, regression-anchored
+on a COMMITTED 2D chain with BOTH directions controlled;
+S_3..S_6 and the committed W6 witness certified; and THE FULL
+18-EVENT W(3) COURIER RECORD CERTIFIED (referee-found,
+receipt-gated) — the first generated records placed in 2+1
+Minkowski causal order, ORDER-dimension scope only. Note §8.
+**D46a: delta NOT clean — BLOCKER D1, applied.** The receipt's own
+prose (the LG3 declaration, the VERDICT block, and the module
+docstring) still asserted exactly what note §8 retracts: "H2 is
+subsumed", "exactly two structural facts", and "the D44a §8
+assembly decides residue 1 OUTRIGHT at d42a scope" — live in
+committed source and printed into the committed .out. That is the
+proposition the round's cone-local weight-swap witness refutes.
+ALL THREE BLOCKS REWRITTEN to the corrected form (the tau -> menus
+arrow named as the undeclared third conditional; (H0) restored;
+"H2 SUBSUMED" withdrawn as inverted; tau declared not an own-view
+object; residue 1 returned to D44a #368's reading), with pointers
+to note §8 and #394; rerun 21 PASS / 0 FAIL, seeds byte-identical,
+ZERO occurrences of the retracted claim in the .out. D2 + a-m1
+also applied: the note's DUPLICATE §4/§5 headings are renumbered
+(pre-round amendments -> §6, the proof note -> §7, round-1
+amendments -> §8, repairs -> §9) with inline [SUPERSEDED] stamps
+on §7's head and §1's [TARGET] — a retraction whose references
+were ambiguous is not a retraction (the referee's phrasing,
+accepted). Process note, repeated: my edit script again died on an
+assertion BEFORE writing; caught this time by post-write
+verification, which is now the standing habit.

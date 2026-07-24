@@ -173,3 +173,25 @@ with a per-object breakdown — larger than the review's 281 because
 the walked object set grew with W3_CERT and the CH certificate);
 _SRC is __file__-anchored (verified from /tmp); the doctrine scan
 widened from 3 to 32 of 974 lines.
+
+## 8. TERMINAL (2026-07-19; delta CLEAN, LOG #396)
+
+The delta re-ran the referee's own c6 mutant against the repaired
+receipt (exit 1, 13 PASS / 1 FAIL at KG0-d — the silent green is
+gone), confirmed W3_CERT is their Appendix-B coordinates VERBATIM
+by programmatic compare with honest provenance in three places and
+no in-receipt-discovery claim anywhere, re-derived the purity leaf
+count component-wise (30 + 108 + 18 + 54 + 6 + 136 + 16 = 368 —
+their 281 was right for the OLD object list), and matched KG2-a2
+against their own order-dimension derivation.
+
+**TERMINAL STATEMENT:** the exact rational M^{2+1} checker,
+regression-anchored on a COMMITTED 2D chain with BOTH directions
+controlled; S_3..S_6 and the committed W6 witness certified; and
+the full 18-event W(3) courier record CERTIFIED (referee-found,
+receipt-gated) — the first generated records placed in 2+1
+Minkowski causal order, at ORDER-dimension scope only per the
+note-d45b §1 doctrine.  Non-blocking residuals recorded by the
+delta: two silent-green mutants (c3/c4) that cannot produce a
+false certificate since verify re-checks every pair, and a
+recommended non-identity-alignment witness.

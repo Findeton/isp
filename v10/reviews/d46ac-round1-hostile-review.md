@@ -710,3 +710,240 @@ negative control (C1), convert the W(3) OPEN to CERTIFIED (C2), delete
 the localization narrative (C2/C3), declare or repair the KG0-b pin
 deviation (C4), and fix the leaf-count anchor (C5).  With those, D46c is
 the stronger of the two units.
+
+---
+---
+
+# DELTA — round-1 repairs (commit `b1323f5`; LOG #394 conversions, #395 receipt repairs)
+
+Reviewed 2026-07-24 against the committed tree.  Round-1 body above is
+untouched.  Everything below was re-executed by the referee.
+
+## DELTA VERDICT
+
+| unit | delta verdict | round-1 items closed | residual |
+|---|---|---|---|
+| **D46c** | **DELTA CLEAN — converts to TERMINAL** | C1, C2, C3, C4, C5 + all 4 assigned minors | 2 recorded non-blocking nulls (c-m5), c-n1 cosmetic |
+| **D46a** | **DELTA NOT CLEAN — 1 BLOCKER, 1 minor; do not convert until D1 is applied** | A4, A5, A6 (receipt); A1, A2, A3 (note §6 + LOG #394) | **D1: the receipt's own prose still asserts everything §6 retracts** |
+
+---
+
+## D46c — verification of the repairs
+
+**Reproduction.** 14 PASS / 0 FAIL, **0 declared OPEN**, exit 0, ~26 s;
+rerun **byte-identical** to the committed `.out`.
+
+### C1 (BLOCKER) — CLOSED
+I reran **my own c6 mutant** (unchanged, only the `_HERE` anchor
+repointed so it runs outside the repo) against the repaired receipt:
+
+```
+c6_one_direction_only   exit=1   13 PASS / 1 FAIL
+      [FAIL] KG0-d THE SPACELIKE HALF IS LOAD-BEARING ...
+```
+
+Exactly as the applier reported.  KG0-d is well built and does what the
+finding asked: the S_3 crown at `T = 2` satisfies **every** required
+`order => causal` relation (`M = 3136/2809 < 4 = T^2`) and violates
+**only** the three incomparabilities (each upper sits exactly on its own
+non-dominated minimum's light cone, `|2 d_i|^2 = 4 = T^2`), and the gate
+asserts *both* halves — the crippled one-directional checker **accepts**
+it, the real `verify` **rejects** it at `(0, 3, False)`.  The
+blocker's exact failure mode is now a tripwire.
+
+### C2 (MAJOR) — CLOSED; provenance is honest
+- **The embedded `W3_CERT` is mine, verbatim.**  Programmatic comparison
+  against Appendix B: **`True`, all 18 triples**, max denominator 64.
+- **Nothing claims in-receipt discovery.**  Docstring lines 30-37: *"The
+  round's referee found ... (penalty hill-climb in floats, seed
+  20260724, 40 restarts) ... with the review cited as their provenance"*;
+  source comment at line 763: *"PROVENANCE: those coordinates, verbatim.
+  METHOD (theirs, search-only)"*; verdict: *"on coordinates supplied by
+  the round's referee and verified in exact Fractions by this receipt's
+  own checker"*.  The division of labour — referee found, receipt gates —
+  is stated in three places and overstated in none.  **Honest.**
+- The gate carries the two symmetry-breaking facts (minima at three
+  distinct negative times, uppers at three heights), which is the right
+  content: it records *why* the two families could not contain it.
+- The OPEN ledger is empty (`open outcomes recorded = 0`) and the
+  chain-accumulation / courier-firewall reading is **explicitly withdrawn
+  as false** inside KG2-b-exhibit.
+
+### C3 (MAJOR) — CLOSED
+KG2-b-exhibit now censuses **all** violated ordered pairs (306,049 over
+13,236 tuples, 13 buckets), states in its own label that it is *"not
+scan-order biased"* and that it *"localizes nothing about the RECORD"*,
+and names the two shared symmetry assumptions instead.  This matches my
+R11 finding and draws the correct conclusion from it.
+
+### C4 (MAJOR) — CLOSED
+KG0-b now regresses the **committed** d43d chain **CH** (10 events, width
+3, realizer computed in-receipt, 90 ordered pairs, witness `None`).  The
+pin is met, not merely declared around.
+
+### C5 (MAJOR) — CLOSED; **368 confirmed correct**
+The mutable default is gone and the anchor is per-object.  I re-derived
+the total component-wise for the **new** object list:
+
+```
+CH 1+1 certificate   10 x 3 =  30
+S_3..S_6           (6+8+10+12) x 3 = 108
+W6 (pts6)             6 x 3 =  18
+W(3) (W3_CERT)       18 x 3 =  54
+W(3) direction set    3 x 2 =   6
+unit-vector pool     68 x 2 = 136
+Pythagorean seeds     8 x 2 =  16
+                              ---
+                              368
+```
+
+**368 is right.**  My round-1 figure of 281 was right for the *old*
+object list (`pts2d` 15 + crowns 108 + D3 6 + POOL 136 + PYTH 16); the
+list grew by CH's certificate replacing the 5-element realizer (+30-15),
+`pts6` (+18) and `W3_CERT` (+54).  Both headline certificates are now
+walked, as asked.
+
+### New gate KG2-a2 — verified, matches my R4 exactly
+48 linear extensions, `dim <= 2 = False`, `dim <= 3 = True` => order
+dimension exactly 3, re-derived in-receipt rather than cited from d43d.
+c-m6 closed; both halves of the sandwich now live in one receipt.
+
+### assigned minors — verified
+`_SRC` is `__file__`-anchored (c-m1: my mutants had to be repointed,
+which is the proof); family-B `dc` carried; console count 13,236; the
+doctrine scan widened from 3 to 32 of 974 lines (c-m4 — no longer
+decorative, though `'no '`/`'not '` remain in the marker list).
+
+### residuals I do NOT consider blocking
+- **c-m5 (unapplied).**  Mutants **c3** (`dt <= 0` -> `dt < 0`) and
+  **c4** (`crown_shape` returns the unaligned `ups`) still run
+  **14 PASS / 0 FAIL, exit 0**.  Neither can produce a false certificate,
+  because `verify` re-checks every ordered pair against the poset — c3 is
+  null because no two certificate points coincide in space, c4 because
+  W6's crown alignment happens to be the identity.  Recommended, not
+  required: add a crown witness whose alignment is a non-identity
+  permutation, so the transport step's only computational content is
+  exercised.
+- **c-n1 (unapplied).**  Cosmetic.
+
+**D46c delta verdict: CLEAN.**  I endorse the stamped terminal condition
+as written, including its "ORDER-dimension scope only" qualifier and its
+"(referee-found, receipt-gated)" attribution for W(3).
+
+---
+
+## D46a — verification of the repairs
+
+**Reproduction.** 21 PASS / 0 FAIL, exit 0, ~2:10; rerun **byte-identical**
+to the committed `.out`.
+
+### A4 (MAJOR) — CLOSED; the census reproduces me exactly
+New gates **TG2a / TG2b / TG2c** hard-anchor my numbers:
+
+| my round-1 figure | gated value |
+|---|---|
+| 1,016 of 12,942 actor-histories (7.9%), max 4 extra events | TG2a: `12942 / 1016 (7.9%) / max 4` (+ 2,192 total extra events) |
+| 1,016 / 1,016 opponent-authored | TG2b: `1016/1016` |
+| 104 of 2,224 own-view classes carry different menus | TG2c: `2224 / 104` |
+
+TG2a's label states the conclusion correctly and without hedging: *"tau
+is therefore an intermediate abstraction of a WIDER-THAN-OWN view, not an
+own-view object ... no future information, but it is not computable from
+what a has witnessed"*; TG2c states that pin §2's target *"is FALSE as
+written and is NOT what this receipt establishes."*  That is the finding,
+owned.
+
+### A5 (MAJOR) — CLOSED, and better than asked
+LG2a is relabelled *"THE MECHANICAL RESTATEMENT OF FACT (i) ... this gate
+CANNOT fail on the delivered definition and is NOT evidence for
+cone-locality ... its comparison count is not evidence of anything."*
+And the missing control now exists and fires: **LG2a-ctl** — bare noop
+cone, **248 violations in 2,382 comparisons, first violating depth 2, by
+depth `{2: 8, 3: 48, 4: 192}`** — which converts amendment A1's ungated
+assertion into a gated fact and independently corroborates my mutant a1.
+
+### A6 (MAJOR) — CLOSED
+LG1a / LG1b / LG3a relabelled as corollaries of LG1c's injectivity.
+
+### A1 / A2 / A3 (BLOCKERs + MAJOR) — the AUTHORSHIP retraction is complete **in the note and the LOG**
+- **Note §6 B1-B6** retires §5's assembly by name: the `tau -> menus`
+  arrow is identified as the undeclared third conditional (citing my
+  cone-local weight-swap mutant), (H0) is restored to the hypothesis set,
+  "H2 SUBSUMED" is withdrawn as inverted, tau is declared not an
+  own-view object with pin §2's target refuted, and B6 states what
+  survives.  Accurate on every point.
+- **LOG #394** forward-corrects #380's sentence *by quotation* and
+  restores residue 1 to "DECIDED AT EVERY VERIFIED DEPTH (D44a #368)".
+  Leaving #380 itself intact as the historical record is correct practice.
+
+### **D1 (BLOCKER, new) — the RECEIPT still asserts everything §6 retracts**
+
+The coordinator's own check condition is that *no surviving line in
+receipt, note, or LOG asserts H1 discharged or the two-fact assembly*.
+It fails in the receipt.  Live, unqualified, in the committed source and
+printed verbatim into the committed `.out`:
+
+- `d46a_h1_lemma_exact.py` **lines 686-696**, `[LG3 DECLARATION]` (=
+  `.out` line 47): *"H2 ... needs NO separate closure argument at d42a
+  scope ... **H2 is subsumed** by the same joint-closure conditional that
+  powers LG1: the pin-§5 note **discharges H1 and H2** from ONE
+  abstract-update law, not two."*
+- `d46a_h1_lemma_exact.py` **lines 975-995**, `[VERDICT]` (= `.out`
+  line 63): *"... so **H2 is subsumed** by the same joint closure — one
+  abstract-update law powers both ... depth-free H1 now rests on
+  **exactly two structural facts** ... **Given (i)+(ii), sigma -> (tau_A,
+  tau_B) -> menus closes H1 AND H2 at every depth and the D44a §8
+  assembly decides residue 1 OUTRIGHT at d42a scope**."*
+
+That last sentence is the precise proposition BLOCKER A1 refutes with a
+machine-checked witness, and the precise sentence LOG #394 declares
+withdrawn.  The gates were repaired; the prose that reports them was not.
+A reader who opens the artifact of record (`v10/data/d46a_h1_lemma_exact.out`)
+sees the retracted claim, in the receipt's own voice, with a 21/21 green
+banner above it and no pointer to §6.
+
+**Prescribed fix (must apply before conversion).** Rewrite the
+`[LG3 DECLARATION]` and the final `[VERDICT]` block to the §6/B-corrected
+form — H2 not subsumed (it *is* the abstract-update law); one
+undischarged conditional set, not "two structural facts"; the
+`tau -> menus` arrow named as the third conditional; (H0) restored;
+"OUTRIGHT" struck; a pointer to note §6 B1-B6 and LOG #394 — then
+regenerate the `.out`.  No gate changes, so the 21/21 stands.
+
+### D2 (minor) — the note's superseded text has no in-place stamp
+§6's supersession notice sits *after* the text it supersedes.  A reader
+who stops earlier meets, as live claims: §1's `[TARGET]` (*"H1 closes
+residue 1 outright at d42a scope"*), and §5 at lines 127, 130, 141
+(*"H2 is SUBSUMED"*, *"conditional on two structural facts"*, *"RESIDUE 1
+DECIDED OUTRIGHT AT d42a SCOPE"*).  I am **not** asking for deletion —
+keeping superseded text is corpus convention.  Add an inline
+`[SUPERSEDED — see §6 B1/B2]` stamp at the head of §5 and on §1's
+`[TARGET]` clause.
+
+### unapplied round-1 items — my judgement on each
+
+| item | must apply before conversion? |
+|---|---|
+| **a-m1** (two `## 4` and two `## 5` headings) | **YES.**  §6 B1/B2, LOG #394 and this review all cite "§5" and "pin §2"; with two §5s the retraction's own references are ambiguous, and a retraction that cannot be located unambiguously is not a retraction.  Renumber. |
+| a-m2 (`str` in LG5a's allow-list launders a float inside a serialized abstraction) | No — recommended.  Worth one sentence of declared scope in the gate label. |
+| a-m3 (single-pattern `check(True)` scan) | No. |
+| a-m4 (no in-receipt joint-BFS control; my a6 shows the gate would fire) | No. |
+| a-m5 (the R-B horn is untested dead code) | No. |
+| a-m6 (mutant a8 silent-green = the D44a F3/m2 nullity, now shown to extend to the joint/tau system) | No — but **record it** in note §7 with the F3 cross-reference, so a later round does not re-litigate a settled nullity as a live corruption. |
+| a-n1 (LOG wall-clock) | No.  For the record, this machine now measures **2:10**, matching #380's "~2:11". |
+
+**D46a delta verdict: NOT CLEAN.**  Apply **D1** (and **a-m1**); D2 and
+a-m6 are cheap and recommended in the same pass.  With D1 applied I
+endorse the stamped terminal condition as written — it is an accurate,
+honest statement of what this unit delivered and of what it does not.
+
+## Delta mutation re-runs
+
+| mutant (unchanged from round 1) | round 1 | after repairs |
+|---|---|---|
+| c6 — one-directional `verify` | 11 PASS / 0 FAIL, **exit 0**, false W(3) headline | **13 PASS / 1 FAIL at KG0-d, exit 1** |
+| c1 W6 corrupted | exit 1 | exit 1 (now also fails KG2-a2) |
+| c2 `T = 2` | exit 1 | exit 1 |
+| c5 uppers not antipodal | exit 1 | exit 1 |
+| c3 `dt <= 0` -> `dt < 0` | silent green (null) | silent green (null) — c-m5 unapplied |
+| c4 unaligned `ups` | silent green (null) | silent green (null) — c-m5 unapplied |
