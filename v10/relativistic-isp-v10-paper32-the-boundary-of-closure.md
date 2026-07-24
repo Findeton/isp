@@ -48,9 +48,12 @@ windows: 68 transitions land in 5 classes first realized one level
 deeper.  No prediction is made about deeper closure.
 
 **Second**, dimension is mechanized and ceiling-free: arbitration
-alone cannot generate order dimension (a six-clause
-component-confinement law, with a funnel lemma making the crown
-pattern impossible at every width and depth), while transport
+alone cannot generate order dimension (a five-clause
+receipt-gated component-confinement law, with a referee-carried
+sixth clause and funnel lemma making the crown pattern impossible
+at every width and depth — referee-carried, not receipt-gated: the
+paper-grade promotion condition recorded at LOG #355 is not yet
+met), while transport
 realizes the standard example S_n as an induced subposet at every
 tested n by one uniform courier-firewall constructor (actors
 n^2 + 3n, events 2n^2), with the all-n schema proved.  Order
@@ -59,7 +62,9 @@ clock-complexity grade, never a spacetime-dimension estimator.
 
 **Third**, the quantum layer is welded to the classical completion:
 the per-type reception census is complete at fixture scope (11
-types, 6,567 instances); the foliation face resolves to a single
+types, 6,567 instances — census-complete, with GATING narrower by
+three declared grains: components of size >= 3, re-merge, and
+transport depth); the foliation face resolves to a single
 record datum — the initiator tag of the join arbitration — with
 initiator-ERASED content order-invariant; and the operator family's
 completed cross-component weights are FORCED, at verified-depth
@@ -85,13 +90,19 @@ Supersessions of the earlier record, stated where the mathematics
 lives: paper 31 §7 item 1 (the renewal-pumping closure theorem as
 the route to residue 1) is superseded by §2's closure-quotient
 route — the pumping normal form is retired as a gated obstruction;
-paper 31 §7 item 7's zero-crossing successor is discharged with the
-crossing correctly characterized (the LT operator's vanishing
-point, not a rule-agreement point); paper 31's "decided on the
+paper 31 §7 item 7's zero-crossing successor is discharged — and
+sharpened: paper 31 already characterized the crossing as the LT
+operator's vanishing point and quarantined the kappa = 1 question,
+so the correction here is that there are TWO crossings, not one,
+and that kappa = 1 is now decidable from the all-m identity; paper 31's "decided on the
 computed window" reading of residue 1 is upgraded, not reversed.
-The dimension line's scoping doctrine (§3.4) supersedes any earlier
-reading of order dimension as a step toward spacetime
-dimensionality.
+Paper 31 §7 item 2's entry condition is discharged by §4.2-4.3;
+its item 5 addition (does arbitration alone generate dimension?) is
+decided negatively by §3.1; and its item 1 clause "no computation
+remains at this scope" is FALSIFIED — the closure route needed the
+whole §2.1 abstraction, and H1 remains.  The dimension line's
+scoping doctrine (§3.4) supersedes any earlier reading of order
+dimension as a step toward spacetime dimensionality.
 
 ## 2. Residue 1: decided at every verified depth, and its exact boundary
 
@@ -189,9 +200,13 @@ structure is precisely its regime).
 ### 3.1 Arbitration cannot do it [D44c]
 
 Zero failures of two-dimensionality across 1,124,884 distinct
+[the distinct-history count is the LOG #354 forward-correction of
+the receipt's summed figure; referee-carried]
 admissible proposal/arbitration histories (exhaustive width 3 to
 six events with idles and to seven without; width 4 to six without)
-plus every constructor state at widths 3-6.  The mechanism is the
+plus every constructor state at widths 3-6 (the 340 post-cross
+states were dim-checked in the frozen round, not in-receipt —
+referee-carried).  The mechanism is the
 COMPONENT-CONFINEMENT LAW (gated, zero violations): arbitration
 pools form a laminar family; same-base pools are disjoint; each
 actor's pools nest through its own minted versions; register
@@ -199,15 +214,21 @@ sharing forces comparability (poset width <= actor width); version
 registers are single-writer; and — the round's sixth clause —
 incomparable arbitrations share no upper bound, yielding the FUNNEL
 LEMMA: the crown S3 is impossible as an induced subposet at EVERY
-width and depth [THEOREM for the S3 pattern; tested-scale scope
-remains for non-crown 3-irreducible patterns].
+width and depth [REFEREE-CARRIED, frozen round; the receipt gates
+five clauses, the sixth and the lemma are review-record content,
+and the paper-grade promotion condition of LOG #355 — an in-receipt
+sixth-clause and up-cone gate plus a theorem-with-proof-note — is
+NOT yet met; tested-scale scope remains for non-crown 3-irreducible
+patterns].
 
 ### 3.2 Transport does it without ceiling [D45b]
 
 One uniform constructor (the two-hop dedicated-courier firewall)
 realizes S_n as an induced subposet of an admissible pure-transport
 record at every n in {3, 4, 5, 6}: actors n^2 + 3n, events 2n^2,
-width 2n - 1, every event admission-priced at the uniform exact
+width 2n - 1 at the base cases [MEASURED — the width formula is
+NOT claimed at all n], every event admission-priced at the uniform
+exact
 weight 1/(4(n^2 + 3n - 1)); the induced comparability matrices
 equal the S_n references exactly, and the whole posets fail the
 dim <= 2 gate [EXACT].  The all-n statement is a theorem at the
@@ -306,11 +327,14 @@ open.
 ## 5. The regulator, closed for all masses [D44d, D45a]
 
 The slab-smeared identification collapses, at every wrap-clean cell
-(widths 1-4, both lattice sizes, both masses), onto the singleton
+(widths 1-4 at L = 16 and w <= 2 at L = 12, where the 8 remaining
+LT cells are declared seam-contaminated; both masses), onto the
+singleton
 ray with the singleton constant — slab-width independence, the
 fixture-scale content of the finite-slab theorem [EXACT]; the
 literal block-region variant carries an exact ((w+1)/2)^2
-normalization law while the ray never moves.  The constant itself
+normalization law ON THE EXC SIDE ONLY (the LT constant stays
+width-independent there) while the ray never moves.  The constant itself
 is DERIVED: running the identification with the mass as a formal
 variable (pure rational polynomial arithmetic, zero floats),
 
@@ -331,7 +355,8 @@ interacting identification with a g = 0 column.
 ## 6. The residue ledger, updated
 
 1. **H1 (the structural lemma)** — the program's single remaining
-   analytic gap at delivery-free scope; discharging it makes §2's
+   analytic gap at delivery-free scope (transport-scope closure is
+   open independently of it); discharging it makes §2's
    decision and §4.3's forced weights all-depth there.
 2. **Transport-scope closure** — open; the Martin/R-theory import
    is the named tool, with the escape structure its receipt-gated
@@ -352,12 +377,21 @@ interacting identification with a g = 0 column.
    (one merge price differs, 1/16 vs 1/24, exhibited); form-level
    results are unaffected.
 7. Paper 30's residues 3 (fine-vs-coarse sealing, empirical), 4
-   (mid-chain drift), and its breadth items stand unchanged.
+   (mid-chain drift), and 6 (`h12` dead-component pricing — the one
+   configuration off the ladder under current pricing) stand
+   unchanged; its residue 5 (grammar breadth) stands with the
+   §3.1 sharpening (the multi-author-arbitration corner is decided,
+   the carrier-level third grammar and the superset-generator
+   condition remain).
 
 ## 7. Methods note
 
-Every quantitative claim is bound to a committed exit-1-by-design
-receipt, deterministic (rerun byte-identical; hash-seed variation
+Every quantitative claim is bound to a committed receipt that
+exits 1 on breakage — with two declared exceptions: D44d's
+per-cell collapse CONSTANTS (including §5's ((w+1)/2)^2 EXC law)
+and the dimension units' horn outcomes are DELIVERED-VERDICT
+content at exit 0, their integrity resting on byte-identical
+determinism rather than on a failing gate.  Each receipt is deterministic (rerun byte-identical; hash-seed variation
 verified per unit), and adversarially reviewed to terminal status —
 round, repairs, delta — with all findings and forward-corrections
 carried by name in the LOG.  The receipt surface:
@@ -379,11 +413,18 @@ arithmetic (zero floats) for the D45a derivation; series arithmetic
 at 50 digits against 1e-30 gates for the D44d ladders (exact
 rational values record-confirmed); amplitudes at 50 digits against
 1e-40 where the operator family enters.  Purity gates use the
-allow-list walk form; dimension-witness branches are genuine exit-0
-outcomes; negative controls are gates, not narration.  Across the
+allow-list walk form.  The witness-branch binding (LOG #354) was
+CREATED BY a failure: D44c's witness horn was unreachable at exit 0
+as committed, the defect is owned on the record and the receipt
+left frozen, and the binding governs successors only.  Negative
+controls are gates, not narration.  Across the
 campaign's rounds and deltas: hundreds of independently recomputed
 values, zero false numbers; the corrections were quantifiers,
-vacuous gates, and print-only facts — each repaired and logged.
+vacuous gates, and print-only facts — logged in every case, and
+repaired except where the round itself directed otherwise (D44f's
+BLOCKER, repaired; D44c's decision-procedure defect, owned and
+left in the frozen receipt with the successor binding carrying the
+fix).
 
 ## 8. Coda
 
@@ -392,8 +433,8 @@ executed it.  What remains is smaller and sharper than it has ever
 been: one lemma (H1) stands between the delivery-free theory and
 its completion being closed outright; one imported machinery
 (Martin/R-theory) has a receipt-certified job waiting at transport
-scope; and the dimension question has passed from "can it?" (yes,
-without ceiling, by exactly one mechanism) to "does it, typically?"
+scope; and the dimension question has passed from "can it?" (yes at the
+tested ladder, by exactly one mechanism, in ORDER dimension only) to "does it, typically?"
 — a question about the theory's own measure.  The quantum layer no
 longer floats: its weights are the completion's, its foliation
 freedom is one tag of authorship, and its remaining questions are

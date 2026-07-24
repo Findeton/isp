@@ -7623,3 +7623,44 @@ concatenated. Note §4. **THE D46 LADDER IS COMPLETE: a, b, c, d,
 e, f all delivered GREEN-UNREVIEWED; g and h discharged. THE
 REVIEW BUDGET NOW REOPENS — paper-32's round FIRST, per the
 standing order.**
+
+## 2026-07-19 — paper 32 round 1: REVISE (1B/9M/10m/3n); ALL
+## FINDINGS APPLIED (LEDGER #390); delta commissioned
+The round (frozen: reviews/paper32-round1-hostile-review.md):
+NUMBER SWEEP CLEAN — 61 quantitative claims checked against the
+receipts/.outs with 11 key reductions INDEPENDENTLY RECOMPUTED in
+exact arithmetic, ZERO mismatches, ZERO false numbers (all eight
+PASS counts match their .out summaries; 179,783; both routes to
+1,124,884; f(n) at n = 3..6; the quartic, its factorization and
+both roots; ((w+1)/2)^2; the sector conditional from
+(2/23,1/23,1/23)). UNREVIEWED-LADDER HAZARD CLEAN — no D46
+leakage anywhere; §6's ledger is exactly the #375 successor list.
+ACQUITTED: the H1/transport-open pairing, escape !=
+non-stabilization, the transport-six ECHO, no depth-5+ prediction,
+the initiator-ERASED wording, the census/dynamics split, the
+grain-inherited divergence, the §3.4 doctrine, single-threaded
+voice, precision statements. APPLIED, all of them: (BLOCKER-1) the
+FUNNEL LEMMA demoted from [THEOREM]/six-clause-gated to FIVE
+receipt-gated clauses + a REFEREE-CARRIED sixth clause and lemma,
+with LOG #355's unmet paper-grade promotion condition stated in
+both the abstract and §3.1; (M1) §7's "witness branches are
+genuine exit-0 outcomes" corrected — the binding was CREATED BY
+D44c's failure, the defect owned and the receipt frozen, the
+binding governing successors only; (M2) §7's blanket
+exit-1-by-design corrected with the two declared exceptions
+(D44d's cell constants incl. the ((w+1)/2)^2 law; the dimension
+horns) resting on byte-identical determinism; (M3) the correction
+taxonomy now names d44f's BLOCKER and D44c's unrepaired defect;
+(M4) the item-7 supersession corrected — paper 31 ALREADY had the
+vanishing-point characterization, so the real content is TWO
+crossings and kappa = 1 now decidable; (M5) the supersession list
+completed (paper 31 item 2 discharged, item 5 decided, item 1's
+"no computation remains" FALSIFIED); (M6) paper 30 residue 6
+(h12) restored to the ledger with residue 5 correctly scoped;
+(M7) the width formula moved out of the all-n schema claim
+([MEASURED] at base cases); (M8) §5's slab widths scoped (w <= 2
+at L = 12; the 8 seam-contaminated cells declared); (M9) the
+referee-carried figures tagged in-line. Minors applied (depth-7
+LEVEL not family; H0 as hypothesis; the t = 0 split; the census/
+gating grains; the EXC-only block law; the coda's caps; the H1
+clause paired with transport-open). DELTA next.
