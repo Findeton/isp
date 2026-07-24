@@ -20,8 +20,9 @@ history) — and the JOINT (sigma, tau_A, tau_B) transition system:
 its BFS CLOSES at 36 joint states with the frontier exhausted, and
 the projection onto sigma is INJECTIVE — tau_A and tau_B are
 CONSTANT on sigma within the closed system. THIS IS THE MECHANICAL
-CORE OF H1: the own-view lag (the D44a W2 witness) is
-sigma-INVISIBLE at the abstraction level, and the per-actor menu is
+CORE OF H1: sigma DETERMINES THE MENU-VIEW ABSTRACTIONS tau_a
+(NOT the own-view lag — see the round-1 corrections below: the
+menu view strictly exceeds the actor's own view), and the per-actor menu is
 gated a FUNCTION of tau_a on the entire depth-7 family (LG2, zero
 exceptions; the structural claim made mechanical: the layer's
 per-actor menu recomputed from the menu-view sub-history ALONE
@@ -35,7 +36,7 @@ keys = 176, zero conflicts), so sigma-injectivity makes the joint
 BFS and the sigma BFS the SAME 36-state/176-edge object, and H2
 HOLDS AT EVERY VERIFIED DEPTH by census.
 
-ROUND-1 CORRECTIONS (note §6 B1-B4; LOG #394) — binding on every
+ROUND-1 CORRECTIONS (note §8 B1-B4; LOG #394) — binding on every
 reading of this receipt:
   * H1 IS NOT DISCHARGED.  The earlier claim that TWO structural
     facts — (i) cone-locality and (ii) the abstract-update law —
@@ -65,10 +66,10 @@ post-renaming-sorted plain-tuple serialization; witness prints go
 through a sorted event printer — no raw frozenset reprs); exit 1 on
 gate failure only; delivered outcomes exit 0.
 
-GREEN-UNREVIEWED — the hostile round is deferred per the D46
-program pin (token budget); this receipt must not be cited as
-review-hardened until its round converts (paper-32's round precedes
-it).
+REVIEW STATUS: round 1 + delta, frozen at
+reviews/d46ac-round1-hostile-review.md (LOG #394-#397).  The
+round RETIRED this receipt's original assembly claim; see the
+ROUND-1 CORRECTIONS above and note §8.
 """
 import os
 import sys
@@ -95,10 +96,10 @@ event_poset = ns['event_poset']
 AB = ('A', 'B')
 
 print("[d46a — the H1 structural lemma: route R-A]")
-print("  banner: GREEN-UNREVIEWED — the hostile round is deferred")
-print("  per the D46 program pin (token budget); this receipt must")
-print("  not be cited as review-hardened until its round converts")
-print("  (paper-32's round precedes it).")
+print("  banner: REVIEWED — round 1 + delta, frozen at")
+print("  reviews/d46ac-round1-hostile-review.md (LOG #394-#397).")
+print("  The round RETIRED the original assembly claim: H1 is NOT")
+print("  discharged (see the VERDICT block and note §8).")
 print("  EXACT; d42a layer from the committed d42b3 receipt")
 print("  (__file__-anchored); sigma = the committed d44a")
 print("  construction, ported verbatim; tau_a = sigma applied to")
@@ -517,9 +518,11 @@ if inj:
           "directly on the cache, all 36 sigma classes over 34,375 "
           "histories carry ONE (tau_A, tau_B) pair each, ZERO "
           "exceptions, and the cache-realized joint values are "
-          "EXACTLY the closed set — the own-view lag (D44a W2) is "
-          "sigma-invisible at the abstraction level: what an actor "
-          "has not witnessed is FORCED by what sigma records",
+          "EXACTLY the closed set — sigma DETERMINES THE "
+          "MENU-VIEW abstractions (round-1 A4: this is NOT the "
+          "own-view lag; the menu view strictly exceeds a's own "
+          "view on 1,016/12,942 histories, TG2a/b/c): what the "
+          "MENU VIEW contains is forced by what sigma records",
           inj and set(sig_proj) == set(SIG.values())
           and len(per_sig) == 36 and n_nonconst == 0
           and jcache == set(JREP),
@@ -702,7 +705,7 @@ print("  [LG3 DECLARATION] H2's status, determined: H2 (sigma-"
       "36-state/176-edge object (LG1b == D44a CG3a anchors), and "
       "LG3a/LG3b show the transition table is sigma-keyed with "
       "zero conflicts at every verified depth. ROUND-1 CORRECTION "
-      "(note §6 B3; LOG #394): the earlier reading — that H2 is "
+      "(note §8 B3; LOG #394): the earlier reading — that H2 is "
       "SUBSUMED and that ONE abstract-update law discharges H1 "
       "and H2 together — is WITHDRAWN AS INVERTED. The "
       "abstract-update law IS H2 (D44a §8: H2 is not a "
@@ -755,7 +758,8 @@ g7_bad = [k for k, v in sorted(G7.items()) if len(v) > 1]
 g7_consist = all(G7[k] <= GROUP[k] for k in G7)
 n_subs_all = len(set(MVMEMO.values()))
 check("LG2c MENU FACTORIZATION AT DEPTH 7 (LG2a + LG2b extended): "
-      "own-view sufficiency holds on all 145,408 depth-7 histories "
+      "MENU-VIEW sufficiency (round-1 A4 relabel; LG2a's pair) "
+      "holds on all 145,408 depth-7 histories "
       "(290,816 further comparisons — 436,316 total with LG2a — "
       "ZERO exceptions), and the (actor, tau) menu classes remain "
       "the SAME 16 with the SAME canonical per-actor menus (no new "
@@ -972,17 +976,19 @@ print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — gate breakage; exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d46a GREEN-UNREVIEWED (the hostile round is "
-      "deferred per the D46 program pin; paper-32's round precedes "
-      "it) — H1'S MECHANICAL CORE HOLDS, route R-A delivered: "
-      "tau_A/tau_B (sigma applied to the menu-view own-view "
+print("[VERDICT] d46a REVIEWED — round 1 + delta, frozen at "
+      "reviews/d46ac-round1-hostile-review.md (LOG #394-#397) — "
+      "H1'S MECHANICAL CORE HOLDS, route R-A delivered: "
+      "tau_A/tau_B (sigma applied to the MENU-VIEW "
       "sub-histories) join sigma in a transition system whose BFS "
       "CLOSES at 36 joint states, frontier exhausted, 176 edges — "
       "IDENTICAL anchors to the D44a sigma closure — and the "
       "projection onto sigma is INJECTIVE: tau is CONSTANT on "
       "sigma (36/36 classes, zero exceptions on all 179,783 "
-      "histories through depth 7). The own-view lag (W2) is "
-      "sigma-invisible at abstraction level. Menus factor through "
+      "histories through depth 7). Sigma determines the MENU-VIEW "
+      "abstractions — NOT the own-view lag: the menu view strictly "
+      "exceeds a's own view (TG2a/b/c), so pin §2's own-view "
+      "framing is refuted as written. Menus factor through "
       "tau: the committed layer re-run on the menu-view "
       "sub-history alone reproduces every per-actor menu "
       "entrywise (436,316 comparisons, zero exceptions — "
@@ -993,13 +999,13 @@ print("[VERDICT] d46a GREEN-UNREVIEWED (the hostile round is "
       "status DECLARED (LG3): the transition table is sigma-keyed "
       "(160 + 16 = 176 keys, zero conflicts) — the earlier "
       "reading 'H2 is subsumed, one law powers both' is WITHDRAWN "
-      "as inverted (note §6 B3); the law IS H2, verified by "
+      "as inverted (note §8 B3); the law IS H2, verified by "
       "census at every verified depth. Controls: the component/payload-dropped tau variant "
       "merges 16 -> 10 classes with 6 menu-splitting (LG4a); the "
       "holdings+superseded-dropped sigma coarsening yields 13 "
       "classes with 9 tau-mixing and 5 menu-mixing (LG4b) — both "
       "fail loudly, the delivered abstractions do not. WHAT THIS "
-      "RECEIPT DOES NOT CLAIM — ROUND-1 CORRECTED (note §6 B1/B2; "
+      "RECEIPT DOES NOT CLAIM — ROUND-1 CORRECTED (note §8 B1/B2; "
       "LOG #394): the all-depth quantifier is NOT discharged, and "
       "the earlier claim that TWO structural facts suffice is "
       "WITHDRAWN AS INVALID. Cone-locality gives menu(h, a) = "

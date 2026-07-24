@@ -947,3 +947,160 @@ honest statement of what this unit delivered and of what it does not.
 | c5 uppers not antipodal | exit 1 | exit 1 |
 | c3 `dt <= 0` -> `dt < 0` | silent green (null) | silent green (null) — c-m5 unapplied |
 | c4 unaligned `ups` | silent green (null) | silent green (null) — c-m5 unapplied |
+
+---
+
+# DELTA-2 — D46a only (commit `33d23a3`; LOG #396)
+
+D46c converted TERMINAL at #396 on the clean delta above; no further
+D46c review here.  Everything below re-executed by the referee.
+
+## DELTA-2 VERDICT — **NOT CLEAN: 1 MAJOR, 1 minor.**  The terminal
+## condition's SUBSTANCE is met; two label-only items remain before the
+## `.out` is safe to freeze as the artifact of record.  No gate changes.
+
+### D1 (BLOCKER) — **CLOSED, and closed better than I asked**
+
+I swept both the source and the committed `.out` myself for
+`outright` / `two structural facts` / `subsumed` / `discharges H1` /
+`closes H1`.  **Every surviving occurrence is inside an explicit
+withdrawal.**  There is no residual assertion.
+
+- **`.out` line 47** (`[LG3 DECLARATION]`) now ends: *"ROUND-1 CORRECTION
+  (note §6 B3; LOG #394): the earlier reading — that H2 is SUBSUMED and
+  that ONE abstract-update law discharges H1 and H2 together — is
+  WITHDRAWN AS INVERTED.  The abstract-update law IS H2 (D44a §8: H2 is
+  not a consequence of H1); these gates establish that H2 HOLDS AT EVERY
+  VERIFIED DEPTH by census, not that it is discharged as a law."*
+  Correct on every clause.
+- **`.out` line 63** (`[VERDICT]`) now carries the full correction: the
+  `tau -> menus` arrow named as an **undeclared third conditional**
+  (crediting the cone-local weight-swap witness), (H0) restored, *"the
+  honest hypothesis set is (H0) + the abstract-update law + the
+  tau -> menus arrow — THREE, none discharged"*, and *"RESIDUE 1 STANDS
+  WHERE D44a #368 AND PAPER 32 PUT IT: decided at EVERY VERIFIED DEPTH,
+  the H1 gap open and sharpened."*
+- **The module docstring** — the fourth site, which the applier found and
+  I had missed: its "WHAT REMAINS" paragraph is replaced by a five-bullet
+  correction block covering H1-not-discharged, (H0), the inverted
+  subsumption, tau-not-an-own-view-object, and residue 1's placement.
+  **Credit where due: that catch is the applier's, not the referee's.**
+
+### a-m1 (my must-apply) — CLOSED
+Headings are now `1..9`, no collisions: pre-round amendments -> §6, the
+proof note -> §7, round-1 amendments -> §8, repairs -> §9, with the
+in-note cross-references updated (`§5 -> §7` inside B1/B2).
+
+### D2 — CLOSED
+`[SUPERSEDED — see §8 B1/B2 ...]` stamped on §7's heading, and
+`[TARGET — H1; SUPERSEDED AS WRITTEN — §8 B4 refutes the own-view
+framing, and H1 is NOT discharged]` on §1's target.  A reader who stops
+before §8 is no longer misled.
+
+### a-m2 — CLOSED
+LG5a's label now declares the `str` allow-listing and its consequence
+(exactness rides on the Fraction arithmetic that builds the
+serializations, not on that gate).  Exactly the scope sentence asked for.
+
+---
+
+## WHAT REMAINS
+
+### **MAJOR D3 (new; must apply before conversion) — A4's WORDING half was never applied, and LG1c now contradicts the same artifact's own correction**
+
+A4's substance is closed (TG2a/b/c gate my census exactly).  A4's
+*prescribed fix* had a second clause, which was not applied:
+
+> "restate LG1c's headline as 'sigma determines the menu-view
+> abstraction', and **delete** 'what an actor has not witnessed is FORCED
+> by what sigma records' **or qualify it** to the menu-view data."
+
+Live in the committed `.out`:
+
+- **line 39, `LG1c`'s label**: *"... the own-view lag (D44a W2) is
+  sigma-invisible at the abstraction level: **what an actor has not
+  witnessed is FORCED by what sigma records**."*
+- **line 63, `[VERDICT]`**: *"tau_A/tau_B (sigma applied to the
+  **menu-view own-view sub-histories**) ..."* and *"The own-view lag (W2)
+  is sigma-invisible at abstraction level."*
+
+The same artifact therefore asserts, in its gate list, precisely the
+proposition its docstring, TG2a/b/c and the closing sentence of its own
+verdict refute — and "menu-view own-view" is a contradiction in a single
+noun phrase.  This is not a substantive regression (the census stands and
+the verdict self-corrects three lines later); it is an internal
+contradiction in the document of record, and the campaign's convention is
+that the `.out` is what gets read.
+
+**Fix (labels only, no gate changes, ~4 lines).**  LG1c ->
+*"sigma determines the MENU-VIEW abstractions tau_A, tau_B (tau constant
+on sigma, 36/36, zero exceptions) — note this is NOT the own-view lag:
+tau is not an own-view object (TG2a/b/c)."*  Strike "own-view" from
+"menu-view own-view sub-histories" and from the verdict's "own-view lag
+is sigma-invisible" sentence.  LG2c's "own-view sufficiency holds on all
+145,408 depth-7 histories" should become "menu-view sufficiency"
+(LG2a was relabelled at delta-1; LG2c was not, so the pair is now
+inconsistent with each other as well).
+
+### minor D4 — the GREEN-UNREVIEWED banner is now false in both units
+
+`d46a_h1_lemma_exact.out` carries it **twice** (opening banner and the
+`[VERDICT]` prefix): *"GREEN-UNREVIEWED — the hostile round is deferred
+per the D46 program pin (token budget); this receipt must not be cited as
+review-hardened until its round converts (paper-32's round precedes it)."*
+The round has converted — this is the conversion.  `d46c`'s `.out`
+carries one surviving occurrence too, and D46c is already TERMINAL at
+#396, so this one is retrospective housekeeping there.  Restamp both to
+the frozen-review form (paper 32's precedent: "status stamped with the
+frozen review"), e.g. *"ROUND 1 CONVERTED — reviews/
+d46ac-round1-hostile-review.md (REVISE; repairs at LOG #395/#396)."*
+
+---
+
+## Answers to the two questions put to me
+
+1. **Old -> new §-mapping line in the note: YES, add it.**  My round-1
+   body, my delta section above, and LOG #394's B-item references all
+   cite the OLD numbering (`§5` = the proof note, `§6` = the round-1
+   amendments).  #396 records the mapping, but a reader of the note does
+   not read the LOG.  One line under §8's heading —
+   *"(Renumbering at #396: old §4-pre-round -> §6, old §5-proof-note ->
+   §7, old §6-round-1 -> §8, old §7-repairs -> §9; citations in LOG #394
+   and in the frozen review use the old numbers.)"* — makes the
+   retraction self-locating, which was the entire point of a-m1.
+2. **a-m6: yes, please add it.**  One note-level line in §9: *"Referee
+   mutant a8 (superseded marks dropped from `ser`) runs 21 PASS / 0 FAIL
+   — a DEMONSTRATED NULL, the same nullity D44a adjudicated at F3/m2,
+   now shown to extend to the joint/tau system; recorded so a later round
+   does not re-litigate it as a live corruption."*  Cheap, and it retires
+   the only silent-green in D46a's battery on the record rather than by
+   memory.
+
+---
+
+## Reproduction (delta-2)
+
+`python3 v10/code/d46a_h1_lemma_exact.py` -> **21 PASS / 0 FAIL**, exit 0,
+~2:55 measured here, rerun **byte-identical** to the committed `.out`.
+(Wall-clock spread across my three runs of this receipt: 2:51 / 2:10 /
+2:55 on the same machine — a-n1's point, harmless.)  Source and
+`.out` swept for `outright` / `two structural facts` / `subsumed` /
+`discharges H1` / `closes H1`: **zero surviving assertions**, all hits
+inside withdrawals.  Note headings `1..9`, no duplicates.
+
+## Standing on the terminal condition
+
+The stamped text —
+
+> "the joint (sigma, tau) closure at 36 states/176 edges projects
+> injectively onto sigma with zero exceptions over 179,783 histories, and
+> menus factor through tau — but H1 is NOT discharged: the tau->menus
+> arrow is an undeclared conditional, (H0) is required, and tau is not an
+> own-view object; residue 1 stands DECIDED AT EVERY VERIFIED DEPTH per
+> D44a #368, with the H1 gap sharpened and open."
+
+— is **accurate, and the receipt now says all of it**.  I endorse it
+unchanged.  **On D3 applied (and D4 restamped), D46a converts TERMINAL
+with my clean.**  Nothing else remains: a-m3/a-m4/a-m5/a-n1 stay
+unapplied by my own judgement, and c-m5/c-n1 stay unapplied on the
+already-terminal D46c without prejudice.

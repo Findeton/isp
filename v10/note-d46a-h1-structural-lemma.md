@@ -145,6 +145,13 @@ it must not be cited as review-hardened until the D46a round (after
 paper-32's) converts; transport scope remains open (D46b)
 regardless.
 
+## SECTION-NUMBER MAP (added 2026-07-19 per the delta): this note
+## was renumbered when the duplicate headings were fixed. OLD -> NEW:
+## the pre-round amendments §4 -> §6; the proof note §5 -> §7; the
+## round-1 amendments §6 -> §8; the repairs §7 -> §9. LOG #394's
+## and the frozen review's "§5"/"§6" references use the OLD
+## numbering.
+
 ## 8. Round-1 amendments (2026-07-19; round frozen at
 ## reviews/d46ac-round1-hostile-review.md: REVISE, 2B/4M/6m/1n).
 ## §7's ASSEMBLY IS RETIRED — see B1/B2 below; §7 stands only as
@@ -218,3 +225,21 @@ justified by a firing gate rather than by assertion.  LG1a/LG1b/
 LG3a are relabelled in-gate as COROLLARIES of LG1c's injectivity
 rather than independent corroboration.  The verdict text about H1
 and the assembly is the author's and is governed by §8.
+
+**a-m6 (delta-2, recorded).** Mutant a8 (dropping the superseded
+marks from sigma) is silent-green — a DEMONSTRATED NULL, not a
+missed tripwire: it extends the nullity D44a's own round already
+established at its F3/m2 (sigma's superseded marks and the
+post-renaming sort are partition-null on the cache).  Recorded so
+a later round does not re-litigate a settled nullity.
+
+## 10. TERMINAL (2026-07-19; on the delta's clean, LOG #397)
+
+**TERMINAL STATEMENT:** the joint (sigma, tau_A, tau_B) closure at
+36 states / 176 edges projects INJECTIVELY onto sigma with zero
+exceptions over 179,783 histories, and menus factor through tau
+(436,316 comparisons) — but **H1 IS NOT DISCHARGED**: the
+tau -> menus arrow is an undeclared conditional, (H0) is required,
+and tau is NOT an own-view object.  Residue 1 stands DECIDED AT
+EVERY VERIFIED DEPTH per D44a #368, with the H1 gap sharpened and
+open.

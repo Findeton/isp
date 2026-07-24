@@ -7888,3 +7888,37 @@ were ambiguous is not a retraction (the referee's phrasing,
 accepted). Process note, repeated: my edit script again died on an
 assertion BEFORE writing; caught this time by post-write
 verification, which is now the standing habit.
+
+## 2026-07-19 — D46a delta-2: D3 + D4 APPLIED, D46a TERMINAL
+## (LEDGER #397)
+Delta-2 verdict: D1 CLOSED "better than I asked" (the referee swept
+source AND .out for every retracted phrase — every survivor is
+inside an explicit withdrawal; the docstring site was the
+applier's catch, not theirs: they named three places, there were
+four); a-m1, D2, a-m2 CLOSED. TWO REMAINING, both applied here:
+**(D3, MAJOR) A4's WORDING half had never landed and the artifact
+contradicted itself** — LG1c still asserted "the own-view lag is
+sigma-invisible ... what an actor has not witnessed is FORCED by
+what sigma records", the verdict said "menu-view own-view"
+(a contradiction inside one noun phrase), and LG2c still read
+"own-view sufficiency" while its pair LG2a had been relabelled.
+All four now state the corrected content: sigma determines the
+MENU-VIEW abstractions, NOT the own-view lag; the menu view
+strictly exceeds a's own view (TG2a/b/c); LG2c is MENU-VIEW
+sufficiency. **(D4, minor) the GREEN-UNREVIEWED banner was FALSE**
+— the round had converted; both banner sites and the verdict head
+restamped to the frozen-review form, and the note's stale §6
+cross-references updated to §8 after the renumbering. Two
+coordinator slips caught by my own post-write verification during
+this pass (two replacements collided leaving garbled label text;
+the verdict head carried a self-contradictory restamp) — fixed
+before commit. Rerun 21 PASS / 0 FAIL, seeds byte-identical. Also
+applied per the delta's two answers: the OLD -> NEW SECTION-NUMBER
+MAP added to the note (LOG #394 and the frozen review use the old
+numbering), and a-m6 recording mutant a8's demonstrated nullity
+with the D44a F3/m2 cross-reference. **D46a IS TERMINAL** with the
+stamped statement (note §10): the mechanical core delivered — the
+closed injective joint system and the menu factorization — and H1
+NOT discharged; residue 1 stands at D44a #368's reading with the
+gap sharpened. ROUND 1 OF 3 IS COMPLETE (D46a + D46c both
+terminal). NEXT: round 2 of 3 — (D46b + D46d).
