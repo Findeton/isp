@@ -199,3 +199,20 @@ DECIDED AT EVERY VERIFIED DEPTH (D44a #368) — exactly where paper
 32 left it — with the H1 gap open and now SHARPER: the missing
 piece is the tau -> menus arrow at all depths, plus (H0), plus
 (ii). Forward-corrected at LOG #394.
+
+## 7. Round-1 repairs APPLIED (2026-07-19; 21 PASS / 0 FAIL)
+
+The A4 census facts are now GATED, reproducing the referee exactly
+over the 12,942 actor-histories at depth <= 5: TG2a the menu view
+strictly exceeds the noop cone on 1,016 (7.9%), at most 4 extra
+events; TG2b in ALL 1,016 the extra events are OPPONENT-AUTHORED;
+TG2c 104 of 2,224 own-view classes carry different menus.  LG2a is
+relabelled as the definitional restatement it is (it CANNOT fail,
+and its comparison count is not evidence), and the new LG2a-ctl
+supplies amendment A1's missing control: the bare-noop-cone
+variant breaks with 248 violations in 2,382 comparisons, first at
+depth 2 (by depth 8/48/192) — so the menu-view choice is now
+justified by a firing gate rather than by assertion.  LG1a/LG1b/
+LG3a are relabelled in-gate as COROLLARIES of LG1c's injectivity
+rather than independent corroboration.  The verdict text about H1
+and the assembly is the author's and is governed by §6.

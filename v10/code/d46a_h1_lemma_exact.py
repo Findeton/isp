@@ -240,6 +240,18 @@ print("  every menu input of actor a is computed inside it. tau is")
 print("  the SAME canonical base renaming as sigma (LG0b's port).")
 
 MVMEMO = {}
+MVIDX = {}
+def noop_cone_of(hk, a):
+    """a's BARE OWN (noop) view at h: the past cone of ('n', a)
+    ALONE — the pin's pre-amendment-A1 definition of a's view, and
+    the D44a sense of 'what a has witnessed'.  Used only by the
+    round-1 provenance census (TG2) and the round-1 negative
+    control (LG2a-ctl); tau is NOT built from it."""
+    h = list(hk)
+    acts2 = h + [('n', a)]
+    pred = event_poset(acts2)
+    return sorted(pred[len(acts2) - 1])
+
 def sub_of(hk, a):
     """a's menu-view sub-history at h (index-ordered)."""
     if (hk, a) in MVMEMO: return MVMEMO[(hk, a)]
@@ -254,6 +266,7 @@ def sub_of(hk, a):
             idxs |= set(pred3[len(acts3) - 1])
     sub = tuple(h[i] for i in sorted(idxs))
     MVMEMO[(hk, a)] = sub
+    MVIDX[(hk, a)] = sorted(idxs)
     return sub
 
 def tau(hk, a):
@@ -275,6 +288,74 @@ check("TG1 tau computed on the ENTIRE cache: 10,169 distinct "
       and n_tauA == 8 and n_tauB == 8,
       f"distinct sub-histories = {n_subs}; |tau_A| = {n_tauA}; "
       f"|tau_B| = {n_tauB}")
+
+# ---- TG2: TAU'S PROVENANCE, censused (round-1 MAJOR A4) ------------
+# The round established that the MENU VIEW is NOT actor a's own
+# (noop) view, and that the pin-§2 target "the lag is
+# MENU-INVISIBLE" is FALSE as stated.  Those are facts about the
+# delivered object, and they are gated here rather than argued.
+# The census is on the depth-<=5 cache — 6,471 histories x 2
+# actors = 12,942 actor-histories — reproducing the round's R14-R17
+# counts exactly, so a future round can diff them.
+MV5 = [(tuple(h), a) for h in FAM if len(h) <= 5 for a in AB]
+n_ah5 = len(MV5)
+n_strict = 0
+n_opp = 0
+max_extra = 0
+tot_extra = 0
+for hk, a in MV5:
+    bi = set(noop_cone_of(hk, a))
+    mi = set(MVIDX[(hk, a)])
+    extra = mi - bi
+    if extra:
+        n_strict += 1
+        tot_extra += len(extra)
+        max_extra = max(max_extra, len(extra))
+        if all(hk[i][1] != a for i in extra):
+            n_opp += 1
+check("TG2a THE MENU VIEW IS NOT THE OWN VIEW (census, round-1 A4): "
+      "on the depth-<=5 cache the menu-view sub-history STRICTLY "
+      "EXCEEDS actor a's bare own (noop) cone on 1,016 of 12,942 "
+      "actor-histories — 7.9% — with at most 4 extra events. tau is "
+      "therefore an intermediate abstraction of a WIDER-THAN-OWN "
+      "view, not an own-view object; every event in it is still an "
+      "event of h reached through past cones only (no future "
+      "information), but it is not computable from what a has "
+      "witnessed",
+      n_ah5 == 12942 and n_strict == 1016 and max_extra == 4,
+      f"actor-histories = {n_ah5}; strictly larger = {n_strict} "
+      f"({100.0 * n_strict / n_ah5:.1f}%); max extra events = "
+      f"{max_extra}; total extra events = {tot_extra}")
+check("TG2b THE EXCESS IS OPPONENT-AUTHORED (census, round-1 A4): "
+      "in 1,016 of 1,016 of those actor-histories EVERY extra event "
+      "is authored by the OTHER actor — precisely the 'join-view "
+      "data the actor cannot see' of the committed d42b3 G-T1/D3 "
+      "result that amendment A1 cites. The widening from the noop "
+      "cone to the menu view therefore imports exactly the "
+      "opponent past that the D44a W2 lag is about",
+      n_strict > 0 and n_opp == n_strict and n_opp == 1016,
+      f"all-extra-opponent-authored = {n_opp}/{n_strict}")
+
+OVG = defaultdict(set)
+for hk, a in MV5:
+    key = (a, tuple(hk[i] for i in noop_cone_of(hk, a)))
+    menu = tuple(sorted((repr(e), str(q)) for e, q in CACHE[hk]
+                        if e[1] == a))
+    OVG[key].add(menu)
+ov_classes = len(OVG)
+ov_split = sum(1 for v in OVG.values() if len(v) > 1)
+check("TG2c EQUAL OWN VIEWS DO NOT FORCE EQUAL MENUS (census, "
+      "round-1 A4): grouping the same 12,942 actor-histories by "
+      "(actor, bare own-noop-cone sub-history) gives 2,224 "
+      "own-view classes, of which 104 carry MORE THAN ONE menu. So "
+      "the bare own view does NOT determine menus, and pin §2's "
+      "stated target — 'the lag is MENU-INVISIBLE' — is FALSE as "
+      "written and is NOT what this receipt establishes. What LG2 "
+      "establishes is the strictly different statement that the "
+      "MENU VIEW determines menus",
+      ov_classes == 2224 and ov_split == 104,
+      f"own-view classes = {ov_classes}; classes carrying "
+      f"different menus = {ov_split}")
 
 # ---- the d44a canonical-renaming machinery (verbatim port) ---------
 def _rename_event(e, m2):
@@ -358,11 +439,14 @@ for h in FAM:
 check("LG1a JOINT-TRANSITION DETERMINISM, exhaustive on the cache: "
       "the successor joint state (sigma, tau_A, tau_B)(h + [e]) is "
       "a function of (joint state of h, e-up-to-renaming) — all "
-      "34,374 cached transitions, 160 distinct abstract keys "
-      "(EXACTLY the D44a CG2 key count: the joint keys do not "
-      "outnumber the sigma keys), ZERO exceptions — the "
+      "34,374 cached transitions, ZERO exceptions — the "
       "representative-based joint BFS below is licensed at "
-      "cache-verified level",
+      "cache-verified level. The key count is 160, EXACTLY the D44a "
+      "CG2 count; per round-1 MAJOR A6 that coincidence is NOT "
+      "independent corroboration but a COROLLARY of the injectivity "
+      "verdict gated at LG1c below: once tau is a function of "
+      "sigma, the joint key set and the sigma key set are the same "
+      "object relabelled",
       n_tr == 34374 and len(JT) == 160 and not jt_bad,
       f"transitions = {n_tr}; joint keys = {len(JT)}; violations = "
       f"{len(jt_bad)}")
@@ -393,8 +477,11 @@ check("LG1b THE JOINT BFS CLOSES: BFS on (sigma, tau_A, tau_B)-"
       "budget stop); the closed set has exactly 36 joint states, "
       "176 traversed edges, and the representative-length spectrum "
       "{0:1, 1:4, 2:6, 3:8, 4:9, 5:4, 6:4} — ALL identical to the "
-      "D44a sigma-BFS anchors (CG3a): adjoining tau to sigma "
-      "creates NO new abstract states",
+      "D44a sigma-BFS anchors (CG3a). The closure and the frontier "
+      "exhaustion are the content here; 'adjoining tau to sigma "
+      "creates NO new abstract states' is NOT a second corroborating "
+      "fact but a COROLLARY of LG1c's injectivity (round-1 MAJOR "
+      "A6): a function of sigma cannot split a sigma state",
       len(JREP) == 36 and n_exp == 36 and not bq
       and n_edge == 176
       and dict(rep_spec) == {0: 1, 1: 4, 2: 6, 3: 8, 4: 9, 5: 4,
@@ -478,15 +565,62 @@ for h in FAM:
                     if e[1] == a)
         n_cmp += 1
         if ma != ms: struct_bad.append((hk, a))
-check("LG2a OWN-VIEW SUFFICIENCY, exhaustive on the cache: for "
-      "every history and every actor, the committed layer run on "
-      "the menu-view sub-history ALONE reproduces actor a's full "
-      "menu — candidates AND exact weights, entrywise — 68,750 "
-      "comparisons (34,375 x 2), ZERO exceptions: the per-actor "
-      "menu computation consumes only own-view data (the "
-      "structural-arm claim of pin §3 R-A, made mechanical)",
+check("LG2a THE MECHANICAL RESTATEMENT OF FACT (i) (relabelled per "
+      "round-1 MAJOR A5 — this gate CANNOT fail on the delivered "
+      "definition and is NOT evidence for cone-locality): sub_of "
+      "is DEFINED as the union of exactly the past cones the "
+      "committed admissible() consumes for a's candidates, so given "
+      "cone-locality no a-candidate at h can be missing from the "
+      "run on sub (its cone is in sub by construction) and none can "
+      "be added (sub is a sub-history and candidates_for enumerates "
+      "from the view) — the outcome below is forced. It is reported "
+      "as an exhaustive CONSISTENCY census of that definition, not "
+      "as corroboration, and its comparison count is not evidence "
+      "of anything. The gate that CAN fail is LG2a-ctl immediately "
+      "below",
       n_cmp == 68750 and not struct_bad,
-      f"comparisons = {n_cmp}; violations = {len(struct_bad)}")
+      f"comparisons (definitional consistency, not evidence) = "
+      f"{n_cmp}; violations = {len(struct_bad)}")
+
+# ---- LG2a-ctl: THE CONTROL FOR AMENDMENT A1 (round-1 A5) ----------
+# A1 widened tau's view from the bare noop cone to the menu view
+# and asserted, ungated, that the bare-cone variant "would fail LG2
+# at depth 2".  That assertion is the receipt's single most
+# load-bearing design choice, so it is gated here as a NEGATIVE
+# control: rerun the LG2a comparison with sub_of replaced by the
+# bare own (noop) cone and require it to BREAK — with the first
+# break at depth 2.  Scanned on the depth-<=4 cache (1,191
+# histories x 2 actors), which is where the effect already appears.
+n_ctl = 0
+ctl_bad = []
+for h in FAM:
+    if len(h) > 4: continue
+    hk = tuple(h)
+    for a in AB:
+        bare = tuple(hk[i] for i in noop_cone_of(hk, a))
+        ma = sorted((repr(e), q) for e, q in CACHE[hk] if e[1] == a)
+        ms = sorted((repr(e), q) for e, q in subcands(bare)
+                    if e[1] == a)
+        n_ctl += 1
+        if ma != ms: ctl_bad.append((len(hk), a))
+ctl_depths = sorted({d for d, _ in ctl_bad})
+ctl_by_depth = defaultdict(int)
+for d, _ in ctl_bad:
+    ctl_by_depth[d] += 1
+check("LG2a-ctl CONTROL — THE BARE OWN VIEW CANNOT FACTOR THE MENU "
+      "(the missing control for amendment A1, round-1 MAJOR A5): "
+      "replacing the menu-view sub-history by actor a's BARE noop "
+      "cone — the pin's pre-A1 definition — and rerunning the LG2a "
+      "comparison BREAKS, and breaks first at DEPTH 2, exactly as "
+      "A1 asserted without gating it. This is what makes the "
+      "widening a forced design choice rather than a convenience: "
+      "the delivered definition passes LG2a where the alternative "
+      "fails, and this control fires",
+      len(ctl_bad) > 0 and ctl_depths and min(ctl_depths) == 2
+      and n_ctl == 2382 and len(ctl_bad) == 248,
+      f"comparisons = {n_ctl}; bare-cone violations = "
+      f"{len(ctl_bad)}; first violating depth = {min(ctl_depths)}; "
+      f"violations by depth = {dict(sorted(ctl_by_depth.items()))}")
 
 # ---- LG2b: menu factorization through tau (cache) ------------------
 def canon_menu_actor(subk, a):
@@ -541,9 +675,12 @@ check("LG2b MENU FACTORIZATION THROUGH TAU, exhaustive on the "
 check("LG3a SIGMA-KEYED JOINT DETERMINISM, exhaustive on the "
       "cache: the successor JOINT state is already a function of "
       "(sigma(h), e-up-to-renaming) — the SAME 160 keys as D44a's "
-      "CG2, zero conflicts on all 34,374 transitions: the joint "
-      "table adds no keys beyond the sigma table (the mechanical "
-      "shadow of LG1c's injectivity on transitions)",
+      "CG2, zero conflicts on all 34,374 transitions. Per round-1 "
+      "MAJOR A6 this is a RE-ANCHOR of D44a CG2 (same keys, target "
+      "merely decorated with tau) and a COROLLARY of LG1c's "
+      "injectivity, NOT a third independent corroboration: 'the "
+      "joint table adds no keys beyond the sigma table' is what "
+      "injectivity says, restated on transitions",
       len(ST) == 160 and not st_bad,
       f"sigma-keyed keys = {len(ST)}; violations = {len(st_bad)}")
 print("  [LG3 DECLARATION] H2's status, determined: H2 (sigma-"

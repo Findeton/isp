@@ -139,3 +139,37 @@ accumulation artifact (true count 281 — corrected); the relative
 _SRC path, family-B's dropped dc, the console count mismatch, the
 3-of-614-line KG3-a scan, and the un-regated "not 1+1" half are
 repaired or declared.
+
+## 7. Round-1 repairs APPLIED (2026-07-19; 14 PASS / 0 FAIL /
+## ZERO OPEN)
+
+**THE COURIER RECORD IS CERTIFIED.** The referee's coordinates are
+embedded as W3_CERT (18 exact Fraction triples, max denominator
+64; the review cited as provenance, the float hill-climb recorded
+as search-only) and gated by this receipt's own verify: 0 violated
+pairs of 306, with the two symmetry-breaking facts gated — the
+minima sit at THREE DISTINCT NEGATIVE TIMES (-55/64, -7/16, -1/4)
+and the uppers at THREE DISTINCT HEIGHTS (5, 187/32, 393/64).
+That is exactly what my two families forbade by construction, and
+it is why they failed. KG2-b-exhibit keeps them as a recorded
+negative exhibit about THE FAMILIES, with no OPEN and no
+localization claim.
+
+**The spacelike control (C1) is closed with teeth:** KG0-d builds
+an S_3 placement satisfying every order-implies-causal constraint
+while violating exactly the three incomparabilities; the crippled
+one-way checker ACCEPTS it and the real checker REJECTS it, both
+gated — and the referee's own c6 mutant now exits 1 against the
+repaired receipt.
+
+**Also:** the census runs over ALL violated pairs (top buckets
+L-vs-C, as the referee found); KG0-b regresses the COMMITTED CH
+chain (10 events, width 3, realizer computed in-receipt, certified
+on all 90 pairs) instead of an ad-hoc realizer; KG2-a2 re-derives
+W6's order dimension in-receipt over its 48 linear extensions
+(dim <= 2 False, dim <= 3 True => exactly 3), closing the
+sandwich; the purity walk's mutable default is gone (368 leaves
+with a per-object breakdown — larger than the review's 281 because
+the walked object set grew with W3_CERT and the CH certificate);
+_SRC is __file__-anchored (verified from /tmp); the doctrine scan
+widened from 3 to 32 of 974 lines.

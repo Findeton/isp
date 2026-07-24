@@ -7814,3 +7814,39 @@ first-violation census was scan-order biased; KG0-b regressed an
 ad-hoc realizer rather than a committed 2D chain; the purity
 "813 leaves" was a mutable-default artifact (true 281). Note §6
 B1-B4. Receipt repairs are with an applier; deltas follow.
+
+## 2026-07-19 — (D46a + D46c) round-1 repairs APPLIED (LEDGER
+## #395); D46c's OPEN RETIRED IN-RECEIPT; deltas commissioned
+Applier-executed; verified pre-commit: both receipts exit 0,
+independent reruns BYTE-IDENTICAL, determinism across seeds and
+from a foreign cwd. **D46c: 11 PASS + 1 OPEN -> 14 PASS / 0 FAIL /
+ZERO OPEN.** The referee's W(3) coordinates are embedded as
+W3_CERT (18 exact Fractions, max denominator 64; review cited as
+provenance; the float hill-climb recorded search-only) and gated
+by the receipt's OWN verify — 0 violated pairs of 306 — with the
+two symmetry-breaking facts gated: the minima sit at THREE
+DISTINCT NEGATIVE TIMES (-55/64, -7/16, -1/4) and the uppers at
+THREE DISTINCT HEIGHTS (5, 187/32, 393/64), precisely what both my
+families forbade by construction. The families survive as
+KG2-b-exhibit, a gate about THE FAMILIES, with the
+chain-accumulation localization deleted. C1 closed with teeth
+(KG0-d: a placement satisfying every order-implies-causal
+constraint while violating exactly the 3 incomparabilities; the
+crippled checker accepts it, the real one rejects it; the
+referee's c6 mutant now exits 1). C3 all-violation census (top
+buckets L-vs-C as the referee found); C4 KG0-b now regresses the
+COMMITTED CH chain (10 events, realizer in-receipt, 90 pairs);
+KG2-a2 re-derives W6's order dimension in-receipt over 48 linear
+extensions (exactly 3 — the sandwich closed); C5 mutable default
+removed (368 leaves, per-object breakdown; larger than the
+review's 281 because the walked set grew); _SRC __file__-anchored;
+the doctrine scan widened 3 -> 32 of 974 lines. **D46a: 17 -> 21
+PASS.** The A4 census facts GATED exactly as the referee measured
+(1,016/12,942 = 7.9%, max 4 extra events; 1,016/1,016
+opponent-authored; 104/2,224 own-view classes); LG2a relabelled as
+the definitional restatement it is, with the NEW LG2a-ctl firing
+for amendment A1's previously ungated design choice (the
+bare-noop-cone variant breaks: 248 violations in 2,382
+comparisons, first at depth 2, by depth 8/48/192); LG1a/LG1b/LG3a
+relabelled as corollaries of injectivity. Notes §7 both units.
+DELTAS to the d46ac referee next.
