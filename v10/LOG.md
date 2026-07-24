@@ -7552,3 +7552,36 @@ obstruction where they do not commute (RD3, the D44f foliation
 lesson at reception grain), plus honesty/purity/determinism (RD4).
 Both GREEN-UNREVIEWED; the review budget reopens after this pair,
 paper-32's round FIRST.
+
+## 2026-07-19 — D46f GREEN-UNREVIEWED 29/29 (LEDGER #388): THE
+## RECEPTION ACTION MAP; RECEPTION COMMUTES, MENUS DO NOT
+Verified pre-commit: rerun exit 0 BYTE-IDENTICAL; 29 PASS / 0 FAIL;
+~10 s; PYTHONHASHSEED 0/7/unset byte-identical. RD0 re-anchors the
+whole D44e census before any dynamics claim (6,567 instances,
+11/11 types, the (actor,base) key 0/1191). RD1: THE ACTION MAP
+EXISTS AND IS A GENUINE FUNCTION of (record, receiver, pre-state)
+— 23,069 reception instances, 228 pre-states, 869 repeated keys,
+ZERO conflicts, with a FIRING control (635/1107 conflicts on the
+layer's index-valued created field); per-type updates censused;
+**DELIVERED FINDING: ko/kc/ka are the EXACT IDENTITY on reception
+state (view-transparent; content enters only the poset and the
+pricing)** — unreachable from D44e's copy-form template. RD2:
+injective for p/r/n/m/ko/kc/ka; TWO delivered findings — DELIVERY
+IS NOT INJECTIVE (the layer admits re-delivery; holdings is a set,
+so reception FORGETS delivery multiplicity; exact witness) and
+version records act by IDEMPOTENT SET INSERTION (72 v.arb
+colliding fibers; v0 never; v.mrg out of scope with reason); lossy
+control fires at 171. RD3: **ALL 7,163 co-receivable pairs COMMUTE
+— including the 63 with overlapping footprints: the reception
+state is an ABELIAN MONOID under reception**, strictly stronger
+than the pin asked; so D44f's order-dependence does NOT live in
+the state — the exhibited obstruction is that the same three
+records in two orders give IDENTICAL sigma while yielding
+components 1+1 vs 2 and arbitration menus 1 x 1/4 vs 2 x 1/8.
+GATED ASYMMETRY: the PROPOSE menu is STATE-determined; the
+ARBITRATE/MERGE menus are CAUSALLY determined. RD4: float-free
+(D25 in exact classical form), purity 41,326 leaves / 0 impure
+with a firing trip control, determinism by reversed-traversal hash,
+concatenated needles. Note §4 records the deviations (stronger
+outcomes; PROBE-DD; the vacuous second control kept as a printed
+declaration). Ladder: a, b, c, d, f done; e in flight.
