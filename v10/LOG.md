@@ -7733,3 +7733,29 @@ TERMINAL; status line stamped with the frozen review pointer AND
 the explicit note that the D46 ladder units are green-unreviewed
 and not part of this paper. NEXT IN THE REVIEW QUEUE: the ladder
 units' rounds, batched (D46a+D46c), (D46b+D46d), (D46e+D46f).
+
+## 2026-07-19 — THE FULL SEQUENCE AUTHORIZED (LEDGER #393)
+User direction: "do reviews, (D46a + D46c), then (D46b + D46d),
+then (D46e + D46f), then d41c step 3, then successors 1-6." The
+execution order is therefore FIXED and recorded here so it survives
+any interruption:
+1. ROUNDS, batched: (D46a + D46c) [LAUNCHED — one referee, one
+   combined report at reviews/d46ac-round1-hostile-review.md];
+   then (D46b + D46d); then (D46e + D46f). Each: round -> repairs
+   -> delta -> terminal, per the standard cycle.
+2. d41c STEP 3 — the two O-V bridge declarations (Yb+ / Arndt-TL).
+   NOTE ON HANDLING: this was queued as the USER'S call because it
+   is a COMMITMENT ABOUT PHYSICAL INTERPRETATION ("our X is their
+   Y"), and the corpus has burned itself once on exactly that class
+   (the d41a "empirical" wording, A1). The user has now directed it
+   be done; it will therefore be drafted with every correspondence
+   tagged [POSITED] with its assumptions stated explicitly and a
+   named sign-off line, NOT asserted as established — the honest
+   form of executing the instruction.
+3. SUCCESSORS in the recommended order: (1) the funnel-lemma
+   paper-grade promotion; (2) the per-record dimension test under
+   the measure; (3) the H1 lemma write-up; (4) the 3+1 sphere rung;
+   (5) the symmetric interacting fixture; (6) boundary theory at
+   transport scope.
+Standing user decisions unaffected: the publication route for
+papers 30/31/32 (all terminal).
