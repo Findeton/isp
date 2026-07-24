@@ -10,9 +10,10 @@ Relativistic ISP series, v10 paper 32.
 quantitative claim is bound to one of the eight terminal receipts of
 the D44/D45 campaign (outputs under `v10/data/`), or — where an
 in-line tag says so — the committed campaign record (LOG, pins,
-frozen review files).  **Independent paper-level review has NOT yet
-been commissioned** (deferred by the author's direction; this paper
-must not be cited as review-hardened until that round converts).
+frozen review files).  **Independent paper-level review: round 1 +
+delta, frozen at `reviews/paper32-round1-hostile-review.md`.**  The
+D46 ladder units (LOG #380, #382, #384, #386, #388, #389) are
+GREEN-UNREVIEWED and are not part of this paper.
 **Date:** 2026-07-19.
 
 ## Abstract
@@ -85,8 +86,9 @@ arbitration-dimension no-go), D44d (the slab theorem and the
 quartic), D44e (the reception census), D44f (foliation and
 measure), D45a (the symbolic-m closure), D45b (the S_n ladder).
 Provenance labels as in the series ([THEOREM], [EXACT], [MEASURED],
-[POSITED], [LITERATURE]); "referee-carried" marks facts verified in
-a frozen review record rather than gated in a receipt.
+[POSITED], [LITERATURE], and [REFEREE-CARRIED]); the last marks
+facts verified in a frozen review record rather than gated in a
+receipt.
 
 Supersessions of the earlier record, stated where the mathematics
 lives: paper 31 §7 item 1 (the renewal-pumping closure theorem as
@@ -133,8 +135,9 @@ all)
 - **the quotient:** the exact bisimulation quotient of the 36-state
   chain under the committed PER-CANDIDATE (weight, target-class)
   multiset operator reaches its fixed point at six classes,
-  blockwise equal to the committed intrinsic partition, with the
-  committed transfer T; the full Perron package holds there
+  blockwise equal to the committed intrinsic partition (computed
+  in-receipt through length 4 and referee-carried at length 5),
+  with the committed transfer T; the full Perron package holds there
   (lambda = 2 rational; unique dominant class by the M-matrix
   certificate; f = (4,4,3,7,3,3)/3 unique up to scale; root =
   renewal as one abstract state; mass transport exact with
@@ -180,8 +183,9 @@ depth 3, census-anchored only):
   class's delivery row carries weight into a non-diverged class at
   the tested cap — absorption is structurally unreproducible there.
 - **Window consistency without closure [EXACT]:** the intrinsic
-  partition (the same per-candidate operator) agrees blockwise at
-  its computable lookaheads and lands at six classes on the
+  partition (the same per-candidate operator) agrees blockwise
+  from lookahead 1 onward (the t = 0 refinement splits) and lands
+  at six classes on the
   len <= 2 window — a transport-scope ECHO of the delivery-free
   six, a different object — but the window chain ESCAPES: 68
   transitions from shallow parents land in 5 classes first
@@ -369,9 +373,13 @@ interacting identification with a g = 0 column.
    decision and §4.3's forced weights all-depth there.
 2. **Transport-scope closure** — open; the Martin/R-theory import
    is the named tool, with the escape structure its receipt-gated
-   justification.  (Nothing at transport scope may cite the
-   delivery-free per-candidate distinction as load-bearing: at the
-   tested cap it is extensionally null there — recorded.)
+   justification.  (The binding's real content, stated exactly:
+   the per-candidate versus per-class-AGGREGATE distinction — which
+   is load-bearing at delivery-free scope — is EXTENSIONALLY NULL
+   at the transport cap, so no successor may cite D44b as evidence
+   that it bites there.  The intrinsic refinement itself remains
+   load-bearing at transport scope, as that receipt's own
+   well-definedness result shows.)
 3. **The physical dimension ladder** — Minkowski-dimension
    certificates (circle/sphere orders) and statistical estimators
    under the completed measure; the typicality question (does the

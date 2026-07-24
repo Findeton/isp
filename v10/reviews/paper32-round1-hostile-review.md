@@ -1148,3 +1148,141 @@ sed -n '/LEDGER #390/,$p' v10/LOG.md | grep -n "Minors applied"
 # ladder-hazard re-scan
 grep -c "d46\|D46" v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md   # 0
 ```
+
+---
+
+# DELTA-2 VERIFICATION (delta residuals at LOG #391, commit cc4591a)
+
+**Prior content untouched.** Object re-read at `cc4591a`; verified against the
+same sources plus LOG #391.
+
+## DELTA-2 VERDICT: CLEAN — both residuals discharged, all three nits and minor-9 applied, NO NUMBER MOVED. **TERMINAL CONVERSION ENDORSED.**
+
+### No number moved — again, proved
+
+Numeric token census, `d6e2bc0` → `cc4591a`:
+
+- **REMOVED: nothing at all** (empty set).
+- **ADDED:** `2007` (the Aldous–Lyons year), `355` (the #355 entry condition),
+  `8`/`7` (the §6 renumber), and section/lookahead digits from the new prose
+  (`§4.1-4.3`, "lookahead 1", "t = 0", "(H0)", "size >= 3").
+
+Census against the **original draft** `1610689` → `cc4591a`: across the entire
+two-commit repair sequence exactly **one** token disappears — `4,` — the
+punctuation artifact of `widths 1-4,` → `widths 1-4 at L = 16`. Every one of
+the 61 swept quantities survives the repairs unchanged. The paper's number
+surface is identical to the one that passed the round-1 sweep clean.
+
+### r-M1 (MAJOR, record fidelity) — DISCHARGED, and correctly
+
+LOG #391 forward-corrects #390 by name, states the **cause** ("my first minors
+script hit an assertion and died BEFORE writing the file"), states what
+consequently never landed (minor-1, -2, -3; minor-5 partial), and adds the
+process note ("a write-after-assert script must be verified by re-grep, not by
+its own success message"). Owning the mechanism rather than quietly applying
+the edits is the stronger disposition and is what the campaign's
+forward-correction discipline is for.
+
+The four items are verified applied in the paper: §2.1 now reads "the ENTIRE
+depth-<= 6 family and the ENTIRE depth-7 LEVEL"; the holding is
+"singleton-or-empty at this scope — gated, and used in §2.2 as the (H0)
+hypothesis it is, not as an independent theorem" (which also removes the
+§2.1/§2.2 contradiction, not just the word "provably"); §4.1's body carries
+the census-vs-gating split with the three named grains; the coda reads "its
+weights are the completion's **at verified-depth scope**".
+
+### r-m1 (minor) — DISCHARGED, above specification
+
+§6 gains a new **item 7, "The funnel lemma's paper-grade promotion"**, which
+states the referee-carried status, spells out LOG #355's three-part entry
+condition, and closes with the clause I did not ask for and that matters most:
+"**Until then the multi-author corner is decided at TESTED SCALE with the crown
+case referee-carried — not a closed no-go.**" The ledger no longer reads as a
+closed dimension no-go. Old item 7 renumbers to 8; no internal cross-reference
+breaks (checked — the only "item 7" elsewhere in the paper refers to paper
+31's ledger). *Note for readers of this frozen review: round-1 MAJOR-6 and the
+delta-1 text refer to the pre-renumber "§6.7", now §6 item 8.*
+
+### Nits and minor-9 — all applied
+
+`(the first five gated, zero violations; the sixth referee-carried)` (r-n1);
+"the corrections were **mostly** quantifiers…" (r-n2); "§4.1-4.3 (its census
+face by §4.1, its operator faces by §4.2-4.3)" (r-n3). **Aldous–Lyons, EJP 12
+(2007)** added to reference 5 and credited for "the mass-transport principle
+invoked in §2.1" — the one genuine attribution gap is closed.
+
+### One annotation, recorded not blocking
+
+**r2-a1.** Round-1 **minor-3** named §2.3's body sentence; the repair landed
+the honest form in the **abstract** ("window-consistent from lookahead 1
+onward (the t = 0 refinement splits, as the receipt records)") while §2.3 still
+reads "agrees blockwise at **its computable lookaheads**". So #391's "ALL
+RESIDUALS NOW APPLIED … verified by grep" is, for the second time, one clause
+wide of the paper.
+
+**Why this is an annotation and not a finding:** the correction is now *in the
+paper*, in its most-read location, and it is the abstract that governs how the
+claim propagates; what remains is a body echo of a sentence the abstract has
+already qualified. Contrast r-M1, where four corrections were absent from the
+paper entirely. Recorded here so the frozen record is exact; **not a condition
+of conversion.** One-line fix if wanted: §2.3 → "agrees blockwise from
+lookahead 1 onward on its shallow windows (the t = 0 → 1 refinement genuinely
+splits)".
+
+### Items I want applied — answering the direct question
+
+None blocking. In priority order:
+
+1. **minor-4 — the one with substantive content.** §6 item 2 still renders the
+   d44b delta's BINDING synthesis flag as "Nothing at transport scope may cite
+   the delivery-free per-candidate distinction as load-bearing", which sits in
+   direct tension with that receipt's own TG2 verdict ("the intrinsic
+   refinement **is** load-bearing, the d44a per-candidate lesson carried").
+   The flag's actual content is narrower: the per-candidate-**versus-aggregate
+   operator** distinction is extensionally null at cap, so d44b may not be
+   cited as proof it bites. Of everything left, this is the only item where the
+   paper's wording could mislead a successor about a binding flag. Round-1
+   minor-4 carries the replacement sentence.
+2. **minor-8** — §2.1's blockwise equality (len <= 4 in-receipt, len <= 5
+   referee-carried) is now the only untagged referee-carried fact in a paper
+   that tags four others meticulously; consistency with the convention this
+   round enforced argues for closing it.
+3. **minor-10, second half** — `[REFEREE-CARRIED]` is now used as a bracket tag
+   twice in prominent positions but is not in §1's declared label list; one
+   word in §1 adds it. (`[POSITED]` declared-and-unused remains harmless.)
+4. **r2-a1** above.
+
+nit-1 (§3.3 "reach order dimension 3" vs the `dim>2` gate), nit-2 ("seven-row
+gated dictionary") and nit-3 ("LOG ##353-374") stay at the applier's
+discretion.
+
+## Disposition
+
+**DELTA-2 CLEAN.** The blocker was discharged at delta 1; both delta-1
+residuals are discharged here, one of them above specification; all three nits
+and the attribution gap are closed; the record fidelity failure is owned,
+caused, and process-noted on the ledger rather than papered over. **No number
+has moved at any point in the repair sequence** — the paper that converts is
+numerically identical to the one whose 61-claim sweep came back clean.
+
+**TERMINAL CONVERSION ENDORSED**, unconditionally. The stamped status line
+"Independent paper-level review: round 1 + delta, frozen at
+reviews/paper32-round1-hostile-review.md" is accurate to the artifacts, and
+this review confirms independently that the six D46 ladder units
+(#380, #382, #384, #386, #388, #389) remain GREEN-UNREVIEWED and are not part
+of this paper — no D46 content is cited, alluded to, or implied anywhere in it.
+
+```bash
+cd /Users/felixrobles/workspace/isp
+git show d6e2bc0:v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md > /tmp/p32_d6.md
+python3 - <<'PY'
+import re, collections
+pat = re.compile(r'\d[\d,]*(?:/\d+)?')
+c = lambda p: collections.Counter(pat.findall(open(p).read()))
+new = c('v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md')
+print("d6e2bc0 -> cc4591a  REMOVED:", sorted((c('/tmp/p32_d6.md') - new).items()))   # []
+print("1610689 -> cc4591a  REMOVED:", sorted((c('/tmp/p32_old.md') - new).items()))  # [('4,',1)]
+PY
+grep -n "computable lookaheads\|lookahead 1 onward" v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md
+sed -n '/LEDGER #391/,$p' v10/LOG.md
+```

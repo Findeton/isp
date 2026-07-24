@@ -7702,3 +7702,34 @@ a closed no-go"; and the three nits (the gated/referee-carried
 bracket, "mostly" in the taxonomy, the §4.1-4.3 pointer) plus
 minor-9's genuine attribution gap — ALDOUS-LYONS added for the
 mass-transport principle. Delta re-verification next.
+
+## 2026-07-19 — PAPER 32 TERMINAL (LEDGER #392)
+Delta-2 (appended to reviews/paper32-round1-hostile-review.md):
+CLEAN — TERMINAL CONVERSION ENDORSED UNCONDITIONALLY. **NO NUMBER
+MOVED, proved twice by numeric-token census: d6e2bc0 -> cc4591a
+removes NOTHING; across the whole sequence 1610689 -> cc4591a
+exactly ONE token disappears ("4," — the punctuation artifact of
+"widths 1-4," -> "widths 1-4 at L = 16"), so the paper converting
+to terminal is NUMERICALLY IDENTICAL to the one whose 61-claim
+sweep came back clean.** r-M1 discharged (the forward-correction
+named the cause, not just the fix; minor-2's repair additionally
+removed a §2.1/§2.2 contradiction outright); r-m1 discharged ABOVE
+specification (the new §6 item 7's "not a closed no-go" clause);
+all nits + the Aldous-Lyons attribution applied; D46's
+green-unreviewed status independently confirmed — the six ladder
+units are cited, alluded to, or implied NOWHERE in the paper.
+ONE ANNOTATION (r2-a1, non-blocking) and the referee's THREE named
+non-blocking items APPLIED AT CONVERSION: (minor-4, their priority
+item — "the only remaining item that could mislead a successor")
+§6 item 2's binding flag now states its REAL content — the
+per-candidate vs per-class-AGGREGATE distinction is extensionally
+null AT THE TRANSPORT CAP, while the intrinsic refinement itself
+remains load-bearing there per that receipt's own well-definedness
+result; (minor-8) §2.1's blockwise equality now tagged (in-receipt
+through length 4, referee-carried at length 5); (minor-10b)
+[REFEREE-CARRIED] declared in §1's label list; (r2-a1) §2.3's body
+clause aligned with the abstract's t = 0 wording. PAPER 32 IS
+TERMINAL; status line stamped with the frozen review pointer AND
+the explicit note that the D46 ladder units are green-unreviewed
+and not part of this paper. NEXT IN THE REVIEW QUEUE: the ladder
+units' rounds, batched (D46a+D46c), (D46b+D46d), (D46e+D46f).
