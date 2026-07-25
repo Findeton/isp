@@ -8194,3 +8194,55 @@ realises NO arbitration counterexample, so that half rests on the
 constructed exhibit alone. Mutant f1 now fails RD1-a/RD2-a/RD3-a
 at exit 1 while RD1-b/RD3-b pass — exactly what their labels now
 say. Notes §6 both units. DELTAS next.
+
+## 2026-07-19 — D46e + D46f TERMINAL (LEDGER #403); THE THREE-ROUND
+## SWEEP IS COMPLETE
+Delta: BOTH DELTA-CLEAN ON THE SCIENCE (D46e 3/3 blockers, 4/4
+majors closed; D46f 2/2 and 5/5), both terminal statements checked
+clause by clause. The referee extended its independent
+exact-Fraction rebuild to the full 11-reading family and to
+STRUCTURED: EVERY delivered number matches (66 evaluations ->
+COLLAPSE 16 / STRUCTURED 10 / NO-COLLAPSE 24 / SUPPORT-MISMATCH 7
+/ BOTH-ZERO 9; 16 at g = 0 only; NPR c = 204703/480000 and
+265103/480000), all repaired mutants now fail correctly (e5 at
+SG0-C, e3 at SG2-E, e2/e6 with the SG3 verdict moving by itself,
+e8's wall clock at SG4-E), and D46f's map-level collisions for d
+and m were reconstructed independently alongside r.
+**TWO MUST-APPLIES, BOTH APPLIED.** (MA-1) §4 was NOT stamped in
+either note — THE SAME OMISSION #400 recorded as the conversion
+condition for D46b/D46d, repeated one round later; both §4
+headings now carry [SUPERSEDED — see §5/§6] with the pre-repair
+PASS totals flagged, text retained. (MA-2) **the new AST scanners
+violated, in their own labels, the corpus obligation adopted in
+the same commit**: they claimed to report a vacuous gate "in ANY
+syntactic form" while enforcing only "the predicate references
+>= 1 run-bound name" — mutant e9 (check(len(STORE) >= 0)) passed
+24/24. Both labels now state exactly what is enforced and record
+the residual class for the authoring/pre-commit check; reruns
+23/23 and 29/29, seeds byte-identical.
+**TWO FRAMING CORRECTIONS from the delta, both accepted.**
+(1) FORWARD-CORRECTION of #402: the reversal is NOT "wider than
+the round found" — it is EXACTLY the round's 16, on exactly its
+list; what is genuinely new is the **10 STRUCTURED
+classifications at g = 1/2 under the OCC readings — the
+interaction destroys the GLOBAL constant while leaving a
+PER-SECTOR ray.** (2) the identity-action count: the receipt's
+4,202 is right and the round's 4,142 was an under-count (empty
+footprints only, missing 60 bystander deliveries) — reconciled in
+note §5.
+The CORPUS-LEVEL OBLIGATION (#401) is confirmed DISCHARGED IN FULL
+by the referee: right content, right place.
+**TERMINAL STATEMENTS.** D46e: the smeared interacting comparison
+is READING-RELATIVE — 16 discriminating pairs collapse at g = 0
+ONLY (the interaction kills the ray there), 9 at neither (grain),
+none under interaction alone, 10 STRUCTURED at g = 1/2; EXC
+coupling-blindness an exact rational identity; the identification
+anchored; THE CHANNEL-READING QUESTION IS THE NAMED SUCCESSOR.
+D46f: the action map is a genuine function with DELIVERY
+NON-INJECTIVE; COMMUTATION IS A STRUCTURAL CONSEQUENCE of the
+layer's set-valued state, holding on all 170,820 pairs, LICENSING
+NO INFERENCE about D44f's order-dependence; the menu asymmetry
+gated by AST reading plus corpus sweep, its arbitration half
+resting on a constructed exhibit.
+**ROUND 3 OF 3 COMPLETE — ALL SIX D46 LADDER UNITS ARE TERMINAL.**
+NEXT: d41c step 3, then successors 1-6.

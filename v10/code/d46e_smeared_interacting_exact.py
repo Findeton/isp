@@ -1599,11 +1599,16 @@ for _node in ast.walk(_tree):
 check("SG4-D self-scan by AST WALK (not by literal needle): every "
       "check() call site in this source is parsed and its predicate "
       "expression is required to reference at least one name bound by this "
-      "run — so a vacuous gate written in ANY syntactic form (check(True), "
-      "check(bool(True)), check(len('x') >= 0), ...) is reported, which "
-      "the previous four-needle scan could not do.  Necessary, not "
-      "sufficient: this does not decide vacuity in general and does not "
-      "claim to", not _vac and _ncheck > 0,
+      "run.  SCOPE, STATED EXACTLY (delta MA-2; the LOG #401 "
+      "corpus obligation applied to this gate itself): what is "
+      "ENFORCED is 'the predicate references at least one "
+      "run-bound name'.  That catches check(True), "
+      "check(bool(True)) and the four-needle class, but it does "
+      "NOT catch a predicate that references a run-bound name "
+      "while still being constant — e.g. check(len(STORE) >= 0), "
+      "which passes this scan.  The residual class is recorded "
+      "for the authoring/pre-commit check; this gate is necessary, "
+      "not sufficient, and no longer claims otherwise", not _vac and _ncheck > 0,
       f"{_ncheck} check() call sites parsed; constant-predicate call sites "
       f"= {len(_vac)}{'' if not _vac else ' at lines ' + ','.join(str(v[0]) for v in _vac)}; "
       f"source length = {len(_own)} bytes")

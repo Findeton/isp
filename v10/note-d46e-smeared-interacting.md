@@ -54,7 +54,10 @@ singleton regions, the committed orders.  A collapse verdict here
 is a fixture-scale statement about the identified operator, not a
 theorem about interacting theories.
 
-## 4. Result (2026-07-19; GREEN-UNREVIEWED) — 19 PASS / 0 FAIL
+## 4. Result — **[SUPERSEDED — see §5 (round-1 retractions) and
+## §6 (repairs). Retained verbatim; every headline below marked
+## WITHDRAWN in §5 is withdrawn, and the PASS totals quoted here
+## are the pre-repair ones.]**
 
 **SG0/SG1 anchors green:** the free-core ray collapse re-runs
 through the ported pipeline (EXC D = 1.(I - sigma_x); LT D =
@@ -199,3 +202,42 @@ referee's split.  SG3-C is upgraded to an EXACT RATIONAL IDENTITY
 in all four regions with the LT side gated as differing in all
 four.  SG4-D/E are AST walks over every check() call site and over
 clock/RNG APIs; the hard-coded denominators are derived.
+
+## 7. TERMINAL (2026-07-19; delta CLEAN on the science, LOG #403)
+
+The delta extended its independent exact-Fraction rebuild to the
+full 11-reading family and to STRUCTURED, and **every delivered
+number matches**: 66 evaluations -> COLLAPSE 16 / STRUCTURED 10 /
+NO-COLLAPSE 24 / SUPPORT-MISMATCH 7 / BOTH-ZERO 9; 33 pairs, 25
+discriminating; 16 at g = 0 only, 0 at g = 1/2 only, 0 at both, 9
+at neither; NPR's c = 204703/480000 (b = 0) and 265103/480000
+(b = 1). Its mutants re-run on the repaired receipt: e5 fails at
+SG0-C, e3 at SG2-E, e2/e6 exit 1 with the SG3 verdict moving by
+itself, e8's wall clock caught by SG4-E.
+
+**FRAMING CORRECTED (delta):** the reversal is NOT wider in count
+— it is EXACTLY the round's 16, on exactly its list. What is
+genuinely new is the **10 STRUCTURED classifications at g = 1/2
+under the OCC readings** (independently confirmed): the
+interaction destroys the GLOBAL constant while leaving a
+PER-SECTOR ray.
+
+**TERMINAL STATEMENT:** the smeared interacting comparison is
+READING-RELATIVE — over 11 gated coarsenings, 16 discriminating
+(cell, reading) pairs collapse at g = 0 ONLY (the interaction
+kills the ray there), 9 collapse at neither (grain), none collapse
+under interaction alone, and 10 come out STRUCTURED at g = 1/2
+(global constant destroyed, per-sector ray surviving); EXC
+coupling-blindness is an EXACT RATIONAL IDENTITY; the
+identification is anchored to the corpus first moment; **the
+channel-reading question — which reading is physically privileged
+— is the named successor.**
+
+**Delta MA-2 applied:** the AST scanner's label no longer claims
+to catch a vacuous gate in ANY syntactic form; it states exactly
+what it enforces (the predicate references >= 1 run-bound name)
+and records the residual class (a constant predicate that DOES
+reference a bound name, e.g. len(STORE) >= 0) for the
+authoring/pre-commit check. Flagged for the next housekeeping
+pass (delta, non-blocking): E-m5's DIP one-particle reduction is
+stated, not gated.

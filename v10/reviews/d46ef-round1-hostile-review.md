@@ -953,3 +953,215 @@ recurs in both receipts (four literal needles in D46e, one in D46f,
 neither able to see a vacuous gate written in any other form, and D46f's
 scan contradicting a gate its own note calls vacuous).  It should be
 promoted from a per-round minor to a corpus-level obligation.
+
+---
+
+# ROUND-1 DELTA — both units (2026-07-24)
+
+**Objects:** commit `51d147f`; LOG #401 (retractions) and #402 (receipt
+repairs); `note-d46e` §5/§6, `note-d46f` §5/§6; both receipts and both
+`.out`s.  The round-1 body above is untouched.  Nothing was committed by
+the referee.
+
+## DELTA VERDICT
+
+| unit | delta verdict | blockers closed | majors closed | must-apply outstanding |
+|---|---|---|---|---|
+| **D46e** | **DELTA-CLEAN on the science; 2 housekeeping items block conversion** | 3 / 3 | 4 / 4 | §4 supersession stamp; SG4-D label |
+| **D46f** | **DELTA-CLEAN on the science; the same 2 items** | 2 / 2 | 5 / 5 | §4 supersession stamp; RD4-f label |
+
+Both receipts rerun **exit 0, byte-identical** (D46e 23/23, 25.3 s;
+D46f 29/29, 9.5 s).
+
+## D1 — the D46e census, independently re-derived
+
+The referee extended the exact-`Fraction` rebuild to the eleven-reading
+product-closed family and to the full class list including `STRUCTURED`
+(`scratchpad/verify_delta_e.py`).  **Every delivered number matches.**
+
+| quantity | receipt | referee (exact rationals) |
+|---|---|---|
+| evaluations | 66 | 66 |
+| COLLAPSE / STRUCTURED / NO-COLLAPSE / SUPPORT-MISMATCH / BOTH-ZERO | 16 / 10 / 24 / 7 / 9 | **16 / 10 / 24 / 7 / 9** |
+| (cell, reading) pairs; discriminating | 33; 25 | **33; 25** |
+| collapse at **g = 0 only** | 16 | **16** |
+| collapse at g = 1/2 only | 0 | **0** |
+| collapse at both | 0 | **0** |
+| collapse at neither (grain) | 9 | **9** |
+| the 16 | 3 cells x {NPR, NPC, OCC0, OCC1, OCC2} + b=1 OCC3 | **identical list** |
+| FULL/ROW/COL | never collapse either way | **confirmed, all 3 cells** |
+| NPR constant, b = 0 (both cells) | `204703/480000` | **`204703/480000`** |
+| NPR constant, b = 1 | `265103/480000` | **`265103/480000`** |
+
+**Confirmed, and one correction to the framing.**  LOG #402 and the
+coordinator's note say the reversal "came out WIDER than the round
+found" / "wider than the round's 16-vs-9 estimate on the same side".
+The *count* is not wider — it is **exactly** the round's 16, on exactly
+the round's list (round-1 E-A1's table: `N|Prow`, `N|Pcol`, `occ0row`,
+`occ1row`, `occ2row` x 3 cells, plus `occ3row` at b = 1).  What is
+genuinely wider is (a) the family is now closed and each reading is
+gated a genuine coarsening, and (b) a **new** structural fact the round
+did not have: at g = 1/2 the OCC readings are **STRUCTURED**, not
+NO-COLLAPSE — 10 of them.  The referee independently confirms all ten.
+That is the real refinement, and it sharpens the physics: under the OCC
+coarsenings the interaction does **not** destroy proportionality
+outright, it destroys the *global* constant while leaving a per-sector
+ray in every sector.  Recommend LOG #402's "wider than the round's
+16-vs-9 estimate" be restated as "the same 16, now gated, plus 10
+STRUCTURED classifications the round's classifier could not express".
+
+## D2 — D46e blockers and majors, re-tested by mutation
+
+| round-1 finding | repair | referee re-test | status |
+|---|---|---|---|
+| **E-A1** the verdict reverses | family product-closed; delivered READING-RELATIVE; two-EXC-channels-per-collapsing-sector caveat computed | census reproduced exactly (D1); the caveat is correct — every collapsing sector carries exactly two EXC channels, so the content there is the equality of the per-sector constants | **CLOSED** |
+| **E-A2** `sg3_verdict` hard-coded | all verdict strings interpolated | **mutant e2** (twin not g = 0): SG2-E / SG3-A / SG3-C fail, exit 1, **and the SG3 verdict moves by itself** to "no reading in the family admits a ray at either coupling".  **Mutant e6** (LT := EXC, correctly applied this time): exit 1, census `COLLAPSE 50`, and the SG3 verdict moves to "the ray census below is mixed in both directions ... in 0 of them".  **Mutant e5**: verdict moves to "3 DISCRIMINATING" | **CLOSED** |
+| **E-A3** identification unanchored | SG0-C: one `D_identified` for both phases, required to reproduce `tau_D_pairs` entry-for-entry AND land on the committed ray | **mutant e5** (delta weight deleted) now **FAILS at SG0-C, exit 1** (was 19/19 exit 0).  The gate's own reason is right: the free-core tau is delta-odd, so the zeroth moment vanishes identically | **CLOSED** |
+| **E-M1** `-1589/4500` ungated | SG2-E gates the PAR ray form entrywise in exact Fractions | **mutant e3** (`rayform ≡ True`) now **FAILS at SG2-E, exit 1** (was 19/19 exit 0) | **CLOSED** |
+| **E-M2** `delta c` convention-dependent | SG3-E gates it with an independent reference rule | reported "classes agree in all 25 discriminating pairs at both couplings; delta c agrees in 4, differs in 5" — **exactly the referee's 4/5 split**, and the "9/9 constants shifted" billing is gone | **CLOSED** |
+| **E-M3** "this fixture cannot decide it" | replaced by the channel-reading successor question | note §5 withdraws it by name; §6 and the `[VERDICT]` carry the successor | **CLOSED** |
+| **E-M4(a)** SG4-E claimed three properties, tested one | SG4-E now reads the module list from `sys.modules` and AST-parses the source for clock/RNG APIs | **mutant e8** (`import time; time.time()` + a vacuous gate) now **FAILS at SG4-E, exit 1** (was 20/20 exit 0) | **CLOSED** |
+| **E-M4(c)** literal-needle self-scan | SG4-D is now an **AST walk** over every `check()` call site | large real improvement — but see D5 | **CLOSED with a label rider** |
+| **E-m1** hard-coded denominators | derived (`N_EXPECT`, `len(CELLS) * len(READINGS)`) | confirmed in source | **CLOSED** |
+| **E-m2** SG3-A's "real control" billing | rescoped in-label to a non-degeneracy check | confirmed | **CLOSED** |
+| **E-m3** twin comparability | SG3-C upgraded to exact rational identity over 97 EXC entries in all four regions, with the LT side gated as differing in all four | referee's exact rebuild agrees region by region | **CLOSED** (better than the round asked) |
+
+## D3 — D46f, re-tested
+
+| round-1 finding | repair | referee re-test | status |
+|---|---|---|---|
+| **F-A1** abelian monoid = tautology | RD3-b relabelled a STRUCTURAL CONSEQUENCE of RD1-a; the join reason gated in line (state-blind increment 0/23,069; `View.__init__` parameter list cited from parsed source); the all-pairs fact gated at **170,820 pairs / 0 non-commuting**; the billing WITHDRAWN by name | the gated numbers match the referee's probes P1/P3 exactly; the label now states the entailment explicitly | **CLOSED** |
+| **F-A2** RD1-b entailed | relabelled "A COROLLARY OF RD1-a, NOT AN INDEPENDENT MEASUREMENT" | **mutant f1** (delivery branch = identity): **RD1-a, RD2-a and RD3-a FAIL, exit 1; RD1-b and RD3-b pass.**  Asked whether this is a residual hole — **it is not.**  It is the correct outcome: both labels now assert exactly that they cannot fail once RD1-a passes, the exit code is driven by gates that *can* fail and do, and RD2-a now fails too (the map-level witnesses are recomputed against the mutated action).  A gate that is honestly labelled as a regression tally is allowed to pass under a mutation its label disclaims | **CLOSED** |
+| **F-M1** click identity = constructor filter | RD1-d relabelled A CODE-READING THEOREM, gated **by AST** over the committed `View` class body | referee probe P5 agrees: the body mentions `d, m, p, r` and none of `ka, kc, ko, n` | **CLOSED** |
+| **F-M2** r/m injectivity a pool artefact | RD2-a rescoped to "among the ENUMERATED fibers"; **map-level collisions constructed and gated for r, d AND m** | referee **independently reconstructed all three** collisions from the abstract action (probe P7): `r` (receiver B, version `('v',v0,(1),('B'),'B')`), `d` (receiver D), `m` (receiver B, the `both` branch) — distinct pre-states, identical post-states in every case | **CLOSED** |
+| **F-M3** two notions of "order" conflated | the RD3 header separates intra- from inter-history order and states that no inference runs between them; the conclusion withdrawn and replaced by three separately-supported statements | confirmed in the `.out` and note §5/§6 | **CLOSED** |
+| **F-M4** universe overstated | footprint stratification printed (970 / 3,172 / 2,958 / 63) plus the identity-action share; RD3-c reports **63 of 63 possible** | referee's stratification reproduces 970 / 3,172 / 2,958 / 63 exactly.  **One correction, in the receipt's favour:** the receipt prints **4,202** identity-action pairs where round-1 F-M4 said 4,142.  The referee's 4,142 counted *empty footprints*; the receipt's 4,202 counts *pairs in which some record actually acts as the identity on that actor's state*, which is the right predicate (it also catches the 60 bystander deliveries, which have a nonempty footprint but do nothing).  **4,202 is correct and 4,142 was the referee's under-count.**  Note §5 line 133 quotes the round's 4,142 and §6 prints 4,202 — both correct in their own frame, but a one-clause reconciliation would help a reader | **CLOSED** |
+| **F-M5** menu asymmetry from one example | RD3-f gates the code reading **by AST** over the committed layer and sweeps the corpus | referee re-ran the sweep independently: **351 (sigma, receiver) keys, 0 propose-menu and 0 arbitration-menu non-determinations**; keying on sigma alone gives **228 keys and 54** non-determinations.  Both riders confirmed. **One observation the receipt does not make:** the 54 is *identical for both menus* — it is not a propose-specific effect but simply the 54 sigma-values shared by two actors, so the rider's force is "the menus are per-actor", which is what `prop_options_in_view`'s `op[1] == a` filter says.  And the arbitration half genuinely rests on RD3-e's constructed exhibit alone, exactly as now stated | **CLOSED** |
+| **F-m3** "never counted as a pass" | corrected in-label ("printed as a declaration and counted in the gate total") | confirmed | **CLOSED** |
+| **F-m4** one-needle self-scan | RD4-f is now an AST walk | see D5 | **CLOSED with a label rider** |
+
+## D4 — the corpus-level obligation
+
+LOG #401's promotion — *"no receipt may claim scanner coverage it does
+not enforce, and the class belongs in an AUTHORING/PRE-COMMIT check
+(per the #400 rider), not only in receipt gates"* — **discharges the
+referee's recommendation in full**, and does so in the right place: the
+recommendation was that it stop being a per-round minor, and it has.
+The two receipts' AST walks are a large, real improvement over the
+literal needles.
+
+## D5 — MUST-APPLY before conversion (two items, both cheap)
+
+### MA-1 — §4 is not stamped SUPERSEDED in either note, and it still carries the withdrawn headlines verbatim
+
+`note-d46b` and `note-d46d` both open §4 with
+
+```
+## 4. Result — **[SUPERSEDED — see §5 (round-1 retractions) and
+## §6 (repairs). Retained verbatim; every headline below marked
+## WITHDRAWN in §5 is withdrawn.]**
+```
+
+and LOG #400 records that stamp as **the one conversion condition** for
+the sibling batch.  Neither note here has it.  `note-d46e` §4 still
+reads "## 4. Result (2026-07-19; GREEN-UNREVIEWED) — 19 PASS / 0 FAIL"
+(the receipt now has 23 gates) and delivers "**SG3 — THE VERDICT,
+computed not narrated: THE FAILURE IS GRAIN, NOT INTERACTION**" and
+"this fixture cannot decide it" with no marker; `note-d46f` §4 still
+delivers "**RD3 — RECEPTION IS COMMUTATIVE ... an ABELIAN MONOID under
+reception, strictly stronger than the pin's disjointness gate**" and
+"The order-dependence D44f found therefore does NOT live in the state".
+A reader who stops at §4 — the section every prior note treats as the
+result — gets four withdrawn headlines presented as findings.  This is
+the round's own pattern (i)/(ii), and the campaign has already ruled on
+it once.
+
+**Fix:** apply the sibling stamp verbatim to §4 of both notes, and
+correct D46e's "19 PASS / 0 FAIL" to 23.
+
+### MA-2 — the two new AST scanners claim coverage they do not enforce, which is the obligation adopted in the same commit
+
+D46e SG4-D's label: *"a vacuous gate written in **ANY syntactic form**
+(check(True), check(bool(True)), check(len('x') >= 0), ...) is
+reported"*.  D46f RD4-f carries the same construction.  What is
+enforced is narrower: *the predicate must reference at least one name
+bound by this run*.
+
+**Referee probe (mutant e9), on the repaired receipt.**  Insert
+`check("EXTRA (referee) vacuous gate referencing a run-bound name",
+len(VSTORE) >= 0, "always true")` immediately before SG4-D:
+
+```
+[PASS] EXTRA (referee) vacuous gate referencing a run-bound name  (always true)
+[SUMMARY] 24 PASS / 0 FAIL          (exit 0)
+```
+
+A vacuous gate in a syntactic form the label promises to report is not
+reported.  The three examples in the label are all name-free and *are*
+caught; the generalization to "ANY syntactic form" is the over-claim.
+
+**Fix (one clause each):** replace "a vacuous gate written in ANY
+syntactic form ... is reported" with "a gate whose predicate references
+**no name bound by this run** is reported, in whatever syntactic form"
+— and, in the authoring/pre-commit check LOG #401 now mandates, record
+the residual class (a predicate that reads a run-bound name but is
+still identically true) as the known gap.
+
+## D6 — NOT-APPLIED items: the referee's judgement
+
+None of the following blocks conversion.
+
+| item | judgement |
+|---|---|
+| **E-M4(b)** reversed-traversal digest for D46e | **not must-apply.**  SG4-E now parses for clock/RNG APIs and reads the module list live, external reruns are byte-identical, and every iteration is over an explicit or `str`-sorted list.  Worth having for parity with D46f's RD4-e, but the risk it covers is now closed from the other side |
+| **E-m5** displacement anchor | **not must-apply, but name the residual.**  SG0-C anchors `D_identified` on the *free-core* displacement; the banner's claim that the occupation-dipole `DIP` "reduces to the free-core lattice displacement on the one-particle sector" is still stated, not gated.  One clause in §6 flagging it as a declared (D2-class) analogue would close the loop |
+| **E-m6 / E-n1 / E-n2** | cosmetic; E-n2's substance (LOG #389's "the ladder is complete") is carried by the #401/#402 forward-corrections |
+| **F-m1** hard-coded `23069` / `7163` | **not must-apply**, but it cost the referee twice: in mutant f4 it fires for a reason unrelated to what it tests and masks the one real failure.  Recommend for the next housekeeping pass |
+| **F-m2** RD2-c cross-product disclosure in the note | **not must-apply** — now that RD2-a is rescoped and the map-level collisions are gated for r/d/m, the v.arb figure reads correctly in context |
+| **F-m5** digest excludes `sobj` | **not must-apply**; harmless and now the least of the coverage questions |
+| **F-n1** "co-receivable" undefined in the note | **not must-apply**, but §6 uses the term in a sentence explaining that it constrains nothing, which is hard to follow without the definition.  One parenthetical |
+
+## D7 — terminal conditions
+
+The referee has checked both stamped conversion sentences against the
+delivered artefacts.
+
+**D46e.**  Every clause is supported: 11 gated coarsenings (confirmed);
+16 discriminating pairs collapsing at g = 0 only (independently
+re-derived, exact); 9 at neither; none under interaction alone; EXC
+coupling-blindness an exact rational identity (independently confirmed
+region by region); the identification anchored (mutant e5 now fails);
+the channel-reading successor named.  **One amendment requested:** the
+sentence should not describe the result as wider *in count* than the
+round found (see D1) — the honest addition is the ten STRUCTURED
+classifications.
+
+**D46f.**  Every clause is supported: RD1-a's function claim; delivery
+non-injective with re-delivery admissible and PROBE-DD load-bearing
+(both independently re-verified); commutation a structural consequence
+holding on all 170,820 record pairs (independently re-verified);
+no inference licensed about where D44f's order-dependence lives; the
+menu asymmetry gated by AST plus corpus sweep with the arbitration half
+resting on a constructed exhibit (independently re-verified, 351 keys /
+0 / 0).  **No amendment requested.**
+
+**On DELTA-CLEAN:** both units convert once **MA-1** and **MA-2** are
+applied.  No further round is needed for the science; both reversals
+are now gated, both tautologies are relabelled with their real content
+gated, and every number the referee could recompute in exact arithmetic
+matches.
+
+## D8 — delta reproduction
+
+```
+cd /Users/felixrobles/workspace/isp
+python3 v10/code/d46e_smeared_interacting_exact.py    # 23/23, byte-identical, 25.3 s
+python3 v10/code/d46f_reception_dynamics_exact.py     # 29/29, byte-identical, 9.5 s
+python3 scratchpad/verify_delta_e.py                  # 66-evaluation exact census + the 16/9 split
+python3 scratchpad/n_e2.py n_e3.py n_e5.py n_e6.py    # all now exit 1
+python3 scratchpad/n_e8.py                            # wall clock now caught by SG4-E
+python3 scratchpad/n_e9.py                            # MA-2: vacuous gate survives the AST walk
+python3 scratchpad/n_f1.py                            # RD1-a/RD2-a/RD3-a fail, RD1-b/RD3-b pass
+python3 scratchpad/probe_d46f.py                      # P1-P7, incl. the d and m map-level collisions
+python3 scratchpad/probe3_d46f.py                     # 351 keys / 0 / 0 ; 228 keys / 54 / 54
+```

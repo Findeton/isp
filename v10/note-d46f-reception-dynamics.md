@@ -46,7 +46,10 @@ isometric/NSE-compliant as the D25/D27 requirements demand, and
 Fixture scope (the committed families and click/SIG fixtures);
 D25/D27 are cited as requirements, not re-proved.
 
-## 4. Result (2026-07-19; GREEN-UNREVIEWED) — 29 PASS / 0 FAIL
+## 4. Result — **[SUPERSEDED — see §5 (round-1 retractions) and
+## §6 (repairs). Retained verbatim; every headline below marked
+## WITHDRAWN in §5 is withdrawn, and the PASS totals quoted here
+## are the pre-repair ones.]**
 
 **RD1 — the action map EXISTS and is a genuine function.** Over
 23,069 reception instances and 228 distinct pre-states, the
@@ -130,8 +133,11 @@ must be stated separately.
 View constructor's FILTER (View never mentions ko/kc/ka/n) — a
 code reading, not a discovery; RD2-a's INJECTIVE verdict for r/m
 is a POOL ARTEFACT (the referee exhibits an r collision as a map;
-the receipt probed only d); 4,142 of the 7,163 pairs (58%) contain
-a record whose action is the IDENTITY; RD3-c's 63/7163 control is
+the receipt probed only d); 4,202 of the 7,163 pairs (58%) contain
+a record whose action is the IDENTITY (the round's 4,142 was an
+under-count — it counted empty footprints only; the receipt's
+figure also catches the 60 bystander deliveries, and the delta
+confirms the correction); RD3-c's 63/7163 control is
 63 of 63 POSSIBLE; RD3-f's "gated asymmetry" is one example whose
 real justification is an ungated code reading.
 
@@ -179,3 +185,29 @@ half now rests explicitly on RD3-e's constructed exhibit alone.
 Under mutant f1 (a wrong action map) RD1-a, RD2-a and RD3-a fail
 and exit 1, while RD1-b and RD3-b still pass — which is now
 exactly what their labels say.
+
+## 7. TERMINAL (2026-07-19; delta CLEAN on the science, LOG #403)
+
+The delta independently reconstructed the map-level collisions for
+**d and m as well as r** — all three confirmed — and verified the
+RD3-f riders exactly: 351 (sigma, receiver) keys with 0/0
+non-determinations, while sigma-alone keying gives 228 keys and
+54 false violations. **Mutant f1's outcome is right, not a
+residual hole:** RD1-a/RD2-a/RD3-a fail at exit 1 while
+RD1-b/RD3-b pass — precisely what their new labels assert.
+
+**TERMINAL STATEMENT:** the reception action map is a genuine
+FUNCTION of (record, receiver, pre-state), with DELIVERY
+NON-INJECTIVE (re-delivery admissible; PROBE-DD load-bearing);
+COMMUTATION IS A STRUCTURAL CONSEQUENCE of the layer's set-valued
+state construction, holding on all 170,820 record pairs, and
+LICENSES NO INFERENCE about where D44f's order-dependence lives;
+the menu asymmetry is gated by AST code reading plus a corpus
+sweep, with the ARBITRATION half resting on a constructed exhibit
+alone.
+
+**Delta MA-2 applied** (as in D46e): the AST scanner states
+exactly what it enforces and records the residual constant-but-
+name-referencing class for the authoring/pre-commit check.
+Flagged for the next housekeeping pass (delta, non-blocking):
+F-m1's hard-coded 23,069 / 7,163 anchors.
