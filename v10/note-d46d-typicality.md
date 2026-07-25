@@ -156,3 +156,40 @@ made to grow. The sampler is sound (the 1e-9 grid's bias is
 <= ~1e-7 per path; an N = 20,000 check matches the exact profile
 to ~1 s.e.). TY3-b genuinely fires. Doctrine compliance holds in
 substance. Forward-corrected at LOG #398.
+
+## 6. Round-1 repairs APPLIED (2026-07-19; 11 -> 17 gates, 0 FAIL)
+
+**The near-tautology is gated AS a near-tautology.** The
+like-for-like series (pool 6, one law, depths 2/3/4/6/8/10) is
+0.027, 0.242, 0.578, 0.903, 0.978, 1.000 with counts anchored,
+labelled monotone-by-construction.  **The DISCRIMINATING scalings
+are now the unit's content:** at fixed depth 8, pools 3-8, the
+FULL-width mass falls 0.963, 0.782, 0.568, 0.333, 0.137, 0.037
+(touched) and 0.525, 0.238, 0.105, 0.030, 0.005, 0.003
+(delivery-joined), both gated strictly decreasing; on the diagonal
+depth = 2 x pool, 0.867 -> 0.623 (touched) and 0.340 -> 0.073
+(delivery-joined).  **DELIVERED READING: what is
+typical-in-the-making is ORDER DIMENSION >= 3 — not D45b's
+unbounded dimension.**
+
+**"The theory's own law" is gone.** TY0-a quotes the committed
+d42b1 docstring's own "no measure claim" FROM SOURCE, and every
+typicality statement names its normalization: LOOKAHEAD-COMPLETED
+(exact arm) or LOCAL-NORMALIZED (sampled arm).
+
+**Three proxies, side by side and gated.** Headline pool 6 /
+depth 8, N = 4,000: 0.9808 / 0.3068 (touched) -> 0.6720 / 0.0765
+(non-idle) -> 0.4138 / 0.0305 (delivery-joined), counts anchored;
+the exact top-width masses carry all three columns too.  **Idle
+mass is now labelled a CONFOUND, never support** — it is partly
+what produced the number.
+
+**Direction stated everywhere:** width >= 4 is
+NECESSARY-NOT-SUFFICIENT and UPPER-BOUNDS the dimension mass (d44c
+AG5 cited); the narrowing from unbounded to >= 3 is declared.
+TY1-c implements the pin's poset-width half exactly at all four
+pools (max widths 2/3/3/2); the delivery-pattern half is the
+delivery-joined proxy; TY4-e declares what remains out of scope.
+The doctrine scan is rebuilt with positive scoped markers (the
+bare-"not" exemption removed) and PROBED with the round's own
+mutant line, which it now catches; TY5-c is an AST vacuity scan.

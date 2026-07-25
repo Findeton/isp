@@ -158,3 +158,49 @@ L-infinity, L1 and sector-L-infinity, out to D = 6, and UNIFORMLY
 over the family at fixed relative horizon (3/110, 3/253,
 373/69230, 2333/1838829) — stronger than the receipt claimed, and
 previously ungated. Forward-corrected at LOG #398.
+
+## 6. Round-1 repairs APPLIED (2026-07-19; 12 -> 19 gates, 0 FAIL)
+
+**MB5 REVERSED AND GATED.** Kernels are rebuilt as RELATIVE-horizon
+objects k_r(e|h) = q G(h+e, r-1)/G(h, r).  At matched remaining
+horizon the witness's per-kind sector masses ARE the root's:
+r = 1, 2 -> d 1/4, n 1/2, p 1/4; r = 3 -> d 64/257, n 128/257,
+p 65/257.  The first pass's mismatched pairing (root r = 4 vs
+witness r = 1) is printed AS the artifact it was.  New MB5-c gates
+the necessary-not-sufficient reading: 8,196/30,728 (r = 1),
+1,060/3,968 (r = 2) and 104/520 (r = 3) histories share the root's
+masses, so agreement alone proves nothing.  MB5-a now gates the
+witness's IDENTITY (payload = the arb-created v1; v1 != v0; A and
+B holdings coincide; state != root), not merely its 1/256 weight.
+
+**MB4 REVERSED AND GATED, both families side by side to D = 6:**
+
+| D | delivery-free G_D | transport G_D | df ratio | transport ratio |
+|---|---|---|---|---|
+| 3 | 257/32 | 257/32 | 2.007812 | 2.007812 |
+| 4 | 1037/64 | 1035/64 | 2.017510 | 2.013619 |
+| 5 | 2101/64 | 4173/128 | 2.026037 | 2.015942 (peak) |
+| 6 | 68313/1024 | 134587/2048 | 2.032157 | 2.015741 (down) |
+
+Delivery-free >= transport everywhere and strictly at D = 4, 5, 6:
+**DELIVERIES REDUCE finite-horizon branching.**  lambda = 2 is
+relabelled an ASYMPTOTIC PERRON EIGENVALUE, not comparable to
+finite-horizon ratios.
+
+**THE PINNED OBJECT COMPUTED — a POSITIVE where §4 reported a
+negative.** The sector-normalized conditional at the root has
+drift EXACTLY ZERO at r = 1..6 (with the exchangeability caveat
+gated); off-root its sup contracts 1/18, 4/171, 8/741, 176/32877.
+
+**CONTRACTION STRENGTHENED (credit to the round).** The ratio
+SEQUENCE is 0.738, 0.399, 0.086 — not a rate; L-infinity, L1 and
+sector-L-infinity give EXACTLY EQUAL sequences; the family-uniform
+sup runs 3/110, 3/253, 373/69230, 2333/1838829.
+
+**Vacuity closed:** the three tautologies are replaced by exact
+anchors; MB6-b is now an AST scan of every check() predicate
+(rejecting literal booleans, isinstance probes and bare > 0) with
+a capability probe; MB6-c is a scoped needle scan with a two-way
+probe; MB0-b gates BFS determinism menu-for-menu; and the VERDICT
+is INTERPOLATED from computed booleans, so no headline clause can
+outlive its outcome.

@@ -7999,3 +7999,51 @@ N = 20,000 matches the exact profile to ~1 s.e.); TY3-b genuinely
 fires; doctrine compliance holds in substance.
 Notes §5 both units. Receipt repairs are with an applier; the
 corrected readings will be gated, not narrated.
+
+## 2026-07-19 — (D46b + D46d) round-1 repairs APPLIED (LEDGER
+## #399); the reversals are now GATED, not narrated
+Applier-executed; verified pre-commit: both receipts exit 0,
+independent reruns BYTE-IDENTICAL, determinism across seeds.
+**D46b 12 -> 19 gates.** MB5 reversed and gated at MATCHED
+RELATIVE HORIZON (witness sector masses ARE the root's: r = 1, 2
+-> 1/4, 1/2, 1/4; r = 3 -> 64/257, 128/257, 65/257), with the old
+mismatched pairing printed AS the artifact and a new
+necessary-not-sufficient gate (8,196/30,728; 1,060/3,968; 104/520
+histories share those masses) and witness IDENTITY gated. MB4
+reversed and gated with BOTH families to D = 6 — delivery-free
+G_4 = 1037/64 vs transport 1035/64, df >= transport everywhere and
+strictly at D = 4, 5, 6: **DELIVERIES REDUCE finite-horizon
+branching**; transport peaks at D = 5 (2.015942) and turns down at
+D = 6 (2.015741); lambda = 2 relabelled an asymptotic Perron
+eigenvalue. THE PINNED OBJECT computed: the sector-normalized
+conditional has drift EXACTLY ZERO at the root for r = 1..6 (a
+POSITIVE where the first pass reported a negative), off-root
+contracting 1/18, 4/171, 8/741, 176/32877. Contraction
+STRENGTHENED with credit: sequence 0.738/0.399/0.086 (not a rate),
+identical in three norms, family-uniform sup 3/110, 3/253,
+373/69230, 2333/1838829. Vacuity closed by an AST scan of every
+check() predicate (literal booleans, isinstance probes, bare > 0)
+with a capability probe; the VERDICT is now INTERPOLATED from
+computed booleans so no headline can outlive its outcome.
+**D46d 11 -> 17 gates.** The near-tautology is gated as one
+(like-for-like series 0.027 -> 1.000 by depth 10, monotone by
+construction); the DISCRIMINATING scalings are now the unit's
+content and both fall strictly (fixed depth 8, pools 3-8: 0.963 ->
+0.037 touched, 0.525 -> 0.003 delivery-joined; diagonal 0.867 ->
+0.623 and 0.340 -> 0.073); **delivered reading: ORDER DIMENSION
+>= 3 is typical-in-the-making, NOT unbounded dimension.** "The
+theory's own law" is gone — TY0-a quotes d42b1's own "no measure
+claim" from source and every statement names its normalization.
+THREE PROXIES gated side by side (0.9808/0.3068 touched ->
+0.6720/0.0765 non-idle -> 0.4138/0.0305 delivery-joined) with idle
+mass labelled a CONFOUND, never support. Direction stated
+everywhere (necessary-not-sufficient; upper-bounds the dimension
+mass); the pin's poset-width half implemented exactly (max widths
+2/3/3/2); the doctrine scan rebuilt with scoped markers and PROBED
+with the round's own smuggling mutant, which it now catches.
+Grep discipline: source AND .out searched for every retracted
+string; each surviving hit sits inside an explicit withdrawal.
+Declared non-application: the doctrine scan is NOT extended over
+the author-owned note/LOG (gating a receipt on files under active
+authorship would make it non-reproducible) — its scope is declared
+in-gate. Notes §6 both units. DELTAS next.
