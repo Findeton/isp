@@ -8941,3 +8941,49 @@ DISCIPLINE: every corpus fact carries a provenance label, and the
 brief's own interpretations are labelled [MY READING] and separated
 from corpus claims throughout. All 15 cited files verified to exist;
 every quoted number verified against its source.
+
+## 2026-07-25 — THE DICHOTOMY BRIEF AUDITED FOR SELF-CONTAINMENT
+## (LEDGER #417)
+The author asked whether THE-COMPLETION-DICHOTOMY.md is REALLY
+standalone. Audited against the reader it claims to serve. **IT WAS
+NOT.** Findings and repairs, all applied:
+**A1 — LOAD-BEARING TERMS USED BUT NEVER DEFINED**, including `N`
+(used INSIDE the theorem statement, defined only afterwards), menu,
+view / own view / full view (central to H1, first used in Part VII
+undefined), **renewal** (severe — "root = renewal" is a headline
+result), supersession, **the causally blind join layer** (the
+mechanism of the entire no-go), gauge and canonical class, **the
+noop cone and tau** (exactly what the H1 refutation turns on),
+bisimulation, the class-1/k boundary, the ladder excess, sealing,
+the swept corner, the D23 fiber. REPAIR: a new §1.0 VOCABULARY
+table defining all of them, placed before first use, plus inline
+glosses for sealing / swept corner / D23; and a note that d42a,
+D44a, D48 etc. are WORK-UNIT IDENTIFIERS (pin + receipt + note),
+not concepts, with #NNN being ledger entries.
+**A2 — AN ACTUAL CONTENT OMISSION, not vocabulary.** The grammar
+table LEFT OUT THE GENESIS EVENT ('g', v0), which paper 30 calls
+**"the declared supplied boundary"**. Omitting a boundary event
+from a document about whether the theory needs a boundary is a real
+defect. REPAIR: genesis restored at the head of the table with that
+phrase quoted, and the proposal row corrected to paper 30's actual
+signature ('p', a, b, x) with its carrier statement.
+**A3 — AN ASSERTION WITH ITS EVIDENCE MISSING.** Part VI said
+"truncated completions are rooted" and gave no support. REPAIR: the
+proof added [EXACT] — the root and the post-arbitration fresh-base
+point are STRUCTURALLY ISOMORPHIC (event-level bijection, type- and
+payload-matched, v0 <-> v1, EQUAL q at every matched event), yet
+**the completed transfer DIFFERS at that isomorphic pair under BOTH
+canonical boundaries**: class-1/k (Z(empty) = 325/64) prices 21/325
+vs 1/16; unit (Z(empty) = 1037/64) prices 133/2074 vs 1/16. The
+completion distinguishes two points the LAW identifies — that is
+what "rooted" means. Sharpness disclosed (331 of 1,191 histories
+share the root's bare menu). Added reading: the renewal isomorphism
+says the law has forgotten where it started; the completion says
+the measure has not.
+**A4 — DANGLING CITATIONS.** Papers 28, 29 and 57 were cited in
+text but absent from the file tables; all three added with verified
+filenames (paper 57 is in the v6 line, not v10).
+**A5 — INTERNAL INCONSISTENCY** introduced by the genesis repair
+("three event types" vs a four-row table) caught and fixed.
+Brief now 845+ lines. The self-containment claim in §0 is now
+true rather than aspirational.

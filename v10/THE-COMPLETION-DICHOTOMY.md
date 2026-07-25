@@ -40,8 +40,39 @@ statement into a false one.
 
 ## PART I — THE OBJECTS
 
-You need five objects. They are simple; the difficulty is entirely
-in how they interact.
+You need a handful of objects. Each is simple; the difficulty is
+entirely in how they interact.
+
+### 1.0 Vocabulary — every term this document later relies on
+
+Read this once; nothing below is used before it appears here.
+
+| term | definition |
+|---|---|
+| **wire / carrier** | the grammar's primitives are *wires*: participants and version objects. An event's **carriers** are the wires it touches. The event poset is the carrier-wise wire closure |
+| **causal order vs gauge** | **causal order is physical; incomparable order is GAUGE.** Two histories differing only by the order of incomparable events are the same physical record |
+| **canonical class** | a history identified up to that gauge. The depth-4 family's 1,191 histories fall into **427** canonical classes |
+| **menu** | the set of admissible next events at a history, each with its exact rational weight — i.e. exactly what `candidates_for(h, actors)` returns |
+| **`N(h)`** | the **frontier sum**: the total raw weight of `h`'s menu. This is the object the whole no-go is about |
+| **ladder excess** | the amount by which a menu exceeds 1. Per-initiator sums sit at `1 + k/4`, so the excess is `k/4` |
+| **view / full view** | the sub-record an observer has witnessed. The **full view** at `h` is everything in `h` |
+| **own view** | the sub-history *one actor* has witnessed. **Actors act on their own views, which LAG the full view.** This lag is real (the W2 witness exhibits it) and is the entire difficulty of (H1) in §7.3 |
+| **supersession** | a version is *superseded* when a later version on the same line replaces it. Superseded structure may still be recorded but may no longer be actionable |
+| **causally blind join layer** | a layer of the record where knowledge is transported past a **causally blind seal** — e.g. a relay delivering a fork branch to a third party. It is *blind* because participants cannot see, from their own views, that the join has occurred. `k` in the `1 + k/4` ladder counts these layers, and this layer is what the failing normalizer double-counts (§3.1) |
+| **renewal** | a record point structurally **isomorphic to the root**: an event-level bijection, type- and payload-matched (with `v0 ↔ v1` translated), carrying *equal* weight `q` at every matched event. The post-arbitration fresh-base point is such a point. "**root = renewal**" means the root sits in this class |
+| **bisimulation** | the equivalence "these two states cannot be told apart by any sequence of observations". *Probabilistic* bisimulation additionally requires matching weights. The **quotient** is the state space after collapsing bisimilar states |
+| **`sigma`** | the bounded local-state abstraction of §7.1 — the compressed description of a full view |
+| **`tau`** | the same construction applied to an actor's **own view**. §7.5 refutes the assumption that `tau` is well-defined as an own-view object |
+| **noop cone** | the set of events an actor could see purely from its own causal past, absent any additional information. §7.5's finding is that the *menu view* strictly exceeds it |
+| **class-`1/k` boundary** | one of the two canonical terminal boundary choices: `Z` at a terminal history = the reciprocal of its canonical class's linear-extension count. The other canonical choice is the **unit boundary** (`Z ≡ 1` at terminal depth) |
+| **"the `1/k` boundary"** | wherever this phrase appears — including Part V's description of the quantum lift — it means the **class-`1/k` boundary** defined in the row above |
+
+**On unit names.** `d42a`, `d42b1`, `d42b3`, `D44a`, `D46a`, `D48`
+and the like are **work-unit identifiers**, not concepts. Each names
+a pin (a pre-registered plan), a receipt (executable code), and a
+note (the result). They appear here only so claims can be traced.
+`#405`, `#412` and similar are entry numbers in the append-only
+ledger `v10/LOG.md`.
 
 ### 1.1 Actors
 
@@ -75,13 +106,16 @@ correspondence is not a convention — see §9.2.
 
 ### 1.3 The event grammar (the "click law", what CAN happen)
 
-At the base scope, called **d42a**, there are three event types.
+At the base scope, called **d42a**, the alphabet is typed, with the
+initiator carried in the type (paper 28's lesson that type data is
+load-bearing).  Genesis plus three generative event types.
 Receipt: `v10/code/d42b3_placement_exact.py`.
 
 | event | meaning |
 |---|---|
-| `('p', a, base, k)` | actor `a` **proposes** value-bit `k` on version `base` |
-| `('r', a, C, w)` | **arbitration**: initiator `a`, conflict component `C`, winner `w`. The arbitration event *is* acceptance — it creates the successor version |
+| `('g', v0)` | **GENESIS**: version `v0`, held by all participants. Paper 30 calls this **"the declared supplied boundary"** — note it well: the grammar already contains one boundary object by declaration, at the start |
+| `('p', a, b, x)` | actor `a` **proposes** payload `x` against base version `b`. Carriers `{a}` alone — a proposal is a *local* record event on the proposer's wire, referencing a held copy of `b` |
+| `('r', a, C, w)` | **arbitration**: initiator `a`, conflict component `C` (a connected component of the mutually-conflicting live proposals), winner `w`. The arbitration event *is* acceptance — it creates the successor version |
 | `('n', a)` | actor `a` **idles** |
 
 The extended scope, **d42b1** (`v10/code/d42b1_transport_exact.py`),
@@ -358,8 +392,9 @@ must respect them. The gradient class does.
 - **RATIO LOCALITY.** `μ`-ratios of histories are stable under
   common admissible extensions with identical past-views — the
   ratios-only structure of paper 28, recovered as the weight
-  system's invariant content. At this depth the swept corner
-  (proposal branches) has every extension factor exactly `1/8`,
+  system's invariant content. At this depth the *swept corner* — the sub-family
+  of proposal branches, where the enumeration is complete — has
+  every extension factor exactly `1/8`,
   which makes the law a `[THEOREM]` there; the census is kept as a
   tripwire (**28 tested, 0 violations**) `[EXACT]`. The law's
   *empirical* content begins where factors vary — the idle and
@@ -440,9 +475,13 @@ arbitration layer:
 - the **kernel-layer lift is exact**: the arbitration click
   structure lifts exactly, `2/3`–`1/3` `[EXACT]`;
 - a complete **fine-versus-coarse instrument pair**: order
-  coherence exactly `1/6` under coarse sealing, `0` under fine
-  `[EXACT]` — a discriminating observable;
-- the operational D23 identifiability fiber.
+  coherence exactly `1/6` under coarse **sealing**, `0` under fine
+  `[EXACT]` — a discriminating observable.  (*Sealing* = how finely
+  a join's internal structure is resolved before it is treated as
+  one event; coarse and fine are the two committed resolutions.);
+- the operational **D23 identifiability fiber** — a named result
+  about which parameters are recoverable from observations; not
+  needed for the dichotomy, listed only for completeness.
 
 A second grammar (ternary payloads) lifts the structural forms
 tested — **two-of-two grammars, and no more is claimed** — exposes
@@ -456,6 +495,31 @@ component-shape-dependent.
 Truncated completions are **rooted**: the backward recursion needs
 a terminal boundary, and that boundary is the imported object of
 §4.1.
+
+**And this is proved, not asserted `[EXACT]`.**  The grammar has a
+renewal structure: the root and the post-arbitration fresh-base
+record point are structurally isomorphic — an event-level bijection,
+type- and payload-matched with `v0 ↔ v1` translated, carrying
+*equal* `q` at every matched event.  Two record points that the
+grammar cannot tell apart.  Yet **the completed transfer differs at
+that isomorphic pair, under BOTH canonical boundaries**:
+
+| boundary | `Z(empty)` | the matched pair prices |
+|---|---|---|
+| class-`1/k` | `325/64` | `21/325` vs `1/16` |
+| unit | `1037/64` | `133/2074` vs `1/16` |
+
+So the completion distinguishes two points the *law* identifies.
+That is precisely what "rooted" means, and it is why truncated
+completions are **depth-non-stationary** — the uniform-rooting
+analysis of paper 28 §5.3 anticipated it at the level of root laws.
+Sharpness is disclosed in the source: among the 1,191 histories, 331
+share the root's bare menu.
+
+`[MY READING]` This is the cleanest single symptom of the whole
+problem. The renewal isomorphism says *the law has forgotten where
+it started*; the completion says *the measure has not*. The
+boundary information enters exactly there.
 
 To avoid it you need a completion with no root — a positive
 solution on the unbounded structure. Paper 30 reduces this, **one
@@ -721,6 +785,9 @@ the real reason it deserves the next campaign.
 | `relativistic-isp-v10-paper31-four-decisions-at-the-joints.md` | the residue ledger this work executes |
 | `relativistic-isp-v10-paper32-the-boundary-of-closure.md` | residue 1 at verified depth; the dimension ladder; §6 the current residue ledger |
 | `relativistic-isp-v10-paper3-diamond-amalgamation-is-composition-not-carrier-birth.md` | the *other* diamond sense — do not confuse |
+| `relativistic-isp-v10-paper28-selecting-record-closed-laws.md` | the ratios-only structure recovered in §4.3; the uniform-rooting analysis (§5.3) that anticipated §6's rootedness; the lesson that type data is load-bearing |
+| `relativistic-isp-v10-paper29-where-the-action-cocycle-lives.md` | the action-level "flat squares on diamonds" check that §4.4's ladder generalizes |
+| `v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md` | the unified no-go cited in §9.3: one record length, Newton's `G` provably un-fixable — i.e. the record scale is a free parameter |
 
 **Notes:**
 
