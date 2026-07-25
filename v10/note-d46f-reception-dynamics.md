@@ -97,3 +97,48 @@ derived menu layer and exhibited there); one new declared probe
 fixture (PROBE-DD) to reach the re-delivery degeneracy; RD3's
 second control is structurally vacuous and printed as a gated
 declaration rather than dropped.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d46ef-round1-hostile-review.md: REVISE, 2B/5M/5m/2n).
+## THE ABELIAN-MONOID HEADLINE IS A CONSTRUCTION TAUTOLOGY.
+
+**B1 (BLOCKER — the headline was never a discovery).** The
+committed View(acts, pred, idxs) builds every field from a
+DOWN-CLOSED INDEX SET, so order-independence is DEFINITIONAL; and
+the extracted action ACT(s, e, a) = s join inc(e, a) is a JOIN
+HOMOMORPHISM (referee probe: 255,840 tests, 0 violations).
+Formally **RD3-b CANNOT FAIL once RD1-a passes** — mutant f1, a
+demonstrably WRONG action map, still leaves RD3-b at 0
+non-commuting, and no mutation separates the two.  ACT moreover
+commutes on ALL 170,820 record pairs, not merely the 7,163
+"co-receivable" ones, so the pairing rule hides nothing AND
+constrains nothing.  **"ALL 7,163 CO-RECEIVABLE PAIRS COMMUTE — AN
+ABELIAN MONOID" is WITHDRAWN as a delivered finding**: it is a
+structural consequence of the layer's own state construction,
+true and worth stating, but not discovered by this receipt.
+RD1-b's "ZERO conflicts" is likewise ENTAILED by RD1-a (f1: RD1-a
+fails, RD1-b passes).
+
+**B2 (BLOCKER — the inference does not follow).** RD3-b
+(intra-history concurrency) and RD3-e (two DIFFERENT histories
+with different posets) are DIFFERENT NOTIONS OF ORDER.  **"D44f's
+order-dependence therefore does not live in the state" is
+WITHDRAWN** — the gates do not license it.  What each gate shows
+must be stated separately.
+
+**B3 (MAJORs).** RD1-d's click-identity "delivered finding" is the
+View constructor's FILTER (View never mentions ko/kc/ka/n) — a
+code reading, not a discovery; RD2-a's INJECTIVE verdict for r/m
+is a POOL ARTEFACT (the referee exhibits an r collision as a map;
+the receipt probed only d); 4,142 of the 7,163 pairs (58%) contain
+a record whose action is the IDENTITY; RD3-c's 63/7163 control is
+63 of 63 POSSIBLE; RD3-f's "gated asymmetry" is one example whose
+real justification is an ungated code reading.
+
+**B4 — WHAT SURVIVED.** RD1-a is genuine and valuable: the action
+map IS a function of (record, receiver, pre-state), with the
+control firing.  **RD2-b is ACQUITTED and the non-injectivity of
+DELIVERY is REAL** — re-delivery is genuinely admissible
+((True, 1/16) with B already holding v1) — and the receipt-built
+PROBE-DD fixture is load-bearing (mutant f4 makes RD2-b fail).
+Forward-corrected at LOG #401.

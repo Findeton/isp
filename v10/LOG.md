@@ -8087,3 +8087,68 @@ keyword predicates; MB6-c is a four-word vocabulary; the doctrine
 scan is defeated by any of its 15 markers including the bare
 "never". No live gate is vacuous — the coverage claims are.
 ROUND 2 OF 3 COMPLETE. NEXT: round 3 of 3, (D46e + D46f).
+
+## 2026-07-19 — (D46e + D46f) ROUND 1: REVISE / REVISE (LEDGER
+## #401); FIVE BLOCKERS; **TWO MORE HEADLINE REVERSALS**;
+## FORWARD-CORRECTIONS of #389 and #388; A CORPUS-LEVEL OBLIGATION
+The third batched round (frozen:
+reviews/d46ef-round1-hostile-review.md, 955 lines).
+**D46e — REVISE (3B/4M/6m/2n). THE VERDICT REVERSES.** The channel
+family contained a SECTOR reading and a PARITY reading but NEVER
+FORMED THEIR PRODUCT. From an INDEPENDENT exact-Fraction complex
+rebuild of the entire interacting pipeline (no mpmath, no
+threshold), the referee shows that under the product reading
+(N(u), X(u) mod 2) **the g = 0 twin is an EXACT COLLAPSE
+(c = 204703/480000, residual identically zero) in all three cells
+while the INTERACTING cell is NO-COLLAPSE — the interaction is
+what kills the ray.** Five further natural coarsenings do the
+same; 16 (cell, reading) pairs INVERT against the 9 the verdict
+rested on; adding the single reading to the receipt's own code
+prints INTERACTION-SPECIFIC three times. **#389's "THE FAILURE IS
+GRAIN, NOT INTERACTION" IS WITHDRAWN**, as is "this fixture cannot
+decide it" — falsified by the fixture's own numbers. Two further
+blockers: sg3_verdict is a HARD-CODED STRING LITERAL (so §4's
+"computed not narrated" was false — it survives verbatim under
+three mutants while its own census contradicts it), and NOTHING
+ANCHORED the interacting identification to the corpus first moment
+(deleting the delta weight passes 19/19 exit 0, both verdicts
+unchanged). MAJORs: the -1589/4500 ray-form claim ungated; "9/9
+constants shifted" is one channel's convention-dependent number;
+SG4-E claims three properties and tests one. **SURVIVING +
+STRENGTHENED:** every number reproduced by the independent rebuild
+(all 30 verdict classes; the PAR entries; the identically-zero EXC
+PAR side), and **EXC coupling-blindness upgrades from a 8e-51
+threshold to an EXACT RATIONAL IDENTITY at all four regions.**
+**D46f — REVISE (2B/5M/5m/2n). THE HEADLINE IS A CONSTRUCTION
+TAUTOLOGY.** The committed View builds every field from a
+DOWN-CLOSED INDEX SET, so order-independence is DEFINITIONAL, and
+the extracted action is a JOIN HOMOMORPHISM (255,840 tests, 0
+violations): **RD3-b CANNOT FAIL once RD1-a passes** — a
+demonstrably wrong action map still leaves it at zero
+non-commuting, and no mutation separates them. ACT commutes on ALL
+170,820 pairs, not just the 7,163, so the pairing rule neither
+hides nor constrains anything. **#388's "ALL 7,163 CO-RECEIVABLE
+PAIRS COMMUTE — AN ABELIAN MONOID" is WITHDRAWN as a delivered
+finding** (true, structural, not discovered here), and RD1-b's
+"zero conflicts" is likewise ENTAILED by RD1-a. Second blocker:
+RD3-b and RD3-e are DIFFERENT NOTIONS OF ORDER, so **#388's
+"D44f's order-dependence lives in the menus, not the state" is
+WITHDRAWN — the gates do not license the inference.** MAJORs: the
+click-identity "finding" is the View constructor's filter; RD2-a's
+INJECTIVE for r/m is a pool artefact (an r collision exhibited);
+58% of the pairs contain an identity-action record; RD3-c's
+control is 63 of 63 possible; RD3-f's asymmetry is one example.
+**SURVIVING:** RD1-a is genuine and valuable, and **RD2-b is
+ACQUITTED — delivery non-injectivity is REAL** (re-delivery
+admissible at (True, 1/16) with the receiver already holding v1),
+with PROBE-DD load-bearing.
+**CORPUS-LEVEL OBLIGATION (the referee's recommendation,
+ACCEPTED): the scanner-coverage finding is now THREE ROUNDS OLD
+and recurs in both units** — literal-needle scanners, and a scan
+asserting "no vacuous gate anywhere" beside a gate its own note
+calls structurally vacuous. It is hereby promoted from a carried
+finding to a CORPUS-LEVEL OBLIGATION: no receipt may claim
+scanner coverage it does not enforce, and the class belongs in an
+AUTHORING/PRE-COMMIT check (per the #400 rider), not only in
+receipt gates.
+Notes §5 both units. Receipt repairs are with an applier.

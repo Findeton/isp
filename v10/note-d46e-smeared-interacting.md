@@ -106,3 +106,54 @@ exact rationals (max denominator 4,320,000); allow-list purity
 398 leaves / 0 impure; self-scan needles concatenated; 3 runs
 byte-identical. Deviations D1-D3 + the canonical-reference-channel
 rule are declared in-banner.
+
+## 5. Round-1 amendments (2026-07-19; round frozen at
+## reviews/d46ef-round1-hostile-review.md: REVISE, 3B/4M/6m/2n).
+## §4'S HEADLINE REVERSES.
+
+**B1 (BLOCKER — THE VERDICT REVERSES).** §4's central claim — "THE
+FAILURE IS GRAIN, NOT INTERACTION, because all 9 discriminating
+cells are NO-COLLAPSE at g = 0 too" — rests on a channel family
+that contains a SECTOR reading and a PARITY reading but NEVER
+FORMS THEIR PRODUCT.  The referee built the product reading
+(N(u), X(u) mod 2) from an INDEPENDENT exact-Fraction complex
+rebuild of the whole pipeline (no mpmath, no threshold): under it
+**the g = 0 twin is an EXACT COLLAPSE** (c = 204703/480000,
+residual identically zero) in all three cells while the
+INTERACTING cell is NO-COLLAPSE — **the interaction is what kills
+the ray.**  Five further natural coarsenings (N|Pcol,
+occ0/1/2/3row) do the same: 16 (cell, reading) pairs INVERT
+against the 9 the verdict rested on, and adding the one reading to
+the receipt's OWN code prints INTERACTION-SPECIFIC three times.
+**"THE FAILURE IS GRAIN, NOT INTERACTION" IS WITHDRAWN.**  The
+corrected statement is reading-dependent and must be given as
+such: there EXIST readings at which g = 0 collapses and the
+interacting cell does not, so at those readings the evidence runs
+AGAINST ray-universality under interaction.
+
+**B2 (BLOCKER — "computed not narrated" was FALSE).** sg3_verdict
+is a HARD-CODED STRING LITERAL; it survives verbatim under the
+referee's e1/e2/e6 mutants while the census printed above it
+contradicts it.  §4's parenthetical "computed not narrated" is
+withdrawn.
+
+**B3 (BLOCKER — the identification was unanchored).** Deleting the
+delta weight (mutant e5) leaves 19 PASS / 0 FAIL, exit 0, BOTH
+verdicts unchanged: SG0 exercises tau_D_pairs and never
+D_identified, so nothing tied the interacting identification to
+the corpus first moment.
+
+**B4 (MAJORs).** The -1589/4500 ray-form claim is UNGATED
+(rayform ≡ True passes 19/19); "9/9 constants shifted" is ONE
+channel's number and convention-dependent (5 of 9 change under the
+referee's convention); **"this fixture cannot decide it" is
+FALSIFIED by the fixture's own numbers** under the product
+reading; SG4-E tests one property while claiming three.
+
+**B5 — WHAT SURVIVED, and one STRENGTHENING.** The referee's
+independent exact-rational rebuild reproduced every number: all 30
+verdict classes, all PAR entries including -1589/4500 and
+(511/1125, -1561/2250, -1561/2250, 14/15), and the identically-zero
+EXC PAR side.  **EXC coupling-blindness UPGRADES from a 8e-51
+threshold to an EXACT RATIONAL IDENTITY at all four regions.**
+Forward-corrected at LOG #401.
