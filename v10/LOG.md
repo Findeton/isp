@@ -8382,3 +8382,71 @@ failure, or an FG9 forest the realizer fails to realize. Each is a
 REAL RESULT reported at exit 0; only anchor breakage and mutant
 misbehaviour exit 1.
 NEXT: build the receipt.
+
+## 2026-07-24 — D44c-P GREEN-UNREVIEWED: THE PROMOTION IS PARTIAL (LEDGER #407)
+Receipt v10/code/d44cp_funnel_lemma_exact.py, 27 PASS / 0 FAIL,
+exit 0; note-d44cp-funnel-lemma-result.md.
+**#355's ENTRY CONDITION: BOTH HALVES DISCHARGED.** Over the three
+committed exhaustive families (551,928 / 224,580 / 436,864, all
+reproduced exactly) the SIXTH CLAUSE is now RECEIPT-GATED at zero
+violations over 23,226 LIVE incomparable arb pairs (liveness gated
+FIRST — a zero over an empty stratum would have been a vacuity),
+and UP-CONE CONFINEMENT is gated at zero for both disjointness and
+laminarity. The five prior clauses reproduce at zero.
+**T2 IS A THEOREM WITH A CONSTRUCTIVE CERTIFICATE — ARB-SCOPED.**
+If every principal down-set of the arb-induced subposet is a
+chain, it is a rooted forest, dim <= 2, no crown, at EVERY width
+and depth. Proof by explicit realizer: L1 = DFS pre-order roots+
+children ASCENDING, L2 = DFS pre-order roots+children DESCENDING.
+**Reversing the ROOT order as well as the child order is
+load-bearing** — gated as near-miss mutant FG7(d), where the
+child-only construction fails on a two-root forest. The
+IMPLICATION is machine-verified INDEPENDENTLY OF THE GRAMMAR over
+ALL 46,233 rooted forests on <= 8 nodes (exhaustive up to
+isomorphism via parent(i) < i labellings), zero realizer failures,
+g2 oracle cross-checking all 873 forests on <= 6 nodes. 67,403 arb
+subposets certified in-family, oracle agreeing on every one.
+SCOPE HELD, NOT ROUNDED UP: T2 is SCALE-FREE IN ITS IMPLICATION
+and FAMILY-GATED IN ITS HYPOTHESIS.
+**THREE PRE-REGISTERED ITEMS FALSIFIED, each a deliverable at exit
+0.** T1 FALSIFIED exactly as pre-registered (23,016 classes; an arb
+consumes a component of conflicting proposals, hence dominates two
+incomparable ones). L3 FALSIFIED (23,844): x < y does NOT force
+the actor-register sets to intersect. L1 FALSIFIED (16,842 of
+42,144): domination is TRANSITIVE, so a proposal reading a minted
+vname inherits the arb's whole down-set. L5 HOLDS.
+**THE TRIPLE COINCIDENCE EXPLAINED, NOT SHIPPED.** Three
+independent predicates each returned exactly 23,844 — an
+instrument smell. Gated and accounted for: ALL 23,844 violating
+pairs are PURELY TRANSITIVE (zero cover pairs, so no shared
+register at all — actor or vname) and ALL are NON-ARB-HEADED (so
+with L5 holding, containment == intersection). Structural fact,
+not artifact.
+**WHAT IS *NOT* FALSIFIED.** This receipt falsified ITS OWN
+RECONSTRUCTION of the round's route, NOT the round's route, which
+goes through POOL LAMINARITY, was never stated in gateable form,
+and is NOT tested here. Nothing impugns the referee's claim. What
+is established: the obvious register-theoretic route to a
+full-poset crown no-go DOES NOT EXIST, so no one should walk
+L1/L3 again.
+**PAPER 32 §6 item 7: AMEND TO PARTIAL, DO NOT CLOSE** (four
+required clauses in note §5). §3.1's FULL-POSET claim remains
+REFEREE-CARRIED at TESTED SCALE, unchanged by this unit. Paper 32
+is TERMINAL and IS NOT EDITED ON GREEN-UNREVIEWED EVIDENCE — the
+amendment is QUEUED behind a hostile round, per the discipline
+that protected papers 30/31/32 through the D46 sweep.
+**TWO OWN DEFECTS, both caught by this receipt's own gates.**
+(1) Run 1's dedup key was UNSOUND: D44c's register-word class is
+sound for poset-derived quantities but NOT for ARB-SCOPED ones (a
+propose by A and an arb with pool {A} share the letter {A}) — the
+resample gate caught it at 2,398 mismatches in 11,664; key now
+carries the event-type sequence, gate reads zero, all reported
+numbers are from the corrected run. (2) Run 1's FG8 exit-discipline
+gate conjoined FAIL == 0, so it failed precisely when the
+falsification discipline was WORKING; restated.
+**#354 F1 DISCHARGED**: the witness horn is a genuine exit-0
+outcome and is EXERCISED — four invocations this run (T1, L3, L1,
+and the crown mutant through the same reporter).
+RESIDUES: the full-poset no-go (only live route = pool laminarity,
+needs gateable statement); T2's hypothesis at unbounded scale.
+NEXT: D47 THE SPHERE RUNG.

@@ -1,0 +1,116 @@
+[D44c-P — the funnel lemma's paper-grade promotion]
+  banner: p/r/n events ONLY (transport excluded by construction,
+  exactly as D44c); the d42a admission layer exec'd path-anchored
+  from the committed d42b3 receipt and the g2 dim<=2 oracle from
+  the committed d44c receipt (single sources, no re-derivation);
+  EXACT arithmetic only.  Three PRE-REGISTERED theorem forms with
+  a binding decision rule (pin §2); scope labels ARB-SCOPED vs
+  FULL-POSET are load-bearing (pin §3).  Falsification of a form
+  and the WITNESS horn are both EXIT-0 outcomes (pin §5).
+
+[FG0 port fidelity + the five committed clauses]
+  AG1  width 3, <= 6 events, full grammar: histories = 551928, arb-containing = 470766, register-word classes = 49563
+  [PASS] FG0 AG1: label-level history count reproduces the committed D44c family exactly (551928)  (got 551928, expected 551928)
+  AG1b width 3, <= 7 events, no idle: histories = 224580, arb-containing = 224502, register-word classes = 5904
+  [PASS] FG0 AG1b: label-level history count reproduces the committed D44c family exactly (224580)  (got 224580, expected 224580)
+  AG2b width 4, <= 6 events, no idle: histories = 436864, arb-containing = 436232, register-word classes = 11936
+  [PASS] FG0 AG2b: label-level history count reproduces the committed D44c family exactly (436864)  (got 436864, expected 436864)
+  [PASS] FG0 the five committed confinement clauses (i)-(v) plus the chain law reproduce at ZERO violations over all three families — the promotion sits on the same gated ground as D44c  (violations = {'base_chain': 0, 'chain': 0, 'laminar': 0, 'nest': 0, 'samebase': 0, 'vfresh': 0})
+  [PASS] FG0 register-word-class dedup re-sampled against the full builder (every 97th arb-containing history): zero mismatches  (resamples = 11664, mismatches = 0)
+
+[FG1 capacity / anti-vacuity — is clause (vi) a LIVE question?]
+  incomparable arb PAIRS present across the families: 23226
+  register-word classes carrying >= 1 such pair: 19098
+  elements dominating two incomparable elements: 42144
+  [PASS] FG1(a) the stratum on which clause (vi) is live is NON-EMPTY — incomparable arb pairs actually occur, so a zero violation count below is a RESULT and not a vacuity  (incomparable arb pairs = 23226 in 19098 classes)
+  [PASS] FG1(b) the stratum on which L1 is live is NON-EMPTY — elements dominating two incomparable elements actually occur  (dominators = 42144)
+
+[FG2 the SIXTH clause, gated in-receipt  (ARB-SCOPED)]
+  [PASS] FG2 CLAUSE (vi): over the three committed exhaustive families, ZERO pairs of incomparable arbs possess a common upper bound among the arbs — the sixth clause is now RECEIPT-GATED, not referee-carried (LOG #355 entry condition, first half)  (violations = 0; pairs tested = 23226)
+
+[FG3 up-cone confinement  (ARB-SCOPED)]
+  [PASS] FG3 UP-CONE CONFINEMENT: the arb up-sets of incomparable arbs are pairwise DISJOINT (zero violations) and the whole up-set family is LAMINAR (zero violations) — LOG #355 entry condition, second half  (disjointness violations = 0, laminarity violations = 0)
+
+[FG4 the forest property — T1 (FULL) and T2 (ARB-SCOPED)]
+  register-word classes carrying arbs: 67403
+  classes whose FULL poset has a non-chain principal down-set: 23016
+  [WITNESS T1-FALSIFIED] the FULL event poset is NOT a rooted forest — a pre-registered falsifying outcome
+    carrier n = 1; poset preds = [[]]
+    payload = {'history': ["('p', 'A', ('v', 'v0'), 0)", "('r', 'A', {('A', ('v', 'v0'), 0)}, {('A', ('v', 'v0'), 0)})", "('p', 'A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)", "('p', 'B', ('v', 'v0'), 0)", "('p', 'C', ('v', 'v0'), 1)", "('r', 'B', {('B', ('v', 'v0'), 0), ('C', ('v', 'v0'), 1)}, {('B', ('v', 'v0'), 0)})"], 'bad_elements': [5], 'their_down_sets': [[3, 4]]}
+  [PASS] FG4/T1 the PRE-REGISTERED expectation is confirmed: the FULL event poset is NOT a rooted forest (an arb dominates two incomparable proposals).  T1 is FALSIFIED — a pre-registered exit-0 outcome, not a failure of the receipt  (classes with a non-chain principal down-set = 23016)
+  [PASS] FG4/T2 the ARB-INDUCED subposet IS a rooted forest in every class of every committed family: zero elements with a non-chain principal down-set among the arbs  (violations = 0)
+  [PASS] FG4 CROSS-CHECK: clause (vi) and the arb-scoped forest property are logically equivalent (an element above two incomparable arbs IS a common upper bound), and the two independent counters agree  (vi violations = 0, forest violations = 0)
+
+[FG5 the CONSTRUCTIVE 2-realizer + FG6 oracle cross-check]
+  [PASS] FG5 the explicit two-linear-extension realizer (DFS pre-order with roots+children ascending, and DFS pre-order with roots+children DESCENDING) realizes the arb subposet EXACTLY in every checked class — dim <= 2 by CERTIFICATE, not by oracle verdict  (arb subposets certified = 67403, failures = 0)
+  [PASS] FG6 the certificate agrees with the ported g2 dim<=2 oracle on every checked arb subposet: zero disagreements  (oracle cross-checks = 67403, disagreements = 0)
+
+[T3 the FULL-POSET crown result and its PRE-REGISTERED route]
+  The pin (§2, T3) named a route to full-poset S3-impossibility:
+  (L1) every element dominating two incomparable elements is an
+  arb, itself to be derived from (L3) x < y => the actor-register
+  sets intersect, (L5) non-arbs have singleton actor-register
+  sets, and clause (iv).  Per the pin's decision rule, the
+  OUTCOME of each lemma is a deliverable in either direction and
+  is an EXIT-0 result; only anchor breakage and mutant
+  misbehaviour exit 1.  What the measurement says:
+  L3 (actor-projection form)  : violations = 23844  -> FALSIFIED
+  L3 (FULL-register form)     : violations = 23844  -> FALSIFIED
+  L3 (RESTRICTED: non-arb x < y => aset(x) <= aset(y)) : violations = 23844  -> FALSIFIED
+  L5 (non-arbs have singleton actor sets) : violations = 0  -> HOLDS
+  L1 (dominators of incomparables are arbs) : violations = 16842 of 42144 dominators  -> FALSIFIED
+  [WITNESS L3-FALSIFIED] a causal pair with DISJOINT actor-register sets — the link is carried by a vname register, not by a shared actor — a pre-registered falsifying outcome
+    carrier n = 1; poset preds = [[]]
+    payload = {'history': ["('p', 'A', ('v', 'v0'), 0)", "('r', 'A', {('A', ('v', 'v0'), 0)}, {('A', ('v', 'v0'), 0)})", "('p', 'B', ('v', 'v0'), 0)", "('p', 'C', ('v', 'v0'), 1)", "('r', 'B', {('B', ('v', 'v0'), 0), ('C', ('v', 'v0'), 1)}, {('B', ('v', 'v0'), 0)})", "('p', 'B', ('v', ('v', 'v0'), (0,), ('B',), 'B'), 0)"], 'x': 3, 'y': 5, 'aset_x': ['C'], 'aset_y': ['B']}
+  [WITNESS L1-FALSIFIED] a NON-ARB element dominating two incomparable elements — domination is transitive, so a proposal reading a minted vname inherits the arb's whole down-set — a pre-registered falsifying outcome
+    carrier n = 1; poset preds = [[]]
+    payload = {'history': ["('p', 'A', ('v', 'v0'), 0)", "('r', 'A', {('A', ('v', 'v0'), 0)}, {('A', ('v', 'v0'), 0)})", "('p', 'B', ('v', 'v0'), 0)", "('p', 'C', ('v', 'v0'), 1)", "('r', 'B', {('B', ('v', 'v0'), 0), ('C', ('v', 'v0'), 1)}, {('B', ('v', 'v0'), 0)})", "('p', 'B', ('v', ('v', 'v0'), (0,), ('B',), 'B'), 0)"], 'dominator': 5, 'its_down_set': [2, 3, 4]}
+  WHY the three L3 forms return the SAME count: of the 23844 violating causal pairs (x, y), 0 are COVER pairs and 0 are arb-headed.
+  [PASS] T3/L3 THE COINCIDENCE EXPLAINED (three independent predicates returning an identical count is not left as a coincidence): every actor-disjoint causal pair is PURELY TRANSITIVE — zero of them are cover pairs — and every one is headed by a NON-ARB.  Transitivity explains the full-register form (a non-cover pair shares no register at all, actor or vname), and the non-arb head plus L5 (singleton actor sets) makes 'aset(x) <= aset(y)' equivalent to 'aset(x) n aset(y) != {}' — so all three forms count the SAME pairs, and this is a structural fact, not an instrument artifact  (violations = 23844, of which covers = 0, arb-headed = 0; full-register form = 23844, restricted form = 23844)
+  [PASS] T3 ROUTE, measured and reported in both directions: the pin's three lemmas each returned a determinate verdict over live, non-empty strata — L5 HOLDS, while L3 and L1 are FALSIFIED with witnesses printed.  THE PRE-REGISTERED T3 ROUTE IS DEAD; this is a deliverable under the pin's decision rule, not a gate failure  (L3 = 23844, L3-full = 23844, L3-restricted = 23844, L5 = 0, L1 = 16842 of 42144)
+  [PASS] T3 ROUTE SCOPE: what is falsified is THIS RECEIPT'S RECONSTRUCTION of the round's argument, not the round's own pool-laminarity route, which was never stated in gateable form and is NOT tested here.  The distinction is load-bearing and is carried into the note and paper 32  (reconstruction falsified; the round's own route remains untested)
+  [PASS] T3 TARGET (unchanged from D44c, TESTED SCALE): NO induced S3 crown exists in the full event poset of any history of any committed family — exhaustive over every bottom/top triple of every class.  With the route dead, this remains EVIDENCE at tested scale and is NOT promoted to a scale-free theorem  (crowns found = 0)
+
+[FG9 the implication, verified INDEPENDENTLY of the grammar]
+  every rooted forest on <= 8 nodes, enumerated as parent functions
+  with parent(i) < i or None (a topological labelling — every
+  rooted forest admits one, so the enumeration is exhaustive up to
+  isomorphism); for each: build the realizer and verify it realizes
+  the poset exactly; cross-check the g2 oracle for n <= 6.
+  rooted forests enumerated (n = 1..8): 46233
+  [PASS] FG9 EVERY rooted forest on <= 8 nodes has its principal down-sets chains (the construction is self-consistent) and the FG5 realizer realizes it EXACTLY — the step 'rooted forest => order dimension <= 2' is machine-verified INDEPENDENTLY of the grammar, which is what licenses the word THEOREM for the implication  (forests = 46233, non-chain down-sets = 0, realizer failures = 0)
+  [PASS] FG9 oracle cross-check on the n <= 6 forests: the g2 oracle confirms dim <= 2 on every one, zero disagreements  (oracle checks = 873, disagreements = 0)
+
+[FG7 mutants — the instrument must react as DECLARED]
+  [PASS] FG7(a) the S3 crown mutant: the forest property FAILS, the realizer construction REFUSES (returns no certificate), the g2 oracle reports dim > 2, and the S3 detector FINDS it — four independent instruments all react  (non-chain elements = [3, 4, 5], realizer = refused, oracle dim<=2 = False, S3 detected = True)
+  [PASS] FG7(b) the V mutant (two incomparable elements below a common top): clause (vi) FIRES and up-cone disjointness FIRES — the two gates of #355's entry condition are demonstrably not blind  (clause (vi) violations = [(0, 1, 2)], up-cone violations = [(0, 1, [2])])
+  [PASS] FG7(c) the honest rooted-forest mutant (two trees, one branching): the forest property HOLDS, the realizer is produced and verified EXACT, and the oracle agrees dim <= 2 — the instrument passes what it should pass, not only fails what it should fail  (non-chain = [], realizer exact = True, oracle = True)
+  [PASS] FG7(d) the NEAR-MISS mutant: a realizer that reverses only the CHILD order (not the root order) fails to realize a two-root forest — while the FG5 construction, which reverses both, succeeds.  The certificate's specific form is load-bearing and the check would notice if it were weakened  (child-only realizer exact = False, FG5 realizer exact = True)
+
+[FG8 the witness branch is LIVE and EXERCISED  (LOG #354 F1)]
+  D44c shipped a witness horn that was UNREACHABLE at exit 0: a
+  witness would have tripped the census conjuncts and exited 1
+  mislabeled as breakage, and its verdict print was dead code.
+  That defect is BINDING on successor dimension receipts.  Here the
+  horn is a genuine exit-0 outcome, and it is EXERCISED below by
+  driving the FG7(a) crown mutant through the SAME reporter.
+  [WITNESS EXERCISE] FG7(a) crown mutant driven through the live witness reporter — a pre-registered falsifying outcome
+    carrier n = 6; poset preds = [[], [], [], [1, 2], [0, 2], [0, 1]]
+    payload = {'non_chain_elements': [3, 4, 5], 'crown': ((0, 1, 2), (3, 4, 5)), 'oracle_dim_le_2': False}
+  [PASS] FG8 the witness reporter is REACHABLE and EXECUTED in this run (not dead code): the exercise call produced a witness report, and the T1 falsification above went through the same function  (witness reporter invocations this run = ['T1-FALSIFIED', 'L3-FALSIFIED', 'L1-FALSIFIED', 'EXERCISE'])
+  [PASS] FG8 exit discipline: THREE pre-registered items were falsified in this run (the form T1 and the lemmas L3, L1) and each was recorded as a PASSING gate reporting a determinate negative — falsification is a deliverable, not a breakage.  (Run 1 of this receipt got this gate wrong: it conjoined FAIL == 0, which made the exit-discipline check fail precisely when the discipline was working.)  (T1 falsified = True, L3 falsified = True, L1 falsified = True)
+
+[FG10 anti-vacuity scan of this receipt's own gates]
+  [PASS] FG10 every check() predicate in this receipt references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more — it does NOT detect a vacuous gate in arbitrary syntactic form, and must not be described as if it did  (check() calls scanned = 25, bare/unbound = 0)
+
+[VERDICT — the pin's decision rule (§2), applied]
+  T1  [FALSIFIED]  — as PRE-REGISTERED.  The full event poset is not a rooted forest: 23016 register-word classes carry an element whose principal down-set is not a chain (an arb consumes a component of mutually conflicting proposals).
+  T2  [THEOREM]  — hypothesis GATED (zero violations, 23226 incomparable arb pairs live) and implication MACHINE-VERIFIED grammar-independently over 46233 rooted forests.  The arb-induced subposet is a rooted forest, hence has order dimension <= 2 and contains no crown, at EVERY width and depth.
+  T3  [OPEN — ROUTE FALSIFIED]  — the pin's route to full-poset S3-impossibility is DEAD.  L3 fails (23844 counterexamples): a causal link can be carried entirely by a minted vname register, so x < y does NOT force the actor-register sets to intersect.  L1 fails (16842 of 42144): domination is TRANSITIVE, so a proposal reading a minted vname inherits the arb's whole down-set and a NON-ARB can dominate two incomparable elements.  The FULL-POSET crown claim therefore stands exactly where D44c left it — EVIDENCE AT TESTED SCALE (zero crowns over the three exhaustive families), not a scale-free no-go.
+  WHAT IS AND IS NOT FALSIFIED: this receipt falsified ITS OWN reconstruction of the round's argument.  The round's stated route goes through POOL LAMINARITY, was never written in gateable form, and is NOT tested here.  Nothing above impugns the referee's claim; it establishes only that the obvious register-theoretic route to it does not exist.
+  SCOPE, per pin §3: clauses (i)-(v) are ALL-SCALE per LOG #354; T2's hypothesis is gated over the three committed families and its implication is machine-verified grammar-independently, so T2 is scale-free in the implication and family-gated in the hypothesis — stated that way, without rounding up.
+  PAPER 32 §6 item 7: AMEND TO PARTIAL — the two halves of #355's entry condition (the sixth clause, up-cone confinement) ARE now receipt-gated, and the arb-scoped crown no-go IS now a theorem with a constructive certificate; but §3.1's FULL-POSET claim is NOT discharged and its referee-carried status must be RETAINED, with the note's dead route recorded so no one walks it again.
+
+[totals] PASS = 27, FAIL = 0
+EXIT 0
+RC=0
