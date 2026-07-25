@@ -157,3 +157,45 @@ verdict classes, all PAR entries including -1589/4500 and
 EXC PAR side.  **EXC coupling-blindness UPGRADES from a 8e-51
 threshold to an EXACT RATIONAL IDENTITY at all four regions.**
 Forward-corrected at LOG #401.
+
+## 6. Round-1 repairs APPLIED (2026-07-19; 19 -> 23 gates, 0 FAIL)
+## THE REVERSAL IS GATED — AND WIDER THAN THE ROUND FOUND
+
+The channel family is now CLOSED UNDER PRODUCTS of its own labels
+(NPR, NPC, OCC0..OCC3 added; 5 -> 11 readings, each gated a
+genuine coarsening of FULL).  **Corrected census over 66
+evaluations / 25 discriminating (cell, reading) pairs:**
+
+| outcome | count |
+|---|---|
+| collapse at **g = 0 ONLY** (the interaction kills the ray) | **16** |
+| collapse at NEITHER coupling (grain) | 9 |
+| collapse at g = 1/2 only | 0 |
+| collapse at both | 0 |
+
+The 16 are all three cells x {NPR, NPC, OCC0, OCC1, OCC2} plus
+b = 1 OCC3; FULL/ROW/COL never collapse at either coupling.  NPR
+gives c = 204703/480000 at b = 0 (both cells) and 265103/480000 at
+b = 1 — the referee's exact values.  **Delivered as
+READING-RELATIVE**, with the caveat computed rather than asserted:
+every collapsing sector holds exactly two EXC channels, so the
+content there is the equality of per-sector constants.  "This
+fixture cannot decide it" is replaced by the CHANNEL-READING
+successor question.
+
+**The blockers are closed with teeth.** SG0-C anchors the
+identification: D_identified is refactored to ONE implementation
+for both phases and must reproduce tau_D_pairs entry-for-entry AND
+land on the committed ray — mutant e5 (delta weight deleted) now
+FAILS and exits 1.  SG2-E gates the PAR ray form entrywise in
+exact Fractions — mutant e3 (rayform identically True) now FAILS.
+Every verdict string (sg2, sg3, and the final VERDICT) is
+INTERPOLATED from computed classifications: under mutant e2 the
+SG3 verdict adapts by itself ("no reading admits a ray at either
+coupling", 25/25 GRAIN) and three gates fail.  SG3-E gates the
+CONVENTION dependence with an independent reference rule that
+reproduces every verdict class and 4 of 9 delta c — exactly the
+referee's split.  SG3-C is upgraded to an EXACT RATIONAL IDENTITY
+in all four regions with the LT side gated as differing in all
+four.  SG4-D/E are AST walks over every check() call site and over
+clock/RNG APIs; the hard-coded denominators are derived.

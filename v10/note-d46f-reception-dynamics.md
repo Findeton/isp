@@ -142,3 +142,40 @@ DELIVERY is REAL** — re-delivery is genuinely admissible
 ((True, 1/16) with B already holding v1) — and the receipt-built
 PROBE-DD fixture is load-bearing (mutant f4 makes RD2-b fail).
 Forward-corrected at LOG #401.
+
+## 6. Round-1 repairs APPLIED (2026-07-19; 29 gates, 0 FAIL)
+
+**The tautologies are relabelled and their real content gated.**
+RD3-b is now a STRUCTURAL CONSEQUENCE of RD1-a, with the reason
+gated in line: ACT(s, e, a) = mon(s, incr(e, a)) with a STATE-BLIND
+increment (0 violations / 23,069 instances), the committed View's
+parameter list cited from PARSED SOURCE, and the all-pairs fact
+gated — **170,820 record pairs, 0 non-commuting**, so the pairing
+rule neither hides nor constrains anything.  The footprint
+stratification is printed (970 / 3,172 / 2,958 / 63 overlapping)
+along with the honest 4,202 of 7,163 (58%) that contain an
+identity-acting record.  RD1-b is relabelled a corollary and
+regression tally, with the load-bearing claim routed to RD1-a.
+RD1-d is relabelled a CODE-READING THEOREM and gated BY AST (the
+committed View class body mentions d, m, p, r and none of ka, kc,
+ko, n).  RD2-a is rescoped to "no collision among the ENUMERATED
+fibers", with map-level collisions CONSTRUCTED AND GATED for r, d
+and m.  RD3-c reports 63 of 63 POSSIBLE.
+
+**The inference is withdrawn and replaced.** The RD3 header now
+separates INTRA-history concurrency from INTER-history order and
+states that no inference runs between them; the withdrawn
+conclusion is replaced by three separately-supported statements.
+RD3-f gates its code reading BY AST over the committed layer
+(prop_options_in_view -> holdings/live/superseded;
+arb_components_in_view -> components/edges/incomparable/pred) AND
+sweeps the corpus: 351 (pre-state, receiver) keys, 0 propose-menu
+non-determinations, 0 arbitration-menu non-determinations — with
+the honest riders that the propose menu needs the RECEIVER'S
+IDENTITY (keying on the state alone gives 54 false violations) and
+that the corpus realises NO arbitration counterexample, so that
+half now rests explicitly on RD3-e's constructed exhibit alone.
+
+Under mutant f1 (a wrong action map) RD1-a, RD2-a and RD3-a fail
+and exit 1, while RD1-b and RD3-b still pass — which is now
+exactly what their labels say.

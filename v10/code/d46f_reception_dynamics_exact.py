@@ -26,13 +26,16 @@ instance is (history, down-closed index set S, index j with pred[j]
 subset S and j not in S, actor a): the record j entering a's view over
 S. The extracted action map ACT(sigma, rec, a) is an INDEPENDENT
 re-implementation gated against the layer's own View on every
-instance (RD1-a), gated to be a FUNCTION of (record, receiver,
-pre-state) with no hidden dependence (RD1-b, with a FIRING control:
-the layer's literal index-valued View.created is NOT such a
-function), gated for injectivity per record (RD2, with a firing lossy
-control), and gated for composability in both reception orders (RD3,
-with a firing order-sensitive control and the exact obstruction
-exhibited).
+instance (RD1-a — the unit's load-bearing gate), with the FUNCTION
+property and the COMMUTATION property recorded as what round 1
+established them to be: STRICT COROLLARIES of RD1-a plus the
+committed View's set-indexed construction, kept as regression tallies
+rather than billed as measurements (RD1-b, RD3-b); gated for
+injectivity per record over the enumerated fibers, with the
+map-level non-injectivities exhibited separately (RD2, with a firing
+lossy control); and with the inter-history obstruction exhibited as
+one constructed two-history example (RD3-e), from which no inference
+is drawn to the intra-history commutation sweep.
 
 Sources (single sources, __file__-anchored, the d43c/d44e
 convention): the d42a depth-4 pricing layer from the committed d42b3
@@ -55,6 +58,8 @@ non-commuting pair is a DELIVERED FINDING printed exactly, at exit 0;
 exit 1 is reserved for gate breakage (a control that fails to fire, a
 faithfulness violation, an impure leaf, a vacuous gate).
 """
+import ast
+import builtins
 import hashlib
 import os
 import sys
@@ -95,6 +100,42 @@ triples = ns2['triples']
 regs_of2 = ns2['regs_of']
 admissible2 = ns2['admissible']
 arb_comps = ns2['arb_components_in_view']
+prop_opts = ns2['prop_options_in_view']
+
+# ---- CODE READING OF THE COMMITTED LAYER, by AST (round 1: F-M1, F-M5) ----
+# Several of this receipt's statements are theorems about the committed
+# source, not measurements on a corpus.  Round 1 convicted them of being
+# billed as discoveries.  They are now GATED AS CODE READINGS: the
+# committed d42b2 text is parsed and the relevant function bodies are
+# interrogated for which fields they touch.
+_AST2 = ast.parse(_src2)
+
+def _classnode(cls):
+    for nd in ast.walk(_AST2):
+        if isinstance(nd, ast.ClassDef) and nd.name == cls:
+            return nd
+    return None
+
+def _fnnode(name, cls=None):
+    root = _AST2 if cls is None else _classnode(cls)
+    if root is None:
+        return None
+    for nd in ast.walk(root):
+        if isinstance(nd, ast.FunctionDef) and nd.name == name:
+            return nd
+    return None
+
+def _selfreads(node):
+    """The attribute names the function reads off its FIRST parameter."""
+    p0 = node.args.args[0].arg
+    return frozenset(n.attr for n in ast.walk(node)
+                     if isinstance(n, ast.Attribute)
+                     and isinstance(n.value, ast.Name) and n.value.id == p0)
+
+def _strconsts(node):
+    return frozenset(n.value for n in ast.walk(node)
+                     if isinstance(n, ast.Constant)
+                     and isinstance(n.value, str))
 edge_triples_of = ns2['edge_triples_of']
 gmis_of = ns2['gmis_of']
 
@@ -522,6 +563,25 @@ def ACT_lww(s, e, a):
 # the traversal order (down-sets, extensions, actors) — used ONLY by the
 # RD4 determinism gate, which requires identical aggregates either way.
 
+BOT = ({}, fs(), fs(), fs(), fs())
+
+def mon(s, t):
+    """The componentwise COMMUTATIVE MONOID operation of the reception
+    state: multiset addition on props, union on the four set fields.
+    This is the operation the extracted action applies (see `incr`)."""
+    P = dict(s[0])
+    for k_, c_ in t[0].items():
+        P[k_] = P.get(k_, 0) + c_
+    return (P, s[1] | t[1], s[2] | t[2], s[3] | t[3], s[4] | t[4])
+
+def incr(e, a):
+    """The record's INCREMENT: what ACT adds, evaluated at the bottom
+    state.  If ACT(s, e, a) == mon(s, incr(e, a)) for every s — which
+    RD3-b gates — then the increment does not read the pre-state, and
+    commutation follows from the associativity and commutativity of
+    `mon`, for ALL records, not only co-receivable ones."""
+    return ACT(BOT, e, a)
+
 def sweep(flip=False):
     R = {
         'inst': 0, 'faith_bad': 0, 'wd_bad': 0, 'wd_keys': 0,
@@ -531,10 +591,17 @@ def sweep(flip=False):
         'both_h_pairs': 0, 'states': set(), 'sobj': {},
         'c_idx_bad': 0, 'c_idx_keys': 0, 'c_lossy_fibers': 0,
         'c_rep_noncomm': 0, 'c_lww_noncomm': 0,
+        # round-1 additions (F-A1, F-M4, F-M5)
+        'incr_bad': 0, 'allpairs': 0, 'allpairs_noncomm': 0,
+        'fp_both_empty': 0, 'fp_one_empty': 0, 'fp_disj_both': 0,
+        'id_factor_pairs': 0, 'both_created_pairs': 0,
+        'prop_ndet': 0, 'arb_ndet': 0, 'prop_keys': 0,
     }
     wd = {}
     idxwd = {}
     lossyfib = {}
+    propd = {}
+    arbd = {}
     for _scope, h, actors in CORPUS:
         pred = event_poset(h)
         n = len(h)
@@ -552,6 +619,23 @@ def sweep(flip=False):
                 pk_ = skey(pre)
                 R['states'].add(pk_)
                 R['sobj'][pk_] = pre
+                # RD3-f: is the PROPOSE menu a function of sigma_a alone?
+                # is the ARBITRATE menu?  Both asked over every view
+                # realizing each of the enumerated pre-states.
+                propd.setdefault((pk_, a), set()).add(
+                    crepr(tuple(sorted(crepr(o) for o in
+                                       prop_opts(VS[Sx], a)))))
+                arbd.setdefault((pk_, a), set()).add(
+                    crepr(tuple(sorted((crepr(b_), len(c_))
+                                       for b_, c_ in arb_comps(VS[Sx], a)))))
+                # F-A1: commutation over ALL record pairs of the history,
+                # co-receivable or not — the pairing rule constrains nothing
+                for x in range(n):
+                    for y in range(x + 1, n):
+                        R['allpairs'] += 1
+                        if skey(ACT(ACT(pre, h[x], a), h[y], a)) != \
+                                skey(ACT(ACT(pre, h[y], a), h[x], a)):
+                            R['allpairs_noncomm'] += 1
                 for j in ext:
                     e = h[j]
                     T = classify(e)
@@ -561,6 +645,10 @@ def sweep(flip=False):
                     R['per_type'][T] = R['per_type'].get(T, 0) + 1
                     if ex is REFUSED or skey(ex) != skey(post):
                         R['faith_bad'] += 1
+                    # F-A1: the increment does not read the pre-state
+                    if ex is REFUSED or skey(ex) != skey(mon(pre,
+                                                            incr(e, a))):
+                        R['incr_bad'] += 1
                     # RD1-c carrier locality (actor-indexed field)
                     if (pre[4] != post[4]
                             and a not in actor_carriers(e, actors)):
@@ -604,12 +692,26 @@ def sweep(flip=False):
                         if skey(s12) != skey(state_of(VS[Sx | {j1, j2}],
                                                       a)):
                             R['comp_bad'] += 1
-                        if touched(e1, a) & touched(e2, a):
+                        f1, f2 = touched(e1, a), touched(e2, a)
+                        if f1 & f2:
                             R['ovl_pairs'] += 1
                         else:
                             R['disj_pairs'] += 1
                             if skey(s12) != skey(s21):
                                 R['disj_noncomm'] += 1
+                            # F-M4: how much of the "co-receivable
+                            # universe" carries no structure at all
+                            if not f1 and not f2:
+                                R['fp_both_empty'] += 1
+                            elif not f1 or not f2:
+                                R['fp_one_empty'] += 1
+                            else:
+                                R['fp_disj_both'] += 1
+                        if (skey(ACT(pre, e1, a)) == skey(pre)
+                                or skey(ACT(pre, e2, a)) == skey(pre)):
+                            R['id_factor_pairs'] += 1
+                        if e1[0] in ('r', 'm') and e2[0] in ('r', 'm'):
+                            R['both_created_pairs'] += 1
                         if (writes_holdings(e1, a)
                                 and writes_holdings(e2, a)):
                             R['both_h_pairs'] += 1
@@ -625,6 +727,9 @@ def sweep(flip=False):
     R['c_idx_keys'] = len(idxwd)
     R['c_lossy_fibers'] = sum(1 for d in lossyfib.values()
                               for ps in d.values() if len(ps) > 1)
+    R['prop_keys'] = len(propd)
+    R['prop_ndet'] = sum(1 for v in propd.values() if len(v) > 1)
+    R['arb_ndet'] = sum(1 for v in arbd.values() if len(v) > 1)
     return R
 
 RES = sweep()
@@ -667,17 +772,24 @@ check("RD1-a FAITHFULNESS: the extracted action map ACT(sigma, rec, "
       f"{RES['faith_bad']}; derived-live mismatches = "
       f"{RES['live_bad']}; distinct pre-states = {len(RES['states'])}")
 
-check("RD1-b THE FUNCTION GATE (the pin's 'no hidden dependence'): "
-      "the state update is a FUNCTION of (record's censused data, "
-      "receiver, pre-state) — exhaustively, every repeated "
-      "(record, receiver, pre-state) key across ALL histories, "
-      "down-sets and positions carries ONE post-state; zero "
-      "exceptions. Nothing outside the censused datum + the "
-      "pre-state enters: not the history, not the record's index, "
-      "not the poset, not the events outside the view",
+check("RD1-b THE FUNCTION PROPERTY — RESTATED AS A COROLLARY OF RD1-a, "
+      "NOT AN INDEPENDENT MEASUREMENT (round-1 F-A2). RD1-a already "
+      "establishes post = ACT(pre, e, a) on EVERY instance, and ACT is "
+      "a deterministic function of exactly those three arguments; a "
+      "quantity equal to a function of (pre, e, a) everywhere IS a "
+      "function of (pre, e, a), so this counter is ENTAILED by RD1-a "
+      "and cannot fail once RD1-a passes (the round's mutant f1 "
+      "confirms it: a wrong-but-still-functional ACT fails RD1-a and "
+      "leaves this at zero conflicts). It is recorded as a REGRESSION "
+      "TALLY on that corollary — the number of distinct repeated keys "
+      "is the useful datum, not the zero — and the load-bearing claim "
+      "'no hidden dependence on history, index, poset or unseen "
+      "events' is carried by RD1-a's faithfulness against the layer, "
+      "not by this line",
       RES['wd_bad'] == 0,
       f"distinct (record, receiver, pre-state) keys = "
-      f"{RES['wd_keys']}; conflicting keys = {RES['wd_bad']}")
+      f"{RES['wd_keys']}; conflicting keys = {RES['wd_bad']} "
+      "(entailed, not measured)")
 
 check("RD1-b CONTROL FIRES (the abstraction step is doing real work; "
       "the gate demonstrably can fail): the SAME gate on the state "
@@ -698,18 +810,32 @@ check("RD1-c CARRIER LOCALITY of the actor-indexed field: holdings(a) "
       RES['loc_bad'] == 0,
       f"non-carrier holdings changes = {RES['loc_bad']}")
 
-check("RD1-d DELIVERED FINDING — THE CLICK LAYER IS VIEW-TRANSPARENT: "
-      "ko, kc and ka act as the EXACT IDENTITY on the reception "
-      "state at every instance. The click record's content is not "
-      "silently lost: it enters the POSET (regs_of writes the "
-      "initiator and, for ka, the accepted vname) and the PRICING, "
-      "not the view state. D44e censused three types whose reception "
-      "DYNAMICS is now decided to be trivial — the copy-form "
-      "template could not have said this",
-      all(set(RES['sigs'].get(T, {})) == {('IDENTITY',)}
-          for T in ('ko', 'kc', 'ka'))
+_view_kinds = _strconsts(_classnode('View'))
+_kinds_in = sorted(_view_kinds & set(TYPES))
+_kinds_out = sorted(set(('ko', 'kc', 'ka', 'n')) - _view_kinds)
+check("RD1-d THE CLICK LAYER IS VIEW-TRANSPARENT — A CODE-READING "
+      "THEOREM, GATED, NOT A DISCOVERY (round-1 F-M1). One-line "
+      "proof, and the gate is the proof: the committed View class "
+      "(d42b2 lines 74-111) selects records ONLY by "
+      "acts[i][0] in {p, r, d, m} — an AST scan of the class body "
+      "finds those four record-kind literals and finds NO occurrence "
+      "of ko, kc, ka or n anywhere in it — so every record kind "
+      "outside {p, r, d, m} is NECESSARILY the identity on sigma at "
+      "every |C| and every scope, because it is not in the state "
+      "space at all. The instance census below is a consistency "
+      "check on that reading, not its evidence, and RD4-a's |C| = 2 "
+      "scope caveat does NOT apply to this claim. What the click "
+      "record's content does instead is unchanged: it enters the "
+      "POSET (regs_of writes the initiator and, for ka, the accepted "
+      "vname) and the PRICING",
+      _kinds_out == ['ka', 'kc', 'ko', 'n']
+      and set(('p', 'r', 'd', 'm')) <= _view_kinds
+      and all(set(RES['sigs'].get(T, {})) == {('IDENTITY',)}
+              for T in ('ko', 'kc', 'ka'))
       and set(RES['sigs'].get('n', {})) == {('IDENTITY',)},
-      "ko/kc/ka/n signatures = {IDENTITY} exactly; instances = "
+      f"View class body mentions record kinds {_kinds_in} and none of "
+      f"{_kinds_out}; ko/kc/ka/n signatures = {{IDENTITY}} exactly; "
+      "instances = "
       + ", ".join(f"{T} {RES['per_type'].get(T, 0)}"
                   for T in ('ko', 'kc', 'ka', 'n')))
 
@@ -760,18 +886,58 @@ for T in EVK:
           f"{nf:>5} post-state fibers | colliding fibers "
           f"{inj_by_type.get(T, 0)}")
 
-check("RD2-a INJECTIVITY OF THE ACTION, per type, exhaustively over "
-      "every enumerated (record, receiver) fiber: for p, r, n, m, "
-      "ko, kc, ka the map pre-state -> post-state is INJECTIVE — "
-      "distinct pre-states remain distinguishable after reception, "
-      "which is the D25/D27 (NSE) requirement stated on the DYNAMICS "
-      "rather than on a copy-form template. This is a strictly "
-      "stronger statement than D44e's per-type isometry, which held "
-      "for ANY imprint function (its round-1 M-1 conviction)",
+def _map_collision(T):
+    """A MAP-LEVEL collision for a holdings-writing type: two abstract
+    pre-states differing only by whether they already hold the version
+    the record inserts.  Round-1 F-M2: the enumerated fibers reach no
+    such pair for r and m, so their INJECTIVE verdicts below are
+    statements about the POOL, not about the action."""
+    for _s, h, acs in CORPUS:
+        for e in h:
+            if e[0] != T:
+                continue
+            for a_ in acs:
+                ins = incr(e, a_)[4]
+                if not ins:
+                    continue
+                v_ = sorted(ins, key=crepr)[0]
+                s1 = ({}, fs(), fs(), fs(), fs({V0}))
+                s2 = ({}, fs(), fs(), fs(), fs({V0, v_}))
+                if skey(s1) == skey(s2):
+                    continue
+                if skey(ACT(s1, e, a_)) == skey(ACT(s2, e, a_)):
+                    return (crepr(e), a_, crepr(v_))
+    return None
+
+MAPCOLL = {T: _map_collision(T) for T in ('r', 'd', 'm')}
+for T in ('r', 'd', 'm'):
+    w_ = MAPCOLL[T]
+    print(f"    [RD2-a MAP-LEVEL WITNESS] type {T}: "
+          + ("none found" if w_ is None else
+             f"record {w_[0]}, receiver {w_[1]}; the pre-states "
+             f"{{V0}} and {{V0, {w_[2]}}} are DISTINCT and land on the "
+             "SAME post-state — non-injective AS A MAP"))
+check("RD2-a INJECTIVITY OF THE ACTION AMONG THE ENUMERATED FIBERS, "
+      "per type, over every enumerated (record, receiver) fiber: for "
+      "p, r, n, m, ko, kc, ka no two distinct ENUMERATED pre-states "
+      "collide. SCOPE, corrected by round 1 (F-M2): this is a "
+      "statement about the pre-states the enumeration reaches, NOT "
+      "about the maps. r, d and m all write holdings by IDEMPOTENT "
+      "SET UNION (RD1-f says so in terms; RD2-c convicts that map), "
+      "so r and m are non-injective AS MAPS for exactly the reason d "
+      "is — the map-level witnesses are constructed and printed above "
+      "and gated here. What the enumerated arm does deliver is that "
+      "only d's degeneracy is REACHED by the corpus (with PROBE-DD), "
+      "which is the honest content of the contrast with RD2-b",
       all(inj_by_type.get(T, 0) == 0
-          for T in ('p', 'r', 'n', 'm', 'ko', 'kc', 'ka')),
-      "colliding fibers = "
-      + ", ".join(f"{T} {inj_by_type.get(T, 0)}" for T in EVK))
+          for T in ('p', 'r', 'n', 'm', 'ko', 'kc', 'ka'))
+      and MAPCOLL['r'] is not None and MAPCOLL['m'] is not None
+      and MAPCOLL['d'] is not None,
+      "colliding ENUMERATED fibers = "
+      + ", ".join(f"{T} {inj_by_type.get(T, 0)}" for T in EVK)
+      + "; map-level collisions exhibited for "
+      + ", ".join(T for T in ('r', 'd', 'm')
+                  if MAPCOLL[T] is not None))
 
 check("RD2-b DELIVERED FINDING — THE DELIVERY ACTION IS NOT "
       "INJECTIVE. Type d fails the injectivity gate: re-delivering a "
@@ -850,8 +1016,12 @@ check("RD2-d THE LOSSY CONTROL FIRES (the d42b4/D44e convention — "
       "finding)")
 
 # ==== RD3 — COMPOSABILITY: two receptions in either order ==================
-print("\n[RD3 — composability: both reception orders compared "
-      "exactly (the D44f lesson at reception grain)]")
+print("\n[RD3 — composability. TWO DIFFERENT NOTIONS OF ORDER, kept "
+      "apart (round-1 F-M3): RD3-a..d are INTRA-HISTORY concurrency "
+      "(two records minimal at one down-set of ONE history, one "
+      "poset); RD3-e is INTER-HISTORY generation order (two "
+      "histories over the same record multiset, DIFFERENT posets). "
+      "No inference runs from the first to the second]")
 
 check("RD3-a COMPOSITION SOUNDNESS: composing the EXTRACTED action "
       "twice reproduces the committed layer's own View over the "
@@ -862,35 +1032,79 @@ check("RD3-a COMPOSITION SOUNDNESS: composing the EXTRACTED action "
       f"co-receivable pairs = {RES['pairs']}; composite-vs-layer "
       f"mismatches = {RES['comp_bad']}")
 
-check("RD3-b THE RECEPTION ACTION COMMUTES — UNIVERSALLY, not merely "
-      "on disjoint structure. Over every enumerated pair of records "
-      "co-receivable by the same actor from a common view (both "
-      "orders applied to the same pre-state), the two post-states "
-      "are byte-identical: zero exceptions. The pin gated "
-      "commutation where the records touch DISJOINT structure; the "
-      "sweep delivers strictly more — the OVERLAPPING pairs commute "
-      "too, because every field of the reception state is written by "
-      "a monotone union / multiset increment. sigma is an abelian "
-      "monoid under reception at the state grain",
+_vinit = _fnnode('__init__', cls='View')
+_init_src_ok = ('idxs' in {a.arg for a in _vinit.args.args})
+check("RD3-b RECEPTION COMMUTES — AND THIS IS A STRUCTURAL CONSEQUENCE "
+      "OF RD1-a, NOT A MEASUREMENT (round-1 F-A1; the previous "
+      "'abelian monoid ... strictly stronger than the pin's "
+      "disjointness gate' billing is WITHDRAWN). The reason, gated "
+      "here rather than narrated: (i) the committed state is a "
+      "function of a down-closed index SET — View(acts, pred, idxs) "
+      "builds props / arbs / dels / mrgs / resolved / superseded / "
+      "created / live / holdings(a) by iterating idxs alone, so "
+      "'receive e1 then e2' and 'receive e2 then e1' DENOTE THE SAME "
+      "OBJECT in the layer and order-independence is definitional; "
+      "(ii) correspondingly the extracted action is a MONOID "
+      "TRANSLATION, ACT(s, e, a) = mon(s, incr(e, a)) with an "
+      "increment that never reads s — gated on every enumerated "
+      "instance below — and `mon` (multiset addition on props, union "
+      "on the four set fields) is associative and commutative, so ANY "
+      "two such translations commute. Consequently the zero "
+      "non-commuting count CANNOT be nonzero once RD1-a passes; the "
+      "round's mutant f1 (a demonstrably wrong action map) leaves it "
+      "at zero. It is kept as a REGRESSION TEST on ACT, which is what "
+      "it is worth. (iii) The 'co-receivable' pairing rule constrains "
+      "nothing either: applying ACT in both orders to EVERY record "
+      "pair of every history against every enumerated pre-state — "
+      "co-receivable or not — also gives zero non-commuting",
       RES['noncomm'] == 0 and RES['disj_noncomm'] == 0
-      and RES['ovl_pairs'] > 0,
-      f"pairs = {RES['pairs']} (disjoint footprints "
-      f"{RES['disj_pairs']}, OVERLAPPING footprints "
-      f"{RES['ovl_pairs']}); non-commuting = {RES['noncomm']} "
-      f"(disjoint arm: {RES['disj_noncomm']})")
+      and RES['ovl_pairs'] > 0 and RES['incr_bad'] == 0
+      and RES['allpairs_noncomm'] == 0
+      and RES['allpairs'] > RES['pairs'] and _init_src_ok,
+      f"increment-identity violations over {RES['inst']} instances = "
+      f"{RES['incr_bad']}; co-receivable pairs = {RES['pairs']}, "
+      f"non-commuting {RES['noncomm']}; ALL record pairs = "
+      f"{RES['allpairs']}, non-commuting {RES['allpairs_noncomm']}; "
+      f"View.__init__ signature parameters = "
+      f"{[a.arg for a in _vinit.args.args]}")
+
+print(f"    [RD3-b FOOTPRINT STRATIFICATION of the {RES['pairs']} "
+      "co-receivable pairs, printed because the raw count overstates "
+      "the content (round-1 F-M4)]")
+print(f"      both footprints EMPTY (click/click, click/noop, "
+      f"noop/noop) : {RES['fp_both_empty']}")
+print(f"      exactly one footprint empty                        "
+      f"   : {RES['fp_one_empty']}")
+print(f"      both records write structure, footprints disjoint   "
+      f"   : {RES['fp_disj_both']}")
+print(f"      OVERLAPPING footprints                             "
+      f"   : {RES['ovl_pairs']}")
+print(f"      pairs in which at least one record acts as the IDENTITY "
+      f"on this actor's state: {RES['id_factor_pairs']} of "
+      f"{RES['pairs']} "
+      f"({100 * RES['id_factor_pairs'] // RES['pairs']}%)")
 
 check("RD3-c THE COMMUTATION CONTROL FIRES (the gate can reject a "
       "non-abelian action): the order-sensitive variant that writes "
       "`created` by REPLACEMENT instead of union — identical to the "
-      "delivered action in every other respect — fails the SAME gate "
-      "on a positive fraction of the SAME pairs",
-      RES['c_rep_noncomm'] > 0,
+      "delivered action in every other respect — fails the SAME gate. "
+      "SCOPE, corrected by round 1 (F-M4): that control differs from "
+      "the delivered action ONLY in the `created` field, which two "
+      "records can both write only if both are r or m, so its count "
+      "is the MAXIMUM it could ever report and not evidence of "
+      "breadth — it is reported here as 'n of n possible', computed",
+      RES['c_rep_noncomm'] > 0
+      and RES['c_rep_noncomm'] == RES['both_created_pairs'],
       f"non-commuting pairs under created-by-replacement = "
-      f"{RES['c_rep_noncomm']} of {RES['pairs']} (delivered action: "
+      f"{RES['c_rep_noncomm']} of {RES['both_created_pairs']} POSSIBLE "
+      f"(pairs in which both records write `created`), out of "
+      f"{RES['pairs']} co-receivable pairs (delivered action: "
       f"{RES['noncomm']})")
 
 check("RD3-d THE SECOND CONTROL IS SILENT, AND ITS SILENCE IS THE "
-      "STRUCTURAL FACT (recorded, never counted as a pass): "
+      "STRUCTURAL FACT (printed as a declaration and counted in the "
+      "gate total — round-1 F-m3; the earlier 'never counted as a "
+      "pass' was false): "
       "last-writer-wins on HOLDINGS cannot fire, because ZERO "
       "co-receivable pairs have both records writing the SAME "
       "actor's holdings. The reason is exact: every holdings-writing "
@@ -936,8 +1150,10 @@ M1, C1, VW1 = menu(ORD1)
 M2, C2, VW2 = menu(ORD2)
 st_eq = all(skey(state_of(VW1, a)) == skey(state_of(VW2, a))
             for a in ACTS2)
-print("    [RD3-e OBSTRUCTION EXHIBIT] the SAME THREE RECORDS "
-      "{pA0, ('d','A','B',V0), pB1}, two reception orders:")
+print("    [RD3-e OBSTRUCTION EXHIBIT] TWO GENERATED HISTORIES OVER "
+      "THE SAME RECORD MULTISET {pA0, ('d','A','B',V0), pB1} — NOT "
+      "two reception orders of one history (round-1 F-M3): the two "
+      "histories carry DIFFERENT posets, which is the whole point:")
 print(f"      ORD-1 (the delivery precedes B's proposal): components "
       f"{C1}")
 for a in ACTS2:
@@ -948,11 +1164,16 @@ print(f"      ORD-2 (B proposes concurrently; delivery after): "
 for a in ACTS2:
     print(f"        actor {a} arbitration menu (|ckey|, weight) = "
           f"{[(k, str(q)) for k, q in M2[a]]}")
-check("RD3-e THE EXACT OBSTRUCTION, NAMED AND EXHIBITED (the D44f "
-      "lesson at reception grain): the reception STATE is order-"
-      "blind — the two orders give byte-identical sigma_A and "
-      "sigma_B (props {A/V0/0, B/V0/1}, resolved empty, superseded "
-      "empty, created empty, holdings {V0}) — but the ARBITRATION "
+check("RD3-e THE EXACT OBSTRUCTION, NAMED AND EXHIBITED, AS ONE "
+      "TWO-HISTORY EXAMPLE (the D44f lesson at reception grain; scope "
+      "corrected by round 1 F-M3 — this gate is about GENERATION "
+      "order across two histories with different posets, a different "
+      "notion from RD3-b's intra-history concurrency, and it is a "
+      "single constructed exhibit, not a sweep): the reception STATE "
+      "is blind to the difference — the two histories give "
+      "byte-identical sigma_A and sigma_B (props {A/V0/0, B/V0/1}, "
+      "resolved empty, superseded empty, created empty, holdings "
+      "{V0}) — but the ARBITRATION "
       "MENU is not. Under ORD-1 the delivery register-links A to B, "
       "so B's proposal is received IN THE CAUSAL FUTURE of A's: the "
       "two proposals are comparable, no conflict edge forms, the "
@@ -975,27 +1196,52 @@ check("RD3-e THE EXACT OBSTRUCTION, NAMED AND EXHIBITED (the D44f "
       "across the orders; components 1+1 vs 2; menus 1 x 1/4 vs "
       "2 x 1/8 per actor")
 
-check("RD3-f THE OBSTRUCTION IS NOT AN ARTEFACT OF THE ABSTRACTION: "
-      "the derived structures that the reception state provably does "
-      "NOT determine are named and gated — arb_components_in_view "
-      "(it reads View.incomparable, i.e. the poset) and "
-      "merge_pairs (it reads the INDEX values of View.created, the "
-      "very field RD1-b's control convicted). The state determines "
-      "prop_options_in_view (a function of holdings, superseded and "
-      "live alone — all four in sigma), and that asymmetry is the "
-      "content: the PROPOSE menu is state-determined, the ARBITRATE "
-      "and MERGE menus are causally determined",
-      len(arb_comps(VW1, 'A')) == 1 and len(arb_comps(VW2, 'A')) == 1
+_rd_prop = _selfreads(_fnnode('prop_options_in_view'))
+_rd_arb = _selfreads(_fnnode('arb_components_in_view'))
+_rd_comp = _selfreads(_fnnode('components', cls='View'))
+_rd_edge = _selfreads(_fnnode('edges', cls='View'))
+_rd_inc = _selfreads(_fnnode('incomparable', cls='View'))
+_rd_mrg = _selfreads(_fnnode('merge_pairs', cls='View'))
+_SIGMA_FIELDS = {'props', 'resolved', 'superseded', 'created', 'live',
+                 'holdings'}
+check("RD3-f THE MENU ASYMMETRY, GATED AS A CODE READING AND SWEPT "
+      "OVER THE CORPUS (round-1 F-M5: the previous gate compared ONE "
+      "pair of views and billed the code reading, which is its real "
+      "justification, as a parenthetical). CODE READING, by AST over "
+      "the committed d42b2 text: prop_options_in_view touches its "
+      "view ONLY through fields that sigma_a carries, so the PROPOSE "
+      "menu is a function of (sigma_a, a); arb_components_in_view "
+      "reaches View.components -> View.edges -> View.incomparable -> "
+      "View.pred, i.e. THE POSET, which sigma does not carry; and "
+      "View.merge_pairs reads View.created's INDEX VALUES, the very "
+      "field RD1-b's control convicted. CORPUS SWEEP: over every "
+      "enumerated (pre-state, receiver) key, every view realizing it "
+      "gives the SAME propose menu — zero non-determinations. The "
+      "arbitration menu shows no non-determination over the CORPUS "
+      "either (the corpus realizes no two same-sigma views with "
+      "different components); its non-determination is carried by "
+      "RD3-e's constructed two-history exhibit alone, and that is now "
+      "stated rather than implied",
+      _rd_prop <= _SIGMA_FIELDS and 'pred' in _rd_inc
+      and 'incomparable' in _rd_edge and 'edges' in _rd_comp
+      and 'components' in _rd_arb and 'created' in _rd_mrg
+      and 'incomparable' in _rd_mrg
+      and RES['prop_ndet'] == 0
+      and len(arb_comps(VW1, 'A')) == 1 and len(arb_comps(VW2, 'A')) == 1
       and sorted(len(c) for _b, c in VW1.components()) == [1, 1]
       and sorted(len(c) for _b, c in VW2.components()) == [2]
-      and (sorted(crepr(o) for o in
-                  ns2['prop_options_in_view'](VW1, 'A'))
-           == sorted(crepr(o) for o in
-                     ns2['prop_options_in_view'](VW2, 'A'))),
-      "at equal sigma: arb_components_in_view returns ONE component "
-      "for A under both orders but of DIFFERENT SIZE (1 vs 2), so "
-      "the ckey it offers differs; propose options IDENTICAL across "
-      "the orders (state-determined)")
+      and (sorted(crepr(o) for o in prop_opts(VW1, 'A'))
+           == sorted(crepr(o) for o in prop_opts(VW2, 'A'))),
+      f"prop_options_in_view reads {sorted(_rd_prop)} (all in "
+      f"sigma_a); arb_components_in_view reads {sorted(_rd_arb)}, "
+      f"View.components reads {sorted(_rd_comp)}, View.edges reads "
+      f"{sorted(_rd_edge)}, View.incomparable reads {sorted(_rd_inc)}; "
+      f"View.merge_pairs reads {sorted(_rd_mrg)}; corpus sweep over "
+      f"{RES['prop_keys']} (pre-state, receiver) keys: propose-menu "
+      f"non-determinations = {RES['prop_ndet']}, arbitration-menu "
+      f"non-determinations = {RES['arb_ndet']}; on RD3-e's two "
+      "histories the propose options are identical and the single "
+      "arbitration component differs in size (1 vs 2)")
 
 # ==== RD4 — honesty, purity, determinism, no vacuous gate ==================
 print("\n[RD4 — honesty, purity, determinism]")
@@ -1128,92 +1374,171 @@ check("RD4-e DETERMINISM (internal arm): the entire sweep re-run "
       d1 == d2, f"digest = {d1[:32]}... (both traversal orders)")
 
 _own = open(os.path.abspath(__file__)).read()
-_pat = "check(Tr" + "ue"
-check("RD4-f SELF-SCAN: no vacuous gate anywhere in this receipt — "
-      "the forbidden always-true check pattern has ZERO source "
-      "occurrences outside this scan's own by-concatenation "
-      "constructor (four vacuous gates have been convicted in this "
-      "campaign; the needle cannot self-trip), and every check "
-      "carries a computed predicate",
-      _own.count(_pat) == 0 and PASS + FAIL >= 25,
-      f"forbidden-pattern source occurrences = {_own.count(_pat)}; "
-      f"gates executed before this one = {PASS + FAIL}")
+_tree = ast.parse(_own)
+_BUILTIN = set(dir(builtins))
+_BOUND = set()
+for _nd in ast.walk(_tree):
+    if isinstance(_nd, ast.Name) and isinstance(_nd.ctx, ast.Store):
+        _BOUND.add(_nd.id)
+    elif isinstance(_nd, (ast.FunctionDef, ast.ClassDef)):
+        _BOUND.add(_nd.name)
+    elif isinstance(_nd, (ast.Import, ast.ImportFrom)):
+        for _al in _nd.names:
+            _BOUND.add((_al.asname or _al.name).split('.')[0])
+_vac = []
+_ncheck = 0
+for _nd in ast.walk(_tree):
+    if not (isinstance(_nd, ast.Call) and isinstance(_nd.func, ast.Name)
+            and _nd.func.id == 'check'):
+        continue
+    _ncheck += 1
+    if len(_nd.args) < 2:
+        _vac.append((_nd.lineno, "no predicate argument"))
+        continue
+    _nm = {n.id for n in ast.walk(_nd.args[1]) if isinstance(n, ast.Name)}
+    if not {n for n in _nm if n not in _BUILTIN and n in _BOUND}:
+        _vac.append((_nd.lineno, ast.dump(_nd.args[1])[:60]))
+check("RD4-f SELF-SCAN BY AST WALK (round-1 F-m4 / the campaign's "
+      "three-round CARRIED finding: the previous scan was ONE literal "
+      "needle and could not see a vacuous gate written in any other "
+      "form). Every check() call site in this source is parsed and "
+      "its PREDICATE expression is required to reference at least one "
+      "name this source binds. Two honest qualifications, so the "
+      "label no longer over-claims: (a) this is a NECESSARY condition "
+      "for non-vacuity, not a sufficient one — no scan decides "
+      "vacuity in general; (b) it does not contradict RD3-d, which is "
+      "a CONTROL that structurally cannot fire (declared, and the "
+      "firing burden carried by RD3-c) — a control that cannot fire "
+      "and a gate with no computed predicate are different objects, "
+      "and only the second is what this scan looks for",
+      not _vac and _ncheck > 0,
+      f"{_ncheck} check() call sites parsed; constant-predicate call "
+      f"sites = {len(_vac)}"
+      + ("" if not _vac else
+         " at lines " + ",".join(str(v[0]) for v in _vac))
+      + f"; gates executed before this one = {PASS + FAIL}")
 
 # ============================ VERDICT ======================================
 print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
 if FAIL:
     print("[VERDICT] FAIL — gate breakage; exit 1 by design")
     sys.exit(1)
-print("[VERDICT] d46f GREEN-UNREVIEWED — the hostile round is "
-      "deferred per the D46 program pin (token budget); this receipt "
-      "must not be cited as review-hardened until its round converts "
-      "(paper-32's round precedes it). THE RECEPTION-DYNAMICS ARM IS "
-      "DELIVERED, and D44e's typed-open half is closed at fixture "
-      "scope. RD0: the census re-anchored first — 11 types, 6,567 "
+print("[VERDICT] d46f GREEN-UNREVIEWED, ROUND 1 APPLIED (the round's "
+      "two blockers and five majors are addressed in this receipt; "
+      "the note and LOG carry the forward-correcting entry). THE "
+      "RECEPTION-DYNAMICS ARM IS DELIVERED, and D44e's typed-open "
+      "half is closed at fixture scope — but with the two headline "
+      "claims RE-CLASSIFIED, because they were entailed, not "
+      "measured. RD0: the census re-anchored first — 11 types, 6,567 "
       "instances, the 1,191-member depth-4 family, the (actor,base) "
-      "key re-executed, before any dynamics claim. RD1: the ACTION "
-      "MAP is extracted mechanically from the committed layers by "
-      "diffing pre/post views over 23,069 reception instances and is "
-      "gated FAITHFUL (an independent re-implementation reproducing "
-      "View exactly, derived-live included) and a genuine FUNCTION "
-      "of (censused record data, receiver, pre-state) — 869 repeated "
-      "keys, zero conflicts, no dependence on history, index, poset "
-      "or unseen events — with the abstraction step proved "
-      "load-bearing by a control that fails in bulk (the layer's own "
-      "index-valued View.created: 635/1107 conflicting keys). The "
-      "per-type updates are now stated, not templated: p writes one "
-      "proposal; r resolves its ckey, supersedes the base, creates "
-      "the version and endows exactly its authors; d endows only the "
-      "named receiver (112 of its 156 instances are bystander "
-      "IDENTITY); m supersedes the pair, creates the mname and "
-      "endows the merger; and — a DELIVERED FINDING the copy-form "
-      "template could not reach — the ENTIRE CLICK LAYER (ko, kc, "
-      "ka) plus noop are the EXACT IDENTITY on the reception state: "
-      "click content enters the poset and the pricing, never the "
-      "view. RD2: injectivity of the ACTION (strictly stronger than "
-      "D44e's imprint isometry, which held for any imprint) holds "
-      "for p/r/n/m/ko/kc/ka with zero collisions, and DELIVERS TWO "
-      "FAILURES as findings at exit 0: (i) the DELIVERY action is "
-      "NOT injective — the layer admits re-delivering a version the "
-      "receiver already holds (deliver_options filters the SENDER's "
-      "holdings only) and holdings is a set, so reception forgets "
-      "delivery multiplicity (exact witness printed); (ii) the "
-      "VERSION-record action is idempotent set insertion, so v.arb "
-      "collides on 72 fibers — D25 distinguishability holds on the "
-      "record CARRIER and fails on the holdings STATE, two claims "
-      "the census could not separate. The props-dropped lossy "
-      "control fires at 171 fibers. RD3: the reception action "
-      "COMMUTES UNIVERSALLY — all 7,163 co-receivable pairs, "
-      "including the 63 with OVERLAPPING footprints, byte-identical "
-      "in both orders, composition gated sound against the layer: "
-      "sigma is an abelian monoid under reception at the state "
-      "grain, strictly more than the pin's disjointness gate asked. "
-      "The created-by-replacement control fires (63/7163); the "
-      "last-writer-wins-on-holdings control is SILENT and its "
-      "silence is itself the gated structural fact — zero pairs "
-      "endow one actor twice concurrently, because every "
-      "holdings-writing record carries the receiver's own register, "
-      "which totally orders its endowments. AND THE EXACT "
-      "OBSTRUCTION IS EXHIBITED (the D44f lesson at reception "
-      "grain): the same three records in two orders give IDENTICAL "
-      "sigma for both actors but components 1+1 vs 2 and "
-      "arbitration menus 1 x 1/4 vs 2 x 1/8 per actor — the "
-      "order-determined datum, named: the causal COMPARABILITY of "
-      "the two proposal receptions, i.e. the conflict-edge structure "
-      "the state does not carry. The asymmetry is gated: the "
-      "PROPOSE menu is state-determined, the ARBITRATE and MERGE "
-      "menus are causally determined (merge_pairs reads exactly the "
-      "index values RD1-b's control convicted). RD4: three residual "
-      "grains declared unchanged from D44e (|C| >= 3 chains, "
-      "re-merge, transport depth), the two receipt-built probes "
-      "declared with their provenance, the embedded PRE-#300 "
-      "transport head gated as committed (LOG #363, D46g's "
-      "obligation), float-free purity walk over 41,326 leaves with a "
-      "firing trip control, determinism by reversed-traversal digest "
-      "identity, and a self-scan needle built by concatenation so it "
-      "cannot self-trip. WHAT THIS RECEIPT DOES NOT CLAIM: nothing "
-      "beyond the enumerated reception instances; no re-pricing; no "
-      "amplitudes (D25's Hilbert form is cited, its exact classical "
-      "consequence is what is gated); and the two non-injectivities "
-      "are properties of the COMMITTED layer as written, delivered "
-      "for the round to adjudicate, not repaired here.")
+      "key re-executed, before any dynamics claim. RD1, AND THIS IS "
+      "THE UNIT'S REAL CONTRIBUTION: the ACTION MAP is extracted "
+      "mechanically from the committed layers by diffing pre/post "
+      f"views over {RES['inst']} reception instances and gated "
+      "FAITHFUL (RD1-a — an INDEPENDENT re-implementation reproducing "
+      "the committed View exactly, derived-live included, on every "
+      "instance). Everything else in RD1 and RD3 stands or falls with "
+      f"that gate. RD1-b's {RES['wd_keys']} repeated keys at "
+      f"{RES['wd_bad']} conflicts is a COROLLARY of RD1-a and is now "
+      "labelled one (a quantity equal to a function of (pre, e, a) "
+      "everywhere is such a function); it is retained as a regression "
+      "tally, and its CONTROL — the layer's own index-valued "
+      "View.created, which fails in bulk at 635/1107 — remains a real "
+      "and firing control. The per-type updates are stated, not "
+      "templated: p writes one proposal; r resolves its ckey, "
+      "supersedes the base, creates the version and endows exactly "
+      "its authors; d endows only the named receiver (112 of its 156 "
+      "instances are bystander IDENTITY); m supersedes the pair, "
+      "creates the mname and endows the merger; and the ENTIRE CLICK "
+      "LAYER (ko, kc, ka) plus noop are the EXACT IDENTITY on the "
+      "reception state — RD1-d, now delivered as what it is: a "
+      "CODE-READING THEOREM with a one-line proof, gated by an AST "
+      "scan showing the committed View class selects records only by "
+      "{p, r, d, m} and never mentions ko/kc/ka/n, hence covering all "
+      "|C| at once and not merely the |C| = 2 the corpus realizes. "
+      "RD2: no two ENUMERATED pre-states collide for "
+      "p/r/n/m/ko/kc/ka — a statement about the reached pool, now "
+      "scoped as such, since r, d and m all write holdings by "
+      "idempotent set union and are non-injective AS MAPS, with the "
+      "map-level witnesses for all three constructed and printed. Two "
+      "DELIVERED FAILURES at exit 0 remain: (i) the DELIVERY action "
+      "is not injective and the degeneracy is REACHED — the layer "
+      "admits re-delivering a version the receiver already holds "
+      "(deliver_options filters the SENDER's holdings only) and "
+      "holdings is a set, so reception forgets delivery multiplicity "
+      "(exact witness printed, admissibility verified directly "
+      "against the committed admissible()); (ii) the VERSION-record "
+      "action is idempotent set insertion, so v.arb collides on 72 "
+      "fibers — D25 distinguishability holds on the record CARRIER "
+      "and fails on the holdings STATE. The props-dropped lossy "
+      "control fires at 171 fibers. RD3: RECEPTION COMMUTES, AND THE "
+      "COMMUTATION IS A STRUCTURAL CONSEQUENCE, NOT A DISCOVERY — the "
+      "previous 'sigma is an abelian monoid under reception, strictly "
+      "stronger than the pin's disjointness gate' is WITHDRAWN. The "
+      "committed reception state is a function of a down-closed index "
+      "SET (View(acts, pred, idxs)), so order-independence is "
+      "definitional in the layer; correspondingly the extracted "
+      "action is a monoid translation ACT(s, e, a) = mon(s, "
+      f"incr(e, a)) with a state-blind increment — gated at "
+      f"{RES['incr_bad']} violations over all {RES['inst']} instances "
+      "— and translations of a commutative monoid commute a priori. "
+      f"So the {RES['noncomm']} non-commuting count over the "
+      f"{RES['pairs']} co-receivable pairs is entailed once RD1-a "
+      "passes and is kept as a REGRESSION TEST on ACT; and the "
+      "'co-receivable' restriction hides nothing, since all "
+      f"{RES['allpairs']} record pairs — co-receivable or not — also "
+      "commute. The pair universe is stratified in the record rather "
+      f"than left as one number: {RES['fp_both_empty']} pairs have "
+      f"both footprints empty, {RES['fp_one_empty']} exactly one, "
+      f"{RES['fp_disj_both']} write disjoint structure and "
+      f"{RES['ovl_pairs']} overlap, and "
+      f"{RES['id_factor_pairs']} of {RES['pairs']} contain a record "
+      "acting as the identity on that actor's state. The "
+      "created-by-replacement control fires at "
+      f"{RES['c_rep_noncomm']} of {RES['both_created_pairs']} "
+      "POSSIBLE (only r/m pairs can trip it), and the "
+      "last-writer-wins-on-holdings control is SILENT — a declared "
+      "structural fact, printed and counted in the gate total: zero "
+      "pairs endow one actor twice concurrently, because every "
+      "holdings-writing record carries the receiver's own register. "
+      "SEPARATELY, AND OVER A DIFFERENT NOTION OF ORDER, RD3-e "
+      "exhibits ONE pair of GENERATED HISTORIES over the same record "
+      "multiset — two DIFFERENT posets, not two reception orders of "
+      "one history — with identical sigma for both actors but "
+      "components 1+1 vs 2 and arbitration menus 1 x 1/4 vs 2 x 1/8 "
+      "per actor. NO INFERENCE IS DRAWN FROM RD3-b TO RD3-e: they "
+      "concern different objects, and the earlier 'therefore D44f's "
+      "order-dependence does not live in the state' is WITHDRAWN. "
+      "What is supported is exactly this: (1) intra-history, the "
+      "reception state is order-blind for structural reasons; (2) "
+      "across the two exhibited histories, equal sigma coexists with "
+      "unequal arbitration menus, so THAT datum — the causal "
+      "comparability of the two proposal receptions, i.e. the "
+      "conflict-edge structure — is not carried by sigma; (3) the "
+      "menu asymmetry itself is a gated CODE READING (AST over the "
+      "committed d42b2: prop_options_in_view touches only "
+      "sigma-carried fields; arb_components_in_view reaches "
+      "View.pred through components/edges/incomparable; "
+      "View.merge_pairs reads View.created's index values), plus a "
+      f"corpus sweep over {RES['prop_keys']} (pre-state, receiver) "
+      f"keys with {RES['prop_ndet']} propose-menu non-determinations "
+      f"and {RES['arb_ndet']} arbitration-menu non-determinations — "
+      "the corpus realizes no arbitration counterexample, so that "
+      "half rests on RD3-e's constructed exhibit and is now said so. "
+      "RD4: three residual grains declared unchanged from D44e "
+      "(|C| >= 3 chains — not a caveat on RD1-d any more, re-merge, "
+      "transport depth), the two receipt-built probes declared with "
+      "their provenance, the embedded PRE-#300 transport head gated "
+      "as committed (LOG #363, D46g's obligation), float-free purity "
+      "walk with a firing trip control, determinism by "
+      "reversed-traversal digest identity, and a self-scan that is "
+      "now an AST walk over every check() call site rather than a "
+      "single literal needle. WHAT THIS RECEIPT DOES NOT CLAIM: "
+      "nothing beyond the enumerated reception instances; no "
+      "re-pricing; no amplitudes (D25's Hilbert form is cited, its "
+      "exact classical consequence is what is gated); the "
+      "commutation and function properties are entailed by the "
+      "faithfulness gate and are not independent evidence; and the "
+      "two non-injectivities are properties of the COMMITTED layer "
+      "as written, delivered for the round to adjudicate, not "
+      "repaired here.")

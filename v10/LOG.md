@@ -8152,3 +8152,45 @@ scanner coverage it does not enforce, and the class belongs in an
 AUTHORING/PRE-COMMIT check (per the #400 rider), not only in
 receipt gates.
 Notes §5 both units. Receipt repairs are with an applier.
+
+## 2026-07-19 — (D46e + D46f) round-1 repairs APPLIED (LEDGER
+## #402); the D46e reversal is GATED and WIDER than the round found
+Applier-executed; verified pre-commit: both receipts exit 0,
+independent reruns BYTE-IDENTICAL, seeds identical.
+**D46e 19 -> 23 gates.** The channel family is CLOSED UNDER
+PRODUCTS of its own labels (5 -> 11 readings, each gated a genuine
+coarsening). **CORRECTED CENSUS, 66 evaluations / 25
+discriminating pairs: 16 collapse at g = 0 ONLY (the interaction
+kills the ray), 9 at NEITHER (grain), 0 at g = 1/2 only, 0 at
+both** — wider than the round's 16-vs-9 estimate on the same side.
+The 16 are all three cells x {NPR, NPC, OCC0, OCC1, OCC2} plus
+b = 1 OCC3; FULL/ROW/COL never collapse either way; NPR gives
+c = 204703/480000 (b = 0) and 265103/480000 (b = 1), the referee's
+exact values. Delivered READING-RELATIVE with the two-EXC-channels
+caveat COMPUTED. Blockers closed with teeth: SG0-C anchors the
+identification (one implementation for both phases, required to
+reproduce tau_D_pairs entry-for-entry AND land on the committed
+ray) — mutant e5 now FAILS exit 1; SG2-E gates the PAR ray form
+entrywise — mutant e3 now FAILS; every verdict string is
+INTERPOLATED (under mutant e2 the SG3 verdict adapts itself to
+"25/25 GRAIN" and three gates fail); SG3-E gates convention
+dependence with an independent reference rule reproducing every
+verdict class and 4 of 9 delta c — the referee's split exactly;
+SG3-C upgraded to an EXACT RATIONAL IDENTITY in all four regions.
+**D46f 29 gates, relabelled not inflated.** RD3-b is a STRUCTURAL
+CONSEQUENCE of RD1-a with the join-homomorphism reason gated
+(state-blind increment, 0/23,069; the View parameter list cited
+from PARSED SOURCE) and the all-pairs fact gated (170,820 pairs,
+0 non-commuting); the 58% identity-action share and the 63-of-63
+control size are printed. RD1-b is a corollary; RD1-d a
+code-reading theorem gated BY AST; RD2-a rescoped to the
+enumerated fibers WITH map-level collisions constructed for r, d
+and m. The withdrawn inference is replaced by three
+separately-supported statements, and RD3-f gates its code reading
+by AST plus a corpus sweep (351 keys, 0 non-determinations) with
+two honest riders: the propose menu needs the RECEIVER'S IDENTITY
+(state-only keying gives 54 false violations), and the corpus
+realises NO arbitration counterexample, so that half rests on the
+constructed exhibit alone. Mutant f1 now fails RD1-a/RD2-a/RD3-a
+at exit 1 while RD1-b/RD3-b pass — exactly what their labels now
+say. Notes §6 both units. DELTAS next.

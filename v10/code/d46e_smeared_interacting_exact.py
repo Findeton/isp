@@ -45,6 +45,8 @@ Gamma(U) = |U|^2 entrywise; J_R = Gamma(U_R) Gamma(U_free)^-1.
 Interacting fixture = the root validator's minimal gauge-matter
 occupation Hamiltonian (4 sites, open chain), d44d's KG3 block.
 """
+import ast
+import builtins
 import sys
 import os
 from fractions import Fraction as Fr
@@ -319,6 +321,59 @@ def build_H_int(site_w, bond_w, gv):
             Hm[key] = Hm.get(key, mpc(0)) - T_INT * bond_w[bi]
     return {k: v for k, v in Hm.items() if v != 0}
 
+CELLS = ((0, (1, 2, 3)), (0, (1, 2)), (1, (1, 2)))
+# The channel family, CLOSED UNDER PRODUCTS OF ITS OWN LABELS (round-1
+# E-A1): the five original readings plus the six product coarsenings the
+# round's referee exhibited — SEC x PAR on each index (NPR / NPC) and the
+# four site-occupation refinements of SEC (OCC0..OCC3).  Every one of the
+# six is a coarsening of ROW or of COL, hence inside the pre-registered
+# construction; SG2-C gates that fact numerically for all of them.
+READINGS = ('FULL', 'ROW', 'COL', 'PAR', 'SEC',
+            'NPR', 'NPC', 'OCC0', 'OCC1', 'OCC2', 'OCC3')
+RULES = ('EXC', 'LT')
+GCOL = (('g=1/2', G_INT), ('g=0  ', mpf(0)))
+
+# ---- THE identification, ONE implementation for both phases ----------------
+# (round-1 E-A3: the interacting numbers used to come from a second copy of
+# this formula that no gate compared against the free-core one.  There is
+# now one function; SG0-C runs it on the free-core data with the free-core
+# displacement/channel maps and requires it to equal `tau_D_pairs`
+# entry-for-entry AND to reproduce the committed free-core ray, so the
+# `delta` first-moment weighting below is anchored to the corpus.)
+def free_disp(i, j):
+    """The FREE-CORE displacement: signed lattice separation of the two
+    site indices on the periodic chain (the d43a/d44d convention)."""
+    d_ = (j // 2 - i // 2) % L
+    return d_ - L if d_ > L // 2 else d_
+
+def D_identified(A, base, rs, rule, reading, disp=None, chan=None,
+                 ccache=None):
+    """D(ch) = sum_delta delta * tau(delta, ch), tau(delta, ch) =
+    sum_r r * sum_{entries in ch at displacement delta} [A(b), A(b+r)].
+    `disp` / `chan` default to the interacting fixture's declared
+    analogues (occupation dipole / the channel-reading family); passing
+    the free-core pair makes this function compute the free-core
+    identification, which is what SG0-C gates it against."""
+    if disp is None: disp = lambda i, j: DIP[j] - DIP[i]
+    if chan is None: chan = lambda i, j: chan_of(reading, i, j)
+    A0 = A(base, rule)[0]
+    tau = {}
+    for r in rs:
+        ckey = (base, r, rule)
+        if ccache is not None and ckey in ccache:
+            XY = ccache[ckey]
+        else:
+            XY = comm_num(A0, A(base + r, rule)[0])
+            if ccache is not None: ccache[ckey] = XY
+        for (i, j), v in XY.items():
+            if fabs(v) < TOL: continue
+            key = (disp(i, j), chan(i, j))
+            tau[key] = tau.get(key, mpc(0)) + r * v
+    D = {}
+    for (d_, c_), v in tau.items():
+        D[c_] = D.get(c_, mpc(0)) + d_ * v
+    return {k: v for k, v in D.items() if fabs(v) > TOL}
+
 # ============================================================================
 print("[d46e — the smeared interacting identification, with the g = 0 column]")
 print("  banner: GREEN-UNREVIEWED — the hostile round is deferred per the D46")
@@ -379,6 +434,21 @@ print("           analogue of the free-core spinor pair: a 2x2 object directly")
 print("           comparable to the free-core ray form c*(I - sigma_x).")
 print("    SEC  — channel = the particle-number sector N (the block label of")
 print("           the D44d KG3 extraction gate).")
+print("    NPR / NPC — the PRODUCT of the two coarse readings above,")
+print("           (N(u), X(u) mod 2) and (N(v), X(v) mod 2): the sector label")
+print("           refined by the staggered parity.  ADDED BY ROUND 1 (E-A1):")
+print("           the family had contained SEC and PAR and never formed their")
+print("           product, and the verdict is NOT the same there.")
+print("    OCC0..OCC3 — (N(u), u_k), the sector label refined by the")
+print("           occupation of one site; four readings, also added by round 1.")
+print("  THE FAMILY IS NOW CLOSED UNDER PRODUCTS OF ITS OWN LABELS in the")
+print("  sense that every pairwise product of SEC with PAR and with the site")
+print("  occupations is present.  All six additions are coarsenings of ROW or")
+print("  of COL and hence of FULL — SG2-C gates that numerically for each of")
+print("  them — so they are inside the pre-registered construction, not")
+print("  outside it.  THE VERDICT CLASS IS READING-RELATIVE: the sweep is")
+print("  reported over the WHOLE family and the census is taken over ALL")
+print("  readings, never over a privileged subset.")
 print("  Cells: base b and separation set rs in {(b=0, rs=1,2,3), (b=0,")
 print("  rs=1,2), (b=1, rs=1,2)}; the last is the d44d KG3 pair set")
 print("  (R={1},S={2}) and (R={1},S={3}) exactly.  Regions are SINGLETONS.")
@@ -408,8 +478,10 @@ print("  completeness slot beyond r = 3 — the r-range is the full available")
 print("  range at each base, and the three cells above are its full sweep;")
 print("  (D2) the channel-reading FAMILY above is this receipt's construction —")
 print("  the pin says 'the same tau first-moment construction', which fixes the")
-print("  moment but not the fixture's channel analogue, so all five readings")
-print("  are run and reported rather than one being privileged; (D3) ONE")
+print(f"  moment but not the fixture's channel analogue, so all "
+      f"{len(READINGS)} readings")
+print("  are run and reported rather than one being privileged, and the")
+print("  delivered verdict is stated as reading-relative; (D3) ONE")
 print("  interacting point (pin §3) and ONE collar convention (d44d A6) — the")
 print("  three-convention robustness sweep is D44d's, not re-run here.")
 
@@ -463,13 +535,15 @@ def tau_D_free(m, rule):
         if nn not in cache:
             cache[nn] = A_region(m, {nn % L}, rule, Gfi, Hm)
         return cache[nn]
-    return tau_D_pairs(A_at, (1, 2, 3, 4))
+    tau, D = tau_D_pairs(A_at, (1, 2, 3, 4))
+    return tau, D, A_at
 
+FREE_A = {}
 t5_ok = True
 t5_det = []
 for m in (mpf(1) / 2, mpf(1)):
-    tauE, DE = tau_D_free(m, 'EXC')
-    tauL, DL = tau_D_free(m, 'LT')
+    tauE, DE, FREE_A[(float(m), 'EXC')] = tau_D_free(m, 'EXC')
+    tauL, DL, FREE_A[(float(m), 'LT')] = tau_D_free(m, 'LT')
     okE = (fabs(DE.get((0, 0), 0) - 1) < TOL
            and fabs(DE.get((1, 1), 0) - 1) < TOL
            and fabs(DE.get((0, 1), 0) + 1) < TOL
@@ -508,6 +582,48 @@ check("SG0-B THE FREE-CORE RAY COLLAPSE re-run (d44d T5 / d45a YG1): both "
       "delta-odd in every channel of both rules; the d45a polynomial "
       "(9m^4 - 15m^2 + 4)/144 agrees at both anchors in EXACT Fraction "
       "arithmetic", t5_ok and sign_flip, "; ".join(t5_det))
+
+# ---- SG0-C: the IDENTIFICATION ANCHOR (round-1 E-A3) -----------------------
+# Every interacting number below is produced by `D_identified`.  This gate
+# runs THAT function on the free-core data, with the free-core displacement
+# (`free_disp`) and channel ((s, s')) maps, and requires it to agree
+# entry-for-entry BOTH with `tau_D_pairs` (the corpus function SG0-B uses)
+# AND with the committed free-core ray.  Deleting or altering the `delta`
+# first-moment weight inside `D_identified` breaks this gate: the free-core
+# tau is delta-odd (SG0-B), so its ZEROTH moment vanishes identically and
+# the recomputed D would be empty.
+anc_ok = True
+anc_det = []
+for m in (mpf(1) / 2, mpf(1)):
+    for rule in ('EXC', 'LT'):
+        A_at = FREE_A[(float(m), rule)]
+        _, D_ref = tau_D_pairs(A_at, (1, 2, 3, 4))
+        D_new = D_identified(lambda n_, rl, _a=A_at: (_a(n_), None),
+                             0, (1, 2, 3, 4), rule, 'FREE-CORE',
+                             disp=free_disp,
+                             chan=lambda i, j: (i % 2, j % 2))
+        keys = sorted(set(D_ref) | set(D_new))
+        same = max((fabs(D_ref.get(k, mpc(0)) - D_new.get(k, mpc(0)))
+                    for k in keys), default=mpf(0))
+        cref = Fr(1) if rule == 'EXC' else KAPPA_REF[float(m)]
+        ray = max((fabs(D_new.get((a_, b_), mpc(0))
+                        - fr2mp(cref) * (1 if a_ == b_ else -1))
+                   for a_ in (0, 1) for b_ in (0, 1)), default=mpf(1))
+        anc_ok &= (len(keys) == 4 and same < TOL and ray < TOL)
+        anc_det.append(f"m={float(m)} {rule}: {len(keys)} channels, "
+                       f"max |D_identified - tau_D_pairs| = {nstr(same, 3)}, "
+                       f"max |D_identified - {cref}*(I - sx)| = "
+                       f"{nstr(ray, 3)}")
+check("SG0-C THE IDENTIFICATION ANCHOR: the SAME function that produces "
+      "every interacting number below (D_identified), run on the free-core "
+      "data with the free-core displacement and (s, s') channel maps, "
+      "reproduces the corpus function tau_D_pairs ENTRY FOR ENTRY and lands "
+      "on the committed free-core ray (EXC = 1, LT = kappa(m)) — so the "
+      "interacting identification is tied to the corpus tau FIRST MOMENT "
+      "and not merely to a second copy of its name: the delta weighting is "
+      "load-bearing here, because the free-core tau is delta-odd (SG0-B) "
+      "and its zeroth moment vanishes identically", anc_ok,
+      "; ".join(anc_det))
 print("  [SG0 NOTE] this is the behaviour the interacting cells below are "
       "compared against: ONE ray, TWO rule-relative constants.")
 
@@ -665,38 +781,24 @@ check("SG1-D the d44d KG3 RE-ANCHOR: both raw-bracket cells reproduce the "
 print("\n[SG2 — THE CORE: the corpus identification applied to the "
       "interacting one-region coefficients, both rules, g = 1/2 AND g = 0]")
 
-CELLS = ((0, (1, 2, 3)), (0, (1, 2)), (1, (1, 2)))
-READINGS = ('FULL', 'ROW', 'COL', 'PAR', 'SEC')
-RULES = ('EXC', 'LT')
-GCOL = (('g=1/2', G_INT), ('g=0  ', mpf(0)))
-
 def chan_of(reading, i, j):
     if reading == 'FULL': return (i, j)
     if reading == 'ROW': return i
     if reading == 'COL': return j
     if reading == 'PAR': return (DIP[i] % 2, DIP[j] % 2)
-    return NPART[i]                      # SEC (blocks are N-diagonal)
+    if reading == 'SEC': return NPART[i]  # blocks are N-diagonal
+    if reading == 'NPR': return (NPART[i], DIP[i] % 2)
+    if reading == 'NPC': return (NPART[j], DIP[j] % 2)
+    if reading.startswith('OCC'):
+        return (NPART[i], basis_int[i][int(reading[3])])
+    raise KeyError(reading)
 
 def sector_of(reading, key):
     if reading == 'FULL': return NPART[key[0]]
     if reading in ('ROW', 'COL'): return NPART[key]
     if reading == 'SEC': return key
-    return None                          # PAR carries no sector label
-
-def D_identified(A, base, rs, rule, reading):
-    """D(ch) = sum_delta delta * tau(delta, ch), tau(delta, ch) =
-    sum_r r * sum_{entries in ch at displacement delta} [A(b), A(b+r)]."""
-    A0 = A(base, rule)[0]
-    tau = {}
-    for r in rs:
-        for (i, j), v in comm_num(A0, A(base + r, rule)[0]).items():
-            if fabs(v) < TOL: continue
-            key = (DIP[j] - DIP[i], chan_of(reading, i, j))
-            tau[key] = tau.get(key, mpc(0)) + r * v
-    D = {}
-    for (d_, c_), v in tau.items():
-        D[c_] = D.get(c_, mpc(0)) + d_ * v
-    return {k: v for k, v in D.items() if fabs(v) > TOL}
+    if reading == 'PAR': return None     # PAR carries no sector label
+    return key[0]                        # NPR/NPC/OCCk: N is the 1st slot
 
 def ref_key(M):
     """The canonical reference channel: the str-least channel attaining the
@@ -752,8 +854,10 @@ def rayform(P):
     return on, d00
 
 PIPES = {}
+CCACHE = {}          # gname -> {(base, r, rule): commutator} (reading-free)
 for gname, gval in GCOL:
     PIPES[gname] = int_pipeline(gval)[1]
+    CCACHE[gname] = {}
 
 DSTORE = {}          # (gname, base, rmax, rule, reading) -> D dict
 VSTORE = {}          # (gname, base, rmax, reading) -> (verdict, c, dev, secs)
@@ -763,7 +867,8 @@ for base, rs in CELLS:
             A = PIPES[gname]
             for rule in RULES:
                 DSTORE[(gname, base, max(rs), rule, reading)] = \
-                    D_identified(A, base, rs, rule, reading)
+                    D_identified(A, base, rs, rule, reading,
+                                 ccache=CCACHE[gname])
             VSTORE[(gname, base, max(rs), reading)] = ray_verdict(
                 DSTORE[(gname, base, max(rs), 'EXC', reading)],
                 DSTORE[(gname, base, max(rs), 'LT', reading)], reading)
@@ -815,6 +920,47 @@ for base, rs in CELLS:
                   f"on the free-core ray: {'YES' if on else 'no'}"
                   + (f", c = {rstr(c0.real)}" if on else ""))
 
+# the PAR ray-form claim, GATED (round-1 E-M1: it used to ride on an
+# ungated print, and a rayform() that returned True unconditionally passed
+# the whole receipt).  RECOGNIZED = the pre-registered exact content.
+PAR_RAY = {(0, 3, 'LT', 'g=1/2'): Fr(-1589, 4500),
+           (0, 2, 'LT', 'g=1/2'): Fr(-1589, 4500)}
+PAR_OFF = {(1, 2, 'LT', 'g=1/2'): (Fr(511, 1125), Fr(-1561, 2250),
+                                   Fr(-1561, 2250), Fr(14, 15))}
+pf_ok2 = True
+pf_det = []
+for base, rs in CELLS:
+    rm = max(rs)
+    for gname, _ in GCOL:
+        for rule in RULES:
+            P = DSTORE[(gname, base, rm, rule, 'PAR')]
+            on, c0 = par_form[(gname, base, rm, rule)]
+            ent = tuple(recognize(P.get((a, b), mpc(0)).real)
+                        for a in (0, 1) for b in (0, 1))
+            key = (base, rm, rule, gname.strip())
+            if key in PAR_RAY:
+                cc = PAR_RAY[key]
+                good = (on and recognize(c0.real) == cc
+                        and ent == (cc, -cc, -cc, cc))
+                lab = f"RAY c = {cc}"
+            elif key in PAR_OFF:
+                good = (not on) and ent == PAR_OFF[key]
+                lab = "OFF-RAY " + ",".join(str(e) for e in PAR_OFF[key])
+            else:
+                good = (not on) and ent == (Fr(0), Fr(0), Fr(0), Fr(0))
+                lab = "ZERO object (no ray form definable)"
+            pf_ok2 &= good
+            pf_det.append(f"b={base} r<={rm} {rule} {gname.strip()}: {lab} "
+                          f"[{good}]")
+check("SG2-E the PAR ray-form claim is GATED, not printed: the staggered-"
+      "parity 2x2 object is EXACTLY c*(I - sigma_x) with c = -1589/4500 at "
+      "the two b = 0 cells on the LT side at g = 1/2; it is EXACTLY the "
+      "four listed rationals and NOT on that ray at b = 1; and it is the "
+      "IDENTICALLY ZERO object — so no ray form is definable — on the EXC "
+      "side at both couplings and on the LT side at g = 0, in all three "
+      "cells.  Every entry is compared as an exact Fraction", pf_ok2,
+      "; ".join(pf_det))
+
 # ---- SG2 gates -------------------------------------------------------------
 n_eval = len(VSTORE)
 CLASSES = ("COLLAPSE", "STRUCTURED", "NO-COLLAPSE", "BOTH-ZERO",
@@ -823,10 +969,14 @@ class_ok = all(v[0] in CLASSES for v in VSTORE.values())
 dev_ok = all((v[1] is None) == (v[0] in ("BOTH-ZERO", "STRUCTURED")
                                 or v[0].startswith("SUPPORT"))
              for v in VSTORE.values())
+N_EXPECT = len(CELLS) * len(READINGS) * len(GCOL)
 check("SG2-A the sweep is complete and every verdict is drawn from the "
       "pre-registered class list, each carrying either a computed relative "
-      "deviation or an explicit support statement (3 cells x 5 channel "
-      "readings x 2 couplings)", n_eval == 30 and class_ok and dev_ok,
+      f"deviation or an explicit support statement ({len(CELLS)} cells x "
+      f"{len(READINGS)} channel readings x {len(GCOL)} couplings, every "
+      "count derived from the live containers)",
+      n_eval == N_EXPECT and len(DSTORE) == N_EXPECT * len(RULES)
+      and class_ok and dev_ok,
       f"{n_eval} (cell, reading, coupling) evaluations; "
       f"{len(DSTORE)} identified operators")
 
@@ -834,11 +984,13 @@ check("SG2-A the sweep is complete and every verdict is drawn from the "
 # so every order-p > 0 coefficient has vanishing row AND column sums; hence
 # EVERY fully channel-summed first moment vanishes identically.
 zs = mpf(0)
+n_coef = 0
 for gname, _ in GCOL:
     A = PIPES[gname]
     for n0_ in range(NS_INT):
         for rule in RULES:
             M = A(n0_, rule)[0]
+            n_coef += 1
             for k in range(16):
                 zs = max(zs, fabs(sum(M.get((k, j), mpc(0))
                                       for j in range(16))))
@@ -853,8 +1005,8 @@ check("SG2-B the ZERO-SUM LEMMA, gated: every leading region coefficient "
       "first moment vanishes identically, and the SEC reading is BOTH-ZERO "
       "at every cell and both couplings by structure, not by accident",
       zs < TOL and sec_zero,
-      f"max row/col sum over all 32 coefficients = {nstr(zs, 3)}; SEC "
-      f"BOTH-ZERO at all {len(CELLS) * 2} (cell, coupling) pairs")
+      f"max row/col sum over all {n_coef} coefficients = {nstr(zs, 3)}; SEC "
+      f"BOTH-ZERO at all {len(CELLS) * len(GCOL)} (cell, coupling) pairs")
 
 # coarsening consistency: every coarser reading is the exact fiber sum of FULL
 co_dev = mpf(0)
@@ -863,7 +1015,7 @@ for base, rs in CELLS:
     for gname, _ in GCOL:
         for rule in RULES:
             F = DSTORE[(gname, base, rm, rule, 'FULL')]
-            for reading in ('ROW', 'COL', 'PAR', 'SEC'):
+            for reading in [r_ for r_ in READINGS if r_ != 'FULL']:
                 agg = {}
                 for (i, j), v in F.items():
                     k = chan_of(reading, i, j)
@@ -872,11 +1024,16 @@ for base, rs in CELLS:
                 for k in sorted(set(agg) | set(G), key=str):
                     co_dev = max(co_dev,
                                  fabs(agg.get(k, mpc(0)) - G.get(k, mpc(0))))
-check("SG2-C channel-coarsening consistency: each coarser reading equals "
-      "the exact fiber sum of the FULL reading (the identification is "
-      "linear in the channel partition — a binning-integrity gate over all "
-      "cells, rules and couplings)", co_dev < TOL,
-      f"max deviation = {nstr(co_dev, 3)}")
+check("SG2-C channel-coarsening consistency: EVERY non-FULL reading in the "
+      "family — including the six product readings added by round 1 — "
+      "equals the exact fiber sum of the FULL reading (the identification "
+      "is linear in the channel partition — a binning-integrity gate over "
+      "all cells, rules and couplings; it is also the proof that the added "
+      "readings are genuine coarsenings of FULL and so inside the "
+      "pre-registered construction)", co_dev < TOL,
+      f"max deviation = {nstr(co_dev, 3)} over "
+      f"{len(READINGS) - 1} coarsenings x {len(CELLS)} cells x "
+      f"{len(RULES)} rules x {len(GCOL)} couplings")
 
 im_dev = max((fabs(v.imag) for D in DSTORE.values() for v in D.values()),
              default=mpf(0))
@@ -890,25 +1047,40 @@ n_struct = sum(1 for v in VSTORE.values() if v[0] == "STRUCTURED")
 n_nocol = sum(1 for v in VSTORE.values() if v[0] == "NO-COLLAPSE")
 n_supp = sum(1 for v in VSTORE.values() if v[0].startswith("SUPPORT"))
 n_bz = sum(1 for v in VSTORE.values() if v[0] == "BOTH-ZERO")
-print(f"  [SG2 CENSUS] over the 30 (cell, reading, coupling) evaluations: "
-      f"COLLAPSE {n_collapse}; STRUCTURED {n_struct}; NO-COLLAPSE "
-      f"{n_nocol}; SUPPORT-MISMATCH {n_supp}; BOTH-ZERO {n_bz}.")
+print(f"  [SG2 CENSUS] over the {n_eval} (cell, reading, coupling) "
+      f"evaluations: COLLAPSE {n_collapse}; STRUCTURED {n_struct}; "
+      f"NO-COLLAPSE {n_nocol}; SUPPORT-MISMATCH {n_supp}; BOTH-ZERO "
+      f"{n_bz}.")
 devs = [v[2] for v in VSTORE.values() if v[2] is not None]
 dev_lo = nstr(min(devs), 6) if devs else "-"
 dev_hi = nstr(max(devs), 6) if devs else "-"
+RAYABLE = ("COLLAPSE", "STRUCTURED", "NO-COLLAPSE")
+col_keys = sorted((k for k in VSTORE if VSTORE[k][0] == "COLLAPSE"), key=str)
+col_desc = "; ".join(f"b={k[1]} r<={k[2]} {k[3]} at {k[0].strip()} "
+                     f"(c = {rstr(VSTORE[k][1].real)})" for k in col_keys)
+col_readings = sorted({k[3] for k in col_keys})
+col_gs = sorted({k[0].strip() for k in col_keys})
+n_rayable = sum(1 for v in VSTORE.values() if v[0] in RAYABLE)
 sg2_verdict = (
-    "NO COMMON RAY at the interacting fixture under ANY reading of the "
-    "channel family: in the three discriminating readings (FULL, ROW, COL) "
-    "the two admission rules' identified operators are NOT proportional — "
-    f"not globally (relative deviations {dev_lo} to {dev_hi}, gate 1e-30) "
-    "and not "
-    "even per particle-number sector, so the verdict is NO-COLLAPSE and "
-    "not STRUCTURED; the SEC reading is annihilated by the zero-sum lemma "
-    "(SG2-B) and carries no discrimination; the PAR reading has an "
-    "identically zero EXC side, so no common ray is definable there"
-    if (n_collapse == 0 and n_struct == 0) else
-    f"MIXED: {n_collapse} COLLAPSE / {n_struct} STRUCTURED cells — see the "
-    f"table above")
+    "THE VERDICT CLASS IS READING-RELATIVE, and this is the whole finding: "
+    f"over the {n_eval} (cell, reading, coupling) evaluations of the "
+    f"product-closed channel family the census is COLLAPSE {n_collapse}, "
+    f"STRUCTURED {n_struct}, NO-COLLAPSE {n_nocol}, SUPPORT-MISMATCH "
+    f"{n_supp}, BOTH-ZERO {n_bz}, of which {n_rayable} are DISCRIMINATING "
+    "(both rules' identified operators nonzero, so a common ray is even "
+    f"definable), at relative deviations {dev_lo} to {dev_hi} against the "
+    "1e-30 gate. "
+    + ("NO evaluation collapses: there is no common ray under any reading "
+       "in the family, at either coupling"
+       if n_collapse == 0 else
+       f"The {n_collapse} COLLAPSE evaluations occur under reading(s) "
+       f"{', '.join(col_readings)} at coupling(s) {', '.join(col_gs)} — "
+       f"{col_desc} — and NOT under the finest reading FULL, which is "
+       "consistent with the declared one-way rule (a collapse at FULL "
+       "implies one in every coarsening; the converse does not hold)")
+    + "; the SEC reading is annihilated by the zero-sum lemma (SG2-B) and "
+    "carries no discrimination, and the PAR reading has an identically "
+    "zero EXC side (SG2-E), so no common ray is definable there either")
 print(f"  [SG2 VERDICT] {sg2_verdict}.")
 
 # ============================================================================
@@ -956,9 +1128,13 @@ for base, rs in CELLS:
                   f"{n_mv - n_cr - n_de}]")
 check("SG3-A the grain/interaction partition is exhaustive and disjoint at "
       "every (cell, reading, rule): SHARED + MOVED = the support union, "
-      "CREATED + DESTROYED <= MOVED — and the interaction is VISIBLE (the "
-      "total moved-channel count is nonzero, so the g = 0 column is a real "
-      "control and not a copy of the interacting one)",
+      "CREATED + DESTROYED <= MOVED — plus a NON-DEGENERACY check (the "
+      "total moved-channel count is nonzero, so the twin is not a verbatim "
+      "copy of the interacting column).  Scoped honestly per round 1 E-m2: "
+      "this second clause is satisfied by ANY nonzero LT motion, which "
+      "SG3-C guarantees a priori for a coupling that enters through LT — it "
+      "is NOT the control that establishes the twin's validity; SG1-B "
+      "(same builder, difference confined to the diagonal) is",
       part_ok and tot_moved > 0,
       f"{len(sep)} (cell, reading, rule) partitions; total moved channels = "
       f"{tot_moved}")
@@ -983,7 +1159,7 @@ for base, rs in CELLS:
             dc = cg.real - c0.real
             lab = ("GRAIN (class AND constant shared)" if fabs(dc) < TOL
                    else "GRAIN class, CONSTANT SHIFTED by the interaction")
-        TWIN[(base, rm, reading)] = (lab, cg, c0, dc)
+        TWIN[(base, rm, reading)] = (lab, cg, c0, dc, vg, v0)
         # self-consistency: the label is re-derived from the stored numbers
         if dc is not None:
             lab_ok &= ((fabs(dc) < TOL) == ("constant shared" in lab))
@@ -997,61 +1173,266 @@ for base, rs in CELLS:
 check("SG3-B every (cell, reading) pair carries a twin label re-derived "
       "from the stored constants (a label says 'constant shared' iff the "
       "recomputed difference is below 1e-30, and says GRAIN iff the two "
-      "verdict classes are literally equal)", lab_ok and len(TWIN) == 15,
+      "verdict classes are literally equal)",
+      lab_ok and len(TWIN) == len(CELLS) * len(READINGS),
       f"{len(TWIN)} labelled (cell, reading) pairs")
 
+n_twin = len(TWIN)
 n_grain = sum(1 for v in TWIN.values() if v[0].startswith("GRAIN"))
-n_ispec = len(TWIN) - n_grain
+n_ispec = n_twin - n_grain
 n_shift = sum(1 for v in TWIN.values() if "SHIFTED" in v[0])
-disc = [(b, rm, rd) for (b, rm, rd) in TWIN if rd in ('FULL', 'ROW', 'COL')]
+# DISCRIMINATING is now COMPUTED, not a typed list of reading names: a
+# (cell, reading) pair discriminates iff a ray comparison is definable at
+# BOTH couplings (neither side identically zero).
+disc = [k for k in TWIN if TWIN[k][4] in RAYABLE and TWIN[k][5] in RAYABLE]
 disc_same = sum(1 for k in disc if TWIN[k][0].startswith("GRAIN"))
 par_int = sum(1 for k in TWIN if k[2] == 'PAR'
               and TWIN[k][0].startswith("INTERACTION"))
-print(f"  [SG3 CENSUS] {n_grain}/15 (cell, reading) pairs share their "
+# THE REVERSAL CENSUS (round-1 E-A1): pairs whose g = 0 twin COLLAPSES.
+rev = [k for k in sorted(disc, key=str)
+       if TWIN[k][5] == "COLLAPSE" and TWIN[k][4] != "COLLAPSE"]
+fwd = [k for k in sorted(disc, key=str)
+       if TWIN[k][4] == "COLLAPSE" and TWIN[k][5] != "COLLAPSE"]
+both_col = [k for k in sorted(disc, key=str)
+            if TWIN[k][4] == "COLLAPSE" and TWIN[k][5] == "COLLAPSE"]
+neither = [k for k in sorted(disc, key=str)
+           if TWIN[k][4] != "COLLAPSE" and TWIN[k][5] != "COLLAPSE"]
+print(f"  [SG3 CENSUS] {n_grain}/{n_twin} (cell, reading) pairs share their "
       f"verdict CLASS with the g = 0 twin ({n_shift} of them with a "
-      f"constant the interaction shifts); {n_ispec}/15 are "
-      f"INTERACTION-SPECIFIC. In the three discriminating readings "
-      f"(FULL/ROW/COL) {disc_same}/{len(disc)} share the class; the PAR "
-      f"reading contributes {par_int} interaction-specific pairs.")
+      f"constant the interaction shifts); {n_ispec}/{n_twin} are "
+      f"INTERACTION-SPECIFIC. {len(disc)}/{n_twin} pairs are DISCRIMINATING "
+      f"(a ray comparison is definable at both couplings) and of those "
+      f"{disc_same}/{len(disc)} share the class; the PAR reading "
+      f"contributes {par_int} interaction-specific pairs.  RAY CENSUS over "
+      f"the discriminating pairs: collapse at BOTH couplings "
+      f"{len(both_col)}; collapse at g = 0 ONLY (the interaction destroys "
+      f"the ray) {len(rev)}; collapse at g = 1/2 ONLY (the interaction "
+      f"creates it) {len(fwd)}; collapse at NEITHER {len(neither)}.")
 
-# the structural reading of the EXC column (gated, with its mechanism)
+# the structural reading of the EXC column (gated, with its mechanism).
+# Round 1 STRENGTHENING: the referee's independent exact-rational rebuild
+# showed this is not a 1e-30 near-equality but an EXACT RATIONAL IDENTITY,
+# region by region, with the LT side exactly different in every region.
+# Both halves are gated as Fraction equalities/inequalities here.
 exc_dev = mpf(0)
+exc_exact = True
+lt_diff_min = None
+n_exc_ent = 0
+exc_reg = []
 for n0_ in range(NS_INT):
     Mg = PIPES['g=1/2'](n0_, 'EXC')[0]
     M0 = PIPES['g=0  '](n0_, 'EXC')[0]
+    n_eq = 0
     for k in sorted(set(Mg) | set(M0)):
-        exc_dev = max(exc_dev, fabs(Mg.get(k, mpc(0)) - M0.get(k, mpc(0))))
+        a_, b_ = Mg.get(k, mpc(0)), M0.get(k, mpc(0))
+        exc_dev = max(exc_dev, fabs(a_ - b_))
+        fa, fb = recognize(a_.real), recognize(b_.real)
+        n_exc_ent += 1
+        good = (fa is not None and fb is not None and fa == fb
+                and fabs(a_.imag) < TOL and fabs(b_.imag) < TOL)
+        exc_exact &= good
+        n_eq += int(good)
+    Lg = PIPES['g=1/2'](n0_, 'LT')[0]
+    L0 = PIPES['g=0  '](n0_, 'LT')[0]
+    reg_lt = max((fabs(Lg.get(k, mpc(0)) - L0.get(k, mpc(0)))
+                  for k in sorted(set(Lg) | set(L0))), default=mpf(0))
+    lt_diff_min = reg_lt if lt_diff_min is None else min(lt_diff_min, reg_lt)
+    exc_reg.append(f"n0={n0_}: {n_eq} EXC entries exactly equal, LT max "
+                   f"|g=1/2 - g=0| = {nstr(reg_lt, 6)}")
 exc_D_dev = max(sep[key][7] for key in sorted(sep, key=str)
                 if key[3] == 'EXC')
-check("SG3-C the EXC COLUMN IS COUPLING-BLIND, gated: the EXC leading "
-      "(Delta^2) region coefficient is entrywise IDENTICAL at g = 1/2 and "
-      "g = 0, hence so is every EXC identified operator in every reading. "
-      "Mechanism (exact, order by order): Gamma = |U|^2, so at Delta^2 the "
-      "off-diagonal entry is |H_ij|^2 and the diagonal entry is "
-      "-sum_{k != i} |H_ik|^2 — the diagonal of H (which is where the "
-      "electric gauge-string term and ONLY it lives in this fixture, "
-      "SG1-B) cancels out of the modulus at this order. The interaction "
-      "therefore enters the ray comparison ONLY through the LT side",
-      exc_dev < TOL and exc_D_dev < TOL,
+check("SG3-C the EXC COLUMN IS COUPLING-BLIND — an EXACT RATIONAL "
+      "IDENTITY, not a threshold: every entry of the EXC leading (Delta^2) "
+      "region coefficient is recognized as an exact Fraction and is the "
+      "SAME Fraction at g = 1/2 and at g = 0, in all four regions, hence "
+      "so is every EXC identified operator in every reading; and in all "
+      "four regions the LT coefficient DOES differ between the couplings "
+      "by a computed nonzero amount.  Mechanism (exact, order by order): "
+      "Gamma = |U|^2, so at Delta^2 the off-diagonal entry is |H_ij|^2 and "
+      "the diagonal entry is -sum_{k != i} |H_ik|^2 — the diagonal of H "
+      "(which is where the electric gauge-string term and ONLY it lives in "
+      "this fixture, SG1-B) cancels out of the modulus at this order. The "
+      "interaction therefore enters the ray comparison ONLY through the LT "
+      "side",
+      exc_exact and exc_dev < TOL and exc_D_dev < TOL
+      and lt_diff_min is not None and lt_diff_min > TOL,
+      f"{n_exc_ent} EXC entries, all exactly equal as Fractions; numeric "
       f"max coefficient deviation = {nstr(exc_dev, 3)}; max identified-"
-      f"operator deviation = {nstr(exc_D_dev, 3)}")
+      f"operator deviation = {nstr(exc_D_dev, 3)}; smallest per-region LT "
+      f"difference = {nstr(lt_diff_min, 6)}; " + "; ".join(exc_reg))
 
+# ---- SG3-D: THE REVERSAL CENSUS, gated (round-1 E-A1) ---------------------
+print("  THE RAY CENSUS OVER THE DISCRIMINATING PAIRS (which side of the "
+      "coupling, if either, admits a common ray):")
+rev_ok = True
+rev_det = []
+for k in sorted(disc, key=str):
+    lab, cg, c0, dc, vg, v0 = TWIN[k]
+    if vg == "COLLAPSE" or v0 == "COLLAPSE":
+        # the collapse constant(s) must be recognized exact rationals
+        fr_g = recognize(cg.real) if (vg == "COLLAPSE" and cg is not None) \
+            else None
+        fr_0 = recognize(c0.real) if (v0 == "COLLAPSE" and c0 is not None) \
+            else None
+        rev_ok &= ((vg != "COLLAPSE" or fr_g is not None)
+                   and (v0 != "COLLAPSE" or fr_0 is not None))
+        # the two-channels-per-sector caveat, COMPUTED: within a sector
+        # holding exactly two channels the zero-sum lemma forces
+        # proportionality, so a sector-labelled collapse there is really
+        # the EQUALITY OF THE PER-SECTOR CONSTANTS, a weaker object than
+        # the free-core ray.
+        gsel = 'g=0  ' if v0 == "COLLAPSE" else 'g=1/2'
+        De = DSTORE[(gsel, k[0], k[1], 'EXC', k[2])]
+        cnt = {}
+        for ch in De:
+            s_ = sector_of(k[2], ch)
+            cnt[s_] = cnt.get(s_, 0) + 1
+        rev_det.append(
+            f"b={k[0]} r<={k[1]} {k[2]}: g=1/2 {vg}"
+            + (f" c = {fr_g}" if fr_g is not None else "")
+            + f" | g=0 {v0}" + (f" c = {fr_0}" if fr_0 is not None else "")
+            + "; EXC channels per sector at the collapsing coupling "
+            + ",".join(f"N={s_}:{n_}" for s_, n_ in sorted(cnt.items())))
+        print(f"    {rev_det[-1]}")
+part_exh = (len(both_col) + len(rev) + len(fwd) + len(neither) == len(disc))
+check("SG3-D THE RAY CENSUS IS EXHAUSTIVE AND ITS COLLAPSE CONSTANTS ARE "
+      "EXACT: every DISCRIMINATING (cell, reading) pair falls in exactly "
+      "one of {collapse at both couplings, collapse at g = 0 only, "
+      "collapse at g = 1/2 only, collapse at neither}, and every collapse "
+      "constant appearing in that census is recognized as an exact "
+      "rational.  This gate is what makes the GRAIN-vs-INTERACTION "
+      "attribution below a computed object rather than a narrated one: "
+      "'collapse at g = 0 only' means the INTERACTION destroys the ray "
+      "there, 'collapse at neither' means the grain already destroyed it",
+      part_exh and rev_ok,
+      f"{len(disc)} discriminating pairs = both {len(both_col)} + g=0-only "
+      f"{len(rev)} + g=1/2-only {len(fwd)} + neither {len(neither)}")
+
+# ---- SG3-E: the reference-constant convention (round-1 E-M2) --------------
+def ref_key_alt(M):
+    """An INDEPENDENT, equally canonical reference rule: the str-least
+    channel with a nonzero entry (the round's referee convention)."""
+    for k in sorted(M, key=str):
+        if fabs(M[k]) > TOL:
+            return k
+    return sorted(M, key=str)[0]
+
+alt_class_ok = True
+alt_same = 0
+alt_diff = 0
+alt_det = []
+for k in sorted(disc, key=str):
+    base, rm, reading = k
+    row = []
+    for gname, _ in GCOL:
+        De = DSTORE[(gname, base, rm, 'EXC', reading)]
+        Dl = DSTORE[(gname, base, rm, 'LT', reading)]
+        bi = ref_key_alt(De)
+        ca = Dl.get(bi, mpc(0)) / De[bi]
+        nl = mnorm(Dl)
+        dva = mnorm({kk: Dl.get(kk, mpc(0)) - ca * De.get(kk, mpc(0))
+                     for kk in sorted(set(De) | set(Dl), key=str)}) / nl
+        # the CLASS is reference-free: collapse iff the residual vanishes
+        cls_alt = "COLLAPSE" if dva < TOL else "not-COLLAPSE"
+        cls_can = ("COLLAPSE" if VSTORE[(gname, base, rm, reading)][0]
+                   == "COLLAPSE" else "not-COLLAPSE")
+        alt_class_ok &= (cls_alt == cls_can)
+        row.append((gname.strip(), recognize(ca.real),
+                    recognize(VSTORE[(gname, base, rm, reading)][1].real)
+                    if VSTORE[(gname, base, rm, reading)][1] is not None
+                    else None))
+    dc_can = TWIN[k][3]
+    dc_alt = None
+    if row[0][1] is not None and row[1][1] is not None:
+        dc_alt = row[0][1] - row[1][1]
+    dc_can_fr = recognize(dc_can) if dc_can is not None else None
+    if dc_alt is not None and dc_can_fr is not None:
+        if dc_alt == dc_can_fr: alt_same += 1
+        else: alt_diff += 1
+        alt_det.append(f"b={base} r<={rm} {reading}: canonical delta c = "
+                       f"{dc_can_fr}, alternative-convention delta c = "
+                       f"{dc_alt}" + ("" if dc_alt == dc_can_fr
+                                      else "  [CONVENTION-DEPENDENT]"))
+print("  THE REFERENCE-CONSTANT CONVENTION, tested against an independent "
+      "one (round-1 E-M2): the reported ray constant c and the interaction "
+      "shift delta c are read off a CANONICAL reference channel; the "
+      "VERDICT CLASS is reference-free but delta c is not.")
+for ln in alt_det:
+    print(f"    {ln}")
+check("SG3-E the verdict CLASS is convention-free and the reference "
+      "constant is NOT: recomputing every discriminating pair with an "
+      "independent reference rule (str-least channel with a nonzero EXC "
+      "entry, in place of the declared str-least-argmax rule) reproduces "
+      "the COLLAPSE / not-COLLAPSE classification of EVERY pair at both "
+      "couplings, while the interaction shift delta c is reproduced in "
+      f"{alt_same} of {alt_same + alt_diff} pairs and CHANGES in "
+      f"{alt_diff} — so 'N/N constants shifted' is a convention-relative "
+      "per-channel diagnostic, declared as such, and NOT a reference-free "
+      "measure of the interaction", alt_class_ok,
+      f"classes agree in all {len(disc)} discriminating pairs at both "
+      f"couplings; delta c agrees in {alt_same}, differs in {alt_diff}")
+
+# ---- the SG3 verdict, BUILT FROM THE COMPUTED CENSUS -----------------------
+# Round-1 E-A2: this string used to be a literal with every number typed in,
+# and it survived verbatim under mutations that inverted the census printed
+# three lines above it.  It is now interpolated from TWIN / rev / fwd /
+# both_col / neither / n_grain / n_ispec / disc_same / par_int / alt_diff and
+# from the recognized PAR rationals, the way sg2_verdict is.
+def _pairstr(ks):
+    return ", ".join(f"b={k[0]} r<={k[1]} {k[2]}" for k in ks) or "none"
+
+rev_readings = sorted({k[2] for k in rev})
+rev_consts = sorted({str(recognize(TWIN[k][2].real)) for k in rev})
+par_ray_c = sorted({str(v) for v in PAR_RAY.values()})
+par_off_c = sorted({", ".join(str(x) for x in v)
+                    for v in PAR_OFF.values()})
+if rev and not fwd and not both_col:
+    _head = ("THE ATTRIBUTION IS READING-RELATIVE, AND AT THIS FIXTURE BOTH "
+             "ATTRIBUTIONS OCCUR — the D44d §5 B1 GRAIN reading is NOT the "
+             "whole story")
+elif not rev and not fwd and not both_col:
+    _head = ("the D44d §5 B1 lesson holds at the IDENTIFIED-operator level "
+             "too: no reading in the family admits a ray at either coupling")
+else:
+    _head = ("THE ATTRIBUTION IS READING-RELATIVE: the ray census below is "
+             "mixed in both directions")
 sg3_verdict = (
-    "the D44d §5 B1 lesson holds at the IDENTIFIED-operator level too: the "
-    "failure to collapse is GRAIN, not interaction. In all 9 discriminating "
-    "(cell, reading) pairs the g = 0 twin is NO-COLLAPSE exactly as the "
-    "interacting cell is; what the interaction changes there is only the "
-    "reference constant (9/9 constants shifted, every shift printed above "
-    "as an exact rational). The one genuinely INTERACTION-SPECIFIC "
-    "structure in the whole sweep is the PAR channel: the staggered-parity "
-    "content of the LT identified operator is IDENTICALLY ZERO at g = 0 "
-    "and is CREATED by the coupling in all 3 cells (4 channels created per "
-    "cell, zero shared) — and at base b = 0 that created content lies "
-    "EXACTLY on the free-core ray form c*(I - sigma_x) with c = -1589/4500, "
-    "while at b = 1 it does not (511/1125, -1561/2250, -1561/2250, 14/15 — "
-    "symmetric but not proportional to I - sigma_x). It is NOT a common-ray "
-    "statement: the EXC side of that channel vanishes identically (SG3-C), "
-    "so only one of the two admission rules has an operator there")
+    _head + f". Over the {len(disc)} DISCRIMINATING (cell, reading) pairs "
+    f"of the product-closed family: in {len(neither)} of them NEITHER "
+    "coupling admits a common ray, so THERE the failure is GRAIN — the "
+    "grain destroys the collapse before any coupling is switched on, "
+    f"exactly as D44d found for the raw bracket; but in {len(rev)} of them "
+    "the g = 0 twin COLLAPSES onto a single common ray and the interacting "
+    "cell does NOT, so THERE the ray is destroyed BY THE INTERACTION and "
+    f"not by the grain" + (f" — those pairs are {_pairstr(rev)}, under "
+    f"reading(s) {', '.join(rev_readings)}, with exact g = 0 ray "
+    f"constant(s) {', '.join(rev_consts)}" if rev else "") +
+    f"; in {len(fwd)} the coupling CREATES a ray that g = 0 does not have, "
+    f"and in {len(both_col)} both couplings collapse. "
+    "CAVEAT, computed and delivered with the finding (SG3-D prints the "
+    "per-sector channel counts): in a sector holding exactly two channels "
+    "the zero-sum lemma (SG2-B) already forces proportionality, so the "
+    "substantive content of a sector-labelled collapse is the EQUALITY OF "
+    "THE PER-SECTOR CONSTANTS across sectors, which is weaker than the "
+    "free-core ray. "
+    f"Class census: {n_grain}/{n_twin} (cell, reading) pairs share their "
+    f"class with the twin, {n_ispec}/{n_twin} are INTERACTION-SPECIFIC, and "
+    f"{disc_same}/{len(disc)} discriminating pairs share it. What the "
+    "interaction does to the reference constants is a CONVENTION-RELATIVE "
+    f"diagnostic (SG3-E): {n_shift} constants shift under the declared "
+    f"canonical rule, of which {alt_diff} take a different value under an "
+    "independent reference rule, so this is a per-channel number and not a "
+    "reference-free measure. The PAR channel is INTERACTION-SPECIFIC in "
+    f"{par_int} pairs: the staggered-parity content of the LT identified "
+    "operator is IDENTICALLY ZERO at g = 0 and is CREATED by the coupling "
+    f"in all {len(CELLS)} cells (4 channels created per cell, zero shared) "
+    "— and at base b = 0 that created content lies EXACTLY on the "
+    f"free-core ray form c*(I - sigma_x) with c = {', '.join(par_ray_c)}, "
+    f"while at b = 1 it does not ({'; '.join(par_off_c)} — symmetric but "
+    "not proportional to I - sigma_x), all four entries gated as exact "
+    "Fractions in SG2-E. It is NOT a common-ray statement: the EXC side of "
+    "that channel vanishes identically (SG3-C), so only one of the two "
+    "admission rules has an operator there")
 print(f"  [SG3 VERDICT] {sg3_verdict}.")
 
 # ============================================================================
@@ -1064,8 +1445,10 @@ print(f"  mp.dps as run = 50 for every number above; gate threshold 1e-30; "
 dps_hi = 80
 mp.dps = dps_hi
 PIPES_HI = {}
+CCACHE_HI = {}
 for gname, gval in GCOL:
     PIPES_HI[gname] = int_pipeline(gval)[1]
+    CCACHE_HI[gname] = {}
 hi_dev = mpf(0)
 hi_ver_ok = True
 for base, rs in CELLS:
@@ -1075,7 +1458,7 @@ for base, rs in CELLS:
             Dh = {}
             for rule in RULES:
                 Dh[rule] = D_identified(PIPES_HI[gname], base, rs, rule,
-                                        reading)
+                                        reading, ccache=CCACHE_HI[gname])
                 Dlo = DSTORE[(gname, base, rm, rule, reading)]
                 for k in sorted(set(Dh[rule]) | set(Dlo), key=str):
                     hi_dev = max(hi_dev, fabs(Dh[rule].get(k, mpc(0))
@@ -1091,9 +1474,9 @@ check(f"SG4-A precision stability: the ENTIRE SG2 layer recomputed at "
       f"ray constant and every verdict class of the dps-50 run — the "
       f"delivered numbers are not precision artefacts",
       hi_dev < TOL and hi_ver_ok,
-      f"max deviation across all 60 operators and 30 verdicts = "
-      f"{nstr(hi_dev, 3)} (gate 1e-30); verdict classes identical: "
-      f"{hi_ver_ok}")
+      f"max deviation across all {len(DSTORE)} operators and {n_eval} "
+      f"verdicts = {nstr(hi_dev, 3)} (gate 1e-30); verdict classes "
+      f"identical: {hi_ver_ok}")
 
 # ---- exactness of the delivered constants ---------------------------------
 EXACT = {}
@@ -1110,7 +1493,7 @@ for base, rs in CELLS:
                 fr = recognize(v[1].real)
                 if fr is not None: n_rec += 1
             EXACT[(gname, base, rm, reading)] = (v[0], fr)
-        lab, cg, c0, dc = TWIN[(base, rm, reading)]
+        lab, cg, c0, dc, _vg, _v0 = TWIN[(base, rm, reading)]
         frd = None
         if dc is not None:
             n_const += 1
@@ -1140,8 +1523,9 @@ check("SG4-B exactness of the delivered scalars: every ray constant, every "
       "and the identification is a finite integer-weighted sum, so these "
       "are exact values, not decimals", n_rec == n_const and n_const > 0,
       f"{n_rec}/{n_const} recognized; max residual = "
-      f"{nstr(REC_MAXERR[0], 3)}; max denominator = {REC_MAXDEN[0]} "
-      f"(cap {DEN_CAP})")
+      f"{nstr(REC_MAXERR[0], 3)} and max denominator = {REC_MAXDEN[0]} "
+      f"(cap {DEN_CAP}) over EVERY recognition performed in this run, "
+      f"including SG2-E's PAR entries and SG3-C's exact EXC identity")
 
 ALLOW = (Fr, int, str, bool, type(None))
 CONT = (tuple, list, frozenset, set)
@@ -1167,24 +1551,93 @@ check("SG4-C the ALLOW-LIST PURITY WALK (#362 form) over the delivered "
       "is deliberately not in this walk", n_leaf > 0 and n_impure == 0,
       f"leaves = {n_leaf}; impure = {n_impure}")
 
+# ---- SG4-D: the self-scan, now an AST WALK over every check() call site ----
+# Round-1 E-M4(c) / the three-round CARRIED finding: the previous scan was
+# four literal string needles and could not see a vacuous gate written in
+# any other form (the round's mutant e8 wrote one as `len(str(x)) >= 0` and
+# the scan reported zero occurrences).  It is now a walk over the parsed
+# source: every `check(...)` call site is located and its PREDICATE
+# expression is required to reference at least one name that this run
+# actually binds.  SCOPE, stated flatly: this decides the referee's
+# criterion ("no free variable bound in the run"), which is a necessary
+# condition for non-vacuity and NOT a sufficient one — no scan can decide
+# vacuity in general, and this one does not claim to.
 _own = open(os.path.abspath(__file__)).read()
-_needles = ["check(" + "True", "check(" + "1,", "check(" + "not False",
-            "check(" + "bool(True)"]
-_hits = sum(_own.count(nd) for nd in _needles)
-check("SG4-D self-scan: no vacuous gate anywhere in this receipt — the "
-      "forbidden always-true check patterns (built here by string "
-      "concatenation so the scan cannot match itself) have ZERO source "
-      "occurrences, and every check above carries a predicate computed from "
-      "the run", _hits == 0, f"occurrences across {len(_needles)} needles "
-      f"= {_hits}; source length = {len(_own)} bytes")
+_tree = ast.parse(_own)
+_BUILTIN = set(dir(builtins))
+# every name this source BINDS (assignment targets, loop targets, function
+# definitions, imports) — computed from the parse, so the scan does not
+# depend on when it runs relative to the gates it inspects
+_BOUND = set()
+for _node in ast.walk(_tree):
+    if isinstance(_node, ast.Name) and isinstance(_node.ctx, ast.Store):
+        _BOUND.add(_node.id)
+    elif isinstance(_node, (ast.FunctionDef, ast.ClassDef)):
+        _BOUND.add(_node.name)
+    elif isinstance(_node, (ast.Import, ast.ImportFrom)):
+        for _al in _node.names:
+            _BOUND.add((_al.asname or _al.name).split('.')[0])
+_vac = []
+_ncheck = 0
+_dotted = set()
+for _node in ast.walk(_tree):
+    if isinstance(_node, ast.Attribute) and isinstance(_node.value, ast.Name):
+        _dotted.add(f"{_node.value.id}.{_node.attr}")
+    if not (isinstance(_node, ast.Call)
+            and isinstance(_node.func, ast.Name)
+            and _node.func.id == 'check'):
+        continue
+    _ncheck += 1
+    if len(_node.args) < 2:
+        _vac.append((_node.lineno, "no predicate argument"))
+        continue
+    _pred = _node.args[1]
+    _nm = {n.id for n in ast.walk(_pred) if isinstance(n, ast.Name)}
+    _live = {n for n in _nm if n not in _BUILTIN and n in _BOUND}
+    if not _live:
+        _vac.append((_node.lineno, ast.dump(_pred)[:60]))
+check("SG4-D self-scan by AST WALK (not by literal needle): every "
+      "check() call site in this source is parsed and its predicate "
+      "expression is required to reference at least one name bound by this "
+      "run — so a vacuous gate written in ANY syntactic form (check(True), "
+      "check(bool(True)), check(len('x') >= 0), ...) is reported, which "
+      "the previous four-needle scan could not do.  Necessary, not "
+      "sufficient: this does not decide vacuity in general and does not "
+      "claim to", not _vac and _ncheck > 0,
+      f"{_ncheck} check() call sites parsed; constant-predicate call sites "
+      f"= {len(_vac)}{'' if not _vac else ' at lines ' + ','.join(str(v[0]) for v in _vac)}; "
+      f"source length = {len(_own)} bytes")
 
-check("SG4-E determinism: no RNG is loaded, no wall clock is read, and no "
-      "output ordering depends on hash randomization (every dict key is an "
-      "int or a tuple of ints, and every printed iteration runs over an "
-      "explicit list or a str-sorted key list) — rerun byte-identical under "
-      "any PYTHONHASHSEED", 'random' not in sys.modules,
-      f"'random' loaded: {'random' in sys.modules}; modules touched by this "
-      f"receipt: mpmath, fractions, sys, os")
+# ---- SG4-E: determinism, with the predicate matching the label ------------
+_FORBID_MOD = ('random', 'secrets', 'numpy', 'uuid', 'datetime')
+_mods_bad = sorted(m for m in _FORBID_MOD if m in sys.modules)
+_CLOCK_API = ('time.time', 'time.monotonic', 'time.perf_counter',
+              'time.process_time', 'time.time_ns', 'datetime.now',
+              'os.urandom', 'os.times', 'random.random', 'random.seed')
+_clock_bad = sorted(_dotted & set(_CLOCK_API))
+_keytypes = set()
+def _kw(x):
+    if isinstance(x, dict):
+        for k2, v2 in x.items(): _kw(k2); _kw(v2)
+    elif isinstance(x, (tuple, list, frozenset, set)):
+        for y in x: _kw(y)
+    else:
+        _keytypes.add(type(x).__name__)
+_kw(EXACT)
+_key_ok = _keytypes <= {'int', 'str', 'bool', 'NoneType', 'Fraction'}
+check("SG4-E determinism, gated on what the label says: (a) none of the "
+      f"declared nondeterminism modules {list(_FORBID_MOD)} is present in "
+      "sys.modules — the list is read from sys.modules, not typed; (b) the "
+      "parsed source contains NO call to a declared wall-clock or RNG API "
+      f"{list(_CLOCK_API)} (an AST attribute scan, so `import time; "
+      "time.time()` anywhere in this file would fire); (c) every leaf of "
+      "the delivered exact record — keys included — is an int, str, bool, "
+      "None or Fraction, so no output ordering can depend on hash "
+      "randomization.  Rerun byte-identical under any PYTHONHASHSEED",
+      not _mods_bad and not _clock_bad and _key_ok,
+      f"forbidden modules loaded: {_mods_bad or 'none'}; clock/RNG calls in "
+      f"source: {_clock_bad or 'none'}; delivered leaf/key types = "
+      f"{sorted(_keytypes)}")
 
 # ============================================================================
 print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL")
@@ -1203,45 +1656,74 @@ print("[SG1 VERDICT] the d44d KG3 interacting fixture and its "
       "all six committed per-sector reference constants reproduced.")
 print("[SG2 VERDICT] " + sg2_verdict + ".")
 print("[SG3 VERDICT] " + sg3_verdict + ".")
-print("[VERDICT] d46e GREEN-UNREVIEWED (the hostile round is deferred per "
-      "the D46 program pin; paper-32's round precedes it) — THE PIN'S "
-      "QUESTION IS ANSWERED IN THE NEGATIVE, AND THE ANSWER IS GRAIN, NOT "
-      "INTERACTION. Smearing does NOT rescue the ray at the interacting "
-      "fixture: applying the corpus's own tau first-moment identification "
-      "(D = sum_delta delta*tau) to the interacting one-region "
-      "coefficients leaves the two admission rules' identified operators "
-      "non-proportional in every discriminating reading of the "
-      "pre-registered channel family, globally AND per particle-number "
-      "sector, at relative deviations of order 1 against a 1e-30 gate — "
-      "so the free core's collapse (SG0) does not survive to this fixture "
-      "in any form the identification can see. BUT the g = 0 column, which "
-      "this unit exists to carry, shows the SAME NO-COLLAPSE at zero "
-      "coupling in all 9 discriminating (cell, reading) pairs: the failure "
-      "is a property of the fixture's GRAIN (4-site open chain, occupation "
-      "basis, no translation average), exactly as D44d's round found for "
-      "the raw bracket, and it is NOT an interaction effect. What the "
-      "interaction actually does is measured, not narrated: (i) it leaves "
-      "the ENTIRE EXC column invariant — the Delta^2 coefficient is "
-      "exactly blind to the diagonal of H, which is where the electric "
-      "gauge-string term and only it lives, so the coupling reaches the "
-      "comparison solely through the LT side (SG3-C); (ii) it shifts every "
-      "one of the 9 reference constants by an exact rational, all printed; "
-      "(iii) it CREATES, out of nothing, the staggered-parity (PAR) "
-      "content of the LT identified operator — identically zero at g = 0 "
-      "in all three cells, four channels created in each — and at base "
-      "b = 0 that created content sits EXACTLY on the free-core ray form "
-      "c*(I - sigma_x) with c = -1589/4500, though at b = 1 it does not, "
-      "and in neither case is it a common-ray statement because the EXC "
-      "side of that channel vanishes identically. SCOPE, stated flatly: "
-      "one interacting point, one collar convention, singleton regions, "
-      "three base/separation cells, five channel readings, ORD 4 — a "
-      "fixture-scale statement about the identified operator, never a "
-      "theorem about interacting theories; and the negative result is "
-      "reading-relative in exactly the way SG2's family makes auditable "
-      "(a collapse under the FULL reading would have implied one under "
-      "every coarsening; the converse does not hold, and the SEC "
-      "coarsening is annihilated outright by the zero-sum lemma). The "
-      "successor question this leaves on the ladder: a fixture whose grain "
-      "ADMITS the free-core collapse at g = 0 — i.e. one with the "
-      "translation average the identification was built on — is what would "
-      "make the interacting comparison discriminating at all.")
+if rev and not fwd:
+    _attr = ("AT THIS FIXTURE BOTH ATTRIBUTIONS OCCUR — some readings put "
+             "the failure on the grain and others put it on the interaction")
+elif not rev and not fwd and not both_col:
+    _attr = ("NO READING IN THE FAMILY ADMITS A RAY AT EITHER COUPLING, so "
+             "at every discriminating pair the failure is grain-borne")
+else:
+    _attr = "THE RAY CENSUS IS MIXED IN BOTH DIRECTIONS"
+print("[VERDICT] d46e GREEN-UNREVIEWED, ROUND 1 APPLIED (the round's "
+      "blockers and majors are addressed in this receipt; the note "
+      "and LOG carry the forward-correcting entry) — THE PIN'S QUESTION "
+      f"IS ANSWERED, AND THE ANSWER IS READING-RELATIVE: {_attr}. THE "
+      "UNIT'S ORIGINAL SINGLE-ATTRIBUTION HEADLINE IS WITHDRAWN AND "
+      "REPLACED BY THE CENSUS BELOW. Applying "
+      "the corpus's own tau first-moment identification (D = sum_delta "
+      "delta*tau, the SAME function that reproduces the free-core ray in "
+      "SG0-C) to the interacting one-region coefficients: over the "
+      f"{n_eval} (cell, reading, coupling) evaluations of the "
+      f"product-closed channel family, {len(disc)} (cell, reading) pairs "
+      "are DISCRIMINATING, and of those "
+      f"{len(neither)} admit no common ray at EITHER coupling — there the "
+      "failure is GRAIN, exactly as D44d's round found for the raw "
+      f"bracket — while {len(rev)} of them COLLAPSE at g = 0 onto a single "
+      "exact rational ray and do NOT collapse at g = 1/2 — there the ray "
+      "is destroyed BY THE INTERACTION"
+      + (f" ({_pairstr(rev)}; g = 0 constant(s) {', '.join(rev_consts)})"
+         if rev else "")
+      + f", and {len(fwd)} collapse only at g = 1/2 while {len(both_col)} "
+      "collapse at both. So SMEARING DOES NOT RESCUE THE RAY UNDER THE "
+      "FINEST READINGS, and 'ray-universality under interaction' is now "
+      "evidenced AGAINST at the sector-resolved readings — but the "
+      "evidence is READING-DEPENDENT and the census above is the delivered "
+      "object, taken over ALL readings and never over a privileged subset. "
+      "The receipt's own one-way rule is the reason both can hold: a "
+      "collapse at FULL implies one in every coarsening, the converse does "
+      "not, and the coarse readings are where the g = 0 collapse lives. "
+      "The caveat travels with the finding (SG3-D): where a sector holds "
+      "exactly two channels the zero-sum lemma already forces "
+      "proportionality inside it, so a sector-labelled collapse asserts "
+      "the EQUALITY OF THE PER-SECTOR CONSTANTS and is weaker than the "
+      "free-core ray. What the interaction does is measured, not narrated: "
+      "(i) it leaves the ENTIRE EXC column invariant — an EXACT RATIONAL "
+      "IDENTITY entrywise in all four regions (SG3-C), not a threshold — "
+      "because the Delta^2 coefficient is blind to the diagonal of H, "
+      "which is where the electric gauge-string term and only it lives, so "
+      "the coupling reaches the comparison solely through the LT side, "
+      "which differs between the couplings in all four regions; (ii) it "
+      f"shifts {n_shift} reference constants by exact rationals, a "
+      "CONVENTION-RELATIVE per-channel diagnostic and not a reference-free "
+      f"measure — {alt_diff} of them take a different value under an "
+      "independent reference rule while EVERY verdict class is unchanged "
+      "(SG3-E); (iii) it CREATES, out of nothing, the staggered-parity "
+      "(PAR) content of the LT identified operator — identically zero at "
+      f"g = 0 in all {len(CELLS)} cells, four channels created in each — "
+      "and at base b = 0 that created content sits EXACTLY on the "
+      f"free-core ray form c*(I - sigma_x) with c = "
+      f"{', '.join(par_ray_c)}, though at b = 1 it does not, both gated "
+      "entrywise as exact Fractions in SG2-E, and in neither case is it a "
+      "common-ray statement because the EXC side of that channel vanishes "
+      "identically. SCOPE, stated flatly: one interacting point, one "
+      f"collar convention, singleton regions, {len(CELLS)} base/separation "
+      f"cells, {len(READINGS)} channel readings, ORD 4 — a fixture-scale "
+      "statement about the identified operator, never a theorem about "
+      "interacting theories, and one whose verdict class is demonstrably "
+      "reading-relative. The successor question this leaves on the ladder "
+      "is therefore NOT 'find a fixture that can decide it' — this one "
+      "does carry interaction content — but the CHANNEL-READING question: "
+      "which coarsening is the right continuum analogue of the free-core "
+      "spinor channel, and is the collapse-at-g=0 of the sector-resolved "
+      "readings a genuine ray or an artefact of two-channels-per-sector "
+      "plus the zero-sum rule.")
