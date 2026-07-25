@@ -8450,3 +8450,66 @@ and the crown mutant through the same reporter).
 RESIDUES: the full-poset no-go (only live route = pool laminarity,
 needs gateable statement); T2's hypothesis at unbounded scale.
 NEXT: D47 THE SPHERE RUNG.
+
+## 2026-07-25 — D47 PINNED: THE SPHERE RUNG (LEDGER #408)
+User go. Pin committed STRICTLY BEFORE any receipt code:
+note-d47-sphere-rung-pin.md.
+**THE REFRAME.** D45b §1 already forbids order dimension as a
+spacetime-dimension estimator; the user's binding observation
+("3+1 spacetime is not 4 clocks, it's infinite clocks") is WHY —
+real Minkowski needs unboundedly many linear extensions, so
+climbing 2->3->4 by COUNTING clocks points at the wrong number,
+and D46d is what that looks like from inside (the width headline
+survived only through an idle-counting proxy, 0.981 -> 0.672 ->
+0.414, discriminating scalings collapsed). **THIS UNIT STOPS
+COUNTING AND STARTS CONSTRUCTING.** What separates 2+1 from 3+1 is
+the SHAPE OF THE SKY: directions leaving an event form a CIRCLE in
+2+1, a 2-SPHERE in 3+1; shadows are ARCS vs CAPS.
+**THE SEPARATOR (to be GATED BY CONSTRUCTION, never taken from
+literature):** arcs on a circle CANNOT shatter 4 (four points in
+cyclic order admit no connected arc holding the 1st and 3rd but
+not the 2nd and 4th) though they CAN shatter 3; caps on S^2 CAN
+shatter 4 (tetrahedron; the hard case, two opposite edges,
+separated by a plane parallel to both).
+**TWO INSTRUMENTS OF DIFFERENT LOGICAL STRENGTH.** (1)
+CIRCULAR-ONES: two-sided on ARC-REALIZABILITY, exactly decidable.
+(2) SHATTER-4: a one-sided OBSTRUCTION, independent of (1)'s
+algorithm — two principles cross-checking.
+**THE ONE-SIDEDNESS DOCTRINE, BINDING ON EVERY STATEMENT THIS UNIT
+PRODUCES:** shatter-4 found => NOT arc-realizable => not a 2+1 sky
+UNDER THE COMMITTED DEFINITION (a certificate, statable);
+circular-ones HOLDING => arc-realizable, which is CONSISTENT WITH
+2+1 AND IS NOT EVIDENCE OF IT (arcs are necessary, not sufficient;
+a discrete sky need be neither arcs nor caps) — **no statement of
+the form "the sky IS a circle" may be made**; every conclusion is
+conditional on the sky definition.
+**THREE SKY DEFINITIONS COMMITTED BEFORE ANY RUN** (the D46e
+lesson, where "grain not interaction" reversed once the channel
+reading varied): SKY-A cover sky, SKY-B antichain sky at a
+committed depth, SKY-C the dual past sky. All three reported; a
+result holding under only one is READING-RELATIVE and says so.
+GATES SG0-SG9: SG0 the separator CONSTRUCTED (arcs + exact-rational
+Pythagorean-quadruple caps on S^2, Fraction dot-products); SG1
+INSTRUMENT VALIDATION BEFORE ANY TRANSPORT DATA — true positive AND
+true negative required, blindness or trigger-happiness = exit 1;
+**SG2 CAPACITY GATED FIRST, NOT DISCOVERED AFTERWARD — a sky with
+< 4 directions cannot shatter 4 for reasons that are not geometry,
+and "no shattering" over an undecidable stratum is reported
+UNDECIDABLE, NEVER as a negative**; SG3 D46c's committed W3_CERT
+(18 exact rational M^{2+1} points, 0/306) as a CONSISTENCY CHECK —
+if a genuine 2+1 record shattered 4, the SKY DEFINITION is at
+fault, not Minkowski, and the unit HALTS AND RE-PINS; SG4 the
+transport skies; SG5 the CONSTRUCTION-MATCHED NULL (the D46f
+lesson — a failure the null also produces is a construction
+tautology); SG6 positive rational cap certificates, conditional;
+SG7 NO SILENT CAPS (the cyclic-order search cap and the count of
+skies hitting it are PRINTED); SG8 the AST scan with its #403 MA-2
+scoping; SG9 the witness branch LIVE and EXERCISED.
+**PRE-REGISTERED EXPECTATION: CAPACITY INSUFFICIENT.** At 4-6
+actors the skies are probably too small to shatter anything; the
+honest deliverable is then the validated instrument plus a
+certified statement of the width required. Recorded BEFORE the run
+because pre-registering the boring outcome is the cheapest defence
+against later talking oneself into an exciting one.
+NEXT: D47a — the instrument and the separator, standalone, before
+any transport data is touched.
