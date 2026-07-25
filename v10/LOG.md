@@ -9317,3 +9317,68 @@ dichotomy is still genuinely undecided for a theory with delivery and
 merge in it.
 NEXT: build D50; then (H1), whose tau/own-view route is refuted and
 whose live attack is "the opponent-authored excess is MENU-INVISIBLE".
+
+## 2026-07-25 — D50 GREEN-UNREVIEWED: THE FORM IS A CHOICE (LEDGER #422)
+Receipt v10/code/d50_form_law_or_choice_exact.py, 9 PASS / 0 FAIL,
+exit 0; note-d50-form-law-or-choice-result.md. D49's state imported by
+AST-stripping its check()/print()/sys.exit statements — single source,
+its gates NOT re-run.
+**THE PIN'S FALSIFIER FIRED. DEPTH-STATIONARITY DOES NOT FORCE THE
+FORM.** The space of DISTINCT COMPLETIONS satisfying it has dimension
+**10, 28, 107** at truncation depths 2/3/4 — it GROWS with depth rather
+than collapsing to a ray. #421 pre-registered the OPPOSITE ("EXPECTED:
+I3 FORCES THE FORM") with its argument written out first; **the
+expectation is REFUTED**.
+**AND THE NEGATIVE IS RIGOROUS WHILE A POSITIVE WOULD NOT HAVE BEEN** —
+the pin's one-sidedness doctrine fixed this in advance: a tangent
+dimension > 1 mod scaling EXHIBITS nearby non-proportional completions
+satisfying the demand, so the demand demonstrably does not force the
+form. A dimension of 1 would have been local evidence only. The
+measurement landed on the conclusive side.
+**THEREFORE: paper 30 §5.7's stationary form is a genuine CHOICE, D49
+round-1 B2's restriction is PERMANENT, and every citation of D49 must
+carry it — "the record law is forward-complete" is true of the law PLUS
+the form and may never be quoted without it.**
+**SF4, THE SHARPER HALF: FOLIATION-INVARIANCE ADDS NOTHING.** I5 = I3 +
+paper 30 demand (b) (Z-level sufficient form) MORE THAN DOUBLES the
+constraint count — 25 vs 16, 210 vs 109, **1,374 vs 610** — and leaves
+the completion dimension **EXACTLY UNCHANGED** at every depth. **The
+residual freedom is NOT gauge freedom.** The obvious rescue ("add
+gauge-invariance and it will collapse") is closed off by measurement.
+**WHY THE PIN'S §3 ARGUMENT FAILED, DIAGNOSED NOT HAND-WAVED.** The
+sketch assumed the demand forces Z(h+e)/Z(h) to be a function of the two
+classes EVENT BY EVENT. The record-level demand is **AGGREGATED** — it
+equates the class-to-class transfer SUMMED over events — so it
+constrains SUMS, NOT INDIVIDUAL RATIOS, and the path-consistency step
+never obtains its hypothesis. **And the aggregated reading is the
+CORRECT one**, which is what makes this fatal rather than fixable: what
+is observable is the probability of moving from class s to class s'; a
+per-event version would be a demand on unobservable event labels —
+exactly what B2 disqualified. So the stronger hypothesis the sketch
+needed is not available as a record-level demand at all.
+SF5 confirms I3 is STRICTLY STRONGER than I2 at every depth (16 vs 14,
+109 vs 101, 610 vs 589 constraints) — this unit is NOT re-measuring B2;
+the cross-depth comparisons are really there and simply do not bite.
+SF6 negative control held: I1 stays loose (completion dims 22/83/307).
+**UNTOUCHED: D49's EXISTENCE result. A root-free completion exists,
+horn (II) holds, paper 30 §5.7's [OPEN, declared] question is answered
+affirmatively.** This unit bears only on uniqueness.
+**THREE OWN DEFECTS, OWNED.** (1) Run 1 EXITED 0 HAVING RUN NO GATES —
+D49's module-level sys.exit survived the AST strip and killed the
+process at D49's verdict; a receipt that exits 0 silently is the worst
+failure mode there is, and it is now stripped explicitly and GATED
+(_exits == 1). (2) Run 2 crashed: D49's _rank closes over its global
+NB = 313 and cannot be reused at other truncation depths; a
+width-taking rank is now local. (3) **My own anchor assertion was
+wrong**: I asserted 1,191 histories AT depth 4. Paper 30's much-quoted
+"1,191 histories" is the CUMULATIVE count; **976** sit at the layer
+(1191 - 215). Worth knowing generally — the figure is routinely quoted
+as if it were a layer count.
+DEPTH CAP DECLARED, NOT SILENT: D = 5 (~5,280 layer histories, boundary
+dimension in the thousands) did not finish its exact rank in 10 minutes
+and was cut; the 2/3/4 trend is monotone and decisive without it.
+RESIDUES: (1) is there ANY record-level demand that forces the form? —
+the two strongest candidates AND their conjunction are now eliminated;
+(2) does the freedom grow without bound? 10 -> 28 -> 107 is monotone but
+three points; (3) transport scope, open regardless.
+NEXT: (H1), then transport scope.

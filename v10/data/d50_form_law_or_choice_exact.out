@@ -1,0 +1,60 @@
+[D50 — is the stationary FORM a law, or a choice?]
+  banner: D49's EXISTENCE result (horn II) is untouched by this
+  receipt.  Only the account of UNIQUENESS is at issue.  D49's
+  state is imported by AST-stripping its check()/print()
+  statements — single source, gates not re-run.  ONE-SIDEDNESS
+  (pin §4): a tangent count > 1 mod scaling REFUTES forcing; a
+  count of 1 is LOCAL EVIDENCE and never licenses 'forces'.
+
+[SF0 anchor]
+  [PASS] SF0(a) D49's computational state imported by AST-stripping its module-level check()/print() statements — single source, D49's own gates are NOT re-run here and nothing is re-derived  (statements kept = 279 of 349; histories AT depth 4 = 976, cumulative through depth 4 = 1191.  NOTE: paper 30's much-quoted '1,191 histories' is the CUMULATIVE count (1191 - 215 = 976 sit at the layer itself); this receipt's first draft asserted 1191 at the layer and was wrong.  D49 sys.exit calls stripped = 1 — leaving one would have silently killed this process at D49's verdict, which the first run did, exiting 0 with no gates run)
+  [PASS] SF0(b) PORT CHECK — B2's two published numbers reproduced independently at depth-4 truncation: renewal-pair agreement leaves 308 of 313 boundary directions free, bisimulation-invariance leaves 119.  A disagreement here would be anchor breakage  (boundary dim = 313; renewal free = 308; bisimulation free = 119)
+
+[SF1 the depth sweep + SF2 the trend + SF3 I3 decided]
+  For each truncation depth D and each demand: the tangent-space
+  dimension of admissible BOUNDARY directions, and — the quantity
+  B1 taught us to separate — the dimension of the induced space of
+  distinct COMPLETIONS.  A completion dimension of 0 means one ray:
+  every admissible boundary induces the SAME completion.
+  D = 2: boundary dim = 23, completion-map rank = 22
+      I1 renewal agreement       :      0 constraints, boundary-free   23/23, COMPLETION dim 22
+      I2 bisimulation (same D)   :     14 constraints, boundary-free   13/23, COMPLETION dim 12
+      I3 DEPTH-STATIONARITY      :     16 constraints, boundary-free   11/23, COMPLETION dim 10
+      I5 = I3 + foliation-invar. :     25 constraints, boundary-free   11/23, COMPLETION dim 10
+  D = 3: boundary dim = 84, completion-map rank = 83
+      I1 renewal agreement       :      0 constraints, boundary-free   84/84, COMPLETION dim 83
+      I2 bisimulation (same D)   :    101 constraints, boundary-free   35/84, COMPLETION dim 34
+      I3 DEPTH-STATIONARITY      :    109 constraints, boundary-free   29/84, COMPLETION dim 28
+      I5 = I3 + foliation-invar. :    210 constraints, boundary-free   29/84, COMPLETION dim 28
+  D = 4: boundary dim = 313, completion-map rank = 312
+      I1 renewal agreement       :      6 constraints, boundary-free  308/313, COMPLETION dim 307
+      I2 bisimulation (same D)   :    589 constraints, boundary-free  119/313, COMPLETION dim 118
+      I3 DEPTH-STATIONARITY      :    610 constraints, boundary-free  108/313, COMPLETION dim 107
+      I5 = I3 + foliation-invar. :   1374 constraints, boundary-free  108/313, COMPLETION dim 107
+  [PASS] SF1 the sweep ran at every reached depth and reported BOTH dimensions, never conflating them (B1's lesson: a boundary direction can be free and still move the completion)  (depths reached = [2, 3, 4] (printed, not silently capped); boundary dims = [23, 84, 313])
+  [PASS] SF3 [THE PRIMARY TARGET] DEPTH-STATIONARITY, decided at every reached depth.  I3 demands that the same class-to-class step carry the same probability WHENEVER it happens — a statement about the record, not about Z, and the one B2's same-depth grouping never tested.  Completion dimension under I3 at each depth is reported; 0 means every I3-admissible boundary induces the SAME completion  (I3 completion dims by depth [2, 3, 4] = [10, 28, 107] -> MORE THAN ONE RAY — I3 does NOT force the form)
+  [PASS] SF4 [THE SHARPER HALF] FOLIATION-INVARIANCE ADDS NOTHING.  I5 = I3 + paper 30 demand (b) in its Z-level sufficient form MORE THAN DOUBLES the constraint count at every depth and leaves the completion dimension EXACTLY UNCHANGED.  So the residual freedom is NOT gauge freedom — it survives both record-level demands imposed together, which closes off the obvious rescue  (I3 = [10, 28, 107], I5 = [10, 28, 107] (identical); constraint counts I3 -> I5 = [(2, 16, 25), (3, 109, 210), (4, 610, 1374)])
+  [PASS] SF2 THE TREND, reported in whichever direction it came out: I2 (same-depth bisimulation) against I3 (depth-stationarity) at the same depths.  If I3 collapses the completion space while I2 does not, the missing ingredient is exactly the cross-depth comparison  (I2 completion dims = [12, 34, 118]; I3 completion dims = [10, 28, 107]; I1 = [22, 83, 307])
+
+[SF6 negative control]
+  [PASS] SF6 I1 (renewal-pair agreement alone) must stay LOOSE at every depth — B2 measured it at 308 of 313 free, and a demand that weak must not collapse the completion space.  If it did, the instrument would be measuring its own construction rather than the demands  (I1 completion dims by depth = [22, 83, 307] (all must exceed 0); I1 boundary-free = [23, 84, 308])
+
+[SF5 capacity — are the demands non-vacuous where they are read?]
+  D = 2: I1     0 constraints (rank 0), I2     14 (rank 10), I3     16 (rank 12)
+  D = 3: I1     0 constraints (rank 0), I2    101 (rank 49), I3    109 (rank 55)
+  D = 4: I1     6 constraints (rank 5), I2    589 (rank 194), I3    610 (rank 205)
+  [PASS] SF5 I3 IS STRICTLY STRONGER THAN I2 AS A CONSTRAINT SYSTEM at every reached depth — it adds the cross-depth comparisons B2's grouping omitted.  Had the two produced identical systems, this unit would be re-measuring B2 and its result would be vacuous  (constraint counts I2 -> I3 by depth: [(2, 14, 16), (3, 101, 109), (4, 589, 610)])
+
+[SF7 anti-vacuity]
+  [PASS] SF7 every check() predicate references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this enforces EXACTLY that and nothing more; it does NOT certify falsifiability, which is what SF6's negative control is for  (check() calls = 9, bare/unbound = 0)
+
+[VERDICT — D50]
+  DEPTH-STATIONARITY DOES **NOT** FORCE THE FORM: the completion space retains dimension [10, 28, 107] at the reached depths.  Under the pin's one-sidedness doctrine this direction is RIGOROUS — nearby non-proportional completions satisfy I3 — so **the form is a genuine CHOICE, B2's restriction is PERMANENT, and every citation of D49 must carry it.**
+  AND FOLIATION-INVARIANCE DOES NOT HELP: I5 = I3 + demand (b) more than doubles the constraints and leaves the completion dimension identical ([10, 28, 107]).  The residual freedom is not gauge freedom.
+  WHY THE PIN'S §3 SKETCH FAILED, diagnosed: it assumed the demand forces Z(h+e)/Z(h) to be a function of the two classes EVENT BY EVENT.  The record-level demand is AGGREGATED — it equates the class-to-class transfer SUMMED over events — so it constrains sums, not individual ratios, and the path-consistency step never gets its hypothesis.  The aggregated reading is the CORRECT one: what is observable is the probability of moving from class s to class s'; a per-event version would be a demand on unobservable labels, which is exactly what B2 disqualified.
+  UNTOUCHED EITHER WAY: D49's EXISTENCE result.  A root-free completion exists; horn (II) holds.  Nothing here bears on it.
+  SCOPE: d42a, delivery-free, two actors.  Transport scope remains open regardless.
+
+[d50] 9 PASS / 0 FAIL
+EXIT 0
+RC=0
