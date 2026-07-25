@@ -51,16 +51,29 @@
   of these, reachable as the image of an admissible FINE record: 1190
   [PASS] CG6 THE DUAL, REPORTED IN WHICHEVER DIRECTION IT CAME OUT — and it came out the OPPOSITE way to the merge test.  **COARSE-GRAINING IS SURJECTIVE**: every admissible coarse record lifts to some admissible fine record.  (This gate was first written asserting non-surjectivity; it FIRED, and the assertion is withdrawn.  Only the CG1/CG2 controls are exit-1 conditions per pin §5 — a dual that comes out the other way is a deliverable.)  THE CORRECT PICTURE IS THEREFORE ONE-DIRECTIONAL: coarse-graining is a PARTIAL map — undefined on the fine records that break — but ONTO the coarse world it does reach  (coarse records = 1190, reachable = 1190, unreachable = 0 -> SURJECTIVE)
 
+[CG8 the CAUSAL-ORDER version — ROUND-1 D1]
+  literal-image failures = 10608; of these, CAUSAL POSET realized by SOME admissible coarse record = 10608
+  [PASS] CG8 THE HEADLINE IS NARROWED (ROUND-1 D1).  Of the 10608 records whose LITERAL merged image is inadmissible, 10608 have a causal poset that IS realized by some admissible coarse record — **zero exceptions**.  So actor-merging never produces an UNREALIZABLE CAUSAL SHAPE.  What CG3 established is that the LABELLED record does not aggregate (the mint chain breaks); it establishes nothing directly about the causal order.  The round measured the same at CAP 5 over 196,304 failures, also 100% [REFEREE-CARRIED, frozen round]  (failures = 10608, causal shape realizable = 10608)
+
+[CG9 the real obstruction is LOSS — ROUND-1 D2]
+  length 1: FINE (4 actors) causal poset classes = 1, COARSE (2 actors) = 1
+  length 2: FINE (4 actors) causal poset classes = 2, COARSE (2 actors) = 2
+  length 3: FINE (4 actors) causal poset classes = 4, COARSE (2 actors) = 3
+  length 4: FINE (4 actors) causal poset classes = 9, COARSE (2 actors) = 5
+  [PASS] CG9 COARSE-GRAINING IS MASSIVELY LOSSY, and this — not impossibility — is the real obstruction.  The fine world has strictly more causal poset classes than the coarse one at length 4 (9 vs 5, a gap of 4), and the round measured the gap WIDENING with length (19 vs 8 at length 5) [REFEREE-CARRIED].  **The coarse description is never impossible; it discards most of the causal structure.**  Any quantity computed after such a projection is a quantity of the COARSE world  (fine classes by length = {1: 1, 2: 2, 3: 4, 4: 9}, coarse = {1: 1, 2: 2, 3: 3, 4: 5})
+
 [CG7 anti-vacuity]
   [PASS] CG7(a) the tested stratum is NON-EMPTY and its size is printed at every gate — a zero-history scan would have made every fraction above meaningless  (identity scan = 21428, merge scans = [21428, 21428, 21428, 21428], coarse records = 1190)
-  [PASS] CG7(b) every check() predicate references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more  (check() calls = 9, bare/unbound = 0)
+  [PASS] CG7(b) every check() predicate references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more  (check() calls = 11, bare/unbound = 0)
 
 [VERDICT — D48]
-  **ACTORS ARE NOT AGGREGABLE.**  The grammar is not closed under actor coarse-graining: every non-injective actor map tested sends a positive fraction of admissible records to non-admissible images, the fraction falls with record length, and the obstruction is the mint chain — an actor's proposals must descend from that actor's own latest version, and merging destroys the descent.
+  **THE LABELLED RECORD DOES NOT AGGREGATE.**  (Round-1 D1 narrowed this from 'actors are not aggregable', which overstated it.)  The grammar is not closed under actor coarse-graining at the level of event labels: every non-injective map sends a positive fraction of admissible records to non-admissible images, the fraction falls with record length, and the obstruction is the mint chain — an actor's proposals must descend from that actor's own latest version, and merging destroys the descent.
+  **BUT THE CAUSAL ORDER DOES AGGREGATE.**  Every one of the 10608 failing images has a causal shape realized by some admissible coarse record.  Merging never produces an unrealizable causal structure.
+  **THE REAL OBSTRUCTION IS LOSS.**  The fine world carries 9 causal poset classes at length 4 against the coarse world's 5, and the gap widens with length.  Coarse-graining is possible and enormously lossy — which is a better-founded blocker than impossibility would have been.
   BUT IT FAILS IN ONE DIRECTION ONLY.  The dual came out the other way: coarse-graining IS SURJECTIVE — all 1190 of 1190 admissible coarse records lift to some admissible fine record.  So the coarse description is never SPURIOUS; what fails is that an arbitrary fine record need not HAVE a coarse shadow.  **Coarse-graining is a PARTIAL map, onto but not total** — and its domain shrinks with record length (100% -> 88% -> 70% -> 48%).
   THE CONTROLS HELD: identity and bijective renaming both give 100%, so the grammar is equivariant under what actors are CALLED and the failure above is about how many there ARE.
-  DISPOSITION FOR d41c §1A: **THE BLOCKER STANDS**, in a sharper form than before.  The bridge's effective reading needs a record to HAVE a single-line description; the layer supplies one for only a shrinking fraction of records, and supplies none at all systematically.  A declaration cannot rest on an identification that is undefined on most of its domain.  (It is NOT strengthened to 'the coarse description is meaningless' — CG6 forbids that reading.)
+  DISPOSITION FOR d41c §1A: **THE BLOCKER STANDS, ON LOSS RATHER THAN ON IMPOSSIBILITY.**  A single-line description of a composite EXISTS causally; it simply discards most of the structure.  So a bound extracted through it is a bound on the coarse world and cannot be read back as a statement about the underlying record.  (NOT 'the coarse description is meaningless' — CG6 and CG8 both forbid that reading.)
   SCOPE HELD (pin §4): this says NOTHING about ions, molecules or mass.  The conditional it licenses is 'IF constituents are actors, THEN a composite is irreducibly many lines' — **and the antecedent REMAINS UNSIGNED.**
 
-[totals] PASS = 9, FAIL = 0
+[totals] PASS = 11, FAIL = 0
 EXIT 0

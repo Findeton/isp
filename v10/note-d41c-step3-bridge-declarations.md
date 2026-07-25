@@ -118,6 +118,43 @@ line identification admits exactly two readings, and both fail:
   the intervening QFT layer such a theorem would have to pass
   through.**
 
+**(v-bis) ANSWERED IN PART, 2026-07-25 — AND THE BLOCKER STANDS
+ON DIFFERENT GROUND.**  D48 (LOG #413/#414, round 1 terminal at
+`reviews/d48-round1-hostile-review.md`) put the internal half of
+this slot to the test: is the grammar closed under merging actors?
+
+- The **labelled record does NOT aggregate.**  Every non-injective
+  actor map sends a positive fraction of admissible records to
+  inadmissible images (50%, 50%, 74%, 18% admissible across four
+  maps), and the fraction falls with record length (100% -> 88% ->
+  70% -> 48%).  The obstruction is the MINT CHAIN: an actor's
+  proposals must descend from that actor's own latest version, and
+  merging destroys the descent.  Controls held — identity and
+  bijective renaming are both 100%, so this is about how many
+  actors there ARE, not what they are called.
+- But the **causal order DOES aggregate.**  Of the failing images,
+  100% have a causal poset realized by some admissible coarse
+  record (10,608 at cap 4 in-receipt; 196,304 at cap 5 in the
+  round).  Merging never produces an unrealizable causal shape.
+- **The obstruction is LOSS.**  Fine (4-actor) causal poset classes
+  run 1, 2, 4, 9 at lengths 1-4 against coarse (2-actor) 1, 2, 3,
+  5, widening to 19 vs 8 at length 5.
+
+**CONSEQUENCE FOR THIS FILE.**  The blocker STANDS, on firmer
+ground than when it was written.  A single-line description of a
+composite EXISTS causally — so §1A(iv)'s "EFFECTIVE" reading is
+not impossible — but it **discards most of the causal structure**,
+so any bound extracted through it is a bound on the coarse world
+and cannot be read back as a statement about the underlying
+record.  That is a sufficient reason to keep §§2-3 blocked and the
+sign-off sealed.  **What is NOT established is that the coarse
+description is meaningless; D48's CG6 and CG8 both forbid that
+reading, and no future citation of this file may make it.**
+
+**SCOPE, unchanged.**  D48 speaks about ACTORS only.  The step from
+actors to physical constituents is itself a bridge of exactly the
+kind blocked here, and it REMAINS UNSIGNED.
+
 **(v) Status of this slot: EMPTY.**  No content is offered here.
 Writing a coarse-graining declaration would be a further
 interpretive commitment on top of the eight already at issue, and

@@ -251,6 +251,98 @@ check("CG6 THE DUAL, REPORTED IN WHICHEVER DIRECTION IT CAME OUT — and "
       f"unreachable = {len(coarse_all) - len(reachable)} -> "
       f"{'SURJECTIVE' if SURJ else 'NOT surjective'}")
 
+# ---------------------------------------------------------------- CG8
+# ROUND-1 MAJOR D1: CG3 decides admissibility of the LITERAL renamed event
+# sequence — a statement about the record's BOOKKEEPING.  This program's
+# own thesis is that the physics is the CAUSAL ORDER.  Those are different
+# questions and only the first was asked.  This gate asks the second.
+print("\n[CG8 the CAUSAL-ORDER version — ROUND-1 D1]")
+from itertools import permutations as _perms
+
+def _poset(h):
+    pred = ns['event_poset'](list(h))
+    n = len(h)
+    return tuple(tuple(i in pred[j] for j in range(n)) for i in range(n))
+
+def _canon(C):
+    n = len(C)
+    best = None
+    for p in _perms(range(n)):
+        t = tuple(tuple(C[p[i]][p[j]] for j in range(n)) for i in range(n))
+        if best is None or t < best:
+            best = t
+    return best
+
+def _classes(actors, cap):
+    out = {}
+    hh = []
+    def go():
+        if len(hh) >= cap:
+            return
+        for e, q in candidates_for(hh, actors):
+            hh.append(e)
+            out.setdefault(len(hh), set()).add(_canon(_poset(hh)))
+            go()
+            hh.pop()
+    go()
+    return out
+
+COARSE_CLASSES = _classes(('X', 'Y'), CAP)
+FINE_CLASSES = _classes(A4, CAP)
+MERGE0 = {'A': 'X', 'B': 'X', 'C': 'Y', 'D': 'Y'}
+nfail = nmatch = 0
+h = []
+def _scan_causal():
+    global nfail, nmatch
+    if len(h) >= CAP:
+        return
+    for e, q in candidates_for(h, A4):
+        h.append(e)
+        img = tuple(rename(x, MERGE0) for x in h)
+        if image_admissible(img, ('X', 'Y')) is not None:
+            nfail += 1
+            if _canon(_poset(img)) in COARSE_CLASSES.get(len(img), set()):
+                nmatch += 1
+        _scan_causal()
+        h.pop()
+_scan_causal()
+print(f"  literal-image failures = {nfail}; of these, CAUSAL POSET realized "
+      f"by SOME admissible coarse record = {nmatch}")
+check("CG8 THE HEADLINE IS NARROWED (ROUND-1 D1).  Of the "
+      f"{nfail} records whose LITERAL merged image is inadmissible, "
+      f"{nmatch} have a causal poset that IS realized by some admissible "
+      "coarse record — **zero exceptions**.  So actor-merging never "
+      "produces an UNREALIZABLE CAUSAL SHAPE.  What CG3 established is "
+      "that the LABELLED record does not aggregate (the mint chain "
+      "breaks); it establishes nothing directly about the causal order.  "
+      "The round measured the same at CAP 5 over 196,304 failures, also "
+      "100% [REFEREE-CARRIED, frozen round]",
+      nfail > 0 and nmatch == nfail,
+      f"failures = {nfail}, causal shape realizable = {nmatch}")
+
+# ---------------------------------------------------------------- CG9
+print("\n[CG9 the real obstruction is LOSS — ROUND-1 D2]")
+for L in sorted(FINE_CLASSES):
+    print(f"  length {L}: FINE (4 actors) causal poset classes = "
+          f"{len(FINE_CLASSES[L])}, COARSE (2 actors) = "
+          f"{len(COARSE_CLASSES.get(L, set()))}")
+lossy = all(len(FINE_CLASSES[L]) >= len(COARSE_CLASSES.get(L, set()))
+            for L in FINE_CLASSES)
+gap = (len(FINE_CLASSES[CAP]) - len(COARSE_CLASSES.get(CAP, set())))
+check("CG9 COARSE-GRAINING IS MASSIVELY LOSSY, and this — not "
+      "impossibility — is the real obstruction.  The fine world has "
+      f"strictly more causal poset classes than the coarse one at length "
+      f"{CAP} ({len(FINE_CLASSES[CAP])} vs "
+      f"{len(COARSE_CLASSES.get(CAP, set()))}, a gap of {gap}), and the "
+      "round measured the gap WIDENING with length (19 vs 8 at length 5) "
+      "[REFEREE-CARRIED].  **The coarse description is never impossible; "
+      "it discards most of the causal structure.**  Any quantity computed "
+      "after such a projection is a quantity of the COARSE world",
+      lossy and gap > 0,
+      f"fine classes by length = "
+      f"{ {L: len(FINE_CLASSES[L]) for L in sorted(FINE_CLASSES)} }, "
+      f"coarse = { {L: len(v) for L, v in sorted(COARSE_CLASSES.items())} }")
+
 # ---------------------------------------------------------------- CG7
 print("\n[CG7 anti-vacuity]")
 check("CG7(a) the tested stratum is NON-EMPTY and its size is printed at "
@@ -283,12 +375,24 @@ check("CG7(b) every check() predicate references at least one run-bound "
 
 # ============================== verdict ==================================
 print("\n[VERDICT — D48]")
-print("  **ACTORS ARE NOT AGGREGABLE.**  The grammar is not closed under "
-      "actor coarse-graining: every non-injective actor map tested sends "
-      "a positive fraction of admissible records to non-admissible "
-      "images, the fraction falls with record length, and the obstruction "
-      "is the mint chain — an actor's proposals must descend from that "
-      "actor's own latest version, and merging destroys the descent.")
+print("  **THE LABELLED RECORD DOES NOT AGGREGATE.**  (Round-1 D1 narrowed "
+      "this from 'actors are not aggregable', which overstated it.)  The "
+      "grammar is not closed under actor coarse-graining at the level of "
+      "event labels: every non-injective map sends a positive fraction of "
+      "admissible records to non-admissible images, the fraction falls "
+      "with record length, and the obstruction is the mint chain — an "
+      "actor's proposals must descend from that actor's own latest "
+      "version, and merging destroys the descent.")
+print("  **BUT THE CAUSAL ORDER DOES AGGREGATE.**  Every one of the "
+      f"{nfail} failing images has a causal shape realized by some "
+      "admissible coarse record.  Merging never produces an unrealizable "
+      "causal structure.")
+print(f"  **THE REAL OBSTRUCTION IS LOSS.**  The fine world carries "
+      f"{len(FINE_CLASSES[CAP])} causal poset classes at length {CAP} "
+      f"against the coarse world's {len(COARSE_CLASSES.get(CAP, set()))}, "
+      f"and the gap widens with length.  Coarse-graining is possible and "
+      f"enormously lossy — which is a better-founded blocker than "
+      f"impossibility would have been.")
 print(f"  BUT IT FAILS IN ONE DIRECTION ONLY.  The dual came out the "
       f"other way: coarse-graining IS "
       f"{'SURJECTIVE' if SURJ else 'NOT surjective'} — all "
@@ -301,14 +405,13 @@ print(f"  BUT IT FAILS IN ONE DIRECTION ONLY.  The dual came out the "
 print("  THE CONTROLS HELD: identity and bijective renaming both give "
       "100%, so the grammar is equivariant under what actors are CALLED "
       "and the failure above is about how many there ARE.")
-print("  DISPOSITION FOR d41c §1A: **THE BLOCKER STANDS**, in a sharper "
-      "form than before.  The bridge's effective reading needs a record "
-      "to HAVE a single-line description; the layer supplies one for only "
-      "a shrinking fraction of records, and supplies none at all "
-      "systematically.  A declaration cannot rest on an identification "
-      "that is undefined on most of its domain.  (It is NOT strengthened "
-      "to 'the coarse description is meaningless' — CG6 forbids that "
-      "reading.)")
+print("  DISPOSITION FOR d41c §1A: **THE BLOCKER STANDS, ON LOSS RATHER "
+      "THAN ON IMPOSSIBILITY.**  A single-line description of a composite "
+      "EXISTS causally; it simply discards most of the structure.  So a "
+      "bound extracted through it is a bound on the coarse world and "
+      "cannot be read back as a statement about the underlying record.  "
+      "(NOT 'the coarse description is meaningless' — CG6 and CG8 both "
+      "forbid that reading.)")
 print("  SCOPE HELD (pin §4): this says NOTHING about ions, molecules or "
       "mass.  The conditional it licenses is 'IF constituents are actors, "
       "THEN a composite is irreducibly many lines' — **and the antecedent "

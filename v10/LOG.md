@@ -8838,3 +8838,44 @@ foothold under the author's "infinite clocks" doctrine, since
 unboundedly many directions would require unboundedly many
 actors and D48 says that number cannot be renegotiated by
 coarse-graining.
+
+## 2026-07-25 — D48 ROUND 1: HEADLINE NARROWED, BLOCKER RE-FOUNDED
+## (LEDGER #415)
+Round frozen at v10/reviews/d48-round1-hostile-review.md, repaired
+and delta'd. Post-repair 11 PASS / 0 FAIL, exit 0.
+**MAJOR D1 — THE MERGE TEST DECIDED A QUESTION ABOUT LABELS, NOT
+ABOUT CAUSAL ORDER.** CG3 declared admissibility of the LITERAL
+renamed event sequence — the record's bookkeeping — whereas this
+program's own thesis is that the physics is the CAUSAL ORDER. New
+gate CG8 asks the second question: of the records whose literal
+merged image is inadmissible, how many have a causal poset realized
+by SOME admissible coarse record? **ALL OF THEM. 10,608/10,608 at
+cap 4 (in-receipt) and 196,304/196,304 at cap 5 (frozen round,
+REFEREE-CARRIED). Zero exceptions in 206,912 cases.**
+**HEADLINE NARROWED**, in gate text, verdict and note: from
+"ACTORS ARE NOT AGGREGABLE" to **"THE LABELLED RECORD DOES NOT
+AGGREGATE, BUT THE CAUSAL ORDER DOES"**.
+**MAJOR D2 — THE REAL OBSTRUCTION IS LOSS, AND IT WAS NEVER
+MEASURED.** New gate CG9: FINE (4-actor) causal poset iso-classes
+run 1, 2, 4, 9 at lengths 1-4 against COARSE (2-actor) 1, 2, 3, 5
+— a gap of 4 at length 4 — widening to **19 vs 8 at length 5**
+(REFEREE-CARRIED). **Coarse-graining is never impossible; it is
+MASSIVELY LOSSY.** Any quantity computed after such a projection is
+a quantity of the COARSE world.
+**d41c §1A UPDATED (new subsection (v-bis)).** THE BLOCKER STANDS,
+**ON LOSS RATHER THAN ON IMPOSSIBILITY** — firmer ground than when
+it was written. A single-line description of a composite EXISTS
+causally, so §1A(iv)'s EFFECTIVE reading is not impossible; but it
+discards most of the causal structure, so a bound extracted through
+it is a bound on the coarse world and cannot be read back as a
+statement about the underlying record. **It is NOT established that
+the coarse description is meaningless — CG6 and CG8 both forbid
+that reading and no future citation may make it.** Scope unchanged:
+the actor-to-constituent step REMAINS UNSIGNED.
+RESIDUE: the loss is measured in iso-class COUNTS, a crude
+information measure; a per-record loss (how many fine records share
+one coarse image) is the natural refinement and is not done.
+NEXT (user direction): a single STANDALONE document on the
+completion dichotomy — everything needed to understand how it is
+forced and what advances exist — as the entry point for the next
+line of investigation.
