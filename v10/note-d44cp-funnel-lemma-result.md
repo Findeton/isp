@@ -1,8 +1,12 @@
 # D44c-P — result: the promotion is PARTIAL
 
-**Status:** GREEN-UNREVIEWED, 2026-07-24.  Receipt
+**Status:** ROUND-1 REVIEWED AND REPAIRED, 2026-07-25.  Round
+frozen at `v10/reviews/d44cp-round1-hostile-review.md`; MAJOR P1
+(the dimension certifications are theorem-passes at the observed
+cardinalities) and MODERATE P2 (FG9 corroborates, the proof
+licenses) both repaired in-receipt.  Receipt
 `v10/code/d44cp_funnel_lemma_exact.py`, output
-`v10/data/d44cp_funnel_lemma_exact.out`, 27 PASS / 0 FAIL, exit 0.
+`v10/data/d44cp_funnel_lemma_exact.out`, 28 PASS / 0 FAIL, exit 0.
 Pin: `note-d44cp-funnel-lemma-promotion.md` (LOG #406, committed
 before the receipt existed).  Entry condition: LOG #355; target:
 paper 32 §6 item 7.
@@ -90,8 +94,14 @@ exhaustive up to isomorphism — and for each the realizer was
 constructed and verified to realize the poset **exactly**, with
 the g2 oracle cross-checking every forest on <= 6 nodes (873
 checks, zero disagreements).  Zero failures.  This is what
-licenses the word THEOREM for the implication rather than for a
-family of instances.
+CORROBORATES the implication.  **ROUND-1 P2: it does not license
+it.**  A finite enumeration to n = 8 licenses a statement about
+n <= 8; what licenses THEOREM for all n is the proof above.  The
+enumeration is worth having because it is grammar-independent, but
+the credit belongs to the proof.  Sharpened by P1: n <= 8 is
+exactly the range the in-family objects occupy, so neither the
+enumeration nor the family reaches the regime where the verdict
+could have differed.
 
 **Hypothesis status.**  The hypothesis of T2 — every principal
 down-set of P|_R is a chain — is gated at zero violations over the
@@ -102,11 +112,25 @@ agree.  **T2 is therefore scale-free in its implication and
 family-gated in its hypothesis, and must be stated that way.**  It
 is not rounded up to "proved for all histories".
 
-**67,403** arb subposets — every class of every family — were
-additionally certified by producing the realizer and checking it
-exactly, with the g2 oracle agreeing on all 67,403 and zero
-disagreements, so dim <= 2 holds there **by certificate, not by
-oracle verdict**.
+**67,403** arb subposets were additionally certified by producing
+the realizer and checking it exactly, with the g2 oracle agreeing
+on all of them.  **ROUND-1 P1: that count is a THEOREM-PASS, not
+evidence, and must never be quoted as in-family confirmation.**
+The certified subposets have sizes {1: 44,546, 2: 19,796,
+3: 3,061} — maximum **3** elements.  The smallest poset of
+dimension > 2 is the 3-crown S3, which has **six** elements, so
+every one of those verdicts was fixed by cardinality alone before
+the receipt looked at it.  The evidence stratum (size >= 6) is
+**empty**.  This is the discipline D44c itself applies when it
+tags width <= 2 rows `[theorem, not evidence]`, and this receipt
+had dropped it.
+
+**T2's dimension content therefore comes from the PROOF above plus
+FG9's grammar-independent enumeration, and from nowhere else.**
+T2's HYPOTHESIS gate is unaffected and stays live: the forest
+property is not automatic at small cardinality — a 3-element V
+poset violates it, and FG7(b) demonstrates the gate firing on
+exactly that shape over 23,226 live incomparable arb pairs.
 
 ## 3. What was FALSIFIED — three pre-registered items
 

@@ -13,8 +13,12 @@ in-line tag says so — the committed campaign record (LOG, pins,
 frozen review files).  **Independent paper-level review: round 1 +
 delta, frozen at `reviews/paper32-round1-hostile-review.md`.**  The
 D46 ladder units (LOG #380, #382, #384, #386, #388, #389) are
-GREEN-UNREVIEWED and are not part of this paper.
-**Date:** 2026-07-19.
+GREEN-UNREVIEWED and are not part of this paper.  §6 item 7 was
+revised on 2026-07-25 to record the partial discharge of the funnel
+lemma's entry condition (LOG #407/#411, receipt
+`v10/code/d44cp_funnel_lemma_exact.py`); no other section is
+affected, and §3.1's no-go retains its referee-carried status.
+**Date:** 2026-07-19, §6 item 7 revised 2026-07-25.
 
 ## Abstract
 
@@ -393,15 +397,56 @@ interacting identification with a g = 0 column.
    obligation: the click layer embeds pre-repair transport pricing
    (one merge price differs, 1/16 vs 1/24, exhibited); form-level
    results are unaffected.
-7. **The funnel lemma's paper-grade promotion.**  §3.1's
-   scale-free no-go for the crown pattern is REFEREE-CARRIED: the
-   receipt gates five confinement clauses, while the sixth clause
-   and the lemma live in the frozen round.  Entry condition (LOG
-   #355): an in-receipt gate of the sixth clause and of up-cone
-   confinement over the committed families, plus the lemma written
-   as a theorem-with-proof-note.  Until then the multi-author
-   corner is decided at TESTED SCALE with the crown case
-   referee-carried — not a closed no-go.
+7. **The funnel lemma's promotion — DISCHARGED IN PART.**  The
+   entry condition of §6's earlier statement is now met on its
+   first half and unmet on its second, and the two must not be
+   confused.
+
+   *Met.*  The sixth confinement clause — incomparable arbitration
+   events share no common upper bound among the arbitrations — and
+   up-cone confinement (their arb up-sets are pairwise disjoint,
+   and the up-set family is laminar) are both gated in-receipt at
+   zero violations over the three committed exhaustive families,
+   with the live stratum gated first at 23,226 incomparable
+   arbitration pairs so that the zeros are results and not
+   vacuities.  Neither is referee-carried any longer.
+
+   *Delivered.*  A scale-free crown no-go, ARBITRATION-SCOPED:
+   where every principal down-set of the arbitration-induced
+   subposet is a chain, that subposet is a rooted forest, its order
+   dimension is at most 2, and it contains no crown, at every width
+   and every depth.  The proof is constructive — two depth-first
+   pre-orders, one with roots and children ascending and one with
+   both descending — and the reversal of the ROOT order, not only
+   the child order, is what makes cross-tree pairs incomparable in
+   the intersection.  The implication is corroborated
+   independently of the grammar over all 46,233 rooted forests on
+   at most eight nodes.  The statement is scale-free in its
+   implication and family-gated in its hypothesis, and is made no
+   stronger here.
+
+   *Not met, and this is the load-bearing half.*  §3.1's no-go is a
+   FULL-POSET claim, and the result above is arbitration-scoped.
+   The full event poset is not a rooted forest — an arbitration
+   consumes a component of mutually conflicting proposals and
+   therefore dominates two incomparable ones — so the
+   arbitration-scoped theorem does not transfer.  Two natural
+   register-theoretic bridges to the full-poset statement are
+   available and both are false: a causal pair need not share an
+   actor register, since a link may be carried entirely by a minted
+   version name; and an element dominating two incomparable
+   elements need not be an arbitration, since domination is
+   transitive and a proposal reading a minted version name inherits
+   the whole down-set beneath it.  The route through pool
+   laminarity remains the only live one and is not in gateable form.
+
+   **Therefore §3.1's crown no-go remains REFEREE-CARRIED and the
+   multi-author corner remains decided at TESTED SCALE.**  Nothing
+   above should be read as testing the dimension conclusion on the
+   families: the arbitration subposets those families produce have
+   at most three elements, and no poset with fewer than six can
+   exceed dimension 2, so their verdicts are fixed by cardinality
+   alone.  The dimension content rests on the proof.
 8. Paper 30's residues 3 (fine-vs-coarse sealing, empirical), 4
    (mid-chain drift), and 6 (`h12` dead-component pricing — the one
    configuration off the ladder under current pricing) stand

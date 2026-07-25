@@ -8680,3 +8680,59 @@ chance" is established against THAT null and not against every
 reasonable one.
 D47c NOT BUILT: it was conditional on finding non-arc skies and
 none were found. TERMINAL for round 1.
+
+## 2026-07-25 — D44c-P ROUND 1 TERMINAL; PAPER 32 §6 ITEM 7 AMENDED
+## (LEDGER #412)
+Round frozen at v10/reviews/d44cp-round1-hostile-review.md, then
+repaired and delta'd. Post-repair 28 PASS / 0 FAIL, exit 0.
+**MAJOR P1 — THE 67,403 CERTIFICATIONS WERE THEOREM-PASSES, NOT
+EVIDENCE.** FG5/FG6 certified 67,403 arb subposets dim <= 2 by
+explicit realizer with the oracle agreeing. The number is large
+and the OBJECTS ARE NOT: sizes {1: 44,546, 2: 19,796, 3: 3,061},
+**maximum 3 elements**. The smallest poset of dimension > 2 is the
+3-crown S3 at SIX elements, so every one of those verdicts was
+fixed BY CARDINALITY ALONE before the receipt looked. EVIDENCE
+stratum (size >= 6) = **0**. **This is a discipline D44c ITSELF
+HAS** — it tags width <= 2 rows "[theorem, not evidence]" and
+gates a non-empty evidence stratum at AG4 — **and the promotion
+receipt had dropped it.** Repaired: the stratification is printed
+and the gate says in its own text that the count may never be
+quoted as in-family confirmation. T2's HYPOTHESIS gate is
+unaffected and stays live (the forest property is NOT automatic at
+small size; FG7(b) fires on a 3-element V poset over 23,226 live
+pairs); T2's DIMENSION content comes from the PROOF plus FG9 and
+from nowhere else.
+**MODERATE P2 — "machine-verified => licenses THEOREM" overclaimed.**
+An enumeration to n = 8 licenses a statement about n <= 8; the
+PROOF licenses the theorem. FG9 restated as grammar-independent
+CORROBORATION. Sharpened by P1: n <= 8 is exactly the in-family
+range, so neither reaches the regime where the verdict could
+differ.
+**CLEAN, AND A GAP CLOSED IN THE PARENT'S FAVOUR.** D44c's dedup
+convention (poset is a function of the regs_of sequence; vname
+registers pred-inert) sat awkwardly with this receipt's own L3
+result (23,844 causal pairs share no actor register). Direct
+check: **230,706 cover pairs, ZERO with disjoint actor register
+sets.** Every COVER shares an actor register, so the actor-word
+determines the cover relation and hence the poset, and the L3
+violations are all transitive — consistent with this receipt's own
+zero-cover finding. **The parent's declared convention is now
+CONFIRMED BY MEASUREMENT rather than assumption.**
+**PAPER 32 §6 ITEM 7 AMENDED** (the amendment was queued behind
+this round; now unblocked and applied). Written in paper voice,
+single-threaded, no round catalogued. It records: the entry
+condition's FIRST half MET (sixth clause + up-cone confinement
+gated, 23,226 live pairs); an ARBITRATION-SCOPED scale-free crown
+no-go DELIVERED with its constructive two-pre-order proof and the
+root-order reversal identified as load-bearing; the SECOND half
+NOT MET — §3.1's claim is FULL-POSET, the full poset is not a
+rooted forest, and BOTH natural register-theoretic bridges are
+FALSE (links can be carried by a minted version name; domination
+is transitive so a proposal can dominate two incomparables). **The
+crown no-go therefore REMAINS REFEREE-CARRIED and the multi-author
+corner REMAINS DECIDED AT TESTED SCALE.** The amendment explicitly
+warns that the arbitration subposets have at most three elements
+and no poset under six can exceed dimension 2, so the dimension
+conclusion was NOT tested on the families. Status block records
+the 2026-07-25 revision of §6 item 7 only; no other section
+touched.

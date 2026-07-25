@@ -347,7 +347,7 @@ def sweep(actors, cap, allow_idle):
         'L3_wit': None, 'L3res_wit': None, 'L1_wit': None,
         'n_incomp_arb_pairs': 0, 'n_hist_2incomp_arbs': 0,
         'n_dominators_of_incomparables': 0,
-        'realizer_checked': 0, 'realizer_bad': [],
+        'realizer_checked': 0, 'realizer_bad': [], 'arb_sizes': {},
         'oracle_checked': 0, 'oracle_disagree': [],
         'S3_found': None,
         'sample_checked': 0, 'sample_mism': 0, 'arb_seen': 0,
@@ -437,6 +437,7 @@ def sweep(actors, cap, allow_idle):
         if arbs and not bad_arb:
             Csub = sub_poset(C, arbs)
             m = len(arbs)
+            st['arb_sizes'][m] = st['arb_sizes'].get(m, 0) + 1
             R = forest_realizer(Csub, range(m))
             st['realizer_checked'] += 1
             if R is None or not realizer_is_exact(Csub, range(m), *R):
@@ -625,6 +626,35 @@ check("FG6 the certificate agrees with the ported g2 dim<=2 oracle on "
       ochk > 0 and len(odis) == 0,
       f"oracle cross-checks = {ochk}, disagreements = {len(odis)}")
 
+# --- ROUND-1 P1: the cardinality stratification the parent receipt had
+#     and this one had dropped.  D44c tags width <= 2 rows
+#     "[theorem, not evidence]" for exactly this reason.
+SIZES = {}
+for s in STS.values():
+    for k, v in s['arb_sizes'].items():
+        SIZES[k] = SIZES.get(k, 0) + v
+ev_stratum = sum(v for k, v in SIZES.items() if k >= 6)
+print(f"  arb-subposet SIZE distribution over all certifications: "
+      f"{dict(sorted(SIZES.items()))}")
+print(f"  EVIDENCE stratum (size >= 6, the minimum at which dimension "
+      f"could exceed 2): {ev_stratum}")
+check("FG5/FG6 CARDINALITY STRATIFICATION — ROUND-1 P1 CORRECTION.  The "
+      "smallest poset of order dimension > 2 is the 3-crown S3, which has "
+      "SIX elements; every poset on five or fewer has dimension <= 2 BY "
+      "CARDINALITY ALONE.  The arb subposets certified here max out at "
+      f"size {max(SIZES) if SIZES else 0}, so the EVIDENCE stratum is "
+      f"{ev_stratum} and **ALL {rchk} CERTIFICATIONS ARE THEOREM-PASSES, "
+      "NOT EVIDENCE** — their verdict was fixed before the receipt looked "
+      "at them.  This gate exists so the count can never be quoted as "
+      "in-family confirmation of the dimension conclusion.  T2's "
+      "dimension content comes from the PROOF (note §2) plus FG9, and "
+      "from nowhere else; T2's HYPOTHESIS gate is unaffected and remains "
+      "live (the forest property is NOT automatic at small size — FG7(b) "
+      "fires on a 3-element V poset)",
+      ev_stratum == 0 and max(SIZES) < 6 and rchk > 0,
+      f"sizes = {dict(sorted(SIZES.items()))}, evidence stratum "
+      f"(>= 6) = {ev_stratum}, certifications = {rchk}")
+
 # ------------------------------------------------------------------ T3
 print("\n[T3 the FULL-POSET crown result and its PRE-REGISTERED route]")
 print("  The pin (§2, T3) named a route to full-poset S3-impossibility:")
@@ -759,10 +789,15 @@ for n in range(1, 9):
 
 print(f"  rooted forests enumerated (n = 1..8): {fg9_total}")
 check("FG9 EVERY rooted forest on <= 8 nodes has its principal down-sets "
-      "chains (the construction is self-consistent) and the FG5 realizer "
-      "realizes it EXACTLY — the step 'rooted forest => order dimension "
-      "<= 2' is machine-verified INDEPENDENTLY of the grammar, which is "
-      "what licenses the word THEOREM for the implication",
+      "chains and the FG5 realizer realizes it EXACTLY.  SCOPE — ROUND-1 "
+      "P2 CORRECTION: a finite enumeration to n = 8 licenses a statement "
+      "about n <= 8 and NOTHING MORE.  **What licenses the word THEOREM "
+      "for all n is the PROOF in note §2**; this enumeration is "
+      "CORROBORATION of a proved implication, grammar-independent and "
+      "therefore worth having, but it is not the license.  (Sharpened by "
+      "P1: n <= 8 is exactly the range the in-family objects occupy, so "
+      "neither the enumeration nor the family reaches the regime where "
+      "the verdict could differ.)",
       fg9_total == 46233 and fg9_nonchain == 0 and fg9_bad == 0,
       f"forests = {fg9_total}, non-chain down-sets = {fg9_nonchain}, "
       f"realizer failures = {fg9_bad}")

@@ -44,6 +44,9 @@
 [FG5 the CONSTRUCTIVE 2-realizer + FG6 oracle cross-check]
   [PASS] FG5 the explicit two-linear-extension realizer (DFS pre-order with roots+children ascending, and DFS pre-order with roots+children DESCENDING) realizes the arb subposet EXACTLY in every checked class — dim <= 2 by CERTIFICATE, not by oracle verdict  (arb subposets certified = 67403, failures = 0)
   [PASS] FG6 the certificate agrees with the ported g2 dim<=2 oracle on every checked arb subposet: zero disagreements  (oracle cross-checks = 67403, disagreements = 0)
+  arb-subposet SIZE distribution over all certifications: {1: 44546, 2: 19796, 3: 3061}
+  EVIDENCE stratum (size >= 6, the minimum at which dimension could exceed 2): 0
+  [PASS] FG5/FG6 CARDINALITY STRATIFICATION — ROUND-1 P1 CORRECTION.  The smallest poset of order dimension > 2 is the 3-crown S3, which has SIX elements; every poset on five or fewer has dimension <= 2 BY CARDINALITY ALONE.  The arb subposets certified here max out at size 3, so the EVIDENCE stratum is 0 and **ALL 67403 CERTIFICATIONS ARE THEOREM-PASSES, NOT EVIDENCE** — their verdict was fixed before the receipt looked at them.  This gate exists so the count can never be quoted as in-family confirmation of the dimension conclusion.  T2's dimension content comes from the PROOF (note §2) plus FG9, and from nowhere else; T2's HYPOTHESIS gate is unaffected and remains live (the forest property is NOT automatic at small size — FG7(b) fires on a 3-element V poset)  (sizes = {1: 44546, 2: 19796, 3: 3061}, evidence stratum (>= 6) = 0, certifications = 67403)
 
 [T3 the FULL-POSET crown result and its PRE-REGISTERED route]
   The pin (§2, T3) named a route to full-poset S3-impossibility:
@@ -78,7 +81,7 @@
   isomorphism); for each: build the realizer and verify it realizes
   the poset exactly; cross-check the g2 oracle for n <= 6.
   rooted forests enumerated (n = 1..8): 46233
-  [PASS] FG9 EVERY rooted forest on <= 8 nodes has its principal down-sets chains (the construction is self-consistent) and the FG5 realizer realizes it EXACTLY — the step 'rooted forest => order dimension <= 2' is machine-verified INDEPENDENTLY of the grammar, which is what licenses the word THEOREM for the implication  (forests = 46233, non-chain down-sets = 0, realizer failures = 0)
+  [PASS] FG9 EVERY rooted forest on <= 8 nodes has its principal down-sets chains and the FG5 realizer realizes it EXACTLY.  SCOPE — ROUND-1 P2 CORRECTION: a finite enumeration to n = 8 licenses a statement about n <= 8 and NOTHING MORE.  **What licenses the word THEOREM for all n is the PROOF in note §2**; this enumeration is CORROBORATION of a proved implication, grammar-independent and therefore worth having, but it is not the license.  (Sharpened by P1: n <= 8 is exactly the range the in-family objects occupy, so neither the enumeration nor the family reaches the regime where the verdict could differ.)  (forests = 46233, non-chain down-sets = 0, realizer failures = 0)
   [PASS] FG9 oracle cross-check on the n <= 6 forests: the g2 oracle confirms dim <= 2 on every one, zero disagreements  (oracle checks = 873, disagreements = 0)
 
 [FG7 mutants — the instrument must react as DECLARED]
@@ -101,7 +104,7 @@
   [PASS] FG8 exit discipline: THREE pre-registered items were falsified in this run (the form T1 and the lemmas L3, L1) and each was recorded as a PASSING gate reporting a determinate negative — falsification is a deliverable, not a breakage.  (Run 1 of this receipt got this gate wrong: it conjoined FAIL == 0, which made the exit-discipline check fail precisely when the discipline was working.)  (T1 falsified = True, L3 falsified = True, L1 falsified = True)
 
 [FG10 anti-vacuity scan of this receipt's own gates]
-  [PASS] FG10 every check() predicate in this receipt references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more — it does NOT detect a vacuous gate in arbitrary syntactic form, and must not be described as if it did  (check() calls scanned = 25, bare/unbound = 0)
+  [PASS] FG10 every check() predicate in this receipt references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more — it does NOT detect a vacuous gate in arbitrary syntactic form, and must not be described as if it did  (check() calls scanned = 26, bare/unbound = 0)
 
 [VERDICT — the pin's decision rule (§2), applied]
   T1  [FALSIFIED]  — as PRE-REGISTERED.  The full event poset is not a rooted forest: 23016 register-word classes carry an element whose principal down-set is not a chain (an arb consumes a component of mutually conflicting proposals).
@@ -111,6 +114,6 @@
   SCOPE, per pin §3: clauses (i)-(v) are ALL-SCALE per LOG #354; T2's hypothesis is gated over the three committed families and its implication is machine-verified grammar-independently, so T2 is scale-free in the implication and family-gated in the hypothesis — stated that way, without rounding up.
   PAPER 32 §6 item 7: AMEND TO PARTIAL — the two halves of #355's entry condition (the sixth clause, up-cone confinement) ARE now receipt-gated, and the arb-scoped crown no-go IS now a theorem with a constructive certificate; but §3.1's FULL-POSET claim is NOT discharged and its referee-carried status must be RETAINED, with the note's dead route recorded so no one walks it again.
 
-[totals] PASS = 27, FAIL = 0
+[totals] PASS = 28, FAIL = 0
 EXIT 0
 RC=0
