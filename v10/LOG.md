@@ -8285,3 +8285,49 @@ ladder confounds a g-trend with an N-trend.
 bound; the corpus's numbers remain fixture-extracted per A1), and
 §6 ranks the four named risks. NEXT: successors 1-6, beginning
 with (1) the funnel-lemma paper-grade promotion.
+
+## 2026-07-24 — d41c STEP 3 BLOCKED ON THE COARSE-GRAINING SLOT (LEDGER #405)
+The author raised, and I CONCEDE IN FULL, a blocking objection to
+BOTH bridge declarations of #404: an ion is an enormous object in
+record terms, the corpus has not built the QFT layer, and the
+spacetime being constructed is the BACKGROUND on which such fields
+would live. His words are quoted verbatim in the new note §1A.
+**FORWARD CORRECTION OF #404's RECOMMENDATION.** On 2026-07-19 I
+ranked B-I's line-count degeneracy as the top risk and treated A
+as the strong platform; the recommendation carried to the user was
+"sign A, hold B". That is **WITHDRAWN**. The same defect afflicts
+A with a far larger exponent, and B-I is recognized as merely the
+visible special case of it.
+FOUR THINGS RECORDED IN §1A. (i) the scale gap, ILLUSTRATIVE only:
+Planck spacing 1.62e-35 m vs proton ~1.7e-15 m is ~1e20, so at 1 mm
+record spacing a proton is ~1e17 m = order ten light-years — the
+author's figure is of the right order. (ii) the corpus CANNOT EVEN
+FIX THAT SCALE: paper 57's unified no-go gives exactly ONE record
+length with G provably un-fixable, so presuming the laboratory
+sits far above the record scale (or at it) is un-derived either
+way — a SECOND independent hole in the same slot. (iii) the LAYER
+gap: records -> background -> QFT -> atomic structure is at least
+three constructed layers, NONE of them built. (iv) both readings
+of every line identification fail — LITERAL is refuted by (i),
+EFFECTIVE is the only defensible one and has no coarse-graining
+theorem and no intervening layer to pass through.
+DISPOSITION. A new item (0) THE COARSE-GRAINING, logically PRIOR
+to (I)-(IV), is added to §1 and left **EMPTY**; §§2 and 3 are
+stamped [BLOCKED ON §1A] with their eight correspondences retained
+UNCHANGED as the criticizable record; §4 stamped [SUPERSEDED]
+(conditional on an empty slot); §6 gains risk 0 as BLOCKING and
+subsuming risk 1; §7 is SEALED, NOT PRESENTED FOR SIGNATURE, with
+a ninth unchecked box for (0). §1A(v) states the honest reading:
+the laboratory program is PREMATURE BY AT LEAST ONE CONSTRUCTED
+LAYER. §1A(vi) states why blocking beats the alternative handling
+(retain as PHENOMENOLOGICAL ansätze): that handling needs a label
+carried at every citation, and the corpus's record on carrying
+such labels is the d41a error (audit A1) — blocking is cheaper and
+cannot decay. §1A was INSERTED between §1 and §2 with NO
+renumbering, so all prior citations remain valid.
+NEW NAMED SUCCESSOR: **what is a laboratory system in record
+terms?** — an INTERNAL derivation question, filed with the
+dimension work, not with the discriminator work. It is the sole
+unblocking condition for d41c.
+NEXT: successors 1-6, beginning with (1) the funnel-lemma
+paper-grade promotion.
