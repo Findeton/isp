@@ -1,0 +1,66 @@
+[D48 — what is a composite in record terms?]
+  banner: admissibility is decided ONLY by the committed layer's
+  own candidates_for; no predicate is re-implemented.  SCOPE (pin
+  §4): this receipt speaks about ACTORS, never about ions,
+  molecules, constituents or mass — the actor-to-constituent step
+  is itself an UNSIGNED bridge.  Pre-registered expectation (pin
+  §2): NOT CLOSED.
+
+[CG0 anchor]
+  [PASS] CG0 the p/r/n admission layer is exec'd path-anchored from the committed d42b3 receipt (single source), and ADMISSIBILITY IS MEMBERSHIP IN ITS OWN candidates_for OUTPUT — the receipt never decides admissibility by a predicate of its own  (source = v10/code/d42b3_placement_exact.py)
+
+[CG1 equivariance control + CG2 identity control]
+  [PASS] CG2 IDENTITY CONTROL: the identity map leaves every admissible history admissible — 100% required, else the harness itself is broken  (histories = 21428, admissible images = 21428)
+  [PASS] CG1 EQUIVARIANCE CONTROL: under a BIJECTIVE actor renaming the image is admissible for 100% of histories — the grammar does not care what actors are called.  Anything less would be instrument breakage rather than a finding, and would exit 1  (histories = 21428, admissible images = 21428)
+
+[CG3 the merge test — several partitions, reported separately]
+  4->2  {A,B}->X, {C,D}->Y: histories = 21428, image ADMISSIBLE = 10820 (50%)
+  4->2  {A,C}->X, {B,D}->Y: histories = 21428, image ADMISSIBLE = 10820 (50%)
+  4->3  {A,B}->X, C, D: histories = 21428, image ADMISSIBLE = 15932 (74%)
+  4->1  all -> X: histories = 21428, image ADMISSIBLE = 4004 (18%)
+  [PASS] CG3 THE GRAMMAR IS NOT CLOSED UNDER ACTOR COARSE-GRAINING.  Every non-injective actor map tested sends a strictly positive fraction of admissible records to NON-ADMISSIBLE images.  The actor decomposition is therefore NOT a free redescription: actors are NOT AGGREGABLE.  The pin's §2 pre-registered expectation is CONFIRMED  (4->2  {A,B}->X, {C,D}->Y -> 10820/21428; 4->2  {A,C}->X, {B,D}->Y -> 10820/21428; 4->3  {A,B}->X, C, D -> 15932/21428; 4->1  all -> X -> 4004/21428)
+
+[CG4 the failure EXHIBITED, not counted]
+  first non-admissible image under 4->2  {A,B}->X, {C,D}->Y, breaking at index 3:
+    ('p', 'A', ('v', 'v0'), 0)
+      ->  ('p', 'X', ('v', 'v0'), 0)
+    ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+      ->  ('r', 'X', frozenset({('X', ('v', 'v0'), 0)}), frozenset({('X', ('v', 'v0'), 0)}))
+    ('p', 'A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)
+      ->  ('p', 'X', ('v', ('v', 'v0'), (0,), ('X',), 'X'), 0)
+    ('p', 'B', ('v', 'v0'), 0)
+      ->  ('p', 'X', ('v', 'v0'), 0)
+  MECHANISM: two DISTINCT actors each propose on the same base version.  Their merged image is ONE actor proposing twice on a base its own line has already left — which the layer rejects.  The obstruction is the mint chain: an actor's successive proposals must descend from that actor's own latest version, and merging destroys that descent.
+  [PASS] CG4 the obstruction is EXHIBITED in full with the index at which admissibility breaks, so the mechanism is on the record and not inferred from a percentage  (first failure index = 3)
+
+[CG5 depth dependence — generic failure or boundary effect?]
+  length 1: 12/12 admissible (100%)
+  length 2: 120/136 admissible (88%)
+  length 3: 1104/1568 admissible (70%)
+  length 4: 9584/19712 admissible (48%)
+  [PASS] CG5 THE FAILURE IS GENERIC, NOT A BOUNDARY EFFECT: the admissible fraction FALLS MONOTONICALLY with history length, so longer records are progressively less coarse-grainable rather than failing only at some edge case  ((length, total, admissible, %) = [(1, 12, 12, 100), (2, 136, 120, 88), (3, 1568, 1104, 70), (4, 19712, 9584, 48)])
+
+[CG6 the dual — is REFINEMENT closed?]
+  Splitting one actor into two cannot be tested by a MAP (a map
+  cannot be one-to-many).  The well-posed dual is: can every
+  admissible record of a SMALLER actor set be realized as the
+  coarse image of some admissible record of a LARGER one?  That is
+  the SURJECTIVITY of the coarse-graining, and it is decidable
+  here by enumeration.
+  admissible COARSE records (2 actors, <= 4 events): 1190
+  of these, reachable as the image of an admissible FINE record: 1190
+  [PASS] CG6 THE DUAL, REPORTED IN WHICHEVER DIRECTION IT CAME OUT — and it came out the OPPOSITE way to the merge test.  **COARSE-GRAINING IS SURJECTIVE**: every admissible coarse record lifts to some admissible fine record.  (This gate was first written asserting non-surjectivity; it FIRED, and the assertion is withdrawn.  Only the CG1/CG2 controls are exit-1 conditions per pin §5 — a dual that comes out the other way is a deliverable.)  THE CORRECT PICTURE IS THEREFORE ONE-DIRECTIONAL: coarse-graining is a PARTIAL map — undefined on the fine records that break — but ONTO the coarse world it does reach  (coarse records = 1190, reachable = 1190, unreachable = 0 -> SURJECTIVE)
+
+[CG7 anti-vacuity]
+  [PASS] CG7(a) the tested stratum is NON-EMPTY and its size is printed at every gate — a zero-history scan would have made every fraction above meaningless  (identity scan = 21428, merge scans = [21428, 21428, 21428, 21428], coarse records = 1190)
+  [PASS] CG7(b) every check() predicate references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more  (check() calls = 9, bare/unbound = 0)
+
+[VERDICT — D48]
+  **ACTORS ARE NOT AGGREGABLE.**  The grammar is not closed under actor coarse-graining: every non-injective actor map tested sends a positive fraction of admissible records to non-admissible images, the fraction falls with record length, and the obstruction is the mint chain — an actor's proposals must descend from that actor's own latest version, and merging destroys the descent.
+  BUT IT FAILS IN ONE DIRECTION ONLY.  The dual came out the other way: coarse-graining IS SURJECTIVE — all 1190 of 1190 admissible coarse records lift to some admissible fine record.  So the coarse description is never SPURIOUS; what fails is that an arbitrary fine record need not HAVE a coarse shadow.  **Coarse-graining is a PARTIAL map, onto but not total** — and its domain shrinks with record length (100% -> 88% -> 70% -> 48%).
+  THE CONTROLS HELD: identity and bijective renaming both give 100%, so the grammar is equivariant under what actors are CALLED and the failure above is about how many there ARE.
+  DISPOSITION FOR d41c §1A: **THE BLOCKER STANDS**, in a sharper form than before.  The bridge's effective reading needs a record to HAVE a single-line description; the layer supplies one for only a shrinking fraction of records, and supplies none at all systematically.  A declaration cannot rest on an identification that is undefined on most of its domain.  (It is NOT strengthened to 'the coarse description is meaningless' — CG6 forbids that reading.)
+  SCOPE HELD (pin §4): this says NOTHING about ions, molecules or mass.  The conditional it licenses is 'IF constituents are actors, THEN a composite is irreducibly many lines' — **and the antecedent REMAINS UNSIGNED.**
+
+[totals] PASS = 9, FAIL = 0
+EXIT 0

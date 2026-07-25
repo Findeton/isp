@@ -8781,3 +8781,60 @@ FALSIFIER: CG1/CG2 below 100% = breakage; CG3 at 100% everywhere =
 closure holds, the pre-registered expectation FALSIFIED, and
 d41c's §1A blocker weakens substantially — to be reported loudly,
 not buried.
+
+## 2026-07-25 — D48 GREEN-UNREVIEWED: ACTORS ARE NOT AGGREGABLE
+## (LEDGER #414)
+Receipt v10/code/d48_composite_line_exact.py, 9 PASS / 0 FAIL,
+exit 0. Admissibility decided ONLY by the committed d42b3 layer's
+own candidates_for; no predicate re-implemented.
+**CONTROLS HELD (the exit-1 conditions, pin §5).** Identity map:
+21,428/21,428. BIJECTIVE renaming: 21,428/21,428. **The grammar is
+equivariant under what actors are CALLED**, so everything below is
+about how many there ARE, not about labels.
+**CG3 — THE GRAMMAR IS NOT CLOSED UNDER ACTOR COARSE-GRAINING.**
+Every non-injective actor map sends a positive fraction of
+admissible records to NON-ADMISSIBLE images: {A,B}->X,{C,D}->Y =
+10,820/21,428 (50%); {A,C}->X,{B,D}->Y = 10,820 (50%);
+{A,B}->X,C,D = 15,932 (74%); all->X = 4,004 (18%). The pin's §2
+pre-registered expectation is CONFIRMED. **ACTORS ARE NOT
+AGGREGABLE.**
+**CG4 — THE MECHANISM, EXHIBITED NOT COUNTED.** Two DISTINCT
+actors each propose on the same base version; the merged image is
+ONE actor proposing twice on a base its own line has already left,
+which the layer rejects. **The obstruction is the MINT CHAIN**: an
+actor's successive proposals must descend from that actor's own
+latest version, and merging destroys the descent.
+**CG5 — THE FAILURE IS GENERIC, NOT A BOUNDARY EFFECT.** The
+admissible fraction falls MONOTONICALLY with record length:
+100% -> 88% -> 70% -> 48% at lengths 1/2/3/4. Longer records are
+progressively less coarse-grainable.
+**CG6 — THE DUAL CAME OUT THE OTHER WAY, AND THE GATE THAT
+ASSERTED OTHERWISE FIRED.** I first wrote CG6 asserting
+non-surjectivity; it FAILED at exit 1 and the assertion is
+WITHDRAWN. **COARSE-GRAINING IS SURJECTIVE**: all 1,190 of 1,190
+admissible coarse records lift to some admissible fine record. So
+the coarse description is NEVER SPURIOUS. **The correct picture is
+ONE-DIRECTIONAL: coarse-graining is a PARTIAL map — ONTO but NOT
+TOTAL — whose domain shrinks with record length.** (Per pin §5
+only CG1/CG2 are exit-1 conditions; a dual coming out the other
+way is a deliverable, and the gate is now written to report
+whichever direction it takes — the same pattern as D47's TG5(b).)
+**DISPOSITION FOR d41c §1A: THE BLOCKER STANDS, in a sharper
+form.** The bridge's effective reading needs a record to HAVE a
+single-line description; the layer supplies one for only a
+shrinking fraction of records and none systematically. A
+declaration cannot rest on an identification undefined on most of
+its domain. **It is NOT strengthened to "the coarse description is
+meaningless" — CG6 forbids that reading.**
+**SCOPE HELD (pin §4).** This says NOTHING about ions, molecules,
+constituents or mass. The conditional licensed is "IF constituents
+are actors, THEN a composite is irreducibly many lines" — and
+**the antecedent REMAINS UNSIGNED**.
+CONNECTION TO D47 (#409/#410): D47 measured that sky size is set
+by ACTOR COUNT; D48 shows actor count is not a free redescription.
+Together: the number of directions at an event is physical
+content, not a modelling choice — which is the first internal
+foothold under the author's "infinite clocks" doctrine, since
+unboundedly many directions would require unboundedly many
+actors and D48 says that number cannot be renegotiated by
+coarse-graining.
