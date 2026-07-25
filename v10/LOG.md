@@ -8567,3 +8567,62 @@ the cap system.
 NEXT: D47b — the transport skies, capacity gated FIRST, shatter-4
 as the only load-bearing instrument, and the construction-matched
 null (SG5) before any failure is read as structure.
+
+## 2026-07-25 — D47b GREEN-UNREVIEWED: THE SKY IS AN ACTOR-WIDTH
+## PHENOMENON (LEDGER #410)
+Receipt v10/code/d47b_transport_skies_exact.py, 13 PASS / 0 FAIL,
+exit 0; note-d47-sphere-rung-result.md covers D47a+D47b together.
+The instrument is IMPORTED from the committed D47a receipt by AST
+extraction of its function definitions (single source, D47a's own
+gates NOT re-run) and RE-VALIDATED in-process against D47a's
+separator, so a silently-changed extraction cannot pass.
+**THE LOAD-BEARING MEASUREMENT.** Over 400 deterministic deep
+walks per width to depth 20: max |directions| = 2, 3, 4, 4, 4, 4
+at widths 2, 3, 4, 5, 6, 8. **At width 2 the sky stays at 2 NO
+MATTER HOW DEEP THE WALK RUNS.** Compare D47a SG10: a Minkowski
+sprinkling buys sky size with EVENT COUNT (3, 8, 10, 14 at
+N = 20/40/80/160, decidable from N ~ 40). **TWO DIFFERENT SCALING
+VARIABLES: transport buys sky size ONLY with ACTOR WIDTH. DEPTH
+CANNOT BUY WHAT ONLY WIDTH CAN** — so any future attempt at a
+decidable sky must scale WIDTH, and scaling depth is CERTIFIED
+FUTILE.
+EXHAUSTIVE STRATUM (30,729 + 243,769 + 764,584 histories, three
+fully enumerated families): max 3 directions against the 4 needed
+=> the question is UNDECIDABLE there, reported as undecidability
+and NEVER as a 2+1 cap. SAMPLED STRATUM: 44 decidable triples
+(SKY-A 0, SKY-B 37, SKY-C 7), 0 shattered 4-sets. Strata labelled
+separately and never merged.
+**NO CEILING IS CLAIMED — A CORRECTION MADE IN-RECEIPT.** TG2's
+table plateaus at 4 from width 4 through 8, which invites a
+structural-ceiling reading. Chased rather than shipped: a denser
+probe at width 10 with SKY-B's depth varied over {1,2,3} instead
+of pinned at its committed 2 reaches **5**. The plateau was an
+artifact of MY OWN sampling density plus a pinned parameter.
+**NO CEILING AND NO SATURATION MAY BE QUOTED FROM THIS UNIT** —
+gated as TG2(c).
+TG5 THE NULL SEPARATES: an interaction-free per-actor-chain null
+over the same carriers reaches only 1 direction against
+transport's 4, so the sky sizes are produced by CROSS-ACTOR
+CAUSATION and are not a construction tautology of carrier size (a
+matching null would have voided TG2 as D46f's commutation headline
+was voided).
+**WHAT MAY NOT BE SAID** (carried into the note §8): no absence of
+shattering is evidence for 2+1; no "the sky IS a circle" anywhere;
+circular-ones counts are DIAGNOSTIC ONLY; the plateau is not a
+ceiling; and SKY-A/B/C disagree MATERIALLY (SKY-A never reached
+decidability, SKY-B at width 4, SKY-C at width 5) so every
+single-definition result is READING-RELATIVE.
+**FOR THE 3+1 QUESTION.** The user's binding doctrine (3+1 is not
+four clocks but infinitely many) now has a measured counterpart:
+the number of directions in a transport sky is set by the number
+of ACTORS. A sky rich enough to be a candidate 2-sphere therefore
+needs many actors, and running the record longer will never
+produce one. The successor is RELOCATED: build a WIDTH-SCALING
+fixture, not a deeper one.
+RESIDUES: (1) the width-scaling fixture; (2) WHICH SKY DEFINITION
+IS PHYSICALLY PRIVILEGED — SKY-A never reaches decidability while
+SKY-B does, currently unexplained, the D46e-class question for
+this unit; (3) the exhaustive/sampled boundary, named not omitted.
+NEXT: the hostile round on D47 (pin §7 requires one after D47b
+regardless of outcome). D47c is NOT built: it was conditional on
+finding non-arc skies, and none were found.
