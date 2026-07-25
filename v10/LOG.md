@@ -8626,3 +8626,57 @@ this unit; (3) the exhaustive/sampled boundary, named not omitted.
 NEXT: the hostile round on D47 (pin §7 requires one after D47b
 regardless of outcome). D47c is NOT built: it was conditional on
 finding non-arc skies, and none were found.
+
+## 2026-07-25 — D47 ROUND 1: TWO MAJORS, ONE REVERSAL, TERMINAL (LEDGER #411)
+Round frozen at v10/reviews/d47-round1-hostile-review.md, then
+repaired and delta'd. Post-repair: D47a 20 PASS / 0 FAIL, D47b 14
+PASS / 0 FAIL, both exit 0. Both findings were gates that PASSED
+while measuring something other than what they claimed.
+**MAJOR R1 — TG5's null was miswired AND vacuous by design.** Its
+actor extraction scanned each event tuple for the first single
+alphabetic character, which in a transport event is the EVENT TYPE
+('d','p','r','n'), NEVER the actor: verified on 720 sampled events,
+**100% returned the type and none the actor**. And repairing that
+would NOT have rescued it — ANY null built as a disjoint union of
+totally ordered groups gives every element exactly ONE cover, so
+its maximum sky is 1 BY CONSTRUCTION and the gate could never
+fail. The D46f failure mode reproduced INSIDE the gate written to
+prevent it.
+**THE REPAIR REVERSED THE HEADLINE.** Rebuilt as a link-count-
+matched random DAG (same carrier size, same cover count, relations
+re-drawn under a random linear order — a construction that CAN
+concentrate covers), the null reaches **7 directions with 362
+decidable triples against transport's 4**. The original TG5 claim
+("cross-actor causation PRODUCES the sky") is **WITHDRAWN**.
+**TRANSPORT SKIES ARE NARROWER THAN CHANCE**: the law CONSTRAINS
+sky size BELOW the generic value at matched carrier and link
+count. TG5(b) is written to report whichever direction the
+comparison takes, and it took this one. **This STRENGTHENS the
+actor-width reading** — the bound is a real restriction, not an
+artifact of record size.
+**MAJOR R2 — SG10 confounded POINT COUNT with DENSITY.** The point
+generator let the box extent scale with N, so volume grew as ~4N^3
+while N grew linearly and the sprinkling got SPARSER as N rose.
+With the box HELD FIXED at 160: max |SKY-A| = 4, 7, 9, 14 at
+N = 20/40/80/160 and the question is **decidable already at
+N = 20** — against the growing-box column's 3, 8, 10, 14 and first
+decidability at 40. **The headline 'shatter-4 first becomes
+decidable at N ~ 40' is WITHDRAWN AS STATED.** Both columns are
+now reported side by side and neither is quoted alone. The correct
+Minkowski variable is DENSITY. **The unit's central contrast is
+SHARPENED: Minkowski buys sky size with DENSITY, transport buys it
+with ACTOR WIDTH.**
+CHECKED AND CLEAN: the demotion (SG3b, 121 of 554 genuine 2+1
+skies rejected by circular-ones) is sound and independent of both
+defects; SG0's separator genuinely constructed; SG3's vacuity gate
+honest; TG2's actor-width measurement unconfounded (depth varied
+at fixed width); TG2(c)'s in-receipt plateau retraction correct;
+SKY-B's directions do form an antichain (equal global height
+implies incomparability) though "height difference d" is not
+"distance d from e" — a definitional caveat, not an error.
+NEW RESIDUE: the rebuilt null is CRUDE (matches carrier size and
+link count but not the height/width profile), so "narrower than
+chance" is established against THAT null and not against every
+reasonable one.
+D47c NOT BUILT: it was conditional on finding non-arc skies and
+none were found. TERMINAL for round 1.

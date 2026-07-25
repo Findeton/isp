@@ -43,11 +43,12 @@
   [PASS] SG3 IS VACUOUS, AND THAT IS THE FINDING — stated as its own gate so no reader can mistake the pass above for information.  The shatter-4 question is decidable at ZERO of the 54 base-event / definition pairs, because the largest sky an 18-point M^{2+1} record produces has just 2 directions against the 4 the test needs.  SG3 therefore confirms NOTHING about Minkowski; it measures the CAPACITY of the instrument's input, and the pin's pre-registered expectation (§5, CAPACITY INSUFFICIENT) is already realized at the control, before any transport data is examined  (decidable pairs = 0/54, max |directions| over all base events and all three definitions = 2, needed = 4)
 
 [SG10 the capacity law — what scale does this test require?]
-  N =   20 exact M^(2+1) points: max |SKY-A directions| = 3, base events where shatter-4 is DECIDABLE = 0/20
-  N =   40 exact M^(2+1) points: max |SKY-A directions| = 8, base events where shatter-4 is DECIDABLE = 23/40
-  N =   80 exact M^(2+1) points: max |SKY-A directions| = 10, base events where shatter-4 is DECIDABLE = 58/80
-  N =  160 exact M^(2+1) points: max |SKY-A directions| = 14, base events where shatter-4 is DECIDABLE = 120/160
-  [PASS] SG10 THE CAPACITY LAW, CERTIFIED: the shatter-4 test needs >= 4 directions in one sky, and the sky size grows with record size.  The smallest tested exact-M^{2+1} record at which ANY base event can decide shatter-4 is reported here.  This is the pin's §5 fallback deliverable — the scale the instrument requires, measured rather than guessed  ((N, max directions, decidable base events) = [(20, 3, 0), (40, 8, 23), (80, 10, 58), (160, 14, 120)]; first N with a decidable base event = 40)
+  N =   20: GROWING box -> max |SKY-A| =  3, decidable =   0/20;   FIXED box (160) -> max |SKY-A| =  4, decidable =   4/20
+  N =   40: GROWING box -> max |SKY-A| =  8, decidable =  23/40;   FIXED box (160) -> max |SKY-A| =  7, decidable =  12/40
+  N =   80: GROWING box -> max |SKY-A| = 10, decidable =  58/80;   FIXED box (160) -> max |SKY-A| =  9, decidable =  48/80
+  N =  160: GROWING box -> max |SKY-A| = 14, decidable = 120/160;   FIXED box (160) -> max |SKY-A| = 14, decidable = 120/160
+  [PASS] SG10 THE CAPACITY LAW — ROUND-1 R2 CORRECTION APPLIED.  The original single-column table let the BOX EXTENT scale with N, so volume grew as ~4N^3 while the point count grew as N: the sprinkling got SPARSER as N rose, and 'sky size versus record size' was really two variables moving in opposite directions.  **The earlier headline 'shatter-4 first becomes decidable at N ~ 40' is WITHDRAWN AS STATED** — at fixed box it already decides at N = 20.  Both scalings are now reported side by side and neither is quoted alone  (growing box: first decidable N = 40, table = [(20, 3, 0), (40, 8, 23), (80, 10, 58), (160, 14, 120)]; fixed box: first decidable N = 20, table = [(20, 4, 4), (40, 7, 12), (80, 9, 48), (160, 14, 120)])
+  [PASS] SG10(b) THE CORRECT MINKOWSKI VARIABLE IS DENSITY, NOT POINT COUNT: holding the box fixed and raising N — i.e. raising density alone — lifts the sky monotonically, while the growing-box column mixes the two.  The unit's central contrast is thereby SHARPENED, not weakened: Minkowski buys sky size with DENSITY, transport (D47b TG2) buys it with ACTOR WIDTH  (fixed-box max |SKY-A| by N = [(20, 4), (40, 7), (80, 9), (160, 14)])
 
 [SG3b the 2+1 control, at a scale where it actually decides]
   N =   40: decidable (event, definition) pairs = 64; SHATTERED = 0; circular-ones NOT-ARC = 10; UNDECIDED-BY-CAP = 0
@@ -59,15 +60,15 @@
 
 [SG7 no silent caps + SG8 anti-vacuity]
   [PASS] SG7 NO SILENT CAPS: the cyclic-order search cap is a committed constant (CYCLIC_CAP = 8) printed in the banner, and the number of skies that hit it is counted and reported rather than folded into the ARC verdict  (skies returning UNDECIDED-BY-CAP = 0; cap = 8)
-  [PASS] SG8 every check() predicate references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more — it does NOT detect a vacuous gate in arbitrary syntactic form and must not be described as if it did  (check() calls = 19, bare/unbound = 0)
+  [PASS] SG8 every check() predicate references at least one run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): this scan enforces EXACTLY that and nothing more — it does NOT detect a vacuous gate in arbitrary syntactic form and must not be described as if it did  (check() calls = 20, bare/unbound = 0)
 
 [VERDICT — D47a]
   THE INSTRUMENT IS FIT.  The separator is constructed, not cited: arcs shatter 3 and never 4; caps on an exact-rational tetrahedron shatter 4, opposite-edge case included with its certificate.  Both instruments exhibit a true positive AND a true negative, they agree where both apply, and SG1(d) exhibits a system separating them — so shatter-4 may never be read as arc-realizability.
   SG3 WAS VACUOUS AND SAYS SO: an 18-point M^{2+1} record has skies of at most 2 directions against the 4 the test needs, so the original consistency check carried ZERO information.  The pin's pre-registered 'capacity insufficient' expectation was realized at the CONTROL, before any transport data.
-  SG10 CERTIFIES THE SCALE REQUIRED, and SG3b then runs the control where it actually decides: 554 decidable pairs across three exact M^{2+1} records, ZERO shattered 4-sets.
+  SG10 CERTIFIES THE SCALE REQUIRED — in DENSITY, after the round-1 R2 correction withdrew the box-confounded 'N ~ 40'.  SG3b then runs the control where it actually decides: 554 decidable pairs across three exact M^{2+1} records, ZERO shattered 4-sets.
   **THE DEMOTION — the sharpest thing this receipt found.**  CIRCULAR-ONES REJECTED 121 OF 554 GENUINE 2+1 SKIES.  A discrete sky of real Minkowski is NOT generally an arc system, so arc-realizability is NOT a usable proxy for 2+1 and Instrument 1 is DEMOTED to a diagnostic.  D47b must rest on SHATTER-4 ALONE.  Any earlier framing of circular-ones as the primary two-sided test is WITHDRAWN: it is two-sided on ARC-REALIZABILITY, which is not the same question.
   ONE-SIDEDNESS RESTATED FOR THE RECORD: nothing in this receipt licenses any statement of the form 'the sky IS a circle'.  Only the obstruction direction is a certificate — and SG3b is the empirical proof of why that restriction was necessary.
   NEXT: D47b points this instrument at the transport fixtures, with capacity gated FIRST (pin SG2) and a construction-matched null (pin SG5) before any failure is read as structure.
 
-[totals] PASS = 19, FAIL = 0
+[totals] PASS = 20, FAIL = 0
 EXIT 0

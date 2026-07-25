@@ -1,6 +1,10 @@
 # D47 — result: the sky is an ACTOR-WIDTH phenomenon
 
-**Status:** GREEN-UNREVIEWED, 2026-07-25.  Receipts
+**Status:** ROUND-1 REVIEWED AND REPAIRED, 2026-07-25.  Round
+frozen at `v10/reviews/d47-round1-hostile-review.md`; both MAJOR
+findings (R1 the vacuous null, R2 the box-confounded capacity law)
+are repaired in-receipt, and **one of them REVERSED a headline of
+this note** — see §6.  Receipts
 `v10/code/d47a_sky_instrument_exact.py` (19 PASS / 0 FAIL) and
 `v10/code/d47b_transport_skies_exact.py` (13 PASS / 0 FAIL), both
 exit 0; outputs under `v10/data/`.  Pin:
@@ -72,9 +76,17 @@ examined.**
 
 ## 4. The capacity law, in two different variables
 
-**Minkowski buys sky size with EVENT COUNT** (D47a SG10, exact
-integer-lattice records): max |SKY-A| = 3, 8, 10, 14 at N = 20,
-40, 80, 160.  Shatter-4 first becomes decidable at **N ~ 40**.
+**Minkowski buys sky size with DENSITY** — not with point count.
+*(Round 1, MAJOR R2: as first written this section said EVENT
+COUNT and quoted "decidable at N ~ 40".  Both are WITHDRAWN.  The
+original scan let the box extent scale with N, so volume grew as
+~4N³ while the point count grew as N and the sprinkling got
+sparser as N rose; the table measured two variables moving in
+opposite directions.)*  With the box held fixed at 160, max
+|SKY-A| = **4, 7, 9, 14** at N = 20, 40, 80, 160 and the question
+is already decidable at **N = 20** — against the growing-box
+column's 3, 8, 10, 14 and first decidability at 40.  Both columns
+are now reported side by side and neither is quoted alone.
 
 **Transport buys it only with ACTOR WIDTH** (D47b TG2, 400
 deterministic deep walks per width to depth 20): max |directions|
@@ -105,14 +117,39 @@ than shipping it.  The sky keeps growing with width, slowly, and
 sensitively to the sky definition's own parameter.  **No ceiling
 and no saturation may be quoted from this unit.**
 
-## 6. The null separates
+## 6. The null — REVERSED at round 1, and the reversal is better news
 
-The construction-matched null (D46f's lesson) replaces cross-actor
-causation with per-actor chains over the same carriers.  It
-produces skies of at most **1** direction against transport's 4.
-The measured sky sizes are therefore produced by cross-actor
-causation, not by carrier size — a null that had matched would
-have voided TG2 exactly as D46f's commutation headline was voided.
+**As first written, this section claimed the null separates.  It
+does not.  Both the claim and the gate behind it are WITHDRAWN.**
+
+Round 1 (`reviews/d47-round1-hostile-review.md`, MAJOR R1) found
+the original null defective twice over.  Its actor extraction
+scanned each event tuple for the first single alphabetic character
+— which in a transport event is the EVENT TYPE (`'d'`, `'p'`,
+`'r'`, `'n'`), never the actor — so it grouped by type on **100%
+of 720 sampled events**.  And repairing that would not have saved
+it: any null built as a disjoint union of totally ordered groups
+gives every element exactly one cover, so its maximum sky is **1
+by construction** and the gate could never have failed.  That is
+the D46f failure mode reproduced inside the gate written to
+prevent it.
+
+**The rebuilt null** is a link-count-matched random DAG: same
+carrier size, same number of cover relations, relations re-drawn
+under a random linear order — a construction that CAN concentrate
+covers, so a large null sky was a live outcome.  It reaches
+**7 directions with 362 decidable triples**, against transport's
+**4**.
+
+**So the comparison came out the other way, and the receipt
+reports it that way.**  Transport skies are **narrower than
+chance**.  What the transport law does is not *produce* sky size
+but *constrain it below the generic value* at matched carrier and
+link count.
+
+This strengthens §4 rather than weakening it: the actor-width
+bound is a real restriction imposed by the law, not a by-product
+of how many events a record happens to contain.
 
 ## 7. What this means for the 3+1 question
 

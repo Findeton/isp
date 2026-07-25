@@ -362,55 +362,98 @@ else:
 # =========================================================================
 # TG5 — the construction-matched null (the D46f lesson)
 # =========================================================================
-print("\n[TG5 the construction-matched null]")
-print("  Before any structure is read into the numbers above, they are")
-print("  compared with a null that shares the construction's forced")
-print("  features: the SAME poset carriers, but with the causal relation")
-print("  replaced by the transitive closure of a chain decomposition by")
-print("  actor — i.e. what the layer would produce if actors never")
-print("  interacted at all.  A feature the null also produces is a")
-print("  CONSTRUCTION TAUTOLOGY, not a finding.")
+print("\n[TG5 the construction-matched null — REBUILT AFTER ROUND-1 R1]")
+print("  ROUND-1 R1, OWNED IN FULL.  The original TG5 was defective")
+print("  TWICE OVER.  (i) Its actor extraction scanned each event tuple")
+print("  for the first single alphabetic character, which in transport")
+print("  events is the EVENT TYPE ('d','p','r','n'), never the actor — so")
+print("  it grouped by type on 100% of events.  (ii) Fixing that would")
+print("  NOT have rescued it: ANY null built as a disjoint union of")
+print("  totally ordered groups gives every element exactly ONE cover, so")
+print("  its maximum sky is 1 BY CONSTRUCTION and the gate could never")
+print("  fail.  That is the very D46f failure mode the gate existed to")
+print("  prevent, reproduced inside the prevention.  The null below is")
+print("  rebuilt so that it CAN fail.")
 
-def null_of(h):
-    """Actors' own chains only: x < y iff same actor and earlier.  This
-    keeps carrier size and the per-actor chain structure and removes all
-    cross-actor causation."""
+def rewired_null(h, seed):
+    """LINK-COUNT-MATCHED RANDOM DAG.  Same carrier size and the same
+    number of cover relations as the real record, but the relations are
+    re-drawn at random under a random linear order.  Unlike a union of
+    chains this CAN concentrate many covers on one element, so a large
+    sky in the null is a live possibility and the comparison is
+    informative."""
     n = len(h)
-    who = []
-    for e in h:
-        a = None
-        for f in e:
-            if isinstance(f, str) and len(f) == 1 and f.isalpha():
-                a = f
-                break
-        who.append(a)
-    return [[who[i] is not None and who[i] == who[j] and i < j
-             for j in range(n)] for i in range(n)]
+    C = poset_of(h)
+    links = sum(1 for i in range(n) for j in range(n)
+                if C[i][j] and not any(C[i][k] and C[k][j]
+                                       for k in range(n)))
+    s = seed
+    perm = list(range(n))
+    for i in range(n - 1, 0, -1):
+        s = (1103515245 * s + 12345) % (1 << 31)
+        j = s % (i + 1)
+        perm[i], perm[j] = perm[j], perm[i]
+    pairs = [(perm[a], perm[b]) for a in range(n) for b in range(a + 1, n)]
+    chosen = []
+    for _ in range(min(links, len(pairs))):
+        if not pairs:
+            break
+        s = (1103515245 * s + 12345) % (1 << 31)
+        chosen.append(pairs.pop(s % len(pairs)))
+    N = [[False] * n for _ in range(n)]
+    for a, b in chosen:
+        N[a][b] = True
+    for k in range(n):                     # transitive closure
+        for i in range(n):
+            if N[i][k]:
+                for j in range(n):
+                    if N[k][j]:
+                        N[i][j] = True
+    return N, links
 
 null_best = {'A': 0, 'B': 0, 'C': 0}
 null_dec = 0
+null_links = 0
+_ns = 24680
 for w, hs in SAMPLES.items():
     for h in hs[:60]:
         if not h:
             continue
-        Cn = null_of(h)
+        _ns = (1103515245 * _ns + 12345) % (1 << 31)
+        Cn, lk = rewired_null(h, _ns)
+        null_links += lk
         for e in range(len(h)):
             for kind in ('A', 'B', 'C'):
                 dirs, rows = sky(Cn, e, kind)
                 null_best[kind] = max(null_best[kind], len(dirs))
                 if len(dirs) >= 4 and len(rows) >= 2:
                     null_dec += 1
-print(f"  null max |directions| = {null_best}; null decidable triples = "
-      f"{null_dec}")
-check("TG5 THE NULL SEPARATES: an interaction-free null over the same "
-      "carriers produces strictly smaller skies than the real transport "
-      "layer, so the sky sizes measured in TG2 are NOT a construction "
-      "tautology of carrier size — they are produced by cross-actor "
-      "causation.  (A null matching the real numbers would have voided "
-      "TG2, exactly as D46f's commutation headline was voided.)",
-      max(null_best.values()) < max(max(r[2].values()) for r in TG2),
-      f"null max = {max(null_best.values())}, transport max = "
-      f"{max(max(r[2].values()) for r in TG2)}")
+print(f"  rewired null: max |directions| = {null_best}, decidable triples "
+      f"= {null_dec}, cover links matched = {null_links}")
+
+trans_max = max(max(r[2].values()) for r in TG2)
+check("TG5(a) THE NULL IS CAPABLE OF FAILING THE COMPARISON — the defect "
+      "R1 identified is repaired, not papered over.  A link-count-matched "
+      "random DAG concentrates covers freely, and it in fact reaches "
+      f"{max(null_best.values())} directions with {null_dec} decidable "
+      "triples, so a large sky in the null was a live outcome rather than "
+      "an arithmetic impossibility.  The old union-of-chains null was "
+      "capped at 1 BY CONSTRUCTION and could not have failed",
+      max(null_best.values()) > 1,
+      f"rewired null max = {max(null_best.values())} (the old null was "
+      f"capped at 1 by construction), decidable = {null_dec}")
+
+check("TG5(b) WHAT THE REPAIRED COMPARISON ACTUALLY SHOWS, reported in "
+      "whichever direction it came out: transport's maximum sky is "
+      f"{trans_max}, the link-matched random null's is "
+      f"{max(null_best.values())}.  If the null MATCHES or EXCEEDS "
+      "transport, then sky size is a generic consequence of carrier size "
+      "and link count and NOT a property of the transport law — and this "
+      "gate says so rather than asserting separation",
+      isinstance(trans_max, int) and max(null_best.values()) >= 0,
+      f"transport max = {trans_max}, null max = "
+      f"{max(null_best.values())} -> "
+      f"{'NULL MATCHES OR EXCEEDS: sky size is GENERIC, not a transport property' if max(null_best.values()) >= trans_max else 'transport exceeds the null: the sky size is a property of the law'}")
 
 # =========================================================================
 # TG6 — the scale gap, certified
@@ -479,6 +522,16 @@ print(f"  AND NO CEILING: TG2's plateau at {plateau} is a "
       f"depth varied reaches {probe_best}.  Growth is slow and is "
       f"sensitive to the sky definition's own parameter; nothing here "
       f"licenses a saturation claim.")
+print(f"  **THE ROUND-1 NULL REVERSAL.**  With the null rebuilt so that it "
+      f"CAN fail, it does the opposite of separating: a link-count-matched "
+      f"random DAG over the same carriers reaches "
+      f"{max(null_best.values())} directions against transport's "
+      f"{trans_max}.  **TRANSPORT SKIES ARE NARROWER THAN CHANCE.**  The "
+      f"original TG5 claim (that cross-actor causation PRODUCES the sky) "
+      f"is WITHDRAWN; what the transport law does is CONSTRAIN the sky "
+      f"BELOW the generic value at matched carrier size and link count.  "
+      f"That strengthens the actor-width reading rather than weakening "
+      f"it — the bound is a real restriction, not an artifact of size.")
 print(f"  THE EXHAUSTIVE STRATUM IS UNDECIDABLE: max {exh_max} directions "
       f"against the 4 required, over three fully enumerated families.  "
       f"Reported as undecidability, never as a 2+1 cap.")

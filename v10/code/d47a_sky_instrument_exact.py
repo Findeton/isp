@@ -414,43 +414,67 @@ check("SG3 IS VACUOUS, AND THAT IS THE FINDING — stated as its own gate "
 # =========================================================================
 print("\n[SG10 the capacity law — what scale does this test require?]")
 
-def lattice_points(N):
+def lattice_points(N, box=None):
+    """N exact rational points in a box of spatial extent `box` (default:
+    the extent SCALES WITH N — see the round-1 R2 correction below)."""
+    b = N if box is None else box
     pts, s = [], 12345
     for _ in range(N):
         s = (1103515245 * s + 12345) % (1 << 31)
-        t = Fr(s % (4 * N))
+        t = Fr(s % (4 * b))
         s = (1103515245 * s + 12345) % (1 << 31)
-        x = Fr(s % N)
+        x = Fr(s % b)
         s = (1103515245 * s + 12345) % (1 << 31)
-        y = Fr(s % N)
+        y = Fr(s % b)
         pts.append((t, x, y))
     return pts
 
-CAP_LAW = []
-for N in (20, 40, 80, 160):
-    pts = lattice_points(N)
+
+def cap_scan(N, box=None):
+    pts = lattice_points(N, box)
     C = mink_order(pts)
-    best = 0
-    dec = 0
+    best = dec = 0
     for e in range(N):
         dirs, rows = sky(C, e, 'A')
         best = max(best, len(dirs))
         if len(dirs) >= 4 and len(rows) >= 2:
             dec += 1
-    CAP_LAW.append((N, best, dec))
-    print(f"  N = {N:4d} exact M^(2+1) points: max |SKY-A directions| = "
-          f"{best}, base events where shatter-4 is DECIDABLE = {dec}/{N}")
+    return best, dec
 
-first_ok = next((N for N, b, d in CAP_LAW if d > 0), None)
-check("SG10 THE CAPACITY LAW, CERTIFIED: the shatter-4 test needs >= 4 "
-      "directions in one sky, and the sky size grows with record size.  "
-      "The smallest tested exact-M^{2+1} record at which ANY base event "
-      "can decide shatter-4 is reported here.  This is the pin's §5 "
-      "fallback deliverable — the scale the instrument requires, measured "
-      "rather than guessed",
-      first_ok is not None and CAP_LAW[-1][1] >= 4,
-      f"(N, max directions, decidable base events) = {CAP_LAW}; first N "
-      f"with a decidable base event = {first_ok}")
+CAP_LAW, CAP_FIXED = [], []
+for N in (20, 40, 80, 160):
+    b1, d1 = cap_scan(N)              # box grows with N
+    b2, d2 = cap_scan(N, box=160)     # box HELD FIXED
+    CAP_LAW.append((N, b1, d1))
+    CAP_FIXED.append((N, b2, d2))
+    print(f"  N = {N:4d}: GROWING box -> max |SKY-A| = {b1:2d}, decidable "
+          f"= {d1:3d}/{N};   FIXED box (160) -> max |SKY-A| = {b2:2d}, "
+          f"decidable = {d2:3d}/{N}")
+
+first_grow = next((N for N, b, d in CAP_LAW if d > 0), None)
+first_fix = next((N for N, b, d in CAP_FIXED if d > 0), None)
+check("SG10 THE CAPACITY LAW — ROUND-1 R2 CORRECTION APPLIED.  The "
+      "original single-column table let the BOX EXTENT scale with N, so "
+      "volume grew as ~4N^3 while the point count grew as N: the "
+      "sprinkling got SPARSER as N rose, and 'sky size versus record "
+      "size' was really two variables moving in opposite directions.  "
+      "**The earlier headline 'shatter-4 first becomes decidable at "
+      "N ~ 40' is WITHDRAWN AS STATED** — at fixed box it already "
+      f"decides at N = {first_fix}.  Both scalings are now reported side "
+      "by side and neither is quoted alone",
+      first_grow is not None and first_fix is not None
+      and first_fix < first_grow,
+      f"growing box: first decidable N = {first_grow}, table = {CAP_LAW}; "
+      f"fixed box: first decidable N = {first_fix}, table = {CAP_FIXED}")
+check("SG10(b) THE CORRECT MINKOWSKI VARIABLE IS DENSITY, NOT POINT "
+      "COUNT: holding the box fixed and raising N — i.e. raising density "
+      "alone — lifts the sky monotonically, while the growing-box column "
+      "mixes the two.  The unit's central contrast is thereby SHARPENED, "
+      "not weakened: Minkowski buys sky size with DENSITY, transport "
+      "(D47b TG2) buys it with ACTOR WIDTH",
+      all(CAP_FIXED[i][1] <= CAP_FIXED[i + 1][1]
+          for i in range(len(CAP_FIXED) - 1)),
+      f"fixed-box max |SKY-A| by N = {[(r[0], r[1]) for r in CAP_FIXED]}")
 
 # =========================================================================
 # SG3b — THE NON-VACUOUS 2+1 CONTROL.  SG10 showed the question becomes
@@ -572,9 +596,10 @@ print("  SG3 WAS VACUOUS AND SAYS SO: an 18-point M^{2+1} record has skies "
       "original consistency check carried ZERO information.  The pin's "
       "pre-registered 'capacity insufficient' expectation was realized at "
       "the CONTROL, before any transport data.")
-print("  SG10 CERTIFIES THE SCALE REQUIRED, and SG3b then runs the "
-      "control where it actually decides: 554 decidable pairs across "
-      "three exact M^{2+1} records, ZERO shattered 4-sets.")
+print("  SG10 CERTIFIES THE SCALE REQUIRED — in DENSITY, after the "
+      "round-1 R2 correction withdrew the box-confounded 'N ~ 40'.  SG3b "
+      "then runs the control where it actually decides: 554 decidable "
+      "pairs across three exact M^{2+1} records, ZERO shattered 4-sets.")
 print("  **THE DEMOTION — the sharpest thing this receipt found.**  "
       "CIRCULAR-ONES REJECTED 121 OF 554 GENUINE 2+1 SKIES.  A discrete "
       "sky of real Minkowski is NOT generally an arc system, so "
