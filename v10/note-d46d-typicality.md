@@ -66,7 +66,9 @@ pools.  The measure is the finite-horizon kernel of D46b (the
 completed transfer at the stated horizon) — NOT an infinite-volume
 object; every typicality statement is horizon-scoped and says so.
 
-## 4. Result (2026-07-19; author-built, GREEN-UNREVIEWED)
+## 4. Result — **[SUPERSEDED — see §5 (round-1 retractions) and
+## §6 (repairs). Retained verbatim; every headline below marked
+## WITHDRAWN in §5 is withdrawn.]**
 
 11 PASS / 0 FAIL, 1 delivered outcome; seeds byte-identical.
 
@@ -193,3 +195,35 @@ delivery-joined proxy; TY4-e declares what remains out of scope.
 The doctrine scan is rebuilt with positive scoped markers (the
 bare-"not" exemption removed) and PROBED with the round's own
 mutant line, which it now catches; TY5-c is an AST vacuity scan.
+
+## 7. TERMINAL (2026-07-19; delta CLEAN, LOG #400)
+
+The delta recomputed the three-proxy exact masses, all three
+sampled scalings, and the ENTIRELY NEW TY1-c poset widths from
+scratch — reproducing them down to 216/1027 — and confirmed the
+retractions in §5 and LOG #398 state its findings accurately, with
+#399 not overstating.
+
+**TERMINAL STATEMENT** (with the delta's calibration anchors
+adopted): under the LOOKAHEAD-COMPLETED law (exact arm) and the
+LOCAL-NORMALIZED law (sampled arm, calibrated at three anchors —
+3457/9464832 at pool 4/depth 3, and the referee's 1539/5646080
+(~2.73e-4, 42,065 terminals) at pool 5/depth 3 and 5451/19210880
+(~2.84e-4, 109,212 terminals) at pool 6/depth 3, the two pools the
+sampled arm actually uses), touched-width growth in depth is
+MONOTONE BY CONSTRUCTION, while the DISCRIMINATING scalings —
+fixed depth across pools, and the diagonal — show full-width mass
+STRICTLY COLLAPSING; on all three proxies what is
+typical-in-the-making is ORDER DIMENSION >= 3, not unbounded
+dimension, with width >= 4 NECESSARY-NOT-SUFFICIENT and
+UPPER-BOUNDING the dimension mass.
+
+**CARRIED FINDINGS (delta, non-blocking, for the next round):**
+(MAJOR d-d1) TY5-c's AST scan does NOT reject one of the three
+round-1 gates its own docstring names — the chained comparison
+`0 <= mass_ge4 <= 1 and 0 <= mass_ge6 <= 1` passes verbatim (two
+ops, LtE, missing every branch of the pattern). No LIVE gate is
+vacuous, so nothing reverses, but the advertised coverage is wrong
+about its own headline case. (minor d-d2) the doctrine scan is
+defeated by any of its 15 markers — including the bare negation
+"never", the exemption class the repair claimed to remove.

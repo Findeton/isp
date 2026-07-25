@@ -870,3 +870,311 @@ To keep the repair honest, the following were attacked and **survived**:
 - **D46d's doctrine compliance in substance** — order dimension only,
   explicitly disclaimed as a clock-complexity grade, consistent with
   note-d45b §1.  Only the *scan* is vacuous.
+
+---
+---
+
+# ROUND-1 DELTA (referee, 2026-07-24)
+
+**Objects:** commit `e0721f5` (repairs), LOG #398 (conversions and
+retractions) and #399 (receipt repairs).  Round-1 body above is
+untouched.  Nothing here edits a committed file and nothing is
+committed.
+
+## D-0. Reproduction and independent confirmation
+
+| item | referee finding |
+|---|---|
+| `d46b` rerun | **exit 0, 19 PASS / 0 FAIL, byte-identical** to the committed `.out`; ~3 s |
+| `d46d` rerun | **exit 0, 17 PASS / 0 FAIL, byte-identical** to the committed `.out` |
+| **matched-horizon sector masses** (the coordinator's confirmation request) | **CONFIRMED against my own `Grel`/`krel` computation, value for value**: r = 1 and r = 2 give `d 1/4, n 1/2, p 1/4` at both root and witness; r = 3 gives `d 64/257, n 128/257, p 65/257` at both.  The old mismatched pairing (root r = 4 `d 257/1035, n 514/1035, p 88/345` vs witness r = 1) is printed as the artifact, correctly |
+| MB5-c renewal census | **CONFIRMED exactly**: 8196/30728, 1060/3968, 104/520 — these are my numbers to the digit |
+| MB4 two-family table | **CONFIRMED exactly**, both columns, D = 1..6, including the separation at D = 4 (1037/64 vs 1035/64) and the transport turnover (peak 1391/690 at D = 5, 134587/66768 at D = 6) |
+| MB3-b/e drift data | **CONFIRMED exactly** in all three norms: L-inf `0, 1/1028, 191/265995, 412/1439685, 4629/187210517`; L1 `0, 3/514, 382/88665, 824/479895, 27774/187210517`; family-uniform sup `3/110, 3/253, 373/69230, 2333/1838829` |
+| MB3-c/d conditional | **CONFIRMED exactly**: root drift 0 at r = 1..6; off-root sup `1/18, 4/171, 8/741, 176/32877` with 700/3969, 140/521, 36/69, 4/9 histories carrying drift |
+| MB1-b delivery-free census | **CONFIRMED**: `{2: 5963, 5/2: 508}` to depth 5 is consistent with my own depth-6 census `{2: 32139, 5/2: 2236}` and the d43b cumulative `[1,7,39,215,1191,6471]` |
+| **TY1-c poset widths (a NEW claim, not in round 1)** | **INDEPENDENTLY RECOMPUTED FROM SCRATCH AND CONFIRMED**, exact rational for exact rational: 2a/d4 `w1 833/2070, w2 1237/2070`; 3a/d3 `78/289, 184/289, 27/289`; 4a/d3 `1459/9243, 5840/9243, 216/1027`; 5a/d2 `49/160, 111/160`; max widths 2/3/3/2 |
+| three-proxy exact masses | **CONFIRMED**: 221/230 vs 1573/2070 vs 78/115; 130/289 vs 59/289 vs 31/289; 994/9243 vs 418/9243 vs 292/9243 |
+| TY4-b/c/d sampled series | **CONFIRMED** — every figure in the like-for-like, fixed-depth and diagonal tables is the referee's own number, reproduced under the same seed |
+| d42b1 disclaimer quote | **verbatim** in `v10/code/d42b1_transport_exact.py`, as TY0-a claims |
+
+## D-1. The round-1 mutants, re-run against the repaired receipts
+
+All four D46b survivors are **closed**:
+
+| mutant | round 1 | after repair |
+|---|---|---|
+| **b3** — witness delivers `v0` instead of `v1` | exit 0, 12 PASS (**missed**) | **exit 1, 17 PASS / 2 FAIL** — MB5-a *and* MB5-b fire |
+| **b5** — contraction reversed | exit 0, 12 PASS (**missed**) | **exit 1, 18/1** — MB3-e fires |
+| **b6** — growth sign reversed | exit 0, 12 PASS (**missed**) | **exit 1, 18/1** — MB4-b fires |
+| **b7** — matched-horizon agreement broken | exit 0, 12 PASS (**missed**) | **exit 1, 18/1** — MB5-b fires |
+
+The `[VERDICT]` interpolation also works as advertised: in each of
+these the verdict clause moves with its outcome instead of outliving
+it.  **B-A1, B-A2, B-A3, B-M1, B-M2, B-M3, B-M4, B-m1..B-m6 and both
+D46b nits are addressed.**
+
+## D-2. New attacks on the new controls (D46b)
+
+The two new scanners are real improvements over the needle scan they
+replace, and neither is exploited by any predicate currently in either
+receipt.  Both, however, are advertised more strongly than they can
+enforce.  Three fresh mutants, all run against the committed repaired
+receipt:
+
+### minor d-b1 — MB6-b's AST scan is defeated by hoisting
+
+`vacuity_scan` walks `nd.args[1]` of each `check(...)` call.  A
+predicate that is *computed into a variable first* presents as a bare
+`ast.Name` and is invisible.
+
+- **Mutant b8** inserts `_hoisted_ok = isinstance(G4R, Fr) if False else True` followed by `check("SMUGGLED-1 ...", _hoisted_ok)`.
+- Result: **exit 0, 20 PASS / 0 FAIL**; MB6-b reports "gate predicates parsed = 20; vacuous predicates = **none**" while gate 20 is a hoisted literal `True`.
+
+The same hole covers an aliased call (`chk = check`, since the scan
+keys on `getattr(nd.func, 'id', '') == 'check'`) and a keyword-passed
+predicate (`check(label, ok=...)`, since only positional `args[1]` is
+walked).
+
+### minor d-b2 — three vacuous *shapes* dodge all three rejectors
+
+The scan rejects a literal boolean, an `isinstance()` call, and a
+`>`/`>=` against the constant `0`.  It does not reject:
+
+- `len(X) >= 1` on a list known non-empty (comparison against 1);
+- `type(x) is int` (a type probe that is not `isinstance`);
+- `x > -1` (the comparator is `UnaryOp(USub, Constant(1))`, not `Constant(0)`).
+
+- **Mutant b9** adds `check("SMUGGLED-2 ...", len(OUT) >= 1 and type(CAP) is int and CAP > -1)`.
+- Result: **exit 0, 20 PASS / 0 FAIL**, "vacuous predicates = none".
+
+**Prescribed fix for d-b1 + d-b2 (both minor).** Either (a) resolve a
+single-`Name` predicate to its unique assignment in the module before
+scanning, reject `type(...) is ...`, and reject any comparison whose
+constant comparator is a literal number regardless of sign; or
+(b) — cheaper and honest — retitle the gate from the absolute
+"**NO VACUOUS GATE**" to "no gate of the three shapes round 1 found
+surviving (declared vocabulary)" and record the residual holes
+in-gate.  What must not stand is a control whose label claims more
+coverage than it has: that is the very pattern the gate exists to
+prevent.
+
+### minor d-b3 — MB6-c's scope scan is a fixed four-word vocabulary
+
+- **Mutant b10** prints `the transport chain is R-recurrent and its Martin limit is attained in the infinite-depth sense` — an unqualified infinite-volume assertion.  None of the four needles matches (`limit kernel` != `Martin limit`; `infinite-volume` != `infinite-depth`; no `boundary`, no `converges`).
+- Result: **exit 0, 19 PASS / 0 FAIL**, "undisclaimed = none".
+
+Note also that the marker list includes `'open'`, `'candidate'` and
+`'reachable'` — broad enough that a genuine violation sharing a line
+with any of them is exempted.
+
+**Prescribed fix (minor).** Widen the needle set (`recurren`,
+`R-recurrent`, `infinite`, `limit`, `exists`, `at infinity`, `n ->
+infinity`) and declare the vocabulary as the gate's stated scope.
+
+## D-3. The one repair-side residue that reaches a reader: §4 is not stamped
+
+### minor d-b4 (applies to BOTH units)
+
+`v10/note-d46b-martin-at-transport.md` §4 and
+`v10/note-d46d-typicality.md` §4 are **unchanged and unmarked**.  §4 of
+D46b still reads, in full assertive form:
+
+- "**MB2/MB4 — THE GROWTH PARAMETER EXCEEDS 2 AND RISES** ... deliveries add branching" (line 74-79) — withdrawn;
+- "a contraction ratio **~0.738 per level**" (line 86) — withdrawn;
+- "**MB5 — THE DELIVERY-FREE root = renewal IDENTITY DOES NOT TRANSFER** ... **Reconvergence restores HOLDINGS without restoring the FUTURE**" (line 91-98) — withdrawn by name in §5, LOG #398 and the receipt;
+
+and its heading still says "round **queued behind** paper-32's and
+D46a/D46c's", which is no longer true.  D46d §4 likewise still carries
+"**WIDTH SPREADS WITH DEPTH UNDER THE THEORY'S OWN LAW**" (line 93) and
+"the same idles D45b found **LOAD-BEARING**" (line 81).
+
+The retractions exist — in §5 — and LOG #399's "grep discipline" claim
+("each surviving hit sits inside an explicit withdrawal") is **true of
+the source and the `.out`, and false of the notes' §4**.  This is the
+sibling round's pattern (ii) in mirror image: a reader, a grep, or a
+future paper-drafting pass that lands on a "## 4. Result" section gets
+the withdrawn headline with nothing on the page to warn it.
+
+**Prescribed fix.** Stamp §4 in place in both notes — a heading marker
+(`## 4. Result [SUPERSEDED — see §5 amendments and §6 repairs]`) and a
+one-line strike on each of the four withdrawn paragraphs. Do not delete
+the text; the record of what was claimed is the point.
+
+### nit d-b5 — two loose sentences in the amendments
+
+1. `note-d46b` §5 B6: "the transport ladder is exactly {2: 3757, 5/2: 212}, confirmed independently **on both sides**".  What was confirmed on both sides is the **value set** `{2, 5/2}`; the multiplicities 3757/212 are transport-only (delivery-free at the same cap is 1067/124, and 5963/508 to depth 5).  The receipt's MB1-b states this correctly — the note sentence should match it.
+2. LOG #399's "verified pre-commit: both receipts exit 0, independent reruns BYTE-IDENTICAL, **determinism across seeds**" — d46b carries no seeds (its MB0-b says so explicitly and gates traversal-order independence instead, which is the right fix for round-1 B-m2).  The phrase is the same import that produced B-m2 in the first place.  `note-d46b` §4's "seeds byte-identical" is also still unannotated (covered by d-b4).
+
+## D-4. The declared non-application: ACCEPTED
+
+The coordinator declined to extend D46d's doctrine scan over the note
+and the LOG entry, on the ground that gating a receipt on author-owned
+files under active edit would make it non-reproducible from the repo
+state the receipt controls.
+
+**The referee accepts this and does not ask for it to be revisited as a
+receipt gate.**  The reasoning is sound and the scope is declared
+in-gate, which is what the round asked for.  One rider: the exposure the
+suggestion was aimed at is then unmitigated by *any* gate — and d-b4
+above is an instance of exactly that class (a withdrawn claim standing
+un-stamped in an author-owned file).  The right home for it is an
+authoring/pre-commit check outside the receipt, not inside it.
+
+## D-5. New attacks on the new controls (D46d)
+
+### MAJOR d-d1 — TY5-c's AST scan does not reject one of the three round-1 gates it names
+
+**Where.** `vacuity_scan` docstring (receipt lines 787-791): *"Round 1,
+D-M4: three gates could not fire (`isinstance(conc, bool)`,
+`0 <= x <= 1`, `isinstance(gap, Fr)`).  This AST scan ... rejects
+predicates that are constant by construction."*  The TY5-c label makes
+the same claim.
+
+**The defect.** The referee lifted the committed `vacuity_scan` out of
+the source and ran it on the three round-1 predicates verbatim:
+
+| round-1 predicate | scanner |
+|---|---|
+| `isinstance(conc, bool)` | **CAUGHT** |
+| `lt4 == 1 and isinstance(gap, Fr)` | **CAUGHT** |
+| `0 <= mass_ge4 <= 1 and 0 <= mass_ge6 <= 1` | **PASSED** |
+
+The one that passes is precisely the predicate mutant **d4** walked
+through in round 1.  A chained comparison parses as a single `Compare`
+with **two** ops and `LtE` operators, so it misses the scanner's
+`len(sub.ops) == 1` + `Gt/GtE` + `Constant(0)` pattern on all three
+counts.
+
+**Standing.** No *live* gate in either repaired receipt is vacuous —
+the referee re-ran the scan over both files and confirms the reported
+"vacuous predicates = none" is true of what is actually there.  So this
+reverses nothing.  What is wrong is the **advertised coverage**: a
+control that names a shape as covered and does not cover it is the same
+species of defect the control was built to catch.
+
+**Prescribed fix.** Add the chained/`Lt`/`LtE` case (any `Compare`
+whose comparator set is entirely literal constants), or amend the
+docstring and label to name the two shapes actually covered.
+
+### minor d-d2 — the doctrine scan catches the round's own mutant, and is defeated by any of its fifteen markers
+
+The coordinator asked the referee to verify the catch and to try
+another smuggle.  The referee lifted `doctrine_scan` out of the
+committed source and probed it directly:
+
+| line | scanner |
+|---|---|
+| `the generated record has spacetime dimension 3+1, not fewer` (the round's mutant-d5 line) | **CAUGHT** — as claimed |
+| `order dimension is a clock-complexity grade, never a spacetime-dimension estimator` | **passed** — correct |
+| `the measured width shows the spacetime dimension of the record is 3+1` | **SMUGGLED THROUGH** (marker `width`) |
+| `the event poset fixes the spacetime dimension of the world at 3+1` | **SMUGGLED THROUGH** (marker `poset`) |
+| `the spacetime dimension of the generated record is 3+1 and never otherwise` | **SMUGGLED THROUGH** (marker `never`) |
+| `these records live in four dimensions of real physical space and one of time` | **CAUGHT** (the `dimen`+`sion` needle) |
+
+**The verification the coordinator asked for is positive**: the repair
+does catch the round-1 mutant, and the bare `'no '`/`'not '` exemptions
+really are gone.  But `'never'` is still in `_DMARKERS` — a bare
+negation by any other name — and `'width'`, `'poset'`, `'crown'`,
+`'proxy'`, `'grade'`, `'d44c'` and `'d45b'` are common enough words
+that any real doctrine violation in this unit would almost certainly
+share a line with one of them.
+
+**Prescribed fix (minor).** Drop `'never'`; require the marker to be
+one of the genuinely scoping phrases (`order dimension`,
+`order-dimension`, `clock-complexity`, `scan-exempt`, `note-d45b`), and
+declare in-gate that the scan is a fixed-vocabulary check, not a
+semantic one.
+
+### confirmed: the new D46d headline IS gated
+
+**Mutant dR4** inverts the fixed-depth pool-scaling verdict
+(`t_decays` negated at the point of use): **exit 1, 16 PASS / 1 FAIL**,
+`TY4-c` fires.  Round 1's D-M4(2) — a headline resting on
+`0 <= x <= 1` — is closed: the discriminating scaling that now carries
+the unit's reading is anchored count by count.
+
+## D-6. Delta mutation tables
+
+**D46b (against commit `e0721f5`):**
+
+| # | mutation | round 1 | after repair |
+|---|---|---|---|
+| b3 | witness delivers `v0` | 0 / 12 PASS | **1 / 17 PASS, 2 FAIL** (MB5-a, MB5-b) |
+| b5 | contraction reversed | 0 / 12 PASS | **1 / 18 PASS, 1 FAIL** (MB3-e) |
+| b6 | growth sign reversed | 0 / 12 PASS | **1 / 18 PASS, 1 FAIL** (MB4-b) |
+| b7 | matched-horizon agreement broken | — | **1 / 18 PASS, 1 FAIL** (MB5-b) |
+| b8 | hoisted vacuous predicate | — | 0 / 20 PASS — **survives** (d-b1) |
+| b9 | `len>=1`, `type() is`, `> -1` | — | 0 / 20 PASS — **survives** (d-b2) |
+| b10 | undisclaimed "R-recurrent / Martin limit at infinite depth" | — | 0 / 19 PASS — **survives** (d-b3) |
+
+**D46d (against commit `e0721f5`):**
+
+| # | mutation | round 1 | after repair |
+|---|---|---|---|
+| dR4 | fixed-depth pool scaling inverted | (d4: 0 / 11 PASS) | **1 / 16 PASS, 1 FAIL** (TY4-c) |
+| scanner probes | the two scanners lifted from source and probed on 6 doctrine lines + 12 predicate shapes | — | mutant-d5 line **caught**; 3 doctrine smuggles and 8 predicate smuggles **survive** (d-d1, d-d2) |
+
+(The four full-run scanner mutants were terminated once the isolated
+probes settled the question conclusively — the scanners are pure
+functions of the source text, so probing them directly is equivalent
+and does not require a 15-minute sampling run.)
+
+---
+
+## D-7. DELTA VERDICT
+
+| unit | delta verdict | new BLOCKER | new MAJOR | new minor | new nit |
+|---|---|---|---|---|---|
+| **D46b** | **DELTA-CLEAN** — every round-1 finding addressed; both reversals gated; the strengthened contraction credited and anchored | 0 | 0 | 3 | 1 |
+| **D46d** | **DELTA-CLEAN** — headline retired and replaced by a gated discriminating scaling; law named; three proxies; both dropped pin halves delivered | 0 | 1 | 2 | 1 |
+
+**Both units convert.**  The terminal statements as stamped are
+**accurate** and the referee confirms them.  Specifically:
+
+- Every reversal is now produced by a gate rather than narrated, and
+  the four round-1 survivor mutants all exit 1.
+- Every number in both repaired receipts that the referee could
+  recompute — the matched-horizon masses, the renewal census, the
+  two-family ratio table, all three drift norms, the conditional at and
+  off the root, the three-proxy exact masses, all three sampled
+  scalings, **and the entirely new TY1-c poset-width profiles** — was
+  recomputed independently and agrees exact rational for exact
+  rational.
+- The retractions in note §5 (both units) and LOG #398 state the
+  findings accurately, including the two the coordinator asked about by
+  name: "reconvergence restores HOLDINGS without restoring the FUTURE"
+  and "WIDTH SPREADS WITH DEPTH UNDER THE THEORY'S OWN LAW" are both
+  withdrawn explicitly.  **LOG #399 does not overstate** what the
+  repairs establish; its scope language ("evidence at the reachable
+  horizons", "no existence claim", "upper-bounds the dimension mass",
+  "calibrated at the single pair where both are computable") is
+  correct.
+
+**One condition on conversion (d-b4, two-line edit).** Stamp §4 in
+place in both notes as SUPERSEDED.  As committed, a reader landing on
+`## 4. Result` gets "THE GROWTH PARAMETER EXCEEDS 2 AND RISES",
+"reconvergence restores HOLDINGS without restoring the FUTURE" and
+"WIDTH SPREADS WITH DEPTH UNDER THE THEORY'S OWN LAW" asserted in full,
+with nothing on the page saying they were withdrawn.  LOG #399's grep
+discipline holds for the source and the `.out`; it does not hold for
+the notes' §4.  This is the one residue that reaches a reader.
+
+**Carried forward to round 2 (none blocking):** d-b1, d-b2, d-b3,
+d-d1, d-d2 — five control-hygiene items, all of the same shape: a
+scanner whose *label* claims more coverage than its *implementation*
+has.  No live gate in either receipt exploits any of them, and no
+delivered claim depends on them.
+
+**Two wording riders for the stamped terminal statements (nits).**
+
+1. D46b's "the kernel candidates are proper at every relative horizon"
+   — MB3-a gates r = 1..6 at the root, r = 1 family-wide (30,729
+   histories) and r = 2 family-wide (3,969).  Read "at every computed
+   relative horizon".
+2. D46d's "calibrated to < 1e-2" — the calibration has **one** anchor
+   (pool 4, depth 3), which TY3-a states honestly in-gate.  If the
+   author wants more anchors, the referee's are available and free:
+   pool 5 / depth 3 gives `1539/5646080` (~2.73e-4) over 42,065
+   terminals and pool 6 / depth 3 gives `5451/19210880` (~2.84e-4) over
+   109,212 terminals — the two pools the sampled arm actually uses.

@@ -8047,3 +8047,43 @@ Declared non-application: the doctrine scan is NOT extended over
 the author-owned note/LOG (gating a receipt on files under active
 authorship would make it non-reproducible) — its scope is declared
 in-gate. Notes §6 both units. DELTAS next.
+
+## 2026-07-19 — D46b + D46d TERMINAL (LEDGER #400); ROUND 2 OF 3
+## COMPLETE
+Delta: BOTH UNITS DELTA-CLEAN (D46b 0B/0M/3m/1n; D46d
+0B/1M/2m/1n), both terminal statements confirmed accurate by the
+referee. Every repaired number recomputed independently and agreed
+exact-rational for exact-rational, INCLUDING the entirely new
+TY1-c poset widths rebuilt from scratch (down to 216/1027). All
+four round-1 mutant survivors are CLOSED: b3 now exits 1 (MB5-a
+and MB5-b both fire on the v0 delivery), b5/b6/b7 all exit 1, and
+the interpolated verdict moves with its outcome in every case; the
+doctrine scan catches the referee's own mutant-d5 line. The
+retractions in note §5 (both units) and LOG #398 were confirmed to
+state the findings accurately — "reconvergence restores HOLDINGS
+without restoring the FUTURE" and "WIDTH SPREADS WITH DEPTH UNDER
+THE THEORY'S OWN LAW" withdrawn BY NAME — and #399 does not
+overstate.
+**THE ONE CONVERSION CONDITION, APPLIED: §4 was not stamped in
+either note.** My #399 grep discipline covered the receipt source
+and the .out but NOT the notes' own §4, so a reader landing there
+still met the withdrawn headlines asserted in full. Both §4
+headings now carry [SUPERSEDED — see §5/§6], text retained
+verbatim. The referee's rider is accepted and recorded: the
+ungated exposure class (author-owned prose) belongs in an
+AUTHORING/PRE-COMMIT check, not in a receipt gate — d-b4 was
+exactly an instance.
+Both wording riders applied: D46b's "proper at every relative
+horizon" -> "every COMPUTED relative horizon" (r = 1..6 at the
+root, r = 1, 2 family-wide); D46d's calibration now carries THREE
+anchors, the referee's two covering the pools the sampled arm
+actually uses (pool 5/d3 1539/5646080; pool 6/d3 5451/19210880).
+CARRIED FINDINGS for the next round (non-blocking, recorded in
+both notes): the new vacuity/doctrine scanners advertise more than
+they enforce — TY5-c's AST scan fails to reject a chained
+comparison its own docstring names (MAJOR d-d1); MB6-b is defeated
+by hoisting and by three predicate shapes and ignores aliased and
+keyword predicates; MB6-c is a four-word vocabulary; the doctrine
+scan is defeated by any of its 15 markers including the bare
+"never". No live gate is vacuous — the coverage claims are.
+ROUND 2 OF 3 COMPLETE. NEXT: round 3 of 3, (D46e + D46f).

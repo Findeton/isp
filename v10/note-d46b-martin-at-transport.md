@@ -60,8 +60,9 @@ ARM-1T at the committed caps.  Exact Fractions.  No claim that a
 Martin boundary EXISTS; the unit computes its candidate kernels and
 their stability at the reachable horizons.
 
-## 4. Result (2026-07-19; author-built, GREEN-UNREVIEWED; round
-## queued behind paper-32's and D46a/D46c's)
+## 4. Result — **[SUPERSEDED — see §5 (round-1 retractions) and
+## §6 (repairs). Retained verbatim; every headline below marked
+## WITHDRAWN in §5 is withdrawn.]**
 
 12 PASS / 0 FAIL, 3 delivered outcomes, seeds byte-identical.
 
@@ -204,3 +205,33 @@ a capability probe; MB6-c is a scoped needle scan with a two-way
 probe; MB0-b gates BFS determinism menu-for-menu; and the VERDICT
 is INTERPOLATED from computed booleans, so no headline clause can
 outlive its outcome.
+
+## 7. TERMINAL (2026-07-19; delta CLEAN, LOG #400)
+
+The delta confirmed every repaired number against its own
+computation, value for value (the matched-horizon masses at root
+AND witness; the MB5-c census; the two-family table including the
+D = 4 separation and the D = 5 peak; all three drift norms; the
+conditional at and off the root), and re-ran its round-1 survivors:
+b3 now exits 1 (MB5-a AND MB5-b fire on the v0 delivery) and
+b5/b6/b7 all exit 1, with the interpolated verdict moving with its
+outcome in every case — all four survivors closed.
+
+**TERMINAL STATEMENT** (with the delta's wording rider applied):
+the transport ladder is exactly the delivery-free {2, 5/2};
+DELIVERIES REDUCE finite-horizon branching (both families gated to
+D = 6, transport peaking at D = 5); the kernel candidates are
+proper at every COMPUTED relative horizon (r = 1..6 at the root,
+r = 1, 2 family-wide) with drift contracting in three norms and
+uniformly over the family; the pinned sector-normalized
+conditional is EXACTLY horizon-stable at the root; and
+root = renewal DOES transfer at matched horizon — a
+necessary-not-sufficient agreement.
+
+**CARRIED FINDINGS (delta, non-blocking, for the next round):** the
+new vacuity/doctrine scanners advertise more coverage than they
+enforce — MB6-b is defeated by hoisting (`ok = True` into a
+variable) and by three predicate shapes, and does not count
+aliased or keyword predicates; MB6-c is effectively a four-word
+vocabulary. The referee's rider is accepted: this class belongs in
+an AUTHORING/PRE-COMMIT check, not in a receipt gate.
