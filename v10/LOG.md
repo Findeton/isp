@@ -8513,3 +8513,57 @@ because pre-registering the boring outcome is the cheapest defence
 against later talking oneself into an exciting one.
 NEXT: D47a — the instrument and the separator, standalone, before
 any transport data is touched.
+
+## 2026-07-25 — D47a GREEN-UNREVIEWED: THE INSTRUMENT IS FIT, AND
+## CIRCULAR-ONES IS DEMOTED (LEDGER #409)
+Receipt v10/code/d47a_sky_instrument_exact.py, 19 PASS / 0 FAIL,
+exit 0. NO TRANSPORT DATA IS READ BY THIS RECEIPT — the instrument
+is validated first and used second, which is the direct
+methodological answer to the D46 sweep's five reversals.
+**THE SEPARATOR, CONSTRUCTED NOT CITED (SG0).** Arcs on 4/5/6/7
+points shatter 3 and NEVER 4. Caps on an exact-rational
+tetrahedron on the unit sphere (Fraction norms exactly 1) realize
+ALL 16 subsets by exact rational halfspaces, INCLUDING the hard
+opposite-edge case, exhibited with its certificate u = (1,1,1),
+t = 1/3. So a shattered 4-set proves a system is not an arc system.
+**INSTRUMENT VALIDATION (SG1).** True negative (accepts a genuine
+6-point arc system with a witness cyclic order), true positive
+(rejects the cap system), agreement where both apply, plus SG1(d)
+THE STRICTNESS EXHIBIT: a system circular-ones REJECTS while
+shatter-4 finds nothing — so I2 is STRICTLY WEAKER than I1 and a
+shatter-4 null may never be read as arc-realizability.
+**SG3 WAS VACUOUS, AND THAT IS GATED AS ITS OWN FINDING.** D46c's
+committed W3_CERT (18 exact M^{2+1} points, read verbatim, max
+denominator 64) yields skies of at most **2** directions against
+the 4 the test needs: decidable at **0 of 54** base-event/
+definition pairs. The original consistency check carried ZERO
+information and the receipt says so in a dedicated gate rather
+than letting the pass read as confirmation. **THE PIN'S
+PRE-REGISTERED 'CAPACITY INSUFFICIENT' EXPECTATION WAS REALIZED AT
+THE CONTROL, BEFORE ANY TRANSPORT DATA.**
+**SG10 THE CAPACITY LAW, CERTIFIED** (the pin §5 fallback
+deliverable, measured not guessed): over deterministic
+integer-lattice exact M^{2+1} records, (N, max |SKY-A directions|,
+decidable base events) = (20, 3, 0), (40, 8, 23), (80, 10, 58),
+(160, 14, 120). **Shatter-4 first becomes decidable at N ~ 40.**
+**SG3b THE CONTROL RE-RUN WHERE IT ACTUALLY DECIDES: 554 decidable
+(base event, sky definition) pairs across N = 40/80/160, ZERO
+shattered 4-sets.** A genuine 2+1 causal order does not trip the
+obstruction instrument — now a measurement, not a vacuity.
+**THE DEMOTION — the sharpest finding, and a correction to my own
+plan. CIRCULAR-ONES REJECTED 121 OF 554 GENUINE 2+1 SKIES AS
+NON-ARC SYSTEMS.** A discrete sky of real Minkowski is NOT
+generally an arc system, so ARC-REALIZABILITY IS NOT A USABLE
+PROXY FOR 2+1. Instrument 1 is DEMOTED to a diagnostic and **D47b
+must rest on SHATTER-4 ALONE.** Any earlier framing of
+circular-ones as the primary two-sided test is WITHDRAWN — it is
+two-sided on arc-realizability, which is a different question.
+SG3b is thereby the EMPIRICAL PROOF that the pin's one-sidedness
+doctrine was necessary and not merely cautious.
+SG7 no silent caps (CYCLIC_CAP = 8 printed; UNDECIDED-BY-CAP
+counted: 0/5/115 at N = 40/80/160). SG8 the AST scan with its #403
+MA-2 scoping. SG9 the witness branch live and EXERCISED through
+the cap system.
+NEXT: D47b — the transport skies, capacity gated FIRST, shatter-4
+as the only load-bearing instrument, and the construction-matched
+null (SG5) before any failure is read as structure.
