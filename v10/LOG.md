@@ -8736,3 +8736,48 @@ and no poset under six can exceed dimension 2, so the dimension
 conclusion was NOT tested on the families. Status block records
 the 2026-07-25 revision of §6 item 7 only; no other section
 touched.
+
+## 2026-07-25 — D48 PINNED: WHAT IS A COMPOSITE IN RECORD TERMS?
+## (LEDGER #413)
+Pin committed BEFORE the receipt: note-d48-composite-line-pin.md.
+Parent: note-d41c-step3-bridge-declarations.md §1A, where this
+question is recorded as **THE SOLE UNBLOCKING CONDITION FOR THE
+ENTIRE d41c LABORATORY PROGRAM** (promoted to a named successor at
+#405 after the author's scale/layer objection).
+THE QUESTION, IN ITS ONLY INTERNALLY ANSWERABLE FORM: **is the
+grammar CLOSED under actor coarse-graining?** If the actors of an
+admissible record are merged into groups, is the image an
+admissible record of the coarsened system? YES => a composite
+genuinely is one line and the bridge identification is at least
+internally coherent. NO => the actor decomposition is NOT a free
+choice, an aggregate is IRREDUCIBLY MANY LINES, and any bridge
+treating a many-constituent object as one line is measuring the
+LINE COUNT — d41c's named top risk.
+**PRE-REGISTERED EXPECTATION: NOT CLOSED** (two actors may propose
+on the same base; their merged image would be one actor proposing
+twice on a base its own line has already left). Recorded before
+the receipt so it cannot be fitted afterwards.
+GATES CG0-CG7: CG0 anchor (admissibility decided ONLY by the
+committed layer's own candidates_for, never a re-implemented
+predicate); **CG1 EQUIVARIANCE CONTROL — under a BIJECTIVE
+renaming the image must be admissible for 100% of histories, else
+instrument breakage, exit 1**; CG2 identity control; CG3 the merge
+test over several partitions and groupings, each reported
+separately and never merged; CG4 the failure EXHIBITED in full,
+not counted; CG5 depth dependence (falling fraction = generic
+failure, constant = boundary effect, stated either way); CG6 THE
+DUAL — is REFINEMENT (splitting one actor into two) closed? if
+neither direction is closed then "how many lines an object is" is
+not a matter of description at all; CG7 anti-vacuity with the #403
+MA-2 scoping.
+**SCOPE FIXED IN ADVANCE (pin §4).** This unit MAY conclude
+whether the grammar admits an actor-coarse-graining functor. It
+MAY NOT conclude anything about ions, molecules, constituents or
+mass: the step from ACTORS to PHYSICAL CONSTITUENTS is ITSELF a
+bridge of exactly the kind §1A blocked. A negative result becomes
+"IF constituents are actors THEN the composite is irreducibly many
+lines" — and the antecedent stays UNSIGNED.
+FALSIFIER: CG1/CG2 below 100% = breakage; CG3 at 100% everywhere =
+closure holds, the pre-registered expectation FALSIFIED, and
+d41c's §1A blocker weakens substantially — to be reported loudly,
+not buried.
