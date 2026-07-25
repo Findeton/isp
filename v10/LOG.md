@@ -8879,3 +8879,65 @@ NEXT (user direction): a single STANDALONE document on the
 completion dichotomy — everything needed to understand how it is
 forced and what advances exist — as the entry point for the next
 line of investigation.
+
+## 2026-07-25 — THE COMPLETION DICHOTOMY: STANDALONE BRIEF (LEDGER #416)
+User direction: a SINGLE STANDALONE document containing everything
+required to understand the completion dichotomy — how it is forced
+and what advances exist — such that a reader or agent seeing only
+that file understands the issue in full. Written as
+**v10/THE-COMPLETION-DICHOTOMY.md** (11 parts).
+CONTENTS. Part I the objects, defined from scratch (actors, records,
+the p/r/n/d/m event grammar, cuts, the cut complex, diamonds — WITH
+AN EXPLICIT WARNING that "diamond" is overloaded: the 202 are
+cut-complex cells, NOT paper 3's amalgamation figure and NOT
+Alexandrov intervals), and the weight system with d42b1's own "no
+measure claim" disclaimer quoted verbatim. Part II the completion
+problem and its three demands. Part III **THE DICHOTOMY AND ITS
+FORCING, step by step**: (c) fixes Z's increments, (a) pins the
+factor, Z = N is FORCED, so everything reduces to "is N a
+gradient?", and it is not — N IS cut-attached (constant on all 427
+classes) but its chain products are FOLIATION-DEPENDENT because it
+DOUBLE-COUNTS THE BLIND JOIN LAYER; certificate 36 of 202 diamonds
+in two components. Includes the D2 self-correction (the earlier "N
+is not cut-attached" was FALSE and was withdrawn, strengthening the
+theorem) and the D3 narrowing (the zero-class counterterm refutes
+the no-go AS WORDED but kills ALL join arbitration, so the no-go
+holds for SUPPORT-PRESERVING counterterms and the zero class is
+declared excluded).
+Part IV horn (I): gradient completions exist at every finite depth
+(Z(empty) = 1037/64, per-cut normalization at all 215 interior
+histories, witness pair equalizing at 1/2074, 313-parameter boundary
+freedom) at the unavoidable cost of ratio deformation at 21/114 cut
+classes THE ROOT INCLUDED (133/2074 vs 771/2074; 16/133 vs 32/257);
+ratio locality and the density law as the completion-free invariants;
+and the FLATNESS LADDER with its trap defused — 0/36/0 violations,
+but the gradient leg's flatness is a TELESCOPING THEOREM (an
+arbitrary NON-HARMONIC class-constant probe passes 0/202), so the
+separating content is CLASS-CONSTANCY, NOT HARMONICITY.
+Part V why the quantum lift does not escape — it IS the classical
+gradient completion at the 1/k boundary in Hilbert dress, the class
+and sequence bases being the two classical boundary choices, with
+its own three-horn obstruction; what it DOES establish (kernel lift
+exact 2/3-1/3; fine-vs-coarse order coherence 1/6 vs 0; toy-relative
+values). Part VI horn (II) reducing one-way to residue 1.
+Part VII EVERY ADVANCE ON RESIDUE 1: the sigma abstraction, the
+gated 36-state/176-edge closure, the intrinsic partition trajectory
+[4,5,6,6] to SIX classes, the Perron package (lambda = 2,
+f = (4,4,3,7,3,3)/3, root = renewal, pi = (1,1,2)/4), the depth-7
+179,783-history verification labelled EVIDENCE-never-a-premise, the
+(H0)-(H2) conditional theorem with its declared verification scope
+(len <= 4 in-receipt, <= 5 referee-carried, four minlen-6 states
+conditional only), the DELIVERY-FREE scope boundary, and **the
+remaining gap: H1 is NOT discharged** — D46a's own review refuted
+the own-view framing (menu view exceeds the noop cone on 1,016 of
+12,942, all extras OPPONENT-AUTHORED). Plus D46b's three reversals.
+Part VIII what is open, ranked by leverage. Part IX three things a
+new reader will otherwise get wrong (the dichotomy is not a to-do;
+actor count is not a modelling choice, with D48's numbers; no
+laboratory number may be quoted, with the d41c block). Part X where
+everything lives — papers, notes, receipts, ledger, reviews. Part XI
+a one-paragraph summary.
+DISCIPLINE: every corpus fact carries a provenance label, and the
+brief's own interpretations are labelled [MY READING] and separated
+from corpus claims throughout. All 15 cited files verified to exist;
+every quoted number verified against its source.
