@@ -9261,3 +9261,59 @@ UNCHANGED: horn (II) holds; a root-free completion EXISTS, which is
 exactly what paper 30 §5.7 declared [OPEN, declared]. Both blockers hit
 the account of UNIQUENESS and one arithmetic reading, never existence.
 NEXT: D50 (is the stationary FORM a law or a choice?), then (H1).
+
+## 2026-07-25 — D50 PINNED: IS THE STATIONARY FORM A LAW OR A CHOICE?
+## (LEDGER #421)
+Pin committed BEFORE any receipt: note-d50-is-the-form-a-law-pin.md.
+This unit IS the residue D49's round-1 BLOCKER B2 created.
+THE QUESTION. D49's existence result stands untouched — a ROOT-FREE
+COMPLETION EXISTS, horn (II) holds. What B2 refuted is the account of
+UNIQUENESS: it comes from a POSTULATED SHAPE for Z (paper 30 §5.7's
+Z = state function x lambda^(-depth)), not from any invariance stated
+on the record. Measured freedoms at depth-4 truncation: renewal-pair
+agreement leaves 308/313 free, bisimulation-invariance 119/313, the
+FORM leaves one ray. Hence the standing restriction: "forward-complete"
+is true of the law PLUS the form. **Is there a demand stated on the
+RECORD that FORCES the form? If yes the restriction lifts; if no it is
+permanent.**
+THE SHARP CANDIDATE, and why B2 did not test it: I2 constrains the
+transfer CUT BY CUT and says nothing about whether the same
+class-to-class step has the same probability at different DEPTHS.
+**I3 = DEPTH-STATIONARITY** is a record-level statement, not a
+statement about Z. Family pinned: I1 renewal agreement, I2 bisimulation
+invariance, **I3 depth-stationarity (PRIMARY)**, I4 = I2 + I3.
+PRE-REGISTERED EXPECTATION, WITH ITS ARGUMENT, RECORDED BEFORE RUNNING:
+**I3 FORCES THE FORM.** Sketch: I2 makes r(h,e) = Z(h+e)/Z(h) a
+function of (class(h), class(h+e)); path-consistency then makes r a
+discrete gradient on the class graph UP TO A CONSTANT FACTOR PER STEP,
+r(s,s') = g(s')/(c.g(s)) — which IS Z(h) = c^(-|h|) g(class(h)), with c
+fixed by normalization to lambda = 2. Recording the expectation first is
+the point: D49 was corrected precisely for selling a conclusion its
+evidence did not carry.
+**THE ONE-SIDEDNESS DOCTRINE, BINDING.** Tangent-space counts at b* are
+LOCAL. A count > 1 mod scaling is RIGOROUS IN THE NEGATIVE (it exhibits
+nearby non-proportional completions, so the demand does not force the
+form). A count of 1 is LOCAL EVIDENCE ONLY and **no "the demand forces
+the form" may be stated from a tangent count alone** — that needs the
+§3 argument discharged as a proof.
+GATES SF0-SF7: SF0 anchor incl. reproducing B2's 308 and 119 (port
+check, exit 1 on disagreement); SF1 the depth sweep D = 2..5 computing
+BOTH the boundary tangent dimension AND **the dimension of the induced
+space of distinct COMPLETIONS — B1's lesson is that boundary dimensions
+and completion dimensions are different objects**; SF2 the TREND is the
+result; SF3 I3 decided; SF4 the proof or its absence, with the
+restriction STAYING if the proof cannot be discharged; SF5 capacity with
+EFFECTIVE (non-vacuous) constraint counts; **SF6 NEGATIVE CONTROL — I1
+must come back FREE at every depth, and if it tightens to a ray the
+instrument is broken, exit 1**; SF7 AST scan scoped per #403 MA-2,
+witness branches live and exercised per #354 F1, determinism across
+PYTHONHASHSEED (D49's own A4 defect makes this non-optional).
+FALSIFIER: I3 leaving > 1 ray at any reached depth => the form is a
+genuine CHOICE and B2's restriction is PERMANENT, carried at every
+citation of D49 forever. A real result at exit 0.
+SCOPE: d42a delivery-free, two actors, no wider. **Transport scope
+remains open regardless of how this lands**, and that is where the
+dichotomy is still genuinely undecided for a theory with delivery and
+merge in it.
+NEXT: build D50; then (H1), whose tau/own-view route is refuted and
+whose live attack is "the opponent-authored excess is MENU-INVISIBLE".
