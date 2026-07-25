@@ -36,6 +36,37 @@ labels are part of the claim.* "At d42a scope", "at tested scale",
 "delivery-free" are not hedges; dropping them changes a true
 statement into a false one.
 
+> ### ⚑ SETTLEMENT NOTICE — read this before Parts VI, VIII and XI
+>
+> **Since this brief was written the dichotomy has been SETTLED, in
+> favour of horn (II)** — **at d42a (delivery-free, two-actor) scope,
+> unconditional at every verified depth and conditional on (H0)–(H2)
+> at all depths with (H1) undischarged; transport scope remains
+> OPEN.** D49, LOG #418; round 1 frozen at
+> `v10/reviews/d49-round1-hostile-review.md` (2 BLOCKER / 4 MAJOR),
+> repaired and **TERMINAL at #419**; receipt
+> `v10/code/d49_dichotomy_settlement_exact.py`, 31 PASS / 0 FAIL.
+>
+> A root-free completion **exists** — which is exactly what paper 30
+> §5.7 declared `[OPEN]` — and it is
+> `Zhat(h) = 2^(-|h|) . f(class(sigma(h)))` with `lambda = 2` and
+> `f = (4,4,3,7,3,3)/3`. It is **unique up to scale within paper 30
+> §5.7's stationary FORM**.
+>
+> **"Forward-complete" is true of the law PLUS that form, and must
+> not be quoted without it** (round-1 B2): the form is a postulate
+> about the shape of `Z`, and weaker invariance demands leave 308 of
+> 313 boundary directions free. Two claims of the first delivery are
+> **WITHDRAWN** — see §12.4 and §12.5.
+>
+> Everything in Parts I–V stands. **Part VI's residue 1 is
+> answered YES**, Part VIII's ranking is superseded, and **§XI has
+> been rewritten** (its original text is preserved verbatim in
+> §12.6). The full account, with what the settlement does *not*
+> buy, is **PART XII**. Forward-correction blocks are inlined at
+> §3.2, §4.2, Part VI and Part VIII; nothing above them has been
+> silently changed.
+
 ---
 
 ## PART I — THE OBJECTS
@@ -307,6 +338,20 @@ impossible; dropping the third demand makes the problem solvable at
 every finite depth, and the deformation of within-cut ratios is
 exactly what solving it costs.*
 
+> **FORWARD CORRECTION (D49, #418) — the two horns above are NOT
+> mutually exclusive, and stating them as a fork was a defect in
+> this brief.** Horn (I) says the completion deforms within-cut
+> ratios; horn (II) says a root-free completion exists. The settled
+> completion `Zhat` **does both**: it is root-free *and* it deforms
+> ratios (at 50 of the 114 interior cut classes — see §12.4).
+> Demand (c) is unconditionally impossible; §3.1 is a theorem and
+> nothing in the settlement touches it. **The genuine fork is not
+> deformation versus none — it is an IMPORTED boundary versus a
+> LAW-DETERMINED one**, and that fork is decided in favour of
+> law-determined. Read the trilemma as: (a) and (b) survive, (c)
+> dies, and the question that remains is whether the surviving
+> completion is forced or chosen. It is forced.
+
 ### 3.3 One escape was tried and closed
 
 A **zero-class counterterm** (the own-view component filter) does
@@ -383,6 +428,17 @@ candidates. The extremes:
 confined to the deep interior might be dismissed as a truncation
 artifact. One that reaches the root is a statement about the
 theory's beginning.
+
+> **FORWARD CORRECTION (D49, #418).** The sharp point is
+> **removed** by the settled completion. "No boundary choice avoids
+> the deformation" remains true of the *deformation*, but the
+> statement above quietly generalises from the truncated family to
+> all completions, and that step is false at the root: under `Zhat`
+> the root is **exactly ratio-preserving** — `q' = q/2`, every
+> proposal `1/16`, every idle `3/8` — because `f(0) = f(1) = 4/3`.
+> The 21-of-114 deformation census, root included, is a property of
+> the *unit boundary*, not of completion as such. `Zhat` deforms
+> more classes (50) and the root is not one of them. See §12.4.
 
 ### 4.3 What is invariant with no completion at all
 
@@ -532,6 +588,23 @@ way**, to a single question:
 That is the entire content of horn (II). If yes, the framework can
 normalize itself without a boundary. If no, horn (I) is forced and
 something boundary-like is part of the physics.
+
+> **ANSWERED — YES (D49, #418).** The positive harmonic function
+> exists. It is `Zhat(h) = 2^(-|h|) . f(class(sigma(h)))` with
+> `f = (4,4,3,7,3,3)/3` and `lambda = 2`, it is unique up to scale
+> (and the uniqueness survives at the fine 36-state level, so it is
+> not a quotient artifact), and it prices the root and the renewal
+> point **identically at `1/16`** — the exact defect this Part uses
+> to convict truncated completions. Two corrections to the framing
+> here: the residue asks for a positive harmonic function *on the
+> infinite-volume state space*, and paper 30 §5.7 is careful that
+> the object carries a `lambda^(-depth)` factor — which is a
+> **necessity**, since every menu of the closed chain sums to
+> between 2 and 5/2 and so no positive harmonic function exists on
+> the quotient itself (§12.3). And the "17 states at the decided
+> depth" above is stale: #339 A2 reversed that count — 17 was
+> horizon stratification, and the true objects are the 36-state
+> closure and its six-class quotient. See PART XII.
 
 `[MY READING]` The dichotomy is therefore genuinely a fork in the
 physics, not a technical inconvenience: **either the law is
@@ -683,6 +756,21 @@ posed in the right vocabulary.
 
 Ranked by leverage.
 
+> **FORWARD CORRECTION (D49, #418) — item 3 is answered and the
+> ranking changes.** Item 3 ("is the ratio deformation physical?")
+> is now a sharp question rather than a vague one: the deformation
+> is *exactly* the Perron tilt, `q'(e1)/q'(e2) = [q(e1)/q(e2)] .
+> [f(class(h+e1))/f(class(h+e2))]` (§12.4), so what must be judged
+> is a single named principle — *weight each option by the
+> record-growth capacity of the state it leads to* — and not an
+> unstructured distortion. Item 1 keeps the top slot and **gains**
+> leverage: (H1) is now the last gap before the dichotomy is
+> settled *unconditionally* at d42a scope, not merely before
+> residue 1 is decided. A new item belongs at rank 2: **the
+> transport-scope chain**, where the same three questions (does the
+> state space close, is there one closed class, is its Perron root
+> the one the menus force) are now well-posed and open.
+
 1. **`(H1)` — the depth-free menu-factorization lemma.** Closing
    it decides residue 1 at d42a scope outright and therefore
    decides which horn of the dichotomy holds at that scope. The
@@ -801,6 +889,8 @@ the real reason it deserves the next campaign.
 | `note-d40-where-the-action-cocycle-lives.md` | the K-flat shape as an `h`-ratio/Doob form |
 | `note-d41c-step3-bridge-declarations.md` | why no laboratory number may be quoted |
 | `note-d48-composite-line-pin.md` | the actor-aggregability question |
+| `note-d49-completion-dichotomy-settlement-pin.md` | the settlement's pre-registration, its four gated first-run deviations included |
+| `note-d49-completion-dichotomy-settlement-result.md` | **the settlement itself** — every certificate quoted in PART XII |
 
 **Receipts** (in `v10/code/`, outputs in `v10/data/`): all exact
 rational arithmetic, standard library only, exit 0 required.
@@ -813,10 +903,11 @@ rational arithmetic, standard library only, exit 0 required.
 | `d46a_h1_lemma_exact.py` | the H1 attempt |
 | `d46b_martin_transport_exact.py` | Martin-at-transport |
 | `d48_composite_line_exact.py` | actor aggregability |
+| `d49_dichotomy_settlement_exact.py` | **the settlement** — `Zhat` built on histories and gated against the completion demands |
 
 **The ledger:** `v10/LOG.md` — append-only, numbered, with
 forward-corrections only. Never silently edited. Entries #300–#415
-cover everything in Parts VII–IX.
+cover everything in Parts VII–IX; **#418 is the settlement.**
 
 **Review records:** `v10/reviews/*.md` — frozen; a round is
 followed by repairs and a delta, and only then is a unit terminal.
@@ -825,23 +916,290 @@ followed by repairs and a delta, and only then is a unit terminal.
 
 ## XI — THE ONE-PARAGRAPH SUMMARY
 
+*(Rewritten 2026-07-25 after D49 / #418. The superseded original is
+preserved verbatim in §12.6 — nothing here is silently edited.)*
+
 The framework specifies exactly what can happen next and the
 *relative* weights of the options, and provably cannot turn those
 into probabilities without giving something up. Demanding
 normalization, foliation-invariance and untouched ratios together
 is refuted by a 36-of-202-diamond certificate, because the natural
 normalizer double-counts the causally blind join layer along
-foliations that expose it. What survives is a Doob `h`-transform:
-it works at every finite depth, with 313 parameters of boundary
-freedom, and unavoidably tilts relative weights at 21 of 114 cut
-classes including the root. The quantum lift does not escape this —
-it *is* that classical completion at one particular boundary, in
-Hilbert dress. The only alternative is a root-free completion,
-which requires a strictly positive harmonic function on the
-infinite-volume quotient; that is residue 1, it is decided at
-verified depth on a six-state chain with `lambda = 2` and
-`root = renewal`, and it is one lemma — (H1), whose most recent
-attempted proof was refuted under review — from being closed. So
-the open question is sharp: **is the record law forward-complete,
-or does the world carry a boundary condition?** The mathematics
-forces one of the two, and nobody yet knows which.
+foliations that expose it — so **untouched ratios must go, and that
+much is a theorem nothing later repairs.** What was open until now
+was whether the surviving completion is *forced* or *chosen*: at
+finite depth the backward recursion runs from any positive boundary,
+and every such completion prices the root differently from the
+post-arbitration renewal point — it distinguishes two record points
+the law itself identifies. **It is forced — but by a postulate about the shape of `Z`, not by
+an invariance principle** (§12.5): within paper 30 §5.7's stationary
+class there is exactly one completion, it needs no boundary at all,
+and it is
+`Zhat(h) = 2^(-|h|) . f(class(sigma(h)))` with `lambda = 2` and
+`f = (4,4,3,7,3,3)/3`: strictly positive, per-cut normalized,
+foliation-invariant, support-preserving, unique up to scale at both
+the six-class and the fine 36-state level, and pricing root and
+renewal identically at `1/16`. Its cost is exactly one thing —
+each option is tilted by the ratio of the successors' Perron
+weights, i.e. by how much record-growth capacity it leads to, and by
+nothing else. The quantum lift is still that classical completion in
+Hilbert dress; it is now the classical completion at the *canonical*
+boundary rather than at an arbitrary one. **So the question this
+brief was written to pose is answered: the record law is
+FORWARD-COMPLETE — the world does not carry a boundary condition.**
+The answer is unconditional at every verified depth, conditional on
+(H0)–(H2) at all depths, and confined to d42a delivery-free scope;
+transport scope is open, and (H1) — one lemma, refuted once under
+review — is now the last thing standing between the settlement and
+an unconditional one.
+
+---
+
+## PART XII — THE SETTLEMENT
+
+**D49, 2026-07-25, LOG #418.** Pin
+`note-d49-completion-dichotomy-settlement-pin.md`; receipt
+`v10/code/d49_dichotomy_settlement_exact.py` (**25 PASS / 0 FAIL**,
+exit 0, ~75 s, byte-identical across `PYTHONHASHSEED` 0/7/61/999);
+result note `note-d49-completion-dichotomy-settlement-result.md`.
+
+### 12.1 What was missing was a receipt, not a theorem
+
+This deserves to be said first because it is the least flattering
+part. Paper 30 §5.7 **defines** the stationary completion as
+
+```
+Zhat(h) = f(state(h)) . lambda^(-depth(h))
+```
+
+and declares its existence `[OPEN, declared]`. D43b then **computed
+the eigenproblem** — `lambda = 2`, `f = (4,4,3,7,3,3)/3` positive
+and unique up to scale, with a gate named *"the root-free
+certificate"* returning **YES** (#339/#345, MG4). D44a then **closed
+the state space** (36 sigma-states, six-class quotient, all-depth
+conditional on (H0)–(H2)).
+
+**Every one of those gates lives on the quotient.** The object the
+dichotomy is about — a completion — lives on the cut complex. No
+unit had ever built `Zhat` on histories and run it against the
+Part II demands. So the corpus carried a decided question as an open
+one from #339 to #417, this brief included. `[MY READING]`
+The lesson generalises: a reduction is not a result until the
+reduced answer is transported back and tested where the question
+was asked.
+
+### 12.2 The object, and that it is a completion `[EXACT]`
+
+```
+Zhat(h)  =  2^(-|h|) . f(class(sigma(h))),
+      f  =  (4, 4, 3, 7, 3, 3)/3,     lambda = 2
+```
+
+| demand | certificate |
+|---|---|
+| strictly positive | 0 non-positive completed weights |
+| **(a) per-cut normalized** | **0 violations / 6,471 histories** at depth <= 5; and **0 / 27,904** at depth 6, whose menus reach the *uncached* depth-7 level (145,408 children) — out-of-sample |
+| class-constant (gauge-invariant) | 0 violations / **5,548 canonical classes** |
+| **(b) foliation-invariant, DIRECTLY** | completed chain products equal across **all 1,191 linear extensions of all 427 canonical classes** at depth <= 4 — the definition, not the diamond proxy |
+| diamond flatness | **0 / 202**, against the naive normalizer's **36 / 202** in the same run |
+| support-preserving | **2,032** join arbitrations keep positive weight — it is **not** the excluded zero class of §3.3 |
+| it is a *law* | the completed menu, up to base renaming, is a function of `sigma(h)` alone — 1,163 same-sigma comparisons, 0 mismatches |
+| it is a *measure* | completed weights of all depth-`D` histories sum to **exactly 1**, `D = 1..6` |
+
+The foliation gate matters more than the diamond gate, for the
+reason §4.4 already gave: flatness certifies class-constancy, not
+harmonicity. The 1,191-extension sweep is not a proxy for anything.
+
+### 12.3 It is root-free, and unique `[EXACT]`
+
+Part VI's rootedness exhibit reproduced exactly, then removed:
+
+| completion | `Z(empty)` | root | renewal `H3` |
+|---|---|---|---|
+| unit boundary | `1037/64` | `133/2074` | `1/16` |
+| class-`1/k` boundary | `325/64` | `21/325` | `1/16` |
+| **`Zhat`** | — | **`1/16`** | **`1/16`** |
+
+And not only at that pair: **the entire 215-node matched subtree** —
+the root tree against `H3`'s subtree under the `v0 -> v1`
+substitution — carries **identical completed menus event-by-event,
+0 mismatches.** The completion no longer distinguishes what the law
+identifies.
+
+**Uniqueness, in three steps.**
+
+- **`lambda = 1` is impossible.** Every menu of the closed 36-state
+  chain sums to between `2` and `5/2`, so for any positive `f` the
+  minimising state forces `lambda >= 2`. The value 1 *is* an
+  eigenvalue of the transfer, but `dim ker(T - I) = 1` and its
+  generator `(-4/5, 4/5, -1, -1/5, -1, 1)` has **mixed signs**. So
+  there is **no positive harmonic function on the quotient** — and
+  §5.7's `lambda^(-depth)` factor is a **necessity, not a
+  convention**. The depth grading is what makes `Zhat` harmonic on
+  *histories*, which is where the demand lives.
+- **`lambda = 2` is the only eigenvalue with a positive
+  eigenvector.** `{2,4,5}` is closed and irreducible, so `f`
+  restricted to it is its Perron vector and `lambda = 2` exactly
+  (`charpoly = (x-2)(x-3/2)(x-1)`); the transient extension is
+  forced by the entrywise-nonnegative resolvent `(2I - M_t)^(-1)`,
+  `det = 3/32`, returning `(4/3, 4/3, 7/3)`.
+- **Not a quotient artifact.** Re-run at the **fine 36-state
+  level**: exactly **one** closed communicating class (9 states,
+  every row summing to 2, Perron root 2), 27 transient states with
+  `det(2I - M_t) = 2187/2^41` and a nonnegative resolvent, and
+  `dim ker(2I - M36) = 1`. Same answer, same vector, no collapsing
+  required.
+
+### 12.4 What it costs, and two sharpenings
+
+**Demand (c) is not restored.** §3.1 is untouched and remains a
+theorem. The first delivery compared `Zhat` only against the unit
+boundary; round-1 M2 called that cherry-picking. All three
+`[EXACT]`:
+
+| completion | deformed cut classes | worst distortion | median |
+|---|---|---|---|
+| unit boundary | 21 / 114 | `23/16` | 1 |
+| class-`1/k` boundary | **103 / 114** | `4` | 2 |
+| **`Zhat`** | 50 / 114 | `7/3` | 1 |
+
+`Zhat` sits **inside** the range spanned by the two canonical
+boundaries. The deformed-class count is not a scalar figure of merit.
+
+**The root is not among `Zhat`'s 50** — there it is exactly
+ratio-preserving, `q' = q/2`, every proposal `1/16`, every idle
+`3/8`. **But this is TOY-RELATIVE (round-1 M3):** it needs
+`f(class 0) = f(class 1) = 4/3` with the root's menu leading only
+into classes 0 and 1, and in any grammar where those Perron weights
+differ the root deforms. So §4.2's sharp point is not *removed* —
+it **does not occur in this grammar**.
+
+**The deformation is exactly the Perron tilt** — a characterisation,
+not a count. For every pair of alternatives at every cut,
+
+```
+q'(e1)/q'(e2)  =  [ q(e1)/q(e2) ] . [ f(class(h+e1)) / f(class(h+e2)) ]
+```
+
+gated over **77,541 pairs** (23,305 leading to the same successor
+state, 54,236 tilted), **0 violations**. So the completion preserves
+the weight-system ratio *exactly* between options leading to the
+same state, and tilts it *only* by the successors' Perron ratio:
+**each option is re-weighted by how much record-growth capacity it
+leads to, and by nothing else.** `[MY READING]` This is the
+sharpest available form of Part VIII item 3. What must be judged as
+physics is now one named principle, not an unstructured distortion.
+
+**The boundary freedom is 84-dimensional, not 313.** The map from
+depth-4 boundaries to interior completions has rank **exactly 84 =
+the number of depth-3 cut classes** (layer census
+`1/6/23/84/313`): **229 of the 313 boundary parameters act
+trivially on the completion.** 313 is a correct count of boundary
+parameters and a wrong count of completions. Inside the 84, the
+depth-stationary completions are a **single ray**, realised by the
+strictly positive boundary `b*(t) = 2^(-4) f(class(t))`, which
+reproduces `Zhat` at all 215 interior histories exactly.
+
+### 12.5 The honest limit: this is uniqueness, not forgetting
+
+Pre-registered as a gate to be reported whichever way it landed, and
+it landed **negative**: **unconstrained boundaries do not wash out.**
+The achievable root-transfer set is a projective image of the
+boundary cone, hence the convex hull of its vertices, and its
+diameter is **1 at every truncation depth tested** (6 / 23 / 84 /
+313 terminal classes). A boundary free to distinguish anything can
+drive the root anywhere.
+
+What *does* wash out is every boundary respecting the law's own
+identifications: `pi = (1,1,2)/4` satisfies `pi T = 2 pi` and is
+strictly positive on the dominant class, so `pi . b > 0` for every
+strictly positive `sigma`-measurable `b`; with the spectral gap
+(every other modulus `<= 3/2 + 2^(-5/3) ~ 1.81498 < 2`) this gives
+`T^n b / 2^n -> (pi.b / pi.f) f` at rate `~ 0.9075^n`, below `1e-9`
+by `n = 400` on a battery of extreme positive boundaries.
+
+**WITHDRAWN (round-1 BLOCKER B2).** The first delivery wrote:
+
+> ~~Among completions that do not distinguish record points the law
+> identifies, there is exactly one, and it needs no boundary.~~
+
+Measured at depth-4 truncation `[MEASURED — tangent-space counts at
+`b*`, hence lower bounds on the freedom left]`:
+
+| demand imposed | constraints | rank | boundary directions still FREE |
+|---|---|---|---|
+| agreement on the root/renewal matched pair | 6 | 5 | **308 of 313** |
+| bisimulation-invariance of the completed class transfer at every interior cut | 589 | 194 | **119 of 313** |
+| paper 30 §5.7's FORM | — | — | **0** — one ray |
+
+**Neither invariance demand delivers uniqueness.** What delivers it
+is the **form**: `Z` a state function times `lambda^(-depth)`. The
+correct statement is therefore
+
+> Within paper 30 §5.7's stationary class, a completion exists, is
+> unique up to scale, and requires no boundary input. **The
+> stationary form is a postulate about the shape of `Z`, not an
+> invariance principle.**
+
+That is weaker, and it leaves a sharp successor question: **is there
+an invariance demand, stated on the record rather than on `Z`, that
+forces the form?** Nobody has one.
+
+### 12.6 The superseded one-paragraph summary, verbatim
+
+Preserved because the corpus never silently edits. This was §XI
+until 2026-07-25:
+
+> The framework specifies exactly what can happen next and the
+> *relative* weights of the options, and provably cannot turn those
+> into probabilities without giving something up. Demanding
+> normalization, foliation-invariance and untouched ratios together
+> is refuted by a 36-of-202-diamond certificate, because the natural
+> normalizer double-counts the causally blind join layer along
+> foliations that expose it. What survives is a Doob `h`-transform:
+> it works at every finite depth, with 313 parameters of boundary
+> freedom, and unavoidably tilts relative weights at 21 of 114 cut
+> classes including the root. The quantum lift does not escape this —
+> it *is* that classical completion at one particular boundary, in
+> Hilbert dress. The only alternative is a root-free completion,
+> which requires a strictly positive harmonic function on the
+> infinite-volume quotient; that is residue 1, it is decided at
+> verified depth on a six-state chain with `lambda = 2` and
+> `root = renewal`, and it is one lemma — (H1), whose most recent
+> attempted proof was refuted under review — from being closed. So
+> the open question is sharp: **is the record law forward-complete,
+> or does the world carry a boundary condition?** The mathematics
+> forces one of the two, and nobody yet knows which.
+
+Four things in it are now wrong or stale: "313 parameters of
+boundary freedom" (84 as a completion count, §12.4); "unavoidably
+tilts ... including the root" (not at the root, §12.4); "a strictly
+positive harmonic function on the infinite-volume quotient" (no such
+function exists — the quotient statement needs the `lambda^(-depth)`
+grading, §12.3); and "nobody yet knows which" (horn II).
+
+### 12.7 Scope, to be carried at every citation
+
+**d42a scope, delivery-free, two actors.** Unconditional at every
+verified depth — exhaustively through depth 7. Conditional on
+(H0)–(H2) at all depths, **exactly** as D44a's conditional theorem
+is and no more: (H1) inherits the whole conditionality, and its
+leverage goes *up*, since it is now the last gap before the
+dichotomy is settled unconditionally rather than merely before
+residue 1 is decided.
+
+**Transport scope (d42b1) is OPEN.** Paper 32 §2.3's escape result
+stands untouched: deliveries reopen the absorbing sector and the
+state space outruns every computed window. Nothing in Part XII
+transfers there.
+
+**Two-of-two breadth discipline applies.** D42b7's second grammar
+(ternary payloads) has no state chain, so `lambda = 2` and
+`f = (4,4,3,7,3,3)/3` are **toy-relative values**. What is claimed
+to generalise is the **form** — a unique Perron completion — not the
+numbers.
+
+**And §9.3 is untouched.** A settled measure is not a bridge to a
+laboratory: the scale gap, the layer gap and the aggregation loss
+all stand, and no rate may be quoted through any of this. What
+changes is only that the completion is no longer the reason why.

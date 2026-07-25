@@ -8987,3 +8987,277 @@ filenames (paper 57 is in the v6 line, not v10).
 ("three event types" vs a four-row table) caught and fixed.
 Brief now 845+ lines. The self-containment claim in §0 is now
 true rather than aspirational.
+
+## 2026-07-25 — D49: THE COMPLETION DICHOTOMY IS SETTLED — HORN (II),
+## THE RECORD LAW IS FORWARD-COMPLETE (LEDGER #418)
+User direction: settle the dichotomy. Pin
+`note-d49-completion-dichotomy-settlement-pin.md` (strict); receipt
+`v10/code/d49_dichotomy_settlement_exact.py`; result note
+`note-d49-completion-dichotomy-settlement-result.md`.
+**25 PASS / 0 FAIL, exit 0, ~75 s, byte-identical across
+PYTHONHASHSEED 0/7/61/999.**
+
+**THE FINDING, AND IT IS PARTLY ABOUT US.** Paper 30 §5.7 DEFINES the
+stationary completion as `Zhat(h) = f(state(h)) . lambda^(-depth(h))`
+and declares its existence [OPEN, declared]. d43b then COMPUTED the
+eigenproblem (#339/#345: lambda = 2, f = (4,4,3,7,3,3)/3, MG4 "root-free
+certificate YES") and d44a CLOSED the state space. **Every one of those
+gates lives on the quotient. No unit had ever built Zhat on HISTORIES
+and tested it against the §5.2 completion demands.** The corpus has
+been carrying a decided question as an open one from #339 to #417,
+including in #416's standalone brief, which closes "nobody yet knows
+which". The distance was one receipt, not one theorem.
+
+**THE VERDICT [THEOREM at d42a scope, conditional on (H0)-(H2); EXACT
+unconditionally at every verified depth].** `Zhat(h) = 2^(-|h|) .
+f(class(sigma(h)))` IS a completion in the sense of paper 30 §5.2 —
+strictly positive; per-cut normalized (0 violations / 6,471 histories
+at depth <= 5, and 0 / 27,904 at depth 6, whose menus reach the uncached
+depth-7 level, 145,408 children enumerated); class-constant on all
+5,548 canonical classes; foliation-invariant DIRECTLY (completed chain
+products equal across all 1,191 linear extensions of all 427 classes at
+depth <= 4 — not the diamond proxy, whose separating content §5.5
+already showed is class-constancy and not harmonicity); flat 0/202
+diamonds against the naive normalizer's 36/202 in the same run;
+support-preserving (2,032 join arbitrations keep positive weight — it
+is NOT the d42b3-D3 zero class); a LAW (the completed menu up to
+renaming is a function of sigma(h) alone, 1,163 same-sigma comparisons,
+0 mismatches); and a MEASURE (completed weights of all depth-D
+histories sum to exactly 1 for D = 1..6).
+**AND IT IS ROOT-FREE.** Paper 30 §5.6's rootedness exhibit reproduced
+exactly — unit boundary Z(empty) = 1037/64 prices the structurally
+isomorphic root/renewal pair 133/2074 vs 1/16; class-1/k Z(empty) =
+325/64 prices it 21/325 vs 1/16 — and then REMOVED: **Zhat prices both
+at exactly 1/16, and the ENTIRE 215-node matched subtree carries
+identical completed menus event-by-event, 0 mismatches.**
+**HORN (II) HOLDS. THE RECORD LAW IS FORWARD-COMPLETE: it does not
+import a boundary condition.**
+
+**UNIQUENESS, AND IT IS NOT A QUOTIENT ARTIFACT.** lambda = 1 is
+IMPOSSIBLE (every menu of the closed 36-state chain sums to between 2
+and 5/2, so any positive f forces lambda >= 2; the value 1 IS an
+eigenvalue but dim ker(T - I) = 1 with generator (-4/5, 4/5, -1, -1/5,
+-1, 1), MIXED SIGNS) — so §5.7's lambda^(-depth) factor is a NECESSITY,
+not a convention. lambda = 2 is the only eigenvalue admitting a positive
+eigenvector ({2,4,5} closed and irreducible; charpoly(dom) =
+(x-2)(x-3/2)(x-1); transient extension forced by the nonnegative
+resolvent, det 3/32). **Re-run at the FINE 36-state level: exactly ONE
+closed communicating class (9 states, all row sums 2, Perron root 2),
+27 transient states with det(2I - M_t) = 2187/2^41 and nonnegative
+resolvent, dim ker(2I - M36) = 1.**
+
+**TWO SHARPENINGS OF PAPER 30 §5.3.**
+(i) **THE BOUNDARY FREEDOM IS 84-DIMENSIONAL, NOT 313.** The map from
+depth-4 boundaries to interior completions has rank EXACTLY 84 = the
+number of depth-3 cut classes (layer census 1/6/23/84/313), so **229 of
+the 313 boundary dimensions act TRIVIALLY on the completion**. 313 is a
+correct count of boundary parameters and a WRONG count of completions.
+Inside the 84, the depth-stationary completions are a SINGLE RAY,
+realized by the strictly positive b*(t) = 2^(-4) f(class(t)), which
+reproduces Zhat at all 215 interior histories exactly.
+(ii) **THE DEFORMATION IS EXACTLY THE PERRON TILT** — a
+characterization, not a count: for every pair of alternatives at every
+cut, q'(e1)/q'(e2) = [q(e1)/q(e2)] . [f(class(h+e1))/f(class(h+e2))]
+(77,541 pairs; 23,305 same-successor-state, 54,236 tilted; 0
+violations). The completion preserves the weight-system ratio EXACTLY
+between options leading to the same state and tilts it ONLY by the
+successors' Perron ratio — each option re-weighted by how much
+record-growth capacity it leads to, and by nothing else.
+
+**WHAT THE SETTLEMENT DOES NOT BUY, gated rather than narrated.**
+(a) **Demand (c) is NOT restored and the §5.2 no-go is untouched**:
+Zhat deforms within-cut ratios at 50 of the 114 interior cut classes,
+MORE than the unit boundary's 21. **BUT THE ROOT IS NOT AMONG THEM** —
+at the root Zhat is exactly ratio-preserving (q' = q/2; every proposal
+1/16, every idle 3/8), which REMOVES §5.3's sharp point that the
+deformation reaches the theory's beginning. That is a fact of the chain
+(f(0) = f(1) = 4/3), not a design choice.
+(b) **UNCONSTRAINED BOUNDARIES DO NOT WASH OUT** — pre-registered as a
+gate to be reported whichever way it landed, and it landed NEGATIVE:
+the achievable root-transfer set is the convex hull of its vertices and
+has DIAMETER 1 at every truncation depth tested (6/23/84/313 terminal
+classes). What DOES wash out is every boundary respecting the law's own
+identifications: pi = (1,1,2)/4 satisfies pi T = 2 pi and is strictly
+positive on the dominant class, so with the spectral gap (all other
+moduli <= 3/2 + 2^(-5/3) ~ 1.81498 < 2) T^n b / 2^n -> (pi.b/pi.f) f at
+rate ~0.9075^n, gated below 1e-9 by n = 400. **So horn (I) is refuted by
+UNIQUENESS UNDER THE LAW'S OWN IDENTIFICATIONS, not by any limit.**
+
+**FOUR FIRST-RUN DEVIATIONS, all gated (pin §6).** (A1) the pinned
+lambda=1 eigenvector was hand-computed and WRONG — replaced by an exact
+in-receipt kernel computation. (A2) the pinned rank 114 was WRONG and
+the true value 84 is the RESULT in (i) above. (A3) the washout budget
+was too small — repaired at the level of the certificate (pi gated) with
+the iteration extended to n = 400 as its exhibit. (A4) **A DETERMINISM
+DEFECT IN THIS RECEIPT, caught by seed variation**: E2 serialized 'r'
+events through a raw frozenset repr and reported 7 spurious mismatches
+at PYTHONHASHSEED=7, exit 1 — exactly the d44a banner's warned failure
+mode. Repaired with a recursive deterministic key and RECORDED rather
+than quietly fixed.
+
+**FORWARD CORRECTIONS APPLIED.** Paper 30 §5.7's [OPEN, declared] is
+DISCHARGED in the affirmative at d42a scope; §5.3's 313 is superseded by
+84 as a completion count; §5.6 STANDS and is now the load-bearing
+premise of the settlement rather than a defect report.
+**THE-COMPLETION-DICHOTOMY.md is amended (#418)**: a SETTLEMENT NOTICE
+after §0, forward-correction blocks in §3.2 / §4.2 / Part VI / Part
+VIII, a new **PART XII — THE SETTLEMENT**, and a rewritten §XI with the
+superseded one-paragraph summary quoted in full inside Part XII so
+nothing is silently edited.
+**A REAL DEFECT IN THE BRIEF'S FRAMING, not a quibble: the two horns
+are NOT mutually exclusive as stated.** Horn (I) is "the completion
+deforms within-cut ratios"; horn (II) is "a root-free completion
+exists"; Zhat does BOTH. The genuine fork is **imported boundary vs
+law-determined boundary**, and the brief now says so.
+
+**SCOPE, to be carried at every citation.** d42a, DELIVERY-FREE, two
+actors. Unconditional at every verified depth (exhaustive through depth
+7); conditional on (H0)-(H2) at all depths, EXACTLY as d44a is and no
+more. **Transport scope (d42b1) is OPEN** — paper 32 §2.3's escape
+result stands untouched. Two-of-two breadth discipline: d42b7's second
+grammar has no state chain, so lambda = 2 and f = (4,4,3,7,3,3)/3 are
+TOY-RELATIVE VALUES; the FORM (a unique Perron completion) is what is
+claimed to generalize, not the numbers.
+**RESIDUE.** (H1) inherits the whole conditionality and its leverage
+GOES UP: it is now the last gap before the dichotomy is settled
+unconditionally at d42a scope, not merely before residue 1 is decided.
+Whether the Perron tilt — "weight each option by the record-growth
+capacity of the state it leads to" — is a physical selection principle
+or only the unique mathematically canonical one is NOT touched here and
+is not claimed.
+
+## 2026-07-25 — D49 ROUND 1: TWO BLOCKERS, BOTH SELF-INFLICTED; THE
+## EXISTENCE RESULT SURVIVES, THE UNIQUENESS RHETORIC DOES NOT
+## (LEDGER #419)
+Round frozen at `v10/reviews/d49-round1-hostile-review.md` — **REVISE,
+2 BLOCKER / 4 MAJOR / 3 MINOR / 1 NIT** — repaired and delta'd.
+Post-repair **31 PASS / 0 FAIL, exit 0**, byte-identical across
+PYTHONHASHSEED 0/7/61/999. **D49 TERMINAL.**
+**WHAT SURVIVES, FIRST.** A root-free completion EXISTS — exactly what
+paper 30 §5.7 declared [OPEN, declared] — and Zhat = 2^(-|h|) .
+f(class(sigma(h))) is one. **HORN (II) HOLDS.** Every existence-side
+certificate stands untouched. What fell is the account of why Zhat is
+the ONLY one, plus one arithmetic reading that was simply wrong.
+
+**BLOCKER B1 — #418's SHARPENING (i) IS FALSE AND ITS QUEUED PAPER-30
+ERRATUM IS WITHDRAWN.** #418 claimed "229 of the 313 boundary dimensions
+act TRIVIALLY on the completion; 313 is a WRONG count of completions".
+Refuted in-receipt (F3): two strictly positive boundaries differing by a
+kernel direction give IDENTICAL interior potentials and DIFFERENT
+completed transfers at depth-3 cuts (witness 1/16 vs 1001/16000; the
+count of differing transfers is kernel-direction dependent, the gate
+asserts > 0). The reason is elementary and #418 missed it: **a completion
+is the transfer at EVERY interior cut, and a depth-3 transfer is
+q.Z(h+e)/Z(h) with |h+e| = 4 — it reads the boundary directly.**
+**PAPER 30 §5.3's 313-DIMENSIONAL BOUNDARY FREEDOM IS CORRECT; NO
+ERRATUM IS OWED, and the one #418 queued is cancelled before it could be
+applied.** Surviving addendum: the boundary -> interior-POTENTIAL map has
+rank exactly 84 = the number of depth-3 cut classes (layer census
+1/6/23/84/313), so the completed transfer at cuts of depth <= 2 sees the
+boundary only through an 84-dimensional image while the depth-3 layer
+sees all 313.
+
+**BLOCKER B2 — "AMONG COMPLETIONS THAT DO NOT DISTINGUISH RECORD POINTS
+THE LAW IDENTIFIES THERE IS EXACTLY ONE" IS FALSE, AND IT WAS #418's
+HEADLINE JUSTIFICATION.** Measured at depth-4 truncation (new gate H1;
+tangent-space counts at b*, hence LOWER BOUNDS on freedom) [MEASURED]:
+renewal-pair agreement leaves **308 of 313** boundary directions FREE;
+bisimulation-invariance of the completed class-to-class transfer at every
+interior cut leaves **119**. **Neither invariance demand delivers
+uniqueness.** What delivers it is paper 30 §5.7's FORM — Z a
+depth-graded state function on the closed chain — which is **a POSTULATE
+ABOUT THE SHAPE OF Z, not an invariance principle**. #418 sold the
+invariance reading and proved the form. Restated everywhere: "the record
+law is FORWARD-COMPLETE" is true of **the law PLUS that form** and may
+not be quoted without it. **NEW OPEN QUESTION, sharp:** is there an
+invariance demand, stated on the RECORD rather than on Z, that forces the
+form? Nobody has one.
+
+**MAJOR M1 — THE GATE COUNT OVERSTATED THE EVIDENCE.** #418 led with "25
+PASS" as if 25 independent tests. Verified otherwise: **D1 is arithmetic**
+given d44a CG1+CG2 and d43b MG3 (class-row constancy 0 violations and
+row.f = 2f for every class); **E2 is a THEOREM-PASS** given d44a SG3 plus
+sigma-measurability — re-derived by the referee with NO event
+serialization at all (0 sigma-mismatches, 0 completed-weight-multiset
+mismatches over 215 nodes), which confirms the A4 determinism repair AND
+shows **the unit's most-quoted number, 1/16 = 1/16, is a property of the
+DEMAND and not evidence for the Perron vector**; D4 is paper 30 §5.5's
+telescoping theorem; **D5, D7 and G5 are the definition of q' rearranged
+— G5's 77,541 pairs are a restatement, not a sweep.** Repair: every gate
+carries [SUBSTANTIVE] / [ANCHOR] / [DERIVED] / [THEOREM-PASS], anchored
+by AST scan at H6 — **15 / 5 / 6 / 5**.
+**MAJOR M2 — THE DEFORMATION COMPARISON WAS CHERRY-PICKED.** #418
+compared Zhat's 50/114 only against the unit boundary's 21/114. The OTHER
+canonical boundary paper 30 uses, class-1/k, deforms **103/114** (worst
+within-cut distortion 4, median 2) against Zhat's 50/114 (worst 7/3,
+median 1) and unit's 21/114 (worst 23/16, median 1). **Zhat sits INSIDE
+the range spanned by the two canonical boundaries**; the count is not a
+scalar figure of merit (new gate H2).
+**MAJOR M3 — THE ROOT-EXCLUSION IS TOY-RELATIVE.** It holds for exactly
+one reason (gate H3): f(class 0) = f(class 1) = 4/3 and the root's menu
+leads only into classes 0 and 1. In a grammar where those Perron weights
+differ, the root deforms. **#418's "paper 30 §5.3's sharp point is
+REMOVED" is downgraded to "does not occur in this grammar."**
+**MAJOR M4 — A CITATION-DISCIPLINE BREACH, RECORDED RATHER THAN REPAIRED
+AWAY.** #418 amended THE-COMPLETION-DICHOTOMY.md — the corpus's
+entry-point document — with a banner reading "the dichotomy has been
+SETTLED", **in the same ledger entry that created D49, before any hostile
+round**. Green-unreviewed work is not citable; the rule was broken where
+a reader is least able to detect it. The banner additionally carried **no
+scope**: neither "d42a delivery-free" nor "conditional on (H0)-(H2)"
+appeared in it, both sitting 900 lines below. Repaired: scope and review
+status now in the banner, with B1/B2 carried into §12.4 and §12.5.
+
+**MINORS.** m1 attribution — the Z = f(state).lambda^(-depth) FORM was
+pinned in **d42b56 A3 (#319/#321)**, before paper 30 §5.7. **The
+archaeology claim itself was checked and STANDS**: d42b56's receipt builds
+Z only from three boundaries and constructs no eigenvector; d43b/d44a
+build f on states only; no unit built Zhat on histories. m2 — the pin was
+written CONCURRENTLY with the receipt, not strictly before it; now
+declared in the pin's §0 rather than left implied. m3 — AST anti-vacuity
+scan added (H5), **labelled to exactly what it enforces**: no literal
+conditions, every condition references a computed name; it does NOT
+certify falsifiability, which is what SECTION G and F3's counter-witness
+are for. The singular-matrix branches in F2/F5 were dead code and are now
+exercised every run by a deliberately singular probe (LOG #354 F1).
+n1 — large pass counts now split out their vacuous members (H4): of D2's
+5,548 canonical classes **813 are singletons** where class-constancy
+cannot fail (effective 4,735); of D3's 427 classes 137 have a single
+linear extension (effective 290); D6's 28 sigma-classes all carry >= 2.
+
+**SCOPE, unchanged and re-stated because #418's banner omitted it.** d42a,
+DELIVERY-FREE, two actors; unconditional at every verified depth;
+conditional on (H0)-(H2) at all depths with (H1) UNDISCHARGED; **transport
+scope OPEN**. lambda = 2 and f are TOY-RELATIVE, as is the root-exclusion.
+**NEXT:** (H1), the depth-free menu-factorization lemma — and after it,
+transport scope, which is where the dichotomy remains genuinely open for
+a theory that has delivery and merge in it.
+
+## 2026-07-25 — #419's "delta'd" WAS FALSE; DELTA NOW APPENDED (LEDGER #420)
+FORWARD CORRECTION, owned. #419 recorded the D49 round as "repaired and
+delta'd" and the brief's banner recorded it TERMINAL, while
+`v10/reviews/d49-round1-hostile-review.md` contained **NO DELTA
+SECTION AT ALL**. The repairs were real — independently re-verified here
+at **31 PASS / 0 FAIL, exit 0**, from a clean process — but the record of
+them was missing from the frozen round, which is where the corpus's
+discipline puts it (round -> repairs -> DELTA IN THE ROUND FILE ->
+terminal). **This is the same defect class as #390**, where a ledger
+entry claimed an edit that had not landed, and it is corrected the same
+way: forward, with the cause stated.
+DELTA NOW APPENDED, and it STRENGTHENS B1. The round refuted #418's "229
+boundary dimensions act trivially" with a perturbation WITNESS and
+conceded the count of differing transfers was kernel-direction dependent.
+**It is a THEOREM, not a witness.** A kernel direction satisfies
+sum_e q(e|h).db(h+e) = 0 at every depth-3 cut, so Z(h) is unchanged
+there; the transfer at that cut is q.Z(h+e)/Z(h) with |h+e| = 4 — THE
+BOUNDARY ITSELF — so with the denominator fixed the transfer is unchanged
+**iff db vanishes on every child of h**. A nonzero db is nonzero at some
+terminal history, which is a child of some depth-3 cut, so that cut's
+transfer MOVES. Hence EVERY nonzero kernel direction changes some depth-3
+transfer; no witness selection is needed and the gate's ">0" is in fact
+"always". Paper 30 §5.3's 313-dimensional boundary freedom stands and the
+queued erratum stays withdrawn.
+UNCHANGED: horn (II) holds; a root-free completion EXISTS, which is
+exactly what paper 30 §5.7 declared [OPEN, declared]. Both blockers hit
+the account of UNIQUENESS and one arithmetic reading, never existence.
+NEXT: D50 (is the stationary FORM a law or a choice?), then (H1).
