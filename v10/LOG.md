@@ -8331,3 +8331,54 @@ dimension work, not with the discriminator work. It is the sole
 unblocking condition for d41c.
 NEXT: successors 1-6, beginning with (1) the funnel-lemma
 paper-grade promotion.
+
+## 2026-07-24 — D44c-P PINNED: the funnel lemma's promotion (LEDGER #406)
+User go. Successor 1 of the six opens. Pin committed STRICTLY
+BEFORE any receipt code exists: note-d44cp-funnel-lemma-promotion.md.
+THE ENTRY CONDITION (LOG #355, restated paper 32 §6 item 7): an
+in-receipt gate of the SIXTH clause (incomparable arbs share no
+common upper bound) and of UP-CONE CONFINEMENT over the committed
+families, plus the lemma written as a theorem-with-proof-note.
+THE PIN'S CENTRAL DEVICE. The round's route from clauses to lemma
+is recorded as PROSE; reconstructing it after seeing the data is
+exactly the failure mode that produced five headline reversals in
+the D46 sweep. So the pin PRE-REGISTERS THREE CANDIDATE THEOREM
+FORMS AND A BINDING DECISION RULE: T1 (full event poset is a
+rooted forest => dim <= 2 at every scale; PRE-REGISTERED
+EXPECTATION **FALSE**, since an arb consumes a component of
+mutually conflicting proposals and should dominate two
+incomparable ones — the expectation is on the record BEFORE the
+measurement); T2 (the ARB-INDUCED subposet is a rooted forest =>
+dim <= 2, no crown, at every scale); T3 (the round's own
+pool-laminarity route to S3-impossibility in the FULL poset, via
+L1 "every element dominating two incomparables is an arb" and L2
+"the crown's forced pool pattern is non-laminar"). RULE: a form is
+a THEOREM only if BOTH its hypothesis is gated at zero violations
+over the three committed families AND its implication is
+independently machine-verified; hypothesis-gated-implication-open
+and FALSIFIED are the other two reportable states; NO POST-HOC
+UPGRADES.
+SCOPE STATED BEFORE MEASUREMENT: the five clauses and (vi) are all
+ARB-scoped; paper 32 §3.1's claim is FULL-POSET. Every gate is
+labelled. **If only T2 survives the promotion is PARTIAL and
+paper 32 §6 item 7 must be AMENDED, not closed.**
+GATES FG0-FG10: FG0 port fidelity (reproduce 551,928/224,580/
+436,864 and clauses (i)-(v) at zero); FG1 CAPACITY — if the
+two-incomparable-arb stratum is EMPTY, clause (vi) is vacuous and
+the promotion is VOID (exit 0, not a pass); FG2 clause (vi); FG3
+up-cone confinement; FG4 the forest property both scopes; FG5 a
+CONSTRUCTIVE 2-realizer (two DFS pre-orders, children forward and
+reversed) verified to realize the poset EXACTLY — a certificate
+replacing an oracle verdict; FG6 oracle cross-check; FG7 four
+mutants; FG8 **THE WITNESS BRANCH WIRED AS A GENUINE EXIT-0
+OUTCOME AND EXERCISED through the same reporting path — the
+discharge of #354's F1, which is BINDING on successor dimension
+receipts**; FG9 the implication verified GRAMMAR-INDEPENDENTLY by
+exhaustive enumeration of ALL rooted forests on <= 8 nodes; FG10
+the AST anti-vacuity scan, labelled with the #403 MA-2 scoping
+(it enforces "references >= 1 run-bound name" and nothing more).
+FALSIFIER: empty FG1(a), any FG2/FG3 violation, arb-scoped FG4
+failure, or an FG9 forest the realizer fails to realize. Each is a
+REAL RESULT reported at exit 0; only anchor breakage and mutant
+misbehaviour exit 1.
+NEXT: build the receipt.
