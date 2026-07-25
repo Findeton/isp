@@ -8246,3 +8246,42 @@ gated by AST reading plus corpus sweep, its arbitration half
 resting on a constructed exhibit.
 **ROUND 3 OF 3 COMPLETE — ALL SIX D46 LADDER UNITS ARE TERMINAL.**
 NEXT: d41c step 3, then successors 1-6.
+
+## 2026-07-19 — d41c STEP 3 DRAFTED, UNSIGNED (LEDGER #404)
+note-d41c-step3-bridge-declarations.md written per the user's
+sequence (#393) and per the handling recorded there: this is an
+INTERPRETIVE COMMITMENT, not a result, so every correspondence is
+tagged [POSITED] with its assumptions written out and its FAILURE
+MODE named, and the file carries an eight-item SIGN-OFF BLOCK that
+is UNSIGNED — until it is countersigned the file is a PROPOSAL and
+any citation must say so. The stated reason on the record: no
+receipt can gate a bridge (it is a choice), and the corpus has
+been burned by exactly this class once (the d41a "empirical"
+wording, audit A1).
+DECLARATION A (¹⁷¹Yb⁺ single-ion hyperfine, the RAW-BOUND
+platform): A-I the ground-state hyperfine pseudo-spin of ONE ion =
+ONE monitored record line (failure mode: if motional state carries
+its own line, N is an overcount); A-II births = version-writing
+events, with laboratory operations EXCLUDED by construction
+(failure mode: if gates are births the experiment measures its own
+gate count and the bound is vacuous); A-III the base dates from
+STATE PREPARATION, T measured from it; A-IV g CONSTANT over dwell
+and across repetitions — unfalsifiable within the corpus, with the
+(1-g)^(N/2) functional-form cross-check the only thing that could
+expose drift.
+DECLARATION B (Arndt-class Talbot-Lau, the MASS-AXIS platform) is
+DECLARED STRICTLY WEAKER, and the reason is stated as the top
+risk: B-I identifies the molecular CENTRE-OF-MASS coherence with
+one line, but **if the correct identification scales with
+constituent count then the mass ladder measures the LINE COUNT,
+not the law — so the ladder tests the CONJUNCTION of B-I and the
+law and CANNOT separate them.** B-II additionally assumes
+gratings/collisions/thermal emission are decoherence, not births
+(the known-decoherence budget there is large and mass-dependent);
+B-III the base dates from source emission, T = time of flight;
+B-IV g constant along the path AND across species, else the mass
+ladder confounds a g-trend with an N-trend.
+§5 states what is NOT claimed (no measurement, no contact, no
+bound; the corpus's numbers remain fixture-extracted per A1), and
+§6 ranks the four named risks. NEXT: successors 1-6, beginning
+with (1) the funnel-lemma paper-grade promotion.
