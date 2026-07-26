@@ -1,0 +1,28 @@
+[D57 — the coarsest sector-exact partition at transport scope]
+  banner: sector = (initiator, event-type); the aggregated
+  transfer T_s(h, c) = sum q over sector s landing in class c;
+  fixpoint refinement from the sector-signature partition; cap
+  layer closed by signature (declared).  Caps 3/4/5 exhaustive;
+  cap 6 CUT for runtime and declared (residue).  Exact Fractions.
+  [PASS] S0 anchor: committed d42b1 layer (single source)
+  cap 3: histories = 521, iterations = 4, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 7}
+  cap 4: histories = 3969, iterations = 5, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 16, 4: 9}
+  cap 5: histories = 30729, iterations = 6, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 16, 4: 23, 5: 11}
+  cap 6: histories = 243769, iterations = 7, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 17, 4: 27, 5: 33, 6: 16}
+  [PASS] S1 SECTOR QUANTIZATION — TWICE REFUTED, AND THE SECOND REFUTATION IS THE FINDING.  Run 1 killed {0, 1/4} (arb sectors reach 1/2 via subset choices).  Run 2's k/4 law is killed at cap 6: **1/8 appears** — the arb sector prices 1/4 DIVIDED BY THE NUMBER OF COMPONENTS, so totals live in {k/(4m)} and the component count m grows with depth (more bases, more live pairs).  **THE SECTOR ALPHABET IS NOT FINITE**: the finite-alphabet prerequisite for a sector-exact abstraction FAILS at this granularity, independently of the refinement's verdict.  Gated as a REPORT: all totals are exact rationals of the form k/(4m), alphabet printed  (totals tested = 1084928, beyond-quarter = 704, observed alphabet = ['1/2', '1/4', '1/8'] — 1/8 = the two-component case, the depth-unbounded family's first member)
+
+  THE DECIDER — per-depth fixpoint class counts across caps:
+  depth :  cap3  cap4  cap5  cap6
+    0   :  1  1  1  1
+    1   :  3  3  3  3
+    2   :  9  9  9  9
+    3   :  7  16  16  17
+    4   :  -  9  23  27
+    5   :  -  -  11  33
+    6   :  -  -  -  16
+  [PASS] S2 THE MAIN QUESTION — read as LOOKAHEAD CONVERGENCE, not as raw growth (the first run's 'any growth = blow-up' reading was too crude: counts at depth d MUST grow while the cap is within the refinement's lookahead; the signal is whether they STABILIZE once the cap moves 2+ levels past d).  Depth-by-depth stabilization between the last two caps is the decider  ((depth, stable-at-last-two-caps) = [(0, True), (1, True), (2, True), (3, False), (4, False)] -> **NOT stabilized — the refinement keeps splitting beyond its lookahead: blow-up evidence at this window**)
+
+[VERDICT] actor-swap symmetry not quotiented (counts <= 2x upper bounds), declared; depth-7 confirmation is the residue.
+
+[d57] 3 PASS / 0 FAIL
+RC=0

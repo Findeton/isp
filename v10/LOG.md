@@ -9986,3 +9986,39 @@ the signature of WORLDLINE-COORDINATED knowledge, which sprinklings
 lack by construction. The meter measures the grammar, not geometry.
 RESIDUE: does genuine M^{2+1}/M^{3+1} shatter 3? (the rung below;
 would locate the sprinkling floor); the mechanism question above.
+
+## 2026-07-26 — D57: THE SECTOR-EXACT ESCAPE CLOSES AT THIS GRANULARITY
+## (LEDGER #436)
+Receipt d57_sector_exact_refinement.py, 3 PASS / 0 FAIL, exit 0, caps
+3/4/5/6 exhaustive (521 / 3,969 / 30,729 / 243,769 histories).
+**TWO NEGATIVES, EACH BY REFUTING MY OWN PRE-REGISTERED LAW.**
+(1) SECTOR QUANTIZATION, TWICE REFUTED: {0, 1/4} died in run 1 (arb
+sectors reach 1/2 via subset choices — the 1+k/4 ladder at sector
+level); the repaired k/4 law died at cap 6 — **1/8 appears**, because
+the arbitration sector prices 1/4 DIVIDED BY THE COMPONENT COUNT, and
+components grow with depth. Totals live in {k/(4m)}; **THE SECTOR
+ALPHABET IS NOT FINITE.** The finite-alphabet prerequisite fails
+independently of the refinement. My verified delivery-sector-1/4 fact
+was sector-specific, not a law.
+(2) THE COARSEST SECTOR-LUMPABLE PARTITION DOES NOT STABILIZE. Read
+as LOOKAHEAD CONVERGENCE (the first run's any-growth-is-blow-up
+reading was too crude and was corrected): per-depth fixpoint counts
+across caps 3/4/5/6 — depth 3: 7, 16, 16, **17**; depth 4: 9, 23,
+**27**; depth 5: 11, **33**. Even depth 3 crept at cap 6; nothing
+comparable stabilized. **BLOW-UP EVIDENCE at this window.**
+**VERDICT: the sector-exact escape, AS PINNED (sector = (actor,
+type)), is CLOSED — a strictly stronger negative than B1's: even
+AGGREGATED bookkeeping at this granularity fails, on two independent
+grounds (alphabet + refinement).** The crack narrows to: (i) coarser
+aggregations (type-only sectors; total-budget-only) — untested; (ii)
+abstractions that give up exactness for the completion's OBSERVABLE
+demands only (the D50 lesson cuts both ways). Residues: depth-7;
+actor-swap quotient (counts <= 2x).
+STANDING REDIRECT (user direction, this date): the destination is
+FULL EINSTEINIAN MANIFOLDS enriched to create quantum particles — not
+Minkowski-sprinkling likeness (D55c's zero-shatter reframe supports
+the redirect: the grammar's records are worldline-woven, not
+sprinkled). The boundary-freedom <-> vacuum-ambiguity bridge is
+recorded as [MY READING] and unpinned. The book (THE-THEORY-SO-FAR)
+to be EXPANDED with the v1-v9 SHARD arc and the manifolds->QFT
+destination when the writer's first pass lands.
