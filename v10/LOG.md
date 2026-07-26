@@ -10092,3 +10092,32 @@ construction unit on the manifold road.
 RESIDUES: density-deconfounded overlap comparison; non-identity
 transitions + the real cocycle condition (declared later stage);
 depth-profile of overlap (M31's 0.54 -> 0.94 growth).
+
+## 2026-07-26 — THE SCALE DOCTRINE (user, binding on the destination
+## line) (LEDGER #440)
+The author, restating the d41c §1A objection as a constraint on the
+manifolds-and-particles destination: if the record spacing were 1 mm
+(dimensionless, illustratively), a proton is ~20 LIGHT-YEARS — a
+particle is ~10^20 spacings across, ~10^60 record events. THEREFORE,
+BINDING ON ALL DESTINATION-LINE UNITS:
+1. **No fixture-scale object may ever be called a particle.** A
+   particle, if this framework produces any, is a COLLECTIVE
+   structure over astronomically many records — the analogue of a
+   soliton or phonon, not of a marked vertex.
+2. **Units certify MECHANISMS, not objects**: tensorial transition
+   behavior, mode structure, boundary/vacuum ambiguity — each stated
+   as the scale-invariant mechanism whose collective, scaled-up form
+   would be the physics. Every destination unit must name which
+   mechanism it certifies and say it is not exhibiting the object.
+3. This composes with the existing walls consistently: D48 (a
+   composite is not one line — the labelled record does not
+   aggregate, and causal aggregation is massively lossy) and paper
+   57 (the record scale itself is a free parameter — G un-fixable),
+   so even the 10^20 figure is illustrative, not corpus-fixed.
+CONSISTENCY NOTE [MY READING]: the doctrine FAVORS the
+boundary-freedom <-> vacuum-ambiguity bridge over any local-object
+story — modes of a measure are intrinsically delocalized, which is
+the only kind of "particle" the scale gap permits. Tensors enter as
+the transformation behavior of chart-attached data under transition
+maps — a mechanism certifiable at fixture scale under rule 2, since
+transition COVARIANCE is scale-free even when the charts are tiny.
