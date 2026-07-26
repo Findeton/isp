@@ -9499,3 +9499,43 @@ RESIDUE: (H1) needs a depth-free argument that does NOT assume view
 monotonicity. Two routes are now closed (tau at D46a, wire-closure
 here), and both closures are on the record with their counterexamples.
 NEXT: transport scope.
+
+## 2026-07-25 — D52 PINNED: TRANSPORT SCOPE, AND A PROBE THAT
+## DISQUALIFIES ITSELF (LEDGER #425)
+Pin: note-d52-transport-scope-pin.md. Transport is the real frontier —
+everything settled about the dichotomy is d42a delivery-free, and the
+theory that matters for spacetime has delivery and merge.
+**THE FIRST QUESTION IS NOT "WHICH HORN" BUT "IS THERE A FINITE CHAIN
+AT ALL".** At d42a the entire settlement rested on sigma closing at 36
+states, which is what makes the transfer a finite matrix and lets
+Perron theory apply. Without a bounded abstraction the dichotomy cannot
+be posed the same way at transport scope.
+**FIRST PROBE, RUN AND THEN DISQUALIFIED BY ITS OWN AUTHOR.** Applying
+D51's four menu-relevant projections to the committed d42b1 layer, two
+actors, to depth 5: distinct projection-states 1, 5, 13, 39, 107, 275
+over histories 1, 8, 60, 452, 3448, 26760 — growth ~x2.6 per depth,
+cumulative count EQUAL to the per-depth count, i.e. **no state ever
+recurs**. That looks like a decisive blow-up. **IT IS NOT EVIDENCE.**
+The probe LACKS THE BASE-RENAMING QUOTIENT, and that quotient is
+exactly what makes sigma finite at d42a: every arbitration mints a
+fresh version name, so **without renaming even d42a would not close**.
+The non-recurrence is therefore substantially an artifact of the
+missing quotient. **[MEASURED, UPPER BOUND ONLY] — the table bounds the
+true state count from above and MUST NOT be cited as evidence that
+transport fails to close.**
+CAMPAIGN T1-T4: T1 port the renaming quotient properly (delivery adds
+holdings MONOTONICALLY, so the right abstraction must quotient by which
+actor holds what, not merely record it); T2 closure-or-blow-up decided
+by frontier-exhausted BFS as d44a's CG3a did, BOTH outcomes results;
+T3 only if T2 closes — Perron package, then Zhat, then the dichotomy;
+T4 if it does not — state what replaces the finite-chain argument, or
+record the dichotomy as UNDECIDABLE BY THESE MEANS at transport scope,
+which is itself the deliverable.
+**PRE-REGISTERED EXPECTATION: NONE, DELIBERATELY.** Paper 32 §2.3's
+"escapes every computed window" was measured WITHOUT the quotient this
+pin requires, so the corpus has no grounds for an expectation either
+way. Recording no expectation is the honest state; inventing one would
+be the error D49 was corrected for.
+INHERITANCE: the d42a results stand exactly as scoped, and **(H1)
+remains UNDISCHARGED there** (D51), so anything built at transport
+scope inherits that unless it re-establishes its own foundations.
