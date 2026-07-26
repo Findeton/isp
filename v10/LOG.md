@@ -9382,3 +9382,61 @@ the two strongest candidates AND their conjunction are now eliminated;
 (2) does the freedom grow without bound? 10 -> 28 -> 107 is monotone but
 three points; (3) transport scope, open regardless.
 NEXT: (H1), then transport scope.
+
+## 2026-07-25 — D51 PINNED: (H1) VIA MENU-VISIBILITY (LEDGER #423)
+Pin committed BEFORE the receipt: note-d51-h1-menu-visibility-pin.md.
+(H1) is residue 1's final named gap and D44a/D49/D50 all inherit its
+conditionality.
+**THE REFUTED ROUTE IS NAMED AND BARRED.** D46a tried to prove the
+per-actor own-view abstraction tau is a function of sigma; its own
+round refuted the framing (tau is NOT an own-view object; the menu view
+exceeds the noop cone on 1,016 of 12,942 actor-histories, all extras
+OPPONENT-AUTHORED).
+**THE STRUCTURAL READING THIS PIN IS BUILT ON, read from the committed
+layer rather than assumed.** admissible(acts, e) builds its view as
+View(acts+[e], pred, pred[j]) — **THE CANDIDATE EVENT'S OWN CAUSAL
+PAST**. For an idle that is the bare noop cone; for a propose or
+arbitrate it additionally pulls in the wires the event touches, which
+is EXACTLY why the menu view can exceed the cone. And the menu reads
+that view through **EXACTLY FOUR PROJECTIONS**: view.holdings(a),
+view.superseded, view.live/view.props, and view.components(). sigma
+records exactly those four kinds of data on the FULL view.
+**THEREFORE (H1) REDUCES TO A MUCH COARSER QUESTION THAN THE ONE THAT
+DIED: are the four menu-relevant projections, evaluated on each
+candidate's own view, determined by sigma(h)?** tau being
+sigma-determined would have sufficed and is FALSE; this is weaker and
+may still hold — that is the bet, stated as such.
+THREE PRE-REGISTERED FORMS WITH A BINDING DECISION RULE: MV-STRONG (the
+projections on pred[e] EQUAL the full-view ones; **expected FALSE for
+idles**, whose view is the bare cone and can genuinely miss an
+opponent's live proposal); **MV-WEAK (they are a FUNCTION of (sigma(h),
+a, event-shape)) — THE TARGET, and it suffices for (H1)**; MV-FAIL (two
+equal-sigma histories give different projections => (H1) is FALSE at
+d42a scope and the counterexample is the deliverable).
+GATES MV0-MV6: MV0 anchor + **CAPACITY — the lag must be NON-EMPTY or
+the whole question is vacuous**; MV1 MV-STRONG tested and expected to
+fail, reported per event type; MV2 MV-WEAK, the target; MV3 (H1)
+re-gated DEEPER than d44a's depth 7 / 179,783 histories, depth printed
+never silently capped, labelled EVIDENCE never a premise; **MV4 (H2)
+SETTLED EXPLICITLY — d44a leaves it undetermined and it may reduce to
+(H1)+(H0) or need its own argument; state and gate which, do not leave
+it dangling**; MV5 a mutant hiding one opponent-authored live proposal
+must CHANGE some menu, else the instrument cannot see the lag it is
+about; MV6 anti-vacuity with strata sizes printed.
+**THE DEPTH-FREE PART, which is why this route is worth attempting.**
+The proof obligation: for a candidate e by actor a touching base b, the
+view pred[e] contains EVERY live proposal on b — because those
+proposals are carried on version wire b, e touches wire b, and the
+event poset is the carrier-wise wire closure. Hence the only data
+missing from pred[e] lives on wires irrelevant to the four projections
+at b, and **THE LAG IS MENU-INVISIBLE**. If that holds for p/r
+candidates, and the idle weight's cone-level has_p/has_r are separately
+shown sigma-determined, **(H1) follows at EVERY depth with NO induction
+on depth** — the route removes the depth parameter rather than climbing
+it.
+SCOPE: d42a, DELIVERY-FREE, two actors (D44b's boundary). Nothing
+transfers to transport scope.
+FALSIFIER: MV2 exhibiting two equal-sigma histories with differing
+menu-relevant projections refutes (H1) at d42a scope — a major result,
+since residue 1's closure route would be wrong and D44a/D49/D50 would
+lose their hypothesis — and it exits 0.
