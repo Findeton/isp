@@ -10413,3 +10413,14 @@ space). SCOPE WARNING carried: the dichotomy is a TWO-ACTOR fact
 (three actors: a pair-arb sees the union of two cones, not
 everything) — nothing here may be quoted beyond delivery-free
 two-actor d42a. NEXT: D61 mechanizes the induction.
+
+## 2026-07-26 — D61 PINNED: CLOSING (H1) (LEDGER #451)
+Pin before code: note-d61-h1-closure-pin.md. The one job: mechanize
+Lemma 5's inductive step as an abstract invariant machine (d44a CG3
+architecture) — N1 invariants at all instances, N2 determinism, N3
+frontier-exhausted closure, N4 THE STEP per reachable (state, class)
+pair, N5 menu = G(state) entrywise, N6 the quarter law from G.
+Pre-stated consequences: (H1) => THEOREM at d42a two-actor
+delivery-free scope; D44a unconditional there; RESIDUE 1 CLOSED at
+that scope; D49 unconditional-at-depth there (within the stationary
+form per D50; transport untouched). Two-actor scope enforced.
