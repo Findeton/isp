@@ -8,10 +8,11 @@
 Relativistic ISP series, v10 paper 30.
 **Status:** EXACT-RECEIPT PAPER at the declared finite scope.  Every
 quantitative claim is bound to a committed source: one of the seven
-terminal receipts (outputs under `v10/data/`), or — where an in-line tag
+terminal receipts of this campaign (outputs under `v10/data/`), one of
+the successor receipts named in §5.7 and §9.1, or — where an in-line tag
 says so — the committed campaign record (LOG, pins, frozen review files).
 Independent paper-level review remains open.
-**Date:** 2026-07-18.
+**Date:** 2026-07-26.
 
 ## Abstract
 
@@ -42,8 +43,16 @@ included [EXACT].  The discrete Tomonaga–Schwinger integrability condition
 for the record functional is thereby decided at fixture depth, and its
 gradient-side flatness is a telescoping theorem whose separating content is
 class-constancy.  Truncated completions are rooted; the root-free question
-reduces one-way into a single infinite-volume positive-harmonic residue on
-the bisimulation quotient (17 states at the decided depth).
+reduces one-way into a positive-harmonic residue on the intrinsic
+quotient — and at the scope on which the completion analysis runs, two
+actors and delivery-free, that residue is closed: the serialised local
+state closes at 36 abstract states with 176 transition keys, its
+per-candidate bisimulation quotient is the six-state chain carrying the
+full Perron package (`lambda = 2`, `f = (4,4,3,7,3,3)/3`, root =
+renewal), and the root-free completion
+`Zhat(h) = 2^(-|h|) . f(class(h))` exists at every depth there
+[THEOREM at that scope], unique up to scale within the stationary
+form — a form that is itself a choice, not a consequence.
 
 The quantum lift preserves ratios and normalizes globally, but it is the
 classical gradient completion at the `1/k` boundary in Hilbert dress — the
@@ -61,8 +70,10 @@ fiber.  A second grammar (ternary payloads) lifts the structural forms
 tested — two-of-two grammars, and no more is claimed — exposes the values
 as toy-relative, and shows that kernel discrimination is
 component-shape-dependent.  We close with the residue ledger: six
-precisely scoped open items, headed by the one infinite-volume
-positive-harmonic core, the arbitration-layer operator, and the
+precisely scoped items — the completion core decided at two-actor
+delivery-free scope with its boundary named (the stationary form is a
+choice; transport, three actors, and machine-checked mechanization stand
+outside), and five open, headed by the arbitration-layer operator and the
 empirically flagged fine-versus-coarse sealing choice with its exact
 `1/6` discriminating observable.
 
@@ -669,7 +680,14 @@ the action-level check that the naive normalization fails.
 The grammar has a renewal structure: the root and the post-arbitration
 fresh-base record point are structurally isomorphic — an event-level
 bijection, type- and payload-matched with `v0 <-> v1` translated, with
-*equal* `q` at every matched event.  Yet the completed transfer differs
+*equal* `q` at every matched event.  The isomorphism is not a
+coincidence read off a matched pair; it is *derived*.  In the serialised
+local state of §5.7 it is one row of the update table: a pair
+arbitration empties the live proposals and the components and leaves
+both actors holding one fresh unsuperseded token, which is
+serialisation-identical to the empty history — **every pair arbitration
+is a renewal to the root state** [THEOREM at two-actor delivery-free
+scope].  Yet the completed transfer differs
 at the isomorphic pair under both canonical boundaries: at the canonical
 class-`1/k` boundary (`Z` at a terminal history = the reciprocal of its
 canonical class's linear-extension count; `Z(empty) = 325/64`) the
@@ -680,17 +698,27 @@ paper 28 §5.3 anticipated at the level of root laws.  Sharpness
 disclosure: among the 1,191 histories, 331 share the root's bare menu
 shape, 175 are structurally isomorphic to it, and 31 exactly so [pin B4];
 the exhibit uses the strongest (structural event-level) notion [EXACT].
+The completion of §5.7 is exactly the object that removes the defect: it
+prices the root and the renewal point identically at `1/16` [EXACT].
 
-### 5.7 The one-way reduction to the infinite-volume core
+### 5.7 The reduction, and the decided core
 
 Is there a root-free — stationary — completion?  The honest state space
 for that question is not the menu shape (4 shapes at this depth, and the
 transfer is ill-posed on them: two histories with equal menus have
-different successor profiles) but the **bisimulation quotient**: 17
+different successor profiles) but the **bisimulation quotient**, on which
+the transfer is well-defined (0 violations over all 427 canonical
+classes) [EXACT].  Marked by the enumeration depth, that quotient has 17
 states at depth `<= 4`, refinement trajectory `4 -> 9 -> 14 -> 16 -> 17`
-with the fixed point confirmed by one further step, on which the
-transfer is well-defined (0 violations over all 427 canonical classes)
-[EXACT].  A stationary completion is a positive-eigenvector solution
+with the fixed point confirmed by one further step [EXACT] — but what
+grows there is the marker, not the structure: appending a recorded idle
+changes no candidate menu anywhere in the future, so a depth-marked
+quotient stratifies each intrinsic state into horizon shells.  The
+intrinsic object underneath the 17 is a **six-state chain**: 14 of the
+17 are pure horizon shells of its classes and three are mixed blocks, so
+the depth-marked quotient is simultaneously coarser and finer than the
+intrinsic one [EXACT].  A stationary completion is a
+positive-eigenvector solution
 `Z(h) = f(state(h)) . lambda^(-depth(h))` of the local transfer on this
 quotient.  At finite depth the backward recursion determines the 114
 interior classes from the 313 terminal ones (LOG #302), leaving the 313
@@ -698,11 +726,92 @@ boundary freedoms of §5.3.
 
 The reduction is **one-way**: stationary completions are a *subclass* of
 positive-harmonic solutions.  The infinite-volume positive-harmonic
-residue of §5.3 therefore *contains* the root-free question — one open
-core, not two.  No existence claim is made in either direction at this
-scope [OPEN, declared]; this is residue item 1 (§9), and it is the
-discrete relative of the Martin-boundary existence theory for positive
-harmonic functions [LITERATURE].
+residue of §5.3 therefore *contains* the root-free question — one core,
+not two — and the containment now runs the useful way.  **At the scope
+on which this section's analysis runs — two actors, delivery-free — the
+root-free question is answered inside that core, positively: a
+stationary completion exists at every depth** [THEOREM at that scope].
+The wider class of positive-harmonic solutions is not thereby
+characterized; what is decided is the question the class was posed to
+answer.
+
+What closes it is a bounded local state.  Serialise, from the full view
+of a history: each actor's non-superseded holding, the live-proposal
+triples with their conflict-component structure, and the superseded
+marks of the referenced bases, all modulo base renaming (the canonical
+minimum over base bijections).  Call it `sigma(h)`.  Then
+
+- **menus factor:** equal `sigma` gives identical renamed menus,
+  entrywise in exact weights;
+- **transitions are determined:** `sigma(h + [e])` is a function of
+  `(sigma(h), renamed e)`, with 176 abstract transition keys;
+- **the state space closes:** breadth-first search on `sigma`-space
+  exhausts its frontier at **36 states** (176 edges);
+- **the quotient is the six-state chain:** `lambda = 2` rational, unique
+  dominant class, `f = (4, 4, 3, 7, 3, 3)/3` unique up to scale, root =
+  renewal as one abstract state, exact mass transport with
+  `pi = (1, 1, 2)/4`.
+
+All four hold at **every** depth, not only at the depths enumeration can
+reach.  What makes them depth-free is the **update table** (D62): five
+rows — recorded idle; propose on a held base; propose on a base the
+state no longer records; self-arbitration; pair-arbitration — each
+writing that event's effect on the serialised state, and each a reading
+of the admission clauses of §1.2 together with the view invariants.  No
+row is an induction on depth and no row reads the history, which is why
+the table discharges transition determinism at all depths at once.  Its
+three obligations are discharged where they are consumed.  A propose on
+a dropped base forces that base uniquely — at most one actor can have
+its own token superseded outside its own view, so the re-imported token
+is determined and its superseded flag is *computed rather than read*,
+and the table never has to recall a mark it dropped.  A minted version
+name can never collide with a name already present: a collision would
+force an earlier arbitration by the same actor on the same base into the
+candidate's own view, where that base is superseded and admission
+refuses.  And the conflict components are a function of the live
+proposals alone, because two conflicting live proposals are always
+poset-incomparable — so the table never transports an order relation.
+The table equals the layer at every transition of the enumerated
+sweeps and at all 4,778,310 transitions into depth 9, zero mismatches,
+with the `sigma`-minimising renaming unique on every history there
+[EXACT].  The renewal structure of §5.6 is one of the five rows.
+
+The completion this buys is explicit:
+
+```text
+Zhat(h) = 2^(-|h|) . f(class(sigma(h))),
+f = (4, 4, 3, 7, 3, 3)/3,   lambda = 2.
+```
+
+`Zhat` is strictly positive, per-cut normalized, foliation-invariant,
+support-preserving, flat on all 202 canonical diamonds, prices the root
+and the post-arbitration renewal point identically at `1/16` — the exact
+defect that convicted every truncated completion of being rooted — and
+is unique up to scale within the stationary form above [EXACT].  It
+buys none of the trilemma back: being per-cut normalized and
+foliation-invariant, it deforms within-cut ratios exactly as §5.2
+requires of any solution.  What it does not do is depend on a
+boundary.  The record law is forward-complete at this scope — of the
+law *plus that form*, and the phrase may never be quoted without the
+second half.
+
+Three clauses bound the result, and every citation of it carries them.
+**The form is a choice, not a consequence:** depth-stationarity alone
+does not force `Z` into the depth-graded state-function shape, and the
+space of completions satisfying it has dimension 12, 32, 125 at
+truncation depths 2, 3, 4 — it *grows* with depth rather than collapsing
+to a ray, with bisimulation-invariance alone leaving 137 of the 313
+boundary directions free [EXACT].  **Transport is untouched:** the
+argument runs on the delivery-free grammar, and §2's transport phenomena
+are exactly the structure it does not model; there the discrete relative
+of the Martin-boundary existence theory for positive harmonic functions
+[LITERATURE] is the named tool, and no closure claim is made.  **Three
+actors are outside the argument:** the step that confines an arbitration
+candidate's own view to the initiator's register cone is admission's
+proposer test, and a third actor re-opens the case that test kills.  The
+one internal remainder is mechanization — the induction is prose over
+committed code, and no machine has yet checked it *as* an induction.
+This is residue item 1 (§9).
 
 ## 6. Where the quantum completion begins
 
@@ -898,9 +1007,12 @@ complex, precisely the placement-completion condition; and it is
 *decided*: the ratio-preserving discrete TS-condition fails (36 of 202
 diamonds), the gradient discrete TS-condition holds at every finite
 volume at the price of within-cut ratio deformation, and the
-infinite-volume existence question is the one open core (§5.7).  The
-continuum residue's discrete shadow is not "open"; it is a theorem with
-a named remainder.
+infinite-volume existence question — the last analytic core — is decided
+at two-actor delivery-free scope, where the root-free completion exists
+at every depth (§5.7).  The continuum residue's discrete shadow is not
+"open"; it is a theorem, and what remains of it is scope rather than
+existence: transport, three actors, and the arbitrariness of the
+stationary form.
 
 ### 8.2 Sprinkling's discrete precursor, at named scope
 
@@ -927,23 +1039,36 @@ residue itself is untouched.
 
 ## 9. The residue ledger
 
-The campaign closes with six open items.  Each is stated with its exact
+The campaign closes with six items — one decided at this paper's scope
+with its boundary named, five open.  Each is stated with its exact
 boundary and its entry condition — the specific act that would move it.
 
-**1.  The infinite-volume positive-harmonic core (contains root-free).**
-The one analytic remainder of the decided TS-condition: existence (and
-the solution class) of a strictly positive harmonic solution of the
-local transfer in infinite volume.  At every finite depth the gradient
-class solves the completion problem with 313-parameter boundary freedom
-[per the committed review record, LOG #302]; truncated completions are
-rooted (§5.6); stationary (root-free)
-completions are a subclass of positive-harmonic solutions (§5.7), so
-this residue *contains* the root-free question one-way.  Entry
-condition: pose the eigen-problem `Z = f(state) . lambda^(-depth)` on
-the bisimulation quotient at growing depth (the depth-4 quotient has 17
-states and full transfer well-definedness; the enumerator is committed)
-and decide positive-harmonic existence in the limit.  No claim is made
-in either direction.
+**1.  The completion core (contains root-free) — DECIDED at two-actor
+delivery-free scope.**  The one analytic remainder of the decided
+TS-condition was the existence (and solution class) of a strictly
+positive harmonic solution of the local transfer in infinite volume.  At
+every finite depth the gradient class solves the completion problem with
+313-parameter boundary freedom [per the committed review record, LOG
+#302], and truncated completions are rooted (§5.6); stationary
+(root-free) completions are a subclass of positive-harmonic solutions
+(§5.7), so this residue *contains* the root-free question one-way.  That
+question is now answered where the analysis runs: the serialised local
+state closes at 36 abstract states and 176 transition keys, its
+per-candidate bisimulation quotient is the six-state chain with
+`lambda = 2` and `f = (4, 4, 3, 7, 3, 3)/3`, and
+`Zhat(h) = 2^(-|h|) . f(class(sigma(h)))` is a completion at every depth,
+unique up to scale within the stationary form — the object that prices
+the root and the renewal point alike at `1/16`.  What is left is
+boundary, and it is named: the stationary **form is a choice**
+(depth-stationarity alone leaves completion spaces of dimension 12, 32,
+125 at truncation depths 2, 3, 4; bisimulation-invariance alone leaves
+137 of the 313 boundary directions free), **transport** and **three
+actors** lie outside the argument, and the induction is prose over
+committed code.  Entry conditions, one per clause: re-run the closure
+with deliveries in the alphabet (§2's phenomena are what it must
+absorb); re-examine admission's proposer test, the clause a third actor
+re-opens; select the form on a principle rather than a postulate; and
+mechanize the induction to machine-checked grade.
 
 **2.  The arbitration-layer lift.**  The pincer of §6.2: cut-independent
 operators reproduce the zero class, cut-dependent operators break the
@@ -1018,6 +1143,17 @@ v10/code/d42b7_second_grammar_exact.py       PASS  9/9    second grammar + pilot
 v10/code/d42b56_rootfree_action_exact.py     PASS  4/4    root-free, ladder, shadows
 ```
 
+The decided core of §5.7 is bound to five successor receipts on the same
+committed grammar:
+
+```text
+v10/code/d44a_closure_theorem_exact.py       PASS 30/30  the closure theorem
+v10/code/d61_h1_closure_exact.py             PASS 12/12  menu factorization
+v10/code/d62_h2_update_table_exact.py        PASS 24/24  the update table
+v10/code/d49_dichotomy_settlement_exact.py   PASS 31/31  Zhat, root-free
+v10/code/d50_form_law_or_choice_exact.py     PASS 13/13  the form is a choice
+```
+
 Outputs are committed under `v10/data/` with matching names.  Depth caps
 are declared in each receipt's banner and in the sections above;
 constructed-chain gates carry the physics beyond enumeration reach and
@@ -1044,8 +1180,11 @@ theorem — and gradient completions exist at every finite depth at the
 exact cost of within-cut ratio deformation, with flatness restored by a
 telescoping theorem whose separating content is class-constancy.  The
 discrete Tomonaga–Schwinger condition, the object whose continuum shadow
-reopened the v6 gravity program, is thereby decided at fixture depth,
-with one infinite-volume positive-harmonic core as its entire remainder.
+reopened the v6 gravity program, is thereby decided at fixture depth —
+and its one analytic remainder is decided too, at two actors and
+delivery-free: the local state closes, the quotient is a six-state chain
+with a Perron package, and the root-free completion exists at every
+depth inside a stationary form that remains a postulate.
 
 The quantum side inherits a sharper assignment than "add quantum
 mechanics."  The endpoint lift is classical — the gradient completion in
@@ -1058,10 +1197,10 @@ instrument pair with an exact `1/6`-versus-`0` signature awaiting a
 laboratory realization.
 
 Everything above is scoped by its receipts: two-of-two grammars, declared
-caps, six named residues with entry conditions.  The next object is
-whichever of residues 1 and 2 yields first — the infinite-volume
-harmonic core, or the arbitration operator.  Both are now questions with
-exact statements, and that is what this campaign was for.
+caps, six named residues with entry conditions.  The next object is the
+arbitration operator, or the first of residue 1's three scope clauses to
+fall — transport, three actors, or the form itself.  All of them are now
+questions with exact statements, and that is what this campaign was for.
 
 ## References
 

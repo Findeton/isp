@@ -10783,3 +10783,25 @@ makes even/odd chart neighborhoods non-congruent — a wire
 transposition at coupled wires is plausible.  Scope: width <= 4 by
 W4b on every delivery substrate; ends caveat attached; missing map
 not claimed.  Worker dispatched.
+
+## 2026-07-26 — PAPERS 30 AND 32 UPDATED TO THE CLOSURE (LEDGER #462)
+The queued paper updates (held since #452 behind the D61/D62 rounds)
+are IN, single-sitting voice, no round narration.  **Paper 30** ('The
+generated record and its completion', 1,274 lines): §5.7 retitled
+'The reduction, and the decided core' — the [OPEN, declared]
+root-free question is ANSWERED AT SCOPE (36/176, six-state quotient,
+Perron package, Zhat at every depth, form-is-a-choice clause
+attached); §5.6 renewal structure now DERIVED (a pair-arb row returns
+the root state); §8.1/§9 ledger item 1 converted to DECIDED with four
+entry conditions (transport, third actor, form selection,
+mechanization); receipts block gains d61 12/12, d62 24/24.  **Paper
+32** ('The boundary of closure', 623 lines): §2.2 retitled 'The
+all-depth theorem [D44a, D61, D62]' — (H0)/(H1)/(H2) as theorems
+with what carries each, the depth-9 evidence, the two corollaries;
+§4.3's forced sector conditional (1/2, 1/4, 1/4) unconditional at
+every depth of the scope; §6 ledger item 1 replaced (H1 ->
+mechanization); §8 coda restated — the boundary has moved from a
+hypothesis inside the theorem to the edge of the grammar (transport,
+a third actor, the chosen form, the machine-checked induction).  All
+numbers verified against the corpus (36/176/4,778,310; 12/32/125;
+137).  Book patch still in flight (separate commit).

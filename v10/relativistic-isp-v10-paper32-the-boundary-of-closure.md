@@ -2,23 +2,22 @@
 
 # The boundary of closure
 
-## Residue 1 at every verified depth, dimension without ceiling, the quantum layer welded to the completion, and the regulator closed for all masses
+## Residue 1 closed at two-actor delivery-free scope, dimension without ceiling, the quantum layer welded to the completion, and the regulator closed for all masses
 
 **Author:** Felix Robles Elvira (ORCID 0009-0009-2017-4394).
 Relativistic ISP series, v10 paper 32.
 **Status:** EXACT-RECEIPT PAPER at the declared finite scope.  Every
-quantitative claim is bound to one of the eight terminal receipts of
-the D44/D45 campaign (outputs under `v10/data/`), or — where an
-in-line tag says so — the committed campaign record (LOG, pins,
-frozen review files).  **Independent paper-level review: round 1 +
+quantitative claim is bound to one of the ten terminal receipts named
+in §7 (outputs under `v10/data/`), or — where an in-line tag says so —
+the committed campaign record (LOG, pins, frozen review files).
+**Independent paper-level review: round 1 +
 delta, frozen at `reviews/paper32-round1-hostile-review.md`.**  The
 D46 ladder units (LOG #380, #382, #384, #386, #388, #389) are
-GREEN-UNREVIEWED and are not part of this paper.  §6 item 7 was
-revised on 2026-07-25 to record the partial discharge of the funnel
-lemma's entry condition (LOG #407/#411, receipt
-`v10/code/d44cp_funnel_lemma_exact.py`); no other section is
-affected, and §3.1's no-go retains its referee-carried status.
-**Date:** 2026-07-19, §6 item 7 revised 2026-07-25.
+GREEN-UNREVIEWED and are not part of this paper.  §6 item 7's partial
+discharge of the funnel lemma's entry condition is carried by
+`v10/code/d44cp_funnel_lemma_exact.py` (LOG #407/#411); §3.1's no-go
+retains its referee-carried status.
+**Date:** 2026-07-26.
 
 ## Abstract
 
@@ -27,21 +26,29 @@ Paper 31 ended with a residue ledger headed by one theorem to prove
 close.  This paper reports the campaign that executed the ledger's
 named successors — six units — together with two authorized
 additions (the symbolic closure of the regulator constant, and the
-dimension ladder).  All eight are terminal under the program's
-adversarial cycle.
+dimension ladder), and the two successor units that discharge the
+closure theorem's hypotheses.  All ten are terminal under the
+program's adversarial cycle.
 
-**First**, residue 1 is decided at EVERY VERIFIED DEPTH at the
-delivery-free scope: a bounded local-state abstraction is menu-exact
+**First**, residue 1 is CLOSED at two-actor delivery-free scope: a
+bounded local-state abstraction is menu-exact
 and transition-deterministic with zero exceptions over 179,783
 histories (exhaustive through depth 7, receipt-carried); its
 depth-free closure has 36 states whose exact per-candidate
 bisimulation quotient is the committed six-state chain with the
 committed transfer, carrying the full Perron package.  The all-depth
-conclusion is exactly conditional on ONE structural lemma (H1: menu
-factorization from the abstraction at all depths, nontrivial because
-admissibility runs on own views that lag the full view) — and the
-theorem's boundary is exactly the delivery-free grammar: at
-transport scope closure is OPEN.  There, the pre-registered
+conclusion is UNCONDITIONAL there: the three depth-indexed
+hypotheses it once rested on are theorems — the view invariants, menu
+factorization from the abstraction (nontrivial because admissibility
+runs on own views that lag the full view, and the lag is proved
+menu-invisible), and transition determinism, the last by a five-row
+update table that writes each event's effect on the serialised state
+and never reads the history.  What bounds the theorem is scope, not a
+hypothesis: it is the delivery-free two-actor grammar, at
+transport scope closure is OPEN, three actors are outside the
+argument, the stationary form of the completion remains a choice, and
+the induction is prose over committed code.  At transport scope the
+pre-registered
 reopening prediction is confirmed inside the enumerated family
 (1,044 diverged histories; 124 reconverging (history, delivery)
 pairs over 84 distinct diverged prefixes; 4 distinct minimal
@@ -74,13 +81,16 @@ three declared grains: components of size >= 3, re-merge, and
 transport depth); the foliation face resolves to a single
 record datum — the initiator tag of the join arbitration — with
 initiator-ERASED content order-invariant; and the operator family's
-completed cross-component weights are FORCED, at verified-depth
-scope, to the decided completion's sector conditional
-(1/2, 1/4, 1/4), the horizon-stable object.  **Fourth**, the
-regulator is closed for all masses: kappa(m) =
+completed cross-component weights are FORCED, at every depth of the
+delivery-free two-actor scope, to the decided completion's sector
+conditional (1/2, 1/4, 1/4), the horizon-stable object.  **Fourth**,
+the regulator is closed for all masses: kappa(m) =
 (3m^2 - 1)(3m^2 - 4)/144 is derived as an exact polynomial
 identity, with the two vanishing points explained channel-by-
-channel.  The program's remaining uncertainty funnels through H1.
+channel.  The program's remaining uncertainty is no longer a
+hypothesis inside the theory; it is the theory's boundary — transport,
+a third actor, the choice of form, and the mechanization of an
+induction.
 
 ## 1. The campaign and its supersessions
 
@@ -88,7 +98,10 @@ The units, all terminal (LOG ##353-374): D44a (the closure
 theorem), D44b (transport-scope invariance), D44c (the
 arbitration-dimension no-go), D44d (the slab theorem and the
 quartic), D44e (the reception census), D44f (foliation and
-measure), D45a (the symbolic-m closure), D45b (the S_n ladder).
+measure), D45a (the symbolic-m closure), D45b (the S_n ladder);
+with the closure theorem's hypotheses discharged by two further
+terminal units, D61 (the view invariants and menu factorization) and
+D62 (the update table).
 Provenance labels as in the series ([THEOREM], [EXACT], [MEASURED],
 [POSITED], [LITERATURE], and [REFEREE-CARRIED]); the last marks
 facts verified in a frozen review record rather than gated in a
@@ -109,18 +122,19 @@ Paper 31 §7 item 2's entry condition is discharged by §4.1-4.3
 its item 5 addition (does arbitration alone generate dimension?) is
 decided negatively by §3.1; and its item 1 clause "no computation
 remains at this scope" is FALSIFIED — the closure route needed the
-whole §2.1 abstraction, and H1 remains.  The dimension line's
+whole §2.1 abstraction, and discharging its hypotheses needed two
+units more.  The dimension line's
 scoping doctrine (§3.4) supersedes any earlier reading of order
 dimension as a step toward spacetime dimensionality.
 
-## 2. Residue 1: decided at every verified depth, and its exact boundary
+## 2. Residue 1: closed at two-actor delivery-free scope, and its exact boundary
 
 ### 2.1 The abstraction and the closure [D44a]
 
 Define sigma(h) from the full view of a history: each actor's
-non-superseded holding (singleton-or-empty at this scope — gated,
-and used in §2.2 as the (H0) hypothesis it is, not as an
-independent theorem), the live-proposal triples with their conflict-component
+non-superseded holding (singleton-or-empty at this scope — a theorem
+of the view invariants, gated at every state and used as such in
+§2.2), the live-proposal triples with their conflict-component
 structure, and superseded marks restricted to referenced bases —
 all modulo base renaming (canonical minimum over base bijections).
 Then, verified exhaustively over the ENTIRE depth-<= 6 family and
@@ -152,23 +166,62 @@ any menu-exact abstraction (bisimilar histories can be
 menu-distinct; the witness is gated): the two-layer structure —
 36 closing, six as the quotient — is forced, not incidental.
 
-### 2.2 The conditional theorem and H1
+### 2.2 The all-depth theorem [D44a, D61, D62]
 
-The all-depth statement is a conditional whose hypothesis is a
-conjunction of three depth-indexed laws: (H0) the view invariants;
-(H1) menu factorization from sigma; (H2) transition determinism —
-none implying another, all exhaustively verified through depth 7
-(evidence for the hypothesis, never a premise of the argument).
-Assuming them, the intrinsic partition at every depth is the
-pullback of the abstract chain's bisimilarity, and the Perron
-decision holds at all depths.  **H1 is the program's final named
-gap**: it is nontrivial because admissibility is computed on each
-actor's OWN view, which lags the full view sigma records — the lag
-exists (a gated witness exhibits it) and the lemma must show it is
-menu-invisible at every depth.  Residue 1 is therefore DECIDED AT
-EVERY VERIFIED DEPTH at the delivery-free scope, one lemma from
-closed — and closure at transport scope is OPEN (§2.3), always and
-everywhere this decision is cited.
+The all-depth statement rests on three depth-indexed laws — (H0) the
+view invariants; (H1) menu factorization from sigma; (H2) transition
+determinism — none implying another, all exhaustively verified
+through depth 7 (evidence, never a premise of the argument).  **All
+three are theorems at two-actor delivery-free scope, so the all-depth
+statement is unconditional there**: the intrinsic partition at every
+depth is the pullback of the abstract chain's bisimilarity, and the
+Perron decision holds at all depths.
+
+What carries them is register geometry, not enumeration.  (H0)'s
+first three clauses follow from the cone-rigidity invariants; its
+fourth is the incomparability lemma — two conflicting live proposals
+are always poset-incomparable — carried by a constructive proof
+against the layer, not by a census.  (H1) is the hard one, and it is
+nontrivial for exactly the reason it always was: admissibility is
+computed on each actor's OWN view, which lags the full view sigma
+records — the lag exists, a gated witness exhibits it, and the lemma
+shows it is menu-invisible at every depth, through the own-view
+dichotomy (a candidate's own view is the initiator's register cone or
+the full view, no third case, the third case being killed by
+admissibility's proposer test), the cone closed form, and an explicit
+menu formula that factors through the serialised part of sigma.
+(H2) is the update table: five rows — recorded idle; propose on a
+held base; propose on a base sigma no longer records;
+self-arbitration; pair-arbitration — each writing that event's effect
+on the serialised state as a reading of a quoted admission-layer
+clause together with the invariants, with no step an induction on
+depth and no step reading the history.  Its three obligations are
+discharged where they are consumed: the dropped base is forced
+uniquely and its superseded flag is computed rather than read (at
+most one actor can carry a full-view-superseded own token); a minted
+version name can never collide, since a collision would force an
+earlier arbitration by the same actor on the same base into the
+candidate's own view, where that base is superseded and admission
+refuses; and the components are a function of the live proposals
+alone by the incomparability lemma — **the table never transports an
+order relation**.  The table equals the layer at every transition of
+the enumerated sweep and at all 4,778,310 transitions into depth 9,
+zero mismatches, 176 keys, 36 states, with the sigma-minimising
+renaming unique on every history there [EXACT].  Two corollaries fall
+out of the rows: the arbitration WINNER is invisible to sigma, and
+every pair-arbitration is a renewal to the root state — the
+renewal structure is a row of the table, derived, not a measured
+coincidence.
+
+Residue 1 is therefore **CLOSED at two-actor delivery-free scope**,
+and the scope is the whole of what remains.  Closure at transport
+scope is OPEN (§2.3); three actors are outside the argument (the
+clause that breaks is the own-view dichotomy, whose proposer test a
+third actor re-opens); the decision lives inside the stationary FORM
+of the completion, which is a choice and not a consequence; and the
+induction is prose over committed code, awaiting machine-checked
+mechanization.  Those four clauses travel with this decision
+everywhere it is cited.
 
 ### 2.3 The boundary: transport reopens and escapes [D44b]
 
@@ -203,10 +256,13 @@ depth 3, census-anchored only):
   shape).
 
 **The closing scope statement:** the closure theorem of §2.1-2.2
-covers exactly the delivery-free grammar.  Transport-scope closure
-is open; the Martin/R-theory machinery imported at the audit is the
-named successor, now with a receipt-gated justification (the escape
-structure is precisely its regime).
+covers exactly the two-actor delivery-free grammar, and covers it
+unconditionally.  Transport-scope closure is open; the Martin/R-theory
+machinery imported at the audit is the named successor, now with a
+receipt-gated justification (the escape structure is precisely its
+regime).  The boundary has moved from a hypothesis inside the theorem
+to the grammar the theorem is about — which is the only kind of
+boundary a closed result can have.
 
 ## 3. Dimension: mechanized, ceiling-free, and scoped
 
@@ -337,9 +393,10 @@ and the completion's multipliers are component-constant at both
 computed horizons — so, with §2's decision, the family's completed
 cross-component weights are FORCED to the decided completion's
 SECTOR CONDITIONAL (1/2, 1/4, 1/4 — the horizon-stable object,
-gated at depths 4 and 5) at verified-depth scope; the all-depth
-form is conditional on H1, and transport-scope closure remains
-open.
+gated at depths 4 and 5).  Since §2's decision is unconditional at
+two-actor delivery-free scope, so is this one, at every depth there;
+transport-scope closure remains open, and with it the transport-scope
+form of these weights.
 
 ## 5. The regulator, closed for all masses [D44d, D45a]
 
@@ -371,11 +428,20 @@ interacting identification with a g = 0 column.
 
 ## 6. The residue ledger, updated
 
-1. **H1 (the structural lemma)** — the program's single remaining
-   analytic gap at delivery-free scope (transport-scope closure is
-   open independently of it); discharging it makes §2's
-   decision and §4.3's forced weights all-depth there.
-2. **Transport-scope closure** — open; the Martin/R-theory import
+1. **Mechanization of the closure induction** — the one remainder
+   internal to the closed theorem.  The argument that carries §2 to
+   all depths is prose over committed code: every step is a reading
+   of a quoted admission clause or a named invariant, every case is
+   gated at every cached transition, and no machine has checked the
+   induction *as* an induction.  Entry condition: a machine-checked
+   development of the invariants, the own-view dichotomy, the menu
+   formula and the five rows.  Adjacent to it, and not a gap in the
+   theorem but a choice under it: the stationary FORM of the
+   completion is a postulate about the shape of Z, not a consequence
+   of depth-stationarity, and every citation of the decision carries
+   that clause.
+2. **Closure beyond the scope: transport, and a third actor** —
+   both open.  For transport the Martin/R-theory import
    is the named tool, with the escape structure its receipt-gated
    justification.  (The binding's real content, stated exactly:
    the per-candidate versus per-class-AGGREGATE distinction — which
@@ -383,7 +449,13 @@ interacting identification with a g = 0 column.
    at the transport cap, so no successor may cite D44b as evidence
    that it bites there.  The intrinsic refinement itself remains
    load-bearing at transport scope, as that receipt's own
-   well-definedness result shows.)
+   well-definedness result shows.)  For a third actor the successor
+   knows exactly which lemma to attack: the own-view dichotomy holds
+   because admissibility's proposer test kills the third view case,
+   and at three actors that case is admissible — exhibited, not
+   presumed.  Neither extension may reuse the delivery-free
+   machinery silently; §2.3's negative control is the standing
+   reason.
 3. **The physical dimension ladder** — Minkowski-dimension
    certificates (circle/sphere orders) and statistical estimators
    under the completed measure; the typicality question (does the
@@ -453,7 +525,10 @@ interacting identification with a g = 0 column.
    unchanged; its residue 5 (grammar breadth) stands with the
    §3.1 sharpening (the multi-author-arbitration corner is decided,
    the carrier-level third grammar and the superset-generator
-   condition remain).
+   condition remain).  Its residue 1 is §2's subject and is closed at
+   two-actor delivery-free scope, with items 1 and 2 above carrying
+   what is left of it; its residue 2, the arbitration-layer operator,
+   is where §4.2-4.3 leave the quantum face.
 
 ## 7. Methods note
 
@@ -476,6 +551,8 @@ v10/code/d44e_reception_census_exact.py     PASS 49/49  reception census
 v10/code/d44f_foliation_measure_exact.py    PASS 29/29  foliation + measure
 v10/code/d45a_symbolic_kappa_exact.py       PASS 22/22  kappa derived all-m
 v10/code/d45b_sn_ladder_exact.py            PASS 49/49  the S_n ladder
+v10/code/d61_h1_closure_exact.py            PASS 12/12  (H0) and (H1)
+v10/code/d62_h2_update_table_exact.py       PASS 24/24  (H2), the update table
 ```
 
 Precision as-run: exact rational arithmetic wherever weights,
@@ -501,16 +578,19 @@ fix).
 
 Paper 31 closed by naming the program's open surface; this campaign
 executed it.  What remains is smaller and sharper than it has ever
-been: one lemma (H1) stands between the delivery-free theory and
-its completion being closed outright; one imported machinery
-(Martin/R-theory) has a receipt-certified job waiting at transport
-scope; and the dimension question has passed from "can it?" (yes at the
-tested ladder, by exactly one mechanism, in ORDER dimension only) to "does it, typically?"
-— a question about the theory's own measure.  The quantum layer no
-longer floats: its weights are the completion's at verified-depth scope, its foliation
-freedom is one tag of authorship, and its remaining questions are
-residue 1's.  Every claim above carries its cap; the next paper
-should need fewer.
+been, and it has changed kind: at two actors without deliveries the
+theory's completion is closed outright, so nothing stands *inside* it
+— what is left is the edge of the grammar it was proved on.  One
+imported machinery (Martin/R-theory) has a receipt-certified job
+waiting at transport scope; a third actor waits on one lemma of view
+geometry; the form the completion takes is still chosen rather than
+derived; and the dimension question has passed from "can it?" (yes at
+the tested ladder, by exactly one mechanism, in ORDER dimension only)
+to "does it, typically?" — a question about the theory's own measure.
+The quantum layer no longer floats: its weights are the completion's
+at every depth of that scope, its foliation freedom is one tag of
+authorship, and its remaining questions are the same boundary's.
+Every claim above carries its cap; the next paper should need fewer.
 
 ## References
 
@@ -519,7 +599,13 @@ should need fewer.
 2. D44/D45 campaign pins, terminal notes, and frozen review records
    under `v10/` (note-d44-successor-program.md; note-d44a..f;
    note-d45a/b; note-d44-d45-campaign-synthesis.md;
-   `v10/reviews/d44*-round1-*.md`, `d45*-round1-*.md`).
+   `v10/reviews/d44*-round1-*.md`, `d45*-round1-*.md`); the
+   hypothesis-discharge units `note-d61-h1-closure-result.md`,
+   `note-d60p-h1-probe.md` (the adopted proof note: invariants, the
+   own-view dichotomy, the cone closed form, the menu formula) and
+   `note-d62-h2-update-table.md` (the five rows and their three
+   obligations), with `v10/reviews/d61-round1-*.md`,
+   `d62-round1-*.md`.
 3. M. J. Fischer, N. A. Lynch, M. S. Paterson, JACM 32 (1985);
    M. Ben-Or, PODC 1983; the Charron-Bost size-of-clocks line
    [LITERATURE] — the consensus/vector-clock imports.
