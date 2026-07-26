@@ -10048,3 +10048,19 @@ commit c3f9535 by my over-broad git add mid-write; the full state
 lands now. NEXT: the EXPANSION pass to the same writer — the v1-v9
 SHARD arc and the destination rewritten to the user's redirect
 (Einsteinian manifolds enriched for particle creation).
+
+## 2026-07-26 — D58 PINNED: THE ATLAS INSTRUMENT (LEDGER #438)
+Pin before code: note-d58-atlas-instrument-pin.md. The pivot unit of
+the redirect: manifolds need charts + overlaps + transitions +
+homogeneity; the corpus has per-event skies and nothing else. D58
+builds the first two instruments — the OVERLAP FRACTION omega(e,e') =
+|D_e(d) cap D_e'(d-1)| / |D_e(d)| on cover pairs (charts at
+consecutive events share a height layer; identity transitions;
+non-identity transitions and the real cocycle question DECLARED as a
+later stage) and the HOMOGENEITY profile of |D_e(d)| over all events.
+Discipline: instrument first, controls before data (D47a).
+Pre-registered: sprinklings must look manifold-like or the INSTRUMENT
+is convicted; the engineered shatter records are expected PATHOLOGICAL
+as atlases (built to shatter, not to tile); the deliverable either way
+is the measured atlas gap, defining the successor construction
+question — can the grammar TILE (the "crystal" question)?
