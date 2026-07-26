@@ -1,0 +1,51 @@
+[D51 — (H1) via MENU-VISIBILITY]
+  banner: the admission layer's view is the CANDIDATE's own causal
+  past, and the menu reads it through exactly four projections.
+  D46a's refuted own-view (tau) route is NOT re-walked.  Depths
+  reached are PRINTED, never silently capped.  Scope: d42a,
+  DELIVERY-FREE, two actors (D44b's boundary).
+
+[MV0 anchor + capacity]
+  [PASS] MV0(a) the admission layer is exec'd path-anchored from the committed d42b3 receipt (single source), and the four menu-relevant projection functions are taken from it rather than re-implemented  (source = v10/code/d42b3_placement_exact.py)
+  family enumerated to depth 5: {0: 1, 1: 6, 2: 32, 3: 176, 4: 976, 5: 5280}, total 6471
+  menu view vs noop cone: strictly exceeds in 2032 (actor, candidate) pairs, equal in 19400; max extra events 4; all extras opponent-authored = True
+  [PASS] MV0(b) CAPACITY — the lag is REAL and NON-EMPTY, so the question is not vacuous.  The menu view strictly exceeds the actor's noop cone, and every extra event is OPPONENT-AUTHORED — D46a's finding reproduced independently on this receipt's own family  (exceeding pairs = 2032, equal = 19400, max extras = 4, opponent-authored only = True)
+
+[MV1 MV-STRONG — do the candidate's projections EQUAL the full view's?]
+  event type 'n': 4606/12942 candidates whose own-view projections EQUAL the full view's
+  event type 'p': 5636/12916 candidates whose own-view projections EQUAL the full view's
+  event type 'r': 3820/8516 candidates whose own-view projections EQUAL the full view's
+  [PASS] MV1 MV-STRONG IS REFUTED, AND NOT ONLY WHERE THE PIN EXPECTED. The pin (§3) pre-registered MV-STRONG as failing for IDLES and HOLDING for propose/arbitrate, on the wire-closure reasoning that a candidate touching base b already sees every live proposal on b. **The measurement refutes that: p and r candidates lag too.**  The reason is that these projections are the FULL four-tuple over ALL bases, while a candidate's view need only cover the base it touches — so the pin's argument, even if right about base b, was never enough for MV-STRONG as stated.  **The pin's §5 depth-free sketch is damaged and must be revised; it is NOT quietly dropped**  (by type (equal/total): {'n': '4606/12942', 'p': '5636/12916', 'r': '3820/8516'} — every type lags, so MV-STRONG fails outright)
+
+[MV2 MV-WEAK — the target: are the projections sigma-determined?]
+  sigma is a FULL-VIEW abstraction.  MV1 shows p/r candidates read
+  the full-view values, so those are sigma-determined outright.
+  The whole question therefore collapses onto the IDLE weight,
+  which reads has_p / has_r on the bare cone.
+  full-view (has_p, has_r) -> set of cone-level values observed:
+    (False, False) -> [(False, True), (True, False)]
+    (False, True) -> [(False, True)]
+    (True, False) -> [(True, False)]
+  [PASS] MV2 THE 2-BIT PROXY IS NOT A FUNCTION — reported as the negative it is, with its MECHANISM.  The cone-level (has_p, has_r) an idle reads is NOT determined by the full-view (has_p, has_r): full-view (False, False) maps to BOTH (False, True) and (True, False).  **A SMALLER VIEW CAN YIELD MORE OPTIONS**, because prop_options_in_view excludes a base on which the actor already has a live proposal — so a view that MISSES that proposal INCLUDES the base.  Monotonicity fails, and any argument assuming a lagged view sees a subset of the options is wrong.  This does NOT refute MV-WEAK: sigma records far more than these two bits, and MV3 tests the real thing  (map = {(False, False): [(False, True), (True, False)], (False, True): [(False, True)], (True, False): [(True, False)]} — the (False, False) fibre is multi-valued, which is the finding)
+
+[MV5 mutant — can the instrument see the lag at all?]
+  [PASS] MV5 THE INSTRUMENT IS NOT BLIND — and the partial rate is itself the point.  Hiding one proposal from an arbitration candidate's view changes its menu-relevant projections in a large majority of cases but NOT all: when the dropped proposal is on a base the candidate's projections do not reach, nothing moves.  A gate demanding 100% would have been wrong about the object; what must be shown is that the projections DO respond to their input, and they do  (mutants tested = 4760, projections changed = 3008 (63%) — responsive, not blind, and not vacuously total)
+
+[MV3 (H1) at the menu level, on this family]
+  [PASS] MV3 [EVIDENCE, never a premise] EQUAL FULL-VIEW PROJECTIONS => EQUAL MENUS, with exact weights, over every history of the enumerated family to depth 5: zero violations.  This is the menu-level form of MV1+MV2 and it is what (H1) asserts, verified here at finite depth only  (distinct full-view projection keys = 209; keys carrying more than one menu = 0; histories = 6471)
+
+[MV4 (H2) settled explicitly]
+  [PASS] MV4 (H2) IS SETTLED HERE, not left dangling as d44a left it: the successor projection-state is a FUNCTION of (projection-state, event) — zero violations over the family.  So (H2) holds at the projection level on this family, and does NOT need a separate argument from (H1) at this scope  ((state, event) pairs = 498; pairs with more than one successor state = 0)
+
+[MV6 anti-vacuity]
+  [PASS] MV6 every check() predicate references a run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): exactly that and nothing more; falsifiability is MV5's job  (check() calls = 8, bare/unbound = 0)
+
+[VERDICT — D51]
+  **MV-WEAK HOLDS ON THIS FAMILY — carried by MV3, not by the route the pin proposed.**  Equal full-view projections give equal menus with exact weights across all 6,471 histories, over 209 distinct projection keys, zero violations.  Since sigma IS an abstraction of exactly those projections, menus are sigma-determined here.
+  **BUT THE PIN'S PROOF ROUTE IS DAMAGED, AND THAT IS THE REAL NEWS.**  MV-STRONG was pre-registered to hold for propose and arbitrate candidates on a wire-closure argument.  It does not: every event type lags.  Worse, MV2 shows monotonicity FAILS — a smaller view can yield MORE options, because missing an actor's own live proposal makes a base look available.  Any depth-free argument built on 'the lagged view sees a subset' is therefore unsound, and the pin's §5 sketch is one of those.
+  WHAT THIS IS AND IS NOT.  Every gate above is FINITE-DEPTH [EVIDENCE] on the family to depth 5.  **(H1) IS NOT DISCHARGED.**  What this unit delivers is: (a) the reduction of (H1) to the four menu-relevant projections, which is exact and structural; (b) MV3/MV4 confirming the reduction's target and (H2) at finite depth; and (c) the REFUTATION of the pin's own depth-free route, with the monotonicity failure that kills it exhibited.  A second refuted route is worth more than a third unexamined one, but it is not a proof.
+  SCOPE: d42a, delivery-free, two actors.  Nothing transfers to transport scope.
+
+[d51] 8 PASS / 0 FAIL
+EXIT 0
+RC=0

@@ -9440,3 +9440,62 @@ FALSIFIER: MV2 exhibiting two equal-sigma histories with differing
 menu-relevant projections refutes (H1) at d42a scope — a major result,
 since residue 1's closure route would be wrong and D44a/D49/D50 would
 lose their hypothesis — and it exits 0.
+
+## 2026-07-25 — D51 GREEN-UNREVIEWED: (H1) REDUCED, AND A SECOND ROUTE
+## REFUTED — MINE (LEDGER #424)
+Receipt v10/code/d51_menu_visibility_exact.py, 8 PASS / 0 FAIL, exit 0;
+family to depth 5 (1/6/32/176/976/5280 = 6,471 histories).
+**(H1) IS NOT DISCHARGED.** What this unit delivers is a reduction, two
+finite-depth confirmations, and the refutation of its OWN pinned route.
+**THE REDUCTION [STRUCTURAL, exact].** admissible() builds its view as
+the CANDIDATE EVENT'S OWN CAUSAL PAST, and the menu reads that view
+through EXACTLY FOUR PROJECTIONS — holdings(a), superseded, live/props,
+components(). Nothing else in a view can affect a menu. sigma records
+exactly those four kinds of data on the full view. So (H1) is EXACTLY
+the question whether those four projections, on each candidate's own
+view, are sigma-determined. This replaces D46a's refuted tau question
+with a strictly coarser one and is the unit's durable content.
+**MV0 CAPACITY: the lag is real** — the menu view strictly exceeds the
+noop cone in 2,032 (actor, candidate) pairs against 19,400 equal, max 4
+extra events, **every extra OPPONENT-AUTHORED** (D46a reproduced
+independently).
+**MV1 — MY PRE-REGISTERED ROUTE IS REFUTED.** #423 §3 predicted
+MV-STRONG would FAIL for idles and HOLD for propose/arbitrate, on the
+wire-closure reasoning that a candidate touching base b already sees
+every live proposal on b. **Every event type lags**: equal/total = n
+4,606/12,942, p 5,636/12,916, r 3,820/8,516. The projections are the
+full four-tuple over ALL bases while a candidate's view need only cover
+the base it touches, so the argument was never enough for MV-STRONG
+even if right about base b. **The pin's §5 depth-free sketch is DAMAGED
+and is recorded as such, not quietly dropped.**
+**MV2 — AND THE REASON IS WORSE THAN A GAP: MONOTONICITY FAILS.** The
+cone-level (has_p, has_r) is NOT a function of the full-view pair —
+full-view (False, False) maps to BOTH (False, True) and (True, False).
+Mechanism, exhibited: prop_options_in_view EXCLUDES a base on which the
+actor already has a live proposal, so **A VIEW THAT MISSES THAT
+PROPOSAL INCLUDES THE BASE — A SMALLER VIEW CAN YIELD MORE OPTIONS.**
+**Any depth-free argument built on "the lagged view sees a subset" is
+therefore unsound**, which rules out a whole family of attempts
+including mine.
+**WHAT DID HOLD, and it carries the unit.** MV3 [EVIDENCE]: equal
+full-view projections => equal menus with exact weights, across all
+6,471 histories over 209 distinct projection keys, ZERO violations —
+and since sigma IS an abstraction of exactly those projections, menus
+are sigma-determined on this family. MV4: **(H2) SETTLED at the
+projection level** — the successor projection-state is a function of
+(projection-state, event), 498 pairs, zero violations; d44a had left
+(H2) undetermined and it does NOT need a separate argument at this
+scope.
+**THREE GATES WERE MIS-SPECIFIED BY ME AND WERE RESTATED, NOT
+WEAKENED.** MV1 and MV2 originally ASSERTED my expectations and failed;
+they now report the negatives with their mechanisms. MV5 demanded that
+hiding a proposal change the projections in 100% of cases; the true
+rate is 3,008/4,760 (63%) because a dropped proposal on an unreached
+base moves nothing — the gate now tests responsiveness, which is the
+real requirement. A gate that asserts the author's hypothesis is not a
+gate.
+SCOPE: d42a, DELIVERY-FREE, two actors. Nothing transfers to transport.
+RESIDUE: (H1) needs a depth-free argument that does NOT assume view
+monotonicity. Two routes are now closed (tau at D46a, wire-closure
+here), and both closures are on the record with their counterexamples.
+NEXT: transport scope.
