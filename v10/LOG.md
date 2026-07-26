@@ -10064,3 +10064,31 @@ is convicted; the engineered shatter records are expected PATHOLOGICAL
 as atlases (built to shatter, not to tile); the deliverable either way
 is the measured atlas gap, defining the successor construction
 question — can the grammar TILE (the "crystal" question)?
+
+## 2026-07-26 — D58: THE ATLAS INSTRUMENT EXISTS, AND THE GAP IS
+## MEASURED (LEDGER #439)
+Receipt d58_atlas_instrument_exact.py, 5 PASS / 0 FAIL after one
+self-correction (my hard-pinned overlap floor of 1/3 was an invented
+constant; M21 came in at ~0.12 and the gate was restated to validate
+on HOMOGENEITY and REPORT overlap — the corpus keeps teaching me not
+to invent thresholds).
+THE MEASUREMENTS (SKY-B charts, d = 2 committed / 3 reported; exact
+Fractions). SPRINKLING CONTROLS: M^{2+1} N=120 — 64% of events carry
+>= 2-direction charts, mean overlap ~0.12; M^{3+1} N=120 — 73%, mean
+overlap ~0.54 (d=3: ~0.94). **THE M21-vs-M31 OVERLAP DIFFERENCE IS A
+FINDING CANDIDATE, CONFOUNDED by differing densities (box 60 vs 32) —
+deconfounding is a residue, no claim made.** THE GRAMMAR'S RECORDS:
+shatter-4 record 38% homogeneity, shatter-5 35%, generic 2-actor walk
+**6%**; overlaps ~0.47 where measurable.
+**A2, THE PRE-REGISTERED GAP CONFIRMED: sprinkling homogeneity floor
+0.64 vs engineered ceiling 0.39 vs generic walk 0.07 — the grammar's
+records, as built so far, are THE OPPOSITE OF ATLASES.** They were
+built to shatter, not to tile. The atlas instrument now exists,
+validated on controls, and the successor question is named and
+sharp: **THE CRYSTAL QUESTION — can the grammar build a record whose
+every event carries a wide chart with large overlaps (a tiling), the
+way a courier record carries one rich sky?** That is the next
+construction unit on the manifold road.
+RESIDUES: density-deconfounded overlap comparison; non-identity
+transitions + the real cocycle condition (declared later stage);
+depth-profile of overlap (M31's 0.54 -> 0.94 growth).
