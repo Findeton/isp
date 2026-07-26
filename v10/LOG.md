@@ -10277,3 +10277,33 @@ is missing; stamp bumped to #445. The two residual grep hits for
 forbidden scaffolding phrases are the stamp QUOTING them as rules.
 **The book now satisfies #444: a reader encounters one synthesis,
 written in one go, current as of this entry.**
+
+## 2026-07-26 — D59: THE CLICK-LAW IDENTITY CHECK, CLOSED BY READING
+## (LEDGER #446)
+note-d59-click-law-identity.md. The question (top of the book's gaps
+queue; gates the crystal pin): is the identified interactive click
+law (v10 D23/P18, the conditional measure of the D15 action = SM +
+effective gravity at measured couplings over tested energies) the
+same object as the d42a/d42b generated-record grammar? **THE CORPUS
+ANSWERS EXPLICITLY, in paper 29:** "two descriptions of dynamics
+without ... one type ledger"; "the action line and the generated-law
+line now meet at ONE MISSING MAP"; the corpus "supplies rather than
+derives [the identified law's] ... generated record grammar"; "the
+identified law has therefore NOT YET BEEN PROVED RECORD-CLOSED."
+**VERDICT: two objects, no identity theorem, a NAMED MISSING MAP**,
+partially bridged by paper 29's conditional descent (decoherent
+records + boundary sufficiency) and disciplined by paper 28's exact
+flat-action obstruction as reclassified there.
+CONSEQUENCES: (1) the v9 closure directive read correctly — v9's
+builders were neither the identified law NOR the record-closed
+generated-law line; the d42 grammar IS that line and is the only
+object that can generate causal structure at all; (2) the CRYSTAL
+QUESTION is pinned on the GRAMMAR with the transfer scope declared
+(grammar-layer results reach the identified law only through the
+missing map); (3) **THE MISSING MAP is promoted to a named
+first-class front — the deepest gap in the corpus**; (4) the book's
+two-click-law flag resolves: three senses of "the click law"
+(admissibility: complete; probability: not self-normalizing;
+identified: anchored, not proved record-closed), one program, one
+missing map. Book patch dispatched per the #444 integration
+discipline.
