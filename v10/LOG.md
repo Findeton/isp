@@ -9587,3 +9587,41 @@ the same Minkowski records it admits **52** skies against D47's 554 —
 a 10.7x reduction.
 CONSEQUENCE FOR 3+1: the targeted-construction attack must be built on
 SKY-B and gated by SC5, not by D47's SG2.
+
+## 2026-07-26 — D54 PINNED: THE DILWORTH GATE (LEDGER #427)
+Pin committed BEFORE any receipt: note-d54-dilworth-gate-pin.md. The
+3+1 attack, organized by one structural candidate theorem.
+**STAGE 0 — THE PREMISE, GATED FIRST.** [P] any two events sharing an
+actor wire are comparable at TRANSPORT scope. Gated at arb scope (D44c
+clause iv), never at d42b1 where deliveries carry TWO actors.
+Expectation HOLDS (the poset is the carrier-wise wire closure), with
+D51's monotonicity surprise as the standing warning. P failing ends
+the unit and IS the deliverable.
+**STAGE 1 — THE THEOREM [TARGET T].** Same-initiator events are
+totally ordered (P) => nested down-sets => ONE ACTOR'S WORLDLINE
+CONTRIBUTES A CHAIN OF TRACES => a k-actor record's shadow family is a
+union of <= k inclusion-chains => covering B4's 16 subsets needs >= 6
+chains (Dilworth; the 6 pairs are the antichain) => **SHATTER-4 NEEDS
+>= 6 ACTORS; shatter-k needs >= C(k, floor(k/2)); A SPHERE-LIKE SKY
+NEEDS UNBOUNDEDLY MANY ACTORS — the author's infinite-clocks doctrine
+DERIVED as a theorem if it survives.** Proof carries the theorem;
+sweep corroborates (D44c-P P2 discipline); B4 certificate exhibited
+both ways (6-antichain + 6-chain SCD cover).
+**STAGE 2 — THE CONSTRUCTION (T is silent on sufficiency).** A
+9-ACTOR BLUEPRINT committed in the pin, not a blind search: X mints v1
+at base event e; X delivers v1 to A1..A4; each Ai pads and proposes on
+v1 so all four proposals land at height e+5 — PAIRWISE INCOMPARABLE BY
+PROPOSAL LOCALITY, the four directions of SKY-B(5); then B1..B4 + two
+late cross-deliveries realize the missing 11 subsets as the B4
+symmetric chain decomposition WORN AS WORLDLINES (B1: A1,A2,A3,A4;
+B2: A2,A3,A4; B3: A1,A3,A4; B4: A2,A4,A1; A1<-A4 for {14}; A3<-A4 for
+{34}; X's first delivery is the empty trace; the directions are their
+own singletons). Ordering constraint load-bearing: B-deliveries
+sourced from Ai precede Ai's late receipts. **The builder SELECTS
+every event from the committed layer's own menu — a refusal prints
+prefix, spec and menu, and the blocking clause is the deliverable.**
+EXPECTATION: ADMISSIBLE — recorded against my prior lean (blocked, on
+the narrower-than-chance result); engineering the blueprint reversed
+me; both states on the record. SC5 capacity, SKY-B only, per-d
+reporting, claims scoped per pin §5. REVIEW: independent Opus 5
+background worker, recompute-not-trust, after green.
