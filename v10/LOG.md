@@ -10827,3 +10827,40 @@ pre-existing stale sites outside the targets (incl. §A9.5's
 "H2 subsumed by H1" via the inverted D51 reduction) — all fixed.
 Round attributions rewritten into present-tense evidence-base prose;
 no correction-round narration in the body.
+
+## 2026-07-26 — D64 DELIVERED (GREEN-UNREVIEWED): G3 — THE ATLAS
+## CARRIES A Z/2 GAUGE STRUCTURE, AND THE COUPLING CHANGED WHICH
+## INVOLUTION IT IS (LEDGER #464)
+Deliverables: note-d64-cocycle-result.md, code/d64_cocycle_exact.py
+(12 PASS / 0 FAIL, exit 0, ~60 s), data/.out.  Opus 5 worker against
+the frozen pin (#461).  RERUN BY ME: identical modulo timing.
+**G3 AT THE CANONICAL (ROLE) LABELING, d = 2, ON DR(8, 10, 8): 172
+overlapping chart pairs, 57 identity / 115 NON-IDENTITY (wide
+subatlas 29/108); ALL 111 testable triples SATISFY THE COCYCLE, zero
+violations; the length-preserving transitions CLOSE to Z/2 = <tau>,
+tau = the first-letter wire transposition ("the direction e leaves by
+the wire it SENT on, e' leaves by the wire it RECEIVED on").**
+INSTRUMENT HONESTY BUILT IN: the RAW labeling's 172/172 non-identity
+is a TAUTOLOGY (disjoint register sets — PROBE 2 fires, outcome
+refused there); no labeling is blind (PROBE 1 does not fire); the
+port-order convention moves the SPLIT and the group NAME but not the
+existence-plus-clean-cocycle (both printed).  TWO FINDINGS AGAINST
+THE GUESS: (a) NO control is flat — brick and uncoupled ring carry
+the OTHER involution sigma (all-letter flip), sprinklings non-identity
+at 244/247+ — so the coupling did not create transition structure, IT
+CHANGED WHICH INVOLUTION THE ATLAS CARRIES and added the width the
+transitions act on (wide-wide pairs at d = 2 exist ONLY on the
+coupled substrate, 137 vs 0 vs 0); (b) the pin's lean SPLIT — parity
+CONFIRMED (all 115 non-identity pairs at odd height, clean 4/16 vs
+4/0 layer alternation), coupled-wires REFUTED AND INVERTED (all 27
+both-coupled pairs are IDENTITY; the transposition is the brick
+circuit's own direction alternation, stitched by the coupling).
+HONEST LIMITS carried: transitions are PARTIAL (2 of 4 fibre points;
+only identities are total); 7 length-changing correspondences from
+height-skipping P-edges excluded BY NAME; the cocycle has NO CONTENT
+at d = 3 or on the grammar controls (untested, not confirmed); Z/2
+is DISCRETE — a Z/2 gauge structure at width <= 4, not GL(n), and
+any tensor/curvature sentence starts there.  Validation gate earned
+its keep (caught an index-order closure bug before any census).
+GREEN-UNREVIEWED: hostile round dispatched.  DESCENT-CONDITIONS
+pinned next per the user's standing order.
