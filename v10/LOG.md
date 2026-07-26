@@ -10162,3 +10162,50 @@ memory is corrected (gravity formula) and extended (v9 indexed).
 Book third pass dispatched: C6 (the v9 arc, both registers, its
 mandatory queue quoted, not-citable discipline), Part D patches (the
 #440 scale doctrine; both roads on arrow 3; re-ranked queue).
+
+## 2026-07-26 — FORWARD CORRECTION OF #441: v9 WAS ALREADY REVIEWED AND
+## CLOSED; THE BOOK IS COMPLETE AT 7,765 LINES (LEDGER #442)
+#441 called the v9 queue "the corpus's largest review debt" and I
+recommended scheduling it. **BOTH WRONG, corrected by the book
+writer's in-file verification and confirmed by me in v8/LEDGER.md
+(where v9's ledger actually lives, #103-#128 — not in v9/LOG.md):**
+(1) a FUNDED EXTERNAL REVIEW already ran (#125): PARKED downgraded to
+PARKED-AT-PROTOCOL (conjunction not instrument-robust; jackknife 7/10
+flips); "ROUND" corrected as overclaimed (+0.117, +6.5 sigma above the
+round-reference MEAN — the honest headline is "the residual dropped
+~45%"); d_ball = 4.4 ± 0.2 protocol-conditional; an OWNED FAILURE
+(the pinned drift disclosure was never delivered); the m4 leg
+survives Bonferroni, the dom leg does not; and it still called the
+diffusion result "the program's best-supported new result".
+(2) **THE LINE WAS THEN CLOSED BY USER DIRECTIVE (#128, 2026-07-12),
+verbatim: "stop the v9 review, as v9 actually didn't use a real
+interactive click law."** Binding scope: the v9 builders are
+exploratory record-substrate dynamics, NOT the identified interactive
+click law (v10 D23/P18 — the conditional measure of the D15 action);
+the v9 geometry results stand as CLOSED HISTORICAL MEASUREMENTS about
+toy substrates; O1-O5 recorded, NOT scheduled; no further rounds. MY
+RECOMMENDATION AT #441 IS WITHDRAWN.
+(3) The free-web theorem's precise form (funded-review correction,
+restored at #127 M1): influence rides exactly one worldline *until
+that slot's next reset*.
+**THE STRATEGIC READING.** v9's closure reason IS the roadmap: the
+manifold destination must be reached THROUGH the real interactive
+click law. The v10 grammar line (D58's atlas, the crystal question)
+is the compliant road — v9's grown-web results are its toy-substrate
+PROOF OF CONCEPT (4D-by-volume is reachable by growth) and its
+cautionary tale (every headline shrank under review). NOTED FOR THE
+RECORD: the corpus carries TWO click-law objects — the D23/P18
+conditional-measure line (v8/LEDGER #103-#130: D24-D27, Paper 19,
+fronts F11-F13) and the d42a/d42b generated-record grammar (papers
+28-32, this LOG) — related through D38/D40 (the D15 action cocycle);
+an exact identity statement between them is NOT verified by me and is
+flagged, not asserted, in the book.
+**THE BOOK IS COMPLETE: 7,765 lines** — front matter, Parts A/B
+(mirrored 11 chapters), Part C (v1-v9 incl. C6 with the corrected v9
+story and its closure banner), Part D (the destination with the
+scale doctrine at D1b and the two-roads arrow), chapter 12, glossary,
+gaps. The writer's six new unsure items adjudicated: (1) its
+corrected 46-48d framing CONFIRMED against v8/LEDGER (my brief was
+stale, the writer caught it); (2) the closure banner STAYS; (3)-(5)
+confirmed; (6) declared (C6 is ledger/LOG/notes-sourced; v9 papers
+7/8 unread — a standing gap).

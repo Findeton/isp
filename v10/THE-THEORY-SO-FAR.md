@@ -295,12 +295,27 @@ destination that follows.)*
 - **C5. The lineage question, honestly** — what is established, "the bridge
   is empty", the specified-but-unrun bridge measurement, and an explicit
   RELATION UNESTABLISHED list.
+- **C6. The v9 channel-manifold arc — the other road to the manifold** —
+  a *different* formalism (slots, celestial clocks, direction-valued
+  deposits, churn); the two-clock wall and the parking hypothesis; the
+  impossibility discovery and the channel-manifold law
+  (`d = dim(channel manifold) + 2`; `S²` for 3+1); round 45's four
+  isolated mechanisms and the arc review's retraction; 45e's NOT-PARKED
+  with its 4D-by-volume positives; the **free-web influence theorem**
+  (no coupling ⇒ no collective excitation at any scale ⇒ matter requires
+  coupling); rounds 46–48d and the funded review that downgraded them to
+  **PARKED-AT-PROTOCOL**; the unscheduled queue; the line's closure by
+  user directive; a second RELATION-UNESTABLISHED note.
 
 ### PART D — THE DESTINATION (supersedes chapter 11's forward-look)
 - **D1** The destination, stated — full Einsteinian manifolds enriched to
   create quantum particles; why the sprinkling target was withdrawn.
+- **D1b** The **scale doctrine** `[BINDING]` — no fixture-scale object is a
+  particle; units certify scale-invariant mechanisms, not objects; its
+  convergence with the free-web theorem.
 - **D2** The roadmap, arrow by arrow, with honest status — eight arrows,
-  two HAVE, two PARTIAL, three OPEN, one BLOCKED.
+  two HAVE, two PARTIAL, three OPEN, one BLOCKED; **arrow 3 carries both
+  roads** (v10's atlas instrument and its measured gap; v9's grown webs).
 - **D3** Particle creation, and one labelled speculation — the
   boundary-freedom <-> vacuum-ambiguity resemblance, costed and marked.
 - **D4** What the destination changes about the open problems.
@@ -6359,6 +6374,508 @@ no bridge should be inferred:
 > down as "the bridge is empty", specified the first measurement that could
 > fail, and has not yet run it.  A reader should treat Parts A/B and Part C
 > as **two bodies of work in one programme**, not as one theory told twice.
+>
+> **And there is a second one.**  Chapter **C6** describes the v9 line,
+> which stands in the *same* relation to Parts A/B as the sealing corpus
+> does — a different formalism, no map either way, and in v9's case a
+> user directive that **declares** it not to be the interactive click law.
+> So the honest count is **three bodies of work in one programme, joined
+> by two unbridged postulates and zero cross-measurements.**
+---
+
+## C6. The v9 channel-manifold arc — the other road to the manifold
+
+*Sources: `v8/LEDGER.md` entries **#103–#128** (v9's ledger lives in the v8
+file); `v9/LOG.md`; `v9/note-3p1-dimension-ledger.md`,
+`note-3p1-cladder.md`, `note-3p1-manifoldweb.md`,
+`note-3p1-conservation.md`, `note-3p1-nladder.md`; `v9/PLAN.md`.*
+
+> **TWO CORRECTIONS TO ANY EARLIER SUMMARY OF THIS ARC, both verified
+> in-file and both load-bearing.**
+>
+> **(1) Rounds 46–48d were NOT left unreviewed.**  They ran in NO-REVIEW
+> MODE, but a **funded external review** was subsequently run and is
+> recorded at **LEDGER #125**.  It **downgraded PARKED to
+> PARKED-AT-PROTOCOL** and **corrected the word "ROUND"**.  Everything
+> below carries the post-review statement, not the round's own.
+>
+> **(2) The entire v9 review line was then CLOSED by user directive**
+> (2026-07-12, LEDGER #128), verbatim: *"stop the v9 review, as v9
+> actually didn't use a real interactive click law."*  The binding scope
+> statement recorded with it: **the v9 builders are exploratory record-
+> SUBSTRATE dynamics — they are NOT the identified interactive click
+> law**, and the v9 geometry results stand as **closed historical
+> measurements about toy record substrates**.  The review's O1–O5 queue
+> "remains recorded in this LOG but is **NOT scheduled**."
+>
+> So the mandatory queue this chapter quotes is a queue **nobody is
+> working**, on a line that is **closed**, about objects that are
+> **declared not to be the corpus's click law**.  Read every result below
+> through that.
+
+### ① PLAINLY
+
+While the v10 line was building a grammar and worrying about its measure,
+a **completely different formalism** was being pushed at the same target
+from the other side. It is worth understanding, because on the specific
+question of *building something four-dimensional* it went considerably
+further than v10 has.
+
+**The objects.** Instead of actors writing versions, v9 has a **fleet of
+slots** — thousands of little accumulators. Growth proceeds by
+**commits**: at each step one slot fires and **deposits** something into
+its accumulator. Periodically a slot is **churned** — its accumulator is
+reset, or (later) transferred, or (later still) leaked away gradually.
+The causal order is then read off by *dominance*: one commit precedes
+another if it is earlier **and** behind on every one of a set of clocks.
+
+**The wall.** That construction has a fatal built-in limit, and it was
+proved rather than discovered: if the order is "earlier and behind on
+*k* clocks", then it can be reconstructed from *k* linear orders, so its
+complexity is bounded by *k*. With two clocks you get exactly
+two-dimensional causality — which is exactly flat spacetime with one
+space dimension. **Every earlier failure to see higher dimension was
+therefore structural**: the instruments were pointed at things that
+could not carry it.
+
+**The escape.** So: add clocks. Give each commit several independent
+channels, and dominance means behind on all of them. Now the bound grows
+with the number of channels. And this is where the arc's real content
+begins, because it turned out that **getting a high-dimensional order is
+easy and getting a *round* one is very hard.**
+
+Real spacetime's light cone is **round** — a smooth cone of directions.
+An order built from a finite set of clocks has a **polyhedral** cone,
+with corners. The programme spent five rounds trying to round it off:
+more channels, mixing the channels, rotating the frames, tuning dials.
+Roughly sixty measured configurations. Every single one either stayed
+cornered or paid for roundness by collapsing back to two dimensions.
+**No configuration was both.**
+
+**Then someone noticed the target had been impossible all along.** A
+round cone with finitely many facets does not exist. The thing being
+chased could not be built, and the universal no-go was guaranteed in
+advance. That is a genuinely useful discovery: it converts five rounds of
+failure from evidence about the theory into evidence about the question.
+
+**The reframe, and it is the chapter's centre.** If a *count* of channels
+gives you corners, then the channels should not be indexed by a count —
+they should be indexed by a **manifold**. And then the dimension of
+spacetime is the dimension of that manifold plus two. For our world the
+channel space would be the **sphere of directions** — the celestial
+sphere — and the question "why three channels?" is replaced by the much
+better question **"why the sphere?"**. A quick probe confirmed the
+mechanism works: with clocks pointing in enough directions on a sphere,
+the cone reads round.
+
+**Then the hard part: can *growth* get there?** Four rounds, each
+isolating exactly one failure mechanism and fixing it:
+
+1. the resets were **starving** the relation — too many independent
+   perturbations knocked the structure apart;
+2. fixed, but the clock kernel carried **contaminating harmonics** — the
+   wrong shape of "how much does this deposit advance that clock";
+3. fixed with a pure kernel, and now a **drift** dominated — the total
+   content became a redundant second clock;
+4. fixed by removing the drift, leaving a genuinely ballistic relation:
+   time is birth order, space is a direction-valued content vector,
+   worldlines are straight.
+
+That fourth version looked like it had arrived. **It had not**, and the
+review caught it: the apparent success was inside the instrument's own
+error bars, could be flipped by a convention choice, and was the minimum
+of twelve configurations. A pre-registered re-test on fresh seeds sent
+the number back up. **NOT PARKED** — honestly, with the regression
+predicted in advance by the reviewer.
+
+But the same re-test banked results that survived everything: those grown
+webs are **genuinely four-dimensional by volume** on a purpose-built
+calibration with no clamping, carry order-complexity of at least five by
+explicit witnesses, and are **round to within about six to nine percent**.
+The remaining gap is real structure, not instrument error.
+
+**Then a theorem about matter, and it is the deepest thing in the arc.**
+Someone asked what a *particle* would be in this picture. The answer
+exposed a hole: in the formalism as built, slots **never exchange
+content**. So a disturbance to one slot rides exactly one worldline and
+influences nothing else, ever. **No collective excitation can exist at
+any scale.** There is no sound, because nothing couples.
+
+That is a theorem, it was verified mechanically, and it is a statement
+about what matter *requires*: **coupling**. The named minimal fix — make
+the resets *transfer* content instead of destroying it — was then built,
+and for the first time in the programme's history **a perturbation moved
+between slots**: influence spread from one slot to several. Interaction
+exists; matter is possible in principle.
+
+**And then the last rounds, which are the most interesting and the least
+secure.** Transferring content in jumps did not round the cone — it just
+moved the jumps around. So the jumps were removed entirely: content
+**leaks** continuously between slots. That did round it. The best
+configuration reads round *and* four-dimensional at once — the conjunction
+that sixty earlier configurations had excluded.
+
+**With three large caveats, all from the review that followed.** The
+volume measurement is instrument-fragile (it flips under reasonable
+protocol changes). The word "round" was **overclaimed** — the honest
+statement is that the residual dropped by about 45% and the pre-registered
+criterion was met, but the number still sits well above a genuinely round
+reference. And one of the two statistical legs survives correction for
+multiple looks while the other does not.
+
+**And then the line was closed** — on the grounds that these webs were
+never the corpus's actual interactive law. The results stand as honest
+historical measurements of a toy substrate. The queue of things that would
+have secured them is written down and unscheduled.
+
+### ② THE OBJECTS
+
+**C6.1 The formalism, and that it is a DIFFERENT formalism.**
+
+This must be said first and plainly: **the v9 web is not the v10 grammar.**
+There are no actors, no versions, no mint chain, no proposals, no
+arbitration, no deliveries, no admissibility predicate, no menus and no
+weights-summing-to-2. There is:
+
+| object | what it is |
+|---|---|
+| **slot** | one of `M` accumulators in a fleet; the substrate's unit of locality (typical `(N, M, L) = (2048, 32, 16)` — commits, slots, churn scale) |
+| **commit** | one growth step: a chosen slot fires and deposits |
+| **deposit** | what a firing adds.  In the channel-manifold builders it is **direction-valued**: slots carry fixed preferred directions `p_s ~ uniform(S²)`; a click draws `u = p_s` with probability `α`, else uniform on `S²`, with magnitude `e ~ Exp(0.109551)` |
+| **celestial clock** | one of `K` fixed directions `v_k` on the sphere (a Fibonacci-sphere set).  A deposit advances clock `k` by a kernel of `u · v_k` |
+| **churn** | the reset process, rate `1/L` per slot.  Three flavours across the arc: **per-clock** (each clock perturbed independently), **full-vector** (one victim slot's whole vector reset), **conservation** (the victim's accumulator is *added to* a receiver, then zeroed), **diffusion** (a continuous fractional leak, no jumps) |
+| **the relation** | dominance: `x ≺ y` iff `b(x) < b(y)` (birth order, strict) and `χ_k(x) ≤ χ_k(y)` for all `K` clocks |
+| **`F_iso`** | the shape statistic: standardize, take related pairs, form the transverse cloud `v = w/s`, PCA to an effective 3-frame, take directional supports `h(u)` at `q90` over a pinned 64-direction Fibonacci sphere, and report `mean(top 8 of h) / mean(bottom 8 of h)`.  Round ⇒ ≈ 1 |
+| **`d_ball` / `d_MM`** | volume dimension by Myrheim–Meyer, implemented **formula-free** — the ordering-fraction reference curve is *measured* from `M^d` sprinklings and the estimate is interpolation on it.  `d_ball` is the version calibrated against a **dedicated ballistic-class reference** built for the purpose |
+| **parking** | the arc's name for the target: **round-occupied AND certified ≥ 4D simultaneously** |
+
+**C6.2 The two-clock wall `[LEMMA, elementary, stated for the record]`.**
+From `note-3p1-dimension-ledger.md` §1: if `x ≺ y` iff `f_i(x) < f_i(y)`
+for all `i ∈ {1..k}`, then `≺` is the intersection of `k` linear orders,
+so **order dimension ≤ k**.  Every corpus web's order was `(b, χ)`-
+dominance — `k = 2` — so **`dim ≤ 2` always, by definition**, and 2D
+Minkowski *is* exactly two-clock causality.
+
+> **The re-attribution, which is the useful part:** *"every 3+1 readout
+> refusal in the T6 track was structural — the instruments were pointed
+> at webs that could not carry `d > 2`.  The wall is in the ontology's
+> coordinate system, not in the dynamics or the readers."*
+
+The lemma was itself **corrected under review** (round-35, appended not
+silently edited): as first stated it covered neither quoted instance,
+because the builders' order is `b`-strict ∧ all-`χ`-**weak**, with ties
+abundant.  The surviving weak form: *if `x ≺ y` iff `f₀(x) < f₀(y)` and
+`f_i(x) ≤ f_i(y)` for all `i`, with `f₀` injective, then `dim(≺) ≤ k+1`*,
+with explicit realizers.  `b = arange(N)` is injective in every builder,
+so every quoted instance is covered.
+
+**C6.3 The dimension-wall arc and the parking hypothesis (#103–#114).**
+
+The escape route (**R-A**): multi-channel evidence clocks, `dim ≤ C+1`,
+**polyhedral** cones.  The registered limit sentence — *"the round Lorentz
+cone is the many-channel/mixed limit"* — became the **parking
+hypothesis**, user-posed: at large `C`, does *statistical* rounding
+(many increments Gaussianize the transverse cloud) let you ride down the
+dial to a point that is round **and** ≥ 4D?
+
+The arc, round by round, with its corrections:
+
+- **#103/#104 (round 40).**  The footprint instrument certifies:
+  `M4` reads `F ∈ [0.983, 0.999]` against orthant-iid `[1.307, 1.392]`,
+  strict 5/5 separation.  Corner webs read `F ∈ [1.949, 2.316]`.
+  **Review correction:** the headline "cones have corners / sharper than
+  the orthant / slot-chain sharpens" is **SUPERSEDED** — the geometric
+  cone is the *same* orthant; what is more corner-concentrated is the
+  **occupied cross-section**.  *Occupancy, not geometry.*  Ablation
+  (#105): the `α`-preference mechanism is **dominant** (removing it takes
+  away ~5/6 of the corner excess); temporal correlation contributes
+  nothing (shuffle reads 2.28).
+- **#107/#108/#109 (rounds 42/42b).**  The dial sweep: mixing saturates
+  at the iid-orthant floor with dimension intact; `α = 1.0` **collapses**
+  dimension; **17 dial points**, and the corrected verdict is that the
+  trade-off is **continuous** and *"the sweet spot (`F ≤ 1.10` AND
+  `win d_MM ≥ 3.7`) is EMPTY across the measured family"*.  Recorded
+  honestly: the `d_MM` proxy has **two confound exhibits in opposite
+  directions**, so realizer/witness is ground truth and `d_MM` is a
+  volume co-signature only.
+- **#110/#111/#112 (round 43, the C-ladder).**  New instrument `F_iso`,
+  certification-gated (`M4 [1.08, 1.13]` vs orthant-4 `[1.26, 1.34]`).
+  **Verdict UNIVERSAL-FRONTIER: no parking at any `C`.**  And the 42b
+  "rounding" is **unmasked as cloud collapse** — the transverse cloud's
+  `eig3/eig1` falls `0.59 → 0.05` while `F_iso` *rises* `1.82 → 5.26`;
+  the native statistic had misread flattening as rounding.  A reference
+  card is receipt-carried (Gaussian 1.078 / disk 3.044 / round-plane 2.154
+  and 2.584 / simplex-interior 1.557), and equal-split webs sit **between
+  Gaussian and simplex-interior: genuinely polyhedral**.  Positive banked:
+  **`d = C+1` extends** — `S₅` verified on equal-split `C = 4`, so that
+  class has order dimension **exactly 5, witness-grade**.
+- **#113/#114 (round 44, rotating frames — the last route).**  The
+  pre-registered non-monotone minimum materialized (`F_iso 1.864 → 1.412
+  at ω = 1.0 → 1.450 at ∞`) with **no collapse, no sparsification, no
+  dimension payment** — the best `(shape, dimension)` point in programme
+  history at that time (`1.412` at `d 3.87`).  **THE OBSTRUCTION
+  ISOLATED: the conditioning.**  Fixed-frame componentwise dominance
+  shapes occupancy to the orthant *regardless of increment law*; round is
+  unreachable by increment engineering; changing the **relation** is
+  outside the ontology.
+
+**C6.4 The channel-manifold law (#115) — the reframe.**
+
+`v9/note-round-cone-mechanisms.md`, user-directed, rounds stopped:
+
+1. **The target was impossible.**  `M4`'s causal order has **unbounded**
+   Dushnik–Miller dimension (`S_n` embeds in `M^{1+d}` for all `n`,
+   `d ≥ 2`, by an antipodal construction proved in-note; Meyer 1993:
+   Minkowski dimension = order dimension **at `d = 2` only**).  So
+   *"round cone AND order-dim exactly 4"* was **a round cone with finitely
+   many facets — impossible; the arc's universal no-go was guaranteed.**
+   Corrected target: **MM-dim 4 AND round occupancy AND order dimension
+   GROWING** — which is what `M4` is.
+2. **The mechanism:**
+
+   > **channels indexed by a MANIFOLD, not a count —
+   > `d = dim(channel manifold) + 2`; for 3+1 the channel space is `S²`
+   > (the celestial sphere), and "why `C = 3`" is superseded by
+   > "why `S²`".**
+
+3. **The probe** (analysis-grade, iid, `N = 512`): `K` celestial clocks
+   at latent dimension 4 read `F_iso` **1.451 (K=4) → 1.132 (K=8) →
+   1.055 (K=16)** against exact-`M4`'s **1.046** — **round by `K ≈ 12–16`.**
+   The registered limit sentence becomes true *in corrected form*
+   (directional readings of a shared latent space); round 43 falsified
+   only the independent one-hot form.
+
+**C6.5 Round 45's four isolated mechanisms (#117/#118), each a controlled
+receipt whose wiring byte-reproduces its predecessor before changing one
+thing:**
+
+| stage | mechanism found | fix |
+|---|---|---|
+| **45** | **CLOCK STARVATION** — per-clock churn injects `K` independent perturbations, knocking `χ` off the latent deposit surface; the ordering fraction collapses with `K` (**0.159 → 0.015**; window pairs 2833 → 38) and instruments starve | full-vector churn |
+| **45b** | **HARMONIC CONTAMINATION** — the half-cosine kernel `(u·v)₊ = |u·v|/2 + (u·v)/2` carries even harmonics `ℓ = 0, 2, 4…` (a 12.5% even tail, confirmed in review), which is latent structure beyond dimension 4; `F_iso` stays flat ~1.7–1.9 | the pure monopole+dipole kernel |
+| **45c** | **MONOPOLE DRIFT** — with `χ_k = A + D⃗·v_k`, the accumulated content `A` is a deterministic clock redundant with `b`; occupancy is drift-dominated (`eig3/1` 0.14–0.31, `F_iso` 2.8–3.2 = the card's *collapse* regime, not shape).  *The latent cone theorem holds though:* at `K = ∞`, dominance ⟺ `ΔA ≥ |ΔD⃗|` — **the Minkowski cone itself in latent coordinates** | subtract the monopole: `ℓ_k = τ·b + (χ_k − χ̄)` |
+| **45d** | **BALLISTIC NEAR-PARKING** — time = birth order, space = the content dipole, matched-variance `τ`; with `α`-persistence, `ΔD⃗ = ΔD⃗₀ + Δw⃗·Δb` — **positions AND velocities, the genuine `M⁴` kinematic form**.  Best point `K=24 / α=.75 / c=.5`: `F_iso 1.267` against a `1.243` parking line | — |
+
+**C6.6 The 45-arc review (#119) — UPHELD AS MEASUREMENT, HEADLINES
+CORRECTED.**  All four receipts byte-identical; the wiring chain verified;
+all four mechanisms independently re-derived and **upheld**.  Three
+corrections:
+
+- **M1 — RETRACTION.  "F IS COVARIANT" is VOID.**  The `ρ = 0.903`
+  Spearman that had certified the anisotropy as order-readable was a
+  **NaN-rank artifact**: `F_emb` was finite at only 2 of 10 points, and
+  the Spearman as coded ranks NaN blocks by index and **returns 0.903
+  regardless of the data** — the reviewer reproduced it from an all-NaN
+  comparison.  The SVD embedding had never been control-validated.
+  **Order-readability of `F` is OPEN, not established** — and it remains,
+  per the closing entries, *"the sharpest instrument open"*.
+- **M2 — priority claim corrected.**  "First grown webs with witnessed
+  order-dim ≥ 5" is **FALSE** — round 43b's equal-split `C = 4` was
+  first; and *"growing with `K`"* is **unmeasured** (`S₅` flat at all
+  searched `K`, `S₆` unfound, `K < 12` unsearched).
+- **M3 — the near-parking headline rescoped.  The 0.024 gap is INSIDE
+  systematics.**  (a) the axis convention **flips the verdict** (1.267
+  under the dom-diagonal, **1.221 — below the line — under the b-axis**,
+  which is the physically natural axis here); (b) it is the minimum of 12
+  grid points on shared seeds, at 1.6 SE before multiplicity correction;
+  (c) the volume gate was satisfied only by **clamps**.
+
+Also recorded: the **worldline/cone tension** — at the roundest point the
+median slot dipole speed is `2.3×` `τ` (worldlines exit the emergent cone)
+and 94–95% of same-slot links cross a reset; **and the dials that would
+make matter timelike read LESS round.**  This was later **downgraded from
+tension to category clarification** by the *particle reframe* (§C6.8): slot
+trajectories are the **substrate**, and substrate constituents routinely
+move outside an emergent cone with no pathology (the Volovik-class
+precedent).
+
+**C6.7 Round 45e (#120) — the pre-registered decision, and what it
+banked.**  The arc review's protocol, verbatim.
+
+- **Gate 0** dissolved the convention ambiguity by construction
+  (same-pipeline lines: dom 1.236 / m4 1.212).
+- **Gate 1, 10 fresh seeds, split-sample `τ`, pre-registered points only:**
+  `P0` reads `F_dom = 1.298 ± 0.014` and `F_m4 = 1.237 ± 0.011` —
+  **ABOVE both lines at `z = +4.3 / +2.3`.**  The 45d `1.267` was
+  **selection plus seed luck — fresh-seed regression, exactly as the arc
+  review predicted**; the neighbours confirm.  **Verdict: NOT-PARKED,
+  convention-stable, no escape hatches.**
+- **The unimpeachable positives:** `d_ball = **3.84 / 3.85**` at `P0/N1`
+  **on the dedicated ballistic-class calibration — genuinely
+  four-dimensional by volume, no clamps** — with refusals 10/10 and
+  `S₄` 10/10.
+
+> **ARC-FINAL:** grown channel-manifold webs are **4D by volume, ≥ 5 by
+> witnessed order dimension, and round-coned to within ~6–9%** — and that
+> last increment is **real growth structure, not instrument error.**
+
+**C6.8 The free-web influence theorem (#121) — the matter result.**
+
+Exposed by the user's *particle reframe*: particles should be to the web
+what **sound is to a gas** — emergent collective excitations propagating
+*over* the substrate at scales far above the slot/churn scale — not the
+slots themselves.  The corpus "owns fields-ON-webs but has never exhibited
+an excitation-OF-the-web."  Then the theorem:
+
+> **THE FREE-WEB INFLUENCE THEOREM.**  The wb-line content dynamics is
+> **FREE** — slots never exchange content (deposits are slot-local; churn
+> **destroys** rather than transfers; commit choice is exogenous) — so a
+> localized perturbation influences **exactly ONE worldline** and **no
+> collective excitation can exist at ANY scale** in that ontology.
+> **Matter requires slot COUPLING.**
+
+Verified **mechanically** in round 47's control: with destructive churn
+and common random numbers, a marked extra deposit alters the snapshots of
+**exactly one slot**, on both control seeds.
+
+> **Two scope corrections carried:** the funded review corrected
+> *"forever"* — the precise statement is *"influences exactly one
+> worldline **until that slot's next reset** (never any other slot)"*
+> (restored at LEDGER #127 M1 after being dropped once).  And round 46's
+> *"the residual is STRUCTURAL for free webs"* is **power-scoped**: no
+> detectable shrink over 16× at ±0.05 power.
+
+**CONSERVATION-CHURN is named as the minimal record-native fix** —
+resets that *transfer* content instead of destroying it — which would
+simultaneously (i) create interaction/matter, (ii) conserve content, and
+(iii) remove the reset-scar residual suspect.  *"The convergence hope and
+the matter problem = the same problem."*
+
+**C6.9 Rounds 47–48d (#122–#124), and the review that corrected them
+(#125).**
+
+- **#122 (round 47, conservation-churn).**  **PROPAGATION OBSERVED** —
+  affected slots `0.6 → 1.2 → 2.2 → 3.6` over `Δb = 64 → 1024`, against a
+  control of exactly 1: *"the first time a perturbation has ever moved
+  between slots in this framework: interaction exists; matter is possible
+  in principle; the influence cone is now a measurable object."*  But the
+  cone residual is **INDIFFERENT**: `F_dom 1.344` versus its own
+  destructive twin's `1.343` — transfer **redistributes** the jumps
+  (the receiver's inward kick replaces the victim's outward loss) rather
+  than removing them, exactly as the pin had registered.  **The suspect
+  narrows: not destruction but DISCONTINUITY — both churn flavours
+  teleport.**
+- **#123 (rounds 48/48i, diffusion-churn).**  Jump-free fractional leaks,
+  rate-matched: at `g = 0.0625`, `F_dom = 1.197 ± 0.010` — **`z = −3.8`
+  below the round line under both conventions** — with healthy
+  eigenvalues, refusals 10/10, and **influence reaching all 32 slots
+  (full coupling)**.  The scar/discontinuity hypothesis is **confirmed as
+  the residual's owner**.  The volume–shape trade along `g`:
+  `d_ball 5.65 / 5.25 / 4.70 / 3.92` against `F 1.197 / 1.188 / 1.222 /
+  1.255` at `g = .0625/.10/.15/.25` — **round-and-4D bracketed inside
+  `g ~ 0.15–0.25`, a one-dial tuning question, unresolved at 5-seed
+  power.**
+- **#124 (round 48d, the pre-registered decision).**  `g = 0.18`, 10 fresh
+  seeds, no re-rolls: `F_dom = 1.203 ± 0.017` (`z = −1.96`),
+  `F_m4 = 1.169`, **`d_ball = 4.44 ∈ [3.5, 4.5]`**, refusals 10/10,
+  `S₄` 10/10 — **all four conjuncts**.  Graded at the time
+  **`[MEASURED, unreviewed]`**, with edges disclosed (`z` and `d_ball`
+  near their criteria; the dial value interpolation-informed).
+
+**THEN THE FUNDED REVIEW (#125), which is the authoritative statement:**
+
+> **PARKED is DOWNGRADED to PARKED-AT-PROTOCOL `[MEASURED, reviewed —
+> conjunction not instrument-robust]`, and #123/#124's "ROUND" headlines
+> are CORRECTED.**
+
+| what the review found | detail |
+|---|---|
+| **clean** | byte-reproduction ×5; pins and seeds airtight; **the free-web theorem and its control SOUND**; round 47's propagation genuine |
+| **the best-supported new result** | *"48's discovery robust — the program's best-supported new result: diffusion collapses the residual `z = −3.8` both conventions"* |
+| **volume conjunct INSTRUMENT-SUSPECT** | subsample flip 4.567; window range 4.47–5.71; drift-fair `τ` 3.19; bootstrap `P(in-band) = 0.63`; jackknife **7/10 flips** ⇒ `d_ball = 4.4 ± 0.2`, **protocol-conditional** |
+| **an owned failure** | *"the pinned drift disclosure was **NEVER DELIVERED** (owned)"* — `s_D` drifts `1.55×`, the class is **nonstationary**, and that is the mechanism of the volume fragility |
+| **"ROUND" overclaimed** | `F_dom` is **`+0.117` (`+6.5σ`) ABOVE the round-reference MEAN**.  *The honest headline: the residual dropped ~45% and the parking criterion was met* |
+| **multiplicity** | the `dom` leg passes **only the uncorrected bar** (5th look); **the `m4` leg (`z = −3.24`) survives Bonferroni/5 and is load-bearing** |
+| **the queue** | O1–O5 verbatim: **24-seed gated replication; the drift-matched volume instrument, validation-gated; the coupled ladder at `g = 0.18`; the gap-to-mean scan; the bridge pilot** |
+
+**C6.10 The driving chain, and the closure.**
+
+The arc was not planned; it was driven by four questions the author asked
+in sequence, and the ledger records the chain explicitly:
+
+> **larger `C`?  →  what is a particle?  →  information can't disappear
+> →  are the leaks entanglement / sealing?**
+
+which drove, in order, **the channel-manifold law → the free-web theorem
+→ coupling → the jump-free dynamics**.
+
+On the fourth question, `note-3p1-conservation.md` gives a careful
+three-layer answer:
+
+1. **Strictly: no bipartite entanglement.**  The webs are classical
+   stochastic processes; leaks create correlations-through-shared-history,
+   which is classical mutual information.  *"The corpus's own sobriety
+   results stand (v5 paper 14's Bell verdict; magic ≠ indivisibility)."*
+2. **But leak-to-the-fleet IS the structure of entanglement-with-the-
+   ENVIRONMENT — i.e. decoherence — i.e. SHARD's own sealing.**  A slot's
+   content dispersing irreversibly into many others is which-path
+   information becoming environmental record: **the microscopic mechanism
+   of a seal.**  This is *"the missing substrate the round-41 bridge
+   design needed"* (§C5.3) — the coupled builder gives the Fisher-identity
+   programme its first concrete mechanism.  Graded at #125 as
+   **`[POSITED-STRUCTURAL]`**.
+3. **The separating signature is MONOGAMY.**  Broadcast/diffusive leaks →
+   promiscuous many-party correlations → classical, decoherence-like.
+   **Exclusive paired exchange** → the only in-ontology candidate for
+   entanglement-like two-party structure.  Named as a fork, with monogamy
+   as the printed discriminator.
+
+**And then the closure (#128, 2026-07-12, user directive):**
+
+> *"stop the v9 review, as v9 actually didn't use a real interactive click
+> law."*
+
+Recorded as the **binding scope statement**: the v9 builders are
+**exploratory record-substrate dynamics**, not the identified interactive
+click law; the v9 geometry results stand as **closed historical
+measurements about toy record substrates**; the paper-8 review stops at
+round 1; **no further v9 review rounds will run**; and *"the funded
+review's O1–O5 queue remains recorded in this LOG but is **NOT
+scheduled**."*
+
+> **THEREFORE, binding on any citation of this chapter:** rounds 46–48d
+> are `[MEASURED, reviewed — PARKED-AT-PROTOCOL]`, **not** "parked", and
+> **not** round; their queue is unworked; and the whole line is declared
+> not to be the corpus's click law.  **Nothing in C6 is citable as a
+> result about the framework of Parts A and B.**
+
+**C6.11 RELATION UNESTABLISHED — v9 webs versus the v10 grammar.**
+
+This is a second instance of §C5's problem, and it must be named as such.
+
+- The v9 web and the v10 grammar are **two different formalisms** (§C6.1),
+  and **no unit relates them.**  There is no map from slots to actors, no
+  map from deposits to versions, no derivation of either from the other.
+  **RELATION UNESTABLISHED.**
+- The user directive at #128 is stronger than "unestablished": it
+  **declares** that v9 did not use the interactive click law.  So the two
+  lines are not merely unrelated — one of them is officially *not the
+  theory*.
+- **They disagree about their own geometry, measurably.**  v9's webs were
+  engineered toward *round-cone, Minkowski-like* occupancy and got within
+  6–9%; v10's records were measured against genuine Minkowski sprinklings
+  and found **sharply unlike them** (CHAPTER 12 §12.1; and §B5.6's
+  "narrower than chance").  These are opposite programmes of resemblance.
+- **Two instruments overlap and one of them is retracted.**  Both lines
+  use Myrheim–Meyer-style volume dimension and order dimension; v9's
+  `F`-covariance certification is **VOID** (§C6.6 M1) and order-readability
+  of `F` is open, so no v9 shape claim can currently be re-read as a
+  statement about a v10 record's order.
+- **What *is* shared, and it is not nothing:** the discipline (pins before
+  code, wiring gates, pre-registered decisions, fresh-seed re-tests,
+  headline retractions on the record), and two instruments whose
+  *definitions* are common property — the two-clock lemma of §C6.2, which
+  is the ancestor of §B7.1's doctrine, and the crown/`S_n` machinery that
+  both lines use.
+
+> `[MY READING]` The single most transferable thing in this chapter is not
+> a number.  It is the **channel-manifold law** — *`d = dim(channel
+> manifold) + 2`; the question is not "why three?" but "why the sphere?"*
+> — because it is a statement about what kind of object a dimension is,
+> and it was reached by proving that the previous target was impossible.
+> Whether it says anything about the v10 grammar is **exactly the
+> unestablished relation above.**
+
 ---
 ---
 
@@ -6438,6 +6955,104 @@ roadmap with per-arrow status, and four of its eight arrows are `[OPEN]` or
 
 ---
 
+## D1b. The scale doctrine `[BINDING on every destination-line unit, LOG #440]`
+
+### ① PLAINLY
+
+Before any arrow is walked, one constraint governs all of them, and it is
+the author's own objection turned into a rule.
+
+A record event is small. A particle is not. If the spacing between
+adjacent records were one millimetre, a proton would be about **twenty
+light-years across** — something like `10²⁰` record spacings, `10⁶⁰`
+record events. Whatever a particle is in this framework, it is **not a
+marked vertex, not a slot, not an actor, and not anything a fixture-scale
+computation can display.**
+
+So the rule:
+
+> **1. No fixture-scale object may ever be called a particle.** A
+> particle, if this framework produces one, is a **collective** structure
+> over astronomically many records — the analogue of a soliton or a
+> phonon, not of a marked point.
+>
+> **2. Units certify MECHANISMS, not objects.** A destination unit may
+> certify tensorial transition behaviour, mode structure, or
+> boundary/vacuum ambiguity — each stated as the **scale-invariant
+> mechanism** whose collective, scaled-up form would be the physics — and
+> **must say which mechanism it certifies and that it is not exhibiting
+> the object.**
+
+Two existing results make this rule consistent rather than merely
+cautious. The corpus already proved that **merging records into a
+composite is massively lossy** (chapter A1), so "the composite is one
+line" was never available. And it already proved that **the record scale
+itself is a free parameter** (chapter C2) — so even the twenty-light-year
+figure is an illustration, not a corpus number.
+
+**And the doctrine has a direction, not just a prohibition.** If a
+particle must be collective, then the readings of "particle" that survive
+are the ones where a particle is a **mode** — a delocalized pattern —
+rather than a located thing. Which is exactly what the v9 line concluded
+from the other end: its free-web theorem says that without coupling there
+are **no collective excitations at any scale**, so matter *requires*
+coupling and, when it appears, appears as an excitation *of* the substrate
+rather than a piece of it.
+
+Two independent lines, one conclusion: **whatever "particle" means here,
+it is a mode.**
+
+### ② THE OBJECTS
+
+Recorded at LOG **#440** as **user direction, binding on all
+destination-line units**, restating the `d41c` §1A objection as a forward
+constraint. The illustrative arithmetic: at a record spacing of 1 mm
+(dimensionless, illustratively), a proton is **~20 light-years** — a
+particle is **~`10²⁰` spacings across, ~`10⁶⁰` record events**.
+
+The three clauses, verbatim in substance:
+
+1. **No fixture-scale object may ever be called a particle.** *"A
+   particle, if this framework produces any, is a COLLECTIVE structure
+   over astronomically many records — the analogue of a soliton or phonon,
+   not of a marked vertex."*
+2. **Units certify MECHANISMS, not objects:** *"tensorial transition
+   behavior, mode structure, boundary/vacuum ambiguity — each stated as
+   the scale-invariant mechanism whose collective, scaled-up form would be
+   the physics. Every destination unit must name which mechanism it
+   certifies and say it is not exhibiting the object."*
+3. **It composes with the existing walls:** **D48** (a composite is not
+   one line — the labelled record does not aggregate, and causal
+   aggregation is massively lossy; §B1.2) and **paper 57** (the record
+   scale itself is a free parameter, `G` un-fixable; §C2.2), *"so even the
+   `10²⁰` figure is illustrative, not corpus-fixed."*
+
+**The consistency note carried with it `[MY READING, per #440]`:** the
+doctrine **favours the boundary-freedom ↔ vacuum-ambiguity bridge over
+any local-object story** — *"modes of a measure are intrinsically
+delocalized, which is the only kind of 'particle' the scale gap
+permits."* And tensors enter *"as the transformation behavior of
+chart-attached data under transition maps — a mechanism certifiable at
+fixture scale under rule 2, since transition COVARIANCE is scale-free even
+when the charts are tiny."*
+
+> **The convergence worth naming.** Chapter **C6.8**'s free-web influence
+> theorem reaches the same place from the substrate side: with no coupling
+> a perturbation rides exactly one worldline and **no collective
+> excitation can exist at any scale**, so *matter requires coupling* — and
+> what coupling then produces is an excitation **of** the web, "a phonon
+> of records", expected only at scales far above the substrate's own.
+> The scale doctrine forbids the local reading; the free-web theorem says
+> the local reading was never dynamically available either. **Two
+> independent lines, one conclusion: a particle here is a mode.**
+>
+> `[MY READING]` That is a genuine convergence and it is also the most
+> that can be said. Neither line exhibits an excitation; v9's line is
+> closed and declared not to be the click law (§C6.10); and §D3's vacuum
+> bridge remains three unbuilt arrows from being a question.
+
+---
+
 ## D2. The roadmap, arrow by arrow, with honest status
 
 ### ① PLAINLY
@@ -6450,17 +7065,20 @@ two are half-done, three are open, and the last is blocked.
 |---|---|---|
 | 1 | records → a causal order | **HAVE** — this is what the grammar builds, and the order is the physical content |
 | 2 | causal order → local skies and a dimension *capacity* | **HAVE**, with a correction: the meter measures the grammar's coordination, not a record's dimension |
-| 3 | skies → charts, gluing → a manifold | **OPEN** — the next unit to build, and the first genuinely new construction the destination requires |
+| 3 | skies → charts, gluing → a manifold | **OPEN** — and being attacked from **two directions at once** (v10's atlas instrument, which now measures a confirmed gap; v9's grown webs, further along but review-indebted and closed).  Their convergence is itself open |
 | 4 | manifold → Einstein dynamics | **PARTIAL** — the *form* of the field equations is derived; Newton's constant is provably not derivable from inside |
 | 5 | manifold → quantum fields on it | **PARTIAL** — a lift of the record process into Hilbert space exists at fixture scale, and its arbitration layer is where the quantum problem begins |
 | 6 | fields → **particle creation** | **OPEN** — the destination's defining phenomenon, with one suggestive structural resemblance that is *labelled speculation* |
 | 7 | particles → matter | **OPEN** |
 | 8 | matter → a laboratory number | **BLOCKED**, and the block is four-fold |
 
-The most important honest point about this table: **the arrows are not
-independent, and three of them are blocked on the same thing** — the
-programme cannot currently pose probabilistic questions at the scope where
-its geometry lives (chapter 9, tightened in chapter 12 §12.2).
+Two honest points about this table.  **The arrows are not independent, and
+three of them are blocked on the same thing** — the programme cannot
+currently pose probabilistic questions at the scope where its geometry
+lives (chapter 9, tightened in chapter 12 §12.2).  **And one constraint
+governs every row**: §D1b's scale doctrine, which forbids calling any
+fixture-scale object a particle and requires each unit to name the
+scale-invariant *mechanism* it certifies.
 
 ### ② THE OBJECTS
 
@@ -6498,35 +7116,97 @@ dimension.  So arrow 2 delivers a **capacity** result — *the layer does not
 cap the shatter ladder at the sphere's rung* — and a measure of engineered
 coordination.  It does not deliver a dimension for a record.
 
-**ARROW 3 — charts and gluing → a manifold.  `[OPEN — the next pinned
-unit]`**
+**ARROW 3 — charts and gluing → a manifold.  `[OPEN — and there are TWO
+roads, neither finished]`**
 
-This is the arrow the destination newly requires and the corpus has never
-attempted.  A causal order is not a manifold.  To get one you need, at
-minimum: local pieces that look like patches of `ℝ^d` (charts), a rule for
-saying two patches overlap and agree (gluing), and enough consistency that
-the result is a single object rather than a collection.
+A causal order is not a manifold.  To get one you need local pieces that
+look like patches of `ℝ^d` (**charts**), a rule for saying two patches
+overlap and agree (**gluing**, with transition maps), and enough
+consistency that the result is one object.  **The corpus is attacking
+this from two directions at once, and they have never been compared.**
 
-What the corpus has that is relevant: the **sky** is a candidate local
-object at an event, and §B7's Dilworth gate is a statement about how much
-local structure a given number of actors can support.  What it does **not**
-have: any notion of a chart, any gluing condition, any transition
-functions, any dimension that is *stable across neighbouring events*, and —
-after chapter 12 §12.1 — any instrument that reads a dimension off a record
-at all.
+**ROAD 1 — the v10 atlas / crystal line `[D58, LOG #438–#439]`.**  Pin
+before code (`note-d58-atlas-instrument-pin.md`), and the first two
+instruments built: the **overlap fraction**
+`ω(e, e′) = |D_e(d) ∩ D_{e′}(d−1)| / |D_e(d)|` on cover pairs (charts at
+consecutive events share a height layer; identity transitions —
+**non-identity transitions and the real cocycle question are DECLARED a
+later stage**), and the **homogeneity profile** of `|D_e(d)|` over all
+events.  Discipline: instrument first, controls before data.
 
-> **Status: `[OPEN]`.  Named as the next pinned unit (D58) by the
-> coordinator's direction.  No pin for it exists on disk as of LOG #436,
-> and nothing in this document should be read as reporting its results.**
+Receipt `d58_atlas_instrument_exact.py`, **5 PASS / 0 FAIL after one
+self-correction** — a hard-pinned overlap floor of `1/3` was *an invented
+constant*; the measurement came in at ~0.12 and the gate was restated to
+**validate on homogeneity and REPORT overlap** (*"the corpus keeps
+teaching me not to invent thresholds"*).
 
-`[MY READING]` The honest shape of the difficulty is this: chapter 12 §12.1
-removed the corpus's only candidate *dimension meter for records* at the
-same moment the destination started requiring a manifold, which needs a
-*stable local dimension*.  So arrow 3 does not merely need construction —
-it needs a **replacement instrument**, and the residue D55c itself named
-(does genuine Minkowski shatter 3 — where is the sprinkling floor?) is
-probably the cheapest probe of what such an instrument would have to look
-like.
+The measurements, SKY-B charts, exact Fractions:
+
+| record | events carrying a ≥ 2-direction chart | mean overlap |
+|---|---|---|
+| `M^{2+1}` sprinkling, `N = 120` | **64%** | ~0.12 |
+| `M^{3+1}` sprinkling, `N = 120` | **73%** | ~0.54 (at `d = 3`: ~0.94) |
+| the shatter-4 courier record | **38%** | ~0.47 where measurable |
+| the shatter-5 courier record | **35%** | — |
+| a generic 2-actor walk | **6%** | — |
+
+> **The pre-registered gap, CONFIRMED: sprinkling homogeneity floor 0.64
+> vs engineered ceiling 0.39 vs generic walk 0.07 — the grammar's records,
+> as built so far, are THE OPPOSITE OF ATLASES.**  They were built to
+> shatter, not to tile.
+
+The `M^{2+1}`-vs-`M^{3+1}` overlap difference is flagged **a finding
+candidate, CONFOUNDED by differing densities** (box 60 vs 32);
+deconfounding is a residue and **no claim is made**.  The successor is
+named and sharp — **THE CRYSTAL QUESTION: can the grammar build a record
+whose every event carries a wide chart with large overlaps (a tiling), the
+way a courier record carries one rich sky?**  That is the next
+construction unit on this road.  Residues: the density-deconfounded
+comparison; non-identity transitions and the cocycle condition; the depth
+profile of overlap.
+
+**ROAD 2 — the v9 grown-web line `[PART C, chapter C6]`.**  Further along
+in one specific sense and further behind in another.  It has **built**
+objects that read four-dimensional by volume on a dedicated calibration
+(`d_ball = 3.84/3.85`, no clamps), carry order dimension ≥ 5 by explicit
+witnesses, and — in the diffusive class — read round-coned and 4D
+simultaneously at `g = 0.18`.  It has a **law** for what dimension *is*
+(`d = dim(channel manifold) + 2`), reached by proving the previous target
+impossible.
+
+**But its review debt is outstanding and its line is closed.**  The
+conjunction is `PARKED-AT-PROTOCOL`, not parked: the volume conjunct is
+instrument-suspect (jackknife 7/10 flips), *"ROUND" was overclaimed*
+(`F_dom` sits `+0.117`, `+6.5σ`, above the round-reference mean), one
+statistical leg fails multiplicity correction, and the O1–O5 queue is
+**recorded and unscheduled**.  Above all, the user directive at #128
+declares that **v9 did not use the interactive click law**, so nothing it
+built is an object of the theory Parts A and B describe.
+
+**THE CONVERGENCE OF THE TWO ROADS IS ITSELF AN OPEN QUESTION**, and it is
+sharper than either road's own residues:
+
+- Road 1 measures **charts and overlaps** on records of the click law;
+  Road 2 measures **cone shape and volume dimension** on webs that are not
+  the click law.  **No instrument has been run on both.**
+- They are pointed at **opposite resemblances**: Road 2 spent five rounds
+  trying to make its objects Minkowski-like, and Road 1's own parent
+  measurement found the grammar's records **sharply unlike sprinklings**
+  (CHAPTER 12 §12.1).  Whether "atlas-like" and "round-coned" are the same
+  target in different clothing, or genuinely different demands, is
+  **unknown**.
+- **What Road 1 could borrow immediately** `[MY READING]`: Road 2's
+  channel-manifold law says a dimension is the dimension of a *space of
+  channels*.  Road 1's chart is a set of *directions at an event*.  Those
+  are the same kind of object described in two vocabularies, and the
+  translation has never been attempted.
+- **What Road 1 must not borrow:** any v9 number.  §C6.10's closure and
+  §C6.11's unestablished relation both bind.
+
+**Status, combined: `[OPEN]`.**  The manifold arrow has an instrument
+(Road 1), a measured gap that says the current records fail it, a named
+next construction (the crystal question), and a parallel body of
+suggestive-but-closed work (Road 2) that no unit has connected to it.
 
 **ARROW 4 — manifold → Einstein dynamics.  `[PARTIAL]`**
 
@@ -6742,6 +7422,13 @@ lives, and chapter 12 §12.2 closed the route that looked most likely.
 The **3+1 control** problem is *finished*, and its answer removed an
 instrument rather than supplying one.
 
+And a body of work that had been filed as background — **the v9 arc** —
+turns out to hold the furthest-advanced construction anyone has of a
+four-dimensional grown object, together with an unworked queue of the
+checks that would secure it.  That queue enters the ranking near the top,
+not because the results are citable (they are not) but because the cost of
+not knowing whether they hold is now high.
+
 And a problem that had been quietly filed under "the earlier corpus" —
 **the empty bridge** of §C5 — becomes load-bearing, because arrow 4's
 Einstein content lives on the far side of it.
@@ -6751,35 +7438,57 @@ Einstein content lives on the far side of it.
 **Re-ranked against the destination** (superseding §A11.4 / §B11.4's
 ordering, not their content):
 
-1. **Charts and gluing → manifold (arrow 3).**  New, and first: the
-   destination's own definition requires it, and no other arrow can be
-   posed without it.  Needs a *replacement local instrument* after
-   chapter 12 §12.1 removed the meter's dimensional reading.
-2. **A workable probabilistic description at transport scope.**  Was §B11.4
+1. **Charts and gluing → manifold (arrow 3), on ROAD 1 — the crystal
+   question.**  New, and first: the destination's own definition requires
+   it, and no other arrow can be posed without it.  The instrument now
+   exists and has measured a confirmed gap (homogeneity 0.64 sprinkling /
+   0.39 engineered / 0.07 generic walk), so the question is no longer
+   "how would we tell?" but **"can the grammar TILE?"**.  Still needs a
+   *replacement local instrument* for dimension after chapter 12 §12.1
+   removed the meter's dimensional reading — and §C6's channel-manifold
+   law is the untranslated candidate.
+2. **The v9 MANDATORY QUEUE — recorded, unscheduled, and now
+   load-bearing.**  New entry, and near the top for a reason that is about
+   *cost of ignorance* rather than about citability.  Road 2 has the
+   furthest-advanced grown four-dimensional object in the programme's
+   history and the only measured *interaction*; its funded review left
+   exactly five items (O1–O5): **a 24-seed gated replication; a
+   drift-matched, validation-gated volume instrument; the coupled ladder
+   at `g = 0.18`; the gap-to-mean scan; the bridge pilot.**  None is
+   scheduled (#128 closed the line).  Until they run, "a grown record
+   universe was measured round and 4D" is **`PARKED-AT-PROTOCOL`, with
+   "round" corrected and the volume conjunct instrument-suspect** — and
+   the programme does not know whether it has an existence result or an
+   artifact.  *The cheapest of the five (the replication) would settle
+   most of it.*
+3. **A workable probabilistic description at transport scope.**  Was §B11.4
    item 1; unchanged in importance, worse in prospects: menu-exact is
    impossible for any design (§B9.1), and sector-exact at `(actor, type)`
    granularity is now closed on two independent grounds (§12.2).  The
    surviving candidates are strictly coarser aggregations (type-only,
    total-budget-only) and inexact / observable-only abstractions — all
    untested.
-3. **The empty bridge (§C5).**  Promoted, because arrow 4 — the only
-   Einstein content the corpus owns — lives on the v6 side of a bridge that
-   has never carried a measurement.  The first falsifiable test is
-   specified (the Fisher identity, Gb2) and unrun.
-4. **(H1)**, unchanged: the last gap before the delivery-free settlement is
+4. **The empty bridge (§C5) — and now a second one (§C6.11).**  Arrow 4 —
+   the only Einstein content the corpus owns — lives on the v6 side of a
+   bridge that has never carried a measurement (the Fisher identity, Gb2,
+   specified and unrun).  And v9's webs stand in the same relation to the
+   v10 grammar, with the additional twist that a user directive
+   *declares* them not to be the click law.  **Two unbridged bodies of
+   work, one theory.**
+5. **(H1)**, unchanged: the last gap before the delivery-free settlement is
    unconditional.
-5. **Is there a record-level demand that forces the stationary form?**
+6. **Is there a record-level demand that forces the stationary form?**
    Unchanged, and now doubly interesting: if the answer is permanently no,
    §D3's resemblance is the *only* interpretive home the boundary freedom
    has, which is a reason to state it carefully rather than a reason to
    believe it.
-6. **The `G` calibration.**  Not solvable — that is the theorem — but the
+7. **The `G` calibration.**  Not solvable — that is the theorem — but the
    *dimensionless* question it leaves open (is `c_m = Gm²/ℏc` a record
    output?) is explicitly **eligible** and is the natural arrow-7 target.
-7. **The residual pricing defects** (`h12`; the general-depth ladder;
+8. **The residual pricing defects** (`h12`; the general-depth ladder;
    the `1/16` vs `1/24` merge), unchanged and still carried into the
    completion problem rather than patched.
-8. **Where is the sprinkling floor?**  D55c's own residue — does genuine
+9. **Where is the sprinkling floor?**  D55c's own residue — does genuine
    `M^{2+1}`/`M^{3+1}` shatter **3**? — is cheap, is the natural calibration
    of whatever replaces the meter, and would sharpen §12.1's reframe from
    "sprinklings read ≈ 0" to a located floor.
@@ -6788,9 +7497,11 @@ ordering, not their content):
 part.**  Arrows 3, 5 and 6 are all blocked, and **two of the three are
 blocked on the same object**: a probabilistic description at transport
 scope.  Arrow 3 alone is blocked on something genuinely new (a
-construction, plus an instrument).  So the programme has, at this moment,
-exactly **two** independent next moves — build the manifold, or find the
-coarser aggregation — and everything else waits on one of them.
+construction, plus an instrument) — and it is the arrow with **two roads
+and no bridge between them**.  So the programme has, at this moment,
+exactly **three** independent next moves — build the manifold (Road 1's
+crystal question), find the coarser aggregation, or **discharge Road 2's
+unworked queue** — and everything else waits on one of them.
 
 ---
 
@@ -6804,13 +7515,20 @@ coarser aggregation — and everything else waits on one of them.
 > local geometry whose complexity is priced in actors), two are half in
 > hand (Einstein's equations *in form*, with Newton's constant provably not
 > derivable from inside; a quantum lift of the record process at fixture
-> scale), three are open (charts and gluing into a manifold — the next
-> construction; fields on it; particle creation), and the last is blocked
+> scale), three are open (charts and gluing into a manifold — attacked from two
+> unbridged directions, one of them measuring a confirmed gap and one of
+> them holding a closed, review-indebted 4D construction; fields on it;
+> particle creation), and the last is blocked
 > at four independent points, one of which is the un-derivability of the
-> scale and one of which is the incompleteness of the other arrows.  The
-> two independent next moves are: **build the manifold**, and **find a
-> coarser aggregation that closes at transport scope**.  Everything else in
-> the programme currently waits on one of those two.
+> scale and one of which is the incompleteness of the other arrows.  Governing all of
+> it is the scale doctrine: no fixture-scale object is a particle, and
+> units certify scale-invariant mechanisms rather than objects — which
+> the substrate line reaches independently, since without coupling no
+> collective excitation exists at any scale.  The
+> three independent next moves are: **build the manifold** (can the
+> grammar tile?), **find a coarser aggregation that closes at transport
+> scope**, and **discharge the other road's unworked review queue**.
+> Everything else in the programme currently waits on one of those three.
 ---
 ---
 
@@ -6906,6 +7624,19 @@ defined precisely, and to Part A where the intuition lives.
 | **vacuum ambiguity** | `[LITERATURE]` in QFT on curved spacetime, particle content depends on a vacuum choice not fixed by the dynamics.  Its **resemblance** to the completion's boundary freedom is recorded as a labelled, costed, untested speculation — *at least three unbuilt arrows away from being a question* | D3 |
 | **Walsh–delta** | the corpus's mathematical spin-off (own repository): the delta orientation is the unique entropy minimizer for self-calibrated ±1 Walsh tilts; Theorem 6.1's dichotomy (`N·D > 2.878716` vs `N·D_δ ≤ 64/63`) closes it analytically for `n ≥ 6`; Lean-verified but for one finite computation | C4.4 |
 | **weight (length-weight)** | the grading under the gauge `l_step → μ·l_step`.  **Theorem G:** every intrinsic record functional is weight-**0**, while `σ_A` is weight `−2` — the whole `G` no-go in one line | C2.2 |
+| **celestial clock** | one of `K` fixed directions `v_k` on `S²` in the v9 web; a deposit advances clock `k` through a kernel of `u·v_k`.  Dominance in all `K` clocks is the causal relation | C6.1 |
+| **channel web** | v9's substrate formalism — a fleet of slots growing by commits, ordered by multi-clock dominance.  **A different formalism from the v10 grammar**, and declared by user directive **not** to be the interactive click law | C6.1, C6.11 |
+| **channel-manifold law** | `d = dim(channel manifold) + 2` — index the channels by a *manifold* rather than a count; for 3+1 the channel space is `S²`, so *"why `C = 3`"* is superseded by *"why the sphere?"*.  Reached by first proving the previous target impossible | C6.4 |
+| **churn** | the v9 reset process at rate `1/L`.  Four flavours across the arc: **per-clock** (starves the relation), **full-vector** (cures it), **conservation** (transfers content — the first coupling), **diffusion** (a continuous jump-free leak — the first significantly-rounder webs) | C6.1, C6.9 |
+| **conservation-churn** | the minimal record-native coupling: a churned slot's accumulator is *added to* a receiver rather than destroyed.  Produced the programme's first measured **propagation of influence** (affected slots 0.6 → 3.6 against a control of exactly 1) — but left the cone residual **unchanged** (transfer redistributes the jumps) | C6.9 |
+| **`d_ball`** | Myrheim–Meyer volume dimension read against a **dedicated ballistic-class calibration** (no clamps).  `3.84/3.85` at 45e's `P0/N1`; `4.44` at 48d — the latter reviewed down to **`4.4 ± 0.2`, protocol-conditional, instrument-suspect** (jackknife 7/10 flips) | C6.7, C6.9 |
+| **deposit** | what one v9 commit adds: **direction-valued** — `u = p_s` with probability `α` else uniform on `S²`, magnitude `e ~ Exp(0.109551)` | C6.1 |
+| **`F_iso`** | v9's shape statistic: PCA the transverse cloud to an effective 3-frame, take `q90` directional supports over a pinned 64-direction sphere, report `mean(top 8)/mean(bottom 8)`.  Round ⇒ ≈ 1.  Reference card: Gaussian 1.078, disk 3.044, simplex-interior 1.557 | C6.1, C6.3 |
+| **free-web theorem** | with no coupling, slots never exchange content, so a perturbation influences **exactly one worldline** (*until that slot's next reset*) and **no collective excitation can exist at any scale**.  Verified mechanically.  **Matter requires coupling** | C6.8 |
+| **parking** | v9's target: **round-occupied AND certified ≥ 4D simultaneously**.  Refused across ~60 dial points for every jump class; 45e's pre-registered re-test read **NOT-PARKED**; the diffusive class reads **PARKED-AT-PROTOCOL**, not parked | C6.3, C6.7, C6.9 |
+| **scale doctrine** | `[BINDING, LOG #440]` no fixture-scale object may ever be called a particle (a particle is ~`10²⁰` spacings, ~`10⁶⁰` events); destination units certify **scale-invariant MECHANISMS**, never objects.  Composes with D48 and paper 57's free record scale, and **favours mode readings of "particle"** | D1b |
+| **slot** | one of the `M` accumulators in a v9 fleet; the substrate's unit of locality.  **Not** an actor and not related to one by any unit | C6.1, C6.11 |
+| **two-clock wall** | `[LEMMA]` an order defined as dominance in `k` clocks has order dimension `≤ k` (weak form: `≤ k+1` with an injective first clock).  Every early corpus web was two-clock, so `dim ≤ 2` **by definition** — the re-attribution that every earlier 3+1 refusal was structural | C6.2 |
 | **zero class** | the arbitration-killing counterterm that restores normalization and is **declared excluded**, narrowing the no-go to support-preserving completions | B6.4, A6.4 |
 
 ---
@@ -7010,7 +7741,17 @@ part of the document, not an apology for it.
     39 or the v8 ledger end to end, and a claim of theirs that contradicts
     something I quote could be sitting in a section I did not open.
 
-13. **PART D is a roadmap, not a result.**  Arrows 3, 6 and 7 have no
+13. **PART C6's sources are the ledger and the design notes, not the v9
+    receipts.**  Every number in C6 was verified in `v8/LEDGER.md`
+    (#103–#128), `v9/LOG.md`, or the pinned design notes, but I read **no
+    v9 receipt source and no receipt output**.  Where the ledger and a
+    design note disagreed I followed the ledger; where a round's own entry
+    and its later review disagreed I followed the review, loudly.  The v9
+    papers themselves (papers 1–9, including paper 7 on the
+    shape–dimension frontier and paper 8) are **not read** — C6 is an arc
+    summary, not a reading of the line's own publications.
+
+14. **PART D is a roadmap, not a result.**  Arrows 3, 6 and 7 have no
     corpus content whatsoever beyond being named; their entries are
     statements of what is missing.  The `[MY READING]` in §D3 is speculation
     and is marked three times as such.  The D58 designation for the
