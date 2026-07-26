@@ -133,3 +133,32 @@ Hostile round by an **independent Opus 5 background worker** with a
 self-contained brief, after both receipts are green — the reviewer
 recomputes, never trusts printouts.  Nothing from this unit is
 citable before that round is terminal.
+
+## 8. First-run amendment (2026-07-26, pre-review; recorded, not
+## silently fixed)
+
+**A1 — the §4 blueprint is REFUTED by its own run, and the mechanism
+is a finding.**  The 9-actor blueprint is ADMISSIBLE end to end (31
+events, every one offered by the layer's menu) and realizes only
+**8 of 16** traces: F's full chain plus singletons.  The cause, which
+§4 missed: **a delivery is a join in BOTH directions** — the sender's
+wire absorbs the receiver's accumulated past, so after B delivers into
+F (which already held A), every later send FROM B carries {A,B}, and
+G's chain is contaminated before it starts.  The per-sender send-traces
+form a chain (the theorem, biting its own construction).
+
+**A2 — the repair: the COURIER architecture.**  Sending into an EMPTY
+receiver folds nothing back — the sender stays clean.  So each
+direction-actor mints clean couriers (one fresh actor per
+contaminating step, receiving v1 while empty), and each courier
+performs exactly ONE send into a non-empty accumulator, then is spent.
+Contaminating steps needed: F 3, G 2, H 2, I 2, the two late pairs 2 —
+**11 couriers**, total 20 actors, ~42 events.  The amended schedule:
+clean first receipts (A→F, B→G, A→H, B→I); courier mints (B→J; C→K,L,M;
+D→N,O,P,Q,R,S; A→T); then J→F, K→F, N→F; L→G, O→G; M→H, P→H; Q→I, T→I;
+R→A, S→C.
+
+The Dilworth bound is untouched by A1 (it is a lower bound; the failed
+run VIOLATES nothing).  The receipt keeps the §4 build as a gated
+negative exhibit — the backflow mechanism on the record — and runs the
+courier build as primary.
