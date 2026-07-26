@@ -1,0 +1,28 @@
+[D55 A2 — the sphere calibrations]
+  banner: exact rational certificates only; grid ranges declared;
+  a failed search is NOT-FOUND, never impossibility (one-
+  sidedness); the impossibility direction (A2b) is carried by an
+  exact Radon certificate, not by search.
+
+[A2a — the m = 4 family on S^2]
+  [PASS] A2a-0 the four points are EXACTLY on the unit sphere (d47a's own rational tetrahedron, re-verified here)  (norms all exactly 1)
+  [PASS] A2a **THE m = 4 FAMILY IS SPHERE-COMPATIBLE**: all 16 subsets of the tetrahedron realized by exact rational caps, each certificate re-verified by Fraction dot products.  D54's record — whose SKY-B family IS all of B4 — is therefore realizable as a cap system on S^2: 'not an arc system' upgrades to 'fits the sphere'  (certificates = 16/16, all verified = True, grid = [-2..2]^3)
+
+[A2b — no five points shatter on S^2 (Radon, exact)]
+  round-1 referee config: lambda = ['-23/49', '-19/49', '-24/49', '17/49', '1'], Radon split [3, 4] | [0, 1, 2]
+  tetrahedron + antipode: lambda = ['1/2', '0', '-3/4', '-3/4', '1'], Radon split [0, 4] | [2, 3]
+  [PASS] A2b **NO FIVE POINTS SHATTER ON S^2** — certificated: for each rational 5-point configuration an EXACT affine dependence (sum lambda = 0, sum lambda.p = 0, lambda != 0) with both sign classes non-empty.  The standard Radon argument (in the note) then shows the positive-side subset is cut off by NO halfspace: any (u, t) separating it would force t.c <= sum_pos lambda(u.p) = sum_neg |lambda|(u.p) < t.c.  Since shattering needs EVERY subset, five directions can never shatter on the sphere — caps have VC dimension 4.  (General for ANY five points in R^3: five points always carry an affine dependence, by dimension count)  (both configurations certificated exactly)
+
+[A2c — the m = 5 family on S^3]
+  [PASS] A2c-0 five points EXACTLY on the unit 3-sphere  (norms all exactly 1)
+  [PASS] A2c **THE m = 5 FAMILY FITS S^3**: all 32 subsets of five rational points on the unit 3-sphere realized by exact rational caps (halfspaces in R^4 shatter 5), every certificate re-verified by Fraction dot products.  With A2b this is the meter reading made concrete: the shatter-5 sky fits S^3 and PROVABLY not S^2 — beyond 3+1  (certificates = 32/32, verified = True, missing = [], grid = [-3..3]^4)
+  [PASS] H1 AST anti-vacuity (no bare-constant predicates; LOG #403 MA-2 scope)  (check() calls = 6, bare = 0)
+
+[VERDICT — D55 A2]
+  THE CALIBRATION LADDER, all exact: B4 fits S^2 (16 caps);
+  no five points EVER shatter on S^2 (Radon, certificated
+  twice); B5 fits S^3 (32 caps).  The meter's scale is real:
+  max-shatter 4 = sphere-compatible, max-shatter 5 = S^3.
+
+[d55b] 6 PASS / 0 FAIL
+EXIT 0

@@ -9792,3 +9792,39 @@ S^2.
 Claims reading-relative to SKY-B with per-depth reporting; NO
 genericity claim (not posable at transport scope, D52). Review:
 independent Opus 5 round after green.
+
+## 2026-07-26 — D55 GREEN-UNREVIEWED: SHATTER-5 IS CONSTRUCTIBLE — THE
+## ADMISSIBILITY LAYER DOES NOT SELECT 3+1 (LEDGER #431)
+Receipts: d55_shatter5_exact.py 10 PASS / 0 FAIL;
+d55b_sphere_calibration_exact.py 6 PASS / 0 FAIL; both exit 0.
+Result note: note-d55-dimension-meter-result.md.
+**A1.** The GENERALIZED courier builder — mechanical from scd(m) — first
+re-derived m = 4 as an ANCHOR (22 actors, 44 events, all 16 subsets,
+shatter confirmed, same family as D54's hand build), then: **A 42-ACTOR,
+84-EVENT RECORD (10 chains, 26 couriers), EVERY EVENT MENU-SELECTED,
+REALIZING ALL 32 SUBSETS OF ITS 5 DIRECTIONS AND SHATTERING A 5-SET AT
+DEPTHS 5, 6, 7.** Dilworth-consistent: per-initiator chains, >= 10
+contributing (the price paid), family Dilworth-tight at exactly 10.
+The pre-registered CONSTRUCTIBLE held; the PRE-STATED consequence
+follows: **caps on S^2 stop at 4, so this sky exceeds the sphere — THE
+ADMISSIBILITY LAYER DOES NOT SELECT 3+1. The ladder measures CAPACITY
+at C(k, floor(k/2)) actors; SELECTION, IF ANYWHERE, LIVES IN THE
+MEASURE — the convergence question, exactly as pre-stated at #430.**
+Instrument defect found and repaired in-run: the initiator-restricted
+menu must include the delivery RECEIVER — candidates_for ENUMERATES
+receivers from its actor list, so the restriction-soundness claim held
+for admissible() but not for enumeration (run-1 refusal at prefix 2);
+the TG-EQ equivalence gate passes with the corrected restriction.
+**A2, all exact.** A2a: B4 realized by 16 rational caps on S^2 — D54's
+record is SPHERE-COMPATIBLE, "not an arc system" upgraded. A2b
+[THEOREM, certificated twice]: NO five points shatter on S^2 — exact
+affine dependences with non-empty sign splits on two rational configs;
+Radon closes it. A2c: B5 realized by 32 rational caps on S^3 (e1..e4 +
+(-1/2,-1/2,-1/2,-1/2)). **The meter's scale is concrete: the m = 5 sky
+fits S^3 and PROVABLY not S^2 — beyond 3+1.**
+SCOPE HELD: SKY-B reading-relative, depths enumerated, ONE engineered
+record per m, NO genericity claim (not posable at transport scope,
+D52). RESIDUES: general-m (patterned, unrun, unclaimed beyond 5);
+minimality; the convergence question, PENDING B1 (the transport-sigma
+closure probe, running as an advisory Opus 5 study).
+NEXT: independent Opus 5 hostile round on D55; then REASSESS with B1.

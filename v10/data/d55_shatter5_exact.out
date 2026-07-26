@@ -1,0 +1,49 @@
+[D55 A1 — shatter-5 via the generalized courier builder]
+  banner: the builder is MECHANICAL from scd(m); m = 4 must
+  reproduce D54's family (anchor, exit 1 on failure); m = 5 is
+  the pre-registered question.  Menus initiator-restricted, with
+  sampled full-menu equivalence GATED.  Every event selected
+  from the committed layer's own menu.
+  [PASS] G0 anchors: transport layer from committed d42b1; sky/shatter from committed D47a (AST extraction)  (single sources)
+
+[the m = 4 anchor — the general machine vs D54's hand build]
+  [PASS] G1 THE ANCHOR: the GENERAL builder at m = 4 re-derives D54's result — all 16 subsets realized, shattered 4-set returned — from scd(4) alone, with no hand-tuning.  (The record differs from D54's in actor accounting — 6 accumulators vs 4+2 late deliveries — but the trace FAMILY is the same: all of B4)  (actors = 22 (chains 6, couriers 11), events = 44, depth = 5, subsets = 16/16, shatter = True)
+  [PASS] G2 TG-EQ [ANCHOR] the initiator-restricted menu is EXACTLY the full menu filtered to those initiators, on sampled steps — admissible(acts, e) reads no actor list, and this gates it  (samples = [('X delivers v1 to D0', True, True), ('D0 pads', True, True), ('mint C1 <- D2', True, True)])
+
+[the m = 5 build — THE QUESTION]
+  [PASS] G3 THE m = 5 BUILD IS ADMISSIBLE END TO END: 84 events over 42 actors (10 accumulator chains, 26 couriers), every event offered by the committed layer's own menu — the layer, not the author, decided  (events = 84, refusal = None)
+  [PASS] G4 the five directions are a genuine sky: pairwise incomparable, one height, above E; depth reported  (|dirs| = 5, depth = 6)
+  [PASS] G5 CAPACITY (the SC5 analog at m = 5): >= 5 directions, >= 32 DISTINCT traces, empty trace present  (distinct traces = 32, empty = True)
+  [PASS] G6 **ALL 32 SUBSETS REALIZED AND A SHATTERED 5-SET RETURNED.**  The transport layer admits a sky that exceeds the sphere's VC dimension — caps on S^2 shatter 4 and never 5 (D54 round 1, Radon-certified) — so this sky is not realizable by caps on S^2.  THE METER READS BEYOND 3+1: the admissibility layer does not select the sphere  (subsets = 32/32; shattered 5-set = ['D0', 'D1', 'D2', 'D3', 'D4'])
+  [WITNESS TRANSPORT-SHATTER-5] actors = 42, events = 84, depth = 6, set = ['D0', 'D1', 'D2', 'D3', 'D4']
+  [PASS] G7 DILWORTH CONSISTENCY at m = 5: per-initiator traces are chains (zero crossings); contributing actors >= C(5,2) = 10 (the gate's price, paid); and the realized family contains the 10-element middle layer, so its min chain cover is EXACTLY 10 — Dilworth-tight  (nested = True, contributing = 32 (bound 10), middle layer present = True)
+
+  per-depth table (D54 K11 discipline):
+    d=1: |dirs|=1, traces=1, shatter5=None
+    d=2: |dirs|=2, traces=4, shatter5=None
+    d=3: |dirs|=3, traces=8, shatter5=None
+    d=4: |dirs|=4, traces=16, shatter5=None
+    d=5: |dirs|=5, traces=32, shatter5=YES
+    d=6: |dirs|=5, traces=32, shatter5=YES
+    d=7: |dirs|=5, traces=32, shatter5=YES
+    d=8: |dirs|=6, traces=29, shatter5=None
+    d=9: |dirs|=7, traces=26, shatter5=None
+  [PASS] G8 PER-DEPTH REPORTING: the depths at which the record shatters a 5-set are enumerated, not sampled  (shatter-5 depths = [5, 6, 7])
+  [PASS] G9 AST anti-vacuity (no bare-constant predicates; scope per LOG #403 MA-2: exactly that, nothing more)  (check() calls = 11, bare = 0)
+
+[VERDICT — D55 A1]
+  SHATTER-5 IS CONSTRUCTIBLE.  The generalized courier
+  builder, mechanical from scd(5), yields a 42-actor,
+  84-event record whose SKY-B sky realizes all 32
+  subsets of its 5 directions.  Caps on S^2 stop at 4, so
+  this sky exceeds the sphere: THE ADMISSIBILITY LAYER DOES
+  NOT SELECT 3+1.  The ladder measures capacity; selection,
+  if it exists anywhere, lives in the MEASURE — the
+  convergence question, exactly as pre-stated in the pin.
+  Scope: reading-relative to SKY-B, depths enumerated; ONE
+  engineered record — NO genericity claim (not posable at
+  transport scope, D52).
+
+[d55] 10 PASS / 0 FAIL
+EXIT 0
+RC=0
