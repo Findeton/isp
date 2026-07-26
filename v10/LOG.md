@@ -10864,3 +10864,26 @@ any tensor/curvature sentence starts there.  Validation gate earned
 its keep (caught an index-order closure bug before any census).
 GREEN-UNREVIEWED: hostile round dispatched.  DESCENT-CONDITIONS
 pinned next per the user's standing order.
+
+## 2026-07-26 — D65 PINNED: THE DESCENT CONDITIONS — the missing map's
+## first measured segment (LEDGER #465)
+Pin FROZEN before any receipt: note-d65-descent-conditions-pin.md.
+The unit gates the CLOSED generated law (#460) against paper 29's
+stated requirements for any record process, one by one: DC1 the
+commuting-square identity P(a|H)P(b|Ha) =? P(b|H)P(a|Hb) over every
+commuting pair (commuting := both orders admissible + sigma-equal,
+which by (H1)+(H2) is full future-law identity — the generated analog
+of [Hab] = [Hba]); it CAN FAIL (masses 2 vs 5/2 make normalized
+products non-obvious) and both outcomes are pre-registered results —
+holding = the generated law descends to an order-quotiented record
+measure; failing = the map must carry order data, and the failure
+pattern should be sigma-functional (check).  DC2 boundary sufficiency
+= a RESTATEMENT gate (pi = sigma; fibre constancy IS (H1)/(H2)) whose
+content is the identification: D59's first supplied-not-derived item
+(the boundary state) is, at this scope, DERIVED.  DC3 the five
+durable-record hypotheses gated one by one (decoherence trivially
+satisfied AND trivially uninformative — the functional level is where
+the map's remaining segment lives, said aloud).  DC4 the
+supplied-vs-derived ledger re-scored at closed scope, no item moving
+without a gate.  Falsifier discipline per pin §4; scope two-actor
+delivery-free d42a only.  Worker dispatched.
