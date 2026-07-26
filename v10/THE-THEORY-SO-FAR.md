@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #447** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #446** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -200,7 +200,10 @@ destination that follows.)*
     3+1?* needs either a measure at delivery scope (blocked by the
     unbounded-menu theorem), or a resource-cost principle, or a
     counting-typicality argument — and the corpus has **none of the
-    three**.
+    three**; and beneath that sits a deeper one, since the *identified*
+    law of measured physics and this generated grammar meet only at a
+    **named missing map**, so until it closes the grammar's geometry and
+    the laboratory's clicks are two ledgers.
 12. That earlier corpus already owns one piece of Einstein: it derives the
     field equations **in form**, as the thermodynamics of records, and
     proves — by one structural theorem, not a list of failures — that it
@@ -232,7 +235,8 @@ destination that follows.)*
 - **A2. The click law** — the six kinds of thing that can happen; what
   is completely settled (what *can* happen), what is settled but odd
   (relative weights), what is not settled at all (what *does* happen);
-  the known warts.
+  the known warts; the **three senses** of "the click law", and the
+  programme's other stream — the identified law.
 - **A3. Relativity without a global now** — cuts, slicings, gauge;
   views that lag; delivery as a two-way join; why every law here must
   be slicing-independent.
@@ -264,8 +268,9 @@ destination that follows.)*
 - **B2. The grammar and the weight system** — the six event types with
   carriers and admission clauses; `candidates_for` as sole authority;
   the `1 + k/4` ladder with its spectra; the honest status ladder
-  (i)–(v); the `h12` off-ladder configuration; the merge pricing
-  divergence.
+  (i)–(vi); the `h12` off-ladder configuration; the merge pricing
+  divergence; and **the action line, the identified law, and the missing
+  map**.
 - **B3. Cuts, foliations, views, transport** — canonical classes; the
   own-view lag with its census; the monotonicity failure; the join-view
   lattice; the two-way join.
@@ -731,6 +736,9 @@ breaks.
 > kernels (two different, equally available rules for who wins a
 > dispute) has been made — it has not; both remain posited
 > alternatives, and they *disagree observably* on a three-way dispute.
+> And nothing here claims the grammar **is** the identified law of
+> §A2.6, or that any result about one transfers to the other: that
+> transfer is exactly the missing map.
 
 ---
 
@@ -6462,7 +6470,7 @@ no bridge should be inferred:
    Both concern something the theory cannot supply from inside — a measure
    in one case, an absolute length in the other — and both were argued by
    an invariance/weight argument.  **That is a resemblance, not a theorem.**
-   No unit relates them.  (PART D §D6 records a *labelled speculation* in
+   No unit relates them.  (PART D §D3 records a *labelled speculation* in
    this vicinity; it is labelled precisely because of this row.)
 5. **v10's actors are not v6's division events.**  v6's division-event
    causal set is a Poisson sprinkling with a Lorentz-invariant intensity;
@@ -6488,6 +6496,14 @@ no bridge should be inferred:
 > user directive that **declares** it not to be the interactive click law.
 > So the honest count is **three bodies of work in one programme, joined
 > by two unbridged postulates and zero cross-measurements.**
+>
+> **The corpus's fourth relation is of a better kind, and it is worth the
+> contrast.**  Between the grammar of Parts A/B and the *identified* law
+> of §B2.9 there is no unbridged postulate: there is a **named missing
+> map**, stated in a paper, with a partial crossing already proved and
+> its failure mode exhibited.  That is what an unestablished relation
+> looks like once someone has done the work of stating it — and it is the
+> shape the two relations above still lack.
 ---
 
 ## C6. The v9 channel-manifold arc — the other road to the manifold
@@ -6953,9 +6969,13 @@ This is a second instance of §C5's problem, and it must be named as such.
   map from deposits to versions, no derivation of either from the other.
   **RELATION UNESTABLISHED.**
 - The user directive at #128 is stronger than "unestablished": it
-  **declares** that v9 did not use the interactive click law.  So the two
-  lines are not merely unrelated — one of them is officially *not the
-  theory*.
+  **declares** that v9 did not use the interactive click law.  Read
+  precisely, it disqualifies v9's builders from **both** of the corpus's
+  dynamics streams — they are neither the identified law (§B2.9) nor the
+  record-closed generated-law line.  **It does not touch the d42 grammar**,
+  which *is* that second line, and which remains the only object in the
+  corpus that generates causal structure at all (the identified law lives
+  **on** a spacetime).
 - **They disagree about their own geometry, measurably.**  v9's webs were
   engineered toward *round-cone, Minkowski-like* occupancy and got within
   6–9%; v10's records were measured against genuine Minkowski sprinklings
@@ -7171,8 +7191,12 @@ two are half-done, three are open, and the last is blocked.
 | 7 | particles → matter | **OPEN** |
 | 8 | matter → a laboratory number | **BLOCKED**, and the block is four-fold |
 
-Two honest points about this table.  **The arrows are not independent, and
-three of them are blocked on the same thing** — the programme cannot
+Three honest points about this table.  **Every arrow is drawn in the
+grammar's register**, and the corpus's other stream — the identified law,
+which is where measured physics lives — sits on the far side of a **named
+missing map** (§A2.6, §B2.9).  Until that map closes, results here
+transfer to laboratory clicks through nothing at all.  **The arrows are
+also not independent, and three of them are blocked on the same thing** — the programme cannot
 currently pose probabilistic questions at the scope where its geometry
 lives (chapter 9, §§A9.4/B9.4b).  **And one constraint
 governs every row**: §D1b's scale doctrine, which forbids calling any
@@ -7388,7 +7412,11 @@ independent grounds, of which the second is a *result of arrow 4*:
    arrows 3, 5, 6/7 of this very table);
 4. **aggregation loss** — merging actors is never impossible but is
    massively lossy, so a bound extracted through a single-line description
-   of a composite is a bound on the coarse world (§B1.2).
+   of a composite is a bound on the coarse world (§B1.2);
+5. and, upstream of all four, **the missing map** (§B2.9): the laboratory's
+   clicks are governed by the *identified* law, which the corpus supplies
+   rather than derives a record grammar for.  Even a completed arrow 7
+   would land on the wrong side of that map.
 
 The slot named **(0) THE COARSE-GRAINING** is logically prior to the four
 things a bridge must fix, and is **EMPTY**.  The sign-off block is
@@ -7520,6 +7548,12 @@ likely.
 The **3+1 control** is *finished*, and its answer removed an instrument
 rather than supplying one.
 
+And beneath all of them sits a front that belongs to neither line: **the
+missing map** between the grammar and the identified law (§A2.6).  It
+ranks below the two construction problems only because nobody knows how
+to attack it — not because less depends on it.  Everything does: until it
+closes, none of this reaches a laboratory even in principle.
+
 And **the v9 arc** —
 turns out to hold the furthest-advanced construction anyone has of a
 four-dimensional grown object, together with an unworked queue of the
@@ -7559,34 +7593,45 @@ ordering, not their content):
    the programme does not know whether it has an existence result or an
    artifact.  *The cheapest of the five (the replication) would settle
    most of it.*
-3. **A workable probabilistic description at transport scope.**  Was §B11.4
-   item 1; unchanged in importance, worse in prospects: menu-exact is
+3. **The missing map** (§B2.9) — the corpus's **deepest** named front,
+   beneath (H1) and beneath the transport measure, because it is the one
+   gap that makes two ledgers out of one programme.  Until it closes, the
+   grammar's geometry and the laboratory's clicks cannot be spoken of
+   together, and the destination's last arrow is unreachable in principle
+   rather than merely unbuilt.  What exists: paper 29's conditional
+   descent theorem (decoherence, one atom, positive mass, boundary
+   sufficiency) and the exhibited failure mode (erase a setting record and
+   sufficiency breaks).  What is missing: a derivation, rather than a
+   supply, of the identified law's boundary state, measure, record
+   instrument and **generated record grammar**.
+4. **A workable probabilistic description at transport scope**, unchanged
+   in importance and worse in prospects: menu-exact is
    impossible for any design (§B9.1), and sector-exact at `(actor, type)`
    granularity is closed on two independent grounds (§B9.4b).  The
    surviving candidates are strictly coarser aggregations (type-only,
    total-budget-only) and inexact / observable-only abstractions — all
    untested.
-4. **The empty bridge (§C5) — and now a second one (§C6.11).**  Arrow 4 —
+5. **The two empty bridges (§C5, §C6.11).**  Arrow 4 —
    the only Einstein content the corpus owns — lives on the v6 side of a
    bridge that has never carried a measurement (the Fisher identity, Gb2,
    specified and unrun).  And v9's webs stand in the same relation to the
    v10 grammar, with the additional twist that a user directive
    *declares* them not to be the click law.  **Two unbridged bodies of
    work, one theory.**
-5. **(H1)**, unchanged: the last gap before the delivery-free settlement is
+6. **(H1)**, unchanged: the last gap before the delivery-free settlement is
    unconditional.
-6. **Is there a record-level demand that forces the stationary form?**
+7. **Is there a record-level demand that forces the stationary form?**
    Unchanged, and now doubly interesting: if the answer is permanently no,
    §D3's resemblance is the *only* interpretive home the boundary freedom
    has, which is a reason to state it carefully rather than a reason to
    believe it.
-7. **The `G` calibration.**  Not solvable — that is the theorem — but the
+8. **The `G` calibration.**  Not solvable — that is the theorem — but the
    *dimensionless* question it leaves open (is `c_m = Gm²/ℏc` a record
    output?) is explicitly **eligible** and is the natural arrow-7 target.
-8. **The residual pricing defects** (`h12`; the general-depth ladder;
+9. **The residual pricing defects** (`h12`; the general-depth ladder;
    the `1/16` vs `1/24` merge), unchanged and still carried into the
    completion problem rather than patched.
-9. **Where is the sprinkling floor?**  D55c's own residue — does genuine
+10. **Where is the sprinkling floor?**  D55c's own residue — does genuine
    `M^{2+1}`/`M^{3+1}` shatter **3**? — is cheap, is the natural calibration
    of whatever replaces the meter, and would sharpen §B5.7's reframe from
    "sprinklings read ≈ 0" to a located floor.
@@ -7701,6 +7746,12 @@ defined precisely, and to Part A where the intuition lives.
 | **view** | see *own view / full view*; a view is a **sub-record**, nothing psychological | B3.2 |
 | **`Z`** | the completion's positive cut data; `Zhat = 2^(−|h|) f(class(sigma(h)))` is the settled one at d42a scope | B6.1, B6.10 |
 | **`Zhat`** | the settled root-free completion: `λ = 2`, `f = (4,4,3,7,3,3)/3`, unique up to scale **within the form** | B6.10, A6.7 |
+| **action line** | the corpus's *other* dynamics stream (papers 13/15/18/19, D20–D27): quantum-mechanical — amplitudes, class operators, a decoherence functional — with durable clicks only after a record instrument is **supplied**.  It **presupposes spacetime** | B2.9, A2.6 |
+| **D15 action** | the Standard Model plus effective gravity at the measured couplings; the conditional measure of the whole-history process it generates **is** the identified click law over the tested energy domain | B2.9 |
+| **generated-law line** | the stream of Parts A and B (papers 26–32, D34–D58): record-closed conditional laws on generated carriers, culminating in the d42a/d42b grammar.  Constructed, receipt-anchored, **generates** causal structure, **presupposes no spacetime** | B2.9 |
+| **identified law** | the third sense of "the click law": empirically anchored — *identified, not derived* — and **not proved record-closed**.  Distinct from the grammar's admissibility law (complete) and its probability law (not self-normalizing) | B2.8, B2.9, A2.5 |
+| **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front | B2.9, D4 |
+| **no silent erasure** | `[POSITED]` every loss of a record-accessible distinction must be **received** by records — total content conserved, sealing = dispersal, never intrinsic destruction.  The principle that closes the action line's coherence clause, with a parameter-free falsifier | B2.9, A2.6 |
 | **axioms R / S / C** | the earlier corpus's three: laws are laws of whole sealed histories; **no distinction without a record**; couplings fixed by self-consistency under refinement | C1 |
 | **Barandes-indivisible** | a process whose one-time transition law fails Chapman–Kolmogorov except at sparse **division events**; the barrier is the gap between `\|Σ\|²` and `Σ\|·\|²` — the interference cross-term | C1, C3 |
 | **Born = K1** | the statement that a constructed isometric arbitration family's squared branch amplitudes reproduce the committed `K1` kernel exactly (`1/2`–`1/2` on the 2-conflict, recomputed from the layer).  Appears in v10 paper 31 §4.3; the earlier Born layer (paper Va) is the same *kind* of statement — **relation formally unestablished** | C3.5, C5.4 |
@@ -7744,13 +7795,15 @@ defined precisely, and to Part A where the intuition lives.
 What had to be compressed, and where the full account lives.  This list is
 part of the document, not an apology for it.
 
-1. **Papers 1–29 are essentially absent.**  The v10 line has 32 papers;
-   this document covers the recent campaign (roughly papers 30–32 and
-   ledger entries #404–#433) plus the objects those depend on.  The
-   sealed-holonomy line, the SCIR rulebook line, the predictive-record-DAG
-   boundary, the reception theorem, the action-cocycle work, and the whole
-   v1–v9 prehistory appear only where a later result cites them.  Paper 57
-   (v6) appears only as the source of the un-fixable-`G` no-go.
+1. **The v10 line's earlier papers are compressed, not absent.**  Of its
+   32 papers the book develops 26–32 in full; the **action line** (13/15/
+   18/19 and the D20–D27 units) gets one subsection per register
+   (§A2.6, §B2.9) rather than a chapter, and paper 29's bridge audit is
+   quoted rather than worked through.  Papers 1–12 — the SCIR rulebook
+   line, the predictive-record-DAG boundary, the reception theorem —
+   appear only where a later result cites them.  The action line's own
+   ledger is `v8/LEDGER.md` #126–#130 and a reader wanting that stream in
+   depth should go there and to paper 18 directly.
 
 2. **Paper 31's four decisions are summarized in one table row each.**
    S1 (collar-bracket rule-independence, `κ(1/2) = 13/2304`,

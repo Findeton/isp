@@ -10355,3 +10355,25 @@ separately certified and their COMPOSITION is the next construction
 (the "wide crystal": residue 1 of this unit). Residues: bigger grid;
 the wide crystal; non-identity transitions on the brick (the real
 cocycle question now has its object).
+
+## 2026-07-26 — THE BOOK ABSORBS D59 AND THE ACTION LINE (LEDGER #449)
+Integration patch committed: 7,914 lines. Both paper-29 quotations
+verified verbatim by the writer against the file; the action line
+(papers 13-19, no-silent-erasure, the identification with its
+couplings and its carved-in ceiling) now has its own subsections in
+both registers (A2.6/B2.9); the click-law answer is one sentence in
+three parts (admissibility complete / probability not
+self-normalizing / identified not proved record-closed — one
+programme, three senses, ONE MISSING MAP); the missing map enters
+Part D's ranking at #3 with the honest note that it ranks below the
+construction problems only because nobody knows how to attack it,
+"not because less depends on it". The re-read caught a PRE-EXISTING
+dangling reference (C5.4 -> nonexistent D6; fixed) and two silently
+failed batched edits (re-applied, verified 6/6). A coherence the
+book did not manufacture: BOTH streams independently name "3+1
+emergence remains open" as their ceiling — paper 18's carved-in list
+and Part D's roadmap now visibly ask the same question from opposite
+ends of the missing map. Stamp set to #446 (what is integrated);
+D60's crystal result (#447-#448) and the H1-probe outcome are QUEUED
+for the next integration pass, to be batched with the review-round
+results per the one-go discipline.
