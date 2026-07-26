@@ -10377,3 +10377,39 @@ ends of the missing map. Stamp set to #446 (what is integrated);
 D60's crystal result (#447-#448) and the H1-probe outcome are QUEUED
 for the next integration pass, to be batched with the review-round
 results per the one-go discipline.
+
+## 2026-07-26 — THE H1 PROBE (ADVISORY, Opus 5; core lemma verified by
+## me): A CLOSED-FORM MENU LAW AND A DEPTH-FREE PROOF ROUTE (LEDGER #450)
+Deliverables: v10/code/d60p_h1_probe.py, data/.out,
+note-d60p-h1-probe.md (PROBE/ADVISORY).
+**NO COUNTEREXAMPLE: depth 8 EXHAUSTIVE — 930,631 histories** (census
+[1,6,32,176,976,5280,27904,145408,750848]), zero sigma-class menu
+splits; plus sampling to depth 40, renewal-pumping families to length
+44, adversarial pairs. **THE PROOF ROUTE, closed up to one named
+residual:** LEMMA 2 (THE OWN-VIEW DICHOTOMY) — a candidate's own view
+is EITHER the initiator's register cone OR the FULL view, no third
+case, because regs_of keys the poset on ACTOR names (a pair-arb
+occupies both registers and sees everything). **VERIFIED BY ME
+INDEPENDENTLY: 34,374 candidates at depth <= 5, cone = 32,342, full =
+2,032, THIRD CASE = 0** — and the 2,032 full-view cases are EXACTLY
+D51's 2,032 lag pairs: the dichotomy explains the lag. On the cone
+the layer is RIGID (Lemma 5: alive_a a singleton, <= 1 live proposal,
+has_p XOR has_r) — **which dissolves D51's MV2 obstruction: the
+cone-level bits are not full-view-determined, but only the two
+complementary values ever occur, so the idle weight is constant 3/4.**
+Consequently **menu(h) = G(sigma_raw(h))** for an explicit ~10-line G,
+gated entrywise in Fractions on all 930,631 histories; (H1) follows by
+equivariance WITH NO DEPTH PARAMETER. BONUS: G derives d42b3's G-L2
+quarter law (propose 1/8, self-arb 1/4, pair-arb 1/8 in twos; blind
+groups sum exactly 1/4; per-actor mass in {1, 5/4}) — a gated-and-
+scoped law becomes a THEOREM of the closed form. THE PROBE'S OWN
+INSIGHT, recorded: both dead routes assumed the menu view was an
+intermediate object needing tracking; it never is — what the lagging
+actor misses is never its OWN structure, which is all the cone
+projections can see. RESIDUAL, named and bounded: Lemma 5's induction
+is written in full but machine-checked only in its CONCLUSIONS; the
+inductive step must be mechanized (finite, over the abstract state
+space). SCOPE WARNING carried: the dichotomy is a TWO-ACTOR fact
+(three actors: a pair-arb sees the union of two cones, not
+everything) — nothing here may be quoted beyond delivery-free
+two-actor d42a. NEXT: D61 mechanizes the induction.

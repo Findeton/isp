@@ -1,0 +1,85 @@
+========================================================================
+[d60p — ADVISORY PRE-PIN PROBE on (H1)]  ** NOT A PIN **
+  banner: EXACT Fractions; deterministic; d42a DELIVERY-FREE,
+  two actors.  The admission layer and sigma/menu canonical
+  forms are PORTED BY TEXT EXTRACTION from the committed
+  receipts (no re-implementation).  Depths are PRINTED.
+  MAXDEPTH = 8; SAMPLE_DEPTH = 40; SEED = 20260726
+========================================================================
+
+[S0 anchors — everything is ported, nothing re-implemented]
+  [PASS] S0(a) the d42a admission layer is exec'd path-anchored from the committed d42b3 receipt, and sigma/canon_menu are extracted VERBATIM (by text slice) from the committed d44a receipt — the probe defines no admission or abstraction logic of its own  (layer = d42b3_placement_exact.py; sigma/menu = d44a_closure_theorem_exact.py; blk1 3702B, blk2 1934B)
+
+[S1+S2 structural gates — exhaustive to depth 6]
+  family: {0: 1, 1: 6, 2: 32, 3: 176, 4: 976, 5: 5280, 6: 27904}, total 34375
+  [PASS] S1 THE CLOSED FORM FOR CANDIDATE VIEWS.  From `regs_of` alone: p/n events occupy the register of their actor; an r event occupies the registers of its ckey's PROPOSERS plus the fresh version register.  Hence (a) cone(A) u cone(B) = every event; (b) the register-a events form a CHAIN whose downset is cone(a); (c) cone(a) = (everything <= the last PAIR arb) u (a's own events after it); and (d) THE CANDIDATE VIEW IS EITHER cone(a) OR THE FULL VIEW — cone(a) for idle / propose / SELF-arb, the full view for PAIR-arb.  There is no third case.  Zero violations  (histories = 34375; lag |full \ cone| spectrum = {0: 9966, 1: 14394, 2: 15302, 3: 14926, 4: 9922, 5: 3762, 6: 478})
+  [PASS] S2 OWN-CONE RIGIDITY.  On the cone the layer is almost trivial: holdings(a) is cone-invariant; the cone-alive holding is a SINGLETON X[a]; a has AT MOST ONE live proposal and it sits on X[a]; a's own live proposals are cone-invariant; the cone's arb components for a are [] or the ONE singleton {a's proposal}; the cone's proposal options are exactly {(X,0),(X,1)} when a has no live proposal and [] otherwise; so has_p XOR has_r and the IDLE WEIGHT IS THE CONSTANT 3/4; the FULL view likewise has at most one a-component; hold[a] = None iff X[a] is full-superseded; and at most one actor can have hold = None.  Zero violations  (idle weights observed = ['3/4']; max |refs| = 2; sigma-port invariant counters = {'alive': 0, 'nonsup': 0, 'liveX': 0, 'cmp': 0})
+
+[S3 the predictor G — menu as an explicit formula in sigma's own recorded data]
+  sigma_raw(h) = (hold, live, comps, refs, sup).  G reads NOTHING
+  else: no history, no poset, no view.  Bases that sigma has
+  dropped appear as the single opaque token EXTRA.
+  [PASS] S3 THE PREDICTOR IS EXACT.  G(sigma_raw(h)) reproduces menu(h) ENTRYWISE with exact Fraction weights on every history of the family (depth 6) — same event set, same weights, no history data consulted.  G is a FUNCTION OF sigma's raw tuple by construction, so this is (H1) reduced to G's own correctness rather than to a sweep  (histories = 34375; mismatches = 0)
+  [PASS] S3(b) THE DROPPED BASE IS UNAMBIGUOUS.  At most ONE base is mentioned by the menu but dropped by sigma, and it is always the cone-alive base X[a] of the unique actor with hold[a] = None (and no live proposal).  So the single EXTRA token is forced: renaming it costs no information and the renamed menus of sigma-equal histories coincide  (dropped-base count spectrum = {0: 29547, 1: 4828}; ambiguous cases = 0)
+  [PASS] S3(d) THE CLOSED FORM'S COROLLARIES, all forced by G and all exact: every idle weight is 3/4; every propose weight is 1/8; every SELF-arb weight is 1/4; every PAIR-arb ("blind") weight is 1/8 and they come in twos — so EVERY BLIND GROUP SUMS TO EXACTLY 1/4.  Hence the per-actor menu mass is 1 or 5/4 and the total is 2, 9/4 or 5/2.  This DERIVES d42b3's G-L2 quarter-quantization, which that receipt could only gate and scope  (propose weights = ['1/8']; self-arb = ['1/4']; pair-arb = ['1/8']; per-actor masses = ['1', '5/4']; totals = ['2', '5/2'])
+  [PASS] S3(c) CROSS-GATE against the COMMITTED canonical menu of d44a (the very object (H1) is stated about): equal sigma => identical canon_menu on the whole depth-6 family  (sigma classes = 36; splitting classes = 0)
+
+[S4 the exhaustive sigma -> menu sweep, pushed to depth 8]
+  memory-lean DFS: histories are not retained; only the
+  sigma -> (canonical menu, first witness) table is.
+  histories visited by depth: {0: 1, 1: 6, 2: 32, 3: 176, 4: 976, 5: 5280, 6: 27904, 7: 145408, 8: 750848}
+  total = 930631; distinct sigma values = 36
+  depth at which each sigma value was FIRST SIGHTED in DFS order (not its minimal realizing depth): {0: 1, 8: 35}
+  [PASS] S4 [MEASURED, EVIDENCE] EXHAUSTIVE sweep to depth 8: every history enumerated, sigma and the COMMITTED canonical menu computed for each, and every sigma class checked for menu agreement.  NO COUNTEREXAMPLE.  Depth is printed, not capped silently  (depth reached = 8; histories = 930631; sigma values = 36; splitting classes = 0)
+  [PASS] S4(b) G STAYS EXACT AT DEPTH 8 — the predictor is not a shallow-depth coincidence  (deep G mismatches = 0)
+  [PASS] S4(c) THE STRUCTURAL INVARIANTS RE-GATED AT FULL DEPTH 8, not only on the depth-6 family: the cone closed form, the candidate-view dichotomy (cone for idle/propose/self-arb, FULL view for pair-arb), the singleton alive-holding, at-most-one live proposal on it, has_p XOR has_r, and at-most-one arb component per actor on both the cone and the full view.  Zero violations  (invariant families checked = 7; violations = 0)
+
+[S5 the smart counterexample hunt — where sigma drops the most]
+  widest DEAD-BASE span inside one sigma class: 2
+    h  (lag 0, dead 0) = ()
+    h' (lag 0, dead 2) = (('p', 'B', ('v', 'v0'), 1), ('p', 'A', ('v', 'v0'), 0), ('r', 'B', frozenset({('B', ('v', 'v0'), 1), ('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)})), ('p', 'B', ('v', ('v', 'v0'), (0,), ('A',), 'B'), 1), ('p', 'A', ('v', ('v', 'v0'), (0,), ('A',), 'B'), 0), ('r', 'B', frozenset({('B', ('v', ('v', 'v0'), (0,), ('A',), 'B'), 1), ('A', ('v', ('v', 'v0'), (0,), ('A',), 'B'), 0)}), frozenset({('B', ('v', ('v', 'v0'), (0,), ('A',), 'B'), 1)})))
+  widest OWN-VIEW LAG span inside one sigma class: 6
+    h  (lag 0, dead 0) = ()
+    h' (lag 6, dead 0) = (('n', 'B'), ('n', 'B'), ('n', 'B'), ('n', 'B'), ('n', 'B'), ('n', 'B'))
+  [PASS] S5a THE HARDEST PAIRS THE FAMILY OFFERS agree: inside a single sigma class, the two histories that differ most in own-view LAG, and the two that differ most in the amount of DEAD structure sigma discards, have IDENTICAL renamed menus.  This is the direct test of the 'sigma drops menu-invisible structure' worry  (DEAD-BASE: span 2, menus equal = True; OWN-VIEW LAG: span 6, menus equal = True)
+  pump A: seed='empty'                                        sigma-classes=2 largest-class=20 max-len=40
+  pump B: seed='empty'                                        sigma-classes=2 largest-class=20 max-len=40
+  pump A: seed='A live on the shared base'                    sigma-classes=1 largest-class=1 max-len=1
+  pump B: seed='A live on the shared base'                    sigma-classes=2 largest-class=20 max-len=41
+  pump A: seed="B killed the shared base behind A's back"     sigma-classes=1 largest-class=1 max-len=3
+  pump B: seed="B killed the shared base behind A's back"     sigma-classes=1 largest-class=21 max-len=43
+  pump A: seed='the conflict pair'                            sigma-classes=1 largest-class=1 max-len=2
+  pump B: seed='the conflict pair'                            sigma-classes=1 largest-class=1 max-len=2
+  pump A: seed='diverged, both forked'                        sigma-classes=1 largest-class=21 max-len=44
+  pump B: seed='diverged, both forked'                        sigma-classes=1 largest-class=21 max-len=44
+  [PASS] S5b(ii) OPPONENT-RENEWAL PUMPING — the sharpest same-sigma families the scope admits.  Pumping an actor through k full renewal cycles buries k cycles of dead structure that sigma DISCARDS, and when the pumped actor is the opponent it also grows the own-view lag without bound.  Histories that sigma identifies across different k have IDENTICAL renamed menus, at lengths far beyond the exhaustive sweep  (seed x actor families = 10; max pumped length = 44; menu disagreements inside a merged class = 0)
+  diff-sigma       menus-equal=False  blind supersession: B kills the shared base behind A's back
+  diff-sigma       menus-equal=False  blind supersession + A's own fork
+  same-sigma       menus-equal=True  both fork (divergence); one side carries extra dead structure
+  diff-sigma       menus-equal=False  dead structure buried under a renewal on A's side
+  diff-sigma       menus-equal=False  opponent runs ahead invisibly after divergence
+  [PASS] S5b HAND-BUILT ADVERSARIAL PAIRS.  Constructions aimed exactly at the danger zone — an opponent superseding the shared base behind the actor's back (the D51 monotonicity failure), and dead structure that sigma discards.  Every pair that sigma identifies has identical menus; the pairs sigma separates are separated honestly (they are reported, not hidden)  (pairs = 5; same-sigma pairs = 1; menu disagreements among them = 0)
+
+  [S5c deep sampled histories to depth 40 (seed 20260726)]
+  [PASS] S5c [MEASURED, EVIDENCE] DEEP SAMPLING to depth 40 — far past any exhaustive reach: 6000 deterministic random trajectories, 240000 history visits, every one checked against the running sigma -> menu table (seeded by the exhaustive sweep and extended by the sampler).  No counterexample and G stays exact.  Any sigma value first seen here is REPORTED, not hidden, and is itself checked against every later sighting  (max depth reached = 39; visits = 240000; sigma values first seen only in sampling = 0 (total sigma values now 36); menu splits = 0; G mismatches = 0)
+
+========================================================================
+[VERDICT — d60p, ADVISORY PROBE, NOT A PIN]
+  1. NO COUNTEREXAMPLE.  (H1) survives an exhaustive sweep to
+     depth 8 (930631 histories), deep deterministic
+     sampling to depth 40, the widest lag/dead-
+     structure pair the family contains, and five hand-built
+     adversarial constructions aimed at the monotonicity failure.
+  2. THE LIVE ROUTE CLOSES ON THE MECHANICAL PART.  The candidate
+     view is NOT a general sub-view: it is either the actor's
+     register cone or the FULL view, with no third case (S1).  On
+     the cone the layer is rigid (S2), and the menu collapses to
+     the explicit formula G in sigma's own data (S3).
+  3. WHAT IS NOT DISCHARGED: S1/S2 are gated exhaustively at
+     finite depth here, not proved in this file.  The depth-free
+     proof is written out in note-d60p-h1-probe.md; its steps are
+     inductions on history construction (NOT on menu depth), and
+     each is stated so a referee can check it against the layer.
+
+[d60p] 14 PASS / 0 FAIL  — PROBE, ADVISORY ONLY
+========================================================================
