@@ -9828,3 +9828,58 @@ D52). RESIDUES: general-m (patterned, unrun, unclaimed beyond 5);
 minimality; the convergence question, PENDING B1 (the transport-sigma
 closure probe, running as an advisory Opus 5 study).
 NEXT: independent Opus 5 hostile round on D55; then REASSESS with B1.
+
+## 2026-07-26 — B1 PROBE (ADVISORY, Opus 5 worker; core claims verified
+## by me): NO BOUNDED MENU-EXACT ABSTRACTION AT TRANSPORT SCOPE
+## (LEDGER #432)
+Deliverables (PROBE/ADVISORY, not a pinned unit):
+v10/code/d56_transport_sigma_probe.py, v10/data/.out,
+v10/note-d56-transport-sigma-probe.md. I INDEPENDENTLY VERIFIED the
+two load-bearing claims against the committed layer before accepting
+anything (both reproduce exactly).
+**THE OBSTRUCTION [EXACT, depth-free, verified].** The
+SELF-ARBITRATION LADDER: p(A, v_k, 0) + blind self-arb mints v_{k+1},
+every rung admissible; |holdings(A)| grows without bound; and the
+delivery enumerator reads the WHOLE holdings set including superseded
+members — so A's delivery sector has k+1 options at weight 1/(4(k+1)).
+MENU CARDINALITY AND EXACT WEIGHTS ARE BOTH UNBOUNDED => **no bounded
+MENU-EXACT abstraction exists at transport scope, FOR ANY DESIGN.**
+d42a escapes only because prop_options skips superseded versions — the
+36-state closure is a starvation artifact of the same species as
+d42b1's P2.
+**D51'S DESIGN FAILS AT TRANSPORT [verified witness].** The full-view
+four-projection sigma: 3,656 violations / 30,454 pairs. Witness:
+W1 = [p(B,v0,1), selfarb(B)] vs W2 = W1 + [d(B->A,v0)] — equal
+full-view sigma, DIFFERENT menus (A's proposals vanish and its idle
+moves 1/2 -> 3/4, because the delivery teaches A that v0 is
+superseded). **Menus run on per-actor VIEWS at transport scope; the
+delivery moves only WHO KNOWS.** D51's reduction is hereby confirmed
+d42a-scoped, exactly as its own scope line said.
+THE WORKER'S REFINED SIGMA (join-view lattice V_S = union of own-views
+over actor subsets): menu-exact (0/30,188 pairs over 541 classes;
+transition-determinism 0/1,540; completeness 0/243,768) and STILL
+BLOWS UP: distinct states 1, 5, 17, 61, 191, 541, 1567 at depths 0..6
+(x~2.9), BFS not closed at 20,000. Its own caveat, honest: that sigma
+is not proved minimal, so the CURVE is an upper bound — the
+qualitative verdict rests on the LADDER, which is design-independent.
+**FORWARD CORRECTION OF #425's READING.** D52's "no state ever recurs"
+was BACKWARDS: the per-depth state sets are NESTED (idle padding gives
+total recurrence); only the NEW-states column informs. The blow-up
+verdict stands — on the ladder, not on that table.
+**MY OWN ADDITION, verified in-layer and load-bearing for what comes
+next: THE DELIVERY-SECTOR TOTAL IS EXACTLY 1/4 AT EVERY RUNG.** The
+per-option weights vanish but the AGGREGATED sector weight is
+constant. The obstruction therefore kills per-option (menu-exact)
+abstractions while leaving SECTOR-EXACT aggregation untouched — and
+the D50 round already established that the record-level observables
+are the AGGREGATED ones (per-event demands are demands on unobservable
+labels). **The escape candidate for a pinned unit: does a bounded
+SECTOR-EXACT abstraction exist?** (The worker's delivery-lumped
+attempt still failed to close at 20,000 with the residual explosion in
+per-view knowledge-lag — so the candidate is live, not easy.)
+CONSEQUENCE FOR THE PROGRAMME: the method that settled the dichotomy
+at d42a (finite menu-exact quotient + Perron) PROVABLY cannot transfer
+to the scope where the dimension results live. Whether a root-free
+completion exists at transport scope is analytically open with no
+current tool; the convergence question ("does the measure prefer
+3+1?") is blocked on exactly this.

@@ -1,0 +1,185 @@
+d56_transport_sigma_probe.py
+
+  ############################################################
+  ##  PROBE / ADVISORY -- NOT A CORPUS UNIT, NOT COMMITTED  ##
+  ##  No pin, no ledger entry, results to be independently  ##
+  ##  re-derived before any pinned unit relies on them.     ##
+  ############################################################
+
+THE QUESTION (D52 T1/T2).  At d42a (delivery-free) scope a bounded
+local-state abstraction sigma exists and closes at 36 states (d44a),
+which is what makes the transfer a finite matrix.  At TRANSPORT scope
+(d42b1: two-actor deliveries 'd' and merges 'm') nobody knows whether
+ANY bounded abstraction exists.  The D52 first probe (1, 5, 13, 39,
+107, 275) lacked the base-renaming quotient and disqualified itself.
+This probe builds the properly quotiented abstraction and MEASURES
+closure-or-blow-up.
+
+SINGLE SOURCE FOR ADMISSION: v10/code/d42b1_transport_exact.py, exec'd
+path-anchored, pre-print section only.  Nothing about admission or
+pricing is re-implemented here.
+
+EXACT: every weight a fractions.Fraction; every canonical form a
+post-renaming-sorted plain-tuple serialization (no raw frozenset
+reprs -- the D49 A4 lesson); deterministic; every cap PRINTED.
+
+[t+    0.0s] admission layer exec'd from /Users/felixrobles/workspace/isp/v10/code/d42b1_transport_exact.py
+[t+    0.0s] DECLARED CAPS: exhaustive depth 6; menus held to depth 5; canonicalisation permutation cap 720; BFS state cap 20000, time cap 480s; 3-actor walks 200 x depth 10, LCG seed 20260726
+
+[t+    0.0s] [P0] exhaustive two-actor transport family
+  per level 0..5: [1, 8, 60, 452, 3448, 26760]
+  cumulative:            [1, 9, 69, 521, 3969, 30729]
+  depth-6 level = 213040, cumulative to depth 6 = 243769
+  [ANCHOR] corpus census cum<=5 = 30729 : MATCH;  cum<=6 = 243769 : MATCH
+[t+   25.1s]   menus cached for 30729 histories (depth<=5)
+
+[t+   25.1s] [P0b] view-lattice completeness (does admission ever build a view that is NOT a join of own-views?)
+  candidate views tested = 243768; views NOT equal to the join of their actors' own-views = 0 (arb-renewal register cases: 0)
+  => the join-view lattice {V_S} is COMPLETE for the admission layer on this window [MEASURED, depth<=5]
+
+[t+   29.1s] [P1] the D52 first probe reproduced (no quotient, full view only) -- and its reading corrected
+  depth histories distinct cumulative NEW recurring nested?
+      0         1        1          1    1         0    True
+      1         8        5          5    4         1    True
+      2        60       13         13    8         5    True
+      3       452       39         39   26        13    True
+      4      3448      107        107   68        39    True
+      5     26760      275        275  168       107    True
+  [MEASURED] the D52 table is reproduced EXACTLY (1,5,13,39,107,275).
+  [CORRECTION] D52 read 'cumulative == per-depth' as 'no state ever
+  recurs'.  The measurement says the opposite: the per-depth state
+  SETS ARE NESTED (each depth's set contains every earlier one, via
+  idle padding), which is why cumulative == per-depth.  Recurrence is
+  TOTAL for old states; the real signal is the NEW column.
+
+[t+   31.2s] [P2 / M1] sigma('exact') on the exhaustive family to depth 6
+[t+   39.8s]   depth<=5 done (30729 histories)
+[t+  107.4s]   depth-6 streamed: 213040 histories
+  depth histories distinct cumulative NEW recurring nested?
+      0         1        1          1    1         0    True
+      1         8        5          5    4         1    True
+      2        60       17         17   12         5    True
+      3       452       61         61   44        17    True
+      4      3448      191        191  130        61    True
+      5     26760      541        541  350       191    True
+      6    213040     1567       1567 1026       541    True
+  canonicalisation: max colour-class size = 1, max residual permutations = 1, perm-cap(720) hits = 0
+
+[t+  107.4s] [P3 / M2] MENU FACTORISATION (mandatory correctness check), all histories to depth 5
+  sigma('exact'): sigma-classes = 541, equal-sigma pairs checked = 30188, VIOLATIONS = 0
+[t+  114.1s]   exact mode done
+  sigma('full0') = D51's four full-view projections + renaming: sigma-classes = 275, equal-sigma pairs checked = 30454, VIOLATIONS = 3656
+  [COUNTEREXAMPLE, full0] two histories with EQUAL full-view sigma and DIFFERENT renamed menus:
+    h1 = [('n', 'B'), ('n', 'B'), ('n', 'B'), ('p', 'B', ('v', 'v0'), 1), ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))]
+    h2 = [('n', 'B'), ('n', 'B'), ('p', 'B', ('v', 'v0'), 1), ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)})), ('d', 'B', 'A', ('v', 'v0'))]
+    menu entries only in h1's menu (first 3): [(('n', 'A'), (1, 2)), (('p', 'A', 0, 0), (1, 8)), (('p', 'A', 0, 1), (1, 8))]
+    menu entries only in h2's menu (first 3): [(('n', 'A'), (3, 4))]
+  [NAMED WITNESS, idle padding trimmed] W1 = [p(B,v0,1), selfarb(B)] and W2 = W1 + [d(B->A, v0)]:
+    equal full-view sigma('full0') = True;  equal menus = False
+    only in W1's menu: [(('n', 'A'), '1/2'), (('p', 'A', 0, 0), '1/8'), (('p', 'A', 0, 1), '1/8')]
+    only in W2's menu: [(('n', 'A'), '3/4')]
+    the refined sigma separates them = True
+    MECHANISM: the delivery moves no holding, mints nothing and supersedes nothing -- it moves only WHO KNOWS.  The full view cannot see it; A's own view can, and transport pricing is exactly about knowledge.
+  [VERDICT M2] sigma('exact') is menu-exact on this window (PASS); the naive full-view lift of D51's four projections is TOO COARSE at transport scope -- a finding: D51 s reduction does NOT lift
+
+[t+  118.5s] [P4 / M3] transition determinism: is sigma(h+[e]) a function of (sigma(h), renamed e)?
+  (state, renamed event) pairs = 1540 over 30728 transitions (depth<=4 exhaustive); pairs with >1 successor = 0
+  => sigma-transition determinism HOLDS on this window [MEASURED]
+
+[t+  128.7s] [BFS on sigma-space, mode=exact] cap 20000 states / 480s
+    after level 1: 5 states (frontier 4)  [t+  128.7s]
+    after level 2: 17 states (frontier 12)  [t+  128.8s]
+    after level 3: 61 states (frontier 44)  [t+  128.8s]
+    after level 4: 191 states (frontier 130)  [t+  128.9s]
+    after level 5: 541 states (frontier 350)  [t+  129.2s]
+    after level 6: 1567 states (frontier 1026)  [t+  130.5s]
+    after level 7: 4679 states (frontier 3112)  [t+  136.2s]
+    after level 8: 14413 states (frontier 9734)  [t+  156.0s]
+    after level 9: 20000 states (frontier 5587)  [t+  170.2s]
+  [NOT CLOSED] hit STATE CAP at 20000 states, level 9; growth curve = [1, 5, 17, 61, 191, 541, 1567, 4679, 14413, 20000]
+
+[t+  170.2s] [P5 / M4] growth diagnosis -- distinct values per sigma COMPONENT, by depth
+  depth     vers     hold      sup     live    comps       mp   ncount   sigma
+      0        1        1        1        1        1        1        1       1
+      1        1        1        1        5        5        1        1       5
+      2        5        3        3       13       13        1        3      17
+      3        9        4        4       33       33        1        4      61
+      4       21        8        8       65       67        1        6     191
+      5       47       12       14      142      144        3        8     541
+      6      123       25       24      284      288        4       13    1567
+
+  structural census (maxima over the whole level), by depth:
+  depth  max|holdings|  max|R|  max#live  max#comps  max#mergepairs  max|Aut|
+      0             1       1         0          0               0        1
+      1             1       1         1          1               0        1
+      2             2       2         2          2               0        1
+      3             2       2         2          2               0        1
+      4             3       3         2          2               0        1
+      5             3       3         2          2               1        1
+      6             4       4         3          3               1        1
+
+[t+  170.2s] [P6] THE OBSTRUCTION, EXACT: the self-arbitration ladder makes the DELIVERY MENU itself unbounded
+  rung  len(h)  admissible  |holdings(A)|  #delivery-options  weight each   sector total  non-delivery menu == previous?
+     1       2        True              2                   2           1/8           1/4   False
+     2       4        True              3                   3          1/12           1/4    True
+     3       6        True              4                   4          1/16           1/4    True
+     4       8        True              5                   5          1/20           1/4    True
+     5      10        True              6                   6          1/24           1/4    True
+     6      12        True              7                   7          1/28           1/4    True
+     7      14        True              8                   8          1/32           1/4    True
+     8      16        True              9                   9          1/36           1/4    True
+     9      18        True             10                  10          1/40           1/4    True
+    10      20        True             11                  11          1/44           1/4    True
+  [EXACT] every rung admissible = True; |holdings(A)| = k+1 exactly = True; the 10 delivery weights are pairwise DISTINCT = True; delivery SECTOR TOTAL is exactly 1/4 at every rung = True
+  [EXACT, depth-free] INDUCTION: v_0 = genesis, v_{j+1} = vname(v_j, {(A,v_j,0)}, A) has strictly greater nesting depth than v_j, so v_0..v_k are pairwise distinct; A proposed in every rung's ckey, so holdings(A) contains all k+1 of them; only v_0..v_{k-1} are superseded, so ('p','A',v_k,0) is admissible and the ladder extends for every k.  deliver_options_in_view reads the WHOLE holdings set (superseded included), so A's delivery sector has exactly k+1 options, each priced 1/4 / (k+1).
+  => THE MENU IS AN UNBOUNDED FUNCTION OF THE HISTORY: both its delivery-sector CARDINALITY and its exact weights take infinitely many values.  NO bounded abstraction can be menu-exact at transport scope, for ANY design.  This is a NO-GO, not a measurement of one sigma.
+  [CONTRAST, d42a] delivery-free scope reads holdings only through prop_options_in_view, which SKIPS superseded versions, and the non-superseded holding is a singleton (d44a SG2) -- which is exactly why sigma closes at 36 there.
+
+[t+  170.3s] [P7] what survives the no-go: level structure (counter-truncated 'lump' abstraction)
+  'lump' = sigma with each holdings set replaced by (its NON-superseded part, min(|holdings|, T)).  It forgets exactly the coordinate the no-go rides on.
+  T=2: d0: 1 distinct, 1 cum, 1 new; d1: 5 distinct, 5 cum, 4 new; d2: 17 distinct, 17 cum, 12 new; d3: 61 distinct, 61 cum, 44 new; d4: 187 distinct, 187 cum, 126 new; d5: 493 distinct, 493 cum, 306 new
+          T=2 NON-DELIVERY menu factorisation through lump: sigma-classes = 493, equal-sigma pairs checked = 30236, VIOLATIONS = 0
+        T=2 delivery-LUMPED step-distribution bisimulation (depth<=4): 0 violations over 3782 same-state pairs, 187 lump states
+[t+  186.1s]   T=2 done
+  T=3: d0: 1 distinct, 1 cum, 1 new; d1: 5 distinct, 5 cum, 4 new; d2: 17 distinct, 17 cum, 12 new; d3: 61 distinct, 61 cum, 44 new; d4: 187 distinct, 187 cum, 126 new; d5: 501 distinct, 501 cum, 314 new
+          T=3 NON-DELIVERY menu factorisation through lump: sigma-classes = 501, equal-sigma pairs checked = 30228, VIOLATIONS = 0
+        T=3 delivery-LUMPED step-distribution bisimulation (depth<=4): 0 violations over 3782 same-state pairs, 187 lump states
+[t+  202.6s]   T=3 done
+
+[t+  202.6s] [BFS on sigma-space, mode=lump, T=2] cap 20000 states / 480s
+    after level 1: 5 states (frontier 4)  [t+  202.6s]
+    after level 2: 17 states (frontier 12)  [t+  202.7s]
+    after level 3: 61 states (frontier 44)  [t+  202.7s]
+    after level 4: 187 states (frontier 126)  [t+  202.8s]
+    after level 5: 493 states (frontier 306)  [t+  203.1s]
+    after level 6: 1223 states (frontier 730)  [t+  204.1s]
+    after level 7: 3099 states (frontier 1876)  [t+  207.3s]
+    after level 8: 8241 states (frontier 5142)  [t+  218.5s]
+    after level 9: 20000 states (frontier 11759)  [t+  249.6s]
+  [NOT CLOSED] hit STATE CAP at 20000 states, level 9; growth curve = [1, 5, 17, 61, 187, 493, 1223, 3099, 8241, 20000]
+  READING: the lump abstraction is NOT menu-exact by construction (it forgets which superseded versions are held, hence the exact delivery weights).  Its only use is to show WHERE the unboundedness lives.  A 'closed' lump BFS is NOT closure of the theory.
+
+[t+  249.6s] [P8 / M5] three-actor deterministic-walk spot check (200 walks, depth 10, LCG seed 20260726)
+  depth  distinct(sampled)  cumulative  NEW  max|holdings|
+      1                 7           7    7              1
+      2                23          23   16              1
+      3                58          62   39              2
+      4               100         115   53              2
+      5               138         186   71              2
+      6               149         263   77              2
+      7               166         360   97              3
+      8               179         455   95              3
+      9               187         557  102              3
+     10               192         673  116              3
+  [MEASURED, SAMPLED -- a lower bound on the true counts] the 3-actor sigma count keeps growing over the sampled walks and max|holdings| grows with depth, so the 2-actor conclusion looks width-stable.
+  3-actor ladder (same construction, ABC): k=1: 4 options at 1/16, total 1/4; k=2: 6 options at 1/24, total 1/4; k=3: 8 options at 1/32, total 1/4; k=4: 10 options at 1/40, total 1/4; k=5: 12 options at 1/48, total 1/4
+
+[t+  252.4s] [VERDICT -- PROBE/ADVISORY, UNCOMMITTED]
+  1. [EXACT, depth-free] NO bounded menu-exact local-state abstraction exists at transport scope.  The self-arbitration ladder drives |holdings(a)| -> infinity, and the committed delivery admission reads the WHOLE holdings set, so the delivery sector has k+1 options at 1/(4(k+1)).  Menu cardinality AND menu weights are unbounded.  D52's T2 is answered: BLOW-UP, decided, and by an obstruction rather than a growth rate.
+  2. [MEASURED] the properly quotiented sigma is menu-exact on the whole depth-5 family (M2: 0 violations, 541 classes) and blows up: distinct values by depth [1, 5, 17, 61, 191, 541, 1567], all-new-per-depth [1, 4, 12, 44, 130, 350, 1026]; BFS on sigma-space NOT CLOSED (STATE CAP) at 20000 states.
+  3. [MEASURED] the naive lift of D51's four full-view projections is TOO COARSE at transport scope (3656 menu-factorisation violations): transport menus read the SENDER'S OWN VIEW, so a full-view-only abstraction cannot be menu-exact.  Any pinned unit must use the join-view lattice.
+  4. [MEASURED] D52's own table is reproduced exactly, but its reading was wrong: cumulative == per-depth because the state sets are NESTED (idle padding), i.e. recurrence is total, not absent.
+  5. [MEASURED] what survives: the SECTOR TOTALS are bounded (delivery total is exactly 1/4 at every ladder rung), and the non-delivery part of the ladder menu is constant from rung 2 on -- the unboundedness is confined to one counter, |holdings|.  That points at a level-structured (QBD / R-matrix) description, not a finite Perron matrix.
+  6. [MEASURED] the delivery-LUMPED, counter-truncated chain (T=2) does not close either within the declared caps: BFS NOT CLOSED (STATE CAP) at 20000 states, curve [1, 5, 17, 61, 187, 493, 1223, 3099, 8241, 20000].  So the counter is NOT the only growing coordinate at these depths -- see the P5 component census for what else moves.
+
+[t+  252.4s] PROBE COMPLETE -- advisory only, nothing committed.
