@@ -1,43 +1,86 @@
-[D53 — the sky instrument's capacity condition]
-  banner: shatter-k requires ALL 2^k traces INCLUDING THE EMPTY
-  ONE.  D47's capacity gate checked |directions| >= 4 and
-  |rows| >= 2, which is necessary and NOT sufficient.  This
-  receipt measures how much of D47's decidable stratum was
-  structurally incapable of firing, and answers residue 2.
+[D53 — the sky instrument's capacity condition, ROUND-1 REPAIRED]
+  banner: shatter-k on a set S requires all 2^k traces ON S, and
+  the empty one among them is a row DISJOINT FROM S — NOT an
+  empty row.  Round 1 refuted the first draft's identification of
+  the two: SKY-A and SKY-C shatter, and witnesses are printed
+  below on a finite poset, on genuine M^{3+1}, and on D47's own
+  M^{2+1} records.  D47's capacity gate is still not sufficient;
+  the corrected necessary condition drops the empty-trace clause.
 
 [SC0 anchor — the instrument, imported from committed D47a]
-  [PASS] SC0 the sky constructor and the shatter test are imported from the committed D47a receipt by AST extraction — the object under audit is D47's own, not a re-implementation  (source = v10/code/d47a_sky_instrument_exact.py)
+  [PASS] SC0 the sky constructor and the shatter test are imported from the committed D47a receipt by AST extraction — the object under audit is D47's own, not a re-implementation — and the M^{3+1} generator from the ROUND-1 REPAIRED d55c (single source for the generator fix)  (sources = v10/code/d47a_sky_instrument_exact.py, v10/code/d55c_m31_control_exact.py)
 
-[SC1 the necessary condition, stated and checked on a control]
-  [PASS] SC1 THE NECESSARY CONDITION.  Shattering a k-set requires all 2^k traces, and the empty set is one of them; so a system with no empty trace cannot shatter ANY set, for any k >= 1.  Both of D47's synthetic validation systems DO contain the empty trace — which is exactly why the instrument passed its validation there and why the defect below went unseen  (arc system contains empty trace = True; cap system contains empty trace = True; cap system shatters 4 = True)
+[SC1 THE NECESSARY CONDITION — RESTATED BY ROUND 1]
+  The first draft asserted: 'a system with no empty trace cannot
+  shatter ANY set, for any k >= 1.'  **THAT IS FALSE.**  Shattering
+  S needs a row r with r & S = {} — a row DISJOINT FROM S, not an
+  empty row.  The two coincide only when S is the entire direction
+  set.  d47a's own shattered_set decides the counterexample:
+    rows = [{0}, {1}]  cols = [0, 1]   empty ROW present = False
+    d47a shattered_set(rows, [0,1], 1) = (0,)   <- a shattered 1-set, with no empty row anywhere
+  [PASS] SC1 THE TRUE NECESSARY CONDITION.  Shattering a k-set S requires all 2^k traces ON S; the empty one is a row DISJOINT FROM S.  The first draft read that as 'the system contains the empty row' and concluded that a system without one can never shatter — REFUTED HERE by d47a's own decider on a two-row system with no empty row. The empty-ROW reading is correct only at k = |dirs| (SC1b).  Both of D47's synthetic validation systems do contain the empty row, which is why the instrument's own validation could not see this  (counterexample shatters (0,) with empty row = False; arc system contains empty row = True; cap system contains empty row = True; cap system shatters 4 = True)
 
-[SC2 the audit of D47's OWN strata]
-  SKY-A: skies  261, with empty trace    0, D47-'decidable'  201, ACTUALLY CAPABLE    0
-  SKY-B: skies  235, with empty trace  225, D47-'decidable'  142, ACTUALLY CAPABLE  139
-  SKY-C: skies  258, with empty trace    0, D47-'decidable'  211, ACTUALLY CAPABLE    0
-  [PASS] SC2 A LARGE PART OF D47's DECIDABLE STRATUM WAS STRUCTURALLY INCAPABLE OF FIRING.  Of the pairs D47 counted as shatter-4 decidable, only 139 of 554 contain the empty trace and could therefore ever have shattered.  D47's 'zero shatterings' over the rest is a TAUTOLOGY, not a measurement  (D47-decidable = 554, actually capable = 139, vacuous = 415)
+[SC1b WHAT SURVIVES — the true lemma, with the two hypotheses the first draft never stated]
+  LEMMA.  Let C be a FINITE TRANSITIVE strict order.  Then every
+  SKY-A and SKY-C row is NON-EMPTY, because d47a writes the trace
+  of f as {c in dirs : c == f or C[c][f]} — the REFLEXIVE clause
+  `c == f` is load-bearing (a cover lies above no cover, so the
+  first draft's stated reason is false for the covers themselves),
+  and transitivity is what carries a non-cover f down to a cover.
+  CONSEQUENCE, and it is ALL the empty-row argument buys: a SKY-A
+  or SKY-C sky can never shatter its FULL direction set (k =
+  |dirs|).  It says NOTHING about proper subsets.
+  the 21-event poset: transitive = True, SKY-A |dirs| = 5, |rows| = 16, EMPTY ROW PRESENT = False
+  hypothesis 1 (reflexivity): the SAME poset with the `c == f` clause removed has an empty row = True
+  hypothesis 2 (transitivity): on 0<1,0<2,0<3,1<2,2<3 (NOT 1<3), d47a SKY-A dirs = [1], rows = [[], [1]], EMPTY ROW = True
+  [PASS] SC1b THE SURVIVING LEMMA, with both hypotheses exhibited.  On a finite TRANSITIVE order every SKY-A/SKY-C row is non-empty — the reflexive `c == f` clause and transitivity are each load-bearing, and dropping either one produces an empty row (both counter-examples printed above).  Hence a SKY-A/SKY-C sky can never shatter its FULL direction set.  That is the WHOLE content of the empty-row argument; SC3 shows it does not extend to proper subsets  (21-event poset transitive = True, empty row = False; empty row without reflexivity = True; empty row without transitivity = True; full-direction-set shatterings over 519 SKY-A/SKY-C skies on D47's own records = 0)
 
-[SC3 residue 2 ANSWERED — which sky definition can be used?]
-  STRUCTURAL REASON, not an accident of this sample:
-    SKY-A takes the directions to be the COVERS of the base event,
-    so EVERY event strictly above it lies above at least one
-    cover — the empty trace cannot occur.  SKY-C is the dual and
-    fails the same way.  SKY-B takes an antichain at a fixed
-    height, so an event above the base may lie above NO direction,
-    and the empty trace occurs.
-  [PASS] SC3 D47 RESIDUE 2 IS ANSWERED, and negatively: **SKY-A and SKY-C can NEVER shatter, at any width or depth**, so they are unusable for the 2+1 obstruction test; SKY-B is the only committed definition that can fire.  This also explains D47b's unexplained observation that SKY-A never reached decidability — it was doubly disqualified  (SKY-A capable 0/201, SKY-C capable 0/211, SKY-B capable 139/142)
+[SC2 the audit of D47's OWN strata, with the CORRECTED condition]
+  SKY-A: skies  261, with empty ROW    0, D47-'decidable'  201, CORRECTED-CAPABLE   69
+  SKY-B: skies  235, with empty ROW  225, D47-'decidable'  142, CORRECTED-CAPABLE   52
+  SKY-C: skies  258, with empty ROW    0, D47-'decidable'  211, CORRECTED-CAPABLE   75
+  [PASS] SC2 A LARGE PART OF D47's DECIDABLE STRATUM WAS STRUCTURALLY INCAPABLE OF FIRING — and this, the unit's durable content, is unaffected by round 1.  Of the pairs D47 counted as shatter-4 decidable, only 196 of 554 carry the 16 DISTINCT traces a shattered 4-set needs; over the rest D47's 'zero shatterings' is a tautology.  (The count is now the CORRECTED one: the first draft's 52 came from a third clause round 1 refuted)  (D47-decidable = 554, corrected-capable = 196, vacuous = 358)
 
-[SC4 what is NOT affected]
-  [PASS] SC4 THE DAMAGE IS BOUNDED AND STATED.  Untouched: D47a's constructed separator (arcs never shatter 4, exact-rational caps do, opposite-edge case certified); its instrument validation on SYNTHETIC systems, which contain the empty trace and so were genuine; the DEMOTION of circular-ones after it rejected 121 of 554 real 2+1 skies, which never used shatter-4; and D47b's ACTOR-WIDTH result, which is a measurement of sky SIZE and does not invoke shattering at all  (separator re-checked in this process: arcs shatter no 4-set, caps do, both validation systems carry the empty trace)
+[SC2b MAJOR 2 — how much of the 'incapable' stratum was really incapable?]
+  D47-decidable                                        = 554
+  without the empty ROW ('structurally incapable')      = 415
+    ... of which |dirs| >= 5 (the empty-row argument gives NO
+        obstruction on any 4-subset at all)             = 335
+    ... of which >= 16 distinct traces (the CORRECTED
+        necessary condition is satisfied)               = 144
+  best |{r & S}| over any 4-set, all three kinds        = 13 of 16
+  [PASS] SC2b 'A TAUTOLOGY, NOT A MEASUREMENT' WAS OVERSTATED — corrected by round 1 (MAJOR 2).  144 of the 415 skies the first draft called structurally incapable pass the CORRECTED necessary condition and reach 13 of the 16 required traces on their best 4-set: D47's zero over them is a real measurement.  Inside the stratum the first draft wrote off, the genuinely vacuous count is 271, not 415 — and 358 of the 554 decidable pairs overall  (empty-row-free = 415, of which |dirs|>=5 = 335, corrected-capable = 144, genuinely vacuous inside that stratum = 271, best trace count over the capable ones = 13/16)
 
-[SC5 the corrected capacity condition]
-  [PASS] SC5 THE CORRECTED CONDITION, and it is much tighter: a sky can possibly shatter a 4-set only with >= 4 directions, >= 16 DISTINCT traces, and the empty trace present.  Applied to the same Minkowski records it admits 52 skies against D47's 554 — any future sky unit must gate THIS, not D47's SG2  (corrected-capable = 52, D47 SG2-'decidable' = 554, reduction factor = 10.7x)
+[SC3 RESIDUE 2 — the first draft's answer is REVERSED by round 1]
+  The first draft printed, as an unconditional structural reason,
+  that SKY-A and SKY-C 'can NEVER shatter, at any width or depth'.
+  Three independent witness families refute it:
+  (1) FINITE POSET.  The 21-event transitive poset above: SKY-A |dirs| = 5, |rows| = 16, empty row = False, SHATTERED 4-SET = (1, 2, 3, 4)
+      the 16 traces on it: [[], [1], [2], [3], [4], [1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4], [1, 2, 3, 4]]
+      MECHANISM: c5's own row {c5} is non-empty as a ROW and DISJOINT from the 4-set — it supplies the empty trace ON S. Available at every width >= 5.
+  (2) THE DUAL.  SKY-C on the reversed 21-event poset: |dirs| = 5, empty row = False, SHATTERED 4-SET = (1, 2, 3, 4)
+  (3) GENUINE M^{3+1} (N = 300, T = 120, box = 30, seed 11; 300/300 distinct points, order transitive on the sampled rows = True):
+      SKY-A: shattered 4-sets at 30 base events; witness e = 22 |dirs| = 18 |rows| = 68 EMPTY ROW = False shattered 4-set = (45, 136, 171, 193)
+      SKY-C: shattered 4-sets at 41 base events; witness e = 4 |dirs| = 17 |rows| = 77 EMPTY ROW = False shattered 4-set = (48, 166, 176, 192)
+  (4) D53's OWN RECORDS.  SKY-C on d47a's lattice_points(160): shattered 3-sets at 49 of 117 capable base events, with ZERO empty rows anywhere; witness = (6, 10, 27, False, (0, 2, 154))
+  [PASS] SC3 [CORRECTED BY ROUND 1 — THE FIRST DRAFT'S ANSWER IS REVERSED] **SKY-A AND SKY-C DO SHATTER.**  The claim 'they can NEVER shatter, at any width or depth' is refuted by four independent witness families printed above: a 21-event transitive poset, its dual, genuine M^{3+1} sprinklings, and D47's OWN M^{2+1} records one rung down (SKY-C shatters 3-sets there).  So D47 residue 2 is NOT answered by this unit: all three sky definitions remain in the field of view, and the programme's restriction to SKY-B was a blinder — which is exactly what made D55c miss its own discriminator  (SKY-A shatter-4 on M^{3+1} at 30 events; SKY-C at 41 events; SKY-C shatter-3 on the 2+1 records at 49/117; finite-poset witnesses (1, 2, 3, 4) (SKY-A) and (1, 2, 3, 4) (SKY-C, dual))
 
-[VERDICT — D53]
-  D47's capacity gate was NECESSARY BUT NOT SUFFICIENT, and the gap is structural rather than statistical: shattering needs the EMPTY TRACE, and two of the three committed sky definitions can never produce it.
-  **RESIDUE 2 IS ANSWERED: only SKY-B is usable.**  SKY-A and SKY-C are dead for this test at every width and depth, which is a stronger statement than 'they did not fire'.
-  D47's zero-shattering result survives only on the SKY-B stratum; elsewhere it was a tautology.  The separator, the circular-ones demotion and the actor-width result are all untouched.
-  CONSEQUENCE FOR THE 3+1 PROGRAMME: the targeted-construction attack must be built on SKY-B, and its capacity gate must be SC5's condition, not D47's.
+[SC4 what is NOT affected — damage list, CORRECTED]
+  [PASS] SC4 THE DAMAGE IS BOUNDED AND STATED, and the list is CORRECTED by round 1 (MINOR 3).  UNTOUCHED: D47a's constructed separator (arcs shatter 3 and not 4, exact-rational caps shatter 4 — both re-decided in this process by the predicate below); its instrument validation on SYNTHETIC systems, which do contain the empty row; the DEMOTION of circular-ones, which never used shatter-4; and D47b's ACTOR-WIDTH result (TG2), a measurement of sky SIZE.  **ADDED BY ROUND 1: d47b TG3/TG4 ARE damaged** — they run the identical `|dirs| < 4 or |rows| < 2` gate over all three sky kinds on transport skies and report shattered 4-sets over exactly the stratum this unit calls vacuous; they must be re-run under SC5's corrected condition  (arcs shatter 4 = False, arcs shatter 3 = True, caps shatter 4 = True, both synthetic systems carry the empty row = True)
 
-[d53] 6 PASS / 0 FAIL
+[SC5 the corrected capacity condition — MAJOR 1 REPAIRED]
+  SKY-A: >= 4 dirs and >= 16 distinct traces:  69
+  SKY-B: >= 4 dirs and >= 16 distinct traces:  52
+  SKY-C: >= 4 dirs and >= 16 distinct traces:  75
+  corrected total = 196; the first draft's empty-row-gated total = 52
+  [PASS] SC5 THE CORRECTED CONDITION — the third clause is GONE.  A sky can possibly shatter a 4-set only with >= 4 directions and >= 16 DISTINCT traces.  The first draft also demanded the empty ROW; round 1 showed that clause is NOT necessary (SC1) and it false-negatived 144 genuinely capable skies.  Applied to the same Minkowski records the corrected condition admits 196 skies against D47's 554 — a reduction of 2.8x, not the 10.7x first published.  Any future sky unit must gate THIS  (corrected-capable = 196 (A 69, B 52, C 75), D47 SG2-'decidable' = 554, reduction factor = 2.8x; the withdrawn clause would have admitted 52)
+
+[VERDICT — D53, ROUND-1 REPAIRED]
+  WHAT STANDS.  D47's capacity gate was NECESSARY BUT NOT SUFFICIENT: 358 of its 554 'decidable' pairs lack the 16 distinct traces a shattered 4-set needs, so D47's zero over them is a tautology.  The corrected condition is SC5's and it binds on every future sky unit.
+  WHAT IS WITHDRAWN.  The empty-trace NECESSITY theorem; 'SKY-A and SKY-C can never shatter'; 'residue 2 is answered, and negatively'; 'only SKY-B is usable'; and the book's [EXACT] label on the structural claim.  Shattering S needs a row DISJOINT FROM S; that is an empty ROW only at k = |dirs|.
+  WHAT SURVIVES OF THE EMPTY-ROW ARGUMENT.  Exactly SC1b: on a finite TRANSITIVE order (reflexive trace clause load-bearing) a SKY-A/SKY-C sky cannot shatter its FULL direction set.  D54's K9-A/K9-C [THEOREM-PASS] labels remain correct for the no-empty-row FACT they gate; D54's pin inherits the false reason and must be restated.
+  CONSEQUENCE FOR THE 3+1 PROGRAMME, REVERSED: the targeted attack must NOT be built on SKY-B alone.  SKY-A and SKY-C are live readings, and under SKY-A the M^{3+1} discriminator is SHARPER than under SKY-B (D55c, repaired in the same round).
+  CONSUMERS THAT MUST RE-RUN UNDER SC5's CORRECTED CONDITION: d54, d54b K6, d47b TG3/TG4, D55, d55c (repaired here).
+
+[d53] 8 PASS / 0 FAIL
 EXIT 0

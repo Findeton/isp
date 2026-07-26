@@ -1,51 +1,112 @@
-[D51 — (H1) via MENU-VISIBILITY]
+[D51 — (H1) via MENU-VISIBILITY, ROUND-1 REPAIRED]
   banner: the admission layer's view is the CANDIDATE's own causal
-  past, and the menu reads it through exactly four projections.
-  D46a's refuted own-view (tau) route is NOT re-walked.  Depths
-  reached are PRINTED, never silently capped.  Scope: d42a,
-  DELIVERY-FREE, two actors (D44b's boundary).
+  past, and the menu reads it through four projections PLUS a
+  fifth read (view.pred, MAJOR 1).  **Round 1 inverted the
+  headline: those projections REFINE sigma (209 keys vs 32 sigma
+  states), so equal-projections => equal-menus does NOT give
+  equal-sigma => equal-menus.**  D46a's refuted own-view route is
+  NOT re-walked.  Depths are PRINTED and now run to 7.  Scope:
+  d42a, DELIVERY-FREE, two actors (D44b's boundary).
 
 [MV0 anchor + capacity]
-  [PASS] MV0(a) the admission layer is exec'd path-anchored from the committed d42b3 receipt (single source), and the four menu-relevant projection functions are taken from it rather than re-implemented  (source = v10/code/d42b3_placement_exact.py)
+  [PASS] MV0(a) [ANCHOR / SMOKE TEST, labelled per round-1 MINOR 5] the admission layer is exec'd path-anchored from the committed d42b3 receipt (single source) and **the committed sigma and canonical renamed menu are extracted VERBATIM by text slice from the committed d44a receipt** — the pin §4 MV0 promise the first draft dropped, and the omission that let BLOCKER 1 through.  This gate checks LOADING only; it is a callable() test and nothing more  (layer = v10/code/d42b3_placement_exact.py; sigma/menu = v10/code/d44a_closure_theorem_exact.py (3702B, 1934B))
   family enumerated to depth 5: {0: 1, 1: 6, 2: 32, 3: 176, 4: 976, 5: 5280}, total 6471
-  menu view vs noop cone: strictly exceeds in 2032 (actor, candidate) pairs, equal in 19400; max extra events 4; all extras opponent-authored = True
-  [PASS] MV0(b) CAPACITY — the lag is REAL and NON-EMPTY, so the question is not vacuous.  The menu view strictly exceeds the actor's noop cone, and every extra event is OPPONENT-AUTHORED — D46a's finding reproduced independently on this receipt's own family  (exceeding pairs = 2032, equal = 19400, max extras = 4, opponent-authored only = True)
+
+[MV0(sigma) THE COMPARISON THE FIRST DRAFT NEVER MADE — round-1 BLOCKER 1]
+  distinct committed-sigma states on the depth-5 family = 32
+  distinct D51 projection keys                          = 209
+  D51 key determines sigma?   keys with >1 sigma state  = 0    <- REFINES sigma
+  sigma determines D51 key?   sigma states with >1 key  = 32   <- all of them, strictly
+  [PASS] MV0(sigma) [THE CORRECTION THAT INVERTS THE HEADLINE] **THE FOUR PROJECTIONS REFINE sigma; THEY ARE NOT AN ABSTRACTION OF IT.**  The committed VERDICT said 'sigma IS an abstraction of exactly those projections, [so] menus are sigma-determined here'.  'sigma is an abstraction of the projections' means projections => sigma, so MV3's projections-equal => menus-equal is IMPLIED BY sigma-determination, not the converse.  Measured here: every projection key determines its sigma state, and EVERY sigma state carries more than one projection key.  (H1) is NOT reduced in the claimed direction  (projection keys = 209, sigma states = 32; keys with >1 sigma = 0; sigma states with >1 key = 32 of 32; sigma invariants clean = True)
+  menu view vs noop cone: strictly exceeds in 2032 (actor, candidate) pairs, equal in 19400, strictly less in 0, incomparable in 0; max extra events 4
+  TRICHOTOMY IS COMPLETE (round-1 NIT 2): 2032 + 19400 + 0 + 0 = 21432 = {'p': 12916, 'r': 8516} summed
+  [PASS] MV0(b) CAPACITY — the lag is REAL and NON-EMPTY, so the question is not vacuous.  **ROUND-1 MINOR 5: the 'all extras are OPPONENT-AUTHORED' clause is a THEOREM-PASS, not a finding** — every event's initiator lies in its own register set, so every a-authored event of h is inside a's noop cone as a theorem of `event_poset`, and an extra can never be a-authored.  It is labelled here rather than reported as a discovery  (exceeding pairs = 2032, equal = 19400, max extras = 4; the theorem behind opp_only: initiator in regs_of(e) on 34374/34374 menu-offered events, a-authored events inside a's cone 30902/30902)
 
 [MV1 MV-STRONG — do the candidate's projections EQUAL the full view's?]
   event type 'n': 4606/12942 candidates whose own-view projections EQUAL the full view's
   event type 'p': 5636/12916 candidates whose own-view projections EQUAL the full view's
   event type 'r': 3820/8516 candidates whose own-view projections EQUAL the full view's
-  [PASS] MV1 MV-STRONG IS REFUTED, AND NOT ONLY WHERE THE PIN EXPECTED. The pin (§3) pre-registered MV-STRONG as failing for IDLES and HOLDING for propose/arbitrate, on the wire-closure reasoning that a candidate touching base b already sees every live proposal on b. **The measurement refutes that: p and r candidates lag too.**  The reason is that these projections are the FULL four-tuple over ALL bases, while a candidate's view need only cover the base it touches — so the pin's argument, even if right about base b, was never enough for MV-STRONG as stated.  **The pin's §5 depth-free sketch is damaged and must be revised; it is NOT quietly dropped**  (by type (equal/total): {'n': '4606/12942', 'p': '5636/12916', 'r': '3820/8516'} — every type lags, so MV-STRONG fails outright)
+  [WITNESS MV-STRONG-FAILS] (round-1 MINOR 4: the committed receipt computed this witness and never printed it)
+      h = [('p', 'A', ('v', 'v0'), 0)]
+      candidate = ('p', 'B', ('v', 'v0'), 0)
+      candidate view: holdings=(('v', 'v0'),) superseded=()
+                      live=() comps=()
+      full view     : holdings=(('v', 'v0'),) superseded=()
+                      live=(('A', ('v', 'v0'), 0),) comps=((('v', 'v0'), (('A', ('v', 'v0'), 0),)),)
+  ROUND-1 MAJOR 2 — the headline surprise is FORCED: regs_of(('p',a,b,x)) = {a} = regs_of(('n',a)), so a propose candidate's view IS its actor's noop cone in 12916/12916 cases.  'p candidates lag too' is the IDLE lag recounted with different multiplicities, not a second refutation, and pin §2's 'a propose additionally pulls in the wires the event touches' is false.
+      views strictly exceeding the cone, by kind: {'p': 0, 'r': 2032}
+  ROUND-1 MAJOR 2 — pin §5 dies on its OWN premise ('pred[e] contains every live proposal on the base b the candidate touches'): proposals are carried on the PROPOSER's register, not the base wire, and a propose does not touch wire b at all.
+      'p' candidates: 10476/12916   MISSES 2440
+      'r' candidates: 6484/8516   MISSES 2032
+  [PASS] MV1 [REPORTING GATE — round-1 MINOR 7: a gate must not assert the author's own negative] MV-STRONG measured by event type, reported in whichever direction it landed.  The pin (§3) pre-registered MV-STRONG as failing for IDLES and HOLDING for propose/arbitrate on a wire-closure argument.  **The measurement refutes that, and round 1 shows the refutation is cheaper than claimed: the 'p' result is FORCED by regs_of, and the pinned §5 premise is false outright in the exhibited cases above.**  The pin's §5 depth-free sketch is damaged and is NOT quietly dropped  (by type (equal/total): {'n': '4606/12942', 'p': '5636/12916', 'r': '3820/8516'}; 'p' candidate view == its actor's noop cone in 12916/12916; pin §5 premise misses {'p': 2440, 'r': 2032})
 
-[MV2 MV-WEAK — the target: are the projections sigma-determined?]
-  sigma is a FULL-VIEW abstraction.  MV1 shows p/r candidates read
-  the full-view values, so those are sigma-determined outright.
-  The whole question therefore collapses onto the IDLE weight,
-  which reads has_p / has_r on the bare cone.
+[MV2 the 2-bit idle proxy, and its ACTUAL mechanism]
+  ROUND-1 MAJOR 3: the committed receipt printed, directly under
+  MV1's own output, 'MV1 shows p/r candidates read the full-view
+  values, so those are sigma-determined outright' — the NEGATION
+  of the gate above it, and the sole justification for testing
+  only the idle pair.  The 'r' branch is tested below.
   full-view (has_p, has_r) -> set of cone-level values observed:
     (False, False) -> [(False, True), (True, False)]
     (False, True) -> [(False, True)]
     (True, False) -> [(True, False)]
-  [PASS] MV2 THE 2-BIT PROXY IS NOT A FUNCTION — reported as the negative it is, with its MECHANISM.  The cone-level (has_p, has_r) an idle reads is NOT determined by the full-view (has_p, has_r): full-view (False, False) maps to BOTH (False, True) and (True, False).  **A SMALLER VIEW CAN YIELD MORE OPTIONS**, because prop_options_in_view excludes a base on which the actor already has a live proposal — so a view that MISSES that proposal INCLUDES the base.  Monotonicity fails, and any argument assuming a lagged view sees a subset of the options is wrong.  This does NOT refute MV-WEAK: sigma records far more than these two bits, and MV3 tests the real thing  (map = {(False, False): [(False, True), (True, False)], (False, True): [(False, True)], (True, False): [(True, False)]} — the (False, False) fibre is multi-valued, which is the finding)
+  [WITNESSES — round-1 BLOCKER 2: the committed receipt printed NONE, and its stated mechanism is refuted]
+    full (False, False) -> cone (False, True):  actor A, h = [('p', 'B', ('v', 'v0'), 1), ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)})), ('p', 'A', ('v', 'v0'), 0)]
+    full (False, False) -> cone (True, False):  actor A, h = [('p', 'B', ('v', 'v0'), 1), ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))]
+  THE COMMITTED MECHANISM IS REFUTED: an actor's OWN live proposals are identical in the noop cone and the full view in 12942/12942 (actor, history) pairs — regs_of(('p',a,b,x)) = {a}, so every proposal by a lies on a's own register chain.  The 'own-proposal exclusion' clause is operative in NEITHER fibre element.
+  THE ACTUAL MECHANISM IS MISSED SUPERSESSION: a lagged view does not know its base has been superseded (witness 1: B self-arbitrates, A's empty cone still offers the base), and it does not know an opponent's ARB has resolved a proposal it can still see (witness 2).
+  THE CONCLUSION SURVIVES, re-established on OPTION SETS rather than the two bits: over 12942 (h, actor) pairs the cone's proposal options are equal in 11938, STRICTLY MORE in 1004, strictly fewer in 0.  **A SMALLER VIEW CAN YIELD MORE OPTIONS**, so any argument assuming a lagged view sees a subset is wrong.
+  [PASS] MV2 [REPORTING GATE — round-1 MINOR 7] THE 2-BIT PROXY IS NOT A FUNCTION OF THE FULL-VIEW PAIR, reported as the negative it is, with its MECHANISM **CORRECTED BY ROUND 1** (BLOCKER 2): the committed text blamed the own-proposal exclusion, which cannot happen; the obstruction is that a LAGGED VIEW DOES NOT KNOW ITS BASE HAS BEEN SUPERSEDED — much harder, and precisely what LOG #432 later hit at transport.  Monotonicity fails in the direction printed above.  This does NOT refute (H1): sigma records far more than these two bits  (map = {(False, False): [(False, True), (True, False)], (False, True): [(False, True)], (True, False): [(True, False)]}; idle-determined = False; option sets: equal 11938, cone strictly more 1004, cone strictly fewer 0; own live proposals identical 12942/12942)
+
+[MV2b THE 'r' ARM — round-1 MAJOR 3: never tested by the committed receipt]
+  [PASS] MV2b THE ARBITRATION ARM, TESTED.  An 'r' candidate's view is a larger object than the idle cone and runs through arb_components_in_view, mis_of and PK1 — the committed receipt's collapse onto the idle 2-bit pair left it untested, on a preamble that contradicted its own MV1 output.  Measured here: the full-view arbitration data (component member-triples AND the edge triples the weight is computed from) against the candidate view's, reported whichever way it lands  (distinct full-view arb keys = 71; keys carrying more than one candidate-view value = 19 -> the 'r' arm LAGS too, and the committed preamble was unsound for it)
 
 [MV5 mutant — can the instrument see the lag at all?]
-  [PASS] MV5 THE INSTRUMENT IS NOT BLIND — and the partial rate is itself the point.  Hiding one proposal from an arbitration candidate's view changes its menu-relevant projections in a large majority of cases but NOT all: when the dropped proposal is on a base the candidate's projections do not reach, nothing moves.  A gate demanding 100% would have been wrong about the object; what must be shown is that the projections DO respond to their input, and they do  (mutants tested = 4760, projections changed = 3008 (63%) — responsive, not blind, and not vacuously total)
+  committed  : tested =  4760  changed =  3008 (63%)  dropped proposal authored by the candidate's OWN actor: 4344
+  exhaustive : tested =  8512  changed =  6024 (70%)  dropped proposal authored by the candidate's OWN actor: 7016
+  pinned     : tested =  2992  changed =  1776 (59%)  dropped proposal authored by the candidate's OWN actor: 0
+  [PASS] MV5 THE INSTRUMENT IS NOT BLIND — **and the mutant is now the PINNED one** (round-1 MINOR 2: the committed protocol dropped the LOWEST-INDEXED proposal with no author test and broke after the first 'r' candidate, so in 82% of cases it hid the candidate's OWN proposal — the opposite of the pinned probe — and its '63%' was a sampling artefact quoted three times as if it characterised the object).  **The gate is the pin's own 'must CHANGE some menu' (> 0)**, not the invented 50% bar that sat just under an observed 63% (round-1 MINOR 3).  The partial rate is reported for all three protocols: when the dropped proposal is on a base the candidate's projections do not reach, nothing moves  (PINNED mutant: tested = 2992, changed = 1776 (59%); committed protocol 3008/4760; exhaustive 6024/8512)
 
-[MV3 (H1) at the menu level, on this family]
-  [PASS] MV3 [EVIDENCE, never a premise] EQUAL FULL-VIEW PROJECTIONS => EQUAL MENUS, with exact weights, over every history of the enumerated family to depth 5: zero violations.  This is the menu-level form of MV1+MV2 and it is what (H1) asserts, verified here at finite depth only  (distinct full-view projection keys = 209; keys carrying more than one menu = 0; histories = 6471)
+[MV3 + MV4 at the PROJECTION level, depths 5, 6 and 7 — round-1 MINOR 1: the committed CAP = 5 was hard-coded against the pin's explicit instruction to beat d44a's depth 7]
+  depth 5: histories   6471   MV3 keys   209 violations 0   MV4 (state, event) pairs   498 violations 0
+  depth 6: histories  34375   MV3 keys   481 violations 0   MV4 (state, event) pairs  1122 violations 0
+  depth 7: histories 179783   MV3 keys  1089 violations 0   MV4 (state, event) pairs  2530 violations 0
+  [PASS] MV3 [EVIDENCE, never a premise] EQUAL FULL-VIEW PROJECTIONS => EQUAL MENUS, with exact weights, over every history to depth 7: zero violations.  **ROUND-1 BLOCKER 1 / MINOR 8: this is NOT the menu-level form of MV1+MV2** (MV3 reads only FULL views; MV1/MV2 are about CANDIDATE views, and neither implies the other), and it does NOT give sigma-determination, because the projections REFINE sigma (MV0(sigma)).  What it establishes is the PROJECTION reduction of the MENU function, at finite depth  ((depth, histories, keys, violations) = [(5, 6471, 209, 0), (6, 34375, 481, 0), (7, 179783, 1089, 0)])
 
-[MV4 (H2) settled explicitly]
-  [PASS] MV4 (H2) IS SETTLED HERE, not left dangling as d44a left it: the successor projection-state is a FUNCTION of (projection-state, event) — zero violations over the family.  So (H2) holds at the projection level on this family, and does NOT need a separate argument from (H1) at this scope  ((state, event) pairs = 498; pairs with more than one successor state = 0)
+[MV3b (H1) AND (H2) WITH THE COMMITTED sigma — what the unit actually adds over its parent]
+  (H1) depth<=5, COMMITTED sigma, RENAMED menus with exact weights: sigma states = 32, states carrying >1 renamed menu = 0
+  (H2) depth<=5, COMMITTED sigma + event in its raw deterministic key (NOT d44a's renamed form — a strictly FINER key, so this is WEAKER than d44a's CG2, which is exactly the point): keys = 312, keys with >1 successor sigma = 0
+  [PASS] MV3b [SUBSUMED BY THE PARENT, stated] (H1) and (H2) hold on this family under the COMMITTED sigma — but these are d44a's results at a SHALLOWER depth.  d44a's CG1 IS (H1) verbatim (34,375 histories, 36 sigma-classes, zero exceptions; CG7b extends to 145,408 depth-7 transitions) and CG2 IS (H2) verbatim, so the committed MV4 label — '(H2) IS SETTLED HERE, not left dangling as d44a left it' — is FALSE ABOUT d44a's RECEIPT.  What d44a left open is the LOGICAL question, which its note answers in the OPPOSITE direction ((H2) is NOT a consequence of (H1)).  D51's positive content is strictly subsumed by its own parent — and the (H2) key used here is FINER than d44a's (raw event key, not the renamed one), so even this is a weaker statement than CG2's  (sigma states = 32, (H1) violations = 0; (H2) keys = 312, violations = 0)
+  [PASS] MV4 [RESTATED BY ROUND 1] the successor PROJECTION state is a function of (projection state, event) — zero violations to depth 7.  **This is a statement about projections, not about sigma**: key(h) -> key(h+e) says nothing about sigma(h) -> sigma(h+e), because sigma(h) does not determine key(h) (MV0(sigma)).  The committed claim that this SETTLES (H2) is withdrawn; MV3b carries the sigma-level statement, and it is d44a's, two depths deeper  ((depth, pairs, violations) = [(5, 498, 0), (6, 1122, 0), (7, 2530, 0)])
+
+[MV7 THE FIFTH READ — round-1 MAJOR 1]
+  Every View access on the admission-and-enumeration path:
+    prop_options_in_view  : holdings(a), superseded, live
+    arb_components_in_view: components(), superseded, props
+    View.components       : live, edges()
+    View.edges            : props, incomparable() -> self.pred
+    triples/edge_triples_of ('r'): props, edges() -> self.pred
+    candidates_for        : full.arbs, full.live, full.props
+  `edge_triples_of` feeds `mis_of` (an ADMISSIBILITY test) and
+  `PK1(...)[wkey]` (the WEIGHT).  `components()` records only the
+  PARTITION; the edge set inside a component is strictly finer,
+  and `projections()` drops it.  The omitted read is where the
+  weights live.
+  views inspected = 53787; same-base live-proposal pairs = 3048, COMPARABLE ones = 0
+  component sizes seen = {1: 24920, 2: 2540}
+  (base, member-triples) keys = 70; keys carrying MORE THAN ONE edge set = 0
+  [PASS] MV7 [DECLARED: EXACT **GIVEN (H0)**, not exact simpliciter] THE REDUCTION READS A FIFTH THING — `view.pred`, via incomparable() -> edges() -> mis_of and PK1 — and `projections()` drops it.  At this scope it is INERT, but by a theorem the committed receipt never stated, and that theorem is verbatim (H0)'s fourth clause: same-base live proposals are never comparable, so the edge set inside a component is determined by its membership.  The committed sigma records the edge set E EXPLICITLY, so d44a judged it necessary; D51 drops it without argument.  '[STRUCTURAL, exact]' must read 'exact GIVEN (H0)'  (views 53787; same-base live pairs 3048, comparable 0; (base, members) keys 70, keys with >1 edge set 0)
 
 [MV6 anti-vacuity]
-  [PASS] MV6 every check() predicate references a run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): exactly that and nothing more; falsifiability is MV5's job  (check() calls = 8, bare/unbound = 0)
+  [PASS] MV6 every check() predicate references a run-bound name and none is a bare constant.  SCOPE (LOG #403 MA-2): exactly that and nothing more; falsifiability is MV5's job, and round 1's finding that MV0(b)'s opponent-only clause is a theorem-pass is the scan's declared blind spot — it is LABELLED there instead  (check() calls = 12, bare/unbound = 0)
 
-[VERDICT — D51]
-  **MV-WEAK HOLDS ON THIS FAMILY — carried by MV3, not by the route the pin proposed.**  Equal full-view projections give equal menus with exact weights across all 6,471 histories, over 209 distinct projection keys, zero violations.  Since sigma IS an abstraction of exactly those projections, menus are sigma-determined here.
-  **BUT THE PIN'S PROOF ROUTE IS DAMAGED, AND THAT IS THE REAL NEWS.**  MV-STRONG was pre-registered to hold for propose and arbitrate candidates on a wire-closure argument.  It does not: every event type lags.  Worse, MV2 shows monotonicity FAILS — a smaller view can yield MORE options, because missing an actor's own live proposal makes a base look available.  Any depth-free argument built on 'the lagged view sees a subset' is therefore unsound, and the pin's §5 sketch is one of those.
-  WHAT THIS IS AND IS NOT.  Every gate above is FINITE-DEPTH [EVIDENCE] on the family to depth 5.  **(H1) IS NOT DISCHARGED.**  What this unit delivers is: (a) the reduction of (H1) to the four menu-relevant projections, which is exact and structural; (b) MV3/MV4 confirming the reduction's target and (H2) at finite depth; and (c) the REFUTATION of the pin's own depth-free route, with the monotonicity failure that kills it exhibited.  A second refuted route is worth more than a third unexamined one, but it is not a proof.
+[VERDICT — D51, ROUND-1 REPAIRED]
+  **WHAT IS ESTABLISHED.**  EQUAL FULL-VIEW PROJECTIONS GIVE EQUAL MENUS with exact weights, over every history to depth 7 (179783 histories, 1089 projection keys, zero violations) — the PROJECTION reduction of the MENU function, at finite depth, and GIVEN (H0) for the fifth read (MV7).
+  **WHAT IS NOT ESTABLISHED, and was claimed.**  The four projections REFINE sigma — 209 keys against 32 sigma states, every sigma state carrying more than one key — so 'sigma is an abstraction of exactly those projections' is BACKWARDS and MV3 does NOT give sigma-equal => menus-equal.  **(H1) IS NOT REDUCED IN THE CLAIMED DIRECTION.**  The same inversion voids the committed MV4 reading of (H2).
+  **WHAT THE UNIT'S POSITIVE CONTENT ACTUALLY IS.**  (H1) and (H2) under the committed sigma DO hold here (MV3b) — but they are d44a's CG1/CG2 at a shallower depth, so D51's positive content is strictly subsumed by its own parent.  What d44a left open is the LOGICAL question, and its note answers that in the opposite direction.
+  **THE DURABLE CONTENT IS THE REFUTATIONS.**  MV-STRONG fails for every event type; the 'p' case is FORCED by regs_of and the pinned §5 premise is false outright (MAJOR 2).  MONOTONICITY FAILS — a smaller view yields MORE proposal options — and the mechanism is MISSED SUPERSESSION, not the own-proposal exclusion the committed text named (BLOCKER 2, witnesses printed).  Any depth-free argument built on 'the lagged view sees a subset' is unsound, and the pin's §5 sketch is one of those.
   SCOPE: d42a, delivery-free, two actors.  Nothing transfers to transport scope.
 
-[d51] 8 PASS / 0 FAIL
+[d51] 12 PASS / 0 FAIL
 EXIT 0
 RC=0

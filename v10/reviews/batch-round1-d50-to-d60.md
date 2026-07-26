@@ -1844,3 +1844,37 @@ is not counted against the unit.
 
 **None of the seven units is citable until its repairs land and a delta
 records them.**
+
+---
+
+# DELTA — repairs verified, 2026-07-26
+
+All seven units repaired by the repair pass and rerun green: D53
+8 PASS, D55c 10 PASS, D58 8 PASS, D60 10 PASS, D57 8 PASS, D50
+13 PASS, D51 12 PASS — all exit 0.  The coordinator independently
+re-verified the load-bearing reversal with code sharing nothing with
+the receipts: SKY-A shatter-4 at N = 300, box = 40 — **M³⁺¹: 17
+events, M²⁺¹: 0**.  The discriminator is confirmed.
+
+Corrected headlines now on the record (details in each receipt's
+banner and result note): D53 — the true disjoint-row lemma, SKY-A/C
+live, residue 2 REOPENED; D55c — the zero was a density artefact
+through a SKY-B blinder, shatter-4 IS a two-sided-control dimension
+discriminator; D58 — ω is a chart-size ratio, the overlap finding
+closes with the SIGN FLIPPED, the homogeneity gap survives; D60 —
+tiles at sprinkling-grade homogeneity (inside the band) with THIN
+charts, d = 2 scope; D57 — ground (1) withdrawn, the verdict rests
+on ground (2) alone, which the trivial-boundary control STRENGTHENS
+(the counts are lower bounds); D50 — dimensions 12/32/125, the
+negative now CONSTRUCTIVE, corpus-wide 119 → 137; D51 — the
+projections REFINE sigma, (H1) not reduced in the claimed direction,
+durable content = three refutations.  D61's closure of (H1) goes
+through sigma directly and is untouched by D51's inversion.
+
+Residual assignments, tracked: the LOG forward-corrections land at
+#453; the book corrections land in the queued integration pass; the
+stale SC5 consumers (d54 census line, d54b K6, d55 G5 label, d47b
+TG3/TG4) are a named follow-up relabelling task — their gated records
+carry the empty trace so no verdict changes, the damage is labels.
+Two [REFEREE-CARRIED] numbers remain so-tagged.  **TERMINAL for the
+batch round.**

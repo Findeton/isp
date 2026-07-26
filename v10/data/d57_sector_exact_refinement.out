@@ -1,15 +1,70 @@
-[D57 — the coarsest sector-exact partition at transport scope]
+[D57 — the coarsest sector-exact partition at transport scope, ROUND-1 REPAIRED]
   banner: sector = (initiator, event-type); the aggregated
   transfer T_s(h, c) = sum q over sector s landing in class c;
   fixpoint refinement from the sector-signature partition; cap
-  layer closed by signature (declared).  Caps 3/4/5 exhaustive;
-  cap 6 CUT for runtime and declared (residue).  Exact Fractions.
-  [PASS] S0 anchor: committed d42b1 layer (single source)
+  layer closed by signature (declared).  **Caps 3/4/5/6 ALL
+  EXHAUSTIVE — cap 6 RAN and carries the headline** (the
+  committed banner said it was cut; round-1 NIT 1).  The ARB
+  SECTOR MECHANISM is re-derived from the layer rather than
+  asserted, with the component census the pin promised.  Exact
+  Fractions.
+  [PASS] S0 anchor: committed d42b1 layer (single source), including the View internals the arb denominator is built from — so the mechanism below is READ OFF THE LAYER, not asserted about it
   cap 3: histories = 521, iterations = 4, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 7}
+          trivial-boundary control (iterations 3): {0: 1, 1: 3, 2: 5, 3: 1}
   cap 4: histories = 3969, iterations = 5, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 16, 4: 9}
+          trivial-boundary control (iterations 4): {0: 1, 1: 3, 2: 9, 3: 7, 4: 1}
   cap 5: histories = 30729, iterations = 6, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 16, 4: 23, 5: 11}
+          trivial-boundary control (iterations 5): {0: 1, 1: 3, 2: 9, 3: 16, 4: 9, 5: 1}
   cap 6: histories = 243769, iterations = 7, fixpoint classes per depth = {0: 1, 1: 3, 2: 9, 3: 17, 4: 27, 5: 33, 6: 16}
-  [PASS] S1 SECTOR QUANTIZATION — TWICE REFUTED, AND THE SECOND REFUTATION IS THE FINDING.  Run 1 killed {0, 1/4} (arb sectors reach 1/2 via subset choices).  Run 2's k/4 law is killed at cap 6: **1/8 appears** — the arb sector prices 1/4 DIVIDED BY THE NUMBER OF COMPONENTS, so totals live in {k/(4m)} and the component count m grows with depth (more bases, more live pairs).  **THE SECTOR ALPHABET IS NOT FINITE**: the finite-alphabet prerequisite for a sector-exact abstraction FAILS at this granularity, independently of the refinement's verdict.  Gated as a REPORT: all totals are exact rationals of the form k/(4m), alphabet printed  (totals tested = 1084928, beyond-quarter = 704, observed alphabet = ['1/2', '1/4', '1/8'] — 1/8 = the two-component case, the depth-unbounded family's first member)
+          trivial-boundary control (iterations 6): {0: 1, 1: 3, 2: 9, 3: 16, 4: 23, 5: 11, 6: 1}
+
+[S1 THE ARB SECTOR MECHANISM — read off the layer, round-1 BLOCKER 1]
+  d42b1 line 328, the 'r' branch of admissible():
+      D = len(comps) + len(view.merge_pairs(a))
+      return True, F(1,4) / D * law(ckey, et)[wkey]
+  — components PLUS MERGE PAIRS, not the component count.
+  COMPONENT / MERGE-PAIR CENSUS BY DEPTH (the census pin §3 promised, cap 6, exhaustive):
+     depth 1: max|comps| = 1   max|merge_pairs| = 0   max D = 1
+     depth 2: max|comps| = 1   max|merge_pairs| = 0   max D = 1
+     depth 3: max|comps| = 1   max|merge_pairs| = 0   max D = 1
+     depth 4: max|comps| = 1   max|merge_pairs| = 0   max D = 1
+     depth 5: max|comps| = 1   max|merge_pairs| = 0   max D = 1
+     depth 6: max|comps| = 1   max|merge_pairs| = 1   max D = 2
+  SECTOR ALPHABET BY TYPE (round-1 NIT 2: the committed 'sector alphabet' silently EXCLUDED the idle sector; it is printed here):
+     type 'd': ['1/4']
+     type 'm': ['1/4', '1/8']
+     type 'n': ['3/4', '1/2', '1/4']   <- excluded by the ty != 'n' filter
+     type 'p': ['1/4']
+     type 'r': ['1/2', '1/4', '1/8']
+  arb sector total 1/2: witness depth 3 actor A; per-event (|comps|, |merge_pairs|, D, q) = [(1, 0, 1, '1/4'), (1, 0, 1, '1/8'), (1, 0, 1, '1/8')]
+  arb sector total 1/4: witness depth 1 actor A; per-event (|comps|, |merge_pairs|, D, q) = [(1, 0, 1, '1/4')]
+  arb sector total 1/8: witness depth 6 actor B; per-event (|comps|, |merge_pairs|, D, q) = [(1, 1, 2, '1/8')]
+  [PASS] S1 [CORRECTED BY ROUND 1 — THE COMMITTED MECHANISM IS REFUTED BY THIS UNIT'S OWN DATA] The arb sector does NOT price 1/4 divided by the number of components, and the component count does NOT grow with depth: max |comps| = 1 at EVERY depth over every one of the enumerated histories.  The denominator is |comps| + |merge_pairs|, and the 1/8 witness gets its 2 ENTIRELY FROM A MERGE PAIR.  **'THE SECTOR ALPHABET IS NOT FINITE' IS WITHDRAWN** — it was an extrapolation from a three-element observed alphabet through a premise the same data refutes.  The logic that would make it matter is sound (finite R + lumpable => at most |R|.|sectors| distinct totals; infinitely many values => no finite R) but its antecedent is NOT established.  Gated as a REPORT of the mechanism actually in the layer  (max|comps| = 1, max|merge_pairs| = 1, max D = 2; observed arb-sector alphabet = ['1/2', '1/4', '1/8']; the 1/8 witness has (|comps|, |merge_pairs|, D) = [(1, 1, 2)])
+
+[S1b THE QUESTION, REOPENED — round-1 MAJOR 1]
+  At 2-actor scope the surviving growth route is PROVABLY CAPPED.
+  merge_pairs(a) requires two held created versions with
+  INCOMPARABLE creation events.  Every arb or merge by an actor
+  puts that actor in its own register set (regs_of gives
+  props | {vname(...)} for 'r', where arb_components_in_view
+  requires a in proposers; and {a, ('mw', a, pk)} for 'm'), so
+  ALL creations authored by one actor lie on that actor's
+  register chain and are pairwise COMPARABLE.  With two actors
+  there are exactly two chains, so at most one incomparable
+  pair: |merge_pairs(a)| <= 1, hence D <= |comps| + 1, at every
+  depth.  Combined with max|comps| = 1 throughout the enumerated
+  window, the observed {1/2, 1/4, 1/8} is CONSISTENT WITH BEING
+  THE COMPLETE arb-sector alphabet at this unit's own scope.
+  [PASS] S1b THE FINITE-ALPHABET PREREQUISITE HAS NOT BEEN SHOWN TO FAIL, and the receipt's own data is consistent with the alphabet being COMPLETE at this scope.  A rescue of ground (1) must either EXHIBIT |comps| >= 2 (plausibly reachable near depth 8 via the two-independent-arbs divergence — not exhibited anywhere, and cap 6 cannot see it) or move to >= 3 actors, which is a scope change. Neither is in this receipt.  **Ground (1) is withdrawn as stated and the question is REOPENED**, which is a different thing from answering it negatively  (|merge_pairs| never exceeded 1 over the exhaustive cap-6 family (bound proved above for 2 actors); |comps| never exceeded 1; arb alphabet size = 3 and unchanged from cap 3 to cap 6)
+
+[S1c QUANTIZATION — round-1 MINOR 3/MINOR 4]
+  per-cap non-idle sector totals (the committed receipt summed these ACROSS NESTED CAPS, and cap C's family is a prefix-subfamily of cap C+1's):
+     cap 3: |FAM| =     521   non-idle sector totals =     2076
+     cap 4: |FAM| =    3969   non-idle sector totals =    15676
+     cap 5: |FAM| =   30729   non-idle sector totals =   120148
+     cap 6: |FAM| =  243769   non-idle sector totals =   947028
+     SUM = 1084928 <- what the committed receipt reported as 'totals tested'; DISTINCT = 947028 (inflation 1.15x)
+  [PASS] S1c THE k/4 LAW IS REFUTED AND THE REFUTATION IS NOW GATED (round-1 MINOR 3: `quant_bad` was computed and appeared only in a detail string, so the 'twice refuted' story was a printout).  Round-1 MINOR 2: the committed predicate's second conjunct, `all((v*4).denominator >= 1 ...)`, is true of every Fraction and is gone  (non-idle totals outside k/4 = 704; per-cap census above; distinct totals tested = 947028, not the 1084928 advertised)
 
   THE DECIDER — per-depth fixpoint class counts across caps:
   depth :  cap3  cap4  cap5  cap6
@@ -20,9 +75,46 @@
     4   :  -  9  23  27
     5   :  -  -  11  33
     6   :  -  -  -  16
-  [PASS] S2 THE MAIN QUESTION — read as LOOKAHEAD CONVERGENCE, not as raw growth (the first run's 'any growth = blow-up' reading was too crude: counts at depth d MUST grow while the cap is within the refinement's lookahead; the signal is whether they STABILIZE once the cap moves 2+ levels past d).  Depth-by-depth stabilization between the last two caps is the decider  ((depth, stable-at-last-two-caps) = [(0, True), (1, True), (2, True), (3, False), (4, False)] -> **NOT stabilized — the refinement keeps splitting beyond its lookahead: blow-up evidence at this window**)
+  [PASS] S2 THE MAIN QUESTION — read as LOOKAHEAD CONVERGENCE, not as raw growth (the first run's 'any growth = blow-up' reading was too crude: counts at depth d MUST grow while the cap is within the refinement's lookahead).  **THE DECIDER, STATED AS IT IS IMPLEMENTED (round-1 MINOR 6): for every depth carrying at least three cap values, do the LAST TWO cap values agree?**  The committed label said 'once the cap moves 2+ levels past d', a threshold justified nowhere and contradicted by its own data (depth 2 is stable from lookahead 1 onward: 9, 9, 9, 9).  The verdict is the same under either reading — every comparable depth fails the criterion — but the rule as written was an invented constant  ((depth, stable-at-last-two-caps) = [(0, True), (1, True), (2, True), (3, False), (4, False)] -> **NOT stabilized — the refinement keeps splitting beyond its lookahead: blow-up evidence at this window**)
 
-[VERDICT] actor-swap symmetry not quotiented (counts <= 2x upper bounds), declared; depth-7 confirmation is the residue.
+[S3 THE REFINEMENT WITNESS the pin promised — round-1 MINOR 1]
+  cap 3: first refinement at iteration 1; a class splits, witness pair
+      [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+      [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+  cap 4: first refinement at iteration 1; a class splits, witness pair
+      [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+      [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+  cap 5: first refinement at iteration 1; a class splits, witness pair
+      [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+      [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+  cap 6: first refinement at iteration 1; a class splits, witness pair
+      [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+      [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+  THE HEADLINE CREEP, EXHIBITED: depth-3 histories = 452, cap5 classes = 16, cap6 classes = 17
+    SPLIT: one cap5 class of 84 histories splits 64 / 20 at cap6
+      cap6 class (64 histories), example: [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+      cap6 class (20 histories), example: [('p', 'A', ('v', 'v0'), 0), ('p', 'B', ('v', 'v0'), 1), ('r', 'A', frozenset({('B', ('v', 'v0'), 1), ('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+  [PASS] S3 THE HEADLINE CREEP IS NOT A MARGINAL ONE-OFF.  The committed receipt rested '16 -> 16 -> 17 at depth 3' on a single count with no witness (the pin promised one).  The split is exhibited above and it separates a substantive distinction over a double-digit block of histories, not one stray  (depth-3: cap5 16 classes -> cap6 17; the splitting cap5 class had 84 histories and splits [64, 20])
 
-[d57] 3 PASS / 0 FAIL
+[S4 THE BOUNDARY TREATMENT BIASES TOWARD CLOSURE — ground (2) STRENGTHENED]
+  The refinement was run a SECOND time at every cap with the
+  OPPOSITE boundary: the whole cap layer lumped into ONE class,
+  the coarsest possible treatment.  If the signature boundary
+  were manufacturing the growth, the trivial boundary would show
+  less of it.  It shows EXACTLY ONE LEVEL LESS OF LOOKAHEAD:
+    cap 4 trivial-boundary = {0: 1, 1: 3, 2: 9, 3: 7, 4: 1}   vs   cap 3 signature = {0: 1, 1: 3, 2: 9, 3: 7}   identical on the shared depths = True
+    cap 5 trivial-boundary = {0: 1, 1: 3, 2: 9, 3: 16, 4: 9, 5: 1}   vs   cap 4 signature = {0: 1, 1: 3, 2: 9, 3: 16, 4: 9}   identical on the shared depths = True
+    cap 6 trivial-boundary = {0: 1, 1: 3, 2: 9, 3: 16, 4: 23, 5: 11, 6: 1}   vs   cap 5 signature = {0: 1, 1: 3, 2: 9, 3: 16, 4: 23, 5: 11}   identical on the shared depths = True
+  [PASS] S4 THE SIGNATURE BOUNDARY IS WORTH EXACTLY ONE EXTRA LEVEL OF LOOKAHEAD, and BOTH truncations UNDER-refine relative to the untruncated fixpoint (the cap layer's true successors would split it further).  So the reported per-depth counts are LOWER BOUNDS on the true counts: observed growth is genuine growth, and the blow-up reading is the CONSERVATIVE one.  The suspicion that the boundary treatment manufactures the negative is answered in the unit's favour  (cap-C-with-signature == cap-(C+1)-with-trivial at every shared depth, C = 3, 4, 5: [True, True, True])
+
+[S5 determinism and anti-vacuity — round-1 MINOR 5]
+  [PASS] S5 ORDER-INDEPENDENCE AND ANTI-VACUITY.  The refinement was re-run at cap 3 with the family enumerated in the OPPOSITE order — which is what a PYTHONHASHSEED change would perturb, since every key here is a dict-built tuple sorted by repr — and produced the IDENTICAL partition, block for block.  The AST scan (LOG #403 MA-2 scope) is the one this unit lacked, and is how MINOR 2's always-true conjunct survived  (cap-3 partition identical under reversed enumeration = True; check() calls = 8, bare/unbound = 0)
+
+[VERDICT — D57, ROUND-1 REPAIRED]
+  GROUND (2) STANDS AND IS STRENGTHENED.  Depth 3 crept [7, 16, 16, 17], depth 4 [9, 23, 27], depth 5 [11, 33]; nothing comparable stabilized, the witness is exhibited (S3), and the boundary treatment biases toward CLOSURE (S4), so the negative is conservative.
+  GROUND (1) IS WITHDRAWN AS STATED.  The arb-sector mechanism the committed receipt gave is refuted by its own exhaustive data, and 'THE SECTOR ALPHABET IS NOT FINITE' is unsupported.  LOG #437's adjudication — that ground (1) CARRIES the verdict and ground (2) corroborates — must be inverted: the verdict now rests on ground (2) alone.
+  THE REOPENED QUESTION: is |comps| >= 2 reachable at all, and if not at 2-actor scope, at 3?  That is a scope change and is not in this receipt.
+  DECLARED: actor-swap symmetry not quotiented (counts <= 2x upper bounds); the idle sector is excluded from 'the sector alphabet' by the ty != 'n' filter (its own alphabet is printed in S1); depth-7 confirmation is the residue.
+
+[d57] 8 PASS / 0 FAIL
 RC=0

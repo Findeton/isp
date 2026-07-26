@@ -1,29 +1,127 @@
-[D58 — the atlas instrument]
-  banner: overlap omega(e,e') = |D_e(d) ∩ D_e'(d-1)|/|D_e(d)| on
-  cover pairs; homogeneity = the |D_e(d)| profile.  Controls
-  first (a failing control convicts the INSTRUMENT).  Exact
-  Fractions; orderings reported whichever way they land.
-  [PASS] A0 anchors: sky/mink3 from committed d47a; mink4 from committed d55c (its z=0 anchor stands); the general builder from committed d55; the transport layer from committed d42b1 — all single sources via AST extraction  (extractions loaded)
+[D58 — the atlas instrument, ROUND-1 REPAIRED]
+  banner: omega(e,e') = |D_e(d) & D_e'(d-1)| / |D_e(d)| on cover
+  pairs; homogeneity = the |D_e(d)| profile.  Round 1 showed the
+  M^{3+1} control was a degenerate point set and that omega is a
+  CHART-SIZE RATIO (containment theorem, A1b), not a two-way
+  overlap; both are carried below.  Controls first (a failing
+  control convicts the INSTRUMENT).  Exact Fractions; orderings
+  reported whichever way they land.
+  [PASS] A0 anchors: sky/mink3/heights from committed d47a; mink4 and the ROUND-1 REPAIRED sprinkling generator `latt` from d55c (single source for the generator fix — the committed low-bit draw is also imported, as `latt4_committed`, so the degeneracy can be EXHIBITED rather than asserted); the general builder from committed d55; the transport layer from committed d42b1 — all single sources via AST extraction  (extractions loaded)
 
-[controls first — sprinklings]
-  M21 N=120 d=2: events=120, |D|>=2 at 77 (64%), |D|>=4 at 51, max=11, cover-pairs measured=465, mean omega=73489/613800 (~0.12)
-  M21 N=120 d=3: events=120, |D|>=2 at 90 (75%), |D|>=4 at 72, max=12, cover-pairs measured=559, mean omega=28541/176085 (~0.16)
-  M31 N=120 d=2: events=120, |D|>=2 at 88 (73%), |D|>=4 at 57, max=31, cover-pairs measured=2108, mean omega=1022991/1895092 (~0.54)
-  M31 N=120 d=3: events=120, |D|>=2 at 57 (47%), |D|>=4 at 28, max=29, cover-pairs measured=1397, mean omega=119/127 (~0.94)
-  [PASS] A1 CONTROL VALIDATION, corrected by its own first run (my hard-pinned overlap floor of 1/3 was an arbitrary number and M21 came in at ~0.12 — the kind of pinned constant the corpus keeps teaching me not to invent): sprinkling validation rests on HOMOGENEITY (>= half the events carry >= 2-direction charts — both controls pass comfortably, 64%/73%), and OVERLAP is REPORTED, not thresholded.  The striking M21-vs-M31 overlap difference (0.12 vs 0.54 at d = 2) is flagged as a FINDING CANDIDATE but is CONFOUNDED here by differing sprinkling densities (box 60 vs 32) — deconfounding it is a residue, not a claim  (M21 d=2 (events, w>=2, w>=4, max, pairs, mean) = (120, 77, 51, 11, 465, Fraction(73489, 613800)); M31 = (120, 88, 57, 31, 2108, Fraction(1022991, 1895092)))
+[controls first — sprinklings.  BLOCKER 1: the committed M^{3+1} control is rebuilt on the repaired generator]
+  M21 N=120 box=60 (committed, 2+1) d=2: events=120, |D|>=2 at 77 (77/120 = 0.6417), |D|>=4 at 51 (17/40 = 0.4250), mean|D|=3.26, max=11
+      cover pairs measured=465, mean omega=73489/613800 (~0.1197)
+      height-gap census {1: 180, 2: 173, 3: 69, 4: 35, 5: 7, 6: 1}; GAP-1 ONLY: 180 pairs, mean omega=73489/237600 (~0.3093); structural-zero share 19/31 (~0.6129)
+  M21 N=120 box=60 (committed, 2+1) d=3: events=120, |D|>=2 at 90 (3/4 = 0.7500), |D|>=4 at 72 (3/5 = 0.6000), mean|D|=4.38, max=12
+      cover pairs measured=559, mean omega=28541/176085 (~0.1621)
+      height-gap census {1: 189, 2: 152, 3: 132, 4: 65, 5: 17, 6: 4}; GAP-1 ONLY: 189 pairs, mean omega=28541/59535 (~0.4794); structural-zero share 370/559 (~0.6619)
+  --- the COMMITTED M^{3+1} control, kept only as an exhibit: 32 distinct points wearing 120 labels ---
+  M31 N=120 box=32 [DEGENERATE] d=2: events=120, |D|>=2 at 88 (11/15 = 0.7333), |D|>=4 at 57 (19/40 = 0.4750), mean|D|=15.02, max=31
+      cover pairs measured=2108, mean omega=1022991/1895092 (~0.5398)
+      height-gap census {1: 1996, 2: 112}; GAP-1 ONLY: 1996 pairs, mean omega=1022991/1794404 (~0.5701); structural-zero share 28/527 (~0.0531)
+  M31 N=120 box=32 [DEGENERATE] d=3: events=120, |D|>=2 at 57 (19/40 = 0.4750), |D|>=4 at 28 (7/30 = 0.2333), mean|D|=7.49, max=29
+      cover pairs measured=1397, mean omega=119/127 (~0.9370)
+      height-gap census {1: 1309, 2: 88}; GAP-1 ONLY: 1309 pairs, mean omega=1 (~1.0000); structural-zero share 8/127 (~0.0630)
+  M31 N=120 box=40 (REPAIRED, 3+1) d=2: events=120, |D|>=2 at 92 (23/30 = 0.7667), |D|>=4 at 72 (3/5 = 0.6000), mean|D|=5.17, max=17
+      cover pairs measured=772, mean omega=16713751/242531520 (~0.0689)
+      height-gap census {1: 288, 2: 322, 3: 153, 4: 9}; GAP-1 ONLY: 288 pairs, mean omega=16713751/90478080 (~0.1847); structural-zero share 121/193 (~0.6269)
+  M31 N=120 box=40 (REPAIRED, 3+1) d=3: events=120, |D|>=2 at 91 (91/120 = 0.7583), |D|>=4 at 76 (19/30 = 0.6333), mean|D|=6.55, max=17
+      cover pairs measured=791, mean omega=1575904201/9691521840 (~0.1626)
+      height-gap census {1: 283, 2: 313, 3: 174, 4: 19, 5: 2}; GAP-1 ONLY: 283 pairs, mean omega=1575904201/3467383920 (~0.4545); structural-zero share 508/791 (~0.6422)
+
+[the corrected sprinkling family — round-1 MINOR 4: the homogeneity 'floor' was a two-point floor over two records, one of them invalid.  Eleven genuine configurations:]
+    M21 box= d47a: homog 0.6417 (|D|>=4 0.4250), mean|D| 3.26, max 11, mean omega 0.1197 over 465 pairs
+    M21 box=   30: homog 0.8000 (|D|>=4 0.6417), mean|D| 4.15, max 11, mean omega 0.1104 over 596 pairs
+    M21 box=   40: homog 0.7500 (|D|>=4 0.4500), mean|D| 3.64, max 10, mean omega 0.1145 over 513 pairs
+    M21 box=   60: homog 0.7250 (|D|>=4 0.5000), mean|D| 3.99, max 11, mean omega 0.1125 over 552 pairs
+    M21 box=   90: homog 0.6667 (|D|>=4 0.4250), mean|D| 3.32, max 11, mean omega 0.1329 over 467 pairs
+    M31 box=   20: homog 0.7333 (|D|>=4 0.6333), mean|D| 5.15, max 15, mean omega 0.0811 over 753 pairs
+    M31 box=   24: homog 0.7167 (|D|>=4 0.5667), mean|D| 4.29, max 14, mean omega 0.0629 over 700 pairs
+    M31 box=   40: homog 0.7667 (|D|>=4 0.6000), mean|D| 5.17, max 17, mean omega 0.0689 over 772 pairs
+    M31 box=   48: homog 0.6833 (|D|>=4 0.5000), mean|D| 4.84, max 15, mean omega 0.0646 over 752 pairs
+    M31 box=   60: homog 0.7083 (|D|>=4 0.5167), mean|D| 4.65, max 16, mean omega 0.0481 over 783 pairs
+    M31 box=   90: homog 0.7500 (|D|>=4 0.6500), mean|D| 6.41, max 14, mean omega 0.0999 over 807 pairs
+  sprinkling homogeneity BAND = [77/120 , 4/5] = [0.6417, 0.8000] over 11 genuine configurations
+  [PASS] A1 CONTROL VALIDATION, and THE FLAGGED FINDING CANDIDATE IS RESOLVED — NEGATIVELY (round-1 BLOCKER 1).  Homogeneity: every one of the genuine configurations clears the >= 1/2 bar, so the instrument IS validated on controls.  Overlap: the committed 'striking M21-vs-M31 difference (0.12 vs 0.54)' was an artefact of a control that was 32 distinct points wearing 120 labels — against GENUINE M^{3+1} sprinklings at the same N the mean overlap is BELOW M21's, so the difference is real, is in the OPPOSITE direction, and is NOT density-confounded.  The committed density diagnosis is withdrawn along with the number  (homogeneity band [0.642, 0.800], all >= 1/2; M21 (committed record) mean omega = 73489/613800 (~0.1197); genuine M^{3+1} mean omega range [0.0481, 0.0999]; the DEGENERATE committed control read 0.5398 with mean chart width 15.02 against 5.17 genuine)
+
+[A1b WHAT omega IS — the containment theorem, round-1 MAJOR 2]
+  THEOREM (of the committed SKY-B definition).  For a cover pair
+  e < e':  if h[e'] - h[e] = 1 then D_e'(d-1) SUBSET D_e(d), so
+  omega(e,e') = |D_e'(d-1)| / |D_e(d)|; otherwise the two sets are
+  DISJOINT and omega = 0 identically.
+  Proof.  D_e(d) = {f : e < f, h[f] = h[e]+d} and D_e'(d-1) =
+  {f : e' < f, h[f] = h[e']+d-1}.  If h[e'] = h[e]+1 the height
+  conditions coincide and e < e' < f implies e < f; otherwise the
+  height conditions are incompatible.  []
+  CONSEQUENCES, both against the pin's framing: the intersection
+  is ALWAYS the whole successor chart, so 'the transition is the
+  identity on their intersection' has nothing to act on; and
+  omega is a CHART-SIZE RATIO along covers, which systematically
+  favours THIN-charted records (a 2-direction chart reaches high
+  omega when a neighbour retains 2; a 15-direction chart needs 15).
+  [PASS] A1b [THEOREM, verified] omega IS A CHART-SIZE RATIO, NOT AN OVERLAP.  Both clauses of the containment theorem hold with ZERO violations over every cover pair of every record measured here, and — independently — the Jaccard index |A&B|/|A|B| equals omega to the last Fraction on all of them, which is only possible under containment.  The instrument's second leg must be described as what it is  (cover pairs checked = 14818; containment violations = 0; Jaccard-vs-omega disagreements = 0)
+
+[A1c THE HEIGHT-GAP CENSUS — round-1 MAJOR 1: the pin's 'same height layer' premise is FALSE]
+  M21: gaps {1: 180, 2: 173, 3: 69, 4: 35, 5: 7, 6: 1}; 285 of 465 measured pairs (0.6129) have gap >= 2 and are STRUCTURAL ZEROS, not measurements of poor charting
+  M31 (repaired): gaps {1: 288, 2: 322, 3: 153, 4: 9}; structural-zero share 0.6269
+  CONDITIONED on gap 1 the ordering is the SAME REVERSAL by an independent route: M21 0.3093 vs genuine M31 box 20: 0.2415, box 24: 0.2097, box 40: 0.1847, box 48: 0.1966, box 60: 0.1697, box 90: 0.2534
+  [PASS] A1c THE REPORTED omega IS LARGELY A MEASUREMENT OF HOW CHAIN-LIKE THE POSET IS.  A cover pair's two chart sets share a height layer IFF the height gap is 1, which a cover does NOT guarantee; 61% of M21's measured pairs are structural zeros.  Restricted to gap-1 pairs the M21-vs-M31 ordering is the same reversal A1 found, reached by an independent route.  Both the unconditioned and the conditioned statistic are reported for every record  (M21 structural-zero share = 19/31 (~0.6129); gap-1 means: M21 0.3093, genuine M31 [0.1697, 0.2534])
 
 [the grammar's records]
-  shatter-4 record d=2: events=44, |D|>=2 at 17 (38%), |D|>=4 at 0, max=3, cover-pairs measured=31, mean omega=44/93 (~0.47)
-  shatter-4 record d=3: events=44, |D|>=2 at 18 (40%), |D|>=4 at 1, max=4, cover-pairs measured=28, mean omega=17/28 (~0.61)
-  shatter-5 record d=2: events=84, |D|>=2 at 30 (35%), |D|>=4 at 0, max=3, cover-pairs measured=57, mean omega=80/171 (~0.47)
-  shatter-5 record d=3: events=84, |D|>=2 at 37 (44%), |D|>=4 at 5, max=4, cover-pairs measured=66, mean omega=389/792 (~0.49)
-  generic 2-actor walk d30 d=2: events=30, |D|>=2 at 2 (6%), |D|>=4 at 0, max=2, cover-pairs measured=2, mean omega=1 (~1.00)
-  generic 2-actor walk d30 d=3: events=30, |D|>=2 at 2 (6%), |D|>=4 at 0, max=2, cover-pairs measured=2, mean omega=1 (~1.00)
-  [PASS] A2 THE ATLAS GAP, reported whichever way it lands (pre-registered: engineered records PATHOLOGICAL as atlases — built to shatter, not to tile): homogeneity (fraction of events with >= 2-direction charts at d = 2) compared, sprinklings vs the shatter records  (sprinkling homogeneity floor = 0.64; engineered ceiling = 0.39; generic walk = 0.07 -> GAP CONFIRMED: the grammar's records are the opposite of atlases)
-  [PASS] A3 mean-overlap comparison at d = 2, same discipline  (M21 = 0.12, M31 = 0.54, SH4 = 0.47, SH5 = 0.47, WALK = 1.00)
-  [PASS] A4 AST anti-vacuity (no bare-constant predicates; #403 MA-2 scope) — NOTE: A3's predicate is near-vacuous by design (it is a REPORTING gate) and is labelled as such here  (check() calls = 5, bare = 0)
+  shatter-4 record d=2: events=44, |D|>=2 at 17 (17/44 = 0.3864), |D|>=4 at 0 (0 = 0.0000), mean|D|=1.20, max=3
+      cover pairs measured=31, mean omega=44/93 (~0.4731)
+      height-gap census {1: 25, 2: 5, 3: 1}; GAP-1 ONLY: 25 pairs, mean omega=44/75 (~0.5867); structural-zero share 6/31 (~0.1935)
+  shatter-4 record d=3: events=44, |D|>=2 at 18 (9/22 = 0.4091), |D|>=4 at 1 (1/44 = 0.0227), mean|D|=1.32, max=4
+      cover pairs measured=28, mean omega=17/28 (~0.6071)
+      height-gap census {1: 24, 2: 3, 3: 1}; GAP-1 ONLY: 24 pairs, mean omega=17/24 (~0.7083); structural-zero share 1/7 (~0.1429)
+  shatter-5 record d=2: events=84, |D|>=2 at 30 (5/14 = 0.3571), |D|>=4 at 0 (0 = 0.0000), mean|D|=1.17, max=3
+      cover pairs measured=57, mean omega=80/171 (~0.4678)
+      height-gap census {1: 45, 2: 7, 3: 4, 4: 1}; GAP-1 ONLY: 45 pairs, mean omega=16/27 (~0.5926); structural-zero share 4/19 (~0.2105)
+  shatter-5 record d=3: events=84, |D|>=2 at 37 (37/84 = 0.4405), |D|>=4 at 5 (5/84 = 0.0595), mean|D|=1.37, max=4
+      cover pairs measured=66, mean omega=389/792 (~0.4912)
+      height-gap census {1: 53, 2: 5, 3: 7, 4: 1}; GAP-1 ONLY: 53 pairs, mean omega=389/636 (~0.6116); structural-zero share 13/66 (~0.1970)
+  generic 2-actor walk d30 d=2: events=30, |D|>=2 at 2 (1/15 = 0.0667), |D|>=4 at 0 (0 = 0.0000), mean|D|=1.00, max=2
+      cover pairs measured=2, mean omega=1 (~1.0000)
+      height-gap census {1: 2}; GAP-1 ONLY: 2 pairs, mean omega=1 (~1.0000); structural-zero share 0 (~0.0000)
+  generic 2-actor walk d30 d=3: events=30, |D|>=2 at 2 (1/15 = 0.0667), |D|>=4 at 0 (0 = 0.0000), mean|D|=0.93, max=2
+      cover pairs measured=2, mean omega=1 (~1.0000)
+      height-gap census {1: 2}; GAP-1 ONLY: 2 pairs, mean omega=1 (~1.0000); structural-zero share 0 (~0.0000)
+  [PASS] A2 THE ATLAS GAP — the pre-registered comparison is now the PREDICATE, not the detail string (round-1 MINOR 3: the committed A2 gated `all(k in R for k in ...)`, true by construction three lines after the assignments).  Pre-registered: engineered records PATHOLOGICAL as atlases — built to shatter, not to tile.  The comparison is against the CORRECTED sprinkling family's measured BAND, not a two-point floor.  **This gate survives every correction in the round and is the unit's durable content**  (sprinkling homogeneity band = [77/120, 4/5] (~[0.642, 0.800]) over 11 genuine configurations; engineered ceiling = 17/44 (~0.386); generic walk = 1/15 (~0.067) -> GAP CONFIRMED: the grammar's records are the opposite of atlases)
+  [PASS] A3 [REPORTING GATE, labelled] mean-overlap comparison at d = 2, each mean annotated with the population it is a mean over (round-1 MINOR 2: the committed table reported means from 2 pairs and 2,108 pairs side by side with no sample sizes, and WALK's 1.00 — the highest value in the whole table — rests on TWO pairs)  (M21 = 0.1197 over 465 pairs; M31 = 0.0689 over 772 pairs; M31DEGEN = 0.5398 over 2108 pairs; SH4 = 0.4731 over 31 pairs; SH5 = 0.4678 over 57 pairs; WALK = 1.0000 over 2 pairs)
 
-[VERDICT] the atlas instrument exists and is validated on sprinklings; the measured gap defines the CRYSTAL question (can the grammar tile?) — the successor unit.
+[A4 THE CHART-WIDTH COLUMN — round-1 MINOR 1: |D| >= 4 was computed at every record and never compared]
+    M21      : |D|>=2 0.6417  |D|>=4 0.4250  mean|D| 3.26  max|D| 11
+    M31      : |D|>=2 0.7667  |D|>=4 0.6000  mean|D| 5.17  max|D| 17
+    M31DEGEN : |D|>=2 0.7333  |D|>=4 0.4750  mean|D| 15.02  max|D| 31
+    SH4      : |D|>=2 0.3864  |D|>=4 0.0000  mean|D| 1.20  max|D| 3
+    SH5      : |D|>=2 0.3571  |D|>=4 0.0000  mean|D| 1.17  max|D| 3
+    WALK     : |D|>=2 0.0667  |D|>=4 0.0000  mean|D| 1.00  max|D| 2
+  [PASS] A4 CHART WIDTH IS A THIRD, EQUALLY NATURAL METRIC, and it is reported here because it is the one that qualifies the successor unit's verdict (D60 MAJOR 3): genuine sprinklings carry 4-direction charts at a substantial fraction of their events, and any record claimed to be 'sprinkling-grade' must be placed beside this column, not only beside |D| >= 2  (genuine sprinkling |D|>=4 band = [17/40, 13/20] (~[0.425, 0.650]); engineered records 0.000 / 0.000; generic walk 0.000)
 
-[d58] 5 PASS / 0 FAIL
+[COMPARATORS, exact Fractions — D60 imports these by AST extraction rather than re-typing floor-rounded percentages (round-1 NIT 1/NIT 2 and D60 MINOR 1)]
+    ENGINEERED_CEIL = 17/44  (~0.3864)
+    M21_OMEGA = 73489/613800  (~0.1197)
+    M31_OMEGA_HI = 29039741/290810520  (~0.0999)
+    M31_OMEGA_LO = 1697096/35270235  (~0.0481)
+    SPRINKLE_HOMOG_HI = 4/5  (~0.8000)
+    SPRINKLE_HOMOG_LO = 77/120  (~0.6417)
+    SPRINKLE_W4_HI = 13/20  (~0.6500)
+    SPRINKLE_W4_LO = 17/40  (~0.4250)
+    WALK_HOMOG = 1/15  (~0.0667)
+  [PASS] A5 AST anti-vacuity (no bare-constant predicates; #403 MA-2 scope) — NOTE: A3's predicate is near-vacuous by design (it is a REPORTING gate) and is labelled as such; A2, which round 1 found unlabelled AND unfalsifiable, now carries the falsifiable comparison  (check() calls = 8, bare = 0)
+
+[VERDICT — D58, ROUND-1 REPAIRED]
+  WHAT STANDS: the homogeneity leg.  The instrument is validated
+  on eleven genuine sprinkling configurations (band [0.642, 0.800]), and the grammar's
+  shatter records sit far below it — the pre-registered gap, unmoved by any correction in the round.
+  WHAT IS WITHDRAWN: every M^{3+1} number of the committed run
+  (73% / 0.54 / 0.94), the 'FINDING CANDIDATE' framing, and the
+  density diagnosis.  The comparison, run against genuine
+  sprinklings, RESOLVES the flagged residue with the sign flipped.
+  WHAT IS RESTATED: omega is a CHART-SIZE RATIO along covers
+  (A1b's containment theorem), reported with its height-gap
+  census (A1c); the pin's 'same height layer' premise holds only
+  at gap 1, and the atlas/cocycle language must not outrun it.
+
+[d58] 8 PASS / 0 FAIL
 RC=0

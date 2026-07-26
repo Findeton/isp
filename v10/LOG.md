@@ -10458,3 +10458,61 @@ form (D50: the form remains a choice). TRANSPORT UNTOUCHED; THREE
 ACTORS OUT OF SCOPE (the dichotomy fails there — the pin forbids
 wider quotation).** Paper 30/32 + book updates QUEUED behind this
 unit's hostile round per discipline.
+
+## 2026-07-26 — BATCH ROUND TERMINAL: SEVEN UNITS REPAIRED; FORWARD
+## CORRECTIONS CORPUS-WIDE (LEDGER #453)
+The batch round (reviews/batch-round1-d50-to-d60.md) is repaired,
+delta'd, TERMINAL: 7 units rerun green (8/10/8/10/8/13/12 PASS, all
+exit 0). I independently confirmed the load-bearing reversal with my
+own sky+shatter code: **SKY-A shatter-4 at N = 300 box = 40 — M^{3+1}
+17 events, M^{2+1} ZERO.** The following FORWARD CORRECTIONS supersede
+earlier entries wherever they conflict:
+**(1) #426 (D53): the empty-trace necessity theorem is FALSE** —
+shattering S needs a row DISJOINT FROM S; SKY-A/C are LIVE readings;
+**residue 2 (which sky reading?) REOPENS**; the honest census: 144 of
+415 genuinely capable, reduction 2.8x. D47's insufficiency correction
+STANDS.
+**(2) #435 (D55c) REVERSES: shatter-4 IS AN EMPIRICAL DIMENSION
+DISCRIMINATOR** — the zero was a density artefact read through a
+SKY-B blinder; matched ladder N = 150..500: 3+1 shatter-4
+0/1/11/30/116/211 vs 2+1 ZERO everywhere, shatter-5 zero in both,
+size-control clean. "No sprinkled record shatters at all" was also
+false (shatter-3 fires 1,935 times). **The meter reads geometry.**
+**(3) #439 (D58): the flagged overlap finding closes SIGN-FLIPPED**
+(genuine M31 omega 0.048-0.100 < M21's 0.12; the committed M31
+control was 32 points in 120 labels — generator degeneracy); omega is
+a CHART-SIZE RATIO (containment theorem, 14,818 pairs). The
+homogeneity gap SURVIVES (engineered 0.357-0.386 vs sprinkling band
+0.642-0.800).
+**(4) #448 (D60): "above the sprinkling floor" becomes INSIDE THE
+SPRINKLING BAND** (0.642-0.800, 11 configurations) with
+above-sprinkling overlap and THIN charts (|D| >= 4 = 0 at d = 2);
+rounds/width sensitivity printed (0.440->0.928 / 0.788->0.682);
+result note written. THE TILING STANDS, honestly scoped.
+**(5) #436/#437 (D57): ground (1) WITHDRAWN — the adjudication at
+#437 INVERTS.** The denominator is |comps| + |merge_pairs| with max
+|comps| = 1 at every depth in its own data; at 2-actor scope
+merge_pairs <= 1 is PROVEN, so {1/2, 1/4, 1/8} may be COMPLETE. The
+sector verdict now rests on ground (2) ALONE — which the
+trivial-boundary control STRENGTHENS: the fixpoint counts are LOWER
+BOUNDS, the blow-up reading conservative.
+**(6) #422 (D50): dimensions 12/32/125** (the committed rows dropped
+half the product rule; exact-in-t certificate 16/16 vs 0/16), and
+**CORPUS-WIDE: D49/B2's published 119 becomes 137** — a port check
+reproduces 119 exactly because porting the method ports the error; a
+port check cannot be an independence check. The negative is now
+CONSTRUCTIVE (an exact positive line of distinct completions). THE
+HEADLINE STRENGTHENS: the form is a choice, with MORE freedom than
+published.
+**(7) #424 (D51): the projections REFINE sigma** (209 keys vs 32
+states) — **(H1) was NOT reduced in the claimed direction**; MV2's
+mechanism is MISSED SUPERSESSION; the 'r' arm lags too; durable
+content = three refutations at depth 7. **D61's closure of (H1) is
+UNTOUCHED — it goes through sigma directly, not through the
+projections.**
+NAMED FOLLOW-UP (small): relabel the stale SC5 consumers (d54 census
+line, d54b K6, d55 G5, d47b TG3/TG4) — no verdict changes (their
+records carry the empty trace); the damage is labels. Book
+corrections land in the queued integration pass. USER DIRECTION
+recorded: after the cocycle unit, the DESCENT-CONDITIONS unit (the
+missing map's first segment) is authorized.

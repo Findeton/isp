@@ -1,27 +1,87 @@
-[D60 — the crystal question]
+[D60 — the crystal question, ROUND-1 REPAIRED]
   banner: can the grammar TILE?  Blueprints from the pin; every
-  event menu-selected (restricted menus INCLUDE the delivery
-  receiver — the corrected D55 instrument); atlas metrics from
-  the committed D58 extraction; orderings reported whichever
-  way they land; comparators cited from committed D58 output.
-  [PASS] C0 anchors: transport layer (committed d42b1) + sky instrument (committed d47a), single sources  (loaded)
+  event menu-selected; atlas metrics AND comparators from the
+  round-1 repaired D58 instrument, recomputed here rather than
+  re-typed; the two blueprint parameters SWEPT and reported; the
+  chart-width metric reported beside the other two; orderings
+  reported whichever way they land.
+  [PASS] C0 anchors: transport layer (committed d42b1), sky instrument (committed d47a), the ROUND-1 REPAIRED sprinkling generator (d55c) and **the atlas instrument itself (d58)** — all single sources by AST extraction.  Round-1 MINOR 1: the committed receipt re-typed D58's comparators as two-digit decimals read off a floor-rounded printout, one of them in the unit's own favour; they are now RECOMPUTED with D58's own code on genuine records  (loaded)
 
 [CRYSTAL-1D — the brick wall, m = 8, 14 rounds]
-  [PASS] C1 CRYSTAL-1D IS ADMISSIBLE END TO END: the brick circuit (65 events over 8 actors, 14 rounds of alternating re-deliveries) — every event offered by the layer's own menu.  The pre-registered lean (re-delivery circuits run indefinitely) holds  (events = 65, refusal = None)
-  brick m=8 d=2: events=65, |D|>=2: 50 (76%), max|D|=3, pairs=96, mean omega=0.65
-  brick m=8 d=3: events=65, |D|>=2: 48 (73%), max|D|=4, pairs=92, mean omega=0.71
+  [PASS] C1 CRYSTAL-1D IS ADMISSIBLE END TO END AND THE RECORD IS FORCED: the brick circuit (65 events over 8 actors, 14 rounds of alternating re-deliveries) — every event offered by the layer's own menu, and every specification matched by EXACTLY ONE candidate, so nothing was tie-broken.  The pre-registered lean (re-delivery circuits run indefinitely) holds  (events = 65, refusal = None, max menu hits per specification = 1)
+  brick m=8 d=2: events=65, |D|>=2: 10/13 (~0.7692), |D|>=4: 0 (~0.0000), max|D|=3, mean|D|=2.25, pairs=96, mean omega=125/192 (~0.6510)
+  brick m=8 d=3: events=65, |D|>=2: 48/65 (~0.7385), |D|>=4: 38/65 (~0.5846), max|D|=4, mean|D|=2.78, pairs=92, mean omega=131/184 (~0.7120)
 
 [CRYSTAL-2D — the 3x3 grid, 12 phases]
-  [PASS] C2 CRYSTAL-2D IS ADMISSIBLE END TO END: the grid circuit (46 events over 9 actors, 12 phases)  (events = 46, refusal = None)
-  grid 3x3 d=2: events=46, |D|>=2: 23 (50%), max|D|=3, pairs=43, mean omega=0.39
-  grid 3x3 d=3: events=46, |D|>=2: 28 (60%), max|D|=3, pairs=51, mean omega=0.48
-  [PASS] C3 THE CRYSTAL VERDICT (orderings only, the D58 lesson; comparators cited from committed D58 output: sprinkling floor 64%, engineered ceiling 39%, generic walk 7%): the crystals' d = 2 homogeneity vs the three benchmarks, reported whichever way it lands  (brick = 0.77 (TILES AT SPRINKLING GRADE), grid = 0.50 (partial (46 events, boundary-dominated — size is a residue)))
-  [PASS] C4 overlap report (mean omega at d = 2; sprinkling comparators 0.12 (M21) / 0.54 (M31))  (brick = 0.65, grid = 0.39)
-  [PASS] C5 the |D| census, honest: the brick is 1+1-THIN by design and the grid wider — reported, no dimension claim beyond the census (scale doctrine: this unit certifies the TILING MECHANISM, nothing else)  (brick max|D| = 3, grid max|D| = 3)
-  [PASS] C6 AST anti-vacuity (no bare-constant predicates; #403 MA-2 scope)  (check() calls = 7, bare = 0)
+  [NIT 3, round 1] at K = 3 the phase generator `range(0, K-1, 2)` and `range(1, K-1, 2)` each yield a SINGLE index, so the 12 phases reduce to 4 distinct pair sets of 3 deliveries each — the grid is an even smaller object than '3x3, 46 events' suggests, which reinforces the unit's own 'size is the named residue'
+  [PASS] C2 CRYSTAL-2D IS ADMISSIBLE END TO END: the grid circuit (46 events over 9 actors, 12 phases; 4 distinct phase pair-sets, reported)  (events = 46, refusal = None)
+  grid 3x3 d=2: events=46, |D|>=2: 1/2 (~0.5000), |D|>=4: 0 (~0.0000), max|D|=3, mean|D|=1.46, pairs=43, mean omega=101/258 (~0.3915)
+  grid 3x3 d=3: events=46, |D|>=2: 14/23 (~0.6087), |D|>=4: 0 (~0.0000), max|D|=3, mean|D|=1.61, pairs=51, mean omega=73/153 (~0.4771)
 
-[VERDICT] scope carried: grammar layer; transfer to the
-  identified click law runs through paper 29's missing map
-  (D59); no typicality claim; no object claim (#440).
+[the comparators — RECOMPUTED with D58's own repaired instrument on genuine sprinklings (round-1 MAJOR 1 / MINOR 1)]
+    M21 box= d47a: homog 0.6417, |D|>=4 0.4250, mean|D| 3.26, max|D| 11, mean omega 0.1197
+    M21 box=   30: homog 0.8000, |D|>=4 0.6417, mean|D| 4.15, max|D| 11, mean omega 0.1104
+    M21 box=   40: homog 0.7500, |D|>=4 0.4500, mean|D| 3.64, max|D| 10, mean omega 0.1145
+    M21 box=   60: homog 0.7250, |D|>=4 0.5000, mean|D| 3.99, max|D| 11, mean omega 0.1125
+    M21 box=   90: homog 0.6667, |D|>=4 0.4250, mean|D| 3.32, max|D| 11, mean omega 0.1329
+    M31 box=   20: homog 0.7333, |D|>=4 0.6333, mean|D| 5.15, max|D| 15, mean omega 0.0811
+    M31 box=   24: homog 0.7167, |D|>=4 0.5667, mean|D| 4.29, max|D| 14, mean omega 0.0629
+    M31 box=   40: homog 0.7667, |D|>=4 0.6000, mean|D| 5.17, max|D| 17, mean omega 0.0689
+    M31 box=   48: homog 0.6833, |D|>=4 0.5000, mean|D| 4.84, max|D| 15, mean omega 0.0646
+    M31 box=   60: homog 0.7083, |D|>=4 0.5167, mean|D| 4.65, max|D| 16, mean omega 0.0481
+    M31 box=   90: homog 0.7500, |D|>=4 0.6500, mean|D| 6.41, max|D| 14, mean omega 0.0999
+    BAND homogeneity [77/120, 4/5] (~[0.6417, 0.8000]); |D|>=4 [17/40, 13/20] (~[0.4250, 0.6500]); mean omega [0.0481, 0.1329]
+    engineered ceiling = 17/44 (~0.3864); generic 2-actor walk = 1/15 (~0.0667)
+  [PASS] C3 [THE CRYSTAL VERDICT, RESTATED BY ROUND 1] Both crystals clear the engineered ceiling by a wide margin — that is the falsifiable part and it survives every correction.  **CORRECTED (MAJOR 1): the brick's homogeneity is NOT 'above' the sprinkling comparator; against GENUINE M^{3+1} sprinklings it sits INSIDE the band.**  The committed LOG's 'above M31's 73%' was a claim against a non-sprinkling (32 points wearing 120 labels).  The licensed statement is the pin's own pre-registration: COMPARABLE TO THE SPRINKLING BAND.  **SCOPE (MINOR 4): this is a d = 2 statement** — at d = 3 the brick reads 0.7385 against M21's 0.7500 and the ordering REVERSES  (brick = 10/13 (~0.7692), inside the sprinkling band [0.6417, 0.8000] = True; grid = 1/2 (~0.5000); engineered ceiling = 0.3864; generic walk = 0.0667)
+  [PASS] C4 [THE OVERLAP CLAIM — IT STRENGTHENS UNDER CORRECTION] mean omega at d = 2 against the RECOMPUTED sprinkling comparators.  The committed receipt compared 0.65 against 0.12 and 0.54, the second of which came from the degenerate control; against genuine sprinklings the whole comparator range is below the brick.  D58's round-1 MAJOR 2 qualifies what this means: omega is a CHART-SIZE RATIO along covers and systematically favours THIN-charted records, which the brick is (C5)  (brick = 125/192 (~0.6510), grid = (~0.3915); genuine sprinkling range [0.0481, 0.1329]; the withdrawn degenerate comparator read 0.54)
 
-[d60] 7 PASS / 0 FAIL
+[C5 CHART WIDTH — the third metric, round-1 MAJOR 3]
+    d = 2:  brick |D|>=4 0.0000 (max|D| 3)  |  grid 0.0000 (max|D| 3)  |  genuine sprinklings [0.4250, 0.6500] (max|D| up to 17)
+    d = 3:  brick |D|>=4 0.5846 (max|D| 4)  |  grid 0.0000 (max|D| 3)  |  genuine sprinklings [0.6000, 0.7583] (max|D| up to 17)
+  [PASS] C5 [CORRECTED BY ROUND 1 — MAJOR 3] 'ABOVE THE SPRINKLING FLOOR ON BOTH METRICS' IS NOT 'SPRINKLING-GRADE'.  On a third, equally natural metric — chart WIDTH, the thing |D| >= 2 is a threshold of — the brick is at the floor AT THE DEPTH THE HEADLINE IS STATED AT: at d = 2 it carries NO 4-direction chart anywhere, at any parameter setting tried (C6), while genuine sprinklings carry them at 42-65% of their events and reach max|D| 10-17 against the brick's 3.  **The honest statement is: the grammar tiles at sprinkling-grade HOMOGENEITY and above-sprinkling OVERLAP, with THIN charts.**  Reported whichever way it lands: at d = 3 the brick DOES reach |D| >= 4 (38/65), inside the d = 3 sprinkling band — so the width shortfall is a d = 2 statement, exactly as the homogeneity ordering is (C3).  The unit's own 'the brick is 1+1-thin by design' was honest; what was missing is this comparison, which D58 had computed and never printed  (brick |D|>=4 = 0 at d = 2 and 38/65 at d = 3; sprinkling d = 2 band [17/40, 13/20], d = 3 band [3/5, 91/120]; brick max|D| = 3/4 against sprinkling 17/17)
+
+[C6 THE TWO BLUEPRINT PARAMETERS — round-1 MAJOR 2: 77% is not a property of the mechanism, it is a property of (M, R)]
+  === ROUNDS sweep at M = 8 ===
+    R=  4 ( 25 ev): homog 0.4400  |D|>=4 0.0000  mean|D| 1.16  omega 0.5833
+    R=  8 ( 41 ev): homog 0.6341  |D|>=4 0.0000  mean|D| 1.80  omega 0.6354
+    R= 14 ( 65 ev): homog 0.7692  |D|>=4 0.0000  mean|D| 2.25  omega 0.6510   <- COMMITTED
+    R= 20 ( 89 ev): homog 0.8315  |D|>=4 0.0000  mean|D| 2.45  omega 0.6562
+    R= 30 (129 ev): homog 0.8837  |D|>=4 0.0000  mean|D| 2.62  omega 0.6600
+    R= 50 (209 ev): homog 0.9282  |D|>=4 0.0000  mean|D| 2.77  omega 0.6628
+  === RING-WIDTH sweep at 14 rounds ===
+    M=  4 ( 33 ev): homog 0.7879  max|D| 2  omega 0.9600
+    M=  6 ( 49 ev): homog 0.7755  max|D| 3  omega 0.6575
+    M=  8 ( 65 ev): homog 0.7692  max|D| 3  omega 0.6510   <- COMMITTED
+    M= 10 ( 81 ev): homog 0.7531  max|D| 3  omega 0.6467
+    M= 12 ( 97 ev): homog 0.7320  max|D| 3  omega 0.6434
+    M= 16 (129 ev): homog 0.6822  max|D| 3  omega 0.6379
+  [PASS] C6 THE HEADLINE NUMBER IS A PARAMETER, AND BOTH ITS PARAMETERS ARE NOW SWEPT AND PRINTED.  Homogeneity RISES with rounds (0.44 -> 0.93) and FALLS with ring width (0.79 -> 0.68); the committed 0.769 is the value at (M = 8, R = 14) and nothing more.  **The mechanism statement, which is what the scale doctrine asks this unit to certify, is C7's: the shortfall from 1 is entirely BOUNDARY, so a re-delivery circuit's homogeneity tends to 1 as it runs.**  Chart width does NOT move: at d = 2, |D| >= 4 is 0 at every setting tried  (rounds [4, 8, 14, 20, 30, 50] -> homog ['0.4400', '0.6341', '0.7692', '0.8315', '0.8837', '0.9282']; widths [4, 6, 8, 10, 12, 16] -> homog ['0.7879', '0.7755', '0.7692', '0.7531', '0.7320', '0.6822']; |D|>=4 identically 0 at d = 2 across both sweeps)
+
+[C7 WHERE THE SHORTFALL LIVES — the circuit-only and interior controls]
+    brick FULL         (65 events): d=2 homog 0.7692  |D|>=3 0.6462  omega 0.6510   |   d=3 homog 0.7385  omega 0.7120
+    brick CIRCUIT-ONLY (56 events): d=2 homog 0.7857  |D|>=3 0.7500  omega 0.6420   |   d=3 homog 0.7321  omega 0.7093
+    brick PREFIX-ONLY  ( 9 events): d=2 homog 0.6667  |D|>=3 0.0000  omega 0.7500   |   d=3 homog 0.7778  omega 0.7333
+    brick INTERIOR     (51 events): d=2 homog 0.9020  |D|>=3 0.7451  omega 0.6496   |   d=3 homog 0.9216  omega 0.7088
+  [PASS] C7 THE MINT-AND-SPREAD PREFIX DEFLATES THE HEADLINE, AND THE RESIDUAL SHORTFALL IS ENTIRELY BOUNDARY.  The non-lattice prefix is not inflating the number: the circuit alone reads HIGHER than the published figure, so the 9 prefix events COST the unit homogeneity.  Dropping the bottom two and top three height layers takes the interior to ~0.9, which is the mechanism claim C6 points at — the circuit tiles, and what is missing is the record's ends  (full = 0.7692, circuit-only = 0.7857, prefix-only = 0.6667, interior = 0.9020 (51 of 65 events; d = 3 interior 0.9216))
+  [PASS] C8 [ANCHOR] the population-restricted profile used above is D58's atlas: with the population set to EVERY event it reproduces D58's own instrument exactly, so the circuit/interior controls are restrictions of the committed measurement and not a second instrument  (d=2 homog 10/13 vs 10/13, omega 125/192 vs 125/192; d=3 homog 48/65 vs 48/65)
+  [PASS] C9 AST anti-vacuity (no bare-constant predicates; #403 MA-2 scope).  Round-1 MINOR 3: the committed C5 (`wmax1 >= 2`) and C4 (`om1 is not None`) were theorem-passes implied by C3 having found any 2-direction chart at all; both are gone, replaced by the width comparison (C5) and the recomputed-comparator ordering (C4).  Round-1 MINOR 2: `WALK` was assigned and never read; it is read here (0.0667 < the engineered ceiling 0.3864 < both crystals)  (check() calls = 10, bare = 0; walk 1/15 < ceiling 17/44 < crystals 1/2)
+
+[VERDICT — D60, ROUND-1 REPAIRED]
+  THE OBJECT IS REAL AND FORCED: 65 events, 8 actors, every one
+  menu-offered, every specification matched by exactly one
+  candidate.  Nothing in the round touches the construction.
+  THE LICENSED READING, CORRECTED: the grammar tiles at
+  sprinkling-grade HOMOGENEITY (inside the band, not above it) and
+  at ABOVE-sprinkling OVERLAP, WITH THIN CHARTS — at d = 2 no
+  4-direction chart at any parameter setting tried, against the
+  sprinklings' 42-65%, and max|D| 3 against their 10-17.
+  d = 2 scope: at d = 3 the homogeneity ordering against M21
+  reverses; the overlap ordering holds at both depths.
+  THE MECHANISM CLAIM the sweeps license: the shortfall from 1 is
+  boundary, so a re-delivery circuit's homogeneity tends to 1 as
+  it runs; 0.769 is a snapshot at (M = 8, R = 14).
+  SCOPE carried: grammar layer; transfer to the identified click
+  law runs through paper 29's missing map (D59); no typicality
+  claim; no object claim (#440).  Size remains the named residue.
+
+[d60] 10 PASS / 0 FAIL
