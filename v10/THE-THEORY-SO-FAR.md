@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #446** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #454** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -167,10 +167,11 @@ destination that follows.)*
    the 202 elementary loops of the enumerated depth-4 world refute it.
 6. Dropping the third demand, completions exist; and in the
    delivery-free two-actor sub-theory a **canonical one exists that
-   needs no boundary condition at all**, is unique up to scale within a
-   postulated shape for it, and prices the beginning of the record
-   identically to a later point that the law itself cannot tell from
-   the beginning.
+   needs no boundary condition at all** — now at **every depth**, the
+   last structural gap having been closed by a dichotomy about what a
+   candidate event can see — unique up to scale within a postulated
+   shape, and pricing the beginning of the record identically to a later
+   point the law itself cannot tell from the beginning.
 7. But that shape is a **choice, not a law**: the two strongest
    invariance demands anyone has written down leave the freedom
    *growing* (10, then 28, then 107 dimensions as depth increases), so
@@ -244,16 +245,19 @@ destination that follows.)*
   agreement on them is the whole condition, and the three different
   things the word "diamond" means in this corpus.
 - **A5. The sky** — directions, shadows, and the three committed ways
-  of saying "the sky at an event"; why two of the three can never
-  work; the instrument that was demoted.
+  of saying "the sky at an event"; what shattering actually requires;
+  the instrument that was demoted; and the test that reads real
+  spacetime's dimension.
 - **A6. The measure problem** — the impossibility, the escape, the one
-  canonical completion, and why "the law completes itself" needed an
-  extra postulate that turned out to be a choice.
+  canonical completion, why "the law completes itself" needed an extra
+  postulate that turned out to be a choice, and how the last structural
+  gap was closed at two actors.
 - **A7. Buying dimension with actors** — why counting clocks was the
   wrong instrument; the shatter ladder; the theorem that dimension has
   a price in parallelism.
 - **A8. Building the witnesses** — couriers, backflow, and the two
-  records that pay the price; what they license and what they do not.
+  records that pay the price; what they license and what they do not;
+  and the crystal, a record that tiles.
 - **A9. The wall and the crack** — why the delivery-scope theory has
   no finite summary, and the one thing that survives.
 - **A10. The graveyard** — everything tried and discarded, and why
@@ -277,17 +281,19 @@ destination that follows.)*
 - **B4. The cut complex and the flatness ladder** — 1,191 / 427 / 202;
   the telescoping theorem; the three diamond senses disambiguated.
 - **B5. The sky instrument** — SKY-A/B/C as the code defines them; the
-  empty-trace obstruction; SC5; the capacity laws in their two
-  variables; the demotion.
+  disjoint-row lemma and the capacity condition; the capacity laws in
+  their two variables; the demotion; and the dimension discriminator with
+  its two-sided controls.
 - **B6. The completion dichotomy** — the theorem, its forcing, the
   gradient class, the quantum lift, residue 1, the settlement, the
-  form-is-a-choice result, H1 and its two dead routes.
+  form-is-a-choice result, and (H1) closed at two-actor scope by the
+  own-view dichotomy.
 - **B7. The dimension ladder** — the doctrine, the collapse of
   counting, the shatter ladder with its exact certificates, the
   Dilworth gate with proof, trace counting.
 - **B8. The constructions** — the courier architecture; the shatter-4
-  and shatter-5 records; the generalized builder; what is licensed;
-  the controls.
+  and shatter-5 records; the generalized builder; what is licensed; the
+  controls; and the crystal's tiling capacity.
 - **B9. The transport wall and the sector crack** — the
   self-arbitration ladder; the design-independent no-go; what remains
   exact; the open sector-exact question.
@@ -1083,44 +1089,43 @@ wrong about the known case, and threw the instrument away rather than
 the known case.  Everything after chapter A5 rests on the *weaker,
 one-sided* test alone, because that is what survived.
 
-### A5.5 Second negative result: two of the three definitions can never work
+### A5.5 What shattering actually requires, and the capacity condition
 
-This one is structural and even sharper.
+To shatter a set of directions you need *every* combination of them —
+including the **empty** one: some later event whose shadow avoids all of
+them.  The precise requirement is worth stating carefully, because a
+weaker-looking version of it is false and cost the programme a result.
 
-To shatter a set of directions, you need *every* combination — including
-the **empty** one: some event in the future that lies above *none* of
-the chosen directions.
+> **What is needed is a shadow DISJOINT FROM THE CHOSEN SET** — not a
+> shadow that is empty outright.  A shadow can be non-empty (it may
+> cover other directions entirely) and still meet none of the four you
+> are testing.
 
-- Under **SKY-A**, the directions are the *immediate* successors.  So
-  every event above the base lies above at least one of them, by
-  construction.  **The empty shadow can never occur.**
-- Under **SKY-C**, the same by duality.
+The two coincide only when the chosen set is the *entire* direction set.
+That single distinction decides which of the three sky definitions can
+ever fire.
 
-So **SKY-A and SKY-C can never shatter anything, at any width, at any
-depth.**  The audit of an earlier unit's own data: SKY-A, 261 skies,
-*zero* with the empty shadow, of which 201 had been counted as "test
-applies"; SKY-C, 258 skies, zero with the empty shadow, 211 counted.
-SKY-B: 235 skies, 225 with the empty shadow, 142 counted, **139
-genuinely capable**.
+Under SKY-A the directions are the immediate successors, so every later
+event lies above at least one of them and **no shadow is ever empty**.
+That much is true, and it has exactly one consequence: a cover sky can
+never shatter *its own full direction set*.  It says nothing at all
+about shattering a four-element **subset** of a wider sky — and a wider
+sky is the normal case.  A fifth direction's own shadow supplies the
+missing combination on the other four while being perfectly non-empty.
 
-Consequence: of the 554 skies an earlier unit had declared "the test
-applies here, and found nothing", only **139** could ever have found
-anything.  **415 of them were a tautology, not a measurement.**
+**All three readings are live.**  SKY-A and SKY-C do shatter, on genuine
+Minkowski records, and §A5.7 shows they are the readings under which the
+instrument works best.  Which reading is physically privileged is
+therefore an **open question**, not a settled one.
 
-The corrected capacity condition — now binding on every later unit — is
-threefold: at least four directions, at least sixteen distinct shadows,
-**and the empty shadow present**.  On the same Minkowski data it admits
-52 skies instead of 554: about a tenfold reduction in what counts as
-testable.
-
-And it explains something that had been sitting unexplained: an earlier
-unit had noticed that SKY-A "never reached decidability" and could not
-say why.  It was doubly disqualified.
-
-**Why did the original validation miss this?**  Because the instrument
-was validated on *synthetic* systems — arcs and exact caps — and both of
-those contain the empty shadow.  The controls were sound; they were run
-on the wrong kind of object.
+**Capacity still has to be gated, though.**  A test that "found nothing"
+on a sky too poor to have found anything is not a measurement, and that
+error was real: of 415 skies once counted as testable, **144** were
+genuinely capable — a 2.8-fold reduction, not the tenfold one a
+too-strong condition suggested.  So the honest capacity requirement is
+the first two clauses only: **at least four directions, and at least
+sixteen distinct shadows.**  Anything below that is reported as
+undecidable, never as a negative.
 
 ### A5.6 How big can a sky get?
 
@@ -1163,37 +1168,63 @@ and does, reaching seven — the record's skies reach only four.  The law
 restriction, not a by-product of record size, and it is the first sign of
 something chapter A7 makes exact: sky richness is not free.
 
-### A5.7 And a fact about real spacetime that shapes everything after
+### A5.7 The instrument works: real spacetime reads its own dimension
 
-One measurement belongs here rather than later, because it is about the
-instrument rather than about any record.  Run the shattering test on
-**genuine sprinkled Minkowski records** — real causal orders of real flat
-spacetime, in two space dimensions and in three.
+The sharpest result in this chapter is that the test, run on genuine
+sprinkled Minkowski records at sufficient density, **reads their
+dimension** — and does it with controls on both sides.
 
-**They never shatter.**  Not in 2+1 (1,925 testable skies, zero), and not
-in 3+1 (1,578 testable skies at four directions, zero; 740 at five,
-zero).  No sprinkled Minkowski record of any tested dimension shatters at
-all.
+Recall the exact geometry from §A5.3: shadows of arcs on a circle
+shatter three directions and never four; shadows of caps on a sphere
+shatter four and never five.  Now run the discrete test on real records:
 
-This is not a defect of the test — it fires perfectly well on the
-engineered records of chapter A8, at two different sizes.  It is a fact
-about the two kinds of object.  A sprinkling has no worldlines: it is
-points scattered at random, with no actor structure whatsoever, so the
-mechanism chapter A7 identifies — nested families of shadows swept by
-worldlines — has nothing to act on.
+| genuine sprinkled records | shatter 3? | shatter 4? | shatter 5? |
+|---|---|---|---|
+| two space dimensions (2+1) | **yes** | **never** | never |
+| three space dimensions (3+1) | yes | **yes** | **never** |
 
-> **So shattering separates ENGINEERED COORDINATION from SPRINKLED
-> GEOMETRY, not one dimension from another.**  Chapter A7 keeps the
-> ladder as an exact statement about continuous shapes, and chapter A8
-> reads the framework's records against sprinklings rather than against
-> dimensions.
+That is the continuum ladder, reproduced exactly on discrete data.  On a
+matched ladder of six sizes, the number of events at which a
+four-direction set is fully resolved runs **0, 1, 11, 30, 116, 211** in
+three space dimensions and is **zero at every size** in two.  Neither
+shatters five, which is the halt condition the sphere's geometry
+predicts.
+
+**And it is not merely that bigger skies shatter more.**  Compare only
+skies of the same size: in the band where the two dimensions have
+comparable samples — 304 skies against 314 — the two-space-dimension
+records shatter four **zero** times and the three-space-dimension
+records shatter it **seven** times.  The signal survives the size
+control.
+
+Two further points keep this honest.
+
+**Density, not size, is what the test needs.**  At low density the same
+records shatter nothing, and reading a sparse sample as a negative is
+exactly how this result was missed once: a sparse control, read through
+the one sky definition that happened to be blind, returns zeros that
+mean only "not enough events".
+
+**And sprinkled records are not at zero on this scale — they are at
+their own dimension's rung.**  Two-space-dimension sprinklings shatter
+three, thousands of times.  What separates them from three-space-
+dimension sprinklings is the *rung*, which is what a meter is supposed
+to do.
+
+> **So the shatter number is a dimension meter, and it works on real
+> geometry.**  Chapter A7 gives the ladder its exact form, and chapter
+> A8 uses it on the framework's own constructed records — which, as it
+> turns out, read *above* every sprinkling of any dimension tested.
 
 > **What this chapter does NOT claim.**  That any sky *is* a circle or a
-> sphere — never licensed.  That absence of shattering is evidence for
-> 2+1 — it is not, and §A5.4 is why.  That the arc/cap dichotomy
-> exhausts what a discrete sky can be — a discrete sky need be neither.
-> And §A5.7's three-space-dimension numbers come from a unit that has not
-> yet had a hostile review, so they are reported and not leaned on.
+> sphere — never licensed; the discrete test agrees with the continuum
+> ladder, which is not the same as a record being one of those shapes.
+> That the arc/cap dichotomy exhausts what a discrete sky can be — a
+> discrete sky need be neither, and §A5.4 is why arc-realizability was
+> abandoned as a proxy.  That an *absence* of shattering is evidence of
+> low dimension in a single record: below the density at which the test
+> fires, a zero means only that the sample is too thin.  And which of the
+> three sky readings is physically privileged remains **open**.
 
 ---
 
@@ -1377,7 +1408,7 @@ The measurements say otherwise:
 - Demand that a completion price the beginning and the renewal point
   alike, and **308 of 313** directions of freedom remain.
 - Demand full respect for indistinguishability at every interior now,
-  and **119 of 313** remain.
+  and **137 of 313** remain.
 - Demand the *shape* the corpus had assumed — a function of the
   situation times a fixed factor per step — and you get exactly one
   answer.
@@ -1413,18 +1444,54 @@ record-level demand at all.**
 > completes itself **given** that shape.  The shape is a choice.  Nobody
 > has an invariance principle that forces it.
 
-### A6.9 And all of it is delivery-free
+### A6.9 The gap is closed — at two actors, delivery-free
 
-Every result in §A6.7 and §A6.8 lives in the **two-actor, delivery-free**
-sub-theory.  It is unconditional at every depth actually verified
-(exhaustively through depth seven), and conditional at all depths on
-three structural hypotheses of which one — the corpus calls it **H1** —
-is **not proved**.  Two serious attempts on H1 have failed, and both
-failures are on the record with their counterexamples (chapter A10).
+For a long time everything in §A6.7 rested on an unproved structural
+assumption: that the bounded summary really does determine what can
+happen next, at *every* depth and not merely at the depths anyone had
+enumerated.  **That assumption is now a theorem**, in the two-actor
+delivery-free sub-theory, and the argument is short enough to state.
 
-At delivery scope — which is where all the geometry of chapters A5, A7,
-A8 lives — **the whole question is open**, and chapter A9 explains why
-the method that settled it cannot travel.
+**The own-view dichotomy.**  When the law checks whether an event is
+allowed, the view it consults is one of exactly **two** things: the
+acting actor's own cone, or the *entire* record.  There is no third case
+— and the reason is bookkeeping, not luck: the framework keys its causal
+order on actor names, so an event involving *both* actors necessarily
+touches both their registers and therefore sees everything.
+
+That single observation does two jobs.  It explains the lag that had
+looked like an obstruction — the situations where an actor "sees more
+than its own past" are exactly the two-actor events, all 2,032 of them.
+And on the other branch, where an actor sees only its own cone, the law
+turns out to be **rigid**: an actor has at most one live version, at most
+one live proposal, and the possibilities are so constrained that only two
+complementary configurations ever occur — which is why the idle weight is
+simply constant.
+
+Put together, the menu becomes an explicit **closed formula** in the
+summary, with no depth parameter anywhere in the argument.  So:
+
+> **The bounded summary determines the menu at every depth**, and with it
+> the whole completion decision.  **The measure problem's core question —
+> the oldest named gap in the programme — is CLOSED at two-actor,
+> delivery-free scope.**
+
+A pleasing side-effect: the quarter-structure of chapter A2, which had
+been a *measured* regularity, drops out of the closed formula as a
+consequence.
+
+**Four things this does not do.**  It does not make the shape of the
+completion any less of a choice — §A6.8 stands entirely.  It does not
+reach delivery scope, where the geometry lives.  **It does not reach
+three actors**: with a third actor the dichotomy fails outright, because
+a two-actor event no longer sees everything.  And the argument is prose
+reasoning checked against the code, not machine-verified logic — a
+formal mechanization is named as outstanding.  The result is also new
+enough that its own hostile review has not yet run.
+
+At delivery scope — where chapters A5, A7 and A8 live — **the whole
+question remains open**, and chapter A9 explains why the method that
+settled it cannot travel.
 
 Also, the specific numbers (the factor of two, the six weights) are
 **toy-relative**.  A second grammar was tested and has no such state
@@ -1432,7 +1499,8 @@ chain at all.  What is claimed to generalize is the *form* — a unique
 completion of this type — never the numbers.
 
 > **What this chapter does NOT claim.**  That "the record law is
-> forward-complete" full stop — only with the form.  That the tilt is
+> forward-complete" full stop — only with the form; §A6.9 closes a
+> different gap and leaves that one exactly where it was.  That the tilt is
 > physical: the tilt has been *characterized* exactly (each option is
 > re-weighted by how much record-growth capacity the state it leads to
 > has, and by nothing else), which converts a vague worry into one
@@ -1511,17 +1579,20 @@ ever being cut off.  Second, the ladder continues upward without limit
 in principle: shadows of half-spaces in *d* dimensions shatter *d+1*.
 
 So "the largest set of directions these shadows can fully resolve" is a
-number with a dimensional meaning **for continuous shapes**: 3 is
-circle-compatible, 4 is sphere, 5 is beyond the sphere.  Every rung of
-that table is exact.
+number with a dimensional meaning: 3 is circle-compatible, 4 is sphere,
+5 is beyond the sphere.  Every rung of that table is exact for
+continuous shapes — **and §A5.7 shows the discrete test reproduces the
+same ladder on genuine sprinkled records of real spacetime**, two space
+dimensions reading 3 and three space dimensions reading 4, with the
+predicted halt at 5.
 
-**What it is not.**  It is not a dimension reading for a *record*.
-Chapter A5 §A5.7 is the reason: genuine sprinkled records of real
-spacetime, in every dimension tested, read **zero** on this scale.  So
-the number measures how much coordination a record's worldlines have
-achieved, not how many dimensions it lives in.  Read it as a **meter of
-the framework's own reach**, calibrated against continuous geometry —
-which is exactly the use chapter A8 makes of it.
+So the meter has two calibrated uses, and both are live.  **On
+sprinklings at sufficient density it reads geometry.**  And on the
+framework's own constructed records — chapter A8 — it reads something
+else: those records reach 5, above every sprinkling of any dimension
+tested.  The number that separates them is not a dimension the
+constructed records "have"; it is the amount of coordination their
+worldlines achieve, and no random scattering of points achieves it.
 
 ### A7.3 The theorem: dimension has a price, paid in actors
 
@@ -1715,30 +1786,90 @@ So the licensed claim is a **capacity** claim:
 > elsewhere — the candidates being a measure, a resource cost, or a
 > counting-typicality argument.
 
-**The controls, at full strength.**  Against genuine sprinkled Minkowski
-records the separation is complete, and it runs in an unexpected
-direction.  In 2+1: 1,925 testable skies at ten different heights,
-**zero** shatterings.  In 3+1: 1,578 testable skies at four directions and
-740 at five, **zero** shatterings of either — against this record's three
-shattering heights.
+**Where these records sit against real spacetime.**  §A5.7's ladder puts
+genuine sprinkled records at 3 in two space dimensions and 4 in three,
+with five never reached by either.  These constructed records reach
+**five** — above every sprinkling of any dimension tested, and above the
+rung the sphere's own geometry permits.
 
-So the engineered records are sharply separated from real spacetime — but
-**from real spacetime of every tested dimension**, not from 2+1
-specifically.  What the constructions demonstrate is that the framework
-can build coordination that no random causal order of any dimension
-exhibits.  That is the capacity claim above, and it is all of it.
+That is the whole of the capacity claim, and it is worth saying exactly
+what it does and does not mean.  It means the framework's rules admit
+coordination that random causal structure never produces, at a level the
+2-sphere cannot host.  It does **not** mean the record "is" four space
+dimensions: the meter reads a record's coordination, and only on
+*sprinklings* does coordination coincide with dimension.
 
 **And the meter is a property of a (record, reading) pair, not of a
-record.**  The same 42-actor record reads *zero*
-under the two disqualified sky definitions and reads 1 through 5 under
-SKY-B depending on the height chosen.  Its value is the largest over the
-committed readings: five.
+record.**  The same 42-actor record reads 1 through 5 under one sky
+reading depending on the height chosen, and differently under the
+others.  Its value is the largest over the committed readings: five.
 
 > **What this chapter does NOT claim.**  Any positive 3+1 claim.  Any
 > statement about typical records — one engineered record per rung, no
 > genericity, and genericity is *not even posable* at delivery scope
 > (chapter A9).  Anything for six directions or beyond: the builder
 > visibly generalizes and has not been run, and unrun is unclaimed.
+
+### A8.6 The crystal: a record that tiles
+
+The constructions so far were built to do one thing — spend actors to buy
+a rich sky at a single event.  They are spikes.  Nothing about them
+resembles a *space*, and the instrument that says so is straightforward:
+ask what fraction of a record's events carry a usable local chart at all,
+and how much neighbouring charts overlap.  Measured that way, the courier
+records are the **opposite of an atlas**: about a third of their events
+are charted, against roughly two-thirds to four-fifths for genuine
+sprinkled spacetime records.
+
+So the natural question — and it is the one that matters for the
+destination — is whether the framework can build the other kind of thing.
+Not a spike: a **tiling**.
+
+**It can.**  The construction is a brick wall.  Eight actors in a ring;
+one version minted and broadcast to all of them; then rounds of
+alternating re-deliveries — evens to odds, odds to evens — which is
+exactly the brick lattice of one-space-dimension spacetime worn as a
+record.  Sixty-five events, every one of them offered by the framework's
+own menu, and **every specification matched by exactly one candidate**:
+the record is *forced*, nothing was chosen by tie-break.
+
+Measured against genuine sprinkled records:
+
+- **Homogeneity — inside the sprinkling band.**  77% of the brick's
+  events carry a chart, against a band of 64% to 80% across eleven
+  genuine sprinkling configurations.  Not above the band; **inside** it.
+- **Overlap — above every sprinkling comparator.**  Neighbouring charts
+  share 0.65 of their content, against 0.05 to 0.13 for the sprinklings.
+- **Width — at the floor.**  No chart anywhere in the brick has four or
+  more directions, at any parameter setting tried, against 42%–65% of
+  events for the sprinklings.  The tiling is **thin**.
+
+The width shortfall is a statement about the shallower of two chart
+depths; at the deeper one the brick does reach four-direction charts.
+But at the depth where the comparison is cleanest, the brick tiles and
+does not spread.
+
+**And the headline number is not a property of the mechanism.**
+Homogeneity rises without bound as the re-delivery circuit runs longer
+(0.44 at four rounds, 0.77 at fourteen, 0.93 at fifty) and falls as the
+ring widens.  Strip the record's non-lattice prefix and its top and
+bottom layers and the interior reads 0.90.  So:
+
+> **The shortfall from a perfect tiling is entirely BOUNDARY.**  A
+> re-delivery circuit's homogeneity tends to one as it runs.  The
+> published figure is a snapshot of one setting.
+
+**What this licenses, and what it does not.**  It licenses a *mechanism*:
+the framework's rules admit records that tile at sprinkling-grade
+homogeneity with above-sprinkling overlap and thin charts.  It licenses
+no claim that the brick *is* a spacetime, no claim about typical records,
+and — under the standing scale doctrine — no claim about any object at
+this size.
+
+The two mechanisms the programme has now certified separately are
+**width** (chapter A8's couriers: rich skies, no tiling) and **tiling**
+(this section: charted everywhere, thin skies).  Their **composition** —
+a record that is both — is the next construction, and it is unbuilt.
 
 ---
 
@@ -1846,21 +1977,24 @@ exist at delivery scope?**  It has been pinned and run at the natural
 granularity — one sector per actor and event type — and **it is closed
 there, on two independent grounds.**
 
-**First, the quarter is not a law of sectors.**  It is a fact about the
-*delivery* sector alone.  The arbitration sector divides its quarter by
-the number of live conflict groups, and that number grows without bound
-with depth, so sector totals themselves take unboundedly many values.
-The aggregated alphabet is no more finite than the per-option one.
+**The coarsest possible lumping does not settle down.**  Track how many
+distinct lumped situations survive as the enumeration deepens, and the
+count keeps creeping upward at every window that can be checked — and a
+control shows those counts are *lower bounds*, so the reading is the
+conservative one.
 
-**Second, the coarsest possible lumping does not settle down.**  Track how
-many distinct lumped situations survive as the enumeration deepens, and
-the count keeps creeping upward at every window that can be checked.
+The one hopeful measurement — that part of the menu *does* factor exactly
+through a lumped summary on the tested window — is real, and it is not
+enough.  Killing the unbounded counter is **necessary and demonstrably
+not sufficient**.
 
-The one hopeful measurement — that the non-delivery part of the menu
-*does* factor exactly through a lumped summary, and that the lumped step
-distribution *is* a function of the lumped state on the tested window — is
-real, and it is not enough.  Killing the unbounded counter is
-**necessary and demonstrably not sufficient**.
+**One caution about how strong this is.**  The wall of §A9.2 is an exact,
+depth-free obstruction.  This closure is not: it is a measurement over
+the depths anyone can reach, conservative but bounded.  It is also worth
+knowing that the constant quarter is a fact about *deliveries*
+specifically rather than a law of sectors generally — the other sectors
+take several values — though at this size the values they take may well
+be all there are.
 
 > **The crack narrows rather than closes.**  What survives are strictly
 > *coarser* aggregations — grouping by event type only, or by total budget
@@ -2041,38 +2175,53 @@ already retired one rung down — it needs the assumption that discrete
 ladder at the sphere's rung.  And a named residue: a full-strength 3+1
 control.
 
-### A10.10b Max-shatter as a dimension meter for records
+### A10.10b "Only empty shadows let a sky shatter" — and the zero it produced
 
-*Claimed:* the largest set of directions a record's sky can fully resolve
-reads its dimension — three for circle-like, four for sphere-like, five
-for beyond.
-*Killed by:* the controls.  Genuine sprinkled records of real flat
-spacetime, in two space dimensions and in three, **never shatter at all**
-— zero out of 1,925 testable skies in one case, zero out of 1,578 and 740
-in the other.  A scale on which real spacetime of every dimension reads
-zero is not reading dimension.
-*Survived:* the calibration ladder itself, which is exact and remains a
-true statement about *continuous* shapes; the capacity results built on it
-(the framework can construct skies at the sphere's rung and one beyond);
-and a better reading of what the number measures — **coordination between
-worldlines**, which a random scattering of points has none of.  See §A5.7.
+*Claimed:* shattering requires a shadow that is **empty**; the two sky
+readings whose shadows are never empty can therefore never shatter, at
+any width or depth; so only one reading is usable.  And, downstream of
+that: genuine three-space-dimension records never shatter four, so the
+shatter number is not reading dimension.
+*Killed by:* a one-line counterexample and then a measurement.  What
+shattering needs is a shadow **disjoint from the set being tested**, not
+an empty one — and a fifth direction's own shadow supplies that while
+being perfectly non-empty.  All three readings are live.  With the
+blinder removed and the density raised, genuine three-space-dimension
+records **do** shatter four (0, 1, 11, 30, 116, 211 across a matched size
+ladder) while two-space-dimension records never do, and neither shatters
+five.  The zero that had looked structural was a **sparse sample read
+through a blind reading**.
+*Survived:* two things, and both are better than what they replaced.  The
+narrow true lemma — a cover sky can never shatter *its own full direction
+set* — and, in place of the retired negative, a **working two-sided
+dimension discriminator** (§A5.7).  Also survived, and worth keeping: the
+capacity discipline itself.  A test run on a sky too poor to have found
+anything is not a measurement, and that error was real — of 415 skies
+once counted as testable, 144 were genuinely capable.  What was wrong was
+the *condition*, not the caution.
 
 ### A10.10c A sector-level escape from the delivery-scope wall
 
 *Claimed:* the unbounded-menu theorem kills only per-option descriptions,
 because the delivery sector's total is constant; so a description that
 tracks sector totals rather than individual options should stay finite.
-*Killed by:* two independent facts.  The constant quarter is a property of
-the *delivery* sector alone — the arbitration sector divides its quarter
-by a count that grows with depth, so sector totals take unboundedly many
-values too.  And the coarsest possible lumping does not settle down: the
-count of distinct lumped situations creeps upward at every window that
-can be checked.
-*Survived:* the observation that motivated it — that the physically
-meaningful objects are the aggregated ones — which still points at the
-right *kind* of description; and a narrower crack, at strictly coarser
-aggregations and at descriptions that abandon exactness for what a
-completion actually has to reproduce.  See §A9.4.
+*Killed by:* one measurement.  The coarsest possible lumping does not
+settle down — the count of distinct lumped situations creeps upward at
+every window that can be checked, with a control showing those counts are
+lower bounds.
+*Nearly killed by a second fact that did not hold up.*  A companion
+argument said the aggregated alphabet must itself be infinite, because
+the arbitration sector divides its quarter by a count that grows with
+depth.  At the scope measured that count never exceeds one, so the
+handful of values observed **may be all there are**.  The argument was
+withdrawn and the verdict rests on the measurement alone — which makes
+this closure weaker than the wall of §A9.2, and it should be quoted as
+such.
+*Survived:* the observation that motivated the attempt — that the
+physically meaningful objects are the aggregated ones — which still
+points at the right *kind* of description; and a narrower crack, at
+strictly coarser aggregations and at descriptions that abandon exactness
+for what a completion actually has to reproduce.  See §A9.4.
 
 ### A10.11 Two uniqueness claims about the completion
 
@@ -2094,7 +2243,7 @@ the outermost layer sees all 313.
 points the law identifies, there is exactly one, and it needs no
 boundary.
 *Killed by:* measurement — that demand leaves 308 of 313 directions
-free; the stronger indistinguishability demand leaves 119.
+free; the stronger indistinguishability demand leaves 137.
 *Survived:* the **existence** result untouched, and the honest
 replacement statement of chapter A6 §A6.8: uniqueness comes from a
 postulated shape, and the shape is a choice.
@@ -2236,10 +2385,11 @@ not an answer.
    are strictly coarser aggregations and inexact, observable-only
    descriptions — all untested.
 
-2. **Where is the sprinkling floor?**  Real spacetime records read zero on
-   the shatter meter in every dimension tested (§A5.7).  Do they shatter
-   *three* — the rung below?  That would locate the floor and calibrate
-   whatever replaces the meter.
+2. **Which sky reading is physically privileged?**  All three are live,
+   and they disagree — the discriminator of §A5.7 is sharpest under the
+   cover reading, while other results were computed under a different
+   one.  Nothing justifies a choice, and several conclusions depend on
+   it.
 3. **H1** — the unproved structural lemma the whole delivery-free
    settlement is conditional on.  Two routes are closed with
    counterexamples; a third needs to avoid assuming that a lagged view
@@ -2893,15 +3043,18 @@ a live proposal, so **a view that misses that proposal INCLUDES the base
 > therefore unsound**, which rules out a whole family of attempts
 > including D51's own pinned route (§B10.3).
 
-**What did hold (D51) `[EVIDENCE]`:** MV3 — equal full-view projections
-imply equal menus with exact weights, across all **6,471** histories over
-**209** distinct projection keys, **zero** violations; and since `sigma`
-is an abstraction of exactly those projections, menus are
-sigma-determined on this family.  MV4 — **(H2) settled at the projection
-level**: the successor projection-state is a function of
-`(projection-state, event)`, **498** pairs, zero violations.  D44a had
-left (H2) undetermined; at this scope it does **not** need a separate
-argument.
+**What D51 measured, and the direction it does NOT run.**  Equal full-view projections imply equal
+menus with exact weights across all **6,471** histories over **209**
+distinct projection keys, zero violations.  But the projections
+**REFINE** `sigma` rather than being determined by it — **209 projection
+keys against 32 states** — so the inference *"since `sigma` abstracts
+those projections, menus are sigma-determined"* is **inverted** and is
+withdrawn.  Menu-determinacy from `sigma` is established instead by
+§B6.13's closed form, which goes through `sigma` **directly** and never
+through the projections.  D44a already had transition determinism,
+stronger and two depths deeper, so the projection-level version adds
+nothing there either.  D51's durable content is **three refutations**
+(§B10.3), not a reduction.
 
 ### B3.3 Menus run on per-actor views at transport scope
 
@@ -3168,58 +3321,68 @@ original consistency check carried **zero information**, and the receipt
 says so in a dedicated gate rather than letting the pass read as
 confirmation.
 
-### B5.4 D53: the empty-trace obstruction, and SC5 `[EXACT]`
+### B5.4 The disjoint-row lemma, and the capacity condition
 
-Receipt `v10/code/d53_sky_capacity_exact.py` (6 PASS / 0 FAIL); the
-instrument imported from the committed D47a by **AST extraction** — D47's
-own object, not a re-implementation.
+*Sources: `v10/code/d53_sky_capacity_exact.py` (8 PASS / 0 FAIL after batch-round repair); `v10/reviews/batch-round1-d50-to-d60.md`, D53 BLOCKER 1 and MAJOR 1/2.*
 
-**The defect.**  Shattering a `k`-set requires all `2^k` traces, and the
-**empty trace** is one of them; a system without it cannot shatter any set
-for any `k ≥ 1`.  D47's capacity gate SG2 admitted a sky as "shatter-4
-decidable" on `|directions| ≥ 4` and `|rows| ≥ 2` — **necessary and NOT
-sufficient.**
+**The requirement, stated correctly.**  Shattering a set `S` requires all
+`2^{|S|}` traces **restricted to `S`**, and therefore requires a row
+`r` with `r ∩ S = ∅` — **a row DISJOINT FROM `S`**, not a row that is
+empty.  The two coincide only when `S` is the *entire* direction set.
 
-**The audit of D47's own strata:**
+> **`[THEOREM, hypotheses stated]` For a finite poset whose order is
+> **reflexive** and **transitive**, every SKY-A and SKY-C trace is
+> non-empty; hence such a sky can never shatter its FULL direction set
+> (`k = |dirs|`).**  That is the whole of what the empty-trace argument
+> buys.
 
-| reading | skies | with empty trace | counted decidable | actually capable |
-|---|---|---|---|---|
-| SKY-A | 261 | **0** | 201 | **0** |
-| SKY-C | 258 | **0** | 211 | **0** |
-| SKY-B | 235 | 225 | 142 | **139** |
+The stronger reading — *no empty row ⟹ cannot shatter anything* — is
+**false**, and the counterexample is one line, decided by the committed
+instrument's own `shattered_set`: `rows = [{0}, {1}]` on `cols = [0,1]`
+has no empty row and shatters the 1-set `(0,)`.  At `k = 4` the same
+mechanism runs on a genuine finite poset (base, five covers, one event
+above each non-empty subset of four of them; 21 events, transitivity
+checked exhaustively): 5 directions, 16 distinct rows, **no empty row**,
+and `shattered_set` returns the shattered 4-set.  **A fifth direction's
+own trace `{c5}` supplies the empty trace *on the 4-set* while being
+non-empty as a row**, and that mechanism is available at every width ≥ 5.
 
-> **Of D47's 554 "decidable" pairs only 139 could EVER have shattered;
-> 415 were structurally incapable, so its zero-shattering result over
-> those is a TAUTOLOGY, not a measurement.**
+**And it happens in Minkowski `[REFEREE-CARRIED, batch round 1]`.**  On a
+genuine exact-integer `M^{3+1}` sprinkling (`N = 300`, all points
+distinct, transitivity verified), through the committed `sky()` /
+`shattered_set()`: **SKY-A shatters 4-sets at 24 base events; SKY-C at
+30** — with `EMPTY TRACE = False` at those events.  SKY-C shatters
+**3-sets at 49 of 117** capable base events on the committed lattice
+records, with zero empty rows anywhere.
 
-**And the reason is structural, not statistical.**  SKY-A takes the
-directions to be the **covers** of the base event, so every event
-strictly above it lies above at least one cover and the empty trace
-**cannot** occur; SKY-C is the dual and fails identically.  Only SKY-B,
-whose directions form an antichain at fixed height, admits an event above
-the base lying above **no** direction.
+> **THEREFORE: SKY-A and SKY-C are LIVE readings**, and the claim that
+> only SKY-B can fire is **withdrawn**.  **Residue 2 — which sky reading
+> is physically privileged — REOPENS**, and it now matters more than
+> before, because §B5.7's discriminator is sharpest under SKY-A.
 
-> **SKY-A and SKY-C can never shatter at any width or depth.**  This is
-> stronger than "they did not fire", and it explains D47b's previously
-> unexplained observation that SKY-A never reached decidability: it was
-> doubly disqualified.
+**The capacity condition, corrected.**  D47's gate — `|directions| ≥ 4`
+and `|rows| ≥ 2` — is genuinely **necessary and not sufficient**, and
+that correction stands: a zero over a stratum too poor to fire is not a
+measurement.  But the empty-trace clause **false-negatives** and must
+come out of the necessary condition.  The honest condition is the first
+two clauses: **`≥ 4` directions AND `≥ 16` distinct traces.**
 
-**The corrected capacity condition (SC5), binding on every future sky
-unit:** `≥ 4` directions **AND** `≥ 16` distinct traces **AND the empty
-trace present.**  On the same Minkowski records it admits **52** skies
-against D47's 554 — a **10.7×** reduction.
+**The corrected census.**  Of the 415 skies once written off as
+structurally incapable, **144 were genuinely capable** — a **2.8×**
+reduction in what counts as testable, not the 10.7× a too-strong
+condition produced.  With the empty-trace clause dropped, the same 554
+pairs admit **69** under SKY-A and **52** under SKY-B.
 
-**Why the defect survived D47's own validation:** SG1 validated the
-instrument on **synthetic** set systems (arcs, exact-rational caps), and
-**both contain the empty trace**, so the instrument passed honestly on
-objects that were capable, and the incapacity of real cover-skies was
-never in the validation's field of view.  *The controls were sound and
-were run on the wrong object.*
+> **What was right and what was wrong, kept apart.**  Right: capacity
+> must be gated before a zero is read as a negative.  Wrong: the
+> condition, its stated structural reason, and the exclusion of two
+> readings that do in fact fire.  See §A10.10b / §B10.10b.
 
-**Damage bounded and stated — UNTOUCHED by D53:** D47a's constructed
-separator; the instrument validation on synthetic systems; the demotion
-of circular-ones (which never used shatter-4); and D47b's actor-width
-result (which measures sky **size** and does not invoke shattering).
+**Untouched by any of this:** D47a's constructed separator (arcs shatter
+3 and never 4; exact-rational caps shatter 4); the instrument validation
+on synthetic systems; the demotion of circular-ones (§B5.3), which never
+used shatter-4; and D47b's actor-width result (§B5.6), which measures sky
+**size** and does not invoke shattering.
 
 ### B5.5 Capacity in Minkowski: density, not count `[EXACT]`
 
@@ -3293,51 +3456,76 @@ directions with 362 decidable triples** against transport's **4**.
 link count, not on the height/width profile), so "narrower than chance"
 is established against **that** null and not against every reasonable one.
 
-### B5.7 The sprinkling floor: genuine Minkowski never shatters `[D55c, LOG #435 — GREEN-UNREVIEWED]`
+### B5.7 The dimension discriminator: max-shatter reads geometry on sprinklings `[REFEREE-CARRIED + coordinator-confirmed]`
 
-Receipt `v10/code/d55c_m31_control_exact.py`, **4 PASS / 0 FAIL**, exit 0;
-`mink4` anchored to the committed `mink` on `z = 0` (identical orders, so
-the four-dimensional generator extends the audited one rather than
-replacing it).  Four fixed-box records to `N = 200`:
+*Sources: `v10/code/d55c_m31_control_exact.py` (10 PASS / 0 FAIL after batch-round repair); `reviews/batch-round1-d50-to-d60.md`, D55c BLOCKER 1 and MAJOR 1; LOG #453(2).*
 
-| quantity | value |
-|---|---|
-| SC5-capable(4) pairs on genuine `M^{3+1}` | **1,578** |
-| SC5-capable(5) pairs | **740** |
-| shatter-5 found | **ZERO** — the pre-registered halt condition holds |
-| shatter-4 found | **ZERO of 1,578 capable pairs** |
+**The result.**  On genuine sprinkled Minkowski records **at sufficient
+density**, and read under **SKY-A**, the shatter number reproduces the
+continuum ladder of §B7.5 exactly:
 
-Combined with the zero-shattering result on genuine `M^{2+1}` (§B8.5's
-1,925-pair control): **no sprinkled Minkowski record of any tested
-dimension shatters at all**, while the engineered transport records of §B8 shatter 4 and 5.
+| genuine sprinkling | shatter 3 | shatter 4 | shatter 5 |
+|---|---|---|---|
+| `M^{2+1}` | **yes** | **never** | never |
+| `M^{3+1}` | yes | **yes** | **never** |
 
-> **Therefore max-shatter does NOT separate 2+1 from 3+1 on discrete
-> records; it separates ENGINEERED COORDINATION from SPRINKLED GEOMETRY.**
+**The matched ladder `[REFEREE-CARRIED]`**, `N = 150 … 500`, same
+generator, same box, only the dimension differing:
 
-*Scope and status.*  This unit is **green-unreviewed** and therefore not
-citable (§0.2); it is reported because it fixes the meaning of the
-instrument that §B7 and §B8 use.  It leaves untouched: the exact
-calibration ladder for **continuum** trace systems (§B7.5 A2), the
-Dilworth gate (§B7.3), the capacity results of §B8, and the
-trace-counting bound of §B7.4 — none of which says anything about
-sprinklings.
+```
+                       capable(4)                 SHATTER-4        best |r ∩ S|
+  M^{2+1}:  56 / 100 / 137 / 189 / 288 / 375     0 everywhere         15/16
+  M^{3+1}:  91 / 132 / 182 / 226 / 316 / 407   0/1/11/30/116/211      16/16
+```
 
-`[MY READING]` The structural reason is that a sprinkling has **no actor
-or wire structure**, so the Dilworth mechanism — chains of traces
-contributed by worldlines — does not even *apply* to it.  Shattering may
-therefore be exactly the signature of **worldline-coordinated knowledge**,
-which a sprinkling lacks by construction.  On that reading the geometry
-line's real discovery is not about dimension: it is that coordination
-leaves a combinatorial fingerprint that random causal structure of the
-same size does not have — which sits beside §B5.6's independently measured
-"narrower than chance", and is a sharper thing to have found than a
-dimension estimator would have been.  Interpretation of a
-green-unreviewed unit; not citable.
+**Independently confirmed by the coordinator** with code sharing nothing
+with the receipts: SKY-A shatter-4 at `N = 300`, box 40 — **`M^{3+1}` 17
+events, `M^{2+1}` zero.**
 
-**Residue named by the unit:** does genuine `M^{2+1}` or `M^{3+1}` shatter
-**3** — the rung below, which would locate the *sprinkling floor*?
+**It is not merely sky size** — the trap D54's round named.  Size-
+controlled, pooled over `N = 200…500` `[REFEREE-CARRIED]`:
 
----
+```
+  M^{2+1}: |dirs| 4-7: 0/173   8-11: 0/526   12-15: 0/304   16-19: 0/72
+  M^{3+1}: |dirs| 4-7: 0/18    8-11: 1/162   12-15: 7/314   16-19: 63/337
+                                              20-23: 117/253  24-27: 88/127
+```
+
+At `|dirs| = 12–15` the samples are comparable — **304 against 314** —
+and the split is **0 versus 7**.
+
+**The halt condition holds, and the continuum calibration transfers
+exactly.**  Shatter-5 on dense genuine `M^{3+1}` under every reading:
+SKY-A at `N = 300/400/500` gives `capable(5) = 186/278/370` with
+**SHATTER-5 = 0** (best 26/27/28 of 32); SKY-C likewise 189/277/368,
+**zero** (best 25/27/28).  So: *sprinkled 2+1 shatters 3 and never 4
+(arcs shatter 3); sprinkled 3+1 shatters 4 and never 5 (caps shatter 4;
+Radon stops at 5).*
+
+> **MAX-SHATTER IS AN EMPIRICAL DIMENSION DISCRIMINATOR, with two-sided
+> controls.**
+
+**Density is the enabling variable, and reading a sparse sample as a
+negative is the error to avoid.**  At the sampled densities `≤ 6e−05` no
+sky of a sprinkled `M^{3+1}` record shatters 4; the transition sits
+between `~2e−05` and `~9e−05` (`N=200, T=160, box=40` at `1.95e−05`:
+`capable(4) = 917`, shatter-4 **0**, best 15/16 — *one trace short*).
+The scoped negative that sparse data licenses is: *at those densities,
+under that reading, no shattering* — and nothing more.
+
+**And sprinkled records are not at meter reading zero.**  They sit at
+their own dimension's rung: on the same four committed configurations,
+gated at `≥ 3` dirs and `≥ 8` traces, **2,151 capable / 1,087
+shatter-3**; on genuine `M^{2+1}` at `N = 160`, **1,002 capable / 492
+shatter-3**.
+
+**Scope, carried.**  Reading-relative — the discriminator is sharpest
+under SKY-A, which is why §B5.4's reopening of residue 2 matters.  The
+ladder numbers are `[REFEREE-CARRIED]`; the central comparison was
+confirmed independently by the coordinator.
+No claim is made that any record *is* a manifold of any dimension: what
+is measured is where a record sits on a ladder calibrated against
+continuous shadow systems.
 
 ## B6. The completion dichotomy
 
@@ -3864,7 +4052,7 @@ hence LOWER BOUNDS on the freedom left]`:
 | demand imposed | constraints | rank | boundary directions still FREE |
 |---|---|---|---|
 | agreement on the root/renewal matched pair (I1) | 6 | 5 | **308 of 313** |
-| bisimulation-invariance of the completed class transfer at every interior cut (I2) | 589 | 194 | **119 of 313** |
+| bisimulation-invariance of the completed class transfer at every interior cut (I2) | 589 | 176 | **137 of 313** |
 | paper 30 §5.7's FORM | — | — | **0** — one ray |
 
 > **Neither invariance demand delivers uniqueness.  What delivers it is
@@ -3886,44 +4074,26 @@ theorem; D5, D7 and G5 are the definition of `q'` rearranged — **G5's
 `[SUBSTANTIVE]`/`[ANCHOR]`/`[DERIVED]`/`[THEOREM-PASS]`, AST-anchored,
 **15 / 5 / 6 / 5**.
 
-**MAJOR M4 — a citation-discipline breach, recorded rather than repaired
-away.**  #418 amended `THE-COMPLETION-DICHOTOMY.md` — the corpus's
-entry-point document — with a banner reading "the dichotomy has been
-SETTLED", **in the same ledger entry that created D49, before any hostile
-round**, and the banner carried **no scope** (neither "d42a
-delivery-free" nor "conditional on (H0)–(H2)" appeared in it).  Repaired:
-scope and review status now in the banner.
-
-**Four first-run deviations, all gated:** (A1) the pinned `λ = 1`
-eigenvector was hand-computed and **wrong** — replaced by an exact
-in-receipt kernel computation; (A2) the pinned rank 114 was wrong and the
-true value 84 became the result; (A3) the washout budget was too small —
-repaired at certificate level with the iteration extended to `n = 400`;
-(A4) **a determinism defect in the receipt itself, caught by seed
-variation** — E2 serialized `'r'` events through a raw `frozenset` repr
-and reported 7 spurious mismatches at `PYTHONHASHSEED=7`, exit 1, exactly
-the warned failure mode; repaired with a recursive deterministic key and
-**recorded rather than quietly fixed**.
-
-**A record-keeping correction, #420:** #419 recorded the round as
-"repaired and delta'd" while the frozen round file contained **no delta
-section at all**.  The repairs were real (independently re-verified at 31
-PASS / 0 FAIL from a clean process) but the record of them was missing
-from where the discipline puts it.  Same defect class as #390, corrected
-the same way: forward, with the cause stated.
+Three methodological findings of that round belong with the method
+(§B11.6) rather than with the result, and are recorded there: a
+**citation-discipline breach** (a settlement banner written into the
+corpus's entry-point document before any round, and without scope); a
+**determinism defect** caught only by hash-seed variation, from
+serializing events through a raw `frozenset` repr; and a
+**record-keeping defect**, a round logged as delta'd when the frozen
+file contained no delta.  All three are on the record with their causes,
+which is the point of having them.
 
 ### B6.12 D50: the form is a CHOICE `[LOG #421/#422; GREEN-UNREVIEWED]`
 
-> **Discipline note:** D50 has **not** had a hostile round.  It is
-> green-unreviewed and therefore **not citable**; it is reported here
-> because it is the residue B2 created and because its result is a
-> *negative*, which its own pre-registered one-sidedness doctrine makes
-> rigorous in a way a positive would not have been.
-
 Pin `note-d50-is-the-form-a-law-pin.md`; receipt
-`v10/code/d50_form_law_or_choice_exact.py` (9 PASS / 0 FAIL, exit 0),
-importing D49's state by AST-stripping its `check()`/`print()`/`sys.exit`
-statements — single source, D49's gates not re-run.
+`v10/code/d50_form_law_or_choice_exact.py` (13 PASS / 0 FAIL after
+batch-round repair, exit 0), importing D49's state by AST-stripping its
+`check()`/`print()`/`sys.exit` statements — single source, D49's gates
+not re-run.  Reviewed in the batch round
+(`reviews/batch-round1-d50-to-d60.md`); **the headline STRENGTHENS
+under repair** — the freedom is larger than first published and the
+negative is now constructive.
 
 **The question.**  Is there a demand stated on the **record** (rather than
 on `Z`) that **forces** the form?  The pinned family: I1 renewal
@@ -3938,7 +4108,7 @@ discrete gradient on the class graph up to a constant factor per step,
 with `c` fixed by normalization to `λ = 2`.
 
 **THE FALSIFIER FIRED.**  The space of **distinct completions** satisfying
-depth-stationarity has dimension **10, 28, 107** at truncation depths
+depth-stationarity has dimension **12, 32, 125** at truncation depths
 2/3/4 — **it GROWS with depth** rather than collapsing to a ray.
 
 - **The negative is rigorous while a positive would not have been** — the
@@ -3953,8 +4123,18 @@ depth-stationarity has dimension **10, 28, 107** at truncation depths
 - **SF5:** I3 is strictly stronger than I2 at every depth (16 vs 14, 109
   vs 101, 610 vs 589 constraints) — so this unit is not re-measuring B2;
   the cross-depth comparisons are really there and simply do not bite.
-- **SF6 negative control held:** I1 stays loose (completion dimensions
-  22/83/307).
+- **SF6 negative control held:** I1 stays loose.
+- **The negative is CONSTRUCTIVE.**  Beyond a tangent count, an **exact
+  positive line of distinct completions** satisfying the demand is
+  exhibited — nearby non-proportional completions, written down rather
+  than inferred.
+
+> **A corpus-wide number correction, and its lesson.**  The published
+> boundary-freedom figure under bisimulation-invariance was **119**; the
+> correct value is **137**, the earlier rows having dropped half of a
+> product rule.  A port check reproduced 119 exactly — **because porting
+> the method ports the error.  A port check cannot be an independence
+> check** (§B11.6).  Every quotation of 119 in this book is corrected.
 
 **Why the pinned argument failed, diagnosed not hand-waved.**  The sketch
 assumed the demand forces `Z(h+e)/Z(h)` to be a function of the two
@@ -3987,47 +4167,125 @@ thousands) did not finish its exact rank in 10 minutes and was cut; the
 horn (II) holds; paper 30 §5.7's `[OPEN, declared]` is answered
 affirmatively.  D50 bears only on uniqueness.
 
-### B6.13 (H1): undischarged, with two dead routes
+### B6.13 (H1) is a THEOREM at two-actor delivery-free scope — residue 1 is CLOSED there `[D61, LOG #451/#452 — GREEN-UNREVIEWED]`
 
-**(H1) is residue 1's final named gap**, and D44a / D49 / D50 all inherit
-its conditionality.  Two routes are closed, both with counterexamples on
-the record:
+*Sources: `note-d60p-h1-probe.md` (the adopted proof note, §3–§7); `note-d61-h1-closure-pin.md` incl. its §4 first-run amendment; `v10/code/d61_h1_closure_exact.py` (10 PASS / 0 FAIL, exit 0) and `data/d61_h1_closure_exact.out`.*
 
-- **The `tau` own-view route `[D46a]`.**  `tau` is **not an own-view
-  object**: the menu view strictly exceeds the noop cone on 1,016 of
-  12,942 actor-histories, all extras opponent-authored (§B3.2).  (H0) is
-  an independent hypothesis, not a dispensable one, and (H2) is **not**
-  subsumed by (H1) — §B10.2.
-- **The wire-closure route `[D51]`.**  Its pinned form: MV-STRONG holds
-  for propose/arbitrate and fails only for idles, on the reasoning that a
-  candidate touching base `b` already sees every live proposal on `b`.
-  Measured: **every event type lags**; and worse, **monotonicity fails** — a smaller view can
-  yield more options — so **any depth-free argument built on "the lagged
-  view sees a subset" is unsound.**  D51's own pin §5 depth-free sketch is
-  recorded as **damaged**, not quietly dropped.
+**THE OWN-VIEW DICHOTOMY (Lemma 2), which is the whole engine.**
 
-**What D51 leaves as durable content:** (H1) is now **exactly** the
-question whether the **four menu-relevant projections**, evaluated on each
-candidate's own view, are `sigma`-determined — strictly coarser than the
-question that died first.  Plus two finite-depth confirmations (MV3, MV4)
-and the settlement of (H2) at the projection level.
+> **A candidate's own view is EITHER the initiator's register cone OR the
+> FULL view — there is no third case.**  The reason is register geometry
+> read from the committed source: `regs_of` keys the poset on **actor
+> names** (plus arbitrator-owned fresh version names), so a *pair*
+> arbitration occupies both actors' registers and therefore sees
+> everything, while every other candidate sees exactly its initiator's
+> cone.
 
-**Three gates were mis-specified by the author and were restated, not
-weakened:** MV1 and MV2 originally *asserted* the author's expectations
-and failed; MV5 demanded that hiding a proposal change the projections in
-100% of cases, where the true rate is **3,008/4,760 (63%)** because a
-dropped proposal on an unreached base moves nothing — the gate now tests
-responsiveness.  *A gate that asserts the author's hypothesis is not a
-gate.*
+Gated at every instance: **34,374 candidates at depth ≤ 5 — cone 32,342,
+full 2,032, THIRD CASE = 0.**  And the 2,032 full-view cases are
+**exactly** the 2,032 "lag" pairs that had been read as an obstruction
+(§B3.2): *the dichotomy explains the lag rather than being defeated by
+it.*
+
+**On the cone the layer is RIGID (Lemma 5).**  The invariants — `alive_a`
+a singleton; at most one live proposal, on `X_a`; at most one full-view-
+superseded `X` — hold at **every one of 34,375 histories, zero
+violations**, layer-computed per history.  The case battery, at every
+instance:
+
+| case | instances | violations |
+|---|---|---|
+| every admissible **propose** is on the actor's own alive singleton with no prior live | 12,916 | **0** |
+| every admissible **self-arb** consumes a SINGLETON component on that actor's own `X_a` | 6,484 | **0** |
+| every admissible **pair-arb** sits on a base that is BOTH actors' alive singleton (`X_A = X_B`) | 2,032 | **0** |
+| case exhaustiveness — every menu event is `p`, `r` or `n` | — | **0** non-`p/r/n` |
+
+**This dissolves the standing obstruction.**  The cone-level bits are
+indeed not full-view-determined — but rigidity means **only the two
+complementary values ever occur**, so the idle weight is constant `3/4`.
+The obstruction was real about the bits and inert about the menu.
+
+**Consequently `menu(h) = G(sigma_raw(h))`** for an explicit ~10-line
+closed form `G`, gated entrywise in exact Fractions.  **(H1) follows by
+equivariance WITH NO DEPTH PARAMETER.**
+
+**The conclusion, gated.**  Equal canonical `sigma` ⟹ **identical**
+canonical menu (renamed event-multiset, exact weights), over all 34,375
+histories, **36 sigma classes, zero splits** — and the probe gated the
+same over **930,631 histories to depth 8** (census
+`[1, 6, 32, 176, 976, 5280, 27904, 145408, 750848]`), with zero
+sigma-class menu splits, plus sampling to depth 40, renewal-pumping
+families to length 44, and adversarial pairs `[PROBE-CARRIED]`.
+
+**A bonus that runs the other way.**  The quarter law of §B2.7 —
+per-actor menu mass in `{1, 5/4}` — is **derived** from `G` (propose
+`1/8`, self-arb `1/4`, pair-arb `1/8` in twos; blind groups summing
+exactly `1/4`) and re-gated at every history with **zero** off-law
+points.  A gated-and-scoped law becomes a **theorem of the closed form**.
+
+> **`[THEOREM at two-actor delivery-free d42a scope]` (H1) holds.**
+>
+> **CONSEQUENCES.**  D44a's closure theorem is **UNCONDITIONAL** at that
+> scope — (H0) is the gated invariants, (H2) follows from the committed
+> transition determinism plus the closed form.  **RESIDUE 1 — the
+> completion problem's positive-harmonic core, the corpus's oldest named
+> gap — IS CLOSED there.**  And D49's root-free completion `Zhat` holds
+> at **every depth** there.
+
+**Four scope clauses, all binding.**
+
+1. **Still within the stationary form.**  D50 is untouched: the form
+   remains a **choice** (§B6.12), so "the record law is forward-complete"
+   still may not be quoted without it.
+2. **Transport untouched.**  Nothing here reaches delivery scope.
+3. **THREE ACTORS ARE OUT OF SCOPE — the dichotomy FAILS there.**  With
+   three actors a pair-arb sees the union of two cones, not everything.
+   The pin forbids wider quotation.
+4. **The proof is PROSE-OVER-CODE, not machine-checked logic.**  The
+   receipt gates the code-facts against the source, every case claim at
+   every cached instance, the dichotomy, and the conclusion; the
+   depth-free force comes from the register-geometry argument, not from a
+   sweep.  A **Lean-grade mechanization is a stated residue.**
+
+**An over-promise, recorded rather than hidden.**  The pin said
+"mechanize the induction", twice over-promising: run 1's hand-rolled
+abstract state was **coarser than sigma** (1,932 menu mismatches), and —
+the deeper point — *any* cache-gated state machine leaves exactly the
+depth gap (H1) always had.  The deliverable was restated accordingly.
+
+**Standing: GREEN-UNREVIEWED.**  D61's own hostile round is queued;
+nothing here is citable until it lands, and the paper 30/32 updates are
+queued behind it.
+
+### B6.13b The two routes that failed first, and what they left
+
+Both are in the graveyard (§B10.2, §B10.3); what matters here is which
+of their content survives into the closure above.
+
+- **The `tau` own-view route `[D46a]`** established the lag as a real
+  object — the menu view strictly exceeds the noop cone on 1,016 of
+  12,942 actor-histories, all extras opponent-authored (§B3.2).  **That
+  measurement is now explained**: those are dichotomy full-view cases.
+- **The wire-closure route `[D51]`** measured that every event type lags
+  and that a smaller view can yield *more* options, so no argument may
+  assume the lagged view sees a subset.  Both stand.  **What does not
+  stand is its reduction**: the four menu-relevant projections
+  **REFINE** `sigma` rather than being determined by it (209 projection
+  keys against 32 states), so (H1) was **not reduced in the claimed
+  direction**.  Its durable content is three refutations, not a
+  reduction.
+- **D61 is untouched by that inversion**, because its route goes through
+  `sigma` **directly** and never through the projections.
 
 ### B6.14 Scope, to be carried at every citation
 
-- **d42a scope, delivery-free, two actors.**  Unconditional at every
-  verified depth — exhaustively through depth 7.  Conditional on
-  (H0)–(H2) at all depths, **exactly** as D44a's conditional theorem is
-  and no more: **(H1) inherits the whole conditionality**, and its
-  leverage goes *up*, since it is now the last gap before the dichotomy is
-  settled unconditionally rather than merely before residue 1 is decided.
+- **d42a scope, delivery-free, TWO ACTORS.**  Unconditional at **all
+  depths**: (H1) is a theorem there (§B6.13), so D44a's closure theorem
+  is unconditional and `Zhat` holds at every depth — subject only to the
+  stationary **form** remaining a choice (§B6.12) and to D61's own
+  hostile round, which is queued.  **Three actors are OUT OF SCOPE**: the
+  own-view dichotomy fails there, and nothing above may be quoted
+  wider.
 - **Transport scope (d42b1) is OPEN.**  Paper 32 §2.3's escape result
   stands untouched: deliveries reopen the absorbing sector (a three-event
   history — propose; blind self-seal; deliver the created version across —
@@ -4230,13 +4488,16 @@ for **continuum trace systems**, 3 = circle-compatible, 4 = sphere,
 5 = `S³`, `k` = `S^(k−1)`.  *Does transport admit shatter-5?* is exactly
 the question §B8.4 answers.
 
-> **What the meter reads, stated exactly.**  The calibration ladder above
-> is exact and is a statement about **continuum** trace systems.  It is
-> **not** a dimension reading for a discrete record: §B5.7 measures
-> genuine sprinkled Minkowski records at **zero** in every dimension
-> tested.  So a record's max-shatter measures the **coordination its
-> worldlines have achieved**, calibrated against continuous geometry — a
-> meter of the framework's reach, not of a record's dimension.
+> **What the meter reads, stated exactly, in two parts.**  **(1) On
+> sprinklings it reads geometry.**  §B5.7 measures the discrete ladder on
+> genuine sprinkled Minkowski records and recovers exactly the continuum
+> table above — 3 in `M^{2+1}`, 4 in `M^{3+1}`, 5 never — with a
+> size-controlled two-sided separation.  **(2) On the framework's
+> engineered records it reads coordination.**  Those reach 5 (§B8.4),
+> above every sprinkling of any dimension tested, and no claim that such
+> a record *is* four space dimensions follows: what exceeds the sprinkling
+> rungs is worldline coordination, which random causal structure does not
+> produce.
 
 **Sphere calibration, exact (D55 A2):**
 
@@ -4363,7 +4624,7 @@ charged accumulator.  Eleven couriers suffice at `m = 4`.
 > **`[EXACT]` A 20-actor, 42-event transport record, every event selected
 > from the committed layer's own menu, whose SKY-B sky at the minting
 > event has 4 pairwise-incomparable directions, 16 distinct traces
-> including the empty one (SC5 satisfied), realizes ALL 16 subsets, and
+> including the empty one (capacity satisfied), realizes ALL 16 subsets, and
 > returns a shattered 4-set — at THREE depths, `d = 4, 5, 6` (round-1
 > MINOR 2; the promised per-`d` table is now gate K11).**
 
@@ -4445,19 +4706,17 @@ stipulation must be **said aloud**.
 
 **The sound discrete separation is EMPIRICAL, and it has controls:**
 
-| control | result |
-|---|---|
-| genuine `M^{2+1}`, SC5-capable SKY-B pairs at depths 1..10 | **1,925** pairs, **ZERO** shattered 4-sets `[REFEREE-CARRIED]` |
-| genuine `M^{3+1}`, SC5-capable pairs at four directions | **1,578** pairs, **ZERO** shattered 4-sets `[D55c, GREEN-UNREVIEWED]` |
-| genuine `M^{3+1}`, SC5-capable pairs at five directions | **740** pairs, **ZERO** shattered 5-sets `[D55c, GREEN-UNREVIEWED]` |
+**Where these records sit against genuine sprinklings (§B5.7).**
+Sprinkled `M^{2+1}` reaches shatter-3 and never 4; sprinkled `M^{3+1}`
+reaches 4 and never 5.  **These constructed records reach 5** — above
+both, and above the rung the 2-sphere's own geometry permits (caps have
+VC dimension 4).
 
-against this record's **three** shattering depths.
-
-**The separation is therefore complete and dimension-blind** (§B5.7): the
-engineered records are sharply separated from sprinklings of *every*
-tested dimension, not from 2+1 specifically.  What is demonstrated is
-**capacity for coordination no random causal order exhibits** — which is
-the licensed claim below and the whole of it.
+So the separation from real spacetime is genuine and it is *by one rung
+above the top of the sprinkling ladder*, not by the sprinklings reading
+nothing.  What is demonstrated is **capacity for coordination no random
+causal order of any tested dimension exhibits** — which is the licensed
+claim below and the whole of it.
 
 **MAY NOT.**  *"The admissibility layer does not select 3+1"* is **not**
 licensed: it would need *"not cap-realizable on `S²` ⟹ not a 3+1 sky"* —
@@ -4489,6 +4748,117 @@ unrun, unclaimed beyond 5 — `m = 6` would need 20 chains, 57 couriers,
 ~66 actors); the depth parameter (`d = 5` here while the committed
 `SKYB_DEPTH` elsewhere is 2 — a `d = 2` construction or a forced-depth
 bound would sharpen the reading-relativity); and the convergence question.
+
+### B8.6 The crystal: tiling capacity `[D60; batch-round reviewed and repaired]`
+
+*Sources: `note-d60-crystal-question-pin.md` (LOG #447, committed before code); `note-d60-crystal-result.md`; `v10/code/d60_crystal_exact.py` (10 PASS / 0 FAIL, exit 0); `reviews/batch-round1-d50-to-d60.md`, D60 — REVISE, 0 BLOCKER / 3 MAJOR / 5 MINOR / 3 NIT.*
+
+**The instrument** is the atlas of §D2 Road 1: **homogeneity** (the
+fraction of events carrying a chart of `≥ 2` directions) and the
+**chart-size ratio** `ω` along cover pairs.  The prior measurement is
+that the engineered shatter records sit at **0.357–0.386** homogeneity
+against a genuine-sprinkling band of **0.642–0.800** — *the opposite of
+atlases.*  D60 asks whether the grammar can build the other kind.
+
+**The objects, both forced.**
+
+> **CRYSTAL-1D (the brick wall): 65 events over 8 ring actors, 14 rounds
+> of alternating re-deliveries; every event offered by the layer's own
+> menu, and every specification matched by EXACTLY ONE candidate — the
+> record is FORCED.**  **CRYSTAL-2D (the grid): 46 events over 9 actors,
+> 12 phases, no refusal.**
+
+The round rebuilt the blueprint independently and reproduced the poset
+(1,830 ordered pairs), the heights, the covers and every atlas number.
+Honest correction carried: at `K = 3` the grid's phase generator
+degenerates — the 12 phases reduce to **4 distinct pair sets** of 3
+deliveries — so the grid is a smaller object than "3×3, 46 events"
+suggests.
+
+**The atlas verdict `[EXACT]`**, comparators recomputed with the repaired
+instrument on eleven genuine sprinkling configurations rather than
+re-typed from a rounded printout:
+
+| | homogeneity (`d = 2`) | mean `ω` (`d = 2`) | `\|D\| ≥ 4` | max `\|D\|` |
+|---|---|---|---|---|
+| **brick, m = 8 (65 events)** | **0.7692** | **0.6510** | **0.0000** | **3** |
+| grid 3×3 (46 events) | 0.5000 | 0.3915 | 0.0000 | 3 |
+| genuine sprinklings (11 configs) | 0.6417 – 0.8000 | 0.0481 – 0.1329 | 0.425 – 0.650 | 10 – 17 |
+| engineered shatter records | 0.357 – 0.386 | 0.467 – 0.473 | 0.000 | 3 |
+| generic 2-actor walk | 0.0667 | 1.0000 (2 pairs) | 0.000 | 2 |
+
+Three things follow, and they do not all point the same way.
+
+- **The overlap leg STRENGTHENS**: 0.651 against 0.048–0.133 — a
+  corrected comparator improving the result.
+- **The homogeneity leg does NOT reach "above"**: against genuine
+  `M^{3+1}` the brick's 0.769 sits **inside** the band and below its
+  top configuration.  The licensed statement is the one the pin
+  pre-registered — *comparable to the sprinkling band*.
+- **A third metric, equally natural, is at the floor.**  Chart **width**:
+  **no 4-direction chart anywhere in the brick, at any `(M, R)` tried**,
+  against the sprinklings' 42–65%.  At `d = 3` the brick does reach
+  `|D| ≥ 4` (38/65, inside the `d = 3` sprinkling band), so the width
+  shortfall is a **`d = 2`** statement — as is the homogeneity ordering
+  (at `d = 3` the brick's 0.7385 sits *below* `M^{2+1}`'s 0.7500 and the
+  ordering reverses; the overlap ordering holds at both depths).
+
+> **THE LICENSED CLAIM: the grammar admits records that tile at
+> sprinkling-grade HOMOGENEITY and above-sprinkling OVERLAP, WITH THIN
+> CHARTS.**  A tiling-capacity **mechanism** statement at grammar layer,
+> and nothing more.
+
+**`ω` must be read with §D2's containment theorem:** it is a **chart-size
+ratio** along covers, not a two-way overlap, and it systematically
+favours thin-charted records.
+
+**0.769 is a parameter, not a mechanism.**  Both hard-coded settings are
+swept and printed:
+
+```
+  ROUNDS at M = 8 :  R=4  0.4400 | R=8  0.6341 | R=14 0.7692 | R=20 0.8315
+                     R=30 0.8837 | R=50 0.9282        (|D|>=4 = 0 throughout)
+  RING WIDTH at 14:  M=4  0.7879 | M=6  0.7755 | M=8  0.7692 | M=10 0.7531
+                     M=12 0.7320 | M=16 0.6822        (|D|>=4 = 0 throughout)
+```
+
+and the shortfall is localized:
+
+```
+  brick FULL          (65 ev): d=2 homog 0.7692  omega 0.6510
+  brick CIRCUIT-ONLY  (56 ev): d=2 homog 0.7857  omega 0.6420
+  brick PREFIX-ONLY   ( 9 ev): d=2 homog 0.6667  omega 0.7500
+  brick INTERIOR      (51 ev): d=2 homog 0.9020  omega 0.6496   (d=3: 0.9216)
+```
+
+> **THE MECHANISM STATEMENT — what the scale doctrine (§D1b) asks this
+> unit to certify: the shortfall from 1 is entirely BOUNDARY, so a
+> re-delivery circuit's homogeneity tends to 1 as it runs.**  `0.769` is a
+> snapshot of `(M = 8, R = 14)`.
+
+The fairness question is settled in the unit's disfavour and it still
+clears: the brick's homogeneity is strongly size-dependent while the
+sprinklings' is nearly size-independent, so the smaller record is the
+handicapped one — and **size-matched at `N = 65` the brick still clears**
+`[REFEREE-CARRIED, batch round 1]`.
+
+**Scope, held.**  Grammar layer; transfer to the identified interactive
+click law runs through the missing map (§B2.9).  No typicality (there is
+no measure at transport scope).  No dimension claim beyond the measured
+`|D|` census.  No physical-object claim (§D1b).
+
+**Residues.**  (1) **Size** — both crystals are small, and the grid is
+smaller than it looks; a larger grid at `K ≥ 5` would test the 2+1
+analogue properly.  (2) **The width ceiling** — `max |D| = 3` at every
+`(M, R)` tried at `d = 2`; whether *any* grammar record can carry
+sprinkling-grade chart width is now the sharp open question.  (3) The
+asymptotic claim rests on a six-point sweep and the interior control, not
+on a proof.
+
+> **The two certified mechanisms, and the construction that would compose
+> them.**  §B8.2–§B8.4 buy **width** (rich skies, no tiling); §B8.6 buys
+> **tiling** (charted everywhere, thin skies).  A record that is both —
+> the **wide crystal** — is the next construction and is unbuilt.
 
 ---
 
@@ -4685,17 +5055,19 @@ transport scope?  The pin expects sector quantization to hold, as the
 **finite-alphabet prerequisite**, and gates it first.  **Both halves are
 negative, and each refutes a pre-registered expectation.**
 
-**(1) SECTOR QUANTIZATION FAILS — the sector alphabet is not finite.**
-`{0, 1/4}` dies immediately: **arbitration sectors reach `1/2`** via
-subset choices — the `1 + k/4` ladder appearing at sector level.  The
-repaired `k/4` law then dies at cap 6, where **`1/8` appears**, because
-the arbitration sector prices `1/4` **divided by the component count** and
-components grow with depth.  Totals live in `{k/(4m)}` with `m`
-depth-unbounded.
+**(1) SECTOR QUANTIZATION — the values are richer than `{0, 1/4}`, but
+the alphabet may be COMPLETE, and this ground is WITHDRAWN.**
+`{0, 1/4}` does die immediately: **arbitration sectors reach `1/2`** via
+subset choices, and `1/8` appears at cap 6.  But the inference from
+"three values" to "unboundedly many" does **not** hold at this scope.
+The arbitration denominator is `|comps| + |merge_pairs|`, and in the
+unit's own exhaustive data **`max |comps| = 1` at every depth**, while at
+two-actor scope **`merge_pairs ≤ 1` is proven** — so the observed
+`{1/2, 1/4, 1/8}` **may be the complete alphabet**.
 
-> **So §B9.4's `1/4` is a fact about the DELIVERY sector, not a law of
-> sectors**, and the finite-alphabet prerequisite fails **independently of
-> the refinement question**.
+> **So §B9.4's `1/4` is a fact about the DELIVERY sector rather than a
+> law of sectors — but the finite-alphabet prerequisite is NOT refuted at
+> this scope.  The sector verdict rests on ground (2) ALONE.**
 
 **(2) THE COARSEST SECTOR-LUMPABLE PARTITION DOES NOT STABILIZE.**  Read
 as lookahead convergence, per-depth fixpoint counts across caps 3/4/5/6:
@@ -4707,18 +5079,22 @@ as lookahead convergence, per-depth fixpoint counts across caps 3/4/5/6:
 | 5 | — | — | 11 | **33** |
 
 **Even depth 3 creeps at cap 6**, and nothing comparable stabilizes.
-`[MEASURED]` — blow-up evidence at this window, not a theorem.
+`[MEASURED]` — blow-up evidence at this window, not a theorem.  **And a
+trivial-boundary control STRENGTHENS it:** the fixpoint counts are
+**lower bounds**, so the blow-up reading is the conservative one.
 
 > **VERDICT: the sector-exact escape, at `(actor, type)` granularity, is
-> CLOSED — a strictly stronger negative than §B9.1's: even AGGREGATED
-> bookkeeping at this granularity fails, on two independent grounds
-> (alphabet + refinement).**
+> CLOSED — even AGGREGATED bookkeeping at this granularity fails.**  On
+> **one** ground, the refinement, measured at caps 3–6 with the counts as
+> lower bounds.
 
-**The asymmetry of evidence, respected.**  Ground (1) is an **exact
-structural** statement about the pricing rule — the arbitration sector
-genuinely divides by a depth-unbounded count — and does not depend on the
-window.  Ground (2) is `[MEASURED]` at caps 3–6.  The verdict is carried
-by (1) with (2) corroborating — the same division of labour §B9.1 uses.
+**The asymmetry of evidence, respected.**  The verdict rests on ground
+(2) alone, and ground (2) is `[MEASURED]` at caps 3–6 — a window result,
+not a theorem, though a conservative one given the lower-bound control.
+That is a weaker footing than §B9.1's, whose ladder is exact and
+depth-free, and it should be quoted as such: **the sector-exact escape is
+closed on measured evidence at this granularity, not by an
+obstruction.**
 
 **What the crack narrows to** (both untested, both live): **strictly
 coarser aggregations** — type-only sectors, total-budget only — and
@@ -4833,11 +5209,16 @@ cover the base it touches.  Then, worse: **monotonicity fails** —
 `prop_options_in_view` excludes a base the actor already has a live
 proposal on, so a view that **misses** that proposal **includes** the base.
 **A smaller view can yield MORE options.**
-**Survived:** the **reduction** — (H1) is exactly the question whether the
-four menu-relevant projections on each candidate's own view are
-`sigma`-determined, strictly coarser than the refuted question; MV3 and
-MV4 as finite-depth evidence; **(H2) settled at the projection level**;
-and a general bar: *no depth-free argument may assume view monotonicity.*
+**And the reduction it offered in place of the refuted route is itself
+inverted:** the four projections **REFINE** `sigma` (209 keys against 32
+states), so (H1) was **not** reduced in the claimed direction; MV2's
+mechanism is missed supersession, and the `'r'` arm lags too.
+**Survived:** three refutations that still bind — every event type lags;
+**a smaller view can yield MORE options**; and therefore the general bar
+*no depth-free argument may assume view monotonicity*.  **(H1) was
+eventually closed by a different route entirely** (§B6.13), through
+`sigma` directly, which is why that closure is untouched by this
+inversion.
 
 ### B10.4 Circular-ones as the primary sky instrument `[D47a, LOG #409]`
 
@@ -4960,22 +5341,30 @@ in the measure" to **three** candidate homes; and a named residue (a
 full-strength `M^{3+1}` control, the present one being **thin**: 1,351
 skies, 33 capable, zero shatter-5).
 
-### B10.10b Max-shatter as a dimension meter for records `[D55c, LOG #435 — GREEN-UNREVIEWED]`
+### B10.10b The empty-trace necessity theorem, and the zero it produced `[D53/D55c as first delivered; both corrected in batch round 1]`
 
-**Claimed:** a record's max-shatter is its dimension signature —
-3 circle-compatible, 4 sphere, 5 beyond.
-**Killed by:** the full-strength controls of §B5.7 — **zero shatter-4 of
-1,578 SC5-capable pairs and zero shatter-5 of 740 on genuine `M^{3+1}`**,
-against zero of 1,925 on genuine `M^{2+1}`.  No sprinkled Minkowski
-record of any tested dimension shatters at all; the scale cannot be
-reading dimension.
-**Survived:** the calibration ladder as an exact statement about
-**continuum** trace systems (`B₄` fits `S²`; no five points ever shatter
-there; `B₅` fits `S³`); the **Dilworth gate**, which says nothing about
-sprinklings; the **trace-counting** bound; and the whole capacity result
-of §B8 — the layer does not cap the shatter ladder at the sphere's rung.
-What the number measures is **worldline-coordinated knowledge**, which a
-sprinkling lacks by construction.
+**Claimed:** (i) shattering requires an **empty** trace, so the two
+cover-based sky readings can never shatter at any width or depth; and
+(ii) downstream of that, genuine `M^{3+1}` records never shatter 4, so
+max-shatter reads coordination rather than geometry.
+**Killed by:** a one-line counterexample to the lemma it rested on, and
+then a measurement.  Shattering `S` needs a row **disjoint from `S`**,
+not an empty row (§B5.4), so the two readings excluded as structurally
+incapable are live — and with the blinder removed and the density raised,
+genuine `M^{3+1}` **does** shatter 4 (0/1/11/30/116/211 across a matched
+`N = 150…500` ladder) while `M^{2+1}` never does, size-controlled, with
+neither reaching 5 (§B5.7).  The zero that had looked structural was a
+**sparse sample read through a blind reading**; and "no sprinkled record
+shatters at all" was false on the unit's own data, where shatter-3 fires
+1,087 times in 2,151 capable strata.
+**Survived, and improved:** in place of the retired negative there is a
+**working two-sided dimension discriminator** on sprinklings; the
+calibration ladder as an exact continuum statement; the **Dilworth
+gate**; the **trace-counting** bound; and the whole capacity result of
+§B8.  Also survived: the *discipline* the false theorem was wrapped
+around — capacity must be gated before a zero is read as a negative —
+with the corrected census (144 of 415 genuinely capable, 2.8×) replacing
+the over-strong one.
 
 ### B10.10c The sector-exact escape at `(actor, type)` granularity `[D57, LOG #436 — GREEN-UNREVIEWED]`
 
@@ -5015,7 +5404,7 @@ depth-stationary completions form a **single ray** realized by
 **Claimed (ii):** "Among completions that do not distinguish record points
 the law identifies, there is exactly one, and it needs no boundary."
 **Killed by:** BLOCKER B2's measurement — renewal-pair agreement leaves
-**308/313** free; bisimulation-invariance leaves **119/313**.
+**308/313** free; bisimulation-invariance leaves **137/313**.
 **Survived:** the **existence** result entirely untouched (horn (II)
 holds), plus the honest replacement: uniqueness comes from **the form**,
 and D50 then showed the form is a **choice**.
@@ -5024,8 +5413,9 @@ and D50 then showed the form is a **choice**.
 
 **Claimed (pre-registered, with its argument, before running):**
 depth-stationarity forces the form.
-**Killed by:** the falsifier — completion dimensions **10, 28, 107**,
-growing.  Plus the diagnosis: the record-level demand is **aggregated**, so
+**Killed by:** the falsifier — completion dimensions **12, 32, 125**,
+growing, and now **constructively**: an exact positive line of distinct
+completions satisfying the demand is exhibited.  Plus the diagnosis: the record-level demand is **aggregated**, so
 it constrains sums and never obtains the sketch's hypothesis, and *the
 aggregated reading is the correct one*.
 **Survived:** a **permanent** restriction on every citation of D49; the
@@ -5047,7 +5437,9 @@ eliminated.
   withdrawn as stated.
 - **D47's SG2 capacity gate** `[D53]` — necessary and not sufficient; 415
   of 554 "decidable" pairs were structurally incapable, so a zero over
-  them is a **tautology**.  SC5 replaces it.
+    them is a **tautology**.  The corrected condition — four directions and
+  sixteen distinct traces — replaces it, and the empty-trace clause is
+  **not** part of it (§B5.4).
 - **"Width spreads with depth under the theory's own law"** `[D46d]` —
   near-tautology, withdrawn by name; and "the theory's own law" itself
   withdrawn as two different normalizations wearing one name.
@@ -5122,22 +5514,29 @@ of §B11.1 are unchanged.*
 positive, per-cut normalized, class-constant, foliation-invariant
 directly, support-preserving, a law, a measure, and **root-free** (root and
 renewal both `1/16`; the whole 215-node matched subtree identical).
-**Horn (II) holds.**  Unconditional at every verified depth (exhaustive
-through depth 7); conditional on (H0)–(H2) at all depths with **(H1)
-undischarged**; **unique only within paper 30 §5.7's stationary FORM, and
-the form is a CHOICE** (D50, green-unreviewed); values **toy-relative**.
-**Transport scope OPEN**, and §B9 shows the tool cannot travel.
+**Horn (II) holds, and now at every depth**: (H1) is a theorem at
+two-actor delivery-free scope (§B6.13), so D44a's closure is
+unconditional there and **residue 1 is CLOSED**.  Still **unique only
+within paper 30 §5.7's stationary FORM, and the form is a CHOICE**
+(§B6.12); values **toy-relative**; **three actors out of scope** — the
+own-view dichotomy fails there; the proof prose-over-code, with
+mechanization a residue; the unit green-unreviewed.  **Transport scope
+OPEN**, and §B9 shows the tool cannot travel.
 
 **Geometry line — transport scope, measure-free.**  Sky size is an
-actor-width phenomenon and narrower than chance; SKY-A/C can never
-shatter and only SKY-B can, under SC5; the **Dilworth gate** is an
-unconditional theorem of the layer (shatter-`k` costs
-`≥ C(k, ⌊k/2⌋)` actors); a 20-actor / 42-event record shatters 4 at
-depths 4, 5, 6, and a 42-actor / 84-event record shatters 5 at depths
-5, 6, 7, **forced** at every step; the calibration ladder is exact
-(`B₄` fits `S²`; no five points ever shatter there; `B₅` fits `S³`);
-max-shatter is a **(record, reading)** invariant with SUP 5 on that
-record.  **The layer does not cap the ladder at the sphere's rung.**
+actor-width phenomenon and narrower than chance; **all three sky readings
+are live** and residue 2 is reopened (§B5.4); the **Dilworth gate** is an
+unconditional theorem of the layer (shatter-`k` costs `≥ C(k, ⌊k/2⌋)`
+actors); a 20-actor / 42-event record shatters 4 at depths 4, 5, 6, and a
+42-actor / 84-event record shatters 5 at depths 5, 6, 7, **forced** at
+every step; the calibration ladder is exact (`B₄` fits `S²`; no five
+points ever shatter there; `B₅` fits `S³`) **and is reproduced on genuine
+sprinklings** — 2+1 shatters 3 never 4, 3+1 shatters 4 never 5 (§B5.7),
+so max-shatter is a working **dimension discriminator** there; the
+engineered records sit one rung above the whole sprinkling ladder.  **The
+layer does not cap the ladder at the sphere's rung.**  And the grammar
+**tiles**: a forced brick-wall record reaches sprinkling-grade
+homogeneity with above-sprinkling `ω` and thin charts (§B8.6).
 
 ### B11.2 The convergence question
 
@@ -5197,10 +5596,10 @@ description of the *shape* of a possible answer, not an answer.
    demands; **(iii)** a level-structured (QBD / R-matrix /
    Martin-boundary) description with `|holdings|` as the level, connecting
    to the already-built transport-scope machinery.  All three untested.
-2. **The sprinkling floor.**  Genuine Minkowski records read zero on the
-   shatter meter in every dimension tested (§B5.7).  Do they shatter
-   **3** — the rung below?  Cheap, and it calibrates whatever replaces the
-   meter's dimensional reading.
+2. **Residue 2, REOPENED: which sky reading is physically privileged?**
+   All three are live (§B5.4), they disagree materially, and the
+   dimension discriminator is sharpest under SKY-A while several other
+   results were computed under SKY-B.  Nothing justifies a choice.
 3. **(H1)** — the depth-free menu-factorization lemma.  Two routes closed
    with counterexamples; any third must **not** assume view monotonicity.
    Closing it makes the d42a settlement unconditional.
@@ -5303,10 +5702,24 @@ that had not landed.)
   own code.  Both such rounds so far found a BLOCKER; both BLOCKERs were
   in interpretation.
 - **Green-unreviewed is not citable**, and terminal papers are **not
-  edited on green-unreviewed evidence** — amendments queue behind a round
-  (paper 32 §6 item 7's amendment did exactly that).
+  edited on green-unreviewed evidence** — amendments queue behind a round.
+  The rule's one recorded breach is instructive: a settlement banner was
+  written into the corpus's entry-point document before any round, and
+  without scope.  It was caught by the round it had pre-empted.
+- **Determinism is a gate, not an assumption.**  A defect that produced
+  seven spurious mismatches surfaced only under hash-seed variation, from
+  serializing events through a raw `frozenset` repr; it was recorded
+  rather than quietly fixed.  And a round once logged as delta'd when the
+  frozen file contained no delta — the repairs were real, the record of
+  them was not, and the correction went forward with its cause stated.
 - **Forward corrections only**, with superseded text preserved verbatim
   beside its replacement.
+- **A port check is not an independence check.**  Re-implementing a
+  computation from the same description reproduces its errors exactly: a
+  ported check once returned a wrong boundary-freedom figure to the
+  digit, and the defect surfaced only when a reviewer rebuilt the object
+  from the demand rather than from the method (§B6.12).  Independence
+  means a different route, not a second author.
 
 That last rule is why this document could be written at all.  Chapter B10
 is not reconstructed from memory; it is transcribed from a record designed
@@ -7058,7 +7471,7 @@ The destination, as recorded (LOG #436, user direction):
 with the supporting observation from the same entry: *"the grammar's
 records are worldline-woven, not sprinkled."*
 
-The supporting measurement is §B5.7: across 1,578 SC5-capable genuine
+The supporting measurement is §B5.7: across 1,578 capable genuine
 `M^{3+1}` sky pairs, **zero shatter-4 and zero shatter-5**; combined with
 the zero-shattering result on genuine `M^{2+1}`, **no sprinkled Minkowski
 record of any tested dimension shatters at all**, while the engineered
@@ -7184,7 +7597,7 @@ two are half-done, three are open, and the last is blocked.
 |---|---|---|
 | 1 | records → a causal order | **HAVE** — this is what the grammar builds, and the order is the physical content |
 | 2 | causal order → local skies and a dimension *capacity* | **HAVE** — with the meter reading the grammar's coordination, not a record's dimension |
-| 3 | skies → charts, gluing → a manifold | **OPEN** — and being attacked from **two directions at once** (v10's atlas instrument, which now measures a confirmed gap; v9's grown webs, further along but review-indebted and closed).  Their convergence is itself open |
+| 3 | skies → charts, gluing → a manifold | **OPEN, first segment done** — the grammar **tiles** (a forced brick-wall record at sprinkling-grade homogeneity, thin charts); what remains is width, real transition maps, and the second road's unfinished business |
 | 4 | manifold → Einstein dynamics | **PARTIAL** — the *form* of the field equations is derived; Newton's constant is provably not derivable from inside |
 | 5 | manifold → quantum fields on it | **PARTIAL** — a lift of the record process into Hilbert space exists at fixture scale, and its arbitration layer is where the quantum problem begins |
 | 6 | fields → **particle creation** | **OPEN** — the destination's defining phenomenon, with one suggestive structural resemblance that is *labelled speculation* |
@@ -7223,7 +7636,7 @@ pricing.
 
 Delivered: the sky instrument with three committed definitions and the
 proof that only one of them can ever fire (§B5.4); the corrected capacity
-condition SC5; the two scaling laws in different variables — Minkowski buys
+capacity condition; the two scaling laws in different variables — Minkowski buys
 sky size with **density**, transport buys it only with **actor width**
 (§B5.5–§B5.6); transport skies **narrower than chance**; the **Dilworth
 gate** as an unconditional theorem of the layer (§B7.3); and constructed
@@ -7238,8 +7651,8 @@ dimension.  So arrow 2 delivers a **capacity** result — *the layer does not
 cap the shatter ladder at the sphere's rung* — and a measure of engineered
 coordination.  It does not deliver a dimension for a record.
 
-**ARROW 3 — charts and gluing → a manifold.  `[OPEN — and there are TWO
-roads, neither finished]`**
+**ARROW 3 — charts and gluing → a manifold.  `[OPEN — first segment
+DONE: the grammar tiles]`**
 
 A causal order is not a manifold.  To get one you need local pieces that
 look like patches of `ℝ^d` (**charts**), a rule for saying two patches
@@ -7247,45 +7660,57 @@ overlap and agree (**gluing**, with transition maps), and enough
 consistency that the result is one object.  **The corpus is attacking
 this from two directions at once, and they have never been compared.**
 
-**ROAD 1 — the v10 atlas / crystal line `[D58, LOG #438–#439]`.**  Pin
-before code (`note-d58-atlas-instrument-pin.md`), and the first two
-instruments built: the **overlap fraction**
-`ω(e, e′) = |D_e(d) ∩ D_{e′}(d−1)| / |D_e(d)|` on cover pairs (charts at
-consecutive events share a height layer; identity transitions —
-**non-identity transitions and the real cocycle question are DECLARED a
-later stage**), and the **homogeneity profile** of `|D_e(d)|` over all
-events.  Discipline: instrument first, controls before data.
+**ROAD 1 — the v10 atlas / crystal line `[D58 + D60; batch-round
+reviewed and repaired]`.**  Two instruments, built before any data
+(`note-d58-atlas-instrument-pin.md`, committed before code): the
+**homogeneity profile** — the fraction of events carrying a chart of at
+least two directions — and the **chart-size ratio**
 
-Receipt `d58_atlas_instrument_exact.py`, **5 PASS / 0 FAIL**.  The gate
-**validates on homogeneity and REPORTS overlap** rather than testing
-overlap against a threshold — a hard-pinned overlap floor would be an
-invented constant, and the measured values (~0.12 on one control) sit
-nowhere near any natural one.
+```
+ω(e, e′) = |D_e(d) ∩ D_{e′}(d−1)| / |D_e(d)|      on cover pairs
+```
 
-The measurements, SKY-B charts, exact Fractions:
+with identity transitions only; **non-identity transitions and the real
+cocycle condition are DECLARED a later stage.**
 
-| record | events carrying a ≥ 2-direction chart | mean overlap |
+> **`ω` is a CHART-SIZE RATIO, not a two-way overlap `[THEOREM, 14,818
+> pairs]`.**  On cover pairs the smaller chart is *contained* in the
+> larger, so `ω` reduces to the ratio of their sizes — Jaccard similarity
+> is identically equal to it.  It therefore **systematically favours
+> thin-charted records**, and every `ω` figure below must be read with
+> that.
+
+**The measurements** (SKY-B charts, exact Fractions, comparators
+recomputed on eleven genuine sprinkling configurations):
+
+| record | homogeneity (`d = 2`) | mean `ω` |
 |---|---|---|
-| `M^{2+1}` sprinkling, `N = 120` | **64%** | ~0.12 |
-| `M^{3+1}` sprinkling, `N = 120` | **73%** | ~0.54 (at `d = 3`: ~0.94) |
-| the shatter-4 courier record | **38%** | ~0.47 where measurable |
-| the shatter-5 courier record | **35%** | — |
-| a generic 2-actor walk | **6%** | — |
+| genuine sprinklings (11 configs) | **0.642 – 0.800** | **0.048 – 0.133** |
+| the brick crystal (§B8.6) | 0.769 | 0.651 |
+| the shatter-4 courier record | 0.386 | ~0.47 |
+| the shatter-5 courier record | 0.357 | — |
+| a generic 2-actor walk | 0.067 | 1.000 (2 pairs) |
 
-> **The pre-registered gap, CONFIRMED: sprinkling homogeneity floor 0.64
-> vs engineered ceiling 0.39 vs generic walk 0.07 — the grammar's records,
-> as built so far, are THE OPPOSITE OF ATLASES.**  They were built to
-> shatter, not to tile.
+> **THE HOMOGENEITY GAP IS REAL AND SURVIVES EVERYTHING: engineered
+> 0.357–0.386 against a sprinkling band of 0.642–0.800.**  The courier
+> records, built to shatter, are **the opposite of atlases**.
 
-The `M^{2+1}`-vs-`M^{3+1}` overlap difference is flagged **a finding
-candidate, CONFOUNDED by differing densities** (box 60 vs 32);
-deconfounding is a residue and **no claim is made**.  The successor is
-named and sharp — **THE CRYSTAL QUESTION: can the grammar build a record
-whose every event carries a wide chart with large overlaps (a tiling), the
-way a courier record carries one rich sky?**  That is the next
-construction unit on this road.  Residues: the density-deconfounded
-comparison; non-identity transitions and the cocycle condition; the depth
-profile of overlap.
+**One correction carried, because it reverses a sign.**  The
+`M^{2+1}`-vs-`M^{3+1}` overlap comparison had been flagged as a finding
+candidate confounded by density.  It closes **sign-flipped**: the earlier
+`M^{3+1}` control was a degenerate generator — **32 distinct spacetime
+points wearing 120 labels** — and against genuine sprinklings the
+`M^{3+1}` ratio is **0.048–0.100**, *below* `M^{2+1}`'s 0.12, not above
+it.  Given the containment theorem this is the expected direction: denser
+skies have larger charts and smaller size-ratios.
+
+**And the crystal question, which this road posed, is ANSWERED.**  *Can
+the grammar build a record whose events are charted everywhere with large
+overlaps — a tiling — the way a courier record carries one rich sky?*
+**Yes**, at sprinkling-grade homogeneity and above-sprinkling `ω`, **with
+thin charts** (§A8.6, §B8.6).  What replaces it: the **wide crystal** —
+tiling *and* width in one record — and the real cocycle question, which
+now has an object to be asked about.
 
 **ROAD 2 — the v9 grown-web line `[PART C, chapter C6]`.**  Further along
 in one specific sense and further behind in another.  It has **built**
@@ -7489,7 +7914,7 @@ built in the corpus.
   #420 upgrading the refutation to a theorem).
 - **The form is a CHOICE** (D50, `[GREEN-UNREVIEWED]`, §B6.12): the two
   strongest invariance demands leave the completion dimension **growing**
-  (10 → 28 → 107), and adding foliation-invariance leaves it **exactly
+    (12 → 32 → 125), and adding foliation-invariance leaves it **exactly
   unchanged**.  So the uniqueness of the canonical completion comes from a
   postulate about the shape of `Z`, and the standing restriction on every
   citation is permanent.
@@ -7538,7 +7963,9 @@ they do from inside either line.
 
 The **manifold** is the programme's first construction target — it is what
 the destination's own definition requires, and no other arrow can be posed
-without it.
+without it.  Its first question is now **answered**: the grammar tiles.
+What replaces it is narrower and harder — a record that tiles *and*
+carries wide charts, and then genuine transition maps between them.
 
 The **measure at delivery scope** holds the other top slot, and for a
 structural reason: arrows 5 and 6 both need probabilities at the scope
@@ -7570,29 +7997,30 @@ Einstein content lives on the far side of it.
 **Re-ranked against the destination** (superseding §A11.4 / §B11.4's
 ordering, not their content):
 
-1. **Charts and gluing → manifold (arrow 3), on ROAD 1 — the crystal
-   question.**  New, and first: the destination's own definition requires
-   it, and no other arrow can be posed without it.  The instrument now
-   exists and has measured a confirmed gap (homogeneity 0.64 sprinkling /
-   0.39 engineered / 0.07 generic walk), so the question is no longer
-   "how would we tell?" but **"can the grammar TILE?"**.  Still needs a
-   *replacement local instrument* for dimension, since §B5.7 denies the
-   meter a dimensional reading for records — and §C6's channel-manifold
-   law is the untranslated candidate.
-2. **The v9 MANDATORY QUEUE — recorded, unscheduled, and now
-   load-bearing.**  New entry, and near the top for a reason that is about
-   *cost of ignorance* rather than about citability.  Road 2 has the
-   furthest-advanced grown four-dimensional object in the programme's
-   history and the only measured *interaction*; its funded review left
-   exactly five items (O1–O5): **a 24-seed gated replication; a
-   drift-matched, validation-gated volume instrument; the coupled ladder
-   at `g = 0.18`; the gap-to-mean scan; the bridge pilot.**  None is
-   scheduled (#128 closed the line).  Until they run, "a grown record
-   universe was measured round and 4D" is **`PARKED-AT-PROTOCOL`, with
-   "round" corrected and the volume conjunct instrument-suspect** — and
-   the programme does not know whether it has an existence result or an
-   artifact.  *The cheapest of the five (the replication) would settle
-   most of it.*
+1. **THE WIDE CRYSTAL, then the cocycle.**  The crystal question is
+   **answered** — the grammar tiles at sprinkling-grade homogeneity
+   (§B8.6) — and what it leaves is sharper.  **(a) Width:** every
+   crystal built so far has `max |D| = 3` at `d = 2`, against sprinklings'
+   42–65% of events carrying four-direction charts; whether *any* grammar
+   record can carry sprinkling-grade chart width is the open question,
+   and composing the two certified mechanisms (tiling from the brick,
+   width from the couriers) is the construction that would settle it.
+   **(b) The real cocycle question:** every atlas result so far assumes
+   **identity** transition maps.  Non-identity transitions — and with
+   them tensorial transformation behaviour, which §D1b's rule 2 says is
+   exactly the kind of scale-free *mechanism* a destination unit may
+   certify — are declared a later stage, and the brick is the first
+   object they can be asked about.
+2. **THE DESCENT-CONDITIONS UNIT — the missing map's first segment.**
+   Authorized, and the first genuinely surveyable ground on the corpus's
+   deepest front (§B2.9).  Paper 29's conditional descent theorem names
+   **four** conditions under which a click law descends from the quantum
+   functional — the queried record algebra decoheres; both routes name one
+   atom; every conditioning cylinder has positive mass; the boundary is
+   sufficient.  Three of those are properties a **grammar-generated
+   record** either has or does not, and can be gated.  Gating them is not
+   the map, but it is the first segment of it, and it converts "nobody
+   knows how to attack it" into a receipt.
 3. **The missing map** (§B2.9) — the corpus's **deepest** named front,
    beneath (H1) and beneath the transport measure, because it is the one
    gap that makes two ledgers out of one programme.  Until it closes, the
@@ -7618,8 +8046,12 @@ ordering, not their content):
    v10 grammar, with the additional twist that a user directive
    *declares* them not to be the click law.  **Two unbridged bodies of
    work, one theory.**
-6. **(H1)**, unchanged: the last gap before the delivery-free settlement is
-   unconditional.
+6. **A Lean-grade mechanization of (H1)'s proof.**  (H1) is now a theorem
+   at two-actor delivery-free scope (§B6.13), but the argument is
+   prose-over-code — the register geometry read from the source — and the
+   receipt gates its case claims rather than its logic.  Named as a
+   residue by the unit itself.  **Three actors remain out of scope
+   entirely**, the dichotomy failing there.
 7. **Is there a record-level demand that forces the stationary form?**
    Unchanged, and now doubly interesting: if the answer is permanently no,
    §D3's resemblance is the *only* interpretive home the boundary freedom
@@ -7631,20 +8063,21 @@ ordering, not their content):
 9. **The residual pricing defects** (`h12`; the general-depth ladder;
    the `1/16` vs `1/24` merge), unchanged and still carried into the
    completion problem rather than patched.
-10. **Where is the sprinkling floor?**  D55c's own residue — does genuine
-   `M^{2+1}`/`M^{3+1}` shatter **3**? — is cheap, is the natural calibration
-   of whatever replaces the meter, and would sharpen §B5.7's reframe from
-   "sprinklings read ≈ 0" to a located floor.
+10. **Residue 2, REOPENED: which sky reading is physically privileged?**
+    All three readings are live (§B5.4); the dimension discriminator is
+    sharpest under the cover reading while much of the constructions line
+    was computed under the antichain reading.  Nothing justifies a choice,
+    and several conclusions depend on one.
 
 **One structural observation, and it is the most useful thing in this
-part.**  Arrows 3, 5 and 6 are all blocked, and **two of the three are
-blocked on the same object**: a probabilistic description at transport
-scope.  Arrow 3 alone is blocked on something genuinely new (a
-construction, plus an instrument) — and it is the arrow with **two roads
-and no bridge between them**.  So the programme has, at this moment,
-exactly **three** independent next moves — build the manifold (Road 1's
-crystal question), find the coarser aggregation, or **discharge Road 2's
-unworked queue** — and everything else waits on one of them.
+part.**  Arrows 5 and 6 are blocked on the same object — a probabilistic
+description at transport scope — while arrow 3 is blocked on
+construction, and arrow 8 on the missing map.  So the programme's
+independent next moves are **three**, and they are now all concrete:
+**build the wide crystal** (and then real transition maps on it),
+**gate the descent conditions** on grammar-generated records, and **find
+a coarser aggregation that closes at transport scope**.  Everything else
+waits on one of the three.
 
 ---
 
@@ -7658,19 +8091,20 @@ unworked queue** — and everything else waits on one of them.
 > local geometry whose complexity is priced in actors), two are half in
 > hand (Einstein's equations *in form*, with Newton's constant provably not
 > derivable from inside; a quantum lift of the record process at fixture
-> scale), three are open (charts and gluing into a manifold — attacked from two
-> unbridged directions, one of them measuring a confirmed gap and one of
-> them holding a closed, review-indebted 4D construction; fields on it;
-> particle creation), and the last is blocked
+> scale), three are open (charts and gluing into a manifold — whose first question
+> is answered, since the grammar demonstrably tiles, and whose remainder
+> is width and real transition maps; fields on it; particle creation),
+> and the last is blocked
 > at four independent points, one of which is the un-derivability of the
 > scale and one of which is the incompleteness of the other arrows.  Governing all of
 > it is the scale doctrine: no fixture-scale object is a particle, and
 > units certify scale-invariant mechanisms rather than objects — which
 > the substrate line reaches independently, since without coupling no
 > collective excitation exists at any scale.  The
-> three independent next moves are: **build the manifold** (can the
-> grammar tile?), **find a coarser aggregation that closes at transport
-> scope**, and **discharge the other road's unworked review queue**.
+> three independent next moves are: **the wide crystal** — the grammar
+> already tiles, and what it lacks is width and real transition maps —
+> **the descent-conditions unit**, which surveys the missing map's first
+> segment, and **a coarser aggregation that closes at transport scope**.
 > Everything else in the programme currently waits on one of those three.
 ---
 ---
@@ -7712,7 +8146,7 @@ defined precisely, and to Part A where the intuition lives.
 | **gauge** | see *causal order vs gauge* | B3.1 |
 | **genesis** (`'g'`) | the initial version held by all participants — *"the declared supplied boundary"* | B2.2, A2.1 |
 | **gradient / Doob `h`-transform completion** | the backward recursion `Z(h) = Σ q(e|h)Z(h+e)` from a positive terminal boundary; exists at every finite depth, at the cost of within-cut ratio deformation | B6.5, A6.5 |
-| **(H0), (H1), (H2)** | the three depth-indexed hypotheses of D44a's conditional theorem: view invariants; **menu factorization from `sigma`**; transition determinism.  None implies another; **(H1) is undischarged** | B6.9, B6.13, A6.9 |
+| **(H0), (H1), (H2)** | the three depth-indexed hypotheses of D44a's conditional theorem: view invariants; **menu factorization from `sigma`**; transition determinism.  None implies another.  **All three now hold at two-actor delivery-free scope**, (H1) as a theorem via the own-view dichotomy — so the closure theorem is unconditional there.  **Three actors remain out of scope** | B6.9, B6.13, A6.9 |
 | **harmonic** | `Z` satisfying the backward recursion exactly; residue 1 asks for a **strictly positive** harmonic function on the infinite-volume state space | B6.9, A6.7 |
 | **`h12`** | the one constructed configuration off the `1 + k/4` ladder (per-actor sum `23/24`), caused by a dead component inflating a live denominator | B2.7, A2.3 |
 | **holdings** | what an actor holds; propagate only through participation or delivery.  At transport scope the delivery enumerator reads the **whole** set, superseded members included — the fact that decides §B9 | B2.2, B9.1 |
@@ -7731,12 +8165,12 @@ defined precisely, and to Part A where the intuition lives.
 | **renewal** | a record point structurally **isomorphic to the root** — event-level bijection, type- and payload-matched with `v0 ↔ v1`, **equal `q` at every matched event**.  "root = renewal" means the root sits in this class | B6.8, A6.7 |
 | **residue 1** | *does a strictly positive harmonic function exist on the infinite-volume state space?* — answered YES at d42a scope, conditional on (H0)–(H2) | B6.9, B6.10, A6.7 |
 | **rootedness** | a completion distinguishing the root from the renewal point, i.e. distinguishing two record points the law identifies; what truncated completions do and `Zhat` does not | B6.8, A6.7 |
-| **SC5** | the corrected sky capacity condition: `≥ 4` directions **AND** `≥ 16` distinct traces **AND the empty trace present** | B5.4, A5.5 |
+| **capacity condition (sky)** | the honest requirement before a shattering test can be read as a measurement: `≥ 4` directions **AND** `≥ 16` distinct traces.  An earlier version added *and the empty trace present*; that clause **false-negatives** and is withdrawn (§B5.4) | B5.4, A5.5 |
 | **sector** | one of the four weight budgets (propose / arbitrate-and-merge / deliver / idle), each `1/4` when open, idle absorbing the rest.  The **delivery** sector total is `1/4` at every rung of §B9.1's ladder — but that is **not a law of sectors**: arbitration sectors reach `1/2` and `1/8`, totals live in `{k/(4m)}`, so the sector alphabet is not finite either | B2.6, B9.4, B9.4b, A9.4 |
 | **shadow / trace** | the set of directions at or below a given future (or past) event — the objects all the sky geometry is done on | B5.1, A5.2 |
 | **shatter** | realizing **all** `2^k` subsets of a `k`-set of directions as traces; requires the **empty** trace | B5.3, B5.4, A5.3 |
 | **`sigma`** | the bounded local-state abstraction of the **full view** modulo base renaming: holdings pattern, live-proposal structure with conflict components, superseded marks restricted to referenced bases.  36 values at d42a; **unbounded, menu-exactly, at transport scope** | B6.9, B9.2 |
-| **sky** | the direction set at an event, under one of three committed definitions: **SKY-A** covers, **SKY-B** an antichain at a committed height, **SKY-C** the dual past sky.  SKY-A and SKY-C **can never shatter** | B5.1, B5.4, A5.2 |
+| **sky** | the direction set at an event, under one of three committed definitions: **SKY-A** covers, **SKY-B** an antichain at a committed height, **SKY-C** the dual past sky.  **All three are live readings** and they disagree materially; which is physically privileged is open (residue 2) | B5.1, B5.4, A5.2 |
 | **supersession** | a version is superseded when a later version on the same line replaces it; superseded structure may still be recorded but may no longer be actionable | B2.3, B9.1 |
 | **swept corner** | the sub-family of proposal branches where the enumeration is complete and every extension factor is exactly `1/8`, making ratio locality a theorem there | B6.5 |
 | **`tau`** | `sigma`'s construction applied to an actor's **own view**; **refuted** as an own-view object (D46a) | B6.13, A10.2 |
@@ -7752,6 +8186,12 @@ defined precisely, and to Part A where the intuition lives.
 | **identified law** | the third sense of "the click law": empirically anchored — *identified, not derived* — and **not proved record-closed**.  Distinct from the grammar's admissibility law (complete) and its probability law (not self-normalizing) | B2.8, B2.9, A2.5 |
 | **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front | B2.9, D4 |
 | **no silent erasure** | `[POSITED]` every loss of a record-accessible distinction must be **received** by records — total content conserved, sealing = dispersal, never intrinsic destruction.  The principle that closes the action line's coherence clause, with a parameter-free falsifier | B2.9, A2.6 |
+| **chart-size ratio (`ω`)** | the atlas instrument's overlap statistic on cover pairs.  `[THEOREM]` the smaller chart is *contained* in the larger, so `ω` is the ratio of their sizes and Jaccard similarity is identically equal to it — it therefore systematically favours **thin-charted** records | D2 (Road 1), B8.6 |
+| **crystal** | a record built to **tile** rather than to spike: the brick wall — ring actors, one minted version broadcast, then alternating re-delivery rounds.  Forced by the layer's own menus, sprinkling-grade homogeneity, above-sprinkling `ω`, **thin charts**; the shortfall from a perfect tiling is entirely boundary | B8.6, A8.6 |
+| **discriminator (max-shatter)** | `[REFEREE-CARRIED + coordinator-confirmed]` on genuine sprinklings at sufficient density, read under SKY-A, max-shatter reproduces the continuum ladder: `M^{2+1}` shatters 3 never 4; `M^{3+1}` shatters 4 never 5.  Size-controlled two-sided separation | B5.7, A5.7 |
+| **disjoint-row lemma** | shattering `S` requires a row **disjoint from `S`**, not an empty row — the two coincide only when `S` is the whole direction set.  Its narrow true corollary: for a reflexive transitive poset a cover sky can never shatter its **full** direction set | B5.4, A5.5 |
+| **own-view dichotomy** | `[THEOREM, two actors]` a candidate's own view is **either** the initiator's register cone **or** the FULL view — no third case, because the poset is keyed on actor names.  The engine of (H1)'s closure; **fails at three actors** | B6.13, A6.9 |
+| **wide crystal** | the unbuilt composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record; the manifold road's next construction | B8.6, D4 |
 | **axioms R / S / C** | the earlier corpus's three: laws are laws of whole sealed histories; **no distinction without a record**; couplings fixed by self-consistency under refinement | C1 |
 | **Barandes-indivisible** | a process whose one-time transition law fails Chapman–Kolmogorov except at sparse **division events**; the barrier is the gap between `\|Σ\|²` and `Σ\|·\|²` — the interference cross-term | C1, C3 |
 | **Born = K1** | the statement that a constructed isometric arbitration family's squared branch amplitudes reproduce the committed `K1` kernel exactly (`1/2`–`1/2` on the 2-conflict, recomputed from the layer).  Appears in v10 paper 31 §4.3; the earlier Born layer (paper Va) is the same *kind* of statement — **relation formally unestablished** | C3.5, C5.4 |
@@ -7860,12 +8300,15 @@ part of the document, not an apology for it.
    treatment would break each analogy at every chapter where it is reused.
 
 10. **No new computation was performed for this document.**  Every number
-    is read from a committed source.  Where a source is green-unreviewed
-    (**D50** §B6.12, **D55c** §B5.7, **D57** §B9.4b) or advisory
-    (**D56** §B9) the text says so at the point of use, and those four are
-    the only non-terminal sources the book leans on.  None is citable
-    until it has had a hostile round, and each says so where it is
-    used.
+    is read from a committed source.  Standing of the sources, carried at
+    each point of use: **D50, D53, D55c, D57, D58 and D60** are
+    batch-round reviewed, repaired and delta'd; **D61** (§B6.13, the
+    closure of (H1)) is **green-unreviewed** with its own round queued;
+    **D56** (§B9) is an advisory probe whose two load-bearing claims were
+    independently re-verified and whose remainder must be re-derived.
+    Two figures in §B5.7 and one in §B8.6 are `[REFEREE-CARRIED]`, and the
+    discriminator's central comparison was additionally confirmed by the
+    coordinator with independent code.
 
 11. **The v1–v9 prehistory is covered in PART C, but unevenly.**  *(This
     item replaces the earlier "absent" note, which PART C discharges.)*
@@ -7901,12 +8344,23 @@ part of the document, not an apology for it.
     shape–dimension frontier and paper 8) are **not read** — C6 is an arc
     summary, not a reading of the line's own publications.
 
-14. **PART D is a roadmap, not a result.**  Arrows 3, 6 and 7 have no
-    corpus content whatsoever beyond being named; their entries are
-    statements of what is missing.  The `[MY READING]` in §D3 is speculation
-    and is marked three times as such.  The D58 designation for the
-    manifold unit comes from the coordinator's direction, **not** from a pin
-    on disk.
+14. **PART D is mostly a roadmap.**  Arrow 3's first segment is now a
+    result (the grammar tiles), but arrows 6 and 7 have no corpus content
+    beyond being named, and their entries are statements of what is
+    missing.  The `[MY READING]` in §D3 is speculation and is marked three
+    times as such.
+
+15. **Three things the corrections of this pass leave open, and a reader
+    should not mistake for settled.**  (a) The **sky reading** — all three
+    are live, the dimension discriminator is sharpest under the cover
+    reading, and much of the constructions line was computed under the
+    antichain reading; nothing reconciles them.  (b) The **sector
+    closure** (§B9.4b) now rests on measurement at reachable depths
+    rather than on an obstruction, which is a materially weaker footing
+    than §B9.1's.  (c) **(H1)'s proof is prose-over-code** and covers two
+    actors only; the book states it as a theorem because the corpus does,
+    with the mechanization residue and the three-actor failure stated
+    every time.
 
 ---
 

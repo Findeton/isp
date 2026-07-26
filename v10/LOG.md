@@ -10516,3 +10516,24 @@ records carry the empty trace); the damage is labels. Book
 corrections land in the queued integration pass. USER DIRECTION
 recorded: after the cocycle unit, the DESCENT-CONDITIONS unit (the
 missing map's first segment) is authorized.
+
+## 2026-07-26 — THE BOOK ABSORBS THE CRYSTAL, RESIDUE 1, AND THE
+## BATCH CORRECTIONS IN ONE PASS (LEDGER #454)
+Integration committed: 8,368 lines. The discriminator revival
+integrated in SEVEN places (the disjoint-row lemma with its
+counterexample; the matched ladder 0/1/11/30/116/211 vs zero with the
+size control; the meter's two-part truth — geometry on sprinklings,
+coordination on engineered records; the graveyard entry rewritten to
+what actually died). Residue 1's closure integrated with four binding
+scope clauses and the over-promise recorded; the crystal at its
+corrected scope (inside the band, thin charts, boundary-limited);
+omega as chart-size ratio sign-flipped; D57 honestly WEAKER (ground
+(2) alone — flagged in three places rather than coasting, gaps item
+15(b)); 12/32/125 and the corpus-wide 119 -> 137; D51's inversion;
+the port-check lesson in methodology. Part D re-ranked: #1 wide
+crystal -> cocycle, #2 THE DESCENT-CONDITIONS UNIT (user-authorized).
+The re-read caught a stale B11.1 summary still asserting "(H1)
+undischarged" and the withdrawn SKY claim, six stale SC5 references,
+and chapter-level log-voice (relocated to methodology, timeless).
+Zero dangling references; stamp #454. D61's hostile round remains in
+flight; its verdict adjudicates before any paper is touched.
