@@ -9956,3 +9956,33 @@ z = 0; fixed-box density control; capable-count target no longer
 thin. IN PARALLEL: THE-THEORY-SO-FAR.md (the two-register book) being
 written by an Opus 5 worker from my 11-chapter map; numbers to be
 verified on landing.
+
+## 2026-07-26 — D55c: THE M^{3+1} CONTROL, AND A REFRAME THE PROGRAMME
+## MUST ABSORB (LEDGER #435)
+Receipt d55c_m31_control_exact.py, 4 PASS / 0 FAIL, exit 0. mink4
+anchored to the committed mink on z = 0 (identical orders). Census at
+full strength: SC5-capable(4) = **1,578** pairs (vs the round's thin
+33), capable(5) = 740, across four fixed-box records to N = 200.
+**C1: ZERO shatter-5 — the halt condition holds.**
+**C3, AGAINST MY WEAK LEAN: ZERO shatter-4 OF 1,578 CAPABLE PAIRS ON
+GENUINE M^{3+1}.** Genuine discrete 3+1 skies do NOT shatter 4 — the
+continuum caps-shatter-4 intuition does NOT transfer to sprinklings.
+**THE DISCRIMINATOR READING FAILS**, and the honest reframe is
+larger: combined with D47a/D53 (zero shatterings on genuine M^{2+1}),
+**NO sprinkled Minkowski record of ANY tested dimension shatters at
+all, while the engineered transport records shatter 4 and 5.**
+Max-shatter therefore does NOT separate 2+1 from 3+1 on discrete
+records; it separates ENGINEERED COORDINATION from sprinkled
+geometry. **The "dimension meter" calibration (shatter-k ~ sphere
+rank) is a statement about CONTINUUM TRACE SYSTEMS — exact and
+intact (A2) — but discrete sprinklings sit at meter reading ~0 in
+every dimension.** D54/D55's capacity results stand untouched (the
+grammar can build B4/B5 skies; the layer does not cap the ladder);
+what falls is any hope of reading a record's DIMENSION off its
+max-shatter. NOTE the structural hint, [MY READING]: sprinklings have
+no actor/wire structure, so the Dilworth mechanism (chains from
+worldlines) does not even apply to them — shattering may be exactly
+the signature of WORLDLINE-COORDINATED knowledge, which sprinklings
+lack by construction. The meter measures the grammar, not geometry.
+RESIDUE: does genuine M^{2+1}/M^{3+1} shatter 3? (the rung below;
+would locate the sprinkling floor); the mechanism question above.

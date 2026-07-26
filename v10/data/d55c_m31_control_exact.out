@@ -1,0 +1,12 @@
+[D55c — the M^{3+1} control at full strength]
+  [PASS] C0 ANCHOR: mink4 restricted to z = 0 is IDENTICAL to the committed d47a mink_order on the same (t, x, y) points  (40-point slice, orders identical)
+  N=80 box=24: SC5-capable(4)=52, shatter4=0; capable(5)=0, shatter5=0
+  N=120 box=32: SC5-capable(4)=100, shatter4=0; capable(5)=28, shatter5=0
+  N=160 box=40: SC5-capable(4)=597, shatter4=0; capable(5)=219, shatter5=0
+  N=200 box=40: SC5-capable(4)=829, shatter4=0; capable(5)=493, shatter5=0
+  [PASS] C1 THE HALT CONDITION IS NOT TRIPPED: ZERO shatter-5 on genuine M^{3+1} at every capable pair (the 3+1 celestial sphere is S^2, whose caps stop at 4; a hit would convict the sky definition)  (capable(5) pairs = 740, shattered = 0)
+  [PASS] C2 THE CONTROL IS NO LONGER THIN: the SC5-capable(4) census exceeds several hundred pairs (the round's control had 33)  (capable(4) = 1578 across 4 records)
+  [PASS] C3 SHATTER-4 ON GENUINE M^{3+1} [pre-registered OPEN, lean weakly positive]: the count is reported in whichever direction it came out.  POSITIVE => shatter-4 is an EMPIRICAL dimension discriminator with controls on both sides (2+1: zero over all capable pairs, D47a/D53).  ZERO => discrete M^{3+1} skies do not inherit the continuum caps' shattering, and the discriminator reading FAILS — a real result either way  (shatter-4 = 0 of 1578 capable; NO shatter-4 found — the discriminator reading FAILS on this evidence)
+
+[d55c] 4 PASS / 0 FAIL
+RC=0
