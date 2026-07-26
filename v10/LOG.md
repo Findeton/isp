@@ -10636,3 +10636,40 @@ scope; RESIDUE 1 CLOSED THERE — the #452 sentence, this time with
 the hypotheses actually discharged.  THE EMBARGO HOLDS UNTIL THE
 ROUND: green-unreviewed is not citable; papers 30/32 and the book
 wait.**  Hostile round dispatched.
+
+## 2026-07-26 — D63 DELIVERED (GREEN-UNREVIEWED): F3 — THE WIDE CRYSTAL
+## EXISTS, AND THE NEXT CEILING IS A THEOREM (LEDGER #458)
+Deliverables: note-d63-wide-crystal-result.md,
+code/d63_wide_crystal_exact.py (11 PASS / 0 FAIL, exit 0, ~5 min),
+data/.out.  Opus 5 worker against the frozen pin (#456).  RERUN BY
+ME: identical modulo timing.
+**F3 FIRED: of 38 swept configurations, 14 sit INSIDE the recomputed
+sprinkling homogeneity band AND carry |D| >= 4 charts at d = 2 (9
+double-rings, 5 wide bricks).  THE WITNESS: DOUBLE-RING(8, 10, 8) —
+177 events / 16 actors, FORCED with all 16 actors offered at every
+step (menus to 528): d=2 homogeneity 47/59 = 0.7966 in-band, |D| >= 4
+at 1/3 of events, max |D| = 4; d=3 INSIDE BOTH sprinkling bands
+(0.7740 / 0.6723).  D60's residue-2 ceiling (max |D| = 3) was the
+1+1 brick's cone, not the grammar's.**  Frontier shapes: cpl = 1 is
+WORSE THAN NONE (partial coupling breaks height regularity; complete
+coupling restores it and buys the direction); width jumps 0 -> pos
+exactly when the second direction reaches every wire.  **W4b [THEOREM,
+verified]: |D_e(d)| <= B^d where B = max registers/event (proved from
+event_poset's generating relation; saturated by 26/38 records).
+Deliveries carry B = 2, so max |D| = 4 at d = 2 is the DELIVERY
+GRAMMAR'S CEILING — the sprinklings' 10-17 is UNREACHABLE by any
+delivery circuit.  Width past 4 is bought with ARBITRATION over
+conflicts (the one 3+-register species; admissible 3-register arb
+exhibited).**  D60's residue 2 decided as a pair: empirical ceiling
+beaten (3 -> 4), remaining ceiling proved.  Interior control: wide
+charts SURVIVE boundary excision; "in-band" is partly an ends
+property (winner's interior exits through the TOP, 0.8808).  Honest
+limits: at d = 2 no config is inside BOTH bands (two are at d = 3);
+declared exit-protocol deviation (W3 comparator breakage also exits
+1, printed).  Anchors: C = 0 IS d60's brick(8,14) called in-process,
+exact Fractions 10/13, 125/192.  Residues: the ARBITRATION CRYSTAL
+(a crystal of conflicts — the sharp successor), both-bands-at-d=2,
+the cpl = 1 dip, size, and the cocycle unit's non-identity source
+(omega-overlaps are NESTED per D58's containment theorem — the
+cocycle must look elsewhere).  GREEN-UNREVIEWED: not citable until
+its hostile round lands.  Round dispatched.

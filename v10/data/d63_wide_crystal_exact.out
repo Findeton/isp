@@ -1,0 +1,207 @@
+[D63 — the wide crystal: does tiling homogeneity compose with chart width?]
+  banner: two delivery circuits of the committed layer — D60's
+  brick spliced with D54-style couriers, and two coupled rings —
+  swept in the courier count C and the inter-ring coupling.  The
+  atlas and the eleven genuine sprinkling comparators are RE-RUN
+  in this process from D58's own repaired instrument, never
+  re-typed.  C = 0 must reproduce D60's published row exactly.
+  F1/F2/F3 is DECIDED BY THE SWEEP; orderings reported whichever
+  way they land; no claim exceeds the swept family.
+  [PASS] W0a ANCHORS — every layer a SINGLE SOURCE, and the strip is GATED not asserted: the transport grammar by text-slice from committed d42b1 (cut at its own banner print), and the sky instrument (d47a), the repaired sprinkling generator (d55c), THE ATLAS ITSELF (d58) and **D60's blueprint machinery — its `B` driver, `mint_and_spread`, `dl`, `brick`, `profile`** — by AST extraction.  Nothing here re-implements a committed layer; the brick this unit widens is D60's own function object.  The gate reads: no `sys.exit` survives the slice or any extracted body  (slice = 16129 of 40838 chars, exit-free = True; extracted bodies = {'d47a_sky_instrument_exact.py': 16, 'd55c_m31_control_exact.py': 9, 'd58_atlas_instrument_exact.py': 5, 'd60_crystal_exact.py': 10}, all exit-free = True)
+
+[blueprints, printed caps]  SKY-B depths measured = (2, 3) (committed SKYB_DEPTH = 2); courier cadence = 1 (a courier phase after EVERY brick round); courier chord rule k -> (k mod M, (k + M/2) mod M), e.g. M = 8, C = 4: [(0, 4), (1, 5), (2, 6), (3, 7)]; double-ring coupling = the first `cpl` positions, direction alternating with round parity; full-menu replay budget = 300s per record.
+
+[W0 THE ANCHOR — WIDE-BRICK(8, 14, C = 0) against D60's committed row]
+  WIDE-BRICK M=8 R=14 C=0: n=  65 homog 0.7692  |D|>=4 0.0000  max|D| 3  mean|D| 2.25  omega 0.6510  [0.5s]
+  [PASS] W0 [ANCHOR, exit 1 on breakage] THE C = 0 WIDE-BRICK IS D60'S BRICK.  Three independent ways: (i) the event list is IDENTICAL to D60's own `brick(8, 14)` called in this process; (ii) the exact Fractions reproduce D60's published row (10/13 / 125/192 / 0 / 3); (iii) the four decimals of that row (0.7692 / 0.6510 / 0.0000 / 3) come out unchanged.  The population-restricted `profile` also still agrees with D58's own `atlas` on the full population, so every widened measurement below is a restriction of the committed instrument  (identical event list = True (65 events); homog 10/13, omega 125/192, |D|>=4 0, max|D| 3; decimals True; atlas agreement True)
+
+[W3 THE COMPARATORS — D58's atlas re-run IN THIS PROCESS on the same eleven genuine sprinkling configurations D60 used]
+    M21 box= d47a: homog 0.6417, |D|>=4 0.4250, mean|D| 3.26, max|D| 11, mean omega 0.1197
+    M21 box=   30: homog 0.8000, |D|>=4 0.6417, mean|D| 4.15, max|D| 11, mean omega 0.1104
+    M21 box=   40: homog 0.7500, |D|>=4 0.4500, mean|D| 3.64, max|D| 10, mean omega 0.1145
+    M21 box=   60: homog 0.7250, |D|>=4 0.5000, mean|D| 3.99, max|D| 11, mean omega 0.1125
+    M21 box=   90: homog 0.6667, |D|>=4 0.4250, mean|D| 3.32, max|D| 11, mean omega 0.1329
+    M31 box=   20: homog 0.7333, |D|>=4 0.6333, mean|D| 5.15, max|D| 15, mean omega 0.0811
+    M31 box=   24: homog 0.7167, |D|>=4 0.5667, mean|D| 4.29, max|D| 14, mean omega 0.0629
+    M31 box=   40: homog 0.7667, |D|>=4 0.6000, mean|D| 5.17, max|D| 17, mean omega 0.0689
+    M31 box=   48: homog 0.6833, |D|>=4 0.5000, mean|D| 4.84, max|D| 15, mean omega 0.0646
+    M31 box=   60: homog 0.7083, |D|>=4 0.5167, mean|D| 4.65, max|D| 16, mean omega 0.0481
+    M31 box=   90: homog 0.7500, |D|>=4 0.6500, mean|D| 6.41, max|D| 14, mean omega 0.0999
+    d = 2:  BAND homogeneity [77/120, 4/5] (~[0.6417, 0.8000]); |D|>=4 [17/40, 13/20] (~[0.4250, 0.6500]); max|D| [10, 17]; mean omega [0.0481, 0.1329]
+    d = 3:  BAND homogeneity [41/60, 49/60] (~[0.6833, 0.8167]); |D|>=4 [3/5, 91/120] (~[0.6000, 0.7583]); max|D| [11, 17]; mean omega [0.1118, 0.2083]
+    [49.9s]
+  [PASS] W3 THE COMPARATORS ARE RE-RUN, NOT RE-TYPED (the batch round's D60 MINOR 1 / D58 NIT 1-2), and they reproduce D60's committed band exactly: homogeneity [77/120, 4/5] and |D| >= 4 [17/40, 13/20] at d = 2.  Every threshold used anywhere below is one of these measured numbers — this unit invents none  (11 genuine configurations; d = 2 band (Fraction(77, 120), Fraction(4, 5)), |D|>=4 band (Fraction(17, 40), Fraction(13, 20)), sprinkling max|D| (10, 17))
+
+[W4 THE FRONTIER — the courier sweep.  All figures at d = 2; 'band' = W3's [0.6417, 0.8000]; 'wide' = D58's |D| >= 4 column]
+  === WIDE-BRICK courier sweep at D60's committed (M, R) = (8, 14) ===
+    WB M= 8 R=14 C=0: n=  65 homog 0.7692  |D|>=4 0.0000  max|D| 3  mean|D| 2.25  omega 0.6510  [0.5s]
+    WB M= 8 R=14 C=1: n=  93 homog 0.6022  |D|>=4 0.0000  max|D| 3  mean|D| 1.61  omega 0.5864  [1.5s]
+    WB M= 8 R=14 C=2: n= 121 homog 0.7355  |D|>=4 0.0992  max|D| 4  mean|D| 2.21  omega 0.5843  [2.8s]
+    WB M= 8 R=14 C=3: n= 149 homog 0.8658  |D|>=4 0.1544  max|D| 4  mean|D| 2.57  omega 0.6024  [5.1s]
+    WB M= 8 R=14 C=4: n= 177 homog 0.7062  |D|>=4 0.1073  max|D| 4  mean|D| 2.12  omega 0.5569  [8.5s]
+    swept WB C in [0, 1, 2, 3, 4] at (M, R) = (8, 14)  [17.9s]
+  === WIDE-BRICK courier sweep at (M, R) = (6, 10) ===
+    WB M= 6 R=10 C=0: n=  37 homog 0.7027  |D|>=4 0.0000  max|D| 3  mean|D| 2.08  omega 0.6531  [0.1s]
+    WB M= 6 R=10 C=1: n=  57 homog 0.6491  |D|>=4 0.0000  max|D| 3  mean|D| 1.79  omega 0.5775  [0.4s]
+    WB M= 6 R=10 C=2: n=  77 homog 0.8182  |D|>=4 0.1039  max|D| 4  mean|D| 2.38  omega 0.6070  [0.8s]
+    WB M= 6 R=10 C=3: n=  97 homog 0.5258  |D|>=4 0.0103  max|D| 4  mean|D| 1.58  omega 0.5455  [1.6s]
+    swept WB C in [0, 1, 2, 3] at (M, R) = (6, 10)  [2.9s]
+  === WIDE-BRICK courier sweep at (M, R) = (10, 14) ===
+    WB M=10 R=14 C=0: n=  81 homog 0.7531  |D|>=4 0.0000  max|D| 3  mean|D| 2.19  omega 0.6467  [0.9s]
+    WB M=10 R=14 C=1: n= 109 homog 0.5138  |D|>=4 0.0000  max|D| 3  mean|D| 1.61  omega 0.5997  [1.8s]
+    WB M=10 R=14 C=2: n= 137 homog 0.6788  |D|>=4 0.0803  max|D| 4  mean|D| 1.99  omega 0.5948  [3.9s]
+    WB M=10 R=14 C=3: n= 165 homog 0.7758  |D|>=4 0.1333  max|D| 4  mean|D| 2.33  omega 0.5850  [6.0s]
+    swept WB C in [0, 1, 2, 3] at (M, R) = (10, 14)  [12.6s]
+  === cadence probe: the same courier count at HALF cadence ===
+    WB M= 8 R=14 C=2 cad=2: n=  93 homog 0.7849  |D|>=4 0.0538  max|D| 4  mean|D| 2.12  omega 0.4284  [1.3s]
+
+[W4 THE FRONTIER — the double-ring coupling sweep]
+  === DOUBLE-RING coupling sweep at (M, R) = (8, 10) ===
+    DR M= 8 R=10 cpl=0: n=  97 homog 0.6907  |D|>=4 0.0000  max|D| 3  mean|D| 1.99  omega 0.6574  [1.2s]
+    DR M= 8 R=10 cpl=1: n= 107 homog 0.3645  |D|>=4 0.0000  max|D| 3  mean|D| 1.25  omega 0.5952  [1.4s]
+    DR M= 8 R=10 cpl=2: n= 117 homog 0.4530  |D|>=4 0.0684  max|D| 4  mean|D| 1.43  omega 0.6259  [1.8s]
+    DR M= 8 R=10 cpl=3: n= 127 homog 0.5433  |D|>=4 0.1102  max|D| 4  mean|D| 1.62  omega 0.6641  [2.5s]
+    DR M= 8 R=10 cpl=4: n= 137 homog 0.5912  |D|>=4 0.1460  max|D| 4  mean|D| 1.74  omega 0.6461  [3.2s]
+    DR M= 8 R=10 cpl=5: n= 147 homog 0.6735  |D|>=4 0.2041  max|D| 4  mean|D| 1.97  omega 0.7026  [4.1s]
+    DR M= 8 R=10 cpl=6: n= 157 homog 0.7261  |D|>=4 0.2484  max|D| 4  mean|D| 2.08  omega 0.7121  [5.0s]
+    DR M= 8 R=10 cpl=7: n= 167 homog 0.7485  |D|>=4 0.2275  max|D| 4  mean|D| 2.13  omega 0.6680  [7.0s]
+    DR M= 8 R=10 cpl=8: n= 177 homog 0.7966  |D|>=4 0.3333  max|D| 4  mean|D| 2.31  omega 0.7299  [7.1s]
+    swept DR cpl in [0, 1, 2, 3, 4, 5, 6, 7, 8] at (M, R) = (8, 10)  [33.1s]
+  === DOUBLE-RING coupling sweep at (M, R) = (6, 14) ===
+    DR M= 6 R=14 cpl=0: n=  97 homog 0.7835  |D|>=4 0.0000  max|D| 3  mean|D| 2.31  omega 0.6644  [1.3s]
+    DR M= 6 R=14 cpl=1: n= 111 homog 0.4054  |D|>=4 0.0000  max|D| 3  mean|D| 1.39  omega 0.5833  [1.7s]
+    DR M= 6 R=14 cpl=2: n= 125 homog 0.5520  |D|>=4 0.0960  max|D| 4  mean|D| 1.64  omega 0.6149  [2.5s]
+    DR M= 6 R=14 cpl=3: n= 139 homog 0.6763  |D|>=4 0.1727  max|D| 4  mean|D| 2.00  omega 0.6749  [4.3s]
+    DR M= 6 R=14 cpl=4: n= 153 homog 0.7647  |D|>=4 0.2418  max|D| 4  mean|D| 2.16  omega 0.6930  [5.2s]
+    DR M= 6 R=14 cpl=5: n= 167 homog 0.7844  |D|>=4 0.2635  max|D| 4  mean|D| 2.34  omega 0.6576  [6.4s]
+    DR M= 6 R=14 cpl=6: n= 181 homog 0.8619  |D|>=4 0.3923  max|D| 4  mean|D| 2.55  omega 0.7386  [8.6s]
+    swept DR cpl in [0, 1, 2, 3, 4, 5, 6] at (M, R) = (6, 14)  [30.0s]
+  === DOUBLE-RING coupling sweep at (M, R) = (4, 14) ===
+    DR M= 4 R=14 cpl=0: n=  65 homog 0.8000  |D|>=4 0.0000  max|D| 3  mean|D| 1.68  omega 0.9700  [0.5s]
+    DR M= 4 R=14 cpl=1: n=  79 homog 0.5570  |D|>=4 0.0000  max|D| 3  mean|D| 1.62  omega 0.5734  [0.7s]
+    DR M= 4 R=14 cpl=2: n=  93 homog 0.7204  |D|>=4 0.1398  max|D| 4  mean|D| 1.94  omega 0.6410  [1.3s]
+    DR M= 4 R=14 cpl=3: n= 107 homog 0.7383  |D|>=4 0.2243  max|D| 4  mean|D| 2.31  omega 0.6082  [2.0s]
+    DR M= 4 R=14 cpl=4: n= 121 homog 0.8760  |D|>=4 0.4050  max|D| 4  mean|D| 2.60  omega 0.7404  [2.8s]
+    swept DR cpl in [0, 1, 2, 3, 4] at (M, R) = (4, 14)  [7.2s]
+  === DOUBLE-RING at FULL coupling, rounds sweep (the D60 lesson: a headline is a parameter — so the trend is printed, not a point) ===
+    DR M= 4 R=10 cpl=4: n=  89 homog 0.8315  |D|>=4 0.3708  max|D| 4  mean|D| 2.46  omega 0.7361  [1.2s]
+    DR M= 4 R=14 cpl=4: n= 121 homog 0.8760  |D|>=4 0.4050  max|D| 4  mean|D| 2.60  omega 0.7404  [2.8s]
+    DR M= 4 R=20 cpl=4: n= 169 homog 0.9112  |D|>=4 0.4320  max|D| 4  mean|D| 2.72  omega 0.7434  [7.4s]
+    DR M= 4 R=26 cpl=4: n= 217 homog 0.9309  |D|>=4 0.4470  max|D| 4  mean|D| 2.78  omega 0.7450  [15.4s]
+    swept R in [10, 14, 20, 26] at (M, cpl) = (4, 4)  [24.0s]
+
+  swept configurations = 38; refusals = 0; in the homogeneity band = 21; wide (|D| >= 4 present) = 26; BOTH = 14
+  configurations that are IN BAND AND WIDE (the F3 set), by width:
+    DR M=8 R=10 cpl=8 cad=1: n=177, homog 47/59 (~0.7966), |D|>=4 1/3 (~0.3333), max|D| 4
+    DR M=6 R=14 cpl=5 cad=1: n=167, homog 131/167 (~0.7844), |D|>=4 44/167 (~0.2635), max|D| 4
+    DR M=8 R=10 cpl=6 cad=1: n=157, homog 114/157 (~0.7261), |D|>=4 39/157 (~0.2484), max|D| 4
+    DR M=6 R=14 cpl=4 cad=1: n=153, homog 13/17 (~0.7647), |D|>=4 37/153 (~0.2418), max|D| 4
+    DR M=8 R=10 cpl=7 cad=1: n=167, homog 125/167 (~0.7485), |D|>=4 38/167 (~0.2275), max|D| 4
+    DR M=4 R=14 cpl=3 cad=1: n=107, homog 79/107 (~0.7383), |D|>=4 24/107 (~0.2243), max|D| 4
+    DR M=8 R=10 cpl=5 cad=1: n=147, homog 33/49 (~0.6735), |D|>=4 10/49 (~0.2041), max|D| 4
+    DR M=6 R=14 cpl=3 cad=1: n=139, homog 94/139 (~0.6763), |D|>=4 24/139 (~0.1727), max|D| 4
+    DR M=4 R=14 cpl=2 cad=1: n=93, homog 67/93 (~0.7204), |D|>=4 13/93 (~0.1398), max|D| 4
+    WB M=10 R=14 C=3 cad=1: n=165, homog 128/165 (~0.7758), |D|>=4 2/15 (~0.1333), max|D| 4
+    WB M=8 R=14 C=4 cad=1: n=177, homog 125/177 (~0.7062), |D|>=4 19/177 (~0.1073), max|D| 4
+    WB M=8 R=14 C=2 cad=1: n=121, homog 89/121 (~0.7355), |D|>=4 12/121 (~0.0992), max|D| 4
+    WB M=10 R=14 C=2 cad=1: n=137, homog 93/137 (~0.6788), |D|>=4 11/137 (~0.0803), max|D| 4
+    WB M=8 R=14 C=2 cad=2: n=93, homog 73/93 (~0.7849), |D|>=4 5/93 (~0.0538), max|D| 4
+  [PASS] W4 [THE FRONTIER DECIDES] **F3 — THE WIDE CRYSTAL EXISTS.**  Some swept configuration sits INSIDE the recomputed sprinkling homogeneity band AND carries 4-direction charts at d = 2, so the tiling mechanism and the width mechanism COMPOSE at grammar layer.  D60's residue 2 (the max |D| = 3 ceiling) was a property of the 1+1 brick's cone, not of tiling records as such.  The predicate is the pre-registered disjunction itself, computed from the sweep  (verdict = F3; in-band 21, wide 26, both 14 of 38 swept; winner = ('DR', 8, 10, 8, 1))
+
+  THE WINNING CONFIGURATION (rule: among the in-band-and-wide set, the largest |D| >= 4 fraction; ties broken by fewest events) = DR M=8 R=10 cpl=8 cad=1, 177 events over 16 actors
+
+[W2 THE ATLAS CENSUS — per record, at d = 2 AND d = 3, orderings reported BOTH ways (D60's MINOR 4 lesson: the depths disagree)]
+    C=0 anchor  (= D60 brick) d=2: n=  65  homog 0.7692 [IN BAND]  |D|>=4 0.0000 [below the sprinkling |D|>=4 band]  max|D| 3 (sprinklings 10-17)  omega 0.6510 (sprinklings 0.0481-0.1329)
+    C=0 anchor  (= D60 brick) d=3: n=  65  homog 0.7385 [IN BAND]  |D|>=4 0.5846 [below the sprinkling |D|>=4 band]  max|D| 4 (sprinklings 11-17)  omega 0.7120 (sprinklings 0.1118-0.2083)
+    WIDE-BRICK courier C=2  d=2: n= 121  homog 0.7355 [IN BAND]  |D|>=4 0.0992 [below the sprinkling |D|>=4 band]  max|D| 4 (sprinklings 10-17)  omega 0.5843 (sprinklings 0.0481-0.1329)
+    WIDE-BRICK courier C=2  d=3: n= 121  homog 0.8264 [ABOVE the band]  |D|>=4 0.4545 [below the sprinkling |D|>=4 band]  max|D| 5 (sprinklings 11-17)  omega 0.5838 (sprinklings 0.1118-0.2083)
+    THE WINNER               d=2: n= 177  homog 0.7966 [IN BAND]  |D|>=4 0.3333 [below the sprinkling |D|>=4 band]  max|D| 4 (sprinklings 10-17)  omega 0.7299 (sprinklings 0.0481-0.1329)
+    THE WINNER               d=3: n= 177  homog 0.7740 [IN BAND]  |D|>=4 0.6723 [inside the sprinkling |D|>=4 band]  max|D| 4 (sprinklings 11-17)  omega 0.6803 (sprinklings 0.1118-0.2083)
+    DOUBLE-RING(4, 26, 4)    d=2: n= 217  homog 0.9309 [ABOVE the band]  |D|>=4 0.4470 [inside the sprinkling |D|>=4 band]  max|D| 4 (sprinklings 10-17)  omega 0.7450 (sprinklings 0.0481-0.1329)
+    DOUBLE-RING(4, 26, 4)    d=3: n= 217  homog 0.9217 [ABOVE the band]  |D|>=4 0.8894 [above the sprinkling |D|>=4 band]  max|D| 4 (sprinklings 11-17)  omega 0.7355 (sprinklings 0.1118-0.2083)
+  [PASS] W2 THE CENSUS IS REPORTED AT BOTH DEPTHS, AND THE DEPTHS DO NOT AGREE RECORD BY RECORD — the D60 MINOR-4 lesson holds for the wide records too, so every width and homogeneity statement in this unit is depth-labelled.  The winner is in the band at d = 2 and in it at d = 3 as well; its |D| >= 4 fraction rises with depth (as the brick's did) while its max |D| does not move at all — W4b says why  (winner d=2: homog 0.7966, |D|>=4 0.3333, max 4; d=3: homog 0.7740, |D|>=4 0.6723, max 4; named records whose band membership FLIPS between the two depths: 1 ['WIDE-BRICK courier C=2 '])
+
+[W4b WHY THE WIDTH STOPS WHERE IT DOES — a theorem of the committed layer, stated and then verified on every record built here]
+  THEOREM (the branching bound).  Let a record's events carry at
+  most B registers each (`regs_of`).  Then for every event e and
+  every depth d >= 1, the SKY-B chart satisfies |D_e(d)| <= B^d.
+  Proof.  Write R_e(k) = {f : e <= f, h[f] = h[e] + k} for the
+  REFLEXIVE k-layer (so R_e(0) = {e}, R_e(k) = D_e(k) for k >= 1,
+  and R_e(k) = {} for k < 0).  `event_poset` sets pred[j] =
+  U_{r in regs(j)} (pred[last[r]] u {last[r]}), so the order is
+  the transitive closure of the relation P: x P y iff x is the
+  immediately preceding event on some register of y.  Each P-step
+  raises height by at least 1, and each x has at most
+  |regs(x)| <= B P-successors (one per register, the next event
+  on that wire).  Hence for k >= 1, R_e(k) = U_{y : e P y}
+  R_y(k - (h[y] - h[e])): every f > e is reached from e by a
+  P-path, whose first step is some such y.  Induct on k: the
+  union has at most B terms, each of size at most B^{k-1}
+  because h[y] - h[e] >= 1.  So |R_e(k)| <= B^k, and D_e(d) =
+  R_e(d).  []
+  CONSEQUENCE, and it is the wall: a record made of DELIVERIES
+  has B = 2 (carriers {s, r}), so max |D| <= 4 at d = 2 and <= 8
+  at d = 3 — NO delivery circuit whatever can reach the
+  sprinklings' max |D| 10-17.  Width beyond 4 at
+  d = 2 needs events with 3+ registers, and the layer has exactly
+  one such species: an ARBITRATION over a component with 2+
+  distinct proposers (regs = proposers u {new version}).  So at
+  grammar layer chart width past 4 is bought with CONFLICT, not
+  with transport.
+  registers per event species (committed `regs_of`): proposal 1, idle 1, delivery 2, merge 2, arbitration = #proposers + 1 — the exhibited two-proposer arb is admissible (q = 1/8) and carries 3 registers
+  [PASS] W4b THE WIDTH WALL IS STRUCTURAL AND THE DOUBLE RING SATURATES IT.  Every record built in this unit obeys |D| <= B^d with B the record's own maximum register count, B = 2 throughout (these are delivery circuits) — and the bound is TIGHT: the coupled rings hit max |D| = 4 = 2^2 at d = 2 exactly, which is why D60's 3 was beatable and why nothing here reaches the sprinklings' 10-17.  The exhibited 3-register arbitration shows the wall is a fact about DELIVERY CIRCUITS, not about the grammar  (records checked = 38, bound violations = 0, saturating configurations = 26 (e.g. ('DR', 4, 10, 4, 1)); brick max|D| = 3, winner max|D| = 4, bound 2^2 = 4, sprinklings 10-17)
+
+[W1 FORCEDNESS at D60's C1 grade — every event offered by the layer's own menu, every specification matched by EXACTLY ONE candidate, no tie broken, no refusal]
+    records built = 38, events built = 4604, refusals = 0 , max menu hits per specification over every step of every record = 1
+  [PASS] W1 EVERY RECORD IN THE SWEEP IS FORCED (restricted-menu drive): across every configuration built here, no specification ever matched more than one menu candidate and no step was refused, so nothing anywhere in the frontier was tie-broken.  The courier cadence was designed to keep this true and did — the pre-registered hard part did not bite  (max hits = 1 (1 => forced), refusals = 0)
+
+[W1b THE FULL-MENU REPLAY — the strong form: ALL actors offered at EVERY step (the batch round's own test on D60's brick)]
+    C=0 anchor       ( 65 events,  8 actors): OK at step 65/65, max hits per specification = 1, widest full menu = 136 candidates  [2.8s]
+    WIDE-BRICK C=2   (121 events, 10 actors): OK at step 121/121, max hits per specification = 1, widest full menu = 210 candidates  [16.5s]
+    THE WINNER       (177 events, 16 actors): OK at step 177/177, max hits per specification = 1, widest full menu = 528 candidates  [81.4s]
+  [PASS] W1b FORCED AGAINST THE UNRESTRICTED LAYER: replayed with all actors offered at every step, each record's every specification still matches EXACTLY ONE of the (up to several hundred) candidates the layer offers.  This is the grade D60's C1 was verified at in the batch round, and the wide records hold it  (C=0 anchor: OK hits 1 menu 136; WIDE-BRICK C=2: OK hits 1 menu 210; THE WINNER: OK hits 1 menu 528)
+
+[W5 THE INTERIOR CONTROL (D60's C7) — boundary excision, so the frontier is read on the MECHANISM and not on the prefix]
+    C=0 anchor (D60 brick) d=2: FULL n=  65 homog 0.7692 |D|>=4 0.0000 max 3  ->  INTERIOR n=  51 homog 0.9020 |D|>=4 0.0000 max 3
+    WIDE-BRICK C=2         d=2: FULL n= 121 homog 0.7355 |D|>=4 0.0992 max 4  ->  INTERIOR n= 109 homog 0.8165 |D|>=4 0.1101 max 4
+    THE WINNER             d=2: FULL n= 177 homog 0.7966 |D|>=4 0.3333 max 4  ->  INTERIOR n= 151 homog 0.8808 |D|>=4 0.3907 max 4
+    DOUBLE-RING(6, 14, 6)  d=2: FULL n= 181 homog 0.8619 |D|>=4 0.3923 max 4  ->  INTERIOR n= 161 homog 0.9317 |D|>=4 0.4410 max 4
+    DOUBLE-RING(4, 26, 4)  d=2: FULL n= 217 homog 0.9309 |D|>=4 0.4470 max 4  ->  INTERIOR n= 203 homog 0.9754 |D|>=4 0.4778 max 4
+  [PASS] W5 THE WIDTH IS NOT A BOUNDARY ARTEFACT — AND THE HOMOGENEITY READING MOVES.  Excising the bottom two and top three height layers RAISES the |D| >= 4 fraction at every key point (the wide charts are the circuit's, not the prefix's) and RAISES homogeneity at every key point, exactly as D60's C7 found for the brick.  Reported whichever way it lands: the winner's interior homogeneity leaves the sprinkling band THROUGH THE TOP (0.8808 against the band's [0.6417, 0.8000]), so 'in the band' is in part a property of the record's ENDS; the mechanism statement is D60's — the shortfall from 1 is boundary — and the width survives the excision  (interior |D|>=4 >= full at every key point = True; interior homogeneity > full at every key point = True; winner 0.3333 -> 0.3907 wide, 0.7966 -> 0.8808 homogeneous)
+
+[the licensed reading — stated no wider than the swept family]
+    configurations whose d = 2 |D| >= 4 fraction reaches the SPRINKLING |D| >= 4 band [0.4250, 0.6500]: 2 DR(4,20,4)=0.4320 at homogeneity 0.9112, DR(4,26,4)=0.4470 at homogeneity 0.9309
+    configurations INSIDE BOTH bands at once at d = 2: 0 []
+    configurations INSIDE BOTH bands at once at d = 3: 2 DR(4,10,4) homog 0.8090 / |D|>=4 0.7303, DR(8,10,8) homog 0.7740 / |D|>=4 0.6723
+  [PASS] THE LICENSED CLAIM, and its limit — REPORTED AT BOTH DEPTHS BECAUSE THEY DISAGREE.  Inside the swept (M, R, C, cpl) family the two mechanisms COMPOSE: coupled delivery circuits tile at in-band homogeneity while carrying 4-direction charts at a third of their events, which the brick never did at any parameter.  At d = 2 the sweep does NOT deliver a configuration inside BOTH sprinkling bands at once — the |D| >= 4 fraction reaches the sprinkling band only where homogeneity has climbed ABOVE the band's top (the rounds sweep).  At d = 3 it DOES: configurations sit inside the d = 3 homogeneity band and the d = 3 |D| >= 4 band simultaneously.  And on the max |D| column no configuration reaches sprinkling values at either depth, because none can (W4b).  All three halves are reported  (winner |D|>=4 1/3 (~0.3333) vs brick 0; reaching the sprinkling |D|>=4 band at d = 2 = 2; inside both bands at d = 2 = 0, at d = 3 = 2)
+  [PASS] W6 AST anti-vacuity (no bare-constant predicates; #403 MA-2 scope): every gate above reads a measured quantity, and the two reporting-only lines are the printed tables, which carry no check().  The frontier gate reads the pre-registered disjunction itself, so F1 and F2 would each have been reported by the same line that reported F3  (check() calls = 11, bare-constant predicates = 0)
+
+[W6 DEPTHS, CAPS AND RANGES — all printed, none silent]
+    SKY-B depths measured: 2 and 3 (committed SKYB_DEPTH = 2); atlas = D58's, unmodified.
+    WIDE-BRICK courier counts swept: C = 0..4 at (M, R) = (8, 14); C = 0..3 at (6, 10); C = 0..3 at (10, 14); cadence 1 throughout plus one cadence-2 probe at (8, 14, C = 2).
+    DOUBLE-RING couplings swept: cpl = 0..8 at (M, R) = (8, 10); cpl = 0..6 at (6, 14); cpl = 0..4 at (4, 14); rounds R = 10, 14, 20, 26 at (M, cpl) = (4, 4).
+    configurations built = 38; events built = 4604; largest record = 217 events.
+    full-menu replays: 3, budget 300s each, statuses {'C=0 anchor': 'OK', 'WIDE-BRICK C=2': 'OK', 'THE WINNER': 'OK'} (C=0 anchor 2.8s, WIDE-BRICK C=2 16.5s, THE WINNER 81.4s).
+    NOTHING WAS CUT: no sweep was truncated for runtime, so no trend-based cut has to be defended (the D50 lesson).  Total wall clock at this line: 305.9s.
+
+[VERDICT — D63]
+  F3 FIRED.  THE WIDE CRYSTAL EXISTS: the tiling mechanism and the width
+  mechanism COMPOSE inside the swept family.  The witness:
+    DR M=8 R=10 cpl=8 — 177 events, 16 actors, FORCED against the unrestricted menu, d = 2 homogeneity 47/59 (~0.7966, inside the band [0.6417, 0.8000]), |D| >= 4 at 1/3 (~0.3333) of its events, max |D| 4.
+  D60's residue 2 is CLOSED IN THE SWEPT FAMILY: max |D| = 3 was the
+  1+1 brick's light cone, not a property of tiling records; a second
+  spatial direction (couriers or a coupled ring) takes it to 4.
+  AND THE NEW CEILING IS A THEOREM, NOT A PARAMETER (W4b): a record
+  of deliveries has 2 registers per event, so |D| <= 2^d — no delivery
+  circuit can approach the sprinklings' max |D| 10-17 at d = 2.  Width
+  past 4 must be bought with ARBITRATION over conflicts.
+  SCOPE (pin §5): grammar layer; the claim is about the swept
+  (M, R, C, cpl) family and no wider.  No measure claim (transport
+  scope has none — B1); no typicality; no physical-object claim —
+  a crystal is a MECHANISM certificate (#440).  Transfer to the
+  identified interactive click law runs through paper 29's missing
+  map (D59) and is not claimed.  omega is a chart-size ratio along
+  covers (D58 round-1 MAJOR 2), never a symmetric overlap.
+
+[d63] 11 PASS / 0 FAIL   [total wall clock 305.9s]
+[exit protocol, pin W6] exit 1 ONLY on W0/W3 anchor breakage; substantive negatives exit 0.  anchor broken = False
