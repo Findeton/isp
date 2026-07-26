@@ -41,7 +41,38 @@ def mink4(pts):
                 C[i][j] = True
     return C
 
-def latt4(N, box, seed):
+def latt(N, dim, box, seed, T=None):
+    """CORRECTED BY ROUND 1 (BLOCKER 1 / MINOR 2, and D58's BLOCKER 1).
+    The committed generator drew `s % box` from an LCG mod 2^31.  The low
+    k bits of that LCG have period 2^k and each point consumes dim+1
+    draws, so a fixed coordinate slot's low-k-bit subsequence has period
+    2^(k-2): at box = 32 the 'sprinkling' collapsed to 32 distinct points
+    wearing 120 labels, and at EVERY box the spatial values sat on a
+    spacing-4 sublattice.  The repair draws from the HIGH bits
+    ((s >> 16) % box), which carry no low-bit periodicity.  `dim` is the
+    number of SPATIAL axes, so dim = 2 and dim = 3 give matched M^{2+1}
+    and M^{3+1} sprinklings differing in nothing but the dimension."""
+    s, out = seed, []
+    Tb = 4 * box if T is None else T
+    for _ in range(N):
+        s = (1103515245 * s + 12345) % (1 << 31)
+        row = [Fr((s >> 16) % Tb)]
+        for _ in range(dim):
+            s = (1103515245 * s + 12345) % (1 << 31)
+            row.append(Fr((s >> 16) % box))
+        out.append(tuple(row))
+    return out
+
+
+def latt4(N, box, seed, T=None):
+    """The 3+1 sprinkling.  Signature preserved for D53/D58/D60; the
+    generator itself is the round-1 repaired one."""
+    return latt(N, 3, box, seed, T)
+
+
+def latt4_committed(N, box, seed):
+    """The DEFECTIVE committed generator, kept so the degeneracy that
+    round 1 found can be exhibited rather than merely asserted."""
     s, out = seed, []
     for _ in range(N):
         s = (1103515245 * s + 12345) % (1 << 31); t = Fr(s % (4 * box))

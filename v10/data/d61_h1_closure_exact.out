@@ -1,0 +1,36 @@
+[D61 — closing (H1): the case-claim battery + the conclusion]
+  banner: the THEOREM is carried by the adopted proof note
+  (d60p §3-§7, prose-over-code); this receipt gates every case
+  claim at every cached instance, the code-facts the proof
+  reads, and the conclusion.  TWO-ACTOR d42a ONLY.
+  [PASS] N0 anchors: committed d42b3 layer + sigma/canon_menu extracted VERBATIM from committed d44a (the probe's own text-slice port; no abstraction of this receipt's own)  (single sources)
+  [PASS] N1 CODE-FACTS (Lemma 1's register geometry, asserted against the committed source): regs_of gives {actor} for p/n and {proposers} u {fresh vname} for r — the registers are ACTOR NAMES plus arbitrator-owned version names, which is the entire basis of the dichotomy  (source assertions hold)
+  exhaustive family to depth 6: 34375 histories
+  [PASS] N2 LEMMA 5's INVARIANTS (5a alive singleton; 5b <= 1 live, on X_a; 5e <= 1 full-view-superseded X) at EVERY history, layer-computed: zero violations  (histories = 34375, violations = 0)
+
+[N3 — Lemma 5's step cases, checked at every instance]
+  [PASS] N3(a) THE PROPOSE CASE: every admissible propose is on the actor's own alive singleton X_a with no prior live proposal — at every instance  (instances = 12916, violations = 0)
+  [PASS] N3(b) THE SELF-ARB CASE: every admissible single-actor arb consumes a SINGLETON component on that actor's own X_a — at every instance  (instances = 6484, violations = 0)
+  [PASS] N3(c) THE PAIR-ARB CASE: every admissible two-actor arb sits on a base that is BOTH actors' alive singleton (X_A = X_B = base) — at every instance  (instances = 2032, violations = 0)
+  [PASS] N3(d) CASE EXHAUSTIVENESS: every menu event is p, r or n — the case split covers the alphabet  (non-p/r/n menu events = 0)
+  [PASS] N3(e) THE DICHOTOMY (Lemma 2): every candidate's own view is the initiator's cone or the FULL view — no third case, at every instance  (candidates = 34374: cone = 32342, full = 2032, third = 0)
+
+[N4 — the conclusion: canon_menu is a function of canon_sigma]
+  [PASS] N4 (H1)'s CONCLUSION at this receipt's scope: equal canonical sigma => IDENTICAL canonical menu (renamed event-multiset with exact weights), over all 34375 histories, 36 sigma classes — zero splits.  The probe gated the same over 930,631 histories at depth 8 [PROBE-CARRIED]  (sigma classes = 36, splits = 0)
+  [PASS] N5 the per-actor menu mass is in {1, 5/4} at every history — the quarter law as the closed form G derives it (probe §6)  (off-law = 0)
+
+[VERDICT]
+  (H1) STANDS AS A THEOREM at two-actor delivery-free d42a
+  scope, CARRIED BY THE ADOPTED PROOF NOTE (d60p §3-§7,
+  prose-over-code) — with every case claim, the code-facts,
+  the dichotomy, and the conclusion gated at every cached
+  instance here, and the conclusion additionally gated at
+  depth 8 by the probe.  A Lean-grade mechanization remains
+  a RESIDUE, stated as such.  Consequences per the pin:
+  D44a unconditional at this scope; RESIDUE 1 CLOSED here;
+  D49 unconditional-at-depth here, within the stationary
+  form (D50).  Transport untouched; three actors out of
+  scope.
+
+[d61] 10 PASS / 0 FAIL
+RC=0

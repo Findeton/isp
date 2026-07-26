@@ -54,3 +54,23 @@ this unit's round, per discipline.
 Any N-gate failure is the deliverable (exit 0 for substantive
 negatives; exit 1 only on anchor breakage).  TWO-ACTOR ONLY — the
 dichotomy fails at three actors and the pin forbids wider quotation.
+
+## 4. First-run amendment (2026-07-26, recorded not silently fixed)
+
+**A1 — "mechanize the induction" was over-promised, twice.**  Run 1's
+hand-rolled abstract state was COARSER than sigma (1,932 menu
+mismatches — the machine's state must be sigma itself).  And the
+deeper defect: ANY cache-gated state machine leaves the same
+depth-gap H1 always had — a machine verified on cached instances
+does not prove the step for arbitrary h.  The depth-free force in
+the probe's route comes from its Lemmas being PROSE-OVER-CODE proofs
+(register geometry read from regs_of/event_poset's source), not from
+a sweep.  **The deliverable, restated:** (H1) = [THEOREM at
+two-actor d42a scope], carried by the probe's proof note (adopted as
+this unit's proof note), with the receipt gating (i) every CASE
+CLAIM of Lemma 5's step at every cached instance, (ii) the
+CODE-FACTS the proof reads, asserted against the source, (iii) the
+conclusion (canon_menu a function of canon_sigma) at depth 6 in this
+receipt plus the probe's depth-8 gate [PROBE-CARRIED], (iv) the
+quarter law per sigma state.  A Lean-grade mechanization is a
+RESIDUE, honestly out of scope here.

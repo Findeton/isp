@@ -10424,3 +10424,37 @@ Pre-stated consequences: (H1) => THEOREM at d42a two-actor
 delivery-free scope; D44a unconditional there; RESIDUE 1 CLOSED at
 that scope; D49 unconditional-at-depth there (within the stationary
 form per D50; transport untouched). Two-actor scope enforced.
+
+## 2026-07-26 — D61: (H1) CLOSED AT TWO-ACTOR DELIVERY-FREE SCOPE —
+## RESIDUE 1 IS CLOSED THERE (LEDGER #452)
+Receipt d61_h1_closure_exact.py, 10 PASS / 0 FAIL, exit 0. Pin §4
+first-run amendment, recorded not hidden: "mechanize the induction"
+was OVER-PROMISED twice — run 1's hand-rolled state was COARSER than
+sigma (1,932 menu mismatches), and any cache-gated machine leaves the
+depth gap regardless; the depth-free force is the probe's
+PROSE-OVER-CODE proof (register geometry read from the committed
+source). THE DELIVERABLE AS RESTATED: **(H1) = [THEOREM at two-actor
+delivery-free d42a scope], carried by the adopted proof note (d60p
+§3-§7)**, with this receipt gating: N1 the CODE-FACTS (regs_of's
+register geometry asserted against the source); N2 Lemma 5's
+invariants at all 34,375 histories (zero violations); N3 the CASE
+BATTERY at every instance — propose always on the actor's own alive
+singleton with no prior live (12,916/0), self-arb always a SINGLETON
+component on own X (6,484/0), pair-arb always on the SHARED alive
+singleton X_A = X_B (2,032/0), case split exhaustive, and the
+DICHOTOMY re-gated (34,374 candidates: cone 32,342, full 2,032, third
+case ZERO); N4 the conclusion — equal canonical sigma => IDENTICAL
+canonical menu with exact weights, 36 sigma classes, zero splits
+(+ the probe's 930,631-history depth-8 gate [PROBE-CARRIED]); N5 the
+quarter law {1, 5/4} everywhere. A Lean-grade mechanization is a
+RESIDUE, stated as such.
+**CONSEQUENCES, per the pin's pre-statement: D44a's closure theorem
+is UNCONDITIONAL at this scope ((H2) via the committed CG2 + the
+closed form; (H0) = the gated invariants). RESIDUE 1 — the completion
+problem's positive-harmonic core, the corpus's oldest named gap — IS
+CLOSED at two-actor delivery-free d42a scope. D49's root-free
+completion Zhat holds at EVERY DEPTH there, within the stationary
+form (D50: the form remains a choice). TRANSPORT UNTOUCHED; THREE
+ACTORS OUT OF SCOPE (the dichotomy fails there — the pin forbids
+wider quotation).** Paper 30/32 + book updates QUEUED behind this
+unit's hostile round per discipline.
