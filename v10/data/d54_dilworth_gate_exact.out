@@ -10,17 +10,17 @@
   [PASS] P [STAGE 0] ANY TWO EVENTS SHARING AN ACTOR WIRE ARE COMPARABLE, at transport scope, with deliveries' TWO-actor carriers included: zero violations over every family.  The premise the whole theorem stands on is now GATED at the scope where it is used, not believed  (actor-sharing pairs tested = 218795, incomparable = 0)
 
 [STAGE 1 — the nested-trace lemma, corroborated]
-  [PASS] T-LEMMA [STAGE 1] THE TRACES CONTRIBUTED BY ONE ACTOR'S WORLDLINE FORM A CHAIN under inclusion — in EVERY sky (SKY-B, d in {1,2,3}) of every history of every family, per-initiator trace pairs are nested with ZERO exceptions.  This is the corroboration of the proof's only physical step  (skies examined = 15909, per-actor groups = 33546, non-nested pairs = 0)
+  [PASS] T-LEMMA [STAGE 1] THE TRACES CONTRIBUTED BY ONE ACTOR'S WORLDLINE FORM A CHAIN under inclusion — per-initiator trace pairs nested with ZERO exceptions.  SCOPE, declared (round-1 MINOR 4): the sweep runs SKY-B at d in {1,2,3} and NEVER reaches the 4-direction/16-trace regime the theorem is applied in (dirs and trace census printed below); nesting is width- and depth-independent BY THE PROOF, and the round verified it directly at d = 5 on both constructed records [REFEREE-CARRIED]  (skies = 15909, groups = 33546 (with >= 2 distinct traces: 12933), non-nested = 0; |dirs| census = {2: 15850, 3: 59}, max distinct traces in any swept sky = 7)
 
 [STAGE 1 — the B4 certificate]
   [PASS] T-B4 [STAGE 1] THE DILWORTH CERTIFICATE, both bounds constructive: the 6 pairs of B4 are PAIRWISE INCOMPARABLE (an antichain — since a chain contains at most one member of an antichain, ANY chain cover of B4 needs >= 6 chains), and the exhibited symmetric chain decomposition IS a cover by exactly 6 chains of all 16 subsets.  Hence min chain cover = 6 EXACTLY, and with T-LEMMA: **shatter-4 requires at least 6 actors**  (antichain of size 6 verified = True; SCD chains = 6, all strict chains = True, cover complete = True)
-  [PASS] T-SPERNER [STAGE 1] the general count, CONSTRUCTIVE both ways for k = 1..6: the de Bruijn-Tengbergen-Kruyswijk recursion yields a PARTITION of B_k into strict chains, the middle layer is an antichain, and the two counts COINCIDE at C(k, floor(k/2)) — so the largest antichain and the minimum chain cover are both exactly 1, 2, 3, 6, 10, 20.  Shatter-k requires at least that many actors, and a sphere-like sky requires UNBOUNDEDLY MANY: the infinite-clocks doctrine as arithmetic  ((k, SCD chains, middle layer) = [(1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 6, 6), (5, 10, 10), (6, 20, 20)])
+  [PASS] T-SPERNER [STAGE 1] the general count, CONSTRUCTIVE both ways for k = 1..6: the de Bruijn-Tengbergen-Kruyswijk recursion yields a PARTITION of B_k into strict chains, the middle layer is an antichain, and the two counts COINCIDE at C(k, floor(k/2)) — so the largest antichain and the minimum chain cover are both exactly 1, 2, 3, 6, 10, 20.  Shatter-k requires at least that many actors.  (ROUND-1 BLOCKER 1: the application to SPHERE skies is NOT via shattering — caps on S^2 have VC dimension 4, shattering 4 and NEVER 5, certified by an exact Radon partition [REFEREE-CARRIED] — so the sphere's unbounded-actor conclusion goes via TRACE COUNTING instead: Theta(n^3) cap traces against chains of length n+1 force Theta(n^2) actors.  The Sperner count prices shatter-k; it does not by itself price the sphere.)  ((k, SCD chains, middle layer) = [(1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 6, 6), (5, 10, 10), (6, 20, 20)])
 
 [STAGE 1 — corollary sweep below the bound]
   [PASS] T-SWEEP [STAGE 1] no shattered 4-set below width 6 — reported WITH its capacity census (D53 SC5): the number of SC5-capable skies below the bound is printed, and if it is zero the sweep is VACUOUS there and the claim rests on the theorem alone, which is exactly what a theorem is for  (SC5-capable skies at widths < 6 = 0, shattered = 0; sweep VACUOUS below the bound — consistent with the theorem (capable skies need 16 traces from < 6 chains, which Dilworth forbids))
 
 [mutants + hygiene]
-  [PASS] M1 the nestedness test is not blind: a hand-built crossing pair ({0,1} vs {1,2}) is flagged non-nested by the same comparison the sweep uses  (crossing pair detected = True)
+  [PASS] M1 the nestedness test is not blind: a crossing pair ({0,1} vs {1,2}) is flagged non-nested by is_nested() — THE SAME function the sweep calls (round-1 MINOR 7: the first draft inlined a duplicate comparison and the mutant never touched the sweep's code path)  (crossing pair detected by the sweep's own predicate = True)
   [WITNESS NESTEDNESS-EXERCISE] {'crossing_pair': [[0, 1], [1, 2]], 'note': 'the branch a real T-LEMMA violation would take'}
   [PASS] M2 the witness branch is live and EXERCISED (LOG #354 F1)  (invocations = ['NESTEDNESS-EXERCISE'])
   [PASS] M3 AST anti-vacuity: every check() references a run-bound name; SCOPE (LOG #403 MA-2): exactly that and nothing more  (check() calls = 9, bare/unbound = 0)
@@ -32,12 +32,13 @@
   STAGE 1: the nested-trace lemma corroborated on every sky of
   every family (15909 skies, zero non-nested per-actor pairs);
   the B4 certificate gives min chain cover = 6 with both bounds
-  constructive; Sperner corroborated to k = 5.
+  constructive; the dBTK partition is exact for k = 1..6.
   **THE DILWORTH GATE: shatter-4 needs >= 6 actors; shatter-k
-  needs >= C(k, floor(k/2)); a sphere-like sky needs unboundedly
-  many actors.**  The WORD theorem is carried by the proof in the
-  result note; everything here is gate and corroboration.
+  needs >= C(k, floor(k/2)) actors.**  The sphere consequence is
+  NOT via shattering (caps shatter 4, never 5 — round-1 B1); the
+  unbounded-actor result for spheres goes via trace counting and
+  is carried in the result note.  The WORD theorem is carried by
+  the proof; everything here is gate and corroboration.
 
 [d54 s0+1] 9 PASS / 0 FAIL
 EXIT 0
-RC=0

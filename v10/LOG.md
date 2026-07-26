@@ -9674,3 +9674,85 @@ force more than 6?); the S^2 side; genericity under any completed
 measure (not posable at transport scope, D52); the depth parameter
 (d = 2 construction or a forced-depth bound).
 NEXT: independent Opus 5 hostile round; nothing citable before it.
+
+## 2026-07-26 — D54 ROUND 1 (INDEPENDENT OPUS 5) TERMINAL; THE SPHERE
+## CLAIM CORRECTED (LEDGER #429)
+Round frozen at v10/reviews/d54-round1-hostile-review.md — the
+corpus's first INDEPENDENT-MODEL hostile round (Opus 5 worker, no
+prior context, recompute-not-trust; every number reproduced by its own
+code, incl. rebuilding both records from the committed menu and
+re-deriving the poset with Floyd-Warshall). VERDICT REVISE:
+1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT. Repaired and delta'd;
+post-repair 9 PASS / 0 FAIL and 12 PASS / 0 FAIL. **D54 TERMINAL.**
+**WHAT SURVIVED EVERYTHING: the mathematics.** The premise, the
+chain-cover step (robust under BOTH attributions — initiator and
+wire), the B4/dBTK certificate, the 42-event record (independently
+rebuilt; 16 distinct traces; shattered 4-set confirmed by code sharing
+nothing with d47a), the negative exhibit and its backflow mechanism
+(B's per-initiator family {},{B},{A,B} — literally regs_of(d)={s,r}),
+blueprint fidelity to the pin, measure-freeness, record fidelity
+(pin genuinely preceded code; every LOG number matched).
+**BLOCKER 1 — MY SPHERE SENTENCE WAS UNSUPPORTED, forward-correcting
+#427/#428.** "A sphere-like sky (shattering at every m) requires
+unboundedly many actors" has an EMPTY ANTECEDENT: caps on S^2 are
+halfspace traces with VC DIMENSION 4 — they shatter 4 and NEVER 5.
+Referee certificate, exact: five rational sphere points with affine
+dependence lambda = (-23/49,-19/49,-24/49,17/49,1), Radon partition
+conv{3,4} meets conv{0,1,2}, so {3,4} is cut off by NO halfspace;
+independent grid search finds 30/32 traces missing exactly that pair.
+d47a's own unused max_shattered(kmax=5) was one call away from
+catching this. **"The infinite-clocks doctrine is now a THEOREM" is
+WITHDRAWN AS STATED.**
+**AND RESCUED BY A BETTER ROUTE [REFEREE-CARRIED]: TRACE COUNTING.**
+A sphere sky on n directions realizes 2.sum_{i<=3} C(n-1,i) =
+Theta(n^3) distinct cap traces (checked against brute-force arc
+enumeration at d=2 and d47a's tetrahedron 16 at d=3); one actor's
+chain holds <= n+1; so **actors >= Theta(n^2) -> infinity — the
+sphere still requires unboundedly many actors, with NO shattering
+anywhere in the derivation.** In-receipt promotion queued (residue
+1b).
+**MAJOR 1 — WIDTH PRICES SKY SIZE, NOT DIMENSION.** The same counting
+prices a 2+1 CIRCLE at n^2-n+2 traces => >= n-2 actors — ALSO
+unbounded. The dimensional signal in the gate is the shatter offset
+alone: arcs shatter 3 (>= 3 actors), caps shatter 4 (>= 6). THREE
+VERSUS SIX. And the ladder continues upward: halfspaces in R^d
+shatter d+1, so SHATTER-5 WOULD CERTIFY BEYOND-3+1 — the shatter
+ladder is a dimension METER (new residue 1c: does transport admit
+shatter-5, cost >= C(5,2) = 10 actors?).
+**MAJOR 2 — THE 2+1 CLAIM RE-FOUNDED.** "Not realizable as a 2+1
+celestial sky" leaned on shatter => not-arc => not-2+1, and the second
+arrow is one d47a ITSELF demoted (majority of genuine discrete 2+1
+SKY-B skies are non-arc: 218/397, round recount). Restated in K7 and
+§3: NOT AN ARC SYSTEM is the theorem (arcs realize 14/16 on any 4
+points, missing the crossing pairs); "not 2+1" only under the strict
+arc-model stipulation, said aloud; **the sound discrete separation is
+EMPIRICAL and now has its control — 1,925 SC5-capable genuine M^{2+1}
+SKY-B pairs at depths 1..10, ZERO shatterings [REFEREE-CARRIED],
+against this record's THREE shattering depths.**
+MINORS, all repaired: per-reading Minkowski halt control (referee-run,
+1,925 pairs — the strongest control the instrument has had); per-d
+table now GATE K11 — **the record shatters at d = 4, 5 AND 6**, the
+pin's promised reporting had understated the result; premise P
+upgraded to a THEOREM OF THE LAYER (initiator in regs_of for all five
+event types; register chaining is transitive by construction) with the
+sweep demoted to corroboration; T-LEMMA prints its regime census (no
+swept sky reaches 4 dirs; 61.4% of groups single-trace) and declares
+it; "saturates" withdrawn — the realized family's min chain cover = 6
+EXACTLY (Dilworth-TIGHT, gated in-receipt; the 6-vs-20 gap is
+architectural); K9-A/C labelled THEOREM-PASS; M1 now exercises the
+sweep's own is_nested predicate; K10 dead code removed; the proof's
+trace definition corrected to the instrument's reflexive form with the
+restriction-monotonicity line added. NITS: stale verdict line; pin §9
+records both amendments; e07582c pointer added for the original
+failing output.
+**THE SETTLED STATEMENT (post-round):** the Dilworth gate is an
+unconditional theorem of the transport layer — shatter-4 costs >= 6
+actors, shatter-k costs >= C(k, floor(k/2)) — and the 20-actor
+42-event courier record is a genuine, independently verified object
+that shatters at three depths, empirically separated from genuine 2+1
+records by a 1,925-pair zero-shattering control. Width prices sky
+size; the shatter ladder prices dimension; the sphere needs unbounded
+actors by counting, not by Sperner.
+NEXT (residues, ranked): 1c shatter-5 (the beyond-3+1 meter); 1b
+promote the trace-count bound in-receipt; the S^2 cap-realization of
+the constructed shadow system; minimality (6 vs 20).

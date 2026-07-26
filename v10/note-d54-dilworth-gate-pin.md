@@ -162,3 +162,19 @@ The Dilworth bound is untouched by A1 (it is a lower bound; the failed
 run VIOLATES nothing).  The receipt keeps the §4 build as a gated
 negative exhibit — the backflow mechanism on the record — and runs the
 courier build as primary.
+
+## 9. Round-1 amendments (2026-07-26)
+
+The independent Opus 5 round (frozen at
+`reviews/d54-round1-hostile-review.md`) corrected this pin in two
+places, recorded here rather than edited away: **(i)** §3's clause
+"a sphere-like sky — shattering at every k — requires unboundedly
+many actors" is WITHDRAWN as an application: caps on S² shatter 4
+and never 5 (VC dimension 4, exact Radon certificate in the round),
+so the Sperner route never fires on spheres; the unbounded-actor
+conclusion survives via trace counting (Θ(n³) cap traces vs n+1 per
+chain ⇒ Θ(n²) actors), referee-verified.  **(ii)** §3's "Sperner
+corroborated by brute force for k <= 5" was substituted in the
+receipt by the constructive dBTK recursion (exact for k ≤ 6) because
+the brute force was 2³² masks at k = 5 — a strengthening, declared
+here per round-1 NIT 2.

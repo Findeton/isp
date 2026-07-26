@@ -10,24 +10,38 @@
 
 [PART 2 — the §8 courier architecture]
   [PASS] K3 THE COURIER BLUEPRINT IS ADMISSIBLE END TO END: all 42 events over 20 actors were offered by the committed layer's own menu at their prefixes — the layer, not the author, decided  (events = 42, refusal = None)
-  [PASS] K4 the directions are a genuine sky: pairwise INCOMPARABLE (proposal locality), one common height, all strictly above E; the height offset is REPORTED — the claim is reading-relative to SKY-B at that depth  (incomparable = True, h = 6, DEPTH = 5)
+  [PASS] K4 the directions are a genuine sky: pairwise INCOMPARABLE, one common height, all strictly above E; offset REPORTED — reading-relative to SKY-B at that depth.  (Round-1 MINOR 6: the incomparability clause is DERIVED from equal height, since x < y forces h[x] < h[y]; it is kept as a printed fact, not counted as independent evidence)  (incomparable = True, h = 6, DEPTH = 5)
   [PASS] K5 SKY-B at E reproduces the intended directions from the committed instrument itself  (instrument dirs = [9, 12, 14, 15], blueprint = [9, 12, 14, 15])
   [PASS] K6 CAPACITY BY THE CORRECTED CONDITION (D53 SC5, never D47 SG2): >= 4 directions, >= 16 DISTINCT traces, empty trace present  (|dirs| = 4, distinct traces = 16, empty = True)
-  [PASS] K7 **ALL 16 SUBSETS ARE REALIZED AND THE INSTRUMENT RETURNS A SHATTERED 4-SET.**  Under the committed SKY-B reading at the reported depth, this record's sky is NOT realizable as a 2+1 celestial sky — arcs on a circle cannot shatter 4 (D47a SG0, constructed, not cited)  (subsets = 16/16; shattered 4-set = ['A', 'B', 'C', 'D'])
+  [PASS] K7 **ALL 16 SUBSETS ARE REALIZED AND THE INSTRUMENT RETURNS A SHATTERED 4-SET.**  WHAT THIS LICENSES, restated per round-1 MAJOR 2: shatter-4 => NOT AN ARC SYSTEM is a theorem (arcs realize 14/16 on any 4 columns, missing the crossing pairs); 'not a 2+1 celestial sky' holds ONLY under the strict stipulation that a 2+1 sky means an arc system — d47a's own demotion showed a MAJORITY of genuine discrete 2+1 SKY-B skies are non-arc (218/397 decided, round-1 recount).  The sound discrete separation is EMPIRICAL: 1,925 SC5-capable genuine M^{2+1} SKY-B pairs at depths 1..10 show ZERO shatterings [REFEREE-CARRIED, round 1] while THIS record shatters  (subsets = 16/16; shattered 4-set = ['A', 'B', 'C', 'D'])
   [WITNESS TRANSPORT-SHATTER-4] taken by a REAL record: set = ['A', 'B', 'C', 'D'], actors = 20, events = 42, depth = 5
-  [PASS] K8 CONSISTENCY WITH THE DILWORTH GATE: traces decompose into per-initiator CHAINS (zero crossings) and >= 6 actors contribute — the construction SATURATES the theorem, it does not beat it  (nested = True, contributing actors = 16 (bound: 6), total = 20)
-  [PASS] K9-A D53 CONTROL: SKY-A on this record has NO empty trace — the definition-level disqualification reproduced on the constructed object  (|dirs| = 1, empty = False)
-  [PASS] K9-C D53 CONTROL: SKY-C on this record has NO empty trace — the definition-level disqualification reproduced on the constructed object  (|dirs| = 1, empty = False)
-  [PASS] K10 AST anti-vacuity (scope per LOG #403 MA-2: no bare-constant predicates, nothing more)  (check() calls = 11, bare = 0)
+  [PASS] K8 CONSISTENCY WITH THE DILWORTH GATE (restated per round-1 MINOR 5 — the first draft's 'SATURATES' was false as worded): traces decompose into per-initiator CHAINS with zero crossings; >= 6 actors contribute; and **the realized 16-trace family's minimum chain cover is EXACTLY 6** (its six pairs are an antichain, the B4 SCD covers it) — the family is Dilworth-TIGHT, while the actor spend is 16 contributing / 20 total.  The 6-vs-20 gap is ARCHITECTURAL — the scheduling cost of backflow — not slack in the family  (nested = True, contributing = 16, family min-cover = 6 exact = True)
+  [PASS] K9-A [THEOREM-PASS, labelled per round-1 MINOR 6] SKY-A on this record has NO empty trace.  D53 proved this can NEVER fail for any record (covers/co-covers structurally exclude the empty trace), so this gate is a consistency exhibit, not evidence  (|dirs| = 1, empty = False)
+  [PASS] K9-C [THEOREM-PASS, labelled per round-1 MINOR 6] SKY-C on this record has NO empty trace.  D53 proved this can NEVER fail for any record (covers/co-covers structurally exclude the empty trace), so this gate is a consistency exhibit, not evidence  (|dirs| = 1, empty = False)
+
+  per-depth table (pin §5's promise, delivered):
+    d=1: |dirs|=1, distinct traces=1, SC5-capable=False, shatter4=None
+    d=2: |dirs|=2, distinct traces=4, SC5-capable=False, shatter4=None
+    d=3: |dirs|=3, distinct traces=8, SC5-capable=False, shatter4=None
+    d=4: |dirs|=4, distinct traces=16, SC5-capable=True, shatter4=[5, 8, 11, 13]
+    d=5: |dirs|=4, distinct traces=16, SC5-capable=True, shatter4=[9, 12, 14, 15]
+    d=6: |dirs|=4, distinct traces=16, SC5-capable=True, shatter4=[16, 17, 21, 24]
+    d=7: |dirs|=4, distinct traces=11, SC5-capable=False, shatter4=None
+    d=8: |dirs|=5, distinct traces=8, SC5-capable=False, shatter4=None
+  [PASS] K11 PER-DEPTH REPORTING (round-1 MINOR 2 — the omission had UNDERSTATED the result): the record shatters a 4-set at THREE depths, d = 4, 5, 6, on three different direction sets, and at no other depth in 1..8.  The certificate is reading-relative to SKY-B but not to a single depth  (shattering depths = [4, 5, 6])
+  [PASS] K10 AST anti-vacuity (scope per LOG #403 MA-2: no bare-constant predicates, nothing more)  (check() calls = 12, bare = 0)
 
 [VERDICT — D54b]
   THE COURIER BLUEPRINT IS ADMISSIBLE AND IT SHATTERS: a
   20-actor, 42-event transport record, every event
   selected from the committed layer's own menu, whose SKY-B
   sky at the minting event realizes ALL 16 subsets of its 4
-  directions and returns a shattered 4-set.  Under that
-  committed reading the sky is NOT realizable as a 2+1
-  celestial sky.
+  directions and returns a shattered 4-set — at THREE depths
+  (4, 5, 6).  WHAT THAT LICENSES (round-1 MAJOR 2): NOT an
+  arc system (theorem); 'not a 2+1 sky' only under the strict
+  arc-model stipulation; the DISCRETE separation from genuine
+  M^{2+1} records is EMPIRICAL — 1,925 capable pairs, zero
+  shatterings [REFEREE-CARRIED] — against this record's three.
   AND THE PINNED BLUEPRINT'S FAILURE IS PART OF THE RESULT:
   sender-wire backflow is why 9 actors and 31 events were not
   enough — knowledge transport is monotone along wires, and
@@ -38,6 +52,5 @@
   claim — the S^2 side is a separate unit.  20 actors vs the
   theorem's bound of 6: minimality is an open residue.
 
-[d54b] 11 PASS / 0 FAIL
+[d54b] 12 PASS / 0 FAIL
 EXIT 0
-RC=0

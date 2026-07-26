@@ -158,13 +158,22 @@ check("P [STAGE 0] ANY TWO EVENTS SHARING AN ACTOR WIRE ARE COMPARABLE, "
       f"actor-sharing pairs tested = {p_pairs}, incomparable = {p_bad}"
       + (f"; WITNESS = {p_wit}" if p_wit else ""))
 
+def is_nested(t1, t2):
+    """THE instrument predicate — shared by the sweep and the M1 mutant
+    (round-1 MINOR 7: the first draft's mutant tested a hand-written
+    comparison on literals, never the sweep's code path)."""
+    return t1 <= t2 or t2 <= t1
+
+
 # ------------------------------------------------------------- STAGE 1
 print("\n[STAGE 1 — the nested-trace lemma, corroborated]")
 skies = 0
 groups = 0
 nest_bad = 0
 nest_wit = None
-chain_counts = []
+ndirs_census = defaultdict(int)
+max_traces = 0
+groups_live = 0
 for name, actors, fam in FAMS:
     for h in fam:
         if len(h) < 3:
@@ -177,31 +186,38 @@ for name, actors, fam in FAMS:
                 if len(dirs) < 2:
                     continue
                 skies += 1
+                ndirs_census[len(dirs)] += 1
                 fut = [f for f in range(n) if C[e_i][f]]
                 byact = defaultdict(list)
+                alltr = set()
                 for f in fut:
                     tr = frozenset(c for c in dirs if c == f or C[c][f])
                     byact[h[f][1]].append(tr)
-                used = 0
+                    alltr.add(tr)
+                max_traces = max(max_traces, len(alltr))
                 for a, trs in byact.items():
                     groups += 1
                     if len(set(trs)) > 1:
-                        used += 1
+                        groups_live += 1
                     for t1, t2 in combinations(trs, 2):
-                        if not (t1 <= t2 or t2 <= t1):
+                        if not is_nested(t1, t2):
                             nest_bad += 1
                             if nest_wit is None:
                                 nest_wit = (name, e_i, d, a,
                                             sorted(t1), sorted(t2))
-                chain_counts.append(len(byact))
 check("T-LEMMA [STAGE 1] THE TRACES CONTRIBUTED BY ONE ACTOR'S "
-      "WORLDLINE FORM A CHAIN under inclusion — in EVERY sky (SKY-B, "
-      "d in {1,2,3}) of every history of every family, per-initiator "
-      "trace pairs are nested with ZERO exceptions.  This is the "
-      "corroboration of the proof's only physical step",
+      "WORLDLINE FORM A CHAIN under inclusion — per-initiator trace "
+      "pairs nested with ZERO exceptions.  SCOPE, declared (round-1 "
+      "MINOR 4): the sweep runs SKY-B at d in {1,2,3} and NEVER reaches "
+      "the 4-direction/16-trace regime the theorem is applied in (dirs "
+      "and trace census printed below); nesting is width- and "
+      "depth-independent BY THE PROOF, and the round verified it "
+      "directly at d = 5 on both constructed records [REFEREE-CARRIED]",
       skies > 0 and nest_bad == 0,
-      f"skies examined = {skies}, per-actor groups = {groups}, "
-      f"non-nested pairs = {nest_bad}"
+      f"skies = {skies}, groups = {groups} (with >= 2 distinct traces: "
+      f"{groups_live}), non-nested = {nest_bad}; |dirs| census = "
+      f"{dict(sorted(ndirs_census.items()))}, max distinct traces in "
+      f"any swept sky = {max_traces}"
       + (f"; WITNESS = {nest_wit}" if nest_wit else ""))
 
 # --- the B4 certificate: both bounds constructive
@@ -273,8 +289,13 @@ check("T-SPERNER [STAGE 1] the general count, CONSTRUCTIVE both ways "
       "is an antichain, and the two counts COINCIDE at C(k, floor(k/2)) "
       "— so the largest antichain and the minimum chain cover are both "
       "exactly 1, 2, 3, 6, 10, 20.  Shatter-k requires at least that "
-      "many actors, and a sphere-like sky requires UNBOUNDEDLY MANY: "
-      "the infinite-clocks doctrine as arithmetic",
+      "many actors.  (ROUND-1 BLOCKER 1: the application to SPHERE "
+      "skies is NOT via shattering — caps on S^2 have VC dimension 4, "
+      "shattering 4 and NEVER 5, certified by an exact Radon partition "
+      "[REFEREE-CARRIED] — so the sphere's unbounded-actor conclusion "
+      "goes via TRACE COUNTING instead: Theta(n^3) cap traces against "
+      "chains of length n+1 force Theta(n^2) actors.  The Sperner count "
+      "prices shatter-k; it does not by itself price the sphere.)",
       scd_ok and all(c == m == comb(k, k // 2) for k, c, m in sperner),
       f"(k, SCD chains, middle layer) = {sperner}")
 
@@ -311,11 +332,14 @@ check("T-SWEEP [STAGE 1] no shattered 4-set below width 6 — reported "
 # --- mutant: the instrument must detect a non-nested family
 print("\n[mutants + hygiene]")
 MUT = [frozenset({0, 1}), frozenset({1, 2})]
-mut_caught = not (MUT[0] <= MUT[1] or MUT[1] <= MUT[0])
-check("M1 the nestedness test is not blind: a hand-built crossing pair "
-      "({0,1} vs {1,2}) is flagged non-nested by the same comparison "
-      "the sweep uses",
-      mut_caught, "crossing pair detected = True")
+mut_caught = not is_nested(MUT[0], MUT[1])
+check("M1 the nestedness test is not blind: a crossing pair ({0,1} vs "
+      "{1,2}) is flagged non-nested by is_nested() — THE SAME function "
+      "the sweep calls (round-1 MINOR 7: the first draft inlined a "
+      "duplicate comparison and the mutant never touched the sweep's "
+      "code path)",
+      mut_caught and nest_bad == 0,
+      "crossing pair detected by the sweep's own predicate = True")
 
 WITNESS = []
 def report_witness(kind, payload):
@@ -352,12 +376,15 @@ print(f"  {p_pairs} actor-sharing pairs, deliveries' two-carrier case")
 print("  included.")
 print("  STAGE 1: the nested-trace lemma corroborated on every sky of")
 print(f"  every family ({skies} skies, zero non-nested per-actor pairs);")
+
 print("  the B4 certificate gives min chain cover = 6 with both bounds")
-print("  constructive; Sperner corroborated to k = 5.")
+print("  constructive; the dBTK partition is exact for k = 1..6.")
 print("  **THE DILWORTH GATE: shatter-4 needs >= 6 actors; shatter-k")
-print("  needs >= C(k, floor(k/2)); a sphere-like sky needs unboundedly")
-print("  many actors.**  The WORD theorem is carried by the proof in the")
-print("  result note; everything here is gate and corroboration.")
+print("  needs >= C(k, floor(k/2)) actors.**  The sphere consequence is")
+print("  NOT via shattering (caps shatter 4, never 5 — round-1 B1); the")
+print("  unbounded-actor result for spheres goes via trace counting and")
+print("  is carried in the result note.  The WORD theorem is carried by")
+print("  the proof; everything here is gate and corroboration.")
 
 print(f"\n[d54 s0+1] {PASS} PASS / {FAIL} FAIL")
 if FAIL:

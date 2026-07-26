@@ -233,10 +233,12 @@ if b2.refusal is None:
 
     inc_ok = all(not (C[i][j] or C[j][i])
                  for i, j in combinations(dirs_idx, 2))
-    check("K4 the directions are a genuine sky: pairwise INCOMPARABLE "
-          "(proposal locality), one common height, all strictly above "
-          "E; the height offset is REPORTED — the claim is "
-          "reading-relative to SKY-B at that depth",
+    check("K4 the directions are a genuine sky: pairwise INCOMPARABLE, "
+          "one common height, all strictly above E; offset REPORTED — "
+          "reading-relative to SKY-B at that depth.  (Round-1 MINOR 6: "
+          "the incomparability clause is DERIVED from equal height, "
+          "since x < y forces h[x] < h[y]; it is kept as a printed "
+          "fact, not counted as independent evidence)",
           inc_ok and len({hh[i] for i in dirs_idx}) == 1
           and all(C[E2][i] for i in dirs_idx),
           f"incomparable = {inc_ok}, h = {hh[dirs_idx[0]]}, "
@@ -256,10 +258,17 @@ if b2.refusal is None:
 
     wit = shattered_set(rows, dirs, 4)
     check("K7 **ALL 16 SUBSETS ARE REALIZED AND THE INSTRUMENT RETURNS "
-          "A SHATTERED 4-SET.**  Under the committed SKY-B reading at "
-          "the reported depth, this record's sky is NOT realizable as a "
-          "2+1 celestial sky — arcs on a circle cannot shatter 4 (D47a "
-          "SG0, constructed, not cited)",
+          "A SHATTERED 4-SET.**  WHAT THIS LICENSES, restated per "
+          "round-1 MAJOR 2: shatter-4 => NOT AN ARC SYSTEM is a theorem "
+          "(arcs realize 14/16 on any 4 columns, missing the crossing "
+          "pairs); 'not a 2+1 celestial sky' holds ONLY under the strict "
+          "stipulation that a 2+1 sky means an arc system — d47a's own "
+          "demotion showed a MAJORITY of genuine discrete 2+1 SKY-B "
+          "skies are non-arc (218/397 decided, round-1 recount).  The "
+          "sound discrete separation is EMPIRICAL: 1,925 SC5-capable "
+          "genuine M^{2+1} SKY-B pairs at depths 1..10 show ZERO "
+          "shatterings [REFEREE-CARRIED, round 1] while THIS record "
+          "shatters",
           NEED <= have and wit is not None,
           f"subsets = {len(have & NEED)}/16; shattered 4-set = "
           f"{sorted(idx_of[i] for i in wit) if wit else None}")
@@ -278,30 +287,60 @@ if b2.refusal is None:
                  for trs in byact.values()
                  for a, b in combinations(trs, 2))
     contributing = sum(1 for trs in byact.values() if trs)
-    check("K8 CONSISTENCY WITH THE DILWORTH GATE: traces decompose into "
-          "per-initiator CHAINS (zero crossings) and >= 6 actors "
-          "contribute — the construction SATURATES the theorem, it does "
-          "not beat it",
-          nested and contributing >= 6,
-          f"nested = {nested}, contributing actors = {contributing} "
-          f"(bound: 6), total = {len(ACT2)}")
+    # round-1 MINOR 5: the realized family's OWN minimum chain cover —
+    # its 6 pairs are an antichain (>= 6) and the B4 SCD covers it
+    # (<= 6), so the cover is EXACTLY 6, the Dilworth bound attained.
+    realized = {frozenset(t) for t in have}
+    six_pairs = {frozenset(x) for x in combinations('ABCD', 2)}
+    cover_exact6 = six_pairs <= realized and realized == {
+        frozenset(x) for k in range(5) for x in combinations('ABCD', k)}
+    check("K8 CONSISTENCY WITH THE DILWORTH GATE (restated per round-1 "
+          "MINOR 5 — the first draft's 'SATURATES' was false as worded): "
+          "traces decompose into per-initiator CHAINS with zero "
+          "crossings; >= 6 actors contribute; and **the realized "
+          "16-trace family's minimum chain cover is EXACTLY 6** (its six "
+          "pairs are an antichain, the B4 SCD covers it) — the family is "
+          "Dilworth-TIGHT, while the actor spend is 16 contributing / "
+          "20 total.  The 6-vs-20 gap is ARCHITECTURAL — the scheduling "
+          "cost of backflow — not slack in the family",
+          nested and contributing >= 6 and cover_exact6,
+          f"nested = {nested}, contributing = {contributing}, family "
+          f"min-cover = 6 exact = {cover_exact6}")
 
     for kind in ('A', 'C'):
         dA, rA = sky(C, E2, kind)
-        check(f"K9-{kind} D53 CONTROL: SKY-{kind} on this record has NO "
-              "empty trace — the definition-level disqualification "
-              "reproduced on the constructed object",
+        check(f"K9-{kind} [THEOREM-PASS, labelled per round-1 MINOR 6] "
+              f"SKY-{kind} on this record has NO empty trace.  D53 "
+              "proved this can NEVER fail for any record (covers/"
+              "co-covers structurally exclude the empty trace), so this "
+              "gate is a consistency exhibit, not evidence",
               frozenset() not in set(rA),
               f"|dirs| = {len(dA)}, empty = {frozenset() in set(rA)}")
 
+    # round-1 MINOR 2: the pin promised per-d reporting and the first
+    # draft delivered one depth.  The full table, gated.
+    print("\n  per-depth table (pin §5's promise, delivered):")
+    shatter_ds = []
+    for dd in range(1, 9):
+        dD, rD = sky(C, E2, 'B', dd)
+        rset = set(rD)
+        capD = len(dD) >= 4 and len(rset) >= 16 and frozenset() in rset
+        wD = shattered_set(rD, dD, 4) if len(dD) >= 4 else None
+        if wD is not None:
+            shatter_ds.append(dd)
+        print(f"    d={dd}: |dirs|={len(dD)}, distinct traces="
+              f"{len(rset)}, SC5-capable={capD}, shatter4="
+              f"{sorted(wD) if wD else None}")
+    check("K11 PER-DEPTH REPORTING (round-1 MINOR 2 — the omission had "
+          "UNDERSTATED the result): the record shatters a 4-set at "
+          "THREE depths, d = 4, 5, 6, on three different direction "
+          "sets, and at no other depth in 1..8.  The certificate is "
+          "reading-relative to SKY-B but not to a single depth",
+          shatter_ds == [4, 5, 6],
+          f"shattering depths = {shatter_ds}")
+
 # hygiene
 _self = ast.parse(open('v10/code/d54b_shatter_construction_exact.py').read())
-_bound = set()
-for _n in ast.walk(_self):
-    if isinstance(_n, ast.Name) and isinstance(_n.ctx, ast.Store):
-        _bound.add(_n.id)
-    elif isinstance(_n, (ast.FunctionDef, ast.ClassDef)):
-        _bound.add(_n.name)
 _ch = [c for c in ast.walk(_self) if isinstance(c, ast.Call)
        and isinstance(c.func, ast.Name) and c.func.id == 'check']
 _vac = [c for c in _ch if isinstance(c.args[1], ast.Constant)]
@@ -316,9 +355,12 @@ if b2.refusal is None:
     print(f"  20-actor, {len(b2.H)}-event transport record, every event")
     print("  selected from the committed layer's own menu, whose SKY-B")
     print("  sky at the minting event realizes ALL 16 subsets of its 4")
-    print("  directions and returns a shattered 4-set.  Under that")
-    print("  committed reading the sky is NOT realizable as a 2+1")
-    print("  celestial sky.")
+    print("  directions and returns a shattered 4-set — at THREE depths")
+    print("  (4, 5, 6).  WHAT THAT LICENSES (round-1 MAJOR 2): NOT an")
+    print("  arc system (theorem); 'not a 2+1 sky' only under the strict")
+    print("  arc-model stipulation; the DISCRETE separation from genuine")
+    print("  M^{2+1} records is EMPIRICAL — 1,925 capable pairs, zero")
+    print("  shatterings [REFEREE-CARRIED] — against this record's three.")
     print("  AND THE PINNED BLUEPRINT'S FAILURE IS PART OF THE RESULT:")
     print("  sender-wire backflow is why 9 actors and 31 events were not")
     print("  enough — knowledge transport is monotone along wires, and")
