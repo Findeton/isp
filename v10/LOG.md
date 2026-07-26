@@ -10759,3 +10759,27 @@ mechanization, inherited unchanged.  Paper 30/32 updates and the
 book patch DISPATCHED NEXT (one-go discipline; the blacklisted
 sentence "residue 1 is closed" becomes quotable WITH ITS SCOPE
 CLAUSE and only so).
+
+## 2026-07-26 — D64 PINNED: THE COCYCLE — do the wide crystal's charts
+## carry non-identity transitions? (LEDGER #461)
+Pin FROZEN before any receipt: note-d64-cocycle-pin.md.  The manifold
+program's next joint: charts exist (D63 TERMINAL), overlaps are
+inclusions as SET maps (D58's containment theorem — omega-overlaps
+nested), so transition content must live in COORDINATES.  The
+committed-layer labeling: a direction's label in chart e = the set of
+register sequences (wire words) realized by P-paths e -> f — a
+reading of event_poset's own generating relation (W4b's P).
+Substrate: DOUBLE-RING(8, 10, 8) via D63's committed blueprint
+(anchor); controls: genuine sprinklings (d55c) + the uncoupled brick.
+Gates C0-C6: chart census, TRANSITION census (identity vs
+non-identity, both depths, wide subatlas separately), THE COCYCLE
+TEST on chart triples, the group census if non-identity exists,
+controls both columns, no invented thresholds.  Pre-registered
+outcomes: G1 flat (tensor seed not in the delivery crystal), G2
+obstruction (the failure pattern localizes the finer chart notion),
+G3 a G-structure (name the group; the tensor/curvature program has
+its object).  Lean recorded: parity-alternating inter-ring coupling
+makes even/odd chart neighborhoods non-congruent — a wire
+transposition at coupled wires is plausible.  Scope: width <= 4 by
+W4b on every delivery substrate; ends caveat attached; missing map
+not claimed.  Worker dispatched.
