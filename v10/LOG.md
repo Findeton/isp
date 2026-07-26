@@ -10307,3 +10307,22 @@ two-click-law flag resolves: three senses of "the click law"
 identified: anchored, not proved record-closed), one program, one
 missing map. Book patch dispatched per the #444 integration
 discipline.
+
+## 2026-07-26 — D60 PINNED: THE CRYSTAL QUESTION (LEDGER #447)
+Pin before code: note-d60-crystal-question-pin.md. Per D59: pinned on
+the GRAMMAR (the record-closed generated-law line), transfer to the
+identified law through the missing map DECLARED; per #440: a
+MECHANISM unit (tiling capacity), never an object claim. Committed
+blueprints, not searches: CRYSTAL-1D (the brick wall — m ring actors,
+v1 minted and broadcast, then alternating even/odd re-delivery rounds
+= the 1+1 brick lattice worn as a record) and CRYSTAL-2D (k x k grid,
+four cycling delivery phases). Pre-registered: admissibility YES
+(lean strong); atlas verdict by ORDERINGS ONLY (no invented
+thresholds — the D58 lesson): homogeneity above the engineered 0.39,
+comparable to the sprinkling floor 0.64; |D| census narrow for the
+brick (1+1-thin, honestly) and wider for the grid. A tiling failure
+would be the framework's FIRST ANTI-MANIFOLD fact — a real negative.
+IN PARALLEL: an Opus 5 advisory probe attacks (H1) — counterexample
+hunt beyond depth 7 + the only live proof route (the four projections
+of the candidate's own view as a function of sigma; the closed form
+for own-views from register chaining) with both dead routes barred.
