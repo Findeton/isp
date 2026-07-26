@@ -9756,3 +9756,39 @@ actors by counting, not by Sperner.
 NEXT (residues, ranked): 1c shatter-5 (the beyond-3+1 meter); 1b
 promote the trace-count bound in-receipt; the S^2 cap-realization of
 the constructed shadow system; minimality (6 vs 20).
+
+## 2026-07-26 — D55 PINNED: THE DIMENSION METER (LEDGER #430)
+Pin committed BEFORE any receipt: note-d55-dimension-meter-pin.md.
+User direction: A1 (shatter-5), A2 (sphere calibrations), B1
+(transport-sigma closure, running as an ADVISORY Opus 5 probe in
+parallel — pre-pin study, to be verified before any corpus use), then
+REASSESS at the convergence question.
+THE METER: max shatter k = the framework's dimension signature
+(3 = circle-compatible, 4 = sphere, 5 = S^3, k = S^(k-1)), priced by
+the Dilworth gate at C(k, floor(k/2)) actors (3/6/10/...).
+**A1: THE GENERALIZED COURIER BUILDER, committed in the pin** — one
+accumulator per dBTK chain, one clean courier per contaminating step,
+cost (|S1|-1)+(len-1) per chain; m = 5 needs 10 chains, 26 couriers,
+42 actors, 84 events. The m = 4 record is re-derived as an ANCHOR (the
+general machine must reproduce the hand-built one). Tractability:
+initiator-restricted menus, sound because admissible(acts,e) reads no
+actor list — GATED by sampled full-menu equivalence.
+**PRE-REGISTERED: CONSTRUCTIBLE** (nothing caps deliveries; couriers
+price away the only failure mode D54 found) — against the record that
+five of my seven pre-registrations this campaign were corrected.
+**PRE-STATED CONSEQUENCE: if it builds, the admissibility layer does
+NOT select 3+1 — the ladder measures capacity, not selection, and
+selection (if anywhere) lives in the MEASURE — the convergence
+question.** A refusal would be the framework's first dimensional
+selection and the MORE important result.
+A2a: the m = 4 family realized EXACTLY by caps on S^2 (d47a's rational
+tetrahedron; 16 exact certificates) — sphere-COMPATIBILITY. A2b
+[THEOREM to certificate]: no five points admit cap shattering on S^2
+(affine dependence -> Radon partition -> blocked subset; exact
+certificates on concrete configs). A2c (only if A1 succeeds): the
+m = 5 family realized on S^3 (e1..e4 + (-1/2,-1/2,-1/2,-1/2); 32
+certificates) — "beyond 3+1" made concrete: fits S^3, provably not
+S^2.
+Claims reading-relative to SKY-B with per-depth reporting; NO
+genericity claim (not posable at transport scope, D52). Review:
+independent Opus 5 round after green.
