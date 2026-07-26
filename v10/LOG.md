@@ -9625,3 +9625,52 @@ the narrower-than-chance result); engineering the blueprint reversed
 me; both states on the record. SC5 capacity, SKY-B only, per-d
 reporting, claims scoped per pin §5. REVIEW: independent Opus 5
 background worker, recompute-not-trust, after green.
+
+## 2026-07-26 — D54 GREEN-UNREVIEWED: THE DILWORTH GATE HOLDS AND A
+## RECORD SHATTERS (LEDGER #428)
+Receipts: d54_dilworth_gate_exact.py 9 PASS / 0 FAIL;
+d54b_shatter_construction_exact.py 11 PASS / 0 FAIL; both exit 0.
+Result note: note-d54-dilworth-gate-result.md (theorem-with-proof).
+**STAGE 0 — PREMISE P GATED AT TRANSPORT SCOPE.** Any two events
+sharing an actor wire are comparable: 218,795 actor-sharing pairs
+(deliveries' two-carrier case included), ZERO violations, over the
+exhaustive 2-actor family and sampled widths 3/4/6.
+**STAGE 1 — THE THEOREM.** One actor's worldline contributes a CHAIN
+of traces (nested down-sets; corroborated over 15,909 skies, 33,546
+per-actor groups, zero non-nested pairs), so a k-actor shadow family
+is a union of <= k inclusion-chains; covering B_m needs
+C(m, floor(m/2)) chains (dBTK recursion gives the chain PARTITION and
+the middle-layer antichain at the SAME count, constructive both ways,
+m <= 6 — the first-draft brute force at 2^32 masks was unrunnable and
+replaced). **SHATTER-4 NEEDS >= 6 ACTORS; A SPHERE-LIKE SKY NEEDS
+UNBOUNDEDLY MANY — the author's infinite-clocks doctrine is now a
+THEOREM at gated scope.** Width is not just D47b's observed scaling
+variable; it is the provable price of dimension.
+**STAGE 2 — THE PINNED BLUEPRINT FAILED, AND THE FAILURE IS A
+FINDING (pin §8 A1, gated as exhibit N1).** The 9-actor build is
+ADMISSIBLE (31 events, all menu-offered) and realizes only 8/16:
+**a delivery is a join in BOTH directions** — the sender's wire
+absorbs the receiver's accumulated past and the accumulator chains
+collapse onto one. The per-sender send-traces form a chain: the
+theorem biting its own construction.
+**THE COURIER ARCHITECTURE SUCCEEDS (§8 A2).** Sending into an EMPTY
+receiver folds nothing back, so direction-actors mint one clean
+courier per contaminating step (11 couriers). **A 20-ACTOR, 42-EVENT
+TRANSPORT RECORD, EVERY EVENT SELECTED FROM THE COMMITTED LAYER'S OWN
+MENU, WHOSE SKY-B(5) SKY REALIZES ALL 16 SUBSETS OF ITS 4
+PAIRWISE-INCOMPARABLE DIRECTIONS AND RETURNS A SHATTERED 4-SET.** SC5
+capacity satisfied (16 distinct traces incl. empty); consistency:
+traces decompose into per-initiator chains, 16 contributing actors
+(SATURATES the theorem); SKY-A/C on the same record have no empty
+trace (D53 reproduced on the constructed object).
+**THE CLAIM, SCOPED:** the transport layer admits a record whose
+SKY-B(5) sky is NOT REALIZABLE AS A 2+1 CELESTIAL SKY — the corpus's
+first obstruction certificate against 2+1, measure-free. NOT a
+positive 3+1 claim: shattering rules OUT the circle, not IN the
+sphere; the S^2 cap-realization side is a separate unit, now
+warranted for the first time. Reading-relative to SKY-B at d = 5.
+RESIDUES: minimality (bound 6 vs construction 20 — does backflow
+force more than 6?); the S^2 side; genericity under any completed
+measure (not posable at transport scope, D52); the depth parameter
+(d = 2 construction or a forced-depth bound).
+NEXT: independent Opus 5 hostile round; nothing citable before it.

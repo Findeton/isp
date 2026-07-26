@@ -1,38 +1,43 @@
 [D54b — the targeted shatter construction]
-  banner: the builder SELECTS every event from the committed
-  d42b1 menu; a refusal is an exit-0 deliverable naming the
-  blocking step.  Capacity gate = D53 SC5, never D47 SG2.
-  Sky = SKY-B only (D53); the depth used is REPORTED and the
-  claim is reading-relative to it.
-  [PASS] K0 anchors: transport layer from committed d42b1, sky/shatter from committed D47a (AST extraction)  (single sources)
+  banner: two builds, both menu-selected.  PART 1 = the pinned §4
+  blueprint as a NEGATIVE EXHIBIT (admissible, 8/16, the backflow
+  mechanism).  PART 2 = the §8 courier architecture.  Capacity =
+  D53 SC5; SKY-B only; depth reported; claims reading-relative.
+  [PASS] K0 anchors: transport layer from committed d42b1, sky/shatter from committed D47a (AST extraction) — nothing re-implemented  (single sources)
 
-[the build — every event selected from the layer's own menu]
-  [PASS] K1 the opening is admissible and mints a fresh version: X's proposal and arbitration selected from the menu, and the layer now OFFERS deliveries of a non-genesis version — v1 read from the menu, never reconstructed  (E at index 1; v1 = ('v', ('v', 'v0'), (0,), ('X',), 'X'))
-  [PASS] K2 the four directions are built: each direction-actor padded to the common height and proposed on v1 — four events, pairwise incomparability and equal height verified below on the finished poset  (direction indices = {'A': 9, 'B': 12, 'C': 14, 'D': 15})
-  [PASS] K3 THE BLUEPRINT IS ADMISSIBLE END TO END: all 31 events were offered by the committed layer's own menu at their prefixes — the layer, not the author, decided  (events = 31, refusal = None)
-  [PASS] K4 the directions are a genuine sky: pairwise INCOMPARABLE (proposal locality did its job), all at ONE height, all strictly above E — and the height offset is REPORTED, since the claim is reading-relative to SKY-B at that depth  (pairwise incomparable = True, common height = True (h = 6), above E = True, DEPTH = 5)
-  [PASS] K5 SKY-B AT E REPRODUCES THE INTENDED DIRECTIONS from the committed instrument itself — the four proposals and nothing else at that offset  (instrument dirs = [9, 12, 14, 15], blueprint dirs = [9, 12, 14, 15])
-  [FAIL] K6 CAPACITY BY THE CORRECTED CONDITION (D53 SC5, never D47 SG2): >= 4 directions, >= 16 DISTINCT traces, empty trace present  (|dirs| = 4, distinct traces = 8, empty present = True)
-  [FAIL] K7 **ALL 16 SUBSETS OF THE 4 DIRECTIONS ARE REALIZED AS TRACES, AND THE INSTRUMENT RETURNS A SHATTERED 4-SET.**  Under the committed SKY-B reading at the reported depth, this record's sky is NOT realizable as a 2+1 celestial sky — arcs on a circle cannot shatter 4 (D47a SG0, constructed)  (subsets realized = 8/16; shattered 4-set = None; traces = [(), ('A',), ('A', 'B'), ('A', 'B', 'C'), ('A', 'B', 'C', 'D'), ('B',), ('C',), ('D',)])
-  [FAIL] K8 CONSISTENCY WITH THE DILWORTH GATE: the record's traces decompose into per-initiator CHAINS (zero crossings), and at least 6 actors contribute — the construction does not beat the theorem, it SATURATES it  (per-actor chains nested = True, contributing actors = 5 (bound: 6), total actors = 9)
-  [PASS] K9-A D53 CONTROL: SKY-A on this same record has NO empty trace, so it could never have shattered — the definition-level disqualification reproduced on the constructed object  (|dirs| = 1, empty trace present = False)
-  [PASS] K9-C D53 CONTROL: SKY-C on this same record has NO empty trace, so it could never have shattered — the definition-level disqualification reproduced on the constructed object  (|dirs| = 1, empty trace present = False)
-  [PASS] K10 AST anti-vacuity (scope per LOG #403 MA-2: references >= 1 run-bound name, nothing more)  (check() calls = 11, bare/unbound = 0)
+[PART 1 — the pinned §4 blueprint, as a negative exhibit]
+  [PASS] N1 [NEGATIVE EXHIBIT, gated] THE PINNED §4 BLUEPRINT IS ADMISSIBLE AND FAILS: all events menu-offered, yet only 8/16 subsets realized.  The mechanism is SENDER-WIRE BACKFLOW — a delivery joins both ways, the sender absorbs the receiver's accumulated past, and the accumulator chains collapse onto one.  The per-sender send-traces form a chain: the theorem biting its own construction.  Pin §8 A1, on the record  (events = 31, subsets = [(), ('A',), ('A', 'B'), ('A', 'B', 'C'), ('A', 'B', 'C', 'D'), ('B',), ('C',), ('D',)])
+
+[PART 2 — the §8 courier architecture]
+  [PASS] K3 THE COURIER BLUEPRINT IS ADMISSIBLE END TO END: all 42 events over 20 actors were offered by the committed layer's own menu at their prefixes — the layer, not the author, decided  (events = 42, refusal = None)
+  [PASS] K4 the directions are a genuine sky: pairwise INCOMPARABLE (proposal locality), one common height, all strictly above E; the height offset is REPORTED — the claim is reading-relative to SKY-B at that depth  (incomparable = True, h = 6, DEPTH = 5)
+  [PASS] K5 SKY-B at E reproduces the intended directions from the committed instrument itself  (instrument dirs = [9, 12, 14, 15], blueprint = [9, 12, 14, 15])
+  [PASS] K6 CAPACITY BY THE CORRECTED CONDITION (D53 SC5, never D47 SG2): >= 4 directions, >= 16 DISTINCT traces, empty trace present  (|dirs| = 4, distinct traces = 16, empty = True)
+  [PASS] K7 **ALL 16 SUBSETS ARE REALIZED AND THE INSTRUMENT RETURNS A SHATTERED 4-SET.**  Under the committed SKY-B reading at the reported depth, this record's sky is NOT realizable as a 2+1 celestial sky — arcs on a circle cannot shatter 4 (D47a SG0, constructed, not cited)  (subsets = 16/16; shattered 4-set = ['A', 'B', 'C', 'D'])
+  [WITNESS TRANSPORT-SHATTER-4] taken by a REAL record: set = ['A', 'B', 'C', 'D'], actors = 20, events = 42, depth = 5
+  [PASS] K8 CONSISTENCY WITH THE DILWORTH GATE: traces decompose into per-initiator CHAINS (zero crossings) and >= 6 actors contribute — the construction SATURATES the theorem, it does not beat it  (nested = True, contributing actors = 16 (bound: 6), total = 20)
+  [PASS] K9-A D53 CONTROL: SKY-A on this record has NO empty trace — the definition-level disqualification reproduced on the constructed object  (|dirs| = 1, empty = False)
+  [PASS] K9-C D53 CONTROL: SKY-C on this record has NO empty trace — the definition-level disqualification reproduced on the constructed object  (|dirs| = 1, empty = False)
+  [PASS] K10 AST anti-vacuity (scope per LOG #403 MA-2: no bare-constant predicates, nothing more)  (check() calls = 11, bare = 0)
 
 [VERDICT — D54b]
-  THE BLUEPRINT IS ADMISSIBLE AND IT SHATTERS.  A 9-actor,
-  31-event transport record, every event selected from
-  the committed layer's own menu, whose SKY-B sky at the
-  minting event realizes ALL 16 subsets of its 4 directions —
-  including the empty trace and all six pairs — and is
-  therefore NOT realizable as a 2+1 celestial sky.
-  SCOPE, carried: the claim is reading-relative to SKY-B at
-  the reported depth; it is an OBSTRUCTION certificate against
-  2+1 under that committed definition, and says NOTHING
-  positive about 3+1 — the S^2 cap-realization side is a
-  separate unit.  The construction SATURATES the Dilworth
-  gate rather than beating it.
+  THE COURIER BLUEPRINT IS ADMISSIBLE AND IT SHATTERS: a
+  20-actor, 42-event transport record, every event
+  selected from the committed layer's own menu, whose SKY-B
+  sky at the minting event realizes ALL 16 subsets of its 4
+  directions and returns a shattered 4-set.  Under that
+  committed reading the sky is NOT realizable as a 2+1
+  celestial sky.
+  AND THE PINNED BLUEPRINT'S FAILURE IS PART OF THE RESULT:
+  sender-wire backflow is why 9 actors and 31 events were not
+  enough — knowledge transport is monotone along wires, and
+  only clean couriers can carry a single direction into a
+  charged accumulator.
+  SCOPE: reading-relative to SKY-B at the reported depth; an
+  obstruction certificate against 2+1, NOT a positive 3+1
+  claim — the S^2 side is a separate unit.  20 actors vs the
+  theorem's bound of 6: minimality is an open residue.
 
-[d54b] 9 PASS / 3 FAIL
-EXIT 1
-RC=1
+[d54b] 11 PASS / 0 FAIL
+EXIT 0
+RC=0
