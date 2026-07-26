@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #445** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #447** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -655,17 +655,74 @@ So the honest status of the click law is a **ladder with five rungs**:
   loud and treats "which reading is physically privileged?" as an open
   question rather than an implementation detail.
 
-### A2.5 The one-sentence answer
+### A2.5 The one-sentence answer, in three parts
 
 *How well defined is the interactive click law?*
 
-> **The admissibility layer is complete.  The probabilistic layer is
-> provably not self-normalizing.**
+The question has three answers, because the corpus uses the phrase for
+three different objects.
 
-Those are not two grades of the same claim; they are different kinds of
-statement.  The first is a fact about a finished object.  The second is
-a theorem about an unfinished one — and the theorem is what makes the
-unfinished part interesting rather than merely incomplete.
+> **The grammar's ADMISSIBILITY law is complete.**  What may happen next
+> is unambiguous, executable, exhaustively enumerable.
+>
+> **The grammar's PROBABILITY law is provably not self-normalizing.**
+> That is the subject of chapter A6, and it is a theorem, not a gap.
+>
+> **The IDENTIFIED law is empirically anchored but not proved
+> record-closed.**  This is a third object, from the programme's other
+> stream, and §A2.6 introduces it.
+
+The first is a fact about a finished object.  The second is a theorem
+about an unfinished one — which is what makes the unfinished part
+interesting rather than merely incomplete.  The third belongs to a
+different stream of the programme, and the relation between it and the
+first two is the corpus's deepest named gap.
+
+### A2.6 The other stream: the identified law
+
+Everything above describes one of the programme's **two** descriptions of
+dynamics.  There is a second, and a reader should know it exists, because
+it is where the corpus touches experiment.
+
+**The action line** asks a different question.  Instead of *what grammar
+could generate a world?*, it asks *given the world we measure, what law
+have the measurements already identified?*  Its answer is assembled from
+a chain of results: that a whole-history process has no second generator
+besides its own conditional measure; that the operational core of a
+record law is a small, named set of ingredients; and a proposed principle
+— **no silent erasure**: every lost distinction must be *received* by
+records, so sealing is dispersal and never intrinsic destruction.
+
+With those in place the identification is stated plainly: the clicks we
+have already measured identify the **Standard Model plus effective
+gravity, at the measured couplings, as the leading history generator over
+the energies those measurements reach.**  The corpus is careful about what
+that means.  It is *identified, not derived* — the status Newtonian
+gravity held in its era, and defeasible for the same reason.  It says
+nothing about physics at energies nobody has probed.  And it presupposes
+a spacetime for the fields to live on.
+
+**That last clause is the whole problem.**  The grammar of this chapter
+presupposes *no* spacetime — generating causal structure is exactly what
+it is for.  The identified law lives *on* a spacetime and says what
+happens there.  So the two streams describe dynamics in two incompatible
+registers, and the corpus's own audit says they **meet at one missing
+map**: what is needed is a demonstration that the identified law is itself
+record-closed — that its boundary state, its measure, its record
+instrument and, pointedly, its **generated record grammar** are *derived*
+rather than supplied.  They are currently supplied.
+
+Part of the crossing exists.  There is a conditional theorem giving the
+conditions under which a click law descends from the quantum functional —
+roughly: the records being asked about must genuinely decohere, both
+routes must name the same event, the conditions must carry positive
+weight, and the boundary must be **sufficient**.  That last condition has
+teeth: erase the record of an experiment's setting and sufficiency
+breaks.
+
+> **So: one programme, one missing map.**  Until it closes, the grammar's
+> geometry and the laboratory's clicks are **two ledgers**, and no result
+> may be carried from one to the other.
 
 > **What this chapter does NOT claim.**  That the weights are
 > probabilities, or ratios of probabilities of anything observed.  That
@@ -2617,10 +2674,144 @@ failure is GRAIN, not INTERACTION" is WITHDRAWN.**  The named successor
 is the channel-reading question itself: *which reading is physically
 privileged?* — open.
 
+**(vi) And a third object wears the same name.**  "The interactive click
+law" denotes three things in this corpus, and conflating them is the
+single easiest error to make:
+
+| sense | object | status |
+|---|---|---|
+| **ADMISSIBILITY law** | the grammar's `candidates_for` | **complete** — unambiguous, executable, exhaustively enumerable (§B2.4) |
+| **PROBABILITY law** | the grammar's weight system, completed | **provably not self-normalizing** — the dichotomy (§B6) |
+| **IDENTIFIED law** | the conditional measure of the D15 action | **empirically anchored, not proved record-closed** (§B2.9) |
+
 > **The one-sentence answer to "how well defined is the interactive click
 > law?":** the **admissibility** interactive law is **complete**; the
 > **probabilistic** interactive law is **provably not self-normalizing**
-> (§B6).
+> (§B6); and the **identified** law is **anchored but not record-closed**
+> (§B2.9).  One programme, three senses, **one missing map**.
+
+### B2.9 The action line, the identified law, and the missing map
+
+*Sources: paper 18 (`relativistic-isp-v10-paper18-no-silent-erasure-and-the-identified-click-law.md`); paper 29 (`…-paper29-where-the-action-cocycle-lives.md`), the bridge audit; `note-d59-click-law-identity.md`; `v8/LEDGER.md` #126, #128–#130, which is this stream's own ledger.*
+
+The corpus carries **two descriptions of dynamics**, and paper 29's
+abstract opens by saying so:
+
+> *"The program has carried two descriptions of dynamics without placing
+> them on one type ledger."*
+
+**THE ACTION LINE `[papers 13/15/18/19; D20–D27]`.**  Quantum-mechanical
+throughout — amplitudes, class operators, a decoherence functional, with
+durable clicks obtained only after a record instrument is **supplied**.
+Its chain: paper 13 (a supplied whole-history process has no second
+next-click generator — its **conditional measure is the click law**);
+D18 (the operational `(E, D)` core plus record semantics); paper 16 (the
+action does **not** select the complete history law); paper 17 (two
+complete rulebooks agreeing on every proper record shadow and differing
+at complete support).  Then a posited principle closes the coherence
+clause:
+
+> **NO SILENT ERASURE `[POSITED]`.**  Every loss of a record-accessible
+> distinction must be **received** by records: distinctions are sealed
+> only by dispersal of their content into other record systems, never by
+> intrinsic destruction.  Equivalently: total content is conserved (the
+> closure is unitary), and **sealing = dispersal**, with the v6 quarter
+> law (§C1) as its metric.
+
+It selects exactly one equivalence class at the coherence clause, forbids
+intrinsic-collapse generators as silent erasure, and prints a
+parameter-free falsifier (residual complete-history suppression zero
+within stated sensitivity, no new constants).  A companion exact receipt
+shows click statistics **identify both interaction graph and coupling** on
+a rational witness family — star versus chain separating at every interior
+coupling with closed forms `P(C=1) = s·16/25` versus `s²·16/25`,
+necessarily coinciding at `s ∈ {0,1}`, with the coupling pinned by an
+exactly linear statistic.  D25 later replaced the ensemble-injectivity
+form of the principle with **distinguishability-isometry**, and D27
+replaced the Molnár/Kadison surjectivity import with **Busch 1999** as the
+governing non-surjective theorem.
+
+**The identification `[SYNTHESIS + LITERATURE]`, as paper 18 states it:**
+
+> the currently measured clicks identify the **Standard Model plus
+> effective gravity** — the **D15 action** at the measured couplings
+> (`α⁻¹ = 137.035999…`, `α_s(M_Z) = 0.1180`,
+> `G_F = 1.1663787×10⁻⁵ GeV⁻²`, `sin²θ̂(M_Z) = 0.23122`, the Yukawa
+> ladder, `λ_H ≈ 0.13`, `κ = 8πG/c⁴`) — **as the leading history
+> generator over their tested energy domain.**
+
+**The ceiling is carved in**, in the paper's own words: *identified, not
+derived*; low-energy domain only; UV completion, carrier-birth selection,
+**3+1 emergence** and the derivation of `G`'s value all remain open.  Not
+claimed: the complete click law at every energy — the same global record
+demands at least a neutrino-mass operator and a dark sector.
+
+**THE GENERATED-LAW LINE `[papers 26–32; D34–D58]`** is everything else in
+Parts A and B: record-closed conditional laws on generated carriers,
+culminating in the d42a/d42b grammar, its weight system, the completion
+dichotomy and the geometry programme.  Constructed and receipt-anchored;
+**generates** causal structure; **presupposes no spacetime**.
+
+**THE MISSING MAP.**  Paper 29 §1.1:
+
+> *"The action line and the generated-law line now meet at one missing
+> map."*
+
+and its abstract closes on what is missing:
+
+> *"the D15 low-energy action is retained, yet the corpus still **supplies
+> rather than derives** its boundary state, measure and contour,
+> renormalization, record instrument, **generated record grammar** and
+> clock dictionary.  **The identified law has therefore not yet been
+> proved record-closed.**"*
+
+> **So the two are NOT the same object, and there is NO identity theorem.
+> The relation is a named MISSING MAP** — and naming it is itself the
+> result: the grammar of §§B2.2–B2.7 is precisely the *generated record
+> grammar* that the identified law currently receives as a supplied slot.
+
+**The partial bridge `[paper 29, conditional theorem]`.**  A scalar click
+cocycle **descends** from the quantum decoherence functional exactly when
+four conditions hold: the queried record algebra **decoheres**; both
+routes name one refined cylinder or one declared pushforward atom; every
+displayed conditioning cylinder has **positive mass**; and the regional
+**boundary is sufficient**.  For a positive refined cylinder measure the
+descended equality is elementary:
+
+```
+P(a|H) P(b|Ha)  =  mu(Hab)/mu(H)  =  P(b|H) P(a|Hb)
+```
+
+The sufficiency clause is not decorative: on the paper's exact Bell
+fixture (`CHSH = 2√2`, four spacelike operator interchanges, sixteen
+no-signalling marginal checks, sixteen refined click cocycles, 320 exact
+Gram-positivity controls), **erasing a measurement-setting record makes
+the boundary insufficient** and the descent fails.
+
+**And a discipline that travels with it.**  Paper 28's chosen projected
+generator fails **337 of 506** registered flat action squares, smallest
+witness `1/18 ≠ 2/33`.  That inequality is **exact** — and paper 29
+reclassifies what it means: the two serial weights push forward to **one
+unordered action atom of mass `23/198`**, and the corresponding weights of
+the embedded jump law (`1/32`, `1/48`) to one typed causal-DAG atom of
+mass `5/96`.  Both pushforwards normalize.
+
+> **Paper 28's flat action-variety nonmembership survives; NO
+> probability-law inconsistency follows.**  An unordered atom sums
+> serialization preimages; it does not require their weights to be equal.
+> (Paper 29 also shows K-flat's completion form is a general positive
+> `h`-ratio, **not** a uniquely Born signature — which is the same lesson
+> §B4.3 teaches about flatness.)
+
+**Where this stream's ledger lives:** `v8/LEDGER.md` #126 (the paper-18
+hostile round: 12 MAJOR / 25 MINOR / 18 NIT applied, **zero false receipt
+results**, the receipt surviving clean-room rebuild), #128 (round-2
+integrated delta), #129–#130 (the complete-record-law campaign: D24's
+birth kernel, D25's supersession of the F1 route, D26's declared
+interface, D27's Busch correction, and the **uniqueness retyping** — "one
+class" holds *given* the posited principle under a declared convention,
+while the record alone additionally tolerates sub-bound intrinsic collapse
+and modified-gravity laws).
 
 ---
 

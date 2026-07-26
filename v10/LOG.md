@@ -10326,3 +10326,32 @@ IN PARALLEL: an Opus 5 advisory probe attacks (H1) — counterexample
 hunt beyond depth 7 + the only live proof route (the four projections
 of the candidate's own view as a function of sigma; the closed form
 for own-views from register chaining) with both dead routes barred.
+
+## 2026-07-26 — D60: THE GRAMMAR TILES — CRYSTAL-1D AT SPRINKLING
+## GRADE (LEDGER #448)
+Receipt d60_crystal_exact.py, 7 PASS / 0 FAIL, exit 0 (one reporting
+fix: C3's conjunct verdict hid that the brick ALONE clears the floor;
+restated per-record).
+**CRYSTAL-1D (the brick wall): ADMISSIBLE AND IT TILES.** 8 ring
+actors, 65 events, 14 alternating re-delivery rounds, every event
+menu-offered. Atlas at d = 2: **homogeneity 77% — ABOVE the
+sprinkling floor (64%, M21) and above M31's 73%; mean overlap 0.65 —
+above BOTH sprinkling comparators (0.12 / 0.54).** At d = 3: 73% /
+0.71. **THE MECHANISM IS CERTIFIED: the grammar admits records with
+sprinkling-grade atlas profiles — the law can TILE, not only spike.**
+The 1+1 brick lattice worn as a record is exactly what the courier
+records were not: every event charted, charts overlapping.
+CRYSTAL-2D (3x3 grid, 46 events): admissible; 50-60% homogeneity,
+overlap 0.39-0.48 — above the engineered ceiling, below the
+sprinkling floor; the grid is small and boundary-dominated (46
+events, 9 actors) — SIZE IS THE NAMED RESIDUE, not a verdict.
+|D| census honest: brick max 3 (1+1-thin by design), grid max 3.
+SCOPE CARRIED: grammar layer; transfer to the identified click law
+through paper 29's missing map (D59); no typicality; no object claim
+(#440) — this unit certifies the TILING MECHANISM.
+THE ROAD FORWARD, now concrete: a tiled record with WIDE skies =
+brick homogeneity + courier width — the two mechanisms are now
+separately certified and their COMPOSITION is the next construction
+(the "wide crystal": residue 1 of this unit). Residues: bigger grid;
+the wide crystal; non-identity transitions on the brick (the real
+cocycle question now has its object).

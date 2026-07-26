@@ -1,0 +1,27 @@
+[D60 — the crystal question]
+  banner: can the grammar TILE?  Blueprints from the pin; every
+  event menu-selected (restricted menus INCLUDE the delivery
+  receiver — the corrected D55 instrument); atlas metrics from
+  the committed D58 extraction; orderings reported whichever
+  way they land; comparators cited from committed D58 output.
+  [PASS] C0 anchors: transport layer (committed d42b1) + sky instrument (committed d47a), single sources  (loaded)
+
+[CRYSTAL-1D — the brick wall, m = 8, 14 rounds]
+  [PASS] C1 CRYSTAL-1D IS ADMISSIBLE END TO END: the brick circuit (65 events over 8 actors, 14 rounds of alternating re-deliveries) — every event offered by the layer's own menu.  The pre-registered lean (re-delivery circuits run indefinitely) holds  (events = 65, refusal = None)
+  brick m=8 d=2: events=65, |D|>=2: 50 (76%), max|D|=3, pairs=96, mean omega=0.65
+  brick m=8 d=3: events=65, |D|>=2: 48 (73%), max|D|=4, pairs=92, mean omega=0.71
+
+[CRYSTAL-2D — the 3x3 grid, 12 phases]
+  [PASS] C2 CRYSTAL-2D IS ADMISSIBLE END TO END: the grid circuit (46 events over 9 actors, 12 phases)  (events = 46, refusal = None)
+  grid 3x3 d=2: events=46, |D|>=2: 23 (50%), max|D|=3, pairs=43, mean omega=0.39
+  grid 3x3 d=3: events=46, |D|>=2: 28 (60%), max|D|=3, pairs=51, mean omega=0.48
+  [PASS] C3 THE CRYSTAL VERDICT (orderings only, the D58 lesson; comparators cited from committed D58 output: sprinkling floor 64%, engineered ceiling 39%, generic walk 7%): the crystals' d = 2 homogeneity vs the three benchmarks, reported whichever way it lands  (brick = 0.77 (TILES AT SPRINKLING GRADE), grid = 0.50 (partial (46 events, boundary-dominated — size is a residue)))
+  [PASS] C4 overlap report (mean omega at d = 2; sprinkling comparators 0.12 (M21) / 0.54 (M31))  (brick = 0.65, grid = 0.39)
+  [PASS] C5 the |D| census, honest: the brick is 1+1-THIN by design and the grid wider — reported, no dimension claim beyond the census (scale doctrine: this unit certifies the TILING MECHANISM, nothing else)  (brick max|D| = 3, grid max|D| = 3)
+  [PASS] C6 AST anti-vacuity (no bare-constant predicates; #403 MA-2 scope)  (check() calls = 7, bare = 0)
+
+[VERDICT] scope carried: grammar layer; transfer to the
+  identified click law runs through paper 29's missing map
+  (D59); no typicality claim; no object claim (#440).
+
+[d60] 7 PASS / 0 FAIL
