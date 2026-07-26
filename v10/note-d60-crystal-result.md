@@ -72,11 +72,16 @@ Three separate corrections land here.
   tried**, against the sprinklings' 42–65%.  D58 computed that column
   at every record and never printed it (its round-1 MINOR 1); it is
   printed on both sides now.  Reported whichever way it lands: at
-  d = 3 the brick does reach `|D| ≥ 4` (38/65), inside the d = 3
-  sprinkling band, so the width shortfall is a **d = 2** statement —
-  exactly as the homogeneity ordering is (round-1 MINOR 4: at d = 3
-  the brick's 0.7385 sits *below* M21's 0.7500 and the ordering
-  reverses; the overlap ordering holds at both depths).
+  d = 3 the brick does reach `|D| ≥ 4` (38/65), **just below** the
+  d = 3 sprinkling band, so the width shortfall is a **d = 2**
+  statement in order of severity — exactly as the homogeneity
+  ordering is (round-1 MINOR 4: at d = 3 the brick's 0.7385 sits
+  *below* M21's 0.7500 and the ordering reverses; the overlap
+  ordering holds at both depths).  **FORWARD CORRECTION (D63 round 1,
+  MAJOR 4): this clause originally read "inside the d = 3 sprinkling
+  band"; `38/65 = 0.5846` is below the band's floor `0.6000`.  The C5
+  predicate gates d = 2 quantities and is unaffected; the receipt
+  label is corrected in the same commit.**
 
 > **THE LICENSED CLAIM, CORRECTED: the grammar admits records that
 > tile at sprinkling-grade HOMOGENEITY and above-sprinkling OVERLAP,

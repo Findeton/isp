@@ -1,11 +1,22 @@
-# D63 — result: **F3. THE WIDE CRYSTAL EXISTS.** Tiling homogeneity and chart width COMPOSE — and the new ceiling is a theorem, not a parameter.
+# D63 — result: **F3. THE WIDE CRYSTAL EXISTS, AT d = 2.** Tiling homogeneity and chart width COMPOSE — and the new ceiling is a theorem, not a parameter.
 
-**Status:** GREEN-UNREVIEWED, 2026-07-26.  Pin
+**Status:** ROUND-1 REVIEWED AND REPAIRED, 2026-07-26.  Round 1 was
+an independent Opus 5 hostile review, frozen at
+`reviews/d63-round1-hostile-review.md` — REVISE, 0 BLOCKER / 4 MAJOR
+/ 8 MINOR / 4 NIT.  **The arithmetic and the theorem both survived
+completely**: the reviewer rebuilt all 38 configurations with its own
+driver and instrument and every figure in every table reproduced
+exactly; W4b was attacked at every joint and stands.  The four MAJORs
+were all in what the unit *said* — the novelty is a **d = 2**
+statement and the first draft carried no depth label; two §2
+mechanism sentences were refuted by the receipt's own rows; band
+membership is an ends property for most of the F3 set, not just the
+winner; and the unit's own re-run contradicted a committed clause of
+D60's C5 in silence (now forward-corrected at D60).  Repairs applied;
+receipt rerun green (12 PASS / 0 FAIL, exit 0, ~6 min).  Pin
 `note-d63-wide-crystal-pin.md` (STRICT, committed before this file
-existed).  Receipt `v10/code/d63_wide_crystal_exact.py`
-(11 PASS / 0 FAIL, exit 0, ~5 min), output
-`v10/data/d63_wide_crystal_exact.out`.  An independent hostile round
-is required before anything here is citable.
+existed).  Receipt `v10/code/d63_wide_crystal_exact.py`, output
+`v10/data/d63_wide_crystal_exact.out`.
 
 ---
 
@@ -13,17 +24,29 @@ is required before anything here is citable.
 
 The pin pre-registered three outcomes and let the sweep decide.
 
-> **F3 FIRED.**  Of 38 swept configurations, **14 sit INSIDE the
-> recomputed sprinkling homogeneity band AND carry `|D| ≥ 4` charts at
-> d = 2** — across BOTH object families (9 double-rings, 5 wide
-> bricks).  D60's residue 2 — `max |D| = 3` at every `(M, R)` tried —
-> was a property of the 1+1 brick's light cone, not of tiling records
-> as such.
+> **F3 FIRED, AT d = 2.**  Of 38 swept configurations (37 distinct
+> `(M, R, C/cpl)` settings plus one cadence variant — round-1 MINOR
+> 8), **14 sit INSIDE the recomputed sprinkling homogeneity band AND
+> carry `|D| ≥ 4` charts at d = 2** — across BOTH object families (9
+> double-rings, 4 distinct wide-brick settings + the cadence variant).
+> D60's residue 2 — `max |D| = 3` at every `(M, R)` tried, **at
+> d = 2** — was a property of the 1+1 brick's light cone, not of
+> tiling records as such.
 
-Neither wall stands: F1 (the grammar wall) is refuted by the 26 swept
-configurations that reach `|D| ≥ 4` at all, and F2 (the trade-off
-wall) by the 14 of those that do so *without* leaving the homogeneity
-band.
+Neither wall stands at d = 2: F1 (the grammar wall) is refuted by the
+26 swept configurations that reach `|D| ≥ 4` at all, and F2 (the
+trade-off wall) by the 14 of those that do so *without* leaving the
+homogeneity band.
+
+**The depth label is load-bearing (round-1 MAJOR 1).**  At **d = 3**
+the F3 *pattern* (in-band and `|D| ≥ 4` present) is met by 11
+configurations of which **four have zero coupling — D60's unmodified
+brick among them** (0.7385 in the d = 3 band, `|D| ≥ 4` at 0.5846,
+`max |D|` 4).  So the composition is *not* news at d = 3; what no
+uncoupled record does at any parameter is carry `|D| ≥ 4` **at
+d = 2**, and that — the depth the pin asked about — is this unit's
+finding.  The receipt gates it exactly that way (W2: F3-pattern-at-d3
+zero-coupling = 4, at-d2 = 0).
 
 **The witness (the substrate the cocycle unit asked for):**
 
@@ -42,9 +65,11 @@ band.
 
 The pre-registered lean (pin §4: couriers should raise `max |D|` above
 3 at some homogeneity cost, the open question being whether the cost
-stays inside the band) held — and the cost is smaller than leaned:
-the coupled-ring route buys width while homogeneity *rises*, provided
-the coupling is complete.
+stays inside the band) held — and the cost is smaller than leaned in
+the double-ring family, where homogeneity *rises* with coupling from
+`cpl = 2` up to the full-coupling maximum.  *(The first draft
+generalised this to "provided the coupling is complete", which the
+wide-brick family refutes — round-1 MAJOR 2; see §2.)*
 
 ## 2. The frontier (all figures d = 2; "band" = the W3 re-run
 sprinkling band, "wide" = D58's `|D| ≥ 4` column, nothing else)
@@ -77,29 +102,47 @@ per round:
 two are inside the sprinkling `|D| ≥ 4` band [0.4250, 0.6500], at
 homogeneity that has climbed above the band's top.
 
-**Two shapes in this table are findings in their own right.**
+**Two shapes in this table are findings in their own right — restated
+per round-1 MAJOR 2, whose recomputation refuted the first draft's
+mechanism sentences in both.**
 
 1. **Coupling is not monotone, and one courier / one coupled position
    is WORSE THAN NONE.**  Every family dips at `C = 1` / `cpl = 1`
-   (0.7692 → 0.6022; 0.6907 → 0.3645) and only recovers from `2`
-   upward.  A partial coupling breaks the lattice's height regularity
-   without buying a second direction everywhere; a complete coupling
-   restores it and buys the direction.  Width, homogeneity and overlap
-   all follow that shape.
-2. **The whole width column jumps from 0 to positive exactly when the
-   second direction becomes available at every wire** — `C = 2` on an
-   8-ring, `cpl = 2` on a coupled pair — and never returns to 0.
+   (0.7692 → 0.6022; 0.6907 → 0.3645) and recovers from `2` upward —
+   but the recovery is **family-specific**: the double rings peak at
+   *full* coupling, while the wide bricks peak at *partial* coupling
+   and their complete settings are the worst points in their families
+   (`C = M/2`: (6,10,C=3) reads 0.5258, below `C = 0` and below the
+   band floor; (8,14,C=4) 0.7062 below C=3's 0.8658).  The
+   height-layer census — added on round 1, which observed the first
+   draft both asserted and disclaimed the mechanism — now *measures*
+   the dip at (8, 10): `cpl = 0` has 27 layers; `cpl = 1` stretches
+   the record to 36 layers with ragged sizes; `cpl = 8` runs 37 layers
+   whose tail is a constant 8 — **partial coupling desynchronises the
+   height structure, full inter-ring coupling restores perfect layer
+   regularity**.  Homogeneity and ω dip at 1; width cannot dip (it is
+   0 on both sides — round-1 NIT 4).
+2. **Width appears exactly at the wires that have a second direction,
+   and nowhere else.**  At the jump points (`C = 2` on an 8-ring,
+   `cpl = 2` on a coupled pair) only a *minority* of actors are
+   coupled, and the wide charts sit at exactly that minority (round-1
+   MAJOR 2(b): 12 wide events carried by R0/R1/R4/R5; 8 of 117
+   carried by A0/A1/B0/B1).  "Every wire" is true only at `cpl = M`,
+   which is not the jump — the sharper per-wire statement is what the
+   data show, and the width column never returns to 0 above the jump.
 
 ## 3. The licensed claim, and the three ways it is limited
 
-> **THE LICENSED CLAIM: inside the swept `(M, R, C, cpl)` family, the
-> tiling mechanism and the width mechanism COMPOSE — a delivery
-> circuit can tile at sprinkling-band homogeneity while carrying
-> 4-direction charts at a third of its events.**  A MECHANISM
-> statement at grammar layer, about the swept family and no wider
-> (pin §4's instruction).
+> **THE LICENSED CLAIM — A d = 2 STATEMENT (round-1 MAJOR 1): inside
+> the swept `(M, R, C, cpl)` family, the tiling mechanism and the
+> width mechanism COMPOSE AT d = 2 — a coupled delivery circuit can
+> tile at sprinkling-band homogeneity while carrying 4-direction
+> charts at a third of its events, which no uncoupled record does at
+> d = 2 at any parameter (at d = 3 the uncoupled brick already meets
+> the pattern).**  A MECHANISM statement at grammar layer, about the
+> swept family and no wider (pin §4's instruction).
 
-Three limits, all measured, all reported whichever way they landed:
+Four limits, all measured, all reported whichever way they landed:
 
 - **At d = 2 no configuration is inside both sprinkling bands at
   once.**  The `|D| ≥ 4` fraction reaches the sprinkling band only in
@@ -116,6 +159,10 @@ Three limits, all measured, all reported whichever way they landed:
   still far above the comparators, but the ordering means less here
   than it did for the brick: the statistic favours thin charts, and
   these records are the less thin ones.
+- **Band membership is largely an ENDS property** (round-1 MAJOR 3;
+  §5): under D60's own interior excision, **10 of the 14** F3 members
+  leave the homogeneity band through the top.  The durable half of F3
+  is the width; the band half is a finite-record statement.
 
 ## 4. Why the width stops at 4: THE BRANCHING BOUND `[THEOREM, verified]`
 
@@ -143,18 +190,25 @@ and **saturated** by 26 of them: a record of deliveries has `B = 2`
 `4 = 2²` exactly.
 
 > **THE MECHANISM STATEMENT THIS UNIT CERTIFIES (the scale doctrine's
-> ask): 3 was the brick's cone, 4 is the delivery grammar's ceiling.
-> NO delivery circuit whatever can reach the sprinklings' `max |D|`
-> 10–17 at d = 2.  Chart width past 4 is bought with ARBITRATION over
-> conflicts, not with transport** — the layer has exactly one event
-> species carrying more than 2 registers, the arbitration over a
-> component with `k ≥ 2` distinct proposers (`regs` = proposers ∪ {new
-> version}), and the receipt exhibits an admissible 3-register one
-> (`q = 1/8`).
+> ask): 3 was the brick's cone, 4 is the delivery grammar's ceiling
+> at d = 2 (at d = 3 the bound is 8, and swept records reach 5 and
+> 6).  NO delivery circuit whatever can reach the sprinklings'
+> `max |D|` 10–17 at d = 2.  Chart width past 4 at d = 2 REQUIRES an
+> event with 3+ registers — a NECESSITY, not a construction (round-1
+> MINOR 3): the layer has exactly one such species, the arbitration
+> over a component with `k ≥ 2` distinct proposers (`regs` =
+> proposers ∪ {new version}).**  The receipt exhibits an admissible
+> 3-register *event* (`q = 1/8`); whether a *record carrying
+> 5-direction charts* exists is open (§8 residue 1 — the round's own
+> 220-history hunt found none, inconclusive), so "arbitration is
+> where width past 4 must come from" is licensed and "arbitration
+> buys it" is not.
 
 This turns D60's residue 2 from an open empirical ceiling into a
-decided pair: the empirical ceiling is beaten (3 → 4), and the
-remaining one is proved.
+decided pair at d = 2: the empirical ceiling is beaten (3 → 4), and
+the remaining one is proved.  *(B = 2 is now gated, not asserted —
+round-1 MINOR 6: `max |regs_of(e)|` measured on every event of every
+record, mint prefix included.)*
 
 ## 5. The interior control (D60's C7), on the frontier's key points
 
@@ -166,14 +220,19 @@ remaining one is proved.
 | DOUBLE-RING(6, 14, 6) | 181 ev, 0.8619 / 0.3923 | 161 ev, 0.9317 / 0.4410 |
 | DOUBLE-RING(4, 26, 4) | 217 ev, 0.9309 / 0.4470 | 203 ev, 0.9754 / 0.4778 |
 
-Excising the bottom two and top three height layers **raises both
-columns at every key point**.  So the width is the circuit's, not the
-prefix's — and, reported against the unit's own interest, **"inside
-the band" is in part a property of the record's ENDS**: the winner's
-interior leaves the band through the top (0.8808 against 0.8000),
-exactly as D60's C7 predicted for homogeneity.  The mechanism
-statement is D60's, now with width attached: the shortfall from 1 is
-boundary, and the wide charts survive the excision.
+The control now runs on **every F3 member** (round-1 MAJOR 3: the
+first draft ran it on five hand-named records and reported the ends
+effect for the winner alone).  Excising the bottom two and top three
+height layers **raises both columns at every one of the 14**.  So the
+width is the circuit's, not the prefix's — that is the durable half
+of F3 — and, reported against the unit's own interest, **"inside the
+band" is largely a property of the records' ENDS: 10 of the 14 F3
+members' interiors leave the band through the top** (the winner:
+0.8808 against 0.8000; 4 stay in-band).  The mechanism reading is
+D60's, now with width attached: homogeneity tends to 1 — *above* the
+band — so the composition claim survives as "the width mechanism does
+not destroy the tiling mechanism", with band membership a
+finite-record statement about ends.
 
 ## 6. Instrument hygiene and forcedness
 
@@ -195,23 +254,25 @@ boundary, and the wide charts survive the excision.
   out as D60's committed `[77/120, 4/5]` and `|D| ≥ 4` `[17/40,
   13/20]`.  No threshold in this unit is anything but one of these
   measured numbers.
-- **Forcedness (W1/W1b).**  Across all 38 records (4,604 events) no
-  specification ever matched more than one menu candidate and no step
-  was refused.  Three records were additionally replayed with ALL
-  actors offered at every step — the anchor (65 events / 8 actors,
-  menus to 136), WIDE-BRICK C = 2 (121 / 10, menus to 210) and the
-  winner (177 / 16, menus to 528) — every specification still matching
-  exactly one candidate.  **The pin's pre-registered hard part (design
-  the courier cadence so the record stays FORCED) did not bite: no
-  re-specification was needed, and there is no ambiguity or refusal to
-  report.**  The reason is structural and worth recording: a delivery
-  is specified by its full tuple `('d', s, r, v)`, so a matching menu
-  entry is unique whenever it exists, and re-delivery is admissible
-  whenever the sender holds `v` — which every ring actor does after the
-  spread and every courier does after its first reception.
+- **Admissibility (W1/W1b — relabelled per round-1 MINOR 4).**  What
+  these gates measure: a delivery specification is its full tuple and
+  menu events are pairwise distinct, so "matches exactly one
+  candidate" cannot exceed one — **tie-freedom is structural, not
+  discovered**; the gated content is that the specified event is
+  OFFERED at every step (hits = 1, never 0) and no step refused, over
+  all 38 records (4,604 events).  Three records were additionally
+  replayed with ALL actors offered at every step — the anchor (65
+  events / 8 actors, menus to 136), WIDE-BRICK C = 2 (121 / 10, menus
+  to 210) and the winner (177 / 16, menus to 528) — every event
+  offered at every step (the round replayed two more, DR(4,14,4) and
+  DR(6,14,6), same result).  The structural reason: re-delivery is
+  admissible whenever the sender holds `v`, which every ring actor
+  does after the spread and every courier after its first reception.
 - **Nothing was cut** for runtime; every swept range and cap is
-  printed (W6).  Total wall clock ≈ 5 minutes, and the run is
-  deterministic across `PYTHONHASHSEED`.
+  printed (W6).  Total wall clock ≈ 6 minutes, and determinism is now
+  **gated, not asserted** (round-1 MINOR 5): the anchor and the
+  winner are rebuilt in probe mode under `PYTHONHASHSEED` 0/7/999
+  inside the run, byte-identical stdout (W6b).
 - **One declared deviation from the pin's exit protocol.**  Pin W6
   says exit 1 only on W0 anchor breakage; the receipt also exits 1 if
   W3's comparator reproduction breaks (the band must come out as
@@ -236,19 +297,25 @@ MAJOR 2), never a symmetric overlap.
 
 ## 8. Residues
 
-1. **The arbitration route to width > 4.**  §4 says where the next
-   width lives: events with 3+ registers, i.e. conflicts resolved by
-   arbitration.  Whether a record can carry them *at tiling cadence* —
-   a crystal made of conflicts rather than deliveries — is the
-   successor question, and it is now sharp.
+1. **The arbitration route to width > 4 at d = 2.**  §4 says where
+   the next width MUST come from (a necessity, not a route): events
+   with 3+ registers, i.e. conflicts resolved by arbitration.
+   Whether a record can carry them *at tiling cadence* — a crystal
+   made of conflicts rather than deliveries — is the successor
+   question, and it is now sharp.  (The round's randomized 220-history
+   hunt with multi-proposer arbitrations found no `|D| ≥ 5` witness —
+   inconclusive either way.)
 2. **Both bands at d = 2.**  No swept configuration is inside the
    homogeneity band and the `|D| ≥ 4` band simultaneously at d = 2
    (at d = 3 two are).  Whether a larger `(M, R)` reaches it is
    open; the trend (width rises with rounds, homogeneity rises faster)
    suggests it may not be reachable in this family, which would itself
    be worth proving.
-3. **The `cpl = 1` dip** is unexplained beyond "partial coupling
-   breaks height regularity"; a height-layer census would decide it.
+3. **The `cpl = 1` dip is now MEASURED** (the round-1 census, §2):
+   partial coupling stretches (8, 10) from 27 to 36 ragged height
+   layers; full coupling runs 37 layers with a constant-8 tail.  What
+   remains open is a *proof* that layer regularity controls
+   homogeneity, rather than the measured co-occurrence.
 4. **Size.**  The records run to 217 events; the sprinkling
    comparators are 120-point sets.  D60's size residue is inherited,
    and the receipt's cost grows steeply (the winner's full-menu
@@ -258,3 +325,8 @@ MAJOR 2), never a symmetric overlap.
    charts — D58's containment theorem says ω-overlaps are nested, so
    the cocycle unit must find its non-identity elsewhere than in the
    `ω` pairs.
+6. **The d = 3 story is thinner than the d = 2 story** (round-1
+   MINOR 1's census, now in W2): band membership flips at 14 of 38
+   configurations between the depths, and `max |D|` reaches 5 (at
+   14 records) and 6 (at 4) at d = 3 — all within W4b's bound of 8.
+   No d = 3 claim beyond the printed census is made.

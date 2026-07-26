@@ -10673,3 +10673,89 @@ the cpl = 1 dip, size, and the cocycle unit's non-identity source
 (omega-overlaps are NESTED per D58's containment theorem — the
 cocycle must look elsewhere).  GREEN-UNREVIEWED: not citable until
 its hostile round lands.  Round dispatched.
+
+## 2026-07-26 — D63 ROUND 1 ADJUDICATED: F3 STANDS AS A d = 2
+## STATEMENT; W4b STANDS AS PROVED; D60 FORWARD-CORRECTED (LEDGER #459)
+Deliverables: reviews/d63-round1-hostile-review.md (independent Opus
+5, REVISE, 0 BLOCKER / 4 MAJOR / 8 MINOR / 4 NIT, + my DELTA),
+repaired receipt (12 PASS / 0 FAIL, one gate added) + note; D60's C5
+label forward-corrected (receipt + result note, rerun 10 PASS / 0
+FAIL).  **The arithmetic and the theorem survived COMPLETELY** — the
+reviewer rebuilt all 38 configurations and every figure reproduced
+exactly; W4b attacked at every joint and standing (independent
+closure-of-P check, per-register successor bound, SKY-B = reflexive
+k-layer, B = 2 measured on every record incl. mint prefixes).  The
+four MAJORs were all in the prose: (1) THE NOVELTY IS A d = 2
+STATEMENT — at d = 3 the F3 pattern is met by 11 configurations, 4
+with ZERO coupling, D60's unmodified brick among them (0.7385
+in-band, 0.5846 wide); every headline now carries the label and W2
+gates the census.  (2) The §2 mechanism sentences were refuted by the
+receipt's own rows — recovery is FAMILY-SPECIFIC (double rings peak
+at full coupling, wide bricks at partial, whose complete settings are
+their families' WORST points); "every wire" was false at both jump
+points (width sits at exactly the coupled minority); and the
+HEIGHT-LAYER CENSUS now in the receipt MEASURES the cpl = 1 dip
+(27 -> 36 ragged layers; cpl = 8: 37 layers, constant-8 tail —
+partial coupling desynchronises the height structure).  (3) BAND
+MEMBERSHIP IS LARGELY AN ENDS PROPERTY: W5 now runs on all 14 F3
+members — width rises under excision at every one (the durable half),
+but 10 of 14 interiors leave the band THROUGH THE TOP; the licensed
+claim restated ("the width mechanism does not destroy the tiling
+mechanism; band membership is a finite-record statement").  (4) D60's
+committed C5 clause "at d = 3 ... inside the d = 3 sprinkling band"
+was FALSE (38/65 = 0.5846 < 0.6000, the floor) and D63's own output
+had contradicted it in silence — FORWARD-CORRECTED at D60.  MINORs:
+both-depth census for all 38 (max|D| at d = 3 exceeds 4 at 18 —
+fourteen 5s, four 6s, all within W4b's bound 8); §4 restated as
+NECESSITY not route; W1 relabelled (tie-freedom is structural);
+determinism GATED (W6b, three seeds, byte-identical); B = 2 gated;
+cadence probe counted as a variant (37 + 1).  **TERMINAL for round
+1.**  The cocycle substrate remains DOUBLE-RING(8, 10, 8), ends
+caveat attached.
+
+## 2026-07-26 — D62 ROUND 1 ADJUDICATED AND TERMINAL: (H2) IS A
+## THEOREM.  RESIDUE 1 IS CLOSED AT TWO-ACTOR DELIVERY-FREE d42a
+## SCOPE (LEDGER #460)
+Deliverables: reviews/d62-round1-hostile-review.md (independent Opus
+5, REVISE, 0 BLOCKER / 1 MAJOR / 7 MINOR / 3 NIT, + my DELTA),
+repaired receipt (24 PASS / 0 FAIL) + note.
+**FOR THE FIRST TIME IN THIS LINE, THE SENTENCE ON THE COVER SURVIVED
+ITS ROUND AS WRITTEN.**  The reviewer re-implemented the serialised
+state, the canonicalisation and ALL FIVE ROWS from the note's prose
+alone (different normal form, nothing shared with the receipt) and
+got **ZERO MISMATCHES against the layer's own sigma(h+e) on 4,778,310
+TRANSITIONS INTO DEPTH 9** — two levels past the receipt — 176 keys,
+0 keys with two successors, 36 states; walked every row and every
+obligation against the source by hand; ran O2 on a truly adversarial
+surface (69,652 colliding candidates, 0 admitted, 2.3x the
+receipt's); and found the pin's invited O1 attack (long
+invisible-supersession chains) STRUCTURALLY IMPOSSIBLE (drop onsets
+per history never exceed 1).  The sigma-minimising renaming is UNIQUE
+on all 4,778,311 histories — the pin's highest-residual-risk step,
+answered.  The one MAJOR was in the receipt's self-description
+(three of 24 gates could not fail — two corollaries of T1(a), one
+tautological counter — and the mutant sentence was false for the six
+row mutants, which fail T1(a) AND T5 together): repaired — T4(a)
+rebuilt with an independent row classifier, corollaries relabelled,
+the independent-evidence map stated in the note, LOG #457's mutant
+sentence FORWARD-CORRECTED here.  MINORs: mismatch count uncapped;
+N0(c) gains (L4)/(L5)/(L7)'s missing halves; N0(e) whole-call-graph;
+§6.1 step 4 re-attributed (canon_pair choice-free by construction;
+(5e)'s load is step 2); §2 read-vs-write; T2(b) relabelled; §7
+tightened.  **THE VERDICT, NOW UNEMBARGOED:**
+> **(H0) [DISCHARGED, D61] + (H1) [THEOREM, D61] + (H2) [THEOREM,
+> D62] => d44a's CLOSURE THEOREM IS UNCONDITIONAL AT TWO-ACTOR
+> DELIVERY-FREE d42a SCOPE.  The 36-state closure, the six-state
+> chain and the Perron package hold AT EVERY DEPTH there.  RESIDUE 1
+> — open since D44, decided-on-the-window at #345, decided-at-
+> verified-depth at #375, its gap named at three hypotheses (#452
+> corrected by #455 to one) — IS CLOSED AT THAT SCOPE.  D49's
+> root-free completion is unconditional at every depth there.**
+Still inside the stationary FORM (D50: the form remains a choice);
+still delivery-free (transport untouched, B1's walls stand); three
+actors out of scope (the wall exhibited at D61's round).  The
+remaining residue of the (H1)/(H2) pair is the Lean-grade
+mechanization, inherited unchanged.  Paper 30/32 updates and the
+book patch DISPATCHED NEXT (one-go discipline; the blacklisted
+sentence "residue 1 is closed" becomes quotable WITH ITS SCOPE
+CLAUSE and only so).

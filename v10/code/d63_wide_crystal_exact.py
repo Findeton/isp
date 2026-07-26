@@ -36,7 +36,7 @@ every swept range and cap printed; exit 0 for substantive negatives,
 exit 1 ONLY on W0 anchor breakage.
 Run from the repo root: python3 v10/code/d63_wide_crystal_exact.py
 """
-import ast, sys, time
+import ast, os, subprocess, sys, time
 from collections import defaultdict, Counter
 from fractions import Fraction as Fr
 from itertools import combinations, permutations, product
@@ -82,13 +82,19 @@ regs_of, admissible = nst['regs_of'], nst['admissible']
 
 
 def _no_exit(nodes):
-    """No `sys.exit` survives in an extracted body (house rule: the
-    strip must be GATED, not asserted)."""
+    """No exit call survives in an extracted body (house rule: the
+    strip must be GATED, not asserted).  Round-1 NIT 2: the gate now
+    also catches bare `exit()`/`quit()` (Name calls) and `os._exit`,
+    not only `*.exit` attribute calls."""
     for n in nodes:
         for c in ast.walk(n):
-            if (isinstance(c, ast.Call) and isinstance(c.func, ast.Attribute)
-                    and c.func.attr == 'exit'):
-                return False
+            if isinstance(c, ast.Call):
+                if (isinstance(c.func, ast.Attribute)
+                        and c.func.attr in ('exit', '_exit')):
+                    return False
+                if (isinstance(c.func, ast.Name)
+                        and c.func.id in ('exit', 'quit')):
+                    return False
     return True
 
 
@@ -255,6 +261,18 @@ print(f"\n[blueprints, printed caps]  SKY-B depths measured = (2, 3) "
       f"direction alternating with round parity; full-menu replay budget "
       f"= {FULLMENU_BUDGET:.0f}s per record.")
 
+if '--probe' in sys.argv:
+    # DETERMINISM PROBE (round-1 MINOR 5: the note's determinism claim
+    # was gated nowhere, and `regs_of` reads next(iter(frozenset)), so
+    # the claim is not idle).  Build the anchor and the winner and
+    # print their exact-Fraction digest; the main run re-invokes this
+    # file under three PYTHONHASHSEEDs and compares stdout.
+    for kk in (('WB', 8, 14, 0), ('DR', 8, 10, 8)):
+        _b, _pr, _dt = get(*kk)
+        print(f"DIGEST {kk}: " + repr([( _pr[d]['h2'], _pr[d]['om'],
+              _pr[d]['h4'], _pr[d]['max'], _pr[d]['n']) for d in (2, 3)]))
+    sys.exit(0)
+
 # ======================================================================
 # W0 — THE ANCHOR: C = 0 reproduces D60's published row EXACTLY
 # ======================================================================
@@ -274,8 +292,10 @@ _dec_ok = (f"{float(P_ANCHOR[2]['h2']):.4f}" == "0.7692"
            and f"{float(P_ANCHOR[2]['h4']):.4f}" == "0.0000"
            and P_ANCHOR[2]['max'] == 3)
 _agree = d58_atlas(poset_of(b_anchor.H), 'anchor', quiet=True)
+# round-1 NIT 1: h4 — the column this unit is about — is in the check
 _atlas_ok = all(_agree[d]['h2'] == P_ANCHOR[d]['h2']
                 and _agree[d]['om'] == P_ANCHOR[d]['om']
+                and _agree[d]['h4'] == P_ANCHOR[d]['h4']
                 and _agree[d]['max'] == P_ANCHOR[d]['max'] for d in (2, 3))
 print("  " + line('WIDE-BRICK M=8 R=14 C=0', b_anchor, P_ANCHOR, dt_a))
 check("W0 [ANCHOR, exit 1 on breakage] THE C = 0 WIDE-BRICK IS D60'S "
@@ -395,6 +415,21 @@ for R in (10, 14, 20, 26):
 print(f"    swept R in [10, 14, 20, 26] at (M, cpl) = (4, 4)  "
       f"[{time.time() - t:.1f}s]")
 
+# the height-layer census for the cpl = 1 dip (round-1 MAJOR 2(c): the
+# mechanism was asserted in one place and disclaimed in another; the
+# census decides it and is one loop)
+print("\n  === the height-layer census at (M, R) = (8, 10): does partial "
+      "coupling break the layer structure? ===")
+_layers = {}
+for cpl in (0, 1, 2, 8):
+    bb = BUILT[('DR', 8, 10, cpl, CADENCE)][0]
+    hs = heights(poset_of(bb.H))
+    cnt = Counter(hs.values() if isinstance(hs, dict) else hs)
+    prof = [cnt[i] for i in range(max(cnt) + 1)]
+    _layers[cpl] = prof
+    print(f"    cpl={cpl}: {len(prof)} layers, sizes {prof}, distinct "
+          f"sizes = {len(set(prof))}")
+
 # ------------------------------------------------- the decision
 IN_BAND = {k: v for k, v in FRONTIER.items()
            if BAND[2][0] <= v[2]['h2'] <= BAND[2][1]}
@@ -403,10 +438,16 @@ BOTH = {k: v for k, v in FRONTIER.items() if k in IN_BAND and k in WIDE}
 VERDICT = ('F3' if BOTH else ('F2' if WIDE else 'F1'))
 WINNER = (max(BOTH, key=lambda k: (BOTH[k][2]['h4'], -BOTH[k][2]['n']))
           if BOTH else None)
-print(f"\n  swept configurations = {len(FRONTIER)}; refusals = "
+# round-1 MINOR 8: the cadence probe is a VARIANT of an (M, R, C)
+# setting, not a distinct one — both counts printed
+_distinct = {k[:4] for k in FRONTIER}
+print(f"\n  swept configurations = {len(FRONTIER)} "
+      f"({len(_distinct)} distinct (kind, M, R, param) settings + "
+      f"{len(FRONTIER) - len(_distinct)} cadence variant); refusals = "
       f"{sum(1 for v in BUILT.values() if v[1] is None)}; in the "
       f"homogeneity band = {len(IN_BAND)}; wide (|D| >= 4 present) = "
-      f"{len(WIDE)}; BOTH = {len(BOTH)}")
+      f"{len(WIDE)}; BOTH = {len(BOTH)} "
+      f"({len({k[:4] for k in BOTH})} distinct settings)")
 if BOTH:
     print("  configurations that are IN BAND AND WIDE (the F3 set), by "
           "width:")
@@ -418,14 +459,20 @@ if BOTH:
               f"|D|>=4 {x['h4']} (~{float(x['h4']):.4f}), max|D| "
               f"{x['max']}")
 check("W4 [THE FRONTIER DECIDES] " + (
-      "**F3 — THE WIDE CRYSTAL EXISTS.**  Some swept configuration sits "
-      "INSIDE the recomputed sprinkling homogeneity band AND carries "
-      "4-direction charts at d = 2, so the tiling mechanism and the "
-      "width mechanism COMPOSE at grammar layer.  D60's residue 2 (the "
-      "max |D| = 3 ceiling) was a property of the 1+1 brick's cone, not "
-      "of tiling records as such" if VERDICT == 'F3' else
-      ("**F2 — THE TRADE-OFF WALL.**  Width is reached only below the "
-       "band at every swept configuration" if VERDICT == 'F2' else
+      "**F3 — THE WIDE CRYSTAL EXISTS, AT d = 2.**  Some swept "
+      "configuration sits INSIDE the recomputed sprinkling homogeneity "
+      "band AND carries 4-direction charts at d = 2, so the tiling "
+      "mechanism and the width mechanism COMPOSE at grammar layer.  "
+      "D60's residue 2 (the max |D| = 3 ceiling AT d = 2) was a "
+      "property of the 1+1 brick's cone, not of tiling records as such "
+      "(round-1 MAJOR 1: at d = 3 the F3 pattern is met by uncoupled "
+      "records already — W2 prints the census — so the novelty is this "
+      "d = 2 statement)" if VERDICT == 'F3' else
+      ("**F2 — THE TRADE-OFF WALL.**  Width is reached only OUTSIDE "
+       "the homogeneity band (round-1 MINOR 7: each wide "
+       "configuration's side of the band is in the frontier print "
+       "above; the pre-registered F2 is width-never-in-band, which is "
+       "this predicate)" if VERDICT == 'F2' else
        "**F1 — THE GRAMMAR WALL.**  No swept configuration reaches "
        "|D| >= 4 at d = 2")) + ".  The predicate is the pre-registered "
       "disjunction itself, computed from the sweep",
@@ -450,54 +497,71 @@ print(f"\n  THE WINNING CONFIGURATION (rule: among the in-band-and-wide "
 # ======================================================================
 # W2 — the atlas census per record, at d = 2 AND d = 3, both orderings
 # ======================================================================
-print("\n[W2 THE ATLAS CENSUS — per record, at d = 2 AND d = 3, "
+print("\n[W2 THE ATLAS CENSUS — EVERY swept record, at d = 2 AND d = 3 "
+      "(round-1 MINOR 1: the pin says per record and means it), "
       "orderings reported BOTH ways (D60's MINOR 4 lesson: the depths "
       "disagree)]")
-NAMED = [('C=0 anchor  (= D60 brick)', ('WB', 8, 14, 0, CADENCE)),
-         ('WIDE-BRICK courier C=2 ', ('WB', 8, 14, 2, CADENCE)),
-         ('THE WINNER              ', WINNER),
-         ('DOUBLE-RING(4, 26, 4)   ', ('DR', 4, 26, 4, CADENCE))]
-for nm, k in NAMED:
-    if k not in FRONTIER:
-        continue
-    pr = FRONTIER[k]
-    for d in (2, 3):
-        x = pr[d]
-        pos = ('IN BAND' if BAND[d][0] <= x['h2'] <= BAND[d][1]
-               else ('ABOVE the band' if x['h2'] > BAND[d][1]
-                     else 'BELOW the band'))
-        wpos = ('inside' if W4B[d][0] <= x['h4'] <= W4B[d][1]
-                else ('above' if x['h4'] > W4B[d][1] else 'below'))
-        print(f"    {nm} d={d}: n={x['n']:4d}  homog {float(x['h2']):.4f} "
-              f"[{pos}]  |D|>=4 {float(x['h4']):.4f} [{wpos} the "
-              f"sprinkling |D|>=4 band]  max|D| {x['max']} (sprinklings "
-              f"{MXB[d][0]}-{MXB[d][1]})  omega {float(x['om']):.4f} "
-              f"(sprinklings {float(OMB[d][0]):.4f}-"
-              f"{float(OMB[d][1]):.4f})")
-_w2 = P_WIN
 
 
 def _inb(pr, d):
     return BAND[d][0] <= pr[d]['h2'] <= BAND[d][1]
 
 
-_flips = [nm for nm, k in NAMED
-          if k in FRONTIER and _inb(FRONTIER[k], 2) != _inb(FRONTIER[k], 3)]
+for k in sorted(FRONTIER, key=repr):
+    pr = FRONTIER[k]
+    row = []
+    for d in (2, 3):
+        x = pr[d]
+        pos = ('in' if _inb(pr, d) else
+               ('ABOVE' if x['h2'] > BAND[d][1] else 'below'))
+        row.append(f"d={d}: h {float(x['h2']):.4f}[{pos}] w "
+                   f"{float(x['h4']):.4f} max {x['max']}")
+    print(f"    {k[0]}({k[1]},{k[2]},{k[3]}"
+          + (f",cad{k[4]}" if k[4] != CADENCE else "") + "): "
+          + "  |  ".join(row))
+_w2 = P_WIN
+_flips = [k for k in FRONTIER if _inb(FRONTIER[k], 2) != _inb(FRONTIER[k], 3)]
 _flip = _inb(_w2, 2) != _inb(_w2, 3)
-check("W2 THE CENSUS IS REPORTED AT BOTH DEPTHS, AND THE DEPTHS DO NOT "
-      "AGREE RECORD BY RECORD — the D60 MINOR-4 lesson holds for the "
+# round-1 MINOR 1/2: the d = 3 max census — W4b's bound there is 8,
+# and records DO move past 4
+_mv5 = sorted(k for k in FRONTIER if FRONTIER[k][3]['max'] == 5)
+_mv6 = sorted(k for k in FRONTIER if FRONTIER[k][3]['max'] >= 6)
+print(f"    max|D| at d = 3 EXCEEDS 4 at {len(_mv5) + len(_mv6)} of "
+      f"{len(FRONTIER)} records: {len(_mv5)} reach 5, {len(_mv6)} reach "
+      f"6 (W4b's d = 3 bound is 2^3 = 8; none exceeds it)")
+# round-1 MAJOR 1: the F3 PATTERN AT d = 3 — including who meets it
+# with ZERO coupling.  The novelty of this unit is a d = 2 statement.
+_f3d3 = sorted(k for k in FRONTIER
+               if _inb(FRONTIER[k], 3) and FRONTIER[k][3]['h4'] > 0)
+_f3d3_zero = [k for k in _f3d3 if k[3] == 0]
+print(f"    the F3 pattern (in-band AND |D| >= 4 present) evaluated at "
+      f"d = 3: holds at {len(_f3d3)} configurations, {len(_f3d3_zero)} "
+      f"of them with ZERO coupling {_f3d3_zero} — D60's own brick among "
+      f"them.  THE NOVELTY OF THIS UNIT IS A d = 2 STATEMENT: at d = 2 "
+      f"no zero-coupling configuration is wide at all")
+_f3d2_zero = [k for k in BOTH if k[3] == 0]
+check("W2 THE CENSUS IS REPORTED AT BOTH DEPTHS FOR EVERY RECORD, AND "
+      "THE DEPTHS DO NOT AGREE — the D60 MINOR-4 lesson holds for the "
       "wide records too, so every width and homogeneity statement in "
       "this unit is depth-labelled.  The winner is in the band at "
       "d = 2 and " + ("OUT of it at d = 3" if _flip
                       else "in it at d = 3 as well")
       + "; its |D| >= 4 fraction rises with depth (as the brick's did) "
-      "while its max |D| does not move at all — W4b says why",
-      _w2[3]['h4'] > _w2[2]['h4'],
+      "and its max |D| happens to stay at 4 at d = 3 — a MEASUREMENT, "
+      "not W4b (the theorem's d = 3 bound is 8, and other records do "
+      "reach 5 and 6 there — round-1 MINOR 2).  And the d = 2 novelty "
+      "is gated as a d = 2 statement: at d = 3 the F3 pattern is "
+      "already met by zero-coupling configurations (round-1 MAJOR 1), "
+      "at d = 2 by none",
+      _w2[3]['h4'] > _w2[2]['h4'] and len(_f3d3_zero) > 0
+      and len(_f3d2_zero) == 0
+      and all(FRONTIER[k][3]['max'] <= 8 for k in FRONTIER),
       f"winner d=2: homog {float(_w2[2]['h2']):.4f}, |D|>=4 "
       f"{float(_w2[2]['h4']):.4f}, max {_w2[2]['max']}; d=3: homog "
       f"{float(_w2[3]['h2']):.4f}, |D|>=4 {float(_w2[3]['h4']):.4f}, max "
-      f"{_w2[3]['max']}; named records whose band membership FLIPS "
-      f"between the two depths: {len(_flips)} {_flips}")
+      f"{_w2[3]['max']}; band-membership flips across the sweep = "
+      f"{len(_flips)}; d3 max>4 at {len(_mv5) + len(_mv6)}; F3-pattern-"
+      f"at-d3 zero-coupling = {len(_f3d3_zero)}, at-d2 = {len(_f3d2_zero)}")
 
 # ======================================================================
 # W4b — THE STRUCTURAL WIDTH WALL (a theorem of the layer, verified)
@@ -533,10 +597,12 @@ print("  grammar layer chart width past 4 is bought with CONFLICT, not")
 print("  with transport.")
 wall_ok = True
 sat = []
+_bvals = set()
 for k, (b, pr, dt) in sorted(BUILT.items(), key=repr):
     if pr is None:
         continue
     Bmax = max(len(regs_of(e)) for e in b.H)
+    _bvals.add(Bmax)
     for d in (2, 3):
         if pr[d]['max'] > Bmax ** d:
             wall_ok = False
@@ -555,15 +621,22 @@ print(f"  registers per event species (committed `regs_of`): proposal 1, "
       f"carries {_arb_regs} registers")
 check("W4b THE WIDTH WALL IS STRUCTURAL AND THE DOUBLE RING SATURATES "
       "IT.  Every record built in this unit obeys |D| <= B^d with B the "
-      "record's own maximum register count, B = 2 throughout (these are "
-      "delivery circuits) — and the bound is TIGHT: the coupled rings "
-      "hit max |D| = 4 = 2^2 at d = 2 exactly, which is why D60's 3 was "
-      "beatable and why nothing here reaches the sprinklings' 10-17.  "
-      "The exhibited 3-register arbitration shows the wall is a fact "
-      "about DELIVERY CIRCUITS, not about the grammar",
-      wall_ok and len(sat) > 0 and _arb_ok and _arb_regs == 3,
+      "record's own maximum register count, and B = 2 IS NOW GATED, not "
+      "asserted (round-1 MINOR 6: max |regs_of(e)| measured on every "
+      "event of every record, mint prefix included) — and the bound is "
+      "TIGHT: the coupled rings hit max |D| = 4 = 2^2 at d = 2 exactly, "
+      "which is why D60's 3 was beatable and why nothing here reaches "
+      "the sprinklings' 10-17 at d = 2.  What W4b licenses is a "
+      "NECESSITY: |D| >= 5 at d = 2 REQUIRES a 3+-register event, i.e. "
+      "an arbitration over 2+ distinct proposers (round-1 MINOR 3 — "
+      "whether a record CARRYING such width exists is open, residue 1); "
+      "the exhibited admissible 3-register arbitration shows only that "
+      "the wall is a fact about DELIVERY CIRCUITS, not about the grammar",
+      wall_ok and len(sat) > 0 and _arb_ok and _arb_regs == 3
+      and _bvals == {2},
       f"records checked = {sum(1 for v in BUILT.values() if v[1])}, "
-      f"bound violations = 0, saturating configurations = {len(sat)} "
+      f"bound violations = 0, B values measured = {sorted(_bvals)}, "
+      f"saturating configurations = {len(sat)} "
       f"(e.g. {sorted(sat, key=repr)[0]}); brick max|D| = "
       f"{P_ANCHOR[2]['max']}, winner max|D| = {P_WIN[2]['max']}, bound "
       f"2^2 = 4, sprinklings {MXB[2][0]}-{MXB[2][1]}")
@@ -581,14 +654,16 @@ print(f"    records built = {len(BUILT)}, events built = "
       f"{sum(len(v[0].H) for v in BUILT.values())}, refusals = "
       f"{len(_refusals)} {_refusals if _refusals else ''}, max menu hits "
       f"per specification over every step of every record = {_hits}")
-check("W1 EVERY RECORD IN THE SWEEP IS FORCED (restricted-menu drive): "
-      "across every configuration built here, no specification ever "
-      "matched more than one menu candidate and no step was refused, so "
-      "nothing anywhere in the frontier was tie-broken.  The courier "
-      "cadence was designed to keep this true and did — the "
-      "pre-registered hard part did not bite",
+check("W1 EVERY RECORD IN THE SWEEP IS ADMISSIBLE AT EVERY STEP "
+      "(restricted-menu drive).  WHAT THIS GATE MEASURES (round-1 "
+      "MINOR 4): a delivery specification is its full tuple and menu "
+      "events are pairwise distinct, so 'matches exactly one candidate' "
+      "cannot exceed one — the gated quantity is that the specified "
+      "event IS OFFERED (hits = 1, never 0) and no step was refused.  "
+      "Tie-freedom is structural, not discovered",
       _hits == 1 and not _refusals,
-      f"max hits = {_hits} (1 => forced), refusals = {len(_refusals)}")
+      f"max hits = {_hits} (1 => offered and unique), refusals = "
+      f"{len(_refusals)}")
 
 print("\n[W1b THE FULL-MENU REPLAY — the strong form: ALL actors offered "
       "at EVERY step (the batch round's own test on D60's brick)]")
@@ -627,11 +702,13 @@ for nm, k in (('C=0 anchor', ('WB', 8, 14, 0, CADENCE)),
           f"{r['status']} at step {r['step']}/{len(bb.H)}, max hits per "
           f"specification = {r['hits']}, widest full menu = {r['menu']} "
           f"candidates  [{r['t']:.1f}s]")
-check("W1b FORCED AGAINST THE UNRESTRICTED LAYER: replayed with all "
-      "actors offered at every step, each record's every specification "
-      "still matches EXACTLY ONE of the (up to several hundred) "
-      "candidates the layer offers.  This is the grade D60's C1 was "
-      "verified at in the batch round, and the wide records hold it",
+check("W1b ADMISSIBLE AGAINST THE UNRESTRICTED LAYER: replayed with "
+      "all actors offered at every step, each record's every "
+      "specification is OFFERED among the (up to several hundred) "
+      "candidates the layer enumerates — uniqueness being structural "
+      "(round-1 MINOR 4), the content is presence at every one of the "
+      "hundreds of steps.  This is the grade D60's C1 was verified at "
+      "in the batch round, and the wide records hold it",
       all(r['status'] == 'OK' and r['hits'] == 1
           for r in REPLAY.values()) and len(REPLAY) >= 3,
       "; ".join(f"{n}: {r['status']} hits {r['hits']} menu {r['menu']}"
@@ -651,53 +728,50 @@ def interior_of(H):
     return C, {e for e in range(len(C)) if lo + 2 <= hs[e] <= hi - 3}
 
 
-KEY = [('C=0 anchor (D60 brick)', ('WB', 8, 14, 0, CADENCE)),
-       ('WIDE-BRICK C=2        ', ('WB', 8, 14, 2, CADENCE)),
-       ('THE WINNER            ', WINNER),
-       ('DOUBLE-RING(6, 14, 6) ', ('DR', 6, 14, 6, CADENCE)),
-       ('DOUBLE-RING(4, 26, 4) ', ('DR', 4, 26, 4, CADENCE))]
+# round-1 MAJOR 3: band membership is the F3 criterion, so the control
+# runs on the WHOLE F3 set, not on hand-named key points
 INT = {}
-for nm, k in KEY:
-    if k not in BUILT:
-        continue
+_stay = []
+_leave_top = []
+for k in sorted(BOTH, key=repr):
     C, pop = interior_of(BUILT[k][0].H)
     pi = profile(C, pop)
     INT[k] = pi
     pf = FRONTIER[k]
-    for d in (2,):
-        print(f"    {nm} d={d}: FULL n={pf[d]['n']:4d} homog "
-              f"{float(pf[d]['h2']):.4f} |D|>=4 {float(pf[d]['h4']):.4f} "
-              f"max {pf[d]['max']}  ->  INTERIOR n={pi[d]['n']:4d} homog "
-              f"{float(pi[d]['h2']):.4f} |D|>=4 {float(pi[d]['h4']):.4f} "
-              f"max {pi[d]['max']}")
-_int_wide = all(INT[k][2]['h4'] >= FRONTIER[k][2]['h4'] for _, k in KEY
-                if k in INT)
-_int_homog = all(INT[k][2]['h2'] > FRONTIER[k][2]['h2'] for _, k in KEY
-                 if k in INT)
+    ih = pi[2]['h2']
+    tag = ('in band' if BAND[2][0] <= ih <= BAND[2][1]
+           else ('ABOVE band' if ih > BAND[2][1] else 'BELOW band'))
+    (_leave_top if ih > BAND[2][1] else _stay).append(k)
+    print(f"    {k[0]}({k[1]},{k[2]},{k[3]}"
+          + (f",cad{k[4]}" if k[4] != CADENCE else "") + "): "
+          f"FULL n={pf[2]['n']:4d} homog {float(pf[2]['h2']):.4f} "
+          f"|D|>=4 {float(pf[2]['h4']):.4f}  ->  INTERIOR "
+          f"n={pi[2]['n']:4d} homog {float(ih):.4f} [{tag}] |D|>=4 "
+          f"{float(pi[2]['h4']):.4f}")
+_int_wide = all(INT[k][2]['h4'] >= FRONTIER[k][2]['h4'] for k in INT)
+_int_homog = all(INT[k][2]['h2'] > FRONTIER[k][2]['h2'] for k in INT)
 _win_int = INT.get(WINNER)
-check("W5 THE WIDTH IS NOT A BOUNDARY ARTEFACT — AND THE HOMOGENEITY "
-      "READING MOVES.  Excising the bottom two and top three height "
-      "layers RAISES the |D| >= 4 fraction at every key point (the wide "
-      "charts are the circuit's, not the prefix's) and RAISES "
-      "homogeneity at every key point, exactly as D60's C7 found for "
-      "the brick.  Reported whichever way it lands: the winner's "
-      "interior homogeneity " + (
-          "leaves the sprinkling band THROUGH THE TOP"
-          if _win_int[2]['h2'] > BAND[2][1] else
-          ("STAYS inside the band" if _win_int[2]['h2'] >= BAND[2][0]
-           else "falls BELOW the band"))
-      + f" ({float(_win_int[2]['h2']):.4f} against the band's "
-      f"[{float(BAND[2][0]):.4f}, {float(BAND[2][1]):.4f}]), so 'in the "
-      "band' is in part a property of the record's ENDS; the mechanism "
-      "statement is D60's — the shortfall from 1 is boundary — and the "
-      "width survives the excision",
-      _int_wide and _int_homog,
-      f"interior |D|>=4 >= full at every key point = {_int_wide}; "
-      f"interior homogeneity > full at every key point = {_int_homog}; "
-      f"winner {float(FRONTIER[WINNER][2]['h4']):.4f} -> "
-      f"{float(_win_int[2]['h4']):.4f} wide, "
+check("W5 THE WIDTH IS NOT A BOUNDARY ARTEFACT — AND 'IN THE BAND' "
+      "LARGELY IS.  The interior control (D60's C7 excision) runs on "
+      "EVERY F3 member (round-1 MAJOR 3, not on hand-named points): "
+      "excision RAISES the |D| >= 4 fraction at every one — the wide "
+      "charts are the circuit's, not the prefix's, and that is the "
+      "durable half of F3.  Reported against the unit's own interest: "
+      f"{len(_leave_top)} of {len(INT)} F3 members' INTERIORS leave "
+      "the homogeneity band THROUGH THE TOP (the mechanism reading is "
+      "D60's: homogeneity tends to 1, i.e. ABOVE the band, so band "
+      "membership is partly an ENDS property of finite records; "
+      f"{len(_stay)} stay in-band).  The composition claim survives as: "
+      "the width mechanism does not destroy the tiling mechanism — "
+      "both halves of F3 are carried, the width half unconditionally, "
+      "the band half as a finite-record statement",
+      _int_wide and _int_homog and len(INT) == len(BOTH),
+      f"F3 members controlled = {len(INT)}/{len(BOTH)}; interior "
+      f"|D|>=4 >= full at all = {_int_wide}; interior homogeneity > "
+      f"full at all = {_int_homog}; interiors leaving the band through "
+      f"the top = {len(_leave_top)}, staying in = {len(_stay)}; winner "
       f"{float(FRONTIER[WINNER][2]['h2']):.4f} -> "
-      f"{float(_win_int[2]['h2']):.4f} homogeneous")
+      f"{float(_win_int[2]['h2']):.4f}")
 
 # ======================================================================
 # the licensed comparison, stated no wider than the sweep
@@ -725,19 +799,22 @@ print(f"    configurations INSIDE BOTH bands at once at d = 3: "
                   f"{float(FRONTIER[k][3]['h2']):.4f} / |D|>=4 "
                   f"{float(FRONTIER[k][3]['h4']):.4f}"
                   for k in sorted(_both3, key=repr)))
-check("THE LICENSED CLAIM, and its limit — REPORTED AT BOTH DEPTHS "
-      "BECAUSE THEY DISAGREE.  Inside the swept (M, R, C, cpl) family "
-      "the two mechanisms COMPOSE: coupled delivery circuits tile at "
-      "in-band homogeneity while carrying 4-direction charts at a third "
-      "of their events, which the brick never did at any parameter.  At "
-      "d = 2 the sweep does NOT deliver a configuration inside BOTH "
-      "sprinkling bands at once — the |D| >= 4 fraction reaches the "
-      "sprinkling band only where homogeneity has climbed ABOVE the "
-      "band's top (the rounds sweep).  At d = 3 it DOES: configurations "
-      "sit inside the d = 3 homogeneity band and the d = 3 |D| >= 4 "
-      "band simultaneously.  And on the max |D| column no configuration "
-      "reaches sprinkling values at either depth, because none can "
-      "(W4b).  All three halves are reported",
+check("THE LICENSED CLAIM — A d = 2 STATEMENT (round-1 MAJOR 1), and "
+      "its limit, REPORTED AT BOTH DEPTHS BECAUSE THEY DISAGREE.  "
+      "Inside the swept (M, R, C, cpl) family the two mechanisms "
+      "COMPOSE AT d = 2: coupled delivery circuits tile at in-band "
+      "homogeneity while carrying 4-direction charts at a third of "
+      "their events — which the brick never did AT d = 2, at any "
+      "parameter (at d = 3 the uncoupled brick already meets the F3 "
+      "pattern; W2's census).  At d = 2 the sweep does NOT deliver a "
+      "configuration inside BOTH sprinkling bands at once — the "
+      "|D| >= 4 fraction reaches the sprinkling band only where "
+      "homogeneity has climbed ABOVE the band's top (the rounds "
+      "sweep).  At d = 3 it DOES: configurations sit inside the d = 3 "
+      "homogeneity band and the d = 3 |D| >= 4 band simultaneously.  "
+      "And on the max |D| column no configuration reaches sprinkling "
+      "values at d = 2, because none can (W4b; at d = 3 the bound is "
+      "8 and the measured max is 6).  All three halves are reported",
       _beats_brick and len(_w4_reach) > 0 and len(_both_bands) == 0
       and len(_both3) > 0,
       f"winner |D|>=4 {P_WIN[2]['h4']} (~{float(P_WIN[2]['h4']):.4f}) vs "
@@ -784,6 +861,25 @@ print(f"    NOTHING WAS CUT: no sweep was truncated for runtime, so no "
       f"trend-based cut has to be defended (the D50 lesson).  Total wall "
       f"clock at this line: {time.time() - T0:.1f}s.")
 
+# W6b — determinism, GATED (round-1 MINOR 5): the probe re-run under
+# three hash seeds must produce byte-identical stdout
+t_det = time.time()
+_digs = []
+for _seed in ('0', '7', '999'):
+    _env = dict(os.environ, PYTHONHASHSEED=_seed)
+    _digs.append(subprocess.run(
+        [sys.executable, 'v10/code/d63_wide_crystal_exact.py', '--probe'],
+        capture_output=True, text=True, env=_env).stdout)
+check("W6b DETERMINISM IS GATED, NOT ASSERTED (round-1 MINOR 5; the "
+      "layer reads next(iter(frozenset)) in load-bearing places): the "
+      "anchor and the winner rebuilt in probe mode under "
+      "PYTHONHASHSEED 0 / 7 / 999 — byte-identical stdout, exact "
+      "Fractions included",
+      len(set(_digs)) == 1 and 'DIGEST' in _digs[0]
+      and "('DR', 8, 10, 8)" in _digs[0],
+      f"probe runs = 3, distinct outputs = {len(set(_digs))}  "
+      f"[{time.time() - t_det:.1f}s]")
+
 print("\n[VERDICT — D63]")
 print(f"  {VERDICT} FIRED.  " + (
     "THE WIDE CRYSTAL EXISTS: the tiling mechanism and the width"
@@ -799,12 +895,15 @@ if VERDICT == 'F3':
           f"{float(BAND[2][1]):.4f}]), |D| >= 4 at {P_WIN[2]['h4']} "
           f"(~{float(P_WIN[2]['h4']):.4f}) of its events, max |D| "
           f"{P_WIN[2]['max']}.")
-    print("  D60's residue 2 is CLOSED IN THE SWEPT FAMILY: max |D| = 3 "
-          "was the")
-    print("  1+1 brick's light cone, not a property of tiling records; a "
-          "second")
-    print("  spatial direction (couriers or a coupled ring) takes it "
-          "to 4.")
+    print("  D60's residue 2 is CLOSED IN THE SWEPT FAMILY, AT d = 2: "
+          "max |D| = 3")
+    print("  was the 1+1 brick's light cone, not a property of tiling "
+          "records; a")
+    print("  second spatial direction (couriers or a coupled ring) takes "
+          "it to 4.")
+    print("  (At d = 3 uncoupled records meet the F3 pattern already — "
+          "W2's census —")
+    print("  so the composition novelty is a d = 2 statement throughout.)")
 print("  AND THE NEW CEILING IS A THEOREM, NOT A PARAMETER (W4b): a "
       "record")
 print("  of deliveries has 2 registers per event, so |D| <= 2^d — no "

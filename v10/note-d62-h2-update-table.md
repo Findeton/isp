@@ -1,6 +1,19 @@
 # D62 — (H2) IS A THEOREM: the update table, written out
 
-**Status:** RESULT, 2026-07-26.  Pin: `note-d62-h2-update-table-pin.md`
+**Status:** ROUND-1 REVIEWED AND REPAIRED, 2026-07-26.  Round 1 was
+an independent Opus 5 hostile review, frozen at
+`reviews/d62-round1-hostile-review.md` — REVISE, 0 BLOCKER / 1 MAJOR
+/ 7 MINOR / 3 NIT, and **the first round in this line where the
+sentence on the cover survived as written**: the referee
+re-implemented the serialised state, the canonicalisation and all
+five rows from this note's prose alone (different normal form,
+nothing shared with the receipt) and got **zero mismatches against
+the layer's own `sigma(h+e)` on 4,778,310 transitions into depth 9**
+— two levels past the receipt — with 176 keys, 0 keys with two
+successors, 36 states, and the sigma-minimising renaming unique on
+all 4,778,311 histories.  Every finding was in the receipt's account
+of its own evidence, none in the mathematics; repairs applied,
+receipt rerun green.  Pin: `note-d62-h2-update-table-pin.md`
 (STRICT, frozen before this note).  Parents: `note-d61-h1-closure-result.md`
 ((H1) [THEOREM]; (H0) fully discharged, clause 4 = **Lemma 7b**; D44a
 left CONDITIONAL ON (H2) ALONE), the adopted proof note
@@ -101,10 +114,15 @@ And three theorems of D61 fix its shape, at every depth:
 > **The one structural claim the table must earn.**  `Σ` is a *lossy*
 > projection of the history — dropped superseded marks are gone.  The
 > table is legitimate only if **no row ever consults a dropped mark**.
-> Rows R1–R4 below consult `sup` in exactly two places: the flag of a
-> token in `refs` (present in `Σ` by F3) and the flag of the **one**
-> token a dropped-base propose re-imports, which is **forced to
-> `True`** by obligation O1.  Nothing else is read.  **[PROOF]**
+> The rows **read** a superseded flag in exactly one place — R3's
+> precondition disjunct `flag(b) = True`, a flag of a token in `refs`,
+> present in `Σ` by F3 — and **write** flags in two (R2′'s re-imported
+> token, whose flag is *computed, not read*, forced to `True` by
+> obligation O1; the arbs' `b ↦ True`, `v ↦ False`).  No dropped mark
+> is ever read.  **[PROOF]**  *(Round-1 MINOR 6: the first draft said
+> "consult in two places", conceding a read of a dropped mark that
+> §6.1 then denied; read-versus-write is the distinction that makes
+> the claim true.)*
 
 The **renamed event** is `canon_pair`'s `ebest`: `e` under a bijection
 `m` that attains `sigma(h)`, extended over any base of `e` outside
@@ -114,9 +132,14 @@ The **renamed event** is `canon_pair`'s `ebest`: `e` under a bijection
 
 ## 3. The layer lines the rows read
 
-All quoted verbatim from `v10/code/d42b3_placement_exact.py`; the
-receipt asserts each against the source (**[EXACT]** N0(c)/N0(d), 18
-lines, 0 missing).
+Quoted from `v10/code/d42b3_placement_exact.py` — verbatim except
+(L8)/(L9)'s two-line loop body, compressed to one display line here
+(round-1 MINOR 5).  The receipt asserts the load-bearing lines
+against the source (**[EXACT]** N0(c)/N0(d)) — after the round-1
+repairs that set now includes (L4)'s comprehension head, (L5)'s
+proposer test and (L7)'s bit predicate, the halves the first draft's
+assertions omitted (round-1 MINOR 2; the (L7) bit predicate is the
+entire content of Row 0).
 
 ```
 def vname(base, wkey, init):
@@ -392,12 +415,18 @@ propose is on `b = X_x` (R2′'s precondition).  Then:
 3. Therefore the successor's new flag is **computed, not read**: the
    re-imported token carries `True` because step 1 says so — the table
    never has to recall a mark it dropped.
-4. Uniqueness of the token: by (5e) at most one actor's token is
-   full-superseded, so at most **one** base can ever be re-imported
-   this way, and `canon_pair`'s extension `100 + i` assigns it the
-   single name `100` with no residual choice.  Everything else about
-   it — that it is superseded, unheld, and distinct from every token in
-   `refs` — is fixed by 1–3.  ∎
+4. The renaming is choice-free **by construction** (round-1 MINOR 3:
+   the first draft credited this to (5e), whose real load is step 2):
+   `canon_pair` renames the extras of **one event**, and a propose has
+   one base, so `|extras| ≤ 1` unconditionally and the extension
+   assigns the single name `100` with no residual choice.  Everything
+   else about the token — superseded, unheld, distinct from every
+   token in `refs` — is fixed by 1–3.  ∎  *(The stronger fact, worth
+   recording: the row would remain correct even with two dropped
+   bases, since the second one's flag is already in `Σ`; and the
+   round found the two-dropped-base state is unreachable anyway —
+   drop onsets per history are never more than 1, exhaustively to
+   depth 6 and on directed walks to depth 150.)*
 
 *(This is the §6/S3(b) argument of the adopted note, promoted from a
 gate to a proof and localised to the row that consumes it.  Its premise
@@ -484,18 +513,25 @@ the added token differs from all of `refs(h)` by O1/O2.
    4, Lemma 7b — all theorems at **every depth**; **no step is an
    induction on depth and no step reads the history.**
 2. **`F` is equivariant.**  `F` only *copies* tokens from its input,
-   introduces one fresh token, and computes flags; it never inspects a
-   token's identity.  So for any bijection `π` of tokens,
-   `F(π·Σ, π·e) = π·F(Σ, e)`.
+   introduces one fresh token, and computes flags — its **output is
+   determined up to relabelling of the tokens it copies** (round-1
+   NIT 2: the implementation does sort by token repr internally, but
+   `ser` re-sorts every field after renaming and the minimisation is
+   over all relabellings, so nothing turns on it).  So for any
+   bijection `π` of tokens, `F(π·Σ, π·e) = π·F(Σ, e)` up to
+   relabelling — which is all step 3 consumes.
 3. **Canonicalisation commutes.**  `canon_sigma(h+e)` is the minimum of
    `ser` over all bijections of `refs(h+e)`; the table takes the same
    minimum over relabellings of its own output.  With (2) the two
    minima agree.
-4. **Well-definedness of the input.**  `canon_pair` picks `m` among the
-   bijections attaining `sigma(h)` and minimises `e^{m'}`; the pair
-   `(sigma(h), renamed e)` is therefore a coherent (state, event) pair
-   in one token language.  If two histories give the same pair, (1)–(3)
-   give the same `canon_sigma` successor.
+4. **Well-definedness of the input** — one line (round-1 NIT 3):
+   `canon_pair` returns `(sbest, ebest)` because *some* sigma-attaining
+   `m` realises that pair; row correctness applies to that `m`; done.
+   No uniqueness of the attaining `m` is needed.  *(It holds anyway,
+   and the round measured it at the scale the pin flagged as the
+   highest residual risk: the sigma-minimising renaming is unique on
+   all 4,778,311 histories to depth 9, and the renamed event unique
+   on all 4,778,310 transitions.)*
 
 Hence `sigma(h+e)` is a function of `(sigma(h), renamed e)`, at every
 depth. **∎ — and the argument mentions no depth anywhere.**
@@ -531,15 +567,22 @@ enumerator, and calls only the committed `ser()`.
 | gate | buys |
 |---|---|
 | **N0(a)–(f)** | single sources by text slice (the d61 idiom); **slice hygiene** — 0 `sys.exit`, 0 `check(`, 0 `print(` survive the three d44a slices (the d50 lesson); the 18 source lines the rows quote; the census `[1,6,32,176,976,5280,27904]` |
-| **T1(a)** | the table equals the layer at all **179,782** cached transitions into depth 7 — string-identical serialisation, 0 mismatches |
+| **T1(a)** | the table equals the layer at all **179,782** cached transitions into depth 7 — string-identical serialisation, 0 mismatches (total count uncapped; round-1 MINOR 1) |
 | **T1(b)** | the anchors: **176** distinct `(sigma, renamed e)` keys and **36** states (d44a CG2's 160 + CG7c's 16; CG3a's traversed-edge count) |
 | **T1(c)** | closure: 0 escapes from the reachable set |
 | **T1(d)** | Row 0 at all 34,375 states |
-| **T1(e)** | the `W`-blindness corollary |
-| **T2(a)/(b)/(c)** | O2: census 44,356 / 0; the *premise* adversarially (49,964 colliding-name candidates, 0 admitted); the named witness |
-| **T3(a)/(b)/(c)** | O1: forcedness at all 9,656 instances; no split within any `(sigma, e)` class; (5e) at every state |
-| **T4(a)–(e)** | row coverage (a partition, 0 fall-through), the census anchors, the row preconditions at every instance, token discipline (no arb ever carries the extra token), sub-case non-vacuity |
+| **T1(e)** | the `W`-blindness line — **a corollary of T1(a), printed, not independent evidence** (round-1 MAJOR 1(a)) |
+| **T2(a)/(b)/(c)** | O2: census 44,356 / 0; the premise on a reachability-restricted surface (49,964 colliding-name candidates, 0 admitted; round 1 confirmed 0 admitted on the truly adversarial surface at 2.3× — MINOR 7); the named witness |
+| **T3(a)/(c)** | O1: forcedness at all 9,656 instances; (5e) at every state.  **T3(b) is a corollary of T1(a)** (round-1 MAJOR 1(b)) — printed, not counted |
+| **T4(a)–(e)** | row coverage by an **independent classifier** (round-1 MAJOR 1(c): the first draft's fall-through counter was a tautology), the census anchors, the row preconditions at every instance, token discipline, sub-case non-vacuity |
 | **T5** | the frontier-exhausted BFS on sigma-space: 36 states expanded, **176** edges, the table correct on **every abstract transition key**, key set identical to the cached sweep's |
+
+**The independent-evidence map, stated plainly (round-1 MAJOR 1):**
+the gates that can genuinely fail are T1(a)/(b)/(c)/(d), T2(a)/(b)/(c),
+T3(a)/(c), T4(a-repaired)/(b)/(c)/(d)/(e), T5, and the N0 anchors;
+T1(e) and T3(b) are corollaries of T1(a), kept as printed reporting
+lines.  "24 PASS" is not 24 independent pieces of evidence and this
+table is the honest map.
 
 > **What none of them buys.**  Every gate is finite-depth or
 > quotient-level.  **T5 in particular is NOT an independent proof:** the
@@ -548,13 +591,18 @@ enumerator, and calls only the committed `ser()`.
 > printed in the receipt itself, at the gate, because D61 over-promised
 > the analogous point twice and the pin forbids a third time.
 
-Falsifiability was checked, not assumed: **eleven mutants** — six of
-the table's rows (including the invisible-supersession clause
-`hold'[y] = None`, Row 0's bit test, O1's flag, O2's freshness) and
-five of the gate predicates (R3's precondition, O1's forcedness, O2's
-adversarial non-vacuity, (5e), the sub-case census) — each produce
-`[FAIL]` on the gate that owns them, and on no other.  Output is
-byte-identical under `PYTHONHASHSEED` 0/1/7.
+Falsifiability was checked, not assumed, and is stated **as round 1
+measured it** (MAJOR 1(d): the first draft claimed each mutant fails
+"the gate that owns it, and on no other", which is false for the row
+mutants): **eleven mutants** — six of the table's rows (including the
+invisible-supersession clause `hold'[y] = None`, Row 0's bit test,
+O1's flag, O2's freshness) and five of the gate predicates.  The five
+gate-predicate mutants each fail exactly their owning gate; the six
+row mutants each fail **T1(a) and T5 together**, because T5 re-runs
+the same `TABLE` — two genuine detections each, by design, not one.
+Output is byte-identical under `PYTHONHASHSEED` 0/1/7 (round 1: also
+12345, and empirically at the anchored depth the M1 row mutant exits
+0 with the anchors green — the exit protocol honours pin §4).
 
 ---
 

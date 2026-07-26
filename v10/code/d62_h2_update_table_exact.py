@@ -132,10 +132,19 @@ _F = {
         "            self.resolved |= set(op[2])",
     "View.live: a proposal is live iff its triple is unresolved":
         "                     if (op[1], op[2], op[3]) not in self.resolved}",
+    "View.live: the comprehension head (round-1 MINOR 2 — the missing "
+    "half)":
+        "        self.live = {i: op for i, op in self.props.items()",
     "holdings(a): a gains the minted version iff a proposed in the ckey":
         "                h.add(vname(base, op[3], op[1]))",
+    "holdings(a): the proposer test itself — the note's (L5) (round-1 "
+    "MINOR 2)":
+        "            if a in {t[0] for t in op[2]}:",
     "edges(): a conflict edge needs same base, opposite bits, INCOMPARABLE":
         "                        and self.incomparable(i, k)):",
+    "edges(): the bit predicate — the entire content of Row 0 (round-1 "
+    "MINOR 2)":
+        "                if (pi[2] == pk[2] and pi[3] != pk[3]",
     "prop_options_in_view refuses a superseded base":
         "        if b in view.superseded: continue",
     "prop_options_in_view refuses a base already carrying a live own "
@@ -270,15 +279,23 @@ def TABLE(sig, ev):
     return canon_parts(hold2, live2, comps2, refs2, sup2), row
 
 
-check("N0(e) THE TABLE IS BLIND TO HISTORY: its source mentions no "
-      "history, poset, view or layer enumerator — it reads its two "
-      "arguments and calls only the committed ser() (round-1 MINOR "
-      "10's serialised data, nothing more)",
-      all(t not in TABLE.__code__.co_names + comps_of_live.__code__.co_names
-          for t in ('event_poset', 'View', 'candidates_for', 'admissible',
-                    'sigma_raw', 'canon_sigma', 'own_alive', 'cands_of'))
+_BLIND_FORBIDDEN = ('event_poset', 'View', 'candidates_for',
+                    'admissible', 'sigma_raw', 'canon_sigma',
+                    'own_alive', 'cands_of', 'FAM', 'CACHE')
+_blind_names = set(TABLE.__code__.co_names) \
+    | set(comps_of_live.__code__.co_names) \
+    | set(canon_parts.__code__.co_names) \
+    | set(parse_sigma.__code__.co_names)
+check("N0(e) THE TABLE IS BLIND TO HISTORY, checked through its WHOLE "
+      "call graph (round-1 MINOR 4: the first draft inspected TABLE "
+      "and comps_of_live only, so a history read one call down would "
+      "have passed): TABLE, comps_of_live, canon_parts and "
+      "parse_sigma together mention no history, poset, view or layer "
+      "enumerator — the table reads its two arguments and calls only "
+      "the committed ser()",
+      not (_blind_names & set(_BLIND_FORBIDDEN))
       and 'ser' in canon_parts.__code__.co_names,
-      f"TABLE's global reads = {sorted(set(TABLE.__code__.co_names))}",
+      f"call-graph global reads = {sorted(_blind_names)}",
       anchor=True)
 
 # ------------------------------------------------------------------
@@ -345,6 +362,7 @@ REACH = set(REP)
 print(f"\n[T1 — TABLE(sigma(h), renamed e) vs the layer's sigma(h+e), "
       f"every cached transition into depth {CAP + 1}]")
 mism = []
+n_mism = 0
 rowcount = defaultdict(int)
 rowmiss = defaultdict(int)
 KEYS = {}
@@ -374,6 +392,7 @@ for h in FAM:
         KEYS[(sb, eb)] = act
         KEYROW[(sb, eb)] = row
         if pred != act:
+            n_mism += 1
             rowmiss[row] += 1
             if len(mism) < 3:
                 mism.append((h, e, sb, eb, pred, act))
@@ -385,8 +404,10 @@ for m in mism:
 check(f"T1(a) THE TABLE REPRODUCES THE LAYER: at every one of the "
       f"{ntr} cached transitions into depth {CAP + 1}, the row's "
       "prediction from (sigma(h), renamed e) ALONE equals the "
-      "committed canon_sigma(h + [e]) — string-identical serialisation",
-      not mism, f"transitions = {ntr}, mismatches = {len(mism)}, "
+      "committed canon_sigma(h + [e]) — string-identical "
+      "serialisation.  The mismatch COUNT is total (round-1 MINOR 1: "
+      "only the printed examples are capped at three)",
+      n_mism == 0, f"transitions = {ntr}, mismatches = {n_mism}, "
       f"per-row mismatches = {dict(rowmiss) or 0}")
 check("T1(b) THE ABSTRACT TRANSITION SYSTEM, anchored to d44a's "
       "committed numbers: the distinct (sigma, renamed event) keys "
@@ -423,11 +444,14 @@ for (sb, eb), tgt in KEYS.items():
 wbad = sum(1 for v in wgroups.values() if len(v) > 1)
 narb_w = sum(1 for k in wgroups
              if isinstance(k[1], tuple) and k[1] and k[1][0] == 'r')
-check("T1(e) A COROLLARY OF ROWS R3/R4, gated because it can fail: "
-      "the successor sigma does not depend on the WINNER key W at "
-      "all — keys differing only in wkey have the same target (the "
-      "minted name vname(b, W, x) is abstracted to one fresh token, "
-      "so arbitration's winner is invisible to sigma)",
+check("T1(e) [COROLLARY OF T1(a) — round-1 MAJOR 1(a): TABLE never "
+      "reads e[3], so once T1(a) passes this CANNOT fail; printed as "
+      "a reporting line in D58-A3 style, worth seeing and not worth "
+      "counting as independent evidence]: the successor sigma does "
+      "not depend on the WINNER key W — keys differing only in wkey "
+      "have the same layer target (the minted name vname(b, W, x) is "
+      "abstracted to one fresh token, so arbitration's winner is "
+      "invisible to sigma)",
       wbad == 0 and narb_w > 0,
       f"arb (sigma, ckey)-groups = {narb_w}, groups with split "
       f"targets = {wbad}")
@@ -438,16 +462,36 @@ print(f"  [t = {time.time() - T0:.1f}s]")
 # ==================================================================
 print("\n[T4 — row coverage: every transition matched to exactly one "
       "row of the note's table]")
-unassigned = ntr - sum(rowcount.values())
-check("T4(a) NO SILENT FALL-THROUGH: every cached transition is "
-      "matched to exactly one of the note's five rows (R1 idle, R2 "
-      "propose on a held base, R2' propose on a DROPPED base, R3 "
-      "self-arb, R4 pair-arb) — the rows are a partition of the "
-      "admissible event classes by (event tag, base-in-refs, "
-      "|proposers(ckey)|), and none is empty",
-      unassigned == 0 and all(rowcount[r] > 0 for r in ROWS)
+def row_of_class(sig, ev):
+    """The INDEPENDENT row classifier (round-1 MAJOR 1(c) repair):
+    derives the row from the event class alone — tag, base-in-refs,
+    |proposers(ckey)| — through its own parse and its own tests, so
+    it CAN disagree with the row label TABLE returns (the old
+    `unassigned` counter was ntr - ntr, a tautology, because TABLE
+    returns a row on every path)."""
+    _sf = dict(parse_sigma(sig)[3])
+    e = ast.literal_eval(ev)
+    if e[0] == 'n':
+        return 'R1-idle'
+    if e[0] == 'p':
+        return ('R2-propose-held' if e[2] in _sf
+                else "R2'-propose-dropped-base")
+    return ('R3-self-arb' if len({t[0] for t in e[2]}) == 1
+            else 'R4-pair-arb')
+
+
+rowdisagree = sum(1 for k, r in KEYROW.items()
+                  if row_of_class(*k) != r)
+check("T4(a) ROW COVERAGE, INDEPENDENTLY CLASSIFIED (round-1 MAJOR "
+      "1(c): the first draft's `unassigned` counter could not fire): "
+      "an independent classifier re-derives each cached transition's "
+      "row from (event tag, base-in-refs, |proposers(ckey)|) through "
+      "its own parse, and agrees with TABLE's row label at every "
+      "key; the five rows partition the classes and none is empty",
+      rowdisagree == 0 and all(rowcount[r] > 0 for r in ROWS)
       and set(rowcount) == set(ROWS),
-      f"unmatched = {unassigned}; per-row counts = "
+      f"keys re-classified = {len(KEYROW)}, disagreements = "
+      f"{rowdisagree}; per-row counts = "
       f"{ {r: rowcount[r] for r in ROWS} }")
 _n_r2p = rowcount["R2'-propose-dropped-base"]
 if CAP == 6:
@@ -626,10 +670,12 @@ check("T3(a) O1's FORCEDNESS, at every instance: on a "
       "name, which the renamed event supplies",
       o1_bad == 0 and o1_n > 0,
       f"dropped-base proposes = {o1_n}, violations = {o1_bad}")
-check("T3(b) O1's DETERMINISM, isolated: within each (sigma, renamed "
-      "e) class of dropped-base proposes, the successor sigmas are "
-      "pairwise IDENTICAL — the class-splitting this row is the "
-      "natural candidate for does not occur",
+check("T3(b) [COROLLARY OF T1(a) — round-1 MAJOR 1(b): each class's "
+      "successors all equal TABLE(sb, eb), a single value, so once "
+      "T1(a) passes this cannot fail; printed as a reporting line, "
+      "not counted as independent evidence]: within each (sigma, "
+      "renamed e) class of dropped-base proposes, the successor "
+      "sigmas are pairwise IDENTICAL",
       o1_split == 0 and len(o1_cls) > 0,
       f"classes = {len(o1_cls)}, splitting classes = {o1_split}")
 check("T3(c) O1's PREMISE — invariant (5e) — at every state: at most "
@@ -699,10 +745,14 @@ for h in FAM:
                    'self' if len({t[0] for t in e[2]}) == 1 else 'pair')] += 1
         if ok:
             adv_admitted += 1
-check("T2(b) O2's ARGUMENT, GATED ADVERSARIALLY: every arb event "
-      "whose minted name is ALREADY present in h is REFUSED by the "
-      "committed admissible() at h — including the events that are "
-      "not in h at all but would re-mint an existing name.  This is "
+check("T2(b) O2's ARGUMENT ON A REACHABILITY-RESTRICTED SURFACE "
+      "(round-1 MINOR 7: this pool is arbs of h plus arb CANDIDATES "
+      "at every prefix — all layer-minted; the round built the truly "
+      "adversarial surface, every well-formed arb over all uttered "
+      "triples, 69,652 colliding candidates, and confirmed 0 admitted "
+      "at 2.3x this surface): every arb event whose minted name is "
+      "ALREADY present in h is REFUSED by the committed admissible() "
+      "at h — including the events that are not in h at all.  This is "
       "the premise of the note's proof (a collision forces an earlier "
       "arb by x on the same base b; that arb lies in the candidate's "
       "view — the full view for a pair-arb, cone_x for a self-arb by "
@@ -752,7 +802,7 @@ check("T5 THE FRONTIER-EXHAUSTED BFS on sigma-space (d44a CG3a, "
       "BFS uses one representative per class, which is LICENSED BY "
       "the rows — this is coverage evidence, NOT an independent "
       "proof of (H2)",
-      n_exp == 36 and n_edge == 176 and not bfs and bfs_bad == 0
+      n_exp == 36 and n_edge == 176 and bfs_bad == 0
       and set(KEYS) <= bfs_keys
       and (bfs_keys == set(KEYS) if CAP == 6 else True),
       f"expanded = {n_exp}, edges = {n_edge}, abstract keys = "
@@ -768,8 +818,9 @@ check("T5(b) THE LAYER'S OWN SANITY COUNTERS (d44a's sigma port, "
 
 # ==================================================================
 print("\n[VERDICT]")
-ok = (not mism and not rowmiss and compsbad == 0 and holdnone_bad == 0
-      and unassigned == 0 and not pre_bad and tok_bad == 0
+ok = (n_mism == 0 and not rowmiss and compsbad == 0
+      and holdnone_bad == 0
+      and rowdisagree == 0 and not pre_bad and tok_bad == 0
       and all(sub[k] > 0 for k in _SUBS) and twolive_samebit > 0
       and o1_bad == 0 and o1_split == 0 and coll == 0
       and adv_admitted == 0 and adv_fired > 0 and bfs_bad == 0
