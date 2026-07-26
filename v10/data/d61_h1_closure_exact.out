@@ -3,34 +3,46 @@
   (d60p §3-§7, prose-over-code); this receipt gates every case
   claim at every cached instance, the code-facts the proof
   reads, and the conclusion.  TWO-ACTOR d42a ONLY.
-  [PASS] N0 anchors: committed d42b3 layer + sigma/canon_menu extracted VERBATIM from committed d44a (the probe's own text-slice port; no abstraction of this receipt's own)  (single sources)
-  [PASS] N1 CODE-FACTS (Lemma 1's register geometry, asserted against the committed source): regs_of gives {actor} for p/n and {proposers} u {fresh vname} for r — the registers are ACTOR NAMES plus arbitrator-owned version names, which is the entire basis of the dichotomy  (source assertions hold)
+  [PASS] N0 anchors: committed d42b3 layer + sigma/canon_menu extracted VERBATIM from committed d44a (the probe's own text-slice port; no abstraction of this receipt's own) — the slices carry the expected structures, not merely callables (round-1 MINOR 2)  (single sources; slice contents asserted)
+  [PASS] N1 CODE-FACTS (Lemma 1's register geometry, asserted against the committed source, INCLUDING the version-register line — round-1 MINOR 2): regs_of gives {actor} for p/n and {proposers} u {fresh vname} for r — the registers are ACTOR NAMES plus arbitrator-owned version names  (source assertions hold)
   exhaustive family to depth 6: 34375 histories
   [PASS] N2 LEMMA 5's INVARIANTS (5a alive singleton; 5b <= 1 live, on X_a; 5e <= 1 full-view-superseded X) at EVERY history, layer-computed: zero violations  (histories = 34375, violations = 0)
+  [PASS] N2(c) INVARIANT 5c at every history (round-1 MAJOR 1): no pair-arb after a self-arb — order form AND menu form; and the FIRST self-arb of any history sits on the shared base X_A = X_B (the induction's previously-unwritten step)  (post-self-arb histories = 20348, first-self-arb candidates = 14772, violations = 0)
+  [PASS] N2(d) INVARIANT 5d at every history, FULL STRENGTH incl. the same-bit case (round-1 MAJOR 1): no opponent proposal live in cone_a on X_a, either bit  (violations = 0)
 
-[N3 — Lemma 5's step cases, checked at every instance]
-  [PASS] N3(a) THE PROPOSE CASE: every admissible propose is on the actor's own alive singleton X_a with no prior live proposal — at every instance  (instances = 12916, violations = 0)
-  [PASS] N3(b) THE SELF-ARB CASE: every admissible single-actor arb consumes a SINGLETON component on that actor's own X_a — at every instance  (instances = 6484, violations = 0)
-  [PASS] N3(c) THE PAIR-ARB CASE: every admissible two-actor arb sits on a base that is BOTH actors' alive singleton (X_A = X_B = base) — at every instance  (instances = 2032, violations = 0)
-  [PASS] N3(d) CASE EXHAUSTIVENESS: every menu event is p, r or n — the case split covers the alphabet  (non-p/r/n menu events = 0)
+[N3 — Lemma 5's step cases: PRECONDITIONS and EFFECTS, at every cached transition (parents to depth <= 5)]
+  [PASS] N3(a) THE PROPOSE CASE, preconditions AND effects: every admissible propose is on the actor's own alive singleton X_a with no prior live proposal; after it, alive tokens unchanged, the actor holds exactly one live proposal on X_a, the opponent untouched — at every instance  (instances = 12916, precondition violations = 0, effect violations = 0)
+  [PASS] N3(b) THE SELF-ARB CASE, preconditions AND effects (round-1 MINOR 6): every admissible single-actor arb consumes a SINGLETON component on that actor's own X_a; after it, the actor advances to the fresh version with 0 live, and the OPPONENT's (alive, live) is UNCHANGED with the arb OUTSIDE its cone — the invisible supersession, gated as an effect  (instances = 6484, precondition violations = 0, effect violations = 0)
+  [PASS] N3(c) THE PAIR-ARB CASE, preconditions AND effects: every admissible two-actor arb sits on a base that is BOTH actors' alive singleton; after it, BOTH actors advance to the same fresh version and BOTH live proposals are resolved  (instances = 2032, precondition violations = 0, effect violations = 0)
+  [PASS] N3(d) CASE EXHAUSTIVENESS as a CODE-FACT (round-1 MINOR 2: the old counter could never fire): candidates_for constructs events only via ('n', a), ('p', ...) and ('r', ...) literals in the committed source  (alphabet asserted against candidates_for's source)
   [PASS] N3(e) THE DICHOTOMY (Lemma 2): every candidate's own view is the initiator's cone or the FULL view — no third case, at every instance  (candidates = 34374: cone = 32342, full = 2032, third = 0)
 
 [N4 — the conclusion: canon_menu is a function of canon_sigma]
-  [PASS] N4 (H1)'s CONCLUSION at this receipt's scope: equal canonical sigma => IDENTICAL canonical menu (renamed event-multiset with exact weights), over all 34375 histories, 36 sigma classes — zero splits.  The probe gated the same over 930,631 histories at depth 8 [PROBE-CARRIED]  (sigma classes = 36, splits = 0)
-  [PASS] N5 the per-actor menu mass is in {1, 5/4} at every history — the quarter law as the closed form G derives it (probe §6)  (off-law = 0)
+  [PASS] N4 (H1)'s CONCLUSION at this receipt's scope: equal canonical sigma => IDENTICAL canonical menu (renamed event-multiset with exact weights), over all 34375 histories — zero splits, with the sigma count gated EXACTLY 36 and the cumulative window spectrum gated against d44a's committed SG1 anchor (round-1 MINOR 3).  The probe gated the same over 930,631 histories at depth 8 [PROBE-CARRIED, re-verified independently by the round-1 review]  (sigma classes = 36, splits = 0, window spectrum = [11, 19, 28, 32, 36])
+  [PASS] N5 the per-actor menu mass is in {1, 5/4} at every history — a DIRECT per-actor mass census (round-1 MINOR 2: this gate does not evaluate G; the derivation from G is the note's §6 + the probe's S3(d))  (off-law = 0)
 
 [VERDICT]
   (H1) STANDS AS A THEOREM at two-actor delivery-free d42a
-  scope, CARRIED BY THE ADOPTED PROOF NOTE (d60p §3-§7,
-  prose-over-code) — with every case claim, the code-facts,
-  the dichotomy, and the conclusion gated at every cached
-  instance here, and the conclusion additionally gated at
-  depth 8 by the probe.  A Lean-grade mechanization remains
-  a RESIDUE, stated as such.  Consequences per the pin:
-  D44a unconditional at this scope; RESIDUE 1 CLOSED here;
-  D49 unconditional-at-depth here, within the stationary
-  form (D50).  Transport untouched; three actors out of
-  scope.
+  scope, CARRIED BY THE ADOPTED PROOF NOTE (d60p §3-§7b,
+  prose-over-code) — with every case claim (preconditions
+  AND effects), the code-facts, the invariants 5a-5e, the
+  dichotomy, and the conclusion gated at every cached
+  transition here (parents to depth <= 5), and the
+  conclusion additionally gated at depth 8 by the probe and
+  independently by the round-1 review.  A Lean-grade
+  mechanization remains a RESIDUE, stated as such.
+  CONSEQUENCES, RESTATED BY ROUND 1 (the round's BLOCKER):
+  D44a's closure theorem remains CONDITIONAL on (H2) alone
+  — (H0) is now fully discharged (clauses 1-3 by Lemmas
+  4/5, clause 4 by Lemma 7b) — with (H2) verified
+  exhaustively through depth 8 (round-1 review: 176 keys,
+  0 violations, independent layer).  RESIDUE 1 is DECIDED
+  AT EVERY VERIFIED DEPTH; its last named gap has shrunk
+  from three hypotheses to ONE ((H2) — the update table,
+  D62).  'Residue 1 closed' / 'D44a unconditional' are NOT
+  delivered by this unit and may not be quoted from it.
+  Transport untouched; three actors out of scope (and the
+  wall now EXHIBITED: 5,904 admissible third-case views at
+  three actors, depth <= 4 — round-1 review).
 
-[d61] 10 PASS / 0 FAIL
-RC=0
+[d61] 12 PASS / 0 FAIL

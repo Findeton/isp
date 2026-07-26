@@ -43,7 +43,7 @@
 [TG3 the decidable stratum + TG4 shatter-4]
   decidable (history, base event, definition) triples = 44 (by definition: {'A': 0, 'B': 37, 'C': 7})
   SHATTERED 4-sets = 0; circular-ones NOT-ARC = 0 [DIAGNOSTIC ONLY]; UNDECIDED-BY-CAP = 0
-  [PASS] TG3 THE DECIDABLE STRATUM IS REPORTED AS A FIRST-CLASS QUANTITY, not inferred from a silent absence: the count of triples where shatter-4 can be asked at all is printed per sky definition, and any zero is undecidability rather than evidence  (decidable = 44, by definition = {'A': 0, 'B': 37, 'C': 7})
+  [PASS] TG3 THE DECIDABLE STRATUM IS REPORTED AS A FIRST-CLASS QUANTITY, not inferred from a silent absence: the count of triples where shatter-4 can be asked at all is printed per sky definition, and any zero is undecidability rather than evidence.  (Relabelled per the batch round, D53 MINOR 3: this >= 4 dirs / >= 2 rows stratum is DECIDABILITY-TO-ASK, not a capacity census — shatter-4 additionally needs >= 16 distinct traces incl. a row DISJOINT from the tested set, the corrected D53 SC5 / disjoint-row lemma)  (decidable = 44, by definition = {'A': 0, 'B': 37, 'C': 7})
   [PASS] TG4 SHATTER-4 ON THE DECIDABLE STRATUM: the result is reported with its stratum size.  A shattering is an OBSTRUCTION CERTIFICATE against 2+1 under the committed definition; an absence is NOT evidence for 2+1 (pin §2, and D47a's SG3b showed real 2+1 skies routinely fail the weaker instrument)  (shattered = 0 of 44 decidable triples)
 
 [TG5 the construction-matched null — REBUILT AFTER ROUND-1 R1]
@@ -87,4 +87,3 @@
 
 [totals] PASS = 14, FAIL = 0
 EXIT 0
-RC=0

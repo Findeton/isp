@@ -337,7 +337,12 @@ if first_shatter is not None:
 check("TG3 THE DECIDABLE STRATUM IS REPORTED AS A FIRST-CLASS QUANTITY, "
       "not inferred from a silent absence: the count of triples where "
       "shatter-4 can be asked at all is printed per sky definition, and "
-      "any zero is undecidability rather than evidence",
+      "any zero is undecidability rather than evidence.  (Relabelled "
+      "per the batch round, D53 MINOR 3: this >= 4 dirs / >= 2 rows "
+      "stratum is DECIDABILITY-TO-ASK, not a capacity census — "
+      "shatter-4 additionally needs >= 16 distinct traces incl. a row "
+      "DISJOINT from the tested set, the corrected D53 SC5 / "
+      "disjoint-row lemma)",
       dec >= 0 and sum(per_def.values()) == dec,
       f"decidable = {dec}, by definition = {per_def}")
 

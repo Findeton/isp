@@ -249,9 +249,12 @@ if b2.refusal is None:
           sorted(dirs) == dirs_idx,
           f"instrument dirs = {sorted(dirs)}, blueprint = {dirs_idx}")
 
-    check("K6 CAPACITY BY THE CORRECTED CONDITION (D53 SC5, never D47 "
-          "SG2): >= 4 directions, >= 16 DISTINCT traces, empty trace "
-          "present",
+    check("K6 CAPACITY IN THE STRICT FIRST-DRAFT FORM (>= 4 dirs, "
+          ">= 16 DISTINCT traces, AND the empty trace — STRICTER than "
+          "the batch round's corrected D53 SC5, which drops the "
+          "empty-row clause; kept because THIS record does carry the "
+          "empty trace, so the strict form holds a fortiori; "
+          "relabelled per the batch round, never D47 SG2)",
           len(dirs) >= 4 and len(r) >= 16 and frozenset() in r,
           f"|dirs| = {len(dirs)}, distinct traces = {len(r)}, empty = "
           f"{frozenset() in r}")
@@ -265,8 +268,9 @@ if b2.refusal is None:
           "stipulation that a 2+1 sky means an arc system — d47a's own "
           "demotion showed a MAJORITY of genuine discrete 2+1 SKY-B "
           "skies are non-arc (218/397 decided, round-1 recount).  The "
-          "sound discrete separation is EMPIRICAL: 1,925 SC5-capable "
-          "genuine M^{2+1} SKY-B pairs at depths 1..10 show ZERO "
+          "sound discrete separation is EMPIRICAL: 1,925 "
+          "capacity-capable (referee's census) genuine M^{2+1} SKY-B "
+          "pairs at depths 1..10 show ZERO "
           "shatterings [REFEREE-CARRIED, round 1] while THIS record "
           "shatters",
           NEED <= have and wit is not None,

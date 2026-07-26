@@ -504,11 +504,14 @@ check("S3(d) THE CLOSED FORM'S COROLLARIES, all forced by G and all "
       "every SELF-arb weight is 1/4; every PAIR-arb (\"blind\") weight is "
       "1/8 and they come in twos — so EVERY BLIND GROUP SUMS TO EXACTLY "
       "1/4.  Hence the per-actor menu mass is 1 or 5/4 and the total is "
-      "2, 9/4 or 5/2.  This DERIVES d42b3's G-L2 quarter-quantization, "
-      "which that receipt could only gate and scope",
+      "2 or 5/2 — NOT 9/4: a per-actor 5/4 needs a TWO-member full-view "
+      "component, which by (5b) carries BOTH actors' proposals, so the "
+      "actors reach 5/4 together or not at all (round-1 MINOR 4).  This "
+      "DERIVES d42b3's G-L2 quarter-quantization, which that receipt "
+      "could only gate and scope",
       propw == {Fr(1, 8)} and selfw == {Fr(1, 4)}
       and pairw <= {Fr(1, 8)} and set(actsum) <= {Fr(1), Fr(5, 4)}
-      and set(totsum) <= {Fr(2), Fr(9, 4), Fr(5, 2)},
+      and set(totsum) <= {Fr(2), Fr(5, 2)},
       f"propose weights = {sorted(map(str, propw))}; self-arb = "
       f"{sorted(map(str, selfw))}; pair-arb = {sorted(map(str, pairw))}; "
       f"per-actor masses = {sorted(map(str, actsum))}; totals = "
@@ -557,6 +560,11 @@ while stack:
     obs, extras = observed_menu(list(hk), menu, raw[3])
     if obs != G(raw) and len(G_BAD_DEEP) < 3:
         G_BAD_DEEP.append((hk,))
+    # --- D-extras: the EXTRA-token collapse is safe only if <= 1 base
+    #     is dropped (round-1 MAJOR 2: without this, the entrywise G
+    #     gate at depths 7-8 is blind to a two-dropped-base failure)
+    if len(extras) > 1:
+        viol('D-extras', (hk, extras))
     # --- the S1/S2 structural invariants, re-gated at FULL depth (lean)
     h = list(hk)
     ALL = frozenset(range(d))
@@ -564,6 +572,22 @@ while stack:
     if cn['A'] | cn['B'] != ALL:
         viol('D-S1.1', (hk,))
     pair = [j for j in range(d) if is_pair_arb(h[j])]
+    selfarbs = [j for j in range(d)
+                if h[j][0] == 'r' and len(actors_of(h[j])) == 1]
+    # --- D-5c (round-1 MAJOR 1: cited by Lemma 5's step, gated nowhere):
+    #     no pair-arb is ever positioned after a self-arb, and no menu
+    #     of a post-self-arb history offers an admissible pair-arb
+    if selfarbs and pair and max(pair) > min(selfarbs):
+        viol('D-5c-order', (hk,))
+    if selfarbs:
+        for e, _q in menu:
+            if is_pair_arb(e):
+                viol('D-5c-menu', (hk, e))
+    # --- D-S2.10 (5e, round-1 MAJOR 1: previously gated only to depth
+    #     6): at most ONE actor's token is full-view superseded
+    if raw[0]['A'] is None and raw[0]['B'] is None:
+        viol('D-S2.10', (hk,))
+    Xof = {}
     prd = event_poset(h)
     for a in AB:
         own = {j for j in range(d) if a in actors_of(h[j])}
@@ -578,6 +602,18 @@ while stack:
             viol('D-S2.2/2.3', (hk, a, alive, La))
         elif La and La[0][1] != next(iter(alive)):
             viol('D-S2.3', (hk, a))
+        if len(alive) == 1:
+            Xof[a] = next(iter(alive))
+            # D-S2.9 (5e's biconditional at full depth): hold[a] None
+            # <=> X_a full-view superseded
+            if (raw[0][a] is None) != (Xof[a] in raw[4]):
+                viol('D-S2.9', (hk, a))
+            # D-5d (round-1 MAJOR 1: cited by Lemma 5's step, gated
+            # nowhere, and the shallow S2.5 misses the SAME-BIT case):
+            # no opponent proposal live in cone_a on X_a, either bit
+            for op in cv.live.values():
+                if op[1] != a and op[2] == Xof[a]:
+                    viol('D-5d', (hk, a, op))
         po = prop_options_in_view(cv, a)
         cc = arb_components_in_view(cv, a)
         if bool(po) == bool(cc):
@@ -592,6 +628,14 @@ while stack:
                 viol('D-S1.4-pair', (hk, e))
         elif idx != cn[e[1]]:
             viol('D-S1.4-cone', (hk, e))
+        # D-5c-first-shared ((5c)'s missing step, round-1 MAJOR 1):
+        # the FIRST self-arb of any history sits on the shared base
+        # X_A = X_B — before any self-arb the two tokens coincide
+        if (e[0] == 'r' and len(actors_of(e)) == 1 and not selfarbs
+                and len(Xof) == 2):
+            _b = next(iter(e[2]))[1]
+            if not (_b == Xof['A'] == Xof['B']):
+                viol('D-5c-first-shared', (hk, e, Xof))
     if d >= MAXDEPTH:
         continue
     for e, q in menu:
@@ -637,10 +681,14 @@ check(f"S4(c) THE STRUCTURAL INVARIANTS RE-GATED AT FULL DEPTH "
       "cone closed form, the candidate-view dichotomy (cone for "
       "idle/propose/self-arb, FULL view for pair-arb), the singleton "
       "alive-holding, at-most-one live proposal on it, has_p XOR has_r, "
-      "and at-most-one arb component per actor on both the cone and the "
-      "full view.  Zero violations",
+      "at-most-one arb component per actor on both the cone and the "
+      "full view, AND (round-1 MAJOR 1/2 repairs) 5c in both order and "
+      "menu form plus its first-self-arb-on-the-shared-base step, 5d "
+      "including the same-bit case, 5e's biconditional and its "
+      "both-None form, and the at-most-one-dropped-base guard for the "
+      "EXTRA collapse.  Zero violations",
       not _dv,
-      f"invariant families checked = 7; violations = {sum(_dv.values())}")
+      f"invariant families checked = 12; violations = {sum(_dv.values())}")
 
 # ===================================================================
 # S5 — the smart hunt

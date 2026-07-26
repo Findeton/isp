@@ -5,18 +5,28 @@ Pin: note-d61-h1-closure-pin.md §1-§3 + the §4 first-run amendment
 (run 1's hand-rolled state was coarser than sigma; and any cache-gated
 machine leaves the depth gap — the theorem is carried by the probe's
 prose-over-code proof, this receipt gates its case claims, code-facts,
-and conclusion).  Exit 1 only on anchor breakage.
+and conclusion) + the §5 round-1 amendment (headline restated: (H1) is
+a THEOREM; D44a remains CONDITIONAL on (H2); round-1 repairs: 5c/5d
+gates, ==36 + window-spectrum anchor, exit protocol, N-numbering).
+Exit 1 only on anchor breakage (N0/N1); substantive gate failures are
+the deliverable and exit 0.
+NOTE (round-1 MINOR 1): the pin §1's N-programme (N1 invariants, N2
+determinism, N3 BFS closure, N4 per-transition step, N5 menu law, N6
+quarter law) was DELETED by the §4 amendment; this receipt's N-numbers
+are its own (N0 anchors, N1 code-facts, N2 invariants, N3 cases, N4
+conclusion, N5 quarter law) and do NOT correspond to the pin §1 list.
 """
 import sys
 from collections import defaultdict
 from fractions import Fraction as Fr
 from itertools import permutations
 sys.setrecursionlimit(200000)
-PASS = FAIL = 0
-def check(label, ok, detail=""):
-    global PASS, FAIL
+PASS = FAIL = ANCHOR_FAIL = 0
+def check(label, ok, detail="", anchor=False):
+    global PASS, FAIL, ANCHOR_FAIL
     tag = "[PASS]" if ok else "[FAIL]"
     PASS, FAIL = PASS + int(bool(ok)), FAIL + int(not ok)
+    ANCHOR_FAIL += int(anchor and not ok)
     print(f"  {tag} {label}" + (f"  ({detail})" if detail else ""))
 
 print("[D61 — closing (H1): the case-claim battery + the conclusion]")
@@ -47,20 +57,27 @@ exec(compile(_blk2, 'd44a_menu_port', 'exec'), ns)
 canon_sigma, canon_menu = ns['canon_sigma'], ns['canon_menu']
 check("N0 anchors: committed d42b3 layer + sigma/canon_menu extracted "
       "VERBATIM from committed d44a (the probe's own text-slice port; "
-      "no abstraction of this receipt's own)",
-      callable(canon_sigma) and callable(canon_menu), "single sources")
+      "no abstraction of this receipt's own) — the slices carry the "
+      "expected structures, not merely callables (round-1 MINOR 2)",
+      callable(canon_sigma) and callable(canon_menu)
+      and "def canon_sigma" in _blk1 and "def sigma_raw" in _blk1
+      and "def canon_menu" in _blk2 and "_rename_event" in _blk2,
+      "single sources; slice contents asserted", anchor=True)
 
 # code-facts the proof reads (Lemma 1): asserted against the source
 src = _s
 cfact = ("def regs_of(op):" in src
          and "if op[0] in ('p', 'n'): return frozenset([op[1]])" in src
-         and "props = {t[0] for t in op[2]}" in src)
+         and "props = {t[0] for t in op[2]}" in src
+         and "base = next(iter(op[2]))[1]" in src
+         and "return frozenset(props | {vname(base, op[3], op[1])})"
+         in src)
 check("N1 CODE-FACTS (Lemma 1's register geometry, asserted against "
-      "the committed source): regs_of gives {actor} for p/n and "
-      "{proposers} u {fresh vname} for r — the registers are ACTOR "
-      "NAMES plus arbitrator-owned version names, which is the entire "
-      "basis of the dichotomy",
-      cfact, "source assertions hold")
+      "the committed source, INCLUDING the version-register line — "
+      "round-1 MINOR 2): regs_of gives {actor} for p/n and {proposers} "
+      "u {fresh vname} for r — the registers are ACTOR NAMES plus "
+      "arbitrator-owned version names",
+      cfact, "source assertions hold", anchor=True)
 
 CAP = 6
 FAM = [()]
@@ -111,8 +128,14 @@ def state_of(h):
     return st, sup_full
 
 
-# ---------------- N2: the invariants (5a/5b/5e), all instances ------
-inv_bad = 0
+# ------- N2: the invariants (5a/5b/5c/5d/5e), all instances ---------
+# (round-1 MAJOR 1: 5c and 5d — the two invariants Lemma 5's step
+# consumes BY NAME — were gated nowhere; they are gated here, 5d
+# including the same-bit case the probe's S2.5 cannot see, and 5c in
+# order form, menu form, and its first-self-arb-on-the-shared-base
+# step.)
+inv_bad = c5c_bad = c5d_bad = first_bad = 0
+c5c_hist = first_n = 0
 for h in FAM:
     st, sup_full = state_of(h)
     for a in AB:
@@ -123,58 +146,145 @@ for h in FAM:
             inv_bad += 1
     if sum(1 for a in AB if next(iter(st[a][0])) in sup_full) > 1:
         inv_bad += 1
+    selfarbs = [j for j, e in enumerate(h)
+                if e[0] == 'r' and len({t[0] for t in e[2]}) == 1]
+    pairarbs = [j for j, e in enumerate(h)
+                if e[0] == 'r' and len({t[0] for t in e[2]}) == 2]
+    # 5c order form: no pair-arb positioned after a self-arb
+    if selfarbs and pairarbs and max(pairarbs) > min(selfarbs):
+        c5c_bad += 1
+    # 5c menu form: a post-self-arb history offers no pair-arb
+    if selfarbs:
+        c5c_hist += 1
+        if any(e[0] == 'r' and len({t[0] for t in e[2]}) == 2
+               for e, q in CACHE[h]):
+            c5c_bad += 1
+    else:
+        # 5c's missing step (round-1 MAJOR 1): the FIRST self-arb of
+        # any history sits on the shared base X_A = X_B
+        XA, XB = (next(iter(st[a][0])) for a in AB)
+        for e, q in CACHE[h]:
+            if e[0] == 'r' and len({t[0] for t in e[2]}) == 1:
+                first_n += 1
+                if not (next(iter(e[2]))[1] == XA == XB):
+                    first_bad += 1
+    # 5d full strength: no opponent proposal live in cone_a on X_a,
+    # EITHER bit
+    for a in AB:
+        ca = cone(h, a)
+        Xa = next(iter(st[a][0]))
+        resolved = {t for j in ca if h[j][0] == 'r' for t in h[j][2]}
+        for j in ca:
+            e = h[j]
+            if (e[0] == 'p' and e[1] != a and e[2] == Xa
+                    and (e[1], e[2], e[3]) not in resolved):
+                c5d_bad += 1
 check("N2 LEMMA 5's INVARIANTS (5a alive singleton; 5b <= 1 live, on "
       "X_a; 5e <= 1 full-view-superseded X) at EVERY history, "
       "layer-computed: zero violations",
       inv_bad == 0, f"histories = {len(FAM)}, violations = {inv_bad}")
+check("N2(c) INVARIANT 5c at every history (round-1 MAJOR 1): no "
+      "pair-arb after a self-arb — order form AND menu form; and the "
+      "FIRST self-arb of any history sits on the shared base "
+      "X_A = X_B (the induction's previously-unwritten step)",
+      c5c_bad == 0 and first_bad == 0 and c5c_hist > 0 and first_n > 0,
+      f"post-self-arb histories = {c5c_hist}, first-self-arb "
+      f"candidates = {first_n}, violations = {c5c_bad + first_bad}")
+check("N2(d) INVARIANT 5d at every history, FULL STRENGTH incl. the "
+      "same-bit case (round-1 MAJOR 1): no opponent proposal live in "
+      "cone_a on X_a, either bit",
+      c5d_bad == 0, f"violations = {c5d_bad}")
 
 # ---------------- N3: the CASE-CLAIM battery ------------------------
-print("\n[N3 — Lemma 5's step cases, checked at every instance]")
+print("\n[N3 — Lemma 5's step cases: PRECONDITIONS and EFFECTS, at "
+      "every cached transition (parents to depth <= 5)]")
 c_self = c_pair = c_prop = 0
-b_self = b_pair = b_prop = b_cover = 0
+b_self = b_pair = b_prop = 0
+b_self_eff = b_pair_eff = b_prop_eff = 0
 for h in FAM:
     if len(h) >= CAP:
         continue
     st, _ = state_of(h)
     for e, q in CACHE[h]:
+        st2, _ = state_of(h + (e,))
         if e[0] == 'p':
             c_prop += 1
             a = e[1]
             alive, live = st[a]
             if e[2] != next(iter(alive)) or live:
                 b_prop += 1
+            # effects: both alive unchanged; a gains exactly one live
+            # on X_a; the opponent's live unchanged
+            y = 'B' if a == 'A' else 'A'
+            if not (st2[a][0] == st[a][0] and st2[y] == st[y]
+                    and len(st2[a][1]) == 1
+                    and st2[a][1][0][2] == e[2]):
+                b_prop_eff += 1
         elif e[0] == 'r':
             actors_in = {t[0] for t in e[2]}
             base = next(iter(e[2]))[1]
+            v = vname(base, e[3], e[1])
             if len(actors_in) == 1:
                 c_self += 1
                 a = e[1]
                 if len(e[2]) != 1 or base != next(iter(st[a][0])):
                     b_self += 1
+                # effects (round-1 MINOR 6 — the INVISIBLE
+                # SUPERSESSION, the step's most delicate claim): x
+                # advances to the fresh version with 0 live; the
+                # OPPONENT's (alive, live) is UNCHANGED, and the arb
+                # is NOT in the opponent's cone
+                y = 'B' if a == 'A' else 'A'
+                if not (st2[a][0] == {v} and st2[a][1] == []
+                        and st2[y] == st[y]
+                        and len(h) not in cone(h + (e,), y)):
+                    b_self_eff += 1
             else:
                 c_pair += 1
                 if not all(base == next(iter(st[x][0])) for x in AB):
                     b_pair += 1
-        if e[0] not in ('p', 'r', 'n'):
-            b_cover += 1
-check("N3(a) THE PROPOSE CASE: every admissible propose is on the "
-      "actor's own alive singleton X_a with no prior live proposal — "
-      "at every instance",
-      c_prop > 0 and b_prop == 0,
-      f"instances = {c_prop}, violations = {b_prop}")
-check("N3(b) THE SELF-ARB CASE: every admissible single-actor arb "
-      "consumes a SINGLETON component on that actor's own X_a — at "
-      "every instance",
-      c_self > 0 and b_self == 0,
-      f"instances = {c_self}, violations = {b_self}")
-check("N3(c) THE PAIR-ARB CASE: every admissible two-actor arb sits "
-      "on a base that is BOTH actors' alive singleton (X_A = X_B = "
-      "base) — at every instance",
-      c_pair > 0 and b_pair == 0,
-      f"instances = {c_pair}, violations = {b_pair}")
-check("N3(d) CASE EXHAUSTIVENESS: every menu event is p, r or n — the "
-      "case split covers the alphabet",
-      b_cover == 0, f"non-p/r/n menu events = {b_cover}")
+                # effects: BOTH actors advance to the same fresh
+                # version, BOTH live proposals resolved
+                if not all(st2[x][0] == {v} and st2[x][1] == []
+                           for x in AB):
+                    b_pair_eff += 1
+check("N3(a) THE PROPOSE CASE, preconditions AND effects: every "
+      "admissible propose is on the actor's own alive singleton X_a "
+      "with no prior live proposal; after it, alive tokens unchanged, "
+      "the actor holds exactly one live proposal on X_a, the opponent "
+      "untouched — at every instance",
+      c_prop > 0 and b_prop == 0 and b_prop_eff == 0,
+      f"instances = {c_prop}, precondition violations = {b_prop}, "
+      f"effect violations = {b_prop_eff}")
+check("N3(b) THE SELF-ARB CASE, preconditions AND effects (round-1 "
+      "MINOR 6): every admissible single-actor arb consumes a "
+      "SINGLETON component on that actor's own X_a; after it, the "
+      "actor advances to the fresh version with 0 live, and the "
+      "OPPONENT's (alive, live) is UNCHANGED with the arb OUTSIDE its "
+      "cone — the invisible supersession, gated as an effect",
+      c_self > 0 and b_self == 0 and b_self_eff == 0,
+      f"instances = {c_self}, precondition violations = {b_self}, "
+      f"effect violations = {b_self_eff}")
+check("N3(c) THE PAIR-ARB CASE, preconditions AND effects: every "
+      "admissible two-actor arb sits on a base that is BOTH actors' "
+      "alive singleton; after it, BOTH actors advance to the same "
+      "fresh version and BOTH live proposals are resolved",
+      c_pair > 0 and b_pair == 0 and b_pair_eff == 0,
+      f"instances = {c_pair}, precondition violations = {b_pair}, "
+      f"effect violations = {b_pair_eff}")
+# round-1 MINOR 2: the old N3(d) counted non-p/r/n menu events, which
+# candidates_for cannot construct — a theorem-pass.  The alphabet is a
+# CODE-FACT, asserted against the source instead:
+check("N3(d) CASE EXHAUSTIVENESS as a CODE-FACT (round-1 MINOR 2: the "
+      "old counter could never fire): candidates_for constructs "
+      "events only via ('n', a), ('p', ...) and ('r', ...) literals "
+      "in the committed source",
+      src.count("('n', a)") >= 1 and "('p'," in src and "('r'," in src
+      and "('d'," not in src.split("def candidates_for")[1]
+                             .split("\ndef ")[0]
+      and "('m'," not in src.split("def candidates_for")[1]
+                             .split("\ndef ")[0],
+      "alphabet asserted against candidates_for's source")
 
 # the dichotomy (Lemma 2), re-gated here at this receipt's own scope
 tot = cone_n = full_n = third = 0
@@ -205,19 +315,36 @@ check("N3(e) THE DICHOTOMY (Lemma 2): every candidate's own view is "
 print("\n[N4 — the conclusion: canon_menu is a function of canon_sigma]")
 by_sig = {}
 h1_bad = 0
+sig_by_depth = defaultdict(set)
 for h in FAM:
     sg = canon_sigma(h)
     cm = canon_menu(h)
     if sg in by_sig and by_sig[sg] != cm:
         h1_bad += 1
     by_sig[sg] = cm
+    sig_by_depth[len(h)].add(sg)
+# the cumulative window spectrum, gated against d44a's committed SG1
+# anchor (round-1 MINOR 3: '>= 30' would let a coarsened sigma port
+# pass silently; the anchor is EXACTLY 36 with spectrum [11, 19, 28,
+# 32, 36] at depths <= 2..6)
+_cum = set()
+spectrum = []
+for d in range(CAP + 1):
+    _cum |= sig_by_depth[d]
+    if d >= 2:
+        spectrum.append(len(_cum))
 check("N4 (H1)'s CONCLUSION at this receipt's scope: equal canonical "
       "sigma => IDENTICAL canonical menu (renamed event-multiset with "
-      f"exact weights), over all {len(FAM)} histories, "
-      f"{len(by_sig)} sigma classes — zero splits.  The probe gated "
-      "the same over 930,631 histories at depth 8 [PROBE-CARRIED]",
-      h1_bad == 0 and len(by_sig) >= 30,
-      f"sigma classes = {len(by_sig)}, splits = {h1_bad}")
+      f"exact weights), over all {len(FAM)} histories — zero splits, "
+      "with the sigma count gated EXACTLY 36 and the cumulative "
+      "window spectrum gated against d44a's committed SG1 anchor "
+      "(round-1 MINOR 3).  The probe gated the same over 930,631 "
+      "histories at depth 8 [PROBE-CARRIED, re-verified independently "
+      "by the round-1 review]",
+      h1_bad == 0 and len(by_sig) == 36
+      and spectrum == [11, 19, 28, 32, 36],
+      f"sigma classes = {len(by_sig)}, splits = {h1_bad}, "
+      f"window spectrum = {spectrum}")
 
 # ---------------- N5: the quarter law per sigma class ---------------
 qbad = 0
@@ -229,25 +356,43 @@ for h in FAM:
         if t not in (Fr(1), Fr(5, 4)):
             qbad += 1
 check("N5 the per-actor menu mass is in {1, 5/4} at every history — "
-      "the quarter law as the closed form G derives it (probe §6)",
+      "a DIRECT per-actor mass census (round-1 MINOR 2: this gate "
+      "does not evaluate G; the derivation from G is the note's §6 + "
+      "the probe's S3(d))",
       qbad == 0, f"off-law = {qbad}")
 
 print("\n[VERDICT]")
-ok = (inv_bad == 0 and b_prop == b_self == b_pair == b_cover == 0
+ok = (inv_bad == 0 and c5c_bad == c5d_bad == first_bad == 0
+      and b_prop == b_self == b_pair == 0
+      and b_prop_eff == b_self_eff == b_pair_eff == 0
       and third == 0 and h1_bad == 0 and qbad == 0)
 if ok:
     print("  (H1) STANDS AS A THEOREM at two-actor delivery-free d42a")
-    print("  scope, CARRIED BY THE ADOPTED PROOF NOTE (d60p §3-§7,")
-    print("  prose-over-code) — with every case claim, the code-facts,")
-    print("  the dichotomy, and the conclusion gated at every cached")
-    print("  instance here, and the conclusion additionally gated at")
-    print("  depth 8 by the probe.  A Lean-grade mechanization remains")
-    print("  a RESIDUE, stated as such.  Consequences per the pin:")
-    print("  D44a unconditional at this scope; RESIDUE 1 CLOSED here;")
-    print("  D49 unconditional-at-depth here, within the stationary")
-    print("  form (D50).  Transport untouched; three actors out of")
-    print("  scope.")
+    print("  scope, CARRIED BY THE ADOPTED PROOF NOTE (d60p §3-§7b,")
+    print("  prose-over-code) — with every case claim (preconditions")
+    print("  AND effects), the code-facts, the invariants 5a-5e, the")
+    print("  dichotomy, and the conclusion gated at every cached")
+    print("  transition here (parents to depth <= 5), and the")
+    print("  conclusion additionally gated at depth 8 by the probe and")
+    print("  independently by the round-1 review.  A Lean-grade")
+    print("  mechanization remains a RESIDUE, stated as such.")
+    print("  CONSEQUENCES, RESTATED BY ROUND 1 (the round's BLOCKER):")
+    print("  D44a's closure theorem remains CONDITIONAL on (H2) alone")
+    print("  — (H0) is now fully discharged (clauses 1-3 by Lemmas")
+    print("  4/5, clause 4 by Lemma 7b) — with (H2) verified")
+    print("  exhaustively through depth 8 (round-1 review: 176 keys,")
+    print("  0 violations, independent layer).  RESIDUE 1 is DECIDED")
+    print("  AT EVERY VERIFIED DEPTH; its last named gap has shrunk")
+    print("  from three hypotheses to ONE ((H2) — the update table,")
+    print("  D62).  'Residue 1 closed' / 'D44a unconditional' are NOT")
+    print("  delivered by this unit and may not be quoted from it.")
+    print("  Transport untouched; three actors out of scope (and the")
+    print("  wall now EXHIBITED: 5,904 admissible third-case views at")
+    print("  three actors, depth <= 4 — round-1 review).")
 else:
     print("  a gate failed — the failure is the deliverable.")
-print(f"\n[d61] {PASS} PASS / {FAIL} FAIL")
-sys.exit(1 if FAIL else 0)
+print(f"\n[d61] {PASS} PASS / {FAIL} FAIL"
+      + (f"  ({ANCHOR_FAIL} anchor failures)" if ANCHOR_FAIL else ""))
+# round-1 MINOR 8: the pin's protocol is exit 0 for substantive
+# negatives, exit 1 ONLY on anchor breakage (N0/N1)
+sys.exit(1 if ANCHOR_FAIL else 0)

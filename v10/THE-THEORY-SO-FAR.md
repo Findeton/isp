@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #454** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #455** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -134,7 +134,15 @@ observes it:
 - **any laboratory number** — the bridge is blocked (d41c §1A).
 - **any genericity or typicality claim at transport scope** — not
   posable there (D52, D56).
-- **"H1 is discharged"** — it is not.
+- **"H1 is discharged"** *bare* — it is discharged **only** at two-actor
+  delivery-free d42a scope, and the scope is part of the claim; at three
+  actors and at transport scope it is untouched (§B6.13).
+- **"residue 1 is closed"** — not delivered.  Residue 1 is **decided at
+  every verified depth**, and one hypothesis — (H2), transition
+  determinism — still stands between that and closure.  The sentence
+  becomes utterable if and only if D62 lands (§B6.13, §B6.14).
+- **"D44a's closure theorem is unconditional"** and **"`Zhat` holds at
+  every depth"** — same gap, same condition.
 - **"infinite clocks via Sperner"** — withdrawn; the surviving route is
   trace counting (D54 round 1 BLOCKER 1).
 
@@ -167,14 +175,16 @@ destination that follows.)*
    the 202 elementary loops of the enumerated depth-4 world refute it.
 6. Dropping the third demand, completions exist; and in the
    delivery-free two-actor sub-theory a **canonical one exists that
-   needs no boundary condition at all** — now at **every depth**, the
-   last structural gap having been closed by a dichotomy about what a
-   candidate event can see — unique up to scale within a postulated
-   shape, and pricing the beginning of the record identically to a later
-   point the law itself cannot tell from the beginning.
+   needs no boundary condition at all** — decided at every depth anyone
+   has verified, the structural question about what a candidate event
+   can see now settled by a dichotomy and the last gap narrowed to a
+   single hypothesis about how the situation-summary updates — unique up
+   to scale within a postulated shape, and pricing the beginning of the
+   record identically to a later point the law itself cannot tell from
+   the beginning.
 7. But that shape is a **choice, not a law**: the two strongest
    invariance demands anyone has written down leave the freedom
-   *growing* (10, then 28, then 107 dimensions as depth increases), so
+   *growing* (12, then 32, then 125 dimensions as depth increases), so
    "the law completes itself" is true only of the law **plus** the
    shape.
 8. Once deliveries are allowed — the scope where spacetime questions
@@ -251,7 +261,7 @@ destination that follows.)*
 - **A6. The measure problem** — the impossibility, the escape, the one
   canonical completion, why "the law completes itself" needed an extra
   postulate that turned out to be a choice, and how the last structural
-  gap was closed at two actors.
+  gap narrowed to one hypothesis at two actors.
 - **A7. Buying dimension with actors** — why counting clocks was the
   wrong instrument; the shatter ladder; the theorem that dimension has
   a price in parallelism.
@@ -286,8 +296,8 @@ destination that follows.)*
   its two-sided controls.
 - **B6. The completion dichotomy** — the theorem, its forcing, the
   gradient class, the quantum lift, residue 1, the settlement, the
-  form-is-a-choice result, and (H1) closed at two-actor scope by the
-  own-view dichotomy.
+  form-is-a-choice result, (H1) proved at two-actor scope by the
+  own-view dichotomy, and the one hypothesis still standing.
 - **B7. The dimension ladder** — the doctrine, the collapse of
   counting, the shatter ladder with its exact certificates, the
   Dilworth gate with proof, trace counting.
@@ -801,10 +811,13 @@ visible through the wires the candidate event touches.
 
 **And the lag is not simply "less information".**  The most
 counterintuitive fact in this chapter: **a smaller view can offer MORE
-options.**  The mechanism is concrete.  A rule says an actor may not
-propose again on a version it already has a live proposal against.  If
-the actor's view has not yet seen its own earlier proposal, the rule
-does not fire — so the option is *open*.  See less, do more.
+options.**  The mechanism is concrete, and it is *not* the one it is
+natural to guess.  It is not that an actor forgets its own earlier
+proposal — an actor's own live proposals are always in its own past, so
+that can never happen.  It is **missed supersession**: a settlement has
+already retired a version, but the lagging view has not seen the
+settlement, so it still counts that version as available to build on.
+See less, do more.
 
 This single fact demolishes any argument of the form "the lagged view
 sees a subset, so it can only have fewer options, so the lag can be
@@ -1366,9 +1379,9 @@ The corpus's key move was to stop enumerating records (there are
 unboundedly many) and start enumerating **situations**: a bounded
 summary of what a record looks like from the point of view of what can
 happen next.  In the delivery-free two-actor world, that summary takes
-**exactly 36 values**, and the search closes — no situation ever leads
-outside the 36.  Collapse situations that no observation can
-distinguish, and you get **six**.
+**exactly 36 values**, and the search closes — no situation the search
+reaches ever leads outside the 36.  Collapse situations that no
+observation can distinguish, and you get **six**.
 
 On six states you can do classical linear algebra.  The answer is
 unique: one positive solution, up to scale, and it grows by a factor of
@@ -1424,7 +1437,7 @@ down in advance with its argument, was that this *would* force the
 shape.
 
 **It does not.**  The space of distinct completions satisfying it has
-dimension **10, then 28, then 107** as you go deeper — it *grows*.  And
+dimension **12, then 32, then 125** as you go deeper — it *grows*.  And
 the obvious rescue is closed off by measurement too: adding
 slicing-independence more than doubles the number of constraints and
 leaves the answer's dimension **exactly unchanged** at every depth.  The
@@ -1444,20 +1457,29 @@ record-level demand at all.**
 > completes itself **given** that shape.  The shape is a choice.  Nobody
 > has an invariance principle that forces it.
 
-### A6.9 The gap is closed — at two actors, delivery-free
+### A6.9 The gap narrows to one — at two actors, delivery-free
 
-For a long time everything in §A6.7 rested on an unproved structural
-assumption: that the bounded summary really does determine what can
-happen next, at *every* depth and not merely at the depths anyone had
-enumerated.  **That assumption is now a theorem**, in the two-actor
-delivery-free sub-theory, and the argument is short enough to state.
+For a long time everything in §A6.7 rested on **three** unproved
+structural assumptions.  The load-bearing one was that the bounded
+summary really does determine what can happen next, at *every* depth and
+not merely at the depths anyone had enumerated.  **That one is now a
+theorem**, in the two-actor delivery-free sub-theory, and the argument is
+short enough to state.
 
 **The own-view dichotomy.**  When the law checks whether an event is
 allowed, the view it consults is one of exactly **two** things: the
 acting actor's own cone, or the *entire* record.  There is no third case
-— and the reason is bookkeeping, not luck: the framework keys its causal
-order on actor names, so an event involving *both* actors necessarily
-touches both their registers and therefore sees everything.
+— and the reason has two halves, which is worth saying because the
+obvious one-line version of it is backwards.  The framework keys its
+causal order on actor names, and that bookkeeping *by itself* would allow
+a **third** kind of view: an event settling a dispute the initiator is
+not party to would see the opponent's past plus a sliver of its own.
+What removes that case is a second clause — the law only ever offers a
+settlement to an actor whose *own* proposal is in the dispute.  Register
+geometry produces the third case; the proposer test kills it.  So the
+dichotomy is a theorem of the two together, and the proposer test is
+precisely the clause that would have to be re-examined for a third actor
+or for delivery scope.
 
 That single observation does two jobs.  It explains the lag that had
 looked like an obstruction — the situations where an actor "sees more
@@ -1469,25 +1491,42 @@ complementary configurations ever occur — which is why the idle weight is
 simply constant.
 
 Put together, the menu becomes an explicit **closed formula** in the
-summary, with no depth parameter anywhere in the argument.  So:
+summary, with no depth parameter anywhere in the argument.  A second
+assumption — a short list of structural facts about what a view can hold
+— falls out of the same lemmas, its last clause supplied as a three-line
+proof.  So:
 
-> **The bounded summary determines the menu at every depth**, and with it
-> the whole completion decision.  **The measure problem's core question —
-> the oldest named gap in the programme — is CLOSED at two-actor,
-> delivery-free scope.**
+> **The bounded summary determines the menu at every depth.**  What is
+> left is one hypothesis, and only one: that the summary of the *next*
+> situation is fixed by the summary of this one plus the event.  That has
+> been checked exhaustively on all 930,631 records eight events deep, by
+> two independent implementations, without a single exception — and it is
+> not yet proved.
+
+> **So: the measure problem's core question — the oldest named gap in the
+> programme — is DECIDED AT EVERY DEPTH ANYONE HAS VERIFIED, and its last
+> named gap has shrunk from three hypotheses to one.**  Writing out the
+> update rule event by event is the closing unit, and it has three named
+> obligations: that proposing on a version the summary has discarded
+> forces a fresh name; that no freshly minted version name can collide
+> with one already present; and that the incomparability fact feeds the
+> dispute structure correctly.
 
 A pleasing side-effect: the quarter-structure of chapter A2, which had
 been a *measured* regularity, drops out of the closed formula as a
-consequence.
+consequence — one actor's options weigh either exactly one or exactly
+one-and-a-quarter, and the two actors are at a quarter over together or
+neither is, so the table totals are two or two-and-a-half and nothing in
+between.
 
 **Four things this does not do.**  It does not make the shape of the
 completion any less of a choice — §A6.8 stands entirely.  It does not
 reach delivery scope, where the geometry lives.  **It does not reach
-three actors**: with a third actor the dichotomy fails outright, because
-a two-actor event no longer sees everything.  And the argument is prose
-reasoning checked against the code, not machine-verified logic — a
-formal mechanization is named as outstanding.  The result is also new
-enough that its own hostile review has not yet run.
+three actors**: with a third actor the third view case becomes genuinely
+available, and the dichotomy is the one thing that breaks — the rest of
+the rigidity survives, which is what tells a successor unit where to
+aim.  And the argument is prose reasoning checked against the code, not
+machine-verified logic — a formal mechanization is named as outstanding.
 
 At delivery scope — where chapters A5, A7 and A8 live — **the whole
 question remains open**, and chapter A9 explains why the method that
@@ -1499,8 +1538,10 @@ chain at all.  What is claimed to generalize is the *form* — a unique
 completion of this type — never the numbers.
 
 > **What this chapter does NOT claim.**  That "the record law is
-> forward-complete" full stop — only with the form; §A6.9 closes a
-> different gap and leaves that one exactly where it was.  That the tilt is
+> forward-complete" full stop — only with the form; §A6.9 narrows a
+> different gap and leaves that one exactly where it was.  That "the
+> measure problem is closed": one hypothesis still stands between the
+> verified depths and every depth.  That the tilt is
 > physical: the tilt has been *characterized* exactly (each option is
 > re-weighted by how much record-growth capacity the state it leads to
 > has, and by nothing else), which converts a vague worry into one
@@ -1883,7 +1924,7 @@ By now the programme has two lines running:
 
 - The **measure line** (chapters A4, A6) is deepest in the
   **delivery-free** sub-theory, where it has a settled answer modulo one
-  unproved lemma and one postulated shape.
+  unproved update hypothesis and one postulated shape.
 - The **geometry line** (chapters A5, A7, A8) lives entirely at
   **delivery scope**, where deliveries and merges exist — and it needs
   no measure at all, which is why it could make progress.
@@ -1975,7 +2016,9 @@ ones.**
 So the escape candidate is sharp: **does a bounded sector-level summary
 exist at delivery scope?**  It has been pinned and run at the natural
 granularity — one sector per actor and event type — and **it is closed
-there, on two independent grounds.**
+there**, on one ground: a measurement, not an obstruction.  (A companion
+argument that the sector alphabet must itself be infinite was withdrawn;
+§A10.10c records why.)
 
 **The coarsest possible lumping does not settle down.**  Track how many
 distinct lumped situations survive as the enumeration deepens, and the
@@ -2067,7 +2110,8 @@ extra material is authored by the *opponent*.  Also withdrawn in the
 same pass: a claim that one hypothesis subsumed another, which was
 inverted.
 *Survived:* the measurement of the lag, which is now a load-bearing fact
-of chapter A3 and the standing obstacle for every future attempt.
+of chapter A3 — and which the eventual proof (§A6.9) *explains* rather
+than works around: the lagging cases are exactly the two-actor events.
 
 ### A10.3 The wire-closure route to H1
 
@@ -2079,10 +2123,13 @@ lags, not only the one predicted.  And **a smaller view can yield MORE
 options** (chapter A3), so any argument built on "the lagged view sees a
 subset" is unsound — which rules out a whole family of attempts,
 including this one.
-*Survived:* a genuine **reduction** — the lemma is now known to be
-exactly a question about four specific projections of a view, which is
-strictly coarser than the question that died first.  Plus a settled
-answer to a *second* hypothesis that had been left dangling.
+*Survived:* three refutations, and **not** the reduction the route
+offered in their place.  That reduction — "the lemma is exactly a
+question about four projections of a view" — runs the wrong way: the four
+projections are *finer* than the summary, not determined by it.  What
+stands is the bar it left behind: no depth-free argument may assume a
+lagged view sees a subset.  The lemma was eventually proved by a
+different route entirely, going through the summary directly (§A6.9).
 
 ### A10.4 Arc-realizability as the primary sky instrument
 
@@ -2311,8 +2358,10 @@ it is unique up to scale within a postulated shape, it prices the
 beginning of the record and the renewal point identically, and its cost
 is exactly one named tilt.  Three qualifications, all permanent until
 someone does work: the shape is a **choice**; the all-depth statement
-rests on an **unproved lemma** (H1) with two failed attacks on record;
-and the specific numbers are **toy-relative**.  At delivery scope the
+rests on **one remaining unproved hypothesis** — that the summary of the
+next situation is fixed by this one plus the event — verified
+exhaustively eight events deep by two independent implementations and no
+further; and the specific numbers are **toy-relative**.  At delivery scope the
 question is **open**, and chapter A9 shows the tool cannot travel.
 
 **The geometry line.**  At delivery scope, measure-free: the sky is an
@@ -2390,10 +2439,13 @@ not an answer.
    cover reading, while other results were computed under a different
    one.  Nothing justifies a choice, and several conclusions depend on
    it.
-3. **H1** — the unproved structural lemma the whole delivery-free
-   settlement is conditional on.  Two routes are closed with
-   counterexamples; a third needs to avoid assuming that a lagged view
-   sees a subset, since that is false.
+3. **The update rule** — the one hypothesis the whole delivery-free
+   settlement is still conditional on: that the summary of the next
+   situation is fixed by this one plus the event.  It has never failed —
+   exhaustively checked eight events deep by two independent
+   implementations — and it has never been proved.  Writing the update
+   out event by event, with its three named obligations, is the closing
+   unit and is the next thing this line does.
 4. **Is there a record-level demand that forces the shape?**  The two
    strongest candidates and their conjunction are eliminated by
    measurement.  Nobody has a third.
@@ -3034,10 +3086,21 @@ view.
 **D51 MV2 — MONOTONICITY FAILS, and this is the load-bearing negative.**
 The cone-level pair `(has_p, has_r)` is **not** a function of the
 full-view pair: full-view `(False, False)` maps to **both** `(False,
-True)` and `(True, False)`.  Mechanism, exhibited:
-`prop_options_in_view` **excludes** a base on which the actor already has
-a live proposal, so **a view that misses that proposal INCLUDES the base
-— a smaller view can yield MORE options.**
+True)` and `(True, False)`.  **A smaller view can yield MORE options.**
+
+**The mechanism is INVISIBLE SUPERSESSION, and the natural guess is
+refuted.**  The guess — `prop_options_in_view` excludes a base the actor
+already holds a live proposal on, so a view *missing* that proposal
+*includes* the base — **can never fire**: an actor's own live proposals
+are always inside its own cone (Lemma 4(c) of the §B6.13 proof).
+Measured over **68,750** `(history, actor)` pairs at depth ≤ 6: the cone
+yields strictly more options in **4,828** of them, and of the **9,656**
+excess options **9,656 are caused by a missed supersession** and **0 by a
+missed own proposal**; an actor's own live proposals differ between cone
+and full view in **0 / 68,750**.  So the mechanism is that a view which
+has not seen an arbitration still counts that arbitration's base as
+alive.  The same mechanism reappears, named, as the self-arb case of
+§B6.13's rigidity lemma.
 
 > **Any depth-free argument built on "the lagged view sees a subset" is
 > therefore unsound**, which rules out a whole family of attempts
@@ -3819,8 +3882,8 @@ renaming.  It records:
   of the above.  Dead structure no menu can see is dropped.
 
 `sigma` is finite-valued **if** the dropped structure is truly
-menu-invisible; **that invisibility is checked, never assumed** — and it
-is exactly where the remaining gap lives (§B6.13).
+menu-invisible; **that invisibility is checked, never assumed** — it is
+where the gap lived, and §B6.13 closes it as a theorem.
 
 **What is gated `[EXACT]`:**
 
@@ -3862,14 +3925,24 @@ another**:
   event-multiset with exact weights, is a function of `sigma(h)`.
   **Nontrivial because admissibility runs on OWN VIEWS that lag the full
   view `sigma` records** (§B3.2).
-- **(H2) TRANSITION DETERMINISM at every depth.**  Explicitly **not** a
-  consequence of (H1).
+- **(H2) TRANSITION DETERMINISM at every depth.**  `sigma(h + [e])` is a
+  function of `(sigma(h), e-up-to-renaming)`.  Explicitly **not** a
+  consequence of (H1) — d44a's own note says so, and the conditional
+  theorem consumes (H2) in both legs.
 
 > **`[THEOREM, conditional]` Assume (H0)–(H2).  Then residue 1 is DECIDED
 > at all depths at d42a scope**: `sigma` takes exactly 36 values at every
 > depth; the intrinsic partition is at every depth the pullback of the
 > abstract chain's bisimilarity; and the Perron package is the completion
 > decision at every depth.  QED (conditional).
+
+**Where the three hypotheses stand now.**  §B6.13 discharges **(H0)** in
+full and proves **(H1)** as a theorem, both at two-actor delivery-free
+scope.  **(H2) alone remains a hypothesis** — verified exhaustively
+through depth 8 by two independent implementations, 176 transition keys,
+zero violations, and *not proved*.  So the conditional theorem above is
+now conditional on one clause, not three, and the sweeps that support
+that clause remain `[EVIDENCE]`, never a premise.
 
 **Declared verification scope, which a reader must carry:** blockwise
 equality of the pullback with the committed intrinsic partition is
@@ -4084,7 +4157,7 @@ serializing events through a raw `frozenset` repr; and a
 file contained no delta.  All three are on the record with their causes,
 which is the point of having them.
 
-### B6.12 D50: the form is a CHOICE `[LOG #421/#422; GREEN-UNREVIEWED]`
+### B6.12 D50: the form is a CHOICE `[LOG #421/#422; batch-round reviewed and repaired]`
 
 Pin `note-d50-is-the-form-a-law-pin.md`; receipt
 `v10/code/d50_form_law_or_choice_exact.py` (13 PASS / 0 FAIL after
@@ -4167,38 +4240,70 @@ thousands) did not finish its exact rank in 10 minutes and was cut; the
 horn (II) holds; paper 30 §5.7's `[OPEN, declared]` is answered
 affirmatively.  D50 bears only on uniqueness.
 
-### B6.13 (H1) is a THEOREM at two-actor delivery-free scope — residue 1 is CLOSED there `[D61, LOG #451/#452 — GREEN-UNREVIEWED]`
+### B6.13 (H1) is a THEOREM at two-actor delivery-free scope — residue 1's last gap is ONE hypothesis `[D61, LOG #455; round 1 TERMINAL]`
 
-*Sources: `note-d60p-h1-probe.md` (the adopted proof note, §3–§7); `note-d61-h1-closure-pin.md` incl. its §4 first-run amendment; `v10/code/d61_h1_closure_exact.py` (10 PASS / 0 FAIL, exit 0) and `data/d61_h1_closure_exact.out`.*
+*Sources: `note-d60p-h1-probe.md` (the adopted proof note, §3–§9); `note-d61-h1-closure-{pin,result}.md` incl. the pin's §4 first-run and §5 round-1 amendments; `v10/reviews/d61-round1-hostile-review.md`; `v10/code/d61_h1_closure_exact.py` (12 PASS / 0 FAIL, exit 0) and `data/d61_h1_closure_exact.out`.*
+
+**Scope of the numbers in this section, stated once.**  The exhaustive
+d42a two-actor family runs to **depth 6: 34,375 histories**.  Invariants
+and the conclusion are gated per *history* over all 34,375; case
+instances and the dichotomy are gated per *transition*, and a transition
+has a parent of depth ≤ 5, so those counts run over the **34,374**
+transitions out of parents at depth ≤ 5.  The probe and the round-1
+review each carry the conclusion two levels deeper, to **depth 8 —
+930,631 histories**.
 
 **THE OWN-VIEW DICHOTOMY (Lemma 2), which is the whole engine.**
 
 > **A candidate's own view is EITHER the initiator's register cone OR the
-> FULL view — there is no third case.**  The reason is register geometry
-> read from the committed source: `regs_of` keys the poset on **actor
-> names** (plus arbitrator-owned fresh version names), so a *pair*
-> arbitration occupies both actors' registers and therefore sees
-> everything, while every other candidate sees exactly its initiator's
-> cone.
+> FULL view — there is no third case.**  This is a theorem of `regs_of`
+> **together with** `arb_components_in_view`'s proposer test, and the two
+> halves pull in opposite directions.  Register geometry *alone* produces
+> a **third** case: `regs_of(('r', a, C, W))` returns `C`'s **proposers**
+> plus the fresh version name, and the proposers need not include the
+> initiator `a` — such a candidate's view is the *opponent's* cone plus
+> `a`'s version cone, neither the initiator's cone nor the full view
+> (**5,712** such candidate views at depth ≤ 5).  What removes the case
+> is `admissible`'s route to the `ckey` through
+> `arb_components_in_view(view, a)`, which returns only components
+> carrying an `a`-proposal: every *admitted* `'r'` therefore has its
+> initiator among the proposers, and a pair arbitration then occupies
+> both actors' registers and sees everything, while every other admitted
+> candidate sees exactly its initiator's cone.
 
-Gated at every instance: **34,374 candidates at depth ≤ 5 — cone 32,342,
-full 2,032, THIRD CASE = 0.**  And the 2,032 full-view cases are
-**exactly** the 2,032 "lag" pairs that had been read as an obstruction
-(§B3.2): *the dichotomy explains the lag rather than being defeated by
-it.*
+**The proposer test is the load-bearing clause for any extension.**  It
+is exactly what a three-actor or transport-scope successor must
+re-examine — and at three actors the third case becomes **admissible**
+(**5,904** such views at depth ≤ 4), with **only Lemma 2 breaking**; the
+rigidity invariants survive there, which is what tells a successor unit
+which lemma to attack.
+
+Gated at every instance: **34,374 candidate transitions (parents of depth
+≤ 5) — cone 32,342, full 2,032, THIRD CASE = 0.**  And the 2,032
+full-view cases are **exactly** the 2,032 "lag" pairs that had been read
+as an obstruction (§B3.2): *the dichotomy explains the lag rather than
+being defeated by it.*
 
 **On the cone the layer is RIGID (Lemma 5).**  The invariants — `alive_a`
-a singleton; at most one live proposal, on `X_a`; at most one full-view-
-superseded `X` — hold at **every one of 34,375 histories, zero
-violations**, layer-computed per history.  The case battery, at every
-instance:
+a singleton (5a); at most one live proposal, on `X_a` (5b); no pair-arb
+after a self-arb, and the first self-arb of a history on the shared base
+(5c); no opponent proposal live in `cone_a` on `X_a`, either bit (5d); at
+most one full-view-superseded `X` (5e) — hold at **every one of 34,375
+histories, zero violations**, layer-computed per history, and again in
+lean form on every history to depth 8.  The case battery gates
+**preconditions AND effects** at every cached transition:
 
-| case | instances | violations |
+| case | instances | precondition / effect violations |
 |---|---|---|
-| every admissible **propose** is on the actor's own alive singleton with no prior live | 12,916 | **0** |
-| every admissible **self-arb** consumes a SINGLETON component on that actor's own `X_a` | 6,484 | **0** |
-| every admissible **pair-arb** sits on a base that is BOTH actors' alive singleton (`X_A = X_B`) | 2,032 | **0** |
-| case exhaustiveness — every menu event is `p`, `r` or `n` | — | **0** non-`p/r/n` |
+| **propose** — on the actor's own alive singleton with no prior live; after it, alive tokens unchanged, exactly one live proposal on `X_a`, opponent untouched | 12,916 | **0 / 0** |
+| **self-arb** — consumes a SINGLETON component on that actor's own `X_a`; after it, the actor advances with 0 live and the OPPONENT's state is unchanged with the arb **outside** its cone — the invisible supersession, gated as an effect | 6,484 | **0 / 0** |
+| **pair-arb** — sits on a base that is BOTH actors' alive singleton (`X_A = X_B`); after it, both actors advance to the same fresh version and both live proposals resolve | 2,032 | **0 / 0** |
+| case exhaustiveness — the menu alphabet is `p`, `r`, `n` | — | asserted as a **code-fact** against `candidates_for`'s source |
+
+The exhaustiveness row is an assertion about the source, not a counter:
+`candidates_for` constructs events only via `('n', a)`, `('p', …)` and
+`('r', …)` literals, so a counter over enumerated menus could never have
+failed and is not offered as evidence.
 
 **This dissolves the standing obstruction.**  The cone-level bits are
 indeed not full-view-determined — but rigidity means **only the two
@@ -4211,26 +4316,69 @@ equivariance WITH NO DEPTH PARAMETER.**
 
 **The conclusion, gated.**  Equal canonical `sigma` ⟹ **identical**
 canonical menu (renamed event-multiset, exact weights), over all 34,375
-histories, **36 sigma classes, zero splits** — and the probe gated the
-same over **930,631 histories to depth 8** (census
+histories, **exactly 36 sigma classes, zero splits**, with the cumulative
+window spectrum `[11, 19, 28, 32, 36]` matching d44a's committed anchor —
+and the same gated over **930,631 histories to depth 8** (census
 `[1, 6, 32, 176, 976, 5280, 27904, 145408, 750848]`), with zero
 sigma-class menu splits, plus sampling to depth 40, renewal-pumping
-families to length 44, and adversarial pairs `[PROBE-CARRIED]`.
+families to length 44, and adversarial pairs.
+
+**Independently re-verified, layer and all.**  The round-1 review
+re-implemented the admission layer from scratch — DFS reachability
+instead of the incremental `pred` union, BFS components instead of
+union-find, maximal independent sets by extension-closure, explicit
+permutation replay for `PK1` — checked it against the committed layer on
+all 6,471 histories to depth 5 with **zero menu or poset mismatches**,
+and then ran the **entire lemma list** on its own layer exhaustively to
+depth 8: every lemma, every invariant including the three the receipts do
+not reach that deep, the quarter law, `G` entrywise in exact
+`Fraction`s, (H1) **and** (H2) — **zero violations of every one** —
+landing independently on **36 sigma states and 176 transition keys**.
 
 **A bonus that runs the other way.**  The quarter law of §B2.7 —
 per-actor menu mass in `{1, 5/4}` — is **derived** from `G` (propose
 `1/8`, self-arb `1/4`, pair-arb `1/8` in twos; blind groups summing
 exactly `1/4`) and re-gated at every history with **zero** off-law
 points.  A gated-and-scoped law becomes a **theorem of the closed form**.
+And the derivation fixes the *totals*: a `5/4` per-actor mass requires a
+two-member full-view component, which by (5b) carries **both** actors'
+proposals, so the actors sit at `5/4` together or neither does — the menu
+total is **`2` or `5/2`**, and `9/4` is unreachable.
 
 > **`[THEOREM at two-actor delivery-free d42a scope]` (H1) holds.**
 >
-> **CONSEQUENCES.**  D44a's closure theorem is **UNCONDITIONAL** at that
-> scope — (H0) is the gated invariants, (H2) follows from the committed
-> transition determinism plus the closed form.  **RESIDUE 1 — the
-> completion problem's positive-harmonic core, the corpus's oldest named
-> gap — IS CLOSED there.**  And D49's root-free completion `Zhat` holds
-> at **every depth** there.
+> **`[THEOREM, same scope]` (H0) is FULLY DISCHARGED.**  Clauses 1–3 are
+> corollaries of Lemmas 4/5; clause 4 — conflicting live pairs
+> incomparable — is **Lemma 7b**, a three-line proof from Lemma 3's cone
+> form plus (5b) plus pair-arb resolution, each step verified against the
+> layer.
+>
+> **WHAT IS NOT DELIVERED.**  D44a's closure theorem remains
+> **CONDITIONAL ON (H2) ALONE** — transition determinism, verified
+> exhaustively through depth 8 by an independent re-implementation (176
+> keys, 0 violations) and **not proved**.  So: **residue 1 is DECIDED AT
+> EVERY VERIFIED DEPTH, and its last named gap has shrunk from three
+> hypotheses to ONE.**  *"Residue 1 is closed"*, *"D44a is
+> unconditional"* and *"`Zhat` holds at every depth"* are **not**
+> available (§0.3), and become available if and only if D62 lands.
+
+**D62, the closing unit.**  Write the `(hold, live, comps, refs, sup)`
+update table out **event by event**, with the three obligations neither
+note originally stated:
+
+1. **The propose-on-a-dropped-base case.**  When `hold[x] = None` and `x`
+   has no live proposal, `X_x` is a base `sigma(h)` has *discarded*, so a
+   propose on it makes `sigma(h+e)` reference a token the parent does not
+   record.  Determinism survives only because that token is **forced up
+   to renaming**, by the `EXTRA`-token argument resting on invariant 5e.
+2. **Fresh version-name non-collision.**  Each arb mints
+   `vname(b, W, x)`, and the table must produce a genuinely new base
+   token; a collision would force `x` to have arbitrated `b` before,
+   hence `b ∈ superseded` in `cone_x`, hence the arb inadmissible.
+   Measured: **44,356 admissible arbs to depth 6, 0 collisions** — and
+   the argument, not the count, is what D62 owes.
+3. **Lemma 7b feeding the components**, since `comps(h+e)` is built from
+   `edges()`, which is built from `incomparable()`.
 
 **Four scope clauses, all binding.**
 
@@ -4238,54 +4386,65 @@ points.  A gated-and-scoped law becomes a **theorem of the closed form**.
    remains a **choice** (§B6.12), so "the record law is forward-complete"
    still may not be quoted without it.
 2. **Transport untouched.**  Nothing here reaches delivery scope.
-3. **THREE ACTORS ARE OUT OF SCOPE — the dichotomy FAILS there.**  With
-   three actors a pair-arb sees the union of two cones, not everything.
-   The pin forbids wider quotation.
+3. **THREE ACTORS ARE OUT OF SCOPE**, and the wall is now **exhibited**
+   rather than asserted: the third view case is admissible there (5,904
+   views at depth ≤ 4) and Lemma 2 is the single thing that breaks.
 4. **The proof is PROSE-OVER-CODE, not machine-checked logic.**  The
-   receipt gates the code-facts against the source, every case claim at
-   every cached instance, the dichotomy, and the conclusion; the
-   depth-free force comes from the register-geometry argument, not from a
-   sweep.  A **Lean-grade mechanization is a stated residue.**
+   receipt gates the code-facts against the source, every case claim —
+   preconditions and effects — at every cached transition, the
+   dichotomy, and the conclusion; the depth-free force comes from the
+   register-geometry argument, not from a sweep.  A **Lean-grade
+   mechanization is a stated residue.**
 
 **An over-promise, recorded rather than hidden.**  The pin said
 "mechanize the induction", twice over-promising: run 1's hand-rolled
 abstract state was **coarser than sigma** (1,932 menu mismatches), and —
 the deeper point — *any* cache-gated state machine leaves exactly the
-depth gap (H1) always had.  The deliverable was restated accordingly.
+depth gap (H1) always had.  The deliverable was restated accordingly, and
+the round then restated the *consequence* sentence the same way: the
+mathematics survived everything thrown at it; the sentence it was sold
+with did not.
 
-**Standing: GREEN-UNREVIEWED.**  D61's own hostile round is queued;
-nothing here is citable until it lands, and the paper 30/32 updates are
-queued behind it.
+**Standing: round 1 TERMINAL.**  The paper 30/32 updates remain queued —
+now behind D62, since the sentence they would carry is the one still
+missing.
 
 ### B6.13b The two routes that failed first, and what they left
 
 Both are in the graveyard (§B10.2, §B10.3); what matters here is which
-of their content survives into the closure above.
+of their content survives into the proof above.
 
 - **The `tau` own-view route `[D46a]`** established the lag as a real
   object — the menu view strictly exceeds the noop cone on 1,016 of
   12,942 actor-histories, all extras opponent-authored (§B3.2).  **That
   measurement is now explained**: those are dichotomy full-view cases.
 - **The wire-closure route `[D51]`** measured that every event type lags
-  and that a smaller view can yield *more* options, so no argument may
-  assume the lagged view sees a subset.  Both stand.  **What does not
+  and that a smaller view can yield *more* options — by **missed
+  supersession**, not by a missed own proposal (§B3.2) — so no argument
+  may assume the lagged view sees a subset.  Both stand.  **What does not
   stand is its reduction**: the four menu-relevant projections
   **REFINE** `sigma` rather than being determined by it (209 projection
   keys against 32 states), so (H1) was **not reduced in the claimed
   direction**.  Its durable content is three refutations, not a
   reduction.
-- **D61 is untouched by that inversion**, because its route goes through
-  `sigma` **directly** and never through the projections.
+- **D61 is untouched by both failures**, because its route goes through
+  `sigma` **directly** — never through the projections, and never
+  through the own-proposal clause: its self-arb case names the invisible
+  supersession as the mechanism, which is what the measurement says.
 
 ### B6.14 Scope, to be carried at every citation
 
-- **d42a scope, delivery-free, TWO ACTORS.**  Unconditional at **all
-  depths**: (H1) is a theorem there (§B6.13), so D44a's closure theorem
-  is unconditional and `Zhat` holds at every depth — subject only to the
-  stationary **form** remaining a choice (§B6.12) and to D61's own
-  hostile round, which is queued.  **Three actors are OUT OF SCOPE**: the
-  own-view dichotomy fails there, and nothing above may be quoted
-  wider.
+- **d42a scope, delivery-free, TWO ACTORS.**  **Decided at every verified
+  depth**: (H1) is a theorem there and (H0) is fully discharged
+  (§B6.13), so D44a's closure theorem is conditional on **(H2) alone** —
+  transition determinism, exhaustively verified through depth 8 by two
+  independent implementations and not proved.  `Zhat` therefore holds at
+  every depth the corpus has verified, not demonstrably at every depth;
+  and the whole of it is subject to the stationary **form** remaining a
+  choice (§B6.12).  The closing unit is **D62**, the (H2) update table.
+  **Three actors are OUT OF SCOPE**: the own-view dichotomy fails there
+  — the third view case becomes admissible — and nothing above may be
+  quoted wider.
 - **Transport scope (d42b1) is OPEN.**  Paper 32 §2.3's escape result
   stands untouched: deliveries reopen the absorbing sector (a three-event
   history — propose; blind self-seal; deliver the created version across —
@@ -5044,7 +5203,7 @@ physical one.**
 The natural next move — demand exactness at *sector* rather than per-option
 granularity — is the subject of §B9.4b, and it closes.
 
-### B9.4b The sector-exact escape, closed at `(actor, type)` granularity `[D57, LOG #436 — GREEN-UNREVIEWED]`
+### B9.4b The sector-exact escape, closed at `(actor, type)` granularity `[D57, LOG #436; batch-round reviewed and repaired]`
 
 Receipt `v10/code/d57_sector_exact_refinement.py`, **3 PASS / 0 FAIL**,
 exit 0, caps 3/4/5/6 **exhaustive** (**521 / 3,969 / 30,729 / 243,769**
@@ -5104,7 +5263,9 @@ reading is the correct one for *stating* demands and is also what makes an
 exact aggregated bookkeeping hard to build.  **Residues:** depth 7; an
 actor-swap quotient (counts `≤ 2×`, so it cannot rescue the trend alone).
 
-*Status: green-unreviewed, therefore not citable (§0.2).*
+*Status: batch-round reviewed, repaired and delta'd — with the first of
+its two published grounds withdrawn in that round, which is why the
+verdict above rests on one.*
 
 ### B9.5 Caveats, binding
 
@@ -5205,20 +5366,24 @@ menu-invisible and (H1) follows **at every depth with no induction**.
 **Killed by:** measurement — **every event type lags** (`n` 4,606/12,942;
 `p` 5,636/12,916; `r` 3,820/8,516), because the projections are the
 full four-tuple over **all** bases while a candidate's view need only
-cover the base it touches.  Then, worse: **monotonicity fails** —
-`prop_options_in_view` excludes a base the actor already has a live
-proposal on, so a view that **misses** that proposal **includes** the base.
-**A smaller view can yield MORE options.**
+cover the base it touches.  Then, worse: **monotonicity fails** — **a
+smaller view can yield MORE options.**
+**And the mechanism first named for it was itself refuted:** the
+own-proposal clause (*"`prop_options_in_view` excludes a base the actor
+already has a live proposal on, so a view missing that proposal includes
+the base"*) **can never fire** — an actor's own live proposals are always
+in its own cone (0 of 68,750 pairs).  MV2's mechanism is **missed
+supersession** (9,656 of 9,656 excess options), and the `'r'` arm lags
+too.
 **And the reduction it offered in place of the refuted route is itself
 inverted:** the four projections **REFINE** `sigma` (209 keys against 32
-states), so (H1) was **not** reduced in the claimed direction; MV2's
-mechanism is missed supersession, and the `'r'` arm lags too.
+states), so (H1) was **not** reduced in the claimed direction.
 **Survived:** three refutations that still bind — every event type lags;
 **a smaller view can yield MORE options**; and therefore the general bar
 *no depth-free argument may assume view monotonicity*.  **(H1) was
-eventually closed by a different route entirely** (§B6.13), through
-`sigma` directly, which is why that closure is untouched by this
-inversion.
+eventually proved by a different route entirely** (§B6.13), through
+`sigma` directly, which is why that proof is untouched by this
+inversion and does not import the refuted clause.
 
 ### B10.4 Circular-ones as the primary sky instrument `[D47a, LOG #409]`
 
@@ -5366,19 +5531,23 @@ around — capacity must be gated before a zero is read as a negative —
 with the corrected census (144 of 415 genuinely capable, 2.8×) replacing
 the over-strong one.
 
-### B10.10c The sector-exact escape at `(actor, type)` granularity `[D57, LOG #436 — GREEN-UNREVIEWED]`
+### B10.10c The sector-exact escape at `(actor, type)` granularity `[D57, LOG #436; batch-round reviewed and repaired]`
 
 **Claimed:** §B9.1's no-go bites per-option descriptions only, since the
 delivery-sector total is exactly `1/4` at every rung; so a **sector-exact**
 abstraction should stay bounded.
-**Killed by:** two independent grounds (§B9.4b).  **Sector quantization
-fails** — arbitration sectors reach `1/2` via subset choices and `1/8` at
-cap 6, because the sector prices `1/4` divided by a depth-unbounded
-component count, so totals live in `{k/(4m)}` and the **sector alphabet is
-not finite**; the `1/4` was a fact about the *delivery* sector, not a law
-of sectors.  And **the coarsest sector-lumpable partition does not
-stabilize** — per-depth fixpoint counts creep across caps 3/4/5/6 (depth 3:
-7, 16, 16, **17**).
+**Killed by:** one ground (§B9.4b): **the coarsest sector-lumpable
+partition does not stabilize** — per-depth fixpoint counts creep across
+caps 3/4/5/6 (depth 3: 7, 16, 16, **17**), with a trivial-boundary
+control showing the counts are *lower bounds*.
+*Nearly killed by a second ground that did not hold up.*  Sector
+quantization at `{0, 1/4}` does die — arbitration sectors reach `1/2` via
+subset choices and `1/8` at cap 6 — but the inference from three values
+to unboundedly many fails at this scope: `max |comps| = 1` at every
+depth in the unit's own exhaustive data and `merge_pairs ≤ 1` is proven
+at two actors, so `{1/2, 1/4, 1/8}` **may be the complete alphabet**.
+That ground is **withdrawn**; the `1/4` remains a fact about the
+*delivery* sector rather than a law of sectors.
 **Survived:** the motivating result — that record-level demands constrain
 **sums**, so the physically meaningful objects are the aggregated ones
 (§B6.12) — and a narrowed crack: **strictly coarser** aggregations
@@ -5514,13 +5683,15 @@ of §B11.1 are unchanged.*
 positive, per-cut normalized, class-constant, foliation-invariant
 directly, support-preserving, a law, a measure, and **root-free** (root and
 renewal both `1/16`; the whole 215-node matched subtree identical).
-**Horn (II) holds, and now at every depth**: (H1) is a theorem at
-two-actor delivery-free scope (§B6.13), so D44a's closure is
-unconditional there and **residue 1 is CLOSED**.  Still **unique only
+**Horn (II) holds, and residue 1 is DECIDED AT EVERY VERIFIED DEPTH**:
+(H1) is a theorem and (H0) fully discharged at two-actor delivery-free
+scope (§B6.13), so D44a's closure is conditional on **(H2) alone** —
+exhaustively verified through depth 8, not proved — and the closing unit
+is D62.  Still **unique only
 within paper 30 §5.7's stationary FORM, and the form is a CHOICE**
 (§B6.12); values **toy-relative**; **three actors out of scope** — the
 own-view dichotomy fails there; the proof prose-over-code, with
-mechanization a residue; the unit green-unreviewed.  **Transport scope
+mechanization a residue.  **Transport scope
 OPEN**, and §B9 shows the tool cannot travel.
 
 **Geometry line — transport scope, measure-free.**  Sky size is an
@@ -5587,7 +5758,7 @@ description of the *shape* of a possible answer, not an answer.
    leverage: the only route by which the measure could reach the scope
    where the dimension results live.  **Two granularities are already
    excluded** — menu-exact for *any* design (§B9.1), and `(actor, type)`
-   sector-exact on two independent grounds (§B9.4b) — and the
+   sector-exact by the refinement measurement (§B9.4b) — and the
    delivery-lumped candidate, though verified exact on the depth-5
    window, **fails to close at 20,000** with the residual explosion in the
    view-product structure.  What remains: **(i)** strictly coarser
@@ -5600,9 +5771,12 @@ description of the *shape* of a possible answer, not an answer.
    All three are live (§B5.4), they disagree materially, and the
    dimension discriminator is sharpest under SKY-A while several other
    results were computed under SKY-B.  Nothing justifies a choice.
-3. **(H1)** — the depth-free menu-factorization lemma.  Two routes closed
-   with counterexamples; any third must **not** assume view monotonicity.
-   Closing it makes the d42a settlement unconditional.
+3. **(H2)** — sigma-transition determinism, the **last** hypothesis under
+   the d42a settlement now that (H0) is discharged and (H1) is a theorem
+   (§B6.13).  Exhaustively verified through depth 8 by two independent
+   implementations, 176 keys, zero violations; not proved.  **D62** —
+   the event-by-event update table with its three named obligations —
+   discharges it and makes the settlement unconditional at that scope.
 4. **Is there a record-level demand that forces the stationary form?**
    Two strongest candidates and their conjunction eliminated by
    measurement.  Nobody has a third.
@@ -5657,10 +5831,11 @@ sky definitions and the constructed separator),
 `d51_menu_visibility_exact.py`, `d53_sky_capacity_exact.py`,
 `d54_dilworth_gate_exact.py`, `d54b_shatter_construction_exact.py`,
 `d55_shatter5_exact.py`, `d55b_sphere_calibration_exact.py`,
-`d56_transport_sigma_probe.py`.
+`d56_transport_sigma_probe.py`, `d60p_h1_probe.py` and
+`d61_h1_closure_exact.py` (the own-view dichotomy and the closed form).
 
 **The ledger:** `v10/LOG.md`, append-only, numbered, **forward
-corrections only, never silently edited.**  Entries #404–#433 cover
+corrections only, never silently edited.**  Entries #404–#455 cover
 everything in chapters B5, B7, B8, B9 and the settlement line of B6.
 
 **Review records:** `v10/reviews/*.md`, frozen; a round is followed by
@@ -7471,11 +7646,13 @@ The destination, as recorded (LOG #436, user direction):
 with the supporting observation from the same entry: *"the grammar's
 records are worldline-woven, not sprinkled."*
 
-The supporting measurement is §B5.7: across 1,578 capable genuine
-`M^{3+1}` sky pairs, **zero shatter-4 and zero shatter-5**; combined with
-the zero-shattering result on genuine `M^{2+1}`, **no sprinkled Minkowski
-record of any tested dimension shatters at all**, while the engineered
-transport records shatter 4 and 5.  Its `[MY READING]` mechanism note —
+The supporting measurement is §B5.7: genuine sprinkled `M^{2+1}` shatters
+3 and **never 4**, genuine `M^{3+1}` shatters 4 and **never 5** — the
+continuum ladder reproduced exactly on discrete data — while the
+engineered transport records reach **5**, one rung above every sprinkling
+of any tested dimension and above the rung the 2-sphere's own geometry
+permits.  So the two object classes separate by a rung, not by the
+sprinklings reading nothing.  The `[MY READING]` mechanism note —
 that sprinklings have no actor/wire structure, so the Dilworth mechanism
 cannot even apply to them — is the structural reason the two object classes
 should not have been expected to resemble each other.
@@ -7634,8 +7811,9 @@ pricing.
 
 **ARROW 2 — causal order → local skies and dimension capacity.  `[HAVE]`**
 
-Delivered: the sky instrument with three committed definitions and the
-proof that only one of them can ever fire (§B5.4); the corrected capacity
+Delivered: the sky instrument with three committed definitions, **all
+three live** — the argument that only one could ever fire is refuted, and
+which reading is privileged is an open residue (§B5.4); the corrected
 capacity condition; the two scaling laws in different variables — Minkowski buys
 sky size with **density**, transport buys it only with **actor width**
 (§B5.5–§B5.6); transport skies **narrower than chance**; the **Dilworth
@@ -7912,7 +8090,7 @@ built in the corpus.
   LOG #302]`, and *upheld* against a challenge — §B6.11 BLOCKER B1's
   attempted reduction was refuted and the queued erratum cancelled, with
   #420 upgrading the refutation to a theorem).
-- **The form is a CHOICE** (D50, `[GREEN-UNREVIEWED]`, §B6.12): the two
+- **The form is a CHOICE** (D50, batch-round reviewed, §B6.12): the two
   strongest invariance demands leave the completion dimension **growing**
     (12 → 32 → 125), and adding foliation-invariance leaves it **exactly
   unchanged**.  So the uniqueness of the canonical completion comes from a
@@ -7975,6 +8153,13 @@ likely.
 The **3+1 control** is *finished*, and its answer removed an instrument
 rather than supplying one.
 
+The **delivery-free measure**, by contrast, has one small thing left, and
+it is the cheapest item anywhere on this list: a single update rule, to
+be written out case by case, standing between "settled at every depth
+anyone has checked" and "settled".  It does not compete with the
+construction problems for priority; it is simply the closing move of a
+line that is otherwise finished.
+
 And beneath all of them sits a front that belongs to neither line: **the
 missing map** between the grammar and the identified law (§A2.6).  It
 ranks below the two construction problems only because nobody knows how
@@ -8022,8 +8207,9 @@ ordering, not their content):
    the map, but it is the first segment of it, and it converts "nobody
    knows how to attack it" into a receipt.
 3. **The missing map** (§B2.9) — the corpus's **deepest** named front,
-   beneath (H1) and beneath the transport measure, because it is the one
-   gap that makes two ledgers out of one programme.  Until it closes, the
+   beneath the completion residues and beneath the transport measure,
+   because it is the one gap that makes two ledgers out of one
+   programme.  Until it closes, the
    grammar's geometry and the laboratory's clicks cannot be spoken of
    together, and the destination's last arrow is unreachable in principle
    rather than merely unbuilt.  What exists: paper 29's conditional
@@ -8035,7 +8221,8 @@ ordering, not their content):
 4. **A workable probabilistic description at transport scope**, unchanged
    in importance and worse in prospects: menu-exact is
    impossible for any design (§B9.1), and sector-exact at `(actor, type)`
-   granularity is closed on two independent grounds (§B9.4b).  The
+   granularity is closed by the refinement measurement (§B9.4b), on one
+   ground rather than the two first published.  The
    surviving candidates are strictly coarser aggregations (type-only,
    total-budget-only) and inexact / observable-only abstractions — all
    untested.
@@ -8046,12 +8233,19 @@ ordering, not their content):
    v10 grammar, with the additional twist that a user directive
    *declares* them not to be the click law.  **Two unbridged bodies of
    work, one theory.**
-6. **A Lean-grade mechanization of (H1)'s proof.**  (H1) is now a theorem
-   at two-actor delivery-free scope (§B6.13), but the argument is
-   prose-over-code — the register geometry read from the source — and the
-   receipt gates its case claims rather than its logic.  Named as a
-   residue by the unit itself.  **Three actors remain out of scope
-   entirely**, the dichotomy failing there.
+6. **D62 — the (H2) update table — and then a Lean-grade mechanization.**
+   The residue-1 line's closing unit is small, bounded and already
+   specified: write the `sigma` update out event by event and discharge
+   the three named obligations (the propose-on-a-dropped-base token
+   forced up to renaming via invariant 5e; fresh version-name
+   non-collision; Lemma 7b feeding the components).  It is the only thing
+   between *decided at every verified depth* and *decided* (§B6.13), and
+   it is the cheapest high-value unit on this list.  Behind it: (H1)'s
+   proof is prose-over-code — the register geometry read from the source
+   — and the receipt gates its case claims rather than its logic, so a
+   Lean-grade mechanization stays a residue.  **Three actors remain out
+   of scope entirely**, the dichotomy's proposer test being the clause
+   that fails there.
 7. **Is there a record-level demand that forces the stationary form?**
    Unchanged, and now doubly interesting: if the answer is permanently no,
    §D3's resemblance is the *only* interpretive home the boundary freedom
@@ -8146,7 +8340,7 @@ defined precisely, and to Part A where the intuition lives.
 | **gauge** | see *causal order vs gauge* | B3.1 |
 | **genesis** (`'g'`) | the initial version held by all participants — *"the declared supplied boundary"* | B2.2, A2.1 |
 | **gradient / Doob `h`-transform completion** | the backward recursion `Z(h) = Σ q(e|h)Z(h+e)` from a positive terminal boundary; exists at every finite depth, at the cost of within-cut ratio deformation | B6.5, A6.5 |
-| **(H0), (H1), (H2)** | the three depth-indexed hypotheses of D44a's conditional theorem: view invariants; **menu factorization from `sigma`**; transition determinism.  None implies another.  **All three now hold at two-actor delivery-free scope**, (H1) as a theorem via the own-view dichotomy — so the closure theorem is unconditional there.  **Three actors remain out of scope** | B6.9, B6.13, A6.9 |
+| **(H0), (H1), (H2)** | the three depth-indexed hypotheses of D44a's conditional theorem: view invariants; **menu factorization from `sigma`**; transition determinism.  None implies another.  At two-actor delivery-free scope **(H0) is fully discharged and (H1) is a theorem** via the own-view dichotomy, leaving the closure theorem conditional on **(H2) alone** — verified exhaustively through depth 8, not proved; D62 is its closing unit.  **Three actors remain out of scope** | B6.9, B6.13, A6.9 |
 | **harmonic** | `Z` satisfying the backward recursion exactly; residue 1 asks for a **strictly positive** harmonic function on the infinite-volume state space | B6.9, A6.7 |
 | **`h12`** | the one constructed configuration off the `1 + k/4` ladder (per-actor sum `23/24`), caused by a dead component inflating a live denominator | B2.7, A2.3 |
 | **holdings** | what an actor holds; propagate only through participation or delivery.  At transport scope the delivery enumerator reads the **whole** set, superseded members included — the fact that decides §B9 | B2.2, B9.1 |
@@ -8163,7 +8357,7 @@ defined precisely, and to Part A where the intuition lives.
 | **proposal** (`'p'`) | a local record event on the proposer's wire referencing a held copy of a base; carrier `{a}` alone, which is what makes conflict grammatically possible | B2.2, A2.1 |
 | **record / record line** | the whole generated structure / one actor's succession of versions.  *Actor is to line as particle is to worldline* | B1.1, A1.1 |
 | **renewal** | a record point structurally **isomorphic to the root** — event-level bijection, type- and payload-matched with `v0 ↔ v1`, **equal `q` at every matched event**.  "root = renewal" means the root sits in this class | B6.8, A6.7 |
-| **residue 1** | *does a strictly positive harmonic function exist on the infinite-volume state space?* — answered YES at d42a scope, conditional on (H0)–(H2) | B6.9, B6.10, A6.7 |
+| **residue 1** | *does a strictly positive harmonic function exist on the infinite-volume state space?* — answered YES at d42a scope, **decided at every verified depth**, conditional now on (H2) alone | B6.9, B6.10, B6.13, A6.7 |
 | **rootedness** | a completion distinguishing the root from the renewal point, i.e. distinguishing two record points the law identifies; what truncated completions do and `Zhat` does not | B6.8, A6.7 |
 | **capacity condition (sky)** | the honest requirement before a shattering test can be read as a measurement: `≥ 4` directions **AND** `≥ 16` distinct traces.  An earlier version added *and the empty trace present*; that clause **false-negatives** and is withdrawn (§B5.4) | B5.4, A5.5 |
 | **sector** | one of the four weight budgets (propose / arbitrate-and-merge / deliver / idle), each `1/4` when open, idle absorbing the rest.  The **delivery** sector total is `1/4` at every rung of §B9.1's ladder — but that is **not a law of sectors**: arbitration sectors reach `1/2` and `1/8`, totals live in `{k/(4m)}`, so the sector alphabet is not finite either | B2.6, B9.4, B9.4b, A9.4 |
@@ -8173,7 +8367,7 @@ defined precisely, and to Part A where the intuition lives.
 | **sky** | the direction set at an event, under one of three committed definitions: **SKY-A** covers, **SKY-B** an antichain at a committed height, **SKY-C** the dual past sky.  **All three are live readings** and they disagree materially; which is physically privileged is open (residue 2) | B5.1, B5.4, A5.2 |
 | **supersession** | a version is superseded when a later version on the same line replaces it; superseded structure may still be recorded but may no longer be actionable | B2.3, B9.1 |
 | **swept corner** | the sub-family of proposal branches where the enumeration is complete and every extension factor is exactly `1/8`, making ratio locality a theorem there | B6.5 |
-| **`tau`** | `sigma`'s construction applied to an actor's **own view**; **refuted** as an own-view object (D46a) | B6.13, A10.2 |
+| **`tau`** | `sigma`'s construction applied to an actor's **own view**; **refuted** as an own-view object (D46a) | B10.2, A10.2 |
 | **transport scope (d42b1)** | the grammar with delivery and merge; where the dimension results live and where the measure question is **open** | B2.2, B6.14, B9 |
 | **VC dimension** | the largest set a family of sets can shatter; caps on `S²` have VC dimension **4**, which is why the sphere never shatters 5 | B7.4, A7.2 |
 | **version** | the content object a line writes; created only by arbitration or merge | B2.2, A1.1 |
@@ -8190,7 +8384,7 @@ defined precisely, and to Part A where the intuition lives.
 | **crystal** | a record built to **tile** rather than to spike: the brick wall — ring actors, one minted version broadcast, then alternating re-delivery rounds.  Forced by the layer's own menus, sprinkling-grade homogeneity, above-sprinkling `ω`, **thin charts**; the shortfall from a perfect tiling is entirely boundary | B8.6, A8.6 |
 | **discriminator (max-shatter)** | `[REFEREE-CARRIED + coordinator-confirmed]` on genuine sprinklings at sufficient density, read under SKY-A, max-shatter reproduces the continuum ladder: `M^{2+1}` shatters 3 never 4; `M^{3+1}` shatters 4 never 5.  Size-controlled two-sided separation | B5.7, A5.7 |
 | **disjoint-row lemma** | shattering `S` requires a row **disjoint from `S`**, not an empty row — the two coincide only when `S` is the whole direction set.  Its narrow true corollary: for a reflexive transitive poset a cover sky can never shatter its **full** direction set | B5.4, A5.5 |
-| **own-view dichotomy** | `[THEOREM, two actors]` a candidate's own view is **either** the initiator's register cone **or** the FULL view — no third case, because the poset is keyed on actor names.  The engine of (H1)'s closure; **fails at three actors** | B6.13, A6.9 |
+| **own-view dichotomy** | `[THEOREM, two actors]` a candidate's own view is **either** the initiator's register cone **or** the FULL view — no third case: register geometry alone *produces* a third case, and `arb_components_in_view`'s **proposer test** removes it.  The engine of (H1)'s proof; **fails at three actors**, where the third case is admissible | B6.13, A6.9 |
 | **wide crystal** | the unbuilt composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record; the manifold road's next construction | B8.6, D4 |
 | **axioms R / S / C** | the earlier corpus's three: laws are laws of whole sealed histories; **no distinction without a record**; couplings fixed by self-consistency under refinement | C1 |
 | **Barandes-indivisible** | a process whose one-time transition law fails Chapman–Kolmogorov except at sparse **division events**; the barrier is the gap between `\|Σ\|²` and `Σ\|·\|²` — the interference cross-term | C1, C3 |
@@ -8303,7 +8497,9 @@ part of the document, not an apology for it.
     is read from a committed source.  Standing of the sources, carried at
     each point of use: **D50, D53, D55c, D57, D58 and D60** are
     batch-round reviewed, repaired and delta'd; **D61** (§B6.13, the
-    closure of (H1)) is **green-unreviewed** with its own round queued;
+    proof of (H1)) has had its own independent round, which confirmed the
+    mathematics to depth 8 on a rebuilt layer and restated the headline —
+    round 1 terminal;
     **D56** (§B9) is an advisory probe whose two load-bearing claims were
     independently re-verified and whose remainder must be re-derived.
     Two figures in §B5.7 and one in §B8.6 are `[REFEREE-CARRIED]`, and the
@@ -8360,7 +8556,8 @@ part of the document, not an apology for it.
     than §B9.1's.  (c) **(H1)'s proof is prose-over-code** and covers two
     actors only; the book states it as a theorem because the corpus does,
     with the mechanization residue and the three-actor failure stated
-    every time.
+    every time — and **(H2) is still a hypothesis**, so residue 1 is
+    decided at every verified depth and not closed.
 
 ---
 

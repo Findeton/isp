@@ -74,3 +74,46 @@ conclusion (canon_menu a function of canon_sigma) at depth 6 in this
 receipt plus the probe's depth-8 gate [PROBE-CARRIED], (iv) the
 quarter law per sigma state.  A Lean-grade mechanization is a
 RESIDUE, honestly out of scope here.
+
+## 5. Round-1 amendment (2026-07-26): THE HEADLINE IS RESTATED
+
+Round 1 (`reviews/d61-round1-hostile-review.md` — REVISE, 1 BLOCKER /
+4 MAJOR / 10 MINOR / 3 NIT) confirmed (H1) against an independently
+re-implemented layer, exhaustively to depth 8, and REFUTED this pin's
+§2.  **§2's consequence block is WITHDRAWN and replaced:**
+
+- **(H2) was never discharged.**  §2 grounded it on "N2 at machine
+  level" — the determinism gate of §1's N-programme, which the §4
+  amendment DELETED; the delivered receipt has no determinism gate,
+  and LOG #452's substitute ground ("the committed CG2 + the closed
+  form") is a finite-depth sweep plus an object with the wrong
+  codomain (G predicts menus, not sigma successors).  This is
+  precisely the move d44a's own round-1 F1 convicted, one unit
+  upstream.  (H2) remains a hypothesis: verified exhaustively through
+  depth 8 (round 1, independent layer, 176 keys, 0 violations), not
+  proved.  **D62 (the update table, with its three named obligations)
+  is the closing unit.**
+- **(H0) is now fully discharged** — clauses 1–3 were already
+  corollaries of Lemmas 4/5; clause 4 (conflicting live pairs
+  incomparable) was carried by a counter the adopted note itself
+  disowned, and is now **Lemma 7b**, a proof supplied by round 1 and
+  verified step-by-step against the layer.
+- **The honest headline:** (H1) is a THEOREM at two-actor
+  delivery-free d42a scope; D44a's closure theorem remains
+  CONDITIONAL **on (H2) alone**; residue 1 is DECIDED AT EVERY
+  VERIFIED DEPTH and its last named gap has shrunk from three
+  hypotheses to ONE.  "Residue 1 closed", "D44a unconditional",
+  "Zhat holds at every depth" are NOT delivered by D61 and may not
+  be quoted from it.
+- §1's N-programme numbering is dead (round-1 MINOR 1); the
+  receipt's own N-numbers are documented in its docstring.
+- Also repaired on round 1: 5c/5d gated (they were cited by the
+  step and gated nowhere), (5c)'s missing first-self-arb-on-shared-
+  base step written and gated, the invisible-supersession EFFECTS
+  gated, the probe's §1/§9 mechanism sentences corrected (route-2
+  cause = missed supersession; the dichotomy = regs_of PLUS the
+  proposer test), the 9/4 total removed, §7's equivariance premise
+  weakened to what ser() delivers, deep-loop 5c/5d/5e/extras gates
+  added at depth 8, anchors tightened to ==36 + window spectrum,
+  exit protocol fixed.  Result note:
+  `note-d61-h1-closure-result.md`.

@@ -319,15 +319,21 @@ for name, actors, fam in FAMS:
                     if shattered_set(rows, dirs, 4) is not None:
                         shat += 1
 check("T-SWEEP [STAGE 1] no shattered 4-set below width 6 — reported "
-      "WITH its capacity census (D53 SC5): the number of "
-      "SC5-capable skies below the bound is printed, and if it is zero "
-      "the sweep is VACUOUS there and the claim rests on the theorem "
-      "alone, which is exactly what a theorem is for",
+      "WITH a capacity census in the STRICT FIRST-DRAFT FORM (>= 4 "
+      "dirs, >= 16 traces, AND the empty trace; the batch round's "
+      "corrected D53 SC5 drops the empty-row clause, so this census "
+      "UNDERCOUNTS corrected-capable skies — relabelled per the batch "
+      "round, verdict unchanged: the gate is shat == 0 either way): "
+      "if the census is zero the sweep is vacuous under the strict "
+      "form and the claim rests on the theorem alone, which is "
+      "exactly what a theorem is for",
       shat == 0,
-      f"SC5-capable skies at widths < 6 = {cap_ok}, shattered = {shat}"
-      + ("; sweep VACUOUS below the bound — consistent with the theorem "
-         "(capable skies need 16 traces from < 6 chains, which Dilworth "
-         "forbids)" if cap_ok == 0 else ""))
+      f"strict-form-capable skies at widths < 6 = {cap_ok}, shattered "
+      f"= {shat}"
+      + ("; sweep VACUOUS below the bound under the strict form — "
+         "consistent with the theorem (capable skies need 16 traces "
+         "from < 6 chains, which Dilworth forbids)"
+         if cap_ok == 0 else ""))
 
 # --- mutant: the instrument must detect a non-nested family
 print("\n[mutants + hygiene]")

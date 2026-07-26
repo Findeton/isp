@@ -10537,3 +10537,49 @@ undischarged" and the withdrawn SKY claim, six stale SC5 references,
 and chapter-level log-voice (relocated to methodology, timeless).
 Zero dangling references; stamp #454. D61's hostile round remains in
 flight; its verdict adjudicates before any paper is touched.
+
+## 2026-07-26 — D61 ROUND 1 ADJUDICATED: (H1) IS A THEOREM, THE
+## HEADLINE IS NOT — RESIDUE 1's GAP IS NOW ONE HYPOTHESIS (LEDGER #455)
+Deliverables: reviews/d61-round1-hostile-review.md (independent Opus 5,
+REVISE, 1 BLOCKER / 4 MAJOR / 10 MINOR / 3 NIT, + my DELTA),
+note-d61-h1-closure-result.md (NEW), pin §5 amendment, repaired
+note-d60p-h1-probe.md (§1, §5 incl. LEMMA 7b + the 5c missing step,
+§6-§9), repaired d61_h1_closure_exact.py (12 PASS / 0 FAIL, exit 0)
+and d60p_h1_probe.py (deep-loop 5c/5d/5e/extras gates; depth-8 rerun).
+**THE ROUND CONFIRMED THE MATHEMATICS AND REFUTED THE COVER SENTENCE.**
+The reviewer re-implemented the layer from scratch (0 mismatches,
+6,471 histories), ran the ENTIRE lemma list exhaustively to depth 8 —
+930,631 histories, ZERO violations of every lemma, invariant, G
+entrywise, (H1) AND (H2) — and reproduced 36 states / 176 keys.
+**FORWARD CORRECTION (BLOCKER, verified by me in all parts): LOG
+#452's "RESIDUE 1 IS CLOSED / D44a UNCONDITIONAL / Zhat at every
+depth" IS WITHDRAWN.**  D61 discharged (H1) and (H0) only-partly;
+(H2) was grounded on a gate the §4 amendment had deleted ("N2 at
+machine level"), and the #452 substitute ground ("CG2 + the closed
+form") is a finite-depth sweep plus an object with the WRONG CODOMAIN
+(G predicts menus, not sigma successors) — the same move d44a's own
+F1 convicted.  **What stands after repair: (H1) [THEOREM, two-actor
+delivery-free d42a]; (H0) FULLY DISCHARGED (clause 4 = Lemma 7b, the
+round's constructive proof, verified step-by-step); D44a CONDITIONAL
+ON (H2) ALONE, (H2) verified exhaustively through depth 8; RESIDUE 1
+DECIDED AT EVERY VERIFIED DEPTH — the gap has shrunk from three
+hypotheses to ONE.**  Other findings, all verified then repaired:
+the dichotomy's mechanism was attributed BACKWARDS (regs_of PRODUCES
+the third case — 5,712 at depth <= 5, witness reproduced by me;
+admissible's proposer test kills it — and that test is exactly what a
+three-actor/transport extension must re-examine); the adopted note
+imported D51's batch-refuted route-2 mechanism; 5c/5d were cited by
+the induction and gated NOWHERE (now gated shallow + depth 8; (5c)'s
+missing first-self-arb-on-shared-base step written and gated: 14,772
+candidates, 0 violations); the depth-8 G gate was blind to the
+two-dropped-base mode (D-extras added); the 9/4 total was unreachable
+(gate's own printout disproved it); effects now gated incl. the
+invisible supersession; anchors ==36 + spectrum [11,19,28,32,36];
+exit protocol fixed.  THREE-ACTOR WALL NOW EXHIBITED (5,904
+admissible third-case views, depth <= 4; only Lemma 2 breaks).
+**D62 PINNED NEXT: the (H2) update table** — the three obligations
+named in the note's corollary (dropped-base token forced up to
+renaming via 5e; fresh-vname non-collision, 44,356/0 measured;
+Lemma 7b feeding comps).  If D62 lands, residue 1 closes FOR REAL.
+Paper 30/32 updates remain QUEUED (now behind D62); book patch
+dispatched under the one-go discipline.  Round 1 TERMINAL.

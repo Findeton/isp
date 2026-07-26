@@ -31,9 +31,15 @@ Two routes are dead and were **not re-walked**:
    the menu view strictly exceeds the noop cone on 1,016/12,942
    actor-histories at depth ≤ 5, all excess opponent-authored.
 2. **D51's wire-closure / monotonicity route** — view-monotonicity
-   FAILS: `prop_options_in_view` excludes a base on which the actor
-   already holds a live own proposal, so a view that MISSES that
-   proposal INCLUDES the base.  A smaller view can yield MORE options.
+   FAILS: a smaller view can yield MORE options.  The mechanism is
+   **missed supersession** (a view that misses an arb still counts the
+   arb's base as alive), not a missed own proposal — an actor's own
+   live proposals are in its own cone always (Lemma 4(c)), so the
+   own-proposal clause the D51 receipt originally named can never
+   fire; the batch round proved this (D51 BLOCKER 2: 0 of 68,750
+   firings, all 9,656 excess options caused by missed supersession),
+   and §5's invisible-supersession discussion is the same mechanism
+   read off Lemma 5's self-arb case.
 
 The surviving asset (D51): the menu reads each candidate's own view
 through exactly four projections, and `admissible(acts, e)` builds that
@@ -226,10 +232,21 @@ of an admissible history:
 
 *(5c)*: the only bases both actors hold are `V0` and the versions minted
 by pair-arbs; each pair-arb supersedes the previous shared base, so at
-most one is alive.  A self-arb by `y` on the shared base makes it
-full-superseded, and a pair-arb requires a full-view component on a
-**non-full-superseded** base with both proposers — impossible thereafter,
-since no new shared base can be minted. ∎
+most one is alive.  **The first self-arb of any history necessarily
+sits on the shared base**: before any self-arb every arb is a pair-arb,
+`X_A = X_B = V0` at genesis, and each pair-arb advances *both* tokens
+to the same minted version — so `X_A = X_B` inductively until a
+self-arb occurs, and a self-arb by `y` consumes a singleton component
+on `X_y` (case above), which *is* the shared base.  *(This step was
+missing from the first draft, which handled only "a self-arb on the
+shared base" without showing the first one must be there — round-1
+MAJOR 1; gate `D-5c-first-shared` now checks it on every history to
+depth 8.)*  That self-arb makes the shared base full-superseded, and a
+pair-arb requires a full-view component on a **non-full-superseded**
+base with both proposers — impossible thereafter, since no new shared
+base can be minted: a self-arb's version register is its author's only
+(`vname` carries the arbitrator's name, Lemma 1(e)), so the two actors
+never again hold a common base. ∎
 
 *(5d)*: with no pair-arb, `cone_a` contains no opponent event at all
 (Lemma 3).  With last pair-arb `P`, `X_a` is either `v_P` (minted by `P`)
@@ -272,18 +289,42 @@ So the opponent's own token is never invisibly superseded afterwards. ∎
 and `a` has at most one (5b).  So the pair-arb weights are
 `(1/4) · PK1(ckey, et)[W]` — the `1/|comps|` factor is always 1.
 Moreover a size-2 component always carries exactly one conflict edge
-(same base, opposite bits; and two same-base proposals by different
-actors after the last pair-arb are always poset-incomparable, by Lemma
-3), so `mis_of` returns the two singletons and `PK1` is `(1/2, 1/2)`.
-**Every pair-arb weight is therefore `1/8`, and every "blind" group sums
-to exactly `1/4`.**
+(same base, opposite bits, incomparable — Lemma 7b), so `mis_of`
+returns the two singletons and `PK1` is `(1/2, 1/2)`.  **Every
+pair-arb weight is therefore `1/8`, and every "blind" group sums to
+exactly `1/4`.**
+
+**Lemma 7b (incomparability — (H0)'s fourth clause, PROVED).**  *Two
+conflicting live proposals are always poset-incomparable.*  By (5b)
+they are by different actors: say `i` a live `A`-proposal and `k` a
+live `B`-proposal on the same base with opposite bits, `i < k` in
+history order.  Suppose `i ∈ pred[k]`.  `regs_of` of a proposal is its
+actor's singleton, so `pred[k]` is `cone_B` at time `k`.  If `h` has
+no pair-arb before `k`, `cone_B` contains only `B`-authored events
+(Lemma 3) and `i` is `A`-authored — contradiction.  Otherwise, by
+Lemma 3, `i ≤ P`, the last pair-arb before `k`; `i ≠ P` (a proposal is
+not an arb), so `i < P`.  Liveness only ever decreases, so `i` — live
+at `k > P` — was live at `P`.  A pair-arb's `ckey` is a full-view
+two-member component carrying each actor's live proposal; by (5b)
+`A`'s unique live proposal at `P` is `i`, so `P`'s `ckey` contains `i`
+and `P` **resolves** it — contradicting `i` live at `k`.  Hence
+`i ∉ pred[k]`; and `k ∉ pred[i]` since `k > i` and the poset respects
+history order. ∎  *(First draft carried this as "argued from Lemma 3"
+with the d44a `SG_VIOL['cmp'] = 0` counter — a gate, not the proof
+(GAP 3, now discharged).  The proof above was supplied by the D61
+round-1 review and each step verified against the layer.)*
 
 > This **derives** d42b3's G-L2 quarter-quantization law, which that
 > receipt could only gate and scope ("additivity for k ≥ 2 carried,
 > untested").  At d42a scope `k ≤ 1` — a per-actor menu mass of exactly
-> `1` or `5/4` and a total of `2`, `9/4` or `5/2`.  **[EXACT]** gate
-> S3(d) confirms this on the whole family: propose weights `{1/8}`,
-> self-arb `{1/4}`, pair-arb `{1/8}`, per-actor masses `{1, 5/4}`.
+> `1` or `5/4` and a total of `2` or `5/2`: **not `9/4`**, because a
+> `5/4` mass requires a two-member full-view component, which by (5b)
+> carries *both* actors' proposals, so the actors are at `5/4` together
+> or neither is (round-1 MINOR 4 — the first draft listed `9/4` and the
+> receipt's own printout `totals = ['2', '5/2']` disproved it).
+> **[EXACT]** gate S3(d) confirms this on the whole family: propose
+> weights `{1/8}`, self-arb `{1/4}`, pair-arb `{1/8}`, per-actor
+> masses `{1, 5/4}`, totals `{2, 5/2}`.
 
 ---
 
@@ -330,20 +371,46 @@ on it.)*
 ## 7. [PROOF] (H1), depth-free
 
 Suppose `sigma(h) = sigma(h')`.  By construction of `canon_sigma`, the
-raw tuples `(hold, live, comps, refs, sup)` of `h` and `h'` correspond
-under a base bijection `m`.  `G` only ever **copies base tokens from its
-input**, so it is equivariant: `G(raw') = m(G(raw))`, with the single
-`EXTRA` token mapped to `EXTRA`.  By §6, `menu(h) = G(raw)` and
-`menu(h') = G(raw')`.  Hence the two menus are identical as renamed
-event-multisets with exact weights. **∎ — and the argument mentions no
-depth anywhere.**
+**serialised parts** of the raw tuples correspond under a base
+bijection `m` of the referenced bases: `hold`, `live`, `comps`, and
+`sup` **restricted to `refs`** (`ser` writes
+`(m[b], b in sup) for b in refs` and nothing else — the full
+superseded set is exactly the dead structure `sigma` was designed to
+drop, and 28 of the 36 classes contain members with *different*
+`|sup|`, so equal `sigma` does **not** biject the full raw tuples;
+round-1 MINOR 10).  **This suffices, because `G` factors through the
+serialised part**: `G` reads `sup` at exactly one place — the test
+`c[0] not in sup`, where `c[0]` is the base of a live proposal and
+therefore *in* `refs` — and everything else `G` reads (`hold`, the
+live triples, the components) is serialised in full.  `G` only ever
+**copies base tokens from its input**, so it is equivariant:
+`G(raw') = m(G(raw))`, with the single `EXTRA` token mapped to
+`EXTRA`.  By §6, `menu(h) = G(raw)` and `menu(h') = G(raw')`.  Hence
+the two menus are identical as renamed event-multisets with exact
+weights. **∎ — and the argument mentions no depth anywhere.**
 
 **Corollary (H2).**  The same induction (Lemma 5's step analysis) writes
 the effect of each event on `(hold, live, comps, refs, sup)` purely in
 terms of that tuple and the renamed event, so `sigma(h+e)` is a function
 of `(sigma(h), renamed e)`.  This matches D51's MV4 at the projection
 level.  Stated as **[PROOF, sketch]** — the update table has not been
-written out event-by-event here.
+written out event-by-event here, and a table that skips the following
+three obligations is not a proof (named by the D61 round-1 review):
+
+1. **The propose-on-a-dropped-base case.**  When `hold[x] = None` and
+   `x` has no live proposal, `X_x` is a base `sigma(h)` has discarded;
+   a propose on it makes `sigma(h+e)` reference a token `sigma(h)`
+   does not record.  Determinism survives only because that token is
+   forced up to renaming (the §6 S3(b) argument, resting on 5e).
+2. **Fresh-version-name non-collision.**  Each arb mints
+   `vname(b, W, x)` and the update table must produce a *new* base
+   token; a collision with a base already present would break the
+   count.  It cannot (a collision forces `x` to have arbitrated `b`
+   before, hence `b ∈ superseded` in `cone_x`, hence the arb
+   inadmissible) — measured: 44,356 admissible arbs to depth 6,
+   0 collisions.
+3. **(H0)'s fourth clause** (Lemma 7b), because `comps(h+e)` is built
+   from `edges()`, which is built from `incomparable()`.
 
 ---
 
@@ -351,29 +418,38 @@ written out event-by-event here.
 
 1. **Lemma 5 is not machine-checked as an induction.**  Its *conclusions*
    (5a)–(5e) are gated exhaustively — in full detail on the depth-6
-   family (S2) and in lean form on **every history to depth 8** (S4(c),
-   together with Lemmas 1–3) — and `G`, which depends on all of them, is
-   gated to depth 8 (S4(b)).
-   But the receipt verifies the invariants, not the inductive step.  A
-   referee-grade version should mechanize the step: for every
-   `(sigma-state, admissible event)` pair, check that the invariants are
-   preserved — a **finite** check over the 36-state sigma space, not a
-   depth sweep.  *This is the one thing standing between this note and a
-   clean [THEOREM].*  It is a bounded, well-defined job.
+   family (S2) and, **after the D61 round-1 repairs**, in lean form on
+   every history to depth 8 (S4(c), together with Lemmas 1–3; the
+   first draft claimed depth-8 coverage for 5e that the deep loop did
+   not have, and gated 5c/5d nowhere — round-1 MAJOR 1; the deep loop
+   now carries `D-5c`, `D-5c-first-shared`, `D-5d`, `D-S2.9`,
+   `D-S2.10` and `D-extras`) — and `G`, which depends on all of them,
+   is gated to depth 8 (S4(b), entrywise modulo the single-`EXTRA`
+   collapse, now guarded by `D-extras`; round-1 MAJOR 2).
+   But the receipt verifies the invariants, not the inductive step, and
+   the D61 §4 amendment records why a cache-gated machine cannot close
+   the depth gap.  The theorem is carried by the prose: Lemmas 1–7b
+   with the case analysis of Lemma 5, each step a reading of the layer.
 2. **The `EXTRA`-token argument (§6, S3(b)) leans on Lemma 5e.**  If 5e
    failed, two dropped bases could appear and the canonical renaming
-   would have a genuine choice.  5e is gated, not mechanized.
-3. **Lemma 7's incomparability clause** ("two same-base proposals by
-   different actors are always incomparable") is argued from Lemma 3;
-   the corresponding counter `SG_VIOL['cmp']` in the committed d44a
-   sigma port reads 0 family-wide, which is a gate, not the proof.
+   would have a genuine choice.  5e's *proof* is the induction; its
+   gates now reach depth 8.
+3. **DISCHARGED** — Lemma 7's incomparability clause is now **Lemma
+   7b**, a proof, not a gate.  *(First draft: "argued from Lemma 3"
+   plus the d44a counter, which is a gate, not the proof.)*
 4. **Scope.**  Everything is delivery-free two-actor d42a.  Deliveries
    reopen the absorbing sector; more actors break "at most one shared
    base" (5c) and "at most one component per actor" (Lemma 7) is likely
    to survive but "pair-arb ⇒ full view" (Lemma 2) is **not**: with
    three actors, an arb over a two-actor component sees the union of two
    cones, not everything.  **The dichotomy of Lemma 2 is a two-actor
-   fact and must not be quoted beyond it.**
+   fact and must not be quoted beyond it.**  *(No longer merely
+   asserted — the D61 round-1 review exhibited it: three actors, depth
+   ≤ 4, 6,589 histories, **5,904 admissible third-case views**, witness
+   recorded in the review.  And the exhibit sharpens the scope: at
+   three actors only Lemma 2 breaks — 5a, 5b, `has_p` XOR `has_r`, and
+   Lemma 7's per-actor component bound all survive to depth 4 — so a
+   successor unit knows exactly which lemma to attack.)*
 
 ---
 
@@ -381,9 +457,23 @@ written out event-by-event here.
 
 **The candidate's own view is not a general sub-view: at two-actor d42a
 scope it is either the actor's register cone or the whole history, with
-no third case** (Lemma 2) — because `regs_of` keys the event poset on
-**actor names**, not on bases, and a pair-arb therefore occupies both
-actor registers at once.  Both dead routes assumed the menu view was
+no third case** (Lemma 2) — a theorem of `regs_of` **together with**
+`arb_components_in_view`'s proposer test.  Register geometry alone
+gives *three* cases, not two: `regs_of` of an `'r'` event keys on the
+**ckey's proposers**, who need not include the initiator, and an
+initiator-not-proposer arb's view is the opponent's cone plus the
+initiator's version cone — neither the initiator's cone nor the full
+view (5,712 such candidate views at depth ≤ 5).  What restores the
+dichotomy is the *last* sentence of Lemma 2's proof: `admissible`
+reaches the ckey through `arb_components_in_view(view, a)`, which only
+returns components containing an `a`-proposal, so every *admitted*
+`'r'` has the initiator among the proposers — and then a pair-arb
+occupies both actor registers at once.  *(The first draft of this
+section credited `regs_of` alone — the mechanism that __creates__ the
+third case, not the one that excludes it; round-1 MAJOR 3.  The
+distinction matters: the proposer test is exactly the clause a
+three-actor or transport-scope extension must re-examine.)*  Both dead
+routes assumed the menu view was
 some intermediate object that had to be tracked; it never is.  On the
 cone the layer is rigid to the point of triviality (one alive base, at
 most one live proposal, one component, `has_p` XOR `has_r`), and the

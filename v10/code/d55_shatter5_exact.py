@@ -293,9 +293,12 @@ if b5.refusal is None:
           "incomparable, one height, above E; depth reported",
           inc5 and sorted(dirs5) == didx5 and len(dirs5) == 5,
           f"|dirs| = {len(dirs5)}, depth = {DEP5}")
-    check("G5 [partly DERIVED from G6 — round-1 MINOR 5] CAPACITY "
-          "(the SC5 analog at m = 5): >= 5 directions, "
-          ">= 32 DISTINCT traces, empty trace present",
+    check("G5 [partly DERIVED from G6 — round-1 MINOR 5] CAPACITY in "
+          "the STRICT FIRST-DRAFT FORM at m = 5 (>= 5 dirs, >= 32 "
+          "DISTINCT traces, AND the empty trace — stricter than the "
+          "batch round's corrected D53 SC5, which drops the empty-row "
+          "clause; this record carries the empty trace, so the strict "
+          "form holds a fortiori; relabelled per the batch round)",
           len(dirs5) >= 5 and len(r5) >= 32 and frozenset() in r5,
           f"distinct traces = {len(r5)}, empty = {frozenset() in r5}")
     w5 = shattered_set(rows5, dirs5, 5)
@@ -310,8 +313,9 @@ if b5.refusal is None:
           "licensed claim is CAPACITY: the layer does not cap the "
           "shatter ladder at the sphere's rung.**  The empirical 3+1 "
           "separation has only a THIN control so far (round 1: 1,351 "
-          "genuine M^{3+1} SKY-B skies, 33 SC5-capable, zero "
-          "shatter-5 [REFEREE-CARRIED]) and is stated as such",
+          "genuine M^{3+1} SKY-B skies, 33 capacity-capable by the "
+          "referee's census, zero shatter-5 [REFEREE-CARRIED]) and is "
+          "stated as such",
           need5 <= have5 and w5 is not None,
           f"subsets = {len(have5 & need5)}/32; shattered 5-set = "
           f"{sorted(name5[i] for i in w5) if w5 else None}")
