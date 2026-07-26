@@ -1,0 +1,43 @@
+[D53 — the sky instrument's capacity condition]
+  banner: shatter-k requires ALL 2^k traces INCLUDING THE EMPTY
+  ONE.  D47's capacity gate checked |directions| >= 4 and
+  |rows| >= 2, which is necessary and NOT sufficient.  This
+  receipt measures how much of D47's decidable stratum was
+  structurally incapable of firing, and answers residue 2.
+
+[SC0 anchor — the instrument, imported from committed D47a]
+  [PASS] SC0 the sky constructor and the shatter test are imported from the committed D47a receipt by AST extraction — the object under audit is D47's own, not a re-implementation  (source = v10/code/d47a_sky_instrument_exact.py)
+
+[SC1 the necessary condition, stated and checked on a control]
+  [PASS] SC1 THE NECESSARY CONDITION.  Shattering a k-set requires all 2^k traces, and the empty set is one of them; so a system with no empty trace cannot shatter ANY set, for any k >= 1.  Both of D47's synthetic validation systems DO contain the empty trace — which is exactly why the instrument passed its validation there and why the defect below went unseen  (arc system contains empty trace = True; cap system contains empty trace = True; cap system shatters 4 = True)
+
+[SC2 the audit of D47's OWN strata]
+  SKY-A: skies  261, with empty trace    0, D47-'decidable'  201, ACTUALLY CAPABLE    0
+  SKY-B: skies  235, with empty trace  225, D47-'decidable'  142, ACTUALLY CAPABLE  139
+  SKY-C: skies  258, with empty trace    0, D47-'decidable'  211, ACTUALLY CAPABLE    0
+  [PASS] SC2 A LARGE PART OF D47's DECIDABLE STRATUM WAS STRUCTURALLY INCAPABLE OF FIRING.  Of the pairs D47 counted as shatter-4 decidable, only 139 of 554 contain the empty trace and could therefore ever have shattered.  D47's 'zero shatterings' over the rest is a TAUTOLOGY, not a measurement  (D47-decidable = 554, actually capable = 139, vacuous = 415)
+
+[SC3 residue 2 ANSWERED — which sky definition can be used?]
+  STRUCTURAL REASON, not an accident of this sample:
+    SKY-A takes the directions to be the COVERS of the base event,
+    so EVERY event strictly above it lies above at least one
+    cover — the empty trace cannot occur.  SKY-C is the dual and
+    fails the same way.  SKY-B takes an antichain at a fixed
+    height, so an event above the base may lie above NO direction,
+    and the empty trace occurs.
+  [PASS] SC3 D47 RESIDUE 2 IS ANSWERED, and negatively: **SKY-A and SKY-C can NEVER shatter, at any width or depth**, so they are unusable for the 2+1 obstruction test; SKY-B is the only committed definition that can fire.  This also explains D47b's unexplained observation that SKY-A never reached decidability — it was doubly disqualified  (SKY-A capable 0/201, SKY-C capable 0/211, SKY-B capable 139/142)
+
+[SC4 what is NOT affected]
+  [PASS] SC4 THE DAMAGE IS BOUNDED AND STATED.  Untouched: D47a's constructed separator (arcs never shatter 4, exact-rational caps do, opposite-edge case certified); its instrument validation on SYNTHETIC systems, which contain the empty trace and so were genuine; the DEMOTION of circular-ones after it rejected 121 of 554 real 2+1 skies, which never used shatter-4; and D47b's ACTOR-WIDTH result, which is a measurement of sky SIZE and does not invoke shattering at all  (separator re-checked in this process: arcs shatter no 4-set, caps do, both validation systems carry the empty trace)
+
+[SC5 the corrected capacity condition]
+  [PASS] SC5 THE CORRECTED CONDITION, and it is much tighter: a sky can possibly shatter a 4-set only with >= 4 directions, >= 16 DISTINCT traces, and the empty trace present.  Applied to the same Minkowski records it admits 52 skies against D47's 554 — any future sky unit must gate THIS, not D47's SG2  (corrected-capable = 52, D47 SG2-'decidable' = 554, reduction factor = 10.7x)
+
+[VERDICT — D53]
+  D47's capacity gate was NECESSARY BUT NOT SUFFICIENT, and the gap is structural rather than statistical: shattering needs the EMPTY TRACE, and two of the three committed sky definitions can never produce it.
+  **RESIDUE 2 IS ANSWERED: only SKY-B is usable.**  SKY-A and SKY-C are dead for this test at every width and depth, which is a stronger statement than 'they did not fire'.
+  D47's zero-shattering result survives only on the SKY-B stratum; elsewhere it was a tautology.  The separator, the circular-ones demotion and the actor-width result are all untouched.
+  CONSEQUENCE FOR THE 3+1 PROGRAMME: the targeted-construction attack must be built on SKY-B, and its capacity gate must be SC5's condition, not D47's.
+
+[d53] 6 PASS / 0 FAIL
+EXIT 0

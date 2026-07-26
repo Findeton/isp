@@ -9539,3 +9539,51 @@ be the error D49 was corrected for.
 INHERITANCE: the d42a results stand exactly as scoped, and **(H1)
 remains UNDISCHARGED there** (D51), so anything built at transport
 scope inherits that unless it re-establishes its own foundations.
+
+## 2026-07-25 — D53: D47's CAPACITY GATE WAS NOT SUFFICIENT; RESIDUE 2
+## ANSWERED (LEDGER #426)
+Receipt v10/code/d53_sky_capacity_exact.py, 6 PASS / 0 FAIL, exit 0.
+The instrument under audit is imported from the committed D47a by AST
+extraction — D47's own object, not a re-implementation.
+**THE DEFECT.** Shattering a k-set requires ALL 2^k traces, and the
+EMPTY TRACE is one of them; a system without it cannot shatter ANY set
+for any k >= 1. D47's capacity gate SG2 admitted a sky as "shatter-4
+decidable" on |directions| >= 4 and |rows| >= 2 — **necessary and NOT
+sufficient.**
+**THE AUDIT OF D47's OWN STRATA.** SKY-A: 261 skies, **ZERO** with the
+empty trace, 201 counted decidable, **0 actually capable**. SKY-C: 258
+skies, **ZERO** with the empty trace, 211 counted decidable, **0
+capable**. SKY-B: 235 skies, 225 with the empty trace, 142 decidable,
+**139 capable**. **Of D47's 554 "decidable" pairs only 139 could EVER
+have shattered; 415 were structurally incapable, so its zero-shattering
+result over those is a TAUTOLOGY, not a measurement.**
+**THE REASON IS STRUCTURAL, NOT STATISTICAL.** SKY-A takes the
+directions to be the COVERS of the base event, so every event strictly
+above it lies above at least one cover and the empty trace CANNOT
+occur; SKY-C is the dual and fails identically. Only SKY-B, whose
+directions form an antichain at a fixed height, admits an event above
+the base that lies above NO direction.
+**D47 RESIDUE 2 IS THEREBY ANSWERED, AND NEGATIVELY: SKY-A AND SKY-C
+CAN NEVER SHATTER AT ANY WIDTH OR DEPTH — they are unusable for the 2+1
+obstruction test, and SKY-B is the only committed definition that can
+fire.** This is stronger than "they did not fire", and it EXPLAINS
+D47b's unexplained observation that SKY-A never reached decidability:
+it was doubly disqualified.
+**WHY THE DEFECT SURVIVED D47's OWN VALIDATION.** SG1 validated the
+instrument on SYNTHETIC set systems — arcs and exact-rational caps —
+and **both of those contain the empty trace**, so the instrument passed
+honestly on objects that were capable, and the incapacity of real
+cover-skies was never in the validation's field of view. The controls
+were sound and were on the wrong object.
+**DAMAGE BOUNDED AND STATED — UNTOUCHED:** D47a's constructed separator
+(arcs never shatter 4; exact-rational caps do, opposite-edge case
+certified); the instrument validation on synthetic systems; **the
+DEMOTION of circular-ones** after it rejected 121 of 554 genuine 2+1
+skies, which never used shatter-4; and **D47b's ACTOR-WIDTH result**,
+which measures sky SIZE and does not invoke shattering at all.
+**THE CORRECTED CONDITION (SC5), for every future sky unit:** >= 4
+directions AND >= 16 DISTINCT traces AND the empty trace present. On
+the same Minkowski records it admits **52** skies against D47's 554 —
+a 10.7x reduction.
+CONSEQUENCE FOR 3+1: the targeted-construction attack must be built on
+SKY-B and gated by SC5, not by D47's SG2.
