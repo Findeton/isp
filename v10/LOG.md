@@ -10246,3 +10246,34 @@ Discarded roads remain content (the graveyard chapter), told
 timelessly. The current draft violates this (chapter 12; five inline
 forward-correction blocks; round-narration in several chapters) — an
 INTEGRATION PASS is dispatched to the writer.
+
+## 2026-07-26 — THE BOOK: INTEGRATION PASS COMPLETE, ONE-GO STATE
+## COMMITTED (LEDGER #445)
+The #444 integration pass landed: **7,670 lines** (net compression
+from 7,765 despite two NEW graveyard entries — integration compresses,
+as required). Chapter 12 dissolved into A5.7/B5.7 (sprinklings never
+shatter — now a fact about the instrument where the sky chapter needs
+it), A7.2/B7.5 (the meter's honest reading), A8.5/B8.5 (the
+full-strength controls replacing "thin, named residue"), A9.4/B9.4b
+(the sector closure as part of the wall's own account), two graveyard
+entries (A10.10b/c, B10.10b/c: the record-dimension-meter reading and
+the sector-level escape — claim, killer, survivor, told timelessly),
+and Part D. ~30 accretion-scaffolding sites removed across every
+part; methodology mentions of the corpus's own forward-correction
+DISCIPLINE retained (they describe the programme, not the drafting).
+THE FULL RE-READ (the point of the pass) caught and fixed: a
+ten-vs-thirteen sentence TOC mismatch; two stale story sentences that
+would have contradicted the integrated chapters; A9's not-claimed box
+wrong after integration; duplicated status text in B11.4; a
+mis-homed control citation (B5.3 -> B8.5); verified programmatically:
+all 84 section cross-references resolve, Part A formula-free,
+forbidden sentences absent outside the blacklist and graveyard
+headings, 90 provenance-label lines intact with the four
+green-unreviewed sources declaring their standing at point of use.
+The writer's stamp-staleness flag adjudicated: #441-#444 are entries
+ABOUT the book and its discipline (their substance is already woven
+in via C2's correction box, C6, and the stamp itself), so no content
+is missing; stamp bumped to #445. The two residual grep hits for
+forbidden scaffolding phrases are the stamp QUOTING them as rules.
+**The book now satisfies #444: a reader encounters one synthesis,
+written in one go, current as of this entry.**
