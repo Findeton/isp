@@ -10805,3 +10805,25 @@ hypothesis inside the theorem to the edge of the grammar (transport,
 a third actor, the chosen form, the machine-checked induction).  All
 numbers verified against the corpus (36/176/4,778,310; 12/32/125;
 137).  Book patch still in flight (separate commit).
+
+## 2026-07-26 — THE BOOK INTEGRATED TO #460: THE CLOSURE AND THE WIDE
+## CRYSTAL, ONE-GO (LEDGER #463)
+THE-THEORY-SO-FAR.md 8,565 -> 9,145 lines, stamp #460, full re-read
+discipline held.  New chapters: §A8.7/§B8.7 (the wide crystal + the
+branching bound, with W4b's proof in Part B), §B6.13b ((H2) the
+update table; residue 1 CLOSED at scope with the three clauses and
+the Lean residue).  §A6.9 retitled 'The gap closes'.  The §0.3
+blacklist entry for 'residue 1 is closed' rewritten to
+quotable-WITH-SCOPE-ONLY (bare form still forbidden; 7 occurrences
+in the book, all classified, zero bare).  Part D re-ranked: cocycle
+(1, with the omega-nesting warning), descent-conditions (2),
+ARBITRATION CRYSTAL (3, new), Lean mechanization; §D2's dimension
+story reshaped — the road to 3+1 chart width runs through CONFLICT,
+not transport.  Glossary gains the update table, W4b, the
+arbitration crystal, invisible supersession.  D60's d = 3 forward
+correction landed at §A8.6/§B8.6/§B10.13.  The re-read caught FIVE
+pre-existing stale sites outside the targets (incl. §A9.5's
+"not yet reviewed" claim about the batch-reviewed D57 and §A10.12's
+"H2 subsumed by H1" via the inverted D51 reduction) — all fixed.
+Round attributions rewritten into present-tense evidence-base prose;
+no correction-round narration in the body.
