@@ -10583,3 +10583,23 @@ renaming via 5e; fresh-vname non-collision, 44,356/0 measured;
 Lemma 7b feeding comps).  If D62 lands, residue 1 closes FOR REAL.
 Paper 30/32 updates remain QUEUED (now behind D62); book patch
 dispatched under the one-go discipline.  Round 1 TERMINAL.
+
+## 2026-07-26 — D63 PINNED: THE WIDE CRYSTAL — does tiling homogeneity
+## compose with chart width? (LEDGER #456)
+Pin FROZEN before any receipt exists: note-d63-wide-crystal-pin.md.
+The question is D60's residue 2 made sharp: D54 buys WIDTH with actors
+(couriers; homogeneity 0.357-0.386, far below band), D60 buys
+HOMOGENEITY with tiling (0.769 in-band; max |D| = 3 everywhere at
+d=2).  Objects: WIDE-BRICK(M, R, C) (brick + C couriers, C=0 must
+reproduce D60's row EXACTLY) and DOUBLE-RING(M, R).  Gates W0-W6:
+forcedness at D60's C1 grade, atlas census at d=2 AND d=3 both
+orderings, comparators RE-RUN via D58's atlas (never re-typed), the
+(homogeneity x width) FRONTIER swept and printed, interior control,
+no invented thresholds.  Pre-registered lean: couriers raise |D| at
+some homogeneity cost; open whether the cost stays in-band.
+Falsifiers: F1 grammar wall (width never reached — tiling records
+can't carry dimension), F2 trade-off wall (width only below band —
+the frontier curve is the deliverable), F3 THE WIDE CRYSTAL EXISTS
+(band + |D| >= 4 — the mechanisms COMPOSE; substrate for the cocycle
+unit).  First unit of the user-ordered construction queue (wide
+crystal -> cocycle -> descent-conditions).  Worker dispatched.
