@@ -1,6 +1,13 @@
-# D55 — result: SHATTER-5 IS CONSTRUCTIBLE. The admissibility layer does not select 3+1.
+# D55 — result: SHATTER-5 IS CONSTRUCTIBLE. The layer does not cap the shatter ladder.
 
-**Status:** GREEN-UNREVIEWED, 2026-07-26.  Pin
+**Status:** ROUND-1 REVIEWED AND REPAIRED, 2026-07-26.  Round 1 was
+an independent Opus 5 hostile review, frozen at
+`v10/reviews/d55-round1-hostile-review.md` — REVISE, 1 BLOCKER /
+2 MAJOR / 8 MINOR / 3 NIT.  Every computation survived (the m = 5
+record was rebuilt with FULL menus at all 84 steps and is FORCED —
+every specification had exactly one menu hit); the findings hit the
+interpretation and instrument-labelling layer.  Repairs applied;
+delta appended to the round.  Pin
 `note-d55-dimension-meter-pin.md` (LOG #430, committed before code).
 Receipts: `v10/code/d55_shatter5_exact.py` (10 PASS / 0 FAIL) and
 `v10/code/d55b_sphere_calibration_exact.py` (6 PASS / 0 FAIL), both
@@ -22,21 +29,49 @@ family as D54's hand-built record), then answered the question:
 > traces are chains, ≥ 10 contributing actors (the gate's price,
 > paid), the realized family Dilworth-tight at exactly 10 chains.
 
-The pre-registered expectation (CONSTRUCTIBLE) held, and the
-pre-stated consequence follows:
+The pre-registered expectation (CONSTRUCTIBLE) held.  **The
+consequence, RESTATED per round-1 BLOCKER 1** — the first delivery
+re-used, one rung up, the very arrow D54's round retired one day
+earlier ("not cap-realizable ⇒ not that dimension" needs the
+stipulation that discrete d-dimensional skies are continuum trace
+systems, which the demotion refutes as a premise class):
 
-> **The admissibility layer does not select 3+1.**  Caps on S²
-> shatter 4 and never 5, so this sky exceeds the sphere.  The
-> shatter ladder measures CAPACITY, priced at C(k,⌊k/2⌋) actors;
-> it does not cap.  Dimension selection, if it exists anywhere in
-> the framework, lives in the MEASURE — the convergence question.
+> **The licensed claim is CAPACITY: the admissibility layer does
+> not cap the shatter ladder at the sphere's rung.**  This sky is
+> provably not realizable by caps on S² (VC dim 4).  "Not a 3+1
+> sky" holds only under the cap-system stipulation, said aloud.
+> The empirical 3+1 separation has, so far, only a THIN control:
+> 1,351 genuine M³⁺¹ SKY-B skies, 33 SC5-capable, zero shatter-5
+> `[REFEREE-CARRIED]` — clean but mostly structurally incapable,
+> and stated as thin.  Selection, if it exists, is NOT in the
+> admissibility layer; candidate homes include the measure,
+> resource cost, and counting typicality (round-1 MINOR 6: the
+> measure is not the only candidate).
 
-One instrument defect found and repaired in-run: the
-initiator-restricted menu must include the delivery's RECEIVER,
-because `candidates_for` *enumerates* receivers from its actor
-list (the soundness claim held for `admissible()`, not for
-enumeration).  The equivalence gate (TG-EQ) now passes on sampled
-steps with the corrected restriction.
+Two instrument corrections, both on the record.  In-run: the
+restricted menu must include the delivery's RECEIVER
+(`candidates_for` enumerates receivers from its actor list).
+Round-1 MAJOR 1: my "admissible reads no actor list" reason was
+BACKWARDS — `admissible()` does read it in the delivery branch, so
+WEIGHTS differ between restricted and full calls (e.g. 1/328 vs
+1/8); what is preserved is MEMBERSHIP (referee: theorem proved,
+354,319 comparisons, 0 mismatches), and the builder discards every
+weight, so the record is unaffected.  The m = 5 equivalence
+samples are now gated on the m = 5 build itself (round-1 MINOR 1),
+and the per-depth table runs the record's FULL height range
+(round-1 MINOR 2 — the first draft silently capped at 9, my own
+no-silent-caps discipline).
+
+**The meter, corrected (round-1 MAJOR 2):** max-shatter is a
+property of a (record, sky-reading) PAIR, not of a record — this
+record reads 0 under SKY-A/C and 1..5 under SKY-B by depth; its
+meter value is the SUP over committed readings, 5.  A2a/A2c are
+SCALE calibrations, not record-specific facts (any ≤4-direction
+family fits S², any ≤5 fits S³ — round-1 MINOR 4); the
+record-specific content is entirely in A1's realization of ALL of
+B5.  The built schedule interleaves mint+send rather than the
+pin's mints-then-sends (round-1 MINOR 8, a deviation recorded, not
+material: couriers are used once either way).
 
 ## 2. A2 — the calibration ladder, all exact
 

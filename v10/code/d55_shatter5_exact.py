@@ -254,15 +254,26 @@ else:
           b4.refusal is None, f"refusal = {b4.refusal}")
 
 eq_ok = all(inmenu and eq for _, inmenu, eq in b4.eq_samples)
-check("G2 TG-EQ [ANCHOR] the initiator-restricted menu is EXACTLY the "
-      "full menu filtered to those initiators, on sampled steps — "
-      "admissible(acts, e) reads no actor list, and this gates it",
+check("G2 TG-EQ [ANCHOR] the restricted menu equals the full menu "
+      "filtered to those initiators — AS EVENT SETS.  Round-1 MAJOR 1 "
+      "corrected the first draft's reason: admissible() DOES read the "
+      "actor list in its delivery branch, so WEIGHTS can differ "
+      "between restricted and full calls; MEMBERSHIP is what is "
+      "preserved (referee: correct theorem proved + 354,319 "
+      "comparisons, 0 membership mismatches [REFEREE-CARRIED]), and "
+      "the builder discards every weight, so the record is unaffected",
       len(b4.eq_samples) >= 3 and eq_ok,
       f"samples = {[(l, i, q) for l, i, q in b4.eq_samples]}")
 
 # ============================== m = 5 ==================================
 print("\n[the m = 5 build — THE QUESTION]")
-b5, E5, D5, nch5, nc5, na5 = build(5, sample_steps=(3,))
+b5, E5, D5, nch5, nc5, na5 = build(5, sample_steps=(3, 40, 80))
+eq5_ok = all(inmenu and eq for _, inmenu, eq in b5.eq_samples)
+check("G2b TG-EQ [m = 5] the membership equivalence gated ON THE m = 5 "
+      "BUILD ITSELF (round-1 MINOR 1: the first draft computed these "
+      "samples and discarded them), including a late courier step",
+      len(b5.eq_samples) >= 3 and eq5_ok,
+      f"samples = {[(l, i, q) for l, i, q in b5.eq_samples]}")
 check("G3 THE m = 5 BUILD IS ADMISSIBLE END TO END: "
       f"{len(b5.H)} events over {na5} actors ({nch5} accumulator "
       "chains, "
@@ -282,17 +293,25 @@ if b5.refusal is None:
           "incomparable, one height, above E; depth reported",
           inc5 and sorted(dirs5) == didx5 and len(dirs5) == 5,
           f"|dirs| = {len(dirs5)}, depth = {DEP5}")
-    check("G5 CAPACITY (the SC5 analog at m = 5): >= 5 directions, "
+    check("G5 [partly DERIVED from G6 — round-1 MINOR 5] CAPACITY "
+          "(the SC5 analog at m = 5): >= 5 directions, "
           ">= 32 DISTINCT traces, empty trace present",
           len(dirs5) >= 5 and len(r5) >= 32 and frozenset() in r5,
           f"distinct traces = {len(r5)}, empty = {frozenset() in r5}")
     w5 = shattered_set(rows5, dirs5, 5)
     check("G6 **ALL 32 SUBSETS REALIZED AND A SHATTERED 5-SET "
-          "RETURNED.**  The transport layer admits a sky that exceeds "
-          "the sphere's VC dimension — caps on S^2 shatter 4 and never "
-          "5 (D54 round 1, Radon-certified) — so this sky is not "
-          "realizable by caps on S^2.  THE METER READS BEYOND 3+1: the "
-          "admissibility layer does not select the sphere",
+          "RETURNED.**  WHAT THIS LICENSES, restated per round-1 "
+          "BLOCKER 1 (the first draft re-used, one rung up, the arrow "
+          "D54's round retired): this sky is NOT REALIZABLE BY CAPS ON "
+          "S^2 (VC dim 4, Radon-certified).  'Not a 3+1 sky' would "
+          "need the stipulation that a discrete 3+1 sky IS a cap "
+          "system, which the corpus does not grant (the demotion, one "
+          "rung down: 218/397 genuine 2+1 skies are non-arc).  **The "
+          "licensed claim is CAPACITY: the layer does not cap the "
+          "shatter ladder at the sphere's rung.**  The empirical 3+1 "
+          "separation has only a THIN control so far (round 1: 1,351 "
+          "genuine M^{3+1} SKY-B skies, 33 SC5-capable, zero "
+          "shatter-5 [REFEREE-CARRIED]) and is stated as such",
           need5 <= have5 and w5 is not None,
           f"subsets = {len(have5 & need5)}/32; shattered 5-set = "
           f"{sorted(name5[i] for i in w5) if w5 else None}")
@@ -320,21 +339,35 @@ if b5.refusal is None:
           f"nested = {nested}, contributing = {contributing} (bound "
           f"10), middle layer present = {mid5 <= have5}")
 
-    print("\n  per-depth table (D54 K11 discipline):")
+    hh5 = heights(C5)
+    hmax = max(hh5) - hh5[E5]
+    print(f"\n  per-depth table, FULL range 1..{hmax} (round-1 MINOR 2: "
+          f"the first draft silently capped at 9):")
     sh_ds = []
-    for dd in range(1, 10):
+    meter = []
+    for dd in range(1, hmax + 1):
         dD, rD = sky(C5, E5, 'B', dd)
         rset = set(rD)
-        wD = (shattered_set(rD, dD, 5)
-              if len(dD) >= 5 else None)
-        if wD is not None:
+        mx = 0
+        for kk in range(1, min(5, len(dD)) + 1):
+            if shattered_set(rD, dD, kk) is not None:
+                mx = kk
+            else:
+                break
+        meter.append(mx)
+        if mx >= 5:
             sh_ds.append(dd)
         print(f"    d={dd}: |dirs|={len(dD)}, traces={len(rset)}, "
-              f"shatter5={'YES' if wD else None}")
-    check("G8 PER-DEPTH REPORTING: the depths at which the record "
-          "shatters a 5-set are enumerated, not sampled",
-          len(sh_ds) >= 1 and DEP5 in sh_ds,
-          f"shatter-5 depths = {sh_ds}")
+              f"max-shatter={mx}")
+    check("G8 PER-DEPTH REPORTING over the record's FULL height range, "
+          "with the MAX-SHATTER METER per reading — round-1 MAJOR 2's "
+          "point stands and is embraced: **the meter is a property of a "
+          "(record, sky-reading) PAIR, not of a record** (this record "
+          "reads 0 under SKY-A/C and 1..5 under SKY-B depending on "
+          "depth); the record's meter value is the SUP over committed "
+          "readings, which is 5",
+          len(sh_ds) >= 1 and DEP5 in sh_ds and max(meter) == 5,
+          f"shatter-5 depths = {sh_ds}; max-shatter by depth = {meter}")
 
 # hygiene
 _self = ast.parse(open('v10/code/d55_shatter5_exact.py').read())
@@ -351,11 +384,15 @@ if b5.refusal is None and 'w5' in dir() and w5 is not None:
     print("  SHATTER-5 IS CONSTRUCTIBLE.  The generalized courier")
     print(f"  builder, mechanical from scd(5), yields a {na5}-actor,")
     print(f"  {len(b5.H)}-event record whose SKY-B sky realizes all 32")
-    print("  subsets of its 5 directions.  Caps on S^2 stop at 4, so")
-    print("  this sky exceeds the sphere: THE ADMISSIBILITY LAYER DOES")
-    print("  NOT SELECT 3+1.  The ladder measures capacity; selection,")
-    print("  if it exists anywhere, lives in the MEASURE — the")
-    print("  convergence question, exactly as pre-stated in the pin.")
+    print("  subsets of its 5 directions.  THE LICENSED CLAIM (round-1")
+    print("  B1): the layer DOES NOT CAP THE SHATTER LADDER at the")
+    print("  sphere's rung — a CAPACITY statement; 'not 3+1' would need")
+    print("  the cap-system stipulation the corpus does not grant, and")
+    print("  the empirical 3+1 control is thin (33 capable, 0 shatter,")
+    print("  referee-carried).  Selection, if it exists, is NOT in the")
+    print("  admissibility layer; candidate homes include the measure,")
+    print("  resource cost, and counting typicality (round-1 MINOR 6:")
+    print("  the measure is not the only candidate).")
     print("  Scope: reading-relative to SKY-B, depths enumerated; ONE")
     print("  engineered record — NO genericity claim (not posable at")
     print("  transport scope, D52).")

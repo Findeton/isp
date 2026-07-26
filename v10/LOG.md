@@ -9883,3 +9883,54 @@ to the scope where the dimension results live. Whether a root-free
 completion exists at transport scope is analytically open with no
 current tool; the convergence question ("does the measure prefer
 3+1?") is blocked on exactly this.
+
+## 2026-07-26 — D55 ROUND 1 (INDEPENDENT OPUS 5) TERMINAL (LEDGER #433)
+Round frozen at v10/reviews/d55-round1-hostile-review.md: REVISE,
+1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT. Repaired, delta'd, post-repair
+11 PASS / 0 FAIL + 6 PASS / 0 FAIL. **D55 TERMINAL.**
+**WHAT SURVIVED: everything computational.** The m = 5 record rebuilt
+by the referee with FULL 42-actor menus at every one of 84 steps —
+IDENTICAL record, every specification FORCED (max hits = 1); own poset
+closure = the layer's; 32 traces / all 32 subsets / unique shattered
+5-set at d = 5, 6, 7 and nowhere else in 1..17; min chain cover
+exactly 10 (m = 4: 6); all 48 cap certificates + both Radon
+dependences re-derived by a different method + a third configuration;
+pin-before-code confirmed in git.
+**BLOCKER 1 — I REPEATED, ONE RUNG UP, THE ARROW D54's ROUND RETIRED
+ONE DAY EARLIER.** "The admissibility layer does not select 3+1"
+needed "not cap-realizable on S^2 => not a 3+1 sky", i.e. the
+stipulation that discrete 3+1 skies are cap systems — exactly the
+premise class the demotion refutes (referee recount one rung down:
+17/453 more genuine 2+1 skies certified non-arc). RESTATED everywhere
+to the LICENSED CAPACITY CLAIM: **the layer does not cap the shatter
+ladder at the sphere's rung.** The empirical 3+1 separation has only a
+THIN control so far — 1,351 genuine M^{3+1} SKY-B skies, 33
+SC5-capable, ZERO shatter-5 [REFEREE-CARRIED] — clean, mostly
+structurally incapable (D53's tautology trap), stated as thin; a
+full-strength M^{3+1} control is a NAMED RESIDUE.
+**MAJOR 1 — my restricted-menu reason was BACKWARDS.** admissible()
+DOES read the actor list (delivery branch): WEIGHTS differ between
+restricted and full calls (1/328 vs 1/8). MEMBERSHIP is the preserved
+object — the referee proved the correct theorem and swept 354,319
+comparisons, 0 mismatches — and the builder discards weights, so the
+record is unaffected. G2 restated; G2b gates the m = 5 samples the
+first draft computed and DISCARDED (MINOR 1); the per-depth table now
+runs the FULL height range 1..17 (MINOR 2 — my own no-silent-caps
+discipline, violated and repaired).
+**MAJOR 2 — THE METER IS A (RECORD, READING) PAIR PROPERTY, embraced.**
+The same record reads 0 under SKY-A/C and 1..5 under SKY-B by depth
+(profile 2,3,4,5,5,5,4,4,4,3,3,2,2,1,1,1 gated at G8); the record's
+value is the SUP over committed readings = 5.
+MINORS: anchor's outside-fact dependence noted; A2a/A2c relabelled
+SCALE calibrations (any <= 4-direction family fits S^2 — the
+record-specific content is all in A1's realization of ALL of B5);
+derived-gate labels; **"selection lives in the measure" WIDENED — the
+candidate homes are the measure, RESOURCE COST, and COUNTING
+TYPICALITY (MINOR 6)**; the general Radon argument carried; the
+mint+send schedule deviation recorded. NITs acknowledged as residues.
+**THE SETTLED STATEMENT (post-round):** shatter-5 is constructible and
+FORCED; the shatter ladder is uncapped at the sphere's rung; the
+calibration ladder is exact (B4 fits S^2; no five points ever shatter
+there; B5 fits S^3); max-shatter is a (record, reading) invariant with
+SUP 5 on this record; the 3+1 empirical control is the named gap.
+NEXT: THE REASSESSMENT (user direction: A1, A2, B1, then reassess).
