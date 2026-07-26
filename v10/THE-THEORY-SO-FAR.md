@@ -2,8 +2,12 @@
 
 ### The record programme explained twice: once for a reader with no mathematics, once for a reader who wants the objects
 
-**Compiled 2026-07-26.**  Corpus: `~/workspace/isp`, v10 line, through
-ledger entry **#433**.
+**Compiled 2026-07-26.**  Corpus: `~/workspace/isp`, v10 line.  Chapters
+1–11 of both parts were written against the corpus at ledger entry
+**#433**; **entries #434–#436 landed during writing and are absorbed in
+CHAPTER 12 — LATE ARRIVALS**, which carries forward-correction blocks
+into chapters 8, 9 and 11 of both parts.  Read chapter 12 before citing
+anything from A8/A9/A11 or B8/B9/B11.
 Author of the research programme: Felix Robles Elvira (ORCID
 0009-0009-2017-4394).
 This document is a *brief*, not new research.  Every number in it was
@@ -247,6 +251,18 @@ observes it:
   retired object.
 - **B11. Status, open problems, method** — the ranked residues; the
   papers; the review statistics.
+
+### CHAPTER 12 — LATE ARRIVALS (both registers at once)
+- **12.1** The dimension meter measures the grammar, not geometry
+  `[D55c, #435]` — the full-strength 3+1 control, and why no sprinkled
+  Minkowski record of any dimension shatters at all.
+- **12.2** The sector-exact escape is closed at this granularity
+  `[D57, #436]` — the sector alphabet is not finite, and the coarsest
+  lumping does not stabilize.
+- **12.3** The standing redirect: Einsteinian manifolds, not
+  sprinkling likeness.
+- **12.4** What chapters 1–11 should now be read as saying — a compact
+  diff.
 
 ### BACK MATTER
 - **GLOSSARY** — every term, one line each, cross-linked.
@@ -1538,6 +1554,13 @@ real 3+1 records, the control is much weaker: 1,351 skies examined, only
 requirement of chapter A5), and zero shatter-fives among them.  A
 full-strength 3+1 control is a named, unbuilt residue.
 
+> **FORWARD CORRECTION — the residue was built, and it changed what the
+> meter means.**  That control now exists at full strength, and its result
+> is negative in a way nobody expected: **genuine 3+1 records do not
+> shatter four either.**  See CHAPTER 12 §12.1.  The construction results
+> of this chapter stand untouched; what falls is the reading of the meter
+> as a *dimension* meter for records.
+
 One more honest correction: **the meter is a property of a (record,
 reading) pair, not of a record.**  The same 42-actor record reads *zero*
 under the two disqualified sky definitions and reads 1 through 5 under
@@ -1662,6 +1685,13 @@ coming from the knowledge-lag structure of §A9.3.
 
 > **The candidate is live, and it is not easy.**  Killing the unbounded
 > counter is necessary and demonstrably not sufficient.
+
+> **FORWARD CORRECTION — the candidate was tried, and it is CLOSED at
+> this granularity.**  Both halves of the hope above fail: the *quarter*
+> is not a law of sectors (only of the delivery sector), so the aggregated
+> alphabet is not finite either; and the coarsest possible lumping does
+> not stabilize.  See CHAPTER 12 §12.2.  The crack narrows to strictly
+> coarser aggregations, all untested.
 
 ### A9.5 What this costs the programme
 
@@ -1990,8 +2020,12 @@ not an answer.
    crack in the wall (chapter A9).  Unblocks the convergence question.
    Live and not easy: the obvious lumping is verified exact on the
    window and still fails to close.
+   **→ SUPERSEDED: closed at this granularity; see CHAPTER 12 §12.2.  The
+   surviving forms are strictly coarser and untested.**
 2. **A full-strength 3+1 control** for the shatter meter.  The current
    one is thin: 1,351 skies, 33 capable, zero shatter-fives.
+   **→ DONE, and negative in an unexpected direction; see CHAPTER 12
+   §12.1.**
 3. **H1** — the unproved structural lemma the whole delivery-free
    settlement is conditional on.  Two routes are closed with
    counterexamples; a third needs to avoid assuming that a lagged view
@@ -2913,3 +2947,2341 @@ carrier size and link count but not the height/width profile), so
 "narrower than chance" is established against **that** null and not
 against every reasonable one.
 
+---
+
+## B6. The completion dichotomy
+
+*Non-technical twin: Part A, chapter A6.*
+*Primary sources: paper 30 §5–§6; `v10/THE-COMPLETION-DICHOTOMY.md` (the corpus's standalone brief, which this chapter compresses); `note-d42b3-placement-and-the-discrete-ts-condition.md`; `note-d44a-renewal-pumping-closure-theorem.md`; `note-d49-completion-dichotomy-settlement-{pin,result}.md`; `note-d50-{is-the-form-a-law-pin,form-law-or-choice-result}.md`; LOG #418–#422.*
+
+### B6.1 The object
+
+A **placement completion** is strictly positive data `Z` on record
+prefixes with the transfer
+
+```
+q'(e | h)  =  q(e | h) · Z(h + e) / Z(h)
+```
+
+`N(h)`, the **frontier sum**, is the total raw weight of `h`'s menu — the
+object the whole no-go is about.  The **ladder excess** is `N − 1`, which
+sits at `k/4` per §B2.7.
+
+### B6.2 The three demands
+
+- **(a) PER-CUT NORMALIZED.**  `Σ_e q'(e|h) = 1` for every `h`.  Without
+  this there are no probabilities.
+- **(b) FOLIATION-INVARIANT.**  `q'` is a function of the record alone —
+  class-constant; equivalently, chain products agree across **every**
+  linear extension of every history.  Without this, "the probability"
+  depends on the slicing.
+- **(c) WITHIN-CUT RATIO-PRESERVING.**  Relative weights of alternatives
+  at a cut are untouched.  Without this, completion is not *normalizing*
+  the law but *changing* it.
+
+### B6.3 `[THEOREM]` (a) + (b) + (c) is impossible
+
+> **Ratio-preserving completions do not exist.**  Ratio preservation
+> forces `Z(h+e)/Z(h) = 1/N(h)`.  No cut function has these increments,
+> because `N`'s chain products are foliation-dependent: **36 of the 202
+> canonical diamonds refute integrability** `[EXACT]`, the violations
+> lying in **two diamond-connected components** `[REFEREE-CARRIED]`.
+
+Source: paper 30 §5.2, receipt-gated; `note-d42b3…` D1.
+
+**The forcing, step by step.**
+
+1. Demand (c) fixes `Z`'s increments completely: the only freedom left is
+   an overall factor per cut, and demand (a) pins it to `1/N(h)`.
+   **`Z = N` is forced — there is no choice left.**
+2. So the question collapses to: *is `N` a discrete gradient on the cut
+   complex?*  Equivalently, is `log N`'s increment a coboundary?
+3. **It is not.**  `N` *is* genuinely cut-attached data — constant on all
+   **427** canonical classes, gated `[EXACT]` — but cut-attachment is not
+   enough.  A gradient must have path-independent chain products, and
+   `N`'s are foliation-dependent.
+4. **The mechanism, named:** `N` **double-counts the causally blind join
+   layer** along exactly those foliations that expose it.  Paper 30
+   §4.3's witness pair makes it visible: on `[pA0, selfA, pB1]` versus
+   `[pA0, pB1, selfA]` — one canonical DAG, `mu = 1/256` under both
+   orders — the cut-normalized products differ, **`1/2048` versus
+   `1/2560`**, because the `N`-sequence runs `(2, 2, 2)` along one order
+   and `(2, 2, 5/2)` along the other.  `N` jumps from `2` to `5/2`
+   exactly when the blind pair becomes visible.
+5. **The certificate:** 36 diamonds where the two paths give different
+   products — a census in two connected components, not one pathological
+   case.
+
+> **A correction on the record, reproduced because it shows the finding
+> survived its own audit.**  An earlier statement that "`N` is NOT
+> cut-attached data" was **FALSE** and was withdrawn: `N` *is* constant
+> on all 427 canonical classes.  The true and *stronger* statement is
+> that `N` is cut-attached **but not a discrete gradient**.  The no-go was
+> generalized from one witness to the 36-diamond census in the same
+> repair (`note-d42b3…` D2).
+
+### B6.4 The one escape, closed by narrowing `[EXACT]`
+
+A **zero-class counterterm** (the own-view component filter) does restore
+sums ≡ 1 — by exactly `k·(1/4)`, the ladder excess — and is
+gauge-invariant.  It refutes the no-go **as originally worded**.
+
+**It also kills ALL join arbitration.**
+
+So the no-go was **repaired rather than abandoned**: it holds for
+**support-preserving (strictly positive)** counterterms, by a nesting
+argument (subset candidates, equal shared weights, strictly positive
+extra mass — `1/4` over the two blind events) which is printed and gated.
+Paper 30 §4.3 states the companion **actor-local no-go
+`[THEOREM, positivity-qualified]`**: no support-preserving re-weighting
+computed from the initiator's *own view* can restore per-initiator
+normalization — witness: the own-view canonical DAG is *identical* at
+`[pA0]` and `[pA0, pB1]` while the per-initiator sums differ (`1` vs
+`5/4`).  The zero class is **declared excluded**, on the stated ground
+that *a completion which abolishes joint arbitration abolishes the physics
+it was meant to normalize.*
+
+> This is the template for the corpus's style: **the no-go was not
+> defended, it was narrowed until true, and the narrowing is on the
+> record with its reason.**
+
+### B6.5 Gradient (Doob `h`-transform) completions `[EXACT]`
+
+Run the backward recursion `Z(h) = Σ_e q(e|h) Z(h+e)` from any strictly
+positive boundary at terminal depth.  At the **unit boundary** on the
+depth-4 two-actor object:
+
+| quantity | value |
+|---|---|
+| `Z(empty)` | **`1037/64`** (reciprocal convention `64/1037`; every ratio-level quantity identical) |
+| positivity | throughout |
+| per-cut normalization | at **all 215 interior histories** — the recursion's defining identity |
+| the §B6.3 witness pair | **equalizes at `1/2074`** under both orders |
+| boundary freedom | **313-dimensional** `[REFEREE-CARRIED, LOG #302]` |
+
+The other canonical choice is the **class-`1/k` boundary** (`Z` at a
+terminal history = the reciprocal of its canonical class's
+linear-extension count), with `Z(empty) = 325/64`.
+
+**The corpus names this a Doob `h`-transform** (`note-d43-corpus-audit…`:
+"*completion is a Doob h-transform*"; `note-d40-where-the-action-cocycle-lives…`:
+"*the K-flat shape is an h-ratio/Doob completion form*").
+
+`[MY READING]` A Doob `h`-transform is what you get conditioning a
+process on its future behaviour: each step's relative weights are tilted
+by a function of where the process is heading.  The 313 parameters are the
+choice of that function.  So this class says the framework's
+probabilities are **forward-local rules plus a boundary object**, and the
+boundary object is not derivable from the rules.
+
+**The cost `[EXACT]`:** within-cut ratio deformation at **21 of the 114**
+interior cut classes, **the root included**.  At the root the successor
+normalizers are not constant across candidates; extreme completed weights
+`133/2074` versus `771/2074`, equivalently extreme successor normalizers
+`16/133` versus `32/257`.
+
+**What is invariant with no completion at all (paper 30 §5.4).**  Two
+positive laws that any completion must respect, and the gradient class
+does:
+
+- **RATIO LOCALITY.**  `mu`-ratios of histories are stable under common
+  admissible extensions with identical past-views — paper 28's ratios-only
+  structure, recovered as the weight system's invariant content.  At this
+  depth the **swept corner** (proposal branches, where the enumeration is
+  complete) has every extension factor exactly `1/8`, which makes the law
+  a `[THEOREM]` there; the census is kept as a tripwire (**28 tested, 0
+  violations**) `[EXACT]`.  The law's *empirical* content begins where
+  factors vary (idle and arbitration branches), declared.
+- **THE DENSITY LAW** of §B2.7.
+
+`[MY READING]` **Ratios are law; absolute probabilities are not.**  The
+completion problem is exactly the problem of going from a ratio-structure
+to a measure, and the theorem says that step cannot be taken locally.
+
+### B6.6 The quantum lift does not escape
+
+Paper 30 §6.  The endpoint lift assigns each complete history the
+amplitude `∏ √q` on record ancillas and normalizes the global state.  On
+the true depth-2 slice of the base grammar — **32 sequences in 23
+canonical classes** — the Born diagonal on the canonical-class basis
+equals `mu/Z` with `Z = Z_class = 3`, and every one of the **253**
+quadratic ratio pairs is exact `[EXACT; mpmath at dps 80 with 1e-60
+thresholds, Fraction side-derivations where rational]`.
+
+**But the object must be named correctly:**
+
+> the endpoint lift **is the classical gradient completion at the `1/k`
+> boundary in Hilbert dress** — dividing by `√Z` is the flat pushforward,
+> not "normalization by unitarity"; the class and sequence bases are the
+> **two classical boundary choices**:
+
+| lift basis | `Z` | classical identity |
+|---|---|---|
+| canonical-class diagonal | 3 | gradient completion, class-`1/k` boundary |
+| sequence (word) partition | 4 | gradient completion, unit boundary |
+| coherent aggregation | 6 | the one non-gradient object |
+
+The three normalizations are **observably inequivalent**, and which basis
+carries amplitude is OPEN.
+
+**And its step operator faces a three-horn obstruction at the arbitration
+layer `[EXACT exhibit; OPEN problem]`:**
+
+1. **Cut-independent** operators cannot emit both witness menus — 2
+   events summing to `1` at the early cut versus 4 events summing to
+   `5/4` at the join cut, with the two pair-arbitration branches
+   *inadmissible* at the early cut — so they place weight on inadmissible
+   branches or none on admissible ones, reproducing the
+   arbitration-killing zero class of §B6.4;
+2. **cut-dependent** operators must read the blind wire — support
+   overlapping a carrier the initiator's registers do not include,
+   breaking the carrier structure that made incomparable isometries
+   commute;
+3. **dilations** re-import cut data as state — "the classical `Z` returns
+   wearing a register".
+
+> **The quantum completion problem begins at the arbitration layer,
+> exactly where the classical one stopped.**
+
+**What the lift does establish** (real results, at fixture scale, each
+gated at `1e-60` with exact side-checks):
+
+- **the kernel-layer lift is exact**: the arbitration's internal click
+  structure lifts with path winner Born diagonal `(2/3, 1/3)` at norm 1
+  `[EXACT]`;
+- a complete **fine-versus-coarse instrument pair**: over all 15 order
+  pairs of the path fixture, under **coarse** (winner-sealed) records the
+  7 same-fiber pairs carry off-diagonal exactly **`1/6`** and the 8
+  cross-fiber pairs exactly **`0`**; under **fine** (order-sealed)
+  records every off-diagonal is `0` by construction `[EXACT]`.  Which
+  sealing nature applies stays **empirical**.  (The numerical coincidence
+  with the kernel total-variation distance — both `1/6` on this fixture —
+  is a coincidence of two distinct observables.)
+- the operational **D23 fiber**: from the coarse record, histories are
+  identifiable only up to the greedy fiber; the `{P,R}` fiber contains
+  four click orders, all 6 same-fiber pairs have identical reduced states
+  (overlap 1), and every fiber-versus-`{Q}` pair is orthogonal `[EXACT]`;
+- **the reception form**: the basis-copy reception map is a
+  distinguishability isometry on the probed family (10 pairwise distances
+  preserved), with the lossy-renormalized negative control failing as it
+  must at violation `0.25989…` (dps 80) against the `1/100` threshold
+  `[EXACT]`.
+
+A second grammar (ternary payloads) lifts the structural forms tested —
+**two-of-two grammars, and no more is claimed** — exposes the values as
+**toy-relative**, and shows kernel discrimination is
+component-shape-dependent.
+
+### B6.7 The dichotomy, and a correction to its framing
+
+> **THE DICHOTOMY.**  Since (a) and (b) are non-negotiable, **(c) must
+> go.**  Either **(I)** the completion **deforms within-cut ratios**, or
+> **(II)** no completion need be imported at each finite depth because a
+> **root-free** completion exists — which requires a strictly positive
+> harmonic function on the *infinite-volume* state space.
+
+**FORWARD CORRECTION (D49, #418): the two horns are NOT mutually
+exclusive, and stating them as a fork was a defect in the brief.**  The
+settled completion `Zhat` does **both**: it is root-free *and* it deforms
+ratios (at 50 of the 114 interior cut classes).  Demand (c) is
+unconditionally impossible; §B6.3 is a theorem nothing later touches.
+
+> **The genuine fork is not deformation versus none — it is an IMPORTED
+> boundary versus a LAW-DETERMINED one.**
+
+### B6.8 Rootedness: why truncated completions are convicted `[EXACT]`
+
+The grammar has a **renewal** structure: the root and the
+post-arbitration fresh-base record point are **structurally isomorphic** —
+an event-level bijection, type- and payload-matched with `v0 ↔ v1`
+translated, carrying **equal `q` at every matched event**.  Two record
+points the grammar cannot tell apart.  Yet the completed transfer differs
+at that pair under **both** canonical boundaries:
+
+| boundary | `Z(empty)` | the matched pair prices |
+|---|---|---|
+| class-`1/k` | `325/64` | `21/325` vs `1/16` |
+| unit | `1037/64` | `133/2074` vs `1/16` |
+
+**So the completion distinguishes two points the *law* identifies.**  That
+is precisely what "rooted" means, and it is why truncated completions are
+**depth-non-stationary** — the uniform-rooting analysis of paper 28 §5.3
+anticipated it at the level of root laws.  Sharpness disclosed in the
+source: of the 1,191 histories, **331** share the root's bare menu shape,
+**175** are structurally isomorphic to it, **31** exactly so; the exhibit
+uses the strongest (structural event-level) notion.
+
+`[MY READING]` The cleanest single symptom of the whole problem: **the
+renewal isomorphism says the law has forgotten where it started; the
+completion says the measure has not.**  The boundary information enters
+exactly there.
+
+### B6.9 Residue 1, and the state-space reduction
+
+**RESIDUE 1.**  Does a strictly positive harmonic function exist on the
+**infinite-volume state space**?
+
+Paper 30 §5.7's reduction is **one-way**: stationary completions
+`Z(h) = f(state(h))·λ^(−depth(h))` are a *subclass* of positive-harmonic
+solutions, so the infinite-volume positive-harmonic residue *contains*
+the root-free question — one open core, not two.  It is the discrete
+relative of Martin-boundary existence theory `[LITERATURE]`.
+
+**The change of enumeration space (the key move, D44a).**  Instead of
+enumerating histories, enumerate a **bounded local-state abstraction**
+`sigma(h)` — the abstraction of the *full view* of `h`, modulo base
+renaming.  It records:
+
+- the **per-actor holdings pattern** — which actors hold which
+  non-superseded versions, as a partition-with-multiplicity over renamed
+  bases (genesis and renewal bases identified by the renaming);
+- the **live-proposal structure** — per renamed base, the multiset of
+  `(proposer, value-bit)` data of live proposals, with the edge/conflict
+  structure of their components;
+- the **superseded-base pattern**, restricted to bases still carrying any
+  of the above.  Dead structure no menu can see is dropped.
+
+`sigma` is finite-valued **if** the dropped structure is truly
+menu-invisible; **that invisibility is checked, never assumed** — and it
+is exactly where the remaining gap lives (§B6.13).
+
+**What is gated `[EXACT]`:**
+
+- **Menu factorization on the cache:** `menu(h)`, as an event-multiset up
+  to renaming with exact weights, is a function of `sigma(h)` on the
+  **entire depth-6 cache (34,375 histories)**; census re-anchored
+  `[1, 7, 39, 215, 1191, 6471, 34375]`.  Zero exceptions.
+- **Transition determinism on the cache:** `sigma(h + [e])` is a function
+  of `(sigma(h), e-up-to-renaming)`, verified exhaustively; **176**
+  abstract keys.
+- **The depth-free closure (CG3a):** breadth-first search on `sigma`-space
+  from `sigma([])` closes at **36 states, 176 edges** — a
+  *frontier-exhausted* search, so no transition leaves the closed set;
+  and the depth-7 family realizes no new state (**out-of-sample
+  closure**).
+- **The intrinsic partition:** `P_0` = menu shape, `P_{t+1}` = one
+  probabilistic-bisimulation refinement under the committed per-candidate
+  `(weight, target-class)`-multiset operator.  Fixed-point trajectory
+  **`[4, 5, 6, 6]`** — reached at lookahead `t = 2`, stable thereafter —
+  giving **SIX classes** with transfer `T_REF`.
+- **The Perron package on the quotient:** `λ = 2`;
+  `f = (4, 4, 3, 7, 3, 3)/3` unique up to scale; **root = renewal** as one
+  `sigma`-state; `π = (1, 1, 2)/4` with mass transport exact.
+- All three hypothesis laws verified exhaustively **through depth 7,
+  179,783 histories, zero exceptions** — labelled `[EVIDENCE]`, **never a
+  premise**.
+- A pinned landing at six abstract states is **provably impossible** for
+  any menu-exact abstraction (bisimilar histories can be menu-distinct;
+  witness gated), so the **two-layer structure — 36 closing, six as the
+  quotient — is forced, not incidental.**
+
+**The conditional theorem.**  Three depth-indexed laws, **none implying
+another**:
+
+- **(H0)** the view invariants at every depth: own-view alive holding a
+  singleton; non-superseded holdings inside it; live proposals on the
+  proposer's base; conflicting live pairs incomparable.
+- **(H1) MENU FACTORIZATION at every depth.**  `menu(h)`, as a renamed
+  event-multiset with exact weights, is a function of `sigma(h)`.
+  **Nontrivial because admissibility runs on OWN VIEWS that lag the full
+  view `sigma` records** (§B3.2).
+- **(H2) TRANSITION DETERMINISM at every depth.**  Explicitly **not** a
+  consequence of (H1).
+
+> **`[THEOREM, conditional]` Assume (H0)–(H2).  Then residue 1 is DECIDED
+> at all depths at d42a scope**: `sigma` takes exactly 36 values at every
+> depth; the intrinsic partition is at every depth the pullback of the
+> abstract chain's bisimilarity; and the Perron package is the completion
+> decision at every depth.  QED (conditional).
+
+**Declared verification scope, which a reader must carry:** blockwise
+equality of the pullback with the committed intrinsic partition is
+computed **in-receipt at length ≤ 4** and **at length ≤ 5 by the frozen
+round's referee** `[REFEREE-CARRIED]`; the **four minlen-6 `sigma`-states
+are classified only via the conditional argument.**  No minimality is
+claimed for `sigma`'s superseded marks or serialization.  An earlier
+"pumping" route is **retired** and is not a mechanism of this proof.
+
+**Scope boundary:** the H1 lemma is **DELIVERY-FREE scope only** (D44b
+terminal).  At transport scope the objects change and must be
+re-established — and §B9 shows they cannot be, menu-exactly.
+
+### B6.10 The settlement `[D49, LOG #418; round 1 → #419; TERMINAL]`
+
+Receipt `v10/code/d49_dichotomy_settlement_exact.py`, **31 PASS / 0 FAIL**
+post-repair, exit 0, byte-identical across `PYTHONHASHSEED` 0/7/61/999.
+
+**What was missing was a receipt, not a theorem.**  Paper 30 §5.7
+*defines* the stationary completion and declares its existence
+`[OPEN, declared]`; D43b *computed the eigenproblem* (`λ = 2`,
+`f = (4,4,3,7,3,3)/3`, gate MG4 "the root-free certificate" = YES,
+#339/#345); D44a *closed the state space*.  **Every one of those gates
+lives on the quotient.**  The object the dichotomy is about lives on the
+cut complex.  No unit had built `Zhat` on **histories** and run it against
+the §B6.2 demands.  The corpus carried a decided question as an open one
+from #339 to #417.  `[MY READING]` The lesson generalizes: *a reduction
+is not a result until the reduced answer is transported back and tested
+where the question was asked.*
+
+**The object:**
+
+```
+Zhat(h)  =  2^(−|h|) · f(class(sigma(h))),     f = (4, 4, 3, 7, 3, 3)/3,  λ = 2
+```
+
+**It is a completion, in the sense of §B6.2 `[EXACT]`:**
+
+| demand | certificate |
+|---|---|
+| strictly positive | 0 non-positive completed weights |
+| **(a) per-cut normalized** | **0 violations / 6,471 histories** at depth ≤ 5; and **0 / 27,904** at depth 6, whose menus reach the *uncached* depth-7 level (145,408 children) — out-of-sample |
+| class-constant (gauge-invariant) | 0 violations / **5,548 canonical classes** (of which **813 are singletons** where it cannot fail; effective 4,735) |
+| **(b) foliation-invariant, DIRECTLY** | completed chain products equal across **all 1,191 linear extensions of all 427 canonical classes** at depth ≤ 4 (137 classes have a single extension; effective 290) |
+| diamond flatness | **0 / 202**, against the naive normalizer's **36 / 202** in the same run |
+| support-preserving | **2,032** join arbitrations keep positive weight — **not** the excluded zero class |
+| it is a *law* | the completed menu, up to base renaming, is a function of `sigma(h)` alone — 1,163 same-sigma comparisons, 0 mismatches |
+| it is a *measure* | completed weights of all depth-`D` histories sum to **exactly 1**, `D = 1..6` |
+
+**And it is root-free `[EXACT]`:**
+
+| completion | `Z(empty)` | root | renewal `H3` |
+|---|---|---|---|
+| unit boundary | `1037/64` | `133/2074` | `1/16` |
+| class-`1/k` boundary | `325/64` | `21/325` | `1/16` |
+| **`Zhat`** | — | **`1/16`** | **`1/16`** |
+
+And not only at that pair: **the entire 215-node matched subtree** — the
+root tree against `H3`'s subtree under the `v0 → v1` substitution —
+carries **identical completed menus event-by-event, 0 mismatches.**
+
+> **HORN (II) HOLDS.  A root-free completion EXISTS** — exactly what paper
+> 30 §5.7 declared `[OPEN, declared]`.
+
+**Uniqueness, in three steps `[EXACT]`:**
+
+- **`λ = 1` is impossible.**  Every menu of the closed 36-state chain sums
+  to between `2` and `5/2`, so for any positive `f` the minimizing state
+  forces `λ ≥ 2`.  The value 1 *is* an eigenvalue of the transfer, but
+  `dim ker(T − I) = 1` and its generator `(−4/5, 4/5, −1, −1/5, −1, 1)`
+  has **mixed signs**.  So there is **no positive harmonic function on the
+  quotient** — and §5.7's `λ^(−depth)` factor is a **necessity, not a
+  convention**.  The depth grading is what makes `Zhat` harmonic on
+  *histories*, which is where the demand lives.
+- **`λ = 2` is the only eigenvalue with a positive eigenvector.**
+  `{2,4,5}` is closed and irreducible, so `f` restricted to it is its
+  Perron vector and `λ = 2` exactly (`charpoly = (x−2)(x−3/2)(x−1)`); the
+  transient extension is forced by the entrywise-nonnegative resolvent
+  `(2I − M_t)^(−1)`, `det = 3/32`, returning `(4/3, 4/3, 7/3)`.
+- **Not a quotient artifact.**  Re-run at the **fine 36-state level**:
+  exactly **one** closed communicating class (9 states, every row summing
+  to 2, Perron root 2), 27 transient states with
+  `det(2I − M_t) = 2187/2^41` and a nonnegative resolvent, and
+  `dim ker(2I − M36) = 1`.  Same answer, same vector, no collapsing
+  required.
+
+**What the settlement costs `[EXACT]`.**  Demand (c) is **not** restored.
+The first delivery compared `Zhat` only against the unit boundary; round-1
+MAJOR M2 called that cherry-picking:
+
+| completion | deformed cut classes | worst distortion | median |
+|---|---|---|---|
+| unit boundary | 21 / 114 | `23/16` | 1 |
+| class-`1/k` boundary | **103 / 114** | `4` | 2 |
+| **`Zhat`** | 50 / 114 | `7/3` | 1 |
+
+**`Zhat` sits INSIDE the range spanned by the two canonical boundaries;
+the deformed-class count is not a scalar figure of merit.**
+
+**The root is not among `Zhat`'s 50** — there it is exactly
+ratio-preserving, `q' = q/2`, every proposal `1/16`, every idle `3/8`.
+**But this is TOY-RELATIVE (round-1 MAJOR M3):** it needs
+`f(class 0) = f(class 1) = 4/3` with the root's menu leading only into
+classes 0 and 1, and in any grammar where those Perron weights differ the
+root deforms.  So paper 30 §5.3's sharp point is **not removed** — it
+**does not occur in this grammar**.
+
+**The deformation is exactly the Perron tilt** — a characterization, not a
+count.  For every pair of alternatives at every cut,
+
+```
+q'(e1)/q'(e2)  =  [ q(e1)/q(e2) ] · [ f(class(h+e1)) / f(class(h+e2)) ]
+```
+
+gated over **77,541 pairs** (23,305 leading to the same successor state,
+54,236 tilted), **0 violations**.  So the completion preserves the
+weight-system ratio *exactly* between options leading to the same state
+and tilts it *only* by the successors' Perron ratio: **each option is
+re-weighted by how much record-growth capacity it leads to, and by nothing
+else.**
+
+`[MY READING]` This is the sharpest available form of "is the deformation
+physical?" — what must be judged is one **named principle**, not an
+unstructured distortion.  Judging it is open, and the corpus explicitly
+does not claim it is a physical selection principle rather than the unique
+mathematically canonical one.
+
+**Washout: pre-registered, and it landed NEGATIVE.**  Unconstrained
+boundaries do **not** wash out: the achievable root-transfer set is a
+projective image of the boundary cone, hence the convex hull of its
+vertices, and its **diameter is 1 at every truncation depth tested**
+(6 / 23 / 84 / 313 terminal classes).  A boundary free to distinguish
+anything can drive the root anywhere.  What *does* wash out is every
+boundary respecting the law's own identifications: `π = (1,1,2)/4`
+satisfies `π T = 2π` and is strictly positive on the dominant class, so
+`π·b > 0` for every strictly positive `sigma`-measurable `b`; with the
+spectral gap (every other modulus `≤ 3/2 + 2^(−5/3) ≈ 1.81498 < 2`) this
+gives `T^n b / 2^n → (π·b / π·f) f` at rate `≈ 0.9075^n`, below `1e−9` by
+`n = 400`.  **So horn (I) is refuted by uniqueness under the law's own
+identifications, not by any limit.**
+
+### B6.11 The two blockers of D49 round 1, and what they left standing
+
+**BLOCKER B1 — #418's "229 of 313 boundary dimensions act trivially" is
+FALSE.**  Refuted in-receipt (gate F3): two strictly positive boundaries
+differing by a kernel direction give **identical interior potentials** and
+**different completed transfers at depth-3 cuts** (witness `1/16` vs
+`1001/16000`).  The reason is elementary: **a completion is the transfer
+at EVERY interior cut, and a depth-3 transfer is `q·Z(h+e)/Z(h)` with
+`|h+e| = 4` — it reads the boundary directly.**
+
+**And #420 upgraded the round's witness to a THEOREM.**  A kernel
+direction satisfies `Σ_e q(e|h)·db(h+e) = 0` at every depth-3 cut, so
+`Z(h)` is unchanged there; the transfer at that cut is `q·Z(h+e)/Z(h)`
+with `|h+e| = 4` — the boundary itself — so with the denominator fixed the
+transfer is unchanged **iff `db` vanishes on every child of `h`**.  A
+nonzero `db` is nonzero at some terminal history, which is a child of some
+depth-3 cut, so that cut's transfer **moves**.  Hence *every* nonzero
+kernel direction changes some depth-3 transfer; the gate's ">0" is in fact
+"always".
+
+> **Paper 30 §5.3's 313-dimensional boundary freedom is CORRECT; no
+> erratum is owed, and the one #418 queued was cancelled before it could
+> be applied.**  Surviving addendum: the boundary → interior-**potential**
+> map has rank exactly **84** = the number of depth-3 cut classes (layer
+> census `1/6/23/84/313`), so the completed transfer at cuts of depth ≤ 2
+> sees the boundary only through an 84-dimensional image while the depth-3
+> layer sees all 313.  Inside the 84, the depth-stationary completions are
+> a **single ray**, realized by the strictly positive
+> `b*(t) = 2^(−4) f(class(t))`, which reproduces `Zhat` at all 215
+> interior histories exactly.
+
+**BLOCKER B2 — the uniqueness rhetoric fell.**  The withdrawn sentence:
+
+> ~~Among completions that do not distinguish record points the law
+> identifies, there is exactly one, and it needs no boundary.~~
+
+Measured at depth-4 truncation `[MEASURED — tangent-space counts at `b*`,
+hence LOWER BOUNDS on the freedom left]`:
+
+| demand imposed | constraints | rank | boundary directions still FREE |
+|---|---|---|---|
+| agreement on the root/renewal matched pair (I1) | 6 | 5 | **308 of 313** |
+| bisimulation-invariance of the completed class transfer at every interior cut (I2) | 589 | 194 | **119 of 313** |
+| paper 30 §5.7's FORM | — | — | **0** — one ray |
+
+> **Neither invariance demand delivers uniqueness.  What delivers it is
+> the FORM: `Z` a state function times `λ^(−depth)`.  The stationary form
+> is a POSTULATE ABOUT THE SHAPE OF `Z`, not an invariance principle.**
+> Therefore **"the record law is forward-complete" is true of the law PLUS
+> that form and may never be quoted without it.**
+
+**MAJOR M1 — the gate count overstated the evidence.**  #418 led with "25
+PASS" as if 25 independent tests.  Verified otherwise: D1 is arithmetic
+given d44a CG1+CG2 and d43b MG3; **E2 is a THEOREM-PASS** given d44a SG3
+plus sigma-measurability — re-derived by the referee with **no event
+serialization at all** (0 sigma-mismatches, 0 completed-weight-multiset
+mismatches over 215 nodes), which confirms the determinism repair **and
+shows the unit's most-quoted number, `1/16 = 1/16`, is a property of the
+DEMAND and not evidence for the Perron vector**; D4 is the telescoping
+theorem; D5, D7 and G5 are the definition of `q'` rearranged — **G5's
+77,541 pairs are a restatement, not a sweep**.  Repair: every gate carries
+`[SUBSTANTIVE]`/`[ANCHOR]`/`[DERIVED]`/`[THEOREM-PASS]`, AST-anchored,
+**15 / 5 / 6 / 5**.
+
+**MAJOR M4 — a citation-discipline breach, recorded rather than repaired
+away.**  #418 amended `THE-COMPLETION-DICHOTOMY.md` — the corpus's
+entry-point document — with a banner reading "the dichotomy has been
+SETTLED", **in the same ledger entry that created D49, before any hostile
+round**, and the banner carried **no scope** (neither "d42a
+delivery-free" nor "conditional on (H0)–(H2)" appeared in it).  Repaired:
+scope and review status now in the banner.
+
+**Four first-run deviations, all gated:** (A1) the pinned `λ = 1`
+eigenvector was hand-computed and **wrong** — replaced by an exact
+in-receipt kernel computation; (A2) the pinned rank 114 was wrong and the
+true value 84 became the result; (A3) the washout budget was too small —
+repaired at certificate level with the iteration extended to `n = 400`;
+(A4) **a determinism defect in the receipt itself, caught by seed
+variation** — E2 serialized `'r'` events through a raw `frozenset` repr
+and reported 7 spurious mismatches at `PYTHONHASHSEED=7`, exit 1, exactly
+the warned failure mode; repaired with a recursive deterministic key and
+**recorded rather than quietly fixed**.
+
+**A record-keeping correction, #420:** #419 recorded the round as
+"repaired and delta'd" while the frozen round file contained **no delta
+section at all**.  The repairs were real (independently re-verified at 31
+PASS / 0 FAIL from a clean process) but the record of them was missing
+from where the discipline puts it.  Same defect class as #390, corrected
+the same way: forward, with the cause stated.
+
+### B6.12 D50: the form is a CHOICE `[LOG #421/#422; GREEN-UNREVIEWED]`
+
+> **Discipline note:** D50 has **not** had a hostile round.  It is
+> green-unreviewed and therefore **not citable**; it is reported here
+> because it is the residue B2 created and because its result is a
+> *negative*, which its own pre-registered one-sidedness doctrine makes
+> rigorous in a way a positive would not have been.
+
+Pin `note-d50-is-the-form-a-law-pin.md`; receipt
+`v10/code/d50_form_law_or_choice_exact.py` (9 PASS / 0 FAIL, exit 0),
+importing D49's state by AST-stripping its `check()`/`print()`/`sys.exit`
+statements — single source, D49's gates not re-run.
+
+**The question.**  Is there a demand stated on the **record** (rather than
+on `Z`) that **forces** the form?  The pinned family: I1 renewal
+agreement, I2 bisimulation invariance, **I3 depth-stationarity
+(PRIMARY)**, I4 = I2 + I3, and (in the receipt) I5 = I3 + demand (b).
+
+**PRE-REGISTERED EXPECTATION, with its argument, before running: I3
+FORCES THE FORM.**  Sketch as pinned: I2 makes `r(h,e) = Z(h+e)/Z(h)` a
+function of `(class(h), class(h+e))`; path-consistency then makes `r` a
+discrete gradient on the class graph up to a constant factor per step,
+`r(s,s') = g(s')/(c·g(s))` — which *is* `Z(h) = c^(−|h|) g(class(h))`,
+with `c` fixed by normalization to `λ = 2`.
+
+**THE FALSIFIER FIRED.**  The space of **distinct completions** satisfying
+depth-stationarity has dimension **10, 28, 107** at truncation depths
+2/3/4 — **it GROWS with depth** rather than collapsing to a ray.
+
+- **The negative is rigorous while a positive would not have been** — the
+  pin's one-sidedness doctrine fixed this in advance: a tangent dimension
+  `> 1` mod scaling **exhibits** nearby non-proportional completions
+  satisfying the demand.  A dimension of 1 would have been local evidence
+  only.
+- **SF4: foliation-invariance adds nothing.**  I5 more than doubles the
+  constraint count (25 vs 16, 210 vs 109, **1,374 vs 610**) and leaves the
+  completion dimension **exactly unchanged** at every depth.  **The
+  residual freedom is not gauge freedom.**
+- **SF5:** I3 is strictly stronger than I2 at every depth (16 vs 14, 109
+  vs 101, 610 vs 589 constraints) — so this unit is not re-measuring B2;
+  the cross-depth comparisons are really there and simply do not bite.
+- **SF6 negative control held:** I1 stays loose (completion dimensions
+  22/83/307).
+
+**Why the pinned argument failed, diagnosed not hand-waved.**  The sketch
+assumed the demand forces `Z(h+e)/Z(h)` to be a function of the two
+classes **event by event**.  The record-level demand is **AGGREGATED** —
+it equates the class-to-class transfer *summed* over events — so it
+constrains **sums, not individual ratios**, and the path-consistency step
+never obtains its hypothesis.  **And the aggregated reading is the CORRECT
+one**, which is what makes this fatal rather than fixable: what is
+observable is the probability of moving from class `s` to class `s'`; a
+per-event version would be a demand on unobservable event labels — exactly
+what B2 disqualified.  **So the stronger hypothesis the sketch needed is
+not available as a record-level demand at all.**
+
+> **Therefore paper 30 §5.7's stationary form is a genuine CHOICE, D49
+> round-1 B2's restriction is PERMANENT, and every citation of D49 must
+> carry it.**
+
+**Three own defects, owned.**  (1) Run 1 **exited 0 having run no gates** —
+D49's module-level `sys.exit` survived the AST strip and killed the
+process at D49's verdict; now stripped explicitly and gated
+(`_exits == 1`).  (2) Run 2 crashed: D49's `_rank` closes over its global
+`NB = 313` and cannot be reused at other truncation depths; the rank is
+now width-taking.  (3) The anchor assertion was wrong: 1,191 is
+cumulative, **976** at the layer (§B2.5).  **Depth cap declared, not
+silent:** `D = 5` (≈5,280 layer histories, boundary dimension in the
+thousands) did not finish its exact rank in 10 minutes and was cut; the
+2/3/4 trend is monotone and decisive without it.
+
+**UNTOUCHED: D49's existence result.**  A root-free completion exists;
+horn (II) holds; paper 30 §5.7's `[OPEN, declared]` is answered
+affirmatively.  D50 bears only on uniqueness.
+
+### B6.13 (H1): undischarged, with two dead routes
+
+**(H1) is residue 1's final named gap**, and D44a / D49 / D50 all inherit
+its conditionality.  Two routes are closed, both with counterexamples on
+the record:
+
+- **The `tau` own-view route (D46a, refuted by its own round).**  `tau` is
+  **not an own-view object**: the menu view strictly exceeds the noop cone
+  on 1,016 of 12,942 actor-histories, all extras opponent-authored
+  (§B3.2).  Also withdrawn in the same pass: (H0) was restored after being
+  wrongly dropped, and a claim that "(H2) is subsumed" was withdrawn as
+  inverted.
+- **The wire-closure route (D51, refuted — the author's own pinned
+  route).**  Pre-registered: MV-STRONG holds for propose/arbitrate and
+  fails only for idles, on the reasoning that a candidate touching base
+  `b` already sees every live proposal on `b`.  Measured: **every event
+  type lags**; and worse, **monotonicity fails** — a smaller view can
+  yield more options — so **any depth-free argument built on "the lagged
+  view sees a subset" is unsound.**  D51's own pin §5 depth-free sketch is
+  recorded as **damaged**, not quietly dropped.
+
+**What D51 leaves as durable content:** (H1) is now **exactly** the
+question whether the **four menu-relevant projections**, evaluated on each
+candidate's own view, are `sigma`-determined — strictly coarser than the
+question that died first.  Plus two finite-depth confirmations (MV3, MV4)
+and the settlement of (H2) at the projection level.
+
+**Three gates were mis-specified by the author and were restated, not
+weakened:** MV1 and MV2 originally *asserted* the author's expectations
+and failed; MV5 demanded that hiding a proposal change the projections in
+100% of cases, where the true rate is **3,008/4,760 (63%)** because a
+dropped proposal on an unreached base moves nothing — the gate now tests
+responsiveness.  *A gate that asserts the author's hypothesis is not a
+gate.*
+
+### B6.14 Scope, to be carried at every citation
+
+- **d42a scope, delivery-free, two actors.**  Unconditional at every
+  verified depth — exhaustively through depth 7.  Conditional on
+  (H0)–(H2) at all depths, **exactly** as D44a's conditional theorem is
+  and no more: **(H1) inherits the whole conditionality**, and its
+  leverage goes *up*, since it is now the last gap before the dichotomy is
+  settled unconditionally rather than merely before residue 1 is decided.
+- **Transport scope (d42b1) is OPEN.**  Paper 32 §2.3's escape result
+  stands untouched: deliveries reopen the absorbing sector (a three-event
+  history — propose; blind self-seal; deliver the created version across —
+  reconverges diverged holdings at exact weight `1/256`; census 1,044
+  diverged histories, 124 reconverging `(history, delivery)` pairs over 84
+  distinct diverged prefixes, 4 distinct minimal chains all at `1/256`),
+  the window chain **escapes** (68 transitions from shallow parents land
+  in 5 classes first realized at length 3), and the menu-shape shortcut
+  **breaks** (zero of the 3,969 transport menus match any delivery-free
+  menu shape).  §B9 adds the design-independent no-go.
+- **Two-of-two breadth discipline.**  D42b7's second grammar (ternary
+  payloads) has no state chain, so `λ = 2` and `f = (4,4,3,7,3,3)/3` are
+  **toy-relative values**.  What is claimed to generalize is the **form**
+  — a unique Perron completion — **not the numbers**.
+- **And the laboratory block is untouched.**  A settled measure is not a
+  bridge to a laboratory (§B10.7).  What changes is only that the
+  completion is no longer the reason why.
+
+---
+
+## B7. The dimension ladder
+
+*Non-technical twin: Part A, chapter A7.*
+*Sources: `note-d45b-sn-ladder-polyhedral-confinement.md` §1 (the binding doctrine); `note-d46d-typicality.md`; `note-d54-dilworth-gate-{pin,result}.md`; `v10/reviews/d54-round1-hostile-review.md`; `note-d55-dimension-meter-{pin,result}.md`; paper 32 §3.*
+
+### B7.1 The doctrine `[binding on all dimension claims in this line]`
+
+Quoted in substance from `note-d45b…` §1:
+
+- "`d` clocks" — an intersection of `d` linear orders, i.e.
+  Dushnik–Miller (order) dimension `d` — is the dominance order of the
+  positive **orthant** in `R^d`: polyhedral geometry.  The 1+1 light cone
+  is polyhedral (two null rays), and **DM-dimension ≤ 2 ⟺ 1+1-Minkowski
+  embeddability, exactly** (the corpus two-clock theorem; Meyer
+  `[LITERATURE]`).
+- Every Minkowski space with ≥ 2 spatial dimensions has a **round** cone:
+  crowns `S_N` of **every** size embed (the antipodal construction: `N`
+  events on a circle at `t = 0`; the `i`-th upper event above the
+  antipode of the `i`-th lower, at a height between the largest and
+  second-largest spatial separations), so its causal order has **infinite
+  DM dimension**.  DM dimension and Minkowski dimension coincide **only
+  at 2** (Meyer); dimension-3 orders exist that embed in **no** Minkowski
+  space (Felsner–Fishburn–Trotter `[LITERATURE]`).
+- **Therefore order dimension is a 1+1-ESCAPE DETECTOR and a
+  CLOCK-COMPLEXITY GRADE — never a spacetime-dimension estimator.**
+  *"3+1 spacetime is not four clocks; it is infinitely many."*  Unbounded
+  `S_n` growth is **necessary** for any ≥ 2+1 reading of generated records
+  and **not sufficient**.
+
+This is the user's binding observation, and it is the reason the whole
+line was re-founded on skies rather than on clock counting.
+
+### B7.2 The collapse of dimension COUNTING as a physics instrument
+
+**D46d** was the decisive experiment for the counting line, and its
+headline was retired.  Round 1 (frozen at
+`reviews/d46bd-round1-hostile-review.md`, REVISE 2B/4M/5m/2n):
+
+- **BLOCKER D-A1: the headline could not fail.**  "Width spreads with
+  depth" chained four exact numbers under the completed law at four
+  different `(pool, depth)` pairs to one sampled number under the local
+  law at a fifth, and switched statistic on the way.  Touched-width is
+  **monotone non-decreasing in depth**, so the claim is a near-tautology,
+  and *a control that cannot fail is not evidence*.  The referee's
+  like-for-like series (pool 6, one law, growing depth) runs **0.027,
+  0.242, 0.578, 0.903, 0.978, 1.000** by depth 10 — now gated *as* a
+  near-tautology.
+- **The DISCRIMINATING scalings point the other way `[SAMPLED]`.**  At
+  fixed depth 8, pools 3–8, full-width mass **falls** — `0.963, 0.782,
+  0.568, 0.333, 0.137, 0.037` (touched) and `0.525, 0.238, 0.105, 0.030,
+  0.005, 0.003` (delivery-joined), both gated strictly decreasing; on the
+  diagonal `depth = 2 × pool`, `0.867 → 0.623` (touched) and
+  `0.340 → 0.073` (delivery-joined).
+- **BLOCKER D-A2: "the theory's OWN law" was not established.**  The unit
+  used two different normalizations — lookahead-completed for the exact
+  arm, local for the sampled arm — and called both the theory's own law.
+  Repaired by quoting the committed layer's *"no measure claim"*
+  docstring from source and naming the normalization at every typicality
+  statement.
+- **MAJOR: the proxy counted IDLERS**, and the measure is ~50% idle.
+  Three proxies side by side, pool 6 / depth 8, `N = 4,000`
+  `[SAMPLED, declared seed]`: **0.9808 / 0.3068** (touched) →
+  **0.6720 / 0.0765** (non-idle) → **0.4138 / 0.0305**
+  (delivery-joined).  Idle mass is now labelled a **confound, never
+  support**.
+- **Direction stated:** width ≥ 4 is **necessary, not sufficient** for
+  dimension, so those numbers **upper-bound** the dimension mass.
+
+> **DELIVERED READING (post-round):** what is typical-in-the-making is
+> **order dimension ≥ 3**, not D45b's unbounded dimension.
+
+**What survived the attack, reported as such by the referee:** the
+calibration horn did not fire (completed-vs-local gap computed at 14
+`(pool, depth)` pairs, `2.73e−4` and `2.84e−4` at the sampled pools,
+could not be made to grow); the sampler is sound.
+
+### B7.3 The Dilworth gate `[THEOREM, unconditional at transport scope]`
+
+> **Theorem (D54 §1).**  At transport scope (d42b1), fix any history, any
+> base event `e`, and any sky whose direction set is an **antichain** in
+> the event poset.  If the record has `k` actors, then the sky's shadow
+> family is a **union of at most `k` chains under inclusion**.
+> Consequently: realizing all `2^m` subsets of an `m`-element direction
+> set as traces — in particular, shattering — requires at least
+> **`C(m, ⌊m/2⌋)`** actors.  **Shatter-4 requires at least 6 actors.**
+
+**Proof.**
+
+*(i) The physical step.*  **Any two events sharing an actor wire are
+comparable.**  Round-1 MINOR 3 upgraded this from a gated fact to a
+**theorem of the layer**: `event_poset` chains every register by
+construction (same-register events are ordered by history position,
+transitively), and **every event's initiator is among its registers for
+all five event types** — so same-initiator ⟹ same register ⟹ comparable,
+always.  The Stage 0 sweep (**218,795** actor-sharing pairs, zero
+violations, deliveries' two-carrier case included) is **corroboration of a
+proved step**; the round verified the stronger register-sharing form too
+(**226,223** pairs, zero violations) `[REFEREE-CARRIED]`.
+
+*(ii)* Assign each event to its initiating actor.  By (i) the events
+assigned to one actor are totally ordered, so their **reflexive**
+down-sets are nested (`x ≤ y ⟹ down(x) ∪ {x} ⊆ down(y) ∪ {y}`), so the
+traces they contribute — `{c ∈ dirs : c ≤ f}`, exactly the committed
+instrument's definition (round-1 MINOR 8 corrected the first draft's
+strict-down-set wording) — form a **chain** under inclusion.  The full
+shadow family is covered by at most `k` chains, one per actor.  When
+shattering is tested on a subset `S` of a larger direction set, the
+restriction `r ↦ r ∩ S` is **monotone**, so chains map to chains and the
+bound transfers.
+
+*(iii)* A chain contains at most one member of any antichain.  The middle
+layer of the Boolean lattice `B_m` is an antichain of size
+`C(m, ⌊m/2⌋)` — constructively verified for `m ≤ 6`, with the
+**de Bruijn–Tengbergen–Kruyswijk** recursion simultaneously exhibiting a
+chain **partition** of the same size, so the count is exact both ways.  A
+family realizing all of `B_m` therefore needs at least that many chains,
+hence at least that many actors.  ∎
+
+**Scope of each step:** (iii) is classical mathematics, exact for every
+`m`; (ii) is bookkeeping given (i); (i) is a theorem of the layer.  **So
+the theorem is unconditionally exact at transport scope.**
+
+**The sweep corroboration and its declared limit (round-1 MINOR 4):**
+15,909 skies, 33,546 per-actor groups, **zero non-nested pairs** — but
+**no swept sky reaches 4 directions or more than 7 distinct traces**, and
+61.4% of groups are single-trace.  So the 16-trace regime is covered **by
+the proof** and by the round's direct check on the constructed records,
+**not by the sweep**.  (The T-LEMMA gate now prints its regime census and
+declares this.)
+
+### B7.4 The sphere consequence: withdrawn, then rescued by counting
+
+**As first stated (LOG #427/#428):** *"a sphere-like sky (shattering at
+every `m`) requires unboundedly many actors — the infinite-clocks doctrine
+is now a THEOREM."*
+
+**BLOCKER 1 of round 1: the antecedent is satisfied by no 2-sphere sky.**
+Caps on `S²` are halfspace traces with **VC dimension 4** — they shatter 4
+points and **never 5** — certified in the round by an exact Radon partition
+on rational sphere points: affine dependence
+`λ = (−23/49, −19/49, −24/49, 17/49, 1)`, Radon partition
+`conv{3,4} ∩ conv{0,1,2} ≠ ∅`, so `{3,4}` is cut off by **no** halfspace;
+an independent grid search finds **30/32** traces present, missing exactly
+that pair `[REFEREE-CARRIED]`.  (D47a's own unused `max_shattered(kmax=5)`
+was one call away from catching this.)
+
+> **"The infinite-clocks doctrine is now a THEOREM" is WITHDRAWN AS
+> STATED.**  The Sperner route never fires on the sphere.
+
+**And the conclusion survives by TRACE COUNTING — no shattering anywhere
+in the derivation `[REFEREE-CARRIED, verified in the round]`:** a sphere
+sky on `n` directions realizes `2·Σ_{i≤3} C(n−1, i) = Θ(n³)` distinct cap
+traces (checked against brute-force arc enumeration at `d = 2` and against
+d47a's tetrahedron count of 16 at `d = 3`), while the nested-trace lemma
+caps one actor's chain at `n+1` traces.  Therefore
+
+> **actors ≥ Θ(n²) → ∞: a sky rich enough to be a 2-sphere still requires
+> unboundedly many actors.**
+
+Promoting this bound to an in-receipt gate is residue 1b, still
+`[REFEREE-CARRIED]`.
+
+### B7.5 What width prices, and what prices dimension (round-1 MAJOR 1)
+
+The same counting prices a **2+1 circle** sky at `n² − n + 2` arc traces,
+hence `≥ n − 2` actors — **also unbounded.**
+
+> **Width is the provable price of SKY SIZE, not of dimension.**
+
+**The dimensional signal is the shatter OFFSET alone:**
+
+| shadow system | shatters | actor floor `C(k, ⌊k/2⌋)` |
+|---|---|---|
+| arcs on a circle | 3 | **3** |
+| caps on `S²` | 4 | **6** |
+| caps on `S³` | 5 | **10** |
+| halfspaces in `R^d` | `d + 1` | `C(d+1, ⌊(d+1)/2⌋)` |
+
+Three versus six versus ten — **a factor, not a divergence.**  And the
+ladder continues upward, which is what makes "max shatter" a **dimension
+meter**: 3 = circle-compatible, 4 = sphere, 5 = `S³`, `k` = `S^(k−1)`
+(D55 pin).  Residue 1c of D54 — *does transport admit shatter-5?* — is
+exactly the question §B8.4 answers.
+
+**Sphere calibration, exact (D55 A2):**
+
+- **A2a:** `B₄` realized by **16 exact rational caps on `S²`** (d47a's
+  rational tetrahedron) — so D54's record upgrades from "not an arc
+  system" to **sphere-compatible**.
+- **A2b `[THEOREM, certificated twice]`:** **no five points shatter on
+  `S²`** — exact affine dependences with non-empty sign splits on **two**
+  rational configurations, plus a third configuration re-derived in the
+  round by a different method; Radon closes it, and five points in `R³`
+  always carry a dependence.
+- **A2c:** `B₅` realized by **32 exact rational caps on `S³`**
+  (`e₁..e₄` and `(−½,−½,−½,−½)`).
+- **Round-1 MINOR 4 relabelled A2a/A2c as SCALE calibrations**: any
+  ≤4-direction family fits `S²` and any ≤5 fits `S³`, so the
+  record-specific content is entirely in A1's realization of **all** of
+  `B₅`.
+
+### B7.6 The older transport-dimension results, for completeness
+
+Paper 32 §3 and paper 31 §5, all at **tested scale** and under the §B7.1
+doctrine:
+
+- **Arbitration alone cannot generate dimension** — zero failures of
+  two-dimensionality across **1,124,884** distinct admissible
+  proposal/arbitration histories, via the **component-confinement law**
+  (five clauses gated, the sixth referee-carried), yielding the **funnel
+  lemma**: the crown `S3` is impossible as an induced subposet at every
+  width and depth `[REFEREE-CARRIED]`.
+- **Transport generates dimension without ceiling** — one uniform
+  constructor (the two-hop dedicated-courier firewall) realizes `S_n` as an
+  induced subposet of an admissible pure-transport record at every
+  `n ∈ {3,4,5,6}`: actors `n² + 3n`, events `2n²`, width `2n − 1` at the
+  base cases `[MEASURED — the width formula is NOT claimed at all n]`,
+  every event admission-priced at the uniform exact weight
+  `1/(4(n² + 3n − 1))`; `[THEOREM, all n, at the schema level]`.
+- **Sharp finite thresholds** (paper 31 §5.3) `[EXACT]`:
+
+| actor width | dimension behaviour |
+|---|---|
+| 2 | `dim ≤ 2` always `[THEOREM via width]` |
+| 3 | `dim ≤ 2` through 10 events |
+| 4 | first failure at 6 events (`W4`: weights `(1/12,1/12,1/8,1/8,1/12,1/12)`, predecessors `[[],[],[0],[0],[0,1,2],[0,1,3]]`) |
+| 6 | `S3` realized by pure transport (`W6`: six deliveries at weight `1/20` each, predecessors `[[],[],[],[1,2],[0,2],[0,1]]`) |
+
+- **The schedule resolution:** ported at face value, the Charron-Bost
+  dimension-`N` pattern `[LITERATURE]` is fully admissible yet its posets
+  are two-dimensional — a **schedule** fact, not a semantics fact.
+  Sweeping all `8! = 40,320` orderings of the same admissible
+  multiset-with-marks at four actors, **248** reach order dimension 3.
+  Schedule-independent: her designated crown dies under every ordering; no
+  induced `S3` exists anywhere in the sweep; and **bare deliveries never
+  escape two clocks — the idle marks are load-bearing**.  The true
+  semantic divergence: the sends-before-receives schedule that realizes
+  her crown in the one-way model is **inexpressible** under the grammar's
+  fused two-carrier deliveries, and the crown price is paid in dedicated
+  couriers — **quadratic, not linear, in `n`.**
+- **The funnel lemma's promotion is PARTIAL (D44c-P, LOG #407/#412; paper
+  32 §6 item 7 amended, not closed).**  Met: the sixth confinement clause
+  and up-cone confinement are now gated in-receipt at zero violations over
+  three committed exhaustive families (551,928 / 224,580 / 436,864), with
+  the live stratum gated **first** at **23,226** incomparable arbitration
+  pairs so the zeros are results, not vacuities.  Delivered: an
+  **arbitration-scoped** scale-free crown no-go with a constructive
+  two-pre-order proof (the reversal of the **root** order, not only the
+  child order, is load-bearing — gated as near-miss mutant FG7(d)),
+  corroborated grammar-independently over all **46,233** rooted forests on
+  ≤ 8 nodes.  **Not met:** paper 32 §3.1's claim is **full-poset**, the
+  full poset is not a rooted forest, and both natural register-theoretic
+  bridges are **false** (a causal pair need not share an actor register,
+  since a link may be carried by a minted version name; and domination is
+  transitive, so a proposal reading a minted version name inherits the
+  whole down-set).  **So the crown no-go remains REFEREE-CARRIED and the
+  multi-author corner remains decided at TESTED SCALE.**
+- **And the promotion's own review found the evidence overstated
+  (round-1 MAJOR P1):** the 67,403 certified arbitration subposets have
+  sizes `{1: 44,546, 2: 19,796, 3: 3,061}` — **maximum 3 elements** — and
+  the smallest poset of dimension > 2 is the 3-crown at **six** elements,
+  so every verdict was fixed **by cardinality alone**.  Evidence stratum
+  (size ≥ 6) = **0**.  Repaired by printing the stratification and gating
+  that the count may never be quoted as in-family confirmation.  A related
+  finding in the parent's favour: **230,706 cover pairs, ZERO with
+  disjoint actor register sets**, so the actor word determines the cover
+  relation and hence the poset — D44c's declared dedup convention is now
+  **confirmed by measurement** rather than assumed.
+
+---
+
+## B8. The constructions
+
+*Non-technical twin: Part A, chapter A8.*
+*Sources: `note-d54-dilworth-gate-{pin,result}.md`, `v10/code/d54b_shatter_construction_exact.py`; `note-d55-dimension-meter-{pin,result}.md`, `v10/code/d55_shatter5_exact.py`, `v10/code/d55b_sphere_calibration_exact.py`; reviews `d54-round1`, `d55-round1`.*
+
+### B8.1 The pinned blueprint, and why it failed (gated exhibit N1)
+
+The pin committed a **9-actor blueprint** (X, A1..A4, B1..B4) rather than
+a blind search: X proposes on `v0` and arbitrates it — that arbitration is
+the base event `e`, minting `v1`; X delivers `v1` to A1..A4; each `Ai`
+pads with idles and proposes on `v1` so that all four proposals land at the
+**same height** `e+5`, hence **pairwise incomparable by proposal
+locality** (a proposal's only carrier is its proposer); those are the four
+directions of SKY-B(5) at `e`; then accumulators B1..B4 realize the
+missing subsets by re-deliveries, one symmetric chain each, with X's first
+delivery serving as the **empty trace**.
+
+**It is admissible end to end — 31 events, all menu-offered — and it
+realizes only 8 of 16 subsets.**
+
+**Mechanism: a delivery is a join in BOTH directions** (§B3.4).  The
+sender's wire absorbs the receiver's accumulated past, so after B delivers
+into an accumulator holding A, every later send from B carries `{A,B}` and
+the other chains are contaminated before they start.  **The per-sender
+send-traces form a chain: the theorem biting its own construction.**  The
+first-run failing output (9 PASS / 3 FAIL) is preserved at commit
+`e07582c`.
+
+### B8.2 The courier architecture
+
+**Sending into an EMPTY receiver folds nothing back** — the sender stays
+clean.  So each direction-actor mints one **fresh courier** per
+contaminating step, and each courier performs exactly one send into a
+charged accumulator.  Eleven couriers suffice at `m = 4`.
+
+> **`[EXACT]` A 20-actor, 42-event transport record, every event selected
+> from the committed layer's own menu, whose SKY-B sky at the minting
+> event has 4 pairwise-incomparable directions, 16 distinct traces
+> including the empty one (SC5 satisfied), realizes ALL 16 subsets, and
+> returns a shattered 4-set — at THREE depths, `d = 4, 5, 6` (round-1
+> MINOR 2; the promised per-`d` table is now gate K11).**
+
+**Consistency checks.**  The record's traces decompose into per-initiator
+chains with zero crossings; **the realized 16-trace family's minimum chain
+cover is EXACTLY 6 — Dilworth-tight** (round-1 MINOR 5 replaced the first
+draft's false "saturates"; **the 6-vs-20 gap is architectural** — the
+scheduling cost of backflow, not slack in the family); and SKY-A/SKY-C on
+the same record have **no empty trace** (`[THEOREM-PASS]` per D53 — a
+consistency exhibit, not evidence).
+
+**Independent verification (round 1, the corpus's first independent-model
+round).**  Every number reproduced by code the reviewer wrote: both records
+rebuilt from the committed menu, the poset re-derived with Floyd–Warshall,
+16 distinct traces, shattered 4-set confirmed by code sharing nothing with
+d47a but the definition; the negative exhibit and its backflow mechanism
+re-derived (`B`'s per-initiator family `{}, {B}, {A,B}`, literally
+`regs_of(d) = {s, r}`); blueprint fidelity to the pin; measure-freeness;
+and record fidelity (pin genuinely preceded code; every LOG number
+matched).
+
+### B8.3 The generalized builder
+
+D55's builder is **mechanical from `scd(m)`** — the symmetric chain
+decomposition — with no hand tuning: **one accumulator per dBTK chain, one
+clean courier per contaminating step**, cost `(|S1| − 1) + (len − 1)` per
+chain.  For `m = 5`: 10 chains, 26 couriers, 42 actors, 84 events.
+
+**Anchor first:** the builder re-derived `m = 4` (22 actors, 44 events,
+all 16 subsets, shatter confirmed — the same trace family as D54's
+hand-built record, at slightly higher actor/event cost because the machine
+does not hand-optimize).
+
+**Tractability, and the instrument correction it required.**  The builder
+uses **initiator-restricted menus**.  Two corrections, both on the record:
+in-run, the restricted menu must include the delivery's **receiver**
+(`candidates_for` enumerates receivers from its actor list).  And round-1
+MAJOR 1: the pinned justification — *"`admissible()` reads no actor
+list"* — was **BACKWARDS**.  `admissible()` **does** read it in the
+delivery branch, so **weights differ** between restricted and full calls
+(e.g. `1/328` vs `1/8`).  **What is preserved is MEMBERSHIP** — the
+referee proved the correct theorem and swept **354,319** comparisons with
+**0 mismatches** — and the builder **discards weights**, so the record is
+unaffected.
+
+### B8.4 The shatter-5 record `[EXACT]`
+
+> **A 42-actor, 84-event transport record (10 accumulator chains, 26
+> couriers), every event selected from the committed layer's own menu,
+> whose SKY-B sky realizes ALL 32 subsets of its 5 pairwise-incomparable
+> directions and returns a shattered 5-set — at depths 5, 6 and 7.**
+> Dilworth-consistent: per-initiator traces are chains, ≥ 10 contributing
+> actors (the gate's price, paid), the realized family **Dilworth-tight at
+> exactly 10 chains.**
+
+**And it is FORCED.**  The independent round rebuilt the record with the
+**full 42-actor menus at every one of the 84 steps** and obtained an
+**identical** record: **every specification had exactly one menu hit
+(max hits = 1)**.  Also re-derived: the record's own poset closure equals
+the layer's; 32 traces / all 32 subsets / a **unique** shattered 5-set at
+`d = 5, 6, 7` and **nowhere else in 1..17**; minimum chain cover exactly
+**10** (and **6** for `m = 4`); all **48** cap certificates and both Radon
+dependences re-derived by a different method plus a third configuration;
+pin-before-code confirmed in git.
+
+**Two disciplines repaired in the same round:** MINOR 1 — the `m = 5`
+menu-equivalence samples the first draft computed and **discarded** are
+now gated on the `m = 5` build itself; MINOR 2 — the per-depth table now
+runs the record's **full height range 1..17**, the first draft having
+silently capped at 9, *"my own no-silent-caps discipline, violated and
+repaired."*
+
+### B8.5 What is licensed, stated exactly
+
+**MAY (D54 §3, restated per round-1 MAJOR 2):** the transport layer admits
+a record whose SKY-B sky **is not an arc system** — arcs realize at most
+**14 of 16** traces on any 4 points, missing the crossing pairs (theorem,
+re-verified in the round).  *"Not a 2+1 celestial sky"* holds **only**
+under the strict stipulation that a 2+1 sky means an arc system on the
+circle of directions — and the corpus's own demotion (§B5.3) shows a
+**majority** of genuine discrete 2+1 skies are non-arc, so that
+stipulation must be **said aloud**.
+
+**The sound discrete separation is EMPIRICAL, and it has controls:**
+
+| control | result |
+|---|---|
+| genuine `M^{2+1}`, SC5-capable SKY-B pairs at depths 1..10 | **1,925** pairs, **ZERO** shattered 4-sets `[REFEREE-CARRIED]` |
+| genuine `M^{3+1}` SKY-B skies | **1,351** skies, **33** SC5-capable, **ZERO** shatter-5 `[REFEREE-CARRIED]` — clean but **mostly structurally incapable** (D53's tautology trap), and **stated as thin** |
+
+against this record's **three** shattering depths.  A **full-strength
+`M^{3+1}` control is a NAMED RESIDUE.**
+
+> **FORWARD CORRECTION (D55c, LOG #435 — GREEN-UNREVIEWED).**  The residue
+> is discharged and the reading it was supposed to support **fails**.  At
+> full strength: **SC5-capable(4) = 1,578** pairs (against the round's thin
+> 33), capable(5) = 740, across four fixed-box records to `N = 200`; **zero
+> shatter-5** (the halt condition holds) **and zero shatter-4 of 1,578
+> capable pairs on genuine `M^{3+1}`**, against the pin's weak positive
+> lean.  **The discriminator reading fails**, and the honest reframe is
+> larger than the unit: see **CHAPTER 12 §12.1**.  D54/D55's capacity
+> results — the grammar can build `B₄`/`B₅` skies, the layer does not cap
+> the ladder — **stand untouched.**
+
+**MAY NOT — and this is where the same error was made twice, one day
+apart.**  D55's first delivery said *"the admissibility layer does not
+select 3+1"*.  Round-1 BLOCKER 1: that needs *"not cap-realizable on `S²`
+⟹ not a 3+1 sky"*, i.e. the stipulation that discrete 3+1 skies **are** cap
+systems — **exactly the premise class the demotion refutes**, and exactly
+the arrow D54's round had retired one rung down the day before.  Restated
+everywhere to the licensed **capacity** claim:
+
+> **The admissibility layer does not CAP the shatter ladder at the
+> sphere's rung.**  The ladder measures **capacity** at `C(k, ⌊k/2⌋)`
+> actors; **selection, if anywhere, lives elsewhere** — and the candidate
+> homes are the **measure**, **resource cost**, and **counting
+> typicality** (round-1 MINOR 6 widened this: the measure is not the only
+> candidate).
+
+**MAJOR 2 — the meter is a (record, reading) PAIR property, embraced.**
+The same record reads **0** under SKY-A/C and **1..5** under SKY-B by
+depth — profile `2,3,4,5,5,5,4,4,4,3,3,2,2,1,1,1`, gated at G8 — and the
+record's meter value is the **SUP over committed readings = 5**.
+
+**No positive 3+1 claim.**  Shattering rules **OUT** the circle; it does
+not rule **IN** the sphere.  The positive side — exact rational
+cap-realization — is §B7.5's A2 calibration, which is a statement about
+the shadow family, nothing stronger.
+
+**No genericity claim.**  One engineered record per rung.  Typicality is
+**not even posable** at transport scope (D52, and §B9).
+
+**Residues.**  Minimality at every `m` (6 vs 20; 10 vs 42 — both
+architectural, both decidable); the general-`m` claim (visibly patterned,
+unrun, unclaimed beyond 5 — `m = 6` would need 20 chains, 57 couriers,
+~66 actors); the depth parameter (`d = 5` here while the committed
+`SKYB_DEPTH` elsewhere is 2 — a `d = 2` construction or a forced-depth
+bound would sharpen the reading-relativity); and the convergence question.
+
+---
+
+## B9. The transport wall and the sector crack
+
+*Non-technical twin: Part A, chapter A9.*
+*Source: `note-d56-transport-sigma-probe.md` + `v10/code/d56_transport_sigma_probe.py`, LOG #432.*
+
+> **STATUS, binding.**  This is a **PROBE / ADVISORY**, not a pinned unit:
+> no pin, and the ledger entry that records it says so.  The **two
+> load-bearing claims were independently verified against the committed
+> layer** before acceptance (both reproduce exactly).  Everything else must
+> be re-derived before any pinned unit relies on it.  The probe's own
+> caveats C1–C7 are reproduced in §B9.5.
+
+### B9.1 The obstruction: the self-arbitration ladder `[EXACT, depth-free]`
+
+**Construction.**  `v_0 = genesis`; rung `k+1` is `('p','A',v_k,0)`
+followed by the blind self-arb `('r','A',{(A,v_k,0)},{(A,v_k,0)})`, which
+mints `v_{k+1} = vname(v_k, {(A,v_k,0)}, 'A')`.
+
+**Mechanically verified for `k = 1..10` in the committed layer `[EXACT]`:**
+
+| rung | `\|holdings(A)\|` | delivery options | weight each | sector total | non-delivery menu = previous? |
+|---|---|---|---|---|---|
+| 1 | 2 | 2 | `1/8` | `1/4` | — |
+| 2 | 3 | 3 | `1/12` | `1/4` | yes |
+| 3 | 4 | 4 | `1/16` | `1/4` | yes |
+| … | … | … | … | … | yes |
+| 10 | 11 | 11 | `1/44` | `1/4` | yes |
+
+Every rung admissible; `|holdings(A)| = k+1` exactly; the ten weights
+pairwise distinct; **delivery sector total exactly `1/4` at every rung.**
+
+**The induction `[EXACT, depth-free]`.**  `v_{j+1}` has strictly greater
+nesting depth than `v_j`, so `v_0..v_k` are pairwise distinct.  `A`
+proposed in every rung's component key, so
+`holdings(A) ⊇ {v_0,…,v_k}`.  Only `v_0..v_{k−1}` are superseded, so
+`('p','A',v_k,0)` is admissible and the ladder extends for every `k`.
+And **`deliver_options_in_view` reads the WHOLE holdings set**, superseded
+members included, so A's delivery sector has exactly `k+1` options, each
+priced `(1/4)/(k+1)`.
+
+**Therefore** the menu takes infinitely many values — in its *cardinality*
+and in its *multiset of rational weights*, neither of which any renaming
+can move.  If `sigma` is menu-exact then `sigma(h) ↦ menu(h)` is
+well-defined, so `sigma` has at least as many values as there are menus:
+
+> **`[EXACT]` NO BOUNDED MENU-EXACT LOCAL-STATE ABSTRACTION EXISTS AT
+> TRANSPORT SCOPE, FOR ANY DESIGN.**  D52's T2 is answered: **blow-up, and
+> by an obstruction, not by a growth curve.**
+
+**Why d42a escapes it — and what that says about the prize result.**
+Delivery-free, holdings are read only through `prop_options_in_view`,
+which **skips superseded versions**, and the non-superseded holding is a
+singleton (D44a SG2).  The unbounded coordinate exists there too; it is
+simply **invisible to the menu**.  Transport makes it visible.
+
+> **The 36-state closure is a starvation artifact** of the same species as
+> the fork-freeness artifact d42b1's P2 already found.
+
+**Width stability `[MEASURED, SAMPLED]`.**  At three actors the ladder has
+`(n−1)·|H|` delivery options: **4, 6, 8, 10, 12** options at
+`1/16, 1/24, 1/32, 1/40, 1/48`, **sector total exactly `1/4` throughout**.
+The two-actor conclusion looks width-stable.
+
+### B9.2 The design that was instructed, and its refutation
+
+D51's four projections on the **full view** were the design this probe was
+instructed to use.  Implemented verbatim (`mode='full0'`, same renaming
+quotient) and **refuted**: **3,656 violations over 30,454** equal-sigma
+pairs.  The minimal counterexample is the W1/W2 witness of §B3.3.
+
+> **`[MEASURED]` D51's four-projection reduction does not lift to transport
+> scope.  Any pinned unit that reuses it will be measuring a non-object.**
+
+Hence the forced replacement: the **join-view lattice** of §B3.3, with
+`holdings(a)` keeping its **superseded** members (because
+`deliver_options_in_view` enumerates over the whole set — this is not
+optional, and §B9.1 shows this single fact decides the question).
+
+**What the refined `sigma` drops, exactly:** lineage depth (a version
+nothing else references becomes an opaque node with no parent — *this is
+the quotient D52's T1 asked for*); superseded marks on unreferenced
+versions; the content of opaque nodes; holdings/merge-pairs of non-members
+of `S` inside `V_S`; `created` as a separate projection; and all event
+indices and order information beyond what survives as component edges and
+merge-pair incomparability.  Canonical form: 1-WL colour refinement on the
+version layer using only renaming-invariant data, then the lexicographic
+minimum over the residual colour classes.  On the whole family to depth 6
+the refinement was already discrete (**max colour class 1, max residual
+permutations 1, 0 permutation-cap hits** against a printed cap of 720), so
+canonicity is not in question on this window and `|Aut| = 1` everywhere.
+
+### B9.3 The refined sigma is menu-exact — and still blows up `[MEASURED]`
+
+| abstraction | classes | equal-sigma pairs checked | violations |
+|---|---|---|---|
+| `sigma` (join-view lattice) | 541 | 30,188 | **0** |
+| `full0` (D51 four projections, full view) | 275 | 30,454 | **3,656** |
+
+Menus compared as **renamed event multisets with exact `Fraction`
+weights**.  The `full0` row doubles as the **anti-vacuity control**: the
+instrument does detect coarseness when it is there.
+
+**Transition determinism:** `sigma(h+[e])` is a function of
+`(sigma(h), renamed e)` — **1,540 (state, event) pairs over 30,728
+transitions, depth ≤ 4 exhaustive, 0 nondeterministic pairs.**  So the
+D44a BFS method is legitimate here.
+
+**Exhaustive census to depth 6** (anchors reproduced from the committed
+census: cumulative `[1, 9, 69, 521, 3969, 30729]`, and **243,769** to
+depth 6 — both match):
+
+| depth | histories | distinct `sigma` | NEW |
+|---|---|---|---|
+| 0 | 1 | 1 | 1 |
+| 1 | 8 | 5 | 4 |
+| 2 | 60 | 17 | 12 |
+| 3 | 452 | 61 | 44 |
+| 4 | 3,448 | 191 | 130 |
+| 5 | 26,760 | 541 | 350 |
+| 6 | 213,040 | 1,567 | 1,026 |
+
+**Frontier-exhausted BFS, hard cap 20,000 states / 480 s (both printed):**
+`5, 17, 61, 191, 541, 1567, 4679, 14413, 20000 (CAP)` at level 9 —
+**NOT CLOSED**, with 5,587 unexpanded frontier states at the cap.
+
+**FORWARD CORRECTION of #425's reading.**  D52's *"no state ever recurs"*
+was **BACKWARDS**: the per-depth state sets are **nested** — appending
+`('n',a)` changes no projection whatsoever — so **recurrence is total**,
+and the only informative column is **NEW**, which grows by a factor ≈ 2.9
+per level with no sign of turning over.  The blow-up verdict stands **on
+the ladder**, not on that table.
+
+**Growth diagnosis (M4).**  At reachable depths the fastest-growing
+component is the **per-view live-proposal / component structure** (284 and
+288 distinct values at depth 6) — i.e. **the knowledge lag between the
+three views**, precisely the coordinate that does not exist at d42a scope.
+The version layer is second (123).  The holdings *counter* is the slowest
+(13 distinct count-vectors) — **but at depth-free level the ranking
+reverses**: the counter is the one **provably** unbounded; the others are
+merely large here.  So a pinned unit must attack **both**.
+
+### B9.4 THE CRACK: the sector total is constant
+
+The no-go bites the **intra-sector split**, not the sector.
+
+> **`[EXACT, verified in-layer]` THE DELIVERY-SECTOR TOTAL IS EXACTLY
+> `1/4` AT EVERY RUNG.**  The per-option weights vanish; the **aggregated**
+> sector weight is constant.
+
+**Why that is more than a curiosity.**  D50's round-1 diagnosis (§B6.12)
+established independently that the record-level observables are the
+**aggregated** ones: what is observable is the probability of moving from
+one class of situation to another, and a per-event demand would be a
+demand on unobservable event labels.  **So the obstruction kills exactly
+the class of description the corpus has separately shown is not the
+physical one.**
+
+**Measured consequences that make the escape candidate non-empty:**
+
+- the **non-delivery part of the menu is constant from rung 2 on**;
+- define `lump` = `sigma` with each holdings set replaced by (its
+  non-superseded part, `min(|holdings|, T)`).  Then on the whole depth-5
+  family the **non-delivery menu factors through `lump` exactly**
+  (`T = 2`: 0 violations / 30,236 pairs; `T = 3`: 0 / 30,228);
+- and the **delivery-LUMPED step distribution** (non-delivery events kept
+  individually, the entire delivery sector aggregated by successor
+  lump-state) **is a function of the lump state** — 0 violations over
+  3,782 same-state pairs at depth ≤ 4, 187 lump states.  That is
+  probabilistic bisimulation for the lumped chain, on that window.
+
+**And the lumped chain does not close either, within the caps
+`[MEASURED, not decided]`:** BFS at `T = 2`, cap 20,000 / 480 s →
+`1, 5, 17, 61, 187, 493, 1223, 3099, 8241, 20000 (CAP)` at level 9.
+
+> **So killing the counter is NECESSARY and demonstrably NOT SUFFICIENT.**
+> The residual explosion is the view-product structure of §B9.3.
+
+**The open question, stated as the escape candidate for a pinned unit:**
+*does a bounded **sector-exact** abstraction exist at transport scope?*
+**Live, and not easy.**
+
+> **FORWARD CORRECTION (D57, LOG #436 — GREEN-UNREVIEWED).**  That unit was
+> pinned and run, and **the escape is CLOSED at this granularity**, on two
+> independent grounds — one of which refutes the very fact this section
+> leans on.  **The `1/4` sector total is NOT a law of sectors**: the
+> arbitration sector prices `1/4` divided by the component count, so
+> totals live in `{k/(4m)}` with `m` depth-unbounded, and **the sector
+> alphabet is not finite** either.  The verified delivery-sector `1/4`
+> fact was **sector-specific, not a law.**  And the coarsest
+> sector-lumpable partition **does not stabilize.**  See **CHAPTER 12
+> §12.2**.
+
+### B9.5 Caveats, binding
+
+- **C1.** The no-go is about **menu-exact** abstractions — exact weights
+  *and* exact renamed event identity.  It does **not** exclude coarser
+  objects (sector-level descriptions, lumped chains, level-structured /
+  QBD or R-matrix descriptions).  It **does** exclude the finite transfer
+  matrix that Perron theory needs at d42a.
+- **C2.** `sigma` is menu-exact but **not proved minimal**.  Its measured
+  curve is an **upper bound** on the minimal menu-exact state count at
+  each depth.  The *lower* bound that matters is the ladder's: infinite.
+  **The qualitative verdict is design-independent; the growth numbers are
+  not.**
+- **C3.** Join-view completeness is `[MEASURED to depth 5]`, 0/243,768
+  exceptions.  The arb-renewal register escape is a real structural
+  possibility this window did not exhibit; a pinned unit must either rule
+  it out or add those views.
+- **C4.** The factorization and determinism results are finite-depth
+  **evidence, never premises**; the three-actor arm is a **sample**
+  (lower bounds only).
+- **C5.** Determinism: `PYTHONHASHSEED=0`; every canonical form is a
+  post-renaming-**sorted** plain-tuple serialization (no raw `frozenset`
+  reprs — the D49 A4 lesson).  All caps printed by the script.
+- **C6/C7.** Nothing committed to git as a unit; the script was run twice
+  with **every count, curve and violation number byte-identical** — which
+  is reproducibility evidence, not a proof of order-independence.
+
+### B9.6 The consequence for the programme
+
+> The method that settled the dichotomy at d42a — **finite menu-exact
+> quotient + Perron** — **provably cannot transfer** to the scope where the
+> dimension results live.  Whether a root-free completion exists at
+> transport scope is **analytically open with no current tool**, and the
+> convergence question (*does the measure prefer 3+1?*) is blocked on
+> exactly this.
+
+The named live routes, from the probe's §7 (what a pinned unit should
+gate): the **delivery-lumped chain**, or a **level-structured
+(QBD / R-matrix / Martin-boundary)** description with `|holdings|` as the
+level — which connects to the **already-built D46b transport-scope
+Martin/R-theory machinery** rather than to Perron.  And one thing a pin
+should *not* do: pre-register an expectation of closure or non-closure for
+a coarser-than-menu-exact object.  *D52 was right to record none; the
+ladder decides only the menu-exact question.*
+
+**For completeness, the transport-scope Martin results already in hand
+(D46b, after review — three reversals):** `root = renewal` **does**
+transfer at matched horizon (an earlier "does not transfer" claim was a
+horizon-mismatch artifact and was withdrawn); the pinned sector-normalized
+conditional is **exactly horizon-stable at the root** (reported as a
+negative before review, corrected to a positive); contraction is **true
+and strengthened** but **not at a constant rate** — the sequence is
+`0.738, 0.399, 0.086`; and deliveries **REDUCE** branching (the earlier
+claim had the sign wrong; peak at `D = 5`, down at `D = 6`).
+
+---
+
+## B10. The graveyard, itemized
+
+*Non-technical twin: Part A, chapter A10.*
+
+Format: **CLAIMED → KILLED BY → SURVIVED.**  Every entry is a real,
+recorded retraction with its ledger location.
+
+### B10.1 Dimension counting as a spacetime-dimension estimator
+
+**Claimed:** order dimension grades how close a record is to 3+1.
+**Killed by:** the doctrine of §B7.1 — DM dimension coincides with
+Minkowski dimension **only at 2**; every ≥2+1 Minkowski space has infinite
+DM dimension; dimension-3 orders exist that embed in no Minkowski space.
+Then, from inside, D46d's headline collapse (§B7.2).
+**Survived:** order dimension as a **1+1-escape detector** and
+**clock-complexity grade**; the corrected typicality reading (order
+dimension ≥ 3 is typical-in-the-making, not unbounded dimension); the
+calibration horn, which did not fire; and the reframing onto skies.
+
+### B10.2 The `tau` own-view route to (H1) `[D46a, LOG #394–#397]`
+
+**Claimed:** per-actor own-view abstractions `tau_A, tau_B` are functions
+of `sigma`, which would discharge (H1).
+**Killed by:** its own round.  **`tau` is not an own-view object**: the
+menu view strictly exceeds the noop cone on **1,016 of 12,942**
+actor-histories (7.9%), max 4 extra events, **all opponent-authored**.
+Also withdrawn in the same pass: (H0), wrongly dropped, was restored; and
+"(H2) is subsumed" was withdrawn as **inverted**.
+**Survived:** the lag measurement itself, now load-bearing everywhere; and
+the menu view's idempotence (`0/12,942`).
+
+### B10.3 The wire-closure route to (H1) `[D51, LOG #423/#424]`
+
+**Claimed (pre-registered, by the author):** a candidate touching base `b`
+already sees every live proposal on `b` by wire closure, so the lag is
+menu-invisible and (H1) follows **at every depth with no induction**.
+**Killed by:** measurement — **every event type lags** (`n` 4,606/12,942;
+`p` 5,636/12,916; `r` 3,820/8,516), because the projections are the
+full four-tuple over **all** bases while a candidate's view need only
+cover the base it touches.  Then, worse: **monotonicity fails** —
+`prop_options_in_view` excludes a base the actor already has a live
+proposal on, so a view that **misses** that proposal **includes** the base.
+**A smaller view can yield MORE options.**
+**Survived:** the **reduction** — (H1) is exactly the question whether the
+four menu-relevant projections on each candidate's own view are
+`sigma`-determined, strictly coarser than the refuted question; MV3 and
+MV4 as finite-depth evidence; **(H2) settled at the projection level**;
+and a general bar: *no depth-free argument may assume view monotonicity.*
+
+### B10.4 Circular-ones as the primary sky instrument `[D47a, LOG #409]`
+
+**Claimed:** a two-sided arc-realizability test decides
+circle-versus-sphere in both directions.
+**Killed by:** the control.  It **rejected 121 of 554 genuine 2+1 skies**
+as non-arc (later recounts: 218/397 under one reading — a majority).
+**Survived:** shatter-4 alone as the load-bearing instrument; the
+**empirical vindication** of the one-sidedness doctrine; and the general
+lesson that killed two later headline sentences — *discrete skies of real
+Minkowski are not continuum trace systems, so "not realizable as X ⟹ not
+that dimension" is not available as a premise.*
+
+### B10.5 Ratio-preserving completions `[paper 30 §5.2]`
+
+**Claimed:** implicitly by "just normalize the weights".
+**Killed by:** the theorem of §B6.3 with a **36-of-202** certificate in
+**two** diamond-connected components, plus the named mechanism
+(double-counting the causally blind join layer).
+**Survived:** everything downstream — the impossibility is what makes the
+completion question a question.  And a self-correction: "N is NOT
+cut-attached" was **false**, withdrawn, and replaced by the **stronger**
+statement (cut-attached but not a gradient).
+
+### B10.6 The zero-class counterterm `[note-d42b3… D3]`
+
+**Claimed:** filtering to own-view components restores sums ≡ 1 exactly
+and gauge-invariantly, refuting the no-go.
+**Killed by:** it **abolishes ALL joint arbitration** `[EXACT]`.
+**Survived:** the no-go **narrowed** to support-preserving (strictly
+positive) counterterms, by a printed and gated nesting argument, with the
+zero class **declared excluded** and the reason stated.
+
+### B10.7 "Sign A, hold B" — the entire laboratory bridge `[d41c, LOG #404/#405]`
+
+**Claimed (2026-07-19, #404):** two platform declarations, with A (a
+single-ion hyperfine platform) the strong one and B (a
+Talbot–Lau interferometry platform) declared strictly weaker; the
+recommendation carried to the user was **"sign A, hold B"**.
+**Killed by (2026-07-24, #405):** the author's own objection, quoted
+verbatim in the note's §1A and **conceded in full** — *an ion is an
+enormous object in record terms*; the corpus has not built the QFT layer;
+and the spacetime being constructed is the **background** on which such
+fields would live.  Four things recorded:
+
+1. **The scale gap `[ILLUSTRATIVE only, not a corpus claim]`:** at Planck
+   spacing `1.62 × 10⁻³⁵ m` against a proton at `~1.7 × 10⁻¹⁵ m` the ratio
+   is `~10²⁰`, so rescaling the record spacing to 1 mm puts the proton at
+   `~10¹⁷ m` — of order **ten light-years**.
+2. **The corpus cannot even fix that scale:** v6 paper 57's unified no-go
+   gives exactly **one** record length with Newton's `G` **provably
+   un-fixable**, so the record scale is a free parameter and presuming the
+   laboratory sits far above it (or at it) is un-derived either way — **a
+   second, independent hole in the same slot.**
+3. **The layer gap:** records → background → quantum fields → atomic
+   structure is at least **three constructed layers, NONE of them built.**
+4. **Both readings of every line identification fail:** LITERAL is refuted
+   by (1); EFFECTIVE is the only defensible one and has **no
+   coarse-graining theorem and no intervening layer** to pass through.
+
+**Then re-founded on firmer ground (2026-07-25, #415, §B1.2):** the
+blocker now stands **on LOSS rather than on impossibility**.  A single-line
+description of a composite **exists causally**, so the effective reading is
+not impossible — but it discards most of the causal structure, so a bound
+extracted through it is a bound on the **coarse world**.
+
+**Survived / disposition:** a new item **(0) THE COARSE-GRAINING**,
+logically **prior** to the four things a bridge must fix, added and left
+**EMPTY**; §§2–3 stamped `[BLOCKED ON §1A]` with their eight
+correspondences retained **UNCHANGED as the criticizable record**; §4
+`[SUPERSEDED]`; §7 **SEALED, NOT PRESENTED FOR SIGNATURE**, with a ninth
+unchecked box.  §1A's own reading: *the laboratory programme is **premature
+by at least one constructed layer.*** And the reason blocking beats the
+alternative handling (retain as phenomenological ansätze): that handling
+needs a label carried at **every** citation, and the corpus's record on
+carrying such labels is the d41a error — **blocking is cheaper and cannot
+decay.**
+
+`[MY READING]` The practical upshot for anyone looking for a prediction:
+**a theory that has not chosen its measure cannot produce a rate.**  The
+completion problem is upstream of every empirical claim.
+
+### B10.8 "Infinite clocks, as a theorem via Sperner" `[D54, LOG #428 → #429]`
+
+**Claimed:** the Dilworth gate derives the infinite-clocks doctrine,
+because a sphere-like sky shatters at every `m`.
+**Killed by:** BLOCKER 1 — **the antecedent is satisfied by no 2-sphere
+sky**; caps on `S²` have VC dimension 4 and never shatter 5, certified by
+an exact Radon partition `λ = (−23/49, −19/49, −24/49, 17/49, 1)` with
+`conv{3,4} ∩ conv{0,1,2} ≠ ∅`; an independent grid search finds 30/32
+traces missing exactly that pair.
+**Survived:** the conclusion, by **trace counting** with no shattering in
+the derivation (`Θ(n³)` traces against `n+1` per actor chain ⟹
+`actors ≥ Θ(n²)`); plus the sharpening that **width prices sky size, not
+dimension** (a circle also costs unboundedly many actors: `n² − n + 2`
+traces ⟹ `≥ n − 2` actors), the dimensional signal being the **shatter
+offset** 3 / 6 / 10; and the promotion of the shatter ladder to a
+**dimension meter**, which is what made D55 worth running.
+
+### B10.9 "The construction saturates the theorem" `[D54 round 1, MINOR 5]`
+
+**Claimed:** the 20-actor record saturates the `C(4,2) = 6` bound.
+**Killed by:** the realized 16-trace **family's** minimum chain cover is
+**exactly 6** — so the family is Dilworth-**tight** and the 6-vs-20 gap is
+**architectural** (the scheduling cost of backflow), not saturation.
+**Survived:** the tightness result, sharper than the claim it replaced,
+plus a clean decidable open problem (does backflow force **more** than 6,
+or can scheduling reach 6?).
+
+### B10.10 "The admissibility layer does not select 3+1" `[D55, LOG #431 → #433]`
+
+**Claimed:** because the layer admits a sky beyond `S²`.
+**Killed by:** BLOCKER 1 — it needs *"not cap-realizable on `S²` ⟹ not a
+3+1 sky"*, i.e. the stipulation that discrete 3+1 skies are cap systems —
+**the premise class the demotion refutes**, and the same arrow D54's round
+had retired one rung down **one day earlier**.
+**Survived:** the licensed **capacity** claim (the layer does not **cap**
+the shatter ladder at the sphere's rung); the widening of "selection lives
+in the measure" to **three** candidate homes; and a named residue (a
+full-strength `M^{3+1}` control, the present one being **thin**: 1,351
+skies, 33 capable, zero shatter-5).
+
+### B10.11 The two D49 uniqueness claims `[LOG #418 → #419/#420]`
+
+**Claimed (i):** "229 of the 313 boundary dimensions act **trivially** on
+the completion; 313 is a **wrong** count of completions."
+**Killed by:** BLOCKER B1's perturbation witness, then upgraded by #420
+from witness to **theorem** — every nonzero kernel direction changes some
+depth-3 transfer, because a depth-3 transfer reads the boundary directly.
+**Paper 30 §5.3's 313 stands; the queued erratum was cancelled before it
+was applied.**
+**Survived:** the real statement — the boundary → interior-**potential**
+map has rank exactly **84** (= the number of depth-3 cut classes), so
+shallow transfers see the boundary only through an 84-dimensional image
+while the depth-3 layer sees all 313; and inside the 84 the
+depth-stationary completions form a **single ray** realized by
+`b*(t) = 2^(−4) f(class(t))`.
+
+**Claimed (ii):** "Among completions that do not distinguish record points
+the law identifies, there is exactly one, and it needs no boundary."
+**Killed by:** BLOCKER B2's measurement — renewal-pair agreement leaves
+**308/313** free; bisimulation-invariance leaves **119/313**.
+**Survived:** the **existence** result entirely untouched (horn (II)
+holds), plus the honest replacement: uniqueness comes from **the form**,
+and D50 then showed the form is a **choice**.
+
+### B10.12 D50's own pre-registered expectation `[LOG #421 → #422]`
+
+**Claimed (pre-registered, with its argument, before running):**
+depth-stationarity forces the form.
+**Killed by:** the falsifier — completion dimensions **10, 28, 107**,
+growing.  Plus the diagnosis: the record-level demand is **aggregated**, so
+it constrains sums and never obtains the sketch's hypothesis, and *the
+aggregated reading is the correct one*.
+**Survived:** a **permanent** restriction on every citation of D49; the
+measured fact that **foliation-invariance adds nothing**; and the sharp
+successor question — *is there any record-level demand that forces the
+form?* — with the two strongest candidates and their conjunction now
+eliminated.
+
+### B10.13 Instrument and control failures, itemized
+
+- **TG5's null "cross-actor causation produces the sky"** `[D47 round 1,
+  MAJOR R1]` — the null's actor extraction returned the **event type** on
+  100% of 720 sampled events, and **no** disjoint-union-of-chains null
+  could ever have failed (max sky 1 by construction).  Rebuilt honestly,
+  the comparison **reversed**: null 7 directions / 362 decidable triples
+  vs transport's 4.  **Transport skies are narrower than chance.**
+- **SG10's capacity law** `[D47 round 1, MAJOR R2]` — box extent scaled
+  with `N`, confounding count with density; "decidable at `N ≈ 40`"
+  withdrawn as stated.
+- **D47's SG2 capacity gate** `[D53]` — necessary and not sufficient; 415
+  of 554 "decidable" pairs were structurally incapable, so a zero over
+  them is a **tautology**.  SC5 replaces it.
+- **"Width spreads with depth under the theory's own law"** `[D46d]` —
+  near-tautology, withdrawn by name; and "the theory's own law" itself
+  withdrawn as two different normalizations wearing one name.
+- **"All 7,163 co-receivable pairs commute — an abelian monoid"**
+  `[D46f]` — true, structural (the committed `View` builds every field
+  from a **down-closed** index set, so order-independence is
+  **definitional**), not discovered here; withdrawn as a delivered
+  finding.  A demonstrably wrong action map still leaves the gate at zero,
+  and ACT commutes on **all 170,820** pairs, not just the 7,163.  Also
+  withdrawn: "D44f's order-dependence lives in the menus, not the state" —
+  the gates do not license the inference (two different notions of order).
+- **"The failure is grain, not interaction"** `[D46e]` — reversed once the
+  channel family was closed under products of its own labels: **16**
+  discriminating pairs collapse at `g = 0` only (the interaction kills the
+  ray), **9** at neither.  Two further blockers in the same round: the
+  verdict was a **hard-coded string literal** (surviving three mutants
+  while its own census contradicted it), and **nothing anchored** the
+  interacting identification to the corpus first moment (deleting the
+  weight passed 19/19 at exit 0).
+- **D52's "no state ever recurs"** `[#425 → #432]` — backwards;
+  recurrence is **total** (idle padding), and only the NEW column informs.
+- **D48's CG6 non-surjectivity assertion** — asserted, **failed at exit
+  1**, withdrawn; coarse-graining is surjective.
+- **Three register-theoretic bridges** `[D44c-P]` — T1 falsified as
+  pre-registered (23,016 classes), L3 falsified (23,844), L1 falsified
+  (16,842 of 42,144).  Each reported at exit 0 as a **deliverable**, so
+  that nobody walks them again.  And a **triple coincidence explained
+  rather than shipped**: three independent predicates each returned
+  exactly 23,844 — an instrument smell — and it was gated and accounted
+  for (all 23,844 violating pairs are purely transitive, zero cover pairs,
+  all non-arb-headed).
+- **Receipt-level own defects, recorded not hidden:** D49's `frozenset`
+  repr determinism defect (7 spurious mismatches at
+  `PYTHONHASHSEED=7`, exit 1); D50's run 1 **exiting 0 having run no
+  gates**; D44c-P's run-1 unsound dedup key (caught by its own resample
+  gate at 2,398 mismatches in 11,664) and its FG8 exit-discipline gate
+  that failed precisely **when the falsification discipline was working**;
+  D55's silently-capped per-depth table; and the AST scanners that
+  **advertised more coverage than they enforced**, promoted to a
+  corpus-level obligation after recurring for three rounds.
+
+### B10.14 The pattern, stated as a statistic
+
+- **Almost every headline correction hit an interpretation sentence, not a
+  computation.**  In the two independent-model rounds (D54, D55), the
+  verdicts were 1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT **each**; in D54
+  *all three top findings hit the interpretation layer* and the
+  mathematical core survived everything; in D55 **everything
+  computational survived**, including a full independent rebuild of a
+  42-actor, 84-event record that came out **identical and forced**.
+- **Pre-registration is doing real work.**  D55's pin records that **five
+  of seven pre-registrations in that campaign were corrected**.  D46's
+  three-round sweep produced **five headline reversals** across six units.
+  D50's pre-registered expectation was refuted by its own falsifier.
+- **The blacklist is empirical.**  Every forbidden sentence in §0.3 is
+  forbidden because it was written, believed, and then refuted.
+
+---
+
+## B11. Status, open problems, method
+
+*Non-technical twin: Part A, chapter A11.*
+
+### B11.1 The two lines, scoped
+
+**Measure line — d42a, delivery-free, two actors.**
+`Zhat(h) = 2^(−|h|) f(class(sigma(h)))` with `λ = 2`,
+`f = (4,4,3,7,3,3)/3` is a completion in the sense of paper 30 §5.2:
+positive, per-cut normalized, class-constant, foliation-invariant
+directly, support-preserving, a law, a measure, and **root-free** (root and
+renewal both `1/16`; the whole 215-node matched subtree identical).
+**Horn (II) holds.**  Unconditional at every verified depth (exhaustive
+through depth 7); conditional on (H0)–(H2) at all depths with **(H1)
+undischarged**; **unique only within paper 30 §5.7's stationary FORM, and
+the form is a CHOICE** (D50, green-unreviewed); values **toy-relative**.
+**Transport scope OPEN**, and §B9 shows the tool cannot travel.
+
+**Geometry line — transport scope, measure-free.**  Sky size is an
+actor-width phenomenon and narrower than chance; SKY-A/C can never
+shatter and only SKY-B can, under SC5; the **Dilworth gate** is an
+unconditional theorem of the layer (shatter-`k` costs
+`≥ C(k, ⌊k/2⌋)` actors); a 20-actor / 42-event record shatters 4 at
+depths 4, 5, 6, and a 42-actor / 84-event record shatters 5 at depths
+5, 6, 7, **forced** at every step; the calibration ladder is exact
+(`B₄` fits `S²`; no five points ever shatter there; `B₅` fits `S³`);
+max-shatter is a **(record, reading)** invariant with SUP 5 on that
+record.  **The layer does not cap the ladder at the sphere's rung.**
+
+### B11.2 The convergence question
+
+> **Does anything in this framework prefer 3+1?**
+
+The admissibility layer does not (§B8.5).  Candidate homes, per D55
+round-1 MINOR 6:
+
+1. **the completed measure** — blocked at transport scope by §B9;
+2. **resource cost** — the ladder's actor price `3 / 6 / 10 / 20 / …`;
+   nothing of the kind exists in the corpus;
+3. **counting typicality** — unbuilt.
+
+**A conflict worth flagging:** D55's result note §4 still reads *"the only
+remaining candidate inside the corpus is the completed measure"*, while
+the same round's MINOR 6 widened it to the three above and the LOG entry
+records the widening.  The widened version is the post-round statement and
+is the one used here.
+
+### B11.3 The economics-of-dimension reading
+
+`[MY READING / SPECULATION — not a corpus claim, and must not be cited as
+one]`
+
+Every ingredient of the geometry line is a **supply** statement rather
+than a possibility statement.  One actor's worldline can only ever
+contribute a nested family of traces, so sky richness is bought with
+parallelism and never with history (§B7.3).  The price per rung is a
+concrete integer: `3, 6, 10, 20`.  The construction that works is
+literally a supply chain — dedicated single-use couriers minted because
+re-using a channel contaminates it via backflow (§B8.2).  And the
+constraint that binds is **not** an impossibility: the ladder is uncapped
+as far as it has been run.
+
+So the shape of a possible answer to "why 3+1?" would not be an
+impossibility at rung five.  It would be a **cost**: the rung at which the
+marginal price of another dimension stops being worth paying, under
+whatever counts as payment.  If that reading is right, candidate home 2 is
+under-explored relative to candidate home 1, notwithstanding that home 1
+is where the corpus has invested.
+
+**Nothing in the corpus supports this.**  There is no cost principle, no
+identified quantity being economized, and no derivation.  This is a
+description of the *shape* of a possible answer, not an answer.
+
+### B11.4 Ranked open problems
+
+1. **A bounded sector-exact abstraction at transport scope.**  Highest
+   leverage: it is the only route by which the measure could reach the
+   scope where the dimension results live.  Status: the delivery-lumped
+   candidate is verified exact on the depth-5 window and **fails to close
+   at 20,000**; the residual explosion is the view-product structure.
+   Alternative: a level-structured (QBD / R-matrix / Martin-boundary)
+   description with `|holdings|` as the level, connecting to the already
+   built D46b machinery.
+   **→ SUPERSEDED by D57 (#436): CLOSED at (actor, type) granularity on
+   two independent grounds.  The residue is now (i) strictly coarser
+   aggregations — type-only sectors, total-budget-only — untested, and
+   (ii) abstractions that give up exactness for the completion's
+   OBSERVABLE demands only.  See CHAPTER 12 §12.2.**
+2. **A full-strength `M^{3+1}` control** for the shatter meter.  Current:
+   1,351 skies, 33 SC5-capable, zero shatter-5, **stated as thin**.
+   **→ DONE (D55c, #435), and it refutes the discriminator reading: zero
+   shatter-4 of 1,578 capable pairs on genuine `M^{3+1}`.  The residue
+   becomes: does genuine `M^{2+1}`/`M^{3+1}` shatter 3 — where is the
+   sprinkling floor?  See CHAPTER 12 §12.1.**
+3. **(H1)** — the depth-free menu-factorization lemma.  Two routes closed
+   with counterexamples; any third must **not** assume view monotonicity.
+   Closing it makes the d42a settlement unconditional.
+4. **Is there a record-level demand that forces the stationary form?**
+   Two strongest candidates and their conjunction eliminated by
+   measurement.  Nobody has a third.
+5. **General `m` for the courier builder** — visibly patterned, unrun,
+   unclaimed beyond 5.  A receipt at `m = 6` (20 chains, 57 couriers,
+   ~66 actors) would strengthen it; a proof of admissibility for every
+   `m` would settle it.
+6. **Minimality at every `m`** — `C(k,⌊k/2⌋)` versus the builder's spend
+   (6 vs 20 at `m = 4`; 10 vs 42 at `m = 5`).  Both gaps architectural,
+   both decidable.
+7. **Upstream pricing residues**, all carried into the completion problem
+   rather than patched: the `h12` dead-component inflation (`23/24`, off
+   ladder); the general-depth `1 + k/4` ladder **false** under current
+   pricing; the D2H merge priced `1/16` vs `1/24`.
+8. **Reading-relativity**, twice: which **sky definition** is physically
+   privileged (D47 residue 2, partially answered negatively by D53 — two
+   of the three can never fire — but *why* SKY-B is the physical one is
+   unanswered); and which **channel reading** is (D46e).  Same class of
+   question.
+9. **The transport-scope dichotomy itself** — whether a root-free
+   completion exists there.  Analytically open, no current tool.
+10. **The quantum completion at the arbitration layer** (paper 30 §6.2's
+    three-horn pincer) and the fine-versus-coarse sealing question, which
+    is **empirical** and has an exact instrument pair waiting for it.
+11. **The laboratory bridge** — blocked on an empty coarse-graining slot;
+    the sole unblocking condition is *what is a laboratory system in
+    record terms?*, filed as an internal derivation question.
+
+### B11.5 What exists
+
+**Papers, all TERMINAL:**
+
+| paper | content |
+|---|---|
+| **30** — *The generated record and its completion* | §1 the grammar and admission principle; §4 the ladder and the placement problem; §5 the decided trilemma (5.2 the no-go, 5.3 gradient completions, 5.5 the flatness/telescoping theorem, 5.6 rootedness, 5.7 the one-way reduction); §6 where the quantum completion begins |
+| **31** — *Four decisions at the joints* | S1 collar-bracket rule-independence (`κ(1/2) = 13/2304`, `κ(1) = −1/72`, a sign flip); S2 the six-state renewal chain and residue 1 on the window; S3 the constructed arbitration operator at fixture scale; S4 transport generates dimension |
+| **32** — *The boundary of closure* | §2 residue 1 at every verified depth and its exact boundary; §3 dimension mechanized, ceiling-free and scoped, with the binding doctrine; §4 the quantum layer welded to the completion; §5 the regulator closed for all masses; §6 the residue ledger |
+
+Plus the standalone brief `v10/THE-COMPLETION-DICHOTOMY.md`, the entry
+point for the measure line, which this document's chapter 6 compresses and
+which carries its own settlement notice and forward corrections.
+
+**Receipts** live in `v10/code/`, outputs in `v10/data/`: exact rational
+arithmetic, standard library only, exit 0 required, determinism verified
+across hash seeds.  The ones this document leans on most:
+`d42b3_placement_exact.py` (the p/r/n admission layer and the completion
+decision), `d42b1_transport_exact.py` (delivery and merge; the *"no
+measure claim"* disclaimer), `d44a_closure_theorem_exact.py` (the closure
+theorem), `d46a_h1_lemma_exact.py`, `d47a_sky_instrument_exact.py` (the
+sky definitions and the constructed separator),
+`d47b_transport_skies_exact.py`, `d48_composite_line_exact.py`,
+`d49_dichotomy_settlement_exact.py`, `d50_form_law_or_choice_exact.py`,
+`d51_menu_visibility_exact.py`, `d53_sky_capacity_exact.py`,
+`d54_dilworth_gate_exact.py`, `d54b_shatter_construction_exact.py`,
+`d55_shatter5_exact.py`, `d55b_sphere_calibration_exact.py`,
+`d56_transport_sigma_probe.py`.
+
+**The ledger:** `v10/LOG.md`, append-only, numbered, **forward
+corrections only, never silently edited.**  Entries #404–#433 cover
+everything in chapters B5, B7, B8, B9 and the settlement line of B6.
+
+**Review records:** `v10/reviews/*.md`, frozen; a round is followed by
+repairs and a **delta appended to the round file**, and only then is a
+unit terminal.  (#420 exists because a ledger entry once claimed a delta
+that had not landed.)
+
+### B11.6 The method
+
+- **Pin first, strictly.**  The plan, the gates, the falsifier, and the
+  **pre-registered expectation with its argument**, committed before any
+  code exists.  Where that discipline slipped it was declared (D49's pin
+  was written *concurrently* with the receipt, and the pin's §0 now says
+  so rather than leaving it implied).
+- **Pre-register the boring outcome.**  D47's pin: *"pre-registering the
+  boring outcome is the cheapest defence against later talking oneself
+  into an exciting one."*  It was realized at the control, before any
+  transport data was examined.
+- **One-sidedness doctrines, declared in advance.**  D47's (shattering
+  rules out, never in) and D50's (a tangent dimension > 1 is rigorous in
+  the negative, a dimension of 1 is local evidence only).  Both determined
+  which side of the eventual measurement could carry a conclusion, and in
+  D50's case the measurement landed on the conclusive side.
+- **Instrument before data.**  D47a reads **no** transport data at all;
+  its successor imports it by AST extraction from the committed source so
+  a silently-changed extraction cannot pass.  This was the direct
+  methodological answer to the D46 sweep's five reversals.
+- **Capacity gated first.**  A zero over an empty or incapable stratum is
+  reported as a **vacuity or an undecidability**, never as a negative.
+  D53 exists because that discipline was applied with a *necessary but
+  insufficient* condition.
+- **Witness branches live and exercised.**  A gate whose failing branch
+  has never run is not a gate; the corpus binds successor receipts to
+  exercise theirs.
+- **Falsified pre-registrations are deliverables at exit 0.**  Only
+  anchor breakage and mutant misbehaviour exit 1.
+- **Hostile rounds, and now independent-model rounds** — a reviewer with
+  no prior context, instructed to recompute rather than trust, writing its
+  own code.  Both such rounds so far found a BLOCKER; both BLOCKERs were
+  in interpretation.
+- **Green-unreviewed is not citable**, and terminal papers are **not
+  edited on green-unreviewed evidence** — amendments queue behind a round
+  (paper 32 §6 item 7's amendment did exactly that).
+- **Forward corrections only**, with superseded text preserved verbatim
+  beside its replacement.
+
+That last rule is why this document could be written at all.  Chapter B10
+is not reconstructed from memory; it is transcribed from a record designed
+to make forgetting impossible.
+
+---
+---
+
+# CHAPTER 12 — LATE ARRIVALS (#434, #435, #436)
+
+*This chapter is written in both registers at once, because it is short
+and because both parts of the document depend on it.  Each section opens
+with the plain statement and then gives the objects.*
+
+> **STATUS, BINDING.**  D55c (#435) and D57 (#436) are **GREEN-UNREVIEWED**
+> — pinned, receipted, result-noted, but **no hostile round yet**.  By the
+> corpus's own first discipline (§0.2) they are **not citable**.  They are
+> recorded here because they **correct** claims made earlier in this
+> document, and because a brief that carried a superseded claim while its
+> correction sat in the ledger would be committing exactly the error the
+> D49 round convicted (#419, MAJOR M4).  Both pins were committed before
+> their receipts (#434).
+
+---
+
+## 12.1 The dimension meter measures the grammar, not geometry `[D55c, #435]`
+
+### Plainly
+
+The shatter ladder was supposed to be a dimension meter: read off how
+many directions a record's sky can fully resolve, and read back a
+dimension — three for a circle, four for a sphere, five for beyond.
+
+The control that would have made that a discriminator has now been run at
+full strength, and it says something nobody predicted: **real 3+1
+spacetime records do not shatter four either.**  Neither do real 2+1
+ones.  **No sprinkled Minkowski record of any tested dimension shatters
+at all**, while the engineered record constructions of chapter 8 shatter
+four and five.
+
+So max-shatter does **not** separate 2+1 from 3+1 on discrete records.
+It separates **engineered coordination** from **sprinkled geometry**.
+That is a real and interesting separation — but it is not a dimension
+reading, and everything in this document that treated it as one is
+corrected here.
+
+### The objects
+
+Receipt `v10/code/d55c_m31_control_exact.py`, **4 PASS / 0 FAIL**, exit 0.
+`mink4` anchored to the committed `mink` on `z = 0` (identical orders — so
+the four-dimensional generator is not a new instrument but an extension of
+the audited one).  Census at full strength, four fixed-box records to
+`N = 200`:
+
+| quantity | value |
+|---|---|
+| SC5-capable(4) pairs on genuine `M^{3+1}` | **1,578** (against the D55 round's thin **33**) |
+| SC5-capable(5) pairs | **740** |
+| **C1: shatter-5 found** | **ZERO** — the pre-registered halt condition holds |
+| **C3: shatter-4 found** | **ZERO of 1,578 capable pairs** — *against the pin's weak positive lean* |
+
+**Pre-registration, and what it bought.**  #434 pinned shatter-5 as
+expected **ZERO** with any hit declared a **halt condition** (the
+celestial sphere of 3+1 is `S²`, so a shattered 5-set in genuine 3+1
+would have indicted the instrument, not the geometry), and pinned
+shatter-4 as **OPEN with a weak positive lean** — the reasoning being
+that if genuine 3+1 skies shatter 4 while genuine 2+1 never do, then
+shatter-4 would earn **empirical discriminator** status with controls on
+both sides.  **The weak lean was wrong, and because it was written down
+first, its being wrong is a result rather than a silence.**
+
+**The reframe, stated as the ledger states it:**
+
+> Combined with D47a/D53 (zero shatterings on genuine `M^{2+1}`), **no
+> sprinkled Minkowski record of ANY tested dimension shatters at all,
+> while the engineered transport records shatter 4 and 5.**  Max-shatter
+> therefore does **not** separate 2+1 from 3+1 on discrete records; it
+> separates **ENGINEERED COORDINATION from SPRINKLED GEOMETRY.**
+
+**What stands, and what falls.**
+
+*Stands, untouched:*
+- The **calibration ladder is exact and intact** — `B₄` is realized by 16
+  rational caps on `S²`; no five points ever shatter on `S²` (certificated
+  twice, Radon); `B₅` is realized by 32 rational caps on `S³` (§B7.5's
+  A2).  **This is a statement about CONTINUUM trace systems**, and it is
+  correct as such.
+- The **Dilworth gate** (§B7.3) — an unconditional theorem of the layer,
+  untouched, since it says nothing about sprinklings.
+- **D54/D55's capacity results:** the grammar can build `B₄` and `B₅`
+  skies; the admissibility layer **does not cap the shatter ladder at the
+  sphere's rung**.  Both records remain genuine, independently rebuilt,
+  and in D55's case **forced**.
+- The **trace-counting** route to unbounded actors (§B7.4), which is a
+  statement about continuum skies and per-actor chains.
+
+*Falls:*
+- **Any hope of reading a record's DIMENSION off its max-shatter.**
+  Discrete sprinklings sit at meter reading `≈ 0` **in every dimension**.
+- Therefore also the sentence, used as a bridge in chapter 8's framing,
+  that the empirical separation of the engineered records from real
+  spacetime is *dimensional*.  It is a separation between two **kinds of
+  record**, not between two **dimensions**.
+
+**The structural hint, labelled by the corpus as `[MY READING]` and
+repeated here as such:** sprinklings have **no actor or wire structure**,
+so the Dilworth mechanism — chains of traces from worldlines — does not
+even *apply* to them.  Shattering may therefore be exactly the signature
+of **worldline-coordinated knowledge**, which a sprinkling lacks by
+construction.  *The meter measures the grammar, not geometry.*
+
+`[MY READING — this document's own]`  If that hint is right, then the
+geometry line's real discovery is not about dimension at all.  It is that
+**coordination leaves a combinatorial fingerprint that random causal
+structure of the same size does not have** — which sits well beside
+§B5.6's independently measured "transport skies are narrower than
+chance", and which is a *sharper* thing to have found than a dimension
+estimator would have been.  But this is an interpretation of a
+green-unreviewed unit and must not be cited.
+
+**Residues named by the unit:** does genuine `M^{2+1}` or `M^{3+1}`
+shatter **3** — the rung below, which would locate the *sprinkling
+floor*?  And the mechanism question above.
+
+---
+
+## 12.2 The sector-exact escape is closed at this granularity `[D57, #436]`
+
+### Plainly
+
+Chapter 9 ended on a crack: the unbounded-menu theorem kills per-option
+descriptions of the delivery-scope theory, but the *sector totals* looked
+constant, and an independent result had already established that the
+physically meaningful objects are the aggregated ones.  So: *does a
+bounded sector-level description exist?*
+
+**It was pinned, run, and the answer is no** — at the granularity that was
+pinned, and on two independent grounds.  One of them refutes the very fact
+the crack rested on: **the quarter is not a law of sectors.**  It is a
+fact about the *delivery* sector only.  The arbitration sector divides its
+quarter by the number of conflict components, and that number grows with
+depth, so sector totals take unboundedly many values too.
+
+This is a **strictly stronger negative** than the one chapter 9 reported:
+even aggregated bookkeeping at this granularity fails.
+
+### The objects
+
+Receipt `v10/code/d57_sector_exact_refinement.py`, **3 PASS / 0 FAIL**,
+exit 0, caps 3/4/5/6 **exhaustive** (**521 / 3,969 / 30,729 / 243,769**
+histories).
+
+**The pin (#434).**  Question: does the **coarsest sector-lumpable
+partition** — the one induced by the aggregated transfer
+`T_s(h, c) = Σ q over sector s landing in class c` — stay finite at
+transport scope?  Pre-registered: **sector quantization expected TRUE**
+(every sector total `0` or exactly `1/4`) as the **finite-alphabet
+prerequisite**, gated **first**; the main question **LEAN BLOW-UP,
+WEAKLY**.  Decider: fixpoint class counts per depth compared **across
+caps** 3/4/5(/6).  Stated in advance: *a blow-up of the coarsest partition
+would be strictly stronger than B1's negative; a closure would reopen
+Perron at sector granularity.*
+
+**TWO NEGATIVES, EACH BY REFUTING THE AUTHOR'S OWN PRE-REGISTERED LAW.**
+
+**(1) Sector quantization, twice refuted.**  `{0, 1/4}` died in run 1 —
+**arbitration sectors reach `1/2`** via subset choices, which is the
+`1 + k/4` ladder appearing at sector level.  The repaired `k/4` law then
+died at cap 6 — **`1/8` appears**, because the arbitration sector prices
+`1/4` **divided by the component count**, and components grow with depth.
+Totals live in `{k/(4m)}`:
+
+> **THE SECTOR ALPHABET IS NOT FINITE.**  The finite-alphabet prerequisite
+> fails **independently of the refinement question**.
+
+And explicitly: **the verified delivery-sector-`1/4` fact was
+sector-specific, not a law** — so §A9.4 / §B9.4's premise, though
+correctly computed, was over-generalized in exactly the way §0.2's second
+discipline warns about.
+
+**(2) The coarsest sector-lumpable partition does not stabilize.**  Read
+as **lookahead convergence** — the first run's "any growth is blow-up"
+reading was too crude and was corrected in-unit.  Per-depth fixpoint
+counts across caps 3/4/5/6:
+
+| depth | cap 3 | cap 4 | cap 5 | cap 6 |
+|---|---|---|---|---|
+| 3 | 7 | 16 | 16 | **17** |
+| 4 | — | 9 | 23 | **27** |
+| 5 | — | — | 11 | **33** |
+
+**Even depth 3 crept at cap 6**, and nothing comparable stabilized.
+`[MEASURED]` — **blow-up evidence at this window**, not a theorem.
+
+**VERDICT.**
+
+> **The sector-exact escape, AS PINNED (sector = `(actor, type)`), is
+> CLOSED — a strictly stronger negative than B1's: even AGGREGATED
+> bookkeeping at this granularity fails, on two independent grounds
+> (alphabet + refinement).**
+
+**What the crack narrows to** (both untested, and both now the live
+routes):
+
+1. **Strictly coarser aggregations** — type-only sectors; total-budget
+   only.
+2. **Abstractions that give up exactness** and target only the
+   completion's **observable** demands — with the explicit warning that
+   *the D50 lesson cuts both ways*: the aggregated reading is the correct
+   one for stating demands, and it is also what makes an exact aggregated
+   bookkeeping hard to build.
+
+**Residues named by the unit:** depth 7; and an actor-swap quotient
+(counts `≤ 2×`, so it cannot rescue the trend by itself).
+
+**Note on the asymmetry of evidence, which the unit respects.**  Ground
+(1) is an **exact structural** statement about the pricing rule — the
+arbitration sector genuinely divides by a depth-unbounded count — and
+therefore does not depend on the window.  Ground (2) is `[MEASURED]` at
+caps 3–6, and a cap-6 creep at depth 3 is evidence, not proof.  The
+verdict is carried by (1) with (2) corroborating, which is the same
+division of labour §B9.1 used (the ladder decides; the curve corroborates).
+
+---
+
+## 12.3 The standing redirect: Einsteinian manifolds, not sprinkling likeness
+
+Recorded as **user direction** in #436, and it changes what the geometry
+line is *for*:
+
+> **The destination is FULL EINSTEINIAN MANIFOLDS enriched to create
+> quantum particles — not Minkowski-sprinkling likeness.**
+
+D55c's zero-shatter reframe (§12.1) **supports** the redirect rather than
+merely coexisting with it: the grammar's records are **worldline-woven**,
+not sprinkled, and the one measured place where they differ sharply from
+sprinklings is exactly the place where the sprinkling comparison had been
+installed as the target.  Chasing likeness to a sprinkled Minkowski record
+was, on this evidence, chasing the wrong resemblance.
+
+Also recorded at #436, and flagged as unpinned: a
+**boundary-freedom ↔ vacuum-ambiguity** bridge, carried as `[MY READING]`
+in the ledger.  It is not a corpus claim, no unit has tested it, and it
+is mentioned here only so that a reader meeting it later knows its status.
+`[MY READING — this document's own]` The suggestion is at least
+well-typed: chapter 6's 313-dimensional boundary freedom is a choice of
+what the theory's far end looks like, and the ambiguity of the vacuum in
+curved-spacetime field theory is a choice of the same *kind*.  Whether
+that is more than a shared shape is entirely open, and the honest answer
+today is that nobody has posed it as a question a receipt could gate.
+
+---
+
+## 12.4 What chapters 1–11 of this document should now be read as saying
+
+A compact diff, for a reader who has already read the rest:
+
+| earlier claim | status after #435/#436 |
+|---|---|
+| The shatter ladder is a **dimension meter** for records (A7.2, B7.5) | **Corrected.**  It is an exact calibration for **continuum** trace systems and a measure of **engineered coordination** for records.  Sprinklings read `≈ 0` in every dimension. |
+| The 3+1 empirical control is **thin** but clean (A8.5, B8.5) | **Superseded.**  Full strength: 1,578 capable pairs, zero shatter-4, zero shatter-5.  The **discriminator reading fails.** |
+| The engineered records are **empirically separated from genuine 2+1** (B8.5) | **Stands** — and is now known to be a separation from *sprinklings of every tested dimension*, not from 2+1 specifically. |
+| The **delivery-sector total is exactly `1/4`** (A9.4, B9.4) | **Stands as computed, for the delivery sector.**  It is **not** a law of sectors — arbitration sectors reach `1/2` and `1/8` appears at cap 6. |
+| A bounded **sector-exact** abstraction is the live crack (A9.4, B9.4, A11.4/B11.4 item 1) | **Closed at `(actor, type)` granularity.**  The crack narrows to strictly coarser aggregations and to inexact/observable-only abstractions. |
+| The convergence question is blocked on the measure reaching transport scope (A11.2, B11.2) | **Still blocked, and more tightly.**  One of the two escape routes named in chapter 9 is now closed. |
+| **Everything else** | Unaffected.  In particular: the completion dichotomy and its settlement, the form-is-a-choice result, (H1), the Dilworth gate, both construction records, the calibration certificates, and every entry in the graveyard. |
+
+**And one methodological observation, since chapter 10 is about exactly
+this.**  Both late arrivals are **negatives produced by refuting the
+author's own pre-registered expectations** — D55c's weak positive lean on
+shatter-4, and D57's expected sector quantization, refuted **twice** in
+the same unit.  Neither could have been reported as a result if the
+expectation had not been written down first.  The count in §B10.14 should
+be read as rising, not falling: the programme continues to spend most of
+its output correcting itself, and continues to be worth more for it.
+
+---
+---
+
+# GLOSSARY
+
+One line each.  Chapter references are to Part B where the object is
+defined precisely, and to Part A where the intuition lives.
+
+| term | definition | where |
+|---|---|---|
+| **actor** | the primitive holder of history: sequential, with its own version chain, addressable, and the source of width; physically **uninterpreted** by design | B1.1, A1.2 |
+| **admissibility** | the past-local relation deciding which events may occur next; complete, executable, exhaustively enumerable | B2.3, A2.2 |
+| **A7** | the governing principle: *the opportunity set is the past-local admission relation and nothing else* | B2.4 |
+| **A7' (the ladder)** | per-initiator weight sums equal `1 + k/4` at the record points of the enumerated families; **false at general depth** under current pricing | B2.7, A2.3 |
+| **arbitration** (`'r'`) | the event that resolves a conflict component and **is** acceptance — it creates the successor version | B2.2, A2.1 |
+| **arc / cap** | shadows of a circle sky / a sphere sky; arcs shatter 3 and never 4, caps on `S²` shatter 4 and never 5 | B5.2, B7.5, A5.3 |
+| **backflow** | a delivery joins **both** wires, so the sender's line absorbs the receiver's accumulated past | B3.4, A3.4 |
+| **bisimulation** | the equivalence "these two states cannot be told apart by any sequence of observations"; *probabilistic* bisimulation also requires matching weights.  The **quotient** is the state space after collapsing bisimilar states | B6.9 |
+| **candidates_for** | the single function that returns exactly the admissible next events with exact weights; the sole authority on admissibility, never re-implemented | B2.4, A2.2 |
+| **canonical class** | a history identified up to the gauge (order of incomparable events); 427 at depth 4 | B3.1, B4.1 |
+| **carrier / wire** | the grammar's primitives are wires (participants and version objects); an event's carriers are the wires it touches, and the event poset is the carrier-wise wire closure | B2.1 |
+| **causal order vs gauge** | causal order is **physical**; incomparable order is **GAUGE** | B3.1, A3.1 |
+| **causally blind join layer** | a layer where knowledge is transported past a causally blind seal (e.g. a relay delivering a fork branch to a third party); `k` in `1 + k/4` counts these, and this is what the naive normalizer double-counts | B2.7, B6.3, A2.3 |
+| **click** | one discrete recorded event; "the click law" is the whole event grammar plus its weights | B2, A2.1 |
+| **completion** | strictly positive cut data `Z` with transfer `q'(e|h) = q(e|h)·Z(h+e)/Z(h)`; what turns the weight system into a probability law | B6.1, A6.1 |
+| **courier** | a freshly minted single-use actor that delivers into an empty receiver, so nothing folds back — the device that makes the shatter constructions work | B8.2, A8.3 |
+| **cut** | a slice through a record; a candidate "now" | B3.1, A3.1 |
+| **cut complex** | the graph of cuts with single admissible steps as edges; 1,191 histories / 427 classes / 202 diamonds at depth 4 | B4.1, A4.1 |
+| **delivery** (`'d'`) | transmission of a version from sender to receiver; carriers `{s,r}`; a **join of knowledge**; re-delivery admissible and physical | B2.2, A2.1 |
+| **diamond** | the smallest loop in the cut complex — two independent steps in either order.  **Three senses in this corpus**: (1) cut-complex cells (the 202), (2) paper 3's amalgamation figure, (3) paper 29's action-level flat squares.  **Not** Alexandrov intervals | B4.2, B4.4, A4.5 |
+| **dimension meter** | max-shatter read as a dimension signature: 3 = circle-compatible, 4 = sphere, 5 = `S³`, `k` = `S^(k−1)`; a **(record, reading) pair** property.  **CORRECTED at §12.1: exact for CONTINUUM trace systems, but discrete sprinklings read `≈ 0` in every dimension, so it measures engineered coordination and not a record's dimension** | B7.5, B8.5, **12.1**, A7.2 |
+| **Dilworth gate** | `[THEOREM, unconditional at transport scope]` one actor's worldline contributes a **chain** of traces, so a `k`-actor shadow family is a union of ≤ `k` chains, so shatter-`k` costs `≥ C(k, ⌊k/2⌋)` actors | B7.3, A7.3 |
+| **direction** | a member of a sky's direction set at an event | B5.1, A5.2 |
+| **foliation** | a sequence of cuts, i.e. **one linear extension** of the record's causal order | B3.1, A3.1 |
+| **foliation-invariance** | demand (b): the completed conditional is a function of the record alone (class-constant); equivalently chain products agree across every linear extension | B6.2, A6.2 |
+| **form (the stationary form)** | paper 30 §5.7's postulated shape `Z(h) = f(state(h))·λ^(−depth(h))`; what delivers uniqueness — **and a CHOICE, not a law** | B6.11, B6.12, A6.8 |
+| **frontier sum `N(h)`** | the total raw weight of `h`'s menu; cut-attached (constant on all 427 classes) but **not a discrete gradient** | B6.1, B6.3 |
+| **gauge** | see *causal order vs gauge* | B3.1 |
+| **genesis** (`'g'`) | the initial version held by all participants — *"the declared supplied boundary"* | B2.2, A2.1 |
+| **gradient / Doob `h`-transform completion** | the backward recursion `Z(h) = Σ q(e|h)Z(h+e)` from a positive terminal boundary; exists at every finite depth, at the cost of within-cut ratio deformation | B6.5, A6.5 |
+| **(H0), (H1), (H2)** | the three depth-indexed hypotheses of D44a's conditional theorem: view invariants; **menu factorization from `sigma`**; transition determinism.  None implies another; **(H1) is undischarged** | B6.9, B6.13, A6.9 |
+| **harmonic** | `Z` satisfying the backward recursion exactly; residue 1 asks for a **strictly positive** harmonic function on the infinite-volume state space | B6.9, A6.7 |
+| **`h12`** | the one constructed configuration off the `1 + k/4` ladder (per-actor sum `23/24`), caused by a dead component inflating a live denominator | B2.7, A2.3 |
+| **holdings** | what an actor holds; propagate only through participation or delivery.  At transport scope the delivery enumerator reads the **whole** set, superseded members included — the fact that decides §B9 | B2.2, B9.1 |
+| **join-view lattice** | `V_S = View(h, pred, ⋃_{a∈S} O_a)` for non-empty actor subsets — the object a transport-scope menu is actually a function of | B3.3, A3.3 |
+| **kernel (K1 / K2)** | the two posited arbitration winner laws: uniform order-click plus greedy, versus uniform over maximal independent sets; they disagree observably (`2/3` vs `1/2`) | B2.6, A2.5 |
+| **ladder excess** | `N − 1`; sits at `k/4`, one quarter per causally blind join layer | B2.7, B6.1 |
+| **menu** | the set of admissible next events at a history with their exact rational weights — exactly what `candidates_for` returns | B2.4, A2.2 |
+| **menu-exact** | an abstraction determining menus as renamed event multisets **with exact weights**; §B9's no-go is about exactly this class | B9.1, B9.5 |
+| **merge** (`'m'`) | local reconciliation by the holder of both versions of a pair; supersession is pair-scoped so reconciliation recurses | B2.2, A2.1 |
+| **mint chain** | an actor's versions must descend from that actor's own latest version; the obstruction to actor aggregation | B1.1, B1.2, A1.4 |
+| **noop cone** | the set of events an actor could see purely from its own causal past; the **menu view strictly exceeds it** | B3.2, A3.2 |
+| **own view / full view** | the sub-record one actor has witnessed / everything in the history.  **Actors act on their own views, which LAG the full view** | B3.2, A3.2 |
+| **Perron tilt** | the exact characterization of what the settled completion costs: `q'(e1)/q'(e2) = [q(e1)/q(e2)]·[f(class(h+e1))/f(class(h+e2))]` — each option re-weighted by the record-growth capacity of the state it leads to, and by nothing else | B6.10, A6.9 |
+| **proposal** (`'p'`) | a local record event on the proposer's wire referencing a held copy of a base; carrier `{a}` alone, which is what makes conflict grammatically possible | B2.2, A2.1 |
+| **record / record line** | the whole generated structure / one actor's succession of versions.  *Actor is to line as particle is to worldline* | B1.1, A1.1 |
+| **renewal** | a record point structurally **isomorphic to the root** — event-level bijection, type- and payload-matched with `v0 ↔ v1`, **equal `q` at every matched event**.  "root = renewal" means the root sits in this class | B6.8, A6.7 |
+| **residue 1** | *does a strictly positive harmonic function exist on the infinite-volume state space?* — answered YES at d42a scope, conditional on (H0)–(H2) | B6.9, B6.10, A6.7 |
+| **rootedness** | a completion distinguishing the root from the renewal point, i.e. distinguishing two record points the law identifies; what truncated completions do and `Zhat` does not | B6.8, A6.7 |
+| **SC5** | the corrected sky capacity condition: `≥ 4` directions **AND** `≥ 16` distinct traces **AND the empty trace present** | B5.4, A5.5 |
+| **sector** | one of the four weight budgets (propose / arbitrate-and-merge / deliver / idle), each `1/4` when open, idle absorbing the rest.  The **delivery** sector total survives §B9's no-go at `1/4`; **CORRECTED at §12.2 — that is NOT a law of sectors: arbitration sectors reach `1/2` and `1/8`, totals live in `{k/(4m)}`, so the sector alphabet is not finite either** | B2.6, B9.4, **12.2**, A9.4 |
+| **shadow / trace** | the set of directions at or below a given future (or past) event — the objects all the sky geometry is done on | B5.1, A5.2 |
+| **shatter** | realizing **all** `2^k` subsets of a `k`-set of directions as traces; requires the **empty** trace | B5.3, B5.4, A5.3 |
+| **`sigma`** | the bounded local-state abstraction of the **full view** modulo base renaming: holdings pattern, live-proposal structure with conflict components, superseded marks restricted to referenced bases.  36 values at d42a; **unbounded, menu-exactly, at transport scope** | B6.9, B9.2 |
+| **sky** | the direction set at an event, under one of three committed definitions: **SKY-A** covers, **SKY-B** an antichain at a committed height, **SKY-C** the dual past sky.  SKY-A and SKY-C **can never shatter** | B5.1, B5.4, A5.2 |
+| **supersession** | a version is superseded when a later version on the same line replaces it; superseded structure may still be recorded but may no longer be actionable | B2.3, B9.1 |
+| **swept corner** | the sub-family of proposal branches where the enumeration is complete and every extension factor is exactly `1/8`, making ratio locality a theorem there | B6.5 |
+| **`tau`** | `sigma`'s construction applied to an actor's **own view**; **refuted** as an own-view object (D46a) | B6.13, A10.2 |
+| **transport scope (d42b1)** | the grammar with delivery and merge; where the dimension results live and where the measure question is **open** | B2.2, B6.14, B9 |
+| **VC dimension** | the largest set a family of sets can shatter; caps on `S²` have VC dimension **4**, which is why the sphere never shatters 5 | B7.4, A7.2 |
+| **version** | the content object a line writes; created only by arbitration or merge | B2.2, A1.1 |
+| **view** | see *own view / full view*; a view is a **sub-record**, nothing psychological | B3.2 |
+| **`Z`** | the completion's positive cut data; `Zhat = 2^(−|h|) f(class(sigma(h)))` is the settled one at d42a scope | B6.1, B6.10 |
+| **`Zhat`** | the settled root-free completion: `λ = 2`, `f = (4,4,3,7,3,3)/3`, unique up to scale **within the form** | B6.10, A6.7 |
+| **zero class** | the arbitration-killing counterterm that restores normalization and is **declared excluded**, narrowing the no-go to support-preserving completions | B6.4, A6.4 |
+
+---
+
+# GAPS IN THIS DOCUMENT
+
+What had to be compressed, and where the full account lives.  This list is
+part of the document, not an apology for it.
+
+1. **Papers 1–29 are essentially absent.**  The v10 line has 32 papers;
+   this document covers the recent campaign (roughly papers 30–32 and
+   ledger entries #404–#433) plus the objects those depend on.  The
+   sealed-holonomy line, the SCIR rulebook line, the predictive-record-DAG
+   boundary, the reception theorem, the action-cocycle work, and the whole
+   v1–v9 prehistory appear only where a later result cites them.  Paper 57
+   (v6) appears only as the source of the un-fixable-`G` no-go.
+
+2. **Paper 31's four decisions are summarized in one table row each.**
+   S1 (collar-bracket rule-independence, `κ(1/2) = 13/2304`,
+   `κ(1) = −1/72`, with the sign flip closing a tempting explanation),
+   S3 (the constructed arbitration operator at fixture scale, `V_single` /
+   `V_pair`, Born = K1 at both cuts), and paper 32 §5 (the regulator closed
+   for all masses) each deserve a chapter and get a line.  They are
+   orthogonal to the two lines this document traces.
+
+3. **The quantum layer is compressed.**  Paper 32 §4 (the eleven-type
+   record census, foliation as one record datum, the forced weights welded
+   to the completion) is mentioned in B6.14's scope statement and not
+   developed.  The quantum lift's three-horn pincer is stated but its
+   exhibits are not walked through.
+
+4. **D46's six ladder units get one paragraph each at most.**  D46b
+   (Martin at transport, three reversals) appears in B9.6; D46c (Minkowski
+   certificates) appears only via `W3_CERT` in B5.3; D46d appears in B7.2;
+   D46e in B2.8(v); D46f in B10.13; D46g (embedded-head reconciliation)
+   only as the `1/16` vs `1/24` wart.  The three-round sweep that produced
+   five headline reversals is characterized statistically rather than
+   narrated.
+
+5. **The receipt-level detail is sampled, not enumerated.**  Gate names
+   are given where they carry a number a reader might want to check
+   (`SG3b`, `TG2(c)`, `CG8`, `CG9`, `MV2`, `SF4`, `K11`, `G8`, `F3`,
+   `H1`–`H6`).  Many gates in each receipt are not mentioned.
+
+6. **Second-grammar (breadth) results are stated as a discipline, not
+   developed.**  D42b7's ternary-payload grammar is cited for the
+   two-of-two breadth rule and the toy-relativity of `λ = 2`; its own
+   content (no state chain; component-shape-dependent kernel
+   discrimination; the dimension pilot's honest null) is not covered.
+
+7. **Two numbers I could not fully reconcile, flagged for the author.**
+   (a) The D55 round's *"referee recount one rung down: 17/453 more
+   genuine 2+1 skies certified non-arc"* — I could not determine from the
+   ledger entry whether 17/453 is a fresh count on a different stratum or
+   an increment to the 218/397 recount; I quoted it as a further recount
+   and said so (B5.3).  (b) D55's result-note §4 says the completed measure
+   is *"the only remaining candidate"* while the same round's MINOR 6
+   widened the candidates to three; I used the widened version and flagged
+   the conflict (B11.2).
+
+8. **The `1,191` ambiguity is flagged but not chased through every
+   citation.**  D50's own defect 3 established that the figure is
+   cumulative (976 at the layer).  I note it once (B2.5) and do not audit
+   whether every prior use of it in the corpus meant the cumulative
+   reading.
+
+9. **Part A's analogies are declared but not systematically stress-tested.**
+   The scribes-and-notebooks picture (A1.1) and the supply-chain picture
+   (A11.3) each carry one "where this breaks" note.  A more thorough
+   treatment would break each analogy at every chapter where it is reused.
+
+10. **No new computation was performed for this document.**  Every number
+    was read from a committed source.  Where a source is
+    green-unreviewed (**D50**, **D55c**, **D57**) or advisory (**D56**)
+    the text says so at the point of use, and those four are the only
+    non-terminal sources this document leans on.  Two of them (D55c, D57)
+    landed *during* writing and are confined to chapter 12 plus
+    forward-correction blocks; neither is citable until it has had a
+    hostile round.
+
+11. **The v1–v9 SHARD prehistory and the manifolds→QFT destination are
+    absent.**  Both are named in #436 as expansions this document should
+    receive.  Chapter 12 §12.3 records the redirect and nothing more: the
+    Einsteinian-manifold destination has no chapter here, and neither does
+    the earlier corpus arc (v6's gravity no-go appears only as the source
+    of the un-fixable-`G` result in §B10.7).
+
+---
+
+*End of document.  `v10/THE-THEORY-SO-FAR.md`, compiled 2026-07-26:
+chapters 1–11 against the corpus at ledger entry **#433**, chapter 12
+against **#436**.  Not committed to git by its writer.*

@@ -103,7 +103,10 @@ admissible records can carry skies of arbitrary-looking sphere rank
 though m ≥ 6 is unrun and unclaimed).  That converts the 3+1
 question from "can the framework reach 3+1?" (YES, and beyond) to
 **"what, if anything, prefers 3+1?"** — and the only remaining
-candidate inside the corpus is the completed measure.  B1 (the
+candidate homes inside the corpus are the completed measure,
+resource cost, and counting typicality (round-1 MINOR 6; this
+sentence originally said "the only candidate is the measure" and was
+caught by the book's cross-check).  B1 (the
 transport-σ closure probe) is therefore no longer one open question
 among several; it is THE gating question for whether "the measure
 selects dimension" can even be posed.

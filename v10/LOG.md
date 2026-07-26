@@ -10022,3 +10022,29 @@ sprinkled). The boundary-freedom <-> vacuum-ambiguity bridge is
 recorded as [MY READING] and unpinned. The book (THE-THEORY-SO-FAR)
 to be EXPANDED with the v1-v9 SHARD arc and the manifolds->QFT
 destination when the writer's first pass lands.
+
+## 2026-07-26 — THE-THEORY-SO-FAR.md FIRST PASS LANDED (LEDGER #437)
+The two-register book (Opus 5 writer, my 11-chapter map): 5,287
+lines — front matter with the provenance labels, the two disciplines,
+a FORBIDDEN-SENTENCES blacklist, and the story in ten sentences;
+Part A (11 chapters, no formulas, each with a what-is-NOT-claimed
+box); Part B (11 mirrored technical chapters); CH 12 "late arrivals"
+absorbing #434-#436 as forward-corrections rather than silent edits
+(the corpus moved under the writer mid-draft: D55c's zero-shatter
+reframe and D57's closure of the sector crack both CORRECT the
+chapters drafted hours earlier, and the book says so); glossary
+(60+ terms, diamond's three senses); an 11-item gaps list.
+MY VERIFICATION: blacklist scan clean (all hits are the blacklist
+itself, graveyard quotations, or doctrine); the writer's six flagged
+uncertainties adjudicated — (1) REAL: the D55 result note §4 still
+said "the only candidate is the measure" against its own round's
+widening; FIXED now, credited to the book's cross-check; (2) the
+17/453 count is a FRESH referee count on its own stratum, not an
+increment of 218/397 — the book's cautious phrasing stands; (3)-(5)
+noted, no action; (6) the intended reading is confirmed: D57 ground
+(1) (structural, exact) carries the verdict, ground (2) corroborates.
+KNOWN WART: a partial 2,915-line state of the book was swept into
+commit c3f9535 by my over-broad git add mid-write; the full state
+lands now. NEXT: the EXPANSION pass to the same writer — the v1-v9
+SHARD arc and the destination rewritten to the user's redirect
+(Einsteinian manifolds enriched for particle creation).
