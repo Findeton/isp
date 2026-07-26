@@ -9934,3 +9934,25 @@ calibration ladder is exact (B4 fits S^2; no five points ever shatter
 there; B5 fits S^3); max-shatter is a (record, reading) invariant with
 SUP 5 on this record; the 3+1 empirical control is the named gap.
 NEXT: THE REASSESSMENT (user direction: A1, A2, B1, then reassess).
+
+## 2026-07-26 — D57 + D55c PINNED (LEDGER #434)
+Two pins committed before receipts. **D57 (the sector-exact
+question):** does the COARSEST sector-lumpable partition (aggregated
+transfer T_s(h,c) = sum of q over sector s landing in class c) stay
+finite at transport scope? Pre-registered: SECTOR QUANTIZATION
+expected TRUE (every sector total 0 or exactly 1/4 — gated first, the
+finite-alphabet prerequisite); main question LEAN BLOW-UP, WEAKLY
+(the probe's lumped attempt failed on per-view knowledge lag; but the
+coarsest object has never been computed). Decider: fixpoint class
+counts per depth compared ACROSS caps 3/4/5(/6). A blow-up of the
+COARSEST partition would be strictly stronger than B1's negative; a
+closure reopens Perron at sector granularity. **D55c (the M^{3+1}
+control at full strength):** shatter-5 expected ZERO (celestial
+sphere is S^2; any hit = halt condition); shatter-4 pre-registered
+OPEN, lean weakly positive — if genuine 3+1 skies shatter 4 while
+genuine 2+1 never do, shatter-4 earns EMPIRICAL DISCRIMINATOR status
+with controls on both sides. mink4 anchored to committed mink on
+z = 0; fixed-box density control; capable-count target no longer
+thin. IN PARALLEL: THE-THEORY-SO-FAR.md (the two-register book) being
+written by an Opus 5 worker from my 11-chapter map; numbers to be
+verified on landing.
