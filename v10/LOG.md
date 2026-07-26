@@ -10603,3 +10603,36 @@ the frontier curve is the deliverable), F3 THE WIDE CRYSTAL EXISTS
 (band + |D| >= 4 — the mechanisms COMPOSE; substrate for the cocycle
 unit).  First unit of the user-ordered construction queue (wide
 crystal -> cocycle -> descent-conditions).  Worker dispatched.
+
+## 2026-07-26 — D62 DELIVERED (GREEN-UNREVIEWED): (H2) PROVED BY THE
+## UPDATE TABLE — ALL THREE OBLIGATIONS DISCHARGED (LEDGER #457)
+Deliverables: note-d62-h2-update-table.md, code/d62_h2_update_table_exact.py
+(24 PASS / 0 FAIL, exit 0, 79 s), data/.out.  Opus 5 worker, pin
+frozen at #455/#456 before the receipt existed.
+**THE TABLE: five rows (idle; propose held; propose DROPPED = R2';
+self-arb; pair-arb), each a prose-over-code proof reading quoted layer
+lines (L1)-(L13) plus D61's theorems (5a-5e, Lemmas 1c/2/4/7b).**
+O1 (dropped-base token FORCED: (5e) uniqueness, flag computed-not-read,
+canon renaming choice-free); O2 (vname collision IMPOSSIBLE: tuple
+equality forces a prior arb by x on b, which lies in the view either
+way — full view for pair, cone_x via the proposer test + Lemma 1(c)
+for self — so (L3)+(L10) refuse the arb; VERIFIED BY ME on the witness:
+at h=[pA,pB] the self-arb and pair-arb mint the SAME name, both
+admissible, mutually excluding after either fires); O3 = Row 0 via
+Lemma 7b (comps = f(live) — the table never transports an order
+relation).  Gates: table = layer at ALL 179,782 transitions into
+depth 7; anchors 176 keys / 36 states exact; O2 premise adversarial
+(49,964 colliding-name candidates incl. 11,584 non-h events, 0
+admitted); row partition no-fall-through; ELEVEN MUTANTS each fail
+exactly their owning gate; T5 BFS explicitly flagged coverage-not-
+proof; byte-identical under 3 hash seeds.  RERUN BY ME: identical
+modulo timing.  Unforced cross-identities: R2' count = 9,656 = the
+round's missed-supersession excess; 14,772 opponent-dropping
+self-arbs = D61's first-self-arb count; renewal-to-root is a ROW
+(R4 successor == sigma([])); the arbitration WINNER is invisible to
+sigma.  **IF the hostile round confirms: (H0)+(H1)+(H2) all
+[THEOREM] => D44a UNCONDITIONAL at two-actor delivery-free d42a
+scope; RESIDUE 1 CLOSED THERE — the #452 sentence, this time with
+the hypotheses actually discharged.  THE EMBARGO HOLDS UNTIL THE
+ROUND: green-unreviewed is not citable; papers 30/32 and the book
+wait.**  Hostile round dispatched.
