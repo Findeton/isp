@@ -10231,3 +10231,18 @@ corpus, is a DEFECT in whichever is stale; (4) the book's declared
 gaps list is a standing work queue (currently: v1/v2/v5 thin; v9
 papers 7/8 unread; THE TWO-CLICK-LAW RELATION UNVERIFIED — the next
 check, since it gates the crystal question).
+
+## 2026-07-26 — BOOK DISCIPLINE AMENDED: ONE-GO PRESENT TENSE (user
+## directive) (LEDGER #444)
+The user: the book must NOT become a log — every patch re-reads the
+FULL book before committing, so a reader thinks it was written in ONE
+GO at the present moment. RECOGNIZED as the standing single-threaded
+paper doctrine extended to the book: internal corrections are
+AUTHORSHIP, never narrative. AMENDMENT to #443: patches are
+INTEGRATIONS, not appendices; accretion scaffolding ("late arrivals"
+chapters, "as first written", "restated per round-1") is forbidden in
+the book — THE LOG KEEPS THE HISTORY, THE BOOK KEEPS THE PRESENT.
+Discarded roads remain content (the graveyard chapter), told
+timelessly. The current draft violates this (chapter 12; five inline
+forward-correction blocks; round-narration in several chapters) — an
+INTEGRATION PASS is dispatched to the writer.

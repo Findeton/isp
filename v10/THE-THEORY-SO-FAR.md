@@ -16,13 +16,18 @@ from memory.
 
 ---
 
-> **MAINTENANCE (binding, LOG #443):** this book is a LIVING document
-> and the corpus's single synthesis. Current as of **LEDGER #442**
-> (v10/LOG.md) / **#130** (v8/LEDGER.md). Every future TERMINAL unit
-> must patch its chapter (or add a late-arrivals entry) in the same
-> commit that closes the unit, and must bump this stamp. A claim that
-> appears in the corpus but not here — or here but not in the corpus —
-> is a defect in whichever is stale.
+> **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
+> LIVING document and the corpus's single synthesis, and it must
+> always read AS IF WRITTEN IN ONE GO at the present moment.  Current
+> as of **LEDGER #442** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> Every terminal unit's patch is an INTEGRATION, never an appendix:
+> the patcher re-reads the whole book, weaves the new state into the
+> chapters, and removes any accretion scaffolding ("late arrivals",
+> "as first written", "restated per round N") before committing.  The
+> LOG keeps the history; the book keeps the present.  Discarded roads
+> live in the graveyard chapter as content, told timelessly.  A claim
+> in the corpus but not here — or here but not in the corpus — is a
+> defect in whichever is stale.
 
 ## 0. What this document is
 
