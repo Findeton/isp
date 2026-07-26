@@ -10121,3 +10121,44 @@ the only kind of "particle" the scale gap permits. Tensors enter as
 the transformation behavior of chart-attached data under transition
 maps — a mechanism certifiable at fixture scale under rule 2, since
 transition COVARIANCE is scale-free even when the charts are tiny.
+
+## 2026-07-26 — THE BOOK'S EXPANSION LANDED, AND IT REDISCOVERED v9
+## (LEDGER #441)
+The expansion pass (Part C: v1-v9; Part D: the destination) reached
+7,024 lines. Its unsure-list contained two items that CORRECTED THE
+CORPUS'S OWN WORKING SUMMARIES, both verified by me in-file:
+**(1) THE COMPRESSED GRAVITY NO-GO FORMULA IN CIRCULATION WAS WRONG.**
+Paper 57 §2.1 states explicitly: kappa·sigma_A = 2pi AND (separately)
+G·Lambda^2 = const are TWO weight-zero invariants, "each a fixed pure
+number, not numerically equal to one another; what they share is the
+structure, not a value" (also G·sigma_A = 1/4, linked-not-equal). The
+summary form "kappa·sigma_A = G·Lambda^2 = const" — present in my own
+working memory — is FALSE and is corrected everywhere I control. The
+book carries an explicit correction box.
+**(2) v9 EXISTS AND WAS ABSENT FROM MY WORKING INDEX.** v9/LOG.md
+(LEDGER #103-#124) contains the CHANNEL-MANIFOLD ARC — a manifold-
+destination line in a DIFFERENT formalism from the v10 grammar
+(slots, K celestial clocks, direction-valued S^2 deposits, churn):
+the channel-manifold law reframe (#115: d = dim(channel manifold)+2,
+S^2 -> 3+1); round 45e [REVIEWED]: grown ballistic webs GENUINELY 4D
+BY VOLUME (d_ball = 3.84/3.85, dedicated calibration), >= 5 by
+witnessed order dimension, round-coned to ~6-9%, NOT-PARKED
+(fresh-seed regression exactly as its review predicted); the FREE-WEB
+INFLUENCE THEOREM (no slot coupling => no collective excitation at
+any scale => matter requires coupling; conservation-churn the named
+axis — a direct fit with the #440 scale doctrine); and rounds 46-48d
+[MEASURED, UNREVIEWED, NO-REVIEW MODE disclosed]: diffusive jump-free
+conserving fully-coupled webs reading ROUND-CONED AND 4D
+SIMULTANEOUSLY (d_ball = 4.44) — with v9's OWN MANDATORY QUEUE before
+any external claim: hostile review-upgrade of 46-48d, 20+ seed
+replication, the coupled ladder at g = 0.18.
+**CONSEQUENCES.** (a) The v10 destination line (D58 atlas, the
+crystal question) has a MORE ADVANCED SIBLING it must not duplicate;
+the two-roads relation (v9 webs vs v10 grammar) is an open lineage
+question. (b) **THE v9 MANDATORY QUEUE IS NOW THE CORPUS'S LARGEST
+REVIEW DEBT** — and the independent-model (Opus 5) round machinery
+built this campaign is exactly the prescribed tool. (c) My working
+memory is corrected (gravity formula) and extended (v9 indexed).
+Book third pass dispatched: C6 (the v9 arc, both registers, its
+mandatory queue quoted, not-citable discipline), Part D patches (the
+#440 scale doctrine; both roads on arrow 3; re-ranked queue).

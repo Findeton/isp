@@ -36,6 +36,11 @@ A reader who wants the intuition first can read Part A end to end and
 then Part B end to end.  A reader who wants to check something can go
 straight to the twin chapter in Part B.
 
+**PART C** covers the earlier corpus (v1–v9, the SHARD/ISP arc) and
+**PART D** the destination; both carry *both* registers inside each
+chapter (① PLAINLY, then ② THE OBJECTS), so a reader who wants only Part
+A's register can read the ① sections and stop.
+
 **Two doors, same house.**  Neither part is a summary of the other.
 Part A is not "Part B with the equations removed" — it is written to be
 *true* at its own level of resolution, which sometimes means saying
@@ -124,55 +129,74 @@ observes it:
 
 ---
 
-## 0.4 The whole story in ten sentences
+## 0.4 The whole story in thirteen sentences
 
-1. The theory posits a world made of **records**: finitely many
+*(Ten for the v10 campaign; one for the arc that precedes it, two for the
+destination that follows.)*
+
+1. The programme did not start here: for nine version lines it was
+   **SHARD** — a ledger of *sealed records*, in which an irreversible
+   commitment (a **seal**) destroys a coherent phase, and in which the
+   classical/quantum line is whether an extra record could have been
+   inserted in the middle (PART C).
+2. The theory posits a world made of **records**: finitely many
    sequential *actors*, each writing versions on its own line, who
    propose values, arbitrate conflicts, deliver knowledge to one
    another, merge divergent versions, and idle.
-2. **What may happen next is completely specified** — executable,
+3. **What may happen next is completely specified** — executable,
    exhaustively enumerable, with one function in a committed program as
    the sole authority — and the *relative weights* of the options are
    specified too.
-3. **What actually happens is not specified**: the options at a moment
+4. **What actually happens is not specified**: the options at a moment
    sum to 2 or 5/2, not to 1, and the framework's own code says in its
    docstring that it makes *no measure claim*.
-4. Turning weights into probabilities is called **completion**, and
+5. Turning weights into probabilities is called **completion**, and
    there is a theorem: you cannot have normalization, independence of
    the time-slicing, and untouched relative weights all at once — 36 of
    the 202 elementary loops of the enumerated depth-4 world refute it.
-5. Dropping the third demand, completions exist; and in the
+6. Dropping the third demand, completions exist; and in the
    delivery-free two-actor sub-theory a **canonical one exists that
    needs no boundary condition at all**, is unique up to scale within a
    postulated shape for it, and prices the beginning of the record
    identically to a later point that the law itself cannot tell from
    the beginning.
-6. But that shape is a **choice, not a law**: the two strongest
+7. But that shape is a **choice, not a law**: the two strongest
    invariance demands anyone has written down leave the freedom
    *growing* (10, then 28, then 107 dimensions as depth increases), so
    "the law completes itself" is true only of the law **plus** the
    shape.
-7. Once deliveries are allowed — the scope where spacetime questions
+8. Once deliveries are allowed — the scope where spacetime questions
    live — a short exact depth-free construction shows the menu of
    options grows without bound, so **no finite state summary
    reproducing menus exactly can exist, for any design**: the method
    that settled the measure question provably cannot travel there.
-8. In parallel, needing no measure at all, the theory has a
+9. In parallel, needing no measure at all, the theory has a
    **geometry**: the directions leaving an event form a *sky*, and how
    complicated a sky can be is **priced in actors** — one actor's
    worldline can only ever sweep a nested family of shadows, so
    realizing all subsets of *m* directions costs at least
    *C(m, ⌊m/2⌋)* actors (6 for four directions, 10 for five).
-9. Records were then **built** that pay the price: a 20-actor,
+10. Records were then **built** that pay the price: a 20-actor,
    42-event record whose sky no circle can host, and a 42-actor,
    84-event record whose sky no 2-sphere can host — so the
    admissibility layer does **not cap** the dimensional ladder at the
    sphere's rung, and whatever might prefer 3+1 is not in that layer.
-10. Both lines therefore arrive at the same wall: *does anything prefer
+11. Both lines therefore arrive at the same wall: *does anything prefer
     3+1?* needs either a measure at delivery scope (blocked by the
     unbounded-menu theorem), or a resource-cost principle, or a
     counting-typicality argument — and the corpus has **none of the
     three**.
+12. That earlier corpus already owns one piece of Einstein: it derives the
+    field equations **in form**, as the thermodynamics of records, and
+    proves — by one structural theorem, not a list of failures — that it
+    **cannot** derive Newton's constant, because a ledger of counts and
+    ratios carries no absolute length (PART C, chapter C2).
+13. And the destination is now stated: **not** resemblance to a discretized
+    flat spacetime — that target is withdrawn, with a measurement behind
+    the withdrawal — but **full Einsteinian manifolds, enriched until
+    quantum particles can be created in them**; of its eight arrows two are
+    in hand, two are half in hand, three are open, and the last is blocked
+    (PART D).
 
 ---
 
@@ -251,6 +275,36 @@ observes it:
   retired object.
 - **B11. Status, open problems, method** — the ranked residues; the
   papers; the review statistics.
+
+### PART C — THE EARLIER CORPUS (v1–v9, the SHARD / ISP arc)
+*Each chapter carries both registers: ① PLAINLY (the non-technical twin) then ② THE OBJECTS.*
+- **C1. The sealing premise and the original programme** — seals, holonomy,
+  refinability, the Barandes barrier; the quarter law with its proof and
+  receipts; the dissolved `[TARGET]`; the universality trap.
+- **C2. Gravity from sealed records** — the Einstein FORM derived; the
+  unified no-go on Newton's `G`; the second-scale test; graviton spin-2
+  blindness; the Jacobson–Clausius conditional and the internal asymmetry;
+  the three walls.
+- **C3. Quantum foundations results** — the revival no-go; the
+  gravitational-decoherence undecidability theorem; the Bell verdict; magic
+  != indivisibility; Born = K1 and paper Va's 22 corpus-bound tags;
+  covariantization by discreteness and the residues it leaves.
+- **C4. The consolidations and the spin-offs** — v7 frozen; v8's 51 -> 6
+  consolidation and its CONFIRMATION-PASSED grade with the referee-grade
+  gap declared; the Yang–Mills line and its errata; Walsh–delta.
+- **C5. The lineage question, honestly** — what is established, "the bridge
+  is empty", the specified-but-unrun bridge measurement, and an explicit
+  RELATION UNESTABLISHED list.
+
+### PART D — THE DESTINATION (supersedes chapter 11's forward-look)
+- **D1** The destination, stated — full Einsteinian manifolds enriched to
+  create quantum particles; why the sprinkling target was withdrawn.
+- **D2** The roadmap, arrow by arrow, with honest status — eight arrows,
+  two HAVE, two PARTIAL, three OPEN, one BLOCKED.
+- **D3** Particle creation, and one labelled speculation — the
+  boundary-freedom <-> vacuum-ambiguity resemblance, costed and marked.
+- **D4** What the destination changes about the open problems.
+- **D5** The destination in one paragraph.
 
 ### CHAPTER 12 — LATE ARRIVALS (both registers at once)
 - **12.1** The dimension meter measures the grammar, not geometry
@@ -1940,6 +1994,10 @@ recorded its confirmations would look far better and be worth far less.
 ## A11. Where we are, and what would decide it
 
 *Technical twin: Part B, chapter B11.*
+*Forward-look **superseded by PART D**: this chapter is accurate as the
+state of the two lines, but the destination it gestures at has since been
+stated explicitly (LOG #436).  Read PART D for what the open questions are
+**for**.*
 
 ### A11.1 The state of the two lines
 
@@ -4645,6 +4703,9 @@ eliminated.
 ## B11. Status, open problems, method
 
 *Non-technical twin: Part A, chapter A11.*
+*The **ranked residues of §B11.4 are re-ranked against the destination in
+§D4**, which supersedes their ordering (not their content); the two lines
+of §B11.1 are unchanged.*
 
 ### B11.1 The two lines, scoped
 
@@ -5081,7 +5142,9 @@ merely coexisting with it: the grammar's records are **worldline-woven**,
 not sprinkled, and the one measured place where they differ sharply from
 sprinklings is exactly the place where the sprinkling comparison had been
 installed as the target.  Chasing likeness to a sprinkled Minkowski record
-was, on this evidence, chasing the wrong resemblance.
+was, on this evidence, chasing the wrong resemblance.  **The destination
+this redirect installs is developed in PART D**; the speculation named in
+the next paragraph is costed there at §D3.
 
 Also recorded at #436, and flagged as unpinned: a
 **boundary-freedom ↔ vacuum-ambiguity** bridge, carried as `[MY READING]`
@@ -5119,6 +5182,1635 @@ expectation had not been written down first.  The count in §B10.14 should
 be read as rising, not falling: the programme continues to spend most of
 its output correcting itself, and continues to be worth more for it.
 
+---
+---
+
+# PART C — THE EARLIER CORPUS (v1–v9, the SHARD / ISP arc)
+
+> **Why this part exists.**  Chapters 1–12 describe the **v10 campaign**: a
+> generated record grammar, its measure problem, and its geometry.  That is
+> roughly two months of a programme that has been running for far longer.
+> Before v10 there were nine version lines, several hundred papers and
+> notes, and a *different* formalism — one built on **seals** rather than
+> on a generated grammar.  A book that covered only v10 would misrepresent
+> what the corpus is, and would omit the one piece of Einstein's theory the
+> corpus already owns (chapter C2), which matters because the programme's
+> standing destination is Einsteinian manifolds (PART D).
+>
+> **Two registers, kept.**  Each chapter here opens with **① PLAINLY** —
+> the non-technical twin, readable on its own with no formulas — and then
+> **② THE OBJECTS** — the technical account with numbers and provenance.
+> A reader who wants Part A's register throughout can read the ① sections
+> of C1–C5 in order and skip the ② sections entirely.
+>
+> **Scope warning, binding.**  v6 and v7 are **FROZEN research logs**
+> (frozen 2026-07-01).  Their authoritative result map is `v8/LEDGER.md`,
+> and corrections after that date land in v8 and the ledger **only**.  So a
+> v6 file may contain a claim that has since been corrected elsewhere —
+> §C1 contains a live instance.  Every citation below names its file, and
+> where a frozen file disagrees with the ledger, this document follows the
+> ledger and says so.
+
+---
+
+## C1. The sealing premise and the original programme
+
+### ① PLAINLY
+
+The earlier corpus is built on one idea: **the world is a ledger of things
+that have been irreversibly written down.**  The technical name for the act
+of writing is a **seal**, and the programme is called SHARD — *Sealed
+Holonomy And Record Dynamics*.
+
+Three principles govern it, and they are worth stating because they are the
+ancestors of everything in Part A:
+
+- **Laws are laws of whole sealed histories**, not of instantaneous states.
+- **No distinction without a record.**  If nothing was written down, there
+  is no fact of the matter about which alternative happened.
+- **Couplings are fixed by self-consistency**: the constants of the theory
+  are supposed to be pinned by the demand that the description be
+  consistent with itself when you look more finely.
+
+Between two seals, the system carries something the programme calls a
+**holonomy** — a coherent, uncommitted relative phase.  Nothing is decided
+yet; the alternatives are still live.  At a seal, one of them **commits**,
+irreversibly, and the holonomy is destroyed.
+
+That gives a crisp classical/quantum dividing line, which is the whole
+point of the formalism.  A *classical* history is one where you could
+always have inserted an extra record in the middle without changing
+anything — the chain of seals is **refinable**.  A *quantum* history is one
+where you cannot: inserting a record in the middle means *sealing* it, and
+sealing destroys the phase, so the process you end up describing is a
+different one.  In the language of the physicist Jacob Barandes, whose
+work this builds on, a quantum process is **indivisible**: its transition
+law does not compose through intermediate times.
+
+**The quarter law.**  The most-cited quantitative result of that line is a
+short theorem with a memorable shape.  Suppose the environment learns
+something about which alternative your system took — it leaks *evidence*.
+Two things then happen: the evidence accumulates, and the system's
+coherence decays.  The theorem says the coherence decays at **exactly one
+quarter of the rate at which evidence leaks**, to leading order, with the
+first correction computed exactly.
+
+That is a genuine and pretty result.  It also carries one of the corpus's
+cleaner self-corrections, and one of its sharpest warnings.
+
+*The self-correction*: a companion paper had proposed, as a **target** of a
+research programme (explicitly not proved), that "the decoherence rate =
+the seal rate = the entropy production".  That target was later
+**dissolved**: the quarter law is the true relation, and the coefficient
+would be one only for a different measure of information.  The frozen file
+still contains the old target; only the consolidation ledger records the
+dissolution.  This document follows the ledger.
+
+*The warning*, which came from within the programme and is sharper: in the
+regime where the leak is weak, the factor of one quarter is **not physics
+at all** — it is a general fact about how two nearby probability
+distributions relate, true for *any* monitoring scheme.  So a later
+project that "confirmed the quarter law" in a new setting would be
+confirming a mathematical tautology and calling it a bridge.  The corpus
+names this the **universality trap**, in its own design note, before
+walking into it.
+
+### ② THE OBJECTS
+
+**The ontology.**  `v6/publishable/paper-Va-foundations-1.md` states the
+programme's axioms verbatim: **R** (laws are laws of whole sealed
+histories), **S** (no distinction without a record), **C** (couplings are
+fixed by self-consistency under refinement); the primitive is *a ledger of
+sealed records*; the programme "builds on the stochastic–quantum
+correspondence of Barandes' indivisible processes, replacing configuration
+trajectories by committed records as the primitive."
+
+**Seal, holonomy, refinability** (`v6/…-paper56-…` §2.2): between record
+commitments the system carries a reversible **holonomy** (a closed
+exchange-defect phase, no committed value); at a seal a record **commits**,
+irreversibly.  The dividing line:
+
+- **Classical:** the history is a *refinable* chain of seals — an
+  intermediate conditioning record may be inserted for free.
+- **Quantum:** the **sealed holonomy between records carries irreducible
+  phase** — one cannot insert an intermediate record without sealing it,
+  and sealing destroys the holonomy and changes the process.
+
+The proposed dictionary, stated in that paper as a `[TARGET]` and **not**
+as a theorem: *SHARD-unrefinable ≟ Barandes-indivisible*;
+*sealed-holonomy-between-seals ≟ the interference cross-term*; *a SHARD
+seal ≟ a Barandes division event*.  The **functor** realizing it "is itself
+the open obligation, not yet written."
+
+**Barandes' barrier, made explicit** (same paper, §2.1): with
+`Γ(t)_{ji} = |U(t)_{ji}|²`,
+
+```
+[Γ(t₂)Γ(t₁)]_{ji} = Σ_k |U(t₂)_{jk}|² |U(t₁)_{ki}|²      (sum of path probabilities)
+Γ(t₂t₁)_{ji}      = |Σ_k U(t₂)_{jk} U(t₁)_{ki}|²         (probability of the path sum)
+```
+
+and the difference is the interference cross-term.  **The barrier is the
+gap between `|Σ|²` and `Σ|·|²`.**
+
+**Division events** (`v6/…-paper1-…`): the primitive of the gravity sector
+is "the network of **division events** — the records at which an indivisible
+stochastic process momentarily factorizes — whose causal order is
+Lorentz-invariant and whose counting fixes volume, so that *order + number
+= geometry*."
+
+**THE QUARTER LAW `[THEOREM A, v6 paper 26 §3.1, with proof in file]`.**
+Setting: one logical qubit, pointer alternatives `χ ∈ {0,1}`; per cycle the
+environment draws one record bit from `P_χ`, with the symmetric binary
+monitor `P_0 = (½+ε, ½−ε)` and `P_1` mirrored.
+
+> Per cycle the off-diagonal multiplies by the **Bhattacharyya overlap**
+> `BC = Σ_b √(P_0(b) P_1(b))`, the leaked evidence is `σ = D(P_0 ‖ P_1)`,
+> and
+>
+> ```
+> −ln BC  =  σ/4  +  (ε²/6)·σ  +  O(σ³)
+> ```
+>
+> — coherent record capacity decays at one quarter of the evidence rate to
+> leading order, with the first correction explicit.
+
+*Proof (in file).*  The record imprint sends `ρ_01 → ⟨e_1|e_0⟩ ρ_01` with
+`|e_χ⟩ = Σ_b √(P_χ(b))|b⟩`, so the multiplier is exactly `BC`.  For the
+symmetric monitor `BC = √(1 − 4ε²)`, hence `−ln BC = 2ε² + 4ε⁴ + …`; and
+`σ = 2ε ln((1+2ε)/(1−2ε)) = 8ε² + (32/3)ε⁴ + …`.  Dividing gives
+`1/4 + ε²/6 + O(ε⁴)`.  ∎
+
+Receipts as printed:
+
+| `ε` | `σ`/step | `−ln BC` | ratio | `1/4 + ε²/6` |
+|---|---|---|---|---|
+| 0.02 | 0.003202 | 0.000801 | **0.250067** | 0.250067 |
+| 0.05 | 0.020067 | 0.005025 | 0.250419 | 0.250417 |
+| 0.10 | 0.081093 | 0.020411 | 0.251699 | 0.251667 |
+| 0.20 | 0.338919 | 0.087177 | 0.257220 | 0.256667 |
+| 0.40 | 1.757780 | 0.510826 | 0.290608 | *(domain boundary)* |
+
+General monitors live in the band **[0.10, 0.49]** — "`σ` is the right
+currency within `O(1)` factors."
+
+**THE DISSOLVED `[TARGET]`, and a live file-level inconsistency.**  Paper
+56 §2.2 proposes *"the decoherence rate = seal rate = `σ`"* as **a proposed
+law of that program `[TARGET]`, not automatic** — the paper says so in its
+own sentence, and its status block says "**Nothing here is claimed
+proved.**"  `v6/ARCHIVE-STATUS.md` then records, at the freeze:
+
+> paper56's `[TARGET]` "decoherence rate = seal rate = σ" was **dissolved**
+> (2026-06-17: the quarter law `−ln BC = σ/4` = paper26 Thm A; `κ=1` only
+> for the mutual-information measure).  **The v6 file does not record
+> this**; the ledger and v8 paper 6 do.
+
+Two further caveats are recorded at the same freeze and are worth carrying:
+the 2026-06-16 Renou/real-quantum retirement was propagated through v7 but
+**v6 was never swept**, so any v6 line asserting "Renou ruled out real QM"
+or "three experiment-fixed inputs" is **stale** (the sweep was later
+executed and recorded in `v6/ERRATA.md` E1); and paper 10's T3 "is a
+dissolution (not an RP-theorem), per paper10's own reclassification."
+
+**THE UNIVERSALITY TRAP, named by the corpus against its own interest.**
+`v9/note-bridge-seal-is-record.md` §3 observes that `−ln BC = D_{1/2}(P₀‖P₁)/2`
+*identically* (Rényi-½), and that as `P₀ → P₁` all Rényi orders are
+proportional to the shared `χ²`/Fisher term with `D_α ≈ (α/2)χ²`, so
+
+```
+(−ln BC)/σ_wp  →  ((1/4)χ²/2) / ((1/2)χ²)  =  1/4     for ANY monitor family
+```
+
+— "this is the receipt-carried `κ_α = 1/(4α)` of v8 paper 6 §5, not a new
+fact."  Therefore:
+
+> **In the weak-evidence limit the ¼ ratio is measure-theoretic
+> universality — confirming it on the web would be a fake bridge.**
+
+The design note accordingly moves the falsifiable content elsewhere (the
+Fisher identity, the monitor class, covariant readability — see §C5).  A
+programme that noticed its own headline was a tautology in the limit it was
+most likely to be tested in, and said so in a pin, is doing the thing this
+document keeps pointing at.
+
+**The rest of paper 26, briefly, since it is the corpus's first applied
+paper.**  Selective record formation: on the 3-qubit bit-flip code,
+`I(logical : syndrome) = 0.00e+00` **exactly** while
+`I(error : syndrome) = 0.7705` of `H(error) = 0.8363` — *protection is not
+fewer clicks, it is correctly typed clicks*; recovery converts first-order
+leakage to second-order failure (`3p² − 2p³`, machine-exact).  The metric:
+at matched per-cycle fidelity `0.99336`, a coherent over-rotation recovers
+at `1.000000` under echo while the dephasing one sits at **`0.566762`** —
+*fidelity is blind, leaked nats are not*.  Threshold ordering by
+coordination `z`: honeycomb ≈ 6.7% < square ≈ 10.9% < triangular ≈ 16.4%.
+Quantum advantage as cone violation: stabilizer states nonnegative, **the
+magic state at `−1/3` exactly**, cost compounding as `(Σ|W|)^{2n}`.  And
+pre-click capacity is schedule-invariant: MBQC's clicks are exactly
+logical-evidence-free (`p(m) = 1/2` to `4.4e−16`).
+
+> **Cross-reference.**  The seal/holonomy dividing line of this chapter is
+> the ancestor of Part A chapter 2's *click*, and the "no distinction
+> without a record" axiom is the ancestor of the v10 grammar's insistence
+> that admissibility is past-local.  **Whether that ancestry is a formal
+> relation or only a family resemblance is exactly the question of §C5, and
+> the answer there is uncomfortable.**
+
+---
+
+## C2. Gravity from sealed records
+
+*Source: `v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md`
+(127 lines, read in full for this chapter), with the conditionality analysis
+from `v7/relativistic-isp-v7-paper17-three-walls-classification-theorem.md`
+§4 and `v8/relativistic-isp-v8-paper3-walls-classification.md` §1.*
+
+### ① PLAINLY
+
+This is the chapter where the earlier corpus touches Einstein, and it has a
+sharply two-sided result which the paper itself summarizes in one line:
+
+> **SHARD gives gravity's form for free and proves it cannot give gravity's
+> scale.**
+
+**The form.**  Following a route opened by Ted Jacobson in 1995, the corpus
+derives Einstein's field equations as a *thermodynamic equation of state*.
+The ingredients: an accelerating observer sees a temperature (this comes
+out as a theorem about the record's own division rate); the entropy of a
+horizon is proportional to its **area** with a coefficient that does not
+run; and applying the elementary thermodynamic relation *heat = temperature
+× change in entropy* to every local horizon then forces the shape of
+Einstein's equations.
+
+Two things are *derived* here that the standard version of this argument
+**assumes**, and that is the corpus's own contribution: the geometry factor
+in the area law (it converges to a known universal constant with no fitted
+tail), and the pure-area property of the entropy (no curvature corrections).
+
+**The scale.**  And now the hard result.  Einstein's equations contain
+Newton's constant `G`.  The corpus proves it **cannot derive it** — and the
+proof is not a list of failed attempts but a single structural theorem.
+
+The idea is a dimensional one and is easy to state.  Everything the records
+carry is a *pure number*: a ratio, a count, a dimensionless invariant.  But
+`G` requires an absolute **length**, and there is no length in a bare
+collection of counts and ratios — you only get one by choosing a
+conversion from "one record step" to "one metre", and that conversion is
+exactly the thing the records cannot see.  Rescale the record's length unit
+and every single sealed observable is unchanged while `G` moves.
+
+Seven independent escape routes were tried — modular time, causal-set
+actions, fluid-gravity, holography, shape dynamics, the cosmological
+horizon count, the spectral action.  **All seven collapse the same way**,
+and the paper's point is precisely the unification: they do not fail for
+seven reasons, they fail for one.  Every route that seems to deliver `G`
+turns out to have traded it for a cutoff length, which is the same missing
+label wearing a different name.
+
+A separate test asked whether a *second* independent scale could be found
+somewhere in the theory and used to calibrate the first.  All candidate
+second scales turned out to be **the same one record length in disguise**.
+
+**The graviton.**  A further honest split.  The *equation* for the
+gravitational field's shape is derived.  But the propagating **graviton** —
+the quantum particle of the gravitational field — is not: the corpus's
+machinery can price the energy and momentum of matter but is effectively
+**blind** to the five components that carry spin-2 content in a universal
+way, and four independent obstructions converge on one root, which is that
+the needed structure lives only in a continuum algebra that a finite
+record lattice cannot host.
+
+**And one honesty constraint that runs through everything.**  The chain
+that names the missing quantity "Newton's `G`" rides Jacobson's derivation,
+which has its own well-known critics.  The corpus therefore refuses to
+present the `G` result as a clean structural no-go.  Its own phrasing:
+**the wall stands unconditionally; the `G`-naming of it is conditional.**
+
+### ② THE OBJECTS
+
+**Status tags in that paper:** `[DERIVED]` = established (symbolic or
+high-precision numeric); `[NO-GO]` = a proven obstruction; `[OBSTRUCTED]` =
+blocked in practice with the obstruction characterized; `[OPEN]`.  All
+numeric claims verified at **mpmath dps ≥ 80** (commonly 100), the paper's
+own audit noting that float64 produces a **25–32% artifact** on
+modular-kernel / near-vacuum quantities.
+
+**C2.1 The derived equation of state.**
+
+- **Temperature `T = a/2π` `[DERIVED, mod axiom (R)]`.**  KMS on the
+  accelerated Wightman function, `W(τ − iβ) = W(−τ)` at `β = 2π/a`, holds
+  to the iε floor (residual ≈ **3.75×10⁻⁴⁰**); detailed balance
+  `F(E)/F(−E) = e^{−E/T}` machine-exact (≈ **10⁻¹⁰¹**); the Rindler identity
+  `Δt² − Δx² = (4/a²)sinh²(aΔτ/2)` exact (sympy).  **The honest split:**
+  Gibbs thermality at *some* `β` is **unconditional** (record passivity / a
+  finite Lenard theorem); the *value* `β = 2π` rests on the one named,
+  unproven **axiom (R)** — the Euclidean-rotation / modular-period
+  identification, the residue of Bisognano–Wichmann.  *The no-go of §C2.2
+  does not depend on (R).*
+- **Geometry-universal area density `[DERIVED]`.**  A 3+1 massless scalar
+  partial-wave-decomposes into radial chains; the ball entropy's area
+  coefficient converges to **Srednicki's 0.295** — `a(l_c = 5120) =
+  0.295307`, Richardson `a_∞ = 0.295417`, grid- and box-robust to ~10⁻⁵ —
+  **with no fitted tail**.  The ball/planar capacity ratio
+  `U_G = ν_sph/ν_planar = 1` to ~10⁻³, and the absolute scale **cancels** in
+  it (sympy-confirmed).  *Two caveats stated in file:* `U_G = 1`
+  **straddles** unity at that level (the sign of `U_G − 1` is undetermined,
+  cutoff-limited — a consistency, not a determination); and flat-screen
+  universality is **broken in the angular sector**, the partial-wave
+  first-law ratio `q_l` departing from 1 (down to ≈ **0.83** at `l = 1`).
+- **Pure-area Wald–Noether charge `[DERIVED, structural]`.**
+  `S = σ_A·A + o(A)` with curvature pieces explicitly subleading; the
+  apparent curvature-running shrinks monotonically with the mode cutoff
+  (`|Δa| = 3.2×10⁻³ → 6.9×10⁻⁴` over `l_max = 40 → 200`), *consistent with*
+  an `l`-truncation artifact; the `l = 0` channel completes at `q = 1.000`.
+  This **discharges** the "no Wald corrections" precondition **within the
+  screen-cell entropy ontology** — a structural property of that ontology,
+  explicitly *not* a derivation that an arbitrary higher-curvature action
+  generates no Wald corrections.
+- **The field equations in form `[DERIVED, mod (R) + gates]`.**  Jacobson's
+  Clausius derivation, exact in sympy: Raychaudhuri `θ = −R_kk λ + O(λ²)`;
+  heat- and area-side affine moments cancel identically; **the null-cone
+  lemma forces a pure-trace tensor `S_ab = Φ g_ab`, fixing all 9 traceless
+  components in one geometric step**; contracted Bianchi closes (checked on
+  explicit Schwarzschild and on an anisotropic fluid with genuine traceless
+  stress); the coefficient match `2π/η = 8πG` forces **`η = 1/4G`**.  The
+  Clausius route delivers the full **nonlinear** equation; the modular
+  first law gives the **linearized** one.
+- **The unimodular fork `[DERIVED]`.**  Trace-free Einstein is a genuine
+  9-component equation (traceless on both sides only in `d = 4`); its
+  divergence plus contracted Bianchi gives, with
+  `Λ := (R + 8πG T)/4`, exactly `∇_b Λ = 8πG η_b` (**residual identically
+  0**, sympy).  So the conservation/Bianchi obstruction is *rerouted into a
+  dynamical `Λ`*, not evaded; the traceless RHS is homogeneous degree-1 in
+  `G` (dps-100: `|RHS(3G) − 3RHS(G)| ≈ 10⁻¹⁰⁹`); the cosmological constant
+  becomes a **non-sourced integration constant `Λ₀`**.
+
+**C2.2 The unified no-go on `G` `[NO-GO]`.**
+
+`σ_A` has length-weight **−2** and is in bijection with `G` (weight **+2**)
+via
+
+```
+G · σ_A = 1/4        (linked, never equal)
+```
+
+Under the gauge `A_rec → λ·A_rec` holding all sealed data fixed,
+`κ → λκ` and `σ_A → λ⁻¹σ_A`, and the only things fixed are the weight-zero
+invariants:
+
+```
+κ · σ_A = 2π         and, SEPARATELY,        G · Λ² = const
+```
+
+> **A correction this document must make explicitly.**  These are **two
+> distinct weight-zero invariants — each a fixed pure number, and they are
+> NOT numerically equal.**  The paper says so twice, in the abstract and in
+> §2.1 ("*two weight-zero invariants — each a fixed pure number, not
+> numerically equal to one another; what they share is the structure, not a
+> value*").  A summary of the form "`κ·σ_A = G·Λ² = const`" — which is how
+> the result is sometimes compressed — **is wrong as an equality**, and is
+> corrected here.  Also: `Λ` here is the inverse-length UV/spectral cutoff,
+> **distinct** from the unimodular cosmological constant `Λ₀` of §C2.1.
+
+- **SIGMA-SPLIT.**  The *same* sealed horizon data are consistent with
+  `A_rec = 1` **or** `A_rec = 3`, giving `κ = 1` or `3`, with Einstein
+  residuals **`0.0` for both**.
+- **The G-rescaling test (dps-100):** `s_unit → λ·s_unit` sends `G → G/λ`
+  while **every** sealed / order / modular observable is invariant.
+- **The single load-bearing premise, isolated as cleanly as axiom (R):**
+  **gate G1** — *no sealed law consumes the record area `A_rec` except
+  through the continuum labeling map `ℓ`*.  G1 is what makes the corpus
+  factor so that Theorem G forces every intrinsic record functional to
+  weight 0 while `σ_A` is weight −2.  **The no-go is airtight iff G1
+  holds.**
+- **The sharpest candidate counterexample CLOSES G1 rather than opening
+  it** (sympy-exact + dps-100).  An intrinsic *seal rate* `Γ` carrying an
+  absolute scale: record-internal `Γ` is divisions-per-seal `= 1`
+  (weight 0); any geometric `Γ` is the seal density `1/l_step` (weight −1,
+  verified `g_λ : Γ → Γ/μ` to ~10⁻¹⁰¹); a putative weight-(−2)
+  `Γ² = (#²)/A_rec` is a free record number times `1/A_rec` — a relabeling.
+  An intrinsic absolute scale would need weight −2 *and* weight 0 at once.
+  **So the seal-spacing length `l_step` is provably the unique dimensionful
+  primitive and the sole gauge direction.**
+
+**C2.3 The second-scale test — every route collapses onto the one record
+length.**  The weight-counting lemma (sympy) settles them at once: *every
+dimensionful record quantity is (pure number) × `l^{±k}` — one record
+length — and every intrinsic record functional is `g_λ`-invariant, hence
+weight-zero.*  Concretely:
+
+- a **mass-gap correlation length** (`ξ_1d = 1/η = 1.641…`,
+  `ξ_2d = 23.355`) — both are *lattice units*, `ξ = (#)·l`, not an
+  independent length;
+- a **transmuted scale from a second marginal sector** — a fixed-point
+  coupling is dimensionless, so the ratio ties sectors to each other, never
+  to a geometric length;
+- an **asymptotic-safety UV fixed point** — `g_* = Gμ² ⇒ G = g_* l²`,
+  reproducing SIGMA-SPLIT exactly.
+
+**C2.4 Seven levers, one obstruction `[NO-GO]` each.**
+
+| lever | how it collapses |
+|---|---|
+| **Tomita–Takesaki / Connes** | the boost-relevant record algebra is forced **commutative**, so modular flow is trivial; Araki relative entropy = KL exactly (`\|diff\| = 0`); the modular-time↔boost-rapidity slope is reparametrization-free (dps-80, invariant to ~10⁻⁸¹) — *it is the free modulus* |
+| **Benincasa–Dowker causal-set action** | circular on three counts: the BD constants are pure numbers (d=4 prefactor `4/√6` to 80 digits, `M₀ = O(10⁻⁸⁵)`); EH-matching is one scalar equation `l²/G = 16π ξ₄`; BD adds one equation *and* one unknown `l` — the gauge direction.  Also pathological: action fluctuation std grows as `ρ^{+1.2}` |
+| **Fluid/gravity** | `η` and `s` both scale as `1/G`, so `η/s = 1/4π` **cancels** `G` (verified to 10⁻⁷⁰) |
+| **Entanglement-wedge / JLMS** | `1/4G` is the *shared* coefficient — a consistency, not a derivation; Brown–Henneaux `c = 3L/2G` needs the AdS radius in record units = the same missing label |
+| **Barbour / shape dynamics** | conformal/relational structure generates no length; Weyl invariance actively **removes** the datum `σ_A` needs |
+| **de Sitter horizon count** (the sharpest test) | `Λ₀` is a genuine weight-(−2) datum — `σ_A`'s **weight-twin**.  `S_dS = π/(G·Λ₀) = N_dS` fixes only the product; `N_dS = 4π(σ_A/Λ₀)` is a ratio of two weight-(−2) data so `l` cancels (sympy-exact).  Not a second channel — the same collapse with `σ_A` replaced by its twin.  (Undersourcing table: collapse heating undersources `ρ_Λ` by **10–17 orders**; only the *drift* `dΛ = 8πG η` is sourced, never the value) |
+| **Chamseddine–Connes spectral action** | `[CONJECTURED]`, not established: the naive collar profile `e^{−2πu}` gives `f₂ = ∫u e^{−2πu} du = 1/(2π)²`, **not** `1/(2π)`, so the often-quoted `G·Λ² = 3π²` does **not** follow; and identifying the spectral test function with the wedge-boost modular profile is an unjustified ansatz.  Either way the cutoff `Λ` is the same missing label |
+
+Further levers collapse identically: the conformal trace-anomaly
+coefficients `(a, c)` are weight-zero; Sakharov-induced gravity gives
+`G·Λ² = 192π²/N` with `Λ` cancelling; and the strongest *record-unit*
+attack (measure a mass in record units, claim `G = c_m/m_rec²`) smuggles in
+the record-length↔lab-length conversion the gauge acts on.
+
+> **The unification is the content:** *deriving `1/G` always trades it for a
+> labeling-equivalent cutoff; the missing datum is exactly one absolute
+> length unit, which no weight-zero record functional can be.*
+
+**C2.5 Graviton spin-2 blindness `[OBSTRUCTED]`.**  Charge pricing is
+**4 of 9**: `T_00` (energy, boost-axis first law) and `T_0i` (momentum,
+moving-probe first law) are priced at capacity coupling `1/(4ν)`; the five
+spatial-stress components `T_⟨ij⟩` are not.
+
+**The obstruction is non-universality, not orthogonality.**  A boosted
+wedge reads `T'_00 = cosh²η·ρ + sinh²η·(n_i n_j T_⟨ij⟩)` (sympy-exact), and
+a congruence of boosted wedges over `n ∈ S²` has **rank 5 — it spans the
+entire traceless spatial-stress space** (augmented `[ρ | 5 TL]` rank 6).  So
+the components *are* reachable.  What fails is the coupling: **`χ·sinh²η`,
+observer-boost-dependent and second-order**, never the universal `1/(4ν)`.
+On the lattice the traceless charge sign-flips and swings two orders of
+magnitude with source shape and spacing at fixed dimensionless geometry
+(`δK(T_xx − T_yy)` from `−3.3×10⁻³` to `+2.0×10⁻⁴` under matched-depth
+refinement).
+
+Four obstructions converge and **reduce to one root**: non-universality;
+**type I, no area operator** (the record algebra is finite, so `δÂ` is a
+c-number; `‖[Â,a]‖ = 0` against `0.8` for an outer control — and the
+SHARD-native rescue, crossing by the entropy-production arrow, is genuinely
+outer (`‖[L,a]‖ = 1.76 ≠ 0`) yet its Connes cocycle is **trivial** (ratio
+set `{1}`), so the crossed product is semifinite, i.e. type I again —
+tracial residual ≈ 10⁻¹⁷, isotropic capacity `c₂/c₀ ≈ 10⁻¹⁶`); **Berry**
+(zero `cos 2θ` overlap at first order); and **null-cut** (the null
+contraction carries the traceless stress at `O(1)`, coefficient ½, *not*
+`sinh²η`-suppressed — but the universal-2π null-cut pricing **is** the
+half-sided modular inclusion `[K,P] = iP`, which has **no
+finite-dimensional representation**; on the lattice the null-direction
+traceless charge sign-flips `−0.19 → +0.58` with 6.3× shape spread).
+
+> **The single root:** every spin-2 / area-operator route needs the
+> universal structure — outer modular flow, type III₁, a half-sided
+> inclusion — that lives *only* in the continuum local algebra, which the
+> finite record lattice cannot host intrinsically.  So **"9/9 in principle"
+> is empty**: the principle is exactly the continuum the lattice provably
+> lacks.  SHARD's emergent geometry is **spin-2-active but not-a-graviton**
+> (3.4× shape spread, axis-locked, refinement-unstable); it evades
+> Weinberg–Witten the way induced gravity does — no flat-space graviton
+> S-matrix — but no derived graviton exists.
+
+**C2.6 The Jacobson–Clausius CONDITIONAL, and the internal asymmetry.**
+From `v7/…-paper17-three-walls-classification-theorem.md` (and restated in
+`v8/…-paper3-walls-classification.md` §1), four named premises carry the
+equation-of-state route:
+
+1. **the Jacobson–Clausius premise itself** — that `δQ = T dS` over all
+   local horizons *is* the equation of state of spacetime; the locus of
+   Padmanabhan's "**interpretation, not derivation**" critique;
+2. **axiom (R)** — the value `β = 2π`;
+3. **local equilibrium `θ = σ = 0`** — Eling–Guedens–Jacobson: dropping it
+   forces the dissipative `f(R)`/Lovelock branch, so the premise is
+   **load-bearing, not decorative**;
+4. **the continuum focusing gate `θ′ = −R_kk`** — reduced to two *native*
+   conditional gates (a finite double-null affine-pair readout; cofinal
+   tightness / no silent refinement).
+
+> **THE INTERNAL ASYMMETRY, load-bearing.**  The **weight-counting no-go
+> depends on NONE of these** — it is the structural half.  What rides the
+> Jacobson route is only the **identification** of the missing
+> weight-carrying unit with gravity's `G`.  So: *"the `G` **leg of the
+> classification** is conditional" is precise — **the wall stands
+> unconditionally, the `G`-naming of it is conditional.**"*
+>
+> The corpus's own headline is therefore **two structural no-gos plus one
+> conditional**, "never a clean threefold all-experiment-fixed symmetry".
+> (The Verlinde-targeting critiques — Visser, Kobakhidze — **explicitly
+> exempt** Jacobson and are *not* the locus of this conditionality.)
+
+**The three walls, for the record** (`v7` paper 17, receipt
+`p17_classification.py` **23/23**, sympy-exact + mpmath dps = 140): one
+quotient-by-internal-symmetry shape instantiated three times —
+
+| wall | group | residual | epistemic status |
+|---|---|---|---|
+| **SCALE** | `g_λ`, length relabeling | the absolute length, hence `G` — continuous `ℝ₊` | genuinely **MEASURED**, but the route is **CONDITIONAL** |
+| **TENSOR PRODUCT** | `R`, field reduction (complex ↔ real) | the local-tomography bit `∈ {0,+1}` in `ker R` — discrete binary | **CONTESTED** convention, possibly experimentally unfixable |
+| **MODE** | cross-sector re-referencing | which-mass-is-which `∈ {1,3,7}` — discrete label | **IMPORT-FIXED** by measured spectra |
+
+with MODE flagged in-file as the **weaker, analogical** member — `G_3`
+*fixes* the discrete label and moves only the continuous per-sector zero,
+so that identification is `[STRUCTURAL]`, **not a theorem**.
+
+**And one thing the no-go explicitly does NOT forbid**, which matters for
+PART D: the dimensionless gravitational coupling-per-species
+`c_m = Gm²/ℏc` is **weight-zero and intrinsic**, therefore **eligible** to
+be a record output.  *So the records cannot fix the absolute scale of
+gravity; whether they fix its dimensionless strength is a separate,
+still-open question.*
+
+> **Cross-reference.**  This chapter is why PART D's Einstein-dynamics
+> arrow is `[PARTIAL]` rather than `[OPEN]`: **the corpus already owns the
+> form**.  It is also why chapter A10 §A10.7's laboratory bridge is
+> blocked on a free record scale — the un-fixability proved here is one of
+> the four holes in that slot.
+
+---
+
+## C3. Quantum foundations results
+
+### ① PLAINLY
+
+Five results from the earlier corpus, all of them negative or
+constraining, and all of them the kind of thing a programme usually does
+not advertise.
+
+**1.  Sealed holonomy cannot produce revivals.**  A natural hope: if the
+world is made of sparse irreversible commitments rather than continuous
+classical noise, then coherence should sometimes *come back* — the
+signature that memory is real.  A short calculation kills it.  Any
+commitment rule that fires irreversibly, at a rate that does not look at
+the system's own coherence, gives a decay that is **monotone** — it can
+never come back up.  Revivals require either genuinely reversible dynamics
+(nothing committed) or a commitment rule that reads the coherence, which
+the programme forbids for independent reasons.
+
+Worse for the hope: the distinctive **Gaussian shape** of the early decay,
+widely read as evidence of memory, is reproduced *exactly* by the simplest
+memoryless commitment rule with a ramping hazard.  **The shape is not a
+signature.**
+
+**2.  Gravitational decoherence does not certify its mechanism.**  Push
+this to its sharp form and you get a genuine undecidability theorem.  A
+continuous classical-noise picture and a matched sparse-commitment picture
+produce **bit-identical** predictions for the standard experiment — not
+approximately, identically, at every order.  Multi-time experiments
+(echo-type protocols) can probe whether the process is reversible; but the
+structural property that would mark a genuinely quantum-gravitational
+record process is **invisible to any passive measurement of the system
+alone**.  And the obvious fix — an invasive protocol that reconstructs the
+transition law directly — inserts a commitment at every conditioning step
+and so cannot certify the *un-intervened* process.
+
+**3.  Indivisibility does not evade Bell's theorem.**  The programme's
+slogan — "local in space, non-locality in time" — was tested against the
+thing it might be hoped to buy.  It does not buy it.  Non-Markovianity is
+not a loophole; it is the *mechanism* by which this kind of ontology pays
+one specific Bell price: it violates **outcome independence**.  The result
+is that the theory sits at exactly orthodox quantum mechanics' locality
+status.  That is a genuine interpretive package — but it is a
+**relocation** of the non-local content, not an **evasion** of it.  The
+paper says so in its status line, against interest.
+
+**4.  Indivisibility is not the resource that makes quantum computers
+fast.**  The natural conjecture — that the programme's central structural
+property is what quantum computation exploits — was tested and is **false**.
+The known resource ("magic") is a *strictly finer* property.  The corpus
+lists this as a standing bound on its own thesis.
+
+**5.  Discreteness rescues covariance for the kinematics.**  One place the
+earlier corpus wins.  Collapse-type theories usually need a preferred
+slicing of spacetime, which is a serious problem in a relativistic world.
+If instead the commitment events are *sprinkled* the way causal-set theory
+does it — randomly, with a density and no lattice — then the whole
+kinematic layer becomes covariant: the sprinkling is statistically
+Lorentz-invariant, the arrow of time reads a frame-independent causal
+order rather than a slicing, and the classic localization obstruction
+dissolves because what is localized is an *event*, not a state.
+
+That is a real conversion of a wall into a residue.  What remains open is
+the *dynamics* for interacting fields with variable particle number — and
+the corpus adds two sharp obstructions there that are worth knowing.
+
+### ② THE OBJECTS
+
+**C3.1 Sealed holonomy: the revival no-go** (`v6/…-paper56-…`, a
+**program/roadmap paper** whose own status line reads "**Nothing here is
+claimed proved**", with tags `[TARGET]`/`[BUILD]`/`[CONSTRAINT]`/`[OPEN]`).
+Its one **computed** result:
+
+> A state-independent **ramping** seal hazard `λ(t) = a t` reproduces the
+> Gaussian onset **exactly** (`|ρ₀₁(T)| = e^{−aT²/2}`), so the Gaussian
+> shape is *not* a non-Markovian signature; but **any** state-independent
+> irreversible seal gives `|ρ₀₁(T)| = e^{−∫λ}`, monotone, hence
+> **CP-divisible — it can never produce revivals.**
+
+Revivals require either reversible information-returning dynamics (no
+committed record) or a seal that **reads the coherence** — the forbidden
+nonlinear state-dependence.
+
+**The leak is kernel-specific, not Gaussianity-specific.**  The DP-family
+Ornstein–Uhlenbeck kernel `K(s) = σ² e^{−|s|/τ_c}` has
+`∫₀ᵀK = σ²τ_c(1 − e^{−T/τ_c}) ≥ 0`, so `γ(T) = (2σ²τ_c/ℏ²)(1 − e^{−T/τ_c}) ≥ 0`
+— genuinely CP-divisible.  But the equally positive-type **underdamped**
+kernel `K(s) = σ²e^{−|s|/τ}cos(ω₀s)` gives `γ(T) < 0` on sub-intervals once
+`ω₀τ ≳ 3.64`, producing revivals — with the boundary computed exactly in
+Paper X as **`ω₀τ = 3.644173671645632…`**.
+
+**Three inequivalent senses of "Markovian", and they are ORTHOGONAL axes:**
+(1) constant-rate semigroup — the DP-family model is *not* this; (2)
+**CP-divisible** — it **is** this, hence "Markovian" operationally; (3)
+Markov embedding — it **has** one (1-D Ornstein–Uhlenbeck).  Therefore:
+
+> **CP-divisibility and Barandes-indivisibility are independent axes;
+> non-CP-divisibility is neither necessary nor sufficient for crossing the
+> structural barrier.**  (A closed unitary qubit is Barandes-indivisible
+> yet, as a channel, trivial.)
+
+**C3.2 Paper X — the undecidability theorem**
+(`v6/publishable/paper-X-gravitational-decoherence.md`, receipt
+`code/v6_pX_decoherence_undecidability_receipts.py`, all numerics at
+mpmath dps ≥ 80).  Three results `[THEOREM]`:
+
+1. **The Gaussian onset is not a signature** (as above; residual `0`), and
+   a *constant* hazard gives the pure exponential semigroup — the most
+   Markovian channel there is.
+2. **Any state-independent irreversible seal is CP-divisible.**
+3. **Operational undecidability from the dephasing curve.**  A continuous
+   Ornstein–Uhlenbeck classical-noise ontology and a matched sparse-seal
+   record ontology produce **bit-identical** free-induction coherence for
+   all `T`: the identity `∫λ_OU = χ` is **sympy-exact**, and an independent
+   numerical integration gives
+   **`max|C_OU − C_seal| = 7.1×10⁻¹⁰²`**.
+
+Multi-time dynamical decoupling (echo/CPMG) *can* probe reversibility.  But
+the genuine content — whether the matter's **closed-system** record process
+is indivisible/unrefinable — is **structural** (the off-diagonal support of
+the decoherence functional between sparse commitments) and is *invisible to
+passive reduced-channel measurement, at every order*, because a bath
+dilation is always divisible and a closed unitary system is indivisible yet
+a trivial channel.  And an invasive protocol reconstructing `Γ(t)` "would
+insert a seal at each conditioning step, and so cannot certify the
+unintervened process."
+
+**The Diósi–Penrose reconstruction, for orientation.**  DP gives a
+short-time exponential `e^{−T/τ_G}` with `τ_G = ℏ/E_G`; finite-memory
+variants give the **Gaussian onset** `e^{−½(T/τ_G)²}` crossing over to the
+DP slope at `T ≫ τ_c`, and the division-event model pins
+**`τ_c = √e·τ_G ≈ 1.65 τ_G`**.  The paper's verdict on the widely used
+kernel: *"one illustrative CP-divisible member of the undecidable class
+rather than a discriminating prediction."*
+
+**The Tier-1 structural functor `[OPEN]`.**  Constructible via the
+Gell-Mann–Hartle decoherence functional: "Chapman–Kolmogorov ⟺ refinable"
+is the medium-decoherence consistency condition, so *SHARD-unrefinable ≡
+Barandes-indivisible* is constructible at the kinematic level — **the
+gravitational realization is the open part**.  The one genuinely open
+question is whether the gravitational decoherence functional has
+**non-trivial off-diagonal support between sparse seals** — a computation on
+the functional, not on the coherence.  An `O(1)` interference window exists
+at the physical closure `κ ~ 1`, "but that closure is an ansatz, not
+forced."  One diagnostic worth naming: the bimodal `δE = ±σ_E` limit gives
+`C(T) = cos(σ_E T/ℏ)`, a discrete-record oscillation distinct from a smooth
+Gaussian echo — *a diagnostic to look for, not a definition of the
+barrier*.
+
+**C3.3 The Bell verdict**
+(`v5/relativistic-isp-v5-paper14-non-markovianity-and-bell-nonlocality.md`).
+Its status line, quoted:
+
+> "This paper investigates a single sharp question — whether the
+> non-Markovianity (indivisibility) of ISP lets it *evade* Bell nonlocality
+> — and reaches a deliberately honest, two-sided answer.  **It does not
+> claim ISP defeats Bell's theorem.**  The conclusion is: non-Markovianity
+> is **not** a Bell loophole; it is the *mechanism* by which a
+> single-history, configuration-realist, no-collapse ontology pays one
+> specific Bell price (violation of **Outcome Independence**).  ISP
+> therefore lands at **exactly orthodox quantum mechanics' locality
+> status** — no-signalling, parameter-independent, outcome-dependence —
+> re-described as 'nonlocality in time.'  That is a genuine and attractive
+> interpretive package, but it is a *relocation* of the nonlocal content,
+> not an *evasion* of it."
+
+`v6` paper 40 §7 carries it as **standing bound 1** on the whole thesis:
+*"indivisibility does not restore outcome independence.  The smooth law is
+exactly as Bell-nonlocal as quantum mechanics, because it **is** quantum
+mechanics in record form."*
+
+**C3.4 Magic ≠ indivisibility.**  `v6` paper 40 §7, **standing bound 2**:
+*"Tested and published: **magic = Wigner negativity is strictly finer than
+indivisibility.**  The thesis lives on the dynamics/geometry/thermodynamics
+side, not the resource-theory side."*  Paper 26's qutrit receipts carry the
+measurement: stabilizer states nonnegative, **the magic state at `−1/3`
+exactly**, cost compounding as `(Σ|W|)^{2n}`.
+
+**C3.5 Born = K1, and the Born/signature paper.**
+`v6/publishable/paper-Va-foundations-1.md` — *"Quantum theory from sealed
+records I: Born composition, Lorentz signature, and the arrow of time"* —
+states results **at declared scope and with declared hedging**, quoted:
+
+- **(i) the Born layer** — "record weights compose through square roots,
+  and the tame-class reconstruction **is argued to** recover the Weyl
+  algebra and to land in the Schrödinger representation via the
+  Stone–von Neumann import, from record towers (at tame scope: the
+  tame-class definition with its growth constants and the boundary
+  classification are corpus-bound `[P]`)";
+- **(ii) Lorentz signature** — "the commitment structure of records **is
+  argued to select** a Lorentzian `(1,d)` split with derived orientation
+  classes (a structural argument from the commit-order asymmetry)".
+
+> **The self-containment caveat, verified by count.**  Paper Va carries
+> **22** `[P]` tags — corpus-bound pointers to results that live outside the
+> submission (`grep -c "\[P\]"` = 22).  **It is not self-contained**, and
+> that is a property a reader must carry when citing it.
+
+**And the v10 echo.**  In v10, paper 31 §4.3 constructs an isometric family
+`{V_single, V_pair}` — acceptance composed with the join-typed opening
+click — for which **the squared branch amplitudes of `V_pair` are exactly
+`1/2`–`1/2`, "the `K1` law on the 2-conflict, recomputed from the layer"**,
+`V_single` deterministic, both isometric (defect `0.0`; isometries at
+`1e−40`), and the committed menus reconstructed **exactly in rationals** at
+both cuts (`1/4` early; `1/4 + 1/8 + 1/8` at the join) from *the same
+matrices* at both cuts.  The randomized escape class is excluded by a
+visibility theorem.  So "Born = K1" is a phrase that occurs on both sides of
+the corpus — **and §C5 is where the honest statement of what that does and
+does not establish belongs.**
+
+**C3.6 Covariantization by discreteness** (paper 57 §5.1, verified; the
+substrate is `v6/…-paper1-indivisible-causal-set-gravity.md`).
+
+*Discreteness covariantizes the kinematics* — three verified components:
+
+1. A **Poisson sprinkling** of division events is statistically
+   Lorentz-invariant (Bombelli–Henson–Sorkin: nearest-neighbour spacing CV
+   flat across boosts, **no recoverable frame**, whereas a regular lattice
+   **is** frame-recoverable) — with `s²` boost-invariant to **10⁻⁹⁷**.
+2. The entropy-production arrow `σ = D(P_AB ‖ P_BA)`, defined as *"what is
+   committed at an event = its causal past"*, reads the **frame-invariant
+   causal partial order**, not a preferred slicing: **`0/3200` mismatches**
+   for the causal past under boosts, while a constant-time-slice past
+   changes for **every** event.  **So the arrow needs no foliation.**
+3. **Hegerfeldt dissolves** for the free flash: a flash localizes a
+   point-*event* sampled from a density, not a positive-energy *state*, and
+   Hegerfeldt forbids only the latter.
+
+*The GRW/CSL foliation wall becomes covariant residues.*  Coverage by
+regime: free / single-particle-distinguishable — **covariant** (Tumulka
+2006); **interacting-distinguishable — solved** (Tumulka 2020); the genuine
+open residue is a **covariant interacting *field* (variable particle
+number) indivisible beable**, where a Branch-B *candidate* exists (paper 1
+§5: a microcausal `Q̂ = ½α:φ²:` collapse model; cf. Bedingham) — so the wall
+reduces to the sharp "dangerous pair": whether a state-dependent
+mass-localizing seal can be covariant *and* localized enough to source
+point-gravity without re-triggering the nonlinear-collapse / Hegerfeldt
+no-go at spacelike separation.
+
+**Two further obstructions on the dynamical side, both sharp:**
+
+- **η-exactness ⟺ a preferred foliation exists.**  Curl-freeness of `η` is
+  frame-invariant (`dη` is a 2-form), and the physical current
+  `η_μ = w·u_μ` is an exact gradient **iff** the flow is irrotational
+  (`u ∧ du = 0`) **iff a global preferred foliation exists** (sympy-exact;
+  a vortical flow has `u ∧ du ≠ 0` in *every* frame).  So η-exactness does
+  not *remove* a preferred foliation — **it is equivalent to having one**,
+  and for vortical matter the `Λ`-flow is genuinely multivalued.
+- **Exactness and the falsifier are mutually exclusive.**  By Hodge, only
+  the exact `dχ` part of `η` feeds `Λ`, while the decoherence source — the
+  programme's sole empirical falsifier — is the **co-exact transverse**
+  part; exact ⊥ co-exact in `L²`, so **forcing `η` exact zeroes the
+  decoherence power identically.**
+
+> **The honest status line, quoted:** *"discreteness covariantizes the
+> kinematics outright, the interacting-distinguishable dynamics is done,
+> and the interacting-field dynamics is the `[OBSTRUCTED-leaning]` wall —
+> SHARD has the thermodynamics of gravity and a covariant kinematics, not
+> yet a covariant interacting-field dynamics."*
+
+**C3.7 The publishable batch.**  Four of these results were packaged for
+external submission and put through an eight-round hostile-review campaign:
+the graded local Weyl law (`paper-IV-graded-weyl.md` — *"Hearing the
+regularity of a diffusion coefficient: a graded local Weyl law with a
+constructive converse"*), the Born/signature foundations paper (Va), the
+gravitational-decoherence undecidability paper (X), and the causal-set
+gravity paper.  **Va's 22 corpus-bound tags are the standing caveat on that
+batch.**
+
+---
+
+## C4. The consolidations and the spin-offs
+
+### ① PLAINLY
+
+Two things happen to a research corpus that grows fast: it accumulates
+results faster than it can keep them consistent, and it accumulates
+*claims* that were true when written and have since been narrowed.  The
+earlier corpus dealt with both by two large consolidation exercises and by
+spinning off the parts that had become independent.
+
+**v7** produced eighteen papers and was then **frozen**: no further
+corrections land there.  **v8** did the consolidation proper — fifty-one
+papers were rewritten into **six**, plus a single authoritative ledger that
+maps every result to its owning paper, its receipt, and its honest status.
+The rule adopted at that point is the one this document has been quoting
+throughout: *corrections land in the ledger and the new papers only, never
+in the frozen log*, because the recurring failure mode was receipt-level
+corrections silently drifting out of sync with the papers citing them.
+
+The consolidation was then attacked.  Six independent referees produced
+**74 findings** across the six papers — and **zero of them were false
+results**.  Every serious finding was a transcription, notation, or
+attribution defect.  A follow-up confirmation pass found twelve residual
+defects, repaired the same day, and graded the set **CONFIRMATION-PASSED**.
+
+And then the honest coda, recorded in the ledger rather than buried: item-
+level fidelity is complete, but the *style* — certainty carried by
+receipts rather than by written proofs, sketch-grade arguments for several
+core theorems, no displayed-equation-and-lemma structure — **would not pass
+a human journal referee**.  A proof-carrying upgrade is described, costed,
+and explicitly **not yet approved**.
+
+**The spin-offs.**  Two lines outgrew the physics programme.
+
+The **Yang–Mills** line ran for dozens of papers across two version lines
+and produced a standalone construction paper.  Its own status line is the
+interesting part: it says, in its header, that it is **not an unconditional
+proof** of confinement or of the mass gap, and it isolates the five
+clauses that would have to be discharged.  An errata ledger then records
+that an earlier "CLOSED" headline was **reopened as conditional** by the
+papers that followed it — the reduction now bottoms out in one named open
+analytic input, classified as an open research programme.
+
+The **Walsh–delta** line produced something else entirely: a clean, fully
+stated combinatorial theorem that has nothing to do with physics, has been
+**formally verified in a proof assistant** except for one finite
+computation, and now lives in its own repository.  It is the corpus's one
+unambiguous mathematical export.
+
+### ② THE OBJECTS
+
+**C4.1 v7 — frozen** (`v7/ARCHIVE-STATUS.md`, quoted):
+
+> "This directory is the v7 research log, **frozen as of 2026-07-01** …
+> superseded by the **v8 consolidation**.  The authoritative map of every
+> result, receipt, status, and supersession is `../v8/LEDGER.md`.
+> Corrections after this date land in v8 and the ledger **only** — not
+> here.  (The recurring failure mode this policy ends: receipt-level
+> corrections silently desyncing from the papers that cite them.)"
+
+Known text-side items deliberately **not** fixed at the freeze, and
+declared: paper 1's abstract premise-ledger; the `σ`/`κ` terminology
+unification; the orphaned-receipt homes; paper 18's fresh multi-referee
+review.  Eighteen papers are terminal on that line; among them the
+three-walls classification theorem of §C2.6.
+
+**C4.2 v8 — the consolidation** (`v8/LEDGER.md`).
+
+- **Target structure:** *"51 papers → 6 + this ledger"* (§ heading,
+  verbatim).
+- **Objective, redefined 2026-07-01:** v8 must be **fully self-contained
+  with respect to v7** — *"v7 is kept for logging only and v8 must be
+  usable as if v7 were deleted"*; every worthwhile v7 result, derivation
+  and honest negative moves into v8 **at full fidelity — "not compressed,
+  just better"**.  v6 is **kept** and may be cited.
+- **Phase C:** the cited receipt canon (**66 `.py` + one `.npz`**) copied
+  into `v8/code/`, all six papers repointed, canon run green **66/66**.
+- **Phase D (the hostile round):** six independent referees; **74 findings
+  total (7 MAJOR / 41 MINOR / 26 NIT), ZERO false *results*** — *"every
+  MAJOR was a transcription/notation/attribution defect, none a wrong
+  theorem"*.  All seven MAJORs hand-verified before applying (standing
+  rule); receipts touched by fixes re-run green.
+- **Confirmation pass (2026-07-02): COMPLETE, all six papers.**  Six
+  focused referees re-verified every applied fix and hunted collateral
+  damage; **12 residual defects found, all repaired same date**.  **Set
+  grade: CONFIRMATION-PASSED.**
+- **The honest coda, verbatim from the ledger:** *"Remaining before external
+  use: the user-flagged **referee-grade gap** — item-level fidelity is
+  complete, but the corpus style (receipt-carried certainty, sketch-grade
+  proofs for several core theorems, v6-resident proofs, no
+  displayed-equation/lemma structure) predates v8 and **would not pass a
+  human journal referee**; a possible **Phase E** (proof-carrying upgrade …
+  papers grow ~2–3×, paper 2 likely splits) is **ON THE TABLE, not yet
+  approved**."*
+
+**One clarification a reader will need.**  "51 → 6" is the *consolidation
+target structure* — the rewrite of the frozen v6+v7 corpus.  The `v8/`
+directory subsequently grew **papers 7–17** as *new* research on top of
+that consolidated base, so the directory listing and the headline figure
+are not in conflict; the six are the consolidation, the rest are what came
+after it.
+
+A second confirmation pass over papers 7–15 (three referees, every receipt
+re-run green) records the same shape — *"zero false results, zero broken
+receipts; all residual defects transcription/staleness-class"* — plus a
+recurring lesson this document has already met once in v10:
+
+> *"fixes claimed in a corrections entry MUST be verified landed in the
+> same pass — two items were written to the ledger but not to the files."*
+
+That is the **same defect class as v10's #420** (a ledger entry claiming a
+delta that had not landed).  It has now been caught twice, in two different
+version lines, by two different mechanisms.
+
+**C4.3 The Yang–Mills line.**  Spanning `v3` papers 11–22 (continuum
+Yang–Mills, RG closure, mass-gap gates, confinement area law) and `v4`
+papers 28–45.  The standalone artifact is
+`v4/relativistic-isp-v4-paper39-standalone-ontology-free-yang-mills-proof.md`
+— *"Standalone Record-Complete Yang-Mills Construction And Confinement/Gap
+Reduction"* — whose own header states the scope:
+
+> "**Conditional status:** the construction is **not an unconditional proof**
+> of four-dimensional Yang-Mills confinement or mass gap.  Subsection
+> 10.28g isolates the five C0 clauses: uniform bounds across packets (U),
+> large-field control …"
+
+and, on external status: *"Community-level acceptance requires checking the
+record-complete construction and the printed margin certificate."*
+
+`v4/ERRATA.md` E1 then records the reopening explicitly:
+
+> The Yang-Mills descent **"CLOSED" claim** of paper 30 is **reopened as
+> conditional** by papers 39–45: paper 39 is explicitly "not an
+> unconditional proof"; paper 40 **reduces the fixed-IR confinement route
+> to the open analytic input `H_3sec(R, ζ_R)`** and "does not prove full
+> continuum Yang-Mills confinement"; paper 45 **classifies `H_3sec(R, ζ_R)`
+> as an open research program.**
+
+`v3/ERRATA.md` E1 records a structurally identical retreat one line
+earlier: paper 23's "clean conditional closure" framing is superseded by
+paper 25's **Theorem 16.8** (a five-option truth-status theorem) proving
+*"the current v3 corpus supplies **none** of the five same-law sources and
+neither proves nor falsifies any of the five Branch-A options"*, with
+Corollary 16.10 freezing the reduction to explicit new data.
+
+Both errata ledgers open with the same discipline: *"All entries are
+additive; no frozen text has been modified in place."*
+
+**C4.4 Walsh–delta — the mathematical spin-off**
+(`~/workspace/walsh-delta/`, its own repository: paper, Lean formalization,
+certificates).
+
+- **Setup.**  Fix `n ≥ 2`; `G = {±1}ⁿ`, `N = 2ⁿ`, `U` uniform.  For each
+  nonzero `a` there is a Walsh character `χ_a(s) = (−1)^⟨a,s⟩`; an
+  **orientation** is a sign choice `ε_a ∈ {±1}` per character, defining the
+  Gibbs law `P_ε(s) ∝ exp(Σ_{a≠0} h_a ε_a χ_a(s))` with magnitudes pinned
+  by the **self-calibration** fixed point `𝔼_{P_ε}[ε_a χ_a] = e^{−h_a}`.
+  The paper proves this system has **exactly one** solution for every sign
+  choice, via strict convexity and coercivity of a single objective.
+- **Theorem 1.2 (main).**  The relative entropy `m̂(ε) = D(P_ε ‖ U)` is
+  minimized — **strictly, and uniquely up to the natural `N`-element
+  symmetry orbit** — by the **delta orientations** `ε_a = −χ_a(s⋆)`, whose
+  calibrated law is uniform on `N−1` points and nearly extinguishes `s⋆`.
+- **The engine (Theorem 6.1, a quantitative dichotomy).**  Any *non*-delta
+  calibrated law with `D ≤ 1/60` must extinguish **at least three points**
+  down to depth `e⁻⁵`, forcing
+  `N·D ≥ 3ψ(e⁻⁵) = 3(1 − 6e⁻⁵) > 2.878716` (with `ψ(x) = x log x − x + 1`),
+  while the delta value satisfies `N·D_δ < N/(N−1) ≤ 64/63`.  **For
+  `n ≥ 6` (so `N ≥ 64`) the two bounds cross and close the theorem
+  analytically**; for `n ≤ 5` the margin is verified by certified
+  computation (§8).
+- **Not a photo-finish:** the best non-delta family known satisfies
+  `N·D → 4 log 4 = 5.545…`, **conjectured** to be the sharp runner-up
+  constant.
+- **Rigour infrastructure:** the tight constants (`2.878716`, `1.244163`,
+  `64/63`) are discharged by **exact interval arithmetic**; the Lean 4 +
+  Mathlib formalization has **7 of 8 modules kernel-verified with no
+  `sorry`**, and the headline `theorem_1_2` is **proved modulo exactly one
+  finite computation**.
+- MSC 2020: 94A17 primary.  *"The self-calibration fixed point appears to
+  be new; its nearest relatives are Littlewood ±1-polynomials and
+  self-consistent-field equations."*
+
+> **Numbering note.**  This result is sometimes referred to inside the ISP
+> corpus as "Theorems E + F".  The standalone repository numbers them
+> **Theorem 1.2** (the minimizer) and **Theorem 6.1** (the dichotomy
+> engine).  This document uses the repository's numbering, since that is
+> the artifact a reader would open.
+
+---
+
+## C5. The lineage question, honestly
+
+### ① PLAINLY
+
+Here is the question a careful reader will have been holding since page one
+of Part C: **is the v10 theory of Part A and Part B the same theory as the
+sealed-record programme of C1–C3, or is it a different theory by the same
+author?**
+
+The honest answer has three parts.
+
+**What is established.**  It is one programme, continuously.  Same author,
+same ledger discipline, same insistence that a claim is worth what its
+receipt and its hostile round are worth.  The vocabulary descends directly:
+the earlier corpus's *seal* — an irreversible commitment that destroys a
+coherent phase — is manifestly the ancestor of v10's *click*, and the
+axiom "no distinction without a record" is manifestly the ancestor of
+v10's insistence that what may happen next depends only on what is already
+written.  There is also a **formal compatibility ledger** — a document
+that goes result by result through the earlier corpus and states, for each
+one, what it supplies to the later work and, crucially, **what it does not
+supply**.  Themes recur with real content: the Born weights that appear in
+the earlier foundations paper reappear in v10 as the arbitration kernel,
+computed from v10's own layer.
+
+**What is NOT established, and this is the uncomfortable part.**  A
+strategic sweep of the corpus asked directly whether any of the earlier
+laws had ever been *measured* on any of the later objects.  Its finding,
+recorded verbatim, is: **the bridge is empty.**  No receipt has ever
+measured an earlier law on a later structure.  The postulate that would
+identify the two ontologies — "a seal *is* a record" — is exactly that, a
+**postulate**, and it has never been instantiated.  And a quantity called
+`σ` in the earlier line and a quantity called `σ` in the later line turned
+out to be **a name collision** — two different functionals of two different
+things.
+
+**What is being done about it.**  A design note specifies the first object
+that would be *both*, and the first falsifiable measurement that would test
+the identification.  It is careful in exactly the way this corpus is
+careful: it identifies in advance that the obvious test would confirm a
+mathematical tautology (§C1's universality trap), and moves the falsifiable
+content to something that could actually fail.  As of the material read for
+this document, **that receipt has not been run.**
+
+So: one programme, one lineage, and — between its two halves — **one
+postulate and no measurement**.
+
+### ② THE OBJECTS
+
+**C5.1 What is established.**
+
+- **A formal compatibility ledger exists.**
+  `v10/note-d12-v6-v10-compatibility-ledger.md` (*"what the corpus already
+  fixes"*, completed 2026-07-11) is a clause map with four columns —
+  *object* / *strongest earlier result* / *correct D12 use* / **not
+  supplied**.  Sample rows, verbatim in substance:
+
+  | object | strongest earlier result | not supplied |
+  |---|---|---|
+  | primitive record | V6 P3/P4 sealed finite diamond | between-diamond output support |
+  | eventless clock | V6 P4 §71: additive RN/KL evidence `I`, `S(I) = exp(−I)` | mapping to external seconds |
+  | dense scalar click face | V7 P1: `S(χ) = exp(−κχ)` under dense seals | realized `κ`, content magnitudes |
+  | sparse indivisible face | V7 P1: `S(nd) = S(d)ⁿ` | profile and spacing |
+  | whole-history law | V6 P4 §40: complete closed-holonomy cochain reconstructs positive finite `P_D^hist` | intrinsic selection of ledger/support |
+  | quantum weight | V6 P4/P5: squared norm selected given linear retained-holonomy composition and screen isometry | **derivation of the composition packet itself** |
+
+  It also **resolves apparent conflicts explicitly** — e.g. `exp(−I)` vs
+  `exp(−κχ)` (`I` is the self-accounting evidence coordinate, in which the
+  coefficient is one; `χ` is a chosen content coordinate, and converting
+  requires physical input), and *"Markov collar versus non-Markov record
+  law"* (an eventless collar may admit a reversible Markov presentation
+  while the sealed sequence remains indivisible — Chapman–Kolmogorov holds
+  at commits and may fail across unsealed intervals).
+
+  **This is a real relation and it is exactly the right kind:** it says
+  what transfers and, in a dedicated column, what does not.
+
+- **Shared machinery, concretely.**  The `K1` kernel: v10 paper 31 §4.3
+  constructs `{V_single, V_pair}` whose Born weights are **exactly the `K1`
+  law, recomputed from the v10 layer**, and reconstructs the committed
+  menus at both cuts in exact rationals.  The earlier Born layer (paper Va)
+  is the same *kind* of statement — record weights composing through square
+  roots.
+
+- **Shared discipline.**  Pin → receipt → hostile round → delta → terminal;
+  append-only ledgers; forward corrections only; errata ledgers that are
+  additive and never modify frozen text.  Both halves run it, and both
+  halves have caught the *same* defect class independently (§C4.2).
+
+**C5.2 What is NOT established — the round-36 finding, verbatim scope.**
+From `v9/note-bridge-seal-is-record.md` §1:
+
+> **"THE BRIDGE IS EMPTY: zero receipts measure any v6 law on any web; the
+> seal-is-record postulate (v8 paper 6 phenomenology §1.2, `[POSITED]`) has
+> never been instantiated; and the two `σ`'s are a name collision.  The v6
+> side owns laws about *seals* (the quarter law, v6 paper 26 Thm A); the
+> v8/v9 side owns theorems about *webs* (click law, churn, dimension).  No
+> object has ever been both."**
+
+The name collision is then dissolved by fiat, which is the right move:
+
+- **`σ_wp` (which-path KL)** `= D(P₀ ‖ P₁)` over readout distributions —
+  *this* is the `σ` of the quarter law;
+- **`σ_arrow` (arrow KL)** `= D(P_fwd ‖ P_rev)` of a marked commit's local
+  transition — *this* is the substrate `σ` of the phenomenology text and of
+  the covariance argument in §C3.6;
+- *"These are different functionals of different pairs.  The corpus's name
+  collision dissolves by never again writing either as bare `σ`."*
+
+**C5.3 The first bridge measurement, specified and not yet run.**  The same
+design note pins what would actually test the postulate, having first
+disqualified the obvious test:
+
+- **Gb1** — the ¼ ratio, gated **only as instrument certification**, and
+  explicitly **"not the bridge"**, because §C1's universality argument makes
+  it measure-theoretic in the weak limit;
+- **Gb2 — THE FISHER IDENTITY, the postulate's actual falsifiable core.**
+  Seal-is-record says irreversibility and which-path readout are two faces
+  of one record event *sharing one Fisher object `J`*.  Test: on the same
+  marked commits measure `J_wp` and `J_arrow` under the same contrast dial.
+  **The postulate ⇒ the ratio is a fixed, contrast-independent constant;
+  independent objects with no shared `J` ⇒ the ratio drifts.**  Drift ⇒
+  *"the postulate is REFUTED-AS-STATED for this class (and the v8 §1.2
+  elevation is re-graded)"*;
+- **Gb4 — covariant readability**, with explicit **kill semantics**: if the
+  covariant readout's evidence ratio → 0 as the window grows, *"the marked
+  record's content is relabeling gauge, and the postulate as stated dies on
+  the web"*.
+
+Status of that receipt: the note is *"the deliverable; its receipt
+(`bridge1`, gates §5) is a **later round**, run only after the §6
+obligations clear."*  Nothing in the material read for this document shows
+it run.
+
+**C5.4 RELATION UNESTABLISHED — the explicit list.**  The following are
+**not** established anywhere the author of this document could verify, and
+no bridge should be inferred:
+
+1. **The v10 generated grammar is not derived from the sealing formalism.**
+   Paper 30 §1.2 marks the grammar `[POSITED]`, and its kernel laws
+   `[POSITED as alternatives]`.  Nothing derives the six event types,
+   their carriers, or their quarter-budget pricing from axioms R/S/C.
+   **RELATION UNESTABLISHED.**
+2. **v10's `click` is not proved to be a `seal`.**  The identification is
+   the seal-is-record postulate — `[POSITED]`, never instantiated (§C5.2).
+   **RELATION UNESTABLISHED.**
+3. **The quarter law is not known to hold in v10.**  It is a theorem about
+   a monitored qubit's Bhattacharyya overlap.  v10 has no monitored qubit
+   and no receipt has tested it there.  **RELATION UNESTABLISHED.**
+4. **The v10 completion dichotomy is not connected to the `G` no-go.**
+   Both concern something the theory cannot supply from inside — a measure
+   in one case, an absolute length in the other — and both were argued by
+   an invariance/weight argument.  **That is a resemblance, not a theorem.**
+   No unit relates them.  (PART D §D6 records a *labelled speculation* in
+   this vicinity; it is labelled precisely because of this row.)
+5. **v10's actors are not v6's division events.**  v6's division-event
+   causal set is a Poisson sprinkling with a Lorentz-invariant intensity;
+   v10's records are worldline-woven and provably **do not** look like
+   sprinklings under the one instrument that has compared them
+   (CHAPTER 12 §12.1).  **RELATION UNESTABLISHED — and there is now
+   measured evidence they are different kinds of object.**
+6. **v10's `sigma` (the local-state abstraction) has nothing to do with
+   either earlier `σ`.**  It is a third use of the letter — a state
+   abstraction, not an information quantity.  Named here so nobody
+   completes the collision.
+
+> **The honest summary.**  The two halves of this corpus are one programme
+> by construction, history, method and vocabulary — and are joined by
+> **one postulate and zero measurements**.  The corpus knows this, wrote it
+> down as "the bridge is empty", specified the first measurement that could
+> fail, and has not yet run it.  A reader should treat Parts A/B and Part C
+> as **two bodies of work in one programme**, not as one theory told twice.
+---
+---
+
+# PART D — THE DESTINATION
+
+> **This part supersedes chapter 11's forward-look**, per the standing
+> redirect recorded at LOG **#436** (chapter 12 §12.3).  Chapters A11/B11
+> are not rewritten — they remain accurate as the state of the *two lines*
+> — but where they say "the convergence question is the programme's centre
+> of gravity", the destination stated here is what that question is
+> *for*.
+>
+> **Same two registers.**  Each section opens **① PLAINLY** and continues
+> **② THE OBJECTS**, exactly as PART C.
+
+---
+
+## D1. The destination, stated
+
+### ① PLAINLY
+
+For most of the geometry line's life, the implicit target was: *make the
+records look like spacetime as physicists usually discretize it* — a random
+scattering of points in Minkowski space, with the causal order read off.
+That target is now **withdrawn**.
+
+The destination is:
+
+> **Full Einsteinian manifolds — curved, dynamical spacetime — enriched
+> enough that quantum particles can be created in them.**
+
+Not flat spacetime.  Not a discretization that resembles a sprinkling.  A
+manifold with genuine curvature, obeying dynamics, carrying fields, and
+capable of the one phenomenon that most sharply separates curved-spacetime
+physics from flat: **particle creation**.
+
+Two things make this the right target rather than an ambitious one.
+
+First, **the corpus already owns a piece of Einstein**.  Chapter C2's
+result is that the earlier line derives Einstein's field equations *in
+form*, as the thermodynamics of records, and proves it cannot derive their
+scale.  So "Einsteinian manifolds" is not a distant hope in this programme;
+it is a partially completed arrow with a precisely known missing piece.
+
+Second, **the evidence now points away from the old target**.  The one
+measurement that compared the framework's records with genuine sprinkled
+Minkowski records found they differ sharply — and in a direction that
+favours the redirect.  Sprinkled records have no worldline structure at
+all; the framework's records are *woven out of worldlines*.  Chasing
+resemblance to a sprinkling was chasing the wrong resemblance.
+
+### ② THE OBJECTS
+
+The redirect, as recorded (LOG #436, user direction, 2026-07-26):
+
+> **"The destination is FULL EINSTEINIAN MANIFOLDS enriched to create
+> quantum particles — not Minkowski-sprinkling likeness."**
+
+with the supporting observation from the same entry: *"D55c's zero-shatter
+reframe supports the redirect: the grammar's records are worldline-woven,
+not sprinkled."*
+
+The supporting measurement is CHAPTER 12 §12.1 (D55c, LOG #435,
+**GREEN-UNREVIEWED**): across 1,578 SC5-capable genuine `M^{3+1}` sky
+pairs, **zero shatter-4 and zero shatter-5**; combined with the earlier
+zero-shattering result on genuine `M^{2+1}`, **no sprinkled Minkowski
+record of any tested dimension shatters at all**, while the engineered
+transport records shatter 4 and 5.  Its `[MY READING]` mechanism note —
+that sprinklings have no actor/wire structure, so the Dilworth mechanism
+cannot even apply to them — is the structural reason the two object classes
+should not have been expected to resemble each other.
+
+**What the destination does NOT mean.**  It does not mean the corpus
+claims curved spacetime, particle creation, or any step below.  §D2 is a
+roadmap with per-arrow status, and four of its eight arrows are `[OPEN]` or
+`[BLOCKED]`.
+
+---
+
+## D2. The roadmap, arrow by arrow, with honest status
+
+### ① PLAINLY
+
+Here is the whole route from the primitive to a laboratory, with each step
+marked by what the corpus actually has.  Two of the eight steps are done,
+two are half-done, three are open, and the last is blocked.
+
+| # | step | plain status |
+|---|---|---|
+| 1 | records → a causal order | **HAVE** — this is what the grammar builds, and the order is the physical content |
+| 2 | causal order → local skies and a dimension *capacity* | **HAVE**, with a correction: the meter measures the grammar's coordination, not a record's dimension |
+| 3 | skies → charts, gluing → a manifold | **OPEN** — the next unit to build, and the first genuinely new construction the destination requires |
+| 4 | manifold → Einstein dynamics | **PARTIAL** — the *form* of the field equations is derived; Newton's constant is provably not derivable from inside |
+| 5 | manifold → quantum fields on it | **PARTIAL** — a lift of the record process into Hilbert space exists at fixture scale, and its arbitration layer is where the quantum problem begins |
+| 6 | fields → **particle creation** | **OPEN** — the destination's defining phenomenon, with one suggestive structural resemblance that is *labelled speculation* |
+| 7 | particles → matter | **OPEN** |
+| 8 | matter → a laboratory number | **BLOCKED**, and the block is four-fold |
+
+The most important honest point about this table: **the arrows are not
+independent, and three of them are blocked on the same thing** — the
+programme cannot currently pose probabilistic questions at the scope where
+its geometry lives (chapter 9, tightened in chapter 12 §12.2).
+
+### ② THE OBJECTS
+
+**ARROW 1 — records → causal order.  `[HAVE]`**
+
+The event poset is the **carrier-wise wire closure** (§B2.1); causal order
+is physical and incomparable order is gauge (§B3.1); admissibility is
+past-local and executable, with a single authority (§B2.4).  Load-bearing
+downstream: **any two events sharing an actor wire are comparable** — a
+theorem of the layer, not an assumption (§B7.3(i)), corroborated over
+218,795 pairs with zero violations and re-verified in the round at 226,223.
+
+*Residual defects carried:* the `h12` off-ladder configuration; the
+general-depth `1 + k/4` ladder false under current pricing; the D2H merge
+priced `1/16` vs `1/24` (§B2.8).  None of these touches the order; all are
+pricing.
+
+**ARROW 2 — causal order → local skies and dimension capacity.  `[HAVE,
+with the chapter-12 reframe]`**
+
+Delivered: the sky instrument with three committed definitions and the
+proof that only one of them can ever fire (§B5.4); the corrected capacity
+condition SC5; the two scaling laws in different variables — Minkowski buys
+sky size with **density**, transport buys it only with **actor width**
+(§B5.5–§B5.6); transport skies **narrower than chance**; the **Dilworth
+gate** as an unconditional theorem of the layer (§B7.3); and constructed
+records that pay the price at two rungs, the higher one **forced** at every
+one of 84 steps (§B8.4).
+
+**Corrected by CHAPTER 12 §12.1:** the shatter number is *not* a dimension
+reading for a record.  The calibration ladder (`B₄` fits `S²`; no five
+points ever shatter on `S²`; `B₅` fits `S³`) is exact and intact **for
+continuum trace systems**; discrete sprinklings read `≈ 0` in every
+dimension.  So arrow 2 delivers a **capacity** result — *the layer does not
+cap the shatter ladder at the sphere's rung* — and a measure of engineered
+coordination.  It does not deliver a dimension for a record.
+
+**ARROW 3 — charts and gluing → a manifold.  `[OPEN — the next pinned
+unit]`**
+
+This is the arrow the destination newly requires and the corpus has never
+attempted.  A causal order is not a manifold.  To get one you need, at
+minimum: local pieces that look like patches of `ℝ^d` (charts), a rule for
+saying two patches overlap and agree (gluing), and enough consistency that
+the result is a single object rather than a collection.
+
+What the corpus has that is relevant: the **sky** is a candidate local
+object at an event, and §B7's Dilworth gate is a statement about how much
+local structure a given number of actors can support.  What it does **not**
+have: any notion of a chart, any gluing condition, any transition
+functions, any dimension that is *stable across neighbouring events*, and —
+after chapter 12 §12.1 — any instrument that reads a dimension off a record
+at all.
+
+> **Status: `[OPEN]`.  Named as the next pinned unit (D58) by the
+> coordinator's direction.  No pin for it exists on disk as of LOG #436,
+> and nothing in this document should be read as reporting its results.**
+
+`[MY READING]` The honest shape of the difficulty is this: chapter 12 §12.1
+removed the corpus's only candidate *dimension meter for records* at the
+same moment the destination started requiring a manifold, which needs a
+*stable local dimension*.  So arrow 3 does not merely need construction —
+it needs a **replacement instrument**, and the residue D55c itself named
+(does genuine Minkowski shatter 3 — where is the sprinkling floor?) is
+probably the cheapest probe of what such an instrument would have to look
+like.
+
+**ARROW 4 — manifold → Einstein dynamics.  `[PARTIAL]`**
+
+This is where PART C pays off, and the status is precise (all of §C2):
+
+- **Derived `[DERIVED, mod (R) + two gates]`:** the field equations *in
+  form*, `G_μν = 8πG T_μν`, as the equation of state of sealed records —
+  including the linearized spin-2 (traceless) equation via the null-cone
+  lemma, and including two things vanilla Jacobson *assumes*: the geometry
+  factor of the area law (Srednicki's 0.295, no fitted tail) and the
+  pure-area property of the entropy.
+- **Provably not derivable `[NO-GO]`:** Newton's `G`.  One record length,
+  weight-counting lemma, `G·σ_A = 1/4`, `κ·σ_A = 2π` and `G·Λ²` as *two
+  separate* weight-zero invariants, seven levers collapsing identically,
+  and the second-scale attacks closed.
+- **Conditional, and the asymmetry matters:** four named premises carry the
+  Jacobson route, but **the weight-counting no-go depends on none of them.**
+  *The wall stands unconditionally; the `G`-naming of it is conditional.*
+- **Obstructed `[OBSTRUCTED → OPEN]`:** the propagating graviton — 4 of 9
+  components priced universally, the other 5 spanned but only at a
+  boost-dependent second-order coupling, with four convergent obstructions
+  reducing to one root (the needed structure lives only in a continuum
+  algebra a finite record lattice cannot host).
+
+**The connection to arrow 3, stated exactly.**  Arrow 4's derivation runs
+on a *continuum* geometry with local Rindler horizons.  It presupposes the
+manifold arrow 3 has not built.  So the two are in the order given, and
+arrow 4's `[PARTIAL]` should be read as *"already available once arrow 3
+lands, modulo its four named premises and with `G` as an honest
+calibration"* — not as *"half-built on the records as they stand"*.
+
+**ARROW 5 — fields on the manifold.  `[PARTIAL]`**
+
+What exists (§B6.6): the endpoint lift assigning `∏√q` to complete
+histories, with the Born diagonal on the canonical-class basis equal to
+`mu/Z` at `Z = 3`, exact on 253 quadratic ratio pairs; the **kernel-layer
+lift exact** at `2/3`–`1/3`; a complete fine-versus-coarse instrument pair
+(order coherence `1/6` under coarse sealing, `0` under fine); and, in v10
+paper 31 §4.3, a **constructed isometric arbitration family** reproducing
+the `K1` Born weights exactly and reconstructing the committed menus at
+both cuts in exact rationals.
+
+What is honest about it: **the lift is the classical gradient completion at
+one particular boundary "in Hilbert dress"** — Hilbert space supplies no
+new resource; and the step operator faces the three-horn pincer at the
+arbitration layer, which is exactly where the classical problem stopped.
+
+So arrow 5 is a *field-theoretic* arrow only in the loosest sense: what
+exists is a quantum lift of the record process, at fixture scale, on a
+grammar with two actors.  **A quantum field on a curved manifold is not
+built, and no unit has attempted it.**
+
+**ARROW 6 — PARTICLE CREATION.  `[OPEN]`** — see §D3, which it deserves.
+
+**ARROW 7 — matter.  `[OPEN]`**
+
+Named, not built.  The one relevant positive is from §C2: the dimensionless
+gravitational coupling-per-species `c_m = Gm²/ℏc` is **weight-zero and
+intrinsic**, hence **eligible** to be a record output — the no-go does not
+forbid it.  *"So the records cannot fix the absolute scale of gravity;
+whether they fix its dimensionless strength is a separate, still-open
+question."*  The matter-sector hierarchy is that question, and it is
+explicitly not engaged.
+
+Related and also open: the three-walls classification's **MODE** wall
+(§C2.6) — which-mass-is-which is **import-fixed** by measured spectra, not
+derived.
+
+**ARROW 8 — laboratory.  `[BLOCKED]`**
+
+Blocked at `note-d41c-step3-bridge-declarations.md` §1A (§B10.7), on four
+independent grounds, of which the second is a *result of arrow 4*:
+
+1. a scale gap of roughly twenty orders of magnitude `[ILLUSTRATIVE]`;
+2. **the corpus cannot fix that scale** — arrow 4's own no-go: exactly one
+   record length, `G` provably un-fixable, so the record scale is a free
+   parameter and any assumption about where the laboratory sits is
+   un-derived either way;
+3. a **layer gap** — records → background → quantum fields → atomic
+   structure, at least three constructed layers, **none built** (they are
+   arrows 3, 5, 6/7 of this very table);
+4. **aggregation loss** — merging actors is never impossible but is
+   massively lossy, so a bound extracted through a single-line description
+   of a composite is a bound on the coarse world (§B1.2).
+
+The slot named **(0) THE COARSE-GRAINING** is logically prior to the four
+things a bridge must fix, and is **EMPTY**.  The sign-off block is
+**SEALED, NOT PRESENTED FOR SIGNATURE**.
+
+> **Note the structure of the block.**  Ground 3 says the laboratory arrow
+> is blocked *by the incompleteness of this very roadmap*.  That is not
+> circular — it is the roadmap doing its job: it says exactly which arrows
+> must land before arrow 8 can even be posed.  And ground 2 says that even
+> when they land, one dimensionful calibration will still have to be
+> imported.
+
+---
+
+## D3. Particle creation, and one labelled speculation
+
+### ① PLAINLY
+
+Why is particle creation the destination's chosen endpoint rather than,
+say, "recover the Standard Model"?  Because it is the **cheapest genuinely
+curved-spacetime quantum phenomenon**, and because of what it reveals about
+the structure of the theory that produces it.
+
+In quantum field theory on a curved spacetime, there is no
+observer-independent answer to "how many particles are there".  The notion
+of *particle* depends on a choice of **vacuum** — of which state counts as
+"nothing" — and in a curved or dynamical spacetime there is in general no
+preferred such choice.  Different reasonable choices disagree about the
+particle content of the *same* state.  That is not a defect; it is the
+mechanism.  Hawking radiation and cosmological particle production are both
+consequences of it.
+
+So a theory that wants to create particles must confront a very specific
+kind of freedom: a choice that is not fixed by the dynamics, that
+nevertheless changes what an observer counts.
+
+**And here is the resemblance.**  The v10 measure line ended (chapter 6) at
+a structurally similar place.  The record law does not fix its own
+probabilities; a **boundary object** must be supplied; the space of such
+objects is 313-dimensional; and the one canonical completion that needs no
+boundary is unique only *given a postulated shape*, which was then measured
+to be a genuine **choice**, not a law.
+
+Two freedoms, in two very different parts of the theory, of the same
+*shape*: not fixed by the dynamics, and consequential for what gets
+counted.
+
+**This is a resemblance, and this document labels it as one.**  Nobody has
+posed it as a question a computation could answer, no unit has tested it,
+and the corpus records the same suggestion as an unpinned reading.  It is
+written down here because it is the kind of thing that should be written
+down *and clearly marked*, not because it is evidence of anything.
+
+### ② THE OBJECTS
+
+**The physics being pointed at** `[LITERATURE, external]`: in QFT on curved
+spacetime the particle content of a state is not observer-independent —
+inequivalent vacuum choices (equivalently, inequivalent Fock
+representations, related by Bogoliubov transformations that mix creation
+and annihilation operators) assign different particle numbers to the same
+state.  This is the mechanism behind Hawking and cosmological particle
+production.  Nothing about that is a corpus result and none of it has been
+built in the corpus.
+
+**The corpus-side objects being compared:**
+
+- **313-dimensional boundary freedom** (paper 30 §5.3, `[REFEREE-CARRIED,
+  LOG #302]`, and *upheld* against a challenge — §B6.11 BLOCKER B1's
+  attempted reduction was refuted and the queued erratum cancelled, with
+  #420 upgrading the refutation to a theorem).
+- **The form is a CHOICE** (D50, `[GREEN-UNREVIEWED]`, §B6.12): the two
+  strongest invariance demands leave the completion dimension **growing**
+  (10 → 28 → 107), and adding foliation-invariance leaves it **exactly
+  unchanged**.  So the uniqueness of the canonical completion comes from a
+  postulate about the shape of `Z`, and the standing restriction on every
+  citation is permanent.
+- **The Perron tilt** as the exact price (§B6.10): each option re-weighted
+  by the record-growth capacity of the state it leads to, and by nothing
+  else — gated over 77,541 pairs with zero violations.
+
+**The stated bridge, and its status.**  LOG #436 records, as **user
+direction and explicitly `[MY READING]`, unpinned**: a
+**boundary-freedom ↔ vacuum-ambiguity** correspondence.
+
+> `[MY READING — this document's own, and it must not be cited as anything
+> else]`  The suggestion is at least *well-typed*.  Both are a choice of
+> "what the far end / the reference state is"; neither is fixed by the
+> local dynamics; both change a count (particle number there, probability
+> here) without changing the law that generates the structure.  One could
+> even name the sharper form: *is the completion's boundary object the
+> record-level shadow of a vacuum choice?*
+>
+> **Everything about that sentence is unearned.**  There is no field on the
+> records, so there is no vacuum to be ambiguous about; the completion
+> lives at delivery-free scope, while the geometry lives at transport
+> scope, and CHAPTER 12 §12.2 shows the completion machinery **provably
+> cannot travel** there.  §C5.4 row 4 records the general form of this
+> caution: resemblance between two "the theory cannot supply this from
+> inside" results is **not** a theorem relating them.  As of LOG #436 the
+> bridge is unpinned and untested, and nobody has stated it in a form a
+> receipt could gate.
+
+**What would make it more than a resemblance** — stated so that the
+speculation is at least *costed*: (i) arrow 5 delivering an actual field on
+an actual manifold, so that "vacuum" names something; (ii) arrow 3
+delivering the manifold; (iii) a transport-scope completion, which chapter
+12 §12.2 shows is currently blocked at the granularity anyone has tried.
+All three are open.  **The speculation is therefore at least three
+unbuilt arrows away from being a question.**
+
+---
+
+## D4. What the destination changes about the open problems
+
+### ① PLAINLY
+
+Reading the ranked problems of chapter 11 through the destination changes
+their order, and one of them changes character entirely.
+
+The **manifold** problem did not previously exist as a named item at all —
+it was hidden inside "the physical dimension ladder".  It is now the
+programme's first construction target.
+
+The **measure at delivery scope** problem keeps its top slot but for a new
+reason: it is no longer only "the convergence question needs it", it is
+that arrows 5 and 6 need probabilities at the scope where the geometry
+lives, and chapter 12 §12.2 closed the route that looked most likely.
+
+The **3+1 control** problem is *finished*, and its answer removed an
+instrument rather than supplying one.
+
+And a problem that had been quietly filed under "the earlier corpus" —
+**the empty bridge** of §C5 — becomes load-bearing, because arrow 4's
+Einstein content lives on the far side of it.
+
+### ② THE OBJECTS
+
+**Re-ranked against the destination** (superseding §A11.4 / §B11.4's
+ordering, not their content):
+
+1. **Charts and gluing → manifold (arrow 3).**  New, and first: the
+   destination's own definition requires it, and no other arrow can be
+   posed without it.  Needs a *replacement local instrument* after
+   chapter 12 §12.1 removed the meter's dimensional reading.
+2. **A workable probabilistic description at transport scope.**  Was §B11.4
+   item 1; unchanged in importance, worse in prospects: menu-exact is
+   impossible for any design (§B9.1), and sector-exact at `(actor, type)`
+   granularity is now closed on two independent grounds (§12.2).  The
+   surviving candidates are strictly coarser aggregations (type-only,
+   total-budget-only) and inexact / observable-only abstractions — all
+   untested.
+3. **The empty bridge (§C5).**  Promoted, because arrow 4 — the only
+   Einstein content the corpus owns — lives on the v6 side of a bridge that
+   has never carried a measurement.  The first falsifiable test is
+   specified (the Fisher identity, Gb2) and unrun.
+4. **(H1)**, unchanged: the last gap before the delivery-free settlement is
+   unconditional.
+5. **Is there a record-level demand that forces the stationary form?**
+   Unchanged, and now doubly interesting: if the answer is permanently no,
+   §D3's resemblance is the *only* interpretive home the boundary freedom
+   has, which is a reason to state it carefully rather than a reason to
+   believe it.
+6. **The `G` calibration.**  Not solvable — that is the theorem — but the
+   *dimensionless* question it leaves open (is `c_m = Gm²/ℏc` a record
+   output?) is explicitly **eligible** and is the natural arrow-7 target.
+7. **The residual pricing defects** (`h12`; the general-depth ladder;
+   the `1/16` vs `1/24` merge), unchanged and still carried into the
+   completion problem rather than patched.
+8. **Where is the sprinkling floor?**  D55c's own residue — does genuine
+   `M^{2+1}`/`M^{3+1}` shatter **3**? — is cheap, is the natural calibration
+   of whatever replaces the meter, and would sharpen §12.1's reframe from
+   "sprinklings read ≈ 0" to a located floor.
+
+**One structural observation, and it is the most useful thing in this
+part.**  Arrows 3, 5 and 6 are all blocked, and **two of the three are
+blocked on the same object**: a probabilistic description at transport
+scope.  Arrow 3 alone is blocked on something genuinely new (a
+construction, plus an instrument).  So the programme has, at this moment,
+exactly **two** independent next moves — build the manifold, or find the
+coarser aggregation — and everything else waits on one of them.
+
+---
+
+## D5. The destination in one paragraph
+
+> The programme's goal is not to make its records resemble a discretized
+> flat spacetime — a target now withdrawn, with a measurement behind the
+> withdrawal.  It is to build **full Einsteinian manifolds, enriched until
+> quantum particles can be created in them**.  Of the eight arrows from
+> the primitive to a laboratory number, two are in hand (a causal order; a
+> local geometry whose complexity is priced in actors), two are half in
+> hand (Einstein's equations *in form*, with Newton's constant provably not
+> derivable from inside; a quantum lift of the record process at fixture
+> scale), three are open (charts and gluing into a manifold — the next
+> construction; fields on it; particle creation), and the last is blocked
+> at four independent points, one of which is the un-derivability of the
+> scale and one of which is the incompleteness of the other arrows.  The
+> two independent next moves are: **build the manifold**, and **find a
+> coarser aggregation that closes at transport scope**.  Everything else in
+> the programme currently waits on one of those two.
 ---
 ---
 
@@ -5193,6 +6885,27 @@ defined precisely, and to Part A where the intuition lives.
 | **view** | see *own view / full view*; a view is a **sub-record**, nothing psychological | B3.2 |
 | **`Z`** | the completion's positive cut data; `Zhat = 2^(−|h|) f(class(sigma(h)))` is the settled one at d42a scope | B6.1, B6.10 |
 | **`Zhat`** | the settled root-free completion: `λ = 2`, `f = (4,4,3,7,3,3)/3`, unique up to scale **within the form** | B6.10, A6.7 |
+| **axioms R / S / C** | the earlier corpus's three: laws are laws of whole sealed histories; **no distinction without a record**; couplings fixed by self-consistency under refinement | C1 |
+| **Barandes-indivisible** | a process whose one-time transition law fails Chapman–Kolmogorov except at sparse **division events**; the barrier is the gap between `\|Σ\|²` and `Σ\|·\|²` — the interference cross-term | C1, C3 |
+| **Born = K1** | the statement that a constructed isometric arbitration family's squared branch amplitudes reproduce the committed `K1` kernel exactly (`1/2`–`1/2` on the 2-conflict, recomputed from the layer).  Appears in v10 paper 31 §4.3; the earlier Born layer (paper Va) is the same *kind* of statement — **relation formally unestablished** | C3.5, C5.4 |
+| **chart / gluing** | the unbuilt local-patch and overlap-agreement structure that turns a causal order into a **manifold** — arrow 3 of the destination, `[OPEN]`, the first construction the destination newly requires | D2 |
+| **covariantization** | the result that a **Poisson sprinkling** of division events makes the kinematic layer Lorentz-invariant outright (no recoverable frame; arrow in the causal order, not a slicing; Hegerfeldt dissolved for the free flash), converting the GRW/CSL foliation wall into named dynamical residues | C3.6 |
+| **CP-divisibility** | an open-system channel property: the dephasing rate stays `≥ 0`, so no information backflow and **no revivals**.  **Orthogonal** to Barandes-indivisibility — neither implies the other | C3.1 |
+| **division event** | the record at which an indivisible stochastic process momentarily factorizes; the primitive of the causal-set gravity sector, where *order + number = geometry* | C1, C3.6 |
+| **G no-go** | `[NO-GO]` the absolute scale `σ_A` (weight `−2`), in bijection with Newton's `G` (weight `+2`) via `G·σ_A = 1/4`, is not derivable: every intrinsic record functional is weight-zero, so `κ·σ_A = 2π` and `G·Λ²` (two **separate** fixed pure numbers) are all that is fixed | C2.2 |
+| **graviton blindness** | 4 of 9 stress components priced universally; the 5 traceless ones spanned but only at a boost-dependent second-order coupling; four obstructions reducing to one root — the needed structure lives only in a continuum algebra a finite record lattice cannot host.  The geometry is **spin-2-active but not-a-graviton** | C2.5 |
+| **holonomy (sealed)** | the coherent, uncommitted relative phase a system carries **between** seals; sealing destroys it.  Its irreducibility is the earlier corpus's quantum/classical dividing line | C1 |
+| **Jacobson–Clausius conditional** | the four named premises carrying the equation-of-state route.  **The internal asymmetry:** the weight-counting no-go depends on none of them — *the wall stands unconditionally, the `G`-naming of it is conditional* | C2.6 |
+| **quarter law** | `[THEOREM A, v6 paper 26]` `−ln BC = σ/4 + (ε²/6)σ + O(σ³)` — coherent capacity decays at one quarter of the evidence rate, `BC` the Bhattacharyya overlap, `σ` the KL.  **In the weak-evidence limit the ¼ is measure-theoretic universality** (the *universality trap*), so confirming it elsewhere would be a fake bridge | C1 |
+| **refinable** | a history in which an intermediate conditioning record could have been inserted for free; **classical**.  Unrefinable = the seal order cannot be refined without changing the process | C1 |
+| **seal** | an irreversible record commitment; the earlier corpus's primitive act, ancestor of v10's *click* — **by postulate, never by measurement** (§C5) | C1 |
+| **seal-is-record postulate** | the `[POSITED]` identification of the earlier corpus's *seals* with the later corpus's *records*.  **Never instantiated**; "the bridge is empty"; its first falsifiable test (the Fisher identity `J_wp/J_arrow`) is specified and unrun | C5 |
+| **SHARD** | *Sealed Holonomy And Record Dynamics* — the earlier programme's name | C1 |
+| **the two σ's** | a resolved **name collision**: `σ_wp = D(P₀‖P₁)` (which-path KL, the quarter law's `σ`) versus `σ_arrow = D(P_fwd‖P_rev)` (the arrow KL, the covariance argument's `σ`).  v10's `sigma` is a **third**, unrelated use — a state abstraction | C5.2, B6.9 |
+| **three walls** | the classification of what the record law provably cannot supply: **SCALE** (`G`; measured, route-conditional), **TENSOR PRODUCT** (contested convention), **MODE** (import-fixed) — one quotient-by-symmetry shape, three residual types, *two structural no-gos plus one conditional* | C2.6 |
+| **vacuum ambiguity** | `[LITERATURE]` in QFT on curved spacetime, particle content depends on a vacuum choice not fixed by the dynamics.  Its **resemblance** to the completion's boundary freedom is recorded as a labelled, costed, untested speculation — *at least three unbuilt arrows away from being a question* | D3 |
+| **Walsh–delta** | the corpus's mathematical spin-off (own repository): the delta orientation is the unique entropy minimizer for self-calibrated ±1 Walsh tilts; Theorem 6.1's dichotomy (`N·D > 2.878716` vs `N·D_δ ≤ 64/63`) closes it analytically for `n ≥ 6`; Lean-verified but for one finite computation | C4.4 |
+| **weight (length-weight)** | the grading under the gauge `l_step → μ·l_step`.  **Theorem G:** every intrinsic record functional is weight-**0**, while `σ_A` is weight `−2` — the whole `G` no-go in one line | C2.2 |
 | **zero class** | the arbitration-killing counterterm that restores normalization and is **declared excluded**, narrowing the no-go to support-preserving completions | B6.4, A6.4 |
 
 ---
@@ -5273,12 +6986,36 @@ part of the document, not an apology for it.
     forward-correction blocks; neither is citable until it has had a
     hostile round.
 
-11. **The v1–v9 SHARD prehistory and the manifolds→QFT destination are
-    absent.**  Both are named in #436 as expansions this document should
-    receive.  Chapter 12 §12.3 records the redirect and nothing more: the
-    Einsteinian-manifold destination has no chapter here, and neither does
-    the earlier corpus arc (v6's gravity no-go appears only as the source
-    of the un-fixable-`G` result in §B10.7).
+11. **The v1–v9 prehistory is covered in PART C, but unevenly.**  *(This
+    item replaces the earlier "absent" note, which PART C discharges.)*
+    **v1** (22 papers: collar excision, exchange defects, thin-slab laws,
+    the Fock lift) and **v2** (10 papers: stochastic curvature, projective
+    kernels, the QFT-reconstruction no-go) are **not covered at all** —
+    they are the analytic prehistory of the record ontology and nothing in
+    Parts A/B/D depends on them.  **v9** appears only through the
+    seal-is-record design note (§C5); its own campaign — the churn webs,
+    the discharge theorem, the stem spectrum, the round-cone investigation
+    and the channel-manifold finding — is **not covered**, and at least one
+    of those (the channel manifold: `d = dim(channel manifold) + 2`, with
+    `S²` for 3+1) is plainly relevant to PART D's arrow 3 and is omitted
+    only for length.  The **Yang–Mills** line (dozens of papers across v3
+    and v4) gets one section; the **v6 publishable batch** gets a
+    paragraph; **v5**'s quantum-computing arc (papers 3–13) is untouched.
+
+12. **PART C's sourcing is abstract-and-key-section, not whole-file.**
+    Paper 57 was read in full (127 lines).  Everything else was read at
+    abstract / status-block / cited-section depth, plus targeted greps for
+    each quoted number.  Every number in PART C was verified in-file at the
+    point of quotation, but I did **not** read papers 26, 56, 1, Va, X, 14,
+    39 or the v8 ledger end to end, and a claim of theirs that contradicts
+    something I quote could be sitting in a section I did not open.
+
+13. **PART D is a roadmap, not a result.**  Arrows 3, 6 and 7 have no
+    corpus content whatsoever beyond being named; their entries are
+    statements of what is missing.  The `[MY READING]` in §D3 is speculation
+    and is marked three times as such.  The D58 designation for the
+    manifold unit comes from the coordinator's direction, **not** from a pin
+    on disk.
 
 ---
 
