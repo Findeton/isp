@@ -16,6 +16,14 @@ from memory.
 
 ---
 
+> **MAINTENANCE (binding, LOG #443):** this book is a LIVING document
+> and the corpus's single synthesis. Current as of **LEDGER #442**
+> (v10/LOG.md) / **#130** (v8/LEDGER.md). Every future TERMINAL unit
+> must patch its chapter (or add a late-arrivals entry) in the same
+> commit that closes the unit, and must bump this stamp. A claim that
+> appears in the corpus but not here — or here but not in the corpus —
+> is a defect in whichever is stale.
+
 ## 0. What this document is
 
 This is one document containing two complete explanations of the same

@@ -10209,3 +10209,25 @@ corrected 46-48d framing CONFIRMED against v8/LEDGER (my brief was
 stale, the writer caught it); (2) the closure banner STAYS; (3)-(5)
 confirmed; (6) declared (C6 is ledger/LOG/notes-sourced; v9 papers
 7/8 unread — a standing gap).
+
+## 2026-07-26 — THE BOOK DISCIPLINE (user affirmation; binding)
+## (LEDGER #443)
+The user, on reviewing THE-THEORY-SO-FAR.md: a single book as a
+guiding principle is really useful — v1..v10 is hundreds of files.
+AFFIRMED AND MADE BINDING. The operational record already justifies
+it: in one writing campaign the book (a) caught the WRONG circulating
+gravity formula (kappa·sigma_A vs G·Lambda^2, paper 57 in-file), (b)
+rediscovered the v9 arc absent from working memory, (c) caught MY
+stale v9 framing (already-funded review + user closure directive),
+(d) fixed a surviving wrong line in the D55 result note. A synthesis
+artifact is an ERROR-DETECTION INSTRUMENT: writing everything in one
+place forces the cross-checks nothing else forces.
+**THE DISCIPLINE, henceforth:** (1) every TERMINAL unit patches its
+book chapter (or adds a late-arrivals entry) IN THE SAME COMMIT that
+closes the unit, and bumps the book's maintenance stamp; (2) the book
+carries "current as of LEDGER #N" (stamped now: #442 / v8:#130); (3)
+a claim in the corpus but not the book, or the book but not the
+corpus, is a DEFECT in whichever is stale; (4) the book's declared
+gaps list is a standing work queue (currently: v1/v2/v5 thin; v9
+papers 7/8 unread; THE TWO-CLICK-LAW RELATION UNVERIFIED — the next
+check, since it gates the crystal question).
