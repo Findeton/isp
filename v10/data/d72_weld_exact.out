@@ -32,11 +32,17 @@ D72 — THE WELD: the reversal-holonomy identity (exact receipt)
         rt(q) (the #152 budget amplitudes) on record ancillas.
     [H1zero] v8/relativistic-isp-v8-paper1-foundations-click-law.md:77
         On a one-dimensional commit path H^1 = 0.
+    [d65] v10/note-d65-descent-conditions-result.md:173-182
+        The defect is exactly the intermediate-mass ratio.  For every commut
+        ing pair, d = M(sigma(Hb)) / M(sigma(Ha)), with M the per-state menu
+         mass ... 34 states of mass 2 and 2 states of mass 5/2 ... Spectrum:
+         {1: 576654, 4/5: 44316, 5/4: 44316} — exactly the ratio set of the 
+        two masses.
 
 ------------------------------------------------------------------------------
 SEC 0.1  committed sources, sliced
 ------------------------------------------------------------------------------
-  [DATA] d42b3 slice: 8670/21462 bytes; exports = candidates_for/admissible/event_poset/canon/mu_of
+  [DATA] d42b3 slice: 8670/21462 bytes; exports = candidates_for/admissible/event_poset/canon/mu_of/regs_of/prop_options_in_view/arb_components_in_view
   [DATA] d42b1 slice: 16129/40838 bytes; second grammar (A7 ladder)
   [DATA] p30 slice: 17383/27482 bytes; the * (opposite_bits/dual_key) and L_dual (complex_laplace_by_mode) machinery
   [DATA] v6 p4n slice: 7639/13557 bytes; exchange_laws + rn_action (the A_D machinery)
@@ -54,9 +60,9 @@ SEC 1  ANCHORS (exit 1 on failure)
   built N=7: permutations=5040 records=1956
   built N=8: permutations=40320 records=14794
   built N=9: permutations=362880 records=131526
-  [PASS] ANCHOR A2 v7 paper30 dual-conjugation: naive = 1.8210207227600682556870097725525 (p30:2838), L_dual = 0 (p30:2851)  (recomputed naive = 1.8210207227600682556870097725525; recomputed L_dual = 0; N=9 records = 131526; 296s)
+  [PASS] ANCHOR A2 v7 paper30 dual-conjugation: naive = 1.8210207227600682556870097725525 (p30:2838), L_dual = 0 (p30:2851)  (recomputed naive = 1.8210207227600682556870097725525; recomputed L_dual = 0; N=9 records = 131526; 378s)
   [PASS] ANCHOR A2b the committed * (opposite_bits/dual_key) is an involution on v7's own record universe (N=7)  (1956 records at N=7)
-  [PASS] ANCHOR A2c the exact closed form of v7's dual-conjugation error, maximised over integer E, REPRODUCES paper30:2838's published constant 1.8210207227600682556870097725525 — with no re-run of the N=9 universe  (2*exp(-3/32) = 1.8210207227600682556870097725525; argmax over E in 0..399 is E = 3 (True).  COROLLARY, and it is a finding: v7's headline '1.82' is a closed-form constant of the ANSATZ, not a measurement of the N=9 record universe — it says only that some record has E = 3.)
+  [PASS] ANCHOR A2c the exact closed form of v7's dual-conjugation error, maximised over integer E, REPRODUCES paper30:2838's published constant 1.8210207227600682556870097725525 — with no re-run of the N=9 universe  (2*exp(-3/32) = 1.8210207227600682556870097725525; argmax over E in 0..3999 is E = 3 (True).  COROLLARY, and it is a finding: v7's headline '1.82' is a closed-form constant of the ANSATZ, not a measurement of the N=9 record universe — it says only that some record has E = 3.)
   [PASS] ANCHOR A3 the F-PAIR fixture reproduces d42b4's anchors (32 depth-2 sequences, Z_seq = 4, Z_class = 3, one mu per class)  (sequences = 32, Z_seq = 4, classes = 23, Z_class = 3, one-mu-per-class = True)
 
 ------------------------------------------------------------------------------
@@ -69,18 +75,24 @@ SEC 2  the generated line, enumerated
 SEC 3  T1 — THE REVERSAL TEST
 ------------------------------------------------------------------------------
   [PASS] T1.0 OPERATIONALISATION FIDELITY: our exact Fraction dP_AB/dP_BA agrees with v6's own rn_action(exchange_laws(.)) on a rational 2x2 control, atom by atom  (max |log(exact ratio) - v6 float A_D| = 2.220e-16 over 4 atoms; the 1/n uniform-start factor of flatten_law cancels in the ratio (verified: it is the same constant on both laws))
-  [DATA] exchange-square census (grammar 1, depth<=5): {'both-blocked': 610, 'closed': 2227}
-  [DATA] distinct exact ratios dP_AB/dP_BA: {Fraction(1, 1): 2227}
-  [PASS] T1.1 A_D CONTENT: every closed exchange square of the generated line has dP_AB/dP_BA EXACTLY 1, so A_D == 0 identically — the transport reversal AB->BA has no content on this substrate  (2227 closed squares, 0 with ratio != 1, ratio multiset = {1: 2227})
-  [PASS] T1.2 NO HALF-OPEN SQUARE: there is no pair whose AB order is admissible while BA is not (a half-open square would make A_D +/-infinity — a support-level, non-U(1) and non-R+ defect)  (AB-only = 0, BA-only = 0, both-blocked = 610)
+  [DATA] exchange-square census (grammar 1, bases |h|<=3, depth<=5): {'both-blocked': 610, 'closed': 2227}
+  [DATA] distinct exact ratios dP_AB/dP_BA (bases |h|<=3): {Fraction(1, 1): 2227}
+  [DATA] WIDE exchange-square census, grammar 1 (A,B), bases |h| = 0..5 (reaching depth 7): {0: {'both-blocked': 2, 'closed': 13}, 1: {'closed': 62, 'both-blocked': 8}, 2: {'closed': 328, 'both-blocked': 88}, 3: {'closed': 1824, 'both-blocked': 512}, 4: {'closed': 9872, 'both-blocked': 2336}, 5: {'closed': 51872, 'both-blocked': 10624}}
+  [DATA] WIDE ratio multiset dP_AB/dP_BA over every base: {'1': 63971}  [10s]
+  [DATA] closed squares split by the L2 criterion (comparability = register overlap): register-DISJOINT (the locality argument's domain) vs register-OVERLAPPING (not covered by it), per base |h|: {0: (9, 4), 1: (42, 20), 2: (200, 128), 3: (1104, 720), 4: (6160, 3712), 5: (32992, 18880)}
+  [DATA] the first delivery's own licensed window (bases |h| <= 3): disjoint 1355 / comparable 872 of 2227 closed squares — the locality sketch covers the first number only
+  [PASS] T1.1 A_D CONTENT (grammar 1, WIDENED): every closed exchange square of the d42b3 placement line has dP_AB/dP_BA EXACTLY 1 — at every base |h| = 0..5, i.e. up to total depth 7, not only on the bases the first delivery licensed.  On THIS grammar the transport reversal AB->BA has no content  (63971 closed squares over all bases (vs 2227 in the first delivery's window), 0 with ratio != 1; ratio multiset = {1: 63971}.  SCOPE: this is a GRAMMAR-1 statement — see T6.1, where it is FALSE)
+  [PASS] T1.2 NO HALF-OPEN SQUARE IN GRAMMAR 1: there is no pair whose AB order is admissible while BA is not (a half-open square would make A_D +/-infinity — a support-level, non-U(1) and non-R+ defect).  GRAMMAR-1 ONLY: T6.2 exhibits 40 of them in grammar 2  (over all bases: AB-only = 0, BA-only = 0, both-blocked = 13570)
   [PASS] T1.3 CARRIER A is well-founded: sequence reversal is exactly the action induced by the order-dual * on linear extensions (rev : LinExt(P) -> LinExt(P*) is a bijection, checked on every history of the generated line)  (6464 histories, all depths 2..5)
+         ^ NO INDEPENDENT INFORMATION: a one-line theorem true of EVERY finite poset — sigma is a linear extension of P iff reversed(sigma) is one of P* — so this sweep tests this receipt's implementation of dual_pred/linexts, not the generated family
   [PASS] T1.4 THE COINCIDENCE, and its exact extent: on 2-event histories (the F-PAIR fixture, base h = []) the induced order-dual *_seq and the transport reversal AB->BA are the SAME partial map — literally, term by term  (32 two-event histories = d42b4's 32; 28 have an admissible reverse)
   [PASS] T1.5 THE DIVERGENCE: on every closed square with a non-empty base (|h| >= 1 under the pair), *_seq reverses the WHOLE sequence while AB->BA transposes only the top two — the two maps give different sequences wherever there is anything below the pair  (2214 closed squares with |h| >= 1; 0 on which the two maps agree; 578 whose *_seq image is itself admissible (so *_seq has a domain there, but it is not AB->BA))
   [PASS] T1.6 ODDNESS UNDER AB->BA (v6's antisymmetry row, exact): dP_BA/dP_AB = (dP_AB/dP_BA)^-1 as Fractions, hence A_D -> -A_D, on every closed square — v6:2636's gap=2.2e-16 reproduced at gap EXACTLY 0 in exact arithmetic  (2227 squares, exact inverse in all)
   [PASS] T1.7 ODDNESS UNDER * (the pin's actual question): A_D is odd under the order-dual on CARRIER A — but ONLY because A_D == 0, so the test reads 0 = -0.  The identity is CONFIRMED VACUOUSLY: it holds with zero content, on the one fixture (2-event, base []) where the two reversals are the same map  (A_D == 0 on all 2227 closed squares; oddness is the identity 0 = -0)
+         ^ NO INDEPENDENT INFORMATION: T1.1 — the predicate set(ratios) == {1} is literally T1.1's own predicate
   [PASS] T1.8 CARRIER B (record-level): mu is constant on every record class of the generated line, so A_D descends to records — as the ZERO function.  * acts on records; A_D-on-records is 0; the carrier exists and carries nothing  (1565 record classes, one mu each)
   [DATA] record order-dual realised inside the generated line: {(2, False): 4, (2, True): 19, (3, False): 40, (3, True): 44, (4, False): 228, (4, True): 85, (5, False): 992, (5, True): 146}
-  [PASS] T1.9 CARRIER C: the generated line is NOT closed under the order-dual — a majority of its records have no dual inside the family, so * is a PARTIAL map on v10's objects, not an operation on them  (294 records have their labelled order-dual in-family; 1264 do not)
+  [PASS] T1.9 CARRIER C: the generated line is NOT closed under the LABELLED order-dual — a majority of its records have no dual inside the family, so * is a PARTIAL map on v10's objects, not an operation on them.  LABELLED is load-bearing (round MODERATE 2): this asks whether the SAME MULTISET OF EVENTS, re-ordered, realises the dual order.  The ORDER-TYPE question is different and k-dependent, and T3 answers it separately (k=3: 0/1 odd orbits with an absent dual member; k=4: 1/2; k=5: 4/4)  (294 records have their labelled order-dual in-family; 1264 do not)
 
   T1 VERDICT — see SEC 6 falsifier board.  In one line: the two reversals do
   admit a common carrier (CARRIER A, gated at T1.3), they coincide exactly
@@ -92,15 +104,83 @@ SEC 3  T1 — THE REVERSAL TEST
 SEC 4  T2 — THE CLOSURE TEST
 ------------------------------------------------------------------------------
   [DATA] grammar 1 (d42b3), depth<=5: deletion graph: nodes = 1565, up-edges = 2322, multi-valued edges = 0, independent cycles = 758, non-trivial holonomies = 0, holonomy value set = [Fraction(1, 1)]
+  [PASS] T2.0 THE CONNECTION IS AN EXACT GRADIENT: every up-edge weight is phi(C2)/phi(C1) with phi = mu, the record-class weight of T1.8.  This is the whole of T2: single-valuedness, cycle-triviality and the three arms are ALGEBRAICALLY FORCED by T1.8, and the negative control CANNOT fail.  The instrument's blind spot follows too — a gradient-flat record graph says nothing about squares whose two orders land in DIFFERENT classes (see T6.3)  (2322/2322 up-edge weights equal the mu-ratio exactly; 0 exceptions)
   [PASS] T2.1 THE CONNECTION DESCENDS: every up-edge of the record deletion graph carries a SINGLE step weight — the sqrt(q) connection is well defined on records, not merely on sequences  (2322 up-edges, 0 multi-valued)
+         ^ NO INDEPENDENT INFORMATION: T2.0 (hence T1.8): parallel up-edges C1->C2 both equal phi(C2)/phi(C1)
   [PASS] T2.2 THE ROUND TRIP CLOSES AT 1, EXACTLY, ON EVERY INDEPENDENT CYCLE: the modulus returns to its start and the accumulated log is 0 = A_D on every loop (T1.1).  This is the pin's F2 condition, and the cycle rank shows the test is NOT vacuous  (758 independent cycles (E - V + C), 0 with holonomy != 1, worst |log holonomy| = 0.0)
+         ^ NO INDEPENDENT INFORMATION: T2.0 (hence T1.8): a product of phi-ratios telescopes around any cycle.  The 758 cycles are not 758 independent facts
   [PASS] T2.3 THE EXPLICIT DELETE-THEN-INSERT ROUND TRIPS (the transverse loops: h.eA.eB -> h.eB -> h.eB.eA -> h.eA -> h.eA.eB).  sqrt(q)-transport around each gives sqrt(dP_AB/dP_BA) = 1 exactly, and 2*log of it equals A_D = 0  (1355 record-closing exchange loops, 0 with holonomy != 1)
+         ^ NO INDEPENDENT INFORMATION: T1.1 and T2.0.  Note what it counts: only the 1355 squares that CLOSE at record level, out of 2227 closed squares in the same window — the other 872 are invisible to any record-graph loop test (T6.3)
+  [PASS] T2.3b WHAT THE RECORD-GRAPH INSTRUMENT CAN SEE AT ALL: a square closes at record level EXACTLY WHEN its two events are register-disjoint.  So the loop census and the locality argument have the SAME domain, and the register-overlapping squares — the ones the locality argument does not cover — are invisible to it.  Two arguments with one blind spot; only the raw square census (T1.1) decides them, and in grammar 2 that is exactly where the defect lives (T6.3)  (of 2227 closed squares in the licensed window, 1355 are register-disjoint and 872 are overlapping; the record graph closes on 1355 of the first and 0 of the second)
   [PASS] T2.NC NEGATIVE CONTROL: multiplying ONE up-edge weight by 3/2 makes the same detector report a non-trivial holonomy — so the zero above is a measurement, not a blind instrument.  Twenty edges are tampered one at a time, in a HASH-ORDER-INDEPENDENT order (stable_key), and the census is reported rather than the first hit  (20/20 tampered edges produce a non-trivial holonomy; defect counts = [136, 200, 42, 42, 10, 10, 145, 105, 30, 30, 12, 12, 62, 43, 11, 11, 41, 41, 3, 7]; first non-trivial value set = [Fraction(2, 3), Fraction(3, 2)])
-  [PASS] T2.4 U(1) CONTENT: the round-trip defect is not merely real-positive rather than unimodular (falsifier F4's shape) — there is NO defect at all.  The holonomy group of sqrt(q)-transport on the generated line's record deletion graph is the TRIVIAL group  (holonomy group = {1}; neither R+ nor U(1) is realised, because nothing but 1 is realised)
+         ^ NO INDEPENDENT INFORMATION: T2.0: multiplying one edge of an EXACT GRADIENT by 3/2 must produce a defect, so this control cannot fail and its passing is not evidence of sensitivity.  A control that CAN fail is T6 — grammar 2 now supplies a substrate with a genuine defect, and the record-graph instrument does NOT see it (T6.3)
+  [PASS] T2.4 U(1) CONTENT OF THE RAW CONNECTION: the round-trip defect of the UN-NORMALISED budget weight is not merely real-positive rather than unimodular (falsifier F4's shape) — there is no defect at all. The holonomy group of sqrt(q)-transport on the generated line's record deletion graph is the TRIVIAL group FOR THE RAW WEIGHT.  WEIGHT CHOICE IS LOAD-BEARING (round MAJOR 2): for the process's own conditional kernel q/M the same graph has NON-TRIVIAL holonomy (T4.3), and that is where F4 fires  (raw holonomy group = {1}; neither R+ nor U(1) is realised by the raw weight, because nothing but 1 is realised)
+         ^ NO INDEPENDENT INFORMATION: T2.2, whose predicate len(d1) == 0 this repeats
   [DATA] grammar 2 (d42b1) ('A', 'B') depth<=4: deletion graph: nodes = 2477, up-edges = 2900, multi-valued edges = 0, independent cycles = 424, non-trivial holonomies = 0, holonomy value set = [Fraction(1, 1)]
-  [PASS] T2.5 SECOND GRAMMAR ('A', 'B') depth<=4: same verdict — connection descends, every independent cycle has holonomy exactly 1  (424 independent cycles, 0 defects, 3969 histories)
+  [PASS] T2.5 SECOND GRAMMAR ('A', 'B') depth<=4, RECORD-GRAPH ARM: connection descends, every independent cycle has holonomy exactly 1 — AND THIS ARM IS BLIND (see T6.3).  mu is class-constant here too, so the grammar-2 record graph is an exact gradient for the same reason grammar 1's is  (424 independent cycles, 0 defects, 3969 histories; mu class-constant on 2477/2477 classes)
+         ^ NO INDEPENDENT INFORMATION: the same potential identity as T2.0, now verified in grammar 2: a gradient record graph is flat by algebra and cannot report a square defect whose two orders land in different classes
+  [DATA] grammar 2 (d42b1) ('A', 'B') depth<=4: exchange-square census: {'both-blocked': 142, 'closed': 1546, 'AB-only': 28, 'BA-only': 12}
+  [DATA] grammar 2 ('A', 'B'): exact ratios dP_AB/dP_BA: {'1/2': 70, '2/3': 2, '1': 1458, '3/2': 6, '2': 10}
+  [PASS] T6.1 A_D IS NOT ZERO AT TRANSPORT SCOPE ('A', 'B') depth<=4: the d42b1 grammar — deliveries and multi-proposer arbitrations — has closed exchange squares with dP_AB/dP_BA != 1.  The first delivery asserted the opposite on exactly this window as [MEASURED] and never computed it.  EVERY defect carries a DELIVERY event, and the defect appears at the shallowest depth the census can reach  (88 of 1546 closed squares have ratio != 1; spectrum { 1/2: 70, 2/3: 2, 3/2: 6, 2: 10 }; kinds {('r', 'd'): 68, ('d', 'r'): 8, ('d', 'n'): 6, ('d', 'd'): 4, ('n', 'd'): 2}; delivery-bearing 88/88; shallowest defect at total depth 3)
+  [PASS] T6.2 HALF-OPEN SQUARES AT TRANSPORT SCOPE ('A', 'B') depth<=4: pairs admissible in one order only, i.e. A_D = +/-infinity — the support-level, non-U(1) and non-R+ defect T1.2 rules out in grammar 1 and the first delivery carried across both grammars  (AB-only = 28, BA-only = 12 (total 40); kinds {('r', 'd'): 12, ('d', 'r'): 4, ('p', 'd'): 16, ('d', 'p'): 8}; delivery-bearing 40/40 — REPORTED, not gated as a pass/fail)
+  [PASS] T6.3 THE RECORD-GRAPH INSTRUMENT IS BLIND TO THEM BY CONSTRUCTION ('A', 'B'): none of the defective squares closes at record level, so T2.5's deletion-graph holonomy census — the only test the first delivery ran on this grammar — cannot see a single one of them.  T2.NC's negative control cannot detect this class of blindness either, because it perturbs an edge the graph does contain  (0/88 defective squares close at record level; the record graph carries 424 independent cycles and reports 0 defects)
+  [DATA] T6 WITNESS (('A', 'B'), minimal depth), in full:
+           h   = [('p', 'A', ('v', 'v0'), 0)]
+           eA  = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+           eB  = ('d', 'A', 'B', ('v', 'v0'))
+           q(eA|h) = 1/4 , q(eB|h.eA) = 1/8  ->  dP_AB = 1/32
+           q(eB|h) = 1/4 , q(eA|h.eB) = 1/4  ->  dP_BA = 1/16
+           dP_AB/dP_BA = 1/2 ,  A_D = log(1/2) != 0
+           second route (whole-history weights): mu(h.eA.eB) = 1/256 vs mu(h.eB.eA) = 1/128, ratio 1/2
+  [PASS] T6.4 WITNESS CROSS-ROUTE ('A', 'B'): the minimal witness's ratio recomputed from whole-history weights (products along the two orders) agrees with the step-product route  (route 1 = 1/2, route 2 = 1/2)
+  [DATA] grammar 2 ('A', 'B') arm time: 4s
   [DATA] grammar 2 (d42b1) ('A', 'B', 'C') depth<=3: deletion graph: nodes = 2128, up-edges = 2772, multi-valued edges = 0, independent cycles = 645, non-trivial holonomies = 0, holonomy value set = [Fraction(1, 1)]
-  [PASS] T2.5 SECOND GRAMMAR ('A', 'B', 'C') depth<=3: same verdict — connection descends, every independent cycle has holonomy exactly 1  (645 independent cycles, 0 defects, 3424 histories)
+  [PASS] T2.5 SECOND GRAMMAR ('A', 'B', 'C') depth<=3, RECORD-GRAPH ARM: connection descends, every independent cycle has holonomy exactly 1 — AND THIS ARM IS BLIND (see T6.3).  mu is class-constant here too, so the grammar-2 record graph is an exact gradient for the same reason grammar 1's is  (645 independent cycles, 0 defects, 3424 histories; mu class-constant on 2128/2128 classes)
+         ^ NO INDEPENDENT INFORMATION: the same potential identity as T2.0, now verified in grammar 2: a gradient record graph is flat by algebra and cannot report a square defect whose two orders land in different classes
+  [DATA] grammar 2 (d42b1) ('A', 'B', 'C') depth<=3: exchange-square census: {'both-blocked': 42, 'closed': 1554}
+  [DATA] grammar 2 ('A', 'B', 'C'): exact ratios dP_AB/dP_BA: {'1/2': 12, '1': 1542}
+  [PASS] T6.1 A_D IS NOT ZERO AT TRANSPORT SCOPE ('A', 'B', 'C') depth<=3: the d42b1 grammar — deliveries and multi-proposer arbitrations — has closed exchange squares with dP_AB/dP_BA != 1.  The first delivery asserted the opposite on exactly this window as [MEASURED] and never computed it.  EVERY defect carries a DELIVERY event, and the defect appears at the shallowest depth the census can reach  (12 of 1554 closed squares have ratio != 1; spectrum { 1/2: 12 }; kinds {('r', 'd'): 12}; delivery-bearing 12/12; shallowest defect at total depth 3)
+  [PASS] T6.2 HALF-OPEN SQUARES AT TRANSPORT SCOPE ('A', 'B', 'C') depth<=3: pairs admissible in one order only, i.e. A_D = +/-infinity — the support-level, non-U(1) and non-R+ defect T1.2 rules out in grammar 1 and the first delivery carried across both grammars  (AB-only = 0, BA-only = 0 (total 0); kinds {}; delivery-bearing 0/0 — REPORTED, not gated as a pass/fail)
+  [PASS] T6.3 THE RECORD-GRAPH INSTRUMENT IS BLIND TO THEM BY CONSTRUCTION ('A', 'B', 'C'): none of the defective squares closes at record level, so T2.5's deletion-graph holonomy census — the only test the first delivery ran on this grammar — cannot see a single one of them.  T2.NC's negative control cannot detect this class of blindness either, because it perturbs an edge the graph does contain  (0/12 defective squares close at record level; the record graph carries 645 independent cycles and reports 0 defects)
+  [DATA] T6 WITNESS (('A', 'B', 'C'), minimal depth), in full:
+           h   = [('p', 'A', ('v', 'v0'), 0)]
+           eA  = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+           eB  = ('d', 'A', 'B', ('v', 'v0'))
+           q(eA|h) = 1/4 , q(eB|h.eA) = 1/16  ->  dP_AB = 1/64
+           q(eB|h) = 1/8 , q(eA|h.eB) = 1/4  ->  dP_BA = 1/32
+           dP_AB/dP_BA = 1/2 ,  A_D = log(1/2) != 0
+           second route (whole-history weights): mu(h.eA.eB) = 1/512 vs mu(h.eB.eA) = 1/256, ratio 1/2
+  [PASS] T6.4 WITNESS CROSS-ROUTE ('A', 'B', 'C'): the minimal witness's ratio recomputed from whole-history weights (products along the two orders) agrees with the step-product route  (route 1 = 1/2, route 2 = 1/2)
+  [DATA] grammar 2 ('A', 'B', 'C') arm time: 3s
+  [PASS] T6.5 WHY GRAMMAR 2 IS NOT FLAT — the theorem's grammar-1 hypotheses FAIL here, exactly as the round's scope clause says.  (i) The idle weight is NOT the constant 3/4: the budget is a three-way split and the propose/arbitrate exclusivity is gone.  (ii) L4 fails outright: there are comparable closed squares with NO idle member — the (r,d) pairs by one actor that carry the defect  (d42b1 (A,B) depth<=4 idle-weight spectrum = {'1/2': 7738, '3/4': 200} (grammar 1's is the single value 3/4, T5.L6); comparable closed squares = 1073, of which 533 contain no idle event (grammar 1's count is 0, T5.L4)  [4s])
+
+------------------------------------------------------------------------------
+SEC 4C  T4 — THE NORMALISED KERNEL (raw vs conditional)
+------------------------------------------------------------------------------
+  [DATA] menu mass M(h) = sum_e q(e|h), spectrum over the family: {'2': 5963, '5/2': 508}
+  [PASS] T4.1 THE MENU MASS IS NOT CONSTANT BUT IS CLASS-CONSTANT: the raw weights are not conditional probabilities (M != 1 and M is not even constant), so 'raw' and 'normalised' are different connections; and M is a function of the RECORD, so the normalised connection descends to records exactly as the raw one does.  ANCHOR: the two values are D65's own committed menu masses (QUOTES['d65']: 34 states of mass 2 and 2 states of mass 5/2)  (M spectrum = {'2': 5963, '5/2': 508}; class-constant on 1565/1565 classes; value set ['2', '5/2'] == D65's committed ['2', '5/2'])
+  [DATA] normalised square ratios by base |h|: {0: {'1': 13}, 1: {'4/5': 8, '1': 50, '5/4': 4}, 2: {'4/5': 44, '1': 232, '5/4': 52}, 3: {'4/5': 168, '1': 1392, '5/4': 264}, 4: {'4/5': 672, '1': 8144, '5/4': 1056}}
+  [PASS] T4.2 THE NORMALISED SQUARE IS NOT FLAT: with p = q/M the exchange square ratio is exactly M(h.e_B)/M(h.e_A) — the raw ratio being 1 — and that is not 1.  ANCHOR: the value set is D65's committed defect spectrum {1, 4/5, 5/4} (QUOTES['d65']), i.e. this is the SAME object D65 already decided, not a new one  (12099 squares, 2268 non-unit; multiset {'4/5': 892, '1': 9831, '5/4': 1376}; on the first delivery's own licensed window (bases |h| <= 3) it is {'4/5': 220, '1': 1687, '5/4': 320} — i.e. the SAME 2227 squares the receipt called flat; identity ratio == M(h.eB)/M(h.eA) failed on 0)
+  [DATA] normalised holonomy (spanning-forest census on the SAME graph): nodes = 1565, up-edges = 2322, multi-valued = 0, independent cycles = 758, non-trivial = 148 (forward build) / 118 (reversed build), forward value set = ['1', '16/25', '4/5', '5/4'], reversed value set = ['1', '125/64', '16/25', '25/16', '4/5', '5/4', '64/125']
+  [PASS] T4.3 THE NORMALISED CONNECTION DESCENDS TO RECORDS AND ITS HOLONOMY IS NON-TRIVIAL, AND IT IS R+-VALUED WITH NO U(1) PART.  This is falsifier F4's exact shape — a real holonomy of probability transport with no argument — which the first delivery recorded as 'not reached, vacuously'.  The image of the holonomy homomorphism is the infinite cyclic group <5/4> (basis-independent); the COUNT of non-trivial basis cycles is spanning-forest-dependent and is reported for two different builds rather than quoted as a fact  (every up-edge single-valued (0 multi-valued); 148/758 non-trivial basis cycles forward, 118/758 reversed; every realised value is a power of 5/4 (exponents [-3, -2, -1, 1, 2, 3], gcd 1), so the image group is <5/4> subset R+; no value has modulus 1 with a non-zero argument — the defect is pure modulus)
+
+  T4 VERDICT: the flatness of SEC 4 is a property of the UN-NORMALISED
+  budget weight.  For the D42b4 lift (QUOTES['sqrtq'] — 'the amplitude
+  prod sqrt(q)') the raw weight is the right object and the +1 phase slot
+  stands FOR THAT LIFT.  For the process's own conditional kernel the same
+  record graph carries a non-trivial R+ holonomy, which is D65's committed
+  mass-ratio coboundary (QUOTES['d65']) and is F4's shape.  F4 FIRES.
+
+------------------------------------------------------------------------------
+SEC 4D  T5 — THE THEOREM'S LEMMAS, GATED
+------------------------------------------------------------------------------
+  [PASS] T5.L1 PAST-LOCALITY: the step weight is a function of (e, canon of e's own down-set) — every field admissible() reads is computed from the downward-closed view pred[j], so q(e|h) = Q(e, D(e)).  Keys collide only when the weights agree  (2708 distinct (e, canon(down-set)) keys over histories of depth <= 6, 0 weight clashes)
+  [PASS] T5.L3 DISJOINT => COMMUTING (the locality half): on every closed square whose two events have DISJOINT register sets, each event's weight is unchanged by interposing the other — q(e_B|h.e_A) = q(e_B|h) and symmetrically.  This is the half the first delivery's sketch covers, and it is a THEOREM (L1+L2)  (40507 register-disjoint closed squares over all bases 0..5 at two actors, 0 weight violations)
+  [PASS] T5.L4 AN OVERLAPPING CLOSED SQUARE ALWAYS CONTAINS AN IDLE EVENT: register overlap between two non-idle events forces a shared actor, and (p,p), (p,r), (r,r) same-actor pairs are all blocked in one order or the other — so one member has kind 'n'.  THIS IS THE HALF THE LOCALITY ARGUMENT DOES NOT COVER, and it is grammar-specific  (23464 register-overlapping (causally comparable) closed squares over all bases 0..5 at two actors — 0 without an idle member.  COVERAGE of the first delivery's locality sketch, in its own licensed window: 1355 of 2227 squares (the disjoint ones); the other 872 are carried by L4-L6, which are MENU facts, not locality facts)
+  [PASS] T5.L5 IDLE INERTNESS: View.props filters on kind 'p' and View.arbs on kind 'r', so a kind-'n' act contributes to no field of any view — adding it changes no weight, q(e|h.n_a) = q(e|h)  (12940 (history, actor, event) evaluations at two actors, 0 violations)
+  [PASS] T5.L6 THE IDLE WEIGHT IS THE CONSTANT 3/4, AND THAT IS THE BUDGET COINCIDENCE THE THEOREM RESTS ON: q(n_a|h) = 1 - 1/4[has_p] - 1/4[has_r] evaluated in a's own view, and EXACTLY ONE of has_p, has_r holds — an actor holds at most one live proposal at a time (L6a) and the two states alternate (L6b).  The propose-budget and the arbitrate-budget are EQUAL, so both branches price the idle at 3/4.  Change either constant and the overlapping squares stop being flat: this is a TUNING of d42b3, not a structural fact (T6.5)  (68750 (history, actor) pairs over depth <= 6 (27904 depth-6 histories included), weight spectrum {'3/4': 68750}; (has_p, has_r) census {(True, False): 33338, (False, True): 35412} — never (T,T), never (F,F); #available bases {1: 33338, 0: 35412} — never >= 2  [6s])
+  [PASS] T5.ARM grammar 1, actors ('A', 'B', 'C'), depth<=4: raw flatness and all four lemmas hold on a wider actor pool — the theorem is not a two-actor accident  (6589 histories; 2439 closed squares, ratio multiset {'1': 2439}; disjoint 1923 (violations 0), comparable 516 (without idle 0); idle weights {'3/4': 19767} on 19767 pairs; L5 19764 evaluations, 0 violations  [5s])
+  [PASS] T5.ARM grammar 1, actors ('A', 'B', 'C', 'D'), depth<=3: raw flatness and all four lemmas hold on a wider actor pool — the theorem is not a two-actor accident  (1717 histories; 726 closed squares, ratio multiset {'1': 726}; disjoint 630 (violations 0), comparable 96 (without idle 0); idle weights {'3/4': 6868} on 6868 pairs; L5 6864 evaluations, 0 violations  [2s])
 
 ------------------------------------------------------------------------------
 SEC 5  T3 — THE L_dual RE-RUN
@@ -109,42 +189,42 @@ SEC 5  T3 — THE L_dual RE-RUN
   --- k = 2 ---
     type      0 [2-antichain] x4039   dual -> 0 [2-antichain] SELF-DUAL
     type      2 [2-chain] x9494   dual -> 2 [2-chain] SELF-DUAL
-  [DATA] k=2 dual orbits: 2 total, 0 with a non-trivial odd channel
+  [DATA] k=2 dual orbits: 2 total, 0 with a non-trivial odd channel; odd orbits whose dual member is ABSENT from the family: 0/0
   [PASS] T3.2.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1558 records)
   [DATA] k=2 [odd-orbit-only] O distribution over records: {0: 1558}
   [DATA] k=2 [odd-orbit-only] E distribution over records: {0: 1558}
-  [DATA] k=2 [odd-orbit-only] domain A: v10-closed (294 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
-  [PASS] T3.2.odd-orbit-only.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
-  [DATA] k=2 [odd-orbit-only] domain B: dual-closed (1558 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
-  [PASS] T3.2.odd-orbit-only.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=2 [odd-orbit-only] domain A: v10-closed (294 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 0.000000 (closed form at 50 digits: 0)
+  [PASS] T3.2.odd-orbit-only.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 0.000e+00 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=2 [odd-orbit-only] domain B: dual-closed (1558 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 0.000000 (closed form at 50 digits: 0)
+  [PASS] T3.2.odd-orbit-only.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 0.000e+00 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
   [PASS] T3.2.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1558 records)
   [DATA] k=2 [all-orbits] O distribution over records: {0: 1558}
   [DATA] k=2 [all-orbits] E distribution over records: {2: 23, 6: 84, 12: 313, 20: 1138}
-  [DATA] k=2 [all-orbits] domain A: v10-closed (294 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
-  [PASS] T3.2.all-orbits.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
-  [DATA] k=2 [all-orbits] domain B: dual-closed (1558 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
-  [PASS] T3.2.all-orbits.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=2 [all-orbits] domain A: v10-closed (294 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.2.all-orbits.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=2 [all-orbits] domain B: dual-closed (1558 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.2.all-orbits.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
 
   --- k = 3 ---
     type      2 [one relation + isolated point] x4658   dual -> 2 [one relation + isolated point] SELF-DUAL
     type      6 [V (one below two: FORK)] x216    dual -> 36 [Lambda (two below one: MERGE)] 
     type     36 [Lambda (two below one: MERGE)] x1760   dual -> 6 [V (one below two: FORK)] 
     type     38 [3-chain] x6082   dual -> 38 [3-chain] SELF-DUAL
-  [DATA] k=3 dual orbits: 3 total, 1 with a non-trivial odd channel
+  [DATA] k=3 dual orbits: 3 total, 1 with a non-trivial odd channel; odd orbits whose dual member is ABSENT from the family: 0/1
   [PASS] T3.3.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1535 records)
   [DATA] k=3 [odd-orbit-only] O distribution over records: {0: 1063, -3: 160, -4: 224, -2: 80, -1: 8}
   [DATA] k=3 [odd-orbit-only] E distribution over records: {0: 991, 1: 8, 2: 80, 3: 160, 4: 224, 6: 72}
-  [DATA] k=3 [odd-orbit-only] domain A: v10-closed (275 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
-  [PASS] T3.3.odd-orbit-only.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
-  [DATA] k=3 [odd-orbit-only] domain B: dual-closed (1535 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.821021 (exact closed form 1.821021)
-  [PASS] T3.3.odd-orbit-only.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=3 [odd-orbit-only] domain A: v10-closed (275 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 0.000000 (closed form at 50 digits: 0)
+  [PASS] T3.3.odd-orbit-only.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 0.000e+00 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=3 [odd-orbit-only] domain B: dual-closed (1535 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.821021 (closed form at 50 digits: 1.821020722760068255)
+  [PASS] T3.3.odd-orbit-only.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 4.431e-17 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
   [PASS] T3.3.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1535 records)
   [DATA] k=3 [all-orbits] O distribution over records: {0: 1063, -3: 160, -4: 224, -2: 80, -1: 8}
   [DATA] k=3 [all-orbits] E distribution over records: {1: 8, 2: 76, 6: 80, 8: 233, 14: 72, 16: 224, 17: 160, 20: 682}
-  [DATA] k=3 [all-orbits] domain A: v10-closed (275 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
-  [PASS] T3.3.all-orbits.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
-  [DATA] k=3 [all-orbits] domain B: dual-closed (1535 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
-  [PASS] T3.3.all-orbits.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=3 [all-orbits] domain A: v10-closed (275 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.3.all-orbits.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=3 [all-orbits] domain B: dual-closed (1535 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.3.all-orbits.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
 
   --- k = 4 ---
     type     70 [3 relations, max up-degree 2, max down-degree 2] x1610   dual -> 70 [3 relations, max up-degree 2, max down-degree 2] SELF-DUAL
@@ -154,26 +234,51 @@ SEC 5  T3 — THE L_dual RE-RUN
     type   2186 [4 relations, max up-degree 2, max down-degree 3] x688    dual -> 78 [4 relations, max up-degree 3, max down-degree 2]   <-- DUAL TYPE ABSENT FROM FAMILY
     type   2252 [5 relations, max up-degree 2, max down-degree 3] x912    dual -> 206 [5 relations, max up-degree 3, max down-degree 2] 
     type   2254 [6 relations, max up-degree 3, max down-degree 3] x1782   dual -> 2254 [6 relations, max up-degree 3, max down-degree 3] SELF-DUAL
-  [DATA] k=4 dual orbits: 6 total, 2 with a non-trivial odd channel
+  [DATA] k=4 dual orbits: 6 total, 2 with a non-trivial odd channel; odd orbits whose dual member is ABSENT from the family: 1/2
   [PASS] T3.4.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1451 records)
   [DATA] k=4 [odd-orbit-only] O distribution over records: {0: 987, -3: 160, -4: 224, -1: 80}
   [DATA] k=4 [odd-orbit-only] E distribution over records: {0: 915, 1: 80, 3: 160, 4: 296}
-  [DATA] k=4 [odd-orbit-only] domain A: v10-closed (231 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
-  [PASS] T3.4.odd-orbit-only.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
-  [DATA] k=4 [odd-orbit-only] domain B: dual-closed (1451 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.821021 (exact closed form 1.821021)
-  [PASS] T3.4.odd-orbit-only.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=4 [odd-orbit-only] domain A: v10-closed (231 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 0.000000 (closed form at 50 digits: 0)
+  [PASS] T3.4.odd-orbit-only.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 0.000e+00 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=4 [odd-orbit-only] domain B: dual-closed (1451 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.821021 (closed form at 50 digits: 1.821020722760068255)
+  [PASS] T3.4.odd-orbit-only.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 4.431e-17 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
   [PASS] T3.4.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1451 records)
   [DATA] k=4 [all-orbits] O distribution over records: {0: 987, -3: 160, -4: 224, -1: 80}
   [DATA] k=4 [all-orbits] E distribution over records: {1: 80, 2: 233, 6: 296, 7: 160, 10: 682}
-  [DATA] k=4 [all-orbits] domain A: v10-closed (231 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
-  [PASS] T3.4.all-orbits.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
-  [DATA] k=4 [all-orbits] domain B: dual-closed (1451 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
-  [PASS] T3.4.all-orbits.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=4 [all-orbits] domain A: v10-closed (231 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.4.all-orbits.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=4 [all-orbits] domain B: dual-closed (1451 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.4.all-orbits.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+
+  --- k = 5 ---
+    type   8590 [6 relations, max up-degree 3, max down-degree 3] x246    dual -> 8590 [6 relations, max up-degree 3, max down-degree 3] SELF-DUAL
+    type   8592 [4 relations, max up-degree 2, max down-degree 2] x238    dual -> 8592 [4 relations, max up-degree 2, max down-degree 2] SELF-DUAL
+    type  25500 [8 relations, max up-degree 3, max down-degree 3] x72     dual -> 25500 [8 relations, max up-degree 3, max down-degree 3] SELF-DUAL
+    type 541334 [7 relations, max up-degree 3, max down-degree 4] x48     dual -> 8606 [7 relations, max up-degree 4, max down-degree 3]   <-- DUAL TYPE ABSENT FROM FAMILY
+    type 541336 [6 relations, max up-degree 2, max down-degree 4] x32     dual -> 8734 [6 relations, max up-degree 4, max down-degree 2]   <-- DUAL TYPE ABSENT FROM FAMILY
+    type 549658 [8 relations, max up-degree 3, max down-degree 4] x192    dual -> 9118 [8 relations, max up-degree 4, max down-degree 3]   <-- DUAL TYPE ABSENT FROM FAMILY
+    type 549788 [9 relations, max up-degree 3, max down-degree 4] x112    dual -> 25502 [9 relations, max up-degree 4, max down-degree 3]   <-- DUAL TYPE ABSENT FROM FAMILY
+    type 549790 [10 relations, max up-degree 4, max down-degree 4] x198    dual -> 549790 [10 relations, max up-degree 4, max down-degree 4] SELF-DUAL
+  [DATA] k=5 dual orbits: 8 total, 4 with a non-trivial odd channel; odd orbits whose dual member is ABSENT from the family: 4/4
+  [PASS] T3.5.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1138 records)
+  [DATA] k=5 [odd-orbit-only] O distribution over records: {0: 754, -1: 384}
+  [DATA] k=5 [odd-orbit-only] E distribution over records: {0: 754, 1: 384}
+  [DATA] k=5 [odd-orbit-only] domain A: v10-closed (146 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 0.000000 (closed form at 50 digits: 0)
+  [PASS] T3.5.odd-orbit-only.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 0.000e+00 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=5 [odd-orbit-only] domain B: dual-closed (1138 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 0.969233 (closed form at 50 digits: 0.969233234476344081)
+  [PASS] T3.5.odd-orbit-only.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 8.185e-17 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [PASS] T3.5.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1138 records)
+  [DATA] k=5 [all-orbits] O distribution over records: {0: 754, -1: 384}
+  [DATA] k=5 [all-orbits] E distribution over records: {1: 384, 2: 754}
+  [DATA] k=5 [all-orbits] domain A: v10-closed (146 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.5.all-orbits.A  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
+  [DATA] k=5 [all-orbits] domain B: dual-closed (1138 records): L_dual dual-conjugation error = 0.000e+00 (closed form: identically 0); L_naive = 1.627111 (closed form at 50 digits: 1.627111154086833186)
+  [PASS] T3.5.all-orbits.B  the FLOAT64 port agrees with a HIGH-PRECISION evaluation of the closed form 2 e^{-kappa E}|sin(theta E)|, and L_dual is 0.  LABEL (round MODERATE 1): the DERIVATION is exact and the |sin| values are exact algebraic numbers, but the port L() is float64 — so this gate certifies agreement at float64 resolution, not exactness of the evaluation  (|float64 port - 50-digit closed form| = 1.865e-16 (tolerance 1.421e-14 x scale); L_dual = 0.000e+00)
   [PASS] T3.A THE ODD CHANNEL EXISTS ON v10's OBJECTS: at k=3 the generated line realises a non-self-dual order type, so O is not identically zero  (non-self-dual orbits realised = [[6, 36]])
   [DATA] k=3 order-type census per record depth (type 6 = V/FORK, 36 = Lambda/MERGE): {3: {2: 42, 38: 34, 36: 8}, 4: {38: 558, 2: 534, 36: 160}, 5: {38: 5490, 2: 4082, 36: 1592, 6: 216}}
-  [PASS] T3.B1 THE TYPE-LEVEL ONE-SIDEDNESS IS A WINDOW ARTIFACT, and this gate is what caught it: at record depth <= 4 the FORK type V does not occur at all, so the order-dual is total-out-of-family there; at depth 5 it does occur.  The receipt reports the census per depth rather than the depth-4 headline  (depths with NO fork type = [3, 4]; fork:merge counts at the deepest measured layer = 216:1592)
+  [PASS] T3.B1 THE TYPE-LEVEL ONE-SIDEDNESS IS k-DEPENDENT, AND AT v7's OWN k = 5 IT IS TOTAL.  The first delivery's self-correction — 'the type-level one-sidedness is a WINDOW ARTIFACT, because the fork type V appears at depth 5' — is a k = 3 statement, and the round's MAJOR 5 is right that the k = 5 cell reverses it: at k = 5, the only k that reproduces v7's own five-record type (QUOTES['star']), EVERY non-self-dual orbit has its dual member absent from the family.  The depth census below is reported unchanged; what changes is what it was said to mean  (absent-dual odd orbits by k (absent/odd): {2: (0, 0), 3: (0, 1), 4: (1, 2), 5: (4, 4)} — NOT constant in k; k=3 says 0, k=5 says all.  Depths with NO fork type = [3, 4]; fork:merge counts at the deepest measured layer = 216:1592)
   [PASS] T3.B2 WHAT DOES SURVIVE THE WIDENING: the odd channel is SIGN-DEFINITE on every record at every depth measured — merges always outnumber forks inside a single record, so O never changes sign.  A reversal-odd coordinate that cannot change sign cannot separate a record from its dual within the family  (O spectrum over 1535 records = {-4: 224, -3: 160, -2: 80, -1: 8, 0: 1063} (orbit ordered (V, Lambda), so O = #V - #Lambda); max = 0, min = -4)
-  [DATA] odd orbits whose dual member is absent from the family (k=3): 0/1
+  [DATA] odd orbits whose dual member is absent from the family, BY k (round MODERATE 2 / MAJOR 5: this is the ORDER-TYPE answer, and it is k-dependent; T1.9's 294/1264 is the LABELLED answer): {2: '0/0', 3: '0/1', 4: '1/2', 5: '4/4'}
   [PASS] T3.CTRL THE '0' IS AN IDENTITY OF THE ANSATZ, NOT A FACT ABOUT v10: feeding ADVERSARIAL integer (E,O) pairs drawn from nowhere gives L_dual error 0 all the same, while the naive form still fails.  So reproducing v7's 0 on v10's channels is evidence only that E was made even and O odd — which the port did by construction  (72 adversarial (E,O) pairs: L_dual max error = 0.00e+00; L_naive max error = 1.821021)
   [PASS] T3.C THE TRANSFER IS EMPTY ON THE ODD-ORBIT READING: on the only domain where the v7 gate can be asked of v10's own records (those whose dual is in-family), the odd-orbit even channel E is identically 0, so L_dual and L_naive are the SAME function there and v7's 0-vs-1.82 discrimination has nothing to discriminate  (E values on the v10-closed domain (odd-orbit reading) = [0]; |domain| = 275)
   [PASS] T3.D THE CONTESTABLE CHOICE, RUN BOTH WAYS: under the ALL-ORBITS reading (self-dual types also contribute F + F* = 2F to the even channel — equally literal against QUOTES['EO']) the even channel is non-zero on the v10-closed domain and v7's discrimination DOES reappear: L_dual 0, L_naive > 0.  The reading is therefore what decides whether the transfer looks empty or successful, and the receipt reports both rather than choosing  (E spectrum on the v10-closed domain (all-orbits) = [2, 8, 20]; L_naive max = 1.627111 vs v7's own 1.821020 (both are the same closed form at different E))
@@ -197,19 +302,31 @@ SEC 6  THE PIN'S FOUR FALSIFIERS, each with its verdict
 
   F2  'The sqrt(q) round-trip transport is identically 1 on every
       delete-then-insert cycle of the generated line.'
-      VERDICT: FIRED.
-      758 independent cycles at grammar 1 depth<=5, plus
-      two arms of grammar 2; every up-edge single-valued; every
-      holonomy exactly 1; every exchange square exactly 1.
-      => THE GENERATED LINE IS FLAT.  P1 dies on this substrate,
-         and D71 Clause 3's '+1' in the phase slot is a THEOREM
-         at the measured window, not an unargued choice.
+      VERDICT: FIRED — AT CLOSED SCOPE, ON GRAMMAR 1, FOR THE RAW WEIGHT.
+      758 independent cycles at grammar 1 depth<=5 and 63971 closed
+      exchange squares over every base (depth <= 7), all exactly 1;
+      every up-edge single-valued.  The round supplies the reason: it
+      is a THEOREM for this grammar (T5.L1/L3/L4/L5/L6), and the
+      T2 half of it is forced by T1.8 alone (T2.0).
+      THREE SCOPE CLAUSES, all measured here, all narrowing it:
+        (i)  GRAMMAR.  At transport scope (d42b1) A_D is NOT zero: 100 of
+             3100 closed squares are non-unit (spectrum {'1/2': 82, '2/3': 2, '3/2': 6, '2': 10}),
+             plus 40 half-open squares (A_D = +/- infinity).  T6.1/T6.2.
+        (ii) INSTRUMENT.  The record-deletion-graph census cannot see them:
+             0 of 100 defective squares close at record level.  T6.3.
+        (iii) WEIGHT.  For the process's own conditional kernel q/M the same
+             grammar-1 record graph has non-trivial holonomy, <5/4> in R+.  T4.3.
+      => THE GENERATED LINE IS FLAT AT CLOSED SCOPE, IN GRAMMAR 1, FOR THE RAW
+         BUDGET WEIGHT — and that is exactly the object D42b4's prod sqrt(q)
+         lift transports, so D71 Clause 3's '+1' is forced FOR THAT LIFT.
+         It is not a statement about the generated line as such.
 
   F3  'L_dual's dual-conjugation error on the generated line's
       channels is non-zero.'
-      VERDICT: DOES NOT FIRE — and the reason is worse than a
-      failure would have been.  The error is EXACTLY 0 on v10's
-      channels, at k = 2, 3 and 4, on both domains and both orbit
+      VERDICT: DOES NOT FIRE (computed: worst L_dual error over every cell = 0.000e+00)
+      — and the reason is worse than a
+      failure would have been.  The error is 0 on v10's
+      channels, at k = 2, 3, 4 AND 5, on both domains and both orbit
       readings.  But T3.CTRL shows the 0 is an ALGEBRAIC IDENTITY
       of the ansatz: adversarial (E,O) integers from nowhere score
       0 too.  Reproducing it is evidence only that the port made E
@@ -225,11 +342,20 @@ SEC 6  THE PIN'S FOUR FALSIFIERS, each with its verdict
       FORMALLY, and the transfer is empty of substrate content.
 
   F4  'The round-trip defect exists but is not U(1)-valued.'
-      VERDICT: NOT REACHED (vacuously false).  F2 removes its
-      premise: there is no defect at all (T2.4).  The holonomy
-      group is trivial, so the question 'R+ or U(1)?' has no
-      subject.  The founding slogan is refuted on this substrate
-      one step EARLIER than F4 anticipated.
+      VERDICT: FIRES — and the first delivery's 'not reached,
+      vacuously' was WRONG (round MAJOR 1 + MAJOR 2).  A defect exists,
+      on two independent objects, and it is R+-valued with no argument:
+        (a) normalised connection, grammar 1: True — image group
+            <5/4> subset R+ on the same 758-cycle record graph (T4.3), which
+            is D65's committed mass-ratio coboundary (QUOTES['d65']).
+        (b) raw transport scope, grammar 2: True — 100 closed squares
+            with ratios in ['1/2', '2', '2/3', '3/2'] plus 40 half-open
+            squares at A_D = +/- infinity (T6.1, T6.2).
+      => The founding slogan is refuted IN F4's OWN DIRECTION, not one step
+         earlier: there IS a real holonomy of probability transport on this
+         substrate, and it has NO PHASE.  What is NOT exhibited anywhere in
+         this unit is a U(1) part — that is what remains open, and it is now
+         a characterisation question, not an existence question.
 
 ------------------------------------------------------------------------------
 SEC 7  DETERMINISM PROBE
@@ -240,32 +366,66 @@ SEC 7  DETERMINISM PROBE
   [PASS] D3 ITERATION-ORDER INDEPENDENCE: rebuilding the exchange census with the candidate lists traversed in the opposite order gives the identical ratio multiset  (reverse-order multiset = {Fraction(1, 1): 2227} vs {Fraction(1, 1): 2227}; PYTHONHASHSEED = default)
 
 ==============================================================================
-[SUMMARY] 50 PASS / 0 FAIL   (anchor failures: 0)   elapsed 343s
+[SUMMARY] 77 PASS / 0 FAIL   (anchor failures: 0)   elapsed 468s
+[SUMMARY] of the 77 passes, 9 carry NO INDEPENDENT INFORMATION and are
+          not evidence (round MODERATE 4) — each is entailed by another gate
+          or is a theorem true of every object of its type:
+            T1.3 CARRIER A is well-founded <= a one-line theorem true of EVERY finite poset — sigma is a
+            T1.7 ODDNESS UNDER * (the pin's actual question) <= T1.1 — the predicate set(ratios) == {1} is literally T1.1'
+            T2.1 THE CONNECTION DESCENDS <= T2.0 (hence T1.8): parallel up-edges C1->C2 both equal phi
+            T2.2 THE ROUND TRIP CLOSES AT 1, EXACTLY, ON EVERY INDEPENDENT CYCLE <= T2.0 (hence T1.8): a product of phi-ratios telescopes arou
+            T2.3 THE EXPLICIT DELETE-THEN-INSERT ROUND TRIPS (the transverse loops <= T1.1 and T2.0.  Note what it counts: only the 1355 squares
+            T2.NC NEGATIVE CONTROL <= T2.0: multiplying one edge of an EXACT GRADIENT by 3/2 mus
+            T2.4 U(1) CONTENT OF THE RAW CONNECTION <= T2.2, whose predicate len(d1) == 0 this repeats
+            T2.5 SECOND GRAMMAR ('A', 'B') depth<=4, RECORD-GRAPH ARM <= the same potential identity as T2.0, now verified in gramm
+            T2.5 SECOND GRAMMAR ('A', 'B', 'C') depth<=3, RECORD-GRAPH ARM <= the same potential identity as T2.0, now verified in gramm
+[SUMMARY] independent-evidence passes: 68
 ==============================================================================
 
-[VERDICT] P1 IS REFUTED ON THE GENERATED LINE, and it is refuted at the
-holonomy leg, not at the identification leg.
+[VERDICT] P1 IS REFUTED ON THE GENERATED LINE — at the holonomy leg, not
+at the identification leg — and the ROUND-1 repairs move three of the four
+things the first delivery said about that refutation.
 
-  T1  the reversal test .... the two reversals DO admit a common carrier
-      (linear extensions; gated), they coincide EXACTLY on the F-PAIR
-      fixture and nowhere else, and on that carrier A_D is identically
-      zero: 'is A_D odd under *' answers YES with zero content.
-  T2  the closure test ..... F2 FIRES.  sqrt(q)-transport around every
-      delete-then-insert round trip of the record deletion graph returns
-      exactly 1, on every independent cycle of two grammars and three
-      arms.  There is no holonomy to be the phase of.
-  T3  the L_dual re-run .... F3 does NOT fire: the dual-conjugation error
-      is exactly 0 on v10's own channels — but T3.CTRL shows that 0 is an
-      identity of the ansatz, not a fact about v10, and A2c shows v7's own
-      1.82 control is the same closed form at E = 3.  The odd channel is
-      SIGN-DEFINITE on every record (T3.B2), the family is not *-closed
-      (T1.9), and on the v10-closed domain the odd-orbit even channel
-      vanishes (T3.C).  The transfer is formal and empty of content.
+  T1  the reversal test .... unchanged, and widened.  The two reversals DO
+      admit a common carrier (linear extensions), coincide EXACTLY on the
+      F-PAIR fixture and nowhere else, and on that carrier A_D is
+      identically zero — now on 63971 closed squares at every base up
+      to depth 7, plus 3- and 4-actor arms.
+  T5  WHY (new, the round's theorem) ... grammar-1 raw flatness is a
+      THEOREM, not a measurement: past-locality (L1-L3) carries the
+      register-disjoint squares, and idle inertness plus the constant
+      idle weight 3/4 (L4-L6) carry the overlapping ones.  The second
+      half is a BUDGET COINCIDENCE of d42b3 — equal propose/arbitrate
+      budgets, mutually exclusive in an actor's own view.
+  T6  TRANSPORT SCOPE (new, the round's MAJOR 1) ... and that coincidence
+      FAILS one grammar over.  In d42b1, 100 of 3100 closed squares
+      have A_D != 0 and 40 more are half-open (A_D = +/- infinity).
+      Every one of them carries a DELIVERY event.  The first delivery
+      asserted the opposite on exactly this window as [MEASURED].
+      0 of 100 close at record level, so the record-deletion-
+      graph census — the only test that was run there — is BLIND to them
+      by construction, and so is its negative control.
+  T4  THE NORMALISED KERNEL (new, the round's MAJOR 2) ... the flatness is
+      a property of the RAW budget weight.  For the process's own
+      conditional kernel q/M the same record graph carries a non-trivial
+      holonomy with image <5/4> in R+ — D65's committed mass-ratio
+      coboundary, which this unit had failed to cite.  For D42b4's
+      prod sqrt(q) lift the raw weight IS the right object, so the phase
+      slot's '+1' survives FOR THAT LIFT.
+  T2  the closure test ..... F2 fires at closed scope, on grammar 1, for
+      the raw weight — and T2.0 shows the whole T2 census is algebraically
+      forced by T1.8 (mu is an exact potential), so the 758 + 424 + 645
+      cycles are one fact counted six times, not six measurements.
+  T3  the L_dual re-run .... F3 does NOT fire; the 0 is an identity of the
+      ansatz (T3.CTRL) and v7's 1.82 is the same closed form at E = 3
+      (A2c).  The k = 5 cell — v7's own five-record type, which the first
+      delivery said 'does not exist here' — runs in seconds and REVERSES
+      T3.B1: at k = 5 all non-self-dual orbits have their dual member
+      absent.  Absent/odd by k: {2: (0, 0), 3: (0, 1), 4: (1, 2), 5: (4, 4)}.
 
-  The weld is NOT made.  The honest residue: v7's odd channel and v6's
-  A_D are not two halves of one object on this substrate — one of them is
-  identically zero here and the other has no domain here.  What the unit
-  buys is the no-go the pin pre-registered as F2: THE GENERATED LINE IS
-  FLAT, so D71 Clause 3's '+1' is forced, not chosen, at the measured
-  window.
+  F1 fires in its spirit; F2 fires at closed scope only; F3 does not fire
+  and means nothing; F4 FIRES — a real holonomy of probability transport
+  exists on this substrate and it has NO PHASE.  The exhibited defect is
+  R+-valued throughout, on both objects.  The U(1) part is not exhibited
+  anywhere here, and that — not existence — is what is left open.
 

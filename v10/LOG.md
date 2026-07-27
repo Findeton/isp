@@ -11739,3 +11739,33 @@ is convention-protected at the root by symmetry and measured-
 shrinking off-root; what remains is THE BOUND (via Birkhoff/
 Hilbert-metric on R-SIG) and the four-actor depth-5 horizon
 extension.  TERMINAL for round 1.
+
+## 2026-07-27 — D72 ROUND 1 ADJUDICATED AND TERMINAL: CLOSED-SCOPE
+## FLATNESS IS A THEOREM; TRANSPORT SCOPE IS CURVED; THE TRANSPORT
+## HOLONOMY IS A NEW OBJECT (LEDGER #490)
+Deliverables: reviews/d72-round1-hostile-review.md (independent Opus
+5, REVISE 5 MAJOR / 5 MODERATE / 6 MINOR, + my DELTA), repaired
+receipt (77 PASS / 0 FAIL, 468 s) + retitled note.  **FORWARD
+CORRECTIONS of #488: (1) grammar-1 raw flatness is now [THEOREM]
+(the round CLOSED the proof — L1-L3 locality for 1,355 disjoint
+squares + L4-L6 idle-inertness/equal-budget for the 872 overlapping
+ones — with the scope clause that the second half is a
+GRAMMAR-SPECIFIC budget coincidence); (2) the normalized kernel was
+NEVER flat — its record-level holonomy is D65's mass-ratio
+coboundary (image <5/4> ⊂ R+), the omission now cited and gated;
+(3) "the generated line is flat" is a GRAMMAR-1 statement:
+**TRANSPORT SCOPE IS CURVED — 88 non-unit closed exchange squares
+{1/2, 2/3, 3/2, 2} + 40 half-open at two actors, 12 more at three,
+ALL delivery-bearing, from depth 3, INVISIBLE to the record-graph
+instrument (mu is an exact gradient there — the blindness is
+structural: record-closure <=> register-disjointness).**  (4) v7's
+1.82 evidence downgraded (closed-form ansatz constant); (5) T3.B1
+reversed at k = 5 (4/4 dual-absent at v7's own k).**  F4 FIRES as a
+computed predicate on both objects: everything exhibited is
+R+-valued — NO U(1) PART ANYWHERE YET.  **AND THE REPAIR'S OWN
+FIND: the transport values 2/3 and 3/2 lie OUTSIDE <5/4> — the
+transport holonomy is NOT the D65 coboundary family; it is a new
+object.**  D74 pinned next as CHARACTERISATION: the carrier
+(register-overlapping delivery squares), the group, coboundary or
+not, and the odd-sector U(1) search — the imaginary exponential's
+last known address.  TERMINAL for round 1.
