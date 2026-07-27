@@ -11655,3 +11655,59 @@ channel's quadratic response (D73), with the off-diagonal
 completion (v2 p10 Prop 10.6) waiting as their joint successor.
 Both workers dispatched in parallel; D70's round-1 repairs run
 concurrently (its adjudication lands as #488).
+
+## 2026-07-27 — D72 AND D73 DELIVERED (GREEN-UNREVIEWED): THE WELD IS
+## REFUTED AT THE HOLONOMY LEG — THE CLOSED SCOPE IS FLAT; AND THE
+## CHANNEL GRAM IS A COVARIANCE, NOT A METRIC — THE DIRECTION INDEX IS
+## THE STAGE (LEDGER #488)
+Deliverables: note-d72-weld-result.md + code/d72_weld_exact.py (50
+PASS / 0 FAIL, 343 s) and note-d73-even-gram-result.md +
+code/d73_even_gram_exact.py (29 PASS / 0 FAIL, 457 s; NOTE: the
+committed v7 campaign needs Python >= 3.10 — reproduced under
+python3.13).  BOTH RERUN BY ME: byte-identical modulo timings.
+**D72 — THE WELD IS NOT MADE, refuted at the HOLONOMY leg, not the
+identification leg: the two reversals DO coincide where both exist
+(the linear-extension carrier, gated bijection on 6,464 histories;
+on the F-PAIR fixture the order-dual IS the transposition AB -> BA)
+— but A_D = log dP_AB/dP_BA is IDENTICALLY ZERO on all 2,227 closed
+exchange squares, and the sqrt(q)-connection's holonomy is EXACTLY 1
+on all 758 independent cycles (plus a second grammar's 424+645; 20/20
+tamper-detection control).  F2 FIRES: THE GENERATED LINE AT CLOSED
+SCOPE IS FLAT — no holonomy exists for the phase to be; D71's
+phase-slot +1 is FORCED at the measured window.**  The third
+independent certification of the closed scope's irreducible
+classicality (after D68's C5 and D64/D66's trivial classes).
+[MEASURED not THEOREM — a candidate depth-free argument (step weight
+= past-local view; incomparable events absent from each other's
+views) is stated, not closed: the round's primary target.]
+SURPRISES: v7's celebrated 1.82-vs-0 dual-conjugation evidence is a
+CLOSED-FORM CONSTANT OF THE ANSATZ (2 e^{-3/32} reproduces all 32
+published digits; adversarial integers also score 0) — D71b Clause
+2's "strongest bridge evidence" DOWNGRADED to a correct algebraic
+observation; the unit's own first headline (fork one-sidedness) was
+caught by its own gate at depth 5; a frozenset-repr determinism trap
+found and fixed.  **D73 — F1 does not fire at N = 9 (the even Gram
+is genuinely anisotropic: eigenvalues 108.04/45.92/20.83) BUT the
+positive is triply deflated: at N = 5 the Gram IS diagonal (support
+disjointness — the off-diagonal is DEPTH-GENERATED, not intrinsic);
+the reflection is the IDENTITY on the even channel (the Gram is an
+ordinary second-moment matrix, its positivity a tautology);
+per-record rank 1.  THE PROMOTED K CHANGES NOTHING: all eleven
+quadratic forms land on the committed TV_9 EXACTLY — the trace
+already sits at the family's floor.  FAILS-FULL-GR STANDS, sharper:
+"a scalar did not become a metric by interpretation; it became a
+covariance matrix" — and NOTHING ACTS on the channel index
+(stabiliser order 1, no sign freedom): no stage for a tensor.
+THE TRANSFER HINT [SAMPLED]: on DOUBLE-RING(8,10,8) all 59 wide
+charts carry anisotropic direction-indexed Grams that are 4x4
+CIRCULANTS with stabiliser order 8 — the rank-2 object's stage is
+the DIRECTION INDEX of the generated line's wide charts, not v7's
+channel index.**  Prop 10.6 relation stated as a DISTINCTION (the
+Gram is endpoint-measure-built, orientation-blind by 10.6's own
+argument; shared content: the orientation datum sits in the ODD
+sector in both).  THE COMPOSITE: quantum and gravity are now both
+EVICTED from the closed scope by measurement and both point at
+transport scope — where D70's measure is simultaneously converging.
+THE ERA'S SECOND-WAVE PIN NAMED: TRANSPORT-SCOPE FLATNESS (does
+A_D stay 0 when deliveries and multi-proposer arbs enter?).
+GREEN-UNREVIEWED x2: hostile rounds dispatched.

@@ -1,0 +1,271 @@
+==============================================================================
+D72 — THE WELD: the reversal-holonomy identity (exact receipt)
+==============================================================================
+  banner: exact Fractions on every v10 weight; committed layers by
+  text-slice with fidelity markers + gated exit-freedom; quoted
+  constants only (registry below); substantive negatives exit 0.
+
+  FIDELITY QUOTES (the operationalisations below are held to these):
+    [star] v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2506-2511
+        Let `\ast` denote the order-dual operation on a five-record sector: 
+        F^\ast = the same five-record type with every order relation reverse
+        d.
+    [EO] v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2724-2735
+        For a dual pair (F,F*), define E_F(R)=F(R)+F^\ast(R), the even count
+        , and O_F(R)=F(R)-F^\ast(R), the dual-odd imbalance.
+    [Ldual] v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2843-2849
+        L_dual = e^{-kE}e^{i theta O}; E is dual-even data such as F+F*; O i
+        s dual-odd data such as F-F*; dual reversal sends O to -O; therefore
+         dual reversal sends L to its complex conjugate.
+    [AD] v6/relativistic-isp-v6-paper4.md:2607-2645 (sec.34)
+        A_D = log dP_AB / dP_BA, the exchange cocycle.
+    [AD_row] v6/relativistic-isp-v6-paper4.md:2636
+        | antisymmetry | reverse ordering has action -A_D | orientation reve
+        rsal is fixed | gap=2.2e-16 | PASS |
+    [loop_row] v6/relativistic-isp-v6-paper4.md:2637
+        commuting/eventless loop has zero action (rms 0.0e+00)
+    [drift] v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:1999
+        the receipt measures deletion drift from N=9 to N=8 and insertion dr
+        ift from N=8 to N=9
+    [sqrtq] v10/note-d42b4-quantum-lift.md:15-18
+        The lift assigns each complete depth-D history the amplitude prod sq
+        rt(q) (the #152 budget amplitudes) on record ancillas.
+    [H1zero] v8/relativistic-isp-v8-paper1-foundations-click-law.md:77
+        On a one-dimensional commit path H^1 = 0.
+
+------------------------------------------------------------------------------
+SEC 0.1  committed sources, sliced
+------------------------------------------------------------------------------
+  [DATA] d42b3 slice: 8670/21462 bytes; exports = candidates_for/admissible/event_poset/canon/mu_of
+  [DATA] d42b1 slice: 16129/40838 bytes; second grammar (A7 ladder)
+  [DATA] p30 slice: 17383/27482 bytes; the * (opposite_bits/dual_key) and L_dual (complex_laplace_by_mode) machinery
+  [DATA] v6 p4n slice: 7639/13557 bytes; exchange_laws + rn_action (the A_D machinery)
+
+------------------------------------------------------------------------------
+SEC 1  ANCHORS (exit 1 on failure)
+------------------------------------------------------------------------------
+  [PASS] ANCHOR A1 v6 p4 sec.34 antisymmetry row reproduces (quoted v6/relativistic-isp-v6-paper4.md:2636: gap=2.2e-16)  (antisymmetry gap = 2.220e-16 (quoted 2.2e-16); eventless loop rms = 0.0e+00 (quoted 0.0e+00))
+  built N=1: permutations=1 records=1
+  built N=2: permutations=2 records=2
+  built N=3: permutations=6 records=5
+  built N=4: permutations=24 records=16
+  built N=5: permutations=120 records=63
+  built N=6: permutations=720 records=315
+  built N=7: permutations=5040 records=1956
+  built N=8: permutations=40320 records=14794
+  built N=9: permutations=362880 records=131526
+  [PASS] ANCHOR A2 v7 paper30 dual-conjugation: naive = 1.8210207227600682556870097725525 (p30:2838), L_dual = 0 (p30:2851)  (recomputed naive = 1.8210207227600682556870097725525; recomputed L_dual = 0; N=9 records = 131526; 296s)
+  [PASS] ANCHOR A2b the committed * (opposite_bits/dual_key) is an involution on v7's own record universe (N=7)  (1956 records at N=7)
+  [PASS] ANCHOR A2c the exact closed form of v7's dual-conjugation error, maximised over integer E, REPRODUCES paper30:2838's published constant 1.8210207227600682556870097725525 — with no re-run of the N=9 universe  (2*exp(-3/32) = 1.8210207227600682556870097725525; argmax over E in 0..399 is E = 3 (True).  COROLLARY, and it is a finding: v7's headline '1.82' is a closed-form constant of the ANSATZ, not a measurement of the N=9 record universe — it says only that some record has E = 3.)
+  [PASS] ANCHOR A3 the F-PAIR fixture reproduces d42b4's anchors (32 depth-2 sequences, Z_seq = 4, Z_class = 3, one mu per class)  (sequences = 32, Z_seq = 4, classes = 23, Z_class = 3, one-mu-per-class = True)
+
+------------------------------------------------------------------------------
+SEC 2  the generated line, enumerated
+------------------------------------------------------------------------------
+  [DATA] grammar 1 (d42b3 placement) depth<=5: 6471 histories, 1565 record classes, per-depth histories = {0: 1, 1: 6, 2: 32, 3: 176, 4: 976, 5: 5280}
+  [DATA] record classes per depth: {0: 1, 1: 6, 2: 23, 3: 84, 4: 313, 5: 1138}
+
+------------------------------------------------------------------------------
+SEC 3  T1 — THE REVERSAL TEST
+------------------------------------------------------------------------------
+  [PASS] T1.0 OPERATIONALISATION FIDELITY: our exact Fraction dP_AB/dP_BA agrees with v6's own rn_action(exchange_laws(.)) on a rational 2x2 control, atom by atom  (max |log(exact ratio) - v6 float A_D| = 2.220e-16 over 4 atoms; the 1/n uniform-start factor of flatten_law cancels in the ratio (verified: it is the same constant on both laws))
+  [DATA] exchange-square census (grammar 1, depth<=5): {'both-blocked': 610, 'closed': 2227}
+  [DATA] distinct exact ratios dP_AB/dP_BA: {Fraction(1, 1): 2227}
+  [PASS] T1.1 A_D CONTENT: every closed exchange square of the generated line has dP_AB/dP_BA EXACTLY 1, so A_D == 0 identically — the transport reversal AB->BA has no content on this substrate  (2227 closed squares, 0 with ratio != 1, ratio multiset = {1: 2227})
+  [PASS] T1.2 NO HALF-OPEN SQUARE: there is no pair whose AB order is admissible while BA is not (a half-open square would make A_D +/-infinity — a support-level, non-U(1) and non-R+ defect)  (AB-only = 0, BA-only = 0, both-blocked = 610)
+  [PASS] T1.3 CARRIER A is well-founded: sequence reversal is exactly the action induced by the order-dual * on linear extensions (rev : LinExt(P) -> LinExt(P*) is a bijection, checked on every history of the generated line)  (6464 histories, all depths 2..5)
+  [PASS] T1.4 THE COINCIDENCE, and its exact extent: on 2-event histories (the F-PAIR fixture, base h = []) the induced order-dual *_seq and the transport reversal AB->BA are the SAME partial map — literally, term by term  (32 two-event histories = d42b4's 32; 28 have an admissible reverse)
+  [PASS] T1.5 THE DIVERGENCE: on every closed square with a non-empty base (|h| >= 1 under the pair), *_seq reverses the WHOLE sequence while AB->BA transposes only the top two — the two maps give different sequences wherever there is anything below the pair  (2214 closed squares with |h| >= 1; 0 on which the two maps agree; 578 whose *_seq image is itself admissible (so *_seq has a domain there, but it is not AB->BA))
+  [PASS] T1.6 ODDNESS UNDER AB->BA (v6's antisymmetry row, exact): dP_BA/dP_AB = (dP_AB/dP_BA)^-1 as Fractions, hence A_D -> -A_D, on every closed square — v6:2636's gap=2.2e-16 reproduced at gap EXACTLY 0 in exact arithmetic  (2227 squares, exact inverse in all)
+  [PASS] T1.7 ODDNESS UNDER * (the pin's actual question): A_D is odd under the order-dual on CARRIER A — but ONLY because A_D == 0, so the test reads 0 = -0.  The identity is CONFIRMED VACUOUSLY: it holds with zero content, on the one fixture (2-event, base []) where the two reversals are the same map  (A_D == 0 on all 2227 closed squares; oddness is the identity 0 = -0)
+  [PASS] T1.8 CARRIER B (record-level): mu is constant on every record class of the generated line, so A_D descends to records — as the ZERO function.  * acts on records; A_D-on-records is 0; the carrier exists and carries nothing  (1565 record classes, one mu each)
+  [DATA] record order-dual realised inside the generated line: {(2, False): 4, (2, True): 19, (3, False): 40, (3, True): 44, (4, False): 228, (4, True): 85, (5, False): 992, (5, True): 146}
+  [PASS] T1.9 CARRIER C: the generated line is NOT closed under the order-dual — a majority of its records have no dual inside the family, so * is a PARTIAL map on v10's objects, not an operation on them  (294 records have their labelled order-dual in-family; 1264 do not)
+
+  T1 VERDICT — see SEC 6 falsifier board.  In one line: the two reversals do
+  admit a common carrier (CARRIER A, gated at T1.3), they coincide exactly
+  on the F-PAIR fixture (T1.4) and diverge everywhere else (T1.5), and on
+  the carrier A_D is identically zero (T1.1), so 'is A_D odd under *' is
+  answered YES with zero content (T1.7).
+
+------------------------------------------------------------------------------
+SEC 4  T2 — THE CLOSURE TEST
+------------------------------------------------------------------------------
+  [DATA] grammar 1 (d42b3), depth<=5: deletion graph: nodes = 1565, up-edges = 2322, multi-valued edges = 0, independent cycles = 758, non-trivial holonomies = 0, holonomy value set = [Fraction(1, 1)]
+  [PASS] T2.1 THE CONNECTION DESCENDS: every up-edge of the record deletion graph carries a SINGLE step weight — the sqrt(q) connection is well defined on records, not merely on sequences  (2322 up-edges, 0 multi-valued)
+  [PASS] T2.2 THE ROUND TRIP CLOSES AT 1, EXACTLY, ON EVERY INDEPENDENT CYCLE: the modulus returns to its start and the accumulated log is 0 = A_D on every loop (T1.1).  This is the pin's F2 condition, and the cycle rank shows the test is NOT vacuous  (758 independent cycles (E - V + C), 0 with holonomy != 1, worst |log holonomy| = 0.0)
+  [PASS] T2.3 THE EXPLICIT DELETE-THEN-INSERT ROUND TRIPS (the transverse loops: h.eA.eB -> h.eB -> h.eB.eA -> h.eA -> h.eA.eB).  sqrt(q)-transport around each gives sqrt(dP_AB/dP_BA) = 1 exactly, and 2*log of it equals A_D = 0  (1355 record-closing exchange loops, 0 with holonomy != 1)
+  [PASS] T2.NC NEGATIVE CONTROL: multiplying ONE up-edge weight by 3/2 makes the same detector report a non-trivial holonomy — so the zero above is a measurement, not a blind instrument.  Twenty edges are tampered one at a time, in a HASH-ORDER-INDEPENDENT order (stable_key), and the census is reported rather than the first hit  (20/20 tampered edges produce a non-trivial holonomy; defect counts = [136, 200, 42, 42, 10, 10, 145, 105, 30, 30, 12, 12, 62, 43, 11, 11, 41, 41, 3, 7]; first non-trivial value set = [Fraction(2, 3), Fraction(3, 2)])
+  [PASS] T2.4 U(1) CONTENT: the round-trip defect is not merely real-positive rather than unimodular (falsifier F4's shape) — there is NO defect at all.  The holonomy group of sqrt(q)-transport on the generated line's record deletion graph is the TRIVIAL group  (holonomy group = {1}; neither R+ nor U(1) is realised, because nothing but 1 is realised)
+  [DATA] grammar 2 (d42b1) ('A', 'B') depth<=4: deletion graph: nodes = 2477, up-edges = 2900, multi-valued edges = 0, independent cycles = 424, non-trivial holonomies = 0, holonomy value set = [Fraction(1, 1)]
+  [PASS] T2.5 SECOND GRAMMAR ('A', 'B') depth<=4: same verdict — connection descends, every independent cycle has holonomy exactly 1  (424 independent cycles, 0 defects, 3969 histories)
+  [DATA] grammar 2 (d42b1) ('A', 'B', 'C') depth<=3: deletion graph: nodes = 2128, up-edges = 2772, multi-valued edges = 0, independent cycles = 645, non-trivial holonomies = 0, holonomy value set = [Fraction(1, 1)]
+  [PASS] T2.5 SECOND GRAMMAR ('A', 'B', 'C') depth<=3: same verdict — connection descends, every independent cycle has holonomy exactly 1  (645 independent cycles, 0 defects, 3424 histories)
+
+------------------------------------------------------------------------------
+SEC 5  T3 — THE L_dual RE-RUN
+------------------------------------------------------------------------------
+
+  --- k = 2 ---
+    type      0 [2-antichain] x4039   dual -> 0 [2-antichain] SELF-DUAL
+    type      2 [2-chain] x9494   dual -> 2 [2-chain] SELF-DUAL
+  [DATA] k=2 dual orbits: 2 total, 0 with a non-trivial odd channel
+  [PASS] T3.2.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1558 records)
+  [DATA] k=2 [odd-orbit-only] O distribution over records: {0: 1558}
+  [DATA] k=2 [odd-orbit-only] E distribution over records: {0: 1558}
+  [DATA] k=2 [odd-orbit-only] domain A: v10-closed (294 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
+  [PASS] T3.2.odd-orbit-only.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=2 [odd-orbit-only] domain B: dual-closed (1558 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
+  [PASS] T3.2.odd-orbit-only.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [PASS] T3.2.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1558 records)
+  [DATA] k=2 [all-orbits] O distribution over records: {0: 1558}
+  [DATA] k=2 [all-orbits] E distribution over records: {2: 23, 6: 84, 12: 313, 20: 1138}
+  [DATA] k=2 [all-orbits] domain A: v10-closed (294 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
+  [PASS] T3.2.all-orbits.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=2 [all-orbits] domain B: dual-closed (1558 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
+  [PASS] T3.2.all-orbits.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+
+  --- k = 3 ---
+    type      2 [one relation + isolated point] x4658   dual -> 2 [one relation + isolated point] SELF-DUAL
+    type      6 [V (one below two: FORK)] x216    dual -> 36 [Lambda (two below one: MERGE)] 
+    type     36 [Lambda (two below one: MERGE)] x1760   dual -> 6 [V (one below two: FORK)] 
+    type     38 [3-chain] x6082   dual -> 38 [3-chain] SELF-DUAL
+  [DATA] k=3 dual orbits: 3 total, 1 with a non-trivial odd channel
+  [PASS] T3.3.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1535 records)
+  [DATA] k=3 [odd-orbit-only] O distribution over records: {0: 1063, -3: 160, -4: 224, -2: 80, -1: 8}
+  [DATA] k=3 [odd-orbit-only] E distribution over records: {0: 991, 1: 8, 2: 80, 3: 160, 4: 224, 6: 72}
+  [DATA] k=3 [odd-orbit-only] domain A: v10-closed (275 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
+  [PASS] T3.3.odd-orbit-only.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=3 [odd-orbit-only] domain B: dual-closed (1535 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.821021 (exact closed form 1.821021)
+  [PASS] T3.3.odd-orbit-only.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [PASS] T3.3.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1535 records)
+  [DATA] k=3 [all-orbits] O distribution over records: {0: 1063, -3: 160, -4: 224, -2: 80, -1: 8}
+  [DATA] k=3 [all-orbits] E distribution over records: {1: 8, 2: 76, 6: 80, 8: 233, 14: 72, 16: 224, 17: 160, 20: 682}
+  [DATA] k=3 [all-orbits] domain A: v10-closed (275 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
+  [PASS] T3.3.all-orbits.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=3 [all-orbits] domain B: dual-closed (1535 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
+  [PASS] T3.3.all-orbits.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+
+  --- k = 4 ---
+    type     70 [3 relations, max up-degree 2, max down-degree 2] x1610   dual -> 70 [3 relations, max up-degree 2, max down-degree 2] SELF-DUAL
+    type     72 [2 relations, max up-degree 1, max down-degree 1] x795    dual -> 72 [2 relations, max up-degree 1, max down-degree 1] SELF-DUAL
+    type    204 [4 relations, max up-degree 2, max down-degree 2] x72     dual -> 204 [4 relations, max up-degree 2, max down-degree 2] SELF-DUAL
+    type    206 [5 relations, max up-degree 3, max down-degree 2] x144    dual -> 2252 [5 relations, max up-degree 2, max down-degree 3] 
+    type   2186 [4 relations, max up-degree 2, max down-degree 3] x688    dual -> 78 [4 relations, max up-degree 3, max down-degree 2]   <-- DUAL TYPE ABSENT FROM FAMILY
+    type   2252 [5 relations, max up-degree 2, max down-degree 3] x912    dual -> 206 [5 relations, max up-degree 3, max down-degree 2] 
+    type   2254 [6 relations, max up-degree 3, max down-degree 3] x1782   dual -> 2254 [6 relations, max up-degree 3, max down-degree 3] SELF-DUAL
+  [DATA] k=4 dual orbits: 6 total, 2 with a non-trivial odd channel
+  [PASS] T3.4.odd-orbit-only.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1451 records)
+  [DATA] k=4 [odd-orbit-only] O distribution over records: {0: 987, -3: 160, -4: 224, -1: 80}
+  [DATA] k=4 [odd-orbit-only] E distribution over records: {0: 915, 1: 80, 3: 160, 4: 296}
+  [DATA] k=4 [odd-orbit-only] domain A: v10-closed (231 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 0.000000 (exact closed form 0.000000)
+  [PASS] T3.4.odd-orbit-only.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=4 [odd-orbit-only] domain B: dual-closed (1451 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.821021 (exact closed form 1.821021)
+  [PASS] T3.4.odd-orbit-only.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [PASS] T3.4.all-orbits.a  the E/O port satisfies its own definition (QUOTES['EO']): the order-dual fixes E and negates O on every record  (1451 records)
+  [DATA] k=4 [all-orbits] O distribution over records: {0: 987, -3: 160, -4: 224, -1: 80}
+  [DATA] k=4 [all-orbits] E distribution over records: {1: 80, 2: 233, 6: 296, 7: 160, 10: 682}
+  [DATA] k=4 [all-orbits] domain A: v10-closed (231 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
+  [PASS] T3.4.all-orbits.A  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [DATA] k=4 [all-orbits] domain B: dual-closed (1451 records): L_dual dual-conjugation error = 0.000e+00 (exact 0); L_naive = 1.627111 (exact closed form 1.627111)
+  [PASS] T3.4.all-orbits.B  float port agrees with the exact closed form 2 e^{-kappa E}|sin(theta E)| for the naive mode, and L_dual is 0  (|float - exact| = 0.000e+00)
+  [PASS] T3.A THE ODD CHANNEL EXISTS ON v10's OBJECTS: at k=3 the generated line realises a non-self-dual order type, so O is not identically zero  (non-self-dual orbits realised = [[6, 36]])
+  [DATA] k=3 order-type census per record depth (type 6 = V/FORK, 36 = Lambda/MERGE): {3: {2: 42, 38: 34, 36: 8}, 4: {38: 558, 2: 534, 36: 160}, 5: {38: 5490, 2: 4082, 36: 1592, 6: 216}}
+  [PASS] T3.B1 THE TYPE-LEVEL ONE-SIDEDNESS IS A WINDOW ARTIFACT, and this gate is what caught it: at record depth <= 4 the FORK type V does not occur at all, so the order-dual is total-out-of-family there; at depth 5 it does occur.  The receipt reports the census per depth rather than the depth-4 headline  (depths with NO fork type = [3, 4]; fork:merge counts at the deepest measured layer = 216:1592)
+  [PASS] T3.B2 WHAT DOES SURVIVE THE WIDENING: the odd channel is SIGN-DEFINITE on every record at every depth measured — merges always outnumber forks inside a single record, so O never changes sign.  A reversal-odd coordinate that cannot change sign cannot separate a record from its dual within the family  (O spectrum over 1535 records = {-4: 224, -3: 160, -2: 80, -1: 8, 0: 1063} (orbit ordered (V, Lambda), so O = #V - #Lambda); max = 0, min = -4)
+  [DATA] odd orbits whose dual member is absent from the family (k=3): 0/1
+  [PASS] T3.CTRL THE '0' IS AN IDENTITY OF THE ANSATZ, NOT A FACT ABOUT v10: feeding ADVERSARIAL integer (E,O) pairs drawn from nowhere gives L_dual error 0 all the same, while the naive form still fails.  So reproducing v7's 0 on v10's channels is evidence only that E was made even and O odd — which the port did by construction  (72 adversarial (E,O) pairs: L_dual max error = 0.00e+00; L_naive max error = 1.821021)
+  [PASS] T3.C THE TRANSFER IS EMPTY ON THE ODD-ORBIT READING: on the only domain where the v7 gate can be asked of v10's own records (those whose dual is in-family), the odd-orbit even channel E is identically 0, so L_dual and L_naive are the SAME function there and v7's 0-vs-1.82 discrimination has nothing to discriminate  (E values on the v10-closed domain (odd-orbit reading) = [0]; |domain| = 275)
+  [PASS] T3.D THE CONTESTABLE CHOICE, RUN BOTH WAYS: under the ALL-ORBITS reading (self-dual types also contribute F + F* = 2F to the even channel — equally literal against QUOTES['EO']) the even channel is non-zero on the v10-closed domain and v7's discrimination DOES reappear: L_dual 0, L_naive > 0.  The reading is therefore what decides whether the transfer looks empty or successful, and the receipt reports both rather than choosing  (E spectrum on the v10-closed domain (all-orbits) = [2, 8, 20]; L_naive max = 1.627111 vs v7's own 1.821020 (both are the same closed form at different E))
+
+------------------------------------------------------------------------------
+SEC 6  THE PIN'S FOUR FALSIFIERS, each with its verdict
+------------------------------------------------------------------------------
+
+  F1  'A_D is not odd under the order-dual * at the fixture.'
+      VERDICT: DOES NOT FIRE AS WRITTEN, FIRES IN ITS SPIRIT.
+      As written: A_D IS odd under * on the common carrier — but
+      only as 0 = -0 (T1.7), because A_D == 0 identically (T1.1).
+      In its spirit: the two reversals are the same map ONLY on
+      2-event histories (T1.4) and are different maps everywhere
+      else (T1.5); and * is not even an operation on v10's records
+      (T1.9: 1264 of 1558 records have no in-family dual).
+      => Clause 3's bridge is NOT established.  The corpus does
+         not gain two unrelated reversal-odd channels; it gains
+         one channel with no content and one operation with no
+         domain.
+
+  F2  'The sqrt(q) round-trip transport is identically 1 on every
+      delete-then-insert cycle of the generated line.'
+      VERDICT: FIRED.
+      758 independent cycles at grammar 1 depth<=5, plus
+      two arms of grammar 2; every up-edge single-valued; every
+      holonomy exactly 1; every exchange square exactly 1.
+      => THE GENERATED LINE IS FLAT.  P1 dies on this substrate,
+         and D71 Clause 3's '+1' in the phase slot is a THEOREM
+         at the measured window, not an unargued choice.
+
+  F3  'L_dual's dual-conjugation error on the generated line's
+      channels is non-zero.'
+      VERDICT: DOES NOT FIRE — and the reason is worse than a
+      failure would have been.  The error is EXACTLY 0 on v10's
+      channels, at k = 2, 3 and 4, on both domains and both orbit
+      readings.  But T3.CTRL shows the 0 is an ALGEBRAIC IDENTITY
+      of the ansatz: adversarial (E,O) integers from nowhere score
+      0 too.  Reproducing it is evidence only that the port made E
+      even and O odd, which it did by construction.  A2c shows the
+      same of v7's own control number: 1.8210207... is exactly
+      2*exp(-3/32), the closed form at E = 3 — a constant of the
+      ansatz, not a measurement of the N=9 universe.
+      Scope, both readings run: on the odd-orbit reading the even
+      channel is identically 0 on the v10-closed domain (T3.C), so
+      even the naive control scores 0 and there is nothing to
+      discriminate; on the all-orbits reading the discrimination
+      does reappear (T3.D).  => the surviving v7 form TRANSFERS,
+      FORMALLY, and the transfer is empty of substrate content.
+
+  F4  'The round-trip defect exists but is not U(1)-valued.'
+      VERDICT: NOT REACHED (vacuously false).  F2 removes its
+      premise: there is no defect at all (T2.4).  The holonomy
+      group is trivial, so the question 'R+ or U(1)?' has no
+      subject.  The founding slogan is refuted on this substrate
+      one step EARLIER than F4 anticipated.
+
+------------------------------------------------------------------------------
+SEC 7  DETERMINISM PROBE
+------------------------------------------------------------------------------
+  [PASS] D1 SECOND ROUTE: recomputing every square as mu_of(h.eA.eB) vs mu_of(h.eB.eA) (whole-history weights, not step products) gives the same census  (2227 squares by route 2 vs 2227 by route 1; 0 unequal)
+  [PASS] D2 SPANNING-FOREST ORDER INDEPENDENCE: reversing the edge visit order gives the same cycle rank and the same (zero) defect count  (rank 758 vs 758; defects 0 vs 0)
+  [PASS] D4 NEGATIVE-CONTROL STABILITY: the same twenty stable-ordered edges give the same hit/miss pattern when the spanning forest is built in the reverse order  (20 hits reversed vs 20 forward)
+  [PASS] D3 ITERATION-ORDER INDEPENDENCE: rebuilding the exchange census with the candidate lists traversed in the opposite order gives the identical ratio multiset  (reverse-order multiset = {Fraction(1, 1): 2227} vs {Fraction(1, 1): 2227}; PYTHONHASHSEED = default)
+
+==============================================================================
+[SUMMARY] 50 PASS / 0 FAIL   (anchor failures: 0)   elapsed 343s
+==============================================================================
+
+[VERDICT] P1 IS REFUTED ON THE GENERATED LINE, and it is refuted at the
+holonomy leg, not at the identification leg.
+
+  T1  the reversal test .... the two reversals DO admit a common carrier
+      (linear extensions; gated), they coincide EXACTLY on the F-PAIR
+      fixture and nowhere else, and on that carrier A_D is identically
+      zero: 'is A_D odd under *' answers YES with zero content.
+  T2  the closure test ..... F2 FIRES.  sqrt(q)-transport around every
+      delete-then-insert round trip of the record deletion graph returns
+      exactly 1, on every independent cycle of two grammars and three
+      arms.  There is no holonomy to be the phase of.
+  T3  the L_dual re-run .... F3 does NOT fire: the dual-conjugation error
+      is exactly 0 on v10's own channels — but T3.CTRL shows that 0 is an
+      identity of the ansatz, not a fact about v10, and A2c shows v7's own
+      1.82 control is the same closed form at E = 3.  The odd channel is
+      SIGN-DEFINITE on every record (T3.B2), the family is not *-closed
+      (T1.9), and on the v10-closed domain the odd-orbit even channel
+      vanishes (T3.C).  The transfer is formal and empty of content.
+
+  The weld is NOT made.  The honest residue: v7's odd channel and v6's
+  A_D are not two halves of one object on this substrate — one of them is
+  identically zero here and the other has no domain here.  What the unit
+  buys is the no-go the pin pre-registered as F2: THE GENERATED LINE IS
+  FLAT, so D71 Clause 3's '+1' is forced, not chosen, at the measured
+  window.
+
