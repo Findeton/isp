@@ -1,0 +1,620 @@
+[D65 — THE DESCENT CONDITIONS: the generated law measured
+ against paper 29's requirements for a record measure]
+  banner: EXACT Fractions end-to-end; the admission layer and
+  the sigma machinery are TEXT-SLICED from the committed
+  receipts (the d61/d62 idiom), never re-implemented; TWO-ACTOR
+  DELIVERY-FREE d42a ONLY; nothing here transfers to the
+  identified (action-line) click law — the map is still the map.
+  [PASS] N0(a) SINGLE SOURCES: d42b3's admission layer (candidates_for / admissible / event_poset / View / triples / canon / vname / V0) and d44a's sigma_raw / ser / canon_sigma / own_alive / _rename_event / _menu_extras / canon_menu / canon_pair extracted VERBATIM by text slice (the d61/d62 idiom); the slices carry the expected DEFINITIONS, not merely callables  (d42b3 prefix + 3 d44a slices)
+  [PASS] N0(b) SLICE HYGIENE (the d50 lesson, as gated in d62): the three d44a slices are PURE DEFINITIONS — zero sys.exit, zero top-level check(), zero top-level print() survive extraction, so nothing of d44a's own gate protocol can execute here; the d42b3 prefix is cut before its first print  (stray (exit, check, print) per slice = [('blk1', 0, 0, 0), ('blk2', 0, 0, 0), ('blk3', 0, 0, 0)])
+  [PASS] N0(c) CODE-FACTS (d42b3): every source line this unit's conditions read is present VERBATIM (11 lines: the three weight formulas that MAKE the kernel, the three refusals that make the support exact, candidates_for's base set and single-based ckey enumeration, and the unconditional idle)  (quoted lines = 11, missing = [])
+  [PASS] N0(d) CODE-FACTS (d44a): the committed mass anchors and the two canonicalisation lines this unit's keys are built from  (quoted lines = 3, missing = [])
+  [PASS] N0(e) THE MASS CONSTANTS HAVE PROVENANCE: the only two menu masses this receipt ever compares against are exactly the distinct values of d44a's committed SB2 row-sum anchor (2, 2, 2, 5/2, 2, 2) — read off the source line, never typed in as a free threshold  (committed mass set = ['2', '5/2'])
+
+  family depth CAP = 6: 34375 histories, census by depth = [1, 6, 32, 176, 976, 5280, 27904]
+  [PASS] N1 CENSUS ANCHOR: the committed layer's own history census [1, 6, 32, 176, 976, 5280, 27904] (d44a SG0 / D61 round-1's independent reproduction), total 34,375 at depth 6  (census = [1, 6, 32, 176, 976, 5280, 27904], histories = 34375)
+  transitions out of the family = 179782 (into depth 7); distinct (sigma, renamed event) keys = 176
+  [PASS] N2 THE CLOSED LAW's ANCHORS: exactly 36 sigma states and exactly 176 (sigma, renamed event) transition keys — d44a CG1/CG3a, re-derived here from the committed canon_sigma / canon_pair on the whole family (the state space this unit's conditions are evaluated on)  (sigma states = 36, keys = 176)
+  [PASS] N3 THE LAYER'S OWN SANITY COUNTERS (d44a's sigma port, carried through this receipt's sweep): alive-singleton, non-superseded-holdings, live-on-X and conflicting-pair-comparability violations all zero  (SG_VIOL = {'alive': 0, 'nonsup': 0, 'liveX': 0, 'cmp': 0})
+  [PASS] N4 THE STATE MASS IS A FUNCTION OF sigma (corollary of (H1); re-gated directly, not assumed): every history in a sigma class has the same menu mass, and the value set is exactly d44a's committed {2, 5/2} — 34 states of mass 2, 2 states of mass 5/2 (the two states where an actor's blind conflict group is visible in the join view: the quarter law's excess)  (mass-splitting classes = 0; per-state mass census = {'2': 34, '5/2': 2})
+  [t = 17.4s]
+
+[DC1 — THE COMMUTING-SQUARE IDENTITY (paper 29 Theorem 1 / F1). SUBSTANTIVE; pre-registered both ways in the pin.]
+  P(e|H) = menu weight / menu mass, exact Fractions.  For every
+  history H of the exhaustive family and every UNORDERED pair
+  {a, b} of distinct menu events at H (each unordered pair IS
+  the two ordered pairs (a,b) and (b,a): the tested identity is
+  symmetric under the swap), we census:
+    - both-orders admissibility (b at Ha AND a at Hb);
+    - one-order-refused pairs (the admissibility ASYMMETRY);
+    - NEITHER-order-admissible pairs (MUTUAL EXCLUSION);
+    - both-orders-admissible but sigma(Hab) != sigma(Hba)
+      (non-commuting by the pin's definition; excluded by name);
+    - for COMMUTING pairs (the pin's definition: both orders
+      admissible AND sigma(Hab) = sigma(Hba), which by (H1)+(H2)
+      means the two continuations carry THE SAME ENTIRE FUTURE
+      LAW — the generated analogue of [Hab] = [Hba]):
+          P(a|H) P(b|Ha)  =?  P(b|H) P(a|Hb)
+      recorded FOR BOTH ORDERED DIRECTIONS of the pair.  The
+      identity is symmetric under the swap, but the RATIO
+      DEFECT d is not (it inverts), so every defect census
+      below is over ORDERED pairs: a pair contributing d also
+      contributes 1/d.  Nothing then depends on which element
+      of the pair the enumeration happens to call 'a'.
+    - and, as a STRICTLY STRONGER hypothesis, the sub-census on
+      pairs with REFINED RECORD IDENTITY canon(Hab) = canon(Hba)
+      (d42b3's committed canonical-DAG functor) — this is paper
+      29's literal '[Hab] = [Hba]'.
+  EXHAUSTIVE over ALL parents of the family (no sampling: the
+  deepest level is included in full, see the per-level counts).
+  [PASS] N5 THE JOINT KEY IS canon_pair's OWN IDIOM: canon_pair2(h, e, e) reproduces (canon_sigma(h), (ebest, ebest)) with ebest the committed canon_pair's renamed event, at every transition out of every history of depth <= 2 — so the pair key is the committed key's two-event extension, not a new normal form  (transitions checked = 214, disagreements = 0)
+
+  PAIR CENSUS (exhaustive, every parent of the family).
+  ALL COUNTS ARE ORDERED PAIRS (a, b); the enumeration unit is
+  the unordered pair and each contributes its two directions.
+    unordered pairs {a, b} of distinct menu events = 397285
+    ORDERED pairs (a, b) of distinct menu events   = 794570
+      NEITHER order admissible (MUTUAL EXCLUSION)   = 129284
+      exactly ONE order admissible (ASYMMETRY)      = 0
+      both orders admissible                        = 665286
+        of which sigma(Hab) != sigma(Hba) (NON-COMMUTING, excluded by name) = 0
+        of which COMMUTING (the pin's definition)    = 665286
+          of which the identity HOLDS                = 576654
+          of which the identity FAILS                = 88632
+    MUTUAL-EXCLUSION census by event tags: {('p', 'p'): 33338, ('r', 'r'): 31304}
+      [MUTUALLY EXCLUSIVE WITNESS] H = ()
+          a = ('p', 'A', ('v', 'v0'), 0)
+          b = ('p', 'A', ('v', 'v0'), 1)
+      [MUTUALLY EXCLUSIVE WITNESS] H = ()
+          a = ('p', 'B', ('v', 'v0'), 0)
+          b = ('p', 'B', ('v', 'v0'), 1)
+    per-level [ordered pairs, commuting, defects] by parent depth:
+      depth 0: [30, 26, 0]
+      depth 1: [140, 124, 24]
+      depth 2: [832, 656, 192]
+      depth 3: [4672, 3648, 864]
+      depth 4: [24416, 19744, 3456]
+      depth 5: [124992, 103744, 14976]
+      depth 6: [639488, 537344, 69120]
+    REFINED-RECORD sub-census (canon(Hab) = canon(Hba), paper 29's literal [Hab] = [Hba]):
+      refined-identical ORDERED pairs = 425334, of which the identity FAILS = 32256
+      refined-identical defect spectrum = {'1': 393078, '4/5': 16128, '5/4': 16128}
+
+  THE EXACT RATIO DEFECT SPECTRUM  d = P(a|H)P(b|Ha) / P(b|H)P(a|Hb):
+    {'1': 576654, '4/5': 44316, '5/4': 44316}
+  the RAW (unnormalised) product ratio  q(a|H)q(b|Ha) / q(b|H)q(a|Hb):
+    {'1': 665286}
+  the INTERMEDIATE-MASS ratio  N(Hb) / N(Ha):
+    {'1': 576654, '4/5': 44316, '5/4': 44316}
+  defect by ORDERED pair class (event tag of a, then of b):
+    ('n', 'n')  d =   1: 68750
+    ('n', 'p')  d =   1: 121696
+    ('n', 'p')  d = 5/4: 11656
+    ('n', 'r')  d =   1: 61880
+    ('n', 'r')  d = 4/5: 26832
+    ('p', 'n')  d =   1: 121696
+    ('p', 'n')  d = 4/5: 11656
+    ('p', 'p')  d =   1: 67928
+    ('p', 'r')  d =   1: 26884
+    ('p', 'r')  d = 4/5: 5828
+    ('r', 'n')  d =   1: 61880
+    ('r', 'n')  d = 5/4: 26832
+    ('r', 'p')  d =   1: 26884
+    ('r', 'p')  d = 5/4: 5828
+    ('r', 'r')  d =   1: 19056
+  defect by sigma(H) (state index : {d : count}):
+    sigma[ 0] (mass 2): {'1': 13416}
+    sigma[ 1] (mass 5/2): {'1': 4472, '4/5': 13416, '5/4': 13416}
+    sigma[ 2] (mass 2): {'1': 17484, '4/5': 4371, '5/4': 4371}
+    sigma[ 3] (mass 5/2): {'1': 4472, '4/5': 13416, '5/4': 13416}
+    sigma[ 4] (mass 2): {'1': 13416}
+    sigma[ 5] (mass 2): {'1': 17484, '4/5': 4371, '5/4': 4371}
+    sigma[ 6] (mass 2): {'1': 17484, '4/5': 4371, '5/4': 4371}
+    sigma[ 7] (mass 2): {'1': 17484, '4/5': 4371, '5/4': 4371}
+    sigma[ 8] (mass 2): {'1': 96902}
+    sigma[ 9] (mass 2): {'1': 960}
+    sigma[10] (mass 2): {'1': 960}
+    sigma[11] (mass 2): {'1': 9360}
+    sigma[12] (mass 2): {'1': 960}
+    sigma[13] (mass 2): {'1': 960}
+    sigma[14] (mass 2): {'1': 9360}
+    sigma[15] (mass 2): {'1': 9360}
+    sigma[16] (mass 2): {'1': 9360}
+    sigma[17] (mass 2): {'1': 50544}
+    sigma[18] (mass 2): {'1': 7104}
+    sigma[19] (mass 2): {'1': 7104}
+    sigma[20] (mass 2): {'1': 9036}
+    sigma[21] (mass 2): {'1': 7104}
+    sigma[22] (mass 2): {'1': 7104}
+    sigma[23] (mass 2): {'1': 9036}
+    sigma[24] (mass 2): {'1': 28980}
+    sigma[25] (mass 2): {'1': 28980}
+    sigma[26] (mass 2): {'1': 36660}
+    sigma[27] (mass 2): {'1': 7104}
+    sigma[28] (mass 2): {'1': 7104}
+    sigma[29] (mass 2): {'1': 28980}
+    sigma[30] (mass 2): {'1': 7104}
+    sigma[31] (mass 2): {'1': 7104}
+    sigma[32] (mass 2): {'1': 28980}
+    sigma[33] (mass 2): {'1': 9036}
+    sigma[34] (mass 2): {'1': 9036}
+    sigma[35] (mass 2): {'1': 36660}
+  defect on SAME-MASS intermediate states  N(Ha) = N(Hb): {'1': 576654}
+  defect on MASS-MIXED intermediate states N(Ha) != N(Hb): {'4/5': 44316, '5/4': 44316}
+  [DC1 DEFECT WITNESS]
+      H        : (('p', 'A', ('v', 'v0'), 0),)
+      a        : ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+      b        : ('p', 'B', ('v', 'v0'), 1)
+      q(a|H)   : 1/4
+      q(b|Ha)  : 1/8
+      q(b|H)   : 1/8
+      q(a|Hb)  : 1/4
+      N(H)     : 2
+      N(Ha)    : 2
+      N(Hb)    : 5/2
+      defect d : 5/4
+  [DC1 DEFECT WITNESS]
+      H        : (('p', 'A', ('v', 'v0'), 0),)
+      a        : ('n', 'A')
+      b        : ('p', 'B', ('v', 'v0'), 1)
+      q(a|H)   : 3/4
+      q(b|Ha)  : 1/8
+      q(b|H)   : 1/8
+      q(a|Hb)  : 3/4
+      N(H)     : 2
+      N(Ha)    : 2
+      N(Hb)    : 5/2
+      defect d : 5/4
+  [FAIL] DC1(a) THE COMMUTING-SQUARE IDENTITY, exhaustive over every commuting pair at every history of the family.  PRE-REGISTERED BOTH WAYS (pin §2): a FAIL here is the deliverable, not a bug — it says the generated normalised law is ORDER-WEIGHTED and the missing map must carry order data  (commuting pairs = 665286, identity failures = 88632 (FAILS))
+  [PASS] DC1(b) THE RAW (UNNORMALISED) COCYCLE: on every commuting pair the raw weight products agree exactly, q(a|H) q(b|Ha) = q(b|H) q(a|Hb) — so the generated law's UNNORMALISED history weight mu(h) = prod q IS order-independent on commuting pairs; the whole defect, if any, lives in the normalisation  (raw product ratio spectrum = {'1': 665286})
+  [PASS] DC1(c) THE DEFECT IS EXACTLY THE INTERMEDIATE-MASS RATIO (the pin's pre-registered structural fallback, sharpest form): for EVERY commuting pair, d = M(sigma(Hb)) / M(sigma(Ha)) with M the per-state mass function gated in N4 — i.e. the defect is the COBOUNDARY of a function of sigma alone, a mass-ratio cocycle and nothing else  (commuting pairs = 665286, pairs where d != N(Hb)/N(Ha) = 0)
+  [PASS] DC1(d) THE DEFECT IS A FUNCTION OF (sigma(H), class(a), class(b)) ALONE — the pin's structural fallback, tested on TWO key resolutions, both ORDERED (the defect inverts under the swap, so an unordered key would be wrong): (A) the two events renamed SEPARATELY by the committed canon_pair, (B) the two events renamed JOINTLY by canon_pair2 (N5).  No key carries two different defect values under either resolution — and since a key fixed by an automorphism swapping a and b receives BOTH d and 1/d, this also forces d = 1 on every self-swapped class  (key-A classes = 616, splitting = 0; key-B classes = 616, splitting = 0)
+  [PASS] DC1(e) THE FAILURE VANISHES EXACTLY ON THE SAME-MASS SUBCLASS (the natural subclass named in the pin's lean): every commuting pair whose two intermediate states carry EQUAL menu mass satisfies the identity, and every failure has MASS-MIXED intermediates — the risk sits precisely where the pin said it would, and nowhere else  (same-mass pairs = 576654 (spectrum {'1': 576654}); mass-mixed pairs = 88632 (spectrum {'4/5': 44316, '5/4': 44316}))
+  [FAIL] DC1(f) THE REFINED-RECORD SUB-CENSUS: paper 29's literal hypothesis is [Hab] = [Hba] at the REFINED record level, which on the generated side is equality of d42b3's committed canonical DAG.  Reported both ways: the pin's sigma-commuting class and this strictly stronger subclass  (refined-identical pairs = 425334, identity failures = 32256; spectrum = {'1': 393078, '4/5': 16128, '5/4': 16128})
+  [PASS] DC1(g) THE CENSUS BOOKKEEPING CLOSES, so that the exclusion counts are exhaustive rather than residual: every ordered pair is accounted for exactly once as mutually-exclusive, asymmetric, non-commuting, identity-holding or identity-failing, and the ordered total is twice the unordered enumeration.  All four exclusion categories are named and counted; none is a leftover  (ordered pairs = 794570 = 2 x 397285 = neither 129284 + asymmetric 0 + both-orders 665286; both-orders = sigma-differs 0 + commuting 665286)
+  [PASS] DC1(h) THE ADMISSIBILITY ASYMMETRY, THE MUTUAL-EXCLUSION AND THE NON-COMMUTING CENSUSES [REPORTING — the pin asks for these numbers whichever way they land].  What the numbers say: admissibility on a menu pair is SYMMETRIC (zero asymmetric pairs — no admissible menu event ever survives its partner in one order and not the other), the menu is NOT all-concurrent (a nonzero block of pairs is mutually exclusive: the two events cannot follow each other in EITHER order), and wherever both orders do run they already agree on the successor state (zero non-commuting pairs)  (asymmetric = 0; mutually exclusive = 129284; both-orders-admissible-but-sigma-differs = 0)
+  [t = 191.9s]
+
+[DC1-C — the completion corollary (REPORTING; Z is SUPPLIED data, D50: the form remains a choice)]
+  [PASS] DC1-C d42b3's GRADIENT COMPLETION, re-derived and anchored to its OWN committed numbers (D1(ii)): Z(empty) = 1037/64, Z > 0 throughout, and Z constant on d42b3's canonical classes.  Under the completed kernel P_Z(e|h) = q Z(h+e)/Z(h) — which IS normalised per cut by the recursion — the commuting-square identity HOLDS on every commuting pair with both continuations inside Z's domain.  STATED HONESTLY: this is a property of a SUPPLIED completion, not of the generated law; its cost is d42b3's own (within-cut ratio deformation at 21 of 114 interior classes, the root included), and its domain here is parents of depth <= 2  (Z(empty) = 1037/64 (d42b3 anchor 1037/64); Z-class splits = 0; commuting pairs in Z's domain = 403; identity failures under P_Z = 0)
+
+  THE GENERAL COROLLARY [PROOF — two lines, from two gated
+  ingredients; printed, not gated, because it is algebra]:
+    Let Z be ANY positive completion that factors through
+    (depth, sigma) — i.e. Z(h) = Zhat(|h|, sigma(h)).  Then for
+    every COMMUTING pair,
+        P_Z(a|H) P_Z(b|Ha) = q(a|H) q(b|Ha) Z(Hab) / Z(H)
+        P_Z(b|H) P_Z(a|Hb) = q(b|H) q(a|Hb) Z(Hba) / Z(H)
+    (both telescope), and the two right-hand sides are EQUAL:
+    the raw products agree by DC1(b) [gated above, 0
+    exceptions], and Z(Hab) = Z(Hba) because |Hab| = |Hba| and
+    sigma(Hab) = sigma(Hba) is the definition of the commuting
+    class.  So the DC1 defect is annihilated by ANY completion
+    of that shape.
+    THE CORPUS ALREADY HAS ONE.  D49's root-free completion
+    Zhat(h) = 2^(-|h|) . f(class(sigma(h))) (lambda = 2,
+    f = (4,4,3,7,3,3)/3) has EXACTLY that shape and is
+    normalised per cut at every depth at this scope (D49 +
+    (H1)/(H2)).  So: the generated law's NORMALISED MENU KERNEL
+    does not descend, and the SAME law read through the
+    corpus's own selected completion does.  The price is
+    named and unchanged: D50 — the stationary FORM of Z is a
+    CHOICE, i.e. supplied, not derived.  That is why DC4 item 2
+    stands as supplied and is now priced rather than moved.
+
+[DC2 — BOUNDARY SUFFICIENCY (paper 29 Theorem 2 / F2).
+ *** RESTATEMENT GATE — REPORTING ONLY.  NOTHING NEW IS PROVED
+ HERE.  Paper 29 Theorem 2 says a boundary-only kernel exists
+ EXACTLY WHEN the next-record law is constant on the fibres of
+ the declared boundary statistic.  With pi = sigma that
+ condition IS (H1), a THEOREM of D61; the state update is (H2),
+ a THEOREM of D62.  The CONTENT of this gate is the
+ IDENTIFICATION — the generated line's declared boundary
+ statistic EXISTS and is sigma — and the printing of the kernel.
+ F-DC2 (pin §4) is: mislabelling this as new.  It is not new. ***
+  [PASS] DC2(a) FIBRE CONSTANCY, re-affirmed directly on the family [RESTATEMENT of (H1) = d44a CG1; the THEOREM is carried by note-d61-h1-closure-result.md, this is its re-run]: every two histories with the same sigma have the SAME renamed menu multiset with exact weights — so pi(x) = pi(x') implies L_x = L_x', which is exactly Theorem 2's necessary and sufficient condition  (fibres = 36, fibres with two different menus = 0, histories swept = 34375)
+
+  THE 36-ROW NORMALISED KERNEL K(. | sigma), EXACT.
+  Rows are sigma classes (index, mass, serialised state);
+  entries are renamed event classes with their probabilities.
+
+  sigma[ 0]  mass = 2   shortest witness depth 2
+     state: ((('A', 0), ('B', 0)), (('A', 0, 0), ('B', 0, 0)), ((0, (('A', 0),), ()), (0, (('B', 0),), ())), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+       K =      1/8   ('r', 'B', (('B', 0, 0),), (('B', 0, 0),))
+
+  sigma[ 1]  mass = 5/2   shortest witness depth 2
+     state: ((('A', 0), ('B', 0)), (('A', 0, 0), ('B', 0, 1)), ((0, (('A', 0), ('B', 1)), ((('A', 0), ('B', 1)),)),), ((0, False),))
+       K =     3/10   ('n', 'A')
+       K =     3/10   ('n', 'B')
+       K =     1/20   ('r', 'A', (('A', 0, 0), ('B', 0, 1)), (('A', 0, 0),))
+       K =     1/20   ('r', 'A', (('A', 0, 0), ('B', 0, 1)), (('B', 0, 1),))
+       K =     1/10   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+       K =     1/20   ('r', 'B', (('A', 0, 0), ('B', 0, 1)), (('A', 0, 0),))
+       K =     1/20   ('r', 'B', (('A', 0, 0), ('B', 0, 1)), (('B', 0, 1),))
+       K =     1/10   ('r', 'B', (('B', 0, 1),), (('B', 0, 1),))
+
+  sigma[ 2]  mass = 2   shortest witness depth 1
+     state: ((('A', 0), ('B', 0)), (('A', 0, 0),), ((0, (('A', 0),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 0, 0)
+       K =     1/16   ('p', 'B', 0, 1)
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+
+  sigma[ 3]  mass = 5/2   shortest witness depth 2
+     state: ((('A', 0), ('B', 0)), (('A', 0, 1), ('B', 0, 0)), ((0, (('A', 1), ('B', 0)), ((('A', 1), ('B', 0)),)),), ((0, False),))
+       K =     3/10   ('n', 'A')
+       K =     3/10   ('n', 'B')
+       K =     1/20   ('r', 'A', (('A', 0, 1), ('B', 0, 0)), (('A', 0, 1),))
+       K =     1/20   ('r', 'A', (('A', 0, 1), ('B', 0, 0)), (('B', 0, 0),))
+       K =     1/10   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+       K =     1/20   ('r', 'B', (('A', 0, 1), ('B', 0, 0)), (('A', 0, 1),))
+       K =     1/20   ('r', 'B', (('A', 0, 1), ('B', 0, 0)), (('B', 0, 0),))
+       K =     1/10   ('r', 'B', (('B', 0, 0),), (('B', 0, 0),))
+
+  sigma[ 4]  mass = 2   shortest witness depth 2
+     state: ((('A', 0), ('B', 0)), (('A', 0, 1), ('B', 0, 1)), ((0, (('A', 1),), ()), (0, (('B', 1),), ())), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+       K =      1/8   ('r', 'B', (('B', 0, 1),), (('B', 0, 1),))
+
+  sigma[ 5]  mass = 2   shortest witness depth 1
+     state: ((('A', 0), ('B', 0)), (('A', 0, 1),), ((0, (('A', 1),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 0, 0)
+       K =     1/16   ('p', 'B', 0, 1)
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+
+  sigma[ 6]  mass = 2   shortest witness depth 1
+     state: ((('A', 0), ('B', 0)), (('B', 0, 0),), ((0, (('B', 0),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =      1/8   ('r', 'B', (('B', 0, 0),), (('B', 0, 0),))
+
+  sigma[ 7]  mass = 2   shortest witness depth 1
+     state: ((('A', 0), ('B', 0)), (('B', 0, 1),), ((0, (('B', 1),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =      1/8   ('r', 'B', (('B', 0, 1),), (('B', 0, 1),))
+
+  sigma[ 8]  mass = 2   shortest witness depth 0
+     state: ((('A', 0), ('B', 0)), (), (), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =     1/16   ('p', 'B', 0, 0)
+       K =     1/16   ('p', 'B', 0, 1)
+
+  sigma[ 9]  mass = 2   shortest witness depth 6
+     state: ((('A', 0), ('B', 1)), (('A', 0, 0), ('B', 1, 0)), ((0, (('A', 0),), ()), (1, (('B', 0),), ())), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+       K =      1/8   ('r', 'B', (('B', 1, 0),), (('B', 1, 0),))
+
+  sigma[10]  mass = 2   shortest witness depth 6
+     state: ((('A', 0), ('B', 1)), (('A', 0, 0), ('B', 1, 1)), ((0, (('A', 0),), ()), (1, (('B', 1),), ())), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+       K =      1/8   ('r', 'B', (('B', 1, 1),), (('B', 1, 1),))
+
+  sigma[11]  mass = 2   shortest witness depth 5
+     state: ((('A', 0), ('B', 1)), (('A', 0, 0),), ((0, (('A', 0),), ()),), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 1, 0)
+       K =     1/16   ('p', 'B', 1, 1)
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+
+  sigma[12]  mass = 2   shortest witness depth 6
+     state: ((('A', 0), ('B', 1)), (('A', 0, 1), ('B', 1, 0)), ((0, (('A', 1),), ()), (1, (('B', 0),), ())), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+       K =      1/8   ('r', 'B', (('B', 1, 0),), (('B', 1, 0),))
+
+  sigma[13]  mass = 2   shortest witness depth 6
+     state: ((('A', 0), ('B', 1)), (('A', 0, 1), ('B', 1, 1)), ((0, (('A', 1),), ()), (1, (('B', 1),), ())), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+       K =      1/8   ('r', 'B', (('B', 1, 1),), (('B', 1, 1),))
+
+  sigma[14]  mass = 2   shortest witness depth 5
+     state: ((('A', 0), ('B', 1)), (('A', 0, 1),), ((0, (('A', 1),), ()),), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 1, 0)
+       K =     1/16   ('p', 'B', 1, 1)
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+
+  sigma[15]  mass = 2   shortest witness depth 5
+     state: ((('A', 0), ('B', 1)), (('B', 1, 0),), ((1, (('B', 0),), ()),), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =      1/8   ('r', 'B', (('B', 1, 0),), (('B', 1, 0),))
+
+  sigma[16]  mass = 2   shortest witness depth 5
+     state: ((('A', 0), ('B', 1)), (('B', 1, 1),), ((1, (('B', 1),), ()),), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =      1/8   ('r', 'B', (('B', 1, 1),), (('B', 1, 1),))
+
+  sigma[17]  mass = 2   shortest witness depth 4
+     state: ((('A', 0), ('B', 1)), (), (), ((0, False), (1, False)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =     1/16   ('p', 'B', 1, 0)
+       K =     1/16   ('p', 'B', 1, 1)
+
+  sigma[18]  mass = 2   shortest witness depth 4
+     state: ((('A', 0), ('B', None)), (('A', 0, 0), ('B', 1, 0)), ((0, (('A', 0),), ()), (1, (('B', 0),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+       K =      1/8   ('r', 'B', (('B', 1, 0),), (('B', 1, 0),))
+
+  sigma[19]  mass = 2   shortest witness depth 4
+     state: ((('A', 0), ('B', None)), (('A', 0, 0), ('B', 1, 1)), ((0, (('A', 0),), ()), (1, (('B', 1),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+       K =      1/8   ('r', 'B', (('B', 1, 1),), (('B', 1, 1),))
+
+  sigma[20]  mass = 2   shortest witness depth 3
+     state: ((('A', 0), ('B', None)), (('A', 0, 0),), ((0, (('A', 0),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 100, 0)
+       K =     1/16   ('p', 'B', 100, 1)
+       K =      1/8   ('r', 'A', (('A', 0, 0),), (('A', 0, 0),))
+
+  sigma[21]  mass = 2   shortest witness depth 4
+     state: ((('A', 0), ('B', None)), (('A', 0, 1), ('B', 1, 0)), ((0, (('A', 1),), ()), (1, (('B', 0),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+       K =      1/8   ('r', 'B', (('B', 1, 0),), (('B', 1, 0),))
+
+  sigma[22]  mass = 2   shortest witness depth 4
+     state: ((('A', 0), ('B', None)), (('A', 0, 1), ('B', 1, 1)), ((0, (('A', 1),), ()), (1, (('B', 1),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+       K =      1/8   ('r', 'B', (('B', 1, 1),), (('B', 1, 1),))
+
+  sigma[23]  mass = 2   shortest witness depth 3
+     state: ((('A', 0), ('B', None)), (('A', 0, 1),), ((0, (('A', 1),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 100, 0)
+       K =     1/16   ('p', 'B', 100, 1)
+       K =      1/8   ('r', 'A', (('A', 0, 1),), (('A', 0, 1),))
+
+  sigma[24]  mass = 2   shortest witness depth 3
+     state: ((('A', 0), ('B', None)), (('B', 1, 0),), ((1, (('B', 0),), ()),), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =      1/8   ('r', 'B', (('B', 1, 0),), (('B', 1, 0),))
+
+  sigma[25]  mass = 2   shortest witness depth 3
+     state: ((('A', 0), ('B', None)), (('B', 1, 1),), ((1, (('B', 1),), ()),), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =      1/8   ('r', 'B', (('B', 1, 1),), (('B', 1, 1),))
+
+  sigma[26]  mass = 2   shortest witness depth 2
+     state: ((('A', 0), ('B', None)), (), (), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 0, 0)
+       K =     1/16   ('p', 'A', 0, 1)
+       K =     1/16   ('p', 'B', 100, 0)
+       K =     1/16   ('p', 'B', 100, 1)
+
+  sigma[27]  mass = 2   shortest witness depth 4
+     state: ((('A', None), ('B', 0)), (('A', 1, 0), ('B', 0, 0)), ((0, (('B', 0),), ()), (1, (('A', 0),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 1, 0),), (('A', 1, 0),))
+       K =      1/8   ('r', 'B', (('B', 0, 0),), (('B', 0, 0),))
+
+  sigma[28]  mass = 2   shortest witness depth 4
+     state: ((('A', None), ('B', 0)), (('A', 1, 0), ('B', 0, 1)), ((0, (('B', 1),), ()), (1, (('A', 0),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 1, 0),), (('A', 1, 0),))
+       K =      1/8   ('r', 'B', (('B', 0, 1),), (('B', 0, 1),))
+
+  sigma[29]  mass = 2   shortest witness depth 3
+     state: ((('A', None), ('B', 0)), (('A', 1, 0),), ((1, (('A', 0),), ()),), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 0, 0)
+       K =     1/16   ('p', 'B', 0, 1)
+       K =      1/8   ('r', 'A', (('A', 1, 0),), (('A', 1, 0),))
+
+  sigma[30]  mass = 2   shortest witness depth 4
+     state: ((('A', None), ('B', 0)), (('A', 1, 1), ('B', 0, 0)), ((0, (('B', 0),), ()), (1, (('A', 1),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 1, 1),), (('A', 1, 1),))
+       K =      1/8   ('r', 'B', (('B', 0, 0),), (('B', 0, 0),))
+
+  sigma[31]  mass = 2   shortest witness depth 4
+     state: ((('A', None), ('B', 0)), (('A', 1, 1), ('B', 0, 1)), ((0, (('B', 1),), ()), (1, (('A', 1),), ())), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =      1/8   ('r', 'A', (('A', 1, 1),), (('A', 1, 1),))
+       K =      1/8   ('r', 'B', (('B', 0, 1),), (('B', 0, 1),))
+
+  sigma[32]  mass = 2   shortest witness depth 3
+     state: ((('A', None), ('B', 0)), (('A', 1, 1),), ((1, (('A', 1),), ()),), ((0, False), (1, True)))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'B', 0, 0)
+       K =     1/16   ('p', 'B', 0, 1)
+       K =      1/8   ('r', 'A', (('A', 1, 1),), (('A', 1, 1),))
+
+  sigma[33]  mass = 2   shortest witness depth 3
+     state: ((('A', None), ('B', 0)), (('B', 0, 0),), ((0, (('B', 0),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 100, 0)
+       K =     1/16   ('p', 'A', 100, 1)
+       K =      1/8   ('r', 'B', (('B', 0, 0),), (('B', 0, 0),))
+
+  sigma[34]  mass = 2   shortest witness depth 3
+     state: ((('A', None), ('B', 0)), (('B', 0, 1),), ((0, (('B', 1),), ()),), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 100, 0)
+       K =     1/16   ('p', 'A', 100, 1)
+       K =      1/8   ('r', 'B', (('B', 0, 1),), (('B', 0, 1),))
+
+  sigma[35]  mass = 2   shortest witness depth 2
+     state: ((('A', None), ('B', 0)), (), (), ((0, False),))
+       K =      3/8   ('n', 'A')
+       K =      3/8   ('n', 'B')
+       K =     1/16   ('p', 'A', 100, 0)
+       K =     1/16   ('p', 'A', 100, 1)
+       K =     1/16   ('p', 'B', 0, 0)
+       K =     1/16   ('p', 'B', 0, 1)
+  [PASS] DC2(b) THE KERNEL IS THE LAW: at EVERY history of the family the normalised renamed menu equals the row K(.|sigma(h)) printed above, entrywise with exact Fractions — so the printed 36-row object IS the generated next-record law, not a summary of it [RESTATEMENT of (H1); it can only fail if DC2(a) fails]  (histories = 34375, rows disagreeing with the printed kernel = 0)
+  [PASS] DC2(c) EVERY KERNEL ROW NORMALISES EXACTLY [RESTATEMENT — this is division by the row's own mass and cannot fail; printed because the pin asks for the kernel, in the D58-A3 reporting-line style]  (rows = 36, rows not summing to 1 = 0)
+  [t = 205.2s]
+
+[DC3 — paper 29 §4.3's five durable-record hypotheses, gated one by one, each labelled by what it can and cannot do]
+  [PASS] DC3(1) EXCLUSIVE AND EXHAUSTIVE ALTERNATIVES [SUBSTANTIVE — it can fail two ways and neither is excluded a priori]: at every history of the family the menu is a set of PAIRWISE DISTINCT events (exclusivity: no alternative is listed twice), and it is EXACTLY the admissible set — an independently constructed adversarial pool of well-formed events over the tokens the history has uttered finds NO admissible event the menu omits, NO menu event the layer refuses, and NO weight disagreement  (histories = 34375, pool events tested = 718570 (single-based ckeys); duplicate-menu histories = 0; omitted admissible = 0; refused-but-listed = 0; weight disagreements = 0)
+  [PASS] DC3(1') THE SAME GATE ON THE UNRESTRICTED SURFACE (the single-base restriction of the pool above is itself lifted): over every history of depth <= 4, ckeys spanning ANY set of uttered triples, with every winner subset — still exactly the menu, entrywise with weights  (histories = 1191, pool events tested = 22762, violations = 0)
+
+  DC3(2) DECOHERENCE OF THE QUERIED RECORD ALGEBRA [REPORTING ONLY — TRIVIALLY SATISFIED AND THEREFORE
+  UNINFORMATIVE; there is NO gate here that could fail, and
+  the pin (§2, DC3 clause 2) requires this to be said plainly].
+    The generated law is a CLASSICAL stochastic process on
+    records: sigma is a serialised finite state, the menu is a
+    finite set of exact Fraction weights, and the queried
+    algebra is the algebra of history cylinders itself.  A
+    classical process has a diagonal decoherence functional by
+    construction, so hypothesis (2) holds for the empty reason.
+    WHERE THE REMAINING MAP SEGMENT LIVES: paper 29's
+    hypothesis (2) is a condition on class OPERATORS and their
+    Gram functional D(alpha,beta) = <v_alpha, v_beta> (§4.1,
+    §4.2).  The generated line has NO functional level at all —
+    no amplitudes, no class operators, no Gram functional, and
+    hence no non-trivial decoherence condition to satisfy or
+    violate.  This unit does NOT create one.  So the segment of
+    the missing map that runs from a decoherence functional to
+    the generated record measure is UNTOUCHED here, and it is
+    exactly the segment where D59's items 'record instrument'
+    and 'preferred durable algebra' still sit.
+  [PASS] DC3(2) [REPORTING-ONLY, CANNOT FAIL — labelled as the pin's F-DC3 requires]: the generated law is classical, so decoherence of the queried record algebra is satisfied trivially and carries NO information about the map  (no falsifiable content; the map's functional segment is named above and is untouched by this unit)
+  [FAIL] DC3(3) ONE COMMON REFINED CYLINDER [SUBSTANTIVE — this IS DC1's commutation census, and it is the gate that decided the unit]: the identity that a common refined cylinder forces, tested on every commuting pair  (commuting pairs = 665286, failures = 88632; see the DC1 census above for the full structure)
+  [PASS] DC3(4) POSITIVITY OF EVERY DISPLAYED CONDITIONING CYLINDER [SUBSTANTIVE — a zero weight anywhere would make a displayed conditional undefined and would void DC1's test on that pair]: every menu weight is a STRICTLY POSITIVE exact Fraction, every menu mass is strictly positive, and hence every conditional P(e|H) = q/N used anywhere in this receipt is strictly positive.  The support of the law is exactly the admissible set (DC3(1)) — the law never displays a zero-mass alternative  (menu entries = 179782, non-positive weights = 0; conditionals = 179782, non-positive = 0; smallest weight in the family = 1/8)
+  [PASS] DC3(5) SUFFICIENT DECLARED BOUNDARY [RESTATEMENT — = DC2, which is (H1) + (H2); NOT a new result]: pi = sigma is a sufficient boundary statistic, the kernel K(.|sigma) exists on 36 values and is printed above  (fibres = 36, non-constant fibres = 0)
+  [t = 224.3s]
+
+[DC4 — D59's six supplied-not-derived items, re-scored at the closed scope.  NO ITEM MOVES WITHOUT A GATE ABOVE IT.]
+  D59 §2 quotes paper 29's abstract: the corpus 'supplies
+  rather than derives' (1) boundary state, (2) measure and
+  contour, (3) renormalization, (4) record instrument,
+  (5) generated record grammar, (6) clock dictionary.
+  Re-scored against THIS unit's gates only:
+
+  1. boundary state
+    VERDICT: MOVES: supplied -> DERIVED, at the closed scope and for the GENERATED line only.
+    Ground: DC2(a)/DC2(c) + (H1) [D61 THEOREM] + (H2) [D62 THEOREM]. Paper 29 Theorem 2 asks for a declared boundary statistic whose fibres carry a constant next-record law.  On the generated side that statistic is not supplicated: sigma is CONSTRUCTED from the layer and its sufficiency is a theorem, with the 36-row kernel printed.  SCOPE: this is the generated line's own boundary; it says NOTHING about the action line's cosmological boundary state, which remains supplied.
+
+  2. measure and contour
+    VERDICT: STANDS as supplied — and DC1 SHARPENS why.
+    Ground: DC1(a) FAILS / DC1(b)+DC1(c) locate the failure.  The generated law has an order-independent UNNORMALISED weight (DC1(b)) and a normalised kernel that is NOT order-independent (DC1(a)); the gap between them is exactly the coboundary of the state-mass function (DC1(c)).  A measure on record cylinders therefore requires a completion — supplied data, whose form D50 already showed is a choice (DC1-C exhibits one that works, at its own stated cost).  Not derived; now precisely priced.
+
+  3. renormalization
+    VERDICT: STANDS as supplied.  Untouched by every gate above.
+    Ground: no gate in this unit concerns a continuum limit, a regulator or a scale.  The generated law is finite and combinatorial; renormalization is an action-line slot and this unit produced no fact about it.
+
+  4. record instrument
+    VERDICT: STANDS as supplied.  DC3(2) says exactly why it cannot move.
+    Ground: DC3(2) is reporting-only.  The generated line is classical and has NO functional level — no class operators, no Gram decoherence functional — so it cannot derive which alternatives decohere or which algebra is queried.  What DC3(1) does establish is narrower and worth stating: the generated line's OWN alternative set is exclusive and exhaustive and its support is exactly the admissible set.  That is a record GRAMMAR fact, not a record INSTRUMENT fact.
+
+  5. generated record grammar
+    VERDICT: STANDS as supplied FOR THE ACTION LINE; on the generated line it was never supplied.  No movement is claimed.
+    Ground: D59's item is 'the identified (D15) law has not been given a generated record grammar'.  The d42a grammar exists and this unit gated its exclusivity/exhaustiveness (DC3(1)) and its boundary sufficiency (DC2) — but NOTHING here connects it to the D15 action content.  Paper 29 Theorem 5 is untouched.
+
+  6. clock dictionary
+    VERDICT: STANDS as supplied.  Untouched by every gate above.
+    Ground: no gate in this unit produces a rate, a unit or a time coordinate.  Paper 29's Theorem 1 needs no time coordinate and neither does this receipt; the dictionary slot is exactly where D59 left it.
+
+  [PASS] DC4 THE LEDGER IS GATE-BOUND: exactly one of D59's six items moves (item 1, the boundary state, and only for the GENERATED line at the closed scope), and its mover is a gate printed above (DC2(a)/DC2(c), carried by the D61/D62 theorems); the other five stand, each with its one-line ground  (items = 6, moved = 1, standing = 5)
+
+[DET — determinism probe]
+  [PASS] DET(a) ORDER-INDEPENDENCE OF THE CENSUS ITSELF.  The defect d INVERTS under the swap of a and b, so a census taken on one direction per unordered pair would depend on which element the enumeration calls 'a'; every census here is therefore over ORDERED pairs, and this gate is what holds that discipline: re-running the DC1 sub-census over parents of depth <= 3 with the parent list and every menu REVERSED reproduces the same commuting count and the same exact defect spectrum  (commuting (forward) = 4454, (reversed) = 4454; spectra equal = True; spectrum = {'1': 3374, '4/5': 540, '5/4': 540})
+  [PASS] DET(b) NO LOAD-BEARING SET ITERATION: every ordered structure this receipt builds is a list from the committed enumerator or a sorted sequence (sorted(...) on refs, tokens, states and pools); every census is aggregated into a dict and PRINTED sorted by key.  The receipt is additionally expected to be byte-identical under PYTHONHASHSEED variation (run externally, recorded in the result note)  (checked: every cached menu is the enumerator's own list)
+
+[VERDICT]
+  SCOPE (non-negotiable): two-actor DELIVERY-FREE d42a, the
+  exhaustive depth-6 family.  Nothing below is licensed
+  beyond it, and nothing below transfers to the identified
+  (action-line) click law: paper 29's map remains open.
+
+  DC1 — FAILS.  THE FAILURE IS THE DELIVERABLE (pin §2/§4).
+  88632 of 665286 commuting pairs violate
+  P(a|H)P(b|Ha) = P(b|H)P(a|Hb).  Its structure is COMPLETE:
+    - the RAW products always agree (DC1(b)), so the
+      generated law's unnormalised history weight IS
+      order-independent on commuting pairs;
+    - the entire defect is the NORMALISATION: exactly
+      d = M(sigma(Hb))/M(sigma(Ha)), the coboundary of the
+      per-state menu mass (DC1(c)) — a MASS-RATIO COCYCLE,
+      the pin's pre-registered structural fallback, in its
+      sharpest form;
+    - the defect spectrum is exactly {'1': 576654, '4/5': 44316, '5/4': 44316};
+    - it is a function of (sigma(H), class(a), class(b))
+      alone under both key resolutions (DC1(d));
+    - it VANISHES exactly on same-mass intermediates and
+      occurs at every mass-mixed pair (DC1(e)) — the pin's
+      lean was right, and nothing else fails.
+  CONSEQUENCE, stated exactly and no wider: there is NO
+  positive measure on refined record cylinders at this
+  scope whose conditionals are the generated NORMALISED
+  kernel — paper 29 Theorem 1's contrapositive, applied to
+  a system that satisfies its three positivity hypotheses
+  (DC3(4)) and its cylinder-identity hypothesis (DC1(f)).
+  This does NOT contradict Theorem 1 (a theorem), and it is
+  NOT an F1 hit: F1 asks for a MEASURE with unequal
+  products; what is exhibited is a conditional system that
+  is not induced by any such measure.  The generated law is
+  ORDER-WEIGHTED at the normalised level, and any map from
+  the action line's conditional-measure reading to it must
+  carry order data or supply a completion (DC1-C).
+
+  DC2 — RESTATEMENT, satisfied.  pi = sigma; fibre constancy
+  is (H1); the 36-row kernel is printed.  NOT A NEW RESULT.
+  DC3 — (1) SUBSTANTIVE, PASS; (2) reporting-only, trivially
+  satisfied and uninformative; (3) = DC1, FAIL; (4) SUBSTANTIVE,
+  PASS; (5) = DC2, restatement.
+  DC4 — one item moves (boundary state, generated line only);
+  five stand.
+
+[d65] 28 PASS / 3 FAIL  [family depth 6; 397285 unordered menu pairs = 794570 ordered; substantive-gate block clean; runtime 224.5s]

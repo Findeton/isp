@@ -10921,3 +10921,48 @@ transition class that is NOT a coboundary?  The arbitration crystal
 inherits it with a stated structural reason (conflict events break
 the two-port symmetry that makes the trivializing choice available)
 — a reason to attack there, not a promise.**  TERMINAL for round 1.
+
+## 2026-07-26 — D65 DELIVERED (GREEN-UNREVIEWED): DC1 FAILS AS A PURE
+## MASS-RATIO COBOUNDARY — AND THE COMPLETIONS ARE EXACTLY ITS REPAIR
+## (LEDGER #467)
+Deliverables: note-d65-descent-conditions-result.md,
+code/d65_descent_conditions_exact.py (28 PASS / 3 FAIL — all three
+FAILs the ONE pre-registered negative counted thrice; exit 0,
+224.5 s), data/.out.  Opus 5 worker against the frozen pin (#465).
+RERUN BY ME: byte-identical modulo timing.  **THE CENSUS, EXHAUSTIVE
+(nothing sampled, deepest level in full): 794,570 ordered menu-event
+pairs; 129,284 mutually exclusive (a category the bookkeeping gate
+forced into the open — the menu is NOT all-concurrent); ZERO
+admissibility asymmetry; ZERO non-commuting pairs (both-orders-
+admissible => sigma-equal, always); 665,286 commuting; the identity
+P(a|H)P(b|Ha) = P(b|H)P(a|Hb) HOLDS on 576,654 and FAILS on
+88,632.**  THE STRUCTURE OF THE FAILURE, ZERO EXCEPTIONS: (1) the
+RAW cocycle holds on ALL 665,286 pairs — the unnormalised weight is
+perfectly order-independent; the ENTIRE defect is the normalisation;
+(2) the defect d = M(sigma(Hb))/M(sigma(Ha)) exactly — the coboundary
+of the per-state menu mass (34 states at 2, 2 at 5/2, read off
+d44a's committed row sums); (3) spectrum {1, 4/5, 5/4};
+sigma-functional at two key resolutions (616 classes, 0 splits);
+vanishes exactly on same-mass intermediates; confined to 6/36
+states; survives the strictest refined-record reading (canon(Hab) =
+canon(Hba): 32,256 of 425,334 fail).  **CONSEQUENCE (Theorem 1's
+contrapositive, NOT an F1 hit): no positive record-cylinder measure
+has the generated NORMALISED kernel as its conditionals — the
+normalised law is order-weighted.  COROLLARY [PROOF, 2 lines]: any
+completion factoring through (depth, sigma) annihilates the defect
+IDENTICALLY — D49's root-free Zhat = 2^-|h| f(class(sigma)) has
+exactly that shape, and d42b3's gradient Z is an independent gated
+instance (403 pairs, 0 failures).  THE TWO LINES MEET: the
+completions the dichotomy line forced are precisely the objects that
+repair descent.  The measure item on D59's ledger is now PRICED —
+one coboundary, within D50's form choice.**  DC2: restatement gate
+(pi = sigma; the 36-row kernel printed) — D59's boundary-state item
+moves to DERIVED for the generated line (paper 29 §9.2's cosmological
+boundary is a different object and stands).  DC3: five hypotheses
+gated (exclusivity substantive: 718,570-event adversarial pool, 0
+violations; decoherence trivially satisfied AND uninformative — the
+functional level is the map's remaining segment, named).  DC4: one
+ledger item moves, five stand with grounds.  Scope: two-actor
+delivery-free d42a ONLY; nothing transfers to the action line; the
+map remains an identification problem.  GREEN-UNREVIEWED: hostile
+round dispatched.
