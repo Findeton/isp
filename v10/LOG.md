@@ -11800,3 +11800,22 @@ theorem; transport curvature a new object; the phase's last
 address the odd sector of curved transport loops; the metric's
 next address the selected fixture's Gram + generic-geometry v10
 charts.  NEXT: the big book patch, then D74.
+
+## 2026-07-27 — D74 PINNED: THE TRANSPORT HOLONOMY — carrier, group,
+## removability, and the odd-sector U(1) search (LEDGER #492)
+Pin FROZEN: note-d74-transport-holonomy-pin.md.  The era's hinge
+unit, shaped by the whole first wave: TH-A the carrier (extend the
+D72 census; construct the quotient that SEES the twist — the record
+graph is blind); TH-B the group (prime content of {1/2, 2/3, 3/2,
+2}; stabilization); TH-C REMOVABILITY FIRST (the D64 discipline —
+both coboundary routes before any structure claim; also the
+per-state D65 pattern one level up); TH-D THE ODD-SECTOR U(1)
+SEARCH on the curved loops (the order-dual decomposition on the
+D72-welded carrier; any orientation-sensitive residue that
+CONJUGATES rather than inverts; the v7 i-twist correspondence if
+found; the asymmetric substrate carried per D73's cage lesson).
+Outcomes TH-I (removable — flatness grammar-wide, the enrichment
+fork goes live) / TH-II (real curvature only — gravity-flavored
+modulus twist, no phase) / TH-III (the odd residue — the U(1)
+seed).  NO LEAN (0-for-3 on phase intuitions).  Anchors = D72's
+census numbers exactly.  Worker dispatched.
