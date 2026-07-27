@@ -1,0 +1,416 @@
+[D70 — THE HORIZON LIMIT: is there a measure at transport scope that needs no bounded abstraction?]
+  banner: GREEN-UNREVIEWED.  Pin note-d70-horizon-limit-pin.md,
+  frozen and committed before this file was written.  EXACT
+  Fractions everywhere; the committed d42b1 transport layer and
+  the committed d42b3 delivery-free layer are exec'd
+  path-anchored and NOTHING about admission or pricing is
+  re-implemented.  The kernel objects are lifted by AST from the
+  terminal D46b receipt, so the object measured here IS the
+  object D46b gated.  NO infinite-volume claim under any
+  outcome (D46b MB6, binding): every number below is a
+  finite-horizon, finite-pool, finite-depth measurement at the
+  caps this receipt prints, and the pin's own prohibition is
+  enforced lexically by gate HZ8-b.
+
+[t+    0.0s] [HZ0-a — single sources]
+  [PASS] HZ0-a(i) SINGLE SOURCE, TRANSPORT: the committed d42b1 layer is exec'd from its own path, pre-print slice only, and the slice is gated to carry the DEFINITIONS this receipt rides on — candidates_for, admissible, event_poset, View, vname, V0, and BOTH enumerators whose asymmetry is the B1 wall (deliver_options_in_view reads the whole holdings set; prop_options_in_view skips superseded).  Nothing about admission or pricing is re-implemented anywhere in this file  (v10/code/d42b1_transport_exact.py: prefix 16129 chars, 0 sys.exit, 0 top-level check())   [ANCHOR]
+  [PASS] HZ0-a(ii) SINGLE SOURCE, DELIVERY-FREE: the committed d42b3 placement layer is exec'd the same way — the like-for-like partner D46b built for its MB1-b / MB2-b anchors and the family the HZ6-ii positive control runs on  (v10/code/d42b3_placement_exact.py: prefix 8670 chars)   [ANCHOR]
+  [PASS] HZ0-a(iii) THE KERNEL OBJECTS ARE THE D46B OBJECTS, extracted by AST from the TERMINAL D46b receipt rather than retyped: rel_potential (the exact backward recursion G(h, r) with G(h, 0) = 1), krel (k_r(e|h) = q(e|h).G(h+e, r-1)/G(h, r)), sector (per-EVENT-KIND mass) and conditional (THE PINNED OBJECT: k_r(e)/sector-mass(kind(e)), the d44f/LOG #370 horizon-stable candidate).  The four function definitions are located by ast.FunctionDef and compiled from the source lines they occupy, so a change to D46b's definitions would change this receipt's object  (lifted 4 definitions from v10/code/d46b_martin_transport_exact.py: rel_potential (10 lines), krel (6 lines), sector (5 lines), conditional (6 lines))   [ANCHOR]
+  [PASS] HZ0-a(iv) SIGMA BY TEXT SLICE for the HZ6-ii positive control: d44a's sigma_raw / ser / canon_sigma / own_alive block extracted verbatim between two anchored source landmarks (the d61/d62/d65 idiom), gated to be a PURE DEFINITION block — no sys.exit, no top-level check(), no top-level print survives extraction, so none of d44a's own gate protocol can execute inside this receipt  (v10/code/d44a_closure_theorem_exact.py: slice 3702 chars, (exit, check, print) = (0, 0, 0))   [ANCHOR]
+
+[t+    0.0s] [HZ0 — ANCHORS: every committed number this unit stands on, reproduced in this receipt's own process]
+  DECLARED CAPS (pin §2 'every cap printed by the receipt'): two-actor transport depth 6; three-actor pool depth 4; four-actor pool depth 3; delivery-free d42a depth 6; D46b's own anchor window depth 5; HZ5 refinement caps (3, 4, 5, 6); HZ6-i negative-control window depth 5; HZ6-iv PYTHONHASHSEED values (0, 7, 999).  NO sampled arm is run anywhere in this receipt: every row below is EXACT and exhaustive at its printed cap, so the D46d exact/sampled separation has nothing to separate.
+[t+  206.2s]   two-actor transport family built to depth 6 in 206.1s: per level [1, 8, 60, 452, 3448, 26760, 213040]
+  [PASS] HZ0-1 THE ARM-1T CENSUS, both committed anchors in one object: the cumulative sizes [1, 9, 69, 521, 3969, 30729] (the D44b/d42b1/D46b census) AND 243,769 to depth 6 (the D56 probe's M1 anchor).  D46b held menus to depth 5 and D56 obtained its depth-6 count by summing menu sizes at depth 5; this receipt holds the menus THEMSELVES to depth 6, so the depth-6 number is an enumerated family here and not a count  (cumulative = [1, 9, 69, 521, 3969, 30729, 243769]; per level = [1, 8, 60, 452, 3448, 26760, 213040])   [ANCHOR]
+  [PASS] HZ0-2 THE QUARTER-QUANTIZED LADDER (D46b MB1): the exact per-history menu weight sum takes the value set {2, 5/2} with multiplicities {2: 3757, 5/2: 212} at depth <= 4 and {2: 29605, 5/2: 1124} at depth <= 5 — both committed — and the value set is UNCHANGED at depth <= 6, which is this receipt's own one-level extension of the claim, not a committed number  (depth <= 4: {'2': 3757, '5/2': 212}; depth <= 5: {'2': 29605, '5/2': 1124}; depth <= 6 (NEW): {'2': 237269, '5/2': 6500})   [ANCHOR]
+[t+  222.1s]   delivery-free d42a family built to depth 6 in 11.7s
+  [PASS] HZ0-3 THE DELIVERY-FREE PARTNER, RECOMPUTED not cited (D46b MB1-b): the d42a family from the committed d42b3 layer — cumulative [1, 7, 39, 215, 1191, 6471] to depth 5 (the d43b MG0 census) and 34,375 to depth 6 (D65's N1 anchor) — and its own menu-weight-sum census {2: 5963, 5/2: 508} at depth <= 5, so the transport/delivery-free VALUE-SET coincidence is computed here and not quoted  (delivery-free cumulative = [1, 7, 39, 215, 1191, 6471, 34375]; census depth <= 5 = {'2': 5963, '5/2': 508}; value sets equal = True)   [ANCHOR]
+  [PASS] HZ0-4 THE TRANSPORT FINITE-HORIZON POTENTIALS at the root, exact, by the AST-lifted backward recursion: G_1..G_6 = 2, 4, 257/32, 1035/64, 4173/128, 134587/2048 (D46b MB2, every value anchored) — and G_7, which this receipt's one-level-deeper family makes computable for the first time and which is NEW, horizon-scoped, and anchored to nothing  (G_1 = 2; G_2 = 4; G_3 = 257/32; G_4 = 1035/64; G_5 = 4173/128; G_6 = 134587/2048; G_7 = 2168717/16384  [G_7 = 2168717/16384 is NEW])   [ANCHOR]
+  [PASS] HZ0-5 THE DELIVERY-FREE POTENTIALS at the same root and horizons (D46b MB2-b): 2, 4, 257/32, 1037/64, 2101/64, 68313/1024 — numerically IDENTICAL to transport through D = 3 and first separating at D = 4 (1035/64 transport vs 1037/64 delivery-free), i.e. deliveries are invisible to the potential below depth 4  (G_1 = 2; G_2 = 4; G_3 = 257/32; G_4 = 1037/64; G_5 = 2101/64; G_6 = 68313/1024; first separation at D = 4  [G_7 = 139065/1024 is NEW])   [ANCHOR]
+      D | delivery-free G_D | transport G_D | df ratio | transport ratio
+      1 | 2 | 2 | — | —
+      2 | 4 | 4 | 2 (~2.000000) | 2 (~2.000000)
+      3 | 257/32 | 257/32 | 257/128 (~2.007812) | 257/128 (~2.007812)
+      4 | 1037/64 | 1035/64 | 1037/514 (~2.017510) | 1035/514 (~2.013619)
+      5 | 2101/64 | 4173/128 | 2101/1037 (~2.026037) | 1391/690 (~2.015942)
+      6 | 68313/1024 | 134587/2048 | 68313/33616 (~2.032157) | 134587/66768 (~2.015741)
+      7 | 139065/1024 | 2168717/16384 | 46355/22771 (~2.035703) | 2168717/1076696 (~2.014233)
+  [PASS] HZ0-6 BOTH RATIO COLUMNS EXACTLY (D46b MB4/MB4-b): the transport ratios G_D/G_(D-1) at D = 2..6 are 2, 257/128, 1035/514, 1391/690, 134587/66768 and the delivery-free ones are 2, 257/128, 1037/514, 2101/1037, 68313/33616; the delivery-free column is >= the transport column at every horizon (deliveries REDUCE finite-horizon branching at the reachable caps) and the transport column PEAKS at D = 5 and turns down at D = 6.  D44a's lambda = 2 is the delivery-free chain's ASYMPTOTIC Perron eigenvalue and is not comparable with any of these finite-horizon quantities — the category distinction D46b's round 1 imposed  (transport = 2, 257/128, 1035/514, 1391/690, 134587/66768; delivery-free = 2, 257/128, 1037/514, 2101/1037, 68313/33616; df >= transport everywhere = True; transport peak at D = 5; D = 7 transport ratio = 2168717/1076696 (~2.014233) [NEW])   [ANCHOR]
+  [PASS] HZ0-7 THE PINNED OBJECT AT THE ROOT (D46b MB3-c): the sector-normalized conditional is EXACTLY identical at every remaining horizon r = 1..6 — drift exactly 0 at all five committed steps, not small but zero — with D46b's own honesty caveat carried: at the root all options within a kind are exchangeable, which FORCES a uniform conditional at every horizon, so the root's exactness is partly a symmetry artifact and the off-root behaviour (HZ0-8, HZ2) is the real test.  The sixth step r = 6 -> 7 is this receipt's extension  (root conditional drift r -> r+1 for r = 1..6 = ['0', '0', '0', '0', '0', '0'])   [ANCHOR]
+  [PASS] HZ0-7b THE ROOT ABSOLUTE DRIFT (D46b MB3-b), all three norms, value for value: the ABSOLUTE kernel and the per-kind sector MASSES do drift with the remaining horizon at every one of D46b's five reachable steps — these are the horizon-BOUND quantities D44f predicts, as against the sector-normalized conditional of HZ0-7 — and the r = 1 -> 2 step is exactly zero in all three  (L-inf = 0, 1/1028, 191/265995, 412/1439685, 4629/187210517; L1 = 0, 3/514, 382/88665, 824/479895, 27774/187210517; sector-L-inf = 0, 3/1028, 191/88665, 412/479895, 13887/187210517  [the sixth step r = 6 -> 7 is NEW: L-inf 54193948/291881114879])   [ANCHOR]
+  [PASS] HZ0-8 THE OFF-ROOT CONDITIONAL SUP (D46b MB3-d) — reproduced IN D46B'S OWN WINDOW, len(h) + r <= 5, because a sup taken over a wider family is a different number and comparing it to a committed one would be the horizon-mismatch error D46b's round 1 convicted: 1/18, 4/171, 8/741, 176/32877 over 3969, 521, 69, 9 histories with 700, 140, 36, 4 of them carrying any conditional drift at all  (r=1->2: sup 1/18 over 3969 histories, 700 drifting; r=2->3: sup 4/171 over 521 histories, 140 drifting; r=3->4: sup 8/741 over 69 histories, 36 drifting; r=4->5: sup 176/32877 over 9 histories, 4 drifting)   [ANCHOR]
+  [PASS] HZ0-9 THE FAMILY-UNIFORM SUP (D46b MB3-e), also in D46b's own window: 3/110, 3/253, 373/69230, 2333/1838829 — the four-term sequence the pin's HZ2 lean rests on, and which the pin itself records is four terms at small caps at two actors, is 'not a rate' in its own source, and is not a limit  (3/110, 3/253, 373/69230, 2333/1838829)   [ANCHOR]
+  [PASS] HZ0-10 MB5 — ROOT = RENEWAL AT MATCHED REMAINING HORIZON, and its NON-SUFFICIENCY CENSUS, both reproduced: the 1/256 reconvergence witness [p(A,v0,0), blind self-seal, deliver v1 to B] is re-admitted through the committed layer, its per-kind sector masses equal the root's at r = 1, 2, 3, and 8196/30728, 1060/3968, 104/520 histories share the root's masses — so sector-mass agreement is NECESSARY and NOT SUFFICIENT for renewal.  HZ4 rides on exactly this and may not upgrade it  (witness chain weight = 1/256; matched-horizon equality at r = 1, 2, 3 = [True, True, True]; census = r=1: 8196/30728; r=2: 1060/3968; r=3: 104/520)   [ANCHOR]
+[t+  235.9s]   HZ0: all 15 anchors reproduce.  Exit 1 is now unreachable — every gate below exits 0 whichever way it lands (pin §7).
+
+[t+  235.9s] [HZ1 — PROPERNESS, EXTENDED: gated FIRST, as the prerequisite (pin §4 lean); its failure is outcome HZ-IV]
+  WHAT IS AND IS NOT SUBSTANTIVE HERE, said before the numbers.
+  sum_e k_r(e|h) = 1 is an IDENTITY of the construction: G(h, r)
+  is defined as sum_e q(e|h) G(h+e, r-1) and k_r divides by it.
+  Verifying it is a REGRESSION TRIPWIRE on the extraction and on
+  the menu bookkeeping — it catches a menu used in the kernel
+  that differs from the menu used in the potential — and it is
+  labelled as one.  The three SUBSTANTIVE properness questions
+  are gated separately below: (a) strict positivity of every
+  potential (a zero denominator is the only way the identity can
+  break), (b) non-negativity of every kernel entry, and (c)
+  CUT-ADDITIVITY of the chained measure — the transport analogue
+  of the d42a defect the pin's HZ-IV names.
+  relative horizon r | histories with a computable k_r | sum_e k_r == 1 exactly
+      r = 1  |   243769  |  yes
+      r = 2  |    30729  |  yes
+      r = 3  |     3969  |  yes
+      r = 4  |      521  |  yes
+      r = 5  |       69  |  yes
+      r = 6  |        9  |  yes
+      r = 7  |        1  |  yes
+  [PASS] HZ1-a PROPERNESS FAMILY-WIDE, EXTENDED FROM r = 1, 2 TO r = 1..7 [REGRESSION TRIPWIRE, and the extension is the content].  D46b gated sum_e k_r(e|h) = 1 family-wide at r = 1 (30,729 histories) and r = 2 (3,969).  Here it holds at EVERY history of the depth-6 family with a computable k_r: 243,769 at r = 1, 30,729 at r = 2, 3,969 at r = 3, 521 at r = 4, 69 at r = 5, 9 at r = 6, 1 at r = 7.  The pin's weak POSITIVE lean on HZ1 at r >= 3 family-wide is CONFIRMED at these caps; outcome HZ-IV is not entered by this route  (kernels tested = 279067; sums != 1 = 0; per-r counts = [243769, 30729, 3969, 521, 69, 9, 1])
+  [PASS] HZ1-b STRICT POSITIVITY AND NON-NEGATIVITY — the substantive half.  Every one of the potentials above is strictly positive (so no kernel is defined by a zero denominator) and every kernel entry is >= 0, so each k_r really is a probability on the menu and not merely a normalized signed weight.  The mechanism is in the committed layer: the idle option is emitted at every history and its weight 1 - (1/4)(has_p) - (1/4)(has_am) - (1/4)(has_d) is at worst 1/4  (non-positive potentials = 0; negative kernel entries = 0, over 279067 kernels)
+  [PASS] HZ1-c CUT-ADDITIVITY, the pin's HZ-IV defect asked of transport. The RAW path weight is NOT a measure at transport either: its cut masses sum_{|h| = n} q(h) are exactly the root potentials 2, 4, 257/32, 1035/64, 4173/128, 134587/2048, 2168717/16384, so the same defect §B2.10 names at d42a (1, 2, 4, 257/32, 1037/64, 2101/64, 68313/1024) is present here with the transport potentials in place of the delivery-free ones.  What the horizon normalization BUYS is exactly this: chaining k_R, k_(R-1), ..., k_1 from the root gives total mass exactly 1 at EVERY intermediate cut, for every R = 1..7.  So the finite-horizon objects are honest measures and the HZ-IV cut-additivity failure does NOT fire — at the price of the horizon dependence HZ2 and HZ3 measure  (raw cut masses = 2, 4, 257/32, 1035/64, 4173/128, 134587/2048, 2168717/16384 (flat = False); chained cut-mass violations over R = 1..7 = 0)
+
+[t+  275.3s] [HZ2 — THE CAUCHY TABLE (the unit's core).  No fitted rate, no extrapolation, no invented threshold.  The word the pin permits, and the only word used below, is 'contracts over the computed horizons'.]
+  TWO-ACTOR ARM (ARM-1T), exhaustive to depth 6.
+  THE WINDOW-CONTROLLED OBJECT FIRST.  A sup over the whole family at relative horizon r is taken over histories of depth <= 6 - r, so the window SHRINKS as r grows and a family-uniform sequence in r is NOT a single-window sequence.  The rows below fix the history depth L and vary r, which is the comparison the pin's falsifier 2 asks for ('the root is not the family'):
+    sup over depth-L histories, norm = L-inf (abs kernel):
+      L = 0: r=1->2: 0, r=2->3: 1/1028, r=3->4: 191/265995, r=4->5: 412/1439685, r=5->6: 4629/187210517, r=6->7: 54193948/291881114879
+      L = 1: r=1->2: 3/208, r=2->3: 1/156, r=3->4: 1/356, r=4->5: 2333/1838829, r=5->6: 12494788/19065729755
+      L = 2: r=1->2: 3/110, r=2->3: 3/253, r=3->4: 373/69230, r=4->5: 89364/36687385
+      L = 3: r=1->2: 3/110, r=2->3: 3/253, r=3->4: 373/69230
+      L = 4: r=1->2: 3/110, r=2->3: 3/253
+      L = 5: r=1->2: 3/110
+    sup over depth-L histories, norm = L1 (abs kernel):
+      L = 0: r=1->2: 0, r=2->3: 3/514, r=3->4: 382/88665, r=4->5: 824/479895, r=5->6: 27774/187210517, r=6->7: 325163688/291881114879
+      L = 1: r=1->2: 3/104, r=2->3: 28/2145, r=3->4: 28/2937, r=4->5: 57482/9194145, r=5->6: 74555672/19065729755
+      L = 2: r=1->2: 6/55, r=2->3: 12/253, r=3->4: 746/34615, r=4->5: 357456/36687385
+      L = 3: r=1->2: 6/55, r=2->3: 12/253, r=3->4: 746/34615
+      L = 4: r=1->2: 6/55, r=2->3: 12/253
+      L = 5: r=1->2: 6/55
+    sup over depth-L histories, norm = sector-L-inf:
+      L = 0: r=1->2: 0, r=2->3: 3/1028, r=3->4: 191/88665, r=4->5: 412/479895, r=5->6: 13887/187210517, r=6->7: 162581844/291881114879
+      L = 1: r=1->2: 7/520, r=2->3: 47/8580, r=3->4: 8/2937, r=4->5: 5692/3064715, r=5->6: 24989576/19065729755
+      L = 2: r=1->2: 3/55, r=2->3: 6/253, r=3->4: 373/34615, r=4->5: 178728/36687385
+      L = 3: r=1->2: 3/55, r=2->3: 6/253, r=3->4: 373/34615
+      L = 4: r=1->2: 3/55, r=2->3: 6/253
+      L = 5: r=1->2: 3/55
+    sup over depth-L histories, norm = L-inf (CONDITIONAL):
+      L = 0: r=1->2: 0, r=2->3: 0, r=3->4: 0, r=4->5: 0, r=5->6: 0, r=6->7: 0
+      L = 1: r=1->2: 1/18, r=2->3: 4/171, r=3->4: 8/741, r=4->5: 176/32877, r=5->6: 302623/103087098
+      L = 2: r=1->2: 1/18, r=2->3: 4/171, r=3->4: 8/741, r=4->5: 176/32877
+      L = 3: r=1->2: 1/18, r=2->3: 4/171, r=3->4: 8/741
+      L = 4: r=1->2: 1/18, r=2->3: 4/171
+      L = 5: r=1->2: 1/18
+    sup over depth-L histories, norm = L1 (CONDITIONAL):
+      L = 0: r=1->2: 0, r=2->3: 0, r=3->4: 0, r=4->5: 0, r=5->6: 0, r=6->7: 0
+      L = 1: r=1->2: 1/9, r=2->3: 8/171, r=3->4: 16/741, r=4->5: 352/32877, r=5->6: 302623/51543549
+      L = 2: r=1->2: 1/9, r=2->3: 8/171, r=3->4: 16/741, r=4->5: 352/32877
+      L = 3: r=1->2: 1/9, r=2->3: 8/171, r=3->4: 16/741
+      L = 4: r=1->2: 1/9, r=2->3: 8/171
+      L = 5: r=1->2: 1/9
+  AND THE FAMILY-UNIFORM SUP (the D46b object), with the shrinking-window caveat above attached to it in place:
+    L-inf (abs kernel)    : r=1->2: 3/110, r=2->3: 3/253, r=3->4: 373/69230, r=4->5: 89364/36687385, r=5->6: 12494788/19065729755, r=6->7: 54193948/291881114879
+    L1 (abs kernel)       : r=1->2: 6/55, r=2->3: 12/253, r=3->4: 746/34615, r=4->5: 357456/36687385, r=5->6: 74555672/19065729755, r=6->7: 325163688/291881114879
+    sector-L-inf          : r=1->2: 3/55, r=2->3: 6/253, r=3->4: 373/34615, r=4->5: 178728/36687385, r=5->6: 24989576/19065729755, r=6->7: 162581844/291881114879
+    L-inf (CONDITIONAL)   : r=1->2: 1/18, r=2->3: 4/171, r=3->4: 8/741, r=4->5: 176/32877, r=5->6: 302623/103087098, r=6->7: 0
+    L1 (CONDITIONAL)      : r=1->2: 1/9, r=2->3: 8/171, r=3->4: 16/741, r=4->5: 352/32877, r=5->6: 302623/51543549, r=6->7: 0
+  the ROOT drift, exact, r = 1..7: L-inf 0, 1/1028, 191/265995, 412/1439685, 4629/187210517, 54193948/291881114879; L1 0, 3/514, 382/88665, 824/479895, 27774/187210517, 325163688/291881114879; sector-L-inf 0, 3/1028, 191/88665, 412/479895, 13887/187210517, 162581844/291881114879
+  its ratio SEQUENCE (a SEQUENCE, not a rate — D46b's own word): ['0.7382', '0.3985', '0.0864', '7.5091']; the three norms give exactly equal ratio sequences: True
+  [PASS] HZ2-d THE ROOT ROW, WHERE THE EXTRA HORIZON CHANGES A COMMITTED READING.  D46b MB3-e gated that the ROOT's absolute drift 'contracts monotonically at the root from r = 2 on, out to r = 6', which was true of every step it could compute.  This receipt computes ONE MORE step and reports what it finds, in the direction it lands.  The gate's substantive content is (i) the monotonicity verdict on D46b's own five steps, (ii) the monotonicity verdict once the sixth is added, and (iii) that the three norms still give EXACTLY equal ratio sequences over all six ratios — so whatever the sixth step does, it is not a norm artifact.  The PINNED object (the sector-normalized conditional) is separately reported at the root and is exactly zero at every one of the six steps  (D46b's five steps contract monotonically = True; WITH the sixth step added, the root absolute drift contracts monotonically = False; ratio sequence = ['0.7382', '0.3985', '0.0864', '7.5091']; norm-free over all 4 ratios = True; the root CONDITIONAL drift is exactly zero at all 6 steps = True)
+
+  [OUTCOME HZ2-ROOT-REVERSAL] D46b MB3-e's 'the root drift contracts monotonically out to r = 6' DOES NOT SURVIVE r = 7.  The root's absolute L-infinity drift runs 0, 1/1028, 191/265995, 412/1439685, 4629/187210517, 54193948/291881114879 — falling through the five steps D46b could compute and then RISING by a factor 75383781668/10038990993 (~7.509) at the one step it could not.  The reversal is exact, is identical in all three norms, and is the same shape as the reversal D46b's own round 1 found in the growth column (peak at D = 5, turn down at D = 6): a finite-horizon quantity read as a trend over five points turns at the sixth.  WHAT IT DOES NOT TOUCH: the PINNED object.  The sector-normalized conditional at the root is exactly zero at every step including r = 6 -> 7, and every OFF-ROOT depth stratum contracts in all five norms (HZ2-a).  So the object that reverses is the horizon-BOUND absolute kernel — precisely the quantity D44f says is horizon-bound — and the object the pin names is untouched.  Reported here rather than smoothed: the campaign's rule is that a surprise IS the result.
+  WINDOW DEPENDENCE, gated because a sup over a bigger family is a different number: D46b's window (len(h) + r <= 5) vs this receipt's (len(h) + r <= 6):
+      r = 1: D46b window sup 3/110 (~2.727e-02)  vs  extended window sup 3/110 (~2.727e-02)   larger on the wider window = False
+      r = 2: D46b window sup 3/253 (~1.186e-02)  vs  extended window sup 3/253 (~1.186e-02)   larger on the wider window = False
+      r = 3: D46b window sup 373/69230 (~5.388e-03)  vs  extended window sup 373/69230 (~5.388e-03)   larger on the wider window = False
+      r = 4: D46b window sup 2333/1838829 (~1.269e-03)  vs  extended window sup 89364/36687385 (~2.436e-03)   larger on the wider window = True
+  [PASS] HZ2-a THE DRIFT CONTRACTS OVER THE COMPUTED HORIZONS AT EVERY OFF-ROOT HISTORY DEPTH, two-actor arm, in all five norms — the window-controlled statement, which is the one the pin's falsifier 2 ('the root is not the family') actually tests, and which the family-uniform sequence alone cannot supply because its window shrinks with r.  **THE ROOT ROW IS EXCLUDED FROM THIS PREDICATE ON PURPOSE AND THE EXCLUSION IS STATED HERE, NOT BURIED: the root is HZ2-d's subject, where its behaviour is delivered in the direction it lands, and every failing row in this table is printed below whether or not the predicate counts it.**  A leading EXACT zero counts as stronger than contraction and contraction is read strictly from the first nonzero term, which is D46b's own framing of the root row.  This is a TABLE, not a rate and not a limit: no fit, no extrapolation and no threshold is applied to it anywhere in this receipt, and whether it is more than a table is HZ4's question  (depth-stratified rows checked = 30 (5 norms x 6 depths); OFF-ROOT rows that do NOT contract = none; ROOT rows that do not contract (HZ2-d's subject, counted here only as a printed fact) = [('L-inf (abs kernel)', 0), ('L1 (abs kernel)', 0), ('sector-L-inf', 0)]; family-uniform rows contract = L-inf (abs kernel): True, L1 (abs kernel): True, sector-L-inf: True, L-inf (CONDITIONAL): True, L1 (CONDITIONAL): True)
+  [PASS] HZ2-b THE SUP IS WINDOW-DEPENDENT, AND BOTH WINDOWS ARE PRINTED SIDE BY SIDE RATHER THAN ONE OF THEM QUOTED.  A family-uniform sup over a deeper family can only be >= the shallower one, so D46b's committed four-term sequence is a LOWER BOUND on the sup over this receipt's deeper family; treating it as window-free would be the horizon-mismatch error D46b's own round 1 convicted in the other direction.  The gate requires the committed values to be exactly the shallow-window column AND records, in the direction it lands, at which r the extra depth moves the sup  (sup grew on the wider window at r = [4]; unchanged at r = [1, 2, 3]; extended column = 3/110, 3/253, 373/69230, 89364/36687385)
+
+[t+  284.8s]   HZ2 IN ACTOR POOL — the pin's falsifier 4 ('if the drift's contraction rate degrades systematically with actor pool, the two-actor arm was measuring ARM-1T and not transport').  Pools are EXACT and exhaustive at the printed depths; no sampled arm is used.
+[t+  323.3s]     3 actors (A,B,C): exhaustive to depth 4 in 38.5s, cumulative [1, 16, 235, 3424, 50617]
+[t+  335.7s]     4 actors (A,B,C,D): exhaustive to depth 3 in 12.4s, cumulative [1, 25, 593, 13993]
+  MATCHED-CELL COMPARISON (same relative horizon r, same history depth L, three pools) — L-inf on the absolute kernel, exact:
+      (r, L) | 2 actors (A,B) | 3 actors (A,B,C) | 4 actors (A,B,C,D)
+      (1, 0) | 0 | 0 | 0
+      (1, 1) | 3/208 | 11/1752 | 29/8288
+      (1, 2) | 3/110 | 161/7080 | 105/8416
+      (2, 0) | 1/1028 | 1/1734 | 3/8216
+      (2, 1) | 1/156 | 2763/523994 | 23117/6594399
+  family-uniform sup per pool, at the horizons each pool's cap can reach (the windows DIFFER and the rows are not comparable across pools except in the matched cells above):
+      2 actors (A,B)       depth 6: r=1->2: 3/110, r=2->3: 3/253, r=3->4: 373/69230, r=4->5: 89364/36687385, r=5->6: 12494788/19065729755, r=6->7: 54193948/291881114879
+      3 actors (A,B,C)     depth 4: r=1->2: 156/5377, r=2->3: 14173/1076160, r=3->4: 604092/159068069, r=4->5: 1014199/1191210097
+      4 actors (A,B,C,D)   depth 3: r=1->2: 105/8416, r=2->3: 23117/6594399, r=3->4: 22364/34029645
+  depth-stratified rows that do NOT contract, per pool (norm, depth L) — printed in full, root rows included:
+      2 actors (A,B)      : [('L-inf (abs kernel)', 0), ('L1 (abs kernel)', 0), ('sector-L-inf', 0)]
+      3 actors (A,B,C)    : [('L-inf (abs kernel)', 0), ('L1 (abs kernel)', 0), ('sector-L-inf', 0)]
+      4 actors (A,B,C,D)  : [('L-inf (abs kernel)', 0), ('L-inf (abs kernel)', 1), ('L1 (abs kernel)', 0), ('L1 (abs kernel)', 1), ('sector-L-inf', 0), ('sector-L-inf', 1)]
+  and the EXACT SEQUENCES of every OFF-ROOT row that does not contract, printed in place because this is the pin's HZ-I clause (c) and it must not be quoted as a boolean:
+      4 actors (A,B,C,D), norm L-inf (abs kernel), depth L = 1: r=1->2: 29/8288 (~3.499035e-03), r=2->3: 23117/6594399 (~3.505551e-03)   largest rise = 1375/738369 (~0.19%)
+      4 actors (A,B,C,D), norm L1 (abs kernel), depth L = 1: r=1->2: 87/4144 (~2.099421e-02), r=2->3: 1160/53613 (~2.163654e-02)   largest rise = 19/621 (~3.06%)
+      4 actors (A,B,C,D), norm sector-L-inf, depth L = 1: r=1->2: 39/4144 (~9.411197e-03), r=2->3: 580/53613 (~1.081827e-02)   largest rise = 1207/8073 (~14.95%)
+  [FAIL] HZ2-c POOL DEPENDENCE, BOTH WAYS, AND THE WIDTH COMPARISON MADE ONLY IN MATCHED CELLS.  The pins' falsifier 4 asks whether the contraction degrades systematically with actor pool.  At every pool the depth-stratified rows are checked for contraction in r by the same rule as HZ2-a, and the drift is compared across pools ONLY at identical (r, L) — the pools' windows differ and their family-uniform rows are not comparable.  The gate records the answer in the direction it lands.  As at HZ2-a the ROOT row is excluded from the predicate and printed in full above  (OFF-ROOT depth-stratified rows contract at every pool: 2 actors (A,B) = True, 3 actors (A,B,C) = True, 4 actors (A,B,C,D) = False; family-uniform rows contract: 2 actors (A,B) = True, 3 actors (A,B,C) = True, 4 actors (A,B,C,D) = True; matched cells = [(1, 0), (1, 1), (1, 2), (2, 0), (2, 1)]; drift at 3 actors >= drift at 2 actors in every matched cell = False)
+
+[t+  351.4s] [HZ3 — TRUNCATION-CONVENTION INDEPENDENCE (the horn gate)]
+  THE CONVENTIONS, DECLARED, and one correction to the pin's own
+  suggested pattern, made in place.  The pin proposes 'the
+  committed one, plus a second — e.g. the D57 S4 pattern of a
+  maximally coarse terminal'.  But the COMMITTED terminal IS
+  already the maximally coarse one: G(h, 0) = 1 is
+  state-independent, it gives every terminal history the same
+  value, and there is nothing coarser.  The S4 pattern therefore
+  INVERTS here: a second convention has to REFINE the terminal,
+  not coarsen it.  Two are declared and both are carried
+  independently through the whole computation:
+    C1 (COMMITTED, D46b): G(h, 0) = 1.  Maximally coarse.
+    C2 (BRANCH-COUNT TERMINAL): G(h, 0) = |menu(h)|, the number
+       of admissible continuations.  Counting measure at the
+       cap layer instead of uniform measure — a genuinely
+       different completion of the truncation, and NOT a
+       reparametrization of C1.
+    C3 (MENU-MASS TERMINAL): G(h, 0) = sum_e q(e|h).  DECLARED
+       AND GATED TO BE A HORIZON SHIFT of C1 — it can never
+       separate, and it is carried precisely so that C2's
+       separation cannot be mistaken for one.
+  [PASS] HZ3-a THE CONVENTIONS ARE WHAT THEY ARE DECLARED TO BE.  C1 reproduces the AST-lifted D46b potential value for value at the root; C3's potential equals C1's at one higher horizon at every horizon, and C3's KERNEL at horizon r equals C1's at horizon r + 1 entrywise over the family — so C3 is exactly a relabelling of the horizon index and is excluded from the horn comparison by construction, not by preference  (C1 == D46b's G at r = 1..7: True; C3(r) == C1(r+1): True; C3's kernel == C1's shifted kernel entrywise: True)
+  THE HORN COMPARISON: k^C1_r(e|h) vs k^C2_r(e|h), ENTRYWISE in exact Fractions, at MATCHED relative horizon.  C2's potential needs the menu one level deeper than C1's, so the comparison runs at len(h) + r <= 6.  AS AT HZ2, THE WINDOW-CONTROLLED TABLE COMES FIRST: a family-wide sup at horizon r is taken over a window that SHRINKS with r, so a family-wide sequence falling in r proves nothing on its own.  The rows below fix the history depth L and vary r.
+    sup |k^C1_r - k^C2_r| over depth-L histories, norm = L-inf (abs kernel):
+      L = 0: r=1: 1/124, r=2: 3/980, r=3: 1044/1007183, r=4: 1849/13060665, r=5: 1710615/4253203669, r=6: 17559949068/19979274742577
+      L = 1: r=1: 13/472, r=2: 217/12727, r=3: 2869/192804, r=4: 2961977/209925813, r=5: 3661577684/264275174689
+      L = 2: r=1: 5/152, r=2: 157/7384, r=3: 141/8440, r=4: 2961977/209925813
+      L = 3: r=1: 7/200, r=2: 559/16776, r=3: 29255/822216
+      L = 4: r=1: 7/200, r=2: 559/16776
+      L = 5: r=1: 7/200
+    sup |k^C1_r - k^C2_r| over depth-L histories, norm = L-inf (CONDITIONAL):
+      L = 0: r=1: 0, r=2: 0, r=3: 0, r=4: 0, r=5: 0, r=6: 0
+      L = 1: r=1: 1/8, r=2: 1/12, r=3: 487/7790, r=4: 40337/800358, r=5: 109092211/2569013838
+      L = 2: r=1: 1/8, r=2: 1/12, r=3: 487/7790, r=4: 7443521/132068175
+      L = 3: r=1: 1/8, r=2: 1/12, r=3: 487/7790
+      L = 4: r=1: 1/8, r=2: 1/12
+      L = 5: r=1: 1/8
+  rows that do NOT shrink in r (norm, depth L): [('abs', 0), ('abs', 3)]
+  AND the family-wide row, with the shrinking-window caveat attached:
+      r | histories | C1 == C2 exactly | sup L-inf (abs) | sup L-inf (CONDITIONAL) | at the root (abs, cond)
+      1 |   30729 |       0 | 7/200 (~3.500e-02) | 1/8 (~1.250e-01) | (1/124, 0)
+      2 |    3969 |       0 | 559/16776 (~3.332e-02) | 1/12 (~8.333e-02) | (3/980, 0)
+      3 |     521 |       0 | 29255/822216 (~3.558e-02) | 487/7790 (~6.252e-02) | (1044/1007183, 0)
+      4 |      69 |       0 | 2961977/209925813 (~1.411e-02) | 7443521/132068175 (~5.636e-02) | (1849/13060665, 0)
+      5 |       9 |       0 | 3661577684/264275174689 (~1.386e-02) | 109092211/2569013838 (~4.246e-02) | (1710615/4253203669, 0)
+      6 |       1 |       0 | 17559949068/19979274742577 (~8.789e-04) | 0 (~0.000e+00) | (17559949068/19979274742577, 0)
+  [PASS] HZ3-b THE TWO TERMINAL CONVENTIONS SEPARATE EVERYWHERE IN THE ABSOLUTE KERNEL AND NOWHERE AT THE ROOT IN THE PINNED ONE, AND THE OFF-ROOT SEPARATION SHRINKS IN r AT EVERY FIXED DEPTH.  Three facts, kept apart: (i) NO history in the whole comparison has k^C1_r = k^C2_r, so the conventions are genuinely different completions and not a reparametrization — C3 is the reparametrization and HZ3-a gates it as one; (ii) at the ROOT the SECTOR-NORMALIZED CONDITIONAL — the pinned object — is EXACTLY EQUAL under the two conventions at every computed horizon, while the absolute kernel is never equal, which is the D44f split (horizon-bound absolute, horizon-stable conditional) showing up as a convention split; (iii) at every fixed OFF-ROOT depth the separation in THE PINNED OBJECT shrinks in r.  **THE HORN VERDICT IS TAKEN ON THE PINNED OBJECT AND ON NOTHING ELSE, because the pin's §6 says so in terms: the pinned object is the sector-normalized conditional and the absolute completed weights are horizon-bound (D44f) context.  The absolute rows are printed in full beside it and are NOT folded into the verdict — and they do NOT all shrink, which is exactly what D44f predicts of a horizon-bound quantity.**  The root row is reported and excluded from (iii) exactly as at HZ2-a  (histories with k^C1_r == k^C2_r = 0; family-wide absolute sup by r = 7/200, 559/16776, 29255/822216, 2961977/209925813, 3661577684/264275174689, 17559949068/19979274742577; family-wide conditional sup by r = 1/8, 1/12, 487/7790, 7443521/132068175, 109092211/2569013838, 0; ROOT absolute = 1/124, 3/980, 1044/1007183, 1849/13060665, 1710615/4253203669, 17559949068/19979274742577; ROOT conditional = 0, 0, 0, 0, 0, 0; PINNED-object rows that do not shrink = none; ABSOLUTE (horizon-bound, D44f context) rows that do not shrink = [('abs', 0), ('abs', 3)]; of those, off-root = [('abs', 3)])
+
+  [OUTCOME HZ3-HORN] THE CONVENTION GATE, DELIVERED ON THE PINNED OBJECT.  The two declared terminal conventions are different completions at every single history in the comparison — 0 of the histories tested have k^C1_r = k^C2_r — so the truncation is a CHOICE and not a formality.  On the PINNED object (the sector-normalized conditional) the choice is invisible at the root at every computed horizon (difference exactly 0, all six) and shrinks in r at every fixed off-root depth, from 1/8 at r = 1 down to 109092211/2569013838 at r = 5.  On the ABSOLUTE kernel — which D44f already declares horizon-bound and which this receipt carries as context only — the choice is visible everywhere and does NOT shrink monotonically at 2 of the 6 depth rows ([('abs', 0), ('abs', 3)]).  SO THE HORN IS OBJECT-DEPENDENT, and reporting one object without the other would have decided it by choice of statistic: on the pin's own object the imported completion horn (I) does NOT fire over the computed horizons, and on the horizon-bound object it does.  Nothing here is extrapolated past the computed horizons, and 1/8 at r = 1 is not a small number: the conventions are far apart where the family is large and close only where the window is small.
+
+[t+  371.6s] [HZ4 — THE LEMMA SLOT (proof-shaped; may return empty, and saying so is a result).  No outcome here may upgrade HZ2's labels unless a bound is printed.]
+  (i) THE TRANSPORT RENEWAL PREDICATE, DEFINED FROM D62's ROW R4
+      AND VERIFIED AGAINST THE LAYER AT EVERY OCCURRENCE.
+      R4's serialisation (note-d62 §8): hold = {A: v, B: v},
+      live = (), comps = (), refs = {v}, flag(v) = False —
+      serialisation-identical to sigma([]).  Ported to transport
+      as TWO predicates, because the port is not unique and
+      reporting only one would decide the question by fiat:
+        R-SIG  : every actor's NON-SUPERSEDED holdings is the
+                 same singleton {v}; no live proposals; no
+                 components; no merge pairs; v not superseded.
+                 (The literal R4 port: d42a's sigma sees the
+                 non-superseded token only, because
+                 prop_options_in_view SKIPS superseded.)
+        R-MENU : R-SIG and, in addition, holdings(a) = {v}
+                 EXACTLY for every a — no superseded remainder.
+                 (The MENU-EXACT port: at transport
+                 deliver_options_in_view enumerates over the
+                 WHOLE holdings set, so anything left in it is
+                 visible in the menu.)
+      The verification is the corpus's own standard: at a
+      renewal the menu must be the ROOT's menu with v0 renamed
+      to v, weight for weight, through the committed layer.
+[t+  372.2s]      state data built for 30729 histories (depth <= 5; the predicate needs full views, which is the declared window for this gate) in 0.7s
+      R-SIG  points at depth <= 5: 5161 (depths [0, 1, 2, 3, 4, 5]); of these, 1365 have the root's menu under renaming and 3796 do NOT
+      R-MENU points at depth <= 5: 1365 (depths [0, 1, 2, 3, 4, 5]); of these, 1365 have the root's menu under renaming and 0 do NOT
+      THE GAP, EXHIBITED at the first R-SIG point that is not a menu renewal:
+        history  = [('n', 'B'), ('n', 'B'), ('p', 'B', ('v', 'v0'), 1), ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)})), ('d', 'B', 'A', ('v', ('v', 'v0'), (1,), ('B',), 'B'))]
+        in its menu and not in the renamed root menu: [(('d', 'A', 'B', ('v', 'v0')), '1/8'), (('d', 'A', 'B', ('v', ('v', 'v0'), (1,), ('B',), 'B')), '1/8'), (('d', 'B', 'A', ('v', 'v0')), '1/8'), (('d', 'B', 'A', ('v', ('v', 'v0'), (1,), ('B',), 'B')), '1/8')]
+        in the renamed root menu and not in its menu: [(('d', 'A', 'B', ('v', ('v', 'v0'), (1,), ('B',), 'B')), '1/4'), (('d', 'B', 'A', ('v', ('v', 'v0'), (1,), ('B',), 'B')), '1/4')]
+  [PASS] HZ4-i THE RENEWAL PREDICATE, VERIFIED AGAINST THE LAYER — and the two ports COME APART at transport, which is itself the finding.  R-SIG, the literal D62 R4 port, is NOT sufficient for a menu renewal at transport scope: the histories it selects carry the root's sigma-data and a DIFFERENT menu, because deliver_options_in_view enumerates over the whole holdings set while d42a's prop_options_in_view skips superseded.  R-MENU, the menu-exact port, is exact wherever it holds.  This is the B1 wall showing up inside the renewal question, and it is the same one line of the committed layer that HZ7 probes  (R-SIG = 5161 points, menu-exact at 1365, NOT menu-exact at 3796; R-MENU = 1365 points, menu-exact at 1365, NOT menu-exact at 0)
+  (ii) THE RETURN-WEIGHT CENSUS, and the structural fact that decides it.
+      holdings(a) in the committed layer is a UNION over the arbs, deliveries and merges in the view (d42b1's View.holdings), so extending a history can only ADD to it.  If that is exact, a renewal is unreachable the moment any actor holds two versions, and the return-weight census is decided rather than estimated.  Gated exhaustively over the family rather than asserted:
+  [PASS] HZ4-ii(a) HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION, exhaustively over the declared window: no event of any kind ever removes a version from any actor's holdings.  Together with R-MENU (which requires holdings(a) = {v} exactly) this makes the menu-exact renewal set ABSORBING-COMPLEMENT: once any actor holds a second version, no continuation of that history is ever a menu renewal again.  The event kinds that first break singleton holdings are censused  (transitions checked = 30728 (every transition out of every history of depth < 5); holdings-shrinking transitions = 0; first-growth events by kind = {'d': 3068, 'n': 2040, 'p': 2496, 'r': 4644})
+      RETURN-WEIGHT CENSUS from renewal to renewal by cycle length.  NORMALIZATION NAMED AT EVERY USE (D46d B2): column q is the RAW committed weight product; column k^C1_r is the horizon-7 completed conditional chained from the root under convention C1.
+      cycle length n | # renewal histories at depth n | raw-q mass | horizon-completed k^C1 mass | k^C1 mass NOT at a renewal
+      n = 1 |      4 | 3/2 (~1.500000) | 1615044/2168717 (~0.744700) | 553673/2168717 (~0.255300)
+      n = 2 |     16 | 9/4 (~2.250000) | 1201824/2168717 (~0.554164) | 966893/2168717 (~0.445836)
+      n = 3 |     64 | 27/8 (~3.375000) | 894240/2168717 (~0.412336) | 1274477/2168717 (~0.587664)
+      n = 4 |    256 | 81/16 (~5.062500) | 666144/2168717 (~0.307160) | 1502573/2168717 (~0.692840)
+      n = 5 |   1024 | 243/32 (~7.593750) | 497664/2168717 (~0.229474) | 1671053/2168717 (~0.770526)
+  [PASS] HZ4-ii(b) THE RETURN-WEIGHT CENSUS IS A DEPARTURE CENSUS.  The renewal class is exactly the histories in which nothing has been created yet, and by HZ4-ii(a) it is never re-entered once left, so 'return weight by cycle length' degenerates: there are no cycles, only a survival curve.  The mass still at a renewal at depth n falls monotonically and the mass permanently outside it rises, under BOTH normalizations, at every depth of the declared window  (horizon-completed mass NOT at a renewal, n = 1..5: 553673/2168717 (~0.255300), 966893/2168717 (~0.445836), 1274477/2168717 (~0.587664), 1502573/2168717 (~0.692840), 1671053/2168717 (~0.770526))
+  (iii) THE B1 LADDER'S CYLINDERS: do the never-regenerating cylinders carry vanishing total weight?  (Pin falsifier 5.)
+      rung k | admissible | q(propose) | q(self-arb) | |holdings(A)| | cylinder weight prod q
+           1 |       True | 1/8 | 1/4 |      2 | 1/32 (~3.125e-02)
+           2 |       True | 1/8 | 1/4 |      3 | 1/1024 (~9.766e-04)
+           3 |       True | 1/8 | 1/4 |      4 | 1/32768 (~3.052e-05)
+           4 |       True | 1/8 | 1/4 |      5 | 1/1048576 (~9.537e-07)
+           5 |       True | 1/8 | 1/4 |      6 | 1/33554432 (~2.980e-08)
+           6 |       True | 1/8 | 1/4 |      7 | 1/1073741824 (~9.313e-10)
+           7 |       True | 1/8 | 1/4 |      8 | 1/34359738368 (~2.910e-11)
+           8 |       True | 1/8 | 1/4 |      9 | 1/1099511627776 (~9.095e-13)
+  [PASS] HZ4-iii THE LADDER'S OWN CYLINDER WEIGHT VANISHES, AND THAT DOES NOT HELP.  The single B1 ladder cylinder does carry weight tending to 0 rung by rung, so falsifier 5 read narrowly — 'the ladder's cylinders carry non-vanishing weight' — does NOT fire.  But by HZ4-ii(a) the ladder is not the object that matters: the NEVER-REGENERATING SET is everything past the first creation event, and its horizon-completed mass at the deepest computed cut is the number printed here, not a vanishing one.  So the regenerative route is blocked by the size of the non-regenerating set, not by the ladder  (every rung admissible = True; |holdings(A)| = k+1 = True; cylinder weight falls monotonically = True, last = 1/1099511627776 (~9.095e-13); never-regenerating horizon-completed mass at depth 5 = 1671053/2168717 (~0.770526))
+  (iv) THE MINORIZATION ATTEMPT.  A Doeblin/regenerative bound needs delta > 0 with: from EVERY history, the probability of hitting a renewal within N steps is >= delta.  Computed directly, under the horizon-completed conditional (normalization named), for N = 1..3 over the declared window:
+      N = 1: histories tested 3969; histories with hitting probability EXACTLY 0 = 3628; infimum over the window = 0
+      N = 2: histories tested 521; histories with hitting probability EXACTLY 0 = 436; infimum over the window = 0
+      N = 3: histories tested 69; histories with hitting probability EXACTLY 0 = 48; infimum over the window = 0
+  [PASS] HZ4-iv NO BOUND EXHIBITED — and the receipt says so explicitly, as the pin requires.  The infimum of the N-step renewal-hitting probability over the declared window is EXACTLY ZERO for every N tested, and it is zero for a structural reason and not for want of depth: by HZ4-ii(a) holdings never shrink, so every history in which some actor already holds two versions has hitting probability exactly 0 for EVERY N, not merely for the N computed.  There is no minorization constant to print.  Consequently, per the pin, NOTHING in HZ4 upgrades any HZ2 label, HZ2's rows stay a table over the computed horizons, and outcome HZ-III's bound clause is NOT satisfied  (infimum by N = N=1: 0 over 3969 histories, 3628 of them exactly 0, N=2: 0 over 521 histories, 436 of them exactly 0, N=3: 0 over 69 histories, 48 of them exactly 0; printed minorization constant = NONE)
+  HZ4 POSITIVE CONTROL — the same predicate machinery on the DELIVERY-FREE d42a family, where D62's row R4 says every pair-arb IS a renewal to the root state.  If the predicate cannot find the renewal the corpus derived, the transport negative above is an instrument artifact.
+  [PASS] HZ4-v THE INSTRUMENT FINDS THE RENEWAL WHERE THE CORPUS DERIVED ONE.  At delivery-free d42a scope the R-SIG predicate selects renewal points, and at EVERY one of them the menu is the root's menu under renaming, weight for weight — including at every history ending in a pair-arb, which is exactly D62 row R4's derived statement, re-derived here from the committed d42b3 layer through this receipt's own predicate.  So the transport negative in HZ4-i/ii/iv is a fact about transport and not about the predicate  (d42a: R-SIG points = 175, menu-exact at 175; R-MENU points = 31; histories ending in a pair-arb = 112, of which menu-renewals = 112)
+
+[t+  373.9s] [HZ5 — THE AGGREGATION ARM (secondary, cheap, independent): D57's coarsest-lumpable fixpoint at two STRICTLY COARSER sector maps.  NOT DROPPED — the runtime budget did not bind; had it bound, the drop would have been printed here.]
+  THE SECTOR MAPS, and the strictness of the coarsening, gated rather than asserted:
+      sector-map sizes by cumulative depth (|(actor,type)|, |type|, |budget|):
+        depth <= 0: (6, 3, 3)
+        depth <= 1: (8, 4, 4)
+        depth <= 2: (8, 4, 4)
+        depth <= 3: (8, 4, 4)
+        depth <= 4: (8, 4, 4)
+        depth <= 5: (10, 5, 4)
+        depth <= 6: (10, 5, 4)
+  [PASS] HZ5-0 THE TWO NEW SECTOR MAPS ARE STRICTLY COARSER THAN D57's, and strictly ordered between themselves ON THE FULL FAMILY — with the depth at which the second ordering becomes strict printed, because it is NOT strict at shallow depth and saying so is the point.  D57's (initiator, event-type) refines TYPE-ONLY (s = event-type), which refines BUDGET-ONLY (s = the weight budget: propose | arb-and-merge | deliver | idle, the d42b1 docstring's own four budgets).  BUDGET-ONLY merges the 'r' and 'm' types, so it is strictly coarser than TYPE-ONLY only once MERGE events appear in the family; the first depth at which that happens is printed and is a fact about the grammar (d42b1's own declared MERGE-SECTOR VACUITY at its caps), not about the maps  (on the full depth-6 family |(actor, type)| = 10 > |type| = 5 > |budget| = 4; the type/budget ordering first becomes strict at cumulative depth 5 (before that the two maps coincide, 4 sectors each))
+  THE FINITE-ALPHABET PREREQUISITE, GATED FIRST AND SEPARATELY (pin §3 HZ5, and D69 §6: whether the sector-total alphabet at transport scope is finite is [OPEN] — D57's ground (1) is withdrawn, and this gate treats it as open in BOTH directions):
+    TYPE-ONLY sector-total alphabet by cap:
+      cap 3:   4 distinct totals over 4 sectors; per sector d: 1, n: 2, p: 2, r: 3
+      cap 4:   4 distinct totals over 4 sectors; per sector d: 1, n: 2, p: 2, r: 3
+      cap 5:   5 distinct totals over 5 sectors; per sector d: 1, m: 1, n: 3, p: 2, r: 3
+      cap 6:   6 distinct totals over 5 sectors; per sector d: 1, m: 3, n: 4, p: 2, r: 4
+    BUDGET-ONLY sector-total alphabet by cap:
+      cap 3:   4 distinct totals over 4 sectors; per sector arb-merge: 3, deliver: 1, idle: 2, propose: 2
+      cap 4:   4 distinct totals over 4 sectors; per sector arb-merge: 3, deliver: 1, idle: 2, propose: 2
+      cap 5:   5 distinct totals over 4 sectors; per sector arb-merge: 3, deliver: 1, idle: 3, propose: 2
+      cap 6:   5 distinct totals over 4 sectors; per sector arb-merge: 3, deliver: 1, idle: 4, propose: 2
+  [PASS] HZ5-1 THE FINITE-ALPHABET PREREQUISITE IS NOT SETTLED BY THIS WINDOW, IN EITHER DIRECTION, AND THE GATE SAYS SO.  The number of distinct sector totals is reported per cap for both maps; it is not extrapolated to a claim of finiteness and not extrapolated to a claim of blow-up.  D57's precedent is the reason for the caution: it pre-registered this prerequisite, published a refutation of it, and the refutation was itself withdrawn in round  (type-only distinct totals by cap (3, 4, 5, 6) = [4, 4, 5, 6]; budget-only distinct totals by cap (3, 4, 5, 6) = [4, 4, 5, 5])
+
+  TYPE-ONLY AGGREGATION (route R1 of D69 §3):
+    cap 3: histories = 521, iterations 4, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 5}
+            trivial-boundary control (iterations 3): {0: 1, 1: 2, 2: 4, 3: 1}   [0.2s]
+    cap 4: histories = 3969, iterations 5, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 10, 4: 6}
+            trivial-boundary control (iterations 4): {0: 1, 1: 2, 2: 6, 3: 5, 4: 1}   [0.7s]
+    cap 5: histories = 30729, iterations 6, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 10, 4: 14, 5: 7}
+            trivial-boundary control (iterations 5): {0: 1, 1: 2, 2: 6, 3: 10, 4: 6, 5: 1}   [5.8s]
+    cap 6: histories = 243769, iterations 7, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 11, 4: 16, 5: 19, 6: 10}
+            trivial-boundary control (iterations 6): {0: 1, 1: 2, 2: 6, 3: 10, 4: 14, 5: 7, 6: 1}   [55.0s]
+
+  BUDGET-ONLY AGGREGATION (route R2 of D69 §3):
+    cap 3: histories = 521, iterations 4, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 5}
+            trivial-boundary control (iterations 3): {0: 1, 1: 2, 2: 4, 3: 1}   [0.2s]
+    cap 4: histories = 3969, iterations 5, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 10, 4: 6}
+            trivial-boundary control (iterations 4): {0: 1, 1: 2, 2: 6, 3: 5, 4: 1}   [0.7s]
+    cap 5: histories = 30729, iterations 6, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 10, 4: 14, 5: 7}
+            trivial-boundary control (iterations 5): {0: 1, 1: 2, 2: 6, 3: 10, 4: 6, 5: 1}   [5.8s]
+    cap 6: histories = 243769, iterations 7, fixpoint classes per depth = {0: 1, 1: 2, 2: 6, 3: 11, 4: 16, 5: 19, 6: 9}
+            trivial-boundary control (iterations 6): {0: 1, 1: 2, 2: 6, 3: 10, 4: 14, 5: 7, 6: 1}   [55.3s]
+
+  THE DECIDER, STATED AS IT IS IMPLEMENTED (D57's round-1 MINOR 6, carried verbatim): for every depth carrying at least three cap values, do the LAST TWO cap values agree?  No other threshold is used anywhere and none is invented.
+    TYPE-ONLY   depth : cap3  cap4  cap5  cap6
+                    0   :  1   1   1   1
+                    1   :  2   2   2   2
+                    2   :  6   6   6   6
+                    3   :  5   10   10   11
+                    4   :  -   6   14   16
+                    5   :  -   -   7   19
+                    6   :  -   -   -   10
+                    (depth, stable-at-last-two-caps) = [(0, True), (1, True), (2, True), (3, False), (4, False)]
+    BUDGET-ONLY   depth : cap3  cap4  cap5  cap6
+                    0   :  1   1   1   1
+                    1   :  2   2   2   2
+                    2   :  6   6   6   6
+                    3   :  5   10   10   11
+                    4   :  -   6   14   16
+                    5   :  -   -   7   19
+                    6   :  -   -   -   9
+                    (depth, stable-at-last-two-caps) = [(0, True), (1, True), (2, True), (3, False), (4, False)]
+    S4 CONTROL, TYPE-ONLY: cap-C-with-signature == cap-(C+1)-with-trivial on every shared depth, C = 3, 4, 5: [True, True, True]
+    S4 CONTROL, BUDGET-ONLY: cap-C-with-signature == cap-(C+1)-with-trivial on every shared depth, C = 3, 4, 5: [True, True, True]
+  [PASS] HZ5-2 D57's S4 TRIVIAL-BOUNDARY CONTROL TRANSFERS TO BOTH COARSER MAPS, so the counts printed above are LOWER BOUNDS on the untruncated fixpoint and any growth reading is the CONSERVATIVE one — exactly as at D57's own granularity.  The signature boundary is worth precisely one extra level of lookahead and both truncations UNDER-refine  (type-only: [True, True, True]; budget-only: [True, True, True])
+
+  S3 SPLIT WITNESS at each cap (D57's S3, the clause the committed first receipt lacked):
+    type-only cap 3: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    type-only cap 4: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    type-only cap 5: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    type-only cap 6: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    budget-only cap 3: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    budget-only cap 4: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    budget-only cap 5: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    budget-only cap 6: first split at iteration 1; witness pair
+        [('d', 'A', 'B', ('v', 'v0')), ('d', 'A', 'B', ('v', 'v0'))]
+        [('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))]
+    type-only DEPTH-3 CREEP: cap5 10 classes -> cap6 11 classes; splitting cap5 class had 84 histories, splits [64, 20]
+    budget-only DEPTH-3 CREEP: cap5 10 classes -> cap6 11 classes; splitting cap5 class had 84 histories, splits [64, 20]
+  [PASS] HZ5-3 THE COARSER AGGREGATIONS DO NOT CLOSE EITHER, AND THE SPLIT IS EXHIBITED RATHER THAN COUNTED.  At both TYPE-ONLY and BUDGET-ONLY the per-depth fixpoint counts fail the last-two-caps decider at every comparable depth, the S4 control says the counts are lower bounds, and a named double-digit depth-3 class splits between cap 5 and cap 6 at each map.  This is outcome HZ5-b: routes R1 and R2 close, at caps 3-6, on two actors, with the counts as lower bounds — the same grade as D57's own verdict and no stronger  (type-only stable at last two caps = False; budget-only = False; depth-3 split witnesses present = True, True)
+
+[t+  518.4s] [HZ6 — CONTROLS AND ANTI-VACUITY]
+  (i) NEGATIVE CONTROL — an instrument that cannot fail is not evidence (D68 F5).  THREE deliberately perturbed weight laws are pushed through the identical pipeline, on the SAME declared window (depth <= 5) as the true law, so every comparison is like-for-like.  All three are synthetic, are declared here, are used NOWHERE else in this receipt, and change no committed number.  ALL THREE ARE REPORTED, including the one that does NOT break contraction — a perturbation the statistic survives is information about the statistic's robustness, not a result to be dropped:
+      NC1  propose weights x3 at even depth, x(1/3) at odd
+      NC2  deliveries FORBIDDEN at even depth, proposals FORBIDDEN at odd depth
+      NC3  idle weight x100 at even depth only
+      (a purely depth-dependent rescaling of ALL weights is invisible to k_r by construction — it cancels in the ratio — so every control below is type-selective as well as depth-selective, which is why it can bite at all.)
+      TRUE law, window depth 5: r=1->2: 3/110 (~2.7273e-02), r=2->3: 3/253 (~1.1858e-02), r=3->4: 373/69230 (~5.3878e-03), r=4->5: 2333/1838829 (~1.2687e-03), r=5->6: 4629/187210517 (~2.4726e-05)
+      NC1 propose x3/x(1/3) by depth parity: r=1->2: 201/4660 (~4.3133e-02), r=2->3: 1402/60347 (~2.3232e-02), r=3->4: 274848/35012975 (~7.8499e-03), r=4->5: 370102/52210119 (~7.0887e-03), r=5->6: 3706517648/1990233037497 (~1.8624e-03)   contracts = True
+      NC2 no deliveries at even depth, no proposals at odd depth: r=1->2: 7/132 (~5.3030e-02), r=2->3: 49/2176 (~2.2518e-02), r=3->4: 4746/329881 (~1.4387e-02), r=4->5: 511/100570 (~5.0810e-03), r=5->6: 24606/3435547 (~7.1622e-03)   contracts = False
+      NC3 idle x100 at even depth only: r=1->2: 1287/54088 (~2.3795e-02), r=2->3: 7575/281336 (~2.6925e-02), r=3->4: 462200903/93492073983 (~4.9437e-03), r=4->5: 3299561466880/529070670442437 (~6.2365e-03), r=5->6: 1322463589786800/47713198178970509741 (~2.7717e-05)   contracts = False
+  [PASS] HZ6-i THE INSTRUMENT CAN FAIL.  On the identical pipeline, the same norm, the same window and the same relative horizons, the true law's family-uniform drift contracts and at least one declared perturbation makes it STOP contracting — so the statistic is not one that returns 'contracting' whatever it is fed, and pin falsifier 1 does NOT fire.  Every perturbed kernel is still proper, so what the control isolates is the contraction and nothing else.  REPORTED IN FULL AND NOT CHERRY-PICKED: which perturbations broke it and which did not are both named, and the survivor is a measured robustness fact about the statistic, not a discarded trial  (true law contracts = True; perturbations that BREAK contraction = ['NC2 no deliveries at even depth, no proposals at odd depth', 'NC3 idle x100 at even depth only']; perturbations the statistic SURVIVES = ['NC1 propose x3/x(1/3) by depth parity']; all perturbed kernels proper = True)
+  (ii) POSITIVE CONTROL — the delivery-free d42a family through THE SAME PIPELINE must reproduce Zhat's known objects.
+      the transfer operator on the 36 sigma states: lambda = 2: ker dim 1, positive generator = True, values {'1': 29, '7/3': 2, '4/3': 5}; lambda = 1: ker dim 1, positive generator = False, values {'5': 17, '1': 2, '-4': 4, '4': 1, '-5': 12}; lambda = 5/2: ker dim 0; lambda = 9/4: ker dim 0
+      G(., r) is a function of sigma alone: distinct (sigma, G) pairs at r = 1, 2, 3 = [36, 32, 28] over 36 states, violations = 0
+      lambda = 2 is used ONLY as an ASYMPTOTIC eigenvalue: it is gated as T f = 2 f exactly, and it is NOT compared with any finite-horizon ratio — the delivery-free finite-horizon ratios printed at HZ0-6 are 2, 257/128, 1037/514, 2101/1037, 68313/33616 and none of them equals 2 (D46b's own relabelling, carried).
+  [PASS] HZ6-ii THE PIPELINE REPRODUCES ZHAT'S KNOWN OBJECTS ON THE DELIVERY-FREE FAMILY.  ker(T - 2I) is ONE-dimensional with a strictly positive generator taking the values {1, 4/3, 7/3} at multiplicities {29, 5, 2} — D49's f = (4,4,3,7,3,3)/3; ker(T - I) is one-dimensional and MIXED-SIGN; ker(T - 5/2 I) and ker(T - 9/4 I) are empty; T f = 2 f holds exactly; and this receipt's own potential G(h, r), the object HZ0-HZ3 measure, is a function of sigma(h) alone on this family with T^r applied to the all-ones vector reproducing it at the root at every horizon. So the horizon pipeline and the corpus's Perron object are the same object where both exist  (states = 36; ker(T-2I) dim 1 positive True values {'1': 29, '7/3': 2, '4/3': 5}; ker(T-I) dim 1 one-signed False; T f = 2 f exactly = True; G factors through sigma with 0 violations; T^r 1 == G(root, r) at r = 1..6 = True  [3.1s])
+  (iii) AST ANTI-VACUITY SCAN over every check() predicate in this file (D57 S5), WITH ITS KNOWN DEFECT NAMED so the scan is not sold as more than it is.
+  [PASS] HZ6-iii NO VACUOUS GATE, AND THE SCANNER'S OWN DEFECT IS NAMED. Every check() predicate in this file is parsed; a predicate is rejected if it is a literal constant, contains a literal boolean, contains an isinstance() type probe, contains a bare name-vs-0 sign comparison, or mentions no name bound anywhere in this file.  The scanner is probed both ways and must flag three synthetic vacuous shapes and pass a substantive one.  **THE CARRIED DEFECT (D46b's own finding, named here so this gate is not oversold): the scan is defeated by HOISTING — a predicate that reads a boolean computed on an earlier line looks substantive to the scanner whatever that line did.**  The scan bounds the shape of a predicate, not its content  (gate predicates parsed = 42; flagged = none; scanner fires on the vacuous probe and passes the substantive one = True (3 of 3 synthetic gates flagged))
+  (iv) DETERMINISM under PYTHONHASHSEED 0/7/999 (D63 W6b).  SCOPE, STATED: three full runs of this receipt would triple a runtime that is printed in its own output and could not be byte-identical for that reason alone, so the gate runs a DETERMINISTIC DIGEST of the pipeline — the layer, the family census, the potentials, the kernels under BOTH terminal conventions, the sector-normalized conditional, the renewal predicate and a type-only refinement — under the three seeds, and requires byte-identical stdout.  It covers the pipeline at cap 3, NOT this receipt's whole stdout, and the wider claim is not made.
+      digest = 521|2|4|257/32|1035/64|31/2|245/8|3919/64|3/110|1/156|1/8|1/12|{0: 1, 1: 2, 2: 6, 3: 5}
+  [PASS] HZ6-iv DETERMINISM under PYTHONHASHSEED 0/7/999: the pipeline digest is byte-identical across the three seeds.  Everything in this receipt is exact-rational, seedless and sorted by repr; the gate exists because dict-built keys sorted by repr are exactly what a hash-seed change perturbs.  SCOPE: the digest, not the whole stdout — said in the label so the gate is not read wider than it is  (seeds [0, 7, 999]; return codes [0, 0, 0]; distinct digests = 1)
+
+[t+  534.6s] [HZ7 — THE WALL CONTROL (diagnostic; changes nothing)]
+  MANDATED LABEL, printed by the gate itself: THE COMMITTED LAYER IS UNCHANGED; NO OTHER NUMBER IN THIS RECEIPT USES THE RESTRICTED ENUMERATOR; ADOPTING IT WOULD BE A DIFFERENT THEORY AND IS NOT PROPOSED.
+      rung | admissible | |holdings(A)| | #delivery-options | weight each | delivery sector total | |menu|
+         1 |       True |             2 |                 1 |         1/4 | 1/4 | 8
+         2 |       True |             3 |                 1 |         1/4 | 1/4 | 8
+         3 |       True |             4 |                 1 |         1/4 | 1/4 | 8
+         4 |       True |             5 |                 1 |         1/4 | 1/4 | 8
+         5 |       True |             6 |                 1 |         1/4 | 1/4 | 8
+         6 |       True |             7 |                 1 |         1/4 | 1/4 | 8
+         7 |       True |             8 |                 1 |         1/4 | 1/4 | 8
+         8 |       True |             9 |                 1 |         1/4 | 1/4 | 8
+         9 |       True |            10 |                 1 |         1/4 | 1/4 | 8
+        10 |       True |            11 |                 1 |         1/4 | 1/4 | 8
+  [PASS] HZ7 THE B1 LADDER DOES NOT SURVIVE THE RESTRICTED ENUMERATOR — DIAGNOSTIC ONLY.  With deliver_options_in_view restricted to non-superseded holdings inside a SEPARATE namespace, the ladder is still admissible at every rung and |holdings(A)| still grows without bound, but the delivery menu collapses to a constant cardinality and the whole menu is constant from rung 2 on.  So the B1 obstruction, as constructed, rests on that one line of the committed layer, and it does NOT harden from 'a fact about one line' to 'a fact about transport' on this evidence.  WHAT THIS DOES NOT SHOW, said in the gate: that any bounded abstraction exists under the restricted enumerator — only that THIS ladder stops being a witness.  The committed layer object is gated to be untouched  (every rung admissible = True; |holdings(A)| = k+1 = True; distinct delivery-option counts over 10 rungs = [1]; distinct menu sizes from rung 2 = [8]; committed enumerator object unchanged = True (committed gives 2 options at the MB5 witness, restricted gives 1))
+
+[t+  534.8s] [HZ8 — DOCTRINE]
+  [PASS] HZ8-a NO INFINITE-VOLUME CLAIM, SCANNED RATHER THAN ASSERTED (D46b MB6, binding; the d46c KG3 pattern).  Every line of this file carrying one of the three needle roots must also carry a POSITIVE scope marker saying in the line itself that the statement is finite-horizon, horizon-scoped, or explicitly withheld.  The scanner is probed both ways: it must flag a synthetic undisclaimed existence assertion and must pass a properly scoped line  (needle lines = 5 of 2650; undisclaimed = none; scanner fires both ways = True)
+  [PASS] HZ8-b THE PIN'S OWN LEXICAL PROHIBITION, ENFORCED ON THIS RECEIPT'S GATE LABELS.  The pin (HZ2) forbids the word rooted at the needle above from appearing in any label unless HZ4 supplies a bound; HZ4 supplied none (HZ4-iv), so the required wording is 'contracts over the computed horizons'.  Every check() label delivered by this run is concatenated and searched.  The gate is therefore conditional on HZ4's actual outcome and not on an assumption about it  (HZ4 bound printed = False; forbidden root present in the 40 gate labels = False)
+  [PASS] HZ8-c NORMALIZATION NAMED AT EVERY USE (D46d BLOCKER B2), CAPS AND POOLS PRINTED, NO SAMPLED ARM.  Three normalizations appear in this receipt and each is named where it is used: the RAW committed weight q (HZ1-c cut masses, HZ4-ii, HZ4-iii), the horizon-completed kernel k^C1_r (HZ1, HZ2, HZ4-ii, HZ4-iv), and the SECTOR-NORMALIZED CONDITIONAL, which is the PINNED object (HZ0-7, HZ2, HZ3).  Absolute completed weights are horizon-bound (D44f) and are carried as context only.  No arm of this receipt is sampled, so the D46d exact/sampled separation is vacuous here by construction and is reported as such rather than claimed as a discipline exercised  (caps: transport 6, pools [6, 4, 3], delivery-free 6, HZ5 (3, 4, 5, 6), negative control 5, renewal window 5; sampled arms = 0)
+
+[t+  534.8s] [THE PRE-REGISTERED OUTCOME — assembled from the computed predicates above, never asserted]
+  THE PIN'S HZ-I HAS THREE CLAUSES AND EACH IS EVALUATED SEPARATELY, because the receipt found a fourth thing the pin did not pre-register and must not be silently folded into one of them.  HZ-I fires iff: (a) 'the family-uniform drift stops contracting at reachable r', OR (b) 'contracts at the root while failing family-wide', OR (c) 'fails at wider pools'.
+      (a) family-uniform sequences stop contracting = False
+      (b) root contracts while the family fails = False
+      (c) a wider pool's off-root rows fail          = True
+      => HZ-I fires = True
+      NOT A PIN CLAUSE, and delivered separately at HZ2-d: the root's ABSOLUTE row fails while every off-root row contracts = True.  This is the MIRROR IMAGE of clause (b) and the pin did not pre-register it in either direction; it is reported as its own outcome and is NOT counted as HZ-I.
+
+  [OUTCOME HZ-I] THE HORIZON-LIMIT ROUTE, AT THE DECLARED CAPS.  properness holds family-wide out to relative horizon 7 (D46b had r = 1, 2) and the chained kernel is cut-additive at every cut while the raw weight is not (raw cut masses 2, 4, 257/32, 1035/64, ...), so HZ-IV does NOT fire. the drift CONTRACTS OVER THE COMPUTED HORIZONS at every fixed OFF-ROOT history depth, in all five norms, over a family of 243769 histories, and every family-uniform row contracts too; but the ROOT's ABSOLUTE row does NOT — it falls through D46b's five steps and RISES at the sixth, which is the mirror image of the pin's falsifier 2 and is delivered as its own outcome, BUT IT DOES NOT CONTRACT AT THE WIDEST POOL: 4 actors (A,B,C,D) at depth L = 1 in L-inf (abs kernel), cap 3, 2 terms, rises by 1375/738369 (~0.19%); 4 actors (A,B,C,D) at depth L = 1 in L1 (abs kernel), cap 3, 2 terms, rises by 19/621 (~3.06%); 4 actors (A,B,C,D) at depth L = 1 in sector-L-inf, cap 3, 2 terms, rises by 1207/8073 (~14.95%) — the only off-root rows that fail at any pool, and the rise is an order of magnitude larger in sector-L-infinity than in L-infinity, so quoting one norm would have understated it.  That is the pin's HZ-I clause (c) and its falsifier 4, pre-registered before the run and not re-adjudicated after it; the countervailing fact, printed in the matched-cell table and not merged into this one, is that the drift MAGNITUDE falls with actor pool in every matched cell, so the wider pools have a smaller drift that has stopped moving rather than a larger one that is growing — but the sup is WINDOW-DEPENDENT and grows on the deeper family at r = [4], so D46b's committed four-term sequence is a lower bound on the deeper family's sup.  the two declared terminal conventions separate at EVERY history in the absolute kernel and NOWHERE at the root in the pinned conditional, and the off-root separation SHRINKS in r at every fixed depth (family-wide absolute sup 7/200, 559/16776, 29255/822216, 2961977/209925813, 3661577684/264275174689, 17559949068/19979274742577; family-wide conditional sup 1/8, 1/12, 487/7790, 7443521/132068175, 109092211/2569013838, 0), so horn (I) does NOT fire as a non-shrinking separation and HZ-II is not the outcome.  HZ4 exhibited NO BOUND, and showed that none is available by this argument: holdings never shrink, so the menu-exact renewal class is left once and never re-entered, the never-regenerating set carries 0.7705 of the horizon-completed mass at depth 5, and the N-step renewal-hitting probability is EXACTLY zero for every history past the first creation event.  The regenerative proof engine (D69 route R5) is CLOSED as a route to this unit's bound, not merely unfired, the licence question is moot at this outcome.
+
+  [OUTCOME HZ5-b] THE AGGREGATION ARM, independent of everything above.  BOTH coarser aggregations FAIL D57's last-two-caps decider at every comparable depth, with the S4 trivial-boundary control transferring to both maps so the counts are LOWER BOUNDS and the negative is the conservative reading, and with a depth-3 class exhibited splitting between cap 5 and cap 6 at each map.  So the aggregation wall extends from D57's (actor, type) granularity to the two coarsest maps the corpus had named, and D69's routes R1 and R2 close at D57's grade.  The finite-alphabet prerequisite was gated FIRST and SEPARATELY and is left [OPEN] in both directions, as D69 §6 requires of any citation of it.
+
+[SUMMARY] 41 PASS / 1 FAIL   (4 delivered outcomes)   wall clock 534.8s
+[RUNTIME] family builds dominate: two-actor depth 6 206.1s, delivery-free depth 6 11.7s; total 534.8s.  Nothing was cut: every arm the pin declares ran, including HZ5, which the pin allowed to be dropped.
+
+[VERDICT] D70 GREEN-UNREVIEWED, outcome HZ-I + HZ5-b.  Every clause below is built from a gated quantity above and cannot contradict it.  PROPERNESS: properness holds family-wide out to relative horizon 7 (D46b had r = 1, 2) and the chained kernel is cut-additive at every cut while the raw weight is not (raw cut masses 2, 4, 257/32, 1035/64, ...), so HZ-IV does NOT fire.  THE CAUCHY TABLE: the drift CONTRACTS OVER THE COMPUTED HORIZONS at every fixed OFF-ROOT history depth, in all five norms, over a family of 243769 histories, and every family-uniform row contracts too; but the ROOT's ABSOLUTE row does NOT — it falls through D46b's five steps and RISES at the sixth, which is the mirror image of the pin's falsifier 2 and is delivered as its own outcome, BUT IT DOES NOT CONTRACT AT THE WIDEST POOL: 4 actors (A,B,C,D) at depth L = 1 in L-inf (abs kernel), cap 3, 2 terms, rises by 1375/738369 (~0.19%); 4 actors (A,B,C,D) at depth L = 1 in L1 (abs kernel), cap 3, 2 terms, rises by 19/621 (~3.06%); 4 actors (A,B,C,D) at depth L = 1 in sector-L-inf, cap 3, 2 terms, rises by 1207/8073 (~14.95%) — the only off-root rows that fail at any pool, and the rise is an order of magnitude larger in sector-L-infinity than in L-infinity, so quoting one norm would have understated it.  That is the pin's HZ-I clause (c) and its falsifier 4, pre-registered before the run and not re-adjudicated after it; the countervailing fact, printed in the matched-cell table and not merged into this one, is that the drift MAGNITUDE falls with actor pool in every matched cell, so the wider pools have a smaller drift that has stopped moving rather than a larger one that is growing; and the sup is WINDOW-DEPENDENT and grows on the deeper family at r = [4], so D46b's committed four-term sequence is a lower bound on the deeper family's sup.  THE HORN: the two declared terminal conventions separate at EVERY history in the absolute kernel and NOWHERE at the root in the pinned conditional, and the off-root separation SHRINKS in r at every fixed depth (family-wide absolute sup 7/200, 559/16776, 29255/822216, 2961977/209925813, 3661577684/264275174689, 17559949068/19979274742577; family-wide conditional sup 1/8, 1/12, 487/7790, 7443521/132068175, 109092211/2569013838, 0), so horn (I) does NOT fire as a non-shrinking separation and HZ-II is not the outcome.  THE LEMMA SLOT: HZ4 exhibited NO BOUND, and showed that none is available by this argument: holdings never shrink, so the menu-exact renewal class is left once and never re-entered, the never-regenerating set carries 0.7705 of the horizon-completed mass at depth 5, and the N-step renewal-hitting probability is EXACTLY zero for every history past the first creation event.  The regenerative proof engine (D69 route R5) is CLOSED as a route to this unit's bound, not merely unfired — the licence question is moot at this outcome.  THE AGGREGATION ARM: BOTH coarser aggregations FAIL D57's last-two-caps decider at every comparable depth, with the S4 trivial-boundary control transferring to both maps so the counts are LOWER BOUNDS and the negative is the conservative reading, and with a depth-3 class exhibited splitting between cap 5 and cap 6 at each map.  So the aggregation wall extends from D57's (actor, type) granularity to the two coarsest maps the corpus had named, and D69's routes R1 and R2 close at D57's grade.  CONTROLS: the instrument can fail: on the same window the perturbed law does NOT contract while the true law does; the delivery-free positive control reproduces ker(T - 2I) as one positive ray with values {'1': 29, '7/3': 2, '4/3': 5} and T f = 2 f exactly, lambda = 2 used only as an asymptotic eigenvalue; the anti-vacuity scan flagged 0 of 42 gate predicates, with its hoisting defect named; the pipeline digest is byte-identical under PYTHONHASHSEED (0, 7, 999) across 1 distinct value(s).  THE WALL CONTROL (diagnostic, changes nothing): the B1 ladder does NOT survive the restricted enumerator, so the obstruction as constructed rests on that one line of the committed layer — the committed layer is unchanged, no other number here uses the restricted enumerator, and adopting it would be a different theory and is not proposed.  SCOPE: transport scope, the declared families and caps only; no infinite-volume claim (scan-exempt: needle literal) under any outcome; no dimension, typicality or quantum-layer claim; the missing map is untouched.

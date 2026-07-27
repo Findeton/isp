@@ -11476,3 +11476,56 @@ paper 18.**  Next pinnable unit named: lift the odd-channel form —
 test the parity-class-as-Phi(O) identification against the v7
 survivor, with the unistochasticity question (is the click-law
 kernel Gamma(U) for some U?) as its companion arm.
+
+## 2026-07-27 — D70 DELIVERED (GREEN-UNREVIEWED): HZ-I ON ONE ROW AT
+## THE WIDEST POOL; THE HORN IS OBJECT-DEPENDENT; THE RENEWAL ENGINE
+## CLOSED; BOTH AGGREGATION ROUTES CLOSED; A D46b REVERSAL (LEDGER #484)
+Deliverables: note-d70-horizon-limit-result.md,
+code/d70_horizon_limit_exact.py (41 PASS / 1 FAIL — the FAIL is the
+pre-registered falsifier-4 row; exit 0, ~550 s), data/.out.  Opus 5
+worker against the frozen pin (#482).  RERUN BY ME: byte-identical
+modulo timings.  **THE MEASURE CAMPAIGN'S OPENING VERDICT, in five
+parts:** (1) PROPERNESS holds family-wide to r = 7 (243,769
+histories, 0 violations; D46b had r = 1,2), the chained kernel
+cut-additive at every cut — HZ-IV dead.  (2) THE CAUCHY TABLE
+contracts at every off-root depth in all five norms at 2 and 3
+actors — but **HZ-I FIRED on its clause (c): the FOUR-ACTOR depth-1
+absolute row RISES between its only two reachable horizons (+0.19%
+L-inf / +3.06% L1 / +14.95% sector-L-inf — one norm alone would have
+understated it)**; countervailing and printed: drift MAGNITUDE falls
+with pool in every matched cell.  The cheapest re-grader is named:
+4-actor depth 4 (~318k histories) decides saturation-vs-wall.
+(3) **THE HORN IS OBJECT-DEPENDENT (unregistered outcome): the two
+terminal conventions separate at EVERY history in the ABSOLUTE
+kernel and NOWHERE at the root in the PINNED sector conditional
+(exactly 0 at every horizon), with off-root separation shrinking to
+0 at r = 6** — D44f's doctrine (absolute weights horizon-bound;
+conditionals the physical object) now measured at transport scope;
+quoting one object would have decided the horn by choice of
+statistic.  (4) **HZ4: NO BOUND, AND NONE AVAILABLE BY THIS ROUTE —
+holdings NEVER SHRINK (0 shrinking transitions, exhaustive), the
+menu-exact renewal class is left once and never re-entered, the
+never-regenerating set carries 0.7705 of horizon-completed mass at
+depth 5, N-step return probability EXACTLY 0 past the first
+creation.  D69 route R5 (regenerative) is CLOSED as a proof engine.**
+The literal D62-R4 port is necessary-not-sufficient at transport
+(1,365/5,161), the gap = the delivery enumerator reading superseded
+holdings (the same line HZ7's diagnostic isolates: the B1 ladder
+does NOT survive the restricted enumerator — committed layer
+unchanged, adopting it would be a different theory).  (5) **HZ5:
+ROUTES R1 AND R2 CLOSE at D57's grade** — type-only and budget-only
+both fail the last-two-caps decider at every comparable depth,
+S4-controlled (counts lower bounds), split witnesses exhibited;
+finite-alphabet [OPEN] both ways.  **UNREGISTERED FINDING (a
+forward correction for terminal D46b): MB3-e's "root drift contracts
+monotonically to r = 6" is FALSE at r = 7 — the ABSOLUTE root
+sequence reverses (ratio 7.5091 at the sixth step); the PINNED
+object stays exactly 0 throughout, so nothing physical moves; the
+correction lands with this unit's round.**  New window facts: the
+committed D46b sup sequence is a LOWER BOUND on the deeper family
+(x1.92 at r = 4); G_7 = 2168717/16384.  Controls: perturbed law
+breaks contraction (2 of 3 declared perturbations; the survivor
+reported); Zhat positive control exact; 0/42 anti-vacuity;
+determinism 3 seeds.  GREEN-UNREVIEWED: hostile round dispatched
+(primary targets: the 4-actor row's meaning, the object-dependence
+framing, the renewal-closure proof, the D46b reversal's scope).
