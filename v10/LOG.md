@@ -11163,3 +11163,20 @@ ambiguous exhibit label, and a three-place accuracy fix (D66's
 motivations: width discharged, gluing negative, measure UNBRIDGED).
 Zero asserting hits for the withdrawn sentences; tables
 machine-checked; numbering contiguous.
+
+## 2026-07-27 — D67 PINNED: THE k = 4 DOUBLE GRID — sprinkling-grade
+## width, or the reason why not (LEDGER #474)
+Pin FROZEN before any receipt: note-d67-k4-double-grid-pin.md.  The
+book's #1 ranked question: DOUBLE-GRID(4,R) bounds at k² = 16 —
+INSIDE the genuine sprinkling range 10-17 for the first time.  Gates
+K0-K6 (anchors incl. the committed (3,R) rows exact; C1 forcedness
+with the 4-proposer supply risk named; atlas both depths; THE WIDTH
+VERDICT against 10-17 with D66-round witness standards; the band
+question at k = 4's thinner conflict budget <= 1/5; the coboundary
+battery riding along; determinism).  Outcomes K-I (refuses to
+force) / K-II (width stalls below 10 — the unfilled-successor census
+is the finding) / K-III (SPRINKLING-GRADE WIDTH FROM PURE
+INTERACTION).  NO lean on width (schedule choice dominates — D66's
+lesson); honest lean on the band (the budget bound thins conflicts
+as k grows, so uniformity should get harder; the frontier is the
+result if so).  Worker dispatched.
