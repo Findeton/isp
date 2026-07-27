@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #491** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #495** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -243,6 +243,36 @@ observes it:
   class is **label**-holonomy: its construction touches the weights
   nowhere and free relabelling trivialises it.  It is not a candidate for
   `Φ(O)` and may not be cited as one (§B2.12).
+- **"the reversal-even channel is empty"** (in any dress: *"the transport
+  holonomy is the mirror image of v7's amplitude"*; *"the modulus sits in
+  the odd channel and the even channel is silent"*) — the sentence was
+  drawn **entirely from `log r`**, where "no even part" is the tautology
+  that reversal inverts `r` by definition.  On the carrier itself the even
+  channel is **not** empty: the substrate-supplied invariant `J` is
+  reversal-even, non-constant, and equals 1 exactly on flat squares and 0
+  exactly on curved ones (§B2.12(iv)).  The quotable sentence is *the
+  SCALAR odd (`U(1)`) sector is empty; the reversal-even channel carries a
+  non-trivial invariant that locates the curvature.*
+- **"the transport defect's second half is something no quotient graph can
+  carry"** (in any dress: *"the corpus has no object for it"*) — false on
+  its own page: the `MULT` rung closes **88 of 88**, including all 44 of
+  the half the menu quotient cannot see, and `MULT` is a perfectly good
+  quotient graph.  What it loses is **descent** (8 multi-valued labelled
+  edges).  The true and sharper sentence is *the descent-obstruction half
+  is closable only by quotients on which the connection is not well
+  defined* — and the qualifier "descent" is load-bearing everywhere it
+  appears.  D65 §3.1's repair cone computes the same criterion under a
+  different functor, so "no formalism" must read *no formalism at
+  transport scope, and none that quantifies over quotients* (§B2.12(iv)).
+- **"the phase's last address is the odd sector of the curved transport
+  loops"** — that address has been probed and is **empty**: a
+  positive-rational holonomy's only possible unimodular content is `−1`
+  and it is realised nowhere, and the honest order-dual carrier admits
+  **0 of 304** reversed linear extensions.  The scalar phase is now
+  **0-for-5** at the grammar's native addresses.  The one address never
+  probed is different and must be named exactly: *the record category's
+  own reversal structure — `D71b`'s unlabeled record order under poset
+  reversal — at **transport** scope* (§B2.12(iv), §D1).
 
 ---
 
@@ -328,7 +358,12 @@ destination that follows.)*
     would need is exhibited nowhere in this line at all, every loop the
     theory owns returning a positive real number — though probability
     transport, flat at closed scope as a theorem, turns out to be
-    **curved** where the geometry lives; and the measure itself, attacked from what the
+    **curved** where the geometry lives, and that curvature is now
+    characterised: genuine, **irremovable**, its group the full
+    three-smooth positive rationals `⟨2,3⟩` at four independent evidence
+    pools, and its geography tracked exactly by a reversal-**even**
+    invariant that is 1 wherever the loops close and 0 wherever they do
+    not; and the measure itself, attacked from what the
     walls left standing, turns out to have a **surviving route** — the
     law's own finite-horizon kernels are proper out to a horizon of seven,
     their drift contracts at every pool and depth measured including a
@@ -354,9 +389,15 @@ destination that follows.)*
     tensor programme still starts at zero — and the phase, which is what
     would complete a metric rather than merely decorate it, is not missing
     from the corpus but was found three version lines ago, receipted, and
-    shelved, so that the live question is now whether the **curvature just
-    measured in probability transport** carries an imaginary part or is
-    only a positive number wearing a loop (PART D).
+    shelved, while **the grammar as built is a classical, curved,
+    probabilistic theory**: real irremovable curvature in its probability
+    transport, a measure route waiting on one bound, geometry at
+    sprinkling grade — and **no scalar phase at any of its five native
+    addresses**, so that the live question is no longer *where is the
+    phase* but a **fork about what the theory is**: one unprobed door (the
+    record category's own reversal structure at transport scope) and, if
+    that is empty, the imaginary unit as an added **axiom** on record-odd
+    structure, with everything else derived (PART D).
 
 ---
 
@@ -382,8 +423,9 @@ destination that follows.)*
   segments of the map between them — the descent defect, and the quantum
   layer the law turns out to admit and the first dynamical demand takes
   away; and **the phase** — the imaginary exponential the corpus found,
-  receipted and shelved three version lines ago, and the measurement that
-  says where it can still be.
+  receipted and shelved three version lines ago, the curvature of
+  probability transport that was hunted in its place and turned out to be
+  real, irremovable and three-smooth, and the fork the search leaves.
 - **A3. Relativity without a global now** — cuts, slicings, gauge;
   views that lag; delivery as a two-way join; why every law here must
   be slicing-independent.
@@ -436,9 +478,13 @@ destination that follows.)*
   permitted everywhere, priced nowhere, and emptied by the first
   dynamical demand; and **the phase segment** — the shelved amplitude
   form `A(R) ~ e^{−K(E)}e^{iΦ(O)}`, the holonomy identity the corpus
-  proved in two halves that never met, and the weld's measured verdict:
-  closed scope flat as a theorem, transport scope **curved**, and no
-  `U(1)` part anywhere yet.
+  proved in two halves that never met, the weld's measured verdict —
+  closed scope flat as a theorem, transport scope **curved** — and the
+  curvature characterised: its carrier the coarsest descent quotient, its
+  removability a threshold at `μ`-descent, its group `⟨2,3⟩`, its census
+  split into curvature and descent-obstruction halves, its scalar odd
+  sector empty on the honest carrier, and its reversal-**even** channel
+  carrying `J`.
 - **B3. Cuts, foliations, views, transport** — canonical classes; the
   own-view lag with its census; the monotonicity failure; the join-view
   lattice; the two-way join.
@@ -511,7 +557,10 @@ destination that follows.)*
 
 ### PART D — THE DESTINATION
 - **D1** The destination, stated — full Einsteinian manifolds enriched to
-  create quantum particles; why the sprinkling target was withdrawn.
+  create quantum particles; why the sprinkling target was withdrawn; the
+  working hypothesis (modulus builds space, phase completes and legislates
+  it) with its honest state — **and THE FORK**: one unprobed door, and
+  otherwise the imaginary unit as an added axiom.
 - **D1b** The **scale doctrine** `[BINDING]` — no fixture-scale object is a
   particle; units certify scale-invariant mechanisms, not objects; its
   convergence with the free-web theorem.
@@ -523,7 +572,8 @@ destination that follows.)*
   webs).
 - **D3** Particle creation, and one labelled speculation — the
   boundary-freedom <-> vacuum-ambiguity resemblance, costed and marked.
-- **D4** What the destination changes about the open problems.
+- **D4** What the destination changes about the open problems — re-ranked,
+  with the fork at the head and the era's empirical close behind it.
 - **D5** The destination in one paragraph.
 
 ### BACK MATTER
@@ -1114,8 +1164,10 @@ entirely; or under a **different fair dynamical demand**, since exactly
 one was tried and its uniqueness was not established.  That last is the
 cheapest to attack and nobody has attacked it.  The first is no longer
 just a name: §A2.9 shows that transport scope is precisely where the
-theory's probability transport stops being trivial, which is the only
-place a phase could attach.
+theory's probability transport stops being trivial — though it also shows
+that what is there is a **real** curvature and not a phase, so transport
+scope is where superposition would have to attach and **not** a place it
+has been found.
 
 **And the phase story, where the easy sentence is false.**  It is very
 tempting to say that a record measure of this shape simply cannot see a
@@ -1155,7 +1207,7 @@ interference stops being positive when its imaginary part is doubled.
 
 ---
 
-### A2.9 The phase: found, shelved, and hunted again
+### A2.9 The phase: found, shelved, hunted — and the fork the hunt leaves
 
 Everything in §A2.8 was about *whether* interference could sit over this
 law.  This section is about the thing interference is made of — a **phase**,
@@ -1261,21 +1313,148 @@ literally the same map.  The *holonomy* half dies where it was looked for
 That last sentence is the honest state of the phase question, and it is
 sharper than "we do not know".  The founding slogan is refuted *in the
 direction the pre-registered falsifier named*: transport does have a
-holonomy; it simply is not a phase, yet.  And the transport holonomy is
+holonomy; it simply is not a phase.  And the transport holonomy is
 **not** the already-known defect wearing new clothes — two of its four
-values lie outside that defect's group entirely, which is the first
-evidence in the corpus that it might be a genuinely new object.
+values lie outside that defect's group entirely, and turning the raw
+weights into probabilities, which is what produces the known defect, moves
+these loops **not at all**.
 
-**Where that leaves the imaginary exponential.**  It has exactly one known
-address left, and the address is specific rather than atmospheric: the
-**odd sector of the curved transport loops**.  The even part of a record
-is where the real shrinking lives; the odd part is where a phase would
-have to live if there is one; and transport loops are now the only place
-in the theory where anything at all fails to come back unchanged.
-Characterising that holonomy — what carries it, what group it lives in,
-whether it is removable by relabelling, and whether its odd sector has an
-imaginary part — is the next unit, and it is the hinge of everything in
-Part D.
+#### What the curvature actually is
+
+That was the point at which the obvious next question became the whole
+programme's hinge, and it has now been answered: *what is this thing?*
+Five answers, in the order the work took them.
+
+**Where it lives.**  A loop's value depends on a history, and the natural
+move is to ask how much of the history you may forget before the value
+stops making sense.  There is a coarsest possible answer, and it is
+exactly the **menu** — what could have happened next.  Forget everything
+except the menu and the loop value is still well defined; forget one step
+more and it is not.  On that coarsest carrier the offending loops become
+**self-loops**: a path that starts and ends at the same place and comes
+back multiplied by a half.  There is no relabelling, of any kind, that
+removes a self-loop's value — so this curvature is not an artefact of how
+the theory is written.  **It is real.**
+
+**Why the theory's own instrument could not see it, explained rather than
+restated.**  Removability turns out not to be a yes/no question at all but
+a **threshold**, and where the threshold sits is the interesting part.  Go
+fine enough and the twist is always removable — trivially so, because the
+removing gauge is the weight itself.  Go coarse and it is not.  The
+crossing point is *exactly* the record: the record is the coarsest way of
+forgetting that still keeps the weight single-valued, and keeping the
+weight single-valued is precisely what forces a defective loop to fail to
+close.  **The instrument is blind because it is fine enough to be flat.**
+One step coarser, and the curvature appears.  That is a structural
+explanation of a blindness the previous unit could only report.
+
+**What group it lives in.**  The values are ratios, and the group they
+generate — computed as a lattice of prime exponents, not read off four
+numbers by eye — is the group of all positive rationals built from **two
+and three**: free abelian of rank two, the full three-smooth group, with
+nothing else in it.  It is not the group of the corpus's known repairable
+defect.  And it does not move.  It is the same at two actors, three
+actors and — the one genuinely independent replication, supplied by the
+review — at **four**, on a pool that shares no loop with any other and has
+menus of its own.  The number of defective loops runs from eighty-eight to
+tens of thousands across ten scopes, some twenty-seven thousand in all;
+**no new prime ever appears.**
+
+**And half of it is not curvature at all.**  Some defective loops fail to
+close for a second and different reason: their two orders leave the world
+in states whose *menus disagree*, so no amount of forgetting can ever
+identify them.  Those loops are not carried by any connection; they are an
+obstruction to the forgetting itself.  At the anchor window the split is
+forty-four and forty-four, though the proportion swings wildly from window
+to window and the even split is a coincidence, not a fact.  The
+qualification that matters is that "cannot be identified" means *cannot be
+identified by any quotient the connection survives*: there **are** coarser
+descriptions that close all eighty-eight, and they close them by breaking
+the connection.  Four weaker senses of "survives" were tried, including
+the one this line's own earlier unit would have preferred, and none of
+them closes a single one of the forty-four.  **No formalism in the corpus
+handles that second kind at this scope**, and naming it is one of the
+unit's two structural results.
+
+**And then the search for the phase, run honestly, on the object that
+actually exists.**  Two things had to be fixed before the answer counted.
+The first is cheap and decisive: every weight in the theory is a positive
+rational, so every loop value is; and the only positive rational on the
+unit circle is one.  A phase hiding in these numbers could only ever have
+been a **minus sign**, and there is no minus sign anywhere.  The second is
+the reversal test done properly.  Reversing a loop inverts its value —
+that is an identity, not a measurement, and it can never fail, so it is
+evidence of nothing.  What *is* a measurement is whether the reversed
+histories exist at all, and rebuilt honestly — every one of the three
+hundred and four ways of laying out the reversed orders — **not one is a
+legal history.**  Crucially, that is not because the theory forbids
+running things backwards: most of its histories reverse perfectly well,
+two thousand of three thousand.  **The block is specific to the curved
+loops.**  So the phase is absent here, and absent for a reason sharper
+than any count could give.
+
+> **The even channel is not silent, and this is the round's discovery.**
+> Ask of each loop the plainest question available: *do both of its
+> endpoints reverse into legal histories?*  That question does not care
+> which order you ask it in, so it is an **even** quantity — the channel
+> where the theory keeps its real magnitudes, and the channel the first
+> pass had declared empty on the strength of a tautology.  It is not
+> empty.  The answer is **yes on eight thousand six hundred loops, every
+> single one of which closes**, and **no on all one thousand and sixty
+> that do not**.  Not one exception, on any window run.  The even channel
+> does not carry a phase; it carries a **map of where the curvature is**.
+
+That invariant is not a restatement of the geometric fact already known
+(that defective loops share an actor's register): hundreds of loops share
+a register and still close, and hundreds that share nothing still answer
+no.  It is measured on three windows and is explicitly *not* a theorem —
+whether it survives deeper and wider is the successor's first line.
+
+#### The era's close, and the fork
+
+Put together, that is the honest present thesis of this book:
+
+> **The grammar as built is a classical, curved, probabilistic theory.**
+> It has real curvature — irremovable, made of twos and threes, and
+> mapped by an even-channel invariant.  It has a measure route that
+> contracts everywhere it has been measured and waits on a single bound.
+> It has geometry at the grade of genuine sprinkled spacetime.  And it has
+> **no scalar phase at any address of its own**: not in the translations
+> between charts, not in closed-scope loops, not in the functional slot
+> above the law, and not in the transport loops — on either of the two
+> carriers those loops admit.  Five addresses, five negatives.
+
+The founding question therefore has its earned answer *for this grammar*,
+and the answer is not the one the question hoped for: **the holonomy of
+probability transport exists, and it is real-valued; the interference is
+not in it.**
+
+Which leaves a fork, and the fork is a decision about what the theory
+**is** rather than another measurement to take.
+
+- **The last door.**  Exactly one address was never probed, and it is
+  specific: the reversal structure of the **record category itself** —
+  records as order-types, reversed as posets — at the scope where the
+  curvature lives.  Every reversal test so far ran on *sequences*.  This
+  one runs on the objects the theory actually claims are physical, and it
+  is one cheap unit.
+- **The enrichment.**  If that door is empty, the remaining move is to
+  stop hunting and **add** the imaginary unit as an axiom, attached to
+  record-odd structure and transverse to commit order — and the constraint
+  set it must satisfy is no longer guesswork.  It must leave the flatness
+  theorem alone; it must leave the measure alone; it must reproduce the
+  dual-conjugation law the earlier corpus receipted — which it does
+  automatically, so that is a consistency check and not evidence; it must
+  respect the even channel; and it must respect the invariant that maps
+  the curvature.  Five conditions, every one of them measured rather than
+  imagined, and every one of them earned by a negative above.
+
+**And the second branch is not a defeat.**  A theory whose entire
+classical content — grammar, weights, geometry, curvature, measure — is
+generated, and which needs exactly **one** imaginary axiom to become
+quantum, with everything else derived, is a result and would be the
+programme's cleanest statement of what it has.  Which branch is taken is a
+decision for the author, not for a receipt.
 
 **Three working assumptions died on the way here, and they are worth
 carrying.**  The non-zero class the width road found in odd rings is
@@ -1291,14 +1470,26 @@ holonomy vanishes identically **along the one-dimensional path of
 commitment**, so any phase this theory ever carries must live *transverse*
 to the order in which things are committed.
 
+**And a fourth is the kind of thing this book keeps a graveyard for.**
+The most attractive candidate for an orientation — the theory's own way of
+saying which of two events "should" come second — makes every defective
+loop shrink rather than grow, on both of the windows the characterisation
+started from.  It is a beautiful fact and it is **false one depth further
+out**, where eight loops grow, and further out still, where three hundred
+and forty-four do.  Nothing but the habit of extending your own table
+before publishing it stands between that fact and a false headline.
+
 > **What this section does NOT claim.**  That the generated law is
 > complex, or has an amplitude, or carries interference.  It does not.
 > That the shelved form is correct — it is an unlifted result of an
 > earlier version line, and this book cites it as archaeology.  That the
 > transport curvature is a phase — it is measured, exhaustively, to be a
-> positive real number.  And that any of this reaches the identified law:
-> it is the same missing map as everywhere else in this chapter, measured
-> from one side only.
+> positive real number.  That the even-channel invariant is a theorem —
+> it holds without exception on the three windows it was run on and on no
+> others, and *why* it holds is unexplained.  That the fork has been
+> decided — it has not, and it is not a receipt's to decide.  And that any
+> of this reaches the identified law: it is the same missing map as
+> everywhere else in this chapter, measured from one side only.
 
 ---
 
@@ -1498,8 +1689,8 @@ is not a lucky measurement: it is a **theorem** at this scope, proved in
 six steps, and §A2.9 gives them.  But it is a theorem about *this*
 grammar, and half of it holds because two of the law's four budgets happen
 to be the same quarter.  **Once messages are allowed, the top row stops
-being zero**: eighty-eight loops come back changed, and the whole of §A2.9
-is about what that means.  And the middle row's failures are not noise —
+being zero**: eighty-eight loops come back changed, irremovably, and the
+whole of §A2.9 is about what that means.  And the middle row's failures are not noise —
 they are exactly the ratio of two menu totals, which is the same
 repairable defect §A2.7 measures from the other side.
 
@@ -3734,8 +3925,10 @@ the closed-scope statement itself, now upgraded from measurement to
 **theorem** with its scope clause attached, and the pre-registered
 falsifier's own verdict.  **And the replacement is the better result:**
 transport scope is **curved**, the curvature is delivery-borne, and two of
-its four values sit outside the already-known defect's group, which makes
-it a candidate new object rather than a re-run.  This is the graveyard's
+its four values sit outside the already-known defect's group — a genuinely
+new object, and the characterisation since done confirms it, since
+turning the weights into probabilities moves those loops not at all and
+nothing removes them.  This is the graveyard's
 clearest case of a sentence being *too wide* rather than wrong — and of a
 round returning a theorem and a discovery in exchange for a headline.
 
@@ -3771,6 +3964,40 @@ rank-2 response, and the corrected verdict that it is nonetheless a
 **covariance and not a metric**.  *The lesson this entry contributes to
 §A10.16:* **anchor on a paper's own selection, not on the tables it prints
 before falsifying them** — and measure your control before you cite it.
+
+### A10.14f "The even channel is empty — the mirror image of v7"
+
+*Claimed:* that the curvature of probability transport is the exact
+reverse of the amplitude form the earlier corpus had shelved.  That form
+puts the real shrinking in the part of a record unchanged by reversal and
+the phase in the part that flips sign; the transport object, it was said,
+does the opposite — all of its content in the flipping part, **nothing at
+all** in the unchanging part.  It was the most quotable sentence the
+characterisation produced.
+*Killed by:* the reviewer noticing that the sentence had been read off a
+quantity for which it is a **tautology**.  Reversing a loop inverts its
+value; that is what "reverse" means for a ratio, and it is true on every
+grammar, at every depth, forever.  A logarithm of something that inverts
+has no unchanging part by definition.  So the claim was a fact about
+notation wearing the clothes of a fact about the world — and the world,
+asked directly, disagrees.  Out of raw material the unit's own arm had
+computed and never looked at, the reviewer built an unchanging-part
+question — *do both ends of this loop reverse into legal histories?* — and
+it is not constant: **yes on eight thousand six hundred loops, all of
+which close; no on all one thousand and sixty that do not**, across three
+windows without an exception.
+*Survived:* the negative it was decorating, and at greater strength.  The
+*scalar* phase — the thing a circle of unit-length numbers would be — is
+genuinely absent, and now for a reason that fits on one line rather than
+resting on a count: every weight in the theory is a positive rational, so
+the only unit-length value available is minus one, and it occurs nowhere.
+**And the replacement is the better object:** the unchanging channel does
+not carry a phase, it carries a **map of where the curvature is** — which
+is exactly the kind of structure the search had been failing to find in
+the other channel.  *The lesson this entry contributes to §A10.16:* **a
+true conclusion reached through a test that cannot fail is still a
+defect** — the conclusion has to be re-derived from something that could
+have come out otherwise, and when it is, it usually comes out sharper.
 
 ### A10.15 Smaller retirements, for completeness
 
@@ -3849,13 +4076,15 @@ record** attached; the next killed a *negative* — a limit the unit had
 announced — and left the strongest geometry statement the programme has;
 the next inverted **both** of a unit's headline sentences and returned, in
 their place, the sharpest fact the programme owns about its own quantum
-layer *and* the sharpest open question it now has; and the three most
+layer *and* the sharpest open question it now has; and the four most
 recent went further still — one ran the deciding computation the unit had
 named, priced and declined, and turned a published negative into the
 measure route's positive; one **closed a proof the unit had only
 sketched** and, in the same pass, discovered the curvature that unit's
-headline had denied; and one found a whole unit anchored on a fixture its
-own source paper had already falsified.  **Being wrong in the pessimistic
+headline had denied; one found a whole unit anchored on a fixture its
+own source paper had already falsified; and one built, out of numbers the
+unit had computed and then not looked at, the invariant that refuted the
+unit's most quotable sentence.  **Being wrong in the pessimistic
 direction is a failure mode too, and this list now contains both kinds.**
 
 **A third kind, worth naming separately: a convention wearing the clothes
@@ -3865,24 +4094,45 @@ being studied.  The check that catches that failure is not another
 control; it is going back to the source the demand was quoted from and
 writing the demand as it is actually stated.
 
-**And a fourth, which the most recent round contributes: a fixture with a
-provenance nobody read.**  A unit can be arithmetically perfect, gated end
-to end, and still be computing on an example its own source paper audits
-and discards a few sections later — in which case its central negative was
-*guaranteed* and discovered nothing.  The check is cheap and is now
-standing: **before anchoring on a published example, read what the paper
-that published it says about it afterwards.**
+**And a fourth: a fixture with a provenance nobody read.**  A unit can be
+arithmetically perfect, gated end to end, and still be computing on an
+example its own source paper audits and discards a few sections later — in
+which case its central negative was *guaranteed* and discovered nothing.
+The check is cheap and is now standing: **before anchoring on a published
+example, read what the paper that published it says about it
+afterwards.**
+
+**And a fifth, which the most recent round contributes and which is the
+subtlest of the five: unearned evidence — a conclusion that is true,
+reached through a test that could not have failed.**  Three of one unit's
+load-bearing checks were identities of their own definitions, printed with
+impressive counts beside them; its pre-registered decision procedure had
+three possible verdicts and could only ever return two; and the one
+sentence everybody would quote rested on the first of those.  Every
+conclusion involved survived re-derivation — but that is luck, not method,
+and the sentence that did *not* survive was the one nobody had a way to
+check.  **A true conclusion with a broken chain of evidence is still a
+defect**, and the repair is not to soften the claim but to re-derive it
+from something that could have come out otherwise.  Two habits follow:
+**label the checks that cannot fail, and count them separately**; and
+**make sure the decision procedure can return every verdict it was
+pre-registered to be able to return.**
 
 **One more observation, and it has changed how the programme is run.**
 The reviewers are no longer only finding defects; they are **out-building
 the units**.  Recent rounds have supplied a theorem the unit had sketched
 and could not close, a census the unit's own instrument was structurally
-blind to, the deciding computation a unit had named and skipped, and a
-correctly-measured control a unit had built and never read.  That is a
+blind to, the deciding computation a unit had named and skipped, a
+correctly-measured control a unit had built and never read, and a whole
+new invariant assembled from a unit's own unexamined output.  That is a
 better outcome than catching an error, and it makes the round part of the
 authorship rather than an audit of it — which is why this book credits
 round-supplied results as content and does not narrate them as
-corrections.
+corrections.  **And the traffic now runs both ways:** in the most recent
+round the campaign side, rebuilding a referee's finding before gating it,
+found one of the referee's own numbers mis-sourced and corrected it — a
+detail on which nothing depended, and the first time in this line that the
+correction has gone in that direction.
 
 **Second: pre-registration is doing real work.**  The corpus writes down
 what it expects *before* running, with the argument, and then reports
@@ -3963,10 +4213,12 @@ from the law itself removes all of it.  So the map's functional stretch is
 **narrower and harder** than it was: narrower because it has been
 measured, harder because the measurement's answer is a negative at the
 only scope where the corpus can compute.  The third is the one that
-re-opened a door: probability transport is **flat at closed scope as a
-theorem and curved at transport scope as a measurement**, so a holonomy
-exists after all — and it is, so far, a positive real number with no phase
-in it.
+re-opened a door and then walked through it: probability transport is
+**flat at closed scope as a theorem and curved at transport scope as a
+measurement**, so a holonomy exists after all — and, characterised, it is
+a genuine irremovable curvature made of twos and threes, mapped by an
+even-channel invariant, and carrying **no phase at all**.  What the third
+segment now hands forward is a fork rather than a further measurement.
 
 ### A11.2 The convergence question
 
@@ -4036,16 +4288,21 @@ not an answer.
 
 ### A11.4 The ranked open problems
 
-1. **What is the curvature of probability transport?**  Transport scope
-   is **curved** — eighty-eight closed loops come back multiplied, all of
-   them delivery-borne, none of them visible to the instrument that had
-   certified flatness (§A2.9).  Everything hangs on characterising it:
-   what carries it once records rather than sequences are the objects;
-   what group it lives in; whether it is removable by relabelling like
-   every other loop structure this programme has found; and whether its
-   **odd** half has an imaginary part.  That last is the imaginary
-   exponential's only known remaining address, and it is where the
-   destination's whole phase story lives.
+1. **The fork: is the imaginary unit found, or added?**  The curvature of
+   probability transport is now characterised (§A2.9) — real,
+   irremovable, three-smooth, mapped by an even-channel invariant — and
+   the scalar phase is absent at every address the theory owns.  What is
+   left is not another measurement of the same kind but a choice, and it
+   has two branches.  **(a)** One address was never probed: the reversal
+   structure of the **record category** itself, at the scope where the
+   curvature lives.  Every test so far reversed sequences; this one
+   reverses records-as-orders.  It is one cheap unit and it should be run
+   first.  **(b)** If it is empty, the move is to **add** the imaginary
+   unit as an axiom on record-odd structure, against a constraint set that
+   is now measured rather than guessed — the flatness theorem, the
+   measure, the earlier corpus's dual-conjugation law, the even channel
+   and its invariant.  That is a decision about what the theory *is*, and
+   it belongs to the author rather than to a receipt.
 
 2. **The bound.**  The horizon route contracts at every pool and depth
    measured and exhibits **no bound** (§A9.6).  One theorem — the
@@ -4069,8 +4326,10 @@ not an answer.
    uniqueness was not established — so the cheapest move here is to run
    the same demand against the reading that is actually stated, and then
    against a second demand.  Beyond that the named homes are the delivery
-   scope and a different joint of the map altogether — and item 1 is now
-   the concrete form the delivery-scope answer would take.
+   scope and a different joint of the map altogether — and the delivery
+   scope's own answer has now been probed for a phase and has none, so
+   whatever superposition is here, it is not sitting in the curvature
+   waiting to be read off (item 1).
 
 5. **A bounded description of the theory at delivery scope.**  The one
    remaining gap in the wall (chapter A9) — noting that item 2's route
@@ -5321,9 +5580,9 @@ dimension; the patterns held at every depth 2–6 with zero exceptions,
 there is no proof, and the pin declined to bet.  (8) Three actors,
 transport, delivery — out of scope, as always.
 
-### B2.12 The phase segment — the shelved amplitude, the holonomy identity, and the weld `[D71/D71b/D71c archaeology; D72, LOG #487 → #488 → #490; round 1 TERMINAL]`
+### B2.12 The phase segment — the shelved amplitude, the holonomy identity, the weld, and the curvature characterised `[D71/D71b/D71c archaeology; D72, LOG #487 → #488 → #490; D74, LOG #492 → #494 → #495; both round 1 TERMINAL]`
 
-*Sources: the three archaeology surveys `note-d71-phase-archaeology.md` (24 cited appearances, 8 reduction points, 5 attachment slots), `note-d71b-holonomy-phase-identity.md` and `note-d71c-spin2-archaeology.md` — surveys, not receipts, every number quoted from a committed file by path and line; `note-d72-weld-pin.md` (STRICT, frozen verbatim from D71b's pinnable-claim section before any code); `note-d72-weld-result.md`; `v10/code/d72_weld_exact.py` (**77 PASS / 0 FAIL**, 9 of them labelled as carrying no independent information, exit 0, 468 s) + `data/d72_weld_exact.out`; `v10/reviews/d72-round1-hostile-review.md` — REVISE, 5 MAJOR / 5 MODERATE / 6 MINOR, arithmetic verdict "I broke nothing in the arithmetic of grammar 1.  I broke the scope, the instrument, and the second grammar."*
+*Sources: the three archaeology surveys `note-d71-phase-archaeology.md` (24 cited appearances, 8 reduction points, 5 attachment slots), `note-d71b-holonomy-phase-identity.md` and `note-d71c-spin2-archaeology.md` — surveys, not receipts, every number quoted from a committed file by path and line; `note-d72-weld-pin.md` (STRICT, frozen verbatim from D71b's pinnable-claim section before any code); `note-d72-weld-result.md`; `v10/code/d72_weld_exact.py` (**77 PASS / 0 FAIL**, 9 of them labelled as carrying no independent information, exit 0, 468 s) + `data/d72_weld_exact.out`; `v10/reviews/d72-round1-hostile-review.md` — REVISE, 5 MAJOR / 5 MODERATE / 6 MINOR, arithmetic verdict "I broke nothing in the arithmetic of grammar 1.  I broke the scope, the instrument, and the second grammar."  Then `note-d74-transport-holonomy-pin.md` (STRICT, frozen and committed before any code; four arms TH-A/B/C/D, three pre-registered outcomes, Lean NONE), `note-d74-transport-holonomy-result.md` ("**TH-II with a find**"), `v10/code/d74_transport_holonomy_exact.py` (**48 PASS / 0 FAIL**, of which **7 carry no independent information and are labelled as such — 41 independent-evidence passes**, exit 0, 311 s, byte-identical at `PYTHONHASHSEED=7` apart from timings) + `data/d74_transport_holonomy_exact.out`; `v10/reviews/d74-round1-hostile-review.md` — REVISE, 5 MAJOR / 6 MODERATE / 6 MINOR, arithmetic verdict "the arithmetic is clean and the two hardest structural results survive my attacks … what I broke is the evidential architecture around the negative."*
 
 §B2.11 counted the *space* of quantum layers.  This section is about the
 one ingredient any of them would need and none of them exhibits: an
@@ -5518,16 +5777,292 @@ and the raw transport squares (`{1/2, 2/3, 3/2, 2}` plus `±∞`).
 > phaseless one.
 
 **And the transport holonomy is a NEW object.**  The values `2/3` and
-`3/2` lie **outside `⟨5/4⟩`**, so it is not the D65 coboundary family.
-That is the first evidence in the corpus that a transition class here
-might not be a coboundary at all.
+`3/2` lie **outside `⟨5/4⟩`**, so it is not the D65 coboundary family —
+and §(iv) settles that it is not a coboundary at all.
 
-**Consequence for §B2.11.**  D71's phase-slot `+1` is **forced** — for the
-`∏√q` lift D42b4 actually defines, on the raw budget amplitude, at closed
-scope, where the record-graph holonomy is trivial so no other section of
-the phase bundle is reachable by transport.  **For nothing wider.**
+#### (iii) Residues from the weld, carried
 
-#### (iii) Licensed, and not `[D72]`
+L6a's induction (an actor's holdings form a chain with one live member) is
+verified exhaustively, not
+machine-proved.  The **`±∞` squares are a different animal** — a
+*support*-level defect, 100 % delivery-borne, and no holonomy formalism in
+the corpus handles them (at `(A,B) d ≤ 6` there are **4,608** of them).
+`O`'s sign-definiteness is unexplained and survives to `k = 5`
+(`{−1: 384, 0: 754}`).  And one structural constraint: **`A_D = 0` along
+the one-dimensional commit path**, so any non-trivial phase must live
+**transverse** to commit order.
+
+#### (iv) The curvature, characterised `[D74; 48 PASS / 0 FAIL, 41 independent, exact rationals]`
+
+The weld leaves three questions — what carries the transport holonomy at
+record level, is it a coboundary, and is there an odd-sector `U(1)` part.
+**All three are answered, and one of them had to be re-posed before it
+could be.**  Every
+D72 number this unit rests on was re-derived from the committed layers and
+reproduces exactly (the `AB4` census with its spectrum, kinds, half-open
+split and minimal witness; the `ABC3` census; the blindness rows `0/88`
+and `0/12`; the record-graph rows `3969/2477/2900/424` and
+`3424/2128/2772/645`; the idle row `{1/2: 7738, 3/4: 200}`), and exit 1 is
+reserved for them.
+
+**Read the scope before any headline.** Every number here is a
+window-dependent measurement on d42b1 at declared depths and pools.  What
+does *not* move across ten scopes and four actor pools is the **value set**
+`{1/2, 2/3, 3/2, 2}` and hence the group.  What *does* move, a great deal,
+is every proportion.
+
+**(a) REMOVABILITY — run first, per D64's discipline, and the informative
+answer is a THRESHOLD.**  The naive test **cannot fail**:
+`r = μ(h·e_A·e_B)/μ(h·e_B·e_A)` is an identity of `mu_map`'s own recursion
+`μ(h·e) := μ(h)q(e|h)` together with the definition of `r` — it holds on
+every product-weighted grammar at every depth (`3,100/3,100`, and gated
+`[NO INDEPENDENT INFORMATION]`) — and the sequence layer is a **tree**, so
+`H¹ = 0` there with the removing gauge forced to `1/μ`, which gauges every
+weight to 1.  Removability is informative only **relative to what the
+potential may see**, and relative to that there is a sharp threshold: the
+twist is a coboundary **exactly on the abstractions where `μ` itself
+descends** — the sequence and the **record** — and on none coarser.
+
+| `α` | classes | `μ` descends | menu descends | multi-valued edges | sq close | DEF close | ex. cycle rank | R1 obstruction | self-loops | R2 survivors |
+|---|---|---|---|---|---|---|---|---|---|---|
+| SEQ | 3969 | 3969/3969 | 3969/3969 | 0 | 0/1546 | **0/88** | 0 | 0 | 0 | 0 |
+| REC | 2477 | 2477/2477 | 2477/2477 | 0 | 473/1546 | **0/88** | 145 | 0 | 0 | 0 |
+| MULT | 578 | 514/578 | 492/578 | **8** | 1546/1546 | **88/88** | 0 | 0 | 88 | 88 |
+| STATE | 125 | 84/125 | 103/125 | **4** | 1546/1546 | **88/88** | 0 | 0 | 88 | 88 |
+| PORT | 65 | 24/65 | 29/65 | 0 | 1458/1546 | **44/88** | 80 | 44 | 44 | 96 |
+| MENU | 113 | 44/113 | 113/113 | 0 | 1402/1546 | **44/88** | 134 | 44 | 44 | 180 |
+
+Two independent routes agree rung for rung: potential propagation (R1) and
+D64's C7 relabelled-recount idiom on `R⁺` (R2), whose **survivors are 0
+exactly where the obstruction is 0** — R2's counts are *not* R1's and are
+not claimed to be, since one spanning-forest potential can push other
+squares off 1 while removing what it can.  Anti-vacuity is gated: at SEQ
+the exchange graph is a **perfect matching** (1,546 edges on 3,092 nodes,
+cycle rank **0**), which is precisely why the verdict there is empty,
+while the coarse rungs carry 134 / 80 independent cycles and 88 defective
+self-loops, so a flat answer was available and was not returned.  The
+round added that **PORT closes exactly the same 44 as MENU, as sets** and
+not merely in number.  **Verdict: removable at `[SEQ, REC]`, NOT removable
+at `[MULT, STATE, PORT, MENU]`.**
+
+> **And that is a structural EXPLANATION of D72's blindness theorem, not a
+> restatement of it.**  `μ` is class-constant on records, so `1/μ` is a
+> per-record potential and the twist is a record-level coboundary.  But a
+> potential single-valued on classes is exactly what makes a square's two
+> orders land in **different** classes when `r ≠ 1`.  **The instrument is
+> blind because it is fine enough to be flat.**  The record functor is the
+> coarsest committed identification keeping `μ` single-valued, and keeping
+> `μ` single-valued is what forbids a defective square from closing.  Go
+> one step coarser and the holonomy appears.
+
+**Against D65, the two twists are orthogonal.**  Normalising multiplies
+each square ratio by `M(h·e_B)/M(h·e_A)`, and that factor is **identically
+1** on every raw-defective square in both anchor arms (`{1: 88}`,
+`{1: 12}`): normalisation moves them **not at all**.  It adds a
+**disjoint** family — `AB4` normalised spectrum `{4/5: 114, 1: 1254,
+5/4: 90}` beside the untouched `{1/2: 70, 2/3: 2, 3/2: 6, 2: 10}`.  At
+three actors the mass set is `{3: 3100, 7/2: 288, 19/4: 36}` and the
+normalised defects `{6/7: 84, 7/6: 48}` — which **confirms D65's own
+residue 2** ("at three actors or with delivery the mass spectrum changes
+and the coboundary statement must be re-derived, not carried") at a scope
+D65 explicitly refused, rather than correcting it.  `⟨5/4⟩` is **D72's**
+object (claim 6 / T4.3); D65 writes no group notation anywhere.
+
+**(b) THE CARRIER — constructed, not searched.**  The coarsest quotient on
+which the connection **descends** is the weighted-**menu** partition, and
+that identification is **definitional**: "descent quotient" means "refines
+`ker(menu)`", and the equivalences refining a fixed kernel have a maximum
+by definition.  What is *measured*, and what carries the claim, is that
+the coarsest weighted **congruence** — computed independently by partition
+refinement, 4–6 rounds to a fixed point, 185 classes at `AB4` against 113
+menu classes — closes **exactly the same** defective squares on **all six**
+full arms.  On that quotient the closing defective squares are
+**self-loops** carrying `{1/2: 26, 2: 10, 2/3: 2, 3/2: 6}`, and a
+self-loop's holonomy is gauge-invariant outright: **no potential on the
+carrier removes them.**  (The self-loop *count* is definitional — a
+square's edge runs between its endpoints' classes, so "closes" *is*
+"self-loop" — and is gated as such; the gauge-invariance is the argument.)
+And the blindness is **exact, not statistical**: every defective square is
+register-overlapping, and the overlap is **always on an ACTOR register**,
+never a version register alone — `{actor: 88}`, `{actor: 12}`,
+`{actor: 960}`, `{actor: 334}`.
+
+| arm | menu classes | congruence classes | DEF closed (menu = congruence) | curvature-type | descent-obstruction-type |
+|---|---|---|---|---|---|
+| `AB4 (A,B) d≤4` | 113 | 185 | 44 / 88 | 44 | 44 |
+| `ABC3 (A,B,C) d≤3` | 117 | 162 | **0 / 12** | 0 | 12 |
+| `(A,B) d≤5` | 265 | 462 | 604 / 960 | 604 | 356 |
+| `(A,B,C) d≤4` | 525 | 747 | 132 / 540 | 132 | 408 |
+| `ASYM-1 (A,B) d≤5` | 245 | 438 | 218 / 334 | 218 | 116 |
+| `ASYM-2 (A,B,C) d≤4` | 525 | 747 | 60 / 228 | 60 | 168 |
+
+**(c) THE DICHOTOMY, and its load-bearing qualifier.**  A **descent**
+quotient may identify two histories only if their weighted menus agree, so
+a square whose two orders have **different menus closes in no descent
+quotient whatsoever** — at `AB4` that is 44 of the 88, giving
+**44 curvature-type + 44 descent-obstruction-type**, a split invariant
+under CTL-ORDER.  The **proportion is strongly window-dependent** (44/88,
+0/12, 604/960, 132/540, 218/334, 60/228), so the anchor window's "exactly
+in half" is a coincidence and **not a fact about the grammar**.  Two gates
+make the statement correct rather than merely striking.  *The `MULT`
+gate:* coarser quotient **graphs** do close that half — MULT closes
+**88 of 88**, including **44 of 44** of the menu quotient's invisible set —
+at the price of **8 multi-valued labelled edges** (of 1,288 labelled edges
+carrying 3,968 up-moves), i.e. no descent.  So the true statement is:
+**the descent-obstruction half is closable only by quotients on which the
+connection is not well defined.**  *The four-weakenings gate:* of the 44,
+**labelled-edge single-valuedness identifies 0, the normalised menu `q/M`
+(D65's own measure-twisted repair) 0, equal support 0, and proportional
+(projective) menus 0.**  The obstruction does not depend on the strong
+notion the unit chose — the two orders genuinely disagree on the weight of
+a **shared** event.  Reported and not buried: at `ABC3` the carrier sees
+**none** of the 12, and one depth out it sees 132 of 540.
+
+**(d) THE GROUP — `⟨2,3⟩`, at four mutually non-nested pools.**  Computed
+as an integer exponent lattice (Hermite reduction on the prime valuations,
+basis `[[-1,0],[0,1]]`, index 1), **not** read off four values by eye:
+**free abelian of rank 2, the full group of 3-smooth positive rationals,
+prime support `{2,3}`, index 1 in `Z²`** — rank 2 and not cyclic, and the
+menu quotient's own loop group (the basis-independent object) is the same.
+
+| scope | non-unit spectrum | group |
+|---|---|---|
+| `AB4` | `{1/2: 70, 2/3: 2, 3/2: 6, 2: 10}` | `⟨2,3⟩` |
+| `ABC3` | `{1/2: 12}` | `⟨2⟩` |
+| `(A,B) d≤5` | `{1/2: 654, 2/3: 58, 3/2: 118, 2: 130}` | `⟨2,3⟩` |
+| `(A,B,C) d≤4` | `{1/2: 456, 2/3: 6, 3/2: 18, 2: 60}` | `⟨2,3⟩` |
+| `(A,B) d≤6` | `{1/2: 4846, 2/3: 1114, 3/2: 1358, 2: 1218}` | `⟨2,3⟩` |
+| `(A,B,C) d≤5` | `{1/2: 10968, 2/3: 372, 3/2: 948, 2: 2448}` | `⟨2,3⟩` |
+| ASYM-1 (one-way link `A→B`) | `{1/2: 184, 2/3: 10, 3/2: 68, 2: 72}` | `⟨2,3⟩` |
+| ASYM-2 (defected ring `A→B→C→A`) | `{1/2: 190, 2/3: 2, 3/2: 10, 2: 26}` | `⟨2,3⟩` |
+| **`(A,B,C,D) d≤3`** | `{1/2: 24}` | `⟨2⟩` |
+| **`(A,B,C,D) d≤4`** | `{1/2: 1500, 2/3: 12, 3/2: 36, 2: 180}` | `⟨2,3⟩` |
+| **cumulative** | **27,186** non-unit squares over ten scopes | **`⟨2,3⟩`** |
+
+**The scopes, described honestly** (a round repair).  The `(A,B)` and
+`(A,B,C)` rows are **two nested depth chains** — the `AB4` 88 are literally
+a subset of the 960 — plus **two declared sub-grammars** (support
+restricted, committed weights untouched, and not vacuous: 11,814 → 5,504
+and 22,482 → 8,673 closed squares, with the defect surviving).  Nesting is
+a real constraint (along a chain the value set can only *grow*) but it is
+not independent replication, and the cumulative count double-counts.  **The
+`(A,B,C,D)` pool, run by the referee, is the one genuinely independent
+replication**: new menu masses `{4: 569, 9/2: 24}`, disjoint from the
+two-actor `{2, 5/2}` and three-actor `{3, 7/2, 19/4}`, no square in common
+with any arm — **1,728 defective squares, the same four values, and no new
+prime at four actors.**  Every defect delivery-bearing in every arm;
+shallowest at total depth 3 in every arm.
+
+**(e) THE SCALAR ODD SECTOR — empty, and settled a priori.**  Every
+committed weight is a positive rational, so every holonomy is; the only
+positive rational of modulus 1 is 1.  **A `U(1)` part of a rational-valued
+holonomy could only ever be the sign `−1`**, and `−1` is realised nowhere.
+That is one line and it settles the question before any fixture runs.  Two
+supporting facts and one correction:
+
+- **Reversal acts on `r` by inversion — an IDENTITY, not a measurement.**
+  `r := q(e_A|h)q(e_B|h·e_A) / q(e_B|h)q(e_A|h·e_B)`; swapping the events
+  exchanges numerator and denominator.  There is no grammar on which this
+  can return an exception, so `log r` is purely reversal-odd **as a
+  statement about `log r`** and about nothing else `[IDENTITY]`.
+- **A phase cannot be label-local `[THEOREM]`.**  Any connection whose
+  value depends only on the event **label** has trivial holonomy on every
+  exchange square — the two paths carry the same event multiset (gated on
+  3,100/3,100 closed squares).  If a phase exists here it must read the
+  history, and nothing in the committed layer produces a non-positive
+  number to read it with.
+- **The i-twist correspondence is content-free as evidence.**  In the real
+  form `L = r`, v7's law `rev(L) = conj(L)` fails on exactly the 88; for
+  `L' = e^{i log r}` the law reads `r(rev)·r = 1`, which **is** the
+  inversion identity, so the twist restores it everywhere and adds
+  nothing.  (Its control is a **discriminating** one and can fail: on 500
+  drawn `(forward, reversed)` pairs whose reversal is not inversion the
+  twisted law fails **500/500**, and holds **500/500** when the reversal
+  is made inverting.  The evidence for "content-free" is nevertheless the
+  argument, not the count.)
+
+**(f) THE HONEST ORDER-DUAL CARRIER — empty, and emphatically so.**
+Attribution first, because it is easy to get wrong: **D71b's carrier is
+the committed unlabeled record order and its `*` is poset reversal**,
+which is defined on every poset and is never "not defined"; **linear
+extensions are D72's** construction, at 2-event scope.  Measured on
+the 176 endpoints of the 88 defective squares: **all 304 linear extensions
+of the committed `event_poset` are admissible forwards, and 0 of 304 are
+admissible reversed** — the opposite poset has **no admissible realisation
+at all, in any order**.  And the tempting explanation — that this grammar
+simply does not run backwards — is **false**: **the grammar is NOT
+reversal-blocking.**  `2,456 of 3,960`
+histories with `|h| ≥ 2` reverse into admissible histories (`56/60` at
+depth 2, `352/452` at 3, `2,048/3,448` at 4), and **2,196 of 3,092**
+closed-square endpoints are reverse-admissible, including 1,798 of 2,286
+delivery-bearing ones.  **The block is defect-specific**, a sharply
+non-generic property of the defect locus.  Separately, `0 of 88` defective
+squares have an in-family dual square, so there is no second value to read
+a conjugating residue off (D72's T1.4: `*` and the transport reversal
+coincide only on 2-event histories, and every defect sits at total depth
+≥ 3).
+
+> **(g) THE REVERSAL-EVEN CHANNEL IS NOT EMPTY — `J`, the round's find,
+> credited to the referee.**  Define
+> `J(square) := [both endpoint sequences are reverse-admissible]`.  `J` is
+> **symmetric in `(e_A, e_B)`**, hence reversal-**even**; it is never mixed
+> (no square in any arm has exactly one reverse-admissible endpoint); and
+> it is **not constant**.  `AB4`: `J=1` on 1,098 (all `r = 1`), `J=0` on
+> 448 (360 unit + **88 defective**).  `ABC3`: `J=1` on 1,476 (all `r=1`),
+> `J=0` on 78 (66 + **12**).  `(A,B) d≤5`: `J=1` on 6,026 (all `r=1`),
+> `J=0` on 5,788 (4,828 + **960**).  **`J = 1 ⟹ r = 1` on 8,600 closed
+> squares across three arms with zero exceptions, and `J = 0` on all
+> 1,060 defective squares.**  It is **not** a relabelling of the register
+> invariant: **793** `J=1` squares are register-**overlapping**, and
+> **168** register-disjoint squares have `J=0`.  It is **not** a depth
+> artefact: within the deepest `AB4` stratum alone, **912 of 1,252** unit
+> squares carry `J=1` and **0 of 84** defective ones do.  The even channel
+> does not carry a phase; **it carries the curvature's geography.**
+
+The sentence this displaces — that the transport object "puts its modulus
+in the odd channel and leaves the even one empty, the mirror image of v7"
+— is drawn from `log r` alone, where "no even part" is the tautology of
+the inversion identity, and it is **withdrawn** (§0.3, §B10.15f).  The
+statement that stands is: **the SCALAR odd (`U(1)`) sector is empty, and
+the reversal-EVEN channel carries a non-trivial invariant that predicts
+the curvature's location.**
+
+**(h) The most attractive orientation candidate dies at depth 5, and the
+depth discipline is what catches it.**  A substrate-supplied orientation
+does exist: order each mixed-kind square so the **delivery is second**,
+and the defect is sign-definite — `84 of the 84 orientable` squares of
+`AB4` strictly below 1 (4 are unorientable, equal kind rank) and `12 of
+12` at `ABC3`, exactly the transport-scope echo one would want of D72's
+unexplained sign-definiteness of `O`.  **It is false one depth out**:
+`(A,B) d ≤ 5` `{<1: 868, >1: 8}`; `(A,B) d ≤ 6`
+`{<1: 7116, >1: 344}`; `(A,B,C) d ≤ 5` `{<1: 13464, >1: 24}`; ASYM-1
+`{<1: 332, >1: 2}`.  A depth effect first and a symmetry effect second —
+and a unit that ran only its pin's inherited window would have published
+it.  (Also depth-dependent: D72's five kind pairs are a
+`d ≤ 4` fact — at `(A,B) d ≤ 6` two more appear among the **closed**
+defective squares, `(p,d): 48` and `(d,p): 48`.  The value group does not
+grow with them.)
+
+**Controls.**  CTL-FLAT (d42b3 through *this* receipt's census returns
+`{1: 403}` and no half-open square — the pipeline does not manufacture
+defects); CTL-TAMPER (multiplying one committed step weight by `3/2` moves
+the census 88 → 94 — unlike D72's T2.NC it **can** fail); **CTL-ORDER**,
+turned on the unit's own headline (the 44+44 split and the unordered class
+multiset `{1/2 ≡ 2}: 44` are invariant; the *kind-clean* refinement is
+**not** — forward the invisible half is `(r,d)` at `1/2`, reversed it is
+`(d,r)` at `2` — so the gate now asserts the invariant form); CTL-DET
+(forward and reversed forest builds agree on nodes, components, cycle
+rank, obstruction count and the holonomy value **set**, the count of
+non-trivial *basis* cycles being forest-dependent and not licensed); the
+rebuilt i-twist control; and **OUT.1**, the outcome selector's own control
+— the pre-registered predicate **could not return TH-III on any input**
+(one disjunct ranged over unimodular values in a set already proved to
+contain only positive rationals; the other over a counter incremented in a
+loop body that never executed), and is now a function with all three
+branches exercised on constructed input.  **The negative at this address is
+a reportable negative only because of that repair.**
+
+#### (v) Licensed, and not `[D72 + D74]`
 
 1. `[THEOREM, depth-free, grammar d42b3]` raw closed-scope exchange
    flatness, with the L4/L6 budget-coincidence clause; `[MEASURED]` on
@@ -5539,36 +6074,173 @@ the phase bundle is reachable by transport.  **For nothing wider.**
 3. `[MEASURED, depth ≤ 5, two actors]` the normalised kernel's holonomy
    image is `⟨5/4⟩ ⊂ R₊`, square spectrum `{4/5, 1, 5/4}` — D65's
    coboundary.
-4. `[MEASURED, exact]` the transport-scope census above, every defect
+4. `[MEASURED, exact]` the transport-scope census, every defect
    delivery-bearing, none closing at record level.
 5. `[EXACT]` `2·e^{−3/32}` equals paper 30's published constant to all 32
    digits, and `E = 3` is the argmax over `E ∈ 0..3999` — so **the `1.82`
    is a constant of the ansatz** (§0.3), and the anchor that reproduces
    it on the 131,526-record universe is a **port fidelity check**, not
    evidence about records.
-6. **Not claimed:** that the generated line is flat without naming the
-   grammar, the scope and the weight; that the normalised defect is
-   anything but D65's decided coboundary; that any `U(1)` holonomy has
-   been exhibited anywhere; that the record-deletion-graph census is a
-   sufficient instrument for exchange holonomy (it provably is not); that
-   v7 paper 30 is wrong (it is not — it is narrower than the archaeology
-   read it).
+6. `[MEASURED, exact]` on d42b1 at `(A,B)` depths 4–6, `(A,B,C)` depths
+   3–5, `(A,B,C,D)` depths 3–4 and both declared sub-grammars, the closed
+   exchange squares have `dP_AB/dP_BA ∈ {1/2, 2/3, 3/2, 2}` and generate
+   **`⟨2,3⟩`, free abelian of rank 2, the full 3-smooth group, index 1 in
+   `Z²`**.  The depth chains are **nested**; the four-actor pool is the
+   one independent replication and introduces **no new prime**.
+7. `[THEOREM at sequence level, MEASURED at record level]`
+   `r = μ(h·e_A·e_B)/μ(h·e_B·e_A)` on every closed square of both anchor
+   arms — an **identity of the product weight**, hence a coboundary at
+   sequence and record resolution with the removing potential forced to
+   `1/μ`.  **This is not a flatness result.**
+8. `[MEASURED, (A,B) d ≤ 4]` the twist is **NOT** a coboundary of any
+   committed state abstraction coarser than the record: MULT, STATE, PORT
+   and MENU all return a non-zero obstruction by both routes, on a carrier
+   gated to be non-degenerate.
+9. `[MEASURED]` the coarsest weighted **congruence** closes exactly the
+   same defective squares as the menu partition on all six full arms, and
+   on the quotient those squares are **self-loops with holonomy ≠ 1**,
+   which no potential removes.  *(The identification of the coarsest
+   descent quotient with the menu partition is `[DEFINITIONAL]`; the
+   self-loop count is too.)*
+10. `[THEOREM + MEASURED]` a defective square whose two orders have
+    different weighted menus closes in **no descent quotient**, and in
+    none of four strictly weaker notions either (0 of 44 each) — hence the
+    curvature / descent-obstruction dichotomy, 44 + 44 at `(A,B) d ≤ 4`,
+    invariant under CTL-ORDER unlike the value and kind labels of its two
+    halves.
+11. `[MEASURED]` normalisation does not remove the transport twist (mass
+    ratio `1` on every raw-defective square of both anchor arms; the
+    normalisation defect supported on a **disjoint** set).
+12. `[MEASURED]` every defective square is register-overlapping **on an
+    ACTOR register**, in every arm run.
+13. `[EXACT + CONTROLLED]` no unimodular holonomy is exhibited anywhere;
+    a rational-valued holonomy's only possible unimodular content is `−1`,
+    realised nowhere.  The order-dual carrier is empty in the strong
+    sense: **0 of 304** linear extensions of the opposite posets
+    admissible, on a grammar that is **not** reversal-blocking
+    (2,196 of 3,092).  The i-twist restores v7's dual-conjugation law
+    because for the twisted form that law **is** the inversion identity.
+14. `[MEASURED on `(A,B) d ≤ 4`, `(A,B,C) d ≤ 3` and `(A,B) d ≤ 5` ONLY]`
+    **`J = 1 ⟹ r = 1`, zero exceptions on 8,600 closed squares, and
+    `J = 0` on all 1,060 defective squares** — a non-constant
+    reversal-**even** invariant, substrate-supplied, not a relabelling of
+    claim 12.  **Not a theorem and not licensed as one.**
+15. **Not claimed:** that the generated line is flat without naming the
+    grammar, the scope and the weight; that the normalised defect is
+    anything but D65's decided coboundary; that any `U(1)` holonomy has
+    been exhibited anywhere; that the record-deletion-graph census is a
+    sufficient instrument for exchange holonomy (it provably is not);
+    that v7 paper 30 is wrong (it is not — it is narrower than the
+    archaeology read it); **that the reversal-even channel is empty** (it
+    is not — claim 14); that `J` holds at greater depth, at more actors,
+    or in general; that anything found here **is** the v7 phase
+    (correspondence ≠ identity — the i-twist is a change of variables);
+    that a measure exists on these loops (§B9.7's bound is open); that the
+    AB-only/BA-only split, the unpaired spectrum, or this unit's own
+    unseen-half spectrum and kind census are substrate facts (CTL-ORDER
+    transposes them); the count of non-trivial basis cycles
+    (forest-dependent); that the descent-obstruction half is or is not
+    removable by anything; and **not** that the corpus has no object for
+    it — D65 §3.1's repair cone computes the same criterion under a
+    different functor.
 
-**Residues, ranked.**  **(1) THE HANDOFF — characterise the transport
-holonomy** (D74): what carries it at record level (the defective squares
-do not close, so either the right object is a delivery-aware record
-functor or the holonomy is genuinely sequence-level); **is there an
-odd-sector `U(1)` part** — nothing here exhibits a phase and `F4`'s own
-wording makes that the interesting direction; and is the transport defect
-**a coboundary or a genuine `H¹`**, the `2/3` and `3/2` values being the
-first reason to doubt the former.  (2) L6a's induction (an actor's
-holdings form a chain with one live member) is verified exhaustively, not
-machine-proved.  (3) The **`±∞` squares are a different animal** — a
-*support*-level defect, 100 % delivery-borne, and no holonomy formalism in
-the corpus handles them.  (4) `O`'s sign-definiteness is unexplained and
-survives to `k = 5` (`{−1: 384, 0: 754}`).  (5) One structural constraint,
-new: **`A_D = 0` along the one-dimensional commit path**, so any
-non-trivial phase must live **transverse** to commit order.
+**Residues, ranked `[D74]`.**  **(1)** The **descent-obstruction half has
+no formalism at transport scope, and none that quantifies over
+quotients** — 44 of 88 at the anchor window and a majority at three
+actors; neither a coboundary nor a curvature.  D65 §3.1 computes the same
+object under a different functor (at `D = 4`, **152 of 403** repair rows
+are not implied by record-constancy — exactly the rows whose two corners
+carry different records — with 313 record-constant, 205 in the
+intersection, and a positive witness annihilating all 403 square
+identities while still failing to descend), and D65's **residue 3** (the
+record functor is a *choice*; a coarser functor breaks the containment) is
+the standing warning this dichotomy must be read against.  The sharpened
+question: **is there a formalism for a defect visible only after descent
+is abandoned**, and does the repair-cone machinery reach transport scope?
+Same shape as the `±∞` residue, which also survives.  **(2)** `J` is
+**measured, not explained, and not tested where it matters most** —
+whether `J = 1 ⟹ r = 1` survives `(A,B) d ≤ 6`, three and four actors and
+the sub-grammars is the successor's first line; and behind it, *why*
+reverse-admissibility of both endpoints forces flatness, and whether `J`
+is the shadow of a genuine real-valued reversal-even **functional** rather
+than a predicate.  **(3)** The carrier's **window dependence** is
+unexplained (50 % / 0 % / 63 % / 24 % / 65 % / 26 % across the six arms,
+no evident law).  **(4)** **`⟨2,3⟩` is exhibited but not derived** — D72's
+menu-denominator mechanism is a plausible account of `2^{±1}` and not of
+`3^{±1}`, and the four-actor pool sharpens this rather than softening it:
+new masses `{4, 9/2}`, the *same* four values.  **(5)** The `(p,d)` /
+`(d,p)` kinds first appear at depth 6 and are unanalysed.  **(6)** D6.1's
+failure has no mechanism (8 / 344 / 24 / 2 squares above 1; what
+distinguishes them is unknown).  **(7)** The `ABC3` zero — whether the
+three-actor carrier starts later or the `d ≤ 3` window is too shallow; the
+four-actor pool's same shape (24 at `d ≤ 3`, 1,728 at `d ≤ 4`) suggests a
+window effect.  **(8)** L6a still deserves a receipt.
+
+#### (vi) The era's empirical close, and the fork `[the book's current thesis]`
+
+The weld era's empirical programme is finished, and what it establishes is
+a coherent position rather than a list:
+
+> **The grammar as built is a CLASSICAL, CURVED, PROBABILISTIC theory.**
+> **Real curvature:** the transport holonomy is genuine and irremovable,
+> with prime content `{2,3}` at four non-nested pools, and its geography
+> is exactly tracked by the reversal-even invariant `J`.  **A near-complete
+> measure:** the horizon route is proper to `r = 7` and contracts at every
+> pool and depth measured; one bound is missing (§B9.7).  **Geometry at
+> sprinkling grade:** the grammar tiles, tiles wide, and reaches the
+> corrected width ceiling at every dispute size built (§B8.9).  **And NO
+> SCALAR PHASE at any native address — 0-for-5:** chart transitions
+> (§B8.8, §B8.9, coboundary on three substrate families at five
+> conventions by three routes); closed-scope exchange loops (§B2.12(ii),
+> flat as a theorem); the functional slot above the closed law (§B2.11,
+> `cohdim = 0` under the first fair dynamical demand); and transport
+> loops on **both** carriers they admit — the sequence carrier (a
+> positive-rational holonomy has no unimodular content but `−1`, realised
+> nowhere) and the honest order-dual carrier (`0 of 304`).
+
+**The founding question therefore has its earned answer for this
+grammar.**  `isp/README.md`:43–44 asked *"whether quantum interference can
+be understood as the holonomy of probability transport itself"*.  The
+answer is: **the holonomy exists, and it is real-valued.  The interference
+is not in it.**  `F4`'s pre-registered direction fires; the slogan is
+refuted by the presence of a phaseless holonomy, not by its absence — and
+the holonomy that is there is a substantial object in its own right.
+
+**What is left is a fork, and it is a decision about what the theory IS
+rather than a further measurement of the same kind.**
+
+- **(a) THE LAST DOOR — one cheap unit, the only unprobed address.**  The
+  `U(1)` question at **record-category scope**: D71b's carrier is the
+  committed unlabeled record order under **poset reversal**, and D74
+  worked at transport scope, where *that* carrier is empty.  Every
+  reversal test the corpus has run has been on sequences or on
+  linear-extension traversals.  The record category's own reversal
+  structure, examined at transport scope, is untouched.  **On record: run
+  this first.**
+- **(b) THE ENRICHMENT — the `i`-twist as an AXIOM on record-odd
+  structure.**  If the door is empty, the move is to stop searching and
+  add the imaginary unit, attached to record-odd structure and transverse
+  to commit order (`A_D = 0` along the commit path forces that much) — and
+  the constraint set it must satisfy is **measured, not guessed**: it must
+  leave the closed-scope flatness theorem intact; it must leave the
+  horizon measure intact; it must reproduce v7's dual-conjugation law
+  (which the twist does by construction, so that is a consistency check
+  and not evidence); and it must respect the reversal-even channel and
+  `J`.
+
+> **And the second branch is not a defeat.**  A theory whose grammar,
+> weights, geometry, curvature and measure are all generated, and which
+> requires exactly **one** imaginary axiom to become quantum with
+> everything else derived, is a finding — arguably the programme's
+> cleanest statement of what it has.  **Which branch is taken is the
+> author's decision, flagged here as such; no receipt can make it.**
+
+**Consequence for §B2.11.**  D71's phase-slot `+1` is **forced** — for the
+`∏√q` lift D42b4 actually defines, on the raw budget amplitude, at closed
+scope, where the record-graph holonomy is trivial so no other section of
+the phase bundle is reachable by transport.  **For nothing wider** — and
+at transport scope, where the same connection is curved, the forcing says
+nothing at all.
 
 ---
 
@@ -8147,10 +8819,13 @@ attack has run and returned zero** (§B8.9): on wide conflict records the
 two routes with a non-trivial domain (PARITY, FREE) trivialize as well.
 The question is now *"can any substrate at all"* with three substrate
 families — delivery, conflict, crossed conflict — answering no **on the
-chart carrier**, and one candidate answering *maybe* on a different one:
-the transport exchange holonomy of §B2.12, which is non-trivial, takes
-two values outside `⟨5/4⟩`, and is provably invisible to this
-instrument.  (2) **The ambiguous pairs** — 27 of 172 at
+chart carrier**, and one carrier answering **yes** off it: the transport
+exchange holonomy of §B2.12(iv), which is provably invisible to this
+instrument and is **not a coboundary of any committed abstraction coarser
+than the record** — on its own carrier the defects are gauge-invariant
+self-loops with group `⟨2,3⟩`.  It is `R⁺`-valued, so it is not a `Z/2`
+or `U(1)` structure group; what it is, is the corpus's first genuine
+non-trivial class anywhere.  (2) **The ambiguous pairs** — 27 of 172 at
 `d = 2`, 261 of 273 at `d = 3` — carry a shared direction with two wire
 words in *both* charts; whether a finer labeling resolves them is the
 single biggest gap between this and a genuine manifold statement.  (3) A
@@ -10280,6 +10955,72 @@ not become a metric by interpretation; it became a covariance matrix*, is
 sharper than the one it replaced and leaves `FAILS-FULL-GR` standing
 (§B8.10).
 
+### B10.15f "The even channel is EMPTY — the mirror of v7" `[D74, LOG #494 → #495]`
+
+**Claimed (green-unreviewed):** *"the log-holonomy is purely odd with zero
+even part — the MIRROR of v7's arrangement"*, i.e. that where v7's
+amplitude `A(R) ~ e^{−K(E)}e^{iΦ(O)}` puts the modulus in the
+reversal-**even** channel and the phase in the odd one, the transport
+object puts its modulus in the **odd** channel and leaves the even one
+empty.  Reported with the count *"1,546/1,546, gap exactly 0"*.  Three
+further clauses travelled with it: *"the order-dual IS NOT DEFINED here
+(0/176 reversed sequences admissible)"*, *"the i-twist test is
+content-free — it passes on 500 adversarial rationals"*, and *"the odd
+sector is EMPTY"* offered as a **measured** negative.
+**Killed by:** a round that reproduced every anchor and every headline
+number from its own instrument, could not break either structural theorem,
+and **broke the evidential architecture around the negative instead.**
+**(1)** The mirror sentence rests on `D1`, and `D1` is an **identity of its
+own definition**: `r` is defined as a ratio of two products, so swapping
+the events exchanges numerator and denominator and the reversed value is
+`1/r` — on every grammar, at every depth, with **no positive-exception
+branch**.  "1,546 of 1,546, gap 0" is not a measurement.  What follows is
+only that `log r` is purely odd, *as a statement about `log r`*.
+**(2)** Asked on the carrier instead of on `log r`, the even channel is
+**not** empty: from raw material this receipt's own `D5` arm had computed
+and never looked at outside the 88 defective squares, the referee built
+`J(square) := [both endpoint sequences are reverse-admissible]` — symmetric
+in `(e_A, e_B)`, hence reversal-even — and it is **not constant**:
+`J = 1 ⟹ r = 1` on **8,600** closed squares across three arms with **zero**
+exceptions, `J = 0` on all **1,060** defective ones, with 793 register-
+overlapping `J=1` squares and 168 register-disjoint `J=0` squares proving
+it is not the register invariant.  **(3)** Two more load-bearing gates were
+tautologies counted as evidence (`C0.1`, the `μ`-recursion identity;
+`D4.1`, whose predicate evaluated `−x == −x` five hundred times), and the
+pre-registered **outcome selector could not return TH-III on any input** —
+one disjunct ranged over unimodular values in a set `D2` had already proved
+contained only positive rationals, the other over a counter incremented
+inside a loop body that never executed.  **(4)** The order-dual clause was
+mis-attributed: D71b's carrier is the committed record order under **poset
+reversal**, which is defined on every poset; linear extensions are D72's.
+**Survived — and at greater strength.**  Every anchor; the whole six-rung
+ladder column for column; 113 menu classes and the 185-class congruence;
+the 44 + 44 dichotomy; the group `⟨2,3⟩`; CTL-ORDER; CTL-TAMPER's ability
+to fail; the register profile; the orthogonality to D65; and the unit's own
+sign-definiteness self-correction.  **The negative itself is confirmed at
+greater strength**: `D2` settles the scalar `U(1)` question in one line a
+priori (a positive-rational holonomy's only possible unimodular content is
+`−1`, realised nowhere), and the honest order-dual carrier returns **0 of
+304** reversed linear extensions admissible on a grammar that is **not**
+reversal-blocking (**2,196 of 3,092** closed-square endpoints reverse
+fine) — so the block is **defect-specific**, not a support fact.  **Two of
+the referee's own attacks came back as strengthenings** (PORT closes
+exactly the same 44 as MENU *as sets*; the dichotomy survives four
+weakenings of descent), and a **fourth actor pool** the referee ran added
+1,728 defective squares, new menu masses `{4, 9/2}`, the same four values
+and **no new prime**.
+**And the correction ran both ways, for the first time in this line:**
+rebuilding the referee's MAJOR 5 before gating it, the campaign side found
+one referee number mis-sourced — *"8 multi-valued labelled edges out of
+3,391"*, where 3,391 is the receipt's `up rank` column and the MULT rung
+carries **1,288** labelled edges on 3,968 up-moves.  The 8 is right and
+nothing depends on the denominator; it is corrected in the note and
+recorded here because the direction is new.
+*The lesson this entry contributes to §B10.17:* **a true conclusion
+reached through a gate that cannot fail is still a defect** — label the
+corollaries, count them separately, and make the outcome selector able to
+return every verdict it was pre-registered to be able to return (§0.3).
+
 ### B10.16 Instrument and control failures, itemized
 
 - **TG5's null "cross-actor causation produces the sky"** `[D47 round 1,
@@ -10362,14 +11103,14 @@ sharper than the one it replaced and leaves `FAILS-FULL-GR` standing
 ### B10.17 The pattern, stated as a statistic
 
 - **Almost every headline correction hit an interpretation sentence, not a
-  computation.**  Thirteen independent-model rounds have run (D54, D55,
-  D61, D62, D63, D64, D65, D66, D67, D68, D70, D72, D73); **nine** returned
-  a BLOCKER and **every one of the nine was in the interpretation layer,
-  none in the arithmetic**.  In D54
+  computation.**  Fourteen independent-model rounds have run (D54, D55,
+  D61, D62, D63, D64, D65, D66, D67, D68, D70, D72, D73, D74); **nine**
+  returned a BLOCKER and **every one of the nine was in the interpretation
+  layer, none in the arithmetic**.  In D54
   and D55 the verdicts were 1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT
   **each**, and in D55 everything computational survived including a full
   independent rebuild of a 42-actor, 84-event record that came out
-  **identical and forced**.  D64 through D73 are the same failure eight
+  **identical and forced**.  D64 through D74 are the same failure nine
   times: the referee reproduced *every* number and then ran —
   or built — the one thing the unit had not thought of: the coboundary
   test (§B8.8), the repair-cone dimension (§B2.10), the DOUBLE GRID and
@@ -10377,9 +11118,10 @@ sharper than the one it replaced and leaves `FAILS-FULL-GR` standing
   decoherence condition plus the dynamical demand the unit's own residue
   had named and declined (§B2.11), **the four-actor depth-4 arm the unit
   had named, priced and skipped** (§B9.7), **the second grammar's
-  transport census and the normalised kernel** (§B2.12), and **the
-  provenance of the unit's own fixture** (§B8.10) — and each refuted the
-  headline built on the numbers it had just confirmed.  **A
+  transport census and the normalised kernel** (§B2.12(ii)), **the
+  provenance of the unit's own fixture** (§B8.10), and **the complement of
+  the 88 squares the unit's own arm had evaluated** (§B2.12(iv)) — and each
+  refuted the headline built on the numbers it had just confirmed.  **A
   verified computation is not a verified claim**, and the corpus's
   standing lesson is to ask what computation would
   *distinguish* the headline from its trivial alternative, before writing
@@ -10394,21 +11136,32 @@ sharper than the one it replaced and leaves `FAILS-FULL-GR` standing
   computation and turned a published negative into the measure route's
   positive; D72's **closed a proof the unit had only sketched** and, in
   the same pass, discovered the transport curvature the unit's headline
-  had denied; and D73's re-anchored a whole unit onto the fixture its
-  source paper actually selects.  **A unit can be wrong
+  had denied; D73's re-anchored a whole unit onto the fixture its
+  source paper actually selects; and D74's replaced a tautology-backed
+  emptiness with a **new invariant** that locates the curvature exactly.
+  **A unit can be wrong
   pessimistically, and the round that catches it returns more than it
   removes.**
-- **Two of the three most recent rounds reversed a headline without
-  raising a BLOCKER at all** (D70 and D72 were both `REVISE` on MAJORs).
-  The blocker count has stopped being the informative statistic;
+- **Three of the four most recent rounds reversed a headline without
+  raising a BLOCKER at all** (D70, D72 and D74 were all `REVISE` on
+  MAJORs).  The blocker count has stopped being the informative statistic;
   what is informative is that **referees now routinely out-build the
   units** — supplying a theorem (D72's L1–L6), a census the unit's
   instrument was structurally blind to (D72's T6), the computation a unit
-  had declined (D70's four-actor arm), and a control a unit had built and
-  never read (D73's narrow charts).  This book therefore credits
+  had declined (D70's four-actor arm), a control a unit had built and
+  never read (D73's narrow charts), and an **invariant** assembled from a
+  unit's own unexamined output plus a fresh actor pool (D74's `J` and its
+  `(A,B,C,D)` arm).  This book therefore credits
   round-supplied results as **authorship**, gated like any other number in
   the receipt that carries them, and does not narrate them as a correction
   log.
+- **And for the first time the correction has run the other way.**  D74's
+  delta records the campaign side, rebuilding a referee finding before
+  gating it, catching a **mis-sourced denominator in the review itself**
+  (MAJOR 5's "3,391 labelled edges" is the receipt's `up rank` column; the
+  rung carries 1,288 labelled edges on 3,968 up-moves).  The finding was
+  right, nothing depended on the number, and the point is the direction:
+  **rebuild-before-gate is a two-way discipline.**
 - **D68 names a distinct failure mode: a CONVENTION wearing the
   clothes of a result.**  Both withdrawn sentences were true of *how the
   unit chose to write its own equations* — one convention forbidding
@@ -10427,6 +11180,19 @@ sharper than the one it replaced and leaves `FAILS-FULL-GR` standing
   round: **measure your controls.**  D73 built a comparator, computed its
   Grams and reported only how many there were — so it controlled nothing,
   and the measurement, when taken, fired the unit's own death condition.
+- **D74 names a fifth, and it is the subtlest: UNEARNED EVIDENCE.**  Three
+  of the unit's load-bearing gates were algebraic identities of their own
+  definitions counted as independent evidence — in a unit whose own §3(b)
+  convicts its parent of exactly that — and the pre-registered outcome
+  predicate **could not return one of its three registered verdicts on any
+  input**.  Every conclusion drawn through them survived re-derivation
+  except the one nobody had a way to check, which was false.  **A true
+  conclusion with a broken chain of evidence is still a defect.**  Three
+  standing obligations follow, all cheap: **label the gates that cannot
+  fail and count them separately** (this receipt's honest split is 41
+  independent passes of 48); **exercise every branch of the outcome
+  selector on constructed input**; and **when a negative rests on a
+  count, check that the count could have come out otherwise.**
 - **And one round in this line survived as written.**  D62's cover
   sentence went into an independent round that rebuilt all five update
   rows from the prose alone, swept 4,778,310 transitions two depths past
@@ -10530,10 +11296,12 @@ between them; the `k = 3` flagship holds one column of two at
 `max |D| = 9`.  Their classes are coboundaries as well, at all five port
 conventions and by all three routes, so the
 sharp question — can any substrate carry a class that is not a coboundary?
-— now has three families answering no, the last of them the widest objects
-the corpus owns, **and one candidate answering maybe**: the transport
-exchange holonomy of §B2.12, whose values `2/3` and `3/2` lie outside
-`⟨5/4⟩`, and which no chart instrument can see.  And the rank-2 question
+— now has three families answering no **on the chart carrier**, the last of
+them the widest objects the corpus owns, **and one object answering yes off
+it**: the transport exchange holonomy of §B2.12(iv), which no chart
+instrument can see, which is a coboundary at no committed abstraction
+coarser than the record, and whose group is `⟨2,3⟩` — real-valued, so not a
+structure group in the gauge-theoretic sense, but genuinely non-trivial.  And the rank-2 question
 the whole road serves has its first honest answer (§B8.10): on the
 fixture paper 30 itself selects, the even Gram is anisotropic with a
 **trivial stabiliser** — a genuine rank-2 candidate — and is nonetheless a
@@ -10566,7 +11334,20 @@ measurement returns: **raw closed-scope flatness as a `[THEOREM]` with a
 budget-coincidence scope clause; the normalised kernel never flat
 (`⟨5/4⟩`); transport scope CURVED (88 non-unit squares + 40 half-open, all
 delivery-bearing, invisible to the record-graph instrument); and
-everything exhibited `R₊`-valued — NO `U(1)` PART ANYWHERE YET.**
+everything exhibited `R₊`-valued — NO `U(1)` PART ANYWHERE.**  **And the
+curvature is now characterised** (§B2.12(iv)): its carrier is the coarsest
+descent quotient, on which the defects are gauge-invariant **self-loops**;
+its removability is a **threshold** at `μ`-descent, which explains the
+record instrument's blindness rather than restating it; its group is
+**`⟨2,3⟩`** — the full 3-smooth positive rationals, unmoved across ten
+scopes and four actor pools, 27,186 non-unit squares, no new prime; its
+census splits into **curvature-type and descent-obstruction-type**
+(44 + 44 at the anchor window, window-dependent everywhere else); the
+scalar odd sector is **empty on the honest carrier** (`0/304`, on a grammar
+that is not reversal-blocking); and the reversal-**even** channel carries
+**`J`**, an invariant equal to 1 exactly on flat squares and 0 exactly on
+curved ones.  **The phase is 0-for-5 at the grammar's native addresses**,
+and what remains is a fork rather than a measurement (§B2.12(vi)).
 
 ### B11.2 The convergence question
 
@@ -10626,20 +11407,32 @@ description of the *shape* of a possible answer, not an answer.
 
 ### B11.4 Ranked open problems
 
-1. **THE TRANSPORT HOLONOMY, characterised.**  Transport scope is
-   **curved** (§B2.12): 88 non-unit closed exchange squares with values
-   `{1/2, 2/3, 3/2, 2}` plus 40 half-open ones at two actors and 12 more
-   at three, every one delivery-bearing, from depth 3, and **none** of
-   them visible to the record-deletion-graph census.  Four questions, in
-   order: **(i)** what carries it at record level — either the right
-   object is a coarser, delivery-aware record functor, or the holonomy is
-   genuinely sequence-level and the record layer loses it; **(ii)** its
-   **group**; **(iii)** coboundary or genuine `H¹` — `2/3` and `3/2` lie
-   outside `⟨5/4⟩`, which is the first evidence in the corpus that a
-   transition class here might not be a coboundary; and **(iv)** the
-   **odd-sector `U(1)` search**, the imaginary exponential's last known
-   address.  It ranks first because both the phase story and the
-   destination's rank-2 completion hang on it.
+1. **THE FORK — is the imaginary unit found, or added?**  The transport
+   curvature is characterised and the empirical search for a scalar phase
+   is finished at **0-for-5** (§B2.12(iv)–(vi)).  What is left is not a
+   further measurement of the same kind but a decision, with one cheap
+   measurement in front of it.
+   *(a) THE LAST DOOR, and it should be run first.*  The `U(1)` question
+   at **record-category scope**: D71b's carrier is the committed unlabeled
+   **record order under poset reversal**, and D74 worked at transport
+   scope, where that carrier is empty.  Every reversal test run so far has
+   been on sequences or on linear-extension traversals of them; the record
+   category's own reversal structure, at transport scope, is the one
+   address never probed.  One unit.
+   *(b) THE ENRICHMENT.*  If the door is empty, add the `i`-twist as an
+   **axiom** on record-odd structure, transverse to commit order
+   (`A_D = 0` along the commit path forces that), against a constraint set
+   that is now **measured**: the closed-scope flatness theorem, the
+   horizon measure, v7's dual-conjugation law (restored by construction,
+   hence a consistency check and not evidence), the reversal-even channel
+   and `J`.  A theory whose classical content is entirely generated and
+   which needs exactly one imaginary axiom to become quantum is a finding,
+   not a defeat.  **The choice is the author's and is flagged as such.**
+   *Residues that come with it:* `J` untested at `(A,B) d ≤ 6`, three and
+   four actors and the sub-grammars, and unexplained; the
+   descent-obstruction half with no formalism at transport scope; `⟨2,3⟩`
+   exhibited but not derived (no mechanism account of `3^{±1}`); the
+   carrier's window dependence.
 2. **THE BOUND — the measure's existence theorem.**  §B9.7's horizon route
    contracts at every pool and depth measured and exhibits **no bound**.
    The named and unattempted engine is **operator-level minorization** —
@@ -10807,10 +11600,16 @@ transport-scope census — **77 PASS / 0 FAIL**, 468 s) and
 family, the `h`-weight identity and the seven-blueprint transfer sweep —
 **38 PASS / 0 FAIL**, 524 s; note that the committed v7 campaign calls
 `int.bit_count`, so it needs Python `≥ 3.10` and the receipt carries a
-version guard rather than crashing inside a lifted namespace).
+version guard rather than crashing inside a lifted namespace), and
+`d74_transport_holonomy_exact.py` (the six-rung abstraction ladder and its
+two removability routes, the menu quotient and the independently computed
+coarsest congruence, the prime-valuation group over ten scopes and four
+actor pools, the linear-extension order-dual arm, the three-way outcome
+selector and the `J` invariant — **48 PASS / 0 FAIL**, of which **7 carry
+no independent information and are labelled as such**, 311 s).
 
 **The ledger:** `v10/LOG.md`, append-only, numbered, **forward
-corrections only, never silently edited.**  Entries #404–#491 cover
+corrections only, never silently edited.**  Entries #404–#495 cover
 everything in chapters B5, B7, B8, B9, the settlement line of B6, and the
 descent, functional-slot and phase segments of B2.
 
@@ -10850,11 +11649,11 @@ that had not landed.)
   anchor breakage and mutant misbehaviour exit 1.
 - **Hostile rounds, and now independent-model rounds** — a reviewer with
   no prior context, instructed to recompute rather than trust, writing its
-  own code.  Thirteen have run; nine found a BLOCKER; **all nine BLOCKERs
-  were in interpretation, none in arithmetic** — and two of the three most
+  own code.  Fourteen have run; nine found a BLOCKER; **all nine BLOCKERs
+  were in interpretation, none in arithmetic** — and three of the four most
   recent reversed a headline without raising a BLOCKER at all (§B10.17).
 - **Ask what would distinguish the headline from its trivial
-  alternative** — the lesson D64 through D73 have now taught eight times.
+  alternative** — the lesson D64 through D74 have now taught nine times.
   Every one of those units measured correctly, reported correctly,
   and read
   the numbers as a structure that one computation none of them had run
@@ -10864,7 +11663,8 @@ that had not landed.)
   trend was walking into the band**; the parent paper's decoherence
   condition written as the parent paper states it; **a third term on a
   two-term row**; **the same square census one grammar over**; **the
-  provenance of the unit's own fixture**).  The obligation is now
+  provenance of the unit's own fixture**; **the complement of the squares
+  the unit's own arm had already evaluated**).  The obligation is now
   on the pin: *name the
   computation that would make the interesting reading false, and run it in
   the same receipt.*  The recent rounds add the corollary that meeting it
@@ -10875,14 +11675,33 @@ that had not landed.)
   that unit's own residue had named and declined, returning the
   programme's first hard fact about its quantum layer; the round that
   refuted D70's spent 408 s of single-core enumeration the unit had priced
-  and skipped, returning the measure route's positive; and the round that
+  and skipped, returning the measure route's positive; the round that
   refuted D72's **closed the proof the unit had sketched** and found the
-  curvature in the same pass.  **The obligation
+  curvature in the same pass; and the round that refuted D74's most
+  quotable sentence returned a **new invariant** in its place.  **The
+  obligation
   covers negatives too — a limit announced is a claim, and it is cheapest
   to test by extending your own table.**  *And a corollary the pin must
   now carry:* **price the evidence as well as the direction** — a binary
   clause that can fire on a two-term row at the shallowest declared cap is
   a clause a unit can satisfy without learning anything.
+- **A gate that cannot fail is not evidence, even when its conclusion is
+  true.**  D74 counted three identities of its own definitions as
+  independent passes and let its most-quoted sentence rest on one of them;
+  the sentence was false while every other conclusion drawn the same way
+  happened to survive.  Three standing obligations: **tag the corollaries
+  and publish the independent-evidence count separately** (D74's honest
+  split is 41 of 48); **exercise every branch of a pre-registered outcome
+  selector on constructed input**, because a three-way pin decided by a
+  two-way test cannot report the verdict it was written to report; and
+  **when a negative rests on a count, check the count could have come out
+  otherwise.**
+- **Rebuild-before-gate runs both ways.**  A referee's finding is rebuilt
+  in the campaign's own process before it is gated — which is how D74's
+  delta caught a mis-sourced denominator in the review itself, the first
+  correction in this line to travel from the campaign to the referee.  It
+  changed nothing and it is recorded because the direction is the point:
+  neither side is trusted, including the one that was right.
 - **Gate the quotation, not just the computation.**  D68's two withdrawn
   sentences were properties of *conventions the unit chose* — one
   forbidding cancellation by hand, one row shape symmetric by
@@ -12761,26 +13580,52 @@ with the hypothesis.**
   (§B8.10).
 - **No `U(1)` part has been exhibited anywhere.**  Probability transport
   is flat at closed scope **as a theorem** and **curved at transport
-  scope** as a measurement — but every value it returns is a positive
-  real number (§B2.12).
-- **The phase's last known address is the ODD SECTOR of the curved
-  transport loops.**  That is a specific place, not a hope: it is the only
-  region of the theory where anything fails to come back unchanged, and
-  the odd half of it is the only half that could carry an argument.
-- **So the hypothesis has exactly one next move, and it is the era's
-  hinge:** characterise the transport holonomy — its carrier at record
-  level, its group, whether it is a coboundary, and whether its odd sector
-  has an imaginary part.  If it does, the destination's whole chain
-  (metric completion, then selection by closure) becomes a research
-  programme.  If it does not, the corpus owns a real, phaseless holonomy
-  of probability transport and the founding slogan is settled negatively —
-  which is publishable either way and was pre-registered as such.
+  scope** as a measurement — and the curvature is now characterised
+  (§B2.12(iv)): genuine, irremovable, its group the full 3-smooth
+  positive rationals `⟨2,3⟩` at four independent evidence pools, with the
+  defects appearing on its carrier as gauge-invariant self-loops.  Every
+  value it returns is a positive real number.
+- **The scalar phase is 0-for-5 at the grammar's native addresses** —
+  chart transitions, closed-scope loops, the functional slot, and
+  transport loops on **both** carriers those loops admit.  The odd sector
+  of the curved transport loops, which used to be "the last known
+  address", has been probed and is **empty**, and for a reason that fits
+  on one line: a positive-rational holonomy's only possible unimodular
+  content is `−1`, and `−1` occurs nowhere.
+- **What is *not* empty is the reversal-EVEN channel** — but what it
+  carries is `J`, an invariant that equals 1 exactly on the flat squares
+  and 0 exactly on the curved ones.  The even channel maps the curvature's
+  geography; it does not supply an argument.
 
-`[MY READING]` on the ranking, and only on the ranking: the reason this
-hypothesis sits at the top of §D4 is not that it is likely but that it is
-the only place where a **single** measurement moves three separate fronts
-— the phase, the metric's off-diagonal, and the gauge question's one
-untried candidate.
+**So the hypothesis's next move is no longer a measurement of the same
+kind.  It is a fork, and it is the head of Part D.**
+
+> **THE FORK.**  **(a) The last door.**  Exactly one address was never
+> probed: the **record category's own reversal structure at transport
+> scope** — D71b's carrier is the committed unlabeled record order under
+> *poset reversal*, and every test the corpus has run reversed sequences
+> or their linear extensions instead.  One cheap unit, and it should be
+> run first.  **(b) The enrichment.**  If that door is empty, the move is
+> to **add** the `i`-twist as an axiom on record-odd structure, transverse
+> to commit order, against a constraint set that is measured rather than
+> guessed: the closed-scope flatness theorem, the horizon measure, v7's
+> dual-conjugation law, the reversal-even channel and `J`.
+
+**If the fork lands on (a), the destination's whole chain — modulus builds
+space, then phase completes and legislates it — becomes a research
+programme with a found ingredient.  If it lands on (b), the programme's
+statement is different and not worse:** a grammar whose classical content
+is entirely generated — weights, geometry, curvature, measure — and which
+requires exactly **one** imaginary axiom to become quantum, everything else
+derived.  **Which branch is taken is a decision about what the theory *is*,
+and it is the author's; no receipt can make it.**
+
+`[MY READING]` on the ranking, and only on the ranking: the reason the
+fork sits at the top of §D4 is not that either branch is likely but that
+the cheap branch (a) is the last unspent measurement bearing on three
+separate fronts at once — the phase, the metric's off-diagonal, and the
+gauge question — and branch (b) cannot honestly be taken until (a) is
+spent.
 
 ---
 
@@ -12869,15 +13714,18 @@ transition maps have been measured — delivery crystals, conflict
 crystals, and the crossed-conflict double grid built precisely because a
 conflict event lacks the symmetry that trivializes a delivery — has a
 class that is a **coboundary** (§B8.8, §B8.9), so there is no non-trivial
-transformation behaviour to certify there.  **But the slot now has one
-candidate, and it is on a different carrier**: probability transport
-itself is **curved** at transport scope (§B2.12), by an amount no chart
-instrument can see, and two of its four values lie outside the group of
-the corpus's known coboundary.  The doctrine names the deliverable; the
-chart search for it has failed on the substrate that had the best
-structural reason to supply it; and the one live candidate is a
-connection on sequences rather than on charts, which is why
-characterising it ranks first in §D4.  *(The same doctrine covers the
+transformation behaviour to certify there.  **But the slot is no longer
+empty on every carrier**: probability transport itself is **curved** at
+transport scope (§B2.12), by an amount no chart instrument can see, and
+that curvature is characterised — a coboundary at no committed
+abstraction coarser than the record, gauge-invariant self-loops on its own
+carrier, group `⟨2,3⟩`.  The doctrine names the deliverable; the chart
+search for it failed on the substrate that had the best structural reason
+to supply it; and the object that answers is a connection on **menus**
+rather than on charts, and is `R⁺`-valued rather than a structure group.
+**What it certifies as a mechanism is a scale-free one — order-dependence
+of joint weight, carried by messages — and what it does not supply is an
+orientation**, which is the whole content of §D4's fork.  *(The same doctrine covers the
 rank-2 side: §B8.10's even Gram is an ensemble summary statistic on a
 channel index nothing acts on, so it certifies no mechanism — which is
 exactly what rule 2 is for.)*
@@ -12911,7 +13759,7 @@ two are half-done, three are open, and the last is blocked.
 |---|---|---|
 | 1 | records → a causal order | **HAVE** — this is what the grammar builds, and the order is the physical content |
 | 2 | causal order → local skies and a dimension *capacity* | **HAVE** — with the meter reading the grammar's coordination, not a record's dimension |
-| 3 | skies → charts, gluing → a manifold | **OPEN, four segments done and two of them are negatives** — the grammar **tiles**; it tiles **wide** (a forced 177-event double ring holding the homogeneity band while carrying 4-direction charts); its charts' **transition maps are measured** and are non-identity, consistent around every loop, and **removable by a change of convention**, so the atlas is globally trivializable and carries no structure group; and the **conflict** road past the delivery ceiling is open and walked — delivery-free crossed-conflict crystals tile at cadence and carry **nine**- and **sixteen**-direction charts, with the corrected ceiling reached at every dispute size built (9, 16, 25, 36), and the sixteen-wide record sits inside **both** sprinkling band columns one depth down as a whole record.  Its gluing is trivial too.  What remains: a substrate whose gluing is *not* trivial — and the corpus now has **one candidate**, the curved transport loops of §B2.12, which no chart instrument can see; a general-`k` proof and a tiling above `k = 4`; the **rank-2 object** the arrow is *for*, which on the even channel is a covariance and not a metric (§B8.10); and the second road's unfinished business |
+| 3 | skies → charts, gluing → a manifold | **OPEN, four segments done and two of them are negatives** — the grammar **tiles**; it tiles **wide** (a forced 177-event double ring holding the homogeneity band while carrying 4-direction charts); its charts' **transition maps are measured** and are non-identity, consistent around every loop, and **removable by a change of convention**, so the atlas is globally trivializable and carries no structure group; and the **conflict** road past the delivery ceiling is open and walked — delivery-free crossed-conflict crystals tile at cadence and carry **nine**- and **sixteen**-direction charts, with the corrected ceiling reached at every dispute size built (9, 16, 25, 36), and the sixteen-wide record sits inside **both** sprinkling band columns one depth down as a whole record.  Its gluing is trivial too.  What remains: a substrate whose gluing is *not* trivial — and the corpus now has **one non-trivial connection**, the curved transport loops of §B2.12, which no chart instrument can see and which are provably not a coboundary of anything coarser than the record, though their group is `⟨2,3⟩ ⊂ R⁺` and not a structure group; a general-`k` proof and a tiling above `k = 4`; the **rank-2 object** the arrow is *for*, which on the even channel is a covariance and not a metric (§B8.10); and the second road's unfinished business |
 | 4 | manifold → Einstein dynamics | **PARTIAL** — the *form* of the field equations is derived; Newton's constant is provably not derivable from inside |
 | 5 | manifold → quantum fields on it | **PARTIAL** — a lift of the record process into Hilbert space exists at fixture scale, and its arbitration layer is where the quantum problem begins |
 | 6 | fields → **particle creation** | **OPEN** — the destination's defining phenomenon, with one suggestive structural resemblance that is *labelled speculation* |
@@ -13064,19 +13912,27 @@ coboundary as well, at all five port conventions.
 > is the obstruction count**, and it is now a gate that every successor
 > inherits.
 
-**And there is now exactly one place the chart instruments could never
-have looked.**  Every triviality verdict above is read off a **chart**
-atlas over a **record** graph.  §B2.12 measures a different connection
-entirely — probability transport itself, on **sequences** — and finds it
-**curved** at transport scope, with the defect living precisely in the
-squares that do **not** close at record level.  The blindness is
-structural, not incidental: a square closes at record level exactly when
-its two events are register-disjoint.  So the corpus's "no structure
-anywhere" is a statement about the objects its instruments can see, and
-the one object they cannot see is the only one that has ever come back
-non-trivial — with two of its four values, `2/3` and `3/2`, lying outside
-the group of the corpus's known coboundary.  **That is the gauge road's
-only live candidate, and characterising it is the era's next unit.**
+**And there is exactly one place the chart instruments could never have
+looked, and it is the one place something was found.**  Every triviality
+verdict above is read off a **chart** atlas over a **record** graph.
+§B2.12 measures a different connection entirely — probability transport
+itself, on **sequences** — and finds it **curved** at transport scope,
+with the defect living precisely in the squares that do **not** close at
+record level.  The blindness is structural, not incidental: a square
+closes at record level exactly when its two events are register-disjoint —
+and §B2.12(iv) sharpens that from a coincidence into an explanation, since
+the record functor is the *coarsest* identification keeping the weight
+single-valued and that is exactly what forbids a defective square from
+closing.  **The instrument is blind because it is fine enough to be flat.**
+So the corpus's "no structure anywhere" is a statement about the objects
+its instruments can see, and the object they cannot see is
+**irremovably non-trivial**: not a coboundary of any committed abstraction
+coarser than the record, appearing on its own carrier as gauge-invariant
+self-loops, with group `⟨2,3⟩` — the full 3-smooth positive rationals,
+unmoved across ten scopes and four actor pools.  **The gauge road's honest
+statement is therefore split:** on the chart carrier the class is trivial
+everywhere anyone has looked; off it, a genuine non-trivial class exists —
+and it is `R⁺`-valued, so it supplies a magnitude and not an orientation.
 
 **And the rank-2 object the arrow is *for* now has a measured status, not
 just a hope** (§B8.10).  The corpus's own earlier hunt was for `h^{ij}`,
@@ -13179,9 +14035,12 @@ tiling above `k = 4`),
 a parallel body of suggestive-but-closed work (Road 2) that no unit
 has connected to it — and, new and unlike anything else on this arrow,
 **one measured non-triviality**: the curved transport connection of
-§B2.12, which lives outside every chart instrument's domain and is the
-only object on the whole road that has ever failed to come back
-unchanged.
+§B2.12, which lives outside every chart instrument's domain, is the only
+object on the whole road that has ever failed to come back unchanged, and
+is now known to be **irremovable** — a coboundary at no committed
+abstraction coarser than the record, with group `⟨2,3⟩`.  What it does not
+supply is an orientation, which is what the arrow's tensor programme
+actually needs.
 
 **ARROW 4 — manifold → Einstein dynamics.  `[PARTIAL]`**
 
@@ -13257,9 +14116,12 @@ to `+1` at closed scope** — the record-graph holonomy is trivial there, so
 no other section of the phase bundle is reachable by transport — and that
 forcing is *scope-bound*: it says nothing about transport scope, where the
 same connection is curved.  **So the honest statement of arrow 5's quantum
-gap is now specific: the lift has a carrier and no argument, and the only
-place an argument could come from is the odd sector of the curved
-transport loops.**
+gap is now specific, and sharper than it was: the lift has a carrier and
+no argument, the transport loops have been searched and return positive
+rationals with no unimodular content, and the argument must therefore
+either come from the one carrier never probed — the record category's own
+reversal structure at transport scope — or be added as an axiom
+(§B2.12(vi)).**
 
 **ARROW 6 — PARTICLE CREATION.  `[OPEN]`** — see §D3, which it deserves.
 
@@ -13453,8 +14315,10 @@ the hope that a dispute's lack of a free two-way symmetry would finally
 make the gluing non-trivial.  The
 width arrived; the gluing did not.  On conflict records too, at every
 convention tried, the translation rules relabel away to nothing.  **So
-the width leg of the manifold arrow is discharged, and the gauge road is
-back to having almost no candidate at all.**
+the width leg of the manifold arrow is discharged, and on the chart
+carrier the gauge road has almost no candidate at all** — though off that
+carrier it has, for the first time, an answer: probability transport's own
+curvature is irremovable, and no relabelling of anything touches it.
 
 *Almost*, because one thing has never been tried: every record of this
 kind crosses **two** disputes at once, and nothing in the grammar forbids
@@ -13482,16 +14346,33 @@ tool that would supply it is named and unattempted.  The measure has
 stopped being a method problem and become a theorem problem, which is a
 much better kind of problem to have.
 
-**And what now stands above both of them is smaller and stranger than
-either.**  Probability transport in this theory turns out to be **curved
-where the geometry lives** — eighty-eight loops that do not come back
-where they started, all of them carried by messages, none of them visible
-to any instrument the programme had built.  That single object is where
-the phase would have to live if the theory has one; it is the only
-non-trivial loop structure the corpus owns; and it is the only untried
-candidate left for the gauge structure a manifold needs.  Three separate
-fronts move on one measurement, which is why characterising it ranks
-first.
+**And what now stands above both of them is not a measurement at all.**
+Probability transport in this theory turns out to be **curved where the
+geometry lives** — eighty-eight loops that do not come back where they
+started, all carried by messages, none visible to any instrument the
+programme had built — and that curvature has now been characterised.  It
+is **real** and cannot be relabelled away; the numbers it produces are
+built out of twos and threes and nothing else, and that stays true when
+you add a fourth actor to the world; half of the failures are not
+curvature at all but a deeper refusal to be simplified, for which the
+corpus has no formalism; and the theory's own instrument was blind to all
+of it for a reason that is now understood rather than merely observed.
+**What it does not have is an argument.**  The phase was hunted in the odd
+half of exactly these loops, honestly, and is not there — and it is not
+anywhere else the theory owns either.  So the item at the top of the list
+is a **fork**: one cheap unprobed door, and behind it a decision about
+whether the imaginary unit is something this programme finds or something
+it adds.
+
+**And that fork is worth stating as the era's result rather than as an
+open problem.**  What the last stretch established, taken together, is
+that the grammar as built is a **classical, curved, probabilistic
+theory** — with real curvature, a nearly complete measure, and geometry at
+the grade of genuine spacetime samples — and that it has **no scalar phase
+at any address of its own**, five for five.  The founding question, asked
+before any of this existed, was whether interference is the holonomy of
+probability transport.  It has an earned answer: **the holonomy is there,
+and it is real; the interference is not in it.**
 
 The **3+1 control** is *finished*, and its answer removed an instrument
 rather than supplying one.
@@ -13530,23 +14411,31 @@ move — is the demand that emptied the cone the *only* fair one? — and a
 place for the physics to live.  And the place is one the geometry line
 has already named independently: **transport scope**.  The dimension
 mechanism lives there.  The measure defect points there.  Coherence points
-there by elimination.  And the phase, hunted through three version lines
-of archaeology, has its **last known address** there too — the odd half of
-the curved transport loops.  Four unrelated threads, one address, which is
-the most useful thing the destination has learned in this stretch.
+there by elimination.  And the phase was hunted there too — in the odd
+half of the curved transport loops, which used to be described as its last
+known address.  **That address is now spent**: the loops return positive
+rationals, whose only possible unimodular content is a minus sign that
+occurs nowhere, and the honest reversal carrier admits no reversed history
+at all.  Four unrelated threads, one address, and the fourth of them has
+come back empty — which is the most useful thing the destination has
+learned in this stretch, because it converts a search into a decision.
 
-**And the phase is the thread that turns the destination from a target
-into a chain.**  The corpus's own no-go says the real part of an amplitude
-gives a metric's **diagonal** and provably loses the **off-diagonal**,
-which is the relative phase; the corpus's own algebra says the symmetric
-part of a pair of transports is a rank-2 coupling and the antisymmetric
-part is a rotation.  So the working hypothesis of §D1 is not an analogy:
-**the modulus builds space, and the phase completes it and legislates
-it** — completes it by supplying the off-diagonal, legislates it by
-selecting, through which loops close, among structures the grammar cannot
-otherwise choose between.  Everything the programme has actually exhibited
-is modulus.  Whether there is a phase at all is one measurement away, and
-it is the same measurement as the one above.
+**And the phase is still the thread that turns the destination from a
+target into a chain — but the chain now has a joint that must be chosen
+rather than found.**  The corpus's own no-go says the real part of an
+amplitude gives a metric's **diagonal** and provably loses the
+**off-diagonal**, which is the relative phase; the corpus's own algebra
+says the symmetric part of a pair of transports is a rank-2 coupling and
+the antisymmetric part is a rotation.  So the working hypothesis of §D1 is
+not an analogy: **the modulus builds space, and the phase completes it and
+legislates it** — completes it by supplying the off-diagonal, legislates
+it by selecting, through which loops close, among structures the grammar
+cannot otherwise choose between.  Everything the programme has actually
+exhibited is modulus.  Whether the phase is **found** is one cheap
+measurement away — the record category's own reversal structure at
+transport scope, the single address never probed.  If it is not found
+there, the phase is **added**, and the constraint set an added phase must
+respect is now measured rather than imagined.
 
 And **the v9 arc** —
 turns out to hold the furthest-advanced construction anyone has of a
@@ -13589,12 +14478,18 @@ contraction at every pool and depth measured including a 318,704-history
 four-actor arm, the root protected by an automorphism **theorem**, the
 menu-exact renewal atom closed and the σ-level class open, with
 operator-level minorization named as the one surviving proof engine;
-**the phase segment** is welded and measured (§B2.12) — closed-scope raw
-flatness a **theorem** with a budget-coincidence scope clause, the
-normalised kernel never flat, **transport scope CURVED** by 88
-delivery-bearing squares invisible to the record-graph instrument, the
-transport holonomy a **new object** (`2/3`, `3/2` outside `⟨5/4⟩`), and
-everything exhibited `R₊`-valued with **no `U(1)` part anywhere yet**; and
+**the phase segment** is welded, measured and **characterised** (§B2.12) —
+closed-scope raw flatness a **theorem** with a budget-coincidence scope
+clause, the normalised kernel never flat, **transport scope CURVED** by 88
+delivery-bearing squares invisible to the record-graph instrument, and
+then the curvature itself pinned down: **irremovable** (a coboundary at no
+committed abstraction coarser than the record; gauge-invariant self-loops
+on its own carrier), group **`⟨2,3⟩`** at four non-nested pools with no
+new prime at four actors, a **curvature / descent-obstruction dichotomy**
+whose second half no corpus formalism reaches at this scope, the scalar
+odd sector **empty on the honest carrier** (`0/304`), and the
+reversal-**even** channel carrying **`J`** — 1 exactly on flat squares, 0
+exactly on curved ones; and
 **the rank-2 question** is asked and answered on this substrate (§B8.10) —
 the even Gram anisotropic with a trivial stabiliser on the fixture paper
 30 selects, and nonetheless a **covariance, not a metric response**, with
@@ -13603,56 +14498,75 @@ are results, all are terminal, and each changed the
 ranking — by removing an expected object, by pricing a known one, by
 **finishing** the line's top-ranked construction rather than handing it a
 successor, by turning the programme's widest gap from an
-emptiness into a measured negative with an address, and now by producing
-the first non-trivial loop structure the corpus owns.
+emptiness into a measured negative with an address, by producing the first
+non-trivial loop structure the corpus owns, and finally by **closing the
+era's empirical programme**: the phase is 0-for-5 at native addresses, and
+what is left in its place is a fork rather than a further search.
 
 **Re-ranked against the destination** (superseding §A11.4 / §B11.4's
 ordering, not their content):
 
-1. **THE TRANSPORT HOLONOMY, CHARACTERISED — the era's hinge**
-   (§B2.12, §B9.7's scope, §B8.10's successor).  Probability transport is
-   **curved at transport scope**: `88` of `1,546` closed exchange squares
-   at `(A,B)` depth ≤ 4 return `dP_AB/dP_BA ∈ {1/2, 2/3, 3/2, 2}`, with
-   `40` further half-open at `±∞` and `12` more at three actors — **every
-   one delivery-bearing**, the shallowest at total depth 3, and **`0` of
-   them visible** to the record-deletion-graph census, because a square
-   closes at record level exactly when its two events are
-   register-disjoint.  It ranks first because **one measurement moves
-   three fronts**:
-   *(i)* **the phase.**  Everything exhibited is `R₊`-valued.  The
-   imaginary exponential's last known address is the **odd sector** of
-   exactly these loops, and the corpus's own shelved amplitude form
-   (`A(R) ~ e^{−K(E)}e^{iΦ(O)}`, dual-conjugation error exactly 0) says
-   that is where a phase would sit if there is one.
-   *(ii)* **the metric's off-diagonal.**  v2 p10 Prop 10.6 is an all-order
-   no-go that the real shadow **loses** `h^{12}`, and §B8.10 confirms
-   experimentally that the even channel delivers a covariance, not a
-   metric.  If the odd sector carries an argument, the destination's chain
-   — modulus builds space, phase completes and legislates it (§D1) —
-   becomes a programme; if it does not, the founding slogan is settled
-   **negatively**, which was pre-registered as equally publishable.
-   *(iii)* **the gauge question.**  `2/3` and `3/2` lie **outside**
-   `⟨5/4⟩`, so this is not D65's coboundary family — the first evidence
-   anywhere in the corpus that a transition class here might be a genuine
-   `H¹`, and the only candidate site the gauge road has that is not a
-   hope.
-   **The unit's four questions, in order:** what carries it at record
-   level (a delivery-aware record functor, or the holonomy is genuinely
-   sequence-level and the record layer loses it); the group; coboundary or
-   `H¹`; and the odd-sector `U(1)` search.  **Its substrate choices absorb
-   the old TRIPLE-GRID item**: a third concurrent conflict axis was the
-   one untried construction that might give the nerve loops the chart
-   instruments could see, and it is now correctly posed as *one of the
-   substrates a transport-holonomy unit may run on* rather than as a
-   separate construction — since §B2.12 shows the chart instruments are
-   the wrong instrument for this question in the first place.  Its three
+1. **THE FORK — IS THE IMAGINARY UNIT FOUND, OR ADDED?  The era's hinge,
+   and a decision rather than a computation** (§B2.12(iv)–(vi), §D1).
+   The empirical programme that ranked first through the weld era is
+   **finished**, and what it delivered is a position: probability
+   transport is **curved at transport scope** and that curvature is
+   **genuine, irremovable, `⟨2,3⟩`-valued and `J`-governed**, while the
+   **scalar phase is 0-for-5** at the grammar's native addresses — chart
+   transitions, closed-scope loops, the functional slot, and transport
+   loops on both carriers.  The founding slogan is settled *in `F4`'s own
+   direction*: **the holonomy of probability transport exists and is
+   real-valued; the interference is not in it.**  What ranks first now is
+   the fork that leaves, and it has one cheap measurement in front of a
+   decision.
+   *(a) **THE LAST DOOR** — one unit, and it should be run first.*  The
+   `U(1)` question at **record-category scope**.  D71b's carrier is the
+   committed unlabeled **record order under poset reversal**, which is
+   defined on every poset; D74 worked at **transport** scope, where the
+   reversal carrier it could reach (sequences, and their linear
+   extensions) is empty — `0` of `304`.  The record category's own
+   reversal structure, examined at transport scope, is the **only address
+   this programme has never probed**, and probing it is a small unit.
+   *(b) **THE ENRICHMENT** — the `i`-twist as an axiom.*  If the door is
+   empty, the remaining move is to stop hunting and **add** the imaginary
+   unit on record-odd structure, transverse to commit order.  The
+   constraint set is now **measured, not guessed**: it must not disturb
+   the closed-scope flatness theorem; it must not disturb the horizon
+   measure; it must reproduce v7's dual-conjugation law — which the twist
+   does *by construction*, so that is a consistency check and explicitly
+   **not** evidence; and it must respect the reversal-even channel and
+   `J`.
+   **And branch (b) is not a defeat — it is THE FINDING.**  A theory whose
+   grammar, weights, geometry, curvature and measure are all generated,
+   and which needs exactly **one** imaginary axiom to become quantum with
+   everything else derived, is the cleanest statement this programme could
+   make of what it has.  **Which branch is taken is a decision about what
+   the theory IS, and it is the principal's; no receipt can make it.**
+   *What the fork inherits, as constraints on either branch:* `A_D = 0`
+   along the one-dimensional commit path, so **any phase must live
+   transverse to commit order**; a phase **cannot be label-local**
+   (`[THEOREM]` — a label-indexed cochain cancels on every exchange
+   square); the `±∞` squares are a **support**-level defect no holonomy
+   formalism in the corpus handles; and the **descent-obstruction half** of
+   the transport census (44 of 88 at the anchor window, a majority at three
+   actors) has no formalism at transport scope either — D65 §3.1's repair
+   cone computes the same criterion under a different functor and is the
+   nearest thing to one.
+   *And what it absorbs:* **the old TRIPLE-GRID item.**  A third
+   concurrent conflict axis was the one untried construction that might
+   give the nerve loops the chart instruments could see; §B2.12 having
+   shown the chart instruments are the wrong instrument for this question,
+   it survives only as a substrate a successor may run on.  Its three
    original questions (does the dimension profile past depth 2 depend on
    the number of axes; does a third axis produce loop structure; does
    crossing **select** a `k`) are carried unchanged and unanswered.
-   Two structural constraints the unit inherits: `A_D = 0` along the
-   one-dimensional commit path, so **any phase must live transverse to
-   commit order**; and the `±∞` squares are a **support**-level defect
-   that no holonomy formalism in the corpus currently handles.
+   *And what it hands to a successor as measurement rather than decision:*
+   `J` is `[MEASURED]` on three windows only, and whether `J = 1 ⟹ r = 1`
+   survives `(A,B) d ≤ 6`, three and four actors and the asymmetric
+   sub-grammars is the first line of whatever runs next; why
+   reverse-admissibility of both endpoints forces flatness is unexplained;
+   and whether `J` is the shadow of a genuine real-valued reversal-even
+   **functional** rather than a predicate is open.
 2. **THE BOUND — the measure's existence theorem** (§B9.7).  The horizon
    route is the only route to a transport-scope measure that needs
    finiteness nowhere, and it is measured rather than hoped: proper at
@@ -13810,10 +14724,18 @@ ordering, not their content):
    at all.  One dispute per actor makes the cycle a chain of diamonds and
    carries nothing; **transport is needed only to seed and rotate, never
    to make space.**
-7. **THE GAUGE QUESTION, and its honest state.**  *Can any record at all
-   carry a transition class that is not a coboundary?*  The corpus's
-   answer is currently **no, everywhere it has looked**, and it has now
-   looked in the place it had a structural reason to expect a yes.
+7. **THE GAUGE QUESTION, and its honest state — now split by carrier.**
+   *Can any record at all carry a transition class that is not a
+   coboundary?*  **On the chart carrier the answer is no, everywhere it
+   has looked** — including the place it had a structural reason to expect
+   a yes.  **Off it, the answer is yes**, and that is new: the transport
+   exchange holonomy is a coboundary at **no** committed abstraction
+   coarser than the record, and on its own carrier the defects are
+   **gauge-invariant self-loops** (§B2.12(iv)).  The two halves must be
+   quoted together, because the object that answers *yes* is `R⁺`-valued —
+   it exhibits a genuine non-trivial class and **not** a structure group,
+   so §D1b's *tensorial transition behaviour* deliverable is narrowed
+   rather than filled.
    **Three substrate families** — delivery circuits (§B8.8), pair-conflict
    rings, and crossed-conflict double grids (§B8.9) — at **five** port
    conventions and by **three** routes (the `Z/2` cochain, a parity route
@@ -13825,23 +14747,27 @@ ordering, not their content):
    quantity; free relabelling trivializes it; there is **no Čech
    2-skeleton** for it to live on (zero testable triples); the group name
    is undetermined (10 consistent subgroups of `S₄`, two incomparable
-   minimal); and genuine sprinklings obstruct at the same route.  So the
-   deliverable §D1b's rule 2 names — *tensorial transition behaviour* — is
-   still empty, and the bar a candidate must now clear is explicit: a
-   substrate with a **non-zero obstruction count that survives free
-   relabelling**, on a nerve with a **non-empty 2-skeleton**, at more than
-   one port convention, and with the count identified as an invariant
-   rather than a schedule parameter.  Nothing in the corpus is near it,
-   and exactly **one** untried site is named on the chart side: a
-   **third** concurrent conflict axis, on the thin structural hope that
-   crossing three ways gives the nerve loops that crossing two ways does
-   not — now folded into item 1's substrate choices, since §B2.12 shows
-   the chart instruments are the wrong instrument for this question.
-   **The real candidate is item 1 itself:** the transport exchange
-   holonomy is non-trivial, lives outside every chart instrument's domain,
-   and takes two values outside `⟨5/4⟩`.  It is the first thing in the
-   corpus that could clear the bar above, and if it too turns out to be a
-   coboundary the gauge road has no candidate site left at all.
+   minimal); and genuine sprinklings obstruct at the same route.  So on
+   the chart side the deliverable §D1b's rule 2 names — *tensorial
+   transition behaviour* — is still empty, and the bar a candidate must
+   clear there is explicit: a substrate with a **non-zero obstruction
+   count that survives free relabelling**, on a nerve with a **non-empty
+   2-skeleton**, at more than one port convention, and with the count
+   identified as an invariant rather than a schedule parameter.  Nothing
+   in the corpus is near it, and exactly **one** untried chart-side site is
+   named: a **third** concurrent conflict axis, on the thin structural
+   hope that crossing three ways gives the nerve loops that crossing two
+   ways does not — folded into item 1's substrate choices, since §B2.12
+   shows the chart instruments are the wrong instrument for this question.
+   **And off the chart carrier the bar is cleared.**  The transport
+   exchange holonomy is non-trivial, lives outside every chart
+   instrument's domain, is not a coboundary at any coarser committed
+   abstraction, and generates `⟨2,3⟩` — free abelian of rank 2, prime
+   support `{2,3}`, unmoved from two actors to four.  It is the first
+   object in the corpus to clear it.  **What it does not do is supply an
+   orientation**: a real-valued class carries magnitude, and the missing
+   ingredient — the thing that would make the class *tensorial* rather
+   than merely non-trivial — is exactly the phase item 1 forks on.
 8. **A workable BOUNDED description at transport scope** — distinct from
    item 2, which needs none.  Menu-exact is
    impossible for any design (§B9.1); sector-exact at `(actor, type)`
@@ -13893,34 +14819,44 @@ measure defect's own successor question is a transport-scope one; the
 functional slot, having been measured at closed scope and found to
 admit no state-generated coherence, hands superposition to transport
 scope by elimination; and the **phase**, hunted through three version
-lines, has its last known address in the odd sector of the *curved
-transport loops* — which are, themselves, the corpus's only non-trivial
-loop structure and its only untried gauge candidate.  **Five fronts, one
-place** — and that place has just stopped being an analytic void: it has
-one measured curvature waiting to be characterised (item 1) and one
-measure route waiting on a single theorem (item 2).
+lines, was hunted last in the odd sector of the *curved transport loops* —
+which are, themselves, the corpus's only non-trivial loop structure.
+**Five fronts, one place** — and that place is no longer an analytic void:
+it has a **characterised** curvature (irremovable, `⟨2,3⟩`, `J`-governed)
+and a measure route waiting on a single theorem (item 2).  What it does
+**not** have, at any of the addresses it owns, is a phase — which is why
+the item that ranks first is now a fork rather than a measurement.
 
 Against it, the ledger of moves is short and honest, and for the first
-time it is a ledger of **computations** rather than of method problems.
-There are **two** measurements that would each move several fronts at
-once: characterising the transport holonomy (item 1) and bounding the
-horizon limit (item 2).  There is **one** cheap named computation left
-from the quantum side, the uniqueness of the dynamical demand (item 4a).
-There is **one** unbuilt object with a clear specification, a chart
-substrate with generic direction geometry (item 3).  The rest are method
-problems rather than build problems: the missing map's derivation side,
-with no unit having a method for it, and the width road's proof-shaped
-residues (general `k`; a tiling above `k = 4`).  And one front that used
-to have a named next move no longer needs one: after the ceiling was taken
-at four consecutive sizes, the search for width is finished.
+time it is a ledger of **computations plus one decision** rather than of
+method problems.  There is **one** cheap measurement that would settle the
+fork's first branch: the record category's own reversal structure at
+transport scope (item 1a).  There is **one** theorem that would move
+several fronts at once: bounding the horizon limit (item 2).  There is
+**one** cheap named computation left from the quantum side, the uniqueness
+of the dynamical demand (item 4a).  There is **one** unbuilt object with a
+clear specification, a chart substrate with generic direction geometry
+(item 3).  And there is **one decision** — whether the imaginary unit is
+added as an axiom (item 1b) — which no receipt can make.  The rest are
+method problems rather than build problems: the missing map's derivation
+side, with no unit having a method for it, and the width road's
+proof-shaped residues (general `k`; a tiling above `k = 4`).  And one
+front that used to have a named next move no longer needs one: after the
+ceiling was taken at four consecutive sizes, the search for width is
+finished.
 
 **What is honest to say about the shape of it.**  The programme has
-`R₊` everywhere and `U(1)` nowhere.  It has a mechanism that makes space
-and no principle that selects one; it has a rank-2 object that is a
-covariance; it has a measure route that contracts and does not converge;
-and it has, for the first time, a loop that does not close.  **The
-destination's whole chain now hangs on whether that loop has an
-argument.**
+`R₊` everywhere and `U(1)` nowhere, and it has now looked in every place
+of its own.  It has a mechanism that makes space and no principle that
+selects one; it has a rank-2 object that is a covariance; it has a measure
+route that contracts and does not converge; and it has a loop that does
+not close — **and that loop has been opened up.**  The curvature is real,
+irremovable, three-smooth, and mapped by an even-channel invariant; it is
+also, exhaustively, **phaseless**.  So the destination's chain no longer
+hangs on whether that loop has an argument.  It hangs on the two branches
+of §D1's fork: one unspent door, and a decision about whether a theory
+that generates everything classical and needs a single imaginary axiom to
+become quantum is the result this programme was looking for.
 
 ---
 
@@ -13953,8 +14889,12 @@ argument.**
 > instruments** — while the one connection those instruments provably
 > cannot see, probability transport itself, turns out to be **curved**:
 > eighty-eight closed exchange loops returning `1/2`, `2/3`, `3/2` and
-> `2`, every one carried by a delivery, two of the four values outside the
-> group of the corpus's known coboundary — and two
+> `2`, every one carried by a delivery, and the curvature **irremovable**,
+> its group the full three-smooth positive rationals at four independent
+> actor pools, half its census a **descent obstruction** for which no
+> corpus formalism exists, and its geography tracked exactly by a
+> reversal-even invariant — so the first genuine non-trivial class in the
+> corpus exists, off the chart carrier and real-valued — and two
 > proof-shaped residues, a general-`k` statement and a tiling above four
 > disputants, plus the rank-2 object the arrow is *for*, which on the even
 > channel is an honest anisotropic form with a trivial stabiliser and
@@ -13985,14 +14925,21 @@ argument.**
 > line still has no *derived* functional level at all; and the **phase**,
 > which the corpus did not lack but found, receipted and shelved three
 > version lines ago, is exhibited nowhere in v10 — every loop the theory
-> owns returns a **positive real number**.  So what ranks first is a
-> single characterisation: **does the curvature of probability transport
-> carry an argument?**  The destination's working hypothesis — that the
-> modulus builds space and the phase completes and legislates it, the
-> corpus's own no-go having proved the real shadow loses the metric's
-> off-diagonal — stands or falls on it, as does the last candidate for a
-> non-trivial gauge structure and the address to which superposition was
-> handed by elimination.
+> owns returns a **positive real number**, and the search is now finished
+> at **0-for-5** across the grammar's own addresses, the curved transport
+> loops included and settled by one line of arithmetic (a positive
+> rational's only possible unimodular content is `−1`, which occurs
+> nowhere).  **So the grammar as built is a classical, curved,
+> probabilistic theory**, and what ranks first is no longer a measurement
+> but a **fork**: one unprobed door — the record category's own reversal
+> structure at transport scope — and, behind it, the decision whether to
+> add the imaginary unit as an **axiom** on record-odd structure, against a
+> constraint set the negatives have made measurable.  The destination's
+> working hypothesis — that the modulus builds space and the phase
+> completes and legislates it, the corpus's own no-go having proved the
+> real shadow loses the metric's off-diagonal — survives either way; what
+> changes is whether its second half is found or supplied, and that is a
+> decision about what the theory is rather than a computation.
 > And one line that has been open since the beginning is now shut: in the
 > delivery-free two-actor sub-theory the measure question is **closed**,
 > at that scope and inside its postulated shape.
@@ -14075,7 +15022,7 @@ defined precisely, and to Part A where the intuition lives.
 | **D15 action** | the Standard Model plus effective gravity at the measured couplings; the conditional measure of the whole-history process it generates **is** the identified click law over the tested energy domain | B2.9 |
 | **generated-law line** | the stream of Parts A and B (papers 26–32, D34–D58): record-closed conditional laws on generated carriers, culminating in the d42a/d42b grammar.  Constructed, receipt-anchored, **generates** causal structure, **presupposes no spacetime** | B2.9 |
 | **identified law** | the third sense of "the click law": empirically anchored — *identified, not derived* — and **not proved record-closed**.  Distinct from the grammar's admissibility law (complete) and its probability law (not self-normalizing) | B2.8, B2.9, A2.5 |
-| **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front.  **Three segments are measured**, all from the generated side only: the descent defect (§B2.10), the **functional slot** (§B2.11) and the **phase** (§B2.12).  The second **narrows and does not discharge** the widest stretch — there are still no *derived* class operators and no *derived* Gram functional, so paper 29's decoherence hypothesis still holds *for the empty reason*, but the space of candidates is now exactly counted and carries one hard negative; the third finds the corpus's own shelved amplitude form and measures the only object that could supply its argument | B2.9, B2.10, B2.11, B2.12, D4 |
+| **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front.  **Three segments are measured**, all from the generated side only: the descent defect (§B2.10), the **functional slot** (§B2.11) and the **phase** (§B2.12).  The second **narrows and does not discharge** the widest stretch — there are still no *derived* class operators and no *derived* Gram functional, so paper 29's decoherence hypothesis still holds *for the empty reason*, but the space of candidates is now exactly counted and carries one hard negative; the third finds the corpus's own shelved amplitude form, measures the object that was to supply its argument, and finds it **real** — closing the empirical search at 0-for-5 and leaving a fork rather than a next measurement | B2.9, B2.10, B2.11, B2.12, D4 |
 | **no silent erasure** | `[POSITED]` every loss of a record-accessible distinction must be **received** by records — total content conserved, sealing = dispersal, never intrinsic destruction.  The principle that closes the action line's coherence clause, with a parameter-free falsifier | B2.9, A2.6 |
 | **chart-size ratio (`ω`)** | the atlas instrument's overlap statistic on cover pairs.  `[THEOREM]` the smaller chart is *contained* in the larger, so `ω` is the ratio of their sizes and Jaccard similarity is identically equal to it — it therefore systematically favours **thin-charted** records | D2 (Road 1), B8.6 |
 | **crystal** | a record built to **tile** rather than to spike: the brick wall — ring actors, one minted version broadcast, then alternating re-delivery rounds.  Forced by the layer's own menus, sprinkling-grade homogeneity, above-sprinkling `ω`, **thin charts** at `d = 2`; the shortfall from a perfect tiling is entirely boundary.  Coupling two of them gives the *wide* crystal; replacing the deliveries with disputes gives the *arbitration* crystal, and crossing two conflict axes gives the *double grid* | B8.6, B8.7, B8.9, A8.6 |
@@ -14088,7 +15035,7 @@ defined precisely, and to Part A where the intuition lives.
 | **wide crystal** | the **built** composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record.  Witness **DOUBLE-RING(8, 10, 8)**: 177 events, 16 actors, forced with all actors offered at every step; `d = 2` homogeneity `47/59` in band with `\|D\| ≥ 4` at a third of its events.  A `d = 2` statement: at `d = 3` the uncoupled brick already meets the pattern.  It is also the substrate on which the **transition cocycle** is measured, and on which that cocycle's class is found to be a coboundary.  **Superseded as the corpus's widest object** by the delivery-free *double grids* (`max \|D\| = 9` at `k = 3`, **16** at `k = 4`, the latter in band on both `d = 3` columns as a whole record) | B8.7, B8.8, B8.9, A8.7, D2 |
 | **transition map** | the translation between two overlapping charts' coordinates — where a manifold's structure lives.  Read here from **wire words**: a direction's label in a chart is the set of register sequences realized by `P`-paths to it, `P` being `event_poset`'s own generating relation.  Every atlas result before D64 assumed these were identities; measured, 115 of 172 overlapping pairs of the wide crystal are not, and each non-identity one is a **partial** map on 2 of 4 fibre points (the 29 total maps are all identities).  On the wide **conflict** records the length-preserving transitions are outright identities at four of the five port conventions, so what carries the non-vacuity there is a probe's failure to fire, not a triple count | B8.8, B8.9, A8.8 |
 | **cocycle (transition)** | the consistency condition on transition maps around a triple of overlapping charts.  Satisfied on all 111 testable triples of the wide crystal and on **every** tested triple of every substrate, controls and sprinklings included — 993 triples, zero violations.  *Satisfying it does not make an atlas non-trivial*: it is a precondition, not evidence | B8.8, A8.8 |
-| **coboundary / `H¹ = 0`** | a transition class is a **coboundary** when a per-chart relabelling `ε` turns every transition into the identity; then `H¹ = 0`, the atlas is globally trivializable, the holonomy of every loop is trivial and the transitions are **pure gauge**.  On the delivery crystal it **is** one — 0 obstructions over 60 charts in 9 components, `ε` at 32/28, all 108 non-identity transitions relabelled away, at two independent port conventions — **and so is every conflict substrate**, at five port conventions and by three routes (§B8.9).  **The obstruction count is the test**; non-identity transitions, a clean cocycle and a group name are all compatible with triviality.  **And the verdict's domain is the chart atlas over the record graph** — probability transport itself is a different connection on a different carrier, and it is **curved** (see *transport holonomy*) | B8.8, B8.9, A8.8, B2.12, D2 |
+| **coboundary / `H¹ = 0`** | a transition class is a **coboundary** when a per-chart relabelling `ε` turns every transition into the identity; then `H¹ = 0`, the atlas is globally trivializable, the holonomy of every loop is trivial and the transitions are **pure gauge**.  On the delivery crystal it **is** one — 0 obstructions over 60 charts in 9 components, `ε` at 32/28, all 108 non-identity transitions relabelled away, at two independent port conventions — **and so is every conflict substrate**, at five port conventions and by three routes (§B8.9).  **The obstruction count is the test**; non-identity transitions, a clean cocycle and a group name are all compatible with triviality.  **And the verdict's domain is the chart atlas over the record graph** — probability transport itself is a different connection on a different carrier, it is **curved**, and it is a coboundary at **no** committed abstraction coarser than the record (see *transport holonomy*), which is the corpus's one genuine non-trivial class | B8.8, B8.9, A8.8, B2.12, D2 |
 | **descent (of a click law)** | the condition that a law's conditionals come from one measure on records, so that `P(a\|H)P(b\|Ha) = P(b\|H)P(a\|Hb)` whenever both orders name the same record.  The generated law's **raw** weights satisfy it everywhere; its **normalized** kernel fails on 32,256 of 425,334 refined-record-identical ordered pairs, by exactly `M(σ(Hb))/M(σ(Ha))` — the coboundary of the per-state menu mass, zero exceptions.  `Zhat`'s measure **does** descend (constant on all 5,548 record classes).  Distinct from **decoherence**, which is a demand on a functional *above* the law (§B2.11) and not on its conditionals | B2.10, A2.7 |
 | **repair space** | the completions that annihilate the descent defect.  At the depth-4 truncation the positive cone has dimension **573**; **205** of those also descend; the `(depth, sigma)` family is a **28**-dimensional slice; `Zhat` is one ray.  Repairing the squares and descending imply each other in **neither** direction (two exact positive witnesses).  **The collapse to one ray is D50's form choice, not descent** — and "the completions are precisely the repair" is blacklisted (§0.3) | B2.10, B6.12, A2.7 |
 | **the functional slot** | the missing map's *functional* segment made computable: the exact space of Hermitian forms `D(h,h')` over the truncated history layer that reproduce the record measure (C1), are PSD (C2), are cylinder-consistent (C3) and renaming-equivariant (C4).  Measured by exact rational rank at closed scope, depths 2–6.  **Existence is trivial and weak** (the classical diagonal member is positive definite and interior, and `diag(w)` works for *any* strictly positive cut-consistent weight), so the pre-registered outcomes *empty* and *coherence forced* are both excluded.  **A measurement of candidates, never a construction of one** | B2.11, A2.8 |
@@ -14105,8 +15052,12 @@ defined precisely, and to Part A where the intuition lives.
 | **the weld** | the one sentence the corpus never wrote: that reversing a record's internal order **is** running a transport loop backwards.  Its two halves are separately proved — v6 paper 7's `U(1)` holonomy theorem and v7 paper 30's receipted conjugation-under-reversal.  **The identification leg survives; the holonomy leg dies at closed scope and revives at transport scope** | B2.12, A2.9 |
 | **`A_D` (the exchange defect)** | `A_D = log dP_AB/dP_BA`, the log-holonomy of probability transport around a closed exchange square.  **`≡ 0` at closed scope on the placement grammar, as a `[THEOREM]` at every depth** (L1–L6); **non-zero at transport scope**.  Also `0` along the one-dimensional commit path, so **any phase must live transverse to commit order** | B2.12, A2.9 |
 | **budget coincidence** | the scope clause on closed-scope flatness, and the decisive half of it: lemmas L4 and L6 hold because the propose-budget `1/4` and the arbitrate-budget `1/4` are **equal and mutually exclusive** in an actor's own view.  **A tuning of d42b3, not a structure** — change either constant and the register-overlapping squares stop being flat, which is exactly what happens one grammar over | B2.12, §0.3 |
-| **transport holonomy** | the corpus's first non-trivial loop structure: at transport scope **88 of 1,546** closed exchange squares return `dP_AB/dP_BA ∈ {1/2, 2/3, 3/2, 2}`, with **40** further half-open at `±∞` and 12 more at three actors — **all delivery-bearing**, from depth 3, and **invisible to the record-graph instrument** (record-closure `⟺` register-disjointness, and `μ` is an exact gradient where the instrument *can* see).  **A NEW object**: `2/3` and `3/2` lie **outside `⟨5/4⟩`**, so it is not D65's coboundary family.  Its characterisation is the era's hinge | B2.12, A2.9, D4 |
-| **the odd sector** | the reversal-odd half of a record, and **the imaginary exponential's last known address**.  The corpus's real odd object — `A_D` — is negative-definite in v7's analysis and becomes positive only after the `i`-twist; the even half hosts the metric's diagonal and the odd half the off-diagonal (v2 p10 Prop 10.6).  **Nothing in v10 exhibits a phase**: every holonomy value the programme owns is `R₊`-valued | B2.12, B8.10, A2.9 |
+| **transport holonomy** | the corpus's first non-trivial loop structure, and now characterised: at transport scope **88 of 1,546** closed exchange squares return `dP_AB/dP_BA ∈ {1/2, 2/3, 3/2, 2}`, with **40** further half-open at `±∞` and 12 more at three actors — **all delivery-bearing**, from depth 3, and **invisible to the record-graph instrument** (record-closure `⟺` register-disjointness, and `μ` an exact gradient where the instrument *can* see).  **Its carrier** is the coarsest descent quotient (the weighted-menu partition), on which the defects are **gauge-invariant self-loops**; **its removability is a threshold** — a coboundary exactly where `μ` descends (SEQ, REC) and at no coarser rung (MULT, STATE, PORT, MENU), which *explains* the record instrument's blindness; **its group is `⟨2,3⟩`**, free abelian of rank 2, the full 3-smooth positive rationals, unmoved over ten scopes and **four** actor pools (27,186 non-unit squares, no new prime); it is **not** D65's coboundary family (normalisation moves it not at all); and it is **`R⁺`-valued with no unimodular part** | B2.12, A2.9, D4 |
+| **the odd sector** | the reversal-odd half of a record.  The corpus's real odd object — `A_D` — is negative-definite in v7's analysis and becomes positive only after the `i`-twist; the even half hosts the metric's diagonal and the odd half the off-diagonal (v2 p10 Prop 10.6).  It **used** to be the imaginary exponential's last known address; that address has been probed and is **empty** — a positive-rational holonomy's only possible unimodular content is `−1`, realised nowhere, and the honest order-dual carrier admits `0` of `304` reversed linear extensions.  **Nothing in v10 exhibits a phase**: the scalar phase is **0-for-5** at the grammar's native addresses | B2.12, B8.10, A2.9, §0.3 |
+| **`J` (the even-channel invariant)** | `J(square) := [both endpoint sequences are reverse-admissible]` — symmetric in the two events, hence reversal-**EVEN**, substrate-supplied, never mixed, and **not constant**.  **`J = 1 ⟹ r = 1` on 8,600 closed squares across three arms with zero exceptions, and `J = 0` on all 1,060 defective squares**: the even channel exactly tracks the curvature's geography.  Not the register invariant (793 register-overlapping `J=1` squares; 168 register-disjoint `J=0` ones) and not a depth artefact (912 of 1,252 deepest-stratum unit squares carry it; 0 of 84 defective ones do).  **`[MEASURED]` on three windows only — not a theorem**, and *why* it holds is unexplained.  The round's find, credited to the referee | B2.12, A2.9, D4 |
+| **descent obstruction (the dichotomy)** | the second kind of defective square: its two orders leave **different weighted menus**, so it closes in **no descent quotient at all** — 44 of 88 at the anchor window (invariant under CTL-ORDER), a majority at three actors, and window-dependent everywhere (44/88, 0/12, 604/960, 132/540, 218/334, 60/228, so the even split is a coincidence).  It is neither a coboundary nor a curvature.  **The qualifier "descent" is load-bearing**: coarser quotient *graphs* do close it — `MULT` closes **88/88** — at the price of 8 multi-valued labelled edges, i.e. no descent; and four strictly weaker notions of descent close **0 of 44** each.  **No corpus formalism handles it at transport scope**; D65 §3.1's repair cone computes the same criterion under a different functor | B2.12, §0.3, D4 |
+| **the honest carrier (order-dual)** | the reversal object D71b actually commits — the unlabeled **record order under poset reversal** — as against sequence traversal and linear extensions (which are D72's, at 2-event scope).  Measured at transport scope: of **all 304** linear extensions of the opposite posets of the 176 defective endpoints, **0** are admissible, while all 304 are admissible forwards.  And the block is **defect-specific, not a support fact**: the grammar is **not** reversal-blocking — **2,196 of 3,092** closed-square endpoints reverse into admissible histories.  **The record category's own reversal structure at transport scope remains unprobed** — the fork's live address | B2.12, A2.9, D1, D4 |
+| **the fork** | what replaces the phase hunt once the scalar search closes at 0-for-5.  **(a) the last door:** the record category's own reversal structure at transport scope — one cheap unit, the only address never probed.  **(b) the enrichment:** the `i`-twist as an **axiom** on record-odd structure, transverse to commit order, against a measured constraint set (the closed-scope flatness theorem, the horizon measure, dual conjugation, the even channel, `J`).  **Recommendation on record: door first; if empty, the enrichment is not a defeat but THE FINDING** — grammar plus one imaginary axiom, everything else derived.  **A decision about what the theory IS, flagged for the principal** | B2.12, A2.9, D1, D4 |
 | **even Gram** | `G^even_{jk} = Σ_R P(R) E_j(R) E_k(R*)`, computed exactly by v7's reflection-positivity campaign, its minors printed and **the matrix itself discarded for its trace**.  Resurrected: anisotropic, positive-definite, three distinct diagonal entries, `S₃` stabiliser **order 1** on both fixtures.  And **a covariance, not a metric response** — no atom index, rank 1 locally, nothing acting on its index, predictively equivalent to its own trace.  Its *reflected* form **equals** the ordinary second-moment matrix, so paper 30 §25.4's positivity is algebra, not measurement | B8.10, A8.10 |
 | **selected fixture** | paper 30 `§27`'s dual-pair triple `{(912,25104), (17288,525076), (24576,540672)}`, chosen by a record-intrinsic admissibility rule at `TV9 = rec9 = 0` **exactly** — as against the `§25` triple the same paper ranks **11th** and declares falsified, whose `1.676e-5` is the loser's score and a **sector-selection artefact** no function of the even 3-vector can reach.  The general rule: **anchor on a paper's own selection, not on the tables it prints before falsifying them** | B8.10, §0.3, B10.15e |
 | **`h`-weight identity** | why every promoted `K` lands on the same `TV_9`: `forward_tv` depends on a colouring **only** through its atom-average weight function `h`, so a candidate whose `h` equals `full`'s at every record has an identical forward error **by construction**.  Gated as a biconditional at 18 candidates over two fixtures, zero mismatches.  It replaces an asserted **monotonicity of `TV_9` under refinement**, which was never proved and which the committed table itself contradicts | B8.10 |
@@ -14295,15 +15246,26 @@ part of the document, not an apology for it.
     and the published constant to 32 digits, and then **supplying the
     depth-free theorem the unit had only sketched**, the transport-scope
     census the unit's instrument was structurally blind to, and the
-    normalised-kernel computation the unit had not run; and **D73**
+    normalised-kernel computation the unit had not run; **D73**
     (§B8.10, the even Gram) likewise, its referee reproducing every anchor
     character for character and then finding the **BLOCKER by reading 130
     lines further down a paper the unit had already opened** — the
     fixture's own falsification — plus the inversion of the transfer probe
-    inside the unit's own evidence.  All eleven
+    inside the unit's own evidence; and **D74** (§B2.12(iv), the transport
+    holonomy) likewise, its referee rebuilding the family enumerator, the
+    square census, the `mu` map, the six-rung ladder, the menu quotient and
+    partition-refinement congruence, the prime-valuation group and the
+    order-dual machinery from scratch, reproducing **every** anchor and
+    every headline number, failing to break either structural theorem
+    under four constructed weakenings — and then running **a fourth actor
+    pool the unit had not**, and building, out of raw material the unit's
+    own arm had computed and never examined, the **`J` invariant that
+    refuted the unit's most quotable sentence**.  All twelve
     round 1 terminal.  **Round-supplied results are carried in this book
     as authorship**: the repaired receipts rebuild every referee figure in
-    their own process and gate it, and none of it is copied.
+    their own process and gate it, and none of it is copied — a discipline
+    that in D74's delta caught a mis-sourced denominator **in the review**,
+    the first correction in this line to travel campaign-to-referee.
     **D56** (§B9) is an advisory probe whose two load-bearing claims were
     independently re-verified and whose remainder must be re-derived.
     Two figures in §B5.7 and one in §B8.6 are `[REFEREE-CARRIED]`, and the
@@ -14356,7 +15318,7 @@ part of the document, not an apology for it.
     statements of what is missing.  The `[MY READING]` in §D3 is
     speculation and is marked three times as such.
 
-15. **Eight things this document leaves open, and a reader should not
+15. **Nine things this document leaves open, and a reader should not
     mistake for settled.**  (a) The **sky reading** — all three are live,
     the dimension discriminator is sharpest under the cover reading, and
     much of the constructions line was computed under the antichain
@@ -14405,16 +15367,34 @@ part of the document, not an apology for it.
     measure; the missing map is untouched.
     (g) The **flatness theorem** (§B2.12) is depth-free for **one
     grammar**, and half of its proof is a **budget coincidence** of that
-    grammar's own constants.  Its transport-scope failure is `[MEASURED]`
-    on two arms.  L6a's induction is verified exhaustively and not
+    grammar's own constants.  Its transport-scope failure is `[MEASURED]`.
+    L6a's induction is verified exhaustively and not
     machine-proved; the `±∞` squares are a **support**-level defect no
     holonomy formalism in the corpus handles; and **no `U(1)` part is
-    exhibited anywhere** — the phase is an address, not a result.  The
+    exhibited anywhere**.  The
     archaeology's sources (v6 paper 7, v7 papers 30 and 42, v2 paper 10)
     are **earlier version lines**, cited here as archaeology and not as
     live corpus claims; one of them carries a **live erratum** (the
     quarter law's `BC` is only the Cauchy–Schwarz bound) that has not been
     routed to its dependants.
+    (g2) The **characterisation of the transport curvature**
+    (§B2.12(iv)) is `[MEASURED]` at declared depths and pools throughout,
+    and every *proportion* in it moves across windows — the 44 + 44
+    dichotomy is an anchor-window coincidence, and the fraction the
+    carrier sees runs 50 % / 0 % / 63 % / 24 % / 65 % / 26 % with no known
+    law.  What is stable is the **value set** and hence the group, and even
+    there the two depth chains are **nested** and only the four-actor pool
+    is an independent replication.  Two structural statements are
+    `[DEFINITIONAL]` and are labelled as such in the receipt (the
+    identification of the coarsest descent quotient with the menu
+    partition; the self-loop count); what carries the carrier claim is the
+    *measured* agreement with an independently computed coarsest
+    congruence.  **`J` is not a theorem** — three windows, zero exceptions,
+    no explanation, and untested at the depths and pools that matter most.
+    `⟨2,3⟩` is **exhibited, not derived**: no mechanism accounts for
+    `3^{±1}`.  And the whole unit is a statement about the **d42b1
+    transport grammar** at finite scope — nothing here is infinite-volume,
+    and nothing here reaches the identified law.
     (h) The **even Gram** (§B8.10) is fixture-scoped twice over: two named
     dual-pair triples, one window, one measure.  The anisotropy **rises
     monotonically across the whole window with no sign of saturating** and

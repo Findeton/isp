@@ -11941,3 +11941,23 @@ the door first; if empty, the enrichment is not a defeat but THE
 FINDING (grammar + one imaginary axiom, everything else derived).
 TERMINAL for round 1.  Next: the era-closing book patch; then the
 fork.
+
+## 2026-07-27 — THE BOOK INTEGRATED TO #495: THE ERA'S CLOSE AND THE
+## FORK, ONE-GO (LEDGER #496)
+THE-THEORY-SO-FAR.md stamp #495, full re-read held.  §A2.9/§B2.12
+carry the curvature's characterisation (the removability ladder, the
+blindness explanation, <2,3> at four pools, the descent dichotomy
+with its qualifier, the honest carriers, J with its blockquote) and
+THE ERA'S CLOSE: the grammar as built is a classical, curved,
+probabilistic theory; the founding question's earned answer (the
+holonomy exists and is real; the interference is not in it); THE
+FORK as Part D's head (the last door vs the enrichment), flagged as
+the principal's decision.  Four blacklist entries; two graveyard
+entries (incl. "the mirror of v7", killed by J); review statistics
+fourteen rounds with the fifth failure kind (UNEARNED EVIDENCE) and
+the first referee-corrects-referee; glossary gains J, the descent
+obstruction, the honest carrier, the fork.  Eight stale sites
+caught outside targets.  Zero live "last address" claims.  NOTE:
+the D75 Barandes audit (running) may reframe the fork's
+INTERPRETATION — the book's thesis sentence is audit-safe (it
+states what was measured), and any reframe lands as its own patch.
