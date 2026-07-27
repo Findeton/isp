@@ -11100,3 +11100,40 @@ rings are clean, and sprinklings obstruct too: the ODD-RING
 HOLONOMY residue.  GREEN-UNREVIEWED: hostile round dispatched
 (primary targets: the width witness against instrument artifacts,
 the W4c dead-wire proof, the odd-ring residue's honest framing).
+
+## 2026-07-27 — D66 ROUND 1 ADJUDICATED AND TERMINAL: THE WIDTH
+## CEILING IS k², SATURATED BY A DELIVERY-FREE DOUBLE GRID THAT IS
+## IN-BAND AT d = 3 (LEDGER #472)
+Deliverables: reviews/d66-round1-hostile-review.md (independent Opus
+5, REVISE, 1 BLOCKER / 5 MAJOR / 8 MINOR / 4 NIT, + my DELTA),
+repaired receipt (29 PASS / 0 FAIL, 962 s, 21 configurations / 2,325
+events) + retitled note.  **FORWARD CORRECTION of #471's headline:
+"max |D| = 2k" and "the delivery is the crystal's second direction"
+ARE WITHDRAWN** — both were properties of the two swept schedules.
+The referee confirmed every number, then BUILT THE BETTER CRYSTAL:
+**DOUBLE-GRID(3,R) — rows and columns conflicting concurrently, ZERO
+in-round deliveries, conflict-group share saturating 1/4 — carries
+NINE |D| = 9 charts (k² = 9, W4c's TRUE ceiling, SATURATED), passes
+C1-grade full-menu replay (72/72, widest menu 536), and at d = 3
+sits INSIDE the sprinkling band (0.7833) with max |D| = 9 — the
+first record that is BOTH crystal-uniform AND wide, answering the
+unit's own residue 2.**  The repair pass rebuilt it independently to
+EXACT MATCH and gated everything; it also found a defect in the
+REVIEW's refinement formula (7 exceptions, characterised; the
+airtight containment gated instead) and disclosed one auxiliary-
+column discrepancy (RING(4,6); obstruction count agrees; the
+committed RING(4,10) row scales to the repair's numbers).  W4c's
+four-line structural proof written in (payload-vs-register; vname
+recurrence forces causal comparability, hence refusal — the D62 O2
+pattern at transport scope).  The odd-ring residue RESOLVED as
+parity (counts = R − 1; the referee's experiment gated).  The
+corrected mechanism story: **the second direction is a second
+CONCURRENT CONFLICT AXIS — conflict alone, crossed, generates both
+the uniformity and the width; transport is needed only to seed and
+rotate, not to make space.**  Nine directions against the
+sprinklings' 10-17, from pure interaction.  Still NO gauge
+structure: C7's cochain identically zero at all five conventions on
+every substrate.  TERMINAL for round 1.  Next: the book absorbs the
+corrected D66; the next-phase queue — push the double-grid family
+(k = 4 bounds at 16) toward sprinkling width, the missing map's
+functional level, the repair cone, transport escapes, Lean.

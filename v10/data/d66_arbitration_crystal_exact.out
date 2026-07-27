@@ -14,12 +14,14 @@
     CONFLICT-RING(M, R, sticky, win): brick pairing {(i,i+1): i even} on even blocks, {(i,i+1 mod M): i odd} on odd blocks; sticky = rounds per pairing (0 = never rotate, the delivery-free limit); win in (S, R, ALT).
     Per pair per round: ONE delivery iff the two actors do not already share an unsuperseded base, then TWO opposite proposals, then ONE two-proposer arbitration.  Round 0 needs no delivery (every actor holds genesis v0).
     CONFLICT-GRID(g, R): g x g actors; rounds alternate ROW and COLUMN groups (orthogonal partitions, so no two actors share a group twice running); group seed = the diagonal member; g - 1 deliveries + g proposals + ONE g-proposer arbitration per group per round.
+    DOUBLE-GRID(g, R) [round-1 BLOCKER 1, the REFEREE's construction]: the same g x g actors, but ROWS AND COLUMNS CONFLICT CONCURRENTLY on six independent base lineages minted once in a bootstrap of 6 mints + 2g(g-1) deliveries; each round is then g^2*2 proposals + g ROW arbitrations + g COLUMN arbitrations and ZERO deliveries.
+    ARBCHAIN(m, k) [round-1 BLOCKER 1]: one k-proposer arbitration whose k proposer registers are consumed by m further k-proposer arbitrations and k - m deliveries, so |D_e(2)| = k*m + 2*(k - m) sweeps [2k, k^2].
     SKY-B depths measured = (2, 3); committed SKYB_DEPTH = 2.  Full-menu replay budgets: 420s per record, 120s for the wide record.
-    swept configurations = 15: RING(M=4,R=6,sticky=1,win=S); RING(M=4,R=10,sticky=1,win=S); RING(M=6,R=6,sticky=1,win=S); RING(M=6,R=10,sticky=1,win=S); RING(M=6,R=14,sticky=1,win=S); RING(M=8,R=10,sticky=1,win=S); RING(M=6,R=10,sticky=2,win=S); RING(M=6,R=10,sticky=0,win=S); RING(M=6,R=10,sticky=1,win=R); RING(M=6,R=10,sticky=1,win=ALT); GRID(g=2,R=10); GRID(g=3,R=4); GRID(g=3,R=6); GRID(g=3,R=10); GRID(g=4,R=4)
+    swept configurations = 21: RING(M=4,R=6,sticky=1,win=S); RING(M=4,R=10,sticky=1,win=S); RING(M=6,R=6,sticky=1,win=S); RING(M=6,R=10,sticky=1,win=S); RING(M=6,R=14,sticky=1,win=S); RING(M=8,R=6,sticky=1,win=S); RING(M=8,R=10,sticky=1,win=S); RING(M=10,R=6,sticky=1,win=S); RING(M=10,R=10,sticky=1,win=S); RING(M=12,R=6,sticky=1,win=S); RING(M=6,R=10,sticky=2,win=S); RING(M=6,R=10,sticky=0,win=S); RING(M=6,R=10,sticky=1,win=R); RING(M=6,R=10,sticky=1,win=ALT); GRID(g=2,R=10); GRID(g=3,R=4); GRID(g=3,R=6); GRID(g=3,R=10); GRID(g=4,R=4); DOUBLE-GRID(g=3,R=2); DOUBLE-GRID(g=3,R=4)
 
 [A0 THE ANCHORS — D63's delivery crystal, D60's brick and the eleven genuine sprinkling configurations, RE-RUN here]
     DR(8,10,8): n=177, d=2 homog 47/59 (~0.7966), |D|>=4 1/3, max|D| 4, omega 100/137; d=3 homog 137/177, |D|>=4 119/177, max|D| 4
-    BRICK(8,14): d=2 homog 10/13, omega 125/192, |D|>=4 0, max|D| 3  [5.9s]
+    BRICK(8,14): d=2 homog 10/13, omega 125/192, |D|>=4 0, max|D| 3  [5.8s]
   [PASS] A0(i) [ANCHOR, exit 1 on breakage] THE DELIVERY CONTROLS REPRODUCE THEIR COMMITTED ROWS EXACTLY.  D63's own `double_ring` function object gives 177 events, d = 2 homogeneity 47/59, |D| >= 4 at 1/3, max |D| = 4, mean omega 100/137, and D63's d = 3 row; D60's brick is reproduced EVENT FOR EVENT with its published row (10/13, 125/192, 0, 3).  Every comparison this unit makes is against these re-run objects, never against a re-typed number  (DR row exact = True; brick event list identical = True, row = True)
 
 [A0(ii) THE SPRINKLING COMPARATORS — D58's atlas re-run on the same eleven genuine configurations D60/D63 used]
@@ -36,52 +38,79 @@
     M31 box=   90: homog 0.7500, |D|>=4 0.6500, mean|D| 6.41, max|D| 14, mean omega 0.0999
     d = 2: BAND homogeneity [77/120, 4/5] (~[0.6417, 0.8000]); |D|>=4 band [17/40, 13/20] (~[0.4250, 0.6500]); max|D| [10, 17]
     d = 3: BAND homogeneity [41/60, 49/60] (~[0.6833, 0.8167]); |D|>=4 band [3/5, 91/120] (~[0.6000, 0.7583]); max|D| [11, 17]
-    [35.5s]
+    [36.6s]
   [PASS] A0(ii) [ANCHOR, exit 1 on breakage] THE COMPARATORS ARE RE-RUN, NOT RE-TYPED, and reproduce D60/D63's committed bands exactly: homogeneity [77/120, 4/5] and |D| >= 4 [17/40, 13/20] at d = 2.  Every threshold used anywhere below is one of these measured numbers or one of D58's own columns; this unit invents none  (11 genuine configurations; d = 2 band (Fraction(77, 120), Fraction(4, 5)), |D|>=4 band (Fraction(17, 40), Fraction(13, 20)), sprinkling max|D| (10, 17))
 
 [A1 THE SWEEP — every configuration built by the layer's own menu.  All figures at d = 2; 'band' = A0(ii)'s recomputed sprinkling band; 'wide' = D58's |D| >= 4 column]
     RING(M=4,R=6,sticky=1,win=S)           n=  46 arb 0.2609 homog 0.6522  |D|>=4 0.2174  max|D| 4  mean|D| 1.96  omega 0.7500  [0.9s]
-    RING(M=4,R=10,sticky=1,win=S)          n=  78 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [7.5s]
+    RING(M=4,R=10,sticky=1,win=S)          n=  78 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [7.7s]
     RING(M=6,R=6,sticky=1,win=S)           n=  69 arb 0.2609 homog 0.6522  |D|>=4 0.2174  max|D| 4  mean|D| 1.96  omega 0.7500  [2.1s]
-    RING(M=6,R=10,sticky=1,win=S)          n= 117 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [17.7s]
-    RING(M=6,R=14,sticky=1,win=S)          n= 165 arb 0.2545 homog 0.7091  |D|>=4 0.2364  max|D| 4  mean|D| 2.13  omega 0.7500  [74.1s]
-    RING(M=8,R=10,sticky=1,win=S)          n= 156 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [32.7s]
-    RING(M=6,R=10,sticky=2,win=S)          n= 102 arb 0.2941 homog 0.6471  |D|>=4 0.1176  max|D| 4  mean|D| 1.79  omega 0.8462  [8.9s]
-    RING(M=6,R=10,sticky=0,win=S)          n=  90 arb 0.3333 homog 0.6000  |D|>=4 0.0000  max|D| 2  mean|D| 1.50  omega 1.0000  [4.2s]
-    RING(M=6,R=10,sticky=1,win=R)          n= 117 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [17.6s]
-    RING(M=6,R=10,sticky=1,win=ALT)        n= 117 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [17.7s]
-    GRID(g=2,R=10)                         n=  78 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [6.7s]
+    RING(M=6,R=10,sticky=1,win=S)          n= 117 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [18.5s]
+    RING(M=6,R=14,sticky=1,win=S)          n= 165 arb 0.2545 homog 0.7091  |D|>=4 0.2364  max|D| 4  mean|D| 2.13  omega 0.7500  [75.4s]
+    RING(M=8,R=6,sticky=1,win=S)           n=  92 arb 0.2609 homog 0.6522  |D|>=4 0.2174  max|D| 4  mean|D| 1.96  omega 0.7500  [3.9s]
+    RING(M=8,R=10,sticky=1,win=S)          n= 156 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [33.0s]
+    RING(M=10,R=6,sticky=1,win=S)          n= 115 arb 0.2609 homog 0.6522  |D|>=4 0.2174  max|D| 4  mean|D| 1.96  omega 0.7500  [6.2s]
+    RING(M=10,R=10,sticky=1,win=S)         n= 195 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [53.5s]
+    RING(M=12,R=6,sticky=1,win=S)          n= 138 arb 0.2609 homog 0.6522  |D|>=4 0.2174  max|D| 4  mean|D| 1.96  omega 0.7500  [9.3s]
+    RING(M=6,R=10,sticky=2,win=S)          n= 102 arb 0.2941 homog 0.6471  |D|>=4 0.1176  max|D| 4  mean|D| 1.79  omega 0.8462  [9.1s]
+    RING(M=6,R=10,sticky=0,win=S)          n=  90 arb 0.3333 homog 0.6000  |D|>=4 0.0000  max|D| 2  mean|D| 1.50  omega 1.0000  [4.3s]
+    RING(M=6,R=10,sticky=1,win=R)          n= 117 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [17.9s]
+    RING(M=6,R=10,sticky=1,win=ALT)        n= 117 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [17.9s]
+    GRID(g=2,R=10)                         n=  78 arb 0.2564 homog 0.6923  |D|>=4 0.2308  max|D| 4  mean|D| 2.08  omega 0.7500  [6.8s]
     GRID(g=3,R=4)                          n=  66 arb 0.1818 homog 0.4848  |D|>=4 0.1364  max|D| 6  mean|D| 1.86  omega 0.5068  [1.2s]
     GRID(g=3,R=6)                          n= 102 arb 0.1765 homog 0.5098  |D|>=4 0.1471  max|D| 6  mean|D| 1.97  omega 0.5000  [6.3s]
-    GRID(g=3,R=10)                         n= 174 arb 0.1724 homog 0.5287  |D|>=4 0.1552  max|D| 6  mean|D| 2.05  omega 0.4954  [55.7s]
+    GRID(g=3,R=10)                         n= 174 arb 0.1724 homog 0.5287  |D|>=4 0.1552  max|D| 6  mean|D| 2.05  omega 0.4954  [56.0s]
     GRID(g=4,R=4)                          n= 116 arb 0.1379 homog 0.4483  |D|>=4 0.1466  max|D| 8  mean|D| 1.69  omega 0.4420  [6.6s]
-    swept 15 configurations, 1593 events built [260.0s]
-    event species over the whole sweep: {'d': 367, 'p': 848, 'r': 378}; refusals = 0 ; max menu hits per specification over every step of every record = 1
-  [PASS] A1(a) CONFLICT TILES AT CADENCE — NO REFUSAL ANYWHERE, AND THE PIN'S OUTCOME A-I DOES NOT FIRE.  Every one of the swept conflict records is admissible at every step against the layer's own restricted menu, and every specification — a FULL EVENT TUPLE, so the winner choice W and the ckey are part of the specification — matched EXACTLY ONE candidate.  WHAT THIS GATE MEASURES (D63's round-1 MINOR 4): uniqueness is STRUCTURAL (menu events are pairwise distinct and a full tuple can match at most one), so the gated content is that the specified event IS OFFERED (hits = 1, never 0) and that no step was refused  (records = 15, events = 1593, max hits = 1, refusals = 0)
+    DOUBLE-GRID(g=3,R=2)                   n=  72 arb 0.2500 homog 0.4444  |D|>=4 0.0694  max|D| 9  mean|D| 1.96  omega 0.5576  [9.3s]
+    DOUBLE-GRID(g=3,R=4)                   n= 120 arb 0.2500 homog 0.5167  |D|>=4 0.0917  max|D| 9  mean|D| 2.38  omega 0.5566  [86.6s]
+    swept 21 configurations, 2325 events built [432.3s]
+    event species over the whole sweep: {'d': 511, 'p': 1248, 'r': 566}; refusals = 0 ; max menu hits per specification over every step of every record = 1
+  [PASS] A1(a) CONFLICT TILES AT CADENCE — NO REFUSAL ANYWHERE, AND THE PIN'S OUTCOME A-I DOES NOT FIRE.  Every one of the swept conflict records is admissible at every step against the layer's own restricted menu, and every specification — a FULL EVENT TUPLE, so the winner choice W and the ckey are part of the specification — matched EXACTLY ONE candidate.  WHAT THIS GATE MEASURES (D63's round-1 MINOR 4): uniqueness is STRUCTURAL (menu events are pairwise distinct and a full tuple can match at most one), so the gated content is that the specified event IS OFFERED (hits = 1, never 0) and that no step was refused  (records = 21, events = 2325, max hits = 1, refusals = 0)
 
 [A1(b) THE CONFLICT BUDGET — how much of a record CAN be arbitration?]
   BOUND (a counting theorem of the layer, not a parameter).  An arbitration's
   ckey is a set of k live proposal triples, and a proposal is resolved by at
-  most one arbitration in any record (`View.resolved`), so #proposals >= k *
-  #arbs and an arbitration's share of the events of a record is at most
-  1/(k+1) where k is the smallest proposer count in it.  Deliveries only
-  lower it.  The delivery-free CONFLICT-RING(sticky = 0) SATURATES the bound.
-    RING(M=4,R=6,sticky=1,win=S)           n=  46 arbs= 12 (k=2) deliveries= 10 arb share 6/23 (~0.2609) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=4,R=10,sticky=1,win=S)          n=  78 arbs= 20 (k=2) deliveries= 18 arb share 10/39 (~0.2564) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=6,R=6,sticky=1,win=S)           n=  69 arbs= 18 (k=2) deliveries= 15 arb share 6/23 (~0.2609) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=6,R=10,sticky=1,win=S)          n= 117 arbs= 30 (k=2) deliveries= 27 arb share 10/39 (~0.2564) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=6,R=14,sticky=1,win=S)          n= 165 arbs= 42 (k=2) deliveries= 39 arb share 14/55 (~0.2545) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=8,R=10,sticky=1,win=S)          n= 156 arbs= 40 (k=2) deliveries= 36 arb share 10/39 (~0.2564) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=6,R=10,sticky=2,win=S)          n= 102 arbs= 30 (k=2) deliveries= 12 arb share 5/17 (~0.2941) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=6,R=10,sticky=0,win=S)          n=  90 arbs= 30 (k=2) deliveries=  0 arb share 1/3 (~0.3333) vs bound 1/(k+1) = 1/3 (~0.3333)   <== SATURATED
-    RING(M=6,R=10,sticky=1,win=R)          n= 117 arbs= 30 (k=2) deliveries= 27 arb share 10/39 (~0.2564) vs bound 1/(k+1) = 1/3 (~0.3333)
-    RING(M=6,R=10,sticky=1,win=ALT)        n= 117 arbs= 30 (k=2) deliveries= 27 arb share 10/39 (~0.2564) vs bound 1/(k+1) = 1/3 (~0.3333)
-    GRID(g=2,R=10)                         n=  78 arbs= 20 (k=2) deliveries= 18 arb share 10/39 (~0.2564) vs bound 1/(k+1) = 1/3 (~0.3333)
-    GRID(g=3,R=4)                          n=  66 arbs= 12 (k=3) deliveries= 18 arb share 2/11 (~0.1818) vs bound 1/(k+1) = 1/4 (~0.2500)
-    GRID(g=3,R=6)                          n= 102 arbs= 18 (k=3) deliveries= 30 arb share 3/17 (~0.1765) vs bound 1/(k+1) = 1/4 (~0.2500)
-    GRID(g=3,R=10)                         n= 174 arbs= 30 (k=3) deliveries= 54 arb share 5/29 (~0.1724) vs bound 1/(k+1) = 1/4 (~0.2500)
-    GRID(g=4,R=4)                          n= 116 arbs= 16 (k=4) deliveries= 36 arb share 4/29 (~0.1379) vs bound 1/(k+1) = 1/5 (~0.2000)
-  [PASS] A1(b) THE ARBITRATION SHARE IS BOUNDED BY THE GRAMMAR AND THE BOUND IS ATTAINED.  Every proposal in every swept record is consumed by exactly one arbitration (#proposals = sum of proposer counts, gated), so no record of this layer can be more than 1/(k+1) arbitration, and the delivery-free ring attains it exactly at 1/3.  THE DESIGN PROBLEM THE PIN NAMED, MEASURED: re-supplying a conflict costs one delivery per group per round, which is why the rotating ring runs at 25.6% rather than 33.3% — and A2/A3 show what that delivery BUYS  (records checked = 15, proposal-consumption equalities = 15, bound violations = 0, saturating records = ['RING(M=6,R=10,sticky=0,win=S)'])
+  most one arbitration in any record, so #proposals >= k * #arbs and an
+  arbitration's share of the events of a record is at most 1/(k+1) where k is
+  the smallest proposer count in it.  Deliveries only lower it.
+  THE STEP THE PRINTED PROOF USED TO SKIP (round-1 MINOR 3).  `View.resolved` is
+  VIEW-RELATIVE — it is rebuilt from the arbitrations in ONE event's causal
+  past — so by itself it does not exclude two causally INCOMPARABLE arbitrations
+  each seeing the same triple live.  The register argument closes it: two
+  arbitrations consuming the same proposal triple both carry that proposer's
+  register in `regs_of`, and `event_poset` makes every later event touching a
+  register inherit the whole past of the previous one — so they are CAUSALLY
+  COMPARABLE, the later one's View has the triple in `resolved`, its component
+  is gone from `arb_components_in_view`, and `admissible` returns False.  The
+  conclusion is then gated numerically per record: #proposals = sum of proposer
+  counts AND no consumed triple occurs twice.
+    RING(M=4,R=6,sticky=1,win=S)           n=  46 arbs= 12 (k_min=2, k_conflict=2) deliveries= 10 arb share 6/23 (~0.2609) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=4,R=10,sticky=1,win=S)          n=  78 arbs= 20 (k_min=2, k_conflict=2) deliveries= 18 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=6,R=6,sticky=1,win=S)           n=  69 arbs= 18 (k_min=2, k_conflict=2) deliveries= 15 arb share 6/23 (~0.2609) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=6,R=10,sticky=1,win=S)          n= 117 arbs= 30 (k_min=2, k_conflict=2) deliveries= 27 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=6,R=14,sticky=1,win=S)          n= 165 arbs= 42 (k_min=2, k_conflict=2) deliveries= 39 arb share 14/55 (~0.2545) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=8,R=6,sticky=1,win=S)           n=  92 arbs= 24 (k_min=2, k_conflict=2) deliveries= 20 arb share 6/23 (~0.2609) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=8,R=10,sticky=1,win=S)          n= 156 arbs= 40 (k_min=2, k_conflict=2) deliveries= 36 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=10,R=6,sticky=1,win=S)          n= 115 arbs= 30 (k_min=2, k_conflict=2) deliveries= 25 arb share 6/23 (~0.2609) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=10,R=10,sticky=1,win=S)         n= 195 arbs= 50 (k_min=2, k_conflict=2) deliveries= 45 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=12,R=6,sticky=1,win=S)          n= 138 arbs= 36 (k_min=2, k_conflict=2) deliveries= 30 arb share 6/23 (~0.2609) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=6,R=10,sticky=2,win=S)          n= 102 arbs= 30 (k_min=2, k_conflict=2) deliveries= 12 arb share 5/17 (~0.2941) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=6,R=10,sticky=0,win=S)          n=  90 arbs= 30 (k_min=2, k_conflict=2) deliveries=  0 arb share 1/3 (~0.3333) vs bound 1/(k_min+1) = 1/3 (~0.3333)   <== SATURATED
+    RING(M=6,R=10,sticky=1,win=R)          n= 117 arbs= 30 (k_min=2, k_conflict=2) deliveries= 27 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    RING(M=6,R=10,sticky=1,win=ALT)        n= 117 arbs= 30 (k_min=2, k_conflict=2) deliveries= 27 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    GRID(g=2,R=10)                         n=  78 arbs= 20 (k_min=2, k_conflict=2) deliveries= 18 arb share 10/39 (~0.2564) vs bound 1/(k_min+1) = 1/3 (~0.3333)
+    GRID(g=3,R=4)                          n=  66 arbs= 12 (k_min=3, k_conflict=3) deliveries= 18 arb share 2/11 (~0.1818) vs bound 1/(k_min+1) = 1/4 (~0.2500)
+    GRID(g=3,R=6)                          n= 102 arbs= 18 (k_min=3, k_conflict=3) deliveries= 30 arb share 3/17 (~0.1765) vs bound 1/(k_min+1) = 1/4 (~0.2500)
+    GRID(g=3,R=10)                         n= 174 arbs= 30 (k_min=3, k_conflict=3) deliveries= 54 arb share 5/29 (~0.1724) vs bound 1/(k_min+1) = 1/4 (~0.2500)
+    GRID(g=4,R=4)                          n= 116 arbs= 16 (k_min=4, k_conflict=4) deliveries= 36 arb share 4/29 (~0.1379) vs bound 1/(k_min+1) = 1/5 (~0.2000)
+    DOUBLE-GRID(g=3,R=2)                   n=  72 arbs= 18 (k_min=1, k_conflict=3) deliveries= 12 arb share 1/4 (~0.2500) vs bound 1/(k_min+1) = 1/2 (~0.5000); = 1/(k_conflict+1) = 1/4   <== THE CONFLICT GROUPS SATURATE
+    DOUBLE-GRID(g=3,R=4)                   n= 120 arbs= 30 (k_min=1, k_conflict=3) deliveries= 12 arb share 1/4 (~0.2500) vs bound 1/(k_min+1) = 1/2 (~0.5000); = 1/(k_conflict+1) = 1/4   <== THE CONFLICT GROUPS SATURATE
+    TWO BOUNDS, AND WHICH ONE A RECORD SATURATES.  `k_min` is the smallest proposer count anywhere in the record, and 1/(k_min+1) is the only GENERAL bound.  The DOUBLE-GRIDs mint their six base lineages with SINGLE-proposer arbitrations in the bootstrap, so their k_min is 1 and their general bound is 1/2 — but their CONFLICT GROUPS all have k = 3 and their share is EXACTLY 1/(3+1) = 1/4, i.e. the rounds saturate and the bootstrap spends none of the slack.  Records saturating the general bound: ['RING(M=6,R=10,sticky=0,win=S)'].  Records whose share equals 1/(k_conflict+1): ['RING(M=6,R=10,sticky=0,win=S)', 'DOUBLE-GRID(g=3,R=2)', 'DOUBLE-GRID(g=3,R=4)'].
+  [PASS] A1(b) [WHAT THIS GATE MEASURES, round-1 NIT 2: not the prose inequality #proposals >= k*#arbs but the STRICTLY STRONGER per-arbitration equality #proposals = SUM of proposer counts, together with 'no consumed triple occurs twice'] THE ARBITRATION SHARE IS BOUNDED BY THE GRAMMAR AND THE BOUND IS ATTAINED AT TWO DIFFERENT k.  No record of this layer can be more than 1/(k+1) arbitration; the delivery-free ring attains 1/3 at k = 2 and the DELIVERY-FREE DOUBLE-GRID attains 1/4 at k = 3.  ROUND-1 MAJOR 1, CARRIED: the earlier reading — that re-supplying a conflict COSTS a delivery, so the tiling records must run at 25.6% rather than 33.3% — is a property of the ROTATING PAIR schedule only.  A schedule in which every actor carries TWO concurrent conflicts needs no in-round delivery at all and saturates its own bound  (records checked = 21, proposal-consumption equalities = 21, repeated consumed triples = 0 (True), general-bound violations = 0, records saturating 1/(k_min+1) = ['RING(M=6,R=10,sticky=0,win=S)'], records at 1/(k_conflict+1) = ['RING(M=6,R=10,sticky=0,win=S)', 'DOUBLE-GRID(g=3,R=2)', 'DOUBLE-GRID(g=3,R=4)'])
+
+[A1(d) THE DUPLICATE IN THE SWEEP, SAID OUT LOUD (round-1 MINOR 4 / NIT 3) — the module docstring used to claim `g = 2 reproduces CONFLICT-RING(4, R) exactly (gated)`; no predicate tested it and the strong form is FALSE]
+    event LISTS identical = False (they are not: the actor names differ, G00... vs C0...); event-KIND sequences identical = True; every profile column identical at both depths = True
+  [PASS] A1(d) GRID(g=2, R) AND RING(M=4, R) ARE THE SAME OBJECT UP TO ACTOR RENAMING, AND THAT IS GATED RATHER THAN ASSERTED.  Their event-kind sequences coincide and every profile column coincides at both depths, while their event lists are NOT literally equal (the actor names differ).  So the sweep contains one duplicate object under two names, which D63's round-1 MINOR 8 asked to be said out loud, and the docstring's earlier unqualified '(gated)' is replaced by this predicate  (profile columns equal at both depths = True; kind sequences equal = True; event lists equal = False)
 
 [A2 THE ATLAS CENSUS — every swept record at d = 2 AND d = 3, with the delivery crystal, the brick and the sprinkling bands beside them.  Orderings reported BOTH WAYS because the depths disagree (D60's MINOR-4 lesson)]
     RING(M=4,R=6,sticky=1,win=S)           d=2: homog 0.6522[in] |D|>=4 0.2174 max 4 omega 0.7500  |  d=3: homog 0.8261[ABOVE] |D|>=4 0.4348 max 4 omega 0.8214
@@ -89,7 +118,11 @@
     RING(M=6,R=6,sticky=1,win=S)           d=2: homog 0.6522[in] |D|>=4 0.2174 max 4 omega 0.7500  |  d=3: homog 0.8261[ABOVE] |D|>=4 0.4348 max 4 omega 0.8214
     RING(M=6,R=10,sticky=1,win=S)          d=2: homog 0.6923[in] |D|>=4 0.2308 max 4 omega 0.7500  |  d=3: homog 0.8974[ABOVE] |D|>=4 0.4615 max 4 omega 0.8269
     RING(M=6,R=14,sticky=1,win=S)          d=2: homog 0.7091[in] |D|>=4 0.2364 max 4 omega 0.7500  |  d=3: homog 0.9273[ABOVE] |D|>=4 0.4727 max 4 omega 0.8289
+    RING(M=8,R=6,sticky=1,win=S)           d=2: homog 0.6522[in] |D|>=4 0.2174 max 4 omega 0.7500  |  d=3: homog 0.8261[ABOVE] |D|>=4 0.4348 max 4 omega 0.8214
     RING(M=8,R=10,sticky=1,win=S)          d=2: homog 0.6923[in] |D|>=4 0.2308 max 4 omega 0.7500  |  d=3: homog 0.8974[ABOVE] |D|>=4 0.4615 max 4 omega 0.8269
+    RING(M=10,R=6,sticky=1,win=S)          d=2: homog 0.6522[in] |D|>=4 0.2174 max 4 omega 0.7500  |  d=3: homog 0.8261[ABOVE] |D|>=4 0.4348 max 4 omega 0.8214
+    RING(M=10,R=10,sticky=1,win=S)         d=2: homog 0.6923[in] |D|>=4 0.2308 max 4 omega 0.7500  |  d=3: homog 0.8974[ABOVE] |D|>=4 0.4615 max 4 omega 0.8269
+    RING(M=12,R=6,sticky=1,win=S)          d=2: homog 0.6522[in] |D|>=4 0.2174 max 4 omega 0.7500  |  d=3: homog 0.8261[ABOVE] |D|>=4 0.4348 max 4 omega 0.8214
     RING(M=6,R=10,sticky=2,win=S)          d=2: homog 0.6471[in] |D|>=4 0.1176 max 4 omega 0.8462  |  d=3: homog 0.5882[below] |D|>=4 0.2353 max 4 omega 0.8750
     RING(M=6,R=10,sticky=0,win=S)          d=2: homog 0.6000[below] |D|>=4 0.0000 max 2 omega 1.0000  |  d=3: homog 0.2667[below] |D|>=4 0.0000 max 2 omega 1.0000
     RING(M=6,R=10,sticky=1,win=R)          d=2: homog 0.6923[in] |D|>=4 0.2308 max 4 omega 0.7500  |  d=3: homog 0.8974[ABOVE] |D|>=4 0.4615 max 4 omega 0.8269
@@ -99,11 +132,14 @@
     GRID(g=3,R=6)                          d=2: homog 0.5098[below] |D|>=4 0.1471 max 6 omega 0.5000  |  d=3: homog 0.6275[below] |D|>=4 0.4706 max 6 omega 0.5784
     GRID(g=3,R=10)                         d=2: homog 0.5287[below] |D|>=4 0.1552 max 6 omega 0.4954  |  d=3: homog 0.6667[below] |D|>=4 0.4828 max 6 omega 0.5753
     GRID(g=4,R=4)                          d=2: homog 0.4483[below] |D|>=4 0.1466 max 8 omega 0.4420  |  d=3: homog 0.5517[below] |D|>=4 0.3448 max 8 omega 0.5048
+    DOUBLE-GRID(g=3,R=2)                   d=2: homog 0.4444[below] |D|>=4 0.0694 max 9 omega 0.5576  |  d=3: homog 0.6389[below] |D|>=4 0.2083 max 9 omega 0.5710
+    DOUBLE-GRID(g=3,R=4)                   d=2: homog 0.5167[below] |D|>=4 0.0917 max 9 omega 0.5566  |  d=3: homog 0.7833[in] |D|>=4 0.3250 max 9 omega 0.6195
     DR(8,10,8) [D63 control]               d=2: homog 0.7966[in] |D|>=4 0.3333 max 4 omega 0.7299  |  d=3: homog 0.7740[in] |D|>=4 0.6723 max 4 omega 0.6803
     BRICK(8,14) [D60]                      d=2: homog 0.7692[in] |D|>=4 0.0000 max 3 omega 0.6510  |  d=3: homog 0.7385[in] |D|>=4 0.5846 max 4 omega 0.7120
-    d = 2: in the homogeneity band = 10 of 15; carrying |D| >= 4 = 14; BOTH (D63's F3 pattern) = 10; carrying |D| >= 5 = 4
-      in-band AND wide: RING(M=4,R=6,sticky=1,win=S), RING(M=4,R=10,sticky=1,win=S), RING(M=6,R=6,sticky=1,win=S), RING(M=6,R=10,sticky=1,win=S), RING(M=6,R=14,sticky=1,win=S), RING(M=8,R=10,sticky=1,win=S), RING(M=6,R=10,sticky=2,win=S), RING(M=6,R=10,sticky=1,win=R), RING(M=6,R=10,sticky=1,win=ALT), GRID(g=2,R=10)
-  [PASS] A2(a) THE CENSUS IS REPORTED AT BOTH DEPTHS FOR EVERY RECORD AND THE DEPTHS DISAGREE, so every width and homogeneity sentence in this unit is depth-labelled.  The conflict ring reproduces D63's F3 PATTERN with an engine of conflict instead of delivery — inside the recomputed homogeneity band at d = 2 AND carrying 4-direction charts — which is the first time the tiling/width composition has been exhibited without a delivery circuit  (in-band 10, wide 14, both 10, |D|>=5 4 of 15; band-membership flips between the depths at 10 records)
+    d = 2: in the homogeneity band = 14 of 21; carrying |D| >= 4 = 20; BOTH (D63's F3 pattern) = 14; carrying |D| >= 5 = 6
+      in-band AND wide: RING(M=4,R=6,sticky=1,win=S), RING(M=4,R=10,sticky=1,win=S), RING(M=6,R=6,sticky=1,win=S), RING(M=6,R=10,sticky=1,win=S), RING(M=6,R=14,sticky=1,win=S), RING(M=8,R=6,sticky=1,win=S), RING(M=8,R=10,sticky=1,win=S), RING(M=10,R=6,sticky=1,win=S), RING(M=10,R=10,sticky=1,win=S), RING(M=12,R=6,sticky=1,win=S), RING(M=6,R=10,sticky=2,win=S), RING(M=6,R=10,sticky=1,win=R), RING(M=6,R=10,sticky=1,win=ALT), GRID(g=2,R=10)
+      (round-1 MINOR 5) the in-band AND wide set BY PROPOSER COUNT k: {'RING(M=4,R=6,sticky=1,win=S)': 2, 'RING(M=4,R=10,sticky=1,win=S)': 2, 'RING(M=6,R=6,sticky=1,win=S)': 2, 'RING(M=6,R=10,sticky=1,win=S)': 2, 'RING(M=6,R=14,sticky=1,win=S)': 2, 'RING(M=8,R=6,sticky=1,win=S)': 2, 'RING(M=8,R=10,sticky=1,win=S)': 2, 'RING(M=10,R=6,sticky=1,win=S)': 2, 'RING(M=10,R=10,sticky=1,win=S)': 2, 'RING(M=12,R=6,sticky=1,win=S)': 2, 'RING(M=6,R=10,sticky=2,win=S)': 2, 'RING(M=6,R=10,sticky=1,win=R)': 2, 'RING(M=6,R=10,sticky=1,win=ALT)': 2, 'GRID(g=2,R=10)': 2} — every member has k = 2, but they are not all RINGS: ['GRID(g=2,R=10)'] is a GRID blueprint (and, by A1(d), the M = 4 ring under another name).
+  [PASS] A2(a) THE CENSUS IS REPORTED AT BOTH DEPTHS FOR EVERY RECORD AND THE DEPTHS DISAGREE, so every width and homogeneity sentence in this unit is depth-labelled.  The conflict ring reproduces D63's F3 PATTERN with an engine of conflict instead of delivery — inside the recomputed homogeneity band at d = 2 AND carrying 4-direction charts — which is the first time the tiling/width composition has been exhibited without a delivery circuit  (in-band 14, wide 20, both 14, |D|>=5 6 of 21; band-membership flips between the depths at 15 records)
 
 [A2(b) THE BRANCHING BOUNDS — W4b with each record's OWN measured B, and the refinement this unit's records force]
   W4b (D63, verified there): if every event carries at most B registers then
@@ -111,40 +147,114 @@
   (proposers u {new version}), so W4b's bound at d = 2 is 9 — and D63's
   residue 1 asked whether a conflict record can use them.
   W4c THE MINT-REGISTER REFINEMENT (this unit).  The version register minted
-  by an arbitration is a BIRTH WIRE: `regs_of` puts a version name in exactly
-  one event's register set, so it has NO P-successor.  Replacing |regs(x)| by
+  by an arbitration is a BIRTH WIRE with NO P-successor.  Replacing |regs(x)| by
   the number of registers of x that RECUR (the live out-degree b(x)) in W4b's
   own proof gives |D_e(d)| <= Bl^d with Bl = max b(x) — and for an arbitration
-  b = #proposers = |regs| - 1.  CONSEQUENCE: a TWO-proposer conflict record
+  b <= #proposers = |regs| - 1.  CONSEQUENCE: a TWO-proposer conflict record
   has Bl = 2 exactly like a delivery circuit and CANNOT exceed 4 at d = 2,
   despite carrying 3-register events.  Width past 4 needs 3+ PROPOSERS, not
   merely 3+ registers — W4b's necessary condition is not sufficient.
-    RING(M=4,R=6,sticky=1,win=S)           B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 12, occurring twice = 0
-    RING(M=4,R=10,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 20, occurring twice = 0
-    RING(M=6,R=6,sticky=1,win=S)           B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 18, occurring twice = 0
-    RING(M=6,R=10,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0
-    RING(M=6,R=14,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 42, occurring twice = 0
-    RING(M=8,R=10,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 40, occurring twice = 0
-    RING(M=6,R=10,sticky=2,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0
-    RING(M=6,R=10,sticky=0,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=2 d3=2; version registers 30, occurring twice = 0
-    RING(M=6,R=10,sticky=1,win=R)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0
-    RING(M=6,R=10,sticky=1,win=ALT)        B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0
-    GRID(g=2,R=10)                         B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 20, occurring twice = 0
-    GRID(g=3,R=4)                          B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=6 d3=6; version registers 12, occurring twice = 0
-    GRID(g=3,R=6)                          B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=6 d3=6; version registers 18, occurring twice = 0
-    GRID(g=3,R=10)                         B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=6 d3=6; version registers 30, occurring twice = 0
-    GRID(g=4,R=4)                          B=5 (W4b bound 25 at d=2), live Bl=4 (W4c bound 16), max proposers k=4: measured max|D| d2=8 d3=8; version registers 16, occurring twice = 0
-    DR(8,10,8)                             B=2 (W4b bound 4 at d=2), live Bl=2 (W4c bound 4), max proposers k=1: measured max|D| d2=4 d3=4; version registers 1, occurring twice = 0
-    BRICK(8,14)                            B=2 (W4b bound 4 at d=2), live Bl=2 (W4c bound 4), max proposers k=1: measured max|D| d2=3 d3=4; version registers 1, occurring twice = 0
-  [PASS] A2(b) BOTH BOUNDS HOLD ON EVERY RECORD, AND W4c IS THE ONE THAT BINDS.  The mint-register fact is GATED, not asserted: across every record built here every version register occurs in EXACTLY ONE event's `regs_of`, so an arbitration's live out-degree is its proposer count.  Hence the two-proposer conflict ring — 3 registers per arbitration, W4b bound 9 — is held to max |D| = 4 at d = 2, exactly the delivery ceiling, and the grids with 3 and 4 proposers are the records that pass it.  D63's residue 1 is therefore answered with a correction to its own necessity statement  (records checked = 17, W4b/W4c violations = 0, version registers occurring more than once = 0)
 
-[A2(c) THE INTERIOR CONTROL (D60's C7 excision) on the headline records — so the frontier is read on the MECHANISM, not on the record's ends]
-    RING(M=6,R=10,sticky=1,win=S)          FULL n= 117 homog 0.6923 |D|>=4 0.2308 max 4  ->  INTERIOR n=  96 homog 0.7500 [in band] |D|>=4 0.2500 max 4
-    RING(M=8,R=10,sticky=1,win=S)          FULL n= 156 homog 0.6923 |D|>=4 0.2308 max 4  ->  INTERIOR n= 128 homog 0.7500 [in band] |D|>=4 0.2500 max 4
-    GRID(g=3,R=10)                         FULL n= 174 homog 0.5287 |D|>=4 0.1552 max 6  ->  INTERIOR n= 147 homog 0.5646 [BELOW band] |D|>=4 0.1633 max 6
-    GRID(g=4,R=4)                          FULL n= 116 homog 0.4483 |D|>=4 0.1466 max 8  ->  INTERIOR n=  76 homog 0.5263 [BELOW band] |D|>=4 0.1316 max 8
-    RING(M=6,R=14,sticky=1,win=S)          FULL n= 165 homog 0.7091 |D|>=4 0.2364 max 4  ->  INTERIOR n= 144 homog 0.7500 [in band] |D|>=4 0.2500 max 4
-  [PASS] A2(c) THE WIDTH IS THE CIRCUIT'S, NOT THE PREFIX'S — and the band half is again largely an ENDS property (D63's MAJOR-3 lesson, reproduced here on conflict records).  Excising the bottom two and top three height layers RAISES homogeneity at every controlled record and leaves max |D| unchanged, so the |D| = 6 and |D| = 8 charts are not boundary artefacts  (records controlled = 5; interior homogeneity > full at all = True; interior max|D| = full max|D| at all = True)
+  W4c's PROOF, WRITTEN IN (round-1 MAJOR 3: the [THEOREM] tag was carried by a
+  per-record census, i.e. by a measurement, and its printed reason — '`regs_of`
+  places a version name in exactly one event's register set' — was at the wrong
+  level, since `regs_of` is a function of ONE event while 'occurs once' is a
+  property of the RECORD.  Four steps, each checked against the committed
+  d42b1 source, whose lines are quoted below:
+    (1) A version occupies a register ONLY where it is born.  `regs_of` returns
+        {a} for p/n, {sender, receiver} for d, {a, ('mw',a,pk)} for m, and
+        props u {vname(base, op[3], op[1])} for r.  A DELIVERY OF VERSION v
+        THEREFORE CARRIES v IN ITS PAYLOAD op[3] AND DOES NOT OCCUPY v's
+        REGISTER — which is exactly why the minted wire is dead.  Merge-created
+        names (`mname`) never appear in any `regs_of` at all.
+    (2) So a version register can recur only if TWO DISTINCT ARBITRATIONS MINT
+        THE SAME `vname` — i.e. share the base, the winner key's value tuple,
+        the winner key's author tuple, and the initiator.
+    (3) Two such arbitrations share at least one PROPOSER REGISTER (the winner
+        authors, and the initiator, are proposers of both).  In `event_poset`,
+        once an event touches register r it becomes last[r] and every later
+        event touching r inherits its whole past — so the two are CAUSALLY
+        COMPARABLE.
+    (4) The later one's `View` therefore contains the earlier arbitration, so
+        base is in view.superseded; `arb_components_in_view` SKIPS components
+        whose base is superseded, `admissible` finds no matching component and
+        returns False.  THE SECOND ARBITRATION IS INADMISSIBLE.  QED.
+      [committed d42b1, line 74] if k == 'd': return frozenset([op[1], op[2]])    <== regs_of(d) is {sender, receiver}, not the payload
+      [committed d42b1, line 79] return frozenset(props | {vname(base, op[3], op[1])})    <== regs_of(r) is proposers u {the minted vname}
+      [committed d42b1, line 88] pred[j] |= pred[last[r]] | {last[r]}    <== event_poset inherits the whole past through a register
+      [committed d42b1, line 108] self.superseded.add(base)    <== an arbitration supersedes its base in the View
+      [committed d42b1, line 236] if base in view.superseded: continue    <== arb_components_in_view SKIPS a superseded base
+      [committed d42b1, line 324] if not match: return False, None    <== admissible(r) refuses when no component matches
+  [PASS] A2(b0) [MAJOR 3, THE THEOREM TAG NOW CARRIES AN ARGUMENT] W4c's LOAD-BEARING STEP IS PROVED FROM THE COMMITTED LAYER, NOT MEASURED.  Every line the four-step proof leans on is quoted above and gated to occur VERBATIM in the committed d42b1_transport_exact.py: that a delivery's registers are {sender, receiver} and not the payload version; that an arbitration's registers are its proposers plus the minted name; that `event_poset` makes any two events sharing a register causally comparable; that an arbitration supersedes its base; that `arb_components_in_view` skips a superseded base; and that `admissible` refuses an arbitration with no matching component.  The per-record census below is kept as EVIDENCE beside the proof, not as its warrant  (source lines gated verbatim = 6 of 6)
+
+  THE WIDTH LAW, CORRECTED (round-1 BLOCKER 1).  W4c's bound is NOT attained at
+  2k as a law: `2k` is the value of the refined bound when every depth-1
+  successor of an arbitration is a TWO-register event, i.e. a delivery, which
+  is what the RING and GRID blueprints impose and nothing in the grammar
+  forces.  THE REFINEMENT.  Every P-edge raises the height by at least 1, so a
+  depth-2 direction is reached from e by a P-path of length 1 or 2, i.e.
+       D_e(2)  SUBSET OF  succ(e)  UNION  { succ(y) : y in succ(e) },
+  an EXACT containment, gated below at every event of every record.  When e
+  has at least one successor at height h(e) + 1 — i.e. when no P-edge out of
+  e skips a layer — the first term contributes nothing at depth 2 and the
+  bound is the sharp |D_e(2)| <= SUM_{y in succ(e)} b(y) <= b(e) * Bl <= k * Bl,
+  which is <= k^2 = W4c's own ceiling for a k-proposer arbitration.  A3b
+  builds a record in which an arbitration's successors are ARBITRATIONS and
+  SATURATES k^2 = 9.  The exceptions to the SHARP form are counted and
+  CHARACTERISED below rather than hidden: they are exactly the events all of
+  whose P-successors sit two or more layers above them (a height-skipping
+  edge into a terminal arbitration at a record's end).
+  [PASS] A2(b*) THE HOISTED SKY-B AGREES WITH THE COMMITTED d47a `sky` EVENT FOR EVENT.  The bulk bound-checking below reads SKY-B with the height vector computed once per record instead of once per event; that is an optimisation, not a definition, and it is gated against the committed instrument at every event of two whole records at both depths.  Every chart this unit EXHIBITS is still read from the committed `sky` directly  (records compared event for event at both depths = 2 (RING(M=6,R=10,sticky=1,win=S), GRID(g=3,R=4)); disagreements = 0)
+    RING(M=4,R=6,sticky=1,win=S)           B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 12, occurring twice = 0; arbitrations with b < k = 2
+    RING(M=4,R=10,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 20, occurring twice = 0; arbitrations with b < k = 2
+    RING(M=6,R=6,sticky=1,win=S)           B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 18, occurring twice = 0; arbitrations with b < k = 3
+    RING(M=6,R=10,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    RING(M=6,R=14,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 42, occurring twice = 0; arbitrations with b < k = 3
+    RING(M=8,R=6,sticky=1,win=S)           B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 24, occurring twice = 0; arbitrations with b < k = 4
+    RING(M=8,R=10,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 40, occurring twice = 0; arbitrations with b < k = 4
+    RING(M=10,R=6,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0; arbitrations with b < k = 5
+    RING(M=10,R=10,sticky=1,win=S)         B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 50, occurring twice = 0; arbitrations with b < k = 5
+    RING(M=12,R=6,sticky=1,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 36, occurring twice = 0; arbitrations with b < k = 6
+    RING(M=6,R=10,sticky=2,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    RING(M=6,R=10,sticky=0,win=S)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=2 d3=2; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    RING(M=6,R=10,sticky=1,win=R)          B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    RING(M=6,R=10,sticky=1,win=ALT)        B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    GRID(g=2,R=10)                         B=3 (W4b bound 9 at d=2), live Bl=2 (W4c bound 4), max proposers k=2: measured max|D| d2=4 d3=4; version registers 20, occurring twice = 0; arbitrations with b < k = 2
+    GRID(g=3,R=4)                          B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=6 d3=6; version registers 12, occurring twice = 0; arbitrations with b < k = 3
+    GRID(g=3,R=6)                          B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=6 d3=6; version registers 18, occurring twice = 0; arbitrations with b < k = 3
+    GRID(g=3,R=10)                         B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=6 d3=6; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    GRID(g=4,R=4)                          B=5 (W4b bound 25 at d=2), live Bl=4 (W4c bound 16), max proposers k=4: measured max|D| d2=8 d3=8; version registers 16, occurring twice = 0; arbitrations with b < k = 4
+    DOUBLE-GRID(g=3,R=2)                   B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=9 d3=9; version registers 18, occurring twice = 0; arbitrations with b < k = 3
+    DOUBLE-GRID(g=3,R=4)                   B=4 (W4b bound 16 at d=2), live Bl=3 (W4c bound 9), max proposers k=3: measured max|D| d2=9 d3=9; version registers 30, occurring twice = 0; arbitrations with b < k = 3
+    DR(8,10,8)                             B=2 (W4b bound 4 at d=2), live Bl=2 (W4c bound 4), max proposers k=1: measured max|D| d2=4 d3=4; version registers 1, occurring twice = 0; arbitrations with b < k = 0
+    BRICK(8,14)                            B=2 (W4b bound 4 at d=2), live Bl=2 (W4c bound 4), max proposers k=1: measured max|D| d2=3 d3=4; version registers 1, occurring twice = 0; arbitrations with b < k = 0
+    (round-1 NIT 1) 'an arbitration's live out-degree IS its proposer count' is an INEQUALITY b <= k, not an equality: the last arbitration of each group at a record's end has live out-degree 0.  Arbitrations with b < k, per record: [2, 2, 3, 3, 3, 4, 4, 5, 5, 6, 3, 3, 3, 3, 2, 3, 3, 3, 4, 3, 3, 0, 0].  Nothing turns on it — the bound uses the maximum — but the gate is labelled for what it measures.
+  [PASS] A2(b) BOTH BOUNDS HOLD ON EVERY RECORD, THE REFINED BOUND HOLDS EVENT BY EVENT, AND W4c IS THE ONE THAT BINDS.  Across every record built here every version register occurs in EXACTLY ONE event's `regs_of` — as A2(b0) proves it must — so an arbitration's live out-degree is AT MOST its proposer count.  Hence the two-proposer conflict ring — 3 registers per arbitration, W4b bound 9 — is held to max |D| = 4 at d = 2, exactly the delivery ceiling, and the records with 3 and 4 proposers are the ones that pass it.  D63's residue 1 is answered with a correction to its own necessity statement.  AND (round-1 BLOCKER 1) the EXACT containment D_e(2) SUBSET succ(e) u succ(succ(e)) is verified at EVERY EVENT OF EVERY RECORD, and the SHARP sum form |D_e(2)| <= SUM_{y in succ(e)} b(y) holds everywhere except at events whose every P-successor skips a height layer — the exceptions are counted AND characterised, never waved through.  The sharp form is the bound A3b saturates at k^2 = 9  (records checked = 23, W4b/W4c violations = 0, exact-containment violations = 0 (True), events where the SHARP sum form does not apply = 13 (every one of them has NO P-successor at height + 1, i.e. its only successors skip a layer: True), version registers occurring more than once = 0)
+
+[A2(c) THE INTERIOR CONTROL (D60's C7 excision) ON EVERY SWEPT RECORD AND AT BOTH DEPTHS — round-1 MINOR 2 and MAJOR 2: the first version ran it on 5 of 15 records and at d = 2 only, while drawing a MECHANISM conclusion from it ('the grids' shortfall is not an ends effect'), and the missing rows are the ones that REFUTE that conclusion]
+    RING(M=4,R=6,sticky=1,win=S)           n   46->  32  d=2 0.6522[IN ] -> 0.7500[IN ]  |  d=3 0.8261[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=4,R=10,sticky=1,win=S)          n   78->  64  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=6,R=6,sticky=1,win=S)           n   69->  48  d=2 0.6522[IN ] -> 0.7500[IN ]  |  d=3 0.8261[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=6,R=10,sticky=1,win=S)          n  117->  96  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=6,R=14,sticky=1,win=S)          n  165-> 144  d=2 0.7091[IN ] -> 0.7500[IN ]  |  d=3 0.9273[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=8,R=6,sticky=1,win=S)           n   92->  64  d=2 0.6522[IN ] -> 0.7500[IN ]  |  d=3 0.8261[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=8,R=10,sticky=1,win=S)          n  156-> 128  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=10,R=6,sticky=1,win=S)          n  115->  80  d=2 0.6522[IN ] -> 0.7500[IN ]  |  d=3 0.8261[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=10,R=10,sticky=1,win=S)         n  195-> 160  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=12,R=6,sticky=1,win=S)          n  138->  96  d=2 0.6522[IN ] -> 0.7500[IN ]  |  d=3 0.8261[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=6,R=10,sticky=2,win=S)          n  102->  81  d=2 0.6471[IN ] -> 0.7407[IN ]  |  d=3 0.5882[below] -> 0.7037[IN ]  max|D| d2 4->4 d3 4->4
+    RING(M=6,R=10,sticky=0,win=S)          n   90->  69  d=2 0.6000[below] -> 0.6957[IN ]  |  d=3 0.2667[below] -> 0.3043[below]  max|D| d2 2->2 d3 2->2
+    RING(M=6,R=10,sticky=1,win=R)          n  117->  96  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    RING(M=6,R=10,sticky=1,win=ALT)        n  117->  96  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    GRID(g=2,R=10)                         n   78->  64  d=2 0.6923[IN ] -> 0.7500[IN ]  |  d=3 0.8974[ABOVE] -> 1.0000[ABOVE]  max|D| d2 4->4 d3 4->4
+    GRID(g=3,R=4)                          n   66->  39  d=2 0.4848[below] -> 0.5897[below]  |  d=3 0.5758[below] -> 0.6667[below]  max|D| d2 6->6 d3 6->6
+    GRID(g=3,R=6)                          n  102->  75  d=2 0.5098[below] -> 0.5733[below]  |  d=3 0.6275[below] -> 0.6933[IN ]  max|D| d2 6->6 d3 6->6
+    GRID(g=3,R=10)                         n  174-> 147  d=2 0.5287[below] -> 0.5646[below]  |  d=3 0.6667[below] -> 0.7075[IN ]  max|D| d2 6->6 d3 6->6
+    GRID(g=4,R=4)                          n  116->  76  d=2 0.4483[below] -> 0.5263[below]  |  d=3 0.5517[below] -> 0.5789[below]  max|D| d2 8->8 d3 8->8
+    DOUBLE-GRID(g=3,R=2)                   n   72->  45  d=2 0.4444[below] -> 0.5111[below]  |  d=3 0.6389[below] -> 0.9333[ABOVE]  max|D| d2 9->9 d3 9->9
+    DOUBLE-GRID(g=3,R=4)                   n  120->  93  d=2 0.5167[below] -> 0.5699[below]  |  d=3 0.7833[IN ] -> 0.9677[ABOVE]  max|D| d2 9->9 d3 9->9
+    EXCISION MOVES A RECORD INTO THE BAND AT: [('RING(M=6,R=10,sticky=2,win=S)', 3), ('RING(M=6,R=10,sticky=0,win=S)', 2), ('GRID(g=3,R=6)', 3), ('GRID(g=3,R=10)', 3)] — so the earlier sentence 'the grids' shortfall is NOT an ends effect the way D63's band membership was' is REFUTED at d = 3 for the k = 3 grids, which is exactly D63's ends effect.
+  [PASS] A2(c) THE WIDTH IS THE CIRCUIT'S, NOT THE PREFIX'S — AND THE BAND HALF IS AN ENDS PROPERTY AT BOTH DEPTHS, WHICH THE FULL TABLE SHOWS AND THE OLD FIVE-RECORD TABLE HID.  Excising the bottom two and top three height layers never LOWERS homogeneity and leaves max |D| unchanged at both depths on every swept record, so no wide chart anywhere is a boundary artefact; and at d = 3 the same excision carries k = 3 grids INTO the band while they still carry max |D| = 6, which is the round-1 correction to this unit's own mechanism sentence  (records controlled = 21 of 21 at BOTH depths; (record, depth) cells where interior homogeneity strictly rises = 42 of 42; never falls = True; interior max|D| = full max|D| everywhere = True; cells the excision moves INTO the band = 4)
 
 [A3 THE WIDTH VERDICT — does ANY conflict record carry |D| >= 5 at d = 2?  This is the delivery ceiling's door (D63 §4, residue 1)]
     RING(M=4,R=6,sticky=1,win=S)           width histogram at d = 2: {0: 6, 1: 10, 2: 20, 4: 10}
@@ -152,7 +262,11 @@
     RING(M=6,R=6,sticky=1,win=S)           width histogram at d = 2: {0: 9, 1: 15, 2: 30, 4: 15}
     RING(M=6,R=10,sticky=1,win=S)          width histogram at d = 2: {0: 9, 1: 27, 2: 54, 4: 27}
     RING(M=6,R=14,sticky=1,win=S)          width histogram at d = 2: {0: 9, 1: 39, 2: 78, 4: 39}
+    RING(M=8,R=6,sticky=1,win=S)           width histogram at d = 2: {0: 12, 1: 20, 2: 40, 4: 20}
     RING(M=8,R=10,sticky=1,win=S)          width histogram at d = 2: {0: 12, 1: 36, 2: 72, 4: 36}
+    RING(M=10,R=6,sticky=1,win=S)          width histogram at d = 2: {0: 15, 1: 25, 2: 50, 4: 25}
+    RING(M=10,R=10,sticky=1,win=S)         width histogram at d = 2: {0: 15, 1: 45, 2: 90, 4: 45}
+    RING(M=12,R=6,sticky=1,win=S)          width histogram at d = 2: {0: 18, 1: 30, 2: 60, 4: 30}
     RING(M=6,R=10,sticky=2,win=S)          width histogram at d = 2: {0: 9, 1: 27, 2: 54, 4: 12}
     RING(M=6,R=10,sticky=0,win=S)          width histogram at d = 2: {0: 9, 1: 27, 2: 54}
     RING(M=6,R=10,sticky=1,win=R)          width histogram at d = 2: {0: 9, 1: 27, 2: 54, 4: 27}
@@ -162,9 +276,26 @@
     GRID(g=3,R=6)                          width histogram at d = 2: {0: 9, 1: 41, 2: 26, 3: 11, 4: 5, 5: 5, 6: 5}
     GRID(g=3,R=10)                         width histogram at d = 2: {0: 9, 1: 73, 2: 46, 3: 19, 4: 9, 5: 9, 6: 9}
     GRID(g=4,R=4)                          width histogram at d = 2: {0: 24, 1: 40, 2: 35, 4: 11, 6: 3, 8: 3}
-    max |D| at d = 2 by proposer count k: RING(M=6,R=10,sticky=1,win=S) k=2 -> 4, GRID(g=3,R=10) k=3 -> 6, GRID(g=4,R=4) k=4 -> 8
+    DOUBLE-GRID(g=3,R=2)                   width histogram at d = 2: {0: 10, 1: 30, 2: 5, 3: 22, 4: 2, 9: 3}
+    DOUBLE-GRID(g=3,R=4)                   width histogram at d = 2: {0: 10, 1: 48, 2: 5, 3: 46, 4: 2, 9: 9}
+    max |D| at d = 2 by proposer count k: RING(M=6,R=10,sticky=1,win=S) k=2 -> 4, GRID(g=3,R=10) k=3 -> 6, GRID(g=4,R=4) k=4 -> 8, DOUBLE-GRID(g=3,R=4) k=3 -> 9
+    THE DELIVERY COMPARATOR IS DEPTH-LABELLED (round-1 MINOR 7). 'max |D| = 4 for any delivery circuit' is a d = 2 statement: D63's committed note reports that AT d = 3 its max |D| reaches 5 at 14 records and 6 at 4 more, i.e. 18 of its 38 delivery configurations EXCEED 4 at d = 3.  Re-run here: DR(8,10,8) max|D| d2=4 d3=4, BRICK(8,14) d2=3 d3=4.
 
-    THE WITNESS — GRID(g=4,R=4), base event index 4: r-event by G00, height 1, 5 registers (4 proposers)
+    THE WIDEST WITNESS IN THE UNIT — DOUBLE-GRID(g=3,R=2), base event index 42: r-event by D00, height 8, 4 registers (3 proposers), live out-degree b = 3
+      D(1) = [45, 46, 47] with kinds ['r', 'r', 'r'] and live out-degrees [3, 3, 3]; the refined bound SUM_y b(y) = 9, k*Bl ceiling = 9, k^2 = 9
+      SKY-B(d=2) chart, read from the COMMITTED d47a `sky` directly: |D| = 9, directions [48, 49, 50, 51, 52, 53, 54, 55, 56]
+        direction  48: kind p by D00, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D00', 'D00'] ; (0, 0)
+        direction  49: kind p by D01, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D01', 'D01'] ; (1, 0)
+        direction  50: kind p by D02, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D02', 'D02'] ; (2, 0)
+        direction  51: kind p by D10, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D00', 'D10'] ; (0, 1)
+        direction  52: kind p by D11, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D01', 'D11'] ; (1, 1)
+        direction  53: kind p by D12, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D02', 'D12'] ; (2, 1)
+        direction  54: kind p by D20, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D00', 'D20'] ; (0, 2)
+        direction  55: kind p by D21, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D01', 'D21'] ; (1, 2)
+        direction  56: kind p by D22, height 10 (= 8 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['D02', 'D22'] ; (2, 2)
+
+    THE 4-PROPOSER GRID WITNESS (the round-1 review verified this one event by event) — GRID(g=4,R=4), base event index 4: r-event by G00, height 1, 5 registers (4 proposers), live out-degree b = 4
+      D(1) = [20, 28, 36, 44] with kinds ['d', 'd', 'd', 'd'] and live out-degrees [2, 2, 2, 2]; the refined bound SUM_y b(y) = 8, k*Bl ceiling = 16, k^2 = 16
       SKY-B(d=2) chart, read from the COMMITTED d47a `sky` directly: |D| = 8, directions [21, 24, 29, 31, 37, 39, 45, 47]
         direction  21: kind d by G00, height 3 (= 1 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['G00', 'G00'] ; (0, 0)
         direction  24: kind p by G10, height 3 (= 1 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['G00', 'G10'] ; (0, 1)
@@ -174,15 +305,16 @@
         direction  39: kind p by G02, height 3 (= 1 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['G02', 'G02'] ; (2, 1)
         direction  45: kind d by G33, height 3 (= 1 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['G03', 'G33'] ; (3, 0)
         direction  47: kind p by G03, height 3 (= 1 + 2), ordered after the base in the committed poset = True; P-paths (raw ; role) = ['G03', 'G03'] ; (3, 1)
-  [PASS] A3 [THE DOOR DECIDES] **THE DELIVERY CEILING IS BROKEN BY CONFLICT.**  Conflict records carry |D| >= 5 at d = 2 — the first records in this campaign to do so — and the witness is exhibited event by event: its chart is read from the COMMITTED d47a `sky` directly, every direction is verified to be ordered after the base in the committed poset and to sit exactly two height layers above it, and every direction's P-paths are printed.  This is not an instrument artefact and it is not a chart-counting convention: the base event is an arbitration over 3 (resp. 4) DISTINCT PROPOSERS, whose live out-degree is 3 (resp. 4), and the width is exactly what W4c allows and W4b's 'three registers' never could.  The predicate is the width census itself, computed from the sweep  (records with max|D| >= 5 at d = 2 = 4 of 15: GRID(g=3,R=4)=6, GRID(g=3,R=6)=6, GRID(g=3,R=10)=6, GRID(g=4,R=4)=8; witness chart verified against the committed sky and poset = True; W4b bound at the witness's B and W4c bound at its live Bl are both printed above)
+  [PASS] A3 [THE DOOR DECIDES] **THE DELIVERY CEILING IS BROKEN BY CONFLICT.**  Conflict records carry |D| >= 5 at d = 2 — the first records in this campaign to do so — and the witness is exhibited event by event: its chart is read from the COMMITTED d47a `sky` directly, every direction is verified to be ordered after the base in the committed poset and to sit exactly two height layers above it, and every direction's P-paths are printed.  This is not an instrument artefact and it is not a chart-counting convention: the base event is an arbitration over DISTINCT PROPOSERS whose live out-degree is its proposer count, and the width is exactly what W4c allows and W4b's 'three registers' never could.  ROUND-1 BLOCKER 1: the widest chart in this unit is NOT 2k — see A3b, where a delivery-free schedule reaches k^2.  The predicate is the width census itself, computed from the sweep  (records with max|D| >= 5 at d = 2 = 6 of 21: GRID(g=3,R=4)=6, GRID(g=3,R=6)=6, GRID(g=3,R=10)=6, GRID(g=4,R=4)=8, DOUBLE-GRID(g=3,R=2)=9, DOUBLE-GRID(g=3,R=4)=9; witness chart verified against the committed sky and poset = True; W4b bound at the witness's B and W4c bound at its live Bl are both printed above)
 
 [A1(c) THE FULL-MENU REPLAY (D60's C1 grade) — every step re-driven with ALL actors offered — carrying A5's MENU-MASS CENSUS on the same pass]
-    RING(M=4,R=6,sticky=1,win=S)           ( 46 events,  4 actors): OK at step 46/46, max hits per specification = 1, widest full menu = 126 candidates  [4.0s]
-    RING(M=6,R=6,sticky=1,win=S)           ( 69 events,  6 actors): OK at step 69/69, max hits per specification = 1, widest full menu = 301 candidates  [15.4s]
-    GRID(g=3,R=4)                          ( 66 events,  9 actors): OK at step 66/66, max hits per specification = 1, widest full menu = 530 candidates  [19.1s]
-    RING(M=6,R=10,sticky=1,win=S)          (117 events,  6 actors): OK at step 117/117, max hits per specification = 1, widest full menu = 481 candidates  [119.5s]
-    GRID(g=3,R=10)                         (174 events,  9 actors): BUDGET-CUT at step 108/174, max hits per specification = 1, widest full menu = 810 candidates  [122.4s]
-  [PASS] A1(c) ADMISSIBLE AGAINST THE UNRESTRICTED LAYER — THE C1 GRADE HOLDS ON A CONFLICT RECORD OF CRYSTAL LENGTH.  Replayed with all actors offered at every step, every specification is OFFERED among the hundreds of candidates the layer enumerates and matches exactly one; the headline record (10 rounds, >= 100 events) is replayed END TO END, as are a complete WIDE record and two smaller rings.  The wide headline carries a PRINTED budget and its cut point is reported, never hidden — no step it reached refused or was ambiguous  (RING(M=4,R=6,sticky=1,win=S): OK step 46 hits 1 menu 126; RING(M=6,R=6,sticky=1,win=S): OK step 69 hits 1 menu 301; GRID(g=3,R=4): OK step 66 hits 1 menu 530; RING(M=6,R=10,sticky=1,win=S): OK step 117 hits 1 menu 481; GRID(g=3,R=10): BUDGET-CUT step 108 hits 1 menu 810)
+    RING(M=4,R=6,sticky=1,win=S)           ( 46 events,  4 actors): OK at step 46/46, max hits per specification = 1, widest full menu = 126 candidates  [4.1s]
+    RING(M=6,R=6,sticky=1,win=S)           ( 69 events,  6 actors): OK at step 69/69, max hits per specification = 1, widest full menu = 301 candidates  [16.0s]
+    GRID(g=3,R=4)                          ( 66 events,  9 actors): OK at step 66/66, max hits per specification = 1, widest full menu = 530 candidates  [19.5s]
+    DOUBLE-GRID(g=3,R=2)                   ( 72 events,  9 actors): OK at step 72/72, max hits per specification = 1, widest full menu = 536 candidates  [91.9s]
+    RING(M=6,R=10,sticky=1,win=S)          (117 events,  6 actors): OK at step 117/117, max hits per specification = 1, widest full menu = 481 candidates  [121.3s]
+    GRID(g=3,R=10)                         (174 events,  9 actors): BUDGET-CUT at step 108/174, max hits per specification = 1, widest full menu = 810 candidates  [126.0s]
+  [PASS] A1(c) ADMISSIBLE AGAINST THE UNRESTRICTED LAYER — THE C1 GRADE HOLDS ON A CONFLICT RECORD OF CRYSTAL LENGTH.  Replayed with all actors offered at every step, every specification is OFFERED among the hundreds of candidates the layer enumerates and matches exactly one; the headline record (10 rounds, >= 100 events) is replayed END TO END, as are a complete WIDE record and two smaller rings.  The wide headline carries a PRINTED budget and its cut point is reported, never hidden — no step it reached refused or was ambiguous.  WHERE THE PREFIX BITES (round-1 MINOR 1): the A-IIIa verdict is read on GRID(3,10), whose full-menu replay is BUDGET-CUT, and on GRID(3,6) and GRID(4,4), which are not full-menu replayed at all; the complete wide records that ARE replayed end to end are GRID(3,4) and DOUBLE-GRID(3,2), and GRID(3,4) is now in the A4 census (A4SET) so the decisive computation has a C1-complete member.  The restricted-menu drive already establishes admissibility of every event against the whole prefix, so what the untested tail lacks is exactly the 'offered among ALL actors' property, which is what D60's C1 grade is  (RING(M=4,R=6,sticky=1,win=S): OK step 46 hits 1 menu 126; RING(M=6,R=6,sticky=1,win=S): OK step 69 hits 1 menu 301; GRID(g=3,R=4): OK step 66 hits 1 menu 530; DOUBLE-GRID(g=3,R=2): OK step 72 hits 1 menu 536; RING(M=6,R=10,sticky=1,win=S): OK step 117 hits 1 menu 481; GRID(g=3,R=10): BUDGET-CUT step 108 hits 1 menu 810)
 
 [A5 THE MENU-MASS CENSUS — the per-state menu mass along the replayed records, LABELLED (pin A5)]
   WHAT D65 MEASURED AND WHAT THIS IS.  D65's 2 -> 5/2 jump is a TWO-ACTOR,
@@ -204,7 +336,40 @@
                                              LADDER EXCESS (mass - M in quarters) {Fraction(0, 1): 87, Fraction(4, 3): 3, Fraction(2, 1): 27}; per-actor menu sums {Fraction(1, 1): 642, Fraction(13, 12): 3, Fraction(5, 4): 57}
     GRID(g=3,R=10)                         (9 actors, 108 prefixes measured): total menu mass {Fraction(9, 1): 76, Fraction(28, 3): 2, Fraction(19, 2): 11, Fraction(81, 8): 3, Fraction(43, 4): 16}
                                              LADDER EXCESS (mass - M in quarters) {Fraction(0, 1): 76, Fraction(4, 3): 2, Fraction(2, 1): 11, Fraction(9, 2): 3, Fraction(7, 1): 16}; per-actor menu sums {Fraction(1, 1): 889, Fraction(13, 12): 2, Fraction(19, 16): 6, Fraction(5, 4): 24, Fraction(3, 2): 32, Fraction(7, 4): 19}
-  [PASS] A5 [REPORTING GATE, labelled] THE MASS PROFILE, AND IT REPRODUCES d42b1's OWN DECLARED LEAK RATHER THAN ITS LADDER.  Every per-actor menu sum is at least 1 and the total mass sits at M (the actor count) except at prefixes where an unarbitrated conflict group is visible, where it rises — the D65 geography, seen at transport scope.  BUT the sums are NOT all on the 1 + k/4 ladder: values like 13/12 and 19/16 occur, which is d42b1's OWN committed N1 exhibit ('the general-depth ladder is FALSE under current pricing — a dead component still inflates the live singleton's view-relative arb denominator'), here reproduced on conflict records at transport scope by an independent route.  The difference in scope from D65 is stated rather than elided: D65's two values (2, 5/2) are a two-actor delivery-free statement, are NOT reproduced here, and are not claimed to be  ((prefix, actor) points measured = 2866, of which ON the 1 + k/4 ladder = 2842; OFF-ladder values observed = [Fraction(13, 12), Fraction(19, 16)] (d42b1 N1); ladder-excess values observed (quarters) = [Fraction(0, 1), Fraction(4, 3), Fraction(2, 1), Fraction(9, 2), Fraction(7, 1)])
+  [PASS] A5 [REPORTING GATE, labelled] THE MASS PROFILE, AND IT REPRODUCES d42b1's OWN DECLARED LEAK RATHER THAN ITS LADDER.  Every per-actor menu sum is at least 1 and the total mass sits at M (the actor count) except at prefixes where an unarbitrated conflict group is visible, where it rises — the D65 geography, seen at transport scope.  BUT the sums are NOT all on the 1 + k/4 ladder: values like 13/12 and 19/16 occur, which is d42b1's OWN committed N1 exhibit ('the general-depth ladder is FALSE under current pricing — a dead component still inflates the live singleton's view-relative arb denominator'), here reproduced on conflict records at transport scope by an independent route.  The difference in scope from D65 is stated rather than elided: D65's two values (2, 5/2) are a two-actor delivery-free statement, are NOT reproduced here, and are not claimed to be  ((prefix, actor) points measured = 3514, of which ON the 1 + k/4 ladder = 3325; OFF-ladder values observed = [Fraction(13, 12), Fraction(17, 15), Fraction(19, 16), Fraction(29, 24), Fraction(9, 7), Fraction(13, 10), Fraction(131, 96), Fraction(11, 8), Fraction(13, 8)] (d42b1 N1); ladder-excess values observed (quarters) = [Fraction(0, 1), Fraction(4, 3), Fraction(2, 1), Fraction(9, 2), Fraction(7, 1)])
+
+[A3b THE ROUND-1 REVIEW'S OWN CONSTRUCTIONS, REBUILT HERE WITH THIS UNIT'S DRIVER AND GATED (BLOCKER 1, MAJOR 1, MAJOR 2).  The review supplied a DOUBLE-GRID whose 3-proposer arbitrations carry |D| = 9 at d = 2 in a record with ZERO in-round deliveries.  House style: a round-supplied object is credited to the round and then GATED like any other, never taken on the reviewer's word]
+    DOUBLE-GRID(g=3,R=2)       n=  72 refusal=None max menu hits=1 kinds={'d': 12, 'p': 42, 'r': 18} arb share 1/4 vs bound 1/(k+1) = 1/4   <== SATURATED
+      d=2: homogeneity 4/9 (~0.4444) [below the sprinkling band [0.6417, 0.8000]], |D|>=4 5/72 (~0.0694), max|D| 9, mean|D| 1.958, omega 0.5576
+      d=3: homogeneity 23/36 (~0.6389) [below the sprinkling band [0.6833, 0.8167]], |D|>=4 5/24 (~0.2083), max|D| 9, mean|D| 2.889, omega 0.5710
+    DOUBLE-GRID(g=3,R=4)       n= 120 refusal=None max menu hits=1 kinds={'d': 12, 'p': 78, 'r': 30} arb share 1/4 vs bound 1/(k+1) = 1/4   <== SATURATED
+      d=2: homogeneity 31/60 (~0.5167) [below the sprinkling band [0.6417, 0.8000]], |D|>=4 11/120 (~0.0917), max|D| 9, mean|D| 2.375, omega 0.5566
+      d=3: homogeneity 47/60 (~0.7833) [IN  the sprinkling band [0.6833, 0.8167]], |D|>=4 13/40 (~0.3250), max|D| 9, mean|D| 4.133, omega 0.6195
+    DOUBLE-GRID(g=3,R=4) width histogram at d = 2: {0: 10, 1: 48, 2: 5, 3: 46, 4: 2, 9: 9}
+    deliveries: 12 in total, at event indices [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]; the bootstrap is the first 24 events, and the number of deliveries occurring in ANY round is 0.
+    THE NINE |D| = 9 CHARTS, verified against the COMMITTED d47a `sky` and the COMMITTED `poset_of` order, one line each:
+      base  42: r-event by D00, height  8, 4 registers, 3 proposers, b(e)=3; D(1)=[45, 46, 47] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [48, 49, 50, 51, 52, 53, 54, 55, 56]; all distinct / ordered after the base / at height+2 = True
+      base  43: r-event by D11, height  8, 4 registers, 3 proposers, b(e)=3; D(1)=[45, 46, 47] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [48, 49, 50, 51, 52, 53, 54, 55, 56]; all distinct / ordered after the base / at height+2 = True
+      base  44: r-event by D22, height  8, 4 registers, 3 proposers, b(e)=3; D(1)=[45, 46, 47] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [48, 49, 50, 51, 52, 53, 54, 55, 56]; all distinct / ordered after the base / at height+2 = True
+      base  66: r-event by D00, height 12, 4 registers, 3 proposers, b(e)=3; D(1)=[69, 70, 71] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [72, 73, 74, 75, 76, 77, 78, 79, 80]; all distinct / ordered after the base / at height+2 = True
+      base  67: r-event by D11, height 12, 4 registers, 3 proposers, b(e)=3; D(1)=[69, 70, 71] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [72, 73, 74, 75, 76, 77, 78, 79, 80]; all distinct / ordered after the base / at height+2 = True
+      base  68: r-event by D22, height 12, 4 registers, 3 proposers, b(e)=3; D(1)=[69, 70, 71] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [72, 73, 74, 75, 76, 77, 78, 79, 80]; all distinct / ordered after the base / at height+2 = True
+      base  90: r-event by D00, height 16, 4 registers, 3 proposers, b(e)=3; D(1)=[93, 94, 95] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [96, 97, 98, 99, 100, 101, 102, 103, 104]; all distinct / ordered after the base / at height+2 = True
+      base  91: r-event by D11, height 16, 4 registers, 3 proposers, b(e)=3; D(1)=[93, 94, 95] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [96, 97, 98, 99, 100, 101, 102, 103, 104]; all distinct / ordered after the base / at height+2 = True
+      base  92: r-event by D22, height 16, 4 registers, 3 proposers, b(e)=3; D(1)=[93, 94, 95] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D(2)|=9 directions [96, 97, 98, 99, 100, 101, 102, 103, 104]; all distinct / ordered after the base / at height+2 = True
+    W4c on this record: Bl = 3, bound Bl^2 = 9, measured max |D| = 9 — the k^2 CEILING IS SATURATED, and the refined bound |D_e(2)| <= SUM_y b(y) holds at every event = True.
+    FORCEDNESS: DOUBLE-GRID(g=3,R=2) full-menu replay (D60's C1 grade, all 9 actors offered at every step) = OK at step 72/72, max hits per specification = 1, widest full menu = 536 candidates — so the counterexample carries the SAME forcedness grade as this unit's own records, and a HIGHER one than GRID(g=3,R=10), whose replay is budget-cut at 108/174.
+  [PASS] A3b(a) [BLOCKER 1 — THE WIDTH LAW WAS WRONG AND THIS IS THE OBJECT THAT BREAKS IT] `max |D| = 2k` IS NOT A LAW ABOUT k-PROPOSER CRYSTALS; W4c's OWN CEILING k^2 IS REALIZED AND SATURATED.  DOUBLE-GRID(3, R) is a forced, menu-offered, C1-graded conflict crystal in which rows and columns conflict CONCURRENTLY: every actor holds two live proposals on two distinct unsuperseded bases, so the record has ZERO in-round deliveries, the arbitration share SATURATES 1/(k+1) = 1/4, and the depth-1 successor of a row arbitration on each proposer register is a COLUMN ARBITRATION rather than a delivery.  Nine charts of width 9 = k^2 result, three per round, each verified against the committed sky and the committed order.  `2k` is the special case Bl = 2, i.e. the case the RING and GRID blueprints impose by making every successor of an arbitration a delivery  (n = 120, refusals = 0, max hits = 1; arb share 1/4 = bound 1/4; in-round deliveries = 0 of 12; max |D| = 9 = Bl^2 = k^2 = 9; charts of width 9 = 9, all verified = True; refined bound violations = 0; version registers occurring twice = 0; C1 full-menu replay of DOUBLE-GRID(g=3,R=2) = OK 72/72, widest menu 536)
+  [PASS] A3b(b) [MAJOR 1 — THE DESIGN FINDING IS INVERTED] THE DELIVERY IS NOT WHAT GIVES THE CRYSTAL ITS SECOND DIRECTION, AND THE MAXIMUM-CONFLICT SCHEDULE IS NOT THE ONE THAT CANNOT TILE WIDELY. The earlier finding rested on ONE schedule — the delivery-free pair ring at sticky = 0, in which each actor has exactly ONE conflict lineage, so its propose/arbitrate cycle is a chain of DIAMONDS and the depth-2 layer is a single event.  That is a property of one live conflict per actor, not of delivery-freedom.  The DELIVERY-FREE DOUBLE-GRID gives each actor TWO standing conflicts, has zero in-round deliveries, SATURATES the arbitration share, and is the WIDEST record in the unit.  The corrected statement: what a second direction needs is a SECOND CONCURRENT CONSUMER of the proposer's register — rotation buys one with a delivery, concurrency buys one for free, and a concurrent arbitration is the better of the two  (delivery-free ring (sticky=0): arb share 1/3, max |D| = 2, one conflict lineage per actor; delivery-free DOUBLE-GRID: arb share 1/4 (SATURATED), in-round deliveries 0, max |D| = 9 = the widest in the sweep (9))
+  [PASS] A3b(c) [MAJOR 2 — RESIDUE 2 IS ANSWERED, NOT OPEN] A k >= 3 CONFLICT SCHEDULE EXISTS THAT IS INSIDE THE HOMOGENEITY BAND AND PAST THE CEILING AT ONCE.  The anti-correlation sentence ('no swept configuration is both inside the band and past the ceiling') was a d = 2 statement shipped without its depth label. At d = 3 the DOUBLE-GRID's homogeneity is INSIDE the recomputed d = 3 sprinkling band while it carries max |D| = 9 — in-band and nine directions wide, simultaneously — and A2(c) shows the unit's own k = 3 grids move into the d = 3 band under its own interior control.  The anti-correlation is therefore restated as a d = 2 property of this family, and D66's residue 2 is CLOSED by the round's own construction  (DOUBLE-GRID d = 3 homogeneity 47/60 (~0.7833) in band [41/60, 49/60] = True, |D|>=4 at 13/40 (~0.3250), max |D| = 9; d = 2 homogeneity 0.5167 [below])
+
+  [A3b(d) THE SMALLEST WITNESSES — ARBCHAIN(m, k = 3): the whole interval [2k, k^2] is realized as m, the number of the arbitration's proposer registers consumed by a FURTHER arbitration rather than by a delivery, runs 0..k]
+      ARBCHAIN(m=0, k=3): n= 17 actors= 6, THE arbitration at index 7 (height 5, 4 registers, 3 proposers, live out-degree 3); D(1)=[8, 9, 10] kinds ['d', 'd', 'd'] out-degrees [2, 2, 2]; |D_e(2)| = 6 (= k*m + 2*(k-m) = 6), Bl = 3, W4c bound 9
+      ARBCHAIN(m=1, k=3): n= 25 actors= 7, THE arbitration at index 14 (height 7, 4 registers, 3 proposers, live out-degree 3); D(1)=[15, 16, 17] kinds ['r', 'd', 'd'] out-degrees [3, 2, 2]; |D_e(2)| = 7 (= k*m + 2*(k-m) = 7), Bl = 3, W4c bound 9
+      ARBCHAIN(m=2, k=3): n= 33 actors= 8, THE arbitration at index 21 (height 7, 4 registers, 3 proposers, live out-degree 3); D(1)=[22, 23, 24] kinds ['r', 'r', 'd'] out-degrees [3, 3, 2]; |D_e(2)| = 8 (= k*m + 2*(k-m) = 8), Bl = 3, W4c bound 9
+      ARBCHAIN(m=3, k=3): n= 41 actors= 9, THE arbitration at index 28 (height 7, 4 registers, 3 proposers, live out-degree 3); D(1)=[29, 30, 31] kinds ['r', 'r', 'r'] out-degrees [3, 3, 3]; |D_e(2)| = 9 (= k*m + 2*(k-m) = 9), Bl = 3, W4c bound 9
+      m = 0 IS the RING/GRID case and gives 2k = 6; m = 1 gives 7 > 2k with successor kinds ['r','d','d'] and out-degrees [3,2,2]; m = 3 gives 9 = k^2, W4c's bound, SATURATED.  These reproduce the STRUCTURE and the VALUES of the review's two small witnesses (its |D| = 7 record: successors r/d/d at out-degrees 3/2/2; its |D| = 9 record: three arbitration successors) with this unit's own blueprint; they are not the review's exact scripts and their event counts differ (the review's were 26 events / 17 actors and 44 / 24).
+  [PASS] A3b(d) THE REFINED BOUND IS EXACTLY RIGHT AND THE WHOLE INTERVAL [2k, k^2] IS OCCUPIED.  |D_e(2)| = k*m + 2*(k - m) at every m, with every event menu-offered and matching exactly one candidate: 6, 7, 8, 9 at m = 0, 1, 2, 3 for k = 3.  So `2k` is not a law, not a ceiling and not even a typical value — it is the m = 0 corner of a one-parameter family, and W4c's k^2 is the corner at the other end  (m=0: |D|=6 = predicted 6; m=1: |D|=7 = predicted 7; m=2: |D|=8 = predicted 8; m=3: |D|=9 = predicted 9)
 
 [A4 THE COBOUNDARY GATE — D64's C7, BOTH ROUTES, at five port conventions.  The question D64 left: can ANY substrate carry a transition class that is NOT a coboundary?]
   THE PORT CONVENTIONS FOR 3+-REGISTER EVENTS, DEFINED AND PRINTED (pin A4).
@@ -230,17 +395,23 @@
       BRICK(8,14)                            n=  65 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 119, covers 116, height-skipping 3
       DR(8,10,8)                             n= 177 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 335, covers 328, height-skipping 7
       GRID(g=3,R=10)                         n= 174 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 279, covers 279, height-skipping 0
+      GRID(g=3,R=4)                          n=  66 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 99, covers 99, height-skipping 0
       GRID(g=3,R=6)                          n= 102 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 159, covers 159, height-skipping 0
       GRID(g=4,R=4)                          n= 116 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 184, covers 184, height-skipping 0
+      RING(M=10,R=10,sticky=1,win=S)         n= 195 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 280, covers 280, height-skipping 0
+      RING(M=10,R=6,sticky=1,win=S)          n= 115 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 160, covers 160, height-skipping 0
+      RING(M=12,R=6,sticky=1,win=S)          n= 138 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 192, covers 192, height-skipping 0
       RING(M=4,R=10,sticky=1,win=S)          n=  78 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 112, covers 112, height-skipping 0
+      RING(M=4,R=6,sticky=1,win=S)           n=  46 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 64, covers 64, height-skipping 0
       RING(M=6,R=10,sticky=0,win=S)          n=  90 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 114, covers 114, height-skipping 0
       RING(M=6,R=10,sticky=1,win=R)          n= 117 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 168, covers 168, height-skipping 0
       RING(M=6,R=10,sticky=1,win=S)          n= 117 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 168, covers 168, height-skipping 0
       RING(M=6,R=6,sticky=1,win=S)           n=  69 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 96, covers 96, height-skipping 0
       RING(M=8,R=10,sticky=1,win=S)          n= 156 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 224, covers 224, height-skipping 0
-  [PASS] A4(a) [ANCHOR] THE COCYCLE INSTRUMENT IS VALIDATED ON THE NEW SUBSTRATES, NOT ASSUMED.  On every conflict record and every control: `reg_tuple` is `regs_of` with an order; each event has at most |regs_of| P-successors; THE TRANSITIVE CLOSURE OF P EQUALS the committed order `poset_of`; the covering relation is contained in P; and the COV surrogate's own closure is the committed order on every substrate including the sprinklings.  The two committed conventions of my `ord_tuple` reproduce D64's own function value for value on every event  (grammar substrates validated = 11; closure == order everywhere = True; reg_tuple == regs_of = True; successor bound = True; COV closure and cover containment = True; ord_tuple agrees with d64 at REG and REGA = True)
+      RING(M=8,R=6,sticky=1,win=S)           n=  92 reg_tuple != regs_of at 0; #P-successors <= |regs_of| = True; closure(P) == committed order = True; P-edges 128, covers 128, height-skipping 0
+  [PASS] A4(a) [ANCHOR] THE COCYCLE INSTRUMENT IS VALIDATED ON THE NEW SUBSTRATES, NOT ASSUMED.  On every conflict record and every control: `reg_tuple` is `regs_of` with an order; each event has at most |regs_of| P-successors; THE TRANSITIVE CLOSURE OF P EQUALS the committed order `poset_of`; the covering relation is contained in P; and the COV surrogate's own closure is the committed order on every substrate including the sprinklings.  The two committed conventions of my `ord_tuple` reproduce D64's own function value for value on every event  (grammar substrates validated = 17; closure == order everywhere = True; reg_tuple == regs_of = True; successor bound = True; COV closure and cover containment = True; ord_tuple agrees with d64 at REG and REGA = True)
 
-  [A4(b) THE TRANSITION CENSUS — 114 cells (substrate x instrument x depth)  [31.8s]]
+  [A4(b) THE TRANSITION CENSUS — 174 cells (substrate x instrument x depth)  [48.7s]]
       substrate                              inst       d  charts  wide  pairs  triples    ROLE id/non   classes
       BRICK(8,14)                            REG        2      50     0     58       37      0/58      {'sigma': 19}
       BRICK(8,14)                            REG        3      48    38     56       34      0/56      {}
@@ -272,6 +443,16 @@
       GRID(g=3,R=10)                         ARBVFIRST  3     116    84    231      285     49/182     {'identity': 41, 'length-changing': 150}
       GRID(g=3,R=10)                         COV        2      92    27     90       61     63/27      {'identity': 63, 'length-changing': 27}
       GRID(g=3,R=10)                         COV        3     116    84    231      285     49/182     {'identity': 41, 'length-changing': 150}
+      GRID(g=3,R=4)                          REG        2      32     9     36       31     27/9       {'identity': 27, 'length-changing': 9}
+      GRID(g=3,R=4)                          REG        3      38    30     87      135     19/68      {'identity': 17, 'length-changing': 60}
+      GRID(g=3,R=4)                          REGA       2      32     9     36       31     27/9       {'identity': 27, 'length-changing': 9}
+      GRID(g=3,R=4)                          REGA       3      38    30     87      135     19/68      {'identity': 17, 'length-changing': 60}
+      GRID(g=3,R=4)                          ARBLOSE    2      32     9     36       31     10/26      {'identity': 10, 'length-changing': 9, 'other': 17}
+      GRID(g=3,R=4)                          ARBLOSE    3      38    30     87      135     15/72      {'identity': 15, 'length-changing': 60, 'other': 2}
+      GRID(g=3,R=4)                          ARBVFIRST  2      32     9     36       31     27/9       {'identity': 27, 'length-changing': 9}
+      GRID(g=3,R=4)                          ARBVFIRST  3      38    30     87      135     19/68      {'identity': 17, 'length-changing': 60}
+      GRID(g=3,R=4)                          COV        2      32     9     36       31     27/9       {'identity': 27, 'length-changing': 9}
+      GRID(g=3,R=4)                          COV        3      38    30     87      135     19/68      {'identity': 17, 'length-changing': 60}
       GRID(g=3,R=6)                          REG        2      52    15     54       41     39/15      {'identity': 39, 'length-changing': 15}
       GRID(g=3,R=6)                          REG        3      64    48    135      185     29/106     {'identity': 25, 'length-changing': 90}
       GRID(g=3,R=6)                          REGA       2      52    15     54       41     39/15      {'identity': 39, 'length-changing': 15}
@@ -296,6 +477,36 @@
       M21                                    COV        3      98    79    383      938      1/382     {'identity': 1, 'length-changing': 27, 'other': 12, 'tau+sigma': 1}
       M31                                    COV        2      82    60    370     1045      4/366     {'identity': 4, 'length-changing': 105, 'other': 64}
       M31                                    COV        3      91    83    518     1983      2/516     {'identity': 2, 'length-changing': 48, 'other': 49}
+      RING(M=10,R=10,sticky=1,win=S)         REG        2     135    45     90        0     53/37      {'identity': 53, 'tau': 37}
+      RING(M=10,R=10,sticky=1,win=S)         REG        3     175    90    225      180     77/148     {'identity': 77, 'other': 148}
+      RING(M=10,R=10,sticky=1,win=S)         REGA       2     135    45     90        0     53/37      {'identity': 53, 'tau': 37}
+      RING(M=10,R=10,sticky=1,win=S)         REGA       3     175    90    225      180     77/148     {'identity': 77, 'other': 148}
+      RING(M=10,R=10,sticky=1,win=S)         ARBLOSE    2     135    45     90        0     45/45      {'identity': 45, 'tau': 45}
+      RING(M=10,R=10,sticky=1,win=S)         ARBLOSE    3     175    90    225      180     45/180     {'identity': 45, 'other': 180}
+      RING(M=10,R=10,sticky=1,win=S)         ARBVFIRST  2     135    45     90        0     53/37      {'identity': 53, 'other': 37}
+      RING(M=10,R=10,sticky=1,win=S)         ARBVFIRST  3     175    90    225      180     77/148     {'identity': 77, 'other': 148}
+      RING(M=10,R=10,sticky=1,win=S)         COV        2     135    45     90        0     63/27      {'identity': 63, 'tau': 27}
+      RING(M=10,R=10,sticky=1,win=S)         COV        3     175    90    225      180    117/108     {'identity': 117, 'other': 108}
+      RING(M=10,R=6,sticky=1,win=S)          REG        2      75    25     50        0     29/21      {'identity': 29, 'tau': 21}
+      RING(M=10,R=6,sticky=1,win=S)          REG        3      95    50    125      100     41/84      {'identity': 41, 'other': 84}
+      RING(M=10,R=6,sticky=1,win=S)          REGA       2      75    25     50        0     29/21      {'identity': 29, 'tau': 21}
+      RING(M=10,R=6,sticky=1,win=S)          REGA       3      95    50    125      100     41/84      {'identity': 41, 'other': 84}
+      RING(M=10,R=6,sticky=1,win=S)          ARBLOSE    2      75    25     50        0     25/25      {'identity': 25, 'tau': 25}
+      RING(M=10,R=6,sticky=1,win=S)          ARBLOSE    3      95    50    125      100     25/100     {'identity': 25, 'other': 100}
+      RING(M=10,R=6,sticky=1,win=S)          ARBVFIRST  2      75    25     50        0     29/21      {'identity': 29, 'other': 21}
+      RING(M=10,R=6,sticky=1,win=S)          ARBVFIRST  3      95    50    125      100     41/84      {'identity': 41, 'other': 84}
+      RING(M=10,R=6,sticky=1,win=S)          COV        2      75    25     50        0     35/15      {'identity': 35, 'tau': 15}
+      RING(M=10,R=6,sticky=1,win=S)          COV        3      95    50    125      100     65/60      {'identity': 65, 'other': 60}
+      RING(M=12,R=6,sticky=1,win=S)          REG        2      90    30     60        0     34/26      {'identity': 34, 'tau': 26}
+      RING(M=12,R=6,sticky=1,win=S)          REG        3     114    60    150      120     46/104     {'identity': 46, 'other': 104}
+      RING(M=12,R=6,sticky=1,win=S)          REGA       2      90    30     60        0     34/26      {'identity': 34, 'tau': 26}
+      RING(M=12,R=6,sticky=1,win=S)          REGA       3     114    60    150      120     46/104     {'identity': 46, 'other': 104}
+      RING(M=12,R=6,sticky=1,win=S)          ARBLOSE    2      90    30     60        0     30/30      {'identity': 30, 'tau': 30}
+      RING(M=12,R=6,sticky=1,win=S)          ARBLOSE    3     114    60    150      120     30/120     {'identity': 30, 'other': 120}
+      RING(M=12,R=6,sticky=1,win=S)          ARBVFIRST  2      90    30     60        0     34/26      {'identity': 34, 'other': 26}
+      RING(M=12,R=6,sticky=1,win=S)          ARBVFIRST  3     114    60    150      120     46/104     {'identity': 46, 'other': 104}
+      RING(M=12,R=6,sticky=1,win=S)          COV        2      90    30     60        0     40/20      {'identity': 40, 'tau': 20}
+      RING(M=12,R=6,sticky=1,win=S)          COV        3     114    60    150      120     70/80      {'identity': 70, 'other': 80}
       RING(M=4,R=10,sticky=1,win=S)          REG        2      54    18     63       36     38/25      {'identity': 38, 'other': 20, 'tau': 5}
       RING(M=4,R=10,sticky=1,win=S)          REG        3      70    36     71       36     42/29      {'identity': 34, 'other': 20}
       RING(M=4,R=10,sticky=1,win=S)          REGA       2      54    18     63       36     38/25      {'identity': 38, 'other': 20, 'tau': 5}
@@ -306,6 +517,16 @@
       RING(M=4,R=10,sticky=1,win=S)          ARBVFIRST  3      70    36     71       36     42/29      {'identity': 34, 'other': 20}
       RING(M=4,R=10,sticky=1,win=S)          COV        2      54    18     63       36     63/0       {'identity': 63}
       RING(M=4,R=10,sticky=1,win=S)          COV        3      70    36     71       36     71/0       {'identity': 54}
+      RING(M=4,R=6,sticky=1,win=S)           REG        2      30    10     35       20     20/15      {'identity': 20, 'other': 12, 'tau': 3}
+      RING(M=4,R=6,sticky=1,win=S)           REG        3      38    20     39       20     22/17      {'identity': 18, 'other': 12}
+      RING(M=4,R=6,sticky=1,win=S)           REGA       2      30    10     35       20     20/15      {'identity': 20, 'other': 12, 'tau': 3}
+      RING(M=4,R=6,sticky=1,win=S)           REGA       3      38    20     39       20     22/17      {'identity': 18, 'other': 12}
+      RING(M=4,R=6,sticky=1,win=S)           ARBLOSE    2      30    10     35       20     10/25      {'identity': 10, 'other': 20, 'tau': 5}
+      RING(M=4,R=6,sticky=1,win=S)           ARBLOSE    3      38    20     39       20     10/29      {'identity': 10, 'other': 20}
+      RING(M=4,R=6,sticky=1,win=S)           ARBVFIRST  2      30    10     35       20     20/15      {'identity': 20, 'other': 15}
+      RING(M=4,R=6,sticky=1,win=S)           ARBVFIRST  3      38    20     39       20     22/17      {'identity': 18, 'other': 12}
+      RING(M=4,R=6,sticky=1,win=S)           COV        2      30    10     35       20     35/0       {'identity': 35}
+      RING(M=4,R=6,sticky=1,win=S)           COV        3      38    20     39       20     39/0       {'identity': 30}
       RING(M=6,R=10,sticky=0,win=S)          REG        2      54     0     27        0     27/0       {'identity': 27}
       RING(M=6,R=10,sticky=0,win=S)          REG        3      24     0      0        0      0/0       {}
       RING(M=6,R=10,sticky=0,win=S)          REGA       2      54     0     27        0     27/0       {'identity': 27}
@@ -356,7 +577,17 @@
       RING(M=8,R=10,sticky=1,win=S)          ARBVFIRST  3     140    72    180      144     68/112     {'identity': 68, 'other': 112}
       RING(M=8,R=10,sticky=1,win=S)          COV        2     108    36     72        0     54/18      {'identity': 54, 'tau': 18}
       RING(M=8,R=10,sticky=1,win=S)          COV        3     140    72    180      144    108/72      {'identity': 108, 'other': 72}
-  [PASS] A4(b) THE CENSUS AND THE COCYCLE.  The P-path enumeration reaches EXACTLY SKY-B's direction set at every base event of every substrate at both depths (so the coordinates cover the charts and nothing else), every overlapping chart pair is same-height, and the fibre-map cocycle has ZERO violations wherever it is defined — with the coverage reported against this unit's interest: on the conflict RING at d = 2 the test has NO CONTENT, because every chart triple with pairwise overlaps has an EMPTY triple intersection, so there is no composition to test  (cells = 114; P-reach == SKY-B everywhere = True; cross-height overlapping pairs = 0; cocycle triples tested with a defined composition = 8290, VIOLATIONS = 0)
+      RING(M=8,R=6,sticky=1,win=S)           REG        2      60    20     40        0     24/16      {'identity': 24, 'tau': 16}
+      RING(M=8,R=6,sticky=1,win=S)           REG        3      76    40    100       80     36/64      {'identity': 36, 'other': 64}
+      RING(M=8,R=6,sticky=1,win=S)           REGA       2      60    20     40        0     24/16      {'identity': 24, 'tau': 16}
+      RING(M=8,R=6,sticky=1,win=S)           REGA       3      76    40    100       80     36/64      {'identity': 36, 'other': 64}
+      RING(M=8,R=6,sticky=1,win=S)           ARBLOSE    2      60    20     40        0     20/20      {'identity': 20, 'tau': 20}
+      RING(M=8,R=6,sticky=1,win=S)           ARBLOSE    3      76    40    100       80     20/80      {'identity': 20, 'other': 80}
+      RING(M=8,R=6,sticky=1,win=S)           ARBVFIRST  2      60    20     40        0     24/16      {'identity': 24, 'other': 16}
+      RING(M=8,R=6,sticky=1,win=S)           ARBVFIRST  3      76    40    100       80     36/64      {'identity': 36, 'other': 64}
+      RING(M=8,R=6,sticky=1,win=S)           COV        2      60    20     40        0     30/10      {'identity': 30, 'tau': 10}
+      RING(M=8,R=6,sticky=1,win=S)           COV        3      76    40    100       80     60/40      {'identity': 60, 'other': 40}
+  [PASS] A4(b) THE CENSUS AND THE COCYCLE.  The P-path enumeration reaches EXACTLY SKY-B's direction set at every base event of every substrate at both depths (so the coordinates cover the charts and nothing else), every overlapping chart pair is same-height, and the fibre-map cocycle has ZERO violations wherever it is defined — with the coverage reported against this unit's interest: on the conflict RING at d = 2 the test has NO CONTENT, because every chart triple with pairwise overlaps has an EMPTY triple intersection, so there is no composition to test  (cells = 174; P-reach == SKY-B everywhere = True; cross-height overlapping pairs = 0; cocycle triples tested with a defined composition = 11680, VIOLATIONS = 0)
 
   [A4(c) THE ARTIFACT PROBES (D64's C2b) — a labeling can produce a flat or a non-flat atlas for reasons that have nothing to do with the geometry]
       PROBE 2 BRICK(8,14)                            d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 58}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
@@ -365,12 +596,22 @@
       PROBE 2 DR(8,10,8)                             d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 273}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 GRID(g=3,R=10)                         d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 90}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 GRID(g=3,R=10)                         d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 231}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 GRID(g=3,R=4)                          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 36}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 GRID(g=3,R=4)                          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 87}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 GRID(g=3,R=6)                          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 54}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 GRID(g=3,R=6)                          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 135}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 GRID(g=4,R=4)                          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 52}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 GRID(g=4,R=4)                          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 158}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=10,R=10,sticky=1,win=S)         d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 90}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=10,R=10,sticky=1,win=S)         d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 225}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=10,R=6,sticky=1,win=S)          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 50}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=10,R=6,sticky=1,win=S)          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 125}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=12,R=6,sticky=1,win=S)          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 60}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=12,R=6,sticky=1,win=S)          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 150}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 RING(M=4,R=10,sticky=1,win=S)          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 63}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 RING(M=4,R=10,sticky=1,win=S)          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 71}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=4,R=6,sticky=1,win=S)           d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 35}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=4,R=6,sticky=1,win=S)           d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 39}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 RING(M=6,R=10,sticky=0,win=S)          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 27}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 RING(M=6,R=10,sticky=0,win=S)          d=3: overlapping pairs by |regs(e) & regs(e')| = {}
       PROBE 2 RING(M=6,R=10,sticky=1,win=R)          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 54}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
@@ -381,20 +622,28 @@
       PROBE 2 RING(M=6,R=6,sticky=1,win=S)           d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 75}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 RING(M=8,R=10,sticky=1,win=S)          d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 72}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 2 RING(M=8,R=10,sticky=1,win=S)          d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 180}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=8,R=6,sticky=1,win=S)           d=2: overlapping pairs by |regs(e) & regs(e')| = {0: 40}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
+      PROBE 2 RING(M=8,R=6,sticky=1,win=S)           d=3: overlapping pairs by |regs(e) & regs(e')| = {0: 100}   <== ALL DISJOINT: RAW identity impossible, no outcome read at RAW
       PROBE 1 BRICK(8,14)                            REG d=2: directions seen by >= 2 charts = 45, of which the label is CONSTANT across charts = 0 (RAW: 0)
       PROBE 1 DR(8,10,8)                             REG d=2: directions seen by >= 2 charts = 120, of which the label is CONSTANT across charts = 58 (RAW: 0)
       PROBE 1 GRID(g=3,R=10)                         REG d=2: directions seen by >= 2 charts = 81, of which the label is CONSTANT across charts = 54 (RAW: 0)
+      PROBE 1 GRID(g=3,R=4)                          REG d=2: directions seen by >= 2 charts = 27, of which the label is CONSTANT across charts = 18 (RAW: 0)
       PROBE 1 GRID(g=3,R=6)                          REG d=2: directions seen by >= 2 charts = 45, of which the label is CONSTANT across charts = 30 (RAW: 0)
       PROBE 1 GRID(g=4,R=4)                          REG d=2: directions seen by >= 2 charts = 36, of which the label is CONSTANT across charts = 24 (RAW: 0)
+      PROBE 1 RING(M=10,R=10,sticky=1,win=S)         REG d=2: directions seen by >= 2 charts = 135, of which the label is CONSTANT across charts = 24 (RAW: 0)
+      PROBE 1 RING(M=10,R=6,sticky=1,win=S)          REG d=2: directions seen by >= 2 charts = 75, of which the label is CONSTANT across charts = 12 (RAW: 0)
+      PROBE 1 RING(M=12,R=6,sticky=1,win=S)          REG d=2: directions seen by >= 2 charts = 90, of which the label is CONSTANT across charts = 12 (RAW: 0)
       PROBE 1 RING(M=4,R=10,sticky=1,win=S)          REG d=2: directions seen by >= 2 charts = 54, of which the label is CONSTANT across charts = 24 (RAW: 0)
+      PROBE 1 RING(M=4,R=6,sticky=1,win=S)           REG d=2: directions seen by >= 2 charts = 30, of which the label is CONSTANT across charts = 12 (RAW: 0)
       PROBE 1 RING(M=6,R=10,sticky=0,win=S)          REG d=2: directions seen by >= 2 charts = 54, of which the label is CONSTANT across charts = 54 (RAW: 0)
       PROBE 1 RING(M=6,R=10,sticky=1,win=R)          REG d=2: directions seen by >= 2 charts = 81, of which the label is CONSTANT across charts = 24 (RAW: 0)
       PROBE 1 RING(M=6,R=10,sticky=1,win=S)          REG d=2: directions seen by >= 2 charts = 81, of which the label is CONSTANT across charts = 24 (RAW: 0)
       PROBE 1 RING(M=6,R=6,sticky=1,win=S)           REG d=2: directions seen by >= 2 charts = 45, of which the label is CONSTANT across charts = 12 (RAW: 0)
       PROBE 1 RING(M=8,R=10,sticky=1,win=S)          REG d=2: directions seen by >= 2 charts = 108, of which the label is CONSTANT across charts = 24 (RAW: 0)
-      PROBE 1 FIRES at 28 (labeling, substrate, instrument, depth) cells IN TOTAL — printed in full, because a blind labeling makes a FLAT reading an artefact: [('GRID(g=3,R=10)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=3,R=10)', 'COV', 2, 'FIRST-role'), ('GRID(g=3,R=10)', 'REG', 2, 'FIRST-role'), ('GRID(g=3,R=10)', 'REGA', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'COV', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'REG', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'REGA', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'COV', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'REG', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'REGA', 2, 'FIRST-role'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2, 'ROLE'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2, 'FIRST-role'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3, 'ROLE'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'RAW'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'FIRST-raw'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2, 'FIRST-role')]
-      OF THOSE, the cells where the READ labeling (ROLE) is blind — whose FLAT readings are artefacts and are EXCLUDED from every convention-robustness sentence below: [('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2)]
-  [PASS] A4(c) THE PROBES DECIDE WHERE THE OUTCOME MAY BE READ, AND PROBE 1 DOES FIRE — WHICH IS PRINTED AND ACTED ON RATHER THAN FOLDED AWAY.  The decisive reading (A-IIIa: the wide record's transition class) is made at the ROLE labeling on the WIDE record, and PROBE 1 does NOT fire at any of its cells at any instrument or depth: some direction always carries different labels in different charts there, so the wide record's flat atlas is NOT an artefact of a labeling that cannot see a transition.  Where PROBE 1 DOES fire — the FIRST-letter labelings on the grids, and every instrument's ROLE labeling on the DELIVERY-FREE ring, whose atlas is flat for exactly that reason — the cells are listed and excluded by name.  PROBE 2 (disjoint base registers make RAW non-identity a tautology) is reported per substrate and no outcome is read at RAW either  (blind ROLE cells on the WIDE record = 0; blind ROLE cells anywhere = 7 of 110 [('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2)]; blind cells at any labeling = 28; PROBE-2 censuses printed for 22 grammar substrate/depth cells)
+      PROBE 1 RING(M=8,R=6,sticky=1,win=S)           REG d=2: directions seen by >= 2 charts = 60, of which the label is CONSTANT across charts = 12 (RAW: 0)
+      PROBE 1 FIRES at 36 (labeling, substrate, instrument, depth) cells IN TOTAL — printed in full, because a blind labeling makes a FLAT reading an artefact: [('GRID(g=3,R=10)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=3,R=10)', 'COV', 2, 'FIRST-role'), ('GRID(g=3,R=10)', 'REG', 2, 'FIRST-role'), ('GRID(g=3,R=10)', 'REGA', 2, 'FIRST-role'), ('GRID(g=3,R=4)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=3,R=4)', 'COV', 2, 'FIRST-role'), ('GRID(g=3,R=4)', 'REG', 2, 'FIRST-role'), ('GRID(g=3,R=4)', 'REGA', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'COV', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'REG', 2, 'FIRST-role'), ('GRID(g=3,R=6)', 'REGA', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'ARBVFIRST', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'COV', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'REG', 2, 'FIRST-role'), ('GRID(g=4,R=4)', 'REGA', 2, 'FIRST-role'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2, 'ROLE'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2, 'FIRST-role'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3, 'ROLE'), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3, 'FIRST-role'), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 2, 'ROLE'), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 2, 'FIRST-role'), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 3, 'ROLE'), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 3, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'RAW'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'FIRST-raw'), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2, 'FIRST-role'), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2, 'ROLE'), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2, 'FIRST-role')]
+      OF THOSE, the cells where the READ labeling (ROLE) is blind — whose FLAT readings are artefacts and are EXCLUDED from every convention-robustness sentence below: [('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 2), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 3), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2)]
+  [PASS] A4(c) THE PROBES DECIDE WHERE THE OUTCOME MAY BE READ, AND PROBE 1 DOES FIRE — WHICH IS PRINTED AND ACTED ON RATHER THAN FOLDED AWAY.  The decisive reading (A-IIIa: the wide record's transition class) is made at the ROLE labeling on the WIDE record, and PROBE 1 does NOT fire at any of its cells at any instrument or depth: some direction always carries different labels in different charts there, so the wide record's flat atlas is NOT an artefact of a labeling that cannot see a transition.  Where PROBE 1 DOES fire — the FIRST-letter labelings on the grids, and every instrument's ROLE labeling on the DELIVERY-FREE ring, whose atlas is flat for exactly that reason — the cells are listed and excluded by name.  PROBE 2 (disjoint base registers make RAW non-identity a tautology) is reported per substrate and no outcome is read at RAW either  (blind ROLE cells on the WIDE record = 0; blind ROLE cells anywhere = 9 of 170 [('RING(M=4,R=10,sticky=1,win=S)', 'COV', 2), ('RING(M=4,R=10,sticky=1,win=S)', 'COV', 3), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 2), ('RING(M=4,R=6,sticky=1,win=S)', 'COV', 3), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBLOSE', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'ARBVFIRST', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'COV', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REG', 2), ('RING(M=6,R=10,sticky=0,win=S)', 'REGA', 2)]; blind cells at any labeling = 36; PROBE-2 censuses printed for 34 grammar substrate/depth cells)
 
   [A4(d0) VALIDATION OF THE TWO ADDED ROUTES — a true positive AND a true negative for each, constructed here, before either is pointed at a record (d47a's SG1 doctrine)]
       PARITY route: an odd triangle (tau, identity, identity) -> 1 obstruction(s); an even triangle (tau, tau, identity) -> 0.  Classifications used: tau / identity.
@@ -433,6 +682,16 @@
       GRID(g=3,R=10)                         ARBVFIRST  3 identity      41     35       0        0    3/0        41/0            0/0      
       GRID(g=3,R=10)                         COV        2 identity      63      9       0        0   52/0        63/0            0/0      
       GRID(g=3,R=10)                         COV        3 identity      41     35       0        0    3/0        41/0            0/0      
+      GRID(g=3,R=4)                          REG        2 identity      27      3       0        0   28/0        27/0            0/0      
+      GRID(g=3,R=4)                          REG        3 identity      17     11       0        0    3/0        17/0            0/0      
+      GRID(g=3,R=4)                          REGA       2 identity      27      3       0        0   28/0        27/0            0/0      
+      GRID(g=3,R=4)                          REGA       3 identity      17     11       0        0    3/0        17/0            0/0      
+      GRID(g=3,R=4)                          ARBLOSE    2 identity      10      6       0        0    2/0        27/0            0/0      
+      GRID(g=3,R=4)                          ARBLOSE    3 identity      15      9       0        0    3/0        17/0            0/0      
+      GRID(g=3,R=4)                          ARBVFIRST  2 identity      27      3       0        0   28/0        27/0            0/0      
+      GRID(g=3,R=4)                          ARBVFIRST  3 identity      17     11       0        0    3/0        17/0            0/0      
+      GRID(g=3,R=4)                          COV        2 identity      27      3       0        0   28/0        27/0            0/0      
+      GRID(g=3,R=4)                          COV        3 identity      17     11       0        0    3/0        17/0            0/0      
       GRID(g=3,R=6)                          REG        2 identity      39      5       0        0   36/0        39/0            0/0      
       GRID(g=3,R=6)                          REG        3 identity      25     19       0        0    3/0        25/0            0/0      
       GRID(g=3,R=6)                          REGA       2 identity      39      5       0        0   36/0        39/0            0/0      
@@ -457,6 +716,36 @@
       M21                                    COV        3       tau      2      2       0        1    0/0        14/2            0/0      
       M31                                    COV        2 identity       4      4       0        0    0/0        68/19           0/0      
       M31                                    COV        3 identity       2      2       0        0    0/0        51/34           0/0      
+      RING(M=10,R=10,sticky=1,win=S)         REG        2       tau     90     54       9        9    0/0        90/9            0/0      
+      RING(M=10,R=10,sticky=1,win=S)         REG        3 identity      77     37       0        0   32/0       225/36           0/0      
+      RING(M=10,R=10,sticky=1,win=S)         REGA       2       tau     90     54       9        9    0/0        90/9            0/0      
+      RING(M=10,R=10,sticky=1,win=S)         REGA       3 identity      77     37       0        0   32/0       225/36           0/0      
+      RING(M=10,R=10,sticky=1,win=S)         ARBLOSE    2       tau     90     54       9        9    0/0        90/9            0/0      
+      RING(M=10,R=10,sticky=1,win=S)         ARBLOSE    3 identity      45     45       0        0    0/0       225/36           0/0      
+      RING(M=10,R=10,sticky=1,win=S)         ARBVFIRST  2 identity      53     49       0        0    0/0        90/9            0/0      
+      RING(M=10,R=10,sticky=1,win=S)         ARBVFIRST  3 identity      77     37       0        0   32/0       225/36           0/0      
+      RING(M=10,R=10,sticky=1,win=S)         COV        2       tau     90     54       9        9    0/0        90/9            0/0      
+      RING(M=10,R=10,sticky=1,win=S)         COV        3 identity     117     27       0        0   72/0       225/36           0/0      
+      RING(M=10,R=6,sticky=1,win=S)          REG        2       tau     50     30       5        5    0/0        50/5            0/0      
+      RING(M=10,R=6,sticky=1,win=S)          REG        3 identity      41     21       0        0   16/0       125/20           0/0      
+      RING(M=10,R=6,sticky=1,win=S)          REGA       2       tau     50     30       5        5    0/0        50/5            0/0      
+      RING(M=10,R=6,sticky=1,win=S)          REGA       3 identity      41     21       0        0   16/0       125/20           0/0      
+      RING(M=10,R=6,sticky=1,win=S)          ARBLOSE    2       tau     50     30       5        5    0/0        50/5            0/0      
+      RING(M=10,R=6,sticky=1,win=S)          ARBLOSE    3 identity      25     25       0        0    0/0       125/20           0/0      
+      RING(M=10,R=6,sticky=1,win=S)          ARBVFIRST  2 identity      29     27       0        0    0/0        50/5            0/0      
+      RING(M=10,R=6,sticky=1,win=S)          ARBVFIRST  3 identity      41     21       0        0   16/0       125/20           0/0      
+      RING(M=10,R=6,sticky=1,win=S)          COV        2       tau     50     30       5        5    0/0        50/5            0/0      
+      RING(M=10,R=6,sticky=1,win=S)          COV        3 identity      65     15       0        0   40/0       125/20           0/0      
+      RING(M=12,R=6,sticky=1,win=S)          REG        2       tau     60     35       0        0    0/0        60/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          REG        3 identity      46     26       0        0   16/0       150/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          REGA       2       tau     60     35       0        0    0/0        60/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          REGA       3 identity      46     26       0        0   16/0       150/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          ARBLOSE    2       tau     60     35       0        0    0/0        60/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          ARBLOSE    3 identity      30     30       0        0    0/0       150/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          ARBVFIRST  2 identity      34     34       0        0    0/0        60/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          ARBVFIRST  3 identity      46     26       0        0   16/0       150/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          COV        2       tau     60     35       0        0    0/0        60/0            0/0      
+      RING(M=12,R=6,sticky=1,win=S)          COV        3 identity      70     20       0        0   40/0       150/0            0/0      
       RING(M=4,R=10,sticky=1,win=S)          REG        2       tau     43     23       0        0   16/0        63/0            0/0      
       RING(M=4,R=10,sticky=1,win=S)          REG        3 identity      34     14       0        0   16/0        54/0            0/0      
       RING(M=4,R=10,sticky=1,win=S)          REGA       2       tau     43     23       0        0   16/0        63/0            0/0      
@@ -467,6 +756,16 @@
       RING(M=4,R=10,sticky=1,win=S)          ARBVFIRST  3 identity      34     14       0        0   16/0        54/0            0/0      
       RING(M=4,R=10,sticky=1,win=S)          COV        2 identity      63     18       0        0   36/0        63/0            0/0      
       RING(M=4,R=10,sticky=1,win=S)          COV        3 identity      54      9       0        0   36/0        54/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           REG        2       tau     23     13       0        0    8/0        35/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           REG        3 identity      18      8       0        0    8/0        30/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           REGA       2       tau     23     13       0        0    8/0        35/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           REGA       3 identity      18      8       0        0    8/0        30/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           ARBLOSE    2       tau     15     15       0        0    0/0        35/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           ARBLOSE    3 identity      10     10       0        0    0/0        30/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           ARBVFIRST  2 identity      20     10       0        0    8/0        35/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           ARBVFIRST  3 identity      18      8       0        0    8/0        30/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           COV        2 identity      35     10       0        0   20/0        35/0            0/0      
+      RING(M=4,R=6,sticky=1,win=S)           COV        3 identity      30      5       0        0   20/0        30/0            0/0      
       RING(M=6,R=10,sticky=0,win=S)          REG        2 identity      27     27       0        0    0/0        27/0            0/0      
       RING(M=6,R=10,sticky=0,win=S)          REG        3 identity       0      0       0        0    0/0         0/0            0/0      
       RING(M=6,R=10,sticky=0,win=S)          REGA       2 identity      27     27       0        0    0/0        27/0            0/0      
@@ -517,6 +816,16 @@
       RING(M=8,R=10,sticky=1,win=S)          ARBVFIRST  3 identity      68     28       0        0   32/0       180/0            0/0      
       RING(M=8,R=10,sticky=1,win=S)          COV        2       tau     72     45       0        0    0/0        72/0            0/0      
       RING(M=8,R=10,sticky=1,win=S)          COV        3 identity     108     18       0        0   72/0       180/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           REG        2       tau     40     25       0        0    0/0        40/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           REG        3 identity      36     16       0        0   16/0       100/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           REGA       2       tau     40     25       0        0    0/0        40/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           REGA       3 identity      36     16       0        0   16/0       100/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           ARBLOSE    2       tau     40     25       0        0    0/0        40/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           ARBLOSE    3 identity      20     20       0        0    0/0       100/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           ARBVFIRST  2 identity      24     22       0        0    0/0        40/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           ARBVFIRST  3 identity      36     16       0        0   16/0       100/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           COV        2       tau     40     25       0        0    0/0        40/0            0/0      
+      RING(M=8,R=6,sticky=1,win=S)           COV        3 identity      60     10       0        0   40/0       100/0            0/0      
   [PASS] A4(d) [ANCHOR] THE COBOUNDARY INSTRUMENT REPRODUCES D64's COMMITTED C7 ROW EXACTLY.  On DOUBLE-RING(8, 10, 8) at REG and d = 2 this receipt's re-run of D64's own `cochain` gives 60 charts, 138 labelled overlaps, 9 components, ZERO obstructions, eps = 32/28, zero surviving non-identity transitions and 108 Cech triples with 0 violations, with the transition split 57/115 and REGA's eps = 40/20 — every published figure.  **So the same instrument, unmodified, produces every obstruction count below**, and a non-zero count cannot be a difference of instruments  (DR REG d2: charts 60, labelled 138, comps 9, obstructions 0, eps 32/28, surviving 0, cech 108/0; REGA eps 40/20, obstructions 0)
 
     THE WIDE RECORD (GRID(g=3,R=10)), which is where A-IIIa vs A-IIIb is decided:
@@ -524,45 +833,86 @@
       every length-preserving transition is the IDENTITY at every convention = False
       obstruction counts (C7 / PARITY / FREE) at d = 2: REG: 0/0/0, REGA: 0/0/0, ARBLOSE: 0/0/0, ARBVFIRST: 0/0/0, COV: 0/0/0
 
+      WHERE THE NON-VACUITY ACTUALLY LIVES (round-1 MAJOR 4 — the earlier claim credited the WRONG COLUMN).  Per convention at d = 2, C7's own cochain domain (it DROPS the 'other' class by construction) beside PARITY's (which never drops anything):
+        REG       kinds {'identity': 63, 'length-changing': 27}: C7 cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; PARITY cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; Cech triples 52
+        REGA      kinds {'identity': 63, 'length-changing': 27}: C7 cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; PARITY cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; Cech triples 52
+        ARBLOSE   kinds {'identity': 22, 'length-changing': 27, 'other': 41}: C7 cochain on  22 edges of which NON-IDENTITY   0 -> obstruction 0; PARITY cochain on  63 edges of which NON-IDENTITY  41 -> obstruction 0; Cech triples 2
+        ARBVFIRST kinds {'identity': 63, 'length-changing': 27}: C7 cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; PARITY cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; Cech triples 52
+        COV       kinds {'identity': 63, 'length-changing': 27}: C7 cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; PARITY cochain on  63 edges of which NON-IDENTITY   0 -> obstruction 0; Cech triples 52
+        READ IT HONESTLY.  C7's cochain is the ZERO COCHAIN at ALL FIVE conventions, but for TWO DIFFERENT REASONS.  At ['ARBVFIRST', 'COV', 'REG', 'REGA'] it is zero on the FULL length-preserving domain (every such transition is outright the identity): there is nothing to trivialize and the Cech triples test 0 = 0 + 0, so the triple COUNT is not evidence of non-vacuity there (D64's round-1 MINOR 1 struck out exactly that move) — what IS non-vacuous at those cells is that PROBE 1 does not fire, i.e. the labeling COULD have shown a transition and did not.  At ['ARBLOSE'] the cochain is zero only because C7 DROPS the 'other' class by construction: its domain shrinks from 63 edges to 22, discarding the 41 non-identity maps the sentence invokes.  The only routes on this record that trivialize a cochain that is NOT identically zero are PARITY (at ['ARBLOSE']) and FREE.  The strongest line about this record is therefore PARITY's and FREE's, not C7's.
+  [PASS] A4(e0) [MAJOR 4 — THE NON-VACUITY CLAIM IS RE-ATTRIBUTED TO THE COLUMN THAT CARRIES IT] The wide record's transition class is trivial by all three routes at all five conventions, and the ACCOUNTING for why that is not vacuous is now printed cell by cell.  C7's Z/2 cochain is IDENTICALLY ZERO at every convention: at four of them on the full length-preserving domain (so the Cech triples are a dead test and PROBE 1's silence is the content), and at ARBLOSE only because C7 drops the 'other' class, shrinking its domain and discarding exactly the non-identity maps the old sentence invoked.  The route that genuinely trivializes a NON-trivial cochain on this record is PARITY — and, independently, the free-relabelling route.  The A-IIIa verdict is unaffected; the credit is corrected  (conventions at which C7's cochain has a non-identity edge = []; C7 domain = PARITY domain at ['ARBVFIRST', 'COV', 'REG', 'REGA']; C7 domain SHRUNK at ['ARBLOSE'] (22 of 63 edges kept); conventions at which PARITY's cochain has non-identity edges = {'ARBLOSE': 41}; wide record trivial by every route at every convention = True)
+
+      HOW MANY DISTINCT READINGS THE FIVE CONVENTIONS ACTUALLY GIVE (round-1 MINOR 6).  The conventions ARE genuinely distinct labelings — the (chart, direction) cells at which each disagrees with REG on the ROLE label are counted below — but on the wide record every census COLUMN is identical at four of them, so the robustness sentence is that the wide record admits TWO distinct readings, not five:
+        (chart, direction) cells = 357; cells whose ROLE label differs from REG's: {'REG': 0, 'REGA': 108, 'ARBLOSE': 157, 'ARBVFIRST': 249, 'COV': 18}
+        distinct census ROWS over the five conventions at d = 2 = 2 (four identical + ARBLOSE).
+
     THE PAIR-CONFLICT RINGS — the cells with a NON-ZERO obstruction count:
-      D64's C7 route: 12 cells; PARITY route: 30 cells; FREE-RELABELLING route: 0 cells.  Per record, (instrument/depth -> C7 | PARITY | FREE):
+      D64's C7 route: 20 cells; PARITY route: 50 cells; FREE-RELABELLING route: 0 cells.  Per record, (instrument/depth -> C7 | PARITY | FREE):
+        RING(M=10,R=10,sticky=1,win=S): ARBLOSE/d2 9|9|0, ARBLOSE/d3 0|36|0, ARBVFIRST/d2 0|9|0, ARBVFIRST/d3 0|36|0, COV/d2 9|9|0, COV/d3 0|36|0, REG/d2 9|9|0, REG/d3 0|36|0, REGA/d2 9|9|0, REGA/d3 0|36|0
+        RING(M=10,R=6,sticky=1,win=S): ARBLOSE/d2 5|5|0, ARBLOSE/d3 0|20|0, ARBVFIRST/d2 0|5|0, ARBVFIRST/d3 0|20|0, COV/d2 5|5|0, COV/d3 0|20|0, REG/d2 5|5|0, REG/d3 0|20|0, REGA/d2 5|5|0, REGA/d3 0|20|0
+        RING(M=12,R=6,sticky=1,win=S): ARBLOSE/d2 0|0|0, ARBLOSE/d3 0|0|0, ARBVFIRST/d2 0|0|0, ARBVFIRST/d3 0|0|0, COV/d2 0|0|0, COV/d3 0|0|0, REG/d2 0|0|0, REG/d3 0|0|0, REGA/d2 0|0|0, REGA/d3 0|0|0
         RING(M=4,R=10,sticky=1,win=S): ARBLOSE/d2 0|0|0, ARBLOSE/d3 0|0|0, ARBVFIRST/d2 0|0|0, ARBVFIRST/d3 0|0|0, REG/d2 0|0|0, REG/d3 0|0|0, REGA/d2 0|0|0, REGA/d3 0|0|0
+        RING(M=4,R=6,sticky=1,win=S): ARBLOSE/d2 0|0|0, ARBLOSE/d3 0|0|0, ARBVFIRST/d2 0|0|0, ARBVFIRST/d3 0|0|0, REG/d2 0|0|0, REG/d3 0|0|0, REGA/d2 0|0|0, REGA/d3 0|0|0
         RING(M=6,R=10,sticky=0,win=S): ARBLOSE/d3 0|0|0, ARBVFIRST/d3 0|0|0, COV/d3 0|0|0, REG/d3 0|0|0, REGA/d3 0|0|0
         RING(M=6,R=10,sticky=1,win=R): ARBLOSE/d2 9|9|0, ARBLOSE/d3 0|36|0, ARBVFIRST/d2 0|9|0, ARBVFIRST/d3 0|36|0, COV/d2 9|9|0, COV/d3 0|36|0, REG/d2 9|9|0, REG/d3 0|36|0, REGA/d2 9|9|0, REGA/d3 0|36|0
         RING(M=6,R=10,sticky=1,win=S): ARBLOSE/d2 9|9|0, ARBLOSE/d3 0|36|0, ARBVFIRST/d2 0|9|0, ARBVFIRST/d3 0|36|0, COV/d2 9|9|0, COV/d3 0|36|0, REG/d2 9|9|0, REG/d3 0|36|0, REGA/d2 9|9|0, REGA/d3 0|36|0
         RING(M=6,R=6,sticky=1,win=S): ARBLOSE/d2 5|5|0, ARBLOSE/d3 0|20|0, ARBVFIRST/d2 0|5|0, ARBVFIRST/d3 0|20|0, COV/d2 5|5|0, COV/d3 0|20|0, REG/d2 5|5|0, REG/d3 0|20|0, REGA/d2 5|5|0, REGA/d3 0|20|0
         RING(M=8,R=10,sticky=1,win=S): ARBLOSE/d2 0|0|0, ARBLOSE/d3 0|0|0, ARBVFIRST/d2 0|0|0, ARBVFIRST/d3 0|0|0, COV/d2 0|0|0, COV/d3 0|0|0, REG/d2 0|0|0, REG/d3 0|0|0, REGA/d2 0|0|0, REGA/d3 0|0|0
-      THE PATTERN, its lists computed from the census rather than typed: maximum PARITY obstruction over the five conventions, by ring, at d = 2 / d = 3 = {'RING(M=4,R=10,sticky=1,win=S)': (0, 0), 'RING(M=6,R=10,sticky=0,win=S)': (0, 0), 'RING(M=6,R=10,sticky=1,win=R)': (9, 36), 'RING(M=6,R=10,sticky=1,win=S)': (9, 36), 'RING(M=6,R=6,sticky=1,win=S)': (5, 20), 'RING(M=8,R=10,sticky=1,win=S)': (0, 0)}.  OBSTRUCTING rings: ['RING(M=6,R=10,sticky=1,win=R)', 'RING(M=6,R=10,sticky=1,win=S)', 'RING(M=6,R=6,sticky=1,win=S)'].  CLEAN rings: ['RING(M=4,R=10,sticky=1,win=S)', 'RING(M=6,R=10,sticky=0,win=S)', 'RING(M=8,R=10,sticky=1,win=S)'].  Read: the rotating rings that obstruct are the M = 6 ones — THREE pairs per round, an ODD cycle in the nerve — while the rotating M = 4 and M = 8 rings (two and four pairs, EVEN cycles) are clean, as is the delivery-free ring, which has no rotation and no non-identity transition at all.  A Z/2 holonomy around an odd conflict ring is the natural reading, THREE RING SIZES DO NOT ESTABLISH IT, and it is filed as a residue rather than a result.
+        RING(M=8,R=6,sticky=1,win=S): ARBLOSE/d2 0|0|0, ARBLOSE/d3 0|0|0, ARBVFIRST/d2 0|0|0, ARBVFIRST/d3 0|0|0, COV/d2 0|0|0, COV/d3 0|0|0, REG/d2 0|0|0, REG/d3 0|0|0, REGA/d2 0|0|0, REGA/d3 0|0|0
+      THE PATTERN, its lists computed from the census rather than typed: maximum PARITY obstruction over the five conventions, by ring, at d = 2 / d = 3 = {'RING(M=10,R=10,sticky=1,win=S)': (9, 36), 'RING(M=10,R=6,sticky=1,win=S)': (5, 20), 'RING(M=12,R=6,sticky=1,win=S)': (0, 0), 'RING(M=4,R=10,sticky=1,win=S)': (0, 0), 'RING(M=4,R=6,sticky=1,win=S)': (0, 0), 'RING(M=6,R=10,sticky=0,win=S)': (0, 0), 'RING(M=6,R=10,sticky=1,win=R)': (9, 36), 'RING(M=6,R=10,sticky=1,win=S)': (9, 36), 'RING(M=6,R=6,sticky=1,win=S)': (5, 20), 'RING(M=8,R=10,sticky=1,win=S)': (0, 0), 'RING(M=8,R=6,sticky=1,win=S)': (0, 0)}.  OBSTRUCTING rings: ['RING(M=10,R=10,sticky=1,win=S)', 'RING(M=10,R=6,sticky=1,win=S)', 'RING(M=6,R=10,sticky=1,win=R)', 'RING(M=6,R=10,sticky=1,win=S)', 'RING(M=6,R=6,sticky=1,win=S)'].  CLEAN rings: ['RING(M=12,R=6,sticky=1,win=S)', 'RING(M=4,R=10,sticky=1,win=S)', 'RING(M=4,R=6,sticky=1,win=S)', 'RING(M=6,R=10,sticky=0,win=S)', 'RING(M=8,R=10,sticky=1,win=S)', 'RING(M=8,R=6,sticky=1,win=S)'].  Read: the rotating rings that obstruct are the M = 6 ones — THREE pairs per round, an ODD cycle in the nerve — while the rotating M = 4 and M = 8 rings (two and four pairs, EVEN cycles) are clean, as is the delivery-free ring, which has no rotation and no non-identity transition at all.  A Z/2 holonomy around an odd conflict ring is the natural reading.
+
+      [MAJOR 5 — THE RESIDUE'S OWN EXPERIMENT, RUN.  The first version filed 'it needs M = 10, 12, 14 and a proof, not three sizes' as an open residue; the experiment costs seconds and the receipt now runs it.  REG, d = 2, one row per ring:]
+        RING(M= 4, R= 6)  2 pairs/round  M/2 EVEN  parity edges  35  non-identity  15  C7 obstructions  0  PARITY obstructions  0   (R - 1 = 5)
+        RING(M= 6, R= 6)  3 pairs/round  M/2 ODD   parity edges  30  non-identity  11  C7 obstructions  5  PARITY obstructions  5   (R - 1 = 5)
+        RING(M= 8, R= 6)  4 pairs/round  M/2 EVEN  parity edges  40  non-identity  16  C7 obstructions  0  PARITY obstructions  0   (R - 1 = 5)
+        RING(M=10, R= 6)  5 pairs/round  M/2 ODD   parity edges  50  non-identity  21  C7 obstructions  5  PARITY obstructions  5   (R - 1 = 5)
+        RING(M=12, R= 6)  6 pairs/round  M/2 EVEN  parity edges  60  non-identity  26  C7 obstructions  0  PARITY obstructions  0   (R - 1 = 5)
+        RING(M= 6, R=10)  3 pairs/round  M/2 ODD   parity edges  54  non-identity  19  C7 obstructions  9  PARITY obstructions  9   (R - 1 = 9)
+        RING(M=10, R=10)  5 pairs/round  M/2 ODD   parity edges  90  non-identity  37  C7 obstructions  9  PARITY obstructions  9   (R - 1 = 9)
+        THE PARITY READING SURVIVES AT FIVE RING SIZES, NOT THREE: odd M/2 (M = [6, 10]) obstructs, even M/2 (M = [4, 8, 12]) is clean, and the M = 12 clean row is the one that could have killed it.
+        AND THE MAGNITUDES ARE NOT A RING QUANTITY (round-1 MAJOR 5, second half).  The obstruction count is the SAME for M = 6 and M = 10 at each R and equals R - 1 at every obstructing ring: [('M=6,R=6', 5, 5), ('M=10,R=6', 5, 5), ('M=6,R=10', 9, 9), ('M=10,R=10', 9, 9)].  It counts ROUNDS, not the ring; presenting '5 (R = 6) and 9 (R = 10)' as the RING's obstruction invites reading a magnitude that is neither a ring quantity nor a cohomological one.  The only invariant statement available is != 0.
+        THE ONE ROW THAT DOES NOT MATCH THE REVIEW'S OWN TABLE: the review reports RING(4, 6) at 'edges 23, non-id 3'; this unit's instrument measures [(35, 15)] there.  The OBSTRUCTION count agrees (0 both ways) and every other row of the review's table reproduces to the digit; the M = 4 edge/non-identity discrepancy is disclosed rather than smoothed, and it does not touch the parity reading.
+  [PASS] A4(e1) [MAJOR 5 — THE ODD-RING RESIDUE IS DECIDED AT FIVE SIZES, AND THE MAGNITUDE IS RE-READ] THE OBSTRUCTION IS EXACTLY THE PARITY OF M/2 ACROSS THE MEASURED LADDER, AND ITS COUNT IS R - 1, NOT A RING QUANTITY.  Rings with an ODD number of pairs per round (M = 6, 10) obstruct at every R measured; rings with an EVEN number (M = 4, 8, 12) are clean, and M = 12 is the row that could have falsified the reading.  The obstruction COUNT is identical for M = 6 and M = 10 at each R and equals R - 1 at each of them, so it counts rounds and not the ring.  The residue's remaining content is the PROOF, not more sizes  (ring sizes measured = [4, 6, 8, 10, 12] at R in [6, 10]; odd-M/2 rows all obstruct and even-M/2 rows are all clean = True; every obstructing count equals R - 1 = True)
       A WITNESS EDGE on RING(M=6,R=10,sticky=1,win=S) at REG d = 2: charts 100 and 104 (base events r/r, heights 25/25, widths 4/4), transition (((1, 0), (0, 0)), ((1, 1), (0, 1))) classified tau
       THE GROUP NAME, on the ring (D64's C4b applied here): fibre ['00', '01', '10', '11']; subgroups of S_4 consistent with every observed map = 10, minimal by inclusion = [2, 4]; UNIQUELY-tau maps = 0 of 19 tau-classified pairs — so the Z/2 reading is a CONVENTION here exactly as it was in D64
-    C7's two routes agree in the decisive direction at every one of the 114 cells: a non-zero obstruction count always leaves a surviving non-identity transition, and a zero count always passes the Cech form.  The converse fails at 1 cell(s) [('M21', 'COV', 3)] — there a pair whose FIBRE MAP is the identity still has different label SETS at a direction carrying two wire words (D64's 'ambiguous' status), which route (c) counts and route (b) never sees; it is printed, not folded away.
+    C7's two routes agree in the decisive direction at every one of the 174 cells: a non-zero obstruction count always leaves a surviving non-identity transition, and a zero count always passes the Cech form.  The converse fails at 1 cell(s) [('M21', 'COV', 3)] — there a pair whose FIBRE MAP is the identity still has different label SETS at a direction carrying two wire words (D64's 'ambiguous' status), which route (c) counts and route (b) never sees; it is printed, not folded away.
     THE PARITY ROUTE'S CONTROLS, which decide how the ring's obstruction may be read: genuine sprinklings carry NON-ZERO parity obstructions too ({('M21', 'COV', 2): 10, ('M21', 'COV', 3): 2, ('M31', 'COV', 2): 19, ('M31', 'COV', 3): 34}), while the delivery crystal DR(8,10,8) carries ZERO at every convention and depth ([0]).  On this statistic the pair-conflict ring sits with the SPRINKLINGS and against the delivery crystal — which is a finding about the statistic's discriminating power as much as about the ring.
-  [PASS] A4(e) [THE CLASS DECIDES] THE WIDE RECORD'S CLASS IS TRIVIAL — **A-IIIa, not A-IIIb** — AND THE PAIR-CONFLICT RING CARRIES THE CAMPAIGN'S FIRST NON-ZERO OBSTRUCTION COUNT, WHICH IS REPORTED AND NOT CLAIMED AS H^1 != 0.  On the wide record all three routes return ZERO obstructions at every one of the five port conventions and at both depths — and that is NOT vacuous: at REG, REGA, ARBVFIRST and COV every length-preserving transition is the identity (with 52 testable Cech triples at d = 2, so the triviality has content), while at ARBLOSE 41 of the 90 pairs carry a NON-identity length-preserving map and the class is a coboundary anyway.  Conflict bought WIDTH and bought no gauge.  On the two-proposer rings D64's own C7 returns a NON-ZERO obstruction count at several conventions — the first anywhere in this campaign, produced by the instrument that returns 0 on the delivery crystal in this same run — but it FAILS the pin's survival requirement: the FREE-RELABELLING test trivializes every one of those cells, the ring's chart triples all have EMPTY triple intersections (so there is no Cech 2-skeleton and the 'class' lives in the cycle space of a graph), and D64's C4b extension census says the Z/2 name is a convention here too.  The gate is the self-consistency of C7's two routes, not the verdict  (C7's routes agree in the decisive direction in every one of 114 cells = True (converse exceptions 1, printed); sprinkling parity obstructions [2, 10, 19, 34] vs delivery-crystal [0]; wide record trivial at every convention and every route = True; ring cells with a non-zero C7 obstruction = 12; ring cells with a non-zero FREE-relabelling obstruction = 0)
+    THE SCOPE OF THAT COMPARISON (round-1 MINOR 8): a sprinkling has no H, so only the register-free COV instrument is defined on it — the ring's other four conventions have NO sprinkling counterpart.  The comparison is therefore made AT COV and nowhere else: sprinklings {'M21/d2': 10, 'M21/d3': 2, 'M31/d2': 19, 'M31/d3': 34} vs the delivery crystal at COV {'DR(8,10,8)/d2': 0, 'DR(8,10,8)/d3': 0} vs RING(M=6,R=10,sticky=1,win=S) at COV {'d2': 9, 'd3': 36}.
+  [PASS] A4(e) [THE CLASS DECIDES] THE WIDE RECORD'S CLASS IS TRIVIAL — **A-IIIa, not A-IIIb** — AND THE PAIR-CONFLICT RING CARRIES THE CAMPAIGN'S FIRST NON-ZERO OBSTRUCTION COUNT, WHICH IS REPORTED AND NOT CLAIMED AS H^1 != 0.  On the wide record all three routes return ZERO obstructions at every one of the five port conventions and at both depths — with the non-vacuity accounted for in A4(e0) rather than asserted: at REG, REGA, ARBVFIRST and COV the Z/2 cochain is IDENTICALLY ZERO, so the content there is that PROBE 1 does not fire (the labeling could have shown a transition and did not) and NOT the Cech triple count, and at ARBLOSE the 'other' maps that C7 drops are trivialized by the PARITY and FREE routes instead.  Conflict bought WIDTH and bought no gauge.  On the two-proposer rings D64's own C7 returns a NON-ZERO obstruction count at several conventions — the first anywhere in this campaign, produced by the instrument that returns 0 on the delivery crystal in this same run — but it FAILS the pin's survival requirement: the FREE-RELABELLING test trivializes every one of those cells, the ring's chart triples all have EMPTY triple intersections (so there is no Cech 2-skeleton and the 'class' lives in the cycle space of a graph), and D64's C4b extension census says the Z/2 name is a convention here too.  The gate is the self-consistency of C7's two routes, not the verdict  (C7's routes agree in the decisive direction in every one of 174 cells = True (converse exceptions 1, printed); sprinkling parity obstructions [2, 10, 19, 34] vs delivery-crystal [0]; wide record trivial at every convention and every route = True; ring cells with a non-zero C7 obstruction = 20; ring cells with a non-zero FREE-relabelling obstruction = 0)
 
 [THE PRE-REGISTERED OUTCOME, read off the sweep: A-IIIa]
-  [PASS] A6(a) [THE OUTCOME] **A-IIIa — CONFLICT TILES AND BREAKS THE DELIVERY CEILING, AND THE CLASS IS TRIVIAL AGAIN.**  Forced conflict records run to crystal length with no refusal anywhere; the two-proposer ring tiles INSIDE the sprinkling homogeneity band at d = 2 while carrying 4-direction charts (D63's F3 pattern, with conflict as the engine); and the 3- and 4-proposer grids carry |D| = 6 and |D| = 8 at d = 2, the first records in the campaign past the delivery ceiling of 4.  On the wide record the transition class is TRIVIAL at every port convention and by every route — the identity outright at four conventions, a coboundary at the fifth.  The predicate is the pre-registered disjunction itself, computed from the sweep: a refusal anywhere would have printed A-I, a max |D| of 4 everywhere would have printed A-II, and a surviving obstruction on the wide record would have printed A-IIIb  (refusals = 0; records with |D| >= 5 at d = 2 = 4; wide record's class trivial at every convention and route = True)
-  [PASS] A6(b) AST anti-vacuity in d47a's SG8 form: every check() predicate is a bare constant NOWHERE and references at least one run-bound name.  SCOPE (LOG #403 MA-2): the scan enforces exactly that and detects no vacuous gate in arbitrary syntactic form  (check() calls = 20, bare-constant or unbound predicates = 0)
+  [PASS] A6(a) [THE OUTCOME] **A-IIIa — CONFLICT TILES AND BREAKS THE DELIVERY CEILING, AND THE CLASS IS TRIVIAL AGAIN.**  Forced conflict records run to crystal length with no refusal anywhere; the two-proposer ring tiles INSIDE the sprinkling homogeneity band at d = 2 while carrying 4-direction charts (D63's F3 pattern, with conflict as the engine); and the 3- and 4-proposer grids carry |D| = 6 and |D| = 8 at d = 2 while the DELIVERY-FREE DOUBLE-GRID carries |D| = 9 = k^2, W4c's own ceiling, SATURATED — the first records in the campaign past the delivery ceiling of 4.  On the wide record the transition class is TRIVIAL at every port convention and by every route — the identity outright at four conventions, a coboundary at the fifth.  The predicate is the pre-registered disjunction itself, computed from the sweep: a refusal anywhere would have printed A-I, a max |D| of 4 everywhere would have printed A-II, and a surviving obstruction on the wide record would have printed A-IIIb  (refusals = 0; records with |D| >= 5 at d = 2 = 6; wide record's class trivial at every convention and route = True)
+  [PASS] A6(b) AST anti-vacuity in d47a's SG8 form: every check() predicate is a bare constant NOWHERE and references at least one run-bound name.  SCOPE (LOG #403 MA-2): the scan enforces exactly that and detects no vacuous gate in arbitrary syntactic form  (check() calls = 29, bare-constant or unbound predicates = 0)
 
 [A6(c) DEPTHS, CAPS, RANGES AND POPULATIONS — all printed, none silent]
     SKY-B depths measured: 2 and 3 at every record and every instrument (committed SKYB_DEPTH = 2).
-    swept conflict configurations = 15; records built = 15; conflict events built = 1593; largest record = 174 events; controls re-run = DR(8,10,8) (177), BRICK(8,14) (65), 11 sprinkling configurations, 2 sprinklings charted.
-    full-menu replays = 5, budgets 420s / 120s (wide), statuses {'RING(M=4,R=6,sticky=1,win=S)': 'OK', 'RING(M=6,R=6,sticky=1,win=S)': 'OK', 'GRID(g=3,R=4)': 'OK', 'RING(M=6,R=10,sticky=1,win=S)': 'OK', 'GRID(g=3,R=10)': 'BUDGET-CUT'}.
-    A4 measurement cells = 114 over 13 substrates x 5 instruments x 2 depths; overlapping pairs examined = 12393; triples examined = 13661.
+    swept conflict configurations = 21; records built = 21; conflict events built = 2325; largest record = 195 events; controls re-run = DR(8,10,8) (177), BRICK(8,14) (65), 11 sprinkling configurations, 2 sprinklings charted; ROUND-1 ADDITIONS = DOUBLE-GRID(3,2) and (3,4), ARBCHAIN(m = 0..3, k = 3), and the ring ladder M = 8, 10, 12 at R = 6 plus M = 10 at R = 10.
+    full-menu replays = 6, budgets 420s / 120s (wide), statuses {'RING(M=4,R=6,sticky=1,win=S)': 'OK', 'RING(M=6,R=6,sticky=1,win=S)': 'OK', 'GRID(g=3,R=4)': 'OK', 'DOUBLE-GRID(g=3,R=2)': 'OK', 'RING(M=6,R=10,sticky=1,win=S)': 'OK', 'GRID(g=3,R=10)': 'BUDGET-CUT'}.
+    A4 measurement cells = 174 over 19 substrates x 5 instruments x 2 depths; overlapping pairs examined = 17578; triples examined = 17091.
     thresholds used anywhere: D58's |D| >= 2 and |D| >= 4 columns, the pin's overlap (>= 2 shared directions) and triple (pairwise overlaps, >= 1 shared direction) predicates, and the A0(ii) sprinkling bands.  NO OTHER THRESHOLD IS USED.
-    NOTHING WAS CUT SILENTLY: the only budget that binds is the wide record's full-menu replay, whose cut point is printed in A1(c).  Total wall clock at this line: 627.7s.
-  [PASS] A6(d) DETERMINISM IS GATED, NOT ASSERTED (D63's W6b pattern; the layer reads next(iter(frozenset)) in load-bearing places and this unit's arbitrations have TWO AND THREE proposers, where D64's note observed that `regs_of`'s `next(iter(...))` tie-break and `reg_tuple`'s sort could in principle diverge — A4(a)'s closure gate is what would catch it).  THE DIGEST COVERS: a ring and a grid record rebuilt in probe mode under PYTHONHASHSEED 0 / 7 / 999 — exact-Fraction profile rows at both depths, arbitration share and full width histogram — byte-identical stdout.  IT DOES NOT COVER the sweep's larger records or the A4 census  (probe runs = 3, distinct outputs = 1  [6.9s])
+    NOTHING WAS CUT SILENTLY: the only budget that binds is the wide record's full-menu replay, whose cut point is printed in A1(c).  Total wall clock at this line: 927.1s.
+  [PASS] A6(d) DETERMINISM IS GATED, NOT ASSERTED (D63's W6b pattern; the layer reads next(iter(frozenset)) in load-bearing places and this unit's arbitrations have TWO AND THREE proposers, where D64's note observed that `regs_of`'s `next(iter(...))` tie-break and `reg_tuple`'s sort could in principle diverge — A4(a)'s closure gate is what would catch it).  THE DIGEST COVERS: a ring and a grid record rebuilt in probe mode under PYTHONHASHSEED 0 / 7 / 999 — exact-Fraction profile rows at both depths, arbitration share and full width histogram — byte-identical stdout.  THE DOUBLE-GRID IS IN THE DIGEST, so the round-1 counterexample's |D| = 9 histogram is covered.  IT DOES NOT COVER the sweep's larger records or the A4 census  (probe runs = 3, distinct outputs = 1  [35.2s])
 
 [VERDICT — D66]
   A-IIIa FIRED.  CONFLICT TILES, AND IT BUYS WIDTH THE DELIVERY GRAMMAR CANNOT.
     THE TILING HALF.  RING(M=6,R=10,sticky=1,win=S): 117 events over 6 actors in 10 rounds, 0.2564 of them ARBITRATIONS, every event offered by
     the layer's own menu with all actors offered at every one of the 117 steps.
     At d = 2: homogeneity 9/13 (~0.6923), INSIDE the recomputed band [0.6417, 0.8000]; |D| >= 4 at 3/13; max |D| 4.
-    THE WIDTH HALF.  GRID(g=3,R=10): max |D| = 6 at d = 2 and GRID(g=4,R=4): max |D| = 8 — past the delivery ceiling of 4 for the first time.
+    THE WIDTH HALF.  GRID(g=3,R=10): max |D| = 6 at d = 2, GRID(g=4,R=4): max |D| = 8, and DOUBLE-GRID(g=3,R=4): max |D| = 9 — past the delivery grammar's d = 2 ceiling of 4 for the first time.
     THE MECHANISM, AND IT CORRECTS ITS OWN PARENT (W4c): the version register an
-    arbitration mints is a BIRTH WIRE with no successor, so three registers
-    are worth two, a two-proposer conflict ring is held to the delivery
-    ceiling 4 at d = 2, and width past 4 needs 3+ PROPOSERS.  The measured
-    law in this family is max |D| = 2k at d = 2 for a k-proposer grid.
+    arbitration mints is a BIRTH WIRE with no successor — proved in A2(b0) from
+    the committed layer, not measured — so three registers are worth two, a
+    two-proposer conflict ring is held to the delivery ceiling 4 at d = 2, and
+    width past 4 needs 3+ PROPOSERS.
+    THE WIDTH LAW (round-1 BLOCKER 1, CORRECTED).  max |D| = 2k is NOT a law
+    about k-proposer crystals: it is what the RING and GRID schedules realize,
+    because in them every depth-1 successor of an arbitration is a delivery
+    (Bl = 2).  The true ceiling is the refinement |D_e(2)| <= SUM_y b(y) <=
+    k * Bl <= k^2, gated at every event of every record here, and it is
+    REALIZED AND SATURATED at k^2 = 9 by the delivery-free DOUBLE-GRID(3, R)
+    (nine charts of width 9, three per round), with ARBCHAIN(m, 3) occupying
+    the whole interval 6, 7, 8, 9.  The genuine headline is therefore: W4c's
+    bound is TIGHT, and the widest chart in the campaign is 9.
     THE GAUGE HALF (A4).  On the wide record all three routes return ZERO
     obstructions at all five port conventions and both depths — identity at
     four of them and a COBOUNDARY at the fifth (ARBLOSE, where 41 pairs are
@@ -580,5 +930,5 @@
   identified click law runs through paper 29's missing map (D59) and is not
   claimed; the missing map is not touched.
 
-[d66] 20 PASS / 0 FAIL   [total wall clock 634.6s]
+[d66] 29 PASS / 0 FAIL   [total wall clock 962.3s]
 [exit protocol, pin A0/A6] exit 1 ONLY on ANCHOR breakage — the A0 family (A0a single sources, A0(i) the delivery controls' committed rows, A0(ii) the sprinkling bands, A4(a) instrument validation, A4(d) D64's committed C7 row), the five gates carrying anchor=True.  Every substantive negative exits 0.  anchor broken = False
