@@ -1,0 +1,338 @@
+==============================================================================
+D74 — THE TRANSPORT HOLONOMY: carrier, group, removability, and the
+      odd-sector U(1) search  (exact receipt)
+==============================================================================
+  banner: exact Fractions throughout; the committed d42b1 / d42b3
+  layers single-sourced by text-slice + an AST signature pass, with
+  exit-freedom gated; every tested constant quoted from a committed
+  source (registry below); removability BEFORE structure in both
+  computation and presentation; substantive negatives exit 0; exit 1
+  ONLY if a committed D72 number fails to reproduce.
+
+  PYTHONHASHSEED = (unset)
+  D74_SKIP_DEEP  = 0
+
+  QUOTE REGISTRY (the anchors below are held to these):
+    [T6.1] v10/note-d72-weld-result.md:150 (sec.1 T6.1) and v10/data/d72_weld_exact.out:124
+        (A,B) d <= 4: 88 of 1,546 closed squares non-unit, spectrum {1/2: 70
+        , 2/3: 2, 3/2: 6, 2: 10}, kinds {(r,d): 68, (d,r): 8, (d,n): 6, (d,d
+        ): 4, (n,d): 2}, delivery-bearing 88/88, shallowest defect at total 
+        depth 3.  (A,B,C) d <= 3: 12 of 1,554, spectrum {1/2: 12}, kinds {(r
+        ,d): 12}.
+    [T6.2] v10/note-d72-weld-result.md:151 (sec.1 T6.2) and v10/data/d72_weld_exact.out:125
+        (A,B) d <= 4: 40 half-open (AB-only 28, BA-only 12), kinds {(r,d): 1
+        2, (d,r): 4, (p,d): 16, (d,p): 8}, 40/40 delivery-bearing.
+    [T6.3] v10/note-d72-weld-result.md:152 (sec.1 T6.3)
+        0 of 88 and 0 of 12 defective squares close at record level.
+    [T6.4] v10/data/d72_weld_exact.out:127-135
+        the minimal witness: h = [('p','A',V0,0)], eA = arb of own proposal,
+         eB = ('d','A','B',V0); q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1
+        /4, q(eA|h.eB) = 1/4; dP_AB/dP_BA = 1/2; mu(h.eA.eB) = 1/256 vs mu(h
+        .eB.eA) = 1/128.
+    [T6.5] v10/note-d72-weld-result.md:154 (sec.1 T6.5)
+        d42b1 (A,B) d <= 4 idle-weight spectrum {1/2: 7738, 3/4: 200}; 533 o
+        f 1,073 comparable closed squares contain no idle event.
+    [T2.5] v10/data/d72_weld_exact.out:119-121, 137-139
+        grammar 2 record deletion graph: (A,B) d<=4 nodes 2477, up-edges 290
+        0, multi-valued 0, independent cycles 424, non-trivial holonomies 0,
+         mu class-constant 2477/2477, 3969 histories; (A,B,C) d<=3 nodes 212
+        8, up-edges 2772, cycles 645, 0 defects, 2128/2128, 3424 histories.
+    [d65] v10/note-d65-descent-conditions-result.md:173-182 (quoted by d72 as QUOTES['d65'])
+        The defect is exactly the intermediate-mass ratio: d = M(sigma(Hb))/
+        M(sigma(Ha)) with M the per-state menu mass; masses {2, 5/2}; spectr
+        um {1, 4/5, 5/4}.
+    [d72_group] v10/note-d72-weld-result.md:391-395 (licensed claim 6)
+        the NORMALISED grammar-1 kernel has holonomy image the infinite cycl
+        ic group <5/4> in R+, square spectrum {4/5,1,5/4}.
+    [Ldual] v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2843-2849 (quoted by d72 as QUOTES['Ldual'])
+        L_dual = e^{-kE} e^{i theta O}; E is dual-even data; O is dual-odd d
+        ata; dual reversal sends O to -O; therefore dual reversal sends L to
+         its complex conjugate.
+    [sqrtq] v10/note-d42b4-quantum-lift.md:15-18 (quoted by d72)
+        The lift assigns each complete depth-D history the amplitude prod sq
+        rt(q) on record ancillas.
+    [d73] v10/note-d73-even-gram-result.md sec.12 (the generic-geometry lesson)
+        hand-built symmetry is a cage: carry at least one asymmetric/defecte
+        d substrate.
+
+------------------------------------------------------------------------------
+SEC 0.1  committed sources: AST signature pass, then slice
+------------------------------------------------------------------------------
+  [DATA] d42b1 AST: 29 module-level defs/classes; all 12 required signatures matched exactly
+  [DATA] d42b3 AST: 21 module-level defs/classes; all 5 required signatures matched exactly
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only); exit-freedom gated
+  [DATA] d42b3 slice: 8670/21462 bytes executed (definition head only); exit-freedom gated
+  [PASS] SRC.1 EXIT-FREEDOM GATED: the sliced layers cannot set this receipt's exit status — sys.exit/os._exit are neutralised inside the slice and restored after; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked and raised nothing)
+         ^ NO INDEPENDENT INFORMATION: a property of the loader, not of the substrate; it tests our plumbing
+
+------------------------------------------------------------------------------
+SEC 1  ANCHORS — D72's committed transport census (exit 1 on failure)
+------------------------------------------------------------------------------
+  [DATA] AB4 family: 3969 histories, 2477 record classes
+  [DATA] AB4 exchange-square census: {'both-blocked': 142, 'closed': 1546, 'AB-only': 28, 'BA-only': 12}
+  [DATA] AB4 exact ratios dP_AB/dP_BA: {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}
+  [DATA] AB4 defect kinds: {"('d', 'd')": 4, "('d', 'n')": 6, "('d', 'r')": 8, "('n', 'd')": 2, "('r', 'd')": 68}
+  [DATA] AB4 half-open kinds: {"('d', 'p')": 8, "('d', 'r')": 4, "('p', 'd')": 16, "('r', 'd')": 12}
+  [PASS] ANCHOR AB4.1 D72's T6.1 row reproduces EXACTLY — closed-square count, the full ratio multiset (both non-unit AND unit), the kind census, delivery-bearing fraction and shallowest depth  (closed 1546 (quoted 1546); non-unit 88 (quoted 88); ratios {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; kinds match = True; delivery-bearing 88/88; shallowest depth 3)
+  [PASS] ANCHOR AB4.2 D72's T6.2 half-open row reproduces EXACTLY  (AB-only 28, BA-only 12, total 40 (quoted 40); kinds {('r', 'd'): 12, ('d', 'r'): 4, ('p', 'd'): 16, ('d', 'p'): 8}; delivery-bearing 40/40)
+  [PASS] ANCHOR AB4.3 D72's T6.3 blindness row reproduces: NONE of the defective squares closes at record level  (0/88 defective squares close under the committed canon)
+  [PASS] ANCHOR AB4.4 D72's T2.5 record-graph row reproduces: node count, up-edge count, independent-cycle count, zero defects, and mu class-constant on every class  (histories 3969, classes 2477, up-edges 2900, independent cycles 424, obstructions 0, mu class-constant on 2477/2477)
+  [DATA] ABC3 family: 3424 histories, 2128 record classes
+  [DATA] ABC3 exchange-square census: {'both-blocked': 42, 'closed': 1554}
+  [DATA] ABC3 exact ratios dP_AB/dP_BA: {'1': 1542, '1/2': 12}
+  [DATA] ABC3 defect kinds: {"('r', 'd')": 12}
+  [DATA] ABC3 half-open kinds: {}
+  [PASS] ANCHOR ABC3.1 D72's T6.1 row reproduces EXACTLY — closed-square count, the full ratio multiset (both non-unit AND unit), the kind census, delivery-bearing fraction and shallowest depth  (closed 1554 (quoted 1554); non-unit 12 (quoted 12); ratios {'1': 1542, '1/2': 12}; kinds match = True; delivery-bearing 12/12; shallowest depth 3)
+  [PASS] ANCHOR ABC3.2 D72's T6.2 half-open row reproduces EXACTLY  (AB-only 0, BA-only 0, total 0 (quoted 0); kinds {}; delivery-bearing 0/0)
+  [PASS] ANCHOR ABC3.3 D72's T6.3 blindness row reproduces: NONE of the defective squares closes at record level  (0/12 defective squares close under the committed canon)
+  [PASS] ANCHOR ABC3.4 D72's T2.5 record-graph row reproduces: node count, up-edge count, independent-cycle count, zero defects, and mu class-constant on every class  (histories 3424, classes 2128, up-edges 2772, independent cycles 645, obstructions 0, mu class-constant on 2128/2128)
+  [DATA] THE MINIMAL WITNESS (AB4), in full:
+           h   = [('p', 'A', ('v', 'v0'), 0)]
+           eA  = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+           eB  = ('d', 'A', 'B', ('v', 'v0'))
+           q(eA|h) = 1/4 , q(eB|h.eA) = 1/8
+           q(eB|h) = 1/4 , q(eA|h.eB) = 1/4
+           dP_AB/dP_BA = 1/2;  mu(h.eA.eB) = 1/256 vs mu(h.eB.eA) = 1/128
+  [PASS] ANCHOR W.1 the minimal witness reproduces digit for digit — all four step weights, the ratio, and both whole-history mu values  ((1/4, 1/8, 1/4, 1/4) -> 1/2; mu 1/256 vs 1/128)
+  [PASS] ANCHOR I.1 D72's T6.5 idle row reproduces: the idle-weight spectrum and the comparable/no-idle counts  (idle spectrum {'1/2': 7738, '3/4': 200}; comparable closed squares 1073; of which no idle member 533)
+  [PASS] ANCHOR D65.1 the menu-mass spectrum of the transport grammar is drawn from D65's committed mass set {2, 5/2} — the same two masses, one grammar over  (menu-mass spectrum {'2': 3757, '5/2': 212}; D65's quoted masses ['2', '5/2'])
+  [DATA] anchor block time: 10s
+
+------------------------------------------------------------------------------
+SEC 2  CONTROLS
+------------------------------------------------------------------------------
+  [PASS] CTL-FLAT THE CLOSED-GRAMMAR FLAT CONTROL: the d42b3 placement grammar — where D72 proved raw flatness depth-free — through THIS receipt's own census code returns a ratio multiset that is identically 1 and no half-open square.  The pipeline is therefore not manufacturing defects  (grammar 1 (A,B) d<=4: census {'both-blocked': 98, 'closed': 403}, ratios {'1': 403}, 0 non-unit)
+  [PASS] CTL-TAMPER THE PERTURBED-WEIGHT NEGATIVE CONTROL: multiplying ONE committed step weight q(e|h) by 3/2 moves the census — the defect count and the spectrum both change.  Unlike D72's T2.NC (which perturbed one edge of an exact gradient and therefore could not fail), this control CAN fail: a census that ignored the weights would return the same multiset  (tampered at (|h| = 0, e = p...): non-unit 88 -> 94; spectrum size 5 -> 5; new values [])
+  [PASS] CTL-ORDER WHAT IS AND IS NOT ORIENTATION-INVARIANT — a control the corpus did not run, and it BITES.  Re-running the identical census with the candidate list traversed in the opposite order leaves the closed/half-open/both-blocked TOTALS and the unordered value classes {r, 1/r} invariant, but it TRANSPOSES the spectrum (1/2 <-> 2, 2/3 <-> 3/2) and the AB-only / BA-only split.  So D72's '{1/2: 70, ... 2: 10}' and its 'AB-only 28, BA-only 12' are readings in an arbitrary enumeration orientation; only the totals and the paired classes are substrate facts  (forward ratios {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; reversed ratios {'1': 1458, '1/2': 10, '2': 70, '2/3': 6, '3/2': 2}; forward half-open split (28, 12) -> reversed (12, 28); unordered {r,1/r} class multiset {'1': 1458, '1/2': 80, '2/3': 8} both ways = True; defect total 88 -> 88)
+  [PASS] CTL-DET DETERMINISM PROBE: every printed aggregate is computed under stable_key ordering (hash-seed independent).  The basis-INdependent quantities — node count, component count, cycle rank, obstruction count, holonomy value SET — agree under forward and reversed spanning-forest builds; D72's lesson that the count of non-trivial BASIS cycles is forest-dependent is carried  (forward (nodes, comps, rank, obstructions) = (2477, 1, 424, 0); reversed = (2477, 1, 424, 0); holonomy value sets equal = True)
+  [DATA] control block time: 5s
+
+------------------------------------------------------------------------------
+SEC 3  TH-C — REMOVABILITY (the D64 discipline: before any structure
+       claim).  THE R+ CONNECTION, BOTH ROUTES, ON A LADDER OF
+       COMMITTED STATE ABSTRACTIONS.
+------------------------------------------------------------------------------
+  WHAT REMOVABILITY MEANS HERE, STATED BEFORE IT IS TESTED.
+  The connection is the layer's own step weight: an UP move h -> h.e
+  carries q(e|h).  A gauge transformation by a potential G is
+  q'(e|h) = q(e|h) * G(h.e)/G(h).  Under it the exchange ratio
+  r(h; eA, eB) = q(eA|h) q(eB|h.eA) / [q(eB|h) q(eA|h.eB)] transforms as
+      r' = r * G(h.eA.eB) / G(h.eB.eA).
+  So the twist is REMOVABLE BY G exactly when r = G(h.eB.eA)/G(h.eA.eB)
+  on every closed square: a coboundary condition on the graph whose
+  nodes are the two orders of each square.  The question is only
+  interesting once one says WHAT G IS ALLOWED TO DEPEND ON.  That is
+  the ladder below, and C0 shows why the ladder is mandatory.
+
+  [C0]  THE VACUITY LEMMA — the naive removability test cannot fail.
+  [PASS] C0.1 r = mu(h.eA.eB)/mu(h.eB.eA) ON EVERY CLOSED SQUARE OF EVERY ARM — not just on D72's single witness (T6.4), which is the only place the corpus ever checked it.  mu, the product of the layer's own weights along a history, is therefore a GLOBAL POTENTIAL for the transport connection, and G = 1/mu removes the whole twist at one stroke  (3100/3100 closed squares over both arms satisfy the identity exactly; 0 exceptions)
+  [PASS] C0.2 THEREFORE THE NAIVE COBOUNDARY TEST IS VACUOUS AND MUST NOT BE REPORTED AS A RESULT.  The sequence layer is a TREE (every history has a unique prefix parent), so H^1 = 0 there for the reason v8 p1:77 gives for a commit path, and EVERY connection on it is a coboundary.  Worse, the potential C0.1 exhibits is forced: on a connected component the potential is unique up to a constant, so 1/mu is THE removing gauge — and it sets every gauged weight to exactly 1, i.e. it removes the process along with the twist.  A removability verdict is only informative RELATIVE TO WHAT THE POTENTIAL MAY SEE  (gated as a stated lemma, not as a measurement; its content is C0.1's identity plus the tree structure of the sequence layer)
+         ^ NO INDEPENDENT INFORMATION: C0.1 together with the tree structure of the sequence extension graph — this is the D72 MAJOR-3 lesson one level up: a test that cannot fail is not evidence
+
+  [C1]  THE D65 TEST — is the twist the committed mass-ratio coboundary?
+  [DATA] AB4 D65 form r = M(h.eB)/M(h.eA): holds on 1254 of 1546 closed squares, fails on 292
+  [DATA] AB4 NORMALISED square spectrum (q -> q/M, i.e. the process's own conditional kernel): {'1': 1254, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6, '4/5': 114, '5/4': 90}
+  [DATA] AB4 the intermediate mass ratio M(h.eB)/M(h.eA) RESTRICTED to the 88 raw-defective squares: {'1': 88}
+  [DATA] AB4 menu-mass spectrum (the source of the normalisation twist): {'2': 3757, '5/2': 212}
+  [PASS] C1.AB4 THE TRANSPORT TWIST IS NOT D65's COBOUNDARY AND NORMALISATION DOES NOT REMOVE IT.  D65's repair — divide by the per-state menu mass — is the corpus's one committed repair for an exchange defect.  Applied here it leaves every one of the raw-defective squares EXACTLY where it was, because the intermediate mass ratio is identically 1 on all of them, and it ADDS a DISJOINT family of new defects which are ratios of menu masses.  The two twists live on disjoint square sets and their values share no prime beyond 2: the raw twist is 3-smooth, the mass twist is not  (mass ratio on the raw-defective squares = {'1': 88} (so r is UNCHANGED by normalisation there); surviving 3-smooth defects {'1/2': 70, '2': 10, '2/3': 2, '3/2': 6} = the raw spectrum {'1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; new non-3-smooth defects {'4/5': 114, '5/4': 90}, every one a ratio of two realised menu masses; D65's committed ratio set is ['1', '4/5', '5/4'] and the AB4 mass twist REPRODUCES it exactly)
+  [DATA] ABC3 D65 form r = M(h.eB)/M(h.eA): holds on 1410 of 1554 closed squares, fails on 144
+  [DATA] ABC3 NORMALISED square spectrum (q -> q/M, i.e. the process's own conditional kernel): {'1': 1410, '1/2': 12, '6/7': 84, '7/6': 48}
+  [DATA] ABC3 the intermediate mass ratio M(h.eB)/M(h.eA) RESTRICTED to the 12 raw-defective squares: {'1': 12}
+  [DATA] ABC3 menu-mass spectrum (the source of the normalisation twist): {'19/4': 36, '3': 3100, '7/2': 288}
+  [PASS] C1.ABC3 THE TRANSPORT TWIST IS NOT D65's COBOUNDARY AND NORMALISATION DOES NOT REMOVE IT.  D65's repair — divide by the per-state menu mass — is the corpus's one committed repair for an exchange defect.  Applied here it leaves every one of the raw-defective squares EXACTLY where it was, because the intermediate mass ratio is identically 1 on all of them, and it ADDS a DISJOINT family of new defects which are ratios of menu masses.  The two twists live on disjoint square sets and their values share no prime beyond 2: the raw twist is 3-smooth, the mass twist is not  (mass ratio on the raw-defective squares = {'1': 12} (so r is UNCHANGED by normalisation there); surviving 3-smooth defects {'1/2': 12} = the raw spectrum {'1/2': 12}; new non-3-smooth defects {'6/7': 84, '7/6': 48}, every one a ratio of two realised menu masses; D65's committed ratio set is ['1', '4/5', '5/4'] and the ABC3 mass twist does NOT — it is {'6/7': 84, '7/6': 48}, a wider mass set at this pool)
+
+  [C2]  THE LADDER — what may the potential see?
+        Six abstractions of a history, from the finest to the
+        coarsest, EVERY ONE of them built from the committed layer's own
+        objects and named before it is run:
+          SEQ    the history itself (the vacuous end, C0)
+          REC    canon(h): D72's committed record functor
+          MULT   the multiset of events, all order forgotten
+          STATE  the committed order-free state: created / superseded /
+                 resolved / live proposals / per-actor holdings, read off
+                 full_view(h)
+          PORT   the per-actor option data the WEIGHTS actually read:
+                 prop_options_in_view, deliver_options_in_view, the arb
+                 ckey count and the merge-pair count, in each actor's own
+                 view.  This is the transport-scope analogue of D62's
+                 sigma-ports, and the pin predicts it will not work
+          MENU   the weighted menu itself: the multiset of (e, q(e|h))
+      --- AB4 (('A', 'B'), depth <= 4) ---
+      alpha   classes    mu desc   menu desc  multi-w   sq close  DEF close  ex rank  R1 obstr  selfloop  up rank  R2 surv
+      SEQ        3969  3969/3969  3969/3969         0     0/1546     0/88          0         0         0        0        0
+      REC        2477  2477/2477  2477/2477         0   473/1546     0/88        145         0         0     1492        0
+      MULT        578   514/578    492/578          8  1546/1546    88/88          0         0        88     3391       88
+      STATE       125    84/125    103/125          4  1546/1546    88/88          0         0        88     3844       88
+      PORT         65    24/65      29/65           0  1458/1546    44/88         80        44        44     3904       96
+      MENU        113    44/113    113/113          0  1402/1546    44/88        134        44        44     3856      180
+      --- ABC3 (('A', 'B', 'C'), depth <= 3) ---
+      alpha   classes    mu desc   menu desc  multi-w   sq close  DEF close  ex rank  R1 obstr  selfloop  up rank  R2 surv
+      SEQ        3424  3424/3424  3424/3424         0     0/1554     0/12          0         0         0        0        0
+      REC        2128  2128/2128  2128/2128         0   672/1554     0/12          0         0         0     1296        0
+      MULT        810   798/810    774/810          0  1554/1554    12/12          0         0        12     2614       12
+      STATE       105    80/105     93/105          0  1554/1554    12/12          0         0        12     3319       12
+      PORT         74    46/74      43/74           0  1530/1554     0/12         12        12         0     3350       24
+      MENU        117    80/117    117/117          0  1506/1554     0/12         30        12         0     3307       48
+  [PASS] C2.1 THE REMOVABILITY THRESHOLD, ROUTE 1 (potential propagation).  The twist is a coboundary EXACTLY on the rungs where mu itself descends — SEQ and REC — and on no coarser rung.  At REC the obstruction is zero for the reason C0 gives and for no other: mu is class-constant (ANCHOR AB4.4), so 1/mu is a per-RECORD potential.  At MULT, STATE, PORT and MENU mu is multi-valued and the obstruction is non-zero.  The record functor sits EXACTLY at the threshold — which is a structural explanation of D72's blindness theorem, not a restatement of it  (obstruction (independent cycles + defective self-loops) by rung: SEQ 0, REC 0, MULT 88, STATE 88, PORT 88, MENU 88; mu descends by rung: SEQ 3969/3969, REC 2477/2477, MULT 514/578, STATE 84/125, PORT 24/65, MENU 44/113)
+  [PASS] C2.2 THE REMOVABILITY THRESHOLD, ROUTE 2 (relabelled recount — the D64 C7 idiom, adapted to R+).  The spanning-forest potential is propagated over the quotient's OWN up-graph and the entire square census is then RE-RUN with the gauged weights q' = q phi(alpha(h.e))/phi(alpha(h)); the surviving non-unit squares are counted.  Route 2 agrees with route 1 rung for rung: zero survivors exactly where the obstruction is zero  (surviving non-unit squares after the relabelling, by rung: SEQ 0, REC 0, MULT 88, STATE 88, PORT 96, MENU 180)
+  [PASS] C2.3 ANTI-VACUITY: the removability test at the coarse rungs is NOT a test on a forest.  The quotient exchange graphs carry independent cycles and/or defective self-loops, so a flat answer was available and was not returned.  (At SEQ the exchange graph is a perfect MATCHING — 1546 edges on 3092 nodes, cycle rank 0 — which is precisely why C0's verdict there carries no information.)  (exchange-graph cycle rank / defective self-loops by rung: SEQ 0/0, REC 145/0, MULT 0/88, STATE 0/88, PORT 80/44, MENU 134/44)
+  [PASS] C2.4 THE sigma-PORT RUNG, REPORTED AS THE PIN PREDICTED IT.  D62's sigma machinery at transport scope is the PORT rung: the per-actor option data that the committed weights actually read.  It does NOT carry the whole holonomy — it closes only part of the defective census — so the pin's expectation is upheld, and what does carry it is named in SEC 4  (PORT closes 44 of 88 defective squares (65 classes); MENU closes 44; STATE and MULT close 88 and 88 but at the price of losing descent (C2.1's multi-valued weights: 4 and 8 labelled edges))
+  [DATA] TH-C VERDICT (AB4): removable at ['SEQ', 'REC']; NOT removable at ['MULT', 'STATE', 'PORT', 'MENU']
+  [DATA] control block time: 75s
+
+------------------------------------------------------------------------------
+SEC 4  TH-A — THE CARRIER: the census extended, the defects
+       classified, and the QUOTIENT THAT SEES THE HOLONOMY
+------------------------------------------------------------------------------
+
+  [A1]  THE CENSUS EXTENDED — depth, actor pool, and two asymmetric
+        sub-grammars (D73's lesson: hand-built symmetry is a cage).
+  [DATA] (A,B) depth<=5: census {'both-blocked': 1118, 'closed': 11814, 'AB-only': 364, 'BA-only': 164}; non-unit 960; spectrum {'1/2': 654, '2': 130, '2/3': 58, '3/2': 118}; kinds {('r', 'd'): 628, ('d', 'r'): 88, ('d', 'n'): 118, ('d', 'd'): 84, ('n', 'd'): 42}; delivery-bearing 960/960; shallowest 3; FULL family 30729 histories; [22s]
+  [DATA] (A,B,C) depth<=4: census {'both-blocked': 711, 'closed': 22482, 'AB-only': 84, 'BA-only': 36}; non-unit 540; spectrum {'1/2': 456, '2': 60, '2/3': 6, '3/2': 18}; kinds {('r', 'd'): 444, ('d', 'r'): 48, ('d', 'd'): 24, ('d', 'n'): 18, ('n', 'd'): 6}; delivery-bearing 540/540; shallowest 3; FULL family 50617 histories; [46s]
+  [DATA] ASYM-1 (A,B) one-way A->B only, depth<=5: census {'both-blocked': 832, 'closed': 5504, 'AB-only': 88, 'BA-only': 144}; non-unit 334; spectrum {'1/2': 184, '2': 72, '2/3': 10, '3/2': 68}; kinds {('r', 'd'): 192, ('d', 'r'): 72, ('d', 'n'): 70}; delivery-bearing 334/334; shallowest 3; FULL family 15052 histories; [12s]
+  [DATA] ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4: census {'both-blocked': 495, 'closed': 8673, 'AB-only': 36, 'BA-only': 24}; non-unit 228; spectrum {'1/2': 190, '2': 26, '2/3': 2, '3/2': 10}; kinds {('r', 'd'): 186, ('d', 'r'): 24, ('d', 'd'): 6, ('n', 'd'): 2, ('d', 'n'): 10}; delivery-bearing 228/228; shallowest 3; FULL family 20653 histories; [20s]
+  [DATA] (A,B) depth<=6: census {'both-blocked': 7654, 'closed': 94542, 'AB-only': 3140, 'BA-only': 1468}; non-unit 8536; spectrum {'1/2': 4846, '2': 1218, '2/3': 1114, '3/2': 1358}; kinds {('r', 'd'): 4836, ('d', 'r'): 632, ('d', 'n'): 1358, ('d', 'd'): 1076, ('n', 'd'): 538, ('p', 'd'): 48, ('d', 'p'): 48}; delivery-bearing 8536/8536; shallowest 3; census-only (bases to depth 4); [20s]
+  [DATA] (A,B,C) depth<=5: census {'both-blocked': 15780, 'closed': 331860, 'AB-only': 4236, 'BA-only': 1980}; non-unit 14736; spectrum {'1/2': 10968, '2': 2448, '2/3': 372, '3/2': 948}; kinds {('r', 'd'): 10392, ('d', 'r'): 1824, ('d', 'd'): 1248, ('d', 'n'): 948, ('n', 'd'): 324}; delivery-bearing 14736/14736; shallowest 3; census-only (bases to depth 3); [56s]
+  [PASS] A1.1 THE DEFECT IS NOT A WINDOW ARTEFACT AND NOT A SYMMETRY ARTEFACT.  It persists at every depth and pool run here, and it survives BOTH asymmetric sub-grammars — the one-way link, where only A may deliver to B, and the defected 3-actor ring, where deliveries run A->B->C->A and no other way.  In every arm every single defect still carries a delivery, and the shallowest defect is still at total depth 3  ((A,B) depth<=5: 960/11814 non-unit, delivery 960/960, shallowest 3; (A,B,C) depth<=4: 540/22482 non-unit, delivery 540/540, shallowest 3; (A,B) depth<=6: 8536/94542 non-unit, delivery 8536/8536, shallowest 3; (A,B,C) depth<=5: 14736/331860 non-unit, delivery 14736/14736, shallowest 3; ASYM-1 (A,B) one-way A->B only, depth<=5: 334/5504 non-unit, delivery 334/334, shallowest 3; ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4: 228/8673 non-unit, delivery 228/228, shallowest 3)
+  [PASS] A1.2 THE ASYMMETRIC ARMS ARE NOT VACUOUS: the one-way and ring sub-grammars really do remove support — their closed-square counts and half-open counts differ from the symmetric arms at the same depth and pool — and the defect survives that removal  (symmetric (A,B) d<=5 closed 11814 vs one-way 5504; symmetric (A,B,C) d<=4 closed 22482 vs ring 8673)
+
+  [A2]  THE DEFECTS CLASSIFIED — kind pair x register-overlap type.
+  [DATA] AB4 defective: register-overlap type: {'actor': 88}
+  [DATA] AB4 defective: kind-pair x overlap: {"(('d', 'd'), 'actor')": 4, "(('d', 'n'), 'actor')": 6, "(('d', 'r'), 'actor')": 8, "(('n', 'd'), 'actor')": 2, "(('r', 'd'), 'actor')": 68}
+  [DATA] ABC3 defective: register-overlap type: {'actor': 12}
+  [DATA] ABC3 defective: kind-pair x overlap: {"(('r', 'd'), 'actor')": 12}
+  [DATA] (A,B) d<=5 defective: register-overlap type: {'actor': 960}
+  [DATA] (A,B) d<=5 defective: kind-pair x overlap: {"(('d', 'd'), 'actor')": 84, "(('d', 'n'), 'actor')": 118, "(('d', 'r'), 'actor')": 88, "(('n', 'd'), 'actor')": 42, "(('r', 'd'), 'actor')": 628}
+  [DATA] ASYM-1 defective: register-overlap type: {'actor': 334}
+  [DATA] ASYM-1 defective: kind-pair x overlap: {"(('d', 'n'), 'actor')": 70, "(('d', 'r'), 'actor')": 72, "(('r', 'd'), 'actor')": 192}
+  [PASS] A2.1 EVERY DEFECTIVE SQUARE IS REGISTER-OVERLAPPING, AND THE OVERLAP IS ALWAYS ON AN ACTOR REGISTER — never on a version register alone.  Combined with D72's T2.3b (a square closes at record level exactly when its two events are register-DISJOINT) this says the blindness is exact and not statistical: the record-graph instrument sees precisely the complement of the defect's support  (defective overlap profile {'actor': 88}; all closed squares {'actor': 1073, 'DISJOINT': 473})
+
+  [A3]  THE QUOTIENT THAT SEES THE HOLONOMY — constructed, not searched.
+        CONSTRUCTION.  Call an equivalence ~ on histories a DESCENT
+        quotient when the weighted menu is constant on classes: h ~ h'
+        implies q(.|h) = q(.|h') as a function on events.  That is
+        exactly what it takes for the connection to be well defined on
+        the quotient graph.  The property is closed under joins (if the
+        menu is constant on the classes of ~1 and of ~2 it is constant
+        on the classes of their join), so a COARSEST descent quotient
+        exists and is unique, and it is not a search: it is the MENU
+        partition itself, h ~ h' iff cache[h] = cache[h'] as weighted
+        multisets.  Refining it by successor-closure (partition
+        refinement to a fixed point) gives the coarsest weighted
+        CONGRUENCE, the strongest form of descent.  Both are computed.
+  [DATA] AB4 (A,B) depth<=4 CARRIER: menu quotient 113 classes; coarsest congruence 185 classes after 5 refinement rounds; of 88 defective squares the menu quotient CLOSES 44 and the congruence closes 44; carrier self-loop holonomy {'1/2': 26, '2': 10, '2/3': 2, '3/2': 6}; off-loop cycles 134 of which 44 non-trivial
+  [DATA] AB4 (A,B) depth<=4 the dichotomy: SEEN (curvature-type) 44: spectrum {'1/2': 26, '2': 10, '2/3': 2, '3/2': 6}, kinds {('r', 'd'): 24, ('d', 'r'): 8, ('d', 'n'): 6, ('d', 'd'): 4, ('n', 'd'): 2} | UNSEEN (descent-obstruction-type) 44: spectrum {'1/2': 44}, kinds {('r', 'd'): 44}
+  [DATA] ABC3 (A,B,C) depth<=3 CARRIER: menu quotient 117 classes; coarsest congruence 162 classes after 4 refinement rounds; of 12 defective squares the menu quotient CLOSES 0 and the congruence closes 0; carrier self-loop holonomy {}; off-loop cycles 30 of which 12 non-trivial
+  [DATA] ABC3 (A,B,C) depth<=3 the dichotomy: SEEN (curvature-type) 0: spectrum {}, kinds {} | UNSEEN (descent-obstruction-type) 12: spectrum {'1/2': 12}, kinds {('r', 'd'): 12}
+  [DATA] (A,B) depth<=5 CARRIER: menu quotient 265 classes; coarsest congruence 462 classes after 6 refinement rounds; of 960 defective squares the menu quotient CLOSES 604 and the congruence closes 604; carrier self-loop holonomy {'1/2': 306, '2': 130, '2/3': 50, '3/2': 118}; off-loop cycles 962 of which 348 non-trivial
+  [DATA] (A,B) depth<=5 the dichotomy: SEEN (curvature-type) 604: spectrum {'1/2': 306, '2': 130, '2/3': 50, '3/2': 118}, kinds {('r', 'd'): 272, ('d', 'r'): 88, ('d', 'n'): 118, ('d', 'd'): 84, ('n', 'd'): 42} | UNSEEN (descent-obstruction-type) 356: spectrum {'1/2': 348, '2/3': 8}, kinds {('r', 'd'): 356}
+  [DATA] (A,B,C) depth<=4 CARRIER: menu quotient 525 classes; coarsest congruence 747 classes after 5 refinement rounds; of 540 defective squares the menu quotient CLOSES 132 and the congruence closes 132; carrier self-loop holonomy {'1/2': 78, '2': 30, '2/3': 6, '3/2': 18}; off-loop cycles 1392 of which 408 non-trivial
+  [DATA] (A,B,C) depth<=4 the dichotomy: SEEN (curvature-type) 132: spectrum {'1/2': 78, '2': 30, '2/3': 6, '3/2': 18}, kinds {('r', 'd'): 72, ('d', 'r'): 24, ('d', 'n'): 18, ('d', 'd'): 12, ('n', 'd'): 6} | UNSEEN (descent-obstruction-type) 408: spectrum {'1/2': 378, '2': 30}, kinds {('r', 'd'): 372, ('d', 'r'): 24, ('d', 'd'): 12}
+  [DATA] ASYM-1 (A,B) one-way A->B only, depth<=5 CARRIER: menu quotient 245 classes; coarsest congruence 438 classes after 6 refinement rounds; of 334 defective squares the menu quotient CLOSES 218 and the congruence closes 218; carrier self-loop holonomy {'1/2': 72, '2': 72, '2/3': 6, '3/2': 68}; off-loop cycles 310 of which 0 non-trivial
+  [DATA] ASYM-1 (A,B) one-way A->B only, depth<=5 the dichotomy: SEEN (curvature-type) 218: spectrum {'1/2': 72, '2': 72, '2/3': 6, '3/2': 68}, kinds {('r', 'd'): 76, ('d', 'r'): 72, ('d', 'n'): 70} | UNSEEN (descent-obstruction-type) 116: spectrum {'1/2': 112, '2/3': 4}, kinds {('r', 'd'): 116}
+  [DATA] ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4 CARRIER: menu quotient 525 classes; coarsest congruence 747 classes after 5 refinement rounds; of 228 defective squares the menu quotient CLOSES 60 and the congruence closes 60; carrier self-loop holonomy {'1/2': 32, '2': 16, '2/3': 2, '3/2': 10}; off-loop cycles 462 of which 56 non-trivial
+  [DATA] ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4 the dichotomy: SEEN (curvature-type) 60: spectrum {'1/2': 32, '2': 16, '2/3': 2, '3/2': 10}, kinds {('r', 'd'): 32, ('d', 'r'): 16, ('n', 'd'): 2, ('d', 'n'): 10} | UNSEEN (descent-obstruction-type) 168: spectrum {'1/2': 158, '2': 10}, kinds {('r', 'd'): 154, ('d', 'r'): 8, ('d', 'd'): 6}
+  [PASS] A3.1 THE CARRIER EXISTS — AND IT IS WINDOW-DEPENDENT, WHICH IS REPORTED HERE AND NOT BURIED.  The coarsest descent quotient, the weighted-menu partition, closes a NON-ZERO number of defective squares on FIVE of the six full arms — including both asymmetric sub-grammars — so the holonomy is genuinely visible on a quotient where the connection is well defined by construction.  On the sixth, (A,B,C) at depth <= 3, it closes NONE of the 12: at that window the entire defect is of the descent-obstruction type.  The coarsest weighted CONGRUENCE closes exactly the same defective squares on every arm, so the answer does not depend on which of the two descent strengths one demands  ((A,B) depth<=5: menu closes 604/960, congruence closes 604; (A,B,C) depth<=4: menu closes 132/540, congruence closes 132; AB4 (A,B) depth<=4: menu closes 44/88, congruence closes 44; ABC3 (A,B,C) depth<=3: menu closes 0/12, congruence closes 0; ASYM-1 (A,B) one-way A->B only, depth<=5: menu closes 218/334, congruence closes 218; ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4: menu closes 60/228, congruence closes 60)
+  [PASS] A3.2 THE DICHOTOMY THEOREM, AND IT IS SHARP.  A descent quotient may identify two histories only if their weighted menus agree; therefore a square whose two orders have DIFFERENT menus cannot close in ANY descent quotient, coarsest or otherwise.  The defective census splits exactly in two by that criterion: part of it is genuine CONNECTION CURVATURE, carried by the menu quotient; the rest is a DESCENT OBSTRUCTION that no quotient graph can carry, and for which the exchange square is the only instrument.  At (A,B) depth <= 4 the split is exactly even and it is kind-clean: every one of the invisible half is an (r,d) pair at the single value 1/2, while the visible half carries all five kind pairs and the whole spectrum  (44 curvature-type + 44 descent-obstruction-type = 88; unseen spectrum {'1/2': 44}, unseen kinds {('r', 'd'): 44})
+  [DATA] the carrier's holonomy, AB4: self-loop values (squares closing IN the carrier) {'1': 1358, '1/2': 26, '2': 10, '2/3': 2, '3/2': 6}; off-loop exchange graph: 16 nodes, 134 independent cycles, 44 with holonomy != 1, values {'1/2': 22, '2': 22}
+  [PASS] A3.3 THE HOLONOMY ON THE CARRIER IS NOT REMOVABLE, AND THIS IS THE NON-VACUOUS REMOVABILITY VERDICT C0 DEMANDED.  On the menu quotient the closing defective squares are LOOPS — self-loops at a single class — carrying holonomy != 1.  A self-loop's holonomy is gauge-invariant outright (any potential whatsoever cancels between its two ends), so NO potential on the carrier, of any kind, removes them.  Unlike C0's verdict this one could have come out the other way and did not  (AB4 self-loop holonomy spectrum {'1': 1358, '1/2': 26, '2': 10, '2/3': 2, '3/2': 6}; non-unit self-loops 44; over all six full arms:  604,  132, AB4 44, ABC3 0, ASYM-1 218, ASYM-2 60)
+  [DATA] TH-A block time: 191s
+
+------------------------------------------------------------------------------
+SEC 5  TH-B — THE GROUP GENERATED BY THE HOLONOMY VALUES
+------------------------------------------------------------------------------
+  [DATA] AB4 (('A', 'B'), d<=4)
+           spectrum {'1/2': 70, '2': 10, '2/3': 2, '3/2': 6}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] ABC3 (('A', 'B', 'C'), d<=3)
+           spectrum {'1/2': 12}
+           value set ['1/2']; prime content [2]; rank 1; group <2> = the FULL group of 2-smooth positive rationals (free abelian of rank 1)
+  [DATA] (A,B) depth<=5
+           spectrum {'1/2': 654, '2': 130, '2/3': 58, '3/2': 118}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] (A,B,C) depth<=4
+           spectrum {'1/2': 456, '2': 60, '2/3': 6, '3/2': 18}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] (A,B) depth<=6
+           spectrum {'1/2': 4846, '2': 1218, '2/3': 1114, '3/2': 1358}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] (A,B,C) depth<=5
+           spectrum {'1/2': 10968, '2': 2448, '2/3': 372, '3/2': 948}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] ASYM-1 (A,B) one-way A->B only, depth<=5
+           spectrum {'1/2': 184, '2': 72, '2/3': 10, '3/2': 68}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4
+           spectrum {'1/2': 190, '2': 26, '2/3': 2, '3/2': 10}
+           value set ['1/2', '2', '2/3', '3/2']; prime content [2, 3]; rank 2; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [DATA] CUMULATIVE over every scope run: value set ['1/2', '2', '2/3', '3/2']; total non-unit squares 25434; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+  [PASS] B.1 THE GROUP STABILISES.  Not one scope run here — two more depths at two actors, two more at three, and both asymmetric sub-grammars — produces a value outside the four the anchor window already had, and the cumulative value set IS the anchor window's. Depth and pool multiply the defect COUNTS by more than an order of magnitude (88 to 14736) and move the group not at all  (anchor value set ['1/2', '2', '2/3', '3/2']; distinct value sets across 8 scopes: [['1/2'], ['1/2', '2', '2/3', '3/2']]; cumulative ['1/2', '2', '2/3', '3/2']; cumulative prime content [2, 3])
+  [PASS] B.2 THE GROUP IS <2, 3> — THE FULL GROUP OF 3-SMOOTH POSITIVE RATIONALS, free abelian of rank 2 — computed as an integer exponent lattice (Hermite reduction on the prime valuations), not read off the four values by eye.  It is NOT cyclic, so it is not of D65's shape at all: D65's normalised defect generates <5/4>, rank 1 on primes {2, 5}, and 2/3 and 3/2 lie outside it  (prime support [2, 3]; lattice basis [[-1, 0], [0, 1]]; rank 2; index in Z^2 = 1; D65's group <5/4> has prime support [2, 5] and rank 1)
+  [PASS] B.3 THE CARRIER'S OWN HOLONOMY GROUP — the group generated by the loops of the menu quotient, which is the object the square census only bounds — is reported separately and is a subgroup of the square group.  This is the number that is basis-INdependent; the count of non-trivial basis cycles is not, and is not licensed (D72's sec.9 lesson)  (carrier holonomy values ['1/2', '2', '2/3', '3/2']; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2))
+  [DATA] TH-B block time: 0s
+
+------------------------------------------------------------------------------
+SEC 6  TH-D — THE ODD-SECTOR U(1) SEARCH
+------------------------------------------------------------------------------
+  THE TEST, STATED BEFORE IT IS RUN.  v7 paper 30's law (QUOTES
+  ['Ldual']) is: dual reversal sends O to -O, therefore dual reversal
+  sends L to its COMPLEX CONJUGATE.  For a holonomy that law reads
+  Hol(gamma^{-1}) = Hol(gamma)^{-1} = conj(Hol(gamma)) — and those two
+  right-hand sides agree exactly when |Hol| = 1.  So "is there an odd
+  sector" is, on the nose, "is there a unimodular part".  Every gate
+  below is a form of that question.
+  [PASS] D1 THE REVERSAL IS EXACTLY INVERSION, WITH GAP ZERO: swapping the roles of the two events on every closed square returns 1/r exactly, on exact Fractions.  So log r is PURELY ODD under traversal reversal and there is NO reversal-EVEN part to the transport holonomy at all.  Read against QUOTES['Ldual'] that is the striking half: v7's amplitude puts the MODULUS in the even channel (E) and the PHASE in the odd channel (O); the transport holonomy puts its modulus in the ODD channel and leaves the even channel empty.  The two objects do not sit in the same slots  (1546/1546 closed squares satisfy r(reversed) = 1/r exactly; 0 exceptions; even part log r + log r(rev) = 0 on all of them)
+  [PASS] D2 THE UNIMODULAR PART IS TRIVIAL, AND FOR A REASON THAT IS NOT A MEASUREMENT: every weight the committed layer produces is a POSITIVE RATIONAL, so every holonomy is a positive rational, and the only positive rational of modulus 1 is 1.  A U(1) part of a rational-valued holonomy could only ever be the sign -1; the search therefore reduces, exactly, to a search for a canonical SIGN on the loops  (4 distinct holonomy values, all positive rationals; unimodular values realised: [])
+
+  [D3]  THE LABEL-LOCAL NO-GO — where a phase could not live.
+  [PASS] D3.1 ANY CONNECTION WHOSE VALUE DEPENDS ONLY ON THE EVENT LABEL HAS TRIVIAL HOLONOMY ON EVERY EXCHANGE SQUARE — a one-line theorem, gated by construction: the two sides of a square use the SAME two events, each exactly once, so any product of label-indexed factors cancels.  A U(1) phase e^{i theta(e)} attached to events therefore contributes NOTHING to any exchange loop.  A non-trivial phase would have to be HISTORY-dependent — exactly as the transport modulus q(e|h) is  (structural: each closed square's two paths are the multiset {eA, eB} in the two orders, so a label-indexed cochain cancels identically on all 3100 closed squares of the anchor arms)
+         ^ NO INDEPENDENT INFORMATION: an algebraic identity of the square, not a property of this substrate — but it is the identity that tells the search where NOT to look
+
+  [D4]  THE v7 i-TWIST CORRESPONDENCE — run, and then controlled.
+  [PASS] D4.1 THE i-TWIST 'RESTORES' DUAL CONJUGATION — AND THE ADVERSARIAL CONTROL SHOWS THAT IS AN IDENTITY OF THE ANSATZ, NOT EVIDENCE.  In the REAL form L = r the v7 law rev(L) = conj(L) fails on exactly the non-unit squares (conj is the identity on reals, so the law demands r = 1/r).  Twisting to L' = e^{i log r} makes rev(L') = conj(L') hold on every square — but it also holds for 500 adversarially drawn positive rationals with no connection to the substrate.  The i-twist is a change of variables, not a discovery: exp(i.) turns ANY odd real into a conjugating unimodular.  D72's T3.CTRL made the same point about L_dual's zero, and it applies here verbatim  (real form: dual-conjugation fails on 88 of 1546 squares (= the 88 defective ones exactly); i-twisted form: 0 failures; adversarial control: 0/500 failures — the twisted identity is content-free)
+
+  [D5]  THE ORDER-DUAL ARM — D71b's linear-extension carrier, at transport scope.
+  [DATA] AB4 order-dual census on the defective squares: 0 of 176 reversed endpoint sequences are themselves admissible histories; 0 defective squares have a full in-family dual square; of those, 0 INVERT (r -> 1/r), 0 are FIXED (r -> r), 0 neither
+  [PASS] D5.1 THE ORDER-DUAL SUPPLIES NO ORIENTATION-SENSITIVE RESIDUE AT TRANSPORT SCOPE, AND THE REASON IS SUPPORT, NOT SIGN: the reversed sequences are overwhelmingly NOT admissible histories of this grammar, so * is not an operation on the defective squares at all.  D72's T1.4 established that * and the transport reversal coincide only on 2-event histories; every defective square here sits at total depth >= 3, so the two reversals have already parted company where the defect lives.  D71b's carrier is real, and it is empty here  (in-family dual squares 0/88; inverting 0, fixed 0, other 0; shallowest defect depth 3)
+
+  [D6]  IS THERE A CANONICAL ORIENTATION?  (CTL-ORDER says the raw spectrum's asymmetry is not one.)
+  [DATA] AB4 (A,B) depth<=4 under the kind-canonical orientation (delivery second): spectrum {'1/2': 76, '2/3': 8}; sign census {'<1': 84}; 4 unorientable (equal kind rank)
+  [DATA] ABC3 (A,B,C) depth<=3 under the kind-canonical orientation (delivery second): spectrum {'1/2': 12}; sign census {'<1': 12}; 0 unorientable (equal kind rank)
+  [DATA] (A,B) depth<=5 under the kind-canonical orientation (delivery second): spectrum {'1/2': 700, '2/3': 168, '3/2': 8}; sign census {'<1': 868, '>1': 8}; 84 unorientable (equal kind rank)
+  [DATA] (A,B,C) depth<=4 under the kind-canonical orientation (delivery second): spectrum {'1/2': 492, '2/3': 24}; sign census {'<1': 516}; 24 unorientable (equal kind rank)
+  [DATA] ASYM-1 (A,B) one-way A->B only, depth<=5 under the kind-canonical orientation (delivery second): spectrum {'1/2': 256, '2/3': 76, '3/2': 2}; sign census {'<1': 332, '>1': 2}; 0 unorientable (equal kind rank)
+  [DATA] ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4 under the kind-canonical orientation (delivery second): spectrum {'1/2': 210, '2/3': 12}; sign census {'<1': 222}; 6 unorientable (equal kind rank)
+  [DATA] (A,B) depth<=6 under the kind-canonical orientation (delivery second): spectrum {'1/2': 4892, '2': 144, '2/3': 2224, '3/2': 200}; sign census {'<1': 7116, '>1': 344}; 1076 unorientable (equal kind rank)
+  [DATA] (A,B,C) depth<=5 under the kind-canonical orientation (delivery second): spectrum {'1/2': 12168, '2/3': 1296, '3/2': 24}; sign census {'<1': 13464, '>1': 24}; 1248 unorientable (equal kind rank)
+  [PASS] D6.1 THE SIGN-DEFINITENESS HEADLINE IS TRUE ON THE ANCHOR WINDOWS AND FALSE ONE DEPTH OUT.  A canonical orientation does exist and is supplied by the substrate rather than by the enumeration: order each mixed-kind square so that the DELIVERY is the second move.  Under it every defective square of BOTH anchor arms lands strictly BELOW 1 — arbitrating, idling or delivering before delivering always SUPPRESSES the joint weight — and it would have been very easy to publish that as the transport-scope echo of D72's unexplained sign-definiteness of O (T3.B2).  IT DOES NOT SURVIVE THE WIDER ARMS.  At (A,B) depth <= 5 the oriented ratio lands above 1 on a small minority of squares, and it does so again on the one-way sub-grammar.  So the breakage is a DEPTH effect first and a symmetry effect second — D73's lesson lands, but not only through D73's door.  The headline is withdrawn to the windows where it holds and the arms where it fails are named  (sign-definite on: AB4 (A,B) depth<=4; ABC3 (A,B,C) depth<=3; (A,B,C) depth<=4; ASYM-2 (A,B,C) directed ring A->B->C->A, depth<=4 | BOTH SIDES on: (A,B) depth<=5 {'<1': 868, '>1': 8}; ASYM-1 (A,B) one-way A->B only, depth<=5 {'<1': 332, '>1': 2}; (A,B) depth<=6 {'<1': 7116, '>1': 344}; (A,B,C) depth<=5 {'<1': 13464, '>1': 24})
+  [PASS] D7.1 THE ASYMMETRIC SUBSTRATES RETURN THE SAME U(1) VERDICT — AND THEY MOVE ONE OF THE OTHER ANSWERS (D73's requirement, working exactly as advertised).  On the one-way link and on the defected directed ring the holonomy is still R+-valued and generates the same group <2,3>, still purely odd under reversal, still with no unimodular part: breaking the actor symmetry does NOT create a phase.  What breaking the symmetry does do is join the deeper symmetric window in killing the sign-definiteness of D6.1 — the asymmetric arm was not needed to break that headline, but it confirms the break independently  (asymmetric value sets [['1/2', '2', '2/3', '3/2'], ['1/2', '2', '2/3', '3/2']]; oriented sign censuses ASYM-1 {'<1': 332, '>1': 2}; ASYM-2 {'<1': 222})
+  [PASS] D8 THE ODD-SECTOR VERDICT: NO ORIENTATION-SENSITIVE RESIDUE EXISTS ON THIS CARRIER.  Every quantity this unit could build on the holonomy-carrying loops INVERTS under reversal; nothing CONJUGATES.  The negative is reported as loudly as a positive would have been, per the pin's sec.4: the imaginary exponential is not at this address either  (unimodular values other than 1: []; order-dual fixed-points 0; i-twist informative = False (D4.1))
+  [DATA] TH-D block time: 1s
+
+------------------------------------------------------------------------------
+SEC 7  THE PRE-REGISTERED OUTCOME (pin sec.2), decided by predicate
+------------------------------------------------------------------------------
+  OUTCOME: TH-II — non-coboundary, R+-valued, ODD SECTOR EMPTY — the grammar carries genuine MODULUS curvature with no phase
+
+  the predicate, in full:
+    non-coboundary on the carrier (non-unit self-loops, which no potential can remove)   = True
+    every exhibited holonomy value a positive rational                       = True
+    an orientation-sensitive (conjugating) residue exists                    = False
+    removable at   ['SEQ', 'REC']
+    NOT removable at ['MULT', 'STATE', 'PORT', 'MENU']
+    carrier        = the weighted-menu quotient (113 classes at AB4), equivalently the coarsest weighted congruence (185 classes)
+    group          = <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2)
+    seen / unseen  = 44 curvature-type + 44 descent-obstruction-type defective squares
+
+------------------------------------------------------------------------------
+SUMMARY
+------------------------------------------------------------------------------
+  gates: 41 PASS / 0 FAIL   (of which 3 carry NO INDEPENDENT INFORMATION and are excluded from the evidence count: 38 independent passes)
+    corollary: SRC.1 EXIT-FREEDOM GATED
+    corollary: C0.2 THEREFORE THE NAIVE COBOUNDARY TEST IS VACUOUS AND MUST NOT BE REPORTED AS A RESULT.
+    corollary: D3.1 ANY CONNECTION WHOSE VALUE DEPENDS ONLY ON THE EVENT LABEL HAS TRIVIAL HOLONOMY ON EVERY EXCHANGE SQUARE — a one-line theorem, gated by construction
+  anchors: 0 failures (exit 1 threshold)
+  wall clock: 282s (4.7 min; the pin's budget is ~25 min)
+
+  WHAT THIS RECEIPT DOES NOT CLAIM (pin sec.4): no measure-existence claim; no claim that anything found here IS the v7 phase (D4.1 shows the i-twist correspondence is content-free); no infinite-volume claim; nothing outside the declared families, depths and pools; the AB-only/BA-only split and the unpaired spectrum are NOT licensed as substrate facts (CTL-ORDER); the count of non-trivial basis cycles is forest-dependent and is not licensed as a number.
+==============================================================================

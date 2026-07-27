@@ -11846,3 +11846,59 @@ tool" [false since D70], the uncorrected MB3-e recap, and
 "typicality: unbuilt" -> UNPOSABLE-until-the-measure).  C1 carries
 the quarter-law erratum.  Zero unqualified withdrawn sentences
 outside blacklist/graveyard.
+
+## 2026-07-27 — D74 DELIVERED (GREEN-UNREVIEWED): TH-II — GENUINE
+## IRREMOVABLE R+ CURVATURE; THE ODD SECTOR IS EMPTY; THE PHASE IS
+## 0-FOR-4 AT NATIVE ADDRESSES (LEDGER #494)
+Deliverables: note-d74-transport-holonomy-result.md,
+code/d74_transport_holonomy_exact.py (41 PASS / 0 FAIL — 38
+independent, 3 labelled no-independent-information; exit 0, 282 s),
+data/.out.  Opus 5 worker against the frozen pin (#492).  RERUN BY
+ME: byte-identical modulo timings (and 0 differing lines under
+PYTHONHASHSEED=7).  All 11 anchors reproduce D72's committed census
+exactly.  **TH-II, DECIDED BY COMPUTED PREDICATE: the transport
+holonomy is GENUINE, IRREMOVABLE, R+-VALUED MODULUS CURVATURE — and
+the odd sector is EMPTY.**  REMOVABILITY (run first): the naive
+sequence-level test CANNOT fail (3,100/3,100 — the exchange graph is
+a perfect matching, rank 0; D72's one-witness check drew nothing);
+the informative result is a THRESHOLD — coboundary exactly where mu
+descends (SEQ, REC), NOT at MULT/STATE/PORT/MENU — which EXPLAINS
+the blindness theorem (the record functor is the finest thing
+keeping mu single-valued, and that is exactly what forbids a
+defective square from closing).  Against D65: normalization moves
+the 88 NOT AT ALL (mass ratio = 1 there) — a DISJOINT family.  THE
+CARRIER constructed, not searched: the coarsest descent quotient
+exists uniquely (the menu partition; the coarsest weighted
+congruence closes the same squares on all six arms); on it the
+defects are SELF-LOOPS with holonomy != 1 — gauge-invariant,
+NON-REMOVABLE.  **THE UNIT'S NEW OBJECT: a sharp dichotomy — 44
+curvature-type + 44 DESCENT-OBSTRUCTION-type squares (different
+menus in the two orders: closable in NO quotient; the invisible
+half all (r,d) at 1/2).  No corpus formalism handles the second
+kind.**  THE GROUP: <2,3>, free abelian rank 2, the full 3-smooth
+group — unmoved across 8 scopes (88 -> 14,736 defects), 2 and 3
+actors, depths 4-6, both asymmetric sub-grammars; NOT D65's shape.
+**THE ODD SECTOR: EMPTY.  Reversal is exact inversion (1,546/1,546)
+— log-holonomy purely odd with zero even part (the MIRROR of v7's
+arrangement); rational values leave -1 the only possible unimodular
+content, realised NOWHERE; the i-twist test is content-free (passes
+on 500 adversarial rationals); and the order-dual IS NOT DEFINED
+here (0/176 reversed sequences admissible) — the v7 phase lives in
+a different CATEGORY (record types under order-reversal, not
+sequence traversal).**  THE PHASE IS 0-FOR-4 AT THE GRAMMAR'S
+NATIVE ADDRESSES (chart transitions, closed loops, the functional
+slot, transport loops) WHILE THE REAL SIDE EXISTS AT THREE OF FOUR.
+THE FORK FOR D75: the imaginary exponential is either an ENRICHMENT
+(added on record-odd structure, transverse to commit order, with
+the measured constraint set: must not disturb the flatness theorem,
+the measure, or dual conjugation) or lives in the RECORD-CATEGORY's
+own odd structure, unprobed at transport scope.  TWO
+SELF-CORRECTIONS ROUTED (not applied): D72's census split
+{1/2:70,...}/AB-only-28 are ENUMERATION-ORIENTATION READINGS (the
+substrate facts are the totals and unordered classes {1/2:80,
+2/3:8} / 40) — a status correction for #490, values right; and the
+tempting delivery-second sign-definiteness headline is FALSE one
+depth out (8 at d<=5, 344 at d<=6) — caught by the unit's own
+depth discipline.  D65's {4/5,5/4} scoped two-actor (3-actor
+masses {3, 7/2, 19/4}).  GREEN-UNREVIEWED: hostile round
+dispatched.
