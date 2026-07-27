@@ -11578,3 +11578,54 @@ argument; three tests, four falsifiers, F2/F4 settle the founding
 slogan NEGATIVELY and are as publishable as a positive — no null
 outcome.  Book inconsistency flagged for the next pass (glossary
 :12263 defines holonomy AS the phase; :9501 still lists it [TARGET]).
+
+## 2026-07-27 — D71c SPIN-2 ARCHAEOLOGY: THE "SOMETHING 2" WAS h^{ij} —
+## AND THE CORPUS PROVED THE METRIC'S OFF-DIAGONAL IS CARRIED BY THE
+## PHASE (LEDGER #486)
+Deliverable: note-d71c-spin2-archaeology.md (1,088 lines).  Prompted
+by the user's questions ("is the something-2 SU(2)?"; then: "maybe
+the PHASE constrains spacetime into Einsteinian tensors of the right
+dimensionality?").  **VERDICT: the something-2 was NEVER a group —
+it was h^{ij}, the inverse spatial metric, hunted as the coefficient
+of the stochastic exchange curvature** (stochastic-curvature-gravity-
+investigation.md Gate 2, a SIBLING MEMO of the founding holonomy
+slogan; executed as v2 paper 10).  **AND THE USER'S SECOND
+SUGGESTION IS THE CORPUS'S OWN PROVEN STRUCTURE: v2 paper 10 Prop
+10.6 [all-order no-go] — the Born-squared real shadow keeps |z1|^2
+and |z2|^2 (the metric DIAGONAL) and PROVABLY LOSES h^{12} = the
+relative phase; v6 paper 5 — the response tensor's minimal
+determining datum is the ORIENTED SO(1,1) closed-route holonomy
+("scalar work, magnitude-only holonomy, and unoriented holonomy all
+forget the sign"; ENRICHMENT-NOT-DERIVATION).  The real channel
+builds the metric's diagonal; THE PHASE CARRIES THE OFF-DIAGONAL —
+the rank-2 tensor is COMPLETED, not merely decorated, by the
+phase.**  The algebraic form, owned twice and never stated:
+commutator of transports -> antisymmetric -> ROTATION/PHASE (v6
+p53); ANTICOMMUTATOR -> traceless symmetric rank-2 coupling to the
+spin-2 shear, symmetric fraction 1.000 (v6 p54); and the Clifford
+relation (1/2){gamma^i, gamma^j} = h^{ij} I (v2 p10) — ODD = PHASE,
+EVEN = METRIC, the user's split as algebra.  SPIN-2 vs SU(2)
+ADJUDICATED: every gravity-line "2" is tensor rank / components /
+helicity; NO gauge group appears in any gravity paper; "spin-2-
+blind" is paper 52's trace-only currency, paper 57 splits it
+(linearized spin-2 EQUATION [DERIVED], spin-2 CHARGE [OBSTRUCTED]);
+SU(2) on the gravity line would be PURE IMPORT; non-abelian
+composition on the generated line: ZERO (ACT commutes on all
+170,820 pairs).  One causal-set positive: full inverse metric from
+order+number ([PROBE], corr +0.99).  **THE NAMED NEXT PIN (P2): the
+even Gram G^{even}_{jk} = Sum_R P(R) E_j(R) E_k(R*) — ALREADY
+COMPUTED EXACTLY in v7/code/p30_reflection_positive_campaign.py:
+394-406, principal minors printed, THEN DISCARDED FOR ITS TRACE
+(K(E) = k * E_total, scalar-linear).  P2: K(E) = E^T N E — does the
+even channel host a genuine rank-2 metric response?  Falsifier F1:
+G^{even} proportional to identity => the even channel provably
+cannot host a metric (a no-go worth having).  Blocking precedent to
+answer: v6 p4 FAILS-FULL-GR (a scalar cannot become a metric by
+interpretation).**  Unowned contradiction flagged (V6_STATUS_AUDIT
+"no Einstein equation" vs paper 57's [DERIVED]) — the gravity twin
+of D71's Clause-1 inconsistency.  THE USER'S DESTINATION HYPOTHESIS
+RECORDED WITH THIS GROUNDING: the modulus builds space (diagonal),
+the phase legislates and completes it (off-diagonal + selection);
+the test chain: D72 weld -> phase on wide-crystal loops ->
+does phase closure distinguish the k-ladder -> P2's rank-2 response
+with divergence-freedom against the phase.
