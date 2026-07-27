@@ -11394,3 +11394,37 @@ quantum layer is excluded at proven scope.  ALL FOUR are the same
 missing object — A MEASURE AT TRANSPORT SCOPE — the thing B1's
 walls proved cannot be built the naive way.  The next campaign is
 the measure itself, attacked from what B1 left standing.**
+
+## 2026-07-27 — THE MEASURE CAMPAIGN OPENED: D69 SCOPING + D70 PINNED —
+## THE HORIZON LIMIT (LEDGER #482)
+Deliverables: note-d69-measure-campaign-scoping.md (1,166 lines, the
+campaign map) and note-d70-horizon-limit-pin.md (FROZEN from the
+scoping draft unchanged, 262 lines).  **THE WALLS STRATIFIED BY
+GRADE** (the survey's core discipline): W-A (B1/D56, the only
+depth-free one — no bounded MENU-EXACT abstraction, any design;
+[EXACT] from a probe, two claims re-verified; kills only finite
+menu-determining summaries — NOT sector descriptions, lumped chains,
+inexact abstractions, or non-abstractions); W-B (world-state designs
+dead, join-view menu-exact and merely infinite); W-C (D57
+sector-exact closed AT (actor, type) ONLY, one measured ground,
+counts lower bounds, finite-alphabet [OPEN]); W-D/W-E (no menu-shape
+transfer; windows escaped).  NOTHING FORBIDS A PER-HISTORY KERNEL.
+**NINE ROUTES ENUMERATED, ranked: R4 THE HORIZON LIMIT first** (the
+only route needing finiteness nowhere; D46b's terminal machinery
+unspent for four months; D50 + D44f independently name its object —
+the sector conditional), with R5 (the REGENERATIVE route — the
+corpus implied it and never named it: D62's row R4 renewal theorem +
+D46b MB5 — an infinite chain needs an ATOM, not a finite state
+space) as its proof engine and R1+R2 (type-only/budget-only, the
+cheap HZ5 arm) inside the same receipt.  **D70 GATES HZ0-HZ8**: the
+exact D56/D46b anchors; properness extended; THE CAUCHY TABLE with
+"converges" FORBIDDEN in labels unless HZ4 prints a bound (the D46d
+B1 lesson); THE HORN GATE HZ3 (two truncation conventions at matched
+horizon — the transport analogue of root-freeness; a non-shrinking
+difference = the imported-completion horn and makes D50's form
+choice program-wide); the HZ4 lemma slot (renewal/minorization —
+may return empty, saying so is a result); the B1-ladder
+non-regenerating-weight falsifier; controls incl. a perturbed-law
+negative and the Zhat positive; the HZ7 wall-convention diagnostic
+(changes nothing, adopting it would be a different theory);
+doctrine MB6 binding.  Worker dispatched.
