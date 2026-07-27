@@ -1,9 +1,45 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.13
 """
 d73_even_gram_exact.py — v10 D73: THE EVEN GRAM.  Does the real
 (dual-even) channel of the rooted boundary law host a rank-2 metric
 response, or is `E_total` lossless and the even channel provably
 scalar?
+
+ROUND-1 REPAIRED, 2026-07-27 (`reviews/d73-round1-hostile-review.md`:
+1 BLOCKER / 4 MAJOR / 5 MODERATE / 5 MINOR).  What the round changed,
+named here because the numbers below moved with it:
+  * **THE FIXTURE (BLOCKER).**  The first delivery anchored on p30
+    `§25.3/§25.4`'s three dual pairs `((24576,540672), (25488,525208),
+    (24606,549648))` and never read p30 `§26.2`, which audits the
+    `N = 9` frontier, ranks that triple **11th**, prints its
+    `TV9 = 1.676e-5` as the loser's score and says in the paper's own
+    words that *"the previous theorem target is falsified if read as a
+    final predictive law"*.  `§27` then SELECTS
+    `((912,25104), (17288,525076), (24576,540672))`, at `TV9 = 0`
+    exactly.  So the first delivery's central negative — no `K` moves
+    `TV_9` off `1.676e-5` — was **fixture-guaranteed**: that residual
+    is a sector-selection artefact no function of the even 3-vector can
+    reach.  This receipt now runs BOTH fixtures, gates all four
+    `TV9 = 0` frontier triples against the paper's own table, and asks
+    the promoted-`K` question where it can have an answer.
+  * **THE MECHANISM (MAJOR 4).**  "`TV_9` is monotone under refinement
+    of the colouring" was asserted, not proved, and is not a general
+    fact.  The receipt's own G3-d data carry the correct and exact
+    mechanism: candidates whose atom-average weight function `h` is
+    IDENTICAL to `full`'s give an identical `forward_tv` in one line.
+    G3-g now gates that biconditional on both fixtures, with
+    h-identity-breaking controls that do move the number.
+  * **THE TRANSFER HINT (MAJOR 1/2, MODERATE 1/2).**  G5's census is
+    swept over seven blueprints, its distinct matrices are counted, and
+    its narrow control is MEASURED.  The hint inverts: see G5.
+  * F3 is now explicitly and visibly deferred (MODERATE 3) instead of
+    silently dropped.
+
+RUN: `python3.13 v10/code/d73_even_gram_exact.py` from the repository
+root.  The committed v7 campaign calls `int.bit_count()`, so it needs
+Python >= 3.10; this environment's bare `python3` is 3.8 and crashes
+inside a lifted namespace with no diagnostic.  A version guard below
+turns that crash into an instruction.
 
 PIN: v10/note-d73-even-gram-pin.md (STRICT, FROZEN, COMMITTED before
 this file was written; it names claim P2, tests 1-3 and falsifiers
@@ -43,22 +79,34 @@ WHAT THIS RECEIPT REUSES RATHER THAN REBUILDS.
     every use.
 
 EXACT.  Every Gram entry, minor, eigen-coefficient, `TV_9`, weight
-and covariance below is an exact `Fraction`.  `Decimal` at prec 200
-is used ONLY for display and for the cubic root-finding in G2, and
-every such number is labelled `[float port]` in its gate detail.  The
-eigenvalue brackets are certified by EXACT rational sign changes; the
-digits are the float port of a bracket, not an independent claim.
+and covariance below is an exact `Fraction`.  `Decimal` at prec 200 is
+used ONLY for display and for the cubic root-finding in G2.  ACCURATE
+LABELLING (MINOR 4): `[float port]` marks the EIGENVALUES, whose
+digits are the float port of brackets certified by exact rational sign
+changes.  The anisotropy ratios, Frobenius shares, condition number,
+discriminant and window table are printed through `dfl(...)`, which is
+an exact decimal TRUNCATION of an exact Fraction — exact input,
+truncated display, and not tagged.  No number below is a float
+computation.
 
 SCOPE, binding at every citation.  Everything in G1-G4 is a statement
-about ONE fixture: the `N = 5..9` record window of v7 paper 30's
-rooted boundary law, three named dual pairs, one measure.  No claim
+about the `N = 5..9` record window of v7 paper 30's rooted boundary
+law under ONE of TWO named dual-pair triples, both of them the
+paper's: the FALSIFIED rank-11 target of `§25` and the SELECTED
+`TV9 = 0` triple of `§26.2/§27`.  Every gate says which.  No claim
 about gravity, no claim about any continuum limit, no claim that any
-object here is a metric.  G5 is a single-blueprint probe at one depth
-and is labelled [SAMPLED] in its own gate text.  Exit 1 ONLY on G1
-anchor breakage; every substantive negative, F1 included, exits 0.
+object here is a metric.  G5 is a seven-blueprint sweep at one depth
+and is labelled [SAMPLED] in its own gate text.
+
+EXIT CODES (MINOR 3).  Exit 1 fires ONLY on G1 anchor breakage — the
+committed objects failing to reproduce.  Every substantive negative,
+F1 included, exits 0.  **So `exit 0` is a statement about G0/G1 and
+about nothing else: it is NOT a summary of the FAIL count, and must
+never be quoted as one.**  The `PASS / FAIL` line is the summary.
 """
 import ast
 import os
+import re
 import subprocess
 import sys
 import time
@@ -66,6 +114,19 @@ from collections import defaultdict
 from decimal import Decimal as Dec, getcontext
 from fractions import Fraction as Fr
 from itertools import combinations, permutations, product
+
+# MINOR 2 — the version guard.  v7's committed campaign calls
+# `int.bit_count()` (p30:165), new in Python 3.10.  Without this line a
+# reader following a bare `python3` gets an AttributeError from inside a
+# lifted third-party namespace and no diagnostic at all.
+if sys.version_info < (3, 10):
+    sys.stderr.write(
+        f"[D73] REFUSING TO RUN under Python "
+        f"{sys.version_info.major}.{sys.version_info.minor}.  The committed "
+        f"v7 campaign p30_reflection_positive_campaign.py calls "
+        f"int.bit_count() (:165), which needs Python >= 3.10.  Run:\n"
+        f"    python3.13 v10/code/d73_even_gram_exact.py\n")
+    sys.exit(2)
 
 getcontext().prec = 200
 sys.setrecursionlimit(300000)
@@ -100,7 +161,8 @@ def outcome(tag, text):
 
 
 print("[D73 — THE EVEN GRAM: does the real channel host a rank-2 metric")
-print("       response?  (pin v10/note-d73-even-gram-pin.md, claim P2)]")
+print("       response?  (pin v10/note-d73-even-gram-pin.md, claim P2)")
+print("       ROUND-1 REPAIRED — reviews/d73-round1-hostile-review.md]")
 print("  banner: v7 paper 30 computed a 3x3 reflected Gram on its three")
 print("  dual-EVEN channels, printed seven principal minors, used them as")
 print("  a positivity check, and then priced the law with the trace")
@@ -109,6 +171,11 @@ print("  never printed, decides F1 (Gram proportional to the identity),")
 print("  promotes K(E) = k.E_total to K(E) = E^T N E and re-runs paper")
 print("  30's own four gates on the promotion, and answers v6 paper 4's")
 print("  FAILS-FULL-GR row.  F1 is a first-class no-go: NO NULL OUTCOME.")
+print("  ROUND 1's BLOCKER, carried in the open: paper 30 §26.2 FALSIFIES")
+print("  the §25 triple this unit first anchored on (it ranks 11th; its")
+print("  TV9 = 1.676e-5 is the LOSER's score) and §27 SELECTS a triple at")
+print("  TV9 = 0 exactly.  Both fixtures are run below and every gate")
+print("  names which one it is speaking about.")
 
 # ======================================================================
 # G0 — LAYER ANCHORS.  Single source for every committed object.
@@ -255,21 +322,79 @@ PAPER_TV = {r.split('|')[1].strip().replace('aggregate ', '').strip('` '):
             (int(r.split('|')[2].strip()), r.split('|')[4].strip())
             for r in _TVROW}
 
+# ---- THE BLOCKER's OWN SOURCE: §26.2's frontier table, §26.2's
+# ---- falsification sentence and §27's selected triple, all TEXT-SLICED.
+_PAIRRX = re.compile(r"\((\d+)\s*,\s*(\d+)\)")
+
+
+def _table_after(marker):
+    """The markdown table that follows `marker`: rows as split cell lists."""
+    i = _PT.index(marker)
+    rows, seen = [], False
+    for ln in _PT[i:].splitlines()[1:]:
+        s = ln.strip()
+        if s.startswith('|'):
+            seen = True
+            cells = [c.strip() for c in s.strip('|').split('|')]
+            if set("".join(cells)) <= set("-: "):
+                continue
+            rows.append(cells)
+        elif seen and not s:
+            break
+    return rows
+
+
+_FRONT_ROWS = _table_after(
+    "The first four full-forward finalists have exact zero error:")
+PAPER_FRONTIER = {}
+for _r in _FRONT_ROWS[1:]:                       # [0] is the header row
+    PAPER_FRONTIER[int(_r[0])] = {
+        'triple': tuple((int(a), int(b)) for a, b in _PAIRRX.findall(_r[1])),
+        'atoms': int(_r[2].strip('` ')), 'tv9': _r[3].strip('` '),
+        'rec9': _r[4].strip('` ')}
+PAPER_OLD_TARGET = tuple(
+    (int(a), int(b)) for a, b in
+    _PAIRRX.findall(_textblock("The old reflection-positive target:", 0)[0]))
+_OLDSCORE = _textblock("ranks only `11` in this audited `N=9` frontier:", 0)
+PAPER_OLD_TV9 = _OLDSCORE[0].split('=')[1].strip()
+PAPER_OLD_REC9 = _OLDSCORE[1].split('=')[1].strip()
+PAPER_FALSIFIED = ("So the previous theorem target is falsified if read as "
+                   "a final predictive law.")
+_SELBLK = _PT[_PT.index("The coarsest nonlookup recurrence-exact candidate "
+                        "is therefore:"):][:400]
+PAPER_SELECTED = tuple((int(a), int(b)) for a, b in _PAIRRX.findall(_SELBLK))
+
 check("G0-c SINGLE SOURCE, THE COMMITTED NUMBERS: the anchor targets are "
       "TEXT-SLICED out of the committed paper, not retyped into this file. "
       "Seven even principal minors from the fence that follows paper 30's "
       "own sentence 'The reflected even Gram matrix has nonnegative "
       "principal minors', three odd reflected diagonal entries, three "
       "i-twisted minors, and the three aggregate-geometry rows (atoms and "
-      "`TV_9`) of the section-25.3 table.  If the paper's numbers were "
-      "edited, this receipt's anchor targets move with them",
+      "`TV_9`) of the section-25.3 table.  **ROUND 1's BLOCKER ADDS FOUR "
+      "MORE SLICES, FROM 130 LINES FURTHER DOWN THE SAME FILE:** §26.2's "
+      "`N = 9` frontier table (four triples, atoms, `TV9`, `rec9`), the "
+      "fence naming the old reflection-positive target, the fence printing "
+      "its rank-11 score, and §27's selected triple.  The unit's first "
+      "delivery text-sliced §25 and stopped; that is exactly how it came "
+      "to anchor on a falsified target",
       len(PAPER_EVEN_MINORS) == 7 and len(PAPER_ODD_DIAG) == 3
       and len(PAPER_TWIST) == 7 and set(PAPER_TV) == {'L1', 'L2', 'Linf'}
       and PAPER_EVEN_MINORS[0].startswith("98.6697")
-      and PAPER_ODD_DIAG[0].startswith("-26.05"),
+      and PAPER_ODD_DIAG[0].startswith("-26.05")
+      and set(PAPER_FRONTIER) == {1, 2, 3, 4}
+      and all(len(PAPER_FRONTIER[r]['triple']) == 3 for r in PAPER_FRONTIER)
+      and len(PAPER_SELECTED) == 3 and len(PAPER_OLD_TARGET) == 3
+      and PAPER_FALSIFIED in _PT,
       f"{os.path.relpath(PAPER30, ISP)}: even minors {len(PAPER_EVEN_MINORS)}"
       f", odd diagonal {len(PAPER_ODD_DIAG)}, twisted {len(PAPER_TWIST)}, "
-      f"TV rows {PAPER_TV}", anchor=True)
+      f"TV rows {PAPER_TV}; §26.2 frontier ranks {sorted(PAPER_FRONTIER)} "
+      f"with atoms "
+      f"{[PAPER_FRONTIER[r]['atoms'] for r in sorted(PAPER_FRONTIER)]} and "
+      f"TV9 {sorted({PAPER_FRONTIER[r]['tv9'] for r in PAPER_FRONTIER})}; "
+      f"§27 selected {PAPER_SELECTED}; old target {PAPER_OLD_TARGET} scores "
+      f"TV9={PAPER_OLD_TV9} rec9={PAPER_OLD_REC9}; the paper's own "
+      f"falsification sentence is present = {PAPER_FALSIFIED in _PT}",
+      anchor=True)
 
 # ======================================================================
 # G1 — THE ANCHOR.  Exit 1 lives here and nowhere else.
@@ -347,7 +472,8 @@ check("G1-c THE ODD SECTOR'S COMMITTED NUMBERS REPRODUCE TOO — the three "
 
 _t = time.time()
 MODE = {}
-for m in ('known', 'full', 'even_abs', 'agg_l1', 'agg_l2', 'agg_linf'):
+for m in ('known', 'full', 'even_abs', 'even_only', 'odd_abs',
+          'agg_l1', 'agg_l2', 'agg_linf'):
     colors, weights, metrics = weights_by_mode(m)
     MODE[m] = {'colors': colors, 'weights': weights, 'metrics': metrics,
                'tv': forward_tv(weights),
@@ -373,21 +499,129 @@ check("G1-d THE AGGREGATE-GEOMETRY TABLE REPRODUCES: paper 30's §25.3 "
       f" vs paper {[PAPER_TV[l][0] for l in ('L1', 'L2', 'Linf')]}; "
       f"agg_l2 TV9 = {fmt_frac(TV_COMMITTED, 24)}", anchor=True)
 
-check("G1-e THE TWO COMMITTED CEILING IDENTITIES REPRODUCE, and they are "
-      "the reason G3's pre-registration can be decided rather than "
-      "scanned: paper 30 gates `TV_9(even_abs) == TV_9(full)` (the "
-      "componentwise even/odd colouring loses nothing against the full "
-      "signed one) and `TV_9(agg_l2) == TV_9(even_abs)` (the TRACE loses "
-      "nothing against componentwise).  Both are exact Fraction equalities "
-      "here, and `known` (the colouring with no even/odd data at all) is "
-      "strictly worse, so the identity is not vacuous",
+check("G1-e THE TWO COMMITTED CEILING IDENTITIES REPRODUCE, WITH THE "
+      "CORRECTLY TARGETED NON-VACUITY CONTROL (MODERATE 5).  Paper 30 "
+      "gates `TV_9(even_abs) == TV_9(full)` (the componentwise even/odd "
+      "colouring loses nothing against the full signed one) and "
+      "`TV_9(agg_l2) == TV_9(even_abs)` (the TRACE loses nothing against "
+      "componentwise).  Both are exact Fraction equalities here.  The "
+      "first delivery offered `known` as the non-vacuity control — but "
+      "`known` ablates the even AND the odd data, so it shows only that "
+      "the gate resolves the PAIR of channels.  The identity under test "
+      "is about the EVEN coordinate, and p30's own `colors_for_mode` "
+      "carries the single-channel ablations: `odd_abs` (even coordinate "
+      "REMOVED) and `even_only` (odd coordinate removed).  Both are run "
+      "here.  **The honest statement the gate now supports: the even "
+      "axis's resolution is demonstrably NONZERO at the level of present-"
+      "or-absent (removing it costs 43.1x) and demonstrably ZERO at every "
+      "level finer than the trace (G3).**",
       MODE['even_abs']['tv'] == MODE['full']['tv']
       and MODE['agg_l2']['tv'] == MODE['even_abs']['tv']
-      and MODE['known']['tv'] > MODE['full']['tv'],
+      and MODE['odd_abs']['tv'] > MODE['agg_l2']['tv']
+      and MODE['even_only']['tv'] > MODE['agg_l2']['tv']
+      and MODE['known']['tv'] > MODE['odd_abs']['tv'],
       f"full = even_abs = agg_l2 = {fmt_frac(TV_COMMITTED, 24)}; "
-      f"known = {fmt_frac(MODE['known']['tv'], 24)} "
+      f"odd_abs (EVEN CHANNEL ABLATED) = "
+      f"{fmt_frac(MODE['odd_abs']['tv'], 24)} "
+      f"({float(MODE['odd_abs']['tv'] / TV_COMMITTED):.1f}x worse — THE "
+      f"control the gate wanted); even_only (odd channel ablated) = "
+      f"{fmt_frac(MODE['even_only']['tv'], 24)} "
+      f"({float(MODE['even_only']['tv'] / TV_COMMITTED):.1f}x); known "
+      f"(BOTH ablated) = {fmt_frac(MODE['known']['tv'], 24)} "
       f"(ratio {float(MODE['known']['tv'] / TV_COMMITTED):.1f}x worse)",
       anchor=True)
+
+# ======================================================================
+# G1-f / G1-g — THE ROUND-1 BLOCKER.  The fixture the first delivery
+# anchored on is the one paper 30 declares falsified; the fixture paper
+# 30 SELECTS scores TV9 = 0 exactly.  Both are gated against the paper.
+# ======================================================================
+FRONTIER = {r: PAPER_FRONTIER[r]['triple'] for r in sorted(PAPER_FRONTIER)}
+SELECTED = PAPER_SELECTED
+FALSIFIED_TRIPLE = DUAL_PAIRS
+
+_t = time.time()
+FRONT = {}
+for _rk in sorted(FRONTIER):
+    _c, _w, _m = weights_by_mode('agg_l2', pairs=FRONTIER[_rk])
+    FRONT[_rk] = {'atoms': _m[9]['atoms'], 'tv': forward_tv(_w),
+                  'rec': recurrence_errors(9, _w[9], _w[8])}
+    print(f"    §26.2 rank {_rk}  {FRONTIER[_rk]}  agg_l2 atoms9="
+          f"{FRONT[_rk]['atoms']:<7} TV9={fmt_frac(FRONT[_rk]['tv'], 24)}"
+          f"  [{time.time() - _t:.1f}s]")
+_TFRONT = time.time() - _t
+
+check("G1-f **THE ROUND-1 BLOCKER, GATED AT ITS SOURCE: THIS UNIT'S FIRST "
+      "ANCHOR TRIPLE IS THE ONE PAPER 30 ITSELF DECLARES FALSIFIED, AND "
+      "THE NUMBER IT CALLED 'THE COMMITTED TV_9' IS THE RANK-11 LOSER'S "
+      "SCORE.**  Paper 30 §26.2 audits the `N = 7` zero-TV frontier by "
+      "exact `N = 9` recurrence and full forward TV, and prints four "
+      "dual-pair triples with `TV9 = 0` and `rec9 = 0` EXACTLY.  All four "
+      "are re-run here through p30's own `weights_by_mode(..., pairs=T)` "
+      "— the parameter `pair_values`, `colors_for_mode` and "
+      "`weights_by_mode` all carry precisely so the triple can be varied, "
+      "and which the first delivery hard-coded away at every call site.  "
+      "Gated: each triple's `agg_l2` atom count reproduces the paper's "
+      "table to the unit and its `TV_9` is EXACTLY ZERO as a Fraction; "
+      "and the string paper 30 prints for the old target's score is "
+      "character-identical to the `TV_9` this receipt's G1-d reproduces.  "
+      "**So `1.676e-5` is not 'the family's floor'.  It is a "
+      "SECTOR-SELECTION residual — paper 30 drives it to 0 by changing "
+      "the pairs — and no function whatever of the even 3-vector can "
+      "reach an error that lives in the choice of which flags to look "
+      "at**",
+      all(FRONT[r]['tv'] == 0 for r in FRONT)
+      and all(FRONT[r]['atoms'] == PAPER_FRONTIER[r]['atoms'] for r in FRONT)
+      and all(FRONT[r]['rec'][0] == 0 for r in FRONT)
+      and FALSIFIED_TRIPLE == PAPER_OLD_TARGET
+      and fmt_frac(TV_COMMITTED, 24) == PAPER_OLD_TV9,
+      f"§26.2 atoms mine "
+      f"{[FRONT[r]['atoms'] for r in sorted(FRONT)]} vs paper "
+      f"{[PAPER_FRONTIER[r]['atoms'] for r in sorted(PAPER_FRONTIER)]}; TV9 "
+      f"{[fmt_frac(FRONT[r]['tv'], 4) for r in sorted(FRONT)]} vs paper "
+      f"{[PAPER_FRONTIER[r]['tv9'] for r in sorted(PAPER_FRONTIER)]}; rec9 "
+      f"all zero = {all(FRONT[r]['rec'][0] == 0 for r in FRONT)}; this "
+      f"unit's first anchor {FALSIFIED_TRIPLE} == paper 30's 'old "
+      f"reflection-positive target' = {FALSIFIED_TRIPLE == PAPER_OLD_TARGET}"
+      f", which the paper ranks 11 at TV9={PAPER_OLD_TV9} and of which it "
+      f"writes: {PAPER_FALSIFIED!r}", anchor=True)
+
+_t = time.time()
+SEL = {}
+for m in ('full', 'even_abs', 'agg_l2'):
+    _c, _w, _m = weights_by_mode(m, pairs=SELECTED)
+    SEL[m] = {'colors': _c, 'weights': _w, 'atoms': _m[9]['atoms'],
+              'tv': forward_tv(_w)}
+    print(f"    SELECTED (§27) {m:<9} atoms9={SEL[m]['atoms']:<7} "
+          f"TV9={fmt_frac(SEL[m]['tv'], 24)}  [{time.time() - _t:.1f}s]")
+_TSEL = time.time() - _t
+TV_SELECTED = SEL['agg_l2']['tv']
+
+check("G1-g **THE SELECTED FIXTURE, GATED: PAPER 30 §27's OWN "
+      "ADMISSIBILITY RULE CHOOSES A TRIPLE WITH `TV9 = 0` EXACTLY, AND "
+      "THAT IS THE FIXTURE THE PROMOTED-K QUESTION IS RE-ASKED ON.**  "
+      "§27's rule is record-intrinsic and does NOT optimise the held-out "
+      "objective: low-order gate, then exact `N = 9` recurrence, then "
+      "coarsest non-lookup quotient.  It selects "
+      "`{(912,25104), (17288,525076), (24576,540672)}` — sliced from the "
+      "paper here, not retyped — and the held-out audit gives "
+      "`atoms9 = 65523`, `TV9 = 0`, `rec9 = 0`.  Gated: that triple's "
+      "`full`, `even_abs` and `agg_l2` colourings ALL score exactly zero "
+      "here, so the ceiling identity `TV(full) = TV(even_abs) = "
+      "TV(agg_l2)` holds on the selected fixture too — at the value 0.  "
+      "**The floor is therefore 0, not 1.676e-5, and 'the trace already "
+      "sits at the family's floor' was a description of one superseded "
+      "row**",
+      SEL['agg_l2']['tv'] == 0 and SEL['full']['tv'] == 0
+      and SEL['even_abs']['tv'] == 0
+      and SEL['agg_l2']['atoms'] == PAPER_FRONTIER[4]['atoms']
+      and SELECTED == FRONTIER[4] and SELECTED != FALSIFIED_TRIPLE,
+      f"SELECTED = {SELECTED} (== §26.2 rank 4 = {SELECTED == FRONTIER[4]}); "
+      f"agg_l2 atoms9 = {SEL['agg_l2']['atoms']} vs paper "
+      f"{PAPER_FRONTIER[4]['atoms']}; TV9 full/even_abs/agg_l2 = "
+      f"{[fmt_frac(SEL[m]['tv'], 4) for m in ('full', 'even_abs', 'agg_l2')]}"
+      f"; full atoms9 = {SEL['full']['atoms']}, even_abs atoms9 = "
+      f"{SEL['even_abs']['atoms']}", anchor=True)
 
 if ANCHOR_FAIL:
     print(f"\n[STOP] {ANCHOR_FAIL} ANCHOR GATE(S) FAILED.  The committed "
@@ -726,6 +960,69 @@ check("G2-h **F1's LITERAL CONDITION HOLDS AT THE BOTTOM OF THE PIN'S OWN "
       f"{FIRST_FULL}; anisotropy ratio by N = "
       f"{ {n: dfl(WIN[n]['aniso'], 8) for n in WINDOW} } (monotone rising)")
 
+# ---- G2-i: THE SAME QUESTION ON THE FIXTURE PAPER 30 SELECTED ---------
+def gram_on(T, n=9):
+    """p30's OWN `matrix_entries(even_func(...), reflected=True)` on a
+    different dual-pair triple.  `even_func`'s closure reads `DUAL_PAIRS`
+    out of the lifted p30 namespace at call time, so the triple is
+    rebound there for the duration and restored (and the restoration is
+    gated below).  Nothing is re-implemented."""
+    _old = g30['DUAL_PAIRS']
+    g30['DUAL_PAIRS'] = T
+    try:
+        ef = [g30['even_func'](i) for i in range(3)]
+        return matrix_entries(ef, n=n, reflected=True)
+    finally:
+        g30['DUAL_PAIRS'] = _old
+
+
+_t = time.time()
+G_SEL = gram_on(SELECTED)
+_TGSEL = time.time() - _t
+SEL_OFF = [G_SEL[i][j] for i, j in combinations(range(3), 2)]
+SEL_DIAG = [G_SEL[i][i] for i in range(3)]
+C2s, C1s, C0s = charpoly(G_SEL)
+SEL_ANISO = (sum((G_SEL[i][j] - (C2s / 3 if i == j else 0)) ** 2
+                 for i in range(3) for j in range(3)) / (C2s * C2s / 3))
+SEL_STAB = [p for p in permutations(range(3))
+            if all(G_SEL[p[i]][p[j]] == G_SEL[i][j]
+                   for i in range(3) for j in range(3))]
+SEL_DISC = cubic_disc(C2s, C1s, C0s)
+SEL_PAIRS_OK = all(dual_key(l, 5) == r for l, r in SELECTED)
+print("  G^even on the SELECTED (§27) triple, N = 9, exact rationals:")
+for i in range(3):
+    print("    [ " + "  ".join(f"{str(G_SEL[i][j]):>26}" for j in range(3))
+          + " ]")
+
+check("G2-i **THE GENUINE G2 SURVIVOR: ON THE FIXTURE PAPER 30 ITSELF "
+      "SELECTED, THE EVEN GRAM IS ANISOTROPIC WITH A TRIVIAL "
+      "STABILISER — AND MORE ANISOTROPIC THAN ON THE FALSIFIED ONE.**  "
+      "The whole of G2 was computed on the rank-11 target (G1-f).  It is "
+      "recomputed here on §27's selected triple, through p30's own "
+      "`even_func` + `matrix_entries` with `DUAL_PAIRS` rebound in the "
+      "lifted namespace and gated restored.  Each of the selected pairs "
+      "is first gated to be a genuine order-dual pair of 5-element record "
+      "types (`dual_key(left, 5) == right`), exactly as G2-c gates the "
+      "old ones.  Measured: three nonzero off-diagonals, three distinct "
+      "diagonal entries, `S_3` stabiliser of order 1, exactly positive "
+      "discriminant, and an anisotropy ratio of 0.5114 against the "
+      "falsified fixture's 0.3958.  **So F1's non-firing and P2's "
+      "rank-2 factual half are NOT fixture artefacts: they transfer to "
+      "the selected fixture and are stronger there.  It is the G3 half — "
+      "'no `K` moves the number' — that was fixture-guaranteed**",
+      SEL_PAIRS_OK and all(v != 0 for v in SEL_OFF)
+      and len(set(SEL_DIAG)) == 3 and len(SEL_STAB) == 1
+      and SEL_DISC > 0 and SEL_ANISO > ANISO
+      and g30['DUAL_PAIRS'] == FALSIFIED_TRIPLE,
+      f"SELECTED = {SELECTED}, dual-pair gates all satisfied = "
+      f"{SEL_PAIRS_OK}; off-diagonals = {[dfl(v, 12) for v in SEL_OFF]} "
+      f"(nonzero {sum(1 for v in SEL_OFF if v != 0)}/3); diagonal = "
+      f"{[dfl(v, 12) for v in SEL_DIAG]}; anisotropy ratio = "
+      f"{dfl(SEL_ANISO, 12)} vs the falsified fixture's {dfl(ANISO, 12)}; "
+      f"S_3 stabiliser order = {len(SEL_STAB)}; discriminant = "
+      f"{dfl(SEL_DISC, 10)} > 0; DUAL_PAIRS restored in the lifted "
+      f"namespace = {g30['DUAL_PAIRS'] == FALSIFIED_TRIPLE}  [{_TGSEL:.1f}s]")
+
 F1_FIRES = not (MAXOFF > 0 and DIAGSPREAD > 0)
 outcome("G2 / F1",
         ("F1 FIRES — G^even is (a multiple of) the identity."
@@ -746,7 +1043,12 @@ outcome("G2 / F1",
          "channel the reflection is the identity map (G2-c), so this "
          "'reflected Gram' is the ordinary second-moment matrix of three "
          "nonnegative counting observables, and its positive-definiteness "
-         "was never evidence of anything."))
+         "was never evidence of anything.  (3) AND IT DOES NOT FIRE ON "
+         "THE RIGHT FIXTURE EITHER: on §27's SELECTED triple the Gram is "
+         f"anisotropic at ratio {dfl(SEL_ANISO, 8)} — MORE than the "
+         f"falsified fixture's {dfl(ANISO, 8)} — with `S_3` stabiliser "
+         "order 1 (G2-i).  This half of the unit survives the round-1 "
+         "refixturing intact."))
 
 # ======================================================================
 # G3 — THE QUADRATIC PROMOTION.  K(E) = E^T N E on paper 30's own gates.
@@ -755,44 +1057,54 @@ print(f"\n{sec()} [G3 — THE QUADRATIC PROMOTION: K(E) = E^T N E in place "
       f"of K(E) = k.E_total, re-run through paper 30's own four gates]")
 
 
-def colors_for_K(n, tag, evenfn):
+def colors_for_K(n, tag, evenfn, pairs=None):
     """p30's `colors_for_mode` with ONE slot changed: the even coordinate.
     Everything else — the `known` base tuple, the odd coordinate
     `Q_odd = sum_j O_j^2`, the colour tuple's shape — is p30's `agg_l2`
     branch verbatim.  Gated below to reproduce `colors_for_mode(n,
-    'agg_l2')` EXACTLY when `evenfn = sum`."""
+    'agg_l2')` EXACTLY when `evenfn = sum`.  `pairs` defaults to the
+    falsified §25 triple and is passed explicitly for the SELECTED
+    fixture (round 1's BLOCKER: it must be varied, not hard-coded)."""
+    pairs = DUAL_PAIRS if pairs is None else pairs
     colors = {}
     for key in RB[n]:
         base = FC[n]['known'][key]
         flags = FC[n]['flags5'][key]
-        values = pair_values(flags, DUAL_PAIRS)
+        values = pair_values(flags, pairs)
         E = tuple(ev for _l, _r, ev, _o in values)
         O = tuple(od for _l, _r, _ev, od in values)
         colors[key] = ("mode", tag, base, (evenfn(E), sum(o * o for o in O)))
     return colors
 
 
-def run_K(tag, evenfn, label):
+def run_K(tag, evenfn, label, pairs=None, ref=None):
+    """`ref` is the `full` colouring/weights of the SAME fixture — the
+    reference the coarsening identity and the h-weight difference are
+    taken against."""
+    ref = MODE['full'] if ref is None else ref
     colors, weights, metrics = {}, {}, {}
     for n in range(1, NMAX + 1):
-        colors[n] = colors_for_K(n, tag, evenfn)
+        colors[n] = colors_for_K(n, tag, evenfn, pairs)
         weights[n] = atom_weights(colors[n], CB[n])
         metrics[n] = atom_metrics(colors[n])
     tv = forward_tv(weights)
     rec = recurrence_errors(9, weights[9], weights[8])
     dmax = max(abs(weights[9][k] - weights[9][dual_key(k, 9)]) for k in RB[9])
-    coarse = [coarsening_identity(MODE['full']['colors'], colors,
-                                  MODE['full']['weights'], weights, n)
+    coarse = [coarsening_identity(ref['colors'], colors,
+                                  ref['weights'], weights, n)
               for n in WINDOW]
+    hdiff = max(abs(weights[9][k] - ref['weights'][9][k]) for k in RB[9])
     return {'label': label, 'tv': tv, 'rec': rec, 'dual': dmax,
             'atoms': metrics[9]['atoms'], 'max_atom': metrics[9]['max_atom'],
             'lookup': metrics[9]['lookup'], 'colors': colors,
-            'weights': weights, 'coarse': coarse}
+            'weights': weights, 'coarse': coarse, 'hdiff': hdiff}
 
 
 _probe = colors_for_K(7, 'agg_l2', sum)
 FIDELITY = all(colors_for_K(n, 'agg_l2', sum) == MODE['agg_l2']['colors'][n]
                for n in WINDOW)
+FIDELITY_SEL = all(colors_for_K(n, 'agg_l2', sum, SELECTED)
+                   == SEL['agg_l2']['colors'][n] for n in WINDOW)
 check("G3-a **OPERATIONALIZATION FIDELITY, GATED BEFORE ANYTHING IS "
       "PROMOTED** (the D68 round-1 BLOCKER's lesson).  The promoted "
       "colouring is not a new invention: `colors_for_K` is p30's own "
@@ -802,10 +1114,13 @@ check("G3-a **OPERATIONALIZATION FIDELITY, GATED BEFORE ANYTHING IS "
       "every N in the window, and the downstream machinery "
       "(`atom_weights`, `atom_metrics`, `forward_tv`, "
       "`recurrence_errors`, `coarsening_identity`) is p30's, unmodified. "
-      "If this gate fails, every number in G3 is about a different law",
-      FIDELITY and len(_probe) == len(RB[7]),
-      f"colour dictionaries identical at N = {WINDOW}: {FIDELITY}; "
-      f"N=7 probe size {len(_probe)} == {len(RB[7])}")
+      "If this gate fails, every number in G3 is about a different law.  "
+      "The same fidelity is now gated on the SELECTED fixture too, with "
+      "`pairs` passed through instead of hard-coded",
+      FIDELITY and FIDELITY_SEL and len(_probe) == len(RB[7]),
+      f"colour dictionaries identical at N = {WINDOW}: falsified fixture "
+      f"{FIDELITY}, SELECTED fixture {FIDELITY_SEL}; N=7 probe size "
+      f"{len(_probe)} == {len(RB[7])}")
 
 GG = G_EVEN
 DET = C0
@@ -844,13 +1159,16 @@ NCAND = [
 ]
 KRES = {}
 _t = time.time()
+print("  ON THE FALSIFIED §25 FIXTURE (G1-f) — the eleven the pin's F2 "
+      "names:")
 for tag, lab, fn in NCAND:
     KRES[tag] = run_K('agg_l2' if tag.strip() == 'lin' else 'd73_' + tag.strip(),
                       fn, lab)
     r = KRES[tag]
     print(f"    {tag} atoms9={r['atoms']:<7} max_atom={r['max_atom']:<3} "
           f"TV9={fmt_frac(r['tv'], 24)} rec9={fmt_frac(r['rec'][0], 18)} "
-          f"dual={r['dual']}  [{time.time() - _t:.1f}s]  {lab}")
+          f"dual={r['dual']} max|h-h_full|={str(r['hdiff']):<4} "
+          f"[{time.time() - _t:.1f}s]  {lab}")
 _TK = time.time() - _t
 
 TVs = {t: KRES[t]['tv'] for t in KRES}
@@ -875,23 +1193,37 @@ check("G3-b **F2 DOES NOT FIRE: the quadratic promotion is CONSISTENT "
       f"better = {sorted(t.strip() for t in BETTER)}")
 
 CEIL = KRES['comp    ']['tv']
-check("G3-c **THE PIN'S 'IF SOME N IMPROVES IT' BRANCH IS STRUCTURALLY "
-      "CLOSED, AND THIS RECEIPT SAYS SO RATHER THAN SCANNING FOR EVER.**  "
-      "Any `K` whatsoever is a function of the 3-vector `E`, so its "
-      "colouring is a COARSENING of the componentwise colouring "
-      "`(E_1, E_2, E_3)` — which is itself a coarsening of p30's `full`.  "
-      "Hence `TV_9(any N) >= TV_9(componentwise) >= TV_9(full)`.  And "
-      "G1-e measured `TV_9(full) == TV_9(agg_l2) == the committed value`.  "
-      "Therefore NO `N`, positive-definite or not, diagonal or not, can "
-      "beat the trace at this window — not because the search missed one, "
-      "but because the trace is already at the family's floor.  Gated: "
-      "the componentwise ceiling equals the committed value, and no "
-      "candidate came in below it",
+check("G3-c [MEASURED, NOT A THEOREM — MAJOR 4's REPAIR] NO CANDIDATE "
+      "MOVES THE NUMBER ON THE FALSIFIED FIXTURE, AND THE FIRST "
+      "DELIVERY'S REASON FOR IT WAS WRONG.  What was claimed: 'any `K` is "
+      "a function of `E`, so its colouring coarsens the componentwise "
+      "one, so `TV_9(any N) >= TV_9(comp) >= TV_9(full)` — the trace sits "
+      "at the family's floor'.  **The second step assumes `TV_9` is "
+      "MONOTONE under refinement of the colouring.  That was asserted in "
+      "prose, never proved, and is not a general fact**: `forward_tv` is "
+      "a nonlinear forward propagation through eight `forward_step`s "
+      "built from RATIOS of atom-average weights, and this receipt's own "
+      "committed table already shows the atom count does not order it "
+      "(`agg_linf` has FEWER atoms than `agg_l1`, 66036 vs 66039, and a "
+      "BETTER `TV_9`).  What is true and gated here is the empirical "
+      "statement about a finite named list: the componentwise colouring "
+      "and all eleven candidates land on the same value, and none came in "
+      "below.  The EXACT mechanism is G3-g's h-weight identity, not a "
+      "ceiling.  And by G1-f that value is not a floor at all — it is the "
+      "rank-11 target's sector-selection residual",
       CEIL == TV_COMMITTED and not BETTER
-      and all(TVs[t] >= CEIL for t in TVs),
-      f"componentwise TV_9 = {fmt_frac(CEIL, 24)} == committed "
-      f"{fmt_frac(TV_COMMITTED, 24)}; candidates strictly below the "
-      f"ceiling = {len(BETTER)} of {len(TVs)}")
+      and all(TVs[t] >= CEIL for t in TVs)
+      and MODE['agg_linf']['metrics'][9]['atoms']
+      < MODE['agg_l1']['metrics'][9]['atoms']
+      and MODE['agg_linf']['tv'] < MODE['agg_l1']['tv'],
+      f"componentwise TV_9 = {fmt_frac(CEIL, 24)} == the falsified "
+      f"fixture's committed value {fmt_frac(TV_COMMITTED, 24)}; candidates "
+      f"strictly below = {len(BETTER)} of {len(TVs)}; MONOTONICITY "
+      f"COUNTEREXAMPLE inside the committed table itself: agg_linf atoms "
+      f"{MODE['agg_linf']['metrics'][9]['atoms']} < agg_l1 atoms "
+      f"{MODE['agg_l1']['metrics'][9]['atoms']} yet agg_linf TV_9 "
+      f"{fmt_frac(MODE['agg_linf']['tv'], 6)} < agg_l1 TV_9 "
+      f"{fmt_frac(MODE['agg_l1']['tv'], 6)} — fewer atoms, better score")
 
 DUALOK = [t for t in KRES if KRES[t]['dual'] == 0]
 COARSE_OK = [t for t in KRES
@@ -932,9 +1264,11 @@ for tag in ('quad-I  ', 'quad-G  ', 'quad-D2 ', 'quad-OD1', 'comp    '):
     SEP[tag] = (LIN_ATOMS, len(fwd), len(fwd) - LIN_ATOMS, refines, coarsens,
                 sum(1 for v in bwd.values() if len(v) > 1))
 REFINES = SEP['comp    '][3]
-check("G3-e THE TRACE IS LOSSY AS A COLOURING AND LOSSLESS AS A "
-      "PREDICTOR — the two halves of F1's consequent come apart, and this "
-      "is the unit's central measurement.  The componentwise even "
+check("G3-e AT N = 9 THE TRACE IS LOSSY AS A COLOURING AND LOSSLESS AS A "
+      "PREDICTOR — two SENSES OF 'LOSSLESS' DISAGREE THERE, which is a "
+      "narrower statement than the first delivery's 'the pin's F1 is a "
+      "biconditional and the two halves come apart' (retracted; see "
+      "G3-e2).  The componentwise even "
       "colouring STRICTLY REFINES the trace's atom partition at N = 9 "
       "(gated: every componentwise atom sits inside one trace atom, and "
       "the atom count strictly rises — the trace really does merge "
@@ -946,24 +1280,251 @@ check("G3-e THE TRACE IS LOSSY AS A COLOURING AND LOSSLESS AS A "
       "it discards is predictively inert for the deletion-graph law at "
       "this window.  Both directions of the partition relation are "
       "reported: `refines` = every promoted atom sits inside one trace "
-      "atom, `splits` = how many trace atoms the promotion breaks apart",
+      "atom, `splits` = how many trace atoms the promotion breaks apart.  "
+      "G3-e2 immediately below puts the size of this effect in "
+      "proportion, and it is small",
       REFINES and SEP['comp    '][2] > 0 and SEP['quad-I  '][2] > 0
       and all(TVs[t] == TV_COMMITTED for t in ('quad-I  ', 'comp    ')),
       "; ".join(f"{t.strip()}: atoms {SEP[t][0]} -> {SEP[t][1]} "
                 f"(+{SEP[t][2]}), refines={SEP[t][3]}, splits="
                 f"{SEP[t][5]}" for t in SEP))
 
+# MAJOR 3 — the refinement comparison across the DECLARED WINDOW, not at
+# N = 9 alone.  F1's antecedent is TRUE at N = 5; the first delivery
+# never tested the consequent there, which is the one place it could
+# have been violated.
+REFWIN = {n: (len(set(KRES['lin     ']['colors'][n].values())),
+              len(set(KRES['comp    ']['colors'][n].values())))
+          for n in WINDOW}
+print("  THE REFINEMENT COMPARISON ACROSS THE WHOLE DECLARED WINDOW "
+      "(MAJOR 3) — trace atoms vs componentwise atoms vs 'is the Gram "
+      "diagonal?':")
+for n in WINDOW:
+    _t9, _c9 = REFWIN[n]
+    print(f"    N={n}: trace atoms {_t9:<6} componentwise atoms {_c9:<6} "
+          f"trace lossy as a colouring = {_c9 > _t9}  (+{_c9 - _t9}); "
+          f"Gram nonzero off-diagonals {WIN[n]['nz']}/3, F1's antecedent "
+          f"holds = {WIN[n]['nz'] == 0}")
+LOSSY_FROM = min([n for n in WINDOW if REFWIN[n][1] > REFWIN[n][0]] or [0])
+_EVALS = {tuple(even_functions[j](k) for j in range(3)) for k in RB[9]}
+_TVALS = {sum(v) for v in _EVALS}
+print(f"    and the disproportion, stated in full: at N = 9 the even "
+      f"3-vector takes {len(_EVALS)} distinct values over the "
+      f"{len(RB[9])} records and the trace collapses them onto "
+      f"{len(_TVALS)} — destroying "
+      f"{100 * (1 - len(_TVALS) / len(_EVALS)):.1f}% of the even "
+      f"channel's distinctions — and the ATOM COUNT MOVES BY "
+      f"{REFWIN[9][1] - REFWIN[9][0]}.  Essentially all the separating "
+      f"is done by p30's `known` base coordinate, not by the even "
+      f"channel.  'The trace genuinely discards information' is true of "
+      f"the OBSERVABLE and very nearly false of the COLOURING.")
+check("G3-e2 **F1'S IMPLICATION IS NOT VIOLATED ANYWHERE IN THE DECLARED "
+      "WINDOW, AND THE UNIT'S 'BICONDITIONAL' CONVICTION IS RETRACTED** "
+      "(MAJOR 3).  F1 as PINNED reads: *`G^even` is diagonal, or a "
+      "multiple of the identity.  THEN `E_total` is lossless...* — an "
+      "IMPLICATION, antecedent -> consequent, saying nothing whatever "
+      "about what follows from a NON-diagonal Gram.  The first delivery "
+      "attributed the CONVERSE to it, found the converse false, and "
+      "reported F1 refuted; a pin frozen before the code is the one "
+      "document a unit may not rewrite.  Measured here across the whole "
+      "window instead of at N = 9 alone: F1's antecedent is TRUE at "
+      "N = 5 (the Gram is exactly diag(1/20,1/30,1/30)) and THE "
+      "CONSEQUENT HOLDS THERE TOO — the trace colouring is exactly as "
+      "fine as the componentwise one at N = 5, 6 and 7; the colouring "
+      "only becomes lossy at N = 8, one step AFTER the Gram's "
+      "off-diagonal switches fully on at N = 7.  **A one-step lag "
+      "between antecedent and consequent failing is the OPPOSITE of "
+      "'the two halves come apart'.**  What the unit actually "
+      "established is that F1's ANTECEDENT is N-dependent — a real "
+      "finding — and that at N = 9 two senses of 'lossless' (as a "
+      "colouring, as a predictor) disagree",
+      REFWIN[5][0] == REFWIN[5][1] and REFWIN[6][0] == REFWIN[6][1]
+      and REFWIN[7][0] == REFWIN[7][1] and LOSSY_FROM == 8
+      and WIN[5]['nz'] == 0 and FIRST_FULL == 7,
+      f"trace vs componentwise atoms by N = {REFWIN}; first N at which "
+      f"the trace is lossy as a colouring = {LOSSY_FROM}; first N at "
+      f"which all three off-diagonals are on = {FIRST_FULL}; F1's "
+      f"antecedent holds at N = 5 and its consequent holds there too = "
+      f"{REFWIN[5][0] == REFWIN[5][1]}; at N = 9 the even 3-vector's "
+      f"distinctions are the thing lost, and the atom count moves by "
+      f"{REFWIN[9][1] - REFWIN[9][0]} of {REFWIN[9][0]}")
+
+# ---- MAJOR 4: eleven rows are TWO colourings ---------------------------
+_KEYS9 = sorted(RB[9])
+
+
+def partition_signature(colors9):
+    """Canonical relabelling of a colouring's PARTITION: two colourings
+    with different colour NAMES but the same blocks get the same
+    signature.  (The colour tuples all carry the candidate's own tag, so
+    naive equality can never see the collapse — which is why the first
+    delivery reported eleven rows as eleven tests.)"""
+    lab, out = {}, []
+    for k in _KEYS9:
+        c = colors9[k]
+        if c not in lab:
+            lab[c] = len(lab)
+        out.append(lab[c])
+    return tuple(out)
+
+
+PART = {}
+for tag in KRES:
+    PART.setdefault(partition_signature(KRES[tag]['colors'][9]), []).append(tag)
+PART_TV_OK = all(len({KRES[t]['tv'] for t in grp}) == 1
+                 and len({KRES[t]['atoms'] for t in grp}) == 1
+                 for grp in PART.values())
+check("G3-h **THE ELEVEN CANDIDATES ARE NOT ELEVEN TESTS.  THEY ARE TWO "
+      "COLOURINGS** (MAJOR 4).  Every `colors_for_K` colour is "
+      "`(base, (fn(E), sum_j O_j^2))`, so every candidate's partition is "
+      "a coarsening of `comp`'s partition `(base, (E, sum_j O_j^2))`; a "
+      "coarsening has strictly fewer atoms unless it merges nothing, i.e. "
+      "unless it EQUALS `comp`.  Computed directly here by canonical "
+      "relabelling of the blocks rather than inferred: the eleven rows of "
+      "identical twenty-digit strings collapse to TWO distinct partitions "
+      "of the 131526 records — the componentwise one (`quad-I`, `quad-G`, "
+      "`quad-adj`, `quad-cov`, `quad-D1`, `quad-D2`, `quad-OD2`, "
+      "`bilin-G`, `comp`) and the trace's (`lin`, `quad-OD1`, the latter "
+      "because `E^T J E = (sum E_j)^2` is a bijection of `sum E_j` on "
+      "nonnegative integers).  **The table's visual weight overstates the "
+      "evidence by a factor of five and a half, and this receipt says so "
+      "in its own gate**",
+      len(PART) == 2 and sorted(len(v) for v in PART.values()) == [2, 9]
+      and PART_TV_OK and len(KRES) == 11,
+      "; ".join(f"partition {i + 1} ({len(g)} rows, atoms "
+                f"{KRES[g[0]]['atoms']}): {sorted(t.strip() for t in g)}"
+                for i, g in enumerate(PART.values()))
+      + f"  -> {len(PART)} distinct colourings among {len(KRES)} rows; "
+      f"TV_9 and atom count constant within each = {PART_TV_OK}")
+
+# ---- MAJOR 4: the h-weight identity is the mechanism -------------------
+print("  h-IDENTITY CONTROLS on the falsified fixture — functions of the "
+      "even 3-vector that BREAK `h == h_full`:")
+ADV = [('adv-E3  ', 'K(E) = E_3 only  (drops two channels)',
+        lambda E: E[2]),
+       ('adv-mod2', 'K(E) = (sum_j E_j) mod 2  (a non-monotone quotient)',
+        lambda E: sum(E) % 2)]
+_t = time.time()
+for tag, lab, fn in ADV:
+    KRES[tag] = run_K('d73_' + tag.strip(), fn, lab)
+    r = KRES[tag]
+    print(f"    {tag} atoms9={r['atoms']:<7} TV9={fmt_frac(r['tv'], 24)} "
+          f"ratio={float(r['tv'] / TV_COMMITTED):.3f}x "
+          f"max|h-h_full|={str(r['hdiff']):<4} [{time.time() - _t:.1f}s]  "
+          f"{lab}")
+_TADV = time.time() - _t
+
+# ---- THE BLOCKER's REPAIR: G3 re-posed on the SELECTED fixture ---------
+print("  ON THE SELECTED §27 FIXTURE (G1-g) — where the floor is 0 and "
+      "the question can have an answer:")
+G_SELq = tuple(tuple(G_SEL[i][j] for j in range(3)) for i in range(3))
+SELCAND = [
+    ('sel-lin  ', 'K = k.E_total  [the trace, on the selected triple]', sum),
+    ('sel-comp ', 'THE CEILING: componentwise (E_1, E_2, E_3)',
+     lambda E: E),
+    ('sel-quadG', 'N = G^even(SELECTED) itself (G2-i, exact rationals)',
+     qform(G_SELq)),
+    ('sel-E3   ', 'K(E) = E_3 only  [h-identity control]', lambda E: E[2]),
+    ('sel-mod2 ', 'K(E) = (sum_j E_j) mod 2  [h-identity control]',
+     lambda E: sum(E) % 2),
+]
+SRES = {}
+_t = time.time()
+for tag, lab, fn in SELCAND:
+    SRES[tag] = run_K('d73_' + tag.strip(), fn, lab, pairs=SELECTED,
+                      ref=SEL['full'])
+    r = SRES[tag]
+    print(f"    {tag} atoms9={r['atoms']:<7} TV9={fmt_frac(r['tv'], 24)} "
+          f"max|h-h_full|={str(r['hdiff']):<4} dual={r['dual']}  "
+          f"[{time.time() - _t:.1f}s]  {lab}")
+_TSK = time.time() - _t
+
+SEL_FLOOR_OK = (SRES['sel-lin  ']['tv'] == 0 and SRES['sel-comp ']['tv'] == 0
+                and SRES['sel-quadG']['tv'] == 0)
+SEL_MOVERS = [t for t in SRES if SRES[t]['tv'] > 0]
+check("G3-f **THE PROMOTED-K QUESTION WAS FIXTURE-DEAD AT THE OLD ANCHOR, "
+      "AND IS RE-POSED HERE ON THE ONE PAPER 30 SELECTED (the BLOCKER's "
+      "repair).**  At the falsified anchor the residual `1.676e-5` is a "
+      "SECTOR-SELECTION artefact (G1-f): it is the error the full "
+      "componentwise colouring of THOSE three pairs cannot remove, and no "
+      "function whatever of the even 3-vector can touch an error that "
+      "lives in the choice of which flags to look at.  So G3's 'nothing "
+      "moved' was GUARANTEED BY THE FIXTURE, not discovered about the "
+      "even channel.  Re-posed on §27's selected triple, where "
+      "`TV_9(full) = 0` exactly: the trace, the componentwise ceiling and "
+      "the selected fixture's OWN Gram as `N` all score EXACTLY ZERO — so "
+      "the promotion still buys nothing, but now for a completely "
+      "different and honest reason (there is nothing left to buy) — while "
+      "the two h-identity controls DO move the number off zero.  **On "
+      "this fixture the instrument is live: a wrong `K` is visibly "
+      "punished, and the trace's optimality is a measurement rather than "
+      "a fixture artefact**",
+      SEL_FLOOR_OK and len(SEL_MOVERS) == 2
+      and all(SRES[t]['tv'] > 0 for t in SEL_MOVERS)
+      and SRES['sel-lin  ']['dual'] == 0,
+      f"selected-fixture TV_9: trace = {fmt_frac(SRES['sel-lin  ']['tv'], 6)}, "
+      f"comp = {fmt_frac(SRES['sel-comp ']['tv'], 6)}, quad-G = "
+      f"{fmt_frac(SRES['sel-quadG']['tv'], 6)} (all exactly zero = "
+      f"{SEL_FLOOR_OK}); the controls that move it = "
+      f"{sorted(t.strip() for t in SEL_MOVERS)} at "
+      f"{[fmt_frac(SRES[t]['tv'], 12) for t in sorted(SEL_MOVERS)]}; atoms9 "
+      f"{ {t.strip(): SRES[t]['atoms'] for t in SRES} }")
+
+_ALL = [(t, KRES[t]['hdiff'], KRES[t]['tv'] == TV_COMMITTED) for t in KRES]
+_ALL += [(t, SRES[t]['hdiff'], SRES[t]['tv'] == TV_SELECTED) for t in SRES]
+HID_MATCH = [t for t, h, m in _ALL if h == 0 and m]
+HID_MOVE = [t for t, h, m in _ALL if h != 0 and not m]
+HID_BROKEN = [t for t, h, m in _ALL if (h == 0) != m]
+check("G3-g **THE MECHANISM, EXACT AND GATED: THE h-WEIGHT IDENTITY — "
+      "NOT A MONOTONICITY LEMMA** (MAJOR 4).  `forward_tv` depends on a "
+      "colouring ONLY through its atom-average weight function `h`.  So "
+      "if a candidate's `h` is identical to `full`'s at every record, its "
+      "`forward_tv` is identical BY CONSTRUCTION, in one line, with no "
+      "assumption about partition order — and that, not any ceiling, is "
+      "why candidates agree to the twentieth decimal.  It is paper 30's "
+      "own §25.5 exact atom identity restated, and the receipt's own "
+      "G3-d already measured it (`max h-difference 0 at 11/11`) without "
+      "noticing what it was.  Gated across BOTH fixtures and all "
+      "candidates run here: `max_R |h(R) - h_full(R)| = 0` if and only if "
+      "the candidate lands exactly on that fixture's baseline `TV_9`.  "
+      "The two h-identity-breaking controls on each fixture are the "
+      "non-vacuity half — they show the equivalence is not an artefact of "
+      "everything scoring the same",
+      len(HID_BROKEN) == 0 and len(HID_MATCH) >= 12
+      and len(HID_MOVE) == 4
+      and KRES['adv-E3  ']['hdiff'] != 0 and KRES['adv-mod2']['hdiff'] != 0,
+      f"candidates over the two fixtures = {len(_ALL)}; h-identity AND on "
+      f"the baseline = {len(HID_MATCH)}; h-identity BROKEN AND off the "
+      f"baseline = {len(HID_MOVE)} "
+      f"({sorted(t.strip() for t in HID_MOVE)}); mismatches = "
+      f"{len(HID_BROKEN)}; falsified-fixture controls: adv-E3 h-diff "
+      f"{KRES['adv-E3  ']['hdiff']} costs "
+      f"{float(KRES['adv-E3  ']['tv'] / TV_COMMITTED):.3f}x, adv-mod2 "
+      f"h-diff {KRES['adv-mod2']['hdiff']} costs "
+      f"{float(KRES['adv-mod2']['tv'] / TV_COMMITTED):.3f}x")
+
 outcome("G3 / F2",
-        "**F2 DOES NOT FIRE, AND NEITHER DOES THE POSITIVE BRANCH.**  The "
-        f"quadratic promotion is admissible on all four committed gates "
-        f"({len(DUALOK)}/{len(KRES)} candidates clean on dual "
-        f"conjugation, the atom identity and non-lookup) and matches the "
-        f"committed TV_9 = {fmt_frac(TV_COMMITTED, 12)} exactly for the "
-        f"identity, Gram, adjugate and covariance choices of N.  No N "
-        f"improves it, and G3-c shows none can: the componentwise "
-        f"colouring — the ceiling of the entire family — already sits at "
-        f"the same number.  **At this window the even channel is "
-        f"PREDICTIVELY trace-only while being STRUCTURALLY anisotropic.**")
+        "**F2 DOES NOT FIRE — AND THE POSITIVE BRANCH WAS ASKED AT A "
+        "FIXTURE WHERE IT COULD NOT FIRE.**  The quadratic promotion is "
+        f"admissible on all four committed gates ({len(DUALOK)}/11 of the "
+        f"pin's candidates clean on dual conjugation, the atom identity "
+        f"and non-lookup) and reproduces the falsified fixture's TV_9 = "
+        f"{fmt_frac(TV_COMMITTED, 12)} exactly.  THREE CORRECTIONS THE "
+        f"ROUND FORCED.  (1) That number is the RANK-11 LOSER's score "
+        f"(G1-f), and the residual it names is a sector-selection "
+        f"artefact unreachable by any function of the even 3-vector — so "
+        f"'nothing moved' was fixture-guaranteed.  On §27's SELECTED "
+        f"triple the floor is 0 exactly, the trace/comp/Gram candidates "
+        f"all attain it, and h-identity-breaking controls are visibly "
+        f"punished (G3-f).  (2) The mechanism is the h-WEIGHT IDENTITY, "
+        f"gated across both fixtures at {len(_ALL)} candidates with zero "
+        f"mismatches (G3-g) — NOT the unproved monotonicity lemma the "
+        f"first delivery argued from, and this receipt exhibits a "
+        f"counterexample to that lemma's premise inside the committed "
+        f"table (G3-c).  (3) The eleven rows are TWO colourings (G3-h).  "
+        f"**What survives, on both fixtures: the even channel is "
+        f"PREDICTIVELY trace-only while being STRUCTURALLY anisotropic — "
+        f"and on the selected fixture that is now a measurement.**")
 
 # ======================================================================
 # G4 — THE FAILS-FULL-GR ANSWER.  Response or rebadged scalar?
@@ -971,28 +1532,47 @@ outcome("G3 / F2",
 print(f"\n{sec()} [G4 — THE FAILS-FULL-GR ANSWER: is a Gram-derived N a "
       f"metric RESPONSE, or a rebadged scalar family?]")
 
-# (i) locality: the per-record object
+# (i) locality: the per-record object.  MINOR 1 — the first delivery
+# populated this census by writing the answer into the key and then
+# maxed over the keys, a predicate that could not fail.  Here the 2x2
+# minors of the actual per-record matrix are computed.
 LOCAL_RANK = defaultdict(int)
 ZEROV = 0
+MINOR_VIOL = 0
 for k in RB[9]:
     v = tuple(even_functions[j](k) for j in range(3))
+    M2 = [[v[a] * v[b] for b in range(3)] for a in range(3)]
+    if any(M2[a][a] * M2[b][b] - M2[a][b] * M2[b][a] != 0
+           for a, b in combinations(range(3), 2)):
+        MINOR_VIOL += 1
     if all(x == 0 for x in v):
         ZEROV += 1
         LOCAL_RANK[0] += 1
     else:
         LOCAL_RANK[1] += 1
-check("G4-a **THE LOCAL OBJECT IS RANK 1, NOT RANK 2.**  Because the "
-      "reflection acts trivially on the even channel (G2-c), the "
-      "per-record summand of the Gram is `E_j(R) E_k(R*) = E_j(R) E_k(R)` "
-      "— the OUTER PRODUCT of one vector with itself.  Its rank is "
-      "exactly 1 at every record with `E(R) != 0` and 0 elsewhere; rank 3 "
-      "appears ONLY after averaging over the 131526 records.  A metric is "
-      "a form AT A POINT; this form exists only in the ensemble",
-      LOCAL_RANK[1] > 0 and max(LOCAL_RANK) <= 1
-      and LOCAL_RANK[1] + LOCAL_RANK[0] == len(RB[9]),
-      f"per-record rank census = {dict(LOCAL_RANK)} over {len(RB[9])} "
-      f"records (records with E(R) = 0: {ZEROV}); ensemble rank = 3 "
-      f"(G2-d)")
+check("G4-a **THE LOCAL OBJECT IS RANK 1, NOT RANK 2 — AND THIS IS A "
+      "TRIVIALITY, LABELLED AS ONE** (MINOR 1).  Because the reflection "
+      "acts trivially on the even channel (G2-c), the per-record summand "
+      "of the Gram is `E_j(R) E_k(R*) = E_j(R) E_k(R)` — the OUTER "
+      "PRODUCT of one vector with itself.  **`v v^T` has rank <= 1 for "
+      "every vector `v` whatever, so this is true of every second-moment "
+      "matrix ever written down and it is NOT an independent failure "
+      "mode; §6's presentation of it as a third one gave a triviality "
+      "the weight of a finding.**  What is measured rather than "
+      "definitional: all three `2x2` minors of the per-record matrix "
+      "vanish at every one of the 131526 records (computed, not assumed "
+      "from the census key), and 3862 records carry `E(R) = 0` outright.  "
+      "The content of the row is only this: rank 3 appears ONLY after "
+      "averaging.  A metric is a form AT A POINT; this form exists only "
+      "in the ensemble",
+      LOCAL_RANK[1] > 0 and MINOR_VIOL == 0
+      and LOCAL_RANK[1] + LOCAL_RANK[0] == len(RB[9])
+      and ZEROV == LOCAL_RANK[0],
+      f"records whose per-record matrix has a nonvanishing 2x2 minor = "
+      f"{MINOR_VIOL} of {len(RB[9])} (MEASURED — the only substantive "
+      f"number in this gate, together with the {ZEROV} records at "
+      f"E(R) = 0); census by |E(R)| = {dict(LOCAL_RANK)}; ensemble rank = "
+      f"3 (G2-d)")
 
 # (ii) equivariance: what acts on the channel index?
 STAB = []
@@ -1053,18 +1633,33 @@ check("G4-c **THE FAILS-FULL-GR ROW IS ANSWERED, AND THE ANSWER IS: "
       "supplies 6 independent components where `K(E) = k.E_total` "
       "supplied 1 — and fails the second half completely: those 6 "
       "components are ONE GLOBAL FORM for the entire N = 9 window, "
-      "whereas p4's row counts components PER ATOM.  In p4's own units "
-      "the deficit is 6 x 131526 - 6.  And G4-a says the per-atom object, "
-      "when you do write it down, is rank 1.  So a Gram-derived `N` is "
-      "NOT a metric response: it is an ensemble summary statistic with a "
-      "metric's index shape",
+      "whereas p4's row counts components PER ATOM.  And G4-a says the "
+      "per-atom object, when you do write it down, is rank 1.  So a "
+      "Gram-derived `N` is NOT a metric response: it is an ensemble "
+      "summary statistic with a metric's index shape.  **THE UNITS, "
+      "CORRECTED (MODERATE 4).  `789150` IS NOT 'IN p4's OWN UNITS' AND "
+      "MUST NOT BE QUOTED AS ONE.**  v6 p4's `missing_components = 8193` "
+      "counts components on a 2-DIMENSIONAL SCREEN (3 per screen atom "
+      "against a scalar's 1) at that paper's own grid resolution; D73's "
+      "`6` is `dim Sym^2(R^3)` on an index of THREE NAMED 5-ELEMENT "
+      "RECORD TYPES, and `131526` counts record classes.  The index has "
+      "no dimension in the geometric sense, the atoms are not screen "
+      "atoms, and the two numbers are NOT COMMENSURABLE.  `6 x 131526 - "
+      "6` is arithmetic on D73's record count under p4's COUNTING RULE — "
+      "that, and only that, is what the number below is.  p4's own "
+      "receipt is absent from the tree and `8193` was not recomputed: "
+      "[STATED, not verified], and the qualification travels with the "
+      "number",
       GLOBAL_COMPONENTS > SCALAR_COMPONENTS and DEFICIT > 0
-      and R9 == 131526 and max(LOCAL_RANK) <= 1,
+      and R9 == 131526 and MINOR_VIOL == 0,
       f"components supplied by K(E) = k.E_total: {SCALAR_COMPONENTS}; by "
       f"G^even: {GLOBAL_COMPONENTS}; needed for a per-record symmetric "
       f"response: {PER_RECORD_NEEDED} over {R9} records; deficit = "
-      f"{DEFICIT}; per-record rank of the Gram's own summand = "
-      f"{max(LOCAL_RANK)}")
+      f"{DEFICIT} [p4's COUNTING RULE applied to D73's record count — NOT "
+      f"p4's units, NOT commensurable with p4's 8193, which was not "
+      f"recomputed]; per-record rank of the Gram's own summand = 1 "
+      f"(measured: {MINOR_VIOL} of {R9} records carry a nonvanishing 2x2 "
+      f"minor)")
 
 # (iv) the Prop 10.6 relation, stated where it can be tested
 ODD_MU = tuple(sum(P9[k] * odd_functions[j](k) for k in RB[9])
@@ -1150,22 +1745,22 @@ try:
                             'dl': g60['dl'], 'profile': g60['profile'],
                             'poset_of': g60['poset_of'],
                             'CADENCE': 1, 'BUILT': {}})
-    _t = time.time()
-    bw = g63['double_ring'](8, 10, 8)          # D63's WINNER, the wide crystal
-    bn = g60['brick'](8, 14)                   # D60's brick, the narrow control
-    Cw, Cn = g60['poset_of'](bw.H), g60['poset_of'](bn.H)
-    _TB = time.time() - _t
-    print(f"    built DOUBLE-RING(8, 10, 8) = {len(Cw)} events (D63's "
-          f"winner, the wide crystal) and D60's brick(8, 14) = "
-          f"{len(Cn)} events  [{_TB:.1f}s]")
-
     def chart_grams(C, depth=2, wide=4):
         """For every event whose SKY-B chart has >= `wide` directions:
         the direction-Gram `Gamma_{dd'} = sum_rows w(row) 1[d in row]
         1[d' in row]`, uniform `w`.  The chart's own shadow rows are the
-        weights the atlas already carries; the direction ordering is
-        the canonical event order (arbitrary — which is G4-b's point,
-        transferred)."""
+        weights the atlas already carries.  **NOT THE SAME TREATMENT THE
+        EVEN CHANNEL GOT (MODERATE 1), and the difference is stated
+        rather than glossed:** v7's object is `sum_R P(R) E_j(R) E_k(R*)`
+        — a second moment of integer COUNTS, under the ORDER-DUAL
+        REFLECTION, against the pushforward of the uniform permutation
+        measure.  This object is a co-occurrence of 0/1 INDICATORS, with
+        NO REFLECTION AT ALL, against a uniform measure on shadow rows.
+        Three of the four ingredients differ and the missing one is the
+        reflection — the entire subject of p30 §25.4 and of this unit's
+        own G2-c.  It is a second-moment matrix, so its PSD-ness is the
+        same tautology G2-c deflates on the v7 side; that deflation
+        applies here verbatim."""
         out = []
         for e in range(len(C)):
             dirs, rows = sky(C, e, 'B', depth)
@@ -1181,68 +1776,234 @@ try:
             out.append((e, m, M, off, dg))
         return out
 
-    CGw = chart_grams(Cw)
-    CGn = chart_grams(Cn, wide=3)
+    def census(CG):
+        """distinct matrices, stabiliser histogram, identity-proportional
+        count, constant-diagonal count."""
+        dist, hist, idp, flat = set(), defaultdict(int), 0, 0
+        for _e, m, M, off, dg in CG:
+            dist.add(tuple(tuple(r) for r in M))
+            s = sum(1 for p in permutations(range(m))
+                    if all(M[p[i]][p[j]] == M[i][j]
+                           for i in range(m) for j in range(m)))
+            hist[(m, s)] += 1
+            flat += int(len(set(dg)) == 1)
+            idp += int(all(v == 0 for v in off) and len(set(dg)) == 1)
+        return dist, dict(hist), idp, flat
+
+    # ---- MAJOR 2: the sweep that costs seconds, and that the false
+    # ---- uniqueness claim suppressed.
+    BLUEPRINTS = [
+        ('DOUBLE-RING(8,10,8) [D63 winner]',
+         lambda: g63['double_ring'](8, 10, 8), 4),
+        ('DOUBLE-RING(6,14,6)', lambda: g63['double_ring'](6, 14, 6), 4),
+        ('DOUBLE-RING(4,26,4)', lambda: g63['double_ring'](4, 26, 4), 4),
+        ('DOUBLE-RING(4,10,4)', lambda: g63['double_ring'](4, 10, 4), 4),
+        ('DOUBLE-RING(8,10,2)', lambda: g63['double_ring'](8, 10, 2), 4),
+        ('wide_brick(8,14,2)', lambda: g63['wide_brick'](8, 14, 2), 4),
+        ('brick(8,14) [NARROW CONTROL, |D| >= 3]',
+         lambda: g60['brick'](8, 14), 3),
+    ]
+    _t = time.time()
+    SWEEP = {}
+    print("    THE BLUEPRINT SWEEP (MAJOR 2 — each build costs about a "
+          "second, and the first delivery ran one):")
+    for _name, _fn, _wide in BLUEPRINTS:
+        _b = _fn()
+        _C = g60['poset_of'](_b.H)
+        _CG = chart_grams(_C, 2, _wide)
+        _d, _h, _idp, _fl = census(_CG)
+        SWEEP[_name] = {'events': len(_C), 'charts': len(_CG), 'CG': _CG,
+                        'C': _C, 'distinct': len(_d), 'hist': _h,
+                        'idprop': _idp, 'flat': _fl}
+        print(f"      {_name:<40} events={len(_C):<4} charts="
+              f"{len(_CG):<4} DISTINCT MATRICES={len(_d):<3} stabiliser "
+              f"census={_h} identity-proportional={_idp}")
+    _TSWEEP = time.time() - _t
+
+    WINNER = SWEEP['DOUBLE-RING(8,10,8) [D63 winner]']
+    NAR = SWEEP['brick(8,14) [NARROW CONTROL, |D| >= 3]']
+    Cw, Cn, CGw, CGn = WINNER['C'], NAR['C'], WINNER['CG'], NAR['CG']
     aniso_w = [c for c in CGw
                if any(v != 0 for v in c[3]) or len(set(c[4])) > 1]
-    iso_w = [c for c in CGw if c not in aniso_w]
-    print(f"    wide crystal: {len(CGw)} charts with |D| >= 4 at d = 2; "
-          f"anisotropic (nonzero off-diagonal or unequal diagonal) = "
-          f"{len(aniso_w)}, identity-proportional = {len(iso_w)}")
-
-    # THE EQUIVARIANCE CENSUS, transferred: G4-b run on the v10 charts.
-    stab_hist, flatdiag = defaultdict(int), 0
-    for _e, m, M, _off, dg in CGw:
-        s = sum(1 for p in permutations(range(m))
-                if all(M[p[i]][p[j]] == M[i][j]
-                       for i in range(m) for j in range(m)))
-        stab_hist[(m, s)] += 1
-        flatdiag += int(len(set(dg)) == 1)
-    print(f"    direction-index stabiliser census (|D|, |Stab| in S_|D|) "
-          f"-> charts: {dict(stab_hist)}; charts with constant diagonal = "
-          f"{flatdiag}/{len(CGw)}")
+    stab_hist, flatdiag = WINNER['hist'], WINNER['flat']
     NONTRIV = sum(v for (m, s), v in stab_hist.items() if s > 1)
-    if CGw:
-        e, m, M, off, dg = CGw[0]
-        print(f"    example chart at event {e} ({m} directions), "
-              f"Gamma =")
-        for i in range(m):
-            print("      [ " + "  ".join(f"{str(M[i][j]):>6}"
-                                         for j in range(m)) + " ]")
+    RINGS = [k for k in SWEEP if k.startswith('DOUBLE-RING')]
+    RING_ALL8 = all(set(SWEEP[k]['hist']) == {(4, 8)} for k in RINGS)
+    BRICK_BREAKS = SWEEP['wide_brick(8,14,2)']['hist']
+
+    # ---- (a) the winner's 59 charts are TWO matrices, with their spectra.
+    _cnt = defaultdict(int)
+    for _e, _m, M, _o, _d in CGw:
+        _cnt[tuple(tuple(r) for r in M)] += 1
+    TWO = sorted(_cnt.items(), key=lambda kv: -kv[1])
+    print(f"    THE 59 'ANISOTROPIC DIRECTION GRAMS' ARE "
+          f"{len(TWO)} MATRICES:")
+    SPEC, BLOCKY = [], []
+    for M, k in TWO:
+        four = (len(M) == 4)
+        a, b, c, d = (M[0] if four else (0, 0, 0, 0))
+        circ = four and b == d and all(
+            M[i][j] == M[0][(j - i) % 4] for i in range(4) for j in range(4))
+        # exact spectrum of a SYMMETRIC circulant (a, b, c, b):
+        ev = ([a + 2 * b + c, a - c, a - c, a - 2 * b + c] if circ else [])
+        # certified, not asserted: the characteristic polynomial vanishes
+        # at each claimed eigenvalue, as an exact Fraction identity.
+        ev_ok = circ and all(
+            all(sum((M[i][j] - (lam if i == j else 0)) * x[j]
+                    for j in range(4)) == 0 for i in range(4))
+            for lam, x in ((ev[0], (1, 1, 1, 1)), (ev[3], (1, -1, 1, -1)),
+                           (ev[1], (1, 0, -1, 0)), (ev[2], (0, 1, 0, -1))))
+        zero_blocks = four and (M[0][1] == 0 and M[0][3] == 0
+                                and M[2][1] == 0 and M[2][3] == 0)
+        SPEC.append((k, M[0], circ, ev, zero_blocks, ev_ok))
+        BLOCKY.append(zero_blocks)
+        print(f"      on {k} charts, first row {[str(v) for v in M[0]]}, "
+              f"symmetric-circulant in sorted order = {circ}, eigenvalues "
+              f"{[str(v) for v in ev]} ({len(set(ev))} distinct, certified "
+              f"by exact eigenvectors = {ev_ok}), block-decomposable = "
+              f"{zero_blocks}")
+        for i in range(4):
+            print("        [ " + "  ".join(f"{str(M[i][j]):>6}"
+                                           for j in range(4)) + " ]")
+    SPEC_OK = all(s[5] for s in SPEC)
+    DEGEN = [len(set(ev)) for _k, _r, _c, ev, _z, _o in SPEC]
+
+    # ---- (b) the narrow control, MEASURED (MODERATE 2).
+    _q = Fr(1, 4)
+    NAR_EYE = [c for c in CGn
+               if all(v == 0 for v in c[3]) and set(c[4]) == {_q}]
+    NAR_MAXSYM = [c for c in CGn
+                  if len(set(c[4])) == 1 and len(set(c[3])) == 1
+                  and c[3] and c[3][0] != 0]
+    NAR_MAXSTAB = sum(v for (m, s), v in NAR['hist'].items() if s == 6)
+    print(f"    THE NARROW CONTROL, MEASURED (the first delivery reported "
+          f"only its chart count): {len(CGn)} charts at |D| = 3 — the "
+          f"same index size as v7's three channels — of which "
+          f"{len(NAR_EYE)} have a direction Gram EXACTLY (1/4).I "
+          f"(**F1's literal condition, a multiple of the identity, "
+          f"FIRING ON THE v10 SIDE**), {len(NAR_MAXSYM)} are the "
+          f"maximally symmetric (1/4)I + (1/4)J, and {NAR_MAXSTAB} of "
+          f"{len(CGn)} carry the FULL S_3 stabiliser of order 6.")
+
     G5_OK = True
-    G5_NOTE = (f"{len(CGw)} wide charts, {len(aniso_w)} anisotropic, "
-               f"{len(iso_w)} identity-proportional, {NONTRIV} with a "
-               f"NONTRIVIAL direction-index stabiliser, {flatdiag} with "
-               f"a constant diagonal; narrow control {len(CGn)} charts")
-    check("G5 [SAMPLED / CONTEXT GRADE — ONE BLUEPRINT, ONE DEPTH, NO "
-          "SWEEP] THE GRAM MACHINERY TRANSFERS IN SHAPE AND REPRODUCES "
-          "THE SAME VERDICT ON THE v10 SIDE.  D63's own winner, "
-          "DOUBLE-RING(8, 10, 8) — the only configuration D63 found "
-          "carrying 4-direction charts at d = 2 — is rebuilt from D63's "
-          "own function object through the committed d42b1/d47a/d58/d60 "
-          "chain, and each wide chart's direction set is given the same "
-          "bilinear treatment the even channel got: a co-occurrence Gram "
-          "over the chart's own SKY-B shadow rows.  The result is a "
-          "nontrivial anisotropic symmetric form at essentially every "
-          "wide chart — SO THE v7 FIXTURE IS NOT SPECIAL IN CARRYING "
-          "ONE.  **AND THE HINT RUNS THE OTHER WAY ON THE TEST THAT "
-          "ACTUALLY MATTERED: G4-b's equivariance census, transferred "
-          "verbatim, does NOT come back empty here.**  Where v7's three "
-          "named dual pairs give a Gram with `S_3` stabiliser of order "
-          "1, these charts' direction Grams carry nontrivial "
-          "relabelling stabilisers and constant diagonals — the census "
-          "is printed above.  That is the difference between a table of "
-          "numbers and a form on an index set, and on this probe it is "
-          "the v10 side that has it.  The gate licenses nothing beyond "
-          "this blueprint at this depth, and in particular no claim "
-          "that any stabiliser found is a SUBSTRATE symmetry rather "
-          "than an arithmetic coincidence of one small circuit",
+    G5_NOTE = (f"{len(CGw)} wide charts on the winner but only "
+               f"{WINNER['distinct']} DISTINCT matrices ({'+'.join(str(k) for _M, k in TWO)}), "
+               f"eigenvalue multiplicities {DEGEN} (v7's three are "
+               f"distinct), stabiliser census {stab_hist}, "
+               f"identity-proportional {WINNER['idprop']}; every DOUBLE-RING "
+               f"blueprint is 100% stabiliser-8 and 2 matrices; "
+               f"wide_brick(8,14,2) breaks uniformity at {BRICK_BREAKS}; "
+               f"narrow control {len(CGn)} charts with {len(NAR_EYE)} "
+               f"EXACTLY (1/4)I — F1 firing on the v10 side")
+    check("G5 [SAMPLED / CONTEXT GRADE — SEVEN BLUEPRINTS, ONE DEPTH] "
+          "**THE TRANSFER PROBE'S HINT INVERTS ON ITS OWN EVIDENCE.  THE "
+          "DIRECTION INDEX IS NOT A BETTER STAGE THAN v7's CHANNEL "
+          "INDEX; AS MEASURED IT IS A WORSE ONE.**  Round 1 broke the "
+          "first delivery's reading three ways and this gate carries all "
+          "three.  (a) IT IS NOT A FIELD, IT IS A CONSTANT: the winner's "
+          "59 wide charts carry exactly TWO distinct matrices (51 + 8) — "
+          "a metric response is an object that VARIES over its base, and "
+          "this one takes two values on a 177-event crystal.  (b) A "
+          "LARGE STABILISER IS LESS METRIC DATA, NOT MORE, AND THIS "
+          "RECEIPT'S OWN NEGATIVE CONTROL SAYS SO: G6-c offers `7I`, "
+          "whose S_3 stabiliser is the FULL group of order 6, as the "
+          "demonstration that the F1 instrument fires when F1 is TRUE.  "
+          "A bigger stabiliser means a MORE constrained form: with a "
+          "trivial stabiliser v7's Gram is a generic point of the "
+          "6-dimensional Sym^2(R^3), whereas a D_4-invariant 4x4 "
+          "symmetric form is confined to the 3-dimensional span "
+          "{I, adjacent, opposite} inside the 10-dimensional "
+          "Sym^2(R^4) — which is exactly the observed (3/8, 1/8, 1/4) "
+          "shape.  **The direction Gram has FEWER free components than "
+          "the channel Gram.**  (c) THE SPECTRA ARE DEGENERATE: matrix A "
+          "(51 charts) has eigenvalues 7/8, 3/8, 1/8, 1/8 — a repeated "
+          "root — and matrix B (8 charts) has only TWO distinct "
+          "eigenvalues 3/7, 3/7, 1/7, 1/7 and is BLOCK-DECOMPOSABLE, its "
+          "four directions splitting into two mutually invisible pairs: "
+          "a direct sum of two 2x2 blocks wearing a 4x4 index.  Against "
+          "v7's three DISTINCT eigenvalues the v10 forms are the more "
+          "degenerate objects.  And the uniformity is HAND-BUILT, not "
+          "substrate: every DOUBLE-RING blueprint gives 100% "
+          "stabiliser-8 and exactly two matrices because a double ring "
+          "is constructed with cyclic symmetry and the direction index "
+          "inherits it, while the first non-ring wide record, "
+          "wide_brick(8,14,2), breaks it at 5 of 12 charts.  The narrow "
+          "control — never measured in the first delivery — has FOUR "
+          "charts whose direction Gram is exactly (1/4)I, F1's literal "
+          "condition firing on the v10 side, and 38 of 42 at the MAXIMAL "
+          "stabiliser.  MINOR 5: 'circulant' holds in the CANONICAL "
+          "SORTED direction order only and is not an invariant; the "
+          "stabiliser order (and the isomorphism type D_4) is",
           G5_OK and len(CGw) > 0 and len(aniso_w) > 0
           and len(Cw) == 177 and len(Cn) == 65
-          and NONTRIV + flatdiag > 0,
+          and WINNER['distinct'] == 2 and len(TWO) == 2
+          and RING_ALL8 and set(BRICK_BREAKS) != {(4, 8)}
+          and len(NAR_EYE) > 0 and max(DEGEN) < 4 and SPEC_OK,
           f"DOUBLE-RING(8,10,8) = {len(Cw)} events (D63 published 177); "
           f"brick(8,14) = {len(Cn)} events (D60/D63 published 65); "
-          f"{G5_NOTE}")
+          f"{G5_NOTE}; every ring blueprint 100% stabiliser-8 = "
+          f"{RING_ALL8}; matrix B block-decomposable = {BLOCKY[-1]}; "
+          f"sweep {_TSWEEP:.1f}s")
+
+    check("G5-b **'THE ONLY CONFIGURATION D63 FOUND CARRYING 4-DIRECTION "
+          "CHARTS AT d = 2' WAS FALSE, AND THE FALSE UNIQUENESS IS WHAT "
+          "SUPPRESSED THE SWEEP** (MAJOR 2).  D63's own interior-control "
+          "table lists WIDE-BRICK(8,14,C=2), DOUBLE-RING(6,14,6) and "
+          "DOUBLE-RING(4,26,4) at nonzero width — width IS D58's "
+          "`|D| >= 4` column — and D63 §3 names DR(4,10,4) alongside the "
+          "winner.  SEVERAL D63 configurations carry 4-direction charts "
+          "at d = 2; the winner is the winner on a COMPOSED "
+          "tiling-plus-width criterion, not the only carrier.  The claim "
+          "was stated as fact inside gate text and used to justify "
+          "running one blueprint.  Measured here: six of the seven "
+          "blueprints swept carry 4-direction charts at d = 2",
+          sum(1 for k in SWEEP if SWEEP[k]['charts'] > 0
+              and not k.startswith('brick')) >= 5
+          and SWEEP['wide_brick(8,14,2)']['charts'] > 0
+          and SWEEP['DOUBLE-RING(4,10,4)']['charts'] > 0,
+          "; ".join(f"{k}: {SWEEP[k]['charts']} wide charts, "
+                    f"{SWEEP[k]['distinct']} distinct matrices"
+                    for k in SWEEP))
+
+    check("G5-c **THE NARROW CONTROL IS A CONTROL NOW, AND IT FIRES F1 ON "
+          "THE v10 SIDE** (MODERATE 2).  The first delivery built the "
+          "narrow control, computed its chart Grams and then reported "
+          "only `len(CGn)` — so it controlled nothing.  Measured: of the "
+          "42 narrow charts (|D| = 3, the same index size as v7's three "
+          "channels), FOUR have a direction Gram equal to exactly "
+          "(1/4).I — **a multiple of the identity, which is F1's literal "
+          "antecedent, on the v10 side** — 34 are the maximally "
+          "symmetric (1/4)I + (1/4)J, and 38 of 42 carry the full S_3 "
+          "stabiliser of order 6, the same order this receipt's own G6-c "
+          "negative control uses to demonstrate F1 firing.  **Had this "
+          "been read, the first delivery's forward-pointing hint could "
+          "not have been written: on the comparator blueprint the "
+          "direction Gram is MORE isotropic than v7's channel Gram, "
+          "sometimes exactly lambda.I**",
+          len(NAR_EYE) == 4 and NAR_MAXSTAB == 38 and len(CGn) == 42
+          and len(NAR_MAXSYM) == 34,
+          f"narrow charts = {len(CGn)}; exactly (1/4)I = {len(NAR_EYE)}; "
+          f"(1/4)I + (1/4)J = {len(NAR_MAXSYM)}; maximal S_3 stabiliser "
+          f"(order 6) = {NAR_MAXSTAB} of {len(CGn)}; stabiliser census = "
+          f"{NAR['hist']}; distinct matrices = {NAR['distinct']}")
+
+    outcome("G5 / THE REDIRECTION'S REDIRECTION [MY READING, not a "
+            "claim]",
+            "The v10 direction Grams AS MEASURED are MORE degenerate "
+            "than v7's channel Gram, not less: two constant matrices "
+            "across a whole blueprint family, repeated eigenvalues, one "
+            "of them block-decomposable, and a stabiliser that is large "
+            "precisely because the blueprints were hand-built with "
+            "cyclic symmetry.  The one defensible part of the original "
+            "hint is CONCEPTUAL and the census neither tests nor "
+            "supports it: a chart's direction index is something a group "
+            "could act on, where a list of three named record types is "
+            "not.  **So the honest successor guidance, graded [MY "
+            "READING] and licensed by nothing here: a real tensor stage "
+            "needs charts WITHOUT hand-built symmetry — sprinkling-like "
+            "substrates or DEFECTED crystals, whose direction geometry "
+            "is generic (stabiliser 1) — because a form with a big "
+            "stabiliser is a cage, not a metric.**")
 except Exception as exc:                                  # noqa: BLE001
     G5_NOTE = f"{type(exc).__name__}: {exc}"
     check("G5 [SAMPLED / CONTEXT GRADE] THE TRANSFER PROBE DID NOT RUN — "
@@ -1250,6 +2011,28 @@ except Exception as exc:                                  # noqa: BLE001
           "G1-G4 depends on it and no G5 claim is made anywhere in this "
           "receipt or its note",
           G5_OK, f"layer chain raised {G5_NOTE}")
+
+# ======================================================================
+# F3 — EXPLICITLY DEFERRED, NOT SILENTLY DROPPED (MODERATE 3).
+# ======================================================================
+outcome("F3 / NOT DECIDED — EXPLICITLY DEFERRED",
+        "The pin pre-registers FOUR falsifiers under a NO NULL OUTCOME "
+        "header.  F1 is decided (G2, on both fixtures), F2 is decided "
+        "(G3, on both fixtures), and F4 is deferred to D72 in the note's "
+        "residues.  **F3 — 'the even/odd algebraic split of §3 does not "
+        "survive transfer: the anticommutator of the generated line's "
+        "own transports is not symmetric, or is not rank-2' — was never "
+        "named, never tested and never deferred by the first delivery, "
+        "and round 1 was right to call that a first-class omission.**  "
+        "It is NOT decided here either, and the reason is stated so the "
+        "gap is visible: G5 forms a CO-OCCURRENCE matrix over chart "
+        "DIRECTIONS, which is not an anticommutator of the generated "
+        "line's transports under any reading, so G5 is not an F3 test "
+        "and this receipt will not relabel it as one.  F3 needs the "
+        "d42b1 transport pair itself, symmetrised — a unit of work, not "
+        "a gate — and it is hereby carried forward as an OPEN "
+        "pre-registered falsifier.  No claim anywhere in this receipt or "
+        "its note rests on F3 being decided.")
 
 # ======================================================================
 # G6 — CONTROLS: anti-vacuity, determinism, negative control
@@ -1404,10 +2187,18 @@ check("G6-c NEGATIVE CONTROL — the F1 instrument fires when F1 is TRUE.  "
 WALL = time.time() - T00
 print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL   ({len(OUTCOMES)} delivered "
       f"outcomes)   wall clock {WALL:.1f}s")
+print(f"[EXIT SEMANTICS] exit 1 fires ONLY on G0/G1 anchor breakage; every "
+      f"substantive negative exits 0.  So the exit code is NOT a summary "
+      f"of the FAIL count and must not be quoted as one — the PASS/FAIL "
+      f"line above is (MINOR 3).")
 print(f"[RUNTIME] record universes {_TU:.1f}s, deletion graph {_TD:.1f}s, "
-      f"feature cache {_TF:.1f}s, the six committed modes {_TMODES:.1f}s, "
-      f"the {len(NCAND)} promoted-K candidates {_TK:.1f}s; total "
-      f"{WALL:.1f}s.  Every arm the pin declares ran.")
+      f"feature cache {_TF:.1f}s, the eight committed modes {_TMODES:.1f}s, "
+      f"§26.2's four frontier triples {_TFRONT:.1f}s, the selected "
+      f"fixture's three modes {_TSEL:.1f}s, its Gram {_TGSEL:.1f}s, the "
+      f"{len(NCAND)} promoted-K candidates {_TK:.1f}s, the "
+      f"{len(ADV)} h-identity controls {_TADV:.1f}s, the "
+      f"{len(SELCAND)} selected-fixture candidates {_TSK:.1f}s; total "
+      f"{WALL:.1f}s.  Every arm the pin declares ran, on BOTH fixtures.")
 
 _v_f1 = ("F1 FIRES" if F1_FIRES else
          "F1 DOES NOT FIRE AT N = 9 — the even Gram is genuinely "
@@ -1417,29 +2208,51 @@ _v_f1 = ("F1 FIRES" if F1_FIRES else
          "record depth, first fully present at N = "
          f"{FIRST_FULL}")
 _v_f2 = ("F2 FIRES" if BETTER or TVs['quad-I  '] != TV_COMMITTED
-         else "F2 DOES NOT FIRE — the quadratic promotion is admissible "
-              "and reproduces the committed TV_9")
-print(f"\n[VERDICT] D73 GREEN-UNREVIEWED.  {_v_f1}: eigenvalues "
+         else "F2 DOES NOT FIRE ON EITHER FIXTURE — the quadratic "
+              "promotion is admissible on all four committed gates, "
+              "reproduces the falsified fixture's TV_9 exactly and "
+              "attains the selected fixture's TV_9 = 0 exactly")
+print(f"\n[VERDICT] D73 ROUND-1 REVIEWED AND REPAIRED.  **THE FIXTURE, "
+      f"FIRST: the triple the first delivery anchored on is the one paper "
+      f"30 §26.2 declares FALSIFIED — it ranks 11th, and the "
+      f"{fmt_frac(TV_COMMITTED, 12)} this unit called 'the committed "
+      f"TV_9' is the loser's score (G1-f).  §27 SELECTS "
+      f"{SELECTED} at TV_9 = 0 exactly (G1-g), and both fixtures are run "
+      f"here.**  {_v_f1}: eigenvalues "
       f"{[dfl(e, 12) for e in reversed(EIG)]}, three distinct "
       f"off-diagonals {[dfl(v, 10) for v in OFFD]}, traceless Frobenius "
       f"fraction {dfl(FROB_T / FROB_G, 8)}, S_3 stabiliser order "
-      f"{len(STAB)}.  {_v_f2}, but NO N CAN IMPROVE IT: the "
-      f"componentwise ceiling of the whole family already sits at "
-      f"{fmt_frac(TV_COMMITTED, 12)} (G3-c), so the even channel is "
-      f"PREDICTIVELY TRACE-ONLY AT THIS WINDOW while being STRUCTURALLY "
-      f"ANISOTROPIC — the two halves of F1's consequent come apart, and "
-      f"the pin's biconditional is false as stated.  THE FAILS-FULL-GR "
-      f"ANSWER: a Gram-derived N is a metric-shaped ENSEMBLE STATISTIC — "
-      f"6 global components against v6 p4's per-atom demand (deficit "
-      f"{DEFICIT}), per-record rank {max(LOCAL_RANK)}, and no group "
-      f"acting on the channel index at all.  THE PROP-10.6 RELATION: "
-      f"different objects, stated in G4-d — G^even is Gamma-level and "
-      f"therefore orientation-blind by Prop 10.6's own argument; its "
-      f"off-diagonal is nonzero because the counting basis is "
-      f"canonically oriented, not because a signed h^12 was recovered; "
-      f"the shared content is that the orientation datum sits in the ODD "
-      f"channel in both.  TRANSFER: {G5_NOTE or 'not run'} [SAMPLED].  "
-      f"SCOPE: one fixture, N = 5..9, three named dual pairs, one "
-      f"measure; no gravity claim, no continuum claim, no claim that any "
-      f"object here is a metric.")
+      f"{len(STAB)} — **AND IT DOES NOT FIRE ON THE SELECTED FIXTURE "
+      f"EITHER, where the even Gram is anisotropic at ratio "
+      f"{dfl(SEL_ANISO, 8)} (against {dfl(ANISO, 8)}) with stabiliser "
+      f"order {len(SEL_STAB)} (G2-i): THE GENUINE G2 SURVIVOR.**  "
+      f"{_v_f2}.  THE PROMOTED-K QUESTION WAS FIXTURE-DEAD AT THE OLD "
+      f"ANCHOR — {fmt_frac(TV_COMMITTED, 8)} is a SECTOR-SELECTION "
+      f"residual no function of the even 3-vector can reach — and "
+      f"re-posed on the selected fixture the trace, the componentwise "
+      f"ceiling and the fixture's own Gram all attain TV_9 = 0 exactly "
+      f"while h-identity-breaking controls are punished (G3-f).  THE "
+      f"MECHANISM is the h-WEIGHT IDENTITY, gated at {len(_ALL)} "
+      f"candidates over two fixtures with zero mismatches (G3-g) — NOT a "
+      f"monotonicity lemma, which the committed table itself falsifies "
+      f"(G3-c); and the eleven rows are TWO colourings (G3-h).  THE "
+      f"PIN'S F1 IS AN IMPLICATION, NOT A BICONDITIONAL: its antecedent "
+      f"is N-dependent (true at N = 5, false from N = 7), its consequent "
+      f"holds wherever the antecedent does, and nothing here falsifies "
+      f"it — what the unit found is that two senses of 'lossless' "
+      f"disagree at N = 9.  THE FAILS-FULL-GR ANSWER: a Gram-derived N "
+      f"is a metric-shaped ENSEMBLE STATISTIC — 6 global components "
+      f"against v6 p4's per-atom demand (deficit {DEFICIT} in p4's "
+      f"COUNTING RULE applied to D73's record count, NOT in p4's units "
+      f"and NOT commensurable with p4's 8193, which was not recomputed), "
+      f"per-record rank 1, and no group acting on the channel index.  "
+      f"THE PROP-10.6 RELATION: different objects, stated in G4-d.  "
+      f"TRANSFER, INVERTED: {G5_NOTE or 'not run'} — the v10 direction "
+      f"Grams as measured are MORE degenerate and MORE symmetric than "
+      f"v7's channel Gram, and a large stabiliser is this receipt's own "
+      f"G6-c death condition, so the 'direction index is the stage' hint "
+      f"is WITHDRAWN [SAMPLED].  F3 REMAINS OPEN AND IS EXPLICITLY "
+      f"DEFERRED, not dropped.  SCOPE: two named fixtures, N = 5..9, "
+      f"three dual pairs each, one measure; no gravity claim, no "
+      f"continuum claim, no claim that any object here is a metric.")
 sys.exit(0)

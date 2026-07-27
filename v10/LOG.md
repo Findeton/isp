@@ -11769,3 +11769,34 @@ object.**  D74 pinned next as CHARACTERISATION: the carrier
 (register-overlapping delivery squares), the group, coboundary or
 not, and the odd-sector U(1) search — the imaginary exponential's
 last known address.  TERMINAL for round 1.
+
+## 2026-07-27 — D73 ROUND 1 ADJUDICATED AND TERMINAL: REFIXTURED —
+## THE SELECTED TRIPLE'S GRAM IS THE GENUINE RANK-2 CANDIDATE; THE
+## DIRECTION-INDEX HINT INVERTED (LEDGER #491)
+Deliverables: reviews/d73-round1-hostile-review.md (independent Opus
+5, REVISE 1 BLOCKER / 4 MAJOR / 5 MODERATE / 5 MINOR, + my DELTA),
+repaired receipt (38 PASS / 0 FAIL, 524 s) + retitled note.
+**FORWARD CORRECTIONS of #488's D73 half: (1) the unit's anchor was
+the fixture paper 30 ITSELF falsified (§26.2 ranks it 11th; the
+1.676e-5 "floor" was a sector-selection artefact unreachable by any
+even-vector function — "the trace already sits at the family's
+floor" IS WITHDRAWN as a fixture-guaranteed reading); the frontier
+triples score TV9 = 0 EXACTLY and are now the anchor.  (2) On the
+SELECTED fixture the even Gram is ANISOTROPIC WITH TRIVIAL
+STABILISER (0.5114; exact-rational off-diagonals) — the genuine G2
+survivor and the right starting object for any rank-2 response.
+(3) The "direction index is the stage" hint INVERTS: the 59 wide-
+chart Grams are TWO matrices with degenerate spectra; hand-built
+ring symmetry is a CAGE (D4-invariance = 3 of 10 components); the
+narrow control fires F1 on the v10 side.  The tensor stage needs
+GENERIC (stabiliser-1) direction geometry — sprinklings and
+defected crystals, not symmetric crystals [MY READING guidance].**
+The sensitivity truth: the committed gates resolve the even
+channel's PRESENCE (ablation costs 43.1x) and nothing finer than
+the trace.  TERMINAL for round 1.  The weld era's first wave is
+now FULLY TERMINAL (D70 #489, D72 #490, D73 #491): measure
+contracting everywhere awaiting its bound; closed flatness a
+theorem; transport curvature a new object; the phase's last
+address the odd sector of curved transport loops; the metric's
+next address the selected fixture's Gram + generic-geometry v10
+charts.  NEXT: the big book patch, then D74.
