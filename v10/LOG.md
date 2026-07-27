@@ -11961,3 +11961,59 @@ caught outside targets.  Zero live "last address" claims.  NOTE:
 the D75 Barandes audit (running) may reframe the fork's
 INTERPRETATION — the book's thesis sentence is audit-safe (it
 states what was measured), and any reframe lands as its own patch.
+
+## 2026-07-27 — D75 BARANDES AUDIT: THE HYPOTHESIS SURVIVES, HARDER —
+## THE CLOSURE THEOREMS PROVED THE MARKOV PROPERTY UNDER ANOTHER NAME,
+## AND THE 0-FOR-5 IS SUBSTANTIALLY THEIR COROLLARY (LEDGER #497)
+Deliverable: note-d75-barandes-audit.md (1,255 lines; the audit
+table; six errata candidates; three ranked pins).  Prompted by the
+user's foundations question.  **THE VERDICT: (1) the holonomy slogan
+is the PROGRAM'S OWN, not Barandes' — his base is TEMPORAL
+indivisibility (a composition defect), the program's is an ORDER
+defect; the corpus never proves them the same object, spent v1-v10
+on the second, and wrote the first as AXIOM 2 of its target theorem
+(first-principles-conceptual-leap.md:92), witnessed twice in v1 and
+NEVER TESTED AGAIN.  (2) (H1)+(H2) = sufficiency + autonomy of
+sigma = THE MARKOV PROPERTY (the generated line never uses the word
+— grep 0 — stating it as lumpability, so it never priced what it
+costs) = divisible at every time = every event a division event =
+Barandes' own classical limit; PAPER ZERO STATED THE DISJUNCTION IN
+ADVANCE (v1 paper0:578 — unique closure on retained probability
+data must "either fail to close uniquely or else carry hidden
+coherence data"); D61/D62 achieved unique closure with no coherence
+data; THE 0-FOR-5 IS SUBSTANTIALLY A COROLLARY OF THE CLOSURE
+THEOREMS.  (3) The line REMOVED the one indivisible bridge it had
+(d42b2 deliberately refined the composite arbitration draw into
+elementary recorded clicks) and the alphabet even records IDLES —
+sparseness is worse than dropped.**  CORRECTIONS to the hypothesis:
+the gradient-by-construction clause is closed-scope only (D74's
+curvature is real — the hunt aimed at the wrong KIND of defect, not
+a vacuous one); "the phase is gauge" is half right (pointwise
+phases gauge [v2 p6 Prop 2]; THE LOOP CLASS IS GAUGE-INVARIANT and
+is what interference reads [v6 p7 Thm D3] — the interference
+holonomy is a holonomy OF THE LIFT, and Gamma alone does not fix
+it); unistochasticity is [OPEN, REGISTERED, NEVER RUN] on any
+corpus matrix (the decision procedure exists on textbook fixtures;
+two receipts disagree on its grade; v6 p7's "Theorem D1
+constructive unistochastic dilation" is the ancilla-summed Naimark
+dilation every stochastic matrix admits — errata candidate).  THE
+LARGEST SINGLE MISS: the ORTHOSTOCHASTIC/UNISTOCHASTIC GAP — where
+Barandes locates the necessity of i — never operationalized.
+AUDIT TABLE: FOLLOWED (records-first, effective-Hilbert,
+anti-import, the exchange-defect programme, two correct
+refutations) / VIOLATED (temporal indivisibility by (H1)+(H2); the
+bridge refined away; sparseness; the slogan's phase half; one
+dictionary inversion) / NEVER OPERATIONALIZED (the actual thesis —
+divisibility-failure CONTROLLED BY curvature; unistochasticity; the
+ortho/uni gap; the CK defect; the SHARD-Barandes functor).
+**THE RANKED PINS (recorded, NOT dispatched — the program is
+STOPPED by the user's instruction): (a) THE INDIVISIBILITY TEST at
+transport scope (Gamma-family on D74's committed quotient; v1 Prop
+4D ported; LP feasibility where singular; prime suspect: the 44
+descent-obstruction squares; falsifier: divisibility everywhere =>
+the line is Barandes-classical BY THEOREM and the enrichment fork
+is the only route; ONE infeasible LP = the corpus's first generated
+indivisible bridge since v1); (b) unistochasticity (+the 3x3
+chirality sharpener) riding along; (c) the sparse-records grammar.**
+PROGRAM HALTED at the user's instruction: everything terminal,
+everything committed, the fork + the audit's reframe on the record.
