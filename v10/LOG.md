@@ -11180,3 +11180,43 @@ INTERACTION).  NO lean on width (schedule choice dominates — D66's
 lesson); honest lean on the band (the budget bound thins conflicts
 as k grows, so uniformity should get harder; the frontier is the
 result if so).  Worker dispatched.
+
+## 2026-07-27 — D67 DELIVERED (GREEN-UNREVIEWED): K-III —
+## SPRINKLING-GRADE WIDTH FROM PURE INTERACTION (LEDGER #475)
+Deliverables: note-d67-k4-double-grid-result.md,
+code/d67_k4_double_grid_exact.py (26 PASS / 0 FAIL, exit 0, 1,329 s),
+data/.out.  Opus 5 worker against the frozen pin (#474).  RERUN BY
+ME: byte-identical modulo timing.  **K-III: DOUBLE-GRID(4,R) forces
+(9 configurations, 1,040 events, 0 refusals), tiles DELIVERY-FREE in
+every round (24 bootstrap deliveries only; the rotating comparator
+pays 12/round forever for width 8), saturates the conflict budget at
+exactly 1/5 = 1/(k+1), and carries max |D| = 16 = k² AT BOTH DEPTHS
+— W4c's ceiling SATURATED at k = 4, INSIDE the re-run genuine
+sprinkling range [10, 17].  THE FIRST SPRINKLING-GRADE WIDTH IN THE
+CAMPAIGN, from crossed conflict alone.**  Witness: three 16-wide
+charts, each base a 4-proposer arb whose four depth-1 successors are
+all 4-proposer arbs with out-degrees [4,4,4,4]; all 16 directions
+read from the committed sky(), each verified against the committed
+poset at height + 2, P-paths printed.  THE BAND: no whole k = 4
+record is in band at either depth (the pin's lean held — the budget
+thins conflicts), BUT under D60's own interior excision
+DOUBLE-GRID(4,2) moves INTO the d = 3 band (0.5417 -> 0.7500) with
+max |D| UNCHANGED AT 16 — in-band and 16-wide at the same evidence
+grade as D66's flagship.  **V4, THE SHARPEST NEW MECHANISM: same
+actors, lineages, bootstrap, events, ZERO deliveries — only the
+ARBITRATION ORDER differs — and width collapses 16 -> 7.  The second
+concurrent consumer must sit at HEIGHT + 1: width lives in the
+schedule's height discipline.**  V2 (shared-base) REFUSES at event
+18, gated against the layer (prop_options_in_view returns []) — the
+two-lineage bootstrap is FORCED.  Unfilled census: 15/16 arbs
+realize their full sum, 1 short by height-skip (cost g(R-1)-1
+charts).  Coboundary: C7 and free-relabelling ZERO at all 74 cells;
+non-zero ONLY on the parity route at ARBLOSE incl. at k = 3 — a
+schedule+convention property, sweeping D66's residue 5; reported not
+claimed.  TWO PARENT CORRECTIONS DISCLOSED: D66's arbchain(m,k)
+hardcodes 3-proposer secondaries (nothing gated wrong — k = 3
+coincides; ARBCHAIN* supplied, reproducing 6..9 at k = 3 and
+reaching 16 at k = 4); k² NOT reached at k = 5 by anything built
+(18 vs 25 — height alignment obstructs, not the bound; D66 residue
+6 closed at k = 4, REOPENED at k = 5).  GREEN-UNREVIEWED: hostile
+round dispatched.
