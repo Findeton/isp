@@ -10887,3 +10887,37 @@ the map's remaining segment lives, said aloud).  DC4 the
 supplied-vs-derived ledger re-scored at closed scope, no item moving
 without a gate.  Falsifier discipline per pin §4; scope two-actor
 delivery-free d42a only.  Worker dispatched.
+
+## 2026-07-26 — D64 ROUND 1 ADJUDICATED AND TERMINAL: THE Z/2 CLASS IS
+## A COBOUNDARY — THE ATLAS IS GLOBALLY TRIVIALIZABLE (LEDGER #466)
+Deliverables: reviews/d64-round1-hostile-review.md (independent Opus
+5, REVISE, 1 BLOCKER / 5 MAJOR / 7 MINOR / 4 NIT, + my DELTA),
+repaired receipt (15 PASS / 0 FAIL, new gates C4b/C4c/C7) + retitled
+note.  **FORWARD CORRECTION of #464's headline: "the atlas carries a
+genuine Z/2 gauge structure" IS WITHDRAWN.**  The referee confirmed
+every number and ran the computation the unit never asked: the
+Z/2-valued transition cochain is a COBOUNDARY — an explicit per-chart
+port choice (eps: 32 charts at 0, 28 at 1) turns ALL 108 non-identity
+transitions into identities (165/172 pairs identity; only the 7
+length-changing survive, and they are not fibre maps); zero
+obstructions on the 9-component overlap graph; the Cech lift passes
+108 triples with 0 violations; holds at REGA too.  **H1 = 0.  No
+non-trivial structure group is exhibited; the tensor/curvature
+programme STARTS AT ZERO on the delivery crystal.**  The computation
+is now GATE C7 in the receipt (both routes: obstruction count +
+relabelled recount), so the verdict is self-verifying on every rerun.
+Also repaired: the group NAME was undetermined (C4b: 0/108 uniquely
+tau; an incomparable Z/4 passes the same triples); the 57/115 split
+is exactly chart DUPLICATION (C4c, biconditional 172/172); the
+tau/sigma substrate-vs-controls contrast is a REG-convention
+observation (dies at REGA and COV; width-confounded; the controls
+generate NO group — their overlap graphs are perfect matchings);
+parity = pair-existence; the coupled-wire lean UNTESTED (the 27
+both-coupled pairs carry no correspondence at all — gated equal).
+**What stands: a VALIDATED transition-detection instrument (with the
+decisive triviality gate it was missing) and the honest negative.
+The successor question, sharpened: can ANY grammar substrate carry a
+transition class that is NOT a coboundary?  The arbitration crystal
+inherits it with a stated structural reason (conflict events break
+the two-port symmetry that makes the trivializing choice available)
+— a reason to attack there, not a promise.**  TERMINAL for round 1.

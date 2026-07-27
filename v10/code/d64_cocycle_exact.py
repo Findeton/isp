@@ -41,11 +41,42 @@ PRE-REGISTERED OUTCOMES (pin §4), decided by the census, not asserted:
 The pin's LEAN (parity / a wire transposition at coupled wires) is
 checked explicitly below and reported whichever way it lands.
 
+ROUND-1 REPAIRS (reviews/d64-round1-hostile-review.md; every finding of
+that round was verified and every one is applied here):
+  * C7, THE DECISIVE COMPUTATION THE FIRST BUILD DID NOT RUN (BLOCKER 1).
+    Non-identity transitions plus a clean cocycle do not distinguish a
+    non-trivial bundle from a trivial one.  C7 asks whether the Z/2
+    transition cochain is a COBOUNDARY — whether a per-chart 0-cochain
+    eps trivializes every transition at once — by DFS propagation, by an
+    independent re-run of the whole census under the resulting
+    relabelling, and by the Cech form on triples, at REG and at REGA.
+    THE TRICHOTOMY HAS A GAP: 'non-identity + clean cocycle + TRIVIAL
+    class' is in none of G1/G2/G3, and it is the measured cell.  G3's
+    letter fires on the pin's predicate; G1's SENTENCE ('the atlas is
+    globally trivializable at this labeling') is the true one.
+  * C4b, THE GROUP NAME IS NOT DETERMINED BY THE DATA (MAJOR 1): the
+    transitions are 2-point PARTIAL maps, so a group requires an
+    extension, and two incomparable subgroups of S_4 are minimal by
+    inclusion among the consistent ones.  Both are reported.
+  * C4c, THE CONFOUNDS (MAJORs 2/3/4): the identity fraction is exactly
+    the DUPLICATE-CHART fraction (an iff); the tau-vs-sigma contrast is
+    width-confounded, coverage-limited, REG-only, and the controls'
+    overlap graph is a perfect matching with nothing to compose.
+  * THE LEAN, restated as a fact about WHICH PAIRS EXIST, with the two
+    27s gated as one set (MAJOR 5).
+  * the dead set-level cocycle column REMOVED (MINOR 1); the cocycle's
+    one shape printed (MINOR 2); control coverage printed (MINOR 3);
+    vacuous `all()` halves flagged as vacuous (MINOR 4); the determinism
+    gate's scope said in its label (MINOR 7); the exit line reconciled
+    with the pin (NIT 1); d47a's SG8 anti-vacuity form and an
+    alias-catching exit scan adopted (NITs 2/3); C4's gate no longer
+    requires the nuisance class to be non-empty (NIT 4).
+
 HOUSE RULES HELD: committed layers are single sources (AST / text-slice,
 never re-implemented; exit-freedom of every extracted body GATED, C0a);
 no invented thresholds and no bare-constant predicates; every census
 printed in full; determinism gated by a hash-seed probe; exit 0 for
-substantive negatives, exit 1 ONLY on C0 anchor breakage.
+substantive negatives, exit 1 ONLY on anchor breakage (the C0 family).
 Run from the repo root: python3 v10/code/d64_cocycle_exact.py
 """
 import ast, os, subprocess, sys, time
@@ -95,18 +126,23 @@ candidates_for, event_poset, V0 = (nst['candidates_for'],
 regs_of, admissible, vname = nst['regs_of'], nst['admissible'], nst['vname']
 
 
+_EXITNAMES = ('exit', 'quit', '_exit')
+
+
 def _no_exit(nodes):
-    """No exit call survives in an extracted body (house rule: the strip
-    must be GATED, not asserted).  D63's form, kept verbatim."""
+    """No exit call — and no REFERENCE to an exit callable, which is how
+    an ALIASED exit (`e = sys.exit`) would get through — survives in an
+    extracted body.  Round-1 NIT 3 strengthened D63's form: it now flags
+    the bare NAME/ATTRIBUTE occurrence, not only the call node.  SCOPE,
+    said in the gate: this is a syntactic scan for these three names; it
+    does not decide reachability and it cannot see an exit reached
+    through getattr on a computed string."""
     for n in nodes:
         for c in ast.walk(n):
-            if isinstance(c, ast.Call):
-                if (isinstance(c.func, ast.Attribute)
-                        and c.func.attr in ('exit', '_exit')):
-                    return False
-                if (isinstance(c.func, ast.Name)
-                        and c.func.id in ('exit', 'quit')):
-                    return False
+            if isinstance(c, ast.Attribute) and c.attr in _EXITNAMES:
+                return False
+            if isinstance(c, ast.Name) and c.id in _EXITNAMES:
+                return False
     return True
 
 
@@ -162,7 +198,11 @@ g63 = _ext('v10/code/d63_wide_crystal_exact.py', 'd63',
 double_ring, wide_brick = g63['double_ring'], g63['wide_brick']
 actors_of, chords, CADENCE = g63['actors_of'], g63['chords'], g63['CADENCE']
 
-_strip_ok = ('sys.exit' not in _slice
+# round-1 NIT 3: the slice is checked by AST as well as textually, so an
+# aliased or attribute-form exit inside it cannot pass on the substring
+# test alone.
+_slice_ast_ok = _no_exit(ast.parse(_slice).body)
+_strip_ok = ('sys.exit' not in _slice and _slice_ast_ok
              and all(_no_exit(v) for v in _EXTRACTED.values()))
 if not PROBE:
     check("C0a ANCHORS — every layer a SINGLE SOURCE and the strip is "
@@ -172,14 +212,19 @@ if not PROBE:
           "the atlas (d58), D60's blueprint machinery and **D63's OWN "
           "`double_ring` / `wide_brick` BLUEPRINT** by AST extraction.  "
           "The substrate this unit charts is D63's function object, not "
-          "a re-typing of it.  The gate reads: no `sys.exit` and no bare "
-          "`exit()`/`quit()`/`os._exit` survives the slice or any "
-          "extracted body",
+          "a re-typing of it.  The gate reads: no reference to `exit`, "
+          "`quit` or `_exit` — in CALL or in bare NAME/ATTRIBUTE form, so "
+          "an aliased exit is caught too (round-1 NIT 3) — survives the "
+          "slice (checked textually AND by AST) or any extracted body.  "
+          "SCOPE: a syntactic scan for those three names; it decides no "
+          "reachability and cannot see an exit reached through getattr on "
+          "a computed string",
           all(callable(f) for f in (candidates_for, sky, d58_atlas, latt,
                                     brick, profile, double_ring,
                                     wide_brick)) and _strip_ok,
-          f"slice = {_cut} of {len(_st)} chars, exit-free = "
-          f"{'sys.exit' not in _slice}; extracted bodies = "
+          f"slice = {_cut} of {len(_st)} chars, exit-free (text) = "
+          f"{'sys.exit' not in _slice}, exit-free (AST) = {_slice_ast_ok}; "
+          f"extracted bodies = "
           f"{ {p.split('/')[-1]: len(v) for p, v in _EXTRACTED.items()} }, "
           f"all exit-free = {all(_no_exit(v) for v in _EXTRACTED.values())}",
           anchor=True)
@@ -654,6 +699,8 @@ def measure(nm, tag, d):
     res['status'] = dict(st)
     res['maps'] = Counter(MAP[(a, c)] for (a, c, s) in pairs
                           if (a, c) in MAP)
+    res['pairmap'] = {(a, c): MAP[(a, c)] for (a, c, s) in pairs
+                      if (a, c) in MAP}
     # classify each observed map against id and tau
     kinds = Counter()
     kmaps = Counter()
@@ -668,8 +715,13 @@ def measure(nm, tag, d):
                              if classify(m) == 'length-changing'), key=repr)
     res['eqlen'] = sorted((m for m in res['maps']
                            if classify(m) != 'length-changing'), key=repr)
-    # --- C3 the cocycle, at the FIBER-MAP level (the non-tautological
-    # form) and at the SET level (the tautological form, printed as such)
+    # --- C3 the cocycle, at the FIBER-MAP level.  (The SET-level form is
+    # NOT computed and no column for it is printed: the labels are defined
+    # pointwise from one global record, so `label_i(f) -> label_k(f)`
+    # composes by construction and any "test" of it is `x == x`.  Round 1
+    # MINOR 1 removed the dead column; the tautology is stated in words
+    # where it belongs, in C3's preamble, and nothing is printed as if it
+    # had been measured.)
     adj = defaultdict(set)
     for (a, c, s) in pairs:
         adj[a].add(c)
@@ -681,15 +733,8 @@ def measure(nm, tag, d):
             if e3 in adj[c] and len(D[a] & D[c] & D[e3]) >= 1:
                 trip.append((a, c, e3))
     ok = viol = undef = 0
-    setok = setviol = 0
+    tripshape, trippts = Counter(), Counter()
     for (i, j, k) in trip:
-        T = sorted(D[i] & D[j] & D[k])
-        # set level: label_i(f) -> label_j(f) -> label_k(f) vs direct
-        if all(label(Wd[k][f], 'ROLE') == label(Wd[k][f], 'ROLE')
-               for f in T):
-            setok += 1
-        else:
-            setviol += 1
         mij, mjk, mik = MAP.get((i, j)), MAP.get((j, k)), MAP.get((i, k))
         if mij is None or mjk is None or mik is None:
             undef += 1
@@ -704,13 +749,18 @@ def measure(nm, tag, d):
                     bad = True
         if tested == 0:
             undef += 1
-        elif bad:
+            continue
+        trippts[tested] += 1
+        tripshape[tuple(sorted(classify(m) for m in (mij, mjk, mik)))] += 1
+        if bad:
             viol += 1
         else:
             ok += 1
     res['triples'] = len(trip)
+    res['triplist'] = trip
     res['cocycle'] = (ok, viol, undef)
-    res['cocycle_set'] = (setok, setviol)
+    res['tripshape'] = dict(sorted(tripshape.items(), key=repr))
+    res['trippts'] = dict(sorted(trippts.items()))
     return res
 
 
@@ -872,7 +922,10 @@ if not PROBE:
           "The labels are defined POINTWISE from one global record, so "
           "the SET-LEVEL correspondence `label_i(f) -> label_k(f)` "
           "composes by construction: the set-level cocycle is a "
-          "TAUTOLOGY and is reported as one.  The test with content is at "
+          "TAUTOLOGY, it is therefore NOT COMPUTED and NO COLUMN FOR IT "
+          "IS PRINTED (round-1 MINOR 1: the previous build printed a "
+          "column whose predicate was literally `x == x`).  The test "
+          "with content is at "
           "the FIBER-MAP level: each PAIR's transition is first condensed "
           "to one partial map sigma on wire words, determined by the "
           "pair's WHOLE overlap (which is larger than the triple "
@@ -880,16 +933,37 @@ if not PROBE:
           "sigma_ik = sigma_jk o sigma_ij on the triple's shared fiber "
           "points.  That can fail, and it is what is gated.")
     print(f"      {'substrate':13s} {'inst':5s} {'d':>2s} {'triples':>8s} "
-          f"{'fibre ok':>9s} {'VIOLATIONS':>11s} {'undefined':>10s}   "
-          f"(set-level: ok/violations)")
+          f"{'fibre ok':>9s} {'VIOLATIONS':>11s} {'undefined':>10s}")
     for nm in sorted(SUB):
         for tag in sorted(SUB[nm]['inst']):
             for d in DEPTHS:
                 r = MEAS[(nm, tag, d)]
                 o, vv, u = r['cocycle']
-                so, sv = r['cocycle_set']
                 print(f"      {nm:13s} {tag:5s} {d:2d} {r['triples']:8d} "
-                      f"{o:9d} {vv:11d} {u:10d}   ({so}/{sv})")
+                      f"{o:9d} {vv:11d} {u:10d}")
+    print("  WHAT THE TESTED TRIPLES ACTUALLY EXERCISE (round-1 MINOR 2 — "
+          "'all triples clean' must say WHICH relation was checked and on "
+          "HOW MANY fibre points):")
+    for nm in sorted(SUB):
+        for tag in sorted(SUB[nm]['inst']):
+            for d in DEPTHS:
+                r = MEAS[(nm, tag, d)]
+                if r['cocycle'][0] == 0:
+                    continue
+                print(f"      {nm:13s} {tag:5s} d={d}: tested triples by "
+                      f"CLASS MULTISET {r['tripshape']}; fibre points "
+                      f"tested per triple {r['trippts']} (total "
+                      f"{sum(k * v for k, v in r['trippts'].items())})")
+    _sh2 = MEAS[('DR(8,10,8)', 'REG', 2)]['tripshape']
+    print(f"      => on the substrate at REG d = 2 the cocycle test has "
+          f"ONE SHAPE: it verifies tau o tau = identity (as 1 + 1 = 0) on "
+          f"2 fibre points, "
+          f"{_sh2.get(('identity', 'tau', 'tau'), 0)} times, plus "
+          f"{_sh2.get(('identity', 'length-changing', 'length-changing'), 0)}"
+          f" triples of LENGTH-CHANGING maps, which C4 excludes from the "
+          f"group by name — so the cocycle's scope and the group's scope "
+          f"are not the same set.  There is no (identity, identity, "
+          f"identity) triple and no (tau, tau, tau) triple.")
     _viol = sum(r['cocycle'][1] for r in MEAS.values())
     _tested = sum(r['cocycle'][0] for r in MEAS.values())
     _untested = sorted(k for k, r in MEAS.items() if r['cocycle'][0] == 0
@@ -966,6 +1040,214 @@ def closure_monoid(seed, cap=CLOSURE_CAP, ops_budget=CLOSURE_OPS):
     return S, rounds, done, ops
 
 
+# ----------------------------------------------------------------------
+# THE EXTENSION CENSUS (round-1 MAJOR 1) — a partial bijection does not
+# name a group.  Every length-preserving transition here is defined on 2
+# of the 4 fibre points, so "the group" is reached by EXTENDING partial
+# maps to permutations of the fibre, and the extension need not be
+# unique.  This computes, exhaustively and without any preference: every
+# S_4 extension of every observed map; every subgroup of S_4 consistent
+# with ALL of them; and the ones MINIMAL BY INCLUSION.
+# ----------------------------------------------------------------------
+def _pt(x):
+    return "".join(str(b) for b in x)
+
+
+def _cyc(p, pts):
+    """Cycle notation of the index-permutation p over the fibre pts."""
+    seen, out = set(), []
+    for i in range(len(pts)):
+        if i in seen or p[i] == i:
+            continue
+        c, j = [i], p[i]
+        seen.add(i)
+        while j != i:
+            seen.add(j)
+            c.append(j)
+            j = p[j]
+        out.append("(" + " ".join(_pt(pts[x]) for x in c) + ")")
+    return "".join(out) if out else "e"
+
+
+def _comp4(a, b):
+    """a o b, as index permutations."""
+    return tuple(a[b[i]] for i in range(len(a)))
+
+
+def _order(p):
+    e, q, k = tuple(range(len(p))), p, 1
+    while q != e:
+        q, k = _comp4(q, p), k + 1
+    return k
+
+
+def extension_census(r):
+    """All S_4 extensions of the observed length-preserving maps, all
+    consistent subgroups, and the minimal-by-inclusion ones."""
+    ms = sorted((m for m in r['maps']
+                 if classify(m) not in ('length-changing', 'other')),
+                key=repr)
+    pts = sorted({z for m in ms for xy in m for z in xy}, key=repr)
+    if len(pts) != 4 or not ms:
+        return None
+    idx = {p: i for i, p in enumerate(pts)}
+    E4 = tuple(range(4))
+    P4 = [tuple(q) for q in permutations(range(4))]
+    EXT = {m: frozenset(p for p in P4
+                        if all(p[idx[x]] == idx[y] for x, y in m))
+           for m in ms}
+    subs = set()
+    for a in P4:
+        for b in P4:
+            S = {E4, a, b}
+            ch = True
+            while ch:
+                ch = False
+                for x in sorted(S):
+                    for y in sorted(S):
+                        z = _comp4(x, y)
+                        if z not in S:
+                            S.add(z)
+                            ch = True
+            subs.add(frozenset(S))
+    cons = [H for H in subs if all(EXT[m] & H for m in ms)]
+    minimal = sorted((H for H in cons if not any(K < H for K in cons)),
+                     key=lambda H: (len(H), sorted(H)))
+    tau_p = (tuple(idx[flip1(p)] for p in pts)
+             if all(flip1(p) in idx for p in pts) else None)
+    TAUG = frozenset({E4, tau_p}) if tau_p else None
+    uniq_tau = sum(k for m, k in r['maps'].items()
+                   if m in EXT and TAUG and is_named(classify(m), 'tau')
+                   and EXT[m] <= TAUG)
+    tau_pairs = sum(k for m, k in r['maps'].items()
+                    if m in EXT and is_named(classify(m), 'tau'))
+    return {'pts': pts, 'maps': ms, 'EXT': EXT, 'nsub': len(subs),
+            'ncons': len(cons), 'minimal': minimal, 'TAUG': TAUG,
+            'uniq_tau': uniq_tau, 'tau_pairs': tau_pairs, 'idx': idx,
+            'E4': E4}
+
+
+def z4_cocycle(r, X, H):
+    """The Z/4 reading, tested on the same triples the fibre-map cocycle
+    uses: lift each map to its UNIQUE element of the cyclic group H and
+    check v_ik = v_ij + v_jk (mod 4).  If the Z/4 reading also passes,
+    the cocycle does not discriminate between the two candidate names."""
+    gen = min((p for p in H if _order(p) == 4), key=repr)
+    pw, q = {}, X['E4']
+    for k in range(4):
+        pw[q] = k
+        q = _comp4(gen, q)
+    val, unlift = {}, 0
+    for (a, c), m in sorted(r['pairmap'].items(), key=repr):
+        if m not in X['EXT']:
+            continue
+        cand = X['EXT'][m] & H
+        if len(cand) != 1:
+            unlift += 1
+            continue
+        val[(a, c)] = pw[next(iter(cand))]
+    tested = viol = 0
+    for (i, j, k) in r['triplist']:
+        if all(p in val for p in ((i, j), (j, k), (i, k))):
+            tested += 1
+            if (val[(i, j)] + val[(j, k)]) % 4 != val[(i, k)]:
+                viol += 1
+    return tested, viol, unlift, len(val), _cyc(gen, X['pts'])
+
+
+# ----------------------------------------------------------------------
+# THE Z/2 COCHAIN AND ITS COBOUNDARY QUESTION (round-1 BLOCKER 1) — see
+# the C7 section below for what this is for.  Kept beside the group
+# machinery because the two share the classification.
+# ----------------------------------------------------------------------
+def _safe(fn):
+    """A named fibre involution, extended by the identity to words it
+    does not act on (a word whose first letter is not a port bit).  Still
+    an involution on the whole label alphabet."""
+    def h(w):
+        v = fn(w)
+        return w if v is None else v
+    return h
+
+
+def cochain(nm, tag, d):
+    """(a) the Z/2 value of every length-preserving CLASSIFIED pair
+    (identity -> 0, non-identity -> 1); (b) a per-chart 0-cochain eps by
+    DFS over the labelled overlap graph, with the number of edges on
+    which g != d(eps) — the OBSTRUCTION count; (c) the verification: the
+    transition census RE-RUN with the eps relabelling applied; (d) the
+    Cech form g_ik = g_ij + g_jk on triples."""
+    r = MEAS[(nm, tag, d)]
+    g = {}
+    for (a, c) in sorted(r['pairmap'], key=repr):
+        cls = classify(r['pairmap'][(a, c)])
+        if cls in ('length-changing', 'other'):
+            continue
+        g[(a, c)] = 0 if is_named(cls, 'identity') else 1
+    # the single named involution the non-identity maps restrict to
+    nonid = [r['pairmap'][k] for k in g if g[k] == 1]
+    gen_nm, gen_fn = None, None
+    for cand, fn in (('tau', flip1), ('sigma', flipall)):
+        if nonid and all(is_named(classify(m), cand) for m in nonid):
+            gen_nm, gen_fn = cand, _safe(fn)
+            break
+    if not nonid:
+        gen_nm, gen_fn = 'identity (no non-identity value to remove)', \
+            (lambda w: w)
+    adjg = defaultdict(list)
+    for (a, c), val in sorted(g.items(), key=repr):
+        adjg[a].append((c, val))
+        adjg[c].append((a, val))
+    eps, comps, sizes = {}, 0, []
+    for s0 in sorted(adjg):
+        if s0 in eps:
+            continue
+        comps += 1
+        eps[s0] = 0
+        stack, seen = [s0], 1
+        while stack:
+            x = stack.pop()
+            for (y, val) in adjg[x]:
+                if y not in eps:
+                    eps[y] = eps[x] ^ val
+                    seen += 1
+                    stack.append(y)
+        sizes.append(seen)
+    incons = sum(1 for (a, c), val in sorted(g.items(), key=repr)
+                 if eps[a] ^ eps[c] != val)
+    # (c) VERIFY: re-run the census with the relabelling applied
+    Wd = r['Wd']
+
+    def L(e, f):
+        s = label(Wd[e][f], 'ROLE')
+        return frozenset(gen_fn(w) for w in s) if eps.get(e, 0) else s
+
+    cross, newid, surv = Counter(), 0, 0
+    for (a, c, s) in r['pairlist']:
+        same = all(L(a, f) == L(c, f) for f in sorted(s))
+        newid += int(same)
+        m = r['pairmap'].get((a, c))
+        old = classify(m) if m is not None else 'no-correspondence'
+        cross[(old, 'identity' if same else 'NON-identity')] += 1
+        if (a, c) in g and not same:
+            surv += 1
+    # (d) the Cech form on triples
+    ct = cv = 0
+    for (i, j, k) in r['triplist']:
+        if all(p in g for p in ((i, j), (j, k), (i, k))):
+            ct += 1
+            if g[(i, k)] != (g[(i, j)] ^ g[(j, k)]):
+                cv += 1
+    return {'gen': gen_nm, 'labelled': len(g), 'charts': len(adjg),
+            'comps': comps, 'sizes': dict(sorted(Counter(sizes).items())),
+            'incons': incons,
+            'eps0': sum(1 for v in eps.values() if v == 0),
+            'eps1': sum(1 for v in eps.values() if v == 1),
+            'newid': newid, 'surv': surv, 'pairs': r['pairs'],
+            'cross': dict(sorted(cross.items(), key=repr)),
+            'cech_t': ct, 'cech_v': cv}
+
+
 if not PROBE:
     print("\n[C4 THE GROUP CENSUS — the transition maps, and their "
           "CLOSURE under composition where defined (the pin: 'the group "
@@ -982,13 +1264,20 @@ if not PROBE:
                 S, rounds, done, ops = closure_monoid(seed)
                 Se, re_, de, oe = closure_monoid(r['eqlen']) if r['eqlen'] \
                     else (set(), 0, True, 0)
+                # round-1 MINOR 4: `all(...)` over an EMPTY length-
+                # preserving census is True VACUOUSLY.  The vacuity is
+                # carried in the tuple and printed in the line, so no cell
+                # with nothing in it prints an unqualified True.
+                vac = (len(Se) == 0)
                 eq_pure = all(is_named(classify(m), 'identity', 'tau')
                               for m in Se)
                 eq_sig = all(is_named(classify(m), 'identity', 'sigma')
                              for m in Se)
+                nonid_eq = [m for m in Se
+                            if not is_named(classify(m), 'identity')]
                 GROUPS[(nm, tag, d)] = (len(seed), len(S), rounds, done, ops,
                                         len(r['eqlen']), len(Se), de, eq_pure,
-                                        eq_sig)
+                                        eq_sig, vac, len(nonid_eq))
                 print(f"      {nm:13s} {tag:5s} d={d}: pairs with a "
                       f"single-valued transition = {sum(r['maps'].values())} "
                       f"of {r['pairs']}; DISTINCT maps = {len(seed)} "
@@ -1001,6 +1290,12 @@ if not PROBE:
                       + ("CLOSED" if de else "CAP-BOUND")
                       + f", closure inside <tau> = {eq_pure}, inside "
                       f"<sigma> = {eq_sig}"
+                      + (" **BOTH VACUOUSLY TRUE: this cell has ZERO "
+                         "length-preserving maps, so `all(...)` ranges over "
+                         "the empty set and neither flag is evidence**"
+                         if vac else
+                         f" (non-identity length-preserving closure "
+                         f"elements = {len(nonid_eq)})")
                       + f"; pairs by class {r['kinds']}  "
                       f"[{time.time() - _tc:.1f}s]")
                 if tag == 'REG' or (nm in ('M21', 'M31') and d == 2):
@@ -1025,52 +1320,60 @@ if not PROBE:
     _ctlbad = {k: len(v['badmaps']) for k, v in sorted(MEAS.items(), key=repr)
                if k[1] in ('REG', 'REGA')}
     _ctlG = {(nm, d): (MEAS[(nm, 'REG', d)]['kinds'],
-                       GROUPS.get((nm, 'REG', d), (0,) * 10)[8:10])
+                       GROUPS.get((nm, 'REG', d), (0,) * 12)[8:10],
+                       GROUPS.get((nm, 'REG', d), (0,) * 12)[10])
              for nm in ('BRICK(8,14)', 'DR(8,10,0)') for d in DEPTHS
              if (nm, 'REG', d) in GROUPS}
-    _ctl_sigma = all(g[1][1] for g in _ctlG.values())
+    # round-1 MINOR 4: a control cell whose length-preserving census is
+    # EMPTY says nothing; it must not be counted as sigma evidence.  Only
+    # NON-VACUOUS cells enter the flag, and the vacuous ones are listed.
+    _ctl_sig_cells = {k: g[1][1] for k, g in sorted(_ctlG.items(), key=repr)
+                      if not g[2]}
+    _ctl_vac_cells = sorted((k for k, g in _ctlG.items() if g[2]), key=repr)
+    _ctl_sigma = bool(_ctl_sig_cells) and all(_ctl_sig_cells.values())
+    # round-1 NIT 4: the gate tests the CLASSIFICATION, not the presence
+    # of the artefact it excludes.  A substrate with no height-skipping
+    # P-edges (hence no length-changing maps) must be able to PASS.
     _grp_ok = (len(_sub2['badmaps']) == 0
                and _sub2['kinds'].get('tau', 0) > 0
                and _sub2['kinds'].get('identity', 0) > 0
-               and _sub2['kinds'].get('length-changing', 0) > 0
+               and len(_sub2['lenmaps']) == _sub2['kindmaps'].get(
+                   'length-changing', 0)
                and _sub_closed and _eq_closed and _eq_pure and _G[6] >= 2
                and _ctl_sigma and not _G[9])
-    check("C4 THE GROUP, BY CLOSURE — AND THE PART THAT IS NOT A GROUP, "
-          "NAMED.  On the substrate at the canonical labeling and d = 2 "
-          "the single-valued transitions fall into exactly THREE kinds, "
-          "and the third is reported against the unit's interest.  "
-          "(a) IDENTITY.  (b) TAU, the first-letter wire transposition "
-          "(b1, b2) -> (1 - b1, b2): 'the direction chart e leaves by the "
-          "wire it SENT on, chart e' leaves by the wire it RECEIVED on'.  "
-          "No FOURTH length-preserving map occurs — the 'other' class is "
-          "EMPTY on the substrate — and the four length-preserving maps "
-          "are CLOSED under composition, with tau o tau = identity where "
-          "defined, so the group they generate is Z/2 = <tau>, a "
-          "fixed-point-free involution of the 4-point wire fibre "
-          "{0,1}^2, i.e. the double transposition (00 10)(01 11) in S_4.  "
-          "(c) LENGTH-CHANGING maps, which are NOT fibre permutations and "
-          "belong to NO permutation group: they exist because P has "
-          "edges that skip a height (C0b counts 7 such edges on the "
-          "substrate), so one chart reaches a shared direction in ONE "
-          "P-step where the other needs two.  These are excluded from "
-          "the group by name, not by silence, and their pair count is "
-          "printed.  TWO FURTHER LIMITS: the non-identity maps are "
-          "PARTIAL (2 of the 4 fibre points), so the licensed sentence "
-          "is 'every length-preserving transition is a restriction of an "
-          "element of <tau>, and <tau> is the smallest group containing "
-          "them' — not that any single overlap exhibits a total fibre "
-          "permutation.  AND THE CONTROLS CARRY A DIFFERENT GROUP, which "
-          "is the sharpest thing this gate finds: on D60's uncoupled "
-          "brick and on the uncoupled double ring EVERY length-preserving "
-          "transition is a restriction of SIGMA, the ALL-letter flip "
-          "(b1, b2) -> (1 - b1, 1 - b2) — the OTHER fixed-point-free "
-          "involution of {0,1}^2, the double transposition "
-          "(00 11)(01 10) — and none is a restriction of tau, while on "
-          "the substrate none is a restriction of sigma.  Both groups are "
-          "Z/2 and they are DIFFERENT subgroups of S_4, so 'the structure "
-          "group is Z/2 = <tau>' is a statement about THIS substrate at "
-          "this labeling and this depth, and what the coupling changed is "
-          "WHICH involution the atlas carries",
+    check("C4 THE MAPS, BY CLOSURE — AND THE NAME OF THE GROUP IS NOT "
+          "DETERMINED BY THE DATA (round-1 MAJOR 1).  On the substrate at "
+          "the canonical labeling and d = 2 the single-valued transitions "
+          "fall into exactly THREE kinds.  (a) IDENTITY.  (b) TAU, the "
+          "first-letter wire transposition (b1, b2) -> (1 - b1, b2): 'the "
+          "direction chart e leaves by the wire it SENT on, chart e' "
+          "leaves by the wire it RECEIVED on'.  No FOURTH length-"
+          "preserving map occurs — the 'other' class is EMPTY on the "
+          "substrate — and the length-preserving maps are CLOSED under "
+          "composition, every closure element a restriction of the "
+          "identity or of tau.  (c) LENGTH-CHANGING maps, which are NOT "
+          "fibre permutations and belong to NO permutation group: they "
+          "exist because P has edges that skip a height (C0b counts them), "
+          "so one chart reaches a shared direction in ONE P-step where the "
+          "other needs two.  They are excluded from the group by name, not "
+          "by silence, and counted.  **WHAT THIS DOES NOT ESTABLISH: A "
+          "GROUP NAME.**  Every non-identity transition here is a PARTIAL "
+          "map on 2 of the 4 fibre points, so a group is reached only by "
+          "EXTENDING partial bijections to S_4, and the extension is not "
+          "unique — C4b computes the extensions exhaustively and finds TWO "
+          "incomparable minimal-by-inclusion consistent subgroups, <tau> "
+          "and a Z/4.  '<tau> is the smallest group containing them' is "
+          "true by ORDER and false by INCLUSION; the convention-robust "
+          "sentence is 'non-identity partial transitions exist and are "
+          "mutually consistent', not 'the structure group is Z/2'.  The "
+          "controls' length-preserving transitions are restrictions of "
+          "SIGMA, the all-letter flip (b1, b2) -> (1 - b1, 1 - b2), and "
+          "none of tau, while on the substrate none is a restriction of "
+          "sigma — but see C4c: that contrast is width-confounded, holds "
+          "at REG only, and the controls' sigma overlaps form a PERFECT "
+          "MATCHING with nothing to compose, so 'the controls close to "
+          "<sigma>' would overclaim.  What is measured is: each control "
+          "transition is a sigma-RESTRICTION, pairwise",
           _grp_ok,
           f"substrate d=2 REG: distinct maps = {len(_sub2['maps'])} by "
           f"class {_sub2['kindmaps']}, pairs by class {_sub2['kinds']}; "
@@ -1081,9 +1384,226 @@ if not PROBE:
           f"cap-bound): all-maps {_sub_closed}, length-preserving "
           f"{_eq_closed}; substrate closure inside <sigma> = {_G[9]} "
           f"(so <tau> and <sigma> are distinguished, not conflated); "
-          f"CONTROLS (REG): pairs-by-class and (inside-<tau>, "
-          f"inside-<sigma>) = {_ctlG}; 'other'-class maps per grammar "
-          f"cell = {_ctlbad}")
+          f"CONTROLS (REG): pairs-by-class, (inside-<tau>, inside-<sigma>) "
+          f"and VACUOUS? = {_ctlG}; control cells entering the sigma flag "
+          f"(non-vacuous only) = {_ctl_sig_cells}; control cells EXCLUDED "
+          f"as vacuous (zero length-preserving maps) = {_ctl_vac_cells}; "
+          f"'other'-class maps per grammar cell = {_ctlbad}")
+
+# ----------------------------------------------------------------------
+# C4b — CAN THE GROUP BE NAMED?  (round-1 MAJOR 1)
+# ----------------------------------------------------------------------
+if not PROBE:
+    print("\n[C4b THE NAME OF THE GROUP — exhaustive extension census.  A "
+          "2-point partial bijection is a restriction of MANY permutations; "
+          "'the group generated' presupposes a choice of extension, so "
+          "every extension of every observed map, and every subgroup of "
+          "S_4 consistent with all of them, is enumerated here]")
+    _XC = {}
+    for nm in sorted(SUB):
+        for tag in ('REG', 'REGA'):
+            if tag not in SUB[nm]['inst']:
+                continue
+            for d in DEPTHS:
+                X = extension_census(MEAS[(nm, tag, d)])
+                if X is None:
+                    continue
+                _XC[(nm, tag, d)] = X
+                print(f"      {nm:13s} {tag:5s} d={d}: fibre "
+                      f"{[_pt(p) for p in X['pts']]}; distinct "
+                      f"length-preserving maps = {len(X['maps'])}; "
+                      f"subgroups of S_4 enumerated = {X['nsub']}, "
+                      f"CONSISTENT with every observed map = {X['ncons']}, "
+                      f"MINIMAL BY INCLUSION = {len(X['minimal'])}")
+                for H in X['minimal']:
+                    print(f"         minimal, order {len(H):2d}: "
+                          + ", ".join(_cyc(p, X['pts']) for p in sorted(H))
+                          + ("   <== <tau>" if H == X['TAUG'] else ""))
+                for m in X['maps'][:6]:
+                    print(f"         [{classify(m):15s}] "
+                          + ", ".join(f"{_pt(x)}->{_pt(y)}" for x, y in m)
+                          + "   extensions in S_4: "
+                          + ", ".join(_cyc(p, X['pts'])
+                                      for p in sorted(X['EXT'][m])))
+    _X2 = _XC[('DR(8,10,8)', 'REG', 2)]
+    _Z4 = [H for H in _X2['minimal']
+           if len(H) == 4 and any(_order(p) == 4 for p in H)]
+    _z4res = None
+    if _Z4:
+        _z4res = z4_cocycle(MEAS[('DR(8,10,8)', 'REG', 2)], _X2, _Z4[0])
+        print(f"      THE Z/4 READING, TESTED ON THE SAME TRIPLES: lift "
+              f"each map to its unique element of the cyclic group "
+              f"generated by {_z4res[4]} — {_z4res[3]} pairs lift, "
+              f"{_z4res[2]} do not; triples with all three pairs lifted = "
+              f"{_z4res[0]}, VIOLATIONS of v_ik = v_ij + v_jk (mod 4) = "
+              f"{_z4res[1]}.  The cocycle does not discriminate between "
+              f"the two candidate names either.")
+    _uniq_ok = (_X2['uniq_tau'] == 0)
+    _name_ok = all(all(X['EXT'][m] & H for m in X['maps'])
+                   for X in _XC.values() for H in X['minimal']) \
+        and all(not any(K < H for K in X['minimal'])
+                for X in _XC.values() for H in X['minimal']) \
+        and len(_X2['minimal']) >= 1
+    check("C4b THE DATA DO NOT NAME THE GROUP (round-1 MAJOR 1).  Every "
+          "non-identity length-preserving transition on the substrate is a "
+          "2-point partial map, and every one of them is EQUALLY a "
+          "restriction of tau (the double transposition) and of an "
+          "order-4 element: the number of transitions whose S_4 "
+          "extensions all lie inside <tau> is ZERO.  Exhaustively, TWO "
+          "subgroups of S_4 are minimal by inclusion among those "
+          "consistent with every observed map, and they are INCOMPARABLE: "
+          "<tau> = Z/2 and a Z/4.  '<tau> is the smallest group containing "
+          "them' is true by ORDER only.  The Z/4 reading passes the "
+          "cocycle on the same triples, so no test in this unit "
+          "discriminates.  WHAT SURVIVES THE CONVENTION: 'non-identity "
+          "partial transitions exist and are mutually consistent'.  WHAT "
+          "DOES NOT: 'the structure group is Z/2 = <tau>'.  This gate "
+          "verifies the enumeration itself (every reported minimal "
+          "subgroup really is consistent with every observed map, and "
+          "really is minimal) and reports the count",
+          _name_ok and _uniq_ok,
+          f"substrate d=2 REG: consistent subgroups = {_X2['ncons']}, "
+          f"minimal by inclusion = {len(_X2['minimal'])} of orders "
+          f"{[len(H) for H in _X2['minimal']]}; tau-classified pairs = "
+          f"{_X2['tau_pairs']}, of which UNIQUELY-tau (no other S_4 "
+          f"extension) = {_X2['uniq_tau']}; Z/4 cocycle "
+          f"(triples, violations, unliftable, lifted pairs) = "
+          f"{_z4res[:4] if _z4res else None}; cells enumerated = "
+          f"{sorted(_XC, key=repr)}")
+
+# ----------------------------------------------------------------------
+# C4c — WHAT THE SPLIT AND THE tau/sigma CONTRAST ACTUALLY ARE
+# (round-1 MAJOR 2, MAJOR 3, MAJOR 4, MINOR 3)
+# ----------------------------------------------------------------------
+if not PROBE:
+    print("\n[C4c THE CONFOUNDS, MEASURED — what the identity fraction is, "
+          "and what the substrate/control involution contrast rests on]")
+    print("  (i) THE 57/115 SPLIT IS THE CHART-DUPLICATION SPLIT.  "
+          "Cross-tabulating 'do the two charts have the IDENTICAL "
+          "direction set?' against 'is the transition the identity?':")
+    _dup = {}
+    for nm in sorted(SUB):
+        if SUB[nm]['kind'] != 'grammar':
+            continue
+        for d in DEPTHS:
+            r = MEAS[(nm, 'REG', d)]
+            D = r['D']
+            cnt = Counter((D[a] == D[c],
+                           all(label(r['Wd'][a][f], 'ROLE')
+                               == label(r['Wd'][c][f], 'ROLE')
+                               for f in sorted(s)))
+                          for (a, c, s) in r['pairlist'])
+            _dup[(nm, d)] = cnt
+            bic = set(cnt) <= {(True, True), (False, False)}
+            print(f"      {nm:13s} REG   d={d}: (identical direction set, "
+                  f"identity transition) = {dict(sorted(cnt.items()))}"
+                  + ("   <== NOT a biconditional" if not bic else
+                     ("   <== EXACT BICONDITIONAL, both cells occupied"
+                      if len(cnt) == 2 else
+                      "   <== biconditional but ONE-SIDED: this cell has no "
+                      "pairs of charts with identical direction sets at "
+                      "all, so only the (False, False) half is exercised")))
+    print("      => on the substrate at d = 2 the identity fraction is "
+          "exactly the set of DUPLICATE charts (distinct base events "
+          "carrying the whole same d = 2 chart); the controls have NO such "
+          "pairs, which is the whole of their '0 identity'.  It is not a "
+          "theorem: at d = 3 the biconditional fails in both directions.")
+    print("  (ii) THE tau/sigma CONTRAST IS WIDTH-CONFOUNDED.  Substrate "
+          "pairs by (class, chart widths):")
+    _r2 = MEAS[('DR(8,10,8)', 'REG', 2)]
+    _wid = Counter()
+    for (a, c, s) in _r2['pairlist']:
+        m = _r2['pairmap'].get((a, c))
+        cls = classify(m) if m is not None else 'no-correspondence'
+        _wid[(cls, (len(_r2['D'][a]), len(_r2['D'][c])))] += 1
+    print(f"      {dict(sorted(_wid.items(), key=repr))}")
+    print(f"      the controls have {MEAS[('BRICK(8,14)', 'REG', 2)]['wide']}"
+          f" and {MEAS[('DR(8,10,0)', 'REG', 2)]['wide']} wide charts at "
+          f"d = 2, so every control sigma pair is NARROW: the comparison "
+          f"is tau-on-(4,4) against sigma-on-(2,2), and no matched "
+          f"comparison exists in this census.")
+    print("  (iii) COVERAGE (round-1 MINOR 3): the fraction of overlapping "
+          "pairs carrying a single-valued transition at all — every "
+          "universal statement about a cell ranges over THIS set only:")
+    for nm in sorted(SUB):
+        for tag in ('REG', 'REGA'):
+            if tag not in SUB[nm]['inst']:
+                continue
+            for d in DEPTHS:
+                r = MEAS[(nm, tag, d)]
+                sv = sum(r['maps'].values())
+                print(f"      {nm:13s} {tag:5s} d={d}: {sv} of {r['pairs']} "
+                      f"pairs ({100.0 * sv / r['pairs']:.0f}%); the rest by "
+                      f"status {r['status']}")
+    print("  (iv) THE CONTROLS' sigma OVERLAP GRAPH HAS NOTHING TO COMPOSE. "
+          " Charts / labelled overlaps / components / component sizes:")
+    _CO = {}
+    for nm in sorted(SUB):
+        if SUB[nm]['kind'] != 'grammar':
+            continue
+        for tag in ('REG', 'REGA'):
+            for d in DEPTHS:
+                co = cochain(nm, tag, d)
+                _CO[(nm, tag, d)] = co
+                print(f"      {nm:13s} {tag:5s} d={d}: {co['charts']:3d} "
+                      f"charts, {co['labelled']:3d} labelled overlaps, "
+                      f"{co['comps']:3d} components, sizes {co['sizes']}"
+                      + ("   <== a PERFECT MATCHING: no two labelled "
+                         "overlaps share a chart, so no composition, no "
+                         "triple and no closure content exists here"
+                         if co['comps'] and set(co['sizes']) == {2} else ""))
+    _match = all(set(_CO[(nm, 'REG', 2)]['sizes']) == {2}
+                 for nm in ('BRICK(8,14)', 'DR(8,10,0)'))
+    _conv = {(nm, tag): MEAS[(nm, tag, 2)]['kinds']
+             for nm in ('DR(8,10,8)', 'BRICK(8,14)', 'DR(8,10,0)')
+             for tag in ('REG', 'REGA', 'COV')}
+    print("  (v) AND IT IS CONVENTION-BOUND.  Pairs by class at d = 2 "
+          "under each of this unit's three instruments:")
+    for k in sorted(_conv, key=repr):
+        print(f"      {k[0]:13s} {k[1]:5s}: {_conv[k]}")
+    _ctl_sig_reg = all(is_named(k, 'sigma') or k in ('length-changing',)
+                       for nm in ('BRICK(8,14)', 'DR(8,10,0)')
+                       for k in MEAS[(nm, 'REG', 2)]['kinds'])
+    _ctl_sig_rega = all(is_named(k, 'sigma') or k in ('length-changing',)
+                        for nm in ('BRICK(8,14)', 'DR(8,10,0)')
+                        for k in MEAS[(nm, 'REGA', 2)]['kinds'])
+    _ctl_sig_cov = all(is_named(k, 'sigma') or k in ('length-changing',)
+                       for nm in ('BRICK(8,14)', 'DR(8,10,0)')
+                       for k in MEAS[(nm, 'COV', 2)]['kinds'])
+    check("C4c THE SUBSTRATE/CONTROL INVOLUTION CONTRAST IS A "
+          "REG-CONVENTION OBSERVATION, NOT A STRUCTURAL FACT (round-1 "
+          "MAJORs 2/3/4).  Three things are measured here and all three "
+          "cut against the previous reading.  (1) The identity fraction is "
+          "the DUPLICATE-CHART fraction: on the substrate at d = 2, two "
+          "charts transition by the identity IF AND ONLY IF they have the "
+          "identical direction set — an exact biconditional both ways over "
+          "all 172 pairs — and the controls' 'zero identity' is exactly "
+          "their having no duplicate charts.  So the 57 are not 'a "
+          "trivializable part of the atlas'; they are distinct base events "
+          "sharing a whole chart.  (2) The tau/sigma comparison is NOT "
+          "MATCHED: every tau pair is a (4,4) wide-wide pair and the "
+          "controls have no wide charts at d = 2 at all, so it compares "
+          "tau-on-maximal-width against sigma-on-narrow; and the controls' "
+          "universal statements range over 19 of 58 and 22 of 68 pairs.  "
+          "(3) The controls' sigma overlap graph is a PERFECT MATCHING — "
+          "every component has exactly 2 charts — so there is no "
+          "composition, no triple and no closure behind '<sigma>': what is "
+          "measured is that each control transition is a sigma-"
+          "RESTRICTION, pairwise.  And the contrast holds at the REG "
+          "convention ONLY: at REGA and at the register-free COV surrogate "
+          "the controls carry an 'other' class and no group can be named "
+          "for them.  'The coupling changed which involution the atlas "
+          "carries' is therefore WITHDRAWN as a structural claim and kept "
+          "only as a labelled REG-convention observation",
+          _match and _ctl_sig_reg and not _ctl_sig_rega
+          and not _ctl_sig_cov,
+          f"duplication cross-tabs = {dict(sorted(_dup.items(), key=repr))}; "
+          f"substrate pairs by (class, widths) = "
+          f"{dict(sorted(_wid.items(), key=repr))}; controls' labelled "
+          f"overlap graphs at REG d=2 = "
+          f"{ {nm: (_CO[(nm, 'REG', 2)]['charts'], _CO[(nm, 'REG', 2)]['labelled'], _CO[(nm, 'REG', 2)]['comps'], _CO[(nm, 'REG', 2)]['sizes']) for nm in ('BRICK(8,14)', 'DR(8,10,0)')} }"
+          f"; controls purely-sigma at REG = {_ctl_sig_reg}, at REGA = "
+          f"{_ctl_sig_rega}, at COV = {_ctl_sig_cov}")
 
 # ----------------------------------------------------------------------
 # THE PRE-REGISTERED LEAN (pin §4), checked explicitly
@@ -1105,12 +1625,23 @@ if not PROBE:
     bycpl = Counter()
     bypar = Counter()
     byh = Counter()
+    bycls = Counter()
+    bywide = Counter()
+    _cpl_pairs, _nocorr_pairs = set(), set()
     for (a, c, s) in _r['pairlist']:
         idt = all(label(_r['Wd'][a][f], 'ROLE')
                   == label(_r['Wd'][c][f], 'ROLE') for f in sorted(s))
+        m = _r['pairmap'].get((a, c))
+        cls = classify(m) if m is not None else 'no-correspondence'
         bycpl[(idt, coupled(a) + coupled(c))] += 1
         bypar[(idt, hh[a] % 2)] += 1
         byh[(hh[a], idt)] += 1
+        bycls[(hh[a] % 2, cls)] += 1
+        bywide[(hh[a] % 2, len(_r['D'][a]) >= 4 and len(_r['D'][c]) >= 4)] += 1
+        if coupled(a) + coupled(c) == 2:
+            _cpl_pairs.add((a, c))
+        if m is None:
+            _nocorr_pairs.add((a, c))
     print("    by number of INTER-RING (coupled) base events in the pair "
           "(identity?, #coupled bases): " + str(dict(sorted(bycpl.items()))))
     print("    by HEIGHT PARITY of the base layer (identity?, h mod 2): "
@@ -1118,25 +1649,48 @@ if not PROBE:
     print("    per height layer (h: identity / non-identity): "
           + ", ".join(f"{k}: {byh.get((k, True), 0)}/{byh.get((k, False), 0)}"
                       for k in sorted({x[0] for x in byh})))
+    print("    WHICH PAIRS EXIST, BY PARITY (round-1 MAJOR 5 — the census "
+          "above alternates because the PAIR POPULATION alternates, not "
+          "because a transition value alternates).  (h mod 2, class) = "
+          + str(dict(sorted(bycls.items(), key=repr))))
+    print("    (h mod 2, both charts wide) = "
+          + str(dict(sorted(bywide.items(), key=repr))))
+    print(f"    AND THE TWO 27s ARE THE SAME 27 PAIRS: the both-coupled "
+          f"pairs ({len(_cpl_pairs)}) and the pairs carrying NO "
+          f"single-valued correspondence ({len(_nocorr_pairs)}) are the "
+          f"identical set = {_cpl_pairs == _nocorr_pairs}.  So at the "
+          f"coupled wires there is no transition VALUE to be non-identity: "
+          f"the lean is UNTESTED there at the fibre-map level, not refuted.")
     _par_all_odd = all(k[1] == 1 for k in bypar if k[0] is False)
     _cpl_both_id = all(k[0] is True for k in bycpl if k[1] == 2)
-    check("THE LEAN LANDS SPLIT, AND BOTH HALVES ARE REPORTED.  CONFIRMED "
-          "— the transposition is real and it is a PARITY effect: every "
-          "single non-identity pair on the substrate sits in an ODD "
-          "height layer, and the layers alternate identity-only / "
-          "mixed with height parity, exactly as the pin's 'even vs odd "
-          "neighbourhoods are not congruent' predicted.  REFUTED — it is "
-          "NOT 'at coupled wires': every pair BOTH of whose base events "
-          "is an inter-ring (coupled) delivery is IDENTITY, the "
-          "non-identity is carried overwhelmingly by pairs with NO "
-          "coupled base, and the only coupled bases appearing in "
-          "non-identity pairs are the MIXED pairs (one coupled, one not).  "
-          "The wire transposition is a property of the brick circuit's "
-          "own direction alternation, which the coupling stitches "
-          "together, not of the coupling wires themselves",
-          _par_all_odd and _cpl_both_id,
+    _same27 = (_cpl_pairs == _nocorr_pairs and len(_cpl_pairs) > 0)
+    check("THE LEAN, RESTATED AS WHAT IT MEASURES (round-1 MAJOR 5).  "
+          "HALF ONE, the parity half, is CONFIRMED BUT IT IS A FACT ABOUT "
+          "WHICH PAIRS EXIST: every non-identity pair on the substrate "
+          "sits in an ODD height layer — because ALL 137 wide-wide pairs "
+          "are odd and the even layers contain almost nothing but the "
+          "both-coupled pairs.  The alternating per-layer census "
+          "(4 identity / 16 non-identity, then 4 / 0) is the alternation "
+          "of the PAIR POPULATION, established by the blueprint's "
+          "placement of the inter-ring deliveries before any labeling is "
+          "chosen; it is not an alternation of transition values.  HALF "
+          "TWO, the coupled-wire half, is UNTESTED, NOT REFUTED: the "
+          "pairs both of whose bases are inter-ring deliveries are "
+          "EXACTLY the pairs that carry no single-valued correspondence at "
+          "all (the same 27 pairs, gated as a set identity here), so at "
+          "the coupled wires there is no fibre map to be non-identity.  "
+          "The previous build reported those same 27 pairs twice — once as "
+          "a refutation ('27 of 27 are IDENTITY') and once as a limitation "
+          "('27 carry no correspondence') — without disclosing they are "
+          "one set.  They are.  What survives: the transposition is "
+          "carried by the brick circuit's own direction alternation on "
+          "wide charts, and the coupling's own wires are silent",
+          _par_all_odd and _cpl_both_id and _same27,
           f"non-identity pairs all at odd height = {_par_all_odd}; every "
-          f"both-bases-coupled pair identity = {_cpl_both_id}; census "
+          f"both-bases-coupled pair identity-by-label = {_cpl_both_id}; "
+          f"both-coupled set == no-correspondence set = {_same27} "
+          f"({len(_cpl_pairs)} pairs); pairs by (parity, class) = "
+          f"{dict(sorted(bycls.items(), key=repr))}; census "
           f"{dict(sorted(bycpl.items()))}")
 
 # ======================================================================
@@ -1181,20 +1735,25 @@ if not PROBE:
           "non-identity at 244/247, 382/383, 366/370, 516/518 under the "
           "register-free surrogate.  So a non-identity atlas is the "
           "GENERIC case here, not a property D63's coupling bought.  What "
-          "the wide crystal has that nothing else does is (i) a "
-          "substantial IDENTITY fraction — 57 of 172 pairs, the only "
-          "substrate in this census with a trivializable part — and (ii) "
-          "the WIDE SUBATLAS: pairs of 4-direction charts, which exist "
-          "at d = 2 ONLY on the coupled substrate (brick 0, uncoupled "
-          "double ring 0, substrate 137), so only there is a transition a "
-          "transition between charts of the delivery grammar's MAXIMAL "
-          "width; and (iii) a DIFFERENT STRUCTURE GROUP from the "
-          "controls' — C4's closure gives the substrate <tau> (the "
-          "first-letter flip) and both uncoupled controls <sigma> (the "
-          "all-letter flip), two distinct Z/2 subgroups of S_4.  So the "
-          "coupling did not create a transition structure; it CHANGED "
-          "WHICH ONE the atlas carries, and it added the width the "
-          "transition acts on.  The cocycle is clean on every substrate",
+          "the wide crystal has that nothing else does is (i) DUPLICATE "
+          "CHARTS — 57 of 172 pairs are pairs of distinct base events "
+          "carrying the identical d = 2 direction set, and C4c gates that "
+          "this is EXACTLY the identity fraction (an iff), so what "
+          "separates the substrate here is chart duplication and NOT a "
+          "'trivializable part' of the atlas; and (ii) the WIDE SUBATLAS: "
+          "pairs of 4-direction charts, which exist at d = 2 ONLY on the "
+          "coupled substrate (brick 0, uncoupled double ring 0, substrate "
+          "137), so only there is this a transition between charts of the "
+          "delivery grammar's MAXIMAL width.  THE THIRD SEPARATION IS "
+          "DEMOTED (round-1 MAJORs 3/4): the substrate's transitions "
+          "restrict to tau and the controls' to sigma at REG, but that "
+          "contrast dies at REGA and at COV, compares wide against narrow "
+          "pairs, rests on 19 of 58 and 22 of 68 control pairs, and the "
+          "controls' overlap graph is a perfect matching with nothing to "
+          "compose — so 'the coupling changed WHICH involution the atlas "
+          "carries' is NOT a structural claim of this unit; it is a "
+          "REG-convention observation, so labelled, gated in C4c.  The "
+          "cocycle is clean on every substrate",
           _ctl_flat and _spr_flat
           and MEAS[('BRICK(8,14)', 'REG', 2)]['wide'] == 0
           and MEAS[('DR(8,10,0)', 'REG', 2)]['wide'] == 0
@@ -1213,29 +1772,154 @@ if not PROBE:
           f"across the whole census = "
           f"{sum(MEAS[k]['cocycle'][1] for k in MEAS)}")
 
+    print("\n[C7 THE DECISIVE COMPUTATION — IS THE Z/2 TRANSITION COCHAIN "
+          "A COBOUNDARY?  (round-1 BLOCKER 1)]")
+    print("  WHY THIS IS THE QUESTION.  'Non-identity transitions + a "
+          "clean cocycle' does NOT distinguish a non-trivial bundle from "
+          "a trivial one.  A structure group has content only if its "
+          "transition class is not a coboundary: if there is a 0-cochain "
+          "eps: charts -> Z/2 with g_ac = eps_a + eps_c, then a per-chart "
+          "choice of which port is 'port 0' removes EVERY non-identity "
+          "transition at once, the holonomy of every loop in the nerve is "
+          "trivial, H^1 = 0, and a connection/curvature programme built "
+          "on the atlas starts at zero.  The previous build never asked.  "
+          "(Its own global (sender, receiver) swap is the CONSTANT eps, "
+          "and constants are coboundaries — which is exactly why a global "
+          "swap could not move the split.  Nobody asked what a "
+          "NON-CONSTANT eps does.)")
+    print("  THE COMPUTATION.  (a) every length-preserving CLASSIFIED "
+          "pair gets g = 0 (identity) or g = 1 (non-identity); the "
+          "length-changing and the no-correspondence pairs carry NO value "
+          "and are excluded by name.  (b) eps is propagated over the "
+          "labelled overlap graph by DFS from one root per component; the "
+          "OBSTRUCTION count is the number of labelled overlaps on which "
+          "g != d(eps) — zero means the class is a coboundary.  (c) the "
+          "verification is independent of (b): the whole transition "
+          "census is RE-RUN with the relabelling applied (the named "
+          "involution acting on the labels of every eps = 1 chart) and the "
+          "surviving non-identity transitions are counted.  (d) the "
+          "referee's cleaner Cech form g_ik = g_ij + g_jk is counted on "
+          "triples.")
+    print(f"      {'substrate':13s} {'inst':5s} {'d':>2s} {'gen':>8s} "
+          f"{'charts':>7s} {'edges':>6s} {'comps':>6s} {'INCONSIST':>10s} "
+          f"{'eps 0/1':>10s} {'SURVIVING':>10s} {'identity now':>13s} "
+          f"{'Cech t/viol':>12s}")
+    for nm in sorted(SUB):
+        if SUB[nm]['kind'] != 'grammar':
+            continue
+        for tag in ('REG', 'REGA'):
+            for d in DEPTHS:
+                co = _CO[(nm, tag, d)]
+                print(f"      {nm:13s} {tag:5s} {d:2d} {co['gen'][:8]:>8s} "
+                      f"{co['charts']:7d} {co['labelled']:6d} "
+                      f"{co['comps']:6d} {co['incons']:10d} "
+                      f"{co['eps0']:4d}/{co['eps1']:<5d} {co['surv']:10d} "
+                      f"{co['newid']:6d}/{co['pairs']:<6d} "
+                      f"{co['cech_t']:5d}/{co['cech_v']:<6d}")
+    _c7 = _CO[('DR(8,10,8)', 'REG', 2)]
+    _c7a = _CO[('DR(8,10,8)', 'REGA', 2)]
+    print(f"    THE SUBSTRATE AT REG, d = 2, IN FULL: {_c7['charts']} "
+          f"charts carry a labelled overlap, {_c7['labelled']} labelled "
+          f"overlaps, {_c7['comps']} components; COBOUNDARY "
+          f"INCONSISTENCIES = {_c7['incons']}; eps distribution = "
+          f"{_c7['eps0']} charts at 0, {_c7['eps1']} charts at 1.")
+    print(f"    VERIFICATION, the census re-run with that relabelling — "
+          f"(old class -> identity now?): {_c7['cross']}")
+    print(f"    => {_c7['newid']} of {_c7['pairs']} pairs are the identity "
+          f"after the relabelling; surviving non-identity among the "
+          f"{_c7['labelled']} length-preserving labelled pairs = "
+          f"{_c7['surv']}.")
+    print(f"    THE CECH FORM (the cleaner test): {_c7['cech_t']} triples "
+          f"carry a Z/2 value on all three pairs, violations of "
+          f"g_ik = g_ij + g_jk = {_c7['cech_v']}.")
+    print(f"    AND IT IS NOT A REG ARTEFACT: the same computation at "
+          f"REGA gives {_c7a['incons']} inconsistencies, eps "
+          f"{_c7a['eps0']}/{_c7a['eps1']}, surviving non-identity "
+          f"{_c7a['surv']}.")
+    COBOUNDARY = (_c7['incons'] == 0)
+    _c7_ok = all((co['incons'] == 0) == (co['surv'] == 0)
+                 and (co['cech_v'] == 0 or co['incons'] > 0)
+                 for co in _CO.values())
+    check("C7 THE CLASS IS " + ("A COBOUNDARY: H^1 = 0 AND THE ATLAS IS "
+          "GLOBALLY TRIVIALIZABLE" if COBOUNDARY else "NOT A COBOUNDARY: "
+          "AN OBSTRUCTION SURVIVES") + ".  " + (
+          "There is an explicit per-chart port choice eps after which "
+          "EVERY length-preserving transition on the wide crystal is the "
+          "identity — zero obstructions on the labelled overlap graph, and "
+          "the independent verification (the census re-run under eps) "
+          "confirms it pair by pair: the only survivors are the "
+          "length-changing correspondences, which are not fibre maps at "
+          "all.  The Cech form agrees on every triple carrying a value.  "
+          "So the 'structure group' found by C4 is PURE GAUGE: the "
+          "holonomy of every loop in the nerve is trivial, no non-trivial "
+          "structure group is exhibited on the delivery crystal at this "
+          "labeling, and a tensor/curvature programme built on this atlas "
+          "starts at ZERO.  G3's LETTER fired on the pin's predicate "
+          "('non-identity transitions + clean cocycle'), but G1's "
+          "SENTENCE — 'the atlas is globally trivializable at this "
+          "labeling' — is the true one; the measured cell (non-identity + "
+          "clean cocycle + TRIVIAL class) is a gap in the pin's "
+          "trichotomy, and the pin gets the credit for having a "
+          "trichotomy sharp enough to expose its own gap"
+          if COBOUNDARY else
+          "The DFS propagation finds labelled overlaps on which "
+          "g != d(eps): no per-chart port choice removes the non-identity "
+          "transitions, the class is non-trivial, and the surviving "
+          "non-identity count after the best relabelling is the "
+          "deliverable") + ".  THE GATE IS THE SELF-CONSISTENCY OF THE TWO "
+          "INDEPENDENT ROUTES, not the verdict: the propagation's "
+          "obstruction count is zero IF AND ONLY IF the re-run census has "
+          "no surviving non-identity transition, in EVERY grammar cell; "
+          "either verdict exits 0 and the answer is the deliverable",
+          _c7_ok,
+          f"substrate REG d=2: labelled overlaps {_c7['labelled']} over "
+          f"{_c7['charts']} charts in {_c7['comps']} components; "
+          f"INCONSISTENCIES {_c7['incons']}; eps {_c7['eps0']}/"
+          f"{_c7['eps1']}; surviving non-identity after relabelling "
+          f"{_c7['surv']}; identity after relabelling {_c7['newid']} of "
+          f"{_c7['pairs']}; Cech {_c7['cech_t']} triples / "
+          f"{_c7['cech_v']} violations; REGA inconsistencies "
+          f"{_c7a['incons']}, surviving {_c7a['surv']}; all grammar cells "
+          f"consistent = {_c7_ok}; COBOUNDARY = {COBOUNDARY}")
+
     print("\n[THE VERDICT — decided by the census at the canonical "
-          "labeling, on the substrate, at d = 2]")
-    check("C2/C3 [THE OUTCOME DECIDES] " + (
-        "**G3 — THE ATLAS CARRIES A G-STRUCTURE.**  Non-identity "
+          "labeling, on the substrate, at d = 2, AND BY C7's COBOUNDARY "
+          "COMPUTATION]")
+    check("C2/C3/C7 [THE OUTCOME DECIDES] " + (
+        "**G3's LETTER FIRED AND G1's SENTENCE IS TRUE.**  Non-identity "
         "transitions exist between overlapping charts of the wide "
         "crystal at the canonical wire-word labeling, and they satisfy "
-        "the cocycle identity wherever the composition is defined; the "
-        "group they generate is Z/2, generated by the first-letter wire "
-        "transposition tau" if VERDICT == 'G3' else
-        ("**G2 — AN OBSTRUCTION.**  Non-identity transitions exist and "
-         "the cocycle FAILS; the failure pattern is the deliverable"
-         if VERDICT == 'G2' else
-         "**G1 — FLAT.**  Every transition is the identity at this "
-         "labeling: the atlas is globally trivializable and the tensor "
-         "seed is not in the delivery crystal")) + ".  The predicate is "
-        "the pre-registered trichotomy itself, computed from the census",
-        VERDICT == 'G3',
+        "the cocycle identity wherever the composition is defined — so "
+        "the pin's G3 predicate is what the census computes.  BUT the "
+        "class those transitions define is a COBOUNDARY (C7): a "
+        "per-chart port choice trivializes every one of them, H^1 = 0, "
+        "and the atlas is globally trivializable at this labeling — "
+        "which is G1's sentence.  No non-trivial structure group is "
+        "exhibited, and the group's NAME is undetermined by the data "
+        "anyway (C4b).  What is licensed: non-identity partial "
+        "transitions exist, they are mutually consistent, and they are "
+        "pure gauge" if VERDICT == 'G3' and COBOUNDARY else
+        ("**G3 — A GENUINE G-STRUCTURE.**  Non-identity transitions, "
+         "clean cocycle, and the class is NOT a coboundary"
+         if VERDICT == 'G3' else
+         ("**G2 — AN OBSTRUCTION.**  Non-identity transitions exist and "
+          "the cocycle FAILS; the failure pattern is the deliverable"
+          if VERDICT == 'G2' else
+          "**G1 — FLAT.**  Every transition is the identity at this "
+          "labeling: the atlas is globally trivializable and the tensor "
+          "seed is not in the delivery crystal"))) + ".  The predicate is "
+        "the pre-registered trichotomy itself together with C7's "
+        "coboundary computation, both read off the census",
+        VERDICT == 'G3' and COBOUNDARY,
         f"substrate d=2 canonical labeling: overlapping pairs "
         f"{_R['pairs']}, identity {_R['ROLE'][0]}, NON-IDENTITY "
-        f"{_R['ROLE'][1]}; wide-subatlas pairs {len(_R['widepairs'])} "
-        f"({_R['ROLE'][2]} identity / {_R['ROLE'][3]} non-identity); "
-        f"triples {_R['triples']}, cocycle violations {_viol_sub}; "
-        f"verdict = {VERDICT}")
+        f"{_R['ROLE'][1]} (of which {_R['kinds'].get('tau', 0)} carry a "
+        f"tau-classified fibre map and {_R['kinds'].get('length-changing', 0)}"
+        f" are length-changing); wide-subatlas pairs "
+        f"{len(_R['widepairs'])} ({_R['ROLE'][2]} identity / "
+        f"{_R['ROLE'][3]} non-identity); triples {_R['triples']}, cocycle "
+        f"violations {_viol_sub}; coboundary obstructions {_c7['incons']}; "
+        f"trichotomy letter = {VERDICT}, class trivial = {COBOUNDARY}")
 
 # ======================================================================
 # C6 — anti-vacuity, caps, determinism, exits
@@ -1251,17 +1935,38 @@ if PROBE:
               sorted(((m, k) for m, k in r['maps'].items()), key=repr))))
     sys.exit(0)
 
+# round-1 NIT 2: the weak form (bare constants only) is replaced by
+# d47a's SG8 form — every predicate must also REFERENCE a run-bound name.
 _src = open('v10/code/d64_cocycle_exact.py').read()
-_ch = [c for c in ast.walk(ast.parse(_src))
+_tree = ast.parse(_src)
+_bound = set()
+for _n in ast.walk(_tree):
+    if isinstance(_n, ast.Name) and isinstance(_n.ctx, ast.Store):
+        _bound.add(_n.id)
+    elif isinstance(_n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+        _bound.add(_n.name)
+        for _a in _n.args.args:
+            _bound.add(_a.arg)
+_ch = [c for c in ast.walk(_tree)
        if isinstance(c, ast.Call) and isinstance(c.func, ast.Name)
        and c.func.id == 'check']
-_vac = [c for c in _ch if isinstance(c.args[1], ast.Constant)]
-check("C6 AST anti-vacuity (no bare-constant predicates): every gate "
-      "above reads a measured quantity, and the outcome gate reads the "
-      "pre-registered trichotomy itself, so G1 and G2 would each have "
-      "been reported by the same line that reports G3",
+_vac = [ast.dump(c.args[1])[:60] for c in _ch
+        if isinstance(c.args[1], ast.Constant)
+        or not ({x.id for x in ast.walk(c.args[1])
+                 if isinstance(x, ast.Name)} & _bound)]
+check("C6 AST anti-vacuity, d47a's SG8 form (round-1 NIT 2): every "
+      "check() predicate is a bare constant NOWHERE and references at "
+      "least one run-bound name, and the outcome gate reads the "
+      "pre-registered trichotomy together with C7's coboundary "
+      "computation, so G1, G2 and a non-trivial G3 would each have been "
+      "reported by the same lines that report this outcome.  SCOPE (LOG "
+      "#403 MA-2): this scan enforces EXACTLY that and nothing more — it "
+      "does not detect a vacuous gate in arbitrary syntactic form and "
+      "must not be described as if it did (C4's own vacuous-`all()` "
+      "halves were found by a referee, not by this scan, and are now "
+      "flagged in the cell that prints them)",
       len(_ch) >= 8 and not _vac,
-      f"check() calls = {len(_ch)}, bare-constant predicates = "
+      f"check() calls = {len(_ch)}, bare-constant or unbound predicates = "
       f"{len(_vac)}")
 
 print("\n[C6 DEPTHS, CAPS, RANGES AND POPULATIONS — all printed, none "
@@ -1307,45 +2012,82 @@ for _seed in ('0', '7', '999'):
     _digs.append(subprocess.run(
         [sys.executable, 'v10/code/d64_cocycle_exact.py', '--probe'],
         capture_output=True, text=True, env=_env).stdout)
-check("C6b DETERMINISM IS GATED, NOT ASSERTED (D63's round-1 MINOR 5 "
-      "carried forward; the layer reads next(iter(frozenset)) in "
-      "load-bearing places and this unit iterates over direction SETS "
-      "and over label sets): the whole substrate census — charts, pairs, "
+check("C6b DETERMINISM IS GATED, NOT ASSERTED — ON THE SUBSTRATE'S REG "
+      "CELLS ONLY, WHICH IS SAID IN THE LABEL (round-1 MINOR 7).  (D63's "
+      "round-1 MINOR 5 carried forward; the layer reads "
+      "next(iter(frozenset)) in load-bearing places — `regs_of` breaks an "
+      "'r' event's tie by `next(iter(...))` where this receipt's "
+      "`reg_tuple` sorts by repr, a DIFFERENT tie-break that is harmless "
+      "only because every arbitration in these records has a single "
+      "proposer, and C0b would catch a divergence — and this unit "
+      "iterates over direction SETS and over label sets.)  THE DIGEST "
+      "COVERS: the substrate's REG census at both depths — charts, pairs, "
       "triples, all four labelings, the correspondence statuses, the "
       "cocycle counts and the full map multiset — recomputed in probe "
-      "mode under PYTHONHASHSEED 0 / 7 / 999, byte-identical stdout at "
-      "both depths",
+      "mode under PYTHONHASHSEED 0 / 7 / 999, byte-identical stdout.  IT "
+      "DOES NOT COVER: the two grammar controls, on which C4c's demoted "
+      "sigma observation lives, nor the REGA/COV instruments; the "
+      "round-1 referee reports an external hash-seed check of the full "
+      "substrate-plus-control census, and this gate is not it",
       len(set(_digs)) == 1 and 'DIGEST d2' in _digs[0]
       and 'DIGEST d3' in _digs[0],
       f"probe runs = 3, distinct outputs = {len(set(_digs))}  "
       f"[{time.time() - t_det:.1f}s]")
 
-print("\n[VERDICT — D64]")
-print(f"  {VERDICT} FIRED, AT THE CANONICAL (ROLE) WIRE-WORD LABELING.")
+print("\n[VERDICT — D64, ROUND-1 REPAIRED]")
+print(f"  {VERDICT}'s LETTER FIRED AND G1's SENTENCE IS THE TRUE ONE, AT "
+      f"THE CANONICAL (ROLE)")
+print(f"  WIRE-WORD LABELING.  THE TRANSITIONS ARE NON-TRIVIAL PAIR BY "
+      f"PAIR, THE COCYCLE")
+print(f"  IS CLEAN, AND THE CLASS IS A COBOUNDARY: H^1 = 0.")
 print(f"    The wide crystal DOUBLE-RING(8, 10, 8): {_R['charts']} charts "
       f"(|D| >= 2) of which {_R['wide']} are WIDE (|D| = 4, the delivery")
 print(f"    grammar's ceiling), {_R['pairs']} overlapping chart pairs at "
       f"d = 2, of which {len(_R['widepairs'])} are wide-wide.")
 print(f"    TRANSITIONS: {_R['ROLE'][0]} identity, {_R['ROLE'][1]} "
-      f"NON-IDENTITY (wide-wide: {_R['ROLE'][2]} / {_R['ROLE'][3]}).")
+      f"NON-IDENTITY (wide-wide: {_R['ROLE'][2]} / {_R['ROLE'][3]}).  The "
+      f"{_R['ROLE'][1]} split")
+print(f"    into {_R['kinds'].get('tau', 0)} pairs carrying a "
+      f"tau-classified fibre map and "
+      f"{_R['kinds'].get('length-changing', 0)} carrying a LENGTH-CHANGING")
+print(f"    correspondence, which is no permutation of any fibre: the "
+      f"group-relevant")
+print(f"    non-identity population is "
+      f"{_R['kinds'].get('tau', 0)}, not {_R['ROLE'][1]}.  The "
+      f"length-changing ones come from the")
+print(f"    {dict((r[0], r[7]) for r in _val_rows)['DR(8,10,8)']} P-edges "
+      f"that skip a height and are excluded by name.")
 print(f"    COCYCLE: {_R['triples']} triples, "
       f"{_R['cocycle'][0]} tested with a defined composition, "
-      f"{_R['cocycle'][1]} VIOLATIONS.")
-print(f"    GROUP, BY CLOSURE: of the {sum(_R['maps'].values())} pairs "
-      f"carrying a single-valued transition, {_R['kinds'].get('identity', 0)}"
-      f" are identity, {_R['kinds'].get('tau', 0)} are tau — the")
-print(f"    first-letter wire transposition — and NO length-preserving "
-      f"map outside")
-print(f"    {{identity, tau}} occurs, so the group generated is Z/2 = "
-      f"<tau>, a fixed-point-")
-print(f"    free involution of the 4-point wire fibre {{0,1}}^2.  The "
-      f"remaining "
-      f"{_R['kinds'].get('length-changing', 0)} pairs carry")
-print(f"    LENGTH-CHANGING correspondences — no permutation group "
-      f"contains them; they")
-print(f"    come from the "
-      f"{dict((r[0], r[7]) for r in _val_rows)['DR(8,10,8)']} P-edges that "
-      f"skip a height, and they are excluded by name.")
+      f"{_R['cocycle'][1]} VIOLATIONS — and the test")
+print(f"    has ONE SHAPE: tau o tau = identity on 2 fibre points, "
+      f"{_R['tripshape'].get(('identity', 'tau', 'tau'), 0)} times.")
+print(f"    THE DECISIVE COMPUTATION (C7): the Z/2 cochain on the "
+      f"{_c7['labelled']} length-preserving")
+print(f"    labelled overlaps is the COBOUNDARY of a per-chart port "
+      f"choice — {_c7['incons']} obstructions,")
+print(f"    eps = {_c7['eps0']} charts at 0 / {_c7['eps1']} at 1, and "
+      f"re-running the census under eps leaves")
+print(f"    {_c7['surv']} non-identity length-preserving transitions "
+      f"({_c7['newid']} of {_c7['pairs']} pairs identity; the only")
+print(f"    survivors are the length-changing ones).  Cech form: "
+      f"{_c7['cech_t']} triples, {_c7['cech_v']} violations.")
+print(f"    Same at REGA ({_c7a['incons']} obstructions).  So the atlas "
+      f"is GLOBALLY TRIVIALIZABLE at this")
+print(f"    labeling: the transitions are PURE GAUGE, no non-trivial "
+      f"structure group is")
+print(f"    exhibited, and a tensor/curvature programme built here starts "
+      f"at ZERO.")
+print(f"    THE NAME IS UNDETERMINED ANYWAY (C4b): every non-identity "
+      f"transition is a")
+print(f"    2-point partial map and {_X2['uniq_tau']} of "
+      f"{_X2['tau_pairs']} are uniquely tau; TWO incomparable subgroups of")
+print(f"    S_4 are minimal-by-inclusion among those consistent with the "
+      f"data — <tau> = Z/2")
+print(f"    and a Z/4 — and the Z/4 reading passes the cocycle too.  What "
+      f"is licensed is")
+print(f"    'non-identity partial transitions exist and are mutually "
+      f"consistent'.")
 print("  READ AT WHICH LABELING, AND WHY (C2b): NOT at the RAW labeling, "
       "where every")
 print("  overlapping pair's base events have DISJOINT register sets so "
@@ -1356,28 +2098,34 @@ print("  would not have been an artifact either.  The alternative port "
       "convention")
 print("  (REGA) gives a DIFFERENT split (85/87 instead of 57/115): the "
       "EXISTENCE of")
-print("  non-identity and the clean cocycle are convention-robust, the "
-      "SPLIT is not.")
+print("  non-identity, the clean cocycle AND THE TRIVIALITY OF THE CLASS "
+      "are")
+print("  convention-robust across REG and REGA; the SPLIT is not.")
 print("  CONTROLS (C5), and they run the other way from the obvious "
       "guess: NO control")
 print("  is flat — D60's uncoupled brick, the uncoupled double ring and "
       "both genuine")
 print("  sprinklings are non-identity at (almost) every pair.  A "
       "non-identity atlas is")
-print("  GENERIC; what the wide crystal alone has is a substantial "
-      "IDENTITY fraction")
-print("  and the WIDE SUBATLAS — 4-direction chart pairs, which exist at "
-      "d = 2 only")
-print("  there, so only there is this a transition between charts of "
-      "MAXIMAL width.")
-print("  AND THE CONTROLS' GROUP IS A DIFFERENT ONE (C4): the uncoupled "
-      "brick and the")
-print("  uncoupled double ring carry <sigma>, the ALL-letter flip; the "
-      "wide crystal")
-print("  carries <tau>, the FIRST-letter flip.  Two distinct Z/2 "
-      "subgroups of S_4 —")
-print("  the coupling changed WHICH involution the atlas carries, not "
-      "whether it has one.")
+print("  GENERIC.  What the wide crystal alone has is DUPLICATE CHARTS — "
+      "C4c gates that")
+print("  its identity fraction is EXACTLY its pairs of charts with "
+      "identical direction")
+print("  sets, an iff over all 172 pairs — and the WIDE SUBATLAS, "
+      "4-direction chart")
+print("  pairs, which exist at d = 2 only there.  THE tau-VS-sigma "
+      "CONTRAST IS DEMOTED")
+print("  (C4c): it holds at REG only, dies at REGA and COV, compares wide "
+      "against")
+print("  narrow pairs, and the controls' overlap graph is a PERFECT "
+      "MATCHING with")
+print("  nothing to compose — 'the coupling changed which involution the "
+      "atlas carries'")
+print("  is withdrawn as a structural claim and kept as a labelled "
+      "REG-convention")
+print("  observation.  THE SUCCESSOR QUESTION IS NOT 'is Z/2 enough' BUT "
+      "'CAN ANY")
+print("  SUBSTRATE CARRY A TRANSITION CLASS THAT IS NOT A COBOUNDARY'.")
 print("  SCOPE (pin §5): grammar layer; the swept substrates only.  No "
       "measure,")
 print("  no typicality, no physical-object claim (#440).  Chart width is "
@@ -1392,6 +2140,12 @@ print("  caveat applies to any band-membership sentence, and this unit "
       "makes none.")
 print(f"\n[d64] {PASS} PASS / {FAIL} FAIL   "
       f"[total wall clock {time.time() - T0:.1f}s]")
-print("[exit protocol, pin C6] exit 1 ONLY on C0 anchor breakage; "
-      "substantive negatives exit 0.  anchor broken = " + str(ANCHOR_FAIL))
+print("[exit protocol, pin C6] exit 1 ONLY on ANCHOR breakage — the C0 "
+      "FAMILY, i.e. C0 (the substrate reproduces D63's committed row), "
+      "C0a (single sources) and C0b (instrument validation), the three "
+      "gates that carry anchor=True in this receipt; the pin's 'exit 1 "
+      "only on C0' names this family and the result note says the same "
+      "three (round-1 NIT 1: code, note and pin now agree).  Every "
+      "substantive negative — including C7's verdict, whichever way it "
+      "lands — exits 0.  anchor broken = " + str(ANCHOR_FAIL))
 sys.exit(1 if ANCHOR_FAIL else 0)
