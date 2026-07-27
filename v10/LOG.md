@@ -11003,3 +11003,32 @@ TERMINAL for round 1.  Next: the book absorbs D64's negative and
 D65's requalified segment; the ARBITRATION CRYSTAL pin (three
 convergent motivations: the width theorem, the non-coboundary
 question, and the 2 -> 5/2 mass jump — all pointing at conflict).
+
+## 2026-07-26 — D66 PINNED: THE ARBITRATION CRYSTAL — the object three
+## terminal results point at (LEDGER #469)
+Pin FROZEN before any receipt: note-d66-arbitration-crystal-pin.md.
+THE CONVERGENCE, now pinned: (i) WIDTH — past 4 at d = 2 REQUIRES a
+3+-register event and arbitration is the only species (W4b, D63
+terminal); (ii) GAUGE — the delivery atlas's trivialization exploits
+the two-port symmetry conflict events break (D64 terminal, the
+successor question inherited); (iii) MEASURE — the descent coboundary
+originates exactly at the 2 -> 5/2 conflict-visibility mass jump
+(D65 terminal).  The unit: CONFLICT-RING(M, R) — a forced tiling
+record whose engine is propose/arbitrate cycles (two-proposer
+3-register arbs, minted versions becoming next-round bases), conflict
+share maximized subject to forcedness and PRINTED.  Gates A0-A6:
+anchors + controls re-run; C1-grade forcedness (a break point is a
+first-class deliverable — sustaining a conflict SUPPLY is a design
+problem deliveries never had, the pin's stated lean); the atlas
+census with the record's OWN B against W4b's bound 9; THE WIDTH
+VERDICT (|D| >= 5 at d = 2 — the delivery ceiling's door, either
+answer the result); THE COBOUNDARY GATE (d64's C7 both routes, port
+conventions for 3-register events defined and printed, and any
+H1 != 0 candidate must survive the full convention-swap battery
+D64's round taught); the mass census (the D65 defect geography on
+the crystal).  Pre-registered outcomes A-I (refuses to tile) /
+A-II (tiles, width door shut — the unrealized 4 < |D| <= 9 gap a
+finding) / A-III (ceiling broken; then A-IIIa trivial class again
+vs A-IIIb H1 != 0, the first genuine structure-group candidate).
+NO LEAN ON H1 EITHER WAY — D64 burned the intuition and the pin
+declines to replace it.  Worker dispatched.
