@@ -11529,3 +11529,52 @@ reported); Zhat positive control exact; 0/42 anti-vacuity;
 determinism 3 seeds.  GREEN-UNREVIEWED: hostile round dispatched
 (primary targets: the 4-actor row's meaning, the object-dependence
 framing, the renewal-closure proof, the D46b reversal's scope).
+
+## 2026-07-27 — D71b HOLONOMY-PHASE IDENTITY: NOT A DICHOTOMY — AN
+## IDENTITY IN TWO HALVES THE CORPUS PROVED SEPARATELY AND NEVER
+## WELDED (LEDGER #485)
+Deliverable: note-d71b-holonomy-phase-identity.md.  Prompted by the
+user's question (is v7's e^{i Phi(O)} the same thing as the founding
+"holonomy of probability transport", or a rival?).  **VERDICT: no
+rival exists anywhere in the corpus — the two are ONE object, proved
+in two halves on pages that never met.**  HALF 1 [THEOREM, v6 paper
+7]: holonomy IS the phase — the retained holonomy of a closed route
+pair is U(1)-valued (Thm 7.1) and two-route interference IS the
+loop-phase law P = |A|^2 + |B|^2 + 2|A||B| cos(arg B(loop)) (Thm D3,
+machine gap 2.8e-17).  HALF 2 [MEASURED, v7 paper 30, error exactly
+0]: the phase sits on the REVERSAL-ODD channel — and the sweep found
+THE BRIDGE SENTENCE the corpus wrote and never named (p30:2846-9):
+"dual reversal sends O to -O; therefore dual reversal sends L to its
+complex conjugate" — **Hol(gamma^-1) = conj(Hol(gamma)), THE defining
+transformation law of a U(1) holonomy, proved with a receipt and
+never once called holonomy** (grep: the word appears nine sections
+away).  THE FOUNDING QUOTE located: isp/README.md:43-44 ("whether
+quantum interference can be understood as the holonomy of
+probability transport itself"), operationalized at :87-115 — the
+loop IS a reversal (AB vs BA).  **THE ONE MISSING WELD [SILENT]:
+v6's reversal reverses TRANSPORT ORDER (T_A T_B vs T_B T_A); v7's
+reverses a record's own ORDER RELATIONS; nothing establishes they
+are the same operation — that identification is the pinnable unit.**
+THREE CORRECTIONS to working assumptions: (1) D66/D67's odd-ring
+parity is LABEL-holonomy, not probability-holonomy (zero occurrences
+of weights in its construction; trivialized by free relabelling) —
+D71 §3.5's index identification SETTLED NEGATIVELY at the mechanical
+level, demoted below the new pin; (2) D42b4's prod-sqrt(q) is the
+right CARRIER (sqrt of the weights = amplitude moduli) but has no
+loop closure anywhere; (3) "Born = K1" is D44f's V_single/V_pair
+claim, not D42b4's.  **DEEPEST FIND: the corpus's REALISED holonomy
+of probability transport already exists and is REAL —
+A_D = log dP_AB/dP_BA, reversal-odd at gap 2.2e-16, zero on
+commuting loops — while v7 proves the real odd form is
+negative-definite and becomes positive ONLY after the i-twist.  The
+real object and the need for i have never shared a page.**  Plus a
+constraint nobody stated: H1 = 0 along the one-dimensional commit
+path — any non-trivial phase must live TRANSVERSE to commit order.
+THE PIN (P1, drafted in-file): the order-dual * coincides with
+transport-order reversal on the generated line's objects, and A(R)
+is the U(1) holonomy of sqrt(q)-transport around
+delete-then-insert round trips — A_D its log-modulus, Phi(O) its
+argument; three tests, four falsifiers, F2/F4 settle the founding
+slogan NEGATIVELY and are as publishable as a positive — no null
+outcome.  Book inconsistency flagged for the next pass (glossary
+:12263 defines holonomy AS the phase; :9501 still lists it [TARGET]).
