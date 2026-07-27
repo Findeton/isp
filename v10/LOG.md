@@ -11055,3 +11055,48 @@ blockers / all five in interpretation, with D62 named), §D1b's
 tensor slot marked EMPTY with the coboundary as the reason, four
 pre-existing broken tables, and two future-tense captions.  Zero
 asserting hits for the retired sentences; stamp confirmed.
+
+## 2026-07-26 — D66 DELIVERED (GREEN-UNREVIEWED): A-IIIa — CONFLICT
+## TILES AND BREAKS THE DELIVERY CEILING; THE CLASS IS TRIVIAL AGAIN;
+## AND W4b's CONDITION WAS NOT SUFFICIENT (LEDGER #471)
+Deliverables: note-d66-arbitration-crystal-result.md,
+code/d66_arbitration_crystal_exact.py (20 PASS / 0 FAIL, exit 0,
+634.6 s), data/.out.  Opus 5 worker against the frozen pin (#469).
+RERUN BY ME: byte-identical modulo timing.  **A-IIIa: fifteen
+conflict configurations (1,593 events, ZERO refusals, C1-grade
+forcedness — headline CONFLICT-RING(6,10) full-menu replay 117/117,
+widest menu 481, max hits 1) TILE AT CADENCE — the pin's A-I lean was
+half wrong: conflicts CAN be re-supplied.  THE WIDTH DOOR OPENS:
+max |D| = 2k at d = 2 for a k-proposer crystal — 4 (k=2), 6 (k=3),
+8 (k=4); the GRID(4,4) witness verified event-by-event against the
+committed sky() and poset.  The first records in the campaign past
+the delivery ceiling.**  THE COBOUNDARY GATE: all three routes, all
+FIVE port conventions, both depths — ZERO obstructions on the wide
+record (non-vacuous: 52 testable Cech triples; ARBLOSE has 41
+non-identity pairs and is still a coboundary); instrument anchored
+to D64's committed C7 row.  THE CLASS IS TRIVIAL AGAIN — no
+structure group on conflict crystals either, at every convention
+tried.  **W4c [THEOREM, verified, corrects D63's reading]: the
+minted version register occurs in exactly ONE event's regs_of (0
+recurrences across all records) — a DEAD WIRE with no P-successor —
+so live out-degree = #proposers, and a two-proposer conflict ring is
+HELD TO THE DELIVERY CEILING 4 despite carrying 3 registers.  "3+
+registers" was necessary but NOT sufficient; 3+ PROPOSERS is what
+buys width.**  THE CONFLICT BUDGET BOUND [THEOREM, verified,
+saturated]: arb share <= 1/(k+1); the delivery-free ring saturates
+1/3 exactly — and IS the record whose charts COLLAPSE to max |D| = 2
+and whose homogeneity falls below band: **the delivery is not a tax
+on the conflict engine; it is what gives the crystal a second
+direction** (three schedule variants, all printed; winner convention
+irrelevant in every column).  MEASURED LIMIT: width and tiling
+homogeneity ANTI-CORRELATE across the sweep — no configuration is
+both in-band and past 4; the both-at-once question is the sharp
+successor.  SIDE FINDING, filed NOT claimed: the odd-ring pair-
+conflict records at M = 6 give the campaign's first non-zero
+obstruction counts (5 at R=6, 9 at R=10, at four conventions and
+five under the parity route) — but the free-relabelling test
+trivializes it, triple intersections are empty (0 testable), even
+rings are clean, and sprinklings obstruct too: the ODD-RING
+HOLONOMY residue.  GREEN-UNREVIEWED: hostile round dispatched
+(primary targets: the width witness against instrument artifacts,
+the W4c dead-wire proof, the odd-ring residue's honest framing).
