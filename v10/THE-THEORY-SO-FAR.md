@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #468** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #472** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -149,10 +149,19 @@ observes it:
   trace counting (D54 round 1 BLOCKER 1).
 - **"the atlas carries a gauge structure"** (in any dress: *"a `Z/2`
   gauge structure"*, *"the transitions generate a group"*) — the
-  transition class on the delivery crystal is a **coboundary**, `H¹ = 0`,
-  and no non-trivial structure group is exhibited anywhere (§B8.8).  The
-  quotable sentences are *"non-identity transitions exist and are
-  mutually consistent"* and *"the class is trivial"*.
+  transition class is a **coboundary** on every substrate tried:
+  delivery crystals, conflict crystals and crossed-conflict crystals,
+  `H¹ = 0`, at every port convention, and no non-trivial structure group
+  is exhibited anywhere (§B8.8, §B8.9).  The quotable sentences are
+  *"non-identity transitions exist and are mutually consistent"* and
+  *"the class is trivial"*.
+- **"`max |D| = 2k` for a `k`-proposer crystal"** — a property of two
+  swept **schedules**, not a law: `2k` is the bound's value when every
+  depth-1 successor of an arbitration is a delivery.  The true ceiling is
+  W4c's `k·b ≤ k²`, saturated at 9 (§B8.9).  The same rule covers *"the
+  delivery is what gives the crystal a second direction"*: the second
+  direction is a second **concurrent conflict axis**, and the widest
+  record in the corpus is delivery-free.
 - **"the completions are precisely the objects that repair descent"** —
   false in **both** directions: the positive repair cone is
   573-dimensional at the depth-4 truncation while the `(depth, sigma)`
@@ -244,9 +253,12 @@ destination that follows.)*
     the withdrawal — but **full Einsteinian manifolds, enriched until
     quantum particles can be created in them**; of its eight arrows two are
     in hand, two are half in hand, three are open, and the last is blocked
-    — and on the manifold arrow the charts now have measured transition
-    maps, which turn out to be **pure gauge**, so the tensor programme
-    starts at zero on records made of deliveries (PART D).
+    — and on the manifold arrow the width road now runs through **crossed
+    conflict**, where a record with no messages in it at all carries
+    nine-direction charts against a delivery circuit's four and a real
+    spacetime's ten to seventeen, while the charts' measured transition
+    maps are **pure gauge** on every substrate tried, so the tensor
+    programme still starts at zero (PART D).
 
 ---
 
@@ -291,8 +303,10 @@ destination that follows.)*
   records that pay the price; what they license and what they do not;
   the crystal, a record that tiles; the wide crystal that tiles *and*
   spreads; the theorem that says where the next width must come from;
-  and the transition maps between the charts, which turn out to be
-  pure gauge.
+  the transition maps between the charts, which turn out to be
+  pure gauge; and the crystal made of conflicts, which tiles, saturates
+  the corrected width ceiling at nine directions with no messages in it,
+  and glues just as trivially.
 - **A9. The wall and the crack** — why the delivery-scope theory has
   no finite summary, and the one thing that survives.
 - **A10. The graveyard** — everything tried and discarded, and why
@@ -332,8 +346,11 @@ destination that follows.)*
   and shatter-5 records; the generalized builder; what is licensed; the
   controls; the crystal's tiling capacity; the wide crystal that
   composes tiling with width; the branching bound that caps chart
-  width at the delivery grammar's ceiling; and the transition cocycle,
-  whose class is a coboundary.
+  width at the delivery grammar's ceiling; the transition cocycle,
+  whose class is a coboundary; and the arbitration crystal — conflict
+  tiles, the dead-wire refinement `k·b ≤ k²`, and a delivery-free double
+  grid that saturates it at nine while sitting inside the sprinkling
+  band.
 - **B9. The transport wall and the sector crack** — the
   self-arbitration ladder; the design-independent no-go; what remains
   exact; the open sector-exact question.
@@ -381,8 +398,9 @@ destination that follows.)*
   convergence with the free-web theorem.
 - **D2** The roadmap, arrow by arrow, with honest status — eight arrows,
   two HAVE, two PARTIAL, three OPEN, one BLOCKED; **arrow 3 carries both
-  roads** (v10's atlas instrument, its wide crystal, its proved width
-  ceiling and its trivially gluing transitions; v9's grown webs).
+  roads** (v10's atlas instrument, its wide crystal, its two proved width
+  ceilings, its conflict crystal saturating the second of them at nine,
+  and its trivially gluing transitions; v9's grown webs).
 - **D3** Particle creation, and one labelled speculation — the
   boundary-freedom <-> vacuum-ambiguity resemblance, costed and marked.
 - **D4** What the destination changes about the open problems.
@@ -2157,19 +2175,27 @@ shallow chart, no matter how it is built.  Genuine sprinkled spacetime
 records carry ten to seventeen.  **That gap is not a construction problem;
 it is unreachable by transport at all.**
 
-The theorem also says exactly where the next width must come from.  The
-grammar has precisely one kind of event that touches three or more wires:
-the **settlement of a dispute among several proposers**.  So:
+The theorem also says where the next width must come from.  The grammar
+has precisely one kind of event that touches three or more wires: the
+**settlement of a dispute among several proposers**.  So:
 
 > **Chart width past four is bought with conflict, not with delivery.**
-> That is a necessity, not a recipe — an admissible three-wire settlement
-> exists, but nobody has yet built a record that carries a five-direction
-> chart, and a hunt for one came back empty and inconclusive.
+> That is a necessity, not a recipe: it says where to look, and it does
+> not say that looking there works.
+
+It also says slightly less than it appears to.  Counting *wires touched*
+overcounts, because one of a settlement's wires is a wire that is **born
+there and never used again** — and a wire nothing travels along afterwards
+carries no direction.  The corrected count is the number of wires that
+**carry on**, which for a settlement is the number of **proposers**
+disputing.  A settlement between two proposers is therefore no wider than
+a delivery, three wires or not; the necessary condition is not "three
+or more wires" but **three or more proposers**.  §A8.9 proves that and
+builds the records.
 
 The successor is therefore sharp and named: **a crystal made of
-conflicts** rather than of deliveries.  Whether the grammar can tile with
-arbitration at the same cadence is the open question, and it is the one
-the manifold road runs through.
+conflicts** rather than of deliveries.  It has been built, and it is the
+next section.
 
 ### A8.8 The transitions between charts, and the atlas that trivializes
 
@@ -2264,23 +2290,172 @@ the answer.  The question is the one nobody had before:
 > **Can any record at all carry a transition class that is *not* a
 > relabelling?**
 
-And there is a reason — a reason, not a promise — to look for it in
+And there was a reason — a reason, not a promise — to look for it in
 records made of **conflicts**.  What makes the relabelling available here
 is that a delivery has exactly two wires and nothing distinguishes them,
 so "which is first" is free at every chart.  A settlement among several
-proposers has no such symmetry.  Whether that is enough is unmeasured.
+proposers has no such symmetry.  §A8.9 goes and looks, on the first
+substrate where the symmetry is genuinely broken, and the answer there is
+**no as well**.
 
 > **What this chapter does NOT claim.**  That the wide crystal *is* a
 > spacetime, or that it is typical — one engineered family, no genericity,
 > and genericity is not posable here at all (chapter A9).  That the width
 > ceiling is a limit of the framework: it is a limit of **delivery
-> circuits**, and the theorem names the exit.  That a five-direction
-> record exists — it does not, yet.  That the atlas carries a gauge
-> structure of any size: it carries none, and the sentence is on the
-> standing blacklist (§0.3).  That the triviality is a *theorem* about
-> the grammar — it is a measurement on one substrate at one chart depth
-> under conventions that have been varied and agree, which is a strong
-> measurement and not a proof.
+> circuits**, and the theorem names the exit — which §A8.9 then walks.
+> That the atlas carries a gauge structure of any size: it carries none,
+> and the sentence is on the standing blacklist (§0.3).  That the
+> triviality is a *theorem* about the grammar — it is a measurement, on
+> substrates at chart depths under conventions that have been varied and
+> agree, which is a strong measurement and not a proof.
+
+### A8.9 The crystal made of conflicts, and the width ceiling it saturates
+
+Three separate results — the width wall of §A8.7, the trivial gluing of
+§A8.8, and the one place the law fails to be a probability of the record
+(§A2.7) — all point at the same object: a record whose engine is
+**disputes being settled** rather than **messages being delivered**.  It
+is built here, and it is the most consequential geometry result the
+programme has.
+
+**First, the supply problem — which was expected to be the hard part.**
+A delivery can be repeated forever: the same message can be sent again
+next round.  A settlement **consumes** its dispute.  So a record that
+runs on conflict has to *manufacture a new disagreement every round*, and
+the expectation written down in advance was that it could not — that
+conflict records would run for a few rounds and then have nothing left to
+arbitrate.
+
+That expectation was half wrong, and the half that was wrong is the
+important half.  The framework hands over most of the answer for free:
+when a dispute is settled, **every disputant receives the settled
+version**, not only the one who settled it.  So the same group of actors,
+having just fought over a value, all hold the same new value and can
+immediately disagree about that.  A pair that quarrels together needs no
+message to quarrel again.  What costs a message is **changing partners** —
+and a record that never changes partners needs no messages at all.
+
+> **Conflict tiles.**  Twenty-one conflict configurations, over two
+> thousand events, run to full crystal length with **zero refusals**:
+> every single event offered by the framework's own menu, and matched by
+> exactly one option in it.  Records made of disputes are as forced, and
+> as sustainable, as records made of messages.
+
+**Second, and this corrects the ceiling itself.**  §A8.7's bound counts
+the wires an event touches.  A settlement touches the disputants' wires
+*plus one more*: the wire of the freshly minted version it creates.  It
+looks like a three-wire event even when only two actors are disputing.
+
+That third wire is a **dead wire**.  Nothing ever travels along it again,
+and here is why, in four steps.  A version's own wire is occupied only at
+the event that *creates* it; when that version is later delivered to
+somebody, it rides in the message's *contents*, not on its own wire.  So
+for the wire to be used twice, two different settlements would have to
+mint the *same* version name — same base, same winner, same author, same
+initiator.  Two such settlements would share a disputant's wire, and
+anything sharing a wire in this framework is causally ordered.  So one
+would come after the other; the later one would already see the earlier
+settlement; and its own admissibility rule refuses to settle a dispute
+whose base has already been superseded.  It cannot happen.
+
+> **So the number that bounds a chart's width is not the wires an event
+> touches; it is the wires that *carry on* — and for a settlement, that
+> is exactly the number of disputants.**  A two-proposer conflict ring is
+> therefore held to **four**, exactly like a delivery circuit, three
+> wires or not.  "Three or more wires" was necessary and **not
+> sufficient**; what buys width is **three or more proposers**.
+
+**Third: the object.**  Give three actors a dispute; that is a start, and
+a ring or a grid of such disputes carries six directions where a delivery
+circuit carries four.  But the record that matters puts each actor in
+**two disputes at once** — one along a row, one along a column — running
+concurrently, so that each dispute's outcome immediately feeds two further
+disputes rather than two messages:
+
+> **THE DOUBLE GRID.**  Rows and columns quarrelling at the same time.
+> **No messages at all** inside its rounds.  A quarter of everything that
+> happens in it is a settlement, which is the theoretical maximum for
+> three-way disputes.  And **nine** of its charts carry **nine
+> directions** — three disputants, each of whose three successors is
+> itself a three-way dispute, three times three — which is exactly the
+> corrected ceiling, **reached and saturated**.  Every one of those nine
+> charts was read out of the framework's own committed geometry, event by
+> event, not counted by a summary statistic.
+
+Nine, against a delivery circuit's four.  Against genuine sprinkled
+spacetime's ten to seventeen, it is for the first time the same order of
+magnitude — from pure interaction, with nothing delivered.
+
+**Fourth, and it answers the previous section's own leftover question.**
+§A8.7 could tile and could spread, but the tiling and the spreading were
+in tension: across the whole swept family, the wide records were not
+uniform and the uniform records were not wide.  The double grid is
+**both**.  At the deeper of the two chart depths it sits **inside** the
+band that genuine sprinkled records occupy, while carrying its
+nine-direction charts.  A record that is at once crystal-uniform and
+sprinkling-order wide now exists.
+
+**And the mechanism, which is the part worth remembering.**  It is
+tempting to credit the width to the messages, because a message-free
+conflict record *can* collapse to a line — it does exactly that when each
+actor has only **one** running dispute, since then its cycle is a chain of
+diamonds, propose-propose-settle-propose-propose, and a diamond has no
+width.  But the collapse belongs to the *single dispute*, not to the
+absent message.  Give the same actors a second dispute running alongside
+the first and the messages are still absent, the settlement share is still
+at its maximum, and the width comes back ninefold.
+
+> **What a crystal needs for a second direction is a second thing
+> consuming an actor's wire, concurrently.**  A message is one way to buy
+> that, and it costs a message.  **A second concurrent dispute is
+> another, it is free, and it is better** — because a message forks two
+> ways and a three-way dispute forks three.  **Crossed conflict alone
+> generates both the uniformity and the width.**  Transport is still
+> needed to *seed* the disputes and to *rotate* partners; it is not needed
+> to make space.
+
+**Fifth: still no gauge.**  The whole point of looking at conflict, on the
+gluing side, was that a settlement among several proposers has no
+free two-way symmetry to relabel away — so a conflict atlas was the first
+place a genuine structure could live.  It does not.  Run §A8.8's
+triviality test on the wide conflict records, at **five** different
+conventions for how a settlement's wires are ordered, and at every one of
+them the obstruction count is **zero**.
+
+> **The answer to §A8.8's question is negative on the first substrate
+> that could have answered it positively.**  Conflict bought width and
+> bought no gauge.  Three substrate families have now been tested —
+> delivery, conflict, and crossed conflict — and every one of them glues
+> trivially at every convention tried.
+
+There is one exception-shaped thing in the data and it is honestly
+reported rather than promoted.  The *narrow* two-way conflict rings — the
+ones held to four — do produce a non-zero count, but only when the number
+of quarrelling pairs per round is **odd**, and the size of the count turns
+out to be a count of *rounds*, not a property of the ring.  It is
+**parity**, checked at five ring sizes including the one that would have
+killed it.  A free choice of labelling removes it, there are no loops for
+it to live on, and genuine sprinkled records produce such counts too.  It
+is filed, not claimed.
+
+**And the third motivation, which is left where it was.**  The measure
+defect of §A2.7 — the menu total jumping from two to two-and-a-half when a
+hidden conflict becomes visible — is a statement about the *two-actor,
+message-free* sub-theory.  These records are neither.  What can be
+measured here is the analogous quantity: how far a record's total menu
+mass rises above the number of actors, which is non-zero exactly where an
+unsettled dispute is visible.  It does, and the excess is counted.  But it
+is a different quantity at a different scope, the two-and-a-half does not
+reappear, and nothing is claimed to bridge them.
+
+> **What this section does NOT claim.**  That the double grid is a
+> spacetime, or typical — one engineered family, and genericity is not
+> posable here (chapter A9).  That nine is the framework's ceiling: nine
+> is the *three-disputant* ceiling, and whether four concurrent disputes
+> reach sixteen is unbuilt.  That the odd rings carry a real obstruction —
+> they do not, on the evidence.  That any of this is a theorem about the
+> grammar: the width ceiling and the dead wire are theorems, the records
+> and the triviality are measurements.
 
 ---
 
@@ -2712,7 +2887,36 @@ completion's measure **genuinely descends**.  And the honest replacement
 sentence: *the descent defect names the job a completion has to do; it
 does not single out which completion does it* (§A2.7).
 
-### A10.14 Smaller retirements, for completeness
+### A10.14 The two sentences the double grid refuted
+
+*Claimed (first):* in a crystal made of conflicts, the widest chart a
+*k*-way dispute can carry is **twice** *k* — with a mechanism that looked
+legible in the chart itself, each disputant contributing one direction per
+wire of its next message.
+*Claimed (second), in the same breath:* a message-free conflict record
+collapses to a line, so **the message is what gives a crystal its second
+direction** — the schedule that maximizes conflict is the one that cannot
+spread.
+*Killed by:* the same reviewer that confirmed every number behind both,
+who then built two records nobody had asked for.  Twice *k* is not a law
+about disputes; it is the value the bound takes when every follow-on event
+happens to be a **message**, which is what the schedules that were swept
+imposed and what nothing in the grammar requires.  A disputant's wire can
+instead be consumed by **another dispute** — and a dispute forks three
+ways where a message forks two.  The true ceiling is *k* times *k*, and
+the record that saturates it has **no messages in it at all**: rows and
+columns quarrelling concurrently, nine charts of nine directions.  The
+same object kills the second sentence, since it contains no messages and
+is the *widest* record in the corpus; the collapse that was blamed on the
+absence of messages belongs instead to having only **one** running dispute
+per actor, which makes the cycle a chain of diamonds.
+*Survived:* everything measured — conflict tiles, the budget bound and its
+saturation, the dead-wire theorem, the trivial gluing — plus a *better*
+mechanism sentence in place of the refuted one: what a crystal needs for a
+second direction is a **second concurrent conflict axis**, which a message
+buys expensively and a concurrent dispute buys for free (§A8.9).
+
+### A10.15 Smaller retirements, for completeness
 
 - **"Cross-actor causation produces the sky"** — the control was miswired
   *and* could never have failed; rebuilt honestly, the comparison
@@ -2739,7 +2943,7 @@ does not single out which completion does it* (§A2.7).
   all falsified, each at exit zero as a deliverable, so that nobody
   walks them again.
 
-### A10.15 The pattern
+### A10.16 The pattern
 
 Two observations about the list, which are the reason it is here.
 
@@ -2750,13 +2954,16 @@ identical, exact numbers reproduced, certificates re-derived by
 different methods.  What failed, repeatedly, was the *sentence the
 result was sold with*: a missing scope label, an arrow borrowed from a
 premise class that had already been refuted, an antecedent nobody
-checked was non-empty.  The two most recent retirements above are the
-purest form of it: in both, the reviewer confirmed **every** number and
-then ran one computation the unit had not thought to run, and the
+checked was non-empty.  The three most recent retirements above are the
+purest form of it: in each, the reviewer confirmed **every** number and
+then ran — or built — one thing the unit had not thought of, and the
 headline did not survive it while the arithmetic did.  Which yields the
 programme's current standing obligation: *name the computation that
 would make the interesting reading false, and run it in the same
-receipt.*
+receipt.*  The most recent case also shows what that obligation buys when
+it is met: the refutation of the width sentence came with a **better
+record** attached, and the corrected reading is stronger than the one it
+replaced.
 
 **Second: pre-registration is doing real work.**  The corpus writes down
 what it expects *before* running, with the argument, and then reports
@@ -2803,7 +3010,12 @@ So the admissibility layer does not cap the ladder.  The line has also
 now built a record that tiles *and* spreads, proved four directions to be
 the ceiling of any delivery circuit, and measured the transition rules
 between that record's charts — which are **pure gauge** (§A8.8), so the
-structure a manifold would carry starts at nothing here.
+structure a manifold would carry starts at nothing here.  And it has gone
+through the door the ceiling theorem left open: a record built out of
+**crossed disputes**, with no messages inside its rounds, tiles at the
+same cadence and carries **nine**-direction charts — the corrected
+ceiling, reached exactly — while sitting inside the band that genuine
+sprinkled records occupy (§A8.9).  Its charts glue trivially too.
 
 ### A11.2 The convergence question
 
@@ -2873,22 +3085,21 @@ not an answer.
    cover reading, while other results were computed under a different
    one.  Nothing justifies a choice, and several conclusions depend on
    it.
-3. **A crystal made of conflicts.**  Three separate results now point at
-   the same unbuilt object, which is why it ranks here.  *(i)* The wide
-   crystal exists — a record that tiles *and* carries four-direction
-   charts — and a short theorem says four is the ceiling for any record
-   built out of deliveries, because a delivery touches two wires; past
-   four the width must be bought with **arbitration over conflicts**.
-   *(ii)* The transition rules between the wide crystal's charts are a
-   relabelling and nothing more (§A8.8), and the reason they are is that
-   a delivery's two wires are interchangeable — a symmetry a conflict
-   settlement does not have, which is where a non-trivial gluing could
-   first live.  *(iii)* The one place the grammar's normalized law fails
-   to define a probability on records (§A2.7) is the jump in a menu's
-   total from two to two-and-a-half, and that jump happens exactly when a
-   hidden **conflict** becomes visible.  Width, gluing, and the measure
-   defect all name conflict.  No record carrying a five-direction chart
-   has been built.  This is the manifold road's live construction.
+3. **Wider still, out of crossed conflict.**  The object three separate
+   results pointed at — a crystal made of disputes rather than of
+   messages — is built (§A8.9), and it gave one of the three things asked
+   of it, refused the second, and left the third where it was.  It
+   **tiles**; it carries **nine** directions where a delivery circuit
+   carries four, saturating the corrected ceiling exactly; its charts
+   still glue **trivially**, at every convention tried, so the gluing
+   motivation came back negative; and the measure defect that also named
+   conflict lives at a different scope, which this record measures the
+   analogue of and does not bridge.
+   What ranks here now is the next rung: a record in which each actor
+   stands in **four** concurrent disputes rather than two, whose ceiling
+   is sixteen — the first time the construction target and the genuine
+   sprinklings' ten-to-seventeen have been in the same place.  That is the
+   manifold road's live construction.
 4. **Is there a record-level demand that forces the shape?**  The two
    strongest candidates and their conjunction are eliminated by
    measurement.  Nobody has a third — and the demand that the law be a
@@ -2937,11 +3148,12 @@ what this programme has produced:
   into an exciting one.
 - **Hostile rounds, and now independent-model rounds** — a reviewer with
   no prior context, instructed to recompute rather than trust, writing
-  its own code.  Seven such rounds have run; five found a blocker; **all
-  five blockers were in interpretation, not arithmetic**, and the two
-  most recent were the same mistake twice — a headline built on numbers
-  that were all correct, refuted by a computation the unit had not
-  thought to run.
+  its own code.  Eight such rounds have run; six found a blocker; **all
+  six blockers were in interpretation, not arithmetic**, and the three
+  most recent were the same mistake three times — a headline built on
+  numbers that were all correct, refuted by a computation, or a
+  construction, the unit had not thought of.  The most recent one came
+  back with a better record attached than the one it refuted.
 - **Forward corrections only.**  The ledger is append-only.  Nothing is
   silently edited; superseded text is preserved verbatim next to its
   replacement.
@@ -3715,7 +3927,11 @@ uninformative until one is built — that, not DC1, is where the map is
 widest.  (2) Whether the defect's coboundary form survives beyond this
 scope: `M` takes two values here because the quarter law's excess is
 binary at two actors; at three actors or with delivery the mass spectrum
-changes and the statement must be **re-derived, not carried**.  (3) The
+changes and the statement must be **re-derived, not carried**.  §B8.9
+censuses the commensurable quantity at transport scope — the menu-mass
+excess above the actor count, in quarters, which is non-zero exactly where
+conflict groups are open — and reports explicitly that it does **not**
+reproduce the `2 → 5/2` values and does not bridge to them.  (3) The
 refined-record identification: `canon` was *chosen* as the record-identity
 functor, and refined ⊆ `sigma`-commuting holds because `canon`-identity
 implies `sigma`-identity — verified for this functor (0 splits over 5,548
@@ -5931,9 +6147,9 @@ no measure at transport scope).  No dimension claim beyond the measured
 **Residues.**  (1) **Size** — both crystals are small, and the grid is
 smaller than it looks; a larger grid at `K ≥ 5` would test the 2+1
 analogue properly.  (2) **The width ceiling** — `max |D| = 3` at every
-`(M, R)` tried at `d = 2`.  **This one is decided as a pair by §B8.7**:
-the empirical ceiling is beaten (3 → 4) and the remaining ceiling is
-proved.  (3) The asymptotic claim rests on a six-point sweep and the
+`(M, R)` tried at `d = 2`.  **This one is decided by §B8.7 and §B8.9**:
+the empirical ceiling is beaten (3 → 4), the delivery ceiling is proved,
+and conflict then beats *that* (4 → 9) against a second proved ceiling.  (3) The asymptotic claim rests on a six-point sweep and the
 interior control, not on a proof.
 
 ### B8.7 The wide crystal, and the branching bound `[D63, LOG #458 → #459; round 1 TERMINAL]`
@@ -5991,8 +6207,8 @@ right.**
    **Partial coupling desynchronises the height structure; complete
    inter-ring coupling restores layer regularity.**  Width cannot dip: it
    is 0 on both sides of `cpl = 1`.
-2. **Width appears at the wires that have a second direction, and the
-   per-wire statement is the sharp one.**  At the jump points only a
+2. **Width appears at the COUPLED wires, and the per-wire statement is
+   the sharp one.**  At the jump points only a
    *minority* of actors are coupled, and the wide charts sit at exactly
    that minority (12 wide events carried by R0/R1/R4/R5; 8 of 117 by
    A0/A1/B0/B1).  *"Every wire"* is true only at `cpl = M`, which is not
@@ -6047,15 +6263,22 @@ event by event at `d = 1, 2, 3, 4` with `B = 2` measured throughout.
 > `B = 2` (carriers `{s, r}`), so `max |D| ≤ 4` at `d = 2`: **3 was the
 > brick's cone, 4 is the DELIVERY GRAMMAR'S CEILING**, and the
 > sprinklings' `max |D|` of **10–17 is UNREACHABLE by any delivery circuit
-> whatever.**  Chart width past 4 at `d = 2` therefore **requires an event
-> with 3+ registers** — and the layer has exactly one such species, the
-> **arbitration over a component with `k ≥ 2` distinct proposers**
+> whatever.**  Chart width past 4 at `d = 2` therefore **requires
+> arbitration** — the layer's only species with more than two registers is
+> the **arbitration over a component with `k ≥ 2` distinct proposers**
 > (`regs` = proposers ∪ {new version}).  **This is a NECESSITY, not a
-> route:** the receipt exhibits an admissible 3-register *event*
-> (`q = 1/8`), but whether a *record carrying 5-direction charts* exists
-> is open — a randomized 220-history hunt with multi-proposer arbitrations
-> finds none, inconclusive either way.  So *"arbitration is where width
-> past 4 must come from"* is licensed; *"arbitration buys it"* is not.
+> route.**
+>
+> **And the necessary condition is sharper than "3+ registers".**
+> §B8.9's **W4c** proves the minted version register is a **dead wire** —
+> it recurs in no later event's `regs_of` — so the operative branching
+> factor is the **live** out-degree `Bl`, which for an arbitration is its
+> **proposer count** `k`, not `|regs| = k + 1`.  A two-proposer conflict
+> ring therefore has `Bl = 2` and is held to `max |D| = 4` exactly like a
+> delivery circuit, three registers notwithstanding.  **W4b's "3+
+> registers" is necessary but NOT SUFFICIENT; the correct statement is
+> "3+ distinct PROPOSERS".**  Both are supplied by §B8.9, which builds
+> the records and saturates the corrected ceiling at `9 = k²`.
 
 **Instrument hygiene.**  The `C = 0` WIDE-BRICK **is** D60's
 `brick(8, 14)` — the function object called in-process, not a re-typing —
@@ -6085,11 +6308,15 @@ charts and these are the less thin records.
 
 **Residues.**  (1) **The arbitration crystal** — a crystal made of
 *conflicts* rather than deliveries; the sharp successor, and the only
-route the branching bound leaves to width past 4 at `d = 2`.  (2) **Both
-bands at `d = 2`:** no swept configuration is inside the homogeneity band
-and the `|D| ≥ 4` band simultaneously at `d = 2` (two are at `d = 3`);
-the trend — width rises with rounds, homogeneity rises faster — suggests
-it may be unreachable in this family, which would itself be worth proving.
+route the branching bound leaves to width past 4 at `d = 2`.  **Built,
+and it saturates the corrected ceiling at 9** (§B8.9).  (2) **Both
+bands at `d = 2`:** no swept configuration in *this* family is inside the
+homogeneity band and the `|D| ≥ 4` band simultaneously at `d = 2` (two
+are at `d = 3`); the trend — width rises with rounds, homogeneity rises
+faster — suggests it may be unreachable in this family, which would itself
+be worth proving.  On the **conflict** substrate the composition is
+achieved at `d = 3` by the delivery-free DOUBLE GRID, in band at 0.7833
+with `max |D| = 9` (§B8.9); at `d = 2` it remains open there too.
 (3) The `cpl = 1` dip is measured but the *proof* that layer regularity
 controls homogeneity is not written.  (4) **Size** — records run to 217
 events against 120-point sprinkling comparators; D60's size residue is
@@ -6107,7 +6334,7 @@ W4b's bound of 8, and no `d = 3` claim beyond the printed census is made.
 > buys **tiling** (charted everywhere, thin skies); §B8.7 buys **both at
 > `d = 2`**.  What stands between the grammar and sprinkling-grade chart
 > width is not engineering but the branching bound — and the door it
-> leaves open is **conflict**, not transport.
+> leaves open is **conflict**, not transport.  §B8.9 walks through it.
 
 ### B8.8 The transition cocycle: non-identity, consistent, and a COBOUNDARY `[D64, LOG #461 → #464 → #466; round 1 TERMINAL]`
 
@@ -6255,11 +6482,15 @@ on 2 points each, and nothing else.
 enough"* but **can ANY substrate carry a transition class that is not a
 coboundary?**  Everything measured here is compatible with `H¹ = 0` and
 was; the test is the **obstruction count**.  The **arbitration crystal**
-inherits the question with a *stated structural reason*: what makes `ε`
+inherited the question with a *stated structural reason*: what makes `ε`
 available is that a delivery's fibre has exactly two ports with no
 intrinsic asymmetry, so "which is port 0" is free per chart, and an
-arbitration event's conflict structure breaks that symmetry.  A reason to
-attack there — not a promise.  (2) **The ambiguous pairs** — 27 of 172 at
+arbitration event's conflict structure breaks that symmetry.  **That
+attack has run and returned zero** (§B8.9): on wide conflict records the
+`Z/2` cochain is identically zero at all five port conventions, and the
+two routes with a non-trivial domain (PARITY, FREE) trivialize as well.
+The question is now *"can any substrate at all"* with three substrate
+families — delivery, conflict, crossed conflict — answering no.  (2) **The ambiguous pairs** — 27 of 172 at
 `d = 2`, 261 of 273 at `d = 3` — carry a shared direction with two wire
 words in *both* charts; whether a finer labeling resolves them is the
 single biggest gap between this and a genuine manifold statement.  (3) A
@@ -6282,6 +6513,476 @@ triviality of the class is the one outcome that survives all of them**.
 > order.  The negative is that on the delivery crystal there is nothing
 > for it to find: the charts glue, they glue consistently, and they glue
 > **trivially**.
+
+### B8.9 The arbitration crystal: conflict tiles, the ceiling is `k·b ≤ k²`, and a delivery-free DOUBLE GRID saturates it `[D66, LOG #469 → #471 → #472; round 1 TERMINAL]`
+
+*Sources: `note-d66-arbitration-crystal-pin.md` (STRICT, frozen and committed before the receipt existed); `note-d66-arbitration-crystal-result.md`; `v10/code/d66_arbitration_crystal_exact.py` (29 PASS / 0 FAIL, exit 0, 962 s) + `data/d66_arbitration_crystal_exact.out`; `v10/reviews/d66-round1-hostile-review.md` — REVISE, 1 BLOCKER / 5 MAJOR / 8 MINOR / 4 NIT, every published figure reproduced from the referee's own driver, and **two constructions of the referee's own that broke the unit's mechanism story**.*
+
+**The question, and the three units that converge on it.**  §B8.7's
+branching bound leaves conflict as the only route to chart width past 4 at
+`d = 2`; §B8.8's coboundary makes an arbitration substrate the first place
+a non-trivial transition class could live, since what trivializes the
+delivery atlas is a two-port symmetry an arbitration lacks; and §B2.10's
+descent defect originates exactly at the `2 → 5/2` menu-mass jump, which
+is conflict-group visibility.  Width, gluing and measure all name the same
+object.  It is built here — twenty-one conflict configurations, **2,325
+events**, at grammar layer.
+
+**The design problem the pin named, and the layer's own answer to it.**
+Arbitrations **consume** their conflicts, so a conflict crystal must
+re-supply a shared base every round; the pre-registered lean was that
+*tiling* would be the hard part.  Half of it is free: `View.holdings`
+gives the minted version to **every proposer**, not only to the
+arbitrator, so a group that arbitrates together needs **no delivery** to
+conflict again.  What costs a delivery is **rotation** — partners not
+together last round hold mutually superseded versions.
+
+> **`[EXACT]` A-IIIa FIRED: CONFLICT TILES.**  Twenty-one configurations,
+> 2,325 events, **zero refusals** — every event offered by the committed
+> layer's own menu and specified by its full event tuple, at D60's **C1
+> grade** (max menu hits per specification **1** at every step of every
+> record).  Full-menu replay (all actors offered at every step) completes
+> on `RING(4,6)` 46/46 (widest menu 126), `RING(6,6)` 69/69 (301),
+> `GRID(3,4)` 66/66 (530), **`DOUBLE-GRID(3,2)` 72/72 (536)** and the
+> headline `RING(6,10)` 117/117 (481); `GRID(3,10)` is **BUDGET-CUT at
+> 108/174** against a printed budget, and every step it reached was
+> offered and unique.
+
+> **THE CONFLICT BUDGET BOUND `[THEOREM, verified, saturated]`.**  An
+> arbitration's `ckey` is a set of `k` live proposal triples and a
+> proposal is resolved by at most one arbitration, so `#proposals ≥ k ·
+> #arbs` and the arbitration share of any record of this layer is at most
+> **`1/(k + 1)`**, `k` the smallest proposer count in it; deliveries only
+> lower it.  *The step that needs the register geometry:* `View.resolved`
+> is **view-relative**, so by itself it does not exclude two causally
+> *incomparable* arbitrations each seeing the same triple live — the
+> register argument closes it (both carry that proposer's register, so
+> `event_poset` makes them **comparable**, the later one's component is
+> gone from `arb_components_in_view`, and `admissible` returns `False`).
+> **Two readings, both printed per record:** `k_min` is the smallest
+> proposer count *anywhere*, so the delivery-free ring saturates `1/3`
+> exactly (`k_min = 2`), while the DOUBLE GRID mints its six base lineages
+> with **single-proposer** bootstrap arbitrations (`k_min = 1`, general
+> bound `1/2`) yet has **all** its conflict groups at `k = 3` and an
+> arbitration share of exactly **`1/(3+1) = 1/4`** — the rounds saturate
+> the conflict bound and the bootstrap spends none of the slack.  Gated
+> with the stronger per-arbitration equality `#proposals = Σ k` and "no
+> consumed triple occurs twice", and labelled for measuring the equality
+> rather than the prose inequality.
+
+**The four schedule variants, all reported:**
+
+| variant | in-round deliveries | arb share | `d = 2` homog | `d = 3` homog | `max \|D\|` |
+|---|---|---|---|---|---|
+| `RING(6,10)` `sticky = 1` (rotate every round) | 27 | 10/39 ≈ 0.2564 | 0.6923 [in band] | 0.8974 [ABOVE] | 4 |
+| `RING(6,10)` `sticky = 2` | 12 | 5/17 ≈ 0.2941 | 0.6471 [in band] | 0.5882 [below] | 4 |
+| `RING(6,10)` `sticky = 0` (never rotate) | 0 | **1/3 — SATURATED** | 0.6000 [below] | 0.2667 [below] | **2** |
+| **`DOUBLE-GRID(3,4)`** (two concurrent conflicts per actor) | **0** | **1/4 — SATURATED** | 0.5167 [below] | **0.7833 [IN BAND]** | **9** |
+
+*(bands: the re-run sprinkling `[77/120, 4/5]` at `d = 2` and `[41/60,
+49/60]` at `d = 3`.)*  The winner convention is irrelevant: `win = R` and
+`win = ALT` reproduce `win = S` in every column of every census.
+
+**W4c — the mint-register refinement `[THEOREM, PROVED from the committed
+layer]`.**
+
+> The version register an arbitration mints is a **birth wire**: it has no
+> `P`-successor.  Replacing `|regs(x)|` by the number of registers of `x`
+> that **recur** — the live out-degree `b(x)` — in W4b's own proof gives
+> `|D_e(d)| ≤ Bl^d` with `Bl = max b(x)`, and for an arbitration
+> `b ≤ #proposers = |regs| − 1`.
+>
+> *Proof, four steps, each quoted against the committed `d42b1` source and
+> gated.*  **(1)** A version occupies a register only where it is born:
+> `regs_of` returns `{a}` for `p`/`n`, `{sender, receiver}` for `d`,
+> `{a, ('mw', a, pk)}` for `m`, and `props ∪ {vname(base, op[3], op[1])}`
+> for `r` — so a delivery of version `v` carries `v` in its **payload**
+> `op[3]` and does **not** occupy `v`'s register (merge-created `mname`s
+> appear in no `regs_of` at all).  **(2)** A version register can
+> therefore recur only if two distinct arbitrations **mint the same
+> `vname`** — sharing base, winner-key value tuple, author tuple and
+> initiator.  **(3)** Two such arbitrations share at least one **proposer
+> register** (the winner authors, and the initiator, are proposers of
+> both), and in `event_poset` an event touching register `r` becomes
+> `last[r]` while every later event touching `r` inherits its whole past —
+> so they are **causally comparable**.  **(4)** The later one's `View`
+> then has `base ∈ superseded`, `arb_components_in_view` skips the
+> component, and `admissible` returns `False`.  **The second arbitration
+> is inadmissible. ∎**  *(The same shape as D62's O2 argument, at
+> transport scope.)*
+>
+> **CONSEQUENCE.**  A **two-proposer** conflict record has `Bl = 2`
+> exactly like a delivery circuit and **cannot exceed 4 at `d = 2`**
+> despite carrying 3-register events.  **W4b's "width past 4 at `d = 2`
+> requires a 3+-register event" is true but NOT SUFFICIENT: what is
+> required is 3+ distinct PROPOSERS** (§B8.7).
+>
+> The per-record census is kept beside the proof as **evidence, not
+> warrant**, and the distinction is load-bearing: *"`regs_of` places a
+> version name in exactly one event's register set"* is at the wrong
+> level, since `regs_of` is a function of one *event* while "occurs once"
+> is a property of the *record* — which is why the four steps above are the
+> warrant and the census is not.  Measured: every version register occurs
+> in exactly one event's `regs_of` on every record built here, and both
+> bounds hold with zero violations at both depths.  *`b ≤ k` is an
+> inequality, not an identity* — the last arbitration of each group at a record's end has
+> `b = 0`, and the receipt prints the per-record count of arbitrations
+> with `b < k`.  Nothing turns on it (the bound uses the maximum) and the
+> gate is labelled for what it measures.
+
+**The width verdict, by proposer count and by live branching:**
+
+| record | `k` | `B` (regs) | W4b `B²` | live `Bl` | W4c `Bl²` | measured `max \|D\|` at `d = 2` |
+|---|---|---|---|---|---|---|
+| any delivery circuit (§B8.7), **at `d = 2`** | — | 2 | 4 | 2 | 4 | 4 |
+| `CONFLICT-RING(M, R)` | 2 | **3** | **9** | **2** | **4** | **4** |
+| `CONFLICT-GRID(3, R)` | 3 | 4 | 16 | 3 | 9 | **6** |
+| `CONFLICT-GRID(4, 4)` | 4 | 5 | 25 | 4 | 16 | **8** |
+| **`DOUBLE-GRID(3, R)`** | **3** | 4 | 16 | **3** | **9** | **9 — SATURATED** |
+
+**The comparator row is depth-labelled.**  *"`max |D| = 4` for any
+delivery circuit"* is a **`d = 2`** statement: D63's own committed note
+reports `max |D|` reaching 5 at 14 records and 6 at 4 more at `d = 3` —
+**18 of its 38 configurations exceed 4 at `d = 3`** — and the receipt
+reprints `DR(8,10,8)`'s and the brick's `d = 3` rows beside the claim.
+
+> ### **THE WIDTH LAW, and what `2k` is.**
+>
+> Read off the RING and GRID schedules alone, `max |D| = 2k` looks like a
+> law about `k`-proposer crystals with a legible mechanism (*"each
+> proposer contributes one direction per wire of its next delivery"*).
+> **It is neither.**  `2k` is the value of the bound when every depth-1
+> successor of an arbitration is a **two-register event — a delivery** —
+> which is what those blueprints impose and **nothing in the grammar
+> forces**: an arbitration's proposer register can be consumed by
+> **another arbitration**, since an actor may hold two live proposals on
+> two distinct unsuperseded bases (`prop_options_in_view` blocks only a
+> second live proposal on the *same* base).
+>
+> **The refinement, from W4c's own proof.**  Every `P`-edge raises the
+> height by at least 1, so a depth-2 direction is reached from `e` by a
+> `P`-path of length 1 or 2 — an **exact containment**, gated at every
+> event of every record with **zero violations**:
+>
+> `D_e(2) ⊆ succ(e) ∪ ⋃_{y ∈ succ(e)} succ(y)`.
+>
+> When `e` has a successor at height `h(e) + 1` — no `P`-edge out of `e`
+> skips a layer — the first term contributes nothing at depth 2 and the
+> bound is the sharp
+> `|D_e(2)| ≤ Σ_{y ∈ succ(e)} b(y) ≤ b(e)·Bl ≤ k·Bl ≤ k²`.  **The
+> exceptions to the sharp form are counted AND characterised**, not waved
+> through: exactly the events *all* of whose `P`-successors sit two or
+> more layers above them (a height-skipping edge into a terminal
+> arbitration at a record's end), seven in all, and at every one
+> `|D_e(2)| ≤ 1`.  The ceiling itself is W4c's `Bl^d`, gated with zero
+> violations on every record — and it is **REALIZED AND SATURATED at
+> `Bl² = k² = 9`**.
+>
+> **`2k` is the `Bl = 2` corner, not the law.  W4c's bound is TIGHT, and
+> the widest chart in the campaign is 9.**
+
+**The witnesses, exhibited rather than counted** (the pin's demand that a
+width claim not be an instrument artefact).  Both are read from the
+**committed `d47a.sky`** directly, every direction verified ordered after
+the base in the **committed** `poset_of` and sitting exactly two height
+layers above it:
+
+- `CONFLICT-GRID(4, 4)`, base event 4 — an arbitration by `G00` over
+  **four distinct proposers**, 5 registers, height 1, live out-degree 4;
+  `|D| = 8` at directions 21, 24, 29, 31, 37, 39, 45, 47, all at height 3,
+  role words `(p, 0)` and `(p, 1)` for `p = 0..3`.  This is the `2k` case:
+  every successor is a **delivery**, `b(y) = 2`.
+- **`DOUBLE-GRID(3, 4)`, nine bases — three per round** — each an
+  arbitration over **three distinct proposers** whose three depth-1
+  successors are themselves **three-proposer ARBITRATIONS** (out-degrees
+  3, 3, 3), giving `|D| = 9 = Σ b(y) = k·Bl = k²`.
+
+**The smallest witnesses (`ARBCHAIN(m, k = 3)`)** — one `k`-proposer
+arbitration whose `k` proposer registers are consumed by `m` further
+`k`-proposer arbitrations and `k − m` deliveries, giving
+`|D_e(2)| = k·m + 2(k − m)` exactly:
+
+| `m` | successor kinds | successor out-degrees | `\|D_e(2)\|` |
+|---|---|---|---|
+| 0 | `d, d, d` | 2, 2, 2 | **6 = 2k** (the RING/GRID case) |
+| 1 | `r, d, d` | 3, 2, 2 | **7** |
+| 2 | `r, r, d` | 3, 3, 2 | **8** |
+| 3 | `r, r, r` | 3, 3, 3 | **9 = k²** (W4c's bound) |
+
+So `2k` is not a law, not a ceiling and not even a typical value: it is
+the `m = 0` corner of a one-parameter family whose other corner is `k²`.
+
+> **THE FLAGSHIP OBJECT — `DOUBLE-GRID(3, R)`.**  Rows and columns
+> conflicting **concurrently**, so every actor stands in two independent
+> conflict lineages at once.  **Zero in-round deliveries** (12 in the
+> bootstrap only); arbitration-group share **1/4, saturating `1/(k+1)`**;
+> C1-grade full-menu replay **72/72** at widest menu 536; **nine
+> `|D| = 9` charts**, three per round, each verified against the committed
+> `sky()` and `poset`, out-degrees `[3,3,3]` — **`k² = 9`, W4c's true
+> ceiling, SATURATED**; width histogram `{0:10, 1:48, 2:5, 3:46, 4:2,
+> 9:9}`; `d = 2` homogeneity 31/60 with `|D| ≥ 4` at 11/120; **`d = 3`
+> homogeneity 47/60 = 0.7833, INSIDE the band, with `max |D| = 9` and
+> `|D| ≥ 4` at 13/40**; `ω` 0.5566.  **The first record in the campaign
+> that is BOTH crystal-uniform AND wide.**
+
+**What the door does and does not buy, with depth labels.**
+
+- **At `d = 2`**, in this family, width and tiling homogeneity do
+  anti-correlate: the in-band-and-wide set has ten members, **every one of
+  them `k = 2`** (they are not all *rings* — `GRID(g=2, R=10)` is one, and
+  by the receipt's own gate it is the `M = 4` ring under another name),
+  while every `k ≥ 3` record sits below the band.
+- **At `d = 3` the anti-correlation fails.**  D60's interior excision, run
+  on **every** swept record at **both** depths, carries `GRID(3,6)` and
+  `GRID(3,10)` **into** the `d = 3` band while they still carry
+  `max |D| = 6` — D63's ends effect exactly — and `DOUBLE-GRID(3,4)` is in
+  the `d = 3` band **outright** while carrying `max |D| = 9`.  **In-band
+  and past the ceiling, at once.**
+- Symmetrically, the rings' in-band property is a **`d = 2`** property:
+  their `d = 3` homogeneity is 0.83–0.93, **above** the band, interiors at
+  1.0000.
+
+`ω` is reported per D58's reading (a chart-size ratio along covers, never
+a symmetric overlap): 0.75 for every rotating ring, 1.0000 for the
+delivery-free ring (thin charts, as the statistic's bias predicts),
+0.44–0.51 for the grids, 0.5566 for the DOUBLE GRID.
+
+> ### **THE DESIGN FINDING — what actually makes a second direction.**
+>
+> The `sticky = 0` ring is delivery-free *and* collapses to `max |D| = 2`.
+> That collapse is a property of **one live conflict lineage per actor**,
+> not of delivery-freedom: with one lineage the propose/propose/arbitrate
+> cycle is a **diamond** — two proposals fan out of an arbitration and fan
+> straight back into the next one — so the depth-2 layer is a single
+> event.  Give each actor **two standing conflicts** and the deliveries
+> vanish, the share still saturates, and the width returns nine times
+> over.
+>
+> **What a crystal needs for a second direction is a second concurrent
+> consumer of the proposer's register.**  Rotation buys that consumer with
+> a **delivery**; concurrency buys it for **free**; and a concurrent
+> **arbitration** is a *better* consumer than a delivery — `b = k` instead
+> of `b = 2`.  **The second direction is a second CONCURRENT CONFLICT
+> AXIS.  Crossed conflict alone generates both the uniformity and the
+> width; transport is needed only to SEED and to ROTATE, never to make
+> space.**  The maximum-conflict schedule is not the one that cannot tile
+> widely: the widest record in the unit has **zero in-round deliveries**.
+
+**The coboundary gate, and the answer to §B8.8's successor question.**
+The instrument is D64's, **unmodified and anchored**: this receipt re-runs
+D64's own `reg_tuple` / `out_reg` / `words_from` / `fibermap` / `classify`
+/ `measure` / `cochain` / `extension_census` by AST extraction and gates
+that on `DOUBLE-RING(8,10,8)` at REG and `d = 2` it reproduces **every**
+committed figure (60 charts, 138 labelled overlaps, 9 components, 0
+obstructions, `ε` 32/28, 0 survivors, 108 Čech triples / 0 violations,
+split 57/115, REGA `ε` 40/20).  **So the same instrument produces every
+number below.**  Five port conventions for 3+-register events are defined
+and printed — **REG** (D64's canonical tuple order), **REGA** (all
+registers name-sorted), **ARBLOSE** (losers, winners, version),
+**ARBVFIRST** (version first), **COV** (register-free surrogate, the only
+one also defined on sprinklings) — with initiator-first and winner-first
+coinciding with REG on this family as a printed fact about the blueprint.
+Two further routes are **validated before use** (a constructed true
+positive *and* true negative): a **PARITY** route (`g = 1` on any
+non-identity length-preserving transition, including the ones D64's
+`cochain` drops as `other`) and a **FREE-RELABELLING** route (arbitrary
+per-chart bijections — the largest possible gauge group).
+
+> **`[EXACT]` THE CLASS IS TRIVIAL AGAIN.**  `CONFLICT-GRID(3, 10)` at
+> `d = 2`: 92 charts, 27 wide, 90 overlapping pairs, 61 triples.  **All
+> three routes return ZERO obstructions at all five conventions and both
+> depths**, and PROBE 1 does not fire at any wide-record cell.
+> **D64's successor question is answered NEGATIVELY on the first substrate
+> that could have answered it positively: conflict bought WIDTH and bought
+> no gauge.**
+
+**Where the non-vacuity lives — the credit, said correctly.**  C7's `Z/2`
+cochain is the **zero cochain at all five conventions**, but for two
+different reasons.  At **REG, REGA, ARBVFIRST and COV** it is zero on the
+full length-preserving domain because every such transition is outright
+the identity: there is nothing to trivialize, and the 52 testable Čech
+triples test `0 = 0 + 0`.  Citing that triple count as evidence of
+non-vacuity is exactly the move §B8.8's census forbids; what **is**
+non-vacuous there is **PROBE 1's failure to fire** — the labeling could
+have shown a transition and did not.  At **ARBLOSE** the cochain is zero
+only because D64's `cochain` **drops the `other` class by construction**,
+its domain shrinking from 63 edges to 22 and discarding **exactly the 41
+non-identity maps** a strong sentence would want to invoke; the routes
+that genuinely trivialize a not-identically-zero cochain there are
+**PARITY** (63 edges, 41 at `g = 1`, obstruction 0) and, independently,
+**FREE**.  The five conventions are genuinely distinct labelings — the
+receipt counts the `(chart, direction)` cells at which each disagrees with
+REG on the ROLE label — but on the wide record REG, REGA, ARBVFIRST and
+COV return the same number in every column, so the robustness sentence is
+that the wide record admits **two** distinct readings, not five.
+
+**The odd-ring residue, DECIDED as parity.**  The *narrow* two-proposer
+rings do what nothing else in the campaign does — carry a **non-zero** C7
+obstruction count.  Run at five ring sizes (REG, `d = 2`):
+
+| ring | pairs/round | `M/2` | parity edges | non-identity | C7 obs | PARITY obs | `R − 1` |
+|---|---|---|---|---|---|---|---|
+| `RING(4, 6)` | 2 | EVEN | 35 | 15 | **0** | **0** | 5 |
+| `RING(6, 6)` | 3 | ODD | 30 | 11 | **5** | **5** | 5 |
+| `RING(8, 6)` | 4 | EVEN | 40 | 16 | **0** | **0** | 5 |
+| `RING(10, 6)` | 5 | ODD | 50 | 21 | **5** | **5** | 5 |
+| `RING(12, 6)` | 6 | EVEN | 60 | 26 | **0** | **0** | 5 |
+| `RING(6, 10)` | 3 | ODD | 54 | 19 | **9** | **9** | 9 |
+| `RING(10, 10)` | 5 | ODD | 90 | 37 | **9** | **9** | 9 |
+
+The obstruction tracks the **parity of `M/2`** at five ring sizes, `M =
+12` being the clean row that could have killed the reading.  **And the
+magnitude is not a ring quantity**: the count is 5 at `R = 6` and 9 at
+`R = 10` for **both** `M = 6` and `M = 10` — it is `R − 1`, a count of
+**rounds**.  Reporting "5 and 9" as *the ring's* obstruction invites
+reading a magnitude that is neither a ring quantity nor a cohomological
+one; **the only invariant statement available is `≠ 0`.**  *(One row is
+disclosed rather than smoothed: an independent re-measurement of
+`RING(4,6)` reports its two auxiliary columns as "edges 23, non-id 3"
+where this instrument measures 35 and 15.  The **obstruction count agrees
+at 0 both ways**, the committed `RING(4,10)` row scales to this
+instrument's numbers, and the parity reading is untouched.)*
+
+**And it is still NOT `H¹ ≠ 0`.**  Four measured facts cut against it and
+the pin requires survival of all four.  **(1)** The free-relabelling route
+trivializes **every** such cell (0 obstructions, 0 survivors, everywhere
+in the census) — what is obstructed is the *port* gauge group, not the
+existence of a global labelling, and the two facts are consistent for a
+legible reason: the fibre maps are **partial**, so with no 2-skeleton the
+odd cycle's composite has empty domain.  **(2)** There is
+**no Čech 2-skeleton to carry a class** — on the rings at `d = 2` every
+chart triple with pairwise overlaps has an **empty** triple intersection,
+zero testable triples, where the delivery crystal had 108 and was *still*
+a coboundary.  **(3)** The group name is a convention exactly as in D64:
+the extension census on the ring finds 10 subgroups of `S₄` consistent
+with every observed map, **two incomparable minimal ones**, and **0 of
+19** τ-classified pairs uniquely τ.  **(4)** The controls put the ring on
+the wrong side of the interesting line — genuine sprinklings carry
+non-zero PARITY obstructions too while the delivery crystal carries zero
+everywhere, *and that comparison is **COV-only***, a sprinkling having no
+`H` and hence no counterpart to the ring's other four conventions.  So it
+is **not** the campaign's first non-zero obstruction in any absolute
+sense — the sprinklings in the same run carry them too.  What is first
+about it is being the first non-zero obstruction **on a grammar record**,
+and that is the only priority claim available.  **PROBE 1 fires and is acted on:** the blind ROLE cells — all
+five instruments on the delivery-free ring at `d = 2`, and COV on
+`RING(4,10)` — are **excluded by name** from every convention-robustness
+sentence, and no outcome anywhere is read at RAW.
+
+**The mass census, labelled.**  d42b1 prices each actor's menu at
+`1 + (m − 1)/4`.  Along the replayed prefixes the total menu mass sits at
+`M` (the actor count) at most prefixes and rises where an unarbitrated
+conflict group is visible — `RING(6, 10)`: total mass `{6: 87 prefixes,
+19/3: 3, 13/2: 27}`, a **ladder excess** (mass − `M`, in quarters) of
+`{0: 87, 4/3: 3, 2: 27}`.  Two things are said rather than elided.
+**The scope difference from §B2.10 is not bridged:** D65's `2 → 5/2` jump
+is a two-actor, delivery-free d42a statement about a 36-state exhaustive
+family, while this is transport scope, `M` actors, delivery sector open,
+measured per prefix along one record; D65's two values are **not**
+reproduced here and are not claimed to be.  The commensurable quantity is
+the excess above `M` in quarters, counting extra visible conflict groups,
+and it is non-zero exactly where conflicts are open.  **And the ladder
+does not hold** — per-actor sums of `13/12` and `19/16` occur, off the
+`1 + k/4` ladder — which is exactly the committed exhibit behind *"the
+general-depth ladder is FALSE under current pricing"* (§B2.7, §B2.8: a
+dead component still inflates a live singleton's view-relative arbitration
+denominator), reproduced here at a different scope by an independent
+route; nothing about the ladder is claimed.
+
+> **THE LICENSED CLAIM.**  Inside the swept family, at grammar layer:
+> **(i)** conflict **tiles** — forced propose/arbitrate records run to
+> crystal length with zero refusals at an arbitration share bounded by
+> `1/(k+1)`, saturated at `1/3` by the delivery-free ring and sitting
+> exactly at `1/4` for the DOUBLE GRID's `k = 3` conflict groups;
+> **(ii)** a two-proposer conflict ring meets D63's F3 pattern **at
+> `d = 2`** with **conflict, not delivery, as its tiling engine** — while
+> its *width* half is carried by its delivery wires, so a purely
+> conflict-driven F3 pattern is exhibited **nowhere at `d = 2`**;
+> **(iii)** chart width past the delivery ceiling of 4 at `d = 2` is
+> **realized**, the law is W4c's `|D_e(d)| ≤ Bl^d` with its depth-2
+> refinement `|D_e(2)| ≤ Σ_{y ∈ succ(e)} b(y) ≤ k·Bl ≤ k²`
+> (exact-containment form and characterised exceptions above), **realized
+> at 6, 7, 8 and SATURATED at 9 = k²**, with `2k` exposed as the `Bl = 2`
+> corner the RING/GRID schedules happen to impose, and W4b's "3+
+> registers" corrected to "3+ **PROPOSERS**" by W4c, **proved** from the
+> committed layer; **(iv)** the wide record's transition class is
+> **trivial** at every port convention and by every route — the
+> non-vacuity carried by PROBE 1's silence at the four zero-cochain
+> conventions and by PARITY/FREE at ARBLOSE — so **no non-trivial
+> structure group is exhibited by conflict either**; and **(v)** the
+> pair-conflict rings with an **odd** number of pairs per round carry a
+> non-zero port-flip obstruction count at five measured ring sizes whose
+> magnitude is `R − 1` and therefore **not a ring quantity**, which does
+> **not** survive free relabelling, has **no** testable Čech triple behind
+> it, and is therefore **reported and not claimed** as `H¹ ≠ 0`.
+
+**Instrument hygiene and scope.**  Grammar layer; the swept
+`(M, R, sticky, win, g)` family plus the DOUBLE-GRID schedule, and no
+wider.  A crystal certifies MECHANISMS, never objects (§D1b).  No measure
+claim at transport scope, hence no typicality.  Every width claim carries
+the record's own `B`, its live `Bl` and both bounds; every gauge sentence
+carries the convention table; transfer to the identified law runs through
+the missing map (§B2.9) and is not claimed.  Single sources: the transport
+grammar by text-slice from committed `d42b1`; `d47a`, `d55c`, `d58`, D60's
+blueprint machinery, D63's `double_ring`/`wide_brick` and **D64's entire
+cocycle instrument** by AST extraction, with exit-freedom of the slice and
+of every extracted body gated — *the scan is a syntactic check for
+`exit`/`quit`/`_exit` in call or bare name form, it decides no
+reachability, and it cannot see an exit reached through `getattr` on a
+computed string.*  Anchors (exit 1 reserved for them): D63's `DR(8,10,8)`
+row exact at both depths; D60's brick event-for-event; eleven genuine
+sprinkling configurations reproducing `[77/120, 4/5]` and `[17/40,
+13/20]`; D64's C0b instrument validation re-run on every conflict record
+(closure of `P` **equals** the committed order everywhere); D64's
+committed C7 row.  A hoisted SKY-B optimisation is gated against the
+committed `d47a.sky` **event for event on two whole records at both
+depths**, and every chart the unit *exhibits* is read from the committed
+`sky` directly.  Determinism gated on a ring, a grid and the DOUBLE GRID
+under `PYTHONHASHSEED` 0/7/999, byte-identical, with the scope of that
+gate said aloud (it does not cover the sweep's larger records or the
+coboundary census).  One duplicate object is named out loud: `g = 2` does
+**not** reproduce `CONFLICT-RING(4, R)` "exactly" — the event lists differ
+by actor naming — and what is gated is the true statement, that the
+event-**kind** sequences coincide and every profile column coincides at
+both depths.
+
+**Residues.**  (1) **The odd-ring holonomy is now a proof problem, not a
+sampling problem:** parity confirmed at five ring sizes with the count at
+`R − 1` everywhere; what is open is the **proof** that the obstruction is
+exactly the parity of `M/2`, and the reading of what it obstructs given a
+clean free-relabelling route and no 2-skeleton.  (2) **Is `k·Bl` attained
+above `k = 3`?**  `k² = 9` is saturated at `k = 3`; whether a `k = 4`
+schedule can reach **16** — it needs four concurrent conflict axes per
+actor — is unbuilt, and it is the first construction in the campaign whose
+target range, the sprinklings' **10–17**, lies inside a proved bound.
+(3) **In-band and wide at `d = 2`** — achieved at `d = 3` by the DOUBLE
+GRID, open at `d = 2` for every substrate.  (4) **The free-relabelling
+route never fires on real data**: validated to have a true positive on a
+constructed inconsistency, it returns 0 at every census cell including the
+sprinklings, so its null is weak evidence until something obstructs it.
+(5) **The wide record's full-menu replay is still a prefix** —
+`GRID(3,10)` cuts at 108 of 174 steps; the C1 grade for a complete WIDE
+record rests on `GRID(3,4)` and `DOUBLE-GRID(3,2)`, both of which are in
+the decisive censuses, and the restricted-menu drive already establishes
+admissibility of every event against the whole prefix.  (6) **`ARBLOSE` is
+the convention that behaves differently** (41 non-identity maps where the
+other four see none), and it is the one whose port order is read off the
+conflict's own winner/loser asymmetry — the very asymmetry D64's residue 1
+said an arbitration has and a delivery lacks; that the class is trivial
+there anyway is carried by PARITY and FREE, not by C7, and it deserves its
+own sweep.  (7) **Size** — the largest record here is 195 events against
+120-point sprinklings, and the cost is now dominated by the base count,
+since every arbitration mints a version and the layer's menu enumeration
+grows with the record.
+
+> **What this section delivers.**  A second certified construction
+> mechanism — **crossed conflict** — which generates uniformity and width
+> *together* and reaches **nine** directions where transport is capped at
+> four; a **proved** ceiling `k·b ≤ k²` with the necessary condition
+> corrected from registers to **proposers**; and the same honest negative
+> §B8.8 found, now on the substrate that was built to break it.  **The
+> dimension road runs through crossed conflict.  The gauge road is still
+> at zero.**
 
 ---
 
@@ -6889,6 +7590,9 @@ relation.  And the sharpened successor question: **can any substrate
 carry a transition class that is NOT a coboundary?** — with a stated
 structural reason to attack the arbitration crystal, since what makes `ε`
 available is a two-port symmetry a conflict event does not have (§B8.8).
+*That attack has since run and returned zero at all five port conventions
+and by all three routes* (§B8.9), so the successor question survives its
+own best candidate site and has no named next one.
 
 ### B10.14 "The completions are PRECISELY what repairs descent" `[D65, LOG #467 → #468]`
 
@@ -6918,7 +7622,52 @@ strongest descent-side fact the corpus owns.  And the honest replacement:
 *the descent defect names the JOB the completions do; it does not single
 them out* (§B2.10).
 
-### B10.15 Instrument and control failures, itemized
+### B10.15 "`max |D| = 2k`" and "the delivery is the crystal's second direction" `[D66, LOG #471 → #472]`
+
+**Claimed (green-unreviewed), first:** *"`max |D| = 2k` at `d = 2` for a
+`k`-proposer crystal"* — printed as a law about `k`-proposer crystals with
+a mechanism attached (*"each proposer contributes one direction per wire
+of its next delivery"*), on the strength of `CONFLICT-GRID(3, ·)` at 6 and
+`CONFLICT-GRID(4, 4)` at 8.
+**Claimed, second:** *"the delivery is not a tax on the conflict engine;
+it is what gives the crystal a second direction"* — and, with it, *"the
+schedule that maximises the conflict share is the one that cannot tile
+widely"*, on the strength of the `sticky = 0` ring, which is
+delivery-free, saturates the conflict share at `1/3`, and collapses to
+`max |D| = 2` with homogeneity below band.
+**Killed by:** two constructions the round built after reproducing every
+published figure of both.  `2k` is a property of the swept **schedules**,
+not of `k`: it is the value of the bound when every depth-1 successor of
+an arbitration is a two-register **delivery** (`b(y) = 2`), which the
+RING/GRID blueprints impose and the grammar does not force — an
+arbitration's proposer register may be consumed by **another
+arbitration**, since `prop_options_in_view` blocks only a second live
+proposal on the *same* base.  The true ceiling is W4c's own `k·Bl ≤ k²`,
+and it is **saturated**: `DOUBLE-GRID(3, R)` — rows and columns
+conflicting concurrently — carries **nine `|D| = 9` charts** with
+successor out-degrees `[3,3,3]`, and the `ARBCHAIN(m, 3)` family occupies
+the whole interval `6, 7, 8, 9` as `m` runs `0..3`.  The same object kills
+the second claim: it has **zero in-round deliveries**, saturates the
+conflict-group share at `1/(k+1) = 1/4`, is the **widest** record in the
+unit, and sits **inside the `d = 3` sprinkling band** at 0.7833.  The
+`sticky = 0` collapse is the **pair-ring diamond** — one live conflict
+lineage per actor makes the propose/propose/arbitrate cycle fan out and
+straight back in, so the depth-2 layer is a single event — and has nothing
+to do with delivery-freedom.
+**Survived:** every number, and the unit's substantive results untouched —
+conflict tiles at C1 grade with zero refusals over 2,325 events; the
+conflict budget bound `≤ 1/(k+1)` with both readings printed; **W4c**, now
+carrying a four-line structural proof quoted against the committed
+`d42b1` (payload-vs-register; a recurring `vname` forces causal
+comparability, hence refusal) rather than a per-record census; and the
+trivial transition class at all five port conventions.  And the
+replacement mechanism sentence, which is stronger than the one it
+replaces: **the second direction is a second CONCURRENT CONFLICT AXIS** —
+rotation buys that consumer with a delivery, concurrency buys it for free,
+and a concurrent arbitration is the better consumer (`b = k` against
+`b = 2`); transport seeds and rotates, it does not make space (§B8.9).
+
+### B10.16 Instrument and control failures, itemized
 
 - **TG5's null "cross-actor causation produces the sky"** `[D47 round 1,
   MAJOR R1]` — the null's actor extraction returned the **event type** on
@@ -6997,23 +7746,27 @@ them out* (§B2.10).
   genuinely fail (§B6.13b).  *"24 PASS" is not 24 pieces of evidence, and
   the receipt now says so itself.*
 
-### B10.16 The pattern, stated as a statistic
+### B10.17 The pattern, stated as a statistic
 
 - **Almost every headline correction hit an interpretation sentence, not a
-  computation.**  Seven independent-model rounds have run (D54, D55, D61,
-  D62, D63, D64, D65); five returned a BLOCKER and **every one of the five
-  was in the interpretation layer, none in the arithmetic**.  In D54 and
-  D55 the verdicts were 1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT **each**,
-  and in D55 everything computational survived including a full
+  computation.**  Eight independent-model rounds have run (D54, D55, D61,
+  D62, D63, D64, D65, D66); six returned a BLOCKER and **every one of the
+  six was in the interpretation layer, none in the arithmetic**.  In D54
+  and D55 the verdicts were 1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT
+  **each**, and in D55 everything computational survived including a full
   independent rebuild of a 42-actor, 84-event record that came out
-  **identical and forced**.  D64 and D65 are the same failure twice: the
-  referee reproduced *every* number and then ran a computation the unit
-  had not thought to run — the coboundary test (§B8.8) and the repair-cone
-  dimension (§B2.10) — and each refuted the headline built on the numbers
-  it had just confirmed.  **A verified computation is not a verified
-  claim**, and the corpus's standing lesson from these two is to ask what
-  computation would *distinguish* the headline from its trivial
-  alternative, before writing the headline.
+  **identical and forced**.  D64, D65 and D66 are the same failure three
+  times: the referee reproduced *every* number and then ran — or built —
+  the one thing the unit had not thought of, the coboundary test (§B8.8),
+  the repair-cone dimension (§B2.10) and the DOUBLE GRID (§B8.9), and each
+  refuted the headline built on the numbers it had just confirmed.  **A
+  verified computation is not a verified claim**, and the corpus's
+  standing lesson from these three is to ask what computation would
+  *distinguish* the headline from its trivial alternative, before writing
+  the headline.  D66 also shows the upside of that discipline: its
+  refutation arrived with a **better object** attached, and the corrected
+  claim — a saturated `k²` ceiling on a delivery-free, in-band record — is
+  stronger than the one it replaced.
 - **And one round in this line survived as written.**  D62's cover
   sentence went into an independent round that rebuilt all five update
   rows from the prose alone, swept 4,778,310 transitions two depths past
@@ -7080,8 +7833,18 @@ and width past it must be bought with **arbitration**.  The atlas's
 **transition maps are now measured** on that record and are non-identity,
 cocycle-clean and **cohomologically trivial** — `H¹ = 0`, an explicit
 per-chart port choice removes all 108 of them (§B8.8) — so the delivery
-crystal exhibits **no structure group at all**, and the sharp question
-becomes whether any substrate can carry a class that is not a coboundary.
+crystal exhibits **no structure group at all**.  **Conflict then tiles
+too** (§B8.9): 21 forced configurations over 2,325 events with zero
+refusals, the arbitration share bounded by `1/(k+1)` and saturated, and
+the ceiling refined to W4c's `|D_e(d)| ≤ Bl^d` on the **live** out-degree,
+so width past 4 needs 3+ **proposers**, not merely 3+ registers.  The
+delivery-free **`DOUBLE-GRID(3, R)`** — rows and columns conflicting
+concurrently — **saturates `k·Bl = k² = 9`** with nine `|D| = 9` charts
+while sitting **inside** the `d = 3` sprinkling band at 0.7833: the first
+record that is both crystal-uniform and wide.  Its class is a coboundary
+as well, at all five port conventions and by all three routes, so the
+sharp question — can any substrate carry a class that is not a coboundary?
+— now has three families answering no.
 
 ### B11.2 The convergence question
 
@@ -7145,24 +7908,23 @@ description of the *shape* of a possible answer, not an answer.
    All three are live (§B5.4), they disagree materially, and the
    dimension discriminator is sharpest under SKY-A while several other
    results were computed under SKY-B.  Nothing justifies a choice.
-3. **The arbitration crystal** — a crystal made of **conflicts** rather
-   than of deliveries.  **Three independent results now converge on it**,
-   which is what promotes it from "the next construction" to the line's
-   live target.  *(i)* **Width:** the branching bound (§B8.7) makes this
-   the only route past chart width 4 at `d = 2` — deliveries carry
-   `B = 2`, so `max |D| ≤ 4` for any delivery circuit whatever, and the
-   layer's one 3+-register species is the multi-proposer arbitration.
-   *(ii)* **Gluing:** the delivery crystal's transition class is a
-   coboundary (§B8.8), and the *reason* it is, is that a delivery's fibre
-   has two ports with no intrinsic asymmetry — so the per-chart `Z/2` is
-   free.  A conflict event breaks that symmetry, making it the first
-   place a **non-coboundary** class could live.  *(iii)* **The measure:**
-   the descent defect (§B2.10) is exactly the `2 → 5/2` menu-mass jump,
-   and that jump occurs precisely where a blind **conflict** group
-   becomes visible in the join view.  An admissible 3-register *event*
-   exists; a *record* carrying a 5-direction chart does not yet, and the
-   hunt for one is inconclusive.  **This is the manifold road's live
-   construction.**
+3. **The `k = 4` double grid, and the width road past nine.**  The
+   arbitration crystal that three units converged on is **built and
+   terminal** (§B8.9): conflict tiles, the ceiling is W4c's `k·b ≤ k²`
+   with "3+ registers" corrected to "3+ **proposers**", and the
+   delivery-free `DOUBLE-GRID(3, R)` saturates it at **9** while sitting
+   inside the `d = 3` sprinkling band.  Of its three motivations, **width
+   is discharged**, **gluing came back negative** (the class is a
+   coboundary on conflict substrates too), and **the measure is not
+   bridged** — the transport-scope menu-mass census measures the
+   commensurable excess and explicitly does not reproduce the d42a
+   `2 → 5/2` jump.  What is live is the **next
+   rung**: a `k = 4` crossed-conflict schedule, four concurrent conflict
+   axes per actor, whose W4c ceiling is **16**.  It ranks here because the
+   sprinklings' `max |D|` of **10–17** is for the first time inside a
+   proved bound rather than beyond one, so this is the first construction
+   in the campaign whose target range is reachable in principle.
+   **This is the manifold road's live construction.**
 4. **Is there a record-level demand that forces the stationary form?**
    Two strongest candidates and their conjunction eliminated by
    measurement.  Nobody has a third — and the question now has a number
@@ -7238,11 +8000,12 @@ sky definitions and the constructed separator),
 `d62_h2_update_table_exact.py` (the update table),
 `d63_wide_crystal_exact.py` (the wide crystal and the branching bound),
 `d64_cocycle_exact.py` (the transition census and the coboundary gate
-C7) and `d65_descent_conditions_exact.py` (the descent conditions and
-the repair cone).
+C7), `d65_descent_conditions_exact.py` (the descent conditions and
+the repair cone) and `d66_arbitration_crystal_exact.py` (the conflict
+crystals, W4c, and the DOUBLE GRID).
 
 **The ledger:** `v10/LOG.md`, append-only, numbered, **forward
-corrections only, never silently edited.**  Entries #404–#468 cover
+corrections only, never silently edited.**  Entries #404–#472 cover
 everything in chapters B5, B7, B8, B9, the settlement line of B6 and the
 descent segment of B2.
 
@@ -7282,15 +8045,19 @@ that had not landed.)
   anchor breakage and mutant misbehaviour exit 1.
 - **Hostile rounds, and now independent-model rounds** — a reviewer with
   no prior context, instructed to recompute rather than trust, writing its
-  own code.  Seven have run; five found a BLOCKER; **all five BLOCKERs
-  were in interpretation, none in arithmetic** (§B10.16).
+  own code.  Eight have run; six found a BLOCKER; **all six BLOCKERs
+  were in interpretation, none in arithmetic** (§B10.17).
 - **Ask what would distinguish the headline from its trivial
-  alternative** — the lesson D64 and D65 taught twice in one week.  Both
-  units measured correctly, reported correctly, and read the numbers as a
-  structure that a computation neither had run would have shown was
-  absent (a coboundary test; a repair-cone dimension).  The obligation is
-  now on the pin: *name the computation that would make the interesting
-  reading false, and run it in the same receipt.*
+  alternative** — the lesson D64, D65 and D66 taught three times in two
+  weeks.  All three units measured correctly, reported correctly, and read
+  the numbers as a structure that one computation none of them had run
+  would have shown was absent or different (a coboundary test; a
+  repair-cone dimension; a schedule whose successors are arbitrations
+  rather than deliveries).  The obligation is now on the pin: *name the
+  computation that would make the interesting reading false, and run it in
+  the same receipt.*  D66 adds the corollary that meeting it can **pay**:
+  the construction that refuted its headline is now the campaign's
+  strongest geometric object.
 - **Green-unreviewed is not citable**, and terminal papers are **not
   edited on green-unreviewed evidence** — amendments queue behind a round.
   The rule's one recorded breach is instructive: a settlement banner was
@@ -9159,10 +9926,14 @@ permits."* And tensors enter *"as the transformation behavior of
 chart-attached data under transition maps — a mechanism certifiable at
 fixture scale under rule 2, since transition COVARIANCE is scale-free even
 when the charts are tiny."*  **That slot is currently empty, and the rule
-is what makes the emptiness legible**: the one substrate whose transition
-maps have been measured has a class that is a **coboundary** (§B8.8), so
-there is no non-trivial transformation behaviour to certify — the
-doctrine names the deliverable, and the deliverable does not exist yet.
+is what makes the emptiness legible**: every substrate whose transition
+maps have been measured — delivery crystals, conflict crystals, and the
+crossed-conflict double grid built precisely because a conflict event
+lacks the symmetry that trivializes a delivery — has a class that is a
+**coboundary** (§B8.8, §B8.9), so there is no non-trivial transformation
+behaviour to certify.  The doctrine names the deliverable; the deliverable
+does not exist yet, and the search for it has now failed on the substrate
+that had the best structural reason to supply it.
 
 > **The convergence worth naming.** Chapter **C6.8**'s free-web influence
 > theorem reaches the same place from the substrate side: with no coupling
@@ -9193,7 +9964,7 @@ two are half-done, three are open, and the last is blocked.
 |---|---|---|
 | 1 | records → a causal order | **HAVE** — this is what the grammar builds, and the order is the physical content |
 | 2 | causal order → local skies and a dimension *capacity* | **HAVE** — with the meter reading the grammar's coordination, not a record's dimension |
-| 3 | skies → charts, gluing → a manifold | **OPEN, three segments done and the third is a negative** — the grammar **tiles**, it tiles **wide** (a forced 177-event double ring holding the homogeneity band while carrying 4-direction charts), and its charts' **transition maps are now measured**: non-identity, consistent around every loop, and **removable by a change of convention**, so the atlas is globally trivializable and carries no structure group.  The *next* width step is a proved wall rather than an engineering problem — deliveries cap chart width at 4, so more width must be bought with conflict.  What remains: a substrate whose gluing is *not* trivial, the arbitration crystal, and the second road's unfinished business |
+| 3 | skies → charts, gluing → a manifold | **OPEN, four segments done and two of them are negatives** — the grammar **tiles**; it tiles **wide** (a forced 177-event double ring holding the homogeneity band while carrying 4-direction charts); its charts' **transition maps are measured** and are non-identity, consistent around every loop, and **removable by a change of convention**, so the atlas is globally trivializable and carries no structure group; and the **conflict** road past the delivery ceiling is open and walked — a delivery-free crossed-conflict crystal tiles at cadence and carries **nine**-direction charts, saturating the corrected ceiling, while sitting inside the sprinkling band one depth down.  Its gluing is trivial too.  What remains: a substrate whose gluing is *not* trivial, the `k = 4` grid toward sprinkling width, and the second road's unfinished business |
 | 4 | manifold → Einstein dynamics | **PARTIAL** — the *form* of the field equations is derived; Newton's constant is provably not derivable from inside |
 | 5 | manifold → quantum fields on it | **PARTIAL** — a lift of the record process into Hilbert space exists at fixture scale, and its arbitration layer is where the quantum problem begins |
 | 6 | fields → **particle creation** | **OPEN** — the destination's defining phenomenon, with one suggestive structural resemblance that is *labelled speculation* |
@@ -9248,8 +10019,9 @@ dimension.  So arrow 2 delivers a **capacity** result — *the layer does not
 cap the shatter ladder at the sphere's rung* — and a measure of engineered
 coordination.  It does not deliver a dimension for a record.
 
-**ARROW 3 — charts and gluing → a manifold.  `[OPEN — three segments
-done: the grammar tiles, it tiles wide, and its gluing is TRIVIAL]`**
+**ARROW 3 — charts and gluing → a manifold.  `[OPEN — four segments
+done: the grammar tiles, it tiles wide, its gluing is TRIVIAL, and
+crossed conflict breaks the width ceiling at 9]`**
 
 A causal order is not a manifold.  To get one you need local pieces that
 look like patches of `ℝ^d` (**charts**), a rule for saying two patches
@@ -9258,7 +10030,7 @@ consistency that the result is one object.  **The corpus is attacking
 this from two directions at once, and they have never been compared.**
 
 **ROAD 1 — the v10 atlas / crystal line `[D58 + D60 batch-round reviewed;
-D63 round 1 terminal]`.**  Two instruments, built before any data
+D63, D64, D66 round 1 terminal]`.**  Two instruments, built before any data
 (`note-d58-atlas-instrument-pin.md`, committed before code): the
 **homogeneity profile** — the fraction of events carrying a chart of at
 least two directions — and the **chart-size ratio**
@@ -9290,6 +10062,7 @@ recomputed on eleven genuine sprinkling configurations):
 | genuine sprinklings (11 configs) | **0.642 – 0.800** | **0.048 – 0.133** | 0.425 – 0.650 |
 | the brick crystal (§B8.6) | 0.769 | 0.651 | **0.000** |
 | **the wide crystal** DR(8,10,8) (§B8.7) | **0.797** | 0.730 | **0.333** |
+| **the double grid** DOUBLE-GRID(3,4) (§B8.9) | 0.517 (`d = 3`: **0.783, in band**) | 0.557 | 0.092 (`d = 3`: 0.325) |
 | the shatter-4 courier record | 0.386 | ~0.47 | 0.000 |
 | the shatter-5 courier record | 0.357 | — | 0.000 |
 | a generic 2-actor walk | 0.067 | 1.000 (2 pairs) | 0.000 |
@@ -9307,8 +10080,8 @@ points wearing 120 labels** — and against genuine sprinklings the
 it.  Given the containment theorem this is the expected direction: denser
 skies have larger charts and smaller size-ratios.
 
-**And the crystal question, which this road posed, is ANSWERED THREE
-TIMES — twice yes, once no.**
+**And the crystal question, which this road posed, is ANSWERED FOUR
+TIMES — three yeses and one no.**
 *Can the grammar build a record whose events are charted everywhere with
 large overlaps — a tiling — the way a courier record carries one rich
 sky?*  **Yes**, at sprinkling-grade homogeneity and above-sprinkling `ω`,
@@ -9322,35 +10095,50 @@ non-trivially — is there structure in the overlaps?*  **No** (§A8.8,
 port choice (32 charts / 28 charts) turns **all 108** of the
 length-preserving ones into the identity.  `H¹ = 0`; zero obstructions at
 two independent port conventions; **the transitions are pure gauge and no
-structure group is exhibited**.
+structure group is exhibited**.  *And can the grammar tile out of
+**conflicts**, past the delivery ceiling?*  **Yes** (§A8.9, §B8.9): 21
+forced conflict configurations tile with zero refusals, the ceiling is
+refined to the **live** branching factor `Bl^d` — so 3+ *proposers*, not
+3+ registers — and the delivery-free `DOUBLE-GRID(3, R)` saturates
+`k·Bl = k² = 9` with nine nine-direction charts while sitting **inside**
+the `d = 3` sprinkling band.  Its gluing is a coboundary as well, at all
+five port conventions.
 
 > **What that costs, said without softening.**  The tensor/curvature
 > programme — the thing a manifold arrow is *for* — starts at **zero** on
-> delivery substrates.  Non-identity transitions, a clean cocycle, a
-> closure, even a group name if one had been determined, are all
-> compatible with `H¹ = 0` and were.  **The test is the obstruction
-> count**, and it is now a gate that every successor inherits.
+> every substrate measured so far, conflict ones included.  Non-identity
+> transitions, a clean cocycle, a closure, even a group name if one had
+> been determined, are all compatible with `H¹ = 0` and were.  **The test
+> is the obstruction count**, and it is now a gate that every successor
+> inherits.
 
-**And then the road meets a wall it can name exactly.**
+**And then the road meets a wall it can name exactly — and walks through
+the one door the wall leaves.**
 
 > **`[THEOREM]` `|D_e(d)| ≤ B^d`**, `B` the largest register count of any
 > event.  Deliveries carry `B = 2`, so **no delivery circuit whatever can
 > exceed chart width 4 at `d = 2`** — the sprinklings' 10–17 is not a
 > construction target, it is unreachable by transport.  **Width past 4
-> must be bought with arbitration over conflicts**, the layer's only
-> 3+-register species (§B8.7).
+> must be bought with arbitration over conflicts** (§B8.7).
+>
+> **`[THEOREM]` and the refinement `|D_e(d)| ≤ Bl^d`**, `Bl` the largest
+> **live** out-degree — registers that recur, the minted version wire
+> being dead.  So an arbitration branches by its **proposer** count, "3+
+> registers" is necessary and not sufficient, and the depth-2 ceiling is
+> `k·b ≤ k²`.  **Realized and SATURATED at 9** by a delivery-free crossed
+> conflict crystal (§B8.9).
 
 `[MY READING]` That reshapes this road's remaining story.  The distance
-between the grammar's atlases and a sprinkling's reads like a
-quantitative shortfall to be engineered away; it is a **grammatical**
-one.  The road to a wide chart — and so, eventually, to a 3+1-sized sky
-at a charted event — runs through **conflict**, not through more
-plumbing.  And the trivial gluing points the same way for an independent
-reason: what makes the trivializing relabelling available is that a
-delivery's two ports carry no intrinsic asymmetry, which a conflict
-settlement does not have.  What follows the wide crystal on this road is
-therefore a single object, the **arbitration crystal**, carrying two
-questions at once — can it be built wide, and can it glue non-trivially.
+between the grammar's atlases and a sprinkling's read like a quantitative
+shortfall to be engineered away; it is a **grammatical** one — and the
+grammar's answer is now partly in hand.  The road to a wide chart, and so
+eventually to a 3+1-sized sky at a charted event, runs through **crossed
+conflict**: not more plumbing, and not even a single conflict axis, but
+two or more concurrent ones, since one dispute per actor makes a chain of
+diamonds and carries nothing.  The gluing motivation that pointed the same
+way has been **spent** — the conflict substrate glues trivially too — so
+what remains on this road is width: the `k = 4` grid at a ceiling of 16,
+against sprinklings at 10–17.
 
 **ROAD 2 — the v9 grown-web line `[PART C, chapter C6]`.**  Further along
 in one specific sense and further behind in another.  It has **built**
@@ -9391,13 +10179,15 @@ sharper than either road's own residues:
   §C6.11's unestablished relation both bind.
 
 **Status, combined: `[OPEN]`.**  The manifold arrow has two instruments
-(Road 1's atlas, and now a validated transition detector with a
-triviality gate), three measured segments — tiling, tiling-with-width,
-and a gluing that is **trivial** — a **proved ceiling** telling it which
-mechanism the next segment must use, one named next construction (the
-**arbitration crystal**, carrying the width question and the
-non-coboundary question together), and a parallel body of
-suggestive-but-closed work (Road 2) that no unit has connected to it.
+(Road 1's atlas, and a validated transition detector with a triviality
+gate), four measured segments — tiling, tiling-with-width, a gluing that
+is **trivial**, and a conflict crystal that **saturates the corrected
+width ceiling at 9 with no deliveries in it** while holding the band one
+depth down — a **proved ceiling** in two versions telling it which
+mechanism each further step must use, one named next construction (the
+`k = 4` crossed-conflict grid, ceiling 16, against sprinklings at 10–17),
+and a parallel body of suggestive-but-closed work (Road 2) that no unit
+has connected to it.
 
 **ARROW 4 — manifold → Einstein dynamics.  `[PARTIAL]`**
 
@@ -9607,23 +10397,35 @@ they do from inside either line.
 
 The **manifold** is the programme's first construction target — it is what
 the destination's own definition requires, and no other arrow can be posed
-without it.  Its first three questions are **answered**, and the third
-answer is a *no*.  The grammar tiles; it tiles *wide*; and the
+without it.  Its first four questions are **answered**, and one of the
+four answers is a *no*.  The grammar tiles; it tiles *wide*; the
 translation rules between its charts, which are what a manifold's
 structure actually lives in, turn out to be **a change of convention and
 nothing more** — real as written, and removable all at once by relabelling
-each chart's two ports.  So the atlas glues, it glues consistently, and it
-glues trivially: on records made of deliveries there is no gauge
-structure and no tensor programme to start.
+each chart's two ports; and the door the width theorem left open has been
+walked through.
 
-What replaces those questions is narrower and stranger.  A short theorem
-has changed what "wider still" means: because a delivery touches exactly
-two wires, no record built out of deliveries can ever carry more than four
-directions in a shallow chart, while real spacetime carries ten to
-seventeen.  And the reason the gluing trivializes is the *same* fact from
-the other side — two ports, no asymmetry, so the choice is free.  **Both
-roads out therefore run through conflict, not through more messaging** —
-and a record that tiles out of *conflicts* is a thing nobody has built.
+That door was conflict.  Because a message touches exactly two wires, no
+record built out of messages can carry more than four directions in a
+shallow chart, while real spacetime carries ten to seventeen — a
+*grammatical* gap, not an engineering one.  A record built out of
+**disputes** is not bound that way, and one has been built: rows and
+columns quarrelling at the same time, **no messages in it at all**, tiling
+at cadence, and carrying **nine**-direction charts — which is exactly the
+ceiling for three-way disputes, reached and not merely approached.  At the
+deeper chart depth it also sits *inside* the band real sprinkled records
+occupy, so a record that is at once uniform and wide now exists.
+
+Two things about that result reset the ranking.  The first is the
+mechanism: what buys a second direction is not a message but a **second
+concurrent dispute** — messages seed and rotate the disputes, they do not
+make the space.  The second is what it did *not* buy.  The reason to look
+at conflict was double: width, and the hope that a dispute's lack of a
+free two-way symmetry would finally make the gluing non-trivial.  The
+width arrived; the gluing did not.  On conflict records too, at every
+convention tried, the translation rules relabel away to nothing.  **So
+the width road runs through crossed conflict, and the gauge road is
+back to having no candidate at all.**
 
 The **measure at delivery scope** holds the other top slot, and for a
 structural reason: arrows 5 and 6 both need probabilities at the scope
@@ -9670,48 +10472,57 @@ ranking below is a ranking of what is *left*: the grammar **tiles**
 (§B8.6); it tiles **wide** at `d = 2`, witnessed by the forced 177-event
 DOUBLE-RING(8, 10, 8) (§B8.7); its charts' **transition maps are
 measured** and their class is a **coboundary**, so the atlas is globally
-trivializable and no structure group is exhibited (§B8.8); and the
-**descent conditions** are gated one by one against the closed generated
-law, which fails the commuting-square identity by exactly one mass-ratio
-coboundary while the settled completion's measure genuinely descends
-(§B2.10).  Two of those four are negatives.  Both are results, both are
-terminal, and both changed the ranking — the first by removing an
-expected object, the second by pricing a known one.
+trivializable and no structure group is exhibited (§B8.8); the **descent
+conditions** are gated one by one against the closed generated law, which
+fails the commuting-square identity by exactly one mass-ratio coboundary
+while the settled completion's measure genuinely descends (§B2.10); and
+**conflict tiles and breaks the width ceiling** — the arbitration crystal
+is built, the ceiling is refined to the live out-degree (`k·b ≤ k²`, "3+
+registers" corrected to "3+ **proposers**"), and the delivery-free
+`DOUBLE-GRID(3, R)` **saturates it at 9** while sitting inside the `d = 3`
+sprinkling band, with its class a coboundary too (§B8.9).  Three of those
+five are negatives or carry one.  All are results, all are terminal, and
+each changed the ranking — by removing an expected object, by pricing a
+known one, and by converting the line's top-ranked construction into a
+finished mechanism plus a sharper successor.
 
 **Re-ranked against the destination** (superseding §A11.4 / §B11.4's
 ordering, not their content):
 
-1. **THE ARBITRATION CRYSTAL — and it is now carrying three questions,
-   not one.**  §B8.7's branching bound `|D_e(d)| ≤ B^d` makes the next
-   width step a matter of grammar rather than of engineering: deliveries
-   carry `B = 2`, so **4 is the delivery grammar's ceiling at `d = 2`**
-   and the sprinklings' 10–17 is unreachable by any transport circuit
-   whatever.  Width past 4 requires an event with 3+ registers, and the
-   layer has exactly one — the **arbitration over a component with two or
-   more distinct proposers**.  An admissible 3-register *event* is
-   exhibited; a *record* carrying a 5-direction chart is not, and the hunt
-   for one is inconclusive.  **Three convergent motivations now point at
-   the same object, from three different units:**
-   - **width** — the branching bound, above: conflict is the only
-     remaining mechanism (§B8.7);
-   - **gluing** — the delivery crystal's transition class is a
-     **coboundary**, and the reason is that a delivery's fibre has two
-     ports with no intrinsic asymmetry, so the trivializing per-chart
-     `Z/2` is always available.  A conflict event breaks that symmetry,
-     which makes an arbitration substrate the **first place a
-     non-coboundary class could live** (§B8.8).  A stated structural
-     reason to attack there — not a promise;
-   - **the measure** — the generated law's descent defect is exactly the
-     jump of a menu's mass from `2` to `5/2`, and that jump happens
-     precisely when a blind **conflict** group becomes visible in the
-     join view (§B2.10).
-   Three independent lines of the programme now name conflict as the next
-   object, which is the strongest convergence the corpus has produced.
-   It ranks first because arrow 3's whole remaining distance to a
-   sprinkling-grade atlas runs through it, and because §D1b's rule 2
-   names tensorial transition behaviour as exactly the kind of scale-free
-   *mechanism* a destination unit may certify — and there is currently
-   none to certify.
+1. **THE `k = 4` DOUBLE GRID — pushing crossed conflict to sprinkling
+   width.**  The arbitration crystal that three units converged on is
+   **built and terminal** (§B8.9), and of its three questions it settled
+   one, answered one negatively, and left one unbridged.  *Settled:*
+   conflict
+   **tiles** — 21 forced configurations, 2,325 events, zero refusals, at
+   an arbitration share bounded by `1/(k+1)` and saturated — and the
+   width door is **open**, with §B8.7's `|D_e(d)| ≤ B^d` refined by
+   **W4c** to the live out-degree `Bl^d` (the minted version register is a
+   **dead wire**), so the depth-2 ceiling is `k·b ≤ k²` and D63's "3+
+   registers" is corrected to **"3+ proposers"**.  The delivery-free
+   `DOUBLE-GRID(3, R)` **saturates that ceiling at 9**, with nine
+   `|D| = 9` charts read off the committed sky, while sitting **inside**
+   the `d = 3` sprinkling band at 0.7833 — the first record both
+   crystal-uniform and wide.  *Answered negatively:* the transition class
+   is a **coboundary** there too, at all five port conventions and by all
+   three routes, so the gluing motivation is spent (item 4 below).
+   *Unbridged:* the transport-scope mass census measures the excess above
+   the actor count in quarters — non-zero exactly where conflict groups
+   are open — and says plainly that it does **not** reproduce §B2.10's
+   two-actor `2 → 5/2` values.
+   **What ranks first is the next rung.**  `k² = 9` is a `k = 3` number;
+   a schedule giving each actor **four** concurrent conflict axes has a
+   W4c ceiling of **16**, and the sprinklings' `max |D|` of **10–17** then
+   lies *inside* a proved bound for the first time in the campaign.  It
+   ranks first because arrow 3's remaining distance to a sprinkling-grade
+   atlas is now a single measured quantity with a known mechanism, and
+   because §D1b's rule 2 names exactly this kind of scale-free mechanism
+   as what a destination unit may certify.
+   The mechanism to carry forward, and it is the corrected one: **a second
+   direction is a second CONCURRENT CONFLICT AXIS.**  One dispute per
+   actor makes the cycle a chain of diamonds and carries nothing; two
+   crossed disputes carry everything, and **transport is needed only to
+   seed and rotate, never to make space.**
 2. **THE MISSING MAP** (§B2.9, §B2.10) — the corpus's **deepest** named
    front, beneath the completion residues and beneath the transport
    measure, because it is the one gap that makes two ledgers out of one
@@ -9750,6 +10561,29 @@ ordering, not their content):
    answer is permanently no, §D3's resemblance is the *only* interpretive
    home the boundary freedom has — a reason to state it carefully rather
    than a reason to believe it.
+4. **THE GAUGE QUESTION, and its honest state.**  *Can any record at all
+   carry a transition class that is not a coboundary?*  The corpus's
+   answer is currently **no, everywhere it has looked**, and it has now
+   looked in the place it had a structural reason to expect a yes.
+   **Three substrate families** — delivery circuits (§B8.8), pair-conflict
+   rings, and crossed-conflict double grids (§B8.9) — at **five** port
+   conventions and by **three** routes (the `Z/2` cochain, a parity route
+   defined on the maps the cochain drops, and free per-chart relabelling,
+   the largest possible gauge group): **zero obstructions**, every time.
+   The one non-zero count in the corpus is the **odd-ring** port-flip
+   residue, and it fails every test of being a class — its magnitude is
+   `R − 1`, a count of *rounds* rather than a ring or cohomological
+   quantity; free relabelling trivializes it; there is **no Čech
+   2-skeleton** for it to live on (zero testable triples); the group name
+   is undetermined (10 consistent subgroups of `S₄`, two incomparable
+   minimal); and genuine sprinklings obstruct at the same route.  So the
+   deliverable §D1b's rule 2 names — *tensorial transition behaviour* — is
+   still empty, and the bar a candidate must now clear is explicit: a
+   substrate with a **non-zero obstruction count that survives free
+   relabelling**, on a nerve with a **non-empty 2-skeleton**, at more than
+   one port convention, and with the count identified as an invariant
+   rather than a schedule parameter.  Nothing in the corpus is near it,
+   and the next place to look is unnamed — which is itself the finding.
 5. **A workable probabilistic description at transport scope**, unchanged
    in importance and worse in prospects: menu-exact is
    impossible for any design (§B9.1), and sector-exact at `(actor, type)`
@@ -9794,13 +10628,16 @@ ordering, not their content):
 part.**  Arrows 5 and 6 are blocked on the same object — a probabilistic
 description at transport scope — while arrow 3 is blocked on
 construction, and arrow 8 on the missing map.  So the programme's
-independent next moves are **two**, and both are concrete: **build the
-arbitration crystal**, which the width theorem, the trivial gluing and
-the descent defect all independently name; and **find a coarser
+independent next moves are **two**, and both are concrete: **push the
+crossed-conflict family to `k = 4`**, where a proved ceiling of 16 meets
+the sprinklings' 10–17 for the first time; and **find a coarser
 aggregation that closes at transport scope**.  A third front — the
 missing map — has its first segment measured and its widest stretch
 identified (a functional level for the generated line), but no unit has a
-method for it.  Everything else waits on one of those.
+method for it.  Everything else waits on one of those.  And one front
+that had a named next move no longer has one: after three substrate
+families, five conventions and three routes, the search for a
+**non-coboundary gluing** has no candidate site left to try.
 
 ---
 
@@ -9815,12 +10652,18 @@ method for it.  Everything else waits on one of those.
 > hand (Einstein's equations *in form*, with Newton's constant provably not
 > derivable from inside; a quantum lift of the record process at fixture
 > scale), three are open (charts and gluing into a manifold — whose first
-> three questions are answered, since the grammar demonstrably tiles, tiles
-> *wide*, and glues its charts **trivially**, the transition maps being
-> real but removable by a per-chart change of convention, so no structure
-> group is exhibited; whose remainder is a substrate that glues
-> non-trivially and a width step that a short theorem says must be bought
-> with conflict rather than with delivery; fields on it; particle
+> four questions are answered, since the grammar demonstrably tiles, tiles
+> *wide*, glues its charts **trivially** — the transition maps being real
+> but removable by a per-chart change of convention, so no structure group
+> is exhibited — and then breaks the delivery width ceiling from the one
+> direction a theorem left open: a crystal made of **crossed conflicts**,
+> with no messages inside its rounds, tiles at cadence and carries
+> **nine**-direction charts, saturating the corrected ceiling exactly,
+> while sitting inside the sprinkling band one chart depth down; whose
+> remainder is a substrate that glues non-trivially — none has been found,
+> across three substrate families at five conventions — and the next width
+> rung, four concurrent conflict axes at a proved ceiling of sixteen
+> against real spacetime's ten to seventeen; fields on it; particle
 > creation),
 > and the last is blocked
 > at four independent points, one of which is the un-derivability of the
@@ -9829,10 +10672,10 @@ method for it.  Everything else waits on one of those.
 > units certify scale-invariant mechanisms rather than objects — which
 > the substrate line reaches independently, since without coupling no
 > collective excitation exists at any scale.  The
-> two independent next moves are: **the arbitration crystal**, which the
-> width theorem, the trivially gluing atlas and the measure's descent
-> defect all name from three different directions, and **a coarser
-> aggregation that closes at transport scope**.  Everything else in the
+> two independent next moves are: **the `k = 4` crossed-conflict grid**,
+> the first construction in the programme whose target range lies inside a
+> proved bound, and **a coarser aggregation that closes at transport
+> scope**.  Everything else in the
 > programme currently waits on one of those two, except the missing map,
 > whose first segment is now measured — the generated law's normalized
 > kernel does not descend to a record measure, by one repairable
@@ -9924,23 +10767,29 @@ defined precisely, and to Part A where the intuition lives.
 | **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front.  **One segment is measured** (§B2.10), from the generated side only, and it locates the widest remaining stretch: the generated line has no class operators and no Gram functional, so paper 29's decoherence hypothesis holds *for the empty reason* | B2.9, B2.10, D4 |
 | **no silent erasure** | `[POSITED]` every loss of a record-accessible distinction must be **received** by records — total content conserved, sealing = dispersal, never intrinsic destruction.  The principle that closes the action line's coherence clause, with a parameter-free falsifier | B2.9, A2.6 |
 | **chart-size ratio (`ω`)** | the atlas instrument's overlap statistic on cover pairs.  `[THEOREM]` the smaller chart is *contained* in the larger, so `ω` is the ratio of their sizes and Jaccard similarity is identically equal to it — it therefore systematically favours **thin-charted** records | D2 (Road 1), B8.6 |
-| **crystal** | a record built to **tile** rather than to spike: the brick wall — ring actors, one minted version broadcast, then alternating re-delivery rounds.  Forced by the layer's own menus, sprinkling-grade homogeneity, above-sprinkling `ω`, **thin charts** at `d = 2`; the shortfall from a perfect tiling is entirely boundary.  Coupling two of them gives the *wide* crystal | B8.6, B8.7, A8.6 |
+| **crystal** | a record built to **tile** rather than to spike: the brick wall — ring actors, one minted version broadcast, then alternating re-delivery rounds.  Forced by the layer's own menus, sprinkling-grade homogeneity, above-sprinkling `ω`, **thin charts** at `d = 2`; the shortfall from a perfect tiling is entirely boundary.  Coupling two of them gives the *wide* crystal; replacing the deliveries with disputes gives the *arbitration* crystal, and crossing two conflict axes gives the *double grid* | B8.6, B8.7, B8.9, A8.6 |
 | **discriminator (max-shatter)** | `[REFEREE-CARRIED + coordinator-confirmed]` on genuine sprinklings at sufficient density, read under SKY-A, max-shatter reproduces the continuum ladder: `M^{2+1}` shatters 3 never 4; `M^{3+1}` shatters 4 never 5.  Size-controlled two-sided separation | B5.7, A5.7 |
 | **disjoint-row lemma** | shattering `S` requires a row **disjoint from `S`**, not an empty row — the two coincide only when `S` is the whole direction set.  Its narrow true corollary: for a reflexive transitive poset a cover sky can never shatter its **full** direction set | B5.4, A5.5 |
 | **own-view dichotomy** | `[THEOREM, two actors]` a candidate's own view is **either** the initiator's register cone **or** the FULL view — no third case: register geometry alone *produces* a third case, and `arb_components_in_view`'s **proposer test** removes it.  The engine of (H1)'s proof and of the update table's row preconditions; **fails at three actors**, where the third case is admissible | B6.13, A6.9 |
 | **invisible supersession** | an actor's own token is alive in its cone but superseded in the full view, because the opponent self-arbitrated the shared base and the actor has not seen it.  The mechanism behind "a smaller view can yield MORE options", and the content of the update table's row R2′ — the same **9,656** events under three descriptions | B3.2, B6.13b, A3.2 |
-| **wide crystal** | the **built** composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record.  Witness **DOUBLE-RING(8, 10, 8)**: 177 events, 16 actors, forced with all actors offered at every step; `d = 2` homogeneity `47/59` in band with `\|D\| ≥ 4` at a third of its events.  A `d = 2` statement: at `d = 3` the uncoupled brick already meets the pattern.  It is also the substrate on which the **transition cocycle** is measured, and on which that cocycle's class is found to be a coboundary | B8.7, B8.8, A8.7, D2 |
-| **transition map** | the translation between two overlapping charts' coordinates — where a manifold's structure lives.  Read here from **wire words**: a direction's label in a chart is the set of register sequences realized by `P`-paths to it, `P` being `event_poset`'s own generating relation.  Every atlas result before D64 assumed these were identities; measured, 115 of 172 overlapping pairs of the wide crystal are not, and each non-identity one is a **partial** map on 2 of 4 fibre points (the 29 total maps are all identities) | B8.8, A8.8 |
+| **wide crystal** | the **built** composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record.  Witness **DOUBLE-RING(8, 10, 8)**: 177 events, 16 actors, forced with all actors offered at every step; `d = 2` homogeneity `47/59` in band with `\|D\| ≥ 4` at a third of its events.  A `d = 2` statement: at `d = 3` the uncoupled brick already meets the pattern.  It is also the substrate on which the **transition cocycle** is measured, and on which that cocycle's class is found to be a coboundary.  **Superseded as the corpus's widest object** by the delivery-free *double grid* (`max \|D\| = 9`), which is also in band at `d = 3` | B8.7, B8.8, B8.9, A8.7, D2 |
+| **transition map** | the translation between two overlapping charts' coordinates — where a manifold's structure lives.  Read here from **wire words**: a direction's label in a chart is the set of register sequences realized by `P`-paths to it, `P` being `event_poset`'s own generating relation.  Every atlas result before D64 assumed these were identities; measured, 115 of 172 overlapping pairs of the wide crystal are not, and each non-identity one is a **partial** map on 2 of 4 fibre points (the 29 total maps are all identities).  On the wide **conflict** records the length-preserving transitions are outright identities at four of the five port conventions, so what carries the non-vacuity there is a probe's failure to fire, not a triple count | B8.8, B8.9, A8.8 |
 | **cocycle (transition)** | the consistency condition on transition maps around a triple of overlapping charts.  Satisfied on all 111 testable triples of the wide crystal and on **every** tested triple of every substrate, controls and sprinklings included — 993 triples, zero violations.  *Satisfying it does not make an atlas non-trivial*: it is a precondition, not evidence | B8.8, A8.8 |
-| **coboundary / `H¹ = 0`** | a transition class is a **coboundary** when a per-chart relabelling `ε` turns every transition into the identity; then `H¹ = 0`, the atlas is globally trivializable, the holonomy of every loop is trivial and the transitions are **pure gauge**.  On the delivery crystal it **is** one — 0 obstructions over 60 charts in 9 components, `ε` at 32/28, all 108 non-identity transitions relabelled away, at two independent port conventions.  **The obstruction count is the test**; non-identity transitions, a clean cocycle and a group name are all compatible with triviality | B8.8, A8.8, D2 |
+| **coboundary / `H¹ = 0`** | a transition class is a **coboundary** when a per-chart relabelling `ε` turns every transition into the identity; then `H¹ = 0`, the atlas is globally trivializable, the holonomy of every loop is trivial and the transitions are **pure gauge**.  On the delivery crystal it **is** one — 0 obstructions over 60 charts in 9 components, `ε` at 32/28, all 108 non-identity transitions relabelled away, at two independent port conventions — **and so is every conflict substrate**, at five port conventions and by three routes (§B8.9).  **The obstruction count is the test**; non-identity transitions, a clean cocycle and a group name are all compatible with triviality | B8.8, B8.9, A8.8, D2 |
 | **descent (of a click law)** | the condition that a law's conditionals come from one measure on records, so that `P(a\|H)P(b\|Ha) = P(b\|H)P(a\|Hb)` whenever both orders name the same record.  The generated law's **raw** weights satisfy it everywhere; its **normalized** kernel fails on 32,256 of 425,334 refined-record-identical ordered pairs, by exactly `M(σ(Hb))/M(σ(Ha))` — the coboundary of the per-state menu mass, zero exceptions.  `Zhat`'s measure **does** descend (constant on all 5,548 record classes) | B2.10, A2.7 |
 | **repair space** | the completions that annihilate the descent defect.  At the depth-4 truncation the positive cone has dimension **573**; **205** of those also descend; the `(depth, sigma)` family is a **28**-dimensional slice; `Zhat` is one ray.  Repairing the squares and descending imply each other in **neither** direction (two exact positive witnesses).  **The collapse to one ray is D50's form choice, not descent** — and "the completions are precisely the repair" is blacklisted (§0.3) | B2.10, B6.12, A2.7 |
-| **branching bound (W4b)** | `[THEOREM]` `\|D_e(d)\| ≤ B^d`, `B` = the largest register count of any event, proved from `event_poset`'s generating relation.  Deliveries carry `B = 2`, so **chart width 4 is the delivery grammar's ceiling at `d = 2`** and the sprinklings' 10–17 is unreachable by any delivery circuit; width past 4 **requires** arbitration over a multi-proposer conflict — a necessity, not a route | B8.7, A8.7 |
-| **arbitration crystal** | the unbuilt successor **three** results now name: a crystal made of **conflicts** rather than of deliveries.  *(i)* the only remaining route to chart width past 4 at `d = 2` (the branching bound); *(ii)* the first place a **non-coboundary** transition class could live, since what trivializes the delivery atlas is the two-port symmetry a conflict event lacks; *(iii)* the site of the `2 → 5/2` menu-mass jump that is the whole descent defect.  An admissible 3-register *event* is exhibited; no *record* carrying a 5-direction chart exists yet | B8.7, B8.8, B2.10, D4 |
+| **branching bound (W4b)** | `[THEOREM]` `\|D_e(d)\| ≤ B^d`, `B` = the largest register count of any event, proved from `event_poset`'s generating relation.  Deliveries carry `B = 2`, so **chart width 4 is the delivery grammar's ceiling at `d = 2`** and the sprinklings' 10–17 is unreachable by any delivery circuit; width past 4 **requires** arbitration over a multi-proposer conflict — a necessity, not a route, and **necessary but not sufficient** (see *W4c*) | B8.7, A8.7 |
+| **W4c (the dead-wire refinement)** | `[THEOREM, proved from the committed layer]` the version register an arbitration mints is a **dead wire** — it occurs in no later event's `regs_of`, because a delivery carries a version in its **payload** rather than on its register, and two arbitrations minting the same `vname` would be causally comparable and the later one inadmissible.  So the operative branching factor is the **live** out-degree `Bl` (registers that recur), the bound is `\|D_e(d)\| ≤ Bl^d`, and an arbitration branches by its **proposer count**.  Hence a two-proposer conflict ring is held to 4 exactly like a delivery circuit, and **"3+ registers" is corrected to "3+ PROPOSERS"** | B8.9, A8.9 |
+| **width ceiling (`k·b ≤ k²`)** | W4c's depth-2 form: `\|D_e(2)\| ≤ Σ_{y ∈ succ(e)} b(y) ≤ k·Bl ≤ k²`, on the exact containment `D_e(2) ⊆ succ(e) ∪ ⋃ succ(y)` (gated everywhere, exceptions characterised).  **Tight and SATURATED at 9** by the double grid.  `2k` is only the `Bl = 2` corner — the value when every successor of an arbitration is a delivery — and the `ARBCHAIN(m,3)` family occupies 6, 7, 8, 9 as `m` runs 0..3 | B8.9, A8.9 |
+| **double grid** | `DOUBLE-GRID(k, R)`: rows and columns conflicting **concurrently**, so every actor stands in two independent conflict lineages.  At `k = 3`: **zero in-round deliveries**, arbitration-group share saturating `1/(k+1) = 1/4`, C1-grade full-menu replay 72/72, **nine `\|D\| = 9` charts** saturating `k² = 9`, and `d = 3` homogeneity **47/60 = 0.7833 IN BAND** — the first record that is **both crystal-uniform and wide**.  Its transition class is a coboundary at all five port conventions | B8.9, A8.9, D2 |
+| **conflict budget bound** | `[THEOREM, verified, saturated]` an arbitration consumes `k` live proposal triples and no triple is consumed twice, so the arbitration share of any record is at most **`1/(k+1)`** with `k` the smallest proposer count in it.  Two readings, both printed: the delivery-free ring saturates `1/3` at `k_min = 2`; the double grid's bootstrap makes `k_min = 1` (general bound `1/2`) while all its conflict groups sit exactly at `1/4` | B8.9, A8.9 |
+| **crossed conflict** | the corrected mechanism for chart width: what buys a second direction is a **second concurrent consumer of a proposer's register**.  Rotation buys one with a **delivery**; a concurrent **arbitration** buys a better one for free (`b = k` against `b = 2`).  One conflict lineage per actor makes the cycle a chain of **diamonds** and carries nothing.  So **transport seeds and rotates; it does not make space** — the widest record in the corpus is delivery-free | B8.9, A8.9, D4 |
+| **arbitration crystal** | the successor **three** results named, now **built and terminal**: a crystal made of **conflicts** rather than of deliveries.  *(i)* **Width** — conflict tiles (21 configurations, 2,325 events, zero refusals) and breaks the delivery ceiling, saturating W4c's `k²` at **9**.  *(ii)* **Gluing** — answered **negatively**: the class is a coboundary on conflict substrates too, at every convention and by every route, so the two-port-symmetry motivation is spent.  *(iii)* **The measure** — the `2 → 5/2` jump is a d42a statement and the transport-scope mass census does **not** bridge to it.  The live successor is the `k = 4` grid at a ceiling of 16 | B8.9, B8.7, B8.8, D4 |
+| **odd-ring residue** | the campaign's one non-zero obstruction count, on **grammar** records: pair-conflict rings with an **odd** number of pairs per round.  Resolved as **parity** at five ring sizes, with the magnitude `R − 1` — a count of **rounds**, not a ring or cohomological quantity.  Free relabelling trivializes it, there are **zero testable Čech triples** behind it, the group name is undetermined, and genuine sprinklings obstruct at the same route: reported, **not claimed** as `H¹ ≠ 0` | B8.9, A8.9 |
 | **axioms R / S / C** | the earlier corpus's three: laws are laws of whole sealed histories; **no distinction without a record**; couplings fixed by self-consistency under refinement | C1 |
 | **Barandes-indivisible** | a process whose one-time transition law fails Chapman–Kolmogorov except at sparse **division events**; the barrier is the gap between `\|Σ\|²` and `Σ\|·\|²` — the interference cross-term | C1, C3 |
 | **Born = K1** | the statement that a constructed isometric arbitration family's squared branch amplitudes reproduce the committed `K1` kernel exactly (`1/2`–`1/2` on the 2-conflict, recomputed from the layer).  Appears in v10 paper 31 §4.3; the earlier Born layer (paper Va) is the same *kind* of statement — **relation formally unestablished** | C3.5, C5.4 |
-| **chart / gluing** | the local-patch and overlap-agreement structure that turns a causal order into a **manifold** — arrow 3 of the destination, still `[OPEN]`, and the first construction the destination newly requires.  Charts exist and tile (`§B8.6`), tile wide (`§B8.7`), and their gluing is measured and **trivial** (`§B8.8`); what is unbuilt is a substrate whose gluing is not | D2, B8.8 |
+| **chart / gluing** | the local-patch and overlap-agreement structure that turns a causal order into a **manifold** — arrow 3 of the destination, still `[OPEN]`, and the first construction the destination newly requires.  Charts exist and tile (`§B8.6`), tile wide (`§B8.7`), their gluing is measured and **trivial** (`§B8.8`), and crossed conflict breaks the delivery width ceiling at **9** (`§B8.9`); what is unbuilt is a substrate whose gluing is *not* trivial, and the next width rung at `k = 4` | D2, B8.8, B8.9 |
 | **covariantization** | the result that a **Poisson sprinkling** of division events makes the kinematic layer Lorentz-invariant outright (no recoverable frame; arrow in the causal order, not a slicing; Hegerfeldt dissolved for the free flash), converting the GRW/CSL foliation wall into named dynamical residues | C3.6 |
 | **CP-divisibility** | an open-system channel property: the dephasing rate stays `≥ 0`, so no information backflow and **no revivals**.  **Orthogonal** to Barandes-indivisibility — neither implies the other | C3.1 |
 | **division event** | the record at which an indivisible stochastic process momentarily factorizes; the primitive of the causal-set gravity sector, where *order + number = geometry* | C1, C3.6 |
@@ -10007,7 +10856,7 @@ part of the document, not an apology for it.
 4. **D46's six ladder units get one paragraph each at most.**  D46b
    (Martin at transport, three reversals) appears in B9.6; D46c (Minkowski
    certificates) appears only via `W3_CERT` in B5.3; D46d appears in B7.2;
-   D46e in B2.8(v); D46f in B10.15; D46g (embedded-head reconciliation)
+   D46e in B2.8(v); D46f in B10.16; D46g (embedded-head reconciliation)
    only as the `1/16` vs `1/24` wart.  The three-round sweep that produced
    five headline reversals is characterized statistically rather than
    narrated.
@@ -10057,11 +10906,16 @@ part of the document, not an apology for it.
     exactly; **D64** (§B8.8, the transition cocycle) likewise, its referee
     rebuilding the record, the poset, the sky, the port conventions and
     the cocycle code, confirming every number and then running the
-    coboundary computation the unit had not; and **D65** (§B2.10, the
+    coboundary computation the unit had not; **D65** (§B2.10, the
     descent conditions) likewise, its referee rebuilding the family, the
     state normal form, the record functor and the pair keys — *"every
     single number reproduces"* — and then computing the repair-cone
-    dimension.  All five round 1 terminal.
+    dimension; and **D66** (§B8.9, the arbitration crystal) likewise, its
+    referee rebuilding all fifteen swept configurations with its own
+    driver and its own instrument, reproducing every figure exactly,
+    proving W4c's missing step — and then **building two records of its
+    own**, one of which saturates W4c's true ceiling at 9 and is now the
+    campaign's strongest geometric object.  All six round 1 terminal.
     **D56** (§B9) is an advisory probe whose two load-bearing claims were
     independently re-verified and whose remainder must be re-derived.
     Two figures in §B5.7 and one in §B8.6 are `[REFEREE-CARRIED]`, and the
@@ -10102,13 +10956,15 @@ part of the document, not an apology for it.
     shape–dimension frontier and paper 8) are **not read** — C6 is an arc
     summary, not a reading of the line's own publications.
 
-14. **PART D is mostly a roadmap.**  Arrow 3's first three segments are
+14. **PART D is mostly a roadmap.**  Arrow 3's first four segments are
     now results (the grammar tiles; it tiles wide at `d = 2`; its charts'
-    transition class is a coboundary) and its next step is a proved wall
-    rather than an open engineering question, but arrows 6 and 7 have no
-    corpus content beyond being named, and their entries are statements of
-    what is missing.  The `[MY READING]` in §D3 is speculation and is
-    marked three times as such.
+    transition class is a coboundary; crossed conflict saturates the
+    corrected width ceiling at 9 on a delivery-free record that is in band
+    at `d = 3`) and its next step is a measured quantity with a proved
+    bound rather than an open engineering question, but arrows 6 and 7
+    have no corpus content beyond being named, and their entries are
+    statements of what is missing.  The `[MY READING]` in §D3 is
+    speculation and is marked three times as such.
 
 15. **Three things this document leaves open, and a reader should not
     mistake for settled.**  (a) The **sky reading** — all three are live,
@@ -10123,12 +10979,16 @@ part of the document, not an apology for it.
     stated every time.  Residue 1 is **closed**, and the sentence is only
     ever true with its scope clause attached (§0.3): two actors,
     delivery-free, inside the stationary form.  (d) The **triviality of
-    the atlas** (§B8.8) is a measurement on one substrate at one chart
-    depth under conventions that were varied and agreed — a strong
-    measurement, not a theorem about the grammar; and the **descent
-    defect** (§B2.10) is exhaustive but confined to two-actor
-    delivery-free scope, where the menu mass takes exactly two values.
-    Neither generalizes by itself.
+    the atlas** (§B8.8, §B8.9) is a measurement — now across three
+    substrate families, at five port conventions and by three routes, all
+    agreeing — which makes it a strong measurement and still not a theorem
+    about the grammar; the **descent defect** (§B2.10) is exhaustive but
+    confined to two-actor delivery-free scope, where the menu mass takes
+    exactly two values, and §B8.9's transport-scope mass census does
+    **not** bridge to it; and the **width results** (§B8.9) are two
+    theorems — W4c and the conflict budget bound — surrounded by
+    measurements on one swept family, with `k² = 9` saturated only at
+    `k = 3`.  None of these generalizes by itself.
 
 ---
 

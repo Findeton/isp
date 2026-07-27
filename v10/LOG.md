@@ -11137,3 +11137,29 @@ every substrate.  TERMINAL for round 1.  Next: the book absorbs the
 corrected D66; the next-phase queue — push the double-grid family
 (k = 4 bounds at 16) toward sprinkling width, the missing map's
 functional level, the repair cone, transport escapes, Lean.
+
+## 2026-07-27 — THE BOOK INTEGRATED TO #472: THE ARBITRATION CRYSTAL,
+## ONE-GO (LEDGER #473)
+THE-THEORY-SO-FAR.md -> 10,996 lines, stamp #472, full re-read held.
+New chapters §A8.9/§B8.9 (the crystal made of conflicts: the supply
+solution, W4c with its four-step proof quoted against d42b1, the
+width table and the corrected law, the DOUBLE-GRID flagship box —
+delivery-free, nine |D| = 9 charts, in-band at d = 3 — the crossed-
+conflict mechanism, the five-convention gauge zero, odd rings as
+parity, the D65 measure motivation explicitly UNBRIDGED).  Graveyard
+gains the two withdrawn D66 sentences.  Part D reshaped: the
+dimension road runs through CROSSED CONFLICT; ranking 1 = the k = 4
+double grid (bound 16; the sprinkling range 10-17 inside reach), 2 =
+the missing map's functional level, 3 = the repair cone, 4 = the
+gauge question's honest state with the bar a candidate must clear.
+Blacklist gains the 2k/second-direction entries; the gauge entry
+widened to all substrates.  The re-read caught: the review
+statistics stale in three places (now eight rounds / six blockers,
+with the D64/D65/D66 pattern named and D66's constructive upside),
+the "decided as a pair" line (now a triple), ledger ranges, a
+vocabulary collision between D63's and D66's mechanism sentences,
+accretion scaffolding from the round, two Part-A jargon leaks, an
+ambiguous exhibit label, and a three-place accuracy fix (D66's
+motivations: width discharged, gluing negative, measure UNBRIDGED).
+Zero asserting hits for the withdrawn sentences; tables
+machine-checked; numbering contiguous.
