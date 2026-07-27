@@ -10966,3 +10966,40 @@ ledger item moves, five stand with grounds.  Scope: two-actor
 delivery-free d42a ONLY; nothing transfers to the action line; the
 map remains an identification problem.  GREEN-UNREVIEWED: hostile
 round dispatched.
+
+## 2026-07-26 — D65 ROUND 1 ADJUDICATED AND TERMINAL: THE REPAIR SPACE
+## IS 573-DIMENSIONAL — THE SELECTION IS D50's CHOICE, NOT DESCENT
+## (LEDGER #468)
+Deliverables: reviews/d65-round1-hostile-review.md (independent Opus
+5, REVISE, 1 BLOCKER / 5 MAJOR / 8 MINOR / 3 NIT, + my DELTA),
+repaired receipt (39 PASS / 3 FAIL — the FAILs the pre-registered
+negative as TWO statements) + retitled note.  **FORWARD CORRECTION of
+#467: "the completions ARE PRECISELY the objects that repair descent /
+THE TWO LINES MEET" IS WITHDRAWN.**  The referee confirmed every
+number and ran the computation the unit never asked (the D64 lesson,
+repeated): the positive square-repair cone at the D = 4 truncation
+has dimension **573** (D = 5: 3,053); the (depth, sigma) completion
+family is a 28-dimensional slice (32); repairing the squares and
+DESCENDING to a record measure are INEQUIVALENT (witnesses both
+ways, gated); the true hierarchy is **573 ⊃ 205 ⊃ 28 ⊃ 1 (Zhat)**,
+and the collapse to Zhat is **D50's form choice, not descent**.  The
+meeting of the two lines, restated honestly: the descent defect
+names the JOB the completions do; it does not single them out.
+ALSO CORRECTED: the load-bearing census is the REFINED sub-census
+(32,256 / 425,334 — paper 29 §3.1 exempts the wider 56,376, and a
+genuine record measure fails that wider test too); the D59 ledger's
+boundary-state item STANDS (the generated line's derived sigma
+statistic is stated beside it, not in its place — moved == 0 now
+gated).  IN THE UNIT'S FAVOUR, the round's two ungated-true claims
+are now gated: the RAW path weight is constant on ALL 5,548 record
+classes (order-independence at record grain — though it is NOT a
+measure, cut masses printed), and **Zhat is the unique positive
+lambda = 2 harmonic completion whose measure GENUINELY DESCENDS
+(constant on all 5,548 record classes)** — the strongest
+descent-side fact the corpus now owns.  What stands terminal: the
+defect structure (one mass-ratio coboundary, sigma-functional, zero
+exceptions, exhaustively), Zhat's descent, the priced measure item.
+TERMINAL for round 1.  Next: the book absorbs D64's negative and
+D65's requalified segment; the ARBITRATION CRYSTAL pin (three
+convergent motivations: the width theorem, the non-coboundary
+question, and the 2 -> 5/2 mass jump — all pointing at conflict).

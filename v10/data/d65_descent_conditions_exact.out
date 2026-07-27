@@ -5,6 +5,11 @@
   receipts (the d61/d62 idiom), never re-implemented; TWO-ACTOR
   DELIVERY-FREE d42a ONLY; nothing here transfers to the
   identified (action-line) click law — the map is still the map.
+  round: ROUND-1 REVIEWED AND REPAIRED (1 BLOCKER / 5 MAJOR /
+  8 MINOR / 3 NIT).  The BLOCKER's computation — the REPAIR
+  SPACE — is now a gate (block DC1-R); the load-bearing DC1
+  test is the REFINED sub-census DC1(f); entailed gates are
+  labelled as corollaries; D59's ledger loses its one move.
   [PASS] N0(a) SINGLE SOURCES: d42b3's admission layer (candidates_for / admissible / event_poset / View / triples / canon / vname / V0) and d44a's sigma_raw / ser / canon_sigma / own_alive / _rename_event / _menu_extras / canon_menu / canon_pair extracted VERBATIM by text slice (the d61/d62 idiom); the slices carry the expected DEFINITIONS, not merely callables  (d42b3 prefix + 3 d44a slices)
   [PASS] N0(b) SLICE HYGIENE (the d50 lesson, as gated in d62): the three d44a slices are PURE DEFINITIONS — zero sys.exit, zero top-level check(), zero top-level print() survive extraction, so nothing of d44a's own gate protocol can execute here; the d42b3 prefix is cut before its first print  (stray (exit, check, print) per slice = [('blk1', 0, 0, 0), ('blk2', 0, 0, 0), ('blk3', 0, 0, 0)])
   [PASS] N0(c) CODE-FACTS (d42b3): every source line this unit's conditions read is present VERBATIM (11 lines: the three weight formulas that MAKE the kernel, the three refusals that make the support exact, candidates_for's base set and single-based ckey enumeration, and the unconditional idle)  (quoted lines = 11, missing = [])
@@ -13,13 +18,30 @@
 
   family depth CAP = 6: 34375 histories, census by depth = [1, 6, 32, 176, 976, 5280, 27904]
   [PASS] N1 CENSUS ANCHOR: the committed layer's own history census [1, 6, 32, 176, 976, 5280, 27904] (d44a SG0 / D61 round-1's independent reproduction), total 34,375 at depth 6  (census = [1, 6, 32, 176, 976, 5280, 27904], histories = 34375)
-  transitions out of the family = 179782 (into depth 7); distinct (sigma, renamed event) keys = 176
+  transitions out of the family = 179782 (into depth 7); distinct (sigma, renamed event) keys = 176; keys carrying two different successor states = 0
   [PASS] N2 THE CLOSED LAW's ANCHORS: exactly 36 sigma states and exactly 176 (sigma, renamed event) transition keys — d44a CG1/CG3a, re-derived here from the committed canon_sigma / canon_pair on the whole family (the state space this unit's conditions are evaluated on)  (sigma states = 36, keys = 176)
-  [PASS] N3 THE LAYER'S OWN SANITY COUNTERS (d44a's sigma port, carried through this receipt's sweep): alive-singleton, non-superseded-holdings, live-on-X and conflicting-pair-comparability violations all zero  (SG_VIOL = {'alive': 0, 'nonsup': 0, 'liveX': 0, 'cmp': 0})
-  [PASS] N4 THE STATE MASS IS A FUNCTION OF sigma (corollary of (H1); re-gated directly, not assumed): every history in a sigma class has the same menu mass, and the value set is exactly d44a's committed {2, 5/2} — 34 states of mass 2, 2 states of mass 5/2 (the two states where an actor's blind conflict group is visible in the join view: the quarter law's excess)  (mass-splitting classes = 0; per-state mass census = {'2': 34, '5/2': 2})
-  [t = 17.4s]
+  [PASS] N2(b) EACH TRANSITION KEY HAS A SINGLE SUCCESSOR STATE — d44a CG3a = (H2) [D62 THEOREM], re-gated here rather than assumed (round-1 MINOR 5: the key table is a dict and a silent overwrite would hide exactly this).  It is the property that makes DC1(d)'s key resolution meaningful: sigma(Ha) is a FUNCTION of (sigma(H), renamed a)  (keys = 176, keys with two successors = 0)
+  [PASS] N3 THE LAYER'S OWN SANITY COUNTERS (d44a's sigma port, carried through this receipt's sweep): alive-singleton, non-superseded-holdings, live-on-X and conflicting-pair-comparability violations all zero.  ANCHOR (round-1 MINOR 5): a break here would void the meaning of every sigma-indexed statement below, so it must exit 1, not 0  (SG_VIOL = {'alive': 0, 'nonsup': 0, 'liveX': 0, 'cmp': 0})
+  [PASS] N4 THE STATE MASS IS A FUNCTION OF sigma (corollary of (H1); re-gated directly, not assumed): every history in a sigma class has the same menu mass, and the value set is exactly d44a's committed {2, 5/2} — 34 states of mass 2, 2 states of mass 5/2 (the two states where an actor's blind conflict group is visible in the join view: the quarter law's excess).  ANCHOR (round-1 MINOR 5): DC1(c)'s entire meaning rests on M being a function of sigma, so a break here must exit 1  (mass-splitting classes = 0; per-state mass census = {'2': 34, '5/2': 2})
+  [t = 23.4s]
 
 [DC1 — THE COMMUTING-SQUARE IDENTITY (paper 29 Theorem 1 / F1). SUBSTANTIVE; pre-registered both ways in the pin.]
+  *** WHICH CENSUS IS LOAD-BEARING (round-1 MAJOR 1).  The pin's
+  primary predicate DC1(a) calls a pair COMMUTING when both
+  orders are admissible and sigma(Hab) = sigma(Hba).  That is
+  equality of a COARSE terminal state, and paper 29 §3 defines
+  commutation at the REFINED record level ('[Hab] = [Hba]  ...
+  This is a statement about record identity, not merely equality
+  of a coarse terminal state'), while §3.1 says what the theorem
+  does NOT require: 'The theorem does not require equal weights
+  for two distinct serial histories that later push to one
+  quotient atom.'  So the sigma-commuting class is WIDER than
+  Theorem 1's hypothesis and its failures include pairs the
+  theorem exempts.  DC1(f) — the refined-record sub-census — is
+  therefore THE LOAD-BEARING TEST, and DC1(a) is reported as the
+  pin's (coarser) predicate with its excess named.  The pin is
+  frozen and its predicate is gated as written; the WEIGHT of
+  the result sits on DC1(f). ***
   P(e|H) = menu weight / menu mass, exact Fractions.  For every
   history H of the exhaustive family and every UNORDERED pair
   {a, b} of distinct menu events at H (each unordered pair IS
@@ -47,7 +69,7 @@
       29's literal '[Hab] = [Hba]'.
   EXHAUSTIVE over ALL parents of the family (no sampling: the
   deepest level is included in full, see the per-level counts).
-  [PASS] N5 THE JOINT KEY IS canon_pair's OWN IDIOM: canon_pair2(h, e, e) reproduces (canon_sigma(h), (ebest, ebest)) with ebest the committed canon_pair's renamed event, at every transition out of every history of depth <= 2 — so the pair key is the committed key's two-event extension, not a new normal form  (transitions checked = 214, disagreements = 0)
+  [PASS] N5 THE JOINT KEY IS canon_pair's OWN IDIOM: canon_pair2(h, e, e) reproduces (canon_sigma(h), (ebest, ebest)) with ebest the committed canon_pair's renamed event, at every transition out of every history of DEPTH <= 2 (214 transitions) — so the pair key is the committed key's two-event extension, not a new normal form.  SCOPE, STATED (round-1 MINOR 8): this is a DIAGONAL check at depth <= 2 while DC1(d)'s key-B census runs family-wide, and on the diagonal there is only one event, so it cannot by itself certify that two DISTINCT events are renamed under one common bijection.  What carries DC1(d) is the AGREEMENT of the two independent key resolutions A and B (616 classes each, zero splits under either)  (transitions checked = 214, disagreements = 0)
 
   PAIR CENSUS (exhaustive, every parent of the family).
   ALL COUNTS ARE ORDERED PAIRS (a, b); the enumeration unit is
@@ -58,9 +80,19 @@
       exactly ONE order admissible (ASYMMETRY)      = 0
       both orders admissible                        = 665286
         of which sigma(Hab) != sigma(Hba) (NON-COMMUTING, excluded by name) = 0
-        of which COMMUTING (the pin's definition)    = 665286
+        of which SIGMA-COMMUTING (the pin's coarse
+          definition — the WIDER class, NOT Theorem 1's
+          hypothesis; see MAJOR 1 above)               = 665286
           of which the identity HOLDS                = 576654
           of which the identity FAILS                = 88632
+          of which REFINED-RECORD IDENTICAL (Theorem 1's
+            own hypothesis — THE LOAD-BEARING ROW)   = 425334
+              identity FAILS on                       = 32256
+          of which sigma-commuting but NOT refined-
+            record identical (paper 29 §3.1 EXEMPTS
+            these: no descent content)                = 239952
+              identity FAILS on                       = 56376  (56376 of the 88632 DC1(a) failures lie
+              OUTSIDE Theorem 1's hypothesis entirely)
     MUTUAL-EXCLUSION census by event tags: {('p', 'p'): 33338, ('r', 'r'): 31304}
       [MUTUALLY EXCLUSIVE WITNESS] H = ()
           a = ('p', 'A', ('v', 'v0'), 0)
@@ -102,7 +134,7 @@
     ('r', 'p')  d =   1: 26884
     ('r', 'p')  d = 5/4: 5828
     ('r', 'r')  d =   1: 19056
-  defect by sigma(H) (state index : {d : count}):
+  defect by sigma(H) (state index : {d : count}) — the set of DEFECTING states is [ENTAILED by DC1(c) + the two-valued mass: a parent state defects IFF its menu contains two events leading to states of DIFFERENT mass, so this is a corollary, not an independent localisation of the pathology (round-1 MINOR 6)]:
     sigma[ 0] (mass 2): {'1': 13416}
     sigma[ 1] (mass 5/2): {'1': 4472, '4/5': 13416, '5/4': 13416}
     sigma[ 2] (mass 2): {'1': 17484, '4/5': 4371, '5/4': 4371}
@@ -165,42 +197,180 @@
       N(Ha)    : 2
       N(Hb)    : 5/2
       defect d : 5/4
-  [FAIL] DC1(a) THE COMMUTING-SQUARE IDENTITY, exhaustive over every commuting pair at every history of the family.  PRE-REGISTERED BOTH WAYS (pin §2): a FAIL here is the deliverable, not a bug — it says the generated normalised law is ORDER-WEIGHTED and the missing map must carry order data  (commuting pairs = 665286, identity failures = 88632 (FAILS))
+  [FAIL] DC1(a) THE SIGMA-COMMUTING SQUARE IDENTITY [THE PIN'S PRIMARY PREDICATE, gated as written — but the COARSE one: round-1 MAJOR 1].  Exhaustive over every sigma-commuting pair at every history of the family.  PRE-REGISTERED BOTH WAYS (pin §2): a FAIL here is the deliverable, not a bug.  WHAT IT IS AND IS NOT: sigma-equality is equality of a coarse terminal state, which paper 29 §3.1 explicitly exempts from Theorem 1; the failures outside the refined-record class carry NO descent content, and a genuine positive record-cylinder measure can fail this very test (gated below, DC1-R(f)).  The consequence sentence in the verdict is carried by DC1(f), not by this gate  (sigma-commuting pairs = 665286, identity failures = 88632 (FAILS); of those failures 32256 are refined-record identical and 56376 are NOT (outside Theorem 1's hypothesis))
   [PASS] DC1(b) THE RAW (UNNORMALISED) COCYCLE: on every commuting pair the raw weight products agree exactly, q(a|H) q(b|Ha) = q(b|H) q(a|Hb) — so the generated law's UNNORMALISED history weight mu(h) = prod q IS order-independent on commuting pairs; the whole defect, if any, lives in the normalisation  (raw product ratio spectrum = {'1': 665286})
   [PASS] DC1(c) THE DEFECT IS EXACTLY THE INTERMEDIATE-MASS RATIO (the pin's pre-registered structural fallback, sharpest form): for EVERY commuting pair, d = M(sigma(Hb)) / M(sigma(Ha)) with M the per-state mass function gated in N4 — i.e. the defect is the COBOUNDARY of a function of sigma alone, a mass-ratio cocycle and nothing else  (commuting pairs = 665286, pairs where d != N(Hb)/N(Ha) = 0)
-  [PASS] DC1(d) THE DEFECT IS A FUNCTION OF (sigma(H), class(a), class(b)) ALONE — the pin's structural fallback, tested on TWO key resolutions, both ORDERED (the defect inverts under the swap, so an unordered key would be wrong): (A) the two events renamed SEPARATELY by the committed canon_pair, (B) the two events renamed JOINTLY by canon_pair2 (N5).  No key carries two different defect values under either resolution — and since a key fixed by an automorphism swapping a and b receives BOTH d and 1/d, this also forces d = 1 on every self-swapped class  (key-A classes = 616, splitting = 0; key-B classes = 616, splitting = 0)
-  [PASS] DC1(e) THE FAILURE VANISHES EXACTLY ON THE SAME-MASS SUBCLASS (the natural subclass named in the pin's lean): every commuting pair whose two intermediate states carry EQUAL menu mass satisfies the identity, and every failure has MASS-MIXED intermediates — the risk sits precisely where the pin said it would, and nowhere else  (same-mass pairs = 576654 (spectrum {'1': 576654}); mass-mixed pairs = 88632 (spectrum {'4/5': 44316, '5/4': 44316}))
-  [FAIL] DC1(f) THE REFINED-RECORD SUB-CENSUS: paper 29's literal hypothesis is [Hab] = [Hba] at the REFINED record level, which on the generated side is equality of d42b3's committed canonical DAG.  Reported both ways: the pin's sigma-commuting class and this strictly stronger subclass  (refined-identical pairs = 425334, identity failures = 32256; spectrum = {'1': 393078, '4/5': 16128, '5/4': 16128})
-  [PASS] DC1(g) THE CENSUS BOOKKEEPING CLOSES, so that the exclusion counts are exhaustive rather than residual: every ordered pair is accounted for exactly once as mutually-exclusive, asymmetric, non-commuting, identity-holding or identity-failing, and the ordered total is twice the unordered enumeration.  All four exclusion categories are named and counted; none is a leftover  (ordered pairs = 794570 = 2 x 397285 = neither 129284 + asymmetric 0 + both-orders 665286; both-orders = sigma-differs 0 + commuting 665286)
-  [PASS] DC1(h) THE ADMISSIBILITY ASYMMETRY, THE MUTUAL-EXCLUSION AND THE NON-COMMUTING CENSUSES [REPORTING — the pin asks for these numbers whichever way they land].  What the numbers say: admissibility on a menu pair is SYMMETRIC (zero asymmetric pairs — no admissible menu event ever survives its partner in one order and not the other), the menu is NOT all-concurrent (a nonzero block of pairs is mutually exclusive: the two events cannot follow each other in EITHER order), and wherever both orders do run they already agree on the successor state (zero non-commuting pairs)  (asymmetric = 0; mutually exclusive = 129284; both-orders-admissible-but-sigma-differs = 0)
-  [t = 191.9s]
+  [PASS] DC1(d) THE DEFECT IS A FUNCTION OF (sigma(H), class(a), class(b)) ALONE [COROLLARY OF DC1(c) + N2(b) — round-1 MAJOR 4(b): given d = M(sigma(Hb))/M(sigma(Ha)) and given that sigma(Ha) is a function of (sigma(H), renamed a) (N2(b) = CG3a), d is a function of the pair key BY CONSTRUCTION and cannot come out otherwise.  Printed because the CLASS COUNTS are the census's real information content (see DC1(i)), not because the gate is at risk].  Tested on TWO key resolutions, both ORDERED (the defect inverts under the swap, so an unordered key would be wrong): (A) the two events renamed SEPARATELY by the committed canon_pair, (B) the two events renamed JOINTLY by canon_pair2 (N5).  No key carries two different defect values under either resolution — and since a key fixed by an automorphism swapping a and b receives BOTH d and 1/d, this also forces d = 1 on every self-swapped class  (key-A classes = 616, splitting = 0; key-B classes = 616, splitting = 0)
+  [PASS] DC1(e) THE FAILURE VANISHES EXACTLY ON THE SAME-MASS SUBCLASS [COROLLARY OF DC1(c) — round-1 MAJOR 4(b): d = M/M is 1 iff the two masses are equal, so this restates DC1(c) on a partition of the same population; printed for the counts] (the natural subclass named in the pin's lean): every commuting pair whose two intermediate states carry EQUAL menu mass satisfies the identity, and every failure has MASS-MIXED intermediates — the risk sits precisely where the pin said it would, and nowhere else  (same-mass pairs = 576654 (spectrum {'1': 576654}); mass-mixed pairs = 88632 (spectrum {'4/5': 44316, '5/4': 44316}))
+  [FAIL] DC1(f) THE REFINED-RECORD SUB-CENSUS — *** THE LOAD-BEARING TEST (round-1 MAJOR 1) ***.  Paper 29's literal hypothesis is [Hab] = [Hba] at the REFINED record level, which on the generated side is equality of d42b3's committed canonical DAG (the identification is an interpretive step and is declared as such — residue 3).  This is the strictly stronger hypothesis, the only one of the two from which Theorem 1's contrapositive follows, and it is a DIFFERENT predicate over a DIFFERENT population from DC1(a) — not a duplicate of it (round-1 MAJOR 3)  (refined-identical pairs = 425334 of 665286 sigma-commuting, identity failures = 32256 (FAILS); failure rate 32256/425334 vs DC1(a)'s 88632/665286; spectrum = {'1': 393078, '4/5': 16128, '5/4': 16128})
+  [PASS] DC1(g) THE CENSUS BOOKKEEPING CLOSES [BOOKKEEPING LINE, NOT A GATE — round-1 MAJOR 4(b): all four conjuncts are counter-construction tautologies (n_pairs and n_unord are incremented in one place by 2 and 1; the exclusion categories are mutually exclusive branches of one if/else; n_defect only ever increments inside the commuting branch).  Printed so that the exclusion counts are visibly exhaustive rather than residual], so that the exclusion counts are exhaustive rather than residual: every ordered pair is accounted for exactly once as mutually-exclusive, asymmetric, non-commuting, identity-holding or identity-failing, and the ordered total is twice the unordered enumeration.  All four exclusion categories are named and counted; none is a leftover  (ordered pairs = 794570 = 2 x 397285 = neither 129284 + asymmetric 0 + both-orders 665286; both-orders = sigma-differs 0 + commuting 665286)
+  [PASS] DC1(h) THE ADMISSIBILITY ASYMMETRY, THE MUTUAL-EXCLUSION AND THE NON-COMMUTING CENSUSES [REPORTING-ONLY, CANNOT FAIL — the predicate is the constant True; the pin asks for these numbers whichever way they land].  What the numbers say: admissibility on a menu pair is SYMMETRIC (zero asymmetric pairs — no admissible menu event ever survives its partner in one order and not the other), the menu is NOT all-concurrent (a nonzero block of pairs is mutually exclusive: the two events cannot follow each other in EITHER order), and wherever both orders do run they already agree on the successor state (zero non-commuting pairs)  (asymmetric = 0; mutually exclusive = 129284; both-orders-admissible-but-sigma-differs = 0)
 
-[DC1-C — the completion corollary (REPORTING; Z is SUPPLIED data, D50: the form remains a choice)]
-  [PASS] DC1-C d42b3's GRADIENT COMPLETION, re-derived and anchored to its OWN committed numbers (D1(ii)): Z(empty) = 1037/64, Z > 0 throughout, and Z constant on d42b3's canonical classes.  Under the completed kernel P_Z(e|h) = q Z(h+e)/Z(h) — which IS normalised per cut by the recursion — the commuting-square identity HOLDS on every commuting pair with both continuations inside Z's domain.  STATED HONESTLY: this is a property of a SUPPLIED completion, not of the generated law; its cost is d42b3's own (within-cut ratio deformation at 21 of 114 interior classes, the root included), and its domain here is parents of depth <= 2  (Z(empty) = 1037/64 (d42b3 anchor 1037/64); Z-class splits = 0; commuting pairs in Z's domain = 403; identity failures under P_Z = 0)
+  THE CLASS-LEVEL CENSUS (round-1 MAJOR 5 — the census's actual information content):
+    sum over the 36 sigma states of m(m-1)      = 720
+      ... both orders admissible (sigma-commuting) = 616
+      ... neither order admissible (exclusive)     = 104
+      ... exactly one order admissible             = 0
+      ... both admissible but sigma differs        = 0
+    ordered pair CLASSES seen in the family sweep  = 616  (key A) / 616 (key B)
+    so every class is realised inside the depth-6 family, and
+    the 794570 ordered pairs are ~1103 instances each of 720 class-level facts.
+  [PASS] DC1(i) THE CENSUS IS 720 CLASS-LEVEL FACTS, NOT 794,570 INDEPENDENT ONES [SUBSTANTIVE — it can fail two ways: a class the family never realises, or a family pair class with no representative-level counterpart].  Built from ONE representative history per sigma state, independently of the family sweep: the class-level pair census (sum of m(m-1) over the 36 states) partitions into commuting and mutually exclusive with nothing left over, and its commuting count is exactly the number of ordered pair classes the exhaustive sweep found (with zero splitting classes, DC1(d)).  CONSEQUENCE, and it is the honest reading of the headline: the exhaustive census REPLICATES each class-level fact about a thousand times over; the evidential content is the class count, and the multiplicity is replication, not independent confirmation  (class-level ordered pairs = 720 = commuting 616 + exclusive 104 + one-sided 0 + sigma-differing 0; family-wide pair classes = 616 (key A), 616 (key B), splitting = 0/0)
+  [t = 271.5s]
+
+[DC1-C — the completion corollary, INSTANTIATED (REPORTING; Z is SUPPLIED data, D50: the form remains a choice).  Round-1 MAJOR 4(a): d42b3's gradient Z is NOT 'an independent completion of a different shape' — it is a SECOND MEMBER OF THE SAME (depth, sigma) FAMILY (verified below: 0 cells carrying two values), so its zero-failure result is an INSTANCE of the two-line corollary and cannot fail once DC1(b) holds.  It is kept because its two d42b3 anchors are worth re-deriving and because the corollary deserves a worked instance — not as independent evidence.]
+    Z's SHAPE: (depth, sigma) cells occupied = 64, cells carrying more than one Z value = 0  -> Z FACTORS THROUGH (depth, sigma), i.e. it satisfies the corollary's own hypothesis
+    Z's DOMAIN: parents of depth <= 2 = 39 of 34375 histories; commuting pairs there = 403 UNORDERED (= 806 in this note's ordered unit), of which 251 are refined-record identical and 152 are not (round-1 MINOR 3)
+    Z's ANCHORS: Z(empty) = 1037/64 — which is EXACTLY the depth-4 raw cut mass sum_{|h|=4} q(h) = 1037/64, so it certifies that the recursion RAN (round-1 NIT 2); the second, independent anchor is d42b3's own deformation census: interior histories = 215 (d42b3 anchor 215), interior cut classes = 114 (anchor 114), classes with within-cut ratio deformation = 21 (anchor 21), root deformed = True (anchor True)
+  [PASS] DC1-C d42b3's GRADIENT COMPLETION, re-derived and anchored to its OWN committed numbers (D1(ii)): Z(empty) = 1037/64, Z > 0 throughout, Z constant on d42b3's canonical classes, and the deformation census 21 of 114 interior cut classes with the root included.  Under the completed kernel P_Z(e|h) = q Z(h+e)/Z(h) — which IS normalised per cut by the recursion — the commuting-square identity holds on every commuting pair with both continuations inside Z's domain.  [ENTAILED, NOT INDEPENDENT EVIDENCE — round-1 MAJOR 4(a): Z factors through (depth, sigma) (gated in the same line: 0 cells with two values), so once DC1(b) holds the zero-failure result is a THEOREM of the corollary and cannot fail.  What IS at risk here, and is the reason to keep the gate, is the pair of d42b3 anchors and the factoring claim.]  Its cost is d42b3's own; its domain is the 39 parents of depth <= 2  (Z(empty) = 1037/64 (d42b3 anchor 1037/64 = the depth-4 raw cut mass); Z-class splits = 0; (depth,sigma) cells with two values = 0; deformation = 21/114 (anchors 21/114); commuting pairs in Z's domain = 403 unordered = 806 ordered; identity failures under P_Z = 0)
 
   THE GENERAL COROLLARY [PROOF — two lines, from two gated
-  ingredients; printed, not gated, because it is algebra]:
-    Let Z be ANY positive completion that factors through
-    (depth, sigma) — i.e. Z(h) = Zhat(|h|, sigma(h)).  Then for
-    every COMMUTING pair,
+  ingredients; printed, not gated, because it is algebra.
+  ROUND-1 BLOCKER 1: it proves an IMPLICATION, and the first
+  delivery of this unit read it as an equivalence.  Its actual
+  hypothesis is stated first, its sufficiency second]:
+    THE HYPOTHESIS THE PROOF USES is exactly one equation:
+        Z(Hab) = Z(Hba)   for every commuting pair.
+    (depth, sigma)-factoring — Z(h) = Zhat(|h|, sigma(h)) — is
+    ONE SUFFICIENT CONDITION for it, and a very special one.
+    Given that hypothesis, for every COMMUTING pair,
         P_Z(a|H) P_Z(b|Ha) = q(a|H) q(b|Ha) Z(Hab) / Z(H)
         P_Z(b|H) P_Z(a|Hb) = q(b|H) q(a|Hb) Z(Hba) / Z(H)
     (both telescope), and the two right-hand sides are EQUAL:
     the raw products agree by DC1(b) [gated above, 0
-    exceptions], and Z(Hab) = Z(Hba) because |Hab| = |Hba| and
-    sigma(Hab) = sigma(Hba) is the definition of the commuting
-    class.  So the DC1 defect is annihilated by ANY completion
-    of that shape.
-    THE CORPUS ALREADY HAS ONE.  D49's root-free completion
-    Zhat(h) = 2^(-|h|) . f(class(sigma(h))) (lambda = 2,
-    f = (4,4,3,7,3,3)/3) has EXACTLY that shape and is
-    normalised per cut at every depth at this scope (D49 +
-    (H1)/(H2)).  So: the generated law's NORMALISED MENU KERNEL
-    does not descend, and the SAME law read through the
-    corpus's own selected completion does.  The price is
-    named and unchanged: D50 — the stationary FORM of Z is a
-    CHOICE, i.e. supplied, not derived.  That is why DC4 item 2
-    stands as supplied and is now priced rather than moved.
+    exceptions], and Z(Hab) = Z(Hba) by hypothesis — which for
+    a (depth, sigma)-factoring Z holds because |Hab| = |Hba|
+    and sigma(Hab) = sigma(Hba) is the definition of the
+    commuting class.  So the DC1 defect is annihilated by ANY
+    completion satisfying the displayed equation.
+    WHAT THE PROOF DOES NOT GIVE, and the first delivery
+    wrongly took from it: (a) it does not say the corpus's
+    completions are the ONLY repairs — the solution space of
+    the displayed equation is measured in DC1-R below and is
+    573-dimensional at the depth-4 truncation, against 28 for
+    the (depth, sigma) family; and (b) it says NOTHING about
+    DESCENT — 'mu_Z is a function of the record' is a
+    different and inequivalent system of equations, and
+    DC1-R(e)/(f) exhibit positive completions separating the
+    two conditions in BOTH directions.
+    THE CORPUS HAS A COMPLETION THAT DOES BOTH.  D49's
+    root-free Zhat(h) = 2^(-|h|) . f(class(sigma(h)))
+    (lambda = 2, f = (4,4,3,7,3,3)/3) has the factoring shape,
+    is normalised per cut at every depth at this scope, and —
+    gated below in DC1-R(h), where the first delivery only
+    asserted it — its measure mu_Zhat = q.Zhat IS constant on
+    every record class of the family.  So Zhat genuinely
+    descends.  The price is named and unchanged: D50 — the
+    stationary FORM of Z is a CHOICE, i.e. supplied, not
+    derived; DC1-R now puts a number on that choice.  That is
+    why DC4 item 2 stands as supplied and is priced rather
+    than moved.
+
+[DC1-R — THE REPAIR SPACE (round-1 BLOCKER 1).  Setup, and it
+ is d42b3's own gradient construction: truncate at depth D; let
+ Z be FREE and positive on the depth-D histories and extend it
+ downward by the completion recursion Z(h) = sum_e q(e|h)
+ Z(h+e), which is exactly what makes P_Z(e|h) = q Z(h+e)/Z(h)
+ a normalised kernel.  Then:
+   * Z REPAIRS the defect  <=>  Z(Hab) = Z(Hba) for every
+     commuting pair whose square closes inside the truncation
+     (given DC1(b), this is necessary AND sufficient — see the
+     corollary above).  A LINEAR system.
+   * Z DESCENDS  <=>  mu_Z = q.Z is a function of the record,
+     i.e. Z is constant on record classes (q is, gated in
+     DC1-R(i)).  A DIFFERENT linear system.
+ Z == 1 solves both, so each solution space meets the positive
+ orthant in an OPEN cone and every dimension below is a
+ dimension of strictly positive completions.]
+
+  record classes by depth = [1, 6, 23, 84, 313, 1138, 3983], total 5548  (d42b3's committed canon; the same layer census D49 reports)
+
+  D = 4:  free variables (depth-4 histories) = 976;  repair constraints = 403;
+            EXACT rational rank = 403  ->  dim of the POSITIVE REPAIR CONE = 573
+  [PASS] DC1-R(a) THE REPAIR CONE IS 573-DIMENSIONAL AT THE DEPTH-4 TRUNCATION [SUBSTANTIVE — this is the number the first delivery never computed, and the whole of round-1's BLOCKER].  The necessary-and-sufficient repair condition Z(Hab) = Z(Hba) is a linear system on the free boundary values; its exact rational rank is computed by sparse elimination over Q (no modular shortcut, no float).  Every solution is a completion under which the generated law's completed kernel satisfies EVERY commuting-square identity the census tests  (variables = 976, constraints = 403, exact rank = 403 (the constraints are independent), dim = 573)
+  [PASS] DC1-R(b) THE (depth, sigma) FAMILY IS A 28-DIMENSIONAL SLICE OF THE 573-DIMENSIONAL CONE [SUBSTANTIVE]: the completions the dichotomy line forced are the ones constant on the sigma classes of the boundary cut; each of its basis vectors is verified to satisfy ALL of the repair equations (the corollary, instantiated), and it leaves 545 independent directions of strictly positive repairs TRANSVERSE to the corpus's family.  The same line gates the containment that places this family INSIDE the descending one: record identity implies sigma identity on every record class of the family — a property of THIS record functor (residue 3), not a general fact  (dim (depth,sigma) family = 28 (= the sigma states realised at depth 4); repair-equation violations across its 28 basis vectors = 0; transverse directions = 545; record classes carrying two sigma values = 0 of 5548)
+  [PASS] DC1-R(c) THE DESCENDING SUB-CONE IS 205-DIMENSIONAL [SUBSTANTIVE]: a completion DESCENDS when mu_Z = q.Z is a function of the record, i.e. (q being record-constant, DC1-R(i)) when Z is constant on record classes.  That family is 313-dimensional at the boundary cut and — gated, not assumed — its constancy PROPAGATES downward through the recursion to every record class of every shallower depth.  Intersecting it with the repair system gives the completions that do BOTH  (dim record-constant family = 313 (= record classes at depth 4); downward-propagation violations = 0 over 427 record classes at depths 0..4; rank of the repair system ON that family = 108; dim of repairs THAT ALSO DESCEND = 205)
+  [PASS] DC1-R(d) SQUARE-REPAIR AND DESCENT ARE DIFFERENT CONDITIONS, AND THE HIERARCHY IS STRICT [SUBSTANTIVE — the direct refutation of the first delivery's 'the completions the dichotomy line forced are PRECISELY the objects that repair descent'].  Neither family contains the other: the repair cone (573) is not inside the record-constant family (313) and the record-constant family is not inside the repair cone, since their intersection is a proper subspace of each; and a repair equation is implied by record-constancy exactly when its two corners share a record  (repair cone 573 vs intersection 205 (so repairs are NOT all descents); record-constant 313 vs intersection 205 (so descents are NOT all repairs); repair rows NOT implied by record-constancy = 152 of 403 (= exactly the 152 rows whose two corners carry DIFFERENT records))
+
+  WITNESS (i) — A POSITIVE COMPLETION THAT REPAIRS EVERY
+  SQUARE AND DOES NOT DESCEND.  Construction, deterministic:
+  the kernel vectors of the repair system are read off the
+  exact echelon in free-column order, each scaled to
+  max|v| = 1; the FIRST one that is not record-constant is
+  taken and Z = 1 + v/100 (so 99/100 <= Z <= 101/100 at the
+  boundary and Z > 0 everywhere).  Result: free column 19,
+  kernel support 4 — Z > 0: True; repair-equation violations: 0 of 403;
+  record classes carrying TWO different mu_Z values: 2 (sizes [4, 6]).
+  [The round-1 referee's own witness of this shape reported 4 violated
+  record-constancy equations with a size-4 class; the exact counts are
+  a property of WHICH kernel direction is taken — the verdict is not.]
+  [PASS] DC1-R(e) WITNESS (i): 'ANNIHILATES THE DEFECT' DOES NOT IMPLY 'DESCENDS' [SUBSTANTIVE — it fails if every repair is record-constant, which is what the first delivery's 'precisely' would require].  A strictly positive completion that satisfies EVERY commuting-square identity the census tests, and whose induced measure mu_Z = q.Z is NOT a function of the record: a single record class carries two different masses, so P_Z is not the conditional system of any measure on record cylinders  (positive = True, repair violations = 0/403, record classes with two mu values = 2)
+
+  WITNESS (ii) — A POSITIVE MEASURE ON REFINED RECORD
+  CYLINDERS WHOSE CONDITIONALS VIOLATE THE SIGMA-COMMUTING
+  SQUARE IDENTITY.  Construction, deterministic: Z = 1 on
+  the boundary cut except on ONE record class, set to
+  101/100, extended by the same recursion — so Z is
+  record-constant by construction, mu_Z = q.Z is a positive
+  measure on refined record cylinders (constant on all
+  427 record classes of depth <= 4, and additive
+  along cuts by the recursion), and yet:
+    depth-4 record classes whose perturbation breaks at
+    least one sigma-commuting square = 232 of 313; of those,
+    88 break exactly two.
+    THE ROUND-1 REFEREE'S OWN WITNESS, RECONSTRUCTED EXACTLY:
+      H = ()
+      a = ('p', 'B', ('v', 'v0'), 1)
+      b = ('n', 'B')
+      P_Z(a|H) P_Z(b|Ha) = 39003/1659203
+      P_Z(b|H) P_Z(a|Hb) = 3000/127631   (sigma equal, RECORDS DIFFER)
+      ratio = 13001/13000; squares broken = 2; perturbed class size = 1
+    (16 of the 313 single-class perturbations reproduce that exact
+    pair of products; the one printed is the first in the deterministic
+    scan — record classes ordered by first occurrence in the enumerator's
+    own history order, never by repr, whose value for a frozenset is
+    hash-seed dependent.  The round-1 referee printed this same witness at
+    another pair of the same shape — a propose at the root and that same
+    actor's idle — and reported the SAME two products, the same ratio and
+    the same verdict.)
+  [PASS] DC1-R(f) WITNESS (ii): 'DESCENDS' DOES NOT IMPLY 'ANNIHILATES THE DEFECT' [SUBSTANTIVE — and it is the second half of round-1's BLOCKER, plus the direct evidence for MAJOR 1].  A strictly positive measure on refined record cylinders exists whose conditionals violate the sigma-commuting square identity — at a pair whose two records DIFFER, which is exactly the class paper 29 §3.1 exempts.  CONSEQUENCE: DC1(a) is not by itself a descent test, and Theorem 1 is untouched by its failures outside the refined class.  The referee's own witness (the exact fractions 39003/1659203 and 3000/127631) is reconstructed here from a deterministic scan, not imported  (perturbations breaking >= 1 square = 232 of 313; exactly two = 88; reproducing the referee's exact products = 16; referee's witness reconstructed = True)
+
+  D = 5:  variables 5280; repair constraints 2227; EXACT rank 2227;
+          dim repair cone = 3053   vs  (depth,sigma) family = 32,  record-constant = 1138
+  [PASS] DC1-R(g) THE SAME PICTURE ONE LEVEL DEEPER [SUBSTANTIVE]: at the depth-5 truncation the repair cone grows to 3053 dimensions while the (depth, sigma) family grows only to 32 — the gap is not an artefact of the depth-4 cut, it widens with depth, because the family is bounded by the 36 states while the cone grows with the boundary  (variables = 5280, constraints = 2227, exact rank = 2227, dim = 3053, (depth,sigma) = 32, record-constant = 1138)
+
+  THE TRANSFER OPERATOR (T f)(s) = sum_e q(e|s) f(s.e) on the 36 states:
+    lambda =    2:  ker dim 1, one-signed generator = True, value census {'1': 29, '4/3': 5, '7/3': 2}
+    lambda =    1:  ker dim 1, one-signed generator = False, value census {'-4': 4, '-5': 12, '1': 2, '4': 1, '5': 17}
+    lambda =  5/2:  ker dim 0  (empty)
+    lambda =  9/4:  ker dim 0  (empty)
+  [PASS] DC1-R(h) THE BOTTOM OF THE HIERARCHY: D49's Zhat IS ONE RAY, AND ITS MEASURE GENUINELY DESCENDS [SUBSTANTIVE — and it supplies the gate the first delivery asserted without one (round-1 MINOR 2): the corollary gives only the SQUARE identity, and by DC1-R(e) that does not imply descent].  Inside the (depth, sigma) family the depth-stationary form Z = 2^(-|h|) f(sigma) is the lambda = 2 eigenvector of the transfer operator: its kernel is ONE-dimensional with a strictly positive generator taking the values {1, 4/3, 7/3} with multiplicities {29, 5, 2} (= D49's f = (4,4,3,7,3,3)/3), lambda = 1 has a MIXED-SIGN generator (so there is no depth-ungraded completion of this form) and lambda = 5/2, 9/4 have none.  Zhat is harmonic for the completion recursion at every depth of the family, and mu_Zhat = q.Zhat is CONSTANT ON EVERY RECORD CLASS — so Zhat's measure IS a function of the record: the corpus's selected completion really does descend  (ker(T - 2I) dim = 1, positive = True, values = {'1': 29, '4/3': 5, '7/3': 2}; ker(T - I) dim = 1, one-signed = False; ker(T - 5/2 I) = 0, ker(T - 9/4 I) = 0; harmonicity violations = 0; record classes = 5548, classes carrying two mu_Zhat values = 0)
+
+  THE RAW PATH WEIGHT q(h) = prod q:  constant on 5548 of 5548 record classes;
+  cut masses sum_{|h| = n} q(h), n = 0..6: ['1', '2', '4', '257/32', '1037/64', '2101/64', '68313/1024']
+  [PASS] DC1-R(i) THE RAW WEIGHT IS ORDER-INDEPENDENT GLOBALLY — AND IT IS NOT A MEASURE [SUBSTANTIVE, two-sided].  (+) DC1(b) says the raw products agree on adjacent commuting squares; the stronger global statement is gated here: q(h) is constant on EVERY record class of the family, so the unnormalised weight is a function of the record.  (-) But q is NOT a measure on cylinders (round-1 MINOR 1): it is not additive along cuts — the cut masses printed above are 1, 2, 4, 257/32, ... and not constant — which is precisely why a completion is needed at all.  The correct wording is 'the unnormalised weight is ORDER-INDEPENDENT', never 'the unnormalised weight descends to a record measure'  (record classes = 5548, classes carrying two q values = 0; cut masses = ['1', '2', '4', '257/32', '1037/64', '2101/64', '68313/1024'] (not constant, so q is not additive along cuts))
+
+  *** DC1-R VERDICT — THE HIERARCHY (round-1 BLOCKER 1) ***
+    repair cone (573)  STRICTLY CONTAINS
+    repairs that also descend (205)  STRICTLY CONTAINS
+    the (depth, sigma) family (28)  STRICTLY CONTAINS
+    the depth-stationary ray (1) = D49's Zhat
+    [at D = 5: 3053 / 32 — the gap widens with depth]
+    Reading it in words.  The descent defect names the JOB a
+    completion has to do; it does NOT single out the corpus's
+    completions among the objects that do it.  What collapses
+    the cone to one ray is D50's FORM choice — depth-stationary
+    factoring through sigma — which is supplied, not derived,
+    and is now a number rather than an adjective.  The two
+    lines therefore MEET more weakly than the first delivery
+    said: the corpus's completions are AMONG the repairs (and
+    Zhat's measure genuinely descends, DC1-R(h)), but 'the
+    completions the dichotomy line forced are PRECISELY the
+    objects that repair descent' is FALSE IN BOTH DIRECTIONS
+    (DC1-R(e), DC1-R(f)).  The successor question sharpens to:
+    is there any RECORD-LEVEL demand that cuts the cone down to
+    the family, or is the family selected only by the form?
+  [t = 292.4s]
 
 [DC2 — BOUNDARY SUFFICIENCY (paper 29 Theorem 2 / F2).
  *** RESTATEMENT GATE — REPORTING ONLY.  NOTHING NEW IS PROVED
@@ -501,12 +671,12 @@
        K =     1/16   ('p', 'A', 100, 1)
        K =     1/16   ('p', 'B', 0, 0)
        K =     1/16   ('p', 'B', 0, 1)
-  [PASS] DC2(b) THE KERNEL IS THE LAW: at EVERY history of the family the normalised renamed menu equals the row K(.|sigma(h)) printed above, entrywise with exact Fractions — so the printed 36-row object IS the generated next-record law, not a summary of it [RESTATEMENT of (H1); it can only fail if DC2(a) fails]  (histories = 34375, rows disagreeing with the printed kernel = 0)
-  [PASS] DC2(c) EVERY KERNEL ROW NORMALISES EXACTLY [RESTATEMENT — this is division by the row's own mass and cannot fail; printed because the pin asks for the kernel, in the D58-A3 reporting-line style]  (rows = 36, rows not summing to 1 = 0)
-  [t = 205.2s]
+  [PASS] DC2(b) THE KERNEL IS THE LAW [COROLLARY OF DC2(a) — it can only fail if DC2(a) fails; a reporting line for the printed object]: at EVERY history of the family the normalised renamed menu equals the row K(.|sigma(h)) printed above, entrywise with exact Fractions — so the printed 36-row object IS the generated next-record law, not a summary of it [RESTATEMENT of (H1); it can only fail if DC2(a) fails]  (histories = 34375, rows disagreeing with the printed kernel = 0)
+  [PASS] DC2(c) EVERY KERNEL ROW NORMALISES EXACTLY [REPORTING-ONLY, CANNOT FAIL — this is division by the row's own mass; printed because the pin asks for the kernel, in the D58-A3 reporting-line style]  (rows = 36, rows not summing to 1 = 0)
+  [t = 310.5s]
 
 [DC3 — paper 29 §4.3's five durable-record hypotheses, gated one by one, each labelled by what it can and cannot do]
-  [PASS] DC3(1) EXCLUSIVE AND EXHAUSTIVE ALTERNATIVES [SUBSTANTIVE — it can fail two ways and neither is excluded a priori]: at every history of the family the menu is a set of PAIRWISE DISTINCT events (exclusivity: no alternative is listed twice), and it is EXACTLY the admissible set — an independently constructed adversarial pool of well-formed events over the tokens the history has uttered finds NO admissible event the menu omits, NO menu event the layer refuses, and NO weight disagreement  (histories = 34375, pool events tested = 718570 (single-based ckeys); duplicate-menu histories = 0; omitted admissible = 0; refused-but-listed = 0; weight disagreements = 0)
+  [PASS] DC3(1) ENUMERATION COMPLETENESS OF candidates_for AGAINST admissible [SUBSTANTIVE — it can fail two ways and neither is excluded a priori.  SCOPE OF THE CLAIM, corrected in round 1 (MINOR 7): the adversarial POOL is built independently of candidates_for, but the VERDICT on each pool event is d42b3's own `admissible`, which is also what candidates_for calls — so what is tested is that the menu enumeration is complete and non-redundant WITH RESPECT TO admissible, not the grammar's exclusivity or exhaustiveness in any sense independent of the layer]: at every history of the family the menu is a set of PAIRWISE DISTINCT events (exclusivity: no alternative is listed twice), and it is EXACTLY the admissible set — the pool of well-formed events over the tokens the history has uttered finds NO admissible event the menu omits, NO menu event the layer refuses, and NO weight disagreement  (histories = 34375, pool events tested = 718570 (single-based ckeys); duplicate-menu histories = 0; omitted admissible = 0; refused-but-listed = 0; weight disagreements = 0)
   [PASS] DC3(1') THE SAME GATE ON THE UNRESTRICTED SURFACE (the single-base restriction of the pool above is itself lifted): over every history of depth <= 4, ckeys spanning ANY set of uttered triples, with every winner subset — still exactly the menu, entrywise with weights  (histories = 1191, pool events tested = 22762, violations = 0)
 
   DC3(2) DECOHERENCE OF THE QUERIED RECORD ALGEBRA [REPORTING ONLY — TRIVIALLY SATISFIED AND THEREFORE
@@ -530,10 +700,10 @@
     exactly the segment where D59's items 'record instrument'
     and 'preferred durable algebra' still sit.
   [PASS] DC3(2) [REPORTING-ONLY, CANNOT FAIL — labelled as the pin's F-DC3 requires]: the generated law is classical, so decoherence of the queried record algebra is satisfied trivially and carries NO information about the map  (no falsifiable content; the map's functional segment is named above and is untouched by this unit)
-  [FAIL] DC3(3) ONE COMMON REFINED CYLINDER [SUBSTANTIVE — this IS DC1's commutation census, and it is the gate that decided the unit]: the identity that a common refined cylinder forces, tested on every commuting pair  (commuting pairs = 665286, failures = 88632; see the DC1 census above for the full structure)
+  [FAIL] DC3(3) ONE COMMON REFINED CYLINDER [= DC1(a), THE SAME PREDICATE, counted here because §4.3 lists it — round-1 MAJOR 3: the three FAILs of this receipt are TWO statements, DC1(a) (= this gate) and DC1(f), and DC1(f) is the load-bearing one.  Note that the hypothesis §4.3 actually states is the REFINED one, so DC1(f) is the closer reading of this clause]: the identity that a common refined cylinder forces, tested on every sigma-commuting pair  (sigma-commuting pairs = 665286, failures = 88632; on the refined sub-class 32256 of 425334 (DC1(f)); see the DC1 census above)
   [PASS] DC3(4) POSITIVITY OF EVERY DISPLAYED CONDITIONING CYLINDER [SUBSTANTIVE — a zero weight anywhere would make a displayed conditional undefined and would void DC1's test on that pair]: every menu weight is a STRICTLY POSITIVE exact Fraction, every menu mass is strictly positive, and hence every conditional P(e|H) = q/N used anywhere in this receipt is strictly positive.  The support of the law is exactly the admissible set (DC3(1)) — the law never displays a zero-mass alternative  (menu entries = 179782, non-positive weights = 0; conditionals = 179782, non-positive = 0; smallest weight in the family = 1/8)
-  [PASS] DC3(5) SUFFICIENT DECLARED BOUNDARY [RESTATEMENT — = DC2, which is (H1) + (H2); NOT a new result]: pi = sigma is a sufficient boundary statistic, the kernel K(.|sigma) exists on 36 values and is printed above  (fibres = 36, non-constant fibres = 0)
-  [t = 224.3s]
+  [PASS] DC3(5) SUFFICIENT DECLARED BOUNDARY [RESTATEMENT, = DC2(a)'s OWN PREDICATE — the same computation reported twice because §4.3 lists it; it is (H1) + (H2) and NOT a new result]: pi = sigma is a sufficient boundary statistic, the kernel K(.|sigma) exists on 36 values and is printed above  (fibres = 36, non-constant fibres = 0)
+  [t = 335.7s]
 
 [DC4 — D59's six supplied-not-derived items, re-scored at the closed scope.  NO ITEM MOVES WITHOUT A GATE ABOVE IT.]
   D59 §2 quotes paper 29's abstract: the corpus 'supplies
@@ -543,12 +713,12 @@
   Re-scored against THIS unit's gates only:
 
   1. boundary state
-    VERDICT: MOVES: supplied -> DERIVED, at the closed scope and for the GENERATED line only.
-    Ground: DC2(a)/DC2(c) + (H1) [D61 THEOREM] + (H2) [D62 THEOREM]. Paper 29 Theorem 2 asks for a declared boundary statistic whose fibres carry a constant next-record law.  On the generated side that statistic is not supplicated: sigma is CONSTRUCTED from the layer and its sufficiency is a theorem, with the 36-row kernel printed.  SCOPE: this is the generated line's own boundary; it says NOTHING about the action line's cosmological boundary state, which remains supplied.
+    VERDICT: STANDS as supplied — CORRECTED IN ROUND 1 (MAJOR 2).  The generated line has its own DERIVED boundary statistic; D59's item is a different object and does not move.
+    Ground: D59's six items are quoted from paper 29's abstract, where the possessive is the IDENTIFIED law's: the corpus supplies rather than derives ITS boundary state, and §9.2's slot table names the object as the 'boundary/cosmological state — selects amplitudes and long-range correlations'.  The generated line's sigma was never on that list, so it cannot move ON that list; item 5 below has exactly this shape and is scored the same way.  WHAT IS TRUE, and it is a theorem, belongs beside the ledger rather than inside it: on the generated side the declared boundary statistic is not supplicated — sigma is CONSTRUCTED from the committed layer, its sufficiency is (H1) [D61] + (H2) [D62], and the 36-row kernel is printed (DC2(a)/(b)/(c)).  That is a derived boundary statistic FOR THE GENERATED LINE; the action line's boundary/cosmological state remains supplied, untouched by every gate in this receipt.
 
   2. measure and contour
     VERDICT: STANDS as supplied — and DC1 SHARPENS why.
-    Ground: DC1(a) FAILS / DC1(b)+DC1(c) locate the failure.  The generated law has an order-independent UNNORMALISED weight (DC1(b)) and a normalised kernel that is NOT order-independent (DC1(a)); the gap between them is exactly the coboundary of the state-mass function (DC1(c)).  A measure on record cylinders therefore requires a completion — supplied data, whose form D50 already showed is a choice (DC1-C exhibits one that works, at its own stated cost).  Not derived; now precisely priced.
+    Ground: DC1(a) FAILS / DC1(b)+DC1(c) locate the failure.  The generated law has an order-independent UNNORMALISED weight (DC1(b)) and a normalised kernel that is NOT order-independent (DC1(a)); the gap between them is exactly the coboundary of the state-mass function (DC1(c)).  A measure on record cylinders therefore requires a completion — supplied data, whose form D50 already showed is a choice (DC1-C exhibits one that works, at its own stated cost).  Not derived, and now PRICED WITH A NUMBER rather than an adjective (DC1-R): at the depth-4 truncation the completions that repair the defect form a 573-dimensional positive cone, of which 205 dimensions also descend and 28 are the (depth, sigma) family the dichotomy line forced; the selection down to D49's one ray is D50's FORM choice, not a consequence of descent.
 
   3. renormalization
     VERDICT: STANDS as supplied.  Untouched by every gate above.
@@ -566,11 +736,11 @@
     VERDICT: STANDS as supplied.  Untouched by every gate above.
     Ground: no gate in this unit produces a rate, a unit or a time coordinate.  Paper 29's Theorem 1 needs no time coordinate and neither does this receipt; the dictionary slot is exactly where D59 left it.
 
-  [PASS] DC4 THE LEDGER IS GATE-BOUND: exactly one of D59's six items moves (item 1, the boundary state, and only for the GENERATED line at the closed scope), and its mover is a gate printed above (DC2(a)/DC2(c), carried by the D61/D62 theorems); the other five stand, each with its one-line ground  (items = 6, moved = 1, standing = 5)
+  [PASS] DC4 THE LEDGER IS GATE-BOUND, AND NOTHING MOVES ON IT [REPORTING — the predicate reads a hand-written literal list in this same file, so it is a bookkeeping line, not a measurement; it is printed because the pin asks for the re-scoring].  ROUND-1 MAJOR 2: the first delivery moved item 1 (boundary state) from supplied to derived.  That was a conflation of the ACTION line's slot — paper 29 §9.2's boundary/cosmological state — with the GENERATED line's own derived statistic, and it contradicted this receipt's own treatment of item 5, which has the identical shape and stands.  Corrected: all six items STAND; the generated line's derived boundary statistic is stated beside the ledger, not inside it  (items = 6, moved = 0, standing = 6)
 
 [DET — determinism probe]
-  [PASS] DET(a) ORDER-INDEPENDENCE OF THE CENSUS ITSELF.  The defect d INVERTS under the swap of a and b, so a census taken on one direction per unordered pair would depend on which element the enumeration calls 'a'; every census here is therefore over ORDERED pairs, and this gate is what holds that discipline: re-running the DC1 sub-census over parents of depth <= 3 with the parent list and every menu REVERSED reproduces the same commuting count and the same exact defect spectrum  (commuting (forward) = 4454, (reversed) = 4454; spectra equal = True; spectrum = {'1': 3374, '4/5': 540, '5/4': 540})
-  [PASS] DET(b) NO LOAD-BEARING SET ITERATION: every ordered structure this receipt builds is a list from the committed enumerator or a sorted sequence (sorted(...) on refs, tokens, states and pools); every census is aggregated into a dict and PRINTED sorted by key.  The receipt is additionally expected to be byte-identical under PYTHONHASHSEED variation (run externally, recorded in the result note)  (checked: every cached menu is the enumerator's own list)
+  [PASS] DET(a) ORDER-INDEPENDENCE OF THE CENSUS ITSELF [BOOKKEEPING LINE — round-1 MAJOR 4(b): the enumeration is a full double loop over an unordered pair set and every pair records BOTH d and 1/d, so the count and the spectrum are order-invariant by construction; kept because the discipline it encodes is the reason every census here is ordered].  The defect d INVERTS under the swap of a and b, so a census taken on one direction per unordered pair would depend on which element the enumeration calls 'a'; every census here is therefore over ORDERED pairs, and this gate is what holds that discipline: re-running the DC1 sub-census over parents of depth <= 3 with the parent list and every menu REVERSED reproduces the same commuting count and the same exact defect spectrum  (commuting (forward) = 4454, (reversed) = 4454; spectra equal = True; spectrum = {'1': 3374, '4/5': 540, '5/4': 540})
+  [PASS] DET(b) NO LOAD-BEARING SET ITERATION [BOOKKEEPING LINE — round-1 MAJOR 4(b): the predicate is an isinstance check on the enumerator's own return value and cannot fail; the substance is the byte-identity under PYTHONHASHSEED variation, which is run externally and recorded in the result note]: every ordered structure this receipt builds is a list from the committed enumerator or a sorted sequence (sorted(...) on refs, tokens, states and pools); every census is aggregated into a dict and PRINTED sorted by key.  The receipt is additionally expected to be byte-identical under PYTHONHASHSEED variation (run externally, recorded in the result note)  (checked: every cached menu is the enumerator's own list)
 
 [VERDICT]
   SCOPE (non-negotiable): two-actor DELIVERY-FREE d42a, the
@@ -578,43 +748,76 @@
   beyond it, and nothing below transfers to the identified
   (action-line) click law: paper 29's map remains open.
 
-  DC1 — FAILS.  THE FAILURE IS THE DELIVERABLE (pin §2/§4).
-  88632 of 665286 commuting pairs violate
-  P(a|H)P(b|Ha) = P(b|H)P(a|Hb).  Its structure is COMPLETE:
-    - the RAW products always agree (DC1(b)), so the
-      generated law's unnormalised history weight IS
-      order-independent on commuting pairs;
+  DC1(f) — THE LOAD-BEARING TEST — FAILS.  THE FAILURE IS
+  THE DELIVERABLE (pin §2/§4).
+  32256 of 425334 REFINED-RECORD-IDENTICAL
+  ordered pairs violate P(a|H)P(b|Ha) = P(b|H)P(a|Hb).
+  On the wider sigma-commuting class (DC1(a), the pin's
+  coarser predicate) the count is 88632 of 665286 —
+  but 56376 of those failures lie OUTSIDE
+  Theorem 1's hypothesis, which paper 29 §3.1 explicitly
+  exempts, and carry no descent content (DC1-R(f) exhibits a
+  genuine record measure that fails the same wider test).
+  The structure of the failure is COMPLETE:
+    - the RAW products always agree (DC1(b), gated), so
+      the generated law's unnormalised history weight IS
+      order-independent on commuting pairs — and, more
+      strongly, q is constant on every record class
+      (DC1-R(i)).  It is NOT a measure: the cut masses
+      are ['1', '2', '4', '257/32', '1037/64', '2101/64', '68313/1024'], so q is not additive
+      along cuts, which is why a completion is needed;
     - the entire defect is the NORMALISATION: exactly
       d = M(sigma(Hb))/M(sigma(Ha)), the coboundary of the
-      per-state menu mass (DC1(c)) — a MASS-RATIO COCYCLE,
-      the pin's pre-registered structural fallback, in its
-      sharpest form;
+      per-state menu mass (DC1(c), gated) — a MASS-RATIO
+      COCYCLE, the pin's pre-registered structural
+      fallback, in its sharpest form;
     - the defect spectrum is exactly {'1': 576654, '4/5': 44316, '5/4': 44316};
-    - it is a function of (sigma(H), class(a), class(b))
-      alone under both key resolutions (DC1(d));
+      and it is a function of (sigma(H), class(a),
+      class(b)) alone under both key resolutions (DC1(d),
+      gated) — 616 classes, which with DC1(i)'s
+      720 class-level facts is the census's real
+      information content;
     - it VANISHES exactly on same-mass intermediates and
-      occurs at every mass-mixed pair (DC1(e)) — the pin's
-      lean was right, and nothing else fails.
+      occurs at every mass-mixed pair (DC1(e), gated) —
+      the pin's lean was right, and nothing else fails.
   CONSEQUENCE, stated exactly and no wider: there is NO
   positive measure on refined record cylinders at this
   scope whose conditionals are the generated NORMALISED
   kernel — paper 29 Theorem 1's contrapositive, applied to
   a system that satisfies its three positivity hypotheses
-  (DC3(4)) and its cylinder-identity hypothesis (DC1(f)).
+  (DC3(4), gated) and its cylinder-identity hypothesis
+  (DC1(f), the refined sub-census, gated).
   This does NOT contradict Theorem 1 (a theorem), and it is
   NOT an F1 hit: F1 asks for a MEASURE with unequal
   products; what is exhibited is a conditional system that
   is not induced by any such measure.  The generated law is
   ORDER-WEIGHTED at the normalised level, and any map from
   the action line's conditional-measure reading to it must
-  carry order data or supply a completion (DC1-C).
+  carry order data or supply a completion.
+  AND THE DEFECT IS REPAIRABLE, BUT NOT ONLY BY THE CORPUS'S
+  COMPLETIONS (DC1-R): the repair cone has dimension
+  573 at the depth-4 truncation, of which 205
+  dimensions also descend and 28 are the (depth, sigma)
+  family; the corpus's Zhat is one ray inside it whose
+  measure genuinely descends (DC1-R(h)).  Square-repair and
+  descent imply each other in NEITHER direction (DC1-R(e),
+  DC1-R(f)).  The descent defect names the JOB the corpus's
+  completions do; it does not single them out.
 
   DC2 — RESTATEMENT, satisfied.  pi = sigma; fibre constancy
   is (H1); the 36-row kernel is printed.  NOT A NEW RESULT.
   DC3 — (1) SUBSTANTIVE, PASS; (2) reporting-only, trivially
-  satisfied and uninformative; (3) = DC1, FAIL; (4) SUBSTANTIVE,
+  satisfied and uninformative; (3) = DC1(a), FAIL; (4) SUBSTANTIVE,
   PASS; (5) = DC2, restatement.
-  DC4 — one item moves (boundary state, generated line only);
-  five stand.
+  DC4 — NO item moves; all six stand (round-1 MAJOR 2).  The
+  generated line's own derived boundary statistic is stated
+  beside the ledger, not on it.
 
-[d65] 28 PASS / 3 FAIL  [family depth 6; 397285 unordered menu pairs = 794570 ordered; substantive-gate block clean; runtime 224.5s]
+  THE FAIL COUNT, READ HONESTLY (round-1 MAJOR 3): the FAILs
+  below are TWO statements, not one and not three — DC1(a)
+  (= DC3(3), literally the same predicate) and DC1(f), which is
+  a different predicate over a different population under a
+  strictly stronger hypothesis, and is the only one of them
+  paper 29's theorem speaks to.
+
+[d65] 39 PASS / 3 FAIL  [family depth 6; 397285 unordered menu pairs = 794570 ordered; substantive-gate block clean; runtime 335.9s]
