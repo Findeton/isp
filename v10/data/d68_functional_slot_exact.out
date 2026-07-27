@@ -12,8 +12,15 @@
   Hilbert-space ontology is claimed (pin §4).
   The pin declines to lean (campaign record on quantum-layer
   intuition 0-for-2).  This receipt reports what the algebra
-  says, under BOTH C1 conventions, with C4 on AND off, and
-  with C3 read one-step (pin literal) AND full-chain.
+  says, under ALL THREE C1 conventions — the FAITHFUL paper-29
+  §4.3 reading (medium) is the HEADLINE and the unit's original
+  two are carried as its STRICTER (block) and WEAKER (sum)
+  bounds — with C4 on AND off, and with C3 read one-step (pin
+  literal) AND full-chain.
+  ROUND-1 REPAIRED (reviews/d68-round1-hostile-review.md):
+  1 BLOCKER / 5 MAJOR / 7 MINOR / 4 NIT, every published number
+  of the first version reproduced by the review exactly.  Gates
+  F7-F12 are the round's own computations, rebuilt here.
 
 [F0 — ANCHORS: the committed layers, by text slice, gated by AST]
   [PASS] F0(a) SINGLE SOURCES BY AST: d42b3's admission layer (candidates_for / admissible / event_poset / canon / vname / regs_of / triples) and d44a's sigma + menu + pair blocks (sigma_raw / canon_sigma / ser / own_alive / _rename_event / _menu_extras / canon_menu / canon_pair) are extracted VERBATIM by text slice and the slices are gated by PARSING them — the names below are AST FunctionDef nodes, not substring hits  (prefix defs 24 (top-level statement census {'Expr': 1, 'Import': 1, 'ImportFrom': 2, 'Assign': 2, 'FunctionDef': 16, 'ClassDef': 1}); d44a slice defs 8)
@@ -41,7 +48,7 @@
    weighted layer not of label-map form is out of scope and is
    named as a residue, not assumed away.]
   [PASS] F0(i) THE RENAMING GROUP IS COMPUTED, NOT ASSUMED: the four label maps act on the whole family as WEIGHT-PRESERVING bijections (every history's renamed menu equals the menu of its renamed history, weight by weight), they carry record classes to record classes bijectively at every depth, and they preserve mu_Zhat.  The group is NOT trivial and it is NOT free: the fixed-point census is printed  (violations = 0; record-class permutation failures = 0; histories MOVED per generator = [('id', 0), ('value-flip', 34248), ('actor-swap', 34374), ('both', 34374)] (of 34375))
-  [t = 22.0s]
+  [t = 24.3s]
 
 [F1 — THE CONSTRAINT SYSTEM.  Every convention printed; both
  C1 readings carried; C3 operationalised and gated.]
@@ -52,17 +59,32 @@
   carried as a SEPARATE COLUMN: D = S + iA with S symmetric
   and A antisymmetric over Q, one variable per unordered pair
   h != h', reported as `asym` throughout.
-  C1 — TWO READINGS, BOTH CARRIED.
-    (sum)   for every record class r at depth D:
+  C1 — THREE READINGS, ALL CARRIED; THE MIDDLE ONE IS THE
+  HEADLINE (round-1 BLOCKER 1).
+    (medium, FAITHFUL — paper 29 §4.3 hypothesis 2 + §3.1's
+     pushforward, and the ONLY one of the three that is a
+     stated condition of the parent paper)
+              Dbar(r,r') = sum_{h in r, h' in r'} D(h,h')
+                         = delta_{rr'} . mu_Zhat(r)
+            — the coarse-grained functional on the record
+            algebra is DIAGONAL and its diagonal is the record
+            measure: medium decoherence, the condition that
+            licenses a scalar probability for a record class.
+    (sum, WEAKER BOUND)   for every record class r at depth D:
               sum_{h,h' in r} D(h,h')  =  mu_Zhat(r)
-            (the decoherent-sum reading: the record class is
-             the coarse alternative and its probability is the
-             coarse-grained functional's diagonal entry)
-    (block) D(h,h') = 0 whenever record(h) != record(h'), and
-              sum_{h in r} D(h,h)  =  mu_Zhat(r)
-            (the per-class reading: the record algebra is
-             exactly decoherent and the block TRACE carries
-             the mass)
+            — the r = r' half of the faithful condition and
+            NOTHING ELSE.  It DROPS DECOHERENCE ENTIRELY: the
+            queried algebra is never asked to decohere, so no
+            scalar record probability is licensed for the
+            object it constrains.  Carried as a lower bound.
+    (block, STRICTER BOUND) D(h,h') = 0 whenever record(h) !=
+            record(h'), and sum_{h in r} D(h,h) = mu_Zhat(r)
+            — vanishing ENTRY BY ENTRY at the FINE level.  It
+            implies the faithful condition and is strictly
+            stronger: it FORBIDS BY HAND, one level down and
+            before any row is written, the cancellations that
+            coarse decoherence explicitly permits.  Carried as
+            an upper bound.
   C3 — CYLINDER CONSISTENCY, operationalised.  A depth-d
   history g denotes the cylinder of its depth-D extensions, so
   the restricted form is
@@ -85,7 +107,7 @@
   [PASS] F1(a) THE C3 OPERATIONALISATION REDUCES TO THE CLASSICAL MARGINAL ON DIAGONAL MEMBERS [the pin's own gate on the definition]: for a DIAGONAL form with weights w, the restricted form R^(d) is again diagonal and its entries are exactly the cylinder marginals sum_{a extends g} w(a) — checked at every depth step of every truncation, for mu_Zhat AND for a deliberately non-classical index-weighted diagonal (so the check cannot pass on mu's own symmetry)  (40 (truncation, weighting, step) combinations, marginal mismatches = 0)
   [PASS] F1(b) THE RECORD FUNCTOR DOES NOT COMMUTE WITH PREFIXES, AND IT DOES NOT SPLIT EVERYTHING EITHER — the two-sided fact that gives C3 its content and then leaves something over [SUBSTANTIVE]: some record classes' members carry DIFFERENT parent records (two serialisations of one labelled DAG that the previous cut could already tell apart) and some do not.  Because the first set is non-empty, the depth-D record partition is NOT the pullback of the depth-(D-1) one and C1 at depth D carries no C1 at depth D-1: C3 is an independent demand, not bookkeeping.  Because the second set is non-empty, C3 cannot kill every coherence — which is exactly the shape of the F4 answer  (multi-member record classes across the truncations = 4735, of which prefix-record-SPLITTING = 2839; within-class unordered pairs with DIFFERENT parent records = 73674, with the SAME parent record = 88036)
   [PASS] F1(c) NO TWO SIBLINGS SHARE A RECORD [SUBSTANTIVE, and it is what makes the block convention's C3 rows readable]: within a record class no two distinct members have the SAME depth-(D-1) prefix, so every within-class off-diagonal entry is an entry between two histories with DISTINCT parents  (same-parent within-class ordered pairs = 0)
-  [t = 24.1s]
+  [t = 26.7s]
 
 [F2/F3 — EXISTENCE AND THE DIMENSION.  Every configuration:
  truncation depth D x C1 convention x C4 on/off x C3 one-step
@@ -99,48 +121,58 @@
  `asym` is the Hermitian extension's imaginary part, reported
  separately.]
 
-   D    C1  C4   C3 |       vars   rows   rank        dim |     coh  cohdim |  asymvars   asymdim  asymcoh |    sec
-   2   sum  on  one |        146     29     10        136 |       4       4 |       114       114        1 |    0.0
-   2   sum  on full |        146     30     11        135 |       4       4 |       114       114        1 |    0.0
-   2   sum off  one |        528     29     29        499 |       9       9 |       496       496        9 |    0.0
-   2   sum off full |        528     30     30        498 |       9       9 |       496       496        9 |    0.0
-   2 block  on  one |         13     38     13          0 |       4       0 |         1         0        0 |    0.0
-   2 block  on full |         13     39     13          0 |       4       0 |         1         0        0 |    0.0
-   2 block off  one |         41     38     37          4 |       9       0 |         9         0        0 |    0.0
-   2 block off full |         41     39     37          4 |       9       0 |         9         0        0 |    0.0
-   3   sum  on  one |       3968    107     30       3938 |      35      35 |      3792      3792       35 |    0.0
-   3   sum  on full |       3968    114     33       3935 |      35      35 |      3792      3792       35 |    0.3
-   3   sum off  one |      15576    107    107      15469 |     134     134 |     15400     15400      134 |    0.0
-   3   sum off full |      15576    114    114      15462 |     134     134 |     15400     15400      134 |    0.6
-   3 block  on  one |         81    191     51         30 |      35      13 |        35        13       13 |    0.0
-   3 block  on full |         81    207     56         25 |      35       9 |        35        12       12 |    0.0
-   3 block off  one |        310    191    190        120 |     134      50 |       134        50       50 |    0.0
-   3 block off full |        310    207    204        106 |     134      41 |       134        41       41 |    0.0
-   4   sum  on  one |     119592    397    105     119487 |     390     390 |    118616    118616      369 |    0.1
-   4   sum  on full |     119592    427    116     119476 |     390     390 |    118616    118616      369 |   12.3
-   4   sum off  one |     476776    397    397     476379 |    1491    1491 |    475800    475800     1491 |    0.1
-   4   sum off full |     476776    427    427     476349 |    1491    1491 |    475800    475800     1491 |   16.9
-   4 block  on  one |        638   1144    303        335 |     390     189 |       369       189      189 |    0.1
-   4 block  on full |        638   1316    337        301 |     390     163 |       369       166      166 |    0.4
-   4 block off  one |       2467   1144   1135       1332 |    1491     744 |      1491       744      744 |    0.1
-   4 block off full |       2467   1316   1255       1212 |    1491     651 |      1491       651      651 |    0.8
-   5   sum  on  one |    3487568   1451    369    3487199 |    3792    3792 |   3482288   3482288     3792 |    1.1
-   5   sum off  one |   13941840   1451   1451   13940389 |   15058   15058 |  13936560  13936560    15058 |    0.8
-   5 block  on  one |       5120   8435   2118       3002 |    3792    2032 |      3792      2032     2032 |    0.5
-   5 block off  one |      20338   8435   8394      11944 |   15058    8074 |     15058      8074     8074 |    0.3
-   6   sum  on  one |   97343616   5121   1292   97342324 |   36447   36447 |  97315712         -        - |   11.9
-   6   sum off  one |  389330560   5121   5121  389325439 |  145018  145018 | 389302656         -        - |    8.4
-   6 block  on  one |      43439  70971  17861      25578 |   36447   19847 |     36277         -        - |    3.6
-   6 block off  one |     172922  70971  70850     102072 |  145018   79168 |    145018         -        - |    3.4
-  [PASS] F2 EXISTENCE IS NOT THE OBSTRUCTION, AND THE TRIVIAL MEMBER IS THE CLASSICAL ONE [SUBSTANTIVE, and it decides two of the four pre-registered outcomes]: the CLASSICAL DIAGONAL FUNCTIONAL D = diag(mu_Zhat(h)) satisfies C1 in BOTH readings, C3 in both the one-step and the full-chain reading, and C4, in EVERY configuration computed — verified by exact residual against every row, not by construction — and it is POSITIVE DEFINITE (all diagonal entries strictly positive).  Therefore the pre-registered outcome F-I (empty) is EXCLUDED at this scope, and so is F-IV (off-diagonal FORCED): the diagonal member never fails  (configurations = 32, configurations where the classical member fails a row = 0; smallest diagonal entry over all truncations = 1/16777216)
+   D     C1  C4   C3 |       vars   rows   rank        dim |     coh  cohdim |  asymvars  asymrank   asymdim  asymcoh |    sec
+   2 medium  on  one |        146    297     88         58 |       4       4 |       114        60        54        1 |    0.0
+   2 medium  on full |        146    298     88         58 |       4       4 |       114        60        54        1 |    0.0
+   2 medium off  one |        528    297    296        232 |       9       9 |       496       268       228        9 |    0.0
+   2 medium off full |        528    298    296        232 |       9       9 |       496       268       228        9 |    0.0
+   2    sum  on  one |        146     29     10        136 |       4       4 |       114         0       114        1 |    0.0
+   2    sum  on full |        146     30     11        135 |       4       4 |       114         0       114        1 |    0.0
+   2    sum off  one |        528     29     29        499 |       9       9 |       496         0       496        9 |    0.0
+   2    sum off full |        528     30     30        498 |       9       9 |       496         0       496        9 |    0.0
+   2  block  on  one |         13     38     13          0 |       4       0 |         1         1         0        0 |    0.0
+   2  block  on full |         13     39     13          0 |       4       0 |         1         1         0        0 |    0.0
+   2  block off  one |         41     38     37          4 |       9       0 |         9         9         0        0 |    0.0
+   2  block off full |         41     39     37          4 |       9       0 |         9         9         0        0 |    0.0
+   3 medium  on  one |       3968   3846   1006       2962 |      35      35 |      3792       900      2892       35 |    1.4
+   3 medium  on full |       3968   3868   1013       2955 |      35      35 |      3792       902      2890       35 |    1.2
+   3 medium off  one |      15576   3846   3845      11731 |     134     134 |     15400      3739     11661      134 |    0.9
+   3 medium off full |      15576   3868   3865      11711 |     134     134 |     15400      3754     11646      134 |    3.0
+   3    sum  on  one |       3968    107     30       3938 |      35      35 |      3792         0      3792       35 |    0.0
+   3    sum  on full |       3968    114     33       3935 |      35      35 |      3792         0      3792       35 |    0.4
+   3    sum off  one |      15576    107    107      15469 |     134     134 |     15400         0     15400      134 |    0.0
+   3    sum off full |      15576    114    114      15462 |     134     134 |     15400         0     15400      134 |    0.5
+   3  block  on  one |         81    191     51         30 |      35      13 |        35        22        13       13 |    0.0
+   3  block  on full |         81    207     56         25 |      35       9 |        35        23        12       12 |    0.0
+   3  block off  one |        310    191    190        120 |     134      50 |       134        84        50       50 |    0.0
+   3  block off full |        310    207    204        106 |     134      41 |       134        93        41       41 |    1.1
+   4 medium  on  one |     119592  52711  13329     106263 |     390     390 |    118616         -         -        - |   41.7
+   4 medium off  one |     476776  52711  52666     424110 |    1491    1491 |    475800         -         -        - |   50.1
+   4    sum  on  one |     119592    397    105     119487 |     390     390 |    118616         0    118616      369 |    0.1
+   4    sum  on full |     119592    427    116     119476 |     390     390 |    118616         0    118616      369 |   12.5
+   4    sum off  one |     476776    397    397     476379 |    1491    1491 |    475800         0    475800     1491 |    0.1
+   4    sum off full |     476776    427    427     476349 |    1491    1491 |    475800         0    475800     1491 |   17.9
+   4  block  on  one |        638   1144    303        335 |     390     189 |       369       180       189      189 |    0.1
+   4  block  on full |        638   1316    337        301 |     390     163 |       369       203       166      166 |    0.4
+   4  block off  one |       2467   1144   1135       1332 |    1491     744 |      1491       747       744      744 |    0.1
+   4  block off full |       2467   1316   1255       1212 |    1491     651 |      1491       840       651      651 |    0.8
+   5    sum  on  one |    3487568   1451    369    3487199 |    3792    3792 |   3482288         0   3482288     3792 |    1.2
+   5    sum off  one |   13941840   1451   1451   13940389 |   15058   15058 |  13936560         0  13936560    15058 |    2.2
+   5  block  on  one |       5120   8435   2118       3002 |    3792    2032 |      3792      1760      2032     2032 |    0.5
+   5  block off  one |      20338   8435   8394      11944 |   15058    8074 |     15058      6984      8074     8074 |    0.3
+   6    sum  on  one |   97343616   5121   1292   97342324 |   36447   36447 |  97315712         -         -        - |   10.7
+   6    sum off  one |  389330560   5121   5121  389325439 |  145018  145018 | 389302656         -         -        - |    9.5
+   6  block  on  one |      43439  70971  17861      25578 |   36447   19847 |     36277         -         -        - |    3.6
+   6  block off  one |     172922  70971  70850     102072 |  145018   79168 |    145018         -         -        - |    3.6
+  [PASS] F2 EXISTENCE IS NOT THE OBSTRUCTION, AND THE TRIVIAL MEMBER IS THE CLASSICAL ONE [SUBSTANTIVE, and it decides two of the four pre-registered outcomes]: the CLASSICAL DIAGONAL FUNCTIONAL D = diag(mu_Zhat(h)) satisfies C1 in ALL THREE readings (faithful, sum and block), C3 in both the one-step and the full-chain reading, and C4, in EVERY configuration computed — verified by exact residual against every row, not by construction — and it is POSITIVE DEFINITE (all diagonal entries strictly positive).  Therefore the pre-registered outcome F-I (empty) is EXCLUDED at this scope, and so is F-IV (off-diagonal FORCED): the diagonal member never fails  (configurations = 42, configurations where the classical member fails a row = 0; smallest diagonal entry over all truncations = 1/16777216)
   [PASS] F3(a) THE PSD CONE IS FULL-DIMENSIONAL AROUND THE CLASSICAL MEMBER, SO C2 IS NOT BINDING [SUBSTANTIVE — it is why the dimension table IS the answer]: the classical member is POSITIVE DEFINITE, hence an INTERIOR point of the positive semidefinite cone; every direction of the affine solution space is therefore realised by PSD members in a neighbourhood of it, and the dimension of the PSD-feasible set equals the dimension of the affine solution space in every configuration.  C2 removes NO dimension.  (The explicit exact certificates are in F4(c): strict diagonal dominance and 2x2 determinants over Q, never an eigenvalue.)  (min diagonal = 1/16777216 > 0)
-  [t = 98.7s]
+  [t = 212.3s]
 
 [F4 — THE COHERENCE QUESTION: is there a member with NON-ZERO
  off-diagonal structure WITHIN a record class — coherence
  between histories the record cannot distinguish?]
-  configurations with EVERY within-class coherence free: 16; with NONE free (diagonality forced): 4; with a PROPER SUBSET free: 12
-  [PASS] F4(a) UNDER THE DECOHERENT-SUM READING OF C1 THE WITHIN-CLASS COHERENCES ARE COMPLETELY UNCONSTRAINED [SUBSTANTIVE]: in every 'sum' configuration, at every truncation depth, with C4 on or off and with C3 read one-step or full-chain, cohdim = coh — the projection of the solution space onto the within-class off-diagonal coordinates is EVERYTHING.  The decoherent-sum reading of the record demand prices coherence at ZERO  ('sum' configurations = 16, all with cohdim = coh = [4, 4, 9, 9, 35, 35, 134, 134, 390, 390, 1491, 1491, 3792, 15058, 36447, 145018])
+  configurations with EVERY within-class coherence free: 26; with NONE free (diagonality forced): 4; with a PROPER SUBSET free: 12
+  [PASS] F4(a) UNDER THE SUM READING — THE WEAKER BOUND, WHICH DROPS DECOHERENCE ENTIRELY — THE WITHIN-CLASS COHERENCES ARE COMPLETELY UNCONSTRAINED [SCOPED, round-1 BLOCKER 1: this is a statement about a reading that never asks the queried algebra to decohere, so no scalar record probability is licensed for the object it constrains; its 10^8-dimensional solution spaces are exactly what a no-decoherence demand should produce.  The FAITHFUL reading's answer is F7(a)]: in every 'sum' configuration, at every truncation depth, with C4 on or off and with C3 read one-step or full-chain, cohdim = coh — the projection of the solution space onto the within-class off-diagonal coordinates is EVERYTHING.  The decoherent-sum reading of the record demand prices coherence at ZERO  ('sum' configurations = 16, all with cohdim = coh = [4, 4, 9, 9, 35, 35, 134, 134, 390, 390, 1491, 1491, 3792, 15058, 36447, 145018])
 
   [THE FORCING MECHANISM under the BLOCK reading, one-step C3.
    A within-class entry D(h,h') survives into the depth-(D-1)
@@ -155,7 +187,7 @@
     D = 5: within-class off-diagonal coordinates 15058; of these, pairs whose parents carry DIFFERENT records = 6984, pairs whose parents carry the SAME record = 8074; off-block C3 rows = 6984, row-size census = {1: 6984}
     D = 6: within-class off-diagonal coordinates 145018; of these, pairs whose parents carry DIFFERENT records = 65850, pairs whose parents carry the SAME record = 79168; off-block C3 rows = 65850, row-size census = {1: 65850}
   [PASS] F4(b) THE FORCING CONSTRAINT IS NAMED, AND IT IS ELEMENTARY [SUBSTANTIVE — this is the unit's mechanism]: under the BLOCK reading with one-step C3, EVERY off-block cylinder-consistency row is a SINGLETON.  R^(D-1)(g,g') = D(h,h') with exactly one term, so the demand `the restricted form is block-diagonal across depth-(D-1) record classes' forces D(h,h') = 0 outright — no cancellation, no conspiracy.  The forced set is EXACTLY the within-class pairs whose two parents carry different records, and the surviving coherence dimension equals, on the nose, the number of within-class pairs whose parents carry the SAME record (which is why the answer is a proper subset and not all-or-nothing)  (all off-block rows are singletons at every depth = True; cohdim == same-parent-record count at every depth = True ([(2, 0, 0), (3, 50, 50), (4, 744, 744), (5, 8074, 8074), (6, 79168, 79168)]))
-  [PASS] F4(c) AT DEPTH 2 THE BLOCK READING FORCES DIAGONALITY — AND WITH C4 IT FORCES THE MEMBER OUTRIGHT [SUBSTANTIVE NEGATIVE, and it is the pre-registered F-II, fired at ONE depth]: at the depth-2 truncation every within-class pair has parents of different record (single events are their own records), so every off-block row is a singleton on the only coherence that exists and cohdim = 0.  With C4 imposed the affine solution space has dimension ZERO: the classical diagonal member is the UNIQUE form satisfying C1(block) + C3 + C4 at depth 2  (depth-2 block configurations (C4, C3, dim, cohdim) = [(True, 'one', 0, 0), (True, 'full', 0, 0), (False, 'one', 4, 0), (False, 'full', 4, 0)])
+  [PASS] F4(c) AT DEPTH 2 THE BLOCK READING — THE STRICTER BOUND — FORCES DIAGONALITY, AND WITH C4 IT FORCES THE MEMBER OUTRIGHT [SCOPED, round-1 BLOCKER 1 and MINOR 3: this is F-II UNDER THE BLOCK READING AT DEPTH 2, and uniqueness holds only with C4 ON — with C4 off the depth-2 block space has dimension 4.  Under the FAITHFUL reading the cell EVAPORATES (9/9 and 4/4 free, F7(a)) and under the sum reading depth 2 is F-III too]: at the depth-2 truncation every within-class pair has parents of different record (single events are their own records), so every off-block row is a singleton on the only coherence that exists and cohdim = 0.  With C4 imposed the affine solution space has dimension ZERO: the classical diagonal member is the UNIQUE form satisfying C1(block) + C3 + C4 at depth 2  (depth-2 block configurations (C4, C3, dim, cohdim) = [(True, 'one', 0, 0), (True, 'full', 0, 0), (False, 'one', 4, 0), (False, 'full', 4, 0)])
 
   [THE WITNESSES.  For every configuration with a non-zero
    coherence dimension, an EXACT member is constructed by
@@ -166,7 +198,7 @@
    perturbed matrix is STRICTLY DIAGONALLY DOMINANT with a
    positive diagonal, hence positive definite by Gershgorin,
    with an exact rational certificate and no eigenvalue.]
-  [PASS] F4(d) THE COHERENCE WITNESS EXISTS AND IS EXHIBITED [the pin's sharpest question, answered POSITIVELY]: for every configuration with cohdim > 0 at truncation depth <= 4, an exact member is constructed with a NON-ZERO within-class off-diagonal entry; it satisfies EVERY constraint row exactly (zero residual) and is certified POSITIVE DEFINITE by exact strict diagonal dominance over Q.  Superposition between histories the record cannot distinguish is PERMITTED by the generated law's own record demands at this scope  (witnesses built = 20, witnesses failing a row or the positivity certificate = 0)
+  [PASS] F4(d) THE COHERENCE WITNESS EXISTS AND IS EXHIBITED [the pin's sharpest question, answered POSITIVELY]: for every configuration with cohdim > 0 at truncation depth <= 4, an exact member is constructed with a NON-ZERO within-class off-diagonal entry; it satisfies EVERY constraint row exactly (zero residual) and is certified POSITIVE DEFINITE by exact strict diagonal dominance over Q.  Superposition between histories the record cannot distinguish is PERMITTED by these record demands at this scope.  HONESTY, round-1 MINOR 7: this is ONE ALGORITHM RUN AT N CONFIGURATIONS — classical + t x (kernel direction at the first free coherence column in a fixed column order), same derived t — not N independent pieces of evidence  (witnesses built = 28, witnesses failing a row or the positivity certificate = 0)
 
   THE PINNED WITNESS (D = 3, C1 = block, C4 on, C3 one-step) — t = 1/8192, direction support 1 coordinate(s):
     record class of size 3; the coherent pair is two serialisations of ONE labelled event DAG:
@@ -178,8 +210,45 @@
         [1/8192  9/1024  0]
         [0  0  9/1024]
       the 2x2 minor on (h, h') has determinant 5183/67108864 > 0 — exact, and positive
-  [PASS] F4(e) THE DECOHERENT-SUM DEMANDS ARE BLIND TO THE IMAGINARY PART; THE BLOCK DEMANDS SEE IT EXACTLY AS THEY SEE THE REAL PART [SUBSTANTIVE, and it is the Hermitian column's whole content].  Under the sum reading every C1 and C3 row is a sum over a SYMMETRIC set of index pairs, so it annihilates the antisymmetric part identically: the constraint rank on the imaginary part is ZERO and the entire antisymmetric space survives — a record measure of that shape cannot see a phase at all, so no amount of C1/C3 could ever select one.  Under the block reading the imaginary part meets exactly the same singleton off-block rows as the real part, and with one-step C3 its coherence dimension equals the real one on the nose (with full-chain C3 the two come apart slightly — the lower rows are symmetric sums and bite the two parts differently, and the numbers are printed rather than smoothed)  ('sum' configurations with an imaginary column = 14; all with constraint rank 0 = True; all with the whole imaginary coherence space free = True; block one-step (D, C4, imaginary cohdim, real cohdim) = [(2, True, 0, 0), (2, False, 0, 0), (3, True, 13, 13), (3, False, 50, 50), (4, True, 189, 189), (4, False, 744, 744), (5, True, 2032, 2032), (5, False, 8074, 8074)]; block full-chain = [(2, True, 0, 0), (2, False, 0, 0), (3, True, 12, 9), (3, False, 41, 41), (4, True, 166, 163), (4, False, 651, 651)])
-  [t = 110.7s]
+  [PASS] F4(e) THE SUM READING'S ROWS ARE BLIND TO THE IMAGINARY PART; THE BLOCK DEMANDS SEE IT EXACTLY AS THEY SEE THE REAL PART [DEMOTED TO A LEMMA, round-1 MAJOR 1 — the sentence `A RECORD MEASURE OF THIS SHAPE CANNOT SEE A PHASE' IS STRUCK].  Under the sum reading every C1 and C3 row is a sum over a SYMMETRIC set of index pairs, so it annihilates the antisymmetric part identically: the constraint rank on the imaginary part is ZERO.  THIS IS A TAUTOLOGY OF THE ROW SHAPE — true of any partition, any measure, any layer, no computation required (F8(a)) — and it is FALSE for the faithful reading (F8(c)) and for C2 (F8(b)).  Under the block reading the imaginary part meets exactly the same singleton off-block rows as the real part, and with one-step C3 its coherence dimension equals the real one on the nose (with full-chain C3 the two come apart slightly — the lower rows are symmetric sums and bite the two parts differently, and the numbers are printed rather than smoothed)  ('sum' configurations with an imaginary column = 14; all with constraint rank 0 = True; all with the whole imaginary coherence space free = True; block one-step (D, C4, imaginary cohdim, real cohdim) = [(2, True, 0, 0), (2, False, 0, 0), (3, True, 13, 13), (3, False, 50, 50), (4, True, 189, 189), (4, False, 744, 744), (5, True, 2032, 2032), (5, False, 8074, 8074)]; block full-chain = [(2, True, 0, 0), (2, False, 0, 0), (3, True, 12, 9), (3, False, 41, 41), (4, True, 166, 163), (4, False, 651, 651)])
+  [t = 225.9s]
+
+[F7 — THE FAITHFUL C1 READING IS THE HEADLINE (round-1
+ BLOCKER 1).  Paper 29 §4.3's load-bearing hypothesis 2 is
+ DECOHERENCE OF THE QUERIED RECORD ALGEBRA, and §3.1 supplies
+ the pushforward for the atom masses; written on the fine
+ layer that pair of demands is Dbar(r,r') = delta_{rr'} mu(r).
+ The first version of this unit computed the two readings that
+ BRACKET that condition and skipped the condition itself.  The
+ review computed it; this receipt rebuilds it with its own
+ driver and every figure of the review's table reproduces.]
+  [PASS] F7(a) UNDER THE FAITHFUL READING NO WITHIN-CLASS COHERENCE IS FORCED TO ZERO ANYWHERE [SUBSTANTIVE, and it REVERSES the first version's headline]: in EVERY generically-built medium configuration — every depth built by elimination, C4 on and off, C3 one-step and full-chain — cohdim = coh.  The record demand, read as paper 29 states it, decoheres the ALGEBRA and prices NO fine-grained coherence: not the pairs whose parents carry different records, not any.  The identity `cohdim = the parents-record-identical count' is a property of the BLOCK CONVENTION, not of the record instrument.  At depth 2 the pre-registered F-II cell EVAPORATES: 9/9 free with C4 off and 4/4 with C4 on, where the block reading gave 0/9 and 0/4  (medium configurations = 10, all with cohdim = coh; (D, C4, C3, dim, coh, cohdim) = [(2, False, 'full', 232, 9, 9), (2, False, 'one', 232, 9, 9), (2, True, 'full', 58, 4, 4), (2, True, 'one', 58, 4, 4), (3, False, 'full', 11711, 134, 134), (3, False, 'one', 11731, 134, 134), (3, True, 'full', 2955, 35, 35), (3, True, 'one', 2962, 35, 35), (4, False, 'one', 424110, 1491, 1491), (4, True, 'one', 106263, 390, 390)])
+
+  [THE FAITHFUL SYSTEM AT DEPTHS 4 AND 5.  Its row count is
+   quadratic in the record-class census (49,141 class-pair rows
+   at depth 4, 648,091 at depth 5), so beyond depth 4 it is
+   measured by the exact two-partition identity documented at
+   `medium_structural' — integer arithmetic, no elimination —
+   and the identity is CROSS-GATED against the generic rational
+   elimination at every depth where both are computable.]
+
+   D |   sigs       vars     rows  comps     rank        dim |     coh  cohdim |    sec
+   2 |     32        528      297      1      296        232 |       9       9 |    0.0
+   3 |    126      15576     3846      1     3845      11731 |     134     134 |    0.0
+   4 |    464     476776    52711     45    52666     424110 |    1491    1491 |    0.1
+   5 |   1694   13941840   697232    861   696371   13245469 |   15058   15058 |    1.6
+  [PASS] F7(b) THE FAITHFUL READING FORCES NOTHING AT EVERY TRUNCATION DEPTH MEASURED, 2 THROUGH 5 [SUBSTANTIVE — the geography of the first version's §3 does not exist under the condition paper 29 states]: the two-partition identity gives the exact rank and the exact coherence dimension of the medium/one-step/C4-off system at depths 2, 3, 4 and 5, and cohdim = coh at every one of them.  The identity agrees with the generic rational elimination in every configuration where both are computable, which is its calibration  (structural (D, rank, dim, coh, cohdim) = [(2, 296, 232, 9, 9), (3, 3845, 11731, 134, 134), (4, 52666, 424110, 1491, 1491), (5, 696371, 13245469, 15058, 15058)]; cross-gated against the generic elimination at depths [2, 3, 4], agreements [True, True, True])
+
+  THE MEMBER THE FIRST VERSION'S HEADLINE SAID WAS KILLED (D = 3, C1 = FAITHFUL, C4 off, C3 one-step):
+    scale t = 1/81920, direction support 32 coordinate(s) of which 31 are OFF-DIAGONAL, 63 ordered matrix entries moved
+      h  = (('p', 'A', ('v', 'v0'), 0), ('p', 'B', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)})))
+      h' = (('p', 'A', ('v', 'v0'), 0), ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)})), ('p', 'B', ('v', 'v0'), 0))
+      record(h) = record(h'),  mu_Zhat = 3/8192 and 3/8192
+      record(parent h) != record(parent h')   <-- the first version's `FORCED to 0'
+      D(h,h') = 1/81920 != 0, zero residual against all 3846 rows, positive definite by strict diagonal dominance
+      the FULL-CHAIN variant gives the same member at the same pair: t = 1/81920, D(h,h') = 1/81920, rows violated 0, dominance failures 0
+  [PASS] F7(c) AND THE FORBIDDEN ENTRIES ARE EXPLICITLY REALISABLE [SUBSTANTIVE — round-1 BLOCKER 1's own member, rebuilt here]: under the faithful reading an EXACT member carries non-zero coherence between two histories of one record class whose PARENTS CARRY DIFFERENT RECORDS — the entries the first version's §3 display called killed by a singleton row.  It has zero residual against every row of the faithful system and is positive definite by exact strict diagonal dominance.  The two parents ARE distinguishable at the previous cut and the coherence survives anyway  (member built = True, rows violated = 0, dominance failures = 0, coherence entry = 1/81920)
+  [t = 228.5s]
 
 [F5 — CONTROLS.  A constraint system that accepts anything is
  broken; a system whose answer does not move when the measure
@@ -198,6 +267,10 @@
    2 block  on  one |       25          True            23        23
    2 block off full |        2          True            23        23
    2 block off  one |        1          True            23        23
+   2 medium  on full |      210          True            23        23
+   2 medium  on  one |      209          True            23        23
+   2 medium off full |        2          True            23        23
+   2 medium off  one |        1          True            23        23
    2   sum  on full |       19          True            23        22
    2   sum  on  one |       19          True            23        22
    2   sum off full |        0          True            23         0
@@ -206,6 +279,10 @@
    3 block  on  one |      140          True            84        84
    3 block off full |        3          True            84        84
    3 block off  one |        1          True            84        84
+   3 medium  on full |     2855          True            84        84
+   3 medium  on  one |     2840          True            84        84
+   3 medium off full |        3          True            84        84
+   3 medium off  one |        1          True            84        84
    3   sum  on full |       81          True            84        84
    3   sum  on  one |       77          True            84        84
    3   sum off full |        0          True            84         0
@@ -219,7 +296,7 @@
    4   sum off full |        0          True           313         0
    4   sum off  one |        0          True           313         0
   [PASS] F5(a) THE SYSTEM RESPONDS TO A WRONG MEASURE, AND HOW HARD IT RESPONDS IS ITSELF A CONVENTION FACT [SUBSTANTIVE, three-sided].  (i) The true mu_Zhat is ATTAINABLE in every configuration — every syzygy annihilates it.  (ii) Under the BLOCK reading, EVERY single-class 101/100 perturbation makes the system INFEASIBLE, at every depth, with C4 on AND off: the block traces at depth D and the restricted traces at depth D-1 tie the classes together and a lone class cannot move.  (iii) Under the DECOHERENT-SUM reading with C4 off the constraint rows are LINEARLY INDEPENDENT — the system has no syzygies at all and rejects NO right-hand side; there the response is disjointness (F5(a')), not infeasibility.  With C4 on the sum reading rejects almost everything, the exceptions being classes the renaming group fixes.  A system that accepted anything would show zero rejections everywhere; this one does not  (block configurations = 12, all rejecting every perturbation = True; sum/C4-off syzygies = [0, 0, 0, 0, 0, 0] (independent rows, hence 0 rejections by construction); sum/C4-on (rejected, tested, renaming-orbit sizes of the survivors) = [(22, 23, [1]), (22, 23, [1]), (84, 84, []), (84, 84, []), (312, 313, [1]), (312, 313, [1])])
-  [PASS] F5(a') DISJOINTNESS, GATED WHERE INFEASIBILITY CANNOT FIRE: in the sum/C4-off configurations — the only ones with no syzygies — the perturbed C1 row demands a DIFFERENT value of the SAME linear functional, so no form satisfies both systems: the solution sets are disjoint even though both are non-empty.  'The system accepts anything' is false in the only sense that matters — it does not accept the wrong measure and the right one at once  (sum/C4-off configurations checked = 6, disjointness exhibited = 6)
+  [PASS] F5(a') THE FALSIFIER DOES NOT BITE UNDER THE SUM READING, AND THE READING THAT PAPER 29 STATES HAS THE CONTROL RESPONSE THE UNIT WANTED [REPAIRED, round-1 MINOR 1].  The first version's disjointness predicate reduced to `101/100 != 1' — it holds for any perturbation of any consistent linear system and cannot distinguish a discriminating constraint system from one that accepts every measure.  It is retained below as a STATED FACT and is NOT the gate.  The gate is the FAITHFUL reading's response: medium rejects EVERY single-class perturbation at every depth, with C4 on AND off, exactly as the block reading does — while sum/C4-off, whose rank equals its row count at every depth, can reject nothing whatever and is therefore the reading with no falsifier at all  (medium configurations = 8, (rejected, tested) = [(23, 23), (23, 23), (23, 23), (23, 23), (84, 84), (84, 84), (84, 84), (84, 84)]; the retired disjointness statement holds in 6/6 sum/C4-off configurations and carries no information about this system)
 
   CONTROL 2 — THE PURE-DIAGONAL COMPARATOR.  The same
   pipeline with the variables restricted to the DIAGONAL: the
@@ -232,6 +309,10 @@
    2 block  on  one |        9      9        0
    2 block off full |       32     28        4
    2 block off  one |       32     28        4
+   2 medium  on full |        9      9        0
+   2 medium  on  one |        9      9        0
+   2 medium off full |       32     28        4
+   2 medium off  one |       32     28        4
    2   sum  on full |        9      9        0
    2   sum  on  one |        9      9        0
    2   sum off full |       32     28        4
@@ -240,6 +321,10 @@
    3 block  on  one |       46     29       17
    3 block off full |      176    111       65
    3 block off  one |      176    106       70
+   3 medium  on full |       46     30       16
+   3 medium  on  one |       46     29       17
+   3 medium off full |      176    111       65
+   3 medium off  one |      176    106       70
    3   sum  on full |       46     30       16
    3   sum  on  one |       46     29       17
    3   sum off full |      176    111       65
@@ -252,64 +337,180 @@
    4   sum  on  one |      248    102      146
    4   sum off full |      976    415      561
    4   sum off  one |      976    388      588
-  [PASS] F5(b) THE CLASSICAL COMPARATOR IS ALSO UNDER-DETERMINED [SUBSTANTIVE — the honest baseline for reading the coherence dimensions]: even with every off-diagonal entry set to zero by hand, the record demands do not pin the per-history weights; the diagonal solution space has strictly positive dimension in every configuration except the depth-2 block-with-C4 one, where it is zero and the classical member is unique.  mu_Zhat is one point of a classical polytope before it is one point of a quantum cone  (diagonal dimensions = [(2, 'block', True, 'full', 0), (2, 'block', True, 'one', 0), (2, 'block', False, 'full', 4), (2, 'block', False, 'one', 4), (2, 'sum', True, 'full', 0), (2, 'sum', True, 'one', 0), (2, 'sum', False, 'full', 4), (2, 'sum', False, 'one', 4), (3, 'block', True, 'full', 16), (3, 'block', True, 'one', 17), (3, 'block', False, 'full', 65), (3, 'block', False, 'one', 70), (3, 'sum', True, 'full', 16), (3, 'sum', True, 'one', 17), (3, 'sum', False, 'full', 65), (3, 'sum', False, 'one', 70), (4, 'block', True, 'full', 138), (4, 'block', True, 'one', 146), (4, 'block', False, 'full', 561), (4, 'block', False, 'one', 588), (4, 'sum', True, 'full', 138), (4, 'sum', True, 'one', 146), (4, 'sum', False, 'full', 561), (4, 'sum', False, 'one', 588)])
-  [t = 112.9s]
+  [PASS] F5(b) THE CLASSICAL COMPARATOR IS ALSO UNDER-DETERMINED [SUBSTANTIVE — the honest baseline for reading the coherence dimensions]: even with every off-diagonal entry set to zero by hand, the record demands do not pin the per-history weights; the diagonal solution space has strictly positive dimension in every configuration except the depth-2 block-with-C4 one, where it is zero and the classical member is unique.  mu_Zhat is one point of a classical polytope before it is one point of a quantum cone  (diagonal dimensions = [(2, 'block', True, 'full', 0), (2, 'block', True, 'one', 0), (2, 'block', False, 'full', 4), (2, 'block', False, 'one', 4), (2, 'medium', True, 'full', 0), (2, 'medium', True, 'one', 0), (2, 'medium', False, 'full', 4), (2, 'medium', False, 'one', 4), (2, 'sum', True, 'full', 0), (2, 'sum', True, 'one', 0), (2, 'sum', False, 'full', 4), (2, 'sum', False, 'one', 4), (3, 'block', True, 'full', 16), (3, 'block', True, 'one', 17), (3, 'block', False, 'full', 65), (3, 'block', False, 'one', 70), (3, 'medium', True, 'full', 16), (3, 'medium', True, 'one', 17), (3, 'medium', False, 'full', 65), (3, 'medium', False, 'one', 70), (3, 'sum', True, 'full', 16), (3, 'sum', True, 'one', 17), (3, 'sum', False, 'full', 65), (3, 'sum', False, 'one', 70), (4, 'block', True, 'full', 138), (4, 'block', True, 'one', 146), (4, 'block', False, 'full', 561), (4, 'block', False, 'one', 588), (4, 'sum', True, 'full', 138), (4, 'sum', True, 'one', 146), (4, 'sum', False, 'full', 561), (4, 'sum', False, 'one', 588)])
+  [t = 234.5s]
+
+[F8 — THE PHASE CLAIM, DEMOTED TO A SHAPE TAUTOLOGY AND THEN
+ REVERSED (round-1 MAJOR 1).  LEMMA: if a linear row's
+ coefficient function on ORDERED index pairs satisfies
+ c(i,j) = c(j,i), it annihilates the antisymmetric part
+ identically, because sum_ij c_ij A_ij cancels term by
+ transposed term.  EVERY sum-reading row is a sum over a
+ PRODUCT SET C x C, hence swap-symmetric BY CONSTRUCTION.
+ Therefore the constraint rank on the antisymmetric block is
+ zero at every depth, FOR ANY PARTITION, FOR ANY MEASURE, ON
+ ANY LAYER, WITHOUT COMPUTING ANYTHING.  F4(e)'s zero is a
+ tautology of the shape the first version chose; it carries no
+ information about records, about mu_Zhat or about this layer,
+ and the sentence `a record measure cannot see a phase' is
+ STRUCK.]
+  [PASS] F8(a) THE SUM READING'S PHASE BLINDNESS IS A PROPERTY OF THE ROW SHAPE, NOT OF RECORDS [round-1 MAJOR 1; the first version's licensed claim 6 and its LOG headline are WITHDRAWN]: the same product-set rows built over a partition with no relation to the record functor (histories grouped by index mod 7) and with the SECOND measure nu on the right-hand side annihilate the antisymmetric part just as completely.  The honest sentence is: the LINEAR PART OF THE TWO BRACKETING READINGS cannot see a phase because both were built out of product-set sums  (arbitrary-partition product-set rows tested = 21, rows with a non-vanishing antisymmetric part = 0 (the record partition's own zero is F4(e)))
+
+    the pinned witness's 2x2 Hermitian block: D_ii = 9/1024, D_jj = 9/1024, S_ij = 1/8192
+    with imaginary part A_ij = 9/2048 the exact determinant is 3887/67108864 > 0;
+    with A_ij = 9/1024 it is -1/67108864 < 0 — C2 BOUNDS THE PHASE.
+  [PASS] F8(b) C2 SEES THE PHASE, SO THE CONSTRAINT SET C1-C4 IS NOT PHASE-BLIND EVEN WHERE ITS LINEAR PART IS [round-1 MAJOR 1]: positive semidefiniteness of a Hermitian form bounds |A_ij|^2 by D_ii D_jj - S_ij^2.  On the pinned witness's own 2x2 block the bound is exhibited exactly, from the member under test and not from any invented constant: one admissible imaginary entry with a strictly positive determinant and one inadmissible one with a strictly negative determinant.  The LINEAR system is phase-blind; THE CONSTRAINT SET IS NOT  ((det at A = D_ii/2, det at A = D_ii) = ('3887/67108864', '-1/67108864'))
+  [PASS] F8(c) AND UNDER THE FAITHFUL READING THE RECORD DEMANDS DO CONSTRAIN PHASES [SUBSTANTIVE — the reversal]: the faithful rows have ASYMMETRIC index supports (r x r' with r != r'), so they see the antisymmetric part.  The constraint rank on the imaginary block is 268 at depth 2 and 3,739 at depth 3 (C4 off, one-step) against the sum reading's zero — but the imaginary WITHIN-CLASS coherences are as free as the real ones (acohdim = ancoh everywhere), so records constrain phases and still price no superposition  (medium (D, C4, C3, antisym rank, antisym coh, antisym cohdim) = [(2, False, 'full', 268, 9, 9), (2, False, 'one', 268, 9, 9), (2, True, 'full', 60, 1, 1), (2, True, 'one', 60, 1, 1), (3, False, 'full', 3754, 134, 134), (3, False, 'one', 3739, 134, 134), (3, True, 'full', 902, 35, 35), (3, True, 'one', 900, 35, 35)])
+  [t = 234.7s]
+
+[F9 — THE GEOGRAPHY AND THE DIMENSIONS ARE MEASURE-INDEPENDENT
+ (round-1 MAJOR 2).  Every coefficient of every row is a
+ positive integer; mu_Zhat appears ONLY on the right-hand
+ side.  Rank, dimension, coherence dimension, the singleton
+ census and the antisymmetric ranks are therefore functions of
+ three combinatorial objects — the truncated history tree,
+ canon's partition at depths D and D-1, and the prefix map —
+ and of NOTHING the generated law contributes.  D49's lambda=2
+ completion and D65's descent are load-bearing for NO number
+ in the dimension table.  The phrase `the generated law admits
+ a functional level' is de-licensed accordingly: it is true of
+ EVERY strictly positive cut-consistent weight on this layer.]
+  the second measure nu(h) = prod_k 1/|menu_k|: strictly positive = True; cut masses = ['1', '1', '1', '1', '1', '1', '1']; record classes carrying two or more nu values = 4156 of 5548; histories where nu != mu_Zhat = 34374 of 34375
+  [PASS] F9 THE CONSTRAINT SYSTEM NEVER SEES THE MEASURE [SUBSTANTIVE, round-1 MAJOR 2]: rebuilt from scratch with nu — a strictly positive, exactly cut-consistent, NOT record-constant measure that differs from mu_Zhat on all but the empty history — the COEFFICIENT MATRIX is IDENTICAL in every configuration, entry for entry, while the right-hand side moves.  Rank, dimension, coherence dimension and every antisymmetric column are therefore unchanged by construction, and diag(nu) satisfies every row of every configuration exactly.  Existence is weaker still than the first version said: diag(w) works for ANY strictly positive cut-consistent weight w, because the C1 right-hand side is the class mass of whatever measure is supplied  (configurations rebuilt with nu = 32; coefficient matrices differing from the mu_Zhat build = 0; configurations whose right-hand side did NOT move = 0; rows checked against diag(nu) = 24696, rows violated = 0)
+  [t = 257.5s]
+
+[F10 — WHAT THE FIRST VERSION'S IDENTITY IS A PROPERTY OF
+ (round-1 MAJOR 3 and MAJOR 4).]
+
+   D    C3 |    coh  pinned unpinned  cohdim | identity cohdim == unpinned?
+   2   one |      9       9        0       0 | True
+   2  full |      9       9        0       0 | True
+   3   one |    134      84       50      50 | True
+   3  full |    134      84       50      41 | False
+   4   one |   1491     747      744     744 | True
+   4  full |   1491     747      744     651 | False
+  [PASS] F10(a) THE `cohdim = THE PARENTS-RECORD-IDENTICAL COUNT' IDENTITY HOLDS ONLY UNDER THE BLOCK READING WITH ONE-STEP C3, AND THE UNIT'S OWN ALTERNATIVE C3 BREAKS IT [round-1 MAJOR 3]: coordinate by coordinate, the one-step system pins exactly the cross-parent-record coordinates and its cohdim equals the unpinned count.  Under FULL-CHAIN C3 the SAME coordinates remain individually unpinned and the projection is a PROPER SUBSPACE of their span, cut out by linear relations AMONG FREE COHERENCES — which is exactly the cancellation the first version's `one term, no cancellation, no conspiracy' says does not happen.  There is no `IFF ... by a singleton row' story under full-chain C3  ((D, C3, coh, pinned, unpinned, cohdim) = [(2, 'one', 9, 9, 0, 0), (2, 'full', 9, 9, 0, 0), (3, 'one', 134, 84, 50, 50), (3, 'full', 134, 84, 50, 41), (4, 'one', 1491, 747, 744, 744), (4, 'full', 1491, 747, 744, 651)]; one-step identity holds = True; full-chain rows where it FAILS = [(3, 50, 41), (4, 744, 651)])
+
+   D | within-class pairs  parents agree  ALL ancestors agree
+   2 |                  9              0                    0
+   3 |                134             50                    0
+   4 |               1491            744                    0
+   5 |              15058           8074                    0
+   6 |             145018          79168                    0
+  [PASS] F10(b) NO PAIR OF DISTINCT HISTORIES IN ONE RECORD CLASS AGREES ON ITS WHOLE ANCESTOR RECORD CHAIN [SUBSTANTIVE, round-1 MAJOR 3]: two serialisations of one DAG always differ in their FIRST event, hence in their depth-1 record.  So `coherence survives exactly where records cannot reach' is FALSE for the record instrument read as a FILTRATION: what survives one-step C3 is coherence between histories the record COULD tell apart, two cuts back.  The geography tracks HOW FAR DOWN THE RECORD CHAIN THE CONVENTION LOOKS, not the record instrument  ((D, within-class pairs, parents agree, all ancestors agree) = [(2, 9, 0, 0), (3, 134, 50, 0), (4, 1491, 744, 0), (5, 15058, 8074, 0), (6, 145018, 79168, 0)])
+
+  the PARENT-SWAP group at depth 3 (9 transpositions, pairwise disjoint supports, hence a group of order >= 2^9 = 512 against C4's 4): rows whose image is not a row of the same system = {('block', 'full'): 27, ('block', 'one'): 0, ('medium', 'full'): 99, ('medium', 'one'): 0, ('sum', 'full'): 18, ('sum', 'one'): 0}
+  [PASS] F10(c) THE C4 GROUP IS THE LABEL-MAP GROUP, AND IT IS A SMALL SUBGROUP OF THE CONSTRAINT SYSTEM'S SYMMETRY [round-1 MAJOR 4]: exchanging the children of two same-record parents by matching records is an EXACT symmetry of the ONE-STEP system in all three conventions (zero non-symmetric rows), and it is NOT a label map.  Nine such transpositions exist at depth 3 with pairwise disjoint supports, so the one-step constraint data has a symmetry group of order at least 512 where C4 has order 4.  `The renaming-invariant column' is therefore NOT a canonical quotient, and the advertised size of the cone is dominated by relabelings the constraint system cannot see.  The FULL-CHAIN systems break the symmetry — which is the mechanism behind F10(a)  (transpositions = 9, child-record matching failures = 0; non-symmetric rows by (C1, C3) = {('block', 'full'): 27, ('block', 'one'): 0, ('medium', 'full'): 99, ('medium', 'one'): 0, ('sum', 'full'): 18, ('sum', 'one'): 0})
+  [t = 265.4s]
+
+[F11 — THE FIRST DYNAMICAL DEMAND, AND WHAT IT COSTS
+ (round-1 MAJOR 5 — the review's own construction, and the
+ successor obligation the first version's residue 1 named and
+ did not spend).  Write D = diag(mu_Zhat) + E and demand that
+ the coherence excess be GENERATED BY THE CLOSED LAW:
+     E(h,h') = mu(h) mu(h') K(sigma(h), sigma(h'))
+ for a symmetric kernel K on the 36 sigma states, zero on the
+ diagonal (E must not move the diagonal).  The CLASSICAL
+ MEMBER IS K = 0, so the demand excludes nothing this unit
+ exhibits as existence — it is fair.  Under the block reading
+ the trace rows are satisfied automatically (no two siblings
+ share a record, F1(c)), every cross-class C1 entry forces
+ K = 0 on its state pair, and every off-block singleton C3 row
+ forces K = 0 on its state pair.]
+    D = 2:      0 permitted pairs on   0 sigma-state pairs ;      9 forbidden on   9 ; state pairs permitted AND NOT forbidden = 0 ; cross-class state pairs = 62 ; C5 cohdim = 0
+    D = 3:     50 permitted pairs on  15 sigma-state pairs ;     84 forbidden on  15 ; state pairs permitted AND NOT forbidden = 0 ; cross-class state pairs = 190 ; C5 cohdim = 0
+    D = 4:    744 permitted pairs on  28 sigma-state pairs ;    747 forbidden on  28 ; state pairs permitted AND NOT forbidden = 0 ; cross-class state pairs = 406 ; C5 cohdim = 0
+    D = 5:   8074 permitted pairs on  32 sigma-state pairs ;   6984 forbidden on  32 ; state pairs permitted AND NOT forbidden = 0 ; cross-class state pairs = 528 ; C5 cohdim = 0
+  [PASS] F11(a) THE PERMITTED/FORBIDDEN SPLIT IS INVISIBLE TO THE CLOSED LAW'S OWN STATE SPACE [SUBSTANTIVE, round-1 MAJOR 5]: every sigma-state pair that carries a PERMITTED coherence also carries a FORBIDDEN one, at every depth measured.  The geography of the first version's §3 is not a function of the closed law's state variables at all; it is a function of the serialisation labels that canon identifies and the prefix map does not  ((D, permitted pairs, their state pairs, forbidden pairs, their state pairs, permitted-and-not-forbidden) = [(2, 0, 0, 9, 9, 0), (3, 50, 15, 84, 15, 0), (4, 744, 28, 747, 28, 0), (5, 8074, 32, 6984, 32, 0)])
+  [PASS] F11(b) THE FIRST DYNAMICAL DEMAND ELIMINATES ALL COHERENCE AT EVERY TRUNCATION TRIED [SUBSTANTIVE — the round's sharpest fact, and the successor the first version's residues 1 and 7 named]: under C1(block) + C3(one-step) + C5(state-generated coherence), cohdim = 0 at depths 2, 3, 4 AND 5 — where C1-C4 alone left 0 / 50 / 744 / 8,074.  F-III does not survive the first dynamical demand the unit itself named.  The classical member K = 0 satisfies C5, so this is not an emptiness result: it is F-II, at every depth >= 3, under one further and entirely natural condition.  AT CLOSED SCOPE THE QUANTUM LAYER CANNOT BE BOTH STATE-GENERATED AND COHERENT.  SCOPE, and it is load-bearing: C5 is imposed on the BLOCK bound, whose entrywise rows force K POINTWISE.  The FAITHFUL reading's cross-class rows are SUMS and do not force K pointwise; its C5 answer is a different computation and is NOT performed here  ((D, C5 coherence dimension) = [(2, 0), (3, 0), (4, 0), (5, 0)]; the classical member is K = 0 and satisfies C5 by construction (F2 gates the rest))
+  [t = 266.0s]
+  [PASS] F12 DIMENSION IS THE WRONG CURRENCY FOR `HOW QUANTUM', AND THIS RECEIPT MEASURES NO VOLUME [round-1 MINOR 2]: the affine solution space is unbounded, the PSD body is not, and every number in the dimension table is a dimension.  The pinned witness carries D(h,h') = 1/8192 against an entrywise PSD ceiling of sqrt(D_ii D_jj) = 9/1024 on that entry — ONE SEVENTY-SECOND of the maximum.  Nothing in this receipt measures how much coherence a member may carry, which is the quantity a reader will take `a large cone' to be about  (witness entry 1/8192, entrywise PSD ceiling 9/1024, ratio 1/72)
 
 [F6 — DETERMINISM, THRESHOLDS, RUNTIME]
-  [PASS] F6(a) THE RANK AND THE COHERENCE DIMENSION ARE ROW-ORDER INDEPENDENT: every configuration at depth <= 4 is re-eliminated with the row list REVERSED and reproduces both the exact rank and the number of pivots in the coherence block  (configurations re-eliminated = 24, disagreements = 0)
+  [PASS] F6(a) THE RANK AND THE COHERENCE DIMENSION ARE ROW-ORDER INDEPENDENT: every configuration at depth <= 4 is re-eliminated with the row list REVERSED and reproduces both the exact rank and the number of pivots in the coherence block  (configurations re-eliminated = 32, disagreements = 0)
   [PASS] F6(b) NO HASH-ORDER HAZARD [AST gate] (the hazard D65's round found and removed): a frozenset's repr is seed-dependent, so ordering record classes by it would make the output vary between interpreter runs.  This receipt orders record classes by FIRST OCCURRENCE in the committed enumerator's own history order, histories by their index in that order, and every other sort key is an integer; its syntax tree contains no call with key=repr  (calls in this file with key=repr: 0)
   [PASS] F6(c) NO INVENTED THRESHOLDS: every number entering a predicate is either (i) a census recomputed from the committed layers (the history census, the record-class census, 36 states, 176 keys, the lambda = 2 spectrum), (ii) an exact rank or dimension computed here, or (iii) a scale DERIVED from the member under test — the witness scale t = (smallest diagonal entry)/(2 x largest absolute row-sum of the perturbation direction), and the control's 101/100, which is the pin's own 1/100.  No predicate in this file compares a computed quantity to a bare constant chosen by the author  (declared and auditable against the source)
+  [PASS] F6(d) THE RESOURCE FIGURES ARE RECEIPTED, NOT NOTE-ONLY [round-1 MINOR 4]: the first version quoted a wall clock and a 1.36 GB peak that the receipt itself never printed.  Both are printed here, by this process, at the end of this run.  The predicate is that the peak is a positive integer measured by getrusage — no threshold is asserted  (peak resident set size = 1270890496 bytes = 1212 MiB; wall clock = 271 s)
 
-  wall clock = 116.0s; family depth CAP = 6; truncation depths measured = [2, 3, 4, 5, 6]; Hermitian column computed at depths <= 5; witnesses exhibited at depths <= 4; syzygy controls at depths <= 4
+  wall clock = 271.2s; peak RSS = 1270890496 bytes (1212 MiB); family depth CAP = 6; truncation depths measured = [2, 3, 4, 5, 6]; the FAITHFUL system built generically at depths <= 4 and measured structurally at depths <= 5; Hermitian column computed at depths <= 5; witnesses exhibited at depths <= 4; syzygy controls at depths <= 4; the dynamical demand C5 at depths <= 5
 
 *** D68 VERDICT — WHICH PRE-REGISTERED OUTCOME FIRED ***
+  [ROUND-1 REPAIRED.  The verdict below is stated at the
+   FAITHFUL C1 reading — paper 29 §4.3's own decoherence
+   condition — with the unit's original two readings kept as
+   its stricter and weaker bounds.  The first version's two
+   headline sentences are WITHDRAWN and struck: `the record
+   instrument is the exact boundary of permitted coherence'
+   and `a record measure of this shape cannot see a phase'.]
   F-I (empty) — EXCLUDED.  The classical diagonal functional
-  D = diag(mu_Zhat(h)) satisfies C1 in both readings, C2, C3 in
-  both readings and C4, in every configuration (F2).  The
-  generated law DOES admit a paper-29-shaped functional level
-  at this scope; existence was never the obstruction, and the
-  unit says so rather than selling it.
+  D = diag(mu_Zhat(h)) satisfies C1 in ALL THREE readings, C2,
+  C3 in both readings and C4, in every configuration (F2) —
+  and so does diag(nu) for a second, non-record-constant
+  measure (F9).  Existence was never the obstruction and it is
+  a property of the LAYER, not of the generated law.
   F-IV (off-diagonal FORCED) — EXCLUDED, for the same reason:
   the diagonal member never fails.
-  F-II (diagonal-only) — FIRED AT DEPTH 2 UNDER THE BLOCK
-  READING ONLY, and there it is total: cohdim = 0, and with C4
-  the member is unique (dim 0).  It does NOT survive to depth
-  3 (F4(b)).
-  F-III (a cone containing off-diagonal members) — THE ANSWER
-  AT EVERY TRUNCATION DEPTH >= 3, IN BOTH C1 READINGS.
-  Superposition between histories the record cannot
-  distinguish is PERMITTED and PRICED:
-    D = 2:  sum reading   dim 136 of 146, coherence 4/4
-           block reading dim 0 of 13, coherence 0/4   [C4 on, C3 one-step]
-    D = 3:  sum reading   dim 3938 of 3968, coherence 35/35
-           block reading dim 30 of 81, coherence 13/35   [C4 on, C3 one-step]
-    D = 4:  sum reading   dim 119487 of 119592, coherence 390/390
-           block reading dim 335 of 638, coherence 189/390   [C4 on, C3 one-step]
-    D = 5:  sum reading   dim 3487199 of 3487568, coherence 3792/3792
-           block reading dim 3002 of 5120, coherence 2032/3792   [C4 on, C3 one-step]
-    D = 6:  sum reading   dim 97342324 of 97343616, coherence 36447/36447
-           block reading dim 25578 of 43439, coherence 19847/36447   [C4 on, C3 one-step]
-  THE MECHANISM, which is the transportable part: under the
-  block reading a within-class coherence D(h,h') is killed
-  EXACTLY WHEN the two histories' PARENTS carry different
-  records, and it is killed by a SINGLETON cylinder-consistency
-  row — the record instrument reaches back one step and
-  decoheres what it could already distinguish at the previous
-  cut.  What survives is coherence between serialisations whose
-  parents were already record-identical.  This is the D34c
-  lesson at the generated law's own scope: the record
-  instrument is part of the click law, and here it is the ONLY
-  thing that removes a phase.
-  THE HERMITIAN COLUMN: the record demands are blind to the
-  imaginary part (F4(e)).  Under the sum reading its rank is
-  ZERO.  A record measure cannot see a phase, so no amount of
-  C1/C3 can select one.
+  UNDER THE FAITHFUL READING — CONSISTENCY DOES NOT STRUCTURE
+  COHERENCE.  cohdim = coh in EVERY configuration and at every
+  truncation depth measured (F7(a), F7(b)): permitted
+  everywhere, priced nowhere.  The depth-2 F-II cell
+  evaporates (9/9 and 4/4 free).  A member carrying coherence
+  between two histories whose PARENTS CARRY DIFFERENT RECORDS
+  — the entries the first version called killed — is exhibited
+  exactly and certified positive definite (F7(c)).  The
+  faithful rows DO see the antisymmetric part (rank 268 and
+  3,739 against the sum reading's zero, F8(c)), and they still
+  price no phase inside a record class.
+  F-III (a cone containing off-diagonal members) — THE OUTCOME
+  UNDER C1-C4 AT EVERY DEPTH >= 3 IN ALL THREE READINGS, AND
+  AT DEPTH 2 IN TWO OF THEM.  It survives as ONE SENTENCE ONLY:
+  THE CONSISTENCY CONE IS LARGE.  It is not evidence that the
+  generated law is quantum — every number in the dimension
+  table is a function of the history tree, canon's partition
+  and the prefix map, and of NOTHING the generated law
+  contributes (F9); dimension is not volume (the pinned
+  witness carries 1/72 of its own entrywise PSD ceiling, F12).
+  F-II — AND HERE IS THE PHYSICALLY LOADED CELL.  Impose the
+  FIRST DYNAMICAL DEMAND (C5: the coherence excess is
+  GENERATED BY THE CLOSED LAW's state space, K = 0 for the
+  classical member, so the demand is fair) and the coherence
+  dimension is ZERO at depths 2, 3, 4 AND 5 (F11(b)) — where
+  C1-C4 alone left 0 / 50 / 744 / 8,074.  The permitted/
+  forbidden split was invisible to the closed law's state
+  space to begin with: every sigma-state pair carrying a
+  permitted coherence also carries a forbidden one (F11(a)).
+  AT CLOSED SCOPE THE QUANTUM LAYER CANNOT BE BOTH
+  STATE-GENERATED AND COHERENT: superposition must either
+  break state-generation or enter at transport scope or at a
+  different joint.
+  SCOPE OF THAT SENTENCE, and it is the new residue: ONE
+  demand, imposed on the BLOCK bound (whose entrywise rows
+  force K pointwise; the FAITHFUL reading's cross-class rows
+  are sums and its C5 answer is NOT computed here), ONE record
+  functor, truncation-bound.  The demand's uniqueness is not
+  established — a different generation ansatz is a different
+  computation.
+  WHAT THE FIRST VERSION'S MECHANISM WAS.  Under the BLOCK
+  reading with ONE-STEP C3 a within-class coherence is killed
+  exactly when the two histories' parents carry different
+  records, by a singleton row.  That identity is a property of
+  THAT CONVENTION PAIR: the unit's own full-chain C3 breaks it
+  (cohdim 41 against 50 unpinned coordinates, F10(a)), no
+  within-class pair agrees on its WHOLE ancestor record chain
+  at any depth (F10(b)), and the surviving coherence is
+  exactly the orbit structure of a symmetry group the unit did
+  not look for — order >= 512 at depth 3 against C4's 4
+  (F10(c)).  It is not `the record instrument'; it is how far
+  down the record chain the convention looks.
   WHAT THIS DOES NOT SAY.  No member here IS the action line's
   functional; the map is identification, not existence (pin
   §4).  No Hilbert-space ontology.  The record functor is
-  d42b3's committed canon and the identification of `record'
-  with canon classes is INTERPRETIVE.  Two-actor,
-  delivery-free, closed scope, these truncations only.
+  d42b3's committed canon, the identification of `record' with
+  canon classes is INTERPRETIVE, and ONE functor was tried.
+  C3's `the restriction reproduces the lower-depth record
+  measure' is THIS UNIT'S CONSTRUCTION, not paper 29's demand.
+  Two-actor, delivery-free, closed scope, these truncations
+  only.
 
-  gates: 25 PASS / 0 FAIL (anchor failures 0); wall clock 116.0s
+  gates: 39 PASS / 0 FAIL (anchor failures 0); wall clock 271.2s
   exit protocol (pin §2 F6): substantive outcomes exit 0; exit 1 only on anchor breakage.
