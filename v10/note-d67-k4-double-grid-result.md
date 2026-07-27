@@ -15,7 +15,7 @@ constructions of its own**.  All seventeen findings are carried below;
 the better result.**  Pin `note-d67-k4-double-grid-pin.md` (STRICT,
 FROZEN AND COMMITTED before this file or its receipt existed).  Receipt
 `v10/code/d67_k4_double_grid_exact.py`, output
-`v10/data/d67_k4_double_grid_exact.out` — **30 PASS / 0 FAIL, exit 0,
+`v10/data/d67_k4_double_grid_exact.out` — **29 PASS / 0 FAIL, exit 0,
 2937.9 s wall clock** (run from the repo root; 26 PASS before the
 repair, and four of the thirty gates are new).  Parents: D66 (TERMINAL —
 the width ceiling is `k·b ≤ k²`, saturated at 9 by `DOUBLE-GRID(3, R)`;
@@ -42,7 +42,7 @@ object** — every one of them reproduces the review's figures exactly:
 The pin pre-registered three outcomes and let the sweep decide.
 
 > **K-III FIRED.**  The four-proposer schedule **forces** — eleven
-> configurations, 1,520 events, **zero refusals**, every event offered
+> configurations, 1,380 events, **zero refusals**, every event offered
 > by the committed layer's own menu and specified by its FULL EVENT
 > TUPLE, max menu hits per specification = 1 everywhere.  It tiles with
 > **ZERO in-round deliveries** at a **total** arbitration share of
@@ -459,7 +459,7 @@ substrate here.
 
 ## 6. Forcedness, the C1 accounting, instrument hygiene, scope
 
-- **K1a, the restricted-menu drive:** 11 configurations, 1,520 events,
+- **K1a, the restricted-menu drive:** 11 configurations, 1,380 events,
   0 refusals, max menu hits per specification = 1 at every step of every
   record.  Uniqueness is structural; the gated content is that the event
   was OFFERED.  **Scope of the prefix rows:** `DOUBLE-GRID(4, 1)`,
@@ -480,7 +480,7 @@ substrate here.
   PRINTED (round-1 MAJOR 3).**  The whole sweep carries the
   **restricted-menu** grade of K1a.  D60's C1 grade — *all* actors
   offered at every step — is a different and strictly stronger property,
-  it is expensive, and it was run on **five records totalling 406
+  it is expensive, and it was run on **five records totalling 380
   steps**:
 
   | record | replay | note |
@@ -489,7 +489,7 @@ substrate here.
   | `ARBCHAIN*(4, 4)` | 66/66 (widest menu 896) | **complete; the 16-direction witness** |
   | **`ARBCHAIN**(5)`** | **157/157 (widest menu 2,125)** | **complete; the 25-direction witness** |
   | `DOUBLE-GRID(3, 2)` | 72/72 (widest menu 536) | complete; D66's committed figures to the digit |
-  | `DOUBLE-GRID(4, 2)` | **71/120, BUDGET-CUT** (widest menu 1,056) | printed 150 s budget |
+  | `DOUBLE-GRID(4, 2)` | **63/120, BUDGET-CUT** (widest menu 986) | printed 150 s budget |
 
   **"1,040 events, C1-graded" was never true and is not said here.**  Of
   the eleven swept configurations, one — `DOUBLE-GRID(3, 2)`, a `k = 3`
@@ -497,7 +497,7 @@ substrate here.
   `LEVELLED-DGRID(4, 2)`, both interleaved records and both
   CONFLICT-GRIDs were **never full-menu replayed at all**.
   **The pin's K1 named the headline record and the gap is carried as a
-  limitation, not papered over:** `DOUBLE-GRID(4, 2)` is cut at 71/120,
+  limitation, not papered over:** `DOUBLE-GRID(4, 2)` is cut at 63/120,
   and the budget is a **receipt-runtime choice**, not a property of the
   object — the 157-event `ARBCHAIN**(5)` replays *complete* in this same
   receipt at a larger printed budget.  What is delivered instead is
@@ -584,8 +584,8 @@ substrate here.
 
 > **THE LICENSED CLAIM.**  Inside the swept family, at grammar layer:
 > **(i)** a four-proposer conflict crystal **exists and forces** — 11
-> configurations, 1,520 events, zero refusals at the **restricted-menu**
-> grade, of which **406 steps across 5 records** carry D60's C1 grade
+> configurations, 1,380 events, zero refusals at the **restricted-menu**
+> grade, of which **380 steps across 5 records** carry D60's C1 grade
 > and **4 of those records are C1-complete** — and it is
 > **delivery-free after a once-paid bootstrap**, at a **total**
 > arbitration share of exactly `1/(k_conflict + 1) = 1/5` at every `R`
@@ -747,7 +747,7 @@ has built*.
 > ~~"a four-proposer conflict crystal exists and forces — 1,040 events,
 > zero refusals, **C1-graded**"~~ — the 1,040 events carry the
 > **restricted-menu** grade; C1 was delivered on 231 of them and the
-> headline record was budget-cut at 71/120.  Replaced by §6's table and
+> headline record was budget-cut at 63/120.  Replaced by §6's table and
 > the printed C1 step count.
 > ~~"an arbitration share of **exactly `1/5` = `1/(k+1)`, the budget
 > bound SATURATED**"~~ and the receipt's ~~"**24 arbitrations of FOUR

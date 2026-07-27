@@ -11252,3 +11252,25 @@ DEFINITIONAL with its empirical content (the V4 collapse; that a
 schedule CAN satisfy it at every k) separated; the budget-bound and
 proposer-count mislabels fixed.  TERMINAL for round 1.  Next: the
 book to #476; then the missing map's functional level.
+
+## 2026-07-27 — THE BOOK INTEGRATED TO #476; D67 NOTE FORWARD-CORRECTED
+## TO ITS OWN RECEIPT (LEDGER #477)
+THE-THEORY-SO-FAR.md -> 11,603 lines, stamp #476, full re-read held.
+The corrected geometry statement integrated one-go: no
+width-uniformity frontier (a whole record in-band on both columns at
+16); the ceiling ladder 9/16/25/36 realized at k = 3..6; the
+HEIGHT-LEVELLING mechanism boxed with its definitional/empirical
+split; the C1 accounting as a number; sprinkling-grade scoped
+per-dimension (2+1 [10,11] vs 3+1 [14,17], max the only touching
+column, 25/36 above the whole range); graveyard gains the withdrawn
+frontier ("announced and never existed"); review statistics NINE
+ROUNDS / SEVEN BLOCKERS with the new lesson that a NEGATIVE can be
+the thing refuted; Part D re-ranked — 1 = THE MISSING MAP'S
+FUNCTIONAL LEVEL (the widest gap), 2 = repair cone, 3 = the width
+road's remains (general-k, tiling/banding above k = 4), 4 = gauge
+(zero everywhere).  **AND THE BOOK PASS CAUGHT A DEFECT: the D67
+note disagreed with its own committed receipt on four figures (the
+note's 1,520 events / 406 C1 steps / cut 71 / 30 PASS vs the
+receipt's printed 1,380 / 380 / 63 / 29 — the receipt verified
+authoritative).  The note is FORWARD-CORRECTED to the receipt in
+this commit; the book had already used the receipt figures.**
