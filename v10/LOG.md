@@ -11629,3 +11629,29 @@ the phase legislates and completes it (off-diagonal + selection);
 the test chain: D72 weld -> phase on wide-crystal loops ->
 does phase closure distinguish the k-ladder -> P2's rank-2 response
 with divergence-freedom against the phase.
+
+## 2026-07-27 — D72 AND D73 PINNED: THE WELD ERA'S TWO UNITS — THE
+## REVERSAL-HOLONOMY IDENTITY AND THE EVEN GRAM (LEDGER #487)
+Pins FROZEN verbatim from the archaeology notes' pinnable-claim
+sections (D71b P1 -> note-d72-weld-pin.md; D71c P2 ->
+note-d73-even-gram-pin.md), headers only added.  **D72 (the phase
+side): the order-dual * on record types coincides with the
+transport-order reversal AB -> BA on the generated line's own
+objects, and A(R) ~ e^{-K(E)}e^{i Phi(O)} is the U(1) holonomy of
+sqrt(q)-transport around delete-then-insert round trips — A_D its
+log-modulus, Phi(O) its argument.**  Three tests on committed
+objects (the reversal test on the F-PAIR fixture; the closure test
+on prod-sqrt(q) round trips; the L_dual re-run on v10 channels);
+four falsifiers, F2/F4 settle the founding slogan negatively — no
+null outcome.  **D73 (the gravity side): resurrect the even Gram
+G^{even}_{jk} that v7 computed exactly and discarded for its trace;
+test K(E) = E^T N E — does the real channel host a genuine rank-2
+metric response?**  Falsifier F1 (Gram ~ identity => the even
+channel cannot host a metric) is a first-class no-go; the v6 p4
+FAILS-FULL-GR precedent must be answered either way.  Together the
+two units test the user's destination hypothesis at its two
+addresses: the phase as holonomy (D72) and the metric as the even
+channel's quadratic response (D73), with the off-diagonal
+completion (v2 p10 Prop 10.6) waiting as their joint successor.
+Both workers dispatched in parallel; D70's round-1 repairs run
+concurrently (its adjudication lands as #488).
