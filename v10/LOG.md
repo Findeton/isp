@@ -11902,3 +11902,42 @@ depth out (8 at d<=5, 344 at d<=6) — caught by the unit's own
 depth discipline.  D65's {4/5,5/4} scoped two-actor (3-actor
 masses {3, 7/2, 19/4}).  GREEN-UNREVIEWED: hostile round
 dispatched.
+
+## 2026-07-27 — D74 ROUND 1 ADJUDICATED AND TERMINAL: TH-II WITH A
+## FIND — THE CURVATURE STANDS AT FOUR POOLS; THE SCALAR PHASE IS
+## EMPTY ON THE HONEST CARRIER; THE EVEN CHANNEL CARRIES J
+## (LEDGER #495)
+Deliverables: reviews/d74-round1-hostile-review.md (independent Opus
+5, REVISE 5 MAJOR / 6 MODERATE / 6 MINOR, + my DELTA), repaired
+receipt (48 PASS / 0 FAIL, 311 s) + retitled note ("TH-II with a
+find").  **FORWARD CORRECTIONS of #494: (1) "the even channel is
+EMPTY / the mirror of v7" IS WITHDRAWN — the reversal-even channel
+carries J, a non-trivial invariant with J = 1 <=> flat on all 8,600
+closed squares (zero exceptions) and J = 0 on all 1,060 defective
+ones — THE ROUND'S FIND, now gated (D9.1): the even channel exactly
+tracks the curvature's geography.  (2) The odd-sector negative's
+EVIDENCE was unearned (a cannot-fail gate; a predicate that could
+not return TH-III; a mis-cited carrier) — the negative itself is
+CONFIRMED AT GREATER STRENGTH on the honest carrier (0/304 reversed
+linear extensions admissible; and the grammar is NOT
+reversal-blocking — 2,196/3,092 closed endpoints reverse fine, so
+the block is defect-specific).  (3) "8 scopes" restated (two nested
+chains + two sub-grammars + the referee's genuinely independent
+(A,B,C,D) pool — 1,728 new defects, masses {4, 9/2}, SAME four
+values, no new prime; cumulative 27,186 non-unit squares).  (4) The
+dichotomy carries its "descent" qualifier (MULT closes 88/88; four
+weakened notions close 0/44 — correct and stronger, correctly
+scoped).**  THE ERA'S EMPIRICAL CLOSE: the grammar as built is a
+CLASSICAL, CURVED, PROBABILISTIC theory — real curvature (prime
+content {2,3}, irremovable, J-governed), a near-complete measure,
+sprinkling-grade geometry — and NO SCALAR PHASE at any native
+address (0-for-5).  THE FORK, formally on the table: (a) the LAST
+DOOR — the record-category's own reversal structure at transport
+scope, the one unprobed address (one cheap unit); (b) THE
+ENRICHMENT — the i-twist as axiom on record-odd structure, with the
+full measured constraint set (the flatness theorem, the measure,
+dual conjugation, the even channel, J).  Recommendation on record:
+the door first; if empty, the enrichment is not a defeat but THE
+FINDING (grammar + one imaginary axiom, everything else derived).
+TERMINAL for round 1.  Next: the era-closing book patch; then the
+fork.

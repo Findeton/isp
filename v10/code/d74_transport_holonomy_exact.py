@@ -26,7 +26,39 @@ BEFORE structure:
   TH-D  THE ODD SECTOR.  Reversal decomposition on the holonomy-
         carrying loops; the search for a residue that CONJUGATES
         rather than inverts; the v7 i-twist correspondence with its
-        adversarial control; the order-dual arm; the asymmetric arm.
+        adversarial control; the order-dual arm; the asymmetric arm;
+        and (ROUND 1) the reversal-EVEN channel, which the first pass
+        declared empty and is not.
+
+ROUND-1 REPAIRS (reviews/d74-round1-hostile-review.md, 5 MAJOR / 6
+MODERATE / 6 MINOR).  Applied here, with the round credited where it
+found something the first pass did not:
+  * MAJOR 1 / MODERATE 4 — C0.1, D1 and D4.1 are ALGEBRAIC IDENTITIES of
+    their own definitions and are now tagged NO INDEPENDENT INFORMATION,
+    as are A3.3 (the self-loop / closure identity of the exchange graph)
+    and the join-closure "construction", which is a definitional remark.
+  * MAJOR 2 — the outcome predicate is rebuilt so that TH-III is
+    REACHABLE, and its positive branch is demonstrated on constructed
+    input (OUT.1) instead of being asserted.
+  * MAJOR 3 — THE ROUND'S FIND: the reversal-EVEN channel is NOT empty.
+    The referee's invariant J (built from this receipt's own D5 raw
+    material) is gated at D9: J = 1 implies r = 1 on every closed square
+    of three arms, and J = 0 on every defective square.
+  * MAJOR 4 — the order-dual arm is rebuilt honestly: ALL linear
+    extensions of the opposite poset (D5.2), not one enumeration order;
+    and the grammar is gated to be NOT reversal-blocking (D5.0), which
+    is the corrected reason for the negative.
+  * MAJOR 5 / MODERATE 6 — the dichotomy carries the DESCENT qualifier
+    everywhere; MULT (the ladder's own rung 3) is gated to close all 44
+    of the descent-obstruction half; the four weakenings of descent are
+    gated at 0 of 44 each.
+  * MODERATE 2 — CTL-ORDER is applied to THIS unit's own dichotomy.
+  * MODERATE 5 — a genuinely independent FOURTH ACTOR POOL (A,B,C,D).
+  * MINOR — D3.1's bare-constant predicate and dead code removed;
+    linear_extensions (required by the AST pass) is now used.
+
+RUNTIME: ~6-9 min on the default arms; printed at the end.
+  D74_SKIP_DEEP=1 drops the deepest two census arms (for a fast pass).
 
 HOUSE RULES OBSERVED
   * Exact arithmetic (fractions.Fraction) end to end.  Every ratio is
@@ -44,8 +76,6 @@ HOUSE RULES OBSERVED
   * Determinism: all set/dict iteration that feeds a printed number is
     ordered by stable_key (hash-seed independent).
 
-RUNTIME: ~6-9 min on the default arms; printed at the end.
-  D74_SKIP_DEEP=1 drops the deepest two census arms (for a fast pass).
 """
 
 from __future__ import annotations
@@ -198,6 +228,38 @@ QUOTES = {
         "lesson)",
         "hand-built symmetry is a cage: carry at least one "
         "asymmetric/defected substrate.",
+    ),
+    # --- added at ROUND 1, for the repairs that cite a committed source ---
+    "d72_T61": (
+        "v10/note-d72-weld-result.md:150-151 (sec.1 rows T6.1, T6.2) and "
+        "its DELTA — NOT licensed claim 7",
+        "the MULTIPLICITIES {1/2: 70, 2/3: 2, 3/2: 6, 2: 10} and the "
+        "half-open split (AB-only 28, BA-only 12) are TABLE ROWS of D72, "
+        "not licensed claims.  D72's licensed claim 7 licenses the VALUE "
+        "SET {1/2,2/3,3/2,2} and the TOTALS (88 of 1,546; 40 half-open; "
+        "12 of 1,554), which CTL-ORDER leaves untouched.  This receipt's "
+        "orientation correction is addressed to the rows and the DELTA.",
+    ),
+    "d71b_carrier": (
+        "v10/note-d71b-holonomy-phase-identity.md:26-37, 287-306, 394-395 "
+        "quoting v7 paper30:2506-2511",
+        "D71b's carrier is the committed UNLABELED RECORD ORDER and its "
+        "* is POSET REVERSAL of a record order type — defined on every "
+        "poset, never undefined.  'Linear extensions' is D72's "
+        "common-carrier construction (note-d72-weld-result.md:60, "
+        "licensed claim 2), scoped to 2-event histories and nothing "
+        "larger.  D74's first pass mis-cited the two.",
+    ),
+    "d65_3.1": (
+        "v10/note-d65-descent-conditions-result.md:277-299 (sec.3.1, the "
+        "repair cone) and :613-617 (residue 2)",
+        "at D = 4: repair constraints 403, repair cone 573, "
+        "record-constant family 313, repairs that also descend 205, and "
+        "repair rows NOT implied by record-constancy = 152 of 403 = "
+        "exactly the rows whose two corners carry different records.  "
+        "Residue 2: M is binary at two actors; at three actors or with "
+        "delivery the coboundary statement must be RE-DERIVED, not "
+        "carried.",
     ),
 }
 
@@ -659,6 +721,7 @@ print("-" * 78)
 
 AB = ("A", "B")
 ABC = ("A", "B", "C")
+ABCD = ("A", "B", "C", "D")      # round-1 MODERATE 5: a fourth actor pool
 
 ARMS = {}          # name -> dict of everything computed for that arm
 _t = time.time()
@@ -872,9 +935,16 @@ check("CTL-ORDER WHAT IS AND IS NOT ORIENTATION-INVARIANT — a control the "
       "closed/half-open/both-blocked TOTALS and the unordered value "
       "classes {r, 1/r} invariant, but it TRANSPOSES the spectrum "
       "(1/2 <-> 2, 2/3 <-> 3/2) and the AB-only / BA-only split.  So "
-      "D72's '{1/2: 70, ... 2: 10}' and its 'AB-only 28, BA-only 12' are "
-      "readings in an arbitrary enumeration orientation; only the totals "
-      "and the paired classes are substrate facts",
+      "'{1/2: 70, ... 2: 10}' and 'AB-only 28, BA-only 12' are readings "
+      "in an arbitrary enumeration orientation; only the totals and the "
+      "paired classes are substrate facts.  ADDRESSEE CORRECTED AT ROUND "
+      "1 (MODERATE 1): those multiplicities and that split are D72's "
+      "TABLE ROWS T6.1/T6.2 and its DELTA (QUOTES['d72_T61']), NOT its "
+      "licensed claim 7 — claim 7 licenses the VALUE SET and the TOTALS, "
+      "and CTL-ORDER leaves every one of D72's licensed claims standing.  "
+      "The correction is routed against the rows; the parent's licence is "
+      "untouched, which is a credit to it.  This unit's OWN dichotomy "
+      "headline is put through the same control at A3.2",
       _stR["closed"] == _A["st"]["closed"]
       and _stR.get("AB-only", 0) + _stR.get("BA-only", 0)
       == _A["st"].get("AB-only", 0) + _A["st"].get("BA-only", 0)
@@ -944,14 +1014,26 @@ for _nm in ("AB4", "ABC3"):
         else:
             _c0_bad += 1
 check("C0.1 r = mu(h.eA.eB)/mu(h.eB.eA) ON EVERY CLOSED SQUARE OF EVERY "
-      "ARM — not just on D72's single witness (T6.4), which is the only "
-      "place the corpus ever checked it.  mu, the product of the layer's "
-      "own weights along a history, is therefore a GLOBAL POTENTIAL for "
-      "the transport connection, and G = 1/mu removes the whole twist at "
-      "one stroke",
+      "ARM.  mu, the product of the layer's own weights along a history, "
+      "is therefore a GLOBAL POTENTIAL for the transport connection, and "
+      "G = 1/mu removes the whole twist at one stroke.  ROUND-1 REPAIR "
+      "(MAJOR 1): this is an ALGEBRAIC IDENTITY OF mu's OWN DEFINITION — "
+      "mu_map sets mu(h.e) := mu(h) q(e|h), so mu(h.eA.eB)/mu(h.eB.eA) IS "
+      "the defining expression for r, on every grammar with a product "
+      "weight, at every depth.  '3,100 of 3,100' is not a measurement of "
+      "this substrate; the only thing it can detect is a disagreement "
+      "between candidates_for's quoted weights and admissible's, i.e. our "
+      "own plumbing.  It is reported because the CONCLUSION (the naive "
+      "removability test is vacuous) is load-bearing, not because the "
+      "count is evidence",
       _c0_bad == 0 and _c0_ok > 0,
       f"{_c0_ok}/{_c0_ok + _c0_bad} closed squares over both arms satisfy "
-      f"the identity exactly; {_c0_bad} exceptions")
+      f"the identity exactly; {_c0_bad} exceptions",
+      corollary_of="an identity of mu_map's recursion mu(h.e) = mu(h) "
+      "q(e|h) together with the definition of r — it cannot return a "
+      "non-zero exception count on any product-weighted grammar.  The "
+      "round-1 referee tagged this and the first pass tagged C0.2 "
+      "instead")
 
 check("C0.2 THEREFORE THE NAIVE COBOUNDARY TEST IS VACUOUS AND MUST NOT "
       "BE REPORTED AS A RESULT.  The sequence layer is a TREE (every "
@@ -1031,7 +1113,13 @@ for _nm in ("AB4", "ABC3"):
           + ("REPRODUCES it exactly"
              if set(_new) | {Fr(1)} == ANCH["d65_ratios"]
              else f"does NOT — it is {fmt(_new)}, a wider mass set at "
-                  f"this pool"))
+                  f"this pool, WHICH IS WHAT D65's OWN RESIDUE 2 "
+                  f"PREDICTED (QUOTES['d65_3.1']): 'at three actors or "
+                  f"with delivery the mass spectrum changes and the "
+                  f"coboundary statement must be re-derived, not "
+                  f"carried'.  This is a CONFIRMATION of the parent at a "
+                  f"scope the parent explicitly refused, not a "
+                  f"correction of it"))
 
 # --- C2  THE ABSTRACTION LADDER -------------------------------------------
 print()
@@ -1125,8 +1213,14 @@ def ladder_row(R, nm, f, actors):
     # squares closing
     cl_all = sum(1 for hh, a, b, r in R["closed"]
                  if V[hh + (a, b)] == V[hh + (b, a)])
-    cl_def = sum(1 for hh, a, b, r, *_ in R["defs"]
-                 if V[hh + (a, b)] == V[hh + (b, a)])
+    # the SET of defective squares this rung closes (indices into R["defs"]),
+    # so that two rungs can be compared as SETS and not merely as counts
+    # (round-1 MAJOR 5: MULT closes the descent-obstruction half; and PORT
+    # closes exactly the same 44 as MENU, which is stronger than C2.4 said)
+    def_set = frozenset(i for i, row in enumerate(R["defs"])
+                        if V[row[0] + (row[1], row[2])]
+                        == V[row[0] + (row[2], row[1])])
+    cl_def = len(def_set)
     # ROUTE 1: potential propagation over the quotient's exchange graph
     ex = [(V[hh + (b, a)], V[hh + (a, b)], r)
           for hh, a, b, r in R["closed"]]
@@ -1159,6 +1253,7 @@ def ladder_row(R, nm, f, actors):
     return dict(cls=cls, mu_desc=mu_desc, mu_tot=len(mus),
                 menu_desc=menu_desc, menu_tot=len(menus), multi=multi,
                 nlab=len(lab), cl_all=cl_all, cl_def=cl_def,
+                def_set=def_set,
                 ex_nodes=n_, ex_rank=rk_, ex_obstr=ob_, selfloop=selfloop,
                 ex_hol=hol_, up_rank=urk_, up_obstr=uob_, surv=surv,
                 up_hol=uhol_)
@@ -1236,19 +1331,24 @@ check("C2.3 ANTI-VACUITY: the removability test at the coarse rungs is "
       + ", ".join(f"{a} {_L[a]['ex_rank']}/{_L[a]['selfloop']}"
                   for a, _ in LADDER))
 
-check("C2.4 THE sigma-PORT RUNG, REPORTED AS THE PIN PREDICTED IT.  D62's "
-      "sigma machinery at transport scope is the PORT rung: the per-actor "
-      "option data that the committed weights actually read.  It does NOT "
-      "carry the whole holonomy — it closes only part of the defective "
-      "census — so the pin's expectation is upheld, and what does carry "
-      "it is named in SEC 4",
-      _L["PORT"]["cl_def"] < len(ARMS["AB4"]["defs"]),
+check("C2.4 THE sigma-PORT RUNG, REPORTED AS THE PIN PREDICTED IT — AND "
+      "IT AGREES WITH MENU AS A SET, WHICH IS STRONGER THAN A COUNT.  "
+      "D62's sigma machinery at transport scope is the PORT rung: the "
+      "per-actor option data that the committed weights actually read.  "
+      "It does NOT carry the whole holonomy — it closes only part of the "
+      "defective census — so the pin's expectation is upheld, and what "
+      "does carry it is named in SEC 4.  ROUND-1 ADDITION: PORT closes "
+      "EXACTLY THE SAME defective squares as MENU, as sets and not merely "
+      "in number",
+      _L["PORT"]["cl_def"] < len(ARMS["AB4"]["defs"])
+      and _L["PORT"]["def_set"] == _L["MENU"]["def_set"],
       f"PORT closes {_L['PORT']['cl_def']} of "
       f"{len(ARMS['AB4']['defs'])} defective squares "
       f"({_L['PORT']['cls']} classes); MENU closes "
-      f"{_L['MENU']['cl_def']}; STATE and MULT close "
-      f"{_L['STATE']['cl_def']} and {_L['MULT']['cl_def']} but at the "
-      f"price of losing descent (C2.1's multi-valued weights: "
+      f"{_L['MENU']['cl_def']}; the two closed SETS are equal = "
+      f"{_L['PORT']['def_set'] == _L['MENU']['def_set']}; STATE and MULT "
+      f"close {_L['STATE']['cl_def']} and {_L['MULT']['cl_def']} but at "
+      f"the price of losing DESCENT (C2.1's multi-valued weights: "
       f"{_L['STATE']['multi']} and {_L['MULT']['multi']} labelled edges)")
 
 REMOVABLE_AT = [a for a, _ in LADDER
@@ -1340,6 +1440,45 @@ if not SKIP_DEEP:
     DEEP.append(census_arm("(A,B) depth<=6", AB, 6))
     DEEP.append(census_arm("(A,B,C) depth<=5", ABC, 5))
 
+# --- ROUND-1 MODERATE 5: A GENUINELY INDEPENDENT SCOPE ---------------------
+# The eight scopes of the first pass are TWO NESTED DEPTH CHAINS at two
+# actor pools plus two sub-grammars of them: census_arm enumerates bases to
+# depth dep-2, so the d<=5 arm re-counts every d<=4 square and the d<=6 arm
+# re-counts every d<=5 square, and the 88 defective squares of AB4 are
+# literally a subset of the 960 of (A,B) d<=5.  Along a nested chain the
+# value set can only GROW, so "it does not move" has content — but it is not
+# eight independent tests, and no scope went beyond three actors.  This is
+# the scope the first pass did not run: a FOURTH ACTOR POOL, with new menu
+# masses, and it is the strongest evidence in the group claim.
+POOL4 = [census_arm("(A,B,C,D) depth<=3", ABCD, 3),
+         census_arm("(A,B,C,D) depth<=4", ABCD, 4)]
+_p4mass = Counter(sum(Fr(q) for e, q in POOL4[1]["cache"][h])
+                  for h in POOL4[1]["cache"])
+_ab4mass = Counter(ARMS["AB4"]["M"].values())
+report("(A,B,C,D) menu-mass spectrum (the four-actor pool's own scale)",
+       f"{fmt(_p4mass)} — against the two-actor pool's {fmt(_ab4mass)} and "
+       f"the three-actor {fmt(Counter(ARMS['ABC3']['M'].values()))}")
+check("A1.3 THE FOURTH ACTOR POOL — THE ONE INDEPENDENT SCOPE, AND IT "
+      "CONFIRMS THE GROUP (round-1 MODERATE 5).  (A,B,C,D) is not nested "
+      "in any arm above it and its menu masses are NEW — no history in "
+      "the two- or three-actor pools carries them — so it is not a "
+      "re-count of squares already seen.  It produces an order of "
+      "magnitude more defective squares than the anchor window, every one "
+      "delivery-bearing, shallowest still at total depth 3, and its value "
+      "set is EXACTLY the anchor window's, with no new prime",
+      all(len(a["defs"]) > 0 and a["dely"] == len(a["defs"])
+          and a["mind"] == ANCH["AB_mindepth"] for a in POOL4)
+      and set(_p4mass) & set(_ab4mass) == set()
+      and set(POOL4[1]["nonunit"]) == set(k for k in ARMS["AB4"]["rat"]
+                                          if k != 1)
+      and set(POOL4[0]["nonunit"]) <= set(POOL4[1]["nonunit"]),
+      "; ".join(f"{a['label']}: {len(a['defs'])}/{a['st']['closed']} "
+                f"non-unit at {sorted(str(k) for k in a['nonunit'])}, "
+                f"delivery {a['dely']}/{len(a['defs'])}, shallowest "
+                f"{a['mind']}" for a in POOL4)
+      + f"; four-actor menu masses {sorted(str(k) for k in _p4mass)} "
+      f"disjoint from the two-actor {sorted(str(k) for k in _ab4mass)}")
+
 check("A1.1 THE DEFECT IS NOT A WINDOW ARTEFACT AND NOT A SYMMETRY "
       "ARTEFACT.  It persists at every depth and pool run here, and it "
       "survives BOTH asymmetric sub-grammars — the one-way link, where "
@@ -1415,18 +1554,32 @@ check("A2.1 EVERY DEFECTIVE SQUARE IS REGISTER-OVERLAPPING, AND THE "
 print()
 print("  [A3]  THE QUOTIENT THAT SEES THE HOLONOMY — constructed, not "
       "searched.")
-print("""        CONSTRUCTION.  Call an equivalence ~ on histories a DESCENT
-        quotient when the weighted menu is constant on classes: h ~ h'
-        implies q(.|h) = q(.|h') as a function on events.  That is
-        exactly what it takes for the connection to be well defined on
-        the quotient graph.  The property is closed under joins (if the
-        menu is constant on the classes of ~1 and of ~2 it is constant
-        on the classes of their join), so a COARSEST descent quotient
-        exists and is unique, and it is not a search: it is the MENU
-        partition itself, h ~ h' iff cache[h] = cache[h'] as weighted
-        multisets.  Refining it by successor-closure (partition
+print("""        CONSTRUCTION — AND ITS EXISTENCE CLAUSE IS DEFINITIONAL, NOT
+        A THEOREM (round-1 MODERATE 4).  Call an equivalence ~ on
+        histories a DESCENT quotient when the weighted menu is constant
+        on classes: h ~ h' implies q(.|h) = q(.|h') as a function on
+        events.  That is exactly what it takes for the connection to be
+        well defined on the quotient graph.  Note what that definition
+        says: "~ refines ker(menu)".  The set of equivalences refining
+        the kernel of a fixed function has a maximum — the kernel — BY
+        DEFINITION, so existence, uniqueness and the identification with
+        the menu partition are one and the same triviality.  The
+        join-closure argument the first pass gave is decoration on a
+        statement that needs no argument, and "it is not a search" is
+        true because the definition names the answer.  It is stated here
+        as a definitional remark and NOT counted as a construction.
+        THE CHOICE OF NOTION IS ALSO DECLARED: the weaker and arguably
+        more natural notion for a labelled quotient graph — h ~ h' need
+        only agree on the weights of events admissible at BOTH — is not
+        join-closed and has no unique coarsest.  A3.4 runs it, and three
+        further weakenings, on the descent-obstruction half; all four
+        identify NONE of it, so nothing in the dichotomy depends on the
+        strong notion having been chosen.
+        Refining the menu partition by successor-closure (partition
         refinement to a fixed point) gives the coarsest weighted
-        CONGRUENCE, the strongest form of descent.  Both are computed.""")
+        CONGRUENCE, the strongest form of descent.  Both are computed,
+        and the MEASURED content — which defective squares each closes —
+        is what carries the claim.""")
 
 
 def congruence(R):
@@ -1532,27 +1685,131 @@ check("A3.1 THE CARRIER EXISTS — AND IT IS WINDOW-DEPENDENT, WHICH IS "
                 f"congruence closes {CARR[_lab]['cong_def']}"
                 for _lab in sorted(CARR)))
 
-check("A3.2 THE DICHOTOMY THEOREM, AND IT IS SHARP.  A descent quotient "
-      "may identify two histories only if their weighted menus agree; "
+# ROUND-1 MODERATE 2: CTL-ORDER, applied to THIS unit's own dichotomy and
+# not only to the parent's spectrum.  The menu partition is a function of
+# the history alone, so it is orientation-free; what is NOT orientation-free
+# is which of a square's two orders the enumerator calls "AB", and hence the
+# printed value and kind of every unseen square.
+_seenR = [r for r in _dR if _CA4["V"][r[0] + (r[1], r[2])]
+          == _CA4["V"][r[0] + (r[2], r[1])]]
+_unseenR = [r for r in _dR if _CA4["V"][r[0] + (r[1], r[2])]
+            != _CA4["V"][r[0] + (r[2], r[1])]]
+_uspecF = Counter(r[3] for r in _unseen)
+_uspecR = Counter(r[3] for r in _unseenR)
+_ukindF = Counter((r[1][0], r[2][0]) for r in _unseen)
+_ukindR = Counter((r[1][0], r[2][0]) for r in _unseenR)
+report("A3.2 under CTL-ORDER (the dichotomy re-run in the opposite "
+       "enumeration orientation)",
+       f"forward seen/unseen {len(_seen)}/{len(_unseen)}, unseen spectrum "
+       f"{fmt(_uspecF)}, unseen kinds "
+       f"{ {str(k): v for k, v in sorted(_ukindF.items())} } | reversed "
+       f"seen/unseen {len(_seenR)}/{len(_unseenR)}, unseen spectrum "
+       f"{fmt(_uspecR)}, unseen kinds "
+       f"{ {str(k): v for k, v in sorted(_ukindR.items())} } | unordered "
+       f"class multiset {{r, 1/r}} on the unseen half: "
+       f"{fmt(_pairclasses(_uspecF))} forward, "
+       f"{fmt(_pairclasses(_uspecR))} reversed")
+
+check("A3.2 THE DESCENT DICHOTOMY, STATED IN ITS ORIENTATION-INVARIANT "
+      "FORM (round-1 MODERATE 2 and MAJOR 5).  A DESCENT quotient may "
+      "identify two histories only if their weighted menus agree; "
       "therefore a square whose two orders have DIFFERENT menus cannot "
-      "close in ANY descent quotient, coarsest or otherwise.  The "
-      "defective census splits exactly in two by that criterion: part of "
-      "it is genuine CONNECTION CURVATURE, carried by the menu quotient; "
-      "the rest is a DESCENT OBSTRUCTION that no quotient graph can "
-      "carry, and for which the exchange square is the only instrument.  "
-      "At (A,B) depth <= 4 the split is exactly even and it is "
-      "kind-clean: every one of the invisible half is an (r,d) pair at "
-      "the single value 1/2, while the visible half carries all five "
-      "kind pairs and the whole spectrum",
+      "close in ANY DESCENT quotient, coarsest or otherwise.  The "
+      "defective census splits in two by that criterion: part of it is "
+      "genuine CONNECTION CURVATURE, carried by the menu quotient; the "
+      "rest is a DESCENT OBSTRUCTION that no quotient ON WHICH THE "
+      "CONNECTION IS WELL DEFINED can carry.  THE QUALIFIER IS "
+      "LOAD-BEARING AND WAS MISSING FROM THE FIRST PASS: coarser "
+      "quotient GRAPHS do close it — A3.5 gates that MULT, rung 3 of "
+      "this unit's own ladder, closes every one of them — what they lose "
+      "is descent.  What is gated here is the part that survives "
+      "CTL-ORDER: the 44 + 44 SPLIT and the UNORDERED value class "
+      "{r, 1/r} of the invisible half are invariant under reversing the "
+      "enumeration; the printed value (1/2 forward, 2 reversed) and the "
+      "printed kind ((r,d) forward, (d,r) reversed) are NOT, and are "
+      "reported as orientation readings, exactly as sec.3(a) demands of "
+      "the parent",
       len(_seen) > 0 and len(_unseen) > 0
       and len(_seen) + len(_unseen) == len(ARMS["AB4"]["defs"])
-      and set(Counter(r[3] for r in _unseen)) == {Fr(1, 2)}
-      and set(Counter((r[1][0], r[2][0]) for r in _unseen))
-      == {("r", "d")},
+      and (len(_seenR), len(_unseenR)) == (len(_seen), len(_unseen))
+      and _pairclasses(_uspecF) == _pairclasses(_uspecR)
+      and set(_pairclasses(_uspecF)) == {Fr(1, 2)}
+      and len(_ukindF) == len(_ukindR) == 1
+      and set(_uspecF) != set(_uspecR),
       f"{len(_seen)} curvature-type + {len(_unseen)} "
-      f"descent-obstruction-type = {len(ARMS['AB4']['defs'])}; unseen "
-      f"spectrum {fmt(Counter(r[3] for r in _unseen))}, unseen kinds "
-      f"{dict(Counter((r[1][0], r[2][0]) for r in _unseen))}")
+      f"descent-obstruction-type = {len(ARMS['AB4']['defs'])}, invariant "
+      f"under CTL-ORDER; unordered class of the invisible half "
+      f"{fmt(_pairclasses(_uspecF))} both ways; ORIENTATION-DEPENDENT "
+      f"readings: unseen spectrum {fmt(_uspecF)} -> {fmt(_uspecR)}, "
+      f"unseen kinds { {str(k): v for k, v in sorted(_ukindF.items())} } "
+      f"-> { {str(k): v for k, v in sorted(_ukindR.items())} }")
+
+# --- A3.4  the four weakenings of DESCENT, on the invisible half ----------
+_W = Counter()
+for _hh, _a, _b, _r, *_rest in _unseen:
+    _s1, _s2 = _hh + (_a, _b), _hh + (_b, _a)
+    _m1 = {e: Fr(q) for e, q in ARMS["AB4"]["cache"][_s1]}
+    _m2 = {e: Fr(q) for e, q in ARMS["AB4"]["cache"][_s2]}
+    _common = set(_m1) & set(_m2)
+    if all(_m1[e] == _m2[e] for e in _common):
+        _W["labelled-edge"] += 1
+    _M1, _M2 = sum(_m1.values()), sum(_m2.values())
+    if set(_m1) == set(_m2) and all(_m1[e] / _M1 == _m2[e] / _M2
+                                    for e in _m1):
+        _W["normalised q/M (D65's repair)"] += 1
+    if set(_m1) == set(_m2):
+        _W["equal support"] += 1
+    if (set(_m1) == set(_m2) and _m1
+            and len({_m1[e] / _m2[e] for e in _m1}) == 1):
+        _W["proportional (projective)"] += 1
+report("A3.4 the invisible half under four WEAKER notions of descent",
+       f"of {len(_unseen)} descent-obstruction squares, identified by: "
+       + ", ".join(f"{k} {_W[k]}" for k in
+                   ("labelled-edge", "normalised q/M (D65's repair)",
+                    "equal support", "proportional (projective)")))
+check("A3.4 THE DICHOTOMY DOES NOT DEPEND ON THE STRONG DESCENT NOTION "
+      "THIS UNIT CHOSE — the round-1 referee's attack, run here and "
+      "reported as it came out.  Four strictly weaker notions of "
+      "'the connection descends' are applied to the invisible half: (i) "
+      "LABELLED-EDGE single-valuedness (the two endpoints need only "
+      "agree on events admissible at both — the notion that is NOT "
+      "join-closed, which is why it was not chosen); (ii) the NORMALISED "
+      "menu q/M, i.e. D65's own committed measure-twisted repair; (iii) "
+      "EQUAL SUPPORT only; (iv) PROPORTIONAL menus (projective descent). "
+      "Every one of them identifies ZERO of the invisible squares.  The "
+      "obstruction is therefore not an artefact of a strong definition: "
+      "the two orders genuinely disagree on the weight of a SHARED "
+      "event, which is the weakest thing that could have failed",
+      all(_W[k] == 0 for k in ("labelled-edge",
+                               "normalised q/M (D65's repair)",
+                               "equal support", "proportional (projective)"))
+      and len(_unseen) > 0,
+      f"0 of {len(_unseen)} under all four weakenings: "
+      + ", ".join(f"{k} {_W[k]}" for k in
+                  ("labelled-edge", "normalised q/M (D65's repair)",
+                   "equal support", "proportional (projective)")))
+
+# --- A3.5  a quotient GRAPH that closes the unclosable half ---------------
+_mult_set = _L["MULT"]["def_set"]
+_menu_set = _L["MENU"]["def_set"]
+_unseen_idx = frozenset(range(len(ARMS["AB4"]["defs"]))) - _menu_set
+check("A3.5 'NO QUOTIENT GRAPH CAN CARRY IT' IS FALSE, AND THE CORRECT "
+      "STATEMENT IS SHARPER (round-1 MAJOR 5).  MULT — rung 3 of THIS "
+      "unit's own ladder, the multiset-of-events quotient — closes every "
+      "single defective square, including all of the descent-obstruction "
+      "half that the menu quotient cannot see.  MULT is a perfectly good "
+      "quotient graph; what it fails is DESCENT, by the multi-valued "
+      "labelled edges C2.1 already printed.  So the exchange square is "
+      "NOT 'the only instrument'; the true statement is that the "
+      "descent-obstruction half is closable ONLY by quotients on which "
+      "the connection is not well defined",
+      _unseen_idx <= _mult_set and _mult_set == frozenset(
+          range(len(ARMS["AB4"]["defs"]))) and _L["MULT"]["multi"] > 0,
+      f"MULT closes {len(_mult_set)}/{len(ARMS['AB4']['defs'])} defective "
+      f"squares, including {len(_unseen_idx & _mult_set)}/"
+      f"{len(_unseen_idx)} of the menu quotient's invisible half — at the "
+      f"price of {_L['MULT']['multi']} multi-valued labelled edges (no "
+      f"descent).  MENU closes {len(_menu_set)} with 0 multi-valued edges")
 
 report("the carrier's holonomy, AB4",
        f"self-loop values (squares closing IN the carrier) "
@@ -1567,8 +1824,15 @@ check("A3.3 THE HOLONOMY ON THE CARRIER IS NOT REMOVABLE, AND THIS IS THE "
       "single class — carrying holonomy != 1.  A self-loop's holonomy is "
       "gauge-invariant outright (any potential whatsoever cancels between "
       "its two ends), so NO potential on the carrier, of any kind, "
-      "removes them.  Unlike C0's verdict this one could have come out "
-      "the other way and did not",
+      "removes them.  ROUND-1 REPAIR (MODERATE 4b): the ARGUMENT is "
+      "sound and the verdict stands, but the GATE below is definitional "
+      "and is tagged as such — in the exchange graph a square's edge runs "
+      "between the classes of its two endpoints, so 'the square closes in "
+      "the quotient' and 'its edge is a self-loop' are THE SAME "
+      "STATEMENT, and 'non-unit self-loops == squares closed' cannot "
+      "fail.  The measured content is A3.1's 44 of 88 and its agreement "
+      "with the congruence; no structural fact about self-loops is "
+      "discovered here",
       sum(v for k, v in _selfh.items() if k != 1) > 0
       and all(sum(v for k, v in CARR[_lab]["selfh"].items() if k != 1)
               == len(CARR[_lab]["seen"]) for _lab in CARR),
@@ -1577,7 +1841,13 @@ check("A3.3 THE HOLONOMY ON THE CARRIER IS NOT REMOVABLE, AND THIS IS THE "
       f"all six full arms: "
       + ", ".join(f"{_lab.split('(')[0].strip()} "
                   f"{sum(v for k, v in CARR[_lab]['selfh'].items() if k != 1)}"
-                  for _lab in sorted(CARR)))
+                  for _lab in sorted(CARR)),
+      corollary_of="definitional in the exchange graph: the edge of a "
+      "square runs between the classes of its two endpoints, so 'closes "
+      "in the quotient' IS 'self-loop', and a defective square's edge "
+      "carries r != 1 by definition of defective.  The non-removability "
+      "VERDICT rests on the gauge-invariance argument stated above, not "
+      "on this count (round-1 MODERATE 4b)")
 
 report("TH-A block time", f"{time.time() - _t:.0f}s")
 
@@ -1597,8 +1867,15 @@ for _nm in ("AB4", "ABC3"):
     SCOPES.append((f"{_nm} ({ARMS[_nm]['actors']}, d<={ARMS[_nm]['dep']})",
                    Counter({k: v for k, v in ARMS[_nm]["rat"].items()
                             if k != 1})))
-for _a in DEEP + ASYM:
+for _a in DEEP + ASYM + POOL4:
     SCOPES.append((_a["label"], _a["nonunit"]))
+print("""  WHAT THE SCOPES ARE, STATED HONESTLY (round-1 MODERATE 5).  The
+  (A,B) and (A,B,C) rows are TWO NESTED DEPTH CHAINS — each deeper arm
+  re-counts every square of the shallower one — plus TWO SUB-GRAMMARS of
+  them.  Nesting is not nothing (along a chain the value set can only
+  grow, so stability there is a real constraint) but it is not
+  independent replication.  The (A,B,C,D) rows ARE independent: a new
+  pool, new menu masses, no square in common with any other arm.""")
 
 CUM = Counter()
 for _lab, _spec in SCOPES:
@@ -1617,10 +1894,15 @@ report("CUMULATIVE over every scope run",
 
 _valsets = [frozenset(s) for _l, s in SCOPES if s]
 _anchorset = frozenset(k for k in ARMS["AB4"]["rat"] if k != 1)
-check("B.1 THE GROUP STABILISES.  Not one scope run here — two more "
-      "depths at two actors, two more at three, and both asymmetric "
-      "sub-grammars — produces a value outside the four the anchor window "
-      "already had, and the cumulative value set IS the anchor window's. "
+check("B.1 THE GROUP STABILISES, ACROSS FOUR MUTUALLY NON-NESTED EVIDENCE "
+      "POOLS: the two-actor depth chain, the three-actor depth chain, the "
+      "two asymmetric sub-grammars, and the four-actor pool (three actor "
+      "pools in all; within a chain the arms are nested and count once). "
+      "Not one scope run here — two more depths at two "
+      "actors, two more at three, both asymmetric sub-grammars, and the "
+      "INDEPENDENT four-actor pool with its own new menu masses — "
+      "produces a value outside the four the anchor window already had, "
+      "and the cumulative value set IS the anchor window's. "
       "Depth and pool multiply the defect COUNTS by more than an order of "
       "magnitude (88 to "
       f"{max(sum(s.values()) for _l, s in SCOPES)}) and move the group "
@@ -1637,13 +1919,18 @@ check("B.2 THE GROUP IS <2, 3> — THE FULL GROUP OF 3-SMOOTH POSITIVE "
       "RATIONALS, free abelian of rank 2 — computed as an integer "
       "exponent lattice (Hermite reduction on the prime valuations), not "
       "read off the four values by eye.  It is NOT cyclic, so it is not "
-      "of D65's shape at all: D65's normalised defect generates <5/4>, "
-      "rank 1 on primes {2, 5}, and 2/3 and 3/2 lie outside it",
+      "of the mass-twist shape at all.  ATTRIBUTION CORRECTED AT ROUND 1 "
+      "(MODERATE 3): the infinite cyclic group <5/4>, rank 1 on primes "
+      "{2, 5}, is D72's object — its licensed claim 6 / T4.3, on the "
+      "NORMALISED d42b3 kernel (QUOTES['d72_group']).  D65 writes no "
+      "group notation anywhere; what D65 commits is the mass set {2, 5/2} "
+      "and the ratio spectrum {1, 4/5, 5/4} (QUOTES['d65']).  2/3 and 3/2 "
+      "lie outside <5/4> either way",
       GCUM["rank"] == 2 and GCUM["primes"] == [2, 3] and GCUM["full"]
       and Fr(2, 3) not in {Fr(5, 4) ** k for k in range(-6, 7)},
       f"prime support {GCUM['primes']}; lattice basis {GCUM['basis']}; "
       f"rank {GCUM['rank']}; index in Z^2 = {GCUM['index']}; "
-      f"D65's group <5/4> has prime support "
+      f"D72 claim 6's group <5/4> has prime support "
       f"{group_of({Fr(5, 4)})['primes']} and rank "
       f"{group_of({Fr(5, 4)})['rank']}")
 
@@ -1681,6 +1968,27 @@ print("""  THE TEST, STATED BEFORE IT IS RUN.  v7 paper 30's law (QUOTES
   sector" is, on the nose, "is there a unimodular part".  Every gate
   below is a form of that question.""")
 
+
+def odd_residue_found(values, dual_conjugating):
+    """THE OUTCOME PREDICATE FOR TH-III, WITH A LIVE POSITIVE BRANCH
+    (round-1 MAJOR 2).  Returns True iff an ORIENTATION-SENSITIVE
+    (conjugating) residue is exhibited, by either of two independent
+    routes:
+      (a) a holonomy value that is unimodular and not 1 — for a
+          real-valued connection that is the sign -1;
+      (b) a dual square whose holonomy is FIXED rather than inverted by
+          the order-dual, i.e. r(dual) == r.
+    The first pass wrote this inline as `bool(_unimod - {1}) or
+    _dual_conj > 0` where `_unimod` was drawn from a set the receipt had
+    already PROVED (D2) contains only positive rationals, and
+    `_dual_conj` was incremented inside a loop whose body never ran.  Both
+    disjuncts were empty by construction, so TH-III could not be returned
+    on any input, and a three-way pin was being decided by a two-way
+    test.  Factoring the predicate out lets OUT.1 FEED IT INPUT ON WHICH
+    IT MUST FIRE, which is what makes the negative reportable."""
+    return bool({v for v in values if v != 1 and abs(v) == 1}) \
+        or dual_conjugating > 0
+
 # --- D1  the reversal is exactly inversion ---------------------------------
 _inv_bad = 0
 _inv_tot = 0
@@ -1693,19 +2001,27 @@ for _hh, _a, _b, _r in ARMS["AB4"]["closed"]:
     _inv_tot += 1
     if rr != 1 / _r:
         _inv_bad += 1
-check("D1 THE REVERSAL IS EXACTLY INVERSION, WITH GAP ZERO: swapping the "
-      "roles of the two events on every closed square returns 1/r "
-      "exactly, on exact Fractions.  So log r is PURELY ODD under "
-      "traversal reversal and there is NO reversal-EVEN part to the "
-      "transport holonomy at all.  Read against QUOTES['Ldual'] that is "
-      "the striking half: v7's amplitude puts the MODULUS in the even "
-      "channel (E) and the PHASE in the odd channel (O); the transport "
-      "holonomy puts its modulus in the ODD channel and leaves the even "
-      "channel empty.  The two objects do not sit in the same slots",
+check("D1 THE REVERSAL ACTS ON r BY INVERSION — A ONE-LINE LEMMA, NOT A "
+      "MEASUREMENT.  r is DEFINED as the ratio q(eA|h)q(eB|h.eA) / "
+      "q(eB|h)q(eA|h.eB); swapping the roles of eA and eB exchanges "
+      "numerator and denominator, so the swapped value is 1/r.  There is "
+      "no substrate, no grammar and no assignment of weights on which "
+      "this can return a non-zero exception count, and ROUND 1 (MAJOR 1) "
+      "was right that the first pass's '1,546/1,546, gap exactly zero' "
+      "implied a measurement it is not.  What follows is that LOG r IS "
+      "PURELY ODD — but that is a statement about log r ALONE, and the "
+      "first pass wrongly promoted it to 'the reversal-EVEN channel is "
+      "empty / the mirror image of v7's amplitude'.  IT IS NOT EMPTY: "
+      "D9 exhibits a non-trivial reversal-EVEN invariant on the very same "
+      "squares.  What IS empty — and D2 settles it a priori, in one line, "
+      "before any fixture runs — is the SCALAR ODD sector: the U(1) part",
       _inv_bad == 0 and _inv_tot > 0,
       f"{_inv_tot - _inv_bad}/{_inv_tot} closed squares satisfy "
-      f"r(reversed) = 1/r exactly; {_inv_bad} exceptions; even part "
-      f"log r + log r(rev) = 0 on all of them")
+      f"r(reversed) = 1/r exactly; {_inv_bad} exceptions — as an identity "
+      f"of the definition of r, on any product-weighted grammar",
+      corollary_of="an algebraic identity of the definition of r (the "
+      "reciprocal of the same expression); it has no positive-exception "
+      "branch on any input this or any other grammar can supply")
 
 # --- D2  the unimodular part -----------------------------------------------
 _allvals = set(CUM) | set(_carrier_vals)
@@ -1724,10 +2040,20 @@ check("D2 THE UNIMODULAR PART IS TRIVIAL, AND FOR A REASON THAT IS NOT A "
 # --- D3  the label-local no-go ---------------------------------------------
 print()
 print("  [D3]  THE LABEL-LOCAL NO-GO — where a phase could not live.")
-_sq_events = Counter()
-for _hh, _a, _b, _r in ARMS["AB4"]["closed"]:
-    _sq_events[tuple(sorted((sk(_a), sk(_b))))] += 0   # shape only
-_lab_ok = all(True for _ in ())
+# ROUND-1 MINOR 3: the first pass gated this with the bare constant True
+# and two dead expressions.  The predicate below actually evaluates the
+# structural fact the theorem rests on — that the two paths of a closed
+# square carry the SAME multiset of events — on every closed square of
+# both anchor arms, and it would report a failure if any did not.
+_lab_bad = 0
+_lab_tot = 0
+for _nm in ("AB4", "ABC3"):
+    for _hh, _a, _b, _r in ARMS[_nm]["closed"]:
+        _lab_tot += 1
+        _p1 = sorted((evsk(e) for e in (tuple(_hh) + (_a, _b))))
+        _p2 = sorted((evsk(e) for e in (tuple(_hh) + (_b, _a))))
+        if _p1 != _p2:
+            _lab_bad += 1
 check("D3.1 ANY CONNECTION WHOSE VALUE DEPENDS ONLY ON THE EVENT LABEL "
       "HAS TRIVIAL HOLONOMY ON EVERY EXCHANGE SQUARE — a one-line "
       "theorem, gated by construction: the two sides of a square use the "
@@ -1736,12 +2062,12 @@ check("D3.1 ANY CONNECTION WHOSE VALUE DEPENDS ONLY ON THE EVENT LABEL "
       "attached to events therefore contributes NOTHING to any exchange "
       "loop.  A non-trivial phase would have to be HISTORY-dependent — "
       "exactly as the transport modulus q(e|h) is",
-      True,
-      "structural: each closed square's two paths are the multiset "
-      "{eA, eB} in the two orders, so a label-indexed cochain cancels "
-      "identically on all "
-      f"{ARMS['AB4']['st']['closed'] + ARMS['ABC3']['st']['closed']} "
-      "closed squares of the anchor arms",
+      _lab_bad == 0 and _lab_tot > 0,
+      "structural: each closed square's two paths carry the SAME event "
+      "multiset, verified here on "
+      f"{_lab_tot - _lab_bad}/{_lab_tot} closed squares of the anchor "
+      f"arms ({_lab_bad} exceptions), so a label-indexed cochain cancels "
+      "identically on every one of them",
       corollary_of="an algebraic identity of the square, not a property "
       "of this substrate — but it is the identity that tells the search "
       "where NOT to look")
@@ -1751,47 +2077,103 @@ print()
 print("  [D4]  THE v7 i-TWIST CORRESPONDENCE — run, and then controlled.")
 _real_fail = sum(1 for hh, a, b, r in ARMS["AB4"]["closed"]
                  if (1 / r) != r)     # rev(L) == conj(L) fails iff r != 1/r
+
+
+def itwist_holds(r_fwd, r_rev):
+    """Does v7's law rev(L) = conj(L) hold for the twisted form
+    L = e^{i log r}?  rev(L) = e^{i log r_rev} and conj(L) = e^{-i log
+    r_fwd}, so the law is log r_rev = -log r_fwd, i.e. r_rev * r_fwd = 1.
+    Exact on Fractions, no floats and no transcendentals: the whole
+    content of the twist is that the reversal INVERTS.  (Round-1 MAJOR 1
+    iii: the first pass's predicate was (-1)*num*den == -(num*den), i.e.
+    -x == -x, which never touches the reversal at all.)"""
+    return r_fwd * r_rev == 1
+
+
 _itwist_fail = 0
 for _hh, _a, _b, _r in ARMS["AB4"]["closed"]:
-    # L' = e^{i log r}: rev(L') = e^{-i log r} = conj(L').  Exact test on
-    # the EXPONENT, no floats: the identity is (-log r) == -(log r).
-    if not (-1) * _r.numerator * _r.denominator == \
-            -(_r.numerator * _r.denominator):
+    okA, qA = b1_adm(list(_hh), _a, AB)
+    okB, qB = b1_adm(list(_hh), _b, AB)
+    okB2, qB2 = b1_adm(list(_hh) + [_a], _b, AB)
+    okA2, qA2 = b1_adm(list(_hh) + [_b], _a, AB)
+    _rrev = Fr(qB * qA2) / Fr(qA * qB2)
+    if not itwist_holds(_r, _rrev):
         _itwist_fail += 1
+# THE CONTROL, REBUILT SO THAT IT CAN FAIL.  The first pass drew 500
+# positive rationals and checked -x == -x, which is true of every number
+# ever written down and reads the substrate nowhere.  The control that
+# actually discriminates is a reversal that is NOT inversion: draw 500
+# adversarial (forward, reversed) pairs with r_rev != 1/r_fwd and confirm
+# that the twisted law FAILS on every one.  That is what shows the i-twist
+# carries exactly the content of D1's identity — no more, and no less.
 import random as _rnd
 _rnd.seed(20260727)
-_adv = [Fr(_rnd.randint(1, 97), _rnd.randint(1, 97)) for _ in range(500)]
-_adv_fail = sum(1 for v in _adv if not (-1) * v.numerator * v.denominator
-                == -(v.numerator * v.denominator))
-check("D4.1 THE i-TWIST 'RESTORES' DUAL CONJUGATION — AND THE "
-      "ADVERSARIAL CONTROL SHOWS THAT IS AN IDENTITY OF THE ANSATZ, NOT "
-      "EVIDENCE.  In the REAL form L = r the v7 law rev(L) = conj(L) "
-      "fails on exactly the non-unit squares (conj is the identity on "
-      "reals, so the law demands r = 1/r).  Twisting to L' = e^{i log r} "
-      "makes rev(L') = conj(L') hold on every square — but it also holds "
-      "for 500 adversarially drawn positive rationals with no connection "
-      "to the substrate.  The i-twist is a change of variables, not a "
-      "discovery: exp(i.) turns ANY odd real into a conjugating "
-      "unimodular.  D72's T3.CTRL made the same point about L_dual's "
-      "zero, and it applies here verbatim",
+_adv = []
+while len(_adv) < 500:
+    _x = Fr(_rnd.randint(1, 97), _rnd.randint(1, 97))
+    _y = Fr(_rnd.randint(1, 97), _rnd.randint(1, 97))
+    if _x * _y != 1:
+        _adv.append((_x, _y))
+_adv_hold = sum(1 for x, y in _adv if itwist_holds(x, y))
+_adv_odd_hold = sum(1 for x, y in _adv if itwist_holds(x, 1 / x))
+check("D4.1 THE i-TWIST 'RESTORES' DUAL CONJUGATION — AND THAT IS AN "
+      "IDENTITY OF THE ANSATZ, NOT EVIDENCE.  In the REAL form L = r the "
+      "v7 law rev(L) = conj(L) fails on exactly the non-unit squares "
+      "(conj is the identity on reals, so the law demands r = 1/r).  "
+      "Twisting to L' = e^{i log r} makes rev(L') = conj(L') hold on "
+      "every square — because for the twisted form the law says exactly "
+      "r(rev) * r = 1, which is D1's identity and nothing else.  exp(i.) "
+      "turns ANY odd real into a conjugating unimodular.  ROUND-1 REPAIR "
+      "(MAJOR 1 iii, MINOR 6): the first pass's control checked "
+      "-x == -x on 500 drawn rationals — a tautology that never applies a "
+      "reversal.  It is replaced by one that CAN fail and does: on 500 "
+      "adversarial (forward, reversed) pairs whose reversal is NOT "
+      "inversion the twisted law fails 500 of 500, while the same "
+      "predicate holds 500 of 500 when the reversal is made inverting.  "
+      "The evidence for 'content-free' is the ARGUMENT, not a count",
       _real_fail == len(ARMS["AB4"]["defs"]) and _itwist_fail == 0
-      and _adv_fail == 0,
+      and _adv_hold == 0 and _adv_odd_hold == 500,
       f"real form: dual-conjugation fails on {_real_fail} of "
       f"{ARMS['AB4']['st']['closed']} squares (= the "
       f"{len(ARMS['AB4']['defs'])} defective ones exactly); i-twisted "
-      f"form: {_itwist_fail} failures; adversarial control: "
-      f"{_adv_fail}/500 failures — the twisted identity is content-free")
+      f"form on the substrate: {_itwist_fail} failures of "
+      f"{ARMS['AB4']['st']['closed']}; DISCRIMINATING CONTROL: the "
+      f"twisted law holds on {_adv_hold}/500 non-inverting drawn pairs "
+      f"and on {_adv_odd_hold}/500 inverting ones — so the twist tests "
+      f"the oddness of the reversal and nothing about this substrate",
+      corollary_of="for the twisted form v7's law reduces to r(rev)*r = "
+      "1, which is D1's algebraic identity; the gate therefore restates "
+      "D1 in other variables.  The CONCLUSION (the i-twist is a change "
+      "of variables, not a discovery) is sound and is carried by the "
+      "argument")
 
 # --- D5  the order-dual arm (the D71b carrier) -----------------------------
 print()
-print("  [D5]  THE ORDER-DUAL ARM — D71b's linear-extension carrier, at "
-      "transport scope.")
+print("  [D5]  THE ORDER-DUAL ARM — POSET REVERSAL, at transport scope.")
+print("""        ATTRIBUTION CORRECTED AT ROUND 1 (MAJOR 4).  The first pass
+        headed this arm 'D71b's linear-extension carrier' and concluded
+        that 'the order-dual IS NOT DEFINED here'.  Three objects were
+        being conflated (QUOTES['d71b_carrier']):
+          * D71b's carrier is the committed UNLABELED RECORD ORDER and
+            its * is POSET REVERSAL of a record order type.  Poset
+            reversal is defined on EVERY poset.  It is never undefined.
+          * 'Linear extensions' is D72's common-carrier construction
+            (its licensed claim 2), scoped to 2-event histories.
+          * What the first pass actually tested was a third thing: ONE
+            enumeration-chosen sequence per endpoint, reversed, asked
+            for admissibility from the empty history.
+        The arm is rebuilt here as the honest question: take the
+        OPPOSITE POSET of each defective endpoint and ask whether it has
+        ANY admissible realisation — i.e. enumerate EVERY linear
+        extension of the event poset (the committed linear_extensions,
+        which the first pass declared as a dependency and never called)
+        and test every one.  That is strictly stronger than the
+        single-order test, and it is what D5.2 gates.""")
 
 
 def admissible_history(seq, actors, filt=None):
     """Is a bare sequence of events an admissible history from the empty
-    history?  (The order-dual of a history is its reversal read as a
-    sequence: D71b's rev on linear extensions.)"""
+    history?"""
     h = []
     for e in seq:
         ok, q = b1_adm(h, e, actors)
@@ -1799,6 +2181,64 @@ def admissible_history(seq, actors, filt=None):
             return False
         h = h + [e]
     return True
+
+
+_RADM = {}
+
+
+def rev_admissible(seq, actors):
+    """Memoised: is the REVERSED sequence an admissible history?"""
+    k = (tuple(seq), actors)
+    v = _RADM.get(k)
+    if v is None:
+        v = admissible_history(list(seq)[::-1], actors)
+        _RADM[k] = v
+    return v
+
+
+# --- D5.0  IS THE GRAMMAR REVERSAL-BLOCKING?  (the first pass said yes) ----
+_fam_rev_ok = _fam_rev_tot = 0
+_bylen = Counter()
+_bylen_ok = Counter()
+for _hh in ARMS["AB4"]["fam"]:
+    if len(_hh) < 2:
+        continue
+    _fam_rev_tot += 1
+    _bylen[len(_hh)] += 1
+    if rev_admissible(tuple(_hh), AB):
+        _fam_rev_ok += 1
+        _bylen_ok[len(_hh)] += 1
+_eps = set()
+for _hh, _a, _b, _r in ARMS["AB4"]["closed"]:
+    _eps.add(tuple(_hh) + (_a, _b))
+    _eps.add(tuple(_hh) + (_b, _a))
+_eps = sorted(_eps, key=sk)
+_ep_ok = sum(1 for s in _eps if rev_admissible(s, AB))
+_ep_del = [s for s in _eps if any(e[0] == 'd' for e in s)]
+_ep_del_ok = sum(1 for s in _ep_del if rev_admissible(s, AB))
+report("AB4 reverse-admissibility of the whole family (|h| >= 2)",
+       f"{_fam_rev_ok} of {_fam_rev_tot} reversed histories are themselves "
+       f"admissible; by length "
+       + ", ".join(f"|h|={L}: {_bylen_ok[L]}/{_bylen[L]}"
+                   for L in sorted(_bylen)))
+check("D5.0 THE GRAMMAR IS NOT REVERSAL-BLOCKING — THE FIRST PASS'S "
+      "STATED REASON FOR THE NEGATIVE WAS FACTUALLY FALSE (round-1 MAJOR "
+      "3a).  D5.1 originally read: 'the reversed sequences are "
+      "OVERWHELMINGLY NOT admissible histories of this grammar, so * is "
+      "not an operation on the defective squares at all'.  Measured on "
+      "the complement it had never looked at, the opposite is true: a "
+      "clear MAJORITY of this grammar's histories reverse into admissible "
+      "histories, and so do a clear majority of the CLOSED-SQUARE "
+      "ENDPOINTS, delivery-bearing ones included.  The 0-of-everything on "
+      "the defective squares is therefore NOT a generic support fact "
+      "about the grammar; it is a sharp and highly non-generic property "
+      "OF THE DEFECT LOCUS — which is a stronger and more interesting "
+      "statement than the one it replaces",
+      _ep_ok * 2 > len(_eps) and _fam_rev_ok * 2 > _fam_rev_tot
+      and _ep_del_ok > 0,
+      f"closed-square endpoints reverse-admissible {_ep_ok}/{len(_eps)}; "
+      f"of the delivery-bearing endpoints {_ep_del_ok}/{len(_ep_del)}; "
+      f"whole family (|h| >= 2) {_fam_rev_ok}/{_fam_rev_tot}")
 
 
 _dual_in = _dual_pairs = _dual_inv = _dual_conj = _dual_other = 0
@@ -1836,18 +2276,57 @@ report("AB4 order-dual census on the defective squares",
        f"{_dual_inv} INVERT (r -> 1/r), {_dual_conj} are FIXED (r -> r), "
        f"{_dual_other} neither")
 check("D5.1 THE ORDER-DUAL SUPPLIES NO ORIENTATION-SENSITIVE RESIDUE AT "
-      "TRANSPORT SCOPE, AND THE REASON IS SUPPORT, NOT SIGN: the "
-      "reversed sequences are overwhelmingly NOT admissible histories of "
-      "this grammar, so * is not an operation on the defective squares at "
-      "all.  D72's T1.4 established that * and the transport reversal "
-      "coincide only on 2-event histories; every defective square here "
-      "sits at total depth >= 3, so the two reversals have already parted "
-      "company where the defect lives.  D71b's carrier is real, and it is "
-      "empty here",
+      "TRANSPORT SCOPE — AND THE REASON IS THE DEFECT LOCUS, NOT THE "
+      "GRAMMAR'S SUPPORT (reason corrected at round 1, MAJOR 3a; D5.0 "
+      "measures the complement the first pass never looked at).  Not one "
+      "defective square has an in-family dual square, so there is no "
+      "second value to compare r against and no conjugating residue can "
+      "be read off one.  D72's T1.4 established that * and the transport "
+      "reversal coincide only on 2-event histories; every defective "
+      "square here sits at total depth >= 3, so the two reversals have "
+      "already parted company where the defect lives",
       _dual_pairs < len(ARMS["AB4"]["defs"]),
       f"in-family dual squares {_dual_pairs}/{len(ARMS['AB4']['defs'])}; "
       f"inverting {_dual_inv}, fixed {_dual_conj}, other {_dual_other}; "
-      f"shallowest defect depth {ARMS['AB4']['defs'] and 3}")
+      f"shallowest defect depth "
+      f"{min(len(row[0]) + 2 for row in ARMS['AB4']['defs'])}")
+
+# --- D5.2  THE HONEST ORDER-DUAL: EVERY LINEAR EXTENSION -------------------
+_le_tot = _le_fwd = _le_rev = _le_seq = 0
+for _hh, _a, _b, _r, *_ in ARMS["AB4"]["defs"]:
+    for _s in (tuple(_hh) + (_a, _b), tuple(_hh) + (_b, _a)):
+        _le_seq += 1
+        _acts = list(_s)
+        for _perm in B1["linear_extensions"](_acts):
+            _le_tot += 1
+            _seq = [_acts[i] for i in _perm]
+            if admissible_history(_seq, AB):
+                _le_fwd += 1
+            if admissible_history(_seq[::-1], AB):
+                _le_rev += 1
+report("AB4 the OPPOSITE POSET of the defective endpoints, over all linear "
+       "extensions",
+       f"{_le_seq} endpoint sequences of the {len(ARMS['AB4']['defs'])} "
+       f"defective squares; {_le_tot} linear extensions of their event "
+       f"posets; {_le_fwd} admissible forwards; {_le_rev} admissible "
+       f"reversed")
+check("D5.2 THE OPPOSITE POSET HAS NO ADMISSIBLE REALISATION AT ALL — the "
+      "honest, and strictly stronger, form of the order-dual negative "
+      "(round-1 MAJOR 4).  For every endpoint of every defective square "
+      "this gate builds the committed event_poset, enumerates EVERY "
+      "linear extension of it (the committed linear_extensions, now "
+      "actually called), confirms that all of them are admissible "
+      "FORWARDS — so the poset is genuinely the history's own causal "
+      "order and nothing is being smuggled — and then tests every "
+      "reversal.  NONE is admissible.  So the order-dual is DEFINED here "
+      "(it is poset reversal, which every poset admits); what is measured "
+      "is that the dual poset has no admissible realisation in this "
+      "family, at all, in any order.  The first pass's single-sequence "
+      "test could only have shown that one enumeration order failed",
+      _le_rev == 0 and _le_fwd == _le_tot and _le_tot > 0,
+      f"{_le_tot} linear extensions over {_le_seq} defective endpoints: "
+      f"{_le_fwd}/{_le_tot} admissible forwards, {_le_rev}/{_le_tot} "
+      f"admissible reversed")
 
 # --- D6  the canonical orientation and sign-definiteness -------------------
 print()
@@ -1933,18 +2412,132 @@ check("D7.1 THE ASYMMETRIC SUBSTRATES RETURN THE SAME U(1) VERDICT — AND "
       + "; ".join(f"{a['label'].split(' ')[0]} {dict(ORI[a['label']][1])}"
                   for a in ASYM))
 
-ODD_FOUND = bool(_unimod - {Fr(1)}) or _dual_conj > 0
+# ===========================================================================
+# D9.  THE REVERSAL-EVEN CHANNEL — THE ROUND'S FIND.
+# ===========================================================================
+print()
+print("  [D9]  THE REVERSAL-EVEN CHANNEL — declared empty by the first")
+print("        pass, and it is not.  ROUND 1's find (MAJOR 3), gated here.")
+print("""        THE INVARIANT.  For a closed exchange square (h; eA, eB)
+        with endpoints s1 = h.eA.eB and s2 = h.eB.eA, define
+             J(square) := [ rev(s1) is an admissible history
+                            AND rev(s2) is an admissible history ]
+        where rev is reversal of the sequence and admissibility is the
+        committed `admissible` from the empty history — exactly what the
+        D5 arm already computed, and never looked at outside the 88.
+        J is SYMMETRIC in (eA, eB) by construction, hence reversal-EVEN:
+        it neither inverts nor conjugates under exchanging the two
+        orders.  It is a predicate of the substrate, not of the
+        enumeration, and it is not a function of r.  The question the
+        first pass never asked is whether it is CONSTANT.  It is not.""")
+
+_JROWS = {}
+for _JR in (ARMS["AB4"], ARMS["ABC3"], FULL[2]):
+    _lab = _JR["label"]
+    _act = _JR["actors"]
+    _jt = _jf = _jt_nonunit = _jf_unit = _jf_def = _mixed = 0
+    for _hh, _a, _b, _r in _JR["closed"]:
+        _r1 = rev_admissible(tuple(_hh) + (_a, _b), _act)
+        _r2 = rev_admissible(tuple(_hh) + (_b, _a), _act)
+        if _r1 != _r2:
+            _mixed += 1
+        if _r1 and _r2:
+            _jt += 1
+            _jt_nonunit += int(_r != 1)
+        else:
+            _jf += 1
+            if _r == 1:
+                _jf_unit += 1
+            else:
+                _jf_def += 1
+    _JROWS[_lab] = dict(jt=_jt, jf=_jf, jt_nonunit=_jt_nonunit,
+                        jf_unit=_jf_unit, jf_def=_jf_def, mixed=_mixed,
+                        ndef=len(_JR["defs"]))
+    report(f"{_lab} the J census",
+           f"J=1 on {_jt} closed squares, of which {_jt_nonunit} have "
+           f"r != 1;  J=0 on {_jf} ({_jf_unit} with r = 1 and {_jf_def} "
+           f"defective);  squares with MIXED reverse-admissibility "
+           f"(exactly one endpoint): {_mixed}")
+
+# is J a relabelling of the register invariant A2.1 / D72 T2.3b already has?
+_j_ov = _disj_j0 = 0
+for _hh, _a, _b, _r in ARMS["AB4"]["closed"]:
+    _J = (rev_admissible(tuple(_hh) + (_a, _b), AB)
+          and rev_admissible(tuple(_hh) + (_b, _a), AB))
+    _ov = bool(b1_regs(_a) & b1_regs(_b))
+    _j_ov += int(_J and _ov)
+    _disj_j0 += int((not _J) and (not _ov))
+# and is it a depth artefact?  stratify the deepest AB4 stratum.
+_d4 = Counter()
+for _hh, _a, _b, _r in ARMS["AB4"]["closed"]:
+    if len(_hh) + 2 != 4:
+        continue
+    _J = (rev_admissible(tuple(_hh) + (_a, _b), AB)
+          and rev_admissible(tuple(_hh) + (_b, _a), AB))
+    _key = "unit" if _r == 1 else "def"
+    _d4[_key] += 1
+    _d4[_key + "_J"] += int(_J)
+report("AB4 J against the register invariant and against depth",
+       f"J=1 AND register-OVERLAPPING: {_j_ov} squares (so J is not the "
+       f"register-disjointness invariant of A2.1 / D72 T2.3b); "
+       f"register-DISJOINT with J=0: {_disj_j0}; at total depth 4 alone, "
+       f"{_d4['unit_J']}/{_d4['unit']} unit squares carry J=1 and "
+       f"{_d4['def_J']}/{_d4['def']} defective ones do")
+
+_J_TOT1 = sum(v["jt"] for v in _JROWS.values())
+_J_EXC = sum(v["jt_nonunit"] for v in _JROWS.values())
+_J_DEF = sum(v["jf_def"] for v in _JROWS.values())
+_J_NDEF = sum(v["ndef"] for v in _JROWS.values())
+check("D9.1 THE REVERSAL-EVEN CHANNEL IS NOT EMPTY: J = 1 IMPLIES r = 1, "
+      "AND J = 0 ON EVERY DEFECTIVE SQUARE.  This is round 1's find and "
+      "it is credited as such — the raw material is this receipt's own D5 "
+      "arm, which evaluated the predicate on the 88 defective squares and "
+      "never on the complement.  Across three arms J = 1 on thousands of "
+      "closed squares and EVERY ONE of them has holonomy exactly 1; every "
+      "defective square in every arm has J = 0.  J is therefore a "
+      "SUBSTRATE-SUPPLIED FLATNESS PREDICATE that locates the curvature, "
+      "and it is reversal-EVEN — it neither inverts nor conjugates.  It "
+      "is NOT a relabelling of the register invariant A2.1 already has "
+      "(hundreds of register-OVERLAPPING squares carry J = 1, and "
+      "register-DISJOINT squares carry J = 0), and it is not a depth "
+      "artefact (it separates within the deepest stratum).  D8's second "
+      "clause — 'every quantity this unit could build on these loops "
+      "inverts under reversal' — is REFUTED by it.  [MEASURED] on three "
+      "windows; NOT a theorem, and not licensed as one: whether "
+      "J = 1 => r = 1 survives greater depth and wider pools is the "
+      "successor's first question",
+      _J_EXC == 0 and _J_TOT1 > 0 and _J_DEF == _J_NDEF
+      and all(v["mixed"] == 0 for v in _JROWS.values())
+      and all(0 < v["jt"] < v["jt"] + v["jf"] for v in _JROWS.values())
+      and _j_ov > 0 and _disj_j0 > 0,
+      f"J=1 on {_J_TOT1} closed squares across "
+      f"{len(_JROWS)} arms with {_J_EXC} exceptions to r = 1; J=0 on "
+      f"{_J_DEF}/{_J_NDEF} defective squares; per arm "
+      + "; ".join(f"{k.split('(')[0].strip()} J=1 {v['jt']} (exceptions "
+                  f"{v['jt_nonunit']}), J=0 {v['jf']} = {v['jf_unit']} "
+                  f"unit + {v['jf_def']} defective"
+                  for k, v in sorted(_JROWS.items()))
+      + f"; mixed-endpoint squares 0 in every arm, so J is well defined "
+      f"as a symmetric predicate")
+
+ODD_FOUND = odd_residue_found(_allvals, _dual_conj)
 check("D8 THE ODD-SECTOR VERDICT: " + ("AN ORIENTATION-SENSITIVE RESIDUE "
-      "WAS FOUND" if ODD_FOUND else "NO ORIENTATION-SENSITIVE RESIDUE "
-      "EXISTS ON THIS CARRIER") + ".  Every quantity this unit could "
-      "build on the holonomy-carrying loops INVERTS under reversal; "
-      "nothing CONJUGATES.  The negative is reported as loudly as a "
-      "positive would have been, per the pin's sec.4: the imaginary "
-      "exponential is not at this address either",
+      "WAS FOUND" if ODD_FOUND else "NO SCALAR ORIENTATION-SENSITIVE "
+      "RESIDUE EXISTS ON THIS CARRIER") + ".  Every SCALAR quantity this "
+      "unit could build on the holonomy-carrying loops INVERTS under "
+      "reversal; nothing CONJUGATES.  The negative is reported as loudly "
+      "as a positive would have been, per the pin's sec.4: the imaginary "
+      "exponential is not at this address either.  ROUND-1 SCOPE REPAIR: "
+      "this is a statement about the SCALAR ODD sector — the U(1) part — "
+      "and D2 settles it a priori in one line for a positive-rational "
+      "connection.  It is NOT the statement that the reversal-even "
+      "channel is empty; D9.1 exhibits a non-trivial invariant there",
       not ODD_FOUND,
       f"unimodular values other than 1: "
       f"{sorted(str(x) for x in _unimod - {Fr(1)})}; order-dual "
-      f"fixed-points {_dual_conj}; i-twist informative = False (D4.1)")
+      f"conjugating (fixed) dual squares {_dual_conj} of {_dual_pairs} "
+      f"in-family dual squares; i-twist informative = False (D4.1); the "
+      f"predicate's positive branch is demonstrated at OUT.1")
 
 report("TH-D block time", f"{time.time() - _t:.0f}s")
 
@@ -1958,40 +2551,84 @@ print("-" * 78)
 print("SEC 7  THE PRE-REGISTERED OUTCOME (pin sec.2), decided by predicate")
 print("-" * 78)
 
+def outcome_of(noncoboundary, values, dual_conjugating):
+    """The pin's three-way selector, as a FUNCTION of its inputs so that
+    each branch can be exercised (round-1 MAJOR 2)."""
+    if not noncoboundary:
+        return ("TH-I", "the transport twist is a coboundary at every "
+                "abstraction on which the question is non-vacuous — the "
+                "scope is secretly flat too")
+    if odd_residue_found(values, dual_conjugating):
+        return ("TH-III", "an orientation-sensitive residue exists on the "
+                "curved loops")
+    return ("TH-II", "non-coboundary, R+-valued, SCALAR ODD SECTOR EMPTY "
+            "— the grammar carries genuine MODULUS curvature with no "
+            "phase")
+
+
 NONCOBOUNDARY = (sum(v for k, v in _selfh.items() if k != 1) > 0
                  and len(NOT_REMOVABLE_AT) > 0)
-RPLUS_ONLY = all(v > 0 for v in _allvals) and not ODD_FOUND
+OUTCOME, OUTTEXT = outcome_of(NONCOBOUNDARY, _allvals, _dual_conj)
 
-if not NONCOBOUNDARY:
-    OUTCOME = "TH-I"
-    OUTTEXT = ("the transport twist is a coboundary at every abstraction "
-               "on which the question is non-vacuous — the scope is "
-               "secretly flat too")
-elif RPLUS_ONLY:
-    OUTCOME = "TH-II"
-    OUTTEXT = ("non-coboundary, R+-valued, ODD SECTOR EMPTY — the grammar "
-               "carries genuine MODULUS curvature with no phase")
-else:
-    OUTCOME = "TH-III"
-    OUTTEXT = "an orientation-sensitive residue exists on the curved loops"
+# --- OUT.1  THE OUTCOME SELECTOR IS THREE-WAY, DEMONSTRATED ---------------
+_probe_I = outcome_of(False, _allvals, _dual_conj)[0]
+_probe_IIIa = outcome_of(True, _allvals | {Fr(-1)}, 0)[0]
+_probe_IIIb = outcome_of(True, _allvals, 1)[0]
+_probe_II = outcome_of(True, _allvals, 0)[0]
+check("OUT.1 THE PRE-REGISTERED OUTCOME SELECTOR HAS A LIVE BRANCH IN "
+      "EVERY DIRECTION, AND IT IS SHOWN RATHER THAN ASSERTED (round-1 "
+      "MAJOR 2).  The first pass's selector could not return TH-III on "
+      "any input the fixture could produce: one disjunct ranged over "
+      "unimodular values in a set D2 had already proved contains only "
+      "positive rationals, and the other over a counter incremented "
+      "inside a loop body that never executed.  A three-way pin was "
+      "decided by a two-way test.  Here the selector is a function and it "
+      "is FED input on which each branch must fire: a flat carrier "
+      "returns TH-I; a sign-valued holonomy returns TH-III; a "
+      "conjugating dual square returns TH-III; the substrate's own "
+      "inputs return TH-II.  The negative at this address is now a "
+      "reportable negative and not an artefact of the predicate",
+      _probe_I == "TH-I" and _probe_IIIa == "TH-III"
+      and _probe_IIIb == "TH-III" and _probe_II == "TH-II"
+      and (OUTCOME, OUTTEXT) == outcome_of(NONCOBOUNDARY, _allvals,
+                                           _dual_conj),
+      f"flat carrier -> {_probe_I}; holonomy set + (-1) -> {_probe_IIIa}; "
+      f"one conjugating dual square -> {_probe_IIIb}; the substrate's "
+      f"actual inputs -> {_probe_II}")
 
+print()
 print(f"  OUTCOME: {OUTCOME} — {OUTTEXT}")
+print(f"           WITH THE ROUND-1 FIND: the reversal-EVEN channel is "
+      f"NOT empty (D9.1).  The delivered outcome is TH-II WITH J — real "
+      f"curvature, scalar phase empty, and an even-channel invariant "
+      f"that predicts the curvature's location.")
 print()
 print("  the predicate, in full:")
 print(f"    non-coboundary on the carrier (non-unit self-loops, which no "
       f"potential can remove)   = {NONCOBOUNDARY}")
 print(f"    every exhibited holonomy value a positive rational           "
       f"            = {all(v > 0 for v in _allvals)}")
-print(f"    an orientation-sensitive (conjugating) residue exists        "
+print(f"    an orientation-sensitive (conjugating) SCALAR residue exists  "
       f"            = {ODD_FOUND}")
+print(f"    a non-constant reversal-EVEN invariant exists (J, D9.1)      "
+      f"            = "
+      f"{all(0 < v['jt'] < v['jt'] + v['jf'] for v in _JROWS.values())}")
+print(f"      of which:  J = 1 => r = 1, exceptions                       "
+      f"            = {_J_EXC} of {_J_TOT1}")
+print(f"                 J = 0 on the defective squares                   "
+      f"            = {_J_DEF} of {_J_NDEF}")
 print(f"    removable at   {REMOVABLE_AT}")
 print(f"    NOT removable at {NOT_REMOVABLE_AT}")
 print(f"    carrier        = the weighted-menu quotient "
       f"({_MENU4['cls']} classes at AB4), equivalently the coarsest "
       f"weighted congruence ({_CA4['cong_cls']} classes)")
-print(f"    group          = {GCUM['name']}")
+print(f"    group          = {GCUM['name']}, at {len(SCOPES)} scopes over "
+      f"three actor pools (2, 3, 4 actors) and two asymmetric "
+      f"sub-grammars = four mutually non-nested evidence pools")
 print(f"    seen / unseen  = {len(_seen)} curvature-type + {len(_unseen)} "
-      f"descent-obstruction-type defective squares")
+      f"descent-obstruction-type defective squares (the second half "
+      f"closes in MULT, a quotient graph on which the connection is not "
+      f"well defined — A3.5)")
 
 print()
 print("-" * 78)
@@ -2007,14 +2644,26 @@ print(f"  anchors: {ANCHOR_FAIL} failures (exit 1 threshold)")
 print(f"  wall clock: {time.time() - T0:.0f}s "
       f"({(time.time() - T0) / 60:.1f} min; the pin's budget is ~25 min)")
 print()
-print("  WHAT THIS RECEIPT DOES NOT CLAIM (pin sec.4): no measure-"
-      "existence claim; no claim that anything found here IS the v7 "
-      "phase (D4.1 shows the i-twist correspondence is content-free); no "
-      "infinite-volume claim; nothing outside the declared families, "
-      "depths and pools; the AB-only/BA-only split and the unpaired "
-      "spectrum are NOT licensed as substrate facts (CTL-ORDER); the "
-      "count of non-trivial basis cycles is forest-dependent and is not "
-      "licensed as a number.")
+print("  WHAT THIS RECEIPT DOES NOT CLAIM (pin sec.4, with the round-1 "
+      "scope repairs): no measure-existence claim; no claim that "
+      "anything found here IS the v7 phase (D4.1 shows the i-twist "
+      "correspondence is content-free); no infinite-volume claim; "
+      "nothing outside the declared families, depths and pools; the "
+      "AB-only/BA-only split and the unpaired spectrum are NOT licensed "
+      "as substrate facts (CTL-ORDER) — and neither are THIS unit's own "
+      "unseen-half spectrum and kind census, which CTL-ORDER transposes "
+      "(A3.2); the count of non-trivial basis cycles is forest-dependent "
+      "and is not licensed as a number; J (D9.1) is [MEASURED] on three "
+      "windows and is NOT a theorem — no claim is made that "
+      "J = 1 => r = 1 survives greater depth or wider pools; the "
+      "descent-obstruction half is NOT claimed to be beyond every corpus "
+      "formalism — D65 sec.3.1's repair cone computes the same criterion "
+      "under a different functor (152 of 403 repair rows not implied by "
+      "record-constancy, QUOTES['d65_3.1']) — what is claimed is that no "
+      "corpus formalism handles it AT TRANSPORT SCOPE and none "
+      "quantifies over quotients; and no claim of independence is made "
+      "for the nested depth chains (only the four-actor pool is an "
+      "independent scope, A1.3).")
 print("=" * 78)
 
 sys.exit(1 if ANCHOR_FAIL else 0)
