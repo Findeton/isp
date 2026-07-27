@@ -12,7 +12,7 @@ out of a committed source file; nothing is quoted from memory.
 > **MAINTENANCE (binding, LOG #443, amended #444):** this book is a
 > LIVING document and the corpus's single synthesis, and it must
 > always read AS IF WRITTEN IN ONE GO at the present moment.  Current
-> as of **LEDGER #460** (v10/LOG.md) / **#130** (v8/LEDGER.md).
+> as of **LEDGER #468** (v10/LOG.md) / **#130** (v8/LEDGER.md).
 > Every terminal unit's patch is an INTEGRATION, never an appendix:
 > the patcher re-reads the whole book, weaves the new state into the
 > chapters, and removes any accretion scaffolding ("late arrivals",
@@ -147,6 +147,19 @@ observes it:
   every depth"** — same rule: true **there**, forbidden bare.
 - **"infinite clocks via Sperner"** — withdrawn; the surviving route is
   trace counting (D54 round 1 BLOCKER 1).
+- **"the atlas carries a gauge structure"** (in any dress: *"a `Z/2`
+  gauge structure"*, *"the transitions generate a group"*) — the
+  transition class on the delivery crystal is a **coboundary**, `H¹ = 0`,
+  and no non-trivial structure group is exhibited anywhere (§B8.8).  The
+  quotable sentences are *"non-identity transitions exist and are
+  mutually consistent"* and *"the class is trivial"*.
+- **"the completions are precisely the objects that repair descent"** —
+  false in **both** directions: the positive repair cone is
+  573-dimensional at the depth-4 truncation while the `(depth, sigma)`
+  family is a 28-dimensional slice, and repairing the commuting squares
+  and descending to a record measure imply each other neither way
+  (§B2.10).  Say instead: *the descent defect names the **job** the
+  completions do; it does not single them out.*
 
 ---
 
@@ -216,7 +229,11 @@ destination that follows.)*
     three**; and beneath that sits a deeper one, since the *identified*
     law of measured physics and this generated grammar meet only at a
     **named missing map**, so until it closes the grammar's geometry and
-    the laboratory's clicks are two ledgers.
+    the laboratory's clicks are two ledgers — though the first segment of
+    that map is now measured, and it reports that the generated law's
+    *normalized* kernel does **not** descend to a measure on records, by
+    exactly one repairable defect (the ratio of two menu totals), while
+    the settled completion's measure genuinely does.
 12. That earlier corpus already owns one piece of Einstein: it derives the
     field equations **in form**, as the thermodynamics of records, and
     proves — by one structural theorem, not a list of failures — that it
@@ -227,7 +244,9 @@ destination that follows.)*
     the withdrawal — but **full Einsteinian manifolds, enriched until
     quantum particles can be created in them**; of its eight arrows two are
     in hand, two are half in hand, three are open, and the last is blocked
-    (PART D).
+    — and on the manifold arrow the charts now have measured transition
+    maps, which turn out to be **pure gauge**, so the tensor programme
+    starts at zero on records made of deliveries (PART D).
 
 ---
 
@@ -248,8 +267,9 @@ destination that follows.)*
 - **A2. The click law** — the six kinds of thing that can happen; what
   is completely settled (what *can* happen), what is settled but odd
   (relative weights), what is not settled at all (what *does* happen);
-  the known warts; the **three senses** of "the click law", and the
-  programme's other stream — the identified law.
+  the known warts; the **three senses** of "the click law"; the
+  programme's other stream — the identified law; and the first measured
+  segment of the map between them.
 - **A3. Relativity without a global now** — cuts, slicings, gauge;
   views that lag; delivery as a two-way join; why every law here must
   be slicing-independent.
@@ -270,8 +290,9 @@ destination that follows.)*
 - **A8. Building the witnesses** — couriers, backflow, and the two
   records that pay the price; what they license and what they do not;
   the crystal, a record that tiles; the wide crystal that tiles *and*
-  spreads; and the theorem that says where the next width must come
-  from.
+  spreads; the theorem that says where the next width must come from;
+  and the transition maps between the charts, which turn out to be
+  pure gauge.
 - **A9. The wall and the crack** — why the delivery-scope theory has
   no finite summary, and the one thing that survives.
 - **A10. The graveyard** — everything tried and discarded, and why
@@ -287,8 +308,9 @@ destination that follows.)*
   carriers and admission clauses; `candidates_for` as sole authority;
   the `1 + k/4` ladder with its spectra; the honest status ladder
   (i)–(vi); the `h12` off-ladder configuration; the merge pricing
-  divergence; and **the action line, the identified law, and the missing
-  map**.
+  divergence; **the action line, the identified law, and the missing
+  map**; and the map's first measured segment, where the generated law
+  is gated against paper 29's descent conditions one by one.
 - **B3. Cuts, foliations, views, transport** — canonical classes; the
   own-view lag with its census; the monotonicity failure; the join-view
   lattice; the two-way join.
@@ -309,8 +331,9 @@ destination that follows.)*
 - **B8. The constructions** — the courier architecture; the shatter-4
   and shatter-5 records; the generalized builder; what is licensed; the
   controls; the crystal's tiling capacity; the wide crystal that
-  composes tiling with width; and the branching bound that caps chart
-  width at the delivery grammar's ceiling.
+  composes tiling with width; the branching bound that caps chart
+  width at the delivery grammar's ceiling; and the transition cocycle,
+  whose class is a coboundary.
 - **B9. The transport wall and the sector crack** — the
   self-arbitration ladder; the design-independent no-go; what remains
   exact; the open sector-exact question.
@@ -358,8 +381,8 @@ destination that follows.)*
   convergence with the free-web theorem.
 - **D2** The roadmap, arrow by arrow, with honest status — eight arrows,
   two HAVE, two PARTIAL, three OPEN, one BLOCKED; **arrow 3 carries both
-  roads** (v10's atlas instrument, its wide crystal and its proved width
-  ceiling; v9's grown webs).
+  roads** (v10's atlas instrument, its wide crystal, its proved width
+  ceiling and its trivially gluing transitions; v9's grown webs).
 - **D3** Particle creation, and one labelled speculation — the
   boundary-freedom <-> vacuum-ambiguity resemblance, costed and marked.
 - **D4** What the destination changes about the open problems.
@@ -753,6 +776,92 @@ breaks.
 > geometry and the laboratory's clicks are **two ledgers**, and no result
 > may be carried from one to the other.
 
+### A2.7 The first segment of that map, measured
+
+For a long time "the missing map" was a name for something nobody knew
+how to attack.  One piece of it is now a measurement, and it is worth
+having, because it is the first time the corpus has held its own grammar
+up against a demand written for the *other* stream and read off the
+answer.
+
+The demand is the simplest one in the descent theorem, and it is the one
+a physicist would ask first.  Suppose two things can happen next and
+neither prevents the other.  Then doing the first and then the second
+should be as likely as doing the second and then the first — because they
+end at the *same record*, and a probability of a record cannot depend on
+the order in which a bookkeeper wrote it down.  Whether the grammar's own
+law obeys that is a finite question, and it has been asked of **every**
+pair, at every reachable point of the two-actor delivery-free world:
+794,570 ordered pairs, nothing sampled.
+
+**Three facts come back, and the first two are the interesting ones.**
+
+> **The raw weights obey it perfectly.**  Take the framework's own
+> unnormalized numbers — the ones that sum to two or two-and-a-half
+> rather than to one — and the two orders agree, on every single pair,
+> without exception.  Order-independence is already there in the weight
+> layer.
+>
+> **The normalized law does not.**  Divide each option by its menu's
+> total, as anyone must to get probabilities, and the two orders disagree
+> on about one pair in thirteen of the pairs the theorem actually speaks
+> to (32,256 of 425,334).
+>
+> **And the whole discrepancy is one ratio.**  The two orders differ by
+> exactly the ratio of the two menus' totals — the *two* against the
+> *two-and-a-half* of chapter A2 — and by nothing else.  Zero
+> exceptions.  It disappears whenever the two intermediate menus happen
+> to weigh the same, and it appears whenever they do not.
+
+So the failure is not ragged.  It is one named quantity, it is a
+quantity the grammar already had a name for, and the place it comes from
+is exactly the place chapter A2's quarter appears: the total jumps from
+two to two-and-a-half at the moment a hidden conflict becomes visible in
+the joint view.  **The defect is the mass jump, seen from the measure's
+side.**
+
+**What follows, stated exactly.**  There is no probability measure on
+records whose conditional probabilities are the grammar's normalized
+menus.  That is not a contradiction anywhere: it is the reason a
+**completion** is needed at all, restated in the vocabulary of the other
+stream.  A completion multiplies the weights by a positive number
+attached to each record point, and a completion that depends only on
+*how deep* the record is and *what situation* it is in cancels the ratio
+identically — a two-line argument, not a measurement.
+
+**And the corpus's own completion really does descend.**  The settled
+root-free one assigns each record a probability that depends on the
+*record* and not on the writing order — verified on all 5,548 record
+classes of the family, with no exceptions.  That is the strongest thing
+the corpus owns on this side of the map, and it was not free: a
+completion can cancel the ratio and still fail to define a measure on
+records, and one can define a measure on records and still fail to cancel
+the ratio.  Both failures are exhibited, so neither implies the other.
+
+**The tempting overstatement, refused.**  It is very tempting to say the
+completions the measure line was forced into are *precisely* the objects
+that repair this defect — that the two lines meet here.  They are not,
+and it does not.  Count the repairs: at the depth where the count is
+exact there are **573** independent directions of positive repair, of
+which 205 also define a record measure, of which the corpus's family is a
+**28**-dimensional slice, of which the settled completion is a single
+ray.  What collapses 573 to 1 is the *shape* postulated in §A6.8 — the
+choice, again — and not descent.
+
+> **So the honest sentence is:** the descent defect names the **job** a
+> completion has to do; it does not single out which completion does it.
+> The measure line's freedom, priced in §A6.8 as a choice, is now priced
+> again from the other side, with a number.
+
+**And the rest of the map is untouched.**  Two of the descent theorem's
+other conditions hold on the generated law and are checkable; one holds
+*for the empty reason* — the generated law is a classical process on
+records, so the question "do these records decohere?" answers itself
+without saying anything — and that vacuity is where the remaining
+distance sits.  The generated line has no amplitudes, no interference,
+no functional level at all.  Nothing here says anything about the
+identified law's measure, and nothing transfers to it.
+
 > **What this chapter does NOT claim.**  That the weights are
 > probabilities, or ratios of probabilities of anything observed.  That
 > the quarter ladder holds at all depths.  That the two merge prices
@@ -762,7 +871,9 @@ breaks.
 > alternatives, and they *disagree observably* on a three-way dispute.
 > And nothing here claims the grammar **is** the identified law of
 > §A2.6, or that any result about one transfers to the other: that
-> transfer is exactly the missing map.
+> transfer is exactly the missing map — of which §A2.7 measures one
+> segment, from the generated side only, at two actors without
+> deliveries, and no wider.
 
 ---
 
@@ -1417,6 +1528,15 @@ identical completed options, event by event, with zero mismatches.
 
 > The completion no longer distinguishes what the law identifies.
 
+**And it is a probability of the record, not of the writing.**  The
+demand that a completed law assign one number to a record however that
+record is serialized — the demand the *other* stream states as a
+condition on any click law at all — is met: the completed measure is
+constant on every one of the 5,548 record classes of the family, checked
+exhaustively (§A2.7).  Worth saying because it was assumed for years
+before it was measured, and because the uncompleted normalized law
+**fails** it.
+
 ### A6.8 The catch: the shape is a choice, not a law
 
 There is a tempting way to state §A6.7 that is **false**, and it is worth
@@ -1464,6 +1584,19 @@ record-level demand at all.**
 > **Therefore, permanently and at every citation:** the record law
 > completes itself **given** that shape.  The shape is a choice.  Nobody
 > has an invariance principle that forces it.
+
+**And the choice now carries a second price tag, computed from a
+different direction entirely.**  §A2.7 asks what a completion has to do
+for the grammar's normalized law to define a probability on records at
+all, and then counts the completions that do it: **573** independent
+positive directions at the depth where the count is exact, **205** of
+which also give a genuine measure on records, **28** of which have the
+shape the corpus assumed, one ray of which is the settled completion.
+So the demand that turns weights into a record probability leaves the
+answer massively underdetermined, and it is the postulated shape — not
+the demand — that picks out one.  The settled completion *does* pass the
+demand, on all 5,548 record classes of the family; it is simply not
+alone in passing it.
 
 ### A6.9 The gap closes — at two actors, delivery-free
 
@@ -2038,12 +2171,116 @@ conflicts** rather than of deliveries.  Whether the grammar can tile with
 arbitration at the same cadence is the open question, and it is the one
 the manifold road runs through.
 
+### A8.8 The transitions between charts, and the atlas that trivializes
+
+A tiling of charts is not yet a space.  What makes an atlas an atlas is
+what happens where two charts **overlap**: the rule for translating one
+chart's coordinates into the other's.  In ordinary geometry those
+translation rules are where all the structure lives — they are what
+carries curvature, what tensors transform under, what a "gauge field"
+*is*.  Every atlas statement in this programme up to here quietly assumed
+those rules were the identity.  On the wide crystal they can be measured,
+and they have been.
+
+**How to label a direction.**  A chart at an event is a set of directions
+leading away from it.  Give each direction a name that the record itself
+supplies: the sequence of wires a step-by-step path along that direction
+uses.  Two overlapping charts then name the same direction in two ways,
+and comparing the names *is* the transition rule.  This is a reading of
+the framework's own generating relation, not a new structure laid on top
+of it, and the receipt proves that the relation it reads generates
+exactly the committed causal order before it measures anything.
+
+**What comes back, in three steps, of which the third reverses the first
+two.**
+
+> **Step one: the rules are not the identity.**  Of the 172 overlapping
+> chart pairs of the 177-event double ring, 115 translate non-trivially.
+> On the pairs of *widest* charts — the four-direction ones, the ones the
+> width mechanism bought — the split is 29 identity to 108 non-identity.
+>
+> **Step two: they are consistent.**  Go around any triangle of
+> overlapping charts, composing the translations, and you come back where
+> you started.  All 111 testable triangles, zero failures — and zero
+> failures anywhere in the whole census, controls included.  Consistency
+> around loops is exactly the condition an atlas has to satisfy to be an
+> atlas at all, and it holds.
+>
+> **Step three, and it is the result: the whole thing is a relabelling.**
+> Each chart in this record has a free binary choice built into it — which
+> of a delivery's two wires is called "the first one".  Choose that flag
+> per chart, correctly, and **every one of the 108 non-trivial
+> translations becomes the identity.**  There is an explicit choice (32
+> charts one way, 28 the other) that does it, with **zero obstructions**;
+> going around loops was never going to detect anything, because there
+> was nothing to detect.  The only survivors are the seven
+> correspondences that change the *length* of a name, and those are not
+> translations of one chart into another at all.
+
+> **So: the atlas is globally trivializable.  There is no gauge
+> structure.**  The transitions are real in the sense that they are not
+> the identity as first written, and empty in the sense that a change of
+> convention removes all of them at once.  The tensor-and-curvature
+> programme starts at **zero** on records made of deliveries.
+
+**This is a negative, and it is worth as much as a positive would have
+been**, because it converts a vague hope into a sharp question.  Before
+the measurement, "do the charts glue non-trivially?" had no answer and no
+test.  Now the test exists and it is one number: the count of
+obstructions.  The transition census behind it ran on five substrates —
+the wide crystal, two uncoupled controls, and two genuine sprinkled
+spacetime records — and the triviality test itself on the three the
+grammar builds, where it is zero everywhere.  (On the two controls it is
+zero for a reason worth knowing: their overlapping charts come in
+disjoint pairs, so there are no loops to obstruct.)
+
+**Three things the measurement refuses to say**, each of which the first
+reading of it said and had to withdraw:
+
+- **The translations do not name a group.**  Each non-trivial one is
+  defined on only half of the directions it could act on, so calling it
+  "an element of"
+  any particular group requires extending it, and the extension is not
+  unique — ten different groups are equally consistent with everything
+  measured, and two of them are minimal in incomparable ways.  What is
+  measured is that non-identity translations *exist* and *agree with each
+  other*.
+- **The contrast between the crystal and the controls is a convention,
+  not a mechanism.**  Under one labelling the crystal's translations and
+  the controls' translations look like different operations; under two
+  others they do not, and the controls turn out to have no overlapping
+  triples at all, so there is nothing there to compare with.
+- **The crystal's identity pairs are duplicate charts, not flat pieces.**
+  Two charts translate by the identity exactly when they contain the same
+  directions — 172 of 172, both ways.  That is a bookkeeping fact about
+  this record, and it fails at the deeper chart depth.
+
+**What survives is an instrument and a question.**  The instrument is a
+validated transition detector with the triviality test built in, which is
+the piece the first version was missing; it caught a real bug in its own
+first run, and it refuses to read an outcome off a labelling that forces
+the answer.  The question is the one nobody had before:
+
+> **Can any record at all carry a transition class that is *not* a
+> relabelling?**
+
+And there is a reason — a reason, not a promise — to look for it in
+records made of **conflicts**.  What makes the relabelling available here
+is that a delivery has exactly two wires and nothing distinguishes them,
+so "which is first" is free at every chart.  A settlement among several
+proposers has no such symmetry.  Whether that is enough is unmeasured.
+
 > **What this chapter does NOT claim.**  That the wide crystal *is* a
 > spacetime, or that it is typical — one engineered family, no genericity,
 > and genericity is not posable here at all (chapter A9).  That the width
 > ceiling is a limit of the framework: it is a limit of **delivery
 > circuits**, and the theorem names the exit.  That a five-direction
-> record exists — it does not, yet.
+> record exists — it does not, yet.  That the atlas carries a gauge
+> structure of any size: it carries none, and the sentence is on the
+> standing blacklist (§0.3).  That the triviality is a *theorem* about
+> the grammar — it is a measurement on one substrate at one chart depth
+> under conventions that have been varied and agree, which is a strong
+> measurement and not a proof.
 
 ---
 
@@ -2430,7 +2667,52 @@ free; the stronger indistinguishability demand leaves 137.
 replacement statement of chapter A6 §A6.8: uniqueness comes from a
 postulated shape, and the shape is a choice.
 
-### A10.12 Smaller retirements, for completeness
+### A10.12 "The atlas carries a gauge structure"
+
+*Claimed:* the wide crystal's charts translate into one another by
+non-identity rules that compose consistently, so the atlas carries a
+genuine two-valued gauge structure — and the coupling between the two
+rings changed *which* one it carries.
+*Killed by:* the computation nobody had run.  Every number behind the
+claim reproduced exactly under independent rebuild; then a single
+further test — is the rule a relabelling? — turned **all** 108
+non-identity translations into the identity at once, with zero
+obstructions, at two independent conventions.  There is no structure
+group, of any size.  Two supporting claims fell with it: the *name* of
+the group was never determined by the data (ten groups are equally
+consistent, two of them minimal and incomparable), and the
+crystal-versus-control contrast is a convention that dissolves under two
+of the three labelings and is confounded with chart width besides.
+*Survived:* the **instrument** — a transition detector with the
+triviality test now built into it, two artifact probes, and a validated
+reading of the framework's own causal order — and a question nobody
+could ask before: *can any record carry a gluing that is **not** a
+relabelling?*, with a stated structural reason to look for it in records
+made of conflicts (§A8.8).
+
+### A10.13 "The completions are precisely what repairs descent"
+
+*Claimed:* the objects the measure line was forced into are exactly the
+objects that fix the generated law's failure to define a probability on
+records — so the two lines of the programme meet there.
+*Killed by:* counting.  The positive repairs form a **573**-dimensional
+cone at the depth where the count is exact, of which the corpus's family
+is a **28**-dimensional slice; and two explicit positive examples show
+that fixing the order-dependence and defining a record probability imply
+each other in **neither** direction.  Corrected in the same pass: the
+load-bearing census is the narrower one the theorem actually speaks to
+(32,256 failures of 425,334, not 88,632 of 665,286), and an item the
+first version moved off the corpus's supplied-not-derived ledger stays
+on it.
+*Survived:* everything measured — the defect is exactly one ratio of
+menu totals, with zero exceptions, exhaustively — plus two facts the
+review added in the unit's favour: the *unnormalized* weight is
+order-independent and constant on every record class, and the settled
+completion's measure **genuinely descends**.  And the honest replacement
+sentence: *the descent defect names the job a completion has to do; it
+does not single out which completion does it* (§A2.7).
+
+### A10.14 Smaller retirements, for completeness
 
 - **"Cross-actor causation produces the sky"** — the control was miswired
   *and* could never have failed; rebuilt honestly, the comparison
@@ -2457,7 +2739,7 @@ postulated shape, and the shape is a choice.
   all falsified, each at exit zero as a deliverable, so that nobody
   walks them again.
 
-### A10.13 The pattern
+### A10.15 The pattern
 
 Two observations about the list, which are the reason it is here.
 
@@ -2468,7 +2750,13 @@ identical, exact numbers reproduced, certificates re-derived by
 different methods.  What failed, repeatedly, was the *sentence the
 result was sold with*: a missing scope label, an arrow borrowed from a
 premise class that had already been refuted, an antecedent nobody
-checked was non-empty.
+checked was non-empty.  The two most recent retirements above are the
+purest form of it: in both, the reviewer confirmed **every** number and
+then ran one computation the unit had not thought to run, and the
+headline did not survive it while the arithmetic did.  Which yields the
+programme's current standing obligation: *name the computation that
+would make the interesting reading false, and run it in the same
+receipt.*
 
 **Second: pre-registration is doing real work.**  The corpus writes down
 what it expects *before* running, with the argument, and then reports
@@ -2499,14 +2787,23 @@ is prose reasoning checked against the code rather than machine-verified
 logic, and a formal mechanization is the line's last residue; and the
 specific numbers are **toy-relative**.  Three actors are out of scope
 entirely.  At delivery scope the question is **open**, and chapter A9
-shows the tool cannot travel.
+shows the tool cannot travel.  One thing has been added from outside the
+line: the completion's probability really is a function of the *record*
+and not of the order it was written in (§A2.7) — which the completion had
+always been assumed to deliver and had never been checked — while the
+uncompleted normalized law is not, and the freedom the shape suppresses
+is now counted from that side too.
 
 **The geometry line.**  At delivery scope, measure-free: the sky is an
 actor-width phenomenon; sky richness has an exact price in actors; the
 shatter ladder is a dimension meter; and the framework admits records
 whose skies sit at the sphere's rung *and one rung beyond*, with the
 higher one **forced** by the menus at every step of its construction.
-So the admissibility layer does not cap the ladder.
+So the admissibility layer does not cap the ladder.  The line has also
+now built a record that tiles *and* spreads, proved four directions to be
+the ceiling of any delivery circuit, and measured the transition rules
+between that record's charts — which are **pure gauge** (§A8.8), so the
+structure a manifold would carry starts at nothing here.
 
 ### A11.2 The convergence question
 
@@ -2576,16 +2873,28 @@ not an answer.
    cover reading, while other results were computed under a different
    one.  Nothing justifies a choice, and several conclusions depend on
    it.
-3. **A crystal made of conflicts.**  The wide crystal exists — a record
-   that tiles *and* carries four-direction charts — and a short theorem
-   then says four is the ceiling for any record built out of deliveries,
-   because a delivery touches two wires.  Past four the width must be
-   bought with **arbitration over conflicts**, and no record carrying a
-   five-direction chart has been built.  This is the manifold road's live
-   construction.
+3. **A crystal made of conflicts.**  Three separate results now point at
+   the same unbuilt object, which is why it ranks here.  *(i)* The wide
+   crystal exists — a record that tiles *and* carries four-direction
+   charts — and a short theorem says four is the ceiling for any record
+   built out of deliveries, because a delivery touches two wires; past
+   four the width must be bought with **arbitration over conflicts**.
+   *(ii)* The transition rules between the wide crystal's charts are a
+   relabelling and nothing more (§A8.8), and the reason they are is that
+   a delivery's two wires are interchangeable — a symmetry a conflict
+   settlement does not have, which is where a non-trivial gluing could
+   first live.  *(iii)* The one place the grammar's normalized law fails
+   to define a probability on records (§A2.7) is the jump in a menu's
+   total from two to two-and-a-half, and that jump happens exactly when a
+   hidden **conflict** becomes visible.  Width, gluing, and the measure
+   defect all name conflict.  No record carrying a five-direction chart
+   has been built.  This is the manifold road's live construction.
 4. **Is there a record-level demand that forces the shape?**  The two
    strongest candidates and their conjunction are eliminated by
-   measurement.  Nobody has a third.
+   measurement.  Nobody has a third — and the demand that the law be a
+   probability of the record at all, which one might have hoped would do
+   the job, cuts the freedom from 573 directions to 205 and stops there
+   (§A2.7).
 5. **A machine-checked version of the delivery-free settlement.**  Both
    halves of it — what a candidate can see, and how the summary updates —
    are proofs read off the framework's own source and checked against it
@@ -2626,10 +2935,13 @@ what this programme has produced:
 - **Report the boring outcome.**  Pre-registering the unexciting
   expectation is the cheapest defence against later talking yourself
   into an exciting one.
-- **Hostile rounds, and recently independent-model rounds** — a
-  reviewer with no prior context, instructed to recompute rather than
-  trust, writing its own code.  Both recent rounds of this kind found a
-  blocker.  Both blockers were in interpretation, not arithmetic.
+- **Hostile rounds, and now independent-model rounds** — a reviewer with
+  no prior context, instructed to recompute rather than trust, writing
+  its own code.  Seven such rounds have run; five found a blocker; **all
+  five blockers were in interpretation, not arithmetic**, and the two
+  most recent were the same mistake twice — a headline built on numbers
+  that were all correct, refuted by a computation the unit had not
+  thought to run.
 - **Forward corrections only.**  The ledger is append-only.  Nothing is
   silently edited; superseded text is preserved verbatim next to its
   replacement.
@@ -2956,6 +3268,12 @@ and the triple.  In the transport arms the deliver and merge sectors are
 initiator-view priced, hence never blind: **blindness comes from
 join-view arbitration layers only.**
 
+**This ladder is also the whole of the descent defect.**  At two actors
+the *total* menu mass is `2` or `5/2` accordingly — 34 of the 36 `sigma`
+states at 2, two at 5/2 — and the failure of the normalized law to
+define a measure on records is exactly the ratio of two such totals, and
+nothing else (§B2.10).
+
 **Mechanical decomposition, gated:** propose and deliver sectors exactly
 `1/4`-or-`0`; every candidate component key group exactly `1/4`; totals
 reconstructed from sectors at **18,210 points, 0 violations** `[EXACT]`.
@@ -3122,6 +3440,10 @@ and its abstract closes on what is missing:
 > result: the grammar of §§B2.2–B2.7 is precisely the *generated record
 > grammar* that the identified law currently receives as a supplied slot.
 
+One segment of that map is now **measured**, from the generated side
+only: §B2.10 gates the closed generated law against paper 29's stated
+requirements one by one.
+
 **The partial bridge `[paper 29, conditional theorem]`.**  A scalar click
 cocycle **descends** from the quantum decoherence functional exactly when
 four conditions hold: the queried record algebra **decoheres**; both
@@ -3164,6 +3486,255 @@ interface, D27's Busch correction, and the **uniqueness retyping** — "one
 class" holds *given* the posited principle under a declared convention,
 while the record alone additionally tolerates sub-bound intrinsic collapse
 and modified-gravity laws).
+
+### B2.10 The descent conditions — the missing map's first measured segment `[D65, LOG #465 → #467 → #468; round 1 TERMINAL]`
+
+*Sources: `note-d65-descent-conditions-pin.md` (STRICT, committed before the receipt); `note-d65-descent-conditions-result.md`; `v10/code/d65_descent_conditions_exact.py` (39 PASS / 3 FAIL — the FAILs are the pre-registered negative, counted as the two statements it is — exit 0, ~336 s) + `data/d65_descent_conditions_exact.out`; `v10/reviews/d65-round1-hostile-review.md` — REVISE, 1 BLOCKER / 5 MAJOR / 8 MINOR / 3 NIT, arithmetic verdict "every single number reproduces".*
+
+**SCOPE, load-bearing in every sentence here: two-actor, delivery-free,
+d42a; the exhaustive depth-6 family (34,375 histories, census
+`[1, 6, 32, 176, 976, 5280, 27904]`, 36 `sigma` states, 176 transition
+keys, 5,548 record classes).**  Nothing transfers to the action line.
+The missing map is an *identification* problem and remains open; this is
+one segment of it, from the generated side.
+
+**The test (DC1).**  Paper 29 Theorem 1's descended identity, applied to
+the generated law's normalized menu kernel `P(e|H) = q(e|H)/N(H)` in
+exact `Fraction`s:
+
+```
+        P(a|H)·P(b|Ha)  =?  P(b|H)·P(a|Hb)
+```
+
+**Two hypotheses were censused and only one is the theorem's.**  Paper 29
+§3 defines commutation at the **refined record level** — both orders
+denote the same cylinder, `[Hab] = [Hba]` — and §3.1 explicitly does not
+require equal weights for distinct serial histories that later push to
+one quotient atom.  So the **refined sub-census is the load-bearing
+test**, and the wider `sigma`-commuting census is context.
+
+| census | ordered pairs | identity holds / fails |
+|---|---|---|
+| ordered pairs `(a, b)` of distinct menu events | **794,570** | — |
+| neither order admissible (mutual exclusion) | 129,284 | — |
+| exactly one order admissible | **0** | — |
+| both orders admissible | 665,286 | — |
+| … non-commuting (`sigma(Hab) ≠ sigma(Hba)`) | **0** | — |
+| … `sigma`-commuting (context) | 665,286 | 576,654 / **88,632** |
+| … **refined-record identical (Theorem 1's hypothesis)** | **425,334** | 393,078 / **32,256** |
+| … `sigma`-commuting but not refined (§3.1 exempts) | 239,952 | — / 56,376 |
+
+Exhaustive over every parent of the family, deepest level in full,
+nothing sampled.  The 56,376 exempt failures carry **no descent
+content**, and the receipt exhibits a genuine positive record-cylinder
+measure that fails that wider test too.  Three facts the census settles
+in passing: admissibility on a menu pair is **symmetric**; the menu is
+**not** all-concurrent (129,284 mutually exclusive ordered pairs); and
+wherever both orders run they already agree on the successor state.
+
+> **`[EXACT]` THE STRUCTURE OF THE FAILURE, ZERO EXCEPTIONS.**
+> **(1)** The **raw** cocycle holds on **all 665,286** commuting pairs —
+> `q(a|H)·q(b|Ha) = q(b|H)·q(a|Hb)`, spectrum `{1: 665286}`.  The entire
+> defect lives in the normalization.  **(2)** The defect is exactly
+> `d = M(sigma(Hb))/M(sigma(Ha))`, `M` the per-state menu mass — the
+> **coboundary of a function of `sigma`**, read off d44a's committed row
+> sums (34 states at `2`, 2 states at `5/2`), zero exceptions.
+> **(3)** Spectrum `{1, 4/5, 5/4}`; a function of
+> `(sigma(H), class(a), class(b))` (616 ordered pair classes, zero
+> splits under either of two key resolutions); it vanishes **exactly** on
+> same-mass intermediates and occurs at every mass-mixed pair; it is
+> confined to **6 of the 36** states, two of which carry mass `5/2`.
+
+**The witness is the quarter law seen from the measure's side.**  At
+depth 1 (`H = [p_A(v0,0)]`, `a` = A's self-arb, `b` = `p_B(v0,1)`): raw
+products identical at `1/32`, but `N(Ha) = 2` while `N(Hb) = 5/2`, so
+`d = 5/4`.  **The mass jumps from 2 to 5/2 exactly when a blind conflict
+group becomes visible in the join view** — §B2.7's `k/4` excess, in the
+descent vocabulary.
+
+**What this says, exactly.**
+
+> **`[EXACT]`** At this scope **no positive measure on refined record
+> cylinders has the generated normalized kernel as its conditionals.**
+> This is Theorem 1's **contrapositive** applied to a conditional system
+> meeting every one of its hypotheses (all displayed conditioning
+> cylinders positive — 179,782 menu entries, smallest weight `1/8`; a
+> common refined cylinder — 16,128 unordered failing squares).
+
+**It is NOT an F1 hit.**  F1 asks for a positive refined cylinder measure
+with unequal conditional products; Theorem 1 forbids that and Theorem 1
+is a theorem.  What is exhibited is a conditional system **not induced by
+any such measure**.  It does not touch the closure theorem, (H1), (H2) or
+the six-state chain, which are statements about the *admissibility and
+weight* law.  And the **unnormalized** weight `q(h) = Π q` is constant on
+all **5,548** record classes — order-independent *and* a function of the
+record — but it is **not a measure**: it is not additive along cuts (cut
+masses `1, 2, 4, 257/32, 1037/64, 2101/64, 68313/1024`), which is exactly
+why a completion is needed.
+
+**The completion corollary `[PROOF, two lines]`.**  The hypothesis is one
+equation, `Z(Hab) = Z(Hba)` for every commuting pair.  Given it both
+displayed products telescope to `q·q·Z(Hab)/Z(H)` and `q·q·Z(Hba)/Z(H)`,
+whose raw factors agree by the gated raw cocycle.  Any completion
+factoring through `(depth, sigma)` satisfies the hypothesis, because
+`|Hab| = |Hba|` and `sigma(Hab) = sigma(Hba)` **is** the definition of
+the commuting class. ∎
+
+**And the corollary is an IMPLICATION, not an equivalence — this is the
+whole content of the round.**  Truncate at depth `D`, let `Z` be free and
+positive on the depth-`D` histories and extend downward by the completion
+recursion; then "repairs the squares" and "descends to a record measure"
+are two *different* linear systems, both solved exactly over `Q`:
+
+```
+  D = 4 :  free variables (depth-4 histories)          976
+           repair constraints Z(Hab) = Z(Hba)          403   exact rank 403
+           dim POSITIVE REPAIR CONE                    573
+           dim of the (depth, sigma) family inside it   28
+           dim record-constant (descending) family     313
+           dim REPAIRS THAT ALSO DESCEND               205
+  D = 5 :  3,053  vs  32  vs  1,138 — the gap WIDENS with depth
+```
+
+`Z ≡ 1` solves both systems, so each solution space meets the positive
+orthant in an **open** cone: every dimension above is a dimension of
+strictly positive completions, leaving **545 independent directions of
+positive repair transverse to the corpus's family**.  Two exact positive
+witnesses, both reconstructed inside the receipt: one **repairs every one
+of the 403 squares and does not descend** (two record classes carry two
+`μ_Z` masses each), one **descends and does not repair** (a measure on
+refined record cylinders, constant on all 427 depth-≤4 record classes,
+that breaks `sigma`-commuting squares).  **Neither property implies the
+other.**
+
+> **`[EXACT]` THE HIERARCHY, AND WHAT SELECTS THE CORPUS'S COMPLETION.**
+> repair cone (**573**) ⊃ repairs that also descend (**205**) ⊃ the
+> `(depth, sigma)` family (**28**) ⊃ one ray, D49's `Zhat`.  **The object
+> that collapses 573 to 1 is D50's FORM choice, not descent** (§B6.12).  The descent defect
+> names the **JOB** the completions do; **it does not single them out**,
+> and the sentence that it does is blacklisted (§0.3).
+
+> **`[EXACT]` AND `Zhat` GENUINELY DESCENDS — the strongest descent-side
+> fact the corpus owns.**  For the transfer operator
+> `(T f)(s) = Σ_e q(e|s) f(s·e)` on the 36 states: `ker(T − 2I)` has
+> dimension 1 with a **strictly positive** generator, values `{1, 4/3,
+> 7/3}` at multiplicities `{29, 5, 2}` — D49's `f = (4,4,3,7,3,3)/3`;
+> `ker(T − I)` is mixed-sign; `ker(T − 5/2 I)` and `ker(T − 9/4 I)` are
+> empty.  `Zhat(h) = 2^(−|h|) f(sigma(h))` has **zero** harmonicity
+> violations at every depth of the family, and `μ_Zhat = q·Zhat` is
+> **constant on all 5,548 record classes** — zero splits.  So `Zhat` is
+> the unique positive `λ = 2` harmonic completion of its form whose
+> measure is a function of the record.  This is an **extra fact, not a
+> corollary**: by the first witness above, repairing the squares does not
+> imply it.
+
+*(d42b3's gradient completion is not an independent second instance: it
+is `Z ≡ 1` at depth 4 pulled back by the same recursion and factors
+through `(depth, sigma)` — 64 occupied cells, zero carrying two values —
+so its zero-failure result is the corollary instantiated.  Its two
+anchors are re-derived: `Z(∅) = 1037/64` is exactly the depth-4 raw cut
+mass, and the deformation census reproduces.)*
+
+**DC2 — a RESTATEMENT, and it is not sold as more.**  Theorem 2 says a
+boundary-only kernel exists exactly when the next-record law is constant
+on the declared boundary's fibres.  With `pi = sigma` that condition **is
+(H1)** (§B6.13) and the state update **is (H2)** (§B6.13b).  Nothing new
+is proved.  What is delivered is the **exhibit**: fibre constancy
+re-affirmed directly on the family (36 fibres, zero carrying two
+different renamed menus, 34,375 histories swept) and the **36-row
+normalized kernel `K(·|sigma)` printed in full** in exact `Fraction`s.
+
+**DC3 — paper 29 §4.3's five durable-record hypotheses, gated one by
+one:**
+
+| # | hypothesis | label | verdict |
+|---|---|---|---|
+| 1 | exclusive & exhaustive durable alternatives | **SUBSTANTIVE** | **PASS** — 718,570-event adversarial pool built independently of `candidates_for`, plus 22,762 on the unrestricted surface; zero duplicates, zero omitted admissible events, zero weight disagreements.  It establishes **enumeration completeness of `candidates_for` against `admissible`**, not exclusivity independent of the layer |
+| 2 | decoherence of the queried record algebra | **REPORTING-ONLY** | trivially satisfied and **uninformative** |
+| 3 | one common refined cylinder | = DC1 | **FAIL** |
+| 4 | positivity of every displayed conditioning cylinder | **SUBSTANTIVE** | **PASS** — 179,782 entries, smallest `1/8` |
+| 5 | sufficient declared boundary | RESTATEMENT (= DC2) | satisfied |
+
+**Hypothesis (2) holds for the empty reason, and that is where the map's
+remaining width is.**  The generated law is a classical stochastic
+process on records, so its decoherence functional is diagonal by
+construction.  Paper 29's hypothesis is a condition on class *operators*
+and their Gram functional; **the generated line has no functional level
+at all**, and this unit does not build one.  That is exactly where D59's
+*record instrument* and paper 29 §9.2's *preferred durable algebra* still
+sit.
+
+**DC4 — D59's six supplied-not-derived items, re-scored.  NO ITEM
+MOVES.**
+
+| # | item | verdict |
+|---|---|---|
+| 1 | boundary state | **stands** — it is the *action* line's slot |
+| 2 | measure and contour | stands; **now PRICED with a number** |
+| 3 | renormalization | stands; untouched |
+| 4 | record instrument | stands; DC3(2) says why it cannot move |
+| 5 | generated record grammar | stands *for the action line* |
+| 6 | clock dictionary | stands; untouched |
+
+**Item 1 stands, and the positive statement belongs beside the ledger
+rather than on it.**  D59's items are quoted from paper 29's abstract,
+where the possessive is the *identified* law's: it is that law's
+boundary/cosmological state — §9.2's slot table names it as selecting
+amplitudes and long-range correlations — which is supplied.  The
+generated line's `sigma` was never on that list, so it cannot move on it.
+What is true, and stated beside it: on the generated side the declared
+boundary statistic is **not supplied** — `sigma` is *constructed* from the
+committed layer, its sufficiency is (H1) + (H2), and the 36-row kernel is
+printed.  **The generated line has a derived boundary statistic; the
+action line's item is untouched.**
+
+**Item 2 is priced.**  The generated law has an order-independent
+unnormalized weight and a normalized kernel that is not order-independent,
+the gap being the coboundary of the state-mass function; a measure on
+record cylinders therefore requires a **completion**, which is supplied
+data whose form D50 already showed is a choice — and the repair cone is
+573-dimensional at the depth-4 truncation, 205 of those dimensions also
+descend, 28 are the `(depth, sigma)` family, and the collapse to one ray
+is the form choice.
+
+**Explicitly not licensed (the unit's own list, and this book observes
+it):** anything about the identified law's measure; *"the completions are
+**precisely** the objects that repair descent"* (§0.3); *"the generated
+law descends to a record measure"* without the completion clause and its
+D50 price; *"the generated law does not descend"* without the
+normalized/unnormalized distinction; *"the unnormalized weight descends
+to a record measure"* — it does not, it is order-independent and
+record-constant and not additive along cuts; D59's boundary-state item as
+**moved**; the 88,632 figure as the descent failure count — that number
+is **32,256 on 425,334**; anything at three actors, at transport scope, or
+beyond the exhaustive depth-6 family; and DC2 as a new result of any kind.
+
+**Residues.**  (1) The map's **functional segment** is untouched and
+named: no class operators, no Gram functional, so DC3(2) stays
+uninformative until one is built — that, not DC1, is where the map is
+widest.  (2) Whether the defect's coboundary form survives beyond this
+scope: `M` takes two values here because the quarter law's excess is
+binary at two actors; at three actors or with delivery the mass spectrum
+changes and the statement must be **re-derived, not carried**.  (3) The
+refined-record identification: `canon` was *chosen* as the record-identity
+functor, and refined ⊆ `sigma`-commuting holds because `canon`-identity
+implies `sigma`-identity — verified for this functor (0 splits over 5,548
+classes), not a general fact.  (4) Depth is mostly discharged: the
+class-level census is complete (`720 = 616 + 104 = Σ m(m−1)` over the 36
+states, every class realized), which with (H1) + (H2) reduces the
+all-depth statements to the finite check the receipt ran; what remains is
+a renaming-composition lemma gated only on the diagonal at depth ≤ 2.
+(5) A depth-free statement of the repair cone — 573 and 3,053 are
+truncation dimensions — is the successor's obligation, and it is D50
+sharpened.  (6) Three actors and transport, out of scope as always.
+
+**The census's information content, said plainly** because the pair
+counts invite overreading: by (H1) and (H2) every quantity in the DC1
+census is a function of `(sigma(H), renamed a, renamed b)`, so the
+794,570 ordered pairs collapse onto **720 class-level facts** (616
+commuting + 104 exclusive), each replicated about 1,100 times.  The
+multiplicity is replication, not independent confirmation — and it is
+what makes the all-depth reading available at all.
 
 ---
 
@@ -3385,7 +3956,11 @@ The existence of a globally consistent `Z` is the **discrete
 Tomonaga–Schwinger integrability condition** for the record functional:
 per diamond the two-path constraint is solvable and underdetermined; the
 global question is whether the ladder excess of §B2.7 is a **coboundary**
-on the cut complex.
+on the cut complex.  §B2.10 answers the corresponding question at the
+level of the *normalized kernel*, exhaustively and in the affirmative:
+the order defect is exactly the coboundary of the per-state menu mass,
+which is why a completion factoring through `(depth, sigma)` annihilates
+it and why no completion is forced to.
 
 ### B4.3 The flatness ladder, and the telescoping theorem
 
@@ -3599,7 +4174,7 @@ grows linearly and the sprinkling gets *sparser* as `N` rises — two
 variables moving in opposite directions.  Both columns are therefore
 reported side by side and **neither is quoted alone**:
 
-| N | growing box: max `|SKY-A|` | fixed box (160): max `|SKY-A|` |
+| N | growing box: max `\|SKY-A\|` | fixed box (160): max `\|SKY-A\|` |
 |---|---|---|
 | 20 | 3 | **4** |
 | 40 | 8 | 7 |
@@ -3616,7 +4191,7 @@ D47b, 400 deterministic deep walks per width to depth 20:
 
 | width | 2 | 3 | 4 | 5 | 6 | 8 |
 |---|---|---|---|---|---|---|
-| max `|directions|` | 2 | 3 | 4 | 4 | 4 | 4 |
+| max `\|directions\|` | 2 | 3 | 4 | 4 | 4 | 4 |
 
 **At width 2 the sky stays at 2 no matter how deep the walk runs.**
 
@@ -3792,7 +4367,11 @@ Source: paper 30 §5.2, receipt-gated; `note-d42b3…` D1.
    orders — the cut-normalized products differ, **`1/2048` versus
    `1/2560`**, because the `N`-sequence runs `(2, 2, 2)` along one order
    and `(2, 2, 5/2)` along the other.  `N` jumps from `2` to `5/2`
-   exactly when the blind pair becomes visible.
+   exactly when the blind pair becomes visible.  **§B2.10 shows this
+   mechanism is the *whole* story and not merely the smallest witness**:
+   over all 665,286 commuting ordered menu pairs of the depth-6 family the
+   order defect equals `M(sigma(Hb))/M(sigma(Ha))` with **zero
+   exceptions**, `M` being that same total.
 5. **The certificate:** 36 diamonds where the two paths give different
    products — a census in two connected components, not one pathological
    case.
@@ -4138,6 +4717,7 @@ Zhat(h)  =  2^(−|h|) · f(class(sigma(h))),     f = (4, 4, 3, 7, 3, 3)/3,  λ 
 | support-preserving | **2,032** join arbitrations keep positive weight — **not** the excluded zero class |
 | it is a *law* | the completed menu, up to base renaming, is a function of `sigma(h)` alone — 1,163 same-sigma comparisons, 0 mismatches |
 | it is a *measure* | completed weights of all depth-`D` histories sum to **exactly 1**, `D = 1..6` |
+| **it DESCENDS** `[D65, §B2.10]` | `μ_Zhat = q·Zhat` is **constant on all 5,548 record classes** — zero splits — so the completed measure is a function of the record and not of the serialization, which the *uncompleted* normalized kernel is not.  `Zhat` is the unique positive `λ = 2` harmonic completion of this form with that property |
 
 **And it is root-free `[EXACT]`:**
 
@@ -4371,6 +4951,20 @@ not available as a record-level demand at all.**
 > **Therefore paper 30 §5.7's stationary form is a genuine CHOICE, D49
 > round-1 B2's restriction is PERMANENT, and every citation of D49 must
 > carry it.**
+
+**The choice is priced a second time, from the descent side `[D65,
+§B2.10]`.**  Ask not "what invariance forces the form?" but "what does a
+completion have to do for the normalized law to be a measure on records
+at all?", and count the answers: at the depth-4 truncation the positive
+**repair cone has dimension 573**, the completions that *also* descend
+form a **205**-dimensional sub-cone, the `(depth, sigma)` family is a
+**28**-dimensional slice of that, and `Zhat` is one ray inside the slice
+— with the gap widening at `D = 5` (3,053 vs 32).  **The collapse to one
+ray is this section's form choice, and nothing else does it.**  What
+D65 adds in D49's favour is that `Zhat` genuinely descends: `μ_Zhat` is
+constant on all 5,548 record classes, gated, and not implied by the
+square identity (a positive witness repairs every square without
+descending).
 
 **Three own defects, owned.**  (1) Run 1 **exited 0 having run no gates** —
 D49's module-level `sys.exit` survived the AST strip and killed the
@@ -4764,6 +5358,13 @@ of their content survives into the proof above.
   case becoming admissible.  Nothing above may be quoted wider.  The
   line's one residue is the **Lean-grade mechanization**: both proofs are
   prose-over-code, gated against the source rather than machine-checked.
+- **And what descends, at that same scope.**  `Zhat`'s measure is a
+  function of the **record** — constant on all 5,548 record classes
+  (§B2.10) — while the *uncompleted* normalized kernel is not, by exactly
+  one mass-ratio coboundary.  Both halves travel together: quoting the
+  first without the second makes the completion look like a formality,
+  and quoting the second without the first reads as a defect in the
+  settled law rather than in the object it completes.
 - **Transport scope (d42b1) is OPEN.**  Paper 32 §2.3's escape result
   stands untouched: deliveries reopen the absorbing sector (a three-event
   history — propose; blind self-seal; deliver the created version across —
@@ -5352,7 +5953,7 @@ circuit, `cpl` inter-ring deliveries per round).  38 configurations swept.
 > residue-2 ceiling `max |D| = 3` was a property of the 1+1 brick's cone,
 > **not of tiling records as such.**
 
-**The witness, and the substrate the cocycle unit asked for:**
+**The witness, and the substrate §B8.8's cocycle census runs on:**
 
 > **DOUBLE-RING(M = 8, R = 10, cpl = 8): 177 events over 16 actors**, two
 > 8-actor rings with all 8 inter-ring deliveries per round.  **FORCED**:
@@ -5492,10 +6093,11 @@ it may be unreachable in this family, which would itself be worth proving.
 (3) The `cpl = 1` dip is measured but the *proof* that layer regularity
 controls homogeneity is not written.  (4) **Size** — records run to 217
 events against 120-point sprinkling comparators; D60's size residue is
-inherited.  (5) **The cocycle unit's non-identity source:** DR(8, 10, 8)
-is the named substrate, but D58's containment theorem says `ω`-overlaps
-are **nested**, so the cocycle must find its non-identity somewhere other
-than in the `ω` pairs.  (6) The `d = 3` story is thinner than the `d = 2`
+inherited.  (5) **The transitions on this substrate** are measured in
+§B8.8: D58's containment theorem says `ω`-overlaps are **nested**, so any
+non-identity must live in the *coordinates* rather than in the `ω` pairs
+— which is exactly where it is found, and exactly where it is then shown
+to be removable.  (6) The `d = 3` story is thinner than the `d = 2`
 story: band membership flips at 14 of 38 configurations between depths and
 `max |D|` reaches 5 (14 records) and 6 (4 records) at `d = 3` — all within
 W4b's bound of 8, and no `d = 3` claim beyond the printed census is made.
@@ -5506,6 +6108,180 @@ W4b's bound of 8, and no `d = 3` claim beyond the printed census is made.
 > `d = 2`**.  What stands between the grammar and sprinkling-grade chart
 > width is not engineering but the branching bound — and the door it
 > leaves open is **conflict**, not transport.
+
+### B8.8 The transition cocycle: non-identity, consistent, and a COBOUNDARY `[D64, LOG #461 → #464 → #466; round 1 TERMINAL]`
+
+*Sources: `note-d64-cocycle-pin.md` (STRICT, frozen and committed before the first receipt existed); `note-d64-cocycle-result.md`; `v10/code/d64_cocycle_exact.py` (15 PASS / 0 FAIL, exit 0, ~61 s) + `data/d64_cocycle_exact.out`; `v10/reviews/d64-round1-hostile-review.md` — REVISE, 1 BLOCKER / 5 MAJOR / 7 MINOR / 4 NIT, with every figure in every table reproduced from the referee's own driver.*
+
+**The question, and why it is posable only now.**  Charts exist (§B8.7);
+overlaps are **inclusions as set maps** by D58's containment theorem, so
+any transition content must live in the **coordinates**.  The
+committed-layer labeling supplies them: a direction's label in chart `e`
+is the set of **wire words** — register sequences — realized by `P`-paths
+`e → f`, where `P` is `event_poset`'s own generating relation
+(`x P y` iff `x` is the immediately preceding event on some register of
+`y`).  The instrument is **validated before it is used**: the transitive
+closure of `P` **equals** the committed order `poset_of` on all three
+grammar substrates, the `P`-path enumeration reaches exactly SKY-B's
+`D_e(d)` at every base event, and every overlapping chart pair is
+same-height.  *That gate earned its keep — it caught a closure bug (an
+accumulation in index order, which is not a topological order on a
+sprinkling) before any census was read.*
+
+**The censuses, at `d = 2` on DOUBLE-RING(8, 10, 8)** (177 events, 141
+charts with `|D| ≥ 2`, 59 wide, 172 overlapping pairs, 137 of them
+wide–wide, 111 triples), at the canonical **ROLE** (port) labeling:
+
+| | pairs | identity | non-identity | cocycle violations |
+|---|---|---|---|---|
+| **all overlapping pairs** | 172 | **57** | **115** | **0** of 111 triples |
+| wide–wide subatlas | 137 | 29 | **108** | 0 |
+| BRICK(8,14) control | 58 | 0 | 58 | 0 |
+| DR(8,10,0) uncoupled control | 68 | 0 | 68 | 0 |
+| `M²⁺¹` sprinkling (`COV`) | 247 | 3 | 244 | 0 |
+| `M³⁺¹` sprinkling (`COV`) | 370 | 4 | 366 | 0 |
+
+Across the whole census, 3,582 overlapping pairs and 993 tested triples,
+**zero cocycle violations anywhere**.  The 115 are **108** pairs carrying
+a length-preserving fibre map plus **7** carrying a *length-changing*
+correspondence (from `P`-edges that skip a height: 335 `P`-edges against
+328 covers); every group-level statement ranges over the 108.
+
+**The outcome is refused at the RAW labeling, and the receipt says so
+before it says anything else.**  On every grammar substrate at both
+depths, *every* overlapping pair has base events with **disjoint register
+sets**, so raw labels can never agree and RAW's 172/172 non-identity is a
+**tautology of the labeling** — PROBE 2 fires and the reading is refused
+there.  The mirror probe does not fire: **no labeling on any substrate at
+any depth is blind**, so a flat reading would not have been an artifact
+either.
+
+> **`[EXACT]` AND THEN THE COMPUTATION THE QUESTION ACTUALLY TURNS ON.**
+> Non-identity transitions plus a clean cocycle do **not** distinguish a
+> non-trivial bundle from a trivial one.  The decisive test is whether
+> the `Z/2`-valued 1-cochain `g` is a **coboundary**: is there
+> `ε: charts → Z/2` with `g_ac = ε_a + ε_c`?  **IT IS.**  On the 138
+> length-preserving classified overlaps, over 60 charts in 9 components,
+> the propagation finds **0 obstructions** with `ε` = **32 charts at 0 /
+> 28 at 1**; re-running the whole census with that relabelling turns
+> **all 108 non-identity transitions into the identity**, leaving 165 of
+> 172 pairs identity and **0 surviving non-identity length-preserving
+> transitions**.  The Čech form `g_ik = g_ij + g_jk` agrees: 108 triples,
+> 0 violations.  It is not a convention artefact: at the alternative port
+> order **REGA**, 0 obstructions as well (`ε` = 40 / 20, 0 survivors).
+>
+> **THEREFORE `H¹ = 0`.**  The atlas is **globally trivializable** by a
+> per-chart choice of which of a delivery's two wires is "port 0"; the
+> holonomy of every loop in the nerve is trivial; the transitions are
+> **pure gauge**.  **No non-trivial structure group is exhibited on the
+> delivery crystal**, and the tensor/curvature programme starts at
+> **zero** there.  The computation is gate **C7** — both routes,
+> obstruction count and relabelled recount — so the verdict is
+> self-verifying on every rerun.
+
+**Four things the census does not establish**, each of them a sentence
+that the measured numbers invite and the evidence refuses:
+
+1. **The group is undetermined.**  No *non-identity* transition is a total
+   permutation — each is defined on **2 of the 4** fibre points, the only
+   total ones being the 29 identities — so naming "the group" requires
+   *extending* 2-point partial bijections into `S₄`, and
+   the extension is not unique.  Exhaustively: of the 30 subgroups of
+   `S₄`, **10** are consistent with every observed map and **two of those
+   are minimal by inclusion and incomparable** — `Z/2 = ⟨τ⟩` and a `Z/4`.
+   **0 of the 108** transitions is uniquely `τ`, and the `Z/4` reading
+   passes the same 108 triples with 0 violations.  The convention-robust
+   statement is: **non-identity partial transitions exist and are mutually
+   consistent.**
+2. **The identity fraction is chart DUPLICATION.**  At `d = 2` on this
+   substrate the split is an exact biconditional over all 172 pairs:
+   *two charts transition by the identity **iff** they have the identical
+   direction set* — `{(same D, identity): 57, (different D,
+   non-identity): 115}`.  The controls' "0 identity" is simply their
+   having no such pairs.  **Not a theorem:** at `d = 3` it fails in both
+   directions.
+3. **The substrate/control involution contrast is a REG-convention
+   observation.**  At ROLE every control transition is a restriction of
+   the all-letter flip `σ` and none of the substrate's is; but this holds
+   at REG only (REGA and the register-free `COV` surrogate dissolve it),
+   it is **width-confounded** (every non-identity substrate pair is a
+   `(4,4)` wide–wide pair and the controls have no wide charts at `d = 2`
+   at all), it rests on 41 pairs of 126, and **the controls' overlap
+   graphs are perfect matchings** — 38 charts / 19 overlaps / 19
+   components and 44 / 22 / 22, every component of size 2 — so there is
+   no composition, no triple and no closure content behind "the controls
+   close to `⟨σ⟩`".  *(The asymmetry runs against the unit's interest and
+   is reported: on the controls `⟨σ⟩` **is** the unique minimal
+   consistent subgroup, so the `σ` naming is better founded than the `τ`
+   naming was.)*
+4. **The pin's lean is half a population fact and half untested.**  All
+   115 non-identity pairs sit at **odd** height — but the even layers
+   contain almost no transitions *to be* non-identity (all 137 wide–wide
+   pairs are odd), so the parity claim is equivalent to a placement fact
+   about the blueprint, fixed before any labeling is chosen.  And the
+   *coupled-wire* half cannot be evaluated: the 27 pairs both of whose
+   base events are inter-ring deliveries are **exactly** the 27 pairs
+   carrying no single-valued correspondence at all — the receipt gates
+   that the two sets are identical.
+
+> **THE LICENSED CLAIM, no wider than the census.**  On DOUBLE-RING(8, 10,
+> 8), at SKY-B depth `d = 2`, at the canonical wire-word labeling: the
+> overlapping-chart transitions are **not all identity** (115 of 172);
+> they **satisfy the cocycle** on all 111 testable triples; every
+> *non-identity* length-preserving transition is a **partial** map on 2 of
+> 4 fibre points; and **their class is a COBOUNDARY** — `H¹ = 0` at REG and REGA
+> alike.  A **width-≤ 4** statement (W4b caps chart width at `B^d = 4` on
+> every delivery substrate), about this substrate at this labeling at this
+> depth, **and no wider**.
+
+**Scope and instrument hygiene.**  Grammar layer, five swept substrates.
+No measure claim, hence no typicality; no physical-object claim (§D1b);
+transfer to the identified law runs through the missing map (§B2.10) and
+is not claimed.  Single sources by AST extraction — the substrate is
+D63's own function object, not a re-typing, and the referee's independent
+re-typing produces the same 177 events; exit-freedom of every extracted
+body gated; the anchor reproduces D63's committed row exactly at both
+depths.  Determinism gated over three `PYTHONHASHSEED`s on the
+substrate's REG cells, byte-identical, with the label naming what it does
+*not* cover.  The cocycle has **no content at `d = 3`** (261 of 273 pairs
+carry no single-valued correspondence) or on the two grammar controls,
+and where it does have content it has exactly one shape: of the 111
+tested triples, 108 are `(identity, τ, τ)` and 3 are `(identity,
+length-changing, length-changing)`, each testing 2 fibre points — so
+*"all triples cocycle-clean"* means `τ ∘ τ = id` was verified 108 times
+on 2 points each, and nothing else.
+
+**Residues.**  (1) **The successor question, sharpened:** not *"is `Z/2`
+enough"* but **can ANY substrate carry a transition class that is not a
+coboundary?**  Everything measured here is compatible with `H¹ = 0` and
+was; the test is the **obstruction count**.  The **arbitration crystal**
+inherits the question with a *stated structural reason*: what makes `ε`
+available is that a delivery's fibre has exactly two ports with no
+intrinsic asymmetry, so "which is port 0" is free per chart, and an
+arbitration event's conflict structure breaks that symmetry.  A reason to
+attack there — not a promise.  (2) **The ambiguous pairs** — 27 of 172 at
+`d = 2`, 261 of 273 at `d = 3` — carry a shared direction with two wire
+words in *both* charts; whether a finer labeling resolves them is the
+single biggest gap between this and a genuine manifold statement.  (3) A
+**general** forcedness test applied to the controls: PROBE 2 is
+RAW-specific and was never run on them.  (4) **Full overlap ⟹ identity,
+here**: the 29 wide–wide overlaps sharing all four directions all carry
+the identity, so the sharp open question is whether any substrate's full
+overlaps carry a **non-identity total permutation** — that, not
+partiality, is what would turn "restriction of a group" into "element of
+a group".  (5) The 7 length-changing correspondences, which are the only
+transitions surviving the `ε` relabelling and belong to no permutation
+group.  (6) Which port convention is canonical: REG, REGA, COV and a
+fourth convention the referee built disagree on the split, and **the
+triviality of the class is the one outcome that survives all of them**.
+(7) Size — 177 events against 120-point sprinklings.
+
+> **What this section delivers is a validated instrument and an honest
+> negative.**  The instrument is a transition detector with a triviality
+> gate, two artifact probes and a validated reading of the committed
+> order.  The negative is that on the delivery crystal there is nothing
+> for it to find: the charts glue, they glue consistently, and they glue
+> **trivially**.
 
 ---
 
@@ -6081,7 +6857,68 @@ successor question — *is there any record-level demand that forces the
 form?* — with the two strongest candidates and their conjunction now
 eliminated.
 
-### B10.13 Instrument and control failures, itemized
+### B10.13 "The atlas carries a `Z/2` gauge structure" `[D64, LOG #464 → #466]`
+
+**Claimed (green-unreviewed):** the wide crystal's overlapping charts
+carry non-identity transitions that satisfy the cocycle and close to
+`Z/2 = ⟨τ⟩`, so the atlas carries a genuine gauge structure — and the
+inter-ring coupling changed *which* involution it carries.
+**Killed by:** a computation the unit never ran, supplied by the round.
+The `Z/2`-valued transition cochain is a **COBOUNDARY**: an explicit
+per-chart port choice `ε` (32 charts at 0, 28 at 1) turns **all 108**
+non-identity length-preserving transitions into identities — 165 of 172
+pairs identity, 0 obstructions over 60 charts in 9 components, the Čech
+lift clean on 108 triples, and the same at REGA.  **`H¹ = 0`; there is no
+structure group to be small.**  Two supporting claims fell with it: the
+group **name** was undetermined by the data (0 of 108 transitions
+uniquely `τ`; an incomparable `Z/4` passes the same triples; 10 of the 30
+subgroups of `S₄` are consistent), and the substrate-versus-control
+involution contrast is a **REG-convention** observation that dies at REGA
+and COV, is width-confounded, rests on 41 pairs of 126, and describes
+controls whose overlap graphs are **perfect matchings** — no composition,
+no triples, no closure content at all.  Also corrected: the identity
+fraction is exact chart **duplication** (172/172 biconditional), not a
+trivializable part; and the pin's coupled-wire lean is **untested**, the
+27 both-coupled pairs being exactly the 27 that carry no single-valued
+correspondence.
+**Survived:** the **instrument** — a transition detector with the
+triviality gate it was missing (now C7, both routes, self-verifying on
+every rerun), PROBE 2's refusal to read the outcome at a labeling that
+forces it, and a validated reading of `event_poset`'s own generating
+relation.  And the sharpened successor question: **can any substrate
+carry a transition class that is NOT a coboundary?** — with a stated
+structural reason to attack the arbitration crystal, since what makes `ε`
+available is a two-port symmetry a conflict event does not have (§B8.8).
+
+### B10.14 "The completions are PRECISELY what repairs descent" `[D65, LOG #467 → #468]`
+
+**Claimed (green-unreviewed):** the completions the dichotomy line forced
+are exactly the objects that repair the generated law's descent defect —
+*the two lines meet*.
+**Killed by:** the repair-space computation, again supplied by the round.
+At the depth-4 truncation the positive repair cone has dimension **573**
+(at `D = 5`, 3,053) against the `(depth, sigma)` family's **28**; the
+completions that also **descend** are **205**; and two exact strictly
+positive witnesses show the implication fails in *both* directions — one
+repairs all 403 commuting squares while its measure splits two record
+classes, one is a genuine record-cylinder measure that breaks
+`sigma`-commuting squares.  **The hierarchy is `573 ⊃ 205 ⊃ 28 ⊃ 1`, and
+the collapse to one ray is D50's form choice, not descent.**  Corrected
+in the same round: the load-bearing census is the **refined** sub-census
+(**32,256 of 425,334**, since paper 29 §3.1 exempts the wider class, and
+a genuine record measure fails that wider test too), and D59's
+boundary-state item does **not** move — the generated line's derived
+`sigma` statistic is stated *beside* the ledger, not on it.
+**Survived:** everything measured — the defect is exactly one mass-ratio
+coboundary, `sigma`-functional, zero exceptions, exhaustively over the
+whole family — plus two facts the round *added* in the unit's favour and
+which are now gated: the raw path weight is constant on all **5,548**
+record classes, and **`Zhat`'s measure genuinely descends**, the
+strongest descent-side fact the corpus owns.  And the honest replacement:
+*the descent defect names the JOB the completions do; it does not single
+them out* (§B2.10).
+
+### B10.15 Instrument and control failures, itemized
 
 - **TG5's null "cross-actor causation produces the sky"** `[D47 round 1,
   MAJOR R1]` — the null's actor extraction returned the **event type** on
@@ -6160,15 +6997,28 @@ eliminated.
   genuinely fail (§B6.13b).  *"24 PASS" is not 24 pieces of evidence, and
   the receipt now says so itself.*
 
-### B10.14 The pattern, stated as a statistic
+### B10.16 The pattern, stated as a statistic
 
 - **Almost every headline correction hit an interpretation sentence, not a
-  computation.**  In the two independent-model rounds (D54, D55), the
-  verdicts were 1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT **each**; in D54
-  *all three top findings hit the interpretation layer* and the
-  mathematical core survived everything; in D55 **everything
-  computational survived**, including a full independent rebuild of a
-  42-actor, 84-event record that came out **identical and forced**.
+  computation.**  Seven independent-model rounds have run (D54, D55, D61,
+  D62, D63, D64, D65); five returned a BLOCKER and **every one of the five
+  was in the interpretation layer, none in the arithmetic**.  In D54 and
+  D55 the verdicts were 1 BLOCKER / 2 MAJOR / 8 MINOR / 3 NIT **each**,
+  and in D55 everything computational survived including a full
+  independent rebuild of a 42-actor, 84-event record that came out
+  **identical and forced**.  D64 and D65 are the same failure twice: the
+  referee reproduced *every* number and then ran a computation the unit
+  had not thought to run — the coboundary test (§B8.8) and the repair-cone
+  dimension (§B2.10) — and each refuted the headline built on the numbers
+  it had just confirmed.  **A verified computation is not a verified
+  claim**, and the corpus's standing lesson from these two is to ask what
+  computation would *distinguish* the headline from its trivial
+  alternative, before writing the headline.
+- **And one round in this line survived as written.**  D62's cover
+  sentence went into an independent round that rebuilt all five update
+  rows from the prose alone, swept 4,778,310 transitions two depths past
+  the receipt, and returned **zero mismatches and 0 BLOCKER** (§B6.13b).
+  The statistic above is not "reviews always find something".
 - **Pre-registration is doing real work.**  D55's pin records that **five
   of seven pre-registrations in that campaign were corrected**.  D46's
   three-round sweep produced **five headline reversals** across six units.
@@ -6201,7 +7051,13 @@ delivery-free d42a scope and `Zhat` holds at every depth there.  Still
 CHOICE** (§B6.12); values **toy-relative**; **three actors out of scope**
 — the own-view dichotomy fails there; both proofs prose-over-code, with
 Lean-grade mechanization the line's one residue.  **Transport scope
-OPEN**, and §B9 shows the tool cannot travel.
+OPEN**, and §B9 shows the tool cannot travel.  Two facts are added from
+the descent side (§B2.10): `μ_Zhat` is **constant on all 5,548 record
+classes**, so the settled completion's measure genuinely descends; and
+the *uncompleted* normalized kernel does not, by exactly one mass-ratio
+coboundary — with the positive repair cone 573-dimensional against the
+`(depth, sigma)` family's 28, so **the collapse to `Zhat` is the form
+choice and not descent.**
 
 **Geometry line — transport scope, measure-free.**  Sky size is an
 actor-width phenomenon and narrower than chance; **all three sky readings
@@ -6220,7 +7076,12 @@ homogeneity with above-sprinkling `ω` and thin charts (§B8.6) — and it
 tiles **wide**, a forced 177-event double ring holding the band while
 carrying 4-direction charts at `d = 2` (§B8.7), where the **branching
 bound** `|D_e(d)| ≤ B^d` then proves 4 is the delivery grammar's ceiling
-and width past it must be bought with **arbitration**.
+and width past it must be bought with **arbitration**.  The atlas's
+**transition maps are now measured** on that record and are non-identity,
+cocycle-clean and **cohomologically trivial** — `H¹ = 0`, an explicit
+per-chart port choice removes all 108 of them (§B8.8) — so the delivery
+crystal exhibits **no structure group at all**, and the sharp question
+becomes whether any substrate can carry a class that is not a coboundary.
 
 ### B11.2 The convergence question
 
@@ -6285,44 +7146,64 @@ description of the *shape* of a possible answer, not an answer.
    dimension discriminator is sharpest under SKY-A while several other
    results were computed under SKY-B.  Nothing justifies a choice.
 3. **The arbitration crystal** — a crystal made of **conflicts** rather
-   than of deliveries.  The branching bound (§B8.7) makes this the only
-   route to chart width past 4 at `d = 2`: deliveries carry `B = 2`, so
-   `max |D| ≤ 4` for any delivery circuit whatever, and the layer's one
-   3+-register species is the multi-proposer arbitration.  An admissible
-   3-register *event* exists; a *record* carrying a 5-direction chart does
-   not yet, and the hunt for one is inconclusive.  **This is the
-   manifold road's live construction.**
+   than of deliveries.  **Three independent results now converge on it**,
+   which is what promotes it from "the next construction" to the line's
+   live target.  *(i)* **Width:** the branching bound (§B8.7) makes this
+   the only route past chart width 4 at `d = 2` — deliveries carry
+   `B = 2`, so `max |D| ≤ 4` for any delivery circuit whatever, and the
+   layer's one 3+-register species is the multi-proposer arbitration.
+   *(ii)* **Gluing:** the delivery crystal's transition class is a
+   coboundary (§B8.8), and the *reason* it is, is that a delivery's fibre
+   has two ports with no intrinsic asymmetry — so the per-chart `Z/2` is
+   free.  A conflict event breaks that symmetry, making it the first
+   place a **non-coboundary** class could live.  *(iii)* **The measure:**
+   the descent defect (§B2.10) is exactly the `2 → 5/2` menu-mass jump,
+   and that jump occurs precisely where a blind **conflict** group
+   becomes visible in the join view.  An admissible 3-register *event*
+   exists; a *record* carrying a 5-direction chart does not yet, and the
+   hunt for one is inconclusive.  **This is the manifold road's live
+   construction.**
 4. **Is there a record-level demand that forces the stationary form?**
    Two strongest candidates and their conjunction eliminated by
-   measurement.  Nobody has a third.
-5. **A Lean-grade mechanization of the delivery-free settlement.**  (H1)
+   measurement.  Nobody has a third — and the question now has a number
+   attached from the descent side (§B2.10): *is there any record-level
+   demand that cuts the 573-dimensional repair cone down to the
+   28-dimensional `(depth, sigma)` family?*  Descent itself cuts it only
+   to 205.  A depth-free statement of the cone is the same question again.
+5. **The missing map's functional segment** (§B2.10 residue 1).  The
+   generated line has no class operators and no Gram functional, so paper
+   29's decoherence hypothesis is satisfied for the empty reason and will
+   stay uninformative until a functional level is built.  **That, not the
+   descent identity, is where the map is widest**, and nothing in the
+   corpus attacks it.
+6. **A Lean-grade mechanization of the delivery-free settlement.**  (H1)
    and (H2) are both prose-over-code — the register geometry and the five
    update rows read off the committed source, gated against it at every
    cached transition and re-derived independently to depth 9, but not
    checked *as* an induction by any machine.  It is the one residue left
    on a line that is otherwise closed at its scope (§B6.13b).
-6. **General `m` for the courier builder** — visibly patterned, unrun,
+7. **General `m` for the courier builder** — visibly patterned, unrun,
    unclaimed beyond 5.  A receipt at `m = 6` (20 chains, 57 couriers,
    ~66 actors) would strengthen it; a proof of admissibility for every
    `m` would settle it.
-7. **Minimality at every `m`** — `C(k,⌊k/2⌋)` versus the builder's spend
+8. **Minimality at every `m`** — `C(k,⌊k/2⌋)` versus the builder's spend
    (6 vs 20 at `m = 4`; 10 vs 42 at `m = 5`).  Both gaps architectural,
    both decidable.
-8. **Upstream pricing residues**, all carried into the completion problem
+9. **Upstream pricing residues**, all carried into the completion problem
    rather than patched: the `h12` dead-component inflation (`23/24`, off
    ladder); the general-depth `1 + k/4` ladder **false** under current
    pricing; the D2H merge priced `1/16` vs `1/24`.
-9. **Reading-relativity**, twice: which **sky definition** is physically
-   privileged (D47 residue 2, partially answered negatively by D53 — two
-   of the three can never fire — but *why* SKY-B is the physical one is
-   unanswered); and which **channel reading** is (D46e).  Same class of
-   question.
-10. **The transport-scope dichotomy itself** — whether a root-free
+10. **Reading-relativity**, twice: which **sky definition** is physically
+    privileged (D47 residue 2, partially answered negatively by D53 — two
+    of the three can never fire — but *why* SKY-B is the physical one is
+    unanswered); and which **channel reading** is (D46e).  Same class of
+    question.
+11. **The transport-scope dichotomy itself** — whether a root-free
     completion exists there.  Analytically open, no current tool.
-11. **The quantum completion at the arbitration layer** (paper 30 §6.2's
+12. **The quantum completion at the arbitration layer** (paper 30 §6.2's
     three-horn pincer) and the fine-versus-coarse sealing question, which
     is **empirical** and has an exact instrument pair waiting for it.
-12. **The laboratory bridge** — blocked on an empty coarse-graining slot;
+13. **The laboratory bridge** — blocked on an empty coarse-graining slot;
     the sole unblocking condition is *what is a laboratory system in
     record terms?*, filed as an internal derivation question.
 
@@ -6354,12 +7235,16 @@ sky definitions and the constructed separator),
 `d55_shatter5_exact.py`, `d55b_sphere_calibration_exact.py`,
 `d56_transport_sigma_probe.py`, `d60p_h1_probe.py`,
 `d61_h1_closure_exact.py` (the own-view dichotomy and the closed form),
-`d62_h2_update_table_exact.py` (the update table) and
-`d63_wide_crystal_exact.py` (the wide crystal and the branching bound).
+`d62_h2_update_table_exact.py` (the update table),
+`d63_wide_crystal_exact.py` (the wide crystal and the branching bound),
+`d64_cocycle_exact.py` (the transition census and the coboundary gate
+C7) and `d65_descent_conditions_exact.py` (the descent conditions and
+the repair cone).
 
 **The ledger:** `v10/LOG.md`, append-only, numbered, **forward
-corrections only, never silently edited.**  Entries #404–#460 cover
-everything in chapters B5, B7, B8, B9 and the settlement line of B6.
+corrections only, never silently edited.**  Entries #404–#468 cover
+everything in chapters B5, B7, B8, B9, the settlement line of B6 and the
+descent segment of B2.
 
 **Review records:** `v10/reviews/*.md`, frozen; a round is followed by
 repairs and a **delta appended to the round file**, and only then is a
@@ -6397,8 +7282,15 @@ that had not landed.)
   anchor breakage and mutant misbehaviour exit 1.
 - **Hostile rounds, and now independent-model rounds** — a reviewer with
   no prior context, instructed to recompute rather than trust, writing its
-  own code.  Both such rounds so far found a BLOCKER; both BLOCKERs were
-  in interpretation.
+  own code.  Seven have run; five found a BLOCKER; **all five BLOCKERs
+  were in interpretation, none in arithmetic** (§B10.16).
+- **Ask what would distinguish the headline from its trivial
+  alternative** — the lesson D64 and D65 taught twice in one week.  Both
+  units measured correctly, reported correctly, and read the numbers as a
+  structure that a computation neither had run would have shown was
+  absent (a coboundary test; a repair-cone dimension).  The obligation is
+  now on the pin: *name the computation that would make the interesting
+  reading false, and run it in the same receipt.*
 - **Green-unreviewed is not citable**, and terminal papers are **not
   edited on green-unreviewed evidence** — amendments queue behind a round.
   The rule's one recorded breach is instructive: a settlement banner was
@@ -7884,8 +8776,8 @@ thing:**
 | stage | mechanism found | fix |
 |---|---|---|
 | **45** | **CLOCK STARVATION** — per-clock churn injects `K` independent perturbations, knocking `χ` off the latent deposit surface; the ordering fraction collapses with `K` (**0.159 → 0.015**; window pairs 2833 → 38) and instruments starve | full-vector churn |
-| **45b** | **HARMONIC CONTAMINATION** — the half-cosine kernel `(u·v)₊ = |u·v|/2 + (u·v)/2` carries even harmonics `ℓ = 0, 2, 4…` (a 12.5% even tail, confirmed in review), which is latent structure beyond dimension 4; `F_iso` stays flat ~1.7–1.9 | the pure monopole+dipole kernel |
-| **45c** | **MONOPOLE DRIFT** — with `χ_k = A + D⃗·v_k`, the accumulated content `A` is a deterministic clock redundant with `b`; occupancy is drift-dominated (`eig3/1` 0.14–0.31, `F_iso` 2.8–3.2 = the card's *collapse* regime, not shape).  *The latent cone theorem holds though:* at `K = ∞`, dominance ⟺ `ΔA ≥ |ΔD⃗|` — **the Minkowski cone itself in latent coordinates** | subtract the monopole: `ℓ_k = τ·b + (χ_k − χ̄)` |
+| **45b** | **HARMONIC CONTAMINATION** — the half-cosine kernel `(u·v)₊ = \|u·v\|/2 + (u·v)/2` carries even harmonics `ℓ = 0, 2, 4…` (a 12.5% even tail, confirmed in review), which is latent structure beyond dimension 4; `F_iso` stays flat ~1.7–1.9 | the pure monopole+dipole kernel |
+| **45c** | **MONOPOLE DRIFT** — with `χ_k = A + D⃗·v_k`, the accumulated content `A` is a deterministic clock redundant with `b`; occupancy is drift-dominated (`eig3/1` 0.14–0.31, `F_iso` 2.8–3.2 = the card's *collapse* regime, not shape).  *The latent cone theorem holds though:* at `K = ∞`, dominance ⟺ `ΔA ≥ \|ΔD⃗\|` — **the Minkowski cone itself in latent coordinates** | subtract the monopole: `ℓ_k = τ·b + (χ_k − χ̄)` |
 | **45d** | **BALLISTIC NEAR-PARKING** — time = birth order, space = the content dipole, matched-variance `τ`; with `α`-persistence, `ΔD⃗ = ΔD⃗₀ + Δw⃗·Δb` — **positions AND velocities, the genuine `M⁴` kinematic form**.  Best point `K=24 / α=.75 / c=.5`: `F_iso 1.267` against a `1.243` parking line | — |
 
 **C6.6 The 45-arc review (#119) — UPHELD AS MEASUREMENT, HEADLINES
@@ -8266,7 +9158,11 @@ delocalized, which is the only kind of 'particle' the scale gap
 permits."* And tensors enter *"as the transformation behavior of
 chart-attached data under transition maps — a mechanism certifiable at
 fixture scale under rule 2, since transition COVARIANCE is scale-free even
-when the charts are tiny."*
+when the charts are tiny."*  **That slot is currently empty, and the rule
+is what makes the emptiness legible**: the one substrate whose transition
+maps have been measured has a class that is a **coboundary** (§B8.8), so
+there is no non-trivial transformation behaviour to certify — the
+doctrine names the deliverable, and the deliverable does not exist yet.
 
 > **The convergence worth naming.** Chapter **C6.8**'s free-web influence
 > theorem reaches the same place from the substrate side: with no coupling
@@ -8297,7 +9193,7 @@ two are half-done, three are open, and the last is blocked.
 |---|---|---|
 | 1 | records → a causal order | **HAVE** — this is what the grammar builds, and the order is the physical content |
 | 2 | causal order → local skies and a dimension *capacity* | **HAVE** — with the meter reading the grammar's coordination, not a record's dimension |
-| 3 | skies → charts, gluing → a manifold | **OPEN, first two segments done** — the grammar **tiles**, and it now tiles **wide** (a forced 177-event double ring holding the homogeneity band while carrying 4-direction charts); and the *next* width step is a proved wall rather than an engineering problem — deliveries cap chart width at 4, so more width must be bought with conflict.  What remains: real transition maps, the arbitration crystal, and the second road's unfinished business |
+| 3 | skies → charts, gluing → a manifold | **OPEN, three segments done and the third is a negative** — the grammar **tiles**, it tiles **wide** (a forced 177-event double ring holding the homogeneity band while carrying 4-direction charts), and its charts' **transition maps are now measured**: non-identity, consistent around every loop, and **removable by a change of convention**, so the atlas is globally trivializable and carries no structure group.  The *next* width step is a proved wall rather than an engineering problem — deliveries cap chart width at 4, so more width must be bought with conflict.  What remains: a substrate whose gluing is *not* trivial, the arbitration crystal, and the second road's unfinished business |
 | 4 | manifold → Einstein dynamics | **PARTIAL** — the *form* of the field equations is derived; Newton's constant is provably not derivable from inside |
 | 5 | manifold → quantum fields on it | **PARTIAL** — a lift of the record process into Hilbert space exists at fixture scale, and its arbitration layer is where the quantum problem begins |
 | 6 | fields → **particle creation** | **OPEN** — the destination's defining phenomenon, with one suggestive structural resemblance that is *labelled speculation* |
@@ -8352,8 +9248,8 @@ dimension.  So arrow 2 delivers a **capacity** result — *the layer does not
 cap the shatter ladder at the sphere's rung* — and a measure of engineered
 coordination.  It does not deliver a dimension for a record.
 
-**ARROW 3 — charts and gluing → a manifold.  `[OPEN — first two segments
-DONE: the grammar tiles, and it tiles wide]`**
+**ARROW 3 — charts and gluing → a manifold.  `[OPEN — three segments
+done: the grammar tiles, it tiles wide, and its gluing is TRIVIAL]`**
 
 A causal order is not a manifold.  To get one you need local pieces that
 look like patches of `ℝ^d` (**charts**), a rule for saying two patches
@@ -8371,8 +9267,13 @@ least two directions — and the **chart-size ratio**
 ω(e, e′) = |D_e(d) ∩ D_{e′}(d−1)| / |D_e(d)|      on cover pairs
 ```
 
-with identity transitions only; **non-identity transitions and the real
-cocycle condition are DECLARED a later stage.**
+Both were built assuming **identity** transitions, with the real cocycle
+condition declared a later stage.  **That stage has since run** (§B8.8),
+and the assumption turns out to be harmless *on this road's substrates*
+for a reason nobody could have asserted in advance: the transitions are
+not the identity, but their class is a **coboundary**, so a per-chart
+relabelling makes them the identity and every `ω` figure below is a
+statement about a genuinely trivializable atlas.
 
 > **`ω` is a CHART-SIZE RATIO, not a two-way overlap `[THEOREM, 14,818
 > pairs]`.**  On cover pairs the smaller chart is *contained* in the
@@ -8406,14 +9307,29 @@ points wearing 120 labels** — and against genuine sprinklings the
 it.  Given the containment theorem this is the expected direction: denser
 skies have larger charts and smaller size-ratios.
 
-**And the crystal question, which this road posed, is ANSWERED TWICE.**
+**And the crystal question, which this road posed, is ANSWERED THREE
+TIMES — twice yes, once no.**
 *Can the grammar build a record whose events are charted everywhere with
 large overlaps — a tiling — the way a courier record carries one rich
 sky?*  **Yes**, at sprinkling-grade homogeneity and above-sprinkling `ω`,
 **with thin charts** (§A8.6, §B8.6).  *And can that tiling also be wide?*
 **Yes, at `d = 2`** — the two mechanisms compose in a forced 177-event
 double ring (§A8.7, §B8.7), with band membership largely an ends property
-and the depth label part of the claim.
+and the depth label part of the claim.  *And do that record's charts glue
+non-trivially — is there structure in the overlaps?*  **No** (§A8.8,
+§B8.8): 115 of 172 overlapping pairs carry non-identity transitions, all
+111 testable triples satisfy the cocycle, and then an explicit per-chart
+port choice (32 charts / 28 charts) turns **all 108** of the
+length-preserving ones into the identity.  `H¹ = 0`; zero obstructions at
+two independent port conventions; **the transitions are pure gauge and no
+structure group is exhibited**.
+
+> **What that costs, said without softening.**  The tensor/curvature
+> programme — the thing a manifold arrow is *for* — starts at **zero** on
+> delivery substrates.  Non-identity transitions, a clean cocycle, a
+> closure, even a group name if one had been determined, are all
+> compatible with `H¹ = 0` and were.  **The test is the obstruction
+> count**, and it is now a gate that every successor inherits.
 
 **And then the road meets a wall it can name exactly.**
 
@@ -8429,9 +9345,12 @@ between the grammar's atlases and a sprinkling's reads like a
 quantitative shortfall to be engineered away; it is a **grammatical**
 one.  The road to a wide chart — and so, eventually, to a 3+1-sized sky
 at a charted event — runs through **conflict**, not through more
-plumbing.  What follows the wide crystal on this road: the real cocycle
-question, which has a named object to be asked about at last, and the
-**arbitration crystal** behind it.
+plumbing.  And the trivial gluing points the same way for an independent
+reason: what makes the trivializing relabelling available is that a
+delivery's two ports carry no intrinsic asymmetry, which a conflict
+settlement does not have.  What follows the wide crystal on this road is
+therefore a single object, the **arbitration crystal**, carrying two
+questions at once — can it be built wide, and can it glue non-trivially.
 
 **ROAD 2 — the v9 grown-web line `[PART C, chapter C6]`.**  Further along
 in one specific sense and further behind in another.  It has **built**
@@ -8471,12 +9390,14 @@ sharper than either road's own residues:
 - **What Road 1 must not borrow:** any v9 number.  §C6.10's closure and
   §C6.11's unestablished relation both bind.
 
-**Status, combined: `[OPEN]`.**  The manifold arrow has an instrument
-(Road 1), two built segments (tiling, then tiling-with-width), a **proved
-ceiling** telling it which mechanism the next segment must use, a named
-next construction (the cocycle on DR(8, 10, 8), then the arbitration
-crystal), and a parallel body of suggestive-but-closed work (Road 2) that
-no unit has connected to it.
+**Status, combined: `[OPEN]`.**  The manifold arrow has two instruments
+(Road 1's atlas, and now a validated transition detector with a
+triviality gate), three measured segments — tiling, tiling-with-width,
+and a gluing that is **trivial** — a **proved ceiling** telling it which
+mechanism the next segment must use, one named next construction (the
+**arbitration crystal**, carrying the width question and the
+non-coboundary question together), and a parallel body of
+suggestive-but-closed work (Road 2) that no unit has connected to it.
 
 **ARROW 4 — manifold → Einstein dynamics.  `[PARTIAL]`**
 
@@ -8686,15 +9607,23 @@ they do from inside either line.
 
 The **manifold** is the programme's first construction target — it is what
 the destination's own definition requires, and no other arrow can be posed
-without it.  Its first two questions are **answered**: the grammar tiles,
-and it tiles *wide*.  What replaces them is narrower and stranger.
-Genuine transition maps between the charts are still unbuilt.  And a short
-theorem has changed what "wider still" means: because a delivery touches
-exactly two wires, no record built out of deliveries can ever carry more
-than four directions in a shallow chart, while real spacetime carries ten
-to seventeen.  **The road to a rich chart therefore runs through conflict,
-not through more messaging** — and a record that tiles out of *conflicts*
-is a thing nobody has built.
+without it.  Its first three questions are **answered**, and the third
+answer is a *no*.  The grammar tiles; it tiles *wide*; and the
+translation rules between its charts, which are what a manifold's
+structure actually lives in, turn out to be **a change of convention and
+nothing more** — real as written, and removable all at once by relabelling
+each chart's two ports.  So the atlas glues, it glues consistently, and it
+glues trivially: on records made of deliveries there is no gauge
+structure and no tensor programme to start.
+
+What replaces those questions is narrower and stranger.  A short theorem
+has changed what "wider still" means: because a delivery touches exactly
+two wires, no record built out of deliveries can ever carry more than four
+directions in a shallow chart, while real spacetime carries ten to
+seventeen.  And the reason the gluing trivializes is the *same* fact from
+the other side — two ports, no asymmetry, so the choice is free.  **Both
+roads out therefore run through conflict, not through more messaging** —
+and a record that tiles out of *conflicts* is a thing nobody has built.
 
 The **measure at delivery scope** holds the other top slot, and for a
 structural reason: arrows 5 and 6 both need probabilities at the scope
@@ -8714,9 +9643,14 @@ verified.  That item is cheap, bounded, and no longer blocking anything.
 
 And beneath all of them sits a front that belongs to neither line: **the
 missing map** between the grammar and the identified law (§A2.6).  It
-ranks below the two construction problems only because nobody knows how
-to attack it — not because less depends on it.  Everything does: until it
-closes, none of this reaches a laboratory even in principle.
+ranks below the two construction problems only because nobody knew how to
+attack it — not because less depends on it.  Everything does: until it
+closes, none of this reaches a laboratory even in principle.  One segment
+of it is no longer a name but a measurement (§A2.7), and the measurement
+also says where the rest of it is: the generated line has no amplitudes
+and no interference, so the condition that asks whether records
+*decohere* is satisfied for the empty reason.  **That vacuity, not the
+arithmetic, is where the map is widest.**
 
 And **the v9 arc** —
 turns out to hold the furthest-advanced construction anyone has of a
@@ -8731,35 +9665,24 @@ Einstein content lives on the far side of it.
 
 ### ② THE OBJECTS
 
+**What the construction queue has already delivered**, so that the
+ranking below is a ranking of what is *left*: the grammar **tiles**
+(§B8.6); it tiles **wide** at `d = 2`, witnessed by the forced 177-event
+DOUBLE-RING(8, 10, 8) (§B8.7); its charts' **transition maps are
+measured** and their class is a **coboundary**, so the atlas is globally
+trivializable and no structure group is exhibited (§B8.8); and the
+**descent conditions** are gated one by one against the closed generated
+law, which fails the commuting-square identity by exactly one mass-ratio
+coboundary while the settled completion's measure genuinely descends
+(§B2.10).  Two of those four are negatives.  Both are results, both are
+terminal, and both changed the ranking — the first by removing an
+expected object, the second by pricing a known one.
+
 **Re-ranked against the destination** (superseding §A11.4 / §B11.4's
 ordering, not their content):
 
-1. **THE COCYCLE, on the substrate the wide crystal supplies.**  The
-   construction queue's first two units are **DONE and terminal**: the
-   grammar tiles (§B8.6), and it tiles wide at `d = 2` — the composition
-   of the two certified mechanisms, witnessed by the forced 177-event
-   **DOUBLE-RING(8, 10, 8)** (§B8.7).  What is next is the **real cocycle
-   question**: every atlas result so far assumes **identity** transition
-   maps, and non-identity transitions — with them tensorial transformation
-   behaviour, which §D1b's rule 2 names as exactly the kind of scale-free
-   *mechanism* a destination unit may certify — are the declared later
-   stage.  DR(8, 10, 8) is the named object they can be asked about,
-   **with one warning carried from its own residues**: D58's containment
-   theorem says the `ω`-overlaps of cover pairs are **nested**, so the
-   cocycle unit must find its non-identity somewhere other than in the
-   `ω` pairs.  After it, the descent-conditions unit (item 2).
-2. **THE DESCENT-CONDITIONS UNIT — the missing map's first segment.**
-   Authorized, and the first genuinely surveyable ground on the corpus's
-   deepest front (§B2.9).  Paper 29's conditional descent theorem names
-   **four** conditions under which a click law descends from the quantum
-   functional — the queried record algebra decoheres; both routes name one
-   atom; every conditioning cylinder has positive mass; the boundary is
-   sufficient.  Three of those are properties a **grammar-generated
-   record** either has or does not, and can be gated.  Gating them is not
-   the map, but it is the first segment of it, and it converts "nobody
-   knows how to attack it" into a receipt.
-3. **THE ARBITRATION CRYSTAL — the width successor, and it is a different
-   mechanism.**  §B8.7's branching bound `|D_e(d)| ≤ B^d` makes the next
+1. **THE ARBITRATION CRYSTAL — and it is now carrying three questions,
+   not one.**  §B8.7's branching bound `|D_e(d)| ≤ B^d` makes the next
    width step a matter of grammar rather than of engineering: deliveries
    carry `B = 2`, so **4 is the delivery grammar's ceiling at `d = 2`**
    and the sprinklings' 10–17 is unreachable by any transport circuit
@@ -8767,21 +9690,66 @@ ordering, not their content):
    layer has exactly one — the **arbitration over a component with two or
    more distinct proposers**.  An admissible 3-register *event* is
    exhibited; a *record* carrying a 5-direction chart is not, and the hunt
-   for one is inconclusive.  **Can a crystal be made of conflicts?** is
-   therefore the sharp successor, and it ranks this high because arrow 3's
-   whole remaining distance to a sprinkling-grade atlas runs through it.
-4. **The missing map** (§B2.9) — the corpus's **deepest** named front,
-   beneath the completion residues and beneath the transport measure,
-   because it is the one gap that makes two ledgers out of one
-   programme.  Until it closes, the
-   grammar's geometry and the laboratory's clicks cannot be spoken of
-   together, and the destination's last arrow is unreachable in principle
-   rather than merely unbuilt.  What exists: paper 29's conditional
+   for one is inconclusive.  **Three convergent motivations now point at
+   the same object, from three different units:**
+   - **width** — the branching bound, above: conflict is the only
+     remaining mechanism (§B8.7);
+   - **gluing** — the delivery crystal's transition class is a
+     **coboundary**, and the reason is that a delivery's fibre has two
+     ports with no intrinsic asymmetry, so the trivializing per-chart
+     `Z/2` is always available.  A conflict event breaks that symmetry,
+     which makes an arbitration substrate the **first place a
+     non-coboundary class could live** (§B8.8).  A stated structural
+     reason to attack there — not a promise;
+   - **the measure** — the generated law's descent defect is exactly the
+     jump of a menu's mass from `2` to `5/2`, and that jump happens
+     precisely when a blind **conflict** group becomes visible in the
+     join view (§B2.10).
+   Three independent lines of the programme now name conflict as the next
+   object, which is the strongest convergence the corpus has produced.
+   It ranks first because arrow 3's whole remaining distance to a
+   sprinkling-grade atlas runs through it, and because §D1b's rule 2
+   names tensorial transition behaviour as exactly the kind of scale-free
+   *mechanism* a destination unit may certify — and there is currently
+   none to certify.
+2. **THE MISSING MAP** (§B2.9, §B2.10) — the corpus's **deepest** named
+   front, beneath the completion residues and beneath the transport
+   measure, because it is the one gap that makes two ledgers out of one
+   programme.  Until it closes, the grammar's geometry and the
+   laboratory's clicks cannot be spoken of together, and the
+   destination's last arrow is unreachable in principle rather than
+   merely unbuilt.  **What now exists on it:** paper 29's conditional
    descent theorem (decoherence, one atom, positive mass, boundary
-   sufficiency) and the exhibited failure mode (erase a setting record and
-   sufficiency breaks).  What is missing: a derivation, rather than a
-   supply, of the identified law's boundary state, measure, record
-   instrument and **generated record grammar**.
+   sufficiency) with its exhibited failure mode (erase a setting record
+   and sufficiency breaks); and the **first measured segment** — the
+   generated law's normalized kernel fails the commuting-square identity
+   on 32,256 of 425,334 refined-record-identical ordered pairs, by
+   exactly the coboundary of the per-state menu mass, with zero
+   exceptions and nothing sampled, while its *unnormalized* weight is
+   order-independent everywhere and `Zhat`'s measure descends on all
+   5,548 record classes.  **And the segment names where the rest of the
+   map is:** paper 29's decoherence hypothesis is satisfied *for the
+   empty reason*, because the generated line has no class operators and
+   no Gram functional at all.  **Building a functional level is the
+   map's widest remaining stretch**, and nothing in the corpus attacks
+   it.  Still missing, unchanged: a derivation rather than a supply of
+   the identified law's boundary state, measure, record instrument and
+   **generated record grammar**.
+3. **Is there a record-level demand that cuts the repair cone?**  The old
+   form of this question — *is there a record-level demand that forces
+   the stationary form?* — had two strongest candidates and their
+   conjunction eliminated by measurement (§B6.12), and nobody has a
+   third.  It now has a number on it from the other side (§B2.10): the
+   positive repair cone is **573**-dimensional at the depth-4
+   truncation, the completions that also **descend** are **205** of
+   those, the `(depth, sigma)` family is **28**, and `Zhat` is one ray.
+   Descent cuts 573 to 205 and no further; **the collapse to one ray is
+   the form choice**.  A depth-free statement of the cone is the same
+   question again, and it is the successor D50 and D65 jointly hand
+   forward.  And it is doubly interesting for the destination: if the
+   answer is permanently no, §D3's resemblance is the *only* interpretive
+   home the boundary freedom has — a reason to state it carefully rather
+   than a reason to believe it.
 5. **A workable probabilistic description at transport scope**, unchanged
    in importance and worse in prospects: menu-exact is
    impossible for any design (§B9.1), and sector-exact at `(actor, type)`
@@ -8810,18 +9778,13 @@ ordering, not their content):
    machine.  Small, bounded, and no longer blocking anything.  **Three
    actors remain out of scope entirely**, the dichotomy's proposer test
    being the clause that fails there, and transport is untouched.
-8. **Is there a record-level demand that forces the stationary form?**
-   Unchanged, and now doubly interesting: if the answer is permanently no,
-   §D3's resemblance is the *only* interpretive home the boundary freedom
-   has, which is a reason to state it carefully rather than a reason to
-   believe it.
-9. **The `G` calibration.**  Not solvable — that is the theorem — but the
+8. **The `G` calibration.**  Not solvable — that is the theorem — but the
    *dimensionless* question it leaves open (is `c_m = Gm²/ℏc` a record
    output?) is explicitly **eligible** and is the natural arrow-7 target.
-10. **The residual pricing defects** (`h12`; the general-depth ladder;
-    the `1/16` vs `1/24` merge), unchanged and still carried into the
-    completion problem rather than patched.
-11. **Residue 2, REOPENED: which sky reading is physically privileged?**
+9. **The residual pricing defects** (`h12`; the general-depth ladder;
+   the `1/16` vs `1/24` merge), unchanged and still carried into the
+   completion problem rather than patched.
+10. **Residue 2, REOPENED: which sky reading is physically privileged?**
     All three readings are live (§B5.4); the dimension discriminator is
     sharpest under the cover reading while much of the constructions line
     was computed under the antichain reading.  Nothing justifies a choice,
@@ -8831,12 +9794,13 @@ ordering, not their content):
 part.**  Arrows 5 and 6 are blocked on the same object — a probabilistic
 description at transport scope — while arrow 3 is blocked on
 construction, and arrow 8 on the missing map.  So the programme's
-independent next moves are **three**, and they are now all concrete:
-**build the cocycle on DR(8, 10, 8)** (and behind it the arbitration
-crystal, since the branching bound says width past 4 must come from
-conflict), **gate the descent conditions** on grammar-generated records,
-and **find a coarser aggregation that closes at transport scope**.
-Everything else waits on one of the three.
+independent next moves are **two**, and both are concrete: **build the
+arbitration crystal**, which the width theorem, the trivial gluing and
+the descent defect all independently name; and **find a coarser
+aggregation that closes at transport scope**.  A third front — the
+missing map — has its first segment measured and its widest stretch
+identified (a functional level for the generated line), but no unit has a
+method for it.  Everything else waits on one of those.
 
 ---
 
@@ -8851,10 +9815,13 @@ Everything else waits on one of the three.
 > hand (Einstein's equations *in form*, with Newton's constant provably not
 > derivable from inside; a quantum lift of the record process at fixture
 > scale), three are open (charts and gluing into a manifold — whose first
-> two questions are answered, since the grammar demonstrably tiles and now
-> tiles *wide*, and whose remainder is real transition maps and a width
-> step that a short theorem says must be bought with conflict rather than
-> with delivery; fields on it; particle creation),
+> three questions are answered, since the grammar demonstrably tiles, tiles
+> *wide*, and glues its charts **trivially**, the transition maps being
+> real but removable by a per-chart change of convention, so no structure
+> group is exhibited; whose remainder is a substrate that glues
+> non-trivially and a width step that a short theorem says must be bought
+> with conflict rather than with delivery; fields on it; particle
+> creation),
 > and the last is blocked
 > at four independent points, one of which is the un-derivability of the
 > scale and one of which is the incompleteness of the other arrows.  Governing all of
@@ -8862,11 +9829,16 @@ Everything else waits on one of the three.
 > units certify scale-invariant mechanisms rather than objects — which
 > the substrate line reaches independently, since without coupling no
 > collective excitation exists at any scale.  The
-> three independent next moves are: **the cocycle** on the wide crystal's
-> named substrate, with **the arbitration crystal** behind it, **the
-> descent-conditions unit**, which surveys the missing map's first
-> segment, and **a coarser aggregation that closes at transport scope**.
-> Everything else in the programme currently waits on one of those three.
+> two independent next moves are: **the arbitration crystal**, which the
+> width theorem, the trivially gluing atlas and the measure's descent
+> defect all name from three different directions, and **a coarser
+> aggregation that closes at transport scope**.  Everything else in the
+> programme currently waits on one of those two, except the missing map,
+> whose first segment is now measured — the generated law's normalized
+> kernel does not descend to a record measure, by one repairable
+> mass-ratio defect, while the settled completion's measure does — and
+> whose widest remaining stretch is that the generated line has no
+> functional level at all.
 > And one line that has been open since the beginning is now shut: in the
 > delivery-free two-actor sub-theory the measure question is **closed**,
 > at that scope and inside its postulated shape.
@@ -8894,7 +9866,7 @@ defined precisely, and to Part A where the intuition lives.
 | **causal order vs gauge** | causal order is **physical**; incomparable order is **GAUGE** | B3.1, A3.1 |
 | **causally blind join layer** | a layer where knowledge is transported past a causally blind seal (e.g. a relay delivering a fork branch to a third party); `k` in `1 + k/4` counts these, and this is what the naive normalizer double-counts | B2.7, B6.3, A2.3 |
 | **click** | one discrete recorded event; "the click law" is the whole event grammar plus its weights | B2, A2.1 |
-| **completion** | strictly positive cut data `Z` with transfer `q'(e|h) = q(e|h)·Z(h+e)/Z(h)`; what turns the weight system into a probability law | B6.1, A6.1 |
+| **completion** | strictly positive cut data `Z` with transfer `q'(e\|h) = q(e\|h)·Z(h+e)/Z(h)`; what turns the weight system into a probability law | B6.1, A6.1 |
 | **courier** | a freshly minted single-use actor that delivers into an empty receiver, so nothing folds back — the device that makes the shatter constructions work | B8.2, A8.3 |
 | **cut** | a slice through a record; a candidate "now" | B3.1, A3.1 |
 | **cut complex** | the graph of cuts with single admissible steps as edges; 1,191 histories / 427 classes / 202 diamonds at depth 4 | B4.1, A4.1 |
@@ -8905,11 +9877,11 @@ defined precisely, and to Part A where the intuition lives.
 | **direction** | a member of a sky's direction set at an event | B5.1, A5.2 |
 | **foliation** | a sequence of cuts, i.e. **one linear extension** of the record's causal order | B3.1, A3.1 |
 | **foliation-invariance** | demand (b): the completed conditional is a function of the record alone (class-constant); equivalently chain products agree across every linear extension | B6.2, A6.2 |
-| **form (the stationary form)** | paper 30 §5.7's postulated shape `Z(h) = f(state(h))·λ^(−depth(h))`; what delivers uniqueness — **and a CHOICE, not a law** | B6.11, B6.12, A6.8 |
+| **form (the stationary form)** | paper 30 §5.7's postulated shape `Z(h) = f(state(h))·λ^(−depth(h))`; what delivers uniqueness — **and a CHOICE, not a law**, now priced twice over: no record-level invariance forces it (freedom 12 / 32 / 125, growing), and no descent demand forces it either (573 ⊃ 205 ⊃ 28 ⊃ 1) | B6.11, B6.12, B2.10, A6.8 |
 | **frontier sum `N(h)`** | the total raw weight of `h`'s menu; cut-attached (constant on all 427 classes) but **not a discrete gradient** | B6.1, B6.3 |
 | **gauge** | see *causal order vs gauge* | B3.1 |
 | **genesis** (`'g'`) | the initial version held by all participants — *"the declared supplied boundary"* | B2.2, A2.1 |
-| **gradient / Doob `h`-transform completion** | the backward recursion `Z(h) = Σ q(e|h)Z(h+e)` from a positive terminal boundary; exists at every finite depth, at the cost of within-cut ratio deformation | B6.5, A6.5 |
+| **gradient / Doob `h`-transform completion** | the backward recursion `Z(h) = Σ q(e\|h)Z(h+e)` from a positive terminal boundary; exists at every finite depth, at the cost of within-cut ratio deformation | B6.5, A6.5 |
 | **(H0), (H1), (H2)** | the three depth-indexed hypotheses of D44a's conditional theorem: view invariants; **menu factorization from `sigma`**; transition determinism.  None implies another.  At two-actor delivery-free d42a scope **all three are discharged** — (H0) and (H1) via the own-view dichotomy, (H2) via the five-row update table — so the closure theorem is **unconditional there**.  **Three actors remain out of scope**, transport is untouched, and the form remains a choice | B6.9, B6.13, B6.13b, A6.9 |
 | **harmonic** | `Z` satisfying the backward recursion exactly; residue 1 asks for a **strictly positive** harmonic function on the infinite-volume state space | B6.9, A6.7 |
 | **`h12`** | the one constructed configuration off the `1 + k/4` ladder (per-actor sum `23/24`), caused by a dead component inflating a live denominator | B2.7, A2.3 |
@@ -8943,13 +9915,13 @@ defined precisely, and to Part A where the intuition lives.
 | **VC dimension** | the largest set a family of sets can shatter; caps on `S²` have VC dimension **4**, which is why the sphere never shatters 5 | B7.4, A7.2 |
 | **version** | the content object a line writes; created only by arbitration or merge | B2.2, A1.1 |
 | **view** | see *own view / full view*; a view is a **sub-record**, nothing psychological | B3.2 |
-| **`Z`** | the completion's positive cut data; `Zhat = 2^(−|h|) f(class(sigma(h)))` is the settled one at d42a scope | B6.1, B6.10 |
-| **`Zhat`** | the settled root-free completion: `λ = 2`, `f = (4,4,3,7,3,3)/3`, unique up to scale **within the form** | B6.10, A6.7 |
+| **`Z`** | the completion's positive cut data; `Zhat = 2^(−\|h\|) f(class(sigma(h)))` is the settled one at d42a scope | B6.1, B6.10 |
+| **`Zhat`** | the settled root-free completion: `λ = 2`, `f = (4,4,3,7,3,3)/3`, unique up to scale **within the form** — and the unique positive `λ = 2` harmonic completion of that form whose measure **genuinely descends**, `μ_Zhat` being constant on all 5,548 record classes of the family (gated, and not implied by the square identity) | B6.10, B2.10, A6.7 |
 | **action line** | the corpus's *other* dynamics stream (papers 13/15/18/19, D20–D27): quantum-mechanical — amplitudes, class operators, a decoherence functional — with durable clicks only after a record instrument is **supplied**.  It **presupposes spacetime** | B2.9, A2.6 |
 | **D15 action** | the Standard Model plus effective gravity at the measured couplings; the conditional measure of the whole-history process it generates **is** the identified click law over the tested energy domain | B2.9 |
 | **generated-law line** | the stream of Parts A and B (papers 26–32, D34–D58): record-closed conditional laws on generated carriers, culminating in the d42a/d42b grammar.  Constructed, receipt-anchored, **generates** causal structure, **presupposes no spacetime** | B2.9 |
 | **identified law** | the third sense of "the click law": empirically anchored — *identified, not derived* — and **not proved record-closed**.  Distinct from the grammar's admissibility law (complete) and its probability law (not self-normalizing) | B2.8, B2.9, A2.5 |
-| **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front | B2.9, D4 |
+| **the missing map** | paper 29's name for what stands between the two streams: *"the action line and the generated-law line now meet at one missing map"*.  The corpus **supplies rather than derives** the identified law's boundary state, measure, record instrument and **generated record grammar**, so that law is **not yet proved record-closed**.  Partially bridged by the conditional descent theorem; the corpus's deepest named front.  **One segment is measured** (§B2.10), from the generated side only, and it locates the widest remaining stretch: the generated line has no class operators and no Gram functional, so paper 29's decoherence hypothesis holds *for the empty reason* | B2.9, B2.10, D4 |
 | **no silent erasure** | `[POSITED]` every loss of a record-accessible distinction must be **received** by records — total content conserved, sealing = dispersal, never intrinsic destruction.  The principle that closes the action line's coherence clause, with a parameter-free falsifier | B2.9, A2.6 |
 | **chart-size ratio (`ω`)** | the atlas instrument's overlap statistic on cover pairs.  `[THEOREM]` the smaller chart is *contained* in the larger, so `ω` is the ratio of their sizes and Jaccard similarity is identically equal to it — it therefore systematically favours **thin-charted** records | D2 (Road 1), B8.6 |
 | **crystal** | a record built to **tile** rather than to spike: the brick wall — ring actors, one minted version broadcast, then alternating re-delivery rounds.  Forced by the layer's own menus, sprinkling-grade homogeneity, above-sprinkling `ω`, **thin charts** at `d = 2`; the shortfall from a perfect tiling is entirely boundary.  Coupling two of them gives the *wide* crystal | B8.6, B8.7, A8.6 |
@@ -8957,13 +9929,18 @@ defined precisely, and to Part A where the intuition lives.
 | **disjoint-row lemma** | shattering `S` requires a row **disjoint from `S`**, not an empty row — the two coincide only when `S` is the whole direction set.  Its narrow true corollary: for a reflexive transitive poset a cover sky can never shatter its **full** direction set | B5.4, A5.5 |
 | **own-view dichotomy** | `[THEOREM, two actors]` a candidate's own view is **either** the initiator's register cone **or** the FULL view — no third case: register geometry alone *produces* a third case, and `arb_components_in_view`'s **proposer test** removes it.  The engine of (H1)'s proof and of the update table's row preconditions; **fails at three actors**, where the third case is admissible | B6.13, A6.9 |
 | **invisible supersession** | an actor's own token is alive in its cone but superseded in the full view, because the opponent self-arbitrated the shared base and the actor has not seen it.  The mechanism behind "a smaller view can yield MORE options", and the content of the update table's row R2′ — the same **9,656** events under three descriptions | B3.2, B6.13b, A3.2 |
-| **wide crystal** | the **built** composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record.  Witness **DOUBLE-RING(8, 10, 8)**: 177 events, 16 actors, forced with all actors offered at every step; `d = 2` homogeneity `47/59` in band with `\|D\| ≥ 4` at a third of its events.  A `d = 2` statement: at `d = 3` the uncoupled brick already meets the pattern | B8.7, A8.7, D2 |
+| **wide crystal** | the **built** composition of the two certified construction mechanisms — tiling (the brick) and width (the couriers) — in one record.  Witness **DOUBLE-RING(8, 10, 8)**: 177 events, 16 actors, forced with all actors offered at every step; `d = 2` homogeneity `47/59` in band with `\|D\| ≥ 4` at a third of its events.  A `d = 2` statement: at `d = 3` the uncoupled brick already meets the pattern.  It is also the substrate on which the **transition cocycle** is measured, and on which that cocycle's class is found to be a coboundary | B8.7, B8.8, A8.7, D2 |
+| **transition map** | the translation between two overlapping charts' coordinates — where a manifold's structure lives.  Read here from **wire words**: a direction's label in a chart is the set of register sequences realized by `P`-paths to it, `P` being `event_poset`'s own generating relation.  Every atlas result before D64 assumed these were identities; measured, 115 of 172 overlapping pairs of the wide crystal are not, and each non-identity one is a **partial** map on 2 of 4 fibre points (the 29 total maps are all identities) | B8.8, A8.8 |
+| **cocycle (transition)** | the consistency condition on transition maps around a triple of overlapping charts.  Satisfied on all 111 testable triples of the wide crystal and on **every** tested triple of every substrate, controls and sprinklings included — 993 triples, zero violations.  *Satisfying it does not make an atlas non-trivial*: it is a precondition, not evidence | B8.8, A8.8 |
+| **coboundary / `H¹ = 0`** | a transition class is a **coboundary** when a per-chart relabelling `ε` turns every transition into the identity; then `H¹ = 0`, the atlas is globally trivializable, the holonomy of every loop is trivial and the transitions are **pure gauge**.  On the delivery crystal it **is** one — 0 obstructions over 60 charts in 9 components, `ε` at 32/28, all 108 non-identity transitions relabelled away, at two independent port conventions.  **The obstruction count is the test**; non-identity transitions, a clean cocycle and a group name are all compatible with triviality | B8.8, A8.8, D2 |
+| **descent (of a click law)** | the condition that a law's conditionals come from one measure on records, so that `P(a\|H)P(b\|Ha) = P(b\|H)P(a\|Hb)` whenever both orders name the same record.  The generated law's **raw** weights satisfy it everywhere; its **normalized** kernel fails on 32,256 of 425,334 refined-record-identical ordered pairs, by exactly `M(σ(Hb))/M(σ(Ha))` — the coboundary of the per-state menu mass, zero exceptions.  `Zhat`'s measure **does** descend (constant on all 5,548 record classes) | B2.10, A2.7 |
+| **repair space** | the completions that annihilate the descent defect.  At the depth-4 truncation the positive cone has dimension **573**; **205** of those also descend; the `(depth, sigma)` family is a **28**-dimensional slice; `Zhat` is one ray.  Repairing the squares and descending imply each other in **neither** direction (two exact positive witnesses).  **The collapse to one ray is D50's form choice, not descent** — and "the completions are precisely the repair" is blacklisted (§0.3) | B2.10, B6.12, A2.7 |
 | **branching bound (W4b)** | `[THEOREM]` `\|D_e(d)\| ≤ B^d`, `B` = the largest register count of any event, proved from `event_poset`'s generating relation.  Deliveries carry `B = 2`, so **chart width 4 is the delivery grammar's ceiling at `d = 2`** and the sprinklings' 10–17 is unreachable by any delivery circuit; width past 4 **requires** arbitration over a multi-proposer conflict — a necessity, not a route | B8.7, A8.7 |
-| **arbitration crystal** | the unbuilt successor the branching bound names: a crystal made of **conflicts** rather than of deliveries, the only remaining route to chart width past 4 at `d = 2`.  An admissible 3-register *event* is exhibited; no *record* carrying a 5-direction chart exists yet | B8.7, D4 |
+| **arbitration crystal** | the unbuilt successor **three** results now name: a crystal made of **conflicts** rather than of deliveries.  *(i)* the only remaining route to chart width past 4 at `d = 2` (the branching bound); *(ii)* the first place a **non-coboundary** transition class could live, since what trivializes the delivery atlas is the two-port symmetry a conflict event lacks; *(iii)* the site of the `2 → 5/2` menu-mass jump that is the whole descent defect.  An admissible 3-register *event* is exhibited; no *record* carrying a 5-direction chart exists yet | B8.7, B8.8, B2.10, D4 |
 | **axioms R / S / C** | the earlier corpus's three: laws are laws of whole sealed histories; **no distinction without a record**; couplings fixed by self-consistency under refinement | C1 |
 | **Barandes-indivisible** | a process whose one-time transition law fails Chapman–Kolmogorov except at sparse **division events**; the barrier is the gap between `\|Σ\|²` and `Σ\|·\|²` — the interference cross-term | C1, C3 |
 | **Born = K1** | the statement that a constructed isometric arbitration family's squared branch amplitudes reproduce the committed `K1` kernel exactly (`1/2`–`1/2` on the 2-conflict, recomputed from the layer).  Appears in v10 paper 31 §4.3; the earlier Born layer (paper Va) is the same *kind* of statement — **relation formally unestablished** | C3.5, C5.4 |
-| **chart / gluing** | the unbuilt local-patch and overlap-agreement structure that turns a causal order into a **manifold** — arrow 3 of the destination, `[OPEN]`, the first construction the destination newly requires | D2 |
+| **chart / gluing** | the local-patch and overlap-agreement structure that turns a causal order into a **manifold** — arrow 3 of the destination, still `[OPEN]`, and the first construction the destination newly requires.  Charts exist and tile (`§B8.6`), tile wide (`§B8.7`), and their gluing is measured and **trivial** (`§B8.8`); what is unbuilt is a substrate whose gluing is not | D2, B8.8 |
 | **covariantization** | the result that a **Poisson sprinkling** of division events makes the kinematic layer Lorentz-invariant outright (no recoverable frame; arrow in the causal order, not a slicing; Hegerfeldt dissolved for the free flash), converting the GRW/CSL foliation wall into named dynamical residues | C3.6 |
 | **CP-divisibility** | an open-system channel property: the dephasing rate stays `≥ 0`, so no information backflow and **no revivals**.  **Orthogonal** to Barandes-indivisibility — neither implies the other | C3.1 |
 | **division event** | the record at which an indivisible stochastic process momentarily factorizes; the primitive of the causal-set gravity sector, where *order + number = geometry* | C1, C3.6 |
@@ -9030,7 +10007,7 @@ part of the document, not an apology for it.
 4. **D46's six ladder units get one paragraph each at most.**  D46b
    (Martin at transport, three reversals) appears in B9.6; D46c (Minkowski
    certificates) appears only via `W3_CERT` in B5.3; D46d appears in B7.2;
-   D46e in B2.8(v); D46f in B10.13; D46g (embedded-head reconciliation)
+   D46e in B2.8(v); D46f in B10.15; D46g (embedded-head reconciliation)
    only as the `1/16` vs `1/24` wart.  The three-round sweep that produced
    five headline reversals is characterized statistically rather than
    narrated.
@@ -9077,7 +10054,14 @@ part of the document, not an apology for it.
     all five rows from the prose alone and confirming them to depth 9;
     **D63** (§B8.7, the wide crystal and the branching bound) likewise,
     its referee rebuilding all 38 records and reproducing every figure
-    exactly — all three round 1 terminal;
+    exactly; **D64** (§B8.8, the transition cocycle) likewise, its referee
+    rebuilding the record, the poset, the sky, the port conventions and
+    the cocycle code, confirming every number and then running the
+    coboundary computation the unit had not; and **D65** (§B2.10, the
+    descent conditions) likewise, its referee rebuilding the family, the
+    state normal form, the record functor and the pair keys — *"every
+    single number reproduces"* — and then computing the repair-cone
+    dimension.  All five round 1 terminal.
     **D56** (§B9) is an advisory probe whose two load-bearing claims were
     independently re-verified and whose remainder must be re-derived.
     Two figures in §B5.7 and one in §B8.6 are `[REFEREE-CARRIED]`, and the
@@ -9118,12 +10102,13 @@ part of the document, not an apology for it.
     shape–dimension frontier and paper 8) are **not read** — C6 is an arc
     summary, not a reading of the line's own publications.
 
-14. **PART D is mostly a roadmap.**  Arrow 3's first two segments are now
-    results (the grammar tiles; it tiles wide at `d = 2`) and its next
-    step is a proved wall rather than an open engineering question, but
-    arrows 6 and 7 have no corpus content beyond being named, and their
-    entries are statements of what is missing.  The `[MY READING]` in §D3
-    is speculation and is marked three times as such.
+14. **PART D is mostly a roadmap.**  Arrow 3's first three segments are
+    now results (the grammar tiles; it tiles wide at `d = 2`; its charts'
+    transition class is a coboundary) and its next step is a proved wall
+    rather than an open engineering question, but arrows 6 and 7 have no
+    corpus content beyond being named, and their entries are statements of
+    what is missing.  The `[MY READING]` in §D3 is speculation and is
+    marked three times as such.
 
 15. **Three things this document leaves open, and a reader should not
     mistake for settled.**  (a) The **sky reading** — all three are live,
@@ -9137,7 +10122,13 @@ part of the document, not an apology for it.
     with the Lean-grade mechanization residue and the three-actor failure
     stated every time.  Residue 1 is **closed**, and the sentence is only
     ever true with its scope clause attached (§0.3): two actors,
-    delivery-free, inside the stationary form.
+    delivery-free, inside the stationary form.  (d) The **triviality of
+    the atlas** (§B8.8) is a measurement on one substrate at one chart
+    depth under conventions that were varied and agreed — a strong
+    measurement, not a theorem about the grammar; and the **descent
+    defect** (§B2.10) is exhaustive but confined to two-actor
+    delivery-free scope, where the menu mass takes exactly two values.
+    Neither generalizes by itself.
 
 ---
 

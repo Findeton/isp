@@ -11032,3 +11032,26 @@ finding) / A-III (ceiling broken; then A-IIIa trivial class again
 vs A-IIIb H1 != 0, the first genuine structure-group candidate).
 NO LEAN ON H1 EITHER WAY — D64 burned the intuition and the pin
 declines to replace it.  Worker dispatched.
+
+## 2026-07-26 — THE BOOK INTEGRATED TO #468: THE COCYCLE NEGATIVE AND
+## THE DESCENT SEGMENT, ONE-GO (LEDGER #470)
+THE-THEORY-SO-FAR.md 9,145 -> 10,136 lines, stamp #468, full re-read
+held.  New chapters: §A8.8/§B8.8 (the transition cocycle:
+non-identity, consistent, and a COBOUNDARY — the honest negative
+with the instrument as the product and the C7 numbers), §A2.7/§B2.10
+(the descent conditions: the refined-census defect, the repair-space
+hierarchy 573 ⊃ 205 ⊃ 28 ⊃ 1, Zhat's genuine descent as a
+certificate row, the D59 ledger table with the measure item PRICED).
+Part D re-ranked: the ARBITRATION CRYSTAL is #1 with its three
+convergent motivations; the missing map #2 (segment measured,
+functional level widest); the repair-cone question #3.  Graveyard
+gains the two retired claims (the Z/2 gauge structure; the
+"precisely" sentence) as full CLAIMED/KILLED/SURVIVED entries.
+Blacklist gains "the atlas carries a gauge structure" and "the
+completions are precisely the repair".  The re-read caught: the
+review-statistics sentence ("both recent rounds found a blocker" —
+false since D62's 0-blocker round; restated as seven rounds / five
+blockers / all five in interpretation, with D62 named), §D1b's
+tensor slot marked EMPTY with the coboundary as the reason, four
+pre-existing broken tables, and two future-tense captions.  Zero
+asserting hits for the retired sentences; stamp confirmed.
