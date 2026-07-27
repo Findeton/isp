@@ -9,6 +9,42 @@ path before either existed).  Campaign: THE MEASURE CAMPAIGN, opened
 at LOG #481, scoped by v10/note-d69-measure-campaign-scoping.md (route
 R4, with R5 as its proof engine and R1+R2 as the HZ5 arm).
 
+ROUND-1 REPAIRED, 2026-07-27.  This file is the ROUND-1 REPAIR of the
+first delivery, against reviews/d70-round1-hostile-review.md (5 MAJOR /
+4 MODERATE / 5 MINOR; the review broke no arithmetic and every number
+of the first delivery reproduced exactly — what it broke were the
+READINGS).  What changed, all of it visible in the gates below:
+  * MAJOR 1  THE FOUR-ACTOR POOL IS NOW BUILT TO DEPTH 4 and the
+    r = 3 -> 4 term the first delivery declined to compute is part of
+    this receipt.  The two-term rise it delivered its headline on is a
+    ONE-STEP BLIP that reverses at the very next horizon.
+  * MAJOR 2  THE PINNED-OBJECT DOCTRINE IS APPLIED IN ONE DIRECTION.
+    The first delivery took the horn verdict on the pinned conditional
+    and the pool verdict on the absolute kernel; here the pinned
+    sector-normalized conditional is the headline object EVERYWHERE,
+    including in the outcome decision, and the absolute kernel is
+    context everywhere.  The pinned object is now tabulated ACROSS
+    ACTOR POOLS, which the first delivery never did.
+  * MAJOR 3  THE HORN'S ROOT LEG IS A THEOREM, NOT A MEASUREMENT.
+    The layer's A <-> B and 0 <-> 1 relabellings are gated to be exact
+    automorphisms, the root menu is gated to be one orbit per event
+    kind, and the root conditional is therefore forced uniform for ANY
+    equivariant terminal.  A non-equivariant terminal is exhibited
+    breaking it.
+  * MAJOR 4  "ROUTE R5 IS CLOSED" IS NARROWED to the MENU-EXACT ATOM
+    route.  The sigma-level class R-SIG is gated to be RE-ENTERED and
+    its N-step hitting probability is gated to be NON-ZERO where it is
+    computable — the sigma-level renewal route is OPEN.
+  * MAJOR 5  HZ5's TWO MAPS ARE GATED TO COINCIDE on the decider's
+    whole input, so ONE test ran and R2's closure is inherited.
+  * MODERATE 6-9 and MINOR 1-5: theorem-passes counted and disclosed,
+    HZ5-1's unfailable clause repaired, window-artifact zeros
+    qualified, anchor count reconciled, HZ8-b's scan made total, NC2
+    relabelled a GRAMMAR perturbation, the determinism digest widened
+    past cap 3, residue 4 replaced.
+The review's own recomputations are credited where they are used and
+every one of them is re-derived here by this receipt's own code.
+
 PARENTS AND WHAT THIS RECEIPT REUSES RATHER THAN REBUILDS.
   * v10/code/d42b1_transport_exact.py — THE COMMITTED LAYER.  exec'd
     path-anchored, pre-print slice only.  Admission and pricing are
@@ -59,16 +95,27 @@ def sec():
 
 PASS = FAIL = ANCHOR_FAIL = 0
 GATE_LABELS = []
+THEOREM_GATES = []
 
 
-def check(label, ok, detail="", anchor=False):
+def check(label, ok, detail="", anchor=False, theorem=""):
+    """theorem = a NON-EMPTY string naming why this gate CANNOT FAIL.
+    Round-1 MODERATE 7: '41 PASS' was read as 41 tests when at least
+    seven of the passes were theorems of the construction.  Every such
+    gate now declares the reason in its own line and is counted
+    separately in the summary, so the PASS count is never read as a
+    count of tests."""
     global PASS, FAIL, ANCHOR_FAIL
     tag = "[PASS]" if ok else "[FAIL]"
     PASS, FAIL = PASS + int(bool(ok)), FAIL + int(not ok)
     ANCHOR_FAIL += int(anchor and not ok)
     GATE_LABELS.append(label)
+    if theorem:
+        THEOREM_GATES.append((label.split(None, 1)[0], theorem))
     print(f"  {tag} {label}" + (f"  ({detail})" if detail else "")
-          + ("   [ANCHOR]" if anchor else ""))
+          + ("   [ANCHOR]" if anchor else "")
+          + (f"   [THEOREM-PASS — CANNOT FAIL: {theorem}]"
+             if theorem else ""))
 
 
 OUT = []
@@ -89,7 +136,10 @@ def frl(xs):
 
 print("[D70 — THE HORIZON LIMIT: is there a measure at transport scope "
       "that needs no bounded abstraction?]")
-print("  banner: GREEN-UNREVIEWED.  Pin note-d70-horizon-limit-pin.md,")
+print("  banner: ROUND-1 REVIEWED AND REPAIRED (reviews/"
+      "d70-round1-hostile-review.md,")
+print("  5 MAJOR / 4 MODERATE / 5 MINOR; the review broke no arithmetic")
+print("  and broke four readings).  Pin note-d70-horizon-limit-pin.md,")
 print("  frozen and committed before this file was written.  EXACT")
 print("  Fractions everywhere; the committed d42b1 transport layer and")
 print("  the committed d42b3 delivery-free layer are exec'd")
@@ -235,7 +285,7 @@ ABCD = ('A', 'B', 'C', 'D')
 # DECLARED CAPS — printed here, before anything uses them.
 CAP_T = 6          # two-actor transport family, exhaustive menus
 CAP_3 = 4          # three-actor pool, exhaustive menus
-CAP_4 = 3          # four-actor pool, exhaustive menus
+CAP_4 = 4          # four-actor pool — ROUND-1 MAJOR 1: was 3
 CAP_DF = 6         # delivery-free d42a family, exhaustive menus
 CAP_D46B = 5       # D46b's OWN cap — the window its anchors were taken in
 CAP_NEG = 5        # the HZ6-i negative control's declared window
@@ -250,6 +300,16 @@ print(f"  DECLARED CAPS (pin §2 'every cap printed by the receipt'): "
       f"NO sampled arm is run anywhere in this receipt: every row below "
       f"is EXACT and exhaustive at its printed cap, so the D46d "
       f"exact/sampled separation has nothing to separate.")
+print(f"  ROUND-1 MAJOR 1, THE COST DECISION, PRINTED BEFORE THE RUN: "
+      f"the four-actor pool's cap moved from 3 to {CAP_4}.  That is "
+      f"318,704 further histories, which the first delivery priced and "
+      f"declined.  THE CHOICE MADE HERE IS SINGLE-CORE AND SERIAL — no "
+      f"multiprocessing, no worker pool, no shared state — because the "
+      f"measured rate on this machine is ~1.1 ms per four-actor depth-4 "
+      f"menu, i.e. ~6-8 minutes serial, and a serial build keeps the "
+      f"receipt byte-deterministic and free of any scheduling order.  "
+      f"The wall clock of that build is printed by the receipt itself "
+      f"below, and it makes this the campaign's longest receipt.")
 
 
 def build(actors, cap):
@@ -263,6 +323,57 @@ def build(actors, cap):
         for e, q in cache[h]:
             frontier.append(h + (e,))
     return cache
+
+
+# ---------------------------------------------------------------------
+# THE DEEPEST-LAYER LEAF COLLAPSE, declared here and CONTROLLED below.
+# ---------------------------------------------------------------------
+# The AST-lifted D46b recursion is G(h, 0) = 1 and
+# G(h, r) = sum_e q(e|h) G(h + e, r - 1).  A history at the family's
+# deepest layer D is therefore only ever asked for G(h, 1), and
+# G(h, 1) = sum_e q(e|h) * 1 = the menu's total weight.  NOTHING ELSE
+# about a depth-D menu can enter any number in this receipt, because
+# drift_cells never takes a kernel at depth > D - 1.  So the deepest
+# layer is stored as its exact menu-weight TOTAL under one synthetic
+# option, which reproduces G(h, 1) EXACTLY and holds 318,704 four-actor
+# menus in ~0.2 GB instead of tens of GB.  This is a storage decision,
+# not a modelling one, and it is CONTROLLED at HZ2-f by running the
+# three-actor pool BOTH ways and requiring byte-identical drift cells.
+LEAF = ('LEAF-COLLAPSED-DEEPEST-LAYER',)
+
+
+def build_leaf(actors, cap):
+    """Exhaustive menus to depth cap - 1; the depth-cap layer stored as
+    its exact menu-weight total only (see LEAF above)."""
+    cache = {}
+    frontier = [()]
+    while frontier:
+        h = frontier.pop()
+        cache[h] = candidates_for(list(h), actors)
+        if len(h) >= cap - 1:
+            continue
+        for e, q in cache[h]:
+            frontier.append(h + (e,))
+    deep = 0
+    for h in [x for x in cache if len(x) == cap - 1]:
+        for e, q in cache[h]:
+            tot = sum(qq for ee, qq in
+                      candidates_for(list(h) + [e], actors))
+            cache[h + (e,)] = [(LEAF, tot)]
+            deep += 1
+    return cache, deep
+
+
+def collapse_deepest(cache, cap):
+    """The same collapse applied to an already-built full cache, for the
+    HZ2-f like-for-like control."""
+    out = {}
+    for h, men in cache.items():
+        if len(h) == cap:
+            out[h] = [(LEAF, sum(q for e, q in men))]
+        elif len(h) < cap:
+            out[h] = men
+    return out
 
 
 _t = time.time()
@@ -413,18 +524,26 @@ SM = [sector(k) for k in RK]
 CD = [conditional(k) for k in RK]
 cond_drift = [max(abs(CD[i][e] - CD[i - 1][e]) for e in CD[0])
               for i in range(1, len(CD))]
-check("HZ0-7 THE PINNED OBJECT AT THE ROOT (D46b MB3-c): the "
-      "sector-normalized conditional is EXACTLY identical at every "
-      "remaining horizon r = 1..6 — drift exactly 0 at all five "
-      "committed steps, not small but zero — with D46b's own honesty "
-      "caveat carried: at the root all options within a kind are "
-      "exchangeable, which FORCES a uniform conditional at every "
-      "horizon, so the root's exactness is partly a symmetry artifact "
-      "and the off-root behaviour (HZ0-8, HZ2) is the real test.  The "
-      "sixth step r = 6 -> 7 is this receipt's extension",
+check("HZ0-7 THE PINNED OBJECT AT THE ROOT (D46b MB3-c) IS A THEOREM "
+      "OF THE CONSTRUCTION, NOT A MEASUREMENT — ROUND-1 MAJOR 3, "
+      "re-graded here.  The sector-normalized conditional is EXACTLY "
+      "identical at every remaining horizon r = 1..6 — drift exactly 0 "
+      "at all five committed steps, not small but zero.  D46b carried "
+      "this as an honesty caveat ('partly a symmetry artifact'); round "
+      "1 established it is not PARTLY an artifact but ENTIRELY one, and "
+      "HZ3-s1/HZ3-s2 below GATE the mechanism: the layer's A <-> B and "
+      "0 <-> 1 relabellings are exact automorphisms, the root menu is "
+      "ONE ORBIT PER EVENT KIND under them, and therefore ANY "
+      "equivariant terminal forces the uniform-within-kind conditional "
+      "at every horizon.  The value 0 here carries NO information about "
+      "horizon stability; the off-root behaviour (HZ0-8, HZ2) is the "
+      "whole of the real test.  The sixth step r = 6 -> 7 is this "
+      "receipt's extension and is 0 for the same reason",
       cond_drift[:5] == [Fr(0)] * 5,
       f"root conditional drift r -> r+1 for r = 1..6 = "
-      f"{[str(d) for d in cond_drift]}", anchor=True)
+      f"{[str(d) for d in cond_drift]}", anchor=True,
+      theorem="root-menu symmetry x equivariant terminal, gated at "
+              "HZ3-s1/HZ3-s2")
 
 abs_drift = [max(abs(RK[i][e] - RK[i - 1][e]) for e in RK[0])
              for i in range(1, len(RK))]
@@ -552,9 +671,15 @@ if ANCHOR_FAIL:
           f"the unit is INVALID and nothing below may be read.  "
           f"NOTHING HAS BEEN ADJUSTED TO MAKE IT PASS.  exit 1")
     sys.exit(1)
-print(f"{sec()}   HZ0: all {PASS} anchors reproduce.  Exit 1 is now "
-      f"unreachable — every gate below exits 0 whichever way it lands "
-      f"(pin §7).")
+print(f"{sec()}   HZ0: all {PASS} ANCHOR GATES reproduce.  ROUND-1 "
+      f"MINOR 1, the count reconciled and THIS RECEIPT MADE THE SOURCE: "
+      f"the {PASS} are 4 PROVENANCE gates (HZ0-a i-iv: the two exec'd "
+      f"layers, the AST kernel lift, the sigma text slice) plus 11 "
+      f"COMMITTED-NUMBER anchors (HZ0-1..HZ0-10 and HZ0-7b).  The first "
+      f"delivery's note said '14 anchors' over a list of ten bullets; "
+      f"the right statement is 4 + 11 = {PASS} anchor gates.  Exit 1 is "
+      f"now unreachable — every gate below exits 0 whichever way it "
+      f"lands (pin §7).")
 
 # ======================================================================
 # HZ1 — PROPERNESS, EXTENDED
@@ -611,7 +736,9 @@ check("HZ1-a PROPERNESS FAMILY-WIDE, EXTENDED FROM r = 1, 2 TO "
       "HZ-IV is not entered by this route",
       prop_bad == 0 and ntested == sum(n for r, n in prop_rows),
       f"kernels tested = {ntested}; sums != 1 = {prop_bad}; "
-      f"per-r counts = {[n for r, n in prop_rows]}")
+      f"per-r counts = {[n for r, n in prop_rows]}",
+      theorem="sum_e k_r = 1 is the definition of G divided by itself; "
+              "only a menu/potential mismatch could break it")
 check("HZ1-b STRICT POSITIVITY AND NON-NEGATIVITY — the substantive "
       "half.  Every one of the potentials above is strictly positive "
       "(so no kernel is defined by a zero denominator) and every kernel "
@@ -639,7 +766,20 @@ for R in range(1, CAP_T + 2):
         mass = nxt
         if sum(mass.values()) != 1:
             chain_bad += 1
-check("HZ1-c CUT-ADDITIVITY, the pin's HZ-IV defect asked of transport. "
+check("HZ1-c CUT-ADDITIVITY IS AN IDENTITY, NOT A MEASUREMENT — "
+      "ROUND-1 MODERATE 6, re-graded here.  The first delivery called "
+      "this 'the substantive half'; it is not.  Given HZ1-a "
+      "(sum_e k_r = 1 at every history) the chained mass at every cut "
+      "is 1 BY INDUCTION — it is a product of probability kernels — so "
+      "HZ-IV's cut-additivity clause was disposed of by construction "
+      "before this receipt ran, and the contrast against the raw "
+      "weight's cut masses is the observation that the raw weight is "
+      "UNNORMALIZED.  THE SUBSTANTIVE PROPERNESS GATE IS HZ1-b (strict "
+      "positivity: the only way the identity can break), and the "
+      "substantive version of 'is it consistent across R' is not "
+      "cut-additivity at all — it is exactly what HZ2's drift table "
+      "measures.  Kept as REPORTING because the raw cut masses are "
+      "worth printing: "
       "The RAW path weight is NOT a measure at transport either: its "
       "cut masses sum_{|h| = n} q(h) are exactly the root potentials "
       f"{frl(CUTS[:CAP_T + 1])}, so the same defect §B2.10 names at "
@@ -653,7 +793,9 @@ check("HZ1-c CUT-ADDITIVITY, the pin's HZ-IV defect asked of transport. "
       "at the price of the horizon dependence HZ2 and HZ3 measure",
       chain_bad == 0 and not cut_flat and CUTS[:2] == [Fr(2), Fr(4)],
       f"raw cut masses = {frl(CUTS)} (flat = {cut_flat}); chained "
-      f"cut-mass violations over R = 1..{CAP_T + 1} = {chain_bad}")
+      f"cut-mass violations over R = 1..{CAP_T + 1} = {chain_bad}",
+      theorem="a chain of probability kernels has cut mass 1 by "
+              "induction from HZ1-a")
 
 # ======================================================================
 # HZ2 — THE CAUCHY TABLE
@@ -738,16 +880,56 @@ ROW_BAD_OFFROOT = [(nm, L) for (nm, L) in ROW_BAD if L > 0]
 ROW_BAD_ROOT = [(nm, L) for (nm, L) in ROW_BAD if L == 0]
 
 print("  AND THE FAMILY-UNIFORM SUP (the D46b object), with the "
-      "shrinking-window caveat above attached to it in place:")
+      "shrinking-window caveat above attached to it in place.  "
+      "ROUND-1 MODERATE 9: the window at horizon r contains only the "
+      "depths printed beside each column, and where that list is [0] "
+      "THE WINDOW CONTAINS THE ROOT AND NOTHING ELSE — so a terminal 0 "
+      "in a CONDITIONAL row there is the symmetry identity of HZ0-7 / "
+      "HZ3-s2 and is NOT contraction and NOT shrinkage.  Every such "
+      "entry is marked [ROOT ONLY — window artifact, not a limit]:")
+DEPTHS_AT_R = {r: sorted({L for (rr, L) in CELLS2 if rr == r})
+               for r in RS2}
+ROOTONLY_R = [r for r in RS2 if DEPTHS_AT_R[r] == [0]]
+print(f"    depths inside the family-uniform window, by r: "
+      + "; ".join(f"r={r}: {DEPTHS_AT_R[r]}" for r in RS2)
+      + f"   -> ROOT-ONLY at r = {ROOTONLY_R}")
 UNI2 = {}
 for j, nm in enumerate(NORMS):
     row = [max(CELLS2[(r, L)][j] for (rr, L) in CELLS2 if rr == r)
            for r in RS2]
     UNI2[nm] = row
     print(f"    {nm:22s}: " + ", ".join(
-        f"r={RS2[i]}->{RS2[i] + 1}: {row[i]}" for i in range(len(row))))
+        f"r={RS2[i]}->{RS2[i] + 1}: {row[i]}"
+        + ("  [ROOT ONLY — window artifact, not a limit]"
+           if RS2[i] in ROOTONLY_R else "")
+        for i in range(len(row))))
 uni_contracts = {nm: contracts_from_first_nonzero(UNI2[nm])
                  for nm in NORMS}
+UNI2_OFFROOT = {nm: [UNI2[nm][i] for i in range(len(RS2))
+                     if RS2[i] not in ROOTONLY_R] for nm in NORMS}
+cond_tail_is_artifact = all(
+    UNI2[nm][-1] == 0 and RS2[-1] in ROOTONLY_R
+    for nm in ("L-inf (CONDITIONAL)", "L1 (CONDITIONAL)"))
+check("HZ2-e THE TERMINAL ZEROS OF THE CONDITIONAL FAMILY-UNIFORM ROWS "
+      "ARE WINDOW ARTIFACTS AND ARE STRUCK FROM EVERY 'CONTRACTS' / "
+      "'SHRINKS' READING (ROUND-1 MODERATE 9).  At the deepest "
+      "reachable horizon the family-uniform window has emptied of "
+      "off-root histories: it contains the root alone, where the "
+      "conditional is 0 by the symmetry identity of HZ0-7.  So the "
+      "final 0 in the two conditional rows is neither contraction nor "
+      "shrinkage, it is the window emptying, and the first delivery "
+      "quoted it in a summary sentence and in LOG #484.  The gate "
+      "requires (i) that the deepest horizon's window IS root-only, "
+      "(ii) that the conditional rows do end in 0 there, and (iii) that "
+      "the off-root-window prefix of every row is what any contraction "
+      "statement is taken on",
+      cond_tail_is_artifact and ROOTONLY_R == [RS2[-1]]
+      and all(len(UNI2_OFFROOT[nm]) == len(RS2) - 1 for nm in NORMS),
+      f"root-only horizons = {ROOTONLY_R} of {RS2}; conditional rows "
+      f"end in 0 there = {cond_tail_is_artifact}; the off-root-window "
+      f"conditional rows, which are what is read: "
+      + "; ".join(f"{nm} = {frl(UNI2_OFFROOT[nm])}"
+                  for nm in ("L-inf (CONDITIONAL)", "L1 (CONDITIONAL)")))
 
 # D46b MB3-e's actual norm-freeness claim: the ROOT drift ratios
 def ratios(seq):
@@ -807,9 +989,17 @@ if not root_abs_contracts:
             "every OFF-ROOT depth stratum contracts in all five norms "
             "(HZ2-a).  So the object that reverses is the "
             "horizon-BOUND absolute kernel — precisely the quantity "
-            "D44f says is horizon-bound — and the object the pin names "
-            "is untouched.  Reported here rather than smoothed: the "
-            "campaign's rule is that a surprise IS the result.")
+            "D44f says is horizon-bound.  ROUND-1 MAJOR 3, SAID "
+            "AGAINST THIS RECEIPT: that the pinned object stays 0 here "
+            "is NOT a consolation and carries no evidence of "
+            "stability — HZ3-s1/HZ3-s2 gate the root conditional as "
+            "FORCED to 0 by the root menu's orbit structure under the "
+            "layer's own automorphisms, so it would have stayed 0 "
+            "whatever the absolute kernel did.  What the reversal "
+            "shows is that a monotonicity read off five finite-horizon "
+            "points turned at the sixth.  Reported here rather than "
+            "smoothed: the campaign's rule is that a surprise IS the "
+            "result.")
 
 # the window question: D46b's window vs this receipt's wider one
 wider = []
@@ -875,31 +1065,94 @@ print(f"\n{sec()}   HZ2 IN ACTOR POOL — the pin's falsifier 4 ('if the "
       f"pool, the two-actor arm was measuring ARM-1T and not "
       f"transport').  Pools are EXACT and exhaustive at the printed "
       f"depths; no sampled arm is used.")
+print(f"  ROUND-1 MAJOR 1: THE FOUR-ACTOR POOL IS BUILT TO DEPTH "
+      f"{CAP_4}.  The first delivery stopped at depth 3, where the "
+      f"L = 1 row has only TWO terms, and delivered its headline on "
+      f"that two-term row while naming the depth-4 computation as 'the "
+      f"cheapest thing in the campaign and the one that would re-grade "
+      f"the headline'.  It is computed here.")
 POOLS = [("2 actors (A,B)", AB, CAP_T, CACHE, GT)]
-for nm, actors, cap in (("3 actors (A,B,C)", ABC, CAP_3),
-                        ("4 actors (A,B,C,D)", ABCD, CAP_4)):
-    _t = time.time()
-    c = build(actors, cap)
-    _lv = defaultdict(int)
-    for h in c:
-        _lv[len(h)] += 1
-    _cm = [sum(_lv[j] for j in range(k + 1)) for k in range(cap + 1)]
-    print(f"{sec()}     {nm}: exhaustive to depth {cap} in "
-          f"{time.time() - _t:.1f}s, cumulative {_cm}")
-    POOLS.append((nm, actors, cap, c, rel_potential(c)))
+_t = time.time()
+C3 = build(ABC, CAP_3)
+_lv = defaultdict(int)
+for h in C3:
+    _lv[len(h)] += 1
+CM3 = [sum(_lv[j] for j in range(k + 1)) for k in range(CAP_3 + 1)]
+_T3BUILD = time.time() - _t
+print(f"{sec()}     3 actors (A,B,C): exhaustive to depth {CAP_3} in "
+      f"{_T3BUILD:.1f}s, cumulative {CM3}  [FULL MENUS at every depth]")
+POOLS.append(("3 actors (A,B,C)", ABC, CAP_3, C3, rel_potential(C3)))
+
+_t = time.time()
+C4, DEEP4 = build_leaf(ABCD, CAP_4)
+_lv = defaultdict(int)
+for h in C4:
+    _lv[len(h)] += 1
+CM4 = [sum(_lv[j] for j in range(k + 1)) for k in range(CAP_4 + 1)]
+_T4BUILD = time.time() - _t
+print(f"{sec()}     4 actors (A,B,C,D): exhaustive to depth {CAP_4} in "
+      f"{_T4BUILD:.1f}s SERIAL, SINGLE-CORE, cumulative {CM4}; the "
+      f"deepest layer is {DEEP4} histories held as their exact "
+      f"menu-weight totals (the declared LEAF collapse, controlled at "
+      f"HZ2-f).  Per level {[_lv[k] for k in sorted(_lv)]}")
+POOLS.append(("4 actors (A,B,C,D)", ABCD, CAP_4, C4, rel_potential(C4)))
+check("HZ2-POOL4 THE FOUR-ACTOR DEPTH-4 LEVEL IS THE PRICED ONE.  The "
+      "first delivery's §10 residue 1 estimated '318,704 more "
+      "histories'; the level is enumerated here and its size is "
+      "reported in the direction it lands, together with the serial "
+      "wall clock so the cost claim can be audited rather than trusted",
+      CM4[:4] == [1, 25, 593, 13993] and DEEP4 == 318704
+      and CM4[4] == 13993 + 318704,
+      f"four-actor cumulative census = {CM4}; depth-4 level = {DEEP4}; "
+      f"serial build wall clock = {_T4BUILD:.1f}s "
+      f"(~{_T4BUILD / max(DEEP4, 1) * 1000:.2f} ms per depth-4 menu)")
 
 POOLCELLS = {}
 for nm, actors, cap, c, G in POOLS:
     POOLCELLS[nm] = drift_cells(c, G, cap)
-print("  MATCHED-CELL COMPARISON (same relative horizon r, same history "
-      "depth L, three pools) — L-inf on the absolute kernel, exact:")
-MATCHED = [(r, L) for r in (1, 2) for L in range(0, 3 - r + 1)]
-MATCHED = [(r, L) for (r, L) in MATCHED
-           if all((r, L) in POOLCELLS[nm] for nm, *_ in POOLS)]
-print("      (r, L) | " + " | ".join(nm for nm, *_ in POOLS))
-for (r, L) in MATCHED:
-    print(f"      ({r}, {L}) | " + " | ".join(
-        str(POOLCELLS[nm][(r, L)][0]) for nm, *_ in POOLS))
+
+# ---- HZ2-f: the leaf collapse, controlled like for like -------------
+C3COL = collapse_deepest(C3, CAP_3)
+CELLS3_COL = drift_cells(C3COL, rel_potential(C3COL), CAP_3)
+collapse_exact = (set(CELLS3_COL) == set(POOLCELLS["3 actors (A,B,C)"])
+                  and all(CELLS3_COL[k]
+                          == POOLCELLS["3 actors (A,B,C)"][k]
+                          for k in CELLS3_COL))
+check("HZ2-f THE DEEPEST-LAYER LEAF COLLAPSE CHANGES NO NUMBER, "
+      "CONTROLLED LIKE FOR LIKE ON A POOL WHERE BOTH ARE AFFORDABLE.  "
+      "The four-actor depth-4 layer is stored as its exact menu-weight "
+      "total, because the AST-lifted recursion has G(h, 0) = 1 and can "
+      "therefore only ever ask a deepest-layer history for "
+      "G(h, 1) = sum_e q(e|h).  Asserting that would be a modelling "
+      "claim, so it is GATED instead: the THREE-actor pool is built "
+      "with full menus at depth 4 AND with the same collapse, both are "
+      "pushed through the identical drift_cells, and every one of the "
+      "five norms in every (r, L) cell must agree as an exact rational. "
+      "If the collapse lost anything, this gate is where it would show",
+      collapse_exact and len(CELLS3_COL) == len(POOLCELLS[POOLS[1][0]]),
+      f"cells compared = {len(CELLS3_COL)} x {len(NORMS)} norms; "
+      f"disagreements = "
+      f"{sum(1 for k in CELLS3_COL if CELLS3_COL[k] != POOLCELLS[POOLS[1][0]][k])}")
+
+MATCHED = sorted(set(POOLCELLS[POOLS[0][0]])
+                 & set(POOLCELLS[POOLS[1][0]])
+                 & set(POOLCELLS[POOLS[2][0]]))
+print(f"  MATCHED-CELL COMPARISON (same relative horizon r, same "
+      f"history depth L, three pools), IN ALL FIVE NORMS — ROUND-1 "
+      f"MAJOR 2: the first delivery tabulated the cross-pool comparison "
+      f"for norm index 0 only, so THE PINNED OBJECT WAS NEVER "
+      f"TABULATED ACROSS ACTOR POOLS ANYWHERE IN THE UNIT, which is "
+      f"precisely what the pin's falsifier 4 asks about.  It is "
+      f"tabulated here.  The deeper four-actor cap also widens the "
+      f"matched set from 5 cells to {len(MATCHED)}:")
+for j, nm in enumerate(NORMS):
+    tagj = "  <-- THE PINNED OBJECT" if j >= 3 else "  (context: "\
+        "horizon-bound absolute kernel, D44f)"
+    print(f"    norm = {nm}{tagj}")
+    print("      (r, L) | " + " | ".join(n2 for n2, *_ in POOLS))
+    for (r, L) in MATCHED:
+        print(f"      ({r}, {L}) | " + " | ".join(
+            str(POOLCELLS[n2][(r, L)][j]) for n2, *_ in POOLS))
 print("  family-uniform sup per pool, at the horizons each pool's cap "
       "can reach (the windows DIFFER and the rows are not comparable "
       "across pools except in the matched cells above):")
@@ -914,20 +1167,92 @@ for nm, actors, cap, c, G in POOLS:
                       for i in range(len(row))))
 POOLROWBAD = {}
 POOLROWBAD_OFF = {}
+POOLROWBAD_OFF_PIN = {}
+POOLROWBAD_OFF_ABS = {}
+POOLSEQ = {}
 for nm, actors, cap, c, G in POOLS:
     bad = []
     for j in range(len(NORMS)):
         for L in sorted({L for r, L in POOLCELLS[nm]}):
-            seq = [POOLCELLS[nm][(r, L)][j] for r in
-                   sorted({r for r, LL in POOLCELLS[nm] if LL == L})]
+            rs = sorted({r for r, LL in POOLCELLS[nm] if LL == L})
+            seq = [POOLCELLS[nm][(r, L)][j] for r in rs]
+            POOLSEQ[(nm, NORMS[j], L)] = (rs, seq)
             if not contracts_from_first_nonzero(seq):
                 bad.append((NORMS[j], L))
     POOLROWBAD[nm] = bad
     POOLROWBAD_OFF[nm] = [(n2, L) for n2, L in bad if L > 0]
+    POOLROWBAD_OFF_PIN[nm] = [(n2, L) for n2, L in POOLROWBAD_OFF[nm]
+                              if 'CONDITIONAL' in n2]
+    POOLROWBAD_OFF_ABS[nm] = [(n2, L) for n2, L in POOLROWBAD_OFF[nm]
+                              if 'CONDITIONAL' not in n2]
 print("  depth-stratified rows that do NOT contract, per pool "
-      "(norm, depth L) — printed in full, root rows included:")
+      "(norm, depth L) — printed in full, root rows included, and "
+      "SPLIT BY OBJECT (ROUND-1 MAJOR 2: the pinned sector-normalized "
+      "conditional is the headline object, the absolute kernel is "
+      "horizon-bound D44f context — one doctrine, one direction, "
+      "everywhere in this receipt):")
 for nm, actors, cap, c, G in POOLS:
-    print(f"      {nm:20s}: {POOLROWBAD[nm] if POOLROWBAD[nm] else 'none'}")
+    print(f"      {nm:20s}: ALL = "
+          f"{POOLROWBAD[nm] if POOLROWBAD[nm] else 'none'}")
+    print(f"      {'':20s}  PINNED OBJECT, off-root = "
+          f"{POOLROWBAD_OFF_PIN[nm] if POOLROWBAD_OFF_PIN[nm] else 'NONE'}"
+          f"   |   ABSOLUTE (context), off-root = "
+          f"{POOLROWBAD_OFF_ABS[nm] if POOLROWBAD_OFF_ABS[nm] else 'none'}")
+print("  THE FOUR-ACTOR L = 1 ROW IN ALL FIVE NORMS, THE ROW THE FIRST "
+      "DELIVERY'S HEADLINE RESTED ON, NOW WITH ITS THIRD TERM.  The "
+      "pinned rows are printed BESIDE the absolute ones, which the "
+      "first delivery never did:")
+P4 = POOLS[2][0]
+BLIP = {}
+for j, nm2 in enumerate(NORMS):
+    rs, seq = POOLSEQ[(P4, nm2, 1)]
+    steps = [(seq[i] / seq[i - 1] - 1) for i in range(1, len(seq))]
+    BLIP[nm2] = (rs, seq, steps)
+    print(f"      {nm2:22s}: "
+          + ", ".join(f"r={rs[i]}->{rs[i] + 1}: {seq[i]} "
+                      f"(~{float(seq[i]):.6e})" for i in range(len(seq)))
+          + "   step changes "
+          + ", ".join(f"{float(x) * 100:+.2f}%" for x in steps)
+          + (f"   t3 vs t1 = "
+             f"{float(seq[-1] / seq[0] - 1) * 100:+.2f}%"
+             if len(seq) >= 3 else ""))
+_r3, _s3 = POOLSEQ[(POOLS[1][0], NORMS[0], 0)]
+print("  AND THE PRECEDENT THE UNIT ALREADY HELD, at three actors, in "
+      "the ROOT row of the same norm — a rise at step 2 followed by a "
+      "fall at step 3, i.e. a two-term rise was ALREADY known inside "
+      "this family to be non-diagnostic:")
+print(f"      3 actors, L-inf absolute, L = 0: {frl(_s3)}"
+      + "   step changes "
+      + ", ".join(f"{float(_s3[i] / _s3[i - 1] - 1) * 100:+.2f}%"
+                  for i in range(1, len(_s3)) if _s3[i - 1] != 0))
+blip_rows = [nm2 for nm2 in NORMS if 'CONDITIONAL' not in nm2]
+blip_shape = all(len(BLIP[nm2][1]) >= 3 and BLIP[nm2][2][0] > 0
+                 and BLIP[nm2][2][1] < 0 for nm2 in blip_rows)
+blip_below_first = [nm2 for nm2 in blip_rows
+                    if BLIP[nm2][1][-1] < BLIP[nm2][1][0]]
+pin_rows_contract_4 = all(
+    contracts_from_first_nonzero(BLIP[nm2][1])
+    for nm2 in NORMS if 'CONDITIONAL' in nm2)
+check("HZ2-BLIP THE FOUR-ACTOR RISE IS A ONE-STEP BLIP THAT REVERSES AT "
+      "THE VERY NEXT HORIZON — ROUND-1 MAJOR 1, THE FIRST DELIVERY'S "
+      "HEADLINE RE-GRADED BY ITS OWN NAMED COMPUTATION.  At depth 3 the "
+      "four-actor L = 1 row had exactly two terms and rose between "
+      "them; at depth 4 it has three, and it FALLS in every absolute "
+      "norm at r = 3 -> 4, ending BELOW its first term in L-infinity "
+      "and in L1.  The gate requires the shape to be exactly that — up "
+      "at the first step, down at the second — and reports which norms "
+      "end below their first term.  Meanwhile THE PINNED OBJECT never "
+      "rose at all: both conditional norms contract strictly at every "
+      "one of the three steps.  The honest description of the "
+      "four-actor pool is therefore CONTRACTION, with a two-term blip "
+      "in a horizon-bound context statistic",
+      blip_shape and pin_rows_contract_4 and len(blip_below_first) >= 2,
+      "; ".join(f"{nm2}: {frl(BLIP[nm2][1])} "
+                f"[{', '.join(f'{float(x) * 100:+.2f}%' for x in BLIP[nm2][2])}]"
+                for nm2 in NORMS)
+      + f"; absolute norms ending BELOW their first term = "
+      f"{blip_below_first}; pinned rows contract strictly = "
+      f"{pin_rows_contract_4}")
 print("  and the EXACT SEQUENCES of every OFF-ROOT row that does not "
       "contract, printed in place because this is the pin's HZ-I "
       "clause (c) and it must not be quoted as a boolean:")
@@ -935,8 +1260,7 @@ OFFROW_DETAIL = []
 for nm, actors, cap, c, G in POOLS:
     for n2, L in POOLROWBAD_OFF[nm]:
         j = NORMS.index(n2)
-        rs = sorted({r for r, LL in POOLCELLS[nm] if LL == L})
-        seq = [POOLCELLS[nm][(r, L)][j] for r in rs]
+        rs, seq = POOLSEQ[(nm, n2, L)]
         rise = max((seq[i] / seq[i - 1] - 1
                     for i in range(1, len(seq)) if seq[i] > seq[i - 1]),
                    default=Fr(0))
@@ -945,7 +1269,10 @@ for nm, actors, cap, c, G in POOLS:
               + ", ".join(f"r={rs[i]}->{rs[i] + 1}: {seq[i]} "
                           f"(~{float(seq[i]):.6e})"
                           for i in range(len(seq)))
-              + f"   largest rise = {rise} (~{float(rise) * 100:.2f}%)")
+              + f"   largest rise = {rise} (~{float(rise) * 100:.2f}%)"
+              + ("   [PINNED OBJECT]" if 'CONDITIONAL' in n2 else
+                 "   [absolute kernel — D44f context, NOT the verdict "
+                 "object]"))
 if not OFFROW_DETAIL:
     print("      none — every off-root row contracts at every pool")
 pool_contracts = {nm: contracts_from_first_nonzero(POOLUNI[nm][1])
@@ -953,26 +1280,43 @@ pool_contracts = {nm: contracts_from_first_nonzero(POOLUNI[nm][1])
 pool_mono_in_width = all(
     POOLCELLS[POOLS[0][0]][(r, L)][0] <= POOLCELLS[POOLS[1][0]][(r, L)][0]
     for (r, L) in MATCHED)
-check("HZ2-c POOL DEPENDENCE, BOTH WAYS, AND THE WIDTH COMPARISON MADE "
-      "ONLY IN MATCHED CELLS.  The pins' falsifier 4 asks whether the "
-      "contraction degrades systematically with actor pool.  At every "
-      "pool the depth-stratified rows are checked for contraction in r "
-      "by the same rule as HZ2-a, and the drift is compared across "
-      "pools ONLY at identical (r, L) — the pools' windows differ and "
-      "their family-uniform rows are not comparable.  The gate records "
-      "the answer in the direction it lands.  As at HZ2-a the ROOT row "
-      "is excluded from the predicate and printed in full above",
-      all(not POOLROWBAD_OFF[nm] for nm in POOLROWBAD_OFF)
+pool_pin_falls = all(
+    POOLCELLS[POOLS[0][0]][(r, L)][3] >= POOLCELLS[POOLS[2][0]][(r, L)][3]
+    for (r, L) in MATCHED if POOLCELLS[POOLS[0][0]][(r, L)][3] != 0)
+check("HZ2-c POOL DEPENDENCE, TAKEN ON THE PINNED OBJECT AND ON NOTHING "
+      "ELSE — ROUND-1 MAJOR 2, THE DOCTRINE APPLIED IN ONE DIRECTION.  "
+      "The pin's §6 and §2 say in terms that the pinned object is the "
+      "SECTOR-NORMALIZED CONDITIONAL and that absolute completed "
+      "weights are horizon-bound (D44f) CONTEXT.  The first delivery "
+      "enforced that at HZ3-b, in capitals, and then folded the "
+      "absolute rows into THIS gate's boolean, which is the direction "
+      "that maximised the delivered negative.  Here one doctrine runs "
+      "in one direction: the verdict is taken on the pinned conditional "
+      "at every pool, and the absolute rows are printed in full beside "
+      "it and are NOT folded in.  The pin's falsifier 4 asks whether "
+      "contraction degrades with actor pool; the drift is compared "
+      "across pools ONLY at identical (r, L), in all five norms, and "
+      "the answer is recorded in the direction it lands.  As at HZ2-a "
+      "the ROOT row is excluded from the predicate — at every pool it "
+      "is the symmetry identity of HZ0-7 in the pinned object and the "
+      "horizon-bound quantity of HZ2-d in the absolute one",
+      all(not POOLROWBAD_OFF_PIN[nm] for nm in POOLROWBAD_OFF_PIN)
       and len(POOLUNI) == 3
       and all((r, L) in POOLCELLS[nm] for (r, L) in MATCHED
               for nm, *_ in POOLS),
-      "OFF-ROOT depth-stratified rows contract at every pool: "
-      + ", ".join(f"{nm} = {not POOLROWBAD_OFF[nm]}"
-                  for nm in POOLROWBAD_OFF)
+      "PINNED-OBJECT off-root rows contract at every pool: "
+      + ", ".join(f"{nm} = {not POOLROWBAD_OFF_PIN[nm]}"
+                  for nm in POOLROWBAD_OFF_PIN)
+      + "; ABSOLUTE (context) off-root rows that do not contract: "
+      + ", ".join(f"{nm} = {POOLROWBAD_OFF_ABS[nm] or 'none'}"
+                  for nm in POOLROWBAD_OFF_ABS)
       + "; family-uniform rows contract: "
       + ", ".join(f"{nm} = {pool_contracts[nm]}" for nm in POOLUNI)
-      + f"; matched cells = {MATCHED}; drift at 3 actors >= drift at 2 "
-      f"actors in every matched cell = {pool_mono_in_width}")
+      + f"; matched cells = {len(MATCHED)} at {MATCHED}; drift at 3 "
+      f"actors >= drift at 2 actors in every matched cell = "
+      f"{pool_mono_in_width}; the PINNED drift at 4 actors <= at 2 "
+      f"actors in every matched cell where it is nonzero = "
+      f"{pool_pin_falls}")
 
 # ======================================================================
 # HZ3 — TRUNCATION-CONVENTION INDEPENDENCE (the horn gate)
@@ -1043,6 +1387,225 @@ check("HZ3-a THE CONVENTIONS ARE WHAT THEY ARE DECLARED TO BE.  C1 "
       f"C1 == D46b's G at r = 1..{CAP_T + 1}: {c1_eq_ast}; "
       f"C3(r) == C1(r+1): {c3_shift}; C3's kernel == C1's shifted "
       f"kernel entrywise: {c3_kernel_shift}")
+
+# ---------------------------------------------------------------------
+# HZ3-s — ROUND-1 MAJOR 3: THE ROOT LEG IS A THEOREM, GATED.
+# ---------------------------------------------------------------------
+print("  ROUND-1 MAJOR 3, THE ROOT LEG RE-GRADED FROM [MEASURED] TO "
+      "[THEOREM].  The first delivery presented 'the pinned object "
+      "separates NOWHERE at the root, exactly 0 at every horizon' as "
+      "the measured half of an object-dependence finding — something "
+      "that could have come out otherwise.  It could not.  The layer "
+      "carries exact relabelling symmetries, the root menu is a single "
+      "orbit per event kind under them, and therefore ANY equivariant "
+      "terminal forces the uniform-within-kind conditional at the root "
+      "at every horizon.  Gated in three steps rather than asserted:")
+_SWA = {'A': 'B', 'B': 'A'}
+
+
+def make_sigma(swap_actor, swap_bit):
+    """The relabelling action on the committed layer's own event and
+    version algebra.  Versions are rebuilt exactly as vname/mname build
+    them (sorted value tuple, sorted author tuple, sorted merge pair),
+    so the image of a legal name is a legal name."""
+    def sa(a):
+        return _SWA[a] if swap_actor else a
+
+    def sb(x):
+        return (1 - x) if swap_bit else x
+
+    def sv(v):
+        if v == V0:
+            return v
+        if v[1] == 'm':
+            pk = tuple(sorted((sv(v[2][0]), sv(v[2][1])), key=repr))
+            val = v[3]
+            return ('v', 'm', pk,
+                    None if val is None
+                    else tuple(sorted(sb(x) for x in val)), sa(v[4]))
+        return ('v', sv(v[1]), tuple(sorted(sb(x) for x in v[2])),
+                tuple(sorted(sa(a) for a in v[3])), sa(v[4]))
+
+    def st(t):
+        return (sa(t[0]), sv(t[1]), sb(t[2]))
+
+    def se(e):
+        k = e[0]
+        if k == 'p':
+            return ('p', sa(e[1]), sv(e[2]), sb(e[3]))
+        if k == 'n':
+            return ('n', sa(e[1]))
+        if k == 'd':
+            return ('d', sa(e[1]), sa(e[2]), sv(e[3]))
+        if k == 'r':
+            return ('r', sa(e[1]), frozenset(st(x) for x in e[2]),
+                    frozenset(st(x) for x in e[3]))
+        if k == 'm':
+            pk = tuple(sorted((sv(e[2][0]), sv(e[2][1])), key=repr))
+            return ('m', sa(e[1]), pk,
+                    'both' if e[3] == 'both' else sv(e[3]))
+        raise ValueError(k)
+
+    def sh(h):
+        return tuple(se(x) for x in h)
+    return se, sh
+
+
+SYM_DEPTH = 3
+SYMS = (("A <-> B (actor relabelling)", 1, 0),
+        ("0 <-> 1 (proposal-value relabelling)", 0, 1),
+        ("both together", 1, 1))
+SYMRES = []
+for _snm, _swa, _swb in SYMS:
+    _se, _sh = make_sigma(_swa, _swb)
+    nviol = miss = ntot = 0
+    for h in CACHE:
+        if len(h) > SYM_DEPTH:
+            continue
+        ntot += 1
+        g = _sh(h)
+        if g not in CACHE:
+            miss += 1
+            continue
+        # SET comparison, never sorted-by-repr: two EQUAL frozensets can
+        # have different reprs in the same process, so a repr sort is
+        # not a safe multiset test.
+        if (set((_se(e), q) for e, q in CACHE[h]) != set(CACHE[g])
+                or len(CACHE[h]) != len(CACHE[g])):
+            nviol += 1
+    SYMRES.append((_snm, ntot, miss, nviol))
+    print(f"      {_snm:38s}: {ntot} histories of depth <= {SYM_DEPTH}, "
+          f"images outside the family = {miss}, menus not carried "
+          f"across = {nviol}")
+_seF, _shF = make_sigma(1, 1)
+gviol = gtot = 0
+GTOT_EXPECT = sum(CAP_T + 1 - len(h) for h in CACHE
+                  if len(h) <= SYM_DEPTH)
+for h in CACHE:
+    if len(h) > SYM_DEPTH:
+        continue
+    for r in range(1, CAP_T + 2 - len(h)):
+        gtot += 1
+        if GT(h, r) != GT(_shF(h), r):
+            gviol += 1
+sym_clean = all(m == 0 and v == 0 for nm2, n2, m, v in SYMRES)
+check("HZ3-s1 THE RELABELLINGS ARE EXACT AUTOMORPHISMS OF THE COMMITTED "
+      "LAYER.  Relabelling a history and relabelling its menu give the "
+      "same (event, weight) multiset, for the actor swap alone, for the "
+      "proposal-value swap alone and for the two together, over every "
+      "history of depth <= 3; the family is closed under all three; and "
+      "the AST-lifted potential G(h, r) is invariant, at every history "
+      "of depth <= 3 and every horizon that history can reach.  This is "
+      "a fact about the layer, obtained without touching it",
+      sym_clean and gviol == 0 and gtot == GTOT_EXPECT,
+      "; ".join(f"{nm2}: {n2} histories, {m} images missing, {v} menu "
+                f"violations" for nm2, n2, m, v in SYMRES)
+      + f"; G(h, r) == G(sigma h, r) over {gtot} (history, horizon) "
+      f"pairs with {gviol} violations")
+
+_seA, _ = make_sigma(1, 0)
+_seB, _ = make_sigma(0, 1)
+
+
+def orbit_of(e):
+    S = {e}
+    while True:
+        T = S | {_seA(x) for x in S} | {_seB(x) for x in S}
+        if T == S:
+            return S
+        S = T
+
+
+ROOTKINDS = defaultdict(set)
+for e, q in CACHE[ROOT]:
+    ROOTKINDS[e[0]].add(e)
+ORBIT_OK = all(orbit_of(sorted(v, key=repr)[0]) == v
+               for v in ROOTKINDS.values())
+print("      the root menu, by kind, and its orbit under the group the "
+      "two relabellings generate:")
+for k in sorted(ROOTKINDS):
+    reps = sorted(ROOTKINDS[k], key=repr)
+    print(f"        kind '{k}': {len(ROOTKINDS[k])} options, orbit of "
+          f"one of them has size {len(orbit_of(reps[0]))} -> single "
+          f"orbit = {orbit_of(reps[0]) == ROOTKINDS[k]}")
+
+# C5 (the first delivery's own residue 4) and C4 (non-equivariant)
+G_C5 = make_G(CACHE, lambda h: Fr(1 + len({e[0] for e, q in CACHE[h]})))
+G_C4 = make_G(CACHE,
+              lambda h: Fr(2) if (h and h[-1][1] == 'A') else Fr(1))
+TERMS = (("C1 committed", G_C1), ("C2 branch-count", G_C2),
+         ("C3 menu-mass", G_C3), ("C5 sector-weighted (residue 4)",
+                                  G_C5),
+         ("C4 ACTOR-ASYMMETRIC (NON-equivariant)", G_C4))
+ROOTUNIF = {}
+ROOTSEP = {}
+for tnm, GG in TERMS:
+    unif = []
+    csep = []
+    asep = []
+    for r in range(1, CAP_T + 1):
+        kk = krel(CACHE, GG, ROOT, r)
+        cc = conditional(kk)
+        byk = defaultdict(list)
+        for e, v in cc.items():
+            byk[e[0]].append(v)
+        unif.append(all(len(set(v)) == 1 for v in byk.values()))
+        k1 = krel(CACHE, G_C1, ROOT, r)
+        csep.append(max(abs(cc[e] - conditional(k1)[e]) for e in k1))
+        asep.append(max(abs(kk[e] - k1[e]) for e in k1))
+    ROOTUNIF[tnm] = unif
+    ROOTSEP[tnm] = (csep, asep)
+    print(f"      {tnm:40s}: root conditional uniform WITHIN EVERY "
+          f"KIND at r = 1..{CAP_T} = {all(unif)};  separation from C1 "
+          f"in the PINNED object = {frl(csep)};  in the absolute "
+          f"kernel = {frl(asep)}")
+equiv_unif = all(all(ROOTUNIF[t]) for t in ROOTUNIF
+                 if not t.startswith('C4'))
+c4_breaks = ROOTSEP['C4 ACTOR-ASYMMETRIC (NON-equivariant)'][0][0] != 0
+check("HZ3-s2 THE ROOT'S EXACT ZERO IS FORCED, FOR EVERY EQUIVARIANT "
+      "TERMINAL — THEOREM OF THE CONSTRUCTION.  Each event kind in the "
+      "root menu is a SINGLE ORBIT of the group HZ3-s1 gates "
+      "({p(A,v0,0), p(A,v0,1), p(B,v0,0), p(B,v0,1)}, {d(A,B,v0), "
+      "d(B,A,v0)}, {n(A), n(B)}), so an invariant potential gives every "
+      "option in a kind the same completed weight and the "
+      "sector-normalized conditional is uniform within kind at EVERY "
+      "horizon and under EVERY equivariant terminal.  Four such "
+      "terminals are pushed through and all four give uniform-in-kind "
+      "root conditionals and separation exactly 0 from C1 at the root, "
+      "INCLUDING C5 — which is precisely the first delivery's own §10 "
+      "residue 4 ('a third that refines differently, e.g. a "
+      "sector-weighted terminal').  So residue 4 as written could not "
+      "have sharpened anything: it reproduces the same tautology.  The "
+      "absolute separations are nonzero and are printed beside it",
+      ORBIT_OK and equiv_unif
+      and all(x == 0 for x in ROOTSEP['C5 sector-weighted (residue 4)'][0])
+      and all(x != 0 for x in ROOTSEP['C5 sector-weighted (residue 4)'][1]),
+      f"root menu kinds and sizes = "
+      f"{ {k: len(v) for k, v in sorted(ROOTKINDS.items())} }; every "
+      f"kind is one orbit = {ORBIT_OK}; equivariant terminals give a "
+      f"uniform-in-kind root conditional = {equiv_unif}; C5 root "
+      f"conditional separation from C1 = "
+      f"{frl(ROOTSEP['C5 sector-weighted (residue 4)'][0])}; C5 root "
+      f"ABSOLUTE separation = "
+      f"{frl(ROOTSEP['C5 sector-weighted (residue 4)'][1])}",
+      theorem="root-menu orbit structure x terminal equivariance; no "
+              "equivariant terminal can give a nonzero root conditional "
+              "separation")
+check("HZ3-s3 AND THE INVARIANCE BREAKS THE MOMENT EQUIVARIANCE IS "
+      "DROPPED — the falsification test the pin's HZ3 asks for, run.  "
+      "C4 is a legitimate function of the terminal history's own state "
+      "(G(h, 0) = 2 if the last event's actor is A, else 1), strictly "
+      "positive, and NOT equivariant.  Its root conditional separates "
+      "from C1 immediately.  So HZ3-s2's zero is a statement about the "
+      "SYMMETRY CLASS of the terminal and not about horizons, and the "
+      "honest successor residue is a NON-EQUIVARIANT terminal, not "
+      "another equivariant one",
+      c4_breaks
+      and not ROOTUNIF['C4 ACTOR-ASYMMETRIC (NON-equivariant)'][0],
+      f"C4 root conditional separation from C1, r = 1..{CAP_T} = "
+      f"{frl(ROOTSEP['C4 ACTOR-ASYMMETRIC (NON-equivariant)'][0])}; C4 "
+      f"root absolute separation = "
+      f"{frl(ROOTSEP['C4 ACTOR-ASYMMETRIC (NON-equivariant)'][1])}")
 
 print("  THE HORN COMPARISON: k^C1_r(e|h) vs k^C2_r(e|h), ENTRYWISE in "
       "exact Fractions, at MATCHED relative horizon.  C2's potential "
@@ -1117,29 +1680,39 @@ horn_cond_shrinks = not [k for k in HROW_BAD_COND if k[1] > 0]
 horn_shrinks = horn_cond_shrinks
 horn_root_cond_zero = all(x == 0 for x in horn_root_cond)
 horn_root_abs_nonzero = all(x != 0 for x in horn_root_abs)
-check("HZ3-b THE TWO TERMINAL CONVENTIONS SEPARATE EVERYWHERE IN THE "
-      "ABSOLUTE KERNEL AND NOWHERE AT THE ROOT IN THE PINNED ONE, AND "
-      "THE OFF-ROOT SEPARATION SHRINKS IN r AT EVERY FIXED DEPTH.  "
-      "Three facts, kept apart: (i) NO history in the whole comparison "
-      "has k^C1_r = k^C2_r, so the conventions are genuinely different "
-      "completions and not a reparametrization — C3 is the "
-      "reparametrization and HZ3-a gates it as one; (ii) at the ROOT "
-      "the SECTOR-NORMALIZED CONDITIONAL — the pinned object — is "
-      "EXACTLY EQUAL under the two conventions at every computed "
-      "horizon, while the absolute kernel is never equal, which is "
-      "the D44f split (horizon-bound absolute, horizon-stable "
-      "conditional) showing up as a convention split; (iii) at every "
-      "fixed OFF-ROOT depth the separation in THE PINNED OBJECT shrinks "
-      "in r.  **THE HORN VERDICT IS TAKEN ON THE PINNED OBJECT AND ON "
-      "NOTHING ELSE, because the pin's §6 says so in terms: the pinned "
-      "object is the sector-normalized conditional and the absolute "
-      "completed weights are horizon-bound (D44f) context.  The "
-      "absolute rows are printed in full beside it and are NOT folded "
-      "into the verdict — and they do NOT all shrink, which is exactly "
-      "what D44f predicts of a horizon-bound quantity.**  The root row "
-      "is reported and excluded from (iii) exactly as at HZ2-a",
-      horn_separates and horn_neq_total == 0 and horn_root_cond_zero
-      and horn_root_abs_nonzero and horn_cond_shrinks,
+check("HZ3-b0 THE ROOT LEG OF THE HORN IS THE SAME THEOREM AS HZ0-7 — "
+      "ROUND-1 MAJOR 3, split out of HZ3-b so that a forced identity is "
+      "never counted as a measurement.  'The pinned object separates "
+      "nowhere at the root' and 'the root conditional drift is exactly "
+      "0' are ONE statement: by HZ3-s1/HZ3-s2 the root menu is a single "
+      "orbit per kind and both C1 and C2 are equivariant terminals, so "
+      "both give the uniform-within-kind root conditional and their "
+      "difference is 0 at every horizon whatever the absolute kernels "
+      "do.  It carries no information about convention independence.  "
+      "The absolute root row is nonzero, which is the only content on "
+      "this line and is D44f context",
+      horn_root_cond_zero and horn_root_abs_nonzero,
+      f"ROOT conditional separation = {frl(horn_root_cond)}; ROOT "
+      f"absolute separation = {frl(horn_root_abs)}",
+      theorem="root-menu symmetry x equivariance of C1 and C2 "
+              "(HZ3-s2); no equivariant pair can separate at the root")
+check("HZ3-b THE HORN'S CONTENT IS THE OFF-ROOT TABLE, AND OFF THE ROOT "
+      "THE PINNED SEPARATION SHRINKS AT EVERY FIXED DEPTH.  Two facts, "
+      "kept apart from the root identity of HZ3-b0: (i) NO history in "
+      "the whole comparison has k^C1_r = k^C2_r, so the conventions are "
+      "genuinely different completions and not a reparametrization — C3 "
+      "is the reparametrization and HZ3-a gates it as one; (ii) at "
+      "every fixed OFF-ROOT depth the separation in THE PINNED OBJECT "
+      "shrinks in r, over a fixed eight-history window at the deepest "
+      "rows.  **THE HORN VERDICT IS TAKEN ON THE PINNED OBJECT AND ON "
+      "NOTHING ELSE, because the pin's §6 says so in terms — AND, "
+      "AFTER ROUND 1, SO IS THE POOL VERDICT AT HZ2-c: ONE DOCTRINE, "
+      "ONE DIRECTION.  The absolute rows are printed in full beside it "
+      "and are NOT folded into the verdict — and they do NOT all "
+      "shrink, which is exactly what D44f predicts of a horizon-bound "
+      "quantity.**  The root row is excluded from (ii) exactly as at "
+      "HZ2-a, and is HZ3-b0's forced identity",
+      horn_separates and horn_neq_total == 0 and horn_cond_shrinks,
       f"histories with k^C1_r == k^C2_r = {horn_neq_total}; family-wide "
       f"absolute sup by r = {frl(horn_abs)}; family-wide conditional "
       f"sup by r = {frl(horn_cond)}; ROOT absolute = "
@@ -1150,28 +1723,40 @@ check("HZ3-b THE TWO TERMINAL CONVENTIONS SEPARATE EVERYWHERE IN THE "
       f"{HROW_BAD_ABS if HROW_BAD_ABS else 'none'}; of those, off-root "
       f"= {[k for k in HROW_BAD_ABS if k[1] > 0]}")
 outcome("HZ3-HORN",
-        "THE CONVENTION GATE, DELIVERED ON THE PINNED OBJECT.  The two "
+        "THE CONVENTION GATE, DELIVERED ON THE PINNED OBJECT, WITH THE "
+        "ROOT LEG DEMOTED TO A THEOREM (ROUND-1 MAJOR 3).  The two "
         "declared terminal conventions are different completions at "
         "every single history in the comparison — "
         f"{horn_neq_total} of the histories tested have k^C1_r = "
         "k^C2_r — so the truncation is a CHOICE and not a formality.  "
-        "On the PINNED object (the sector-normalized conditional) the "
-        "choice is invisible at the root at every computed horizon "
-        "(difference exactly 0, all six) and shrinks in r at every "
-        f"fixed off-root depth, from 1/8 at r = 1 down to "
-        f"{horn_cond[-2]} at r = {HRS[-2]}.  On the ABSOLUTE kernel — "
-        "which D44f already declares horizon-bound and which this "
-        "receipt carries as context only — the choice is visible "
-        "everywhere and does NOT shrink monotonically at "
+        "THE HORN LIVES OFF THE ROOT, AND OFF THE ROOT IT SHRINKS: the "
+        "pinned separation at fixed depth runs 1/8, 1/12, 487/7790, "
+        "40337/800358, 109092211/2569013838 — five terms, roughly "
+        "1/(4r + 4), over a fixed eight-history window — down to "
+        f"{horn_cond[-2]} at r = {HRS[-2]}.  AT THE ROOT IT IS EXACTLY "
+        "0 AND THAT IS AN IDENTITY, NOT A MEASUREMENT: HZ3-s1/HZ3-s2 "
+        "gate the root menu as one orbit per kind under the layer's own "
+        "A <-> B and 0 <-> 1 automorphisms, so every equivariant "
+        "terminal — C1, C2, C3 and the sector-weighted C5 the first "
+        "delivery proposed as its residue 4 — gives the same "
+        "uniform-in-kind root conditional and separation 0, while the "
+        "non-equivariant C4 separates by 1/6 at r = 1.  So the first "
+        "delivery's 'the pinned object stays exactly 0, so nothing "
+        "physical moves' was not a consolation: the 0 was forced and "
+        "would have stayed 0 whatever the absolute kernel did.  WHAT "
+        "SURVIVES, and it is weaker than 'the horn is "
+        "object-dependent': the ABSOLUTE kernel — D44f's horizon-bound "
+        "context object, carried here as context and not folded into "
+        f"any verdict — does NOT shrink monotonically at "
         f"{len(HROW_BAD_ABS)} of the {len(HLS)} depth rows "
-        f"({HROW_BAD_ABS}).  SO THE HORN IS OBJECT-DEPENDENT, and "
-        "reporting one object without the other would have decided it "
-        "by choice of statistic: on the pin's own object the imported "
-        "completion horn (I) does NOT fire over the computed horizons, "
-        "and on the horizon-bound object it does.  Nothing here is "
-        "extrapolated past the computed horizons, and 1/8 at r = 1 is "
-        "not a small number: the conventions are far apart where the "
-        "family is large and close only where the window is small.")
+        f"({HROW_BAD_ABS}), while the pinned object shrinks at every "
+        "off-root depth.  The correct one-line statement is: THE "
+        "ABSOLUTE KERNEL INHERITS THE TRUNCATION CONVENTION; THE PINNED "
+        "CONDITIONAL IS PROTECTED BY SYMMETRY AT THE ROOT AND MEASURED "
+        "TO SHRINK OFF IT.  Nothing here is extrapolated past the "
+        "computed horizons, and 1/8 at r = 1 is not a small number: the "
+        "conventions are far apart where the family is large and close "
+        "only where the window is small.")
 
 # ======================================================================
 # HZ4 — THE LEMMA SLOT
@@ -1248,26 +1833,48 @@ print(f"{sec()}      state data built for {len(STATE)} histories "
       f"(depth <= {SD_DEPTH}; the predicate needs full views, which is "
       f"the declared window for this gate) in {time.time() - _t:.1f}s")
 
+# SET comparison throughout, never sorted-by-repr: two EQUAL frozensets
+# can carry different reprs in the same process, so a repr sort is not a
+# safe multiset test.  (Round-1 MINOR 4 observed that the determinism
+# digest never covered HZ4; it does now, and this is the arm that had to
+# be made hash-robust for that to mean anything.)
 sig_menu_ok = sig_menu_bad = 0
 menu_menu_ok = menu_menu_bad = 0
 SIG_GAP = None
 for h, v in RSIG:
-    want = sorted(((rename_v(e, v), q) for e, q in ROOTMENU), key=repr)
-    got = sorted(CACHE[h], key=repr)
-    if got == want:
+    want = {(rename_v(e, v), q) for e, q in ROOTMENU}
+    got = set(CACHE[h])
+    if got == want and len(CACHE[h]) == len(ROOTMENU):
         sig_menu_ok += 1
     else:
         sig_menu_bad += 1
         if SIG_GAP is None:
-            SIG_GAP = (h, v,
-                       [x for x in got if x not in want],
-                       [x for x in want if x not in got])
+            SIG_GAP = (h, v, sorted(got - want, key=repr),
+                       sorted(want - got, key=repr))
 for h, v in RMENU:
-    want = sorted(((rename_v(e, v), q) for e, q in ROOTMENU), key=repr)
-    if sorted(CACHE[h], key=repr) == want:
+    want = {(rename_v(e, v), q) for e, q in ROOTMENU}
+    if set(CACHE[h]) == want and len(CACHE[h]) == len(ROOTMENU):
         menu_menu_ok += 1
     else:
         menu_menu_bad += 1
+RSIGSET = {h for h, v in RSIG}
+RMENUSET = {h for h, v in RMENU}
+
+
+def reentry_count(S):
+    """Points of S reached from OUTSIDE S: a history in S with at least
+    one proper prefix that is not in S.  Zero means the class is
+    absorbing-complement — left exactly once and never re-entered."""
+    return sum(1 for h in S
+               if any(h[:i] not in S for i in range(len(h))))
+
+
+SIG_REENTRY = reentry_count(RSIGSET)
+MENU_REENTRY = reentry_count(RMENUSET)
+SIGSHAPES = defaultdict(int)
+for h, v in RSIG:
+    shape = tuple(sorted((e[0], str(q)) for e, q in CACHE[h]))
+    SIGSHAPES[shape] += 1
 depths_sig = sorted({len(h) for h, v in RSIG})
 depths_menu = sorted({len(h) for h, v in RMENU})
 print(f"      R-SIG  points at depth <= {SD_DEPTH}: {len(RSIG)} "
@@ -1288,6 +1895,25 @@ if SIG_GAP:
     print(f"        in the renamed root menu and not in its menu: "
           f"{[(e, str(q)) for e, q in missing][:6]}")
 
+print(f"      ROUND-1 MAJOR 4, THE TEST THE FIRST DELIVERY NEVER RAN ON "
+      f"R-SIG.  Is each class ABSORBING-COMPLEMENT, i.e. left exactly "
+      f"once and never re-entered?  Counting the points of each class "
+      f"that have at least one proper prefix OUTSIDE the class:")
+print(f"        R-MENU re-entries: {MENU_REENTRY} of {len(RMENUSET)} "
+      f"-> absorbing-complement = {MENU_REENTRY == 0}")
+print(f"        R-SIG  re-entries: {SIG_REENTRY} of {len(RSIGSET)} "
+      f"-> absorbing-complement = {SIG_REENTRY == 0}")
+print(f"      and the menu shapes R-SIG actually carries, as "
+      f"(kind, weight) multisets — the class is NOT a shapeless "
+      f"remainder:")
+for shape, cnt in sorted(SIGSHAPES.items(), key=lambda x: (-x[1],
+                                                           repr(x[0]))):
+    _agg = defaultdict(int)
+    for k, q in shape:
+        _agg[(k, q)] += 1
+    print(f"        {cnt:5d} points: "
+          + ", ".join(f"{n}x{k}@{q}" for (k, q), n in
+                      sorted(_agg.items())))
 check("HZ4-i THE RENEWAL PREDICATE, VERIFIED AGAINST THE LAYER — and "
       "the two ports COME APART at transport, which is itself the "
       "finding.  R-SIG, the literal D62 R4 port, is NOT sufficient for "
@@ -1299,11 +1925,13 @@ check("HZ4-i THE RENEWAL PREDICATE, VERIFIED AGAINST THE LAYER — and "
       "B1 wall showing up inside the renewal question, and it is the "
       "same one line of the committed layer that HZ7 probes",
       len(RSIG) > 0 and len(RMENU) > 0 and menu_menu_bad == 0
-      and menu_menu_ok == len(RMENU),
+      and menu_menu_ok == len(RMENU) and MENU_REENTRY == 0
+      and SIG_REENTRY == sig_menu_bad,
       f"R-SIG = {len(RSIG)} points, menu-exact at {sig_menu_ok}, NOT "
       f"menu-exact at {sig_menu_bad}; R-MENU = {len(RMENU)} points, "
       f"menu-exact at {menu_menu_ok}, NOT menu-exact at "
-      f"{menu_menu_bad}")
+      f"{menu_menu_bad}; RE-ENTRIES: R-MENU {MENU_REENTRY}, R-SIG "
+      f"{SIG_REENTRY}; distinct R-SIG menu shapes = {len(SIGSHAPES)}")
 
 # ---- the structural obstruction: holdings never shrink ---------------
 print("  (ii) THE RETURN-WEIGHT CENSUS, and the structural fact that "
@@ -1344,7 +1972,14 @@ check("HZ4-ii(a) HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION, "
       f"transitions checked = {mono_pairs} (every transition out of "
       f"every history of depth < {SD_DEPTH}); holdings-shrinking "
       f"transitions = {mono_bad}; first-growth events by kind = "
-      f"{dict(sorted(grow_first.items()))}")
+      f"{dict(sorted(grow_first.items()))}",
+      theorem="View.holdings is a union over the view's arbs, "
+              "deliveries and merges, and extending a history only ADDS "
+              "events — a one-line consequence of the layer, censused "
+              "here rather than proved.  ROUND-1 MAJOR 4(a): note that "
+              "the layer DOES have a shrinking set — 'superseded' "
+              "grows, so NON-superseded holdings shrink — which is "
+              "exactly why this argument covers R-MENU and NOT R-SIG")
 
 # return-weight census by cycle length, under BOTH normalizations named
 print("      RETURN-WEIGHT CENSUS from renewal to renewal by cycle "
@@ -1445,61 +2080,108 @@ check("HZ4-iii THE LADDER'S OWN CYLINDER WEIGHT VANISHES, AND THAT DOES "
       f"(~{float(nonren_k):.6f})")
 
 # ---- (iv) the minorization attempt -----------------------------------
-print("  (iv) THE MINORIZATION ATTEMPT.  A Doeblin/regenerative bound "
-      "needs delta > 0 with: from EVERY history, the probability of "
-      "hitting a renewal within N steps is >= delta.  Computed "
-      "directly, under the horizon-completed conditional (normalization "
-      "named), for N = 1..3 over the declared window:")
-MIN_ROWS = []
-for N in (1, 2, 3):
-    worst = None
-    nz = 0
-    tot = 0
-    for h in CACHE:
-        if len(h) + N > SD_DEPTH:
-            continue
-        tot += 1
-        # hitting probability within N steps under k^C1 at matched horizon
-        frontier = {h: Fr(1)}
-        hit = Fr(0)
-        for step in range(N):
-            nxt = {}
-            for g, w in frontier.items():
-                kk = krel(CACHE, GT, g, CAP_T + 1 - len(g))
-                for e, q in CACHE[g]:
-                    g2 = g + (e,)
-                    if g2 in RMSET:
-                        hit += w * kk[e]
-                    else:
-                        nxt[g2] = nxt.get(g2, Fr(0)) + w * kk[e]
-            frontier = nxt
-        if hit == 0:
-            nz += 1
-        if worst is None or hit < worst:
-            worst = hit
-    MIN_ROWS.append((N, tot, nz, worst))
-    print(f"      N = {N}: histories tested {tot}; histories with "
-          f"hitting probability EXACTLY 0 = {nz}; infimum over the "
-          f"window = {worst}")
+print("  (iv) THE MINORIZATION ATTEMPT, RUN ON BOTH PORTS — ROUND-1 "
+      "MAJOR 4(c).  A Doeblin/regenerative bound needs delta > 0 with: "
+      "from EVERY history, the probability of hitting a renewal within "
+      "N steps is >= delta.  The first delivery computed this for "
+      "R-MENU only, at N = 1..3, and concluded that 'D69 route R5 is "
+      "CLOSED'.  R-SIG — the literal D62 row-R4 port, which is what "
+      "D69's R5 actually names — was never tested.  Both are tested "
+      "here, out to N = 5, i.e. to the deepest N the window admits.  "
+      "TWO HORIZON NORMALIZATIONS ARE PRINTED because the answer "
+      "depends on which completed conditional the hitting probability "
+      "is taken under, and naming one silently would repeat the defect "
+      "D46d's BLOCKER B2 convicted: (H7) the horizon-7 conditional "
+      "chained from the root, the receipt's own object, and (H6) the "
+      "horizon-6 conditional matched to this gate's depth-5 window.  "
+      "Also stated against this receipt: at N = 4 and N = 5 the window "
+      "holds 9 and 1 histories, so those rows are NOT a bound and none "
+      "is claimed — they are a demonstration that the route was never "
+      "tested.")
+
+
+def minorization(RSET, hoff, label):
+    rows = []
+    for N in (1, 2, 3, 4, 5):
+        worst = None
+        nz = 0
+        tot = 0
+        for h in CACHE:
+            if len(h) + N > SD_DEPTH:
+                continue
+            tot += 1
+            frontier = {h: Fr(1)}
+            hit = Fr(0)
+            for step in range(N):
+                nxt = {}
+                for g, w in frontier.items():
+                    kk = krel(CACHE, GT, g, hoff - len(g))
+                    for e, q in CACHE[g]:
+                        g2 = g + (e,)
+                        if g2 in RSET:
+                            hit += w * kk[e]
+                        else:
+                            nxt[g2] = nxt.get(g2, Fr(0)) + w * kk[e]
+                frontier = nxt
+            if hit == 0:
+                nz += 1
+            if worst is None or hit < worst:
+                worst = hit
+        rows.append((N, tot, nz, worst))
+        print(f"      {label} N = {N}: histories tested {tot}; hitting "
+              f"probability EXACTLY 0 at {nz} of them; infimum = "
+              f"{worst} (~{float(worst):.6f})")
+    return rows
+
+
+MIN_ROWS = minorization(RMSET, CAP_T + 1, "R-MENU (H7)")
+MIN_ROWS_SIG = minorization(RSIGSET, CAP_T + 1, "R-SIG  (H7)")
+MIN_ROWS_SIG6 = minorization(RSIGSET, SD_DEPTH + 1, "R-SIG  (H6)")
 HZ4_BOUND = None
-inf_zero = all(w == 0 for N, tot, nz, w in MIN_ROWS)
-check("HZ4-iv NO BOUND EXHIBITED — and the receipt says so explicitly, "
-      "as the pin requires.  The infimum of the N-step renewal-hitting "
-      "probability over the declared window is EXACTLY ZERO for every "
-      "N tested, and it is zero for a structural reason and not for "
-      "want of depth: by HZ4-ii(a) holdings never shrink, so every "
-      "history in which some actor already holds two versions has "
-      "hitting probability exactly 0 for EVERY N, not merely for the N "
-      "computed.  There is no minorization constant to print.  "
+inf_zero = all(w == 0 for N, tot, nz, w in MIN_ROWS[:3])
+sig_zero_collapses = [nz for N, tot, nz, w in MIN_ROWS_SIG]
+sig_pos_at_4 = MIN_ROWS_SIG[3][3] > 0 and MIN_ROWS_SIG[3][2] == 0
+sig_pos_at_4_h6 = MIN_ROWS_SIG6[3][3] > 0 and MIN_ROWS_SIG6[3][2] == 0
+check("HZ4-iv NO BOUND EXHIBITED FOR THE MENU-EXACT ATOM — and, "
+      "ROUND-1 MAJOR 4, THE SIGMA-LEVEL ROUTE IS NOT CLOSED BUT "
+      "UNTESTED.  (a) For R-MENU the infimum of the N-step "
+      "renewal-hitting probability is EXACTLY ZERO at every N the first "
+      "delivery computed, and it is zero for a structural reason and "
+      "not for want of depth: by HZ4-ii(a) holdings never shrink, so "
+      "every history in which some actor already holds two versions has "
+      "hitting probability exactly 0 for EVERY N.  There is no "
+      "minorization constant to print for the menu-exact atom.  (b) For "
+      "R-SIG the picture is the opposite shape: the class is RE-ENTERED "
+      f"{SIG_REENTRY} times (HZ4-i), the zero-set COLLAPSES with N "
+      f"({sig_zero_collapses[0]} -> {sig_zero_collapses[1]} -> "
+      f"{sig_zero_collapses[2]} -> {sig_zero_collapses[3]} points), and "
+      "at N = 4 there is NO history with hitting probability 0 and the "
+      "infimum over the window is STRICTLY POSITIVE, under both horizon "
+      "normalizations.  That is the shape of a Doeblin condition, not "
+      "of a closed route.  (c) Stated exactly: classical Doeblin "
+      "minorization needs no atom at all (P^N(x, .) >= delta nu(.)); "
+      "the first delivery stated the ATOM version as if it were the "
+      "general one.  NO OPERATOR-LEVEL MINORIZATION — Birkhoff / "
+      "Hilbert-metric contraction of the positive backward recursion "
+      "G, the natural instrument for this kernel — IS ATTEMPTED "
+      "ANYWHERE IN THIS RECEIPT, and that is the named successor.  "
       "Consequently, per the pin, NOTHING in HZ4 upgrades any HZ2 "
       "label, HZ2's rows stay a table over the computed horizons, and "
       "outcome HZ-III's bound clause is NOT satisfied",
       inf_zero and HZ4_BOUND is None
-      and all(0 < nz < tot for N, tot, nz, w in MIN_ROWS),
-      "infimum by N = "
-      + ", ".join(f"N={N}: {w} over {tot} histories, {nz} of them "
-                  f"exactly 0" for N, tot, nz, w in MIN_ROWS)
-      + "; printed minorization constant = NONE")
+      and all(0 < nz < tot for N, tot, nz, w in MIN_ROWS[:3])
+      and sig_pos_at_4 and sig_pos_at_4_h6,
+      "R-MENU infimum by N = "
+      + ", ".join(f"N={N}: {w} over {tot} histories, {nz} exactly 0"
+                  for N, tot, nz, w in MIN_ROWS)
+      + "; R-SIG (H7) = "
+      + ", ".join(f"N={N}: {w} over {tot}, {nz} exactly 0"
+                  for N, tot, nz, w in MIN_ROWS_SIG)
+      + "; R-SIG (H6) = "
+      + ", ".join(f"N={N}: {w} over {tot}, {nz} exactly 0"
+                  for N, tot, nz, w in MIN_ROWS_SIG6)
+      + "; printed minorization constant = NONE (no bound is claimed "
+      "from a 9-history and a 1-history window)")
 
 # ---- the HZ4 positive control: the same predicate at d42a ------------
 print("  HZ4 POSITIVE CONTROL — the same predicate machinery on the "
@@ -1612,6 +2294,26 @@ check("HZ5-0 THE TWO NEW SECTOR MAPS ARE STRICTLY COARSER THAN D57's, "
       f"first becomes strict at cumulative depth {_first_strict} "
       f"(before that the two maps coincide, 4 sectors each)")
 
+# --- ROUND-1 MAJOR 5: the two maps are ONE map on the decider's input
+print("  ROUND-1 MAJOR 5, THE MERGE CENSUS THAT DECIDES WHETHER THESE "
+      "ARE TWO TESTS OR ONE.  BUDGET-ONLY differs from TYPE-ONLY only "
+      "by merging the 'r' and 'm' types, so wherever no 'm' entry "
+      "occurs in a menu the two maps are a BIJECTIVE RELABELLING of "
+      "each other and induce the SAME initial signature and the SAME "
+      "fixpoint partition.  Where the 'm' entries actually are:")
+MBY = defaultdict(int)
+for h in CACHE:
+    for e, q in CACHE[h]:
+        if e[0] == 'm':
+            MBY[len(h)] += 1
+M_HIST = sum(1 for h in CACHE if any(e[0] == 'm' for e in h))
+M_FIRST_PARENT = min(MBY) if MBY else None
+print(f"      menu entries of kind 'm', by PARENT depth: "
+      f"{dict(sorted(MBY.items()))}")
+print(f"      histories CONTAINING an m event: {M_HIST} of {len(CACHE)}")
+print(f"      first parent depth carrying an 'm' menu entry: "
+      f"{M_FIRST_PARENT}")
+
 # --- the finite-alphabet prerequisite, gated FIRST and SEPARATELY ----
 print("  THE FINITE-ALPHABET PREREQUISITE, GATED FIRST AND SEPARATELY "
       "(pin §3 HZ5, and D69 §6: whether the sector-total alphabet at "
@@ -1641,10 +2343,13 @@ for mp in ('type', 'budget'):
               + ", ".join(f"{s}: {len(ALPH[mp][cap][s])}"
                           for s in sorted(ALPH[mp][cap])))
 alph_growth = {}
+alph_nested = {}
 for mp in ('type', 'budget'):
-    sizes = [len({v for s in ALPH[mp][c] for v in ALPH[mp][c][s]})
-             for c in HZ5_CAPS]
-    alph_growth[mp] = sizes
+    tots = [{v for s in ALPH[mp][c] for v in ALPH[mp][c][s]}
+            for c in HZ5_CAPS]
+    alph_growth[mp] = [len(t) for t in tots]
+    alph_nested[mp] = all(tots[i - 1] <= tots[i]
+                          for i in range(1, len(tots)))
 check("HZ5-1 THE FINITE-ALPHABET PREREQUISITE IS NOT SETTLED BY THIS "
       "WINDOW, IN EITHER DIRECTION, AND THE GATE SAYS SO.  The number "
       "of distinct sector totals is reported per cap for both maps; it "
@@ -1652,12 +2357,28 @@ check("HZ5-1 THE FINITE-ALPHABET PREREQUISITE IS NOT SETTLED BY THIS "
       "extrapolated to a claim of blow-up.  D57's precedent is the "
       "reason for the caution: it pre-registered this prerequisite, "
       "published a refutation of it, and the refutation was itself "
-      "withdrawn in round",
-      all(len(v) == len(HZ5_CAPS) for v in alph_growth.values())
+      "withdrawn in round.  ROUND-1 MODERATE 8, THE PREDICATE "
+      "REPAIRED: the first delivery's predicate was 'the per-cap "
+      "alphabet SIZES are non-decreasing', which cannot return False "
+      "for any input, because the cap-c family is a SUBSET of the "
+      "cap-(c+1) family and the collected alphabets are therefore "
+      "nested by construction.  The predicate here tests the "
+      "SET-INCLUSION nesting itself, which is a genuine regression "
+      "tripwire on the family construction (a cap-c total absent at "
+      "cap c+1 would mean the families are not nested and every HZ5 "
+      "number below would be void), and the size clause is retained "
+      "but DISCLOSED as the unfailable half.  What the gate delivers "
+      "either way is the verdict [OPEN], which is a REPORT, not a test",
+      all(alph_nested.values())
+      and all(len(v) == len(HZ5_CAPS) for v in alph_growth.values())
       and all(v[i] >= v[i - 1] for v in alph_growth.values()
               for i in range(1, len(v))),
       "; ".join(f"{mp}-only distinct totals by cap {HZ5_CAPS} = "
-                f"{alph_growth[mp]}" for mp in alph_growth))
+                f"{alph_growth[mp]}, alphabets nested by inclusion = "
+                f"{alph_nested[mp]}" for mp in alph_growth),
+      theorem="the size-monotonicity half is forced by family nesting; "
+              "only the set-inclusion half is a tripwire, and the "
+              "delivered verdict [OPEN] is a report")
 
 # --- the refinement, both maps, both boundary treatments -------------
 def run_refine(smap, cap, boundary):
@@ -1726,6 +2447,7 @@ HZ5RES = {}
 HZ5TRIV = {}
 HZ5WIT = {}
 HZ5CLS = {}
+HZ5FULL = {}
 for mp, smap in (('type', sec_type), ('budget', sec_budget)):
     print(f"\n  {mp.upper()}-ONLY AGGREGATION (route "
           f"{'R1' if mp == 'type' else 'R2'} of D69 §3):")
@@ -1737,6 +2459,7 @@ for mp, smap in (('type', sec_type), ('budget', sec_budget)):
         HZ5TRIV[(mp, cap)] = r2
         HZ5WIT[(mp, cap)] = w1
         HZ5CLS[(mp, cap)] = {h: cls1[h] for h in cls1 if len(h) == 3}
+        HZ5FULL[(mp, cap)] = cls1
         print(f"    cap {cap}: histories = "
               f"{sum(1 for h in CACHE if len(h) <= cap)}, iterations "
               f"{it1}, fixpoint classes per depth = {r1}")
@@ -1764,6 +2487,65 @@ for mp in ('type', 'budget'):
           f"{stab}")
 type_closes = all(s for d, s in HZ5_STAB['type'])
 budget_closes = all(s for d, s in HZ5_STAB['budget'])
+
+# ---- ROUND-1 MAJOR 5: is R2 a distinct test at these caps? ----------
+DECIDER_DEPTHS = sorted({d for d, s in HZ5_STAB['type']})
+
+
+def same_partition(ca, cb, keys):
+    fwd, rev = {}, {}
+    for h in keys:
+        a, b = ca[h], cb[h]
+        if fwd.setdefault(a, b) != b or rev.setdefault(b, a) != a:
+            return False
+    return True
+
+
+PART_SAME = {}
+for cap in HZ5_CAPS:
+    ks = [h for h in HZ5FULL[('type', cap)] if len(h) <= max(DECIDER_DEPTHS)]
+    ks_all = list(HZ5FULL[('type', cap)])
+    PART_SAME[cap] = (same_partition(HZ5FULL[('type', cap)],
+                                     HZ5FULL[('budget', cap)], ks),
+                      same_partition(HZ5FULL[('type', cap)],
+                                     HZ5FULL[('budget', cap)], ks_all))
+print(f"    THE TWO MAPS, COMPARED AS PARTITIONS (ROUND-1 MAJOR 5).  "
+      f"The decider carried from D57 is 'for every depth carrying at "
+      f"least three cap values, do the LAST TWO cap values agree?', so "
+      f"its input is exactly depths {DECIDER_DEPTHS}.  Below parent "
+      f"depth {M_FIRST_PARENT} no menu carries an 'm' entry, so on "
+      f"every menu entry there BUDGET-ONLY is a bijective relabelling "
+      f"of TYPE-ONLY:")
+for cap in HZ5_CAPS:
+    print(f"      cap {cap}: identical partition on the decider's "
+          f"depths {DECIDER_DEPTHS} = {PART_SAME[cap][0]}; identical on "
+          f"the WHOLE cap-{cap} family = {PART_SAME[cap][1]}")
+decider_identical = all(PART_SAME[c][0] for c in HZ5_CAPS)
+m_absent_below = all(d >= M_FIRST_PARENT for d in MBY)
+m_only_deep = all(len(h) > M_FIRST_PARENT for h in CACHE
+                  if any(e[0] == 'm' for e in h))
+check("HZ5-4 THE TWO 'ROUTES' ARE ONE COMPUTATION AT EVERY DEPTH THE "
+      "DECIDER USES — ROUND-1 MAJOR 5.  No menu entry of kind 'm' "
+      f"occurs at parent depth below {M_FIRST_PARENT}, so on every menu "
+      "entry the decider ever sees, BUDGET-ONLY is TYPE-ONLY with two "
+      "labels merged that never both occur — a bijective relabelling.  "
+      "The induced initial signature is therefore the same function up "
+      "to names, the fixpoint refinement is the same refinement, and "
+      "the resulting partitions are gated here to be IDENTICAL AS "
+      "PARTITIONS at every cap on the decider's whole input.  The one "
+      "number that differs (depth 6: 10 vs 9) lies in the cap layer and "
+      "never enters the decider.  So the honest statement is that ONE "
+      "test was run: route R1 CLOSES on measurement, and route R2's "
+      "closure is INHERITED, not measured.  Extending R2 to a cap where "
+      "merges have support is the residue this creates",
+      decider_identical and m_absent_below and m_only_deep
+      and M_FIRST_PARENT is not None,
+      f"'m' menu entries by parent depth = {dict(sorted(MBY.items()))}; "
+      f"histories containing an m event = {M_HIST} of {len(CACHE)}; "
+      f"partitions identical on the decider's depths {DECIDER_DEPTHS} "
+      f"at every cap = {decider_identical}; identical on the whole "
+      f"family by cap = "
+      f"{ {c: PART_SAME[c][1] for c in HZ5_CAPS} }")
 
 # S4-pattern control
 s4_ok = {}
@@ -1827,9 +2609,13 @@ check("HZ5-3 THE COARSER AGGREGATIONS DO NOT CLOSE EITHER, AND THE "
       "decider at every comparable depth, the S4 control says the "
       "counts are lower bounds, and a named double-digit depth-3 class "
       "splits between cap 5 and cap 6 at each map.  This is outcome "
-      "HZ5-b: routes R1 and R2 close, at caps 3-6, on two actors, with "
-      "the counts as lower bounds — the same grade as D57's own "
-      "verdict and no stronger",
+      "HZ5-b at caps 3-6, on two actors, with the counts as lower "
+      "bounds — the same grade as D57's own verdict and no stronger.  "
+      "ROUND-1 MAJOR 5, THE CLAIM NARROWED: this is ONE closed route, "
+      "not two.  HZ5-4 gates that the two sector maps induce the "
+      "IDENTICAL partition on the decider's whole input, so route R1 "
+      "closes on measurement and route R2's closure is INHERITED from "
+      "it rather than independently measured",
       (not type_closes) and (not budget_closes)
       and SPLIT3['type'] is not None and SPLIT3['budget'] is not None,
       f"type-only stable at last two caps = {type_closes}; budget-only "
@@ -1852,10 +2638,16 @@ print("  (i) NEGATIVE CONTROL — an instrument that cannot fail is not "
       "the one that does NOT break contraction — a perturbation the "
       "statistic survives is information about the statistic's "
       "robustness, not a result to be dropped:")
-print("      NC1  propose weights x3 at even depth, x(1/3) at odd")
-print("      NC2  deliveries FORBIDDEN at even depth, proposals "
-      "FORBIDDEN at odd depth")
-print("      NC3  idle weight x100 at even depth only")
+print("      NC1  [WEIGHT LAW] propose weights x3 at even depth, "
+      "x(1/3) at odd")
+print("      NC2  [GRAMMAR, NOT A WEIGHT LAW — ROUND-1 MINOR 3] "
+      "deliveries FORBIDDEN at even depth, proposals FORBIDDEN at odd "
+      "depth.  Setting a weight to 0 REMOVES the menu entry, so NC2's "
+      "drift is taken over a DIFFERENT FAMILY; the pin asks for 'a "
+      "deliberately perturbed WEIGHT LAW' and NC1 and NC3 are that, "
+      "NC2 is not.  It is kept, because a grammar perturbation is a "
+      "legitimate second kind of control, but it is counted separately")
+print("      NC3  [WEIGHT LAW] idle weight x100 at even depth only")
 print("      (a purely depth-dependent rescaling of ALL weights is "
       "invisible to k_r by construction — it cancels in the ratio — so "
       "every control below is type-selective as well as "
@@ -1922,6 +2714,17 @@ true_contracts = contracts_from_first_nonzero(
 BREAKERS = [nm for nm, s, ok in NCRES if not ok]
 SURVIVORS = [nm for nm, s, ok in NCRES if ok]
 pert_contracts = not BREAKERS
+WEIGHTLAW = [nm for nm, s, ok in NCRES if not nm.startswith('NC2')]
+GRAMMAR = [nm for nm, s, ok in NCRES if nm.startswith('NC2')]
+WL_BREAK = [nm for nm in BREAKERS if nm in WEIGHTLAW]
+GR_BREAK = [nm for nm in BREAKERS if nm in GRAMMAR]
+print(f"      ROUND-1 MINOR 3, THE COUNT RESTATED BY KIND: of the "
+      f"{len(WEIGHTLAW)} declared WEIGHT-LAW perturbations "
+      f"{len(WL_BREAK)} break contraction (NC3), and of the "
+      f"{len(GRAMMAR)} declared GRAMMAR perturbation {len(GR_BREAK)} "
+      f"breaks it (NC2).  The first delivery reported '2 of 3' without "
+      f"the distinction.  The pin's falsifier-1 clause is satisfied by "
+      f"the weight-law breaker alone.")
 check("HZ6-i THE INSTRUMENT CAN FAIL.  On the identical pipeline, the "
       "same norm, the same window and the same relative horizons, the "
       "true law's family-uniform drift contracts and at least one "
@@ -1933,12 +2736,13 @@ check("HZ6-i THE INSTRUMENT CAN FAIL.  On the identical pipeline, the "
       "CHERRY-PICKED: which perturbations broke it and which did not "
       "are both named, and the survivor is a measured robustness fact "
       "about the statistic, not a discarded trial",
-      true_contracts and len(BREAKERS) > 0 and pert_proper
+      true_contracts and len(WL_BREAK) > 0 and pert_proper
       and len(NCRES) == len(NCS),
-      f"true law contracts = {true_contracts}; perturbations that "
-      f"BREAK contraction = {BREAKERS}; perturbations the statistic "
-      f"SURVIVES = {SURVIVORS}; all perturbed kernels proper = "
-      f"{pert_proper}")
+      f"true law contracts = {true_contracts}; WEIGHT-LAW perturbations "
+      f"that BREAK contraction = {WL_BREAK} (of {len(WEIGHTLAW)}); "
+      f"GRAMMAR perturbations that break it = {GR_BREAK} (of "
+      f"{len(GRAMMAR)}); perturbations the statistic SURVIVES = "
+      f"{SURVIVORS}; all perturbed kernels proper = {pert_proper}")
 
 # ---- (ii) the positive control --------------------------------------
 print("  (ii) POSITIVE CONTROL — the delivery-free d42a family through "
@@ -2143,13 +2947,21 @@ print("  (iv) DETERMINISM under PYTHONHASHSEED 0/7/999 (D63 W6b).  "
       "SCOPE, STATED: three full runs of this receipt would triple a "
       "runtime that is printed in its own output and could not be "
       "byte-identical for that reason alone, so the gate runs a "
-      "DETERMINISTIC DIGEST of the pipeline — the layer, the family "
-      "census, the potentials, the kernels under BOTH terminal "
-      "conventions, the sector-normalized conditional, the renewal "
-      "predicate and a type-only refinement — under the three seeds, "
-      "and requires byte-identical stdout.  It covers the pipeline at "
-      "cap 3, NOT this receipt's whole stdout, and the wider claim is "
-      "not made.")
+      "DETERMINISTIC DIGEST of the pipeline under the three seeds and "
+      "requires byte-identical stdout.  ROUND-1 MINOR 4, THE DIGEST "
+      "WIDENED PAST CAP 3: the first delivery's digest covered the "
+      "two-actor pipeline at cap 3 only, and therefore excluded the 3- "
+      "and 4-actor pools, the whole of HZ4, the whole of HZ5 and the "
+      "horn past depth 3 — i.e. every arm round 1 found a defect in.  "
+      "The digest now carries: the two-actor family at CAP 4 (census, "
+      "potentials under BOTH terminal conventions, the absolute drift "
+      "sup and the PINNED conditional's horn separation), the THREE- "
+      "and FOUR-ACTOR pools (census, potentials, matched drift cell), "
+      "the HZ4 RENEWAL PREDICATE (R-SIG and R-MENU counts and "
+      "menu-exactness through the layer's own View), and BOTH HZ5 "
+      "sector maps' refinements at cap 4.  It is still a digest and "
+      "not this receipt's whole stdout, and the wider claim is not "
+      "made.")
 _DIGEST = r'''
 import sys
 from collections import defaultdict
@@ -2158,27 +2970,35 @@ _s = open('v10/code/d42b1_transport_exact.py').read()
 ns = {}
 exec(compile(_s[:_s.index('print("[d42b1')], 'L', 'exec'), ns)
 cf = ns['candidates_for']
+View = ns['View']
+event_poset = ns['event_poset']
+V0 = ns['V0']
 AB = ('A', 'B')
-CAP = 3
-C = {}
-fr_ = [()]
-while fr_:
-    h = fr_.pop()
-    C[h] = cf(list(h), AB)
-    if len(h) >= CAP:
-        continue
-    for e, q in C[h]:
-        fr_.append(h + (e,))
-def mkG(term):
+CAP = 4
+def build_(actors, cap):
+    C_ = {}
+    fr_ = [()]
+    while fr_:
+        h = fr_.pop()
+        C_[h] = cf(list(h), actors)
+        if len(h) >= cap:
+            continue
+        for e, q in C_[h]:
+            fr_.append(h + (e,))
+    return C_
+C = build_(AB, CAP)
+def mkG_on(cache, term):
     memo = {}
     def G(h, r):
         if r == 0:
             return term(h)
         k = (h, r)
         if k not in memo:
-            memo[k] = sum(q * G(h + (e,), r - 1) for e, q in C[h])
+            memo[k] = sum(q * G(h + (e,), r - 1) for e, q in cache[h])
         return memo[k]
     return G
+def mkG(term):
+    return mkG_on(C, term)
 G1 = mkG(lambda h: Fr(1))
 G2 = mkG(lambda h: Fr(len(C[h])))
 def kr(G, h, r):
@@ -2210,36 +3030,73 @@ for r in (1, 2):
         c1, c2 = cond(kr(G1, h, r)), cond(kr(G2, h, r))
         b = max(b, max(abs(c2[e] - c1[e]) for e in c1))
     out.append(str(b))
-SIG = {}
-for h in C:
-    t = defaultdict(lambda: Fr(0))
-    for e, q in C[h]:
-        t[e[0]] += q
-    SIG[h] = tuple(sorted(((s, v) for s, v in t.items()), key=repr))
-cls, keys = {}, {}
-for h in sorted(C, key=repr):
-    keys.setdefault(SIG[h], len(keys))
-    cls[h] = keys[SIG[h]]
-while True:
-    nk, nc = {}, {}
+BUD = {'p': 'propose', 'r': 'arb-merge', 'm': 'arb-merge',
+       'd': 'deliver', 'n': 'idle'}
+for MAP in ('type', 'budget'):
+    sm = (lambda e: e[0]) if MAP == 'type' else (lambda e: BUD[e[0]])
+    SIG = {}
+    for h in C:
+        t = defaultdict(lambda: Fr(0))
+        for e, q in C[h]:
+            t[sm(e)] += q
+        SIG[h] = tuple(sorted(((s, v) for s, v in t.items()), key=repr))
+    cls, keys = {}, {}
     for h in sorted(C, key=repr):
-        if len(h) >= CAP:
-            key = ('cap', cls[h])
-        else:
-            agg = defaultdict(lambda: Fr(0))
-            for e, q in C[h]:
-                agg[(e[0], cls[h + (e,)])] += q
-            key = (cls[h], tuple(sorted(agg.items(), key=repr)))
-        nk.setdefault(key, len(nk))
-        nc[h] = nk[key]
-    st = len(nk) == len(set(cls.values()))
-    cls = nc
-    if st:
-        break
-byd = defaultdict(set)
-for h in C:
-    byd[len(h)].add(cls[h])
-out.append(str({d: len(v) for d, v in sorted(byd.items())}))
+        keys.setdefault(SIG[h], len(keys))
+        cls[h] = keys[SIG[h]]
+    while True:
+        nk, nc = {}, {}
+        for h in sorted(C, key=repr):
+            if len(h) >= CAP:
+                key = ('cap', cls[h])
+            else:
+                agg = defaultdict(lambda: Fr(0))
+                for e, q in C[h]:
+                    agg[(sm(e), cls[h + (e,)])] += q
+                key = (cls[h], tuple(sorted(agg.items(), key=repr)))
+            nk.setdefault(key, len(nk))
+            nc[h] = nk[key]
+        st = len(nk) == len(set(cls.values()))
+        cls = nc
+        if st:
+            break
+    byd = defaultdict(set)
+    for h in C:
+        byd[len(h)].add(cls[h])
+    out.append(str({d: len(v) for d, v in sorted(byd.items())}))
+# ---- the wider pools (round-1 MINOR 4) -----------------------------
+for actors in (('A', 'B', 'C'), ('A', 'B', 'C', 'D')):
+    CP = build_(actors, 2)
+    GP = mkG_on(CP, lambda h: Fr(1))
+    out.append(str(len(CP)))
+    for r in (1, 2, 3):
+        out.append(str(GP((), r)))
+# ---- the HZ4 renewal predicate (round-1 MINOR 4) -------------------
+def rn(e, v):
+    if e[0] == 'p':
+        return ('p', e[1], v if e[2] == V0 else e[2], e[3])
+    if e[0] == 'd':
+        return ('d', e[1], e[2], v if e[3] == V0 else e[3])
+    return e
+nsig = nmenu = nexact = 0
+for h in sorted((x for x in C if len(x) <= 3), key=repr):
+    vw = View(list(h), event_poset(list(h)), set(range(len(h))))
+    hold = {a: frozenset(vw.holdings(a)) for a in AB}
+    nsu = {a: frozenset(x for x in hold[a] if x not in vw.superseded)
+           for a in AB}
+    if any(len(nsu[a]) != 1 for a in AB) or nsu['A'] != nsu['B']:
+        continue
+    if vw.live or vw.components():
+        continue
+    if any(vw.merge_pairs(a) for a in AB):
+        continue
+    v = next(iter(nsu['A']))
+    nsig += 1
+    if all(hold[a] == frozenset({v}) for a in AB):
+        nmenu += 1
+    if set(C[h]) == {(rn(e, v), w) for e, w in C[()]}:
+        nexact += 1
+out.append(f"{nsig},{nmenu},{nexact}")
 sys.stdout.write("|".join(out))
 '''
 DIG = []
@@ -2256,9 +3113,14 @@ check("HZ6-iv DETERMINISM under PYTHONHASHSEED 0/7/999: the pipeline "
       "digest is byte-identical across the three seeds.  Everything in "
       "this receipt is exact-rational, seedless and sorted by repr; the "
       "gate exists because dict-built keys sorted by repr are exactly "
-      "what a hash-seed change perturbs.  SCOPE: the digest, not the "
-      "whole stdout — said in the label so the gate is not read wider "
-      "than it is",
+      "what a hash-seed change perturbs — and round 1's own probe of "
+      "this receipt found that TWO EQUAL FROZENSETS CAN CARRY "
+      "DIFFERENT REPRS in one process, so every menu comparison in "
+      "HZ3-s1 and HZ4 was converted from a repr sort to a SET "
+      "comparison as part of this repair.  SCOPE: the digest, widened "
+      "past cap 3 to both wider pools, the renewal predicate and both "
+      "HZ5 sector maps, but still not the whole stdout — said in the "
+      "label so the gate is not read wider than it is",
       det_ok and len(DIG) == 3,
       f"seeds {[s for s, rc, d in DIG]}; return codes "
       f"{[rc for s, rc, d in DIG]}; distinct digests = "
@@ -2414,21 +3276,6 @@ check("HZ8-a NO INFINITE-VOLUME CLAIM, SCANNED RATHER THAN ASSERTED "
       f"undisclaimed = {UNDISCLAIMED if UNDISCLAIMED else 'none'}; "
       f"scanner fires both ways = {scan_fires}")
 
-_LBL = " ".join(GATE_LABELS)
-_forbidden_word_present = has_needle(_LBL, (_N1,))
-check("HZ8-b THE PIN'S OWN LEXICAL PROHIBITION, ENFORCED ON THIS "
-      "RECEIPT'S GATE LABELS.  The pin (HZ2) forbids the word rooted "
-      "at the needle above from appearing in any label unless HZ4 "
-      "supplies a bound; HZ4 supplied none (HZ4-iv), so the required "
-      "wording is 'contracts over the computed horizons'.  Every "
-      "check() label delivered by this run is concatenated and "
-      "searched.  The gate is therefore conditional on HZ4's actual "
-      "outcome and not on an assumption about it",
-      (not _forbidden_word_present) or (HZ4_BOUND is not None),
-      f"HZ4 bound printed = {HZ4_BOUND is not None}; forbidden root "
-      f"present in the {len(GATE_LABELS)} gate labels = "
-      f"{_forbidden_word_present}")
-
 check("HZ8-c NORMALIZATION NAMED AT EVERY USE (D46d BLOCKER B2), CAPS "
       "AND POOLS PRINTED, NO SAMPLED ARM.  Three normalizations appear "
       "in this receipt and each is named where it is used: the RAW "
@@ -2446,6 +3293,29 @@ check("HZ8-c NORMALIZATION NAMED AT EVERY USE (D46d BLOCKER B2), CAPS "
       f", delivery-free {CAP_DF}, HZ5 {HZ5_CAPS}, negative control "
       f"{CAP_NEG}, renewal window {SD_DEPTH}; sampled arms = 0")
 
+# HZ8-b RUNS LAST so that its scan is TOTAL (round-1 MINOR 2: the first
+# delivery's scan saw 40 of 42 labels because two gates were delivered
+# after it).  Its own label is folded in before the predicate is taken,
+# so the coverage is N of N including this line.
+_HZ8B = ("HZ8-b THE PIN'S OWN LEXICAL PROHIBITION, ENFORCED ON THIS "
+         "RECEIPT'S GATE LABELS, AND THE SCAN MADE TOTAL (ROUND-1 "
+         "MINOR 2).  The pin (HZ2) forbids the word rooted at the "
+         "needle above from appearing in any label unless HZ4 supplies "
+         "a bound; HZ4 supplied none (HZ4-iv), so the required wording "
+         "is 'contracts over the computed horizons'.  This gate is now "
+         "the LAST gate of the receipt and its own label is included "
+         "in the scanned text, so every check() label delivered by "
+         "this run — all of them, including this one — is concatenated "
+         "and searched.  The gate is conditional on HZ4's actual "
+         "outcome and not on an assumption about it")
+_LBL = " ".join(GATE_LABELS + [_HZ8B])
+_forbidden_word_present = has_needle(_LBL, (_N1,))
+check(_HZ8B,
+      (not _forbidden_word_present) or (HZ4_BOUND is not None),
+      f"HZ4 bound printed = {HZ4_BOUND is not None}; labels scanned = "
+      f"{len(GATE_LABELS) + 1} of {len(GATE_LABELS) + 1} (this gate "
+      f"included); forbidden root present = {_forbidden_word_present}")
+
 # ======================================================================
 # THE PRE-REGISTERED OUTCOME
 # ======================================================================
@@ -2458,15 +3328,46 @@ print("  THE PIN'S HZ-I HAS THREE CLAUSES AND EACH IS EVALUATED "
       "of them.  HZ-I fires iff: (a) 'the family-uniform drift stops "
       "contracting at reachable r', OR (b) 'contracts at the root "
       "while failing family-wide', OR (c) 'fails at wider pools'.")
-HZI_a = not all(uni_contracts[nm] for nm in NORMS)
-HZI_b = (not ROW_BAD_ROOT) and bool(ROW_BAD_OFFROOT)
-HZI_c = any(POOLROWBAD_OFF[nm] for nm in POOLROWBAD_OFF)
+print("  ROUND-1 MAJOR 2, THE DECISION OBJECT NAMED ONCE AND USED "
+      "EVERYWHERE.  Each clause is evaluated on THE PINNED "
+      "SECTOR-NORMALIZED CONDITIONAL, because the pin §6 and §2 say "
+      "the pinned object is the sector-normalized conditional and that "
+      "absolute completed weights are horizon-bound (D44f) CONTEXT.  "
+      "The first delivery applied that doctrine at HZ3-b and at §4.3 "
+      "and then evaluated clause (c) on the ABSOLUTE rows, which is "
+      "the direction that maximised the delivered negative.  Both "
+      "readings are computed and printed here; the DELIVERED one is "
+      "the pinned one, and the absolute one is printed beside it as "
+      "context and labelled as such.  ROUND-1 MODERATE 9: the "
+      "family-uniform clause is read on the OFF-ROOT-WINDOW prefix, "
+      "since the deepest horizon's window holds the root alone.")
+PIN_NORMS = [n for n in NORMS if 'CONDITIONAL' in n]
+ABS_NORMS = [n for n in NORMS if 'CONDITIONAL' not in n]
+ROW_BAD_OFF_PIN = [(n, L) for (n, L) in ROW_BAD_OFFROOT
+                   if 'CONDITIONAL' in n]
+ROW_BAD_ROOT_PIN = [(n, L) for (n, L) in ROW_BAD_ROOT
+                    if 'CONDITIONAL' in n]
+HZI_a = not all(contracts_from_first_nonzero(UNI2_OFFROOT[nm])
+                for nm in PIN_NORMS)
+HZI_a_abs = not all(contracts_from_first_nonzero(UNI2_OFFROOT[nm])
+                    for nm in ABS_NORMS)
+HZI_b = (not ROW_BAD_ROOT_PIN) and bool(ROW_BAD_OFF_PIN)
+HZI_c = any(POOLROWBAD_OFF_PIN[nm] for nm in POOLROWBAD_OFF_PIN)
+HZI_c_abs = any(POOLROWBAD_OFF_ABS[nm] for nm in POOLROWBAD_OFF_ABS)
 HZI = HZI_a or HZI_b or HZI_c
+HZI_LETTER_ABS = HZI_a_abs or HZI_c_abs
 UNREGISTERED = bool(ROW_BAD_ROOT) and not ROW_BAD_OFFROOT
+print(f"      ON THE PINNED OBJECT — THE DELIVERED READING:")
 print(f"      (a) family-uniform sequences stop contracting = {HZI_a}")
 print(f"      (b) root contracts while the family fails = {HZI_b}")
 print(f"      (c) a wider pool's off-root rows fail          = {HZI_c}")
-print(f"      => HZ-I fires = {HZI}")
+print(f"      => HZ-I fires ON THE PIN'S OWN OBJECT = {HZI}")
+print(f"      ON THE ABSOLUTE KERNEL (D44f context, NOT the decision "
+      f"object): (a) = {HZI_a_abs}, (c) = {HZI_c_abs}, so the "
+      f"LETTER-READING the first delivery took would fire = "
+      f"{HZI_LETTER_ABS} — on the four-actor L = 1 row, whose rise "
+      f"HZ2-BLIP shows reverses at the very next horizon and ends "
+      f"below its first term in two of three absolute norms.")
 print(f"      NOT A PIN CLAUSE, and delivered separately at HZ2-d: the "
       f"root's ABSOLUTE row fails while every off-root row contracts = "
       f"{UNREGISTERED}.  This is the MIRROR IMAGE of clause (b) and "
@@ -2516,26 +3417,33 @@ _v_cauchy = (f"the drift CONTRACTS OVER THE COMPUTED HORIZONS at every "
              if not (HZI_a or HZI_b) else
              "the two-actor arm's drift fails one of the pin's first "
              "two HZ-I clauses")
-_v_pool = ("and it contracts at every off-root depth at all three "
-           "actor pools"
+_v_pool = ("and IT CONTRACTS AT EVERY OFF-ROOT DEPTH AT ALL THREE ACTOR "
+           "POOLS, at every depth each pool's cap can reach, ON THE "
+           "PINNED OBJECT — the four-actor pool included, now that it "
+           "is built to depth 4.  The horizon-bound ABSOLUTE kernel, "
+           "carried as D44f context and not folded into this verdict, "
+           "has exactly one non-monotone off-root family of rows: the "
+           "four-actor L = 1 row in the three absolute norms, which "
+           "RISES by 0.19% / 3.06% / 14.95% at r = 2 -> 3 and then "
+           "FALLS by 11.28% / 4.87% / 4.87% at r = 3 -> 4, ending "
+           "BELOW its first term in L-infinity and in L1.  On a "
+           "two-term window that row is what the first delivery fired "
+           "the pin's HZ-I clause (c) on; with its third term it is a "
+           "one-step blip, and the unit's own three-actor ROOT row had "
+           "the same shape (a x1.50 rise at step 2, a fall at step 3).  "
+           "The drift MAGNITUDE also falls with actor pool in every "
+           "matched cell, in all five norms"
            if POOL_OK else
-           "BUT IT DOES NOT CONTRACT AT THE WIDEST POOL: "
+           "BUT THE PINNED OBJECT DOES NOT CONTRACT AT THE WIDEST "
+           "POOL: "
            + "; ".join(
                f"{nm} at depth L = {L} in {n2}, cap {cap}, "
                f"{len(seq)} terms, rises by {rise} "
                f"(~{float(rise) * 100:.2f}%)"
-               for nm, n2, L, cap, rs, seq, rise in OFFROW_DETAIL)
-           + " — the only off-root rows that fail at any pool, and the "
-           "rise is an order of magnitude larger in sector-L-infinity "
-           "than in L-infinity, so quoting one norm would have "
-           "understated it.  That is the pin's "
-           "HZ-I clause (c) and its falsifier 4, pre-registered before "
-           "the run and not re-adjudicated after it; the countervailing "
-           "fact, printed in the matched-cell table and not merged into "
-           "this one, is that the drift MAGNITUDE falls with actor "
-           "pool in every matched cell, so the wider pools have a "
-           "smaller drift that has stopped moving rather than a larger "
-           "one that is growing")
+               for nm, n2, L, cap, rs, seq, rise in OFFROW_DETAIL
+               if 'CONDITIONAL' in n2)
+           + " — that is the pin's HZ-I clause (c) and its falsifier 4, "
+           "taken on the pin's own object")
 _v_window = (f"the sup is WINDOW-DEPENDENT and grows on the deeper "
              f"family at r = {[r for r, a, b, g in wider if g]}, so "
              f"D46b's committed four-term sequence is a lower bound on "
@@ -2544,12 +3452,18 @@ _v_window = (f"the sup is WINDOW-DEPENDENT and grows on the deeper "
              "the sup is unchanged on the deeper family at every "
              "committed r")
 _v_horn = (("the two declared terminal conventions separate at EVERY "
-            "history in the absolute kernel and NOWHERE at the root in "
-            "the pinned conditional, and the off-root separation "
-            "SHRINKS in r at every fixed depth (family-wide absolute "
-            "sup " + frl(horn_abs) + "; family-wide conditional sup "
-            + frl(horn_cond) + "), so horn (I) does NOT fire as a "
-            "non-shrinking separation and HZ-II is not the outcome")
+            "history in the absolute kernel; at the ROOT the pinned "
+            "conditional cannot separate at all — that is the "
+            "symmetry THEOREM of HZ3-s2, not a measurement — and OFF "
+            "the root the pinned separation SHRINKS in r at every "
+            "fixed depth, from 1/8 down over five terms (family-wide "
+            "absolute sup " + frl(horn_abs) + "; family-wide "
+            "conditional sup " + frl(horn_cond) + ", whose last entry "
+            "is the root-only window artifact of HZ2-e), so horn (I) "
+            "does NOT fire as a non-shrinking separation and HZ-II is "
+            "not the outcome.  The absolute kernel INHERITS the "
+            "convention; the pinned conditional is protected by "
+            "symmetry at the root and measured to shrink off it")
            if CONV_SEPARATES and CONV_SHRINKS else
            ("the two declared terminal conventions separate in the "
             "PINNED object by an amount that does NOT shrink in r — "
@@ -2559,16 +3473,37 @@ _v_horn = (("the two declared terminal conventions separate at EVERY "
            if CONV_SEPARATES else
            "the two declared terminal conventions agree ENTRYWISE at "
            "every computed horizon")
-_v_bound = ("HZ4 exhibited NO BOUND, and showed that none is available "
-            "by this argument: holdings never shrink, so the "
-            "menu-exact renewal class is left once and never "
-            "re-entered, the never-regenerating set carries "
-            f"{float(nonren_k):.4f} of the horizon-completed mass at "
-            f"depth {SD_DEPTH}, and the N-step renewal-hitting "
-            "probability is EXACTLY zero for every history past the "
-            "first creation event.  The regenerative proof engine "
-            "(D69 route R5) is CLOSED as a route to this unit's bound, "
-            "not merely unfired"
+_v_bound = ("HZ4 exhibited NO BOUND.  THE MENU-EXACT ATOM ROUTE IS "
+            "CLOSED and nothing wider is: holdings never shrink, so "
+            "the MENU-EXACT renewal class R-MENU is absorbing-"
+            f"complement — {MENU_REENTRY} re-entries over "
+            f"{len(RMENUSET)} points — the never-regenerating set "
+            f"carries {float(nonren_k):.4f} of the horizon-completed "
+            f"mass at depth {SD_DEPTH}, and the N-step hitting "
+            "probability into R-MENU is EXACTLY zero for every history "
+            "past the first creation event.  BUT THE SIGMA-LEVEL "
+            "CLASS R-SIG — the literal D62 row-R4 port, which is what "
+            "D69's R5 actually names — IS A DIFFERENT OBJECT AND IS "
+            f"OPEN: it is re-entered {SIG_REENTRY} times, its "
+            "zero-set collapses with N ("
+            + " -> ".join(str(nz) for N, tot, nz, w in MIN_ROWS_SIG)
+            + f"), and at N = 4 NO history in the window has hitting "
+            f"probability 0 and the infimum is {MIN_ROWS_SIG[3][3]} "
+            f"(~{float(MIN_ROWS_SIG[3][3]):.4f}) — the shape of a "
+            "Doeblin condition, on a 9-history window that is NOT a "
+            "bound and from which none is claimed.  The layer's own "
+            "reason is printed at HZ4-ii(a): holdings grow, but "
+            "'superseded' grows too, so NON-superseded holdings shrink "
+            "— which is exactly why the absorbing-complement argument "
+            "covers R-MENU and cannot cover R-SIG.  Classical Doeblin "
+            "minorization needs no atom at all, and NO OPERATOR-LEVEL "
+            "MINORIZATION (Birkhoff / Hilbert-metric contraction of "
+            "the positive backward recursion G) was attempted anywhere "
+            "in this receipt.  So D69's route R5 is NARROWED, not "
+            "closed: the MENU-EXACT ATOM route is closed, THE "
+            "SIGMA-LEVEL RENEWAL ROUTE IS OPEN, and operator-level "
+            "minorization is the campaign's named successor proof "
+            "engine"
             if HZ4_BOUND is None else
             f"HZ4 exhibited a minorization constant: {HZ4_BOUND}")
 _v_licence = ("so what is delivered is HZ-III's SHAPE WITHOUT HZ-III's "
@@ -2590,8 +3525,15 @@ _v_hz5 = (("BOTH coarser aggregations FAIL D57's last-two-caps decider "
            "with a depth-3 class exhibited splitting between cap 5 and "
            "cap 6 at each map.  So the aggregation wall extends from "
            "D57's (actor, type) granularity to the two coarsest maps "
-           "the corpus had named, and D69's routes R1 and R2 close at "
-           "D57's grade")
+           "the corpus had named.  BUT THAT IS ONE CLOSED ROUTE, NOT "
+           "TWO: HZ5-4 gates that no menu entry of kind 'm' occurs "
+           f"below parent depth {M_FIRST_PARENT}, so on the decider's "
+           f"whole input (depths {DECIDER_DEPTHS}) BUDGET-ONLY is a "
+           "bijective relabelling of TYPE-ONLY and the two maps induce "
+           "the IDENTICAL partition at every cap.  D69's route R1 "
+           "closes ON MEASUREMENT and route R2's closure is INHERITED, "
+           "not measured; extending R2 to a cap where merges have "
+           "support is the residue")
           if not (type_closes or budget_closes) else
           ("at least one coarser aggregation CLOSES the fixpoint at "
            "these caps — Perron reopens in aggregated form and the "
@@ -2616,15 +3558,27 @@ outcome(HZ5_FIRED,
         f"D69 §6 requires of any citation of it.")
 
 WALL = time.time() - T00
-print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL   ({len(OUT)} delivered "
-      f"outcomes)   wall clock {WALL:.1f}s")
+print(f"\n[SUMMARY] {PASS} PASS / {FAIL} FAIL, OF WHICH "
+      f"{len(THEOREM_GATES)} ARE THEOREM-PASSES THAT CANNOT FAIL   "
+      f"({len(OUT)} delivered outcomes)   wall clock {WALL:.1f}s")
+print(f"[THEOREM-PASSES] ROUND-1 MODERATE 7: '{PASS} PASS' is NOT "
+      f"{PASS} tests.  The gates that cannot fail, each with its "
+      f"reason, so the count is never read as evidence it is not:")
+for _gid, _why in THEOREM_GATES:
+    print(f"    {_gid:12s} {_why}")
+print(f"    => {PASS - len(THEOREM_GATES)} of the {PASS} passes are "
+      f"gates that could have returned False on this family.")
 print(f"[RUNTIME] family builds dominate: two-actor depth {CAP_T} "
-      f"{_TBUILD:.1f}s, delivery-free depth {CAP_DF} {_DFBUILD:.1f}s; "
-      f"total {WALL:.1f}s.  Nothing was cut: every arm the pin declares "
-      f"ran, including HZ5, which the pin allowed to be dropped.")
+      f"{_TBUILD:.1f}s, THREE-actor depth {CAP_3} {_T3BUILD:.1f}s, "
+      f"FOUR-actor depth {CAP_4} {_T4BUILD:.1f}s (serial, single-core, "
+      f"the round-1 MAJOR 1 arm and the reason this is the campaign's "
+      f"longest receipt), delivery-free depth {CAP_DF} "
+      f"{_DFBUILD:.1f}s; total {WALL:.1f}s.  Nothing was cut: every arm "
+      f"the pin declares ran, including HZ5, which the pin allowed to "
+      f"be dropped.")
 
-print(f"\n[VERDICT] D70 GREEN-UNREVIEWED, outcome {FIRED} + "
-      f"{HZ5_FIRED}.  Every clause below is built from a gated "
+print(f"\n[VERDICT] D70 ROUND-1 REVIEWED AND REPAIRED, outcome {FIRED} "
+      f"+ {HZ5_FIRED}.  Every clause below is built from a gated "
       f"quantity above and cannot contradict it.  "
       f"PROPERNESS: {_v_proper}.  "
       f"THE CAUCHY TABLE: {_v_cauchy}, {_v_pool}; and {_v_window}.  "

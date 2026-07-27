@@ -11711,3 +11711,31 @@ transport scope — where D70's measure is simultaneously converging.
 THE ERA'S SECOND-WAVE PIN NAMED: TRANSPORT-SCOPE FLATNESS (does
 A_D stay 0 when deliveries and multi-proposer arbs enter?).
 GREEN-UNREVIEWED x2: hostile rounds dispatched.
+
+## 2026-07-27 — D70 ROUND 1 ADJUDICATED AND TERMINAL: CONTRACTION AT
+## EVERY POOL AND DEPTH MEASURED — THE MEASURE ROUTE LIVES; D46b
+## FORWARD-CORRECTED (LEDGER #489)
+Deliverables: reviews/d70-round1-hostile-review.md (independent Opus
+5, REVISE 5 MAJOR / 4 MODERATE / 5 MINOR, + my DELTA), repaired
+receipt (51 PASS / 0 FAIL, 1,086 s — the campaign's longest, incl.
+the 318,704-history four-actor depth-4 arm) + retitled note.
+**FORWARD CORRECTIONS: (1) #484's HZ-I headline is WITHDRAWN — the
+four-actor rise was a two-term blip that REVERSES at the third term
+(referee ran it; repair gated it; exact match): the
+doctrine-consistent verdict is CONTRACTION AT EVERY POOL AND DEPTH
+MEASURED — HZ-III's shape awaiting only its bound.  (2) D46b MB3-e
+("root drift contracts monotonically to r = 6") is CORRECTED: it
+contracts r = 2..6 and RISES x7.509 at 6 -> 7 (fixed-history, all
+three norms, not a window artifact); the pinned object's exact 0 is
+a SYMMETRY THEOREM (A<->B/0<->1 automorphisms), not a consolation.**
+The horn's content is off-root (shrinking); the menu-exact renewal
+atom is closed but **R-SIG (sigma-level renewal) is OPEN — positive
+return probability under both window conventions, zero-sets
+horizon-independent — and operator-level minorization is the named
+surviving proof engine.**  The two cheap aggregations are ONE closed
+route.  The measure campaign's state after its opening arc: the
+horizon-limit law is proper to r = 7, contracts everywhere measured,
+is convention-protected at the root by symmetry and measured-
+shrinking off-root; what remains is THE BOUND (via Birkhoff/
+Hilbert-metric on R-SIG) and the four-actor depth-5 horizon
+extension.  TERMINAL for round 1.
