@@ -11428,3 +11428,51 @@ non-regenerating-weight falsifier; controls incl. a perturbed-law
 negative and the Zhat positive; the HZ7 wall-convention diagnostic
 (changes nothing, adopting it would be a different theory);
 doctrine MB6 binding.  Worker dispatched.
+
+## 2026-07-27 — D71 PHASE ARCHAEOLOGY: THE CORPUS IS NOT MISSING THE
+## IMAGINARY EXPONENTIAL — IT FOUND IT, RECEIPTED IT, AND SHELVED IT
+## THREE VERSIONS AGO (LEDGER #483)
+Deliverable: note-d71-phase-archaeology.md (1,230 lines; 24 cited
+appearances, 8 reduction points, 5 attachment slots, graded verdict).
+Prompted by the user's question ("are we missing an exponential with
+imaginary numbers somewhere? don't go from memory").  **THE VERDICT:
+the imaginary exponential is missing from v10, NOT from the corpus.**
+(1) v7 paper 30 §24-25 ran a DEDICATED COMPLEX-AMPLITUDE CAMPAIGN
+(p30_complex_amplitude_campaign.py, 11/11): naive path interference
+FALSIFIED (TV 1.68e-5 -> 0.611 across eight phases); complex decay
+constant breaks dual conjugation (error 1.82); THE SURVIVOR:
+**A(R) ~ e^{-K(E)} · e^{i Phi(O)} — real decay on the EVEN channel,
+phase on the ODD channel — dual-conjugation error EXACTLY 0**, with
+reflection positivity as the stated reason ("odd directions cannot be
+real positive observables; they become positive as imaginary
+amplitude channels").  Never lifted to a theorem.  (2) v6 paper 7
+Thm 7.1-7.4 DERIVES C as the value space and uses POSITIVITY to
+select U(1) over split-complex — the corpus's high-water mark on
+phase; **v10 cites it nowhere**; three sibling documents contradict
+it un-reconciled (companion-B blind; paper Va lists it as INPUT; v8
+paper 2 proves the bit sits in ker R).  (3) v6 paper 4's own gated
+receipt returns **FAIL-BORN for the real-only branch** ("a purely
+real Gibbs tilt... is not the whole phase-sensitive ISP process");
+v8: positive real weights PROVABLY cannot produce the phase
+cancellation.  (4) v7 paper 42 defines the complex functional
+D_D(U,V) in C — paper 29's D(alpha,beta) THREE VERSIONS EARLY — and
+declares "the delay is intentional"; v9/PLAN.md:211 scheduled the
+triage note; IT WAS NEVER WRITTEN.  The deferral was a descoping
+decision with no evaluated trigger.  **THE BEST SLOT (the note's
+§3.5): THE ODD CHANNEL — the only candidate with a proposed form, a
+uniqueness argument (dual conjugation 0 vs 1.82), AND an
+independently-discovered non-zero v10 object with the right index:
+D66's Z/2 parity class — zero on every even ring, non-zero on every
+odd ring at five sizes.**  Runner-up: the arbitration winner W
+(D62-EXACT invisible to sigma; weight-visible/state-invisible —
+precisely what D68's C5 collapse cannot reach; currently filled with
++1 by the committed prod-sqrt(q)).  [MY READING] flags carried: the
+odd/even index identification is NOT established (it is the first
+pinnable unit); the four-document disagreement is a reading claim.
+**LIVE ERRATUM FILED: the quarter law's BC is only the Cauchy-Schwarz
+bound (saturated iff relative pointer phase constant) — v6 paper 7
+§12's correction never reached paper 26, ARCHIVE-STATUS, or v10
+paper 18.**  Next pinnable unit named: lift the odd-channel form —
+test the parity-class-as-Phi(O) identification against the v7
+survivor, with the unistochasticity question (is the click-law
+kernel Gamma(U) for some U?) as its companion arm.
