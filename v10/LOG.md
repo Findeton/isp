@@ -11366,3 +11366,31 @@ superposition enters — transport scope (where conflict weights, the
 mass jump, and the dimension mechanism already live), a different
 joint, or a different fair demand — is now the program's sharpest
 open question.  TERMINAL for round 1.  Next: the book to #480.
+
+## 2026-07-27 — THE BOOK INTEGRATED TO #480; THE FRONTIER SYNTHESIS
+## RECORDED (LEDGER #481)
+THE-THEORY-SO-FAR.md -> 12,498 lines, stamp #480, full re-read held.
+New chapters §A2.8/§B2.11 (the functional slot: the three-readings
+form choice with the faithful reading as headline; RESULT 1
+permitted-everywhere/priced-nowhere with the different-parent
+witness and measure-independence; RESULT 2 cohdim = 0 under the
+dynamical demand with the invisibility census; the scoped verdict —
+at closed scope a quantum layer cannot be both state-generated and
+coherent; the three named homes, transport scope first; the phase
+story honest in both directions).  Graveyard gains both withdrawn
+sentences plus the quietly-withdrawn scope over-reach; §A10.16
+names a THIRD failure mode ("a convention wearing the clothes of a
+result").  Review statistics: TEN ROUNDS / EIGHT BLOCKERS — the
+numbers never once wrong.  Part D re-ranked: 1 = the demand's
+uniqueness + THE TRANSPORT-SCOPE FUNCTIONAL SLOT; 2 = TRIPLE-GRID
+[NOT BUILT] — recorded here since the book now ranks it and the
+corpus had no LOG line: three crossed conflict axes, user-flagged,
+carrying the dimension-profile, gauge-loop-structure and
+k-selection questions; 3 = repair cone.  **THE FRONTIER SYNTHESIS
+(user's four-bullet bottom line, recorded): we have a space-MAKING
+mechanism (engineered, not emergent); dimensionality is unselected
+(k is a dial); grid typicality is UNPOSABLE without a measure; the
+quantum layer is excluded at proven scope.  ALL FOUR are the same
+missing object — A MEASURE AT TRANSPORT SCOPE — the thing B1's
+walls proved cannot be built the naive way.  The next campaign is
+the measure itself, attacked from what B1 left standing.**
