@@ -11274,3 +11274,23 @@ note's 1,520 events / 406 C1 steps / cut 71 / 30 PASS vs the
 receipt's printed 1,380 / 380 / 63 / 29 — the receipt verified
 authoritative).  The note is FORWARD-CORRECTED to the receipt in
 this commit; the book had already used the receipt figures.**
+
+## 2026-07-27 — D68 PINNED: THE FUNCTIONAL SLOT — what quantum layers
+## does the generated law admit? (LEDGER #478)
+Pin FROZEN before any receipt: note-d68-functional-slot-pin.md.  The
+book's rank-1 front, made computable: over the truncated history
+space, measure the EXACT space of Hermitian forms D(h, h') that (C1)
+reproduce mu_Zhat on the record diagonal (both summation conventions
+carried), (C2) are PSD, (C3) are cylinder-consistent across a depth
+step, (C4) are renaming-equivariant.  Gates F0-F6 (anchors incl.
+mu_Zhat's descent re-gated; the constraint system exact — no floats;
+existence; THE DIMENSION by exact rank at depths 3/4(/5); THE
+COHERENCE QUESTION — does any member carry off-diagonal structure
+WITHIN record classes, i.e. does the generated law PERMIT, FORBID,
+or FORCE superposition; controls incl. a perturbed-measure
+falsifier).  Outcomes F-I empty (the failing constraint is the
+finding) / F-II diagonal-only (quantum FORBIDDEN at scope — the
+layer must enter elsewhere) / F-III a priced cone (the D50 pattern)
+/ F-IV off-diagonal FORCED (the strongest conceivable map result).
+NO LEAN — the campaign's quantum-layer intuition is 0-for-2 and the
+pin declines to bet.  Worker dispatched.
