@@ -11819,3 +11819,30 @@ fork goes live) / TH-II (real curvature only — gravity-flavored
 modulus twist, no phase) / TH-III (the odd residue — the U(1)
 seed).  NO LEAN (0-for-3 on phase intuitions).  Anchors = D72's
 census numbers exactly.  Worker dispatched.
+
+## 2026-07-27 — THE BOOK INTEGRATED TO #491: THE WELD ERA'S FIRST
+## WAVE, ONE-GO (LEDGER #493)
+THE-THEORY-SO-FAR.md 12,498 -> 14,431 lines, stamp #491, full
+re-read held.  New chapters: §A2.9/§B2.12 (the phase: the
+archaeology arc, the holonomy identity, the flatness theorem with
+its budget-coincidence clause, the normalised <5/4>, the transport
+census, the odd-sector address), §A8.10/§B8.10 (the rank-2 question:
+both fixtures, the h-weight identity, the inverted hint),
+§A9.6/§B9.7 (the horizon limit: walls stratified, the Cauchy table,
+the root symmetry theorem, R-SIG).  §D1 gains "THE DESTINATION'S
+WORKING HYPOTHESIS" (modulus builds space / phase completes and
+legislates it — grounded in Prop 10.6, v6 p5, the Clifford algebra —
+with the honest state: all modulus so far, the odd sector the last
+address).  The four senses of "flat" disambiguated (§A4.5 + a §B4.4
+carrier table); six blacklist entries; two new graveyard pairs + six
+bullets; §A10.16 names the fourth failure kind and the
+referees-out-build-units statistic (thirteen rounds); two new method
+rules (fixture provenance; credit the round as authorship); 17 new
+glossary rows; GAPS extended to eight open items.  Part D re-ranked:
+1 = D74 (TRIPLE-GRID folded into its substrates), 2 = the
+minorization bound, 3 = rank-2 on generic geometry.  The re-read
+caught eight stale sites outside the targets (incl. "no current
+tool" [false since D70], the uncorrected MB3-e recap, and
+"typicality: unbuilt" -> UNPOSABLE-until-the-measure).  C1 carries
+the quarter-law erratum.  Zero unqualified withdrawn sentences
+outside blacklist/graveyard.
