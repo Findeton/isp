@@ -11220,3 +11220,35 @@ reaching 16 at k = 4); k² NOT reached at k = 5 by anything built
 (18 vs 25 — height alignment obstructs, not the bound; D66 residue
 6 closed at k = 4, REOPENED at k = 5).  GREEN-UNREVIEWED: hostile
 round dispatched.
+
+## 2026-07-27 — D67 ROUND 1 ADJUDICATED AND TERMINAL: THE FRONTIER
+## DOES NOT EXIST — BAND UNIFORMITY AND THE k² CEILING IN ONE WHOLE
+## RECORD, AND THE CEILING REALIZED AT k = 3, 4, 5, 6 (LEDGER #476)
+Deliverables: reviews/d67-round1-hostile-review.md (independent Opus
+5, REVISE, 1 BLOCKER / 5 MAJOR / 7 MINOR / 4 NIT, + my DELTA),
+repaired receipt (29 PASS / 0 FAIL, 3,291 s) + retitled note.
+**FORWARD CORRECTION of #475: "no whole k = 4 record is in band at
+either depth" WAS FALSE — the unit's own sweep contained the
+counterexample.**  The referee confirmed every number (empty diff on
+rerun; every row, histogram, witness and census reproduced from an
+independent driver) and then produced the positive: DOUBLE-GRID(4,4)
+— 200 events, forced, ZERO in-round deliveries — is IN the d = 3
+band on BOTH published band columns (0.7250 / 0.6350) AS A WHOLE
+RECORD at max |D| = 16.  **THE WIDTH-UNIFORMITY FRONTIER AT k = 4
+DOES NOT EXIST.**  And MAJOR 1 closed the ladder: ARBCHAIN** —
+height-levelled by the grammar's own idle events — realizes the k²
+ceiling at k = 5 (25 directions, full-menu replayed 157/157, widest
+menu 2,125, the campaign's highest forcedness grade) and k = 6 (36
+directions).  "Height alignment obstructs" was a design failure of
+the unlevelled chain, not a wall; **the k-ceiling question is CLOSED
+at every k tried, and height-levelling is the mechanism — supplied
+by the grammar's own ('n', a) idle.**  Honesty repairs: the C1
+accounting stated AS A NUMBER (380 C1-graded steps of 1,380 swept;
+no tiling k = 4 record is C1-complete, said in the gate label);
+"sprinkling-grade" scoped to one column at one k with per-dimension
+figures; both band columns everywhere; the interior verdict a
+monotone crossing on a population; the height + 1 sentence marked
+DEFINITIONAL with its empirical content (the V4 collapse; that a
+schedule CAN satisfy it at every k) separated; the budget-bound and
+proposer-count mislabels fixed.  TERMINAL for round 1.  Next: the
+book to #476; then the missing map's functional level.
