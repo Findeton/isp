@@ -11294,3 +11294,38 @@ layer must enter elsewhere) / F-III a priced cone (the D50 pattern)
 / F-IV off-diagonal FORCED (the strongest conceivable map result).
 NO LEAN — the campaign's quantum-layer intuition is 0-for-2 and the
 pin declines to bet.  Worker dispatched.
+
+## 2026-07-27 — D68 DELIVERED (GREEN-UNREVIEWED): F-III — SUPERPOSITION
+## IS PERMITTED AND PRICED; COHERENCE SURVIVES EXACTLY WHERE RECORDS
+## CANNOT REACH; RECORDS CANNOT SEE A PHASE (LEDGER #479)
+Deliverables: note-d68-functional-slot-result.md,
+code/d68_functional_slot_exact.py (25 PASS / 0 FAIL, exit 0, 116 s,
+1.36 GB, exact arithmetic end-to-end), data/.out.  Opus 5 worker
+against the frozen pin (#478).  RERUN BY ME: identical modulo
+embedded timings.  **F-III AT EVERY DEPTH >= 3 UNDER BOTH C1
+CONVENTIONS: the space of paper-29-shaped functionals over the
+generated law is a LARGE CONE (dimension table gated, depths 2-6,
+e.g. block reading at D=6: 25,578-dim solution space, 19,847 of it
+within-class coherence) and the CLASSICAL MEMBER IS POSITIVE
+DEFINITE, INTERIOR — existence was never the obstruction, F-I and
+F-IV are excluded, and C2 (positivity) never binds.**  THE COHERENCE
+GEOGRAPHY, EXACT: under the block reading a within-class entry
+D(h,h') is forced to zero IFF the parents carry DIFFERENT records —
+by a SINGLETON constraint row, no cancellation — and cohdim
+reproduces the parents-record-identical count exactly at every depth
+(0/50/744/8,074/79,168): **the record instrument is the exact
+boundary of permitted coherence.**  Under the decoherent-sum reading
+coherence is priced at ZERO (entirely free).  **AND THE MEASURE IS
+BLIND TO PHASES: the constraint rank on the antisymmetric
+(imaginary) block is ZERO at every depth — a record measure of this
+shape cannot see a phase.**  20 explicit PSD coherence witnesses
+built (exact minors), zero failures.  Depth-2/block is the one F-II
+cell (unique member there).  Surprises carried: the record functor
+only PARTIALLY commutes with prefixes (that is why coherence
+survives); the classical comparator is itself a polytope point
+(under-determined before quantum enters); an ordered-vs-unordered
+row-keying bug found and fixed pre-delivery (documented).  Residues:
+measurement-not-construction (DC3(2) NARROWED); the two C1 readings
+un-adjudicated (a NEW form choice, the D50 pattern one level up);
+truncation-bound; canon interpretive.  GREEN-UNREVIEWED: hostile
+round dispatched.
