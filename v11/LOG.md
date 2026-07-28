@@ -113,3 +113,35 @@ alongside §6.7's); YM README lines 12-18 the last un-swept
 overclaim; D15's "measured couplings" itself forward-corrected to
 "fixture-extracted".  The G-wall reading corrected: "the wall
 stands unconditionally; the G-NAMING is conditional."
+
+## 2026-07-27 — PHASE I AUTHORIZED AND FROZEN: FOUR PINS (v11
+## LEDGER #4)
+**The user lifted the halt: "go ahead, phase I."**  The Phase I
+pins are frozen before any construction, per house discipline:
+- **note-u1-indivisibility-census-pin.md** — U1, the unit that
+  decides the world: preamble (v1 p22's indivisibility definition,
+  audit defect repaired); Arm 0 (Born = K1 rebuilt exact + the
+  Ẑ-completed sibling, conflict row {1/7, 3/4, 3/28}); Arm 1 (the
+  [B3] eq. 22 interpolant census on the renewal-to-renewal Γ family,
+  the 44 descent-obstruction squares first); Arm 2 (paper 29's four
+  descent conditions, same family, agreement census first-class).
+  Outcomes pre-registered: U1-DIV / U1-BRIDGE / U1-SPLIT; lean NONE
+  (0-for-5).
+- **note-L1-L0-boundary-lemmas-pin.md** — the two restatement
+  lemmas: L-1 (finite-stochastic Lorentz no-go → statistical-only
+  covariance at renewal grain, the §4 collision resolved on record)
+  and L0 (the scale no-go: no internal observable is a length; c_m
+  the only permitted form; Jacobson-conditionality carried).  Risk
+  is fidelity, not truth.
+- **note-h1-erratum-routing-pin.md** — the §6.7 duty: route the
+  BC/Cauchy-Schwarz erratum and the never-errata'd v4 effective-GR
+  descent through the status layer + v8/LEDGER.md + v10 paper 18,
+  frozen files untouched (gated by diff-stat receipt); the 119→137
+  routing checked.
+- **note-ld-last-door-pin.md** — the record-category reversal
+  probe at transport scope ([V11-CAT §4.7 branch (a)]): the formal
+  opposite record, involutivity gated, inversion-vs-conjugation
+  census over D74's committed loops + the K1 row, asymmetric
+  substrate included.  LD-CLOSED / LD-OPEN / LD-BROKEN; lean NONE.
+All four dispatch in parallel (file-disjoint).  The Phase I
+falsifier stands as paper 0 §10 states it, both ways.
