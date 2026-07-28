@@ -353,5 +353,13 @@ directions") — is superseded. The correction is committed at
 
 Read **137/313** for **119/313** at both loci. The `308/313` renewal-pair figure
 is unaffected, and the direction of the finding strengthens: the completion form
-is a choice with *more* freedom than published. Recorded at `../v8/LEDGER.md`
-#498.
+is a choice with *more* freedom than published — as `note-d50-form-law-or-choice-result.md`
+lines 124-128 states of the same correction: *"**The damage is that the conclusion
+strengthens.**  The corrected dimensions are *larger*, still monotone, still far from
+0: I3 fails to force the form more freely than the first draft reported.  Every
+qualitative claim of LOG #422 stands; every quantitative one is restated here."*
+Recorded at `../v8/LEDGER.md` #498.
+
+*(Citation added 2026-07-27, v11 H1 hostile round, fix 10: the erratum's
+"the direction of the finding strengthens" was an unsourced assertion of this
+unit's; it is the corpus's own, and is now quoted from its committed locus.)*

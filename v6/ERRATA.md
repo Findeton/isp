@@ -60,7 +60,9 @@ coefficient.
 
 **The correction, verbatim from its committed source** —
 `relativistic-isp-v6-paper7.md` §12 ("Predictions and experimental contact
-(corrected)", line 1157), item B1, lines 1178-1195:
+(corrected)", line 1157), item B1 — the item runs lines 1178-1193 (1194-1195
+are item B2); the passage quoted here is lines 1178-1188 *(range corrected
+2026-07-27, v11 H1 hostile round; first written as 1178-1195)*:
 
 > B1. Duality law, CORRECTED. Cauchy-Schwarz gives |<phi0|phi1>| <= B =
 >     sum sqrt(p0 p1), with equality iff the relative pointer phase is
@@ -77,13 +79,19 @@ coefficient.
 **Affected frozen locus (no in-file text modified):**
 `relativistic-isp-v6-paper26.md` — the quarter law at lines 15-17 (abstract),
 61-62 (*"coherence multiplier = Bhattacharyya overlap"*), and Theorem A at
-lines 222-238. The load-bearing step is line 232-235: *"The record imprint
+lines 222-238. The load-bearing step is lines 233-235 *(corrected 2026-07-27,
+v11 H1 hostile round; first written as 232-235 — line 232 is blank)*: *"The record imprint
 sends rho_01 -> <e_1|e_0> rho_01 with |e_chi> = sum_b sqrt(P_chi(b)) |b>, so
 the per-cycle multiplier is exactly BC."* The phase-free pointer
-`|e_chi> = sum_b sqrt(P_chi(b))|b>` **is** paper 7 §12 B1's
-constant-relative-phase hypothesis; for phase-structured pointers the
-multiplier's modulus is strictly below `BC`, and `BC` is the Cauchy-Schwarz
-bound on it. Paper 26's `-ln BC = sigma/4 + (eps^2/6) sigma + O(sigma^3)` and
+`|e_chi> = sum_b sqrt(P_chi(b))|b>` **is** the (strictly stronger) phase-free
+case of paper 7 §12 B1's constant-relative-phase hypothesis; for
+phase-structured pointers the multiplier's modulus is strictly below `BC`
+**whenever the relative pointer phase is non-constant**, and `BC` is the
+Cauchy-Schwarz bound on it. *(Both clauses tightened 2026-07-27, v11 H1
+hostile round, fix m4: the first delivery wrote "strictly below `BC`"
+unqualified — false at constant non-zero relative phase, where the modulus
+saturates — and identified the phase-free pointer *with* B1's hypothesis
+rather than as a special case of it.)* Paper 26's `-ln BC = sigma/4 + (eps^2/6) sigma + O(sigma^3)` and
 its receipt table stand as stated **under that hypothesis**.
 
 **Paper 7 carries the correction in-file** and is cited here as the source,

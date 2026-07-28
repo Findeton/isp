@@ -18,7 +18,10 @@ v10 files that carry the affected passages, and in `v8/LEDGER.md`.
 
 **The correction, and its committed source.**
 `v6/relativistic-isp-v6-paper7.md` §12 ("Predictions and experimental
-contact (corrected)", line 1157), item B1, **lines 1178–1195**:
+contact (corrected)", line 1157), item B1 — the item runs **lines 1178–1193**
+(1194–1195 are item B2); the passage quoted below is **lines 1178–1188**
+*(range corrected 2026-07-27, hostile-round fix m1; the first delivery wrote
+1178–1195 for both)*:
 
 > B1. Duality law, CORRECTED. Cauchy-Schwarz gives |<phi0|phi1>| <= B =
 >     sum sqrt(p0 p1), with equality iff the relative pointer phase is
@@ -55,12 +58,18 @@ already in the live corpus; only the reader paths lacked the pointer.
 `v6/relativistic-isp-v6-paper26.md`: the quarter law at lines 15–17
 (abstract), 61–62 (*"coherence multiplier = Bhattacharyya overlap"*),
 and Theorem A at lines 222–238.  The load-bearing step is lines
-232–235: *"The record imprint sends rho_01 -> <e_1|e_0> rho_01 with
+**233–235** *(corrected 2026-07-27, hostile-round fix m2; the first delivery
+wrote 232–235 — line 232 is blank)*: *"The record imprint sends rho_01 -> <e_1|e_0> rho_01 with
 |e_chi> = sum_b sqrt(P_chi(b)) |b>, so the per-cycle multiplier is
 exactly BC."*  The phase-free pointer `|e_chi> = sum_b
-sqrt(P_chi(b))|b>` **is** paper 7 §12 B1's constant-relative-phase
-hypothesis.  Paper 7 itself carries the correction in-file and is cited
-as the source, not as an affected locus.
+sqrt(P_chi(b))|b>` **is the (strictly stronger) phase-free case of** paper 7
+§12 B1's constant-relative-phase hypothesis *(so amended 2026-07-27,
+hostile-round fix m4; the first delivery wrote "**is** B1's hypothesis",
+conflating a special case with the hypothesis itself — and the corresponding
+"strictly below `BC`" clause in `v6/ERRATA.md` E2 now carries its "whenever
+the relative pointer phase is non-constant" qualifier, since a constant
+non-zero relative phase still saturates)*.  Paper 7 itself carries the
+correction in-file and is cited as the source, not as an affected locus.
 
 ### Routing destinations
 
@@ -73,17 +82,37 @@ as the source, not as an affected locus.
 
 **Lines as added — `v6/ARCHIVE-STATUS.md`:**
 
-> - paper26's Theorem A holds under a hypothesis it does not state: the coherence multiplier is
->   `BC` only when the relative pointer phase is constant across the record alphabet, `BC` being
->   the Cauchy-Schwarz bound in general (paper 7 §12 item B1, "Duality law, CORRECTED"). Routed
->   in `ERRATA.md` E2; `../v8/LEDGER.md` #498.
+> - paper26's Theorem A carries a restriction it does not flag as one. Its proof writes the
+>   phase-free pointer explicitly — `|e_chi> = sum_b sqrt(P_chi(b)) |b>`, line 234 — but never
+>   says that writing it *restricts* the theorem: the coherence multiplier is `BC` only when the
+>   relative pointer phase is constant across the record alphabet, `BC` being the Cauchy-Schwarz
+>   bound in general (paper 7 §12 item B1, "Duality law, CORRECTED"). Per
+>   `../v10/THE-THEORY-SO-FAR.md:11937-11938`, the correction *"does not move the theorem's
+>   leading coefficient; it moves the theorem's hypothesis"*. Routed in `ERRATA.md` E2;
+>   `../v8/LEDGER.md` #498.
+
+*(Wording amended 2026-07-27, hostile-round fix n4.  The first delivery wrote
+"holds under a hypothesis it does not state", which reads as though the
+phase-free pointer were absent from paper 26's proof.  It is not — the proof
+writes it at `v6/relativistic-isp-v6-paper26.md:234`; what the paper omits is
+that writing it is a **restriction**.  The replacement wording tracks
+`v10/THE-THEORY-SO-FAR.md:11937-11938` instead of asserting a fact about the
+paper that is false.)*
 
 **Scope carried into v10 paper 18's erratum (quoting nothing beyond the
 corpus's own statements):** the reception metric is `−ln|F| ≥ −ln BC`,
 so the quarter law is a lower bound on sealing at fixed evidence unless
 the recorded pointer phases align; the phase face of `F` leaves `|ρ₀₁|`
-untouched (the paper's own §8 and v8 paper 6 §3), so **no clause of the
-principle, the falsifier, or the identification changes**.
+untouched (`v8/relativistic-isp-v8-paper6-phenomenology.md`:50, §3: *"the
+phase face of §1.2's influence functional leaves `|ρ₀₁|` untouched"*), so
+**no clause of the principle, the falsifier, or the identification
+changes**.
+
+*(Amended 2026-07-27, v11 H1 hostile-round fix M2: the first delivery
+attributed the phase-face statement to v10 paper 18's own §8. It is not
+there — §8 is "Hostile fronts after round 1" — and the attribution has been
+deleted from the paper-18 erratum and from this line. The sourced locus is
+v8 paper 6 §3 alone.)*
 
 ---
 
@@ -172,12 +201,27 @@ committed v10 *paper* quotes the number.
 H1 — erratum routing)` in the D49 result note (live-era, forward-only,
 original text unmodified) quoting the THE-THEORY-SO-FAR correction and
 instructing **137/313 for 119/313** at both loci; `308/313` unaffected;
-the headline strengthens (more freedom than published).  Recorded at
-`v8/LEDGER.md` #498, part (c).
+the headline strengthens (more freedom than published — the corpus's own
+statement of this, now cited in the D49 erratum per hostile-round fix 10, is
+`v10/note-d50-form-law-or-choice-result.md:124-128`: *"**The damage is that
+the conclusion strengthens.**  The corrected dimensions are *larger*, still
+monotone, still far from 0"*).  Recorded at `v8/LEDGER.md` #498, part (c).
+
+**Amended 2026-07-27 (hostile-round fix M1): the sweep was incomplete.**  The
+claim above that "no committed v10 *paper* quotes the number" is true, but
+`v10/THE-COMPLETION-DICHOTOMY.md` — a live-era v10 book file, not a note —
+still printed the full stale row at **line 1132**: *"| bisimulation-invariance
+of the completed class transfer at every interior cut | 589 | 194 | **119 of
+313** |"*.  **Two** of its numbers are stale, not one: the rank is `176`, not
+`194`.  The corrected row is committed at `v10/THE-THEORY-SO-FAR.md:7387`.  An
+appended forward-only erratum in the same pattern now routes it there.  The
+`119` also survives at three loci in `v10/note-d50-is-the-form-a-law-pin.md`
+(§5(c)), which are recorded rather than edited — pins are frozen by convention
+once their unit has run.
 
 ---
 
-## 4. THE `1.82` DOWNGRADE — NO NEW ROUTING OWED
+## 4. THE `1.82` DOWNGRADE — ROUTED (amended 2026-07-27, hostile-round fix M3)
 
 Per the pin's scope clause, checked for an unpointed reader path.  The
 number's live home is `v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2833`
@@ -188,12 +232,84 @@ number's live home is `v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:283
 paper quotes `1.82` as evidence.  The one remaining reader path is the
 frozen v7 paper itself; `v7/` has an `ARCHIVE-STATUS.md` but no
 `ERRATA.md`, and creating a v7 errata layer is a larger decision than
-this unit's remit.  **Recorded as the one carried residual, not routed.**
+this unit's remit.
 
-## 5. WHAT COULD NOT BE LOCATED
+**Amended 2026-07-27 (hostile-round fix M3): the `1.82` IS now routed.**
+Creating a v7 `ERRATA.md` remains out of remit, but `v7/ARCHIVE-STATUS.md`
+already exists and already is the v7 caveat layer — the same layer
+`v6/ARCHIVE-STATUS.md` provides for v6.  One caveat line was appended there
+in exactly the v6 style, pointing at `v7/…-paper30-…:2833`, at
+`v10/note-d72-weld-result.md` §5(a) (line 308) for the downgrade, and at
+`v8/LEDGER.md` #498.  The first delivery's "no new routing owed" verdict was
+wrong on the layer question and is withdrawn.  One sub-finding recorded while
+verifying: d72 §5(a) cites the digits as `paper30:2838`; the receipt line is
+**2833** (2838 is the *corrected* expression `L_dual = e^{-kE}e^{i\theta O}`).
+The caveat line carries that note; d72 itself is not edited.
 
-Nothing.  Every correction routed here has a committed source, quoted
-with file and line.  No `[DISPUTED-UNROUTED]` line was needed.
+## 5. WHAT COULD NOT BE LOCATED — AND THE NAMED RESIDUALS
+
+Every correction routed here has a committed source, quoted with file and
+line, and no `[DISPUTED-UNROUTED]` line was needed.
+
+**Amended 2026-07-27 (hostile-round fix m5/m7).  The first delivery of this
+section read "Nothing."  That claim is WITHDRAWN — it was a claim about the
+corpus, not about this unit's sources, and it is false.**  The hostile round
+found unpointed reader paths this unit did not route.  They are named here,
+verified line by line, and left *unrouted by design*: routing (a) and (b)
+would require sweeping frozen papers and, for v5, building a status layer
+that does not exist — both beyond this unit's remit.  Recorded so the next
+housekeeping unit inherits a list, not a search.
+
+**(a) Unpointed quarter-law citations** (each cites `−ln BC = σ/4` with no
+pointer to the Cauchy–Schwarz hypothesis now routed in `v6/ERRATA.md` E2):
+
+- `v6/relativistic-isp-v6-paper10.md:576-581` — *"the quarter law of quantum-processor
+  decoherence (-ln BC = sigma/4 + corrections, proved with its correction
+  series and measured to four digits)"* (frozen v6 paper; the E2 entry is
+  scoped to paper 26 only).
+- `v8/relativistic-isp-v8-paper10-experimental-program.md:9` (the echo-floor
+  protocol's framing of paper 6 §3's blindness boundary) and `:43` —
+  *"Paper 6 §1: `−ln BC = σ/4 + (ε²/6)σ + O(σ³)` is a theorem *within* the
+  which-path pair"*.  Live-era v8, so routable; not routed here.
+- `v10/note-d22-no-silent-erasure-principle.md:13` — the principle's own
+  clause (ii): *"the quarter law −ln BC = σ/4 … is its metric, bridged by the
+  [POSITED] seal-is-record postulate"*.  Live-era v10; the same clause is what
+  v10 paper 18's appended erratum scopes, but the D22 note itself has no
+  pointer.
+
+**(b) The v4 GR compilation loci and their v5 downstream** (the `E2` entry
+just added to `v4/ERRATA.md` names papers 25 and 32; these carry the descent
+forward and are not named):
+
+- `v4/relativistic-isp-v4-paper36-hardening-summary-and-compilation.md:154`
+  (*"## 2. P32 Compilation: Effective GR"*), `:203`
+  (*"\hbox{effective GR inside active ISP} &"*), `:599`
+  (*"Proof.  P32 gives effective GR closure relative to"*).
+- `v5/relativistic-isp-v5-paper0-review-introduction-for-physicists.md:513` —
+  *"ISP theorem says that effective GR is the no-anomaly finite-record
+  geometry."*
+- `v5/relativistic-isp-v5-paper1-finite-record-horizons-black-hole-ontology.md:3054`
+  — *"Proof.  Paper 25 established that effective GR is a finite readout and"*.
+- **The structural fact behind (b):** `v5/` has **no errata layer and no
+  archive-status layer at all** — `ls v5/` returns 21 files, every one a paper
+  (plus one `.tex`/`.pdf` pair).  There is nowhere in v5 to append a routed
+  correction.  Creating that layer is a decision beyond this unit; it is
+  recorded as a residual for a future housekeeping unit.
+
+**(c) The `119` loci in the D50 pin.**
+`v10/note-d50-is-the-form-a-law-pin.md` prints the superseded `119` at three
+places — `:25` (the B2 measurement table row, *"| bisimulation-invariance of
+the completed class-to-class transfer at every interior cut | **119 of 313**
+|"*), `:51` (*"(B2's measurement; 119/313 free.)"*), and `:96` (*"B2's two
+numbers (308, 119 at depth-4) as a port check"*).  **A pin is frozen by
+convention once its unit has run**, so these are recorded rather than edited
+or errata'd in place — and the third is doubly instructive, since it is
+exactly the port check `THE-THEORY-SO-FAR.md:7464-7469` names as the reason
+the error survived.  The corrected value is `137 of 313` (rank `176`, not
+`194`) at all three.  The routing this unit *did* perform for the same number
+is the appended erratum in `v10/THE-COMPLETION-DICHOTOMY.md` (line 1132's row
+— a second stale locus the first delivery missed, found by the hostile round
+as fix M1) and in `v10/note-d49-…-result.md`.
 
 One numbering trap found and avoided, recorded because the next
 housekeeping unit will hit it.  `v8/LEDGER.md`'s corrections log is **not
@@ -242,3 +358,57 @@ deletions** — no existing line anywhere was rewritten.  By layer:
 unit's own note (this file).  Untracked at receipt time:
 `v11/note-L0-scale-no-go-lemma.md`, `v11/note-L1-lorentz-no-go-lemma.md`,
 `v11/code/` — the parallel units' deliverables, not this unit's.
+
+### 6b. RECEIPT AFTER THE HOSTILE ROUND (2026-07-27)
+
+**The receipt above is the FIRST DELIVERY's and is now superseded on two
+counts**: five more files are touched, and the round's fixes are *in-place
+amendments*, so the diff is no longer deletion-free. It is retained above as
+the record of what the first delivery did. The post-fix `git diff --numstat`
+for this unit's files, run in `/Users/felixrobles/workspace/isp` (no commit):
+
+```text
+ 32   0  v10/THE-COMPLETION-DICHOTOMY.md
+  1   1  v10/THE-THEORY-SO-FAR.md
+ 10   2  v10/note-d49-completion-dichotomy-settlement-result.md
+  2   1  v10/relativistic-isp-v10-paper18-…-click-law.md
+  n  20  v11/note-h1-erratum-routing.md   ← self-counting; see below
+  7   1  v11/note-v11p0a-reproduction-catalog.md
+ 18   4  v4/ERRATA.md
+ 10   4  v6/ARCHIVE-STATUS.md
+ 14   6  v6/ERRATA.md
+ 12   0  v7/ARCHIVE-STATUS.md
+  1   1  v8/LEDGER.md
+ 11 files changed, 107 + n insertions(+), 40 deletions(-)
+```
+
+The insertion count of **this file's own row is left symbolic (`n`)** on
+purpose: it counts the lines of this receipt block, so any figure written here
+is stale the moment it is written. The ten other rows are exact and stable
+(**107 insertions**), and **the deletion column — 40, which is what the gate
+turns on — is complete and exact**, this file's 20 included.
+
+**Verdict: GATE STILL PASSED, on the amended criterion.** `git diff
+--name-only | grep -E 'v[1-7]/relativistic-isp'` returns **nothing** — **no
+v1–v7 paper is modified.** The two corrections to the first receipt's own
+claims:
+
+1. **`v7/` IS now touched** — `v7/ARCHIVE-STATUS.md` only, the archive-status
+   layer, never a v7 paper (fix M3). The sentence above reading "No file under
+   … `v7/` … is touched" describes the first delivery and is superseded here.
+2. **40 deletions, all accounted for.** Every deleted line is a line this
+   round's fix list names, replaced by a corrected line carrying a dated
+   attribution: the `119`/`194` row pointer, the `1178–1195` and `232–235`
+   ranges, the false `§8` attribution, the unqualified "strictly below `BC`",
+   the mis-attributed `CLOSED_{…}` tokens, the "Nothing" residual claim, the
+   "no new routing owed" verdict, the "holds under a hypothesis it does not
+   state" wording, and the two quotation repairs. **No committed substance was
+   removed without a replacement that states what changed and why.**
+
+By layer, unchanged in kind: status/errata (`v4/ERRATA.md`, `v6/ERRATA.md`,
+`v6/ARCHIVE-STATUS.md`, `v7/ARCHIVE-STATUS.md`); live-era v10
+(`THE-COMPLETION-DICHOTOMY.md`, `THE-THEORY-SO-FAR.md`, paper 18, the D49
+note); correction spine (`v8/LEDGER.md` #498); and two `v11/` notes. Files
+belonging to the parallel L0/L1 unit (`v11/note-L0-*`, `v11/note-L1-*`,
+`v11/code/L1_L0*`) appear in the repository-wide diff and are **not this
+unit's** — untouched here.

@@ -11929,7 +11929,7 @@ Receipts as printed:
 General monitors live in the band **[0.10, 0.49]** — "`σ` is the right
 currency within `O(1)` factors."
 
-> **LIVE ERRATUM, filed and unrouted.**  `BC` is only the
+> **LIVE ERRATUM, filed and unrouted.**  *(Routed 2026-07-27: `../v6/ERRATA.md` E2, `../v6/ARCHIVE-STATUS.md`, the appended erratum in v10 paper 18, `../v8/LEDGER.md` #498 — v11 H1.)*  `BC` is only the
 > **Cauchy–Schwarz bound** on the off-diagonal multiplier, saturated
 > **iff** the relative pointer phase is constant across the record
 > alphabet.  The correction is stated in **v6 paper 7 §12** and never

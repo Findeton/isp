@@ -238,3 +238,33 @@ inversion-vs-conjugation was never reached because the reversed
 objects do not exist in the grammar.  Read with v10's verdict:
 curvature, arbitration, and now IRREVERSIBILITY are co-located.
 Hostile round dispatched.
+
+## 2026-07-27 — H1 HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES, ALL
+## APPLIED — H1 TERMINAL (v11 LEDGER #8)
+The round (independent, recompute-never-trust) returned NO
+BLOCKING FINDING: every quotation re-read verbatim, the
+frozen-files gate recomputed clean (zero rewritten lines).  Four M
++ seven m + five n, all completeness/attribution defects; all
+applied: **(M1)** the 119→137 sweep had missed
+THE-COMPLETION-DICHOTOMY.md:1132 — BOTH stale numbers (194→176,
+119→137); forward-only erratum appended there; the d50-pin loci
+recorded as a named residual (pins frozen-by-convention).
+**(M2)** a false attribution ("§8's own statement") deleted; the
+real source is v8 paper 6 §3 (:50), now quoted.  **(M3)** the pin's
+1.82 trigger HAD fired (v7 paper 30:2833 unpointed) — the v7
+ARCHIVE-STATUS caveat line added; §4's "no routing owed" verdict
+withdrawn on record.  **(M4)** the corpus no longer calls the BC
+erratum unrouted: TTSF:11932 + catalog §0.3/§2.9 carry dated
+routing parentheticals.  m-fixes: line ranges corrected everywhere
+(B1 span 1178–1193, quote 1178–1188; paper 26 step 233–235); v4
+status tokens re-attributed to the catalog's exact form; strictness
+scoped (non-constant phase); NAMED RESIDUALS replace "Nothing":
+unpointed quarter-law loci (v6 p10:576-581, v8 p10:9/:43, v10
+note-d22:13), v4 p36 + v5 downstream GR loci, v5 HAS NO
+ERRATA/STATUS LAYER AT ALL (a future housekeeping unit), d50-pin
+119s.  #498 gains the numbering clause (stream extended past #497
+by decision; pair of ids #498 = v11 #6) and a HOSTILE-ROUND
+AMENDMENTS block.  Reviewer-found corpus slip: d72 §5(a) cites
+paper30:2838 for the 1.82; the receipt line is :2833 (recorded, d72
+not edited).  Adjudicator's own edit: the catalog's :61-62
+1178–1195 range corrected in-line (dated).  **H1 IS TERMINAL.**

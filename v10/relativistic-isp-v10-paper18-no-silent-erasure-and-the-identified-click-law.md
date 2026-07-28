@@ -95,7 +95,8 @@ phases align, `|F| ≤ BC` in general (recorded phases only add dephasing)."*
 Consequence for §2, scoped: the reception metric is `−ln|F| ≥ −ln BC`, so the
 quarter law is a **lower bound** on sealing at fixed evidence unless the
 recorded pointer phases align; the phase face of `F` leaves `|ρ₀₁|` untouched
-(§8's own statement, and Paper 6 §3), so no clause of the principle, the
+(`../v8/relativistic-isp-v8-paper6-phenomenology.md`:50, §3: *"the phase face
+of §1.2's influence functional leaves `|ρ₀₁|` untouched"*), so no clause of the principle, the
 falsifier, or the identification changes. The clause should be read with `BC`
 tagged as the constant-relative-phase case throughout.
 

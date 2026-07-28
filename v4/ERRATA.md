@@ -71,10 +71,14 @@ entry (E1 is Yang-Mills).
 2. `../v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md` line 9,
    which replaces the descent route with Jacobson/Clausius and walls the
    scale: *"**SHARD derives gravity's equation of state but provably not its
-   scale.**"* — with the unified no-go: *"SHARD cannot fix the single
+   scale.**"* — with the unified no-go: *"… **But SHARD cannot fix the single
    absolute scale `σ_A` (which has length-weight −2 and is in bijection with
    Newton's `G` of weight +2, via `G·σ_A = 1/4` — linked, not equal), and
-   this is one unified no-go theorem, not a list of failures."*
+   this is one unified no-go theorem, not a list of failures:** …"*
+   *(Quotation repaired 2026-07-27, v11 H1 hostile round, fix n2: the source
+   sentence at `:9` opens "**But SHARD cannot fix …**" and closes on a colon
+   introducing the lever list; the first delivery silently dropped the "But"
+   and closed on a period. Leading and trailing elisions are now marked.)*
 
 3. `../v8/relativistic-isp-v8-paper4-gravity-continuum.md` line 9, which
    absorbs the sector and claims only: *"the continuum is buildable up to
@@ -84,7 +88,17 @@ entry (E1 is Yang-Mills).
    shared wall."*
 
 **Consequence for readers of papers 25 and 32:** the descent's verdicts are to
-be read strictly inside their own relativization (`CLOSED_{ISP relative to
-GR-LEU-001}`, `ontology-free GR = NOT CLAIMED`). The corpus's live gravity
+be read strictly inside their own relativization. The corpus's status
+assignment for the sector — *not* a string either paper writes — is the v11
+reproduction catalog's, `../v11/note-v11p0a-reproduction-catalog.md` line 3059,
+quoted exactly: *"The v4 effective-GR descent: `GR-DYN-COFINAL-PASS`,
+`GR-INT = CLOSED_{ISP rel. GR-LEU-001}` … Only its own scope clauses survive
+(`ontology-free GR = NOT CLAIMED`)."*
+*(Amended 2026-07-27, v11 H1 hostile round, fix m3: the first delivery of this
+entry printed `CLOSED_{ISP relative to GR-LEU-001}` and `ontology-free GR = NOT
+CLAIMED` as code-quoted tokens of papers 25/32 themselves. Neither string occurs
+in any v4 paper; both are the catalog's own status shorthand, and are now
+attributed to it.)*
+The corpus's live gravity
 statement is v6 paper 57 plus v8 paper 4: the Einstein equations in *form*,
 under named conditionals, with Newton's `G` a proved un-derivable modulus.

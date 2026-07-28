@@ -1203,3 +1203,35 @@ numbers.
 laboratory: the scale gap, the layer gap and the aggregation loss
 all stand, and no rate may be quoted through any of this. What
 changes is only that the completion is no longer the reason why.
+
+---
+
+## Erratum (2026-07-27, v11 H1 — erratum routing)
+
+The boundary-freedom row under bisimulation-invariance printed here —
+**line 1132**, *"| bisimulation-invariance of the completed class transfer at
+every interior cut | 589 | 194 | **119 of 313** |"* — is superseded in **two**
+of its three numbers: the rank is **176**, not 194, and the free-direction
+count is **137 of 313**, not 119. The constraint count `589` and the
+`308 of 313` renewal-pair row are unaffected. The corrected row is committed
+at `THE-THEORY-SO-FAR.md:7387`:
+
+> | bisimulation-invariance of the completed class transfer at every interior cut (I2) | 589 | 176 | **137 of 313** |
+
+The correction and its lesson are committed at `LOG.md:10501` and stated at
+`THE-THEORY-SO-FAR.md:7464-7469`, verbatim:
+
+> **A corpus-wide number correction, and its lesson.**  The published
+> boundary-freedom figure under bisimulation-invariance was **119**; the
+> correct value is **137**, the earlier rows having dropped half of a
+> product rule.  A port check reproduced 119 exactly — **because porting
+> the method ports the error.  A port check cannot be an independence
+> check** (§B11.6).  Every quotation of 119 in this book is corrected.
+
+Read **176** for **194** and **137/313** for **119/313** at line 1132. The
+section's conclusion is untouched and its direction strengthens — neither
+invariance demand delivers uniqueness, and the corrected count leaves *more*
+freedom than published, so the form is a choice by a wider margin (see
+`note-d50-form-law-or-choice-result.md:124-128`, *"The damage is that the
+conclusion strengthens"*). Forward-only: no line above is modified.
+Recorded at `../v8/LEDGER.md` #498.
