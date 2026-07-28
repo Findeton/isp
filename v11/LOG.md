@@ -921,3 +921,55 @@ INDEPENDENT axis (base-class, order-blind) — which is exactly why
 U1's cut-grain indivisibility (a lumpability artifact) never
 tracked the curvature.  Hostile round dispatched.  U1c still
 constructing.
+
+## 2026-07-28 — U2 HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES, ALL
+## APPLIED — **U2 TERMINAL**; #23 CORRECTED (v11 LEDGER #24)
+The round rebuilt the census fully independently (own enumeration,
+square finder, J, reversal pricing, measure, σ-partition) and
+REPRODUCED EVERY HEADLINE NUMBER — the streak holds through a
+fourth independent rebuild.  **THE KILL-SHOT DID NOT LAND:
+W-CROSS SURVIVES ALL SIX READINGS OF THE THIRD AXIS**, including
+three genuinely square-local ones the round computed itself
+(shoulders-only 7,640; base-as-witness; the fully square-local
+LUMP-S1 with 464 members — table 574/376/5,562/258, still
+CROSSING) and the deeper-window endpoint reading.  The third axis
+as delivered IS the base-class reading (582 distinct bases carry
+the 17,277 squares, 0 bases mixed on lumpA while 380/368 mix on
+curved/refused) — a legitimate reading, now labelled as such.
+**THE ONE MATERIAL RETRACTION (M1): "the DC2 signal cannot live at
+a square" was a NON SEQUITUR** — endpoint order-blindness says
+nothing about the SHOULDERS, and the round exhibited the
+square-local DC2 predicate (equal shoulder classes, unequal
+shoulder kernels): **464/17,277 pooled, 48/1,546 on AB4, 88
+curved**, witness printed (J = 1, kernels {1/8, 3/4, 1/16} vs
+{8/65, 48/65, 1/13}, base class LUMPABLE).  Retracted in note §0,
+§2.4, §6; gate B.5a's label now claims endpoint order-blindness
+only.  **(M2)** gate B.4 was a hardcoded True — REPAIRED to a
+falsifiable predicate (regenerated: still 38/0/0, B.4 passes on
+its own condition now; 35 independent stands with B.4 repaired).
+**#23's OWN TEXT CORRECTED HERE:** "exactly one predictor" → the
+receipt prints FIVE exact reversal predictors (the arb-count
+family); the "READING" paragraph's "U1's cut-grain indivisibility
+(a lumpability artifact) never tracked the curvature" was
+UNMEASURED and is withdrawn (U2 measures nothing about U1's
+triples; AB4's TTT = 32 contradicts "never tracked"); "INDEPENDENT
+axis" → NOT NESTED (the sets are not statistically independent:
+50.8% vs 44.2% base rate); the biconditional carries "(mirror
+reading)" — under each arm's OWN sub-grammar it fails on 6,901
+squares (stated in §1.1, now flagged at every headline).  m-fixes:
+the note's "three addresses are two" opener corrected (three
+ADDRESSES, two NAMES for one of them); the weld positives labelled
+tautology/committed-theorem (the substantive content is the
+NEGATIVE — which the round stress-tested with 8 further candidates:
+zero welds, zero two-address predictors); C.0 relabelled ENTAILED
+(encoding + zero merges; 248-square residue); LUMP-C's
+horizon-independence scoped to the depths the squares reach;
+"prices neither" vs "prices both" coincide (round: 0/17,277 with
+exactly one image priced); python ≥ 3.12 floor declared; eight
+quoted rows.  **U2 IS TERMINAL.  THE STANDING PICTURE: THREE AXES
+— irreversibility's address is exactly the arbitration (mirror
+reading, full population); curvature is a strict sub-locus of it;
+non-lumpability is NOT NESTED with either, measured on a different
+object (base class primary; shoulder-local signal exists, 464);
+no grammar quantity welds any two; the weld question is RETIRED at
+cut grain.**  U2b (record-grain) remains conditional on U1c.

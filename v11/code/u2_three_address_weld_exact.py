@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Requires Python >= 3.12 (PEP 701 f-strings); run with /opt/homebrew/bin/python3.13.
 """
 u2_three_address_weld_exact.py — v11 U2, THE THREE-ADDRESS WELD:
 curvature, irreversibility, non-lumpability.
@@ -1326,8 +1327,10 @@ check("B.3 CURVATURE AND NON-LUMPABILITY CROSS: neither contains the "
 
 _LA = IMPL["L=>A"]
 check("B.4 NON-LUMPABILITY AND IRREVERSIBILITY CROSS TOO — measured, "
-      "with both difference sets censused above",
-      True,
+      "with both difference sets censused above (gate repaired per the "
+      "hostile round: the predicate now fails if either implication "
+      "holds)",
+      (not _LA["holds"]) and (not _LA["conv"]),
       f"non-lumpable \\ refused {len(_LA['LnotR'])}; refused \\ "
       f"non-lumpable {len(_LA['RnotL'])}; verdict "
       f"{_LA['kind']}")
@@ -1366,11 +1369,14 @@ check("B.5a THE PORTED CONFIGURATION MAP IS ORDER-BLIND AT EVERY CLOSED "
       "EXCHANGE SQUARE, EXHAUSTIVELY: sigma(h.eA.eB) = sigma(h.eB.eA) on "
       "all 17,277 squares of all four populations, curved and flat "
       "alike.  U1's DC1 census excludes the sigma-non-commuting pairs "
-      "'by name'; at closed squares there are none to exclude.  This is "
-      "why the DC2 signal cannot live AT a square: whatever the two "
-      "orders do to the weights, they leave the ported configuration "
-      "identical, so the whole lumpability signal is carried by the "
-      "square's BASE CLASS and by nothing the square itself does",
+      "'by name'; at closed squares there are none to exclude.  ROUND "
+      "CORRECTION (LOG #24): this endpoint fact does NOT locate the DC2 "
+      "signal — order-blindness at the endpoint says nothing about the "
+      "two SHOULDERS, and the round exhibited a square-local DC2 "
+      "predicate (equal shoulder classes, unequal shoulder kernels) "
+      "that is NON-EMPTY: 464/17,277 pooled, 48/1,546 on AB4, 88 "
+      "curved, with a printed witness.  What this gate measures is "
+      "endpoint order-blindness, exhaustively — no more",
       _nb == 0 and len(SQ) > 0,
       f"sigma-non-commuting closed squares: {_nb} of {len(SQ)}; "
       f"holonomy-carrying squares among them: "
@@ -1512,8 +1518,13 @@ for name, desc, f in CANDIDATES:
              f"sigma_AB reading is used and the dependence is declared)"))
 sys.stdout.flush()
 
-check("C.0 LD's MECHANISM SENTENCE IS AN IDENTITY ON THIS POPULATION, "
-      "MEASURED: the created-version count of a square's endpoint record "
+check("C.0 LD's MECHANISM SENTENCE IS AN IDENTITY ON THIS POPULATION — "
+      "ENTAILED by the encoding given D.1, not discovered (the round's "
+      "relabel, LOG #24): View.created gains exactly one entry per "
+      "arbitration and one per merge, and D.1 shows 0 merges, so "
+      "ncreated = narb is forced up to vname injectivity; the measured "
+      "residue is the 248 squares at narb = 2.  The check: "
+      "the created-version count of a square's endpoint record "
       "equals its arbitration count on every one of the 17,277 squares.  "
       "The arbitration is the only realised kind that creates a version "
       "(the merge, the other creating kind, is not reached — gate D.1), "

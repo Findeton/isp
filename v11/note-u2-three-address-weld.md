@@ -1,4 +1,4 @@
-# U2 — result: **W-CROSS.** The three addresses are two. Curvature sits **strictly inside** irreversibility — `662` curved squares inside `5,768` refused ones, whose address is exactly the arbitration (`17,277/17,277`, both directions) — but non-lumpability lies on neither side of that chain: it **crosses** both. `326` of the `662` curved squares sit on **lumpable** configuration classes and `7,298` non-lumpable squares are **flat**; `4,840` non-lumpable squares are reversal-**priced** and `2,974` refused squares are **lumpable**. No single grammar quantity predicts all three statuses: of `16` candidates — the arbitration count, LD's created-version count, the join structure, `J` itself, and the DC2 instrument's own state — each predicts at most one address and none predicts two, no pair of them predicts the triple, and every triple that does is one exact predictor per address bolted together. The configuration map is **order-blind at every closed square** (`17,277/17,277`): the DC2 signal is carried entirely by a square's base class, and by nothing the exchange does.
+# U2 — result: **W-CROSS.** The three ADDRESSES are three; two of the NAMES are one. Refusal and arbitration are two names for one axis — the address of irreversibility is exactly the arbitration (`17,277/17,277`, both directions, mirror reading) — and curvature sits **strictly inside** that axis (`662` curved squares inside `5,768` refused, boundary `5,106`). Non-lumpability lies on neither side of the chain: it **crosses** both. `326` of the `662` curved squares sit on **lumpable** configuration classes and `7,298` non-lumpable squares are **flat**; `4,840` non-lumpable squares are reversal-**priced** and `2,974` refused squares are **lumpable**. No single grammar quantity predicts all three statuses: of `16` candidates each predicts at most one address and none predicts two (the per-address positives are tautologies or committed theorems — `J` ⇒ curvature by definition, the arb-count family ⇒ refusal by LD's C.3a, `σ_base` ⇒ lumpability by construction — so the substantive content of the search is the NEGATIVE, which the hostile round stress-tested with eight further natural candidates: zero welds, zero two-address predictors); no pair predicts the triple, and every succeeding triple is one predictor per address bolted together. The ported configuration map is **order-blind at every closed square** (`17,277/17,277` at the endpoint) — but the round's correction stands (LOG #24): this does NOT mean the DC2 signal cannot live at a square. A square-local DC2 predicate (equal shoulder classes, unequal shoulder kernels) is **non-empty: 464 of 17,277 pooled, 48 on AB4, 88 of them curved** (round-computed, counterexample exhibited in §2.4) — and W-CROSS survives that reading too, as it survives all six readings of the third axis the round ran.
 
 **Read the scope before the headline.** Every number here is a
 window-dependent measurement on the committed d42b1 transport grammar at
@@ -11,7 +11,11 @@ to U2b and are not made (§4). No quantity measured here is offered as
 "the quantum layer"; U3's entry fee stands untouched. No CP, Bell,
 locality or covariance framing appears anywhere.
 
-**Status: GREEN-UNREVIEWED, STRICT, 2026-07-28.** Pin
+**Status: TERMINAL (conferred by the hostile round of 2026-07-28,
+ACCEPT-WITH-FIXES — the census reproduced by a fully independent
+rebuild; W-CROSS survives all six readings of the third axis
+including three square-local ones the round computed; fixes applied,
+adjudicated v11 LOG #24), STRICT.** Pin
 `v11/note-u2-three-address-weld-pin.md` (binding, frozen before any code
 was written). Binding specification: paper 0 §9b, the catalog
 `[V11-CAT]` §4.7. Parents: v10 **D74 TERMINAL**
@@ -45,7 +49,7 @@ gated. A change to any of those definitions changes this receipt's
 object.
 
 **Every committed number this unit rests on reproduces exactly.**
-Sixteen anchor gates held against nine quoted committed rows — D72's
+Sixteen anchor gates held against eight quoted committed rows (the round: the registry carries eight keys) — D72's
 `T6.1` and `T6.2`, D74's value-set row, its `44 + 44` split and its two
 declared sub-grammars, LD's `C.3a` and `C.3b`, U1's DC2 ladder and its
 `32`-of-`44` geography — with `exit 1` reserved for them and not
@@ -89,15 +93,18 @@ non-lumpable set is a third region that overlaps both and is contained
 in neither: it holds `336` of the `662` curved squares and misses `326`
 of them, and `4,840` of its members are squares the reversal functor
 prices. The instrument that defines it — the ported configuration map
-`σ` — is measured blind to what the other two see: on every one of the
-`17,277` squares the two traversal orders leave `σ` **identical**, so
-whatever the exchange does to the weights it does nothing to the
-configuration, and the whole DC2 signal is carried by the square's
-**base class**. That is the mechanism behind the crossing, and it is
-also why no single quantity welds the three: the arbitration count
-predicts irreversibility and nothing else, `J` predicts curvature and
-nothing else, `σ(h)` predicts lumpability and nothing else, and no pair
-of the `16` candidates predicts the triple.
+`σ` — is measured blind at the ENDPOINT: on every one of the `17,277`
+squares the two traversal orders leave `σ(h.eA.eB)` **identical**.
+(The round's correction, LOG #24: that endpoint fact does NOT confine
+the DC2 signal to the base class — a square-local DC2 predicate on the
+SHOULDERS is non-empty, 464/17,277, §2.4 — but the primary axis as
+measured here IS the base-class reading, and the two loci are measured
+on different objects; the crossing survives every reading either way.)
+That difference of objects is the mechanism behind the crossing, and
+it is also why no single quantity welds the three: the arbitration
+count predicts irreversibility and nothing else, `J` predicts
+curvature and nothing else, `σ(h)` predicts lumpability and nothing
+else, and no pair of the `16` candidates predicts the triple.
 
 ---
 
@@ -108,7 +115,7 @@ of the `16` candidates predicts the triple.
 | status | positive when | instrument | source |
 |---|---|---|---|
 | **CURVED** | `v = q(eA\|h) q(eB\|h.eA) / q(eB\|h) q(eA\|h.eB) ≠ 1` | D74's `square_census`, lifted | D72/D74 |
-| **REFUSED** | the committed law prices neither reversed endpoint | LD's `reversal_census`, lifted | LD |
+| **REFUSED** | the committed law prices neither reversed endpoint (the code's form is "prices both → priced, else refused"; the two definitions coincide here — the round measured 0/17,277 squares with exactly one image priced) | LD's `reversal_census`, lifted | LD |
 | **NON-LUMPABLE** | `σ(h)`'s class at depth `\|h\|` carries two different next-configuration laws under `k_r` | U1's DC2 test, lifted and parameterised in its window | U1 |
 
 The reversal status is read in LD's committed convention: the anchor
@@ -206,9 +213,13 @@ no holonomy value is wholly non-lumpable or wholly lumpable.
 | **LUMP-W** | the square's whole window: the base class, or either shoulder class at depth `d+1` | 10,624 |
 | **LUMP-B** | DC1's `σ`-commuting predicate at the square: `σ(h.eA.eB) ≠ σ(h.eB.eA)` | **0** |
 
-LUMP-C and LUMP-A agree on **every** square (`0` of `17,277` differ),
-so nothing in this receipt turns on a horizon choice. LUMP-B is
-**identically empty**, which is a measurement in its own right (§2.4).
+LUMP-C and LUMP-A agree on **every** square (`0` of `17,277` differ)
+— with the round's scope caveat (LOG #24): for ASYM1/ASYM2 LUMP-C is
+literally the same instrument, and for AB4/ABC3 the two horizons can
+differ only at depths the squares' bases never reach, so the
+agreement certifies horizon-independence AT THE DEPTHS THE SQUARES
+REACH, no further. LUMP-B is **identically empty**, which is a
+measurement in its own right (§2.4) — of DC1's predicate, not DC2's.
 
 ---
 
@@ -288,15 +299,35 @@ squares of all four populations, curved and flat alike, including all
 `σ`-non-commuting pairs "by name"; at closed squares there are none to
 exclude. So whatever the exchange does to the **weights** — and on
 `662` squares it multiplies them by a non-unit element of `⟨2,3⟩` — it
-does nothing whatever to the **configuration**. The DC2 defect
-therefore cannot be located at a square; it is a property of the
-square's base class, and the two loci are measured on different objects.
-The crossing is that difference made numerical.
+does nothing whatever to the **endpoint configuration**.  ROUND
+CORRECTION (LOG #24): the delivery inferred from this that the DC2
+defect "cannot be located at a square"; that inference is a NON
+SEQUITUR — endpoint order-blindness says nothing about the two
+SHOULDERS.  The round computed the square-local DC2 predicate this
+receipt skipped — `σ(h.eA) = σ(h.eB)` AND `k_r(·|h.eA) ≠ k_r(·|h.eB)`
+— and it is **non-empty: 464 of 17,277 pooled, 48 of 1,546 on AB4, 88
+of them curved.**  Exhibited witness (round-computed, AB4):
+`h = (('p','A',('v','v0'),0),)`, `eA = ('d','A','B',('v','v0'))`,
+`eB = ('n','A')`, `J = 1`; equal shoulder classes; shoulder kernels
+`{1/8, 3/4, 1/16}` vs `{8/65, 48/65, 1/13}`; base class LUMPABLE.
+The honest statement: the endpoint order-blindness is measured and
+exhaustive; the DC2 signal CAN live at a square (464 witnesses); the
+primary axis (LUMP-A) is a base-class reading, and the two loci are
+measured on different objects — the crossing is that difference made
+numerical.  Also against "carried entirely by the base class": the
+round's shoulder-only reading (LUMP-SH, 7,640) and LUMP-A (7,634)
+are nearly equal in size but largely DIFFERENT sets
+(|A ∩ SH| = 4,650).
 
-The verdict survives all three control readings: under LUMP-C and
-LUMP-W the two loci cross as they do under the primary reading, and
-under LUMP-B the containment is the degenerate one because LUMP-B is
-empty. No reading makes curvature imply non-lumpability.
+The verdict survives all SIX readings the round ran — the receipt's
+three (LUMP-A primary; LUMP-C deep-window; LUMP-W whole-window) and
+the round's three new ones (LUMP-SH shoulders-only; LUMP-WIT
+base-as-disagreeing-member; **LUMP-S1, the fully square-local DC2
+predicate above**, under which the table reads 574 curved-and-lumpable
+/ 376 crossing / 5,562 / 258) — plus LUMP-END (endpoint class, deeper
+window, 4,696 covered): W-CROSS under every one.  LUMP-B (DC1's
+σ-commuting predicate) is identically empty — a measurement, not a
+reading of DC2.  No reading makes curvature imply non-lumpability.
 
 ---
 
@@ -410,12 +441,15 @@ The pin's own words apply: *"the three-address picture is FALSE and the
 co-location observed so far was a small-window coincidence; the crossing
 squares are the finding."* The first clause holds in the precise sense
 the census measures — the three loci are not one address and are not a
-chain — but the second is sharper than "coincidence" makes it sound and
-is stated as measured: **two** of the three instruments do share an
-address, exactly and with a mechanism (the arbitration, the only kind
-that creates a version), and the third is independent of it for a
-reason that is itself measured (`σ` is order-blind at every closed
-square). The crossing squares are named in §2.3.
+chain — but the second is sharper than "coincidence" makes it sound
+and is stated as measured: refusal and arbitration are two NAMES for
+one axis, exactly and with a mechanism (the arbitration, the only
+realised kind that creates a version — ENTAILED by the encoding given
+zero merges, LOG #24), and the third axis is NOT NESTED with the
+other two, its endpoint reading measured order-blind at every closed
+square (which locates the primary reading at the base class; the
+shoulder-local DC2 signal exists, §2.4, and crosses too). The
+crossing squares are named in §2.3.
 
 ---
 
@@ -460,10 +494,14 @@ have:
    kind pair, depth and holonomy value, and they span every value the
    group `⟨2,3⟩` produces.
 2. **The ported configuration map is order-blind at every closed
-   exchange square**, `17,277/17,277`. This is the mechanism of the
-   crossing: `σ` cannot register what the exchange does, so the DC2
-   defect lives at the base class and the curvature lives at the
-   square, and the two are measured on different objects.
+   exchange square AT THE ENDPOINT**, `17,277/17,277`.  Corrected per
+   the round (LOG #24): this does not confine DC2 to the base class —
+   the shoulder-local DC2 predicate is non-empty (`464/17,277`, `48`
+   on AB4, witness in §2.4) — but the PRIMARY axis as measured is the
+   base-class reading, curvature lives at the square, and the two are
+   measured on different objects; that difference is the mechanism of
+   the crossing, and the crossing survives the shoulder-local reading
+   too.
 3. **Each address has an exact single-quantity predictor, no quantity
    has two, and combining welds nothing.** `narb ≥ 1 → `
    irreversibility, `J → ` curvature, `σ(h) → ` lumpability, each exact
@@ -471,10 +509,13 @@ have:
    singles and `0` of `120` pairs predict the triple, `5` of `560`
    triples do, and every one of the five is one exact predictor per
    address — `0` joint predictions.
-4. **LD's mechanism sentence is an identity here**: created-version
-   count `=` arbitration count on every square, so "the arbitration is
-   the only realised kind that creates" is measured on this population
-   and not only argued from the alphabet.
+4. **LD's mechanism sentence is an identity here — ENTAILED, not
+   discovered** (the round's relabel, LOG #24): `View.created` gains
+   exactly one entry per arbitration and one per merge, and this
+   population realises zero merges (gate `D.1`), so created-version
+   count `=` arbitration count is forced by the encoding up to
+   `vname` injectivity; the measured residue is the `248` squares at
+   `narb = 2`, and the check passes on all `17,277`.
 
 **Where these go.** Results 1 and 2 are addressed to the
 transport-curvature line and to U1's DC2 line jointly: they say that
