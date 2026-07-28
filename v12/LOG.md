@@ -177,3 +177,46 @@ the coherence law, B(ωU) = B(U), the H² object), headings
 restructured (T1-T5′ and W-units as subsections), references
 itemized.  CONTENT UNCHANGED from v2.1 — no claim, scope, grade,
 or number moved; diff is presentation only.
+
+## 2026-07-28 — W1′ DELIVERED: **W1′-PROVEN**, GREEN-UNREVIEWED
+## (v12 LEDGER #6)
+The three-class unit lands (note-w1p-three-class.md, 121 gates /
+121 pass / 0 fail, 20 anchors, 41.7s; adjudicator rerun
+byte-identical modulo timings; exact end-to-end: ℚ(ζ₈)/ℚ(ζ₁₂)/
+ℚ(ζ₁₆) with canonical Φ_N reduction, a multivariate ℚ-polynomial
+ring for the symbolic identities, ℚ(√2) sign oracle).  **ARM A:**
+the chain over CONVEX bodies, both inclusions strict — max 2
+(exhaustive 16 + linearity on 3,876 hull points), max EXACTLY 2√2
+by FOUR independent polynomial certificates (operator regrouping /
+unit-modulus Cauchy-Schwarz / parallelogram / the AM-QM SOS
+8 − (p+q)² = (p−q)² + 2(4 − p² − q²)) + the ℚ(ζ₈) saturating
+instance, max 4 (24 NS vertices verified).  **A+ — THE UNIT'S
+STRONGEST THEOREM: Q = Q_corr** (Lagrange identity ⇒ optimal
+u_a ∈ span{v₀,v₁}; the optimum depends only on t = ⟨v₀,v₁⟩; every
+t realized in ℝ² — gated in ℝⁿ n = 2..6; corollary: THE SAME FOUR
+CERTIFICATES PROVE TSIRELSON IN EVERY DIMENSION; corroborated on
+456,976 exact unit-vector configurations in ℝ³/ℝ⁴).  **ARM B:**
+the engraved anti-correlation table in-receipt (singlet S = −2√2
+exactly, holonomy ≡ 1 on 8,192 quadruples; PR S = 4, holonomy −1).
+**ARM C:** the cross-term identity on all 13,185 census pairs;
+the Δᴮ = 0 census with CLOSED FORMS (2×2: t+u ≡ ±2 mod 8; 3×3:
+b₂+a₁ ≢ 0 mod 3 — Δᴮ = 0 IS PHASE ALIGNMENT, NOT SUPPORT;
+sufficiency holds, necessity FAILS, named witness Δᴮ(H,W) = 0 both
+unbiased).  **C+1:** the three-defect separation gated exactly
+(Δᴮ₀₀ = −4032/15625 ≠ 0 with K = S(−175/527) stochastic and
+K·B(U₁) = B(U₂U₁), K ≠ B(U₂); the general rotation case on 1,256
+rational pairs) — Δᴮ ≠ 0 with d_div = 0, the [REV2] separation now
+a receipt.  **C+2:** the coherence law as a FORMAL-MATRIX identity
+(24/54 variables, no property of B assumed) + 3,473 exact triples.
+The record example T3′-framed (shadow(U₂∘D∘U₁) = B(U₂)B(U₁);
+D₂₁₀ ≡ 0 on the record algebra; NOT equated with Δᴮ).  **ONE
+FINDING BEYOND THE PIN:** the U(1)-Gram GENERATING class is NOT
+convex (E = (1,0,0,0) ∈ L_corr is not a Gram point — the
+amendment's convexification was load-bearing), and
+Gram-representability at the class level is exactly the invariant
+**E₀₀E₀₁E₁₀E₁₁ = +1 — the 4-cycle SIGN holonomy, the same
+invariant Arm B computes; PR violates it** (no Gram representation
+at all): the holonomy story returns at the correct level — as the
+sign obstruction on the generating class, not as an H¹ class.
+Worker-disclosed: one gate caught a real sign error mid-run, fixed
+before the final receipt.  Hostile round dispatched.

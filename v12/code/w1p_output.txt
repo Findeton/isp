@@ -1,0 +1,604 @@
+==============================================================================
+w1p_three_class_exact.py — v12 W1'
+==============================================================================
+THE THREE-CLASS THEOREM, THE ANTI-CORRELATION EXHIBIT, AND THE
+DELTA CENSUS
+==============================================================================
+  pin    : v12/note-w1p-three-class-pin.md (frozen before this file)
+           + its AMENDMENT of 2026-07-28 (LOG #4, [REV2] adopted)
+  binding: v12 paper 0 v2.1 sec.1 (T2' Delta^B, the three-defect
+           distinction; T3' records), sec.3 (the CONVEXIFIED
+           skeleton + the completeness target), sec.4 (W1', W2a),
+           sec.5 (non-claims); v12/LOG.md #3, #4.  v2.1 binds where
+           it and the pin body differ.
+  banner : EXACT arithmetic end to end, NO TOLERANCE ANYWHERE.
+           Rationals: fractions.Fraction.  Complex algebraic: class
+           Cyc = Q[x]/Phi_N(x) for N = 8, 12, 16, canonical
+           representation, exact conjugation and inversion.
+           Symbolic identities: class MP (multivariate polynomial
+           ring over Q), equality = coefficient equality.  Order
+           comparisons: class Q2 (a + b sqrt 2) with an exact sign
+           oracle.  No float in any substantive path.
+  lean   : NONE.  W1'-PROVEN and W1'-BROKEN-AT-<class> are both
+           reportable outcomes and the gate book is the result.
+  exits  : substantive negatives exit 0; exit 1 is ANCHOR-only.
+
+==============================================================================
+SECTION 0 — ANCHORS: the exact arithmetic layer self-test
+==============================================================================
+  [anchor  ] Phi_8 = x^4 + 1                          ok deg 4
+  [anchor  ] Phi_12 = x^4 - x^2 + 1                   ok deg 4
+  [anchor  ] Phi_16 = x^8 + 1                         ok deg 8
+  [anchor  ] zeta_8 has exact order 8                 ok 
+  [anchor  ] conj(zeta_8) * zeta_8 = 1                ok 
+  [anchor  ] inv(zeta_8) = conj(zeta_8)               ok 
+  [anchor  ] zeta_12 has exact order 12               ok 
+  [anchor  ] conj(zeta_12) * zeta_12 = 1              ok 
+  [anchor  ] inv(zeta_12) = conj(zeta_12)             ok 
+  [anchor  ] zeta_16 has exact order 16               ok 
+  [anchor  ] conj(zeta_16) * zeta_16 = 1              ok 
+  [anchor  ] inv(zeta_16) = conj(zeta_16)             ok 
+  [anchor  ] sqrt2 in Q(zeta_8), (sqrt2)^2 = 2        ok = zeta_8 + zeta_8^-1
+  [anchor  ] sqrt2 in Q(zeta_16), (sqrt2)^2 = 2       ok = zeta_16^2 + zeta_16^-2
+  [anchor  ] sqrt3 in Q(zeta_12), (sqrt3)^2 = 3       ok = zeta_12 + zeta_12^-1
+  [anchor  ] 1/sqrt2 exact in Q(zeta_8)               ok 
+  [anchor  ] 1/sqrt3 exact in Q(zeta_12)              ok 
+  [anchor  ] Q2 sign oracle                           ok incl. 2 < 2*sqrt2
+  [anchor  ] Q(sqrt2) reader on Q(zeta_8)             ok 
+  [anchor  ] MP ring                                  ok 
+  anchors: 20, all pass       0.0s
+
+==============================================================================
+SECTION A — THE CHAIN: 2  /  2 sqrt 2  /  4
+==============================================================================
+A1. THE {+-1}-FACTORIZATION CLASS  E_ab = u_a v_b, u,v in {+-1}
+    cap: exhaustive, 2^4 = 16 sign patterns, all 4 CHSH functionals.
+    method: EXHAUSTIVE ENUMERATION + linearity/convexity for the hull.
+  [PASS] A1        16 sign patterns enumerated, all distinct E-vectors? 8 distinct correlator vectors from 16 patterns (u,v)->(-u,-v)
+  [PASS] A1        max CHSH over the {+-1} class = 2              all 4 functionals: max = 2, min = -2   <[F]>
+  [PASS] A1        |CHSH| <= 2 on every sign pattern              16 x 4 = 64 exact rational evaluations
+    convexity: the local polytope is conv{16 deterministic points}
+    [F]; CHSH is linear, so max over the hull = max over vertices = 2.
+    gated below on an exhaustive grid of exact rational weightings.
+  [PASS] A1        CHSH linear on exact convex combinations       3876 hull points x 4 functionals, weights in (1/4)Z
+  [PASS] A1        CHSH <= 2 on the exact hull grid               3876 hull points x 4 functionals, 0 violations   <[F]>
+    CLASS MAXIMUM (i)  =  2   [attained: u=(1,1), v=(1,1) etc.]
+        1.7s
+
+A2. THE U(1)-GRAM CLASS  E_ab = Re(z_a conj(w_b)), |z_a| = |w_b| = 1
+    method: THREE EXACT POLYNOMIAL CERTIFICATES + a saturating
+    instance in Q(zeta_8).  No numerics, no search over angles.
+
+    The reduction.  With u = w_0 + w_1 and v = w_0 - w_1,
+      S = Re(conj(z_0) u) + Re(conj(z_1) v)   (Re(x) = Re(conj x)),
+    so max over z_0, z_1 in U(1) of S is |u| + |v|, attained at
+    z_a = u/|u|, v/|v| (any unit z where the vector vanishes).
+
+  [PASS] A2        CERT-0 (the operator regrouping) identity      S = Re(conj(z_0)(w_0+w_1)) + Re(conj(z_1)(w_0-w_1)) in Q[z,w]_R^8
+  [PASS] A2        CERT-1 (unit-modulus Cauchy-Schwarz) identity  (cx+sy)^2 + (cy-sx)^2 = (c^2+s^2)(x^2+y^2) in Q[c,s,x,y]
+  [PASS] A2        CERT-2 (parallelogram) identity                |v0+v1|^2 + |v0-v1|^2 = 2|v0|^2 + 2|v1|^2 in Q[x0,y0,x1,y1]
+  [PASS] A2        CERT-3 (AM-QM sum-of-squares) identity         8 - (p+q)^2 = (p-q)^2 + 2(4 - p^2 - q^2) in Q[p,q]
+
+    THE PROOF, assembled from CERT-0/1/2/3 (all four exact above):
+      (0) CERT-0 regroups S over the two operator slots.
+      (a) CERT-1 with c^2+s^2 = 1 gives Re(conj(z)u)^2 <= |u|^2, so
+          S <= |u| + |v| =: p + q,  p,q >= 0.
+      (b) CERT-2 with |w_0| = |w_1| = 1 gives p^2 + q^2 = 4.
+      (c) CERT-3 then gives 8 - (p+q)^2 = (p-q)^2 >= 0, i.e.
+          p + q <= 2 sqrt 2, with equality iff p = q = sqrt 2.
+    Hence S <= 2 sqrt 2 for EVERY U(1)-Gram instance.  [T]
+
+  [PASS] A2        instance: all four phases on the unit circle   |z|^2 = |w|^2 = 1 exactly
+  [PASS] A2        instance correlators lie in Q(sqrt 2)          E = (1/2*sqrt2, 1/2*sqrt2, 1/2*sqrt2, -1/2*sqrt2)
+  [PASS] A2        instance CHSH = 2 sqrt 2 EXACTLY               S = 2*sqrt2  (alpha = (pi/4, -pi/4), beta = (0, pi/2))   <[T]>
+  [PASS] A2        instance saturates CERT-3: |u|^2 = |v|^2 = 2   p = q = sqrt 2, so p + q = 2 sqrt 2
+  [PASS] A2        instance z_a align with u/|u|, v/|v|           equality case of CERT-1 realized exactly
+    corroboration cap: exhaustive grid over the pi/4 family,
+    8^4 = 4096 setting quadruples, exact Q(sqrt 2) comparison.
+  [PASS] A2        grid: no Gram point exceeds 2 sqrt 2           4096 quadruples, 0 violations   <[T]>
+  [PASS] A2        grid maximum equals 2 sqrt 2                   max = 2*sqrt2 at (a0,a1;b0,b1) = (0, 2, 1, 7) (units of pi/4)
+    CLASS MAXIMUM (ii) =  2 sqrt 2   [proven exactly; attained]
+        1.8s
+
+A3. THE NO-SIGNALING CLASS
+    method: the elementary correlator bound (complete proof of <= 4)
+    + the 24-vertex enumeration [NS] with the PR box attaining it.
+    cap: the 24 known vertices [NS] (16 local + 8 PR), exhaustive.
+  [PASS] A3        all 24 vertices are valid no-signaling tables  nonneg + normalized + both marginal conditions, exact rationals   <[NS]>
+  [PASS] A3        |E_ab| <= 1 on every vertex                    the elementary bound: |E| <= sum of the four probabilities = 1
+  [PASS] A3        max CHSH over the 24 vertices = 4              attained by 1 of the 24: PR(0,0,0)   <[NS]>
+  [PASS] A3        local vertices give CHSH <= 2                  16 local vertices, max = 2
+  [PASS] A3        every CHSH = 4 vertex has correlators (1,1,1,-1) the PR correlator vector
+  [PASS] A3        each of the 8 PR vertices attains 4 on some functional 8 signed CHSH functionals, 8 PR boxes, max = 4 each   <[NS]>
+  [PASS] A3        no local vertex attains 4 on any functional    16 local vertices x 8 functionals, max = 2
+    THE PROOF of <= 4, complete and elementary: for ANY normalized
+    non-negative table, E_ab = P(++) + P(--) - P(+-) - P(-+) has
+    |E_ab| <= P(++) + P(--) + P(+-) + P(-+) = 1, so |CHSH| <= 4.
+    Attainment is the PR box above.  The 24-vertex list [NS] is
+    cited for completeness of the polytope, NOT for the bound.
+    CLASS MAXIMUM (iii)=  4   [proven elementarily; attained by PR]
+        1.8s
+
+A4. THE INCLUSIONS, BOTH DIRECTIONS
+  [PASS] A4        {+-1} class  SUBSET  U(1)-Gram class           all 16 patterns realized with z_a = u_a, w_b = v_b in {+-1} < U(1)
+  [PASS] A4        STRICT: a Gram point outside the local polytope CHSH = 2 sqrt 2 > 2 = the polytope maximum (exact Q2 comparison)
+  [PASS] A4        P = 1/4(1+xyE): normalization is an identity in E sum over the four outcomes = 1 in Q[E]
+  [PASS] A4        P = 1/4(1+xyE): both marginals = 1/2 identically => no-signaling for EVERY correlator vector
+  [PASS] A4        P = 1/4(1+xyE): reproduces E identically       sum x y P = E in Q[E]
+  [PASS] A4        U(1)-Gram class  SUBSET  no-signaling class    identities above + |E_ab| <= 1 on all 4096 pi/4 grid points (exact Q(sqrt2) sign oracle)
+  [PASS] A4        the constructed tables verified table-by-table 512 rational-correlator Gram points, full NS check each
+    THE PR EXCLUSION, exact and exhaustive.
+    Lemma (CERT-1 with |z| = |w| = 1): Re(z conj w) = eps in {+-1}
+    forces Im(z conj w) = 0, hence z conj w = eps, hence z = eps w.
+    So a Gram point with all four E_ab in {+-1} obeys z_a = E_ab w_b.
+    Reading it at b = 0 and b = 1 for each a gives
+      w_1 = E_a0 E_a1 w_0   for BOTH a = 0 and a = 1,
+    hence E_00 E_01 = E_10 E_11, hence (E^2 = 1)
+      E_00 E_01 E_10 E_11 = +1                       (*)
+    for EVERY {+-1}-valued U(1)-Gram point.  (*) is exactly the
+    4-cycle holonomy of the edge signs — the same invariant as B1/B2.
+    PR has E = (1,1,1,-1) with product -1: it violates (*).
+  [PASS] A4        (*) holds <=> the sign vector is {+-1}-factorizable 16 sign vectors: 8 with product +1 (all factorizable), 8 with product -1 (none factorizable)
+  [PASS] A4        STRICT: PR admits NO U(1)-Gram representation  PR sign product = -1, violating (*); the 4-cycle closes wrong
+  [PASS] A4        the exclusion lemma is CERT-1 with |z|=|w|=1   Re^2 + Im^2 = 1 and Re = +-1 => Im = 0 => z = +- w
+  [PASS] A4        the lemma verified in-field on the pi/4 unit pairs 16 of 64 pairs have Re = +-1; all satisfy z = eps w
+  [PASS] A4        (*) IS the 4-cycle holonomy of the sign pattern 16 patterns: prod E_ab = g00 g10^-1 g11 g01^-1 exactly — the same invariant Arm B computes
+        1.9s
+
+A5. THE SHARPENING: the U(1)-Gram class is NOT CONVEX
+    (a finding of this unit, reported because paper 0 v2 sec.3 writes
+    the chain as a chain of CLASSES; it is not a chain of polytopes.)
+  [PASS] A5        E = (1,0,0,0) is in the local polytope         = mean of 4 deterministic vertices, exact rationals   <[F]>
+    Exclusion, exact: E_00 = 1 forces z_0 = w_0 (CERT-1).  E_01 = 0
+    forces w_1 = mu i z_0, mu in {+-1}; E_10 = 0 forces
+    z_1 = eps i w_0 = eps i z_0, eps in {+-1}.  Then
+    z_1 conj(w_1) = (eps i)(conj(mu i)) = eps mu, so E_11 = +-1 != 0.
+  [PASS] A5        E = (1,0,0,0) is NOT a U(1)-Gram point         all 4 sign branches gated in-field; E_11 forced to +1 or -1, never 0
+  [PASS] A5        => the U(1)-Gram class is not convex           it contains all 16 deterministic points but not their mean
+    CONSEQUENCE, engraved: the honest chain at the level of CONVEX
+    SETS is  localpolytope  SUBSET  conv(U(1)-Gram)  SUBSET  NS,
+    with maxima 2 / 2 sqrt 2 / 4 unchanged (CHSH is linear, so the
+    hull does not raise the maximum).  The class chain of paper 0 v2
+    sec.3 is correct as written; the polytope reading is not.
+  [PASS] A5        max CHSH over conv(U(1)-Gram) is still 2 sqrt 2 linearity of CHSH + the class bound proven in A2
+  [PASS] A5        localpolytope SUBSET conv(U(1)-Gram)           the 16 vertices are Gram points (A4a), and the hull is convex
+        1.9s
+
+A6. THE THREE CONVEX BODIES  (paper 0 v2.1 sec.3, per [REV2])
+    L_corr  := conv{ E_ab = s_a t_b : s_a, t_b in {+-1} }
+    Q_corr  := conv{ E_ab = Re(z_a conj(w_b)) : z_a, w_b in U(1) }
+    NS_corr := [-1, 1]^4
+    A linear functional attains its maximum over a compact convex set
+    at an extreme point, and max over conv(S) = max over S for any S
+    [CVX](a).  So each body's maximum is the maximum over its
+    generating set, already proven at A1 / A2 / A3.
+  [PASS] A6        NS_corr = [-1,1]^4 is the NS correlator projection 'SUBSET' is |E_ab| <= 1 (A3); 'SUPSET' is P = 1/4(1+xyE) (A4)   <[NS]>
+  [PASS] A6        max CHSH over NS_corr = 4                      16 cube vertices, attained only at (+1,+1,+1,-1)
+  [PASS] A6        max CHSH over L_corr = 2                       16 generators (A1) + [CVX](a)   <[CVX]>
+  [PASS] A6        max CHSH over Q_corr = 2 sqrt 2                the U(1) generating family (A2) + [CVX](a)   <[CVX]>
+  [PASS] A6        L_corr SUBSET Q_corr SUBSET NS_corr            generators of L are generators of Q (A4a); every Gram E is in [-1,1]^4 (|cos| <= 1)
+  [PASS] A6        STRICT on the left: Q_corr contains a point at 2 sqrt 2 > 2 exact Q(sqrt2) comparison
+  [PASS] A6        STRICT on the right: the PR vertex (1,1,1,-1) is outside Q_corr CHSH = 4 > 2 sqrt 2 = max over Q_corr, so it cannot lie in Q_corr
+        1.9s
+
+A+. THE COMPLETENESS OF Q_corr  [REV2, the amendment's new target]
+
+    CLAIM.  In the CHSH correlator projection, Q_corr IS the whole
+    quantum correlator body.  By Tsirelson's theorem [T] the quantum
+    correlator set is Q = { E_ab = <u_a, v_b> : u_a, v_b unit vectors
+    in a real Hilbert space H }, of unbounded dimension.  The claim
+    is that the PLANAR (dim <= 2) configurations already generate it.
+
+    THE PROOF, in four exact steps.
+      (1) For any lambda in R^4 and fixed v_0, v_1,
+            sum_ab lam_ab <u_a, v_b>
+              = <u_0, lam_00 v_0 + lam_01 v_1>
+              + <u_1, lam_10 v_0 + lam_11 v_1>,
+          so by Lagrange's identity the optimal unit u_a is
+          r_a/||r_a|| with r_a = lam_a0 v_0 + lam_a1 v_1: THE OPTIMAL
+          u_a LIE IN span{v_0, v_1}, of dimension at most 2.
+      (2) ||lam_a0 v_0 + lam_a1 v_1||^2 = lam_a0^2 + lam_a1^2
+          + 2 lam_a0 lam_a1 t with t = <v_0, v_1>: the optimum
+          depends on (v_0, v_1) ONLY through t.
+      (3) Every t in [-1,1] is realized by unit vectors in R^2.
+      (4) Hence the support function of Q equals the support
+          function of the planar family, for EVERY lambda.  Q and
+          Q_corr are compact convex [CVX](c),(d) with equal support
+          functions, so Q = Q_corr  [CVX](b).
+
+    caps: the symbolic identities are gated in R^n for n = 2, 3, 4, 5, 6 and
+    hold for every n by the same expansion (Lagrange's identity is
+    standard).  Each is an exact identity in Q[coordinates].
+  [PASS] A+        step 1a: Lagrange's identity in R^n            n = 2, 3, 4, 5, 6; gives <u,r> <= ||r|| with maximizer r/||r|| in span{r}
+  [PASS] A+        step 1b: the operator regrouping in R^n, symbolic lambda sum lam_ab <u_a,v_b> = sum_a <u_a, lam_a0 v_0 + lam_a1 v_1>
+  [PASS] A+        step 2: ||x v_0 + y v_1||^2 = x^2+y^2+2xy<v_0,v_1> on units the optimum depends on (v_0,v_1) only through t = <v_0,v_1>
+  [PASS] A+        the parallelogram identity holds in R^n, all n so CERT-0/1/2/3 prove CHSH <= 2 sqrt 2 in EVERY dimension   <[T]>
+  [PASS] A+        step 3: the rational circle parametrization is exact 3240 rational slopes m, t^2+s^2 = 1 exactly and t in [-1,1]; the rational points are dense, and surjectivity onto [-1,1] is continuity
+  [PASS] A+        R^3 rational-unit-vector sweep: none exceeds 2 sqrt 2 26 exact rational unit vectors, 456976 configurations, max CHSH = 68/27 < 2 sqrt 2
+      ... R^3 sweep done      13.9s
+  [PASS] A+        R^4 rational-unit-vector sweep: none exceeds 2 sqrt 2 26 exact rational unit vectors, 456976 configurations, max CHSH = 58/25 < 2 sqrt 2
+      ... R^4 sweep done      26.8s
+  [PASS] A+        THE COMPLETENESS OF Q_corr                     steps 1-4 all exact => Q = conv(planar) = Q_corr at this scenario   <[REV2]>
+
+    SCOPE TAG, engraved with the theorem: this is the CHSH (2,2,2)
+    CORRELATOR PROJECTION, after convexification.  It says nothing
+    about full behaviours (marginals), nothing about scenarios with
+    more settings, parties or outcomes, and it does not claim that
+    the un-convexified U(1)-Gram generating class is the quantum set
+    — A5 proves that class is not even convex.
+       26.8s
+
+==============================================================================
+SECTION B — THE ANTI-CORRELATION EXHIBIT [REV]
+==============================================================================
+B1. THE SINGLET AMPLITUDE MODEL
+    psi_xy(a,b) = (z_a - x y w_b) / (2 sqrt 2),  z_a = e^{ia},
+    w_b = e^{ib},  x,y in {+1,-1};  P(x,y|a,b) = |psi_xy(a,b)|^2.
+
+  [PASS] B1        CERT-4 (Born expansion) identity               |z - e w|^2 = |z|^2 + e^2|w|^2 - 2e Re(z conj w) in Q[c,s,d,t,e]
+    With |z| = |w| = 1 and e = xy in {+-1} (so e^2 = 1) this reads
+    |z_a - xy w_b|^2 = 2 - 2 xy cos(a-b), hence
+    P(x,y|a,b) = (2 - 2 xy cos(a-b)) / 8 = 1/4 (1 - xy cos(a-b)).
+
+    caps: pi/4 family = all 8 angles 2 pi k / 8; pi/8 family = all
+    16 angles 2 pi k / 16.  Born identity gated on every (a,b,x,y).
+  [PASS] B1        Born identity P = 1/4(1 - xy cos(a-b)) [pi/4 family, Q(zeta_8)] 256 exact gates, 0 failures   <[REV]>
+  [PASS] B1        Born identity P = 1/4(1 - xy cos(a-b)) [pi/8 family, Q(zeta_16)] 1024 exact gates, 0 failures   <[REV]>
+
+    THE SINGLET TABLE IS NO-SIGNALING, exhaustively.  Every
+    P(x,y|a,b) = 1/4 (1 - xy cos(a-b)) is non-negative (|cos| <= 1,
+    gated below by the exact Q(sqrt2) sign oracle), normalized and
+    uniform-marginal (the identities gated at A4).
+  [PASS] B1        the singlet table is a valid NS table          4096 pi/4 quadruples non-negativity-gated; 512 tables built and fully NS-checked
+  [PASS] B1        singlet CHSH = -2 sqrt 2 at (0, pi/2; pi/4, -pi/4) S = -2*sqrt2 (matches LOG #3 verbatim)   <[REV]>
+  [PASS] B1        |singlet CHSH| = 2 sqrt 2 = the Gram class maximum the sign is the functional's, not the model's: w_b -> -w_b flips it
+  [PASS] B1        the relabelled instance attains +2 sqrt 2 in-class w_b -> -w_b stays in the U(1)-Gram class
+
+    THE HOLONOMY, one line.  g_ab = z_a conj(w_b).  Then
+      g_00 g_10^{-1} g_11 g_01^{-1}
+        = (z_0 conj w_0)(conj z_1 w_0)(z_1 conj w_1)(conj z_0 w_1)
+        = (z_0 conj z_0)(z_1 conj z_1)(w_0 conj w_0)(w_1 conj w_1) = 1
+    identically: every factorized edge phase is a coboundary, so its
+    holonomy around ANY cycle is 1.  [AB: a witness, not equivalence]
+    caps: pi/4 family exhaustive 4096 quadruples; pi/8 family 4096
+    quadruples (a_0 = 0 fixed: the holonomy is invariant under
+    z_a -> lam z_a and w_b -> mu w_b independently — each z_a and each
+    w_b occurs once with each exponent sign).
+  [PASS] B1        4-cycle holonomy = 1 IDENTICALLY [pi/4 family] 4096 quadruples, 0 failures   <[REV]>
+      ... pi/4 family swept      27.8s
+  [PASS] B1        4-cycle holonomy = 1 IDENTICALLY [pi/8 family] 4096 quadruples, 0 failures   <[REV]>
+      ... pi/8 family swept      28.3s
+
+B2. THE PR EDGE-PHASE PATTERN  (gamma_00,gamma_01,gamma_10,gamma_11)
+    = (1, 1, 1, -1)
+  [PASS] B2        the PR table is a valid no-signaling table     nonneg + normalized + both marginal conditions   <[NS]>
+  [PASS] B2        PR marginals uniform (= 1/2) on both wings     exact rationals
+  [PASS] B2        PR correlators = (1, 1, 1, -1)                 E = (+1, +1, +1, -1)
+  [PASS] B2        PR CHSH = 4 EXACTLY                            S = 4   <[NS]>
+  [PASS] B2        PR 4-cycle holonomy = -1                       gamma_00 gamma_10^{-1} gamma_11 gamma_01^{-1} = -1: NOT a coboundary   <[REV]>
+  [PASS] B2        PR edge phases do NOT factorize                no z_a, w_b with gamma_ab = z_a conj(w_b) (holonomy is the obstruction)
+
+B3. THE ENGRAVED TABLE
+
+    +--------------------------+-------------------+--------------+
+    | model                    | 4-cycle holonomy  |   CHSH       |
+    +--------------------------+-------------------+--------------+
+    | singlet (U(1)-Gram)      | TRIVIAL   ( = 1)  |  2 sqrt 2    |
+    | PR edge-phase (1,1,1,-1) | NONTRIVIAL( = -1) |  4           |
+    +--------------------------+-------------------+--------------+
+
+    READING, engraved: the v12 v1 identification 'quantum <=>
+    nontrivial class' is ANTI-CORRELATED with quantumness in the
+    natural models — the Tsirelson-saturating model carries the
+    trivial class and the nontrivial class is superquantum.  This
+    is the exhibit, not a theorem about all models.
+  [PASS] B3        THE ANTI-CORRELATION TABLE, both rows gated    trivial holonomy <-> 2 sqrt 2; nontrivial holonomy <-> 4   <[REV]>
+  [PASS] B3        a 1-cocycle class is a WITNESS, not an equivalence the caution of [AB] made concrete: the class separates these two models the WRONG way round   <[AB]>
+       28.3s
+
+==============================================================================
+SECTION C — THE DELTA CENSUS  [B1]
+==============================================================================
+    Delta^B(U2,U1) = B(U2 U1) - B(U2) B(U1),  B(U)_ij = |U_ij|^2.
+
+  [PASS] C1        H (2x2 Hadamard-type) is unitary over Q(zeta_8) H = (1/sqrt2)[[1,1],[1,-1]]
+  [PASS] C1        W = (1/sqrt2)[[1,i],[i,1]] is unitary over Q(zeta_8)
+  [PASS] C1        F3 (DFT_3) is unitary over Q(zeta_12)          F_jk = zeta_3^{jk}/sqrt3; zeta_3 and sqrt3 both live in Q(zeta_12)
+
+C1. THE CROSS-TERM IDENTITY, entrywise [B1]
+  [PASS] C1        Delta^B_def = Delta^B_crossterm  [H . H  (2x2, Q(zeta_8))] entrywise exact equality   <[B1]>
+  [PASS] C1        Delta^B_def = Delta^B_crossterm  [F3 . F3 (3x3, Q(zeta_12))] entrywise exact equality   <[B1]>
+  [PASS] C1        Delta^B_def = Delta^B_crossterm  [H . W  (2x2, Q(zeta_8))] entrywise exact equality   <[B1]>
+  [PASS] C1        Delta^B_def = Delta^B_crossterm  [F3 . F3^dag (3x3)] entrywise exact equality   <[B1]>
+  [PASS] C1        Delta^B(H,H) != 0                              Delta^B = [[1/2, -1/2], [-1/2, 1/2]] (B(H.H) = I, B(H)B(H) = J/2)
+  [PASS] C1        Delta^B(F3,F3) != 0                            B(F3^2) = the permutation j -> -j mod 3; B(F3)B(F3) = J/3
+
+C2. THE Delta^B = 0 CENSUS
+    caps, declared: F2 = the 2x2 unitaries P.diag(mu_4) (monomial)
+    together with diag(1,mu_8).H.diag(1,mu_8) (unbiased), deduped;
+    F3 = the 3x3 unitaries P.diag(1,mu_3,mu_3) (monomial) together
+    with diag(1,mu_3,1).F3.diag(1,mu_3,1) (unbiased), deduped.
+    ALL ORDERED PAIRS of each family are swept — no sampling.
+      F2: 96 matrices (32 monomial-seeded), 9216 ordered pairs
+      F3: 63 matrices (54 monomial-seeded), 3969 ordered pairs
+  [PASS] C2        every F2 member is unitary                     96 matrices
+  [PASS] C2        every F3 member is unitary                     63 matrices
+      2x2 census done: 9216 pairs      30.6s
+      3x3 census done: 3969 pairs      33.6s
+  [PASS] C2        cross-term identity on EVERY census pair [2x2] 9216 pairs, 0 mismatches   <[B1]>
+  [PASS] C2        SUFFICIENCY [2x2]: row-mono(U2) or col-mono(U1) => Delta^B = 0 5120 pairs satisfy the condition, 0 of them have Delta^B != 0
+  [PASS] C2        NOT NECESSARY [2x2]: Delta^B = 0 without the condition 1024 such pairs (of 4096 unconditioned)
+      2x2 counts: cond&zero 5120 | cond&nonzero 0 | free&zero 1024 | free&nonzero 3072
+  [PASS] C2        cross-term identity on EVERY census pair [3x3] 3969 pairs, 0 mismatches   <[B1]>
+  [PASS] C2        SUFFICIENCY [3x3]: row-mono(U2) or col-mono(U1) => Delta^B = 0 3888 pairs satisfy the condition, 0 of them have Delta^B != 0
+  [PASS] C2        NOT NECESSARY [3x3]: Delta^B = 0 without the condition 54 such pairs (of 81 unconditioned)
+      3x3 counts: cond&zero 3888 | cond&nonzero 0 | free&zero 54 | free&nonzero 27
+  [PASS] C2        NAMED counterexample to necessity: Delta^B(H, W) = 0 H and W = (1/sqrt2)[[1,i],[i,1]] both fully unbiased, yet Delta^B = 0
+    THE SHARPENING, engraved: 'U2 has at most one nonzero per row'
+    (equivalently U1 at most one nonzero per column) is SUFFICIENT
+    for Delta^B = 0 — the k != l sum is empty — but NOT NECESSARY.
+    The 2x2 obstruction is Re(A_i B_j) = 0 with
+    A_i = (U2)_i0 conj((U2)_i1), B_j = (U1)_0j conj((U1)_1j);
+    H gives real A_i, W gives imaginary B_j.  Delta^B = 0 is a
+    PHASE-ALIGNMENT condition, not a support condition.
+
+    THE UNBIASED SUB-CENSUS, decided in closed form and gated.
+    For unbiased factors B(U2) = B(U1) = J/n, so B(U2)B(U1) = J/n and
+    Delta^B = 0 <=> B(U2U1) = J/n <=> the PRODUCT is again unbiased.
+    The outer diagonals do not change moduli, so Delta^B depends
+    only on the INTERLEAVING phase between the two blocks.
+  [PASS] C2        2x2 unbiased sub-census: Delta^B = 0 <=> t+u = +-2 (mod 8) 4096 parameter quadruples (8^4), 1024 with Delta^B = 0, prediction exact
+      i.e. Delta^B vanishes exactly when the interleaving phase is
+      a QUARTER TURN: the two Hadamard blocks compose to an
+      unbiased matrix iff the relative phase is +-i.  (H,W) of C1
+      is the case t+u = 2.
+  [PASS] C2        3x3 DFT sub-census: Delta^B = 0 <=> b2 + a1 != 0 (mod 3) 81 parameter quadruples (3^4), 54 with Delta^B = 0, prediction exact
+      i.e. F D(m) F is a complex Hadamard matrix for m != 0 and has
+      zero entries for m = 0 (where it is the permutation j -> -j).
+      The defect is governed by ONE phase, not by supports.
+       35.3s
+
+C+1. THE THREE-DEFECT SEPARATION  [REV2]
+    Three objects are distinguished and NEVER conflated:
+      Delta^B(U2,U1) = B(U2 U1) - B(U2) B(U1)   the Born-shadow defect
+      D_210          = Gam_20 - Gam_21 Gam_10   the residual of a
+                                                DECLARED stochastic law
+      d_div          = inf over stochastic K of || Gam_20 - K Gam_10 ||
+                                                existential divisibility
+    The counterexample is exact and rational.  For the real rotation
+    R(th) = [[c, -s], [s, c]] with c^2 + s^2 = 1:
+  [PASS] C+1       B(R(th)) = S(cos 2 th) on the unit circle      residual = (c^2+s^2-1)/2 exactly, vanishing on c^2+s^2 = 1   <[REV2]>
+  [PASS] C+1       the semigroup law S(c) S(d) = S(c d)           entrywise polynomial identity in Q[c,d]   <[REV2]>
+  [PASS] C+1       the two rotations are exact rational unit vectors (24/25, 7/25) and (4/5, 3/5)
+  [PASS] C+1       c_1 = 527/625, c_2 = 7/25, c_tot = -7/25       computed from the rotation angle-addition, exact rationals
+  [PASS] C+1       Delta^B != 0 on this pair                      S(-7/25) != S(7/25 . 527/625) = S(3689/15625); Delta^B_00 = -4032/15625   <[REV2]>
+  [PASS] C+1       so the DECLARED law Gam_21 = B(U2) has residual D_210 != 0 with that declaration D_210 = Delta^B exactly
+  [PASS] C+1       K = S(-175/527) is a valid stochastic matrix   |c| = 175/527 <= 1, entries (1+-c)/2 >= 0, columns sum to 1
+  [PASS] C+1       K . B(U1) = B(U2 U1) EXACTLY                   S(-175/527) S(527/625) = S(-175/625) = S(-7/25) = B(U2 U1)   <[REV2]>
+  [PASS] C+1       K is NOT B(U2)                                 K = S(-175/527), B(U2) = S(7/25): the divisor exists but is not the Born shadow of the second step
+  [PASS] C+1       => d_div = 0 WHILE Delta^B != 0                THE SEPARATION: Delta^B != 0 does NOT imply stochastic indivisibility   <[REV2]>
+  [PASS] C+1       general: |c_tot| <= |c_1| => K = S(c_tot/c_1) divides 1256 exact rational (c_1, c_tot) pairs, 0 failures
+    ENGRAVED: Delta^B is an AMPLITUDE-LEVEL coherence measure.  It is
+    not a divisibility measure, not a witness of indivisibility, and
+    not the residual of any declared stochastic law unless that law
+    is declared to be B(U2).  Nothing in this receipt equates them.
+       35.3s
+
+C+2. THE COHERENCE LAW  (W2a's seed)  [REV2]
+      Delta^B(U3 U2, U1) + Delta^B(U3, U2) B(U1)
+    = Delta^B(U3, U2 U1) + B(U3) Delta^B(U2, U1)
+    Both sides equal B(U3 U2 U1) - B(U3) B(U2) B(U1).  The derivation
+    uses only associativity and distributivity of matrix algebra, so
+    it is an IDENTITY IN FORMAL MATRICES: gated with independent
+    polynomial variables for every entry of B(U1), B(U2), B(U3),
+    B(U2 U1), B(U3 U2), B(U3 U2 U1) — no property of B assumed.
+  [PASS] C+2       the coherence law is a FORMAL-MATRIX identity [2x2] 24 independent variables; both sides = B(U3U2U1) - B(U3)B(U2)B(U1)   <[REV2]>
+  [PASS] C+2       the coherence law is a FORMAL-MATRIX identity [3x3] 54 independent variables; both sides = B(U3U2U1) - B(U3)B(U2)B(U1)   <[REV2]>
+    caps: gated entrywise on ALL ordered triples from a declared
+    subfamily of each census family (deterministic first slice).
+  [PASS] C+2       the coherence law entrywise on exact triples [2x2] 14 matrices, 2744 ordered triples, 0 failures   <[REV2]>
+      ... 2x2 triples done      37.9s
+  [PASS] C+2       the coherence law entrywise on exact triples [3x3] 9 matrices, 729 ordered triples, 0 failures   <[REV2]>
+      ... 3x3 triples done      41.7s
+       41.7s
+
+C3. THE RECORD EXAMPLE (reporting-only; feeds W3')
+    THE RECORD IS DEFINED INDEPENDENTLY of any defect, per v2.1 T3':
+    R = the intermediate configuration variable, whose values are the
+    mutually exclusive sectors {|k><k|}; the reading of R is the
+    dephasing channel D that kills coherences BETWEEN sectors and
+    leaves each sector's weight untouched.  D is record-preserving by
+    construction (it is the record's own reading), and nothing below
+    treats erasure or sector-recombining operations.
+    Claim: B(U2) B(U1) is the shadow of U2 . D . U1 — exactly.
+  [PASS] C3        shadow WITHOUT D = B(U2 U1)  [H . H   (2x2)]   density-matrix route reproduces the Born projection
+  [PASS] C3        shadow WITH D = B(U2) B(U1) EXACTLY  [H . H   (2x2)] THE DECOHERENCE IDENTITY: the record makes the shadow compositional
+  [PASS] C3        Delta^B_D := shadow_D - B(U2)B(U1) = 0  [H . H   (2x2)] the defect is killed by the record
+  [PASS] C3        and Delta^B != 0 without D  [H . H   (2x2)]    so the identity is not vacuous on this example
+  [PASS] C3        the D-interleaved shadow is a stochastic matrix  [H . H   (2x2)] entries rational and >= 0, columns sum to 1 exactly
+  [PASS] C3        shadow WITHOUT D = B(U2 U1)  [F3 . F3 (3x3)]   density-matrix route reproduces the Born projection
+  [PASS] C3        shadow WITH D = B(U2) B(U1) EXACTLY  [F3 . F3 (3x3)] THE DECOHERENCE IDENTITY: the record makes the shadow compositional
+  [PASS] C3        Delta^B_D := shadow_D - B(U2)B(U1) = 0  [F3 . F3 (3x3)] the defect is killed by the record
+  [PASS] C3        and Delta^B != 0 without D  [F3 . F3 (3x3)]    so the identity is not vacuous on this example
+  [PASS] C3        the D-interleaved shadow is a stochastic matrix  [F3 . F3 (3x3)] entries rational and >= 0, columns sum to 1 exactly
+    THE READING, per v2.1 T3'.  The record R is defined first, with
+    no reference to any defect.  Reading R at the intermediate cut
+    induces a law on the commutative record algebra: from the initial
+    configuration j, R takes value k with probability B(U1)_kj, and
+    the final configuration is i with probability B(U2)_ik.  That
+    composite law is B(U2) B(U1), whose ACTUAL RESIDUAL
+    D_210 = Gam_20 - Gam_21 Gam_10 with the declared Gam_21 = B(U2)
+    is identically zero — and the gates above show it is EXACTLY the
+    Born shadow of the physical channel U2 . D . U1.  The recorded
+    law divides at the cut.
+    SCOPE, engraved: ONE worked example, reporting-only.  It does NOT
+    prove T3' in general, treats no partial or approximate record, no
+    erasure, and no sector-recombining operation.  It does NOT say
+    that Delta^B != 0 means the shadow fails to divide — C+1 exhibits
+    a pair where Delta^B != 0 and the shadow divides anyway.  What it
+    says is narrower and exact: reading the record makes the shadow
+    of THIS channel compositional with divisor B(U2).  W3' is the
+    general theorem.
+       41.7s
+
+==============================================================================
+SECTION D — HONESTY GATES
+==============================================================================
+D1. ANTECEDENT ATTRIBUTION — every theorem used, with its citation.
+
+    [AB]   Abramsky-Brandenburger, NJP 13, 113036 (2011) — the exact global-section formulation of contextuality.
+           used at 1 gate(s):
+             - B3/a 1-cocycle class is a WITNESS, not an equivalence
+    [AMB]  Abramsky-Mansfield-Barbosa, arXiv 1111.3620 — the cohomological obstruction: a SUFFICIENT WITNESS, not an equivalence (attribution per [REV2]; engraved caution, paper 0 v2.1 sec.3).
+           used at 0 gate(s) (NAMED ONLY)
+    [B1]   Barandes, arXiv 2302.10778 — the stochastic-quantum correspondence; the identification of the Born-projection cross terms with interference.  Reproduced here, not originated here.
+           used at 6 gate(s):
+             - C1/Delta^B_def = Delta^B_crossterm  [H . H
+             - C1/Delta^B_def = Delta^B_crossterm  [F3 . F3
+             - C1/Delta^B_def = Delta^B_crossterm  [H . W
+             - C1/Delta^B_def = Delta^B_crossterm  [F3 . F3^dag
+             - C2/cross-term identity on EVERY census pair [2x2]
+             - C2/cross-term identity on EVERY census pair [3x3]
+    [CVX]  STANDARD CONVEXITY.  (a) A linear functional on a compact convex set attains its maximum at an extreme point, and max over conv(S) = max over S for any S.  (b) Two compact convex sets with equal support functions are equal.  (c) The quantum correlator set of a scenario is compact and convex (mixing by a shared classical flag).  (d) Caratheodory: conv of a compact set in R^4 is compact.
+           used at 2 gate(s):
+             - A6/max CHSH over L_corr = 2
+             - A6/max CHSH over Q_corr = 2 sqrt 2
+    [F]    Fine, PRL 48, 291 (1982) — LHV <=> a joint distribution for the four observables; the local set is the polytope hull of the 16 deterministic assignments.
+           used at 3 gate(s):
+             - A1/max CHSH over the {+-1} class = 2
+             - A1/CHSH <= 2 on the exact hull grid
+             - A5/E =
+    [NS]   Popescu-Rohrlich, Found. Phys. 24, 379 (1994) (the PR box); Barrett-Linden-Massar-Pironio-Popescu-Roberts, PRA 71, 022101 (2005) (the 24 vertices of the (2,2,2) no-signaling polytope).
+           used at 6 gate(s):
+             - A3/all 24 vertices are valid no-signaling tables
+             - A3/max CHSH over the 24 vertices = 4
+             - A3/each of the 8 PR vertices attains 4 on some functional
+             - A6/NS_corr = [-1,1]^4 is the NS correlator projection
+             - B2/the PR table is a valid no-signaling table
+             - B2/PR CHSH = 4 EXACTLY
+    [REV2] The second external hostile review, adjudicated at v12/LOG.md #4: the convexification of sec.3, the completeness target for Q_corr, the three-defect distinction with its rotation counterexample, and the coherence law.  Gates A+, C+1, C+2 are its.
+           used at 10 gate(s):
+             - A+/THE COMPLETENESS OF Q_corr
+             - C+1/B
+             - C+1/the semigroup law S
+             - C+1/Delta^B != 0 on this pair
+             - C+1/K . B
+             - C+1/=> d_div = 0 WHILE Delta^B != 0
+             - ... and 4 more
+    [REV]  The external hostile review of v12 paper 0 v1, adjudicated at v12/LOG.md #3; both of its constructions are the subject of Arm B.
+           used at 7 gate(s):
+             - B1/Born identity P = 1/4
+             - B1/Born identity P = 1/4
+             - B1/singlet CHSH = -2 sqrt 2 at
+             - B1/4-cycle holonomy = 1 IDENTICALLY [pi/4 family]
+             - B1/4-cycle holonomy = 1 IDENTICALLY [pi/8 family]
+             - B2/PR 4-cycle holonomy = -1
+             - ... and 1 more
+    [T]    Tsirelson's bound: CHSH <= 2 sqrt 2 for quantum correlations, and Tsirelson's theorem that the (2,2,2) quantum correlator set is exactly the REAL UNIT-VECTOR Gram set E_ab = <u_a, v_b> in any real Hilbert space.  See e.g. arXiv 1501.01406.  The characterization is CITED; gate A+ derives from it that planar vectors already suffice.
+           used at 3 gate(s):
+             - A2/instance CHSH = 2 sqrt 2 EXACTLY
+             - A2/grid: no Gram point exceeds 2 sqrt 2
+             - A+/the parallelogram identity holds in R^n, all n
+    [W]    Weyl relations / noncommutative torus, projective multipliers on Z^2 (e.g. arXiv 1606.01829).  NAMED HERE, NOT USED: it is W2b/W2c's object.
+           used at 0 gate(s) (NAMED ONLY)
+  [PASS] D1        every antecedent tag is defined before use     10 tags defined, 8 used
+  [PASS] D1        the chain is claimed as ASSEMBLY, not novelty  2 is [F]; 2 sqrt 2 is [T]; 4 is [NS]; the cross term is [B1]
+
+D2. THE SCOPE GATE — printed verbatim, in force over every claim
+    above.
+
+    (i)   NO CLAIM ABOUT NATURE.  Every result above is a statement
+          about three declared convex bodies on the (2,2,2) CHSH
+          scenario.  Nothing is asserted about physical systems.
+    (ii)  Q_corr IS the quantum correlator body — WITH ITS SCOPE TAG:
+          in the CHSH (2,2,2) CORRELATOR PROJECTION, AFTER
+          CONVEXIFICATION (gate A+, resting on Tsirelson's
+          characterization [T], which is cited and not proven here).
+          The un-convexified U(1)-Gram generating class is NOT the
+          quantum set: it is not even convex (A5).  Nothing is
+          claimed about full behaviours including marginals.
+    (iii) DELTA^B IS NOT A DIVISIBILITY MEASURE.  Delta^B != 0 does
+          not imply stochastic indivisibility; C+1 exhibits the
+          separation with exact rationals.  Delta^B, the actual
+          residual D_210 of a DECLARED law, and existential
+          divisibility d_div are three different objects and are
+          never conflated in this receipt.
+    (iv)  OUT OF SCOPE, NAMED not ignored: (a) higher scenarios —
+          more settings, more parties, more outcomes — where the
+          planar/Gram argument of A+ does NOT apply and where
+          real-vs-complex separates; (b) the NPA hierarchy and
+          Tsirelson-from-principles (IC/ML/LO), which this unit
+          neither uses nor advances; (c) the projective multiplier
+          [omega] in H^2(Z^2, U(1)) and the Weyl phase theta [W] —
+          that is W2b/W2c, untouched here, and the Born projection
+          annihilates scalar multipliers (B(wU) = B(U)), so that
+          bridge must be BUILT, not assumed; (d) T3' in general —
+          C3 is one worked example only.
+    (v)   THE ANTI-CORRELATION EXHIBIT IS AN EXHIBIT.  B3 shows two
+          named models with opposite class/CHSH pairing.  It
+          falsifies 'quantum <=> nontrivial class' by
+          counterexample; it does not establish any replacement
+          correlation between class and CHSH.
+    (vi)  [AMB]'s cohomological obstruction is a SUFFICIENT WITNESS,
+          not an equivalence; nothing above upgrades it.
+    (vii) C+2's coherence law is an identity, not a theorem about
+          quantum mechanics.  It constrains the Delta^B family; it
+          selects nothing.  W2a takes it from here.
+
+  [PASS] D2        scope gate printed in full                     7 clauses, verbatim
+  [PASS] D2        no gate above asserts a property of nature     audited by construction: every gate ranges over declared models
+       41.7s
+
+==============================================================================
+SECTION E — THE VERDICT
+==============================================================================
+  gate book: 121 gates, 121 pass, 0 fail
+
+  THE THREE MAXIMA, over the convex bodies
+    L_corr    claimed max 2                    CONFIRMED EXACTLY
+    Q_corr    claimed max 2 sqrt 2             CONFIRMED EXACTLY
+    NS_corr   claimed max 4                    CONFIRMED EXACTLY
+
+  THE TWO EXHIBITS
+    singlet: trivial holonomy AND |CHSH| = 2 sqrt 2 GATED
+    PR: nontrivial holonomy AND CHSH = 4       GATED
+
+  THE AMENDMENT'S NEW GATES  [REV2]
+    A+  the completeness of Q_corr             PROVEN
+    C+1 the three-defect separation            PROVEN
+    C+2 the coherence law                      PROVEN
+
+==============================================================================
+  VERDICT: W1'-PROVEN
+==============================================================================
+
+  The chain, receipted:  L_corr  (   2   )
+                     SUBSET Q_corr  ( 2 sqrt 2 )
+                     SUBSET NS_corr (   4   ),  both STRICT.
+    strict on the left  : a Q_corr point at 2 sqrt 2 > 2 (A4b/A6)
+    strict on the right : the PR vertex at 4 > 2 sqrt 2 (A6); and at
+                          the CLASS level, PR admits no U(1)-Gram
+                          representation at all (A4d)
+  A+ THE COMPLETENESS: Q_corr IS the quantum correlator body at this
+  scenario — the optimal u_a lie in span{v_0,v_1}, so planar
+  configurations already generate every supporting hyperplane, and
+  the same four certificates prove Tsirelson's bound in EVERY
+  dimension, not just the plane.
+  The anti-correlation exhibit stands (B3).
+  Delta^B reproduces [B1]'s cross terms on every gated pair, is
+  nonzero on the Hadamard and DFT pairs, obeys the coherence law
+  identically (C+2), and vanishes exactly under a phase-alignment
+  condition (C2) — NOT a support condition.
+  C+1: Delta^B != 0 does NOT mean the shadow fails to divide.  The
+  exact rotation pair has Delta^B != 0 and an exhibited stochastic
+  divisor K = S(-175/527).  Delta^B, D_210 and d_div are three
+  different objects.
+  ONE FINDING BEYOND THE PIN: the U(1)-Gram GENERATING class is NOT
+  CONVEX (A5) — which is why paper 0 v2.1's convexification is
+  load-bearing rather than cosmetic.  E = (1,0,0,0) is in L_corr and
+  in Q_corr but is not a Gram point.
+
+  determinism: fixed lexicographic enumeration everywhere; no
+  randomness, no hashing, no float in any substantive path.
+  runtime:    41.7s
+==============================================================================
