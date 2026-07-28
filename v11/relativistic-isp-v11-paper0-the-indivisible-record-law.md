@@ -200,23 +200,77 @@ refuses to cut.
    fifteen rounds, arithmetic never wrong, five referee
    out-computations — are the empirical case that the machinery is
    the load-bearing component.
+4. **Bell is settled and closed** [THEOREM, v5 paper 14; catalog
+   §4.6]: indivisibility does not evade Bell — it pays the
+   outcome-independence price, landing at exactly orthodox QM's
+   locality status.  No v11 unit may be framed as a Bell-locality
+   result.  Likewise **magic ≠ indivisibility** [MEASURED, catalog
+   §4.7]: a positive U1 buys no resource-theoretic advantage, and
+   no unit may claim one.
+5. **The D15 sentence** [catalog §5.1]: the corpus's boldest claim
+   — "the identified click law = the D15 action = the Standard
+   Model plus effective gravity at measured couplings" — is a
+   **re-description at measured couplings taken as input, not a
+   derivation** (its own paper's ceiling: *identified, not
+   derived*; paper 29: *supplies rather than derives*).  v11 may
+   cite it only with that sentence attached.
+6. **U1 is not a CP-divisibility test** [THEOREM, catalog §2.4]:
+   CP-divisibility and Barandes-indivisibility are orthogonal
+   (state-independent seals are always CP-divisible), so the
+   census must run the interpolant and descent instruments, never
+   a CP criterion.
+7. **The unrouted erratum is a duty**: the quarter law's BC =
+   Cauchy-Schwarz-bound correction (v6 paper 7 §12) never reached
+   paper 26, ARCHIVE-STATUS, or v10 paper 18 [catalog §0.3].  v11's
+   first housekeeping unit routes it.
 
-## §7. The opening campaign
+## §7. The opening campaign — armed by the catalog
 
-Five units, each with its falsifier written before its receipt.
+Five units and one prerequisite lemma, each with its falsifier
+written before its receipt.  The concrete objects named below come
+from the reproduction catalog
+(`note-v11p0a-reproduction-catalog.md`, cited [V11-CAT]; its §6 is
+the authoritative table, its §7 the ranking this sequencing
+follows).
 
 - **U1 — THE INDIVISIBILITY CENSUS** *(the bridge from v10; the
-  faithfulness gate d42b2 skipped).*  Build the renewal-to-renewal
-  Γ family from the committed transport grammar (the v10
-  relative-horizon kernels read at record grain) and run the [B3]
-  eq. 22 interpolant test through every intermediate cut: count
-  negative entries.  Prime suspects: the 44 descent-obstruction
-  squares (v10 §B2.12(iv) — closable in no descent quotient).
-  *Falsifier both ways:* stochastic interpolants everywhere ⇒ the
-  generated law is Barandes-classical at every grain, by his own
-  criterion, and the quantum requires grammar enrichment; one
-  pseudo-stochastic interpolant ⇒ **the corpus's first generated
-  indivisible bridge**, and v11's program is mapping it.
+  faithfulness gate d42b2 skipped).*  Three arms and a preamble:
+  - *Preamble:* restate v1 paper 22's definition of indivisibility
+    with the audit's named defect repaired — the definitional
+    ground the whole campaign stands on [V11-CAT §4.9].
+  - **Arm 0 — Born = K1** [V11-CAT §7 rank 1]: the corpus's only
+    quantum-core object on a **generated carrier** in exact
+    rationals, with a verified isometric lift (defect 0.0; squared
+    branch amplitudes exactly ½–½; menus reconstructed exactly at
+    both cuts — v10 paper 31 §4.3).  Rebuild it and its
+    Ẑ-completed sibling (specified to the receipt in the audit's
+    pin (b) Arm 0) as U1's anchor matrices — they are
+    simultaneously the input the interpolant test needs and the
+    input U3's unistochasticity screen needs.
+  - **Arm 1 — the interpolant test**: the renewal-to-renewal Γ
+    family from the committed transport grammar (v10's
+    relative-horizon kernels read at record grain); [B3] eq. 22
+    through every intermediate cut; count negative entries.  Prime
+    suspects: the 44 descent-obstruction squares (v10 §B2.12(iv)).
+  - **Arm 2 — the descent conditions** [V11-CAT §7 rank 4]: paper
+    29's four descent conditions run on the SAME family — the
+    corpus's only theorem on when a conditional descends from a
+    quantum functional, with an exact fixture and a demonstrated
+    failure mode.  A disagreement between Arm 1 and Arm 2 is more
+    informative than either alone.
+  - *Constraint (engraved §6.6):* not a CP test.  *Falsifier both
+    ways:* stochastic interpolants and clean descent everywhere ⇒
+    the generated law is Barandes-classical at every grain and the
+    quantum requires enrichment; one pseudo-stochastic interpolant
+    ⇒ **the corpus's first generated indivisible bridge.**
+- **L0 — THE G NO-GO, RESTATED AS A v11 KINEMATIC LEMMA** *(before
+  U5 may run — [V11-CAT §7 rank 2]).*  The corpus's only
+  structurally unconditional physics theorem (v6 paper 57): no
+  internal observable can be a length; only κ·σ_A = 2π and,
+  separately, G·Λ² = const are weight-zero; l_step is the unique
+  dimensionful primitive.  Restating it at v11 grain BOUNDS U5 in
+  advance — U5 may never announce a scale — and hands v11 the one
+  open eligible dimensionless target in the corpus: **c_m = Gm²/ℏc**.
 - **U2 — THE J-CONJECTURE** *(the founding thesis, tested at last).*
   v1's unoperationalized thesis was *"divisibility-failure
   controlled by curvature"* (audit §7).  v10 delivered both halves
@@ -227,28 +281,47 @@ Five units, each with its falsifier written before its receipt.
   paper-0 trade becomes a change of coordinates, and the theory has
   its mechanism: curvature of probability transport is where the
   process refuses to divide — and that refusal is the quantum.
-- **U3 — THE MINIMAL QUANTUM RECORD** *(if U1 returns divisible).*
-  Construct the smallest record process whose renewal-to-renewal Γ
-  is unistochastic but **not** orthostochastic — a transition law
-  provably requiring complex square roots (the ortho/uni gap).  Then
-  test whether v7's shelved amplitude form e^{−K·even}·e^{iΦ·odd}
-  (v10 §A2.9) is the canonical gauge choice for its lift — giving
-  the archaeology's orphan its home.
+- **U3 — THE MINIMAL QUANTUM RECORD** *(the ortho/unistochastic
+  gap).*  Opening move [V11-CAT §7 rank 3]: reproduce the U(1)
+  loop-class theorem (v6 paper 7 Thm 7.1/D3 — the ONLY place the
+  corpus ever derived ℂ, already gauge-invariant in exactly [B3]'s
+  sense, and contested inside the corpus as derived-vs-INPUT-vs-
+  un-forceable) — converting a three-way internal disagreement into
+  a decidable computation on a committed matrix.  Then: construct
+  the smallest record process whose renewal-to-renewal Γ is
+  unistochastic but **not** orthostochastic — a law provably
+  requiring complex square roots — and test whether v7's shelved
+  amplitude form e^{−K·even}·e^{iΦ·odd} (v10 §A2.9) is the
+  canonical gauge choice for its lift.  U3 **replaces** paper Va's
+  program [V11-CAT §4.4]: Γ = |Θ|² is an identity ([B3] §3.2), so
+  the Born question becomes which Γ admit which lifts.
 - **U4 — SPARSE RECORDS ON THE CRYSTALS.**  The conflict crystals
   rebuilt with renewal-only records: geometry should be invariant
-  (it is kinematic); the question is whether the bridges between the
-  crystal's renewal sublattice — itself periodic: *the division
-  events of a crystal form a crystal* — carry indivisible structure.
-  First joint test of the two-channel destination hypothesis (v10
-  §D1) on one object.
+  (it is kinematic — paper 0 §10's third falsifier if not); the
+  bridges between the renewal sublattice — itself periodic: *the
+  division events of a crystal form a crystal* — are probed for
+  indivisible structure.  Two catalog-assigned tests ride along:
+  **statistical Lorentz invariance of the renewal sublattice**
+  [V11-CAT §7 rank 5] — the corpus's strongest relativity result
+  (v6: sprinkled division events frame-invariant to 10⁻⁹⁷),
+  currently a fact about a background sprinkling, posable on a
+  GENERATED carrier for the first time; and the max-shatter
+  dimension meter as the acceptance gauge [V11-CAT §1.5].
 - **U5 — DILATION-EMERGEABLES** *(internal structure by Barandes'
-  own device, [B3] §4.2).*  Dilate the record Hilbert space by an
-  internal factor, impose the crystal's measured direction
-  symmetries (v10 §B8.10), and determine which internal observables
-  the geometry forces — spin is [B3]'s worked example; the
-  crystal's stabilizers are our candidates.  Gravity remains where
-  v10's evidence put it: the even channel (J, the curvature, the
-  rank-2 response on generic geometry — v10 §B8.10, §D4).
+  own device, [B3] §4.2; gated by L0).*  Dilate the record Hilbert
+  space by an internal factor, impose the crystal's measured
+  direction symmetries (v10 §B8.10), and determine which internal
+  observables the geometry forces — spin is [B3]'s worked example;
+  the crystal's stabilizers are our candidates; **the internal
+  factor is exactly what v10 paper 11 could not select** for its
+  1+3 Lorentz cone [V11-CAT §1.1], so U5 doubles as the SR packet's
+  reproduction path.  Pre-registered negative carried: the spin-2
+  obstruction is inherited verbatim at fixed renewal grain
+  [V11-CAT §2.3].  Prior constraint carried from v9's one salvage:
+  matter requires coupling (the free-web influence theorem,
+  [V11-CAT §5.5]).  Gravity remains in the even channel (J, the
+  curvature, the rank-2 response on generic geometry — v10 §B8.10,
+  §D4); its long path is §11's.
 
 ## §8. Presupposed versus derived — the honest ledger
 
@@ -279,6 +352,41 @@ click law's structure?*  This question is deferred until U1–U3
 exist; it is recorded here so the map's two ends are never again
 confused for objects of different kinds.
 
+## §9b. The investigation plan, phased
+
+The campaign of §7, sequenced by the catalog's ranking and by
+dependency, with the standing rule that each phase's verdict shapes
+the next and every phase ends in hostile review:
+
+- **PHASE I — THE CENSUS** *(first things actually investigated)*:
+  U1 in full (preamble; Arm 0 Born = K1 + the Ẑ sibling; Arms 1–2),
+  with **L0** run alongside (it is cheap, independent, and must
+  precede U5 whenever U5 comes), and the erratum-routing
+  housekeeping unit (§6.7).  Phase I decides the world: divisible
+  everywhere ⇒ enrichment is the program; one indivisible bridge ⇒
+  mapping it is.
+- **PHASE II — THE VERDICT FORK**: U2 (the J-conjecture — the weld
+  of the two indivisibilities) and U3 (the loop-class reproduction,
+  then the ortho/uni construction).  If Phase I found a bridge, U2
+  asks whether J locates it; if not, U3 asks what the grammar must
+  gain.
+- **PHASE III — THE RELATIVITY TEST**: U4 — sparse crystals,
+  geometry invariance, the Lorentz statistics of the generated
+  renewal sublattice, the dimension meter.  The first honest test
+  of "our emergence" against "his relativity."
+- **PHASE IV — INTERNAL STRUCTURE AND THE GRAVITY ROAD**: U5 under
+  L0's bound (dilations, the SR packet's internal factor, the
+  spin-2 negative, the c_m question), then the gravity long path:
+  derive from renewal counting the two ingredients Jacobson
+  assumes (the area coefficient and the pure-area property —
+  [V11-CAT §2.1, §5.2]), which is what "order + number = geometry"
+  would mean if it were generated.  The Fisher-identity bridge Gb2
+  ([V11-CAT §4.1] — specified in v9's design note, never run) is
+  the one measurement that would join SHARD to the generated line;
+  it runs here.
+- **PHASE V — THE MISSING MAP** (§9): only after U1–U3 exist; the
+  D15 sentence of §6.5 binding throughout.
+
 ## §10. Falsifiers for the whole program
 
 - If U1 finds divisibility everywhere at every grain and scope, and
@@ -294,6 +402,43 @@ confused for objects of different kinds.
 - If U4 shows sparse records destroy the geometry, kinematics and
   law are not separable as posited and §3's table is wrong.
 Each of these is a result, not a failure mode; the pins will say so.
+
+## §11. The Reproduction Program
+
+v1–v10 produced physics-reproduction results across six domains —
+special relativity, gravity/spacetime, Yang–Mills/QCD, the quantum
+core, horizon thermodynamics, and the D15 action claim — at every
+evidential grade from [THEOREM] to [LATER-CORRECTED].  The complete
+graded catalog, with each result's presuppositions and its v11
+path, is `note-v11p0a-reproduction-catalog.md` [V11-CAT]; its §6 is
+the authoritative table and is not duplicated here.  The program's
+shape, in five sentences:
+
+1. **What transfers intact** (kinematics — no reproduction needed):
+   the no-global-state results, all v10 geometry, and the G no-go
+   (as L0).
+2. **What is reproduced early because it already lives on the
+   generated carrier**: Born = K1 (U1 Arm 0), the loop-class
+   theorem (U3's opening), the descent conditions (U1 Arm 2).
+3. **What becomes posable for the first time on generated objects**:
+   statistical Lorentz invariance (U4), the dimension meter as
+   acceptance gauge (U4), the SR packet's internal factor (U5).
+4. **What is a long path with its assumed ingredients named**: the
+   Einstein-form derivation — reproduced not by re-running Jacobson
+   but by deriving what Jacobson assumes (area coefficient,
+   pure-area property) from renewal counting (Phase IV); the
+   thermodynamic receipts (T = a/2π, 0.295, η/s = 1/4π) as
+   calibration targets there, never imports.
+5. **What is not a reproduction target and why**: the YM
+   confinement line (its own errata reopened it — cited as
+   failure-kind evidence); the QFT no-go (obeyed as §6.1, not
+   reproduced); Bell and magic (engraved as §6.4); the D15 claim
+   (a re-description, §6.5 — deferred to Phase V as an
+   identification problem); v9 (closed by directive; one theorem
+   shape carried).
+No coupling constant or dimensionless number of nature is
+reproduced anywhere in v1–v10 [V11-CAT §5.7]; the one open eligible
+target is c_m, and it belongs to Phase IV under L0's bound.
 
 ---
 
@@ -324,3 +469,8 @@ the followed/violated/never-operationalized table; the historical
 finding on the paper-0 trade; the ranked pins U1 inherits.
 **[V10-LOG]** `../v10/LOG.md`, entries #455–#497 — the terminal arc
 this paper stands on.
+**[V11-CAT]** `note-v11p0a-reproduction-catalog.md` — the graded
+catalog of every physics-reproduction result in v1–v10 (six domains,
+~30 entries, three corpus-wide errata carried, the reproduction
+table §6, the ranking §7).  §7 and §9b of this paper follow its
+sequencing.

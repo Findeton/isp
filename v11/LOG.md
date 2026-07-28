@@ -41,3 +41,41 @@ falsifiers stated (§10) — every terminal outcome is a result.
 NOTHING DISPATCHED: the program remains halted per the user's
 standing instruction; this founding commit is the sanctioned
 exception.
+
+## 2026-07-27 — PAPER 0 ARMED BY THE REPRODUCTION CATALOG (v11
+## LEDGER #2)
+Deliverables: note-v11p0a-reproduction-catalog.md (1,529 lines — the
+graded catalog of every v1-v10 physics-reproduction result: SR,
+gravity/spacetime, YM/QCD, the quantum core, horizons, the D15
+claim; three corpus-wide errata carried; §6 the authoritative
+reproduction table; §7 the ranking) and paper 0 AMENDED: §6 gains
+four engraved constraints (Bell settled-and-closed; magic buys
+nothing; THE D15 SENTENCE — a re-description at measured couplings,
+not a derivation, citable only with that sentence attached; U1 is
+not a CP test; the unrouted BC/Cauchy-Schwarz erratum as v11's
+first housekeeping duty); §7 re-armed with the catalog's concrete
+objects (U1 gains its preamble [v1 p22's definition repaired] and
+THREE ARMS — Arm 0 Born = K1 + the Zhat sibling [the only
+quantum-core object on a generated carrier, rank 1], Arm 1 the B3
+eq. 22 interpolant test, Arm 2 paper 29's descent conditions
+[disagreement between arms more informative than either]; NEW L0 =
+the G no-go restated as a kinematic lemma BEFORE U5 [bounds U5: no
+internal observable may be a length; hands v11 the c_m target]; U3
+opens with the loop-class reproduction [the only derivation of C in
+the corpus, converting a three-way internal contest into a
+computation] and REPLACES paper Va's program; U4 gains the
+statistical-Lorentz test on the generated renewal sublattice [the
+corpus's strongest relativity result, posable on a generated
+carrier for the first time] and the dimension meter; U5 gains the
+SR packet's internal factor, the spin-2 pre-registered negative,
+and the free-web prior); NEW §9b the PHASED PLAN (I census + L0 +
+erratum routing / II verdict fork U2+U3 / III relativity test U4 /
+IV internal structure + the gravity road [Jacobson's two assumed
+ingredients from renewal counting; Gb2 the never-run SHARD bridge]
+/ V the missing map); NEW §11 the Reproduction Program (five
+sentences; the catalog's §6 authoritative; no constant of nature
+reproduced anywhere in v1-v10 — c_m the one open target).
+FIRST THINGS TO ACTUALLY INVESTIGATE, on record: U1 Arm 0 (the
+matrices exist), Arm 1 (the 44 suspects), and L0 — all cheap, all
+load-bearing.  PROGRAM REMAINS HALTED: nothing dispatched; Phase I
+awaits the user's go.
