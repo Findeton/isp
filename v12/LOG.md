@@ -220,3 +220,55 @@ at all): the holonomy story returns at the correct level — as the
 sign obstruction on the generating class, not as an H¹ class.
 Worker-disclosed: one gate caught a real sign error mid-run, fixed
 before the final receipt.  Hostile round dispatched.
+
+## 2026-07-28 — W1′ HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES,
+## ALL APPLIED — **W1′ TERMINAL: THE PROGRAMME'S FIRST SURVIVING
+## POSITIVE** (v12 LEDGER #7)
+The round recomputed every substantive claim from scratch (~70
+independent checks, sympy/Fraction, importing nothing): **EVERY
+NUMBER REPRODUCES — no B findings; the theorem survives.**  The
+completeness conclusion additionally checked against brute-force ℝ⁴
+optimisation (deviation 1e-10) and the Tsirelson-Landau-Masanes
+analytic boundary (|Σ arcsin E| ≤ π, 4,000 planar Gram points, the
+Tsirelson point at equality).  All four certificates verified
+airtight and non-circular.  A(iv) answered clean: the receipt
+proves conv(planar Gram) = (all-dimension Gram) and imports
+"Gram = quantum" from [T] honestly at all four required places.
+**FIXES, ALL APPLIED: (M1)** the ℝ³/ℝ⁴ corroboration was
+cone-clustered (lexicographic first-26; the ℝ⁴ gate could not fail
+— ceiling 68/25 < 2√2) and "exhaustive" was false — REPAIRED: a
+declared deterministic stride sample across the full enumerations
+(174/360 vectors); the repaired maxima 11120/3969 ≈ 2.8017 (ℝ³)
+and 124/45 ≈ 2.7556 (ℝ⁴) now genuinely press the 2.8284 ceiling;
+receipt regenerated, 121/121 stands.  **(M2, #6's OWN TEXT
+CORRECTED HERE):** (a) the product invariant E₀₀E₀₁E₁₀E₁₁ = +1 is
+a statement about the **{±1}-VALUED** correlator vertices ONLY —
+not class-level (the round's counterexamples: the unit's own
+Tsirelson point has product −1/4; (½,½,½,½) has 1/16); #6's
+"at the class level is exactly" is WITHDRAWN; (b) "the same
+invariant Arm B computes" is WITHDRAWN — Arm B's holonomy is of
+the U(1) EDGE PHASES, §3's is the ℤ₂ product of CORRELATORS,
+different objects that coincide only on PR's ±1 table; "the
+holonomy story returns at the correct level" was romantic and is
+retracted (the honest content: a ±1 matrix factorizes iff its
+4-cycle product is +1 — elementary).  **(M3)** the attribution
+machinery repaired: the B3 caution gate re-tagged [AMB] (it cited
+[AB]); the note's [CVX] line now says the A+ gate carries [REV2];
+noted that D1 checked tag definition, not correctness.  **(M4)**
+the planar-sufficiency reduction and the dimension-free bound are
+STANDARD (Tsirelson 1987, Landau, Masanes) — antecedent sentences
+added; "the unit's strongest theorem" demoted to "the receipted
+assembly is what this unit adds".  **(m1)** A+ = a hand proof with
+gated lemma ingredients, said so; **(m2)** "SOME optimizer is
+planar" (degenerate-λ caveat); **(m3)** the receipt verdict's
+"not a Gram point" qualified to PLANAR/U(1)-Gram (E = (1,0,0,0) IS
+a real-unit-vector Gram point in ℝ³ — the round's exhibit — and
+A+ places it in Q_corr); **(m4)** disclosed: of the 121 gates, 6
+are declarative and ~9 re-assert already-gated booleans; **(n1)**
+"THREE certificates" print → FOUR.  **W1′ IS TERMINAL.  THE
+STANDING RESULT: the three-class chain 2 / 2√2 / 4 over convex
+bodies, the completeness of the planar family (with [T] imported),
+the anti-correlation exhibit, the three-defect separation, and the
+coherence law — the first positive claim in this collaboration to
+survive hostile review: 1-for-10.**  W2a/W2b/W2c, W3′, W4′, W5
+remain pinned-not-dispatched, awaiting the user's word.

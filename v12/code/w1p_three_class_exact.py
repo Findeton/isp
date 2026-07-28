@@ -688,7 +688,7 @@ print()
 
 # ---------------------------------------------------------------------------
 print("A2. THE U(1)-GRAM CLASS  E_ab = Re(z_a conj(w_b)), |z_a| = |w_b| = 1")
-print("    method: THREE EXACT POLYNOMIAL CERTIFICATES + a saturating")
+print("    method: FOUR EXACT POLYNOMIAL CERTIFICATES + a saturating")
 print("    instance in Q(zeta_8).  No numerics, no search over angles.")
 print()
 print("    The reduction.  With u = w_0 + w_1 and v = w_0 - w_1,")
@@ -1236,8 +1236,15 @@ gate("A+", "step 3: the rational circle parametrization is exact",
      "rational points are dense, and surjectivity onto [-1,1] is continuity"
      % ((2 * CAP_M + 1) * CAP_M))
 
-# corroboration: an exhaustive sweep of EXACT RATIONAL unit vectors in
-# R^3 and R^4 -- no configuration of any dimension beats the planar bound.
+# corroboration: a DECLARED UNBIASED SAMPLE of exact rational unit
+# vectors in R^3 and R^4 -- no sampled configuration beats the planar
+# bound.  (Round repair, LOG #7 / round M1: the original selection kept
+# the first `cap` vectors in LEXICOGRAPHIC order, which clusters them in
+# a positive-inner-product cone and made the R^4 gate arithmetically
+# unable to fail; the sample is now a deterministic STRIDE across the
+# full enumeration, disclosed here and in the printed caps, and the
+# achieved maxima are printed so the reader sees how close the sample
+# presses the 2*sqrt(2) ceiling.)
 def rational_unit_vectors(n, dmax, cap):
     out = []
     for d in range(1, dmax + 1):
@@ -1251,7 +1258,11 @@ def rational_unit_vectors(n, dmax, cap):
             seen.add(v)
             uniq.append(v)
     uniq.sort()
-    return uniq[:cap]
+    if len(uniq) <= cap:
+        return uniq
+    stride = len(uniq) // cap
+    sampled = [uniq[i * stride] for i in range(cap)]
+    return sampled
 
 
 CAP_VEC = 26
@@ -1476,8 +1487,8 @@ gate("B3", "THE ANTI-CORRELATION TABLE, both rows gated",
      "trivial holonomy <-> 2 sqrt 2; nontrivial holonomy <-> 4", "[REV]")
 gate("B3", "a 1-cocycle class is a WITNESS, not an equivalence",
      h_pr != K8.one and S_sing == Q2(0, -2),
-     "the caution of [AB] made concrete: the class separates these two "
-     "models the WRONG way round", "[AB]")
+     "the caution of [AMB] made concrete: the class separates these two "
+     "models the WRONG way round", "[AMB]")
 ANTI_CORR_OK = all(S_B1) and all(S_B2)
 print("    %s" % el())
 print()
@@ -2249,7 +2260,10 @@ print("  different objects.")
 print("  ONE FINDING BEYOND THE PIN: the U(1)-Gram GENERATING class is NOT")
 print("  CONVEX (A5) — which is why paper 0 v2.1's convexification is")
 print("  load-bearing rather than cosmetic.  E = (1,0,0,0) is in L_corr and")
-print("  in Q_corr but is not a Gram point.")
+print("  in Q_corr but is not a PLANAR/U(1)-Gram point (round repair,")
+print("  LOG #7: it IS a real-unit-vector Gram point in R^3 — e.g.")
+print("  u0 = v0 = e1, v1 = e2, u1 = e3 — and A+ places it in Q_corr;")
+print("  only the planar GENERATING class excludes it).")
 print()
 print("  determinism: fixed lexicographic enumeration everywhere; no")
 print("  randomness, no hashing, no float in any substantive path.")

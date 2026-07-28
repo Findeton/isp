@@ -96,15 +96,24 @@ Q_corr is the whole quantum correlator body.
 By Tsirelson's theorem [T] — cited, not proven here — the quantum
 correlator set is Q = { E_ab = ⟨u_a, v_b⟩ : u_a, v_b unit vectors in a
 real Hilbert space }, of unbounded dimension.  The theorem is that the
-planar (dim ≤ 2) configurations already generate it.  Four exact
-steps, each gated:
+planar (dim ≤ 2) configurations already generate it — a PLANAR
+SUFFICIENCY statement that is itself standard (it is normally quoted
+as part of Tsirelson's theorem; Tsirelson 1987, Landau, Masanes —
+round repair M4, LOG #7: this unit's contribution is the exact
+receipted assembly, not the reduction's novelty).  The proof is a
+HAND PROOF WITH GATED LEMMA INGREDIENTS (round repair m1: steps 1–3's
+conclusions are prose inferences from gated polynomial identities;
+step 4 is prose plus the [CVX] citation).  Four exact steps:
 
 1. For any λ ∈ ℝ⁴ and fixed v₀, v₁,
    Σ_ab λ_ab⟨u_a,v_b⟩ = ⟨u₀, λ₀₀v₀+λ₀₁v₁⟩ + ⟨u₁, λ₁₀v₀+λ₁₁v₁⟩ — an
    identity gated in ℝⁿ with *symbolic* λ.  Lagrange's identity
    ‖u‖²‖r‖² − ⟨u,r⟩² = Σ_{i<j}(u_i r_j − u_j r_i)², gated in ℝⁿ, gives
-   ⟨u,r⟩ ≤ ‖r‖ with maximizer r/‖r‖.  **So the optimal u_a lie in
-   span{v₀,v₁}, of dimension at most 2.**
+   ⟨u,r⟩ ≤ ‖r‖ with maximizer r/‖r‖.  **So SOME optimizer u_a lies
+   in span{v₀,v₁}, of dimension at most 2** (round repair m2: not
+   ALL optimizers — for degenerate λ with r_a = 0 every unit vector
+   is optimal; planar attainment is all the support-function
+   argument needs).
 2. ‖x v₀ + y v₁‖² = x²‖v₀‖² + y²‖v₁‖² + 2xy⟨v₀,v₁⟩, gated in ℝⁿ: on
    unit v's the optimum depends on (v₀,v₁) **only through
    t = ⟨v₀,v₁⟩**.
@@ -119,17 +128,27 @@ steps, each gated:
 Steps 1–3 are gated in ℝⁿ for n = 2, 3, 4, 5, 6 and hold for every n
 by the same expansion.
 
-**A corollary worth engraving:** the parallelogram identity holds in
-ℝⁿ for every n, so CERT-0/1/2/3 prove **Tsirelson's bound in every
-dimension**, not only in the plane.  The 2√2 needs no dimension
-restriction and no Hilbert-space hypothesis beyond real inner
-products.
+**A corollary carried, with its attribution:** the parallelogram
+identity holds in ℝⁿ for every n, so CERT-0/1/2/3 prove Tsirelson's
+bound in every dimension, not only in the plane — as every standard
+treatment's dimension-free proof does (round repair M4: the
+dimension-free character is textbook; the receipted four-certificate
+assembly is what this unit adds).
 
-**Independent corroboration.**  Exhaustive sweeps over exact rational
-unit vectors: 26 vectors in ℝ³ (denominators ≤ 9) and 26 in ℝ⁴
-(denominators ≤ 5), 456 976 four-vector configurations each, all
-correlators exact rationals.  No configuration exceeds 2√2; the maxima
-reached are 68/27 (ℝ³) and 58/25 (ℝ⁴).
+**Independent corroboration (round-repaired, M1).**  The original
+sweep kept the lexicographically first 26 rational unit vectors,
+which clusters them in a positive-inner-product cone and made the ℝ⁴
+gate arithmetically unable to fail (the round's finding, with the
+cone bounds computed).  The repaired sweep takes a DECLARED
+DETERMINISTIC STRIDE across the full enumeration (174 vectors in ℝ³
+at denominators ≤ 9; 360 in ℝ⁴ at ≤ 5; 26 sampled each; the rule
+printed in-receipt): 456,976 four-vector configurations each, all
+correlators exact rationals.  No configuration exceeds 2√2, and the
+sample now genuinely presses the ceiling; the maxima
+reached are 11120/3969 ≈ 2.8017 (ℝ³) and 124/45 ≈ 2.7556 (ℝ⁴),
+against the ceiling 2√2 ≈ 2.8284 (the pre-repair cone-clustered
+maxima were 68/27 ≈ 2.519 and 58/25 = 2.32 — superseded; the
+round's diagnosis stands in LOG #7).
 
 **Scope tag, engraved with the theorem:** this is the CHSH (2,2,2)
 correlator projection, after convexification.  It says nothing about
@@ -400,7 +419,9 @@ novelty of the chain.
 - **[CVX]** Standard convexity: extreme-point attainment;
   max over conv(S) = max over S; equal support functions ⇒ equal
   compact convex sets; convexity and compactness of the quantum
-  correlator set; Carathéodory.  Used at A6, A+.
+  correlator set; Carathéodory.  Used at A6, and in A+'s step 4
+  (prose with citation — the A+ GATE itself is tagged [REV2], round
+  repair M3).
 - **[NS]** Popescu–Rohrlich (1994); Barrett–Linden–Massar–Pironio–
   Popescu–Roberts, PRA 71, 022101 (2005) — the PR box and the 24
   vertices.  Used at A3, A6, B2.

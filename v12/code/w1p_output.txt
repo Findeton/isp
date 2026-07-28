@@ -66,7 +66,7 @@ A1. THE {+-1}-FACTORIZATION CLASS  E_ab = u_a v_b, u,v in {+-1}
         1.7s
 
 A2. THE U(1)-GRAM CLASS  E_ab = Re(z_a conj(w_b)), |z_a| = |w_b| = 1
-    method: THREE EXACT POLYNOMIAL CERTIFICATES + a saturating
+    method: FOUR EXACT POLYNOMIAL CERTIFICATES + a saturating
     instance in Q(zeta_8).  No numerics, no search over angles.
 
     The reduction.  With u = w_0 + w_1 and v = w_0 - w_1,
@@ -214,10 +214,10 @@ A+. THE COMPLETENESS OF Q_corr  [REV2, the amendment's new target]
   [PASS] A+        step 2: ||x v_0 + y v_1||^2 = x^2+y^2+2xy<v_0,v_1> on units the optimum depends on (v_0,v_1) only through t = <v_0,v_1>
   [PASS] A+        the parallelogram identity holds in R^n, all n so CERT-0/1/2/3 prove CHSH <= 2 sqrt 2 in EVERY dimension   <[T]>
   [PASS] A+        step 3: the rational circle parametrization is exact 3240 rational slopes m, t^2+s^2 = 1 exactly and t in [-1,1]; the rational points are dense, and surjectivity onto [-1,1] is continuity
-  [PASS] A+        R^3 rational-unit-vector sweep: none exceeds 2 sqrt 2 26 exact rational unit vectors, 456976 configurations, max CHSH = 68/27 < 2 sqrt 2
-      ... R^3 sweep done      13.9s
-  [PASS] A+        R^4 rational-unit-vector sweep: none exceeds 2 sqrt 2 26 exact rational unit vectors, 456976 configurations, max CHSH = 58/25 < 2 sqrt 2
-      ... R^4 sweep done      26.8s
+  [PASS] A+        R^3 rational-unit-vector sweep: none exceeds 2 sqrt 2 26 exact rational unit vectors, 456976 configurations, max CHSH = 11120/3969 < 2 sqrt 2
+      ... R^3 sweep done      14.2s
+  [PASS] A+        R^4 rational-unit-vector sweep: none exceeds 2 sqrt 2 26 exact rational unit vectors, 456976 configurations, max CHSH = 124/45 < 2 sqrt 2
+      ... R^4 sweep done      27.3s
   [PASS] A+        THE COMPLETENESS OF Q_corr                     steps 1-4 all exact => Q = conv(planar) = Q_corr at this scenario   <[REV2]>
 
     SCOPE TAG, engraved with the theorem: this is the CHSH (2,2,2)
@@ -226,7 +226,7 @@ A+. THE COMPLETENESS OF Q_corr  [REV2, the amendment's new target]
     more settings, parties or outcomes, and it does not claim that
     the un-convexified U(1)-Gram generating class is the quantum set
     — A5 proves that class is not even convex.
-       26.8s
+       27.3s
 
 ==============================================================================
 SECTION B — THE ANTI-CORRELATION EXHIBIT [REV]
@@ -265,9 +265,9 @@ B1. THE SINGLET AMPLITUDE MODEL
     z_a -> lam z_a and w_b -> mu w_b independently — each z_a and each
     w_b occurs once with each exponent sign).
   [PASS] B1        4-cycle holonomy = 1 IDENTICALLY [pi/4 family] 4096 quadruples, 0 failures   <[REV]>
-      ... pi/4 family swept      27.8s
+      ... pi/4 family swept      28.4s
   [PASS] B1        4-cycle holonomy = 1 IDENTICALLY [pi/8 family] 4096 quadruples, 0 failures   <[REV]>
-      ... pi/8 family swept      28.3s
+      ... pi/8 family swept      28.9s
 
 B2. THE PR EDGE-PHASE PATTERN  (gamma_00,gamma_01,gamma_10,gamma_11)
     = (1, 1, 1, -1)
@@ -293,8 +293,8 @@ B3. THE ENGRAVED TABLE
     trivial class and the nontrivial class is superquantum.  This
     is the exhibit, not a theorem about all models.
   [PASS] B3        THE ANTI-CORRELATION TABLE, both rows gated    trivial holonomy <-> 2 sqrt 2; nontrivial holonomy <-> 4   <[REV]>
-  [PASS] B3        a 1-cocycle class is a WITNESS, not an equivalence the caution of [AB] made concrete: the class separates these two models the WRONG way round   <[AB]>
-       28.3s
+  [PASS] B3        a 1-cocycle class is a WITNESS, not an equivalence the caution of [AMB] made concrete: the class separates these two models the WRONG way round   <[AMB]>
+       28.9s
 
 ==============================================================================
 SECTION C — THE DELTA CENSUS  [B1]
@@ -323,8 +323,8 @@ C2. THE Delta^B = 0 CENSUS
       F3: 63 matrices (54 monomial-seeded), 3969 ordered pairs
   [PASS] C2        every F2 member is unitary                     96 matrices
   [PASS] C2        every F3 member is unitary                     63 matrices
-      2x2 census done: 9216 pairs      30.6s
-      3x3 census done: 3969 pairs      33.6s
+      2x2 census done: 9216 pairs      31.3s
+      3x3 census done: 3969 pairs      34.5s
   [PASS] C2        cross-term identity on EVERY census pair [2x2] 9216 pairs, 0 mismatches   <[B1]>
   [PASS] C2        SUFFICIENCY [2x2]: row-mono(U2) or col-mono(U1) => Delta^B = 0 5120 pairs satisfy the condition, 0 of them have Delta^B != 0
   [PASS] C2        NOT NECESSARY [2x2]: Delta^B = 0 without the condition 1024 such pairs (of 4096 unconditioned)
@@ -356,7 +356,7 @@ C2. THE Delta^B = 0 CENSUS
       i.e. F D(m) F is a complex Hadamard matrix for m != 0 and has
       zero entries for m = 0 (where it is the permutation j -> -j).
       The defect is governed by ONE phase, not by supports.
-       35.3s
+       36.2s
 
 C+1. THE THREE-DEFECT SEPARATION  [REV2]
     Three objects are distinguished and NEVER conflated:
@@ -382,7 +382,7 @@ C+1. THE THREE-DEFECT SEPARATION  [REV2]
     not a divisibility measure, not a witness of indivisibility, and
     not the residual of any declared stochastic law unless that law
     is declared to be B(U2).  Nothing in this receipt equates them.
-       35.3s
+       36.3s
 
 C+2. THE COHERENCE LAW  (W2a's seed)  [REV2]
       Delta^B(U3 U2, U1) + Delta^B(U3, U2) B(U1)
@@ -397,10 +397,10 @@ C+2. THE COHERENCE LAW  (W2a's seed)  [REV2]
     caps: gated entrywise on ALL ordered triples from a declared
     subfamily of each census family (deterministic first slice).
   [PASS] C+2       the coherence law entrywise on exact triples [2x2] 14 matrices, 2744 ordered triples, 0 failures   <[REV2]>
-      ... 2x2 triples done      37.9s
+      ... 2x2 triples done      38.9s
   [PASS] C+2       the coherence law entrywise on exact triples [3x3] 9 matrices, 729 ordered triples, 0 failures   <[REV2]>
-      ... 3x3 triples done      41.7s
-       41.7s
+      ... 3x3 triples done      42.8s
+       42.8s
 
 C3. THE RECORD EXAMPLE (reporting-only; feeds W3')
     THE RECORD IS DEFINED INDEPENDENTLY of any defect, per v2.1 T3':
@@ -439,7 +439,7 @@ C3. THE RECORD EXAMPLE (reporting-only; feeds W3')
     says is narrower and exact: reading the record makes the shadow
     of THIS channel compositional with divisor B(U2).  W3' is the
     general theorem.
-       41.7s
+       42.8s
 
 ==============================================================================
 SECTION D — HONESTY GATES
@@ -447,10 +447,10 @@ SECTION D — HONESTY GATES
 D1. ANTECEDENT ATTRIBUTION — every theorem used, with its citation.
 
     [AB]   Abramsky-Brandenburger, NJP 13, 113036 (2011) — the exact global-section formulation of contextuality.
+           used at 0 gate(s) (NAMED ONLY)
+    [AMB]  Abramsky-Mansfield-Barbosa, arXiv 1111.3620 — the cohomological obstruction: a SUFFICIENT WITNESS, not an equivalence (attribution per [REV2]; engraved caution, paper 0 v2.1 sec.3).
            used at 1 gate(s):
              - B3/a 1-cocycle class is a WITNESS, not an equivalence
-    [AMB]  Abramsky-Mansfield-Barbosa, arXiv 1111.3620 — the cohomological obstruction: a SUFFICIENT WITNESS, not an equivalence (attribution per [REV2]; engraved caution, paper 0 v2.1 sec.3).
-           used at 0 gate(s) (NAMED ONLY)
     [B1]   Barandes, arXiv 2302.10778 — the stochastic-quantum correspondence; the identification of the Born-projection cross terms with interference.  Reproduced here, not originated here.
            used at 6 gate(s):
              - C1/Delta^B_def = Delta^B_crossterm  [H . H
@@ -547,7 +547,7 @@ D2. THE SCOPE GATE — printed verbatim, in force over every claim
 
   [PASS] D2        scope gate printed in full                     7 clauses, verbatim
   [PASS] D2        no gate above asserts a property of nature     audited by construction: every gate ranges over declared models
-       41.7s
+       42.8s
 
 ==============================================================================
 SECTION E — THE VERDICT
@@ -596,9 +596,12 @@ SECTION E — THE VERDICT
   ONE FINDING BEYOND THE PIN: the U(1)-Gram GENERATING class is NOT
   CONVEX (A5) — which is why paper 0 v2.1's convexification is
   load-bearing rather than cosmetic.  E = (1,0,0,0) is in L_corr and
-  in Q_corr but is not a Gram point.
+  in Q_corr but is not a PLANAR/U(1)-Gram point (round repair,
+  LOG #7: it IS a real-unit-vector Gram point in R^3 — e.g.
+  u0 = v0 = e1, v1 = e2, u1 = e3 — and A+ places it in Q_corr;
+  only the planar GENERATING class excludes it).
 
   determinism: fixed lexicographic enumeration everywhere; no
   randomness, no hashing, no float in any substantive path.
-  runtime:    41.7s
+  runtime:    42.8s
 ==============================================================================
