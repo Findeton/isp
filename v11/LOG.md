@@ -864,3 +864,27 @@ score beside it).  **U1b IS TERMINAL.  THE DECISIVE UNIT IS U1c AT
 DEPTH 15 — and the round's model says it is not a formality.**
 Meta: positive-headline mortality 8-for-8 across v10-v11;
 arithmetic 0 errors through three independent full rebuilds.
+
+## 2026-07-28 — U1c + U2 PINS FROZEN (v11 LEDGER #22)
+**note-u1c-depth15-two-sided-pin.md** — THE DECISIVE UNIT: the first
+two-sided test of the record law (renewals 3/4/5, depths 9/12/15,
+all 512 lag-≤2 masks).  The U1b round's warnings ENGRAVED as design
+law: bite = (D-1) ∧ (D-2) ∧ FACTOR-WISE (compound-degenerate rows
+excluded); the kernel-uniformity gate at renewal 5 (failure =
+MODEL-BREAK, the deviation outranks the census); the round's 127/108
+prediction is ON RECORD BUT NOT AN ANCHOR — predicted-vs-measured is
+a deliverable, disagreements are findings.  Both nulls (the fair
+null + matched random).  Outcomes N4/N2/N3-AT-DEPTH-15, MODEL-BREAK,
+NO-TWO-SIDED-ROW; lean NONE.
+**note-u2-three-address-weld-pin.md** — the promised re-pin: the
+original "does J locate the bridge?" presupposed a bridge; the
+honest question is whether curvature (J ≠ 1), irreversibility
+(arb-carrying — LD's exact biconditional), and non-lumpability
+(DC2) are ONE ADDRESS, an exact CHAIN with boundary censuses, or
+CROSSING structures.  Full 2×2×2 census over every committed closed
+square (AB4, ABC3, LD's asymmetric arms); the weld-candidate gate
+(does one grammar quantity — arb count, join structure, LD's
+created-version mechanism — predict all three?); the record-grain
+hook named as U2b, conditional on U1c's N4.  Outcomes
+W-ONE-ADDRESS / W-CHAIN / W-CROSS; lean NONE.
+File-disjoint; both dispatched in parallel.
