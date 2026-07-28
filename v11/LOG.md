@@ -145,3 +145,34 @@ pins are frozen before any construction, per house discipline:
   substrate included.  LD-CLOSED / LD-OPEN / LD-BROKEN; lean NONE.
 All four dispatch in parallel (file-disjoint).  The Phase I
 falsifier stands as paper 0 §10 states it, both ways.
+
+## 2026-07-27 — L-1 + L0 DELIVERED, GREEN-UNREVIEWED (v11 LEDGER #5)
+The boundary-lemmas unit lands: note-L1-lorentz-no-go-lemma.md,
+note-L0-scale-no-go-lemma.md, code/L1_L0_text_anchors.py (39/39
+anchors clean, exit 0; negative control corrupts one anchor →
+1/39 FAILED exit 1; adjudicator rerun BYTE-IDENTICAL).
+**L-1:** Lemma 2.3 re-derived (short proof reproduced); the boost
+step (divisible (ℝ,+) into finite Sym(C) ⇒ trivial) is NOT in the
+source and is marked [V11-STEP] — it reaches exactly the source's
+stated conclusion, strengthening nothing.  **L0:**
+[IMPORTED-NO-GO], imported as a PROHIBITION ON v11 CLAIMS ONLY —
+no transfer proof to the generated carrier exists (catalog §2.2(e)
+is [MY READING]); the converse would need Theorem G + gate G1
+re-audited on the generated grammar, NOT claimed; G1-on-generated
+recorded as a live obligation if Gb2 runs (gate L0-G8).
+**FOUR PIN DEVIATIONS, ALL TOWARD THE CORPUS (worker's, correct):
+(1)** the pin's compressed headline κ·σ_A = G·Λ² = const is v8
+LEDGER correction #13 ("WRONG AS AN EQUALITY") — L0 uses the
+corrected two-invariant form (κ·σ_A = 2π and, separately,
+G·Λ² = const); **(2)** the pin's "rank-5 statistical Lorentz =
+existence proof of the weaker target" does NOT transfer — catalog
+§1.6(e): finite-valency crystals cannot be sprinkling-grade
+Lorentz-invariant (BHS); L-1 §4(3) replaces it with the THREE-RUNG
+LADDER: exact excluded (L-1), sprinkling-grade excluded (BHS),
+ORDER-LEVEL the only rung left and UNTESTED — this sharpens U4's
+target; **(3)** D15-sentence discipline is §6.5 not §6.6 (paper
+0's own text); **(4)** paper 0 §11 item 1 lists the G no-go under
+"transfers intact" — overstated; the lemma's
+prohibition-only import is the correct reading.  Paper 0 patch
+deferred to the Phase I adjudication (single edit pass).
+Hostile round dispatched.
