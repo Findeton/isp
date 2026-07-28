@@ -609,3 +609,34 @@ to press — Barandes' quantum criterion survives U1's null intact).
 Meta, carried forward: seven positive headlines died under review
 in v10-v11; zero computed numbers did.  The program pauses here
 for the user's direction on Phase II's opening order.
+
+## 2026-07-28 — **PHASE II OPENED**: U1b + U3 PINS FROZEN, U2 HELD
+## (v11 LEDGER #16)
+The user authorized the recommended opening: U1b and U3 in parallel;
+U2 deliberately held for re-pinning until they land (its pinned form
+presupposed a bridge; the honest U2 relates J-geometry, the LD wall,
+and non-lumpability, and its shape depends on U1b's verdict).
+**note-u1b-renewal-beables-pin.md** — the renewal-grain CLASS SWEEP:
+the three-division-event factorization over the WHOLE kinematically
+admissible class of configuration maps (committed-field lattice; σ
+and σ+ members; fixedness gated; predictive sufficiency FORBIDDEN as
+a filter — screening-off is the phenomenon under measurement); the
+BITE GATE structural (column-constant ⇒ DEGENERATE, no verdict may
+cite it — the delta round's B1 made law); minimal-interval ensemble
+re-anchored + ≥2 unequal-interval patterns, every enumeration's
+exhaustiveness GATED in-receipt (U1-delta m2 discharged); the null
+beside every refusal.  Outcomes N1 (memoryless theorem) / N2
+(map-robust divisibility with bite) / N3 (the first record-grain
+bridge, artifact defense dead by construction) / N4 (the selection
+problem, posed precisely).  Lean NONE.
+**note-u3-unistochasticity-screen-pin.md** — Barandes' actual
+quantum criterion pressed: Arm A the unistochasticity screen on the
+committed matrices (K1 objects; the Ẑ sibling with its 19/14 column
+sum = the flagged threat; DS precondition first, failures priced
+exactly; n=2 classical fact, n=3 the cited exact characterization,
+known-answer controls in-receipt); Arm B the loop-class reproduction
+([V11-CAT §7 rank 4]) on D74's committed carrier; Arm C the v7
+amplitude form as a [B3] Schur-Hadamard gauge on the gauge stratum
+(triviality gated honestly).  Outcomes S-PASS / S-FAIL-DS /
+S-FAIL-UNI / mixed — a failure PRICES enrichment, it does not defeat
+the program.  Lean NONE.  File-disjoint; both dispatched.
