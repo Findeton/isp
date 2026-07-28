@@ -575,7 +575,9 @@ CAP_CLOSED = 6     # the closed-scope (d42b3) family for Arm 0's sibling
 CAP_DC1 = 3        # DC1 parent depth (squares to depth CAP_DC1 + 2)
 LP_MAXVARS = 700   # exact Phase-I simplex: variable cap per triple
 LP_MAXROWS = 400   # exact Phase-I simplex: constraint cap per triple
-LP_MAXPIVOT = 40000
+LP2_MAXVARS = 5000  # the REDUCED system's cap (implied zeros + aggregation)
+LP2_MAXROWS = 1200
+LP_MAXPIVOT = 400000
 PAD_MAX = 100      # [B3] eq. 22 algebraic arm: fixed-configuration-space cap
 
 print(f"  ARM-A  (A,B) transport, exhaustive depth <= {CAP_A}; cuts = "
@@ -596,6 +598,11 @@ print(f"  LP     exact rational Phase-I simplex (Bland), caps: <= "
       f"{LP_MAXVARS} variables, <= {LP_MAXROWS} constraints, <= "
       f"{LP_MAXPIVOT} pivots; every triple exceeding a cap is PRINTED as "
       f"excluded with its size, and its cheap row certificate is still run")
+print(f"  LP2    the REDUCED system — implied zeros plus aggregation of "
+      f"identical Gamma columns and identical target rows, both proved "
+      f"feasibility-preserving in reduce_system() — decides triples the "
+      f"plain LP cap refuses; caps <= {LP2_MAXVARS} variables, <= "
+      f"{LP2_MAXROWS} constraints")
 print(f"  EQ22   the algebraic arm runs on fixed configuration spaces of "
       f"size <= {PAD_MAX} (exact rational inversion); larger triples are "
       f"printed as excluded")
@@ -606,10 +613,20 @@ print("  else.  Exact Phase-I simplex on a 608-variable / 179-row triple "
 print("  ~90 s and ~3,200 pivots on this machine; the caps admit that size "
       "and")
 print("  refuse the next one up.  Every excluded triple still gets the row")
-print("  certificate, which is the instrument that PROVES indivisibility, "
-      "so a")
-print("  cap can hide a divisibility verdict but cannot hide an "
-      "indivisible one.")
+print("  certificate.  WHAT A CAP CAN HIDE, STATED CORRECTLY: the row")
+print("  certificate is SUFFICIENT for indivisibility and NOT NECESSARY — "
+      "it")
+print("  asks whether some target admits no non-negative row at all, and a")
+print("  triple can be indivisible with every row individually solvable,")
+print("  the obstruction living only in the column-stochasticity that "
+      "couples")
+print("  them.  A CAP CAN THEREFORE HIDE AN INDIVISIBLE TRIPLE EXACTLY AS")
+print("  EASILY AS A DIVISIBLE ONE, and this receipt exhibits one: "
+      "(1,4,5)")
+print("  under alpha_sigma passes the row certificate with no obstruction "
+      "and")
+print("  is INDIVISIBLE on the full system.  That is why the LP2 reduction")
+print("  below exists.")
 print("  EXCLUDED BY CAP, STATED IN ADVANCE: a renewal-to-renewal triple")
 print("  with a non-degenerate FIRST cut needs THREE renewals, i.e. depth")
 print("  >= 9 in the two-actor transport family (a pair-arb needs two")
@@ -1155,7 +1172,7 @@ def sigmaT(h, actors, enriched, view_of, cache_store):
     winner W.  enriched=True adds each token's payload record (value,
     authors, initiator), which is the physical configuration the record
     carries; both are run everywhere below."""
-    key = (h, enriched)
+    key = (h, tuple(actors), enriched)
     if key in cache_store:
         return cache_store[key]
     v = view_of(list(h))
@@ -1212,6 +1229,27 @@ ROOT_T = sigT(())
 ROOT_C = sigC(())
 report("the root state sigma([]) at both scopes", f"transport {ROOT_T} | "
        f"closed {ROOT_C} | equal = {ROOT_T == ROOT_C}")
+
+# --- the state is a function of (history, ACTOR POOL, map), and the cache
+#     key must carry all three; gated, because a key that drops the pool
+#     silently serves two-actor state to the three-actor arm.
+_ab_root, _abc_root = sigT((), AB), sigT((), ABC)
+_ab_root2 = sigT((), AB)
+_shared = [tuple(h) for h in enumerate_line(b1_cand, AB, 2)[0]]
+_pool_diff = sum(1 for k in _shared if sigT(k, AB) != sigT(k, ABC))
+check("SIG.1 THE PORTED STATE IS A FUNCTION OF (history, ACTOR POOL, map) "
+      "AND THE MEMO KEY CARRIES ALL THREE.  The same event word read in the "
+      "(A,B) pool and in the (A,B,C) pool has DIFFERENT ported states — the "
+      "token records name their holders, and C holds nothing — so a memo "
+      "keyed on (history, map) alone would serve two-actor state to the "
+      "three-actor arm on most shared words.  The key is (history, actor "
+      "tuple, map); the two readings are checked to differ at the ROOT "
+      "itself and on the shared words counted below, and to be stable "
+      "under re-reading",
+      _ab_root != _abc_root and _ab_root == _ab_root2 and _pool_diff > 0,
+      f"root (A,B) = {_ab_root}; root (A,B,C) = {_abc_root}; shared words "
+      f"to depth 2 = {len(_shared)}, pool-distinguished {_pool_diff}/"
+      f"{len(_shared)}; re-read stable = {_ab_root == _ab_root2}")
 
 # PORT-1: the R4 row at CLOSED scope — the table's own scope
 _r4c = _r4c_root = 0
@@ -1383,10 +1421,23 @@ report("raw menu masses (the object the normalisation repairs)",
 
 
 # ---------- exact rational Phase-I simplex, with a Farkas certificate ----
-def phase1(M, b, maxpivot=LP_MAXPIVOT):
-    """Exact: does x >= 0 with M x = b exist?  Bland's rule, no floats.
-    Returns (feasible, pivots, w) where on infeasibility w is the Farkas
-    vector with w^T M <= 0 and w^T b > 0 (verified by the caller)."""
+def phase1(M, b, maxpivot=LP_MAXPIVOT, rule="bland", stall=60):
+    """Exact: does x >= 0 with M x = b exist?  No floats anywhere.
+    Returns (feasible, pivots, cert) where cert is the FEASIBLE POINT x
+    when one exists and the Farkas vector w (w^T M <= 0, w^T b > 0,
+    verified by the caller) when one does not.
+
+    rule='bland'   — Bland's entering rule throughout; the slow, always
+                     terminating instrument, used on every system inside
+                     the plain LP cap.
+    rule='dantzig' — most-negative reduced cost, with Bland's rule forced
+                     after `stall` consecutive degenerate pivots, which is
+                     what makes termination finite.  Used only on the
+                     reduced systems of SEC 7's raised cap.  The rule
+                     changes the pivot PATH and nothing else: the verdict,
+                     the feasible point and the Farkas vector are all
+                     certified after the fact, and gate LP.1 runs both
+                     rules on the same systems and compares verdicts."""
     m = len(M)
     n = len(M[0]) if m else 0
     rows = []
@@ -1407,12 +1458,20 @@ def phase1(M, b, maxpivot=LP_MAXPIVOT):
     for i in range(m):
         cost[n + i] = Fr(0)
     piv = 0
+    degen = 0
+    obj = -cost[-1]
     while True:
         e = -1
-        for j in range(n + m):
-            if cost[j] < 0:
-                e = j
-                break
+        if rule == "bland" or degen >= stall:
+            for j in range(n + m):
+                if cost[j] < 0:
+                    e = j
+                    break
+        else:
+            bestc = Fr(0)
+            for j in range(n + m):
+                if cost[j] < bestc:
+                    bestc, e = cost[j], j
         if e < 0:
             break
         l = -1
@@ -1436,11 +1495,17 @@ def phase1(M, b, maxpivot=LP_MAXPIVOT):
             cost = [a - fq * bb for a, bb in zip(cost, rows[l])]
         basis[l] = e
         piv += 1
+        nobj = -cost[-1]
+        degen = degen + 1 if nobj == obj else 0
+        obj = nobj
         if piv > maxpivot:
             raise RuntimeError("pivot cap exceeded")
-    obj = -cost[-1]
     if obj == 0:
-        return True, piv, None
+        x = [Fr(0)] * n
+        for i in range(m):
+            if basis[i] < n:
+                x[basis[i]] = rows[i][-1]
+        return True, piv, x
     w = [Fr(1) - cost[n + i] for i in range(m)]
     for i in range(m):
         if b[i] < 0:
@@ -1458,6 +1523,92 @@ def farkas_ok(M, b, w):
         if sum(w[i] * M[i][j] for i in range(len(M))) > 0:
             return False
     return sum(w[i] * b[i] for i in range(len(M))) > 0
+
+
+def reduce_system(A, B, Is, Js, Ks):
+    """The interpolant system {X >= 0, X.Gamma(c'<-c) = Gamma(c''<-c),
+    1^T X = 1^T} rewritten by two reductions, each FEASIBILITY-PRESERVING
+    IN BOTH DIRECTIONS and each proved here rather than assumed:
+
+      (R1) IMPLIED ZEROS.  If some i has A[j,i] > 0 while B[k,i] = 0, the
+           equation sum_j' X[k,j'] A[j',i] = B[k,i] = 0 is a sum of
+           non-negative terms, so X[k,j] = 0 in EVERY solution.  Those
+           variables are deleted; each equation (k,i) with B[k,i] = 0 then
+           reads 0 = 0 on the surviving variables and is deleted too.
+      (R2) AGGREGATION.  If j1 and j2 carry the SAME column
+           a_j = (A[j,i])_i, replacing X's two columns by their average
+           leaves every row sum and every column sum unchanged, so a
+           solution exists iff a solution constant on {j1, j2} exists.
+           The same averaging works for two targets k1, k2 with the same
+           row b_k = (B[k,i])_i.  One variable per (b-group, a-group)
+           then suffices, carrying the group sizes as coefficients.
+
+    Feasibility of the reduced system LIFTS to X[k,j] = x[grp(k), grp(j)];
+    infeasibility of the reduced system therefore proves indivisibility.
+    Returns (M, b, var, GL, HL, Gsz, Hsz, err)."""
+    aj = {j: tuple(A.get((j, i), Fr(0)) for i in Is) for j in Js}
+    bk = {k: tuple(B.get((k, i), Fr(0)) for i in Is) for k in Ks}
+    Gs, Hs = defaultdict(list), defaultdict(list)
+    for j in Js:
+        Gs[aj[j]].append(j)
+    for k in Ks:
+        Hs[bk[k]].append(k)
+    key = lambda v: sk(tuple(str(x) for x in v))
+    GL, HL = sorted(Gs, key=key), sorted(Hs, key=key)
+    sG = {g: frozenset(t for t, v in enumerate(g) if v) for g in GL}
+    sH = {h: frozenset(t for t, v in enumerate(h) if v) for h in HL}
+    var = {}
+    for h in HL:
+        for g in GL:
+            if sG[g] <= sH[h]:
+                var[(h, g)] = len(var)
+    n = len(var)
+    M, bb = [], []
+    for g in GL:
+        row = [Fr(0)] * n
+        hit = False
+        for h in HL:
+            if (h, g) in var:
+                row[var[(h, g)]] = Fr(len(Hs[h]))
+                hit = True
+        if not hit:
+            return None, None, None, GL, HL, Gs, Hs, "NO-TARGET"
+        M.append(row)
+        bb.append(Fr(1))
+    for h in HL:
+        for t in sorted(sH[h]):
+            row = [Fr(0)] * n
+            for g in GL:
+                if (h, g) in var and g[t]:
+                    row[var[(h, g)]] = Fr(len(Gs[g])) * g[t]
+            M.append(row)
+            bb.append(h[t])
+    return M, bb, var, GL, HL, Gs, Hs, None
+
+
+def lift_and_verify(x, var, GL, HL, Gs, Hs, A, B, Is, Js, Ks):
+    """Lift a reduced solution to the full X and verify it from scratch:
+    every entry >= 0, every COLUMN sum exactly 1, and X.Gamma(c'<-c)
+    exactly Gamma(c''<-c) entry by entry.  Returns (X, colsums_ok,
+    rows_ok, nonneg_ok)."""
+    grpJ = {j: g for g in GL for j in Gs[g]}
+    grpK = {k: h for h in HL for k in Hs[h]}
+    X = {}
+    for k in Ks:
+        for j in Js:
+            v = x[var[(grpK[k], grpJ[j])]] if (grpK[k], grpJ[j]) in var \
+                else Fr(0)
+            if v:
+                X[(k, j)] = v
+    nonneg = all(v >= 0 for v in X.values())
+    cols = [sum(X.get((k, j), Fr(0)) for k in Ks) for j in Js]
+    rowsok = True
+    for k in Ks:
+        for i in Is:
+            s = sum(X.get((k, j), Fr(0)) * A.get((j, i), Fr(0)) for j in Js)
+            if s != B.get((k, i), Fr(0)):
+                rowsok = False
+    return X, all(c == Fr(1) for c in cols), rowsok, nonneg
 
 
 # ---------- the Gamma machinery -----------------------------------------
@@ -1503,11 +1654,14 @@ def decide_triple(J, S, i0, i1, i2, label, lp_stats):
         out["why"] = "first cut carries a single configuration"
         return out
     # (1) does the process's own conditional already do it? (Chapman-Kolmogorov)
-    comp = defaultdict(Fr)
+    byj = defaultdict(list)
     for (j, i), v in A.items():
-        for kk in Ks:
-            w = N.get((kk, j))
-            if w:
+        if v:
+            byj[j].append((i, v))
+    comp = defaultdict(Fr)
+    for (kk, j), w in N.items():
+        if w:
+            for i, v in byj.get(j, ()):
                 comp[(kk, i)] += w * v
     ck = (all(comp.get(k, Fr(0)) == v for k, v in B.items())
           and all(B.get(k, Fr(0)) == v for k, v in comp.items()))
@@ -1543,12 +1697,14 @@ def decide_triple(J, S, i0, i1, i2, label, lp_stats):
             return out
     # (3) the row certificate: row k of X must solve A^T y = B[k,:], y >= 0
     bad = []
+    certs = []
     for k in Ks:
         M = [[A.get((j, i), Fr(0)) for j in Js] for i in Is]
         bb = [B.get((k, i), Fr(0)) for i in Is]
         feas, _p, w = phase1(M, bb)
         if feas is False and farkas_ok(M, bb, w):
             bad.append(k)
+            certs.append((k, w, sum(w[i] * bb[i] for i in range(len(Is)))))
     out["rowfail"] = len(bad)
     if bad:
         out["verdict"] = "INDIVISIBLE"
@@ -1556,19 +1712,15 @@ def decide_triple(J, S, i0, i1, i2, label, lp_stats):
         out["why"] = (f"{len(bad)} of {len(Ks)} target configurations admit "
                       f"NO non-negative row at all")
         out["neg"] = None
+        out["rowcerts"] = certs
+        out["rowcert_basis"] = list(Is)
         return out
     # (4) the full feasibility LP
     nvar = len(Ks) * len(Js)
     nrow = len(Js) + len(Ks) * len(Is)
     out["nvar"], out["nrow"] = nvar, nrow
     if nvar > LP_MAXVARS or nrow > LP_MAXROWS:
-        out["verdict"] = "EXCLUDED-BY-CAP"
-        out["instrument"] = "row-certificate only"
-        out["why"] = (f"LP size {nvar} vars x {nrow} rows exceeds the "
-                      f"declared cap ({LP_MAXVARS} x {LP_MAXROWS}); the row "
-                      f"certificate ran and returned no obstruction, which "
-                      f"is NOT a proof of divisibility")
-        return out
+        return decide_reduced(A, B, Is, Js, Ks, out, lp_stats)
     idx = {}
     for k in Ks:
         for j in Js:
@@ -1597,12 +1749,75 @@ def decide_triple(J, S, i0, i1, i2, label, lp_stats):
         out["instrument"] = "exact LP feasibility"
         out["why"] = ("a stochastic intermediate EXISTS but is NOT the "
                       "process's own conditional (CK fails)")
+        Xd = {}
+        for (k, j), t in idx.items():
+            if w[t]:
+                Xd[(k, j)] = w[t]
+        cols = [sum(Xd.get((k, j), Fr(0)) for k in Ks) for j in Js]
+        rws = all(sum(Xd.get((k, j), Fr(0)) * A.get((j, i), Fr(0))
+                      for j in Js) == B.get((k, i), Fr(0))
+                  for k in Ks for i in Is)
+        out["interp"] = (Xd, all(c == Fr(1) for c in cols), rws,
+                         all(v >= 0 for v in Xd.values()))
     else:
         ok = farkas_ok(M, bb, w)
         out["verdict"] = "INDIVISIBLE"
         out["instrument"] = ("exact LP infeasibility, Farkas certificate "
                              + ("VERIFIED" if ok else "NOT VERIFIED"))
         out["farkas"] = ok
+        out["lpcert"] = (w, sum(w[i] * bb[i] for i in range(len(M))),
+                         len(M[0]))
+        out["why"] = ("no column-stochastic X satisfies X Gamma(c'<-c) = "
+                      "Gamma(c''<-c)")
+    out["neg"] = None
+    return out
+
+
+def decide_reduced(A, B, Is, Js, Ks, out, lp_stats):
+    """The raised cap: decide the triple on the REDUCED system built by
+    reduce_system(), whose feasibility is equivalent to the full one."""
+    M, bb, var, GL, HL, Gs, Hs, err = reduce_system(A, B, Is, Js, Ks)
+    if err == "NO-TARGET":
+        out["verdict"] = "INDIVISIBLE"
+        out["instrument"] = "implied-zero cover (R1)"
+        out["why"] = ("some configuration at the middle cut has NO target "
+                      "it may be sent to at all: its column sum cannot be 1")
+        out["neg"] = None
+        return out
+    out["rvar"], out["rrow"] = len(var), len(M)
+    out["rgrp"] = (len(GL), len(HL))
+    if len(var) > LP2_MAXVARS or len(M) > LP2_MAXROWS:
+        out["verdict"] = "EXCLUDED-BY-CAP"
+        out["instrument"] = "row-certificate only"
+        out["why"] = (f"full LP {out['nvar']}v x {out['nrow']}r and reduced "
+                      f"LP {len(var)}v x {len(M)}r both exceed the declared "
+                      f"caps; the row certificate ran and returned no "
+                      f"obstruction, which is NOT a proof of divisibility "
+                      f"in either direction")
+        return out
+    t0 = time.time()
+    feas, piv, cert = phase1(M, bb, rule="dantzig")
+    lp_stats.append((str(out["triple"]) + "/reduced", len(var), len(M), piv,
+                     time.time() - t0))
+    if feas:
+        X, cok, rok, nok = lift_and_verify(cert, var, GL, HL, Gs, Hs,
+                                           A, B, Is, Js, Ks)
+        out["verdict"] = "DIVISIBLE"
+        out["instrument"] = ("exact LP feasibility on the reduced system, "
+                             "interpolant lifted and re-verified")
+        out["why"] = ("a column-stochastic interpolant EXISTS (exhibited "
+                      "and checked entry by entry) but is NOT the "
+                      "process's own conditional (CK fails)")
+        out["interp"] = (X, cok, rok, nok)
+    else:
+        ok = farkas_ok(M, bb, cert)
+        out["verdict"] = "INDIVISIBLE"
+        out["instrument"] = ("exact LP infeasibility on the reduced system, "
+                             "Farkas certificate "
+                             + ("VERIFIED" if ok else "NOT VERIFIED"))
+        out["farkas"] = ok
+        out["lpcert"] = (cert, sum(cert[i] * bb[i] for i in range(len(M))),
+                         len(var))
         out["why"] = ("no column-stochastic X satisfies X Gamma(c'<-c) = "
                       "Gamma(c''<-c)")
     out["neg"] = None
@@ -1636,7 +1851,46 @@ def invert_exact(M):
     return [row[n:] for row in A], det
 
 
-def run_census(name, J, cuts, note=""):
+def fr_digest(vec, labels=None, cap=24):
+    """A hand-checkable exact digest of a certificate vector: the non-zero
+    entries as Fractions, in index order, with the count and the exact sum
+    so a reader can re-add them."""
+    nz = [(i, v) for i, v in enumerate(vec) if v != 0]
+    body = ", ".join(f"{i}:{v}" for i, v in nz[:cap])
+    tail = f" ... (+{len(nz) - cap} more)" if len(nz) > cap else ""
+    return (f"{len(nz)} non-zero of {len(vec)}; sum = "
+            f"{sum(v for _i, v in nz)}; entries [{body}{tail}]")
+
+
+def print_certificate(r):
+    """Every INDIVISIBLE verdict prints its certificate in exact rationals,
+    so a reader can check it by hand rather than take the word 'verified'."""
+    if r["verdict"] != "INDIVISIBLE":
+        return
+    if "lpcert" in r:
+        w, wb, ncol = r["lpcert"]
+        print(f"          FARKAS w (w^T M <= 0 on all {ncol} columns, "
+              f"w^T b = {wb} > 0): {fr_digest(w)}")
+    if "rowcerts" in r:
+        k0, w0, wb0 = r["rowcerts"][0]
+        print(f"          FARKAS, row certificate: {len(r['rowcerts'])} "
+              f"obstructed targets; exemplar w over the {len(w0)} "
+              f"first-cut configurations, w^T b = {wb0} > 0: "
+              f"{fr_digest(w0)}")
+        print(f"          all obstructed w^T b: "
+              f"{[str(c[2]) for c in r['rowcerts']]}")
+
+
+def print_interpolant(r):
+    if r["verdict"] != "DIVISIBLE" or "interp" not in r:
+        return
+    X, cok, rok, nok = r["interp"]
+    print(f"          INTERPOLANT X exhibited: {len(X)} non-zero entries; "
+          f"column sums all exactly 1 = {cok}; X.Gamma(c'<-c) = "
+          f"Gamma(c''<-c) entry by entry = {rok}; every entry >= 0 = {nok}")
+
+
+def run_census(name, J, cuts, note="", divcuts=()):
     S = supports(J, len(cuts))
     print()
     print(f"  [{name}]  cuts {list(cuts)}; configuration support sizes "
@@ -1649,6 +1903,8 @@ def run_census(name, J, cuts, note=""):
             for i2 in range(i1 + 1, len(cuts)):
                 lab = (cuts[i0], cuts[i1], cuts[i2])
                 r = decide_triple(J, S, i0, i1, i2, lab, lp_stats)
+                r["divcut"] = cuts[i0] in divcuts
+                r["arm"] = name
                 rows.append(r)
                 extra = ""
                 if r.get("neg"):
@@ -1656,10 +1912,17 @@ def run_census(name, J, cuts, note=""):
                              f"values {r.get('negvals')}")
                 if r.get("nvar"):
                     extra += f"; LP {r['nvar']}v x {r['nrow']}r"
+                if r.get("rvar"):
+                    extra += (f" -> reduced {r['rvar']}v x {r['rrow']}r "
+                              f"(groups {r['rgrp'][0]}x{r['rgrp'][1]})")
                 print(f"      {lab}  {r['verdict']:16s} "
                       f"[{r.get('instrument', 'CK')}]  "
                       f"sizes {r['nI']}x{r['nJ']}x{r['nK']}  {r['why']}"
-                      + extra)
+                      + extra
+                      + ("  [first cut IS a division event]"
+                         if r["divcut"] else ""))
+                print_certificate(r)
+                print_interpolant(r)
     ver = Counter(r["verdict"] for r in rows)
     print(f"      CENSUS {name}: " + ", ".join(f"{k} {v}" for k, v in
                                                sorted(ver.items())))
@@ -1688,7 +1951,7 @@ for _nm, _enr in (("alpha_sigma  (D62-faithful, winner-invisible)", False),
                   ("alpha_sigma+ (payload-enriched)", True)):
     J = joint_paths(BD_A, P_A, lambda k, e=_enr: sigT(k, AB, e), CUTS_A,
                     CAP_A)
-    rows, S = run_census("ARM-A / " + _nm, J, CUTS_A)
+    rows, S = run_census("ARM-A / " + _nm, J, CUTS_A, divcuts=(0,))
     ARM_A_RESULTS[_nm] = (rows, S, J)
 report("ARM-A time", f"{time.time() - _t:.0f}s")
 
@@ -1739,22 +2002,34 @@ for _nm, _enr in (("alpha_sigma  (D62-faithful, winner-invisible)", False),
     J = joint_paths(BD_B, P_B, lambda k, e=_enr: sigT(k, AB, e), CUTS_B,
                     CAP_B)
     rows, S = run_census("ARM-B / " + _nm, J, CUTS_B,
-                         note="cut 3 IS a division event")
+                         note="cut 3 IS a division event", divcuts=(3,))
     ARM_B_RESULTS[_nm] = (rows, S, J)
 print()
-print("      READ THIS BEFORE READING ARM-B's VERDICT.  ARM-B's window "
-      "reaches")
-print("      only three steps past the division event, i.e. relative "
-      "depths 0..3.")
-print("      ARM-A's indivisible triples all begin at relative depth >= 2, "
-      "so the")
-print("      SAME triples post-renewal would need depths 5,6,7 — beyond "
-      "this cap.")
-print("      ARM-B's divisibility is therefore a WINDOW fact and NOT "
-      "evidence that")
-print("      renewal resets divisibility.  Stated here so no reader can "
-      "take it")
-print("      for the stronger claim.")
+print("      HOW FAR ARM-B REACHES, AND THE MAP-DEPENDENCE IT EXPOSES.  "
+      "ARM-B's")
+print("      window runs three steps past the division event, i.e. "
+      "relative")
+print("      depths 0..3, so ARM-A's triples that begin at relative depth "
+      ">= 2")
+print("      ((2,3,4) and later) would need depths 5,6,7 and are beyond "
+      "this")
+print("      cap.  ARM-A's other two indivisible triples begin at relative")
+print("      depth 1 — (1,2,3) and (1,3,4) — and their post-renewal "
+      "analogue")
+print("      IS inside the window: it is ARM-B's (4,5,6).  It is "
+      "DIVISIBLE by")
+print("      exact Chapman-Kolmogorov under the D62-faithful map and "
+      "INDIVISIBLE")
+print("      under the payload-enriched one.  So the one comparison this "
+      "arm")
+print("      can actually make points in the ARTEFACT direction for the "
+      "coarse")
+print("      map and against it for the fine one: the verdict at a "
+      "post-renewal")
+print("      window is a property of the CONFIGURATION MAP, not of the "
+      "process")
+print("      alone.  Both readings are printed above and neither is "
+      "preferred.")
 report("ARM-B time", f"{time.time() - _t:.0f}s")
 
 # ---------------- ARM-C: renewal-to-renewal -----------------------------
@@ -1796,18 +2071,138 @@ check("C1 THE RENEWAL STEP IS CONFIGURATION-INDEPENDENT (measured, at the "
       f"{len(_r1cfg)} distinct renewal-1 configurations, "
       f"{len(set(_cols))} distinct renewal-step columns "
       f"(1 == configuration-independent); rank-one = {_homog}")
-check("C2 THE RENEWAL-TO-RENEWAL TRIPLE (0,1,2) IS STRUCTURALLY VACUOUS AT "
-      "EVERY REACHABLE CAP, and this is reported rather than dressed up: "
-      "renewal cut 0 is the root, a SINGLE configuration, so by the "
-      "preamble's degeneracy clause a stochastic interpolant always "
-      "exists.  A non-degenerate renewal triple needs THREE renewals, i.e. "
-      "depth >= 9 in this grammar, which is excluded by the declared cap.  "
-      "The renewal-grain interpolant test is therefore NOT RUN, not passed",
+check("C2 THE RENEWAL-TO-RENEWAL TRIPLE (0,1,2) IS STRUCTURALLY VACUOUS "
+      "under the winner-invisible map at every reachable cap, and this is "
+      "reported rather than dressed up: renewal cut 0 is the root, a "
+      "SINGLE configuration, so by the preamble's degeneracy clause a "
+      "stochastic interpolant always exists.  A NON-DEGENERATE renewal "
+      "triple needs THREE renewals, i.e. depth >= 9 in this grammar; "
+      "ARM-C2 below runs exactly that",
       True,
       f"renewal cut 0 configurations = 1; the first non-degenerate renewal "
-      f"triple sits at depth >= 9 (>= 3 pair-arbs x 3 events), excluded by "
-      f"cap {CAP_B}")
+      f"triple sits at depth >= 9 (>= 3 pair-arbs x 3 events), beyond cap "
+      f"{CAP_B} — ARM-C2 reaches it by conditioning instead of enumerating")
 report("ARM-C time", f"{time.time() - _t:.0f}s")
+
+# ------- ARM-C2: THE PINNED NON-DEGENERATE RENEWAL-TO-RENEWAL TRIPLE ----
+_t = time.time()
+print()
+print("  ARM-C2 — THE PINNED TEST, RUN.  The cut triple is (renewal 1, "
+      "renewal 2,")
+print("  renewal 3): three DIVISION EVENTS, the grain paper 0 sec.4 says "
+      "the law")
+print("  lives at, with a FIRST CUT THAT IS NOT THE ROOT.  Depth 9 is not")
+print("  enumerated — the two-actor transport family has ~10^8 histories "
+      "there.")
+print("  It is reached by CONDITIONING instead, and the conditioning is "
+      "what")
+print("  makes it exact rather than sampled:")
+print("    (i)  at horizon D the relative-horizon leaf measure telescopes "
+      "to")
+print("         P(leaf) = prod_t q_t / G(root, D) — G(leaf,0) = 1 — so the "
+      "law")
+print("         CONDITIONED on any set of depth-D leaves needs only those")
+print("         leaves' raw products; the normaliser cancels.  No sampling, "
+      "no")
+print("         truncation, exact rationals.")
+print("   (ii)  a pair-arbitration needs two proposals in its ckey; at a")
+print("         renewal the ported state is the ROOT, which carries NO "
+      "live")
+print("         operations (gated below), so a renewal three events after a")
+print("         renewal forces the intervening two events to be proposals.")
+print("         The depth-9 leaves carrying three renewals at 3, 6, 9 are")
+print("         therefore enumerable directly and EXHAUSTIVELY.")
+print("  DECLARED, and it is the arm's boundary: this is the "
+      "MINIMAL-INTERVAL")
+print("  sub-ensemble — conditioning on renewal 3 by depth 9 forces all "
+      "three")
+print("  renewal intervals to their shortest length.  It is the same "
+      "future-")
+print("  conditioning ARM-C declares, one renewal further on.")
+_live_at_root = [rec[2] for rec in ROOT_T]
+check("C2a THE ROOT CARRIES NO LIVE OPERATIONS, which is what licenses the "
+      "enumeration above: every ported token record at the root state has "
+      "an EMPTY live-triple list, so no proposal survives a renewal and a "
+      "pair-arb three events later must be fed by two fresh proposals",
+      all(len(x) == 0 for x in _live_at_root),
+      f"root state {ROOT_T}; live-triple lists {_live_at_root}")
+
+
+def _ppr(base, w0):
+    """Every continuation of `base` that ends in a pair-arbitration exactly
+    three events later: proposal, proposal, pair-arb (C2a licenses the
+    restriction).  Exact weights, carried multiplicatively."""
+    out = []
+    for e1, q1 in b1_cand(list(base), AB):
+        if e1[0] != "p":
+            continue
+        h1 = base + (e1,)
+        for e2, q2 in b1_cand(list(h1), AB):
+            if e2[0] != "p":
+                continue
+            h2 = h1 + (e2,)
+            for e3, q3 in b1_cand(list(h2), AB):
+                if is_R4(e3):
+                    out.append((h2 + (e3,), w0 * q1 * q2 * q3))
+    return out
+
+
+_R2H = []
+for _b in BASES:
+    _R2H += _ppr(_b, MU_B[_b])
+_R3H = []
+for _h6, _w in _R2H:
+    _R3H += _ppr(_h6, _w)
+_r3tot = sum(w for _h, w in _R3H)
+check("C2b THE MINIMAL-INTERVAL RENEWAL-3 ENSEMBLE IS BUILT AND CLOSED: "
+      "every depth-6 history in it ends in a pair-arbitration whose ported "
+      "state is exactly the root, and every depth-9 history in it ends in a "
+      "third pair-arbitration",
+      len(_R3H) > 0
+      and all(sigT(h) == ROOT_T and is_R4(h[-1]) for h, _w in _R2H)
+      and all(is_R4(h[-1]) for h, _w in _R3H),
+      f"{len(BASES)} renewal-1 bases -> {len(_R2H)} renewal-2 histories "
+      f"(depth 6) -> {len(_R3H)} renewal-3 histories (depth 9); raw mass "
+      f"{_r3tot}")
+ARM_C2 = {}
+for _nm, _enr in (("alpha_sigma  (D62-faithful, winner-invisible)", False),
+                  ("alpha_sigma+ (payload-enriched)", True)):
+    _JC = defaultdict(Fr)
+    for _h, _w in _R3H:
+        _JC[(sigT(_h[:3], AB, _enr), sigT(_h[:6], AB, _enr),
+             sigT(_h, AB, _enr))] += _w / _r3tot
+    _rows, _S = run_census("ARM-C2 / " + _nm, dict(_JC), (1, 2, 3),
+                           note="cuts are RENEWAL INDICES 1,2,3 — all three "
+                                "are division events", divcuts=(1, 2, 3))
+    ARM_C2[_nm] = (_rows, _S, dict(_JC))
+_c2rows = ARM_C2["alpha_sigma+ (payload-enriched)"][0]
+_c2S = ARM_C2["alpha_sigma+ (payload-enriched)"][1]
+_c2v = _c2rows[0]["verdict"]
+check("C2c THE PINNED QUESTION IS DECIDED, AND IT DIVIDES.  The "
+      "non-degenerate renewal-to-renewal triple — first cut a division "
+      "event carrying MORE THAN ONE configuration, which is what makes it "
+      "non-degenerate, and the very computation the cap blocked — admits a "
+      "stochastic interpolant.  At renewal grain, on the minimal-interval "
+      "sub-ensemble, the record law DIVIDES; the payload-enriched map is "
+      "the one that makes the test non-vacuous and it is the one that "
+      "divides",
+      _c2v == "DIVISIBLE" and len(_c2S[0]) > 1,
+      f"renewal-grain supports {[len(_c2S[c]) for c in range(3)]}; verdict "
+      f"{_c2v} by {_c2rows[0].get('instrument', 'Chapman-Kolmogorov')}; "
+      f"winner-invisible reading "
+      f"{ARM_C2['alpha_sigma  (D62-faithful, winner-invisible)'][0][0]['verdict']}")
+_c2A = gamma_of(ARM_C2["alpha_sigma+ (payload-enriched)"][2], 1, 0)
+_c2B = gamma_of(ARM_C2["alpha_sigma+ (payload-enriched)"][2], 2, 0)
+_c2cols = len({tuple(str(_c2A.get((j, i), Fr(0))) for j in _c2S[1])
+               for i in _c2S[0]})
+_c2cols2 = len({tuple(str(_c2B.get((k, i), Fr(0))) for k in _c2S[2])
+                for i in _c2S[0]})
+report("ARM-C2 renewal transfers",
+       f"Gamma(r2<-r1) distinct columns {_c2cols}; Gamma(r3<-r1) distinct "
+       f"columns {_c2cols2} (1 == the renewal chain forgets its "
+       f"configuration in one step, so R^2 = R and every renewal triple "
+       f"factors through R)")
+report("ARM-C2 time", f"{time.time() - _t:.0f}s")
 
 # ---------------- ARM-D: the three-actor pool control -------------------
 _t = time.time()
@@ -1827,9 +2222,187 @@ check("G3 ARM-D is a probability law: kernel row sums and cut marginals "
 CUTS_D = tuple(range(CAP_D + 1))
 ARM_D_RESULTS = {}
 J = joint_paths(BD_D, P_D, lambda k: sigT(k, ABC, False), CUTS_D, CAP_D)
-rows, S = run_census("ARM-D / alpha_sigma (D62-faithful)", J, CUTS_D)
+rows, S = run_census("ARM-D / alpha_sigma (D62-faithful)", J, CUTS_D,
+                     divcuts=(0,))
 ARM_D_RESULTS["alpha_sigma"] = (rows, S, J)
 report("ARM-D time", f"{time.time() - _t:.0f}s")
+
+# ---------------- THE COARSE-GRAINING CONTROL BATTERY (the null) --------
+_t = time.time()
+print()
+print("  THE NULL.  Every verdict above is a verdict about a COARSE-"
+      "GRAINING of a")
+print("  divisible click law, and the question a census cannot answer "
+      "about")
+print("  itself is how much of it is the RECORD and how much is coarse-"
+      "graining")
+print("  as such.  The battery below answers it: the same family, the same")
+print("  horizon measure, the same cuts, the same instrument, four "
+      "control maps")
+print("  with the record content removed and the granularity kept.")
+print("    (i)   FULL PREFIX — the finest map, alpha(h) = h.  The law is a")
+print("          chain rule on prefixes, so Chapman-Kolmogorov must hold "
+      "and")
+print("          every triple must divide.  This is the pipeline's own "
+      "sanity")
+print("          check: if it fails, nothing else in this receipt means "
+      "anything.")
+print("    (ii)  RANDOM PARTITION — the prefixes at each depth are dealt "
+      "out")
+print("          into classes with EXACTLY alpha_sigma's class sizes at "
+      "that")
+print("          depth, by a printed congruential shuffle.  Same "
+      "granularity,")
+print("          same size profile, ZERO record content.  Two fixed seeds.")
+print("    (iii) KINEMATIC TAG MULTISET — alpha(h) = the multiset of event")
+print("          tags, a map that reads the grammar and no record at all.")
+print("    (iv)  ACTOR SEQUENCE — alpha(h) = the sequence of acting actors,")
+print("          a coarse kinematic map whose lumpability is measured here")
+print("          rather than assumed.")
+
+TEST5 = ((1, 2, 3), (2, 3, 4), (2, 3, 5), (2, 4, 5), (3, 4, 5))
+LCG_A, LCG_C, LCG_M = 1103515245, 12345, 2147483648
+LCG_SEEDS = (20260727, 11)
+print(f"  THE SHUFFLE, PRINTED: x <- ({LCG_A} x + {LCG_C}) mod {LCG_M}, "
+      f"seeds {LCG_SEEDS};")
+print("  Fisher-Yates over the sk()-sorted prefix list, then the shuffled")
+print("  list is cut into blocks of alpha_sigma's own class sizes.  No "
+      "call to")
+print("  any random module and no dependence on the clock or the hash "
+      "seed.")
+
+
+def lcg_shuffle(xs, seed):
+    a = list(xs)
+    s = seed
+    for i in range(len(a) - 1, 0, -1):
+        s = (LCG_A * s + LCG_C) % LCG_M
+        j = s % (i + 1)
+        a[i], a[j] = a[j], a[i]
+    return a
+
+
+_SIG_CLASSES = {}
+for _d in range(CAP_A + 1):
+    _c = defaultdict(list)
+    for k in BD_A[_d]:
+        if P_A.get(k):
+            _c[sigT(k)].append(k)
+    _SIG_CLASSES[_d] = sorted((sorted(v, key=sk) for v in _c.values()),
+                              key=lambda v: (-len(v), sk(v[0])))
+
+
+def random_map(seed):
+    lab = {}
+    for d in range(CAP_A + 1):
+        pool = lcg_shuffle([k for cls in _SIG_CLASSES[d] for k in cls], seed + d)
+        p = 0
+        for ci, cls in enumerate(_SIG_CLASSES[d]):
+            for k in pool[p:p + len(cls)]:
+                lab[k] = ("rnd", d, ci)
+            p += len(cls)
+    return lambda h: lab[h]
+
+
+def tag_map(h):
+    return ("tag",) + tuple(sorted(Counter(e[0] for e in h).items()))
+
+
+def actor_map(h):
+    return ("act",) + tuple(e[1] for e in h)
+
+
+def row_obstructions(J, S, i0, i1, i2):
+    """The same row-certificate instrument the census uses, reported as a
+    raw count so two maps can be compared on one scale."""
+    A = gamma_of(J, i1, i0)
+    B = gamma_of(J, i2, i0)
+    Is, Js, Ks = S[i0], S[i1], S[i2]
+    if len(Is) < 2:
+        return None, len(Ks), None
+    byj = defaultdict(list)
+    for (j, i), v in A.items():
+        if v:
+            byj[j].append((i, v))
+    N = gamma_of(J, i2, i1)
+    comp = defaultdict(Fr)
+    for (kk, j), w in N.items():
+        if w:
+            for i, v in byj.get(j, ()):
+                comp[(kk, i)] += w * v
+    ck = (all(comp.get(k, Fr(0)) == v for k, v in B.items())
+          and all(B.get(k, Fr(0)) == v for k, v in comp.items()))
+    if ck:
+        return 0, len(Ks), True      # an interpolant exists: no row can fail
+    M = [[A.get((j, i), Fr(0)) for j in Js] for i in Is]
+    bad = 0
+    for k in Ks:
+        bb = [B.get((k, i), Fr(0)) for i in Is]
+        feas, _p, w = phase1(M, bb)
+        if feas is False and farkas_ok(M, bb, w):
+            bad += 1
+    return bad, len(Ks), ck
+
+
+NULLMAPS = [("alpha_sigma  (THE RECORD MAP)", lambda h: sigT(h, AB, False)),
+            ("full prefix  (finest, Markov)", lambda h: h),
+            (f"random partition, seed {LCG_SEEDS[0]}", random_map(LCG_SEEDS[0])),
+            (f"random partition, seed {LCG_SEEDS[1]}", random_map(LCG_SEEDS[1])),
+            ("kinematic tag multiset", tag_map),
+            ("actor sequence", actor_map)]
+NULLTAB = {}
+NULLSUP = {}
+print()
+print(f"      {'map':34s} {'supports 0..5':26s} " +
+      "  ".join(f"{str(t):>13s}" for t in TEST5))
+for _nm, _f in NULLMAPS:
+    Jn = joint_paths(BD_A, P_A, _f, CUTS_A, CAP_A)
+    Sn = supports(Jn, len(CUTS_A))
+    NULLSUP[_nm] = [len(Sn[c]) for c in range(CAP_A + 1)]
+    cells = []
+    for t3 in TEST5:
+        bad, nk, ck = row_obstructions(Jn, Sn, *t3)
+        NULLTAB[(_nm, t3)] = (bad, nk, ck)
+        cells.append(f"{bad}/{nk}" + ("*" if ck else ""))
+    print(f"      {_nm:34s} {str([len(Sn[c]) for c in range(CAP_A + 1)]):26s} "
+          + "  ".join(f"{c:>13s}" for c in cells))
+print("      cell = obstructed target configurations / target "
+      "configurations;")
+print("      * = Chapman-Kolmogorov holds exactly at that triple (the "
+      "process's")
+print("      own conditional already interpolates, so the triple DIVIDES).")
+_sigbad = sum(NULLTAB[(NULLMAPS[0][0], t)][0] for t in TEST5)
+_rndbad = [sum(NULLTAB[(nm, t)][0] for t in TEST5)
+           for nm, _f in NULLMAPS[2:4]]
+_prefck = all(NULLTAB[(NULLMAPS[1][0], t)][2] for t in TEST5)
+check("N1 THE PIPELINE'S OWN SANITY CHECK PASSES: under the finest map the "
+      "generated law satisfies Chapman-Kolmogorov EXACTLY at every test "
+      "triple and divides everywhere.  Every indivisibility reported by "
+      "this receipt is therefore a property of a COARSE-GRAINING and of "
+      "nothing else",
+      _prefck,
+      f"full-prefix CK exact at all {len(TEST5)} test triples = {_prefck}; "
+      f"prefix supports by depth {NULLSUP[NULLMAPS[1][0]]}; record-map "
+      f"supports {NULLSUP[NULLMAPS[0][0]]}")
+check("N2 THE NULL OUT-SCORES THE RECORD MAP.  A uniformly random "
+      "partition of the same prefixes into alpha_sigma's own class sizes — "
+      "zero record content, identical granularity — is obstructed on MORE "
+      "target configurations than alpha_sigma is, at both seeds.  "
+      "Indivisibility at cut grain is therefore what coarse-graining a "
+      "divisible chain generically does, and the record map holds the "
+      "property LESS strongly than noise of its own granularity.  This is "
+      "the direction OPPOSITE to a bridge headline, and it is the reason "
+      "this unit's verdict is scoped rather than asserted",
+      all(r > _sigbad for r in _rndbad),
+      f"obstructed rows summed over the {len(TEST5)} test triples: "
+      f"alpha_sigma {_sigbad}; random {_rndbad}; per-triple table above")
+report("Barandes' own caveat, quoted where it bites",
+       "[B3] takes UNISTOCHASTICITY, not indivisibility, as the quantum "
+       "criterion: indivisibility per se is generic for classical "
+       "coarse-grainings, which N2 measures directly.  The "
+       "unistochasticity screen is U3's and is reported unadjudicated in "
+       "ARM 0")
+report("null battery time", f"{time.time() - _t:.0f}s")
 
 # ---------------- the [B3] eq. 22 ALGEBRAIC arm -------------------------
 _t = time.time()
@@ -1863,21 +2436,21 @@ print("  one, which is why the feasibility form above — convention-free, "
 print("  quantifying over ALL stochastic intermediates rather than the "
       "unique")
 print("  algebraic one — remains the decisive instrument.")
-EQ22 = []
-for r in _rowsA:
-    l0, l1, l2 = r["triple"]
-    Xs = srt(set(_SA[l0]) | set(_SA[l1]) | set(_SA[l2]))
+def eq22_decide(Jm, Sm, trip):
+    """[B3] eq. 22 under the declared identity-padding convention.  Returns
+    (triple, verdict, |X|, det, negative entries, most negative, column
+    sums all 1) — every component exact."""
+    l0, l1, l2 = trip
+    Xs = srt(set(Sm[l0]) | set(Sm[l1]) | set(Sm[l2]))
     n = len(Xs)
     if n > PAD_MAX:
-        EQ22.append((r["triple"], "EXCLUDED-BY-CAP", n, None, None))
-        print(f"      {str(r['triple']):12s} EXCLUDED-BY-CAP  fixed "
-              f"configuration space {n} > {PAD_MAX}")
-        continue
-    G1m = gamma_of(_JA, l1, l0)
-    G2m = gamma_of(_JA, l2, l0)
+        return (trip, "EXCLUDED-BY-CAP", n, None, None, None, None)
+    G1m = gamma_of(Jm, l1, l0)
+    G2m = gamma_of(Jm, l2, l0)
     pos = {x: i for i, x in enumerate(Xs)}
+    src = set(Sm[l0])
 
-    def pad(Gm, src):
+    def pad(Gm):
         M = [[Fr(0)] * n for _ in range(n)]
         for c, x in enumerate(Xs):
             if x in src:
@@ -1888,28 +2461,36 @@ for r in _rowsA:
                 M[c][c] = Fr(1)
         return M
 
-    A = pad(G1m, set(_SA[l0]))
-    Bm = pad(G2m, set(_SA[l0]))
+    A = pad(G1m)
+    Bm = pad(G2m)
     inv, det = invert_exact(A)
     if inv is None:
-        EQ22.append((r["triple"], "SINGULAR", n, det, None))
-        print(f"      {str(r['triple']):12s} SINGULAR         "
-              f"|X| = {n}, det = 0 — a stochastic matrix has a stochastic "
-              f"inverse only if it is a permutation ([B3] eq. 23)")
-        continue
+        return (trip, "SINGULAR", n, det, None, None, None)
     Gb = [[sum(Bm[a][t] * inv[t][b] for t in range(n)) for b in range(n)]
           for a in range(n)]
-    neg = [(a, b, Gb[a][b]) for a in range(n) for b in range(n)
-           if Gb[a][b] < 0]
+    neg = [Gb[a][b] for a in range(n) for b in range(n) if Gb[a][b] < 0]
     cols = [sum(Gb[a][b] for a in range(n)) for b in range(n)]
-    EQ22.append((r["triple"], "PSEUDO-STOCHASTIC" if neg else "STOCHASTIC",
-                 n, det, len(neg)))
-    print(f"      {str(r['triple']):12s} "
-          f"{'PSEUDO-STOCHASTIC' if neg else 'STOCHASTIC':17s} "
-          f"|X| = {n}; NEGATIVE ENTRIES = {len(neg)} of {n * n} exactly; "
-          f"column sums all 1 = {all(x == Fr(1) for x in cols)}; "
-          f"most negative = "
-          f"{min((x[2] for x in neg), default=Fr(0))}")
+    return (trip, "PSEUDO-STOCHASTIC" if neg else "STOCHASTIC", n, det,
+            len(neg), min(neg, default=Fr(0)),
+            all(x == Fr(1) for x in cols))
+
+
+EQ22 = []
+for r in _rowsA:
+    e = eq22_decide(_JA, _SA, r["triple"])
+    EQ22.append(e[:5])
+    if e[1] == "EXCLUDED-BY-CAP":
+        print(f"      {str(e[0]):12s} EXCLUDED-BY-CAP  fixed "
+              f"configuration space {e[2]} > {PAD_MAX}")
+    elif e[1] == "SINGULAR":
+        print(f"      {str(e[0]):12s} SINGULAR         "
+              f"|X| = {e[2]}, det = 0 — a stochastic matrix has a stochastic "
+              f"inverse only if it is a permutation ([B3] eq. 23)")
+    else:
+        print(f"      {str(e[0]):12s} {e[1]:17s} "
+              f"|X| = {e[2]}; NEGATIVE ENTRIES = {e[4]} of {e[2] * e[2]} "
+              f"exactly (identity-padding convention); column sums all 1 = "
+              f"{e[6]}; most negative = {e[5]}")
 _eq22_pseudo = [e for e in EQ22 if e[1] == "PSEUDO-STOCHASTIC"]
 _eq22_stoch = [e for e in EQ22 if e[1] == "STOCHASTIC"]
 report("eq. 22 algebraic census (ARM-A / alpha_sigma)",
@@ -1917,7 +2498,12 @@ report("eq. 22 algebraic census (ARM-A / alpha_sigma)",
        f"{len(_eq22_stoch)}, singular "
        f"{len([e for e in EQ22 if e[1] == 'SINGULAR'])}, excluded "
        f"{len([e for e in EQ22 if e[1] == 'EXCLUDED-BY-CAP'])}; total "
-       f"negative entries {sum(e[4] or 0 for e in EQ22)}")
+       f"negative entries {sum(e[4] or 0 for e in EQ22)} — A COUNT "
+       f"RELATIVE TO THE IDENTITY-PADDING CONVENTION declared above, not "
+       f"an invariant of the process: the configuration space is the union "
+       f"of the three cuts' supports and unrealised configurations are "
+       f"held fixed by an identity column, and a different padding "
+       f"convention gives a different count")
 _agree22 = Counter()
 for (t3, st, nn, det, nneg) in EQ22:
     v = {r["triple"]: r["verdict"] for r in _rowsA}[t3]
@@ -1925,19 +2511,26 @@ for (t3, st, nn, det, nneg) in EQ22:
         _agree22[(st, v)] += 1
 report("eq. 22 algebraic reading vs the feasibility verdict",
        {f"{k[0]} / {k[1]}": v for k, v in sorted(_agree22.items())})
-check("EQ22.1 THE ALGEBRAIC READING IS STRICTLY WEAKER THAN THE "
-      "FEASIBILITY READING, AND THE CENSUS SHOWS BOTH DIRECTIONS OF THE "
-      "GAP.  A pseudo-stochastic Gammabar says the UNIQUE algebraic "
-      "intermediate under the fixed-space convention has negative entries; "
-      "it does NOT by itself say no stochastic intermediate exists, and "
-      "the table above contains triples where the algebraic reading is "
-      "pseudo-stochastic while a genuine stochastic interpolant exists on "
-      "the supports.  [B3] eq. 22 is the right instrument only when the "
-      "configuration space really is fixed — which, on this carrier, it is "
-      "not away from renewals",
-      len(EQ22) > 0,
+_gap_a = _agree22[("PSEUDO-STOCHASTIC", "DIVISIBLE")]
+_gap_b = _agree22[("STOCHASTIC", "INDIVISIBLE")]
+check("EQ22.1 THE ALGEBRAIC READING IS WEAKER THAN THE FEASIBILITY "
+      "READING IN ONE DIRECTION, AND THE CENSUS EXHIBITS THAT DIRECTION "
+      "AND ONLY THAT ONE.  A pseudo-stochastic Gammabar says the UNIQUE "
+      "algebraic intermediate under the fixed-space convention has "
+      "negative entries; it does NOT by itself say no stochastic "
+      "intermediate exists, and the table above contains triples where the "
+      "algebraic reading is pseudo-stochastic while a genuine stochastic "
+      "interpolant provably exists.  THE CONVERSE DIRECTION IS "
+      "UNEXHIBITED: the cell STOCHASTIC-and-INDIVISIBLE is EMPTY on this "
+      "census, so nothing here shows the algebraic reading missing an "
+      "indivisibility, and no two-directional claim is made.  [B3] eq. 22 "
+      "is the right instrument only when the configuration space really is "
+      "fixed — which, on this carrier, it is not away from renewals",
+      _gap_a > 0 and _gap_b == 0,
       f"{len(_eq22_pseudo)} pseudo-stochastic, {len(_eq22_stoch)} "
-      f"stochastic; cross-tabulated against the feasibility verdict above")
+      f"stochastic; PSEUDO-and-DIVISIBLE = {_gap_a} (the exhibited "
+      f"direction), STOCHASTIC-and-INDIVISIBLE = {_gap_b} (the "
+      f"unexhibited one)")
 
 
 # ===========================================================================
@@ -1965,19 +2558,23 @@ report("mass of the ensemble carrying a DIVISION EVENT inside the window, "
        "per triple",
        {str(t): str(m) for t, m in sorted(_ren_mass.items())})
 _ind_masses = srt({_ren_mass[r["triple"]] for r in _IND})
-check("J1 THE INDIVISIBLE WINDOWS ARE BRIDGE WINDOWS ON AT LEAST 97% OF "
-      "THEIR MASS — reported as a MEASURED co-location and nothing more.  "
-      "Paper 0 sec.4 places the anomalies in the conflict windows BETWEEN "
+_mx = max(_ind_masses)
+_mxpct = f"{float(_mx) * 100:.2f}"          # display only; the gate is exact
+check("J1 THE INDIVISIBLE WINDOWS ARE BRIDGE WINDOWS ON MOST OF THEIR MASS "
+      "— reported as a MEASURED co-location and nothing more.  Paper 0 "
+      "sec.4 places the anomalies in the conflict windows BETWEEN "
       "renewals; the mass of the ensemble that carries any division event "
-      "inside an indivisible window is printed above for every triple, and "
-      "the largest of those masses is under 3%.  This is the J-geography "
-      "input U2 needs, and it is NOT a test of the J-conjecture, which is "
-      "U2's and is not run here",
-      len(_IND) > 0 and max(_ind_masses) < Fr(3, 100),
+      "inside an indivisible window is printed above for every triple.  "
+      "The MAXIMUM of those masses is the number that must be quoted, and "
+      "it is printed exactly below; the bridge mass is its complement.  "
+      "This is the J-geography input U2 needs, and it is NOT a test of the "
+      "J-conjecture, which is U2's and is not run here",
+      len(_IND) > 0 and max(_ind_masses) < Fr(1, 20),
       f"indivisible triples {[str(r['triple']) for r in _IND]}; "
       f"division-event mass inside them "
-      f"{[str(m) for m in _ind_masses]} (the complement of each is the "
-      f"bridge mass)")
+      f"{[str(m) for m in _ind_masses]}; MAXIMUM = {_mx} = {_mxpct}% "
+      f"exactly, so the bridge mass is AT LEAST {Fr(1) - _mx} of every "
+      f"indivisible window and no larger claim may be made")
 
 # the 44 named squares vs the lumpability defect
 _lump = {}
@@ -2302,18 +2899,27 @@ report("ARM-A verdicts, the two configuration maps against each other",
 _subst = {"DIVISIBLE", "INDIVISIBLE", "VACUOUS"}
 _opposed = sum(v for k, v in _conf.items()
                if k[0] in _subst and k[1] in _subst and k[0] != k[1])
-check("AG2 NO TRIPLE RECEIVES OPPOSITE SUBSTANTIVE VERDICTS UNDER THE TWO "
-      "COMMITTED CONFIGURATION MAPS.  The winner-invisible D62 state and "
-      "the payload-enriched state never disagree DIVISIBLE-vs-INDIVISIBLE "
-      "on any triple; where their entries differ it is because the LP cap "
-      "excluded a triple under the larger map and decided it under the "
-      "smaller.  So the census is not an artefact of the D62 corollary "
-      "that the arbitration winner is invisible to sigma — but the "
-      "enriched map is DECIDED ON FEWER TRIPLES, and that is a cap fact, "
-      "printed and not hidden",
-      _opposed == 0,
-      f"opposed substantive verdicts = {_opposed} of {len(_v1v)}; "
-      f"cap-only differences = "
+_opp_trips = [k for k in _v1v
+              if _v1v[k] in _subst and _v2v[k] in _subst
+              and _v1v[k] != _v2v[k]]
+_opp_dir = all(_v1v[k] == "INDIVISIBLE" and _v2v[k] == "DIVISIBLE"
+               for k in _opp_trips)
+check("AG2 THE TWO COMMITTED CONFIGURATION MAPS DO OPPOSE, AND THEY OPPOSE "
+      "IN THE ARTEFACT DIRECTION.  Once every triple is decided, the "
+      "winner-invisible D62 state and the payload-enriched state give "
+      "OPPOSITE substantive verdicts on the triples listed below, and "
+      "every opposition has the same sign: the COARSE map calls the "
+      "triple INDIVISIBLE and the FINE map DIVIDES it, with an exhibited "
+      "and re-verified interpolant.  That is the direction in which "
+      "indivisibility is an artefact of throwing information away, not a "
+      "property of the process.  NO ANTI-ARTEFACT READING IS AVAILABLE "
+      "FROM THIS COMPARISON, and none is made: the two triples where the "
+      "maps oppose are exactly the two the plain LP cap cannot reach, so a "
+      "cap-limited census would read as agreement for the wrong reason",
+      _opposed > 0 and _opp_dir,
+      f"opposed substantive verdicts = {_opposed} of {len(_v1v)} at "
+      f"{sorted(_opp_trips)}; every opposition coarse-INDIVISIBLE / "
+      f"fine-DIVISIBLE = {_opp_dir}; remaining differences = "
       f"{sum(v for k, v in _conf.items() if k[0] != k[1]) - _opposed}")
 
 
@@ -2328,14 +2934,46 @@ _bd_rev = {d: list(reversed(BD_A[d])) for d in BD_A}
 _j2 = joint_paths(_bd_rev, P_A, lambda k: sigT(k), CUTS_A, CAP_A)
 _g1 = gamma_of(_j1, 4, 2)
 _g2 = gamma_of(_j2, 4, 2)
-check("DET.1 every printed number is order-independent: the joint cut law "
-      "and a representative Gamma block are recomputed with the family "
-      "traversed in the opposite order and compared entry by entry; all "
-      "set iteration that feeds a printed number is keyed by the "
-      "hash-seed-independent sk()",
-      _j1 == _j2 and _g1 == _g2,
+_S1 = supports(_j1, len(CUTS_A))
+_S2 = supports(_j2, len(CUTS_A))
+_lp1, _lp2 = [], []
+_d1 = decide_triple(_j1, _S1, 1, 2, 3, (1, 2, 3), _lp1)   # LP arm
+_d2 = decide_triple(_j2, _S2, 1, 2, 3, (1, 2, 3), _lp2)
+_e1 = decide_triple(_j1, _S1, 1, 4, 5, (1, 4, 5), _lp1)   # LP2 reduced arm
+_e2 = decide_triple(_j2, _S2, 1, 4, 5, (1, 4, 5), _lp2)
+_tupkey = lambda r: (r["verdict"], r.get("instrument"), r.get("nvar"),
+                     r.get("nrow"), r.get("rvar"), r.get("rrow"),
+                     r.get("rgrp"), r.get("rowfail"),
+                     str(r.get("lpcert", ("", "", ""))[1]))
+_alg2 = [eq22_decide(_j2, _S2, t)[:5] for t in
+         ((1, 2, 3), (2, 3, 4), (3, 4, 5))]
+_alg1 = [e for e in EQ22 if e[0] in ((1, 2, 3), (2, 3, 4), (3, 4, 5))]
+check("DET.1 every printed number is order-independent, AND THE PROBE "
+      "EXERCISES THE DECIDING ARMS, not just the joint law.  The family is "
+      "traversed in the opposite order and four objects are recompared "
+      "entry by entry: the joint cut law; a representative Gamma block; "
+      "the FULL result tuple of a triple decided by the plain LP arm "
+      "(1,2,3), Farkas value included; and the FULL result tuple of a "
+      "triple decided by the reduced LP2 arm (1,4,5), reduction sizes and "
+      "Farkas value included.  All set iteration that feeds a printed "
+      "number is keyed by the hash-seed-independent sk()",
+      _j1 == _j2 and _g1 == _g2
+      and _tupkey(_d1) == _tupkey(_d2) and _tupkey(_e1) == _tupkey(_e2),
       f"joint law identical = {_j1 == _j2}; Gamma(4<-2) identical = "
-      f"{_g1 == _g2}; entries compared {len(_g1)}")
+      f"{_g1 == _g2}; entries compared {len(_g1)}; LP arm (1,2,3) tuple "
+      f"identical = {_tupkey(_d1) == _tupkey(_d2)} {_tupkey(_d1)}; LP2 arm "
+      f"(1,4,5) tuple identical = {_tupkey(_e1) == _tupkey(_e2)} "
+      f"{_tupkey(_e1)}")
+check("DET.2 the eq. 22 algebraic arm is order-independent too: three "
+      "triples are RE-DERIVED from the reversed traversal — verdict, "
+      "fixed-space size, exact determinant and exact negative-entry count "
+      "— and compared component by component against the stored table",
+      len(_alg1) == len(_alg2) and _alg1 == _alg2,
+      f"{len(_alg2)} triples re-derived: "
+      f"{[(str(a[0]), a[1], a[2], a[4]) for a in _alg2]}; identical to the "
+      f"stored census = {_alg1 == _alg2}; whole-census negative entries "
+      f"{sum(e[4] or 0 for e in EQ22)} under the declared padding "
+      f"convention")
 
 
 # ===========================================================================
@@ -2348,11 +2986,18 @@ _all_rows = (_rowsA + _rowsA2
              + ARM_B_RESULTS["alpha_sigma  (D62-faithful, "
                              "winner-invisible)"][0]
              + ARM_B_RESULTS["alpha_sigma+ (payload-enriched)"][0]
+             + ARM_C2["alpha_sigma  (D62-faithful, winner-invisible)"][0]
+             + ARM_C2["alpha_sigma+ (payload-enriched)"][0]
              + ARM_D_RESULTS["alpha_sigma"][0])
 _tot = Counter(r["verdict"] for r in _all_rows)
 _nind = _tot["INDIVISIBLE"]
 report("the whole census, all arms, all configuration maps",
        {k: v for k, v in sorted(_tot.items())})
+report("the same census WITHOUT ARM-C2 (the 58 triples of the four "
+       "depth-indexed arms, for comparison with any earlier count)",
+       {k: v for k, v in
+        sorted(Counter(r["verdict"] for r in _all_rows
+                       if not r["arm"].startswith("ARM-C2")).items())})
 report("indivisible triples, by arm",
        {"ARM-A/sigma": [str(r["triple"]) for r in _rowsA
                         if r["verdict"] == "INDIVISIBLE"],
@@ -2360,32 +3005,141 @@ report("indivisible triples, by arm",
                          if r["verdict"] == "INDIVISIBLE"],
         "ARM-B": [str(r["triple"]) for arm in ARM_B_RESULTS.values()
                   for r in arm[0] if r["verdict"] == "INDIVISIBLE"],
+        "ARM-C2": [str(r["triple"]) for arm in ARM_C2.values()
+                   for r in arm[0] if r["verdict"] == "INDIVISIBLE"],
         "ARM-D": [str(r["triple"]) for r in ARM_D_RESULTS["alpha_sigma"][0]
                   if r["verdict"] == "INDIVISIBLE"]})
+_wins = Counter()
+for r in _all_rows:
+    if r["verdict"] == "INDIVISIBLE":
+        _wins[(r["triple"], r["arm"].split("/")[0].strip())] += 1
+_distinct_ind = len({(t, a) for (t, a) in _wins})
+_distinct_ind_windows = len({t for (t, a) in _wins})
+report("the double-count caveat, carried with the headline number",
+       f"{_nind} indivisible VERDICTS across all arms and both "
+       f"configuration maps; the same (arm, triple) window read by the two "
+       f"maps is counted twice, so the number of DISTINCT (arm, window) "
+       f"pairs is {_distinct_ind}, and of distinct cut triples "
+       f"{_distinct_ind_windows}.  The vacuous count carries the same "
+       f"caveat: "
+       f"{len({(r['triple'], r['arm'].split('/')[0].strip()) for r in _all_rows if r['verdict'] == 'VACUOUS'})} "
+       f"distinct (arm, window) pairs behind {_tot['VACUOUS']} verdicts")
 
-VERDICT = ("U1-BRIDGE" if _nind > 0 else "U1-DIV")
+# --- THE DIVISION-EVENT TABLE: the census keyed by [B3] p.9's own rule ---
+print()
+print("  THE DIVISION-EVENT TABLE.  [B3] p.9 admits conditioning ONLY at "
+      "division")
+print("  events, and paper 0 sec.4 identifies division events with "
+      "renewals.  The")
+print("  census above is therefore two censuses, and only one of them is "
+      "the law's")
+print("  own.  A triple is counted DIVISION-EVENT-CONDITIONED iff its "
+      "FIRST cut is")
+print("  a division event for EVERY history of its ensemble: the initial "
+      "cut,")
+print("  where the process sits at the root by construction, and ARM-B's "
+      "cut 3 and")
+print("  ARM-C2's renewal cuts, where the ensemble is conditioned on a "
+      "pair-arb.")
+_dv = Counter()
+for r in _all_rows:
+    _dv[(bool(r["divcut"]), r["verdict"])] += 1
+print()
+print(f"      {'first conditioning cut':34s} " +
+      "".join(f"{v:>17s}" for v in ("INDIVISIBLE", "DIVISIBLE",
+                                    "EXCLUDED-BY-CAP", "VACUOUS", "total")))
+for flag, lab in ((True, "IS a division event"),
+                  (False, "is NOT a division event")):
+    cells = [_dv[(flag, v)] for v in ("INDIVISIBLE", "DIVISIBLE",
+                                      "EXCLUDED-BY-CAP", "VACUOUS")]
+    print(f"      {lab:34s} " + "".join(f"{c:>17d}" for c in
+                                        cells + [sum(cells)]))
+_ind_at_div = _dv[(True, "INDIVISIBLE")]
+check("B5 EVERY INDIVISIBILITY THIS RECEIPT FINDS SITS AT A CONDITIONING "
+      "CUT THE LAW DOES NOT ADMIT.  [B3] p.9's conditioning rule is that "
+      "the allowed conditioning times are the division events; paper 0 "
+      "sec.4 fixes division events = renewals.  Split the whole census by "
+      "that rule and it separates completely: at a division-event "
+      "conditioning cut there is NO indivisible triple at all — the "
+      "winner-invisible readings are structurally vacuous because a "
+      "renewal resets to the root, and every non-vacuous one DIVIDES, two "
+      "of them by exact Chapman-Kolmogorov and the pinned "
+      "renewal-to-renewal triple of ARM-C2 among them.  Every indivisible "
+      "triple in this receipt has its first cut strictly BETWEEN division "
+      "events, which is cut grain and not record grain",
+      _ind_at_div == 0 and _dv[(False, "INDIVISIBLE")] > 0,
+      f"division-event cuts: {_ind_at_div} indivisible of "
+      f"{sum(v for k, v in _dv.items() if k[0])}; non-division cuts: "
+      f"{_dv[(False, 'INDIVISIBLE')]} indivisible of "
+      f"{sum(v for k, v in _dv.items() if not k[0])}")
+
+VERDICT = "U1-BRIDGE-AT-ADJACENT-SCOPE"
+if _nind == 0:
+    VERDICT = "U1-DIV"
 if TAB[("INDIVISIBLE", "CLEAN")] > 0:
     VERDICT = "U1-SPLIT"
 print()
 print(f"  >>> VERDICT: {VERDICT}")
-if VERDICT == "U1-BRIDGE":
-    print("      At least one composable cut triple of the generated "
-          "transport law,")
-    print("      read at record grain, admits NO stochastic interpolant at "
-          "all — not")
-    print("      merely a pseudo-stochastic algebraic one.  By the "
-          "preamble's (D2)")
-    print("      and (D3) this is the corpus's first generated "
-          "INDIVISIBLE BRIDGE,")
-    print("      and the first indivisibility witness of any kind since "
-          "v1's two")
-    print("      abandoned ones.  The (D4) everywhere-form is FALSE: the "
-          "census")
-    print("      contains divisible triples, vacuous triples and "
-          "indivisible ones,")
-    print("      and they are enumerated above.")
+print("      THE BRIDGE IS AT THE ADJACENT SCOPE, AND THE NULL IS "
+      "ATTACHED TO IT.")
+print("      At CUT grain, on conditioning cuts that are NOT division "
+      "events, the")
+print("      D62 record state is a non-lumpable function of the DIVISIBLE "
+      "click")
+print("      law, and its Gamma family admits no column-stochastic "
+      "interpolant at")
+print(f"      {_dv[(False, 'INDIVISIBLE')]} triples, each with an "
+      f"independently verified exact Farkas")
+print("      certificate.  That property is SHARED WITH — and held LESS")
+print("      STRONGLY THAN — a uniformly random partition of the same "
+      "prefixes")
+print("      into the same class sizes (gate N2), so it is what coarse-"
+      "graining")
+print("      a divisible chain generically does and not a signature of "
+      "the")
+print("      record.  At EVERY conditioning cut that IS a division event "
+      "— the")
+print("      only cuts [B3] p.9 admits, and the grain paper 0 sec.4 puts "
+      "the law")
+print("      at — the law DIVIDES exactly, including the pinned "
+      "non-degenerate")
+print("      renewal-to-renewal triple, which ARM-C2 runs and which "
+      "divides by")
+print("      exact Chapman-Kolmogorov on a rank-one renewal transfer.")
+print("      This is a real, informative, negative-leaning result.  It is "
+      "NOT the")
+print("      corpus's first generated indivisible bridge, and the U1-"
+      "BRIDGE")
+print("      pre-registered outcome is NOT met at the grain that outcome "
+      "meant.")
 print()
-print("  AND THE U1-SPLIT TEST, RUN AND REPORTED RATHER THAN ASSUMED AWAY.")
+print("      THE ONE FACT, NAMED ONCE.  Arm 1's interpolant census and "
+      "Arm 2's")
+print("      DC2 failure are not two results.  Both are the "
+      "NON-LUMPABILITY of")
+print("      the ported state under deliveries — DC2 measures it per "
+      "step, the")
+print("      census measures what it does to a window — and the agreement "
+      "table")
+print("      below is the relation between the two readings of that single "
+      "fact,")
+print("      not corroboration of one by the other.")
+print()
+print("      WHAT REMAINS OPEN, PRECISELY.  ARM-C2 decides the pinned "
+      "triple on")
+print("      the MINIMAL-INTERVAL sub-ensemble: conditioning on a third "
+      "renewal")
+print("      by depth 9 forces every renewal interval to its shortest "
+      "length.  A")
+print("      renewal chain with UNEQUAL intervals is not reached by this")
+print("      conditioning and is not reached by enumeration either "
+      "(~10^8")
+print("      histories at depth 9); that is the successor computation, and "
+      "it is")
+print("      named U1b.")
+print()
+print("  AND THE U1-SPLIT TEST, RUN AND REPORTED RATHER THAN ASSUMED "
+      "AWAY.")
 print("  The pin's third outcome fires if the two instruments disagree.  "
       "They")
 print("  do disagree — but ONE-SIDEDLY and with the direction measured: "
@@ -2397,20 +3151,13 @@ print("  defective on triples Arm 1 calls DIVISIBLE and on every VACUOUS "
 print("  Arm 2's descent conditions fail at EVERY parent depth >= 1 and "
       "EVERY")
 print("  cut depth >= 2 in this family, so at window scale Arm 2 has no")
-print(f"  resolving power at all.  The witness class that would have made "
-      f"this a")
-print(f"  genuine U1-SPLIT — an INDIVISIBLE triple in a CLEAN window, "
-      f"which would")
-print(f"  put the instruments in opposite directions on one object — is "
-      f"EMPTY: "
-      f"{TAB[('INDIVISIBLE', 'CLEAN')]} of {sum(TAB.values())}.  The "
-      f"verdict is")
-print("  therefore U1-BRIDGE with a characterised containment, not "
-      "U1-SPLIT;")
-print("  descent failure is NECESSARY BUT NOT SUFFICIENT for "
-      "cut-indivisibility")
-print("  on this family, and that relation is itself a first-class result "
-      "of U1.")
+print("  resolving power at all.  The witness class that would have made "
+      "this a")
+print("  genuine U1-SPLIT — an INDIVISIBLE triple in a CLEAN window, "
+      "which would")
+print("  put the instruments in opposite directions on one object — is "
+      "EMPTY: "
+      f"{TAB[('INDIVISIBLE', 'CLEAN')]} of {sum(TAB.values())}.")
 print()
 print("  SCOPE, NON-NEGOTIABLE.  Transport scope (d42b1), the declared "
       "families")
@@ -2434,10 +3181,14 @@ print()
 print(f"[SUMMARY] {PASS} PASS / {FAIL} FAIL / {ANCHOR_FAIL} ANCHOR-FAIL")
 print(f"[RUNTIME] {time.time() - T0:.0f}s wall clock, single-threaded, "
       f"exact arithmetic throughout")
-print(f"[CAPS] ARM-A depth {CAP_A}; ARM-B depth {CAP_B}; ARM-D depth "
+print(f"[CAPS] ARM-A depth {CAP_A}; ARM-B depth {CAP_B}; ARM-C2 depth 9 "
+      f"(minimal-interval sub-ensemble, conditioned); ARM-D depth "
       f"{CAP_D} (3 actors); anchors depth {CAP_ANCH_AB}/{CAP_ANCH_ABC}; "
       f"closed scope depth {CAP_CLOSED}; DC1 parents depth {CAP_DC1}; "
-      f"LP caps {LP_MAXVARS} vars / {LP_MAXROWS} rows")
+      f"LP caps {LP_MAXVARS} vars / {LP_MAXROWS} rows, reduced-system caps "
+      f"{LP2_MAXVARS} vars / {LP2_MAXROWS} rows; eq. 22 fixed space "
+      f"{PAD_MAX}; EXCLUDED-BY-CAP triples remaining: "
+      f"{_tot['EXCLUDED-BY-CAP']}")
 if ANCHOR_FAIL:
     sys.exit(1)
 print("[EXIT] 0 — substantive negatives are results, not failures")

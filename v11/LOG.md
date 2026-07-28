@@ -469,3 +469,44 @@ route; #11's headline is SUPERSEDED BY THIS ENTRY pending the
 repaired unit.  Meta, on record: the corpus's positive-headline
 mortality under hostile review is now 6-for-6 across v10-v11; the
 arithmetic-never-wrong streak holds.
+
+## 2026-07-27 — U1 REPAIRED PER THE ROUTE; **THE PINNED QUESTION
+## DECIDED: THE RENEWAL-TO-RENEWAL LAW DIVIDES** (v11 LEDGER #13)
+All eight route steps applied; the repaired unit re-run clean (44
+PASS / 0 FAIL / 0 ANCHOR-FAIL, 815s; adjudicator rerun identical
+modulo timings and the known-cosmetic frozenset print line).
+**THE HEADLINE OF THE REPAIR: THE DECISIVE COMPUTATION RAN.**  The
+relative-horizon leaf measure TELESCOPES (Πq/G(root,D)), and a
+renewal three events after a renewal forces two proposals between,
+so the depth-9 leaves with renewals at 3/6/9 enumerate
+EXHAUSTIVELY: 16 → 256 → 4,096 histories, raw mass 1/32768, 12s —
+no 10^8 enumeration needed.  Under σ+ the supports are 8/8/8,
+first cut NON-degenerate, and **CHAPMAN-KOLMOGOROV HOLDS EXACTLY:
+the pinned non-degenerate renewal-to-renewal triple is DIVISIBLE**
+(both transfer matrices rank-one, R² = R).  Declared boundary:
+minimal-interval sub-ensemble; unequal intervals = the named
+successor U1b.  **RE-TITLED VERDICT: U1-BRIDGE-AT-ADJACENT-SCOPE,
+with the null attached** — at cut grain on non-division cuts, 15
+indivisible verdicts (10 distinct windows, 8 distinct triples),
+every one with a PRINTED exact Farkas vector; a property shared
+with, and held LESS strongly than, a random partition of the same
+granularity (null battery in-receipt: σ sums 51 obstructed vs
+random's 174/174 at two printed LCG seeds; lumpable maps divide
+exactly — gates N1/N2); at EVERY division-event conditioning cut
+the law divides (division-event table: 0 IND / 4 DIV / 30 VAC).
+TWO CAP-RAISE DIFFERENCES FROM THE ROUND, FLAGGED NOT SILENT:
+ARM-D (1,2,3) is INDIVISIBLE at the raised cap (new witness — so
+15 not 14, and ARM-D delivers 2 indivisible triples, DIFFERENT
+ones than #11 published: (1,2,3),(2,3,4); (1,3,4) DIVISIBLE as the
+round expected); ALL TEN cap exclusions decide (EXCLUDED-BY-CAP =
+0).  B1 fixed (σ memo key includes the actor tuple; gate SIG.1;
+ARM-D supports [1,7,22,51,120]); AG2 restated 2/20 opposed, no
+anti-artefact reading; the false cap-direction sentence replaced
+by the true one (row certificate sufficient-not-necessary) with
+(1,4,5)σ the exhibited witness; PORT-3 re-routed to paper0:136
+[THEOREM] + :143 [THEOREM-GRADE CONVERGENCE] (owed forward
+corrections, named; the §4 [POSIT] explicitly NOT the target); DC2
+and the census named ONCE as one non-lumpability fact; every
+M/m item applied (status GREEN-UNREVIEWED-REPAIRED; double-count
+caveats carried; 1,103 padding-caveated; DET extended to both LP
+arms + eq. 22).  Delta round dispatched.

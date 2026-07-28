@@ -14,7 +14,7 @@ v11 U1 — THE INDIVISIBILITY CENSUS  (exact receipt)
   be implied; LEAN: NONE.
 
   PYTHONHASHSEED = (unset)
-  python         = 3.13.5
+  python         = 3.13.2
 
   QUOTE REGISTRY (every anchor below is held to these):
     [B3-22] [B3] J. A. Barandes, arXiv:2507.21192, eqs. 22-23 (quoted in v11 paper 0 sec.2)
@@ -129,15 +129,24 @@ SEC 2  DECLARED CAPS AND FAMILIES (nothing silent)
   ANCHOR arms: (A,B) depth <= 4 and (A,B,C) depth <= 3 — D72/D74's own windows, reproduced exactly
   ARM-0  closed-scope (d42b3) family to depth 6 for the Zhat sibling; the pair fixture [pA0] / [pA0,pB1] for Born = K1
   DC1    ordered-pair census over every parent of depth <= 3 (squares to depth 5), exhaustive, unsampled
-  LP     exact rational Phase-I simplex (Bland), caps: <= 700 variables, <= 400 constraints, <= 40000 pivots; every triple exceeding a cap is PRINTED as excluded with its size, and its cheap row certificate is still run
+  LP     exact rational Phase-I simplex (Bland), caps: <= 700 variables, <= 400 constraints, <= 400000 pivots; every triple exceeding a cap is PRINTED as excluded with its size, and its cheap row certificate is still run
+  LP2    the REDUCED system — implied zeros plus aggregation of identical Gamma columns and identical target rows, both proved feasibility-preserving in reduce_system() — decides triples the plain LP cap refuses; caps <= 5000 variables, <= 1200 constraints
   EQ22   the algebraic arm runs on fixed configuration spaces of size <= 100 (exact rational inversion); larger triples are printed as excluded
   WHY THOSE LP NUMBERS, since a tuned cap is a way to avoid an
   inconvenient answer: they are set by measured cost and by nothing
   else.  Exact Phase-I simplex on a 608-variable / 179-row triple costs
   ~90 s and ~3,200 pivots on this machine; the caps admit that size and
   refuse the next one up.  Every excluded triple still gets the row
-  certificate, which is the instrument that PROVES indivisibility, so a
-  cap can hide a divisibility verdict but cannot hide an indivisible one.
+  certificate.  WHAT A CAP CAN HIDE, STATED CORRECTLY: the row
+  certificate is SUFFICIENT for indivisibility and NOT NECESSARY — it
+  asks whether some target admits no non-negative row at all, and a
+  triple can be indivisible with every row individually solvable,
+  the obstruction living only in the column-stochasticity that couples
+  them.  A CAP CAN THEREFORE HIDE AN INDIVISIBLE TRIPLE EXACTLY AS
+  EASILY AS A DIVISIBLE ONE, and this receipt exhibits one: (1,4,5)
+  under alpha_sigma passes the row certificate with no obstruction and
+  is INDIVISIBLE on the full system.  That is why the LP2 reduction
+  below exists.
   EXCLUDED BY CAP, STATED IN ADVANCE: a renewal-to-renewal triple
   with a non-degenerate FIRST cut needs THREE renewals, i.e. depth
   >= 9 in the two-actor transport family (a pair-arb needs two
@@ -460,6 +469,7 @@ SEC 5  ANCHORS — D72/D74's committed transport census and the 44 + 44 split
 SEC 6  ARM 1 (a) — the D62-R4 renewal predicate, ported to transport scope and verified
 ------------------------------------------------------------------------------
   [DATA] the root state sigma([]) at both scopes: transport ((('A', 'B'), False, ()),) | closed ((('A', 'B'), False, ()),) | equal = True
+  [PASS] SIG.1 THE PORTED STATE IS A FUNCTION OF (history, ACTOR POOL, map) AND THE MEMO KEY CARRIES ALL THREE.  The same event word read in the (A,B) pool and in the (A,B,C) pool has DIFFERENT ported states — the token records name their holders, and C holds nothing — so a memo keyed on (history, map) alone would serve two-actor state to the three-actor arm on most shared words.  The key is (history, actor tuple, map); the two readings are checked to differ at the ROOT itself and on the shared words counted below, and to be stable under re-reading  (root (A,B) = ((('A', 'B'), False, ()),); root (A,B,C) = ((('A', 'B', 'C'), False, ()),); shared words to depth 2 = 69, pool-distinguished 65/69; re-read stable = True)
   [PASS] PORT-1 THE R4 ROW AND ITS RENEWAL COROLLARY HOLD AT CLOSED SCOPE, recomputed here from the ported field set: every pair-arb in the closed-scope family to depth 6 returns the serialised state to the ROOT — D62's 'every pair-arb is a RENEWAL to the root state', which is a row of the table and not a measured coincidence  (2032/2032 pair-arbs return to the root state on 34375 closed-scope histories; event-tag census {'R4': 2032, 'n': 12942, 'p': 12916, 'r': 6484})
   [DATA] ARM-A family: 30729 histories, (A,B) transport, depth <= 5  [13s]
   [PASS] PORT-2 THE PORT HOLDS IN-FAMILY AT THE DECLARED CAP: every pair-arb of the (A,B) transport family to depth 5 also returns the ported serialised state to the root, so at this window transport scope inherits D62's renewal corollary and paper 0 sec.4's fixed renewal-grain configuration space is realised  (1264/1264 pair-arbs return to root; distinct post-renewal states = 1)
@@ -472,7 +482,7 @@ SEC 6  ARM 1 (a) — the D62-R4 renewal predicate, ported to transport scope and
         4: ('d', 'A', 'B', ('v', ('v', 'v0'), (0,), ('A',), 'A'))   q = 1/8
         5: ('p', 'A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)   q = 1/8
         6: ('p', 'B', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 1)   q = 1/16
-        7: ('r', 'A', frozenset({('B', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 1), ('A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)}), frozenset({('A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)}))   q = 1/8
+        7: ('r', 'A', frozenset({('A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0), ('B', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 1)}), frozenset({('A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)}))   q = 1/8
   [DATA] the renewal-grain configuration space, BOTH WAYS: winner-invisible (D62-faithful) states at renewals: 1 — the root, and only the root; payload-enriched states at renewals: 8 — (winning value) x (winning author) x (initiator), each realised [158] times in-family
       L-1's BOUND, quoted where it bites (paper 0 sec.7): the renewal-grain
       configuration space just measured IS a fixed finite set at this cap, which
@@ -495,53 +505,81 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
   read at the record's own grain instead of the realizer's.
 
   [ARM-A / alpha_sigma  (D62-faithful, winner-invisible)]  cuts [0, 1, 2, 3, 4, 5]; configuration support sizes [1, 5, 11, 19, 32, 54]
-      (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x11  first cut carries a single configuration
-      (0, 1, 3)  VACUOUS          [CK]  sizes 1x5x19  first cut carries a single configuration
-      (0, 1, 4)  VACUOUS          [CK]  sizes 1x5x32  first cut carries a single configuration
-      (0, 1, 5)  VACUOUS          [CK]  sizes 1x5x54  first cut carries a single configuration
-      (0, 2, 3)  VACUOUS          [CK]  sizes 1x11x19  first cut carries a single configuration
-      (0, 2, 4)  VACUOUS          [CK]  sizes 1x11x32  first cut carries a single configuration
-      (0, 2, 5)  VACUOUS          [CK]  sizes 1x11x54  first cut carries a single configuration
-      (0, 3, 4)  VACUOUS          [CK]  sizes 1x19x32  first cut carries a single configuration
-      (0, 3, 5)  VACUOUS          [CK]  sizes 1x19x54  first cut carries a single configuration
-      (0, 4, 5)  VACUOUS          [CK]  sizes 1x32x54  first cut carries a single configuration
+      (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x11  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 3)  VACUOUS          [CK]  sizes 1x5x19  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 4)  VACUOUS          [CK]  sizes 1x5x32  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 5)  VACUOUS          [CK]  sizes 1x5x54  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 3)  VACUOUS          [CK]  sizes 1x11x19  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 4)  VACUOUS          [CK]  sizes 1x11x32  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 5)  VACUOUS          [CK]  sizes 1x11x54  first cut carries a single configuration  [first cut IS a division event]
+      (0, 3, 4)  VACUOUS          [CK]  sizes 1x19x32  first cut carries a single configuration  [first cut IS a division event]
+      (0, 3, 5)  VACUOUS          [CK]  sizes 1x19x54  first cut carries a single configuration  [first cut IS a division event]
+      (0, 4, 5)  VACUOUS          [CK]  sizes 1x32x54  first cut carries a single configuration  [first cut IS a division event]
       (1, 2, 3)  INDIVISIBLE      [exact LP infeasibility, Farkas certificate VERIFIED]  sizes 5x11x19  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 209v x 106r
+          FARKAS w (w^T M <= 0 on all 209 columns, w^T b = 73604/16549995 > 0): 106 non-zero of 106; sum = -2034870517/5516665; entries [0:5872/16905, 1:-257/345, 2:1, 3:-32/267, 4:367/1470, 5:1, 6:367/1470, 7:-32/267, 8:1, 9:1, 10:5872/16905, 11:-53245/1958, 12:1, 13:-43933/11270, 14:1, 15:-43933/11270, 16:-53245/1958, 17:-43933/11270, 18:1, 19:-43933/11270, 20:1, 21:-53245/1958, 22:1, 23:-43933/11270 ... (+82 more)]
       (1, 2, 4)  DIVISIBLE        [exact LP feasibility]  sizes 5x11x32  a stochastic intermediate EXISTS but is NOT the process's own conditional (CK fails); LP 352v x 171r
+          INTERPOLANT X exhibited: 106 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
       (1, 2, 5)  DIVISIBLE        [exact LP feasibility]  sizes 5x11x54  a stochastic intermediate EXISTS but is NOT the process's own conditional (CK fails); LP 594v x 281r
+          INTERPOLANT X exhibited: 202 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
       (1, 3, 4)  INDIVISIBLE      [exact LP infeasibility, Farkas certificate VERIFIED]  sizes 5x19x32  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 608v x 179r
-      (1, 3, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x19x54  LP size 1026 vars x 289 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1026v x 289r
-      (1, 4, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x32x54  LP size 1728 vars x 302 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1728v x 302r
+          FARKAS w (w^T M <= 0 on all 608 columns, w^T b = 2354721062739541712527/1215811027176215672668800 > 0): 179 non-zero of 179; sum = -2083364058074170224020258149/4457973766312790799785600; entries [0:-915208091/39367197785, 1:-2684520351/78734395570, 2:-915208091/39367197785, 3:-2684520351/78734395570, 4:-539811909451/2834438240520, 5:-4514936533/472406373420, 6:-4514936533/472406373420, 7:1, 8:-66631597025213/181404047393280, 9:-23798027506324099/235343407110375600, 10:-5585765954387/45351011848320, 11:-66131316448733/181404047393280, 12:-5585765954387/45351011848320, 13:-935874529657/5668876481040, 14:-66631597025213/181404047393280, 15:-66131316448733/181404047393280, 16:-539811909451/2834438240520, 17:-4514936533/472406373420, 18:-4514936533/472406373420, 19:-4605472663213/481991430272, 20:1, 21:976312013/3538624520, 22:-793000247/1769312260, 23:1 ... (+155 more)]
+      (1, 3, 5)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 5x19x54  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 1026v x 289r -> reduced 342v x 167r (groups 17x37)
+          INTERPOLANT X exhibited: 205 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (1, 4, 5)  INDIVISIBLE      [exact LP infeasibility on the reduced system, Farkas certificate VERIFIED]  sizes 5x32x54  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 1728v x 302r -> reduced 443v x 176r (groups 26x37)
+          FARKAS w (w^T M <= 0 on all 443 columns, w^T b = 10301953273/1599259939200 > 0): 176 non-zero of 176; sum = -47833401142230121/85445308494000; entries [0:-1/712, 1:-1/267, 2:-1/712, 3:-1/267, 4:-1/712, 5:-1/712, 6:-1/89, 7:-1/267, 8:-1/267, 9:-2093/77964, 10:-2093/77964, 11:-2957/77964, 12:-2957/77964, 13:-2957/77964, 14:-2957/77964, 15:9965/155928, 16:9965/155928, 17:9965/155928, 18:9965/155928, 19:1, 20:-290675949231/1702915676000, 21:-290675949231/1702915676000, 22:-18313/311856, 23:-18313/311856 ... (+152 more)]
       (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 11x19x32  12 of 32 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 12 obstructed targets; exemplar w over the 11 first-cut configurations, w^T b = 18/8077 > 0: 10 non-zero of 11; sum = -57341523/2100020; entries [0:-14810/8077, 1:-149317/12805, 2:-1/41, 3:672/8077, 4:-966/8077, 5:-213/16, 6:-23/16, 7:1, 8:-1, 9:1]
+          all obstructed w^T b: ['18/8077', '18/8077', '18/8077', '18/8077', '2/13363', '8/12805', '305/298634', '2/13363', '305/298634', '8/12805', '2/13363', '2/13363']
       (2, 3, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 11x19x54  14 of 54 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 14 obstructed targets; exemplar w over the 11 first-cut configurations, w^T b = 9/64616 > 0: 10 non-zero of 11; sum = -57341523/2100020; entries [0:-14810/8077, 1:-149317/12805, 2:-1/41, 3:672/8077, 4:-966/8077, 5:-213/16, 6:-23/16, 7:1, 8:-1, 9:1]
+          all obstructed w^T b: ['9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '9/64616', '255/1194536', '255/1194536']
       (2, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 11x32x54  12 of 54 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 12 obstructed targets; exemplar w over the 11 first-cut configurations, w^T b = 1948375277/370300506000 > 0: 11 non-zero of 11; sum = -72439778463037/1110901518000; entries [0:-12477994534/7714593875, 1:1, 2:433322/7832075, 3:3682039232/23143781625, 4:-92224788/335417125, 5:-535981/74016, 6:-1873379142983/32200044000, 7:1, 8:-323797/289125, 9:1, 10:1024/96375]
+          all obstructed w^T b: ['1948375277/370300506000', '1948375277/370300506000', '1948375277/370300506000', '1948375277/370300506000', '1057/206315520', '1/32125', '1/32125', '2230071/2221277440', '2230071/2221277440', '1057/206315520', '1/32125', '1/32125']
       (3, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 19x32x54  13 of 54 target configurations admit NO non-negative row at all
-      CENSUS ARM-A / alpha_sigma  (D62-faithful, winner-invisible): DIVISIBLE 2, EXCLUDED-BY-CAP 2, INDIVISIBLE 6, VACUOUS 10
-      LP work: (1, 2, 3) 209v x 106r, 335 pivots, 1.5s; (1, 2, 4) 352v x 171r, 652 pivots, 4.1s; (1, 2, 5) 594v x 281r, 1118 pivots, 13.2s; (1, 3, 4) 608v x 179r, 3216 pivots, 93.5s
+          FARKAS, row certificate: 13 obstructed targets; exemplar w over the 19 first-cut configurations, w^T b = 10215/3693158 > 0: 15 non-zero of 19; sum = -3110630002157/90674415216; entries [1:-314/1023, 2:-1, 3:-1, 4:-11, 5:1, 6:1, 7:-20736/1747, 8:41/1057, 9:146304/1846579, 10:-212598/1846579, 11:-1891/144, 12:1, 13:1, 14:-1, 15:1]
+          all obstructed w^T b: ['10215/3693158', '10215/3693158', '10215/3693158', '10215/3693158', '4385/4806912', '1296/2423089', '1296/2423089', '103813/2705472', '5/7808', '5/7808', '4385/4806912', '1296/2423089', '1296/2423089']
+      CENSUS ARM-A / alpha_sigma  (D62-faithful, winner-invisible): DIVISIBLE 3, INDIVISIBLE 7, VACUOUS 10
+      LP work: (1, 2, 3) 209v x 106r, 335 pivots, 1.5s; (1, 2, 4) 352v x 171r, 652 pivots, 4.4s; (1, 2, 5) 594v x 281r, 1118 pivots, 14.1s; (1, 3, 4) 608v x 179r, 3216 pivots, 99.6s; (1, 3, 5)/reduced 342v x 167r, 494 pivots, 7.8s; (1, 4, 5)/reduced 443v x 176r, 783 pivots, 23.1s
 
   [ARM-A / alpha_sigma+ (payload-enriched)]  cuts [0, 1, 2, 3, 4, 5]; configuration support sizes [1, 5, 13, 37, 97, 185]
-      (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x13  first cut carries a single configuration
-      (0, 1, 3)  VACUOUS          [CK]  sizes 1x5x37  first cut carries a single configuration
-      (0, 1, 4)  VACUOUS          [CK]  sizes 1x5x97  first cut carries a single configuration
-      (0, 1, 5)  VACUOUS          [CK]  sizes 1x5x185  first cut carries a single configuration
-      (0, 2, 3)  VACUOUS          [CK]  sizes 1x13x37  first cut carries a single configuration
-      (0, 2, 4)  VACUOUS          [CK]  sizes 1x13x97  first cut carries a single configuration
-      (0, 2, 5)  VACUOUS          [CK]  sizes 1x13x185  first cut carries a single configuration
-      (0, 3, 4)  VACUOUS          [CK]  sizes 1x37x97  first cut carries a single configuration
-      (0, 3, 5)  VACUOUS          [CK]  sizes 1x37x185  first cut carries a single configuration
-      (0, 4, 5)  VACUOUS          [CK]  sizes 1x97x185  first cut carries a single configuration
+      (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x13  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 3)  VACUOUS          [CK]  sizes 1x5x37  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 4)  VACUOUS          [CK]  sizes 1x5x97  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 5)  VACUOUS          [CK]  sizes 1x5x185  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 3)  VACUOUS          [CK]  sizes 1x13x37  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 4)  VACUOUS          [CK]  sizes 1x13x97  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 5)  VACUOUS          [CK]  sizes 1x13x185  first cut carries a single configuration  [first cut IS a division event]
+      (0, 3, 4)  VACUOUS          [CK]  sizes 1x37x97  first cut carries a single configuration  [first cut IS a division event]
+      (0, 3, 5)  VACUOUS          [CK]  sizes 1x37x185  first cut carries a single configuration  [first cut IS a division event]
+      (0, 4, 5)  VACUOUS          [CK]  sizes 1x97x185  first cut carries a single configuration  [first cut IS a division event]
       (1, 2, 3)  INDIVISIBLE      [exact LP infeasibility, Farkas certificate VERIFIED]  sizes 5x13x37  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 481v x 198r
-      (1, 2, 4)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x13x97  LP size 1261 vars x 498 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1261v x 498r
-      (1, 2, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x13x185  LP size 2405 vars x 938 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 2405v x 938r
-      (1, 3, 4)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x37x97  LP size 3589 vars x 522 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 3589v x 522r
-      (1, 3, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x37x185  LP size 6845 vars x 962 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 6845v x 962r
-      (1, 4, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x97x185  LP size 17945 vars x 1022 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 17945v x 1022r
+          FARKAS w (w^T M <= 0 on all 481 columns, w^T b = 73604/5516665 > 0): 198 non-zero of 198; sum = -6991707/6853; entries [0:-32/267, 1:-32/267, 2:-257/345, 3:1, 4:-32/267, 5:367/1470, 6:1, 7:367/1470, 8:-32/267, 9:1, 10:1, 11:-32/267, 12:-32/267, 13:-53245/1958, 14:1, 15:-43933/11270, 16:1, 17:-43933/11270, 18:-53245/1958, 19:-43933/11270, 20:1, 21:-43933/11270, 22:1, 23:-53245/1958 ... (+174 more)]
+      (1, 2, 4)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 5x13x97  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 1261v x 498r -> reduced 243v x 156r (groups 13x61)
+          INTERPOLANT X exhibited: 226 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (1, 2, 5)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 5x13x185  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 2405v x 938r -> reduced 511v x 278r (groups 13x95)
+          INTERPOLANT X exhibited: 497 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (1, 3, 4)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 5x37x97  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 3589v x 522r -> reduced 457v x 174r (groups 31x61)
+          INTERPOLANT X exhibited: 288 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (1, 3, 5)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 5x37x185  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 6845v x 962r -> reduced 1025v x 296r (groups 31x95)
+          INTERPOLANT X exhibited: 686 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (1, 4, 5)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 5x97x185  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 17945v x 1022r -> reduced 1611v x 326r (groups 61x95)
+          INTERPOLANT X exhibited: 1016 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
       (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 13x37x97  6 of 97 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 6 obstructed targets; exemplar w over the 13 first-cut configurations, w^T b = 9/4334 > 0: 10 non-zero of 13; sum = -3527333/281710; entries [0:-384/2167, 1:-384/2167, 2:-149317/12805, 3:-23/11, 4:192/2167, 6:1, 7:-483/1970, 8:-16/197, 9:1, 11:-384/2167]
+          all obstructed w^T b: ['9/4334', '9/4334', '9/4334', '9/4334', '8/12805', '8/12805']
       (2, 3, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 13x37x185  4 of 185 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 4 obstructed targets; exemplar w over the 13 first-cut configurations, w^T b = 9/69344 > 0: 10 non-zero of 13; sum = -3527333/281710; entries [0:-384/2167, 1:-384/2167, 2:-149317/12805, 3:-23/11, 4:192/2167, 6:1, 7:-483/1970, 8:-16/197, 9:1, 11:-384/2167]
+          all obstructed w^T b: ['9/69344', '9/69344', '9/69344', '9/69344']
       (2, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 13x97x185  18 of 185 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 18 obstructed targets; exemplar w over the 13 first-cut configurations, w^T b = 4887/2304112 > 0: 10 non-zero of 13; sum = -99942047/5760280; entries [0:-23520/2167, 1:-192/2167, 2:-2313/394, 3:-1249/1462, 4:8288/144007, 6:1, 7:-2737/7880, 9:1, 10:-25/22, 11:-2176/8471]
+          all obstructed w^T b: ['4887/2304112', '44931/28895960', '44931/28895960', '4887/2304112', '4887/2304112', '44931/28895960', '44931/28895960', '4887/2304112', '3/193024', '3/193024', '3/193024', '3/193024', '27/31520', '27/31520', '3/193024', '3/193024', '3/193024', '3/193024']
       (3, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 37x97x185  24 of 185 target configurations admit NO non-negative row at all
-      CENSUS ARM-A / alpha_sigma+ (payload-enriched): EXCLUDED-BY-CAP 5, INDIVISIBLE 5, VACUOUS 10
-      LP work: (1, 2, 3) 481v x 198r, 841 pivots, 5.8s
-  [DATA] ARM-A time: 143s
+          FARKAS, row certificate: 24 obstructed targets; exemplar w over the 37 first-cut configurations, w^T b = 469125/87433856 > 0: 28 non-zero of 37; sum = -1144063887690121/30690758902320; entries [1:-1, 2:-66750656/698787771, 3:-1, 4:-493149760/28875714021, 5:-2432/35805, 6:-429320960/28875714021, 7:-4462/35805, 8:-56489600/375009273, 9:-64/93, 15:-14122400/1125027819, 16:-16/279, 17:-10547339/381156966, 19:-16/279, 20:-14122400/1125027819, 21:-1, 22:-20736/1747, 23:-10469/3519, 24:111200/683077, 25:27362150/125003091, 26:-1891/144, 27:1, 28:1, 29:1, 30:1 ... (+4 more)]
+          all obstructed w^T b: ['469125/87433856', '8775/557583002', '8775/557583002', '469125/87433856', '469125/87433856', '8775/557583002', '8775/557583002', '469125/87433856', '31275/59132456', '31275/59132456', '31275/59132456', '31275/59132456', '4593840869/184879000320', '365/47244', '365/47244', '4593840869/184879000320', '4593840869/184879000320', '365/47244', '365/47244', '4593840869/184879000320', '31275/59132456', '31275/59132456', '31275/59132456', '31275/59132456']
+      CENSUS ARM-A / alpha_sigma+ (payload-enriched): DIVISIBLE 5, INDIVISIBLE 5, VACUOUS 10
+      LP work: (1, 2, 3) 481v x 198r, 841 pivots, 6.5s; (1, 2, 4)/reduced 243v x 156r, 263 pivots, 0.6s; (1, 2, 5)/reduced 511v x 278r, 781 pivots, 5.6s; (1, 3, 4)/reduced 457v x 174r, 945 pivots, 11.1s; (1, 3, 5)/reduced 1025v x 296r, 1492 pivots, 25.4s; (1, 4, 5)/reduced 1611v x 326r, 2912 pivots, 302.7s
+  [DATA] ARM-A time: 530s
 
   ARM-B — the DIVISION-EVENT GRAIN.  The ensemble is conditioned on a PAST
   event only: that the depth-3 prefix ends in a pair-arb, i.e. that the
@@ -551,51 +589,141 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
   [PASS] G2 ARM-B is a probability law too: the horizon-6 kernel sums to 1 at every history of the renewal-started window and the cut marginal is 1 at depths 3..6  (16 renewal bases, 16368 histories; kernels 1712, non-unit 0; cut masses ['1', '1', '1', '1'])
 
   [ARM-B / alpha_sigma  (D62-faithful, winner-invisible)]  cuts [3, 4, 5, 6]; configuration support sizes [1, 5, 11, 19];  cut 3 IS a division event
-      (3, 4, 5)  VACUOUS          [CK]  sizes 1x5x11  first cut carries a single configuration
-      (3, 4, 6)  VACUOUS          [CK]  sizes 1x5x19  first cut carries a single configuration
-      (3, 5, 6)  VACUOUS          [CK]  sizes 1x11x19  first cut carries a single configuration
+      (3, 4, 5)  VACUOUS          [CK]  sizes 1x5x11  first cut carries a single configuration  [first cut IS a division event]
+      (3, 4, 6)  VACUOUS          [CK]  sizes 1x5x19  first cut carries a single configuration  [first cut IS a division event]
+      (3, 5, 6)  VACUOUS          [CK]  sizes 1x11x19  first cut carries a single configuration  [first cut IS a division event]
       (4, 5, 6)  DIVISIBLE        [CK]  sizes 5x11x19  the process's own conditional Gamma(c''<-c') works
       CENSUS ARM-B / alpha_sigma  (D62-faithful, winner-invisible): DIVISIBLE 1, VACUOUS 3
 
   [ARM-B / alpha_sigma+ (payload-enriched)]  cuts [3, 4, 5, 6]; configuration support sizes [8, 40, 76, 148];  cut 3 IS a division event
-      (3, 4, 5)  DIVISIBLE        [CK]  sizes 8x40x76  the process's own conditional Gamma(c''<-c') works
-      (3, 4, 6)  DIVISIBLE        [CK]  sizes 8x40x148  the process's own conditional Gamma(c''<-c') works
-      (3, 5, 6)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 8x76x148  LP size 11248 vars x 1260 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 11248v x 1260r
+      (3, 4, 5)  DIVISIBLE        [CK]  sizes 8x40x76  the process's own conditional Gamma(c''<-c') works  [first cut IS a division event]
+      (3, 4, 6)  DIVISIBLE        [CK]  sizes 8x40x148  the process's own conditional Gamma(c''<-c') works  [first cut IS a division event]
+      (3, 5, 6)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 8x76x148  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 11248v x 1260r -> reduced 426v x 137r (groups 33x34)  [first cut IS a division event]
+          INTERPOLANT X exhibited: 944 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
       (4, 5, 6)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 40x76x148  64 of 148 target configurations admit NO non-negative row at all
-      CENSUS ARM-B / alpha_sigma+ (payload-enriched): DIVISIBLE 2, EXCLUDED-BY-CAP 1, INDIVISIBLE 1
+          FARKAS, row certificate: 64 obstructed targets; exemplar w over the 40 first-cut configurations, w^T b = 1/130 > 0: 40 non-zero of 40; sum = -7184/65; entries [0:-768/65, 1:-768/65, 2:-768/65, 3:-768/65, 4:-768/65, 5:-768/65, 6:-768/65, 7:-768/65, 8:-1, 9:-1, 10:-1, 11:-1, 12:-1, 13:-1, 14:-1, 15:-1, 16:-1, 17:-1, 18:-1, 19:-1, 20:-1, 21:-1, 22:-1, 23:-1 ... (+16 more)]
+          all obstructed w^T b: ['1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130']
+      CENSUS ARM-B / alpha_sigma+ (payload-enriched): DIVISIBLE 3, INDIVISIBLE 1
+      LP work: (3, 5, 6)/reduced 426v x 137r, 188 pivots, 0.5s
 
-      READ THIS BEFORE READING ARM-B's VERDICT.  ARM-B's window reaches
-      only three steps past the division event, i.e. relative depths 0..3.
-      ARM-A's indivisible triples all begin at relative depth >= 2, so the
-      SAME triples post-renewal would need depths 5,6,7 — beyond this cap.
-      ARM-B's divisibility is therefore a WINDOW fact and NOT evidence that
-      renewal resets divisibility.  Stated here so no reader can take it
-      for the stronger claim.
-  [DATA] ARM-B time: 23s
+      HOW FAR ARM-B REACHES, AND THE MAP-DEPENDENCE IT EXPOSES.  ARM-B's
+      window runs three steps past the division event, i.e. relative
+      depths 0..3, so ARM-A's triples that begin at relative depth >= 2
+      ((2,3,4) and later) would need depths 5,6,7 and are beyond this
+      cap.  ARM-A's other two indivisible triples begin at relative
+      depth 1 — (1,2,3) and (1,3,4) — and their post-renewal analogue
+      IS inside the window: it is ARM-B's (4,5,6).  It is DIVISIBLE by
+      exact Chapman-Kolmogorov under the D62-faithful map and INDIVISIBLE
+      under the payload-enriched one.  So the one comparison this arm
+      can actually make points in the ARTEFACT direction for the coarse
+      map and against it for the fine one: the verdict at a post-renewal
+      window is a property of the CONFIGURATION MAP, not of the process
+      alone.  Both readings are printed above and neither is preferred.
+  [DATA] ARM-B time: 24s
 
   ARM-C — RENEWAL-TO-RENEWAL.  Cuts are renewal indices 0, 1, 2.
   [DATA] renewal 2 within the cap: mass reaching a second renewal by depth 6 = 1/257; renewal-1 configurations 8; renewal-2 configurations 8
   [PASS] C1 THE RENEWAL STEP IS CONFIGURATION-INDEPENDENT (measured, at the cap): conditioned on a second renewal occurring inside the window, the distribution of the renewal-2 configuration is the SAME whichever renewal-1 configuration the process came from.  The renewal-to-renewal transfer is therefore a RANK-ONE column-stochastic matrix, R^2 = R, and every renewal triple factors through it — the renewal chain is a genuine renewal process at this scope.  DECLARED: this conditions on a FUTURE event (that renewal 2 arrives by depth 6), which at this cap forces both renewal intervals to be minimal; it is the conditioned law of that sub-ensemble and is labelled as such  (8 distinct renewal-1 configurations, 1 distinct renewal-step columns (1 == configuration-independent); rank-one = True)
-  [PASS] C2 THE RENEWAL-TO-RENEWAL TRIPLE (0,1,2) IS STRUCTURALLY VACUOUS AT EVERY REACHABLE CAP, and this is reported rather than dressed up: renewal cut 0 is the root, a SINGLE configuration, so by the preamble's degeneracy clause a stochastic interpolant always exists.  A non-degenerate renewal triple needs THREE renewals, i.e. depth >= 9 in this grammar, which is excluded by the declared cap.  The renewal-grain interpolant test is therefore NOT RUN, not passed  (renewal cut 0 configurations = 1; the first non-degenerate renewal triple sits at depth >= 9 (>= 3 pair-arbs x 3 events), excluded by cap 6)
+  [PASS] C2 THE RENEWAL-TO-RENEWAL TRIPLE (0,1,2) IS STRUCTURALLY VACUOUS under the winner-invisible map at every reachable cap, and this is reported rather than dressed up: renewal cut 0 is the root, a SINGLE configuration, so by the preamble's degeneracy clause a stochastic interpolant always exists.  A NON-DEGENERATE renewal triple needs THREE renewals, i.e. depth >= 9 in this grammar; ARM-C2 below runs exactly that  (renewal cut 0 configurations = 1; the first non-degenerate renewal triple sits at depth >= 9 (>= 3 pair-arbs x 3 events), beyond cap 6 — ARM-C2 reaches it by conditioning instead of enumerating)
   [DATA] ARM-C time: 0s
+
+  ARM-C2 — THE PINNED TEST, RUN.  The cut triple is (renewal 1, renewal 2,
+  renewal 3): three DIVISION EVENTS, the grain paper 0 sec.4 says the law
+  lives at, with a FIRST CUT THAT IS NOT THE ROOT.  Depth 9 is not
+  enumerated — the two-actor transport family has ~10^8 histories there.
+  It is reached by CONDITIONING instead, and the conditioning is what
+  makes it exact rather than sampled:
+    (i)  at horizon D the relative-horizon leaf measure telescopes to
+         P(leaf) = prod_t q_t / G(root, D) — G(leaf,0) = 1 — so the law
+         CONDITIONED on any set of depth-D leaves needs only those
+         leaves' raw products; the normaliser cancels.  No sampling, no
+         truncation, exact rationals.
+   (ii)  a pair-arbitration needs two proposals in its ckey; at a
+         renewal the ported state is the ROOT, which carries NO live
+         operations (gated below), so a renewal three events after a
+         renewal forces the intervening two events to be proposals.
+         The depth-9 leaves carrying three renewals at 3, 6, 9 are
+         therefore enumerable directly and EXHAUSTIVELY.
+  DECLARED, and it is the arm's boundary: this is the MINIMAL-INTERVAL
+  sub-ensemble — conditioning on renewal 3 by depth 9 forces all three
+  renewal intervals to their shortest length.  It is the same future-
+  conditioning ARM-C declares, one renewal further on.
+  [PASS] C2a THE ROOT CARRIES NO LIVE OPERATIONS, which is what licenses the enumeration above: every ported token record at the root state has an EMPTY live-triple list, so no proposal survives a renewal and a pair-arb three events later must be fed by two fresh proposals  (root state ((('A', 'B'), False, ()),); live-triple lists [()])
+  [PASS] C2b THE MINIMAL-INTERVAL RENEWAL-3 ENSEMBLE IS BUILT AND CLOSED: every depth-6 history in it ends in a pair-arbitration whose ported state is exactly the root, and every depth-9 history in it ends in a third pair-arbitration  (16 renewal-1 bases -> 256 renewal-2 histories (depth 6) -> 4096 renewal-3 histories (depth 9); raw mass 1/32768)
+
+  [ARM-C2 / alpha_sigma  (D62-faithful, winner-invisible)]  cuts [1, 2, 3]; configuration support sizes [1, 1, 1];  cuts are RENEWAL INDICES 1,2,3 — all three are division events
+      (1, 2, 3)  VACUOUS          [CK]  sizes 1x1x1  first cut carries a single configuration  [first cut IS a division event]
+      CENSUS ARM-C2 / alpha_sigma  (D62-faithful, winner-invisible): VACUOUS 1
+
+  [ARM-C2 / alpha_sigma+ (payload-enriched)]  cuts [1, 2, 3]; configuration support sizes [8, 8, 8];  cuts are RENEWAL INDICES 1,2,3 — all three are division events
+      (1, 2, 3)  DIVISIBLE        [CK]  sizes 8x8x8  the process's own conditional Gamma(c''<-c') works  [first cut IS a division event]
+      CENSUS ARM-C2 / alpha_sigma+ (payload-enriched): DIVISIBLE 1
+  [PASS] C2c THE PINNED QUESTION IS DECIDED, AND IT DIVIDES.  The non-degenerate renewal-to-renewal triple — first cut a division event carrying MORE THAN ONE configuration, which is what makes it non-degenerate, and the very computation the cap blocked — admits a stochastic interpolant.  At renewal grain, on the minimal-interval sub-ensemble, the record law DIVIDES; the payload-enriched map is the one that makes the test non-vacuous and it is the one that divides  (renewal-grain supports [8, 8, 8]; verdict DIVISIBLE by Chapman-Kolmogorov; winner-invisible reading VACUOUS)
+  [DATA] ARM-C2 renewal transfers: Gamma(r2<-r1) distinct columns 1; Gamma(r3<-r1) distinct columns 1 (1 == the renewal chain forgets its configuration in one step, so R^2 = R and every renewal triple factors through R)
+  [DATA] ARM-C2 time: 12s
 
   ARM-D — THE POOL CONTROL: the same census on a THREE-actor transport
   family, so that no verdict rests on a two-actor accident.
   [PASS] G3 ARM-D is a probability law: kernel row sums and cut marginals exactly 1 on the three-actor family  (50617 histories; kernels 3424, non-unit 0; cut masses ['1', '1', '1', '1', '1'])
 
-  [ARM-D / alpha_sigma (D62-faithful)]  cuts [0, 1, 2, 3, 4]; configuration support sizes [1, 8, 27, 59, 124]
-      (0, 1, 2)  VACUOUS          [CK]  sizes 1x8x27  first cut carries a single configuration
-      (0, 1, 3)  VACUOUS          [CK]  sizes 1x8x59  first cut carries a single configuration
-      (0, 1, 4)  VACUOUS          [CK]  sizes 1x8x124  first cut carries a single configuration
-      (0, 2, 3)  VACUOUS          [CK]  sizes 1x27x59  first cut carries a single configuration
-      (0, 2, 4)  VACUOUS          [CK]  sizes 1x27x124  first cut carries a single configuration
-      (0, 3, 4)  VACUOUS          [CK]  sizes 1x59x124  first cut carries a single configuration
-      (1, 2, 3)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 8x27x59  LP size 1593 vars x 499 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1593v x 499r
-      (1, 2, 4)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 8x27x124  LP size 3348 vars x 1019 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 3348v x 1019r
-      (1, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 8x59x124  2 of 124 target configurations admit NO non-negative row at all
-      (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 27x59x124  34 of 124 target configurations admit NO non-negative row at all
-      CENSUS ARM-D / alpha_sigma (D62-faithful): EXCLUDED-BY-CAP 2, INDIVISIBLE 2, VACUOUS 6
-  [DATA] ARM-D time: 38s
+  [ARM-D / alpha_sigma (D62-faithful)]  cuts [0, 1, 2, 3, 4]; configuration support sizes [1, 7, 22, 51, 120]
+      (0, 1, 2)  VACUOUS          [CK]  sizes 1x7x22  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 3)  VACUOUS          [CK]  sizes 1x7x51  first cut carries a single configuration  [first cut IS a division event]
+      (0, 1, 4)  VACUOUS          [CK]  sizes 1x7x120  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 3)  VACUOUS          [CK]  sizes 1x22x51  first cut carries a single configuration  [first cut IS a division event]
+      (0, 2, 4)  VACUOUS          [CK]  sizes 1x22x120  first cut carries a single configuration  [first cut IS a division event]
+      (0, 3, 4)  VACUOUS          [CK]  sizes 1x51x120  first cut carries a single configuration  [first cut IS a division event]
+      (1, 2, 3)  INDIVISIBLE      [exact LP infeasibility on the reduced system, Farkas certificate VERIFIED]  sizes 7x22x51  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 1122v x 379r -> reduced 154v x 158r (groups 22x48)
+          FARKAS w (w^T M <= 0 on all 154 columns, w^T b = 33106017/24835219624 > 0): 158 non-zero of 158; sum = -7651564012831/24835219624; entries [0:5421/23698, 1:345137/2275008, 2:-295/3589, 3:345137/2275008, 4:5421/23698, 5:-295/3589, 6:345137/2275008, 7:345137/2275008, 8:-295/3589, 9:-295/3589, 10:345137/2275008, 11:345137/2275008, 12:5421/23698, 13:-295/3589, 14:-295/3589, 15:-216/289, 16:1, 17:1, 18:1, 19:1, 20:1, 21:1, 22:-7622827/1137504, 23:1 ... (+134 more)]
+      (1, 2, 4)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 7x22x120  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 2640v x 862r -> reduced 537v x 376r (groups 22x99)
+          INTERPOLANT X exhibited: 382 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (1, 3, 4)  DIVISIBLE        [exact LP feasibility on the reduced system, interpolant lifted and re-verified]  sizes 7x51x120  a column-stochastic interpolant EXISTS (exhibited and checked entry by entry) but is NOT the process's own conditional (CK fails); LP 6120v x 891r -> reduced 613v x 402r (groups 48x99)
+          INTERPOLANT X exhibited: 425 non-zero entries; column sums all exactly 1 = True; X.Gamma(c'<-c) = Gamma(c''<-c) entry by entry = True; every entry >= 0 = True
+      (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 22x51x120  18 of 120 target configurations admit NO non-negative row at all
+          FARKAS, row certificate: 18 obstructed targets; exemplar w over the 22 first-cut configurations, w^T b = 116/326937 > 0: 20 non-zero of 22; sum = -829816567247/18421265265; entries [0:-116375808/20814989, 1:-23328/1313, 2:-1/249, 3:36875/653874, 4:-23875/326937, 5:-55165/326937, 6:-23875/326937, 7:-5547/295, 8:1, 9:-2331/2626, 10:-382/295, 11:1, 12:-1, 13:295/2626, 14:-677/295, 15:1, 16:-191/1313, 17:-295/2626, 18:-1, 19:1]
+          all obstructed w^T b: ['116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '9/328250', '9/328250', '9/328250', '9/328250', '9/328250', '9/328250']
+      CENSUS ARM-D / alpha_sigma (D62-faithful): DIVISIBLE 2, INDIVISIBLE 2, VACUOUS 6
+      LP work: (1, 2, 3)/reduced 154v x 158r, 503 pivots, 3.4s; (1, 2, 4)/reduced 537v x 376r, 1285 pivots, 18.0s; (1, 3, 4)/reduced 613v x 402r, 2025 pivots, 79.4s
+  [DATA] ARM-D time: 136s
+
+  THE NULL.  Every verdict above is a verdict about a COARSE-GRAINING of a
+  divisible click law, and the question a census cannot answer about
+  itself is how much of it is the RECORD and how much is coarse-graining
+  as such.  The battery below answers it: the same family, the same
+  horizon measure, the same cuts, the same instrument, four control maps
+  with the record content removed and the granularity kept.
+    (i)   FULL PREFIX — the finest map, alpha(h) = h.  The law is a
+          chain rule on prefixes, so Chapman-Kolmogorov must hold and
+          every triple must divide.  This is the pipeline's own sanity
+          check: if it fails, nothing else in this receipt means anything.
+    (ii)  RANDOM PARTITION — the prefixes at each depth are dealt out
+          into classes with EXACTLY alpha_sigma's class sizes at that
+          depth, by a printed congruential shuffle.  Same granularity,
+          same size profile, ZERO record content.  Two fixed seeds.
+    (iii) KINEMATIC TAG MULTISET — alpha(h) = the multiset of event
+          tags, a map that reads the grammar and no record at all.
+    (iv)  ACTOR SEQUENCE — alpha(h) = the sequence of acting actors,
+          a coarse kinematic map whose lumpability is measured here
+          rather than assumed.
+  THE SHUFFLE, PRINTED: x <- (1103515245 x + 12345) mod 2147483648, seeds (20260727, 11);
+  Fisher-Yates over the sk()-sorted prefix list, then the shuffled
+  list is cut into blocks of alpha_sigma's own class sizes.  No call to
+  any random module and no dependence on the clock or the hash seed.
+
+      map                                supports 0..5                  (1, 2, 3)      (2, 3, 4)      (2, 3, 5)      (2, 4, 5)      (3, 4, 5)
+      alpha_sigma  (THE RECORD MAP)      [1, 5, 11, 19, 32, 54]              0/19          12/32          14/54          12/54          13/54
+      full prefix  (finest, Markov)      [1, 8, 60, 452, 3448, 26760]        0/452*        0/3448*       0/26760*       0/26760*       0/26760*
+      random partition, seed 20260727    [1, 5, 11, 19, 32, 54]             10/19          28/32          40/54          42/54          54/54
+      random partition, seed 11          [1, 5, 11, 19, 32, 54]              9/19          30/32          42/54          39/54          54/54
+      kinematic tag multiset             [1, 3, 7, 12, 19, 28]               0/12           5/19           3/28           9/28           9/28
+      actor sequence                     [1, 2, 4, 8, 16, 32]                0/8*          0/16*          0/32*          0/32*          0/32*
+      cell = obstructed target configurations / target configurations;
+      * = Chapman-Kolmogorov holds exactly at that triple (the process's
+      own conditional already interpolates, so the triple DIVIDES).
+  [PASS] N1 THE PIPELINE'S OWN SANITY CHECK PASSES: under the finest map the generated law satisfies Chapman-Kolmogorov EXACTLY at every test triple and divides everywhere.  Every indivisibility reported by this receipt is therefore a property of a COARSE-GRAINING and of nothing else  (full-prefix CK exact at all 5 test triples = True; prefix supports by depth [1, 8, 60, 452, 3448, 26760]; record-map supports [1, 5, 11, 19, 32, 54])
+  [PASS] N2 THE NULL OUT-SCORES THE RECORD MAP.  A uniformly random partition of the same prefixes into alpha_sigma's own class sizes — zero record content, identical granularity — is obstructed on MORE target configurations than alpha_sigma is, at both seeds.  Indivisibility at cut grain is therefore what coarse-graining a divisible chain generically does, and the record map holds the property LESS strongly than noise of its own granularity.  This is the direction OPPOSITE to a bridge headline, and it is the reason this unit's verdict is scoped rather than asserted  (obstructed rows summed over the 5 test triples: alpha_sigma 51; random [174, 174]; per-triple table above)
+  [DATA] Barandes' own caveat, quoted where it bites: [B3] takes UNISTOCHASTICITY, not indivisibility, as the quantum criterion: indivisibility per se is generic for classical coarse-grainings, which N2 measures directly.  The unistochasticity screen is U3's and is reported unadjudicated in ARM 0
+  [DATA] null battery time: 25s
 
   THE [B3] EQ. 22 ALGEBRAIC ARM — Gammabar = Gamma(c''<-c) Gamma(c'<-c)^-1,
   with the negative entries counted exactly.  This needs a SQUARE Gamma,
@@ -611,36 +739,36 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
   one, which is why the feasibility form above — convention-free, and
   quantifying over ALL stochastic intermediates rather than the unique
   algebraic one — remains the decisive instrument.
-      (0, 1, 2)    STOCHASTIC        |X| = 11; NEGATIVE ENTRIES = 0 of 121 exactly; column sums all 1 = True; most negative = 0
-      (0, 1, 3)    STOCHASTIC        |X| = 19; NEGATIVE ENTRIES = 0 of 361 exactly; column sums all 1 = True; most negative = 0
-      (0, 1, 4)    STOCHASTIC        |X| = 32; NEGATIVE ENTRIES = 0 of 1024 exactly; column sums all 1 = True; most negative = 0
-      (0, 1, 5)    STOCHASTIC        |X| = 54; NEGATIVE ENTRIES = 0 of 2916 exactly; column sums all 1 = True; most negative = 0
-      (0, 2, 3)    STOCHASTIC        |X| = 19; NEGATIVE ENTRIES = 0 of 361 exactly; column sums all 1 = True; most negative = 0
-      (0, 2, 4)    STOCHASTIC        |X| = 32; NEGATIVE ENTRIES = 0 of 1024 exactly; column sums all 1 = True; most negative = 0
-      (0, 2, 5)    STOCHASTIC        |X| = 54; NEGATIVE ENTRIES = 0 of 2916 exactly; column sums all 1 = True; most negative = 0
-      (0, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 4 of 1024 exactly; column sums all 1 = True; most negative = -1/584
-      (0, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 4 of 2916 exactly; column sums all 1 = True; most negative = -17/1168
-      (0, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 4 of 2916 exactly; column sums all 1 = True; most negative = -5/303
-      (1, 2, 3)    PSEUDO-STOCHASTIC |X| = 19; NEGATIVE ENTRIES = 8 of 361 exactly; column sums all 1 = True; most negative = -66/12593
-      (1, 2, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 21 of 1024 exactly; column sums all 1 = True; most negative = -675/100744
-      (1, 2, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 43 of 2916 exactly; column sums all 1 = True; most negative = -453/100744
-      (1, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 37 of 1024 exactly; column sums all 1 = True; most negative = -12101/1298976
-      (1, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 59 of 2916 exactly; column sums all 1 = True; most negative = -170941/7847980
-      (1, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 67 of 2916 exactly; column sums all 1 = True; most negative = -248545/8203104
-      (2, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 118 of 1024 exactly; column sums all 1 = True; most negative = -5528/518885
-      (2, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 216 of 2916 exactly; column sums all 1 = True; most negative = -5463/518885
-      (2, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 228 of 2916 exactly; column sums all 1 = True; most negative = -183934373/13941127680
-      (3, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 294 of 2916 exactly; column sums all 1 = True; most negative = -60454377/7356440080
-  [DATA] eq. 22 algebraic census (ARM-A / alpha_sigma): pseudo-stochastic 13, stochastic 7, singular 0, excluded 0; total negative entries 1103
-  [DATA] eq. 22 algebraic reading vs the feasibility verdict: {'PSEUDO-STOCHASTIC / DIVISIBLE': 2, 'PSEUDO-STOCHASTIC / EXCLUDED-BY-CAP': 2, 'PSEUDO-STOCHASTIC / INDIVISIBLE': 6, 'PSEUDO-STOCHASTIC / VACUOUS': 3, 'STOCHASTIC / VACUOUS': 7}
-  [PASS] EQ22.1 THE ALGEBRAIC READING IS STRICTLY WEAKER THAN THE FEASIBILITY READING, AND THE CENSUS SHOWS BOTH DIRECTIONS OF THE GAP.  A pseudo-stochastic Gammabar says the UNIQUE algebraic intermediate under the fixed-space convention has negative entries; it does NOT by itself say no stochastic intermediate exists, and the table above contains triples where the algebraic reading is pseudo-stochastic while a genuine stochastic interpolant exists on the supports.  [B3] eq. 22 is the right instrument only when the configuration space really is fixed — which, on this carrier, it is not away from renewals  (13 pseudo-stochastic, 7 stochastic; cross-tabulated against the feasibility verdict above)
+      (0, 1, 2)    STOCHASTIC        |X| = 11; NEGATIVE ENTRIES = 0 of 121 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 1, 3)    STOCHASTIC        |X| = 19; NEGATIVE ENTRIES = 0 of 361 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 1, 4)    STOCHASTIC        |X| = 32; NEGATIVE ENTRIES = 0 of 1024 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 1, 5)    STOCHASTIC        |X| = 54; NEGATIVE ENTRIES = 0 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 2, 3)    STOCHASTIC        |X| = 19; NEGATIVE ENTRIES = 0 of 361 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 2, 4)    STOCHASTIC        |X| = 32; NEGATIVE ENTRIES = 0 of 1024 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 2, 5)    STOCHASTIC        |X| = 54; NEGATIVE ENTRIES = 0 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = 0
+      (0, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 4 of 1024 exactly (identity-padding convention); column sums all 1 = True; most negative = -1/584
+      (0, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 4 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -17/1168
+      (0, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 4 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -5/303
+      (1, 2, 3)    PSEUDO-STOCHASTIC |X| = 19; NEGATIVE ENTRIES = 8 of 361 exactly (identity-padding convention); column sums all 1 = True; most negative = -66/12593
+      (1, 2, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 21 of 1024 exactly (identity-padding convention); column sums all 1 = True; most negative = -675/100744
+      (1, 2, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 43 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -453/100744
+      (1, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 37 of 1024 exactly (identity-padding convention); column sums all 1 = True; most negative = -12101/1298976
+      (1, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 59 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -170941/7847980
+      (1, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 67 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -248545/8203104
+      (2, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 118 of 1024 exactly (identity-padding convention); column sums all 1 = True; most negative = -5528/518885
+      (2, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 216 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -5463/518885
+      (2, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 228 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -183934373/13941127680
+      (3, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 294 of 2916 exactly (identity-padding convention); column sums all 1 = True; most negative = -60454377/7356440080
+  [DATA] eq. 22 algebraic census (ARM-A / alpha_sigma): pseudo-stochastic 13, stochastic 7, singular 0, excluded 0; total negative entries 1103 — A COUNT RELATIVE TO THE IDENTITY-PADDING CONVENTION declared above, not an invariant of the process: the configuration space is the union of the three cuts' supports and unrealised configurations are held fixed by an identity column, and a different padding convention gives a different count
+  [DATA] eq. 22 algebraic reading vs the feasibility verdict: {'PSEUDO-STOCHASTIC / DIVISIBLE': 3, 'PSEUDO-STOCHASTIC / INDIVISIBLE': 7, 'PSEUDO-STOCHASTIC / VACUOUS': 3, 'STOCHASTIC / VACUOUS': 7}
+  [PASS] EQ22.1 THE ALGEBRAIC READING IS WEAKER THAN THE FEASIBILITY READING IN ONE DIRECTION, AND THE CENSUS EXHIBITS THAT DIRECTION AND ONLY THAT ONE.  A pseudo-stochastic Gammabar says the UNIQUE algebraic intermediate under the fixed-space convention has negative entries; it does NOT by itself say no stochastic intermediate exists, and the table above contains triples where the algebraic reading is pseudo-stochastic while a genuine stochastic interpolant provably exists.  THE CONVERSE DIRECTION IS UNEXHIBITED: the cell STOCHASTIC-and-INDIVISIBLE is EMPTY on this census, so nothing here shows the algebraic reading missing an indivisibility, and no two-directional claim is made.  [B3] eq. 22 is the right instrument only when the configuration space really is fixed — which, on this carrier, it is not away from renewals  (13 pseudo-stochastic, 7 stochastic; PSEUDO-and-DIVISIBLE = 3 (the exhibited direction), STOCHASTIC-and-INDIVISIBLE = 0 (the unexhibited one))
 
 ------------------------------------------------------------------------------
 SEC 8  ARM 1 (c) — the geography of the census (input to U2)
 ------------------------------------------------------------------------------
-  [DATA] ARM-A / alpha_sigma verdicts by triple: {'(0, 1, 2)': 'VACUOUS', '(0, 1, 3)': 'VACUOUS', '(0, 1, 4)': 'VACUOUS', '(0, 1, 5)': 'VACUOUS', '(0, 2, 3)': 'VACUOUS', '(0, 2, 4)': 'VACUOUS', '(0, 2, 5)': 'VACUOUS', '(0, 3, 4)': 'VACUOUS', '(0, 3, 5)': 'VACUOUS', '(0, 4, 5)': 'VACUOUS', '(1, 2, 3)': 'INDIVISIBLE', '(1, 2, 4)': 'DIVISIBLE', '(1, 2, 5)': 'DIVISIBLE', '(1, 3, 4)': 'INDIVISIBLE', '(1, 3, 5)': 'EXCLUDED-BY-CAP', '(1, 4, 5)': 'EXCLUDED-BY-CAP', '(2, 3, 4)': 'INDIVISIBLE', '(2, 3, 5)': 'INDIVISIBLE', '(2, 4, 5)': 'INDIVISIBLE', '(3, 4, 5)': 'INDIVISIBLE'}
+  [DATA] ARM-A / alpha_sigma verdicts by triple: {'(0, 1, 2)': 'VACUOUS', '(0, 1, 3)': 'VACUOUS', '(0, 1, 4)': 'VACUOUS', '(0, 1, 5)': 'VACUOUS', '(0, 2, 3)': 'VACUOUS', '(0, 2, 4)': 'VACUOUS', '(0, 2, 5)': 'VACUOUS', '(0, 3, 4)': 'VACUOUS', '(0, 3, 5)': 'VACUOUS', '(0, 4, 5)': 'VACUOUS', '(1, 2, 3)': 'INDIVISIBLE', '(1, 2, 4)': 'DIVISIBLE', '(1, 2, 5)': 'DIVISIBLE', '(1, 3, 4)': 'INDIVISIBLE', '(1, 3, 5)': 'DIVISIBLE', '(1, 4, 5)': 'INDIVISIBLE', '(2, 3, 4)': 'INDIVISIBLE', '(2, 3, 5)': 'INDIVISIBLE', '(2, 4, 5)': 'INDIVISIBLE', '(3, 4, 5)': 'INDIVISIBLE'}
   [DATA] mass of the ensemble carrying a DIVISION EVENT inside the window, per triple: {'(0, 1, 2)': '0', '(0, 1, 3)': '16/4173', '(0, 1, 4)': '16/1391', '(0, 1, 5)': '7/321', '(0, 2, 3)': '16/4173', '(0, 2, 4)': '16/1391', '(0, 2, 5)': '7/321', '(0, 3, 4)': '16/1391', '(0, 3, 5)': '7/321', '(0, 4, 5)': '7/321', '(1, 2, 3)': '16/4173', '(1, 2, 4)': '16/1391', '(1, 2, 5)': '7/321', '(1, 3, 4)': '16/1391', '(1, 3, 5)': '7/321', '(1, 4, 5)': '7/321', '(2, 3, 4)': '16/1391', '(2, 3, 5)': '7/321', '(2, 4, 5)': '7/321', '(3, 4, 5)': '25/1391'}
-  [PASS] J1 THE INDIVISIBLE WINDOWS ARE BRIDGE WINDOWS ON AT LEAST 97% OF THEIR MASS — reported as a MEASURED co-location and nothing more.  Paper 0 sec.4 places the anomalies in the conflict windows BETWEEN renewals; the mass of the ensemble that carries any division event inside an indivisible window is printed above for every triple, and the largest of those masses is under 3%.  This is the J-geography input U2 needs, and it is NOT a test of the J-conjecture, which is U2's and is not run here  (indivisible triples ['(1, 2, 3)', '(1, 3, 4)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)']; division-event mass inside them ['16/1391', '16/4173', '25/1391', '7/321'] (the complement of each is the bridge mass))
+  [PASS] J1 THE INDIVISIBLE WINDOWS ARE BRIDGE WINDOWS ON MOST OF THEIR MASS — reported as a MEASURED co-location and nothing more.  Paper 0 sec.4 places the anomalies in the conflict windows BETWEEN renewals; the mass of the ensemble that carries any division event inside an indivisible window is printed above for every triple.  The MAXIMUM of those masses is the number that must be quoted, and it is printed exactly below; the bridge mass is its complement.  This is the J-geography input U2 needs, and it is NOT a test of the J-conjecture, which is U2's and is not run here  (indivisible triples ['(1, 2, 3)', '(1, 3, 4)', '(1, 4, 5)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)']; division-event mass inside them ['16/1391', '16/4173', '25/1391', '7/321']; MAXIMUM = 7/321 = 2.18% exactly, so the bridge mass is AT LEAST 314/321 of every indivisible window and no larger claim may be made)
   [DATA] the lumpability defect by depth (classes, non-lumpable classes): {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (32, 12)}
   [PASS] J2 THE 44 NAMED SQUARES SIT ON THE LUMPABILITY DEFECT.  The descent-obstruction squares are exactly the places where two orders of the same pair carry DIFFERENT weighted menus; the record-grain law is non-lumpable exactly where a configuration class contains histories with different menus.  The count below is the overlap, measured, with no causal claim attached  (32 of 44 descent-obstruction squares have their base in a NON-LUMPABLE configuration class of ARM-A)
 
@@ -715,38 +843,78 @@ SEC 10  THE AGREEMENT CENSUS — the two instruments, triple by triple
       (1, 2, 4)    DIVISIBLE              DEFECTIVE             960         12
       (1, 2, 5)    DIVISIBLE              DEFECTIVE             960         24
       (1, 3, 4)    INDIVISIBLE            DEFECTIVE             960         12
-      (1, 3, 5)    EXCLUDED-BY-CAP        DEFECTIVE             960         24
-      (1, 4, 5)    EXCLUDED-BY-CAP        DEFECTIVE             960         24
+      (1, 3, 5)    DIVISIBLE              DEFECTIVE             960         24
+      (1, 4, 5)    INDIVISIBLE            DEFECTIVE             960         24
       (2, 3, 4)    INDIVISIBLE            DEFECTIVE             956         12
       (2, 3, 5)    INDIVISIBLE            DEFECTIVE             956         24
       (2, 4, 5)    INDIVISIBLE            DEFECTIVE             956         24
       (3, 4, 5)    INDIVISIBLE            DEFECTIVE             872         20
 
-  [DATA] the 2x2 agreement table (Arm 1 x Arm 2, non-vacuous triples only): {'DIVISIBLE / DEFECTIVE': 2, 'INDIVISIBLE / DEFECTIVE': 6}
-  [PASS] AG1 THE TWO INSTRUMENTS DISAGREE, AND THE DISAGREEMENT IS ONE-SIDED AND EXACTLY CHARACTERISED: every triple Arm 1 calls INDIVISIBLE is also Arm-2 defective, but Arm 2 is defective on triples Arm 1 calls DIVISIBLE.  Descent failure is therefore NECESSARY BUT NOT SUFFICIENT for cut-indivisibility on this family: the descent conditions are the finer instrument at the step scale and the coarser verdict at the window scale.  Neither instrument is redundant and neither dominates  (agreements 6, disagreements 2; INDIVISIBLE&CLEAN = 0 (an INDIVISIBLE triple with a clean window would have been the instrument-splitting witness; there is none))
-  [DATA] ARM-A verdicts, the two configuration maps against each other: {'sigma DIVISIBLE / sigma+ EXCLUDED-BY-CAP': 2, 'sigma EXCLUDED-BY-CAP / sigma+ EXCLUDED-BY-CAP': 2, 'sigma INDIVISIBLE / sigma+ EXCLUDED-BY-CAP': 1, 'sigma INDIVISIBLE / sigma+ INDIVISIBLE': 5, 'sigma VACUOUS / sigma+ VACUOUS': 10}
-  [PASS] AG2 NO TRIPLE RECEIVES OPPOSITE SUBSTANTIVE VERDICTS UNDER THE TWO COMMITTED CONFIGURATION MAPS.  The winner-invisible D62 state and the payload-enriched state never disagree DIVISIBLE-vs-INDIVISIBLE on any triple; where their entries differ it is because the LP cap excluded a triple under the larger map and decided it under the smaller.  So the census is not an artefact of the D62 corollary that the arbitration winner is invisible to sigma — but the enriched map is DECIDED ON FEWER TRIPLES, and that is a cap fact, printed and not hidden  (opposed substantive verdicts = 0 of 20; cap-only differences = 3)
+  [DATA] the 2x2 agreement table (Arm 1 x Arm 2, non-vacuous triples only): {'DIVISIBLE / DEFECTIVE': 3, 'INDIVISIBLE / DEFECTIVE': 7}
+  [PASS] AG1 THE TWO INSTRUMENTS DISAGREE, AND THE DISAGREEMENT IS ONE-SIDED AND EXACTLY CHARACTERISED: every triple Arm 1 calls INDIVISIBLE is also Arm-2 defective, but Arm 2 is defective on triples Arm 1 calls DIVISIBLE.  Descent failure is therefore NECESSARY BUT NOT SUFFICIENT for cut-indivisibility on this family: the descent conditions are the finer instrument at the step scale and the coarser verdict at the window scale.  Neither instrument is redundant and neither dominates  (agreements 7, disagreements 3; INDIVISIBLE&CLEAN = 0 (an INDIVISIBLE triple with a clean window would have been the instrument-splitting witness; there is none))
+  [DATA] ARM-A verdicts, the two configuration maps against each other: {'sigma DIVISIBLE / sigma+ DIVISIBLE': 3, 'sigma INDIVISIBLE / sigma+ DIVISIBLE': 2, 'sigma INDIVISIBLE / sigma+ INDIVISIBLE': 5, 'sigma VACUOUS / sigma+ VACUOUS': 10}
+  [PASS] AG2 THE TWO COMMITTED CONFIGURATION MAPS DO OPPOSE, AND THEY OPPOSE IN THE ARTEFACT DIRECTION.  Once every triple is decided, the winner-invisible D62 state and the payload-enriched state give OPPOSITE substantive verdicts on the triples listed below, and every opposition has the same sign: the COARSE map calls the triple INDIVISIBLE and the FINE map DIVIDES it, with an exhibited and re-verified interpolant.  That is the direction in which indivisibility is an artefact of throwing information away, not a property of the process.  NO ANTI-ARTEFACT READING IS AVAILABLE FROM THIS COMPARISON, and none is made: the two triples where the maps oppose are exactly the two the plain LP cap cannot reach, so a cap-limited census would read as agreement for the wrong reason  (opposed substantive verdicts = 2 of 20 at ['(1, 3, 4)', '(1, 4, 5)']; every opposition coarse-INDIVISIBLE / fine-DIVISIBLE = True; remaining differences = 0)
 
 ------------------------------------------------------------------------------
 SEC 11  DETERMINISM PROBE
 ------------------------------------------------------------------------------
-  [PASS] DET.1 every printed number is order-independent: the joint cut law and a representative Gamma block are recomputed with the family traversed in the opposite order and compared entry by entry; all set iteration that feeds a printed number is keyed by the hash-seed-independent sk()  (joint law identical = True; Gamma(4<-2) identical = True; entries compared 135)
+  [PASS] DET.1 every printed number is order-independent, AND THE PROBE EXERCISES THE DECIDING ARMS, not just the joint law.  The family is traversed in the opposite order and four objects are recompared entry by entry: the joint cut law; a representative Gamma block; the FULL result tuple of a triple decided by the plain LP arm (1,2,3), Farkas value included; and the FULL result tuple of a triple decided by the reduced LP2 arm (1,4,5), reduction sizes and Farkas value included.  All set iteration that feeds a printed number is keyed by the hash-seed-independent sk()  (joint law identical = True; Gamma(4<-2) identical = True; entries compared 135; LP arm (1,2,3) tuple identical = True ('INDIVISIBLE', 'exact LP infeasibility, Farkas certificate VERIFIED', 209, 106, None, None, None, 0, '73604/16549995'); LP2 arm (1,4,5) tuple identical = True ('INDIVISIBLE', 'exact LP infeasibility on the reduced system, Farkas certificate VERIFIED', 1728, 302, 443, 176, (26, 37), 0, '10301953273/1599259939200'))
+  [PASS] DET.2 the eq. 22 algebraic arm is order-independent too: three triples are RE-DERIVED from the reversed traversal — verdict, fixed-space size, exact determinant and exact negative-entry count — and compared component by component against the stored table  (3 triples re-derived: [('(1, 2, 3)', 'PSEUDO-STOCHASTIC', 19, 8), ('(2, 3, 4)', 'PSEUDO-STOCHASTIC', 32, 118), ('(3, 4, 5)', 'PSEUDO-STOCHASTIC', 54, 294)]; identical to the stored census = True; whole-census negative entries 1103 under the declared padding convention)
 
 ------------------------------------------------------------------------------
 SEC 12  THE VERDICT, against the pre-registered outcomes
 ------------------------------------------------------------------------------
-  [DATA] the whole census, all arms, all configuration maps: {'DIVISIBLE': 5, 'EXCLUDED-BY-CAP': 10, 'INDIVISIBLE': 14, 'VACUOUS': 29}
-  [DATA] indivisible triples, by arm: {'ARM-A/sigma': ['(1, 2, 3)', '(1, 3, 4)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)'], 'ARM-A/sigma+': ['(1, 2, 3)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)'], 'ARM-B': ['(4, 5, 6)'], 'ARM-D': ['(1, 3, 4)', '(2, 3, 4)']}
+  [DATA] the whole census, all arms, all configuration maps: {'DIVISIBLE': 15, 'INDIVISIBLE': 15, 'VACUOUS': 30}
+  [DATA] the same census WITHOUT ARM-C2 (the 58 triples of the four depth-indexed arms, for comparison with any earlier count): {'DIVISIBLE': 14, 'INDIVISIBLE': 15, 'VACUOUS': 29}
+  [DATA] indivisible triples, by arm: {'ARM-A/sigma': ['(1, 2, 3)', '(1, 3, 4)', '(1, 4, 5)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)'], 'ARM-A/sigma+': ['(1, 2, 3)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)'], 'ARM-B': ['(4, 5, 6)'], 'ARM-C2': [], 'ARM-D': ['(1, 2, 3)', '(2, 3, 4)']}
+  [DATA] the double-count caveat, carried with the headline number: 15 indivisible VERDICTS across all arms and both configuration maps; the same (arm, triple) window read by the two maps is counted twice, so the number of DISTINCT (arm, window) pairs is 10, and of distinct cut triples 8.  The vacuous count carries the same caveat: 20 distinct (arm, window) pairs behind 30 verdicts
 
-  >>> VERDICT: U1-BRIDGE
-      At least one composable cut triple of the generated transport law,
-      read at record grain, admits NO stochastic interpolant at all — not
-      merely a pseudo-stochastic algebraic one.  By the preamble's (D2)
-      and (D3) this is the corpus's first generated INDIVISIBLE BRIDGE,
-      and the first indivisibility witness of any kind since v1's two
-      abandoned ones.  The (D4) everywhere-form is FALSE: the census
-      contains divisible triples, vacuous triples and indivisible ones,
-      and they are enumerated above.
+  THE DIVISION-EVENT TABLE.  [B3] p.9 admits conditioning ONLY at division
+  events, and paper 0 sec.4 identifies division events with renewals.  The
+  census above is therefore two censuses, and only one of them is the law's
+  own.  A triple is counted DIVISION-EVENT-CONDITIONED iff its FIRST cut is
+  a division event for EVERY history of its ensemble: the initial cut,
+  where the process sits at the root by construction, and ARM-B's cut 3 and
+  ARM-C2's renewal cuts, where the ensemble is conditioned on a pair-arb.
+
+      first conditioning cut                   INDIVISIBLE        DIVISIBLE  EXCLUDED-BY-CAP          VACUOUS            total
+      IS a division event                                0                4                0               30               34
+      is NOT a division event                           15               11                0                0               26
+  [PASS] B5 EVERY INDIVISIBILITY THIS RECEIPT FINDS SITS AT A CONDITIONING CUT THE LAW DOES NOT ADMIT.  [B3] p.9's conditioning rule is that the allowed conditioning times are the division events; paper 0 sec.4 fixes division events = renewals.  Split the whole census by that rule and it separates completely: at a division-event conditioning cut there is NO indivisible triple at all — the winner-invisible readings are structurally vacuous because a renewal resets to the root, and every non-vacuous one DIVIDES, two of them by exact Chapman-Kolmogorov and the pinned renewal-to-renewal triple of ARM-C2 among them.  Every indivisible triple in this receipt has its first cut strictly BETWEEN division events, which is cut grain and not record grain  (division-event cuts: 0 indivisible of 34; non-division cuts: 15 indivisible of 26)
+
+  >>> VERDICT: U1-BRIDGE-AT-ADJACENT-SCOPE
+      THE BRIDGE IS AT THE ADJACENT SCOPE, AND THE NULL IS ATTACHED TO IT.
+      At CUT grain, on conditioning cuts that are NOT division events, the
+      D62 record state is a non-lumpable function of the DIVISIBLE click
+      law, and its Gamma family admits no column-stochastic interpolant at
+      15 triples, each with an independently verified exact Farkas
+      certificate.  That property is SHARED WITH — and held LESS
+      STRONGLY THAN — a uniformly random partition of the same prefixes
+      into the same class sizes (gate N2), so it is what coarse-graining
+      a divisible chain generically does and not a signature of the
+      record.  At EVERY conditioning cut that IS a division event — the
+      only cuts [B3] p.9 admits, and the grain paper 0 sec.4 puts the law
+      at — the law DIVIDES exactly, including the pinned non-degenerate
+      renewal-to-renewal triple, which ARM-C2 runs and which divides by
+      exact Chapman-Kolmogorov on a rank-one renewal transfer.
+      This is a real, informative, negative-leaning result.  It is NOT the
+      corpus's first generated indivisible bridge, and the U1-BRIDGE
+      pre-registered outcome is NOT met at the grain that outcome meant.
+
+      THE ONE FACT, NAMED ONCE.  Arm 1's interpolant census and Arm 2's
+      DC2 failure are not two results.  Both are the NON-LUMPABILITY of
+      the ported state under deliveries — DC2 measures it per step, the
+      census measures what it does to a window — and the agreement table
+      below is the relation between the two readings of that single fact,
+      not corroboration of one by the other.
+
+      WHAT REMAINS OPEN, PRECISELY.  ARM-C2 decides the pinned triple on
+      the MINIMAL-INTERVAL sub-ensemble: conditioning on a third renewal
+      by depth 9 forces every renewal interval to its shortest length.  A
+      renewal chain with UNEQUAL intervals is not reached by this
+      conditioning and is not reached by enumeration either (~10^8
+      histories at depth 9); that is the successor computation, and it is
+      named U1b.
 
   AND THE U1-SPLIT TEST, RUN AND REPORTED RATHER THAN ASSUMED AWAY.
   The pin's third outcome fires if the two instruments disagree.  They
@@ -757,10 +925,7 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
   cut depth >= 2 in this family, so at window scale Arm 2 has no
   resolving power at all.  The witness class that would have made this a
   genuine U1-SPLIT — an INDIVISIBLE triple in a CLEAN window, which would
-  put the instruments in opposite directions on one object — is EMPTY: 0 of 8.  The verdict is
-  therefore U1-BRIDGE with a characterised containment, not U1-SPLIT;
-  descent failure is NECESSARY BUT NOT SUFFICIENT for cut-indivisibility
-  on this family, and that relation is itself a first-class result of U1.
+  put the instruments in opposite directions on one object — is EMPTY: 0 of 10.
 
   SCOPE, NON-NEGOTIABLE.  Transport scope (d42b1), the declared families
   and caps only; renewal grain per paper 0 sec.4's POSIT, which PORT-3
@@ -772,7 +937,7 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
   here.  The J-conjecture is NOT tested (that is U2); the unistochasticity
   screen is REPORTED and not adjudicated (that is U3).
 
-[SUMMARY] 36 PASS / 0 FAIL / 0 ANCHOR-FAIL
-[RUNTIME] 242s wall clock, single-threaded, exact arithmetic throughout
-[CAPS] ARM-A depth 5; ARM-B depth 6; ARM-D depth 4 (3 actors); anchors depth 4/3; closed scope depth 6; DC1 parents depth 3; LP caps 700 vars / 400 rows
+[SUMMARY] 44 PASS / 0 FAIL / 0 ANCHOR-FAIL
+[RUNTIME] 815s wall clock, single-threaded, exact arithmetic throughout
+[CAPS] ARM-A depth 5; ARM-B depth 6; ARM-C2 depth 9 (minimal-interval sub-ensemble, conditioned); ARM-D depth 4 (3 actors); anchors depth 4/3; closed scope depth 6; DC1 parents depth 3; LP caps 700 vars / 400 rows, reduced-system caps 5000 vars / 1200 rows; eq. 22 fixed space 100; EXCLUDED-BY-CAP triples remaining: 0
 [EXIT] 0 — substantive negatives are results, not failures
