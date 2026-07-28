@@ -640,3 +640,48 @@ amplitude form as a [B3] Schur-Hadamard gauge on the gauge stratum
 (triviality gated honestly).  Outcomes S-PASS / S-FAIL-DS /
 S-FAIL-UNI / mixed — a failure PRICES enrichment, it does not defeat
 the program.  Lean NONE.  File-disjoint; both dispatched.
+
+## 2026-07-28 — U3 DELIVERED: TWO PASSERS, THE PRICE OF ENRICHMENT
+## PRICED, AND A NO-GO ON i — GREEN-UNREVIEWED (v11 LEDGER #17)
+The screen lands (note-u3-unistochasticity-screen.md, 45 PASS / 0
+FAIL / 0 ANCHOR-FAIL, 11s, adjudicator rerun byte-identical; six
+known-answer controls all correct, criterion well-definedness
+PROVED in-receipt — all six unitarity triangles agree on a 5⁴ grid).
+**ARM A, ten committed readings: S-PASS 2 / S-FAIL-DS 6 /
+S-FAIL-UNI 0 / N-A-SHAPE 2.**  The passers: K1-2CONF (2×2, real
+orthogonal certificate) and ARMC2-8×8 (two certificates: Sylvester
+H₈/√8 real AND DFT₈ in Q(ζ₈)).  **Ẑ-6×6 FAILS DS by exactly 5/7**
+(column deficits −3/28, 0, −5/64, −9/64, −1/32, +5/14) — the priced
+enrichment headline: any quantum-eligible completion must move ≥
+5/7 of mass; [B3]'s transpose convention does not rescue it; AND Ẑ
+is NOT IRREDUCIBLE ({2,4,5} closed, {0,1,3} transient INCLUDING THE
+CONFLICT STATE; stationary law exactly (0,0,1/4,0,1/4,1/2)) — a
+second, independent certificate.  The closed 3×3 carries a THIRD
+obstruction: triangle T = −1/4096 < 0 (non-unistochastic in shape,
+not just in mass).  **TWO STRUCTURAL VERDICTS: (A6)** both passers
+are ORTHOSTOCHASTIC — the ortho/uni gap, where the D75 audit
+located the necessity of i, is EMPTY on this census; **(A7) A
+NO-GO: the K1 layer CANNOT force i at any depth at committed
+scope** — paper 31 §4.3's realised conflict component sizes are
+exactly {1,2}, and every 2×2 bistochastic matrix is orthostochastic
+(swept, printed); deciding i needs a generated conflict of
+MULTIPLICITY ≥ 3, which the corpus has never committed.  **ARM B:**
+the U(1) loop-class theorem (v6 paper 7 Thm 7.1 + D3, located
+:612-618/:676-689): clause (i) gauge-invariance REPRODUCED (44
+non-unit self-loops, 44/134 non-trivial cycles); clause (ii)
+U(1)-valuedness NOT REPRODUCED with the obstruction STRUCTURAL and
+exact — ⟨2,3⟩ is free abelian rank 2, TORSION-FREE, so
+⟨2,3⟩ ∩ U(1) = {1}: D74's "−1 realised nowhere" sharpens to "could
+not have succeeded"; clause (iii) interference DEGENERATE (cos arg
+∈ {1} exactly).  The residue PRICED: Hom(⟨2,3⟩, U(1)) = T² — a
+two-real-parameter family of attachable loop phases, NONE selected
+by any committed quantity.  **ARM C:** the v7 amplitude form's
+Schur-Hadamard element is the IDENTITY — carriable, consistent,
+vacuous (odd channel measured empty: 0/304 opposite-poset
+extensions admissible, LD-consistent); the unitarity-preserving
+gauge subgroup is PROPER (one sign flip preserves Γ, destroys
+unitarity, 14 residuals).  **THE UNIT'S SHAPE FOR THE PROGRAM:
+the quantum layer's entry fee is now three exact numbers and one
+mechanism** — 5/7 of Ẑ mass, a T² of unselected loop phases, and a
+multiplicity-≥3 conflict the grammar has never generated.  Hostile
+round dispatched.  U1b still constructing.

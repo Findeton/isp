@@ -1,0 +1,645 @@
+==============================================================================
+u3_unistochasticity_screen_exact.py — v11 U3
+THE UNISTOCHASTICITY SCREEN, THE LOOP-CLASS REPRODUCTION, AND THE
+GAUGE CANDIDATE
+==============================================================================
+  banner: EXACT arithmetic end to end and NO TOLERANCE ANYWHERE.
+          Rationals: fractions.Fraction.  Real algebraic: class Surd
+          (Q-span of sqrt d, d squarefree), with an exact sign
+          oracle.  Complex algebraic: class Cyc (Q[x]/Phi_N(x) for
+          N = 8 and N = 12), with exact conjugation.
+  scope : MATRIX-LEVEL SCREENING ONLY.  A matrix that passes the
+          screen is not thereby a quantum system: the map from a
+          screened matrix to a physical system is MISSING and this
+          unit does not supply it.  Correspondence is not identity.
+  lean  : NONE.  S-PASS, S-FAIL-DS and S-FAIL-UNI are all
+          reportable outcomes and the census is the result.
+
+  THE REGISTRY — every constant a gate tests against, with its
+  path:line provenance.  No bare constants appear in any predicate.
+    [B3-conv] [B3] eqs. (9), (24), (26)
+    [B3-gauge] [B3] eqs. (29)/(30) and the paragraph after (64)
+    [B3-uni] [B3] Barandes, 'The Stochastic-Quantum Correspondence', the paragraph following eq. (64); PDF read in-session
+    [T6.1] v10/note-d72-weld-result.md:150 (sec.1 T6.1), quoted verbatim by v10/code/d74_transport_holonomy_exact.py:161-170
+    [T6.2] v10/note-d72-weld-result.md:151 (sec.1 T6.2)
+    [cat-4.7] [V11-CAT] v11/note-v11p0a-reproduction-catalog.md:2094-2097 (sec.4.7(c))
+    [d74-D2] v10/note-d74-transport-holonomy-result.md:248 (gate D2)
+    [d74-D5.2] v10/code/d74_transport_holonomy_exact.py:2313-2325 (gate D5.2); v10/note-d74-transport-holonomy-result.md:110-112
+    [d74-carrier] v10/note-d74-transport-holonomy-result.md:190-191 (the carrier table)
+    [d74-group] v10/note-d74-transport-holonomy-result.md:97-98, :227
+    [d75-5.3] v10/note-d75-barandes-audit.md:776-786 (sec.5.3, Arm 1)
+    [d75-D1guard] v10/note-d75-barandes-audit.md:737-747 (sec.5.2) and [V11-CAT]:3076, :3165-3168
+    [ld-662] v11/note-ld-last-door.md:1, :64-69
+    [lit-had] LITERATURE.  J. J. Sylvester, 'Thoughts on inverse orthogonal matrices...', Phil. Mag. 34 (1867) 461-475; standard.
+    [lit-sqrtind] LITERATURE.  A. S. Besicovitch, 'On the linear independence of algebraic roots', J. London Math. Soc. 15 (1940) 3-6; standard Galois theory.
+    [lit-uni3] LITERATURE.  Au-Yeung and Poon, 'A remark on the convexity and positive definiteness concerning Hermitian matrices', SEA Bull. Math. 3 (1979) 85-92 (the 3x3 characterisation); H. Nakazato, 'Set of 3x3 orthostochastic matrices', Nihonkai Math. J. 7 (1996) 83-100; I. Bengtsson, A. Ericsson, M. Kus, W. Tadej, K. Zyczkowski, 'Birkhoff's polytope and unistochastic matrices, N=3 and N=4', Commun. Math. Phys. 259 (2005) 307-324.  The corpus's own floating-point implementation of the same criterion is v8/code/f6_unistochastic_record_blind_probe.py:224-246, run on textbook fixtures only at v8/code/p18_seal_divisibility.py:318-362.
+    [p30-form] v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2846-2855, :4191, as catalogued at [V11-CAT] sec.4.6 (:2003-2061)
+    [p31-4.3] v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md:496-524 (sec.4.3)
+    [p7-7.1] v6/relativistic-isp-v6-paper7.md:612-618 (Theorem 7.1)
+    [p7-D3] v6/relativistic-isp-v6-paper7.md:676-689 (Theorem D3)
+    [u1-armc2] v11/note-u1-indivisibility-census.md:436-456 (sec.5.5, ARM-C2)
+    [u1-closed] v11/note-u1-indivisibility-census.md:174-179 (sec.3)
+    [u1-zhat] v11/note-u1-indivisibility-census.md:173-200 (sec.3) and :809-813 (sec.14, the handover to U3)
+  ANCHOR constants: 43 entries, all quoted above.
+
+------------------------------------------------------------------------------
+SEC 1  SINGLE-SOURCING — AST signature pass, then slice, on four committed receipts   [+0s]
+------------------------------------------------------------------------------
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on all four committed sources: every required def/class exists at module level with the exact positional argument list, so a silent upstream edit cannot slip through unnoticed  (d42b1 29 defs (missing []); d42b3 21 (missing []); d74 39 (missing []); u1 50 (missing []))
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only)
+  [DATA] d42b3 slice: 8670/21462 bytes executed (definition head only)
+  [PASS] SRC.2 EXIT-FREEDOM GATED: sys.exit / os._exit are neutralised inside the slice and restored after, so a sliced layer cannot set this receipt's exit status; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked; 0 sys.exit in the 16129-byte head)
+         ^ NO INDEPENDENT INFORMATION: a property of the loader, not of the substrate
+  [PASS] ANCHOR SRC.3 D74's CENSUS AND GROUP MACHINERY IS D74's, extracted by AST from the committed receipt and not retyped: enumerate_line, square_census, holonomy_of, A_menu, congruence, mu_map, primes_of, lattice_basis, group_of  (11/11 defs lifted: ['A_menu', 'congruence', 'enumerate_line', 'evsk', 'group_of', 'holonomy_of', 'lattice_basis', 'mu_map', 'primes_of', 'sk', 'square_census'])
+  [PASS] ANCHOR SRC.4 U1's Q(sqrt 2) ARITHMETIC IS U1's, extracted by AST from the committed U1 receipt (class Q2 and its matrix helpers) so the K1 arbitration operators this unit screens are literally the objects U1 handed over, not a re-implementation  (4/4 lifted: ['Q2', 'iso_defect_exact', 'q2_T', 'q2_matmul'])
+  [DATA] caps: closed scope (d42b3) family for the Zhat sibling: depth <= 6; D74 anchor arms: (A,B) depth <= 4 and (A,B,C) depth <= 3; unistochasticity decided constructively at: n = 1, 2, 3, 6, 8; n = 3 exact criterion: the triangle (chain-link) discriminant, rational, necessary at every n and necessary-and-sufficient at n = 3 for bistochastic matrices; general-n instrument: the exact polygon obstruction on every column pair and every row pair, decided by the Surd sign oracle; NOT implemented: full phase-elimination (resultants / Groebner) for n > 3.  A matrix with NO polygon obstruction and NO exhibited certificate would be EXCLUDED-BY-CAP; that cell is EMPTY on this census and the count is printed in SEC 8; Surd sign oracle refinement cap: 4096 binary digits (never approached; the printed maximum is in SEC 2)
+
+------------------------------------------------------------------------------
+SEC 2  EXACT ALGEBRAIC ARITHMETIC — the two rings this receipt computes in   [+0s]
+------------------------------------------------------------------------------
+
+  Every certificate below is exhibited with entries in ONE of two exact
+  rings, and verified entry by entry inside that ring.  There is no
+  tolerance anywhere in this file.
+
+    Surd  the Q-span of { sqrt d : d a squarefree positive integer }.
+          Closed under + and *, since sqrt a . sqrt b = s . sqrt d with
+          a.b = s^2.d.  ZERO TEST: all coefficients zero -- valid by the
+          linear independence of the sqrt d over Q [lit-sqrtind].  SIGN
+          ORACLE: exact rational interval refinement with integer isqrt,
+          which terminates because a non-zero Surd is bounded away from 0.
+          This ring carries every REAL ORTHOGONAL certificate.
+
+    Cyc   Q[x]/Phi_N(x), the cyclotomic field Q(zeta_N), for N = 8 and
+          N = 12.  Phi_8 = x^4 + 1, Phi_12 = x^4 - x^2 + 1, both verified
+          in-receipt to divide x^N - 1 with zero remainder and to have
+          degree phi(N).  Conjugation is zeta -> zeta^{-1}.  This ring
+          carries every COMPLEX UNITARY certificate.  Note 1/sqrt 8 and
+          1/sqrt 3 lie in these fields, so the DFT certificates are
+          EXACT elements, not approximations.
+
+  [PASS] R1.1 THE Surd RING IS EXACT AND ITS ZERO TEST IS SOUND: sqrt2.sqrt3 - sqrt6 = 0 identically; (sqrt2+sqrt3)^2 = 5 + 2sqrt6 identically; sqrt(1/2)^2 = 1/2 identically  (sqrt2.sqrt3-sqrt6 = 0; (sqrt2+sqrt3)^2 = 5 + (2)sqrt6; sqrt(1/2)^2-1/2 = 0)
+  [PASS] R1.2 THE Surd SIGN ORACLE IS EXACT ON A KNOWN-ANSWER PAIR THAT NO TOLERANCE SETTLES: sqrt2 + sqrt3 - sqrt10 < 0 (3.146... < 3.162...) while sqrt2 + sqrt3 - sqrt5 > 0 (3.146... > 2.236...)  (sign(sqrt2+sqrt3-sqrt10) = -1; sign(sqrt2+sqrt3-sqrt5) = 1; refinement used at most 16 binary digits)
+  [PASS] R1.3 THE CYCLOTOMIC RINGS ARE THE FIELDS THEY CLAIM TO BE: for N = 8 and N = 12 the hard-coded Phi_N has degree phi(N), divides x^N - 1 with remainder EXACTLY zero, satisfies x^N = 1 in the quotient, and conjugation zeta -> zeta^{-1} is an involution with zeta . conj(zeta) = 1  (N=8: Phi = x^4 + 1, deg 4 = phi(8) = 4 True; Phi | x^N-1 True; x^N = 1 True; zeta.conj(zeta) = 1 True; conj involutive True; N=12: Phi = x^4 - x^2 + 1, deg 4 = phi(12) = 4 True; Phi | x^N-1 True; x^N = 1 True; zeta.conj(zeta) = 1 True; conj involutive True)
+  [PASS] R1.4 THE IRRATIONAL NORMALISERS THE DFT CERTIFICATES NEED ARE EXACT ELEMENTS OF THESE FIELDS: (zeta8 + zeta8^-1)^2 = 2 exactly, so 1/sqrt8 = (zeta8 - zeta8^3)/4 exactly; (zeta12 + zeta12^-1)^2 = 3 exactly, so 1/sqrt3 = (2.zeta12 - zeta12^3)/3 exactly; and zeta3 = zeta12^4 has order 3  (sqrt2^2 = 2x^0; (1/sqrt8)^2 = 1/8x^0; sqrt3^2 = 3x^0; (1/sqrt3)^2 = 1/3x^0; zeta3^3 = 1x^0)
+
+------------------------------------------------------------------------------
+SEC 3  THE DECISION PROCEDURES, AND THE KNOWN-ANSWER CONTROLS   [+0s]
+------------------------------------------------------------------------------
+
+  [B3]'s definition, verbatim ([B3] Barandes, 'The Stochastic-Quantum Correspondence', the paragraph following eq. (64); PDF read in-session):
+    "In general, an N x N matrix is called UNISTOCHASTIC if its individual entries are expressible as the modulus-squares of the corresponding entries of an N x N unitary matrix.  It follows that (64) is just the statement that the system's transition matrix Gamma(t<-0) can be taken to be unistochastic."
+
+  [B3]'s convention ([B3] eqs. (9), (24), (26)):
+    "Barandes' Gamma is COLUMN-stochastic: Gamma_ij(t<-0) = p(i,t | j,0) and sum_i Gamma_ij = 1.  The corpus's generated Zhat is ROW-stochastic.  Both readings are screened below; the doubly-stochastic precondition is exactly the statement that the choice of convention does not matter."
+
+  THE GUARD, CARRIED FIRST, AS THE CATALOG REQUIRES (v10/note-d75-barandes-audit.md:737-747 (sec.5.2) and [V11-CAT]:3076, :3165-3168):
+    "Thm D1 is the ancilla-summed Stinespring/Naimark dilation on C^{d^2}, which EVERY stochastic matrix admits; Barandes' Gamma_ij = |U_ij|^2 on C^d is a genuine restriction and is untested.  U3 must open by setting Thm D1 aside."
+  Theorem D1 is therefore SET ASIDE in this receipt and is not used to
+  decide anything.  Every positive verdict below exhibits a unitary of the
+  SAME SIZE as the matrix, with NO ancilla and NO ancilla sum.
+
+
+  THE n = 3 CRITERION, AND WHY THIS RECEIPT MAY USE ONE COLUMN PAIR.
+  For a 3x3 matrix the criterion is stated for ONE pair of columns.  That
+  is legitimate only if the discriminant does not depend on which pair is
+  taken.  This receipt does not assume it and does not cite it: it PROVES
+  it, by polynomial identity.  T is a polynomial of degree at most 4 in
+  each of the four free entries of a bistochastic 3x3 matrix, so two such
+  polynomials agreeing on a product grid with 5 distinct values per
+  variable are identical (the standard multivariate interpolation bound /
+  Combinatorial Nullstellensatz).  All six discriminants -- three column
+  pairs and three row pairs -- are evaluated on such a grid below.
+
+  [PASS] C0 THE SIX UNITARITY TRIANGLES OF A BISTOCHASTIC 3x3 MATRIX HAVE THE SAME DISCRIMINANT — PROVED HERE AS A POLYNOMIAL IDENTITY, NOT ASSUMED AND NOT CITED.  Three column pairs and three row pairs agree at every point of a 5^4 rational grid; since each discriminant has degree at most 4 in each of the four free entries, agreement on a 5-per-variable grid forces identity.  So 'the' triangle discriminant is well defined and one column pair suffices  (625 grid points, 0 mismatches, grid values [1/7, 2/7, 3/7, 5/7, 8/7])
+
+  THE CRITERION USED, NAMED AND CITED (LITERATURE.  Au-Yeung and Poon, 'A remark on the convexity and positive definiteness concerning Hermitian matrices', SEA Bull. Math. 3 (1979) 85-92 (the 3x3 characterisation); H. Nakazato, 'Set of 3x3 orthostochastic matrices', Nihonkai Math. J. 7 (1996) 83-100; I. Bengtsson, A. Ericsson, M. Kus, W. Tadej, K. Zyczkowski, 'Birkhoff's polytope and unistochastic matrices, N=3 and N=4', Commun. Math. Phys. 259 (2005) 307-324.  The corpus's own floating-point implementation of the same criterion is v8/code/f6_unistochastic_record_blind_probe.py:224-246, run on textbook fixtures only at v8/code/p18_seal_divisibility.py:318-362.):
+    "A bistochastic 3x3 matrix is unistochastic iff its unitarity TRIANGLE closes: the three phasors of modulus sqrt(B_ip B_iq), i = 1,2,3, arising from the orthogonality of columns p and q, must be able to sum to zero -- i.e. must satisfy the triangle inequality."
+
+  HOW THIS RECEIPT USES IT — the asymmetry is deliberate:
+    NEGATIVE direction (T < 0 => NOT unistochastic).  This direction is
+      ELEMENTARY and is not taken on citation: if Gamma = |U|^2 then two
+      columns of U are orthogonal, so three complex numbers of moduli
+      sqrt(Gamma_ip Gamma_iq) sum to zero, so their moduli satisfy the
+      triangle inequality.  The necessity holds at EVERY n (the polygon
+      obstruction) and needs no bistochasticity.
+    POSITIVE direction.  This receipt NEVER returns "unistochastic" on
+      the strength of T >= 0.  Every positive verdict below EXHIBITS a
+      unitary of the same size and verifies U^dagger U = I and
+      |U_ij|^2 = Gamma_ij entry by entry in exact algebraic arithmetic.
+      The cited sufficiency is therefore never load-bearing.
+
+  KNOWN-ANSWER CONTROLS.  The decision procedure is run on one
+  literature UNISTOCHASTIC matrix and one literature
+  BISTOCHASTIC-BUT-NOT-UNISTOCHASTIC matrix before it is pointed at
+  anything generated.  It must get both right.
+
+  [PASS] KA-1 THE 3x3 FLAT MATRIX J/3 IS DECIDED UNISTOCHASTIC, WITH THE UNITARY EXHIBITED: the 3-point DFT U_jk = zeta_3^{jk}/sqrt3, written exactly in Q(zeta_12), satisfies U^dagger U = I with ZERO residual entries and |U_ij|^2 = 1/3 exactly at all nine entries; the triangle discriminant is +1/27 > 0 and there is no polygon violation — criterion and certificate agree  (unitarity residuals 0; |U|^2 mismatches 0; T = 1/27; polygon violations 0)
+  [PASS] KA-2 THE CANONICAL COUNTEREXAMPLE B = (1/2)(J - I) IS DECIDED BISTOCHASTIC BUT NOT UNISTOCHASTIC, WITH AN EXACT MARGIN: rows and columns sum to exactly 1, the triangle discriminant is -1/16 < 0, and the polygon oracle independently flags the same obstruction — the phasor moduli for columns 1,2 are (0, 0, 1/2) and 1/2 > 0 + 0, so no unitary has these modulus-squares.  This reproduces the corpus's own committed print at v8/code/p18_seal_divisibility.py:346-347, in exact arithmetic  (DS True; T = -1/16; polygon violations 6; phasor squared-moduli (cols 0,1) = [0, 0, 1/4])
+  [PASS] KA-3 THE ORTHO/UNI GAP IS EXHIBITED, SO THE ORTHOSTOCHASTIC QUESTION IS NOT VACUOUS: J/3 is unistochastic (KA-1) but NOT orthostochastic — a real orthogonal O with O_ij^2 = 1/3 everywhere would need two rows with inner product (+-1 +-1 +-1)/3, and every one of the eight sign patterns gives an ODD integer, never 0.  This is the canonical matrix on which the complex numbers are FORCED, and it is the exact shape the D75 audit located the necessity of i in  (the eight achievable numerators are [-3, -1, 1, 3] — none is 0)
+  [PASS] KA-4 THE n = 2 CLASSICAL FACT IS VERIFIED IN-RECEIPT RATHER THAN ASSERTED: for the bistochastic [[1/3,2/3],[2/3,1/3]] the constructed real matrix [[sqrt(1/3), sqrt(2/3)], [sqrt(2/3), -sqrt(1/3)]] is exactly orthogonal in the Surd ring and its modulus-squares are the matrix.  The construction is uniform in p, so EVERY 2x2 bistochastic matrix is orthostochastic  (orthogonality residuals 0; |U|^2 mismatches 0; U = [[(1/3)sqrt3, (1/3)sqrt6], [(1/3)sqrt6, (-1/3)sqrt3]])
+  [PASS] KA-5 THE DOUBLY-STOCHASTIC PRECONDITION IS NOT A NO-OP: a row-stochastic matrix that is not column-stochastic is caught, with the exact per-column excess printed  (row sums [1, 1]; column sums [3/2, 1/2]; column deficits [1/2, -1/2])
+  [PASS] KA-6 SYLVESTER'S REAL HADAMARD MATRIX OF ORDER 8 IS VERIFIED IN-RECEIPT (H H^T = 8 I over the integers), so the real certificate used for the 8x8 passer in SEC 5 is not taken on trust  (H_8 = H_2^{tensor 3}, entries +-1, all 64 inner products exact)
+
+------------------------------------------------------------------------------
+SEC 4  ARM A (a) — THE K1 ARBITRATION OBJECTS, REBUILT FROM THE COMMITTED LAYER AND SCREENED   [+0s]
+------------------------------------------------------------------------------
+  [PASS] A0.0 1/sqrt2 IS EXACTLY REPRESENTABLE IN U1's Q(sqrt 2): (1/sqrt2)^2 = 1/2 identically, so the K1 amplitudes carry no approximation at all  ((1/sqrt2)^2 = 1/2)
+  [PASS] ANCHOR A1 THE COMMITTED PAIR EXHIBIT RE-RUNS (paper 31 sec.4.3, U1 A0.1): A's arbitration menu is ONE event at the early cut and THREE at the join; the full per-actor sums are exactly 1 and 5/4  (menu sizes 1/3; full sums 1/5/4)
+  [PASS] ANCHOR A2 THE K1 OPERATORS ARE U1's, WITH ISOMETRY DEFECT EXACTLY 0: V_pair (4x1) and V_single (2x1), built as Acceptance o OpeningClick from the committed machinery, satisfy M^T M - I = 0 identically in Q(sqrt 2)  (shapes (4, 1) / (2, 1); non-zero entries of M^T M - I: V_pair 0, V_single 0)
+  [PASS] ANCHOR A3 BORN = K1 EXACTLY, RECOMPUTED FROM THE COMMITTED LAYER: the squared branch amplitudes of V_pair are the RATIONALS 1/2 and 1/2 and equal PK1 on the 2-conflict; V_single's branch is deterministic and equals PK1 on the singleton  (|amp|^2 (pair) = ['1/2', '1/2']; PK1 (pair) = ['1/2', '1/2']; |amp|^2 (single) = ['1'])
+  [PASS] ANCHOR A4 THE JOIN MENU IS THE COMMITTED ONE: 1/4 + 1/8 + 1/8 on the arbitration sector at the join, and 1/4 at the early cut  (join menu ['1/8', '1/8', '1/4']; early menu sum 1/4)
+
+  THE READINGS, DECLARED BEFORE ANY VERDICT.  V_single and V_pair are
+  ISOMETRIES WITH ONE COLUMN (2x1 and 4x1).  Barandes' criterion is a
+  statement about a SQUARE Gamma and a SQUARE unitary of the same size, so
+  the operators themselves are not screenable objects; what is screenable
+  is their induced Gamma.  Four readings are taken, each named, and the
+  convention-relative ones are labelled as such.  Nothing is invented: the
+  numbers are the committed K1 law and the committed menus, above.
+
+
+  ---- K1-BORN-COL-PAIR --------------------------------------------------
+       provenance : V_pair (4x1) from paper 31 sec.4.3, |.|^2 entrywise [p31-4.3, A2, A3]
+       reading    : the Born column of the 2-conflict: |V_pair|^2 as a 4x1 object
+       note       : the two zero rows are the branches the acceptance step kills
+       shape      : 4 x 1
+         1/2
+         0
+         0
+         1/2
+       VERDICT    : N/A-SHAPE.  Barandes' criterion is defined for SQUARE
+                    matrices only (an N x N Gamma against an N x N unitary).
+                    The object is not screened; the trivial column completion
+                    of an isometry is Theorem D1's move and is SET ASIDE.
+
+  ---- K1-BORN-COL-SINGLE ------------------------------------------------
+       provenance : V_single (2x1) from paper 31 sec.4.3, |.|^2 entrywise [p31-4.3, A2]
+       reading    : the Born column of the singleton: |V_single|^2 as a 2x1 object
+       shape      : 2 x 1
+         1
+         0
+       VERDICT    : N/A-SHAPE.  Barandes' criterion is defined for SQUARE
+                    matrices only (an N x N Gamma against an N x N unitary).
+                    The object is not screened; the trivial column completion
+                    of an isometry is Theorem D1's move and is SET ASIDE.
+
+  ---- K1-2CONF ----------------------------------------------------------
+       provenance : PK1 recomputed from the committed d42b3 layer [A3]; identical to |V_pair|^2 read on its support
+       reading    : the K1 branch law on the 2-conflict as a SQUARE transfer on the conflict's own two-token index — K1 is source-independent, so every row is the same branch law
+       note       : the only reading in which the K1 layer's Gamma is square on the REALISED support at both ends; every other square K1 reading below needs an untrimmed index
+       shape      : 2 x 2
+         1/2  1/2
+         1/2  1/2
+       row sums   : [1, 1]
+       col sums   : [1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 2 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+  ---- K1-PAIR-FULLIDX ---------------------------------------------------
+       provenance : the same Born row on the FULL four-branch index of V_pair [A2, A3]
+       reading    : the Born row replicated over the untrimmed 4-element target index
+       note       : CONVENTION-RELATIVE: the two zero targets are never realised at the cut, so this failure is a support mismatch and not a mass defect of the law; it is reported because the pin asks for the row and transfer readings both, and the trimmed reading is K1-2CONF above
+       shape      : 4 x 4
+         1/2  0  0  1/2
+         1/2  0  0  1/2
+         1/2  0  0  1/2
+         1/2  0  0  1/2
+       row sums   : [1, 1, 1, 1]
+       col sums   : [2, 0, 0, 2]
+       row deficit: [0, 0, 0, 0]   sum|.| = 0
+       col deficit: [1, -1, -1, 1]   sum|.| = 4
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 4.
+
+  ---- K1-SINGLE-2x2 -----------------------------------------------------
+       provenance : V_single's deterministic branch on a 2-element target index [A2]
+       reading    : the deterministic branch replicated over the 2-element index
+       note       : CONVENTION-RELATIVE for the same reason; trimmed to its support the object is the 1x1 identity [1], which is trivially unistochastic with U = [1] and is not counted as evidence
+       shape      : 2 x 2
+         1  0
+         1  0
+       row sums   : [1, 1]
+       col sums   : [2, 0]
+       row deficit: [0, 0]   sum|.| = 0
+       col deficit: [1, -1]   sum|.| = 2
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 2.
+       SECOND OBSTRUCTION, INDEPENDENT OF DS (the polygon condition is
+                    necessary at every n and needs no bistochasticity): it fails
+                    on the row pair (0,1) at index 0: squared moduli [1, 0],
+                    slack = -1 < 0.  1 violation(s) in all.
+
+  ---- K1-JOIN-MENU ------------------------------------------------------
+       provenance : the committed join menu 1/4 + 1/8 + 1/8 [A4, p31-4.3], normalised within the arbitration sector
+       reading    : the join-cut arbitration menu read as a COLUMN-CONSTANT (source-independent) 3x3 transfer on its own three outcomes
+       note       : declared reading; it exists to put the column-constant lemma of SEC 5 against a NON-uniform generated row
+       shape      : 3 x 3
+         1/2  1/4  1/4
+         1/2  1/4  1/4
+         1/2  1/4  1/4
+       row sums   : [1, 1, 1]
+       col sums   : [3/2, 3/4, 3/4]
+       row deficit: [0, 0, 0]   sum|.| = 0
+       col deficit: [1/2, -1/4, -1/4]   sum|.| = 1
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 1.
+       triangle   : T = 3/64 (>= 0)
+  [DATA] ARM A (a) time: 0s
+
+------------------------------------------------------------------------------
+SEC 5  ARM A (b) — THE Zhat-COMPLETED SIBLING, REBUILT FROM CLOSED SCOPE AND SCREENED (the pin's flagged threat)   [+0s]
+------------------------------------------------------------------------------
+  building the closed-scope (d42b3) family to depth 6 ...
+  [PASS] ANCHOR Z1 THE CLOSED-SCOPE FAMILY REPRODUCES d43b's CENSUS: cumulative family sizes at depths 0..6 [u1-closed]  ([1, 7, 39, 215, 1191, 6471, 34375] (quoted [1, 7, 39, 215, 1191, 6471, 34375]))
+  [PASS] ANCHOR Z2 THE UNIFORM-LOOKAHEAD INTRINSIC PARTITION STABILISES AT SIX STATES at lookahead t = 2 (d43b MG2a): the |P_t| tables reproduce the committed anchors [u1-closed]  (cutoff-2 [4, 4, 5, 5, 5], cutoff-3 [4, 5, 6, 6], cutoff-4 [4, 5, 6])
+  [PASS] ANCHOR Z3 THE EXACT 6x6 TRANSFER IS THE COMMITTED ONE (d43b MG2d): well-defined per state on every one of the 215 depth-<=3 members, row sums (2,2,2,5/2,2,2) with the conflict state carrying the 5/4-per-actor excess [u1-closed]  (members 215; well-defined True; row sums [2, 2, 2, 5/2, 2, 2])
+  [PASS] ANCHOR Z4 THE Zhat COMPLETION IS THE AUDIT'S OBJECT, ENTRY FOR ENTRY: T f = 2 f exactly with f = (4,4,3,7,3,3)/3; every row of Zhat(i->j) = T_ij f_j / (lambda f_i) sums to exactly 1 with non-negative entries; the conflict row is exactly {0: 1/7, 3: 3/4, 5: 3/28}; and the column sums are exactly 25/28, 1, 59/64, 55/64, 31/32, 19/14 [u1-zhat]  (T f = 2 f True; conflict row {0: '1/7', 3: '3/4', 5: '3/28'}; column sums ['25/28', '1', '59/64', '55/64', '31/32', '19/14'])
+
+  ---- ZHAT-6x6 ----------------------------------------------------------
+       provenance : the Zhat-completed six-state record chain, rebuilt here from the closed-scope family [Z1-Z4]; specified by the D75 audit pin (b) and handed to U3 by U1 sec.14 [u1-zhat]
+       reading    : the completed state-to-state transfer, ROW-stochastic (the corpus's convention)
+       shape      : 6 x 6
+         3/4  1/4  0  0  0  0
+         0  3/4  3/64  7/64  3/32  0
+         0  0  3/4  0  0  1/4
+         1/7  0  0  3/4  0  3/28
+         0  0  0  0  3/4  1/4
+         0  0  1/8  0  1/8  3/4
+       row sums   : [1, 1, 1, 1, 1, 1]
+       col sums   : [25/28, 1, 59/64, 55/64, 31/32, 19/14]
+       row deficit: [0, 0, 0, 0, 0, 0]   sum|.| = 0
+       col deficit: [-3/28, 0, -5/64, -9/64, -1/32, 5/14]   sum|.| = 5/7
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 5/7.
+       SECOND OBSTRUCTION, INDEPENDENT OF DS (the polygon condition is
+                    necessary at every n and needs no bistochasticity): it fails
+                    on the col pair (0,1) at index 0: squared moduli [3/16, 0, 0, 0, 0, 0],
+                    slack = (-1/4)sqrt3 < 0.  24 violation(s) in all.
+
+  ---- ZHAT-6x6-TRANSPOSED -----------------------------------------------
+       provenance : the same object read in [B3]'s own convention [B3-conv]
+       reading    : Gamma_ij = p(i,t | j,0), i.e. COLUMN-stochastic — the transpose
+       note       : printed because the doubly-stochastic precondition is exactly the statement that this choice does not matter, and here it does
+       shape      : 6 x 6
+         3/4  0  0  1/7  0  0
+         1/4  3/4  0  0  0  0
+         0  3/64  3/4  0  0  1/8
+         0  7/64  0  3/4  0  0
+         0  3/32  0  0  3/4  1/8
+         0  0  1/4  3/28  1/4  3/4
+       row sums   : [25/28, 1, 59/64, 55/64, 31/32, 19/14]
+       col sums   : [1, 1, 1, 1, 1, 1]
+       row deficit: [-3/28, 0, -5/64, -9/64, -1/32, 5/14]   sum|.| = 5/7
+       col deficit: [0, 0, 0, 0, 0, 0]   sum|.| = 0
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 5/7.
+       SECOND OBSTRUCTION, INDEPENDENT OF DS (the polygon condition is
+                    necessary at every n and needs no bistochasticity): it fails
+                    on the col pair (0,1) at index 1: squared moduli [0, 3/16, 0, 0, 0, 0],
+                    slack = (-1/4)sqrt3 < 0.  24 violation(s) in all.
+
+  THE SHARPENER THE AUDIT PREDICTED, RUN.  [d75-5.3] reasoned: unistochastic
+  => doubly stochastic => uniform stationary law for an irreducible chain,
+  and 'a chain with that structure will not have a uniform stationary law'.
+  That was graded [MY READING].  It is now measured, and it is sharper than
+  predicted — the chain is not irreducible at all.
+
+  [PASS] Z5 THE COMPLETED CHAIN IS NOT IRREDUCIBLE AND ITS STATIONARY LAW IS NOT UNIFORM — THE AUDIT'S [MY READING] IS CONFIRMED AND SHARPENED.  States {2,4,5} form the unique closed communicating class and states {0,1,3} — including the CONFLICT state 3 — are TRANSIENT.  The unique stationary law is exactly (0, 0, 1/4, 0, 1/4, 1/2): three of its six entries are exactly zero, so it is not merely non-uniform, it is singular with respect to the uniform law.  A doubly-stochastic matrix always has the uniform law stationary, so this is a SECOND exact certificate that Zhat is not unistochastic, independent of the column sums  (closed class [2, 4, 5]; transient [0, 1, 3]; stationary law ['0', '0', '1/4', '0', '1/4', '1/2']; pi Zhat = pi exactly True)
+
+  ---- ZHAT-CLOSED-3x3 ---------------------------------------------------
+       provenance : the unique closed communicating class {2,4,5} of the Zhat chain [Z4, Z5] — a GENERATED 3x3 stochastic matrix, and the only one this census contains
+       reading    : the sub-transfer on the absorbing class, row-stochastic by closedness
+       note       : the one object on which the n = 3 criterion meets generated data
+       shape      : 3 x 3
+         3/4  0  1/4
+         0  3/4  1/4
+         1/8  1/8  3/4
+       row sums   : [1, 1, 1]
+       col sums   : [7/8, 7/8, 5/4]
+       row deficit: [0, 0, 0]   sum|.| = 0
+       col deficit: [-1/8, -1/8, 1/4]   sum|.| = 1/2
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 1/2.
+       triangle   : T = -1/4096 (< 0 — a SECOND obstruction)
+       SECOND OBSTRUCTION, INDEPENDENT OF DS (the polygon condition is
+                    necessary at every n and needs no bistochasticity): it fails
+                    on the col pair (0,1) at index 2: squared moduli [0, 0, 1/64],
+                    slack = -1/8 < 0.  6 violation(s) in all.
+  [DATA] ARM A (b) time: 8s
+
+------------------------------------------------------------------------------
+SEC 6  ARM A (c) — THE ARM-C2 COLUMN-CONSTANT TRANSFER (the degenerate control), AND THE COLUMN-CONSTANT LEMMA   [+8s]
+------------------------------------------------------------------------------
+
+  PROVENANCE, STATED PLAINLY.  This matrix is taken BY SPECIFICATION from
+  U1's committed receipt and is NOT re-derived here (v11/note-u1-indivisibility-census.md:436-456 (sec.5.5, ARM-C2)):
+    "under the payload-enriched map the renewal supports are 8, 8, 8 and the joint law over (cfg@r1, cfg@r2, cfg@r3) is exactly uniform (1/512 on all 512 cells), so the renewal chain is i.i.d. uniform on 8 labels and Gamma(r2<-r1) is COLUMN-CONSTANT (every entry 1/8)."
+  The depth-9 conditioned enumeration that produces it is U1's, and U3 is
+  a file-disjoint parallel unit.  What this receipt supplies instead is a
+  THEOREM that makes the verdict independent of the quoted arithmetic: for
+  a column-constant transfer, doubly-stochastic is equivalent to uniform.
+
+  [PASS] L1 THE COLUMN-CONSTANT LEMMA, PROVED AND THEN VERIFIED: an n x n matrix all of whose rows equal one probability vector v has row sums 1 automatically and column sums n.v_j, so it is doubly stochastic IF AND ONLY IF v is the uniform law.  Proof: n.v_j = 1 for every j iff v_j = 1/n.  Verified on 30 constructed column-constant matrices at six sizes; the equivalence never fails.  CONSEQUENCE, and it is the whole content of this section: among column-constant generated transfers the ONLY doubly-stochastic one is the maximally forgetful one  (0 counterexamples over 30 trials at sizes 2,3,4,5,6,8)
+  [PASS] L2 THE 8x8 FLAT MATRIX HAS A COMPLEX CERTIFICATE TOO, AND IT IS EXACT: the 8-point DFT U_jk = zeta_8^{jk}/sqrt8 written in Q(zeta_8) satisfies U^dagger U = I with zero residual and |U_ij|^2 = 1/8 at all 64 entries.  Both certificates are exhibited so that the ORTHO/UNI question can be decided on this object rather than assumed  (unitarity residuals 0; |U|^2 mismatches 0)
+
+  ---- ARMC2-8x8 ---------------------------------------------------------
+       provenance : U1 ARM-C2's renewal-to-renewal transfer [u1-armc2], taken BY SPECIFICATION (see the note above)
+       reading    : the column-constant transfer on the 8 payload-enriched renewal labels: every entry exactly 1/8
+       note       : the pin's degenerate control.  Its certificate is REAL — Sylvester's Hadamard matrix of order 8 [lit-had, KA-6] — so it is not merely unistochastic but ORTHOSTOCHASTIC, and the complex numbers are NOT forced by it (L2 exhibits the complex certificate as well)
+       shape      : 8 x 8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+         1/8  1/8  1/8  1/8  1/8  1/8  1/8  1/8
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+------------------------------------------------------------------------------
+SEC 7  ARM A — THE CENSUS, AND THE TWO STRUCTURAL VERDICTS   [+8s]
+------------------------------------------------------------------------------
+
+  THE SCREEN CENSUS
+  --------------------------------------------------------------------------
+  matrix                  shape       verdict           exact datum
+  --------------------------------------------------------------------------
+  K1-BORN-COL-PAIR        non-square  N/A-SHAPE         Barandes' criterion is undefined at this shape
+  K1-BORN-COL-SINGLE      non-square  N/A-SHAPE         Barandes' criterion is undefined at this shape
+  K1-2CONF                2x2         S-PASS            certificate exhibited and verified (real orthogonal)
+  K1-PAIR-FULLIDX         4x4         S-FAIL-DS         col deficits ['1', '-1', '-1', '1'], sum|.| = 4
+  K1-SINGLE-2x2           2x2         S-FAIL-DS         col deficits ['1', '-1'], sum|.| = 2
+  K1-JOIN-MENU            3x3         S-FAIL-DS         col deficits ['1/2', '-1/4', '-1/4'], sum|.| = 1
+  ZHAT-6x6                6x6         S-FAIL-DS         col deficits ['-3/28', '0', '-5/64', '-9/64', '-1/32', '5/14'], sum|.| = 5/7
+  ZHAT-6x6-TRANSPOSED     6x6         S-FAIL-DS         row deficits ['-3/28', '0', '-5/64', '-9/64', '-1/32', '5/14'], sum|.| = 5/7
+  ZHAT-CLOSED-3x3         3x3         S-FAIL-DS         col deficits ['-1/8', '-1/8', '1/4'], sum|.| = 1/2; and T = -1/4096 < 0
+  ARMC2-8x8               8x8         S-PASS            certificate exhibited and verified (real orthogonal)
+  --------------------------------------------------------------------------
+  [DATA] verdict tally: {'N/A-SHAPE': 2, 'S-FAIL-DS': 6, 'S-PASS': 2}
+  [DATA] readings screened: 10 in all
+  [PASS] A5 THE CENSUS IS MIXED, AND THE CENSUS IS THE RESULT.  Of the ten readings screened, TWO are non-square and therefore unscreenable by Barandes' criterion, SIX fail the doubly-stochastic precondition outright (S-FAIL-DS), and TWO pass with an exhibited and verified unitary (S-PASS).  No reading reaches the S-FAIL-UNI cell — every generated object that would have had to be argued at the phase level is already excluded at the mass level — and no reading is left EXCLUDED-BY-CAP, so the instrument decided every object it was given  ({'N/A-SHAPE': 2, 'S-FAIL-DS': 6, 'S-PASS': 2} over 10 readings)
+  [PASS] A6 EVERY MATRIX THAT PASSES THE SCREEN IS ORTHOSTOCHASTIC — THE ORTHO/UNI GAP IS EMPTY ON THIS CENSUS, SO NOTHING COMMITTED AND GENERATED FORCES THE COMPLEX NUMBERS.  Both passers carry a REAL orthogonal certificate, exhibited and verified: K1-2CONF by the 2x2 Hadamard construction and ARMC2-8x8 by Sylvester's order-8 Hadamard matrix.  This is the exact place the D75 audit located the necessity of i (a matrix unistochastic but NOT orthostochastic cannot be lifted with real amplitudes), and this census contains no such matrix  (passers ['K1-2CONF', 'ARMC2-8x8']; of which orthostochastic ['K1-2CONF', 'ARMC2-8x8'])
+  [PASS] A7 AND THE K1 LAYER CANNOT EVER FORCE THE COMPLEX NUMBERS AT ITS COMMITTED SCOPE — A NO-GO, NOT A NULL RESULT.  Paper 31 sec.4.3's own scope line reads: 'realized component sizes at the two cuts are exactly {1, 2} and the constructed family covers precisely those' [p31-4.3].  A component of size 1 gives a 1x1 Gamma and a component of size 2 gives a 2x2 one; by KA-4's uniform construction EVERY 2x2 bistochastic matrix is ORTHOSTOCHASTIC, and 1x1 trivially so.  Therefore no ortho/uni gap can open anywhere in the K1 arbitration family at its committed scope, at ANY depth, and the necessity-of-i question is not decidable there at all.  Deciding it requires a generated conflict of multiplicity >= 3, and this corpus has committed none.  The n = 2 half of the argument is not asserted: the orthostochastic construction is re-verified here across a printed sweep of the branch weight p, so 'every 2x2 bistochastic matrix is orthostochastic' is checked rather than cited  (component sizes {1,2} quoted from p31-4.3; the 2x2 orthostochastic construction verified exactly at p in ['0', '1/12', '1/6', '1/4', '1/3', '5/12', '1/2', '7/12', '2/3', '3/4', '5/6', '11/12', '1'] — 0 failures)
+
+  THE PRICE OF ENRICHMENT, STATED EXACTLY (the pin's S-FAIL-DS outcome).
+  For every doubly-stochastic D and every screened matrix M, the entrywise
+  L1 distance obeys ||M - D||_1 >= sum_j |c_j(M) - 1|, because
+  sum_j |c_j(M) - c_j(D)| <= sum_ij |M_ij - D_ij| and c_j(D) = 1.  The
+  exact prices this census establishes are:
+    ZHAT-6x6            : >= 5/7   (column sums ['25/28', '1', '59/64', '55/64', '31/32', '19/14'])
+    ZHAT-CLOSED-3x3     : >= 1/2   and it carries a SECOND, independent
+                          obstruction: its unitarity-triangle discriminant is
+                          T = -1/4096 < 0, so even a mass repair that fixed
+                          its column sums would have to move a phasor modulus too.
+                          This is the corpus's one generated 3x3 matrix and it
+                          fails the screen twice over.
+    K1-JOIN-MENU        : >= 1
+  That is what a quantum-eligible completion of the record chain must move,
+  and it is a mass statement, not a phase statement: no amount of phase
+  freedom repairs a column sum.
+
+
+------------------------------------------------------------------------------
+SEC 8  ARM B — THE U(1) LOOP-CLASS THEOREM, LOCATED, RESTATED, AND ITS REPRODUCTION ATTEMPTED ON D74's GENERATED CARRIER   [+8s]
+------------------------------------------------------------------------------
+
+  THE THEOREM, LOCATED AND RESTATED FROM ITS OWN FILE.
+
+  v6/relativistic-isp-v6-paper7.md:612-618 (Theorem 7.1)
+    "The retained holonomy of a closed route pair on a sealed screen is valued in the holonomy group of the 2-dimensional screen plane: the defect-free rotation group SO(2) = U(1) with canonical period 2*pi.  A retained alternative therefore carries canonically a nonnegative RN weight and a U(1) phase: the value space of an alternative is R+ x U(1) cup {0} = C as a SET."
+
+  v6/relativistic-isp-v6-paper7.md:676-689 (Theorem D3)
+    "Under the record-relabeling gauge U -> D U D^dagger (diagonal phases), the Bargmann loop products B(l) = prod_k U_{i_{k+1} i_k} are invariant (machine 0.0e+00), and two-route interference is exactly the loop-phase law P = |A|^2 + |B|^2 + 2|A||B| cos(arg B(loop)) (machine gap 2.8e-17).  Hence the gauge-invariant content of the dilation is its loop class."
+
+  THE CATALOG'S BINDING CORRECTIONS, CARRIED ([V11-CAT] sec.4.3(c)):
+    the theorem's standing is CONTESTED and unresolved at four documents
+    (derived in v6 p7 / INPUT in paper Va / un-forceable in v8 p2 /
+    seal-blind in companion-B), and a GUARD must travel with any citation:
+    Thm D1 is the ancilla-summed dilation every stochastic matrix admits
+    and is NOT the unistochasticity answer [d75-D1guard].  D1 is set aside
+    throughout this receipt.
+
+  WHAT REPRODUCTION MEANS HERE, DECLARED BEFORE THE MEASUREMENT.  D3 has
+  three separable clauses and they are tested one at a time:
+    (i)   the loop class is GAUGE-INVARIANT;
+    (ii)  the loop class is U(1)-VALUED (Thm 7.1's conclusion);
+    (iii) two-route interference IS the loop-phase law
+          P = |A|^2 + |B|^2 + 2|A||B| cos(arg B(loop)).
+  The carrier is D74's: the coarsest descent quotient of the committed
+  transport grammar, on which the transport holonomy lives.
+
+  enumerating AB4 and running D74's square census ...
+  [DATA] AB4 census: 3969 histories; {'both-blocked': 142, 'closed': 1546, 'AB-only': 28, 'BA-only': 12}; non-unit 88; ratios {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; kinds {('r', 'd'): 68, ('d', 'r'): 8, ('d', 'n'): 6, ('d', 'd'): 4, ('n', 'd'): 2}; delivery-bearing 88/88; shallowest 3
+  [PASS] ANCHOR B1.AB D72's T6.1 ROW REPRODUCES EXACTLY [T6.1] — family size, closed-square count, the FULL ratio multiset, the kind census and the delivery-bearing fraction  (histories 3969/3969; closed 1546/1546; non-unit 88/88)
+  enumerating ABC3 and running D74's square census ...
+  [DATA] ABC3 census: 3424 histories; {'both-blocked': 42, 'closed': 1554}; non-unit 12; ratios {'1': 1542, '1/2': 12}; kinds {('r', 'd'): 12}; delivery-bearing 12/12; shallowest 3
+  [PASS] ANCHOR B1.ABC D72's T6.1 ROW REPRODUCES EXACTLY [T6.1] — family size, closed-square count, the FULL ratio multiset, the kind census and the delivery-bearing fraction  (histories 3424/3424; closed 1554/1554; non-unit 12/12)
+  [PASS] ANCHOR B2 D72's T6.2 HALF-OPEN ROW REPRODUCES EXACTLY [T6.2]: 40 half-open squares at AB4, 28 AB-only and 12 BA-only — the third committed number of the 88 / 40 / 12 census this arm re-anchors on  (AB-only 28, BA-only 12, total 40; both-blocked 142)
+  [DATA] AB4 carrier: menu quotient 113 classes; coarsest congruence 185 classes after 5 rounds; of 88 defective squares the menu quotient CLOSES 44 and the congruence closes 44; self-loop holonomy (non-unit) {'1/2': 26, '2': 10, '2/3': 2, '3/2': 6}; off-loop cycles 134 of which 44 non-trivial
+  [DATA] ABC3 carrier: menu quotient 117 classes; coarsest congruence 162 classes after 4 rounds; of 12 defective squares the menu quotient CLOSES 0 and the congruence closes 0; self-loop holonomy (non-unit) {}; off-loop cycles 30 of which 12 non-trivial
+  [PASS] ANCHOR B3 D74's CARRIER TABLE REPRODUCES EXACTLY [d74-carrier]: AB4 has 113 menu classes and 185 congruence classes and both close 44 of the 88 defective squares (the 44 + 44 split); ABC3 has 117 / 162 and both close 0 of 12  (AB4 seen/unseen 44/44, classes 113/185; ABC3 0/12, classes 117/162)
+  [PASS] ANCHOR B4 THE GENERATED LOOP CLASS IS NON-TRIVIAL, WHICH IS WHAT MAKES THE REPRODUCTION QUESTION WORTH ASKING: on AB4's carrier 44 self-loops carry holonomy != 1, and a self-loop's holonomy is gauge-invariant outright [d74-carrier]  (non-unit self-loops 44; spectrum {'1/2': 26, '2': 10, '2/3': 2, '3/2': 6})
+  [PASS] B5 CLAUSE (i) OF THEOREM D3 REPRODUCES ON THE GENERATED CARRIER: the loop class is gauge-invariant.  Applying the printed non-constant vertex potential phi(node_i) = (i+1)/(i+3) and regauging every edge by q' = q . phi(target)/phi(source) leaves the entire self-loop holonomy spectrum unchanged, value for value and count for count  (81 distinct nodes, potential takes 81 distinct values; regauged spectrum {'1/2': 26, '2': 10, '2/3': 2, '3/2': 6})
+         ^ NO INDEPENDENT INFORMATION: a self-loop's source and target are the same node, so the potential cancels identically; the gate is run because the CONCLUSION is load-bearing, not because the count could fail
+  [PASS] ANCHOR B6 THE MEASURED VALUE SET AND GROUP ARE D74's [d74-group]: every non-unit holonomy measured on either arm — raw squares, carrier self-loops and independent carrier cycles alike — lies in {1/2, 2/3, 3/2, 2}, and the multiplicative group they generate is <2,3>, free abelian of rank 2, index 1 in Z^2  (values ['1/2', '2', '2/3', '3/2']; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2); primes [2, 3], rank 2, index 1)
+  [PASS] B7 CLAUSE (ii) OF THEOREM D3 / THEOREM 7.1 DOES NOT REPRODUCE, AND THE OBSTRUCTION IS EXACT AND STRUCTURAL — NOT A FAILURE TO FIND.  Thm 7.1 concludes the loop class is valued in SO(2) = U(1).  The generated loop class is valued in <2,3>, a subgroup of the MULTIPLICATIVE POSITIVE RATIONALS.  <2,3> is free abelian of rank 2 (B6), hence TORSION-FREE, hence its intersection with U(1) — the elements of modulus 1 — is exactly the trivial group {1}: a positive rational of modulus 1 is 1.  Every one of the measured holonomies is a positive rational and every one has unimodular part exactly 1.  There is no U(1) content to find, at any depth, for a reason that is a property of the value GROUP and not of the window  (all values positive True; unimodular parts ['1']; torsion-free (rank = #primes, index 1) True; roots of unity other than 1 among the measured values: 0)
+  [PASS] B8 CLAUSE (iii) OF THEOREM D3 DEGENERATES ON THE GENERATED CARRIER, EXACTLY.  D3's law is P = |A|^2 + |B|^2 + 2|A||B| cos(arg B(loop)).  On this carrier arg B(loop) = 0 for EVERY measured loop, because every holonomy is a positive rational (B7), so cos(arg B(loop)) = 1 identically and the law collapses to P = (|A| + |B|)^2 — the classical no-interference sum, with the cross term at its MAXIMUM and no cancellation available at any loop.  The interference table Thm D3 recovers (1.000, 0.750, 0.500, 0.000) requires the cosine to range over [-1, 1]; here its exact range is the single point {1}  (exact range of cos(arg B(loop)) over every measured loop = ['1']; at |A| = |B| = 1 the loop-phase law gives P = 4 and the no-interference sum gives 4)
+  [PASS] B9 THE GAUGE STRATUM CAN CARRY A U(1) LOOP CLASS — AND EXACTLY A 2-TORUS OF THEM, NONE SELECTED.  Since the measured holonomy group is free abelian of rank 2 (B6), Hom(<2,3>, U(1)) = U(1)^2: a character is fixed by its values on the two free generators 2 and 3 and those may be chosen independently and arbitrarily.  So D3's U(1) loop class is ATTACHABLE to the generated carrier in a 2-real-parameter family, and the generated data selects no point of it — the trivial character is the only one anything committed picks out (B7).  This is the exact price of the reproduction: two real numbers, unsourced  (free generators [[-1, 0], [0, -1]] on primes [2, 3]; character group U(1)^2; free real parameters 2)
+
+  ARM B VERDICT — PARTIAL REPRODUCTION, WITH THE OBSTRUCTION NAMED EXACTLY.
+    clause (i)   gauge-invariance of the loop class : REPRODUCED (B5),
+                 and the loop class is non-trivial on the carrier (B4).
+    clause (ii)  the loop class is U(1)-valued      : NOT REPRODUCED (B7).
+                 Obstruction: the generated holonomy group is <2,3>,
+                 free abelian of rank 2, torsion-free, and
+                 <2,3> intersect U(1) = {1}.
+    clause (iii) interference IS the loop-phase law : DEGENERATE (B8).
+                 cos(arg B(loop)) has exact range {1}; the law collapses
+                 to the classical sum.
+  The expected candidate obstruction — D74's R+-only / odd-sector-empty
+  verdict [d74-D2] — is CONFIRMED BY MEASUREMENT here rather than assumed,
+  and it is sharpened from 'realised nowhere' to 'excluded by the value
+  group': the search for a -1 could not have succeeded, because -1 is not
+  in the multiplicative group of positive rationals at all.
+
+  [DATA] ARM B time: 3s
+
+------------------------------------------------------------------------------
+SEC 9  ARM C — THE v7 AMPLITUDE FORM READ AS A [B3] SCHUR-HADAMARD GAUGE   [+11s]
+------------------------------------------------------------------------------
+
+  THE FORM (v7/relativistic-isp-v7-paper30-rooted-boundary-law.md:2846-2855, :4191, as catalogued at [V11-CAT] sec.4.6 (:2003-2061)):
+    "the survivor, at dual-conjugation error exactly 0: A(R) ~ e^{-K(E)} . e^{i Phi(O)} -- real decay on the reversal-EVEN channel E, phase on the reversal-ODD channel O.  Never lifted to a theorem; v10 was built without it."
+
+  THE GAUGE GROUP ([B3] eqs. (29)/(30) and the paragraph after (64)):
+    "(30): Theta_ij(t<-0) |-> Theta_ij(t<-0) e^{i theta_ij(t)} is a Schur-Hadamard gauge transformation and has no physical effects.  AND: 'Note that a unitary time-evolution operator U(t<-0) will NOT GENERICALLY REMAIN UNITARY under arbitrary Schur-Hadamard gauge transformations (30).  Hence, writing a unistochastic transition matrix Gamma(t<-0) in terms of a unitary time-evolution operator U(t<-0) corresponds to making a gauge choice.'"
+
+  WHAT IS AND IS NOT A TEST, STATED BEFORE THE GATES.  Attaching entrywise
+  phases to a lift Theta leaves Gamma = conj(Theta) (Schur-Hadamard)
+  Theta invariant BY CONSTRUCTION — that is [B3] eq. (28) read as a
+  definition, not a measurement, and a gate on it CANNOT FAIL.  It is run
+  below and it is labelled as carrying no independent information.  The
+  content of this arm is the OTHER half of Barandes' own sentence: a
+  unitary does NOT generically remain unitary under an arbitrary
+  Schur-Hadamard gauge transformation.  So the real question is whether
+  the v7 form's phase lands in the unitarity-preserving subgroup, and
+  whether anything generated selects it at all.
+
+  [PASS] C1 THE SCHUR-HADAMARD ACTION ON Gamma IS AN IDENTITY, AND IS GATED AS ONE.  Attaching the printed NON-SEPARABLE entrywise phase matrix theta_ij = zeta_8^{i.j^2 + 3i} to the 8x8 passer's certificate leaves |U_ij|^2 = 1/8 at all 64 entries, exactly.  This is [B3] eq. (30) restated, not tested  (|U'_ij|^2 mismatches against Gamma: 0)
+         ^ NO INDEPENDENT INFORMATION: |z . w| = |z||w| and |zeta| = 1; the gate cannot fail as posed and is excluded from the evidence count
+  [PASS] C2 THE UNITARITY-PRESERVING SUBGROUP IS PROPER, EXHIBITED ON OUR OWN PASSER — BARANDES' CLAUSE, GATED.  The SEPARABLE gauge theta_ij = alpha_i + beta_j (printed: alpha_i = 2i, beta_j = 3j in units of 2pi/8) preserves unitarity exactly: U^dagger U - I has ZERO non-zero entries.  A single NON-separable element — flipping the sign of the (0,0) entry alone, which is a legitimate Schur-Hadamard transformation with theta_00 = pi — leaves Gamma EXACTLY invariant and DESTROYS unitarity.  So Gamma-invariance and unitarity-preservation are genuinely different conditions on this object, and 'the phase is gauge' does not mean 'any phase will do'  (separable gauge: unitarity residuals 0; single-entry flip: Gamma mismatches 0, unitarity residuals 14 (first at index (0, 1)))
+
+  DOES ANY COMMITTED GENERATED QUANTITY SELECT A NON-TRIVIAL PHASE?
+  The v7 form puts the phase on the reversal-ODD channel O.  The question
+  is therefore whether the committed grammar supplies an odd datum at all.
+  This receipt measures the sharpest available instance and re-anchors the
+  rest.
+
+  [PASS] ANCHOR C3 THE ODD CHANNEL IS EMPTY WHERE THE HOLONOMY LIVES, MEASURED HERE AND NOT ASSUMED [d74-D5.2]: over every linear extension of the OPPOSITE poset of every one of AB4's defective-square endpoints, NOT ONE reversed record is admissible.  D74's committed count is 304 linear extensions over the 176 endpoints, 0 admissible; this receipt reproduces both numbers  (176 endpoints, 304 linear extensions of the opposite poset, 0 admissible)
+  THE CANDIDATE-CARRIER CENSUS FOR Phi(O)
+  --------------------------------------------------------------------------
+    the transport holonomy r
+      source : measured at B6/B7: positive rational, group <2,3>
+      status : R+-valued, so it has no unimodular content at all; and traversal reversal acts on it by r -> 1/r, which is an EVEN-channel action on log r, not an odd-channel phase
+      selects a non-trivial phase? NO
+    the reversal-EVEN invariant J
+      source : D74 gate D9.1 [v10/note-d74-transport-holonomy-result.md:120-124]
+      status : explicitly reversal-EVEN by construction, so it cannot be Phi(O)
+      selects a non-trivial phase? NO
+    the odd-ring port-flip parity class
+      source : D66, as graded by the catalog [cat-4.7]
+      status : killed as a candidate: free relabelling trivialises it, and the catalog forbids citing it for Phi(O)
+      selects a non-trivial phase? NO
+    the reversed record itself
+      source : LD [ld-662] and C3 above
+      status : refused at admission on 662/662 holonomy-carrying loops, on the Born = K1 row, and on all 40 half-open squares
+      selects a non-trivial phase? NO
+  --------------------------------------------------------------------------
+  [PASS] C4 NO COMMITTED GENERATED QUANTITY SELECTS A NON-TRIVIAL PHASE ASSIGNMENT — 0 of 4 candidate carriers, each with its committed source.  The v7 form's phase argument Phi(O) therefore evaluates on every committed generated object to the empty datum, so the Schur-Hadamard element the form names is the IDENTITY  (0 of 4 carriers select a phase; three of the four are re-anchored citations and the fourth (the reversed record) is measured at C3)
+  [PASS] C5 THE v7 FORM IS CARRIABLE ON THE GAUGE STRATUM, AND IT IS CARRIED TRIVIALLY.  With Phi(O) empty (C4) the form A(R) ~ e^{-K(E)} . e^{i Phi(O)} reduces to a real positive amplitude times e^{i.0} = 1.  The identity is in the unitarity-preserving subgroup of C2 and preserves Gamma, so the form is CONSISTENT with [B3]'s gauge structure on both passers.  It is consistent and empty: consistency at the identity is not evidence that the stratum is occupied  (the identity element preserves both Gamma and unitarity trivially)
+         ^ NO INDEPENDENT INFORMATION: the identity gauge transformation is in every subgroup; this records the verdict and claims nothing
+
+  ARM C VERDICT — CARRIABLE, TRIVIAL, AND WITH THE NON-TRIVIAL PART PRICED.
+    * The Schur-Hadamard action on Gamma is an identity and is NOT a test
+      (C1).
+    * The unitarity-preserving subgroup is PROPER: a single printed
+      entrywise sign flip on the 8x8 passer preserves Gamma exactly and
+      destroys unitarity exactly (C2).  Barandes' own clause is gated on
+      a generated object for the first time.
+    * Nothing committed and generated selects a non-trivial phase
+      (C3, C4), so the v7 form is carried by the identity element (C5).
+    * What a non-trivial occupation would cost is now stated exactly:
+      2 real parameters at the loop-class level (B9), and at the lift
+      level a choice inside the unitarity-preserving subgroup rather than
+      the full entrywise group (C2).  Neither is supplied by anything
+      generated.
+  CORRESPONDENCE IS NOT IDENTITY.  Nothing here says the generated grammar
+  HAS an amplitude, a phase, or an interference law; the arm tests whether
+  the gauge stratum COULD carry the v7 form consistently, and the answer
+  is yes-and-vacuously.
+
+  [DATA] ARM C time: 0s
+
+------------------------------------------------------------------------------
+SEC 10  SCOPE, CAPS, AND THE SUMMARY   [+11s]
+------------------------------------------------------------------------------
+
+  SCOPE, NON-NEGOTIABLE.
+  * MATRIX-LEVEL SCREENING ONLY.  A matrix that passes the screen is NOT
+    thereby a quantum system, a Hilbert space, or a dynamics.  The map
+    from a screened Gamma to a physical system is MISSING and this unit
+    does not supply it.  Correspondence is not identity.
+  * The committed matrices only, at their own scopes: the K1 arbitration
+    family at paper 31 sec.4.3's fixture (component sizes exactly {1,2});
+    the Zhat sibling on the closed-scope (d42b3) family to depth 6; the
+    D74 anchor arms at (A,B) depth <= 4 and (A,B,C) depth <= 3.
+  * ARM-C2's 8x8 matrix is taken BY SPECIFICATION from U1's committed
+    receipt [u1-armc2] and is NOT re-derived here; the verdict on it is
+    made independent of that quote by the column-constant lemma (L1).
+  * U1b's biting renewal transfers are NOT awaited (file-disjoint parallel
+    unit).  Screening them is a DECLARED FOLLOW-UP, and by L1 the only way
+    such a transfer can pass the DS precondition is by being uniform.
+  * Named but NOT screened, and owed forward: the 36-state sigma chain
+    (v10/note-d61-...:40) and the transport-scope descent quotient of D74
+    as a transition matrix.  Both are in the D75 audit's candidate list
+    [d75-5.3] and neither is in this pin's list.
+  * No CP statement of any kind.  No Bell or locality statement of any
+    kind.  No covariance claim: L-1's bound stands untouched, and nothing
+    here is a law at renewal grain.
+  * Theorem D1 is SET ASIDE throughout [d75-D1guard]: every positive
+    verdict exhibits a unitary of the SAME size, with no ancilla and no
+    ancilla sum.
+  * The n = 3 sufficiency of the triangle criterion is CITED [lit-uni3]
+    and is never load-bearing: this receipt returns "unistochastic" only
+    with an exhibited, verified certificate.
+
+  CAPS, PRINTED.
+    closed scope (d42b3) family for the Zhat sibling: depth <= 6
+    D74 anchor arms: (A,B) depth <= 4 and (A,B,C) depth <= 3
+    unistochasticity decided constructively at: n = 1, 2, 3, 6, 8
+    n = 3 exact criterion: the triangle (chain-link) discriminant, rational, necessary at every n and necessary-and-sufficient at n = 3 for bistochastic matrices
+    general-n instrument: the exact polygon obstruction on every column pair and every row pair, decided by the Surd sign oracle
+    NOT implemented: full phase-elimination (resultants / Groebner) for n > 3.  A matrix with NO polygon obstruction and NO exhibited certificate would be EXCLUDED-BY-CAP; that cell is EMPTY on this census and the count is printed in SEC 8
+    Surd sign oracle refinement cap: 4096 binary digits (never approached; the printed maximum is in SEC 2)
+    Surd sign oracle: maximum refinement actually used
+      16 binary digits against the 4096 cap.
+    EXCLUDED-BY-CAP verdicts on this census: 0.
+
+  THE UNIT'S ANSWERS, IN ONE PLACE.
+    ARM A  the screen census, per matrix:
+             K1-BORN-COL-PAIR         N/A-SHAPE
+             K1-BORN-COL-SINGLE       N/A-SHAPE
+             K1-2CONF                 S-PASS
+             K1-PAIR-FULLIDX          S-FAIL-DS
+             K1-SINGLE-2x2            S-FAIL-DS
+             K1-JOIN-MENU             S-FAIL-DS
+             ZHAT-6x6                 S-FAIL-DS
+             ZHAT-6x6-TRANSPOSED      S-FAIL-DS
+             ZHAT-CLOSED-3x3          S-FAIL-DS
+             ARMC2-8x8                S-PASS
+           two structural verdicts: the ortho/uni gap is EMPTY on
+           this census (A6), and the K1 layer cannot force i at
+           its committed scope AT ALL, because its conflicts have
+           multiplicity at most 2 (A7).
+    ARM B  clause (i) REPRODUCED; clause (ii) NOT REPRODUCED, obstruction
+           = the value group <2,3> is torsion-free so its intersection
+           with U(1) is trivial; clause (iii) DEGENERATE, cos range {1}.
+           A U(1) loop class is attachable in a 2-torus of ways, none
+           selected.
+    ARM C  the gauge action on Gamma is an identity (not a test); the
+           unitarity-preserving subgroup is PROPER and that is gated on
+           our own passer; no committed generated quantity selects a
+           phase, so the v7 form is carried by the identity — carriable
+           and vacuous.
+
+[SUMMARY] 45 PASS / 0 FAIL / 0 ANCHOR-FAIL, of which 4 carry NO INDEPENDENT INFORMATION and are labelled as such (41 independent-evidence passes)
+[RUNTIME] 11s wall clock, single-threaded, exact arithmetic throughout, no tolerance anywhere
+[CAPS] closed scope depth 6; anchor arms depth 4/3; sizes decided constructively 1,2,3,6,8; EXCLUDED-BY-CAP verdicts: 0; Surd sign refinement used 16 of 4096 bits
+[EXIT] 0 — substantive negatives are results, not failures
