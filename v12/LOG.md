@@ -167,3 +167,13 @@ before its review; the correction again cost nothing but honesty
 — and this time the review made the programme STRONGER (the
 completeness of Q_corr is a better W1′ theorem than the one
 pinned).
+
+## 2026-07-28 — PAPER 0 FORMATTING PASS (v12 LEDGER #5)
+Typographic pass only, user-requested: display formulas set on
+their own lines in LaTeX math ($$ blocks; the cross-term identity,
+the three-defect table, the S(c) counterexample algebra, the T3′
+boxed theorem, the convex-body definitions and the boxed chain,
+the coherence law, B(ωU) = B(U), the H² object), headings
+restructured (T1-T5′ and W-units as subsections), references
+itemized.  CONTENT UNCHANGED from v2.1 — no claim, scope, grade,
+or number moved; diff is presentation only.
