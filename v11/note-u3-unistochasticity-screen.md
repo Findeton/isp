@@ -1,14 +1,17 @@
-# U3 — result: **S-FAIL-DS, on every generated matrix that is square at all — and the ortho/uni gap is EMPTY.** Six of the ten committed readings fail the doubly-stochastic precondition with exact imbalances (the `Ẑ` sibling's is `5/7`); the two that pass are *orthostochastic*, exhibited with real orthogonal certificates, so nothing committed and generated forces `i`. The K1 arbitration layer **cannot ever** force it at its committed scope, because its conflicts have multiplicity at most `2`. The `U(1)` loop-class theorem reproduces in one clause of three: the loop class is gauge-invariant and non-trivial, but it is valued in `⟨2,3⟩`, which is torsion-free, so `⟨2,3⟩ ∩ U(1) = {1}` and the interference law collapses to the classical sum. The v7 amplitude form is carriable on the gauge stratum and is carried by the identity.
+# U3 — result: **S-FAIL-DS, on every generated matrix that is square at all — and both passers are the flat matrix.** Seven of the eleven screened readings fail the doubly-stochastic precondition with exact imbalances (the `Ẑ` sibling's is `5/7` of one unit of mass); the two that pass are `J/2` and `J/8`, orthostochastic with real orthogonal certificates, so nothing committed and generated forces `i`. The K1 **outcome space** is of size `≤ 2` — *measured* at four committed pools, unproved beyond them — and at that size `i` is undecidable; the corpus **does** generate multiplicity-`3` conflicts, and they carry `2`-outcome laws. The `U(1)` loop-class theorem reproduces in one clause of three: the loop class is gauge-invariant and non-trivial, but every measured value is a positive real and `ℝ⁺ ∩ U(1) = {1}`. The v7 amplitude form is carriable on the gauge stratum and is carried by the identity.
 
 **Read the scope before the headline.** This unit screens **matrices**.
 A matrix that passes the screen is not thereby a quantum system, a
 Hilbert space, or a dynamics: the map from a screened `Γ` to a physical
 system is missing and this unit does not supply it. Correspondence is
-not identity. No CP statement, no Bell statement, no locality statement,
-no covariance claim appears anywhere in the receipt; L-1's bound stands
-untouched.
+not identity. The screen is also **closed and undilated**: `[B3]` calls a
+quantum system *"either a unistochastic process itself, or (if a
+nontrivial dilation was required) a subsystem of a unistochastic
+process"*, and only the first disjunct is decided here. No CP statement,
+no Bell statement, no locality statement, no covariance claim appears
+anywhere in the receipt; L-1's bound stands untouched.
 
-**Status: GREEN-UNREVIEWED, STRICT, 2026-07-28.** Pin
+**Status: GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-07-28.** Pin
 `v11/note-u3-unistochasticity-screen-pin.md` (binding, frozen before any
 code was written). Binding specification: paper 0 §7 (U3), §5 (the gauge
 stratum), §6; `[V11-CAT]` §7 rank 4 and its §4.3 / §4.6 / §4.7 graded
@@ -18,14 +21,16 @@ entries; U1 §11's handover and §6's sharpening. Parents: v10 **paper 31
 (the transport loop census, group `⟨2,3⟩`, `R⁺`, odd sector empty), **LD**
 (the walled odd sector), **v6 paper 7** Thms 7.1 and D3 (the `U(1)`
 loop-class theorem), **v7 paper 30** (the `i`-twist amplitude form), and
-`[B3]` (the unistochasticity criterion and the Schur-Hadamard gauge).
+`[B3]` (*Quantum Systems as Indivisible Stochastic Processes*,
+arXiv:2507.21192 — the unistochasticity criterion, the dilation clause,
+and the Schur-Hadamard gauge).
 Receipt `v11/code/u3_unistochasticity_screen_exact.py`, output
 `v11/code/u3_output.txt` — run from the repository root, **exit 0**,
-**45 PASS / 0 FAIL / 0 ANCHOR-FAIL** of which **4 carry no independent
-information and are labelled as such** (**41 independent-evidence
-passes**), **12 s** wall clock against the pin's ~25 min budget. Re-run
-at `PYTHONHASHSEED=7`: **output identical apart from timings** (0
-differing lines).
+**50 PASS / 0 FAIL / 0 ANCHOR-FAIL** of which **6 carry no independent
+information and are labelled as such** (**44 independent-evidence
+passes**), **15 s** wall clock against the pin's ~25 min budget. Re-run
+at `PYTHONHASHSEED=7`: **output identical apart from timings** (7
+timing lines differ, 0 substantive).
 
 **Lean: NONE**, as the pin declares. `S-PASS`, `S-FAIL-DS` and
 `S-FAIL-UNI` are all reportable, and the census is the result.
@@ -47,28 +52,38 @@ size**, with no ancilla and no ancilla sum. Theorem D1 — the
 ancilla-summed Stinespring/Naimark dilation every stochastic matrix
 admits — is set aside throughout, as `[V11-CAT]` §7 rank 4 requires.
 
-- **The census is mixed and the census is the result.** Of ten committed
-  readings: `2` are non-square and unscreenable, `6` fail the
+- **The census is mixed and the census is the result.** Of eleven
+  readings: `2` are non-square and unscreenable, `7` fail the
   doubly-stochastic precondition, `0` reach the `S-FAIL-UNI` cell, `2`
-  pass with an exhibited unitary, and `0` are `EXCLUDED-BY-CAP`.
+  pass with an exhibited unitary, and `0` are `EXCLUDED-BY-CAP`. The
+  eleven are **not** eleven independent matrices: they are `4` distinct
+  committed generated matrices, `5` constructed or convention-relative
+  readings of those, `1` transpose duplicate and `1` by-specification
+  control (§3).
 - **Every generated object that would have had to be argued at the phase
   level is already excluded at the mass level.** The screen never gets to
   a phase question on a committed matrix, because the mass question
   answers first.
-- **Both passers are orthostochastic.** `K1-2CONF` carries the `2×2`
-  Hadamard certificate and `ARMC2-8x8` carries Sylvester's order-`8`
-  Hadamard matrix — real orthogonal, verified entry by entry. The
-  ortho/uni gap, which the D75 audit identifies as the exact place the
-  necessity of `i` lives, is **empty on this census**.
-- **And it is empty at the K1 layer for a structural reason, at every
-  depth.** Paper 31 §4.3's own scope line reads: *"realized component
-  sizes at the two cuts are exactly `{1, 2}` and the constructed family
-  covers precisely those."* Every `2×2` bistochastic matrix is
-  orthostochastic — constructed and verified across a printed sweep of
-  the branch weight — and `1×1` trivially so. **No ortho/uni gap can open
-  anywhere in the K1 arbitration family at its committed scope.**
-  Deciding the necessity of `i` requires a generated conflict of
-  multiplicity `≥ 3`, and the corpus has committed none.
+- **Both passers are the flat matrix, and they pass for one reason.**
+  `K1-2CONF` is `[[1/2,1/2],[1/2,1/2]] = J/2` and `ARMC2-8x8` is `J/8`.
+  Each is column-constant, and by the lemma L1 the only doubly-stochastic
+  column-constant law is the uniform one — which is `J/n`, unistochastic
+  at every `n` (the DFT) and orthostochastic at every `n = 2^k`
+  (Sylvester). Both certificates are real orthogonal and verified entry
+  by entry. The ortho/uni gap, which the D75 audit identifies as the
+  exact place the necessity of `i` lives, is **empty on this census**,
+  and **the passes carry no quantum content**.
+- **The K1 outcome space is of size `≤ 2` — measured, not proved.** The
+  corpus **does** commit multiplicity-`3` conflicts: the committed
+  `(A,B,C)` pool's `3,424` histories carry `216` of them, the shallowest
+  at depth `3`. What bounds the screen is not the conflict's size but the
+  **size of the K1 law's outcome space**, which is the number of maximal
+  independent sets of the realised conflict graph — and that is `≤ 2` at
+  every one of four committed pools, three gated in-receipt and the
+  fourth round-verified (§4). At size `≤ 2` the
+  necessity of `i` is undecidable, and deciding it requires a
+  `≥ 3`-outcome K1 law: **a fact about the actor pool and the value
+  alphabet, not about structure and not about depth.**
 - **The loop-class theorem reproduces in one clause of three**, and the
   obstruction to the other two is exact and structural rather than a
   failure to find (§6).
@@ -145,14 +160,23 @@ passers in §4 is not vacuous.
 |---|---|---|---|
 | `K1-BORN-COL-PAIR` | `4×1` | **N/A-SHAPE** | the criterion is undefined at this shape; the trivial column completion is D1's move and is set aside |
 | `K1-BORN-COL-SINGLE` | `2×1` | **N/A-SHAPE** | same |
-| **`K1-2CONF`** | `2×2` | **S-PASS** | real orthogonal certificate, `0` residuals, `0` mismatches |
+| **`K1-2CONF`** | `2×2` | **S-PASS (FLAT `J/2` — degenerate)** | `[[1/2,1/2],[1/2,1/2]]`; real orthogonal certificate, `0` residuals, `0` mismatches |
 | `K1-PAIR-FULLIDX` | `4×4` | **S-FAIL-DS** | column sums `2, 0, 0, 2`; `Σ|·| = 4` |
 | `K1-SINGLE-2x2` | `2×2` | **S-FAIL-DS** | column sums `2, 0`; `Σ|·| = 2` |
 | `K1-JOIN-MENU` | `3×3` | **S-FAIL-DS** | column sums `3/2, 3/4, 3/4`; `Σ|·| = 1` |
+| **`K1-3CONF`** | `2×2` | **S-FAIL-DS** | the committed K1 law on the first generated **multiplicity-`3`** conflict, on its own `2`-element outcome space: `[[2/3,1/3],[2/3,1/3]]`, column sums `4/3, 2/3`, `Σ|·| = 2/3`; **and** the polygon obstruction fires on the row pair (moduli `2/3 > 1/3`, slack `−1/3`) |
 | **`ZHAT-6x6`** | `6×6` | **S-FAIL-DS** | column sums `25/28, 1, 59/64, 55/64, 31/32, 19/14`; deficits `−3/28, 0, −5/64, −9/64, −1/32, +5/14`; `Σ|·| = 5/7` |
 | `ZHAT-6x6-TRANSPOSED` | `6×6` | **S-FAIL-DS** | the same imbalance, on the rows: `[B3]`'s convention does not rescue it |
 | `ZHAT-CLOSED-3x3` | `3×3` | **S-FAIL-DS** | column sums `7/8, 7/8, 5/4`, `Σ|·| = 1/2`; **and** `T = −1/4096 < 0` |
-| **`ARMC2-8x8`** | `8×8` | **S-PASS** | real orthogonal certificate (Sylvester `H₈/√8`), `0` residuals, `0` mismatches; the complex DFT certificate is exhibited too |
+| **`ARMC2-8x8`** | `8×8` | **S-PASS (FLAT `J/8` — degenerate)** | real orthogonal certificate (Sylvester `H₈/√8`), `0` residuals, `0` mismatches; the complex DFT certificate is exhibited too |
+
+**Eleven readings, recomposed honestly.** They are `4` distinct
+committed generated matrices — `K1-2CONF`, `K1-3CONF`, `ZHAT-6x6` and its
+closed `3×3` sub-block — plus `5` constructed or convention-relative
+readings of those (the two Born columns, the two untrimmed-index rows,
+the normalised join menu), `1` transpose duplicate (`ZHAT-6x6-TRANSPOSED`)
+and `1` by-specification control (`ARMC2-8x8`). Eleven rows are not
+eleven pieces of evidence.
 
 **The readings are declared, and the convention-relative ones are marked
 as such.** `V_single` and `V_pair` are isometries with **one column**
@@ -216,40 +240,102 @@ six sizes. **Among column-constant generated transfers the only
 doubly-stochastic one is the maximally forgetful one**, which is why
 ARM-C2 passes and `K1-JOIN-MENU`, with row `(1/2, 1/4, 1/4)`, does not.
 
-## 4. The two structural verdicts
+## 4. The two structural verdicts, and the multiplicity census behind the second
 
-**The ortho/uni gap is empty on this census.** Both passers carry a real
-orthogonal certificate, exhibited and verified. A matrix that is
-unistochastic but **not** orthostochastic is one that cannot be lifted
-with real amplitudes — the `i` is forced by the matrix's own entries —
-and this census contains no such matrix. `KA-3` shows the property is
-not vacuous: `J/3` is exactly such a matrix, and nothing committed and
-generated resembles it.
+**The ortho/uni gap is empty on this census, and both passers are flat.**
+Both carry a real orthogonal certificate, exhibited and verified, and
+both are `J/n`. A matrix that is unistochastic but **not**
+orthostochastic is one that cannot be lifted with real amplitudes — the
+`i` is forced by the matrix's own entries — and this census contains no
+such matrix. `KA-3` shows the property is not vacuous: `J/3` is exactly
+such a matrix, and nothing committed and generated resembles it.
 
-**The K1 layer cannot force the complex numbers at its committed scope,
-at any depth.** This is a no-go, not a null result. Its two premises are
-paper 31 §4.3's own scope line (component sizes exactly `{1,2}`) and the
-uniform `2×2` orthostochastic construction, re-verified across a printed
-sweep of `p`. Together they close the question: **the necessity of `i`
-is not decidable at the K1 arbitration layer at all**, and any unit that
-wants to decide it must first generate a conflict of multiplicity `≥ 3`.
+**The multiplicity census, measured on the committed pools.** Paper 31
+§4.3's `{1, 2}` is a line about a **fixture**, and its own Scope sentence
+says so: *"Scope: the pair-plus-path fixture, grammar = the terminal
+admission layer plus the click refinement; realized component sizes at
+the two cuts are exactly `{1, 2}` and the constructed family covers
+precisely those."* A two-actor fixture bounds a fixture. The corpus's
+**three**-actor pool is committed (`v10/code/d42b1_transport_exact.py`,
+declared at `:435`), and it is enumerated and censused here:
+
+| pool | histories | admissible arbitration events, by `\|ckey\|` | by `\|MIS\|` |
+|---|---|---|---|
+| `d42b1` `(A,B,C)` `d ≤ 3` | `3,424` | `{1: 3096, 2: 1536, 3: 216}` | `{1: 3096, 2: 1752}` |
+| `d42b1` `(A,B)` `d ≤ 4` | `3,969` | `{1: 3468, 2: 1264}` | `{1: 3468, 2: 1264}` |
+| `d42b3` closed scope `(A,B)` `d ≤ 6` | `34,375` | `{1: 35412, 2: 8944}` | `{1: 35412, 2: 8944}` |
+
+**Multiplicity `3` is committed.** `216` admissible arbitration events on
+`36` distinct histories, the shallowest at depth `3`:
+`[('p','A',v0,0), ('p','B',v0,0), ('p','C',v0,1)]`, with committed menu
+weights `1/6` and `1/12` and committed K1 law `{A0,B0} → 2/3`,
+`{C1} → 1/3`. The menu and the law are locked together by the layer's
+own pricing — the menu weight is exactly `1/4 · PK1(winner)` at a single
+available component. **The claim that "the corpus has committed none"
+was a fixture-scope reading of a two-actor Scope line, and it is
+withdrawn wherever it appeared.**
+
+**But the outcome space is `2`, not `3`.** A conflict component of size
+`m` does **not** give an `m × m` `Γ`. The K1 law is supported on the
+**maximal independent sets** of the realised conflict graph — the layer's
+own `mis_of`, and `admissible()` refuses every `wkey` outside it — so the
+square `Γ` the screen sees has size `|MIS|`. On the witness the conflict
+graph is `A0 — C1` and `B0 — C1` and **not** `A0 — B0`, because `A` and
+`B` propose the same value; its maximal independent sets are `{A0,B0}`
+and `{C1}`, exactly two.
+
+**And `|MIS| ≤ 2` at every pool measured.** Across all three pools above
+the `|MIS|` census never leaves `{1, 2}`, on every admissible arbitration
+event. The **measured mechanism**: the realised conflict graph on every
+component is exactly the complete multipartite graph whose parts are the
+proposal-**value** classes (edge iff the two proposals differ in value —
+`0` exceptions over all three pools, and `|MIS|` equals the number of
+value classes on every event), and the committed proposal alphabet is
+**binary**, so there are at most two parts. The round's fourth pool —
+`(A,B,C,D)` at `d ≤ 4`, `332,697` histories, `|MIS|` census
+`{1: 232264, 2: 98304}`, never `3` — **agrees, and is carried as
+round-verified evidence, not as a gate of this receipt.**
+
+**The no-go, restated honestly.** **The K1 outcome space is `≤ 2` —
+measured at the four committed pools, unproved beyond them.** By lemma
+L1 the only column-constant `2`-outcome law that is doubly stochastic at
+all is the uniform one, and every `2×2` bistochastic matrix is
+orthostochastic (constructed and re-verified across a printed sweep of
+the branch weight), `1×1` trivially so. **So `i` is undecidable at these
+pools.** Deciding `i` requires a `≥ 3`-outcome K1 law, which needs
+**non-binary proposal values or non-complete-multipartite conflict
+graphs** — a **CAP** fact about the actor pool and the value alphabet,
+not a structure fact, and not a fact about depth.
+
+**The one substantive non-flat K1 object fails at the mass level.** Read
+as the square transfer on its own two-element outcome space, the
+multiplicity-`3` law is column-constant with row `(2/3, 1/3)`; its column
+sums are `(4/3, 2/3)` and by L1 it is not doubly stochastic. The exact
+price is `2/3`, and the polygon obstruction fires independently on the
+row pair. So the first genuinely non-degenerate generated K1 matrix gets
+the same verdict as every other substantive generated transfer.
 
 ## 5. The price of enrichment
 
 For every doubly-stochastic `D`, `‖M − D‖₁ ≥ Σ_j |c_j(M) − 1|`, because
-`Σ_j |c_j(M) − c_j(D)| ≤ Σ_ij |M_ij − D_ij|` and `c_j(D) = 1`. The exact
-prices:
+`Σ_j |c_j(M) − c_j(D)| ≤ Σ_ij |M_ij − D_ij|` and `c_j(D) = 1`. Here
+`‖·‖₁` is the **entrywise** sum `Σ_ij |M_ij − D_ij|`, not an operator
+norm. The exact prices:
 
-| matrix | mass that must move, at least |
-|---|---|
-| `ZHAT-6x6` | `5/7` |
-| `ZHAT-CLOSED-3x3` | `1/2`, **and** a phasor modulus, since `T = −1/4096` |
-| `K1-JOIN-MENU` | `1` |
+| matrix | mass that must move, at least | out of a total mass of |
+|---|---|---|
+| `ZHAT-6x6` | `5/7` | `6` |
+| `ZHAT-CLOSED-3x3` | `1/2`, **and** a phasor modulus, since `T = −1/4096` | `3` |
+| `K1-JOIN-MENU` | `1` | `3` |
+| `K1-3CONF` | `2/3` | `2` |
 
-**This is a mass statement, not a phase statement.** No amount of phase
-freedom repairs a column sum. Whatever a quantum-eligible completion of
-the record chain is, it must move that much probability mass before any
-question about `i` is even posable.
+**These are absolute quantities, in units of probability mass.** A
+row-stochastic `n×n` matrix carries total mass `n`, so `Ẑ`'s `5/7` is
+five sevenths of **one** unit out of six — it is not five sevenths of the
+matrix. **And this is a mass statement, not a phase statement.** No
+amount of phase freedom repairs a column sum. Whatever a quantum-eligible
+completion of the record chain is, it must move that much probability
+mass before any question about `i` is even posable.
 
 ## 6. Arm B — the loop-class reproduction
 
@@ -280,31 +366,51 @@ D3 has three separable clauses and each is tested on its own.
   fact that **the loop class is non-trivial at all** — `44` non-unit
   self-loops at `AB4` with spectrum `{1/2: 26, 2: 10, 2/3: 2, 3/2: 6}`,
   and `44` non-trivial independent cycles out of `134`.
-- **Clause (ii) — the loop class is `U(1)`-valued: NOT REPRODUCED, and
-  the obstruction is structural.** Every non-unit holonomy measured on
-  either arm — raw squares, carrier self-loops and independent carrier
-  cycles alike — lies in `{1/2, 2/3, 3/2, 2}`, and the group they
-  generate is `⟨2,3⟩`, free abelian of rank `2`, index `1` in `Z²`.
-  `⟨2,3⟩` is therefore **torsion-free**, so its intersection with `U(1)`
-  is exactly `{1}`: a positive rational of modulus `1` is `1`. Every
-  measured holonomy has unimodular part exactly `1`, and no root of
-  unity other than `1` occurs. **There is no `U(1)` content to find at
-  any depth, for a reason that is a property of the value group and not
-  of the window.**
-- **Clause (iii) — interference is the loop-phase law: DEGENERATE.**
+- **Clause (ii) — Theorem 7.1's conclusion, that the loop class is
+  `U(1)`-valued: NOT REPRODUCED, and the obstruction is structural.**
+  Every non-unit holonomy measured on either arm — raw squares, carrier
+  self-loops and independent carrier cycles alike — lies in
+  `{1/2, 2/3, 3/2, 2}`, and the group they generate is `⟨2,3⟩`, free
+  abelian of rank `2`, index `1` in `Z²`. **The reason the intersection
+  with `U(1)` is trivial is positivity, not torsion-freeness:** every
+  element of `⟨2,3⟩` is a positive real, and `ℝ⁺ ∩ U(1) = {1}`.
+  Torsion-freeness would not do it — `⟨e^{2πi√2}⟩` is torsion-free and
+  sits *inside* `U(1)` — and the appeal to it is withdrawn. Freeness of
+  rank `2` is retained for what it does establish, which is the size of
+  the character group below. Every measured holonomy has unimodular part
+  exactly `1`, and no root of unity other than `1` occurs. **There is no
+  `U(1)` content to find at any depth, for a reason that is a property of
+  the value set and not of the window.**
+  **And the object tested is not the object `D3` is about.** `D3`'s
+  `B(ℓ)` is a product of entries of **Theorem D1's dilating unitary** —
+  the construction this unit sets aside at its first line. What is
+  measured here is a ratio of committed **menu weights**, positive
+  rationals by construction, which could never have landed in `U(1)`.
+  Clause (ii)'s non-reproduction is therefore **partly an artifact of
+  refusing `D1`'s hypothesis**, and the substantive content of this arm
+  is what survives that concession: the positivity obstruction on the
+  generated value set, and the unselected `T²` below.
+- **Clause (iii) — interference is the loop-phase law: DEGENERATE, as a
+  corollary of clause (ii) and not as a second measurement.**
   `P = |A|² + |B|² + 2|A||B| cos(arg B(loop))` requires the cosine to
   range over `[−1, 1]`. On this carrier `arg B(loop) = 0` at every
   measured loop, so the exact range of the cosine is the single point
   `{1}`, the cross term sits at its **maximum**, no cancellation is
   available anywhere, and the law collapses to `P = (|A| + |B|)²` — the
-  classical no-interference sum.
+  classical no-interference sum. The gate that records this carries **no
+  independent information** and is labelled so: the cosine set is read
+  off positivity, and `1 + 1 + 2 = (1 + 1)²` cannot fail.
 
-**The expected obstruction is confirmed by measurement and sharpened.**
-D74's `R⁺`-only verdict said a unimodular part could only ever be the
-sign `−1` and that `−1` is *realised nowhere*. The sharper statement is
-that the search **could not have succeeded**: `−1` is not in the
-multiplicative group of positive rationals at all, so its absence is a
-theorem about the value group rather than a census outcome.
+**This confirms D74's a-priori settlement; it does not sharpen it.**
+D74's committed note already settles the scalar odd sector *before any
+fixture is run*: gate `D2` states that every committed weight is a
+positive rational, that *"the only positive rational of modulus `1` is
+`1`"*, and that this *"settles the scalar odd sector a priori, in one
+line, before any fixture is run"*
+(`v10/note-d74-transport-holonomy-result.md:248`, and `:107-109`). What
+this unit adds is **confirmation on a different object** — the loop class
+of the carrier, its self-loops and independent cycles, rather than the
+raw square holonomies — together with the priced residue below.
 
 **The residue, priced exactly.** `⟨2,3⟩` is free of rank `2`, so
 `Hom(⟨2,3⟩, U(1)) = U(1)²`: a character is fixed by its values on the two
@@ -329,16 +435,18 @@ of that freedom.
   exactly. This is eq. (28) read as a definition; the gate cannot fail as
   posed and is excluded from the evidence count. **Attaching phases
   entrywise is not a test of anything.**
-- **The unitarity-preserving subgroup is proper, and that is gated on a
-  generated object.** The separable gauge `θ_ij = α_i + β_j` (printed:
-  `α_i = 2i`, `β_j = 3j` in units of `2π/8`) preserves unitarity
-  exactly — `0` residual entries. A single non-separable element —
-  flipping the sign of the `(0,0)` entry alone, a legitimate
-  Schur-Hadamard transformation with `θ₀₀ = π` — leaves `Γ` **exactly**
-  invariant and destroys unitarity, with `14` non-zero entries in
-  `U†U − I`. **`Γ`-invariance and unitarity-preservation are genuinely
-  different conditions, and "the phase is gauge" does not mean "any phase
-  will do."**
+- **The unitarity-preserving subgroup is proper.** The separable gauge
+  `θ_ij = α_i + β_j` (printed: `α_i = 2i`, `β_j = 3j` in units of `2π/8`)
+  preserves unitarity exactly — `0` residual entries. A single
+  non-separable element — flipping the sign of the `(0,0)` entry alone, a
+  legitimate Schur-Hadamard transformation with `θ₀₀ = π` — leaves `Γ`
+  **exactly** invariant and destroys unitarity, with `14` non-zero
+  entries in `U†U − I`. **`Γ`-invariance and unitarity-preservation are
+  genuinely different conditions, and "the phase is gauge" does not mean
+  "any phase will do."** **Scope, plainly:** this is a sign flip on the
+  textbook `DFT₈` attached to a **by-specification flat** matrix.
+  **Nothing generated enters it.** It gates Barandes' clause; it does not
+  gate it on generated data.
 - **The odd channel is empty where the holonomy lives, measured here.**
   Over every linear extension of the **opposite poset** of every one of
   `AB4`'s `176` defective-square endpoints — `304` of them — not one
@@ -371,13 +479,16 @@ entrywise group. Neither is supplied by anything generated.
 - **It is a matrix screen and nothing else.** No claim is made that a
   passing matrix is a quantum system. The map from a screened `Γ` to a
   physical system is missing, and correspondence is not identity.
-- **The two passers pass for degenerate reasons, and the note says so.**
-  `K1-2CONF` passes because every `2×2` bistochastic matrix does, and
-  `ARMC2-8x8` passes because it is the flat matrix — the ur-example of
-  the class. The census therefore **cannot** decide the four-way
-  contest over v6 paper 7's `C`-derivation in the positive direction; it
-  decides it in the negative direction, for these objects, and it closes
-  the K1 layer permanently at its committed scope.
+- **The two passers pass for one degenerate reason, and it is the same
+  reason.** `K1-2CONF` is `J/2` and `ARMC2-8x8` is `J/8`. Both are
+  column-constant, so by lemma L1 each is doubly stochastic **only
+  because** its row is uniform — and the uniform column-constant law is
+  `J/n`, which is unistochastic at every `n` and orthostochastic at every
+  `n = 2^k`. **The pass carries no quantum content whatever.** The census
+  therefore **cannot** decide the four-way contest over v6 paper 7's
+  `C`-derivation in the positive direction; it decides it in the negative
+  direction, for these objects, and it leaves `i` undecidable at the four
+  committed pools whose outcome spaces are measured (§4).
 - **No indivisibility claim is made or used.** `[B3]`'s criterion is
   unistochasticity; indivisibility is U1's axis and is not crossed here.
 - **No CP statement of any kind. No Bell or locality statement of any
@@ -394,10 +505,19 @@ entrywise group. Neither is supplied by anything generated.
 ## 9. Scope
 
 The committed matrices only, at their own scopes: the K1 arbitration
-family at paper 31 §4.3's fixture (realised component sizes exactly
-`{1,2}`); the `Ẑ` sibling on the closed-scope `d42b3` family to depth
-`6`; the D74 anchor arms at `(A,B)` depth `≤ 4` and `(A,B,C)` depth
-`≤ 3`. ARM-C2's `8×8` matrix is taken **by specification** from U1's
+family at paper 31 §4.3's **pair-plus-path fixture** (realised component
+sizes `{1,2}` — a fixture line, not a bound on the grammar), **together
+with** the committed three-actor pool, whose conflicts reach multiplicity
+`3`; the `Ẑ` sibling on the closed-scope `d42b3` family to depth `6`; the
+D74 anchor arms at `(A,B)` depth `≤ 4` and `(A,B,C)` depth `≤ 3`. **The
+outcome-space bound `|MIS| ≤ 2` is measured** on three pools in-receipt
+and on a fourth in the round; it is **not proved** for the grammar, and
+no claim is made that it survives a wider actor pool or a non-binary
+value alphabet. **The screen is closed and undilated:** `[B3]` allows a
+quantum system to be *"either a unistochastic process itself, or (if a
+nontrivial dilation was required) a subsystem of a unistochastic
+process"*, and every `S-FAIL` verdict here leaves the second disjunct
+untouched. ARM-C2's `8×8` matrix is taken **by specification** from U1's
 committed receipt and is not re-derived, the verdict being made
 independent of the quote by the column-constant lemma. Unistochasticity
 is decided constructively at sizes `1, 2, 3, 6, 8`; the general-`n`
@@ -412,11 +532,14 @@ byte-identical apart from timings.
 
 ## 10. Handover, and the declared follow-ups
 
-- **To U2 and to any weld:** the corpus owns **no quantum-eligible
-  generated matrix**. The two `S-PASS` objects are orthostochastic and
-  degenerate; every substantive generated transfer fails at the mass
-  level. Any weld that wants a quantum object must first supply the mass
-  named in §5.
+- **To U2 and to any weld:** the corpus owns **no closed, undilated
+  quantum-eligible generated matrix**. The two `S-PASS` objects are the
+  flat matrix; every substantive generated transfer fails at the mass
+  level. The qualifier is `[B3]`'s own: a quantum system is *"either a
+  unistochastic process itself, or (if a nontrivial dilation was
+  required) a subsystem of a unistochastic process"* — this unit screens
+  the first disjunct and says nothing about the second. Any weld that
+  wants a closed quantum object must first supply the mass named in §5.
 - **To U1b:** by the column-constant lemma, the only way a
   renewal-to-renewal transfer can pass the doubly-stochastic
   precondition is by being **uniform** — which is exactly the degenerate
@@ -431,7 +554,12 @@ byte-identical apart from timings.
 - **To paper 0 §5 (the gauge stratum):** the stratum is **carriable and
   unoccupied**, and its non-trivial part is priced — a `2`-torus at the
   loop-class level, and a proper subgroup condition at the lift level.
-- **The one thing that would change the answer:** a generated conflict of
-  multiplicity `≥ 3` whose transfer is doubly stochastic. Until one
-  exists, the necessity of `i` is not a decidable question about this
-  corpus's committed objects, and §4's no-go says why.
+- **The one thing that would change the answer:** a generated K1 law with
+  **three or more outcomes** — that is, `≥ 3` maximal independent sets in
+  a realised conflict — whose transfer is doubly stochastic. Multiplicity
+  `≥ 3` is not enough and is already committed (§4): what is needed is
+  **non-binary proposal values or a conflict graph that is not complete
+  multipartite**, which is a fact about the actor pool and the value
+  alphabet. Until such a law exists, `i` is undecidable at the four
+  committed pools measured here, and §4 says exactly why — and says
+  exactly how far the measurement reaches.

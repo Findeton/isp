@@ -729,3 +729,40 @@ T²); C2's "generated object" overclaim deleted; §10's ownership
 claim gains [B3]'s closed/undilated qualifier; "5/7 of mass" →
 absolute entrywise-L1 (total mass 6).  Repair running; delta check
 on its return.
+
+## 2026-07-28 — U3 REPAIRED AND ADJUDICATED — **U3 TERMINAL** (v11
+## LEDGER #19)
+All fixes applied and verified (adjudicator rerun: 50 PASS / 0
+FAIL / 0 ANCHOR-FAIL, 18 anchors, timing-only diffs; the repair's
+new SEC 7 numbers are gated against values the HOSTILE ROUND
+ITSELF computed independently first — the independence requirement
+met by construction).  **THE CORRECTED A7, now the unit's honest
+no-go:** the K1 outcome space is of size ≤ 2 — MEASURED at the
+committed pools ({1: 3096, 2: 1752} / {1: 3468, 2: 1264} /
+{1: 35412, 2: 8944}; ABCD4 round-cited), UNPROVED beyond them;
+mechanism MEASURED: every realised conflict graph is complete
+multipartite by proposal-VALUE class (0 exceptions) and the
+alphabet is binary, so |MIS| = #value classes ≤ 2; multiplicity-3
+conflicts ARE generated (216 events, 36 histories, shallowest
+depth 3; committed law {A0,B0} → 2/3, {C1} → 1/3) and still yield
+2-outcome laws.  At size ≤ 2, i is undecidable (every 2×2
+bistochastic is orthostochastic); **DECIDING i REQUIRES A
+≥ 3-OUTCOME K1 LAW — non-binary proposal values or
+non-complete-multipartite conflict graphs: an actor-pool/
+value-alphabet fact, not structure, not depth.**  NEW CENSUS ROW
+from the round: K1-3CONF [[2/3,1/3],[2/3,1/3]] S-FAIL-DS, price
+2/3, with an independent polygon obstruction (slack −1/3) — the
+only substantive non-flat K1 failure.  Census tally now
+{N/A-SHAPE: 2, S-FAIL-DS: 7, S-PASS: 2 (both FLAT J/n —
+degenerate)} over 11 honestly-recomposed readings (4 distinct
+generated).  The ⟨2,3⟩ ∩ U(1) reason corrected to POSITIVITY
+everywhere; D74's a-priori settlement CONFIRMED-not-sharpened;
+two non-falsifiable gates relabelled (44 independent of 50);
+D3-vs-object honesty added (the non-reproduction partly artifact
+of refusing D1's dilating unitary — the substantive content is
+positivity + the unselected T²); [B3]'s closed/undilated dilation
+clause now qualifies the ownership claim.  **U3 IS TERMINAL.  THE
+UNIT'S STANDING SHAPE: the quantum entry fee is 5/7 of Ẑ mass
+(absolute entrywise-L1; total mass 6), a T² of unselected loop
+phases, and a ≥3-outcome K1 law the committed value alphabet
+cannot produce.**  Awaiting U1b.

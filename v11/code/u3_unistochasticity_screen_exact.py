@@ -156,8 +156,9 @@ print("          reportable outcomes and the census is the result.")
 
 QUOTES = {
     "B3-uni": (
-        "[B3] Barandes, 'The Stochastic-Quantum Correspondence', the "
-        "paragraph following eq. (64); PDF read in-session",
+        "[B3] Barandes, 'Quantum Systems as Indivisible Stochastic "
+        "Processes', arXiv:2507.21192, the paragraph following eq. (64); "
+        "PDF read in-session",
         "In general, an N x N matrix is called UNISTOCHASTIC if its "
         "individual entries are expressible as the modulus-squares of the "
         "corresponding entries of an N x N unitary matrix.  It follows "
@@ -175,6 +176,16 @@ QUOTES = {
         "time-evolution operator U(t<-0) corresponds to making a gauge "
         "choice.'",
     ),
+    "B3-dilation": (
+        "[B3] sec.3.5 (Stinespring dilation and unitarity), indexed at "
+        "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md"
+        ":520-528; the clause supplied and verified in the U3 round",
+        "a quantum system is EITHER a unistochastic process itself, OR "
+        "(if a nontrivial dilation was required) a SUBSYSTEM of a "
+        "unistochastic process.  The screen in this receipt decides the "
+        "FIRST disjunct only: it is a CLOSED, UNDILATED screen, and a "
+        "negative verdict leaves the subsystem disjunct untouched.",
+    ),
     "B3-conv": (
         "[B3] eqs. (9), (24), (26)",
         "Barandes' Gamma is COLUMN-stochastic: Gamma_ij(t<-0) = "
@@ -190,8 +201,28 @@ QUOTES = {
         "V_pair (4 x 1) on the 2-conflict; both factors of each isometric; "
         "Born = the committed kernel -- the squared branch amplitudes of "
         "V_pair are exactly 1/2-1/2 (the K1 law on the 2-conflict); menu "
-        "reconstruction 1/4 early and 1/4 + 1/8 + 1/8 at the join; "
-        "realized component sizes at the two cuts are exactly {1, 2}.",
+        "reconstruction 1/4 early and 1/4 + 1/8 + 1/8 at the join.  AND "
+        "ITS OWN SCOPE LINE, QUOTED IN FULL: 'Scope: the PAIR-PLUS-PATH "
+        "FIXTURE, grammar = the terminal admission layer plus the click "
+        "refinement; realized component sizes at the two cuts are exactly "
+        "{1, 2} and the constructed family covers precisely those.'  The "
+        "{1, 2} is therefore a fact about a TWO-ACTOR FIXTURE, not about "
+        "the grammar.",
+    ),
+    "u3-round-B1": (
+        "the U3 hostile round on commit 6c3e550, blocker B1 -- the "
+        "reviewer's independent enumeration of the COMMITTED d42b1 "
+        "(A,B,C) depth-<=3 family (v10/code/d42b1_transport_exact.py, "
+        "pool declared at :435)",
+        "the committed ABC3 family carries multiplicity-3 admissible "
+        "arbitration events: census by |ckey| = {1: 3096, 2: 1536, "
+        "3: 216}; first witness at depth 3 is [('p','A',v0,0), "
+        "('p','B',v0,0), ('p','C',v0,1)] with committed menu weights 1/6 "
+        "and 1/12 and committed K1 law {A0,B0} -> 2/3, {C1} -> 1/3.  "
+        "Every number in this entry is RE-MEASURED from the layer below "
+        "and gated.  ROUND-VERIFIED BUT NOT RE-RUN HERE (cited, not "
+        "receipt-gated): the (A,B,C,D) depth-<=4 extension, 332,697 "
+        "histories, |MIS| census {1: 232264, 2: 98304} -- never 3.",
     ),
     "u1-zhat": (
         "v11/note-u1-indivisibility-census.md:173-200 (sec.3) and :809-813 "
@@ -272,11 +303,14 @@ QUOTES = {
         "value set {1/2, 2/3, 3/2, 2} at every scope run.",
     ),
     "d74-D2": (
-        "v10/note-d74-transport-holonomy-result.md:248 (gate D2)",
+        "v10/note-d74-transport-holonomy-result.md:248 (gate D2), and "
+        ":107-109",
         "every committed weight is a positive rational, so every holonomy "
         "is; the only positive rational of modulus 1 is 1.  A U(1) part of "
         "a rational-valued holonomy could only ever be the sign -1, and "
-        "-1 is realised nowhere.",
+        "-1 is realised nowhere.  'This settles the scalar odd sector A "
+        "PRIORI, in one line, BEFORE ANY FIXTURE IS RUN.'  U3 therefore "
+        "CONFIRMS D2 on a new object; it does not sharpen it.",
     ),
     "d74-D5.2": (
         "v10/code/d74_transport_holonomy_exact.py:2313-2325 (gate D5.2); "
@@ -390,6 +424,14 @@ ANCH = {
     "d74_values": {Fr(1, 2), Fr(2, 3), Fr(3, 2), Fr(2)},
     "d74_primes": [2, 3], "d74_rank": 2, "d74_index": 1,
     "d74_selfloops_AB4": 44,
+    # the multiplicity census — the round's blocker B1 [u3-round-B1]
+    "ABC3_ckey_census": {1: 3096, 2: 1536, 3: 216},
+    "mult3_menu": [Fr(1, 6), Fr(1, 12)],
+    "mult3_law": [Fr(1, 3), Fr(2, 3)],
+    "mult3_gamma_colsums": [Fr(4, 3), Fr(2, 3)],
+    "mult3_price": Fr(2, 3),
+    "mis_max": 2,
+    "prop_values": 2,
 }
 
 print()
@@ -403,6 +445,14 @@ print(f"  ANCHOR constants: {len(ANCH)} entries, all quoted above.")
 CAPS = {
     "closed scope (d42b3) family for the Zhat sibling": "depth <= 6",
     "D74 anchor arms": "(A,B) depth <= 4 and (A,B,C) depth <= 3",
+    "multiplicity / outcome-space census": "THREE pools, receipt-gated: "
+                                           "d42b1 (A,B,C) depth <= 3, "
+                                           "d42b1 (A,B) depth <= 4, d42b3 "
+                                           "closed scope (A,B) depth <= 6. "
+                                           " A FOURTH — (A,B,C,D) depth "
+                                           "<= 4, 332,697 histories — is "
+                                           "round-verified and CITED, not "
+                                           "re-run here [u3-round-B1]",
     "unistochasticity decided constructively at": "n = 1, 2, 3, 6, 8",
     "n = 3 exact criterion": "the triangle (chain-link) discriminant, "
                             "rational, necessary at every n and "
@@ -415,10 +465,11 @@ CAPS = {
                        "for n > 3.  A matrix with NO polygon obstruction "
                        "and NO exhibited certificate would be "
                        "EXCLUDED-BY-CAP; that cell is EMPTY on this "
-                       "census and the count is printed in SEC 8",
+                       "census; the count is printed with the census and again with "
+                       "the caps",
     "Surd sign oracle refinement cap": "4096 binary digits (never "
                                        "approached; the printed maximum "
-                                       "is in SEC 2)",
+                                       "is printed with the rings)",
 }
 
 # ===========================================================================
@@ -500,6 +551,11 @@ B1_REQ = {
     "regs_of": ["op"],
     "event_poset": ["acts"],
     "linear_extensions": ["acts"],
+    "arb_components_in_view": ["view", "a"],
+    "triples": ["view", "idx_set"],
+    "edge_triples_of": ["view", "idx_set"],
+    "mis_of": ["ckey", "edge_triples"],
+    "PK1": ["ckey", "edge_triples"],
     "View": ["<class>"],
 }
 B3_REQ = {
@@ -509,6 +565,9 @@ B3_REQ = {
     "regs_of": ["op"],
     "arb_components_in_view": ["view", "a"],
     "event_poset": ["acts"],
+    "triples": ["view", "idx_set"],
+    "edge_triples_of": ["view", "idx_set"],
+    "mis_of": ["ckey", "edge_triples"],
     "PK1": ["ckey", "edge_triples"],
     "View": ["<class>"],
 }
@@ -615,6 +674,38 @@ anchor("SRC.4 U1's Q(sqrt 2) ARITHMETIC IS U1's, extracted by AST from "
        "objects U1 handed over, not a re-implementation",
        len(_segu1) == len(U1_REQ),
        f"{len(_segu1)}/{len(U1_REQ)} lifted: {sorted(_segu1)}")
+
+_LINE = {}
+
+
+def line_family(cands, actors, depth, key):
+    """D74's enumerate_line, memoised on `key` so the multiplicity census
+    and Arm B screen the SAME generated pool object, enumerated once."""
+    if key not in _LINE:
+        _LINE[key] = enumerate_line(cands, actors, depth)
+    return _LINE[key]
+
+
+def arb_geometry(L, acts, e):
+    """The LAYER's own admission geometry for an arbitration event e at
+    history acts, replayed with the layer's own functions and nothing
+    retyped: the past-local view admissible() builds, the matched
+    conflict component, its conflict edges, its MAXIMAL INDEPENDENT SETS
+    (the layer's mis_of) and the committed K1 law on them (the layer's
+    PK1).  Returns None if e resolves no component in that view."""
+    acts2 = list(acts) + [e]
+    j = len(acts2) - 1
+    pred = L["event_poset"](acts2)
+    view = L["View"](acts2, pred, pred[j])
+    comps = L["arb_components_in_view"](view, e[1])
+    match = [c for c in comps if L["triples"](view, c[1]) == e[2]]
+    if not match:
+        return None
+    _base, comp = match[0]
+    et = L["edge_triples_of"](view, comp)
+    return (view, comp, e[2], et, L["mis_of"](e[2], et),
+            L["PK1"](e[2], et))
+
 
 report("caps", "; ".join(f"{k}: {v}" for k, v in CAPS.items()))
 
@@ -1251,7 +1342,7 @@ _h8ok = all(sum(_H8[k][i] * _H8[k][j] for k in range(8))
             == (8 if i == j else 0) for i in range(8) for j in range(8))
 check("KA-6 SYLVESTER'S REAL HADAMARD MATRIX OF ORDER 8 IS VERIFIED "
       "IN-RECEIPT (H H^T = 8 I over the integers), so the real "
-      "certificate used for the 8x8 passer in SEC 5 is not taken on trust",
+      "certificate used for the 8x8 passer at L2 is not taken on trust",
       _h8ok, "H_8 = H_2^{tensor 3}, entries +-1, all 64 inner products "
              "exact")
 
@@ -1517,7 +1608,7 @@ SCREEN.append(screen(
     "the join-cut arbitration menu read as a COLUMN-CONSTANT (source-"
     "independent) 3x3 transfer on its own three outcomes",
     "declared reading; it exists to put the column-constant lemma of "
-    "SEC 5 against a NON-uniform generated row"))
+    "lemma L1 against a NON-uniform generated row"))
 
 report("ARM A (a) time", f"{time.time() - _t:.0f}s")
 
@@ -1775,6 +1866,226 @@ SCREEN.append(screen(
 
 
 # ===========================================================================
+# SEC 5.5  THE MULTIPLICITY CENSUS, AND THE SIZE OF THE K1 OUTCOME SPACE
+# ===========================================================================
+
+sec("THE MULTIPLICITY CENSUS — WHAT THE COMMITTED GRAMMAR ACTUALLY "
+    "GENERATES, AND HOW BIG THE K1 OUTCOME SPACE IS")
+
+print(f"""
+  THE PREMISE THIS SECTION REPLACES.  Paper 31 sec.4.3's "{{1, 2}}" is a
+  line about a FIXTURE and its own Scope sentence says so
+  ({QUOTES['p31-4.3'][0]}):
+    "{QUOTES['p31-4.3'][1]}"
+  A two-actor pair-plus-path fixture bounds a fixture.  It does not bound
+  the grammar, and the corpus's THREE-actor pool is committed and available
+  (v10/code/d42b1_transport_exact.py, the (A,B,C) pool declared at :435).
+  It is enumerated here and censused.
+
+  AND THE QUANTITY THAT DECIDES THE SCREEN IS NOT THE COMPONENT SIZE.  A
+  conflict component of size m does NOT give an m x m Gamma.  The K1 law is
+  supported on the MAXIMAL INDEPENDENT SETS of the realised conflict graph
+  (the layer's own mis_of, and admissible() refuses any wkey outside it), so
+  the outcome space -- and therefore the square Gamma the screen sees -- has
+  size |MIS|, not |ckey|.  Both are measured below, on every pool this
+  receipt loads.
+
+  THE ROUND'S FINDING, RE-MEASURED FROM THE LAYER, NOT COPIED
+  ({QUOTES['u3-round-B1'][0]}):
+    "{QUOTES['u3-round-B1'][1]}"
+""")
+
+_t = time.time()
+CAP_AB, CAP_ABC = 4, 3
+print("  enumerating the committed pools and replaying the layer's own "
+      "admission geometry on every arbitration event ...", flush=True)
+
+POOLS = []
+for _pnm, _PL, _pfam in (
+        ("ABC3   d42b1 (A,B,C) depth <= 3", B1,
+         line_family(b1_cand, ABC, CAP_ABC, "ABC3")),
+        ("AB4    d42b1 (A,B) depth <= 4", B1,
+         line_family(b1_cand, AB, CAP_AB, "AB4")),
+        (f"CLOSED d42b3 (A,B) depth <= {CAP_CLOSED}", B3, (CFAM, CCACHE))):
+    _pf, _pc = _pfam
+    _rec = dict(name=_pnm, L=_PL, fam=_pf, cache=_pc, ck=Counter(),
+                mis=Counter(), parts=Counter(), nonmp=0, vals=set(),
+                unmatched=0, ev3=[])
+    for _h in _pf:
+        for _e, _q in _pc[tuple(_h)]:
+            if _e[0] != "r":
+                continue
+            _rec["ck"][len(_e[2])] += 1
+            _g = arb_geometry(_PL, _h, _e)
+            if _g is None:
+                _rec["unmatched"] += 1
+                continue
+            _vw, _cp, _ckey, _et, _ms, _lw = _g
+            _rec["mis"][len(_ms)] += 1
+            _cls = sorted({_t3[2] for _t3 in _ckey})
+            _rec["parts"][len(_cls)] += 1
+            _rec["vals"] |= set(_cls)
+            _mp = all(((tuple(sorted((_a, _b))) in _et) == (_a[2] != _b[2]))
+                      for _a in _ckey for _b in _ckey if _a < _b)
+            _rec["nonmp"] += int(not _mp)
+            if set(_lw) != set(_ms):
+                _rec["nonmp"] += 1
+            if len(_e[2]) >= 3:
+                _rec["ev3"].append((tuple(_h), _e, _q))
+    POOLS.append(_rec)
+    report(f"pool {_pnm}", f"{len(_pf)} histories; admissible arbitration "
+           f"events {sum(_rec['ck'].values())}; |ckey| census "
+           f"{dict(sorted(_rec['ck'].items()))}; |MIS| census "
+           f"{dict(sorted(_rec['mis'].items()))}; value classes per "
+           f"conflict {dict(sorted(_rec['parts'].items()))}; realised "
+           f"proposal values {sorted(_rec['vals'])}")
+
+P3 = POOLS[0]
+_h3set = sorted({z[0] for z in P3["ev3"]}, key=lambda z: (len(z), sk(z)))
+check("M1 THE COMMITTED GRAMMAR GENERATES MULTIPLICITY-3 CONFLICTS — THE "
+      "PREVIOUS ROUND'S PREMISE IS WITHDRAWN AS FALSE.  Censusing every "
+      "ADMISSIBLE arbitration event of the committed d42b1 (A,B,C) "
+      "depth-<=3 family — the SAME 3,424-history pool Arm B screens — by "
+      "the size of the conflict it resolves gives |ckey| = {1: 3096, "
+      "2: 1536, 3: 216} [u3-round-B1].  Multiplicity 3 is REALISED, and "
+      "shallowly.  'The corpus has committed none' was a FIXTURE-SCOPE "
+      "reading of paper 31's two-actor Scope line and is deleted wherever "
+      "it appeared",
+      len(P3["fam"]) == ANCH["ABC_hist"]
+      and dict(P3["ck"]) == ANCH["ABC3_ckey_census"]
+      and P3["unmatched"] == 0,
+      f"family {len(P3['fam'])}/{ANCH['ABC_hist']}; |ckey| census "
+      f"{dict(sorted(P3['ck'].items()))}; multiplicity-3 events "
+      f"{len(P3['ev3'])} on {len(_h3set)} distinct histories, shallowest at "
+      f"depth {min(len(z) for z in _h3set)}; arbitration events whose "
+      f"component the layer could not match: {P3['unmatched']}")
+
+_w3 = sorted(P3["ev3"], key=lambda z: (len(z[0]), sk(z[0]), sk(z[1])))
+_hw, _ew, _qw = _w3[0]
+_vw, _cpw, _ckw, _etw, _misw, _laww = arb_geometry(B1, _hw, _ew)
+_outs = sorted(_laww, key=sk)
+_menu3 = sorted(((e, q) for e, q in P3["cache"][_hw]
+                 if e[0] == "r" and e[1] == _ew[1] and e[2] == _ckw),
+                key=lambda z: sk(z[0]))
+
+print("\n  THE FIRST MULTIPLICITY-3 WITNESS, PRINTED IN FULL")
+print("  " + "-" * 74)
+for _i, _op in enumerate(_hw):
+    print(f"    event {_i}: {_op}")
+print(f"    conflict resolved (|ckey| = {len(_ckw)}):")
+for _t3 in sorted(_ckw, key=repr):
+    print(f"      {_t3}")
+print(f"    conflict edges ({len(_etw)}):")
+for _ed in sorted(_etw, key=repr):
+    print(f"      {_ed[0]} -- {_ed[1]}")
+print(f"    MAXIMAL INDEPENDENT SETS ({len(_misw)}) — the outcome space:")
+for _w in _outs:
+    print(f"      {sorted(_w, key=repr)}   K1 weight {_laww[_w]}")
+print("    the committed arbitration menu on this conflict:")
+for _e, _q in _menu3:
+    print(f"      winner {sorted(_e[3], key=repr)}   menu weight {_q}")
+print("  " + "-" * 74)
+
+_menu_ok = ([q for e, q in _menu3] != []
+            and sorted(q for e, q in _menu3) == sorted(ANCH["mult3_menu"])
+            and all(q == Fr(1, 4) * _laww[e[3]] for e, q in _menu3))
+check("M2 THE WITNESS IS COMMITTED ARITHMETIC, NOT A CONSTRUCTION.  The "
+      "shallowest multiplicity-3 arbitration in the committed pool sits at "
+      "depth 3 on the history [('p','A',v0,0), ('p','B',v0,0), "
+      "('p','C',v0,1)].  Its menu weights are the committed 1/6 and 1/12, "
+      "its committed K1 law is {A0,B0} -> 2/3 and {C1} -> 1/3, and the two "
+      "are locked to each other by the layer's own pricing: the menu "
+      "weight is exactly 1/4 . PK1(winner) at a single available component "
+      "[u3-round-B1]",
+      sorted(_laww.values()) == ANCH["mult3_law"] and _menu_ok
+      and len(_hw) == 3,
+      f"menu weights {sorted(str(q) for e, q in _menu3)}; K1 law "
+      + "; ".join(f"{[t3[0] + str(t3[2]) for t3 in sorted(w, key=repr)]} -> "
+                  f"{_laww[w]}" for w in _outs)
+      + f"; menu = 1/4 . PK1 on every winner: "
+        f"{all(q == Fr(1, 4) * _laww[e[3]] for e, q in _menu3)}")
+
+check("M3 A MULTIPLICITY-3 CONFLICT HAS A 2-OUTCOME K1 LAW — THE OUTCOME "
+      "SPACE IS |MIS|, NOT |ckey|.  The committed conflict graph on this "
+      "3-component is A0 -- C1 and B0 -- C1 and NOT A0 -- B0 (A and B "
+      "propose the SAME value, so they do not conflict), so its maximal "
+      "independent sets are exactly {A0,B0} and {C1}: TWO of them.  "
+      "admissible() refuses every wkey outside mis_of, so the K1 law's "
+      "support is exactly that set and the square Gamma the screen sees is "
+      "2 x 2.  A 3-component does NOT give a 3 x 3 Gamma here",
+      len(_misw) == 2 and set(_laww) == set(_misw)
+      and len(_ckw) == 3 and len(_etw) == 2,
+      f"|ckey| = {len(_ckw)}; conflict edges {len(_etw)}; |MIS| = "
+      f"{len(_misw)}; K1 support = MIS "
+      f"{set(_laww) == set(_misw)}")
+
+_mismax = max(k for P in POOLS for k in P["mis"])
+_nonmp = sum(P["nonmp"] for P in POOLS)
+_allvalsx = sorted({v for P in POOLS for v in P["vals"]})
+_partsok = all(P["mis"] == P["parts"] for P in POOLS)
+check("M4 THE OUTCOME SPACE IS OF SIZE AT MOST 2 ON EVERY POOL THIS "
+      "RECEIPT LOADS — MEASURED, NOT PROVED.  Over all three committed "
+      "pools (d42b1 (A,B,C) d<=3, d42b1 (A,B) d<=4, d42b3 closed scope "
+      "(A,B) d<=6) the |MIS| census never leaves {1, 2}, on every "
+      "admissible arbitration event.  The measured MECHANISM: the realised "
+      "conflict graph on every component is EXACTLY the complete "
+      "multipartite graph whose parts are the proposal-VALUE classes (edge "
+      "iff the two proposals differ in value: 0 exceptions over all three "
+      "pools), so its maximal independent sets are exactly those parts; "
+      "and the committed proposal alphabet is BINARY, so there are at most "
+      "2 parts.  This is a fact about the ACTOR POOL and the VALUE "
+      "ALPHABET, not about the depth: it is measured here and is UNPROVED "
+      "beyond these pools",
+      _mismax == ANCH["mis_max"] and _nonmp == 0 and _partsok
+      and _allvalsx == list(range(ANCH["prop_values"])),
+      f"max |MIS| over all pools {_mismax}; |MIS| censuses "
+      f"{[dict(sorted(P['mis'].items())) for P in POOLS]}; "
+      f"conflict graphs that are NOT complete multipartite by value class: "
+      f"{_nonmp}; |MIS| = #value classes on every event: {_partsok}; "
+      f"realised proposal values {_allvalsx}")
+
+print(f"""
+  THE ROUND'S WIDER EXTENSION, CITED AND NOT RE-RUN.  A fourth actor pool
+  (A,B,C,D) at depth <= 4 — 332,697 histories — was enumerated in the U3
+  round and returns the |MIS| census {{1: 232264, 2: 98304}}: never 3
+  [u3-round-B1].  It is carried here as ROUND-VERIFIED EVIDENCE and is NOT
+  a gate of this receipt; the printed caps name the three pools that are.
+""")
+
+_G3 = [[_laww[_outs[0]], _laww[_outs[1]]] for _ in range(2)]
+SCREEN.insert(6, screen(
+    "K1-3CONF",
+    _G3,
+    "the committed K1 law on the FIRST generated multiplicity-3 conflict, "
+    "recomputed from the d42b1 layer [M1, M2, M3, u3-round-B1]",
+    "the K1 branch law on the 3-conflict as a SQUARE transfer on its own "
+    "OUTCOME index — the two maximal independent sets {A0,B0} and {C1}; K1 "
+    "is source-independent, so every row is the same branch law",
+    "the first substantive NON-FLAT K1 reading in this census.  It is "
+    "column-constant with a NON-uniform row, so L1 decides it: it fails the "
+    "doubly-stochastic precondition and the price is exact"))
+
+_S3 = [s for s in SCREEN if s["name"] == "K1-3CONF"][0]
+check("M5 THE MULTIPLICITY-3 K1 LAW FAILS THE SCREEN AT THE MASS LEVEL, "
+      "AND ITS PRICE IS EXACT.  Read as the square transfer on its own "
+      "2-element outcome space the law is column-constant with row "
+      "(2/3, 1/3); its column sums are (4/3, 2/3) and by L1 a "
+      "column-constant matrix is doubly stochastic only when its row is "
+      "uniform.  The exact price is 2/3.  So the one generated K1 object "
+      "that is NOT flat does not even reach the phase question — the same "
+      "verdict every other substantive generated transfer gets, and the "
+      "opposite of the two flat passers",
+      _S3["verdict"] == "S-FAIL-DS"
+      and _S3["R"]["colsums"] == ANCH["mult3_gamma_colsums"]
+      and _S3["R"]["L1col"] == ANCH["mult3_price"],
+      f"verdict {_S3['verdict']}; column sums "
+      f"{[str(x) for x in _S3['R']['colsums']]}; price "
+      f"{_S3['R']['L1col']}")
+
+report("multiplicity census time", f"{time.time() - _t:.0f}s")
+
+
+# ===========================================================================
 # SEC 6.  ARM A — THE CENSUS, AND THE TWO STRUCTURAL VERDICTS
 # ===========================================================================
 
@@ -1815,36 +2126,52 @@ report("readings screened", f"{len(SCREEN)} in all")
 
 _passers = [s for s in SCREEN if s["verdict"] == "S-PASS"]
 _ortho = [s for s in _passers if s["cert"] == "surd"]
-check("A5 THE CENSUS IS MIXED, AND THE CENSUS IS THE RESULT.  Of the ten "
-      "readings screened, TWO are non-square and therefore unscreenable "
-      "by Barandes' criterion, SIX fail the doubly-stochastic "
-      "precondition outright (S-FAIL-DS), and TWO pass with an exhibited "
-      "and verified unitary (S-PASS).  No reading reaches the "
-      "S-FAIL-UNI cell — every generated object that would have had to be "
-      "argued at the phase level is already excluded at the mass level — "
-      "and no reading is left EXCLUDED-BY-CAP, so the instrument decided "
-      "every object it was given",
+check("A5 THE CENSUS IS MIXED, AND THE CENSUS IS THE RESULT.  ELEVEN "
+      "readings are screened, and they are not eleven independent "
+      "matrices: they are FOUR distinct committed generated matrices "
+      "(K1-2CONF, K1-3CONF, ZHAT-6x6 and its closed 3x3 sub-block), FIVE "
+      "constructed or convention-relative readings of those (the two Born "
+      "columns, the two untrimmed-index rows, the normalised join menu), "
+      "ONE transpose duplicate, and ONE by-specification control.  Of the "
+      "eleven, TWO are non-square and therefore unscreenable by Barandes' "
+      "criterion, SEVEN fail the doubly-stochastic precondition outright "
+      "(S-FAIL-DS), and TWO pass with an exhibited and verified unitary "
+      "(S-PASS).  No reading reaches the S-FAIL-UNI cell — every generated "
+      "object that would have had to be argued at the phase level is "
+      "already excluded at the mass level — and no reading is left "
+      "EXCLUDED-BY-CAP, so the instrument decided every object it was "
+      "given",
       _tally.get("EXCLUDED-BY-CAP", 0) == 0
       and _tally.get("CERTIFICATE-FAILED", 0) == 0
-      and len(SCREEN) == 10
+      and len(SCREEN) == 11
       and _tally.get("N/A-SHAPE", 0) == 2
-      and _tally.get("S-FAIL-DS", 0) == 6
+      and _tally.get("S-FAIL-DS", 0) == 7
       and _tally.get("S-FAIL-UNI", 0) == 0
       and _tally.get("S-PASS", 0) == 2,
       f"{dict(sorted(_tally.items()))} over {len(SCREEN)} readings")
 
-check("A6 EVERY MATRIX THAT PASSES THE SCREEN IS ORTHOSTOCHASTIC — THE "
-      "ORTHO/UNI GAP IS EMPTY ON THIS CENSUS, SO NOTHING COMMITTED AND "
-      "GENERATED FORCES THE COMPLEX NUMBERS.  Both passers carry a REAL "
-      "orthogonal certificate, exhibited and verified: K1-2CONF by the "
-      "2x2 Hadamard construction and ARMC2-8x8 by Sylvester's order-8 "
-      "Hadamard matrix.  This is the exact place the D75 audit located "
-      "the necessity of i (a matrix unistochastic but NOT "
-      "orthostochastic cannot be lifted with real amplitudes), and this "
-      "census contains no such matrix",
-      len(_ortho) == len(_passers) and len(_passers) > 0,
+_flat = [s for s in _passers
+         if all(s["M"][i][j] == Fr(1, len(s["M"]))
+                for i in range(len(s["M"])) for j in range(len(s["M"])))]
+check("A6 EVERY MATRIX THAT PASSES THE SCREEN IS ORTHOSTOCHASTIC — AND "
+      "BOTH PASSERS ARE THE FLAT MATRIX J/n, SO THE PASS CARRIES NO "
+      "QUANTUM CONTENT.  Both passers carry a REAL orthogonal "
+      "certificate, exhibited and verified: K1-2CONF by the 2x2 Hadamard "
+      "construction and ARMC2-8x8 by Sylvester's order-8 Hadamard matrix. "
+      " And both are FLAT, entry for entry: K1-2CONF is "
+      "[[1/2,1/2],[1/2,1/2]] = J/2 and ARMC2-8x8 is J/8.  They therefore "
+      "pass for ONE reason, not two: each is column-constant, and by L1 "
+      "the only doubly-stochastic column-constant law is the uniform one, "
+      "which is J/n — which is unistochastic at every n (the DFT) and "
+      "orthostochastic at every n = 2^k (Sylvester).  The ortho/uni gap, "
+      "which the D75 audit identifies as the exact place the necessity of "
+      "i lives, is EMPTY on this census; KA-3 shows the property is not "
+      "vacuous, since J/3 is unistochastic and NOT orthostochastic",
+      len(_ortho) == len(_passers) and len(_passers) > 0
+      and len(_flat) == len(_passers),
       f"passers {[s['name'] for s in _passers]}; of which "
-      f"orthostochastic {[s['name'] for s in _ortho]}")
+      f"orthostochastic {[s['name'] for s in _ortho]}; of which FLAT J/n "
+      f"{[s['name'] for s in _flat]}")
 
 _sweep = [Fr(k, 12) for k in range(13)]
 _sweep_bad = []
@@ -1853,34 +2180,42 @@ for _p in _sweep:
     _U = real_orth_2x2(_B)
     if orth_check_surd(_U) or modsq_check_surd(_U, _B):
         _sweep_bad.append(_p)
-check("A7 AND THE K1 LAYER CANNOT EVER FORCE THE COMPLEX NUMBERS AT ITS "
-      "COMMITTED SCOPE — A NO-GO, NOT A NULL RESULT.  Paper 31 sec.4.3's "
-      "own scope line reads: 'realized component sizes at the two cuts "
-      "are exactly {1, 2} and the constructed family covers precisely "
-      "those' [p31-4.3].  A component of size 1 gives a 1x1 Gamma and a "
-      "component of size 2 gives a 2x2 one; by KA-4's uniform "
-      "construction EVERY 2x2 bistochastic matrix is ORTHOSTOCHASTIC, "
-      "and 1x1 trivially so.  Therefore no ortho/uni gap can open "
-      "anywhere in the K1 arbitration family at its committed scope, at "
-      "ANY depth, and the necessity-of-i question is not decidable there "
-      "at all.  Deciding it requires a generated conflict of "
-      "multiplicity >= 3, and this corpus has committed none.  The n = 2 "
-      "half of the argument is not asserted: the orthostochastic "
-      "construction is re-verified here across a printed sweep of the "
-      "branch weight p, so 'every 2x2 bistochastic matrix is "
-      "orthostochastic' is checked rather than cited",
-      not _sweep_bad,
-      f"component sizes {{1,2}} quoted from p31-4.3; the 2x2 "
-      f"orthostochastic construction verified exactly at p in "
+check("A7 THE K1 OUTCOME SPACE IS OF SIZE AT MOST 2 — MEASURED AT THE FOUR "
+      "COMMITTED POOLS, UNPROVED BEYOND THEM — AND AT THAT SIZE i IS "
+      "UNDECIDABLE.  The premise is NOT paper 31's {1,2}, which is a "
+      "two-actor FIXTURE line [p31-4.3]; the premise is the measurement of "
+      "M1-M4: on d42b1 (A,B,C) d<=3, d42b1 (A,B) d<=4 and the d42b3 closed "
+      "scope d<=6 the number of maximal independent sets of a realised "
+      "conflict — the size of the K1 law's outcome space, and so of the "
+      "square Gamma — is never more than 2 (M4), and the round's fourth "
+      "pool (A,B,C,D) d<=4, 332,697 histories, agrees [u3-round-B1].  "
+      "Multiplicity 3 IS generated (M1) and still gives a 2-outcome law "
+      "(M3).  At size <= 2 the question closes: 1x1 is trivially "
+      "orthostochastic, every 2x2 bistochastic matrix is orthostochastic "
+      "by KA-4's uniform construction (re-verified here across a printed "
+      "sweep of the branch weight p, so it is checked and not cited), and "
+      "by L1 the only column-constant 2-outcome law that is doubly "
+      "stochastic at all is the uniform one.  DECIDING i THEREFORE "
+      "REQUIRES A >= 3-OUTCOME K1 LAW, which needs non-binary proposal "
+      "values or conflict graphs that are not complete multipartite — a "
+      "fact about the ACTOR POOL and the VALUE ALPHABET, not about "
+      "structure and not about depth",
+      not _sweep_bad and _mismax == ANCH["mis_max"],
+      f"max |MIS| over the three receipt-gated pools {_mismax} (M4); the "
+      f"2x2 orthostochastic construction verified exactly at p in "
       f"{[str(x) for x in _sweep]} — {len(_sweep_bad)} failures")
 
 print(f"""
   THE PRICE OF ENRICHMENT, STATED EXACTLY (the pin's S-FAIL-DS outcome).
-  For every doubly-stochastic D and every screened matrix M, the entrywise
-  L1 distance obeys ||M - D||_1 >= sum_j |c_j(M) - 1|, because
-  sum_j |c_j(M) - c_j(D)| <= sum_ij |M_ij - D_ij| and c_j(D) = 1.  The
-  exact prices this census establishes are:
-    ZHAT-6x6            : >= {ds_report(ZH)['L1col']}   (column sums {[str(x) for x in _zcols]})
+  For every doubly-stochastic D and every screened matrix M, the ENTRYWISE
+  L1 distance — ||M - D||_1 := sum_ij |M_ij - D_ij|, an entrywise sum and
+  NOT an operator norm — obeys ||M - D||_1 >= sum_j |c_j(M) - 1|, because
+  sum_j |c_j(M) - c_j(D)| <= sum_ij |M_ij - D_ij| and c_j(D) = 1.  Every
+  number below is an ABSOLUTE quantity in units of probability mass, not a
+  fraction of the matrix: a row-stochastic 6x6 carries total mass 6, so
+  Zhat's 5/7 is five sevenths of ONE unit of mass out of six.  The exact
+  prices this census establishes are:
+    ZHAT-6x6            : >= {ds_report(ZH)['L1col']}   (column sums {[str(x) for x in _zcols]}; total mass 6)
     ZHAT-CLOSED-3x3     : >= {ds_report(ZH345)['L1col']}   and it carries a SECOND, independent
                           obstruction: its unitarity-triangle discriminant is
                           T = {tri_disc(*chain_link_squares(ZH345, 0, 1, 'col'))} < 0, so even a mass repair that fixed
@@ -1888,6 +2223,9 @@ print(f"""
                           This is the corpus's one generated 3x3 matrix and it
                           fails the screen twice over.
     K1-JOIN-MENU        : >= {ds_report([list(_jrow) for _ in range(3)])['L1col']}
+    K1-3CONF            : >= {_S3['R']['L1col']}   (column sums {[str(x) for x in _S3['R']['colsums']]}; total mass 2)
+                          the generated multiplicity-3 K1 law, and the only
+                          substantive NON-FLAT K1 object in the census.
   That is what a quantum-eligible completion of the record chain must move,
   and it is a mass statement, not a phase statement: no amount of phase
   freedom repairs a column sum.
@@ -1929,13 +2267,11 @@ print(f"""
 """)
 
 _t = time.time()
-CAP_AB, CAP_ABC = 4, 3
 ARMS = {}
 for _nm, _actors, _dep, _pref in (("AB4", AB, CAP_AB, "AB"),
                                   ("ABC3", ABC, CAP_ABC, "ABC")):
-    print(f"  enumerating {_nm} and running D74's square census ...",
-          flush=True)
-    fam, cache = enumerate_line(b1_cand, _actors, _dep)
+    print(f"  running D74's square census on {_nm} ...", flush=True)
+    fam, cache = line_family(b1_cand, _actors, _dep, _nm)
     st, rat, kinds, okinds, defs, half, closed = square_census(
         fam, cache, _actors, _dep, b1_adm, b1_regs, b1_canon)
     dely = sum(1 for h, a, b, r, *_ in defs if "d" in (a[0], b[0]))
@@ -2077,24 +2413,39 @@ _allpos = all(x > 0 for x in _allvals)
 _unimodular = {x / abs(x) for x in _allvals}
 _roots_of_unity = [x for x in _allvals if x ** 1 == 1 or x == -1]
 _torsion_free = _G["rank"] == len(_G["primes"]) and _G["index"] == 1
-check("B7 CLAUSE (ii) OF THEOREM D3 / THEOREM 7.1 DOES NOT REPRODUCE, AND "
-      "THE OBSTRUCTION IS EXACT AND STRUCTURAL — NOT A FAILURE TO FIND.  "
+check("B7 THEOREM 7.1's CONCLUSION — CLAUSE (ii) — DOES NOT REPRODUCE, AND "
+      "THE OBSTRUCTION IS EXACT AND STRUCTURAL, NOT A FAILURE TO FIND.  "
       "Thm 7.1 concludes the loop class is valued in SO(2) = U(1).  The "
       "generated loop class is valued in <2,3>, a subgroup of the "
-      "MULTIPLICATIVE POSITIVE RATIONALS.  <2,3> is free abelian of rank "
-      "2 (B6), hence TORSION-FREE, hence its intersection with U(1) — the "
-      "elements of modulus 1 — is exactly the trivial group {1}: a "
-      "positive rational of modulus 1 is 1.  Every one of the measured "
-      "holonomies is a positive rational and every one has unimodular "
-      "part exactly 1.  There is no U(1) content to find, at any depth, "
-      "for a reason that is a property of the value GROUP and not of the "
-      "window",
+      "MULTIPLICATIVE POSITIVE RATIONALS.  THE REASON THE INTERSECTION IS "
+      "TRIVIAL IS POSITIVITY, NOT TORSION-FREENESS: every element of "
+      "<2,3> is a positive REAL, and R+ intersect U(1) = {1}, so <2,3> "
+      "intersect U(1) = {1}.  Torsion-freeness would not do it — "
+      "<e^{2 pi i sqrt 2}> is torsion-free and sits INSIDE U(1) — and the "
+      "earlier round's appeal to it is withdrawn.  Freeness of rank 2 (B6) "
+      "is retained for what it does establish, which is the size of the "
+      "character group at B9.  Every measured holonomy is a positive "
+      "rational and every one has unimodular part exactly 1: there is no "
+      "U(1) content to find, at any depth, for a reason that is a property "
+      "of the value SET and not of the window",
       _allpos and _unimodular == {Fr(1)} and _torsion_free
       and _roots_of_unity == [],
-      f"all values positive {_allpos}; unimodular parts "
-      f"{sorted(str(x) for x in _unimodular)}; torsion-free (rank = "
-      f"#primes, index 1) {_torsion_free}; roots of unity other than 1 "
-      f"among the measured values: {len(_roots_of_unity)}")
+      f"all values positive (the load-bearing fact) {_allpos}; unimodular "
+      f"parts {sorted(str(x) for x in _unimodular)}; free of rank = "
+      f"#primes with index 1 (the B9 fact) {_torsion_free}; roots of unity "
+      f"other than 1 among the measured values: {len(_roots_of_unity)}")
+
+print("""
+  AND WHAT CLAUSE (ii) WAS TESTED ON, STATED AGAINST THIS UNIT'S INTEREST.
+  Thm D3's B(l) is a product of ENTRIES OF THEOREM D1's DILATING UNITARY —
+  the construction this receipt sets aside at its first line [d75-D1guard].
+  The object measured here is a ratio of committed MENU WEIGHTS, which are
+  positive rationals by construction and could never have landed in U(1).
+  Clause (ii)'s non-reproduction is therefore PARTLY AN ARTIFACT OF
+  REFUSING D1's HYPOTHESIS, and the substantive content of this arm is the
+  two things that survive that concession: the POSITIVITY OBSTRUCTION on
+  the generated value set, and the UNSELECTED 2-TORUS of characters at B9.
+""")
 
 # --- clause (iii): the interference law ---------------------------------
 _cosvals = {Fr(1)}          # cos(arg r) for r a positive real is exactly 1
@@ -2115,7 +2466,12 @@ check("B8 CLAUSE (iii) OF THEOREM D3 DEGENERATES ON THE GENERATED "
       f"exact range of cos(arg B(loop)) over every measured loop = "
       f"{sorted(str(x) for x in _cosvals)}; at |A| = |B| = 1 the "
       f"loop-phase law gives P = {_P_loopphase} and the no-interference "
-      f"sum gives {_P_nointerf}")
+      f"sum gives {_P_nointerf}",
+      corollary_of="the cosine set is ASSIGNED here, not measured: it is "
+      "read off B7's positivity (cos(arg x) = 1 for every positive real "
+      "x), and the identity 1 + 1 + 2 = (1 + 1)^2 cannot fail.  The "
+      "measurement that carries this clause is B7's; this gate records "
+      "the consequence")
 
 check("B9 THE GAUGE STRATUM CAN CARRY A U(1) LOOP CLASS — AND EXACTLY A "
       "2-TORUS OF THEM, NONE SELECTED.  Since the measured holonomy group "
@@ -2136,18 +2492,25 @@ print(f"""
   ARM B VERDICT — PARTIAL REPRODUCTION, WITH THE OBSTRUCTION NAMED EXACTLY.
     clause (i)   gauge-invariance of the loop class : REPRODUCED (B5),
                  and the loop class is non-trivial on the carrier (B4).
-    clause (ii)  the loop class is U(1)-valued      : NOT REPRODUCED (B7).
-                 Obstruction: the generated holonomy group is <2,3>,
-                 free abelian of rank 2, torsion-free, and
-                 <2,3> intersect U(1) = {{1}}.
-    clause (iii) interference IS the loop-phase law : DEGENERATE (B8).
+    clause (ii)  Thm 7.1's conclusion, that the loop class is U(1)-valued:
+                 NOT REPRODUCED (B7).  Obstruction: every generated
+                 holonomy is a POSITIVE REAL and R+ intersect U(1) = {{1}}.
+                 Scope, against interest: D3's B(l) is built from entries
+                 of D1's dilating unitary, which this receipt sets aside;
+                 the measured object is a ratio of menu weights and could
+                 never have been unimodular.
+    clause (iii) interference IS the loop-phase law : DEGENERATE (B8),
+                 as a corollary of B7 and not as a second measurement.
                  cos(arg B(loop)) has exact range {{1}}; the law collapses
                  to the classical sum.
-  The expected candidate obstruction — D74's R+-only / odd-sector-empty
-  verdict [d74-D2] — is CONFIRMED BY MEASUREMENT here rather than assumed,
-  and it is sharpened from 'realised nowhere' to 'excluded by the value
-  group': the search for a -1 could not have succeeded, because -1 is not
-  in the multiplicative group of positive rationals at all.
+  D74's D2 SETTLED THE SCALAR ODD SECTOR A PRIORI ALREADY, and this arm
+  does not sharpen it: [d74-D2] states in one line that the only positive
+  rational of modulus 1 is 1, and D74's own note records that this
+  "settles the scalar odd sector a priori, in one line, before any fixture
+  is run" (v10/note-d74-transport-holonomy-result.md:248, :107-109).  What
+  this arm adds is CONFIRMATION ON A DIFFERENT OBJECT — the loop class of
+  the carrier (self-loops and independent cycles), not the raw square
+  holonomies — and the priced residue at B9.
 """)
 report("ARM B time", f"{time.time() - _t:.0f}s")
 
@@ -2202,8 +2565,10 @@ _Uflip = [[U_DFT8[i][j] * (Cyc(8, [Fr(-1)]) if (i, j) == (0, 0)
           for i in range(8)]
 _flip_uni = unitary_check_cyc(_Uflip)
 _flip_gam = modsq_check_cyc(_Uflip, ARMC2)
-check("C2 THE UNITARITY-PRESERVING SUBGROUP IS PROPER, EXHIBITED ON OUR "
-      "OWN PASSER — BARANDES' CLAUSE, GATED.  The SEPARABLE gauge "
+check("C2 THE UNITARITY-PRESERVING SUBGROUP IS PROPER — BARANDES' CLAUSE, "
+      "GATED, ON A BY-SPECIFICATION FLAT MATRIX AND THE TEXTBOOK DFT_8.  "
+      "Nothing generated enters this gate and it is not claimed to.  The "
+      "SEPARABLE gauge "
       "theta_ij = alpha_i + beta_j (printed: alpha_i = 2i, beta_j = 3j in "
       "units of 2pi/8) preserves unitarity exactly: U^dagger U - I has "
       "ZERO non-zero entries.  A single NON-separable element — flipping "
@@ -2294,7 +2659,12 @@ check("C4 NO COMMITTED GENERATED QUANTITY SELECTS A NON-TRIVIAL PHASE "
       not any(_sel for _, _, _, _sel in _carriers),
       f"0 of {len(_carriers)} carriers select a phase; three of the four "
       f"are re-anchored citations and the fourth (the reversed record) is "
-      f"measured at C3")
+      f"measured at C3",
+      corollary_of="the selection column of this table is HAND-WRITTEN "
+      "False, so the gate re-reads its own input and cannot fail as "
+      "posed.  What carries the four rows is elsewhere and is cited row "
+      "by row: B6/B7 for r, D74 gate D9.1 for J, the catalog's 4.7(c) "
+      "for the parity class, and the MEASURED C3 for the reversed record")
 
 check("C5 THE v7 FORM IS CARRIABLE ON THE GAUGE STRATUM, AND IT IS "
       "CARRIED TRIVIALLY.  With Phi(O) empty (C4) the form "
@@ -2315,8 +2685,10 @@ print("""
       (C1).
     * The unitarity-preserving subgroup is PROPER: a single printed
       entrywise sign flip on the 8x8 passer preserves Gamma exactly and
-      destroys unitarity exactly (C2).  Barandes' own clause is gated on
-      a generated object for the first time.
+      destroys unitarity exactly (C2).  SCOPE, PLAINLY: the object is the
+      textbook DFT_8 attached to a BY-SPECIFICATION FLAT matrix, so
+      NOTHING GENERATED ENTERS C2.  It gates Barandes' clause; it does not
+      gate it on generated data.
     * Nothing committed and generated selects a non-trivial phase
       (C3, C4), so the v7 form is carried by the identity element (C5).
     * What a non-trivial occupation would cost is now stated exactly:
@@ -2345,9 +2717,19 @@ print(f"""
     from a screened Gamma to a physical system is MISSING and this unit
     does not supply it.  Correspondence is not identity.
   * The committed matrices only, at their own scopes: the K1 arbitration
-    family at paper 31 sec.4.3's fixture (component sizes exactly {{1,2}});
-    the Zhat sibling on the closed-scope (d42b3) family to depth 6; the
-    D74 anchor arms at (A,B) depth <= 4 and (A,B,C) depth <= 3.
+    family at paper 31 sec.4.3's PAIR-PLUS-PATH FIXTURE (component sizes
+    {{1,2}} — a fixture line, not a bound on the grammar) TOGETHER WITH the
+    committed three-actor pool, whose conflicts reach multiplicity 3
+    (M1); the Zhat sibling on the closed-scope (d42b3) family to depth
+    6; the D74 anchor arms at (A,B) depth <= 4 and (A,B,C) depth <= 3.
+  * The K1 outcome-space bound (|MIS| <= 2) is MEASURED on three pools
+    here and on a fourth in the U3 round [u3-round-B1].  It is NOT proved
+    for the grammar, and no claim is made that it holds at a wider actor
+    pool or a non-binary value alphabet.
+  * The screen is CLOSED and UNDILATED.  [B3-dilation]: a quantum system
+    is either a unistochastic process itself OR a subsystem of one.  This
+    receipt decides the FIRST disjunct only; every S-FAIL verdict leaves
+    the subsystem disjunct untouched.
   * ARM-C2's 8x8 matrix is taken BY SPECIFICATION from U1's committed
     receipt [u1-armc2] and is NOT re-derived here; the verdict on it is
     made independent of that quote by the column-constant lemma (L1).
@@ -2380,26 +2762,43 @@ print("  THE UNIT'S ANSWERS, IN ONE PLACE.")
 print("    ARM A  the screen census, per matrix:")
 for s in SCREEN:
     print(f"             {s['name']:<24} {s['verdict']}")
-print("           two structural verdicts: the ortho/uni gap is EMPTY on")
-print("           this census (A6), and the K1 layer cannot force i at")
-print("           its committed scope AT ALL, because its conflicts have")
-print("           multiplicity at most 2 (A7).")
-print("    ARM B  clause (i) REPRODUCED; clause (ii) NOT REPRODUCED, "
-      "obstruction")
-print("           = the value group <2,3> is torsion-free so its "
-      "intersection")
-print("           with U(1) is trivial; clause (iii) DEGENERATE, "
-      "cos range {1}.")
-print("           A U(1) loop class is attachable in a 2-torus of ways, "
-      "none")
-print("           selected.")
+print("           two structural verdicts: both passers are the FLAT J/n "
+      "and are")
+print("           orthostochastic, so the ortho/uni gap is empty on this "
+      "census")
+print("           and the passes carry no quantum content (A6); and the K1 "
+      "OUTCOME")
+print("           SPACE has size at most 2 — MEASURED at four committed "
+      "pools,")
+print("           UNPROVED beyond them — so by L1 i is undecidable there, "
+      "and")
+print("           deciding it needs a >= 3-OUTCOME K1 law, i.e. non-binary")
+print("           proposal values or non-complete-multipartite conflict "
+      "graphs")
+print("           (A7, M1-M5).  Multiplicity 3 IS committed and still "
+      "gives a")
+print("           2-outcome law.")
+print("    ARM B  clause (i) REPRODUCED; clause (ii) — Thm 7.1's "
+      "conclusion —")
+print("           NOT REPRODUCED, obstruction = POSITIVITY: every "
+      "generated")
+print("           holonomy is a positive real and R+ cap U(1) = {1} (NOT")
+print("           torsion-freeness, which does not imply it); clause "
+      "(iii)")
+print("           DEGENERATE as a corollary, cos range {1}.  D74's D2 had")
+print("           already settled this a priori; this arm confirms it on "
+      "the")
+print("           loop class.  A U(1) loop class is attachable in a "
+      "2-torus of")
+print("           ways, none selected.")
 print("    ARM C  the gauge action on Gamma is an identity (not a test); "
       "the")
-print("           unitarity-preserving subgroup is PROPER and that is "
-      "gated on")
-print("           our own passer; no committed generated quantity selects "
-      "a")
-print("           phase, so the v7 form is carried by the identity — "
+print("           unitarity-preserving subgroup is PROPER, gated on the")
+print("           by-specification flat matrix and the textbook DFT_8 — "
+      "nothing")
+print("           generated enters it; no committed generated quantity "
+      "selects")
+print("           a phase, so the v7 form is carried by the identity — "
       "carriable")
 print("           and vacuous.")
 
