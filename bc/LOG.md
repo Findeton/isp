@@ -77,3 +77,42 @@ fails outright on this composite (rank 18 or 9, never 36)**.
 Anchors: U3 battery reproduced (T = +1/27, −1/16, moduli, H₈).
 48/48 legs unistochastic by exhibited real-orthogonal certificate.
 Hostile round dispatched.  BC1, BC3 still constructing.
+
+## 2026-07-28 — BC1 DELIVERED: **C-OBSTRUCTION** — SYSTEM-CENTRIC
+## DIVISION EVENTS CARRY A MARGINAL-PROBLEM OBSTRUCTION,
+## GREEN-UNREVIEWED (BC LEDGER #3)
+The composition census lands (note-bc1-division-event-composition.md,
+40 PASS / 0 FAIL / 0 ANCHOR-FAIL, 28.5s; adjudicator rerun identical
+modulo timings and the hash-seed banner).  **VERDICT C-OBSTRUCTION
+(C-CROSS a fortiori).**  Eight exact models × 11 readings × 7
+subsystems × 5 grid times; then THE EXHAUSTIVE SWEEP: **all 1,296
+depth-4 circuits over a declared 6-letter alphabet — no sampling —
+181,440 interpolant queries, 600 Farkas certificates verified.**
+System-centricity is REAL AND QUANTIFIED: downward containment
+DIV_composite ⊆ DIV_part fails 77/1,056 nested instances (7
+distinct crossings, reproducing in all 11 readings — e.g. the
+SWAP-scrambler at t₁, where the composite's Γ is a permutation and
+divides while the parts do not); upward fails 350/1,056.  The
+stated sheaf axioms (GS0 initiality / GS1 restriction / GS2 gluing
+/ GS3 system-independence; the restriction presheaf verified
+transitive, 3,120 instances, 0 disagreements): GS1 fails 527/1,296
+marginal and 361/1,296 conditional; **GS2 GLUING FAILS IN THE
+POPULATION (85/77 by reading) though it held on all eight
+hand-picked models** — the hand-picked-model trap dodged by
+exhaustion; GS3 fails 1,004/884.  **THE HEADLINE: 10
+HARD-OBSTRUCTION SLICES where only the EMPTY division-event
+assignment is consistent** (exemplar H_B·SWAP_AC·H_B·SWAP_AC at t₂:
+the AC pair HAS a division event, every other subsystem including
+the composite has NONE — no global section exists; the
+contextuality-genre obstruction realized in [B3]'s own terms).
+CONTROLS: the classical-Markov model divides everywhere (385
+slots); the known-indivisible qubit reference matches its closed
+form exactly.  SIDE FINDINGS, exact: (i) separability does NOT
+confer divisibility (the quantum product model's DIV_ABC = {0,4});
+(ii) reduced processes are generically non-unistochastic (402/1,152
+fail DS, 12 more the polygon) — [B3] p.19's dilation disjunct made
+concrete.  All [B3] axioms used are quoted verbatim, page-cited
+(SEC 0).  One declared cost cap (square-free factorisation at n=4)
+touches only the unistochasticity screen, never the division-event
+census (pure Fractions).  Hostile round dispatched.  BC3 still
+constructing; BC2's round still out.

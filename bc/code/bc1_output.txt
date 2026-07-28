@@ -1,0 +1,1588 @@
+==============================================================================
+BC1 — DIVISION-EVENT COMPOSITION CONSISTENCY  (exact receipt)
+==============================================================================
+  banner: exact arithmetic end to end — unitaries in Surd (Q and
+  Q(sqrt 2)) or in Cyc(8) = Q(zeta_8), transition matrices in
+  Fractions, gated rational at construction; no float in any
+  substantive computation; no randomness anywhere (every entry is a
+  declared constant); both readings censused separately; every
+  census printed both ways; substantive negatives exit 0; exit 1 ONLY
+  if a reused instrument fails its known-answer anchor.
+
+  SCOPE, ENGRAVED: this receipt tests formal properties of [B3]'s
+  framework as written, at the tested dimensions (2x2x2) and the
+  tested dynamics.  It makes NO claim about nature, about QFT, or
+  about the v11 record programme.  LEAN: NONE.
+
+  PYTHONHASHSEED = 0
+  python         = 3.13.2
+
+  QUOTE REGISTRY — every [B3] axiom or passage used below, verbatim
+  and page-cited.  Nothing in this receipt leans on an unquoted
+  reading of the paper.
+
+    [B3-divdef] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.9 (Section 2.2, following eq. 21)
+        "Note that no assumption is made here that the transition probabilit
+        ies p(i,t | j,t_0) exist as part of the laws for all real-valued cho
+        ices of t_0.  Allowed conditioning times t_0 are called division eve
+        nts for the given system, and, without any real loss of generality, 
+        are assumed to include an 'initial' time 0."
+
+    [B3-dyn-ax] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.29 (Section 7, 'Dynamical axiom')
+        "Dynamical axiom: For arbitrary target times, and for conditioning t
+        imes corresponding to division events, the model's dynamical laws co
+        nsist of transition probabilities that take the form of conditional 
+        probabilities for the system to be in a particular configuration at 
+        each target time, given that the system is in a particular configura
+        tion at each conditioning time.  Division events may occur naturally
+         within the model's own dynamics, and can also be generated spontane
+        ously through interactions with other systems. ...  At the level of 
+        the given model, the dynamical laws are fixed features."
+
+    [B3-epi-ax] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.29 (Section 7, 'Epistemic axiom')
+        "Epistemic axiom: The system has some time-dependent standalone prob
+        ability distribution to be in a particular configuration at any give
+        n target time.  This standalone probability distribution is connecte
+        d between different times by the model's transition probabilities, a
+        nd is contingent, meaning that it can vary between runs of the model
+        ."
+
+    [B3-eq22] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.10 (Section 2.2, eqs. 22-23 and the following paragraph)
+        "Given transition matrices Gamma(t <- t_0) and Gamma(t' <- t_0), whe
+        re t' lies in the interval between t_0 and t, it might seem reasonab
+        le to try to define an intermediate transition matrix ~Gamma(t <- t'
+        ) from t' to t according to  ~Gamma(t <- t') = Gamma(t <- t_0) Gamma
+        ^{-1}(t' <- t_0),  (22)  at least if Gamma(t' <- t_0) is invertible.
+          By construction, it would then seem to follow that the system obey
+        s a divisibility condition akin to (14):  Gamma(t <- t_0) = ~Gamma(t
+         <- t') Gamma(t' <- t_0).  (23)  However, it turns out that a matrix
+         ~Gamma(t <- t') defined according to (22) will generically fail to 
+        be a column stochastic matrix, and, indeed, will typically have nega
+        tive entries..."
+
+    [B3-gauge] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.19 (Section 3.6, after eq. 68)
+        "Note that a unitary time-evolution operator U(t <- 0) will not gene
+        rically remain unitary under arbitrary Schur-Hadamard gauge transfor
+        mations (30).  Hence, writing a unistochastic transition matrix Gamm
+        a(t <- 0) in terms of a unitary time-evolution operator U(t <- 0) co
+        rresponds to making a gauge choice..."
+
+    [B3-kin-ax] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.29 (Section 7, 'Kinematical axiom')
+        "Kinematical axiom: For each model under consideration, one picks an
+         appropriate configuration space, whose members are the possible con
+        figurations of the system being modeled, treated as elementary accor
+        ding to the model.  The configuration space is a fixed feature of th
+        e model, meaning that it does not vary between real-world runs or in
+        stantiations of the model."
+
+    [B3-ltp] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.9 (Section 2.2, eqs. 19-20)
+        "The only available Chapman-Kolmogorov equations (5) take the simple
+         form  p(i,t) = sum_j p(i,t | j,t_0) p(j,t_0),  (19)  which is just 
+        the law of total probability.  Equivalently, in matrix notation,  p(
+        t) = Gamma(t <- t_0) p(t_0).  (20)"
+
+    [B3-permlemma] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.10 (Section 2.2, main text and footnote 7)
+        "The reason is that the inverse of a stochastic matrix can only itse
+        lf be a stochastic matrix if both matrices are permutation matrices,
+         meaning that they consist solely of 0s and 1s, and therefore do not
+         contain nontrivial probabilities."  [Footnote 7 gives the proof.]
+
+    [B3-sqthm] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.19 (Section 3.6, first paragraph)
+        "The preceding analysis implies that an indivisible stochastic proce
+        ss can be viewed either as a unistochastic process itself, or (if a 
+        nontrivial dilation was required) as a subsystem of a unistochastic 
+        process.  This statement is called the stochastic-quantum theorem (B
+        arandes 2023)."
+
+    [B3-syscentric] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.10 (Section 2.2, first paragraph)
+        "Division events are not global properties of the whole universe, bu
+        t are system-centric, just like various other kinds of spontaneous t
+        ime-translation-breaking in physics.  In practice, a system may have
+         multiple exact division events, or they may be generated to an extr
+        emely good approximation through interactions with other systems, af
+        ter marginalizing over those other systems (Barandes 2025)."
+
+    [B3-uni] [B3] J. A. Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192, 30 July 2025, p.18 (Section 3.6, after eq. 68)
+        "In general, an N x N matrix is called unistochastic if its individu
+        al entries are expressible as the modulus-squares of the correspondi
+        ng entries of an N x N unitary matrix.  It follows that (64) is just
+         the statement that the system's transition matrix Gamma(t <- 0) can
+         be taken to be unistochastic, and will therefore be said to describ
+        e a unistochastic process."
+
+    [U1-D1] v11/code/u1_indivisibility_census_exact.py:661-673 (the repaired definition, SEC 3)
+        "(D1) LOCAL DIVISIBILITY at a composable triple (c, c', c''): there 
+        EXISTS a column-stochastic X with X . Gamma(c' <- c) = Gamma(c'' <- 
+        c).  When Gamma(c' <- c) is square and invertible X is unique and eq
+        uals the algebraic interpolant Gammabar = Gamma(c'' <- c) . Gamma(c'
+         <- c)^-1 of [B3] eq. 22 ...  When Gamma(c' <- c) is singular the al
+        gebraic form does not apply and (D1) is decided as a linear feasibil
+        ity question."
+
+    [U3-crit] v11/code/u3_unistochasticity_screen_exact.py:1101-1120 (polygon_violations) and :1085-1089 (tri_disc)
+        the general necessary condition at every n (if Gamma = |U|^2 then fo
+        r every pair of distinct columns the n complex numbers conj(U_ip) U_
+        iq, of modulus sqrt(Gamma_ip Gamma_iq), sum to zero, so no one modul
+        us may exceed the sum of the others), plus the exact n = 3 triangle 
+        discriminant T = 2(ab+bc+ca) - a^2 - b^2 - c^2.
+
+
+==============================================================================
+SEC 1  SINGLE-SOURCING: AST signature pass and AST extraction of the two committed, programme-independent instruments   [t+0.0s]
+==============================================================================
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on both committed instruments: every required definition exists at module level with the exact positional argument list, so a silent upstream edit to U1's LP machinery or U3's criterion cannot slip through unnoticed  (u1 308 module-level names (14 required, missing []); u3 242 names (26 required, missing []))
+  [PASS] ANCHOR SRC.2 U1's EXACT LP + FARKAS MACHINERY IS U1's, lifted by ast.FunctionDef from the committed receipt and not retyped: the Phase-I simplex phase1 (exact Fractions, Bland's rule), the independent Farkas verifier farkas_ok, the feasibility-preserving reduction reduce_system, lift_and_verify, invert_exact, gamma_of, supports and the whole decide_triple cascade  (lifted 14 definitions from v11/code/u1_indivisibility_census_exact.py: decide_reduced(49L), decide_triple(131L), farkas_ok(10L), fr_digest(9L), gamma_of(9L), invert_exact(25L), lift_and_verify(23L), phase1(90L), print_certificate(17L), print_interpolant(7L), reduce_system(59L), sk(9L), srt(2L), supports(2L))
+  [PASS] ANCHOR SRC.3 U3's EXACT ALGEBRAIC RINGS AND UNISTOCHASTICITY CRITERION ARE U3's, lifted by ast.ClassDef / ast.FunctionDef / ast.Assign from the committed receipt: Surd with its sign oracle, Cyc = Q(zeta_N) with Phi_N, ds_report, tri_disc, chain_link_squares, polygon_violations, the four certificate checkers, real_orth_2x2, sylvester and the screen itself  (lifted 26 definitions from v11/code/u3_unistochasticity_screen_exact.py: Cyc(62L), PHI(2L), PHI_NAME(1L), SIGN_BITS_USED(1L), Surd(52L), chain_link_squares(7L), cyc_one(2L), cyc_pow(5L), cyc_x(2L), cyc_zero(2L), ds_report(20L), fsl(2L), modsq_check_cyc(9L), modsq_check_surd(8L), orth_check_surd(13L), phi_euler(2L), polydivmod(21L), polygon_violations(20L), real_orth_2x2(10L), screen(102L), sqfree_split(17L), sqrt_fr(9L), surd_sign(30L), sylvester(6L), tri_disc(5L), unitary_check_cyc(13L))
+
+==============================================================================
+SEC 2  KNOWN-ANSWER ANCHORS on the two reused instruments, run BEFORE either instrument is pointed at anything constructed here   [t+0.1s]
+==============================================================================
+  [PASS] ANCHOR KA-LP1 THE EXACT PHASE-I SIMPLEX FINDS THE HAND-KNOWN FEASIBLE POINT: with Gamma(t'<-0) = I the unique bridge is X = Gamma(t<-0) itself, and the LP returns FEASIBLE with a certificate that reproduces B entry by entry in exact rationals  (feasible=True, pivots=4, x=['1/3', '3/4', '2/3', '1/4'])
+  [PASS] ANCHOR KA-LP2 THE LP RETURNS THE HAND-KNOWN INFEASIBILITY, WITH A FARKAS CERTIFICATE INDEPENDENTLY VERIFIED: if Gamma(t'<-0) has two identical columns then X.Gamma(t'<-0) has two identical columns for EVERY X, so it can never equal the identity.  The dual vector w satisfies w^T M <= 0 on every column and w^T b > 0  (feasible=False, pivots=2, Farkas verified=True, w^T b = 4 > 0)
+  [PASS] ANCHOR KA-LP3 THE eq.22 ALGEBRAIC INSTRUMENT AND THE LP AGREE WITH EACH OTHER AND WITH THE CLOSED-FORM ANSWER on the 2x2 bistochastic family, in both directions: the bridge from lambda' to lambda has parameter lambda/lambda', so it is stochastic exactly when |lambda/lambda'| <= 1.  Four cases, two divisible and two not  (l'=1/2 l=1/4: |l/l'|=1/2 hand=True eq22=True LP=True; l'=1/4 l=1/2: |l/l'|=2 hand=False eq22=False LP=False; l'=-1/3 l=2/3: |l/l'|=2 hand=False eq22=False LP=False; l'=3/4 l=-1/2: |l/l'|=2/3 hand=True eq22=True LP=True)
+  [PASS] ANCHOR KA-U3a U3's KA-1 REPRODUCES: the 3x3 flat matrix J/3 (= |DFT_3|^2) has triangle discriminant T = +1/27 > 0 and no polygon violation — the criterion does not reject a matrix that IS unistochastic  (T = 1/27; polygon violations 0)
+  [PASS] ANCHOR KA-U3b U3's KA-2 REPRODUCES: the canonical counterexample B = (J - I)/2 is bistochastic, has triangle discriminant T = -1/16 < 0, and the polygon oracle flags the same obstruction — the criterion does reject a matrix that is NOT unistochastic  (DS True; T = -1/16; polygon violations 6)
+  [PASS] ANCHOR KA-U3c U3's KA-4 REPRODUCES: the n = 2 construction returns a matrix that is exactly orthogonal in the Surd ring with |U_ij|^2 = B_ij, so every 2x2 bistochastic matrix is orthostochastic and the n = 2 verdicts below are complete  (orthogonality residuals 0; |U|^2 mismatches 0)
+  [PASS] ANCHOR KA-U3d U3's KA-5 REPRODUCES: the doubly-stochastic precondition is not a no-op — a row-stochastic matrix that is not column-stochastic is caught with the exact per-column excess  (row sums [1, 1]; column sums [3/2, 1/2])
+  [PASS] ANCHOR KA-U3e U3's KA-6 REPRODUCES: Sylvester's real Hadamard matrix of order 8 satisfies H H^T = 8 I over the integers  (64 inner products exact)
+  [PASS] ANCHOR KA-RING THE TWO EXACT RINGS BEHAVE: in Surd, sqrt2.sqrt3 = sqrt6 and sqrt(1/2)^2 = 1/2 identically, and the sign oracle decides sqrt2 + sqrt3 - sqrt10 < 0; in Cyc(8), (zeta8 - zeta8^3)^2 = 2 exactly (so 1/sqrt2 is an exact element) and (zeta8^2)^2 = -1 (so the imaginary unit is an exact element)  (sqrt2.sqrt3-sqrt6 = 0; sqrt(1/2)^2-1/2 = 0; sign(sqrt2+sqrt3-sqrt10) = -1; (zeta8-zeta8^3)^2 = 2x^0; (zeta8^2)^2 = -1x^0)
+
+==============================================================================
+SEC 3  THE OPERATIONAL DIVISION-EVENT PREDICATE, THE TWO READINGS, AND THE CONSISTENCY AXIOMS — stated before any of them is evaluated   [t+0.1s]
+==============================================================================
+
+  THE MODEL DATA.  A composite system with configuration space
+  C = C_A x C_B x C_C (three qubits: |C| = 8, the members treated as
+  elementary, fixed across runs -- [B3-kin-ax]).  A declared time grid
+  0 = t_0 < t_1 < ... < t_K.  A declared exact unitary family U(t_k <- 0),
+  k = 0..K, with U(t_0 <- 0) = 1.  The composite's transition matrix is
+  [B3]'s unistochastic law [B3-uni]:
+
+      Gamma_ABC(t_k <- 0)_{ij} = |U_{ij}(t_k <- 0)|^2,
+
+  which is column-stochastic (and here also row-stochastic).  A declared
+  strictly positive initial distribution p_0 on C ([B3-epi-ax]: contingent,
+  varies between runs -- so the census runs over three declared p_0).
+
+  THE PREDICATE.  [B3-divdef] says the allowed conditioning times are the
+  division events, and [B3-dyn-ax] says the laws consist of transition
+  probabilities from those conditioning times to arbitrary target times.
+  [B3-ltp] says the transition matrices act by the law of total
+  probability.  Conjoining those three: t' is a division event for a system
+  with process {Gamma(t <- 0)} exactly when, for every target time t, there
+  is a column-stochastic Gamma(t <- t') with
+
+      Gamma(t <- 0) = Gamma(t <- t') Gamma(t' <- 0)                  (23)
+
+  -- the divisibility condition [B3-eq22] states and then denies in
+  general.  Operationally, and this is the predicate this receipt computes:
+
+      DIV_S(t_k)  :=  for EVERY grid target t_b with t_k <= t_b <= t_K,
+                      there EXISTS a column-stochastic X_b on C_S with
+                      X_b . Gamma_S(t_k <- 0) = Gamma_S(t_b <- 0).
+
+  This is exactly U1's (D1) [U1-D1] conjoined over the spanning pairs
+  (0, t_b) that straddle t_k, and it is decided by U1's committed cascade:
+  a candidate bridge, then [B3] eq. 22's algebraic interpolant where
+  Gamma_S(t_k <- 0) is square and invertible, then the row certificate,
+  then the exact rational LP with a verified Farkas certificate.  The
+  quantifier structure is declared: UNIVERSAL over targets, EXISTENTIAL
+  over bridges.  Sources are the initial time 0 alone, which [B3-divdef]
+  guarantees is a division event; no later time is assumed to be one, on
+  pain of circularity.
+
+  DIV_S(t_0 = 0) is TRUE for every S by construction (X_b = Gamma_S(t_b<-0)
+  works), which is [B3-divdef]'s 'assumed to include an initial time 0'.
+
+  THE TWO READINGS OF A SUBSYSTEM'S PROCESS.  [B3-syscentric] names
+  marginalization as the operation that relates a system to its
+  environment; both readings below are declared and both are censused
+  separately, because they are not the same object.
+
+    READING M (marginal / trace-out).  Condition on the subsystem's own
+    configuration at time 0 and average the rest with p_0:
+        Gamma^M_S(t <- 0)[u][v]
+          = sum_{i|_S = u} sum_{j|_S = v} Gamma(t<-0)[i][j] p_0(j)
+            / sum_{j|_S = v} p_0(j).
+    Column-stochastic; depends on p_0.
+
+    READING C (conditional-on-outcome).  Condition on the complement's
+    configuration c at time 0 as well, and marginalize the complement at
+    the target time:
+        Gamma^{C,c}_S(t <- 0)[u][v] = sum_{i|_S = u} Gamma(t<-0)[i][(v,c)].
+    Column-stochastic; independent of p_0; one process per complement
+    configuration c, all of them censused.
+
+    The two are related exactly, and the identity is verified in-receipt:
+        Gamma^M_S[u][v] = sum_c w_c(v) Gamma^{C,c}_S[u][v],
+        w_c(v) = p_0((v,c)) / sum_{c'} p_0((v,c')),
+    so reading M is a column-wise p_0-mixture of the reading-C processes.
+    For S = ABC the complement is empty and both readings are Gamma itself.
+
+  THE PRESHEAF.  The subsystem lattice L = {A,B,C,AB,AC,BC,ABC} is a poset
+  under inclusion.  F(S) := the column-stochastic families on C_S;
+  restriction rho^S_{S'} := marginalization (reading M) or conditioning
+  (reading C).  Both restrictions are TRANSITIVE, and transitivity is
+  verified in-receipt on every nested triple, every model and every grid
+  time, so F is a genuine presheaf and not a decoration.
+
+  THE CONSISTENCY AXIOMS FOR A GLOBAL DIVISION-EVENT ASSIGNMENT.  Stated
+  now, before any of them is evaluated.  Write D(S) subset T for the
+  division-event set assigned to S, T the grid.
+
+    (GS0) INITIALITY.  0 in D(S) for every S in L.
+          Ground: [B3-divdef], 'assumed to include an initial time 0'.
+
+    (GS1) RESTRICTION-COMPATIBILITY (downward closure along the presheaf).
+          S'' subset S'  ==>  D(S') subset D(S'').
+          Ground: the restriction map is marginalization, and [B3-syscentric]
+          makes marginalization the operation that passes between a system
+          and its parts.  If the composite's law of total probability holds
+          through t, the marginal law should inherit it.
+          NOTE, DECLARED IN ADVANCE: [B3] nowhere ASSERTS GS1.  GS1 is the
+          weakest condition under which the division-event assignment is a
+          compatible family for the restriction presheaf.  Its failure is
+          therefore a result about the framework's structure, not a
+          contradiction inside [B3].
+
+    (GS2) GLUING ON OVERLAPS.  S', S'' with S' /\ S'' non-empty:
+          D(S') /\ D(S'') subset D(S' \/ S'').
+          Ground: the sheaf gluing axiom -- locally legitimate conditioning
+          times on overlapping systems glue to their union.
+
+    (GS3) SYSTEM-INDEPENDENCE.  There is a single G subset T with
+          D(S) = G for every S in L.
+          Ground: this is the hypothesis [B3-syscentric] EXPLICITLY DENIES
+          ('not global properties of the whole universe, but system-centric').
+          It is computed here so that the denial is quantified rather than
+          quoted: a model in which GS3 fails is a model in which
+          system-centricity is not merely permitted but forced.
+
+    A GLOBAL SECTION of the restriction presheaf, in the compatible-family
+    sense, exists for a model exactly when GS0 /\ GS1 /\ GS2 all hold of
+    the computed family {DIV_S}.  When they do not, the receipt additionally
+    computes, time by time, the MAXIMAL SUB-SECTION: the largest
+    d' <= d satisfying GS1 /\ GS2 (the largest trimming of the assignment
+    that IS consistent).  Note that d' identically 0 always satisfies
+    GS1 /\ GS2, so 'a global section exists' is informative only in the
+    two sharper forms reported: (i) is the DATA ITSELF a section, and
+    (ii) is the maximal sub-section non-trivial.
+
+  PRE-REGISTERED OUTCOMES (lean NONE): C-CONSISTENT (natural containments
+  hold on all tested models), C-CROSS (containments fail, with exact
+  witnesses), C-OBSTRUCTION (a model admits no consistent global assignment
+  under the axioms above).
+
+
+==============================================================================
+SEC 4  DECLARED CAPS, THE EXACT FIELD LAYER, AND THE EIGHT MODELS   [t+0.1s]
+==============================================================================
+  qubits 3, |C| = 8; grid t_0..t_4 (4 steps), TIMES = [0, 1, 2, 3, 4]
+  subsystem lattice: ['A', 'B', 'C', 'AB', 'AC', 'BC', 'ABC'] (7 members, all of them censused)
+  readings: M (three declared p_0) and C (one process per complement configuration: 4 for a singleton, 2 for a pair, 1 for ABC)
+  LP caps inherited from U1: <= 700 variables, <= 400 constraints, <= 400000 pivots.  Every system here has at most 64 variables and 72 constraints, so NO decision in this receipt is ever excluded by a cap and no cap can hide a verdict.
+  print caps (printing only, never deciding): <= 12 fully printed witnesses per category, <= 2 verbose U3 screens per model; ALL cases are counted and tabulated.
+  FIELD SCOPE, DECLARED: every model below is chosen so that |U_ij|^2
+  is RATIONAL at every grid time -- gated at construction, exit 1 if
+  not.  That is what lets U1's Fraction LP be reused verbatim.  It is
+  a restriction on the tested dynamics and is carried into the
+  scope statement; it is not a restriction on the framework.
+
+  [PASS] ANCHOR MOD.1 EVERY TRANSITION MATRIX IS EXACTLY RATIONAL: |U_ij|^2 lands in Q at every grid time of every unitary model, so U1's Fraction LP applies verbatim and nothing is rounded anywhere  (irrational entries across all models and times: 0)
+  [PASS] MOD.2 EVERY MODEL'S TRANSITION MATRIX IS COLUMN-STOCHASTIC WITH NON-NEGATIVE ENTRIES AND Gamma(t_0<-0) = 1, exactly, at every grid time -- the object [B3-ltp] eq. 20 requires  (column sums 8/8, non-negativity 8/8, identity at t_0 8/8)
+  [PASS] MOD.3 EVERY UNITARY MODEL'S TRANSITION MATRIX IS ALSO ROW-STOCHASTIC -- i.e. DOUBLY stochastic -- because a unitary has orthonormal rows as well as columns; and the classical control is NOT, which is what marks it as the non-unistochastic member of the set  (unitary models row-stochastic 7/7; classical control row-stochastic False)
+  [PASS] ANCHOR MOD.4 EVERY DECLARED U(t_k<-0) IS EXACTLY UNITARY IN ITS RING: U^T U - 1 = 0 identically in Surd for the real models and U^dagger U - 1 = 0 identically in Cyc(8) for the complex one, at every grid time, with ZERO residual entries -- not a tolerance  (non-zero residual entries across all models and grid times: 0; rings M1:surd M2:surd M3:surd M4:surd M5:cyc M6:surd M7:surd)
+
+  ---- M0 classical Markov product (control)
+       declaration : Gamma(t_k<-0) = (M_A tensor M_B tensor M_C)^k with the declared column-stochastic M_A, M_B, M_C; a textbook Markov chain, [B3]'s divisible special case, NOT a unistochastic process
+       note        : the classical control: everything must divide everywhere
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         2/5  3/25  1/4  3/40  8/45  4/75  1/9  1/30
+         1/5  12/25  1/8  3/10  4/45  16/75  1/18  2/15
+         1/10  3/100  1/4  3/40  2/45  1/75  1/9  1/30
+         1/20  3/25  1/8  3/10  1/45  4/75  1/18  2/15
+         2/15  1/25  1/12  1/40  16/45  8/75  2/9  1/15
+         1/15  4/25  1/24  1/10  8/45  32/75  1/9  4/15
+         1/30  1/100  1/12  1/40  4/45  2/75  2/9  1/15
+         1/60  1/25  1/24  1/10  2/45  8/75  1/9  4/15
+  ---- M1 product/separable (quantum)
+       declaration : U(t_k<-0) = (R(3/5,4/5) tensor R(5/13,12/13) tensor R(8/17,15/17))^k, exact Pythagorean rotations in Q
+       note        : separable at every time; the tensor-factorised control
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         576/48841  2025/48841  82944/1221025  11664/48841  1024/48841  3600/48841  147456/1221025  20736/48841
+         2025/48841  576/48841  11664/48841  82944/1221025  3600/48841  1024/48841  20736/48841  147456/1221025
+         82944/1221025  11664/48841  576/48841  2025/48841  147456/1221025  20736/48841  1024/48841  3600/48841
+         11664/48841  82944/1221025  2025/48841  576/48841  20736/48841  147456/1221025  3600/48841  1024/48841
+         1024/48841  3600/48841  147456/1221025  20736/48841  576/48841  2025/48841  82944/1221025  11664/48841
+         3600/48841  1024/48841  20736/48841  147456/1221025  2025/48841  576/48841  11664/48841  82944/1221025
+         147456/1221025  20736/48841  1024/48841  3600/48841  82944/1221025  11664/48841  576/48841  2025/48841
+         20736/48841  147456/1221025  3600/48841  1024/48841  11664/48841  82944/1221025  2025/48841  576/48841
+  ---- M2 GHZ-generating (real Clifford)
+       declaration : gates in order: H_A, CNOT_{A->B}, CNOT_{A->C}, H_B; U(t_k<-0) = G_k...G_1, entries in Q(sqrt 2)
+       note        : U(t_3<-0)|000> = (|000> + |111>)/sqrt2, the maximal GHZ state
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         1/2  0  0  0  1/2  0  0  0
+         0  1/2  0  0  0  1/2  0  0
+         0  0  1/2  0  0  0  1/2  0
+         0  0  0  1/2  0  0  0  1/2
+         1/2  0  0  0  1/2  0  0  0
+         0  1/2  0  0  0  1/2  0  0
+         0  0  1/2  0  0  0  1/2  0
+         0  0  0  1/2  0  0  0  1/2
+  ---- M3 W-generating (rational orthogonal)
+       declaration : U(t_k<-0) = W^k with W the declared rational orthogonal matrix whose first column is the W-class state (2/3)|100> + (2/3)|010> + (1/3)|001>
+       note        : W-class: supported on the single-excitation subspace with all three amplitudes non-zero
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         0  0  0  0  1  0  0  0
+         1/9  4/9  4/9  0  0  0  0  0
+         4/9  4/9  1/9  0  0  0  0  0
+         0  0  0  1/9  0  0  4/9  4/9
+         4/9  1/9  4/9  0  0  0  0  0
+         0  0  0  4/9  0  0  4/9  1/9
+         0  0  0  0  0  1  0  0
+         0  0  0  4/9  0  0  1/9  4/9
+  ---- M4 algebraic generic (Cayley rational orthogonal)
+       declaration : U(t_k<-0) = Q^k, Q = (1 - S)(1 + S)^{-1} the Cayley transform of the declared integer antisymmetric S with S_ij = ((3i + 5j) mod 7) - 3 for i < j; det(1+S) = 34506
+       note        : dense, no tensor factorisation, no permutation structure, no randomness: every entry is a declared constant
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         9120400/33074001  1156/5041  6848689/297666009  1002001/297666009  628849/33074001  214369/3674889  2128681/297666009  1936/5041
+         67600/3674889  841/5041  56644/33074001  91204/33074001  289444/3674889  88804/408321  3118756/33074001  2116/5041
+         249001/3674889  1024/5041  19307236/33074001  3806401/33074001  63001/3674889  169/408321  289/33074001  64/5041
+         49/6561  0  5041/59049  42436/59049  529/6561  49/729  2401/59049  0
+         3481/408321  64/5041  162409/3674889  17689/3674889  262144/408321  49/45369  1050625/3674889  4/5041
+         841/5041  1024/5041  225/5041  625/5041  289/5041  1444/5041  529/5041  64/5041
+         143641/408321  256/5041  769129/3674889  113569/3674889  10201/408321  7225/45369  624100/3674889  16/5041
+         3422500/33074001  676/5041  2390116/297666009  128164/297666009  2650384/33074001  770884/3674889  88472836/297666009  841/5041
+  ---- M5 complex Clifford (Q(zeta_8))
+       declaration : gates in order: H_A H_B, CZ_{AB}, S_A CNOT_{B->C}, H_B; entries in (1/sqrt2)^k Z[i] subset Q(zeta_8), so |U_ij|^2 is rational at every partial product
+       note        : the genuinely complex model: the imaginary unit is an exact element zeta_8^2
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+  ---- M6 controlled-rotation entangler
+       declaration : U(t_k<-0) = (CR . R_A)^k with R_A = R(3/5,4/5) on A and CR = |0><0|_A tensor 1 + |1><1|_A tensor (R(5/13,12/13) tensor R(8/17,15/17)); rational orthogonal, non-Clifford, entangling
+       note        : entangles a product state; no tensor factorisation of the dynamics
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         9/25  0  0  0  16/25  0  0  0
+         0  9/25  0  0  0  16/25  0  0
+         0  0  9/25  0  0  0  16/25  0
+         0  0  0  9/25  0  0  0  16/25
+         1024/48841  3600/48841  147456/1221025  20736/48841  576/48841  2025/48841  82944/1221025  11664/48841
+         3600/48841  1024/48841  20736/48841  147456/1221025  2025/48841  576/48841  11664/48841  82944/1221025
+         147456/1221025  20736/48841  1024/48841  3600/48841  82944/1221025  11664/48841  576/48841  2025/48841
+         20736/48841  147456/1221025  3600/48841  1024/48841  11664/48841  82944/1221025  2025/48841  576/48841
+  ---- M7 SWAP scrambler
+       declaration : gates in order: SWAP_{AB}, SWAP_{AB}, H_A, CNOT_{A->C}; U(t_1<-0) is a permutation and U(t_2<-0) = 1
+       note        : the composite's transition matrix at t_1 is a permutation matrix, which [B3-permlemma] identifies as the only stochastic matrix with a stochastic inverse
+       Gamma(t_1<-0) (exact, rows = target config, columns = source config):
+         1  0  0  0  0  0  0  0
+         0  1  0  0  0  0  0  0
+         0  0  0  0  1  0  0  0
+         0  0  0  0  0  1  0  0
+         0  0  1  0  0  0  0  0
+         0  0  0  1  0  0  0  0
+         0  0  0  0  0  0  1  0
+         0  0  0  0  0  0  0  1
+
+==============================================================================
+SEC 5  THE SUBSYSTEM PROCESSES: both readings built, both restrictions verified transitive, and the mixture identity checked exactly   [t+0.9s]
+==============================================================================
+  [DATA] declared initial distributions (all strictly positive, all exact): p_unif: ['1/8', '1/8', '1/8', '1/8', '1/8', '1/8', '1/8', '1/8'], p_prod: ['1/30', '1/20', '1/15', '1/10', '1/10', '3/20', '1/5', '3/10'], p_corr: ['1/50', '1/15', '19/150', '13/50', '8/75', '23/150', '1/15', '1/5']
+  [DATA] factorisation of the declared p_0: p_unif: product=True; p_prod: product=True; p_corr: product=False
+  [PASS] FUN.1 THE MARGINAL RESTRICTION IS TRANSITIVE, so reading M really is a presheaf on the subsystem lattice: marginalising ABC to S' and then S' to S'' gives, entry for entry in exact rationals, the same process as marginalising ABC to S'' directly  (1440 nested (model, time, p_0, S' > S'') instances tested, 0 disagreements)
+  [PASS] FUN.2 THE CONDITIONAL RESTRICTION IS TRANSITIVE, so reading C is a presheaf too: conditioning ABC on S'-complement and then S' on the rest gives the same process as conditioning ABC on the whole S''-complement at once  (1680 nested (model, time, complement configuration) instances tested, 0 disagreements)
+  [PASS] FUN.3 THE TWO READINGS ARE RELATED EXACTLY AS DECLARED: reading M is the column-wise p_0-mixture of the reading-C processes, Gamma^M[u][v] = sum_c w_c(v) Gamma^{C,c}[u][v] with w_c(v) = p_0((v,c)) / sum_c' p_0((v,c')), verified entry for entry in exact rationals.  The two readings are therefore not independent inventions: one is a mixture of the other, which is exactly why their division-event sets may differ  (840 (model, time, p_0, S) instances tested, 0 mismatches)
+  [PASS] FUN.4 EVERY SUBSYSTEM PROCESS IS COLUMN-STOCHASTIC, exactly, under both readings and every declared p_0 -- so each is a legitimate process in [B3]'s sense before anything is asked of it  (0 non-stochastic subsystem processes)
+
+==============================================================================
+SEC 6  U3's UNISTOCHASTICITY CRITERION applied to the composite process and to every reduced process   [t+1.6s]
+==============================================================================
+
+  [B3-sqthm] says an indivisible stochastic process is a unistochastic
+  process, or ELSE a subsystem of one after a nontrivial dilation.  This
+  section measures which side of that disjunction the reduced processes of
+  the tested models fall on, using U3's committed criterion (anchored
+  above).  For the composite the answer is known by construction and the
+  unitary is EXHIBITED as the certificate; for the reduced processes it is
+  decided, not assumed.  At n = 2 the criterion is COMPLETE (KA-U3c: every
+  2x2 bistochastic matrix is orthostochastic); at n = 4 only the necessary
+  conditions are available, and a matrix passing them is reported as
+  EXCLUDED-BY-CAP, never as a pass.
+
+
+  ONE DECLARED COST CAP, AND WHAT IT CAN AND CANNOT HIDE.  U3's polygon
+  oracle needs the exact square-free part of numerator x denominator of each
+  chain-link square, which is a factorisation.  It is invoked here only when
+  that integer is at most 1000000000 OR is 1000-smooth (tested
+  by a bounded trial division, at most 500 steps).  Instances
+  above the cap are reported as EXCLUDED-BY-COST, counted, and never
+  reported as a pass in either direction.  THIS CAP TOUCHES NOTHING IN THE
+  DIVISION-EVENT CENSUS: that census is decided entirely in Fractions by
+  U1's LP, which has no factorisation anywhere.  At n = 2 the polygon oracle
+  is not invoked at all, because KA-U3c settles n = 2 outright -- every 2x2
+  bistochastic matrix is orthostochastic by a construction uniform in p,
+  verified in-receipt.
+
+
+  ---- M0 classical Markov product (control) :: Gamma_ABC(t_1<-0) --------
+       provenance : Gamma(t_k<-0) = (M_A tensor M_B tensor M_C)^k with the declared column-stochastic M_A, M_B, M_C; a textbook Markov chain, [B3]'s divisible special case, NOT a unistochastic process
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : classical Markov control, not built from a unitary
+       shape      : 8 x 8
+         2/5  3/25  1/4  3/40  8/45  4/75  1/9  1/30
+         1/5  12/25  1/8  3/10  4/45  16/75  1/18  2/15
+         1/10  3/100  1/4  3/40  2/45  1/75  1/9  1/30
+         1/20  3/25  1/8  3/10  1/45  4/75  1/18  2/15
+         2/15  1/25  1/12  1/40  16/45  8/75  2/9  1/15
+         1/15  4/25  1/24  1/10  8/45  32/75  1/9  4/15
+         1/30  1/100  1/12  1/40  4/45  2/75  2/9  1/15
+         1/60  1/25  1/24  1/10  2/45  8/75  1/9  4/15
+       row sums   : [2197/1800, 2873/1800, 1183/1800, 1547/1800, 1859/1800, 2431/1800, 1001/1800, 1309/1800]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       row deficit: [397/1800, 1073/1800, -617/1800, -253/1800, 59/1800, 631/1800, -799/1800, -491/1800]   sum|.| = 12/5
+       col deficit: [0, 0, 0, 0, 0, 0, 0, 0]   sum|.| = 0
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 12/5.
+
+  ---- M0 classical Markov product (control) :: Gamma_ABC(t_2<-0) --------
+       provenance : Gamma(t_k<-0) = (M_A tensor M_B tensor M_C)^k with the declared column-stochastic M_A, M_B, M_C; a textbook Markov chain, [B3]'s divisible special case, NOT a unistochastic process
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : classical Markov control, not built from a unitary
+       shape      : 8 x 8
+         26381/108000  12617/90000  9269/43200  4433/36000  14467/81000  6919/67500  5083/32400  2431/27000
+         12617/54000  60791/180000  4433/21600  21359/72000  6919/40500  33337/135000  2431/16200  11713/54000
+         9269/108000  4433/90000  4991/43200  2387/36000  5083/81000  2431/67500  2737/32400  1309/27000
+         4433/54000  21359/180000  2387/21600  11501/72000  2431/40500  11713/135000  1309/16200  6307/54000
+         14467/108000  6919/90000  5083/43200  2431/36000  16169/81000  7733/67500  5681/32400  2717/27000
+         6919/54000  33337/180000  2431/21600  11713/72000  7733/40500  37259/135000  2717/16200  13091/54000
+         5083/108000  2431/90000  2737/43200  1309/36000  5681/81000  2717/67500  3059/32400  1463/27000
+         2431/54000  11713/180000  1309/21600  6307/72000  2717/40500  13091/135000  1463/16200  7049/54000
+       row sums   : [4050599/3240000, 6019951/3240000, 1777601/3240000, 2641849/3240000, 3195193/3240000, 4748657/3240000, 1402207/3240000, 2083943/3240000]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       row deficit: [810599/3240000, 2779951/3240000, -1462399/3240000, -598151/3240000, -44807/3240000, 1508657/3240000, -1837793/3240000, -1156057/3240000]   sum|.| = 5099207/1620000
+       col deficit: [0, 0, 0, 0, 0, 0, 0, 0]   sum|.| = 0
+       VERDICT    : S-FAIL-DS.  Unistochastic implies doubly stochastic
+                    (a unitary has orthonormal rows AND columns), so the
+                    object is NOT unistochastic, exactly.
+       PRICE      : for EVERY doubly-stochastic D, ||M - D||_1 >= max(sum_i |r_i - 1|, sum_j |c_j - 1|) = 5099207/1620000.
+  [PROG] U3 screen done: M0 classical Markov product (control)  [t+1.7s]
+
+  ---- M1 product/separable (quantum) :: Gamma_ABC(t_1<-0) ---------------
+       provenance : U(t_k<-0) = (R(3/5,4/5) tensor R(5/13,12/13) tensor R(8/17,15/17))^k, exact Pythagorean rotations in Q
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         576/48841  2025/48841  82944/1221025  11664/48841  1024/48841  3600/48841  147456/1221025  20736/48841
+         2025/48841  576/48841  11664/48841  82944/1221025  3600/48841  1024/48841  20736/48841  147456/1221025
+         82944/1221025  11664/48841  576/48841  2025/48841  147456/1221025  20736/48841  1024/48841  3600/48841
+         11664/48841  82944/1221025  2025/48841  576/48841  20736/48841  147456/1221025  3600/48841  1024/48841
+         1024/48841  3600/48841  147456/1221025  20736/48841  576/48841  2025/48841  82944/1221025  11664/48841
+         3600/48841  1024/48841  20736/48841  147456/1221025  2025/48841  576/48841  11664/48841  82944/1221025
+         147456/1221025  20736/48841  1024/48841  3600/48841  82944/1221025  11664/48841  576/48841  2025/48841
+         20736/48841  147456/1221025  3600/48841  1024/48841  11664/48841  82944/1221025  2025/48841  576/48841
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+  ---- M1 product/separable (quantum) :: Gamma_ABC(t_2<-0) ---------------
+       provenance : U(t_k<-0) = (R(3/5,4/5) tensor R(5/13,12/13) tensor R(8/17,15/17))^k, exact Pythagorean rotations in Q
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         62236321/5158830625  5531904/206353225  731594304/59636082025  65028096/2385443281  731594304/5158830625  65028096/206353225  8599965696/59636082025  764411904/2385443281
+         5531904/206353225  62236321/5158830625  65028096/2385443281  731594304/59636082025  65028096/206353225  731594304/5158830625  764411904/2385443281  8599965696/59636082025
+         731594304/59636082025  65028096/2385443281  62236321/5158830625  5531904/206353225  8599965696/59636082025  764411904/2385443281  731594304/5158830625  65028096/206353225
+         65028096/2385443281  731594304/59636082025  5531904/206353225  62236321/5158830625  764411904/2385443281  8599965696/59636082025  65028096/206353225  731594304/5158830625
+         731594304/5158830625  65028096/206353225  8599965696/59636082025  764411904/2385443281  62236321/5158830625  5531904/206353225  731594304/59636082025  65028096/2385443281
+         65028096/206353225  731594304/5158830625  764411904/2385443281  8599965696/59636082025  5531904/206353225  62236321/5158830625  65028096/2385443281  731594304/59636082025
+         8599965696/59636082025  764411904/2385443281  731594304/5158830625  65028096/206353225  731594304/59636082025  65028096/2385443281  62236321/5158830625  5531904/206353225
+         764411904/2385443281  8599965696/59636082025  65028096/206353225  731594304/5158830625  65028096/2385443281  731594304/59636082025  5531904/206353225  62236321/5158830625
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+  [PROG] U3 screen done: M1 product/separable (quantum)  [t+2.0s]
+
+  ---- M2 GHZ-generating (real Clifford) :: Gamma_ABC(t_1<-0) ------------
+       provenance : gates in order: H_A, CNOT_{A->B}, CNOT_{A->C}, H_B; U(t_k<-0) = G_k...G_1, entries in Q(sqrt 2)
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         1/2  0  0  0  1/2  0  0  0
+         0  1/2  0  0  0  1/2  0  0
+         0  0  1/2  0  0  0  1/2  0
+         0  0  0  1/2  0  0  0  1/2
+         1/2  0  0  0  1/2  0  0  0
+         0  1/2  0  0  0  1/2  0  0
+         0  0  1/2  0  0  0  1/2  0
+         0  0  0  1/2  0  0  0  1/2
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+  ---- M2 GHZ-generating (real Clifford) :: Gamma_ABC(t_2<-0) ------------
+       provenance : gates in order: H_A, CNOT_{A->B}, CNOT_{A->C}, H_B; U(t_k<-0) = G_k...G_1, entries in Q(sqrt 2)
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         1/2  0  0  0  1/2  0  0  0
+         0  1/2  0  0  0  1/2  0  0
+         0  0  1/2  0  0  0  1/2  0
+         0  0  0  1/2  0  0  0  1/2
+         0  0  1/2  0  0  0  1/2  0
+         0  0  0  1/2  0  0  0  1/2
+         1/2  0  0  0  1/2  0  0  0
+         0  1/2  0  0  0  1/2  0  0
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+  [PROG] U3 screen done: M2 GHZ-generating (real Clifford)  [t+2.1s]
+
+  ---- M3 W-generating (rational orthogonal) :: Gamma_ABC(t_1<-0) --------
+       provenance : U(t_k<-0) = W^k with W the declared rational orthogonal matrix whose first column is the W-class state (2/3)|100> + (2/3)|010> + (1/3)|001>
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         0  0  0  0  1  0  0  0
+         1/9  4/9  4/9  0  0  0  0  0
+         4/9  4/9  1/9  0  0  0  0  0
+         0  0  0  1/9  0  0  4/9  4/9
+         4/9  1/9  4/9  0  0  0  0  0
+         0  0  0  4/9  0  0  4/9  1/9
+         0  0  0  0  0  1  0  0
+         0  0  0  4/9  0  0  1/9  4/9
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+  ---- M3 W-generating (rational orthogonal) :: Gamma_ABC(t_2<-0) --------
+       provenance : U(t_k<-0) = W^k with W the declared rational orthogonal matrix whose first column is the W-class state (2/3)|100> + (2/3)|010> + (1/3)|001>
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         4/9  1/9  4/9  0  0  0  0  0
+         4/9  0  4/9  0  1/9  0  0  0
+         0  4/9  1/9  0  4/9  0  0  0
+         0  0  0  1/9  0  4/9  0  4/9
+         1/9  4/9  0  0  4/9  0  0  0
+         0  0  0  0  0  4/9  1/9  4/9
+         0  0  0  4/9  0  0  4/9  1/9
+         0  0  0  4/9  0  1/9  4/9  0
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+  [PROG] U3 screen done: M3 W-generating (rational orthogonal)  [t+2.1s]
+  [PROG] U3 screen done: M4 algebraic generic (Cayley rational orthogonal)  [t+2.1s]
+
+  ---- M5 complex Clifford (Q(zeta_8)) :: Gamma_ABC(t_1<-0) --------------
+       provenance : gates in order: H_A H_B, CZ_{AB}, S_A CNOT_{B->C}, H_B; entries in (1/sqrt2)^k Z[i] subset Q(zeta_8), so |U_ij|^2 is rational at every partial product
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: UNISTOCHASTIC (a complex unitary certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+  ---- M5 complex Clifford (Q(zeta_8)) :: Gamma_ABC(t_2<-0) --------------
+       provenance : gates in order: H_A H_B, CZ_{AB}, S_A CNOT_{B->C}, H_B; entries in (1/sqrt2)^k Z[i] subset Q(zeta_8), so |U_ij|^2 is rational at every partial product
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+         1/4  0  1/4  0  1/4  0  1/4  0
+         0  1/4  0  1/4  0  1/4  0  1/4
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: UNISTOCHASTIC (a complex unitary certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+  [PROG] U3 screen done: M5 complex Clifford (Q(zeta_8))  [t+2.8s]
+
+  ---- M6 controlled-rotation entangler :: Gamma_ABC(t_1<-0) -------------
+       provenance : U(t_k<-0) = (CR . R_A)^k with R_A = R(3/5,4/5) on A and CR = |0><0|_A tensor 1 + |1><1|_A tensor (R(5/13,12/13) tensor R(8/17,15/17)); rational orthogonal, non-Clifford, entangling
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         9/25  0  0  0  16/25  0  0  0
+         0  9/25  0  0  0  16/25  0  0
+         0  0  9/25  0  0  0  16/25  0
+         0  0  0  9/25  0  0  0  16/25
+         1024/48841  3600/48841  147456/1221025  20736/48841  576/48841  2025/48841  82944/1221025  11664/48841
+         3600/48841  1024/48841  20736/48841  147456/1221025  2025/48841  576/48841  11664/48841  82944/1221025
+         147456/1221025  20736/48841  1024/48841  3600/48841  82944/1221025  11664/48841  576/48841  2025/48841
+         20736/48841  147456/1221025  3600/48841  1024/48841  11664/48841  82944/1221025  2025/48841  576/48841
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+  [PROG] U3 screen done: M6 controlled-rotation entangler  [t+2.9s]
+
+  ---- M7 SWAP scrambler :: Gamma_ABC(t_1<-0) ----------------------------
+       provenance : gates in order: SWAP_{AB}, SWAP_{AB}, H_A, CNOT_{A->C}; U(t_1<-0) is a permutation and U(t_2<-0) = 1
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         1  0  0  0  0  0  0  0
+         0  1  0  0  0  0  0  0
+         0  0  0  0  1  0  0  0
+         0  0  0  0  0  1  0  0
+         0  0  1  0  0  0  0  0
+         0  0  0  1  0  0  0  0
+         0  0  0  0  0  0  1  0
+         0  0  0  0  0  0  0  1
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+
+  ---- M7 SWAP scrambler :: Gamma_ABC(t_2<-0) ----------------------------
+       provenance : gates in order: SWAP_{AB}, SWAP_{AB}, H_A, CNOT_{A->C}; U(t_1<-0) is a permutation and U(t_2<-0) = 1
+       reading    : the composite process itself (reading M and reading C coincide: the complement is empty)
+       note       : certificate = the model's own U(t<-0)
+       shape      : 8 x 8
+         1  0  0  0  0  0  0  0
+         0  1  0  0  0  0  0  0
+         0  0  1  0  0  0  0  0
+         0  0  0  1  0  0  0  0
+         0  0  0  0  1  0  0  0
+         0  0  0  0  0  1  0  0
+         0  0  0  0  0  0  1  0
+         0  0  0  0  0  0  0  1
+       row sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       col sums   : [1, 1, 1, 1, 1, 1, 1, 1]
+       DS         : PASSES — rows and columns both sum to exactly 1, entries >= 0.
+       polygon    : 0 violation(s) over 56 column/row pairs
+       certificate: ORTHOSTOCHASTIC (a REAL orthogonal certificate)
+                    U^dagger U - I : 0 non-zero entries
+                    |U_ij|^2 - M_ij: 0 mismatches
+       VERDICT    : S-PASS.  The matrix IS unistochastic, and the
+                    unitary is exhibited above in exact algebraic arithmetic.
+  [PROG] U3 screen done: M7 SWAP scrambler  [t+2.9s]
+
+  [DATA] U3 SCREEN TALLY over every (model, grid time, subsystem, reading) instance: {"('ABC', 'EXCLUDED-BY-COST')": 7, "('ABC', 'S-FAIL-DS')": 2, "('ABC', 'S-PASS(certificate)')": 10, "('ABC-verbose', 'S-FAIL-DS')": 2, "('ABC-verbose', 'S-PASS')": 11, "('n=2 readingC', 'S-FAIL-DS')": 138, "('n=2 readingC', 'S-PASS(ortho, n=2 by KA-U3c)')": 246, "('n=2 readingM', 'S-FAIL-DS')": 96, "('n=2 readingM', 'S-PASS(ortho, n=2 by KA-U3c)')": 192, "('n=4 readingC', 'EXCLUDED-BY-CAP')": 96, "('n=4 readingC', 'EXCLUDED-BY-COST')": 20, "('n=4 readingC', 'S-FAIL-DS')": 76, "('n=4 readingM', 'EXCLUDED-BY-CAP')": 146, "('n=4 readingM', 'EXCLUDED-BY-COST')": 38, "('n=4 readingM', 'S-FAIL-DS')": 92, "('n=4 readingM', 'S-FAIL-UNI')": 12}
+  [DATA] composite Gamma_ABC verdicts (32 = 8 models x 4 grid times): {'EXCLUDED-BY-COST': 7, 'S-FAIL-DS': 4, 'S-PASS': 11, 'S-PASS(certificate)': 10}
+  [DATA] reduced-process verdicts, counted exactly: 1152 instances: 402 S-FAIL-DS (not doubly stochastic, so not unistochastic), 12 S-FAIL-UNI (doubly stochastic but the polygon obstruction fires), 438 certified orthostochastic (all n = 2, by KA-U3c), 300 excluded by the declared caps and reported as neither
+  [PASS] UNI.1 A REDUCED PROCESS IS OFTEN NOT ITSELF UNISTOCHASTIC, and the census says so exactly rather than by appeal: 402 of 1152 reduced instances are column-stochastic but NOT doubly stochastic, and unistochastic implies doubly stochastic, while a further 12 are doubly stochastic and still fail the polygon obstruction.  This is [B3-sqthm]'s second disjunct made concrete at these dimensions: the subsystem of a unistochastic process is an indivisible stochastic process that is NOT itself unistochastic, and would need a dilation.  The composite, by contrast, is certified unistochastic wherever the cost cap allows, with the model's own unitary exhibited as the certificate  (reduced S-FAIL-DS 402, S-FAIL-UNI 12, certified 438, excluded 300, of 1152)
+
+==============================================================================
+SEC 7  THE DIVISION-EVENT CENSUS: DIV_S(t_k) for every model, reading, subsystem and grid time   [t+2.9s]
+==============================================================================
+  [DATA] declared readings (each defined on all seven subsystems): ['M:p_unif', 'M:p_prod', 'M:p_corr', 'C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111']
+  [PROG] census done: M0 classical Markov product (control)  (0.1s, 70 decisions so far, t+3.0s)
+  [PROG] census done: M1 product/separable (quantum)  (0.2s, 140 decisions so far, t+3.2s)
+  [PROG] census done: M2 GHZ-generating (real Clifford)  (0.0s, 165 decisions so far, t+3.2s)
+  [PROG] census done: M3 W-generating (rational orthogonal)  (0.5s, 463 decisions so far, t+3.7s)
+  [PROG] census done: M4 algebraic generic (Cayley rational orthogonal)  (0.3s, 833 decisions so far, t+4.1s)
+  [PROG] census done: M5 complex Clifford (Q(zeta_8))  (0.0s, 841 decisions so far, t+4.1s)
+  [PROG] census done: M6 controlled-rotation entangler  (0.2s, 1030 decisions so far, t+4.3s)
+  [PROG] census done: M7 SWAP scrambler  (0.0s, 1082 decisions so far, t+4.4s)
+  [DATA] (D1) queries posed across the whole census: 6160
+  [DATA] DISTINCT (Gamma_S(t_k<-0), Gamma_S(t_b<-0)) pairs actually decided (the cache is exact, keyed on the two matrices entry by entry): 1082
+  [DATA] exact Phase-I simplex invocations inside those decisions: 124
+  [DATA] VERDICT TALLY over the distinct decisions: {'DIVISIBLE': 637, 'INDIVISIBLE': 445}
+  [DATA] INSTRUMENT TALLY (which arm of U1's cascade returned the verdict): {'eq22-algebraic': 587, 'row-certificate (Farkas, verified)': 36, 'shortcut/CK': 459}
+  [DATA] full-LP (decide_triple step 4) invocations: 0
+         ^ the cascade resolved every decision at the candidate, [B3] eq. 22 or
+           row-certificate stage; the row-certificate stage IS the exact
+           simplex, run once per target configuration, so the LP machinery
+           is exercised throughout even though step 4 never had to fire.
+  [PASS] CEN.1 [B3] eq. 22 AND THE LP AGREE ON EVERY DECISION WHERE eq. 22 APPLIES: wherever Gamma_S(t_k<-0) is square and invertible the algebraic interpolant Gammabar = Gamma_S(t_b<-0) Gamma_S(t_k<-0)^{-1} is the UNIQUE candidate bridge, and 'Gammabar has no negative entry' agrees with the feasibility verdict in every single case  (1017 of 1082 distinct pairs have an invertible source; 0 disagreements)
+  [PASS] CEN.2 EVERY LP INFEASIBILITY CARRIES A FARKAS CERTIFICATE THAT VERIFIES INDEPENDENTLY (w^T M <= 0 on every column, w^T b > 0), so no negative verdict rests on the simplex's word  (36 of 36 certificate-bearing infeasibilities verified)
+  [PASS] CEN.3 NO DECISION IS EXCLUDED BY A CAP AND NONE IS STRUCTURALLY VACUOUS: every subsystem carries at least two configurations and every LP is orders of magnitude inside U1's declared caps, so the census is complete as posed  (excluded-by-cap 0, vacuous 0)
+
+  THE DIVISION-EVENT SETS DIV_S, model by model.  A grid index k
+  appears exactly when EVERY spanning target t_b >= t_k admits a
+  column-stochastic bridge.  Index 0 is present by construction
+  ([B3-divdef]).  Both readings are printed; reading C is printed
+  once per complement configuration.
+
+  ---- M0 classical Markov product (control)
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       M:p_prod     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       M:p_corr     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:000        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:001        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:010        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:011        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:100        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:101        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:110        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:111        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+
+  ---- M1 product/separable (quantum)
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif      {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       M:p_prod      {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       M:p_corr      {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:000         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:001         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:010         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:011         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:100         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:101         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:110         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:111         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+
+  ---- M2 GHZ-generating (real Clifford)
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       M:p_prod     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       M:p_corr     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:000        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:001        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:010        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:011        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:100        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:101        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:110        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+       C:111        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,1,3,4}{0,1,2,3,4}
+
+  ---- M3 W-generating (rational orthogonal)
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif        {0,3,4}   {0,3,4} {0,1,2,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       M:p_prod        {0,3,4}     {0,4}   {0,2,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       M:p_corr        {0,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:000             {0,4}   {0,3,4}   {0,2,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:001           {0,1,4}   {0,3,4}   {0,2,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:010         {0,2,3,4}   {0,3,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:011           {0,3,4}   {0,3,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:100             {0,4}     {0,4}   {0,2,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:101           {0,1,4}     {0,4}   {0,2,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:110         {0,2,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+       C:111           {0,3,4}     {0,4}   {0,3,4}     {0,4}   {0,3,4}     {0,4}     {0,4}
+
+  ---- M4 algebraic generic (Cayley rational orthogonal)
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif          {0,4}   {0,1,4}   {0,1,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       M:p_prod        {0,1,4}     {0,4}   {0,1,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       M:p_corr          {0,4} {0,1,2,4}   {0,1,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:000             {0,4} {0,2,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:001           {0,2,4} {0,2,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:010           {0,1,4} {0,2,3,4} {0,1,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:011           {0,3,4} {0,2,3,4} {0,1,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:100             {0,4}     {0,4}   {0,1,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:101           {0,2,4}   {0,3,4}   {0,1,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:110           {0,1,4}     {0,4}     {0,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:111           {0,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}     {0,4}
+
+  ---- M5 complex Clifford (Q(zeta_8))
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       M:p_prod     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       M:p_corr     {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:000        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:001        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:010        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:011        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:100        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:101        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:110        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+       C:111        {0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}{0,1,2,3,4}
+
+  ---- M6 controlled-rotation entangler
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif        {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       M:p_prod        {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       M:p_corr        {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:000           {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}   {0,3,4}     {0,4}
+       C:001           {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}   {0,3,4}     {0,4}
+       C:010           {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}   {0,3,4}     {0,4}
+       C:011           {0,3,4}   {0,3,4}   {0,3,4}     {0,4}     {0,4}   {0,3,4}     {0,4}
+       C:100           {0,3,4} {0,1,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:101           {0,3,4} {0,1,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:110           {0,3,4} {0,1,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+       C:111           {0,3,4} {0,1,3,4}   {0,3,4}     {0,4}     {0,4}     {0,4}     {0,4}
+
+  ---- M7 SWAP scrambler
+       reading               A         B         C        AB        AC        BC       ABC
+       M:p_unif      {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       M:p_prod      {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       M:p_corr      {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:000         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:001         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:010         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:011         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:100         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:101         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:110         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+       C:111         {0,2,3,4} {0,2,3,4}{0,1,2,3,4}{0,1,2,3,4} {0,2,3,4} {0,2,3,4}{0,1,2,3,4}
+
+  THE TWO READINGS, COMPARED DIRECTLY.  For each (model, subsystem,
+  grid index) the marginal readings and the conditional readings are
+  compared: do they agree on whether the time is a division event?
+  [DATA] READING COMPARISON over every (model, subsystem, grid index): {"('C internally uniform over c*', False)": 16, "('C internally uniform over c*', True)": 264, "('M and C agree', False)": 18, "('M and C agree', True)": 262, "('M internally uniform over p_0', False)": 6, "('M internally uniform over p_0', True)": 274}
+  [DATA] slices where the readings do NOT all agree: 18
+       M3 | A | t_1: marginal readings give [False], conditional readings give [False, True]
+       M3 | A | t_2: marginal readings give [False], conditional readings give [False, True]
+       M3 | A | t_3: marginal readings give [True], conditional readings give [False, True]
+       M3 | B | t_3: marginal readings give [False, True], conditional readings give [False, True]
+       M3 | C | t_1: marginal readings give [False, True], conditional readings give [False]
+       M3 | C | t_2: marginal readings give [False, True], conditional readings give [False, True]
+       M3 | C | t_3: marginal readings give [False], conditional readings give [False, True]
+       M3 | AC | t_3: marginal readings give [False], conditional readings give [False, True]
+       M4 | A | t_1: marginal readings give [False, True], conditional readings give [False, True]
+       M4 | A | t_2: marginal readings give [False], conditional readings give [False, True]
+       M4 | A | t_3: marginal readings give [False], conditional readings give [False, True]
+       M4 | B | t_1: marginal readings give [False, True], conditional readings give [False]
+       ... (+6 more, all counted)
+  [PASS] CEN.3b THE TWO READINGS ARE NOT THE SAME CENSUS, and the receipt does not silently merge them: there are slices on which the marginal and conditional readings of the SAME subsystem at the SAME time disagree about whether it is a division event, and there are slices on which the conditional reading depends on WHICH outcome the complement is conditioned on.  Both are reported separately throughout  (18 disagreeing slices of 280)
+  [PASS] CEN.4 (GS0) INITIALITY HOLDS EVERYWHERE, as [B3-divdef] requires: the initial time is a division event for every subsystem, under every reading, in every model  (616 (model, reading, subsystem) triples, all containing index 0)
+
+==============================================================================
+SEC 8  THE CONTAINMENT TABLE: every nested pair, both directions, every model and every reading   [t+4.4s]
+==============================================================================
+  [DATA] nested pairs in the lattice (S' strictly contains S''): AB>A, AB>B, AC>A, AC>C, BC>B, BC>C, ABC>A, ABC>B, ABC>C, ABC>AB, ABC>AC, ABC>BC
+  [DATA] CONTAINMENT TALLY over every (model, reading, nested pair) INSTANCE: {"('down(GS1)', False)": 77, "('down(GS1)', True)": 979, "('up', False)": 350, "('up', True)": 706}
+  [DATA] DOWNWARD containment DIV_{S'} subset DIV_{S''} (GS1): failing TIME-WITNESSES (model, reading, pair, grid index): 77
+  [DATA] UPWARD containment DIV_{S''} subset DIV_{S'}: failing TIME-WITNESSES: 412
+  [DATA] DOWNWARD (GS1) failures, DISTINCT (model, nested pair, grid index) -- readings collapsed: 7
+  [DATA] UPWARD failures, DISTINCT (model, nested pair, grid index): 70
+
+  THE CONTAINMENT TABLE, model by model, printed BOTH WAYS.  'd' =
+  the downward containment DIV_{S'} subset DIV_{S''} holds; 'u' = the
+  upward one holds; 'du' = both; '--' = neither.  The downward entry
+  is axiom GS1; the upward entry is not an axiom and is reported for
+  symmetry.
+
+  ---- M0 classical Markov product (control)
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif            du       du       du       du       du       du       du       du       du       du       du       du
+       M:p_prod            du       du       du       du       du       du       du       du       du       du       du       du
+       M:p_corr            du       du       du       du       du       du       du       du       du       du       du       du
+       C:000               du       du       du       du       du       du       du       du       du       du       du       du
+       C:001               du       du       du       du       du       du       du       du       du       du       du       du
+       C:010               du       du       du       du       du       du       du       du       du       du       du       du
+       C:011               du       du       du       du       du       du       du       du       du       du       du       du
+       C:100               du       du       du       du       du       du       du       du       du       du       du       du
+       C:101               du       du       du       du       du       du       du       du       du       du       du       du
+       C:110               du       du       du       du       du       du       du       du       du       du       du       du
+       C:111               du       du       du       du       du       du       du       du       du       du       du       du
+
+  ---- M1 product/separable (quantum)
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif             d       du        d       du       du        d        d       du        d       du        d       du
+       M:p_prod             d       du        d       du       du        d        d       du        d       du        d       du
+       M:p_corr             d       du        d       du       du        d        d       du        d       du        d       du
+       C:000                d       du        d       du       du        d        d       du        d       du        d       du
+       C:001                d       du        d       du       du        d        d       du        d       du        d       du
+       C:010                d       du        d       du       du        d        d       du        d       du        d       du
+       C:011                d       du        d       du       du        d        d       du        d       du        d       du
+       C:100                d       du        d       du       du        d        d       du        d       du        d       du
+       C:101                d       du        d       du       du        d        d       du        d       du        d       du
+       C:110                d       du        d       du       du        d        d       du        d       du        d       du
+       C:111                d       du        d       du       du        d        d       du        d       du        d       du
+
+  ---- M2 GHZ-generating (real Clifford)
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif            du       du       du       du        d        d       du       du       du       du       du        u
+       M:p_prod            du       du       du       du        d        d       du       du       du       du       du        u
+       M:p_corr            du       du       du       du        d        d       du       du       du       du       du        u
+       C:000               du       du       du       du        d        d       du       du       du       du       du        u
+       C:001               du       du       du       du        d        d       du       du       du       du       du        u
+       C:010               du       du       du       du        d        d       du       du       du       du       du        u
+       C:011               du       du       du       du        d        d       du       du       du       du       du        u
+       C:100               du       du       du       du        d        d       du       du       du       du       du        u
+       C:101               du       du       du       du        d        d       du       du       du       du       du        u
+       C:110               du       du       du       du        d        d       du       du       du       du       du        u
+       C:111               du       du       du       du        d        d       du       du       du       du       du        u
+
+  ---- M3 W-generating (rational orthogonal)
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif             d        d        d        d        d        d        d        d        d       du       du       du
+       M:p_prod             d       du        d        d       du        d        d       du        d       du       du       du
+       M:p_corr             d        d        d       du        d       du        d        d       du       du       du       du
+       C:000               du        d       du        d        d        d       du        d        d       du       du       du
+       C:001                d        d        d        d        d        d        d        d        d       du       du       du
+       C:010                d        d        d       du        d        d        d        d        d       du        d       du
+       C:011                d        d       du       du        d        d        d        d        d       du        d       du
+       C:100               du       du       du        d       du        d       du       du        d       du       du       du
+       C:101                d       du        d        d       du        d        d       du        d       du       du       du
+       C:110                d       du        d       du       du        d        d       du        d       du        d       du
+       C:111                d       du       du       du       du        d        d       du        d       du        d       du
+
+  ---- M4 algebraic generic (Cayley rational orthogonal)
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif            du        d       du        d        d        d       du        d        d       du       du       du
+       M:p_prod             d       du        d        d       du        d        d       du        d       du       du       du
+       M:p_corr            du        d       du        d        d        d       du        d        d       du       du       du
+       C:000               du        d       du        d        d        d       du        d        d       du       du       du
+       C:001                d        d        d        d        d        d        d        d        d       du       du       du
+       C:010                d        d        d        d        d        d        d        d        d       du       du       du
+       C:011                d        d        d        d        d        d        d        d        d       du       du       du
+       C:100               du       du       du        d       du        d       du       du        d       du       du       du
+       C:101                d        d        d        d        d        d        d        d        d       du       du       du
+       C:110                d       du        d       du       du       du        d       du       du       du       du       du
+       C:111                d        d        d       du        d       du        d        d       du       du       du       du
+
+  ---- M5 complex Clifford (Q(zeta_8))
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif            du       du       du       du       du       du       du       du       du       du       du       du
+       M:p_prod            du       du       du       du       du       du       du       du       du       du       du       du
+       M:p_corr            du       du       du       du       du       du       du       du       du       du       du       du
+       C:000               du       du       du       du       du       du       du       du       du       du       du       du
+       C:001               du       du       du       du       du       du       du       du       du       du       du       du
+       C:010               du       du       du       du       du       du       du       du       du       du       du       du
+       C:011               du       du       du       du       du       du       du       du       du       du       du       du
+       C:100               du       du       du       du       du       du       du       du       du       du       du       du
+       C:101               du       du       du       du       du       du       du       du       du       du       du       du
+       C:110               du       du       du       du       du       du       du       du       du       du       du       du
+       C:111               du       du       du       du       du       du       du       du       du       du       du       du
+
+  ---- M6 controlled-rotation entangler
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif             d        d        d        d        d        d        d        d        d       du       du       du
+       M:p_prod             d        d        d        d        d        d        d        d        d       du       du       du
+       M:p_corr             d        d        d        d        d        d        d        d        d       du       du       du
+       C:000                d        d        d        d       du       du        d        d        d       du       du        d
+       C:001                d        d        d        d       du       du        d        d        d       du       du        d
+       C:010                d        d        d        d       du       du        d        d        d       du       du        d
+       C:011                d        d        d        d       du       du        d        d        d       du       du        d
+       C:100                d        d        d        d        d        d        d        d        d       du       du       du
+       C:101                d        d        d        d        d        d        d        d        d       du       du       du
+       C:110                d        d        d        d        d        d        d        d        d       du       du       du
+       C:111                d        d        d        d        d        d        d        d        d       du       du       du
+
+  ---- M7 SWAP scrambler
+       reading           AB>A     AB>B     AC>A     AC>C     BC>B     BC>C    ABC>A    ABC>B    ABC>C   ABC>AB   ABC>AC   ABC>BC
+       M:p_unif             u        u       du        d       du        d        u        u       du       du        u        u
+       M:p_prod             u        u       du        d       du        d        u        u       du       du        u        u
+       M:p_corr             u        u       du        d       du        d        u        u       du       du        u        u
+       C:000                u        u       du        d       du        d        u        u       du       du        u        u
+       C:001                u        u       du        d       du        d        u        u       du       du        u        u
+       C:010                u        u       du        d       du        d        u        u       du       du        u        u
+       C:011                u        u       du        d       du        d        u        u       du       du        u        u
+       C:100                u        u       du        d       du        d        u        u       du       du        u        u
+       C:101                u        u       du        d       du        d        u        u       du       du        u        u
+       C:110                u        u       du        d       du        d        u        u       du       du        u        u
+       C:111                u        u       du        d       du        d        u        u       du       du        u        u
+
+  THE CONTAINMENT THE PIN NAMES: is DIV_ABC subset DIV_A /\ DIV_B /\ DIV_C?
+  [DATA] the pin's containment, both ways: {"('A/\\\\B/\\\\C subset ABC', False)": 14, "('A/\\\\B/\\\\C subset ABC', True)": 74, "('ABC subset A/\\\\B/\\\\C', False)": 11, "('ABC subset A/\\\\B/\\\\C', True)": 77}
+  [DATA] instances where DIV_ABC is NOT contained in DIV_A /\ DIV_B /\ DIV_C: 11
+       M7 SWAP scrambler | reading M:p_unif | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading M:p_prod | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading M:p_corr | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:000 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:001 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:010 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:011 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:100 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:101 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:110 | t_1 is a division event for ABC but NOT for ['A', 'B']
+       M7 SWAP scrambler | reading C:111 | t_1 is a division event for ABC but NOT for ['A', 'B']
+
+  EXACT WITNESSES FOR THE DOWNWARD (GS1) CROSSINGS.  Each shows a grid
+  time that IS a division event for a composite and is NOT one for a
+  subsystem of it, with the bridge exhibited on one side and a
+  verified Farkas certificate on the other.  Witnesses are printed once
+  per DISTINCT (model, nested pair, grid index); the readings that
+  reproduce each one are listed with it.
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M2 GHZ-generating (real Clifford) | reading C:000 | t_2: ABC divides, BC does not
+      DIV_ABC = {0,1,2,3,4}   DIV_BC = {0,1,3,4}
+      the obstructed spanning pair on BC: (t_2 -> t_3), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_BC(t_2<-0) = [['1/2', '0', '1/2', '0'], ['0', '1/2', '0', '1/2'], ['1/2', '0', '1/2', '0'], ['0', '1/2', '0', '1/2']]
+      Gamma_BC(t_3<-0) = [['1/2', '0', '0', '1/2'], ['0', '1/2', '1/2', '0'], ['0', '1/2', '1/2', '0'], ['1/2', '0', '0', '1/2']]
+          FARKAS, row certificate: 4 obstructed targets; exemplar w over the 4 first-cut configurations, w^T b = 1 > 0: 4 non-zero of 4; sum = 0; entries [0:1, 1:-1, 2:-1, 3:1]
+          all obstructed w^T b: ['1', '1', '1', '1']
+      and on ABC every spanning pair from t_2 has a column-stochastic bridge:
+        (t_2 -> t_3): DIVISIBLE via the CK shortcut
+        (t_2 -> t_4): DIVISIBLE via the CK shortcut
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M7 SWAP scrambler | reading C:000 | t_1: AB divides, A does not
+      DIV_AB = {0,1,2,3,4}   DIV_A = {0,2,3,4}
+      the obstructed spanning pair on A: (t_1 -> t_2), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_A(t_1<-0) = [['1', '1'], ['0', '0']]
+      Gamma_A(t_2<-0) = [['1', '0'], ['0', '1']]
+          FARKAS, row certificate: 2 obstructed targets; exemplar w over the 2 first-cut configurations, w^T b = 1 > 0: 2 non-zero of 2; sum = 0; entries [0:1, 1:-1]
+          all obstructed w^T b: ['1', '1']
+      and on AB every spanning pair from t_1 has a column-stochastic bridge:
+        (t_1 -> t_2): DIVISIBLE via the CK shortcut
+        (t_1 -> t_3): DIVISIBLE via the CK shortcut
+        (t_1 -> t_4): DIVISIBLE via the CK shortcut
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M7 SWAP scrambler | reading C:000 | t_1: AB divides, B does not
+      DIV_AB = {0,1,2,3,4}   DIV_B = {0,2,3,4}
+      the obstructed spanning pair on B: (t_1 -> t_2), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_B(t_1<-0) = [['1', '1'], ['0', '0']]
+      Gamma_B(t_2<-0) = [['1', '0'], ['0', '1']]
+          FARKAS, row certificate: 2 obstructed targets; exemplar w over the 2 first-cut configurations, w^T b = 1 > 0: 2 non-zero of 2; sum = 0; entries [0:1, 1:-1]
+          all obstructed w^T b: ['1', '1']
+      and on AB every spanning pair from t_1 has a column-stochastic bridge:
+        (t_1 -> t_2): DIVISIBLE via the CK shortcut
+        (t_1 -> t_3): DIVISIBLE via the CK shortcut
+        (t_1 -> t_4): DIVISIBLE via the CK shortcut
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M7 SWAP scrambler | reading C:000 | t_1: ABC divides, A does not
+      DIV_ABC = {0,1,2,3,4}   DIV_A = {0,2,3,4}
+      the obstructed spanning pair on A: (t_1 -> t_2), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_A(t_1<-0) = [['1', '1'], ['0', '0']]
+      Gamma_A(t_2<-0) = [['1', '0'], ['0', '1']]
+          FARKAS, row certificate: 2 obstructed targets; exemplar w over the 2 first-cut configurations, w^T b = 1 > 0: 2 non-zero of 2; sum = 0; entries [0:1, 1:-1]
+          all obstructed w^T b: ['1', '1']
+      and on ABC every spanning pair from t_1 has a column-stochastic bridge:
+        (t_1 -> t_2): DIVISIBLE via the CK shortcut
+        (t_1 -> t_3): DIVISIBLE via the CK shortcut
+        (t_1 -> t_4): DIVISIBLE via the CK shortcut
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M7 SWAP scrambler | reading C:000 | t_1: ABC divides, AC does not
+      DIV_ABC = {0,1,2,3,4}   DIV_AC = {0,2,3,4}
+      the obstructed spanning pair on AC: (t_1 -> t_2), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_AC(t_1<-0) = [['1', '0', '1', '0'], ['0', '1', '0', '1'], ['0', '0', '0', '0'], ['0', '0', '0', '0']]
+      Gamma_AC(t_2<-0) = [['1', '0', '0', '0'], ['0', '1', '0', '0'], ['0', '0', '1', '0'], ['0', '0', '0', '1']]
+          FARKAS, row certificate: 4 obstructed targets; exemplar w over the 4 first-cut configurations, w^T b = 1 > 0: 4 non-zero of 4; sum = 0; entries [0:1, 1:-1, 2:-1, 3:1]
+          all obstructed w^T b: ['1', '1', '1', '1']
+      and on ABC every spanning pair from t_1 has a column-stochastic bridge:
+        (t_1 -> t_2): DIVISIBLE via the CK shortcut
+        (t_1 -> t_3): DIVISIBLE via the CK shortcut
+        (t_1 -> t_4): DIVISIBLE via the CK shortcut
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M7 SWAP scrambler | reading C:000 | t_1: ABC divides, B does not
+      DIV_ABC = {0,1,2,3,4}   DIV_B = {0,2,3,4}
+      the obstructed spanning pair on B: (t_1 -> t_2), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_B(t_1<-0) = [['1', '1'], ['0', '0']]
+      Gamma_B(t_2<-0) = [['1', '0'], ['0', '1']]
+          FARKAS, row certificate: 2 obstructed targets; exemplar w over the 2 first-cut configurations, w^T b = 1 > 0: 2 non-zero of 2; sum = 0; entries [0:1, 1:-1]
+          all obstructed w^T b: ['1', '1']
+      and on ABC every spanning pair from t_1 has a column-stochastic bridge:
+        (t_1 -> t_2): DIVISIBLE via the CK shortcut
+        (t_1 -> t_3): DIVISIBLE via the CK shortcut
+        (t_1 -> t_4): DIVISIBLE via the CK shortcut
+
+    reproduced in 11 of 11 readings: ['C:000', 'C:001', 'C:010', 'C:011', 'C:100', 'C:101', 'C:110', 'C:111', 'M:p_corr', 'M:p_prod', 'M:p_unif']
+
+    WITNESS [GS1] M7 SWAP scrambler | reading C:000 | t_1: ABC divides, BC does not
+      DIV_ABC = {0,1,2,3,4}   DIV_BC = {0,2,3,4}
+      the obstructed spanning pair on BC: (t_1 -> t_2), verdict INDIVISIBLE, decided by row-certificate (Farkas, verified)
+      Gamma_BC(t_1<-0) = [['1', '0', '1', '0'], ['0', '1', '0', '1'], ['0', '0', '0', '0'], ['0', '0', '0', '0']]
+      Gamma_BC(t_2<-0) = [['1', '0', '0', '0'], ['0', '1', '0', '0'], ['0', '0', '1', '0'], ['0', '0', '0', '1']]
+          FARKAS, row certificate: 4 obstructed targets; exemplar w over the 4 first-cut configurations, w^T b = 1 > 0: 4 non-zero of 4; sum = 0; entries [0:1, 1:-1, 2:-1, 3:1]
+          all obstructed w^T b: ['1', '1', '1', '1']
+      and on ABC every spanning pair from t_1 has a column-stochastic bridge:
+        (t_1 -> t_2): DIVISIBLE via the CK shortcut
+        (t_1 -> t_3): DIVISIBLE via the CK shortcut
+        (t_1 -> t_4): DIVISIBLE via the CK shortcut
+
+  DOWNWARD (GS1) CROSSINGS, CENSUSED BY MODEL, READING AND PAIR:
+  [DATA] GS1 crossings by (model, nested pair): {"('M2', 'ABC>BC')": 11, "('M7', 'AB>A')": 11, "('M7', 'AB>B')": 11, "('M7', 'ABC>A')": 11, "('M7', 'ABC>AC')": 11, "('M7', 'ABC>B')": 11, "('M7', 'ABC>BC')": 11}
+  [DATA] GS1 crossings by model: {'M2': 11, 'M7': 66}
+  [DATA] GS1 crossings by reading (M = marginal, C = conditional): {'C': 56, 'M': 21}
+  [DATA] UPWARD crossings by model: {'M1': 88, 'M2': 22, 'M3': 80, 'M4': 93, 'M6': 107, 'M7': 22}
+  [DATA] UPWARD crossings by reading: {'C': 304, 'M': 108}
+
+==============================================================================
+SEC 9  THE GLOBAL-SECTION TEST against the axioms stated in SEC 3   [t+4.4s]
+==============================================================================
+  [DATA] overlapping pairs used by GS2 (S' /\ S'' non-empty): A+AB->AB, A+AC->AC, A+ABC->ABC, B+BC->BC, AB+B->AB, AB+AC->ABC, AB+BC->ABC, AB+ABC->ABC, AC+C->AC, AC+BC->ABC, BC+C->BC, ABC+B->ABC, ABC+C->ABC, ABC+AC->ABC, ABC+BC->ABC
+
+  THE AXIOMS, (model, reading) by (model, reading).  'Y' = the axiom
+  holds of the computed family; 'n' = it fails, with the witness
+  count in brackets.  SECTION = GS0 /\ GS1 /\ GS2, i.e. the data
+  itself is a compatible family for the restriction presheaf.
+
+  ---- M0 classical Markov product (control)
+       M:p_unif     GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       M:p_prod     GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       M:p_corr     GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:000        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:001        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:010        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:011        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:100        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:101        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:110        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:111        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+
+  ---- M1 product/separable (quantum)
+       M:p_unif     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_prod     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_corr     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:000        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:001        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:010        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:011        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:100        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:101        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:110        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:111        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+
+  ---- M2 GHZ-generating (real Clifford)
+       M:p_unif     GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       M:p_prod     GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       M:p_corr     GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:000        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:001        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:010        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:011        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:100        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:101        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:110        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+       C:111        GS0=Y  GS1=n[1]  GS2=Y  GS3=n  SECTION=NO
+
+  ---- M3 W-generating (rational orthogonal)
+       M:p_unif     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_prod     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_corr     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:000        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:001        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:010        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:011        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:100        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:101        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:110        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:111        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+
+  ---- M4 algebraic generic (Cayley rational orthogonal)
+       M:p_unif     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_prod     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_corr     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:000        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:001        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:010        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:011        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:100        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:101        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:110        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:111        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+
+  ---- M5 complex Clifford (Q(zeta_8))
+       M:p_unif     GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       M:p_prod     GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       M:p_corr     GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:000        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:001        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:010        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:011        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:100        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:101        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:110        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+       C:111        GS0=Y  GS1=Y  GS2=Y  GS3=Y  SECTION=YES
+
+  ---- M6 controlled-rotation entangler
+       M:p_unif     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_prod     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       M:p_corr     GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:000        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:001        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:010        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:011        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:100        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:101        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:110        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+       C:111        GS0=Y  GS1=Y  GS2=Y  GS3=n  SECTION=YES
+
+  ---- M7 SWAP scrambler
+       M:p_unif     GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       M:p_prod     GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       M:p_corr     GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:000        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:001        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:010        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:011        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:100        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:101        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:110        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+       C:111        GS0=Y  GS1=n[6]  GS2=Y  GS3=n  SECTION=NO
+  [DATA] GS0 (initiality) holds: 88/88
+  [DATA] GS1 (restriction-compatibility) holds: 66/88
+  [DATA] GS2 (gluing on overlaps) holds: 88/88
+  [DATA] GS3 (system-independence, the hypothesis [B3-syscentric] denies) holds: 22/88
+  [DATA] the computed family IS a global section (GS0 /\ GS1 /\ GS2): 66/88
+  [DATA] models admitting NO global section under the stated axioms, in at least one reading: ['M2 GHZ-generating (real Clifford)', 'M7 SWAP scrambler']
+  [DATA] models admitting NO global section in EVERY reading: ['M2 GHZ-generating (real Clifford)', 'M7 SWAP scrambler']
+
+  THE MAXIMAL SUB-SECTION.  Where the data is not itself a section,
+  the largest trimming d' <= d satisfying GS1 /\ GS2 is computed by
+  exhaustive search over all 2^7 = 128 assignments per grid time.
+  'd' means the data is already consistent at that time; a listed
+  set is the maximal consistent trimming; '{}' means only the empty
+  assignment survives, which is the hard obstruction.
+
+  ---- M0 classical Markov product (control)
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           d           d           d           
+       M:p_prod     d           d           d           d           d           
+       M:p_corr     d           d           d           d           d           
+       C:000        d           d           d           d           d           
+       C:001        d           d           d           d           d           
+       C:010        d           d           d           d           d           
+       C:011        d           d           d           d           d           
+       C:100        d           d           d           d           d           
+       C:101        d           d           d           d           d           
+       C:110        d           d           d           d           d           
+       C:111        d           d           d           d           d           
+
+  ---- M1 product/separable (quantum)
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           d           d           d           
+       M:p_prod     d           d           d           d           d           
+       M:p_corr     d           d           d           d           d           
+       C:000        d           d           d           d           d           
+       C:001        d           d           d           d           d           
+       C:010        d           d           d           d           d           
+       C:011        d           d           d           d           d           
+       C:100        d           d           d           d           d           
+       C:101        d           d           d           d           d           
+       C:110        d           d           d           d           d           
+       C:111        d           d           d           d           d           
+
+  ---- M2 GHZ-generating (real Clifford)
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           {A,B,C,AB}  d           d           
+       M:p_prod     d           d           {A,B,C,AB}  d           d           
+       M:p_corr     d           d           {A,B,C,AB}  d           d           
+       C:000        d           d           {A,B,C,AB}  d           d           
+       C:001        d           d           {A,B,C,AB}  d           d           
+       C:010        d           d           {A,B,C,AB}  d           d           
+       C:011        d           d           {A,B,C,AB}  d           d           
+       C:100        d           d           {A,B,C,AB}  d           d           
+       C:101        d           d           {A,B,C,AB}  d           d           
+       C:110        d           d           {A,B,C,AB}  d           d           
+       C:111        d           d           {A,B,C,AB}  d           d           
+
+  ---- M3 W-generating (rational orthogonal)
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           d           d           d           
+       M:p_prod     d           d           d           d           d           
+       M:p_corr     d           d           d           d           d           
+       C:000        d           d           d           d           d           
+       C:001        d           d           d           d           d           
+       C:010        d           d           d           d           d           
+       C:011        d           d           d           d           d           
+       C:100        d           d           d           d           d           
+       C:101        d           d           d           d           d           
+       C:110        d           d           d           d           d           
+       C:111        d           d           d           d           d           
+
+  ---- M4 algebraic generic (Cayley rational orthogonal)
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           d           d           d           
+       M:p_prod     d           d           d           d           d           
+       M:p_corr     d           d           d           d           d           
+       C:000        d           d           d           d           d           
+       C:001        d           d           d           d           d           
+       C:010        d           d           d           d           d           
+       C:011        d           d           d           d           d           
+       C:100        d           d           d           d           d           
+       C:101        d           d           d           d           d           
+       C:110        d           d           d           d           d           
+       C:111        d           d           d           d           d           
+
+  ---- M5 complex Clifford (Q(zeta_8))
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           d           d           d           
+       M:p_prod     d           d           d           d           d           
+       M:p_corr     d           d           d           d           d           
+       C:000        d           d           d           d           d           
+       C:001        d           d           d           d           d           
+       C:010        d           d           d           d           d           
+       C:011        d           d           d           d           d           
+       C:100        d           d           d           d           d           
+       C:101        d           d           d           d           d           
+       C:110        d           d           d           d           d           
+       C:111        d           d           d           d           d           
+
+  ---- M6 controlled-rotation entangler
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           d           d           d           d           
+       M:p_prod     d           d           d           d           d           
+       M:p_corr     d           d           d           d           d           
+       C:000        d           d           d           d           d           
+       C:001        d           d           d           d           d           
+       C:010        d           d           d           d           d           
+       C:011        d           d           d           d           d           
+       C:100        d           d           d           d           d           
+       C:101        d           d           d           d           d           
+       C:110        d           d           d           d           d           
+       C:111        d           d           d           d           d           
+
+  ---- M7 SWAP scrambler
+       reading      t_0         t_1         t_2         t_3         t_4         
+       M:p_unif     d           {C}         d           d           d           
+       M:p_prod     d           {C}         d           d           d           
+       M:p_corr     d           {C}         d           d           d           
+       C:000        d           {C}         d           d           d           
+       C:001        d           {C}         d           d           d           
+       C:010        d           {C}         d           d           d           
+       C:011        d           {C}         d           d           d           
+       C:100        d           {C}         d           d           d           
+       C:101        d           {C}         d           d           d           
+       C:110        d           {C}         d           d           d           
+       C:111        d           {C}         d           d           d           
+  [DATA] (model, reading, time) slices where the data is already a consistent assignment: 418
+  [DATA] slices needing a non-trivial trimming: 22
+  [DATA] slices where only the EMPTY assignment survives (hard obstruction): 0
+
+==============================================================================
+SEC 10  THE EXHAUSTIVE CIRCUIT SWEEP: every circuit of the declared depth over the declared gate alphabet, with no sampling and no randomness   [t+4.5s]
+==============================================================================
+
+  Eight hand-chosen models can only show that something HAPPENS.  This
+  section measures HOW OFTEN, by enumerating EVERY circuit of depth
+  4 over a declared six-letter gate alphabet -- 6^4
+  = 1296 circuits, exhaustive, unsampled, no randomness.
+
+  THE REPRESENTATION, declared.  Each gate is written U = sqrt(w) . V with w
+  an exact positive rational and V an exact rational matrix.  Products
+  compose as (w1 w2, V1 V2), and [B3-uni] gives Gamma_ij = w . V_ij^2, which
+  is rational by construction -- so the whole sweep is Fractions end to end
+  and no algebraic ring is needed.  Unitarity is w . V^T V = 1, checked
+  exactly on every partial product of every circuit.
+
+  THE ALPHABET: H_A, H_B, CNOT_(A->B), CNOT_(B->C), SWAP_(AC), and the
+  Pythagorean rotation R_A(3/5, 4/5) -- five Clifford letters and one
+  non-Clifford letter, so the population is not confined to stabiliser
+  dynamics.  Readings: M with p_unif and C with c* = 000, both censused.
+
+  [PASS] ANCHOR SWP.0 EVERY LETTER OF THE ALPHABET IS EXACTLY UNITARY IN THE SCALED-RATIONAL REPRESENTATION: w . V^T V = 1 identically for all six letters, so every circuit built from them is unitary and every Gamma the sweep produces is a legitimate [B3-uni] transition matrix  (alphabet ['H_A', 'H_B', 'CNOT_AB', 'CNOT_BC', 'SWAP_AC', 'R_A'], all unitary True)
+  [DATA] circuits enumerated (exhaustive, no sampling): 1296
+  [DATA] circuits rejected for non-unitarity or non-stochasticity: 0 + 0
+  [DATA] sweep runtime: 23.0s
+  [DATA] sweep decision load: 181440 (D1) queries, 3807 distinct decisions, 3817 exact-simplex invocations
+  [PASS] SWP.0b THE SWEEP'S DECISIONS CARRY THE SAME TWO INTERNAL CHECKS AS THE MODEL CENSUS: [B3] eq. 22 agrees with the feasibility verdict on every sweep decision with an invertible source, and every certificate-bearing infeasibility verifies its Farkas vector independently  (eq.22 tested on 2404 sweep decisions, 0 disagreements; 600 of 600 sweep Farkas certificates verified)
+  [DATA] AXIOM OUTCOMES over the sweep, by reading: {"('C:000', 'GS0', True)": 1296, "('C:000', 'GS1', False)": 361, "('C:000', 'GS1', True)": 935, "('C:000', 'GS2', False)": 77, "('C:000', 'GS2', True)": 1219, "('C:000', 'GS3', False)": 884, "('C:000', 'GS3', True)": 412, "('C:000', 'SECTION', False)": 431, "('C:000', 'SECTION', True)": 865, "('M:p_unif', 'GS0', True)": 1296, "('M:p_unif', 'GS1', False)": 527, "('M:p_unif', 'GS1', True)": 769, "('M:p_unif', 'GS2', False)": 85, "('M:p_unif', 'GS2', True)": 1211, "('M:p_unif', 'GS3', False)": 1004, "('M:p_unif', 'GS3', True)": 292, "('M:p_unif', 'SECTION', False)": 608, "('M:p_unif', 'SECTION', True)": 688}
+  [DATA] circuits whose family FAILS GS1 (restriction-compatibility): {'M:p_unif': '527 of 1296', 'C:000': '361 of 1296'}
+  [DATA] circuits whose family FAILS GS2 (gluing): {'M:p_unif': '85 of 1296', 'C:000': '77 of 1296'}
+  [DATA] circuits whose family FAILS GS3 (system-independence): {'M:p_unif': '1004 of 1296', 'C:000': '884 of 1296'}
+  [DATA] circuits whose family IS a global section: {'M:p_unif': '688 of 1296', 'C:000': '865 of 1296'}
+  [DATA] GS1 crossings by nested pair, over the sweep: {"('C:000', 'AB>A')": 7, "('C:000', 'AB>B')": 28, "('C:000', 'ABC>A')": 243, "('C:000', 'ABC>AB')": 266, "('C:000', 'ABC>AC')": 48, "('C:000', 'ABC>B')": 26, "('C:000', 'ABC>BC')": 419, "('C:000', 'ABC>C')": 271, "('C:000', 'AC>A')": 245, "('C:000', 'AC>C')": 255, "('C:000', 'BC>B')": 1, "('C:000', 'BC>C')": 34, "('M:p_unif', 'AB>B')": 134, "('M:p_unif', 'ABC>A')": 201, "('M:p_unif', 'ABC>AB')": 247, "('M:p_unif', 'ABC>AC')": 205, "('M:p_unif', 'ABC>B')": 136, "('M:p_unif', 'ABC>BC')": 604, "('M:p_unif', 'ABC>C')": 324, "('M:p_unif', 'AC>A')": 203, "('M:p_unif', 'AC>C')": 205, "('M:p_unif', 'BC>C')": 133}
+  [DATA] GS2 gluing failures by triple, over the sweep: {"('C:000', 'AB+AC->ABC')": 3, "('C:000', 'AB+BC->ABC')": 64, "('C:000', 'AC+BC->ABC')": 34, "('M:p_unif', 'AB+AC->ABC')": 5, "('M:p_unif', 'AB+BC->ABC')": 60, "('M:p_unif', 'AC+BC->ABC')": 71}
+  [DATA] DIV_ABC spectrum over the sweep: {"('C:000', '{0,1,2,3,4}')": 727, "('C:000', '{0,1,2,4}')": 98, "('C:000', '{0,1,3,4}')": 118, "('C:000', '{0,1,4}')": 44, "('C:000', '{0,2,3,4}')": 157, "('C:000', '{0,2,4}')": 20, "('C:000', '{0,3,4}')": 64, "('C:000', '{0,4}')": 68, "('M:p_unif', '{0,1,2,3,4}')": 727, "('M:p_unif', '{0,1,2,4}')": 98, "('M:p_unif', '{0,1,3,4}')": 118, "('M:p_unif', '{0,1,4}')": 44, "('M:p_unif', '{0,2,3,4}')": 157, "('M:p_unif', '{0,2,4}')": 20, "('M:p_unif', '{0,3,4}')": 64, "('M:p_unif', '{0,4}')": 68}
+  EXEMPLAR CIRCUITS, one per crossing type (the first in enumeration order):
+       C:000     AB+AC->ABC   first at t_3 in circuit H_B-CNOT_BC-H_B-H_B
+       C:000     AB+BC->ABC   first at t_3 in circuit H_A-SWAP_AC-H_A-H_A
+       C:000     AB>A         first at t_2 in circuit CNOT_AB-H_A-CNOT_BC-SWAP_AC
+       C:000     AB>B         first at t_2 in circuit H_A-CNOT_AB-CNOT_AB-H_B
+       C:000     ABC>A        first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       C:000     ABC>AB       first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       C:000     ABC>AC       first at t_3 in circuit H_A-H_B-CNOT_BC-CNOT_BC
+       C:000     ABC>B        first at t_2 in circuit H_A-CNOT_AB-CNOT_AB-H_B
+       C:000     ABC>BC       first at t_3 in circuit H_A-H_A-SWAP_AC-CNOT_AB
+       C:000     ABC>C        first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       C:000     AC+BC->ABC   first at t_3 in circuit H_A-CNOT_AB-H_A-H_A
+       C:000     AC>A         first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       C:000     AC>C         first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       C:000     BC>B         first at t_3 in circuit SWAP_AC-CNOT_BC-H_B-H_B
+       C:000     BC>C         first at t_3 in circuit H_A-H_B-CNOT_BC-CNOT_BC
+       M:p_unif  AB+AC->ABC   first at t_3 in circuit H_B-CNOT_BC-H_B-H_B
+       M:p_unif  AB+BC->ABC   first at t_3 in circuit H_A-SWAP_AC-H_A-H_A
+       M:p_unif  AB>B         first at t_3 in circuit H_A-H_A-CNOT_AB-CNOT_AB
+       M:p_unif  ABC>A        first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       M:p_unif  ABC>AB       first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       M:p_unif  ABC>AC       first at t_3 in circuit H_A-H_A-CNOT_BC-CNOT_BC
+       M:p_unif  ABC>B        first at t_3 in circuit H_A-H_A-CNOT_AB-CNOT_AB
+       M:p_unif  ABC>BC       first at t_3 in circuit H_A-H_A-CNOT_AB-CNOT_AB
+       M:p_unif  ABC>C        first at t_3 in circuit H_A-H_A-CNOT_BC-CNOT_BC
+       M:p_unif  AC+BC->ABC   first at t_1 in circuit H_A-H_B-CNOT_AB-H_A
+       M:p_unif  AC>A         first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       M:p_unif  AC>C         first at t_3 in circuit H_A-H_A-SWAP_AC-SWAP_AC
+       M:p_unif  BC>C         first at t_3 in circuit H_A-H_A-CNOT_BC-CNOT_BC
+  [PASS] SWP.1 THE GS1 FAILURE IS NOT AN ARTEFACT OF EIGHT HAND-CHOSEN MODELS: over an EXHAUSTIVE, UNSAMPLED population of 1296 depth-4 circuits, restriction-compatibility fails on a substantial fraction under both readings, and every failure carries the same kind of exact witness as the hand-chosen ones  (GS1 failures: {'M:p_unif': 527, 'C:000': 361} of 1296 circuits per reading)
+  [DATA] JOINT axiom outcomes over the sweep: {"('C:000', 'GS1=False', 'GS2=False', 'GS3=False')": 7, "('C:000', 'GS1=False', 'GS2=True', 'GS3=False')": 354, "('C:000', 'GS1=True', 'GS2=False', 'GS3=False')": 70, "('C:000', 'GS1=True', 'GS2=True', 'GS3=False')": 453, "('C:000', 'GS1=True', 'GS2=True', 'GS3=True')": 412, "('M:p_unif', 'GS1=False', 'GS2=False', 'GS3=False')": 4, "('M:p_unif', 'GS1=False', 'GS2=True', 'GS3=False')": 523, "('M:p_unif', 'GS1=True', 'GS2=False', 'GS3=False')": 81, "('M:p_unif', 'GS1=True', 'GS2=True', 'GS3=False')": 396, "('M:p_unif', 'GS1=True', 'GS2=True', 'GS3=True')": 292}
+  [DATA] MAXIMAL SUB-SECTION over the non-section circuits of the sweep, by grid slice: {"('C:000', 'EMPTY ONLY')": 4, "('C:000', 'already consistent')": 1508, "('C:000', 'trimmed to 1 of 3')": 195, "('C:000', 'trimmed to 1 of 4')": 2, "('C:000', 'trimmed to 2 of 4')": 13, "('C:000', 'trimmed to 3 of 4')": 3, "('C:000', 'trimmed to 3 of 5')": 116, "('C:000', 'trimmed to 3 of 6')": 17, "('C:000', 'trimmed to 4 of 5')": 98, "('C:000', 'trimmed to 4 of 6')": 199, "('M:p_unif', 'EMPTY ONLY')": 6, "('M:p_unif', 'already consistent')": 2062, "('M:p_unif', 'trimmed to 1 of 2')": 18, "('M:p_unif', 'trimmed to 1 of 3')": 150, "('M:p_unif', 'trimmed to 2 of 3')": 1, "('M:p_unif', 'trimmed to 2 of 4')": 57, "('M:p_unif', 'trimmed to 3 of 4')": 2, "('M:p_unif', 'trimmed to 3 of 5')": 292, "('M:p_unif', 'trimmed to 4 of 5')": 132, "('M:p_unif', 'trimmed to 4 of 6')": 320}
+  [PASS] SWP.2 GLUING FAILS TOO, AND THE SWEEP LOCATES IT: over the eight hand-chosen models GS2 held everywhere, which would have licensed the reading 'only restriction fails'.  The exhaustive population refutes that reading: there are circuits on which a grid time is a division event for AB and for BC, which overlap in B, and is NOT one for ABC.  So the obstruction is not confined to one axiom  (GS2 failures: {'M:p_unif': 85, 'C:000': 77} of 1296 circuits per reading; 162 (reading, circuit) pairs carrying one)
+
+  THE HARD OBSTRUCTION.  A grid slice at which the ONLY assignment
+  d' <= d satisfying GS1 and GS2 is the identically-empty one.  This
+  happens exactly when some composite carries a division event while
+  NONE of its constituent single systems does: GS1 then forces every
+  atom of that composite into any non-empty section, and the data
+  does not supply them.  Each slice below is printed with the full
+  lattice row that produces it.
+  [DATA] hard-obstruction slices found in the sweep: 10
+       reading M:p_unif | t_2 | circuit H_B-SWAP_AC-H_B-SWAP_AC
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading C:000 | t_2 | circuit H_B-SWAP_AC-H_B-SWAP_AC
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading M:p_unif | t_2 | circuit H_B-SWAP_AC-SWAP_AC-H_B
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading C:000 | t_2 | circuit H_B-SWAP_AC-SWAP_AC-H_B
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading M:p_unif | t_2 | circuit CNOT_AB-SWAP_AC-SWAP_AC-CNOT_AB
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=1
+       reading M:p_unif | t_2 | circuit SWAP_AC-H_B-H_B-SWAP_AC
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading C:000 | t_2 | circuit SWAP_AC-H_B-H_B-SWAP_AC
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading M:p_unif | t_2 | circuit SWAP_AC-H_B-SWAP_AC-H_B
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading C:000 | t_2 | circuit SWAP_AC-H_B-SWAP_AC-H_B
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=0
+       reading M:p_unif | t_2 | circuit SWAP_AC-CNOT_AB-CNOT_AB-SWAP_AC
+         A=0  B=0  C=0  AB=0  AC=1  BC=0  ABC=1
+  [PASS] SWP.2b THERE ARE SLICES CARRYING A HARD OBSTRUCTION: not merely 'the data is not a section', but 'no non-empty sub-assignment of the data is a section either'.  At such a slice a composite has a division event and not one of its three constituent systems does, so under GS1 the only consistent global division-event assignment is the empty one.  This is the marginal-problem obstruction in its strongest available form at these dimensions  (10 hard-obstruction slices over 12960 (reading, circuit, grid index) slices)
+  [PASS] SWP.3 SYSTEM-CENTRICITY IS THE RULE, NOT THE EXCEPTION, on this population: GS3 -- the hypothesis that one division-event set serves every subsystem, which [B3-syscentric] explicitly denies -- fails on the large majority of circuits, so [B3]'s denial is quantified here rather than merely quoted  (GS3 failures: {'M:p_unif': 1004, 'C:000': 884} of 1296 circuits per reading)
+
+==============================================================================
+SEC 11  THE SANITY ANCHORS: the classical control, and a known-indivisible reference   [t+27.5s]
+==============================================================================
+  [PASS] ANCHOR SAN.1 THE CLASSICAL CONTROL DIVIDES EVERYWHERE: for the product Markov chain on a product configuration space, EVERY grid time is a division event for EVERY subsystem under BOTH readings and all three declared p_0.  The instrument therefore does not manufacture indivisibility, and the divisible special case of [B3-eq22] is reproduced exactly  (385 (reading, subsystem, time) slots, all TRUE)
+  [PASS] ANCHOR SAN.2 THE CLASSICAL CONTROL SATISFIES ALL FOUR AXIOMS, GS3 INCLUDED: its division-event assignment is a global section AND is system-independent, so the axioms of SEC 3 are satisfiable and the obstruction reported below is not an artefact of stating an unsatisfiable set  (11 readings, all four axioms holding in each)
+  [PASS] SAN.2b SEPARABILITY DOES NOT CONFER DIVISIBILITY, and this is worth stating because it is the one place a reader might expect the control to behave classically: the QUANTUM product model, whose dynamics and whose state both factorise across A, B and C at every time, is NOT divisible everywhere.  Its composite division-event set is a proper subset of the grid, and so is each factor's.  What divides everywhere is the CLASSICAL Markov product, not the separable quantum one  (quantum product model: DIV_ABC = {0,4}, a proper subset of the grid; divides-everywhere = False)
+
+  THE KNOWN-INDIVISIBLE REFERENCE.  A single qubit under the exact
+  rotation R(3/5, 4/5), i.e. the A factor of model M1.  Its transition
+  matrix is the bistochastic [[(1+l_k)/2, (1-l_k)/2], [(1-l_k)/2,
+  (1+l_k)/2]] with l_k = cos(2 k theta) an exact rational, and the
+  bridge from t_k to t_b has parameter l_b / l_k, so it is stochastic
+  exactly when |l_b| <= |l_k|.  The division-event set must therefore
+  be a PROPER subset of the grid.
+  [DATA] l_k = cos(2 k theta) for k = 0..4, exactly: ['1', '-7/25', '-527/625', '11753/15625', '164833/390625']
+  [DATA] DIV of the reference qubit, computed by the instrument: {0,2,3,4}
+  [DATA] DIV of the reference qubit, from the closed form |l_b| <= |l_k|: {0,2,3,4}
+  [PASS] ANCHOR SAN.3 THE KNOWN-INDIVISIBLE REFERENCE SHOWS A NON-TRIVIAL DIVISION-EVENT SET, AND THE INSTRUMENT REPRODUCES THE CLOSED FORM EXACTLY: the single qubit under R(3/5,4/5) has DIV a PROPER subset of the grid, and the instrument's answer agrees with the hand computation |l_b| <= |l_k| at every grid index.  So the predicate is not trivially true, and it is not trivially false  (instrument {0,2,3,4} = closed form {0,2,3,4}; proper subset = True)
+  [PASS] ANCHOR SAN.4 THE REFERENCE IS THE MODEL'S OWN A FACTOR: model M1's subsystem A, read conditionally, has exactly the reference's division-event set -- so the reference is not a separate fixture but the census's own object  (M1 subsystem A (reading C:000): {0,2,3,4} vs reference {0,2,3,4})
+
+  A SECOND, INDEPENDENT READING OF THE COMPOSITE'S BRIDGE.  For a
+  closed unistochastic system [B3] supplies a natural candidate for
+  Gamma(t <- t'), namely |U(t <- t')|^2 with U(t <- t') = U(t<-0)
+  U(t'<-0)^dagger.  It is always column-stochastic; the question is
+  whether it satisfies eq. 23.  This is censused separately from the
+  existence question above, and it is NOT used to decide anything.
+  [DATA] [B3]'s unistochastic candidate |U(t<-t')|^2 tested against eq. 23: 46 of 70 spanning pairs satisfy it
+  [DATA] by model: {"('M1', 'FAILS-EQ23')": 6, "('M1', 'SATISFIES-EQ23')": 4, "('M2', 'SATISFIES-EQ23')": 10, "('M3', 'FAILS-EQ23')": 6, "('M3', 'SATISFIES-EQ23')": 4, "('M4', 'FAILS-EQ23')": 6, "('M4', 'SATISFIES-EQ23')": 4, "('M5', 'SATISFIES-EQ23')": 10, "('M6', 'FAILS-EQ23')": 6, "('M6', 'SATISFIES-EQ23')": 4, "('M7', 'SATISFIES-EQ23')": 10}
+  [PASS] SAN.5 THE CANDIDATE AND THE EXISTENCE QUESTION ARE CONSISTENT: wherever [B3]'s own unistochastic candidate |U(t<-t')|^2 satisfies eq. 23, the existence test returns DIVISIBLE -- as it must, since the candidate is then itself a witness.  The converse does not hold and is not claimed  (70 consistent, 0 inconsistent)
+
+==============================================================================
+SEC 12  DETERMINISM PROBE   [t+28.5s]
+==============================================================================
+  [DATA] census signature (order-independent rolling hash over the sorted (model, reading, subsystem, DIV) tuples): 1020855794558959549
+  [DATA] census rows: 616
+  [PASS] DET.1 EVERY PRINTED AGGREGATE IS ORDERED BY U1's HASH-SEED-INDEPENDENT KEY sk(), and no set or dict iteration feeds a printed number without passing through it; the signature above is therefore reproducible under any PYTHONHASHSEED  (616 distinct census rows)
+  [PASS] DET.2 THE DECISION PROCEDURE IS A FUNCTION OF ITS TWO MATRICES: re-deciding the same pair returns the same verdict, and the cache keyed on the exact matrices is therefore sound  (2/2 repeat decisions agree)
+
+==============================================================================
+SEC 13  THE VERDICT, against the pre-registered outcomes   [t+28.5s]
+==============================================================================
+
+  PRE-REGISTERED OUTCOMES (bc/note-bc1-division-event-composition-pin.md):
+    C-CONSISTENT   natural containments hold on all tested models
+    C-CROSS        containments fail, with exact witnesses
+    C-OBSTRUCTION  a model admits no consistent global assignment
+                   under the stated axioms
+
+  [DATA] downward (GS1) crossings: 77
+  [DATA] upward crossings: 412
+  [DATA] (model, reading) pairs whose computed family is NOT a global section: 22 of 88
+  [DATA] models with at least one non-section reading: ['M2 GHZ-generating (real Clifford)', 'M7 SWAP scrambler']
+  [DATA] (model, reading) pairs failing GS3 (system-independence): 66 of 88
+  [DATA] EXHAUSTIVE SWEEP: circuits failing GS1, per reading, of 1296: {'M:p_unif': 527, 'C:000': 361}
+  [DATA] EXHAUSTIVE SWEEP: circuits failing GS2, per reading: {'M:p_unif': 85, 'C:000': 77}
+  [DATA] EXHAUSTIVE SWEEP: circuits failing GS3, per reading: {'M:p_unif': 1004, 'C:000': 884}
+  [DATA] EXHAUSTIVE SWEEP: circuits whose family IS a global section: {'M:p_unif': 688, 'C:000': 865}
+  [DATA] EXHAUSTIVE SWEEP: hard-obstruction slices (only the empty assignment survives): 10
+
+  VERDICT: C-OBSTRUCTION
+           computed division-event families violate GS1 (restriction-compatibilit
+           y) and, in the exhaustive sweep, GS2 (gluing) as well, so they are not
+            compatible families for the restriction presheaf and admit no global 
+           section in the sense declared in SEC 3.  On 10 sweep slices the obstru
+           ction is HARD: not even a non-empty sub-assignment of the data is a se
+           ction, because a composite carries a division event while none of its 
+           three constituents does.  C-CROSS is established a fortiori: the cross
+           ings ARE the violations.
+
+  WHAT THIS DOES AND DOES NOT SAY.  It says: at the tested dimensions
+  and dynamics, [B3]'s division-event assignment is not a restriction-
+  compatible family on the subsystem lattice, so there is no global,
+  system-independent division-event structure to be had -- the
+  system-centricity [B3] p.10 announces is FORCED, not merely
+  permitted, and it has the shape of a marginal problem with exact
+  witnesses.  It does NOT say [B3] is inconsistent: [B3] nowhere
+  asserts GS1, and the census confirms its own stated position.  It
+  says nothing about nature, about QFT, or about any other programme.
+
+==============================================================================
+  gates: 40 pass, 0 fail; anchors failed: 0
+  (D1) queries: 187682; distinct decisions: 4889; exact simplex invocations: 3941; full-LP (step 4): 83
+  runtime: 28.5s
+==============================================================================
