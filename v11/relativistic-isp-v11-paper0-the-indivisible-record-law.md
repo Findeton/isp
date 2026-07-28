@@ -136,6 +136,11 @@ v11 does not invent its record structure; v10 proved it.
 - **[THEOREM]** Every pair-arbitration returns the serialized state
   to the root: renewal is a *row of the update table*
   (`../v10/note-d62-h2-update-table.md`, row R4; LOG #460).
+  *(Scope tag added 2026-07-28, Phase I close — U1 PORT-3: this is
+  a CLOSED-SCOPE theorem.  At transport scope it is
+  delivery-conditioned, not grammatical: true at every reachable
+  cap, false on a constructed 8-event admissible chain whose
+  post-renewal state carries two token records.  LOG #14.)*
 - **[POSIT]** v11's **division events are the renewal events.**
   Idles and deliveries remain grammar events — kinematics — but are
   no longer records.  Conditionals, records, and the law exist at
@@ -148,6 +153,13 @@ v11 does not invent its record structure; v10 proved it.
   fixed, and identical across runs.  The sparse structure is not
   merely permitted by our grammar; renewal grain is the *only* grain
   at which the Barandes axioms can hold in it.
+  *(Scope tag added 2026-07-28 — the reset it leans on is the
+  closed-scope theorem above; at transport scope the renewal-grain
+  configuration space is fixed only where delivery does not
+  intervene (U1 PORT-2/PORT-3: 1 configuration winner-invisibly, 8
+  payload-enriched, at every reachable cap).  The convergence claim
+  survives AS a convergence claim at the caps tested, not as a
+  grammar theorem.)*
 - **The bridges** are the conflict windows between renewals.  v10's
   anomalies co-locate there, without exception: the descent defect
   originates at the 2 → 5/2 conflict-visibility mass jump (v10
@@ -263,6 +275,11 @@ follows).
     the generated law is Barandes-classical at every grain and the
     quantum requires enrichment; one pseudo-stochastic interpolant
     ⇒ **the corpus's first generated indivisible bridge.**
+    *(Outcome 2026-07-28: neither branch cleanly — see the §9b
+    Phase I record; verdict U1-BRIDGE-AT-ADJACENT-SCOPE with the
+    null attached, division-event cuts divide wherever the test
+    bites, the pinned record-grain case open at U1b.  LOG
+    #11–#14.)*
 - **L-1 — THE FINITE-STOCHASTIC LORENTZ NO-GO, RESTATED** *(before
   U1 — [V11-CAT §7 rank 2]; v3 paper 8 Cor 2.4).*  Exact covariance
   implemented by invertible stochastic maps on a **fixed finite
@@ -271,10 +288,19 @@ follows).
   configuration space is fixed and finite).  The lemma therefore
   BOUNDS the re-founding before any unit runs: **v11 may expect at
   most statistical/approximate Lorentz invariance at renewal grain,
-  never exact covariance** — which is precisely the form U4 tests,
-  and precisely the form the corpus's strongest relativity result
-  took ([V11-CAT §1.5]).  Any v11 claim of exact finite covariance
-  is pre-refuted by this lemma and forbidden.
+  never exact covariance.**  Any v11 claim of exact finite
+  covariance is pre-refuted by this lemma and forbidden.
+  *(Corrected 2026-07-28, Phase I close, per the L-1 hostile round
+  — the original sentence here said the weaker form is "precisely
+  the form U4 tests, and precisely the form the corpus's strongest
+  relativity result took"; the lemma's ladder narrows that:
+  [V11-CAT §1.5]'s statistical result presupposes Minkowski
+  sprinkling and does NOT transfer to this carrier; sprinkling-grade
+  invariance is [MY-READING]-blocked here; the surviving rung —
+  ORDER-LEVEL covariance — is a FOURTH form outside v3 paper 8's
+  admissible list, whose admissibility U4 must argue before testing
+  it.  `note-L1-lorentz-no-go-lemma.md` §4 is authoritative.  LOG
+  #9.)*
 - **L0 — THE G NO-GO, RESTATED AS A v11 KINEMATIC LEMMA** *(before
   U5 may run — [V11-CAT §7 rank 3]).*  The corpus's only
   structurally unconditional physics theorem (v6 paper 57): no
@@ -382,6 +408,32 @@ the next and every phase ends in hostile review:
   it is hereby undropped).  Phase I decides the world: divisible
   everywhere ⇒ enrichment is the program; one indivisible bridge ⇒
   mapping it is.
+  *(**PHASE I RAN — outcome recorded 2026-07-28, LOG #4–#14.**
+  All four units TERMINAL after hostile rounds.  L-1/L0: both
+  lemmas hold, with the ladder and prohibition-only corrections
+  recorded above.  H1: three errata routed.  THE LAST DOOR:
+  **LD-BROKEN** — the record category is not self-dual; a record
+  reverses legally iff it carries no arbitration (17,277/17,277);
+  the wall strictly contains the curvature and its address is the
+  arbitration; the phase tally stands 0-for-5.  U1: verdict
+  **U1-BRIDGE-AT-ADJACENT-SCOPE, with the null attached** — at cut
+  grain on non-division cuts, fifteen Farkas-certified
+  indivisibility verdicts, held LESS strongly than random noise of
+  the same granularity (coarse-graining of the divisible click law,
+  not a signature of the record); at every division-event cut where
+  the interpolant test has bite, the law DIVIDES; the §10
+  pre-registered U1-BRIDGE outcome is NOT met at the grain it
+  meant, and the pinned renewal-to-renewal question is NOT decided
+  — the minimal-interval run degenerates (column-constant transfer;
+  the committed payload map drops the arb base, so it forgets
+  across renewals by construction).  **U1b — the successor unit,
+  carrying the WHOLE pinned question (unequal intervals; any
+  base-retaining renewal-grain map) — is hereby added to Phase II's
+  board beside U2 and U3.**  Phase I's answer to "divisible
+  everywhere or one bridge?" is therefore: DIVISIBLE EVERYWHERE THE
+  LAW'S OWN CUTS WERE TESTABLE, with the decisive record-grain case
+  still open at U1b, and the enrichment fork provisionally the live
+  program unless U1b reverses it.)*
 - **PHASE II — THE VERDICT FORK**: U2 (the J-conjecture — the weld
   of the two indivisibilities) and U3 (the loop-class reproduction,
   then the ortho/uni construction).  If Phase I found a bridge, U2
@@ -432,8 +484,12 @@ the authoritative table and is not duplicated here.  The program's
 shape, in five sentences:
 
 1. **What transfers intact** (kinematics — no reproduction needed):
-   the no-global-state results, all v10 geometry, and the G no-go
-   (as L0).
+   the no-global-state results and all v10 geometry.  The G no-go
+   enters as L0 — *(corrected 2026-07-28: not "intact"; L0 imports
+   its conclusion as a PROHIBITION ON v11 CLAIMS ONLY — no transfer
+   proof to the generated carrier exists, and the converse would
+   need Theorem G + gate G1 re-audited here.
+   `note-L0-scale-no-go-lemma.md` §3.  LOG #9.)*
 2. **What is reproduced early because it already lives on the
    generated carrier**: Born = K1 (U1 Arm 0), the loop-class
    theorem (U3's opening), the descent conditions (U1 Arm 2).

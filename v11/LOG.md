@@ -568,3 +568,44 @@ division-event cut with a biting test, the law divides.  Meta:
 positive-headline mortality 7-for-7 across v10-v11 (the #13
 sub-headline included); the arithmetic-never-wrong streak holds
 through two independent full rebuilds.
+
+## 2026-07-28 — **PHASE I CLOSED** — SYNTHESIS + THE PAPER-0 SINGLE
+## EDIT PASS (v11 LEDGER #15)
+All four Phase I units TERMINAL (#8 H1, #9 L-1+L0, #10 LD, #14 U1;
+eleven commits #4→#14; five hostile rounds + one delta, every one
+independent, recompute-never-trust).  **WHAT PHASE I ESTABLISHED,
+in one paragraph:** the re-founding's boundary lemmas hold (exact
+Lorentz covariance excluded; order-level covariance the surviving
+rung, a FOURTH form U4 must argue; the scale no-go imported as
+prohibition-only); the corpus's reader paths are erratum-clean
+(three routings; v5's absent errata layer a named residual); the
+record category is STRUCTURALLY IRREVERSIBLE with the wall's
+address at the arbitration, strictly containing the curvature
+(LD-BROKEN; phase tally 0-for-5 stands); and the flagship census
+answered the founding question at every cut the law itself admits:
+**DIVISIBLE — wherever Barandes' own conditioning rule gives the
+interpolant test bite, the generated law divides exactly**, while
+the fifteen cut-grain indivisibility verdicts are the
+coarse-graining null's signature (held less strongly than random
+noise), and the ONE case that could still reverse this — the
+non-column-constant renewal-to-renewal transfer — is open as
+**U1b** (unequal intervals; base-retaining maps; the exhaustiveness
+gate m2 carried as a pin requirement).  **PAPER 0 PATCHED (the
+single deferred edit pass, five dated forward corrections):** §4's
+[THEOREM] and [THEOREM-GRADE CONVERGENCE] bullets carry their
+PORT-3 scope tags (closed-scope / delivery-conditioned; the §4
+[POSIT] itself untouched); §7 L-1's "precisely the form U4 tests"
+corrected to the ladder (Minkowski-sprinkling non-transfer;
+order-level = fourth form); §7 U1's falsifier carries its outcome
+pointer; §9b Phase I carries the full outcome record and ADDS U1b
+TO PHASE II'S BOARD beside U2 and U3; §11 item 1's "transfers
+intact" corrected to prohibition-only for the G no-go.  **THE
+BOARD FOR PHASE II:** U1b (the pinned question, whole), U2 (the
+J-conjecture, with U1's geography handed: the 44 squares, 32/44
+non-lumpable, ≤2.18% division-event mass in every indivisible
+window), U3 (Born = K1 + the Ẑ sibling handed; §6's sharpening:
+the UNISTOCHASTICITY SCREEN, not indivisibility, is the criterion
+to press — Barandes' quantum criterion survives U1's null intact).
+Meta, carried forward: seven positive headlines died under review
+in v10-v11; zero computed numbers did.  The program pauses here
+for the user's direction on Phase II's opening order.
