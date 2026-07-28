@@ -401,3 +401,71 @@ of every indivisible window's mass carries a division event.  Arm
 exactly 1.  L-1 quoted at the configuration space; no CP, Bell,
 locality, or covariance claim anywhere.  Hostile round — the
 phase's most important — dispatched.
+
+## 2026-07-27 — U1 HOSTILE ROUND: **REJECT — THE BRIDGE HEADLINE IS
+## REVERSED** (v11 LEDGER #12)
+The round rebuilt the WHOLE pipeline from scratch (own enumeration,
+own measure, own σ, own Γ, own exact LP with three solvers + exact
+Farkas verification, five hash seeds, a second interpreter) and
+COULD NOT BREAK A SINGLE COMMITTED NUMBER in ARM-A/B/C, PORT-1/2/3,
+DC1, DC2, geography, or Arm 0.  The arithmetic is clean.  THE
+VERDICT IS NOT: five blocking grounds.  **(B1)** a reproducible
+code defect — the σ cache key omits `actors`, so ARM-D (the pool
+control, whose stated job is "the verdict does not rest on a
+two-actor accident") is served two-actor state on 2,465/50,617
+histories; corrected, ARM-D delivers 1 indivisible triple, not 2
+(the contamination model reproduces the published numbers exactly).
+**(B2)** a false percentage: 7/321 = 2.18%, not "at most 1.8%"; the
+receipt's own gate J1 was right where the note was wrong; #11
+carried it.  **(B3)** "a cap can hide a divisibility verdict but
+cannot hide an indivisible one" is FALSE — the round exhibited
+(1,4,5) σ: published EXCLUDED-BY-CAP, actually INDIVISIBLE (exact
+Farkas certificate, 0/1,728 columns violating, w·b > 0); it decided
+7 of the 10 cap exclusions; corrected census INDIVISIBLE 14 /
+DIVISIBLE 12 / EXCLUDED 3 / VACUOUS 29 — "14" survives by
+coincidence of one leaving (B1) and one entering (B3).  **(B4) AG2
+— the unit's ONLY anti-artefact gate — COLLAPSES once the cap is
+lifted:** at (1,3,4) and (1,4,5) the coarse map is indivisible and
+the fine map DIVIDES (exact interpolants verified) — 2/20 opposed,
+not 0/20, and in exactly the artefact direction.  **(B5) THE SCOPE
+KILL:** [B3] p.9 admits conditioning only at division events; paper
+0 §4 fixes division events = renewals; the census's own table:
+first-cut-IS-a-division-event → 32 triples, 29 VACUOUS + 3
+DIVISIBLE (two by exact Chapman-Kolmogorov), **0 INDIVISIBLE**;
+first-cut-is-NOT → all 14 witnesses.  The pinned renewal-to-renewal
+family: rank-one, R² = R (exactly divisible), non-degenerate case
+NOT RUN (depth ≥ 9).  **(B6) THE UNMEASURED NULL, run by the
+round:** a uniformly RANDOM partition of the prefixes into σ's own
+class counts — zero record content — comes out INDIVISIBLE on all
+five test triples at all three seeds WITH MORE OBSTRUCTED ROWS THAN
+σ (54/54 vs 13/54); the kinematic tag-multiset map: 4/5; the
+lumpable actor-sequence map: divides exactly.  Textbook pattern:
+lumpable ⇒ divisible, non-lumpable ⇒ indivisible — Barandes' own
+classical-limit caveat (indivisibility per se is NOT his quantum
+criterion; unistochasticity is).  THE RECORD MAP IS CLOSER TO
+DIVISIBLE THAN RANDOM NOISE OF THE SAME GRANULARITY — the OPPOSITE
+of the headline's direction.  M-findings: the "both directions"
+claim (no STOCHASTIC∩INDIVISIBLE cell exists); PORT-3's correction
+mis-routed to the §4 [POSIT] (it actually hits paper0:136 [THEOREM]
+and :143 [THEOREM-GRADE CONVERGENCE] — closed-scope results
+imported without a scope tag); the ARM-B protective paragraph false
+("all begin at depth ≥ 2" — two begin at 1) and its own comparison
+points the artefact way; the status line self-graded RESULT
+(the LD M1 precedent, not carried); DC2 and the census are ONE FACT
+(non-lumpability) presented as two headlines.  **THE HONEST VERDICT
+ON THE DELIVERED COMPUTATION (the round's words, adopted here):
+BRIDGE-AT-ADJACENT-SCOPE with the null attached — at cut grain, on
+non-division conditioning cuts, the D62 record state is a
+non-lumpable function of the divisible click law and its Γ family
+admits no stochastic interpolant at 14 triples, a property it
+shares with (and holds LESS strongly than) a random partition of
+the same granularity; at every conditioning cut that is a division
+event, the law divides exactly.**  A real, informative,
+negative-leaning result — NOT the corpus's first generated
+indivisible bridge.  THE DECISIVE COMPUTATION IS THE PINNED ONE THE
+CAP BLOCKED: a non-degenerate renewal-to-renewal triple (depth ≥ 9
+or a wider pool).  Repair dispatched on the round's eight-step
+route; #11's headline is SUPERSEDED BY THIS ENTRY pending the
+repaired unit.  Meta, on record: the corpus's positive-headline
+mortality under hostile review is now 6-for-6 across v10-v11; the
+arithmetic-never-wrong streak holds.
