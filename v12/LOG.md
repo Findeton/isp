@@ -73,3 +73,50 @@ worker CONTINUES — its receipt is the kill documentation (G4
 = the mode-2 exhibit or its sharpening); on landing it is
 committed as such, hostile-rounded, and the programme's remnant
 (W2/W3 re-scoped) awaits the user's word.
+
+## 2026-07-28 — THE EXTERNAL HOSTILE REVIEW ADJUDICATED: ACCEPTED
+## NEARLY WHOLE — PAPER 0 REWRITTEN (v2), W1 RE-PINNED AS W1′ (v12
+## LEDGER #3)
+The user delivered a full external hostile review of paper 0 v1.
+**ADJUDICATION: ACCEPTED on every load-bearing point**, with the
+review's two constructions HAND-VERIFIED by the adjudicator before
+adoption: (i) the singlet model ψ_xy = (z_a − xy·w_b)/(2√2) gives
+¼(1 − xy cos(a−b)) and CHSH = −2√2 at the stated settings ✓; the
+factorized relative phase g_ab = z_a·conj(w_b) has 4-cycle holonomy
+identically 1 (factorized phases always do) ✓; (ii) the PR
+edge-phase pattern (1,1,1,−1) gives CHSH = 4 with holonomy −1 ✓.
+**THE ANTI-CORRELATION TABLE IS EXACT: trivial class ↔ 2√2,
+nontrivial class ↔ 4 — v1's T2 was not merely unproven but
+anti-correlated with quantumness in the natural models.**  The
+category conflation OWNED: v1's chain crossed bundle sections /
+flat-holonomy parallel sections / AB presheaf-of-distribution
+sections (three different "global section" notions), and the T²
+reading confused flat characters on a trivial bundle with bundle
+classes; AB's cohomological obstruction is a witness, not an
+equivalence — all engraved in v2.  **PAPER 0 REWRITTEN (v2,
+superseding v1 per forward discipline; v1 in git history):** T2′ =
+THE COMPOSITION DEFECT Δ(U₂,U₁) = B(U₂U₁) − B(U₂)B(U₁) (Born
+projection non-functoriality = interference, [B1]'s own
+identification) as the primary invariant; T3′ = records KILL THE
+DEFECT (de-tautologized: conditionalization making Δ vanish on the
+recorded algebra ⟺ divisibility there — with bc #4's M-1
+biconditional as the already-measured instance); T5′ reworded (the
+obstruction is to a global context-independent VALUE CATALOGUE,
+not to one actual world — Barandes' one-world ontology no longer
+contradicted); T1 scoped (the ATLAS move is v12's postulate, not
+[B1-B3]'s; local ontology vs local mathematics distinguished); the
+T² DEMOTED (flat characters, wrong moduli) in favour of **W2′: the
+projective multiplier [ω] ∈ H²(ℤ², U(1)) ≅ U(1) over the generated
+⟨2,3⟩ — the Weyl/noncommutative-torus phase, ħ-like not i-like**.
+§3 = the review's exact skeleton: {±1}-factorization ⊂ U(1)-Gram ⊂
+no-signaling with maxima 2 / 2√2 / 4 — the separation is GRAM
+POSITIVITY plus phases, not cohomology.  **W1's obsolete worker
+STOPPED before receipt; W1′ RE-PINNED (note-w1p-three-class-pin.md):
+Arm A the chain as exact theorems with receipts; Arm B the
+anti-correlation exhibit in-receipt; Arm C the Δ census (the
+cross-term identity gated; the Δ = 0 census; the record-connection
+worked example feeding W3′); Arm D antecedent-attribution and
+scope gates.**  W2′/W3′/W4′/W5 re-pinned in paper 0 §4, NOT
+dispatched (awaiting the user's word).  W1′ dispatched.  Meta: the
+review is the programme's fastest and best correction — v1 lived
+four hours; the correction cost nothing but honesty.

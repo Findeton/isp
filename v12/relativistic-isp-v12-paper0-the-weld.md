@@ -1,132 +1,156 @@
-# The Weld: quantum mechanics as the gluing of classical charts
+# The Weld, v2: quantum mechanics as the composition defect of
+# classical shadows
 
-**v12 paper 0 — the founding document.  STRICT.  2026-07-28.**
-Status: [PROGRAMME], not [THEOREM] — every claim in §1 is a
-hypothesis until its unit survives a hostile round; the corpus's
-positive-headline mortality is 8-for-8 and this paper leans anyway,
-because pins are how leans are killed.
+**v12 paper 0 — the founding document, SECOND FORMULATION.  STRICT.
+2026-07-28.**  v1 (the U(1)-bundle-class formulation) is superseded
+per LOG #2–#3: falsified by the two-chart H¹ triviality (LOG #2,
+proven) and by the external hostile review's exact constructions
+(LOG #3, hand-verified): **the Tsirelson-saturating singlet model
+carries a TRIVIAL cocycle class, while the nontrivial class in the
+natural edge-phase models is the superquantum PR box** — the v1
+identification was anti-correlated with quantumness.  v1 is
+preserved in git history; nothing below claims it.
+Status: [PROGRAMME], not [THEOREM]; positive-headline mortality is
+9-for-9 and every claim here dies with its unit.
 
 ---
 
-## 1. The thesis
+## 1. The thesis, reformulated
 
-**T1 (charts).**  Every local description of a physical situation —
-one system, one wing, one frame — is a classical stochastic process
-in Barandes' sense [B1–B3]: definite configurations, an ordinary
-probability law.  Locally there is no quantum anywhere.
+**T1 (charts, scoped).**  Every measurement context admits an
+ordinary Barandes stochastic process: definite configurations, an
+ordinary probability law.  Two scope notes, engraved.  (i) The
+ATLAS move — replacing Barandes' one global process by a family of
+context-local processes — is v12's own postulate, NOT derived from
+[B1–B3]: Barandes models the whole system as one indivisible
+process with definite global configurations.  (ii) "Locally there
+is no quantum ONTOLOGY" is the claim; "locally no quantum
+mathematics" is not claimed — the amplitude lifts carry
+complex-linear structure wherever they exist.
 
-**T2 (the twist).**  The quantum content of the world is not in any
-chart.  It is a **U(1)-valued cocycle on the overlaps between
-charts** — the data saying how neighbouring descriptions twist
-against each other.  Interference, the imaginary unit, "phase," are
-the **holonomy of loops of descriptions**, not properties of any
-process.  A situation is classical exactly when the cocycle class is
-trivial — when the charts glue into one global description — and
-quantum exactly when it is not.
-*(FALSIFIED AS STATED — forward correction 2026-07-28, LOG #2,
-ahead of W1's receipt.  Mode 1, proven: the two-chart cover has
-trivial H¹ (one overlap, no loop in the nerve), so the singlet's
-cocycle is a coboundary — quantum with trivial class.  The honest
-carrier is the measurement-CONTEXT cycle, which is [AB]'s ground.
-Mode 2: on that carrier, unconstrained U(1) freedom admits the PR
-box — the class carves the no-signaling set, not the quantum set;
-Tsirelson is a positivity fact (Hilbert lift/NPA), not topology.
-The quantitative claim and the completes-the-picture framing are
-WITHDRAWN.  The surviving programme: T3 and W2 only, as substrate
-questions; the search for a weld-native principle forcing
-positivity is noted as a known open problem of the field, not a
-gap nobody saw.)*
+**T2′ (THE COMPOSITION DEFECT — the reformulated core).**  Let
+B(U) = |U|∘² be the entrywise Born projection from amplitude
+evolution to its stochastic shadow.  B is not a functor:
 
-**T3 (records untwist).**  A record forces a chart; a global record
-would be a global section; a global section exists iff the class is
-trivial.  Hence a fully recorded world is classical **by theorem**
-(to be proved as W3, measured already as v11's entire arc), and
-measurement-as-collapse is local trivialization of the twist.
+    Δ(U₂, U₁) := B(U₂U₁) − B(U₂)B(U₁) ≠ 0 generically,
 
-**T4 (Born as forgetting).**  Unistochasticity — Γ = |U|² entrywise
-[B3] — reads as: the classical process is the shadow of a twisted
-lift; squaring the modulus is forgetting the twist.
+and the discrepancy is exactly the interference cross-terms —
+[B1]'s own identification.  **The quantum content of a situation is
+the gauge-invariant obstruction to its classical stochastic shadows
+composing and gluing — the defect Δ and its organization across
+contexts — NOT a principal-U(1)-bundle class.**  Amplitude
+transport composes; its shadow does not; interference is the
+failure of the Born projection to preserve composition.  The v1
+identification (quantum ⟺ [g] ≠ 0 ∈ H¹) is withdrawn: the exact
+constructions show trivial-class Tsirelson and nontrivial-class PR.
 
-**T5 (one world fails by cohomology).**  There is no global world,
-not because definiteness fails locally, but because global
-definiteness IS triviality of the class, and the world's class is
-nonzero.  BC2's frame-unmappable composite joint and BC1's
-non-gluing division events are this fact seen by two instruments
-(to be unified as W4 — a falsifiable identification, not assumed;
-U2's three-axes lesson stands as the warning).
+**T3′ (records kill the defect — de-tautologized).**  A record is
+NOT "a global section" (that reading was tautological-or-false).  A
+record event is a conditionalization/conditional expectation under
+which Δ VANISHES on the recorded algebra — making subsequent
+stochastic evolution divisible there.  This is now a quantitative,
+falsifiable claim connecting records, division events, and
+classicality — and it already has a measured instance: BC2's round
+found "legitimate division event ⟺ the process divides" on the
+Bell model (bc LOG #4, M-1), which is exactly "division events sit
+where the defect is zero."  W3 proves or kills the general form.
 
-## 2. What is already measured (the evidence table)
+**T4 (Born as forgetting — unchanged, now primary).**
+Unistochasticity Γ = |U|² reads: the classical process is the
+shadow of amplitude transport; squaring the modulus forgets the
+phases; what the forgetting destroys is exactly compositionality
+(T2′).  The strongest part of v1, per the review, and now the
+foundation rather than a corollary.
 
-| Committed result | Weld reading |
+**T5′ (the global catalogue, reworded).**  What Fine/AB obstruct is
+a global CONTEXT-INDEPENDENT CATALOGUE of values for all
+potentially askable observables reproducing the statistics — NOT
+the existence of one actual world or one actual configuration
+history.  Barandes keeps definite configurations at all times; v12
+no longer contradicts that.  "One world" survives; "one
+counterfactual value-table" does not.
+
+## 2. The measured evidence (updated)
+
+| Committed result | Reading under T2′/T3′ |
 |---|---|
-| v11 U1/U1b/U1c: the generated record law divides at every askable grain; the fair null discriminates; total factuality ⇒ classicality (v11 LOG #14, #21, and the delivered-unreviewed U1c) | global section ⇒ trivial class ⇒ classical: the constructive converse, measured |
-| v10 D74 + v11 U3: transport holonomy group ⟨2,3⟩ ≅ ℤ², all values in ℝ⁺; **Hom(ℤ², U(1)) = T², no character selected** (v11 LOG #19) | the base is built and untwisted; **T² is the moduli space of candidate twists**; enrichment = selecting a point |
-| BC2 (green-unreviewed + round): wing charts frame-invariant; the composite slice-joint admits NO frame map, survives pointer-free (bc LOG #2, #4) | charts fine; the global joint is what a nonzero class forbids |
-| BC1 (green-unreviewed): ten circuits where only the empty global division-event assignment exists (bc LOG #3) | chart anchors need not glue; the obstruction genre made exact |
-| v11 U2: curvature, irreversibility, non-lumpability are three axes, no weld quantity (v11 LOG #24) | all three are base geometry; none is the twist — no base quantity could be |
-| v1 paper 0's founding conjecture: "quantum interference as the holonomy of probability transport itself" | the thesis, stated eleven versions early |
+| v11 U1/U1b/U1c: the record law divides at every askable grain; total factuality ⇒ classicality | fully recorded ⇒ defect killed everywhere ⇒ divisible: T3′'s constructive instance |
+| bc #4 (BC2 round, M-1): "legitimate division event ⟺ the process divides at it" on the Bell model | T3′ measured at one joint: division events live where Δ = 0 |
+| v11 U3: Hom(⟨2,3⟩ ≅ ℤ², U(1)) = T², no character selected | DEMOTED per the review: flat characters live on a topologically trivial bundle and are the wrong moduli; the right question is the PROJECTIVE MULTIPLIER [ω] ∈ H²(ℤ², U(1)) — the Weyl/noncommutative-torus phase θ (closer to ħ than to i): W2′ |
+| BC2: wing charts frame-invariant; the composite slice-joint frame-relative | charts fine; the frame-relative object is the context-indexed shadow family, not a bundle section |
+| BC1: division events do not glue across the subsystem lattice; ten empty-only circuits | the defect's organization across contexts is nontrivial; whether it is ONE invariant with BC2's and the Δ-structure is W4′ — a hypothesis, not assumed (U2's three-axes warning stands) |
+| v1 paper 0's "interference = holonomy of probability transport" | survives in T2′ form: the holonomy intuition was right about WHERE (loops of contexts/compositions), wrong about WHICH invariant (1-classes) |
 
-## 3. The formal skeleton, minimally
+## 3. The exact skeleton (the review's, adopted)
 
-A **weld model** is: a cover of the situation by charts {C_i} (each
-a Barandes process); on overlaps, transition data g_ij with values
-in a stated group G (the physical claim: G = U(1)); the cocycle
-condition on triple overlaps; local amplitude-objects on charts,
-paired through g_ij to yield joint statistics where no joint measure
-exists.  The **class** [g] ∈ H¹(cover, G) is the situation's quantum
-content; [g] = 0 ⟺ a global section (a joint distribution / a
-global record) exists.
+Three model classes on the CHSH scenario, exactly:
 
-**Honesty about antecedents, engraved:** the skeleton is assembled
-from known mathematics — Fine's theorem (no-joint ⟺ Bell violation),
-Abramsky–Brandenburger sheaf contextuality (quantumness = no global
-section), and gauge-theoretic gluing.  What is v12's own, and dies
-with the units: charts = Barandes processes specifically; the
-measured T² over a **generated** substrate as the twist moduli; the
-untwisting theorem (records ⇒ trivialization) as the mechanism of
-the classical limit; and — the make-or-break — the **quantitative**
-claim that the cocycle geometry yields the quantum correlation set
-(Tsirelson from U(1)), not merely the no-joint fact.
+    {±1}-factorization  ⊂  U(1)-Gram factorization  ⊂  no-signaling
+         max CHSH = 2            max CHSH = 2√2           max = 4
 
-## 4. The programme, with kill conditions
+with E_ab = Re(z_a·conj(w_b)), z_a, w_b ∈ U(1) in the middle class:
+**the phase weld plus positive Gram geometry — not cohomological
+nontriviality — separates classical / quantum / superquantum.**
+Tsirelson's bound is the two-dimensional real-unit-vector instance
+of Gram positivity.  The 2√2 is enforced by |v₀+v₁| + |v₀−v₁| ≤ 2√2
+on the unit circle.  W1′ proves this chain as an exact theorem with
+receipts, together with the anti-correlation exhibit (singlet:
+trivial class, 2√2; PR: nontrivial class, 4).
 
-- **W1 — THE RECONSTRUCTION TEST (first, and the executioner).**
-  Build the singlet from two classical wing charts + an explicit
-  U(1) cocycle and NOTHING else; exact.  Must yield
-  P(x,y|a,b) = ¼(1 − xy cos(a−b)) at declared algebraic angles;
-  CHSH = 2√2 exactly at the Tsirelson settings; trivial cocycle
-  must yield exactly the classical polytope (max CHSH = 2); the
-  class maximum over all U(1) instances at declared caps is THE
-  measurement.  **K1:** no U(1) instance reproduces the singlet ⇒
-  dead.  **K2:** the class max exceeds 2√2 with no stated natural
-  constraint ⇒ the cocycle explanation of Tsirelson fails ⇒ dead as
-  stated.  **K3:** trivial cocycle exceeds 2 ⇒ the construction is
-  broken.
-- **W2 — the selection problem on T²** (which character; what
-  principle forces it; dream outcome: {±i} forced).
-- **W3 — the untwisting theorem** (global record ⇒ [g] = 0; one
-  surviving twisted family kills the mechanism).
-- **W4 — one cohomology** (are BC1's and BC2's obstructions and the
-  U(1) twist one class or three? — falsifiable; no assumption of
-  unity).
-- **W5 — Barandes recast as chart theory** (division events = chart
-  anchors; which claims survive globalization).
+**Antecedents, engraved:** Fine [F]; Abramsky–Brandenburger [AB]
+(and the caution that their cohomological obstruction is a witness,
+not an equivalence); Tsirelson [T]; the Weyl/projective-multiplier
+structure [W].  v12's own, dying with its units: the composition
+defect as the PRIMARY invariant organizing the corpus's
+measurements; records-as-defect-killers with BC2-M1 as its measured
+instance; the H² multiplier question over the GENERATED ℤ²; and the
+atlas postulate over Barandes charts.
+
+## 4. The programme (re-pinned)
+
+- **W1′ — THE THREE-CLASS THEOREM (first).**  Prove and receipt the
+  chain 2 / 2√2 / 4 exactly over the three declared classes; the
+  anti-correlation exhibit (both review constructions verified
+  in-receipt); the Δ census on minimal two-step compositions
+  (Barandes' own interference identification reproduced exactly).
+  Kill: any class maximum ≠ its claimed value ⇒ the skeleton is
+  wrong.
+- **W2′ — THE MULTIPLIER SELECTION.**  On the generated ℤ² (the
+  committed ⟨2,3⟩): which projective multiplier
+  [ω] ∈ H²(ℤ², U(1)) ≅ U(1) is selected, by what principle, and
+  what fixes its scale θ?  The target is ħ-like, not i-like; {±i}
+  may appear as a special multiplier but is not the target.
+- **W3′ — RECORDS KILL THE DEFECT.**  The de-tautologized theorem:
+  a record/conditionalization makes Δ vanish on the recorded
+  algebra ⟺ subsequent evolution divisible there; BC2-M1's
+  biconditional derived as an instance; v11's total-factuality arc
+  derived as the global case.  Kill: a record with surviving defect
+  on its own algebra.
+- **W4′ — ONE INVARIANT OR THREE.**  Is the Δ-structure the same
+  obstruction AB's presheaf class witnesses, and the same one
+  BC1/BC2 measured?  Falsifiable; the U2 precedent (assumed-one,
+  measured-three) is the named warning.
+- **W5 — Barandes recast** (unchanged): division events = where the
+  defect dies (now via T3′); which of his claims survive the atlas
+  move.
 
 ## 5. Non-claims
 
-No claim about nature beyond the models built; no claim that the
-skeleton's antecedents are ours; no derivation of the Born rule is
-claimed (T4 is a reading, priced at W2); the identification of
-BC1/BC2/T² obstructions is a HYPOTHESIS (W4); v11 and BC remain
-halted — v12 shares instruments, not verdicts; L-1/L0 bind v12
-wherever applicable (no exact finite covariance claims; no scale
-claims).
+No claim about nature beyond the models; the atlas move is a
+postulate; no Born-rule derivation is claimed; the three-class
+skeleton is assembled from cited antecedents; the H¹ formulation is
+dead and stays dead; W4′'s unification is a hypothesis; v11 and BC
+remain halted; L-1/L0 bind wherever applicable.
 
 ## References
 
-[B1] J. A. Barandes, arXiv 2302.10778.  [B2] arXiv 2309.03085.
-[B3] arXiv 2507.21192 (the division-event/unistochasticity axioms).
-[F] A. Fine, Phys. Rev. Lett. 48, 291 (1982).
-[AB] S. Abramsky, A. Brandenburger, New J. Phys. 13, 113036 (2011).
-[V10] ../v10/THE-THEORY-SO-FAR.md.  [V11] ../v11/LOG.md #1–#24.
-[BC] ../bc/LOG.md #1–#4.  [V1] the v1 paper 0 founding conjecture.
+[B1] Barandes, arXiv 2302.10778.  [B2] arXiv 2309.03085.
+[B3] arXiv 2507.21192.  [F] Fine, PRL 48, 291 (1982).
+[AB] Abramsky–Brandenburger, NJP 13, 113036 (2011).
+[T] Tsirelson's bound (real-unit-vector representation; see e.g.
+arXiv 1501.01406 for the CHSH-type statement).
+[W] Weyl relations / noncommutative torus (projective multipliers
+on ℤ²; e.g. arXiv 1606.01829).
+[V10] ../v10/THE-THEORY-SO-FAR.md.  [V11] ../v11/LOG.md.
+[BC] ../bc/LOG.md.  [REV] the external hostile review of v1,
+adjudicated at LOG #3 (constructions hand-verified there).
