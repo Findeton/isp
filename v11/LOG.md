@@ -888,3 +888,36 @@ created-version mechanism — predict all three?); the record-grain
 hook named as U2b, conditional on U1c's N4.  Outcomes
 W-ONE-ADDRESS / W-CHAIN / W-CROSS; lean NONE.
 File-disjoint; both dispatched in parallel.
+
+## 2026-07-28 — U2 DELIVERED: **W-CROSS — THE THREE-ADDRESS PICTURE
+## IS FALSE**, GREEN-UNREVIEWED (v11 LEDGER #23)
+The weld census lands (note-u2-three-address-weld.md, 38 PASS / 0
+FAIL / 0 ANCHOR-FAIL, 16 anchors, 88s; adjudicator rerun clean;
+deep-window control agrees).  Over ALL 17,277 committed closed
+squares, the pooled 2×2×2 (curved × refused × non-lumpable):
+336/326/0/0/2,458/2,648/4,840/6,669.  **WHAT HOLDS EXACTLY:
+REFUSED ⟺ ARB-CARRYING both ways, 0/0 counterexamples on 17,277 —
+LD's biconditional square-for-square; CURVED ⇒ REFUSED strictly
+(boundary 5,106 flat arb-carrying squares).  WHAT CROSSES:
+NON-LUMPABILITY × BOTH — 326 curved-and-lumpable squares (kinds
+{(r,d) 220, (d,n) 52, (d,r) 40, (d,d) 10, (n,d) 4}); 4,840
+non-lumpable-and-priced (no kind pair contains an r); 2,974
+refused-and-lumpable.**  THE WELD SEARCH: 16 candidates, 120
+pairs, 560 triples — ZERO joint predictors; each address has
+EXACTLY ONE predictor and no quantity has two (J → curvature;
+arb-count family → reversal; σ_base → lumpability).  TWO NEW
+MEASURED FACTS: **σ is order-blind at every closed square**
+(0/17,277 σ-non-commuting, including all 662 curved — the DC2
+signal lives at the BASE CLASS, not the square); **created-version
+count = arbitration count on all 17,277** (LD's mechanism sentence
+is an IDENTITY).  Scope flag in-receipt: ABC3's all-lumpable
+column is a window-depth fact (base depth ≤ 1), not a three-actor
+fact (ASYM2 carries 15 non-lumpable classes; ARM-D control one
+level deeper).  READING, pending the round: the v10-era
+"co-location" story was a small-window coincidence — the honest
+picture is THREE AXES: irreversibility IS arbitration (exact);
+curvature is a strict sub-phenomenon of it; non-lumpability is an
+INDEPENDENT axis (base-class, order-blind) — which is exactly why
+U1's cut-grain indivisibility (a lumpability artifact) never
+tracked the curvature.  Hostile round dispatched.  U1c still
+constructing.

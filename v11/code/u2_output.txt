@@ -1,0 +1,903 @@
+==============================================================================
+U2 — THE THREE-ADDRESS WELD: curvature, irreversibility, non-lumpability
+==============================================================================
+  banner: exact Fractions throughout; the committed d42b1 layer
+  single-sourced by text-slice + an AST signature pass with
+  exit-freedom gated; all three instruments lifted by AST from
+  their own committed receipts (D74, LD, U1) and not retyped;
+  every tested constant quoted from a committed source (registry
+  below); every census printed BOTH WAYS; substantive negatives
+  exit 0; exit 1 ONLY if a committed number fails to reproduce.
+
+  SCOPE: cut grain / transport scope, committed populations only.
+  Record-grain claims are U2b's and are not made here.  The
+  reversal is FORMAL (category-level), exactly as LD declares it:
+  no dynamical or thermodynamic language appears in this receipt.
+  Weight-system level only; no measure claim; no CP/Bell/locality/
+  covariance framing.  No claim that any weld quantity is 'the
+  quantum layer'.
+
+  PYTHONHASHSEED = (unset)
+
+  QUOTE REGISTRY (the anchors below are held to these):
+    [T6.1] v10/note-d72-weld-result.md:150 (sec.1 T6.1), quoted verbatim by v10/code/d74_transport_holonomy_exact.py and by v11/code/ld_reversal_probe_exact.py
+        (A,B) d <= 4: 88 of 1,546 closed squares non-unit, spectrum {1/2: 70
+        , 2/3: 2, 3/2: 6, 2: 10}, kinds {(r,d): 68, (d,r): 8, (d,n): 6, (d,d
+        ): 4, (n,d): 2}, both-blocked 142, delivery-bearing 88/88, shallowes
+        t defect at total depth 3.  (A,B,C) d <= 3: 12 of 1,554, spectrum {1
+        /2: 12}, kinds {(r,d): 12}, both-blocked 42.
+    [T6.2] v10/note-d72-weld-result.md:151 (sec.1 T6.2)
+        (A,B) d <= 4: 40 half-open (AB-only 28, BA-only 12), kinds {(r,d): 1
+        2, (d,r): 4, (p,d): 16, (d,p): 8}.
+    [d74_group] v10/note-d74-transport-holonomy-result.md:1, :97-98, :227
+        the transport holonomy value set is {1/2, 2/3, 3/2, 2} at every scop
+        e run; the group it generates is <2,3>.
+    [d74_4444] v10/note-d74-transport-holonomy-result.md (A3.1/A3.2), quoted by v11/code/u1_indivisibility_census_exact.py as QUOTES['d74-4444']
+        AB4: of 88 defective squares the weighted-menu quotient CLOSES 44 an
+        d the coarsest weighted congruence closes the same 44; SEEN (curvatu
+        re-type) 44 with spectrum {1/2: 26, 2: 10, 2/3: 2, 3/2: 6}; UNSEEN (
+        descent-obstruction-type) 44 with spectrum {1/2: 44} and kinds {(r,d
+        ): 44}.  ABC3: the menu quotient closes 0 of 12.
+    [d74_asym] v10/code/d74_transport_holonomy_exact.py:1406-1420 (oneway, ring), censused in v11/note-ld-last-door.md sec.4
+        ASYM-1, the link A->B only: 5,504 closed, 334 non-unit, spectrum {1/
+        2: 184, 2/3: 10, 3/2: 68, 2: 72}.  ASYM-2, the defected directed rin
+        g A->B->C->A: 8,673 closed, 228 non-unit, spectrum {1/2: 190, 2/3: 2
+        , 3/2: 10, 2: 26}.  Declared SUB-GRAMMARS: the support is restricted
+        , the committed weights are untouched.
+    [LD_C3a] v11/note-ld-last-door.md sec.3 C.3a / sec.4 D.3, adjudicated v11 LOG #10
+        a closed square's reversed counterpart is priced by the committed la
+        w IF AND ONLY IF its endpoint record carries no arbitration event: o
+        ver all four arms (17,277 closed squares) the cross-tab is {(arb, pr
+        iced): 0, (arb, refused): 5,768, (no arb, priced): 11,509, (no arb, 
+        refused): 0}; on the two anchor arms alone (3,100 squares) it is {0,
+         526, 2,574, 0}.
+    [LD_C3b] v11/note-ld-last-door.md sec.3 C.3b / sec.4 D.1, D.3
+        every holonomy-carrying loop's record carries an arbitration: 662/66
+        2 over the four arms (88 + 12 + 334 + 228), and 662/662 holonomy-car
+        rying loops have NO priced reversed counterpart (0 INVERSION, 0 INVA
+        RIANT, 0 OTHER, 662 UNDEFINED).
+    [U1_DC2] v11/code/u1_output.txt:772, :789 (gates J2 and DC2), v11/note-u1-indivisibility-census.md
+        the lumpability defect of ARM-A ((A,B) transport, exhaustive to dept
+        h 5, relative-horizon measure at horizon 5), by depth (classes, non-
+        lumpable classes): {0: (1,0), 1: (5,0), 2: (11,4), 3: (19,8), 4: (32
+        ,12)}, total 24 non-lumpable classes; and 32 of the 44 descent-obstr
+        uction squares of AB4 have their base in a NON-LUMPABLE configuratio
+        n class of ARM-A.
+    [U1_44] v11/code/u1_output.txt:464-465
+        the 44 named descent-obstruction squares of AB4: base-depth census {
+        1: 4, 2: 40}; event-kind pairs {('r','d'): 44}.
+
+------------------------------------------------------------------------------
+SEC 0.1  SINGLE-SOURCING: AST signature pass, text-slice, AST lift
+------------------------------------------------------------------------------
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on all four committed sources: every required def exists at module level with the exact positional argument list, so a silent upstream edit to the transport layer, to D74's census machinery, to LD's reversal functor or to U1's sigma port cannot slip through unnoticed  (d42b1 29 defs (9 required, missing []); d74 39 defs (missing []); ld 30 defs (missing []); u1 50 defs (missing []))
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only)
+  [PASS] SRC.2 EXIT-FREEDOM GATED: sys.exit / os._exit are neutralised inside the slice and restored after, so a sliced layer cannot set this receipt's exit status; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked; 0 sys.exit in the 16129-byte head)
+         ^ NO INDEPENDENT INFORMATION: a property of the loader, not of the substrate; it tests our plumbing
+  [PASS] ANCHOR SRC.3 D74's CENSUS MACHINERY IS D74's, lifted by AST from the committed receipt and not retyped: sk, evsk, enumerate_line, square_census (the exchange-square census whose ratio line is the holonomy), A_menu (the weighted-menu abstraction whose kernel IS the coarsest descent quotient) and congruence  (lifted 6 definitions from v10/code/d74_transport_holonomy_exact.py: A_menu (2 lines), congruence (22 lines), enumerate_line (19 lines), evsk (9 lines), sk (9 lines), square_census (59 lines))
+  [PASS] ANCHOR SRC.4 LD's REVERSAL FUNCTOR IS LD's, lifted by AST from the TERMINAL LD receipt and not retyped: rho (the forced event-kind relabelling — delivery transposes, every other kind is self-dual), rev, rev_with, mu_of_sequence (the committed measure of a bare event sequence read from the empty record), first_blocker, classify and reversal_census, together with the two committed sub-grammar filters oneway and ring  (lifted 9 definitions from v11/code/ld_reversal_probe_exact.py: classify (10 lines), first_blocker (12 lines), mu_of_sequence (17 lines), oneway (3 lines), rev (4 lines), rev_with (2 lines), reversal_census (26 lines), rho (6 lines), ring (4 lines))
+  [PASS] ANCHOR SRC.5 U1's DC2 INSTRUMENT IS U1's, lifted by AST from the TERMINAL U1 receipt and not retyped: sigmaT (the D62 sigma fields ported to transport scope — the WINNER-INVISIBLE reading, enriched=False, which is the reading U1's DC2 census uses), payload_of, and horizon_measure (the D46b/D70 relative-horizon construction G(h,r) and the forward measure built from k_r(e|h) = q(e|h) G(h+e,r-1)/G(h,r))  (lifted 3 definitions from v11/code/u1_indivisibility_census_exact.py: horizon_measure (30 lines), payload_of (6 lines), sigmaT (45 lines))
+
+------------------------------------------------------------------------------
+SEC 1  DECLARED CAPS AND POPULATIONS (nothing silent)
+------------------------------------------------------------------------------
+  POPULATION AB4    (A,B) depth<=4 — D72/D74's anchor window
+  POPULATION ABC3   (A,B,C) depth<=3 — D72/D74's anchor window
+  POPULATION ASYM1  (A,B) depth<=5, one-way A->B — D74's declared sub-grammar
+  POPULATION ASYM2  (A,B,C) depth<=4, directed ring A->B->C->A — D74's declared sub-grammar
+  the lumpability instrument runs at EACH POPULATION'S OWN WINDOW
+    (its actor pool, its cap, its declared sub-grammar filter,
+     horizon = the cap), and U1's committed ARM-A window
+    ((A,B) depth<=5, unfiltered, horizon 5) is carried BOTH as the
+     port-verification instrument and as AB4's horizon control.
+  the reversal instrument is LD's committed reading: the anchor
+    populations reverse into the unrestricted grammar, the two
+    sub-grammar populations into their MIRROR sub-grammar (LD's
+    honest opposite of a directed schedule), with the arm's own
+    sub-grammar carried as the second reading.
+  transport scope, cut grain, committed families only; weight-
+    system level; no measure claim.
+
+------------------------------------------------------------------------------
+SEC 2  ANCHORS — D72/D74's census on all four populations (exit 1 on failure)
+------------------------------------------------------------------------------
+  [DATA] AB4 census: 3969 histories; {'both-blocked': 142, 'closed': 1546, 'AB-only': 28, 'BA-only': 12}; non-unit 88; ratios {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; kinds {"('d', 'd')": 4, "('d', 'n')": 6, "('d', 'r')": 8, "('n', 'd')": 2, "('r', 'd')": 68}
+         [2s elapsed in SEC 2]
+  [DATA] ABC3 census: 3424 histories; {'both-blocked': 42, 'closed': 1554}; non-unit 12; ratios {'1': 1542, '1/2': 12}; kinds {"('r', 'd')": 12}
+         [3s elapsed in SEC 2]
+  [DATA] ASYM1 census: 15052 histories; {'both-blocked': 832, 'closed': 5504, 'AB-only': 88, 'BA-only': 144}; non-unit 334; ratios {'1': 5170, '1/2': 184, '2': 72, '2/3': 10, '3/2': 68}; kinds {"('d', 'n')": 70, "('d', 'r')": 72, "('r', 'd')": 192}
+         [11s elapsed in SEC 2]
+  [DATA] ASYM2 census: 20653 histories; {'both-blocked': 495, 'closed': 8673, 'AB-only': 36, 'BA-only': 24}; non-unit 228; ratios {'1': 8445, '1/2': 190, '2': 26, '2/3': 2, '3/2': 10}; kinds {"('d', 'd')": 6, "('d', 'n')": 10, "('d', 'r')": 24, "('n', 'd')": 2, "('r', 'd')": 186}
+         [26s elapsed in SEC 2]
+  [PASS] ANCHOR AB4.1 D72's T6.1 row reproduces EXACTLY — history count, closed-square count, the FULL ratio multiset (unit AND non-unit), the kind census, the both-blocked count, the delivery-bearing fraction and the shallowest defect depth  (histories 3969/3969; closed 1546/1546; non-unit 88/88; ratios match True; kinds match True; delivery-bearing 88/88; shallowest 3)
+  [PASS] ANCHOR AB4.2 D72's T6.2 half-open row reproduces EXACTLY — 40 half-open squares, AB-only 28, BA-only 12, with the committed kind census  (AB-only 28, BA-only 12, kinds {"('d', 'p')": 8, "('d', 'r')": 4, "('p', 'd')": 16, "('r', 'd')": 12})
+  [PASS] ANCHOR ABC3.1 D72's T6.1 row at the three-actor anchor window reproduces EXACTLY  (histories 3424/3424; closed 1554/1554; non-unit 12/12; both-blocked 42)
+  [PASS] ANCHOR ASYM1.1 D74's declared sub-grammar census reproduces EXACTLY (the count LD's sec.4 table carries): closed-square count, non-unit count and the full non-unit spectrum  (closed 5504/5504; non-unit 334/334; spectrum {'1/2': 184, '2': 72, '2/3': 10, '3/2': 68})
+  [PASS] ANCHOR ASYM2.1 D74's declared sub-grammar census reproduces EXACTLY (the count LD's sec.4 table carries): closed-square count, non-unit count and the full non-unit spectrum  (closed 8673/8673; non-unit 228/228; spectrum {'1/2': 190, '2': 26, '2/3': 2, '3/2': 10})
+  [PASS] ANCHOR G.1 D74's holonomy value set reproduces EXACTLY over all four populations: {1/2, 2/3, 3/2, 2}, the value set of the group <2,3> (the group row itself is D74's and is not re-derived here — this receipt uses J only as a status and a candidate)  (value set ['1/2', '2', '2/3', '3/2'] (quoted ['1/2', '2', '2/3', '3/2']))
+  [PASS] ANCHOR LD.0 THE POOLED POPULATION IS LD's POPULATION, TO THE UNIT: 17,277 closed squares over the four arms, of which 662 are holonomy-carrying  (closed squares 17277 (quoted 17277); holonomy-carrying 662 (quoted 662))
+  [DATA] AB4 descent split: of 88 defective squares the weighted-menu quotient CLOSES 44 and the coarsest weighted congruence closes 44 (5 refinement rounds); UNSEEN (descent-obstruction-type) 44: spectrum {'1/2': 44}, kinds {"('r', 'd')": 44}
+  [DATA] ABC3 descent split: of 12 defective squares the weighted-menu quotient CLOSES 0 and the coarsest weighted congruence closes 0 (4 refinement rounds); UNSEEN (descent-obstruction-type) 12: spectrum {'1/2': 12}, kinds {"('r', 'd')": 12}
+  [PASS] ANCHOR D74.1 THE 44 + 44 SPLIT REPRODUCES EXACTLY on AB4 — the coarsest descent quotient closes 44 of the 88 defective squares, the coarsest weighted congruence closes the same 44, and the invisible half is 44 squares with spectrum {1/2: 44}, kinds {(r,d): 44} and base depths {1: 4, 2: 40}; on ABC3 the menu quotient closes 0 of 12.  These 44 are U1's named descent-obstruction squares  (AB4 seen/unseen 44/44 (quoted 44/44); congruence closes 44; 44-square base depths {1: 4, 2: 40}; kinds {"('r', 'd')": 44}; ABC3 seen/unseen 0/12)
+  [DATA] SEC 2 block time: 28s
+
+------------------------------------------------------------------------------
+SEC 3  INSTRUMENT II — the reversal status, and LD's biconditional re-gated
+------------------------------------------------------------------------------
+  LD's committed reading, carried verbatim.  A closed square is the loop
+  h -> h.eA -> h.eA.eB = h.eB.eA -> h.eB -> h; its two endpoint records
+  sigma_AB = h.eA.eB and sigma_BA = h.eB.eA go under R to R(sigma_AB) and
+  R(sigma_BA), and the square is PRICED iff the committed law prices both
+  images and REFUSED otherwise.  The anchor populations are read in the
+  unrestricted grammar; the two sub-grammar populations are read in their
+  MIRROR sub-grammar (LD's honest opposite of a directed schedule, of =
+  f o rho), with the arm's own sub-grammar carried as a second reading.
+
+  LD's C.3a is the biconditional this unit needs before it may use
+  arbitration-carrying as a proxy for refusal, so it is RE-GATED here,
+  per population and pooled, in BOTH directions.
+  [DATA] AB4 reversal classification (all closed squares): {'UNDEFINED': 448, 'unit (INVERSION = INVARIANT)': 1098}
+  [DATA] AB4 reversal classification (holonomy-carrying only, 88 squares): {'UNDEFINED': 88}
+         [0s elapsed in SEC 3]
+  [DATA] ABC3 reversal classification (all closed squares): {'UNDEFINED': 78, 'unit (INVERSION = INVARIANT)': 1476}
+  [DATA] ABC3 reversal classification (holonomy-carrying only, 12 squares): {'UNDEFINED': 12}
+         [0s elapsed in SEC 3]
+  [DATA] ASYM1 reversal classification (all closed squares): {'UNDEFINED': 3280, 'unit (INVERSION = INVARIANT)': 2224}
+  [DATA] ASYM1 reversal classification (holonomy-carrying only, 334 squares): {'UNDEFINED': 334}
+         [1s elapsed in SEC 3]
+  [DATA] ASYM2 reversal classification (all closed squares): {'UNDEFINED': 1962, 'unit (INVERSION = INVARIANT)': 6711}
+  [DATA] ASYM2 reversal classification (holonomy-carrying only, 228 squares): {'UNDEFINED': 228}
+         [2s elapsed in SEC 3]
+  [DATA] AB4 cross-tab (record carries an arbitration) x (its image is priced): {'arb=False, priced=True': 1098, 'arb=True, priced=False': 448}
+  [DATA] ABC3 cross-tab (record carries an arbitration) x (its image is priced): {'arb=False, priced=True': 1476, 'arb=True, priced=False': 78}
+  [DATA] ASYM1 cross-tab (record carries an arbitration) x (its image is priced): {'arb=False, priced=True': 2224, 'arb=True, priced=False': 3280}
+  [DATA] ASYM2 cross-tab (record carries an arbitration) x (its image is priced): {'arb=False, priced=True': 6711, 'arb=True, priced=False': 1962}
+  [DATA] POOLED cross-tab over all four populations: {'arb=False, priced=True': 11509, 'arb=True, priced=False': 5768}
+  [PASS] ANCHOR LD.1 LD's ONE-KIND ADDRESS REPRODUCES EXACTLY, PER POPULATION AND POOLED, IN BOTH DIRECTIONS: a closed square's reversed counterpart is priced IF AND ONLY IF its endpoint record carries no arbitration event.  The pooled cross-tab is {(arb, priced): 0, (arb, refused): 5,768, (no arb, priced): 11,509, (no arb, refused): 0}; the two anchor populations alone give {0, 526, 2,574, 0}.  This is the licence — and the only licence — for using arbitration-carrying as the exact proxy for refusal anywhere below  (pooled {(False, False): 0, (False, True): 11509, (True, False): 5768, (True, True): 0} (quoted {(False, False): 0, (False, True): 11509, (True, False): 5768, (True, True): 0}); anchor pair {(False, False): 0, (False, True): 2574, (True, False): 526, (True, True): 0}; per-population off-diagonal zeros [('AB4', 0, 0), ('ABC3', 0, 0), ('ASYM1', 0, 0), ('ASYM2', 0, 0)])
+  [PASS] ANCHOR LD.2 LD's C.3b REPRODUCES EXACTLY: every holonomy-carrying loop's record carries an arbitration (662/662) and not one of them has a priced reversed counterpart (662 UNDEFINED, 0 INVERSION, 0 INVARIANT, 0 OTHER)  (holonomy-carrying loops carrying an arbitration 662/662; with a priced reversed counterpart 0)
+  [PASS] REV.1a THE MIRROR FILTER IS VACUOUS ON IMAGES, MEASURED RATHER THAN ARGUED.  LD's D.2 argues that of(e) = f(rho(e)) passes identically on a reversed record, because every reversed event is rho(e_fwd) with f(e_fwd) true and rho is an involution.  Here it is measured event by event over every reversed endpoint record of both declared sub-grammar populations: the mirror filter refuses nothing.  The mirror column is therefore a reading of the UNRESTRICTED grammar, and the refusals it reports are the committed law's, not the filter's  (28354/28354 reversed endpoint records of ASYM1 and ASYM2 pass the mirror filter at every event)
+  [DATA] ASYM1 SECOND READING — reversed into the arm's OWN (unmirrored) sub-grammar (LD's rigged control: the rho-image of 'A may send to B' is 'B may send to A', so this reading refuses on the link direction alone): {'arb=False, priced=False': 1633, 'arb=False, priced=True': 591, 'arb=True, priced=False': 3280}
+  [DATA] ASYM2 SECOND READING — reversed into the arm's OWN (unmirrored) sub-grammar (LD's rigged control: the rho-image of 'A may send to B' is 'B may send to A', so this reading refuses on the link direction alone): {'arb=False, priced=False': 5268, 'arb=False, priced=True': 1443, 'arb=True, priced=False': 1962}
+  [DATA] the own-sub-grammar reading against the mirror reading (squares moved, of which arbitration-carrying; refused under mirror; refused under own): {'ASYM1': (1633, 0, 3280, 4913), 'ASYM2': (5268, 0, 1962, 7230)}
+  [PASS] REV.1b THE OWN-SUB-GRAMMAR READING IS STRICTLY STRICTER AND MOVES ONLY ARBITRATION-FREE SQUARES, so the address this unit uses is untouched by the choice.  Read in its own unmirrored sub-grammar every square the mirror reading refuses is refused again, and the extra refusals are refusals of the LINK DIRECTION — every one of them arbitration-free.  Not one arbitration-carrying square changes status, so 'refused iff arbitration-carrying' is the mirror reading's statement and the own reading's failure of it is exactly the rigging LD names  (ASYM1: 1633 squares move, of which 0 carry an arbitration; refused 3280 -> 4913; ASYM2: 5268 squares move, of which 0 carry an arbitration; refused 1962 -> 7230)
+  [DATA] SEC 3 block time: 3s
+
+------------------------------------------------------------------------------
+SEC 4  INSTRUMENT III — U1's DC2 lumpability instrument, ported and VERIFIED
+------------------------------------------------------------------------------
+  U1's DC2 test, verbatim in its body and parameterised in its window.
+  At a depth d the ported configuration map sigma (D62's fields, the
+  WINNER-INVISIBLE reading) partitions the family's depth-d histories
+  into classes; a class is NON-LUMPABLE iff two of its members carry
+  DIFFERENT next-configuration laws under the relative-horizon kernel
+  k_r(e|h) = q(e|h) G(h+e, r-1)/G(h, r).  U1 runs this at ARM-A ((A,B)
+  transport, exhaustive to depth 5, horizon 5) and reports the ladder
+  {0: (1,0), 1: (5,0), 2: (11,4), 3: (19,8), 4: (32,12)}.
+
+  THE PORT TO PER-SQUARE SCOPE.  A closed square (h, eA, eB) sits at
+  base depth d = |h|; its LUMPABILITY STATUS is the status of its base's
+  configuration class at that depth in the instrument run at the square's
+  own window.  Two further readings are carried as controls: LUMP-W, the
+  square's whole window (the base class at depth d, or either shoulder
+  class at depth d+1); and LUMP-B, DC1's sigma-commuting predicate at the
+  square itself (sigma(h.eA.eB) != sigma(h.eB.eA)).
+
+  THE PORT IS VERIFIED BEFORE IT IS USED, at U1's own window, against
+  U1's own two committed numbers: the ladder, and 32 of the 44 named
+  descent-obstruction squares on non-lumpable classes.
+  [DATA] ARM-A lumpability defect by depth (classes, non-lumpable classes): {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (32, 12)}
+  [DATA] ARM-A family: 30729 histories  [18s]
+  [PASS] ANCHOR PORT.1 THE PORTED DC2 INSTRUMENT REPRODUCES U1's COMMITTED LADDER EXACTLY at U1's own window: (classes, non-lumpable classes) by depth = {0: (1,0), 1: (5,0), 2: (11,4), 3: (19,8), 4: (32,12)}, 24 non-lumpable classes in total, the defect appearing from depth 2 onward  (measured {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (32, 12)}; quoted {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (32, 12)}; total 24)
+  [PASS] ANCHOR PORT.2 THE PER-SQUARE PORT REPRODUCES U1's COMMITTED GEOGRAPHY EXACTLY: read square by square through its base's configuration class, 32 of the 44 named descent-obstruction squares of AB4 sit on a NON-LUMPABLE class of ARM-A — U1's gate J2, to the unit.  The per-square reading is therefore U1's instrument and not a new one, and may be applied to the other three populations  (32 of 44 descent-obstruction squares on non-lumpable classes (quoted 32 of 44))
+  [DATA] the 44 named squares, non-lumpable split by base depth: {1: (0, 4), 2: (32, 40)}
+  [DATA] AB4 lumpability instrument: 3969 histories at its own window; defect by depth (classes, non-lumpable) {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 4)}
+         [18s elapsed in SEC 4]
+  [DATA] ABC3 lumpability instrument: 3424 histories at its own window; defect by depth (classes, non-lumpable) {0: (1, 0), 1: (7, 0), 2: (22, 0)}
+         [18s elapsed in SEC 4]
+  [DATA] ASYM1 lumpability instrument: 15052 histories at its own window; defect by depth (classes, non-lumpable) {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (30, 12)}
+         [20s elapsed in SEC 4]
+  [DATA] ASYM2 lumpability instrument: 20653 histories at its own window; defect by depth (classes, non-lumpable) {0: (1, 0), 1: (7, 0), 2: (22, 6), 3: (51, 9)}
+         [22s elapsed in SEC 4]
+  [DATA] the shallowest depth carrying a non-lumpable class, by window: {'AB4': 2, 'ABC3': None, 'ARM-A': 2, 'ASYM1': 2, 'ASYM2': 2}
+  [PASS] PORT.3 THE DC2 DEFECT NEVER APPEARS BELOW DEPTH 2, IN ANY WINDOW RUN HERE.  U1's ARM-A, and each of the four populations' own windows, agree: depths 0 and 1 are lumpable everywhere, and the first non-lumpable class sits at depth 2 wherever the window reaches depth 2 at all.  This is the fact that fixes what the lumpability axis can see on each population, and it is stated before the census reads it  (shallowest non-lumpable depth by window {'AB4': '2', 'ABC3': 'None', 'ARM-A': '2', 'ASYM1': '2', 'ASYM2': '2'})
+  [DATA] the DEEPEST base depth a closed square of each population has: {'AB4': 2, 'ABC3': 1, 'ASYM1': 3, 'ASYM2': 2}
+  [PASS] PORT.4 THE ABC3 ANCHOR WINDOW IS TOO SHALLOW FOR THE LUMPABILITY AXIS TO CARRY ANY INFORMATION, and this is declared here rather than discovered in the census.  A closed square needs |h| + 2 <= cap, so at cap 3 every ABC3 square has base depth <= 1 — and by PORT.3 no window has a non-lumpable class below depth 2.  Every ABC3 square is therefore LUMPABLE by the depth of its own window and not by anything about three-actor pools: ASYM2, a three-actor population reaching depth 4, carries non-lumpable classes at depths 2 and 3  (ABC3 deepest square base depth 1; ABC3 non-lumpable classes 0; ASYM2 (three actors, depth 4) non-lumpable classes 15 at depths [2, 3])
+
+  [PORT.5]  THE DEEP-WINDOW CONTROL.  Each population is also read
+            through the DEEPEST committed window available for its
+            own grammar, so that no lumpability status below rests
+            on the population's own cap: AB4 through U1's ARM-A
+            ((A,B) d<=5, unfiltered), ABC3 through ARM-D ((A,B,C)
+            d<=4, unfiltered — U1's own pool control window), and
+            the two declared sub-grammars through their own
+            windows, which are already the deepest D74 declares for
+            them.
+  [DATA] ARM-D lumpability defect by depth (classes, non-lumpable classes): {0: (1, 0), 1: (7, 0), 2: (22, 6), 3: (51, 9)}
+  [DATA] ARM-D family: 50617 histories  [53s]
+  [PASS] PORT.5 THE DEEP-WINDOW CONTROL AGREES WITH PORT.3: the deeper unfiltered three-actor window carries the defect at depths 2 and 3 and still carries none at depths 0 and 1, so ABC3's empty lumpability axis survives a window one level deeper than its own  (ARM-D by depth {0: (1, 0), 1: (7, 0), 2: (22, 6), 3: (51, 9)})
+  [DATA] SEC 4 block time: 53s
+
+------------------------------------------------------------------------------
+SEC 5  W-A — THE THREE-WAY CENSUS: every closed square, all three statuses
+------------------------------------------------------------------------------
+  [DATA] the pooled square population: 17277 closed squares over 4 populations {'AB4': 1546, 'ABC3': 1554, 'ASYM1': 5504, 'ASYM2': 8673}
+  [DATA] AB4 (A,B) depth<=4 — D72/D74's anchor window — 2x2x2, WAY 1 (J-status x reversal-status x lumpA):
+             curved  refused  non-lump   count
+               True     True      True      32
+               True     True     False      56
+               True    False      True       0
+               True    False     False       0
+              False     True      True     160
+              False     True     False     200
+              False    False      True     448
+              False    False     False     650
+  [DATA] AB4 (A,B) depth<=4 — D72/D74's anchor window — 2x2x2, WAY 2 (the same eight cells re-indexed lumpA x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True      32
+                True     True    False     160
+                True    False     True       0
+                True    False    False     448
+               False     True     True      56
+               False     True    False     200
+               False    False     True       0
+               False    False    False     650
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] AB4 (A,B) depth<=4 — D72/D74's anchor window — marginals: {'curved': 88, 'refused': 448, 'arb-carrying': 448, 'lumpA': 640, 'total': 1546}
+  [DATA] ABC3 (A,B,C) depth<=3 — D72/D74's anchor window — 2x2x2, WAY 1 (J-status x reversal-status x lumpA):
+             curved  refused  non-lump   count
+               True     True      True       0
+               True     True     False      12
+               True    False      True       0
+               True    False     False       0
+              False     True      True       0
+              False     True     False      66
+              False    False      True       0
+              False    False     False    1476
+  [DATA] ABC3 (A,B,C) depth<=3 — D72/D74's anchor window — 2x2x2, WAY 2 (the same eight cells re-indexed lumpA x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True       0
+                True     True    False       0
+                True    False     True       0
+                True    False    False       0
+               False     True     True      12
+               False     True    False      66
+               False    False     True       0
+               False    False    False    1476
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] ABC3 (A,B,C) depth<=3 — D72/D74's anchor window — marginals: {'curved': 12, 'refused': 78, 'arb-carrying': 78, 'lumpA': 0, 'total': 1554}
+  [DATA] ASYM1 (A,B) depth<=5, one-way A->B — D74's declared sub-grammar — 2x2x2, WAY 1 (J-status x reversal-status x lumpA):
+             curved  refused  non-lump   count
+               True     True      True     232
+               True     True     False     102
+               True    False      True       0
+               True    False     False       0
+              False     True      True    1650
+              False     True     False    1296
+              False    False      True    1296
+              False    False     False     928
+  [DATA] ASYM1 (A,B) depth<=5, one-way A->B — D74's declared sub-grammar — 2x2x2, WAY 2 (the same eight cells re-indexed lumpA x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True     232
+                True     True    False    1650
+                True    False     True       0
+                True    False    False    1296
+               False     True     True     102
+               False     True    False    1296
+               False    False     True       0
+               False    False    False     928
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] ASYM1 (A,B) depth<=5, one-way A->B — D74's declared sub-grammar — marginals: {'curved': 334, 'refused': 3280, 'arb-carrying': 3280, 'lumpA': 3178, 'total': 5504}
+  [DATA] ASYM2 (A,B,C) depth<=4, directed ring A->B->C->A — D74's declared sub-grammar — 2x2x2, WAY 1 (J-status x reversal-status x lumpA):
+             curved  refused  non-lump   count
+               True     True      True      72
+               True     True     False     156
+               True    False      True       0
+               True    False     False       0
+              False     True      True     648
+              False     True     False    1086
+              False    False      True    3096
+              False    False     False    3615
+  [DATA] ASYM2 (A,B,C) depth<=4, directed ring A->B->C->A — D74's declared sub-grammar — 2x2x2, WAY 2 (the same eight cells re-indexed lumpA x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True      72
+                True     True    False     648
+                True    False     True       0
+                True    False    False    3096
+               False     True     True     156
+               False     True    False    1086
+               False    False     True       0
+               False    False    False    3615
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] ASYM2 (A,B,C) depth<=4, directed ring A->B->C->A — D74's declared sub-grammar — marginals: {'curved': 228, 'refused': 1962, 'arb-carrying': 1962, 'lumpA': 3816, 'total': 8673}
+  [DATA] POOLED (all four populations) — 2x2x2, WAY 1 (J-status x reversal-status x lumpA):
+             curved  refused  non-lump   count
+               True     True      True     336
+               True     True     False     326
+               True    False      True       0
+               True    False     False       0
+              False     True      True    2458
+              False     True     False    2648
+              False    False      True    4840
+              False    False     False    6669
+  [DATA] POOLED (all four populations) — 2x2x2, WAY 2 (the same eight cells re-indexed lumpA x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True     336
+                True     True    False    2458
+                True    False     True       0
+                True    False    False    4840
+               False     True     True     326
+               False     True    False    2648
+               False    False     True       0
+               False    False    False    6669
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] POOLED (all four populations) — marginals: {'curved': 662, 'refused': 5768, 'arb-carrying': 5768, 'lumpA': 7634, 'total': 17277}
+  [PASS] A.1 THE 2x2x2 CENSUS IS PRINTED BOTH WAYS AND THE TWO READINGS AGREE CELL FOR CELL, per population and pooled.  The table is re-indexed from (J, reversal, lumpability) to (lumpability, reversal, J) by an independent pass over the squares  (5/5 tables agree)
+         ^ NO INDEPENDENT INFORMATION: a re-indexing of the same counter; it gates the printing, not the census
+
+  [A.2]  THE CENSUS BY HOLONOMY VALUE (WAY 1 of the loop axis).
+                  v  squares  (refused, non-lumpable) census
+                  1    16615  {'ref=False,nl=False': 6669, 'ref=False,nl=True': 4840, 'ref=True,nl=False': 2648, 'ref=True,nl=True': 2458}
+                1/2      456  {'ref=True,nl=False': 218, 'ref=True,nl=True': 238}
+                2/3       14  {'ref=True,nl=False': 12, 'ref=True,nl=True': 2}
+                3/2       84  {'ref=True,nl=False': 52, 'ref=True,nl=True': 32}
+                  2      108  {'ref=True,nl=False': 44, 'ref=True,nl=True': 64}
+
+  [A.3]  THE CENSUS BY LOOP CLASS (WAY 2 of the loop axis: the ordered kind pair,
+         which is D72's and D74's own defect-kind axis).
+              kinds  squares  (curved, refused, non-lumpable) census
+           ('d', 'd')      842  {'000': 492, '001': 248, '010': 74, '011': 18, '110': 10}
+           ('d', 'n')     2123  {'000': 905, '001': 864, '010': 194, '011': 74, '110': 52, '111': 34}
+           ('d', 'p')     1252  {'000': 628, '001': 452, '010': 136, '011': 36}
+           ('d', 'r')      396  {'010': 134, '011': 158, '110': 40, '111': 64}
+           ('n', 'd')      626  {'000': 348, '001': 248, '010': 26, '110': 4}
+           ('n', 'n')      916  {'000': 388, '001': 416, '010': 76, '011': 36}
+           ('n', 'p')     1184  {'000': 544, '001': 452, '010': 120, '011': 68}
+           ('n', 'r')      446  {'010': 196, '011': 250}
+           ('p', 'd')     2318  {'000': 1218, '001': 804, '010': 224, '011': 72}
+           ('p', 'n')     2814  {'000': 1218, '001': 1068, '010': 324, '011': 204}
+           ('p', 'p')     1520  {'000': 928, '001': 288, '010': 176, '011': 128}
+           ('p', 'r')      468  {'010': 160, '011': 308}
+           ('r', 'd')      638  {'010': 92, '011': 88, '110': 220, '111': 238}
+           ('r', 'n')     1158  {'010': 480, '011': 678}
+           ('r', 'p')      468  {'010': 160, '011': 308}
+           ('r', 'r')      108  {'010': 76, '011': 32}
+
+  [A.4]  THE CENSUS BY BASE DEPTH.
+               ('AB4', 0)  {'000': 26}
+               ('AB4', 1)  {'000': 160, '010': 20, '110': 4}
+               ('AB4', 2)  {'000': 464, '001': 448, '010': 180, '011': 160, '110': 52, '111': 32}
+              ('ABC3', 0)  {'000': 102}
+              ('ABC3', 1)  {'000': 1374, '010': 66, '110': 12}
+             ('ASYM1', 0)  {'000': 19}
+             ('ASYM1', 1)  {'000': 93, '010': 18, '110': 2}
+             ('ASYM1', 2)  {'000': 195, '001': 216, '010': 150, '011': 108, '110': 24, '111': 12}
+             ('ASYM1', 3)  {'000': 621, '001': 1080, '010': 1128, '011': 1542, '110': 76, '111': 220}
+             ('ASYM2', 0)  {'000': 63}
+             ('ASYM2', 1)  {'000': 636, '010': 54, '110': 6}
+             ('ASYM2', 2)  {'000': 2916, '001': 3096, '010': 1032, '011': 648, '110': 150, '111': 72}
+
+  [A.5]  THE THREE CONTROL READINGS OF LUMPABILITY, POOLED.
+  [DATA] POOLED, LUMP-C (the deep-window control: each population read through the deepest committed window available for its own grammar) — 2x2x2, WAY 1 (J-status x reversal-status x lumpC):
+             curved  refused  non-lump   count
+               True     True      True     336
+               True     True     False     326
+               True    False      True       0
+               True    False     False       0
+              False     True      True    2458
+              False     True     False    2648
+              False    False      True    4840
+              False    False     False    6669
+  [DATA] POOLED, LUMP-C (the deep-window control: each population read through the deepest committed window available for its own grammar) — 2x2x2, WAY 2 (the same eight cells re-indexed lumpC x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True     336
+                True     True    False    2458
+                True    False     True       0
+                True    False    False    4840
+               False     True     True     326
+               False     True    False    2648
+               False    False     True       0
+               False    False    False    6669
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] POOLED, LUMP-C (the deep-window control: each population read through the deepest committed window available for its own grammar) — marginals: {'curved': 662, 'refused': 5768, 'arb-carrying': 5768, 'lumpC': 7634, 'total': 17277}
+  [DATA] POOLED, LUMP-W (the square's whole window: base class at depth d, or either shoulder class at depth d+1) — 2x2x2, WAY 1 (J-status x reversal-status x lumpW):
+             curved  refused  non-lump   count
+               True     True      True     614
+               True     True     False      48
+               True    False      True       0
+               True    False     False       0
+              False     True      True    3924
+              False     True     False    1182
+              False    False      True    6086
+              False    False     False    5423
+  [DATA] POOLED, LUMP-W (the square's whole window: base class at depth d, or either shoulder class at depth d+1) — 2x2x2, WAY 2 (the same eight cells re-indexed lumpW x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True     614
+                True     True    False    3924
+                True    False     True       0
+                True    False    False    6086
+               False     True     True      48
+               False     True    False    1182
+               False    False     True       0
+               False    False    False    5423
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] POOLED, LUMP-W (the square's whole window: base class at depth d, or either shoulder class at depth d+1) — marginals: {'curved': 662, 'refused': 5768, 'arb-carrying': 5768, 'lumpW': 10624, 'total': 17277}
+  [DATA] POOLED, LUMP-B (DC1's sigma-commuting predicate at the square itself) — 2x2x2, WAY 1 (J-status x reversal-status x lumpB):
+             curved  refused  non-lump   count
+               True     True      True       0
+               True     True     False     662
+               True    False      True       0
+               True    False     False       0
+              False     True      True       0
+              False     True     False    5106
+              False    False      True       0
+              False    False     False   11509
+  [DATA] POOLED, LUMP-B (DC1's sigma-commuting predicate at the square itself) — 2x2x2, WAY 2 (the same eight cells re-indexed lumpB x reversal x J; the two readings must agree cell for cell):
+            non-lump  refused   curved   count
+                True     True     True       0
+                True     True    False       0
+                True    False     True       0
+                True    False    False       0
+               False     True     True     662
+               False     True    False    5106
+               False    False     True       0
+               False    False    False   11509
+           WAY 1 == WAY 2 cell for cell: True
+  [DATA] POOLED, LUMP-B (DC1's sigma-commuting predicate at the square itself) — marginals: {'curved': 662, 'refused': 5768, 'arb-carrying': 5768, 'lumpB': 0, 'total': 17277}
+  [DATA] horizon control — squares whose lumpability status differs between the population's own window and the deep-window control: {'AB4': '0 of 1546', 'ABC3': '0 of 1554', 'ASYM1': '0 of 5504', 'ASYM2': '0 of 8673'}
+  [DATA] non-lumpable square counts, own window vs deep window: {'AB4': (640, 640), 'ABC3': (0, 0), 'ASYM1': (3178, 3178), 'ASYM2': (3816, 3816)}
+  [PASS] A.6 THE LUMPABILITY STATUS OF A SQUARE IS HORIZON-DEPENDENT IN PRINCIPLE, AND THE DEPENDENCE IS MEASURED RATHER THAN ASSUMED AWAY.  The relative-horizon kernel k_r depends on the remaining horizon, so the same square read at its population's own window and at the deepest available window for its grammar need not agree.  The exact number of squares on which the two readings differ is printed above, per population; every verdict below is stated at the population's own window with the deep-window reading carried beside it  (differing squares by population {'AB4': 0, 'ABC3': 0, 'ASYM1': 0, 'ASYM2': 0}; pooled 0 of 17277)
+         ^ NO INDEPENDENT INFORMATION: a reported measurement with no failing branch; it records a scope fact, it does not test one
+  [DATA] SEC 5 block time: 1s
+
+------------------------------------------------------------------------------
+SEC 6  W-B — THE CONTAINMENT STRUCTURE: every implication, every boundary
+------------------------------------------------------------------------------
+
+  [IMPL] CURVED (J != 1)  =>  ARBITRATION-CARRYING   [D74 x LD, C.3b]
+           |lhs| = 662, |rhs| = 5768, |lhs and rhs| = 662   ->  STRICT CONTAINMENT lhs subset rhs
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): EMPTY
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 5106 squares
+             by population {'AB4': 360, 'ABC3': 66, 'ASYM1': 2946, 'ASYM2': 1734}
+             by kind pair {"('d', 'd')": 92, "('d', 'n')": 268, "('d', 'p')": 172, "('d', 'r')": 292, "('n', 'd')": 26, "('n', 'n')": 112, "('n', 'p')": 188, "('n', 'r')": 446, "('p', 'd')": 296, "('p', 'n')": 528, "('p', 'p')": 304, "('p', 'r')": 468, "('r', 'd')": 180, "('r', 'n')": 1158, "('r', 'p')": 468, "('r', 'r')": 108}
+             by base depth {1: 158, 2: 2278, 3: 2670}
+             by holonomy value {'1': 5106}
+
+  [IMPL] REFUSED (no priced reversed record)  <=>  ARBITRATION-CARRYING   [LD C.3a, re-gated]
+           |lhs| = 5768, |rhs| = 5768, |lhs and rhs| = 5768   ->  EQUAL (the same set of squares)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): EMPTY
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): EMPTY
+
+  [IMPL] CURVED  =>  REFUSED   [the curvature inside the wall]
+           |lhs| = 662, |rhs| = 5768, |lhs and rhs| = 662   ->  STRICT CONTAINMENT lhs subset rhs
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): EMPTY
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 5106 squares
+             by population {'AB4': 360, 'ABC3': 66, 'ASYM1': 2946, 'ASYM2': 1734}
+             by kind pair {"('d', 'd')": 92, "('d', 'n')": 268, "('d', 'p')": 172, "('d', 'r')": 292, "('n', 'd')": 26, "('n', 'n')": 112, "('n', 'p')": 188, "('n', 'r')": 446, "('p', 'd')": 296, "('p', 'n')": 528, "('p', 'p')": 304, "('p', 'r')": 468, "('r', 'd')": 180, "('r', 'n')": 1158, "('r', 'p')": 468, "('r', 'r')": 108}
+             by base depth {1: 158, 2: 2278, 3: 2670}
+             by holonomy value {'1': 5106}
+
+  [IMPL] CURVED  =>  NON-LUMPABLE   [the open question]
+           |lhs| = 662, |rhs| = 7634, |lhs and rhs| = 336   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 326 squares
+             by population {'AB4': 56, 'ABC3': 12, 'ASYM1': 102, 'ASYM2': 156}
+             by kind pair {"('d', 'd')": 10, "('d', 'n')": 52, "('d', 'r')": 40, "('n', 'd')": 4, "('r', 'd')": 220}
+             by base depth {1: 24, 2: 226, 3: 76}
+             by holonomy value {'1/2': 218, '2': 44, '2/3': 12, '3/2': 52}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 7298 squares
+             by population {'AB4': 608, 'ASYM1': 2946, 'ASYM2': 3744}
+             by kind pair {"('d', 'd')": 266, "('d', 'n')": 938, "('d', 'p')": 488, "('d', 'r')": 158, "('n', 'd')": 248, "('n', 'n')": 452, "('n', 'p')": 520, "('n', 'r')": 250, "('p', 'd')": 876, "('p', 'n')": 1272, "('p', 'p')": 416, "('p', 'r')": 308, "('r', 'd')": 88, "('r', 'n')": 678, "('r', 'p')": 308, "('r', 'r')": 32}
+             by base depth {2: 4676, 3: 2622}
+             by holonomy value {'1': 7298}
+
+  [IMPL] NON-LUMPABLE  =>  REFUSED   [the open question]
+           |lhs| = 7634, |rhs| = 5768, |lhs and rhs| = 2794   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 4840 squares
+             by population {'AB4': 448, 'ASYM1': 1296, 'ASYM2': 3096}
+             by kind pair {"('d', 'd')": 248, "('d', 'n')": 864, "('d', 'p')": 452, "('n', 'd')": 248, "('n', 'n')": 416, "('n', 'p')": 452, "('p', 'd')": 804, "('p', 'n')": 1068, "('p', 'p')": 288}
+             by base depth {2: 3760, 3: 1080}
+             by holonomy value {'1': 4840}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 2974 squares
+             by population {'AB4': 256, 'ABC3': 78, 'ASYM1': 1398, 'ASYM2': 1242}
+             by kind pair {"('d', 'd')": 84, "('d', 'n')": 246, "('d', 'p')": 136, "('d', 'r')": 174, "('n', 'd')": 30, "('n', 'n')": 76, "('n', 'p')": 120, "('n', 'r')": 196, "('p', 'd')": 224, "('p', 'n')": 324, "('p', 'p')": 176, "('p', 'r')": 160, "('r', 'd')": 312, "('r', 'n')": 480, "('r', 'p')": 160, "('r', 'r')": 76}
+             by base depth {1: 182, 2: 1588, 3: 1204}
+             by holonomy value {'1': 2648, '1/2': 218, '2': 44, '2/3': 12, '3/2': 52}
+
+  [IMPL] NON-LUMPABLE  =>  ARBITRATION-CARRYING   [the open question]
+           |lhs| = 7634, |rhs| = 5768, |lhs and rhs| = 2794   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 4840 squares
+             by population {'AB4': 448, 'ASYM1': 1296, 'ASYM2': 3096}
+             by kind pair {"('d', 'd')": 248, "('d', 'n')": 864, "('d', 'p')": 452, "('n', 'd')": 248, "('n', 'n')": 416, "('n', 'p')": 452, "('p', 'd')": 804, "('p', 'n')": 1068, "('p', 'p')": 288}
+             by base depth {2: 3760, 3: 1080}
+             by holonomy value {'1': 4840}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 2974 squares
+             by population {'AB4': 256, 'ABC3': 78, 'ASYM1': 1398, 'ASYM2': 1242}
+             by kind pair {"('d', 'd')": 84, "('d', 'n')": 246, "('d', 'p')": 136, "('d', 'r')": 174, "('n', 'd')": 30, "('n', 'n')": 76, "('n', 'p')": 120, "('n', 'r')": 196, "('p', 'd')": 224, "('p', 'n')": 324, "('p', 'p')": 176, "('p', 'r')": 160, "('r', 'd')": 312, "('r', 'n')": 480, "('r', 'p')": 160, "('r', 'r')": 76}
+             by base depth {1: 182, 2: 1588, 3: 1204}
+             by holonomy value {'1': 2648, '1/2': 218, '2': 44, '2/3': 12, '3/2': 52}
+  [PASS] B.1 THE REVERSAL STATUS AND THE ARBITRATION STATUS ARE THE SAME SET OF SQUARES, EXACTLY.  Both difference sets are empty on all 17,277 squares, in both directions.  LD's biconditional is therefore not merely reproduced as a count: the two statuses are the same subset of the pooled population, square for square, so the middle axis of the 2x2x2 may be read as either without ambiguity  (refused \ arb 0; arb \ refused 0; |refused| = 5768)
+  [PASS] B.2 CURVATURE IS STRICTLY CONTAINED IN IRREVERSIBILITY, and the boundary is exhibited: every curved square is refused, and the difference set — the flat squares the law also refuses — is censused above by population, kind pair, depth and value.  This is LD's containment, re-measured square by square rather than as two counts  (curved 662, refused 5768, boundary (flat and refused) 5106)
+  [PASS] B.3 CURVATURE AND NON-LUMPABILITY CROSS: neither contains the other.  There are curved squares on lumpable classes and non-lumpable classes carrying flat squares, and both difference sets are non-empty and censused above.  A weld theorem cannot route through 'curved therefore non-lumpable' or its converse at this scope  (curved and lumpable 326; non-lumpable and flat 7298; curved 662; non-lumpable 7634)
+  [PASS] B.4 NON-LUMPABILITY AND IRREVERSIBILITY CROSS TOO — measured, with both difference sets censused above  (non-lumpable \ refused 4840; refused \ non-lumpable 2974; verdict CROSSING (neither contains the other))
+
+  [B.5]  THE SAME LATTICE UNDER THE THREE CONTROL READINGS OF
+         LUMPABILITY, so that no containment verdict rests on the
+         choice of per-square port or on the population's own cap.
+
+  [IMPL] CURVED  =>  NON-LUMPABLE [lumpC]
+           |lhs| = 662, |rhs| = 7634, |lhs and rhs| = 336   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 326 squares
+             by population {'AB4': 56, 'ABC3': 12, 'ASYM1': 102, 'ASYM2': 156}
+             by kind pair {"('d', 'd')": 10, "('d', 'n')": 52, "('d', 'r')": 40, "('n', 'd')": 4, "('r', 'd')": 220}
+             by base depth {1: 24, 2: 226, 3: 76}
+             by holonomy value {'1/2': 218, '2': 44, '2/3': 12, '3/2': 52}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 7298 squares
+             by population {'AB4': 608, 'ASYM1': 2946, 'ASYM2': 3744}
+             by kind pair {"('d', 'd')": 266, "('d', 'n')": 938, "('d', 'p')": 488, "('d', 'r')": 158, "('n', 'd')": 248, "('n', 'n')": 452, "('n', 'p')": 520, "('n', 'r')": 250, "('p', 'd')": 876, "('p', 'n')": 1272, "('p', 'p')": 416, "('p', 'r')": 308, "('r', 'd')": 88, "('r', 'n')": 678, "('r', 'p')": 308, "('r', 'r')": 32}
+             by base depth {2: 4676, 3: 2622}
+             by holonomy value {'1': 7298}
+
+  [IMPL] NON-LUMPABLE [lumpC]  =>  ARBITRATION-CARRYING
+           |lhs| = 7634, |rhs| = 5768, |lhs and rhs| = 2794   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 4840 squares
+             by population {'AB4': 448, 'ASYM1': 1296, 'ASYM2': 3096}
+             by kind pair {"('d', 'd')": 248, "('d', 'n')": 864, "('d', 'p')": 452, "('n', 'd')": 248, "('n', 'n')": 416, "('n', 'p')": 452, "('p', 'd')": 804, "('p', 'n')": 1068, "('p', 'p')": 288}
+             by base depth {2: 3760, 3: 1080}
+             by holonomy value {'1': 4840}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 2974 squares
+             by population {'AB4': 256, 'ABC3': 78, 'ASYM1': 1398, 'ASYM2': 1242}
+             by kind pair {"('d', 'd')": 84, "('d', 'n')": 246, "('d', 'p')": 136, "('d', 'r')": 174, "('n', 'd')": 30, "('n', 'n')": 76, "('n', 'p')": 120, "('n', 'r')": 196, "('p', 'd')": 224, "('p', 'n')": 324, "('p', 'p')": 176, "('p', 'r')": 160, "('r', 'd')": 312, "('r', 'n')": 480, "('r', 'p')": 160, "('r', 'r')": 76}
+             by base depth {1: 182, 2: 1588, 3: 1204}
+             by holonomy value {'1': 2648, '1/2': 218, '2': 44, '2/3': 12, '3/2': 52}
+
+  [IMPL] CURVED  =>  NON-LUMPABLE [lumpW]
+           |lhs| = 662, |rhs| = 10624, |lhs and rhs| = 614   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 48 squares
+             by population {'AB4': 8, 'ABC3': 12, 'ASYM1': 4, 'ASYM2': 24}
+             by kind pair {"('r', 'd')": 48}
+             by base depth {1: 12, 2: 36}
+             by holonomy value {'1/2': 48}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 10010 squares
+             by population {'AB4': 904, 'ASYM1': 3886, 'ASYM2': 5220}
+             by kind pair {"('d', 'd')": 384, "('d', 'n')": 1208, "('d', 'p')": 672, "('d', 'r')": 248, "('n', 'd')": 336, "('n', 'n')": 580, "('n', 'p')": 728, "('n', 'r')": 408, "('p', 'd')": 1204, "('p', 'n')": 1776, "('p', 'p')": 552, "('p', 'r')": 316, "('r', 'd')": 140, "('r', 'n')": 1074, "('r', 'p')": 316, "('r', 'r')": 68}
+             by base depth {1: 794, 2: 6006, 3: 3210}
+             by holonomy value {'1': 10010}
+
+  [IMPL] NON-LUMPABLE [lumpW]  =>  ARBITRATION-CARRYING
+           |lhs| = 10624, |rhs| = 5768, |lhs and rhs| = 4538   ->  CROSSING (neither contains the other)
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 6086 squares
+             by population {'AB4': 608, 'ASYM1': 1536, 'ASYM2': 3942}
+             by kind pair {"('d', 'd')": 310, "('d', 'n')": 1012, "('d', 'p')": 576, "('n', 'd')": 310, "('n', 'n')": 486, "('n', 'p')": 576, "('p', 'd')": 1036, "('p', 'n')": 1356, "('p', 'p')": 424}
+             by base depth {1: 742, 2: 4264, 3: 1080}
+             by holonomy value {'1': 6086}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 1230 squares
+             by population {'AB4': 72, 'ABC3': 78, 'ASYM1': 600, 'ASYM2': 480}
+             by kind pair {"('d', 'd')": 18, "('d', 'n')": 72, "('d', 'p')": 76, "('d', 'r')": 44, "('n', 'n')": 18, "('n', 'p')": 36, "('n', 'r')": 38, "('p', 'd')": 128, "('p', 'n')": 108, "('p', 'p')": 176, "('p', 'r')": 152, "('r', 'd')": 88, "('r', 'n')": 84, "('r', 'p')": 152, "('r', 'r')": 40}
+             by base depth {1: 118, 2: 572, 3: 540}
+             by holonomy value {'1': 1182, '1/2': 48}
+
+  [IMPL] CURVED  =>  NON-LUMPABLE [lumpB]
+           |lhs| = 662, |rhs| = 0, |lhs and rhs| = 0   ->  STRICT CONTAINMENT rhs subset lhs
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): 662 squares
+             by population {'AB4': 88, 'ABC3': 12, 'ASYM1': 334, 'ASYM2': 228}
+             by kind pair {"('d', 'd')": 10, "('d', 'n')": 86, "('d', 'r')": 104, "('n', 'd')": 4, "('r', 'd')": 458}
+             by base depth {1: 24, 2: 342, 3: 296}
+             by holonomy value {'1/2': 456, '2': 108, '2/3': 14, '3/2': 84}
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): EMPTY
+
+  [IMPL] NON-LUMPABLE [lumpB]  =>  ARBITRATION-CARRYING
+           |lhs| = 0, |rhs| = 5768, |lhs and rhs| = 0   ->  STRICT CONTAINMENT lhs subset rhs
+           BOUNDARY  lhs \ rhs (counterexamples to lhs => rhs): EMPTY
+           BOUNDARY  rhs \ lhs (counterexamples to rhs => lhs): 5768 squares
+             by population {'AB4': 448, 'ABC3': 78, 'ASYM1': 3280, 'ASYM2': 1962}
+             by kind pair {"('d', 'd')": 102, "('d', 'n')": 354, "('d', 'p')": 172, "('d', 'r')": 396, "('n', 'd')": 30, "('n', 'n')": 112, "('n', 'p')": 188, "('n', 'r')": 446, "('p', 'd')": 296, "('p', 'n')": 528, "('p', 'p')": 304, "('p', 'r')": 468, "('r', 'd')": 638, "('r', 'n')": 1158, "('r', 'p')": 468, "('r', 'r')": 108}
+             by base depth {1: 182, 2: 2620, 3: 2966}
+             by holonomy value {'1': 5106, '1/2': 456, '2': 108, '2/3': 14, '3/2': 84}
+  [PASS] B.5 THE VERDICT ON CURVATURE-VERSUS-NON-LUMPABILITY SURVIVES ALL THREE CONTROL READINGS OF THE PER-SQUARE PORT.  Under LUMP-C (the deep-window control), under LUMP-W (the square's whole window) and under LUMP-B (DC1's sigma-commuting predicate at the square itself), curvature still fails to imply non-lumpability, with the counterexample count printed for each.  Under LUMP-C and LUMP-W the two loci cross as they do under the primary reading; under LUMP-B the containment is the degenerate one, because LUMP-B is the EMPTY SET (gate B.5a).  No reading makes curvature imply non-lumpability, so the finding is a property of the two loci and not of the porting convention or of the population's own cap  (lumpC: curved-and-lumpable 326, non-lumpable-and-flat 7298, verdict CROSSING (neither contains the other); lumpW: curved-and-lumpable 48, non-lumpable-and-flat 10010, verdict CROSSING (neither contains the other); lumpB: curved-and-lumpable 662, non-lumpable-and-flat 0, verdict STRICT CONTAINMENT rhs subset lhs)
+  [PASS] B.5a THE PORTED CONFIGURATION MAP IS ORDER-BLIND AT EVERY CLOSED EXCHANGE SQUARE, EXHAUSTIVELY: sigma(h.eA.eB) = sigma(h.eB.eA) on all 17,277 squares of all four populations, curved and flat alike.  U1's DC1 census excludes the sigma-non-commuting pairs 'by name'; at closed squares there are none to exclude.  This is why the DC2 signal cannot live AT a square: whatever the two orders do to the weights, they leave the ported configuration identical, so the whole lumpability signal is carried by the square's BASE CLASS and by nothing the square itself does  (sigma-non-commuting closed squares: 0 of 17277; holonomy-carrying squares among them: 0 of 662)
+
+  [B.6]  THE PAIRWISE VERDICT MATRIX (the three loci, both ways).
+           pair                                |X|    |Y|   |X&Y|    X\Y    Y\X  verdict
+           CURVED vs NON-LUMPABLE              662   7634     336    326   7298  CROSSING
+           CURVED vs REFUSED                   662   5768     662      0   5106  CURVED SUBSET REFUSED
+           NON-LUMPABLE vs REFUSED            7634   5768    2794   4840   2974  CROSSING
+  [DATA] SEC 6 block time: 0s
+
+------------------------------------------------------------------------------
+SEC 7  W-C — THE WELD CANDIDATE: does one grammar quantity predict all three?
+------------------------------------------------------------------------------
+  A candidate quantity q is a WELD iff the status triple (curved,
+  refused, non-lumpable) is a FUNCTION of q on the pooled population:
+  no two squares with the same q-value carry different status triples.
+  Each candidate is also scored against each status separately, so a
+  candidate that predicts one address and not the others is visible as
+  such rather than merely failing.
+
+  The candidates are read on the endpoint record sigma_AB = h.eA.eB.
+  Every candidate is first tested for ORDER-BLINDNESS — the same value on
+  sigma_BA — since a square-level quantity that depends on the traversal
+  order is not a property of the square.
+  [DATA] candidate narb           order-blind on 17277/17277 squares
+  [DATA] candidate narb>=1        order-blind on 17277/17277 squares
+  [DATA] candidate ncreated       order-blind on 17277/17277 squares
+  [DATA] candidate ncreated>=1    order-blind on 17277/17277 squares
+  [DATA] candidate nlive          order-blind on 17277/17277 squares
+  [DATA] candidate ncomp          order-blind on 16893/17277 squares  (ORDER-DEPENDENT on 384; the sigma_AB reading is used and the dependence is declared)
+  [DATA] candidate maxcomp        order-blind on 16893/17277 squares  (ORDER-DEPENDENT on 384; the sigma_AB reading is used and the dependence is declared)
+  [DATA] candidate joinsig        order-blind on 16893/17277 squares  (ORDER-DEPENDENT on 384; the sigma_AB reading is used and the dependence is declared)
+  [DATA] candidate J              order-blind on 17277/17277 squares
+  [DATA] candidate kindpair       order-blind on 17277/17277 squares
+  [DATA] candidate kindmultiset   order-blind on 17277/17277 squares
+  [DATA] candidate basedepth      order-blind on 17277/17277 squares
+  [DATA] candidate narb_base      order-blind on 17277/17277 squares
+  [DATA] candidate joinsig_base   order-blind on 17277/17277 squares
+  [DATA] candidate sigma_base     order-blind on 17277/17277 squares
+  [DATA] candidate sigma_end      order-blind on 17277/17277 squares
+  [PASS] C.0 LD's MECHANISM SENTENCE IS AN IDENTITY ON THIS POPULATION, MEASURED: the created-version count of a square's endpoint record equals its arbitration count on every one of the 17,277 squares.  The arbitration is the only realised kind that creates a version (the merge, the other creating kind, is not reached — gate D.1), and no two arbitrations of one record create the same version.  The two candidates 'narb' and 'ncreated' are therefore the SAME quantity here and are scored separately only so that the table shows it  (squares where the created-version count differs from the arbitration count: 0 of 17277)
+
+  [C.1]  THE PREDICTION TABLE.  For each candidate: the number of
+         distinct values it takes, whether it predicts each status
+         separately, whether it predicts the full triple, and the
+         exact failure count (squares sitting in a value-class that
+         carries more than one status triple).
+
+      candidate      values      J   REV  LUMP   TRIPLE  failing squares
+      narb                3  False  True False    False            17277
+      narb>=1             2  False  True False    False            17277
+      ncreated            3  False  True False    False            17277
+      ncreated>=1         2  False  True False    False            17277
+      nlive               4  False False False    False            17277
+      ncomp               4  False False False    False            17277
+      maxcomp             4  False False False    False            17277
+      joinsig             7  False False False    False            17277
+      J                   5   True False False    False            17277
+      kindpair           16  False False False    False            17277
+      kindmultiset       67  False  True False    False            13356
+      basedepth           4  False False False    False            17067
+      narb_base           2  False False False    False            17277
+      joinsig_base        4  False False False    False            17277
+      sigma_base         91  False False  True    False            12755
+      sigma_end         210  False False False    False            14584
+
+  [C.2]  THE FAILURE PATTERN, CANDIDATE BY CANDIDATE.  For every
+         candidate that is not a weld, the value-classes that carry
+         more than one status triple, with the exact split.
+      narb: 3 of 3 value-classes carry more than one status triple (17277 squares)
+        value 0                            n=11509  triples {'000': 6669, '001': 4840}
+        value 1                            n=5520   triples {'010': 2440, '011': 2426, '110': 318, '111': 336}
+        value 2                            n=248    triples {'010': 208, '011': 32, '110': 8}
+      narb>=1: 2 of 2 value-classes carry more than one status triple (17277 squares)
+        value False                        n=11509  triples {'000': 6669, '001': 4840}
+        value True                         n=5768   triples {'010': 2648, '011': 2458, '110': 326, '111': 336}
+      ncreated: 3 of 3 value-classes carry more than one status triple (17277 squares)
+        value 0                            n=11509  triples {'000': 6669, '001': 4840}
+        value 1                            n=5520   triples {'010': 2440, '011': 2426, '110': 318, '111': 336}
+        value 2                            n=248    triples {'010': 208, '011': 32, '110': 8}
+      ncreated>=1: 2 of 2 value-classes carry more than one status triple (17277 squares)
+        value False                        n=11509  triples {'000': 6669, '001': 4840}
+        value True                         n=5768   triples {'010': 2648, '011': 2458, '110': 326, '111': 336}
+      nlive: 4 of 4 value-classes carry more than one status triple (17277 squares)
+        value 0                            n=3747   triples {'000': 1251, '010': 752, '011': 1202, '110': 210, '111': 332}
+        value 1                            n=7586   triples {'000': 3246, '001': 1668, '010': 1424, '011': 1128, '110': 116, '111': 4}
+        value 2                            n=5320   triples {'000': 1836, '001': 2884, '010': 472, '011': 128}
+        value 3                            n=624    triples {'000': 336, '001': 288}
+      ncomp: 4 of 4 value-classes carry more than one status triple (17277 squares)
+        value 0                            n=3747   triples {'000': 1251, '010': 752, '011': 1202, '110': 210, '111': 332}
+        value 1                            n=10124  triples {'000': 4332, '001': 3024, '010': 1520, '011': 1128, '110': 116, '111': 4}
+        value 2                            n=3250   triples {'000': 1002, '001': 1744, '010': 376, '011': 128}
+        value 3                            n=156    triples {'000': 84, '001': 72}
+      maxcomp: 4 of 4 value-classes carry more than one status triple (17277 squares)
+        value 0                            n=3747   triples {'000': 1251, '010': 752, '011': 1202, '110': 210, '111': 332}
+        value 1                            n=10952  triples {'000': 4316, '001': 3460, '010': 1800, '011': 1256, '110': 116, '111': 4}
+        value 2                            n=2150   triples {'000': 866, '001': 1188, '010': 96}
+        value 3                            n=428    triples {'000': 236, '001': 192}
+      joinsig: 7 of 7 value-classes carry more than one status triple (17277 squares)
+        value ()                           n=3747   triples {'000': 1251, '010': 752, '011': 1202, '110': 210, '111': 332}
+        value (1, 1)                       n=3210   triples {'000': 986, '001': 1720, '010': 376, '011': 128}
+        value (1, 1, 1)                    n=156    triples {'000': 84, '001': 72}
+        value (1, 2)                       n=40     triples {'000': 16, '001': 24}
+        value (1,)                         n=7586   triples {'000': 3246, '001': 1668, '010': 1424, '011': 1128, '110': 116, '111': 4}
+        value (2,)                         n=2110   triples {'000': 850, '001': 1164, '010': 96}
+        value (3,)                         n=428    triples {'000': 236, '001': 192}
+      J: 5 of 5 value-classes carry more than one status triple (17277 squares)
+        value 1                            n=16615  triples {'000': 6669, '001': 4840, '010': 2648, '011': 2458}
+        value 1/2                          n=456    triples {'110': 218, '111': 238}
+        value 2                            n=108    triples {'110': 44, '111': 64}
+        value 2/3                          n=14     triples {'110': 12, '111': 2}
+        value 3/2                          n=84     triples {'110': 52, '111': 32}
+      kindpair: 16 of 16 value-classes carry more than one status triple (17277 squares)
+        value ('d', 'd')                   n=842    triples {'000': 492, '001': 248, '010': 74, '011': 18, '110': 10}
+        value ('d', 'n')                   n=2123   triples {'000': 905, '001': 864, '010': 194, '011': 74, '110': 52, '111': 34}
+        value ('d', 'p')                   n=1252   triples {'000': 628, '001': 452, '010': 136, '011': 36}
+        value ('d', 'r')                   n=396    triples {'010': 134, '011': 158, '110': 40, '111': 64}
+        value ('n', 'd')                   n=626    triples {'000': 348, '001': 248, '010': 26, '110': 4}
+        value ('n', 'n')                   n=916    triples {'000': 388, '001': 416, '010': 76, '011': 36}
+        value ('n', 'p')                   n=1184   triples {'000': 544, '001': 452, '010': 120, '011': 68}
+        value ('n', 'r')                   n=446    triples {'010': 196, '011': 250}
+        value ('p', 'd')                   n=2318   triples {'000': 1218, '001': 804, '010': 224, '011': 72}
+        value ('p', 'n')                   n=2814   triples {'000': 1218, '001': 1068, '010': 324, '011': 204}
+        value ('p', 'p')                   n=1520   triples {'000': 928, '001': 288, '010': 176, '011': 128}
+        value ('p', 'r')                   n=468    triples {'010': 160, '011': 308}
+        ... 4 further value-classes (the count above is complete)
+      kindmultiset: 33 of 67 value-classes carry more than one status triple (13356 squares)
+        value (('d', 1), ('n', 1), ('p', 1), ('r', 1)) n=420    triples {'010': 84, '011': 252, '110': 24, '111': 60}
+        value (('d', 1), ('n', 1), ('p', 2)) n=1584   triples {'000': 528, '001': 1056}
+        value (('d', 1), ('n', 1), ('p', 2), ('r', 1)) n=712    triples {'010': 216, '011': 344, '110': 56, '111': 96}
+        value (('d', 1), ('n', 2), ('p', 1)) n=1182   triples {'000': 630, '001': 552}
+        value (('d', 1), ('n', 2), ('p', 1), ('r', 1)) n=230    triples {'010': 2, '011': 180, '111': 48}
+        value (('d', 1), ('n', 2), ('p', 2)) n=456    triples {'000': 108, '001': 348}
+        value (('d', 1), ('n', 3), ('p', 1)) n=272    triples {'000': 128, '001': 144}
+        value (('d', 1), ('p', 1), ('r', 1)) n=66     triples {'010': 42, '110': 24}
+        value (('d', 1), ('p', 2), ('r', 1)) n=672    triples {'010': 288, '011': 192, '110': 192}
+        value (('d', 1), ('p', 2), ('r', 2)) n=32     triples {'010': 16, '011': 8, '110': 8}
+        value (('d', 1), ('p', 3))         n=288    triples {'000': 144, '001': 144}
+        value (('d', 1), ('p', 3), ('r', 1)) n=240    triples {'010': 208, '011': 32}
+        ... 21 further value-classes (the count above is complete)
+      basedepth: 3 of 4 value-classes carry more than one status triple (17067 squares)
+        value 1                            n=2445   triples {'000': 2263, '010': 158, '110': 24}
+        value 2                            n=9955   triples {'000': 3575, '001': 3760, '010': 1362, '011': 916, '110': 226, '111': 116}
+        value 3                            n=4667   triples {'000': 621, '001': 1080, '010': 1128, '011': 1542, '110': 76, '111': 220}
+      narb_base: 2 of 2 value-classes carry more than one status triple (17277 squares)
+        value 0                            n=15051  triples {'000': 6669, '001': 4840, '010': 1166, '011': 1822, '110': 252, '111': 302}
+        value 1                            n=2226   triples {'010': 1482, '011': 636, '110': 74, '111': 34}
+      joinsig_base: 4 of 4 value-classes carry more than one status triple (17277 squares)
+        value ()                           n=6777   triples {'000': 5035, '010': 1038, '011': 636, '110': 34, '111': 34}
+        value (1, 1)                       n=1028   triples {'000': 468, '001': 12, '010': 448, '011': 24, '110': 72, '111': 4}
+        value (1,)                         n=7776   triples {'000': 806, '001': 4732, '010': 602, '011': 1402, '110': 64, '111': 170}
+        value (2,)                         n=1696   triples {'000': 360, '001': 96, '010': 560, '011': 396, '110': 156, '111': 128}
+      sigma_base: 80 of 91 value-classes carry more than one status triple (12755 squares)
+        value ('AB4', 1, ((('A', 'B'), False, (('A', 0),)),)) n=20     triples {'000': 14, '010': 5, '110': 1}
+        value ('AB4', 1, ((('A', 'B'), False, (('A', 1),)),)) n=20     triples {'000': 14, '010': 5, '110': 1}
+        value ('AB4', 1, ((('A', 'B'), False, (('B', 0),)),)) n=20     triples {'000': 14, '010': 5, '110': 1}
+        value ('AB4', 1, ((('A', 'B'), False, (('B', 1),)),)) n=20     triples {'000': 14, '010': 5, '110': 1}
+        value ('AB4', 2, ((('A', 'B'), False, (('A', 0), ('B', 0))),)) n=30     triples {'000': 12, '010': 14, '110': 4}
+        value ('AB4', 2, ((('A', 'B'), False, (('A', 0), ('B', 1))),)) n=54     triples {'000': 12, '010': 26, '110': 16}
+        value ('AB4', 2, ((('A', 'B'), False, (('A', 0),)),)) n=160    triples {'001': 112, '011': 40, '111': 8}
+        value ('AB4', 2, ((('A', 'B'), False, (('A', 1), ('B', 0))),)) n=54     triples {'000': 12, '010': 26, '110': 16}
+        value ('AB4', 2, ((('A', 'B'), False, (('A', 1), ('B', 1))),)) n=30     triples {'000': 12, '010': 14, '110': 4}
+        value ('AB4', 2, ((('A', 'B'), False, (('A', 1),)),)) n=160    triples {'001': 112, '011': 40, '111': 8}
+        value ('AB4', 2, ((('A', 'B'), False, (('B', 0),)),)) n=160    triples {'001': 112, '011': 40, '111': 8}
+        value ('AB4', 2, ((('A', 'B'), False, (('B', 1),)),)) n=160    triples {'001': 112, '011': 40, '111': 8}
+        ... 68 further value-classes (the count above is complete)
+      sigma_end: 90 of 210 value-classes carry more than one status triple (14584 squares)
+        value ('AB4', ((('A', 'B'), False, (('A', 0), ('B', 0))),)) n=105    triples {'000': 41, '001': 64}
+        value ('AB4', ((('A', 'B'), False, (('A', 0), ('B', 1))),)) n=105    triples {'000': 41, '001': 64}
+        value ('AB4', ((('A', 'B'), False, (('A', 0),)),)) n=140    triples {'000': 90, '001': 48, '010': 2}
+        value ('AB4', ((('A', 'B'), False, (('A', 1), ('B', 0))),)) n=105    triples {'000': 41, '001': 64}
+        value ('AB4', ((('A', 'B'), False, (('A', 1), ('B', 1))),)) n=105    triples {'000': 41, '001': 64}
+        value ('AB4', ((('A', 'B'), False, (('A', 1),)),)) n=140    triples {'000': 90, '001': 48, '010': 2}
+        value ('AB4', ((('A', 'B'), False, (('B', 0),)),)) n=140    triples {'000': 90, '001': 48, '010': 2}
+        value ('AB4', ((('A', 'B'), False, (('B', 1),)),)) n=140    triples {'000': 90, '001': 48, '010': 2}
+        value ('AB4', ((('A', 'B'), False, ()),)) n=206    triples {'000': 126, '010': 44, '110': 36}
+        value ('AB4', ((('A',), False, ()),)) n=84     triples {'010': 14, '011': 48, '110': 6, '111': 16}
+        value ('AB4', ((('B',), False, ()),)) n=84     triples {'010': 14, '011': 48, '110': 6, '111': 16}
+        value ('AB4', (((), True, (('A', 0),)), (('B',), False, ()))) n=34     triples {'010': 16, '011': 16, '110': 2}
+        ... 78 further value-classes (the count above is complete)
+  [PASS] C.1 THE ARBITRATION IS AN EXACT PREDICTOR OF THE IRREVERSIBILITY ADDRESS AND OF NOTHING ELSE.  The binary quantity narb >= 1 predicts the reversal status on every one of the 17,277 squares — that is LD's biconditional restated as a prediction — and it predicts neither curvature nor lumpability: its two value-classes both carry both curvature statuses and both lumpability statuses  (narb>=1: predicts J = False, predicts reversal = True, predicts lumpability = False)
+  [PASS] C.2 THE HOLONOMY VALUE ITSELF IS NOT A WELD EITHER.  J predicts its own status by definition and predicts the reversal status one-sidedly only — every non-unit value class is wholly refused, but the unit class carries both statuses — and it predicts lumpability nowhere  (J: predicts reversal = False, predicts lumpability = False, predicts the triple = False)
+  [PASS] C.3 THE CONFIGURATION MAP DOES NOT SEE THE CURVATURE.  sigma_base — the DC2 instrument's own state at the square's base, which predicts the lumpability status BY CONSTRUCTION — is scored against the other two addresses and predicts neither.  The instrument that defines one address is blind to the other two, which is the sharp form of the crossing measured at B.3 and B.4  (sigma_base: 91 distinct values; predicts J = False, predicts reversal = False, predicts lumpability = True, predicts the triple = False)
+  [PASS] C.4 NO SINGLE CANDIDATE GRAMMAR QUANTITY IS A WELD.  The pin's own candidates — the arbitration count, LD's created-version count, the join / live-proposal structure, and J itself — are each tested against the full status triple on every square, together with the base-read and configuration-map candidates, and the failure pattern of each is the deliverable printed above  (welds found: none of 16 candidates tested)
+
+  [C-SCAN]  THE MINIMAL-SET SCAN, reported as a SECONDARY reading and
+         not as an answer to the pin's question, which asks for ONE
+         quantity.  How many of these quantities does it take to
+         predict all three statuses, and does any combination
+         predict JOINTLY — that is, without simply carrying one
+         exact single-status predictor per address?
+  [DATA] exact single-status predictors, by address: {'J': ['J'], 'reversal': ['kindmultiset', 'narb', 'narb>=1', 'ncreated', 'ncreated>=1'], 'lumpability': ['sigma_base']}
+  [DATA] PAIRS of candidates that jointly predict the full status triple: none of 120
+  [DATA] TRIPLES of candidates that jointly predict the full status triple: 5 of 560
+  [DATA] of those, triples that predict JOINTLY — without carrying an exact single-status predictor for each of the three addresses: none
+           ('narb', 'J', 'sigma_base')  (281 value-classes)
+           ('narb>=1', 'J', 'sigma_base')  (249 value-classes)
+           ('ncreated', 'J', 'sigma_base')  (281 value-classes)
+           ('ncreated>=1', 'J', 'sigma_base')  (249 value-classes)
+           ('J', 'kindmultiset', 'sigma_base')  (921 value-classes)
+  [PASS] C.5 IT TAKES EXACTLY THREE OF THESE QUANTITIES, ONE PER ADDRESS, AND THERE IS NO JOINT PREDICTION.  No single candidate and no pair predicts the status triple; triples do, and every triple that does carries an exact predictor of curvature, an exact predictor of the reversal status and an exact predictor of lumpability.  Nothing is welded by combining: the three addresses are separately predictable and remain three  (welds 0; predicting pairs 0 of 120; predicting triples 5 of 560; of those, jointly-predicting (no per-address predictor inside) 0)
+  [DATA] SEC 7 block time: 1s
+
+------------------------------------------------------------------------------
+SEC 8  W-D — THE RECORD-GRAIN HOOK (U2b): NAMED, NOT RUN
+------------------------------------------------------------------------------
+  Everything in this receipt is measured at CUT GRAIN on the committed
+  transport populations: a square's three statuses are read from its
+  base, its exchanged pair and its endpoint record at the declared caps.
+  The record-grain question — whether the same address separates the
+  refusing from the dividing masks of the two-sided test at depth 15 — is
+  U2b's, is conditional on U1c returning N4, and is NOT run here.  No
+  number in this receipt bears on it, and no claim is made about it: the
+  populations here do not reach depth 15, do not carry the lag >= 2 masks
+  the U1b round named as the only door left in that class, and do not
+  contain a single realised merge event (LD's D.4 scope limit, which this
+  receipt inherits unchanged along with LD's functor).  If U1c returns
+  N4, U2b asks of the refusing masks exactly the three questions W-A asks
+  of a square; if it does not, U2b does not open.
+  [PASS] D.1 THE MERGE SECTOR IS NOT REACHED, and this receipt inherits LD's D.4 scope limit unchanged: no merge event is realised in any of the four populations, so nothing here — no status, no containment, no candidate — says anything about how the three instruments behave on a merge  (merge events realised across all 17277 censused squares: 0; kinds realised ['d', 'n', 'p', 'r'])
+
+------------------------------------------------------------------------------
+SEC 9  DETERMINISM PROBE
+------------------------------------------------------------------------------
+  [PASS] DET.1 THE CENSUS IS DETERMINISTIC AND ORDER-INDEPENDENT, AND THE PROBE EXERCISES THE DECIDING OBJECTS.  Traversed in the reverse stable-key order, three objects are recompared: the full pooled 2x2x2 table cell for cell; the boundary sizes of the three deciding implications; and every candidate's value count and weld verdict.  All set iteration that feeds a printed number is keyed by the hash-seed-independent sk()  (2x2x2 identical = True; implication boundaries identical = True {'C=>A': (0, 5106), 'C=>L': (326, 7298), 'L=>A': (4840, 2974)}; candidate table identical = True (16 candidates))
+  [DATA] SEC 9 block time: 1s
+
+==============================================================================
+SEC 10  THE VERDICT, AGAINST THE PIN'S PRE-REGISTERED OUTCOMES
+==============================================================================
+
+  THE THREE LOCI, AS SETS OF SQUARES OF THE POOLED POPULATION.
+    closed squares censused          17277
+    CURVED        (J != 1)           662
+    REFUSED       (no priced image)  5768   [= ARBITRATION-CARRYING, gate B.1]
+    NON-LUMPABLE  (DC2 failing)      7634
+    all three                        336
+    none of the three                6669
+
+  THE PAIRWISE STRUCTURE.
+    CURVED vs REFUSED: CURVED STRICTLY INSIDE REFUSED  (boundary 5106)
+    CURVED vs NON-LUMPABLE: CROSSING  (CURVED\NON-LUMPABLE = 326, NON-LUMPABLE\CURVED = 7298)
+    REFUSED vs NON-LUMPABLE: CROSSING  (REFUSED\NON-LUMPABLE = 2974, NON-LUMPABLE\REFUSED = 4840)
+
+  THE SAME PAIRWISE STRUCTURE UNDER THE DEEP-WINDOW CONTROL (LUMP-C).
+    NON-LUMPABLE (deep window)       7634
+    CURVED vs NON-LUMPABLE [LUMP-C]: CROSSING  (CURVED\NON-LUMPABLE = 326, NON-LUMPABLE\CURVED = 7298)
+    REFUSED vs NON-LUMPABLE [LUMP-C]: CROSSING  (REFUSED\NON-LUMPABLE = 2974, NON-LUMPABLE\REFUSED = 4840)
+
+  AGAINST THE THREE PRE-REGISTERED OUTCOMES.
+    W-ONE-ADDRESS  requires: all three statuses coincide, or an exact chain with
+                   empty boundaries.  Coincide = False; empty boundaries = False.  NOT MET.
+    W-CHAIN        requires: exact strict containments, every pair nested, with
+                   non-empty boundaries.  Pairs nested = 1 of 3.  NOT MET.
+    W-CROSS        requires: at least one pair of statuses crosses.  Crossing pairs
+                   = 2 of 3: [('CURVED', 'NON-LUMPABLE'), ('REFUSED', 'NON-LUMPABLE')].  MET.
+
+  VERDICT: W-CROSS
+  VERDICT under the deep-window control (LUMP-C): W-CROSS  — UNCHANGED
+
+  WHAT IT SAYS, WITH ITS SCOPE — every clause a printed number.
+    CURVED \ REFUSED       =      0   REFUSED \ CURVED       =   5106
+    CURVED \ NON-LUMPABLE  =    326   NON-LUMPABLE \ CURVED  =   7298
+    REFUSED \ NON-LUMPABLE =   2974   NON-LUMPABLE \ REFUSED =   4840
+    the arbitration is an exact predictor of REFUSED (gate B.1, 17277/17277) and of no other status (gate C.1).
+    single-quantity welds found: NONE of the 16 candidates tested.
+
+  WHAT IT DOES NOT SAY.  It does not say non-lumpability is unrelated to
+  the record law; it says exactly which squares the three instruments
+  disagree on, at these populations and these caps.  It does not say a
+  weld quantity cannot exist; it says none of the pin's named candidates
+  is one, and prints each one's failure pattern.  Nothing here is a
+  record-grain claim (W-D), nothing here touches the merge sector (D.1),
+  and no quantity measured here is offered as 'the quantum layer'.
+
+------------------------------------------------------------------------------
+DECLARED CAPS
+------------------------------------------------------------------------------
+  AB4    (A,B) depth<=4 — D72/D74's anchor window; closed squares 1546, holonomy-carrying 88
+  ABC3   (A,B,C) depth<=3 — D72/D74's anchor window; closed squares 1554, holonomy-carrying 12
+  ASYM1  (A,B) depth<=5, one-way A->B — D74's declared sub-grammar; closed squares 5504, holonomy-carrying 334
+  ASYM2  (A,B,C) depth<=4, directed ring A->B->C->A — D74's declared sub-grammar; closed squares 8673, holonomy-carrying 228
+  pooled closed squares censused: 17277
+  lumpability instrument: each population's OWN window (horizon = its cap);
+    U1's ARM-A window ((A,B) d<=5, unfiltered, horizon 5) carried as the
+    port-verification instrument and as AB4's horizon control
+  lumpability readings carried: LUMP-A (base class at the population's own
+    window, primary — the reading gate PORT.2 verifies against U1), LUMP-C
+    (the deep-window control: AB4 through ARM-A, ABC3 through ARM-D, the two
+    sub-grammars through their own deepest declared window), LUMP-W (the
+    square's window), LUMP-B (DC1's sigma-commuting predicate)
+  reversal instrument: LD's committed functor; the two sub-grammar
+    populations read in their MIRROR sub-grammar, with the own reading
+    carried as a control (gate REV.1)
+  weld candidates tested: 16 singles, 120 pairs, 560 triples (exhaustive to size 3)
+  transport scope, cut grain; committed populations only; weight-system
+    level; no measure claim; the merge sector is not reached
+  exact Fractions end to end; no float enters any gate or any printed
+    quantity except wall-clock timings
+
+------------------------------------------------------------------------------
+GATES: 38 pass, 0 fail  (of which 3 carry no independent information)
+    corollary: SRC.2 EXIT-FREEDOM GATED <- a property of the loader, not of the substrate; it tests our plumbing
+    corollary: A.1 THE 2x2x2 CENSUS IS PRINTED BOTH WAYS AND THE TWO READINGS AGREE CELL FOR CELL, per population and pooled. <- a re-indexing of the same counter; it gates the printing, not the census
+    corollary: A.6 THE LUMPABILITY STATUS OF A SQUARE IS HORIZON-DEPENDENT IN PRINCIPLE, AND THE DEPENDENCE IS MEASURED RATHER THAN ASSUMED AWAY. <- a reported measurement with no failing branch; it records a scope fact, it does not test one
+ANCHOR FAILURES: 0
+VERDICT: W-CROSS
+RUNTIME: 88s
+------------------------------------------------------------------------------
