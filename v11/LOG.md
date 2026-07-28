@@ -685,3 +685,47 @@ the quantum layer's entry fee is now three exact numbers and one
 mechanism** — 5/7 of Ẑ mass, a T² of unselected loop phases, and a
 multiplicity-≥3 conflict the grammar has never generated.  Hostile
 round dispatched.  U1b still constructing.
+
+## 2026-07-28 — U3 HOSTILE ROUND: ACCEPT-WITH-FIXES, ONE BLOCKER —
+## THE i-NO-GO'S PREMISE WAS FALSE; #17 CORRECTED (v11 LEDGER #18)
+The round re-ran at three seeds (0 differing lines), recomputed
+every headline number by hand (Ẑ's sums/deficits/5/7/stationary
+law; T = −1/4096 with the criterion's correctness argued; both
+flat certificates; the price inequality's direction VALID; C0's
+5⁴-grid genuinely a polynomial-identity proof — degree ≤ 4 per
+variable, 5 points suffice), and probed the committed grammar with
+its own scripts.  ARITHMETIC CLEAN — not one computed number moved.
+**THE BLOCKER (B1): "the corpus has committed none [multiplicity
+≥ 3]" IS FALSE.**  The committed (A,B,C) d≤3 pool — U3's OWN Arm-B
+family — contains 216 multiplicity-3 admissible arbitrations;
+first witness at depth 3, committed K1 law {A0,B0} → 2/3,
+{C1} → 1/3.  THREE DEFECTS: the {1,2} premise is FIXTURE-SCOPE
+(paper 31's own Scope line — a two-actor-pool fact); the inference
+"component size = Γ size" is WRONG (Γ size = #maximal independent
+sets — the 3-conflict yields a 2-OUTCOME law); the conclusion
+SURVIVES for an unstated reason — the round measured |MIS| ≤ 2
+across all four committed pools out to ABCD d≤4 (332,697
+histories: {1: 232264, 2: 98304}, never 3), because proposal
+values are binary and realised conflict graphs complete
+multipartite.  **A CAP FACT (actor pool + value alphabet), NOT A
+STRUCTURE FACT — the repair restates the no-go at measured scope
+and screens the multiplicity-3 K1 law itself (a genuinely new
+census row: [[2/3,1/3],[2/3,1/3]], S-FAIL-DS, price 2/3).**
+**#17'S OWN TEXT IS CORRECTED HERE (M1, owned):** #17 headlined
+"TWO PASSERS" with two certificates and did not say both passers
+are the FLAT J/n — degenerate, column-constant objects that pass
+by the receipt's own uniformity lemma and carry NO quantum
+content; the note disclosed it (§3, §8), the census table and #17
+laundered it.  Both now labelled S-PASS (FLAT J/n — degenerate).
+Further fixes dispatched: the ⟨2,3⟩ ∩ U(1) = {1} reason is
+POSITIVITY, not torsion-freeness (counterexample: ⟨e^{2πi√2}⟩);
+the "sharpening" of D74 was already IN D74 (:248 — a-priori
+settlement, confirmed not sharpened); two non-falsifiable gates
+relabelled (41 → 39 independent); D3's clause (ii) was tested on
+an object D3 is not about (the dilating unitary was set aside —
+the non-reproduction is partly artifact of refusing D1's
+hypothesis; the substantive content is positivity + the unselected
+T²); C2's "generated object" overclaim deleted; §10's ownership
+claim gains [B3]'s closed/undilated qualifier; "5/7 of mass" →
+absolute entrywise-L1 (total mass 6).  Repair running; delta check
+on its return.
