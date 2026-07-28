@@ -1,6 +1,9 @@
-# U1b — result: **N2 — MAP-ROBUST DIVISIBILITY WITH BITE, AND THE REASON IT CANNOT BE OTHERWISE AT THE REACHABLE CLASS.** The whole kinematically admissible class of renewal-grain configuration maps is swept — 1,024 candidate maps over four ensembles, three of them carrying interval patterns or cut triples ARM-C2 never reached. The renewal payload chain is **exactly i.i.d. uniform on eight labels at every interval pattern measured**, minimal (3,3) and unequal (4,3) and unequal (3,4) alike, so ARM-C2's uniformity is not an artefact of minimal-interval conditioning and the unequal-interval half of the inherited question closes negatively: **no admissible map has bite on any cut triple that begins at the first renewal.** Shifting the cut triple one renewal past genesis makes base-retaining maps admissible for the first time, and **74 of them do have bite — and all 74 divide**, each with two exhibited interpolants verified entry by entry. The reason is measured, not assumed, and it is the load-bearing qualification on this result: the fixedness gate bounds the retained base-chain lag by (first cut's renewal index − 1), and at lag ≤ 1 the label chain carries one-step memory and **no two-step memory**, so `Gamma(cut3<-cut1)` is column-constant for **every** admissible map of **every** ensemble and DIVISIBLE is forced before any test runs. The one door left in the class is a map reading base-chain lag ≥ 2, which is fixed only on a cut triple beginning at the third renewal — depth 15 in this grammar, not enumerated here. The null points the other way and is scored through the same bite gate: **10 of 10 biting matched-size random controls REFUSE where 74 of 74 biting record maps DIVIDE.**
+# U1b — result: **NO TWO-SIDED TEST EXISTS AT THE REACHABLE CLASS — the record-grain question is not closed, it is UNASKED below depth 15.** (Hostile-round rename, v11 LOG #21: the delivery titled this N2; with the bite predicate the receipt's own finding (D-2) demands — BOTH transfers non-column-constant — the census has **0 genuine verdict rows on all four ensembles, which is outcome N1 at bite-grain 2**; under the pin's letter the score is N2 but N2's registered consequence, "the record-grain question CLOSED", is void and is NOT drawn.) The swept class is the **2¹⁰ subset lattice of the declared field set** — 1,024 candidate maps over four ensembles, three carrying interval patterns or cut triples ARM-C2 never reached. What the unit measures: **the renewal leg kernel is exactly uniform on the eight payloads conditionally on EVERY parent history, at leg lengths 3 and 4** (16 + 256 + 4,096 parents, no exception) — the independence half follows from the committed root reset, the uniformity half is the news — so the chain rule makes the payload chain i.i.d. uniform at every interval pattern, and ARM-C2's uniformity is not a minimal-interval artefact. One-step memory is real (74 maps carry it: first transfer non-column-constant); **two-step memory is absent at every map of the lattice** (0/176 — and the round measured 0/400 arbitrary functions of the same lag-≤1 window), so `Gamma(cut3<-cut1)` is column-constant everywhere, DIVISIBLE is forced by structure before any test runs, and every interpolant test the class can pose is answered before it is asked. The one door in the class is a map reading base-chain lag ≥ 2, fixed only on a cut triple beginning at the third renewal — **depth 15, the first depth at which the unit's question is askable at all** (§9 records the round's depth-15 prediction). The null, corrected by the round: the 10 refusing random controls do NOT share the forcing-relevant property (0/10 have a column-constant second transfer), and a fair null — the record's outer cuts with a fully randomised middle cut — DIVIDES; the contrast therefore measures **two-step memorylessness of the record's renewal fields**, not a divisibility distinction.
 
-**Status:** GREEN-UNREVIEWED, STRICT.  Pin
+**Status:** TERMINAL (conferred by the hostile round of 2026-07-28,
+ACCEPT-WITH-FIXES — two naming blockers, zero numbers moved, the
+round's third independent full rebuild reproducing every value;
+fixes applied, adjudicated v11 LOG #21), STRICT.  Pin
 `note-u1b-renewal-beables-pin.md` (frozen before this receipt existed).
 Binding context: U1 TERMINAL (v11 LOG #11–#14, the delta round's
 mechanism finding), paper 0 §4 (division events are the renewals) and
@@ -24,8 +27,17 @@ Exit 1 is reserved for anchor failure.
 
 ## 1. The verdict
 
-> **N2 — bite + all divide** `[MEASURED, at the declared class, ensembles
-> and caps]`
+> **N1-AT-BITE-GRAIN-2 / N2-FORCED-AT-THE-REACHABLE-CLASS — open at
+> lag ≥ 2 (depth 15)** `[MEASURED, at the declared lattice, ensembles
+> and caps; renamed by the hostile round, LOG #21]`
+>
+> With the repaired bite predicate — (D-1) AND (D-2), both transfers
+> non-column-constant — **0 verdict rows exist on all four ensembles:
+> literally N1, no bite anywhere in the reachable class**, whose
+> registered consequence stands: the enrichment fork is the program
+> and σ+ was never defective.  With the pin's letter (D-1 only), the
+> score reads N2, but "the record-grain question CLOSED" is void: not
+> one of the 74 rows was a two-sided test, and none could have been.
 >
 > **The sweep.**  `1,024` candidate maps × `4` ensembles = `4,096`
 > candidate cells.  The fixedness gate admits `176`; the bite gate calls
@@ -59,12 +71,23 @@ Exit 1 is reserved for anchor failure.
 > **no map in the reachable class escapes that structure** — not that
 > each row was decided against a live alternative.
 >
-> **The null.**  Matched-size random partitions of the same cut
-> populations, two printed seeds, scored through the same bite gate:
-> `10` biting control runs, **`10` REFUSE**, against `74` biting record
-> maps of which **`0`** refuse.  At renewal grain, as at cut grain in
-> U1 §6, the record map is far closer to divisible than noise of its own
-> granularity.
+> **The null, as run and as corrected by the round.**  Matched-size
+> random partitions, two printed seeds, same (D-1) bite gate: `10`
+> biting control runs, **`10` REFUSE**, against `74` biting record maps
+> of which `0` refuse.  THE ROUND'S CORRECTION (LOG #21): the controls
+> are matched on class sizes but NOT on the forcing-relevant property —
+> `0/10` have a column-constant second transfer (`0/200` receipt-style
+> random maps do), so they escape the structure that forces the record
+> rows.  A FAIR null — the record's cut-1 and cut-3 labels kept, the
+> middle cut fully randomised — **DIVIDES at both seeds**; even the
+> biting record map m54 with a randomised middle cut divides.  8 of the
+> 10 controls are matched to σ+ (degenerate, no-verdict-may-cite) on
+> ensembles with zero record verdict rows; only 2 are like-for-like.
+> **What the contrast supports:** the record's renewal-grain fields
+> forget in two steps and arbitrary relabelings do not — a
+> TWO-STEP-MEMORYLESSNESS statement, not a divisibility distinction.
+> No claim that "the record map is closer to divisible than noise"
+> survives at this grain.
 
 **What the delta round left open, and what is left now.**  U1's ARM-C2
 ran the pinned triple exhaustively and returned a test without bite, for
@@ -73,9 +96,11 @@ token's **base**, and the base of a renewal token is the previous
 renewal's token — the only object linking consecutive renewals.  U1b
 does not choose a different map; it sweeps the lattice those fields
 generate.  The result is that the base **can** be retained inside a
-fixed label set, that retaining it **does** give the test bite, and that
-the test then **does not refuse**.  The residual is named in §9 and is a
-depth cap, not a structural obstruction.
+fixed label set, that retaining it gives the test its FIRST side
+((D-1) bite), and that the second side never becomes available: the
+test does not refuse because it cannot — DIVISIBLE is decided by
+structure, not tested.  The residual is named in §9 and is **the first
+depth at which the question is askable**, not a mere cap.
 
 ## 2. The class — the field lattice, declared and swept
 
@@ -188,13 +213,23 @@ raw mass `1/32768`**, against the committed `16 / 256 / 4,096` and
 
 **The declared boundary of the gate, stated plainly.**  The unpruned
 scans cover leg 1 of all four ensembles and leg 2 of E1 and E4 —
-**622,400 raw continuations in total**, the sum of the three counts the
+**622,400 kept continuations in total** (the round's convention note:
+the raw generated count is 622,656; the 256 interior R4s are filtered
+inline at L=4), the sum of the three counts the
 receipt prints (`16,352 + 152,416 + 453,632`).  The three deeper legs (E2's
 3-event leg from 3,584 renewal-2 histories, E3's 4-event leg from 256,
 E4's 3-event leg from 4,096) are enumerated with the prune, whose
 premises are gated on every expansion actually performed rather than on
-a sample.  An unpruned scan there costs of order `5x10^6` continuations
-per leg and is a declared cap, not a silent one.
+a sample.  An unpruned scan there costs `5×10⁶` to `1.2×10⁷`
+continuations per leg (E4's leg 3 ≈ 1.15×10⁷) and is a declared cap,
+not a silent one.  ROUND DISCHARGE (LOG #21): the round ran
+prune-vs-unpruned agreement on 24 E3 + 98 E4 parents (760,100 raw, 0
+mismatches) and asserted both prune premises plus the live-count
+identity at EVERY expansion of the full deep legs — the X4 sampling
+boundary is closed by the round's computation; and the prune's second
+premise is not merely gated but PROVABLE from `candidates_for`'s
+construction (arbitrations are built from subsets of `full.live`), so
+X3's 0/208,896 is a tripwire, not the warrant.
 
 `[GATE J.*]`  Each ensemble's field-record joint over the three renewal
 cuts sums to exactly 1.
@@ -272,11 +307,30 @@ cuts, at any interval pattern.
 `[GATE A3]`  **The second transfer is column-constant for all 176
 admissible maps of all four ensembles** — 0 exceptions.  By (D-2) this
 forces DIVISIBLE on every admissible map before any test is run, and it
-is the load-bearing qualification on §6.
+is the load-bearing qualification on §6.  ROUND CORRECTION (LOG #21):
+this gate is ENTAILED, not discovered — given A4 (the i.i.d. payload
+chain) and A1 (lag ≤ first-cut renewal index − 1), labels at renewals
+a and a+2 read disjoint blocks of an i.i.d. chain, so cut1 ⊥ cut3 for
+EVERY function of the lag-≤1 window (the round: 0/400 arbitrary
+functions escape).  The round re-derived the entire census — 176/102/74,
+the label and column profiles, "eq. 22 singular on 74/74", "DIVISIBLE
+74 / INDIVISIBLE 0" — from the model alone, matching this receipt to
+the digit.  The sweep is the CHECK of a two-line corollary, and the
+same entailment makes `[GATE V2]`'s singularity a theorem (a biting
+first transfer is always rank-deficient on these label sets), not a
+finding.
 
-`[GATE A4]`  **The renewal payload chain is exactly i.i.d. uniform on
-eight labels at every interval pattern measured** — the `alpha_sigma+`
-joint is `1/512` on 512 cells on E1, E2, E3 and E4 alike.
+`[GATE A4]`  **The substantive measurement of this unit, stated at
+full strength (round-verified in the stronger form):** the renewal LEG
+KERNEL is exactly uniform on the eight payloads CONDITIONALLY ON EVERY
+PARENT HISTORY — all 16 + 256 + 4,096 parents, at leg lengths 3 and 4,
+no exception.  The independence half follows from the committed root
+reset (U1 C2a/PORT-2); the UNIFORMITY half is the news, and it is not
+a consequence of the base-dropping mechanism.  By the chain rule the
+payload chain is i.i.d. uniform at every interval pattern — the
+`alpha_sigma+` joint is `1/512` on 512 cells on E1, E2, E3 and E4
+alike; these are one kernel fact at two leg lengths, not four
+independent measurements.
 
 **`alpha_sigma` and `alpha_sigma+` on every ensemble.**  `alpha_sigma`
 carries labels `[1,1,1]` and one transfer column on all four;
@@ -369,27 +423,51 @@ produce it.
 ## 9. What this does and does not say
 
 - **It does not claim the record law is divisible at renewal grain in
-  general.**  It claims that on the four declared ensembles, over the
-  whole fixed class the committed fields generate, every biting map
-  divides, and that this is forced by a measured structural fact (`A3`)
-  rather than discovered row by row.
-- **The residual is named exactly.**  A class member reading base-chain
-  lag `>= 2` is fixed only on a cut triple beginning at the **third**
-  renewal — depth 15 in this grammar — which this receipt does not
-  enumerate.  That is the only door left in the class, and it is a depth
-  cap, not a structural obstruction.  A lag-2 map is precisely what
-  could give `Gamma(cut3<-cut1)` a non-constant column, because two cuts
-  two renewals apart read overlapping blocks of the payload sequence
-  only from lag 2 onward.
+  general — and after the round's rename it does not claim a
+  divisibility verdict at all.**  On the four declared ensembles, over
+  the swept subset lattice, every (D-1)-biting map divides because
+  structure forces it (`A3`); no row was a two-sided test, so the
+  record-grain question is UNASKED here, not answered.  The class-scope
+  qualifier is the round's M1: the sweep covers the **2¹⁰ subset
+  lattice of the declared field set**, not every committed-field map —
+  the round exhibited α_g (deepest-lag-≤1 arbitration value, genesis
+  absorbing), a committed-field map outside the lattice that is FIXED
+  and (D-1)-BITES on a cut triple beginning at the FIRST renewal (it
+  still divides — second transfer column-constant — so the direction
+  is untouched; the scope sentence was wrong, and is corrected in the
+  title).
+- **The residual is named exactly, and upgraded (round, LOG #21).**  A
+  class member reading base-chain lag `>= 2` is fixed only on a cut
+  triple beginning at the **third** renewal — depth 15 — which this
+  receipt does not enumerate.  That is **the first depth at which the
+  unit's question is askable at all**, not a mere cap.  THE ROUND'S
+  DEPTH-15 PREDICTION, computed from the measured law (conditional on
+  the leg kernel staying uniform through renewal 5 — measured through
+  renewal 4 / depth 12, not beyond) and recorded here as
+  round-computed, not receipt-gated: classifying all 512 lag-≤2 masks
+  at renewals (3,4,5): 1 one-label; 152 forced-divisible (U1b's
+  situation again); 63 doubly degenerate; 61 forced-indivisible
+  (evidence of nothing); **127 TWO-SIDED that DIVIDE by exact CK; 108
+  TWO-SIDED that REFUSE with exact collision certificates** — i.e. the
+  predicted outcome at depth 15 is **N4 with a genuine record-grain
+  refusal inside it**.  Both exemplars were verified by the round atom
+  by atom ({authors@1, authors@2, init@0, init@2} refuses;
+  {value@0, value@1, value@2} divides).  WARNING FOR U1c, the round's:
+  all 108 predicted refusals contain a GAP component (lags 0 and 2,
+  not 1) whose own first transfer is column-constant, the bite
+  supplied by a different component — U1c's bite predicate must be
+  (D-1) ∧ (D-2) AND factor-wise, or the refusals arrive carrying the
+  same compound degeneracy one level up.
 - **It is not a CP-divisibility test.**  No completely positive map and
   no CP criterion appears anywhere.  CP-divisibility and
   Barandes-indivisibility are orthogonal axes and this unit does not
   cross them.
 - **No Bell or locality claim** is made or implied.
 - **Indivisibility is not treated as a quantum signature.**  `[B3]`'s
-  criterion is unistochasticity, and §7 measures again why: a random
-  coarse-graining of the same granularity refuses where the record map
-  divides.
+  criterion is unistochasticity.  (The earlier reading of §7 — "a
+  random coarse-graining refuses where the record map divides" — does
+  not survive the round's fair null; what §7 measures is two-step
+  memorylessness of the record's fields.)
 - **No exact covariance is claimed**, per L-1: the renewal-grain label
   sets swept here are fixed finite sets, which is exactly the hypothesis
   of the finite-stochastic Lorentz no-go.  At most statistical Lorentz
@@ -425,18 +503,22 @@ infinite-volume claim, no CP, Bell, locality or covariance claim.
 ## 11. Handover
 
 - **To paper 0 §9b and the Phase II board:** U1b does **not** reverse
-  the enrichment fork.  The record-grain question is answered at the
-  reachable class — divisible, map-robustly, wherever the test bites —
-  and the residual is a single named computation at depth 15.  Paper 0's
-  line that U1b "carries the WHOLE pinned question" is discharged for
-  the unequal-interval half outright (`A4`) and for the base-retaining
-  half up to base-chain lag 1.
+  the enrichment fork, and it does not close the record-grain question
+  — it proves the question is DECIDED BY STRUCTURE, not tested, below
+  depth 15.  Paper 0's line that U1b "carries the WHOLE pinned
+  question" is discharged for the unequal-interval half outright
+  (`A4`) and shown VACUOUS (not answered) for the base-retaining half
+  up to lag 1.  **The decisive unit is U1c at depth 15**, and the
+  round's prediction (§9) says it is not a formality: predicted N4
+  with 108 genuine two-sided refusals.
 - **To U2 (the J-conjecture):** the geography U1 handed still stands
-  untouched by this unit, and U1b adds one constraint on any weld: at
-  renewal grain there is **no** indivisibility to locate — the 74 biting
-  rows all divide, and the only indivisibility this unit produces is the
-  null's.  A weld that predicts renewal-grain indivisibility at lag
-  `<= 1` is already refuted.
+  untouched by this unit.  U1b's constraint on any weld is now
+  conditional: at renewal grain, lag ≤ 1, there is nothing to locate
+  because nothing is tested; a weld's renewal-grain predictions engage
+  only at lag ≥ 2 / depth 15 (U1c), where the round predicts both
+  verdicts coexist (N4) — a weld that locates the 108-refusal class
+  vs the 127-division class would be exactly the J-geography question
+  reborn at record grain.
 - **To U4 (sparse records on the crystals):** the renewal sublattice's
   label sets are fixed finite sets at every reachable cut triple, with
   the exact fixedness rule of `A1`; the renewal payload chain is i.i.d.

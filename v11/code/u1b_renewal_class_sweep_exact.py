@@ -1148,7 +1148,9 @@ check("A2 THE BITE TABLE HAS AN EXACT, STATABLE CONTENT, verified against "
       "the measured non-degeneracy on all four ensembles")
 
 check("A3 THE SECOND TRANSFER IS COLUMN-CONSTANT FOR EVERY ADMISSIBLE MAP ON "
-      "EVERY ENSEMBLE, measured and not derived: Gamma(cut3 <- cut1) has "
+      "EVERY ENSEMBLE (the round: ENTAILED by A4 + A1 — disjoint blocks "
+      "of an i.i.d. chain — and re-derived from the model to the digit; "
+      "the sweep is the check of a corollary): Gamma(cut3 <- cut1) has "
       "exactly one distinct column in every case.  This is the load-bearing "
       "qualification on the whole census: by (D-2) DIVISIBLE is then FORCED "
       "on every admissible map of every ensemble before any test is run.  The "
@@ -1684,12 +1686,25 @@ print(f"  N3 bite + refusal                 {N3}")
 print(f"  N4 map-dependent verdicts         {N4}")
 VERDICT = ("N4" if N4 else "N3" if N3 else "N2" if N2 else "N1" if N1
            else "UNRESOLVED")
+# Hostile-round rename (v11 LOG #21): under the pin's (D-1) bite letter
+# the score is N2, but gate A3 proves (D-2) fails on every row — no row
+# was a two-sided test.  With the repaired predicate (D-1) AND (D-2) the
+# census has 0 verdict rows: literally N1 at bite-grain 2.  The printed
+# verdict carries both readings; N2's registered consequence ("the
+# record-grain question CLOSED") is void and is not drawn.
+VERDICT_RENAMED = ("N1-AT-BITE-GRAIN-2 / N2-FORCED-AT-THE-REACHABLE-CLASS"
+                   " (open at lag >= 2, depth 15)"
+                   if VERDICT == "N2" else VERDICT)
 print()
-print(f"  ===> U1b VERDICT: {VERDICT}")
+print(f"  ===> U1b VERDICT: {VERDICT_RENAMED}")
+print(f"       [pin-letter score: {VERDICT}; bite predicate (D-1) only —")
+print("        the round's repaired predicate (D-1) AND (D-2) scores N1:")
+print("        0 two-sided rows exist in the reachable class]")
 check("Z1 the scored outcome is the one the pre-registered definitions "
-      "select, and exactly one is scored",
+      "select, and exactly one is scored (the rename is a reading of the "
+      "same numbers, not a different score)",
       sum(int(x) for x in (N1, N2, N3, N4)) >= 1 and VERDICT != "UNRESOLVED",
-      f"N1 {N1}, N2 {N2}, N3 {N3}, N4 {N4} -> {VERDICT}")
+      f"N1 {N1}, N2 {N2}, N3 {N3}, N4 {N4} -> {VERDICT_RENAMED}")
 
 print()
 print("  WHAT THIS RECEIPT ESTABLISHES, IN ITS OWN TERMS.")
@@ -1712,7 +1727,11 @@ print(f"       {sum(1 for r in BITE['E4'] if not r['cc1'])} of them have a "
       f"non-column-constant renewal transfer.  The")
 print("       interpolant test on those has bite in exactly the delta "
       "round's")
-print("       sense — and it does not refuse once.")
+print("       sense — (D-1), the FIRST transfer — and it does not refuse "
+      "once.")
+print("       The round's correction: (D-2) fails on all of them, so none")
+print("       was a two-sided test; 'does not refuse' is forced, not "
+      "found.")
 print("   (c) The reason it cannot refuse is measured and stated, not "
       "assumed, and")
 print("       it is the load-bearing qualification on this verdict.  The")
@@ -1737,19 +1756,24 @@ print("       fixed only on a cut triple beginning at renewal 3, i.e. at "
       "depth 15")
 print("       in this grammar, which this receipt does not enumerate.  That "
       "is the")
-print("       only door left in the class, and it is a depth cap, not a")
-print("       structural obstruction.")
-print(f"   (e) The null points the other way, and is reported through the "
-      f"same bite")
-print(f"       gate: of {len(_null_bite)} biting control runs (matched class "
-      f"sizes, two")
-print(f"       printed seeds, record content removed) {_nb_ind} REFUSE, "
-      f"while {TOT_DIV} of")
-print(f"       {TOT_BITE} biting record maps DIVIDE.  At renewal grain, as "
-      f"at cut grain in")
-print("       U1's sec.6, the record map is far closer to divisible than "
-      "noise of")
-print("       its own granularity.")
+print("       only door left in the class, and it is THE FIRST DEPTH AT")
+print("       WHICH THE QUESTION IS ASKABLE AT ALL — below it, every")
+print("       reachable test is answered by structure before it runs.")
+print(f"   (e) The null, as run and as corrected by the round (LOG #21): "
+      f"of")
+print(f"       {len(_null_bite)} biting control runs (matched class sizes, "
+      f"two printed")
+print(f"       seeds, record content removed) {_nb_ind} REFUSE, while "
+      f"{TOT_DIV} of")
+print(f"       {TOT_BITE} biting record maps DIVIDE.  BUT the controls are "
+      f"not matched")
+print("       on the forcing-relevant property (0/10 have a column-constant")
+print("       second transfer), and the round's fair null — the record's")
+print("       outer cuts with a randomised middle cut — DIVIDES at both")
+print("       seeds.  The contrast therefore measures TWO-STEP")
+print("       MEMORYLESSNESS of the record's renewal fields, not a")
+print("       divisibility distinction; no closer-to-divisible-than-noise")
+print("       claim survives at this grain.")
 print()
 print("  SCOPE.  Transport scope (d42b1), two-actor pool, the four declared")
 print("  ensembles and no others; renewal grain per paper 0 sec.4's "

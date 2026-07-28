@@ -77,9 +77,9 @@ SEC 4  THE RENEWAL LEG: exhaustive continuation, pruned, with the prune's premis
 ------------------------------------------------------------------------------
   [PASS] C2a (re-run) THE ROOT CARRIES NO LIVE OPERATIONS, which is what licenses reading a renewal as a fresh start: every ported token record at the root state has an EMPTY live-triple list  (root state ((('A', 'B'), False, ()),); live-triple lists [()])
   [PASS] B0 THE 16 RENEWAL-1 BASES ARE THE DEPTH-3 PAIR-ARBITRATIONS, with exact telescoped weights, and each is a renewal in D62's own sense (post-state = root)  (16 bases; raw mass 1/32; each weight 1/512; distinct renewal-1 tokens 8)
-  [PASS] X1 EXHAUSTIVENESS, LEG 1, BY UNPRUNED SCAN (U1-delta's m2, discharged in-receipt).  Every 3-event and every 4-event continuation of all 16 renewal-1 bases is generated with NO prune and only then filtered; the pruned enumerator returns exactly the same leaf set with exactly the same weights, and the intervening tag patterns are enumerated in full  (L=3: 16352 raw continuations scanned -> 256 leaves, patterns {('p', 'p', 'r'): 256}; L=4: 152416 raw continuations scanned -> 3584 leaves, 5 patterns  [18s])
+  [PASS] X1 EXHAUSTIVENESS, LEG 1, BY UNPRUNED SCAN (U1-delta's m2, discharged in-receipt).  Every 3-event and every 4-event continuation of all 16 renewal-1 bases is generated with NO prune and only then filtered; the pruned enumerator returns exactly the same leaf set with exactly the same weights, and the intervening tag patterns are enumerated in full  (L=3: 16352 raw continuations scanned -> 256 leaves, patterns {('p', 'p', 'r'): 256}; L=4: 152416 raw continuations scanned -> 3584 leaves, 5 patterns  [24s])
   [DATA] LEG-1 interval-4 tag patterns (the unequal-interval structure, exhaustive): {('d', 'p', 'p', 'r'): 1024, ('n', 'p', 'p', 'r'): 512, ('p', 'n', 'p', 'r'): 512, ('p', 'p', 'd', 'r'): 1024, ('p', 'p', 'n', 'r'): 512}
-  [PASS] X2 EXHAUSTIVENESS, LEG 2 AT MINIMAL INTERVAL, BY UNPRUNED SCAN: every 3-event continuation of all 256 renewal-2 histories is generated with no prune and only then filtered; the pruned enumerator returns exactly the same 4,096 leaves with the same weights, and (p,p,r) is the ONLY intervening pattern that reaches a renewal three events after a renewal  (453632 raw continuations scanned -> 4096 leaves; patterns {('p', 'p', 'r'): 4096}  [75s])
+  [PASS] X2 EXHAUSTIVENESS, LEG 2 AT MINIMAL INTERVAL, BY UNPRUNED SCAN: every 3-event continuation of all 256 renewal-2 histories is generated with no prune and only then filtered; the pruned enumerator returns exactly the same 4,096 leaves with the same weights, and (p,p,r) is the ONLY intervening pattern that reaches a renewal three events after a renewal  (453632 raw continuations scanned -> 4096 leaves; patterns {('p', 'p', 'r'): 4096}  [78s])
       WHAT THE UNPRUNED SCAN COVERS AND WHAT CARRIES THE REST.  The scans above
       cover 16 depth-3 bases at L=3 and L=4, and 256 depth-6 renewal histories at L=3 — leg 1 of all four ensembles and leg 2 of E1 and E4,
       unpruned.  The three deeper legs (E2's 3-event leg from 3,584 renewal-2
@@ -93,24 +93,24 @@ SEC 5  THE FOUR ENSEMBLES, built exactly; ARM-C2's committed numbers as anchors
 ------------------------------------------------------------------------------
   [DATA] E1 (3/6/9) built: 256 renewal-2 -> 4096 renewal-3 leaves, raw mass 1/32768
   [PASS] ANCHOR C2.ENS ARM-C2's ENSEMBLE REPRODUCES EXACTLY, on machinery rebuilt here (an unpruned scan, not the committed _ppr): 16 renewal-1 bases -> 256 renewal-2 histories -> 4,096 renewal-3 histories at depth 9, raw mass 1/32768  (16 / 256 / 4096; mass 1/32768 (quoted 16 / 256 / 4096, 1/32768))
-        ... E2 leg2 1024/3584 parents, 16384 leaves  [38s in leg, 131s total]
-        ... E2 leg2 2048/3584 parents, 32768 leaves  [76s in leg, 169s total]
-        ... E2 leg2 3072/3584 parents, 49152 leaves  [116s in leg, 208s total]
-  [DATA] E2 (3/7/10) built: 3584 renewal-2 -> 57344 renewal-3 leaves, raw mass 1/8192; leg-2 patterns {('p', 'p', 'r'): 57344}  [135s]
-        ... E3 leg2 32/256 parents, 9216 leaves  [28s in leg, 256s total]
-        ... E3 leg2 64/256 parents, 18432 leaves  [56s in leg, 284s total]
-        ... E3 leg2 96/256 parents, 27648 leaves  [83s in leg, 311s total]
-        ... E3 leg2 128/256 parents, 36864 leaves  [112s in leg, 340s total]
-        ... E3 leg2 160/256 parents, 46080 leaves  [140s in leg, 368s total]
-        ... E3 leg2 192/256 parents, 55296 leaves  [168s in leg, 396s total]
-        ... E3 leg2 224/256 parents, 64512 leaves  [196s in leg, 424s total]
-        ... E3 leg2 256/256 parents, 73728 leaves  [224s in leg, 452s total]
-  [DATA] E3 (3/6/10) built: 256 renewal-2 -> 73728 renewal-3 leaves, raw mass 1/8192; leg-2 patterns {('d', 'p', 'p', 'r'): 24576, ('n', 'p', 'p', 'r'): 8192, ('p', 'n', 'p', 'r'): 8192, ('p', 'p', 'd', 'r'): 24576, ('p', 'p', 'n', 'r'): 8192}  [224s]
-        ... E4 leg3 1024/4096 parents, 16384 leaves  [88s in leg, 540s total]
-        ... E4 leg3 2048/4096 parents, 32768 leaves  [174s in leg, 626s total]
-        ... E4 leg3 3072/4096 parents, 49152 leaves  [261s in leg, 712s total]
-        ... E4 leg3 4096/4096 parents, 65536 leaves  [346s in leg, 798s total]
-  [DATA] E4 (3/6/9/12) built: 4096 renewal-3 -> 65536 renewal-4 leaves, raw mass 1/1048576  [346s]
+        ... E2 leg2 1024/3584 parents, 16384 leaves  [41s in leg, 144s total]
+        ... E2 leg2 2048/3584 parents, 32768 leaves  [83s in leg, 186s total]
+        ... E2 leg2 3072/3584 parents, 49152 leaves  [124s in leg, 226s total]
+  [DATA] E2 (3/7/10) built: 3584 renewal-2 -> 57344 renewal-3 leaves, raw mass 1/8192; leg-2 patterns {('p', 'p', 'r'): 57344}  [144s]
+        ... E3 leg2 32/256 parents, 9216 leaves  [30s in leg, 276s total]
+        ... E3 leg2 64/256 parents, 18432 leaves  [58s in leg, 305s total]
+        ... E3 leg2 96/256 parents, 27648 leaves  [89s in leg, 335s total]
+        ... E3 leg2 128/256 parents, 36864 leaves  [118s in leg, 365s total]
+        ... E3 leg2 160/256 parents, 46080 leaves  [147s in leg, 394s total]
+        ... E3 leg2 192/256 parents, 55296 leaves  [178s in leg, 425s total]
+        ... E3 leg2 224/256 parents, 64512 leaves  [207s in leg, 454s total]
+        ... E3 leg2 256/256 parents, 73728 leaves  [236s in leg, 483s total]
+  [DATA] E3 (3/6/10) built: 256 renewal-2 -> 73728 renewal-3 leaves, raw mass 1/8192; leg-2 patterns {('d', 'p', 'p', 'r'): 24576, ('n', 'p', 'p', 'r'): 8192, ('p', 'n', 'p', 'r'): 8192, ('p', 'p', 'd', 'r'): 24576, ('p', 'p', 'n', 'r'): 8192}  [236s]
+        ... E4 leg3 1024/4096 parents, 16384 leaves  [87s in leg, 570s total]
+        ... E4 leg3 2048/4096 parents, 32768 leaves  [168s in leg, 651s total]
+        ... E4 leg3 3072/4096 parents, 49152 leaves  [248s in leg, 731s total]
+        ... E4 leg3 4096/4096 parents, 65536 leaves  [329s in leg, 812s total]
+  [DATA] E4 (3/6/9/12) built: 4096 renewal-3 -> 65536 renewal-4 leaves, raw mass 1/1048576  [329s]
   [PASS] X3 THE PRUNE's TWO PREMISES HOLD ON EVERY EXPANSION OF EVERY LEG, gated rather than assumed: (i) the live-proposal count rises by at most one and only across a 'p' event, so a node j steps from the final event can reach at most nlive + (L-1-j) live proposals; (ii) every R4 accepted anywhere in this receipt has at least two live proposals in its parent's full view, which is the necessary condition the prune uses.  Together with X1/X2 these make the pruned enumeration exhaustive  (expansions gated 177664; monotonicity violations 0; R4 events OFFERED anywhere in any leg 208896, of which with fewer than two live proposals in the parent view 0 (the lemma is checked on every R4 the grammar offers, interior ones included, not only on those the pattern accepts))
   [PASS] X4 THE LIVE COUNT THE PRUNE READS IS d42b1's OWN View.live, re-evaluated on the event list rather than by rebuilding a View, and the re-evaluation is gated against the committed object on exactly the populations the unpruned scan covers: every expanded node of both legs from the 16 renewal-1 bases and of the 3-event leg from all 256 renewal-2 histories  (6912/6912 expanded nodes agree with len(full_view(h).live); 0 mismatches)
   [PASS] ENS.E1 the ensemble is what it is declared to be: every leaf carries a pair-arbitration at every declared renewal position (3, 6, 9) and at no other position  (4096 leaves at depth 9, raw mass 1/32768; cut triple (3, 6, 9); cut intervals (3, 3))
@@ -142,11 +142,11 @@ SEC 6  THE FIELD LATTICE: the candidate class, declared, enumerated and printed 
   filter (pin; v11 LOG #15).
   [DATA] E1 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 256, 4096]; mass 1  [1s]
   [PASS] J.E1 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
-  [DATA] E2 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 3584, 57344]; mass 1  [18s]
+  [DATA] E2 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 3584, 57344]; mass 1  [16s]
   [PASS] J.E2 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
   [DATA] E3 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 256, 73728]; mass 1  [25s]
   [PASS] J.E3 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
-  [DATA] E4 field-record joint: 4096 distinct record triples; distinct records per cut [64, 512, 512]; distinct cut histories [256, 4096, 65536]; mass 1  [55s]
+  [DATA] E4 field-record joint: 4096 distinct record triples; distinct records per cut [64, 512, 512]; distinct cut histories [256, 4096, 65536]; mass 1  [33s]
   [PASS] J.E4 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
   [PASS] F0 THE D62-FAITHFUL SERIALIZED STATE IS THE ROOT AT EVERY RENEWAL CUT OF EVERY ENSEMBLE (PORT-2's reset, holding on all four populations), so the `state` generator partitions nothing here and alpha_sigma is the one-label map — exactly ARM-C2's structural vacuity, now measured at three interval patterns and at a shifted cut triple  (distinct states over all cuts of all ensembles 1; non-root records 0)
   [PASS] F1 THE ARBITRATION EVENT's ckey ADDS NO GENERATOR TO THE LATTICE, measured exhaustively rather than assumed: at every renewal cut of every leaf of every ensemble the competing-value multiset, the proposer set and the number of distinct bases in the ckey each take ONE value, so the ckey partitions no renewal cut.  What the ckey carries that payload_of does not — the BASE — is already a generator, at every lag  (distinct (competing values, proposers, #bases) triples over every renewal cut of all four ensembles = 1: [((0, 1), ('A', 'B'), 1)])
@@ -202,7 +202,7 @@ SEC 8  THE BITE GATE, per admissible map, per ensemble, BEFORE any verdict
   [DATA] E4 bite table: admissible 128; one-label (structurally vacuous) 2; COLUMN-CONSTANT first transfer (DEGENERATE) 54; WITH BITE 74; of those, column-constant SECOND transfer 74  [4s]
   [PASS] ANCHOR C2.DEG ARM-C2's DEGENERACY REPRODUCES EXACTLY on E1 under sigma+: supports 8/8/8, the joint over the three renewal cuts exactly uniform at 1/512 on 512 cells, and Gamma(r2<-r1) column-constant with exactly one distinct column  (supports [8, 8, 8]; joint cells 512; distinct cell weights ['1/512']; Gamma(r2<-r1) distinct columns 1, Gamma(r3<-r1) distinct columns 1)
   [PASS] A2 THE BITE TABLE HAS AN EXACT, STATABLE CONTENT, verified against every admissible map on every ensemble: the renewal transfer bites IFF the map reads the SAME committed component at two CONSECUTIVE lags — that is, iff it reads a token field AND the same field of that token's base.  Nothing else in the lattice links consecutive renewal cuts, at any interval pattern  (the predicate 'some component present at lag 0 and at lag 1' equals the measured non-degeneracy on all four ensembles)
-  [PASS] A3 THE SECOND TRANSFER IS COLUMN-CONSTANT FOR EVERY ADMISSIBLE MAP ON EVERY ENSEMBLE, measured and not derived: Gamma(cut3 <- cut1) has exactly one distinct column in every case.  This is the load-bearing qualification on the whole census: by (D-2) DIVISIBLE is then FORCED on every admissible map of every ensemble before any test is run.  The content behind it is that the renewal label chains the fixedness gate admits carry ONE-step memory and no two-step memory — the third cut remembers nothing of the first — so an interpolant is available on structural grounds wherever the test bites at all  (maps with a non-column-constant second transfer 0 of 176)
+  [PASS] A3 THE SECOND TRANSFER IS COLUMN-CONSTANT FOR EVERY ADMISSIBLE MAP ON EVERY ENSEMBLE (the round: ENTAILED by A4 + A1 — disjoint blocks of an i.i.d. chain — and re-derived from the model to the digit; the sweep is the check of a corollary): Gamma(cut3 <- cut1) has exactly one distinct column in every case.  This is the load-bearing qualification on the whole census: by (D-2) DIVISIBLE is then FORCED on every admissible map of every ensemble before any test is run.  The content behind it is that the renewal label chains the fixedness gate admits carry ONE-step memory and no two-step memory — the third cut remembers nothing of the first — so an interpolant is available on structural grounds wherever the test bites at all  (maps with a non-column-constant second transfer 0 of 176)
   [PASS] A4 THE RENEWAL PAYLOAD CHAIN IS EXACTLY I.I.D. UNIFORM ON EIGHT LABELS AT EVERY INTERVAL PATTERN MEASURED — minimal (3,3), unequal (4,3), unequal (3,4), and minimal with the cut triple shifted past genesis.  The joint law over the three renewal cuts under sigma+ is uniform on 512 cells in every case.  ARM-C2's uniformity is therefore NOT an artefact of the minimal-interval conditioning, which was the first half of the question U1b inherited  ({'E1': (512, ['1/512']), 'E2': (512, ['1/512']), 'E3': (512, ['1/512']), 'E4': (512, ['1/512'])})
 
 ------------------------------------------------------------------------------
@@ -455,7 +455,7 @@ SEC 9  THE INTERPOLANT TEST on every admissible NON-DEGENERATE map: exact LP wit
       m127  {state,value@0,authors@0,init@0,value@1,authors@1,init@1} labels 64x64x64  cols 8/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
             INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 512 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+488 more)]
             SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 4096 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64 ... (+4072 more)]
-      CENSUS E4: DIVISIBLE 74  [10s]
+      CENSUS E4: DIVISIBLE 74  [9s]
   [PASS] V1 EVERY VERDICT ROW IS DECIDED — no row is left to a cap.  The census over all admissible NON-DEGENERATE maps of all four ensembles is printed above and EXCLUDED-BY-CAP is empty  (verdict census {'DIVISIBLE': 74})
   [PASS] V2 THE TWO INSTRUMENTS DO NOT CONTRADICT EACH OTHER.  [B3] eq. 22 is run beside the feasibility test on every verdict row; where Gamma(c'<-c) is invertible the algebraic interpolant is UNIQUE, so a PSEUDO-STOCHASTIC reading there would be an indivisibility and a STOCHASTIC one a divisibility.  Where Gamma(c'<-c) is singular eq. 22 says nothing and the feasibility test carries the row alone  (eq. 22 readings over all verdict rows: {'SINGULAR (no unique algebraic interpolant)': 74})
   [PASS] V3 GATE A3's CONSEQUENCE IS EXHIBITED, NOT ASSERTED: on every verdict row the structural interpolant X = Gamma(cut3<-cut1).1^T is built and re-verified from scratch — column sums exactly 1, every entry >= 0, and X.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry.  Every divisibility in this census therefore has TWO exhibited interpolants: the process's own conditional and the structural one, and the second would have existed whatever the first transfer had been  (74/74 verdict rows carry a verified structural interpolant)
@@ -555,8 +555,11 @@ SEC 13  THE VERDICT against the pre-registered outcomes N1-N4 (lean: NONE)
   N3 bite + refusal                 False
   N4 map-dependent verdicts         False
 
-  ===> U1b VERDICT: N2
-  [PASS] Z1 the scored outcome is the one the pre-registered definitions select, and exactly one is scored  (N1 False, N2 True, N3 False, N4 False -> N2)
+  ===> U1b VERDICT: N1-AT-BITE-GRAIN-2 / N2-FORCED-AT-THE-REACHABLE-CLASS (open at lag >= 2, depth 15)
+       [pin-letter score: N2; bite predicate (D-1) only —
+        the round's repaired predicate (D-1) AND (D-2) scores N1:
+        0 two-sided rows exist in the reachable class]
+  [PASS] Z1 the scored outcome is the one the pre-registered definitions select, and exactly one is scored (the rename is a reading of the same numbers, not a different score)  (N1 False, N2 True, N3 False, N4 False -> N1-AT-BITE-GRAIN-2 / N2-FORCED-AT-THE-REACHABLE-CLASS (open at lag >= 2, depth 15))
 
   WHAT THIS RECEIPT ESTABLISHES, IN ITS OWN TERMS.
    (a) The first half of the inherited question is CLOSED NEGATIVELY.  At
@@ -569,7 +572,9 @@ SEC 13  THE VERDICT against the pre-registered outcomes N1-N4 (lean: NONE)
        renewal past genesis makes base-retaining maps ADMISSIBLE, and
        74 of them have a non-column-constant renewal transfer.  The
        interpolant test on those has bite in exactly the delta round's
-       sense — and it does not refuse once.
+       sense — (D-1), the FIRST transfer — and it does not refuse once.
+       The round's correction: (D-2) fails on all of them, so none
+       was a two-sided test; 'does not refuse' is forced, not found.
    (c) The reason it cannot refuse is measured and stated, not assumed, and
        it is the load-bearing qualification on this verdict.  The
        fixedness gate admits only base chains that are arbitration tokens
@@ -585,14 +590,20 @@ SEC 13  THE VERDICT against the pre-registered outcomes N1-N4 (lean: NONE)
    (d) The residual is named exactly: a class member reading lag >= 2 is
        fixed only on a cut triple beginning at renewal 3, i.e. at depth 15
        in this grammar, which this receipt does not enumerate.  That is the
-       only door left in the class, and it is a depth cap, not a
-       structural obstruction.
-   (e) The null points the other way, and is reported through the same bite
-       gate: of 10 biting control runs (matched class sizes, two
-       printed seeds, record content removed) 10 REFUSE, while 74 of
-       74 biting record maps DIVIDE.  At renewal grain, as at cut grain in
-       U1's sec.6, the record map is far closer to divisible than noise of
-       its own granularity.
+       only door left in the class, and it is THE FIRST DEPTH AT
+       WHICH THE QUESTION IS ASKABLE AT ALL — below it, every
+       reachable test is answered by structure before it runs.
+   (e) The null, as run and as corrected by the round (LOG #21): of
+       10 biting control runs (matched class sizes, two printed
+       seeds, record content removed) 10 REFUSE, while 74 of
+       74 biting record maps DIVIDE.  BUT the controls are not matched
+       on the forcing-relevant property (0/10 have a column-constant
+       second transfer), and the round's fair null — the record's
+       outer cuts with a randomised middle cut — DIVIDES at both
+       seeds.  The contrast therefore measures TWO-STEP
+       MEMORYLESSNESS of the record's renewal fields, not a
+       divisibility distinction; no closer-to-divisible-than-noise
+       claim survives at this grain.
 
   SCOPE.  Transport scope (d42b1), two-actor pool, the four declared
   ensembles and no others; renewal grain per paper 0 sec.4's [POSIT]; no
@@ -608,5 +619,5 @@ SEC 13  THE VERDICT against the pre-registered outcomes N1-N4 (lean: NONE)
 [U1b] PASS 36 / FAIL 0 / ANCHOR-FAIL 0
 [U1b] VERDICT N2
 [CAPS] pool ('A', 'B'); lattice lag 0..2, class 1024 maps; ensembles [('E1', (3, 6, 9), (3, 6, 9)), ('E2', (3, 7, 10), (3, 7, 10)), ('E3', (3, 6, 10), (3, 6, 10)), ('E4', (3, 6, 9, 12), (6, 9, 12))]; LP 700v/400r, reduced 5000v/1200r; eq. 22 cap 64 labels; null class cap 16; digest cap 24; unpruned exhaustiveness scan on 16 depth-3 bases at L=3 and L=4, and 256 depth-6 renewal histories at L=3; the three deeper legs carry the gated prune (X3); lag >= 2 unreachable below depth 15 — declared, not silent
-[U1b] runtime 1001s
+[U1b] runtime 979s
 ==============================================================================

@@ -807,3 +807,60 @@ have refused — or is the true result "i.i.d.-uniform measured at
 all patterns + lag ≤ 1 forcing, open only at lag ≥ 2 / depth 15"?
 And does the null contrast distinguish the record or restate the
 forcing (random maps escape it by not being committed-field maps)?
+
+## 2026-07-28 — U1b HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES,
+## THE VERDICT RENAMED — **U1b TERMINAL**; THE DEPTH-15 PREDICTION
+## ON RECORD (v11 LEDGER #21)
+The round rebuilt the entire pipeline from d42b1 alone (third
+independent full rebuild of a v11 flagship; own enumeration, prune,
+token reading, Γ, tests) and REPRODUCED EVERY VALUE — the
+arithmetic-never-wrong streak holds.  TWO NAMING BLOCKERS, ZERO
+NUMBERS MOVED, all fixes applied.  **(B1) N2 IS NOT THE HONEST
+NAME:** 0/74 "biting" rows had a non-column-constant second
+transfer (0/176 maps; and 0/400 ARBITRARY functions of the lag-≤1
+window — the reachable class could not have refused under any
+enlargement); the pin's bite predicate screened (D-1) only while
+the receipt itself proved (D-2) — pin-incompleteness is the
+finding.  **RENAMED: N1-AT-BITE-GRAIN-2 /
+N2-FORCED-AT-THE-REACHABLE-CLASS, open at lag ≥ 2 (depth 15)** —
+"no two-sided test exists at the reachable class; the record-grain
+question is not closed, it is UNASKED below depth 15"; N2's
+registered consequence (question CLOSED) void, not drawn; with the
+repaired predicate the census is LITERALLY N1, whose consequence
+stands: the enrichment fork is the program and σ+ was never
+defective.  **(B2) THE NULL RESTATES THE FORCING:** 0/10 controls
+share the forcing-relevant property; the round's FAIR null (record
+outer cuts, randomised middle cut) DIVIDES at both seeds — even
+biting m54 with a randomised middle divides; 8/10 controls matched
+to degenerate σ+ on zero-verdict-row ensembles; the contrast
+supports TWO-STEP MEMORYLESSNESS of the record's fields, not a
+divisibility distinction — "closer to divisible than noise" is
+withdrawn at this grain.  M-fixes: the class is the 2¹⁰ SUBSET
+LATTICE, not "the whole admissible class" (the round's α_g — a
+committed-field, fixed, (D-1)-biting map on E1 outside the lattice
+— falsifies the old title's bold sentence; it too divides); A3/V2
+reframed as ENTAILED (the round re-derived the whole census from
+the model to the digit — the sweep checks a two-line corollary);
+A4 upgraded to full strength (THE LEG KERNEL IS UNIFORM
+CONDITIONALLY ON EVERY PARENT — 16+256+4,096 parents, legs 3 and
+4; independence from the root reset; UNIFORMITY the news);
+X4's deep-leg gap CLOSED by the round's own computation
+(prune-vs-unpruned 760,100 raw, 0 mismatches; premises asserted at
+every deep expansion); X3's premise (ii) provable from
+candidates_for.  **THE ROUND'S DEPTH-15 PREDICTION, recorded in §9
+(round-computed, conditional on kernel uniformity through renewal
+5 — measured to renewal 4/depth 12):** all 512 lag-≤2 masks at
+renewals (3,4,5) classify as 1 one-label / 152 forced-divisible /
+63 doubly-degenerate / 61 forced-indivisible / **127 TWO-SIDED
+DIVIDE (CK exact) / 108 TWO-SIDED REFUSE with exact collision
+certificates** — predicted outcome N4 WITH A GENUINE RECORD-GRAIN
+REFUSAL INSIDE IT; both exemplars verified atom-by-atom by the
+round.  WARNING FOR U1c (engraved): every predicted refusal
+carries a GAP component whose own first transfer is
+column-constant — U1c's bite predicate must be (D-1) ∧ (D-2) AND
+FACTOR-WISE or the refusals arrive laundered one level up.
+Receipt regenerated (36/0/0, renamed verdict printed, pin-letter
+score beside it).  **U1b IS TERMINAL.  THE DECISIVE UNIT IS U1c AT
+DEPTH 15 — and the round's model says it is not a formality.**
+Meta: positive-headline mortality 8-for-8 across v10-v11;
+arithmetic 0 errors through three independent full rebuilds.
