@@ -766,3 +766,44 @@ UNIT'S STANDING SHAPE: the quantum entry fee is 5/7 of Ẑ mass
 (absolute entrywise-L1; total mass 6), a T² of unselected loop
 phases, and a ≥3-outcome K1 law the committed value alphabet
 cannot produce.**  Awaiting U1b.
+
+## 2026-07-28 — U1b DELIVERED: N2 CLAIMED — ALL BITING MAPS DIVIDE,
+## ALL RANDOM CONTROLS REFUSE; TWO HONESTY FLAGS — GREEN-UNREVIEWED
+## (v11 LEDGER #20)
+The class sweep lands (note-u1b-renewal-class-sweep.md, 36 PASS /
+0 FAIL / 0 ANCHOR-FAIL, 1,001s; adjudicator rerun identical modulo
+timings).  **CLAIMED VERDICT N2 — bite + all divide, map-robust.**
+The lattice: 10 generators → 1,024 maps × 4 ensembles (3/6/9;
+3/7/10; 3/6/10; the four-renewal 3/6/9/12); fixedness admits 176;
+bite gate calls 102 DEGENERATE; **74 verdict rows, ALL DIVISIBLE by
+exact CK, two interpolants each re-verified entry-by-entry;
+EXCLUDED-BY-CAP empty; σ and σ+ DEGENERATE on all four ensembles.
+THE NULL: 10/10 matched-size random controls REFUSE** (invertible
+Γ, unique eq.-22 candidate, 1-115 negative entries printed) against
+74/74 record maps dividing.  **FINDING (i), the substantive
+measurement: THE RENEWAL PAYLOAD CHAIN IS EXACTLY I.I.D. UNIFORM AT
+EVERY INTERVAL PATTERN** — joint 1/512 on 512 cells on ALL FOUR
+ensembles: ARM-C2's uniformity is NOT a minimal-interval artefact;
+the unequal-interval half of the pinned question closes negatively.
+**FINDING (ii), the new structural forcing, worker-flagged:** the
+genesis boundary bounds retained base-chain lag by (first-cut
+renewal index − 1); at lag ≤ 1, Γ(cut3←cut1) is COLUMN-CONSTANT
+for ALL 176 admissible maps — DIVISIBLE forced by SECOND-transfer
+degeneracy before any test runs (the delta round's first-transfer
+reason was the weaker half).  Exhaustiveness: X1/X2 unpruned scans
+of 622,400 raw continuations reproduce the pruned enumeration
+exactly ((p,p,r) the only pattern); X3 177,664 expansions 0
+violations; X4 6,912/6,912 View agreements; the three deeper legs
+carry the gated prune (declared cap, ~5×10⁶ each).  TWO HONESTY
+FLAGS THE WORKER RAISED ITSELF: the LP/Farkas machinery is
+UNEXERCISED (0 systems solved — everything CK/structural, gate
+NUL.2); the divisibility is STRUCTURALLY FORCED at the reachable
+class rather than discovered row-by-row (§9).  **NAMED RESIDUAL:
+a lag ≥ 2 map is fixed only on triples beginning at renewal 3 —
+depth 15, not enumerated: the only door left in the class, a depth
+cap.**  The hostile round's central question, dispatched with it:
+IS N2 THE HONEST VERDICT NAME when the reachable class could not
+have refused — or is the true result "i.i.d.-uniform measured at
+all patterns + lag ≤ 1 forcing, open only at lag ≥ 2 / depth 15"?
+And does the null contrast distinguish the record or restate the
+forcing (random maps escape it by not being committed-field maps)?

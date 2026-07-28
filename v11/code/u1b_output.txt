@@ -1,0 +1,612 @@
+
+------------------------------------------------------------------------------
+SEC 1  THE REGISTRY: quoted constants with path:line provenance
+------------------------------------------------------------------------------
+  [QUOTE armc2-deg] v11/note-u1-indivisibility-census.md:436-456 (ARM-C2 Result) and v11/code/u1_indivisibility_census_exact.py:2185-2218 (gate C2c)
+      "under the payload-enriched map the supports are 8, 8, 8; the joint law over (cfg@r1, cfg@r2, cfg@r3) is exactly uniform (1/512 on all 512 cells); Gamma(r2<-r1) is COLUMN-CONSTANT (every entry 1/8, distinct columns 1); DIVISIBLE was the only reachable verdict."
+  [QUOTE armc2-ens] v11/note-u1-indivisibility-census.md:428-434 (ARM-C2) and v11/code/u1_indivisibility_census_exact.py:2161-2170 (gate C2b)
+      "a renewal three events after a renewal forces the two intervening events to be proposals, and the depth-9 leaves carrying renewals at 3, 6 and 9 are enumerable EXHAUSTIVELY: 16 renewal-1 bases -> 256 renewal-2 histories -> 4,096 renewal-3 histories, raw mass 1/32768."
+  [QUOTE armc2-mech] v11/note-u1-indivisibility-census.md:449-456 and v11/LOG.md:545-549 (the delta round's mechanism finding)
+      "payload_of drops the arb token's BASE — and the base of a renewal token is the previous renewal's token, the only object that links consecutive renewals — so the committed enriched map retains, by construction, nothing that can propagate across a renewal."
+  [QUOTE b1-live] v10/code/d42b1_transport_exact.py:118-122 (View.live)
+      "the live proposal events of a view are exactly its 'p' events whose triple is not resolved; only a 'p' event creates one, and an arbitration resolves (removes) them."
+  [QUOTE b3-p9] [B3] J. A. Barandes, arXiv:2507.21192, p.9 and eqs. 22-23 (quoted in v11 paper 0 sec.2 and sec.4)
+      "conditioning is admitted only at DIVISION EVENTS; given Gamma(t<-t0) and Gamma(t'<-t0) the interpolated matrix Gammabar = Gamma(t<-t0) Gamma(t'<-t0)^-1 is generically pseudo-stochastic; divisibility failure is a computable, entrywise property."
+  [QUOTE d42b1-token] v10/code/d42b1_transport_exact.py:52-55 (vname), :57-58 (mname), :60-62 (value_of), :64-69 (base_of), :71-79 (regs_of)
+      "vname(base, wkey, init) = ('v', base, value, authors, init) with value = tuple(sorted({t[2] for t in wkey})) and authors = tuple(sorted({t[0] for t in wkey})); the arbitration event's own created version is vname(base, op[3], op[1]) with base = next(iter(op[2]))[1].  tkn[1] IS the base."
+  [QUOTE d62-R4] v10/note-d62-h2-update-table.md:247 (row R4), :550-554 (the renewal corollary); ported at v11/code/u1_indivisibility_census_exact.py:1146-1151
+      "rows are selected by (event tag, base in refs?, |proposers(ckey)|); R4 is the pair-arb — tag 'r' with TWO proposers in the ckey — and every pair-arbitration returns the serialized state to the root (at closed scope; delivery-conditioned at transport scope, PORT-3)."
+  [QUOTE u1b-open] v11/note-u1-indivisibility-census.md:820-832 (Handover to U1b)
+      "the renewal-to-renewal interpolant test wherever it has bite — (a) UNEQUAL renewal intervals, and (b) any renewal-grain configuration map that retains the arb token's base across a renewal (any map whose renewal transfer is not column-constant)."
+  [DATA] ARM-C2 anchors (exit 1 on mismatch): {'C2.bases': '16', 'C2.cell': '1/512', 'C2.cells': '512', 'C2.cols': '1', 'C2.mass': '1/32768', 'C2.r2': '256', 'C2.r3': '4096', 'C2.supports': '[8, 8, 8]'}
+
+------------------------------------------------------------------------------
+SEC 2  SINGLE-SOURCING: AST signature pass, text slice, AST extraction
+------------------------------------------------------------------------------
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on the three committed sources: every required definition exists at module level with the exact positional argument list, so a silent upstream edit to the token structure, the enumerator or the U1 census machinery cannot slip through this receipt unnoticed  (d42b1 29 defs (11 required, missing []); d74 39 defs (missing []); u1 receipt 50 defs (18 required, missing []))
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only)
+  [PASS] ANCHOR SRC.2 EXIT-FREEDOM GATED: sys.exit / os._exit are neutralised inside the slice and restored after, so a sliced layer cannot set this receipt's exit status; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked; 0 sys.exit in the 16129-byte head)
+  [PASS] ANCHOR SRC.3 THE ENUMERATOR IS D74's, extracted by AST from the committed receipt and not retyped  (lifted 3 definitions from v10/code/d74_transport_holonomy_exact.py: enumerate_line, evsk, sk)
+  [PASS] ANCHOR SRC.4 THE LOAD-BEARING MACHINERY IS THE U1 RECEIPT's, extracted by ast.FunctionDef from the TERMINAL U1 receipt and not re-implemented: the ported D62 state sigmaT and its payload_of, the R4 predicate, the exact Phase-I simplex with its Farkas certificate, the feasibility-preserving reduced system and its lift, the Gamma machinery, and decide_triple itself.  A change to U1's definitions changes this receipt's objects  (lifted 18 definitions from v11/code/u1_indivisibility_census_exact.py: decide_reduced (49L), decide_triple (131L), farkas_ok (10L), fr_digest (9L), gamma_of (9L), invert_exact (25L), is_R4 (6L), lcg_shuffle (8L), lift_and_verify (23L), payload_of (6L), phase1 (90L), proposers_of (2L), reduce_system (59L), sigT (2L), sigmaT (45L), sk (9L), srt (2L), supports (2L))
+      THE MECHANISM UNDER TEST, READ OFF THE LIFTED SOURCE.  payload_of's arbitration
+      branch is `('arb', b1_valueof(tkn), tkn[3], tkn[4])`: it reads the value and
+      the two provenance components and DROPS tkn[1].  By QUOTE d42b1-token tkn[1]
+      IS the base, and the base of a renewal token is the previous renewal's
+      token.  That single omission is why U1's ARM-C2 had no bite, and it is the
+      reason this unit sweeps the lattice rather than choosing a map.
+
+------------------------------------------------------------------------------
+SEC 3  DECLARED CAPS, ENSEMBLES AND CLASS (nothing silent)
+------------------------------------------------------------------------------
+  actor pool                     ('A', 'B') (transport scope, d42b1)
+  field-lattice base-chain depth lag 0..2
+  exact LP caps                  700 vars / 400 rows (full system), 5000 / 1200 (reduced), 400000 pivots
+  certificate print cap          24 non-zero entries, then a count and the exact sum — the PRINT is a digest, the VERIFICATION is on the full vector
+  eq. 22 inversion cap           64 labels
+  null reference class cap       16 classes
+  null shuffle                   x <- (1103515245 x + 12345) mod 2147483648, seeds (20260728, 11); no random module, no clock, no hash seed
+  unpruned exhaustiveness scan   16 depth-3 bases at L=3 and L=4, and 256 depth-6 renewal histories at L=3
+
+  THE FOUR ENSEMBLES.  Each is a set of leaves of the committed transport
+  grammar carrying renewals at declared positions, reached by the SAME
+  telescoping ARM-C2 uses: at horizon D the relative-horizon leaf measure
+  is P(leaf) = prod_t q_t / G(root, D) because G(leaf,0) = 1, so the law
+  CONDITIONED on a set of leaves needs only those leaves' raw weight
+  products and the normaliser cancels.  No sampling, no truncation, exact
+  rationals throughout.
+    E1: renewals at (3, 6, 9), cut triple at depths (3, 6, 9), cut intervals (3, 3)
+        MINIMAL INTERVALS — ARM-C2 re-anchored; cuts are renewals 1,2,3
+    E2: renewals at (3, 7, 10), cut triple at depths (3, 7, 10), cut intervals (4, 3)
+        UNEQUAL INTERVALS (4,3) — cuts are renewals 1,2,3
+    E3: renewals at (3, 6, 10), cut triple at depths (3, 6, 10), cut intervals (3, 4)
+        UNEQUAL INTERVALS (3,4) — cuts are renewals 1,2,3
+    E4: renewals at (3, 6, 9, 12), cut triple at depths (6, 9, 12), cut intervals (3, 3)
+        MINIMAL INTERVALS, CUT TRIPLE SHIFTED PAST GENESIS — cuts are renewals 2,3,4
+
+  WHY E4 EXISTS, stated before it is built.  The base of the FIRST
+  renewal's token is the genesis version v0 — there is no other version at
+  depth 3 — so on any cut triple whose first cut is renewal 1 a map that
+  reads the base carries the genesis symbol at cut 1 and a real payload at
+  cuts 2 and 3.  Its label SET therefore differs across the cuts and it
+  fails the pin's fixedness gate.  E4 shifts the cut triple one renewal
+  forward so that every cut's base is an arbitration token, which is what
+  makes base-retaining maps ADMISSIBLE at all.
+
+------------------------------------------------------------------------------
+SEC 4  THE RENEWAL LEG: exhaustive continuation, pruned, with the prune's premises gated on every expansion
+------------------------------------------------------------------------------
+  [PASS] C2a (re-run) THE ROOT CARRIES NO LIVE OPERATIONS, which is what licenses reading a renewal as a fresh start: every ported token record at the root state has an EMPTY live-triple list  (root state ((('A', 'B'), False, ()),); live-triple lists [()])
+  [PASS] B0 THE 16 RENEWAL-1 BASES ARE THE DEPTH-3 PAIR-ARBITRATIONS, with exact telescoped weights, and each is a renewal in D62's own sense (post-state = root)  (16 bases; raw mass 1/32; each weight 1/512; distinct renewal-1 tokens 8)
+  [PASS] X1 EXHAUSTIVENESS, LEG 1, BY UNPRUNED SCAN (U1-delta's m2, discharged in-receipt).  Every 3-event and every 4-event continuation of all 16 renewal-1 bases is generated with NO prune and only then filtered; the pruned enumerator returns exactly the same leaf set with exactly the same weights, and the intervening tag patterns are enumerated in full  (L=3: 16352 raw continuations scanned -> 256 leaves, patterns {('p', 'p', 'r'): 256}; L=4: 152416 raw continuations scanned -> 3584 leaves, 5 patterns  [18s])
+  [DATA] LEG-1 interval-4 tag patterns (the unequal-interval structure, exhaustive): {('d', 'p', 'p', 'r'): 1024, ('n', 'p', 'p', 'r'): 512, ('p', 'n', 'p', 'r'): 512, ('p', 'p', 'd', 'r'): 1024, ('p', 'p', 'n', 'r'): 512}
+  [PASS] X2 EXHAUSTIVENESS, LEG 2 AT MINIMAL INTERVAL, BY UNPRUNED SCAN: every 3-event continuation of all 256 renewal-2 histories is generated with no prune and only then filtered; the pruned enumerator returns exactly the same 4,096 leaves with the same weights, and (p,p,r) is the ONLY intervening pattern that reaches a renewal three events after a renewal  (453632 raw continuations scanned -> 4096 leaves; patterns {('p', 'p', 'r'): 4096}  [75s])
+      WHAT THE UNPRUNED SCAN COVERS AND WHAT CARRIES THE REST.  The scans above
+      cover 16 depth-3 bases at L=3 and L=4, and 256 depth-6 renewal histories at L=3 — leg 1 of all four ensembles and leg 2 of E1 and E4,
+      unpruned.  The three deeper legs (E2's 3-event leg from 3,584 renewal-2
+      histories, E3's 4-event leg from 256, E4's 3-event leg from 4,096) are
+      enumerated with the prune, whose two premises are gated below on EVERY
+      expansion actually performed, not on a sample.  An unpruned scan there
+      costs of order 5x10^6 continuations per leg and is a DECLARED cap.
+
+------------------------------------------------------------------------------
+SEC 5  THE FOUR ENSEMBLES, built exactly; ARM-C2's committed numbers as anchors
+------------------------------------------------------------------------------
+  [DATA] E1 (3/6/9) built: 256 renewal-2 -> 4096 renewal-3 leaves, raw mass 1/32768
+  [PASS] ANCHOR C2.ENS ARM-C2's ENSEMBLE REPRODUCES EXACTLY, on machinery rebuilt here (an unpruned scan, not the committed _ppr): 16 renewal-1 bases -> 256 renewal-2 histories -> 4,096 renewal-3 histories at depth 9, raw mass 1/32768  (16 / 256 / 4096; mass 1/32768 (quoted 16 / 256 / 4096, 1/32768))
+        ... E2 leg2 1024/3584 parents, 16384 leaves  [38s in leg, 131s total]
+        ... E2 leg2 2048/3584 parents, 32768 leaves  [76s in leg, 169s total]
+        ... E2 leg2 3072/3584 parents, 49152 leaves  [116s in leg, 208s total]
+  [DATA] E2 (3/7/10) built: 3584 renewal-2 -> 57344 renewal-3 leaves, raw mass 1/8192; leg-2 patterns {('p', 'p', 'r'): 57344}  [135s]
+        ... E3 leg2 32/256 parents, 9216 leaves  [28s in leg, 256s total]
+        ... E3 leg2 64/256 parents, 18432 leaves  [56s in leg, 284s total]
+        ... E3 leg2 96/256 parents, 27648 leaves  [83s in leg, 311s total]
+        ... E3 leg2 128/256 parents, 36864 leaves  [112s in leg, 340s total]
+        ... E3 leg2 160/256 parents, 46080 leaves  [140s in leg, 368s total]
+        ... E3 leg2 192/256 parents, 55296 leaves  [168s in leg, 396s total]
+        ... E3 leg2 224/256 parents, 64512 leaves  [196s in leg, 424s total]
+        ... E3 leg2 256/256 parents, 73728 leaves  [224s in leg, 452s total]
+  [DATA] E3 (3/6/10) built: 256 renewal-2 -> 73728 renewal-3 leaves, raw mass 1/8192; leg-2 patterns {('d', 'p', 'p', 'r'): 24576, ('n', 'p', 'p', 'r'): 8192, ('p', 'n', 'p', 'r'): 8192, ('p', 'p', 'd', 'r'): 24576, ('p', 'p', 'n', 'r'): 8192}  [224s]
+        ... E4 leg3 1024/4096 parents, 16384 leaves  [88s in leg, 540s total]
+        ... E4 leg3 2048/4096 parents, 32768 leaves  [174s in leg, 626s total]
+        ... E4 leg3 3072/4096 parents, 49152 leaves  [261s in leg, 712s total]
+        ... E4 leg3 4096/4096 parents, 65536 leaves  [346s in leg, 798s total]
+  [DATA] E4 (3/6/9/12) built: 4096 renewal-3 -> 65536 renewal-4 leaves, raw mass 1/1048576  [346s]
+  [PASS] X3 THE PRUNE's TWO PREMISES HOLD ON EVERY EXPANSION OF EVERY LEG, gated rather than assumed: (i) the live-proposal count rises by at most one and only across a 'p' event, so a node j steps from the final event can reach at most nlive + (L-1-j) live proposals; (ii) every R4 accepted anywhere in this receipt has at least two live proposals in its parent's full view, which is the necessary condition the prune uses.  Together with X1/X2 these make the pruned enumeration exhaustive  (expansions gated 177664; monotonicity violations 0; R4 events OFFERED anywhere in any leg 208896, of which with fewer than two live proposals in the parent view 0 (the lemma is checked on every R4 the grammar offers, interior ones included, not only on those the pattern accepts))
+  [PASS] X4 THE LIVE COUNT THE PRUNE READS IS d42b1's OWN View.live, re-evaluated on the event list rather than by rebuilding a View, and the re-evaluation is gated against the committed object on exactly the populations the unpruned scan covers: every expanded node of both legs from the 16 renewal-1 bases and of the 3-event leg from all 256 renewal-2 histories  (6912/6912 expanded nodes agree with len(full_view(h).live); 0 mismatches)
+  [PASS] ENS.E1 the ensemble is what it is declared to be: every leaf carries a pair-arbitration at every declared renewal position (3, 6, 9) and at no other position  (4096 leaves at depth 9, raw mass 1/32768; cut triple (3, 6, 9); cut intervals (3, 3))
+  [PASS] ENS.E2 the ensemble is what it is declared to be: every leaf carries a pair-arbitration at every declared renewal position (3, 7, 10) and at no other position  (57344 leaves at depth 10, raw mass 1/8192; cut triple (3, 7, 10); cut intervals (4, 3))
+  [PASS] ENS.E3 the ensemble is what it is declared to be: every leaf carries a pair-arbitration at every declared renewal position (3, 6, 10) and at no other position  (73728 leaves at depth 10, raw mass 1/8192; cut triple (3, 6, 10); cut intervals (3, 4))
+  [PASS] ENS.E4 the ensemble is what it is declared to be: every leaf carries a pair-arbitration at every declared renewal position (3, 6, 9, 12) and at no other position  (65536 leaves at depth 12, raw mass 1/1048576; cut triple (6, 9, 12); cut intervals (3, 3))
+  [DATA] ENSEMBLE SIZES: {'E1': 4096, 'E2': 57344, 'E3': 73728, 'E4': 65536}
+  [DATA] ENSEMBLE RAW MASSES: {'E1': '1/32768', 'E2': '1/8192', 'E3': '1/8192', 'E4': '1/1048576'}
+
+------------------------------------------------------------------------------
+SEC 6  THE FIELD LATTICE: the candidate class, declared, enumerated and printed in full
+------------------------------------------------------------------------------
+  THE DECLARED FIELD SET.  Every generator is a committed d42b1 token field
+  or the committed post-renewal serialized state.  Nothing is invented.
+    f0  ('state', None)        sigmaT(h, AB, enriched=False) — the D62-faithful post-renewal serialized state (u1 receipt:1154)
+    f1  ('value', 0)           tkn[2] = value_of(tkn); d42b1:53 and :60-62
+    f2  ('authors', 0)         tkn[3]; d42b1:54 (provenance component)
+    f3  ('init', 0)            tkn[4]; d42b1:55 (provenance component)
+    f4  ('value', 1)           the same committed component of payload_of(anc(tkn,1)), reached by following tkn[1] — the BASE — 1 time(s)
+    f5  ('authors', 1)         the same committed component of payload_of(anc(tkn,1)), reached by following tkn[1] — the BASE — 1 time(s)
+    f6  ('init', 1)            the same committed component of payload_of(anc(tkn,1)), reached by following tkn[1] — the BASE — 1 time(s)
+    f7  ('value', 2)           the same committed component of payload_of(anc(tkn,2)), reached by following tkn[1] — the BASE — 2 time(s)
+    f8  ('authors', 2)         the same committed component of payload_of(anc(tkn,2)), reached by following tkn[1] — the BASE — 2 time(s)
+    f9  ('init', 2)            the same committed component of payload_of(anc(tkn,2)), reached by following tkn[1] — the BASE — 2 time(s)
+  THE CLASS: every subset of the 10 fields = 1024 candidate configuration
+  maps, enumerated by bitmask 0..1023 in a fixed order.  PREDICTIVE
+  SUFFICIENCY IS NOT AN ADMISSIBILITY CRITERION AND IS NOT USED AS ONE
+  ANYWHERE BELOW: screening-off is the phenomenon under measurement, not a
+  filter (pin; v11 LOG #15).
+  [DATA] E1 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 256, 4096]; mass 1  [1s]
+  [PASS] J.E1 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
+  [DATA] E2 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 3584, 57344]; mass 1  [18s]
+  [PASS] J.E2 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
+  [DATA] E3 field-record joint: 512 distinct record triples; distinct records per cut [8, 64, 512]; distinct cut histories [16, 256, 73728]; mass 1  [25s]
+  [PASS] J.E3 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
+  [DATA] E4 field-record joint: 4096 distinct record triples; distinct records per cut [64, 512, 512]; distinct cut histories [256, 4096, 65536]; mass 1  [55s]
+  [PASS] J.E4 the ensemble's conditional law is a probability law: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels)  (sum = 1)
+  [PASS] F0 THE D62-FAITHFUL SERIALIZED STATE IS THE ROOT AT EVERY RENEWAL CUT OF EVERY ENSEMBLE (PORT-2's reset, holding on all four populations), so the `state` generator partitions nothing here and alpha_sigma is the one-label map — exactly ARM-C2's structural vacuity, now measured at three interval patterns and at a shifted cut triple  (distinct states over all cuts of all ensembles 1; non-root records 0)
+  [PASS] F1 THE ARBITRATION EVENT's ckey ADDS NO GENERATOR TO THE LATTICE, measured exhaustively rather than assumed: at every renewal cut of every leaf of every ensemble the competing-value multiset, the proposer set and the number of distinct bases in the ckey each take ONE value, so the ckey partitions no renewal cut.  What the ckey carries that payload_of does not — the BASE — is already a generator, at every lag  (distinct (competing values, proposers, #bases) triples over every renewal cut of all four ensembles = 1: [((0, 1), ('A', 'B'), 1)])
+  [PASS] F2 sigma AND sigma+ ARE MEMBERS OF THE SWEPT CLASS, by exact identity on every cut history and not by assertion.  mask 1 = {state} IS alpha_sigma (the D62-faithful winner-invisible state).  mask 15 = {state, value, authors, init at lag 0} IS alpha_sigma+ : at a renewal the ported state carries a single token record, so the payload-enriched state is exactly that record with payload_of(renewal token) appended, and the two maps induce the same partition of every renewal cut  (verified on 209200 distinct cut histories across all four ensembles)
+  [PASS] F3 NO MERGE TOKEN APPEARS ON ANY BASE CHAIN OF ANY ENSEMBLE, so the merge branch of the payload record is declared and unexercised: every base chain is arbitration tokens down to genesis  (merge-carrying records 0)
+
+------------------------------------------------------------------------------
+SEC 7  ADMISSIBILITY: the fixedness gate (identical label set at every renewal cut), per map, per ensemble
+------------------------------------------------------------------------------
+  [DATA] E1 admissibility: 16/1024 maps FIXED (admissible); 1008 refused; refused maps by the deepest base-chain lag they read: {1: 112, 2: 896}
+  [DATA] E2 admissibility: 16/1024 maps FIXED (admissible); 1008 refused; refused maps by the deepest base-chain lag they read: {1: 112, 2: 896}
+  [DATA] E3 admissibility: 16/1024 maps FIXED (admissible); 1008 refused; refused maps by the deepest base-chain lag they read: {1: 112, 2: 896}
+  [DATA] E4 admissibility: 128/1024 maps FIXED (admissible); 896 refused; refused maps by the deepest base-chain lag they read: {2: 896}
+  [PASS] A1 THE FIXEDNESS GATE HAS AN EXACT, STATABLE CONTENT, verified against the measured admissibility of all 1,024 maps on all four ensembles: a map is FIXED on an ensemble iff every field it reads lies inside the part of the base chain that is an arbitration token at EVERY cut of the triple — lag <= 0 when the first cut is renewal 1, lag <= 1 when it is renewal 2.  The obstruction is the genesis boundary and nothing else, and no interval pattern moves it: the base of renewal k's token is renewal (k-1)'s token, so a map reading lag L meets genesis at a first cut that is renewal L and its label set there differs from the later cuts'  (the predicted admissible sets equal the measured ones on E1, E2, E3 and E4)
+      THE STRUCTURAL PRICE, stated where it is measured.  The only object linking
+      consecutive renewals is the base (QUOTE armc2-mech), and the base's own
+      label set GROWS with the renewal index — renewal k's base chain is k tokens
+      long.  A map retaining the whole link therefore can never be fixed, and the
+      truncations that ARE fixed retain at most lag (first cut's renewal index - 1).
+      Fixedness (paper 0 sec.4) and unbounded cross-renewal memory are in tension
+      at renewal grain.  That is a fact about the CLASS, not about a chosen map.
+
+------------------------------------------------------------------------------
+SEC 8  THE BITE GATE, per admissible map, per ensemble, BEFORE any verdict
+------------------------------------------------------------------------------
+  The delta round's B1, made structural — and made exact, because the
+  round's own one-line reason is the weaker half of the fact.  Two
+  degeneracies must be separated, and both are measured on every map:
+
+   (D-1) FIRST-TRANSFER DEGENERACY — the pin's BITE GATE.  If
+         Gamma(c'<-c) is column-constant then the middle cut is
+         INDEPENDENT of the conditioning cut, so X.Gamma(c'<-c) is
+         column-constant for EVERY X and the triple divides iff
+         Gamma(c''<-c) is column-constant too.  Either way the test
+         measures nothing about the middle cut's role: 'does the law
+         factor through c'?' is vacuous when c' remembers nothing of
+         c.  Such a map is DEGENERATE, is recorded, and NO VERDICT ROW
+         MAY CITE IT — in either direction.
+   (D-2) SECOND-TRANSFER DEGENERACY.  If Gamma(c''<-c) is
+         column-constant with common column b, then X[k,j] := b_k is
+         column-stochastic and X.Gamma(c'<-c) = Gamma(c''<-c)
+         EXACTLY, whatever the first transfer is.  DIVISIBLE is then
+         forced on structural grounds.  This is the half that actually
+         carried ARM-C2's verdict, and it is reported beside every row
+         and exhibited as a second interpolant (gate V3).
+
+  ARM-C2 carried BOTH degeneracies at once, which is why the delta
+  round could quote either.  They are separated here because the class
+  sweep contains maps that carry one and not the other.
+  [DATA] E1 bite table: admissible 16; one-label (structurally vacuous) 2; COLUMN-CONSTANT first transfer (DEGENERATE) 16; WITH BITE 0; of those, column-constant SECOND transfer 0  [0s]
+  [DATA] E2 bite table: admissible 16; one-label (structurally vacuous) 2; COLUMN-CONSTANT first transfer (DEGENERATE) 16; WITH BITE 0; of those, column-constant SECOND transfer 0  [0s]
+  [DATA] E3 bite table: admissible 16; one-label (structurally vacuous) 2; COLUMN-CONSTANT first transfer (DEGENERATE) 16; WITH BITE 0; of those, column-constant SECOND transfer 0  [0s]
+  [DATA] E4 bite table: admissible 128; one-label (structurally vacuous) 2; COLUMN-CONSTANT first transfer (DEGENERATE) 54; WITH BITE 74; of those, column-constant SECOND transfer 74  [4s]
+  [PASS] ANCHOR C2.DEG ARM-C2's DEGENERACY REPRODUCES EXACTLY on E1 under sigma+: supports 8/8/8, the joint over the three renewal cuts exactly uniform at 1/512 on 512 cells, and Gamma(r2<-r1) column-constant with exactly one distinct column  (supports [8, 8, 8]; joint cells 512; distinct cell weights ['1/512']; Gamma(r2<-r1) distinct columns 1, Gamma(r3<-r1) distinct columns 1)
+  [PASS] A2 THE BITE TABLE HAS AN EXACT, STATABLE CONTENT, verified against every admissible map on every ensemble: the renewal transfer bites IFF the map reads the SAME committed component at two CONSECUTIVE lags — that is, iff it reads a token field AND the same field of that token's base.  Nothing else in the lattice links consecutive renewal cuts, at any interval pattern  (the predicate 'some component present at lag 0 and at lag 1' equals the measured non-degeneracy on all four ensembles)
+  [PASS] A3 THE SECOND TRANSFER IS COLUMN-CONSTANT FOR EVERY ADMISSIBLE MAP ON EVERY ENSEMBLE, measured and not derived: Gamma(cut3 <- cut1) has exactly one distinct column in every case.  This is the load-bearing qualification on the whole census: by (D-2) DIVISIBLE is then FORCED on every admissible map of every ensemble before any test is run.  The content behind it is that the renewal label chains the fixedness gate admits carry ONE-step memory and no two-step memory — the third cut remembers nothing of the first — so an interpolant is available on structural grounds wherever the test bites at all  (maps with a non-column-constant second transfer 0 of 176)
+  [PASS] A4 THE RENEWAL PAYLOAD CHAIN IS EXACTLY I.I.D. UNIFORM ON EIGHT LABELS AT EVERY INTERVAL PATTERN MEASURED — minimal (3,3), unequal (4,3), unequal (3,4), and minimal with the cut triple shifted past genesis.  The joint law over the three renewal cuts under sigma+ is uniform on 512 cells in every case.  ARM-C2's uniformity is therefore NOT an artefact of the minimal-interval conditioning, which was the first half of the question U1b inherited  ({'E1': (512, ['1/512']), 'E2': (512, ['1/512']), 'E3': (512, ['1/512']), 'E4': (512, ['1/512'])})
+
+------------------------------------------------------------------------------
+SEC 9  THE INTERPOLANT TEST on every admissible NON-DEGENERATE map: exact LP with Farkas / exhibited interpolant, [B3] eq. 22 beside it
+------------------------------------------------------------------------------
+  The decision order is decide_triple's, lifted from the U1 receipt:
+  structural vacuity; exact Chapman-Kolmogorov; the eq. 22 algebraic
+  interpolant where Gamma(c'<-c) is square and invertible; the row
+  certificate; the full exact-rational feasibility LP; and the
+  feasibility-preserving reduced system where the full one exceeds the
+  plain cap.  Every infeasibility carries an independently verified
+  Farkas vector; every feasibility an exhibited interpolant re-verified
+  entry by entry.
+
+  [E1]  renewals at (3, 6, 9), cut triple (3, 6, 9), cut intervals (3, 3), 4096 leaves
+      NO ADMISSIBLE MAP ON E1 HAS BITE: all 16 admissible maps have a
+      column-constant renewal transfer.  No verdict row is produced and none
+      may be — the pin's bite gate forbids any verdict citing a degenerate map.
+
+  [E2]  renewals at (3, 7, 10), cut triple (3, 7, 10), cut intervals (4, 3), 57344 leaves
+      NO ADMISSIBLE MAP ON E2 HAS BITE: all 16 admissible maps have a
+      column-constant renewal transfer.  No verdict row is produced and none
+      may be — the pin's bite gate forbids any verdict citing a degenerate map.
+
+  [E3]  renewals at (3, 6, 10), cut triple (3, 6, 10), cut intervals (3, 4), 73728 leaves
+      NO ADMISSIBLE MAP ON E3 HAS BITE: all 16 admissible maps have a
+      column-constant renewal transfer.  No verdict row is produced and none
+      may be — the pin's bite gate forbids any verdict citing a degenerate map.
+
+  [E4]  renewals at (3, 6, 9, 12), cut triple (6, 9, 12), cut intervals (3, 3), 65536 leaves
+      m18   {value@0,value@1}                                        labels 4x4x4  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 8 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 16 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4]
+      m19   {state,value@0,value@1}                                  labels 4x4x4  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 8 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 16 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4]
+      m22   {value@0,authors@0,value@1}                              labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m23   {state,value@0,authors@0,value@1}                        labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m26   {value@0,init@0,value@1}                                 labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m27   {state,value@0,init@0,value@1}                           labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m30   {value@0,authors@0,init@0,value@1}                       labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m31   {state,value@0,authors@0,init@0,value@1}                 labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m36   {authors@0,authors@1}                                    labels 4x4x4  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 8 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 16 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4]
+      m37   {state,authors@0,authors@1}                              labels 4x4x4  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 8 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 16 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4]
+      m38   {value@0,authors@0,authors@1}                            labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m39   {state,value@0,authors@0,authors@1}                      labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m44   {authors@0,init@0,authors@1}                             labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m45   {state,authors@0,init@0,authors@1}                       labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m46   {value@0,authors@0,init@0,authors@1}                     labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m47   {state,value@0,authors@0,init@0,authors@1}               labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m50   {value@0,value@1,authors@1}                              labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m51   {state,value@0,value@1,authors@1}                        labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m52   {authors@0,value@1,authors@1}                            labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m53   {state,authors@0,value@1,authors@1}                      labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m54   {value@0,authors@0,value@1,authors@1}                    labels 16x16x16  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 64 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+40 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m55   {state,value@0,authors@0,value@1,authors@1}              labels 16x16x16  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 64 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+40 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m58   {value@0,init@0,value@1,authors@1}                       labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m59   {state,value@0,init@0,value@1,authors@1}                 labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m60   {authors@0,init@0,value@1,authors@1}                     labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m61   {state,authors@0,init@0,value@1,authors@1}               labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m62   {value@0,authors@0,init@0,value@1,authors@1}             labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m63   {state,value@0,authors@0,init@0,value@1,authors@1}       labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m72   {init@0,init@1}                                          labels 4x4x4  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 8 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 16 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4]
+      m73   {state,init@0,init@1}                                    labels 4x4x4  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 8 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 16 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4]
+      m74   {value@0,init@0,init@1}                                  labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m75   {state,value@0,init@0,init@1}                            labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m76   {authors@0,init@0,init@1}                                labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m77   {state,authors@0,init@0,init@1}                          labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m78   {value@0,authors@0,init@0,init@1}                        labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m79   {state,value@0,authors@0,init@0,init@1}                  labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m82   {value@0,value@1,init@1}                                 labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m83   {state,value@0,value@1,init@1}                           labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m86   {value@0,authors@0,value@1,init@1}                       labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m87   {state,value@0,authors@0,value@1,init@1}                 labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m88   {init@0,value@1,init@1}                                  labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m89   {state,init@0,value@1,init@1}                            labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m90   {value@0,init@0,value@1,init@1}                          labels 16x16x16  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 64 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+40 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m91   {state,value@0,init@0,value@1,init@1}                    labels 16x16x16  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 64 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+40 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m92   {authors@0,init@0,value@1,init@1}                        labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m93   {state,authors@0,init@0,value@1,init@1}                  labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m94   {value@0,authors@0,init@0,value@1,init@1}                labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m95   {state,value@0,authors@0,init@0,value@1,init@1}          labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m100  {authors@0,authors@1,init@1}                             labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m101  {state,authors@0,authors@1,init@1}                       labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m102  {value@0,authors@0,authors@1,init@1}                     labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m103  {state,value@0,authors@0,authors@1,init@1}               labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m104  {init@0,authors@1,init@1}                                labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m105  {state,init@0,authors@1,init@1}                          labels 8x8x8  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 32 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+8 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 64 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+40 more)]
+      m106  {value@0,init@0,authors@1,init@1}                        labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m107  {state,value@0,init@0,authors@1,init@1}                  labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m108  {authors@0,init@0,authors@1,init@1}                      labels 16x16x16  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 64 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+40 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m109  {state,authors@0,init@0,authors@1,init@1}                labels 16x16x16  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 64 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+40 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m110  {value@0,authors@0,init@0,authors@1,init@1}              labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m111  {state,value@0,authors@0,init@0,authors@1,init@1}        labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m114  {value@0,value@1,authors@1,init@1}                       labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m115  {state,value@0,value@1,authors@1,init@1}                 labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m116  {authors@0,value@1,authors@1,init@1}                     labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m117  {state,authors@0,value@1,authors@1,init@1}               labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m118  {value@0,authors@0,value@1,authors@1,init@1}             labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m119  {state,value@0,authors@0,value@1,authors@1,init@1}       labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m120  {init@0,value@1,authors@1,init@1}                        labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m121  {state,init@0,value@1,authors@1,init@1}                  labels 16x16x16  cols 2/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 128 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+104 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 256 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16, 1/16 ... (+232 more)]
+      m122  {value@0,init@0,value@1,authors@1,init@1}                labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m123  {state,value@0,init@0,value@1,authors@1,init@1}          labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m124  {authors@0,init@0,value@1,authors@1,init@1}              labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m125  {state,authors@0,init@0,value@1,authors@1,init@1}        labels 32x32x32  cols 4/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 256 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+232 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 1024 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32, 1/32 ... (+1000 more)]
+      m126  {value@0,authors@0,init@0,value@1,authors@1,init@1}      labels 64x64x64  cols 8/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 512 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+488 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 4096 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64 ... (+4072 more)]
+      m127  {state,value@0,authors@0,init@0,value@1,authors@1,init@1} labels 64x64x64  cols 8/1  DIVISIBLE   [Chapman-Kolmogorov]  eq22 SINGULAR (no unique algebraic interpolant)
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(cut3<-cut2): 512 non-zero entries; N.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+488 more)]
+            SECOND INTERPOLANT, the STRUCTURAL one the bite gate is about, X = Gamma(cut3<-cut1).1^T: 4096 non-zero entries; equation holds = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64, 1/64 ... (+4072 more)]
+      CENSUS E4: DIVISIBLE 74  [10s]
+  [PASS] V1 EVERY VERDICT ROW IS DECIDED — no row is left to a cap.  The census over all admissible NON-DEGENERATE maps of all four ensembles is printed above and EXCLUDED-BY-CAP is empty  (verdict census {'DIVISIBLE': 74})
+  [PASS] V2 THE TWO INSTRUMENTS DO NOT CONTRADICT EACH OTHER.  [B3] eq. 22 is run beside the feasibility test on every verdict row; where Gamma(c'<-c) is invertible the algebraic interpolant is UNIQUE, so a PSEUDO-STOCHASTIC reading there would be an indivisibility and a STOCHASTIC one a divisibility.  Where Gamma(c'<-c) is singular eq. 22 says nothing and the feasibility test carries the row alone  (eq. 22 readings over all verdict rows: {'SINGULAR (no unique algebraic interpolant)': 74})
+  [PASS] V3 GATE A3's CONSEQUENCE IS EXHIBITED, NOT ASSERTED: on every verdict row the structural interpolant X = Gamma(cut3<-cut1).1^T is built and re-verified from scratch — column sums exactly 1, every entry >= 0, and X.Gamma(cut2<-cut1) = Gamma(cut3<-cut1) entry by entry.  Every divisibility in this census therefore has TWO exhibited interpolants: the process's own conditional and the structural one, and the second would have existed whatever the first transfer had been  (74/74 verdict rows carry a verified structural interpolant)
+
+------------------------------------------------------------------------------
+SEC 10  THE NULL: matched-size random partitions of the same cut populations, on the same ensembles
+------------------------------------------------------------------------------
+  Every verdict above is a verdict about a coarse-graining of a divisible
+  click law, so each is placed beside a control with the RECORD CONTENT
+  REMOVED and the granularity kept: the distinct cut histories at each
+  renewal cut are dealt out into classes with EXACTLY the reference map's
+  class sizes at that cut, by the printed congruential shuffle.
+  x <- (1103515245 x + 12345) mod 2147483648; seeds (20260728, 11); Fisher-Yates over
+  the sk()-sorted cut-history list, then cut into blocks of the reference
+  map's own class sizes.  No random module, no clock, no hash-seed
+  dependence.
+      E1  null vs {state,value@0,authors@0,init@0}                   seed 20260728  classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -791/4294967296), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 21 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-1091/1808', '-11813/101248', '-119/14464', '-1217/14464', '-12511/101248', '-13645/101248']
+      E1  null vs {state,value@0,authors@0,init@0}                   seed 11        classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -21/4294967296), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 28 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-1/64', '-113/64', '-11981/2688', '-121/128', '-141/64', '-1469/2688']
+      E2  null vs {state,value@0,authors@0,init@0}                   seed 20260728  classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -17454771477/590295810358705651712), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 17 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-100013397525/1222132375552', '-11089851727457/95326325293056', '-119771021017/418097917952', '-1414397680843/31775441764352', '-14422470670643/47663162646528', '-1782316588475/1833198563328']
+      E2  null vs {state,value@0,authors@0,init@0}                   seed 11        classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -19628476755/1180591620717411303424), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 23 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-11682837520649/21439530876928', '-12326857049759/13399706798080', '-1257318515249/10719765438464', '-13729259547909/21439530876928', '-1803799294707/10719765438464', '-1834352841119/13399706798080']
+      E3  null vs {state,value@0,authors@0,init@0}                   seed 20260728  classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -791/4294967296), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 1 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-159485/2777088']
+      E3  null vs {state,value@0,authors@0,init@0}                   seed 11        classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -21/4294967296), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 27 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-1022927/688128', '-115063/1032192', '-1161911/1032192', '-1182749/4128768', '-1362895/688128', '-139601/73728']
+      E4  null vs {state,value@0,authors@0,init@0}                   seed 20260728  classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -28582437/1152921504606846976), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 12 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-1063307/281427072', '-116509097/457318992', '-1212245/15436928', '-126846493/3658551936', '-1823752585/3658551936', '-283943/2894424']
+      E4  null vs {state,value@0,authors@0,init@0}                   seed 11        classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -1596639/1152921504606846976), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 29 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-11598421/34061632', '-141653723/102184896', '-158569319/204369792', '-164163689/102184896', '-187686077/68123264', '-20523985/17030816']
+      E4  null vs {state,init@0,value@1,authors@1,init@1}            seed 20260728  classes [16, 16, 16]  cols 16/16  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = -10540564056073/83076749736557242056487941267521536), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 115 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-104783919543619/2698384398354688', '-105935126810661/1349192199177344', '-111807484606065/337298049794336', '-112156594619717/2698384398354688', '-112687278093993/337298049794336', '-11294511929993/71010115746176']
+      E4  null vs {state,init@0,value@1,authors@1,init@1}            seed 11        classes [16, 16, 16]  cols 16/16  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE, the STRONGEST form available: Gamma(c'<-c) is square and INVERTIBLE (det = 1406226675033/10384593717069655257060992658440192), so [B3] eq. 22's algebraic interpolant Gammabar = Gamma(c''<-c).Gamma(c'<-c)^-1 is the UNIQUE candidate and it has 96 NEGATIVE entries exactly — no Farkas vector is needed, because a unique candidate that fails positivity refutes existence outright.  Column sums of Gammabar all exactly 1 = True; most-negative entries ['-100786446829249/79998673068544', '-10809245245893/79998673068544', '-113084376555431/479992038411264', '-11823776068943/239996019205632', '-125953624227575/159997346137088', '-129924885376375/479992038411264']
+  [DATA] NULL SUMMARY: 10 control runs (per ensemble: the sigma+ reference and, where one exists inside the class cap, a BITING reference; 2 printed seeds each).  THE SAME BITE GATE IS APPLIED TO THE CONTROL: 10 runs have a non-column-constant renewal transfer and 0 are DEGENERATE and carry no evidence.  Verdicts on the biting controls {'INDIVISIBLE': 10}; on the degenerate ones {} (a column-constant FIRST transfer with a non-column-constant SECOND transfer forces INDIVISIBLE by (D-1) and is evidence of nothing)
+  [PASS] NUL.1 THE NULL RUNS BESIDE THE CENSUS ON EVERY ENSEMBLE, at two printed seeds, with the record content removed and the granularity kept, and it is scored through the SAME bite gate.  THE COMPARISON, on the biting rows of each: the record maps DIVIDE and the matched random partitions REFUSE.  The record map is therefore very much closer to divisible than noise of its own granularity — the direction U1's sec.6 battery found at cut grain, reproduced here at renewal grain  (biting controls 10, of which INDIVISIBLE 10; biting record maps 74, of which INDIVISIBLE 0; degenerate controls 0 (excluded from the comparison))
+  [DATA] INSTRUMENT CENSUS — which instrument actually decided each row, so no certificate is implied that was never produced: record-map verdict rows {'Chapman-Kolmogorov': 74}; null control rows {'eq22-algebraic': 10}; exact-simplex systems solved anywhere in this receipt 0
+  [PASS] NUL.2 THE RECEIPT DOES NOT CLAIM A CERTIFICATE IT DID NOT PRODUCE.  Every row of this unit — record map and control alike — is decided STRICTLY EARLIER in decide_triple's order than the feasibility LP: the record rows by exact Chapman-Kolmogorov, the control rows by [B3] eq. 22's UNIQUE algebraic interpolant failing positivity.  The exact Phase-I simplex and its Farkas verification are lifted, available and unexercised here, and no Farkas vector is reported anywhere  (0 LP systems solved; a unique invertible-Gamma candidate failing positivity is a STRONGER refutation than a Farkas vector, not a weaker one — it rules out the only candidate rather than separating a cone)
+
+------------------------------------------------------------------------------
+SEC 11  THE CENSUS, BOTH WAYS, AND THE MAP-DEPENDENCE STRUCTURE
+------------------------------------------------------------------------------
+  PER-ENSEMBLE, PER-MAP CENSUS (the class is swept, not chosen).
+  ens   class  FIXED  refused  1-label  DEGEN  BITE  DIV  IND
+  E1     1024     16     1008        2     16     0    0    0
+  E2     1024     16     1008        2     16     0    0    0
+  E3     1024     16     1008        2     16     0    0    0
+  E4     1024    128      896        2     54    74   74    0
+
+  THE TWO NAMED MAPS, ON EVERY ENSEMBLE.  sigma and sigma+ are MEMBERS of
+  the class and are reported as members, not as the class.
+    E1  alpha_sigma  (D62-faithful)        labels [1, 1, 1]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E1  alpha_sigma+ (payload-enriched)    labels [8, 8, 8]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E2  alpha_sigma  (D62-faithful)        labels [1, 1, 1]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E2  alpha_sigma+ (payload-enriched)    labels [8, 8, 8]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E3  alpha_sigma  (D62-faithful)        labels [1, 1, 1]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E3  alpha_sigma+ (payload-enriched)    labels [8, 8, 8]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E4  alpha_sigma  (D62-faithful)        labels [1, 1, 1]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+    E4  alpha_sigma+ (payload-enriched)    labels [8, 8, 8]  first-transfer columns 1  DEGENERATE — no verdict may cite it
+
+  THE MAP-DEPENDENCE STRUCTURE — which fields move which cell.
+    (1) FIXEDNESS is moved by exactly one thing: the deepest base-chain lag
+        the map reads, against the renewal index of the ensemble's first
+        cut.  No other field combination refuses, and no interval pattern
+        changes it (gate A1).
+    (2) BITE is moved by exactly one thing: whether some committed
+        component is read at two CONSECUTIVE lags.  Reading a component
+        only at lag 0, or only at lag 1, or reading two DIFFERENT
+        components at lags 0 and 1, all leave the renewal transfer
+        column-constant (gate A2).
+    (3) THE VERDICT is moved by NOTHING in this class: every admissible
+        non-degenerate map on every ensemble returns the same verdict, and
+        the second transfer is column-constant throughout (gate A3), so an
+        interpolant is structurally available wherever the test bites at
+        all.  There is no selection problem to pose at this class.
+  [DATA] FIELDS WHOSE ADDITION OR REMOVAL FLIPS THE BITE GATE somewhere: {"('authors', 0)": ['E4'], "('authors', 1)": ['E4'], "('init', 0)": ['E4'], "('init', 1)": ['E4'], "('value', 0)": ['E4'], "('value', 1)": ['E4']}
+  [DATA] FIELDS WHOSE ADDITION OR REMOVAL FLIPS A VERDICT anywhere: NONE — the verdict is map-invariant across the whole swept class
+
+------------------------------------------------------------------------------
+SEC 12  DETERMINISM
+------------------------------------------------------------------------------
+  [PASS] DET.1 the joint law, the Gamma family and the bite gate are independent of dict and set iteration order: rebuilding E1's sigma+ joint from the REVERSED sk()-sorted record list gives identical Fractions everywhere  (512 cells and 64 transfer entries identical under reversed accumulation order)
+  [PASS] DET.2 the whole E4 bite table recomputes identically on a second, independent pass  (128 rows recomputed, 0 differences)
+
+------------------------------------------------------------------------------
+SEC 13  THE VERDICT against the pre-registered outcomes N1-N4 (lean: NONE)
+------------------------------------------------------------------------------
+  class swept                       1024 maps x 4 ensembles = 4096 candidate cells
+  admissible (fixedness gate)       176
+  degenerate (bite gate)            102
+  verdict rows (admissible, biting) 74
+  DIVISIBLE / INDIVISIBLE           74 / 0
+  N1 no bite anywhere               False
+  N2 bite + all divide              True
+  N3 bite + refusal                 False
+  N4 map-dependent verdicts         False
+
+  ===> U1b VERDICT: N2
+  [PASS] Z1 the scored outcome is the one the pre-registered definitions select, and exactly one is scored  (N1 False, N2 True, N3 False, N4 False -> N2)
+
+  WHAT THIS RECEIPT ESTABLISHES, IN ITS OWN TERMS.
+   (a) The first half of the inherited question is CLOSED NEGATIVELY.  At
+       three interval patterns — minimal (3,3), unequal (4,3), unequal
+       (3,4) — the renewal payload chain is EXACTLY i.i.d. uniform on its
+       eight labels (gate A4).  ARM-C2's uniformity was not an artefact of
+       minimal-interval conditioning, and no lag-0 map acquires bite from
+       an unequal interval.
+   (b) The second half is where the bite is.  Shifting the cut triple one
+       renewal past genesis makes base-retaining maps ADMISSIBLE, and
+       74 of them have a non-column-constant renewal transfer.  The
+       interpolant test on those has bite in exactly the delta round's
+       sense — and it does not refuse once.
+   (c) The reason it cannot refuse is measured and stated, not assumed, and
+       it is the load-bearing qualification on this verdict.  The
+       fixedness gate admits only base chains that are arbitration tokens
+       at every cut, which bounds the retained lag by (first cut's
+       renewal index - 1); at lag <= 1 the label chain carries one-step
+       memory and NO two-step memory, so Gamma(cut3<-cut1) is
+       column-constant for every admissible map (gate A3) and DIVISIBLE
+       is FORCED by (D-2) before any test runs.  The census confirms it
+       and exhibits two interpolants per row, but it does not independently
+       discover it: what the sweep establishes is that no map in the
+       reachable class escapes that structure, not that the law was
+       tested against a live alternative at every row.
+   (d) The residual is named exactly: a class member reading lag >= 2 is
+       fixed only on a cut triple beginning at renewal 3, i.e. at depth 15
+       in this grammar, which this receipt does not enumerate.  That is the
+       only door left in the class, and it is a depth cap, not a
+       structural obstruction.
+   (e) The null points the other way, and is reported through the same bite
+       gate: of 10 biting control runs (matched class sizes, two
+       printed seeds, record content removed) 10 REFUSE, while 74 of
+       74 biting record maps DIVIDE.  At renewal grain, as at cut grain in
+       U1's sec.6, the record map is far closer to divisible than noise of
+       its own granularity.
+
+  SCOPE.  Transport scope (d42b1), two-actor pool, the four declared
+  ensembles and no others; renewal grain per paper 0 sec.4's [POSIT]; no
+  claim about non-renewal division-event candidates; no unistochasticity
+  claim (that is U3's); no measure-existence claim; no CP, Bell, locality
+  or covariance claim anywhere.  L-1 is quoted at the configuration
+  space: the renewal-grain label sets swept here are fixed finite sets,
+  which is exactly the hypothesis of the finite-stochastic Lorentz no-go,
+  so no exact covariance may be claimed for any law built on them and
+  none is.
+
+==============================================================================
+[U1b] PASS 36 / FAIL 0 / ANCHOR-FAIL 0
+[U1b] VERDICT N2
+[CAPS] pool ('A', 'B'); lattice lag 0..2, class 1024 maps; ensembles [('E1', (3, 6, 9), (3, 6, 9)), ('E2', (3, 7, 10), (3, 7, 10)), ('E3', (3, 6, 10), (3, 6, 10)), ('E4', (3, 6, 9, 12), (6, 9, 12))]; LP 700v/400r, reduced 5000v/1200r; eq. 22 cap 64 labels; null class cap 16; digest cap 24; unpruned exhaustiveness scan on 16 depth-3 bases at L=3 and L=4, and 256 depth-6 renewal histories at L=3; the three deeper legs carry the gated prune (X3); lag >= 2 unreachable below depth 15 — declared, not silent
+[U1b] runtime 1001s
+==============================================================================
