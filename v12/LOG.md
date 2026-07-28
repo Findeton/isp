@@ -36,3 +36,40 @@ at #4 (BC2 repair killed mid-edit — bc2 receipt carries partial
 uncommitted edits, frozen; BC3 killed at "final receipt" —
 partial files untracked, frozen; BC1's round killed at start).
 v12 shares instruments, not verdicts.  W1 dispatched.
+
+## 2026-07-28 — T2 FALSIFIED AS STATED: TWO FAILURE MODES — THE
+## FORWARD CORRECTION, AHEAD OF W1's RECEIPT (v12 LEDGER #2)
+A hostile test (the user's) lands the two-sided kill: **(MODE 1,
+PROVEN — no receipt needed):** the pinned W1 carrier (two charts,
+one connected overlap) has TRIVIAL H¹ — with a single overlap there
+is no loop in the nerve, every U(1) cocycle is a coboundary
+g_AB = h_A·h_B⁻¹ — so any singlet instance W1's G1 exhibits carries
+class ZERO: a Bell-violating state with trivial twist, falsifying
+"quantum ⟺ nontrivial class" in the quantum-but-trivial direction.
+The carrier that DOES carry an obstruction for CHSH is the CYCLE OF
+MEASUREMENT CONTEXTS — which is Abramsky-Brandenburger's home
+ground, not ours: the carrier correction further shrinks v12's
+novelty.  **(MODE 2, ASSERTED — W1's G4 is now its exhibit):**
+on the honest context-cycle carrier, unconstrained U(1) freedom
+admits the PR box (CHSH = 4) — no-global-section + no-signaling
+carve the no-signaling set, NOT the quantum set; Tsirelson is a
+POSITIVITY fact (Hilbert lift / Gram PSD / NPA), not a topological
+one; K2 fires unless a principled constraint restores 2√2, and the
+constraint that does is amplitude-level positivity — i.e., ASSUMING
+the Hilbert lift, the trivial-rederivation trap the pin was built
+to catch.  A weld-NATIVE principle forcing positivity
+(record-consistency/W3, weld composability, T²-selection) is the
+only live thread, and finding one is a KNOWN OPEN PROBLEM of the
+field (Tsirelson-from-principles: IC/ML/LO get close, none exact).
+**ADJUDICATION: paper 0's T2 quantitative claim and the
+"completes the picture" framing are WITHDRAWN (dated correction in
+paper 0); the ninth positive headline dies — 9-for-9.**  WHAT
+SURVIVES, scoped: the qualitative weld is [F]/[AB]'s theorem
+(never ours); **T3 (records untwist — the substrate theorem v11's
+measurements still want) and W2 (the T² selection) retain
+independent content and are the programme's only live units**; the
+Barandes-as-charts reframe keeps descriptive value for BC.  W1's
+worker CONTINUES — its receipt is the kill documentation (G4
+= the mode-2 exhibit or its sharpening); on landing it is
+committed as such, hostile-rounded, and the programme's remnant
+(W2/W3 re-scoped) awaits the user's word.

@@ -23,6 +23,19 @@ the **holonomy of loops of descriptions**, not properties of any
 process.  A situation is classical exactly when the cocycle class is
 trivial — when the charts glue into one global description — and
 quantum exactly when it is not.
+*(FALSIFIED AS STATED — forward correction 2026-07-28, LOG #2,
+ahead of W1's receipt.  Mode 1, proven: the two-chart cover has
+trivial H¹ (one overlap, no loop in the nerve), so the singlet's
+cocycle is a coboundary — quantum with trivial class.  The honest
+carrier is the measurement-CONTEXT cycle, which is [AB]'s ground.
+Mode 2: on that carrier, unconstrained U(1) freedom admits the PR
+box — the class carves the no-signaling set, not the quantum set;
+Tsirelson is a positivity fact (Hilbert lift/NPA), not topology.
+The quantitative claim and the completes-the-picture framing are
+WITHDRAWN.  The surviving programme: T3 and W2 only, as substrate
+questions; the search for a weld-native principle forcing
+positivity is noted as a known open problem of the field, not a
+gap nobody saw.)*
 
 **T3 (records untwist).**  A record forces a chart; a global record
 would be a global section; a global section exists iff the class is
