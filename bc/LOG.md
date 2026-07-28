@@ -116,3 +116,38 @@ concrete.  All [B3] axioms used are quoted verbatim, page-cited
 touches only the unistochasticity screen, never the division-event
 census (pure Fractions).  Hostile round dispatched.  BC3 still
 constructing; BC2's round still out.
+
+## 2026-07-28 — BC2 HOSTILE ROUND: ACCEPT-WITH-FIXES, NO B — THE
+## VERDICT SURVIVES POINTER-FREE; FOUR REFRAMES OWED (BC LEDGER #4)
+The round reproduced every number from an independent Q(√2)
+rebuild (all 48 result cells, both witnesses, the search re-derived
+and re-implemented — sound and complete).  **ATTACK A: FAIR, NOT A
+STRAWMAN, AND THE KILL-SHOT STRENGTHENS IT** — the pointer
+modeling is [B3]'s own prescription (p.16, p.24, quoted); the
+round built the 4-configuration POINTER-FREE model itself and the
+mismatch SURVIVES (24/24 permutations fail at all four grains,
+both correspondences; the separating invariant becomes
+support-size/column-support; the 1-vs-0 certificate has no
+pointer-free analogue — that caveat carried).  **THE OVERREACH,
+owned:** [B3] contains ZERO relativity content (no occurrence of
+Lorentz/spacelike/foliation in 35 pages) — the fair statement is
+that THE COMPOSITE'S SLICE-INDEXED JOINT ACROSS SPACELIKE
+SEPARATION IS FRAME-RELATIVE, related by no relabeling; NOT tested
+(and E3a + Q3 are evidence FOR it): whether all frames' joints are
+marginals of ONE frame-independent joint over the wings' local
+histories — a marginal-problem question, BC1's genre, named as the
+successor.  **M-1 (a genuine incidental about [B3]):** the
+declared intermediate division event VIOLATES the law of total
+probability (eqs. 19-20) at SP-C/D/F — on this model "legitimate
+division event ⟺ the process divides at it", so the legitimate
+census lives on divisible instances; the negatives survive (carried
+by initial-division-event objects, round-verified) but the LTP
+gate was missing and the S2b framing inverts.  **M-2:** E2
+mis-scored — with all target times kept (p.29 "arbitrary target
+times") E2 FAILS like E1/E1'; the battery STRENGTHENS and the
+mismatch needs NO conditioning structure at all.  **M-3:** the
+"sharpest sentence" narrowed — the FINAL-TIME composite carries
+the outcome joint and IS frame-invariant; the non-mappable object
+is the INTERMEDIATE-slice composite description.  Repair
+dispatched (LTP gate; E2 rerun; pointer-free replication
+in-receipt; retitle/rescope; m1-m5/n1-n4).
