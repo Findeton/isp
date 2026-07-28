@@ -79,3 +79,37 @@ FIRST THINGS TO ACTUALLY INVESTIGATE, on record: U1 Arm 0 (the
 matrices exist), Arm 1 (the 44 suspects), and L0 — all cheap, all
 load-bearing.  PROGRAM REMAINS HALTED: nothing dispatched; Phase I
 awaits the user's go.
+
+## 2026-07-27 — THE FULL CATALOG COMMITTED; PAPER 0 CORRECTED (v11
+## LEDGER #3)
+**PROCESS ERRATUM, OWNED: v11 #2 committed a 616-line SNAPSHOT of
+the catalog while its worker was still writing** (the adjudicator
+mistook §0.5's doctrine text for a closing section).  The completed
+catalog is 3,220 lines — 54 graded entries, a 45-row reproduction
+table — and is committed HERE; #2's snapshot is superseded in
+place.  Paper 0's three projected cross-references corrected to the
+final numbering (Bell §4.9; magic §4.12; the CP constraint §2.5).
+TWO ITEMS THE FULL CATALOG ADDED TO THE PLAN: (1) **NEW LEMMA L-1,
+before U1** — the finite-stochastic Lorentz no-go (v3 p8 Cor 2.4:
+exact covariance by invertible stochastic maps on a fixed finite
+configuration space forces permutations), which COLLIDES with paper
+0 §4's fixed renewal-grain configuration space and therefore bounds
+the re-founding itself: v11 may expect at most STATISTICAL Lorentz
+invariance at renewal grain, never exact covariance — exactly U4's
+form; any exact-finite-covariance claim is pre-refuted and
+forbidden.  (2) **THE LAST DOOR restored** — the record-category
+reversal probe at transport scope ([V11-CAT §4.7 branch (a)]), the
+pre-v11 fork's option (a): one cheap unit, orthogonal to U1-U5;
+the catalog caught paper 0 silently dropping a live item, and
+Phase I now carries it.  FULL-CATALOG HEADLINES BEYOND #2's
+SNAPSHOT: the SR bridge is [THEOREM]-but-not-original
+(Arrighi-Patricot, corpus-acknowledged) with complex-vs-real FAIL
+under present axioms; the Born rule was NOT derived anywhere
+(paper Va: 22 [P] tags, (1,3) downgraded to (1,d) with d=3 input);
+2sqrt2 imported at all six loci; CONTEXTUALITY: ZERO HITS
+CORPUS-WIDE (a named gap); the v4 effective-GR descent is
+contradicted-replaced-absorbed and NEVER ERRATA'D (a routing duty
+alongside §6.7's); YM README lines 12-18 the last un-swept
+overclaim; D15's "measured couplings" itself forward-corrected to
+"fixture-extracted".  The G-wall reading corrected: "the wall
+stands unconditionally; the G-NAMING is conditional."

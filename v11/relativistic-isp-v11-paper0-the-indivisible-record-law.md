@@ -201,11 +201,11 @@ refuses to cut.
    out-computations — are the empirical case that the machinery is
    the load-bearing component.
 4. **Bell is settled and closed** [THEOREM, v5 paper 14; catalog
-   §4.6]: indivisibility does not evade Bell — it pays the
+   §4.9]: indivisibility does not evade Bell — it pays the
    outcome-independence price, landing at exactly orthodox QM's
    locality status.  No v11 unit may be framed as a Bell-locality
    result.  Likewise **magic ≠ indivisibility** [MEASURED, catalog
-   §4.7]: a positive U1 buys no resource-theoretic advantage, and
+   §4.12]: a positive U1 buys no resource-theoretic advantage, and
    no unit may claim one.
 5. **The D15 sentence** [catalog §5.1]: the corpus's boldest claim
    — "the identified click law = the D15 action = the Standard
@@ -214,7 +214,7 @@ refuses to cut.
    derivation** (its own paper's ceiling: *identified, not
    derived*; paper 29: *supplies rather than derives*).  v11 may
    cite it only with that sentence attached.
-6. **U1 is not a CP-divisibility test** [THEOREM, catalog §2.4]:
+6. **U1 is not a CP-divisibility test** [THEOREM, catalog §2.5]:
    CP-divisibility and Barandes-indivisibility are orthogonal
    (state-independent seals are always CP-divisible), so the
    census must run the interpolant and descent instruments, never
@@ -263,8 +263,20 @@ follows).
     the generated law is Barandes-classical at every grain and the
     quantum requires enrichment; one pseudo-stochastic interpolant
     ⇒ **the corpus's first generated indivisible bridge.**
+- **L-1 — THE FINITE-STOCHASTIC LORENTZ NO-GO, RESTATED** *(before
+  U1 — [V11-CAT §7 rank 2]; v3 paper 8 Cor 2.4).*  Exact covariance
+  implemented by invertible stochastic maps on a **fixed finite
+  configuration space** forces those maps to be permutations —
+  which collides head-on with this paper's §4 (the renewal-grain
+  configuration space is fixed and finite).  The lemma therefore
+  BOUNDS the re-founding before any unit runs: **v11 may expect at
+  most statistical/approximate Lorentz invariance at renewal grain,
+  never exact covariance** — which is precisely the form U4 tests,
+  and precisely the form the corpus's strongest relativity result
+  took ([V11-CAT §1.5]).  Any v11 claim of exact finite covariance
+  is pre-refuted by this lemma and forbidden.
 - **L0 — THE G NO-GO, RESTATED AS A v11 KINEMATIC LEMMA** *(before
-  U5 may run — [V11-CAT §7 rank 2]).*  The corpus's only
+  U5 may run — [V11-CAT §7 rank 3]).*  The corpus's only
   structurally unconditional physics theorem (v6 paper 57): no
   internal observable can be a length; only κ·σ_A = 2π and,
   separately, G·Λ² = const are weight-zero; l_step is the unique
@@ -359,10 +371,15 @@ dependency, with the standing rule that each phase's verdict shapes
 the next and every phase ends in hostile review:
 
 - **PHASE I — THE CENSUS** *(first things actually investigated)*:
-  U1 in full (preamble; Arm 0 Born = K1 + the Ẑ sibling; Arms 1–2),
-  with **L0** run alongside (it is cheap, independent, and must
-  precede U5 whenever U5 comes), and the erratum-routing
-  housekeeping unit (§6.7).  Phase I decides the world: divisible
+  **L-1 first** (it bounds the re-founding itself), then U1 in full
+  (preamble; Arm 0 Born = K1 + the Ẑ sibling; Arms 1–2), with
+  **L0** run alongside (cheap, independent, and must precede U5
+  whenever U5 comes), the erratum-routing housekeeping unit (§6.7),
+  and **THE LAST DOOR** restored to the board ([V11-CAT §4.7
+  branch (a)] — the record-category reversal probe at transport
+  scope, the pre-v11 fork's option (a), one cheap unit, orthogonal
+  to U1–U5; the catalog caught this paper silently dropping it, and
+  it is hereby undropped).  Phase I decides the world: divisible
   everywhere ⇒ enrichment is the program; one indivisible bridge ⇒
   mapping it is.
 - **PHASE II — THE VERDICT FORK**: U2 (the J-conjecture — the weld
