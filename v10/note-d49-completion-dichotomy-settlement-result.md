@@ -335,3 +335,23 @@ every run by a deliberately singular probe.
 
 Post-repair: **31 PASS / 0 FAIL**, exit 0, byte-identical across
 `PYTHONHASHSEED` 0 / 7 / 61 / 999.  **TERMINAL.**
+
+## Erratum (2026-07-27, v11 H1 — erratum routing)
+
+The boundary-freedom count under bisimulation-invariance printed here — **119**
+at the round-1 B2 note (§ above, "bisimulation-invariance leaves **119** (§4b)")
+and at §7's B2 repair line ("new gate H1 measures 308/313 and 119/313 free
+directions") — is superseded. The correction is committed at
+`LOG.md:10501` and stated in `THE-THEORY-SO-FAR.md` (lines 7464-7469), verbatim:
+
+> **A corpus-wide number correction, and its lesson.**  The published
+> boundary-freedom figure under bisimulation-invariance was **119**; the
+> correct value is **137**, the earlier rows having dropped half of a
+> product rule.  A port check reproduced 119 exactly — **because porting
+> the method ports the error.  A port check cannot be an independence
+> check** (§B11.6).  Every quotation of 119 in this book is corrected.
+
+Read **137/313** for **119/313** at both loci. The `308/313` renewal-pair figure
+is unaffected, and the direction of the finding strengthens: the completion form
+is a choice with *more* freedom than published. Recorded at `../v8/LEDGER.md`
+#498.

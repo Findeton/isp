@@ -65,3 +65,38 @@ DERIVATION OF THE INPUTS   — OPEN (D12/D20 stand);
 Round 1 (three streams, 2026-07-12) adjudicated the pinned fronts: **(F1) CLOSED at family grade by D25 + D27 (same date; supersessions at LEDGER #129/#130).** The round-1 ensemble-injectivity route proved TOO WEAK — weak intrinsic collapse (½ id + ½ Δ_Z) is injective on preparations yet receives the loss with nothing (the pre-registered C_half catch). The theorem-grade formalization is the **distinguishability-isometry** form: the closure preserves every pairwise trace distance on the total record ontology; by Busch's theorem [LITERATURE, the non-surjective completely positive case; the positive-only case adds antiunitary branches, invisible on the real family] the admitted closures are the mixtures of isometries with mutually orthogonal ranges — isometric dilations up to a preparation-independent classical flag that receives nothing — which is the dispersal class (the thermal receiver U(ρ⊗σ)U† included, per D27's exhibit). On the declared family, by exact computation (`code/d25_reception_theorem_exact.py`, 7/7; `d27_busch_thermal_receiver_exact.py`, 5/5): dispersal preserves; C-class contracts to zero; weak collapse contracts strictly at every rate; classical receivers contract every content distance while preserving the value distance — the value/content split as a computation. Wigner/Kadison/Molnár govern the surjective upgrade inside the carrier; Paper 19 §3 carries the corrected characterization. **(F2) ANSWERED:** (iii) as an independent axiom proved too much or too little (parameter-free DP slips it; a strong reading hits G/Λ); demoted to a corollary with the exemption rule (§2). **(F3) ANSWERED** with the covered/not-covered ledger (§2). **(F4) RESOLVED** as near-definitional in the complete-support-suppression invariant; the substance moved to F1. **(F5) ANSWERED:** strengthening-by-localization; priors named (Halliwell; Gell-Mann–Hartle; Zurek; Chiribella–D'Ariano–Perinotti; Wallace as the divergence point). **(F6) SURVIVED** (over-constraint sentence added; the tested-energy-domain restriction and dark-sector/neutrino gap made explicit). **(F7) ANSWERED** by the tree theorem and its threefold boundary; the DAG case is open in both directions (in-degree ≥ 2 exposes relative coupling signs invisible to tree clicks).
 
 New fronts: **(F8) CLOSED by D24** (`code/d24_tree_birth_kernel_exact.py`, 7/7 — the tree class exhaustively identifiable through 4 registers, zero collisions, exact recovery; and the same receipt is the first birth-kernel exhibit, Paper 19 §2). **(F9)** Γ(n) for mass-proportional CSL on n-partite GHZ at fixed total mass and separation — the Mermin-order scaling as the corpus's genuinely separated prediction beyond macroscopicity μ — OPEN. **(F10)** Oppenheim-class classical-quantum gravity onto the D21 rival table, with its diffusion-floor falsifier on the calibration arm — OPEN (D25's R_cl gate is the family-grade exclusion; the rival-table row remains queued).
+
+## Erratum (2026-07-27, v11 H1 — erratum routing)
+
+§2 clause (ii) reads the V6 quarter law (−ln BC = σ/4) as the metric of
+sealing-as-dispersal. The quantity `BC` there is the **Cauchy-Schwarz bound**
+on the coherence multiplier, not the multiplier itself. The correction is v6
+paper 7 §12 item B1 (`../v6/relativistic-isp-v6-paper7.md`, lines 1178-1195),
+verbatim:
+
+> B1. Duality law, CORRECTED. Cauchy-Schwarz gives |<phi0|phi1>| <= B =
+>     sum sqrt(p0 p1), with equality iff the relative pointer phase is
+>     constant. Phase-structured pointers with IDENTICAL densities give
+>        alpha = 0: V_QM = 1.000000, B = 1.000000
+>        alpha = 1: V_QM = 0.726149, B = 1.000000
+>        alpha = 3: V_QM = 0.056135, B = 1.000000
+>     (5000-trial Cauchy-Schwarz check: 0 violations). A classical-record
+>     (Bhattacharyya) clock is FALSIFIED by phase-structured which-path
+>     marking; SHARD, through its own dilation, carries pointer holonomy and
+>     uses the dilation overlap - coinciding with QM everywhere at this
+>     layer.
+
+The corrected general form is committed at
+`../v8/relativistic-isp-v8-paper6-phenomenology.md` §1.2: the seal overlap is
+an influence functional `F = ⟨e₁|e₀⟩ = Σ_b √(P₀(b)P₁(b))·e^{iΔθ(b)}` whose
+*"modulus is the Bhattacharyya kernel — `|F| = BC` exactly when the recorded
+phases align, `|F| ≤ BC` in general (recorded phases only add dephasing)."*
+
+Consequence for §2, scoped: the reception metric is `−ln|F| ≥ −ln BC`, so the
+quarter law is a **lower bound** on sealing at fixed evidence unless the
+recorded pointer phases align; the phase face of `F` leaves `|ρ₀₁|` untouched
+(§8's own statement, and Paper 6 §3), so no clause of the principle, the
+falsifier, or the identification changes. The clause should be read with `BC`
+tagged as the constant-relative-phase case throughout.
+
+Routed with `../v6/ERRATA.md` E2 and `../v6/ARCHIVE-STATUS.md`; `../v8/LEDGER.md` #498.

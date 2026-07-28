@@ -176,3 +176,34 @@ target; **(3)** D15-sentence discipline is §6.5 not §6.6 (paper
 prohibition-only import is the correct reading.  Paper 0 patch
 deferred to the Phase I adjudication (single edit pass).
 Hostile round dispatched.
+
+## 2026-07-27 — H1 ERRATUM ROUTING DELIVERED, GREEN-UNREVIEWED (v11
+## LEDGER #6)
+The housekeeping unit lands.  THREE routings, every line quoting a
+committed source: **(a) BC/Cauchy-Schwarz** — correction = v6
+paper 7 §12 item B1 (:1178-1195); affected frozen locus located
+PRECISELY: v6 paper 26 Theorem A lines 232-235, whose phase-free
+pointer IS the constant-relative-phase hypothesis; routed to
+v6/ERRATA.md E2 + v6/ARCHIVE-STATUS.md caveat + a forward-only
+erratum appended to v10 paper 18 (§2 text unmodified; the
+reception metric is −ln|F| ≥ −ln BC, quarter law a LOWER bound
+unless pointer phases align — no clause of the principle,
+falsifier, or identification changes) + v8/LEDGER.md #498(a).
+**(b) the v4 effective-GR descent** — v4/ERRATA.md E2: papers
+25/32 materially superseded by v6 paper 5 §8
+(FULL-GR-FALSIFIED-FROM-CURRENT-DATA), paper 57 (the G no-go), v8
+paper 4; what survives = paper 32's own scope clauses;
+#498(b).  **(c) 119→137** — the book sweep was scoped; the d49
+note still printed 119 twice unpointed; forward-only erratum
+appended (137/313; 308/313 unaffected; the finding STRENGTHENS);
+#498(c).  Ledger numbering trap found and dodged: the corrections
+log is non-contiguous (…171, 264 committed at v10 grain) — entry
+appended as #498, file-qualified pointers.  1.82 NOT routed, on
+the v7 status file's own policy ("corrections land in v8 and the
+ledger only") + no v8/v10/v11 paper quotes it as evidence; #498
+carries the pointer.  Diff-stat gate PASSED: 180 insertions, zero
+deletions, no frozen paper touched.  PROCESS NOTE, owned: the #5
+commit momentarily staged this unit's in-progress note (swept by
+`git add v11/`); caught seconds later and amended out before any
+successor commit — no history residue.  Hostile rounds for #5 and
+#6 dispatched together.

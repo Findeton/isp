@@ -47,3 +47,62 @@ be found to assert the retired framing in other words, it is stale per the
 retirement record above; citations of Renou et al. 2021 anywhere in the
 corpus are historical (Renou 2021 stands in its own framing; the debate is
 live and the corpus takes no side).
+
+## E2 — The quarter law's `BC` is only the Cauchy-Schwarz bound (paper 7 §12's correction routed to paper 26)
+
+Filed live and unrouted at `../v10/LOG.md:11472` — *"LIVE ERRATUM FILED: the
+quarter law's BC is only the Cauchy-Schwarz bound (saturated iff relative
+pointer phase constant) — v6 paper 7 §12's correction never reached paper 26,
+ARCHIVE-STATUS, or v10 paper 18."* — and carried at
+`../v10/THE-THEORY-SO-FAR.md:11932` as *"LIVE ERRATUM, filed and unrouted."*
+This entry routes it. It moves the theorem's **hypothesis**, not its leading
+coefficient.
+
+**The correction, verbatim from its committed source** —
+`relativistic-isp-v6-paper7.md` §12 ("Predictions and experimental contact
+(corrected)", line 1157), item B1, lines 1178-1195:
+
+> B1. Duality law, CORRECTED. Cauchy-Schwarz gives |<phi0|phi1>| <= B =
+>     sum sqrt(p0 p1), with equality iff the relative pointer phase is
+>     constant. Phase-structured pointers with IDENTICAL densities give
+>        alpha = 0: V_QM = 1.000000, B = 1.000000
+>        alpha = 1: V_QM = 0.726149, B = 1.000000
+>        alpha = 3: V_QM = 0.056135, B = 1.000000
+>     (5000-trial Cauchy-Schwarz check: 0 violations). A classical-record
+>     (Bhattacharyya) clock is FALSIFIED by phase-structured which-path
+>     marking; SHARD, through its own dilation, carries pointer holonomy and
+>     uses the dilation overlap - coinciding with QM everywhere at this
+>     layer.
+
+**Affected frozen locus (no in-file text modified):**
+`relativistic-isp-v6-paper26.md` — the quarter law at lines 15-17 (abstract),
+61-62 (*"coherence multiplier = Bhattacharyya overlap"*), and Theorem A at
+lines 222-238. The load-bearing step is line 232-235: *"The record imprint
+sends rho_01 -> <e_1|e_0> rho_01 with |e_chi> = sum_b sqrt(P_chi(b)) |b>, so
+the per-cycle multiplier is exactly BC."* The phase-free pointer
+`|e_chi> = sum_b sqrt(P_chi(b))|b>` **is** paper 7 §12 B1's
+constant-relative-phase hypothesis; for phase-structured pointers the
+multiplier's modulus is strictly below `BC`, and `BC` is the Cauchy-Schwarz
+bound on it. Paper 26's `-ln BC = sigma/4 + (eps^2/6) sigma + O(sigma^3)` and
+its receipt table stand as stated **under that hypothesis**.
+
+**Paper 7 carries the correction in-file** and is cited here as the source,
+not as an affected locus.
+
+**The forward statement, committed:**
+`../v8/relativistic-isp-v8-paper6-phenomenology.md` §1.2 (line 32):
+
+> the seal overlap **is** a genuine discrete (Gell-Mann–Hartle/Feynman–Vernon)
+> influence functional `F = ⟨e₁|e₀⟩ = Σ_b √(P₀(b)P₁(b))·e^{iΔθ(b)}`, whose
+> **modulus is the Bhattacharyya kernel** — `|F| = BC` exactly when the
+> recorded phases align, `|F| ≤ BC` in general (recorded phases only *add*
+> dephasing)
+
+(receipt `pPRIN_seal_record.py`). The v8 line therefore already carries the
+corrected form; the frozen v6 reader path lacked the pointer, which this entry
+supplies.
+
+**Routing:** this entry (v6 paper 26); an appended erratum in
+`../v10/relativistic-isp-v10-paper18-no-silent-erasure-and-the-identified-click-law.md`
+(§2's quarter-law clause); recorded at `../v8/LEDGER.md` #498 (the v8 ledger's
+own numbering, distinct from the v10 numbering in `../v10/LOG.md`).
