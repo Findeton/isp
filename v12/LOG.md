@@ -120,3 +120,50 @@ scope gates.**  W2′/W3′/W4′/W5 re-pinned in paper 0 §4, NOT
 dispatched (awaiting the user's word).  W1′ dispatched.  Meta: the
 review is the programme's fastest and best correction — v1 lived
 four hours; the correction cost nothing but honesty.
+
+## 2026-07-28 — SECOND EXTERNAL REVIEW [REV2] ADOPTED: PAPER 0
+## v2.1; THE W1′ PIN AMENDED MID-CONSTRUCTION, TRANSPARENTLY (v12
+## LEDGER #4)
+The user delivered a second external hostile review, of v2.
+**ADJUDICATION: ACCEPTED on all five load-bearing points, with
+both new mathematical claims HAND-VERIFIED before adoption:**
+(i) THE COUNTEREXAMPLE — B(R(θ)) = S(cos 2θ), S(c)S(d) = S(cd),
+so Δᴮ ≠ 0 while K = S(c_tot/c₁) stochastically factorizes the
+shadow whenever |c_tot| ≤ |c₁| ✓ (an exact rational instance
+constructed for the receipt: Pythagorean rotations (24/25, 7/25)
+and (4/5, 3/5), K = S(−175/527) ✓✓) — **Δᴮ ≠ 0 does NOT imply
+stochastic indivisibility; Δᴮ, D₂₁₀ (declared-law residual), and
+d_div (existential) are three different objects, now
+distinguished in T2′**; (ii) THE COHERENCE LAW —
+Δᴮ(U₃U₂,U₁) + Δᴮ(U₃,U₂)B(U₁) = Δᴮ(U₃,U₂U₁) + B(U₃)Δᴮ(U₂,U₁),
+both sides telescoping to B(U₃U₂U₁) − B(U₃)B(U₂)B(U₁) ✓ — now
+W2a.  (iii) B(ωU) = B(U): the Born projection ANNIHILATES scalar
+multipliers — the H² bridge must be built (W2b) before selection
+(W2c); the multiplier line demoted to candidate-enrichment.
+**v2.1 CHANGES:** title → "quantum INTERFERENCE as the composition
+defect" (Δᴮ is the primary interference invariant, not all of QM);
+T2′ rescoped (three defects; "composing" not "composing and
+gluing" — the temporal/contextual split is W4′'s question; Layer
+A needs NO atlas — it lives inside one Barandes process); T3′
+de-tautologized FULLY (record defined independently: stable,
+orthogonal sectors, correlated, persistent; claims only under
+record-PRESERVING operations — the eraser caveat; the
+decoherent-histories antecedent cited (medium decoherence ⟺
+generalized records, pure states) — v12's novelty is the
+translation, not the association); §3 CONVEXIFIED (L_corr ⊊
+Q_corr ⊊ NS_corr as convex bodies) + THE STRONGER TARGET adopted:
+Q_corr is the COMPLETE quantum correlator body at this scenario
+(supporting-hyperplane/planar argument); W2′ split W2a/W2b/W2c;
+[AMB] attribution added (the cohomological witness is
+Abramsky-Mansfield-Barbosa, sufficient-not-necessary); evidence
+table rows tightened; T1 wording ("indivisible ... formulated
+using ordinary probability theory").  **THE W1′ PIN AMENDED
+mid-construction** (dated amendment section; the worker messaged —
+cheaper and cleaner than a third kill): Arm A convexified + the
+completeness gate A+; Arm C gains C+1 (the three-defect separation
+with the exact rational counterexample) and C+2 (the coherence
+law); Δᴮ language throughout.  META: v2 lived roughly three hours
+before its review; the correction again cost nothing but honesty
+— and this time the review made the programme STRONGER (the
+completeness of Q_corr is a better W1′ theorem than the one
+pinned).

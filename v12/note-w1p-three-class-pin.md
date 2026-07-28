@@ -77,3 +77,43 @@ class is finite; no floats in substantive paths; determinism; caps
 printed; substantive negatives exit 0; runtime < ~15 min, progress
 prints (no silent interval > 8 min); STRICT, GREEN-UNREVIEWED, no
 leans; antecedents cited in-output.
+
+## AMENDMENT (2026-07-28, LOG #4 — the second external review
+## [REV2] adopted mid-construction; transparent per house rules)
+
+The construction worker is notified of these amendments by message;
+the original arms stand except as amended here.
+
+1. **Arm A CONVEXIFIED:** the three classes are the convex bodies
+   L_corr = conv{s_a·t_b}, Q_corr = conv{Re(z_a·conj(w_b))},
+   NS_corr = [−1,1]⁴ on the correlator projection; the maxima
+   2 / 2√2 / 4 are over the convex bodies (linear functionals
+   attain maxima at extreme points — state it).  NEW GATE A+:
+   **the completeness of Q_corr** — every supporting hyperplane of
+   the general quantum correlator set attains its maximum on planar
+   unit vectors (optimal u_a ∈ span{v₀, v₁}, dim ≤ 2): derive
+   exactly; the convexified U(1) family IS the quantum correlator
+   body at this scenario.
+2. **Arm C EXTENDED, two new gates:**
+   **C+1 THE THREE-DEFECT SEPARATION** — gate the exact rational
+   counterexample: with B(R(θ)) = S(cos 2θ), S(c)S(d) = S(cd)
+   (gate both identities symbolically), take U₁ = R(θ₁) with
+   (cos θ₁, sin θ₁) = (24/25, 7/25) and U₂ = R(θ₂) with
+   (4/5, 3/5): then c₁ = cos 2θ₁ = 527/625,
+   c_tot = cos 2(θ₁+θ₂) = −7/25, Δᴮ ≠ 0
+   (S(−7/25) ≠ S(7/25 · 527/625) = S(3689/15625)) — YET
+   K = S(−175/527) is a valid stochastic matrix with
+   K·B(U₁) = S(−175/527 · 527/625) = S(−7/25) = B(U₂U₁): **Δᴮ ≠ 0
+   with a stochastic factorization exhibited — Δᴮ, D₂₁₀, and d_div
+   are three different objects, gated.**
+   **C+2 THE COHERENCE LAW** — gate the identity
+   Δᴮ(U₃U₂,U₁) + Δᴮ(U₃,U₂)B(U₁) = Δᴮ(U₃,U₂U₁) + B(U₃)Δᴮ(U₂,U₁)
+   entrywise-symbolically on the exact 2×2 and 3×3 pairs already in
+   Arm C (both sides = B(U₃U₂U₁) − B(U₃)B(U₂)B(U₁)) — W2a's seed.
+3. **Language:** Δ is written Δᴮ throughout and never equated with
+   stochastic indivisibility; the note's verdict cites paper 0
+   v2.1's three-defect distinction; the record example in Arm C
+   (iii) is framed per the v2.1 T3′ (record defined independently;
+   record-preserving operations only).
+4. Paper 0 v2.1 is the binding text where it and the original pin
+   body differ.
