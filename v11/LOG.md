@@ -312,3 +312,50 @@ reviewer's own):** the PIN's gloss "no finite stochastic matrix
 system realizes exact Lorentz covariance" is BROADER than Cor
 2.4's invertibility hypothesis; the note correctly narrows it —
 deviation five, toward the corpus.  **L-1+L0 IS TERMINAL.**
+
+## 2026-07-27 — LD HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES, ALL
+## APPLIED — LD TERMINAL (v11 LEDGER #10)
+The round INDEPENDENTLY REIMPLEMENTED the census against a freshly
+loaded d42b1 and reproduced every load-bearing number to the digit
+(closed-square counts, the 662, the cross-tab {(F,T): 11,509,
+(T,F): 5,768} with zero in the other cells, blocker kinds/positions,
+5,552/7,368).  UNDEFINED confirmed GENUINE: the refusal calls
+d42b1's OWN admissible(), text-sliced with a 19-signature AST pass —
+no added strictness.  ZERO B.  Four M + four m, all wording/scope,
+all applied: **(M1)** the delivery note self-declared TERMINAL —
+status defect owned in the note's own status line; TERMINAL is
+conferred BY the round, and now is.  **(M2)** five sentences
+oversold co-location ("defined exactly off the curvature", "sits
+exactly on the curvature", "same object seen twice") — all replaced
+by the measured containment: THE WALL STRICTLY CONTAINS THE
+CURVATURE (5,768 refused = 662 curved + 5,106 flat) AND ITS ADDRESS
+IS THE ARBITRATION; #7's headline sentence "sits exactly on the
+curvature" is CORRECTED HERE to "sits exactly on the
+arbitration-carrying locus, which holds the whole curved locus
+strictly inside it".  **(M3)** "the only other involutive
+relabelling" was FALSE — the round constructed the proposal-bit
+swap on 'p' events (involutive, admissible, unswept, and
+verdict-preserving: 0/100 curved loops priced under it); the
+receipt now names the swept class ({id, delivery transposition} ×
+pool permutations) and rests irreparability on C.3's argument, not
+sweep exhaustiveness.  **(M4)** the mechanism sentence explained
+only 86% of refusals — the unifying statement now on record: THE
+ARBITRATION IS THE ONLY REALISED KIND THAT CREATES A VERSION;
+reversal puts consumers of created state before its creation (908
+'r' blockers = emptied joint cone; 104 'p' + 40 'd' = created
+non-V0 version read before its creator, the round's classification);
+the arb-free direction is FORCED (V0-only records, ≤1 live proposal
+per (actor,base), 0 violations); the biconditional is ROBUST TO THE
+MERGE GAP (a merge needs two created versions; the first creator
+can only be an 'r').  m-fixes: 11s→13s; the mirror FILTER is
+provably vacuous on images (of = f∘ρ, A.1) — D.2's mirror column
+is the unrestricted grammar, said so now; C.1 is a subset statement
++ idle clause a corollary; #7's "16 relabellings" reads 12
+involutive (+4 non-involutive reported, not admitted), and #7's
+"curvature, arbitration, and now IRREVERSIBILITY are co-located"
+carries the FORMAL/category-level qualifier and the containment
+correction from this entry.  Receipt regenerated: 35/0, anchors 0,
+VERDICT LD-BROKEN unchanged; adjudicator rerun — every evidence
+tuple identical.  **LD IS TERMINAL: THE LAST DOOR IS WALLED** — the
+0-for-5 phase tally stands (the pin ties 0-for-6 to LD-CLOSED,
+which did not obtain; the reviewer confirms this reading).

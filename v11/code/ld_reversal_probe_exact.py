@@ -1226,8 +1226,14 @@ print("         transport scope is run: the identity (no relabelling, which")
 print("         is D74's D5 arm's operation), the forced delivery")
 print("         transposition, and each of those composed with every actor")
 print("         relabelling of the arm's own pool (the pool's symmetry")
-print("         group, which is the only other involutive relabelling the")
-print("         committed alphabet admits).")
+print("         group).  The swept class is: {identity, delivery")
+print("         transposition} x pool permutations.  It is NOT exhaustive")
+print("         over all involutive regs_of-preserving relabellings of the")
+print("         realised alphabet (the hostile round exhibited the")
+print("         proposal-bit swap on 'p' events: involutive, admissible,")
+print("         unswept — and verdict-preserving, 0/100 curved loops")
+print("         priced under it); irreparability therefore rests on C.3's")
+print("         argument, not on sweep exhaustiveness.")
 
 
 def actor_perm_relab(perm, swap_d):
@@ -1361,16 +1367,16 @@ report("first-blocking event kind, by arm",
 report("first-blocking POSITION in the reversed record", fmtk(_blk_pos))
 
 _consuming = {'p', 'r', 'm', 'd'}
-check("C.1 THE BLOCKING KINDS ARE EXACTLY THE CONSUMING KINDS, AND IDLE "
-      "NEVER BLOCKS.  The committed alphabet has one kind that consumes "
-      "nothing — the idle ('n', a), whose admission is unconditional and "
-      "whose weight is the residual budget — and it never appears as a "
-      "first blocker anywhere in the census.  Every first blocker is one "
-      "of the four kinds whose admission relation reads its own causal "
+check("C.1 EVERY FIRST BLOCKER IS A CONSUMING KIND (a subset statement: "
+      "the merge, also consuming, never appears because it is never "
+      "realised at these depths — D.4), AND IDLE NEVER BLOCKS (a "
+      "corollary, not a discovery: the idle's admission is unconditional "
+      "in the committed layer, so this clause has no failing branch).  "
+      "Every first blocker is one "
+      "of the kinds whose admission relation reads its own causal "
       "past: a proposal (needs its base version held and not superseded), "
       "an arbitration (needs a live-proposal component in the "
-      "arbitrator's past cone), a merge (needs both members held, created "
-      "and unsuperseded), a delivery (needs the sender to hold the "
+      "arbitrator's past cone), a delivery (needs the sender to hold the "
       "version)",
       set(_blk) <= _consuming and 'n' not in _blk and sum(_blk.values()) > 0,
       f"blocking kinds {sorted(_blk)}; idle blocks "
@@ -1454,11 +1460,19 @@ check("C.3a THE OBSTRUCTION IS EXACTLY ONE EVENT KIND — THE ARBITRATION — "
       "'mostly', not 'except for a residue': every one of the records "
       "carrying an arbitration is refused, and every one of the records "
       "carrying none is priced, on every closed square of both anchor "
-      "arms.  The arbitration is the one committed kind whose admission "
-      "reads a JOINT object — the live-proposal component in the "
-      "arbitrator's past cone, with its incomparability edges — rather "
-      "than a single held version; reversal empties that cone, and "
-      "nothing in the alphabet can refill it",
+      "arms.  The unifying mechanism: the arbitration is the only "
+      "realised kind that CREATES a version and supersedes a base, so "
+      "reversal puts consumers of created state before its creation.  "
+      "The 'r' first blockers refuse on the emptied joint past cone (the "
+      "live-proposal component with its incomparability edges); the "
+      "census's 'p' and 'd' first blockers refuse on a created, non-V0 "
+      "version read before its creator (classification per the hostile "
+      "round, over all 144 non-arbitration blockers of C.1's census).  "
+      "The arb-free direction is FORCED, not coincidental: an "
+      "arbitration-free record holds only V0 versions, so no consumer "
+      "can precede a creator there (the round verified additionally: at "
+      "most one live proposal per (actor, base), 0 violations, all four "
+      "arms)",
       _arbt[(True, True)] == 0 and _arbt[(False, False)] == 0
       and _arbt[(True, False)] > 0 and _arbt[(False, True)] > 0,
       f"arb-carrying and priced: {_arbt[(True, True)]}; arb-free and "
@@ -1492,8 +1506,11 @@ check("C.4 REVERSAL-DEFINEDNESS AND HOLONOMY-CARRYING ARE DISJOINT ON "
       "law prices has v = 1; not one loop with v != 1 has a priced "
       "reversed counterpart.  The implication is one-directional — "
       "flatness does not buy reverse-definedness, since many flat loops "
-      "are refused too.  This is the sharp form of the finding: the "
-      "functor is defined exactly off the curvature",
+      "are refused too.  The sharp form of the finding is a strict "
+      "containment: the functor's domain is the arbitration-free locus "
+      "(C.3a), and curvature implies arbitration (C.3b), so the curved "
+      "locus lies strictly inside the refusal set — which also holds "
+      "every flat arbitration-carrying loop",
       len(_def_nonunit) == 0 and len(_def_rows) > 0,
       f"loops with a priced reversed counterpart {len(_def_rows)}, of "
       f"which non-unit {len(_def_nonunit)}; flat loops refused "
@@ -1514,13 +1531,16 @@ for _nm in ("AB4", "ABC3"):
         if mu_of_sequence(rev(_hh), arm["actors"]) is not None:
             _famrev_ok += 1
 check("C.5 THE GRAMMAR IS NOT REVERSAL-BLOCKING — THE REFUSAL IS A "
-      "PROPERTY OF THE CURVED LOCUS, NOT OF THE SUPPORT (D74's D5.0 "
+      "PROPERTY OF THE ARBITRATION-CARRYING LOCUS (WHICH CONTAINS THE "
+      "WHOLE CURVED LOCUS), NOT OF THE SUPPORT (D74's D5.0 "
       "lesson, re-measured under the RELABELLED reversal).  A clear "
       "majority of this grammar's records reverse, under R, into records "
       "the committed law prices.  So the 0-of-everything at the "
       "holonomy-carrying loops is not the generic fate of a reversed "
-      "record; it is a sharp and highly non-generic property of exactly "
-      "the loops that carry the transport curvature",
+      "record; it is a sharp and highly non-generic property of the "
+      "arbitration-carrying locus, which holds every loop that carries "
+      "the transport curvature and the flat arbitration-carrying loops "
+      "besides",
       _famrev_ok * 2 > _famrev and _famrev > 0,
       f"{_famrev_ok}/{_famrev} records (|h| >= 2) of the anchor arms have "
       f"a priced image under R")
@@ -1723,9 +1743,14 @@ check("D.1 THE DEFECTED SCHEDULES GIVE THE SAME ANSWER, AND THE "
 _asym_flat_def = [row for _nm in ("ASYM1", "ASYM2") for row in ROWS[_nm]
                   if row[3] == 1 and row[4] is not None]
 check("D.2 THE DEFECTED ARMS ARE NOT VACUOUS UNDER R: their flat loops DO "
-      "acquire priced reversed counterparts in the mirror sub-grammar, in "
-      "quantity, so the mirror is a live grammar and the negative at the "
-      "holonomy-carrying loops is a real refusal and not an empty support",
+      "acquire priced reversed counterparts, in quantity, so the "
+      "negative at the holonomy-carrying loops is a real refusal and not "
+      "an empty support.  (The mirror FILTER itself cannot bite on an "
+      "image of an arm record: of(e) = f(rho(e)) and every reversed "
+      "event is rho(e_fwd) with f(e_fwd) true, so by A.1 involutivity "
+      "of passes identically; the mirror column is therefore a reading "
+      "of the unrestricted grammar, and D.2's honest content is that "
+      "the refusal is the LAW's, not the filter's)",
       len(_asym_flat_def) > 0
       and all(row[4] == 1 for row in _asym_flat_def),
       f"{len(_asym_flat_def)} flat loops of the defected arms have a "

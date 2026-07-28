@@ -8,7 +8,10 @@ the receipt. Every number is a window-dependent measurement on the
 committed d42b1 transport grammar at the declared depths and pools.
 Weight-system level only: no measure claim.
 
-**Status: TERMINAL, STRICT, 2026-07-27.** Pin
+**Status: TERMINAL (conferred by the hostile round of 2026-07-27,
+adjudicated v11 LOG #10 — the delivery version of this line
+self-declared TERMINAL before the round had run, a status defect the
+round caught as its M1), STRICT, 2026-07-27.** Pin
 `v11/note-ld-last-door-pin.md` (binding, frozen before any code was
 written). Binding specification: paper 0 §9b, the catalog
 [V11-CAT] §4.7 branch (a). Parents: v10 **D74 TERMINAL**
@@ -20,8 +23,9 @@ asymmetric substrate). Receipt
 `v11/code/ld_reversal_probe_exact.py`, output `v11/code/ld_output.txt`
 — run from the repository root, **exit 0**, **35 PASS / 0 FAIL** of
 which **3 carry no independent information and are labelled as such**
-(**32 independent-evidence passes**), **11 s** wall clock against the
-pin's ~25 min budget. Re-run at `PYTHONHASHSEED=7`: **output identical
+(**32 independent-evidence passes**), **13 s** wall clock against the
+pin's ~25 min budget (the delivery note said 11 s; the committed
+receipt line reads 13 s). Re-run at `PYTHONHASHSEED=7`: **output identical
 apart from timings and the echoed seed** (0 differing lines).
 
 **Lean: NONE**, as the pin declares. The 0-for-5 record is **not**
@@ -280,12 +284,16 @@ unit admits — and they do not move the census either.
 
 ## 3. LD-C — the obstruction, characterized exactly
 
-**C.1 — the blocking kinds are exactly the consuming kinds, and idle
-never blocks.** Over `1,052` refused reversed records of the anchor
-arms, the first-blocking kinds are `{r: 908, p: 104, d: 40}`; the idle
+**C.1 — every first blocker is a consuming kind, and idle never
+blocks.** Over `1,052` refused reversed records of the anchor
+arms, the first-blocking kinds are `{r: 908, p: 104, d: 40}` — a
+subset statement, not an equality: the merge, also consuming, never
+appears because it is never realised at these depths (D.4). The idle
 — the one committed kind that consumes nothing, whose admission is
 unconditional and whose weight is the residual budget — blocks `0`
-times. The blocking positions are `{0: 502, 1: 470, 2: 80}`.
+times; that clause is a corollary, not a discovery, since an
+unconditional admission has no failing branch. The blocking positions
+are `{0: 502, 1: 470, 2: 80}`.
 
 **C.2 — the obstruction is consumption-before-production, and it is
 exact.** For **every** refused reversed record (`1,052/1,052`) the
@@ -323,11 +331,21 @@ arbitration event**. Not "mostly", not "except for a residue":
 over all four arms (`17,277` closed squares; the anchor arms alone give
 arb-carrying-and-priced `0`, arb-free-and-refused `0`, against
 arb-carrying-and-refused `526` and arb-free-and-priced `2,574`). The
-arbitration is the one committed kind whose
-admission reads a **joint** object — the live-proposal component in the
-arbitrator's past cone, with its incomparability edges — rather than a
-single held version. Reversal empties that cone and nothing in the
-alphabet can refill it.
+unifying mechanism: the arbitration is the only realised kind that
+**creates** a version and supersedes a base, so reversal puts
+consumers of created state before its creation. The `r` first
+blockers (`908`) refuse on the emptied **joint** past cone — the
+live-proposal component with its incomparability edges; the `p`
+(`104`) and `d` (`40`) first blockers refuse on a created, non-`V0`
+version read before its creator (the hostile round's classification,
+verified over all `144` non-arbitration blockers). The arb-free
+direction is **forced**, not coincidental: an arbitration-free record
+holds only `V0` versions, so no consumer can precede a creator there
+(the round verified additionally: at most one live proposal per
+(actor, base), `0` violations, all four arms). The biconditional is
+robust to the merge gap D.4 leaves open: a merge needs two created
+versions and the first creator can only be an `r`, so every
+merge-carrying record carries an arbitration.
 
 **C.3b — every holonomy-carrying loop's record carries an
 arbitration.** D72's committed kind census attributes only `68` of the
@@ -342,11 +360,15 @@ Reversal-definedness and holonomy-carrying are **disjoint**: every loop
 whose reversed counterpart the law prices has `v = 1`; not one loop
 with `v ≠ 1` has a priced counterpart. The implication is
 one-directional — flatness does not buy reverse-definedness, since
-`5,106` flat loops are refused too. **The functor is defined exactly
-off the curvature.**
+`5,106` flat loops are refused too. **The sharp form is a strict
+containment: the functor's domain is the arbitration-free locus
+(C.3a), curvature implies arbitration (C.3b), so the curved locus
+lies strictly inside the refusal set — which also holds every flat
+arbitration-carrying loop.**
 
-**C.5 — the refusal is non-generic, and is a property of the curved
-locus, not of the support.** `5,552/7,368` records of the anchor arms
+**C.5 — the refusal is non-generic, and is a property of the
+arbitration-carrying locus (which contains the whole curved locus),
+not of the support.** `5,552/7,368` records of the anchor arms
 with `|h| ≥ 2` have a priced image under `R`. A clear majority of this
 grammar's records reverse into records the committed law prices. D74's
 `D5.0` found the same thing without relabelling; it survives the
@@ -401,10 +423,14 @@ no reversed counterpart, in the honest mirror reading, at more than
 five times the anchor window's count.
 
 **D.2** The defected arms are **not vacuous** under `R`: `8,935` of
-their flat loops **do** acquire priced reversed counterparts in the
-mirror sub-grammar, all at `v_rev = 1`. The mirror is a live grammar
-and the negative at the curved loops is a real refusal, not an empty
-support.
+their flat loops **do** acquire priced reversed counterparts, all at
+`v_rev = 1`, so the negative at the curved loops is a real refusal,
+not an empty support. The mirror **filter** itself cannot bite on an
+image of an arm record: `of(e) = f(ρ(e))` and every reversed event is
+`ρ(e_fwd)` with `f(e_fwd)` true, so by A.1 involutivity `of` passes
+identically — the mirror column is a reading of the **unrestricted**
+grammar, and D.2's honest content is that the refusal is the law's,
+not the filter's.
 
 **D.3** The exact characterization of §3 survives the defected
 schedules with no exception in either direction, and `0` of `662`
@@ -482,9 +508,11 @@ have:
    exception either way, across two actor pools and two defected
    schedules. D74 knew that the defect locus was reversal-refusing
    (`0/304`, `D5.2`); it did not know **why**, and named the locus by
-   its curvature. This unit names it by its **grammar**: the curvature
-   and the wall are the same object seen twice, and the object is the
-   join.
+   its curvature. This unit names it by its **grammar**: the wall's
+   address is the arbitration — it holds every curved loop (`662/662`)
+   and extends over `5,106` flat arbitration-carrying loops besides,
+   so the curvature is a proper sub-locus of the wall; what the two
+   share is the join.
 3. **Every holonomy-carrying loop's record carries an arbitration**
    (`662/662`) — a strictly stronger reading of D72's kind census,
    which sees only the exchanged pair and attributes `68` of `88`.
