@@ -207,3 +207,34 @@ commit momentarily staged this unit's in-progress note (swept by
 `git add v11/`); caught seconds later and amended out before any
 successor commit — no history residue.  Hostile rounds for #5 and
 #6 dispatched together.
+
+## 2026-07-27 — LD DELIVERED: THE LAST DOOR IS **WALLED** — LD-BROKEN,
+## GREEN-UNREVIEWED (v11 LEDGER #7)
+The record-category reversal probe lands (note-ld-last-door.md,
+code/ld_reversal_probe_exact.py, 11s, 35 gates / 8 anchors clean,
+adjudicator rerun identical modulo timings and hash-seed banner —
+deterministic across seeds).  **VERDICT LD-BROKEN: the committed
+transport grammar's record category is NOT self-dual.**  The
+reversal functor is a clean involution (R∘R = id structure-equal
+on 7,393/7,393 records) and is EXACTLY poset reversal — but it is
+not an endofunctor of the grammar: the image leaves the grammar's
+support on the ENTIRE curvature.  All 662 holonomy-carrying loops
+across four arms (88 AB4 + 12 ABC3 + 334/228 on the two asymmetric
+LD-D arms): reversed counterpart UNDEFINED — zero priced, zero
+exceptions.  The Born = K1 row: UNDEFINED (refused at index 0).
+TWO NEW EXACT RESULTS: **(1) the one-kind address** — a closed
+square's reversed counterpart is priced IFF its record carries no
+arbitration event (17,277/17,277 closed squares, no exception
+either way); **(2)** every holonomy-carrying loop's record carries
+an arbitration (662/662 — strictly stronger than D72's kind
+census, which attributed 68 of 88).  Mechanism:
+consumption-before-production (1,052/1,052 refusals; idle never
+blocks); irreparable by relabelling (16 relabellings, all 0 —
+four producing kinds, no annihilator).  The refusal is NON-GENERIC
+(5,552/7,368 records reverse fine) and sits exactly on the
+curvature.  Scope: merge sector unreached (D.4); THE PHASE TALLY
+IS NOT ADVANCED — 0-for-5 stands; the door is walled, not shut:
+inversion-vs-conjugation was never reached because the reversed
+objects do not exist in the grammar.  Read with v10's verdict:
+curvature, arbitration, and now IRREVERSIBILITY are co-located.
+Hostile round dispatched.

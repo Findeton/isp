@@ -1,0 +1,535 @@
+==============================================================================
+LD — THE LAST DOOR: the record-category reversal probe  (exact)
+==============================================================================
+  banner: exact Fractions throughout; the committed d42b1 layer
+  single-sourced by text-slice + an AST signature pass, with
+  exit-freedom gated; every tested constant quoted from a committed
+  source (registry below); every census printed BOTH WAYS;
+  substantive negatives exit 0; exit 1 ONLY if a committed
+  D72/D74 number fails to reproduce.
+
+  SCOPE: the reversal is FORMAL (category-level).  No claim is made
+  that reversed records are physically generated.  No thermodynamic
+  language appears in this receipt.  Transport scope, committed
+  families only, weight-system level.
+
+  PYTHONHASHSEED = (unset)
+
+  QUOTE REGISTRY (the anchors below are held to these):
+    [T6.1] v10/note-d72-weld-result.md:150 (sec.1 T6.1), quoted verbatim by v10/code/d74_transport_holonomy_exact.py:163-170 as QUOTES['T6.1']
+        (A,B) d <= 4: 88 of 1,546 closed squares non-unit, spectrum {1/2: 70
+        , 2/3: 2, 3/2: 6, 2: 10}, kinds {(r,d): 68, (d,r): 8, (d,n): 6, (d,d
+        ): 4, (n,d): 2}, delivery-bearing 88/88, shallowest defect at total 
+        depth 3.  (A,B,C) d <= 3: 12 of 1,554, spectrum {1/2: 12}, kinds {(r
+        ,d): 12}.
+    [T6.2] v10/note-d72-weld-result.md:151 (sec.1 T6.2), quoted by d74 as QUOTES['T6.2']
+        (A,B) d <= 4: 40 half-open (AB-only 28, BA-only 12), kinds {(r,d): 1
+        2, (d,r): 4, (p,d): 16, (d,p): 8}, 40/40 delivery-bearing.
+    [T6.4] v10/data/d72_weld_exact.out:127-135, quoted by d74 as QUOTES['T6.4']
+        the minimal witness: h = [('p','A',V0,0)], eA = arb of own proposal,
+         eB = ('d','A','B',V0); q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1
+        /4, q(eA|h.eB) = 1/4; dP_AB/dP_BA = 1/2; mu(h.eA.eB) = 1/256 vs mu(h
+        .eB.eA) = 1/128.
+    [T2.5] v10/data/d72_weld_exact.out:119-121, 137-139, quoted by d74 as QUOTES['T2.5']
+        (A,B) d<=4: 3969 histories, 2477 record classes, 2900 up-edges; (A,B
+        ,C) d<=3: 3424 histories, 2128 record classes, 2772 up-edges.
+    [d74_group] v10/note-d74-transport-holonomy-result.md:1, :97-98, :227 (gate B.2 of v10/code/d74_transport_holonomy_exact.py:1918)
+        the transport holonomy group is <2,3>, free abelian of rank 2, the F
+        ULL group of 3-smooth positive rationals, index 1 in Z^2; value set 
+        {1/2, 2/3, 3/2, 2} at every scope run.
+    [d74_D5.2] v10/code/d74_transport_holonomy_exact.py:2313-2325 (gate D5.2) and v10/note-d74-transport-holonomy-result.md
+        the opposite poset of every defective-square endpoint has NO admissi
+        ble realisation at all: every linear extension is admissible forward
+        s, none reversed.  Measured WITHOUT any event-kind relabelling.
+    [d74_D5.0] v10/code/d74_transport_holonomy_exact.py:2224-2246 (gate D5.0)
+        the grammar is NOT reversal-blocking: a clear majority of histories,
+         and of closed-square endpoints, reverse into admissible histories. 
+         The 0-of-everything on the defective squares is a non-generic prope
+        rty OF THE DEFECT LOCUS.
+    [d74_D1] v10/code/d74_transport_holonomy_exact.py:2006-2030 (gate D1)
+        TRAVERSAL reversal acts on r by inversion — an algebraic identity of
+         the definition of r, not a measurement.  This unit reverses the REC
+        ORD CATEGORY, which is a different operation and has no such identit
+        y available to it.
+    [p31_born] v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md:507-517 (sec.4.3)
+        Born = the committed kernel: the squared branch amplitudes of V_pair
+         are exactly 1/2-1/2 (the K1 law on the 2-conflict, recomputed from 
+        the layer); menu reconstruction at both cuts, exact in rationals — 1
+        /4 on the arbitration sector at the early cut.
+    [d73] v10/note-d73-even-gram-result.md sec.12 (the generic-geometry lesson), quoted by d74 as QUOTES['d73']
+        hand-built symmetry is a cage: carry at least one asymmetric/defecte
+        d substrate.
+    [d74_asym] v10/code/d74_transport_holonomy_exact.py:1406-1420 (oneway, ring)
+        ASYM-1: the link A->B only, so B may never deliver to A.  ASYM-2: th
+        e defected directed ring A->B->C->A.  Declared SUB-GRAMMARS: the sup
+        port is restricted, the committed weights are untouched.
+
+------------------------------------------------------------------------------
+SEC 0.1  the committed source: AST signature pass, then slice
+------------------------------------------------------------------------------
+  [DATA] d42b1 AST: 29 module-level defs/classes; all 19 required signatures matched exactly
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only); exit-freedom gated
+  [PASS] SRC.1 EXIT-FREEDOM GATED: the sliced layer cannot set this receipt's exit status — sys.exit/os._exit are neutralised inside the slice and restored after; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked and raised nothing)
+         ^ NO INDEPENDENT INFORMATION: a property of the loader, not of the substrate; it tests our plumbing
+
+------------------------------------------------------------------------------
+SEC 1  ANCHORS — the committed transport census (exit 1 on failure)
+------------------------------------------------------------------------------
+  [DATA] AB4 family: 3969 histories
+  [DATA] AB4 exchange-square census: {'both-blocked': 142, 'closed': 1546, 'AB-only': 28, 'BA-only': 12}
+  [DATA] AB4 exact ratios dP_AB/dP_BA: {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}
+  [DATA] AB4 defect kinds: {"('d', 'd')": 4, "('d', 'n')": 6, "('d', 'r')": 8, "('n', 'd')": 2, "('r', 'd')": 68}
+  [DATA] AB4 half-open kinds: {"('d', 'p')": 8, "('d', 'r')": 4, "('p', 'd')": 16, "('r', 'd')": 12}
+  [PASS] ANCHOR AB4.1 D72's T6.1 row reproduces EXACTLY — history count, closed-square count, the full ratio multiset (unit AND non-unit), the kind census, the both-blocked count, the delivery-bearing fraction and the shallowest defect depth  (histories 3969 (quoted 3969); closed 1546 (quoted 1546); non-unit 88 (quoted 88); ratios {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; kinds match = True; delivery-bearing 88/88; shallowest depth 3)
+  [PASS] ANCHOR AB4.2 D72's T6.2 half-open row reproduces EXACTLY  (AB-only 28, BA-only 12, total 40 (quoted 40); kinds {"('d', 'p')": 8, "('d', 'r')": 4, "('p', 'd')": 16, "('r', 'd')": 12}; delivery-bearing 40/40)
+  [DATA] ABC3 family: 3424 histories
+  [DATA] ABC3 exchange-square census: {'both-blocked': 42, 'closed': 1554}
+  [DATA] ABC3 exact ratios dP_AB/dP_BA: {'1': 1542, '1/2': 12}
+  [DATA] ABC3 defect kinds: {"('r', 'd')": 12}
+  [DATA] ABC3 half-open kinds: {}
+  [PASS] ANCHOR ABC3.1 D72's T6.1 row reproduces EXACTLY — history count, closed-square count, the full ratio multiset (unit AND non-unit), the kind census, the both-blocked count, the delivery-bearing fraction and the shallowest defect depth  (histories 3424 (quoted 3424); closed 1554 (quoted 1554); non-unit 12 (quoted 12); ratios {'1': 1542, '1/2': 12}; kinds match = True; delivery-bearing 12/12; shallowest depth 3)
+  [PASS] ANCHOR ABC3.2 D72's T6.2 half-open row reproduces EXACTLY  (AB-only 0, BA-only 0, total 0 (quoted 0); kinds {}; delivery-bearing 0/0)
+  [DATA] THE MINIMAL WITNESS (AB4), in full:
+           h   = [('p', 'A', ('v', 'v0'), 0)]
+           eA  = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+           eB  = ('d', 'A', 'B', ('v', 'v0'))
+           q(eA|h) = 1/4 , q(eB|h.eA) = 1/8
+           q(eB|h) = 1/4 , q(eA|h.eB) = 1/4
+           dP_AB/dP_BA = 1/2;  mu(h.eA.eB) = 1/256 vs mu(h.eB.eA) = 1/128
+  [PASS] ANCHOR W.1 D72's T6.4 minimal witness reproduces digit for digit — all four step weights, the ratio, and both whole-history mu values  ((1/4, 1/8, 1/4, 1/4) -> 1/2; mu 1/256 vs 1/128)
+  [DATA] the transport holonomy group, recomputed as an integer exponent lattice (Hermite reduction on the prime valuations): value set ['1/2', '2', '2/3', '3/2']; prime support [2, 3]; lattice basis [[-1, 0], [0, 1]]; rank 2; index in Z^2 = 1; group <2, 3> = the FULL group of 2-3-smooth positive rationals (free abelian of rank 2, index 1 in Z^2)
+  [PASS] ANCHOR G.1 D74's group row reproduces EXACTLY: the value set is {1/2, 2/3, 3/2, 2} and the group it generates is <2,3>, free abelian of rank 2, index 1 in Z^2 — the FULL group of 3-smooth positive rationals  (value set matches = True; primes [2, 3]; rank 2; index 1)
+  [DATA] SEC 1 block time: 4s
+
+------------------------------------------------------------------------------
+SEC 2  LD-A — THE REVERSAL FUNCTOR ON THE COMMITTED TRANSPORT LAYER
+------------------------------------------------------------------------------
+  THE CONSTRUCTION, STATED BEFORE IT IS RUN.  A committed record is a
+  sequence of events; its causal order is the committed event_poset,
+  generated by register overlap in sequence order.  The record-category
+  reversal is the formal opposite of that order.  It is realised on
+  sequences by
+
+      R(e_1, ..., e_n) = (rho(e_n), ..., rho(e_1))
+
+  where rho is the EVENT-KIND RELABELLING that reversal forces.  Only one
+  committed event kind carries a direction in its own data — delivery,
+  ('d', s, r, v), whose sender and receiver are distinct fields.  A send
+  read backwards is a receive, so rho transposes them.  Every other
+  committed kind is a single-carrier local event whose data carries no
+  direction, so rho fixes it: the polarity of p, r, m is carried by the
+  POSET, not by the label, and the poset is what R reverses.
+
+  THE RELABELLING TABLE (the deliverable), with the register set each
+  kind occupies — regs_of is what generates the causal order, so rho must
+  preserve it for R to be poset reversal at all:
+
+    kind  committed form         rho(e)                 regs_of        dual
+    ----  ---------------------  ---------------------  -------------  ----
+    n     ('n', a)               ('n', a)               {a}            self
+    p     ('p', a, b, x)         ('p', a, b, x)         {a}            self
+    r     ('r', a, ck, wk)       ('r', a, ck, wk)       props+created  self
+    m     ('m', a, pk, w)        ('m', a, pk, w)        {a, mw}        self
+    d     ('d', s, r, v)         ('d', r, s, v)         {s, r}         SWAP
+
+  rho is an involution by inspection and by exhaustive gate A.1.  It
+  preserves regs_of because regs_of('d', s, r, v) = {s, r} is unordered
+  (gate A.2) — which is precisely why R is EXACTLY poset reversal
+  (gate A.4) and not merely something like it.
+  [DATA] the realised event alphabet of the anchor arms: 309 distinct events; kinds {'d': 98, 'n': 3, 'p': 106, 'r': 102}
+  [PASS] A.1 rho IS AN INVOLUTION ON THE COMMITTED EVENT ALPHABET, EXHAUSTIVELY: rho(rho(e)) = e for every event the committed layer realises in either anchor arm, structure-equal, not merely equal up to a canonical form  (309/309 events satisfy rho^2 = id; the 98 delivery events are the ones rho moves, 98 events moved in total)
+  [PASS] A.2 rho PRESERVES THE REGISTER SET, EXHAUSTIVELY: regs_of(rho(e)) = regs_of(e) for every realised event.  This is not decoration — the committed causal order is GENERATED by register overlap, so this identity is exactly the reason R is poset reversal.  It holds because the delivery's register set {s, r} is unordered: the committed layer already treats a delivery as a JOIN of two carriers and records no direction in the register geometry.  The direction lives only in the field order, which is what rho acts on  (309/309 events preserve their register set under rho)
+  [PASS] A.3 THE INVOLUTIVITY GATE (pin LD-A): R(R(h)) RESTORES THE ORIGINAL RECORD EXACTLY, ON EVERY RECORD OF EVERY ARM.  The comparison is structural tuple equality on the full event sequence — every field of every event, in order — not equality of a canonical form and not equality of a derived invariant.  The functor is therefore an involution on records, and the door it opens or shuts is not opened or shut by an artefact of the construction  (7393/7393 records over both anchor arms satisfy R(R(h)) == h, structure-equal)
+  [PASS] A.4 R IS EXACTLY POSET REVERSAL, NOT AN APPROXIMATION OF IT: for every record of both anchor arms, the committed event_poset of R(h), pulled back along the index reversal i -> n-1-i, is the OPPOSITE of the committed event_poset of h — the full relation, pair for pair, in both directions.  This is the sense in which this unit reverses the RECORD CATEGORY rather than a traversal direction (QUOTES['d74_D1']: traversal reversal is an algebraic identity of the definition of r and says nothing about the category)  (7393/7393 records: event_poset(R(h)) = event_poset(h)^op exactly)
+  [PASS] A.5 THE PUSHFORWARD READING CARRIES NO INFORMATION, AND IS DECLARED SO BEFORE THE CENSUS.  One can always define the opposite weighted category C^op abstractly by DECREEING q^op(rho(e) | R(h.e)) := q(e | h).  Then mu^op(R(sigma)) = mu(sigma) for every record by construction, so every holonomy value is trivially INVARIANT and the census would answer its own question.  Every category has an opposite; the content of the last door is not whether C^op EXISTS but whether it is REALISED by the committed law — whether the committed admission relation and the committed weights price the reversed record.  That, and only that, is what SEC 3 measures  (stated, not measured: mu^op(R(sigma)) := mu(sigma) is a definition)
+         ^ NO INDEPENDENT INFORMATION: an identity of the definition of the pushforward; it has no failing branch on any grammar and is recorded so that the census cannot later be read as having tested it
+  [DATA] SEC 2 block time: 0s
+
+------------------------------------------------------------------------------
+SEC 3  LD-B — THE CENSUS: every holonomy-carrying loop, reversed
+------------------------------------------------------------------------------
+  THE QUANTITY, AND THE CONVENTION, STATED BEFORE IT IS RUN.  A closed
+  exchange square is the loop h -> h.eA -> h.eA.eB = h.eB.eA -> h.eB -> h.
+  Its committed holonomy is
+
+      v = q(eA|h) q(eB|h.eA) / q(eB|h) q(eA|h.eB) = mu(sigma_AB)/mu(sigma_BA)
+
+  with sigma_AB = h.eA.eB and sigma_BA = h.eB.eA — the common prefix
+  cancels (gated at B.0).  Under R the two endpoint records go to
+  R(sigma_AB) and R(sigma_BA), so the reversed counterpart is
+
+      v_rev := mu(R(sigma_AB)) / mu(R(sigma_BA))                [CONVENTION]
+
+  the FUNCTOR-IMAGE convention: the numerator of v_rev is the image of the
+  numerator of v.  mu is the COMMITTED measure — the product of the
+  committed conditional weights, read from the empty record by the
+  committed admission relation.  Nothing here is decreed; the committed
+  law is asked to price a record it did not build.
+
+  THE FOUR CLASSES.
+     INVERSION   v_rev = v^-1        the classical transformation law
+     INVARIANT   v_rev = v           the fixed sector
+     OTHER       v_rev defined, neither         <- the door opening
+     UNDEFINED   R(sigma_AB) or R(sigma_BA) is not an admissible record of
+                 the committed grammar, so the committed law assigns the
+                 reversed record no weight at all
+
+  On a loop with v = 1 the first two classes COINCIDE (1 = 1^-1); those
+  are counted separately and never as evidence of either.  The orientation
+  convention above exchanges INVERSION and INVARIANT if flipped, and the
+  flipped reading is reported at B.5 (CTL-ORDER).  OTHER and UNDEFINED are
+  CONVENTION-FREE: no choice of orientation can move a loop into or out of
+  them.  The verdict therefore rests on convention-free classes.
+  [PASS] B.0 THE FORM v = mu(sigma_AB)/mu(sigma_BA) IS THE CENSUS FORM, EXACTLY.  The census computes v from the four step weights; the reversed side must compute it from whole records, because R does not preserve the common-prefix structure — under R the two exchanged events move to the FRONT and the prefix h becomes a common SUFFIX.  This gate confirms the two forms agree on every closed square of both anchor arms before the reversed side uses the second one, so no step of the comparison is smuggled  (3100/3100 closed squares: the whole-record mu ratio equals the four-step ratio exactly)
+
+  [B.1]  THE ANCHOR ARMS.
+  [DATA] AB4 ('A', 'B') depth<=4 — classification totals: {'UNDEFINED': 448, 'unit (INVERSION = INVARIANT)': 1098}
+  [DATA] AB4 ('A', 'B') depth<=4 — BOTH WAYS (1/2), BY VALUE CLASS:
+                  v   loops  classification
+                  1    1458  {'UNDEFINED': 360, 'unit (INVERSION = INVARIANT)': 1098}
+                1/2      70  {'UNDEFINED': 70}
+                2/3       2  {'UNDEFINED': 2}
+                3/2       6  {'UNDEFINED': 6}
+                  2      10  {'UNDEFINED': 10}
+  [DATA] AB4 ('A', 'B') depth<=4 — BOTH WAYS (2/2), BY LOOP CLASS (kind pair):
+              kinds   loops  classification
+           ('d', 'd')      77  {'UNDEFINED': 12, 'unit (INVERSION = INVARIANT)': 65}
+           ('d', 'n')     213  {'UNDEFINED': 18, 'unit (INVERSION = INVARIANT)': 195}
+           ('d', 'p')      82  {'UNDEFINED': 4, 'unit (INVERSION = INVARIANT)': 78}
+           ('d', 'r')      30  {'UNDEFINED': 30}
+           ('n', 'd')      71  {'UNDEFINED': 6, 'unit (INVERSION = INVARIANT)': 65}
+           ('n', 'n')      69  {'UNDEFINED': 4, 'unit (INVERSION = INVARIANT)': 65}
+           ('n', 'p')      86  {'UNDEFINED': 8, 'unit (INVERSION = INVARIANT)': 78}
+           ('n', 'r')      34  {'UNDEFINED': 34}
+           ('p', 'd')     254  {'UNDEFINED': 20, 'unit (INVERSION = INVARIANT)': 234}
+           ('p', 'n')     258  {'UNDEFINED': 24, 'unit (INVERSION = INVARIANT)': 234}
+           ('p', 'p')     100  {'UNDEFINED': 16, 'unit (INVERSION = INVARIANT)': 84}
+           ('p', 'r')      36  {'UNDEFINED': 36}
+           ('r', 'd')      90  {'UNDEFINED': 90}
+           ('r', 'n')     102  {'UNDEFINED': 102}
+           ('r', 'p')      36  {'UNDEFINED': 36}
+           ('r', 'r')       8  {'UNDEFINED': 8}
+  [DATA] AB4 ('A', 'B') depth<=4 — THE HOLONOMY-CARRYING LOOPS ONLY (88 of 1546): {'UNDEFINED': 88}
+  [DATA] ABC3 ('A', 'B', 'C') depth<=3 — classification totals: {'UNDEFINED': 78, 'unit (INVERSION = INVARIANT)': 1476}
+  [DATA] ABC3 ('A', 'B', 'C') depth<=3 — BOTH WAYS (1/2), BY VALUE CLASS:
+                  v   loops  classification
+                  1    1542  {'UNDEFINED': 66, 'unit (INVERSION = INVARIANT)': 1476}
+                1/2      12  {'UNDEFINED': 12}
+  [DATA] ABC3 ('A', 'B', 'C') depth<=3 — BOTH WAYS (2/2), BY LOOP CLASS (kind pair):
+              kinds   loops  classification
+           ('d', 'd')     240  {'unit (INVERSION = INVARIANT)': 240}
+           ('d', 'n')     192  {'unit (INVERSION = INVARIANT)': 192}
+           ('d', 'p')     168  {'unit (INVERSION = INVARIANT)': 168}
+           ('d', 'r')      12  {'UNDEFINED': 12}
+           ('n', 'd')      96  {'unit (INVERSION = INVARIANT)': 96}
+           ('n', 'n')      48  {'unit (INVERSION = INVARIANT)': 48}
+           ('n', 'p')      84  {'unit (INVERSION = INVARIANT)': 84}
+           ('n', 'r')       6  {'UNDEFINED': 6}
+           ('p', 'd')     336  {'unit (INVERSION = INVARIANT)': 336}
+           ('p', 'n')     168  {'unit (INVERSION = INVARIANT)': 168}
+           ('p', 'p')     144  {'unit (INVERSION = INVARIANT)': 144}
+           ('p', 'r')      12  {'UNDEFINED': 12}
+           ('r', 'd')      24  {'UNDEFINED': 24}
+           ('r', 'n')      12  {'UNDEFINED': 12}
+           ('r', 'p')      12  {'UNDEFINED': 12}
+  [DATA] ABC3 ('A', 'B', 'C') depth<=3 — THE HOLONOMY-CARRYING LOOPS ONLY (12 of 1554): {'UNDEFINED': 12}
+  [PASS] B.1 THE CENSUS ON THE COMMITTED HOLONOMY-CARRYING LOOPS.  Every one of D74's 88 non-unit squares at (A,B) d<=4 and 12 at (A,B,C) d<=3 is carried through the functor and its reversed counterpart computed exactly.  NOT ONE of them has a reversed counterpart at all: for every single holonomy-carrying loop, the committed admission relation refuses the reversed record, so the committed law assigns it no weight and there is no v_rev to classify.  The classification of the holonomy-carrying sector is therefore 0 INVERSION, 0 INVARIANT, 0 OTHER, 100 UNDEFINED  (holonomy-carrying loops 100 (= 88 + 12, the committed counts); classification {'UNDEFINED': 100})
+  [PASS] B.2 WHERE THE FUNCTOR DOES LAND, IT LANDS ON 1.  Every loop whose reversed counterpart the committed law does price is a FLAT loop, and its reversed counterpart is flat too: v = v_rev = 1, so INVERSION and INVARIANT coincide and neither is evidence.  The census contains no loop at which the two classes are distinguishable, in either direction  (2574 of 3100 loops have a priced reversed counterpart; 2574/2574 of those have v = v_rev = 1; loops with v != 1 and a priced counterpart: 0)
+
+  [B.3]  THE 40 HALF-OPEN SQUARES (committed T6.2).  A half-open
+         square carries no holonomy value — one traversal order is
+         blocked — so the question R asks of it is different: does
+         the functor carry its ADMISSIBLE endpoint to an admissible
+         record, and does the half-openness transpose?
+  [DATA] half-open squares under R, both ways (by side, by image status): {"('AB-only', 'R(open) refused', 'R(blocked) refused')": 28, "('BA-only', 'R(open) refused', 'R(blocked) refused')": 12}
+  [PASS] B.3 THE HALF-OPEN SQUARES DO NOT SURVIVE THE FUNCTOR EITHER.  All 40 committed half-open squares are delivery-bearing (T6.2) and the functor carries the admissible endpoint of every one of them to a record the committed law refuses.  There is no transposed half-openness to read, because there is no priced image to read it from  (40/40 half-open squares have their open endpoint refused under R; 0 have their blocked endpoint priced under R)
+
+  [B.4]  THE BORN = K1 ARBITRATION ROW (paper 31 sec.4.3).
+         The committed row is the 2-conflict: two incomparable live
+         proposals on the same base with different values, arbitrated by
+         one holder.  Paper 31 states the squared branch amplitudes of
+         V_pair are exactly 1/2-1/2 — the K1 law on the 2-conflict,
+         recomputed from the layer — and that the arbitration sector of
+         the menu reconstructs to 1/4.  Both are recomputed here from the
+         committed layer, and then the SAME row is asked of the reversed
+         record.
+           h  = [('p', 'A', ('v', 'v0'), 0), ('p', 'B', ('v', 'v0'), 1)]
+           e  = arbitration by A on the 2-conflict
+           K1(ckey) = {"[('A', ('v', 'v0'), 0)]": '1/2', "[('B', ('v', 'v0'), 1)]": '1/2'}
+           committed branch weights = ['1/8', '1/8']; sector total = 1/4
+  [PASS] ANCHOR K1.1 paper 31 sec.4.3's Born = K1 row reproduces EXACTLY from the committed layer: the K1 branch weights on the 2-conflict are 1/2-1/2 and the arbitration sector of the menu is 1/4  (K1 branch multiset {'1/2': 2} (quoted {1/2: 2}); arbitration sector 1/4 (quoted 1/4); 2 branches)
+           R(record) = ['r', 'p', 'p'] (kinds, in order)
+           mu(record) = 1/512;  mu(R(record)) = None
+           first blocker: index 0, kind 'r', refused by the committed admission relation
+  [PASS] B.4 THE BORN = K1 ROW HAS NO REVERSED COUNTERPART.  The committed record prices to an exact rational; its image under R is refused by the committed admission relation at its very first event — the arbitration, which in the reversed record stands BEFORE the two proposals whose conflict it resolves.  The K1 kernel is a function of the live-proposal component visible in the arbitrator's past cone; in the reversed record that past cone is empty, so there is no component, no ckey, no K1 weight and no Born split to compare.  The row does not invert, does not stay fixed, and is not OTHER: it is not there  (forward mu = 1/512; reversed mu = None; first blocker at index 0, kind 'r')
+
+  [B.5]  CTL-ORDER — the orientation convention, controlled.
+  [DATA] classification under the functor-image convention: {'UNDEFINED': 526, 'unit (INVERSION = INVARIANT)': 2574}
+  [DATA] classification under the FLIPPED convention (v_rev := mu(R(sigma_BA))/mu(R(sigma_AB))): {'UNDEFINED': 526, 'unit (INVERSION = INVARIANT)': 2574}
+  [PASS] B.5 THE VERDICT IS CONVENTION-FREE.  Flipping the orientation convention exchanges INVERSION with INVARIANT and can do nothing else, since the two readings differ by an exact reciprocal.  Both convention-free classes — OTHER and UNDEFINED — have identical counts under both readings, and in particular the count of OTHER is 0 either way and the count of UNDEFINED is the same either way.  No choice of orientation opens or shuts the door  (OTHER 0 vs 0; UNDEFINED 526 vs 526)
+
+  [B.6]  THE RELABELLING CONTROL — is the negative an artefact of
+         the chosen rho?  Every involutive relabelling available at
+         transport scope is run: the identity (no relabelling, which
+         is D74's D5 arm's operation), the forced delivery
+         transposition, and each of those composed with every actor
+         relabelling of the arm's own pool (the pool's symmetry
+         group, which is the only other involutive relabelling the
+         committed alphabet admits).
+  [DATA] AB4 relabelling id-d x id-actors: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/88
+  [DATA] AB4 relabelling swap-d x id-actors: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/88
+  [DATA] AB4 relabelling id-d x actors BA: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/88
+  [DATA] AB4 relabelling swap-d x actors BA: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/88
+  [DATA] ABC3 relabelling id-d x id-actors: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling swap-d x id-actors: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling id-d x actors ACB: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling swap-d x actors ACB: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling id-d x actors BAC: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling swap-d x actors BAC: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling id-d x actors BCA: involutive = False; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling swap-d x actors BCA: involutive = False; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling id-d x actors CAB: involutive = False; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling swap-d x actors CAB: involutive = False; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling id-d x actors CBA: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [DATA] ABC3 relabelling swap-d x actors CBA: involutive = True; holonomy-carrying loops with a priced reversed counterpart: 0/12
+  [PASS] B.6 NO INVOLUTIVE RELABELLING AVAILABLE AT TRANSPORT SCOPE RESCUES THE FUNCTOR.  The pin's construction requires rho to be an INVOLUTION, so the gate is stated on the involutive relabellings only — the identity, the forced delivery transposition, and each composed with every involutive actor permutation of the arm's pool, applied to every actor field the alphabet carries (proposal triples, arb ckeys and wkeys, merge pair keys, version authorship).  Not one holonomy-carrying loop acquires a priced reversed counterpart under any of them.  The negative is a property of the grammar, not of a choice of rho  (12 involutive relabellings: AB4 id-d x id-actors: 0/88; AB4 swap-d x id-actors: 0/88; AB4 id-d x actors BA: 0/88; AB4 swap-d x actors BA: 0/88; ABC3 id-d x id-actors: 0/12; ABC3 swap-d x id-actors: 0/12; ABC3 id-d x actors ACB: 0/12; ABC3 swap-d x actors ACB: 0/12; ABC3 id-d x actors BAC: 0/12; ABC3 swap-d x actors BAC: 0/12; ABC3 id-d x actors CBA: 0/12; ABC3 swap-d x actors CBA: 0/12)
+  [PASS] B.6b THE NON-INVOLUTIVE SWEEP, REPORTED SEPARATELY AND NOT AS EVIDENCE FOR THE PIN'S CONSTRUCTION.  The 3-cycles of the three-actor pool are not involutions, so a reversal built on them would fail the involutivity gate A.3 by construction and is not a relabelling this unit admits.  They are swept anyway, so that the reader can see the census does not move under them either  (4 non-involutive relabellings: ABC3 id-d x actors BCA: 0/12; ABC3 swap-d x actors BCA: 0/12; ABC3 id-d x actors CAB: 0/12; ABC3 swap-d x actors CAB: 0/12)
+  [DATA] SEC 3 block time: 1s
+
+------------------------------------------------------------------------------
+SEC 4  LD-C — THE OBSTRUCTION, CHARACTERIZED EXACTLY
+------------------------------------------------------------------------------
+  The functor is an involution on records (A.3) and is exactly poset
+  reversal (A.4).  What it is not is an operation on the committed
+  GRAMMAR: its image leaves the grammar's support.  This section says
+  where, on what, and why — exactly.
+  [DATA] first-blocking event KIND over every refused reversed record (both anchor arms): {'d': 40, 'p': 104, 'r': 908}
+  [DATA] first-blocking event kind, by arm: {'AB4': {'d': 40, 'p': 104, 'r': 752}, 'ABC3': {'r': 156}}
+  [DATA] first-blocking POSITION in the reversed record: {'0': 502, '1': 470, '2': 80}
+  [PASS] C.1 THE BLOCKING KINDS ARE EXACTLY THE CONSUMING KINDS, AND IDLE NEVER BLOCKS.  The committed alphabet has one kind that consumes nothing — the idle ('n', a), whose admission is unconditional and whose weight is the residual budget — and it never appears as a first blocker anywhere in the census.  Every first blocker is one of the four kinds whose admission relation reads its own causal past: a proposal (needs its base version held and not superseded), an arbitration (needs a live-proposal component in the arbitrator's past cone), a merge (needs both members held, created and unsuperseded), a delivery (needs the sender to hold the version)  (blocking kinds ['d', 'p', 'r']; idle blocks 0 times of 1052 refusals)
+  [PASS] C.2 THE OBSTRUCTION IS CONSUMPTION-BEFORE-PRODUCTION, AND IT IS EXACT.  For every refused reversed record, the first blocking event has a NON-EMPTY causal future in the reversed record — equivalently, by A.4, a non-empty causal past in the forward record.  The committed admission relation is past-relative: it reads the event's own past cone and admits only what that cone supports.  Reversal moves an event's whole support into its future, so a consuming event is offered to the admission relation before anything has produced what it consumes.  Nothing about the weights is involved; the refusal is at admission  (1052/1052 refused reversed records have a first blocker with non-empty causal future in the reversed record)
+
+  [C.3]  WHY NO RELABELLING CAN REPAIR IT — the exact statement.
+         A relabelling repairs the reversal only if it sends each
+         consuming kind to a kind that PRODUCES what the original
+         consumed: the dual of an arbitration (which consumes live
+         proposals and produces a version) would have to consume a
+         version and produce live proposals.  The committed alphabet is
+         {n, p, r, m, d} and every one of p, r, m, d is monotone in the
+         same direction — each ADDS to the record state (a live triple, a
+         created version, a merged version, a holding) and none removes
+         anything: the committed layer has no retraction, no withdrawal,
+         no un-delivery and no un-merge.  The alphabet contains no
+         annihilation kind, so no bijection of it can be a duality, and
+         B.6 measures exactly that: every involutive relabelling in the
+         alphabet's own symmetry group leaves the census at 0.
+  [DATA] committed event kinds and their state action: {'n': consumes nothing, produces nothing (the residual-budget idle); 'p': consumes a held base version, produces a live proposal triple; 'r': consumes live proposal triples, produces a created version; 'm': consumes two held created versions, produces a merged version; 'd': consumes a holding of the sender, produces a holding of the receiver} — four producers, no annihilators
+  [DATA] the obstruction, cross-tabulated: (record carries an arbitration) x (its image is priced), both anchor arms: {'arb=False, priced=True': 2574, 'arb=True, priced=False': 526}
+  [PASS] C.3a THE OBSTRUCTION IS EXACTLY ONE EVENT KIND — THE ARBITRATION — AND THE CHARACTERIZATION IS EXACT IN BOTH DIRECTIONS.  A closed square's reversed counterpart is priced by the committed law IF AND ONLY IF its endpoint record carries no arbitration event.  Not 'mostly', not 'except for a residue': every one of the records carrying an arbitration is refused, and every one of the records carrying none is priced, on every closed square of both anchor arms.  The arbitration is the one committed kind whose admission reads a JOINT object — the live-proposal component in the arbitrator's past cone, with its incomparability edges — rather than a single held version; reversal empties that cone, and nothing in the alphabet can refill it  (arb-carrying and priced: 0; arb-free and refused: 0; arb-carrying and refused: 526; arb-free and priced: 2574)
+  [PASS] C.3b EVERY HOLONOMY-CARRYING LOOP'S RECORD CARRIES AN ARBITRATION.  D72's committed kind census attributes only 68 of the 88 defects at (A,B) d<=4 to an exchanged pair containing an arbitration; the other 20 are (d,n), (d,d) and (n,d).  Measured on the WHOLE endpoint record rather than the exchanged pair, all of them carry one — the arbitration sits in the common prefix.  [MEASURED] on this window  (holonomy-carrying loops whose record carries an arbitration: 100; without: 0)
+  [PASS] C.4 REVERSAL-DEFINEDNESS AND HOLONOMY-CARRYING ARE DISJOINT ON THIS WINDOW.  Every loop whose reversed counterpart the committed law prices has v = 1; not one loop with v != 1 has a priced reversed counterpart.  The implication is one-directional — flatness does not buy reverse-definedness, since many flat loops are refused too.  This is the sharp form of the finding: the functor is defined exactly off the curvature  (loops with a priced reversed counterpart 2574, of which non-unit 0; flat loops refused 426)
+         ^ NO INDEPENDENT INFORMATION: C.3a and C.3b together: every curved loop carries an arbitration (C.3b), and exactly the arbitration-carrying records are refused (C.3a).  C.4 is their conjunction and adds nothing to them
+  [PASS] C.5 THE GRAMMAR IS NOT REVERSAL-BLOCKING — THE REFUSAL IS A PROPERTY OF THE CURVED LOCUS, NOT OF THE SUPPORT (D74's D5.0 lesson, re-measured under the RELABELLED reversal).  A clear majority of this grammar's records reverse, under R, into records the committed law prices.  So the 0-of-everything at the holonomy-carrying loops is not the generic fate of a reversed record; it is a sharp and highly non-generic property of exactly the loops that carry the transport curvature  (5552/7368 records (|h| >= 2) of the anchor arms have a priced image under R)
+
+  [C.6]  THE ALL-LINEAR-EXTENSIONS CONTROL (D74 D5.2's idiom,
+         carried under the relabelling).  Refusal of ONE order is
+         not refusal of the opposite poset.  For every
+         holonomy-carrying loop of both anchor arms, every linear
+         extension of the reversed record's event poset is built
+         and offered to the committed admission relation.
+  [DATA] AB4 all linear extensions of the holonomy-carrying endpoints: 176 endpoint records; 304 linear extensions of their committed event posets; 304 priced forwards; 0 priced under R; 0 priced under reversal WITHOUT relabelling
+  [DATA] ABC3 all linear extensions of the holonomy-carrying endpoints: 24 endpoint records; 24 linear extensions of their committed event posets; 24 priced forwards; 0 priced under R; 0 priced under reversal WITHOUT relabelling
+  [PASS] ANCHOR D5.2 D74's committed order-dual row reproduces EXACTLY: at (A,B) d<=4 the 88 defective squares have 176 endpoint records with 304 linear extensions of their committed event posets, all 304 admissible forwards and 0 admissible reversed.  D74 measured this WITHOUT any event-kind relabelling; that reading is recomputed here alongside the relabelled one, and both are 0  (AB4: 176 endpoints (quoted 176), 304 linear extensions (quoted 304), 304/304 forwards (quoted 304), 0/304 reversed without relabelling (quoted 0), 0/304 reversed with the forced relabelling)
+  [DATA] all linear extensions of the holonomy-carrying endpoints, both anchor arms: 200 endpoint records; 328 linear extensions of their committed event posets; 328 priced forwards; 0 priced under R
+  [PASS] C.6 THE OPPOSITE RECORD HAS NO PRICED REALISATION IN ANY ORDER.  Every linear extension of every holonomy-carrying endpoint's committed event poset is priced forwards — so the poset genuinely is the record's own causal order and nothing is smuggled — and NOT ONE of them is priced under R.  The refusal is of the opposite POSET, not of an enumeration order  (328/328 priced forwards, 0/328 priced under R, over 200 endpoints)
+
+  [C.7]  THE NON-EMPTY-PREFIX CONTROL.  Reading the reversed
+         record from the EMPTY record is the strictest demand.  The
+         weaker one — does the reversed record occur ANYWHERE in
+         the grammar — is run here against every admissible prefix
+         of length <= 2 of each anchor arm.
+  [DATA] non-empty-prefix control: 200 reversed holonomy-carrying endpoints tested against up to 235 admissible prefixes each (|prefix| <= 2); 0 found a prefix that lets the committed law price them
+  [PASS] C.7 THE REFUSAL IS NOT AN ARTEFACT OF STARTING FROM THE EMPTY RECORD.  Offered every admissible prefix of length <= 2 of its own arm as a context, not one reversed holonomy-carrying endpoint becomes priceable.  Supplying the missing past does not help, and the reason is structural: what the reversed record needs in its past are the very events it itself contains later, and the committed admission relation refuses a second live copy of a triple already live  (0/200 reversed endpoints priced under some prefix of length <= 2)
+  [DATA] SEC 4 block time: 2s
+
+------------------------------------------------------------------------------
+SEC 5  LD-D — THE DEFECTED SCHEDULE FAMILIES (D73's lesson)
+------------------------------------------------------------------------------
+  QUOTES['d73']: hand-built symmetry is a cage; carry at least one
+  asymmetric substrate.  The two committed defected families are D74's
+  own (QUOTES['d74_asym']): ASYM-1, the one-way link A->B, and ASYM-2,
+  the defected directed ring A->B->C->A.  Both are declared SUB-GRAMMARS
+  — the support is restricted, the committed weights are untouched.
+
+  THE HONEST OPPOSITE OF A DIRECTED SCHEDULE IS THE MIRRORED SCHEDULE.
+  rho transposes deliveries, so the rho-image of 'A may send to B' is
+  'B may send to A'.  Asking the reversed record for admission in the
+  arm's OWN sub-grammar would be a rigged test — it would fail on the
+  link direction alone and tell us nothing about the record category.
+  The census below therefore asks the reversed record for admission in
+  the MIRROR sub-grammar, which is the categorical opposite of the
+  schedule; the arm's own sub-grammar is kept as the second reading.
+  [DATA] ASYM1 ('A', 'B') depth<=5 one-way A->B census: {'both-blocked': 832, 'closed': 5504, 'AB-only': 88, 'BA-only': 144}; non-unit 334; spectrum {'1/2': 184, '2': 72, '2/3': 10, '3/2': 68}; kinds {"('d', 'n')": 70, "('d', 'r')": 72, "('r', 'd')": 192}
+  [DATA] ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A census: {'both-blocked': 495, 'closed': 8673, 'AB-only': 36, 'BA-only': 24}; non-unit 228; spectrum {'1/2': 190, '2': 26, '2/3': 2, '3/2': 10}; kinds {"('d', 'd')": 6, "('d', 'n')": 10, "('d', 'r')": 24, "('n', 'd')": 2, "('r', 'd')": 186}
+
+  --- ASYM1 ('A', 'B') depth<=5 one-way A->B, reversed into the MIRROR sub-grammar ---
+  [DATA] ASYM1 ('A', 'B') depth<=5 one-way A->B [mirror] — classification totals: {'UNDEFINED': 3280, 'unit (INVERSION = INVARIANT)': 2224}
+  [DATA] ASYM1 ('A', 'B') depth<=5 one-way A->B [mirror] — BOTH WAYS (1/2), BY VALUE CLASS:
+                  v   loops  classification
+                  1    5170  {'UNDEFINED': 2946, 'unit (INVERSION = INVARIANT)': 2224}
+                1/2     184  {'UNDEFINED': 184}
+                2/3      10  {'UNDEFINED': 10}
+                3/2      68  {'UNDEFINED': 68}
+                  2      72  {'UNDEFINED': 72}
+  [DATA] ASYM1 ('A', 'B') depth<=5 one-way A->B [mirror] — BOTH WAYS (2/2), BY LOOP CLASS (kind pair):
+              kinds   loops  classification
+           ('d', 'd')      54  {'UNDEFINED': 54}
+           ('d', 'n')     800  {'UNDEFINED': 288, 'unit (INVERSION = INVARIANT)': 512}
+           ('d', 'p')     352  {'UNDEFINED': 136, 'unit (INVERSION = INVARIANT)': 216}
+           ('d', 'r')     188  {'UNDEFINED': 188}
+           ('n', 'n')     346  {'UNDEFINED': 90, 'unit (INVERSION = INVARIANT)': 256}
+           ('n', 'p')     360  {'UNDEFINED': 144, 'unit (INVERSION = INVARIANT)': 216}
+           ('n', 'r')     232  {'UNDEFINED': 232}
+           ('p', 'd')     416  {'UNDEFINED': 200, 'unit (INVERSION = INVARIANT)': 216}
+           ('p', 'n')    1080  {'UNDEFINED': 432, 'unit (INVERSION = INVARIANT)': 648}
+           ('p', 'p')     376  {'UNDEFINED': 216, 'unit (INVERSION = INVARIANT)': 160}
+           ('p', 'r')     168  {'UNDEFINED': 168}
+           ('r', 'd')     192  {'UNDEFINED': 192}
+           ('r', 'n')     696  {'UNDEFINED': 696}
+           ('r', 'p')     168  {'UNDEFINED': 168}
+           ('r', 'r')      76  {'UNDEFINED': 76}
+  [DATA] ASYM1 ('A', 'B') depth<=5 one-way A->B [mirror] — THE HOLONOMY-CARRYING LOOPS ONLY (334 of 5504): {'UNDEFINED': 334}
+  [DATA] ASYM1 ('A', 'B') depth<=5 one-way A->B second reading — reversed into the arm's OWN (unmirrored) sub-grammar, holonomy-carrying loops only: {'UNDEFINED': 334}
+
+  --- ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A, reversed into the MIRROR sub-grammar ---
+  [DATA] ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A [mirror] — classification totals: {'UNDEFINED': 1962, 'unit (INVERSION = INVARIANT)': 6711}
+  [DATA] ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A [mirror] — BOTH WAYS (1/2), BY VALUE CLASS:
+                  v   loops  classification
+                  1    8445  {'UNDEFINED': 1734, 'unit (INVERSION = INVARIANT)': 6711}
+                1/2     190  {'UNDEFINED': 190}
+                2/3       2  {'UNDEFINED': 2}
+                3/2      10  {'UNDEFINED': 10}
+                  2      26  {'UNDEFINED': 26}
+  [DATA] ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A [mirror] — BOTH WAYS (2/2), BY LOOP CLASS (kind pair):
+              kinds   loops  classification
+           ('d', 'd')     471  {'UNDEFINED': 36, 'unit (INVERSION = INVARIANT)': 435}
+           ('d', 'n')     918  {'UNDEFINED': 48, 'unit (INVERSION = INVARIANT)': 870}
+           ('d', 'p')     650  {'UNDEFINED': 32, 'unit (INVERSION = INVARIANT)': 618}
+           ('d', 'r')     166  {'UNDEFINED': 166}
+           ('n', 'd')     459  {'UNDEFINED': 24, 'unit (INVERSION = INVARIANT)': 435}
+           ('n', 'n')     453  {'UNDEFINED': 18, 'unit (INVERSION = INVARIANT)': 435}
+           ('n', 'p')     654  {'UNDEFINED': 36, 'unit (INVERSION = INVARIANT)': 618}
+           ('n', 'r')     174  {'UNDEFINED': 174}
+           ('p', 'd')    1312  {'UNDEFINED': 76, 'unit (INVERSION = INVARIANT)': 1236}
+           ('p', 'n')    1308  {'UNDEFINED': 72, 'unit (INVERSION = INVARIANT)': 1236}
+           ('p', 'p')     900  {'UNDEFINED': 72, 'unit (INVERSION = INVARIANT)': 828}
+           ('p', 'r')     252  {'UNDEFINED': 252}
+           ('r', 'd')     332  {'UNDEFINED': 332}
+           ('r', 'n')     348  {'UNDEFINED': 348}
+           ('r', 'p')     252  {'UNDEFINED': 252}
+           ('r', 'r')      24  {'UNDEFINED': 24}
+  [DATA] ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A [mirror] — THE HOLONOMY-CARRYING LOOPS ONLY (228 of 8673): {'UNDEFINED': 228}
+  [DATA] ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A second reading — reversed into the arm's OWN (unmirrored) sub-grammar, holonomy-carrying loops only: {'UNDEFINED': 228}
+  [PASS] D.1 THE DEFECTED SCHEDULES GIVE THE SAME ANSWER, AND THE HAND-BUILT SYMMETRY OF THE ANCHOR ARMS WAS THEREFORE NOT MASKING ANYTHING.  On both committed defected families — the one-way link and the directed ring, each reversed into its own MIRROR sub-grammar, which is the categorical opposite of the schedule and not a rigged test — every holonomy-carrying loop again has NO reversed counterpart.  The count is larger than the anchor window's by a factor of several and the answer does not move  (holonomy-carrying loops 562 over the two defected families; classification {'UNDEFINED': 562})
+  [PASS] D.2 THE DEFECTED ARMS ARE NOT VACUOUS UNDER R: their flat loops DO acquire priced reversed counterparts in the mirror sub-grammar, in quantity, so the mirror is a live grammar and the negative at the holonomy-carrying loops is a real refusal and not an empty support  (8935 flat loops of the defected arms have a priced reversed counterpart in the mirror sub-grammar, all at v_rev = 1)
+  [DATA] the obstruction, cross-tabulated over ALL FOUR ARMS: (record carries an arbitration) x (its image is priced): {'arb=False, priced=True': 11509, 'arb=True, priced=False': 5768}
+  [PASS] D.3 THE EXACT CHARACTERIZATION SURVIVES THE DEFECTED SCHEDULES.  Over all four arms — 17,277 closed squares, including the two defected families reversed into their mirror sub-grammars — a closed square's reversed counterpart is priced if and only if its record carries no arbitration event, with no exception in either direction; and every holonomy-carrying loop of every arm carries one.  Breaking the schedule's symmetry does not move the characterization by a single square  (arb-carrying and priced 0; arb-free and refused 0; arb-carrying and refused 5768; arb-free and priced 11509; curved loops without an arbitration 0 of 662)
+  [DATA] the realised event alphabet over all four arms (every event of every censused square, base and exchanged pair alike): 309 distinct events; kinds {'d': 98, 'n': 3, 'p': 106, 'r': 102}
+  [PASS] D.4 SCOPE LIMIT, DECLARED: THE MERGE KIND IS NOT REACHED.  No merge event is realised at any depth run here, so this census says nothing whatever about how R treats merges.  The relabelling table assigns 'm' a self-dual label and C.3's state-action reading places it among the producing kinds, but neither is tested by a single square in this receipt.  Any extension of the verdict to the merge sector would need a window that reaches one  (kinds realised: ['d', 'n', 'p', 'r']; merge events realised: 0)
+  [DATA] SEC 5 block time: 6s
+
+------------------------------------------------------------------------------
+SEC 6  DETERMINISM PROBE
+------------------------------------------------------------------------------
+  [PASS] DET.1 THE CENSUS IS DETERMINISTIC: recomputed from scratch and re-sorted by the hash-seed-independent stable key, the AB4 classification and the full sorted multiset of (v, v_rev) pairs are identical  (classification {'UNDEFINED': 448, 'unit (INVERSION = INVARIANT)': 1098}; 1546 (v, v_rev) pairs identical under re-sort)
+  [DATA] SEC 6 block time: 0s
+
+==============================================================================
+SEC 7  THE VERDICT, AGAINST THE PIN'S PRE-REGISTERED OUTCOMES
+==============================================================================
+
+  THE CENSUS, FINAL, BOTH WAYS.
+    holonomy-carrying loops (v != 1), all four arms: 662
+      {'UNDEFINED': 662}
+    flat loops (v = 1), all four arms: 16615
+      {'UNDEFINED': 5106, 'unit (INVERSION = INVARIANT)': 11509}
+    the Born = K1 arbitration row: UNDEFINED (B.4)
+    the 40 committed half-open squares: no priced image (B.3)
+
+    AB4 ('A', 'B') depth<=4                      carrying {'UNDEFINED': 88}
+                                                 flat     {'UNDEFINED': 360, 'unit (INVERSION = INVARIANT)': 1098}
+    ABC3 ('A', 'B', 'C') depth<=3                carrying {'UNDEFINED': 12}
+                                                 flat     {'UNDEFINED': 66, 'unit (INVERSION = INVARIANT)': 1476}
+    ASYM1 ('A', 'B') depth<=5 one-way A->B       carrying {'UNDEFINED': 334}
+                                                 flat     {'UNDEFINED': 2946, 'unit (INVERSION = INVARIANT)': 2224}
+    ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A carrying {'UNDEFINED': 228}
+                                                 flat     {'UNDEFINED': 1734, 'unit (INVERSION = INVARIANT)': 6711}
+
+  AGAINST THE THREE PRE-REGISTERED OUTCOMES.
+    LD-CLOSED  requires: everything inverts.  INVERSION on holonomy-carrying loops = 0 of 662.  NOT MET.
+    LD-OPEN    requires: a non-inverting quantity, i.e. an OTHER entry.  OTHER = 0.  NOT MET.
+    LD-BROKEN  requires: the reversal functor cannot be defined involutively
+               ON THE COMMITTED GRAMMAR.  It is involutive on RECORDS (A.3,
+               7393/7393) and is exactly poset reversal (A.4, 7393/7393),
+               but it is not an endofunctor of the committed record category:
+               its image leaves the grammar's support on 662 of 662 holonomy-
+               carrying loops, on the Born = K1 row, and on all 40 half-open
+               squares.  MET.
+
+  VERDICT: LD-BROKEN
+
+  WHAT IT SAYS, STATED WITH ITS SCOPE.  The record category of the
+  committed transport grammar is NOT SELF-DUAL.  The opposite category
+  exists — every category has one — and the reversal that realises it on
+  records is a clean involution which is exactly poset reversal.  What
+  fails is realisation: the committed law does not price the opposite
+  record.  It fails on the whole curvature.  Every one of the loops that
+  carries the transport holonomy, in every arm run here including both
+  defected schedules, has its reversed counterpart refused at admission,
+  and so does the Born = K1 arbitration row.  The obstruction is
+  consumption-before-production (C.2, exact), and it cannot be repaired
+  by relabelling because the committed alphabet contains four producing
+  kinds and no annihilating kind (C.3, B.6).
+
+  AND IT HAS A ONE-KIND ADDRESS.  Over all four arms a closed square's
+  reversed counterpart is priced IF AND ONLY IF its record carries no
+  arbitration event (C.3a, D.3, exact in both directions, no exception),
+  and every holonomy-carrying loop carries one (C.3b, D.3).  The
+  arbitration is the one committed kind whose admission reads a JOINT
+  object — the live-proposal component with its incomparability edges —
+  rather than a single held version.  So the wall across the last door
+  and the source of the transport curvature are at the same address, and
+  it is the address the corpus already calls the join.
+
+  WHAT IT DOES NOT SAY.  It does not say the holonomy fails to invert:
+  nothing was measured to invert or not to invert, because there is no
+  second value to compare against.  The 0-for-5 phase record is NOT
+  advanced to 0-for-6 by this unit — the last door is neither shut nor
+  opened, it is walled.  It does not say records run backwards, or that
+  anything is irreversible in any dynamical or thermodynamic sense; the
+  reversal here is FORMAL and category-level throughout, and no such
+  language appears in this receipt.  It does not claim the negative
+  survives greater depth or wider pools: it is [MEASURED] on four arms at
+  the stated caps.
+
+------------------------------------------------------------------------------
+DECLARED CAPS
+------------------------------------------------------------------------------
+  arms: AB4 ('A', 'B') depth<=4; ABC3 ('A', 'B', 'C') depth<=3; ASYM1 ('A', 'B') depth<=5 one-way A->B; ASYM2 ('A', 'B', 'C') depth<=4 ring A->B->C->A
+  closed squares censused: 17277
+  holonomy-carrying loops censused: 662
+  relabelling control: 12 involutive relabellings (the gate) plus 4 non-involutive (reported only), over the two anchor arms
+  all-linear-extensions control: anchor arms only, 200 endpoints, 328 extensions
+  non-empty-prefix control: anchor arms only, prefixes of length <= 2 (up to 235 per arm)
+  transport scope; committed families only; weight-system level; no measure claim
+  exact Fractions end to end; no float enters any gate or any printed quantity except wall-clock timings
+
+------------------------------------------------------------------------------
+GATES: 35 pass, 0 fail  (of which 3 carry no independent information)
+    corollary: SRC.1 EXIT-FREEDOM GATED <- a property of the loader, not of the substrate; it tests our plumbing
+    corollary: A.5 THE PUSHFORWARD READING CARRIES NO INFORMATION, AND IS DECLARED SO BEFORE THE CENSUS. <- an identity of the definition of the pushforward; it has no failing branch on any grammar and is recorded so that the census cannot later be read as having tested it
+    corollary: C.4 REVERSAL-DEFINEDNESS AND HOLONOMY-CARRYING ARE DISJOINT ON THIS WINDOW. <- C.3a and C.3b together: every curved loop carries an arbitration (C.3b), and exactly the arbitration-carrying records are refused (C.3a).  C.4 is their conjunction and adds nothing to them
+ANCHOR FAILURES: 0
+VERDICT: LD-BROKEN
+RUNTIME: 13s
+------------------------------------------------------------------------------
