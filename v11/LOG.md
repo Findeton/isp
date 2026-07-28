@@ -359,3 +359,45 @@ VERDICT LD-BROKEN unchanged; adjudicator rerun — every evidence
 tuple identical.  **LD IS TERMINAL: THE LAST DOOR IS WALLED** — the
 0-for-5 phase tally stands (the pin ties 0-for-6 to LD-CLOSED,
 which did not obtain; the reviewer confirms this reading).
+
+## 2026-07-27 — U1 DELIVERED: **U1-BRIDGE** — THE CORPUS'S FIRST
+## GENERATED INDIVISIBLE BRIDGE, GREEN-UNREVIEWED (v11 LEDGER #11)
+The flagship census lands (note-u1-indivisibility-census.md,
+code/u1_indivisibility_census_exact.py, 242s, 36 PASS / 0 FAIL /
+0 ANCHOR-FAIL; adjudicator rerun identical modulo timings, python
+patch banner, and one frozenset print-order line — substantively
+deterministic across hash seeds AND interpreter versions).
+**VERDICT U1-BRIDGE.**  THE INTERPOLANT CENSUS (Arm 1, all arms,
+both configuration maps): **INDIVISIBLE 14 / DIVISIBLE 5 /
+EXCLUDED-BY-CAP 10 / VACUOUS 29** — every LP infeasibility carries
+an independently verified exact Farkas certificate; ARM-A
+(A,B) d≤5 D62-faithful: 6 indivisible windows; the two committed
+configuration maps NEVER oppose (0/20 substantive disagreements, 3
+cap-only) — the bridge is not an artefact of winner-invisibility.
+[B3] eq. 22 algebraic census (declared fixed-space convention):
+pseudo-stochastic 13 / stochastic 7 / singular 0, **1,103 negative
+entries exactly**; cross-tab PSEUDO∩DIVISIBLE = 2 — the algebraic
+reading is STRICTLY WEAKER than LP feasibility, a first-class
+methods fact.  **Arm 2: DC2 — A THEOREM AT CLOSED SCOPE — FAILS AT
+TRANSPORT** (4/8/12 non-lumpable classes at depths 2/3/4); DC1
+fails both readings (raw 960 = D74's committed number; refined 352
+at q·M⁻¹); DC3(4) positivity clean 0/243,768; DC4 re-scored:
+boundary state back to SUPPLIED.  **THE AGREEMENT TABLE:
+INDIVISIBLE∩CLEAN = 0** — descent failure is NECESSARY BUT NOT
+SUFFICIENT for indivisibility; the U1-SPLIT witness class is EMPTY.
+**THE PORT RESULT: PORT-3 FAILS** on a constructed 8-event
+admissible chain (post-renewal state carries 2 token records) —
+paper 0 §4's fixed-configuration-space posit is
+DELIVERY-CONDITIONED, not grammatical (renewal-grain configuration
+space: 1 winner-invisible / 8 payload-enriched).  ARM-C
+renewal-to-renewal: root-degenerate (structurally vacuous at
+(0,1,2)); a non-degenerate renewal triple needs depth ≥ 9 — NOT
+RUN, printed, a declared cap.  Geography for U2: the 44
+descent-obstruction squares named first (base depths {1:4, 2:40},
+all (r,d), all ratio 1/2); 32/44 on non-lumpable classes; ≤ 1.8%
+of every indivisible window's mass carries a division event.  Arm
+0 anchors: Born = K1 defect EXACTLY 0, amplitudes ½–½; the
+Ẑ-completed sibling built, conflict row {1/7, 3/4, 3/28}, rows
+exactly 1.  L-1 quoted at the configuration space; no CP, Bell,
+locality, or covariance claim anywhere.  Hostile round — the
+phase's most important — dispatched.

@@ -1,0 +1,778 @@
+==============================================================================
+v11 U1 — THE INDIVISIBILITY CENSUS  (exact receipt)
+==============================================================================
+  banner: exact Fractions end to end (Q(sqrt 2) for the Arm-0
+  amplitudes); committed v10 layers single-sourced by text-slice and
+  by AST with an AST signature pass and exit-freedom gated; every
+  tested constant quoted from a committed source (registry below);
+  every census printed BOTH WAYS; substantive negatives exit 0;
+  exit 1 ONLY if a committed anchor fails to reproduce.
+
+  ENGRAVED (paper 0 sec.6): this is NOT a CP-divisibility test
+  (sec.6.6); nothing here is framed as a Bell/locality result
+  (sec.6.4); L-1's bound is quoted wherever exact covariance could
+  be implied; LEAN: NONE.
+
+  PYTHONHASHSEED = (unset)
+  python         = 3.13.5
+
+  QUOTE REGISTRY (every anchor below is held to these):
+    [B3-22] [B3] J. A. Barandes, arXiv:2507.21192, eqs. 22-23 (quoted in v11 paper 0 sec.2)
+        given Gamma(t<-t0) and Gamma(t'<-t0), the interpolated matrix Gammab
+        ar = Gamma(t<-t0) Gamma(t'<-t0)^-1 is generically PSEUDO-STOCHASTIC 
+        (negative entries); a stochastic matrix has a stochastic inverse onl
+        y if it is a permutation.  Divisibility failure is a computable, ent
+        rywise property.
+    [CP] v11 paper 0 sec.6.6, citing [V11-CAT] sec.2.5
+        U1 is NOT a CP-divisibility test: CP-divisibility and Barandes-indiv
+        isibility are orthogonal axes, so the census must run the interpolan
+        t and descent instruments, never a CP criterion.
+    [L-1] v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:266-277 (L-1)
+        exact covariance implemented by invertible stochastic maps on a fixe
+        d finite configuration space forces those maps to be permutations; v
+        11 may expect AT MOST statistical/approximate Lorentz invariance at 
+        renewal grain, NEVER exact covariance.  Any v11 claim of exact finit
+        e covariance is pre-refuted.
+    [d43b-T] v10/code/d43b_state_chain_exact.py:153-160 (T_REF) and v10/note-d43b-martin-boundary-unimodularity.md:128-137
+        the exact 6x6 transfer of the uniform-lookahead intrinsic chain, row
+         sums (2,2,2,5/2,2,2); lambda = 2 exactly; one dominant class {2,4,5
+        }; f = (4,4,3,7,3,3)/3 with the transient extension FORCED; the comp
+        leted transfer per-state normalized exactly.
+    [d43b-census] v10/code/d43b_state_chain_exact.py:73-76 (MG0) and :106-112 (MG2a)
+        closed-scope cumulative family sizes at depths 0-6 = [1,7,39,215,119
+        1,6471,34375]; the intrinsic |P_t| tables cutoff-2 [4,4,5,5,5], cuto
+        ff-3 [4,5,6,6], cutoff-4 [4,5,6].
+    [d49-zhat] v10/note-d49-completion-dichotomy-settlement-result.md:24-26, 109-110
+        Zhat(h) = 2^(-|h|) . f(class(sigma(h))), f = (4,4,3,7,3,3)/3, lambda
+         = 2; the completed state-to-state transfer is identical at every hi
+        story carrying that state, with d43b's conflict row {0: 1/7, 3: 3/4,
+         5: 3/28}.
+    [d62-R4] v10/note-d62-h2-update-table.md:247 (row R4), :377-394 (the R4 proof and T4(c)), :550-554 (the renewal corollary)
+        R4 = pair-arb on b, i.e. ('r', x, C, W) with proposers(C) = {A,B}: h
+        old A,B |-> v; live = (); comps = (); refs = {v}; flag v |-> False -
+        - 'serialisation-identical to sigma([])'.  EVERY PAIR-ARB IS A RENEW
+        AL TO THE ROOT STATE; rows are selected by (event tag, base in refs?
+        , |proposers(ckey)|), a partition with no fall-through.  All 8,944 R
+        4 instances sit on a base that is both actors' non-superseded token.
+    [d65-DC1] v10/note-d65-descent-conditions-pin.md:37-89 (DC1-DC4) and v10/note-d65-descent-conditions-result.md:61-117
+        DC1: events a,b COMMUTE at H iff both orders are admissible and the 
+        terminal state agrees; THE TEST is P(a|H).P(b|Ha) =? P(b|H).P(a|Hb) 
+        with P the normalized kernel.  DC2: boundary sufficiency = fibre con
+        stancy of the next-record law.  DC3: the five durable-record hypothe
+        ses.  DC4: the supplied-vs-derived ledger.  At closed scope DC1 FAIL
+        ED: 32,256 failures on 425,334 refined-record-identical ordered pair
+        s, spectrum {1: 393078, 4/5: 16128, 5/4: 16128}.
+    [d70-kernel] v10/code/d70_horizon_limit_exact.py:207-242 (HZ0-a(iii)), lifting v10/code/d46b_martin_transport_exact.py
+        rel_potential (the exact backward recursion G(h, r) with G(h, 0) = 1
+        ), krel (k_r(e|h) = q(e|h).G(h+e, r-1)/G(h, r)), sector (per-EVENT-K
+        IND mass) and conditional (k_r(e)/sector-mass) are the D46b objects,
+         extracted by AST from the terminal D46b receipt.
+    [d74-4444] v10/data/d74_transport_holonomy_exact.out:262-267 (A3.1/A3.2)
+        AB4: menu quotient 113 classes, coarsest congruence 185 classes; of 
+        88 defective squares the menu quotient CLOSES 44 and the congruence 
+        closes 44; SEEN (curvature-type) 44 with spectrum {1/2: 26, 2: 10, 2
+        /3: 2, 3/2: 6}; UNSEEN (descent-obstruction-type) 44 with spectrum {
+        1/2: 44} and kinds {(r,d): 44}.  ABC3: the menu quotient closes 0 of
+         12; the whole defect is descent-obstruction type.  (A,B) d<=5: 960 
+        defective, menu quotient closes 604, unseen 356.
+    [d74-T61] v10/note-d72-weld-result.md:150 (T6.1), v10/data/d74_transport_holonomy_exact.out:91-100 and the D74 registry ANCH (v10/code/d74_transport_holonomy_exact.py:267-306)
+        (A,B) d<=4: 3969 histories, 1546 closed squares, 88 non-unit, full r
+        atio multiset {1: 1458, 1/2: 70, 2/3: 2, 3/2: 6, 2: 10}, kinds {(r,d
+        ): 68, (d,r): 8, (d,n): 6, (d,d): 4, (n,d): 2}, half-open 40 (AB-onl
+        y 28, BA-only 12), both-blocked 142, shallowest defect at total dept
+        h 3.  (A,B,C) d<=3: 3424 histories, 1554 closed, 12 non-unit, kinds 
+        {(r,d): 12}.
+    [d75-arm0] v10/note-d75-barandes-audit.md:1116-1122 (pin (b) Arm 0)
+        the raw generated weights are not stochastic (menus sum to 2 or 5/2)
+        ; the object is the COMPLETED transfer: Zhat root-free completion, w
+        hose state-to-state matrix is a function of the state alone with con
+        flict row {1/7, 3/4, 3/28} and total mass exactly 1.
+    [p0-s4] v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:132-160 (sec.4)
+        [POSIT] v11's division events are the renewal events; [THEOREM-GRADE
+         CONVERGENCE] Barandes' fixed configuration space is 'exactly satisf
+        ied at renewal grain, because renewals reset to the root: the config
+        uration space at division events is small, fixed, and identical acro
+        ss runs'.
+    [p31-4.3] v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md:496-524 (sec.4.3) and v10/code/d43c_pincer_escapes_exact.py:134-241
+        V_single (2x1) deterministic, V_pair (4x1) on the 2-conflict; both i
+        sometric (defect 0.0 at working precision); the squared branch ampli
+        tudes of V_pair are exactly 1/2-1/2 (the K1 law on the 2-conflict, r
+        ecomputed from the layer); menu reconstruction at both cuts exact in
+         rationals -- 1/4 on the arbitration sector at the early cut, 1/4 + 
+        1/8 + 1/8 at the join; the SAME matrices at both cuts; the pincer ba
+        seline full sums 1 vs 5/4.
+    [v1p22] v1/relativistic-isp-v1-paper22-entropy-indivisible.md:120-150 (Definition 2), as quoted in v10/note-d75-barandes-audit.md:241-254
+        'A stochastic process Gamma(t<-t_0) is INDIVISIBLE if for every inte
+        rmediate time t_0 < t' < t there exists NO genuine stochastic matrix
+         ... Equivalently, the algebraic intermediate matrix ... has at leas
+        t one negative entry for SOME (t,t',t_0).'  DEFECT, flagged by the a
+        udit: the first sentence quantifies UNIVERSALLY over t', the 'equiva
+        lently' clause EXISTENTIALLY; they are not equivalent.
+
+------------------------------------------------------------------------------
+SEC 1  SINGLE-SOURCING: AST signature pass, text-slice, AST extraction
+------------------------------------------------------------------------------
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on all four committed sources: every required def exists at module level with the exact positional argument list, so a silent upstream edit cannot slip through  (d42b1 29 defs (15 required, missing []); d42b3 21 defs (missing []); d74 39 defs (missing []); d46b 10 defs (missing []))
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only)
+  [DATA] d42b3 slice: 8670/21462 bytes executed (definition head only)
+  [PASS] ANCHOR SRC.2 EXIT-FREEDOM GATED: sys.exit / os._exit are neutralised inside the slice and restored after, so a sliced layer cannot set this receipt's exit status; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked; 0 sys.exit in the 16129-byte head)
+  [PASS] ANCHOR SRC.3 D74's CENSUS MACHINERY IS D74's, extracted by AST from the committed receipt and not retyped: enumerate_line, square_census (the exchange-square census), holonomy_of, A_menu (the weighted-menu abstraction whose kernel IS the coarsest descent quotient), congruence (the coarsest weighted congruence) and mu_map  (lifted 8 definitions from v10/code/d74_transport_holonomy_exact.py: A_menu (2 lines), congruence (22 lines), enumerate_line (19 lines), evsk (9 lines), holonomy_of (41 lines), mu_map (9 lines), sk (9 lines), square_census (59 lines))
+  [PASS] ANCHOR SRC.4 THE KERNEL OBJECTS ARE THE D46b OBJECTS (D70's HZ0-a(iii), re-run here): rel_potential (the exact backward recursion G(h,r) with G(h,0) = 1), krel (k_r(e|h) = q(e|h).G(h+e,r-1)/G(h,r)), sector and conditional, extracted by ast.FunctionDef from the TERMINAL D46b receipt, so a change to D46b's definitions changes this receipt's object  (lifted 4 definitions from v10/code/d46b_martin_transport_exact.py: conditional (6 lines), krel (6 lines), rel_potential (10 lines), sector (5 lines))
+
+------------------------------------------------------------------------------
+SEC 2  DECLARED CAPS AND FAMILIES (nothing silent)
+------------------------------------------------------------------------------
+  ARM-A  (A,B) transport, exhaustive depth <= 5; cuts = depths 0..5; horizon 5
+  ARM-B  renewal-started window: every depth-3 history whose last event is a pair-arb, exhaustive to depth 6; cuts = depths 3..6; horizon 6
+  ARM-C  renewal-to-renewal cuts (renewal index 0,1,2) inside ARM-B
+  ARM-D  (A,B,C) transport, exhaustive depth <= 4; cuts = depths 0..4; horizon 4  [the pool control]
+  ANCHOR arms: (A,B) depth <= 4 and (A,B,C) depth <= 3 — D72/D74's own windows, reproduced exactly
+  ARM-0  closed-scope (d42b3) family to depth 6 for the Zhat sibling; the pair fixture [pA0] / [pA0,pB1] for Born = K1
+  DC1    ordered-pair census over every parent of depth <= 3 (squares to depth 5), exhaustive, unsampled
+  LP     exact rational Phase-I simplex (Bland), caps: <= 700 variables, <= 400 constraints, <= 40000 pivots; every triple exceeding a cap is PRINTED as excluded with its size, and its cheap row certificate is still run
+  EQ22   the algebraic arm runs on fixed configuration spaces of size <= 100 (exact rational inversion); larger triples are printed as excluded
+  WHY THOSE LP NUMBERS, since a tuned cap is a way to avoid an
+  inconvenient answer: they are set by measured cost and by nothing
+  else.  Exact Phase-I simplex on a 608-variable / 179-row triple costs
+  ~90 s and ~3,200 pivots on this machine; the caps admit that size and
+  refuse the next one up.  Every excluded triple still gets the row
+  certificate, which is the instrument that PROVES indivisibility, so a
+  cap can hide a divisibility verdict but cannot hide an indivisible one.
+  EXCLUDED BY CAP, STATED IN ADVANCE: a renewal-to-renewal triple
+  with a non-degenerate FIRST cut needs THREE renewals, i.e. depth
+  >= 9 in the two-actor transport family (a pair-arb needs two
+  proposals), which is ~10^8 histories and is not enumerated here.
+  No sampled arm is run anywhere in this receipt.
+
+------------------------------------------------------------------------------
+SEC 3  THE PREAMBLE — the repaired definition of indivisibility
+------------------------------------------------------------------------------
+  v1 paper 22 Definition 2 states the property twice and the two
+  statements are NOT equivalent (the D75 audit's named defect): the first
+  sentence quantifies UNIVERSALLY over the intermediate ('for every
+  intermediate t' there exists no stochastic factor'), the 'equivalently'
+  clause EXISTENTIALLY ('has a negative entry for SOME (t,t',t_0)').  The
+  audit's reading — everything the corpus proves is the existential form —
+  is adopted, and the definition is restated so that the quantifiers are
+  separated and each is named:
+
+    Let Gamma(c' <- c) be the family of transition matrices of a process
+    indexed by cuts of a partial order, Gamma_{ji} = P(config j at c' |
+    config i at c), so that columns sum to 1.
+
+    (D1) LOCAL DIVISIBILITY at a composable triple (c, c', c''):
+         there EXISTS a column-stochastic X with X . Gamma(c' <- c) =
+         Gamma(c'' <- c).  When Gamma(c' <- c) is square and invertible X
+         is unique and equals the algebraic interpolant Gammabar =
+         Gamma(c'' <- c) . Gamma(c' <- c)^-1 of [B3] eq. 22, so local
+         divisibility is then exactly 'Gammabar has no negative entry'.
+         When Gamma(c' <- c) is singular the algebraic form does not
+         apply and (D1) is decided as a linear feasibility question.
+
+    (D2) INDIVISIBLE AT A TRIPLE (the existential form; the honest one):
+         (D1) fails at that triple.
+
+    (D3) INDIVISIBLE (process-level, existential):  (D2) holds for SOME
+         composable triple in the declared cut family.
+
+    (D4) EVERYWHERE-INDIVISIBLE (the universal form v1's first sentence
+         asserts):  (D2) holds for EVERY composable triple.
+
+  (D3) and (D4) are the two readings v1 paper 22 conflated.  Every verdict
+  below is stated in the (D2)/(D3) form and the (D4) form is reported
+  separately, never inferred from (D3).  DEGENERACY, declared: at a triple
+  whose first cut carries a SINGLE configuration, (D1) is satisfied by the
+  constant matrix X = Gamma(c'' <- c) . 1^T for any Gamma(c' <- c), so
+  such a triple can never be indivisible and is reported as STRUCTURALLY
+  VACUOUS rather than as a divisible datum.
+
+  NOT A CP TEST (paper 0 sec.6.6): (D1)-(D4) are statements about
+  factorisation of stochastic matrices.  No completely-positive map, no
+  divisibility of a dynamical map on operators, and no CP criterion of any
+  kind appears anywhere in this receipt.
+
+------------------------------------------------------------------------------
+SEC 4  ARM 0 — Born = K1 on the committed arbitration layer (exact), and the Zhat-completed sibling
+------------------------------------------------------------------------------
+  [PASS] ANCHOR A0.1 THE COMMITTED PAIR EXHIBIT RE-RUNS (paper 31 sec.4.3's baseline): A's arbitration menu is ONE event at the early cut and THREE at the join (self plus the two pair winners); the full per-actor sums are exactly 1 and 5/4; the pair branches are inadmissible early  (menu sizes 1/3; full sums 1/5/4 (quoted 1/5/4))
+  [PASS] ANCHOR A0.2 ISOMETRY EXACTLY 0 (an upgrade on the committed receipt, which gated 1e-40 in mpmath): V_pair (4x1) and V_single (2x1), built as Acceptance o OpeningClick from committed machinery, and BOTH factors of each, satisfy M^T M - I = 0 identically in Q(sqrt 2).  The committed defect '0.0 at the working precision' is now an exact algebraic 0  (shapes ((4, 1), (2, 1)); non-zero entries of M^T M - I by matrix: A_pair 0, A_single 0, O_pair 0, O_single 0, V_pair 0, V_single 0)
+  [PASS] ANCHOR A0.3 BORN = K1 EXACTLY: the squared branch amplitudes of V_pair are exactly 1/2 and 1/2 — RATIONAL numbers, not approximations — and equal PK1 on the 2-conflict recomputed from the committed layer; V_single's branch is deterministic and equals PK1 on the singleton  (|amp|^2 (pair) = ['1/2', '1/2']; PK1 (pair) = ['1/2', '1/2']; |amp|^2 (single) = ['1']; all rational = True)
+  [PASS] ANCHOR A0.4 MENU RECONSTRUCTION AT BOTH CUTS, EXACT IN RATIONALS, FROM THE SAME MATRICES: (past-local admissible-ckey index x budget share 1/4 / #components, read from the layer's own past-view machinery) x (the V_C Born splits) equals the committed menus — 1/4 on the arbitration sector at the early cut and 1/4 + 1/8 + 1/8 at the join.  What differs between the cuts is the classical index set, not the operator  (early menu ['1/4'] (sum 1/4); join menu ['1/4', '1/8', '1/8']; index sets ['single'] vs ['single', 'pair'])
+  [PASS] ANCHOR A0.5a THE CLOSED-SCOPE FAMILY REPRODUCES d43b's census: cumulative family sizes at depths 0..6  ([1, 7, 39, 215, 1191, 6471, 34375] (quoted [1, 7, 39, 215, 1191, 6471, 34375]))
+  [PASS] ANCHOR A0.5b THE UNIFORM-LOOKAHEAD INTRINSIC PARTITION STABILISES AT SIX STATES at lookahead t = 2 (d43b MG2a): the |P_t| tables on the len<=2/3/4 windows reproduce the committed anchors  (cutoff-2 [4, 4, 5, 5, 5], cutoff-3 [4, 5, 6, 6], cutoff-4 [4, 5, 6] (quoted {2: [4, 4, 5, 5, 5], 3: [4, 5, 6, 6], 4: [4, 5, 6]}))
+  [PASS] ANCHOR A0.5c THE EXACT 6x6 TRANSFER IS THE COMMITTED ONE (d43b MG2d): well-defined per state on every one of the 215 len<=3 members, equal to the committed matrix entry for entry, row sums = the per-cut masses (2,2,2,5/2,2,2) with the conflict state carrying the 5/4-per-actor excess  (members 215; well-defined True; T == committed True; row sums ['2', '2', '2', '5/2', '2', '2'])
+  [PASS] ANCHOR A0.5d THE Zhat-COMPLETED SIBLING, BUILT TO THE AUDIT'S SPECIFICATION AND EXACTLY STOCHASTIC: with the committed Perron data (T f = 2 f exactly, f = (4,4,3,7,3,3)/3) the completed state-to-state transfer Zhat(i->j) = T_ij f_j / (lambda f_i) has EVERY ROW SUMMING TO EXACTLY 1 with every entry non-negative, and its conflict row is exactly {0: 1/7, 3: 3/4, 5: 3/28} — the row the D75 audit specified to the receipt, total mass exactly 1  (T f = 2 f exact = True; row sums ['1', '1', '1', '1', '1', '1']; conflict row {0: '1/7', 3: '3/4', 5: '3/28'}; total mass 1)
+  [DATA] the Zhat-completed six-state sibling (rows = source state, exact):
+           0: 0:3/4  1:1/4
+           1: 1:3/4  2:3/64  3:7/64  4:3/32
+           2: 2:3/4  5:1/4
+           3: 0:1/7  3:3/4  5:3/28
+           4: 4:3/4  5:1/4
+           5: 2:1/8  4:1/8  5:3/4
+  [DATA] ARM-0 handover to U3: the two anchor matrices are {V_single, V_pair} (exact Q(sqrt 2), Born = K1) and the 6x6 Zhat transfer above.  U3's unistochasticity screen reads the Zhat matrix: its columns do NOT sum to 1 (column sums printed below), so the completed chain is row-stochastic and NOT doubly stochastic, hence NOT unistochastic — the audit's pin (b) Arm 1 screen, recorded here as ARM-0 output and left for U3 to adjudicate
+  [DATA] Zhat column sums (U3's screen, reported not adjudicated): ['25/28', '1', '59/64', '55/64', '31/32', '19/14']
+  [DATA] ARM-0 time: 10s
+
+------------------------------------------------------------------------------
+SEC 5  ANCHORS — D72/D74's committed transport census and the 44 + 44 split
+------------------------------------------------------------------------------
+  [DATA] AB4 census: 3969 histories; {'both-blocked': 142, 'closed': 1546, 'AB-only': 28, 'BA-only': 12}; non-unit 88; ratios {'1': 1458, '1/2': 70, '2': 10, '2/3': 2, '3/2': 6}; kinds {('r', 'd'): 68, ('d', 'r'): 8, ('d', 'n'): 6, ('d', 'd'): 4, ('n', 'd'): 2}; delivery-bearing 88/88; shallowest 3
+  [PASS] ANCHOR AB4.1 D72's T6.1 row reproduces EXACTLY — family size, closed-square count, the FULL ratio multiset (unit and non-unit), the kind census, delivery-bearing fraction, both-blocked count and shallowest defect depth  (histories 3969/3969; closed 1546/1546; non-unit 88/88; ratios match True; kinds match True)
+  [PASS] ANCHOR AB4.2 D72's T6.2 half-open row reproduces EXACTLY  (AB-only 28, BA-only 12, total 40)
+  [DATA] ABC3 census: 3424 histories; {'both-blocked': 42, 'closed': 1554}; non-unit 12; ratios {'1': 1542, '1/2': 12}; kinds {('r', 'd'): 12}; delivery-bearing 12/12; shallowest 3
+  [PASS] ANCHOR ABC3.1 D72's T6.1 row reproduces EXACTLY — family size, closed-square count, the FULL ratio multiset (unit and non-unit), the kind census, delivery-bearing fraction, both-blocked count and shallowest defect depth  (histories 3424/3424; closed 1554/1554; non-unit 12/12; ratios match True; kinds match True)
+  [DATA] AB4 carrier: menu quotient 113 classes; coarsest congruence 185 classes after 5 refinement rounds; of 88 defective squares the menu quotient CLOSES 44 and the congruence closes 44
+  [DATA] AB4 the dichotomy: SEEN (curvature-type) 44: spectrum {'1/2': 26, '2': 10, '2/3': 2, '3/2': 6}, kinds {"('d', 'd')": 4, "('d', 'n')": 6, "('d', 'r')": 8, "('n', 'd')": 2, "('r', 'd')": 24} | UNSEEN (descent-obstruction-type) 44: spectrum {'1/2': 44}, kinds {"('r', 'd')": 44}
+  [DATA] ABC3 carrier: menu quotient 117 classes; coarsest congruence 162 classes after 4 refinement rounds; of 12 defective squares the menu quotient CLOSES 0 and the congruence closes 0
+  [DATA] ABC3 the dichotomy: SEEN (curvature-type) 0: spectrum {}, kinds {} | UNSEEN (descent-obstruction-type) 12: spectrum {'1/2': 12}, kinds {"('r', 'd')": 12}
+  [PASS] ANCHOR D74.1 THE 44 + 44 SPLIT REPRODUCES EXACTLY — the pin's prime suspects.  On AB4 the coarsest DESCENT quotient (the weighted-menu partition) closes 44 of the 88 defective squares and the coarsest weighted CONGRUENCE closes the same 44; the invisible half is 44 squares with spectrum {1/2: 44} and kinds {(r,d): 44}; on ABC3 the menu quotient closes 0 of 12, i.e. at that window the entire defect is of the descent-obstruction type  (AB4 seen/unseen 44/44 (quoted 44/44); congruence closes 44; menu classes 113; congruence classes 185; ABC3 seen/unseen 0/12)
+
+  [A1-PRIME]  THE 44 DESCENT-OBSTRUCTION SQUARES OF AB4, NAMED FIRST AND IN FULL
+              (D74 sec.B2.12(iv)'s invisible half: the two orders of the square
+              carry DIFFERENT weighted menus, so the square closes in NO quotient
+              on which the connection is well defined.  These are the pin's
+              pre-registered prime suspects for Arm 1.)
+    U00  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'A', 'B', ('v', 'v0')), ('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U01  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'A', 'B', ('v', 'v0')), ('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U02  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'A', 'B', ('v', 'v0')), ('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U03  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'A', 'B', ('v', 'v0')), ('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U04  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'B', 'A', ('v', 'v0')), ('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U05  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'B', 'A', ('v', 'v0')), ('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U06  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'B', 'A', ('v', 'v0')), ('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U07  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('d', 'B', 'A', ('v', 'v0')), ('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U08  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'A'), ('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U09  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'A'), ('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U10  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'A'), ('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U11  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'A'), ('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U12  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'B'), ('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U13  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'B'), ('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U14  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'B'), ('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U15  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('n', 'B'), ('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U16  base depth 1  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U17  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0), ('d', 'A', 'B', ('v', 'v0'))]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U18  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0), ('d', 'B', 'A', ('v', 'v0'))]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U19  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0), ('n', 'A')]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U20  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0), ('n', 'B')]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U21  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0), ('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U22  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 0), ('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U23  base depth 1  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U24  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1), ('d', 'A', 'B', ('v', 'v0'))]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U25  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1), ('d', 'B', 'A', ('v', 'v0'))]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U26  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1), ('n', 'A')]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U27  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1), ('n', 'B')]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U28  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1), ('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U29  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'A', ('v', 'v0'), 1), ('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U30  base depth 1  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U31  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0), ('d', 'A', 'B', ('v', 'v0'))]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U32  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0), ('d', 'B', 'A', ('v', 'v0'))]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U33  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0), ('n', 'A')]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U34  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0), ('n', 'B')]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U35  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0), ('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U36  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 0), ('p', 'A', ('v', 'v0'), 0)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 0)}), frozenset({('B', ('v', 'v0'), 0)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U37  base depth 1  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U38  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1), ('d', 'A', 'B', ('v', 'v0'))]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U39  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1), ('d', 'B', 'A', ('v', 'v0'))]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U40  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1), ('n', 'A')]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U41  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1), ('n', 'B')]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U42  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1), ('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'A', frozenset({('A', ('v', 'v0'), 1)}), frozenset({('A', ('v', 'v0'), 1)}))
+          eB = ('d', 'A', 'B', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+    U43  base depth 2  ratio 1/2  kinds (r,d)
+          h  = [('p', 'B', ('v', 'v0'), 1), ('p', 'A', ('v', 'v0'), 1)]
+          eA = ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))
+          eB = ('d', 'B', 'A', ('v', 'v0'))
+          q(eA|h) = 1/4, q(eB|h.eA) = 1/8, q(eB|h) = 1/4, q(eA|h.eB) = 1/4
+  [DATA] the 44 named squares, base-depth census: {1: 4, 2: 40}
+  [DATA] the 44 named squares, event-kind pairs: {"('r', 'd')": 44}
+  [DATA] anchor block time: 5s
+
+------------------------------------------------------------------------------
+SEC 6  ARM 1 (a) — the D62-R4 renewal predicate, ported to transport scope and verified
+------------------------------------------------------------------------------
+  [DATA] the root state sigma([]) at both scopes: transport ((('A', 'B'), False, ()),) | closed ((('A', 'B'), False, ()),) | equal = True
+  [PASS] PORT-1 THE R4 ROW AND ITS RENEWAL COROLLARY HOLD AT CLOSED SCOPE, recomputed here from the ported field set: every pair-arb in the closed-scope family to depth 6 returns the serialised state to the ROOT — D62's 'every pair-arb is a RENEWAL to the root state', which is a row of the table and not a measured coincidence  (2032/2032 pair-arbs return to the root state on 34375 closed-scope histories; event-tag census {'R4': 2032, 'n': 12942, 'p': 12916, 'r': 6484})
+  [DATA] ARM-A family: 30729 histories, (A,B) transport, depth <= 5  [13s]
+  [PASS] PORT-2 THE PORT HOLDS IN-FAMILY AT THE DECLARED CAP: every pair-arb of the (A,B) transport family to depth 5 also returns the ported serialised state to the root, so at this window transport scope inherits D62's renewal corollary and paper 0 sec.4's fixed renewal-grain configuration space is realised  (1264/1264 pair-arbs return to root; distinct post-renewal states = 1)
+  [PASS] PORT-3 AND THE PORT HAS A BOUNDARY, EXHIBITED ON A CONSTRUCTED ADMISSIBLE CHAIN BEYOND THE CAP.  Blind self-arbitration by both actors diverges the holdings; one delivery gives B a second alive token; the pair-arb that follows supersedes only its own base, so the post-renewal state carries TWO token records and is NOT the root.  Every one of the eight events is admission-checked against the committed layer and priced.  CONSEQUENCE, stated flatly: paper 0 sec.4's [POSIT] that renewals reset to the root — hence that the division-event configuration space is fixed — is TRUE at every reachable cap here and FALSE in general at transport scope; it is a delivery-conditioned property, not a theorem of the grammar  (chain admissible end to end = True (8 events, weights ['1/8', '1/4', '1/8', '1/4', '1/8', '1/8', '1/16', '1/8']); post-pair-arb state has 2 token records vs 1 at the root; state = ((('A', 'B'), False, ()), (('B',), False, ())))
+      the witness chain, event by event:
+        0: ('p', 'A', ('v', 'v0'), 0)   q = 1/8
+        1: ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))   q = 1/4
+        2: ('p', 'B', ('v', 'v0'), 1)   q = 1/8
+        3: ('r', 'B', frozenset({('B', ('v', 'v0'), 1)}), frozenset({('B', ('v', 'v0'), 1)}))   q = 1/4
+        4: ('d', 'A', 'B', ('v', ('v', 'v0'), (0,), ('A',), 'A'))   q = 1/8
+        5: ('p', 'A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)   q = 1/8
+        6: ('p', 'B', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 1)   q = 1/16
+        7: ('r', 'A', frozenset({('B', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 1), ('A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)}), frozenset({('A', ('v', ('v', 'v0'), (0,), ('A',), 'A'), 0)}))   q = 1/8
+  [DATA] the renewal-grain configuration space, BOTH WAYS: winner-invisible (D62-faithful) states at renewals: 1 — the root, and only the root; payload-enriched states at renewals: 8 — (winning value) x (winning author) x (initiator), each realised [158] times in-family
+      L-1's BOUND, quoted where it bites (paper 0 sec.7): the renewal-grain
+      configuration space just measured IS a fixed finite set at this cap, which
+      is exactly the hypothesis of the finite-stochastic Lorentz no-go.  So no
+      exact covariance may be claimed for the law built on it: v11 may expect
+      at most statistical/approximate Lorentz invariance at renewal grain,
+      never exact covariance, and this receipt claims none.
+
+------------------------------------------------------------------------------
+SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
+------------------------------------------------------------------------------
+  [PASS] G1 THE LAW IS A PROBABILITY LAW BY CONSTRUCTION, GATED EXACTLY: with the D46b relative-horizon normalisation the one-step kernel sums to exactly 1 at every history of the family, and the induced cut marginal is exactly 1 at every depth.  This is what makes a Gamma family exist at all: the RAW generated menus sum to 2 or 5/2 and are not a stochastic matrix (the D75 audit's sec.5.3 point)  (kernels tested 3969, non-unit row sums 0; cut masses by depth ['1', '1', '1', '1', '1', '1'])
+  [DATA] raw menu masses (the object the normalisation repairs): {'2': 29605, '5/2': 1124}
+
+  ARM-A — the RECORD GRAIN of v10's own law: cuts are the depths of the
+  generated order, configurations are the ported D62 state (both ways:
+  winner-invisible and payload-enriched).  This is the grain at which v10
+  ran everything, and paper 0 sec.3 assigns v10's per-click law to THE
+  REALIZER; the census below asks what the law looks like when it is
+  read at the record's own grain instead of the realizer's.
+
+  [ARM-A / alpha_sigma  (D62-faithful, winner-invisible)]  cuts [0, 1, 2, 3, 4, 5]; configuration support sizes [1, 5, 11, 19, 32, 54]
+      (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x11  first cut carries a single configuration
+      (0, 1, 3)  VACUOUS          [CK]  sizes 1x5x19  first cut carries a single configuration
+      (0, 1, 4)  VACUOUS          [CK]  sizes 1x5x32  first cut carries a single configuration
+      (0, 1, 5)  VACUOUS          [CK]  sizes 1x5x54  first cut carries a single configuration
+      (0, 2, 3)  VACUOUS          [CK]  sizes 1x11x19  first cut carries a single configuration
+      (0, 2, 4)  VACUOUS          [CK]  sizes 1x11x32  first cut carries a single configuration
+      (0, 2, 5)  VACUOUS          [CK]  sizes 1x11x54  first cut carries a single configuration
+      (0, 3, 4)  VACUOUS          [CK]  sizes 1x19x32  first cut carries a single configuration
+      (0, 3, 5)  VACUOUS          [CK]  sizes 1x19x54  first cut carries a single configuration
+      (0, 4, 5)  VACUOUS          [CK]  sizes 1x32x54  first cut carries a single configuration
+      (1, 2, 3)  INDIVISIBLE      [exact LP infeasibility, Farkas certificate VERIFIED]  sizes 5x11x19  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 209v x 106r
+      (1, 2, 4)  DIVISIBLE        [exact LP feasibility]  sizes 5x11x32  a stochastic intermediate EXISTS but is NOT the process's own conditional (CK fails); LP 352v x 171r
+      (1, 2, 5)  DIVISIBLE        [exact LP feasibility]  sizes 5x11x54  a stochastic intermediate EXISTS but is NOT the process's own conditional (CK fails); LP 594v x 281r
+      (1, 3, 4)  INDIVISIBLE      [exact LP infeasibility, Farkas certificate VERIFIED]  sizes 5x19x32  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 608v x 179r
+      (1, 3, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x19x54  LP size 1026 vars x 289 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1026v x 289r
+      (1, 4, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x32x54  LP size 1728 vars x 302 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1728v x 302r
+      (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 11x19x32  12 of 32 target configurations admit NO non-negative row at all
+      (2, 3, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 11x19x54  14 of 54 target configurations admit NO non-negative row at all
+      (2, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 11x32x54  12 of 54 target configurations admit NO non-negative row at all
+      (3, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 19x32x54  13 of 54 target configurations admit NO non-negative row at all
+      CENSUS ARM-A / alpha_sigma  (D62-faithful, winner-invisible): DIVISIBLE 2, EXCLUDED-BY-CAP 2, INDIVISIBLE 6, VACUOUS 10
+      LP work: (1, 2, 3) 209v x 106r, 335 pivots, 1.5s; (1, 2, 4) 352v x 171r, 652 pivots, 4.1s; (1, 2, 5) 594v x 281r, 1118 pivots, 13.2s; (1, 3, 4) 608v x 179r, 3216 pivots, 93.5s
+
+  [ARM-A / alpha_sigma+ (payload-enriched)]  cuts [0, 1, 2, 3, 4, 5]; configuration support sizes [1, 5, 13, 37, 97, 185]
+      (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x13  first cut carries a single configuration
+      (0, 1, 3)  VACUOUS          [CK]  sizes 1x5x37  first cut carries a single configuration
+      (0, 1, 4)  VACUOUS          [CK]  sizes 1x5x97  first cut carries a single configuration
+      (0, 1, 5)  VACUOUS          [CK]  sizes 1x5x185  first cut carries a single configuration
+      (0, 2, 3)  VACUOUS          [CK]  sizes 1x13x37  first cut carries a single configuration
+      (0, 2, 4)  VACUOUS          [CK]  sizes 1x13x97  first cut carries a single configuration
+      (0, 2, 5)  VACUOUS          [CK]  sizes 1x13x185  first cut carries a single configuration
+      (0, 3, 4)  VACUOUS          [CK]  sizes 1x37x97  first cut carries a single configuration
+      (0, 3, 5)  VACUOUS          [CK]  sizes 1x37x185  first cut carries a single configuration
+      (0, 4, 5)  VACUOUS          [CK]  sizes 1x97x185  first cut carries a single configuration
+      (1, 2, 3)  INDIVISIBLE      [exact LP infeasibility, Farkas certificate VERIFIED]  sizes 5x13x37  no column-stochastic X satisfies X Gamma(c'<-c) = Gamma(c''<-c); LP 481v x 198r
+      (1, 2, 4)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x13x97  LP size 1261 vars x 498 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1261v x 498r
+      (1, 2, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x13x185  LP size 2405 vars x 938 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 2405v x 938r
+      (1, 3, 4)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x37x97  LP size 3589 vars x 522 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 3589v x 522r
+      (1, 3, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x37x185  LP size 6845 vars x 962 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 6845v x 962r
+      (1, 4, 5)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 5x97x185  LP size 17945 vars x 1022 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 17945v x 1022r
+      (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 13x37x97  6 of 97 target configurations admit NO non-negative row at all
+      (2, 3, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 13x37x185  4 of 185 target configurations admit NO non-negative row at all
+      (2, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 13x97x185  18 of 185 target configurations admit NO non-negative row at all
+      (3, 4, 5)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 37x97x185  24 of 185 target configurations admit NO non-negative row at all
+      CENSUS ARM-A / alpha_sigma+ (payload-enriched): EXCLUDED-BY-CAP 5, INDIVISIBLE 5, VACUOUS 10
+      LP work: (1, 2, 3) 481v x 198r, 841 pivots, 5.8s
+  [DATA] ARM-A time: 143s
+
+  ARM-B — the DIVISION-EVENT GRAIN.  The ensemble is conditioned on a PAST
+  event only: that the depth-3 prefix ends in a pair-arb, i.e. that the
+  first division event has occurred at the earliest depth the grammar
+  allows.  The initial distribution over those histories is the horizon-6
+  measure's own conditional, so no future information is used.
+  [PASS] G2 ARM-B is a probability law too: the horizon-6 kernel sums to 1 at every history of the renewal-started window and the cut marginal is 1 at depths 3..6  (16 renewal bases, 16368 histories; kernels 1712, non-unit 0; cut masses ['1', '1', '1', '1'])
+
+  [ARM-B / alpha_sigma  (D62-faithful, winner-invisible)]  cuts [3, 4, 5, 6]; configuration support sizes [1, 5, 11, 19];  cut 3 IS a division event
+      (3, 4, 5)  VACUOUS          [CK]  sizes 1x5x11  first cut carries a single configuration
+      (3, 4, 6)  VACUOUS          [CK]  sizes 1x5x19  first cut carries a single configuration
+      (3, 5, 6)  VACUOUS          [CK]  sizes 1x11x19  first cut carries a single configuration
+      (4, 5, 6)  DIVISIBLE        [CK]  sizes 5x11x19  the process's own conditional Gamma(c''<-c') works
+      CENSUS ARM-B / alpha_sigma  (D62-faithful, winner-invisible): DIVISIBLE 1, VACUOUS 3
+
+  [ARM-B / alpha_sigma+ (payload-enriched)]  cuts [3, 4, 5, 6]; configuration support sizes [8, 40, 76, 148];  cut 3 IS a division event
+      (3, 4, 5)  DIVISIBLE        [CK]  sizes 8x40x76  the process's own conditional Gamma(c''<-c') works
+      (3, 4, 6)  DIVISIBLE        [CK]  sizes 8x40x148  the process's own conditional Gamma(c''<-c') works
+      (3, 5, 6)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 8x76x148  LP size 11248 vars x 1260 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 11248v x 1260r
+      (4, 5, 6)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 40x76x148  64 of 148 target configurations admit NO non-negative row at all
+      CENSUS ARM-B / alpha_sigma+ (payload-enriched): DIVISIBLE 2, EXCLUDED-BY-CAP 1, INDIVISIBLE 1
+
+      READ THIS BEFORE READING ARM-B's VERDICT.  ARM-B's window reaches
+      only three steps past the division event, i.e. relative depths 0..3.
+      ARM-A's indivisible triples all begin at relative depth >= 2, so the
+      SAME triples post-renewal would need depths 5,6,7 — beyond this cap.
+      ARM-B's divisibility is therefore a WINDOW fact and NOT evidence that
+      renewal resets divisibility.  Stated here so no reader can take it
+      for the stronger claim.
+  [DATA] ARM-B time: 23s
+
+  ARM-C — RENEWAL-TO-RENEWAL.  Cuts are renewal indices 0, 1, 2.
+  [DATA] renewal 2 within the cap: mass reaching a second renewal by depth 6 = 1/257; renewal-1 configurations 8; renewal-2 configurations 8
+  [PASS] C1 THE RENEWAL STEP IS CONFIGURATION-INDEPENDENT (measured, at the cap): conditioned on a second renewal occurring inside the window, the distribution of the renewal-2 configuration is the SAME whichever renewal-1 configuration the process came from.  The renewal-to-renewal transfer is therefore a RANK-ONE column-stochastic matrix, R^2 = R, and every renewal triple factors through it — the renewal chain is a genuine renewal process at this scope.  DECLARED: this conditions on a FUTURE event (that renewal 2 arrives by depth 6), which at this cap forces both renewal intervals to be minimal; it is the conditioned law of that sub-ensemble and is labelled as such  (8 distinct renewal-1 configurations, 1 distinct renewal-step columns (1 == configuration-independent); rank-one = True)
+  [PASS] C2 THE RENEWAL-TO-RENEWAL TRIPLE (0,1,2) IS STRUCTURALLY VACUOUS AT EVERY REACHABLE CAP, and this is reported rather than dressed up: renewal cut 0 is the root, a SINGLE configuration, so by the preamble's degeneracy clause a stochastic interpolant always exists.  A non-degenerate renewal triple needs THREE renewals, i.e. depth >= 9 in this grammar, which is excluded by the declared cap.  The renewal-grain interpolant test is therefore NOT RUN, not passed  (renewal cut 0 configurations = 1; the first non-degenerate renewal triple sits at depth >= 9 (>= 3 pair-arbs x 3 events), excluded by cap 6)
+  [DATA] ARM-C time: 0s
+
+  ARM-D — THE POOL CONTROL: the same census on a THREE-actor transport
+  family, so that no verdict rests on a two-actor accident.
+  [PASS] G3 ARM-D is a probability law: kernel row sums and cut marginals exactly 1 on the three-actor family  (50617 histories; kernels 3424, non-unit 0; cut masses ['1', '1', '1', '1', '1'])
+
+  [ARM-D / alpha_sigma (D62-faithful)]  cuts [0, 1, 2, 3, 4]; configuration support sizes [1, 8, 27, 59, 124]
+      (0, 1, 2)  VACUOUS          [CK]  sizes 1x8x27  first cut carries a single configuration
+      (0, 1, 3)  VACUOUS          [CK]  sizes 1x8x59  first cut carries a single configuration
+      (0, 1, 4)  VACUOUS          [CK]  sizes 1x8x124  first cut carries a single configuration
+      (0, 2, 3)  VACUOUS          [CK]  sizes 1x27x59  first cut carries a single configuration
+      (0, 2, 4)  VACUOUS          [CK]  sizes 1x27x124  first cut carries a single configuration
+      (0, 3, 4)  VACUOUS          [CK]  sizes 1x59x124  first cut carries a single configuration
+      (1, 2, 3)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 8x27x59  LP size 1593 vars x 499 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 1593v x 499r
+      (1, 2, 4)  EXCLUDED-BY-CAP  [row-certificate only]  sizes 8x27x124  LP size 3348 vars x 1019 rows exceeds the declared cap (700 x 400); the row certificate ran and returned no obstruction, which is NOT a proof of divisibility; LP 3348v x 1019r
+      (1, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 8x59x124  2 of 124 target configurations admit NO non-negative row at all
+      (2, 3, 4)  INDIVISIBLE      [row-certificate (Farkas, verified)]  sizes 27x59x124  34 of 124 target configurations admit NO non-negative row at all
+      CENSUS ARM-D / alpha_sigma (D62-faithful): EXCLUDED-BY-CAP 2, INDIVISIBLE 2, VACUOUS 6
+  [DATA] ARM-D time: 38s
+
+  THE [B3] EQ. 22 ALGEBRAIC ARM — Gammabar = Gamma(c''<-c) Gamma(c'<-c)^-1,
+  with the negative entries counted exactly.  This needs a SQUARE Gamma,
+  i.e. Barandes' kinematical axiom: ONE fixed configuration space for all
+  cuts.  MEASURED FACT FIRST, because it decides how the arm must be run:
+  on this carrier the configuration support STRICTLY GROWS with the cut
+  (sizes printed above), so Gamma(c'<-c) is NEVER square on the supports
+  and eq. 22's algebraic form is INAPPLICABLE as written.  The arm is
+  therefore run under a DECLARED CONVENTION: the configuration space is
+  the union X of the three cuts' supports, and a configuration not yet
+  realised at a cut is held FIXED by the law (an identity column).  That
+  makes every Gamma square; the convention is a choice and is labelled
+  one, which is why the feasibility form above — convention-free, and
+  quantifying over ALL stochastic intermediates rather than the unique
+  algebraic one — remains the decisive instrument.
+      (0, 1, 2)    STOCHASTIC        |X| = 11; NEGATIVE ENTRIES = 0 of 121 exactly; column sums all 1 = True; most negative = 0
+      (0, 1, 3)    STOCHASTIC        |X| = 19; NEGATIVE ENTRIES = 0 of 361 exactly; column sums all 1 = True; most negative = 0
+      (0, 1, 4)    STOCHASTIC        |X| = 32; NEGATIVE ENTRIES = 0 of 1024 exactly; column sums all 1 = True; most negative = 0
+      (0, 1, 5)    STOCHASTIC        |X| = 54; NEGATIVE ENTRIES = 0 of 2916 exactly; column sums all 1 = True; most negative = 0
+      (0, 2, 3)    STOCHASTIC        |X| = 19; NEGATIVE ENTRIES = 0 of 361 exactly; column sums all 1 = True; most negative = 0
+      (0, 2, 4)    STOCHASTIC        |X| = 32; NEGATIVE ENTRIES = 0 of 1024 exactly; column sums all 1 = True; most negative = 0
+      (0, 2, 5)    STOCHASTIC        |X| = 54; NEGATIVE ENTRIES = 0 of 2916 exactly; column sums all 1 = True; most negative = 0
+      (0, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 4 of 1024 exactly; column sums all 1 = True; most negative = -1/584
+      (0, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 4 of 2916 exactly; column sums all 1 = True; most negative = -17/1168
+      (0, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 4 of 2916 exactly; column sums all 1 = True; most negative = -5/303
+      (1, 2, 3)    PSEUDO-STOCHASTIC |X| = 19; NEGATIVE ENTRIES = 8 of 361 exactly; column sums all 1 = True; most negative = -66/12593
+      (1, 2, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 21 of 1024 exactly; column sums all 1 = True; most negative = -675/100744
+      (1, 2, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 43 of 2916 exactly; column sums all 1 = True; most negative = -453/100744
+      (1, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 37 of 1024 exactly; column sums all 1 = True; most negative = -12101/1298976
+      (1, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 59 of 2916 exactly; column sums all 1 = True; most negative = -170941/7847980
+      (1, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 67 of 2916 exactly; column sums all 1 = True; most negative = -248545/8203104
+      (2, 3, 4)    PSEUDO-STOCHASTIC |X| = 32; NEGATIVE ENTRIES = 118 of 1024 exactly; column sums all 1 = True; most negative = -5528/518885
+      (2, 3, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 216 of 2916 exactly; column sums all 1 = True; most negative = -5463/518885
+      (2, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 228 of 2916 exactly; column sums all 1 = True; most negative = -183934373/13941127680
+      (3, 4, 5)    PSEUDO-STOCHASTIC |X| = 54; NEGATIVE ENTRIES = 294 of 2916 exactly; column sums all 1 = True; most negative = -60454377/7356440080
+  [DATA] eq. 22 algebraic census (ARM-A / alpha_sigma): pseudo-stochastic 13, stochastic 7, singular 0, excluded 0; total negative entries 1103
+  [DATA] eq. 22 algebraic reading vs the feasibility verdict: {'PSEUDO-STOCHASTIC / DIVISIBLE': 2, 'PSEUDO-STOCHASTIC / EXCLUDED-BY-CAP': 2, 'PSEUDO-STOCHASTIC / INDIVISIBLE': 6, 'PSEUDO-STOCHASTIC / VACUOUS': 3, 'STOCHASTIC / VACUOUS': 7}
+  [PASS] EQ22.1 THE ALGEBRAIC READING IS STRICTLY WEAKER THAN THE FEASIBILITY READING, AND THE CENSUS SHOWS BOTH DIRECTIONS OF THE GAP.  A pseudo-stochastic Gammabar says the UNIQUE algebraic intermediate under the fixed-space convention has negative entries; it does NOT by itself say no stochastic intermediate exists, and the table above contains triples where the algebraic reading is pseudo-stochastic while a genuine stochastic interpolant exists on the supports.  [B3] eq. 22 is the right instrument only when the configuration space really is fixed — which, on this carrier, it is not away from renewals  (13 pseudo-stochastic, 7 stochastic; cross-tabulated against the feasibility verdict above)
+
+------------------------------------------------------------------------------
+SEC 8  ARM 1 (c) — the geography of the census (input to U2)
+------------------------------------------------------------------------------
+  [DATA] ARM-A / alpha_sigma verdicts by triple: {'(0, 1, 2)': 'VACUOUS', '(0, 1, 3)': 'VACUOUS', '(0, 1, 4)': 'VACUOUS', '(0, 1, 5)': 'VACUOUS', '(0, 2, 3)': 'VACUOUS', '(0, 2, 4)': 'VACUOUS', '(0, 2, 5)': 'VACUOUS', '(0, 3, 4)': 'VACUOUS', '(0, 3, 5)': 'VACUOUS', '(0, 4, 5)': 'VACUOUS', '(1, 2, 3)': 'INDIVISIBLE', '(1, 2, 4)': 'DIVISIBLE', '(1, 2, 5)': 'DIVISIBLE', '(1, 3, 4)': 'INDIVISIBLE', '(1, 3, 5)': 'EXCLUDED-BY-CAP', '(1, 4, 5)': 'EXCLUDED-BY-CAP', '(2, 3, 4)': 'INDIVISIBLE', '(2, 3, 5)': 'INDIVISIBLE', '(2, 4, 5)': 'INDIVISIBLE', '(3, 4, 5)': 'INDIVISIBLE'}
+  [DATA] mass of the ensemble carrying a DIVISION EVENT inside the window, per triple: {'(0, 1, 2)': '0', '(0, 1, 3)': '16/4173', '(0, 1, 4)': '16/1391', '(0, 1, 5)': '7/321', '(0, 2, 3)': '16/4173', '(0, 2, 4)': '16/1391', '(0, 2, 5)': '7/321', '(0, 3, 4)': '16/1391', '(0, 3, 5)': '7/321', '(0, 4, 5)': '7/321', '(1, 2, 3)': '16/4173', '(1, 2, 4)': '16/1391', '(1, 2, 5)': '7/321', '(1, 3, 4)': '16/1391', '(1, 3, 5)': '7/321', '(1, 4, 5)': '7/321', '(2, 3, 4)': '16/1391', '(2, 3, 5)': '7/321', '(2, 4, 5)': '7/321', '(3, 4, 5)': '25/1391'}
+  [PASS] J1 THE INDIVISIBLE WINDOWS ARE BRIDGE WINDOWS ON AT LEAST 97% OF THEIR MASS — reported as a MEASURED co-location and nothing more.  Paper 0 sec.4 places the anomalies in the conflict windows BETWEEN renewals; the mass of the ensemble that carries any division event inside an indivisible window is printed above for every triple, and the largest of those masses is under 3%.  This is the J-geography input U2 needs, and it is NOT a test of the J-conjecture, which is U2's and is not run here  (indivisible triples ['(1, 2, 3)', '(1, 3, 4)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)']; division-event mass inside them ['16/1391', '16/4173', '25/1391', '7/321'] (the complement of each is the bridge mass))
+  [DATA] the lumpability defect by depth (classes, non-lumpable classes): {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (32, 12)}
+  [PASS] J2 THE 44 NAMED SQUARES SIT ON THE LUMPABILITY DEFECT.  The descent-obstruction squares are exactly the places where two orders of the same pair carry DIFFERENT weighted menus; the record-grain law is non-lumpable exactly where a configuration class contains histories with different menus.  The count below is the overlap, measured, with no causal claim attached  (32 of 44 descent-obstruction squares have their base in a NON-LUMPABLE configuration class of ARM-A)
+
+------------------------------------------------------------------------------
+SEC 9  ARM 2 — the four descent conditions (DC1-DC4) on the same family
+------------------------------------------------------------------------------
+  The D65 pin's conditions, ported to transport scope and run at the
+  SAME caps as Arm 1.  Two normalisations are carried throughout,
+  because the transport grammar admits both honest ones: the D65 form
+  p = q / M (menu weight over menu mass) and the D46b/D70 relative-horizon
+  kernel k_r.  Both are printed; neither is preferred by fiat.
+  [DATA] DC1 census (ordered pairs, both orders admissible, at every parent of depth <= 3): {'refined-record identical | D65 q/M FAILS': 352, 'refined-record identical | D65 q/M HOLDS': 2965, 'refined-record identical | horizon k_r HOLDS': 3317, 'refined-record identical | raw HOLDS': 3317, 'sigma-commuting, not refined-identical | D65 q/M FAILS': 1884, 'sigma-commuting, not refined-identical | D65 q/M HOLDS': 6613, 'sigma-commuting, not refined-identical | horizon k_r FAILS': 1000, 'sigma-commuting, not refined-identical | horizon k_r HOLDS': 7497, 'sigma-commuting, not refined-identical | raw FAILS': 960, 'sigma-commuting, not refined-identical | raw HOLDS': 7537}
+  [DATA] DC1 exact ratio spectra: raw q {'1': 10854, '1/2': 654, '2': 130, '2/3': 58, '3/2': 118} | D65 q/M {'1': 9578, '1/2': 654, '2': 130, '2/3': 58, '3/2': 118, '4/5': 634, '5/4': 642} | horizon k_r {'1': 10814, '1/2': 654, '2': 130, '2/3': 58, '3/2': 118, '32/33': 6, '33/32': 2, '64/65': 24, '65/64': 8}
+  [DATA] DC1 by parent depth: {0: {"('k_r', False)": 8, "('k_r', True)": 18, "('raw', True)": 26}, 1: {"('k_r', False)": 36, "('k_r', True)": 148, "('raw', False)": 4, "('raw', True)": 180}, 2: {"('k_r', False)": 84, "('k_r', True)": 1252, "('raw', False)": 84, "('raw', True)": 1252}, 3: {"('k_r', False)": 872, "('k_r', True)": 9396, "('raw', False)": 872, "('raw', True)": 9396}}
+  [PASS] DC1 FAILS AT TRANSPORT SCOPE — and the failure is NORMALISATION-DEPENDENT in a way that must be stated, not averaged.  On the WIDER sigma-commuting census all three normalisations fail.  On Theorem 1's OWN hypothesis class — refined-record identical pairs, D65's DC1(f) — the raw and horizon forms HOLD identically and the D65 q/M form FAILS, which is the same normalisation and the same kind of failure D65 measured at closed scope (32,256 of 425,334).  The instrument does not agree with itself across normalisations, and that is the finding  (WIDER (sigma-commuting, 11814 ordered pairs): raw 960, D65 q/M 2236, horizon k_r 1000 | DC1(f) (refined-record identical, 3317 pairs): raw 0, D65 q/M 352, horizon k_r 0)
+  [PASS] DC1-IDENTIFICATION, CORRECTLY SCOPED: the horizon normalisation changes the DC1 ratio EXACTLY when the two orders carry different records.  The horizon potential G is constant on refined-record-identical endpoint pairs — so on Theorem 1's own hypothesis class the horizon-normalised DC1 defect IS the raw D72/D74 exchange-square ratio, and paper 29's descent condition and D72's transport square census are literally the same number there.  Off that class they are different numbers, and the receipt reports both  (G equal / unequal on refined-identical pairs: 3317 / 0; on non-refined pairs: 8457 / 40)
+  [PASS] ANCHOR DC1.960 THE DC1 RAW DEFECT CENSUS IS D72/D74's SQUARE CENSUS AT THE SAME WINDOW, TO THE UNIT: over every closed exchange square of the (A,B) transport family to depth 5 the raw commuting-square identity fails exactly 960 times, which is D74's committed depth-5 defect count; and the failures split into the curvature-type and descent-obstruction-type halves in D74's committed proportions 604 / 356  (raw DC1 failures over all closed squares = 960 (quoted 960); split {'curvature-type (closes in the menu quotient)': 604, 'descent-obstruction-type (closes in NO descent quotient)': 356} (quoted 604 / 356); full ratio spectrum {'1': 10854, '1/2': 654, '2': 130, '2/3': 58, '3/2': 118})
+  [PASS] DC2 BOUNDARY SUFFICIENCY FAILS AT TRANSPORT SCOPE — and this is the sharpest single difference from closed scope, where it is a THEOREM.  At closed scope DC2 is exactly (H1)+(H2): sigma is a sufficient boundary statistic and the next-record law is constant on its fibres.  At transport scope the ported state is NOT sufficient: configuration classes contain histories with different next-configuration laws, from depth 2 onward  (non-lumpable classes by depth {0: (1, 0), 1: (5, 0), 2: (11, 4), 3: (19, 8), 4: (32, 12)}; total 24.  At closed scope the same statistic is sufficient by D61/D62 [THEOREM])
+  [RPT ] DC3(1) exclusive-and-exhaustive alternatives: the normalised menu is a partition of the admissible continuations and sums to exactly 1 at every history (gated at G1 above)  (the same gate as G1/G2/G3; not independent evidence)
+         ^ REPORTING ONLY: cannot fail as posed; not counted as evidence
+  [RPT ] DC3(2) decoherence of the queried algebra: the generated law is a stochastic process on records, so decoherence is trivially satisfied AND trivially uninformative.  This is where the map's remaining segment lives — the generated line still has no functional level, and U1 does not create one  (declared, exactly as D65 declared it at closed scope)
+         ^ REPORTING ONLY: cannot fail as posed; not counted as evidence
+  [RPT ] DC3(3) common refined cylinder = DC1's census above  (identical predicate; see DC1)
+         ^ REPORTING ONLY: cannot fail as posed; not counted as evidence
+  [PASS] DC3(4) POSITIVITY of every displayed conditioning cylinder: every menu weight of the transport family is strictly positive, gated exactly  (non-positive menu weights = 0 over 243768 priced candidates)
+  [PASS] DC3(5) sufficient declared boundary = DC2 above — and it FAILS at transport scope  (24 non-lumpable classes; see DC2)
+
+  [DC4]  THE SUPPLIED-VS-DERIVED LEDGER, RE-SCORED AT TRANSPORT SCOPE AND
+         RENEWAL GRAIN.  No item moves without a gate above it.
+         boundary state (D59 item 1) — at closed scope D65 moved it to
+           DERIVED via DC2.  At transport scope it moves BACK to SUPPLIED:
+           DC2 fails, so the ported state is not a sufficient boundary
+           statistic and any boundary condition on it is an assumption.
+         the measure (D59 item 2) — the relative-horizon normalisation
+           supplies a probability law at every finite cap (G1/G2/G3);
+           D70's infinite-horizon bound is OPEN and nothing here closes
+           it.  Status unchanged: SUPPLIED at finite horizon.
+         renormalization, record instrument, clock dictionary, the
+           functional level — all four STAND as supplied; this unit
+           gates none of them, and DC3(2) says why the functional
+           level in particular cannot move here.
+         NEW ITEM, added by this unit: the RENEWAL RESET (paper 0
+           sec.4's [POSIT]) is now scored SUPPLIED-WITH-A-BOUNDARY: true
+           at every reachable cap (PORT-2), false on a constructed
+           admissible chain (PORT-3).
+  [DATA] ARM-2 time: 6s
+
+------------------------------------------------------------------------------
+SEC 10  THE AGREEMENT CENSUS — the two instruments, triple by triple
+------------------------------------------------------------------------------
+  Arm 1's instrument is the [B3] eq. 22 interpolant test at a cut
+  triple.  Arm 2's instruments are per-STEP: DC1 (the commuting-square
+  identity at a parent) and DC2 (fibre constancy at a depth).  They are
+  compared by aggregating Arm 2 over the window the triple spans:
+  a triple (l0, l', l'') is 'Arm-2 defective' iff some DC1 failure or
+  some DC2 failure occurs at a depth in [l0, l''-1].
+  [DATA] DC1 failures by parent depth: {1: 4, 2: 84, 3: 872}
+  [DATA] DC2 failures by depth: {0: 0, 1: 0, 2: 4, 3: 8, 4: 12}
+
+      triple       ARM 1 (interpolant)    ARM 2 (descent)  DC1 fails  DC2 fails
+      (0, 1, 2)    VACUOUS                DEFECTIVE               4          0
+      (0, 1, 3)    VACUOUS                DEFECTIVE              88          4
+      (0, 1, 4)    VACUOUS                DEFECTIVE             960         12
+      (0, 1, 5)    VACUOUS                DEFECTIVE             960         24
+      (0, 2, 3)    VACUOUS                DEFECTIVE              88          4
+      (0, 2, 4)    VACUOUS                DEFECTIVE             960         12
+      (0, 2, 5)    VACUOUS                DEFECTIVE             960         24
+      (0, 3, 4)    VACUOUS                DEFECTIVE             960         12
+      (0, 3, 5)    VACUOUS                DEFECTIVE             960         24
+      (0, 4, 5)    VACUOUS                DEFECTIVE             960         24
+      (1, 2, 3)    INDIVISIBLE            DEFECTIVE              88          4
+      (1, 2, 4)    DIVISIBLE              DEFECTIVE             960         12
+      (1, 2, 5)    DIVISIBLE              DEFECTIVE             960         24
+      (1, 3, 4)    INDIVISIBLE            DEFECTIVE             960         12
+      (1, 3, 5)    EXCLUDED-BY-CAP        DEFECTIVE             960         24
+      (1, 4, 5)    EXCLUDED-BY-CAP        DEFECTIVE             960         24
+      (2, 3, 4)    INDIVISIBLE            DEFECTIVE             956         12
+      (2, 3, 5)    INDIVISIBLE            DEFECTIVE             956         24
+      (2, 4, 5)    INDIVISIBLE            DEFECTIVE             956         24
+      (3, 4, 5)    INDIVISIBLE            DEFECTIVE             872         20
+
+  [DATA] the 2x2 agreement table (Arm 1 x Arm 2, non-vacuous triples only): {'DIVISIBLE / DEFECTIVE': 2, 'INDIVISIBLE / DEFECTIVE': 6}
+  [PASS] AG1 THE TWO INSTRUMENTS DISAGREE, AND THE DISAGREEMENT IS ONE-SIDED AND EXACTLY CHARACTERISED: every triple Arm 1 calls INDIVISIBLE is also Arm-2 defective, but Arm 2 is defective on triples Arm 1 calls DIVISIBLE.  Descent failure is therefore NECESSARY BUT NOT SUFFICIENT for cut-indivisibility on this family: the descent conditions are the finer instrument at the step scale and the coarser verdict at the window scale.  Neither instrument is redundant and neither dominates  (agreements 6, disagreements 2; INDIVISIBLE&CLEAN = 0 (an INDIVISIBLE triple with a clean window would have been the instrument-splitting witness; there is none))
+  [DATA] ARM-A verdicts, the two configuration maps against each other: {'sigma DIVISIBLE / sigma+ EXCLUDED-BY-CAP': 2, 'sigma EXCLUDED-BY-CAP / sigma+ EXCLUDED-BY-CAP': 2, 'sigma INDIVISIBLE / sigma+ EXCLUDED-BY-CAP': 1, 'sigma INDIVISIBLE / sigma+ INDIVISIBLE': 5, 'sigma VACUOUS / sigma+ VACUOUS': 10}
+  [PASS] AG2 NO TRIPLE RECEIVES OPPOSITE SUBSTANTIVE VERDICTS UNDER THE TWO COMMITTED CONFIGURATION MAPS.  The winner-invisible D62 state and the payload-enriched state never disagree DIVISIBLE-vs-INDIVISIBLE on any triple; where their entries differ it is because the LP cap excluded a triple under the larger map and decided it under the smaller.  So the census is not an artefact of the D62 corollary that the arbitration winner is invisible to sigma — but the enriched map is DECIDED ON FEWER TRIPLES, and that is a cap fact, printed and not hidden  (opposed substantive verdicts = 0 of 20; cap-only differences = 3)
+
+------------------------------------------------------------------------------
+SEC 11  DETERMINISM PROBE
+------------------------------------------------------------------------------
+  [PASS] DET.1 every printed number is order-independent: the joint cut law and a representative Gamma block are recomputed with the family traversed in the opposite order and compared entry by entry; all set iteration that feeds a printed number is keyed by the hash-seed-independent sk()  (joint law identical = True; Gamma(4<-2) identical = True; entries compared 135)
+
+------------------------------------------------------------------------------
+SEC 12  THE VERDICT, against the pre-registered outcomes
+------------------------------------------------------------------------------
+  [DATA] the whole census, all arms, all configuration maps: {'DIVISIBLE': 5, 'EXCLUDED-BY-CAP': 10, 'INDIVISIBLE': 14, 'VACUOUS': 29}
+  [DATA] indivisible triples, by arm: {'ARM-A/sigma': ['(1, 2, 3)', '(1, 3, 4)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)'], 'ARM-A/sigma+': ['(1, 2, 3)', '(2, 3, 4)', '(2, 3, 5)', '(2, 4, 5)', '(3, 4, 5)'], 'ARM-B': ['(4, 5, 6)'], 'ARM-D': ['(1, 3, 4)', '(2, 3, 4)']}
+
+  >>> VERDICT: U1-BRIDGE
+      At least one composable cut triple of the generated transport law,
+      read at record grain, admits NO stochastic interpolant at all — not
+      merely a pseudo-stochastic algebraic one.  By the preamble's (D2)
+      and (D3) this is the corpus's first generated INDIVISIBLE BRIDGE,
+      and the first indivisibility witness of any kind since v1's two
+      abandoned ones.  The (D4) everywhere-form is FALSE: the census
+      contains divisible triples, vacuous triples and indivisible ones,
+      and they are enumerated above.
+
+  AND THE U1-SPLIT TEST, RUN AND REPORTED RATHER THAN ASSUMED AWAY.
+  The pin's third outcome fires if the two instruments disagree.  They
+  do disagree — but ONE-SIDEDLY and with the direction measured: every
+  triple Arm 1 calls INDIVISIBLE is Arm-2 defective, and Arm 2 is also
+  defective on triples Arm 1 calls DIVISIBLE and on every VACUOUS one.
+  Arm 2's descent conditions fail at EVERY parent depth >= 1 and EVERY
+  cut depth >= 2 in this family, so at window scale Arm 2 has no
+  resolving power at all.  The witness class that would have made this a
+  genuine U1-SPLIT — an INDIVISIBLE triple in a CLEAN window, which would
+  put the instruments in opposite directions on one object — is EMPTY: 0 of 8.  The verdict is
+  therefore U1-BRIDGE with a characterised containment, not U1-SPLIT;
+  descent failure is NECESSARY BUT NOT SUFFICIENT for cut-indivisibility
+  on this family, and that relation is itself a first-class result of U1.
+
+  SCOPE, NON-NEGOTIABLE.  Transport scope (d42b1), the declared families
+  and caps only; renewal grain per paper 0 sec.4's POSIT, which PORT-3
+  shows is delivery-conditioned rather than grammatical; no infinite-
+  volume claim; no measure-existence claim (D70's bound is open); no CP
+  statement of any kind; no Bell or locality statement of any kind; and,
+  per L-1, no claim of exact covariance anywhere — at most statistical
+  Lorentz invariance is available at renewal grain and none is claimed
+  here.  The J-conjecture is NOT tested (that is U2); the unistochasticity
+  screen is REPORTED and not adjudicated (that is U3).
+
+[SUMMARY] 36 PASS / 0 FAIL / 0 ANCHOR-FAIL
+[RUNTIME] 242s wall clock, single-threaded, exact arithmetic throughout
+[CAPS] ARM-A depth 5; ARM-B depth 6; ARM-D depth 4 (3 actors); anchors depth 4/3; closed scope depth 6; DC1 parents depth 3; LP caps 700 vars / 400 rows
+[EXIT] 0 — substantive negatives are results, not failures
