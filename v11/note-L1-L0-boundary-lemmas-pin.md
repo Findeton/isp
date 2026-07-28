@@ -55,7 +55,7 @@ claim beyond its committed scope.
 There is no open outcome: both sources are corpus theorems.  The
 unit's risk is fidelity, not truth — the hostile round's job is to
 check the restatements do not smuggle strength the sources lack
-(the D15-sentence discipline, §6.6 of paper 0).
+(the D15-sentence discipline, §6.5 of paper 0).
 
 ## Scope
 

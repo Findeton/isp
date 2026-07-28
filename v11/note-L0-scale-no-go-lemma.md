@@ -48,11 +48,13 @@ verbatim:
 > the seal-spacing length `l_step` is provably the unique dimensionful primitive and the sole gauge direction.
 
 The catalog carries the graded entry at
-`note-v11p0a-reproduction-catalog.md` §2.2 (lines 715–794):
+`note-v11p0a-reproduction-catalog.md` §2.2 (lines 721–800):
 **[THEOREM], and structurally UNCONDITIONAL**, presupposing *"the
 sealed-record weight calculus (Theorem G / Corollary 2 of v6 paper 6)
 and **gate G1**"* and **explicitly not** presupposing axiom (R), the
-focusing gate, or `θ = σ = 0`.
+focusing gate, or `θ = σ = 0`.  The catalog co-tags the same entry
+**[LATER-CORRECTED]** in one respect — the compressed equality chain,
+§2 below — and L0 carries both tags together, never the grade alone.
 
 ---
 
@@ -65,7 +67,7 @@ not quoted in this lemma.**  `v8/LEDGER.md` correction **#13**
 
 > per v7 paper 16 §5 / paper 57, these are *separate* record-scale invariants (each constant under `l → μl`), **not numerically equal to each other** — the "= const" chain must not read as an equality between them.
 
-The catalog records the same correction, §2.2(c) (lines 765–768),
+The catalog records the same correction, §2.2(c) (lines 771–774),
 verbatim:
 
 > the compressed form *"`κ·σ_A = G·Λ² = const`"* is
@@ -100,7 +102,7 @@ records are generated, and the corpus's own doctrine (catalog §0.5)
 is that *the v10 generated grammar is not derived from the sealing
 formalism* and *v10's actors are not v6's division events*.  The
 catalog's transfer judgement is `[MY READING]`, §2.2(e) (lines
-779–781):
+785–787):
 
 > **KINEMATICS** — a theorem about what a counting ontology can carry — and it **transfers to v11 almost unchanged**, since v11's kinematics is also a bare causal order with no absolute length.
 
@@ -116,7 +118,7 @@ wants that stronger statement, it must build it.
 
 **The dimensional-analysis caveat, carried from the corpus against
 itself** (`v6/publishable/companion-G-scale-grading.md`, via catalog
-§2.2(e) lines 787–791), verbatim:
+§2.2(e) lines 793–797), verbatim:
 
 > the grading-homomorphism and weight-zero-subring structure is **standard** — it is the algebra of a graded ring and the content of dimensional analysis (Buckingham-Π; Coleman–Weinberg).  **This note proves no new mainstream theorem.**
 
@@ -184,13 +186,13 @@ the corpus polices the difference.  Source:
 
 > **The internal asymmetry, stated honestly.** Paper 57's §2 **scale no-go proper** — the weight-counting lemma that every intrinsic record functional is weight-`0` while `σ_A` is weight `−2`, so the absolute unit is outside the `g_λ` gauge orbit — does **not** itself depend on axiom (R). That part is the structural fact the receipt verifies. But the classification *claim* that this missing weight-`(−2)` unit **is gravity's Newton `G`** is delivered through the Jacobson / Clausius Einstein-form route. So the `G` **leg of the classification** is honestly a **conditional no-go** — conditional on the Jacobson–Clausius premise plus the three Paper 57 conditionals. We do **not** present it as a clean structural no-go on a par with tensor and mode. The headline is **two structural no-gos + one conditional**, never a clean threefold all-experiment-fixed symmetry — a load-bearing honesty constraint of this paper.
 
-v10's compression, carried in catalog §2.3(a) (lines 807–809),
+v10's compression, carried in catalog §2.3(a) (lines 813–815),
 verbatim:
 
 > the wall stands unconditionally, the `G`-naming of it is
 > conditional.
 
-**The discipline v11 adopts**, catalog §2.3(e) (lines 830–834):
+**The discipline v11 adopts**, catalog §2.3(e) (lines 836–840):
 every v11 result of the form *"the records cannot supply X"*
 
 > must state, separately, what identifies the
@@ -210,12 +212,17 @@ asks which internal observables the crystal's symmetries force.
   volume, or any quantity of nonzero length-weight.
 - **L0-G2.** Every U5 observable is reported with its **weight**.  An
   observable whose weight is not stated is not reportable.
-- **L0-G3.** A U5 observable of nonzero weight is, by L0, a **relabeling
-  of the one record length** — not a second scale.  Paper 57's
-  second-scale sweep (line 37, line 39) closed correlation lengths,
-  transmuted scales, and UV fixed points by exactly this route; a v11
-  candidate of any of those shapes is pre-refuted and must be
-  reported as a relabeling, not a discovery.
+- **L0-G3.** A U5 observable of nonzero weight **may not be reported as
+  a second scale.**  The prohibition is on the announcement, not a
+  description of the generated carrier: the source's positive reading
+  — that such a quantity is a relabeling of *the one record length* —
+  belongs to the SHARD sealed-record ontology, where `l_step` is the
+  unique dimensionful primitive, and v11's generated carrier has no
+  `l_step` to relabel.  Paper 57's second-scale sweep (line 37, line
+  39) closed correlation lengths, transmuted scales, and UV fixed
+  points by exactly that route; a v11 candidate of any of those shapes
+  is pre-refuted **as an announcement of a second scale**, and may be
+  reported only as a weighted quantity, never as a discovery.
 - **L0-G4.** U5's only admissible gravity-sector target is dimensionless
   (§4).  Reaching `c_m` is not reaching `G`.
 - **L0-G5.** The pre-registered spin-2 negative (paper 0 §7, line 331)
@@ -225,8 +232,10 @@ asks which internal observables the crystal's symmetries force.
 IV proposes to derive from renewal counting the two ingredients
 Jacobson assumes: the area coefficient and the pure-area property.
 
-- **L0-G6.** Success at that target yields the Einstein **form**, never
-  the Einstein **scale**.  L0 forbids the announcement of `G`.
+- **L0-G6.** Success at that target **may be reported as the Einstein
+  form only, never as the Einstein scale.**  L0 forbids the
+  announcement of `G` whatever the derivation delivers; it does not
+  assert what the generated carrier yields.
 - **L0-G7.** Any Phase IV result naming the missing weight-`(−2)` unit
   *as* Newton's `G` inherits §5's four premises **verbatim** and must
   carry them in the same paragraph as the claim.  The wall may be
@@ -242,7 +251,7 @@ Jacobson assumes: the area coefficient and the pure-area property.
 
 | item | status | home |
 |---|---|---|
-| The unified scale no-go (`σ_A` ↔ `G`, absolute scale un-fixable) | **[IMPORTED-NO-GO]**; source grade **[THEOREM], structurally unconditional** at its own scope | v6 paper 57:31–51 |
+| The unified scale no-go (`σ_A` ↔ `G`, absolute scale un-fixable) | **[IMPORTED-NO-GO]**; source grade **[THEOREM], structurally unconditional** at its own scope, co-tagged **[LATER-CORRECTED]** (the equality chain, §2) | v6 paper 57:31–51 |
 | `κ·σ_A = 2π` and, separately, `G·Λ² = const` | **[IMPORTED, verbatim]** — two invariants, never an equality chain | v6 paper 57:35; `v8/LEDGER.md`:47 |
 | The weight-counting lemma | **[IMPORTED, verbatim]**, not re-proved on v11's carrier | v6 paper 57:39 |
 | Gate G1, and *"airtight iff G1 holds"* | **[IMPORTED, verbatim]**; **never audited on a generated carrier** | v6 paper 57:37 |
@@ -271,7 +280,7 @@ Jacobson assumes: the area coefficient and the pure-area property.
   (the four premises), :128 (the internal asymmetry).
 - `v8/LEDGER.md`:47 (correction #13, the equality-chain erratum).
 - `v11/note-v11p0a-reproduction-catalog.md`
-  :715–794 (§2.2), :796–834 (§2.3), :112–128 (§0.5, the doctrine).
+  :721–800 (§2.2), :802–840 (§2.3), :118–134 (§0.5, the doctrine).
 - `v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md`
   :278–285 (§7 L0), :322–336 (§7 U5), :394–403 (§9b Phase IV),
   :456–458 (§11, the one open eligible target).

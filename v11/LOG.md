@@ -268,3 +268,47 @@ AMENDMENTS block.  Reviewer-found corpus slip: d72 §5(a) cites
 paper30:2838 for the 1.82; the receipt line is :2833 (recorded, d72
 not edited).  Adjudicator's own edit: the catalog's :61-62
 1178–1195 range corrected in-line (dated).  **H1 IS TERMINAL.**
+
+## 2026-07-27 — L-1+L0 HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES,
+## ALL APPLIED — L-1+L0 TERMINAL (v11 LEDGER #9)
+The round returned ZERO B findings and independently confirmed the
+mathematics: Lemma 2.3 re-verified by exhaustive 3×3 enumeration
+over (1/6)Z (6 stochastic-invertible matrices, all permutations, 0
+counterexamples); the [V11-STEP] boost lemma's divisibility
+argument confirmed from scratch; all four logged pin deviations
+confirmed toward-the-corpus.  Four M + six m + six n, all
+scope-and-grade; all applied: **(M1)** the ladder's rung 2
+regraded [NO-GO]→[MY READING] (the catalog's own §1.6(e) grade),
+its two unproved steps stated (Minkowski embedding; graph-LI vs
+point-set-LI), the catalog's internal inconsistency (§1.6(e) vs
+§7-rank-5 "provably unavailable") recorded, neither voice
+inherited.  **(M2)** "the only rung left" reconciled against paper
+8's admissible-forms list: rung 2 = form 1; form 2 (projective
+compatibility) RESTORED to the ladder; ORDER-LEVEL COVARIANCE IS A
+FOURTH FORM OUTSIDE PAPER 8'S LIST whose admissibility v11 must
+argue when U4 runs; C2 made jointly satisfiable; paper0:272-275
+("precisely the form U4 tests") flagged as narrowed — paper-0
+routing deferred to the Phase-I-end edit pass.  **(M3)** L0-G3 and
+L0-G6 rewritten deontic (may not be REPORTED as a second scale /
+as the Einstein scale); the l_step presupposition dropped (v11's
+carrier has no l_step to relabel).  **(M4)** THE RECEIPT UPGRADED:
+new check C, whole-blockquote integrity — every contiguous
+blockquote must be verbatim inside its anchor's cited span;
+uncovered blockquotes are hard failures; the reviewer's
+fabricated-sentence attack now FAILS exit 1 (negative control
+rerun in scratchpad; pristine copy exits 0).  41/41 anchors (39+2
+new) + 26/26 blockquotes, adjudicator rerun BYTE-IDENTICAL against
+the post-#8 tree (anchors re-pinned to the catalog's +6 shift
+from H1's routing insert — the two repairs were
+commit-ordered for exactly this coupling).  m-fixes: "untested" →
+"untested ON A GENERATED CARRIER" (order-level receipts exist on
+other carriers: v7 note-C2 rapidity 0.9, catalog §1.7 rapidity
+0.8); (b) marked as sharpening/correction (source's "cannot be
+represented" imprecise — R_b = I means representable but only
+trivially); the group-action generalization marked [V11-STEP]; the
+non-invertibility loophole corrected to semigroup/non-group
+actions.  **(m6, the fifth deviation, logged here as the
+reviewer's own):** the PIN's gloss "no finite stochastic matrix
+system realizes exact Lorentz covariance" is BROADER than Cor
+2.4's invertibility hypothesis; the note correctly narrows it —
+deviation five, toward the corpus.  **L-1+L0 IS TERMINAL.**

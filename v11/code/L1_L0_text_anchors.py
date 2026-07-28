@@ -5,11 +5,17 @@ v11 L-1 + L0 — TEXT-ANCHOR RECEIPT.
 Every passage quoted verbatim in
     v11/note-L1-lorentz-no-go-lemma.md
     v11/note-L0-scale-no-go-lemma.md
-is verified twice:
+is verified three ways:
 
   (A) the quote appears verbatim in the CITED COMMITTED SOURCE FILE,
       inside the cited line span;
-  (B) the quote appears verbatim in the LEMMA NOTE that cites it.
+  (B) the quote appears verbatim in the LEMMA NOTE that cites it;
+  (C) BLOCKQUOTE INTEGRITY — every Markdown blockquote in either note
+      (a contiguous run of '>'-prefixed lines) is (C1) covered by at
+      least one anchor whose quote it contains, and (C2) contained
+      IN WHOLE inside that anchor's cited source span.  (C) is what
+      stops a blockquote from carrying fabricated text alongside an
+      anchored substring: (A)+(B) alone only pin the substring.
 
 Verbatim means: identical after whitespace normalization only
 (runs of whitespace collapsed to one space).  Markdown hard-wrapping
@@ -18,7 +24,8 @@ stripped from the note side before normalization; nothing else is
 altered on either side, so emphasis markers, backticks, dashes,
 minus signs and superscripts must match exactly.
 
-Exit 0 = every anchor clean.  Exit 1 = one or more mismatches.
+Exit 0 = every anchor and every blockquote clean.
+Exit 1 = one or more mismatches.
 
 Deterministic, single-threaded, no dependencies.
 """
@@ -77,7 +84,7 @@ ANCHORS: list[tuple[str, str, str, tuple[int, int], str]] = [
     ),
     (
         "L1-A5 catalog 1.3(d) presuppositions",
-        NOTE_L1, CAT, (312, 314),
+        NOTE_L1, CAT, (318, 320),
         "a finite configuration set and row-stochastic maps. "
         "**Nothing else — no background metric, no action, no Hilbert space.**",
     ),
@@ -101,41 +108,51 @@ ANCHORS: list[tuple[str, str, str, tuple[int, int], str]] = [
     ),
     (
         "L1-A9 catalog 1.3(e) the collision",
-        NOTE_L1, CAT, (320, 321),
+        NOTE_L1, CAT, (326, 327),
         "on exactly such a space, no nontrivial boost can act as an invertible "
         "stochastic map",
     ),
     (
         "L1-A10 catalog 1.3(e) binding constraint",
-        NOTE_L1, CAT, (324, 325),
+        NOTE_L1, CAT, (330, 331),
         "**binding constraint that paper 0 does not currently carry**",
     ),
     (
         "L1-A11 catalog 1.3(e) the two non-invertibilities",
-        NOTE_L1, CAT, (325, 327),
+        NOTE_L1, CAT, (331, 333),
         "the very non-invertibility that Cor 2.4 treats as the obstruction to "
         "covariance is what Barandes treats as the signature of indivisibility.",
     ),
     (
         "L1-A12 catalog §7 rank 2 the same, sharpened",
-        NOTE_L1, CAT, (3135, 3137),
+        NOTE_L1, CAT, (3141, 3143),
         "the non-invertibility Cor 2.4 treats as the obstruction to covariance is "
         "the same non-invertibility Barandes treats as the signature of "
         "indivisibility.",
     ),
     (
         "L1-A13 catalog 1.5(d) the sprinkling presupposition",
-        NOTE_L1, CAT, (380, 381),
+        NOTE_L1, CAT, (386, 387),
         "a background Minkowski space to sprinkle into",
     ),
     (
         "L1-A14 catalog 1.6(e) the BHS block on v11's carrier",
-        NOTE_L1, CAT, (417, 422),
+        NOTE_L1, CAT, (423, 428),
         "v11's crystals are finite-valency by construction, so BHS says their renewal "
         "sublattice **cannot** be statistically Lorentz-invariant in the sprinkling "
         "sense.  U4 must therefore test a *weaker* covariance (order-level, per "
         "P-Lor) and say so in advance — otherwise it will manufacture a false "
         "negative.",
+    ),
+    (
+        "L1-A15 catalog 1.5(a) a regular lattice is frame-recoverable",
+        NOTE_L1, CAT, (368, 369),
+        "a regular lattice **is** frame-recoverable",
+    ),
+    (
+        "L1-A16 paper0 §7 'precisely the form U4 tests'",
+        NOTE_L1, PAPER0, (272, 275),
+        "precisely the form U4 tests",
     ),
     # ---------------- L0 ----------------
     (
@@ -205,32 +222,32 @@ ANCHORS: list[tuple[str, str, str, tuple[int, int], str]] = [
     ),
     (
         "L0-A10 catalog 2.2(c) the compressed form is wrong",
-        NOTE_L0, CAT, (765, 768),
+        NOTE_L0, CAT, (771, 774),
         "the compressed form *\"`κ·σ_A = G·Λ² = const`\"* is **WRONG AS AN EQUALITY** "
         "— these are two *separate* weight-zero invariants, each a fixed pure number, "
         "**not numerically equal**.",
     ),
     (
         "L0-A11 catalog 2.2(c) grade",
-        NOTE_L0, CAT, (756, 757),
+        NOTE_L0, CAT, (762, 763),
         "**[THEOREM], and structurally UNCONDITIONAL**",
     ),
     (
         "L0-A12 catalog 2.2(d) presuppositions",
-        NOTE_L0, CAT, (774, 776),
+        NOTE_L0, CAT, (780, 782),
         "the sealed-record weight calculus (Theorem G / Corollary 2 of v6 paper 6) "
         "and **gate G1**",
     ),
     (
         "L0-A13 catalog 2.2(e) the transfer reading",
-        NOTE_L0, CAT, (779, 781),
+        NOTE_L0, CAT, (785, 787),
         "**KINEMATICS** — a theorem about what a counting ontology can carry — and it "
         "**transfers to v11 almost unchanged**, since v11's kinematics is also a bare "
         "causal order with no absolute length.",
     ),
     (
         "L0-A14 catalog 2.2(e) the corpus against itself",
-        NOTE_L0, CAT, (788, 791),
+        NOTE_L0, CAT, (794, 797),
         "the grading-homomorphism and weight-zero-subring structure is **standard** — "
         "it is the algebra of a graded ring and the content of dimensional analysis "
         "(Buckingham-Π; Coleman–Weinberg).  **This note proves no new mainstream "
@@ -238,12 +255,12 @@ ANCHORS: list[tuple[str, str, str, tuple[int, int], str]] = [
     ),
     (
         "L0-A15 catalog 0.5 the two unbridged rows",
-        NOTE_L0, CAT, (120, 123),
+        NOTE_L0, CAT, (126, 129),
         "the v10 generated grammar is not derived from the sealing formalism",
     ),
     (
         "L0-A16 catalog 0.5 actors are not division events",
-        NOTE_L0, CAT, (120, 123),
+        NOTE_L0, CAT, (126, 129),
         "v10's actors are not v6's division events",
     ),
     (
@@ -301,12 +318,12 @@ ANCHORS: list[tuple[str, str, str, tuple[int, int], str]] = [
     ),
     (
         "L0-A21 catalog 2.3(a) v10's compression",
-        NOTE_L0, CAT, (807, 809),
+        NOTE_L0, CAT, (813, 815),
         "the wall stands unconditionally, the `G`-naming of it is conditional.",
     ),
     (
         "L0-A22 catalog 2.3(e) the discipline",
-        NOTE_L0, CAT, (831, 834),
+        NOTE_L0, CAT, (837, 840),
         "must state, separately, what identifies the missing quantity with a physical "
         "constant — and grade that identification on its own.",
     ),
@@ -329,12 +346,44 @@ ANCHORS: list[tuple[str, str, str, tuple[int, int], str]] = [
     ),
 ]
 
+# Blockquotes deliberately NOT attributed to a committed source.
+# Each entry is (note_rel, first_line_of_the_blockquote, justification).
+# An entry exempts that blockquote from check C and PRINTS its
+# justification in the receipt.  Empty by design: in these two notes
+# every blockquote is a source quote.
+BLOCKQUOTE_WHITELIST: list[tuple[str, int, str]] = []
+
 WS = re.compile(r"\s+")
 BQ = re.compile(r"^[ \t]*(?:>[ \t]?)+")
+BQ_LINE = re.compile(r"^[ \t]*>")
 
 
 def norm(text: str) -> str:
     return WS.sub(" ", text).strip()
+
+
+def blockquotes(text: str) -> list[tuple[int, int, str]]:
+    """Every contiguous run of '>'-prefixed lines, normalized.
+
+    Returns (first_line, last_line, normalized_text), 1-based, empty
+    blocks dropped.
+    """
+    blocks: list[tuple[int, int, str]] = []
+    cur: list[str] = []
+    start = 0
+    last = 0
+    for i, line in enumerate(text.splitlines(), start=1):
+        last = i
+        if BQ_LINE.match(line):
+            if not cur:
+                start = i
+            cur.append(BQ.sub("", line))
+        elif cur:
+            blocks.append((start, i - 1, norm("\n".join(cur))))
+            cur = []
+    if cur:
+        blocks.append((start, last, norm("\n".join(cur))))
+    return [b for b in blocks if b[2]]
 
 
 def note_body(text: str) -> str:
@@ -361,6 +410,8 @@ def main() -> int:
     out.append(f"anchors   : {len(ANCHORS)}")
     out.append("check A   : quote verbatim in cited source file, inside cited span")
     out.append("check B   : quote verbatim in the lemma note that cites it")
+    out.append("check C   : every blockquote is anchor-covered AND wholly verbatim")
+    out.append("            inside its anchor's cited source span")
     out.append("normalization: whitespace only (+ blockquote markers on the note side)")
     out.append("=" * 72)
     out.append("")
@@ -396,17 +447,91 @@ def main() -> int:
                 out.append(f"       span : {span[:220]}")
             failures.append(f"{aid}: A={a_ok} B={b_ok}")
 
+    # ------------------------------------------------------------------
+    # check C — blockquote integrity
+    # ------------------------------------------------------------------
+    out.append("")
+    out.append("-" * 72)
+    out.append("CHECK C — BLOCKQUOTE INTEGRITY")
+    out.append("-" * 72)
+
+    n_bq = 0
+    for note_rel in (NOTE_L1, NOTE_L0):
+        note_text = (ROOT / note_rel).read_text(encoding="utf-8")
+        for lo_b, hi_b, bq in blockquotes(note_text):
+            n_bq += 1
+            tag = f"{note_rel}:{lo_b}-{hi_b}"
+
+            wl = [w for w in BLOCKQUOTE_WHITELIST if w[0] == note_rel and w[1] == lo_b]
+            if wl:
+                out.append(f"[EXEMPT] {tag}  (not a source quote)")
+                out.append(f"         justification: {wl[0][2]}")
+                continue
+
+            cands = [a for a in ANCHORS if a[1] == note_rel and norm(a[4]) in bq]
+            if not cands:
+                out.append(f"[FAIL] {tag}  NO ANCHOR COVERS THIS BLOCKQUOTE")
+                out.append(f"       text: {bq[:220]}")
+                failures.append(f"blockquote {tag}: uncovered by any anchor")
+                continue
+
+            matched = None
+            for a in sorted(cands, key=lambda a: -len(norm(a[4]))):
+                if a[2] not in src_cache:
+                    src_cache[a[2]] = read(a[2])
+                lines_a = src_cache[a[2]]
+                lo, hi = a[3]
+                if hi > len(lines_a):
+                    continue
+                span_a = norm("\n".join(lines_a[lo - 1:hi]))
+                if bq in span_a:
+                    matched = (a, span_a)
+                    break
+
+            if matched is not None:
+                a, _ = matched
+                out.append(f"[ OK ] {tag}  whole blockquote verbatim in "
+                           f"{a[2]}:{a[3][0]}-{a[3][1]}  (anchor {a[0]})")
+            else:
+                best = sorted(cands, key=lambda a: -len(norm(a[4])))[0]
+                q = norm(best[4])
+                residue = " | ".join(p.strip() for p in bq.split(q) if p.strip())
+                out.append(f"[FAIL] {tag}  BLOCKQUOTE CARRIES TEXT ABSENT FROM ITS SOURCE")
+                out.append(f"       nearest anchor: {best[0]}  "
+                           f"({best[2]}:{best[3][0]}-{best[3][1]})")
+                out.append(f"       unattested text: {residue[:400]}")
+                failures.append(
+                    f"blockquote {tag}: not wholly inside {best[2]}:"
+                    f"{best[3][0]}-{best[3][1]}"
+                )
+
     out.append("")
     out.append("=" * 72)
     if failures:
-        out.append(f"RESULT: {len(failures)} / {len(ANCHORS)} ANCHORS FAILED")
+        out.append(f"RESULT: FAILED — {len(failures)} problem(s) "
+                   f"over {len(ANCHORS)} anchors and {n_bq} blockquotes")
         for f in failures:
             out.append(f"  - {f}")
         out.append("EXIT 1")
     else:
-        out.append(f"RESULT: {len(ANCHORS)} / {len(ANCHORS)} ANCHORS CLEAN")
-        out.append("Every quoted passage in both lemma notes is verbatim in its")
-        out.append("cited committed source file, inside its cited line span.")
+        out.append(f"RESULT: {len(ANCHORS)} / {len(ANCHORS)} ANCHORS CLEAN, "
+                   f"{n_bq} / {n_bq} BLOCKQUOTES ATTESTED")
+        out.append("")
+        out.append("VERIFIED, exactly:")
+        out.append("  (A) every anchored quote appears verbatim — whitespace")
+        out.append("      normalization only — inside the cited line span of its")
+        out.append("      cited committed source file;")
+        out.append("  (B) every anchored quote appears verbatim in the lemma note")
+        out.append("      that cites it;")
+        out.append("  (C) every Markdown blockquote in both notes is covered by an")
+        out.append("      anchor and lies IN WHOLE inside that anchor's cited source")
+        out.append("      span — no blockquote carries text absent from its source.")
+        out.append("")
+        out.append("NOT VERIFIED by this receipt:")
+        out.append("  - prose outside blockquotes (inline quoted fragments are")
+        out.append("    checked only where an anchor names them);")
+        out.append("  - that the cited line spans are the right sections;")
+        out.append("  - any claim, grade, or inference the notes make.")
         out.append("EXIT 0")
     out.append("=" * 72)
 

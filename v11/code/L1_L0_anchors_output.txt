@@ -1,9 +1,11 @@
 v11 L-1 + L0 — TEXT-ANCHOR RECEIPT
 ========================================================================
 repo root : /Users/felixrobles/workspace/isp
-anchors   : 39
+anchors   : 41
 check A   : quote verbatim in cited source file, inside cited span
 check B   : quote verbatim in the lemma note that cites it
+check C   : every blockquote is anchor-covered AND wholly verbatim
+            inside its anchor's cited source span
 normalization: whitespace only (+ blockquote markers on the note side)
 ========================================================================
 
@@ -16,7 +18,7 @@ normalization: whitespace only (+ blockquote markers on the note side)
 [ OK ] L1-A4 v3p8 'can only act by permutations'
        source v3/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md:132-137   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A5 catalog 1.3(d) presuppositions
-       source v11/note-v11p0a-reproduction-catalog.md:312-314   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:318-320   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A6 paper0 §4 fixed-configuration posit
        source v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:146-149   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A7 paper0 §7 the bound
@@ -24,17 +26,21 @@ normalization: whitespace only (+ blockquote markers on the note side)
 [ OK ] L1-A8 paper0 §7 the prohibition
        source v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:276-277   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A9 catalog 1.3(e) the collision
-       source v11/note-v11p0a-reproduction-catalog.md:320-321   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:326-327   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A10 catalog 1.3(e) binding constraint
-       source v11/note-v11p0a-reproduction-catalog.md:324-325   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:330-331   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A11 catalog 1.3(e) the two non-invertibilities
-       source v11/note-v11p0a-reproduction-catalog.md:325-327   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:331-333   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A12 catalog §7 rank 2 the same, sharpened
-       source v11/note-v11p0a-reproduction-catalog.md:3135-3137   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:3141-3143   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A13 catalog 1.5(d) the sprinkling presupposition
-       source v11/note-v11p0a-reproduction-catalog.md:380-381   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:386-387   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L1-A14 catalog 1.6(e) the BHS block on v11's carrier
-       source v11/note-v11p0a-reproduction-catalog.md:417-422   note v11/note-L1-lorentz-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:423-428   note v11/note-L1-lorentz-no-go-lemma.md
+[ OK ] L1-A15 catalog 1.5(a) a regular lattice is frame-recoverable
+       source v11/note-v11p0a-reproduction-catalog.md:368-369   note v11/note-L1-lorentz-no-go-lemma.md
+[ OK ] L1-A16 paper0 §7 'precisely the form U4 tests'
+       source v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:272-275   note v11/note-L1-lorentz-no-go-lemma.md
 [ OK ] L0-A1 p57 §2.1 the result
        source v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:33-33   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A2 p57 the two weight-zero invariants
@@ -54,19 +60,19 @@ normalization: whitespace only (+ blockquote markers on the note side)
 [ OK ] L0-A9 v8 LEDGER correction #13
        source v8/LEDGER.md:47-47   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A10 catalog 2.2(c) the compressed form is wrong
-       source v11/note-v11p0a-reproduction-catalog.md:765-768   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:771-774   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A11 catalog 2.2(c) grade
-       source v11/note-v11p0a-reproduction-catalog.md:756-757   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:762-763   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A12 catalog 2.2(d) presuppositions
-       source v11/note-v11p0a-reproduction-catalog.md:774-776   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:780-782   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A13 catalog 2.2(e) the transfer reading
-       source v11/note-v11p0a-reproduction-catalog.md:779-781   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:785-787   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A14 catalog 2.2(e) the corpus against itself
-       source v11/note-v11p0a-reproduction-catalog.md:788-791   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:794-797   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A15 catalog 0.5 the two unbridged rows
-       source v11/note-v11p0a-reproduction-catalog.md:120-123   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:126-129   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A16 catalog 0.5 actors are not division events
-       source v11/note-v11p0a-reproduction-catalog.md:120-123   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:126-129   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A17 p17 §4.1 the derivation does not stand alone
        source v7/relativistic-isp-v7-paper17-three-walls-classification-theorem.md:119-119   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A18 p17 §4.1 the four named premises
@@ -76,9 +82,9 @@ normalization: whitespace only (+ blockquote markers on the note side)
 [ OK ] L0-A20 p17 c_m rides the MODE axis
        source v7/relativistic-isp-v7-paper17-three-walls-classification-theorem.md:25-25   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A21 catalog 2.3(a) v10's compression
-       source v11/note-v11p0a-reproduction-catalog.md:807-809   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:813-815   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A22 catalog 2.3(e) the discipline
-       source v11/note-v11p0a-reproduction-catalog.md:831-834   note v11/note-L0-scale-no-go-lemma.md
+       source v11/note-v11p0a-reproduction-catalog.md:837-840   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A23 paper0 §7 L0's corrected form
        source v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:280-283   note v11/note-L0-scale-no-go-lemma.md
 [ OK ] L0-A24 paper0 §11 no constant reproduced
@@ -86,9 +92,53 @@ normalization: whitespace only (+ blockquote markers on the note side)
 [ OK ] L0-A25 paper0 §11 the one open eligible target
        source v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:457-458   note v11/note-L0-scale-no-go-lemma.md
 
+------------------------------------------------------------------------
+CHECK C — BLOCKQUOTE INTEGRITY
+------------------------------------------------------------------------
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:19-21  whole blockquote verbatim in v3/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md:110-114  (anchor L1-A1 v3p8 Lemma 2.3)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:25-28  whole blockquote verbatim in v3/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md:132-137  (anchor L1-A2 v3p8 Corollary 2.4)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:32-40  whole blockquote verbatim in v3/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md:139-147  (anchor L1-A3 v3p8 admissible finite covariance statements)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:139-141  whole blockquote verbatim in v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:272-275  (anchor L1-A7 paper0 §7 the bound)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:145-146  whole blockquote verbatim in v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:276-277  (anchor L1-A8 paper0 §7 the prohibition)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:157-159  whole blockquote verbatim in v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md:146-149  (anchor L1-A6 paper0 §4 fixed-configuration posit)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:181-183  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:331-333  (anchor L1-A11 catalog 1.3(e) the two non-invertibilities)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:187-189  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:3141-3143  (anchor L1-A12 catalog §7 rank 2 the same, sharpened)
+[ OK ] v11/note-L1-lorentz-no-go-lemma.md:211-215  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:423-428  (anchor L1-A14 catalog 1.6(e) the BHS block on v11's carrier)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:21-21  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:33-33  (anchor L0-A1 p57 §2.1 the result)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:26-26  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:35-35  (anchor L0-A2 p57 the two weight-zero invariants)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:31-31  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:39-39  (anchor L0-A3 p57 §2.2 the weight-counting lemma)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:35-35  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:51-51  (anchor L0-A4 p57 the unification)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:39-39  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:37-37  (anchor L0-A5 p57 gate G1)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:43-43  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:37-37  (anchor L0-A6 p57 airtight iff G1)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:48-48  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:37-37  (anchor L0-A7 p57 l_step the unique dimensionful primitive)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:68-68  whole blockquote verbatim in v8/LEDGER.md:47-47  (anchor L0-A9 v8 LEDGER correction #13)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:73-75  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:771-774  (anchor L0-A10 catalog 2.2(c) the compressed form is wrong)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:107-107  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:785-787  (anchor L0-A13 catalog 2.2(e) the transfer reading)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:123-123  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:794-797  (anchor L0-A14 catalog 2.2(e) the corpus against itself)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:135-135  whole blockquote verbatim in v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md:9-9  (anchor L0-A8 p57 abstract, c_m eligible)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:174-174  whole blockquote verbatim in v7/relativistic-isp-v7-paper17-three-walls-classification-theorem.md:119-119  (anchor L0-A17 p17 §4.1 the derivation does not stand alone)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:178-183  whole blockquote verbatim in v7/relativistic-isp-v7-paper17-three-walls-classification-theorem.md:121-126  (anchor L0-A18 p17 §4.1 the four named premises)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:187-187  whole blockquote verbatim in v7/relativistic-isp-v7-paper17-three-walls-classification-theorem.md:128-128  (anchor L0-A19 p17 §4.1 the internal asymmetry)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:192-193  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:813-815  (anchor L0-A21 catalog 2.3(a) v10's compression)
+[ OK ] v11/note-L0-scale-no-go-lemma.md:198-200  whole blockquote verbatim in v11/note-v11p0a-reproduction-catalog.md:837-840  (anchor L0-A22 catalog 2.3(e) the discipline)
+
 ========================================================================
-RESULT: 39 / 39 ANCHORS CLEAN
-Every quoted passage in both lemma notes is verbatim in its
-cited committed source file, inside its cited line span.
+RESULT: 41 / 41 ANCHORS CLEAN, 26 / 26 BLOCKQUOTES ATTESTED
+
+VERIFIED, exactly:
+  (A) every anchored quote appears verbatim — whitespace
+      normalization only — inside the cited line span of its
+      cited committed source file;
+  (B) every anchored quote appears verbatim in the lemma note
+      that cites it;
+  (C) every Markdown blockquote in both notes is covered by an
+      anchor and lies IN WHOLE inside that anchor's cited source
+      span — no blockquote carries text absent from its source.
+
+NOT VERIFIED by this receipt:
+  - prose outside blockquotes (inline quoted fragments are
+    checked only where an anchor names them);
+  - that the cited line spans are the right sections;
+  - any claim, grade, or inference the notes make.
 EXIT 0
 ========================================================================
