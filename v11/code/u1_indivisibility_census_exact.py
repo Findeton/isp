@@ -1315,11 +1315,15 @@ check("PORT-3 AND THE PORT HAS A BOUNDARY, EXHIBITED ON A CONSTRUCTED "
       "token; the pair-arb that follows supersedes only its own base, so "
       "the post-renewal state carries TWO token records and is NOT the "
       "root.  Every one of the eight events is admission-checked against "
-      "the committed layer and priced.  CONSEQUENCE, stated flatly: paper "
-      "0 sec.4's [POSIT] that renewals reset to the root — hence that the "
-      "division-event configuration space is fixed — is TRUE at every "
-      "reachable cap here and FALSE in general at transport scope; it is a "
-      "delivery-conditioned property, not a theorem of the grammar",
+      "the committed layer and priced.  CONSEQUENCE, stated flatly: what "
+      "this refutes at transport scope is paper 0 line 136's [THEOREM] "
+      "('every pair-arbitration returns the serialized state to the "
+      "root') and line 143's [THEOREM-GRADE CONVERGENCE], both imported "
+      "from closed scope WITHOUT a scope tag — TRUE at every reachable "
+      "cap here, FALSE in general at transport scope: "
+      "delivery-conditioned properties, not theorems of the grammar.  "
+      "The sec.4 [POSIT] itself (division events ARE the renewals) is "
+      "NOT the target and is not touched",
       _ok_div and _s_div != ROOT_T and len(_s_div) == 2
       and is_R4(SIG_DIV[-1]),
       f"chain admissible end to end = {_ok_div} (8 events, weights "
@@ -2178,14 +2182,24 @@ for _nm, _enr in (("alpha_sigma  (D62-faithful, winner-invisible)", False),
 _c2rows = ARM_C2["alpha_sigma+ (payload-enriched)"][0]
 _c2S = ARM_C2["alpha_sigma+ (payload-enriched)"][1]
 _c2v = _c2rows[0]["verdict"]
-check("C2c THE PINNED QUESTION IS DECIDED, AND IT DIVIDES.  The "
-      "non-degenerate renewal-to-renewal triple — first cut a division "
-      "event carrying MORE THAN ONE configuration, which is what makes it "
-      "non-degenerate, and the very computation the cap blocked — admits a "
-      "stochastic interpolant.  At renewal grain, on the minimal-interval "
-      "sub-ensemble, the record law DIVIDES; the payload-enriched map is "
-      "the one that makes the test non-vacuous and it is the one that "
-      "divides",
+check("C2c THE PINNED COMPUTATION RAN — AND RETURNED A TEST WITHOUT "
+      "BITE.  The renewal-to-renewal triple at minimal intervals admits "
+      "a stochastic interpolant (Chapman-Kolmogorov exact), but the "
+      "division is STRUCTURAL, not substantive: the joint law over the "
+      "three renewal cuts is exactly uniform (1/512 on all 512 cells), "
+      "so the renewal chain is i.i.d. uniform on 8 labels, the transfer "
+      "Gamma(r2<-r1) is COLUMN-CONSTANT (every entry 1/8, distinct "
+      "columns = 1, reported below), and X = Gamma(r3<-r1)*1^T "
+      "interpolates for ANY first transfer — the same formula sec.2 "
+      "declares structurally vacuous at a one-configuration first cut, "
+      "one level up.  Support size (8) is not what gives the test bite; "
+      "a non-column-constant transfer is, and this one is not.  "
+      "DIVISIBLE was the only reachable verdict: a DEGENERATE-DIVISIBLE "
+      "datum.  THE PINNED QUESTION IS NOT DECIDED; U1b carries all of "
+      "it.  Mechanism (the honest finding): payload_of drops the arb "
+      "token's BASE — the only object linking consecutive renewals — so "
+      "the committed enriched map retains nothing that can propagate "
+      "across a renewal by construction",
       _c2v == "DIVISIBLE" and len(_c2S[0]) > 1,
       f"renewal-grain supports {[len(_c2S[c]) for c in range(3)]}; verdict "
       f"{_c2v} by {_c2rows[0].get('instrument', 'Chapman-Kolmogorov')}; "
@@ -2818,8 +2832,8 @@ print("           functional level — all four STAND as supplied; this unit")
 print("           gates none of them, and DC3(2) says why the functional")
 print("           level in particular cannot move here.")
 print("         NEW ITEM, added by this unit: the RENEWAL RESET (paper 0")
-print("           sec.4's [POSIT]) is now scored SUPPLIED-WITH-A-BOUNDARY: "
-      "true")
+print("           line 136's [THEOREM], imported without a scope tag) is")
+print("           now scored SUPPLIED-WITH-A-BOUNDARY: true")
 print("           at every reachable cap (PORT-2), false on a constructed")
 print("           admissible chain (PORT-3).")
 report("ARM-2 time", f"{time.time() - _t:.0f}s")
@@ -3062,9 +3076,10 @@ check("B5 EVERY INDIVISIBILITY THIS RECEIPT FINDS SITS AT A CONDITIONING "
       "that rule and it separates completely: at a division-event "
       "conditioning cut there is NO indivisible triple at all — the "
       "winner-invisible readings are structurally vacuous because a "
-      "renewal resets to the root, and every non-vacuous one DIVIDES, two "
-      "of them by exact Chapman-Kolmogorov and the pinned "
-      "renewal-to-renewal triple of ARM-C2 among them.  Every indivisible "
+      "renewal resets to the root, and every non-vacuous one DIVIDES, "
+      "three of them by exact Chapman-Kolmogorov and the pinned "
+      "renewal-to-renewal triple of ARM-C2 among them (its division "
+      "degenerate — column-constant transfer, gate C2c).  Every indivisible "
       "triple in this receipt has its first cut strictly BETWEEN division "
       "events, which is cut grain and not record grain",
       _ind_at_div == 0 and _dv[(False, "INDIVISIBLE")] > 0,
@@ -3101,11 +3116,14 @@ print("      record.  At EVERY conditioning cut that IS a division event "
       "— the")
 print("      only cuts [B3] p.9 admits, and the grain paper 0 sec.4 puts "
       "the law")
-print("      at — the law DIVIDES exactly, including the pinned "
-      "non-degenerate")
-print("      renewal-to-renewal triple, which ARM-C2 runs and which "
-      "divides by")
-print("      exact Chapman-Kolmogorov on a rank-one renewal transfer.")
+print("      at — the law DIVIDES exactly wherever the interpolant test "
+      "has bite.")
+print("      The pinned renewal-to-renewal triple RAN (ARM-C2, exact and")
+print("      exhaustive) and returned a test with NONE: the renewal "
+      "transfer is")
+print("      column-constant (i.i.d. uniform chain), so its division is")
+print("      DEGENERATE and the pinned question is NOT decided (gate "
+      "C2c).")
 print("      This is a real, informative, negative-leaning result.  It is "
       "NOT the")
 print("      corpus's first generated indivisible bridge, and the U1-"
@@ -3125,18 +3143,21 @@ print("      below is the relation between the two readings of that single "
       "fact,")
 print("      not corroboration of one by the other.")
 print()
-print("      WHAT REMAINS OPEN, PRECISELY.  ARM-C2 decides the pinned "
-      "triple on")
-print("      the MINIMAL-INTERVAL sub-ensemble: conditioning on a third "
-      "renewal")
-print("      by depth 9 forces every renewal interval to its shortest "
-      "length.  A")
-print("      renewal chain with UNEQUAL intervals is not reached by this")
-print("      conditioning and is not reached by enumeration either "
-      "(~10^8")
-print("      histories at depth 9); that is the successor computation, and "
-      "it is")
-print("      named U1b.")
+print("      WHAT REMAINS OPEN, PRECISELY: THE WHOLE PINNED QUESTION.  "
+      "ARM-C2")
+print("      reaches only the MINIMAL-INTERVAL sub-ensemble (conditioning "
+      "on a")
+print("      third renewal by depth 9 forces every interval to its "
+      "shortest")
+print("      length), and there the test degenerates (gate C2c).  U1b "
+      "carries")
+print("      all of it: renewal chains with UNEQUAL intervals (unreached "
+      "here —")
+print("      ~10^8 histories at depth 9), AND any renewal-grain "
+      "configuration")
+print("      map that retains the arb base across a renewal (any map "
+      "whose")
+print("      renewal transfer is not column-constant).")
 print()
 print("  AND THE U1-SPLIT TEST, RUN AND REPORTED RATHER THAN ASSUMED "
       "AWAY.")
@@ -3161,9 +3182,11 @@ print("  put the instruments in opposite directions on one object — is "
 print()
 print("  SCOPE, NON-NEGOTIABLE.  Transport scope (d42b1), the declared "
       "families")
-print("  and caps only; renewal grain per paper 0 sec.4's POSIT, which "
+print("  and caps only; renewal grain per paper 0 sec.4's POSIT (what "
       "PORT-3")
-print("  shows is delivery-conditioned rather than grammatical; no "
+print("  refutes is paper 0 line 136's [THEOREM] and line 143's "
+      "convergence")
+print("  claim, imported without a scope tag — not the posit); no "
       "infinite-")
 print("  volume claim; no measure-existence claim (D70's bound is open); "
       "no CP")

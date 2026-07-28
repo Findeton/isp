@@ -220,7 +220,7 @@ SEC 4  ARM 0 — Born = K1 on the committed arbitration layer (exact), and the Z
            5: 2:1/8  4:1/8  5:3/4
   [DATA] ARM-0 handover to U3: the two anchor matrices are {V_single, V_pair} (exact Q(sqrt 2), Born = K1) and the 6x6 Zhat transfer above.  U3's unistochasticity screen reads the Zhat matrix: its columns do NOT sum to 1 (column sums printed below), so the completed chain is row-stochastic and NOT doubly stochastic, hence NOT unistochastic — the audit's pin (b) Arm 1 screen, recorded here as ARM-0 output and left for U3 to adjudicate
   [DATA] Zhat column sums (U3's screen, reported not adjudicated): ['25/28', '1', '59/64', '55/64', '31/32', '19/14']
-  [DATA] ARM-0 time: 10s
+  [DATA] ARM-0 time: 8s
 
 ------------------------------------------------------------------------------
 SEC 5  ANCHORS — D72/D74's committed transport census and the 44 + 44 split
@@ -473,7 +473,7 @@ SEC 6  ARM 1 (a) — the D62-R4 renewal predicate, ported to transport scope and
   [PASS] PORT-1 THE R4 ROW AND ITS RENEWAL COROLLARY HOLD AT CLOSED SCOPE, recomputed here from the ported field set: every pair-arb in the closed-scope family to depth 6 returns the serialised state to the ROOT — D62's 'every pair-arb is a RENEWAL to the root state', which is a row of the table and not a measured coincidence  (2032/2032 pair-arbs return to the root state on 34375 closed-scope histories; event-tag census {'R4': 2032, 'n': 12942, 'p': 12916, 'r': 6484})
   [DATA] ARM-A family: 30729 histories, (A,B) transport, depth <= 5  [13s]
   [PASS] PORT-2 THE PORT HOLDS IN-FAMILY AT THE DECLARED CAP: every pair-arb of the (A,B) transport family to depth 5 also returns the ported serialised state to the root, so at this window transport scope inherits D62's renewal corollary and paper 0 sec.4's fixed renewal-grain configuration space is realised  (1264/1264 pair-arbs return to root; distinct post-renewal states = 1)
-  [PASS] PORT-3 AND THE PORT HAS A BOUNDARY, EXHIBITED ON A CONSTRUCTED ADMISSIBLE CHAIN BEYOND THE CAP.  Blind self-arbitration by both actors diverges the holdings; one delivery gives B a second alive token; the pair-arb that follows supersedes only its own base, so the post-renewal state carries TWO token records and is NOT the root.  Every one of the eight events is admission-checked against the committed layer and priced.  CONSEQUENCE, stated flatly: paper 0 sec.4's [POSIT] that renewals reset to the root — hence that the division-event configuration space is fixed — is TRUE at every reachable cap here and FALSE in general at transport scope; it is a delivery-conditioned property, not a theorem of the grammar  (chain admissible end to end = True (8 events, weights ['1/8', '1/4', '1/8', '1/4', '1/8', '1/8', '1/16', '1/8']); post-pair-arb state has 2 token records vs 1 at the root; state = ((('A', 'B'), False, ()), (('B',), False, ())))
+  [PASS] PORT-3 AND THE PORT HAS A BOUNDARY, EXHIBITED ON A CONSTRUCTED ADMISSIBLE CHAIN BEYOND THE CAP.  Blind self-arbitration by both actors diverges the holdings; one delivery gives B a second alive token; the pair-arb that follows supersedes only its own base, so the post-renewal state carries TWO token records and is NOT the root.  Every one of the eight events is admission-checked against the committed layer and priced.  CONSEQUENCE, stated flatly: what this refutes at transport scope is paper 0 line 136's [THEOREM] ('every pair-arbitration returns the serialized state to the root') and line 143's [THEOREM-GRADE CONVERGENCE], both imported from closed scope WITHOUT a scope tag — TRUE at every reachable cap here, FALSE in general at transport scope: delivery-conditioned properties, not theorems of the grammar.  The sec.4 [POSIT] itself (division events ARE the renewals) is NOT the target and is not touched  (chain admissible end to end = True (8 events, weights ['1/8', '1/4', '1/8', '1/4', '1/8', '1/8', '1/16', '1/8']); post-pair-arb state has 2 token records vs 1 at the root; state = ((('A', 'B'), False, ()), (('B',), False, ())))
       the witness chain, event by event:
         0: ('p', 'A', ('v', 'v0'), 0)   q = 1/8
         1: ('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))   q = 1/4
@@ -540,7 +540,7 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
           FARKAS, row certificate: 13 obstructed targets; exemplar w over the 19 first-cut configurations, w^T b = 10215/3693158 > 0: 15 non-zero of 19; sum = -3110630002157/90674415216; entries [1:-314/1023, 2:-1, 3:-1, 4:-11, 5:1, 6:1, 7:-20736/1747, 8:41/1057, 9:146304/1846579, 10:-212598/1846579, 11:-1891/144, 12:1, 13:1, 14:-1, 15:1]
           all obstructed w^T b: ['10215/3693158', '10215/3693158', '10215/3693158', '10215/3693158', '4385/4806912', '1296/2423089', '1296/2423089', '103813/2705472', '5/7808', '5/7808', '4385/4806912', '1296/2423089', '1296/2423089']
       CENSUS ARM-A / alpha_sigma  (D62-faithful, winner-invisible): DIVISIBLE 3, INDIVISIBLE 7, VACUOUS 10
-      LP work: (1, 2, 3) 209v x 106r, 335 pivots, 1.5s; (1, 2, 4) 352v x 171r, 652 pivots, 4.4s; (1, 2, 5) 594v x 281r, 1118 pivots, 14.1s; (1, 3, 4) 608v x 179r, 3216 pivots, 99.6s; (1, 3, 5)/reduced 342v x 167r, 494 pivots, 7.8s; (1, 4, 5)/reduced 443v x 176r, 783 pivots, 23.1s
+      LP work: (1, 2, 3) 209v x 106r, 335 pivots, 1.3s; (1, 2, 4) 352v x 171r, 652 pivots, 3.5s; (1, 2, 5) 594v x 281r, 1118 pivots, 11.9s; (1, 3, 4) 608v x 179r, 3216 pivots, 81.6s; (1, 3, 5)/reduced 342v x 167r, 494 pivots, 6.4s; (1, 4, 5)/reduced 443v x 176r, 783 pivots, 19.1s
 
   [ARM-A / alpha_sigma+ (payload-enriched)]  cuts [0, 1, 2, 3, 4, 5]; configuration support sizes [1, 5, 13, 37, 97, 185]
       (0, 1, 2)  VACUOUS          [CK]  sizes 1x5x13  first cut carries a single configuration  [first cut IS a division event]
@@ -578,8 +578,8 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
           FARKAS, row certificate: 24 obstructed targets; exemplar w over the 37 first-cut configurations, w^T b = 469125/87433856 > 0: 28 non-zero of 37; sum = -1144063887690121/30690758902320; entries [1:-1, 2:-66750656/698787771, 3:-1, 4:-493149760/28875714021, 5:-2432/35805, 6:-429320960/28875714021, 7:-4462/35805, 8:-56489600/375009273, 9:-64/93, 15:-14122400/1125027819, 16:-16/279, 17:-10547339/381156966, 19:-16/279, 20:-14122400/1125027819, 21:-1, 22:-20736/1747, 23:-10469/3519, 24:111200/683077, 25:27362150/125003091, 26:-1891/144, 27:1, 28:1, 29:1, 30:1 ... (+4 more)]
           all obstructed w^T b: ['469125/87433856', '8775/557583002', '8775/557583002', '469125/87433856', '469125/87433856', '8775/557583002', '8775/557583002', '469125/87433856', '31275/59132456', '31275/59132456', '31275/59132456', '31275/59132456', '4593840869/184879000320', '365/47244', '365/47244', '4593840869/184879000320', '4593840869/184879000320', '365/47244', '365/47244', '4593840869/184879000320', '31275/59132456', '31275/59132456', '31275/59132456', '31275/59132456']
       CENSUS ARM-A / alpha_sigma+ (payload-enriched): DIVISIBLE 5, INDIVISIBLE 5, VACUOUS 10
-      LP work: (1, 2, 3) 481v x 198r, 841 pivots, 6.5s; (1, 2, 4)/reduced 243v x 156r, 263 pivots, 0.6s; (1, 2, 5)/reduced 511v x 278r, 781 pivots, 5.6s; (1, 3, 4)/reduced 457v x 174r, 945 pivots, 11.1s; (1, 3, 5)/reduced 1025v x 296r, 1492 pivots, 25.4s; (1, 4, 5)/reduced 1611v x 326r, 2912 pivots, 302.7s
-  [DATA] ARM-A time: 530s
+      LP work: (1, 2, 3) 481v x 198r, 841 pivots, 5.5s; (1, 2, 4)/reduced 243v x 156r, 263 pivots, 0.6s; (1, 2, 5)/reduced 511v x 278r, 781 pivots, 5.0s; (1, 3, 4)/reduced 457v x 174r, 945 pivots, 8.9s; (1, 3, 5)/reduced 1025v x 296r, 1492 pivots, 21.2s; (1, 4, 5)/reduced 1611v x 326r, 2912 pivots, 252.3s
+  [DATA] ARM-A time: 441s
 
   ARM-B — the DIVISION-EVENT GRAIN.  The ensemble is conditioned on a PAST
   event only: that the depth-3 prefix ends in a pair-arb, i.e. that the
@@ -604,7 +604,7 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
           FARKAS, row certificate: 64 obstructed targets; exemplar w over the 40 first-cut configurations, w^T b = 1/130 > 0: 40 non-zero of 40; sum = -7184/65; entries [0:-768/65, 1:-768/65, 2:-768/65, 3:-768/65, 4:-768/65, 5:-768/65, 6:-768/65, 7:-768/65, 8:-1, 9:-1, 10:-1, 11:-1, 12:-1, 13:-1, 14:-1, 15:-1, 16:-1, 17:-1, 18:-1, 19:-1, 20:-1, 21:-1, 22:-1, 23:-1 ... (+16 more)]
           all obstructed w^T b: ['1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130', '1/130']
       CENSUS ARM-B / alpha_sigma+ (payload-enriched): DIVISIBLE 3, INDIVISIBLE 1
-      LP work: (3, 5, 6)/reduced 426v x 137r, 188 pivots, 0.5s
+      LP work: (3, 5, 6)/reduced 426v x 137r, 188 pivots, 0.4s
 
       HOW FAR ARM-B REACHES, AND THE MAP-DEPENDENCE IT EXPOSES.  ARM-B's
       window runs three steps past the division event, i.e. relative
@@ -619,7 +619,7 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
       map and against it for the fine one: the verdict at a post-renewal
       window is a property of the CONFIGURATION MAP, not of the process
       alone.  Both readings are printed above and neither is preferred.
-  [DATA] ARM-B time: 24s
+  [DATA] ARM-B time: 21s
 
   ARM-C — RENEWAL-TO-RENEWAL.  Cuts are renewal indices 0, 1, 2.
   [DATA] renewal 2 within the cap: mass reaching a second renewal by depth 6 = 1/257; renewal-1 configurations 8; renewal-2 configurations 8
@@ -658,9 +658,9 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
   [ARM-C2 / alpha_sigma+ (payload-enriched)]  cuts [1, 2, 3]; configuration support sizes [8, 8, 8];  cuts are RENEWAL INDICES 1,2,3 — all three are division events
       (1, 2, 3)  DIVISIBLE        [CK]  sizes 8x8x8  the process's own conditional Gamma(c''<-c') works  [first cut IS a division event]
       CENSUS ARM-C2 / alpha_sigma+ (payload-enriched): DIVISIBLE 1
-  [PASS] C2c THE PINNED QUESTION IS DECIDED, AND IT DIVIDES.  The non-degenerate renewal-to-renewal triple — first cut a division event carrying MORE THAN ONE configuration, which is what makes it non-degenerate, and the very computation the cap blocked — admits a stochastic interpolant.  At renewal grain, on the minimal-interval sub-ensemble, the record law DIVIDES; the payload-enriched map is the one that makes the test non-vacuous and it is the one that divides  (renewal-grain supports [8, 8, 8]; verdict DIVISIBLE by Chapman-Kolmogorov; winner-invisible reading VACUOUS)
+  [PASS] C2c THE PINNED COMPUTATION RAN — AND RETURNED A TEST WITHOUT BITE.  The renewal-to-renewal triple at minimal intervals admits a stochastic interpolant (Chapman-Kolmogorov exact), but the division is STRUCTURAL, not substantive: the joint law over the three renewal cuts is exactly uniform (1/512 on all 512 cells), so the renewal chain is i.i.d. uniform on 8 labels, the transfer Gamma(r2<-r1) is COLUMN-CONSTANT (every entry 1/8, distinct columns = 1, reported below), and X = Gamma(r3<-r1)*1^T interpolates for ANY first transfer — the same formula sec.2 declares structurally vacuous at a one-configuration first cut, one level up.  Support size (8) is not what gives the test bite; a non-column-constant transfer is, and this one is not.  DIVISIBLE was the only reachable verdict: a DEGENERATE-DIVISIBLE datum.  THE PINNED QUESTION IS NOT DECIDED; U1b carries all of it.  Mechanism (the honest finding): payload_of drops the arb token's BASE — the only object linking consecutive renewals — so the committed enriched map retains nothing that can propagate across a renewal by construction  (renewal-grain supports [8, 8, 8]; verdict DIVISIBLE by Chapman-Kolmogorov; winner-invisible reading VACUOUS)
   [DATA] ARM-C2 renewal transfers: Gamma(r2<-r1) distinct columns 1; Gamma(r3<-r1) distinct columns 1 (1 == the renewal chain forgets its configuration in one step, so R^2 = R and every renewal triple factors through R)
-  [DATA] ARM-C2 time: 12s
+  [DATA] ARM-C2 time: 10s
 
   ARM-D — THE POOL CONTROL: the same census on a THREE-actor transport
   family, so that no verdict rests on a two-actor accident.
@@ -683,8 +683,8 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
           FARKAS, row certificate: 18 obstructed targets; exemplar w over the 22 first-cut configurations, w^T b = 116/326937 > 0: 20 non-zero of 22; sum = -829816567247/18421265265; entries [0:-116375808/20814989, 1:-23328/1313, 2:-1/249, 3:36875/653874, 4:-23875/326937, 5:-55165/326937, 6:-23875/326937, 7:-5547/295, 8:1, 9:-2331/2626, 10:-382/295, 11:1, 12:-1, 13:295/2626, 14:-677/295, 15:1, 16:-191/1313, 17:-295/2626, 18:-1, 19:1]
           all obstructed w^T b: ['116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '116/326937', '9/328250', '9/328250', '9/328250', '9/328250', '9/328250', '9/328250']
       CENSUS ARM-D / alpha_sigma (D62-faithful): DIVISIBLE 2, INDIVISIBLE 2, VACUOUS 6
-      LP work: (1, 2, 3)/reduced 154v x 158r, 503 pivots, 3.4s; (1, 2, 4)/reduced 537v x 376r, 1285 pivots, 18.0s; (1, 3, 4)/reduced 613v x 402r, 2025 pivots, 79.4s
-  [DATA] ARM-D time: 136s
+      LP work: (1, 2, 3)/reduced 154v x 158r, 503 pivots, 2.5s; (1, 2, 4)/reduced 537v x 376r, 1285 pivots, 14.1s; (1, 3, 4)/reduced 613v x 402r, 2025 pivots, 62.5s
+  [DATA] ARM-D time: 109s
 
   THE NULL.  Every verdict above is a verdict about a COARSE-GRAINING of a
   divisible click law, and the question a census cannot answer about
@@ -723,7 +723,7 @@ SEC 7  ARM 1 (b) — the Gamma family, and the [B3] eq. 22 interpolant census
   [PASS] N1 THE PIPELINE'S OWN SANITY CHECK PASSES: under the finest map the generated law satisfies Chapman-Kolmogorov EXACTLY at every test triple and divides everywhere.  Every indivisibility reported by this receipt is therefore a property of a COARSE-GRAINING and of nothing else  (full-prefix CK exact at all 5 test triples = True; prefix supports by depth [1, 8, 60, 452, 3448, 26760]; record-map supports [1, 5, 11, 19, 32, 54])
   [PASS] N2 THE NULL OUT-SCORES THE RECORD MAP.  A uniformly random partition of the same prefixes into alpha_sigma's own class sizes — zero record content, identical granularity — is obstructed on MORE target configurations than alpha_sigma is, at both seeds.  Indivisibility at cut grain is therefore what coarse-graining a divisible chain generically does, and the record map holds the property LESS strongly than noise of its own granularity.  This is the direction OPPOSITE to a bridge headline, and it is the reason this unit's verdict is scoped rather than asserted  (obstructed rows summed over the 5 test triples: alpha_sigma 51; random [174, 174]; per-triple table above)
   [DATA] Barandes' own caveat, quoted where it bites: [B3] takes UNISTOCHASTICITY, not indivisibility, as the quantum criterion: indivisibility per se is generic for classical coarse-grainings, which N2 measures directly.  The unistochasticity screen is U3's and is reported unadjudicated in ARM 0
-  [DATA] null battery time: 25s
+  [DATA] null battery time: 20s
 
   THE [B3] EQ. 22 ALGEBRAIC ARM — Gammabar = Gamma(c''<-c) Gamma(c'<-c)^-1,
   with the negative entries counted exactly.  This needs a SQUARE Gamma,
@@ -811,10 +811,11 @@ SEC 9  ARM 2 — the four descent conditions (DC1-DC4) on the same family
            gates none of them, and DC3(2) says why the functional
            level in particular cannot move here.
          NEW ITEM, added by this unit: the RENEWAL RESET (paper 0
-           sec.4's [POSIT]) is now scored SUPPLIED-WITH-A-BOUNDARY: true
+           line 136's [THEOREM], imported without a scope tag) is
+           now scored SUPPLIED-WITH-A-BOUNDARY: true
            at every reachable cap (PORT-2), false on a constructed
            admissible chain (PORT-3).
-  [DATA] ARM-2 time: 6s
+  [DATA] ARM-2 time: 5s
 
 ------------------------------------------------------------------------------
 SEC 10  THE AGREEMENT CENSUS — the two instruments, triple by triple
@@ -880,7 +881,7 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
       first conditioning cut                   INDIVISIBLE        DIVISIBLE  EXCLUDED-BY-CAP          VACUOUS            total
       IS a division event                                0                4                0               30               34
       is NOT a division event                           15               11                0                0               26
-  [PASS] B5 EVERY INDIVISIBILITY THIS RECEIPT FINDS SITS AT A CONDITIONING CUT THE LAW DOES NOT ADMIT.  [B3] p.9's conditioning rule is that the allowed conditioning times are the division events; paper 0 sec.4 fixes division events = renewals.  Split the whole census by that rule and it separates completely: at a division-event conditioning cut there is NO indivisible triple at all — the winner-invisible readings are structurally vacuous because a renewal resets to the root, and every non-vacuous one DIVIDES, two of them by exact Chapman-Kolmogorov and the pinned renewal-to-renewal triple of ARM-C2 among them.  Every indivisible triple in this receipt has its first cut strictly BETWEEN division events, which is cut grain and not record grain  (division-event cuts: 0 indivisible of 34; non-division cuts: 15 indivisible of 26)
+  [PASS] B5 EVERY INDIVISIBILITY THIS RECEIPT FINDS SITS AT A CONDITIONING CUT THE LAW DOES NOT ADMIT.  [B3] p.9's conditioning rule is that the allowed conditioning times are the division events; paper 0 sec.4 fixes division events = renewals.  Split the whole census by that rule and it separates completely: at a division-event conditioning cut there is NO indivisible triple at all — the winner-invisible readings are structurally vacuous because a renewal resets to the root, and every non-vacuous one DIVIDES, three of them by exact Chapman-Kolmogorov and the pinned renewal-to-renewal triple of ARM-C2 among them (its division degenerate — column-constant transfer, gate C2c).  Every indivisible triple in this receipt has its first cut strictly BETWEEN division events, which is cut grain and not record grain  (division-event cuts: 0 indivisible of 34; non-division cuts: 15 indivisible of 26)
 
   >>> VERDICT: U1-BRIDGE-AT-ADJACENT-SCOPE
       THE BRIDGE IS AT THE ADJACENT SCOPE, AND THE NULL IS ATTACHED TO IT.
@@ -894,9 +895,11 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
       a divisible chain generically does and not a signature of the
       record.  At EVERY conditioning cut that IS a division event — the
       only cuts [B3] p.9 admits, and the grain paper 0 sec.4 puts the law
-      at — the law DIVIDES exactly, including the pinned non-degenerate
-      renewal-to-renewal triple, which ARM-C2 runs and which divides by
-      exact Chapman-Kolmogorov on a rank-one renewal transfer.
+      at — the law DIVIDES exactly wherever the interpolant test has bite.
+      The pinned renewal-to-renewal triple RAN (ARM-C2, exact and
+      exhaustive) and returned a test with NONE: the renewal transfer is
+      column-constant (i.i.d. uniform chain), so its division is
+      DEGENERATE and the pinned question is NOT decided (gate C2c).
       This is a real, informative, negative-leaning result.  It is NOT the
       corpus's first generated indivisible bridge, and the U1-BRIDGE
       pre-registered outcome is NOT met at the grain that outcome meant.
@@ -908,13 +911,14 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
       below is the relation between the two readings of that single fact,
       not corroboration of one by the other.
 
-      WHAT REMAINS OPEN, PRECISELY.  ARM-C2 decides the pinned triple on
-      the MINIMAL-INTERVAL sub-ensemble: conditioning on a third renewal
-      by depth 9 forces every renewal interval to its shortest length.  A
-      renewal chain with UNEQUAL intervals is not reached by this
-      conditioning and is not reached by enumeration either (~10^8
-      histories at depth 9); that is the successor computation, and it is
-      named U1b.
+      WHAT REMAINS OPEN, PRECISELY: THE WHOLE PINNED QUESTION.  ARM-C2
+      reaches only the MINIMAL-INTERVAL sub-ensemble (conditioning on a
+      third renewal by depth 9 forces every interval to its shortest
+      length), and there the test degenerates (gate C2c).  U1b carries
+      all of it: renewal chains with UNEQUAL intervals (unreached here —
+      ~10^8 histories at depth 9), AND any renewal-grain configuration
+      map that retains the arb base across a renewal (any map whose
+      renewal transfer is not column-constant).
 
   AND THE U1-SPLIT TEST, RUN AND REPORTED RATHER THAN ASSUMED AWAY.
   The pin's third outcome fires if the two instruments disagree.  They
@@ -928,8 +932,9 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
   put the instruments in opposite directions on one object — is EMPTY: 0 of 10.
 
   SCOPE, NON-NEGOTIABLE.  Transport scope (d42b1), the declared families
-  and caps only; renewal grain per paper 0 sec.4's POSIT, which PORT-3
-  shows is delivery-conditioned rather than grammatical; no infinite-
+  and caps only; renewal grain per paper 0 sec.4's POSIT (what PORT-3
+  refutes is paper 0 line 136's [THEOREM] and line 143's convergence
+  claim, imported without a scope tag — not the posit); no infinite-
   volume claim; no measure-existence claim (D70's bound is open); no CP
   statement of any kind; no Bell or locality statement of any kind; and,
   per L-1, no claim of exact covariance anywhere — at most statistical
@@ -938,6 +943,6 @@ SEC 12  THE VERDICT, against the pre-registered outcomes
   screen is REPORTED and not adjudicated (that is U3).
 
 [SUMMARY] 44 PASS / 0 FAIL / 0 ANCHOR-FAIL
-[RUNTIME] 815s wall clock, single-threaded, exact arithmetic throughout
+[RUNTIME] 672s wall clock, single-threaded, exact arithmetic throughout
 [CAPS] ARM-A depth 5; ARM-B depth 6; ARM-C2 depth 9 (minimal-interval sub-ensemble, conditioned); ARM-D depth 4 (3 actors); anchors depth 4/3; closed scope depth 6; DC1 parents depth 3; LP caps 700 vars / 400 rows, reduced-system caps 5000 vars / 1200 rows; eq. 22 fixed space 100; EXCLUDED-BY-CAP triples remaining: 0
 [EXIT] 0 — substantive negatives are results, not failures

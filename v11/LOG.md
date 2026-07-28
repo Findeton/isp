@@ -510,3 +510,61 @@ and the census named ONCE as one non-lumpability fact; every
 M/m item applied (status GREEN-UNREVIEWED-REPAIRED; double-count
 caveats carried; 1,103 padding-caveated; DET extended to both LP
 arms + eq. 22).  Delta round dispatched.
+
+## 2026-07-28 — U1 DELTA ROUND ADJUDICATED: ACCEPT-WITH-FIXES, ALL
+## REQUIRED FIXES APPLIED — **U1 TERMINAL** (v11 LEDGER #14)
+The delta round rebuilt the load-bearing objects from the committed
+grammar alone (own σ port, own measure, own Γ, own exact simplex,
+own reduction; never called receipt code): ARITHMETIC CLEAN AGAIN —
+every recomputed number reproduces, including the full-system
+Farkas lifts (ARM-D (1,2,3): 0/1,122 columns violating,
+w·b = 617016077/88573325790 by ITS OWN certificate) and the
+reduction audited IN THE NEEDED DIRECTION (full-feasible ⇒
+reduced-feasible; the aggregation map re-derived by hand; no
+wrong-direction defect).  The forced-structure and exhaustiveness
+claims of the telescoped run were verified THE HARD WAY (all 1,536
++ 35,840 two-event continuations scanned: only (p,p) reaches two
+live proposers — deliveries and idles genuinely excluded;
+16→256→4,096 exact).  **ONE BLOCKER, AND #13'S EXTRA HEADLINE
+DIES: "THE PINNED QUESTION DECIDED" WAS A STRUCTURAL TRIVIALITY.**
+The joint law over the three renewal cuts is EXACTLY UNIFORM
+(1/512 on all 512 cells) — the renewal chain is i.i.d. uniform on
+8 labels, Γ(r2←r1) is COLUMN-CONSTANT (every entry 1/8), so
+X = Γ(r3←r1)·1ᵀ interpolates for ANY first transfer: the same
+formula §2 itself declares structurally vacuous at a
+one-configuration first cut, one level up.  Support size is not
+what gives the interpolant test bite; a non-column-constant
+transfer is, and this one is not.  DIVISIBLE WAS THE ONLY
+REACHABLE VERDICT — a DEGENERATE-DIVISIBLE datum.  **#13's
+headline "THE PINNED QUESTION DECIDED: THE RENEWAL-TO-RENEWAL LAW
+DIVIDES" IS CORRECTED HERE TO: the pinned computation RAN, exactly
+and exhaustively, and returned the same degeneracy one renewal
+further on — THE PINNED QUESTION IS NOT DECIDED; U1b CARRIES ALL
+OF IT** (unequal intervals AND any base-retaining configuration
+map — any renewal transfer that is not column-constant).  THE
+MECHANISM, the round's honest positive finding, now in the unit:
+payload_of drops the arb token's BASE — the only object linking
+consecutive renewals — so the committed enriched map forgets
+across renewals BY CONSTRUCTION; "the renewal chain forgets its
+configuration in one step" is a property of the chosen map, not a
+measured dynamical fact.  All required fixes applied (B1 items
+1-5; M1 boundary-travels-with-headline; M2 PORT-3 re-routed at all
+three receipt loci + the note's scope box — the target is
+paper0:136 [THEOREM] + :143 [T-G CONVERGENCE], NOT the §4 posit;
+M3 the "printed entry by entry" claim corrected to the 24-entry
+digest reality) and the cheap m-fixes (m1 division-event-table
+composition declared: 26 root triples, substantive content THREE
+non-degenerate divisible triples; m3 fifteen VERDICTS; m4 three by
+CK).  m2 (gate the exhaustiveness scan in-receipt) is CARRIED TO
+U1b'S PIN as a requirement — the round verified the fact
+exhaustively, the successor receipt must gate it.  Receipt
+regenerated: 44/0/0, verdict U1-BRIDGE-AT-ADJACENT-SCOPE
+unchanged.  **U1 IS TERMINAL.**  The core verdict survives both
+rounds intact: at cut grain on non-division cuts, fifteen
+indivisibility verdicts (ten windows, eight triples), every one
+Farkas-certified and independently reproduced twice; held LESS
+strongly than random noise of the same granularity; at every
+division-event cut with a biting test, the law divides.  Meta:
+positive-headline mortality 7-for-7 across v10-v11 (the #13
+sub-headline included); the arithmetic-never-wrong streak holds
+through two independent full rebuilds.

@@ -1,7 +1,8 @@
-# U1 — result: **U1-BRIDGE-AT-ADJACENT-SCOPE, with the null attached.** At cut grain, on conditioning cuts that are *not* division events, the generated record state is a non-lumpable function of the divisible click law, and its `Gamma` family admits no column-stochastic interpolant at fifteen triples — ten distinct windows, every one carrying an independently verified exact Farkas certificate. That property is shared with, and held *less strongly than*, a uniformly random partition of the same prefixes into the same class sizes: coarse-graining a divisible chain is what produces it. At every conditioning cut that **is** a division event — the only cuts `[B3]` p.9 admits, and the grain paper 0 §4 puts the law at — the law **divides exactly**, and that now includes the pinned non-degenerate renewal-to-renewal triple, which divides by exact Chapman-Kolmogorov on a rank-one renewal transfer. Descent failure is **necessary but not sufficient** for cut-indivisibility, and DC2's failure and the interpolant census are one fact read by two instruments.
+# U1 — result: **U1-BRIDGE-AT-ADJACENT-SCOPE, with the null attached.** At cut grain, on conditioning cuts that are *not* division events, the generated record state is a non-lumpable function of the divisible click law, and its `Gamma` family admits no column-stochastic interpolant at fifteen verdicts — ten distinct windows, eight distinct cut triples, every one carrying an independently verified exact Farkas certificate. That property is shared with, and held *less strongly than*, a uniformly random partition of the same prefixes into the same class sizes: coarse-graining a divisible chain is what produces it. At every conditioning cut that **is** a division event — the only cuts `[B3]` p.9 admits, and the grain paper 0 §4 puts the law at — the law **divides exactly, wherever the interpolant test has bite, and the pinned renewal-to-renewal computation ran exhaustively but returned a test with none**: on the minimal-interval sub-ensemble, under the committed payload-enriched map, the renewal chain is i.i.d. uniform on 8 labels (joint exactly `1/512` on all 512 cells), the renewal transfer is column-constant, and DIVISIBLE is the only verdict the test can return — **the pinned question is therefore NOT decided; U1b carries all of it.** Descent failure is **necessary but not sufficient** for cut-indivisibility, and DC2's failure and the interpolant census are one fact read by two instruments.
 
-**Status:** GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-07-27.  TERMINAL is
-conferred by a delta round, not here.  Pin
+**Status:** TERMINAL (conferred by the delta round of 2026-07-28,
+ACCEPT-WITH-FIXES, all required fixes applied — adjudicated v11 LOG
+#14; the full round-and-repair arc is LOG #11–#14), STRICT.  Pin
 `note-u1-indivisibility-census-pin.md` (frozen before the receipt
 existed).  Binding specification: paper 0 §7 (U1), §6 constraints 1/4/6,
 §10, §3, §4; `[V11-CAT]` §4.5, §4.9-preamble, §7 ranks 1 and 4.  Parents:
@@ -27,10 +28,14 @@ under an AST signature pass; exit 1 is reserved for anchor failure.
 >
 > **At cut grain, off the division events.**  On the transport families
 > read at record grain through the committed relative-horizon kernel,
-> **fifteen composable cut triples admit no column-stochastic
-> intermediate at all** — not merely a pseudo-stochastic algebraic one —
+> **fifteen indivisibility verdicts: no column-stochastic
+> intermediate exists at all** — not merely no pseudo-stochastic
+> algebraic one —
 > each with an independently verified exact Farkas certificate, printed
-> entry by entry.  Fifteen counts *verdicts*: the same window read by the
+> as exact Fractions (nonzero entries; digests longer than 24 entries
+> are capped in the output, so seven certificates are hand-checkable
+> from the printed head plus a rerun, not from the print alone).
+> Fifteen counts *verdicts*: the same window read by the
 > two configuration maps counts twice, and the distinct `(arm, window)`
 > pairs behind them are **10** (§5.4).  Every one of them has its first cut *strictly between*
 > division events.
@@ -41,8 +46,11 @@ under an AST signature pass; exit 1 is reserved for anchor failure.
 > renewals — and it separates completely: **34 triples whose first
 > cut is a division event, of which 30 are structurally vacuous and 4
 > divide, and NOT ONE is indivisible.**  The
-> pinned case is among them: the **non-degenerate renewal-to-renewal
-> triple** (ARM-C2, §5.5) divides by exact Chapman-Kolmogorov.
+> pinned case is among the four that divide — but its division is
+> **structural, not substantive** (ARM-C2, §5.5): the renewal transfer
+> is column-constant on the minimal-interval sub-ensemble, so the
+> interpolant test cannot fail there, and the pinned question remains
+> OPEN, carried whole by U1b.
 >
 > **The null.**  A uniformly random partition of the same prefixes into
 > `alpha_sigma`'s own class sizes — identical granularity, zero record
@@ -316,7 +324,7 @@ has no EXCLUDED-BY-CAP entry.**
 | **ARM-A** record grain | (A,B) transport, 30,729 histories, depth `<=5` | 0..5 | `1,5,11,19,32,54` / `1,5,13,37,97,185` |
 | **ARM-B** division-event grain | 16 renewal bases, 16,368 histories, depth `<=6` | 3..6 | `1,5,11,19` / `8,40,76,148` |
 | **ARM-C** renewal-to-renewal | inside ARM-B | renewal 0,1,2 | `1`, `8`, `8` |
-| **ARM-C2** renewal-to-renewal, non-degenerate | 4,096 depth-9 histories, conditioned | renewal 1,2,3 | `1,1,1` / `8,8,8` |
+| **ARM-C2** renewal-to-renewal, depth-9 (test degenerate: column-constant transfer) | 4,096 depth-9 histories, conditioned | renewal 1,2,3 | `1,1,1` / `8,8,8` |
 | **ARM-D** pool control | (A,B,C) transport, 50,617 histories, depth `<=4` | 0..4 | `1,7,22,51,120` |
 
 ARM-B conditions on a **past** event only — that the depth-3 prefix ends
@@ -427,22 +435,36 @@ than sampled.
 
 **Result.**  Under the winner-invisible map all three renewal cuts carry
 the single root configuration and the triple is structurally vacuous.
-Under the payload-enriched map the supports are `8, 8, 8` — the first
-cut carries **eight** configurations, which is exactly what makes the
-test non-degenerate — and **Chapman-Kolmogorov holds exactly**: the
-triple is **DIVISIBLE**, the process's own renewal-to-renewal conditional
-interpolates it, and both `Gamma(r2<-r1)` and `Gamma(r3<-r1)` have a
-single distinct column, so the renewal transfer is rank-one and
-`R^2 = R`.  The renewal chain forgets its configuration in one step.
+Under the payload-enriched map the supports are `8, 8, 8` and
+Chapman-Kolmogorov holds exactly — **but the test is degenerate in §2's
+own sense, one level up**: the joint law over (cfg@r1, cfg@r2, cfg@r3)
+is exactly uniform (`1/512` on all 512 cells), so the renewal chain is
+**i.i.d. uniform on 8 labels**, `Gamma(r2<-r1)` is **column-constant**
+(every entry `1/8`), and `X = Gamma(r3<-r1)·1^T` satisfies (D1) for
+*any* `Gamma(r2<-r1)` — the same formula, and the same interpolant,
+that §2 declares structurally vacuous at a one-configuration first cut.
+Support size is not what gives the interpolant test bite; a
+non-column-constant transfer is, and this one is not.  **DIVISIBLE was
+the only reachable verdict, and the triple is reported as a
+DEGENERATE-DIVISIBLE datum, not a substantive one.**  The mechanism is
+the honest positive finding: `payload_of` drops the arb token's **base**
+— and the base of a renewal token is the previous renewal's token, the
+only object that links consecutive renewals — so the committed enriched
+map retains, by construction, nothing that can propagate across a
+renewal.  "The renewal chain forgets its configuration in one step" is
+a property of the chosen configuration map, not a measured dynamical
+fact.
 
 **The declared boundary, and the successor.**  Conditioning on a third
 renewal by depth 9 forces every renewal interval to its shortest length,
 so this is the **minimal-interval** sub-ensemble — the same
-future-conditioning ARM-C declares, one renewal further on.  A renewal
-chain with **unequal** intervals is reached neither by this conditioning
-nor by enumeration at this cap.  That is the named successor computation,
-**U1b**, and it is the only part of the pinned question this receipt
-leaves open.
+future-conditioning ARM-C declares, one renewal further on.  **The
+pinned question — is the renewal-to-renewal law divisible where the
+test has bite? — is NOT decided by this receipt.**  The named successor
+computation, **U1b**, carries **all** of it: renewal chains with
+unequal intervals, AND any renewal-grain configuration map that retains
+the base across a renewal (equivalently: any map whose renewal transfer
+is not column-constant).
 
 ### 5.6 The `[B3]` eq. 22 algebraic arm, and exactly how weak it is
 
@@ -556,10 +578,20 @@ The split is total.  **At a division-event conditioning cut there is no
 indivisible triple at all.**  The winner-invisible readings are
 structurally vacuous there for a structural reason — a renewal resets to
 the root, so the first cut carries one configuration — and every
-non-vacuous one divides, two of them by exact Chapman-Kolmogorov, with
-the pinned renewal-to-renewal triple of §5.5 among them.  Every
-indivisible triple in this receipt has its first cut strictly *between*
-division events: that is cut grain, not record grain.
+non-vacuous one divides, three of them by exact Chapman-Kolmogorov, with
+the pinned renewal-to-renewal triple of §5.5 among them (its division
+degenerate, §5.5).  The composition of the 34 is declared: 26 are ROOT
+triples (`divcuts=(0,)` — the initial cut is a division event by
+construction), vacuous or dividing trivially there; 8 are non-root
+(ARM-B cut-3 under two maps, ARM-C/C2), of which 4 are
+winner-invisibly vacuous and 4 divide — so the table's substantive
+division-event content is **three non-degenerate divisible triples**
+(ARM-B/σ+ (3,4,5) and (3,4,6) by exact CK, (3,5,6) on the reduced
+system) plus ARM-C2's degenerate one.  This cannot manufacture the "0
+INDIVISIBLE" row — no cut class was excluded — but the row's positive
+weight is those three triples, and the count is carried honestly.
+Every indivisible triple in this receipt has its first cut strictly
+*between* division events: that is cut grain, not record grain.
 
 ## 8. Arm 1 (c) — the geography, as input to U2
 
@@ -726,10 +758,14 @@ divisible one** — which is why every triple here is decided on a system
 and none is left to the row certificate alone.  The eq. 22 algebraic arm
 runs on fixed configuration spaces of size `<=100` under a declared
 identity-padding convention, and its negative-entry count is relative to
-that convention.  Renewal grain per paper 0 §4's `[POSIT]`, which PORT-3
-shows is delivery-conditioned rather than grammatical.  The
-renewal-to-renewal interpolant test is **run** at minimal intervals
-(§5.5) and **not run** for unequal intervals (U1b).  No infinite-volume
+that convention.  Renewal grain per paper 0 §4's `[POSIT]`; what PORT-3
+refutes at transport scope is NOT the posit but paper0:136's `[THEOREM]`
+and paper0:143's `[THEOREM-GRADE CONVERGENCE]`, imported without a
+scope tag (§13).  The
+renewal-to-renewal interpolant test is **run** at minimal intervals and
+returns a test without bite (§5.5 — column-constant transfer); it is
+**not run** where the test has bite (U1b: unequal intervals, or any
+base-retaining map).  No infinite-volume
 claim; no measure-existence claim; no CP, Bell, locality or covariance
 claim.  The J-conjecture is not tested — that is U2.  The
 unistochasticity screen is reported and not adjudicated — that is U3.
@@ -781,10 +817,16 @@ Phase-I-end pass can make it.
   space is `{root}` winner-invisibly and 8-element with payload; the
   renewal transfer is rank-one with `R^2 = R` at two consecutive
   renewals; and L-1's bound already applies to it.
-- **To U1b (the named successor):** the renewal-to-renewal triple with
-  **unequal** renewal intervals.  ARM-C2 decides the minimal-interval
-  case exactly and it divides; the unequal-interval case is reached
-  neither by ARM-C2's conditioning nor by enumeration at depth 9
+- **To U1b (the named successor, carrying the WHOLE pinned question):**
+  the renewal-to-renewal interpolant test wherever it has bite — (a)
+  **unequal** renewal intervals, and (b) any renewal-grain
+  configuration map that retains the arb token's base across a renewal
+  (any map whose renewal transfer is not column-constant).  ARM-C2
+  reaches the minimal-interval case exactly and exhaustively, and the
+  test degenerates there (column-constant transfer, §5.5) — it decides
+  nothing about the law's divisibility at record grain.  The
+  unequal-interval case is reached neither by ARM-C2's conditioning
+  nor by enumeration at depth 9
   (of order `10^8` histories).  It is the only part of the pinned
   question left open, and it is the decisive one for whether the record
   law divides at its own grain in general.
