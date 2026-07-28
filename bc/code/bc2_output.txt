@@ -1,0 +1,642 @@
+==============================================================================
+bc2_two_frames_exact.py — BC2: THE BELL-TWO-FRAMES PROBE
+Does [B3]'s conditioning structure need a foliation?
+==============================================================================
+  banner: EXACT arithmetic end to end, NO TOLERANCE ANYWHERE.
+          Rationals: fractions.Fraction.  Algebraic: class K =
+          Q[x]/(8x^4 - 8x^2 + 1) = Q(cos(pi/8)), a real quartic
+          field, with an exact zero test and an exact sign oracle.
+  scope : [B3]'s FORMAL APPARATUS.  No claim about relativity in
+          nature.  NO Bell-inequality claim, NO locality claim —
+          this is a covariance-of-DESCRIPTION question only.
+  lean  : NONE.
+
+==============================================================================
+SEC 1  THE REGISTRY — every source a gate tests against, quoted and cited   [+0s]
+==============================================================================
+  [B3-axioms] [B3] p.29 (Section 5, the three axioms of indivisible quantum theory)
+  [B3-dict] [B3] p.11, eqs. (24)-(26), and p.14, eqs. (41)-(42), (46)
+  [B3-div] [B3] Barandes, 'Quantum Systems as Indivisible Stochastic Processes', arXiv:2507.21192 (30 July 2025), p.9 (the paragraph introducing eq. 18-21) and p.10 (top); PDF read in-session
+  [B3-eq22] [B3] p.10, eqs. (22)-(23) and the paragraph following them
+  [B3-fn7] [B3] p.10, footnote 7 (the proof attached to the sentence quoted at [B3-eq22])
+  [B3-future] [B3] p.29 (Section 5, Discussion and Future Work)
+  [B3-outcomes] [B3] p.16 (the emergeables paragraph) and p.26
+  [B3-refusal] [B3] p.10 (bottom) and p.11 (top)
+  [B3-uni] [B3] p.18, the paragraph following eq. (64), and p.19
+  [L1-admissible] v11/note-L1-lorentz-no-go-lemma.md:30-40, importing v3 paper 8:139-147 verbatim
+  [L1-ladder] v11/note-L1-lorentz-no-go-lemma.md:217-273 (the ladder) and :345-346 (constraint C4)
+  [L1-scope] v11/note-L1-lorentz-no-go-lemma.md:286-298 (scope guard)
+  [L1a] v11/note-L1-lorentz-no-go-lemma.md:86-94 (L-1 (a)), restating v3/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md:110-114 (Lemma 2.3) and :132-137 (Corollary 2.4)
+  [L1b] v11/note-L1-lorentz-no-go-lemma.md:107-114 (L-1 (b))
+  [bc1-pin] bc/note-bc1-division-event-composition-pin.md (CITED, NOT duplicated — BC1 owns the subsystem-lattice question)
+  [u3-ka] v11/note-u3-unistochasticity-screen.md:141-151 (the known-answer controls table); receipt v11/code/u3_unistochasticity_screen_exact.py:1251-1347
+  [u3-positive] v11/code/u3_unistochasticity_screen_exact.py:1244-1248 (the receipt's own discipline for positive verdicts)
+  ANCHOR constants: 8 entries, all quoted above.
+  [DATA] caps: the model: ONE Bell model: 2 spin-1/2 wings x 2 three-state pointers = 36 configurations, fixed across both frames and across every setting pair; setting pairs: SIX, declared: (0,45), (0,135), (90,45), (90,135), (0,0), (45,45) degrees.  All measurement directions are coplanar, so every transition-matrix entry lies in Q(sqrt2) and every time-evolution operator entry in Q(cos(pi/8)); frames: TWO orderings only: F1 = (prep, A, B) and F2 = (prep, B, A).  No continuum of boosts is built; L-1(b) supplies the continuum statement and is quoted, not re-derived; target times: FOUR per frame: 0 (initial division event), 1 (after preparation), 2 (after the first measurement), 3 (after the second).  The model is piecewise-constant between these, so the four carry the whole content; division events: THREE per frame: {0, 2, 3}.  t = 1 is a target time that is NOT a division event, so the 'drop the intermediate marginals' escape has something to drop; the frame-map search: COMPLETE over the class L-1 forces (permutations of the 36 configurations): colour refinement plus backtracking, exact, with the node cap printed.  A negative is a proof of non-existence; retrodictive matrices: NOT computed.  [B3] p.10 allows t < t'; for t' a division event with p(.,t') > 0 those matrices are Bayes-determined by the forward matrices and the marginals already in the inventory, so they add no content the comparison could separate; NOT implemented: no LP/Farkas search over non-group covariance semigroups.  L-1(a) derives invertibility inside a GROUP action and the two-frame map is a group (Z/2 at least), so the permutation class is complete for the covariance question posed; the semigroup loophole is named in the verdict and left OPEN; sign-oracle refinement cap: 8192 bisection steps (the maximum actually used is printed)
+
+==============================================================================
+SEC 2  EXACT ALGEBRAIC ARITHMETIC — the field this receipt computes in   [+0s]
+==============================================================================
+
+  Every number below is an element of
+
+     K = Q[x]/(m),   m(x) = 8x^4 - 8x^2 + 1,   x |-> c = cos(pi/8),
+
+  the real quartic field Q(cos(pi/8)).  m is the minimal polynomial of
+  cos(22.5 deg) because cos(4t) = 8cos^4 t - 8cos^2 t + 1 and cos(90 deg)
+  = 0; its irreducibility over Q is CERTIFIED in-receipt below, and that
+  certificate is what makes 'all four coefficients zero' a sound zero
+  test.  Reduction is by x^4 = x^2 - 1/8.  The field contains
+
+     sqrt2 = 4c^2 - 2,   cos(22.5) = c,   sin(22.5) = 4c^3 - 3c,
+     cos(45) = sin(45) = 2c^2 - 1,        cos(67.5) = 4c^3 - 3c,
+     sin(67.5) = c,
+
+  so every half-angle amplitude for a coplanar setting that is a multiple
+  of 45 degrees is an EXACT element, not an approximation.  Signs are
+  decided by exact rational interval refinement around c, which
+  terminates because a nonzero element of a number field is bounded away
+  from zero.  There is no tolerance anywhere in this file.
+
+  [PASS] K1.1 THE FIELD IS A FIELD: m(x) = 8x^4 - 8x^2 + 1 IS IRREDUCIBLE OVER Q, CERTIFIED IN-RECEIPT.  (i) no rational root — all eight rational-root-theorem candidates +-1, +-1/2, +-1/4, +-1/8 evaluated exactly and none vanishes; (ii) no factorisation into two rational quadratics — writing m = 8(x^2+ax+b)(x^2+cx+d) forces c = -a and a(d-b) = 0, and both branches die: a = 0 needs 8t^2+8t+1 to have a rational root (it has none) and d = b needs 1/8 to be a rational square (it is not).  Hence 'all four coefficients zero' is a sound zero test  (rational-root candidates 8, none a root: True; branch a=0 dead: True; branch d=b dead: True)
+  [PASS] K1.2 THE HALF-ANGLE AMPLITUDES ARE EXACT ELEMENTS AND SATISFY THEIR PYTHAGOREAN IDENTITIES IDENTICALLY: sqrt2^2 = 2; c^2 + s^2 = 1 at 22.5, 45 and 67.5 degrees; and the two cross-identities sin(22.5) = (sqrt2 - 1)cos(22.5) and 2 cos(22.5) sin(22.5) = sin(45) hold with zero residual  (sqrt2 = (1)r2; c22 = 1c; s22 = -3c+4c3; c45 = (1/2)r2)
+  [PASS] K1.3 THE SIGN ORACLE IS EXACT ON KNOWN-ANSWER ELEMENTS THAT NO TOLERANCE SETTLES: sign(sqrt2 - 3) = -1 (1.4142... < 3); sign(4cos(22.5) - 3) = +1 (3.6955... > 3); sign(cos(22.5) - cos(67.5)) = +1 (0.9238... > 0.3826...); and sign(0) = 0  (signs -1, 1, 1, 0; c bracketed in [0.923879532511, 0.923879532511]; refinement used at most 120 bisection steps)
+  [PASS] K1.4 EXACT DIVISION IN K IS AVAILABLE AND VERIFIED: the inverse is computed from the 4x4 rational multiplication matrix and (3 + sqrt2)^{-1} (3 + sqrt2) = 1 with zero residual  ((3+sqrt2)^-1 = 3/7-(1/7)r2)
+
+==============================================================================
+SEC 3  ANCHOR — the committed U3 unistochasticity instrument, single-sourced by AST and re-run on its own known-answer battery   [+0s]
+==============================================================================
+  [PASS] ANCHOR A0 AST SIGNATURE PASS on the committed U3 receipt: every reused def/class exists at module level with the exact positional argument list, so a silent upstream edit cannot slip through  (u3 has 39 module-level defs/classes; missing/mismatched [])
+  [PASS] ANCHOR A1 THE INSTRUMENT IS U3's, NOT A RE-IMPLEMENTATION: ds_report, tri_disc, chain_link_squares, polygon_violations, real_orth_2x2, orth_check_surd, modsq_check_surd, sylvester and the whole Surd ring are lifted by AST from the committed receipt and executed verbatim  (12/12 lifted: ['Surd', 'chain_link_squares', 'ds_report', 'modsq_check_surd', 'orth_check_surd', 'polygon_violations', 'real_orth_2x2', 'sqfree_split', 'sqrt_fr', 'surd_sign', 'sylvester', 'tri_disc'])
+  [PASS] ANCHOR A2 KA-1 REPRODUCED: on the flat 3x3 J/3 the lifted criterion returns the committed triangle discriminant T = +1/27 and zero polygon violations [u3-ka]  (T = 1/27 (committed 1/27); polygon violations 0 (committed 0))
+  [PASS] ANCHOR A3 KA-2 REPRODUCED: on the canonical bistochastic-but-not-unistochastic B = (1/2)(J - I) the lifted instrument returns DS true, the committed T = -1/16, the committed phasor moduli (0, 0, 1/2) — U3's chain_link_squares returns their SQUARES (0, 0, 1/4), and both are checked — and a firing polygon obstruction [u3-ka]  (DS True; T = -1/16 (committed -1/16); polygon violations 6; squared moduli [Fraction(0, 1), Fraction(0, 1), Fraction(1, 4)] (committed squares [Fraction(0, 1), Fraction(0, 1), Fraction(1, 4)]); moduli ['0', '0', '1/2'] (committed [Fraction(0, 1), Fraction(0, 1), Fraction(1, 2)]))
+  [PASS] ANCHOR A4 KA-4 AND KA-6 REPRODUCED: the constructed 2x2 orthostochastic certificate has zero orthogonality residuals and zero modulus-square mismatches, and Sylvester's H_8 satisfies H H^T = 8 I exactly over Z [u3-ka]  (2x2 residuals+mismatches 0 (committed 0); H_8 Gram exact: True)
+  [PASS] ANCHOR A5 KA-5 REPRODUCED: the doubly-stochastic precondition is not a no-op — a row-stochastic non-column-stochastic matrix is caught, with the exact per-column excess [u3-ka]  (row sums [Fraction(1, 1), Fraction(1, 1)]; column sums [Fraction(3, 2), Fraction(1, 2)]; column deficits [Fraction(1, 2), Fraction(-1, 2)])
+
+  THE POSITIVE-VERDICT DISCIPLINE, INHERITED VERBATIM (v11/code/u3_unistochasticity_screen_exact.py:1244-1248 (the receipt's own discipline for positive verdicts)):
+    "POSITIVE direction.  This receipt NEVER returns 'unistochastic' on the strength of T >= 0.  Every positive verdict below EXHIBITS a unitary of the same size and verifies U^dagger U = I and |U_ij|^2 = Gamma_ij entry by entry in exact algebraic arithmetic."
+  Every unistochasticity verdict in SEC 4 below is therefore a
+  CERTIFICATE verdict: the real orthogonal operator is exhibited
+  and U^T U = I and U_ij^2 = Gamma_ij are verified entry by entry
+  in K.  The cited criterion is never load-bearing on a positive.
+  CAP: U3's polygon oracle takes RATIONAL entries (it calls
+  sqrt_fr on a Fraction).  This model's entries lie in Q(sqrt2),
+  so the polygon arm runs on the rational anchors only; the legs
+  are decided by the strictly stronger certificate route.
+
+==============================================================================
+SEC 4  THE MODEL — one Bell experiment as a [B3] indivisible stochastic process, exact   [+0s]
+==============================================================================
+
+  [B3]'s KINEMATICAL AXIOM ([B3] p.29 (Section 5, the three axioms of indivisible quantum theory)):
+    "Kinematical axiom: ... The configuration space is a FIXED feature of the model, meaning that it does not vary between real-world runs or instantiations of the model.  Dynamical axiom: For arbitrary target times, and for conditioning times corresponding to division events, the model's dynamical laws ..."
+
+  THE CONFIGURATION SPACE, FIXED (one set, both frames, all settings):
+
+    C = { (qA, qB, pA, pB) },  qA, qB in {0, 1},  pA, pB in {r, +, -}
+
+  qA, qB are the two wings' spin configurations in a FIXED reference
+  basis (the model's declared configuration basis); pA, pB are the two
+  pointers' configurations.  |C| = 2 * 2 * 3 * 3 = 36.  The pointer
+  configurations are [B3]'s MEASUREMENT-OUTCOME CONFIGURATIONS
+  ([B3] p.16 (the emergeables paragraph) and p.26): "When a measuring device is properly modeled as one additional part of a larger stochastic process ... at the end of the measurement process, the measuring device will end up in one..."
+
+  Index: i = ((qA*2 + qB)*3 + pA)*3 + pB.  The initial configuration is
+  j0 = (0, 0, r, r) = index 0.
+
+  THE OPERATORS (all REAL orthogonal; the realness is gated):
+    U_prep : acts on (qA, qB) only; its j0 column is the singlet
+             (|01> - |10>)/sqrt2, so the post-preparation state is the
+             singlet with both pointers ready.
+    U_A(a) : sum over s of Pi^a_s (x) I (x) Sh^{n(s)} (x) I, with
+             Pi^a_s the spin projector for the coplanar direction a on
+             wing A and Sh the 3-cycle r -> + -> - -> r on pointer A;
+             n(+) = 1, n(-) = 2.  Reading the pointer off its ready state
+             therefore records the outcome.
+    U_B(b) : the same on wing B and pointer B.
+  U_A and U_B act on disjoint tensor factors, so they COMMUTE exactly;
+  that is the only algebraic input the two-frame construction needs, and
+  it is gated below.
+
+  [PASS] M1 THE PREPARATION OPERATOR IS EXACTLY ORTHOGONAL AND ITS j0 COLUMN IS EXACTLY THE SINGLET: all 16 inner products verified in K with zero residual, and column 0 is (0, 1/sqrt2, -1/sqrt2, 0) on the pair basis (00, 01, 10, 11)  (orthogonality residuals 0; singlet column ['0', '(1/2)r2', '(-1/2)r2', '0'])
+    ... [+0s, d0s] measurement operators built
+  [PASS] M2 EVERY TIME-EVOLUTION OPERATOR IS EXACTLY REAL ORTHOGONAL: U^T U = I verified entry by entry in K for U_prep and for all 3 + 3 measurement operators — 1296 inner products each, zero residuals.  Hence |U_ij|^2 = U_ij^2 and no complex ring is needed anywhere  (operators checked 7; failures [])
+  [PASS] M3 THE TWO MEASUREMENT OPERATORS COMMUTE EXACTLY, AT EVERY SETTING PAIR: [U_A(a), U_B(b)] = 0 entry by entry in K over all 3 x 3 = 9 pairs.  This is the ONLY algebraic input the two-frame construction uses, and it is why the two frames can agree on the final-time law at all  (pairs checked 9; failures [])
+    ... [+1s, d0s] commutation gate done
+
+==============================================================================
+SEC 5  THE TWO FRAMES — every transition matrix exact, every leg screened   [+1s]
+==============================================================================
+
+  THE TWO ORDERINGS OF THE SAME EXPERIMENT.
+
+    F1 = (prep, A, B)          F2 = (prep, B, A)
+
+  Target times 0, 1, 2, 3 in each frame.  The time-evolution operators
+  Theta(t <- 0) of [B3] eq. (25) are
+
+    F1:  Theta(0<-0) = I,  Theta(1<-0) = U_prep,
+         Theta(2<-0) = U_A U_prep,   Theta(3<-0) = U_B U_A U_prep
+    F2:  Theta(0<-0) = I,  Theta(1<-0) = U_prep,
+         Theta(2<-0) = U_B U_prep,   Theta(3<-0) = U_A U_B U_prep
+
+  DIVISION EVENTS: D = {0, 2, 3} in each frame.  0 is the initial
+  division event ([B3] p.9: conditioning times "are assumed to include an
+  'initial' time 0"); 2 and 3 are generated by the two measurements
+  ([B3] p.29: "division events are generated during a measurement
+  process").  t = 1 is a target time and NOT a division event.
+
+  Conditioning at a division event restarts the conditioning: the leg
+  matrix is Gamma(3<-2) = |Theta(3<-2)|^2 with Theta(3<-2) the second
+  measurement's operator.  In F1 that is U_B; in F2 it is U_A.
+
+    ... [+1s, d0s] frames built for SP-A (a=0, b=45)
+    ... [+1s, d0s] frames built for SP-B (a=0, b=135)
+    ... [+1s, d0s] frames built for SP-C (a=90, b=45)
+    ... [+1s, d0s] frames built for SP-D (a=90, b=135)
+    ... [+1s, d0s] frames built for SP-E (a=0, b=0)
+    ... [+1s, d0s] frames built for SP-F (a=45, b=45)
+    ... [+1s, d1s] legs screened for SP-A
+    ... [+2s, d0s] legs screened for SP-B
+    ... [+3s, d1s] legs screened for SP-C
+    ... [+3s, d1s] legs screened for SP-D
+    ... [+4s, d0s] legs screened for SP-E
+    ... [+4s, d1s] legs screened for SP-F
+  [PASS] S1 EVERY LEG OF EVERY FRAME IS UNISTOCHASTIC, BY EXHIBITED CERTIFICATE AND NOT BY CRITERION: for all 48 legs (6 setting pairs x 2 frames x 4 legs) U3's lifted ds_report returns doubly stochastic with EXACT unit row and column sums and no negative entry, the exhibited real orthogonal operator has zero U^T U - I residuals, and U_ij^2 = Gamma_ij at all 1296 entries.  This is [B3]'s own unistochastic-process property (p.18, eq. 64 context) verified rather than assumed  (legs screened 48; failures [])
+    ... [+4s, d0s] divisibility + eq.(22) rank for SP-A
+    ... [+4s, d0s] divisibility + eq.(22) rank for SP-B
+    ... [+5s, d0s] divisibility + eq.(22) rank for SP-C
+    ... [+5s, d0s] divisibility + eq.(22) rank for SP-D
+    ... [+5s, d0s] divisibility + eq.(22) rank for SP-E
+    ... [+5s, d0s] divisibility + eq.(22) rank for SP-F
+  [PASS] S2 THE MODEL IS A GENUINE [B3] INDIVISIBLE PROCESS AT SOME SETTINGS AND A DIVISIBLE ONE AT OTHERS, AND THE CENSUS IS PRINTED: Gamma(3<-2) Gamma(2<-0) differs from Gamma(3<-0) in the counted entries at the setting pairs listed, and is exactly equal at the others.  Both cells are non-empty, so the two-frame test below runs on divisible and on indivisible instances of the same construction  (indivisible at t=2: ['SP-C', 'SP-D', 'SP-F']; divisible at t=2: ['SP-A', 'SP-B', 'SP-E']; (setting, F1 differing entries, F2 differing entries) = [('SP-A', 0, 0), ('SP-B', 0, 0), ('SP-C', 576, 576), ('SP-D', 576, 576), ('SP-E', 0, 0), ('SP-F', 576, 576)])
+  [PASS] S2b DIVISIBILITY AT THE INTERMEDIATE DIVISION EVENT IS NOT ITSELF FRAME-DEPENDENT ON THIS MODEL — A REPORTED NEGATIVE ON A NATURAL CONJECTURE.  The two frames agree on whether the process divides at their (different) intermediate division events, at every setting pair.  The mismatch found below is therefore NOT a divisibility artefact: it is present at setting pairs where the process divides in both frames  (setting pairs with a frame-split on divisibility: [] (empty); divisible-in-both: ['SP-A', 'SP-B', 'SP-E'])
+  [PASS] S3 [B3] eq. (22)'s OWN HYPOTHESIS FAILS ON THIS MODEL: the interpolant ~Gamma(3<-2) = Gamma(3<-0) Gamma^{-1}(2<-0) requires Gamma(2<-0) to be invertible, and its exact rank over K is strictly below 36 in BOTH frames at every setting pair.  The pseudo-stochastic diagnosis of [B3-eq22] is therefore not even reached here — the inverse does not exist.  This is a datum, not a claim about indivisibility in general (that census is U1's and BC1's, not this unit's)  (exact ranks of Gamma(2<-0) (F1, F2): [('SP-A', 18, 18), ('SP-B', 18, 18), ('SP-C', 9, 18), ('SP-D', 9, 18), ('SP-E', 18, 18), ('SP-F', 18, 18)] (full rank would be 36))
+
+==============================================================================
+SEC 6  THE SPECIFIED-CONTENT INVENTORY — printed completely, both frames   [+5s]
+==============================================================================
+
+  WHAT [B3] SPECIFIES ([B3] p.29 (Section 5, the three axioms of indivisible quantum theory), [B3] p.11, eqs. (24)-(26), and p.14, eqs. (41)-(42), (46)):
+
+    (1) the configuration space C — FIXED, one set;
+    (2) the division-event set D and its order in the model's time
+        parameter;
+    (3) the transition matrices Gamma(t <- t') for every division event
+        t' in D and every target time t — the model's dynamical law;
+    (4) the standalone single-time distributions p(t) for every target
+        time t, given the contingent initial p(0);
+    (5) the division-event two-time joints
+        P(i,t ; j,t') = Gamma_ij(t<-t') p_j(t'), for t' in D.
+
+  WHAT [B3] REFUSES TO SPECIFY ([B3] p.10 (bottom) and p.11 (top)):
+    "Given just the minimalist ingredients that define a given indivisible stochastic process, there will generically exist a large or infinite number of ways of choosing a complete Kolmogorov tower (3) consistent with those ingredients.  Each such choice of Kolmogorov tower is called a NON-MARKOVIAN REALIZER. ... the specific non-Markovian realizer is potentially unknowable, and perhaps meaningless."
+  So: NO Kolmogorov tower, NO trajectory joints, NO joint over two
+  non-division times, NO realizer.  The comparison below is over (1)-(5)
+  and NOTHING ELSE.  Nothing the framework refuses is used against it.
+
+  ---- INVENTORY: SP-A frame F1 = (prep, A, B) ----------------------
+       configuration space   : |C| = 36, fixed, identical in both frames
+       division events D     : [0, 2, 3]  (order 0 < 2 < 3 in the frame's own time parameter)
+       physical labels of D  : 0 = prep, 2 = A, 3 = B
+       target times T        : [0, 1, 2, 3]  (t = 1 is NOT a division event)
+       marginal p(0)        : support 1 of 36; value census {'1': 1}
+                               ['(00|rr)']
+       marginal p(1)        : support 2 of 36; value census {'1/2': 2}
+                               ['(01|rr)', '(10|rr)']
+       marginal p(2)        : support 2 of 36; value census {'1/2': 2}
+                               ['(01|+r)', '(10|-r)']
+       marginal p(3)        : support 8 of 36; value census {'1/16': 4, '3/16+(1/8)r2': 2, '3/16-(1/8)r2': 2}
+                               ['(00|++)', '(00|+-)', '(01|++)', '(01|+-)', '(10|-+)', '(10|--)', '(11|-+)', '(11|--)']
+       Gamma(0<-0)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       Gamma(1<-0)          : 72 nonzero of 1296; column-support census {2: 36}; 2 distinct values
+       Gamma(2<-0)          : 72 nonzero of 1296; column-support census {2: 36}; 2 distinct values
+       Gamma(3<-0)          : 288 nonzero of 1296; column-support census {8: 36}; 4 distinct values
+       Gamma(2<-2)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       Gamma(3<-2)          : 144 nonzero of 1296; column-support census {4: 36}; 4 distinct values
+       Gamma(2<-3)          : NOT COMPUTED (cap: retrodictive, Bayes-determined)
+       Gamma(3<-3)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       joint (1 ; 0)       : 2 nonzero cells of 1296
+       joint (2 ; 0)       : 2 nonzero cells of 1296
+       joint (3 ; 0)       : 8 nonzero cells of 1296
+       joint (3 ; 2)       : 8 nonzero cells of 1296
+
+  ---- INVENTORY: SP-A frame F2 = (prep, B, A) ----------------------
+       configuration space   : |C| = 36, fixed, identical in both frames
+       division events D     : [0, 2, 3]  (order 0 < 2 < 3 in the frame's own time parameter)
+       physical labels of D  : 0 = prep, 2 = B, 3 = A
+       target times T        : [0, 1, 2, 3]  (t = 1 is NOT a division event)
+       marginal p(0)        : support 1 of 36; value census {'1': 1}
+                               ['(00|rr)']
+       marginal p(1)        : support 2 of 36; value census {'1/2': 2}
+                               ['(01|rr)', '(10|rr)']
+       marginal p(2)        : support 8 of 36; value census {'1/16': 4, '3/16+(1/8)r2': 2, '3/16-(1/8)r2': 2}
+                               ['(00|r+)', '(00|r-)', '(01|r+)', '(01|r-)', '(10|r+)', '(10|r-)', '(11|r+)', '(11|r-)']
+       marginal p(3)        : support 8 of 36; value census {'1/16': 4, '3/16+(1/8)r2': 2, '3/16-(1/8)r2': 2}
+                               ['(00|++)', '(00|+-)', '(01|++)', '(01|+-)', '(10|-+)', '(10|--)', '(11|-+)', '(11|--)']
+       Gamma(0<-0)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       Gamma(1<-0)          : 72 nonzero of 1296; column-support census {2: 36}; 2 distinct values
+       Gamma(2<-0)          : 288 nonzero of 1296; column-support census {8: 36}; 4 distinct values
+       Gamma(3<-0)          : 288 nonzero of 1296; column-support census {8: 36}; 4 distinct values
+       Gamma(2<-2)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       Gamma(3<-2)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       Gamma(2<-3)          : NOT COMPUTED (cap: retrodictive, Bayes-determined)
+       Gamma(3<-3)          : 36 nonzero of 1296; column-support census {1: 36}; 2 distinct values
+       joint (1 ; 0)       : 2 nonzero cells of 1296
+       joint (2 ; 0)       : 8 nonzero cells of 1296
+       joint (3 ; 0)       : 8 nonzero cells of 1296
+       joint (3 ; 2)       : 8 nonzero cells of 1296
+
+
+==============================================================================
+SEC 7  THE QM-STATISTICS GATE — a CONTROL: both frames reproduce the exact singlet statistics (exit 1 on failure)   [+5s]
+==============================================================================
+
+  The singlet prediction for coplanar projective measurements at
+  directions a and b is, exactly,
+
+     P(alpha, beta) = (1 - alpha beta cos(a - b)) / 4,   alpha, beta = +-1
+     P_A(alpha) = P_B(beta) = 1/2.
+
+  The pointer configuration '+' encodes alpha = +1 and '-' encodes
+  alpha = -1.  Failing this gate would mean the MODEL is wrong, not that
+  a finding has been made, so it exits 1.
+
+  [DATA] outcome law SP-A F1: {'+1+1': '1/4-(1/8)r2', '+1-1': '1/4+(1/8)r2', '-1+1': '1/4+(1/8)r2', '-1-1': '1/4-(1/8)r2'}
+  [DATA] outcome law SP-A F2: {'+1+1': '1/4-(1/8)r2', '+1-1': '1/4+(1/8)r2', '-1+1': '1/4+(1/8)r2', '-1-1': '1/4-(1/8)r2'}
+  [DATA] outcome law SP-B F1: {'+1+1': '1/4+(1/8)r2', '+1-1': '1/4-(1/8)r2', '-1+1': '1/4-(1/8)r2', '-1-1': '1/4+(1/8)r2'}
+  [DATA] outcome law SP-B F2: {'+1+1': '1/4+(1/8)r2', '+1-1': '1/4-(1/8)r2', '-1+1': '1/4-(1/8)r2', '-1-1': '1/4+(1/8)r2'}
+  [DATA] outcome law SP-C F1: {'+1+1': '1/4-(1/8)r2', '+1-1': '1/4+(1/8)r2', '-1+1': '1/4+(1/8)r2', '-1-1': '1/4-(1/8)r2'}
+  [DATA] outcome law SP-C F2: {'+1+1': '1/4-(1/8)r2', '+1-1': '1/4+(1/8)r2', '-1+1': '1/4+(1/8)r2', '-1-1': '1/4-(1/8)r2'}
+  [DATA] outcome law SP-D F1: {'+1+1': '1/4-(1/8)r2', '+1-1': '1/4+(1/8)r2', '-1+1': '1/4+(1/8)r2', '-1-1': '1/4-(1/8)r2'}
+  [DATA] outcome law SP-D F2: {'+1+1': '1/4-(1/8)r2', '+1-1': '1/4+(1/8)r2', '-1+1': '1/4+(1/8)r2', '-1-1': '1/4-(1/8)r2'}
+  [DATA] outcome law SP-E F1: {'+1+1': '0', '+1-1': '1/2', '-1+1': '1/2', '-1-1': '0'}
+  [DATA] outcome law SP-E F2: {'+1+1': '0', '+1-1': '1/2', '-1+1': '1/2', '-1-1': '0'}
+  [DATA] outcome law SP-F F1: {'+1+1': '0', '+1-1': '1/2', '-1+1': '1/2', '-1-1': '0'}
+  [DATA] outcome law SP-F F2: {'+1+1': '0', '+1-1': '1/2', '-1+1': '1/2', '-1-1': '0'}
+  [PASS] CONTROL Q1 BOTH FRAMES REPRODUCE THE EXACT SINGLET OUTCOME LAW AT EVERY DECLARED SETTING PAIR: all 4 joint outcome probabilities equal (1 - alpha beta cos(a-b))/4 exactly in K, and both single-wing marginals are exactly 1/2, at all 6 setting pairs and both frames — 96 exact identities  (violations [] (total 0))
+  [PASS] CONTROL Q2 THE FRAME-INDEPENDENT OUTCOME LAW IS ALSO SETTING-LOCAL AT THE MARGINAL: wing A's outcome marginal is identical across the two values of b at fixed a, and wing B's across the two values of a at fixed b, exactly, in both frames.  (Stated as a property of the constructed model's statistics; NO locality or Bell-inequality claim is made or used anywhere in this unit)  (violations [])
+  [PASS] Q3 THE FINAL-TIME LAW IS LITERALLY IDENTICAL IN THE TWO FRAMES: Gamma(3<-0) agrees at all 1296 entries and p(3) at all 36 entries, at every setting pair, with the identity as the frame map.  This is the exact form of the agreement the two frames DO have, and it is what the mismatch census below must be read against  (setting pairs with any disagreement: [])
+
+==============================================================================
+SEC 8  THE TEST — L-1 forces the frame map's form, and the search over that form is COMPLETE   [+5s]
+==============================================================================
+
+  WHAT MAY ACT.  L-1's constraint C4 (v11/note-L1-lorentz-no-go-lemma.md:217-273 (the ladder) and :345-346 (constraint C4)) requires
+  every covariance claim to state (i) what acts, (ii) on what set,
+  (iii) whether the acting maps are invertible.  Here:
+    (i)   the frame change F1 <-> F2 (a boost that reverses the time
+          order of the two spacelike-separated measurements);
+    (ii)  the model's ONE fixed finite configuration space C, |C| = 36
+          — [B3]'s kinematical axiom makes it fixed, and the same set
+          serves both frames;
+    (iii) the maps form a group: going F1 -> F2 and back is the identity,
+          so R R' = I with both stochastic.
+
+  L-1 (a) (v11/note-L1-lorentz-no-go-lemma.md:86-94 (L-1 (a)), restating v3/relativistic-isp-v3-paper8-continuum-qft-reconstruction-no-go.md:110-114 (Lemma 2.3) and :132-137 (Corollary 2.4)), verbatim:
+    "L-1 (a) — the imported half, re-derived at v11's grain.  Let C be finite.  Let G be a group and g |-> R_g an exact covariance action on C by stochastic maps: each R_g is row-stochastic on C, R_e = I, and R_g R_h = R_{gh}.  Then every R_g is a permutation matrix of C."
+
+  L-1 (b) (v11/note-L1-lorentz-no-go-lemma.md:107-114 (L-1 (b))), verbatim:
+    "L-1 (b) — the boost step.  If G contains a one-parameter boost subgroup isomorphic to (R,+), the restriction of R to that subgroup is trivial: R_b = I for every boost b.  Proof.  By (a) the image lies in Sym(C), a finite group.  (R,+) is divisible, so its homomorphic image is a divisible subgroup of a finite group, hence trivial."
+
+  CONSEQUENCE, ON THIS MODEL.  [B3]'s own footnote 7 (p.10) proves the
+  same lemma for its own purposes ([B3] p.10, footnote 7 (the proof attached to the sentence quoted at [B3-eq22])):
+    "Proof: Let X and Y be N x N matrices with only non-negative entries and with Y = X^{-1}, so that XY = 1. ... one sees that X can only have a single nonzero entry in each row.  If X is a stochastic matrix, then each of these nonzero entries must be the number 1..."
+  So the candidate frame map is a PERMUTATION of C by L-1(a), and the
+  IDENTITY if the boost is taken in a one-parameter subgroup by L-1(b).
+  The search below is therefore COMPLETE over the admissible class: a
+  negative is a proof of non-existence, not a failure to find.
+
+  [PASS] CONTROL T0a THE SEARCH MACHINERY FINDS AN ISOMORPHISM WHEN ONE EXISTS: a structure against itself, and against its own relabelling by a declared transposition (3 7), are both solved, and the returned permutation is VERIFIED entry by entry against every object  (identity case: discrete refinement, verified; relabelled case: discrete refinement, verified; pi(3) = 7, pi(7) = 3)
+  [PASS] CONTROL T0b THE SEARCH MACHINERY RETURNS A NEGATIVE WHEN IT SHOULD: two structures differing only in one matrix (all-zero versus the identity) are separated, with the separating invariant printed  (reason: refinement separates: colour-class size profiles ((1, 1), (35, 1)) vs ((1, 1), (35, 1)))
+
+  THE TWO CANDIDATE TIME-CORRESPONDENCES.
+
+    phi_LOR  THE LORENTZ CORRESPONDENCE.  Each division event is the SAME
+             PHYSICAL EVENT in the two frames, so prep -> prep, A -> A,
+             B -> B.  In F1 the times are (prep, A, B) = (0, 2, 3); in F2
+             they are (prep, B, A) = (0, 2, 3).  Hence phi_LOR sends F1's
+             t = 2 (Alice) to F2's t = 3 (Alice) and F1's t = 3 (Bob) to
+             F2's t = 2 (Bob).  This is the map the question asks about.
+
+    phi_ORD  THE ORDER-PRESERVING RELABELLING.  t -> t.  This identifies
+             'the first measurement in F1' with 'the first measurement in
+             F2', which are DIFFERENT physical events, so it is NOT the
+             Lorentz correspondence.  It is tested as the weakest
+             steelman: if even an abstract order-preserving isomorphism
+             of the two processes fails, no relabelling of any kind
+             rescues them.
+
+    ... [+6s, d1s] frame-map search done for SP-A
+    ... [+6s, d1s] frame-map search done for SP-B
+    ... [+7s, d1s] frame-map search done for SP-C
+    ... [+7s, d1s] frame-map search done for SP-D
+    ... [+8s, d1s] frame-map search done for SP-E
+    ... [+9s, d1s] frame-map search done for SP-F
+
+  THE LABEL INTERSECTION, FIRST — this is census item (iii), the
+  division-event sets themselves.  Under phi_LOR (the Lorentz
+  correspondence) F1 specifies a FORWARD leg matrix Gamma(3<-2) =
+  Gamma(B <- A) whose physical counterpart in F2 is the
+  RETRODICTIVE object Gamma(B <- A) = Gamma(2<-3), because in F2
+  Bob precedes Alice.  The two frames' division-event sets are in
+  bijection but their INDUCED ORDERS disagree on {A, B}, so the
+  forward inventories are not even index-matched.  The object is
+  DROPPED from the search below, which therefore compares only
+  what both frames specify in the same direction — the frame map's
+  best case.
+    SP-A G-DIV phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-A G-FIX phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-A G-FULL phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-A G-SUPP phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-B G-DIV phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-B G-FIX phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-B G-FULL phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-B G-SUPP phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-C G-DIV phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-C G-FIX phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-C G-FULL phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-C G-SUPP phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-D G-DIV phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-D G-FIX phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-D G-FULL phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-D G-SUPP phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-E G-DIV phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-E G-FIX phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-E G-FULL phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-E G-SUPP phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-F G-DIV phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-F G-FIX phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-F G-FULL phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+    SP-F G-SUPP phi_LOR: F1-only [('G', 2, 3)]; F2-only [('G', 3, 2)]
+
+  THE FRAME-MAP SEARCH, COMPLETE OVER THE PERMUTATION CLASS L-1
+  FORCES.  '-' means NO permutation of the 36 configurations carries
+  F1's specified content onto F2's, at that grain and that time
+  correspondence.  'PI' means one exists and is verified.
+
+    setting  grain       phi_LOR    phi_ORD
+    SP-A     G-FULL            -          -
+    SP-A     G-DIV             -          -
+    SP-A     G-FIX             -          -
+    SP-A     G-SUPP            -          -
+    SP-B     G-FULL            -          -
+    SP-B     G-DIV             -          -
+    SP-B     G-FIX             -          -
+    SP-B     G-SUPP            -          -
+    SP-C     G-FULL            -          -
+    SP-C     G-DIV             -          -
+    SP-C     G-FIX             -          -
+    SP-C     G-SUPP            -          -
+    SP-D     G-FULL            -          -
+    SP-D     G-DIV             -          -
+    SP-D     G-FIX             -          -
+    SP-D     G-SUPP            -          -
+    SP-E     G-FULL            -         PI
+    SP-E     G-DIV             -         PI
+    SP-E     G-FIX             -         PI
+    SP-E     G-SUPP           PI         PI
+    SP-F     G-FULL            -          -
+    SP-F     G-DIV             -          -
+    SP-F     G-FIX             -          -
+    SP-F     G-SUPP           PI         PI
+  [PASS] T1 UNDER THE LORENTZ CORRESPONDENCE NO FRAME MAP EXISTS AT ANY GRAIN, AT EVERY SETTING PAIR WITH TWO DIFFERENT SETTINGS: the complete search over all permutations of the 36 configurations returns empty in all 16 (unequal setting pair x grain) cells.  By L-1(a) the admissible class is exactly the permutations, so this is a proof of non-existence, not a failure to find  (unequal-setting cells with a map: [])
+  [PASS] T2 EVEN THE ORDER-PRESERVING STEELMAN FAILS WHENEVER THE TWO SETTINGS DIFFER: phi_ORD, which identifies 'first measurement' with 'first measurement' and is therefore NOT the Lorentz correspondence, also returns empty at every unequal setting pair and every grain.  So no relabelling of any kind — physical or abstract — relates the two frames' specified content there  (unequal-setting cells with a map: [])
+  [PASS] T3 THE MACHINERY DOES FIND MAPS WHERE THEY EXIST, ON THIS VERY MODEL: at the two equal-setting pairs the search returns verified permutations in the cells printed above.  The negatives at unequal settings are therefore properties of the model, not of the search  (phi_ORD cells with a map: [('SP-E', 'G-DIV', 'phi_ORD'), ('SP-E', 'G-FIX', 'phi_ORD'), ('SP-E', 'G-FULL', 'phi_ORD'), ('SP-E', 'G-SUPP', 'phi_ORD'), ('SP-F', 'G-SUPP', 'phi_ORD')]; phi_LOR cells with a map: [('SP-E', 'G-SUPP', 'phi_LOR'), ('SP-F', 'G-SUPP', 'phi_LOR')])
+  [PASS] T3b EVERY MAP THE SEARCH FINDS AT EQUAL SETTINGS BREAKS THE IDENTITY OF THE TWO RECORD SECTORS, AND IS THEREFORE NOT A LORENTZ CORRESPONDENCE: on the configurations the model's own content actually visits, each returned permutation carries a configuration in which POINTER B IS STILL READY onto one in which it is not, and likewise for pointer A — it re-identifies which laboratory holds which record.  A boost relates two descriptions of the SAME two laboratories and does not exchange them.  The equal-setting cells are therefore the coincidence that at a = b the two wings carry interchangeable descriptions, not covariance  ((setting, grain, phi, global action, #visited configs whose pointer-B-ready status the map flips, same for pointer A, one witness) = [('SP-E', 'G-DIV', 'phi_ORD', 'WING-EXCHANGING', 2, 2, '(01|+r)->(10|r+)'), ('SP-E', 'G-FIX', 'phi_ORD', 'WING-EXCHANGING', 2, 2, '(01|+r)->(10|r+)'), ('SP-E', 'G-FULL', 'phi_ORD', 'WING-EXCHANGING', 2, 2, '(01|+r)->(10|r+)'), ('SP-E', 'G-SUPP', 'phi_LOR', 'neither', 2, 2, '(01|+r)->(01|+-)'), ('SP-E', 'G-SUPP', 'phi_ORD', 'neither', 2, 2, '(01|+r)->(01|r-)'), ('SP-F', 'G-SUPP', 'phi_LOR', 'neither', 8, 8, '(00|+r)->(00|+-)'), ('SP-F', 'G-SUPP', 'phi_ORD', 'WING-EXCHANGING', 8, 8, '(00|+r)->(00|r+)')])
+  [WHY] SP-A G-DIV phi_LOR (6 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-A G-DIV phi_ORD (7 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-A G-FIX phi_LOR (4 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-A G-FIX phi_ORD (5 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-A G-FULL phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-A G-FULL phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-A G-SUPP phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 4), (4, 1), (23, 1)) vs ((1, 1), (2, 5), (4, 2), (17, 1))
+  [WHY] SP-A G-SUPP phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 4), (4, 1), (23, 1)) vs ((1, 1), (2, 5), (4, 2), (17, 1))
+  [WHY] SP-B G-DIV phi_LOR (6 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-B G-DIV phi_ORD (7 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-B G-FIX phi_LOR (4 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-B G-FIX phi_ORD (5 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-B G-FULL phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-B G-FULL phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-B G-SUPP phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 4), (4, 1), (23, 1)) vs ((1, 1), (2, 5), (4, 2), (17, 1))
+  [WHY] SP-B G-SUPP phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 4), (4, 1), (23, 1)) vs ((1, 1), (2, 5), (4, 2), (17, 1))
+  [WHY] SP-C G-DIV phi_LOR (6 objects compared): refinement separates: colour-class size profiles ((1, 2), (2, 17)) vs ((1, 12), (2, 12))
+  [WHY] SP-C G-DIV phi_ORD (7 objects compared): refinement separates: colour-class size profiles ((1, 12), (2, 12)) vs ((1, 12), (2, 12))
+  [WHY] SP-C G-FIX phi_LOR (4 objects compared): refinement separates: colour-class size profiles ((1, 4), (2, 16)) vs ((1, 12), (2, 12))
+  [WHY] SP-C G-FIX phi_ORD (5 objects compared): refinement separates: colour-class size profiles ((1, 12), (2, 12)) vs ((1, 12), (2, 12))
+  [WHY] SP-C G-FULL phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 4), (2, 16)) vs ((1, 12), (2, 12))
+  [WHY] SP-C G-FULL phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 12), (2, 12)) vs ((1, 12), (2, 12))
+  [WHY] SP-C G-SUPP phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 1), (4, 2), (8, 2), (9, 1)) vs ((1, 1), (2, 3), (4, 3), (8, 1), (9, 1))
+  [WHY] SP-C G-SUPP phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 1), (4, 6), (9, 1)) vs ((1, 1), (2, 5), (4, 4), (9, 1))
+  [WHY] SP-D G-DIV phi_LOR (6 objects compared): refinement separates: colour-class size profiles ((1, 2), (2, 17)) vs ((1, 12), (2, 12))
+  [WHY] SP-D G-DIV phi_ORD (7 objects compared): refinement separates: colour-class size profiles ((1, 12), (2, 12)) vs ((1, 12), (2, 12))
+  [WHY] SP-D G-FIX phi_LOR (4 objects compared): refinement separates: colour-class size profiles ((1, 4), (2, 16)) vs ((1, 12), (2, 12))
+  [WHY] SP-D G-FIX phi_ORD (5 objects compared): refinement separates: colour-class size profiles ((1, 12), (2, 12)) vs ((1, 12), (2, 12))
+  [WHY] SP-D G-FULL phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 4), (2, 16)) vs ((1, 12), (2, 12))
+  [WHY] SP-D G-FULL phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 12), (2, 12)) vs ((1, 12), (2, 12))
+  [WHY] SP-D G-SUPP phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 1), (4, 2), (8, 2), (9, 1)) vs ((1, 1), (2, 3), (4, 3), (8, 1), (9, 1))
+  [WHY] SP-D G-SUPP phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 1), (2, 1), (4, 6), (9, 1)) vs ((1, 1), (2, 5), (4, 4), (9, 1))
+  [WHY] SP-E G-DIV phi_LOR (6 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-E G-DIV phi_ORD (7 objects compared): MAP FOUND — discrete refinement, verified
+  [WHY] SP-E G-FIX phi_LOR (4 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-E G-FIX phi_ORD (5 objects compared): MAP FOUND — discrete refinement, verified
+  [WHY] SP-E G-FULL phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-E G-FULL phi_ORD (9 objects compared): MAP FOUND — discrete refinement, verified
+  [WHY] SP-E G-SUPP phi_LOR (8 objects compared): MAP FOUND — discrete refinement, verified
+  [WHY] SP-E G-SUPP phi_ORD (9 objects compared): MAP FOUND — discrete refinement, verified
+  [WHY] SP-F G-DIV phi_LOR (6 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-F G-DIV phi_ORD (7 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-F G-FIX phi_LOR (4 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-F G-FIX phi_ORD (5 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-F G-FULL phi_LOR (8 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-F G-FULL phi_ORD (9 objects compared): refinement separates: colour-class size profiles ((1, 36),) vs ((1, 36),)
+  [WHY] SP-F G-SUPP phi_LOR (8 objects compared): MAP FOUND — discrete refinement, verified
+  [WHY] SP-F G-SUPP phi_ORD (9 objects compared): MAP FOUND — discrete refinement, verified
+  [DATA] search nodes used (max over all cells): 32
+  [DATA] search node cap: 200000
+
+==============================================================================
+SEC 9  THE MISMATCH CENSUS — every object, exactly, under the Lorentz correspondence   [+9s]
+==============================================================================
+
+  L-1(b) makes the census sharper still.  A boost lives in a
+  one-parameter subgroup isomorphic to (R,+); by L-1(b) its
+  representation on the fixed finite C is the IDENTITY.  So the frame map
+  is forced to be the identity on configurations, and the comparison is
+  a literal one: does F1's object equal F2's corresponding object?
+
+  Under phi_LOR the correspondence of objects is
+     p(1) <-> p(1)                 [after prep, before either measurement]
+     p(2) <-> p(3)                 [at Alice's measurement]
+     p(3) <-> p(2)                 [at Bob's measurement]
+     Gamma(2<-0) <-> Gamma(3<-0)   [prep to Alice]
+     Gamma(3<-0) <-> Gamma(2<-0)   [prep to Bob]
+     Gamma(3<-2) <-> ---           [F1's A-to-B leg; F2's B-to-A leg is
+                                    its counterpart under phi_LOR only
+                                    after the order reversal, censused
+                                    separately below]
+
+  ---- SP-A ------------------------------------------------------------
+       p(1) vs p(1)                                         differing     0 | F1 2 | F2 2
+       p(2) vs p(3)                                         differing    10 | F1 2 | F2 8
+       p(3) vs p(2)                                         differing    16 | F1 8 | F2 8
+       Gamma(2<-0) vs Gamma(3<-0)                           differing   360 | F1 {2: 36} | F2 {8: 36}
+       Gamma(3<-0) vs Gamma(2<-0)                           differing   576 | F1 {8: 36} | F2 {8: 36}
+       Gamma(3<-2) [F1 A-then-B leg] vs Gamma(3<-2) [F2 B-then-A leg] differing   180 | F1 second leg = U_B | F2 second leg = U_A
+  ---- SP-B ------------------------------------------------------------
+       p(1) vs p(1)                                         differing     0 | F1 2 | F2 2
+       p(2) vs p(3)                                         differing    10 | F1 2 | F2 8
+       p(3) vs p(2)                                         differing    16 | F1 8 | F2 8
+       Gamma(2<-0) vs Gamma(3<-0)                           differing   360 | F1 {2: 36} | F2 {8: 36}
+       Gamma(3<-0) vs Gamma(2<-0)                           differing   576 | F1 {8: 36} | F2 {8: 36}
+       Gamma(3<-2) [F1 A-then-B leg] vs Gamma(3<-2) [F2 B-then-A leg] differing   180 | F1 second leg = U_B | F2 second leg = U_A
+  ---- SP-C ------------------------------------------------------------
+       p(1) vs p(1)                                         differing     0 | F1 2 | F2 2
+       p(2) vs p(3)                                         differing    24 | F1 8 | F2 16
+       p(3) vs p(2)                                         differing    24 | F1 16 | F2 8
+       Gamma(2<-0) vs Gamma(3<-0)                           differing   864 | F1 {8: 36} | F2 {16: 36}
+       Gamma(3<-0) vs Gamma(2<-0)                           differing   864 | F1 {16: 36} | F2 {8: 36}
+       Gamma(3<-2) [F1 A-then-B leg] vs Gamma(3<-2) [F2 B-then-A leg] differing   288 | F1 second leg = U_B | F2 second leg = U_A
+  ---- SP-D ------------------------------------------------------------
+       p(1) vs p(1)                                         differing     0 | F1 2 | F2 2
+       p(2) vs p(3)                                         differing    24 | F1 8 | F2 16
+       p(3) vs p(2)                                         differing    24 | F1 16 | F2 8
+       Gamma(2<-0) vs Gamma(3<-0)                           differing   864 | F1 {8: 36} | F2 {16: 36}
+       Gamma(3<-0) vs Gamma(2<-0)                           differing   864 | F1 {16: 36} | F2 {8: 36}
+       Gamma(3<-2) [F1 A-then-B leg] vs Gamma(3<-2) [F2 B-then-A leg] differing   288 | F1 second leg = U_B | F2 second leg = U_A
+  ---- SP-E ------------------------------------------------------------
+       p(1) vs p(1)                                         differing     0 | F1 2 | F2 2
+       p(2) vs p(3)                                         differing     4 | F1 2 | F2 2
+       p(3) vs p(2)                                         differing     4 | F1 2 | F2 2
+       Gamma(2<-0) vs Gamma(3<-0)                           differing   144 | F1 {2: 36} | F2 {2: 36}
+       Gamma(3<-0) vs Gamma(2<-0)                           differing   144 | F1 {2: 36} | F2 {2: 36}
+       Gamma(3<-2) [F1 A-then-B leg] vs Gamma(3<-2) [F2 B-then-A leg] differing    72 | F1 second leg = U_B | F2 second leg = U_A
+  ---- SP-F ------------------------------------------------------------
+       p(1) vs p(1)                                         differing     0 | F1 2 | F2 2
+       p(2) vs p(3)                                         differing    16 | F1 8 | F2 8
+       p(3) vs p(2)                                         differing    16 | F1 8 | F2 8
+       Gamma(2<-0) vs Gamma(3<-0)                           differing   720 | F1 {8: 36} | F2 {8: 18, 16: 18}
+       Gamma(3<-0) vs Gamma(2<-0)                           differing   720 | F1 {8: 18, 16: 18} | F2 {8: 36}
+       Gamma(3<-2) [F1 A-then-B leg] vs Gamma(3<-2) [F2 B-then-A leg] differing   288 | F1 second leg = U_B | F2 second leg = U_A
+
+  [DATA] SP-A: Pr[pointer B still ready] at Alice's division event: F1 = 1  |  F2 = 0
+  [DATA] SP-B: Pr[pointer B still ready] at Alice's division event: F1 = 1  |  F2 = 0
+  [DATA] SP-C: Pr[pointer B still ready] at Alice's division event: F1 = 1  |  F2 = 0
+  [DATA] SP-D: Pr[pointer B still ready] at Alice's division event: F1 = 1  |  F2 = 0
+  [DATA] SP-E: Pr[pointer B still ready] at Alice's division event: F1 = 1  |  F2 = 0
+  [DATA] SP-F: Pr[pointer B still ready] at Alice's division event: F1 = 1  |  F2 = 0
+  [PASS] T4 UNDER THE IDENTITY FRAME MAP — THE ONE L-1(b) FORCES FOR A ONE-PARAMETER BOOST — THE MISMATCH HAS A BASIS-FREE CERTIFICATE IN THE POINTER SECTOR ALONE, AT EVERY SETTING PAIR INCLUDING THE EQUAL ONES: at the division event that IS Alice's measurement, F1 assigns probability exactly 1 to 'pointer B is still ready' and F2 assigns exactly 0; at the division event that IS Bob's, F1 assigns exactly 0 to 'pointer A is still ready' and F2 exactly 1.  The pointer configurations are [B3]'s measurement-outcome configurations, which any [B3] model of a measurement must carry, so the certificate does not depend on the model's choice of configuration basis for the spin wings — and the six declared setting pairs span basis-aligned and basis-unaligned directions on both wings  (per setting pair (Pr[pB=r] at A: F1, F2; Pr[pA=r] at B: F1, F2) = [('SP-A', '1', '0', '0', '1'), ('SP-B', '1', '0', '0', '1'), ('SP-C', '1', '0', '0', '1'), ('SP-D', '1', '0', '0', '1'), ('SP-E', '1', '0', '0', '1'), ('SP-F', '1', '0', '0', '1')])
+  [PASS] T5 AT UNEQUAL SETTINGS THE SEPARATING INVARIANT IS ELEMENTARY AND PERMUTATION-PROOF: the standalone distribution at Alice's division event has a different SUPPORT SIZE in the two frames at every unequal setting pair, and support size is invariant under any bijection of C.  No permutation can repair it, which is the one-line reason T1 is a non-existence proof.  At equal settings the support sizes coincide, which is why the equal-setting cells need the finer T3b argument instead  ((setting, |supp p_F1(Alice)|, |supp p_F2(Alice)|) = [('SP-A', 2, 8), ('SP-B', 2, 8), ('SP-C', 8, 16), ('SP-D', 8, 16), ('SP-E', 2, 2), ('SP-F', 8, 8)])
+  [PASS] T6 THE L-1(b) BRANCH, STATED AS A LITERAL COMPARISON: with the identity as the frame map, EVERY corresponding object of the two frames differs — the two marginals at the two measurement division events, both prep-to-measurement transition matrices, and the second-leg matrix — at every setting pair, with the exact counts in the census above.  The single object that agrees is p(1), the marginal after preparation and before either measurement, which is where the two frames have not yet parted  (objects violating the pattern: [])
+
+==============================================================================
+SEC 10  THE ESCAPE-HATCH BATTERY — each escape works at a stated cost or fails at a stated place   [+9s]
+==============================================================================
+
+  E1  DROP THE INTERMEDIATE-TIME MARGINALS (keep only division-event
+      content).  Implemented as grain G-DIV: the target time t = 1 and
+      its marginal are removed.
+  E1' DROP ALL MARGINALS (keep only the model's FIXED features, since
+      [B3]'s epistemic axiom makes p contingent).  Grain G-FIX.
+  E2  DENY THAT THE FIRST MEASUREMENT GENERATES A DIVISION EVENT on the
+      composite system, leaving D = {0} and only the final law.
+  E3  SYSTEM-CENTRICITY: read the experiment as two wing-systems, each
+      with its OWN division events, rather than as one composite.
+  E4  A NON-GROUP (SEMIGROUP) COVARIANCE, the one loophole L-1 leaves
+      open.
+
+  [PASS] E1 DROPPING THE INTERMEDIATE-TIME MARGINALS DOES NOT RESTORE THE ISOMORPHISM — IT FAILS AT A STATED PLACE.  The dropped object is p(1), which is ALREADY identical in the two frames (nothing has happened but the preparation).  The mismatch sits at t = 2 and t = 3, which are DIVISION EVENTS and therefore survive the drop.  Grain G-DIV returns empty at every setting pair  (G-DIV cells with a map under phi_LOR: [])
+  [PASS] E1' DROPPING ALL MARGINALS DOES NOT RESTORE IT EITHER — IT FAILS AT A STATED PLACE.  The transition matrices alone already separate: the column-support census of Gamma(2<-0) in F1 differs from that of Gamma(3<-0) in F2, and a column-support census is invariant under conjugation by a permutation.  Grain G-FIX returns empty at every setting pair  (G-FIX cells with a map under phi_LOR: []; column-support censuses [('SP-A', {2: 36}, {8: 36}), ('SP-B', {2: 36}, {8: 36}), ('SP-C', {8: 36}, {16: 36}), ('SP-D', {8: 36}, {16: 36}), ('SP-E', {2: 36}, {2: 36}), ('SP-F', {8: 36}, {8: 18, 16: 18})])
+  [PASS] E2 DENYING THAT THE FIRST MEASUREMENT GENERATES A DIVISION EVENT DOES RESTORE THE ISOMORPHISM — AT A STATED COST.  With D = {0} the whole specified content is Gamma(3<-0) and p(3), and the two frames agree on those with the IDENTITY as the frame map at every setting pair.  THE COST, exactly: (i) it contradicts [B3]'s own dynamical axiom (p.29, 'division events are generated during a measurement process'); (ii) it removes the only conditioning the model has after preparation, so the framework can no longer describe the post-measurement update at all; (iii) it makes the process trivially divisible over the remaining single interval  ((setting, map exists, map is the identity) = [('SP-A', True, True), ('SP-B', True, True), ('SP-C', True, True), ('SP-D', True, True), ('SP-E', True, True), ('SP-F', True, True)])
+
+  E3 CITES BC1's PIN AND DOES NOT DUPLICATE IT (bc/note-bc1-division-event-composition-pin.md (CITED, NOT duplicated — BC1 owns the subsystem-lattice question)).  BC1 owns the subsystem-lattice
+  consistency question; BC2 asks only the narrow two-frame
+  question about the wing-local descriptions of THIS model.
+  [PASS] E3a SYSTEM-CENTRICITY WORKS FOR THE WING-LOCAL CONTENT: each wing's own configuration marginal, evaluated at that wing's OWN division event, is exactly identical in the two frames, at every setting pair — 6 exact identities per wing per setting pair.  This is the pin's pre-registered positive, and it holds, but only at this grain  ((setting, wing A at its own event, wing B at its own event, both at t=1) = [('SP-A', True, True, True), ('SP-B', True, True, True), ('SP-C', True, True, True), ('SP-D', True, True, True), ('SP-E', True, True, True), ('SP-F', True, True, True)])
+  [PASS] E3b AND IT FAILS THE MOMENT A WING IS EVALUATED AT THE OTHER SYSTEM'S DIVISION EVENT: wing A's marginal at the time of BOB's measurement differs between the frames at every setting pair, because in F1 that time is after Alice's measurement and in F2 it is before.  So the escape buys frame-invariance only by refusing to place the two wings on any common time  ((setting, wing A agrees at Bob's event) = [('SP-A', False), ('SP-B', False), ('SP-C', False), ('SP-D', False), ('SP-E', False), ('SP-F', False)])
+  [PASS] E3c THE COST OF E3, STATED EXACTLY: the wing-local descriptions do not carry the model's correlation content.  The product of the two wing-local outcome marginals differs from the composite's outcome joint at EVERY declared setting pair, so the joint is not recoverable from the two frame-invariant wing descriptions.  The description that carries the correlations is the composite one — and the composite one is exactly the description T1 shows is not frame-mappable  ((setting, wing marginals reproduce the joint) = [('SP-A', False), ('SP-B', False), ('SP-C', False), ('SP-D', False), ('SP-E', False), ('SP-F', False)])
+
+  E4 THE ONE LOOPHOLE L-1 LEAVES OPEN, NAMED AND LEFT OPEN.
+  L-1's scope guard (v11/note-L1-lorentz-no-go-lemma.md:286-298 (scope guard)), verbatim:
+    "It does NOT forbid a permutation action. ... It does NOT forbid covariance implemented by NON-INVERTIBLE stochastic maps — but the loophole is narrower than it reads: inside a GROUP action L-1(a) DERIVES invertibility, so what actually escapes is a covariance carried by a semigroup or by a non-group action."
+  This unit's frame change is a GROUP: F1 -> F2 -> F1 is the
+  identity, so L-1(a) derives invertibility and the permutation
+  class is complete.  A covariance carried by a SEMIGROUP or by a
+  non-group action is NOT tested here and is NOT excluded here.
+  No LP/Farkas search over such maps is run (declared in the
+  caps).  E4 is therefore neither a working escape nor a failing
+  one in this receipt: it is OPEN.
+
+==============================================================================
+SEC 11  THE VERDICT, AND ITS PLACE ON L-1's LADDER   [+9s]
+==============================================================================
+
+  PRE-REGISTERED OUTCOME REACHED: R-FOLIATED
+
+  THE OUTCOME IN ONE SENTENCE.  The two frames' specified content is NOT
+  frame-isomorphic: at every setting pair with two different settings no
+  permutation of the 36 configurations carries F1's specified content
+  onto F2's, at any of the four declared grains, under either time
+  correspondence; and at the two equal-setting pairs the only maps that
+  exist EXCHANGE THE TWO WINGS' RECORD SECTORS, which a boost does not
+  do.  The outcome statistics are identical in the two frames, exactly.
+  The ontology therefore requires a foliation while the statistics do
+  not.
+
+  WHAT ACTS, ON WHAT SET, INVERTIBLY OR NOT (L-1 C4):
+    the frame change F1 <-> F2; the model's one fixed finite
+    configuration space C of 36 configurations; and invertibly, because
+    the frame change is a group and L-1(a) derives invertibility inside a
+    group action.
+
+  L-1's LADDER (v11/note-L1-lorentz-no-go-lemma.md:217-273 (the ladder) and :345-346 (constraint C4)):
+    RUNG 1  exact stochastic covariance — EXCLUDED by L-1, and this unit
+            exhibits the exclusion CONCRETELY on a [B3] Bell model: the
+            forced map class (permutations by L-1(a), the identity by
+            L-1(b)) is searched completely and is empty at every setting
+            pair with two different settings, at every grain, under
+            either time correspondence; and at equal settings the only
+            surviving maps break the identity of the two record sectors
+            (T3b), which a boost does not do.
+    RUNG 2  sprinkling-grade statistical covariance on a finite-valency
+            generated carrier — NOT TOUCHED.  There is no generated
+            carrier in this program.
+    RUNG 3  order-level covariance — NOT TOUCHED, and note that this
+            unit's mismatch is partly an ORDER fact (the division-event
+            set's induced order is reversed on {A, B} by the physical
+            identification), so rung 3 is not available as a rescue for
+            this model without a separate argument this unit does not
+            supply.
+
+  WHAT SURVIVES, NAMED IN PAPER 8's LIST (v11/note-L1-lorentz-no-go-lemma.md:30-40, importing v3 paper 8:139-147 verbatim):
+    ADMISSIBLE FORM 1 — "equality ... of declared finite-battery
+    statistics for sampled Lorentz-related tests" — holds here EXACTLY,
+    not merely approximately: the declared outcome battery (4 joint
+    outcome probabilities and 4 marginals per setting pair) is identical
+    in the two frames at all 6 setting pairs, and the whole
+    final-time law Gamma(3<-0) and p(3) agree entry by entry.  Form 2
+    (projective compatibility of batteries at different refinements) is
+    not exercised.  Form 3 (imported continuum covariance) is not used.
+
+  THE SPARSITY HYPOTHESIS, SETTLED FOR THIS MODEL: the framework's
+  refusal to specify a Kolmogorov tower does not help, because the
+  objects that fail to correspond are not tower objects.  They are the
+  single-time standalone distribution at a division event and the
+  division-event transition matrices — the SPARSEST content the framework
+  has.  [B3] is sparser than its predecessors in the tower direction and
+  exactly as rich as they are in the slice direction, and it is the slice
+  direction the frame change acts on.
+
+  [DATA] verdict: R-FOLIATED
+  [DATA] mismatch localisation: the intermediate division event of the COMPOSITE system; the final-time law and the whole outcome battery agree exactly
+  [DATA] QM control: PASS
+  [DATA] anchors: PASS
+  [DATA] sign-oracle bisection steps used (max): 120
+  [DATA] search nodes (max over cells): 32
+  [DATA] caps: the model: ONE Bell model: 2 spin-1/2 wings x 2 three-state pointers = 36 configurations, fixed across both frames and across every setting pair; setting pairs: SIX, declared: (0,45), (0,135), (90,45), (90,135), (0,0), (45,45) degrees.  All measurement directions are coplanar, so every transition-matrix entry lies in Q(sqrt2) and every time-evolution operator entry in Q(cos(pi/8)); frames: TWO orderings only: F1 = (prep, A, B) and F2 = (prep, B, A).  No continuum of boosts is built; L-1(b) supplies the continuum statement and is quoted, not re-derived; target times: FOUR per frame: 0 (initial division event), 1 (after preparation), 2 (after the first measurement), 3 (after the second).  The model is piecewise-constant between these, so the four carry the whole content; division events: THREE per frame: {0, 2, 3}.  t = 1 is a target time that is NOT a division event, so the 'drop the intermediate marginals' escape has something to drop; the frame-map search: COMPLETE over the class L-1 forces (permutations of the 36 configurations): colour refinement plus backtracking, exact, with the node cap printed.  A negative is a proof of non-existence; retrodictive matrices: NOT computed.  [B3] p.10 allows t < t'; for t' a division event with p(.,t') > 0 those matrices are Bayes-determined by the forward matrices and the marginals already in the inventory, so they add no content the comparison could separate; NOT implemented: no LP/Farkas search over non-group covariance semigroups.  L-1(a) derives invertibility inside a GROUP action and the two-frame map is a group (Z/2 at least), so the permutation class is complete for the covariance question posed; the semigroup loophole is named in the verdict and left OPEN; sign-oracle refinement cap: 8192 bisection steps (the maximum actually used is printed)
+
+------------------------------------------------------------------------------
+  gates: 35 pass, 0 fail; anchor failures 0; control failures 0
+  runtime: 9.4s
+------------------------------------------------------------------------------
+  EXIT 0 — substantive result delivered; negatives exit 0 by the house rule.
