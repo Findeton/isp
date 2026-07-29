@@ -124,3 +124,66 @@ I_a(g)^ij supplied by the order+count extraction — general-d,
 record-read, invertible by declaration, missing exactly the one
 object GW1 wants.**  Family-4 lapse-grafting the second route;
 Candidate B demoted.  Repair dispatched.
+
+## 2026-07-28 — SECOND (EXTERNAL, CODE-BLIND) GW1 REVIEW ADJUDICATED:
+## ADOPTED WITH ONE RECONCILIATION; THE VERDICT RENAMED (v13 LEDGER #4)
+The user delivered an external review produced WITHOUT code access;
+its blind code-behavior claims were VERIFIED before adoption (the
+orientation sign-fix exists at v6_p2c:88 "fix global sign vs true
+x"; the truth-calibrated count-to-proper-time constant at
+v6_task2b:57-58) — the reviewer inferred both correctly from the
+papers alone.  **ADOPTED, merging with the internal round (#3):**
+**(1) INSTRUMENT (i) DEMOTED** beyond #3's M7: not "present and
+runnable" but RUNNABLE PARTIAL DIAGNOSTICS — embedding-assisted
+(supplied coordinates; truth-calibrated K; chart bins/slabs) and
+UNORIENTED (Laplacian eigenvector signs fixed against hidden truth;
+MDS scored after Procrustes) — with the engraved provisional-
+acceptance sentence required ("for purposes of this census only...
+not adjudicating promotion into one intrinsic record-native
+instrument").  **(2) THE §3.1 TYPING, reconciled with #3's
+recomputation:** the external review (code-blind) held the
+set-union advance non-invertible; the internal round MEASURED
+J[−N]∘J[+N] = id bitwise for the threshold rule.  Both stand under
+the typed split now required: δ_swap (the forward order-swap
+endpoint defect) ≡ 0 [theorem-backed]; the pinned Ω requires an
+invertible algebraic comparison-map FAMILY which the corpus never
+SUPPLIES as such (V4 declares invertibility, constructs nothing);
+the threshold rule's advance is EMPIRICALLY invertible on all
+tested instances [measured], the recomputed-height rule is not;
+an object-type column (Γ / J / Φ / Ω / record-holonomy) is added
+and "kernel" stops covering five types.  **(3) STEP 0 GETS A
+RECEIPT — the review's sharpest process point: a failed instrument
+gate needs a receipt as much as a successful experiment.**
+Required: v13/code/gw1_step0_census.py + machine-readable receipts
+(pinned audited SHA, working-tree status, interpreter/library
+versions, inspected paths with blob hashes, search protocol with
+counts, per-rerun exit/hash, the classification table in the
+review's 15-field schema incl. transported_second_step vs
+fixed_space_commutator columns).  **(4) "METRIC-FREE" gets the
+operational NO-SMUGGLING definition** (F may use order, count,
+adjacency, eventwise lapse; may not call the metric estimator, use
+held-out coordinates, background normals, planted frames, or
+algebraic equivalents; frozen before q_order is evaluated) —
+syntactic named-argument absence retired.  Candidate B RE-GRADED
+under it (imports singleton kernels from a fixed flat lattice
+Dirac benchmark — background normalization encoded; positive-cone
+primitive; 1+1D reworded per the review).  **(5) THE INTERFACE
+INVENTORY:** even a qualifying J leaves ∇_j on the slice, the
+tangential decoder K_i and its inverse, transported second steps,
+ε pinning, density-weight conventions, the gauge/scale
+identification, and lapse-pair rank/identifiability — "the kernel
+is the only block" overstated.  **(6) Prop 10.6 SCOPED MODULO
+GAUGE:** a component-level sign ambiguity in a fixed labelled
+presentation; whether physical nonuniqueness or unresolved
+frame-gauge depends on orientation conventions the (unoriented)
+order instruments do not supply; the modulo-frame comparison
+q♯_comp(ω) =? q♯_order(ω) on intrinsic covectors is the clean
+target.  **(7) THE VERDICT RENAMED: GW1-NOT-RUNNABLE — PRIMARY
+LOCATED BLOCK AT THE DEFORMATION INTERFACE**, with the review's
+five-item conditional statement and revised settled/not-settled
+paragraphs; the deepest conclusion engraved: **the corpus can
+either obtain nontrivial closure by supplying geometry, or remain
+record-native and fail to produce the required closure.**  The
+in-flight repair worker's fix list is AMENDED accordingly (its
+ownership extended to the step-0 receipt code); #2 and #3 remain
+forward-corrected by this entry where they conflict.
