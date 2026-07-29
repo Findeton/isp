@@ -1,8 +1,8 @@
-# The Weld, v2.3 — Quantum Interference as the Composition Defect of Stochastic Shadows
+# The Weld, v2.4 — Quantum Interference as the Composition Defect of Stochastic Shadows
 
 *Programme subtitle: toward quantum mechanics from Barandes processes, Gram positivity, and record-induced divisibility.*
 
-**v12 paper 0 — the founding document, second formulation. STRICT. 2026-07-28; v2.2 ontological-scope pass 2026-07-29 ([REV3], LOG #18); v2.3 outcome pass 2026-07-29 (W7 terminal; paper 1 terminal-publishable; W6 pinned — LOG #34).**
+**v12 paper 0 — the founding document, second formulation. STRICT. 2026-07-28; v2.2 ontological-scope pass 2026-07-29 ([REV3], LOG #18); v2.3 outcome pass 2026-07-29 (W7 terminal; paper 1 terminal-publishable; W6 pinned — LOG #34); v2.4 outcome pass 2026-07-29 (W6 terminal — LOG #42).**
 
 v1 (the $U(1)$-bundle-class formulation) is superseded per LOG #2–#3: falsified by the two-chart $H^1$ triviality (LOG #2, proven) and by the external hostile review's exact constructions (LOG #3, hand-verified). The Tsirelson-saturating singlet model carries a **trivial** cocycle class, while the nontrivial class in the natural edge-phase models is the superquantum PR box — the v1 identification was anti-correlated with quantumness. v1 is preserved in git history; nothing below claims it.
 
@@ -240,9 +240,11 @@ as readout, not theorem. Mandatory anchors: the W2 Weyl collapse families ($X_N,
 
 **Outcome (v2.3):** the gauge reduction DERIVED twice (composition-compatibility; unitarity-preservation — the licensing quantifier named, the degenerate-support vacuity disclosed); pair-completeness ⟺ $L_4 = Z(\Gamma)$, with the φ-criterion realizing every failing class ($n \le 4$ exhaustive, $n = 5$ sampled — every found gap closed by $\mathcal{K}$); composite completeness separately refuted; record descent block-diagonalizes, bounded by the recorded-but-phased limit. Consolidated self-contained as **paper 1** (`paper1-composition-defect.md`, PAPER1-PUBLISHABLE, LOG #33).
 
-### W6 — Record Co-reference and Effective Descent — **PINNED 2026-07-29 ([REV4], LOG #30); census dispatched (#31)**
+### W6 — Record Co-reference and Effective Descent — **TERMINAL 2026-07-29 (LOG #41): FACT-DESCENT + SET-AMALGAM (scoped) + GROUPOID-AMALGAM**
 
 When are two chart-events **the same event** — the bridge the withdrawn global $(E,\prec)$ silently presupposed (§5). Pinned per [REV4]: the fact/token/descent split (W6-A/B/C), the φ-map skeleton with coherence laws, six mandatory controls (including the symmetric duplicate), six pre-registered outcomes (including groupoid and blocked-at-referent), and the architecture rule **phase is not a criterion** — W6 builds the base of shared record referents; W7's boundary-gauge and loop data are the fibre transported over it.
+
+**Outcome (v2.4):** the census passes (no referent block — the first descent-family unit to clear STEP 0). **Fact-descent obtains** (record propositions glue across relabellings, redundant copies, and same-experiment frame pairs); **set-amalgam obtains at the token level where the generating structure distinguishes tokens** (measured; scoped; T5″-safe — actual stable records only, no global present, no value table); **groupoid-amalgam obtains at the symmetric duplicate** (no invariant rule may choose). Fact ≠ value, fact ≠ token, availability ≠ occurrence — each carried by its own exact control. The architecture adjudication, at its stated scope: the wing tie is cut by *dynamical* provenance (the frame isomorphism) at the **Born** level; amplitude phases play no part in fact identity; no base/fibre violation within scope. **The unit's deepest finding, round-confirmed with the mechanism isolated:** the *realized* legs never admit the identity identification (the two frames' intermediate occupied supports never coincide); the four asymmetric settings admit no token map at all; the two symmetric settings admit exactly one — **the wing swap** — and what blocks the swap on the full legs is $U_{\text{prep}}$ acting on the 35 configurations never occupied at time 0: **the identification is carried by transitions the process never takes**, and it is the time-indexing of those unrealized transitions that matters.
 
 ---
 
@@ -258,7 +260,7 @@ Whenever a physical record occurs, it has one definite local value. No universal
 
 ### O2 — Nomological composition structure [postulate; referent supplied at finite one-chart scope (W7 TERMINAL, LOG #24; paper 1, LOG #33)]
 
-v2.2's clause — *W7 supplies or kills the referent; failure demotes O2* — is resolved: **supplied, at the stated scope.** At finite one-chart scope, the referent is the **gauge-equivalence class of composable amplitude diagrams**, represented by their support-cycle holonomies, relation-loop phases, seam (cut-coherence) tensors, and cross-block path invariants — with the seam datum $\mathcal{K}$ required for composite completeness, and record descent bounded by the recorded-but-phased limit. What W7 earned, exactly: (1) a precise referent HOLDS; (2) composition HOLDS with the named seam datum ($n \le 4$ exhaustive, $n = 5$ sampled); (3) control of $\Delta^B$ HOLDS one-way (a defect-flat pair can still carry composite phase); (4) record descent HOLDS, bounded. The structure is treated as objective nomology rather than event ontology — that reading remains the postulate. The referent is NOT one unitary matrix, one wavefunction, one scalar phase, one cohomology class, or any functional of the Born shadow ([REV4]'s characterization, adopted). **Open:** universal completion (general $n$), general-dimensional classification, and cross-chart descent — the last is W6's. **O2 remains an explicit v12 EXTENSION, not Barandes-faithful:** [B3] treats the Hilbert-space variables as gauge-dependent and cautions against giving gauge variables ontological meaning (W5's recast carries the quotes; W7's gauge census proves his claim exactly, at his one-arrow scope).
+v2.2's clause — *W7 supplies or kills the referent; failure demotes O2* — is resolved: **supplied, at the stated scope.** At finite one-chart scope, the referent is the **gauge-equivalence class of composable amplitude diagrams**, represented by their support-cycle holonomies, relation-loop phases, seam (cut-coherence) tensors, and cross-block path invariants — with the seam datum $\mathcal{K}$ required for composite completeness, and record descent bounded by the recorded-but-phased limit. What W7 earned, exactly: (1) a precise referent HOLDS; (2) composition HOLDS with the named seam datum ($n \le 4$ exhaustive, $n = 5$ sampled); (3) control of $\Delta^B$ HOLDS one-way (a defect-flat pair can still carry composite phase); (4) record descent HOLDS, bounded. The structure is treated as objective nomology rather than event ontology — that reading remains the postulate. The referent is NOT one unitary matrix, one wavefunction, one scalar phase, one cohomology class, or any functional of the Born shadow ([REV4]'s characterization, adopted). **Open:** universal completion (general $n$), general-dimensional classification, and the nomological transport over the co-reference base (W6 has since delivered the base itself at model scope — v2.4; carrying the boundary-gauge/loop data across it is the remaining half). **O2 remains an explicit v12 EXTENSION, not Barandes-faithful:** [B3] treats the Hilbert-space variables as gauge-dependent and cautions against giving gauge variables ontological meaning (W5's recast carries the quotes; W7's gauge census proves his claim exactly, at his one-arrow scope).
 
 ### O3 — Record classicality [theorem-backed]
 
@@ -294,10 +296,10 @@ The framing postulate: T1's atlas of context-local Barandes processes (a postula
 ### Successor order (v2.2)
 
 $$
-\textbf{W7 (terminal)} \;\longrightarrow\; \textbf{W6 (in census)} \;\longrightarrow\; \{\text{O4 discriminator};\ \text{v13 GW2 regional descent census}\} \;\longrightarrow\; H_a[N].
+\textbf{W7 (terminal)} \;\longrightarrow\; \textbf{W6 (terminal)} \;\longrightarrow\; \{\text{O4 discriminator};\ \text{v13 GW2 regional descent census}\} \;\longrightarrow\; H_a[N].
 $$
 
-W7 closed at LOG #24 and is consolidated as paper 1 (#33); W6 owns the bridge and is running; the v13 successor is re-posed as regional record-restricted descent (GW2 pin, v13 LOG #7) with the $H_a[N]$ construction preserved as the later branch. Behind these, the #17 frontier stays live: the [D71b] Clause-3 bridge; W3′'s [GMH] converse; beyond-CHSH.
+W7 closed at LOG #24 and is consolidated as paper 1 (#33); W6 closed at LOG #41 — the co-reference base exists (fact-descent; scoped set-amalgam; groupoid at the symmetric duplicate), so the **O4 discriminator and the v13 GW2 census are now unblocked**, awaiting the user's word; the $H_a[N]$ construction stays the later branch. Behind these, the #17 frontier stays live: the [D71b] Clause-3 bridge; W3′'s [GMH] converse; beyond-CHSH.
 
 ---
 

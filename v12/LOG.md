@@ -1664,3 +1664,31 @@ audit, one external round + sub-audit, ~30 independent
 recomputations round-side (25/25 + the sub-audit's probes), zero
 numerical errors; every casualty a sentence or a gate label.
 Next: the paper 0 W6 outcome wiring (#42), memory, and THE HALT.
+
+## 2026-07-29 — PAPER 0 v2.4: THE W6 OUTCOME PASS; THE ARC
+## CLOSES; **FULL HALT** (v12 LEDGER #42)
+The single dated pass: the W6 §4 entry set TERMINAL with its
+verdict and outcome paragraph (census passes; fact-descent;
+scoped set-amalgam, T5″-safe; groupoid at the symmetric
+duplicate; the Born-level architecture adjudication at its
+stated scope; the realized-legs finding with the U_prep
+mechanism — the identification carried by transitions the
+process never takes); the successor order updated (W7 terminal →
+W6 terminal → the O4 DISCRIMINATOR and the v13 GW2 CENSUS now
+UNBLOCKED, awaiting the user's word); O2's open list re-scoped
+(the co-reference BASE delivered at model scope; the remaining
+half is the nomological transport across it).  THE DAY'S ARC,
+whole: W7 pinned, run, hostile-rounded, repaired, TERMINAL
+(#19–#24); PAPER 1 pinned, written, refereed, repaired,
+TERMINAL-PUBLISHABLE (#25–#33); paper 0 v2.2/v2.3/v2.4; W6
+pinned per [REV4], run, internally audited (22 findings),
+major-repaired, externally rounded, fix-passed, TERMINAL
+(#30–#41); v13 GW2 pinned NOT dispatched (v13 #7).  THE LIVE
+FRONTIER, all awaiting the user's word: (1) the O4 discriminator
+(covariant co-reference for unrecorded configurations — now
+posable on W6's base); (2) the v13 GW2 regional-descent census;
+(3) the nomological-transport half of cross-chart descent; (4)
+paper 1's open problems (general-n completion; exhaustive n=5;
+[GMH] converse; beyond-CHSH); (5) the publication route — THE
+USER'S, always.  v11 and BC stay frozen; the 25a959e additions
+stay unreviewed.  **v12 HALTS HERE.**
