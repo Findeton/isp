@@ -233,3 +233,24 @@ nondeterminism with its required connectivity guard; the
 no-smuggling definition now available programme-wide).  The v13
 draft paper 0 remains [DRAFT]; the H_a[N] unit awaits the user's
 word.  v13 halts here alongside v12.
+
+## 2026-07-29 — GW2 PINNED: THE SUCCESSOR RE-POSED AS REGIONAL
+## DESCENT (v13 LEDGER #7)
+Per [REV3] adjudicated at v12 #18, GW1's successor target is
+re-posed from global chart identity to REGIONAL RECORD-RESTRICTED
+COMPATIBILITY: local descriptions need agree only on shared
+physical records, modulo declared gauge.  The pin
+(note-gw2-regional-descent-census-pin.md) is a STEP-0 census over
+SEVEN required objects (region; local process object at its
+committed type; stable-record algebra, W3′-grade; overlap object;
+restriction maps; gauge relation; the insertion-vs-compatibility
+discriminator = GW1's kill inherited) — "Z_D" is candidate
+notation only, and writing the descent condition before the census
+passes fails the referent gate (the four-gate rule, now
+programme-wide).  The H_a[N] construction is PRESERVED as the
+later branch, not replaced: W6 co-reference → GW2 regional descent
+→ possible emergent H_a[N].  NOT DISPATCHED — queued behind W6
+(object 4 depends on W6's co-reference definitions); the draft
+paper stays [DRAFT] untouched.  Pre-registered outcomes:
+GW2-CENSUS-COMPLETE / GW2-BLOCKED-AT-⟨object⟩ (first-class, as
+GW1's was).
