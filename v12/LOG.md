@@ -875,3 +875,66 @@ pre-registered binary, "derived not chosen" conditioning,
 ontological restraint), and an independent recomputation of the
 declared number set.  This entry is written after the dispatch
 occurred.
+
+## 2026-07-29 — W7 HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES;
+## REPAIR DISPATCHED (v12 LEDGER #23)
+The round rebuilt the arithmetic layer, the n=4 witness, the
+cycle-lattice sweep, the record gates and the census numbers in
+its own exact code (nothing sliced from the unit): **every
+computed number reproduced exactly — zero numerical errors across
+~30 checked quantities** (witness values incl. H_{02;02} = 1/16
+and −ζ₈³/16 and the ζ₈⁷ ratio; 7-of-1264 with each failure at
+rank μ−1; L₄+K closure on all 1300 classes; 336/190/16/16 record
+counts; β = ζ_N^{−k} all N, k; the G0.6/G0.7 censuses to the
+digit) — and TWO ATTACKS ON THE FAILURE COUNT FAILED (adjoining
+full factor cycle lattices: same 7; the Birkhoff/total-support
+filter: all 7 survive).  FOUR MAJOR ARGUMENT-LEVEL DEFECTS, all
+sentence-scale: **(F1)** §4's (⇒) proof text insufficient as
+written — literal "(k,l)-plane rotations" yield only diagonal
+quadruples; the measured gap is 64 vs 32 at n=3/μ₂; the correct
+construction places columns {k,l} into rows {i,j}; theorem TRUE,
+receipt CORRECT (it used the rich committed family), the
+published proof under-specified.  **(F2)** G0.9 and G3.0's "192
+of 576" are ONE measurement reported as two — B(U₂D) = B(U₂)
+makes the predicates identical and same-boundary-orbit is
+identically true; "reached independently" false; the [W2] A2(vi)
+comparison was measured at a different insertion.  **(F3)** the
+main theorem printed as an IFF with only ⟸ proved; ⟹ was
+witnessed at one of seven classes — THE ROUND PROVED IT FOR ALL
+SEVEN via its φ-criterion (φ(z)_k = Σ_i z_{e2(i,k)};
+uncompensated cut moves a long-cycle holonomy iff
+φ(Z(Γ)) ⊄ φ(L₄); holds 7/7) — a reviewer-contributed
+strengthening, to be gated natively; pair-completeness vs
+composite-completeness to be separated throughout.  **(F4)**
+G-REDUCED's composition-compatibility route is VACUOUS on exactly
+the degenerate supports where the unit's own no-go lives (on a
+monomial second leg all 65,536 Θ-pairs are compatible; a single
+non-degenerate pair already forces 1024); the load-bearing
+quantifier (compatibility across the admissible class of
+dynamics) must be named; route (b) unitarity-preservation alone
+carries the verdict there.  **(F5, wording)** "β finer than B∘ρ"
+FALSE as printed (β(N=4,k=2) = β(N=2,k=1) = −1, different
+shadows); the correct relation — β IS NOT A FUNCTIONAL of B∘ρ —
+already stated at §29.7; to be fixed at §11/§26/§30 with the
+counterexample gated.  MINORS F6–F13: K minimality overclaim
+(rank deficit is 1 per failing class; K sufficient and uniform,
+not minimal) + the four-gate box for K owed (no-smuggling:
+ΣK = the composite's own Haagerup — to be gated as a derived
+relation); §15 "spans exactly L₄" needs the factor-lattice
+clause; stride honesty at §3/G1.2; §16's unimodularity step
+unstated; §23's negative dominated by the block-4 structural
+degeneracy (disclose; numbers unchanged); two non-informative
+gates (G3.12 literal True; G3.11 hard-wired branch) to be made
+real and the tally recounted; the Bargmann verdict to answer the
+pin's binary as pinned with the single-arrow concession as a
+separate remark; [GG]'s canonical source is ZASLAVSKY (to be
+added; the cospectrality paper secondary).  Ontological
+restraint: NO violation found by the round.  **FORWARD-CORRECTION
+OF #21 (adjudicator's own error):** #21 wrote "0 of 10,064" — a
+sum of denominators (64 + 10,000); the tested set is 50 + 10,000
+= **10,050**.  The note was accurate; the ledger line was not.
+REPAIR DISPATCHED (Opus 5, background) with the full fix list,
+the round's replacement sentences, the two contributed
+measurements to gate natively (φ-criterion 7/7; Birkhoff 36-of-
+783 with 7/7 total support), and an optional budgeted strided
+n=5 sample; recorded after the dispatch occurred.
