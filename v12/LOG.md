@@ -693,3 +693,52 @@ Score across the collaboration: THREE surviving theorems (W1′,
 W3′, W5's lemma), TWO receipted structural negatives (GW1, W2b),
 ONE measured non-unification (W4′); computed-number errors across
 all campaigns and ~12 independent rebuilds: ZERO.
+
+## 2026-07-29 — PAPER 0 v2.2: THE ONTOLOGICAL-SCOPE PASS (v12
+## LEDGER #18)
+Source: [REV3], three external ontology rounds (the (E,≺)
+proposal; its own anti-ad-hoc retraction; the W7 gauge review),
+each adjudicated in-session; every engraved mathematical claim
+hand-verified at adjudication (full Schur gauge kills all
+single-matrix phase invariants; bipartite even-cycle/Haagerup
+invariance under boundary gauge; monomial supports are matchings —
+no support cycles; compensated-cut invariance of the cut-coherence
+tensor; Δᴮ_ij = 2Σ_{k<ℓ} Re C^{ij}_{kℓ} exactly).  THE PASS:
+T5′ → T5″ (three global claims, all withheld; no global actuality
+object inferred from the no-multiplicity claim); §5 ONTOLOGICAL
+SCOPE engraved — O1 local actuality [postulate, negative-form];
+O2 nomological-amplitude [postulate: W7 supplies or kills its
+referent, failure DEMOTES O2; an explicit EXTENSION, not
+Barandes-faithful — [B3] warns against ontologizing gauge
+variables, W5's quotes]; O3 record classicality [theorem-backed,
+W3′]; O4 the unrecorded-actuality fork [A: requires a covariant
+co-reference rule — BC2's obstruction scoped to its slice-indexed
+formal apparatus, preferred structure NOT yet forced; B: T1
+rewrite, FAITHFUL→EXTENSION conversions, departs Barandes
+realism] — no complete ontology claimed while the fork is open;
+GLOBAL (E,≺) WITHDRAWN under the four-gate rule (its referent
+presupposes cross-chart event identity = W6's unbuilt bridge;
+model-local generated orders remain committed model objects;
+"local cut" the strict term); the FOUR-GATE RULE (referent /
+necessity / no-smuggling / discriminator) adopted programme-wide
+as the ontology side of GW1's discipline; the EARNED CORE fixed at
+six items + the framing postulate; the SUCCESSOR ORDER W7 → W6 →
+{O4 discriminator; v13 GW2} → H_a[N]; the founding mortality line
+amended (first survivors named); Non-claims updated (W4′ decided;
+the O2/O4 clauses).  ERRORS OWNED (the adjudicator's, forward-
+corrected): (1) the previous turn endorsed a global (E,≺) as
+"corpus-native" — conflating model-local constructions with a
+global posit; withdrawn.  (2) the proposed O4-A price ("frame-
+unattached actuality"; "covariance forces preferred structure")
+overstated BC2's scope — corrected to the co-reference-rule form.
+(3) the W7 sketch was gauge-typed wrong: Bargmann triple products
+are NOT invariants of the committed full Schur–Hadamard gauge
+(W5's per-ordered-pair phases; unitarity only a partial fixing) —
+they are ray/Gram-setting objects [MSS]; and "trivial phases at
+records" overstated W3′ (block-diagonalization, not phase
+triviality; vanished amplitudes have UNDEFINED phases).  All three
+corrected in this pass and in the W7 pin (#19).  Also noted: HEAD
+now includes the user's own commit 25a959e committing the
+previously-uncommitted v11 U1c delivery and bc partials; their
+status is UNCHANGED — GREEN-UNREVIEWED, not citable; no unit
+reopened.

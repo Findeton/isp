@@ -1,12 +1,12 @@
-# The Weld, v2.1 — Quantum Interference as the Composition Defect of Stochastic Shadows
+# The Weld, v2.2 — Quantum Interference as the Composition Defect of Stochastic Shadows
 
 *Programme subtitle: toward quantum mechanics from Barandes processes, Gram positivity, and record-induced divisibility.*
 
-**v12 paper 0 — the founding document, second formulation. STRICT. 2026-07-28.**
+**v12 paper 0 — the founding document, second formulation. STRICT. 2026-07-28; v2.2 ontological-scope pass 2026-07-29 ([REV3], LOG #18).**
 
 v1 (the $U(1)$-bundle-class formulation) is superseded per LOG #2–#3: falsified by the two-chart $H^1$ triviality (LOG #2, proven) and by the external hostile review's exact constructions (LOG #3, hand-verified). The Tsirelson-saturating singlet model carries a **trivial** cocycle class, while the nontrivial class in the natural edge-phase models is the superquantum PR box — the v1 identification was anti-correlated with quantumness. v1 is preserved in git history; nothing below claims it.
 
-**Status: [PROGRAMME], not [THEOREM].** Positive-headline mortality is 9-for-9 and every claim here dies with its unit.
+**Status: [PROGRAMME], not [THEOREM].** Positive-headline mortality was 9-for-9 at founding; the W-batch then produced the programme's first surviving theorems (W1′, W3′, W5's lemma — LOG #17). Every claim here still dies with its unit.
 
 ---
 
@@ -82,6 +82,8 @@ $$
 
 **for all subsequent transformations that preserve the record sectors.**
 
+**Gloss (v2.2): the local classical seam.** A stable record is a local classical seam — divisibility on the recorded algebra, under record-preserving operations, destructible by coherent erasure. The theorem's content is block structure (cross-sector coherence dies), not phase triviality: within an unresolved record sector, phase structure may survive (W7-4's descent target).
+
 The converse (divisibility $\Rightarrow$ generalized records) is to be tested under separately stated purity and strong-record hypotheses. The known decoherent-histories antecedent (medium decoherence $\Leftrightarrow$ orthogonal generalized records, for pure states) is cited, not claimed as ours; v12's novelty is the translation into Barandes division events and the generated record law.
 
 **No claim after record erasure or under operations that coherently recombine the record sectors** (quantum-eraser recoherence would otherwise falsify trivially).
@@ -92,9 +94,21 @@ Measured instance already in the ledger: bc #4 M-1's *"legitimate division event
 
 Unistochasticity $\Gamma = |U|^{\circ 2}$ reads: the classical process is the shadow of amplitude transport; squaring the modulus forgets the phases; what the forgetting destroys is exactly compositionality (T2′). The strongest part of v1, per the review, and now the foundation rather than a corollary.
 
-### T5′ — The global catalogue (reworded)
+### T5″ — Three global claims, all withheld (v2.2; supersedes T5′ per [REV3], LOG #18)
 
-What Fine/AB obstruct is a global **context-independent catalogue of values** for all potentially askable observables reproducing the statistics — **not** the existence of one actual world or one actual configuration history. Barandes keeps definite configurations at all times; v12 no longer contradicts that. "One world" survives; "one counterfactual value-table" does not.
+What Fine/AB obstruct is a global **context-independent catalogue of values** for all potentially askable observables reproducing the statistics. v2.2 separates three distinct global claims and positively asserts none:
+
+$$
+\boxed{\;
+\begin{aligned}
+&\text{no coactual multiplicity of realized records is posited;}\\
+&\text{no global present is claimed;}\\
+&\text{no global counterfactual value-table is claimed (Fine/AB obstruct it).}
+\end{aligned}
+\;}
+$$
+
+The theory posits no coactual multiplicity of realized records — and it does **not** infer a global actuality object from that negative claim. T5′'s "one world survives" said only this much and is superseded by it. Barandes keeps definite configurations at all times; whether unrecorded configurations are ontic is O4's open fork (§5), not settled here.
 
 ---
 
@@ -164,7 +178,7 @@ W1′ proves the chain, the completeness statement, and the anti-correlation exh
 
 Prove and receipt the chain $2 \,/\, 2\sqrt{2} \,/\, 4$ exactly over the three convex bodies; the completeness of $\mathcal{Q}_{\mathrm{corr}}$; the anti-correlation exhibit (both review constructions verified in-receipt); the $\Delta^B$ census on minimal two-step compositions (the cross-term identity; the three-defect separation; the coherence law). **Kill:** any class maximum $\neq$ its claimed value $\Rightarrow$ the skeleton is wrong.
 
-### W2′ — Split three ways per [REV2] §5 — **TERMINAL: W2a-STRUCTURE-DELIVERED / W2b-NO-ACTION / W2c-VACUOUS (LOG #16). The H² road is closed by two theorems (cancellation + collapse); the corrected successor target: a phase-retaining invariant of ρ finer than B∘ρ**
+### W2′ — Split three ways per [REV2] §5 — **TERMINAL: W2a-STRUCTURE-DELIVERED / W2b-NO-ACTION / W2c-VACUOUS (LOG #16). The H² road is closed by two theorems (cancellation + collapse); the corrected successor target: a phase-retaining invariant of ρ finer than B∘ρ — pinned as W7 (v2.2)**
 
 The Born projection **annihilates** scalar multipliers,
 
@@ -206,11 +220,88 @@ Is the $\Delta$-structure the same obstruction AB's presheaf class witnesses, an
 
 Division events = where the defect dies (now via T3′); which of his claims survive the atlas move.
 
+### W7 — The phase-retaining loop signature — **PINNED 2026-07-29 (LOG #19); O2's referent test**
+
+The corrected successor to W2, re-typed per [REV3]: a gauge-typed projective loop signature — support-cycle (Haagerup-type) holonomies within dense arrows, plus operator-relation loop phases across projective families, plus the mixed **cut-coherence tensor**
+
+$$
+\mathcal{C}^{ij}_{k\ell}(U_2,U_1) \;=\; w^{ij}_k\,\overline{w^{ij}_\ell},
+\qquad
+w^{ij}_k \;=\; (U_2)_{ik}(U_1)_{kj}.
+$$
+
+The gauge census comes first (full Schur / boundary / compensated cut / projective scalar) and issues G-REDUCED / G-POSTULATED / G-ANNIHILATED; composition may require a **seam torsor** (separate orbit data provably do not compose); records must **block-diagonalize** $\mathcal{C}$ by record sector, with
+
+$$
+\Delta^B_{ij} \;=\; 2\sum_{k<\ell}\mathrm{Re}\,\mathcal{C}^{ij}_{k\ell}
+$$
+
+as readout, not theorem. Mandatory anchors: the W2 Weyl collapse families ($X_N, Z_N^k$, $N = 2..6$) — a candidate that cannot distinguish their classes is not the successor. Six pre-registered outcomes in the pin (`note-w7-loop-signature-pin.md`). **Scope: one-chart/common-carrier mathematics; cross-chart co-reference stays W6's.**
+
+### W6 — Co-reference/amalgamation (named, not yet pinned)
+
+When are two chart-events **the same event** — the bridge the withdrawn global $(E,\prec)$ silently presupposed (§5). Needs a definition before a theorem; queued after W7.
+
 ---
 
-## 5. Non-claims
+## 5. Ontological scope (v2.2)
 
-No claim about nature beyond the models; the atlas move is a postulate; no Born-rule derivation is claimed; the three-class skeleton is assembled from cited antecedents; the $H^1$ formulation is dead and stays dead; W4′'s unification is a hypothesis; v11 and BC remain halted; L-1/L0 bind wherever applicable (no exact finite covariance claims; no scale claims).
+Engraved per [REV3] (three external ontology rounds), adjudicated at LOG #18; every mathematical claim below that is not a cited theorem was hand-verified at adjudication. The four-gate rule (end of this section) governs every object here.
+
+**The scope sentence.** v12 does not posit a global present, a global configuration history, or a global event set. Actuality is asserted only locally: each realized record has one definite local value. The amplitude/projective layer is treated as objective nomological structure — law governing possible continuations and their coherent composition — not as an additional set of actual events or worlds. Stable records are the structures on which that law descends to an ordinary divisible stochastic law. Whether unrecorded chart configurations are themselves ontic, as in Barandes, or only variables of the nomological representation, remains an explicit open fork (O4).
+
+### O1 — Local actuality [postulate, negative-form]
+
+Whenever a physical record occurs, it has one definite local value. No universal present, global slice, or global counterfactual assignment is postulated; no coactual multiplicity of realized records is posited; **no global actuality object is inferred from that negative claim** (T5″).
+
+### O2 — Nomological-amplitude postulate [postulate; W7 supplies or kills its referent]
+
+The programme provisionally treats a gauge-invariant phase-sensitive composition structure, finer than the Born shadow, as objective nomology rather than event ontology. **Its mathematical referent is not yet fixed; W7 supplies or kills it. Failure of W7 demotes O2.** Motivation, not proof: W1′ — phase-sensitive positive Gram structure does the work locating the quantum body, and the $2\sqrt{2}$ wall is a chart-independent constraint on possibles; W2 — the Born shadow and the complete $\Delta^B$-family cannot identify the projective class. This does not yet prove the missing structure is law rather than surplus representation; it becomes earned only if W7 exhibits a referent that (1) is precisely defined, (2) composes, (3) controls a committed structural phenomenon, and (4) connects to record classicalization. **O2 is an explicit v12 EXTENSION, not Barandes-faithful:** [B3] treats the Hilbert-space variables as gauge-dependent and cautions against giving gauge variables ontological meaning (W5's recast carries the quotes).
+
+### O3 — Record classicality [theorem-backed]
+
+Stable records are actual physical structures. On the algebra they record, and under operations preserving them, the stochastic law is classically divisible (W3′, LOG #14; the seam gloss at T3′).
+
+### O4 — Unrecorded actuality: the open fork
+
+**O4-A (Barandes-compatible configuration realism):** unrecorded local configurations are actual but ephemeral. **Price:** O4-A requires a new covariant co-reference rule for unrecorded local configurations; BC2 shows the current slice-indexed composite formalism does not provide that rule (scoped to that formal apparatus, not to relativity in nature); a preferred structure is one possible completion, **not yet a forced conclusion**. W5's LTP-forcing lemma is the fulcrum: [B3]'s own axioms deny composite division events exactly where the process is indivisible, so under O4-A the composite has definite actuality at intermediate times to which no probability law attaches.
+
+**O4-B (record actualism):** only records are actual; unrecorded configurations are variables of the nomological representation. **Price:** T1 must be rewritten; definite pre-record configurations cease to be ontic; several of W5's FAITHFUL correspondences become EXTENSION or TENSION; the result departs from Barandes configuration realism.
+
+Until the fork is chosen, **no complete ontology is claimed**. Both branches agree on all record-level predictions by construction, so the discriminator is theoretical, and its unit form is: *does a covariant co-reference structure for unrecorded configurations exist?* — queued after W6.
+
+### Withdrawn: the global event set
+
+A global $(E,\prec)$ — one event set with causal precedence spanning the atlas — is **withdrawn** under the four-gate rule: its referent presupposes cross-chart event identity (the amalgamation W6 has not built); its necessity is undemonstrated; it smuggles global causal organization; no discriminator was stated. Model-local generated causal orders (v9–v11) remain committed **model objects**; no global amalgam is asserted. "Local cut" is the strict term; "local now" is an interpretation, not a claim.
+
+### The four-gate rule (house discipline, ontology side)
+
+Every newly introduced object must pass, in writing: **Referent** — definable from committed primitives, or explicitly labelled a new postulate; **Necessity** — which measured obstruction requires it; **No-smuggling** — the definition must not contain the structure it is meant to explain (GW1's discipline, now programme-wide); **Discriminator** — what theorem, counterexample, or experiment distinguishes it from alternatives.
+
+### The earned core (six items, plus the framing postulate)
+
+The framing postulate: T1's atlas of context-local Barandes processes (a postulate, engraved as such). The earned items:
+
+1. $\Delta^B(U_2,U_1) = B(U_2U_1) - B(U_2)B(U_1)$ is exactly the interference cross-term, with the three-defect separation (T2′; hand-verified constructions at LOG #4).
+2. W1′: the three-class convex-body theorem, with $\mathcal{Q}_{\mathrm{corr}}$ complete at CHSH (LOG #7).
+3. W3′: stable records classicalize their recorded algebra — theorem, decision procedure, the all-partitions Bell instance (LOG #14).
+4. W4′: the obstruction families are six-ways independent — no single quantum invariant at this grain (LOG #15).
+5. W2: the $H^2$ road closed by two theorems; the successor target re-typed as the phase-retaining invariant (LOG #16) — now W7.
+6. W5's LTP-forcing lemma: [B3]'s axioms bind his division events to divisibility (LOG #12).
+
+### Successor order (v2.2)
+
+$$
+\textbf{W7} \;\longrightarrow\; \textbf{W6} \;\longrightarrow\; \{\text{O4 discriminator};\ \text{v13 GW2 regional descent census}\} \;\longrightarrow\; H_a[N].
+$$
+
+W7 is one-chart mathematics and does not touch co-reference; W6 owns the bridge; the v13 successor is re-posed as regional record-restricted descent (GW2 pin, v13 LOG #7) with the $H_a[N]$ construction preserved as the later branch. Behind these, the #17 frontier stays live: the [D71b] Clause-3 bridge; W3′'s [GMH] converse; beyond-CHSH.
+
+---
+
+## 6. Non-claims
+
+No claim about nature beyond the models; the atlas move is a postulate; no Born-rule derivation is claimed; the three-class skeleton is assembled from cited antecedents; the $H^1$ formulation is dead and stays dead; W4′'s unification was a hypothesis and is decided NEITHER-ONE-NOR-THREE (LOG #15); no complete ontology is claimed while O4 stands open; O2 stands or falls with W7; v11 and BC remain halted; L-1/L0 bind wherever applicable (no exact finite covariance claims; no scale claims).
 
 ---
 
@@ -225,4 +316,7 @@ No claim about nature beyond the models; the atlas move is a postulate; no Born-
 - **[T]** Tsirelson's bound (real-unit-vector representation; see e.g. arXiv:1501.01406 for the CHSH-type statement).
 - **[W]** Weyl relations / noncommutative torus (projective multipliers on $\mathbb{Z}^2$; e.g. arXiv:1606.01829).
 - **[REV], [REV2]** the two external hostile reviews, adjudicated at LOG #3 and LOG #4 (constructions hand-verified there).
+- **[REV3]** the external ontology/W7 review sequence (three rounds, 2026-07-28/29), adjudicated at LOG #18–#19; the T5″ demotion, the O-commitments, the gauge-census correction, and the cut-coherence tensor are its contributions.
+- **[GG]** gain graphs / switching classes (cycle-basis classification of edge phases up to vertex switching; e.g. *On cospectrality of gain graphs*, DOI 10.1515/spma-2022-0169).
+- **[MSS]** N. Mukunda et al., *Bargmann invariants and off-diagonal geometric phases for multi-level quantum systems*, arXiv:quant-ph/0107006 (the ray/Gram setting).
 - **[V10]** `../v10/THE-THEORY-SO-FAR.md`. **[V11]** `../v11/LOG.md`. **[BC]** `../bc/LOG.md`. **[V1]** the v1 paper 0 founding conjecture.
