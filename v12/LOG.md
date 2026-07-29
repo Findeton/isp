@@ -742,3 +742,35 @@ now includes the user's own commit 25a959e committing the
 previously-uncommitted v11 U1c delivery and bc partials; their
 status is UNCHANGED — GREEN-UNREVIEWED, not citable; no unit
 reopened.
+
+## 2026-07-29 — W7 PINNED: THE PHASE-RETAINING LOOP SIGNATURE (v12
+## LEDGER #19)
+The pin (note-w7-loop-signature-pin.md) freezes the corrected
+successor unit per [REV3], replacing the founding Bargmann sketch
+whose two errors are owned at #18.  Structure: W7-0 GAUGE CENSUS
+first (full Schur / projective scalar / basis rephasing / boundary
+/ compensated cut / physical; first verdict G-REDUCED /
+G-POSTULATED / G-ANNIHILATED — it decides whether O2 has
+single-arrow referents at all); W7-1 single-arrow orbit theorem
+(even-cycle/Haagerup holonomies; the [GG] switching classification
+as ANTECEDENT, cycle rank |E|−|V|+c; W7's contribution is the
+adaptation to committed families and support changes); W7-2
+degenerate/monomial supports (matchings have no cycles; the W2
+Weyl families X_N, Z_N^k, N=2..6 are MANDATORY anchors; the
+relation-loop commutator scalar β(g,h) must distinguish their
+classes, anchored to B4x's six distinct β); W7-3 compositional
+closure (separate orbit data provably do NOT compose — the
+diagonal-insertion witness; the seam-torsor question; the
+cut-coherence tensor C^{ij}_{kℓ} = w_k conj(w_ℓ) as the committed
+minimal mixed candidate with seven exact gates; the readout
+identity Δᴮ = 2Σ Re C is a GATE — the theorem is completeness/
+minimality of the combined signature, or the no-go NAMING the
+missing seam datum); W7-4 record descent (W3′ hypotheses ⟹ C
+block-diagonal by record sector; eraser control restores
+off-diagonal blocks; vanished amplitudes have UNDEFINED phases);
+W7-5 adjudication (six pre-registered outcomes, combinable; the
+verdict must state which of O2's four earning conditions hold).
+Eight mandatory anchors; exact arithmetic throughout; scope
+engraved: ONE-CHART mathematics — co-reference stays W6's.
+Dispatch to follow; per the #11/#15 rule it is recorded only after
+it occurs.
