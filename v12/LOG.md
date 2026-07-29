@@ -1083,3 +1083,24 @@ certificates; the channel-form theorem exercised only through
 instances; numbering gaps.  COMMITTED GREEN-UNREVIEWED; the
 paper hostile round next per the pin's binding plan; dispatch
 recorded after it occurs.
+
+## 2026-07-29 — PAPER 1 HOSTILE ROUND DISPATCHED (v12 LEDGER #28)
+Background referee (Opus 5), repo read-only, own code in the
+session scratchpad.  Seven mandatory gates assigned: G1
+self-containment (reader-with-nothing-but-the-paper test + its
+own token audit + appendix-vs-bundle inventory); G2 number sweep
+(full bundle rerun + ≥15 load-bearing numbers independently
+recomputed, incl. the paper's own n=5 sample, the composite
+rebuild's 27/18 + 288, the Hardy table, the residual censuses);
+G3 proof audit (closed form/separation/coherence; records
+theorem; BOTH gauge reductions in repaired form; the pair
+criterion both directions; the completion; descent + limit; the
+LTP lemma verified against arXiv:2507.21192 fetched directly —
+every quote, page, equation number); G4 attribution audit (AMB's
+γ-zeros; Tsirelson pinning adjudicated; Zaslavsky; SvN; MSS;
+GMH/Halliwell; CAZAC); G5 reconstruction audit (§8's own
+instruments reimplementable-from-text; six-for-six with two-way
+witnesses; the frame instrument rebuilt from the text alone); G6
+register + rendering (KaTeX-safe grep; abstract-vs-body;
+scope tags; references); G7 the writer's open items refereed.
+This entry is written after the dispatch occurred.
