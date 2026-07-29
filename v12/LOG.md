@@ -1257,3 +1257,29 @@ full hostile round (no false theorem; 119 independent
 recomputations; 17/17 verbatim [B3] quotes).  The publication
 route remains the USER'S.  Next: the [REV4]-queued paper 0
 outcome pass (#34).
+
+## 2026-07-29 — PAPER 0 v2.3: THE OUTCOME PASS (v12 LEDGER #34)
+The [REV4]-queued update, applied as a single dated pass: the W7
+§4 entry set TERMINAL with its verdict and outcome paragraph
+(gauge reduction derived twice; pair-completeness ⟺ L₄ = Z(Γ)
+with the φ-criterion; composite refuted; the recorded-but-phased
+limit; consolidated as paper 1, PAPER1-PUBLISHABLE #33); the W6
+§4 entry set PINNED-AND-RUNNING (Record Co-reference and
+Effective Descent, [REV4]/#30, census dispatched #31, the
+phase-is-not-a-criterion architecture); §5 O2 RENAMED AND
+RESOLVED — "Nomological composition structure": v2.2's
+supplies-or-kills clause resolved SUPPLIED at finite one-chart
+scope; the referent = the gauge-equivalence class of composable
+amplitude diagrams (support-cycle / relation-loop / seam /
+cross-block invariants; K required for composite completeness;
+descent bounded by the limit); the four earned conditions listed
+with their scopes; the NOT-list adopted from [REV4] (not a
+matrix, wavefunction, scalar phase, cohomology class, or shadow
+functional); opens = universal completion, general dimension,
+cross-chart descent (W6's); the extension status and [B3]'s
+gauge caution unchanged, now with the note that W7's census
+PROVES his claim at his one-arrow scope; the successor order
+updated (W7 terminal → W6 in census); Non-claims updated (O2's
+clause re-scoped).  The nomological-vs-actuality reading REMAINS
+the postulate — nothing in this pass ontologizes beyond §5's
+existing commitments.

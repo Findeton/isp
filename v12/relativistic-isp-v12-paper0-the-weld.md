@@ -1,8 +1,8 @@
-# The Weld, v2.2 — Quantum Interference as the Composition Defect of Stochastic Shadows
+# The Weld, v2.3 — Quantum Interference as the Composition Defect of Stochastic Shadows
 
 *Programme subtitle: toward quantum mechanics from Barandes processes, Gram positivity, and record-induced divisibility.*
 
-**v12 paper 0 — the founding document, second formulation. STRICT. 2026-07-28; v2.2 ontological-scope pass 2026-07-29 ([REV3], LOG #18).**
+**v12 paper 0 — the founding document, second formulation. STRICT. 2026-07-28; v2.2 ontological-scope pass 2026-07-29 ([REV3], LOG #18); v2.3 outcome pass 2026-07-29 (W7 terminal; paper 1 terminal-publishable; W6 pinned — LOG #34).**
 
 v1 (the $U(1)$-bundle-class formulation) is superseded per LOG #2–#3: falsified by the two-chart $H^1$ triviality (LOG #2, proven) and by the external hostile review's exact constructions (LOG #3, hand-verified). The Tsirelson-saturating singlet model carries a **trivial** cocycle class, while the nontrivial class in the natural edge-phase models is the superquantum PR box — the v1 identification was anti-correlated with quantumness. v1 is preserved in git history; nothing below claims it.
 
@@ -220,7 +220,7 @@ Is the $\Delta$-structure the same obstruction AB's presheaf class witnesses, an
 
 Division events = where the defect dies (now via T3′); which of his claims survive the atlas move.
 
-### W7 — The phase-retaining loop signature — **PINNED 2026-07-29 (LOG #19); O2's referent test**
+### W7 — The phase-retaining loop signature — **TERMINAL 2026-07-29 (LOG #24): W7-SIGNATURE-INCOMPLETE-SEAM-DATUM-NAMED (G-REDUCED; referent delivered, completeness scoped)**
 
 The corrected successor to W2, re-typed per [REV3]: a gauge-typed projective loop signature — support-cycle (Haagerup-type) holonomies within dense arrows, plus operator-relation loop phases across projective families, plus the mixed **cut-coherence tensor**
 
@@ -238,9 +238,11 @@ $$
 
 as readout, not theorem. Mandatory anchors: the W2 Weyl collapse families ($X_N, Z_N^k$, $N = 2..6$) — a candidate that cannot distinguish their classes is not the successor. Six pre-registered outcomes in the pin (`note-w7-loop-signature-pin.md`). **Scope: one-chart/common-carrier mathematics; cross-chart co-reference stays W6's.**
 
-### W6 — Co-reference/amalgamation (named, not yet pinned)
+**Outcome (v2.3):** the gauge reduction DERIVED twice (composition-compatibility; unitarity-preservation — the licensing quantifier named, the degenerate-support vacuity disclosed); pair-completeness ⟺ $L_4 = Z(\Gamma)$, with the φ-criterion realizing every failing class ($n \le 4$ exhaustive, $n = 5$ sampled — every found gap closed by $\mathcal{K}$); composite completeness separately refuted; record descent block-diagonalizes, bounded by the recorded-but-phased limit. Consolidated self-contained as **paper 1** (`paper1-composition-defect.md`, PAPER1-PUBLISHABLE, LOG #33).
 
-When are two chart-events **the same event** — the bridge the withdrawn global $(E,\prec)$ silently presupposed (§5). Needs a definition before a theorem; queued after W7.
+### W6 — Record Co-reference and Effective Descent — **PINNED 2026-07-29 ([REV4], LOG #30); census dispatched (#31)**
+
+When are two chart-events **the same event** — the bridge the withdrawn global $(E,\prec)$ silently presupposed (§5). Pinned per [REV4]: the fact/token/descent split (W6-A/B/C), the φ-map skeleton with coherence laws, six mandatory controls (including the symmetric duplicate), six pre-registered outcomes (including groupoid and blocked-at-referent), and the architecture rule **phase is not a criterion** — W6 builds the base of shared record referents; W7's boundary-gauge and loop data are the fibre transported over it.
 
 ---
 
@@ -254,9 +256,9 @@ Engraved per [REV3] (three external ontology rounds), adjudicated at LOG #18; ev
 
 Whenever a physical record occurs, it has one definite local value. No universal present, global slice, or global counterfactual assignment is postulated; no coactual multiplicity of realized records is posited; **no global actuality object is inferred from that negative claim** (T5″).
 
-### O2 — Nomological-amplitude postulate [postulate; W7 supplies or kills its referent]
+### O2 — Nomological composition structure [postulate; referent supplied at finite one-chart scope (W7 TERMINAL, LOG #24; paper 1, LOG #33)]
 
-The programme provisionally treats a gauge-invariant phase-sensitive composition structure, finer than the Born shadow, as objective nomology rather than event ontology. **Its mathematical referent is not yet fixed; W7 supplies or kills it. Failure of W7 demotes O2.** Motivation, not proof: W1′ — phase-sensitive positive Gram structure does the work locating the quantum body, and the $2\sqrt{2}$ wall is a chart-independent constraint on possibles; W2 — the Born shadow and the complete $\Delta^B$-family cannot identify the projective class. This does not yet prove the missing structure is law rather than surplus representation; it becomes earned only if W7 exhibits a referent that (1) is precisely defined, (2) composes, (3) controls a committed structural phenomenon, and (4) connects to record classicalization. **O2 is an explicit v12 EXTENSION, not Barandes-faithful:** [B3] treats the Hilbert-space variables as gauge-dependent and cautions against giving gauge variables ontological meaning (W5's recast carries the quotes).
+v2.2's clause — *W7 supplies or kills the referent; failure demotes O2* — is resolved: **supplied, at the stated scope.** At finite one-chart scope, the referent is the **gauge-equivalence class of composable amplitude diagrams**, represented by their support-cycle holonomies, relation-loop phases, seam (cut-coherence) tensors, and cross-block path invariants — with the seam datum $\mathcal{K}$ required for composite completeness, and record descent bounded by the recorded-but-phased limit. What W7 earned, exactly: (1) a precise referent HOLDS; (2) composition HOLDS with the named seam datum ($n \le 4$ exhaustive, $n = 5$ sampled); (3) control of $\Delta^B$ HOLDS one-way (a defect-flat pair can still carry composite phase); (4) record descent HOLDS, bounded. The structure is treated as objective nomology rather than event ontology — that reading remains the postulate. The referent is NOT one unitary matrix, one wavefunction, one scalar phase, one cohomology class, or any functional of the Born shadow ([REV4]'s characterization, adopted). **Open:** universal completion (general $n$), general-dimensional classification, and cross-chart descent — the last is W6's. **O2 remains an explicit v12 EXTENSION, not Barandes-faithful:** [B3] treats the Hilbert-space variables as gauge-dependent and cautions against giving gauge variables ontological meaning (W5's recast carries the quotes; W7's gauge census proves his claim exactly, at his one-arrow scope).
 
 ### O3 — Record classicality [theorem-backed]
 
@@ -292,16 +294,16 @@ The framing postulate: T1's atlas of context-local Barandes processes (a postula
 ### Successor order (v2.2)
 
 $$
-\textbf{W7} \;\longrightarrow\; \textbf{W6} \;\longrightarrow\; \{\text{O4 discriminator};\ \text{v13 GW2 regional descent census}\} \;\longrightarrow\; H_a[N].
+\textbf{W7 (terminal)} \;\longrightarrow\; \textbf{W6 (in census)} \;\longrightarrow\; \{\text{O4 discriminator};\ \text{v13 GW2 regional descent census}\} \;\longrightarrow\; H_a[N].
 $$
 
-W7 is one-chart mathematics and does not touch co-reference; W6 owns the bridge; the v13 successor is re-posed as regional record-restricted descent (GW2 pin, v13 LOG #7) with the $H_a[N]$ construction preserved as the later branch. Behind these, the #17 frontier stays live: the [D71b] Clause-3 bridge; W3′'s [GMH] converse; beyond-CHSH.
+W7 closed at LOG #24 and is consolidated as paper 1 (#33); W6 owns the bridge and is running; the v13 successor is re-posed as regional record-restricted descent (GW2 pin, v13 LOG #7) with the $H_a[N]$ construction preserved as the later branch. Behind these, the #17 frontier stays live: the [D71b] Clause-3 bridge; W3′'s [GMH] converse; beyond-CHSH.
 
 ---
 
 ## 6. Non-claims
 
-No claim about nature beyond the models; the atlas move is a postulate; no Born-rule derivation is claimed; the three-class skeleton is assembled from cited antecedents; the $H^1$ formulation is dead and stays dead; W4′'s unification was a hypothesis and is decided NEITHER-ONE-NOR-THREE (LOG #15); no complete ontology is claimed while O4 stands open; O2 stands or falls with W7; v11 and BC remain halted; L-1/L0 bind wherever applicable (no exact finite covariance claims; no scale claims).
+No claim about nature beyond the models; the atlas move is a postulate; no Born-rule derivation is claimed; the three-class skeleton is assembled from cited antecedents; the $H^1$ formulation is dead and stays dead; W4′'s unification was a hypothesis and is decided NEITHER-ONE-NOR-THREE (LOG #15); no complete ontology is claimed while O4 stands open; O2's referent stands at finite one-chart scope (W7), its universal and cross-chart standing open (W6); v11 and BC remain halted; L-1/L0 bind wherever applicable (no exact finite covariance claims; no scale claims).
 
 ---
 
