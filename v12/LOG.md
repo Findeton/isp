@@ -991,3 +991,29 @@ TERMINAL; paper 0's [GG] entry corrected to name Zaslavsky
 canonical (this commit).  **W7 IS TERMINAL.**  Next per the
 user's standing order: PAPER 1 (self-contained Barandes
 extension) — pin to follow.
+
+## 2026-07-29 — PAPER 1 PINNED (v12 LEDGER #25)
+The pin (note-paper1-pin.md) freezes the user-ordered
+consolidation: a SELF-CONTAINED, PUBLISHABLE results paper
+standing alone as a Barandes extension.  Hard self-containment
+rules, each a review gate: external citations only ([B1-B3]
+page-cited, Fine/AB/AMB/Tsirelson/Weyl/SvN/Zaslavsky/MSS/
+decoherent-histories/CAZAC); a mechanical forbidden-token audit
+(no unit labels, corpus versions, ledger/pin/round vocabulary);
+every theorem proved in-paper or delimited against external
+antecedents; ALL independence witnesses RECONSTRUCTED in-paper
+(the two-frame composite Bell model and the division-event
+non-gluing model included — no reliance on prior corpus
+measurements); the code bundle v12/paper1_code/ as the user's one
+exception — standalone scripts + master runner regenerating every
+number with a receipts table; single-threaded, no ontologizing,
+scope tags throughout.  Ten fixed sections (defects/coherence;
+CHSH skeleton; records theorem; gauge reduction; loop signature +
+incompleteness + K; record descent + limit; independence;
+relation-to-Barandes with the LTP lemma proved against [B3]'s
+equations; open problems; reproduction appendix).  Pre-registered:
+PAPER1-PUBLISHABLE / PAPER1-BLOCKED-AT-⟨item⟩.  Review plan
+binding: writer → adjudicator token-audit + bundle regeneration →
+paper hostile round (self-containment, number sweep, proof,
+attribution, quote verification, register) → repairs → terminal.
+Writer dispatch to follow; recorded after it occurs.
