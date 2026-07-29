@@ -774,3 +774,12 @@ Eight mandatory anchors; exact arithmetic throughout; scope
 engraved: ONE-CHART mathematics — co-reference stays W6's.
 Dispatch to follow; per the #11/#15 rule it is recorded only after
 it occurs.
+
+## 2026-07-29 — W7 CONSTRUCTION DISPATCHED (v12 LEDGER #20)
+Background worker (Opus 5), bound to the frozen pin at e5d1d44;
+read-list, house rules, stall doctrine and the exact-arithmetic
+requirement in the dispatch; deliverables v12/code/w7_*,
+v12/note-w7-loop-signature.md (GREEN-UNREVIEWED on landing; the
+adjudicator commits).  Adjudication on return: verify gates and
+anchors, commit, hostile round, terminal.  This entry is written
+after the dispatch occurred.
