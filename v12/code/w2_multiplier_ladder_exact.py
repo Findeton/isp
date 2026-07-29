@@ -169,6 +169,16 @@ cite("[W]", "Weyl relations / noncommutative torus: projective multipliers "
      "on Z^2, U V = e^{2 pi i theta} V U, realized by the clock/shift pair "
      "(e.g. arXiv 1606.01829).  W1' NAMED it and used it at no gate; this "
      "is the unit where it is USED, and where it fails.")
+cite("[WK/CAZAC]", "The discrete Wiener-Khinchin theorem (the periodic "
+     "autocorrelation of a sequence and the squared modulus of its DFT are a "
+     "DFT pair) and the classical theory of CAZAC / perfect sequences, for "
+     "which 'flat |DFT|' IS the definition: Bjorck; Chu and Zadoff-Chu; "
+     "Frank; Turyn; Golomb and Gong, 'Signal Design for Good Correlation'.  "
+     "A8 ORIGINATES NEITHER.  What A8 claims is only the IDENTIFICATION: "
+     "Delta^B = 0 on the DFT-sandwich family <=> the interleaving diagonal "
+     "is a CAZAC sequence.  The equivalence between the two characterizations "
+     "of that condition is the cited theorem, re-gated here for the four N "
+     "in scope, not proven here.")
 cite("[SvN]", "Stone-von Neumann, finite form: on C^N the irreducible "
      "projective representations of Z^2 with a primitive q-th root "
      "multiplier have dimension exactly q and are the clock/shift (Weyl) "
@@ -623,14 +633,16 @@ for tag in ("2x2", "3x3"):
             if not meq(K, delta_def(K, mmul(K, U2, D), U1), base):
                 nonv += 1
     gate("A2", "(i) normalized: Delta^B(I,U) = Delta^B(U,I) = 0 [%s]" % tag,
-         ok_i, "%d matrices" % len(sub))
+         ok_i, "%d matrices; NEAR-TAUTOLOGICAL — B(I) = I, so both sides of "
+         "the definition coincide term by term" % len(sub))
     gate("A2", "(ii) OUTER TORI killed, both slots [%s]" % tag, ok_ii,
          "contains the wall B(omega U) = B(U)", "[REV2]")
     gate("A2", "(iii) compensated CUT GAUGE killed [%s]" % tag, ok_iii,
          "%d pairs" % (len(sub) ** 2))
     gate("A2", "(iv) permutation equivariance [%s]" % tag, ok_iv)
-    gate("A2", "(v) TRANSPOSE-REVERSAL law [%s]" % tag, ok_v,
-         "Delta(U2,U1)^T = Delta(U1^T,U2^T)")
+    gate("A2", "(v) TRANSPOSE-REVERSAL COVARIANCE [%s]" % tag, ok_v,
+         "Delta(U2,U1)^T = Delta(U1^T,U2^T); SUBSUMED BY B7, which re-gates "
+         "it on the FULL census and reads off the odd channel it leaves open")
     gate("A2", "(vi) an UNCOMPENSATED cut insertion DOES move it [%s]" % tag,
          nonv > 0, "%d of %d pairs moved" % (nonv, len(sub) ** 2))
     tick("A2 %s invariance sweep" % tag)
@@ -654,7 +666,13 @@ print("     At n = 2 the family is ONE-DIMENSIONAL — Delta^B is a multiple")
 print("     of [[1,-1],[-1,1]] whose parameter is 2 Re(A_0 B_0) with")
 print("     A_i = (U2)_i0 conj((U2)_i1), B_j = (U1)_0j conj((U1)_1j), which")
 print("     is W1's phase-alignment obstruction — and its EXACT RANGE is")
-print("     [-1/2, 1/2], both ends attained by the Hadamard pair (H,H).")
+print("     [-1/2, 1/2].  ROUND-1 REPAIR M3: the two ends are NOT both")
+print("     attained by (H,H).  (H,H) attains +1/2 at entry 00 only; the")
+print("     -1/2 end is attained ELSEWHERE, and the witness is gated below:")
+print("     Delta^B(H, diag(1,-1) H)_00 = -1/2.  The former gate paired")
+print("     Delta_00 = +1/2 with Delta_01 = -1/2, which is VACUOUS — the")
+print("     one-dimensionality makes Delta_01 = -Delta_00 identically — and")
+print("     it is replaced here by the two genuine attainment witnesses.")
 for d in (2, 3, 4, 5, 6):
     nv = 2 * d
     xs = [MP.var(nv, i) for i in range(d)]
@@ -673,7 +691,7 @@ for d in (2, 3, 4, 5, 6):
 for tag in ("2x2", "3x3"):
     K, FAM, Bc, rm, cm, cnt, rows, zflag = CENSUS[tag]
     d = len(FAM[0])
-    bad_rc = bad_lo = bad_1d = 0
+    bad_rc = bad_lo = bad_1d = bad_nn = 0
     for i2, i1, D, z in rows:
         for i in range(d):
             if not K.is_zero(ksum(K, D[i])):
@@ -687,6 +705,9 @@ for tag in ("2x2", "3x3"):
             for j in range(d):
                 if K.add(D[i][j], S[i][j]) != BB[i][j]:
                     bad_lo += 1
+                q = K.to_rat(S[i][j])
+                if q is None or q < 0:
+                    bad_nn += 1
         if d == 2:
             a = D[0][0]
             if D != [[a, K.neg(a)], [K.neg(a), a]]:
@@ -694,8 +715,15 @@ for tag in ("2x2", "3x3"):
     gate("A3", "row sums and column sums of Delta^B vanish [%s]" % tag,
          bad_rc == 0, "%d pairs, %d violations" % (len(rows), bad_rc))
     gate("A3", "Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [%s]" % tag,
-         bad_lo == 0, "%d entries; non-negativity is definitional, so the "
-         "lower bound needs no order oracle" % (len(rows) * d * d))
+         bad_lo == 0, "%d entries" % (len(rows) * d * d),
+         "DECLARATIVE-TAUTOLOGY (round-1 repair M6): D was BUILT as "
+         "B(U2U1) - B(U2)B(U1), so this tests (a-b)+b = a and carries no "
+         "independent information.  The content is the next gate.")
+    gate("A3", "s_ij = (B(U2)B(U1))_ij is a NON-NEGATIVE RATIONAL [%s]" % tag,
+         bad_nn == 0, "%d entries, %d violations — THIS is what the lower "
+         "bound -s_ij <= Delta^B_ij rests on (Delta + s = B(U2U1) >= 0 needs "
+         "s to be a real non-negative number before it bounds anything)"
+         % (len(rows) * d * d, bad_nn))
     if d == 2:
         gate("A3", "n=2: Delta^B is a multiple of [[1,-1],[-1,1]]",
              bad_1d == 0, "%d pairs — the family is 1-dimensional"
@@ -719,9 +747,15 @@ gate("A3", "AM-GM certificate (x+y)^2 - 4xy = (x-y)^2",
      ((xv + yv) * (xv + yv) - 4 * (xv * yv)
       - (xv - yv) * (xv - yv)).is_zero(),
      "on unit rows x + y = 1 gives |A_0|^2 = xy <= 1/4, so |Delta| <= 1/2")
-gate("A3", "(H,H) attains both ends of the n=2 range",
-     delta_def(K8, H2, H2)[0][0] == HALF
-     and delta_def(K8, H2, H2)[0][1] == MHALF)
+H2_FLIP = mmul(K8, mdiag(K8, [K8.one, K8.rat(-1)]), H2)
+gate("A3", "the UPPER end +1/2 is attained: Delta^B(H,H)_00 = +1/2",
+     delta_def(K8, H2, H2)[0][0] == HALF,
+     "the Hadamard pair; Delta^B(H,H) = [[1/2,-1/2],[-1/2,1/2]]")
+gate("A3", "the LOWER end -1/2 is attained ELSEWHERE (repair M3)",
+     is_unitary(K8, H2_FLIP)
+     and delta_def(K8, H2, H2_FLIP)[0][0] == MHALF,
+     "Delta^B(H, diag(1,-1) H)_00 = -1/2; (H,H) attains +1/2 ONLY, and the "
+     "old pairing of Delta_00 = +1/2 with Delta_01 = -1/2 was vacuous")
 print()
 
 # ------------------------------------------------- A4 the n-fold coherence law
@@ -861,10 +895,19 @@ print()
 # --------------------------------------- A5 the law is content-free about B
 print("A5.  THE COHERENCE LAW IS CONTENT-FREE ABOUT THE BORN PROJECTION")
 print("     A4's gate assumed nothing about B, so the law holds for ANY map")
-print("     whatsoever.  Made concrete and falsifiable-looking: the same")
-print("     identity is gated with B replaced by five DECLARED NON-BORN")
-print("     maps.  A law that survives replacing its subject constrains the")
-print("     subject not at all — the law is an identity of associativity.")
+print("     whatsoever.  Made concrete and FALSIFIABLE-LOOKING: the same")
+print("     identity is gated with B replaced by six DECLARED NON-BORN maps.")
+print("     A law that survives replacing its subject constrains the subject")
+print("     not at all — the law is an identity of associativity.")
+print("     ROUND-1 REPAIR M6, and it is this section's own thesis turned on")
+print("     its own gates: NONE OF THESE SIX GATES CAN FAIL.  The telescope")
+print("     (f(ABC) - f(AB)f(C)) + (f(AB) - f(A)f(B))f(C) =")
+print("     (f(ABC) - f(A)f(BC)) + f(A)(f(BC) - f(B)f(C)) has both sides")
+print("     equal to f(ABC) - f(A)f(B)f(C) for EVERY f, so all six are")
+print("     DECLARATIVE.  The sixth map is declared nonsense — it ignores its")
+print("     argument entirely — precisely to make that undeniable, and all")
+print("     six are named in the disclosure block as carrying no independent")
+print("     information.")
 
 
 def f_id(K, M):
@@ -890,11 +933,18 @@ def f_aff(K, M):
             for i in range(dd)]
 
 
+def f_junk(K, M):
+    """DECLARED NONSENSE: a constant map that ignores its argument."""
+    dd = len(M)
+    return [[K.rat(2 * i - 3 * j + 5) for j in range(dd)] for i in range(dd)]
+
+
 print("     caps: a deterministic stride of 6 matrices from each family,")
-print("     all 216 ordered triples, both families, five maps.")
+print("     all 216 ordered triples, both families, six maps.")
 for nm, f in (("f = identity", f_id), ("f = entrywise Re", f_re),
               ("f = entrywise square (no modulus)", f_sq),
-              ("f = transpose", f_tr), ("f = M + 2 M^T + 3 I", f_aff)):
+              ("f = transpose", f_tr), ("f = M + 2 M^T + 3 I", f_aff),
+              ("f = the CONSTANT map (declared nonsense)", f_junk)):
     allok = True
     ntest = 0
     for tag in ("2x2", "3x3"):
@@ -914,7 +964,8 @@ for nm, f in (("f = identity", f_id), ("f = entrywise Re", f_re),
                          for i in range(dd) for j in range(dd))
             ntest += 1
     gate("A5", "the coherence law holds for %-33s" % nm, allok,
-         "%d triples over both families" % ntest)
+         "%d triples over both families" % ntest,
+         "DECLARATIVE (cannot fail: the telescope is an identity for every f)")
 tick("A5 non-Born maps")
 print()
 
@@ -981,7 +1032,10 @@ for tag in ("2x2", "3x3"):
             unsep_R += all(mzero(K, delta_def(K, V, U)) for V in probesT)
     gate("A6", "SUFFICIENCY re-gated through the closed form [%s]" % tag,
          suff_bad == 0, "a monomial slot kills Delta^B against the whole "
-         "family")
+         "family",
+         "RE-ASSERTION (round-1 repair M6): this is exactly the census "
+         "anchor cond_nonzero = 0 of section 0.2, recomputed from the same "
+         "zflag table.  No independent information.")
     gate("A6", "NECESSITY: every non-row-monomial U2 is separated [%s]" % tag,
          unsep_L == 0, "%d non-row-monomial members, %d unseparated"
          % (nnm_L, unsep_L))
@@ -1047,6 +1101,17 @@ print()
 print("     Delta^B = 0 is PHASE ALIGNMENT, and the alignment condition is")
 print("     FLATNESS OF A FOURIER SPECTRUM.  W1's two committed closed")
 print("     forms are the N = 2 and N = 3 cases.")
+print("     ATTRIBUTION, and it is load-bearing (round-1 repair M5).  THE")
+print("     SECOND EQUIVALENCE IS NOT THIS UNIT'S.  'Flat |DFT|' <=> 'zero")
+print("     periodic autocorrelation at every nonzero lag' is the DISCRETE")
+print("     WIENER-KHINCHIN THEOREM, and it is the DEFINITION of the CAZAC /")
+print("     perfect sequences (Bjorck; Chu / Zadoff-Chu; Frank; Turyn;")
+print("     Golomb-Gong) — a classical body of work with explicit")
+print("     constructions for every N.  [WK/CAZAC].  WHAT A8 CLAIMS is only")
+print("     the IDENTIFICATION: that Delta^B = 0 on the DFT-sandwich family")
+print("     IS that known condition on the interleaving diagonal.  The")
+print("     equivalence itself is re-gated below for the four N in scope as")
+print("     a check on this receipt's arithmetic, NOT as a new theorem.")
 print("     caps: eps_0 = 1 fixed (an outer scalar is annihilated by A2);")
 print("     N=2 eps in mu_8 over Q(zeta_8); N=3 in mu_6 over Q(zeta_12);")
 print("     N=4 in mu_8 over Q(zeta_8); N=5 in mu_5 over Q(zeta_5).")
@@ -1079,10 +1144,13 @@ for N, K, rootstep, phorder, invs in (
         ntot += 1
     A8_TAB.append((N, ntot, nflat))
     gate("A8", "Delta^B = 0  <=>  FLAT SPECTRUM  [N=%d]" % N,
-         mism_spec == 0, "%d interleaving diagonals, %d flat, 0 mismatches"
-         % (ntot, nflat))
+         mism_spec == 0, "%d interleaving diagonals, %d flat, 0 mismatches — "
+         "THE IDENTIFICATION, which is what A8 claims" % (ntot, nflat),
+         "[WK/CAZAC]")
     gate("A8", "flat spectrum <=> zero periodic autocorrelation [N=%d]" % N,
-         mism_auto == 0, "the Wiener-Khinchin equivalence, exactly")
+         mism_auto == 0, "the discrete Wiener-Khinchin theorem and the "
+         "DEFINITION of a CAZAC sequence — CITED, re-gated as an arithmetic "
+         "check, NOT claimed here", "[WK/CAZAC]")
     tick("A8 N=%d" % N)
 tu_ok = all(all(x == K8.rat(Fr(1, 2)) for row in
                 mB(K8, mmul(K8, mmul(K8, H2,
@@ -1282,7 +1350,9 @@ for N in (2, 3, 4, 5, 6):
                  mB(K, Uw))
              for Uw in words.values() for s in range(K.n))
     gate("B3", "beta_B is lift-independent on every word [N=%d]" % N, li,
-         "%d words x %d scalars" % (len(words), K.n), "[REV2]")
+         "%d words x the %d ROOTS OF UNITY mu_%d of the carrier field (NOT "
+         "every scalar of the field: the sweep is over zeta^s, s < %d — "
+         "round-1 repair m3)" % (len(words), K.n, K.n, K.n), "[REV2]")
     WEYL[N] = (K, X, Z, words)
 tick("B3 lift-independence")
 print()
@@ -1344,23 +1414,70 @@ for N in (2, 3, 4, 5, 6):
          "%d ordered word pairs per class (cap a,b < %d)"
          % ((lim * lim) ** 2, lim))
     tick("B4 N=%d" % N)
-print("     At N = 6 the classes have orders 1, 2, 3 and 6 — four distinct")
-print("     elements of H^2(Z^2, U(1)), the trivial one among them —")
-print("     carried by realizations with literally identical Born data.  NO")
-print("     FUNCTIONAL OF THE Delta^B-FAMILY CAN SEPARATE THEM.")
+print("     At N = 6 the six k give beta = zeta_6^{-k}, k = 0..5 — SIX")
+print("     DISTINCT elements of H^2(Z^2, U(1)), of four distinct ORDERS")
+print("     1, 2, 3, 6, the trivial class among them (round-1 repair m2: the")
+print("     earlier reading, 'four distinct elements', UNDER-SOLD the")
+print("     exhibit — the classes are six, and it is their orders that")
+print("     number four) — carried by realizations with literally identical")
+print("     Born data.  NO FUNCTIONAL OF THE Delta^B-FAMILY CAN SEPARATE")
+print("     THEM.")
+print()
+print("B4x. THE N = 6 EXTENSION, UNCAPPED  (round-1 repair M1)")
+print("     The sweep above capped N = 5, 6 at the 9x9 sub-block a,b < 3.")
+print("     The N = 6 case is the one the no-go leans on, so it is run here")
+print("     WITHOUT the cap: all 36 words U^a V^b, a,b < 6, and ALL 36 x 36")
+print("     = 1296 ordered word pairs, for ALL SIX k.  7776 exact Delta^B")
+print("     computations in Q(zeta_6).")
+K6, X6, Z6, _ = WEYL[6]
+n6_pairs = n6_nz = 0
+n6_beta = set()
+for k in range(6):
+    Zk = mid(K6, 6)
+    for _ in range(k):
+        Zk = mmul(K6, Zk, Z6)
+    C = mmul(K6, mmul(K6, X6, Zk), mmul(K6, mdag(K6, X6), mdag(K6, Zk)))
+    n6_beta.add(C[0][0])
+    wl6 = []
+    for a in range(6):
+        for b in range(6):
+            Uw = mid(K6, 6)
+            for _ in range(a):
+                Uw = mmul(K6, Uw, X6)
+            for _ in range(b):
+                Uw = mmul(K6, Uw, Zk)
+            wl6.append(Uw)
+    for P in wl6:
+        for Q in wl6:
+            n6_pairs += 1
+            if not mzero(K6, delta_def(K6, P, Q)):
+                n6_nz += 1
+    tick("B4x N=6 k=%d (%d cumulative pairs)" % (k, n6_pairs))
+gate("B4x", "Delta^B == 0 on ALL 36x36 word pairs, ALL SIX k [N=6]",
+     n6_nz == 0 and n6_pairs == 7776 and len(n6_beta) == 6,
+     "%d ordered word pairs, %d nonzero; the six beta values are distinct, "
+     "so the six classes are distinct in H^2 — the cap is REMOVED, not "
+     "merely widened" % (n6_pairs, n6_nz), "[W]")
 print()
 
 # -------------------------------- B5 Delta on monomial realizations
 print("B5.  EVERY MONOMIAL REALIZATION IS Delta^B-FLAT, AT EVERY theta —")
-print("     AND BREAKING MONOMIALITY HANDS CONTROL TO THE BASIS")
+print("     AND BREAKING MONOMIALITY SPLITS ONE theta INTO TWO FAMILIES")
 print("     The Weyl pair is monomial, and A6 makes the monomial group the")
 print("     exact annihilator of the family.  So the canonical realization")
 print("     of [W]'s own object — the only irreducible one at a primitive")
 print("     multiplier, by [SvN] — carries no defect at all.  Conjugating")
 print("     it by an exact rational rotation preserves theta and creates a")
 print("     defect; two different conjugators at the SAME theta create")
-print("     DIFFERENT defects.  The basis controls the family; theta does")
-print("     not.")
+print("     DIFFERENT defects.")
+print("     WHAT THAT DOES AND DOES NOT SHOW (round-1 repair m5).  It shows")
+print("     the SPLIT — theta does NOT determine the Delta^B-family, which")
+print("     is B6's first direction, exhibited here on two matrices.  It")
+print("     does NOT show that the BASIS determines the family: no map from")
+print("     bases to families is exhibited anywhere in this unit, and two")
+print("     conjugators is not a determination.  The earlier phrasing 'the")
+print("     basis controls the defect' overstated a two-point exhibit and is")
+print("     withdrawn.")
 KB = K8
 XP = [[KB.zero, KB.one], [KB.one, KB.zero]]
 ZP = mdiag(KB, [KB.rat(1), KB.rat(-1)])
@@ -1371,7 +1488,9 @@ CONJ = [("R(3/5,4/5)", [[KB.rat(Fr(3, 5)), KB.rat(Fr(-4, 5))],
 gate("B5", "the base Weyl pair is monomial and Delta^B-flat",
      mzero(KB, delta_def(KB, XP, ZP))
      and mzero(KB, delta_def(KB, ZP, XP)),
-     "commutator -I, theta = 1/2", "[W]")
+     "commutator -I, theta = 1/2; and by [SvN] this pair IS the irreducible "
+     "realization at a primitive multiplier, up to unitary equivalence and "
+     "scalars — so the flatness is not a corner case", "[W]+[SvN]")
 B5_DELTAS = []
 for nm, Wc in CONJ:
     Wd = mdag(KB, Wc)
@@ -1390,7 +1509,9 @@ for nm, Wc in CONJ:
          % to_q2(dv[0][0]))
 gate("B5", "SAME theta, DIFFERENT Delta^B-family",
      not meq(KB, B5_DELTAS[0], B5_DELTAS[1]),
-     "two conjugators, one class: the basis controls the defect")
+     "two conjugators, one class: theta does NOT determine the family (the "
+     "SPLIT, exhibited on two matrices).  It does NOT follow, and is not "
+     "claimed, that the basis determines it")
 print()
 
 # --------------------- B6 the exhaustive projective-pair census, committed
@@ -1509,32 +1630,79 @@ for tag in ("2x2", "3x3"):
 print()
 
 # ------------------------------------------------- B7 the parity obstruction
-print("B7.  THE PARITY OBSTRUCTION")
-print("     A2(v) is the family's reversal law: under")
+print("B7.  THE COVARIANCE LAW, THE ODD CHANNEL, AND WHAT THE PARITY")
+print("     ARGUMENT ACTUALLY DELIVERS   (rewritten at round-1 repair M4 and")
+print("     the parity-chain repair; the earlier reading of this section was")
+print("     wrong in three separate joints and each is corrected below.)")
+print()
+print("     THE LAW.  A2(v) is a COVARIANCE, not an evenness: under")
 print("     R : (U2,U1) -> (U1^T, U2^T) — reverse the order, transpose each")
-print("     step — Delta^B goes to its TRANSPOSE.  Hence every scalar")
-print("     functional of Delta^B that is transpose-invariant (the trace,")
-print("     the entry sums, the Frobenius norm, every symmetric function of")
-print("     the spectrum) is REVERSAL-EVEN.")
-print("     A U(1) holonomy is reversal-ODD by definition:")
-print("     Hol(gamma^-1) = conj(Hol(gamma)).  That is [D71b] Clause 2's")
-print("     finding — the corpus's only phase-shaped amplitude is placed on")
-print("     the reversal-ODD channel, at dual-conjugation error exactly 0,")
-print("     and no other placement transforms like a holonomy.")
-print("     A quantity that is BOTH reversal-even AND unimodular satisfies")
-print("     z = conj(z) and |z| = 1, hence z = +-1; and -1 is realized")
-print("     nowhere in the committed values ([D74] D2).  The multiplier and")
-print("     the defect sit on OPPOSITE PARITY CHANNELS.")
+print("     step — Delta^B goes to its TRANSPOSE,")
+print("         Delta^B  |-->  (Delta^B)^T.")
+print("     It follows that every scalar functional of Delta^B that is")
+print("     TRANSPOSE-INVARIANT (the trace, the entry sums, the Frobenius")
+print("     norm, every symmetric function of the spectrum) is")
+print("     reversal-EVEN.  IT DOES NOT FOLLOW, AND IS FALSE, that 'the")
+print("     Delta^B-family is reversal-even'.  Split")
+print("         Delta^B = S + A,   S = (D + D^T)/2,  A = (D - D^T)/2;")
+print("     under R, S is EVEN and A is ODD.  A is a genuine odd channel of")
+print("     the family and it is NOT identically zero — a witness outside")
+print("     W1's committed families is gated below.  On W1's committed")
+print("     families A does vanish identically, and that is a property OF")
+print("     THOSE FAMILIES, not of Delta^B; it is gated as such.")
+print()
+print("     THE OBSTRUCTION, CARRIER-INDEPENDENT AND NEEDING NO PARITY.")
+print("     Delta^B has REAL entries (A1: |sum w|^2 - sum |w|^2), so every")
+print("     real-polynomial functional of Delta^B is REAL; a real number of")
+print("     modulus 1 is +-1.  That single line already blocks a generic")
+print("     unimodular reading, and it invokes neither reversal parity nor")
+print("     any committed value set.  It is the load-bearing step.")
+print()
+print("     WHAT PARITY STILL ADDS, AND UNDER WHAT CONDITION.  Parity's")
+print("     residual content is about COMPLEX-VALUED functionals, where")
+print("     realness does not decide, and it is CONDITIONAL on identifying")
+print("     this R with loop reversal.  That identification is exactly what")
+print("     [D71b] Clause 3 says is not written: 'v6's reversal reverses")
+print("     TRANSPORT ORDER (T_A T_B vs T_B T_A); v7's reversal reverses a")
+print("     RECORD's own order relations... The bridge is one identification")
+print("     and one closure, and NEITHER IS WRITTEN'")
+print("     (v10/note-d71b-holonomy-phase-identity.md:623-631).  And")
+print("     Clause 2's NAMING of the transformation law as a holonomy law is")
+print("     itself flagged [MY READING] in its own note (:769-775), the")
+print("     measurement being the law, not the name.  Both disclosures are")
+print("     made here because the parity leg rests on them.")
+print()
+print("     WHAT IS WITHDRAWN.  The earlier chain ended '...hence z = +-1;")
+print("     and -1 is realized nowhere in the committed values ([D74] D2)'.")
+print("     THAT STEP IS DELETED.  D74's D2 is about D74's OWN value set —")
+print("     positive rationals — and says nothing about the values of")
+print("     Delta^B.  For Delta^B's own values the +-1 escape is WIDE OPEN,")
+print("     and this receipt now gates both witnesses.")
 zx = MP.var(1, 0)
 gate("B7", "even and unimodular forces z = +-1",
      (zx * zx - MP.const(1, 1)
       - (zx - MP.const(1, 1)) * (zx + MP.const(1, 1))).is_zero(),
-     "z = conj(z) gives y = 0; x^2 = 1 factors as (x-1)(x+1) = 0")
+     "z = conj(z) gives y = 0; x^2 = 1 factors as (x-1)(x+1) = 0",
+     "DECLARATIVE (round-1 repair M6): a one-line factorization of x^2 - 1, "
+     "no independent information")
+
+
+def asym(K, M):
+    d = len(M)
+    return [[K.scal(K.sub(M[i][j], M[j][i]), Fr(1, 2)) for j in range(d)]
+            for i in range(d)]
+
+
+REALBAD = {}
+ASYMN = {}
+TRPM = {}
 for tag in ("2x2", "3x3"):
     K, FAM, Bc, rm, cm, cnt, rows, zflag = CENSUS[tag]
     d = len(FAM[0])
     bad = 0
     treven = 0
+    realbad = 0
+    nasym = 0
     for i2, i1, D, z in rows:
         Drev = delta_def(K, mtr(FAM[i1]), mtr(FAM[i2]))
         if not meq(K, mtr(D), Drev):
@@ -1542,12 +1710,100 @@ for tag in ("2x2", "3x3"):
         if ksum(K, [D[a][a] for a in range(d)]) \
                 != ksum(K, [Drev[a][a] for a in range(d)]):
             treven += 1
-    gate("B7", "the reversal law on EVERY census pair [%s]" % tag, bad == 0,
-         "%d ordered pairs, 0 violations" % len(rows))
+        for r in D:
+            for x in r:
+                if K.conj(x) != x:
+                    realbad += 1
+        if not mzero(K, asym(K, D)):
+            nasym += 1
+        tq = K.to_rat(ksum(K, [D[a][a] for a in range(d)]))
+        if tq is not None and tq in (1, -1):
+            TRPM.setdefault(tag, {}).setdefault(tq, 0)
+            TRPM[tag][tq] += 1
+    REALBAD[tag] = (realbad, len(rows) * d * d)
+    ASYMN[tag] = (nasym, len(rows))
+    gate("B7", "COVARIANCE Delta^B -> (Delta^B)^T on every census pair [%s]"
+         % tag, bad == 0, "%d ordered pairs, 0 violations — a covariance, "
+         "NOT an evenness of the family" % len(rows))
     gate("B7", "tr Delta^B is reversal-EVEN on every census pair [%s]" % tag,
-         treven == 0, "%d pairs; the same holds for every transpose-"
-         "invariant functional" % len(rows))
-    tick("B7 %s parity sweep" % tag)
+         treven == 0, "%d pairs; the same holds for every TRANSPOSE-INVARIANT "
+         "functional, and for no other" % len(rows))
+    tick("B7 %s covariance sweep" % tag)
+gate("B7", "every Delta^B entry is REAL (conj x = x) on every census pair",
+     REALBAD["2x2"][0] == 0 and REALBAD["3x3"][0] == 0,
+     "%d + %d entries, 0 violations — the carrier-independent obstruction's "
+     "load-bearing step: a real functional of a real matrix cannot be a "
+     "nontrivial unimodular number"
+     % (REALBAD["2x2"][1], REALBAD["3x3"][1]))
+gate("B7", "the ODD part A vanishes on the COMMITTED families — "
+     "FAMILY-SPECIFIC", ASYMN["2x2"][0] == 0 and ASYMN["3x3"][0] == 0,
+     "%d of %d (2x2) and %d of %d (3x3) pairs with A != 0.  At 2x2 this is "
+     "FORCED by A3's one-dimensionality (a multiple of [[1,-1],[-1,1]] is "
+     "symmetric); at 3x3 it is a contingent property of THIS family, and the "
+     "next gate shows it fails off it"
+     % (ASYMN["2x2"][0], ASYMN["2x2"][1], ASYMN["3x3"][0], ASYMN["3x3"][1]))
+print()
+print("     THE ODD-CHANNEL WITNESS, outside the committed families.  The")
+print("     declared witness set at 3x3, in exact rational arithmetic:")
+print("       W = { R_01, R_12, R_01 F_3, R_12 F_3 }")
+print("     with R_kl the exact rational rotation [[3/5,-4/5],[4/5,3/5]] in")
+print("     the (k,l) plane (A6's own probe, m = 0) and F_3 the committed")
+print("     3-point DFT.  All four are unitary and NONE of the four lies in")
+print("     W1's committed 3x3 family.")
+R01W = probe(K12, 3, 0, 1, 0)
+R12W = probe(K12, 3, 1, 2, 0)
+WITSET = [("R_01", R01W), ("R_12", R12W),
+          ("R_01 F_3", mmul(K12, R01W, F3M)),
+          ("R_12 F_3", mmul(K12, R12W, F3M))]
+FAM3KEYS = {mkey(U) for U in FAM3L}
+wit_out = all(mkey(U) not in FAM3KEYS for _, U in WITSET)
+wit_uni = all(is_unitary(K12, U) for _, U in WITSET)
+nA = 0
+oddok = True
+firstw = None
+for n2, U2 in WITSET:
+    for n1, U1 in WITSET:
+        Dw = delta_def(K12, U2, U1)
+        Aw = asym(K12, Dw)
+        Arev = asym(K12, delta_def(K12, mtr(U1), mtr(U2)))
+        oddok &= meq(K12, Arev, [[K12.neg(x) for x in r] for r in Aw])
+        if not mzero(K12, Aw):
+            nA += 1
+            if firstw is None:
+                firstw = (n2, n1, Aw)
+if firstw:
+    print("     first witness pair (%s, %s):" % (firstw[0], firstw[1]))
+    for r in firstw[2]:
+        print("       A row  [ %s ]"
+              % "  ".join(("%s" % K12.to_rat(x)) if K12.to_rat(x) is not None
+                          else "%s" % (x,) for x in r))
+else:
+    print("     NO witness found in the declared set")
+gate("B7", "WITNESS: the odd part A is NONZERO off the committed families",
+     wit_out and wit_uni and nA > 0 and oddok,
+     "A != 0 on %d of the %d ordered pairs of the declared set W; all four "
+     "members unitary and outside the committed 3x3 family; and A(R.) = -A "
+     "on all %d pairs, so the odd channel transforms as claimed"
+     % (nA, len(WITSET) ** 2, len(WITSET) ** 2))
+tr_p = delta_def(K8, FAM2L[28], FAM2L[29])
+tr_m = delta_def(K8, FAM2L[28], FAM2L[34])
+tp = K8.to_rat(K8.add(tr_p[0][0], tr_p[1][1]))
+tm = K8.to_rat(K8.add(tr_m[0][0], tr_m[1][1]))
+gate("B7", "BOTH +1 AND -1 ARE REALIZED by tr Delta^B — the escape is OPEN",
+     tp == 1 and tm == -1,
+     "committed 2x2 family pairs (28,29) -> tr = %s and (28,34) -> tr = %s.  "
+     "Census of the two values: 2x2 [%s], 3x3 [%s].  So the deleted step "
+     "('-1 is realized nowhere, [D74] D2') was about D74's OWN value set, "
+     "not about Delta^B's: for Delta^B's own values the +-1 branch is OPEN, "
+     "and both branches are occupied"
+     % (tp, tm,
+        "; ".join("tr = %+d occurs %d times" % (v, c)
+                  for v, c in sorted(TRPM.get("2x2", {}).items()))
+        or "neither value occurs",
+        "; ".join("tr = %+d occurs %d times" % (v, c)
+                  for v, c in sorted(TRPM.get("3x3", {}).items()))
+        or "neither value occurs"),
+     "[D71b]")
 print()
 
 # --------------------------------------------- B8 the missing-piece census
@@ -1566,9 +1822,16 @@ CENSUS_ROWS = [
      "(B2)"),
     ("CAND-3  v7 paper 30's amplitude e^{-kE} e^{i Phi(O)}  ([D71b] 3.2)",
      "a phase built from a LINEAR functional Phi of the reversal-odd "
-     "channel O = F - F*: a character, not a multiplier; and B7 puts it on "
-     "the opposite parity channel from Delta^B",
-     "MISSING: the pairing; the closure; and the parity is wrong"),
+     "channel O = F - F*: a character, not a multiplier.  The parity leg is "
+     "SCOPED at B7 as rewritten: what is opposite to Phi's channel is not "
+     "'the Delta^B-family' but its TRANSPOSE-INVARIANT functionals, the "
+     "family's own antisymmetric part being odd and generally nonzero; and "
+     "the comparison is conditional on identifying B7's R with loop "
+     "reversal, which [D71b] Clause 3 says is nowhere written",
+     "MISSING: the pairing and the closure — outright.  The parity mismatch "
+     "is real for transpose-invariant functionals and CONDITIONAL on an "
+     "unwritten identification, so it is a supporting reason, not a "
+     "standalone one"),
     ("CAND-4  D42b4's prod sqrt(q) amplitude  ([D71b] 4.2)",
      "the right carrier — it IS the square root of the process's own "
      "weights — but assigned PER COMPLETE HISTORY, with zero occurrences "
@@ -1576,8 +1839,13 @@ CENSUS_ROWS = [
      "with +1 without an argument",
      "MISSING: the closure device, hence any commutator at all"),
     ("CAND-5  W1's U(1)-Gram edge phases g_ab = z_a conj(w_b)",
-     "committed and gated: the 4-cycle holonomy is IDENTICALLY 1 on 8192 "
-     "quadruples — every factorized edge phase is a coboundary",
+     "committed and gated: the 4-cycle holonomy is IDENTICALLY 1 in W1's "
+     "TWO separate gates — 4096 quadruples of the pi/4 family (exhaustive) "
+     "and 4096 of the pi/8 family (a_0 = 0 fixed, the holonomy being "
+     "invariant under z_a -> lam z_a and w_b -> mu w_b independently); the "
+     "two are cited separately here because they are different sweeps over "
+     "different families, not one sweep of 8192 (round-1 repair m4).  Every "
+     "factorized edge phase is a coboundary",
      "MISSING: non-factorizability; the class is zero by construction"),
     ("CAND-6  the canonical Weyl / NC-torus pair  ([W])",
      "the action EXISTS and [omega] != 0 for every theta in (1/N)Z — but "
@@ -1603,7 +1871,7 @@ gate("B8", "the census covers the corpus's phase candidates", True,
 print()
 
 B3_OK = all(ok for s, n, ok, d, t in GATES if s == "B3")
-B4_OK = all(ok for s, n, ok, d, t in GATES if s == "B4")
+B4_OK = all(ok for s, n, ok, d, t in GATES if s in ("B4", "B4x"))
 B5_OK = all(ok for s, n, ok, d, t in GATES if s == "B5")
 B6_OK = all(ok for s, n, ok, d, t in GATES if s == "B6")
 B7_OK = all(ok for s, n, ok, d, t in GATES if s == "B7")
@@ -1618,8 +1886,23 @@ print("           the generated group.")
 print("       (2) the CLASS.  Those carriers realize theta = 1/2 (2x2) and")
 print("           theta = 1/3, 2/3 (3x3) — genuinely nontrivial classes.")
 print("           Requirement (2) is met.")
-print("       (3) the CONTROL.  This is what fails, and it fails as a")
-print("           theorem (B3) and twice over as a measurement (B4, B6).")
+print("       (3) the CONTROL.  This is what fails, and the ATTRIBUTION")
+print("           matters (round-1 repair M1).  B3 ALONE DOES NOT CLOSE IT.")
+print("           B3 shows omega is absent from the FORMULA — but [omega] is")
+print("           itself a lift-INDEPENDENT invariant of the projective map")
+print("           rho, so 'absent from the formula' does not by itself imply")
+print("           'no functional of the family determines [omega]'.  The")
+print("           counterfactual makes this sharp: were B injective on")
+print("           PU(N), requirement (3) would be MET and B3 would still")
+print("           hold verbatim.  WHAT CLOSES THE ROAD IS B4/B4x: because")
+print("           B(Z^k) = I, beta_B = P^a is independent of k, so every")
+print("           finite-dimension-realizable class (theta in (1/N)Z, by")
+print("           C1's own determinant argument) collapses onto ONE AND THE")
+print("           SAME family — and then ANY functional whatsoever, of any")
+print("           shape, takes the same value on all of them.  B3 removes")
+print("           omega from the formula; B4/B4x shows the family cannot")
+print("           separate the classes.  B6 then measures the same failure")
+print("           independently, on committed carriers.")
 print("     So W2b-NO-ACTION names the failure precisely: not that no")
 print("     projective action can be built from committed objects, but that")
 print("     the multiplier of any such action is invisible to the")
@@ -1628,11 +1911,13 @@ print("     not the group that acts.")
 gate("B9", "W2b VERDICT: NO-ACTION" if NO_ACTION
      else "W2b VERDICT: a functional survives — ACTION-FOUND", True,
      "requirements (1) and (2) are MET by W1's committed families and NOT "
-     "by the generated <2,3>; requirement (3) FAILS: B3 the multiplier "
-     "cancels from the family identically; B4 four classes with one Born "
-     "shadow; B5 one theta, two bases, two families; B6 the double "
-     "dissociation on the committed carriers themselves; B7 the parities "
-     "are opposite", "DATA")
+     "by the generated <2,3>; requirement (3) FAILS, and it fails at B3 "
+     "PLUS B4/B4x TOGETHER: B3 removes omega from the formula, B4/B4x "
+     "collapses all six N = 6 classes onto ONE family (uncapped, 7776 word "
+     "pairs) so that no functional whatsoever can separate them; B5 one "
+     "theta, two bases, two families; B6 the double dissociation on the "
+     "committed carriers themselves; B7 the covariance law with the odd "
+     "channel scoped and the [D74]-D2 step withdrawn", "DATA")
 print()
 
 
@@ -1702,15 +1987,20 @@ head("SECTION D — ANTECEDENTS, AS USED")
 for t in sorted(CITED):
     print("  %-8s %s" % (t, CITED[t]))
 print()
+print("  EVERY THEOREM USED IS CITED AT THE GATE WHERE IT IS USED, and the")
+print("  three that were used without a gate tag now carry one: [SvN] at")
+print("  B5's base-Weyl-pair gate, [WK/CAZAC] at both A8 equivalence gates,")
+print("  [D71b] at B7's +-1-escape gate (round-1 repair M5).")
 print("  This unit claims: A1's closed form and the structure read off it")
 print("  (A2, A3), the tree coherence law at every n (A4), the content-free")
 print("  demonstration (A5), the exact two-sided annihilator (A6), the")
-print("  failure of local determination (A7), the flat-spectrum form of the")
-print("  alignment condition (A8), and the W2b no-go (B3-B7) with its")
-print("  census (B8).  It claims no novelty for the cross-term identity")
-print("  [B1], the coherence law at n = 3 [REV2], the Weyl relations [W],")
-print("  Stone-von Neumann [SvN], or any committed number of [W1'] or")
-print("  [D74].")
+print("  failure of local determination (A7), the IDENTIFICATION of Delta^B")
+print("  = 0 on the DFT-sandwich family with the CAZAC condition (A8), and")
+print("  the W2b no-go (B3-B4x-B7) with its census (B8).  It claims no")
+print("  novelty for the cross-term identity [B1], the coherence law at")
+print("  n = 3 [REV2], the Weyl relations [W], Stone-von Neumann [SvN], the")
+print("  Wiener-Khinchin / CAZAC equivalence [WK/CAZAC], or any committed")
+print("  number of [W1'] or [D74].")
 print()
 
 
@@ -1729,21 +2019,42 @@ if fails:
         print("    %-5s %-53s %s" % (s, n, d))
 print()
 DECL = [(s, n) for s, n, ok, d, t in GATES
-        if t.startswith("DECLARATIVE") or t == "DATA"
+        if t.startswith("DECLARATIVE") or t.startswith("RE-ASSERTION")
+        or t == "DATA"
         or n.startswith("W2b VERDICT") or n.startswith("W2c VERDICT")]
-DEGEN = [("A5", "the coherence law holds for f = identity"),
-         ("A3", "(H,H) attains both ends of the n=2 range")]
-print("  DISCLOSURE, in the W1' round-1 idiom.  Of the %d gates, %d carry"
-      % (len(GATES), len(DECL) + len(DEGEN)))
-print("  no independent information and are named here: %d are DECLARATIVE"
-      % len(DECL))
-print("  or DATA (a printed classification, a one-line piece of real")
-print("  algebra, or a verdict summary), and 2 are degenerate or")
-print("  re-assertions of an anchor —")
-for s, n in DECL + DEGEN:
+NIND = len(GATES) - len(DECL)
+print("  DISCLOSURE, in the W1' round-1 idiom, RECOUNTED at round-1 repair")
+print("  M6.  Of the %d gates, %d carry no independent information and are"
+      % (len(GATES), len(DECL)))
+print("  named here in full —")
+for s, n in DECL:
     print("      %-5s %s" % (s, n))
-print("  The independent-evidence count is therefore %d."
-      % (len(GATES) - len(DECL) - len(DEGEN)))
+print("  The independent-evidence count is therefore %d." % NIND)
+print()
+print("  WHAT THE ROUND FOUND, AND WHAT IT COST.  The previous printing of")
+print("  this receipt declared 152 gates with 8 disclosed and claimed 144")
+print("  independent.  That was OVERSTATED BY NINE.  The nine, all now")
+print("  disclosed above: the A3 modulus-square pair (D was BUILT as")
+print("  B(U2U1) - B(U2)B(U1), so the gate tests (a-b)+b = a); the A6")
+print("  sufficiency pair (a re-assertion of the section-0.2 census anchor);")
+print("  A5's four non-identity maps (the telescope is an identity for EVERY")
+print("  f, so none of them can fail — a sixth, declared-nonsense map is")
+print("  added above to make that visible rather than arguable); and B7's")
+print("  x^2 - 1 factorization.  ON THE SAME GATE SET the honest count is")
+print("  152 - 17 = 135, not 144.  This repaired receipt then removes one")
+print("  vacuous gate (A3's '(H,H) attains both ends', replaced by two")
+print("  genuine attainment witnesses) and adds new independent gates: the")
+print("  uncapped N = 6 extension (B4x), the non-negativity of s_ij that the")
+print("  lower bound actually rests on, the reality of Delta^B's entries,")
+print("  the odd-channel witness off the committed families, the")
+print("  family-specific vanishing of A on them, and the two tr Delta^B =")
+print("  +-1 witnesses.  READ THE FOLLOWING CAREFULLY, because the numeral")
+print("  is a trap: the honest count for THIS gate set is again 144, and it")
+print("  is NOT the old 144.  The old one was 152 gates minus 8 disclosed,")
+print("  and was wrong; that same gate set honestly counted gives 135.  The")
+print("  new one is 161 gates minus 17 disclosed.  The coincidence is")
+print("  arithmetic and nothing else, and it is named here so that it")
+print("  cannot be mistaken for 'nothing changed'.")
 print()
 print("  WHERE THIS RECEIPT'S OWN EXPECTATION WAS REFUTED BY ITS OWN SWEEP:")
 print("  B6 was written to check that every committed projective pair is")
@@ -1765,15 +2076,18 @@ print("      gauge are annihilated; only an UNCOMPENSATED insertion moves")
 print("      the family.  The pin's wall is the scalar corner of this.")
 print("    * the family is doubly centred, with sharp entrywise bounds")
 print("      -s_ij <= Delta^B_ij <= (n-1) s_ij by sum-of-squares")
-print("      certificates; at n = 2 it is exactly one-dimensional with")
-print("      EXACT RANGE [-1/2, 1/2], both ends attained by (H,H).")
+print("      certificates over a gated NON-NEGATIVE s; at n = 2 it is")
+print("      exactly one-dimensional with EXACT RANGE [-1/2, 1/2], the upper")
+print("      end attained by (H,H) and the lower end by (H, diag(1,-1) H) —")
+print("      NOT both by (H,H), which attains +1/2 only.")
 print("    * the n-fold coherence law is a TREE identity: all C_{n-1}")
 print("      bracketings give the same Delta_n — gated over formal matrices")
 print("      to n = 6 (d=2) and n = 5 (d=3) with no property of B assumed,")
 print("      and on exact committed matrices at every n it reaches.")
-print("    * the law is CONTENT-FREE about B: it survives replacing B by")
-print("      five declared non-Born maps.  It constrains the family; it")
-print("      selects nothing.")
+print("    * the law is CONTENT-FREE about B: it survives replacing B by six")
+print("      declared non-Born maps, one of them declared nonsense.  None of")
+print("      those six gates can fail and all six are disclosed as such.  It")
+print("      constrains the family; it selects nothing.")
 print("    * the two-sided annihilator is EXACTLY the monomial group in")
 print("      each slot: W1's sufficiency becomes an equivalence under a")
 print("      universal quantifier, by an exact rational probe.")
@@ -1782,7 +2096,10 @@ print("    * the alignment condition in closed form for all N: on a")
 print("      DFT-sandwich family Delta^B = 0 iff the interleaving diagonal")
 print("      has FLAT FOURIER SPECTRUM, equivalently zero periodic")
 print("      autocorrelation.  W1's t+u = +-2 (mod 8) and b2+a1 != 0")
-print("      (mod 3) are the N = 2 and N = 3 cases.")
+print("      (mod 3) are the N = 2 and N = 3 cases.  THE CLAIM IS THE")
+print("      IDENTIFICATION ONLY: the equivalence of the two right-hand")
+print("      sides is the discrete Wiener-Khinchin theorem and the")
+print("      definition of a CAZAC / perfect sequence [WK/CAZAC], cited.")
 print()
 print("  W2b — PROJECTIVE DESCENT: %s"
       % ("NO-ACTION" if NO_ACTION else "ACTION-FOUND"))
@@ -1791,19 +2108,29 @@ print("      both available from committed objects — W1's families supply")
 print("      1999 projective pairs at theta = 1/2, 1/3, 2/3 — but NOT from")
 print("      the generated <2,3>, which never acts; and the CONTROL fails")
 print("      outright.")
-print("    * THE MULTIPLIER CANCELS.  For any projective representation")
-print("      Delta^B(rho~(g), rho~(h)) = beta_B(gh) - beta_B(g) beta_B(h)")
-print("      with beta_B = B o rho~ lift-independent: omega is gone from")
-print("      the whole family identically, not merely pointwise.")
-print("    * FOUR CLASSES, ONE BORN SHADOW.  At N = 6 the pairs (X, Z^k)")
-print("      realize multiplier classes of order 1, 2, 3 and 6 with")
-print("      literally identical Born data and an identically zero")
-print("      Delta^B-family.  No functional can separate them.")
+print("    * THE MULTIPLIER CANCELS FROM THE FORMULA.  For any projective")
+print("      representation Delta^B(rho~(g), rho~(h)) = beta_B(gh) -")
+print("      beta_B(g) beta_B(h) with beta_B = B o rho~ lift-independent:")
+print("      omega is gone from the whole family identically, not merely")
+print("      pointwise.  THIS ALONE IS NOT THE NO-GO — [omega] is itself a")
+print("      lift-independent invariant of rho, so absence from the formula")
+print("      does not yet forbid a functional of the family from")
+print("      determining it.  The next bullet is what forbids it.")
+print("    * SIX CLASSES, ONE BORN SHADOW — THE COLLAPSE.  At N = 6 the")
+print("      pairs (X, Z^k), k = 0..5, realize SIX distinct classes, of four")
+print("      distinct orders 1, 2, 3, 6, with literally identical Born data")
+print("      and an identically zero Delta^B-family: gated UNCAPPED at B4x")
+print("      over all 36 x 36 = 1296 word pairs for each of the six k, 7776")
+print("      exact computations.  Every finite-dimension-realizable class")
+print("      collapses onto one family, so NO functional whatsoever — of any")
+print("      shape — can separate them.  THIS is the closure of requirement")
+print("      (3), and B3 is its first half, not the whole.")
 print("    * THE CANONICAL REALIZATION IS FLAT.  The Weyl pair is monomial")
 print("      and A6 makes the monomial group the exact annihilator; break")
-print("      monomiality and a defect appears, controlled by the")
-print("      conjugating basis — two conjugators at one theta, two")
-print("      different families.")
+print("      monomiality and a defect appears — two conjugators at ONE theta")
+print("      give TWO different families, which exhibits the SPLIT (theta")
+print("      does not determine the family) and nothing more.  No claim that")
+print("      the basis determines it is made or gated.")
 print("    * THE DOUBLE DISSOCIATION ON THE COMMITTED CARRIERS.  Of W1's")
 print("      13185 ordered pairs, 1999 have a scalar commutator and so")
 print("      generate a projective Z^2-action.  Non-monomial ones DO carry")
@@ -1812,9 +2139,20 @@ print("      by the sweep — but at ONE fixed theta the carriers realize")
 print("      SEVERAL distinct families (theta does not determine the")
 print("      family), and ONE family occurs at SEVERAL theta (the family")
 print("      does not determine theta).  Both directions fail at once.")
-print("    * THE PARITIES ARE OPPOSITE.  Delta^B is reversal-EVEN; a U(1)")
-print("      holonomy is reversal-ODD; even and unimodular forces +-1, and")
-print("      -1 is realized nowhere in the committed values.")
+print("    * THE COVARIANCE LAW, SCOPED (B7, rewritten).  Delta^B is")
+print("      reversal-COVARIANT: it goes to its TRANSPOSE.  Only")
+print("      TRANSPOSE-INVARIANT functionals are therefore reversal-even;")
+print("      the antisymmetric part A is reversal-ODD and is NOT identically")
+print("      zero — a witness off W1's families is gated, while A == 0 on")
+print("      all 13185 committed pairs is a property of THOSE FAMILIES.")
+print("      The obstruction that does not depend on any of this: Delta^B")
+print("      has REAL entries, so every real-polynomial functional is real")
+print("      and a real unimodular value is +-1.  Parity's residual content")
+print("      is about COMPLEX-valued functionals and is conditional on an")
+print("      identification of R with loop reversal that [D71b] Clause 3")
+print("      says is nowhere written.  The old step '-1 is realized nowhere")
+print("      ([D74] D2)' IS WITHDRAWN: D2 is about D74's value set, and for")
+print("      Delta^B's own values BOTH +1 and -1 occur on committed pairs.")
 print("    * THE MISSING-PIECE CENSUS (B8): the corpus has a value group")
 print("      with no unimodular part, a character where a bicharacter is")
 print("      needed, an amplitude with no closure, and edge phases that are")
@@ -1835,11 +2173,18 @@ print("  object that (a) represents the generated group by OPERATORS on a")
 print("  common space rather than by values, (b) supplies an ANTISYMMETRIC")
 print("  BILINEAR pairing on it, and (c) breaks monomiality in the")
 print("  configuration basis so that the defect is nonzero where the")
-print("  multiplier lives.  B3 says even all three together do not suffice:")
-print("  the multiplier still cancels from the family, so a fourth thing is")
-print("  needed — an invariant of the LIFT rather than of the projective")
-print("  representation, which the Born projection cannot see by")
-print("  construction.")
+print("  multiplier lives.  B3 and B4x together say even all three do not")
+print("  suffice, and the FOURTH THING IS NOT WHAT THIS RECEIPT PREVIOUSLY")
+print("  SAID IT WAS (round-1 repair M2).  It is NOT 'an invariant of the")
+print("  LIFT rather than of the projective representation': that is")
+print("  cohomologically backwards.  [omega] IS an invariant of the")
+print("  projective map rho — it is precisely LIFT-INDEPENDENT, which is")
+print("  what makes it a class at all — while lift-DEPENDENT quantities are")
+print("  gauge artifacts of a choice and can never detect it.  What a")
+print("  successor needs is a PHASE-RETAINING INVARIANT OF rho THAT IS")
+print("  FINER THAN THE BORN SHADOW B o rho: a functional that sees the")
+print("  RELATIVE PHASES of matrix entries, which B annihilates entrywise.")
+print("  B is the whole obstruction; the lift never was.")
 print()
 print("  determinism: fixed lexicographic enumeration everywhere; declared")
 print("  deterministic strides where capped; no randomness, no float in any")

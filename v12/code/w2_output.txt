@@ -52,8 +52,8 @@ SECTION 0 — THE SLICED INSTRUMENTS, AND THE ANCHORS
   [anchor] cross-term identity [F3.F3]                    ok  [B1]
   [anchor] cross-term identity [F3.F3dag]                 ok  [B1]
   [anchor] W1' family sizes                               ok  F2 = 96 (32 monomial-seeded), F3 = 63 (54)
-      ... W1' 2x2 census rebuilt (9216 ordered pairs)                    1.8s
-      ... W1' 3x3 census rebuilt (3969 ordered pairs)                    3.6s
+      ... W1' 2x2 census rebuilt (9216 ordered pairs)                    1.7s
+      ... W1' 3x3 census rebuilt (3969 ordered pairs)                    3.2s
   [anchor] W1' 2x2 census counts                          ok  5120 / 0 / 1024 / 3072 of 9216
   [anchor] W1' 3x3 census counts                          ok  3888 / 0 / 54 / 27 of 3969
   [anchor] W1' 2x2 closed form t+u = +-2 (mod 8)          ok  4096 quadruples, 1024 with Delta^B = 0
@@ -82,7 +82,7 @@ SECTION 0 — THE SLICED INSTRUMENTS, AND THE ANCHORS
      and what this unit uses, is the LATTICE — prime support, rank,
      index — all three basis-independent.
 
-  anchors: 32, all reproduce.       6.1s
+  anchors: 32, all reproduce.       5.4s
 
 ==============================================================================
 SECTION W2a — THE DEFECT ALGEBRA
@@ -107,9 +107,9 @@ A1.  THE UNIVERSAL CLOSED FORM, in every dimension
   [PASS] A1    closed form as a real polynomial identity [d=5]       w_k = x_k + i y_k, 10 variables   <[B1]>
   [PASS] A1    closed form as a real polynomial identity [d=6]       w_k = x_k + i y_k, 12 variables   <[B1]>
   [PASS] A1    closed form = definition on EVERY W1' census pair [2x2] 9216 ordered pairs, 0 mismatches   <[B1]>
-      ... A1 2x2 closed-form sweep                                       7.9s
+      ... A1 2x2 closed-form sweep                                       7.2s
   [PASS] A1    closed form = definition on EVERY W1' census pair [3x3] 3969 ordered pairs, 0 mismatches   <[B1]>
-      ... A1 3x3 closed-form sweep                                      10.0s
+      ... A1 3x3 closed-form sweep                                       9.0s
 
 A2.  NORMALIZED FORMS AND THE EXACT INVARIANCE GROUP
      The wall B(omega U) = B(U) is one line of a longer list.  With
@@ -130,20 +130,20 @@ A2.  NORMALIZED FORMS AND THE EXACT INVARIANCE GROUP
      group action on the pair.
      caps: a DECLARED DETERMINISTIC STRIDE of 24 matrices across each
      full family (never the lexicographic head), all 576 pairs.
-  [PASS] A2    (i) normalized: Delta^B(I,U) = Delta^B(U,I) = 0 [2x2] 24 matrices
+  [PASS] A2    (i) normalized: Delta^B(I,U) = Delta^B(U,I) = 0 [2x2] 24 matrices; NEAR-TAUTOLOGICAL — B(I) = I, so both sides of the definition coincide term by term
   [PASS] A2    (ii) OUTER TORI killed, both slots [2x2]              contains the wall B(omega U) = B(U)   <[REV2]>
   [PASS] A2    (iii) compensated CUT GAUGE killed [2x2]              576 pairs
   [PASS] A2    (iv) permutation equivariance [2x2]                  
-  [PASS] A2    (v) TRANSPOSE-REVERSAL law [2x2]                      Delta(U2,U1)^T = Delta(U1^T,U2^T)
+  [PASS] A2    (v) TRANSPOSE-REVERSAL COVARIANCE [2x2]               Delta(U2,U1)^T = Delta(U1^T,U2^T); SUBSUMED BY B7, which re-gates it on the FULL census and reads off the odd channel it leaves open
   [PASS] A2    (vi) an UNCOMPENSATED cut insertion DOES move it [2x2] 192 of 576 pairs moved
-      ... A2 2x2 invariance sweep                                       11.5s
-  [PASS] A2    (i) normalized: Delta^B(I,U) = Delta^B(U,I) = 0 [3x3] 24 matrices
+      ... A2 2x2 invariance sweep                                       10.1s
+  [PASS] A2    (i) normalized: Delta^B(I,U) = Delta^B(U,I) = 0 [3x3] 24 matrices; NEAR-TAUTOLOGICAL — B(I) = I, so both sides of the definition coincide term by term
   [PASS] A2    (ii) OUTER TORI killed, both slots [3x3]              contains the wall B(omega U) = B(U)   <[REV2]>
   [PASS] A2    (iii) compensated CUT GAUGE killed [3x3]              576 pairs
   [PASS] A2    (iv) permutation equivariance [3x3]                  
-  [PASS] A2    (v) TRANSPOSE-REVERSAL law [3x3]                      Delta(U2,U1)^T = Delta(U1^T,U2^T)
+  [PASS] A2    (v) TRANSPOSE-REVERSAL COVARIANCE [3x3]               Delta(U2,U1)^T = Delta(U1^T,U2^T); SUBSUMED BY B7, which re-gates it on the FULL census and reads off the odd channel it leaves open
   [PASS] A2    (vi) an UNCOMPENSATED cut insertion DOES move it [3x3] 25 of 576 pairs moved
-      ... A2 3x3 invariance sweep                                       14.3s
+      ... A2 3x3 invariance sweep                                       12.7s
 
 A3.  THE DOUBLY-CENTRED STRUCTURE AND THE SHARP BOUNDS
      B(U) is doubly stochastic for unitary U, so B(U2U1) and
@@ -162,23 +162,32 @@ A3.  THE DOUBLY-CENTRED STRUCTURE AND THE SHARP BOUNDS
      of [[1,-1],[-1,1]] whose parameter is 2 Re(A_0 B_0) with
      A_i = (U2)_i0 conj((U2)_i1), B_j = (U1)_0j conj((U1)_1j), which
      is W1's phase-alignment obstruction — and its EXACT RANGE is
-     [-1/2, 1/2], both ends attained by the Hadamard pair (H,H).
+     [-1/2, 1/2].  ROUND-1 REPAIR M3: the two ends are NOT both
+     attained by (H,H).  (H,H) attains +1/2 at entry 00 only; the
+     -1/2 end is attained ELSEWHERE, and the witness is gated below:
+     Delta^B(H, diag(1,-1) H)_00 = -1/2.  The former gate paired
+     Delta_00 = +1/2 with Delta_01 = -1/2, which is VACUOUS — the
+     one-dimensionality makes Delta_01 = -Delta_00 identically — and
+     it is replaced here by the two genuine attainment witnesses.
   [PASS] A3    Lagrange SOS: n sum|w|^2 - |sum w|^2 = sum_{k<l}|w_k-w_l|^2 [d=2] the UPPER bound as a sum of squares, no comparison used
   [PASS] A3    Lagrange SOS: n sum|w|^2 - |sum w|^2 = sum_{k<l}|w_k-w_l|^2 [d=3] the UPPER bound as a sum of squares, no comparison used
   [PASS] A3    Lagrange SOS: n sum|w|^2 - |sum w|^2 = sum_{k<l}|w_k-w_l|^2 [d=4] the UPPER bound as a sum of squares, no comparison used
   [PASS] A3    Lagrange SOS: n sum|w|^2 - |sum w|^2 = sum_{k<l}|w_k-w_l|^2 [d=5] the UPPER bound as a sum of squares, no comparison used
   [PASS] A3    Lagrange SOS: n sum|w|^2 - |sum w|^2 = sum_{k<l}|w_k-w_l|^2 [d=6] the UPPER bound as a sum of squares, no comparison used
   [PASS] A3    row sums and column sums of Delta^B vanish [2x2]      9216 pairs, 0 violations
-  [PASS] A3    Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [2x2] 36864 entries; non-negativity is definitional, so the lower bound needs no order oracle
+  [PASS] A3    Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [2x2] 36864 entries   <DECLARATIVE-TAUTOLOGY (round-1 repair M6): D was BUILT as B(U2U1) - B(U2)B(U1), so this tests (a-b)+b = a and carries no independent information.  The content is the next gate.>
+  [PASS] A3    s_ij = (B(U2)B(U1))_ij is a NON-NEGATIVE RATIONAL [2x2] 36864 entries, 0 violations — THIS is what the lower bound -s_ij <= Delta^B_ij rests on (Delta + s = B(U2U1) >= 0 needs s to be a real non-negative number before it bounds anything)
   [PASS] A3    n=2: Delta^B is a multiple of [[1,-1],[-1,1]]         9216 pairs — the family is 1-dimensional
   [PASS] A3    n=2: every parameter lies in Q(sqrt 2)                the sign oracle applies
   [PASS] A3    n=2: the EXACT RANGE is [-1/2, 1/2]                   min -1/2, max 1/2, by the exact Q(sqrt 2) sign oracle
-      ... A3 2x2 structure sweep                                        16.4s
+      ... A3 2x2 structure sweep                                        14.8s
   [PASS] A3    row sums and column sums of Delta^B vanish [3x3]      3969 pairs, 0 violations
-  [PASS] A3    Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [3x3] 35721 entries; non-negativity is definitional, so the lower bound needs no order oracle
-      ... A3 3x3 structure sweep                                        18.1s
+  [PASS] A3    Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [3x3] 35721 entries   <DECLARATIVE-TAUTOLOGY (round-1 repair M6): D was BUILT as B(U2U1) - B(U2)B(U1), so this tests (a-b)+b = a and carries no independent information.  The content is the next gate.>
+  [PASS] A3    s_ij = (B(U2)B(U1))_ij is a NON-NEGATIVE RATIONAL [3x3] 35721 entries, 0 violations — THIS is what the lower bound -s_ij <= Delta^B_ij rests on (Delta + s = B(U2U1) >= 0 needs s to be a real non-negative number before it bounds anything)
+      ... A3 3x3 structure sweep                                        16.5s
   [PASS] A3    AM-GM certificate (x+y)^2 - 4xy = (x-y)^2             on unit rows x + y = 1 gives |A_0|^2 = xy <= 1/4, so |Delta| <= 1/2
-  [PASS] A3    (H,H) attains both ends of the n=2 range             
+  [PASS] A3    the UPPER end +1/2 is attained: Delta^B(H,H)_00 = +1/2 the Hadamard pair; Delta^B(H,H) = [[1/2,-1/2],[-1/2,1/2]]
+  [PASS] A3    the LOWER end -1/2 is attained ELSEWHERE (repair M3)  Delta^B(H, diag(1,-1) H)_00 = -1/2; (H,H) attains +1/2 ONLY, and the old pairing of Delta_00 = +1/2 with Delta_01 = -1/2 was vacuous
 
 A4.  THE n-FOLD TELESCOPING AND THE TREE COHERENCE LAW
      Write Delta_n(L_1..L_n) := B(L_1...L_n) - B(L_1)...B(L_n).  For
@@ -199,40 +208,50 @@ A4.  THE n-FOLD TELESCOPING AND THE TREE COHERENCE LAW
   [PASS] A4    TREE coherence: Phi(T) = Delta_4, all  5 bracketings [d=2] 40 formal variables, no property of B assumed   <[REV2]>
   [PASS] A4    TREE coherence: Phi(T) = Delta_5, all 14 bracketings [d=2] 60 formal variables, no property of B assumed   <[REV2]>
   [PASS] A4    TREE coherence: Phi(T) = Delta_6, all 42 bracketings [d=2] 84 formal variables, no property of B assumed   <[REV2]>
-      ... A4 formal trees d=2                                           18.4s
+      ... A4 formal trees d=2                                           16.8s
   [PASS] A4    TREE coherence: Phi(T) = Delta_2, all  1 bracketings [d=3] 27 formal variables, no property of B assumed   <[REV2]>
   [PASS] A4    TREE coherence: Phi(T) = Delta_3, all  2 bracketings [d=3] 54 formal variables, no property of B assumed   <[REV2]>
   [PASS] A4    TREE coherence: Phi(T) = Delta_4, all  5 bracketings [d=3] 90 formal variables, no property of B assumed   <[REV2]>
   [PASS] A4    TREE coherence: Phi(T) = Delta_5, all 14 bracketings [d=3] 135 formal variables, no property of B assumed   <[REV2]>
-      ... A4 formal trees d=3                                           19.1s
+      ... A4 formal trees d=3                                           17.5s
   [PASS] A4    n=3 reduces to W1's C+2 coherence law verbatim        the two bracketings of three steps   <[W1']>
      caps: EXACT corroboration on a deterministic stride of 4
      matrices from each family; n = 2..5 (2x2), n = 2..4 (3x3);
      every bracketing of every ordered tuple.
-      ... A4 exact n=2 [2x2]                                            19.1s
-      ... A4 exact n=3 [2x2]                                            19.3s
-      ... A4 exact n=4 [2x2]                                            21.3s
-      ... A4 exact n=5 [2x2]                                            52.6s
+      ... A4 exact n=2 [2x2]                                            17.5s
+      ... A4 exact n=3 [2x2]                                            17.6s
+      ... A4 exact n=4 [2x2]                                            19.7s
+      ... A4 exact n=5 [2x2]                                            50.9s
   [PASS] A4    TREE coherence on EXACT committed matrices [2x2]      1360 ordered tuples, every bracketing, 0 failures   <[W1']>
-      ... A4 exact n=2 [3x3]                                            52.6s
-      ... A4 exact n=3 [3x3]                                            53.0s
-      ... A4 exact n=4 [3x3]                                            57.1s
+      ... A4 exact n=2 [3x3]                                            50.9s
+      ... A4 exact n=3 [3x3]                                            51.2s
+      ... A4 exact n=4 [3x3]                                            55.3s
   [PASS] A4    TREE coherence on EXACT committed matrices [3x3]      336 ordered tuples, every bracketing, 0 failures   <[W1']>
 
 A5.  THE COHERENCE LAW IS CONTENT-FREE ABOUT THE BORN PROJECTION
      A4's gate assumed nothing about B, so the law holds for ANY map
-     whatsoever.  Made concrete and falsifiable-looking: the same
-     identity is gated with B replaced by five DECLARED NON-BORN
-     maps.  A law that survives replacing its subject constrains the
-     subject not at all — the law is an identity of associativity.
+     whatsoever.  Made concrete and FALSIFIABLE-LOOKING: the same
+     identity is gated with B replaced by six DECLARED NON-BORN maps.
+     A law that survives replacing its subject constrains the subject
+     not at all — the law is an identity of associativity.
+     ROUND-1 REPAIR M6, and it is this section's own thesis turned on
+     its own gates: NONE OF THESE SIX GATES CAN FAIL.  The telescope
+     (f(ABC) - f(AB)f(C)) + (f(AB) - f(A)f(B))f(C) =
+     (f(ABC) - f(A)f(BC)) + f(A)(f(BC) - f(B)f(C)) has both sides
+     equal to f(ABC) - f(A)f(B)f(C) for EVERY f, so all six are
+     DECLARATIVE.  The sixth map is declared nonsense — it ignores its
+     argument entirely — precisely to make that undeniable, and all
+     six are named in the disclosure block as carrying no independent
+     information.
      caps: a deterministic stride of 6 matrices from each family,
-     all 216 ordered triples, both families, five maps.
-  [PASS] A5    the coherence law holds for f = identity                      432 triples over both families
-  [PASS] A5    the coherence law holds for f = entrywise Re                  432 triples over both families
-  [PASS] A5    the coherence law holds for f = entrywise square (no modulus) 432 triples over both families
-  [PASS] A5    the coherence law holds for f = transpose                     432 triples over both families
-  [PASS] A5    the coherence law holds for f = M + 2 M^T + 3 I               432 triples over both families
-      ... A5 non-Born maps                                              59.9s
+     all 216 ordered triples, both families, six maps.
+  [PASS] A5    the coherence law holds for f = identity                      432 triples over both families   <DECLARATIVE (cannot fail: the telescope is an identity for every f)>
+  [PASS] A5    the coherence law holds for f = entrywise Re                  432 triples over both families   <DECLARATIVE (cannot fail: the telescope is an identity for every f)>
+  [PASS] A5    the coherence law holds for f = entrywise square (no modulus) 432 triples over both families   <DECLARATIVE (cannot fail: the telescope is an identity for every f)>
+  [PASS] A5    the coherence law holds for f = transpose                     432 triples over both families   <DECLARATIVE (cannot fail: the telescope is an identity for every f)>
+  [PASS] A5    the coherence law holds for f = M + 2 M^T + 3 I               432 triples over both families   <DECLARATIVE (cannot fail: the telescope is an identity for every f)>
+  [PASS] A5    the coherence law holds for f = the CONSTANT map (declared nonsense) 432 triples over both families   <DECLARATIVE (cannot fail: the telescope is an identity for every f)>
+      ... A5 non-Born maps                                              58.5s
 
 A6.  THE TWO-SIDED ANNIHILATOR OF THE FAMILY IS THE MONOMIAL GROUP
      W1' gated SUFFICIENCY (row-monomial U2 or column-monomial U1
@@ -259,17 +278,17 @@ A6.  THE TWO-SIDED ANNIHILATOR OF THE FAMILY IS THE MONOMIAL GROUP
      ALL unitaries is carried by the argument, not by the sweep.
   [PASS] A6    the two-phase separation Re(z) = Re(iz) = 0 => z = 0  z = x + iy: Re z = x, Re(iz) = -y; both zero forces z = 0   <DECLARATIVE (one line of real algebra)>
   [PASS] A6    every probe is unitary in exact arithmetic [2x2]      2 probes = 2 phases x 1 planes, entries in Q(i) only
-  [PASS] A6    SUFFICIENCY re-gated through the closed form [2x2]    a monomial slot kills Delta^B against the whole family
+  [PASS] A6    SUFFICIENCY re-gated through the closed form [2x2]    a monomial slot kills Delta^B against the whole family   <RE-ASSERTION (round-1 repair M6): this is exactly the census anchor cond_nonzero = 0 of section 0.2, recomputed from the same zflag table.  No independent information.>
   [PASS] A6    NECESSITY: every non-row-monomial U2 is separated [2x2] 64 non-row-monomial members, 0 unseparated
   [PASS] A6    NECESSITY: every non-col-monomial U1 is separated [2x2] 64 non-col-monomial members, 0 unseparated
   [PASS] A6    B|Mon IS a homomorphism onto the permutations [2x2]   32 monomial members; the WHOLE torus T^n is in the kernel — the wall's structural form
-      ... A6 2x2 annihilator sweep                                      60.1s
+      ... A6 2x2 annihilator sweep                                      58.7s
   [PASS] A6    every probe is unitary in exact arithmetic [3x3]      6 probes = 2 phases x 3 planes, entries in Q(i) only
-  [PASS] A6    SUFFICIENCY re-gated through the closed form [3x3]    a monomial slot kills Delta^B against the whole family
+  [PASS] A6    SUFFICIENCY re-gated through the closed form [3x3]    a monomial slot kills Delta^B against the whole family   <RE-ASSERTION (round-1 repair M6): this is exactly the census anchor cond_nonzero = 0 of section 0.2, recomputed from the same zflag table.  No independent information.>
   [PASS] A6    NECESSITY: every non-row-monomial U2 is separated [3x3] 9 non-row-monomial members, 0 unseparated
   [PASS] A6    NECESSITY: every non-col-monomial U1 is separated [3x3] 9 non-col-monomial members, 0 unseparated
   [PASS] A6    B|Mon IS a homomorphism onto the permutations [3x3]   54 monomial members; the WHOLE torus T^n is in the kernel — the wall's structural form
-      ... A6 3x3 annihilator sweep                                      61.3s
+      ... A6 3x3 annihilator sweep                                      59.9s
 
 A7.  PAIRWISE FLATNESS DOES NOT IMPLY n-FOLD FLATNESS
      The coherence law gives Delta_3 = Delta^B(U3, U2U1) +
@@ -277,9 +296,9 @@ A7.  PAIRWISE FLATNESS DOES NOT IMPLY n-FOLD FLATNESS
      first term survives.  The defect is NOT locally determined —
      flatness at every cut of a chain does not make the chain flat.
   [PASS] A7    an exhibited triple: both cuts flat, Delta_3 != 0 [2x2] family indices (28, 0, 29), found after 172062 pairwise-flat triples
-      ... A7 2x2 consecutive-flat scan                                 106.3s
+      ... A7 2x2 consecutive-flat scan                                 101.1s
   [PASS] A7    an exhibited triple: both cuts flat, Delta_3 != 0 [3x3] family indices (36, 0, 36), found after 141949 pairwise-flat triples
-      ... A7 3x3 consecutive-flat scan                                 200.2s
+      ... A7 3x3 consecutive-flat scan                                 190.7s
 
 A8.  THE GENERALIZED PHASE-ALIGNMENT CLOSED FORM, ALL N
      On the DFT-sandwich family U2 = D_a F_N D_b, U1 = D_c F_N D_e
@@ -296,25 +315,36 @@ A8.  THE GENERALIZED PHASE-ALIGNMENT CLOSED FORM, ALL N
      Delta^B = 0 is PHASE ALIGNMENT, and the alignment condition is
      FLATNESS OF A FOURIER SPECTRUM.  W1's two committed closed
      forms are the N = 2 and N = 3 cases.
+     ATTRIBUTION, and it is load-bearing (round-1 repair M5).  THE
+     SECOND EQUIVALENCE IS NOT THIS UNIT'S.  'Flat |DFT|' <=> 'zero
+     periodic autocorrelation at every nonzero lag' is the DISCRETE
+     WIENER-KHINCHIN THEOREM, and it is the DEFINITION of the CAZAC /
+     perfect sequences (Bjorck; Chu / Zadoff-Chu; Frank; Turyn;
+     Golomb-Gong) — a classical body of work with explicit
+     constructions for every N.  [WK/CAZAC].  WHAT A8 CLAIMS is only
+     the IDENTIFICATION: that Delta^B = 0 on the DFT-sandwich family
+     IS that known condition on the interleaving diagonal.  The
+     equivalence itself is re-gated below for the four N in scope as
+     a check on this receipt's arithmetic, NOT as a new theorem.
      caps: eps_0 = 1 fixed (an outer scalar is annihilated by A2);
      N=2 eps in mu_8 over Q(zeta_8); N=3 in mu_6 over Q(zeta_12);
      N=4 in mu_8 over Q(zeta_8); N=5 in mu_5 over Q(zeta_5).
   [PASS] A8    F_2 is unitary in exact arithmetic [Q(zeta_8)]       
-  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=2]                8 interleaving diagonals, 2 flat, 0 mismatches
-  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=2] the Wiener-Khinchin equivalence, exactly
-      ... A8 N=2                                                       200.2s
+  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=2]                8 interleaving diagonals, 2 flat, 0 mismatches — THE IDENTIFICATION, which is what A8 claims   <[WK/CAZAC]>
+  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=2] the discrete Wiener-Khinchin theorem and the DEFINITION of a CAZAC sequence — CITED, re-gated as an arithmetic check, NOT claimed here   <[WK/CAZAC]>
+      ... A8 N=2                                                       190.7s
   [PASS] A8    F_3 is unitary in exact arithmetic [Q(zeta_12)]      
-  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=3]                36 interleaving diagonals, 6 flat, 0 mismatches
-  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=3] the Wiener-Khinchin equivalence, exactly
-      ... A8 N=3                                                       200.2s
+  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=3]                36 interleaving diagonals, 6 flat, 0 mismatches — THE IDENTIFICATION, which is what A8 claims   <[WK/CAZAC]>
+  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=3] the discrete Wiener-Khinchin theorem and the DEFINITION of a CAZAC sequence — CITED, re-gated as an arithmetic check, NOT claimed here   <[WK/CAZAC]>
+      ... A8 N=3                                                       190.7s
   [PASS] A8    F_4 is unitary in exact arithmetic [Q(zeta_8)]       
-  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=4]                512 interleaving diagonals, 16 flat, 0 mismatches
-  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=4] the Wiener-Khinchin equivalence, exactly
-      ... A8 N=4                                                       200.8s
+  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=4]                512 interleaving diagonals, 16 flat, 0 mismatches — THE IDENTIFICATION, which is what A8 claims   <[WK/CAZAC]>
+  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=4] the discrete Wiener-Khinchin theorem and the DEFINITION of a CAZAC sequence — CITED, re-gated as an arithmetic check, NOT claimed here   <[WK/CAZAC]>
+      ... A8 N=4                                                       191.3s
   [PASS] A8    F_5 is unitary in exact arithmetic [Q(zeta_5)]       
-  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=5]                625 interleaving diagonals, 20 flat, 0 mismatches
-  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=5] the Wiener-Khinchin equivalence, exactly
-      ... A8 N=5                                                       204.1s
+  [PASS] A8    Delta^B = 0  <=>  FLAT SPECTRUM  [N=5]                625 interleaving diagonals, 20 flat, 0 mismatches — THE IDENTIFICATION, which is what A8 claims   <[WK/CAZAC]>
+  [PASS] A8    flat spectrum <=> zero periodic autocorrelation [N=5] the discrete Wiener-Khinchin theorem and the DEFINITION of a CAZAC sequence — CITED, re-gated as an arithmetic check, NOT claimed here   <[WK/CAZAC]>
+      ... A8 N=5                                                       194.5s
   [PASS] A8    N=2 flatness reproduces W1's t+u = +-2 (mod 8)        8 interleaving phases   <[W1']>
   [PASS] A8    N=3 flatness reproduces W1's b2+a1 != 0 (mod 3)       the D(m) = diag(1, omega^m, 1) sub-family   <[W1']>
 
@@ -387,7 +417,7 @@ B2.  WHAT [omega] IS: THE ALTERNATING BICHARACTER — AND IT IS A
   [PASS] B2    the Weyl cocycles are normalized 2-cocycles [Z_6^2]   6 classes, 46656 associativity checks each
   [PASS] B2    beta(e1,e2) separates all 6 Weyl classes [Z_6^2]      beta takes 6 distinct values in mu_6
   [PASS] B2    exactly 6 alternating bicharacters on Z_6^2           H^2(Z_6^2, U(1)) = Z_6, realized by the Weyl cocycles
-      ... B2 finite models                                             213.7s
+      ... B2 finite models                                             202.7s
 
 B3.  THE MULTIPLIER CANCELS FROM THE ENTIRE Delta^B-FAMILY
      THEOREM.  Let rho~ : G -> U(N) be any projective representation
@@ -402,16 +432,16 @@ B3.  THE MULTIPLIER CANCELS FROM THE ENTIRE Delta^B-FAMILY
      map alone.  This promotes the wall B(omega U) = B(U) from a
      pointwise remark to a statement about the entire family.
   [PASS] B3    clock/shift unitary, X Z = zeta^-1 Z X [N=2]          the Weyl pair over Q(zeta_2)   <[W]>
-  [PASS] B3    beta_B is lift-independent on every word [N=2]        4 words x 2 scalars   <[REV2]>
+  [PASS] B3    beta_B is lift-independent on every word [N=2]        4 words x the 2 ROOTS OF UNITY mu_2 of the carrier field (NOT every scalar of the field: the sweep is over zeta^s, s < 2 — round-1 repair m3)   <[REV2]>
   [PASS] B3    clock/shift unitary, X Z = zeta^-1 Z X [N=3]          the Weyl pair over Q(zeta_3)   <[W]>
-  [PASS] B3    beta_B is lift-independent on every word [N=3]        9 words x 3 scalars   <[REV2]>
+  [PASS] B3    beta_B is lift-independent on every word [N=3]        9 words x the 3 ROOTS OF UNITY mu_3 of the carrier field (NOT every scalar of the field: the sweep is over zeta^s, s < 3 — round-1 repair m3)   <[REV2]>
   [PASS] B3    clock/shift unitary, X Z = zeta^-1 Z X [N=4]          the Weyl pair over Q(zeta_4)   <[W]>
-  [PASS] B3    beta_B is lift-independent on every word [N=4]        16 words x 4 scalars   <[REV2]>
+  [PASS] B3    beta_B is lift-independent on every word [N=4]        16 words x the 4 ROOTS OF UNITY mu_4 of the carrier field (NOT every scalar of the field: the sweep is over zeta^s, s < 4 — round-1 repair m3)   <[REV2]>
   [PASS] B3    clock/shift unitary, X Z = zeta^-1 Z X [N=5]          the Weyl pair over Q(zeta_5)   <[W]>
-  [PASS] B3    beta_B is lift-independent on every word [N=5]        25 words x 5 scalars   <[REV2]>
+  [PASS] B3    beta_B is lift-independent on every word [N=5]        25 words x the 5 ROOTS OF UNITY mu_5 of the carrier field (NOT every scalar of the field: the sweep is over zeta^s, s < 5 — round-1 repair m3)   <[REV2]>
   [PASS] B3    clock/shift unitary, X Z = zeta^-1 Z X [N=6]          the Weyl pair over Q(zeta_6)   <[W]>
-  [PASS] B3    beta_B is lift-independent on every word [N=6]        36 words x 6 scalars   <[REV2]>
-      ... B3 lift-independence                                         214.1s
+  [PASS] B3    beta_B is lift-independent on every word [N=6]        36 words x the 6 ROOTS OF UNITY mu_6 of the carrier field (NOT every scalar of the field: the sweep is over zeta^s, s < 6 — round-1 repair m3)   <[REV2]>
+      ... B3 lift-independence                                         203.0s
 
 B4.  THE COLLISION EXHIBIT: SAME beta_B, DIFFERENT [omega]
      Take U = X_N (shift) and V = Z_N^k (clock power), k = 0..N-1.
@@ -427,42 +457,67 @@ B4.  THE COLLISION EXHIBIT: SAME beta_B, DIFFERENT [omega]
      N = 5, 6 (printed per row).
   [PASS] B4    all 2 multiplier classes share ONE beta_B [N=2]       multiplier orders present: 1, 2   <[W]>
   [PASS] B4    and the Delta^B-family is IDENTICALLY ZERO on all of them [N=2] 16 ordered word pairs per class (cap a,b < 2)
-      ... B4 N=2                                                       214.1s
+      ... B4 N=2                                                       203.0s
   [PASS] B4    all 3 multiplier classes share ONE beta_B [N=3]       multiplier orders present: 1, 3   <[W]>
   [PASS] B4    and the Delta^B-family is IDENTICALLY ZERO on all of them [N=3] 81 ordered word pairs per class (cap a,b < 3)
-      ... B4 N=3                                                       214.2s
+      ... B4 N=3                                                       203.1s
   [PASS] B4    all 4 multiplier classes share ONE beta_B [N=4]       multiplier orders present: 1, 2, 4   <[W]>
   [PASS] B4    and the Delta^B-family is IDENTICALLY ZERO on all of them [N=4] 256 ordered word pairs per class (cap a,b < 4)
-      ... B4 N=4                                                       214.8s
+      ... B4 N=4                                                       203.6s
   [PASS] B4    all 5 multiplier classes share ONE beta_B [N=5]       multiplier orders present: 1, 5   <[W]>
   [PASS] B4    and the Delta^B-family is IDENTICALLY ZERO on all of them [N=5] 81 ordered word pairs per class (cap a,b < 3)
-      ... B4 N=5                                                       215.9s
+      ... B4 N=5                                                       204.5s
   [PASS] B4    all 6 multiplier classes share ONE beta_B [N=6]       multiplier orders present: 1, 2, 3, 6   <[W]>
   [PASS] B4    and the Delta^B-family is IDENTICALLY ZERO on all of them [N=6] 81 ordered word pairs per class (cap a,b < 3)
-      ... B4 N=6                                                       217.6s
-     At N = 6 the classes have orders 1, 2, 3 and 6 — four distinct
-     elements of H^2(Z^2, U(1)), the trivial one among them —
-     carried by realizations with literally identical Born data.  NO
-     FUNCTIONAL OF THE Delta^B-FAMILY CAN SEPARATE THEM.
+      ... B4 N=6                                                       205.9s
+     At N = 6 the six k give beta = zeta_6^{-k}, k = 0..5 — SIX
+     DISTINCT elements of H^2(Z^2, U(1)), of four distinct ORDERS
+     1, 2, 3, 6, the trivial class among them (round-1 repair m2: the
+     earlier reading, 'four distinct elements', UNDER-SOLD the
+     exhibit — the classes are six, and it is their orders that
+     number four) — carried by realizations with literally identical
+     Born data.  NO FUNCTIONAL OF THE Delta^B-FAMILY CAN SEPARATE
+     THEM.
+
+B4x. THE N = 6 EXTENSION, UNCAPPED  (round-1 repair M1)
+     The sweep above capped N = 5, 6 at the 9x9 sub-block a,b < 3.
+     The N = 6 case is the one the no-go leans on, so it is run here
+     WITHOUT the cap: all 36 words U^a V^b, a,b < 6, and ALL 36 x 36
+     = 1296 ordered word pairs, for ALL SIX k.  7776 exact Delta^B
+     computations in Q(zeta_6).
+      ... B4x N=6 k=0 (1296 cumulative pairs)                          208.0s
+      ... B4x N=6 k=1 (2592 cumulative pairs)                          210.2s
+      ... B4x N=6 k=2 (3888 cumulative pairs)                          212.4s
+      ... B4x N=6 k=3 (5184 cumulative pairs)                          214.4s
+      ... B4x N=6 k=4 (6480 cumulative pairs)                          216.6s
+      ... B4x N=6 k=5 (7776 cumulative pairs)                          218.7s
+  [PASS] B4x   Delta^B == 0 on ALL 36x36 word pairs, ALL SIX k [N=6] 7776 ordered word pairs, 0 nonzero; the six beta values are distinct, so the six classes are distinct in H^2 — the cap is REMOVED, not merely widened   <[W]>
 
 B5.  EVERY MONOMIAL REALIZATION IS Delta^B-FLAT, AT EVERY theta —
-     AND BREAKING MONOMIALITY HANDS CONTROL TO THE BASIS
+     AND BREAKING MONOMIALITY SPLITS ONE theta INTO TWO FAMILIES
      The Weyl pair is monomial, and A6 makes the monomial group the
      exact annihilator of the family.  So the canonical realization
      of [W]'s own object — the only irreducible one at a primitive
      multiplier, by [SvN] — carries no defect at all.  Conjugating
      it by an exact rational rotation preserves theta and creates a
      defect; two different conjugators at the SAME theta create
-     DIFFERENT defects.  The basis controls the family; theta does
-     not.
-  [PASS] B5    the base Weyl pair is monomial and Delta^B-flat       commutator -I, theta = 1/2   <[W]>
+     DIFFERENT defects.
+     WHAT THAT DOES AND DOES NOT SHOW (round-1 repair m5).  It shows
+     the SPLIT — theta does NOT determine the Delta^B-family, which
+     is B6's first direction, exhibited here on two matrices.  It
+     does NOT show that the BASIS determines the family: no map from
+     bases to families is exhibited anywhere in this unit, and two
+     conjugators is not a determination.  The earlier phrasing 'the
+     basis controls the defect' overstated a two-point exhibit and is
+     withdrawn.
+  [PASS] B5    the base Weyl pair is monomial and Delta^B-flat       commutator -I, theta = 1/2; and by [SvN] this pair IS the irreducible realization at a primitive multiplier, up to unitary equivalence and scalars — so the flatness is not a corner case   <[W]+[SvN]>
   [PASS] B5    R(3/5,4/5)     is unitary in exact arithmetic        
   [PASS] B5    conjugation by R(3/5,4/5)     preserves theta = 1/2   the commutator is still -I   <[W]>
   [PASS] B5    ... and creates a defect: Delta^B(X',Z') != 0 [R(3/5,4/5)] Delta^B_00 = -56448/390625
   [PASS] B5    R(5/13,12/13)  is unitary in exact arithmetic        
   [PASS] B5    conjugation by R(5/13,12/13)  preserves theta = 1/2   the commutator is still -I   <[W]>
   [PASS] B5    ... and creates a defect: Delta^B(X',Z') != 0 [R(5/13,12/13)] Delta^B_00 = -407836800/815730721
-  [PASS] B5    SAME theta, DIFFERENT Delta^B-family                  two conjugators, one class: the basis controls the defect
+  [PASS] B5    SAME theta, DIFFERENT Delta^B-family                  two conjugators, one class: theta does NOT determine the family (the SPLIT, exhibited on two matrices).  It does NOT follow, and is not claimed, that the basis determines it
 
 B6.  THE EXHAUSTIVE PROJECTIVE-PAIR CENSUS OVER W1's COMMITTED
      FAMILIES — AND THE DOUBLE DISSOCIATION IT EXHIBITS.
@@ -488,7 +543,7 @@ B6.  THE EXHAUSTIVE PROJECTIVE-PAIR CENSUS OVER W1's COMMITTED
   [PASS] B6    FINDING: committed projective pairs with theta != 0 carry NONZERO families [2x2] 3 distinct nonzero Delta^B-families across the theta != 0 classes — the flatness expectation is REFUTED by the sweep
   [PASS] B6    SPLIT: theta does NOT determine the Delta^B-family [2x2] at each fixed theta != 0 the committed carriers realize 4 distinct families
   [PASS] B6    COLLISION: the Delta^B-family does NOT determine theta [2x2] one and the same family (the identically zero one) is realized at theta = 0, 1/2
-      ... B6 2x2 projective census                                     250.2s
+      ... B6 2x2 projective census                                     245.8s
      [3x3] commutator-scalar classes, exact:
        theta     order      pairs   families  zero fam  mono x mono
        0         1            435         14      True          396
@@ -499,31 +554,79 @@ B6.  THE EXHAUSTIVE PROJECTIVE-PAIR CENSUS OVER W1's COMMITTED
   [PASS] B6    FINDING: committed projective pairs with theta != 0 carry NONZERO families [3x3] 4 distinct nonzero Delta^B-families across the theta != 0 classes — the flatness expectation is REFUTED by the sweep
   [PASS] B6    SPLIT: theta does NOT determine the Delta^B-family [3x3] at each fixed theta != 0 the committed carriers realize 3, 3 distinct families
   [PASS] B6    COLLISION: the Delta^B-family does NOT determine theta [3x3] one and the same family (the identically zero one) is realized at theta = 0, 1/3, 2/3
-      ... B6 3x3 projective census                                     278.6s
+      ... B6 3x3 projective census                                     272.7s
 
-B7.  THE PARITY OBSTRUCTION
-     A2(v) is the family's reversal law: under
+B7.  THE COVARIANCE LAW, THE ODD CHANNEL, AND WHAT THE PARITY
+     ARGUMENT ACTUALLY DELIVERS   (rewritten at round-1 repair M4 and
+     the parity-chain repair; the earlier reading of this section was
+     wrong in three separate joints and each is corrected below.)
+
+     THE LAW.  A2(v) is a COVARIANCE, not an evenness: under
      R : (U2,U1) -> (U1^T, U2^T) — reverse the order, transpose each
-     step — Delta^B goes to its TRANSPOSE.  Hence every scalar
-     functional of Delta^B that is transpose-invariant (the trace,
-     the entry sums, the Frobenius norm, every symmetric function of
-     the spectrum) is REVERSAL-EVEN.
-     A U(1) holonomy is reversal-ODD by definition:
-     Hol(gamma^-1) = conj(Hol(gamma)).  That is [D71b] Clause 2's
-     finding — the corpus's only phase-shaped amplitude is placed on
-     the reversal-ODD channel, at dual-conjugation error exactly 0,
-     and no other placement transforms like a holonomy.
-     A quantity that is BOTH reversal-even AND unimodular satisfies
-     z = conj(z) and |z| = 1, hence z = +-1; and -1 is realized
-     nowhere in the committed values ([D74] D2).  The multiplier and
-     the defect sit on OPPOSITE PARITY CHANNELS.
-  [PASS] B7    even and unimodular forces z = +-1                    z = conj(z) gives y = 0; x^2 = 1 factors as (x-1)(x+1) = 0
-  [PASS] B7    the reversal law on EVERY census pair [2x2]           9216 ordered pairs, 0 violations
-  [PASS] B7    tr Delta^B is reversal-EVEN on every census pair [2x2] 9216 pairs; the same holds for every transpose-invariant functional
-      ... B7 2x2 parity sweep                                          281.5s
-  [PASS] B7    the reversal law on EVERY census pair [3x3]           3969 ordered pairs, 0 violations
-  [PASS] B7    tr Delta^B is reversal-EVEN on every census pair [3x3] 3969 pairs; the same holds for every transpose-invariant functional
-      ... B7 3x3 parity sweep                                          283.9s
+     step — Delta^B goes to its TRANSPOSE,
+         Delta^B  |-->  (Delta^B)^T.
+     It follows that every scalar functional of Delta^B that is
+     TRANSPOSE-INVARIANT (the trace, the entry sums, the Frobenius
+     norm, every symmetric function of the spectrum) is
+     reversal-EVEN.  IT DOES NOT FOLLOW, AND IS FALSE, that 'the
+     Delta^B-family is reversal-even'.  Split
+         Delta^B = S + A,   S = (D + D^T)/2,  A = (D - D^T)/2;
+     under R, S is EVEN and A is ODD.  A is a genuine odd channel of
+     the family and it is NOT identically zero — a witness outside
+     W1's committed families is gated below.  On W1's committed
+     families A does vanish identically, and that is a property OF
+     THOSE FAMILIES, not of Delta^B; it is gated as such.
+
+     THE OBSTRUCTION, CARRIER-INDEPENDENT AND NEEDING NO PARITY.
+     Delta^B has REAL entries (A1: |sum w|^2 - sum |w|^2), so every
+     real-polynomial functional of Delta^B is REAL; a real number of
+     modulus 1 is +-1.  That single line already blocks a generic
+     unimodular reading, and it invokes neither reversal parity nor
+     any committed value set.  It is the load-bearing step.
+
+     WHAT PARITY STILL ADDS, AND UNDER WHAT CONDITION.  Parity's
+     residual content is about COMPLEX-VALUED functionals, where
+     realness does not decide, and it is CONDITIONAL on identifying
+     this R with loop reversal.  That identification is exactly what
+     [D71b] Clause 3 says is not written: 'v6's reversal reverses
+     TRANSPORT ORDER (T_A T_B vs T_B T_A); v7's reversal reverses a
+     RECORD's own order relations... The bridge is one identification
+     and one closure, and NEITHER IS WRITTEN'
+     (v10/note-d71b-holonomy-phase-identity.md:623-631).  And
+     Clause 2's NAMING of the transformation law as a holonomy law is
+     itself flagged [MY READING] in its own note (:769-775), the
+     measurement being the law, not the name.  Both disclosures are
+     made here because the parity leg rests on them.
+
+     WHAT IS WITHDRAWN.  The earlier chain ended '...hence z = +-1;
+     and -1 is realized nowhere in the committed values ([D74] D2)'.
+     THAT STEP IS DELETED.  D74's D2 is about D74's OWN value set —
+     positive rationals — and says nothing about the values of
+     Delta^B.  For Delta^B's own values the +-1 escape is WIDE OPEN,
+     and this receipt now gates both witnesses.
+  [PASS] B7    even and unimodular forces z = +-1                    z = conj(z) gives y = 0; x^2 = 1 factors as (x-1)(x+1) = 0   <DECLARATIVE (round-1 repair M6): a one-line factorization of x^2 - 1, no independent information>
+  [PASS] B7    COVARIANCE Delta^B -> (Delta^B)^T on every census pair [2x2] 9216 ordered pairs, 0 violations — a covariance, NOT an evenness of the family
+  [PASS] B7    tr Delta^B is reversal-EVEN on every census pair [2x2] 9216 pairs; the same holds for every TRANSPOSE-INVARIANT functional, and for no other
+      ... B7 2x2 covariance sweep                                      275.7s
+  [PASS] B7    COVARIANCE Delta^B -> (Delta^B)^T on every census pair [3x3] 3969 ordered pairs, 0 violations — a covariance, NOT an evenness of the family
+  [PASS] B7    tr Delta^B is reversal-EVEN on every census pair [3x3] 3969 pairs; the same holds for every TRANSPOSE-INVARIANT functional, and for no other
+      ... B7 3x3 covariance sweep                                      278.2s
+  [PASS] B7    every Delta^B entry is REAL (conj x = x) on every census pair 36864 + 35721 entries, 0 violations — the carrier-independent obstruction's load-bearing step: a real functional of a real matrix cannot be a nontrivial unimodular number
+  [PASS] B7    the ODD part A vanishes on the COMMITTED families — FAMILY-SPECIFIC 0 of 9216 (2x2) and 0 of 3969 (3x3) pairs with A != 0.  At 2x2 this is FORCED by A3's one-dimensionality (a multiple of [[1,-1],[-1,1]] is symmetric); at 3x3 it is a contingent property of THIS family, and the next gate shows it fails off it
+
+     THE ODD-CHANNEL WITNESS, outside the committed families.  The
+     declared witness set at 3x3, in exact rational arithmetic:
+       W = { R_01, R_12, R_01 F_3, R_12 F_3 }
+     with R_kl the exact rational rotation [[3/5,-4/5],[4/5,3/5]] in
+     the (k,l) plane (A6's own probe, m = 0) and F_3 the committed
+     3-point DFT.  All four are unitary and NONE of the four lies in
+     W1's committed 3x3 family.
+     first witness pair (R_01, R_01 F_3):
+       A row  [ 0  14/625  -14/625 ]
+       A row  [ -14/625  0  14/625 ]
+       A row  [ 14/625  -14/625  0 ]
+  [PASS] B7    WITNESS: the odd part A is NONZERO off the committed families A != 0 on 12 of the 16 ordered pairs of the declared set W; all four members unitary and outside the committed 3x3 family; and A(R.) = -A on all 16 pairs, so the odd channel transforms as claimed
+  [PASS] B7    BOTH +1 AND -1 ARE REALIZED by tr Delta^B — the escape is OPEN committed 2x2 family pairs (28,29) -> tr = 1 and (28,34) -> tr = -1.  Census of the two values: 2x2 [tr = -1 occurs 512 times; tr = +1 occurs 512 times], 3x3 [neither value occurs].  So the deleted step ('-1 is realized nowhere, [D74] D2') was about D74's OWN value set, not about Delta^B's: for Delta^B's own values the +-1 branch is OPEN, and both branches are occupied   <[D71b]>
 
 B8.  THE MISSING-PIECE CENSUS — EVERY COMMITTED CANDIDATE, AND
      EXACTLY WHAT EACH ONE LACKS
@@ -534,13 +637,13 @@ B8.  THE MISSING-PIECE CENSUS — EVERY COMMITTED CANDIDATE, AND
          status : committed and committed-DEAD — the law it restores is D1's own identity; cohomologically log r is a HOLONOMY, an H^1 object, and e^{i log r} is a character-valued H^1 object
          verdict: MISSING: the antisymmetric BILINEAR pairing that an H^2 class IS (B2)
      CAND-3  v7 paper 30's amplitude e^{-kE} e^{i Phi(O)}  ([D71b] 3.2)
-         status : a phase built from a LINEAR functional Phi of the reversal-odd channel O = F - F*: a character, not a multiplier; and B7 puts it on the opposite parity channel from Delta^B
-         verdict: MISSING: the pairing; the closure; and the parity is wrong
+         status : a phase built from a LINEAR functional Phi of the reversal-odd channel O = F - F*: a character, not a multiplier.  The parity leg is SCOPED at B7 as rewritten: what is opposite to Phi's channel is not 'the Delta^B-family' but its TRANSPOSE-INVARIANT functionals, the family's own antisymmetric part being odd and generally nonzero; and the comparison is conditional on identifying B7's R with loop reversal, which [D71b] Clause 3 says is nowhere written
+         verdict: MISSING: the pairing and the closure — outright.  The parity mismatch is real for transpose-invariant functionals and CONDITIONAL on an unwritten identification, so it is a supporting reason, not a standalone one
      CAND-4  D42b4's prod sqrt(q) amplitude  ([D71b] 4.2)
          status : the right carrier — it IS the square root of the process's own weights — but assigned PER COMPLETE HISTORY, with zero occurrences of loop/cycle/closure/holonomy in its note and its phase slot filled with +1 without an argument
          verdict: MISSING: the closure device, hence any commutator at all
      CAND-5  W1's U(1)-Gram edge phases g_ab = z_a conj(w_b)
-         status : committed and gated: the 4-cycle holonomy is IDENTICALLY 1 on 8192 quadruples — every factorized edge phase is a coboundary
+         status : committed and gated: the 4-cycle holonomy is IDENTICALLY 1 in W1's TWO separate gates — 4096 quadruples of the pi/4 family (exhaustive) and 4096 of the pi/8 family (a_0 = 0 fixed, the holonomy being invariant under z_a -> lam z_a and w_b -> mu w_b independently); the two are cited separately here because they are different sweeps over different families, not one sweep of 8192 (round-1 repair m4).  Every factorized edge phase is a coboundary
          verdict: MISSING: non-factorizability; the class is zero by construction
      CAND-6  the canonical Weyl / NC-torus pair  ([W])
          status : the action EXISTS and [omega] != 0 for every theta in (1/N)Z — but it is monomial, so by A6/B5 its Delta^B-family is identically zero, and by B4 all N classes share one Born shadow
@@ -560,14 +663,29 @@ B8.  THE MISSING-PIECE CENSUS — EVERY COMMITTED CANDIDATE, AND
        (2) the CLASS.  Those carriers realize theta = 1/2 (2x2) and
            theta = 1/3, 2/3 (3x3) — genuinely nontrivial classes.
            Requirement (2) is met.
-       (3) the CONTROL.  This is what fails, and it fails as a
-           theorem (B3) and twice over as a measurement (B4, B6).
+       (3) the CONTROL.  This is what fails, and the ATTRIBUTION
+           matters (round-1 repair M1).  B3 ALONE DOES NOT CLOSE IT.
+           B3 shows omega is absent from the FORMULA — but [omega] is
+           itself a lift-INDEPENDENT invariant of the projective map
+           rho, so 'absent from the formula' does not by itself imply
+           'no functional of the family determines [omega]'.  The
+           counterfactual makes this sharp: were B injective on
+           PU(N), requirement (3) would be MET and B3 would still
+           hold verbatim.  WHAT CLOSES THE ROAD IS B4/B4x: because
+           B(Z^k) = I, beta_B = P^a is independent of k, so every
+           finite-dimension-realizable class (theta in (1/N)Z, by
+           C1's own determinant argument) collapses onto ONE AND THE
+           SAME family — and then ANY functional whatsoever, of any
+           shape, takes the same value on all of them.  B3 removes
+           omega from the formula; B4/B4x shows the family cannot
+           separate the classes.  B6 then measures the same failure
+           independently, on committed carriers.
      So W2b-NO-ACTION names the failure precisely: not that no
      projective action can be built from committed objects, but that
      the multiplier of any such action is invisible to the
      Delta^B-family — and that the generated Z^2 in particular is
      not the group that acts.
-  [PASS] B9    W2b VERDICT: NO-ACTION                                requirements (1) and (2) are MET by W1's committed families and NOT by the generated <2,3>; requirement (3) FAILS: B3 the multiplier cancels from the family identically; B4 four classes with one Born shadow; B5 one theta, two bases, two families; B6 the double dissociation on the committed carriers themselves; B7 the parities are opposite   <DATA>
+  [PASS] B9    W2b VERDICT: NO-ACTION                                requirements (1) and (2) are MET by W1's committed families and NOT by the generated <2,3>; requirement (3) FAILS, and it fails at B3 PLUS B4/B4x TOGETHER: B3 removes omega from the formula, B4/B4x collapses all six N = 6 classes onto ONE family (uncapped, 7776 word pairs) so that no functional whatsoever can separate them; B5 one theta, two bases, two families; B6 the double dissociation on the committed carriers themselves; B7 the covariance law with the odd channel scoped and the [D74]-D2 step withdrawn   <DATA>
 
 ==============================================================================
 SECTION W2c — SELECTION
@@ -611,38 +729,76 @@ SECTION D — ANTECEDENTS, AS USED
   [REV2]   The second external hostile review, adjudicated at v12/LOG.md #4: the three-defect distinction, the coherence law (W2a's seed), and the B(omega U) = B(U) observation that forced the W2a/W2b/W2c staging.
   [SvN]    Stone-von Neumann, finite form: on C^N the irreducible projective representations of Z^2 with a primitive q-th root multiplier have dimension exactly q and are the clock/shift (Weyl) pair up to unitary equivalence and scalars.  CITED, not proven here; used only to say that the Weyl realization is not an exotic corner.
   [W1']    v12/note-w1p-three-class.md + v12/code/w1p_three_class_exact.py — TERMINAL at v12/LOG.md #7.  Its arithmetic layer, its matrix layer and its two census families are SLICED and REUSED here; its committed gate values are this unit's anchors.
+  [WK/CAZAC] The discrete Wiener-Khinchin theorem (the periodic autocorrelation of a sequence and the squared modulus of its DFT are a DFT pair) and the classical theory of CAZAC / perfect sequences, for which 'flat |DFT|' IS the definition: Bjorck; Chu and Zadoff-Chu; Frank; Turyn; Golomb and Gong, 'Signal Design for Good Correlation'.  A8 ORIGINATES NEITHER.  What A8 claims is only the IDENTIFICATION: Delta^B = 0 on the DFT-sandwich family <=> the interleaving diagonal is a CAZAC sequence.  The equivalence between the two characterizations of that condition is the cited theorem, re-gated here for the four N in scope, not proven here.
   [W]      Weyl relations / noncommutative torus: projective multipliers on Z^2, U V = e^{2 pi i theta} V U, realized by the clock/shift pair (e.g. arXiv 1606.01829).  W1' NAMED it and used it at no gate; this is the unit where it is USED, and where it fails.
 
+  EVERY THEOREM USED IS CITED AT THE GATE WHERE IT IS USED, and the
+  three that were used without a gate tag now carry one: [SvN] at
+  B5's base-Weyl-pair gate, [WK/CAZAC] at both A8 equivalence gates,
+  [D71b] at B7's +-1-escape gate (round-1 repair M5).
   This unit claims: A1's closed form and the structure read off it
   (A2, A3), the tree coherence law at every n (A4), the content-free
   demonstration (A5), the exact two-sided annihilator (A6), the
-  failure of local determination (A7), the flat-spectrum form of the
-  alignment condition (A8), and the W2b no-go (B3-B7) with its
-  census (B8).  It claims no novelty for the cross-term identity
-  [B1], the coherence law at n = 3 [REV2], the Weyl relations [W],
-  Stone-von Neumann [SvN], or any committed number of [W1'] or
-  [D74].
+  failure of local determination (A7), the IDENTIFICATION of Delta^B
+  = 0 on the DFT-sandwich family with the CAZAC condition (A8), and
+  the W2b no-go (B3-B4x-B7) with its census (B8).  It claims no
+  novelty for the cross-term identity [B1], the coherence law at
+  n = 3 [REV2], the Weyl relations [W], Stone-von Neumann [SvN], the
+  Wiener-Khinchin / CAZAC equivalence [WK/CAZAC], or any committed
+  number of [W1'] or [D74].
 
 ==============================================================================
 SECTION E — THE VERDICT
 ==============================================================================
   anchors  : 32, all reproduce (exit 1 is anchor-only)
-  gate book: 152 gates, 152 pass, 0 fail
+  gate book: 161 gates, 161 pass, 0 fail
 
-  DISCLOSURE, in the W1' round-1 idiom.  Of the 152 gates, 8 carry
-  no independent information and are named here: 6 are DECLARATIVE
-  or DATA (a printed classification, a one-line piece of real
-  algebra, or a verdict summary), and 2 are degenerate or
-  re-assertions of an anchor —
+  DISCLOSURE, in the W1' round-1 idiom, RECOUNTED at round-1 repair
+  M6.  Of the 161 gates, 17 carry no independent information and are
+  named here in full —
+      A3    Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [2x2]
+      A3    Delta^B + B(U2)B(U1) = B(U2U1), a modulus square [3x3]
+      A5    the coherence law holds for f = identity                     
+      A5    the coherence law holds for f = entrywise Re                 
+      A5    the coherence law holds for f = entrywise square (no modulus)
+      A5    the coherence law holds for f = transpose                    
+      A5    the coherence law holds for f = M + 2 M^T + 3 I              
+      A5    the coherence law holds for f = the CONSTANT map (declared nonsense)
       A6    the two-phase separation Re(z) = Re(iz) = 0 => z = 0
+      A6    SUFFICIENCY re-gated through the closed form [2x2]
+      A6    SUFFICIENCY re-gated through the closed form [3x3]
       B6    projective pairs found and classified [2x2]
       B6    projective pairs found and classified [3x3]
+      B7    even and unimodular forces z = +-1
       B8    the census covers the corpus's phase candidates
       B9    W2b VERDICT: NO-ACTION
       C2    W2c VERDICT: VACUOUS
-      A5    the coherence law holds for f = identity
-      A3    (H,H) attains both ends of the n=2 range
   The independent-evidence count is therefore 144.
+
+  WHAT THE ROUND FOUND, AND WHAT IT COST.  The previous printing of
+  this receipt declared 152 gates with 8 disclosed and claimed 144
+  independent.  That was OVERSTATED BY NINE.  The nine, all now
+  disclosed above: the A3 modulus-square pair (D was BUILT as
+  B(U2U1) - B(U2)B(U1), so the gate tests (a-b)+b = a); the A6
+  sufficiency pair (a re-assertion of the section-0.2 census anchor);
+  A5's four non-identity maps (the telescope is an identity for EVERY
+  f, so none of them can fail — a sixth, declared-nonsense map is
+  added above to make that visible rather than arguable); and B7's
+  x^2 - 1 factorization.  ON THE SAME GATE SET the honest count is
+  152 - 17 = 135, not 144.  This repaired receipt then removes one
+  vacuous gate (A3's '(H,H) attains both ends', replaced by two
+  genuine attainment witnesses) and adds new independent gates: the
+  uncapped N = 6 extension (B4x), the non-negativity of s_ij that the
+  lower bound actually rests on, the reality of Delta^B's entries,
+  the odd-channel witness off the committed families, the
+  family-specific vanishing of A on them, and the two tr Delta^B =
+  +-1 witnesses.  READ THE FOLLOWING CAREFULLY, because the numeral
+  is a trap: the honest count for THIS gate set is again 144, and it
+  is NOT the old 144.  The old one was 152 gates minus 8 disclosed,
+  and was wrong; that same gate set honestly counted gives 135.  The
+  new one is 161 gates minus 17 disclosed.  The coincidence is
+  arithmetic and nothing else, and it is named here so that it
+  cannot be mistaken for 'nothing changed'.
 
   WHERE THIS RECEIPT'S OWN EXPECTATION WAS REFUTED BY ITS OWN SWEEP:
   B6 was written to check that every committed projective pair is
@@ -661,15 +817,18 @@ SECTION E — THE VERDICT
       the family.  The pin's wall is the scalar corner of this.
     * the family is doubly centred, with sharp entrywise bounds
       -s_ij <= Delta^B_ij <= (n-1) s_ij by sum-of-squares
-      certificates; at n = 2 it is exactly one-dimensional with
-      EXACT RANGE [-1/2, 1/2], both ends attained by (H,H).
+      certificates over a gated NON-NEGATIVE s; at n = 2 it is
+      exactly one-dimensional with EXACT RANGE [-1/2, 1/2], the upper
+      end attained by (H,H) and the lower end by (H, diag(1,-1) H) —
+      NOT both by (H,H), which attains +1/2 only.
     * the n-fold coherence law is a TREE identity: all C_{n-1}
       bracketings give the same Delta_n — gated over formal matrices
       to n = 6 (d=2) and n = 5 (d=3) with no property of B assumed,
       and on exact committed matrices at every n it reaches.
-    * the law is CONTENT-FREE about B: it survives replacing B by
-      five declared non-Born maps.  It constrains the family; it
-      selects nothing.
+    * the law is CONTENT-FREE about B: it survives replacing B by six
+      declared non-Born maps, one of them declared nonsense.  None of
+      those six gates can fail and all six are disclosed as such.  It
+      constrains the family; it selects nothing.
     * the two-sided annihilator is EXACTLY the monomial group in
       each slot: W1's sufficiency becomes an equivalence under a
       universal quantifier, by an exact rational probe.
@@ -678,7 +837,10 @@ SECTION E — THE VERDICT
       DFT-sandwich family Delta^B = 0 iff the interleaving diagonal
       has FLAT FOURIER SPECTRUM, equivalently zero periodic
       autocorrelation.  W1's t+u = +-2 (mod 8) and b2+a1 != 0
-      (mod 3) are the N = 2 and N = 3 cases.
+      (mod 3) are the N = 2 and N = 3 cases.  THE CLAIM IS THE
+      IDENTIFICATION ONLY: the equivalence of the two right-hand
+      sides is the discrete Wiener-Khinchin theorem and the
+      definition of a CAZAC / perfect sequence [WK/CAZAC], cited.
 
   W2b — PROJECTIVE DESCENT: NO-ACTION
     * THE VERDICT SPLIT BY REQUIREMENT: the ACTION and the CLASS are
@@ -686,19 +848,29 @@ SECTION E — THE VERDICT
       1999 projective pairs at theta = 1/2, 1/3, 2/3 — but NOT from
       the generated <2,3>, which never acts; and the CONTROL fails
       outright.
-    * THE MULTIPLIER CANCELS.  For any projective representation
-      Delta^B(rho~(g), rho~(h)) = beta_B(gh) - beta_B(g) beta_B(h)
-      with beta_B = B o rho~ lift-independent: omega is gone from
-      the whole family identically, not merely pointwise.
-    * FOUR CLASSES, ONE BORN SHADOW.  At N = 6 the pairs (X, Z^k)
-      realize multiplier classes of order 1, 2, 3 and 6 with
-      literally identical Born data and an identically zero
-      Delta^B-family.  No functional can separate them.
+    * THE MULTIPLIER CANCELS FROM THE FORMULA.  For any projective
+      representation Delta^B(rho~(g), rho~(h)) = beta_B(gh) -
+      beta_B(g) beta_B(h) with beta_B = B o rho~ lift-independent:
+      omega is gone from the whole family identically, not merely
+      pointwise.  THIS ALONE IS NOT THE NO-GO — [omega] is itself a
+      lift-independent invariant of rho, so absence from the formula
+      does not yet forbid a functional of the family from
+      determining it.  The next bullet is what forbids it.
+    * SIX CLASSES, ONE BORN SHADOW — THE COLLAPSE.  At N = 6 the
+      pairs (X, Z^k), k = 0..5, realize SIX distinct classes, of four
+      distinct orders 1, 2, 3, 6, with literally identical Born data
+      and an identically zero Delta^B-family: gated UNCAPPED at B4x
+      over all 36 x 36 = 1296 word pairs for each of the six k, 7776
+      exact computations.  Every finite-dimension-realizable class
+      collapses onto one family, so NO functional whatsoever — of any
+      shape — can separate them.  THIS is the closure of requirement
+      (3), and B3 is its first half, not the whole.
     * THE CANONICAL REALIZATION IS FLAT.  The Weyl pair is monomial
       and A6 makes the monomial group the exact annihilator; break
-      monomiality and a defect appears, controlled by the
-      conjugating basis — two conjugators at one theta, two
-      different families.
+      monomiality and a defect appears — two conjugators at ONE theta
+      give TWO different families, which exhibits the SPLIT (theta
+      does not determine the family) and nothing more.  No claim that
+      the basis determines it is made or gated.
     * THE DOUBLE DISSOCIATION ON THE COMMITTED CARRIERS.  Of W1's
       13185 ordered pairs, 1999 have a scalar commutator and so
       generate a projective Z^2-action.  Non-monomial ones DO carry
@@ -707,9 +879,20 @@ SECTION E — THE VERDICT
       SEVERAL distinct families (theta does not determine the
       family), and ONE family occurs at SEVERAL theta (the family
       does not determine theta).  Both directions fail at once.
-    * THE PARITIES ARE OPPOSITE.  Delta^B is reversal-EVEN; a U(1)
-      holonomy is reversal-ODD; even and unimodular forces +-1, and
-      -1 is realized nowhere in the committed values.
+    * THE COVARIANCE LAW, SCOPED (B7, rewritten).  Delta^B is
+      reversal-COVARIANT: it goes to its TRANSPOSE.  Only
+      TRANSPOSE-INVARIANT functionals are therefore reversal-even;
+      the antisymmetric part A is reversal-ODD and is NOT identically
+      zero — a witness off W1's families is gated, while A == 0 on
+      all 13185 committed pairs is a property of THOSE FAMILIES.
+      The obstruction that does not depend on any of this: Delta^B
+      has REAL entries, so every real-polynomial functional is real
+      and a real unimodular value is +-1.  Parity's residual content
+      is about COMPLEX-valued functionals and is conditional on an
+      identification of R with loop reversal that [D71b] Clause 3
+      says is nowhere written.  The old step '-1 is realized nowhere
+      ([D74] D2)' IS WITHDRAWN: D2 is about D74's value set, and for
+      Delta^B's own values BOTH +1 and -1 occur on committed pairs.
     * THE MISSING-PIECE CENSUS (B8): the corpus has a value group
       with no unimodular part, a character where a bicharacter is
       needed, an amplitude with no closure, and edge phases that are
@@ -728,14 +911,21 @@ SECTION E — THE VERDICT
   common space rather than by values, (b) supplies an ANTISYMMETRIC
   BILINEAR pairing on it, and (c) breaks monomiality in the
   configuration basis so that the defect is nonzero where the
-  multiplier lives.  B3 says even all three together do not suffice:
-  the multiplier still cancels from the family, so a fourth thing is
-  needed — an invariant of the LIFT rather than of the projective
-  representation, which the Born projection cannot see by
-  construction.
+  multiplier lives.  B3 and B4x together say even all three do not
+  suffice, and the FOURTH THING IS NOT WHAT THIS RECEIPT PREVIOUSLY
+  SAID IT WAS (round-1 repair M2).  It is NOT 'an invariant of the
+  LIFT rather than of the projective representation': that is
+  cohomologically backwards.  [omega] IS an invariant of the
+  projective map rho — it is precisely LIFT-INDEPENDENT, which is
+  what makes it a class at all — while lift-DEPENDENT quantities are
+  gauge artifacts of a choice and can never detect it.  What a
+  successor needs is a PHASE-RETAINING INVARIANT OF rho THAT IS
+  FINER THAN THE BORN SHADOW B o rho: a functional that sees the
+  RELATIVE PHASES of matrix entries, which B annihilates entrywise.
+  B is the whole obstruction; the lift never was.
 
   determinism: fixed lexicographic enumeration everywhere; declared
   deterministic strides where capped; no randomness, no float in any
   substantive path; every cap printed.
-  runtime:   283.9s
+  runtime:   278.2s
 ==============================================================================

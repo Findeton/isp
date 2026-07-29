@@ -604,3 +604,55 @@ gates / 66 pass / 0 fail, 14 anchors, 5.1s; adjudicator rerun
 byte-identical modulo timings; the relation table UNCHANGED — all
 six pairs INDEPENDENT, W4′-NEITHER-ONE-NOR-THREE stands.  **W4′ IS
 TERMINAL.**
+
+## 2026-07-28 — W2 HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES, ALL
+## APPLIED — **W2 TERMINAL**; #13 CORRECTED (v12 LEDGER #16)
+The round rebuilt everything in an independent cyclotomic layer
+(nothing sliced from W1′) and reproduced every number exactly —
+"the no-go is real and airtight" — then relocated its PROOF.  All
+fixes applied and re-verified (161 gates / 161 pass / 0 fail, 32
+anchors, 278.2s; adjudicator rerun byte-identical modulo timings).
+**#13'S TEXT CORRECTED HERE: (1)** the road-closure's attribution
+— §13's cancellation theorem alone does NOT prove requirement (3)
+fails ([ω] is itself a lift-independent invariant of ρ; were B
+injective on PU(N), (3) would be met and §13 would hold verbatim);
+**the closure is §13 PLUS §14's COLLAPSE** — B(Z^k) = I forces one
+identical family across every finite-dimension-realizable class —
+now extended cap-free (new gate B4x: all 36×36 word pairs × six k,
+7,776 ordered pairs, 0 nonzero, six β values distinct); **(2)**
+#13's "BASIS, NOT θ, CONTROLS THE DEFECT" withdrawn (§16's SPLIT
+is the accurate statement — determination was never shown); and
+#13's unqualified "Δᴮ is reversal-EVEN" corrected: B7 gates
+COVARIANCE; the antisymmetric part A is reversal-ODD and A ≠ 0
+on 12/16 pairs OUTSIDE the committed families (witness gated,
+off-diagonal ±14/625; A ≡ 0 on all 9,216 + 3,969 committed pairs —
+family-specific, now labeled).  **THE MOST CONSEQUENTIAL FIX
+(M2):** the successor-facing prescription was cohomologically
+backwards — "an invariant of the LIFT" is a gauge artifact by
+definition; the fourth thing a phase-selection needs is **a
+PHASE-RETAINING INVARIANT OF THE PROJECTIVE MAP ρ, FINER THAN THE
+BORN SHADOW B∘ρ** — rewritten in §20 and the receipt's verdict.
+**THE PARITY CHAIN replaced by the honest ladder:** (a) the
+carrier-independent one-liner — Δᴮ has REAL entries (gated:
+conj(x) = x on all 72,585 census entries), so real-polynomial
+functionals are real and a real unimodular value is ±1 — no parity,
+no [D74] needed; (b) parity's residue scoped to complex-valued
+functionals AND conditional on the R ↔ loop-reversal
+identification, which [D71b] Clause 3 says is NOWHERE WRITTEN
+(quoted; Clause 2's [MY READING] flag disclosed); (c) the
+[D74]-D2 step DELETED as applied to Δᴮ (whose own values realize
+tr Δᴮ = ±1 — both witnesses gated, 512 occurrences each at 2×2).
+Attribution repaired: the flat-spectrum ⟺ zero-autocorrelation
+equivalence is discrete Wiener-Khinchin / the CAZAC definition
+([WK/CAZAC] entry added: Björck, Chu/Zadoff-Chu, Frank, Turyn,
+Golomb-Gong; gates tagged; A8 scoped to the IDENTIFICATION).
+(H,H) attains +1/2 only; the −1/2 witness gated
+(Δᴮ(H, diag(1,−1)H)₀₀ = −1/2).  The gate accounting recounted
+honestly: 161/17-disclosed/144-independent, with the old set's
+honest count 135 and the 144-coincidence FLAGGED AS A TRAP in
+note and receipt.  **W2 IS TERMINAL.  THE STANDING RESULT: the
+Δᴮ-family's structure theory (closed form; torus annihilation;
+tree identity; monomial annihilator; the WK/CAZAC identification)
++ THE ROAD CLOSURE AS A TWO-THEOREM PROOF + the corrected
+successor target: a phase-retaining invariant of ρ finer than
+B∘ρ.**  THE BATCH IS COMPLETE: six units, six terminal.

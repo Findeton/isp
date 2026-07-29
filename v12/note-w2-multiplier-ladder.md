@@ -1,18 +1,50 @@
 # v12 W2 — THE MULTIPLIER LADDER: THE DEFECT ALGEBRA, THE PROJECTIVE
 # DESCENT NO-GO, AND THE VACUOUS SELECTION
 
-**Status:** GREEN-UNREVIEWED, STRICT, 2026-07-28.
+**Status:** GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-07-28.
 **Pin:** `note-w2-multiplier-ladder-pin.md` (frozen before any code).
 **Binding:** paper 0 v2.1 §1 (T2′, Δᴮ and the three-defect
 distinction), §4 W2′ (the three-way split, verbatim), §5 (non-claims);
 LOG #1–#8.
 **Receipt:** `v12/code/w2_multiplier_ladder_exact.py` →
-`v12/code/w2_output.txt`.  **32 anchors, 152 gates, 152 pass, 0 fail**
-(of which 8 carry no independent information and are named in-receipt:
-**144 independent-evidence gates**); runtime 283.9 s; re-run at
-`PYTHONHASHSEED=7` identical apart from timings.
+`v12/code/w2_output.txt`.  **32 anchors, 161 gates, 161 pass, 0 fail**
+(of which **17** carry no independent information and are named in
+full in-receipt: **144 independent-evidence gates**); runtime 278.2 s;
+re-run at `PYTHONHASHSEED=7` identical apart from timings.
 **Verdicts:** **W2a-STRUCTURE-DELIVERED / W2b-NO-ACTION /
-W2c-VACUOUS.**
+W2c-VACUOUS** — all three unchanged by the repair; the no-go is real
+and its evidence reproduced entirely.
+
+**READ THE GATE COUNT CAREFULLY — the numeral is a trap.**  The
+pre-repair printing claimed *152 gates, 8 disclosed, 144 independent*.
+The round found nine further gates that carry no independent
+information, so **on that same gate set the honest count is 135, not
+144**.  This repaired receipt drops one vacuous gate, adds nine
+genuine ones, and discloses seventeen: *161 − 17 = 144* again.  **The
+coincidence is arithmetic and nothing else.**  What changed is the
+disclosed list, not the total.
+
+**Round 1 (hostile, external) returned ACCEPT-WITH-FIXES**: the no-go
+real and airtight, every number reproduced, six major fixes, five
+minor, two nits.  All are applied here.  The four that changed what
+this unit *says*, as opposed to how it says it:
+
+1. **The closure is re-attributed.**  §13 alone does *not* close
+   requirement (3); §13 **plus** §14 does.  See §19.
+2. **The handover to a successor was cohomologically backwards** and
+   is rewritten.  See §20.
+3. **"The Δᴮ-family is reversal-even" was false unqualified.**  §17 is
+   rewritten around the *covariance* law and the odd channel, and the
+   [D74]-D2 step is **withdrawn**.
+4. **A8's second equivalence is a classical theorem**, not this
+   unit's: it is the discrete Wiener–Khinchin theorem and the
+   definition of a CAZAC sequence.  Attribution added; the claim is
+   scoped to the identification.
+
+Two further corrections run *upward*: §14's exhibit is stronger than
+it was stated to be (six classes, not four), and §3's range is now
+carried by two genuine attainment witnesses instead of one vacuous
+pair.
 
 Arithmetic: `fractions.Fraction` for every rational; the cyclotomic
 fields ℚ(ζ_N), N = 2, 3, 4, 5, 6, 8, 12 (canonical representation
@@ -78,6 +110,14 @@ an uncompensated insertion, not a group action on the pair; it moves
 192 of 576 pairs at 2×2 and 25 of 576 at 3×3.  Gated on a declared
 deterministic stride of 24 matrices from each family.
 
+Two of these lines are weaker than the list makes them look, and both
+are tagged at their gates.  (i) is **near-tautological**: B(I) = I, so
+the two terms of the definition coincide term by term.  (v) is a
+**covariance, not an evenness**, and the A2 instance is **subsumed by
+§17**, which re-gates it on the full census and reads off the odd
+channel it leaves open — the reading that survives is stated there,
+not here.
+
 ### 3. The doubly-centred structure and the sharp bounds
 
 B(U) is doubly stochastic for unitary U, so B(U₂U₁) and B(U₂)B(U₁)
@@ -94,13 +134,33 @@ first definitional (a modulus square), the second the Lagrange
 sum-of-squares identity, gated at d = 2..6 — and neither by any order
 comparison.
 
+The first certificate needs one thing the earlier receipt asserted and
+did not gate, and the round was right to ask for it: **s_ij must be a
+non-negative real number before Δᴮ_ij + s_ij ≥ 0 bounds anything.**
+That is now the gate — every s_ij over both censuses is checked to be
+a **non-negative rational** (36,864 + 35,721 entries, 0 violations).
+The identity Δᴮ + B(U₂)B(U₁) = B(U₂U₁) itself is retained but
+**disclosed as a tautology**: Δᴮ was *built* as that difference, so
+the gate tests (a−b)+b = a.
+
 At n = 2 the family is **one-dimensional**: Δᴮ is a multiple of
 [[1,−1],[−1,1]] whose parameter is 2Re(A₀B₀) with A_i = (U₂)_{i0}
 conj((U₂)_{i1}) and B_j = (U₁)_{0j}conj((U₁)_{1j}) — W1′'s
-phase-alignment obstruction — and **its exact range is [−½, ½]**, both
-ends attained by the Hadamard pair (H,H).  The bound follows from the
-AM-GM certificate (x+y)² − 4xy = (x−y)²; the range is read off all
-9216 census pairs with the exact ℚ(√2) sign oracle.
+phase-alignment obstruction — and **its exact range is [−½, ½]**, read
+off all 9216 census pairs with the exact ℚ(√2) sign oracle.  The bound
+follows from the AM-GM certificate (x+y)² − 4xy = (x−y)².
+
+**Which pairs attain the ends (round-1 repair M3).**  Not both (H,H):
+that reading was **false**.  (H,H) gives Δᴮ = [[½,−½],[−½,½]], hence
+**+½ only**; the old gate paired Δ₀₀ = +½ with Δ₀₁ = −½, which is
+**vacuous**, since one-dimensionality makes Δ₀₁ = −Δ₀₀ identically.
+Two genuine witnesses replace it:
+
+    Δᴮ(H, H)₀₀              =  +1/2,
+    Δᴮ(H, diag(1,−1)·H)₀₀   =  −1/2,
+
+both exact in ℚ(ζ₈), with diag(1,−1)·H gated unitary.  The lower end
+is attained **elsewhere**, and elsewhere is exhibited.
 
 ### 4. The n-fold telescoping is a tree identity
 
@@ -126,14 +186,26 @@ family members, every ordered tuple, every bracketing: 1360 tuples
 ### 5. The law is content-free about the Born projection
 
 Because §4's gate assumes nothing about B, the law holds for **any**
-map whatsoever.  Made concrete: the same identity is gated with B
-replaced by five declared non-Born maps — the identity map, entrywise
-Re, the entrywise square without modulus, the transpose, and
-M ↦ M + 2Mᵀ + 3I — on 432 ordered triples each.  It holds for all
-five.  **A law that survives replacing its subject constrains the
-subject not at all**: the coherence law is an identity of
-associativity.  (The identity-map instance is degenerate, both sides
-being identically zero; it is named as such in-receipt.)
+map whatsoever.  Made concrete **and falsifiable-looking**: the same
+identity is gated with B replaced by six declared non-Born maps — the
+identity map, entrywise Re, the entrywise square without modulus, the
+transpose, M ↦ M + 2Mᵀ + 3I, and a **declared-nonsense constant map
+that ignores its argument entirely** — on 432 ordered triples each.
+It holds for all six.  **A law that survives replacing its subject
+constrains the subject not at all**: the coherence law is an identity
+of associativity.
+
+And this section's thesis applies to its own gates, which is the
+round's point (M6) and is now stated at the gates themselves: **none
+of these six can fail.**  The telescope
+
+    (f(ABC) − f(AB)f(C)) + (f(AB) − f(A)f(B))f(C)
+      = (f(ABC) − f(A)f(BC)) + f(A)(f(BC) − f(B)f(C))
+
+has both sides equal to f(ABC) − f(A)f(B)f(C) for *every* f.  All six
+are therefore **declarative** and all six are named in the receipt's
+disclosure block; the sixth was added precisely to make that
+undeniable rather than arguable.
 
 ### 6. The two-sided annihilator is exactly the monomial group
 
@@ -162,6 +234,10 @@ separation and the exhaustive family corroboration are gated; the
 quantifier over all unitaries is carried by the argument, not by the
 sweep.  Corroboration: 64 non-row-monomial members at 2×2 and 9 at
 3×3, 0 unseparated in either slot, with 2 and 6 probes respectively.
+(The **sufficiency** half of the gate pair is a *re-assertion* of
+§0.2's census anchor `cond_nonzero = 0`, recomputed from the same
+table; it is disclosed in-receipt as carrying no independent
+information.  The necessity half is where the content is.)
 
 **Corollary — the wall's structural form.**  B restricted to the
 monomial group Mon(n) = 𝕋ⁿ ⋊ S_n *is* a group homomorphism onto S_n,
@@ -184,16 +260,29 @@ the **interleaving** diagonal.  Since (F_N E F_N)_{jk} =
 (1/N)Σ_m ε_m ω^{m(j+k)}, the entries are the DFT of the unimodular
 sequence ε read at j+k, so
 
-    Δᴮ = 0  ⟺  |DFT(ε)(s)| = √N for every s
+    Δᴮ = 0  ⟺  |DFT(ε)(s)| = √N for every s          [the IDENTIFICATION]
             ⟺  ε has zero periodic autocorrelation at every nonzero lag
-               (a CAZAC / perfect sequence).
+               (a CAZAC / perfect sequence).          [ CLASSICAL, cited ]
 
 **Δᴮ = 0 is phase alignment, and the alignment condition is flatness of
 a Fourier spectrum.**  Gated with ε₀ = 1 fixed: N = 2 over μ₈ in
 ℚ(ζ₈) (8 diagonals, 2 flat), N = 3 over μ₆ in ℚ(ζ₁₂) (36, 6), N = 4
 over μ₈ in ℚ(ζ₈) (512, 16), N = 5 over μ₅ in ℚ(ζ₅) (625, 20); 0
-mismatches against either characterization, and the Wiener–Khinchin
-equivalence between them gated exactly.
+mismatches against either characterization.
+
+**Attribution, and it is load-bearing (round-1 repair M5).**  The
+*second* equivalence is **not this unit's, and not new**.  "Flat |DFT|"
+⟺ "zero periodic autocorrelation at every nonzero lag" is the
+**discrete Wiener–Khinchin theorem** — the autocorrelation and the
+squared modulus of the DFT are a transform pair — and it is the
+**definition** of the CAZAC / perfect sequences, a classical family
+with explicit constructions at every N (Björck; Chu and Zadoff–Chu;
+Frank; Turyn; Golomb–Gong).  See **[WK/CAZAC]** in §21.  **What §8
+claims is the first line only: the identification of Δᴮ = 0 on the
+DFT-sandwich family with that known condition on the interleaving
+diagonal.**  Both gates now carry the `[WK/CAZAC]` tag, and the second
+is re-gated here as a check on this receipt's arithmetic, not as a
+theorem of this unit.
 
 W1′'s two committed closed forms are the N = 2 and N = 3 cases, and the
 receipt re-derives them from flatness: at N = 2 flat ⟺ ε₁ = ±i ⟺
@@ -275,10 +364,21 @@ projective representation is the deviation of β_B from being a
 homomorphism, and β_B is a function of the PU(N)-valued map alone.
 This promotes the wall B(ωU) = B(U) from a pointwise remark to a
 statement about the entire family.  Lift-independence gated on every
-word of the Weyl group at N = 2..6 against every scalar of the carrier
-field.
+word of the Weyl group at N = 2..6 against **every root of unity of
+the carrier field** — μ_n for the field ℚ(ζ_n) actually in use, not
+every scalar of it, which is what the sweep runs and what the gate now
+says (round-1 repair m3).
 
-### 14. Four classes, one Born shadow
+**What this section does and does not settle.**  It removes ω from the
+*formula*.  It does **not**, by itself, show that no functional of the
+family determines the class: [ω] is a **lift-independent** invariant
+of the projective map ρ, so "absent from the formula" and "invisible
+to every functional" are different statements.  The counterfactual is
+the cleanest way to see it — *were B injective on PU(N), requirement
+(3) would be met and this theorem would hold verbatim.*  §14 is what
+closes the road.
+
+### 14. THE COLLAPSE: six classes, one Born shadow — and this is what closes requirement (3)
 
 Take U = X_N (shift), V = Z_N^k (clock power), k = 0..N−1.  The
 commutator is ζ_N^{−k}·I, so the class has order N/gcd(N,k) — every
@@ -286,22 +386,48 @@ class realizable on ℂ^N, the trivial one included.  But B(Z_N^k) = I
 for every k, so β_B(a,b) = B(X^a Z^{kb}) = P^a with P the shift
 permutation, **independent of k**.
 
-At N = 6 the classes have orders **1, 2, 3 and 6** — four distinct
-elements of H²(ℤ², U(1)) — carried by realizations with literally
-identical Born data and an identically zero Δᴮ-family.  Gated at
-N = 2..6 (all N² words per class; all N⁴ ordered word pairs for
-N ≤ 4, the 9×9 sub-block for N = 5, 6).  **No functional of the
-Δᴮ-family can separate them.**
+At N = 6 the six values k = 0..5 give β = ζ₆^{−k}: **six distinct
+elements** of H²(ℤ², U(1)), of **four distinct orders** 1, 2, 3, 6,
+the trivial class among them — carried by realizations with literally
+identical Born data and an identically zero Δᴮ-family.  (The earlier
+reading, "four distinct elements", under-sold the exhibit: the classes
+number six and it is their *orders* that number four — round-1 repair
+m2, a correction upward.)
 
-### 15. The canonical realization is flat, and breaking it hands control to the basis
+Gated at N = 2..6: all N² words per class, all N⁴ ordered word pairs
+for N ≤ 4, the 9×9 sub-block for N = 5, 6 — **and at N = 6, which is
+the case the no-go leans on, the cap is now removed entirely**
+(round-1 repair M1).  The receipt's **B4x** runs all 36 words U^aV^b,
+a,b < 6, and all 36 × 36 = 1296 ordered word pairs, for **all six k**:
+**7776 exact Δᴮ computations in ℚ(ζ₆), all zero**, with the six β
+values gated distinct.
+
+**This is the argument that closes requirement (3), and §13 is only
+its first half.**  Because B(Z^k) = I, β_B is independent of k, so
+every finite-dimension-realizable class — and by W2c's own determinant
+argument that is exactly θ ∈ (1/N)ℤ — **collapses onto one and the
+same Δᴮ-family**.  A functional cannot separate arguments it is not
+given: **any functional whatsoever, of any shape, takes the same value
+on all six.**  §13 removes ω from the formula; §14 shows the family
+cannot separate the classes.  Neither alone suffices.
+
+### 15. The canonical realization is flat, and breaking it splits one θ into two families
 
 The Weyl pair is monomial, and §6 makes the monomial group the exact
 annihilator, so [W]'s own object — the only irreducible realization at
-a primitive multiplier, by [SvN] — carries no defect at all.
-Conjugating it by an exact rational rotation preserves θ = 1/2 and
-creates a defect: R(3/5,4/5) gives Δᴮ₀₀ = −56448/390625, R(5/13,12/13)
-gives Δᴮ₀₀ = −407836800/815730721.  **One θ, two bases, two different
-families**: the basis controls the defect.
+a primitive multiplier, by [SvN], and the gate now carries that tag —
+carries no defect at all.  Conjugating it by an exact rational
+rotation preserves θ = 1/2 and creates a defect: R(3/5,4/5) gives
+Δᴮ₀₀ = −56448/390625, R(5/13,12/13) gives Δᴮ₀₀ = −407836800/815730721.
+**One θ, two bases, two different families.**
+
+**What that shows, and what it does not (round-1 repair m5).**  It
+shows the **SPLIT** — θ does *not* determine the Δᴮ-family — which is
+§16's first direction, exhibited here on two matrices.  It does **not**
+show that the basis *determines* the family: no map from bases to
+families is exhibited anywhere in this unit, and two conjugators is
+not a determination.  The earlier phrasing "the basis controls the
+defect" over-read a two-point exhibit and is **withdrawn**.
 
 ### 16. The double dissociation, on the committed carriers themselves
 
@@ -335,23 +461,88 @@ nonzero families at 2×2, 4 at 3×3).  And then:
 Both directions fail at once, on committed objects, in exact
 arithmetic.
 
-### 17. The parity obstruction
+### 17. The covariance law, the odd channel, and what the parity argument actually delivers
 
-(v) is the family's reversal law: under R : (U₂,U₁) ↦ (U₁ᵀ, U₂ᵀ) —
-reverse the order, transpose each step — Δᴮ goes to its transpose.
-Hence **every scalar functional of Δᴮ that is transpose-invariant** —
-the trace, the entry sums, the Frobenius norm, every symmetric function
-of the spectrum — **is reversal-EVEN**.  Gated on all 13,185 census
-pairs, for the law and for the trace separately.
+*Rewritten at round 1.  The earlier version of this section was wrong
+at three separate joints, and each is corrected below rather than
+patched.*
 
-A U(1) holonomy is reversal-ODD by definition:
-Hol(γ⁻¹) = conj(Hol(γ)).  That is [D71b] Clause 2's finding — the
-corpus's only phase-shaped amplitude is placed on the reversal-odd
-channel, at dual-conjugation error exactly 0, and no other placement
-transforms like a holonomy.  A quantity that is both reversal-even and
-unimodular satisfies z = conj(z) and |z| = 1, hence z = ±1; and −1 is
-realized nowhere in the committed values ([D74] D2).  **The multiplier
-and the defect sit on opposite parity channels.**
+**(a) The law is a COVARIANCE, and the carrier-independent obstruction
+needs no parity at all.**  Under R : (U₂,U₁) ↦ (U₁ᵀ, U₂ᵀ) — reverse
+the order, transpose each step — Δᴮ goes to its **transpose**:
+
+    Δᴮ  ⟼  (Δᴮ)ᵀ.
+
+Gated on all 13,185 census pairs.  It follows that every scalar
+functional of Δᴮ that is **transpose-invariant** — the trace, the
+entry sums, the Frobenius norm, every symmetric function of the
+spectrum — is reversal-**even**; gated for the trace separately.  It
+does **not** follow that "the Δᴮ-family is reversal-even", and that
+statement is **false** as it stands.  See (b).
+
+The obstruction that actually carries weight is one line and needs
+neither parity nor any committed value set: **Δᴮ has real entries** —
+immediately from §1, |Σw|² − Σ|w|² — gated as conj(x) = x on all
+72,585 census entries.  So every real-polynomial functional of Δᴮ is
+**real**, and a real number of modulus 1 is **±1**.  That is
+carrier-independent and it is the load-bearing step.
+
+**(b) The family has an ODD channel, and it is not empty.**  Split
+
+    Δᴮ = S + A,   S = (Δᴮ + (Δᴮ)ᵀ)/2,   A = (Δᴮ − (Δᴮ)ᵀ)/2;
+
+under R, S is even and **A is reversal-ODD**.  A is a genuine channel
+of the family:
+
+- **Off the committed families A ≠ 0.**  Declared witness set at 3×3,
+  exact rational arithmetic: W = {R₀₁, R₁₂, R₀₁F₃, R₁₂F₃} with R_{kl}
+  the rational rotation [[3/5,−4/5],[4/5,3/5]] in the (k,l) plane
+  (§6's own probe) and F₃ the committed 3-point DFT.  All four are
+  unitary; **none lies in W1′'s committed 3×3 family**; and A ≠ 0 on
+  **12 of the 16 ordered pairs**, with A ↦ −A under R on all 16.
+  First witness (R₀₁, R₀₁F₃): A has entries ±14/625 off the diagonal.
+- **On the committed families A ≡ 0** — 0 of 9216 at 2×2 and 0 of 3969
+  at 3×3.  At 2×2 this is *forced* (a multiple of [[1,−1],[−1,1]] is
+  symmetric); at 3×3 it is a **contingent property of that family**,
+  and it is labelled as such.  It is not a property of Δᴮ.
+
+So the accurate statement, and the one any successor must carry, is:
+**Δᴮ is reversal-covariant; transpose-invariant functionals of it are
+reversal-even; its antisymmetric part is reversal-odd and is generally
+nonzero.**
+
+**(c) What parity still adds, and under what condition.**  Parity's
+residual content is confined to **complex-valued** functionals, where
+realness does not decide — and it is **conditional on identifying this
+R with loop reversal**, which is exactly what [D71b] Clause 3 says is
+not written:
+
+> v6's reversal reverses **transport order** (`T_A T_B` vs `T_B T_A`);
+> v7's reversal reverses a **record's own order relations**… **The
+> bridge is one identification and one closure, and neither is
+> written.**
+> — `v10/note-d71b-holonomy-phase-identity.md:623-631`
+
+And Clause 2's *naming* of the transformation law as a holonomy law is
+itself flagged `[MY READING]` in its own note (`:769-775`): what is
+measured is the law (dual-conjugation error exactly 0), not the name.
+Both disclosures are made here because the parity leg rests on them.
+
+**(d) What is withdrawn.**  The old chain ended "…hence z = ±1; and −1
+is realized nowhere in the committed values ([D74] D2)".  **That step
+is deleted.**  D74's D2 is about D74's *own* value set — positive
+rationals — and says nothing about the values of Δᴮ.  For Δᴮ's own
+values the **±1 escape is wide open**, and both branches are occupied
+on committed pairs:
+
+    tr Δᴮ = +1  at 2×2 family pair (28, 29),
+    tr Δᴮ = −1  at 2×2 family pair (28, 34),
+
+each occurring **512 times** over the 9216-pair 2×2 census (and
+neither occurring in the 3×3 one).  Both are gated.
+The conclusion that survives is the weaker and true one: **a
+transpose-invariant functional of Δᴮ is reversal-even and real, so it
+cannot be a generic unimodular phase — but it can be ±1, and is.**
 
 ### 18. The missing-piece census
 
@@ -359,9 +550,9 @@ and the defect sit on opposite parity channels.**
 |---|---|---|
 | **CAND-1** D74's transport holonomy r, group ⟨2,3⟩ | a group of VALUES in (ℝ⁺,×); no committed action on any space; ℝ⁺ ∩ U(1) = {1} | the action ρ : ℤ² → PU(H), and a U(1)-valued cocycle |
 | **CAND-2** the i-twist L′ = e^{i log r} ([D74] D4.1) | committed and committed-dead — the law it restores is D1's own identity; log r is a holonomy, an H¹ object, and e^{i log r} is a character-valued H¹ object | the antisymmetric BILINEAR pairing that an H² class *is* (§12) |
-| **CAND-3** v7 paper 30's e^{−kE}e^{iΦ(O)} ([D71b] §3.2) | a phase built from a LINEAR functional Φ of the reversal-odd channel O = F − F*: a character, not a multiplier | the pairing; the closure; and the parity is wrong (§17) |
+| **CAND-3** v7 paper 30's e^{−kE}e^{iΦ(O)} ([D71b] §3.2) | a phase built from a LINEAR functional Φ of the reversal-odd channel O = F − F*: a character, not a multiplier.  §17 as rewritten scopes the parity leg: what sits opposite Φ's channel is not "the Δᴮ-family" but its **transpose-invariant functionals**, Δᴮ's own antisymmetric part being odd and generally nonzero | the pairing and the closure — outright.  The parity mismatch is real for transpose-invariant functionals but **conditional** on an identification [D71b] Clause 3 says is unwritten, so it supports and does not stand alone |
 | **CAND-4** D42b4's ∏√q amplitude ([D71b] §4.2) | the right carrier — it is the square root of the process's own weights — but assigned per complete history, with no loop/cycle/closure/holonomy anywhere in its note and its phase slot filled with +1 without an argument | the closure device, hence any commutator at all |
-| **CAND-5** W1′'s U(1)-Gram edge phases g_ab = z_a conj(w_b) | committed and gated: the 4-cycle holonomy is identically 1 on 8192 quadruples — every factorized edge phase is a coboundary | non-factorizability; the class is zero by construction |
+| **CAND-5** W1′'s U(1)-Gram edge phases g_ab = z_a conj(w_b) | committed and gated: the 4-cycle holonomy is identically 1 in W1′'s **two separate gates** — 4096 quadruples of the π/4 family (exhaustive) and 4096 of the π/8 family (a₀ = 0 fixed, the holonomy being invariant under z_a ↦ λz_a and w_b ↦ μw_b independently).  They are different sweeps over different families and are cited separately, not as one sweep of 8192 (round-1 repair m4).  Every factorized edge phase is a coboundary | non-factorizability; the class is zero by construction |
 | **CAND-6** the canonical Weyl / NC-torus pair ([W]) | the action EXISTS and [ω] ≠ 0 for every θ ∈ (1/N)ℤ — but it is monomial, so its Δᴮ-family is identically zero, and all N classes share one Born shadow | NOT MISSING, REFUTING: the action exists and controls nothing |
 | **CAND-7** W1′'s committed families as carriers | exhaustive over 13,185 ordered pairs: 1999 generate a projective ℤ²-action, and the non-monomial ones DO carry a nonzero Δᴮ-family — but the same θ carries several families and the same family occurs at several θ | NOT MISSING, REFUTING: the carriers realize the action and the correspondence fails in both directions at once |
 
@@ -374,8 +565,19 @@ and the defect sit on opposite parity channels.**
 - **(2) the CLASS.**  Those carriers realize θ = 1/2 (2×2) and
   θ = 1/3, 2/3 (3×3) — genuinely nontrivial classes.  Requirement (2)
   is met.
-- **(3) the CONTROL.**  This is what fails, and it fails as a theorem
-  (§13) and twice over as a measurement (§14, §16).
+- **(3) the CONTROL.**  This is what fails, **and the attribution
+  matters (round-1 repair M1).  The failure of (3) is a theorem — §13
+  PLUS §14.**  §13 removes ω from the formula; §14 shows the family
+  cannot separate the classes.  §13 alone does not suffice, because
+  [ω] is itself a lift-independent invariant of ρ, so "ω absent from
+  the formula" does not imply "no functional of the family determines
+  [ω]" — were B injective on PU(N), (3) would be met and §13 would
+  hold verbatim.  §14 supplies what is missing: B(Z^k) = I forces
+  β_B = P^a independent of k, so every finite-dimension-realizable
+  class (θ ∈ (1/N)ℤ, by W2c's own determinant argument) collapses onto
+  one identical family, and any functional whatsoever takes the same
+  value on all of them.  §16 then measures the same failure again,
+  independently, on committed carriers.
 
 **W2b-NO-ACTION** therefore names the failure precisely: not that no
 projective action can be built from committed objects, but that the
@@ -414,17 +616,34 @@ A committed object that (a) represents the generated group by
 **operators on a common space** rather than by values, (b) supplies an
 **antisymmetric bilinear pairing** on it, and (c) breaks monomiality in
 the configuration basis so that the defect is nonzero where the
-multiplier lives.  §13 says even all three together do not suffice: the
-multiplier still cancels from the family, so a fourth thing is needed —
-an invariant of the **lift** rather than of the projective
-representation, which the Born projection cannot see by construction.
+multiplier lives.  §13 and §14 together say even all three do not
+suffice, and a fourth thing is needed.
+
+**What the fourth thing is — and it is not what this note previously
+said (round-1 repair M2).**  It is **not** "an invariant of the *lift*
+rather than of the projective representation".  That was
+cohomologically **backwards**, and it is the most consequential
+sentence the round corrected.  [ω] **is** an invariant of the
+projective map ρ — it is precisely *lift-independent*, which is what
+makes it a cohomology class at all — while lift-**dependent**
+quantities are gauge artifacts of a choice and can never detect it.
+Chasing the lift is chasing the gauge.
+
+What a successor needs is a **phase-retaining invariant of the
+projective map ρ that is finer than its Born shadow B∘ρ**: a
+functional that sees the **relative phases of matrix entries**, which
+B annihilates entrywise.  **B is the whole obstruction; the lift never
+was.**
 
 ---
 
 ## 21. Antecedents
 
-Every theorem used carries its citation in the receipt at the gate
-where it is used.
+Every theorem used carries its citation in the receipt **at the gate
+where it is used**, and the round was right that three did not: they do
+now.  **[SvN]** tags §15's base-Weyl-pair gate, **[WK/CAZAC]** tags
+both of §8's equivalence gates, and **[D71b]** tags §17's ±1-escape
+gate (round-1 repair M5).
 
 - **[B1]** Barandes, arXiv 2302.10778 — the identification of the
   Born-projection cross terms with interference.  §1's closed form is
@@ -433,6 +652,17 @@ where it is used.
   on ℤ², realized by the clock/shift pair (e.g. arXiv 1606.01829).
   W1′ named it and used it at no gate; this is the unit where it is
   used, and where it fails.
+- **[WK/CAZAC]** The **discrete Wiener–Khinchin theorem** (the
+  periodic autocorrelation of a sequence and the squared modulus of
+  its DFT are a transform pair) and the classical theory of **CAZAC /
+  perfect sequences**, for which "flat |DFT|" *is* the defining
+  property, with explicit constructions at every N: Björck; Chu and
+  Zadoff–Chu; Frank; Turyn; Golomb and Gong, *Signal Design for Good
+  Correlation*.  **§8 originates neither.**  What §8 claims is the
+  identification — Δᴮ = 0 on the DFT-sandwich family ⟺ that known
+  condition on the interleaving diagonal.  The equivalence between the
+  two characterizations is re-gated for the four N in scope as an
+  arithmetic check, not proven here.
 - **[SvN]** Stone–von Neumann, finite form: on ℂ^N the irreducible
   projective representations of ℤ² with a primitive q-th root
   multiplier have dimension exactly q and are the Weyl pair up to
@@ -449,7 +679,16 @@ where it is used.
   D4.1, D9.1.
 - **[D71b]** `v10/note-d71b-holonomy-phase-identity.md` — Clause 2 (the
   reversal-odd placement, dual-conjugation error exactly 0), Clause 3
-  (the loop is not written), §4.2 (∏√q has no closure).
+  (the loop is not written), §4.2 (∏√q has no closure).  **Two
+  disclosures the round required, because §17's parity leg rests on
+  them.**  Clause 3 is `[SILENT]` and says so of itself: *"The bridge
+  is one identification and one closure, and neither is written"*
+  (`:623-631`) — so identifying §17's R with loop reversal is
+  **not** written anywhere in the corpus.  And Clause 2's *naming* of
+  the transformation law as a holonomy law is flagged `[MY READING]`
+  in that note's own reading-claims paragraph (`:769-775`); what is
+  `[MEASURED]` is the law, at dual-conjugation error exactly 0, not
+  the name.
 
 ---
 
@@ -465,18 +704,31 @@ where it is used.
    corroborate on two finite families.
 4. **§8's closed form is stated for the DFT-sandwich family** at
    N = 2, 3, 4, 5 with the declared phase groups.  It is not a claim
-   about all unitaries.
+   about all unitaries.  **And §8's claim is the IDENTIFICATION only**:
+   the equivalence of flat |DFT| with zero periodic autocorrelation is
+   the discrete Wiener–Khinchin theorem and the definition of a CAZAC
+   sequence, cited as [WK/CAZAC] and not originated here.
 5. **§16's table is a census of two committed families**, not of U(n).
    The projective pairs found there generate projective ℤ²-actions
    through finite quotients; that is what a scalar commutator gives.
 6. **W2b-NO-ACTION is scoped by §19.**  Requirements (1) and (2) are
-   met by committed objects; only (3) fails.  The failure of (3) is a
-   theorem (§13) with two independent measured confirmations.
-7. **Nothing here is a claim about W3′ or W4′.**  §9 is
+   met by committed objects; only (3) fails.  **The failure of (3) is
+   a theorem — §13 PLUS §14** (round-1 repair M1): §13 removes ω from
+   the formula, §14 shows the family cannot separate the classes.
+   §13 alone is *not* the no-go, since [ω] is a lift-independent
+   invariant of ρ.  §16 is an independent measured confirmation on
+   committed carriers.
+7. **§17 delivers less than its old title claimed.**  What is gated is
+   a *covariance* law, the reality of Δᴮ's entries, a nonzero odd
+   channel off the committed families, and both ±1 witnesses.  What is
+   *not* gated, and is now explicitly conditional on an identification
+   [D71b] Clause 3 calls unwritten, is any statement that the
+   multiplier and the defect sit on opposite parity channels.
+8. **Nothing here is a claim about W3′ or W4′.**  §9 is
    reporting-only; the general record theorem is W3′'s, and whether the
    Δᴮ-structure is the same obstruction the contextual and BC
    invariants measure is W4′'s open question.
-8. Paper 0 v2.1 §5's non-claims stand unmodified.  The H¹ formulation
+9. Paper 0 v2.1 §5's non-claims stand unmodified.  The H¹ formulation
    remains dead.
 
 ---
@@ -484,22 +736,45 @@ where it is used.
 ## 23. What this unit hands over
 
 - **W2a delivers** the closed form (§1), the invariance group (§2), the
-  doubly-centred structure with sharp bounds and the exact n = 2 range
-  (§3), the tree coherence law at every n (§4), the content-free
-  demonstration (§5), the exact two-sided annihilator (§6), the failure
-  of local determination (§7), the flat-spectrum form of the alignment
-  condition (§8), and the three killing conditionings (§9).
-- **W2b delivers** the no-go: the multiplier cancels from the family
-  identically (§13), four classes share one Born shadow (§14), and the
-  committed carriers exhibit the double dissociation in both
-  directions (§16), with the parity obstruction (§17) and the
-  missing-piece census (§18).
+  doubly-centred structure with sharp bounds, a gated non-negative
+  s_ij, and the exact n = 2 range with both ends witnessed (§3), the
+  tree coherence law at every n (§4), the content-free demonstration
+  with all six of its gates disclosed (§5), the exact two-sided
+  annihilator (§6), the failure of local determination (§7), the
+  identification of the alignment condition with the CAZAC condition
+  (§8), and the three killing conditionings (§9).
+- **W2b delivers** the no-go, and its two halves are named separately:
+  the multiplier cancels from the *formula* (§13), and **six classes
+  collapse onto one Born shadow** — gated uncapped at N = 6 over all
+  7776 word pairs — so that no functional can separate them (§14).
+  Those two *together* are the theorem.  The committed carriers then
+  exhibit the double dissociation in both directions (§16),
+  independently, with the covariance law and its odd channel (§17) and
+  the missing-piece census (§18).
 - **W2c is vacuous**, with θ's dimension quantization θ ∈ (1/N)ℤ gated
   anyway, so that a future bridge knows what it must supply.
 - **W3′ receives** §9's three killing conditionings, and §6's
   annihilator as the algebraic boundary of "the defect dies here".
-- **W4′ receives** §17's parity statement: the Δᴮ-family is
-  reversal-even, which any proposed identification with a
-  holonomy-shaped obstruction must clear.
+- **W4′ receives §17 in its corrected form, and the correction is the
+  point** (round-1 repair M4).  The handover is **not** "the Δᴮ-family
+  is reversal-even" — that is **false unqualified** and would have
+  poisoned anything built on it.  What W4′ receives is:
+  1. the **covariance law** Δᴮ ↦ Δᴮᵀ under order-reversal-with-
+     transpose;
+  2. hence: **transpose-invariant** functionals of Δᴮ — and only
+     those — are reversal-even;
+  3. the family's **antisymmetric part A is reversal-ODD** and is
+     **not** identically zero (12 of 16 pairs of a declared exact
+     witness set at 3×3); A ≡ 0 on all 3,969 committed 3×3 pairs and
+     all 9,216 committed 2×2 pairs is a property **of those families**,
+     not of Δᴮ;
+  4. the carrier-independent obstruction that needs none of the above:
+     **Δᴮ has real entries**, so real-polynomial functionals are real
+     and a real unimodular value is ±1;
+  5. and the standing warning that **±1 is not excluded** — both
+     values occur on committed pairs — so any argument routed through
+     [D74] D2 at this joint is invalid.
 - **The [W] line closes here** for the Δᴮ-family: the object exists,
-  the class exists, and the Born projection cannot see either.
+  the class exists, and the Born projection cannot see either.  What
+  would reopen it is a **phase-retaining invariant of ρ finer than
+  B∘ρ**, not an invariant of the lift (§20).
