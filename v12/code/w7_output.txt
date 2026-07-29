@@ -1,0 +1,591 @@
+==============================================================================
+w7_loop_signature_exact.py — v12 W7
+==============================================================================
+THE PHASE-RETAINING LOOP SIGNATURE OF A COMPOSITIONAL AMPLITUDE LAW
+==============================================================================
+  pin    : v12/note-w7-loop-signature-pin.md (frozen at e5d1d44)
+  binding: v12 paper 0 v2.2 sec.1 (T2', T3'), sec.4 (W2', W3', W7),
+           sec.5 (O2, the four-gate rule); v12/LOG.md #16, #18, #19.
+  target : O2's missing referent = W2's phase-retaining successor —
+           an invariant of rho FINER THAN the Born shadow B o rho.
+  banner : EXACT arithmetic end to end, NO TOLERANCE ANYWHERE.
+  exits  : substantive negatives exit 0; exit 1 is ANCHOR-only.
+  lean   : NONE.
+  scope  : ONE-CHART mathematics.  Cross-chart co-reference is W6's.
+
+==============================================================================
+SECTION 0 — THE SLICED INSTRUMENTS, AND THE ANCHORS
+==============================================================================
+  Antecedent instruments are READ FROM THE COMMITTED FILES by AST
+  slice: the named top-level definitions are extracted from the
+  parsed source and executed here.  Nothing is copied by hand, and a
+  drift in either parent surfaces as an anchor failure (exit 1).
+
+  sliced from v12/code/w1p_three_class_exact.py : 30 definitions
+  sliced from v12/code/w3p_records_exact.py     :  7 definitions  (h_avail@687-699, h_corr@702-716, merge_classes@740-758, record_exists@761-774, record_exists_bruteforce@777-782, sectors_of@679-684, set_partitions@785-794)
+
+0.1  THE ARITHMETIC LAYER (sliced) — self-test
+  [anchor] Phi_8 = x^4 + 1                                ok  deg 4
+  [anchor] Phi_12 = x^4 - x^2 + 1                         ok  deg 4
+  [anchor] zeta_2  exact order, conj = inv                ok  deg 1
+  [anchor] zeta_3  exact order, conj = inv                ok  deg 2
+  [anchor] zeta_4  exact order, conj = inv                ok  deg 2
+  [anchor] zeta_5  exact order, conj = inv                ok  deg 4
+  [anchor] zeta_6  exact order, conj = inv                ok  deg 2
+  [anchor] zeta_8  exact order, conj = inv                ok  deg 4
+  [anchor] zeta_12 exact order, conj = inv                ok  deg 4
+  [anchor] sqrt2 in Q(zeta_8), 1/sqrt2 exact              ok  
+  [anchor] sqrt3 in Q(zeta_12), 1/sqrt3 exact             ok  
+
+0.2  W1' COMMITTED GATE VALUES (TERMINAL at LOG #7) — reproduced
+     through the sliced instruments.  Any drift exits 1.
+  [anchor] H, W, F3 unitary in exact arithmetic           ok  
+  [anchor] Delta^B(H,H) = [[1/2,-1/2],[-1/2,1/2]]         ok  W1' sec.5
+  [anchor] Delta^B(H,W) = 0, both factors unbiased        ok  W1' sec.5 named witness
+  [anchor] W1' family sizes                               ok  F2 = 96 (32 monomial-seeded), F3 = 63 (54)
+      ... W1' 2x2 census rebuilt                                         1.7s
+      ... W1' 3x3 census rebuilt                                         3.1s
+  [anchor] W1' 2x2 census counts                          ok  5120 / 0 / 1024 / 3072 of 9216
+  [anchor] W1' 3x3 census counts                          ok  3888 / 0 / 54 / 27 of 3969
+  [anchor] T2' exact rotation counterexample (W1' C+1)    ok  Delta^B_00 = -4032/15625 != 0 yet K = S(-175/527) is stochastic and divides the shadow exactly: Delta^B != 0 does NOT imply stochastic indivisibility
+
+0.3  W2 COMMITTED GATE VALUES (TERMINAL at LOG #16) — the committed
+     gauges, the annihilator, the cap-free Weyl collapse, and the
+     two odd-channel/conjugation witnesses.  Any drift exits 1.
+  [anchor] W2 A2(ii) OUTER TORI killed                    ok  Delta^B(D U2, U1 D') = Delta^B(U2,U1); 24x24x3 stride
+  [anchor] W2 A2(iii) compensated CUT GAUGE killed        ok  Delta^B(U2 D, D^-1 U1) = Delta^B(U2,U1); 24x24x3 stride
+  [anchor] W2 A6 monomial annihilator (sufficiency, from the census) ok  row-monomial(U2) or col-monomial(U1) => Delta^B = 0, 0 exceptions
+  [anchor] Weyl pair unitary, X Z = zeta^-1 Z X [N=2]     ok  [W]
+  [anchor] Weyl pair unitary, X Z = zeta^-1 Z X [N=3]     ok  [W]
+  [anchor] Weyl pair unitary, X Z = zeta^-1 Z X [N=4]     ok  [W]
+  [anchor] Weyl pair unitary, X Z = zeta^-1 Z X [N=5]     ok  [W]
+  [anchor] Weyl pair unitary, X Z = zeta^-1 Z X [N=6]     ok  [W]
+      ... W2 B4x N=6 k=0 (1296 cumulative pairs)                         5.8s
+      ... W2 B4x N=6 k=1 (2592 cumulative pairs)                         7.6s
+      ... W2 B4x N=6 k=2 (3888 cumulative pairs)                         9.3s
+      ... W2 B4x N=6 k=3 (5184 cumulative pairs)                        11.0s
+      ... W2 B4x N=6 k=4 (6480 cumulative pairs)                        12.6s
+      ... W2 B4x N=6 k=5 (7776 cumulative pairs)                        14.3s
+  [anchor] W2 B4x cap-free: Delta^B == 0 on all 36x36 pairs, all six k ok  7776 ordered word pairs, 0 nonzero, 6 distinct beta
+  [anchor] W2 B4x: the six beta values are exactly zeta_6^{-k} ok  k = 0..5, four distinct orders 1, 2, 3, 6
+  [anchor] W2 B5 conjugation defects reproduce            ok  Delta^B_00 = -56448/390625 and -407836800/815730721
+  [anchor] W2 B7 odd-channel witness: A != 0 on 12 of 16 pairs ok  declared set {R_01, R_12, R_01 F_3, R_12 F_3} at 3x3
+  [anchor] W2 B7 first witness entries are +-14/625       ok  (R_01, R_01 F_3): A has entries +-14/625 off the diagonal
+
+0.4  W3' COMMITTED GATE VALUES (TERMINAL at LOG #14) — the record
+     model as a LABEL LIST, the two SUPPORT hypotheses, the dim-4
+     model and its eraser.  Any drift exits 1.
+  [anchor] W3' dim-4 model unitary                        ok  U1_rec = CNOT.(H x I); U2_pre = H x I; U2_er = (H x I).CNOT
+  [anchor] W3' (H-corr) holds for U1_rec at [0,1,0,1]     ok  
+  [anchor] W3' (H-avail) holds for the PRESERVING leg     ok  
+  [anchor] W3' (H-avail) FAILS for the ERASER, witness (0, [0, 1]) ok  the record is still MADE — (H-corr) survives; availability dies
+  [anchor] W3' (H-corr) survives the eraser               ok  declared: only availability changes
+  [anchor] W3' Theorem 1 instance: Delta^B = 0 at the preserving leg ok  
+  [anchor] W3' eraser: Delta^B RETURNS                    ok  
+  [anchor] W3' eraser D_210 entries are 0 or +-1/2, exactly ok  [['1/2','0','-1/2','0'], ...] — 'D_210 RETURNS, maximally'
+  [anchor] W3' decision procedure agrees with the hypotheses at the model ok  record_exists: True at the preserving leg, False at the eraser
+  [anchor] W3' 15 partitions of 4 configurations          ok  
+
+  anchors: 41, all exit-1      14.3s
+
+==============================================================================
+W7-0 — THE GAUGE CENSUS  (first; it determines everything downstream)
+==============================================================================
+  THE DECLARED GAUGES, with their W5/W2 citations:
+   (a) FULL SCHUR-HADAMARD  U_ij -> e^{i th_ij} U_ij, th independent
+       per ORDERED PAIR                                [B3] p.12 eq.30
+   (b) PROJECTIVE SCALAR    U -> omega U, omega in U(1)
+   (c) CONFIG-BASIS REPHASING   U -> D U D^-1 (same space)
+   (d) SOURCE/TARGET BOUNDARY   U -> D_out U D_in (bipartite: the
+       input and output spaces are distinct)
+   (e) COMPENSATED CUT      (U2,U1) -> (U2 D, D^-1 U1)     [W2] A2(iii)
+   (f) PHYSICAL: everything else.
+
+  A Schur matrix Theta is of BOUNDARY FORM iff Theta_ij = d_i conj(e_j)
+  for unimodular d, e.  The whole census turns on which Schur matrices
+  are of boundary form, and G0.6/G0.7 are the two theorems that decide
+  it.
+
+G0.1  THE FULL SCHUR ORBIT IS EXACTLY THE MODULUS CLASS
+      THEOREM.  For any U, the full-Schur orbit of U is
+        { V : |V_ij| = |U_ij| for every (i,j) }.
+      PROOF.  (subset) |Theta_ij U_ij| = |U_ij|.  (superset) given V
+      with |V_ij| = |U_ij|, put Theta_ij = V_ij / U_ij on the support
+      (unimodular, since the moduli agree) and Theta_ij = 1 off it;
+      then Theta o U = V.  QED.  COROLLARY: every full-Schur invariant
+      is a function of |U|^{o2} = B(U) alone — MODULI AND SUPPORT, no
+      phase.  This is fact (a) of the pin.
+  [PASS] G0.1  full-Schur orbit = the modulus class, constructively  1152 ordered pairs over W1' 2x2 (stride 12 x all 96); the connecting Theta is BUILT and gated unimodular in every reachable case   <[B3]>
+  [PASS] G0.2  no phase invariant survives the full Schur gauge      3 Born-shadow classes in W1' 2x2 contain >1 matrix, and in all 3 of them the members differ in phase yet are full-Schur equivalent   <[B3]>
+
+G0.3-4  THE BARGMANN TRIPLE PRODUCT, TYPED CORRECTLY
+      The founding sketch proposed u_ij u_jk u_ki as W7's invariant.
+      That is a RAY/GRAM object [MSS] — invariant under the ONE-INDEX
+      gauge g_ab -> conj(lam_a) lam_b g_ab on a single space, where the
+      phases telescope around ANY cycle, odd ones included.  It is NOT
+      an invariant of the committed matrix gauges, for two separate
+      reasons, both gated.  Owned at v12/LOG.md #18.
+  [PASS] G0.3  triple products are NOT full-Schur invariants         moved on all 9 full-support committed 3x3 members by one declared unimodular Theta; and immediate from G0.1, whose orbit is the whole modulus class   <[MSS]>
+  [PASS] G0.4  triple products are NOT boundary-gauge invariants either moved on all 9 by the declared boundary gauge D_out = diag(1,1,zeta_3): the row phases pick up d_0 d_1 d_2 != 1, because ODD CYCLES DO NOT CLOSE in a bipartite support graph where rows and columns carry INDEPENDENT phases.  This is the founding sketch's error   <[MSS]>
+  [PASS] G0.4  they ARE invariants of the ray/Gram gauge — the right typing under the ONE-INDEX gauge g_ij -> conj(lam_i) lam_j g_ij the phases telescope around ANY cycle, odd ones included: 9 of 9.  That is [MSS]'s setting and it is a DIFFERENT gauge from the committed one   <[MSS]+[REV3]>
+  [PASS] G0.5  Haagerup H_{ii';jj'} IS boundary-gauge invariant      the EVEN 4-cycle: the gauge factors (d_i e_j)(d_i' e_j')(d_i e_j')^-1 (d_i' e_j)^-1 telescope to 1; 9 matrices x 6 gauges x 9 index quadruples   <[GG]>
+
+G0.6  THE COMPOSITION-COMPATIBILITY THEOREM  (the candidate mechanism
+      of the pin, PROVED)
+      DEFINITION.  A Schur gauge family {Theta^{(b,a)}} is
+      COMPOSITION-COMPATIBLE iff for every composable pair
+        (Theta^{(2,1)} o U2)(Theta^{(1,0)} o U1)
+             = Theta^{(2,0)} o (U2 U1).
+      i.e. the transformed factors compose to the transformed
+      composite: the gauge is an endofunctor fixing objects.
+
+      THEOREM.  Over unitary arrows in dimension >= 2, a Schur gauge
+      family is composition-compatible IFF
+        Theta^{(b,a)}_{ij} = d^{(b)}_i conj(d^{(a)}_j)
+      for object-indexed unimodular functions d^{(a)} — the BOUNDARY
+      form.  Hence the composition-compatible subgroup of the full
+      Schur-Hadamard gauge is EXACTLY the boundary gauge, which
+      contains the projective scalars (as object-constants), the
+      COMPENSATED CUT gauge (the middle object's factor), and the
+      same-space basis rephasing.
+
+      PROOF.  (<=)  Theta^{(b,a)} o U = D_b U D_a^{-1}, so
+      (D_2 U2 D_1^{-1})(D_1 U1 D_0^{-1}) = D_2 U2U1 D_0^{-1}.
+      (=>)  Entrywise the requirement reads, for every (i,j),
+        sum_k Theta^{(2,1)}_{ik} Theta^{(1,0)}_{kj} w_k
+             = Theta^{(2,0)}_{ij} sum_k w_k,   w_k = (U2)_ik (U1)_kj.
+      Take U2 = V D_c and U1 = D_c' V' with V, V' the DFT-sandwich
+      carriers of [W2] sec.8 (all entries nonzero) and c, c' free
+      unimodular diagonals.  Then w_k = r_k u_k with r_k != 0 fixed
+      and u_k an ARBITRARY unimodular vector.  Subtracting the
+      requirement at u and at u with slot k negated gives
+        2 (Theta^{(2,1)}_{ik} Theta^{(1,0)}_{kj}
+             - Theta^{(2,0)}_{ij}) r_k = 0,
+      hence the pointwise functional equation
+        (*)  Theta^{(2,1)}_{ik} Theta^{(1,0)}_{kj}
+                 = Theta^{(2,0)}_{ij}   for ALL i, j, k.
+      Fix k0 and set a_i := Theta^{(2,1)}_{i k0},
+      b_j := Theta^{(1,0)}_{k0 j}.  Then Theta^{(2,0)}_{ij} = a_i b_j,
+      and (*) forces Theta^{(1,0)}_{kj} / b_j to be independent of j,
+      say c_k; so Theta^{(1,0)}_{kj} = c_k b_j and
+      Theta^{(2,1)}_{ik} = a_i conj(c_k).  Setting d^{(2)} = a,
+      d^{(1)} = c, d^{(0)} = conj(b) gives the boundary form.  QED.
+
+      GATE: the equivalence [compatible on the committed unitary
+      family] <=> [(*)] <=> [boundary form], exhaustively over
+      declared finite phase groups.
+  [PASS] G0.6  (*) <=> object-indexed boundary family  [n=2, |mu|=4] 1024 of 65536 ordered Theta-pairs satisfy (*), and exactly the same 1024 admit an OBJECT-INDEXED d^{(0)},d^{(1)},d^{(2)}; 4096 have both factors of boundary form SEPARATELY — the surplus 3072 is precisely the pairs whose middle phase functions disagree, i.e. an UNCOMPENSATED cut
+  [PASS] G0.6  compatibility on the committed family <=> (*)  [n=2]  the quantifier over the declared family W1' 2x2 (stride 16) is already enough to force (*): 0 disagreements over 65536 ordered Theta-pairs
+      ... G0.6 n=2 exhaustive Theta sweep                               64.2s
+  [PASS] G0.6  (*) <=> object-indexed boundary family  [n=3, |mu|=2] 256 of 262144 ordered Theta-pairs satisfy (*), and exactly the same 256 admit an OBJECT-INDEXED d^{(0)},d^{(1)},d^{(2)}; 1024 have both factors of boundary form SEPARATELY — the surplus 768 is precisely the pairs whose middle phase functions disagree, i.e. an UNCOMPENSATED cut
+  [PASS] G0.6  compatibility on the committed family <=> (*)  [n=3]  the quantifier over the declared family W1' 3x3 (stride 12) is already enough to force (*): 0 disagreements over 262144 ordered Theta-pairs
+      ... G0.6 n=3 exhaustive Theta sweep                              149.0s
+
+G0.7  THE UNITARITY-PRESERVATION THEOREM  (an INDEPENDENT route to
+      the same reduction — and the precise content of [B3]'s 'partial
+      fixing of the gauge freedom')
+      THEOREM.  Theta o U is unitary for EVERY unitary U iff every
+      Haagerup invariant of Theta equals 1 iff Theta is of boundary
+      form.
+      PROOF.  (<=) Theta o U = D U E^dag is unitary.  (=>) For i != j,
+      orthogonality of rows i, j of Theta o U reads
+        sum_k lam_k v_k = 0 whenever sum_k v_k = 0,
+      with lam_k = Theta_ik conj(Theta_jk) and v_k = U_ik conj(U_jk).
+      Real rotations in the (k,l) plane realize v = t(e_k - e_l) for
+      every k != l and some t != 0, forcing lam_k = lam_l, i.e.
+      Theta_ik conj(Theta_jk) conj(Theta_il) Theta_jl = 1 — exactly
+      H_{ij;kl}(Theta) = 1.  Trivial Haagerup on every 4-cycle of the
+      complete bipartite graph is precisely the boundary form (the
+      switching reconstruction of W7-1, G1.3).  QED.
+      CONSEQUENCE, and it is the load-bearing one: fixing a UNITARY
+      representative does not exhaust the Schur freedom — the residual
+      stabilizer is exactly the boundary group.  That is what 'partial
+      fixing' means, made precise.
+  [PASS] G0.7  unitary-preserving <=> Haagerup-trivial <=> boundary [n=2] 512 of 4096 Theta over mu_8 preserve unitarity on the committed family; 512 are Haagerup-trivial; 0 disagreements with the boundary decomposition   <[B3]>
+      ... G0.7 n=2 exhaustive Theta sweep                              158.8s
+  [PASS] G0.7  unitary-preserving <=> Haagerup-trivial <=> boundary [n=3] 32 of 512 Theta over mu_2 preserve unitarity on the committed family; 32 are Haagerup-trivial; 0 disagreements with the boundary decomposition   <[B3]>
+      ... G0.7 n=3 exhaustive Theta sweep                              161.8s
+  [PASS] G0.8  the full Schur gauge MOVES the composite's Born shadow Theta = [[1,1],[1,-1]] on (H,H): B((Theta o H)(Theta o H)) != B(H H).  B(U2U1) is the committed two-step transition law, so a transformation that moves it is not a gauge of a COMPOSABLE system   <[B1]>
+  [PASS] G0.8  and it destroys unitarity                             Theta o H is not unitary — [B3]'s own observation, p.19   <[B3]>
+  [PASS] G0.9  projective scalar is IN the boundary group            d^{(2)} = omega, d^{(1)} = d^{(0)} = 1: the composite's scalar is the PRODUCT — determined, not free
+  [PASS] G0.9  compensated cut is IN the boundary group              d^{(1)} = D alone: exactly [W2] A2(iii)   <[W2]>
+  [PASS] G0.9  same-space basis rephasing is IN the boundary group   d^{(a)} = D for every object
+  [PASS] G0.9  an UNCOMPENSATED cut insertion is NOT a gauge         it moves Delta^B on 192 of 576 stride pairs — [W2] A2(vi), 'the only handle'; 192 of 576 there at a different declared insertion   <[W2]>
+
+  ==> THE FIRST VERDICT: G-REDUCED.
+      The reduction of the full Schur-Hadamard gauge to the boundary
+      gauge is DERIVED, not chosen, and by two independent routes:
+      G0.6 (composition-compatibility) and G0.7 (unitarity
+      preservation), corroborated by G0.8 (the composite's Born
+      shadow is not invariant under the full gauge).  Each route's
+      premise is already committed: T2' makes the composable pair the
+      subject, and W2 sec.3's doubly-stochastic structure requires
+      unitary arrows.
+      SCOPE, ENGRAVED.  What is reduced is the gauge of a COMPOSABLE,
+      UNITARY system.  For a single arrow considered in isolation, with
+      neither composition nor unitarity asked of it, G0.1 stands and
+      no phase invariant exists at all.  The two facts are consistent
+      and both are stated; the pin's G-ANNIHILATED branch is exactly
+      the isolated-arrow reading, and it is what the committed
+      structure excludes.
+      THE UNIT-WIDE KILL is therefore: any candidate that changes
+      under BOUNDARY + COMPENSATED CUT + SCALAR.
+
+==============================================================================
+W7-1 — THE SINGLE-ARROW ORBIT THEOREM
+==============================================================================
+  ANTECEDENT, not W7's theorem [GG]: phases on a cycle basis classify
+  edge-phase assignments up to vertex switching, componentwise, with
+  cycle rank |E| - |V| + c.  W7's own contribution is the exact
+  adaptation to the committed matrix families and to SUPPORT CHANGES,
+  with exact-arithmetic receipts.
+
+  THE STRUCTURE.  For a matrix U put G(U) = the BIPARTITE support
+  graph: vertices Rows |_| Cols, an edge (i,j) for each U_ij != 0,
+  carrying the value U_ij.  The boundary gauge U -> D_out U D_in acts
+  as VERTEX SWITCHING on G(U).  Traversing an edge rows->cols
+  contributes U_ij, cols->rows contributes conj(U_ij); around any
+  cycle each vertex is entered once and left once, so its phase
+  cancels and the CYCLE HOLONOMY is switching-invariant.  All cycles
+  of a bipartite graph are EVEN; the elementary 4-cycles are exactly
+  the Haagerup invariants H_{ii';jj'} of the pin.
+
+  [PASS] G1.1  cycle rank mu = |E| - |V| + c on every committed matrix 2x2: mu in [0, 1]; 3x3: mu in [0, 4] (96 + 63 matrices)   <[GG]+[W1']>
+  [PASS] G1.2  cycle holonomies are boundary-gauge invariant         24 matrices x 256 gauges (2x2) and 21 x 6561 (3x3), exhaustive over the declared phase groups   <[GG]>
+
+G1.3  COMPLETENESS, CONSTRUCTIVELY.  Two matrices with the SAME
+      support and the SAME moduli are boundary-gauge equivalent iff
+      their cycle-basis holonomies agree.  The proof is the
+      construction: fix a spanning forest of the support graph, set
+      the switching to 1 at each component root, propagate it along
+      tree edges (forced, one choice per vertex), and then every
+      non-tree edge agrees iff its fundamental-cycle holonomy agrees.
+  [PASS] G1.3  holonomy equality <=> gauge equivalence, BUILT [2x2]  4608 of 9216 ordered pairs equivalent; the switching is constructed in every positive case and verified entrywise; 0 disagreements   <[GG]>
+      ... G1.3 2x2 completeness sweep                                  168.6s
+  [PASS] G1.3  holonomy equality <=> gauge equivalence, BUILT [3x3]  567 of 3969 ordered pairs equivalent; the switching is constructed in every positive case and verified entrywise; 0 disagreements   <[GG]>
+      ... G1.3 3x3 completeness sweep                                  169.0s
+  [PASS] G1.4  at FULL support the Haagerup 4-cycles generate the lattice so H_{ii';jj'} is a complete phase invariant there; the complete bipartite cycle space is 4-cycle generated   <[GG]>
+  [PASS] G1.5  support strata never mix: different support => never gauge-equivalent 0 of 9216 + 3969 ordered pairs; the moduli determine the support, and the boundary gauge cannot create or destroy an entry
+  [PASS] G1.6  vanished amplitudes have UNDEFINED phases, not trivial ones on a monomial support the cycle set is EMPTY (mu = 0 for all 32 + 54 monomial members), so there is no phase datum to be trivial: the invariant is not 1, it does not exist
+
+==============================================================================
+W7-2 — DEGENERATE AND MONOMIAL SUPPORTS; THE RELATION-LOOP PHASE
+==============================================================================
+  A monomial matrix's support is a PERFECT MATCHING: n edges on 2n
+  vertices in n components, so mu = n - 2n + n = 0.  The single-arrow
+  cycle sector is EMPTY while the projective class can be nontrivial.
+  The mandatory anchors are W2's Weyl families X_N, Z_N^k, N = 2..6.
+
+  THE FAMILY-LEVEL OBJECT.  For a projective family rho with lifts
+  rho~, the RELATION-LOOP commutator scalar
+     rho~(g) rho~(h) rho~(g)^-1 rho~(h)^-1 = beta(g,h) . I
+  is the phase retained by the relation loop.  It is the
+  antisymmetrization of the multiplier and the complete invariant of
+  [omega] in H^2(Z^2, U(1)) ([W2] sec.12).
+
+  [PASS] G2.1  every Weyl word has mu = 0: NO single-arrow cycle sector all N^2 words U^a V^b for every k, N = 2..6 — the supports are perfect matchings   <[W]>
+  [PASS] G2.2  beta(g,h) is a SCALAR and separates all 2 classes [N=2] beta = zeta_2^{-k}, k = 0..1, all distinct   <[W]>
+  [PASS] G2.2  beta(g,h) is a SCALAR and separates all 3 classes [N=3] beta = zeta_3^{-k}, k = 0..2, all distinct   <[W]>
+  [PASS] G2.2  beta(g,h) is a SCALAR and separates all 4 classes [N=4] beta = zeta_4^{-k}, k = 0..3, all distinct   <[W]>
+  [PASS] G2.2  beta(g,h) is a SCALAR and separates all 5 classes [N=5] beta = zeta_5^{-k}, k = 0..4, all distinct   <[W]>
+  [PASS] G2.2  beta(g,h) is a SCALAR and separates all 6 classes [N=6] beta = zeta_6^{-k}, k = 0..5, all distinct   <[W]>
+  [PASS] G2.3  ANCHORED to W2's B4x six-distinct-beta gate           the same six values the cap-free 36x36 collapse gate carries   <[W2]>
+      ... G2.4 N=2 lift/conjugation sweep                              169.8s
+      ... G2.4 N=3 lift/conjugation sweep                              169.9s
+      ... G2.4 N=4 lift/conjugation sweep                              170.2s
+      ... G2.4 N=5 lift/conjugation sweep                              171.3s
+      ... G2.4 N=6 lift/conjugation sweep                              172.9s
+  [PASS] G2.4  beta is LIFT-INDEPENDENT: scalars cancel in the commutator every pair of roots of unity of the carrier field, N = 2..6 — so beta is an invariant of rho, not of a choice of lift   <[W2]>
+  [PASS] G2.5  beta is invariant under configuration-basis rephasing the commutator conjugates and a scalar is central; declared diagonal sweep at every N
+  [PASS] G2.6  beta is FINER than the Born shadow B o rho — W2's successor target MET at family level B o rho is IDENTICAL across all N classes at every N = 2..6 while beta takes N distinct values: a phase-retaining invariant of rho strictly finer than its Born shadow   <[W2]>
+  [PASS] G2.6  beta's ORDER is what the dimension must accommodate   ord beta = N/gcd(N,k) at every N = 2..6; by [SvN] an irreducible realization at a primitive q-th root multiplier has dimension exactly q, so beta CONTROLS a structural fact the Born shadow cannot state — cited, not proven here   <[SvN]+[W]>
+  [PASS] G2.7  beta is NOT a full-Schur invariant — consistent with G-REDUCED the full Schur gauge does not even map a group element to a group element; beta's invariance is a statement about the REDUCED gauge (scalars + basis rephasing), which is what W7-0 licensed
+
+==============================================================================
+W7-3 — COMPOSITIONAL CLOSURE  (the deepest part)
+==============================================================================
+  THE NO-DESCENT FACT, gated first.  The gauge orbits of U2 and U1
+  SEPARATELY do not determine the orbit of U2 U1: U2 -> U2 D is a
+  boundary gauge on U2 alone and leaves its isolated orbit data
+  unchanged, but moves the composite.  Only the COMPENSATED pair
+  preserves the composite ([W2] A2 ii-iii).
+
+  [PASS] G3.0  NO-DESCENT: isolated factor orbits carry no composition law 192 of 576 stride pairs: U2 and U2 D are in the SAME boundary orbit (the switching is built) yet B(U2 D U1) != B(U2 U1).  A SHARED-BOUNDARY phase frame is therefore required   <[W2]>
+
+  THE COMMITTED MINIMAL MIXED CANDIDATE — the cut-coherence tensor:
+     w_k^{ij}      = (U2)_{ik} (U1)_{kj}
+     C^{ij}_{kl}   = w_k^{ij} conj(w_l^{ij}).
+
+  [PASS] G3.1  compensated-cut invariance of C                       w itself is invariant: (U2 D)_{ik}(D^-1 U1)_{kj} = w_k; 256 stride pairs x 4 declared cut diagonals   <[W2]>
+  [PASS] G3.2  outer boundary rephasings cancel in C                 w_k -> d_i e_j w_k, so C -> |d_i e_j|^2 C = C
+  [PASS] G3.3  projective scalars of both factors cancel in C        w -> omega_2 omega_1 w, moduli 1
+  [PASS] G3.4  the diagonal is exactly the classical path weights    C^{ij}_{kk} = |(U2)_{ik}|^2 |(U1)_{kj}|^2 = B(U2)_{ik} B(U1)_{kj}
+  [PASS] G3.5  C^{ij} = w (w)^dag: hermitian, rank one, PSD          gated exactly: hermiticity entrywise and EVERY 2x2 minor identically zero, with a non-negative diagonal by G3.4 — no order comparison used
+  [PASS] G3.6  THE READOUT IDENTITY (a gate, not the theorem)        Delta^B_ij = 2 sum_{k<l} Re C^{ij}_{kl}, on 256 stride pairs, against the committed definition   <[B1]>
+  [PASS] G3.7  C does NOT detect monomial Weyl multipliers           exactly ONE live path per endpoint pair for every X_N, Z_N^k, N = 2..6: C^{ij} has a single nonzero entry and no phase content at all — which is why W7-2's relation loops are ALSO required   <[W]>
+
+G3.8  THE PAIR-ORBIT THEOREM.  The declared gauge on a composable
+      pair — outer boundary, compensated cut, scalar — acts EXACTLY
+      as vertex switching on the TRIPARTITE PATH GRAPH
+        Gamma(U2,U1):  vertices R |_| K |_| C,
+          an edge (i,k) with value (U2)_{ik} for each nonzero entry,
+          an edge (k,j) with value (U1)_{kj} for each nonzero entry.
+      Gamma is BIPARTITE with parts K and R |_| C (every edge has
+      exactly one endpoint in K), so all its cycles are even.  The
+      switching at an R-vertex is the outer output rephasing, at a
+      C-vertex the outer input rephasing, and AT A K-VERTEX IT IS
+      EXACTLY THE COMPENSATED CUT — d_k on U1 and conj(d_k) on U2.
+      Hence, at fixed moduli, a COMPLETE set of invariants of the
+      pair is a cycle basis of Gamma, of size
+        mu(Gamma) = |E| - |V| + c.
+
+  [PASS] G3.8  the declared gauge IS vertex switching on Gamma       2304 switchings: Gamma-holonomies invariant, and the composite transforms by the outer boundary alone (the K-switching is exactly the compensated cut and cancels in U2 U1)   <[GG]+[W2]>
+
+G3.9  WHAT C SEES, EXACTLY.  arg C^{ij}_{kl} = arg w_k^{ij} -
+      arg w_l^{ij} is the holonomy of the SEAM 4-CYCLE i-k-j-l-i in
+      Gamma.  So the pinned signature decomposes as
+        W7-1 factor holonomies  = the pure-U2 and pure-U1 4-cycles
+                                  and their generated sublattice,
+        C                       = the SEAM 4-cycles,
+      and the pinned signature spans EXACTLY the 4-CYCLE SUBLATTICE
+      L_4 of the cycle lattice Z(Gamma).
+  [PASS] G3.9  C's entries ARE the seam-4-cycle holonomies of Gamma  144 seam 4-cycles matched entry by entry: C^{ij}_{kl} = hol(i-k-j-l-i)   <[GG]>
+
+G3.10 COMPLETENESS AT FULL SUPPORT — proved, then gated.
+      THEOREM.  If every path amplitude w_k^{ij} is nonzero, then C
+      is a COMPLETE invariant of the pair up to the declared gauge,
+      and a fortiori determines the composite's boundary orbit.
+      PROOF.  C^{ij} = w^{ij}(w^{ij})^dag determines w^{ij} up to one
+      phase phi_ij.  Suppose C(U2',U1') = C(U2,U1).  The diagonal
+      forces |w'| = |w| entrywise; the off-diagonal forces
+      w'_k / w_k to be independent of k, = phi_ij.  Writing
+      a_ik = (U2')_ik/(U2)_ik and b_kj = (U1')_kj/(U1)_kj we get
+      a_ik b_kj = phi_ij for all k — the SAME functional equation as
+      G0.6 — hence a_ik = alpha_i / c_k, b_kj = c_k beta_j.  So
+      (U2',U1') = (D_alpha U2 D_c^{-1}, D_c U1 D_beta): outer
+      boundary plus COMPENSATED CUT, exactly the declared gauge.
+      QED.  (Lattice reading: at full support Gamma contains the
+      complete bipartite structure and L_4 = Z(Gamma).)
+  [PASS] G3.10 at full support L_4 = Z(Gamma): C is complete         4096 full-support ordered pairs of the committed 2x2 family; the 4-cycle sublattice has the full cycle rank with all elementary divisors 1
+      ... G3.10 full-support lattice sweep                             175.1s
+
+G3.11 THE EXHAUSTIVE SUPPORT-CLASS SWEEP.  A support pattern carries
+      a unitary only if any two rows (and any two columns) have
+      supports that are DISJOINT or overlap in at least 2 places —
+      an overlap of exactly one would make the inner product a single
+      nonzero term.  That NECESSARY condition is the declared scope
+      (a superset of the realizable patterns, so a clean sweep on it
+      is a clean sweep on them).  At n = 3 it returns exactly 25
+      patterns, matching W3''s committed count of unitary-realizable
+      supports.  Relabelling R and C are graph isomorphisms of Gamma,
+      so S2 is reduced modulo row-and-column permutations and S1
+      modulo column permutations; that reduction is exhaustive.
+      ... G3.11 n=2 support-class sweep (4 Gamma classes)              175.1s
+      ... G3.11 n=3 support-class sweep (32 Gamma classes)             175.1s
+      ... G3.11 n=4 support-class sweep (1264 Gamma classes)           178.2s
+  [PASS] G3.11 L_4 = Z(Gamma) on every support class [n=2]           3 admissible patterns; 2 S2-classes x 2 S1-classes = 4 Gamma classes; max mu = 3; 4-cycle FAILURES = 0
+  [PASS] G3.11 L_4 = Z(Gamma) on every support class [n=3]           25 admissible patterns; 4 S2-classes x 8 S1-classes = 32 Gamma classes; max mu = 10; 4-cycle FAILURES = 0
+  [PASS] G3.11 L_4 = Z(Gamma) on every support class [n=4]           783 admissible patterns; 16 S2-classes x 79 S1-classes = 1264 Gamma classes; max mu = 21; 4-cycle FAILURES = 7
+  [PASS] G3.11 AND AT n = 4 IT FAILS: 4-cycles do NOT generate       7 of 1264 Gamma classes at n = 4 have a 4-cycle sublattice of rank mu - 1: a genuine long-cycle invariant that NEITHER the factor holonomies NOR C can see
+
+G3.12 THE NO-GO, WITNESSED IN EXACT UNITARY ARITHMETIC.
+      The gap is realized by block-structured 4x4 unitaries.  Write
+        U2 = [ 0 A ; B 0 ]  (rows 01 -> cols 23, rows 23 -> cols 01),
+        U1 : rows 02 -> cols 23, rows 13 -> cols 01,
+      with A, B, C, D drawn from the declared 2x2 set
+        {H diag(1, zeta_8^t) : t = 0..7} U {I, X}.
+      Every endpoint pair (i,j) then has EXACTLY ONE live path, so C
+      is entirely phase-blind — WITHOUT either factor being monomial.
+  [PASS] G3.12 the witness triple is unitary, and neither factor is monomial U2 = [0 H; H 0]-type, U2' the same with the second block right-multiplied by diag(1, zeta_8), U1 the permuted block pair
+  [PASS] G3.12 every endpoint pair has EXACTLY ONE live path         live-path table [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]] — the 'composite-monomial' degeneracy: total path degeneracy WITHOUT monomial factors, so [W2] A6's annihilator does not cover it   <[W2]>
+  [PASS] G3.12 the two pairs have the SAME factor orbits             U2 and U2' are boundary-gauge equivalent: the switching is built and verified entrywise
+  [PASS] G3.12 and the SAME cut-coherence tensor C                   every block, every entry — C is blind because there is one live path per endpoint pair
+  [PASS] G3.12 and the same relation-loop data (no relation loop exists) neither pair generates a projective family: the relation-loop sector is empty here, so W7-2's beta contributes nothing   <[W2]>
+  [PASS] G3.12 and the same composite MODULI                         B(U2 U1) = B(U2' U1): the Born shadow cannot see it either
+  [PASS] G3.12 BUT THE COMPOSITES ARE IN DIFFERENT GAUGE ORBITS      H_{02;02}(U2 U1) = 1/16 and H_{02;02}(U2' U1) = -zeta_8^3/16; the ratio is zeta_8^7, a primitive 8th root, and no switching exists
+  [PASS] G3.12 the ratio of the composite Haagerup invariants is zeta_8^7 exact in Q(zeta_8)
+  [PASS] G3.12 both pairs are Delta^B-FLAT: the defect cannot see it either one live path per endpoint pair kills every cross term, so the whole Delta^B-family is silent on a phase the composite genuinely carries   <[B1]>
+
+G3.13 THE MISSING SEAM DATUM, NAMED.
+      C is the (i,j)-BLOCK-DIAGONAL restriction of the full
+      PATH-AMPLITUDE GRAM FORM
+        Gc_{(ijk),(i'j'k')} = w_k^{ij} conj(w_{k'}^{i'j'}),
+      a rank-one PSD form on the set of live paths.  What C discards
+      is exactly Gc's CROSS-BLOCK entries — the coherences between
+      different endpoint pairs.  Those are not individually gauge-
+      invariant (they carry d_i e_j conj(d_i') conj(e_j')), and their
+      minimal invariant combination is the quadruple
+        Kc^{(ii';jj')}_{kl;k'l'}
+          = w_k^{ij} conj(w_l^{i'j}) w_{k'}^{i'j'} conj(w_{l'}^{ij'}),
+      whose gauge factors telescope around the 8-cycle
+      i-k-j-l-i'-k'-j'-l'-i of Gamma.  Summing Kc over k, l, k', l'
+      returns the composite's own Haagerup invariant H_{ii';jj'}.
+  [PASS] G3.13 the named datum Kc is boundary + compensated-cut invariant 256 checks: 64 declared switchings of Gamma (all three vertex classes moved simultaneously) x 4 index tuples
+  [PASS] G3.13 Kc SEPARATES the no-go witness that C could not       first separating index tuple (i,i',j,j',k,l,k',l') = (0, 2, 0, 2, 3, 1, 0, 2)
+  [PASS] G3.13 L_4 + Kc's 8-cycles = Z(Gamma) on every class [n=2]   4 Gamma classes; 4-cycle gaps 0, ALL CLOSED by adjoining Kc (remaining gaps 0)
+  [PASS] G3.13 L_4 + Kc's 8-cycles = Z(Gamma) on every class [n=3]   32 Gamma classes; 4-cycle gaps 0, ALL CLOSED by adjoining Kc (remaining gaps 0)
+  [PASS] G3.13 L_4 + Kc's 8-cycles = Z(Gamma) on every class [n=4]   1264 Gamma classes; 4-cycle gaps 7, ALL CLOSED by adjoining Kc (remaining gaps 0)
+
+  ==> THE MAIN THEOREM: NO-GO, WITH THE MISSING SEAM DATUM NAMED.
+      (cycle holonomies + relation loops + C) is INCOMPLETE for
+      two-step composition up to the declared gauge.  It is complete
+      exactly when the 4-cycles of Gamma generate its cycle lattice —
+      proved unconditionally at full support (G3.10), gated at every
+      admissible support class for n = 2 and n = 3, and FALSE at
+      n = 4, with an exact unitary witness whose composite carries a
+      phase the whole pinned signature — and the whole Delta^B-family
+      — cannot see (G3.12).  The missing datum is the CROSS-BLOCK
+      content of the path-amplitude Gram form Gc, minimally carried
+      by Kc; adjoining it restores completeness at the full declared
+      scope (G3.13).
+
+==============================================================================
+W7-4 — RECORD DESCENT
+==============================================================================
+  W3''s record structure is a LABEL LIST: the record map is
+  k -> part[k] and the sectors are its fibres.  Its two hypotheses are
+  pure SUPPORT conditions:
+    (H-avail)  for every i, the row support of U2 lies in ONE sector;
+    (H-corr)   for every j, k -> part[k] is INJECTIVE on the column
+               support of U1.
+
+  THEOREM W7-4A.  (H-avail) alone ==> C is BLOCK-DIAGONAL by record
+  sector: C^{ij}_{kl} = 0 whenever r(k) != r(l).
+  PROOF.  If r(k) != r(l) then for every i at most one of (U2)_ik,
+  (U2)_il is nonzero, so w_k^{ij} conj(w_l^{ij}) = 0.  QED.
+
+  THEOREM W7-4B.  (H-avail) AND (H-corr) ==> C is FULLY DIAGONAL,
+  hence Delta^B = 0 by the readout identity.
+  PROOF.  Block-diagonality by W7-4A; within a sector (H-corr) leaves
+  at most one live k per column j, so the surviving off-diagonal
+  entries are empty too.  QED — this recovers W3''s Theorem 1 (LOG
+  #14) as a corollary, and it SPLITS the two hypotheses' roles:
+  (H-avail) buys the BLOCK STRUCTURE, (H-corr) buys the collapse
+  INSIDE a block.  Anchored, not re-proved.
+
+  [PASS] G4.1  (H-avail) ==> C block-diagonal by record sector       336 (U2, U1, partition) triples satisfy (H-avail) over 8 declared dim-4 operators x the 15 partitions; 336 block-diagonal, 0 violations   <[W3']>
+  [PASS] G4.2  (H-avail) + (H-corr) ==> C FULLY DIAGONAL             190 triples satisfy both hypotheses; C is fully diagonal in all 190; 0 violations   <[W3']>
+  [PASS] G4.2  hence Delta^B = 0 there — W3''s Theorem 1 recovered   0 counterexamples; the readout identity turns full diagonality into Delta^B = 0 with no further argument   <[W3']>
+  [PASS] G4.2  full recording ==> B(U2 U1) = B(U2) B(U1) on the recorded algebra the declared W3' instance, anchored not re-proved   <[W3']>
+
+G4.3  NOT PHASE TRIVIALITY.  Within an UNRESOLVED sector the
+      off-diagonal entries of C survive: block-diagonalization is a
+      statement about CROSS-sector coherence only.
+  [PASS] G4.3  a COARSE record leaves intra-sector coherence ALIVE   declared coarse structure [0,0,1,1]: C is block-diagonal (no cross-sector entry) yet carries 16 nonzero off-diagonal entries INSIDE the blocks — phase structure survives, exactly as T3''s v2.2 gloss and W3''s A2 require   <[W3']>
+  [PASS] G4.3  and the coarse reading does NOT kill the defect       Delta^B != 0 there: block structure is not triviality   <[W3']>
+
+G4.4  THE ERASER CONTROL (W3''s own, dim 4).  Same record-writing
+      first leg U1_rec = CNOT.(H x I) and the same declared structure
+      [0,1,0,1]; only the later operation changes.  The PRESERVING
+      leg is H x I; the ERASER is (H x I).CNOT, which still MAKES the
+      record ((H-corr) holds) but destroys its availability.
+  [PASS] G4.4  preserving leg: C block-diagonal AND fully diagonal   0 cross-sector entries, 0 off-diagonal entries
+  [PASS] G4.4  ERASER: the off-diagonal BLOCKS are RESTORED          16 nonzero cross-sector entries of C return; coherent recombination puts back exactly what the record removed   <[W3']>
+  [PASS] G4.4  and the defect returns with them                      D_210 returns maximally, entries 0 and +-1/2 — W3''s Part E   <[W3']>
+  [PASS] G4.4  the eraser's (H-avail) failure is the exact cause     (H-corr) still holds — the record is still written; W7-4A's hypothesis is precisely what fails   <[W3']>
+
+G4.5  THE UNDEFINED-PHASE BOOKKEEPING, AND THE LIMIT OF THE DESCENT.
+      A zero entry of C has two quite different causes: the RECORD
+      forbids the pair (W7-4A), or an amplitude simply vanishes.  The
+      distinction is decidable by W3''s O(n^2) criterion, and the
+      measurement below is a SUBSTANTIVE NEGATIVE, reported as one.
+  [PASS] G4.5  MEASURED NEGATIVE: on the committed unitary families, a fully diagonal C always carries a record 50 of 64 declared dim-4 pairs and 10000 of 10000 block-4 pairs have a fully diagonal C; in 0 of either does W3''s criterion fail to find a record structure.  This AGREES with W3''s own sharpness result (318 of 318 on unitary-realizable supports at n = 3) and disagrees with the abstract support count (5490 of 94746) — unitarity is doing the work   <[W3']>
+  [PASS] G4.5  THE LIMIT OF RECORD DESCENT: a record does NOT make the composite phase-trivial the G3.12 witness CARRIES a record structure (merge classes [0, 0, 2, 2], W3''s criterion returns True) and its C is FULLY DIAGONAL — the record account is complete at the level of C — yet its composite still carries a boundary-gauge phase invariant that C cannot see.  Block-diagonalization of C under records is NOT phase triviality of the composite, and this is the sharpest form of the pin's warning   <[W3']>
+
+==============================================================================
+W7-5 — ONTOLOGICAL ADJUDICATION
+==============================================================================
+  THE PRE-REGISTERED OUTCOMES (combinable), and which obtain:
+
+   W7-PHASE-REFERENT                OBTAINS
+        OBTAINS, SCOPED.  A gauge-invariant phase-retaining compositional 
+        signature EXISTS and is exhibited: cycle holonomies (W7-1), relati
+        on-loop phases beta (W7-2), the cut-coherence tensor C and the cro
+        ss-block datum Kc (W7-3).  It is complete only once Kc is adjoined
+        ; the pinned triple alone is not.
+   W7-SINGLE-ARROW-INSUFFICIENT     OBTAINS
+        OBTAINS.  On monomial supports mu = 0 and the single-arrow sector 
+        is EMPTY, while beta separates all N Weyl classes at N = 2..6.  Fa
+        mily/relation loops are NECESSARY.
+   W7-SEAM-TORSOR-REQUIRED          OBTAINS
+        OBTAINS.  G3.0: isolated factor orbits carry no composition law.  
+        The seam datum is named and it is TWO-LAYERED: C (the seam 4-cycle
+        s) plus Kc (the cross-block 8-cycles).  The declared gauge is vert
+        ex switching on Gamma and the seam torsor is the K-vertex switchin
+        g.
+   W7-FULL-SCHUR-ANNIHILATION       does not obtain
+        DOES NOT OBTAIN.  G0.6 and G0.7 DERIVE the reduction from composit
+        ion-compatibility and from unitarity preservation respectively; it
+         is not postulated.  Verdict G-REDUCED.
+   W7-NO-RECORD-BRIDGE              does not obtain
+        DOES NOT OBTAIN.  W7-4A/4B descend the signature under W3''s recor
+        d hypotheses, splitting their roles, with the eraser control resto
+        ring the off-diagonal blocks.
+   W7-BARGMANN-INSUFFICIENT         does not obtain
+        DOES NOT OBTAIN for the declared loop family AS A WHOLE — beta cle
+        ars the W2 collapse anchors (G2.2, G2.3).  It DOES obtain for the 
+        single-arrow Bargmann/Haagerup layer taken alone, which is the pre
+        vious outcome.
+
+  O2's FOUR EARNING CONDITIONS:
+   (1) PRECISE REFERENT ............. HOLDS
+       Defined from committed primitives only: the boundary gauge is
+       DERIVED (G0.6/G0.7), the invariants are cycle holonomies of a
+       graph built from the committed matrices, and every object is
+       exhibited in exact arithmetic.
+   (2) COMPOSES ..................... HOLDS, WITH A NAMED SEAM DATUM AND A SCOPE
+       Isolated orbits do NOT compose (G3.0).  With the seam datum
+       they do: proved unconditionally at full support (G3.10), gated
+       at every admissible support class at n = 2, 3 for the pinned
+       triple, and FALSE at n = 4 for the pinned triple (G3.11,
+       G3.12) until Kc is adjoined (G3.13).  This condition is met by
+       the COMPLETED signature, not by the pinned one.
+   (3) CONTROLS A COMMITTED PHENOMENON  HOLDS
+       C's readout identity IS Delta^B (G3.6), the programme's
+       committed interference invariant.  Scoped honestly: the
+       control runs one way.  G3.12 exhibits a Delta^B-FLAT pair whose
+       composite still carries a phase, so the signature is strictly
+       finer than the phenomenon it controls.
+   (4) RECORD DESCENT ............... HOLDS
+       W7-4A/4B, with the two W3' hypotheses' roles separated, the
+       coarse-record control showing phases SURVIVE inside a sector,
+       and the eraser restoring the off-diagonal blocks.
+
+  W2's SUCCESSOR TARGET (LOG #16): a phase-retaining invariant of rho
+  FINER THAN B o rho.  MET, at two levels and by two objects: beta at
+  family level (G2.6 — B o rho identical across all N classes while
+  beta separates them) and the Gamma-holonomies at arrow and pair
+  level (B gives moduli only).  Both are invariants of the projective
+  map, not of a lift.
+
+  WHAT W7 DOES NOT DELIVER, stated plainly:
+   * the pinned triple is NOT complete — the no-go is this unit's
+     main theorem, and n = 4 is where it bites;
+   * completeness of the COMPLETED signature is gated at a declared
+     finite scope (all admissible support classes, n <= 4) and proved
+     unconditionally only at full support; the general-n statement is
+     open;
+   * no ontological conclusion is drawn.  O2 gains a referent that
+     meets its four conditions in the scoped forms above; whether
+     that referent is LAW rather than surplus representation is not
+     decided here and W7 does not decide it.
+   * W7 is ONE-CHART mathematics.  Cross-chart co-reference is W6's.
+
+==============================================================================
+VERDICT: W7-SIGNATURE-INCOMPLETE-SEAM-DATUM-NAMED (G-REDUCED; referent delivered, completeness scoped)
+==============================================================================
+  gates  : 78 run, 78 pass, 0 fail
+  anchors: 41, all exit-1
+  cited  : [B1], [B3], [GG], [MSS], [REV3], [SvN], [W1'], [W2], [W3'], [W]
+           [B1]     used at 3 gates
+           [B3]     used at 5 gates
+           [GG]     used at 8 gates
+           [MSS]    used at 3 gates
+           [REV3]   used at 1 gates
+           [SvN]    used at 1 gates
+           [W1']    used at 1 gates
+           [W2]     used at 10 gates
+           [W3']    used at 11 gates
+           [W]      used at 8 gates
+  runtime:   189.0s
+==============================================================================

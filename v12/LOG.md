@@ -783,3 +783,77 @@ v12/note-w7-loop-signature.md (GREEN-UNREVIEWED on landing; the
 adjudicator commits).  Adjudication on return: verify gates and
 anchors, commit, hostile round, terminal.  This entry is written
 after the dispatch occurred.
+
+## 2026-07-29 — W7 DELIVERED; ADJUDICATOR RERUN VERIFIED (v12
+## LEDGER #21)
+The construction worker returned the full unit: 78 gates / 78
+pass / 0 fail, 41 anchors exit-1-only, runtime 189.0s; adjudicator
+rerun under PYTHONHASHSEED=7 IDENTICAL modulo timings/trailing
+whitespace; the git tree shows exactly the three permitted files;
+the note (763 lines) lands GREEN-UNREVIEWED.  THE DELIVERY:
+**(1) G-VERDICT: G-REDUCED, DERIVED TWICE** — the composition-
+compatibility theorem (a Schur gauge family is compatible with
+composition on unitary pairs IFF it is object-indexed boundary
+form; proof drives the quantifier through the W2 §8 DFT-sandwich
+carriers to the pointwise equation Θ²¹_ik Θ¹⁰_kj = Θ²⁰_ij and
+solves it) and the unitarity-preservation theorem (Θ∘U unitary
+for every unitary U IFF every Haagerup invariant of Θ is 1 IFF
+boundary form — [B3]'s own "partial fixing" is exactly this
+stabilizer).  G-ANNIHILATED identified as the isolated-arrow
+reading and excluded by committed premises (T2′ makes the
+composable pair the subject; W2 §3 requires unitary arrows) — the
+reduction is LICENSED BY COMMITTED PREMISES, a conditional, and
+the note says so.  **(2) THE MAIN THEOREM IS A NO-GO WITH THE
+SEAM DATUM NAMED:** the pinned triple (cycle holonomies +
+relation loops + C) is complete IFF Γ's 4-cycles generate its
+cycle lattice Z(Γ) — proved unconditionally at full support, true
+at every admissible support class for n = 2, 3, FALSE at n = 4
+(7 of 1264 Γ-classes; exact unitary witness with composite-
+monomial degeneracy — neither factor monomial, one live path per
+endpoint pair, both pairs Δᴮ-flat, same factor orbits, same C,
+same composite moduli, composites in DIFFERENT gauge orbits,
+Haagerup ratio ζ₈⁷).  The missing datum NAMED: the cross-block
+content of the path-amplitude Gram form, minimally the 8-cycle
+holonomy K^(ii′;jj′)_{kℓ;k′ℓ′} = w_k^ij conj(w_ℓ^i′j) w_k′^i′j′
+conj(w_ℓ′^ij′); K is gauge-invariant (256 checks), separates the
+witness, and adjoining it closes ALL SEVEN gaps (L₄+K = Z(Γ) on
+all 1300 Γ-classes, n ≤ 4); general-n completeness OPEN (§27).
+**(3) THE SEAM-TORSOR ANSWER:** the declared pair gauge IS vertex
+switching on the tripartite path graph Γ; the seam torsor IS the
+K-vertex switching (2304); C's entries ARE Γ's seam 4-cycle
+holonomies (144 matched).  **(4)** β separates all Weyl classes
+N = 2..6 (= ζ_N^{−k}, anchored to B4x's six values),
+lift-independent, rephasing-invariant, FINER THAN B∘ρ — W2's
+successor target met at family level.  **(5)** Record descent:
+(H-avail) alone ⇒ C block-diagonal (336 triples, 0 violations);
++(H-corr) ⇒ fully diagonal ⇒ Δᴮ = 0 (190 triples; recovers W3′
+Thm 1); coarse record leaves 16 intra-sector phases LIVE; the
+eraser restores 16 cross-sector entries.  **(6) THE MEASURED
+LIMIT OF RECORD DESCENT (beyond the pin):** the n = 4 witness
+CARRIES a W3′-grade record (merge classes [0,0,2,2], criterion
+True) with C fully diagonal — yet the composite still carries a
+gauge-invariant phase.  Block-diagonalization is NOT phase
+triviality of the composite; the pin's warning in its sharpest
+form.  **(7) Outcomes:** obtained — W7-PHASE-REFERENT (scoped:
+complete only once K is adjoined), W7-SINGLE-ARROW-INSUFFICIENT,
+W7-SEAM-TORSOR-REQUIRED (two-layered, C + K); not obtained —
+W7-FULL-SCHUR-ANNIHILATION, W7-NO-RECORD-BRIDGE, and
+W7-BARGMANN-INSUFFICIENT for the family (it DOES obtain for the
+single-arrow Bargmann/Haagerup layer alone — split verdict,
+declared deviation (a)).  O2's four conditions: (1) referent
+HOLDS; (2) composes HOLDS with the named seam datum and scope —
+met by the COMPLETED signature, not the pinned one; (3) controls
+Δᴮ HOLDS one-way (a Δᴮ-flat pair can still carry composite
+phase); (4) record descent HOLDS, bounded by (6).  Worker
+deviations (a)-(f) all declared, including the substantive
+negative on its own first undefined-phase formulation ("C fully
+diagonal ⇒ no record exists" is FALSE on committed unitary
+families, 0 of 10,064 — unitarity does the work, agreeing with
+W3′'s own sharpness 318/318 against the abstract count).  The
+receipt's scope box: NO ontological conclusion drawn — whether
+the referent is LAW rather than surplus representation is not
+decided by W7.  The receipt's verdict line:
+W7-SIGNATURE-INCOMPLETE-SEAM-DATUM-NAMED (G-REDUCED; referent
+delivered, completeness scoped).  STATUS: GREEN-UNREVIEWED;
+hostile round next; per the #11/#15 rule its dispatch is recorded
+only after it occurs.
