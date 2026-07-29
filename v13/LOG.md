@@ -69,3 +69,58 @@ lapse).**  Worker-disclosed drift: v6_p2c PART 2 re-runs at
 0.540/1.26 vs recorded 0.63/1.38 — not load-bearing (a diagnostic
 formula, not a two-cell); flagged for the round.  Hostile round
 dispatched.
+
+## 2026-07-28 — GW1 HOSTILE ROUND: ACCEPT-WITH-FIXES, NO B — THE
+## VERDICT SURVIVES; SEVEN M-REPAIRS; #2 CORRECTED (v13 LEDGER #3)
+The round re-ran every numeric citation, spot-checked ≥ 20
+file:line citations (all exact), and swept the corpus for missed
+families.  **THE VERDICT GW1-BLOCKED-AT-KERNEL SURVIVES — nothing
+found makes STEPS 1-5 runnable.**  The repairs: **(M1, nearest to
+B)** a FIFTH family missed, in the file the pin named: v4 p7 Defs
+1.3/1.4/2.3 — H_a[N] invertible-by-declaration, β_a =
+I_a(g)^ij(N∂_jM − M∂_jN) in GENERAL spatial dimension with the
+metric READ FROM A FINITE GEOMETRY RECORD (not background), and
+R_HH,a the pin's residual exactly; plus p12/p13's three-lapse
+switch with a NONZERO detector at Prop 3.6.  Metric-freeness
+VACUOUS (no construction exists — the only reason this is M not
+B).  The census's sharpest sentence ("nameable to one definition
+and one dimension count" = Candidate B, 1+1D) is FALSE — v4 p7 is
+nearer, general-d, record-read, and outside Prop 10.6's
+fixed-background scope.  **(M2)** §3.1's two bullets contradict
+each other; the round RECOMPUTED: the pointwise-additive class IS
+invertible (J[−N]∘J[+N] = id bitwise) and the pinned two-cell IS
+formable and equals I EXACTLY; non-invertibility belongs to the
+RECOMPUTED-HEIGHT rule — whose commutator is NONZERO (7/13/20/21
+events, 0.23-0.50%) but gradient-blind (enrichment < 1).  So
+"two-cell EXACTLY ZERO" in #2 is false for the lapse-carrying
+committed rule — nonzero-but-gradient-blind is the honest tag.
+**(M4)** the Γ-lattice row's "not by a lapse" is falsified at
+paper level (v2 p10:757 𝕁[N;Δ] IS smooth-lapse; the census merged
+the Δ-parameterized CODE family with the lapse-parameterized
+THEOREM family) — that row drops metric-freeness ONLY, repairing
+#2's "each dropping exactly one requirement".  **(M5, a corpus
+finding beyond the unit):** the disclosed p2c drift ROOT-CAUSED —
+trial 0's slice graph has 2 components, Laplacian nullity 2, so
+V[:,1] is an arbitrary basis vector in a degenerate null space; a
+1e-13 perturbation swings the trial across −0.38..+0.61, fully
+explaining the recorded 0.63 vs re-run 0.540; the SAME unguarded
+eigh pattern sits in v6_p2_spatial_direction.py:49 — an
+instrument-(i) receipt; population reference (40 trials): corr
+0.651 ± 0.051, and the recorded enrichment 1.38 lies above all
+eight 5-trial campaigns sampled.  A connectivity gate is required
+before any re-use.  **(M6)** #2's "instrument (ii): ABSENT" is
+corrected to: absent in RUNNABLE METRIC-FREE form co-located with
+(i) — committed DEFINITIONS exist in four places; and #2's
+successor lean (Candidate B "the honest first rung") is
+UNSUPPORTED — the note itself shows 1+1D cannot decide the metric
+question.  **(M7)** instrument (i) is CHART-ASSISTED (v6_task2b
+fits against coordinate separations; p2d PART 2's density channel
+is near-tautological — the sprinkling is GENERATED with density ∝
+Ω²) — "the blocking instrument is the kernel, not the metric" is
+too clean; the block is at both, a STRONGER negative.  **THE
+SUCCESSOR, reordered per the round: construct a record-native
+H_a[N] to v4 p7 Def 1.3 and measure R_HH,a against β_a with
+I_a(g)^ij supplied by the order+count extraction — general-d,
+record-read, invertible by declaration, missing exactly the one
+object GW1 wants.**  Family-4 lapse-grafting the second route;
+Candidate B demoted.  Repair dispatched.
