@@ -106,7 +106,7 @@ What Fine/AB obstruct is a global **context-independent catalogue of values** fo
 | bc #4 (BC2 round, M-1): "legitimate division event ⟺ the process divides at it" on the Bell model | T3′ measured at one joint: division events live where the defect is zero |
 | v11 U3: $\mathrm{Hom}(\langle 2,3\rangle \cong \mathbb{Z}^2,\, U(1)) = \mathbb{T}^2$, no character selected | demoted per the review: flat characters live on a topologically trivial bundle and are the wrong moduli; the candidate question is the projective multiplier $[\omega] \in H^2(\mathbb{Z}^2, U(1))$ — the Weyl/noncommutative-torus phase $\theta$ (ħ-like, not i-like): W2′ |
 | BC2: wing charts frame-invariant; the composite slice-joint frame-relative | charts fine; the frame-relative object is the context-indexed shadow family, not a bundle section |
-| BC1: division events do not glue across the subsystem lattice; ten empty-only circuits | the defect's organization across contexts is nontrivial; whether it is ONE invariant with BC2's and the $\Delta$-structure is W4′ — a hypothesis, not assumed (U2's three-axes warning stands) |
+| BC1: division events do not glue across the subsystem lattice; ten empty-only circuits | the defect's organization across contexts is nontrivial; whether it is ONE invariant with BC2's and the $\Delta$-structure was W4′'s question — **decided 2026-07-28: NEITHER ONE NOR THREE — all six pairs independent, nine invariants, one ingredient containment (LOG #15; U2's warning vindicated one level up)** |
 | v1 paper 0's "interference = holonomy of probability transport" | the loop/holonomy intuition remains a **candidate** organization of the composition defects; W4′ determines whether it also governs contextual non-gluing ([REV2] wording) |
 
 ---
@@ -160,11 +160,11 @@ W1′ proves the chain, the completeness statement, and the anti-correlation exh
 
 ## 4. The programme (re-pinned)
 
-### W1′ — The three-class theorem (first)
+### W1′ — The three-class theorem (first) — **TERMINAL, W1′-PROVEN (LOG #7)**
 
 Prove and receipt the chain $2 \,/\, 2\sqrt{2} \,/\, 4$ exactly over the three convex bodies; the completeness of $\mathcal{Q}_{\mathrm{corr}}$; the anti-correlation exhibit (both review constructions verified in-receipt); the $\Delta^B$ census on minimal two-step compositions (the cross-term identity; the three-defect separation; the coherence law). **Kill:** any class maximum $\neq$ its claimed value $\Rightarrow$ the skeleton is wrong.
 
-### W2′ — Split three ways per [REV2] §5
+### W2′ — Split three ways per [REV2] §5 — **TERMINAL: W2a-STRUCTURE-DELIVERED / W2b-NO-ACTION / W2c-VACUOUS (LOG #16). The H² road is closed by two theorems (cancellation + collapse); the corrected successor target: a phase-retaining invariant of ρ finer than B∘ρ**
 
 The Born projection **annihilates** scalar multipliers,
 
@@ -194,15 +194,15 @@ $$
 
 **W2c — selection:** only if W2b survives: which $\theta$, and by what principle. $\theta$ is a dimensionless central-extension parameter; it becomes ħ-like only after the generators carry physical dimensions and the exponent a symplectic pairing.
 
-### W3′ — Records kill the defect
+### W3′ — Records kill the defect — **TERMINAL, W3′-PROVEN (LOG #14): the theorem with an O(n²) decision procedure, sharp on physical supports; the Bell biconditional decided over all partitions; the converse refuted at this unit's record notion, [GMH]'s left open**
 
 The de-tautologized theorem: a stable record (defined per T3′, independently of the defect) makes the induced law on the record algebra divisible, for record-preserving future dynamics; BC2-M1's biconditional derived as an instance; v11's total-factuality arc derived as the global case. **Kill:** a stable record with a surviving divisibility residual on its own algebra under record-preserving dynamics.
 
-### W4′ — One invariant or three
+### W4′ — One invariant or three — **TERMINAL: NEITHER-ONE-NOR-THREE (LOG #15) — six pairs independent with two-way witnesses; [AMB]'s own examples properly attributed**
 
 Is the $\Delta$-structure the same obstruction AB's presheaf class witnesses, and the same one BC1/BC2 measured? Falsifiable; the U2 precedent (assumed-one, measured-three) is the named warning.
 
-### W5 — Barandes recast
+### W5 — Barandes recast — **TERMINAL (LOG #12): 14 FAITHFUL / 3 EXTENSION / 3 TENSION, all 37 quotes verbatim; the LTP-forcing lemma; [B3] = an exact theory of one chart and its defect, his own hedge carried**
 
 Division events = where the defect dies (now via T3′); which of his claims survive the atlas move.
 
