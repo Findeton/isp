@@ -317,6 +317,6 @@ No claim about nature beyond the models; the atlas move is a postulate; no Born-
 - **[W]** Weyl relations / noncommutative torus (projective multipliers on $\mathbb{Z}^2$; e.g. arXiv:1606.01829).
 - **[REV], [REV2]** the two external hostile reviews, adjudicated at LOG #3 and LOG #4 (constructions hand-verified there).
 - **[REV3]** the external ontology/W7 review sequence (three rounds, 2026-07-28/29), adjudicated at LOG #18–#19; the T5″ demotion, the O-commitments, the gauge-census correction, and the cut-coherence tensor are its contributions.
-- **[GG]** gain graphs / switching classes (cycle-basis classification of edge phases up to vertex switching; e.g. *On cospectrality of gain graphs*, DOI 10.1515/spma-2022-0169).
+- **[GG]** gain graphs / switching classes (cycle-basis classification of edge phases up to vertex switching). Canonical: T. Zaslavsky, *Signed graphs*, Discrete Appl. Math. **4** (1982) 47–74; secondary: *On cospectrality of gain graphs*, DOI 10.1515/spma-2022-0169.
 - **[MSS]** N. Mukunda et al., *Bargmann invariants and off-diagonal geometric phases for multi-level quantum systems*, arXiv:quant-ph/0107006 (the ray/Gram setting).
 - **[V10]** `../v10/THE-THEORY-SO-FAR.md`. **[V11]** `../v11/LOG.md`. **[BC]** `../bc/LOG.md`. **[V1]** the v1 paper 0 founding conjecture.

@@ -938,3 +938,56 @@ the round's replacement sentences, the two contributed
 measurements to gate natively (φ-criterion 7/7; Birkhoff 36-of-
 783 with 7/7 total support), and an optional budgeted strided
 n=5 sample; recorded after the dispatch occurred.
+
+## 2026-07-29 — W7 REPAIR VERIFIED — **W7 TERMINAL** (v12 LEDGER
+## #24)
+Adjudicator rerun (PYTHONHASHSEED=7): 90 gates / 90 pass / 0
+fail, 41 anchors all exit-1, exit 0, IDENTICAL modulo timings;
+git tree: exactly the three permitted files; load-bearing
+repaired passages spot-verified (the placed-rotation proof with
+the 64-vs-32 gap gated; "not a functional of B∘ρ" with the
+counterexample gated; the two-level theorem box; the K four-gate
+box with ΣK = composite-Haagerup gated over 136 quadruples;
+Zaslavsky named canonical).  ALL THIRTEEN FIXES + the Birkhoff
+gate (36 of 783 non-realizable; all 7 failures total-support on
+both legs) + the OPTIONAL n=5 SAMPLE applied: declared stride-3,
+653 patterns → 2,100 Γ-classes, max μ = 26, **L₄ = Z(Γ) fails
+104 times and K closes ALL 104** — the completion is not an n=4
+artifact at the sampled scope; exhaustive n=5 and general n
+remain open.  Gate accounting: 78 → 90 (+13 new, −1 removed;
+G3.12's literal-True replaced by a real check — the group
+commutator is computed and is NOT scalar for either witness
+pair; G3.11's hard-wired branch removed, its content carried by
+an honest failures==7-and-deficits==1 gate; both absolute
+Haagerup values now gated).  Repair deviations ACCEPTED: the
+round's replacement sentences were referenced by letter, not
+pasted — the worker authored each to its F-item's content
+(spot-verified); F10's premise precised (at-most-one live path:
+all 10,000; exactly-one: 4,096; conclusion unchanged); Birkhoff
+banked as one gate.  **A FURTHER PRINTED-COUNT ERROR, found by
+the repair and recorded here:** G1.2's 3×3 gauge count was
+HARD-CODED as 6561 in receipt and note; the true count is 729
+(3³ × 3³), now COMPUTED in the receipt.  Both the unit and the
+hostile round missed it — it was asserted, never computed.  The
+collaboration's zero-error record is hereby SCOPED HONESTLY:
+every COMPUTED number has reproduced across every independent
+rebuild; this was an asserted label, and the lesson is engraved
+— printed counts must be computed, never typed.  **THE TERMINAL
+VERDICT: W7-SIGNATURE-INCOMPLETE-SEAM-DATUM-NAMED (G-REDUCED;
+referent delivered, completeness scoped)**, in the repaired
+two-level form: PAIR-completeness ⟺ L₄ = Z(Γ) (⟸ by switching
+reconstruction; ⟹ realized at every failing class by the
+round's φ-criterion, 7/7 at n=4 and 104/104 at the n=5 sample,
+each closed by K); COMPOSITE-completeness strictly stronger and
+refuted; G-REDUCED carried by BOTH routes on non-degenerate
+supports and by unitarity-preservation ALONE on totally
+path-degenerate supports (the quantifier named in the verdict
+box).  O2's earning conditions, final form: (1) referent HOLDS
+(the loop signature completed by K); (2) composes HOLDS with the
+named seam datum, scoped n ≤ 4 exhaustive + n=5 sampled; (3)
+controls Δᴮ HOLDS one-way; (4) record descent HOLDS, bounded by
+the recorded-but-phased limit witness.  The note's status set
+TERMINAL; paper 0's [GG] entry corrected to name Zaslavsky
+canonical (this commit).  **W7 IS TERMINAL.**  Next per the
+user's standing order: PAPER 1 (self-contained Barandes
+extension) — pin to follow.

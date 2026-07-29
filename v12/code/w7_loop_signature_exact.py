@@ -151,8 +151,11 @@ print()
 
 cite("[GG]", "Gain graphs / switching classes: phases on a cycle basis "
      "classify edge-phase assignments up to vertex switching, "
-     "componentwise, with cycle rank |E| - |V| + c.  See e.g. 'On "
-     "cospectrality of gain graphs', DOI 10.1515/spma-2022-0169.  W7-1's "
+     "componentwise, with cycle rank |E| - |V| + c.  CANONICAL SOURCE: "
+     "T. Zaslavsky, 'Signed graphs', Discrete Appl. Math. 4 (1982) 47-74, "
+     "and the gain-graph switching classification developed there and in its "
+     "sequels (biased graphs / gain-graph switching classes).  Secondary: "
+     "'On cospectrality of gain graphs', DOI 10.1515/spma-2022-0169.  W7-1's "
      "classification statement is THIS THEOREM, cited not claimed; W7's own "
      "contribution is the exact adaptation to the committed matrix families, "
      "to SUPPORT CHANGES, and to the composable-pair graph Gamma of W7-3.")
@@ -894,10 +897,11 @@ def boundary_family(K, T21, T10, n):
     return (d0, e1, d2)
 
 
+STAR_N, THS_N = {}, {}
 for (KK, n, grp, fam, famname) in ((K8, 2, (0, 2, 4, 6), stride(FAM2L, 16),
-                                    "W1' 2x2 (stride 16)"),
+                                    "W1' 2x2 (declared 16-matrix stride)"),
                                    (K12, 3, (0, 6), stride(FAM3L, 12),
-                                    "W1' 3x3 (stride 12)")):
+                                    "W1' 3x3 (declared 12-matrix stride)")):
     ths = [[[KK.zpow(g) for g in row]
             for row in [bits[i * n:(i + 1) * n] for i in range(n)]]
            for bits in itertools.product(grp, repeat=n * n)]
@@ -933,7 +937,70 @@ for (KK, n, grp, fam, famname) in ((K8, 2, (0, 2, 4, 6), stride(FAM2L, 16),
          "the quantifier over the declared family %s is already enough to "
          "force (*): 0 disagreements over %d ordered Theta-pairs"
          % (famname, len(ths) ** 2))
+    STAR_N[n], THS_N[n] = nstar, ths
     tick("G0.6 n=%d exhaustive Theta sweep" % n)
+
+# --------- WHICH PAIRS CARRY THE QUANTIFIER, AND WHICH LICENSE NOTHING -----
+print()
+print("      THE LOAD-BEARING QUANTIFIER, MEASURED.  The theorem quantifies")
+print("      over the ADMISSIBLE CLASS of composable unitary pairs, not over")
+print("      one realized pair, and the two gates below say why that matters.")
+print("      On a TOTALLY PATH-DEGENERATE pair — one live path per endpoint")
+print("      pair, e.g. a monomial second leg — the compatibility requirement")
+print("      is satisfiable by EVERY declared Theta-pair, so it licenses")
+print("      nothing at all; a single NON-DEGENERATE pair already forces the")
+print("      boundary answer.  Where the support is totally path-degenerate,")
+print("      G0.7 alone carries the reduction.")
+
+
+def compatible_with(K, T21, T10, pairs, n):
+    """Is there a SINGLE unimodular Theta^{(2,0)} making the square commute
+    on every pair in `pairs`?  Entries where the composite VANISHES constrain
+    nothing (Theta^{(2,0)} is free there) but require the transformed product
+    to vanish too — the honest reading of the requirement on any support."""
+    T20 = [[None] * n for _ in range(n)]
+    for (U2, U1) in pairs:
+        L = mmul(K, schur(K, T21, U2), schur(K, T10, U1))
+        R = mmul(K, U2, U1)
+        for i in range(n):
+            for j in range(n):
+                if K.is_zero(R[i][j]):
+                    if not K.is_zero(L[i][j]):
+                        return False
+                    continue
+                c = K.mul(L[i][j], K.inv(R[i][j]))
+                if K.mul(c, K.conj(c)) != K.one:
+                    return False
+                if T20[i][j] is None:
+                    T20[i][j] = c
+                elif T20[i][j] != c:
+                    return False
+    return True
+
+
+X2W = [[K8.zero, K8.one], [K8.one, K8.zero]]
+n_vac = n_one = 0
+for T21 in THS_N[2]:
+    for T10 in THS_N[2]:
+        if compatible_with(K8, T21, T10, [(H2, X2W)], 2):
+            n_vac += 1
+        if compatible_with(K8, T21, T10, [(H2, H2)], 2):
+            n_one += 1
+NPAIR2 = len(THS_N[2]) ** 2
+gate("G0.6", "VACUOUS on a totally path-degenerate pair — the negative",
+     n_vac == NPAIR2,
+     "declared pair (H, X), a MONOMIAL second leg: %d of %d ordered "
+     "Theta-pairs are compatible — ALL of them.  With one live path per "
+     "endpoint pair the requirement is an identity, so sec.3 licenses "
+     "NOTHING on such supports and G0.7 alone carries the verdict there"
+     % (n_vac, NPAIR2))
+gate("G0.6", "ONE non-degenerate declared pair already forces the answer",
+     n_one == STAR_N[2],
+     "declared pair (H, H): %d of %d compatible — exactly the (*) count %d, "
+     "the boundary answer.  The quantifier's real content is the ADMISSIBLE "
+     "CLASS of dynamics, not any one realized pair"
+     % (n_one, NPAIR2, STAR_N[2]))
+tick("G0.6 quantifier-scope probes")
 
 # ============ G0.7 THE UNITARITY-PRESERVATION THEOREM ============
 print()
@@ -947,12 +1014,30 @@ print("      PROOF.  (<=) Theta o U = D U E^dag is unitary.  (=>) For i != j,")
 print("      orthogonality of rows i, j of Theta o U reads")
 print("        sum_k lam_k v_k = 0 whenever sum_k v_k = 0,")
 print("      with lam_k = Theta_ik conj(Theta_jk) and v_k = U_ik conj(U_jk).")
-print("      Real rotations in the (k,l) plane realize v = t(e_k - e_l) for")
-print("      every k != l and some t != 0, forcing lam_k = lam_l, i.e.")
-print("      Theta_ik conj(Theta_jk) conj(Theta_il) Theta_jl = 1 — exactly")
-print("      H_{ij;kl}(Theta) = 1.  Trivial Haagerup on every 4-cycle of the")
-print("      complete bipartite graph is precisely the boundary form (the")
-print("      switching reconstruction of W7-1, G1.3).  QED.")
+print("      The construction that realizes the needed v is a rotation")
+print("      PLACED at the required rows: for the given (i,j) and (k,l) let U")
+print("      carry the two columns {k,l} into the two ROWS {i,j} by")
+print("        U_ik = U_jl = cos th,  U_il = -sin th,  U_jk = sin th,")
+print("      and match the remaining columns to the remaining rows by any")
+print("      fixed bijection (entries 1).  U is unitary, and")
+print("        v = U_ik conj(U_jk) e_k + U_il conj(U_jl) e_l")
+print("          = cos th sin th (e_k - e_l),")
+print("      nonzero for th not a multiple of pi/2, with all other v_m = 0.")
+print("      Since sum_m v_m = 0 the hypothesis applies and forces")
+print("      lam_k = lam_l, i.e. Theta_ik conj(Theta_jk) conj(Theta_il)")
+print("      Theta_jl = 1 — exactly H_{ij;kl}(Theta) = 1 — and the")
+print("      construction exists for EVERY (i,j) and EVERY (k,l), so every")
+print("      Haagerup quadruple of Theta is trivial.  (The LITERAL reading —")
+print("      'a real rotation in the (k,l) coordinate plane' — moves columns")
+print("      {k,l} into ROWS {k,l} and therefore only ever reaches the")
+print("      diagonal quadruples (i,j) = (k,l); the gap that leaves is")
+print("      measured below.)  For the last step: Theta is a Schur-Hadamard")
+print("      gauge matrix, so every entry is unimodular BY DEFINITION of the")
+print("      gauge — Theta has FULL SUPPORT, its bipartite graph is complete")
+print("      and therefore connected, and by G1.4 its cycle lattice is")
+print("      generated by the 4-cycles.  Trivial Haagerup on every 4-cycle is")
+print("      then precisely the boundary form, by the switching")
+print("      reconstruction of W7-1, G1.3.  QED.")
 print("      CONSEQUENCE, and it is the load-bearing one: fixing a UNITARY")
 print("      representative does not exhaust the Schur freedom — the residual")
 print("      stabilizer is exactly the boundary group.  That is what 'partial")
@@ -982,6 +1067,72 @@ for (KK, n, grp, fam) in ((K8, 2, (0, 1, 2, 3, 4, 5, 6, 7), FAM2L),
          "family; %d are Haagerup-trivial; 0 disagreements with the boundary "
          "decomposition" % (npres, len(ths), len(grp), nhaag), "[B3]")
     tick("G0.7 n=%d exhaustive Theta sweep" % n)
+
+
+# ---- the LITERAL-vs-PLACED probe: the proof step's construction, measured --
+def rot_literal(K, n, a, b):
+    """The LITERAL reading of 'a real rotation in the (a,b) plane': it moves
+    columns {a,b} into ROWS {a,b}."""
+    M = mid(K, n)
+    M[a][a] = K.rat(Fr(3, 5))
+    M[a][b] = K.rat(Fr(-4, 5))
+    M[b][a] = K.rat(Fr(4, 5))
+    M[b][b] = K.rat(Fr(3, 5))
+    return M
+
+
+def rot_placed(K, n, i, j, k, l):
+    """The construction the proof actually needs: a rotation carrying the
+    columns {k,l} into the ROWS {i,j}, with the identity bijection (in
+    increasing order) matching the remaining columns to the remaining rows."""
+    M = [[K.zero] * n for _ in range(n)]
+    M[i][k] = K.rat(Fr(3, 5))
+    M[i][l] = K.rat(Fr(-4, 5))
+    M[j][k] = K.rat(Fr(4, 5))
+    M[j][l] = K.rat(Fr(3, 5))
+    rr = [x for x in range(n) if x not in (i, j)]
+    cc = [x for x in range(n) if x not in (k, l)]
+    for a, b in zip(rr, cc):
+        M[a][b] = K.one
+    return M
+
+
+NP = 3
+LITFAM = [rot_literal(K12, NP, a, b)
+          for a, b in itertools.combinations(range(NP), 2)]
+LITFAM += [mperm(K12, p) for p in itertools.permutations(range(NP))]
+PLCFAM = [rot_placed(K12, NP, i, j, k, l)
+          for i, j in itertools.combinations(range(NP), 2)
+          for k, l in itertools.combinations(range(NP), 2)]
+gate("G0.7", "both probe families are unitary in exact arithmetic",
+     all(is_unitary(K12, M) for M in LITFAM + PLCFAM),
+     "the LITERAL family = 3 (k,l)-coordinate-plane rotations + 6 "
+     "permutations = %d matrices; the PLACED family = %d matrices, one for "
+     "each (rows {i,j}, cols {k,l}); n = 3, rotation angle the rational "
+     "(3/5, 4/5)" % (len(LITFAM), len(PLCFAM)))
+n_lit = n_plc = n_haa = n_bnd = 0
+for bits in itertools.product((0, 6), repeat=NP * NP):
+    TH = [[K12.zpow(g) for g in bits[i * NP:(i + 1) * NP]] for i in range(NP)]
+    if all(is_unitary(K12, schur(K12, TH, U)) for U in LITFAM):
+        n_lit += 1
+    if all(is_unitary(K12, schur(K12, TH, U)) for U in PLCFAM):
+        n_plc += 1
+    if all(haagerup(K12, TH, a, b, c, d) == K12.one
+           for a, b in itertools.combinations(range(NP), 2)
+           for c, d in itertools.combinations(range(NP), 2)):
+        n_haa += 1
+    if boundary_decompose(K12, TH, NP) is not None:
+        n_bnd += 1
+gate("G0.7", "the PLACED construction is what closes the proof step",
+     n_plc == n_haa == n_bnd and n_lit > n_plc,
+     "n = 3 over mu_2: the LITERAL '(k,l)-plane rotations' leave %d Theta "
+     "standing — it reaches only the DIAGONAL quadruples (i,j) = (k,l) — "
+     "while the PLACED family leaves %d, exactly the Haagerup-trivial count "
+     "%d and exactly the boundary-form count %d.  The measured gap is %d "
+     "Theta: the proof step needs the placed construction, and the receipt's "
+     "own sweep already used a family rich enough to force it"
+     % (n_lit, n_plc, n_haa, n_bnd, n_lit - n_plc), "[B3]")
+tick("G0.7 literal-vs-placed probe")
 
 # ------------------------- G0.8 the full Schur gauge moves physical data
 TH_BAD = [[K8.one, K8.one], [K8.one, K8.rat(-1)]]
@@ -1019,17 +1170,20 @@ gate("G0.9", "compensated cut is IN the boundary group", cut_ok,
      "d^{(1)} = D alone: exactly [W2] A2(iii)", "[W2]")
 gate("G0.9", "same-space basis rephasing is IN the boundary group", bas_ok,
      "d^{(a)} = D for every object")
-UNCOMP = 0
+UNCOMP = UNTOT = 0
 for U2 in stride(FAM2L, 24):
     for U1 in stride(FAM2L, 24):
         D = dphase(K8, (0, 2))
+        UNTOT += 1
         if not meq(K8, delta_def(K8, mmul(K8, U2, D), U1),
                    delta_def(K8, U2, U1)):
             UNCOMP += 1
 gate("G0.9", "an UNCOMPENSATED cut insertion is NOT a gauge", UNCOMP > 0,
-     "it moves Delta^B on %d of 576 stride pairs — [W2] A2(vi), 'the only "
-     "handle'; 192 of 576 there at a different declared insertion" % UNCOMP,
-     "[W2]")
+     "it moves Delta^B on %d of %d stride pairs, matching the count [W2] "
+     "A2(vi) commits ('the only handle'), measured here at a DIFFERENT "
+     "declared insertion.  THIS IS THE UNIT'S ONE MEASUREMENT OF THE "
+     "UNCOMPENSATED CUT: G3.0 identifies its own no-descent predicate with "
+     "this one rather than counting again" % (UNCOMP, UNTOT), "[W2]")
 
 print()
 print("  ==> THE FIRST VERDICT: G-REDUCED.")
@@ -1280,19 +1434,25 @@ gate("G1.1", "cycle rank mu = |E| - |V| + c on every committed matrix", ok,
 
 # ------------------------------------- G1.2 holonomies are gauge-invariant
 ok = True
-for K, FAM, n, gp in ((K8, stride(FAM2L, 24), 2, (0, 2, 4, 6)),
-                      (K12, stride(FAM3L, 21), 3, (0, 4, 8))):
+G12 = []
+for K, FAM, n, gp, gpn in ((K8, stride(FAM2L, 24), 2, (0, 2, 4, 6), "mu_4"),
+                           (K12, stride(FAM3L, 21), 3, (0, 4, 8), "mu_3")):
+    ngauge = 0
     for U in FAM:
         h0 = gain_of_matrix(K, U).holonomies()
+        ngauge = 0
         for eo in itertools.product(gp, repeat=n):
             for ei in itertools.product(gp, repeat=n):
+                ngauge += 1
                 V = mmul(K, mmul(K, mdiag(K, [K.zpow(x) for x in eo]), U),
                          mdiag(K, [K.zpow(x) for x in ei]))
                 if gain_of_matrix(K, V).holonomies() != h0:
                     ok = False
+    G12.append("%dx%d: a declared %d-matrix stride of the committed family x "
+               "%d gauges (D_out, D_in over %s, exhaustive)"
+               % (n, n, len(FAM), ngauge, gpn))
 gate("G1.2", "cycle holonomies are boundary-gauge invariant", ok,
-     "24 matrices x 256 gauges (2x2) and 21 x 6561 (3x3), exhaustive over the "
-     "declared phase groups", "[GG]")
+     "; ".join(G12), "[GG]")
 
 # ------------------------------- G1.3 completeness: the switching is BUILT
 print()
@@ -1516,12 +1676,28 @@ for N in (2, 3, 4, 5, 6):
                        for _ in (0,)))
     if len(shad) != 1:
         sameB = False
-gate("G2.6", "beta is FINER than the Born shadow B o rho — W2's successor "
-     "target MET at family level", sameB and all(
+gate("G2.6", "beta is NOT A FUNCTIONAL of the Born shadow B o rho — W2's "
+     "successor target MET at family level", sameB and all(
          len(set(BETA[N])) == N for N in (2, 3, 4, 5, 6)),
-     "B o rho is IDENTICAL across all N classes at every N = 2..6 while beta "
-     "takes N distinct values: a phase-retaining invariant of rho strictly "
-     "finer than its Born shadow", "[W2]")
+     "B o rho is IDENTICAL across all N k-classes at every N = 2..6 while "
+     "beta takes N distinct values, so beta cannot be recovered from B o rho: "
+     "a phase-retaining invariant of rho that its Born shadow does not "
+     "determine.  This is a NON-FACTORIZATION statement, not a refinement "
+     "ordering — see the counterexample below", "[W2]")
+# the counterexample that FORBIDS the refinement reading
+K4f, K2f = FIELDS[4], FIELDS[2]
+b42, b21 = BETA[4][2], BETA[2][1]
+sh4 = mB(K4f, mmul(K4f, WEYL[4][1],
+                   mmul(K4f, WEYL[4][2], WEYL[4][2])))
+sh2 = mB(K2f, mmul(K2f, WEYL[2][1], WEYL[2][2]))
+gate("G2.6", "and beta is NOT a REFINEMENT of B o rho — the counterexample",
+     b42 == K4f.rat(-1) and b21 == K2f.rat(-1) and len(sh4) != len(sh2),
+     "beta(N=4, k=2) = beta(N=2, k=1) = -1, the SAME value, while their Born "
+     "shadows differ (a %dx%d doubly-stochastic matrix against a %dx%d one).  "
+     "So beta does not separate everything B o rho separates: the two are "
+     "incomparable invariants, and the correct claim is exactly the one "
+     "above — B o rho does not DETERMINE beta"
+     % (len(sh4), len(sh4), len(sh2), len(sh2)), "[W2]")
 ordk = {}
 for N in (2, 3, 4, 5, 6):
     for k in range(N):
@@ -1547,13 +1723,21 @@ print()
 # ============================================================================
 head("W7-3 — COMPOSITIONAL CLOSURE  (the deepest part)")
 # ============================================================================
-print("  THE NO-DESCENT FACT, gated first.  The gauge orbits of U2 and U1")
-print("  SEPARATELY do not determine the orbit of U2 U1: U2 -> U2 D is a")
-print("  boundary gauge on U2 alone and leaves its isolated orbit data")
-print("  unchanged, but moves the composite.  Only the COMPENSATED pair")
-print("  preserves the composite ([W2] A2 ii-iii).")
+print("  THE NO-DESCENT FACT.  The gauge orbits of U2 and U1 SEPARATELY do")
+print("  not determine the orbit of U2 U1: U2 -> U2 D is a boundary gauge on")
+print("  U2 alone and leaves its isolated orbit data unchanged, but moves the")
+print("  composite.  Only the COMPENSATED pair preserves it ([W2] A2 ii-iii).")
 print()
-nmov = ntot = 0
+print("  AND IT IS G0.9's MEASUREMENT, NOT A SECOND ONE.  B(U2 D) = B(U2) for")
+print("  a unimodular diagonal D, so")
+print("     Delta^B(U2 D, U1) - Delta^B(U2, U1) = B(U2 D U1) - B(U2 U1),")
+print("  and 'U2, U2 D lie in the same boundary orbit' is IDENTICALLY TRUE (D")
+print("  is a boundary gauge on U2).  G0.9's predicate and the no-descent")
+print("  predicate are therefore the same predicate.  The gate below RECEIPTS")
+print("  that identity instead of reporting the count a second time as if it")
+print("  were independent corroboration.")
+print()
+nmov = ntot = nsame = ndis = 0
 firstmv = None
 for U2 in stride(FAM2L, 24):
     for U1 in stride(FAM2L, 24):
@@ -1563,15 +1747,22 @@ for U2 in stride(FAM2L, 24):
         same_orbit = switching_between(K8, U2, U2D) is not None
         moved = not meq(K8, mB(K8, mmul(K8, U2D, U1)),
                         mB(K8, mmul(K8, U2, U1)))
+        dmoved = not meq(K8, delta_def(K8, U2D, U1), delta_def(K8, U2, U1))
+        if same_orbit:
+            nsame += 1
         if same_orbit and moved:
             nmov += 1
             if firstmv is None:
                 firstmv = (U2, U1)
-gate("G3.0", "NO-DESCENT: isolated factor orbits carry no composition law",
-     nmov > 0,
-     "%d of %d stride pairs: U2 and U2 D are in the SAME boundary orbit "
-     "(the switching is built) yet B(U2 D U1) != B(U2 U1).  A SHARED-BOUNDARY "
-     "phase frame is therefore required" % (nmov, ntot), "[W2]")
+        if (same_orbit and moved) != dmoved:
+            ndis += 1
+gate("G3.0", "NO-DESCENT — and it IS G0.9's measurement, identified",
+     nmov > 0 and nsame == ntot and ndis == 0 and nmov == UNCOMP,
+     "same-boundary-orbit(U2, U2 D) holds in %d of %d — identically; the "
+     "no-descent predicate and G0.9's Delta^B predicate agree on all %d "
+     "(0 disagreements) and return the same %d.  ONE measurement, read twice: "
+     "isolated factor orbits carry no composition law, so a SHARED-BOUNDARY "
+     "phase frame is required" % (nsame, ntot, ntot, nmov), "[W2]")
 print()
 print("  THE COMMITTED MINIMAL MIXED CANDIDATE — the cut-coherence tensor:")
 print("     w_k^{ij}      = (U2)_{ik} (U1)_{kj}")
@@ -1791,7 +1982,19 @@ print("      forces |w'| = |w| entrywise; the off-diagonal forces")
 print("      w'_k / w_k to be independent of k, = phi_ij.  Writing")
 print("      a_ik = (U2')_ik/(U2)_ik and b_kj = (U1')_kj/(U1)_kj we get")
 print("      a_ik b_kj = phi_ij for all k — the SAME functional equation as")
-print("      G0.6 — hence a_ik = alpha_i / c_k, b_kj = c_k beta_j.  So")
+print("      G0.6 — hence a_ik = alpha_i / c_k, b_kj = c_k beta_j.")
+print("      THE MODULI STEP, and it is UNITARITY that supplies it.  The")
+print("      diagonal alone gives only |a_ik| |b_kj| = 1, which does NOT make")
+print("      the three diagonals unimodular — it leaves a free positive")
+print("      rescaling.  Write the diagonal identity as")
+print("        B(U2')_ik B(U1')_kj = B(U2)_ik B(U1)_kj  for all i, j, k;")
+print("      at full path support every factor is positive, so")
+print("      B(U2')_ik / B(U2)_ik = r_k is independent of i.  Both U2 and U2'")
+print("      are unitary, so both Born shadows are DOUBLY STOCHASTIC (W2")
+print("      sec.3's committed structure), and summing the k-th column gives")
+print("      1 = r_k . 1, i.e. r_k = 1.  Hence |a_ik| = |b_kj| = 1, |c_k| is")
+print("      constant, and absorbing that constant into alpha and beta makes")
+print("      D_alpha, D_c, D_beta UNIMODULAR.  So")
 print("      (U2',U1') = (D_alpha U2 D_c^{-1}, D_c U1 D_beta): outer")
 print("      boundary plus COMPENSATED CUT, exactly the declared gauge.")
 print("      QED.  (Lattice reading: at full support Gamma contains the")
@@ -1935,42 +2138,195 @@ def seam8_vectors(S2, S1, n, lab):
     return out
 
 
+def _vecd(*pairs):
+    v = {}
+    for t, s in pairs:
+        if t is None:
+            return None
+        v[t] = v.get(t, 0) + s
+    return {a: b for a, b in v.items() if b}
+
+
+def four_cycle_kinds(lab, S2, S1, n):
+    """The three kinds of 4-cycle of Gamma, built explicitly: pure-U2,
+    pure-U1, and SEAM.  Kept separate because the PINNED reading of W7-1
+    replaces the first two by the factors' FULL cycle lattices."""
+    ix = {t: m for m, t in enumerate(lab)}
+
+    def e2(i, k):
+        return ix.get(('2', i, k))
+
+    def e1(k, j):
+        return ix.get(('1', k, j))
+    p2, p1, sm = [], [], []
+    for i, i2 in itertools.combinations(range(n), 2):
+        for k, k2 in itertools.combinations(range(n), 2):
+            if S2[i][k] and S2[i][k2] and S2[i2][k] and S2[i2][k2]:
+                p2.append(_vecd((e2(i, k), 1), (e2(i2, k), -1),
+                                (e2(i2, k2), 1), (e2(i, k2), -1)))
+    for k, k2 in itertools.combinations(range(n), 2):
+        for j, j2 in itertools.combinations(range(n), 2):
+            if S1[k][j] and S1[k][j2] and S1[k2][j] and S1[k2][j2]:
+                p1.append(_vecd((e1(k, j), 1), (e1(k2, j), -1),
+                                (e1(k2, j2), 1), (e1(k, j2), -1)))
+    for i in range(n):
+        for j in range(n):
+            for k, k2 in itertools.combinations(range(n), 2):
+                if S2[i][k] and S1[k][j] and S2[i][k2] and S1[k2][j]:
+                    sm.append(_vecd((e2(i, k), 1), (e1(k, j), 1),
+                                    (e1(k2, j), -1), (e2(i, k2), -1)))
+    return p2, p1, sm
+
+
+def factor_cycles(S, n, off):
+    """A Z-BASIS of the FULL cycle lattice of ONE factor's own bipartite
+    support graph, embedded in Z(Gamma) by the global edge indexing.  This is
+    what W7-1 actually pins — a cycle basis of G(U), not only its 4-cycles —
+    and at a general support it can exceed the 4-cycles."""
+    edges, loc = [], []
+    for a in range(n):
+        for b in range(n):
+            if S[a][b]:
+                loc.append(off + len(edges))
+                edges.append((a, n + b, 1))
+    g = Gain(IntEdge, 2 * n, edges)
+    return [{loc[i]: c for i, c in v.items()} for v in g.cycle_vectors()]
+
+
+def has_total_support(S, n):
+    """Birkhoff-von Neumann necessary condition for unitary realizability: if
+    U is unitary then B(U) is doubly stochastic with exactly this support, so
+    every 1 of S must lie on a permutation contained in S ('total support')."""
+    perms = [p for p in itertools.permutations(range(n))
+             if all(S[i][p[i]] for i in range(n))]
+    if not perms:
+        return False
+    cov = {(i, p[i]) for p in perms for i in range(n)}
+    return all((i, j) in cov for i in range(n) for j in range(n) if S[i][j])
+
+
+def in_span_int(v, rows):
+    """Is the integer vector v in the Z-span of `rows`?  Exact: the span is
+    enlarged iff the elementary divisors change."""
+    if not rows:
+        return all(x == 0 for x in v)
+    d0 = snf_divisors([list(r) for r in rows])
+    d1 = snf_divisors([list(r) for r in rows] + [list(v)])
+    return d0 == d1
+
+
 SCOPE = []
+BIRK = {}
+PINF = {}
+PHIW = []
+phi_all = True
+kinds_agree = True
 for n in (2, 3, 4):
     S = all_admissible(n)
+    BIRK[n] = (len(S), sum(1 for x in S if has_total_support(x, n)))
     r2 = sorted({canon(x, n, True, True) for x in S})
     r1 = sorted({canon(x, n, False, True) for x in S})
     gaps4 = []
     gaps8 = 0
+    npin = 0
     tot = 0
     maxmu = 0
+    ts_fail = 0
     for a in r2:
         for b in r1:
             tot += 1
             g, lab = gamma_support(a, b, n)
             maxmu = max(maxmu, g.mu)
             f4 = [v for v, _ in g.four_cycles()]
-            if generates(g, f4):
+            ok4 = generates(g, f4)
+            p2, p1, sm = four_cycle_kinds(lab, a, b, n)
+            if generates(g, p2 + p1 + sm) != ok4:
+                kinds_agree = False
+            # THE PINNED READING: the factors' FULL cycle lattices + seam 4s
+            n2e = sum(sum(r) for r in a)
+            LP = factor_cycles(a, n, 0) + factor_cycles(b, n, n2e) + sm
+            if not generates(g, LP):
+                npin += 1
+            if ok4:
                 continue
             gaps4.append((a, b, g.mu, len(snf_divisors([g.coords(v)
                                                         for v in f4]))))
+            if has_total_support(a, n) and has_total_support(b, n):
+                ts_fail += 1
             if not generates(g, f4 + seam8_vectors(a, b, n, lab)):
                 gaps8 += 1
+            # THE phi-CRITERION: an uncompensated cut U2 -> U2 D preserves
+            # unitarity, support and moduli for EVERY unitary pair with this
+            # support, fixes every L_4 holonomy, and moves the holonomy of a
+            # cycle z by prod_k d_k^{phi(z)_k}.  So the gap is REALIZED by an
+            # actual unitary pair iff phi(Z(Gamma)) is not inside phi(L_4).
+            def phi(vd, _lab=lab, _n=n):
+                out = [0] * _n
+                for m, t in enumerate(_lab):
+                    if t[0] == '2':
+                        out[t[2]] += vd.get(m, 0)
+                return out
+            phiL4 = [phi(v) for v in f4]
+            wit = None
+            for z in g.cycle_vectors():
+                pz = phi(z)
+                if not in_span_int(pz, phiL4):
+                    wit = pz
+                    break
+            if wit is None:
+                phi_all = False
+            else:
+                PHIW.append(wit)
+    PINF[n] = (npin, ts_fail)
     SCOPE.append((n, len(S), len(r2), len(r1), tot, len(gaps4), gaps8, maxmu,
                   gaps4))
     tick("G3.11 n=%d support-class sweep (%d Gamma classes)" % (n, tot))
-for (n, ns, a2, a1, tot, g4, g8, mm, _) in SCOPE:
-    gate("G3.11", "L_4 = Z(Gamma) on every support class [n=%d]" % n,
-         (g4 == 0) if n <= 3 else True,
-         "%d admissible patterns; %d S2-classes x %d S1-classes = %d Gamma "
-         "classes; max mu = %d; 4-cycle FAILURES = %d"
-         % (ns, a2, a1, tot, mm, g4))
+for (n, ns, a2, a1, tot, g4, g8, mm, gl) in SCOPE:
+    if n <= 3:
+        gate("G3.11", "L_4 = Z(Gamma) on every support class [n=%d]" % n,
+             g4 == 0,
+             "%d admissible patterns; %d S2-classes x %d S1-classes = %d "
+             "Gamma classes; max mu = %d; 4-cycle FAILURES = %d"
+             % (ns, a2, a1, tot, mm, g4))
 n4 = [s for s in SCOPE if s[0] == 4][0]
 gate("G3.11", "AND AT n = 4 IT FAILS: 4-cycles do NOT generate",
-     n4[5] > 0,
-     "%d of %d Gamma classes at n = 4 have a 4-cycle sublattice of rank "
-     "mu - 1: a genuine long-cycle invariant that NEITHER the factor "
-     "holonomies NOR C can see" % (n4[5], n4[4]))
+     n4[5] == 7 and all(r == mu - 1 for (_, _, mu, r) in n4[8]),
+     "%d admissible patterns; %d S2-classes x %d S1-classes = %d Gamma "
+     "classes; max mu = %d; 4-cycle FAILURES = %d, and the rank deficit is "
+     "EXACTLY 1 in every one of them (mu = %s against rank(L_4) = %s): a "
+     "genuine long-cycle invariant that NEITHER the factor holonomies NOR C "
+     "can see" % (n4[1], n4[2], n4[3], n4[4], n4[7], n4[5],
+                  [mu for (_, _, mu, _) in n4[8]],
+                  [r for (_, _, _, r) in n4[8]]))
+
+# ---- what the FAILURE COUNT survives: two attacks that do not move it ----
+gate("G3.11", "the PINNED reading — factors' FULL cycle lattices — same count",
+     PINF[2][0] == 0 and PINF[3][0] == 0 and PINF[4][0] == n4[5]
+     and kinds_agree,
+     "W7-1 pins a cycle BASIS of each factor's support graph, which at a "
+     "general support exceeds its 4-cycles.  Re-running the whole sweep with "
+     "the two FULL factor cycle lattices adjoined to the seam 4-cycles: "
+     "failures %d / %d / %d at n = 2 / 3 / 4 — the same seven, and still none "
+     "below n = 4.  The gap is not an artefact of reading the pinned datum as "
+     "4-cycles only" % (PINF[2][0], PINF[3][0], PINF[4][0]))
+gate("G3.11", "the BIRKHOFF/total-support filter does not move it either",
+     BIRK[4][0] - BIRK[4][1] > 0 and PINF[4][1] == n4[5],
+     "the declared scope is a NECESSARY condition, hence a superset: at n = 4 "
+     "the Birkhoff-von Neumann total-support test (B(U) doubly stochastic "
+     "with the same support forces every 1 onto a contained permutation) "
+     "proves %d of the %d admissible patterns NON-REALIZABLE.  All %d failing "
+     "classes have total support on BOTH legs, so none of them is a "
+     "superset artefact" % (BIRK[4][0] - BIRK[4][1], BIRK[4][0], PINF[4][1]))
+gate("G3.11", "the phi-CRITERION: the gap is REALIZED in all seven classes",
+     phi_all and len(PHIW) == n4[5],
+     "an uncompensated cut U2 -> U2 D preserves unitarity, support and moduli "
+     "for EVERY unitary pair with the given support, fixes every L_4 holonomy "
+     "and moves a cycle z by prod_k d_k^{phi(z)_k} with phi(z)_k = sum_i "
+     "z_{e2(i,k)}; so the gap is realized by an actual unitary pair iff "
+     "phi(Z(Gamma)) is NOT contained in phi(L_4).  It is not, in %d of %d "
+     "classes — witness phi-images %s.  The FORWARD direction of the main "
+     "theorem therefore holds at every n <= 4 failing class, not at one "
+     "(the hostile round's construction)" % (len(PHIW), n4[5], PHIW))
 
 # ------------- the exact unitary witness for the n=4 no-go -------------
 print()
@@ -2023,9 +2379,25 @@ gate("G3.12", "and the SAME cut-coherence tensor C",
      Ctensor(K8, U2W, U1W) == Ctensor(K8, U2Wp, U1W),
      "every block, every entry — C is blind because there is one live path "
      "per endpoint pair")
-gate("G3.12", "and the same relation-loop data (no relation loop exists)",
-     True, "neither pair generates a projective family: the relation-loop "
-     "sector is empty here, so W7-2's beta contributes nothing", "[W2]")
+def is_scalar(K, M):
+    s = M[0][0]
+    return meq(K, M, [[s if i == j else K.zero for j in range(len(M[0]))]
+                      for i in range(len(M))])
+
+
+def relation_loop(K, A, B):
+    return mmul(K, mmul(K, A, B), mmul(K, mdag(K, A), mdag(K, B)))
+
+
+RL1 = relation_loop(K8, U2W, U1W)
+RL2 = relation_loop(K8, U2Wp, U1W)
+gate("G3.12", "and the relation-loop sector is EMPTY here — checked, not "
+     "assumed", (not is_scalar(K8, RL1)) and (not is_scalar(K8, RL2)),
+     "beta(g,h) exists only when the group commutator is a SCALAR multiple "
+     "of the identity.  For both pairs the commutator U2 U1 U2^dag U1^dag is "
+     "computed exactly and is NOT scalar, so no relation-loop phase is "
+     "defined for either: W7-2's beta genuinely contributes nothing here, "
+     "rather than contributing the same thing to both", "[W2]")
 COMP, COMPP = mmul(K8, U2W, U1W), mmul(K8, U2Wp, U1W)
 gate("G3.12", "and the same composite MODULI", meq(K8, mB(K8, COMP),
                                                    mB(K8, COMPP)),
@@ -2039,6 +2411,14 @@ gate("G3.12", "BUT THE COMPOSITES ARE IN DIFFERENT GAUGE ORBITS",
      and switching_between(K8, COMP, COMPP) is None,
      "H_{02;02}(U2 U1) = 1/16 and H_{02;02}(U2' U1) = -zeta_8^3/16; the "
      "ratio is zeta_8^7, a primitive 8th root, and no switching exists")
+gate("G3.12", "the ABSOLUTE value H_{02;02}(U2 U1) = 1/16, exactly",
+     h1 == K8.rat(Fr(1, 16)),
+     "the invariant itself, not only the ratio: a rational element of "
+     "Q(zeta_8)")
+gate("G3.12", "the ABSOLUTE value H_{02;02}(U2' U1) = -zeta_8^3/16, exactly",
+     h2 == K8.mul(K8.rat(Fr(-1, 16)), K8.zpow(3)),
+     "the invariant itself, not only the ratio: a primitive-8th-root multiple "
+     "of 1/16, so the two composites' 4-cycle holonomies differ in the field")
 gate("G3.12", "the ratio of the composite Haagerup invariants is zeta_8^7",
      ratio == K8.zpow(7), "exact in Q(zeta_8)")
 gate("G3.12", "both pairs are Delta^B-FLAT: the defect cannot see it either",
@@ -2057,13 +2437,21 @@ print("        Gc_{(ijk),(i'j'k')} = w_k^{ij} conj(w_{k'}^{i'j'}),")
 print("      a rank-one PSD form on the set of live paths.  What C discards")
 print("      is exactly Gc's CROSS-BLOCK entries — the coherences between")
 print("      different endpoint pairs.  Those are not individually gauge-")
-print("      invariant (they carry d_i e_j conj(d_i') conj(e_j')), and their")
-print("      minimal invariant combination is the quadruple")
+print("      invariant (they carry d_i e_j conj(d_i') conj(e_j')), and the")
+print("      LOWEST-DEGREE gauge-invariant combination of them is the")
+print("      quadruple")
 print("        Kc^{(ii';jj')}_{kl;k'l'}")
 print("          = w_k^{ij} conj(w_l^{i'j}) w_{k'}^{i'j'} conj(w_{l'}^{ij'}),")
 print("      whose gauge factors telescope around the 8-cycle")
-print("      i-k-j-l-i'-k'-j'-l'-i of Gamma.  Summing Kc over k, l, k', l'")
-print("      returns the composite's own Haagerup invariant H_{ii';jj'}.")
+print("      i-k-j-l-i'-k'-j'-l'-i of Gamma.")
+print("      NO MINIMALITY AS A COMPLETION IS CLAIMED.  Each failing class has")
+print("      rank deficit EXACTLY 1 (G3.11), so ONE further cycle per class")
+print("      would already suffice; Kc is a SUFFICIENT, uniformly definable")
+print("      choice — one formula for every support — not a minimal one.")
+print("      Summing Kc over k, l, k', l' returns the composite's own")
+print("      Haagerup invariant H_{ii';jj'}; that identity is a DERIVATION")
+print("      TARGET, gated below, not an assumption: Kc is built from FACTOR")
+print("      path amplitudes alone and the composite is never consulted.")
 
 
 def Kdatum(K, U2, U1, i, i2, j, j2, k, l, k2, l2):
@@ -2103,24 +2491,133 @@ for t in itertools.product(range(4), repeat=4):
         break
 gate("G3.13", "Kc SEPARATES the no-go witness that C could not", sep is not None,
      "first separating index tuple (i,i',j,j',k,l,k',l') = %s" % (sep,))
+# NO-SMUGGLING, gated: sum Kc = the composite's own Haagerup invariant.  Kc is
+# defined from FACTOR path amplitudes only; the identity is a derivation
+# target, and it is measured, not asserted.
+sumok = True
+nsum = 0
+for (A2, A1, KK, nn) in ((U2W, U1W, K8, 4), (U2Wp, U1W, K8, 4)):
+    M = mmul(KK, A2, A1)
+    for i, i2 in itertools.combinations(range(nn), 2):
+        for j, j2 in itertools.combinations(range(nn), 2):
+            acc = KK.zero
+            for k in range(nn):
+                for l in range(nn):
+                    for k2 in range(nn):
+                        for l2 in range(nn):
+                            acc = KK.add(acc, Kdatum(KK, A2, A1, i, i2, j, j2,
+                                                     k, l, k2, l2))
+            nsum += 1
+            if acc != haagerup(KK, M, i, i2, j, j2):
+                sumok = False
+for U2 in stride(FAM2L, 8):
+    for U1 in stride(FAM2L, 8):
+        M = mmul(K8, U2, U1)
+        acc = K8.zero
+        for k in range(2):
+            for l in range(2):
+                for k2 in range(2):
+                    for l2 in range(2):
+                        acc = K8.add(acc, Kdatum(K8, U2, U1, 0, 1, 0, 1,
+                                                 k, l, k2, l2))
+        nsum += 1
+        if acc != haagerup(K8, M, 0, 1, 0, 1):
+            sumok = False
+gate("G3.13", "NO SMUGGLING: sum Kc = the COMPOSITE's Haagerup invariant",
+     sumok,
+     "sum over k, l, k', l' of Kc^{(ii';jj')} equals H_{ii';jj'}(U2 U1) in "
+     "all %d checked index quadruples (both n = 4 witness pairs, all 36 "
+     "quadruples each, plus 64 committed 2x2 pairs).  Kc is built from FACTOR "
+     "path amplitudes ALONE — the composite is never read — so the identity "
+     "is DERIVED, and it is exactly why adjoining Kc can restore what the "
+     "composite carries" % nsum)
 for (n, ns, a2, a1, tot, g4, g8, mm, _) in SCOPE:
     gate("G3.13", "L_4 + Kc's 8-cycles = Z(Gamma) on every class [n=%d]" % n,
          g8 == 0,
          "%d Gamma classes; 4-cycle gaps %d, ALL CLOSED by adjoining Kc "
          "(remaining gaps %d)" % (tot, g4, g8))
+
+# ---------------- a DECLARED STRIDED SAMPLE AT n = 5 ----------------
+print()
+print("G3.14 A DECLARED STRIDED SAMPLE AT n = 5.  The n <= 4 sweeps above are")
+print("      EXHAUSTIVE over the declared admissible scope; n = 5 is not")
+print("      (2^25 patterns).  The declared sample: list the 120 permutations")
+print("      of 5 in lexicographic order, take the stride-3 subsequence (40")
+print("      of them), form every union of 2, 3 and 4 of those 40, keep the")
+print("      patterns passing the same NECESSARY condition, and reduce modulo")
+print("      row-and-column permutations (S2) and column permutations (S1).")
+print("      This is a SAMPLE, declared and deterministic; it is not a sweep,")
+print("      and the general-n statement stays open either way.")
+N5 = 5
+P5 = sorted(itertools.permutations(range(N5)))
+SEL5 = [P5[i] for i in range(0, len(P5), 3)]
+CAND5 = set()
+for r in (2, 3, 4):
+    for ps in itertools.combinations(SEL5, r):
+        Sp = tuple(tuple(1 if any(p[i] == j for p in ps) else 0
+                         for j in range(N5)) for i in range(N5))
+        if uni_necessary(Sp, N5):
+            CAND5.add(Sp)
+CAND5 = sorted(CAND5)
+R25 = sorted({canon(x, N5, True, True) for x in CAND5})
+R15 = sorted({canon(x, N5, False, True) for x in CAND5})
+tick("G3.14 n=5 declared sample built (%d patterns)" % len(CAND5))
+f5 = c5 = t5 = mm5 = 0
+open5 = 0
+for a in R25:
+    for b in R15:
+        t5 += 1
+        g, lab = gamma_support(a, b, N5)
+        mm5 = max(mm5, g.mu)
+        p2, p1, sm = four_cycle_kinds(lab, a, b, N5)
+        L4v = p2 + p1 + sm
+        if generates(g, L4v):
+            continue
+        f5 += 1
+        if generates(g, L4v + seam8_vectors(a, b, N5, lab)):
+            c5 += 1
+        else:
+            open5 += 1
+tick("G3.14 n=5 declared sample swept (%d Gamma classes)" % t5)
+gate("G3.14", "n = 5, DECLARED SAMPLE: the criterion keeps failing",
+     f5 > 0,
+     "%d patterns -> %d S2-classes x %d S1-classes = %d Gamma classes; max "
+     "mu = %d; L_4 = Z(Gamma) FAILS on %d of them.  A sample, not a sweep: it "
+     "shows the n = 4 phenomenon is not an n = 4 accident, and it does not "
+     "close the general-n question" % (len(CAND5), len(R25), len(R15), t5,
+                                       mm5, f5))
+gate("G3.14", "n = 5, DECLARED SAMPLE: Kc still closes every gap found",
+     open5 == 0 and c5 == f5,
+     "adjoining Kc's 8-cycles closes %d of the %d failures, %d left open"
+     % (c5, f5, open5))
 print()
 print("  ==> THE MAIN THEOREM: NO-GO, WITH THE MISSING SEAM DATUM NAMED.")
-print("      (cycle holonomies + relation loops + C) is INCOMPLETE for")
-print("      two-step composition up to the declared gauge.  It is complete")
-print("      exactly when the 4-cycles of Gamma generate its cycle lattice —")
-print("      proved unconditionally at full support (G3.10), gated at every")
-print("      admissible support class for n = 2 and n = 3, and FALSE at")
-print("      n = 4, with an exact unitary witness whose composite carries a")
-print("      phase the whole pinned signature — and the whole Delta^B-family")
-print("      — cannot see (G3.12).  The missing datum is the CROSS-BLOCK")
-print("      content of the path-amplitude Gram form Gc, minimally carried")
-print("      by Kc; adjoining it restores completeness at the full declared")
-print("      scope (G3.13).")
+print("      TWO COMPLETENESS QUESTIONS, KEPT APART.")
+print("      (i) PAIR-completeness — does the signature determine the PAIR")
+print("      (U2, U1) up to the declared gauge?  (cycle holonomies +")
+print("      relation loops + C) is complete for the pair EXACTLY WHEN the")
+print("      4-cycles of Gamma generate its cycle lattice, L_4 = Z(Gamma).")
+print("      (<=) is the switching reconstruction: the pinned signature spans")
+print("      L_4 (G3.9), and holonomies on a cycle basis are complete at")
+print("      fixed moduli (G1.3, G3.8).  It holds unconditionally at full")
+print("      support (G3.10) and at every admissible support class for n = 2")
+print("      and n = 3 (G3.11).  (=>) is the phi-criterion (G3.11): where")
+print("      L_4 != Z(Gamma) the gap is REALIZED — by an uncompensated cut,")
+print("      for every unitary pair with that support — at ALL SEVEN failing")
+print("      n = 4 classes, not merely at one; a declared n = 5 sample finds")
+print("      the failure again (G3.14).")
+print("      (ii) COMPOSITE-completeness — does the signature determine the")
+print("      COMPOSITE's gauge orbit?  This is STRICTLY STRONGER and is not")
+print("      settled by (i): two pairs may differ and still have")
+print("      gauge-equivalent composites.  It is REFUTED at ONE class, by the")
+print("      exact unitary witness of G3.12, whose two pairs share the whole")
+print("      pinned signature and the whole Delta^B-family yet whose")
+print("      composites lie in different boundary orbits.")
+print("      THE MISSING DATUM is the CROSS-BLOCK content of the")
+print("      path-amplitude Gram form Gc, carried by Kc — a sufficient,")
+print("      uniformly definable choice, not a minimal one; adjoining it")
+print("      restores L_4 + Kc = Z(Gamma) at the full declared scope, and on")
+print("      the n = 5 sample too (G3.13, G3.14).")
 print()
 
 # ============================================================================
@@ -2292,11 +2789,18 @@ for U2 in FOUR:
             acc_blind += 1
             if not record_exists(K16, U2, U1):
                 no_record += 1
-nblk4 = nnorec4 = 0
+nblk4 = nnorec4 = ndeg4 = nex4 = 0
 BLK = [embed4(K8, A, B, R2, C2) for A in TWO for B in TWO]
 BLK1 = [embed4(K8, A, B, R1, C1) for A in TWO for B in TWO]
 for U2 in BLK:
     for U1 in BLK1:
+        lv = [sum(1 for k in range(4)
+                  if not K8.is_zero(K8.mul(U2[i][k], U1[k][j])))
+              for i in range(4) for j in range(4)]
+        if all(x <= 1 for x in lv):
+            ndeg4 += 1
+        if all(x == 1 for x in lv):
+            nex4 += 1
         if C_offdiag_count(K8, U2, U1) == 0:
             nblk4 += 1
             if not record_exists(K8, U2, U1):
@@ -2307,8 +2811,16 @@ gate("G4.5", "MEASURED NEGATIVE: on the committed unitary families, a fully "
      "diagonal C; in 0 of either does W3''s criterion fail to find a record "
      "structure.  This AGREES with W3''s own sharpness result (318 of 318 on "
      "unitary-realizable supports at n = 3) and disagrees with the abstract "
-     "support count (5490 of 94746) — unitarity is doing the work"
-     % (acc_blind, len(FOUR) ** 2, nblk4, len(BLK) * len(BLK1)), "[W3']")
+     "support count (5490 of 94746) — unitarity is doing the work.  "
+     "DEGENERACY DISCLOSED: all %d of the %d block-4 pairs carry AT MOST ONE "
+     "live path per endpoint pair BY CONSTRUCTION (%d of them exactly one, "
+     "the rest with vanishing paths too), so their fully diagonal C is forced "
+     "by the block pattern and that census is ONE degeneracy repeated, not "
+     "%d independent instances; the informative instances are the %d of %d "
+     "dim-4 pairs"
+     % (acc_blind, len(FOUR) ** 2, nblk4, len(BLK) * len(BLK1),
+        ndeg4, len(BLK) * len(BLK1), nex4, len(BLK) * len(BLK1),
+        acc_blind, len(FOUR) ** 2), "[W3']")
 gate("G4.5", "THE LIMIT OF RECORD DESCENT: a record does NOT make the "
      "composite phase-trivial",
      record_exists(K8, U2W, U1W) and C_offdiag_count(K8, U2W, U1W) == 0
@@ -2370,14 +2882,23 @@ OUT.append(("W7-NO-RECORD-BRIDGE", False,
             "record hypotheses, splitting their roles, with the eraser "
             "control restoring the off-diagonal blocks."))
 OUT.append(("W7-BARGMANN-INSUFFICIENT", False,
-            "DOES NOT OBTAIN for the declared loop family AS A WHOLE — beta "
-            "clears the W2 collapse anchors (G2.2, G2.3).  It DOES obtain "
-            "for the single-arrow Bargmann/Haagerup layer taken alone, "
-            "which is the previous outcome."))
+            "DOES NOT OBTAIN.  The pre-registered condition is that THE "
+            "ENTIRE DECLARED LOOP FAMILY fails the W2 collapse anchors.  It "
+            "does not: beta clears them at every N = 2..6, separating all N "
+            "classes (G2.2, G2.3).  That is the whole of the pinned binary, "
+            "and it is answered NO."))
 for nm, holds, txt in OUT:
     print("   %-32s %s" % (nm, "OBTAINS" if holds else "does not obtain"))
     for ln in [txt[i:i + 66] for i in range(0, len(txt), 66)]:
         print("        %s" % ln)
+print()
+print("  REMARK (not part of any pre-registered outcome's answer).  The")
+print("  single-arrow Bargmann/Haagerup LAYER, taken alone, is insufficient:")
+print("  on a monomial support mu = 0 and it carries nothing (G1.6, G2.1),")
+print("  which is why W7-2's relation loops are in the signature at all.")
+print("  That is an observation about one layer, not the pinned outcome; the")
+print("  pinned outcome quantifies over the declared loop family as a whole")
+print("  and is answered above.")
 print()
 print("  O2's FOUR EARNING CONDITIONS:")
 E1 = G0 and G1 and G2 and G3
@@ -2421,9 +2942,10 @@ print("  WHAT W7 DOES NOT DELIVER, stated plainly:")
 print("   * the pinned triple is NOT complete — the no-go is this unit's")
 print("     main theorem, and n = 4 is where it bites;")
 print("   * completeness of the COMPLETED signature is gated at a declared")
-print("     finite scope (all admissible support classes, n <= 4) and proved")
-print("     unconditionally only at full support; the general-n statement is")
-print("     open;")
+print("     finite scope (all admissible support classes, n <= 4, plus a")
+print("     declared strided n = 5 SAMPLE) and proved unconditionally only at")
+print("     full support; the general-n statement is open, and so is the")
+print("     exhaustive n = 5 statement;")
 print("   * no ontological conclusion is drawn.  O2 gains a referent that")
 print("     meets its four conditions in the scoped forms above; whether")
 print("     that referent is LAW rather than surplus representation is not")
