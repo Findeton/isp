@@ -1,0 +1,213 @@
+==============================================================================
+v12 W6 -- RECORD CO-REFERENCE AND EFFECTIVE DESCENT
+exact arithmetic: Q(zeta_8) and Q(cos pi/8); no floats
+==============================================================================
+--------------------------------------------------------------------------
+STEP 0 -- THE REFERENT CENSUS
+--------------------------------------------------------------------------
+  object 1: chart-local record algebra R_a -- LOCATED and typed    [0.0s]
+  object 6: the discriminator |Phi| -- CONSTRUCTED                 [0.0s]
+--------------------------------------------------------------------------
+M1 -- RELABELLED SAME RECORD  (control 1)
+--------------------------------------------------------------------------
+  M1 done                                                          [0.0s]
+--------------------------------------------------------------------------
+M2 -- REDUNDANT COPIES  (control 2)
+--------------------------------------------------------------------------
+  M2 isomorphism search over 8! permutations  0.0s                 [0.0s]
+  M2 done                                                          [0.1s]
+--------------------------------------------------------------------------
+M3 / M4 / M7 -- THE COMMITTED TWO-FRAME BELL STRUCTURE
+--------------------------------------------------------------------------
+  twelve committed charts built                                    [0.3s]
+  frame structure measured                                         [0.5s]
+  M3 fact level measured: 56 agreeing pairs, |Phi_A| = 2 on each   [0.5s]
+  M3 frame-isomorphisms measured (amplitude and Born levels)       [0.5s]
+  token-overlap graph measured over 144 ordered pairs  0.0s        [0.5s]
+  M3 layer analysis measured (what grounds the wing labelling)     [0.6s]
+  M7 accidental agreement measured inside the committed model      [0.6s]
+  M4 intermediate content measured                                 [0.6s]
+  M3 descent measured                                              [0.7s]
+--------------------------------------------------------------------------
+M5 -- RECORD ERASURE  (control 5)
+--------------------------------------------------------------------------
+  M5 done                                                          [0.7s]
+--------------------------------------------------------------------------
+M6 -- SYMMETRIC DUPLICATE  (control 6)
+--------------------------------------------------------------------------
+  M6 isomorphism search over 8! permutations  0.0s                 [0.7s]
+  M6 done                                                          [1.2s]
+--------------------------------------------------------------------------
+M8 -- PHASE IS NOT A CRITERION  (declared addition)
+--------------------------------------------------------------------------
+  M8 done                                                          [1.3s]
+--------------------------------------------------------------------------
+M9 -- DESCENT DETECTOR VALIDATION  (declared addition)
+--------------------------------------------------------------------------
+  M9 done                                                          [1.3s]
+==========================================================================
+THE DESCENT TABLE
+==========================================================================
+  model                        A (fact)             B (event token)            C (effective descent)                         
+--------------------------------------------------------------------------
+  M1 relabelled same record    SUCCEEDS-FORCED      SUCCEEDS-FORCED            SET-AMALGAM                                   
+      gauge acts trivially on the record algebra
+  M2 redundant copies          SUCCEEDS-FORCED      FAILS-ABSENT               SET-AMALGAM (fact level); token level has no edges
+      one fact, two tokens: exactly the pin's demand
+  M3 two-frame final outcomes  SUCCEEDS (|Phi_A|=2) SUCCEEDS-FORCED (|Phi_B|=1) SET-AMALGAM at level B                        
+      fact-candidate map exists on exactly the 56 law-agreeing ordered pairs of 144; the wing tie is broken by provenance
+  M4 intermediate frame content NOT FORCED (overlap trivial) FAILS-ABSENT               vacuous (no shared token)                     
+      a probability-preserving map exists and is REJECTED: frame-relativity respected
+  M7 accidental agreement      FAILS ROUTE-EXT      FAILS-ABSENT               N/A                                           
+      SP-A and SP-C: same final law, different settings; the product extension is not bijection-supported
+  M5 record erasure            AVAILABILITY-SPLIT   FAILS-ABSENT               N/A (no triple)                               
+      erased token != no event: historical counts 1,1,0
+  M6 symmetric duplicate       SUCCEEDS-FORCED      UNDERDETERMINED (|Phi|=2)  GROUPOID-AMALGAM                              
+      the tie survives every committed observable AND the phase invariants
+  M8 phase blindness           SUCCEEDS-FORCED      N/A                        N/A (criterion test)                          
+      a phase-consulting phi returns 0 where the record level returns 1: category error, measured
+  M9 detector validation       N/A                  N/A                        NO-DESCENT (twisted) / SET-AMALGAM (consistent)
+      the triple law has power: the SAME charts descend or fail by the declaration alone
+--------------------------------------------------------------------------
+==========================================================================
+RECEIPTS -- W6 -- record co-reference and effective descent
+==========================================================================
+  ok   ANCHOR census/record H-corr  [sec4_records.py:198]                             True
+  ok   ANCHOR census/record H-avail [sec4_records.py:199]                             True
+  ok   GATE   census/record algebra atoms                                             [('0',), ('1',)]
+  ok   GATE   census/record algebra law                                               ['1/2', '1/2']
+  ok   GATE   census/record occurred                                                  True
+  ok   GATE   census/record available                                                 True
+  ok   GATE   census/self-isomorphisms of the census chart                            1
+  ok   GATE   census/Phi(a,a) at level B                                              1
+  ok   GATE   M1/law invariant under relabelling                                      (True, True)
+  ok   GATE   M1/legs actually differ                                                 (True, True)
+  ok   GATE   M1/|Phi_A| a<-b                                                         1
+  ok   GATE   M1/|Phi_B| a<-b                                                         1
+  ok   GATE   M1/ROUTE-EXT perfect value-correlation                                  (True, 2, True)
+  ok   GATE   M1/Phi sets inverse-closed                                              True
+  ok   GATE   M1/identity is in every Aut set                                         True
+  ok   GATE   M1/descent verdict                                                      'SET-AMALGAM'
+  ok   GATE   M1/coherent families, orbits                                            (1, 1)
+  ok   GATE   M1/triples tested per family                                            6
+  ok   GATE   M1/amalgam size, injective                                              (1, True)
+  ok   GATE   M2/both tokens occurred                                                 (True, True)
+  ok   GATE   M2/both tokens available                                                (True, True)
+  ok   GATE   M2/identical record laws                                                True
+  ok   GATE   M2/|Phi_A| a<-b                                                         1
+  ok   GATE   M2/|Phi_B| a<-b                                                         0
+  ok   GATE   M2/positive control: iso(a,a), iso(b,b)                                 (1, 1)
+  ok   GATE   M2/the swap carries R2's partition onto R1's                            True
+  ok   GATE   M2/but the swap does not fix the leg multiset                           False
+  ok   GATE   M2/ROUTE-EXT perfect value-correlation                                  (True, 2, True)
+  ok   GATE   M2/provenance differs                                                   True
+  ok   GATE   M2/lineage original vs copy                                             (('original',), ('copy-of', 'CX1'))
+  ok   GATE   M2/fact-level descent verdict                                           'SET-AMALGAM'
+  ok   GATE   M2/witness model unitary                                                True
+  ok   GATE   M2/witness model joint law                                              [('0', '0', '0'), ('1', '1', '1')]
+  ok   GATE   M2/ROUTE-WIT t1 vs witness                                              (True, 2, True)
+  ok   GATE   M2/ROUTE-WIT t2 vs witness                                              (True, 2, True)
+  ok   GATE   M2/witness identifies t1 with t2                                        True
+  ok   ANCHOR M3/local operators orthogonal [sec4_records.py:516]                     8
+  ok   ANCHOR M3/local operators commute 9/9 [sec4_records.py:524]                    9
+  ok   ANCHOR M3/U_prep orthogonal [sec4_records.py:505]                              True
+  ok   GATE   M3/T3 identical in both frames, all settings                            True
+  ok   GATE   M3/intermediate propagators differ, per setting                         [270, 270, 432, 432, 108, 432]
+  ok   GATE   M3/every setting's intermediate slices differ                           True
+  ok   GATE   M3/final-law classes                                                    [2, 4, 6]
+  ok   GATE   M3/ordered pairs with agreeing final laws                               56
+  ok   GATE   M3/ordered pairs admitting a fact-candidate map                         56
+  ok   GATE   M3/|Phi_A| on every law-agreeing pair                                   [2]
+  ok   GATE   M3/declared permutation scope size                                      72
+  ok   GATE   M3/amplitude-level frame-isomorphism token maps, per setting            [[(0, 1)], [(0, 1)], [(0, 1)], [(0, 1)], [(0, 1)], [(0, 1)]]
+  ok   GATE   M3/born-level frame-isomorphism token maps, per setting                 [[(0, 1)], [(0, 1)], [(0, 1)], [(0, 1)], [(0, 1)], [(0, 1)]]
+  ok   GATE   M3/|Phi_B| F1<-F2, per setting                                          [1, 1, 1, 1, 1, 1]
+  ok   GATE   M3/frame-isomorphisms if leg ORDER were required                        [0, 0, 0, 0, 0, 0]
+  ok   GATE   M3/|Phi_A| exceeds |Phi_B| at every setting                             True
+  ok   GATE   M3/ordered pairs admitting a frame-isomorphism                          24
+  ok   GATE   M3/cross-setting pairs admitting one                                    0
+  ok   GATE   M3/token-overlap graph: components and their sizes                      (6, [2])
+  ok   GATE   M3/committed charts in a nonvacuous triple overlap                      0
+  ok   GATE   M3/list item 3 (probabilities) bites: SP-A <- SP-B                      0
+  ok   GATE   M3/list item 1 (Boolean/atom count) bites: SP-A <- SP-E                 (4, 2, 0)
+  ok   GATE   M3/wing swap on (amplitude j0 history, Born j0 history, final law)      [(False, False, True), (False, False, True), (False, False, True), (False, False, Tru...
+  ok   GATE   M3/settings whose whole Born j0 history is wing-swap symmetric          ['SP-E', 'SP-F']
+  ok   GATE   M3/final law is wing-swap symmetric at every setting                    True
+  ok   GATE   M3/final configurations given equal probability by both frames          36
+  ok   GATE   M3/ROUTE-EXT same-setting frames                                        (True, 4, True)
+  ok   GATE   M7/SP-A and SP-C final laws agree                                       True
+  ok   GATE   M7/SP-A and SP-C are different settings                                 True
+  ok   GATE   M7/ROUTE-EXT on the product extension                                   (False, False)
+  ok   GATE   M7/positive entries in the product joint law                            16
+  ok   GATE   M7/|Phi_A| SP-A <- SP-C                                                 2
+  ok   GATE   M4/|Phi_A-candidate| intermediate SP-A                                  1
+  ok   GATE   M4/|Phi_A-candidate| intermediate SP-B                                  1
+  ok   GATE   M4/|Phi_A-candidate| intermediate SP-C                                  1
+  ok   GATE   M4/|Phi_A-candidate| intermediate SP-D                                  1
+  ok   GATE   M4/|Phi_A-candidate| intermediate SP-E                                  1
+  ok   GATE   M4/|Phi_A-candidate| intermediate SP-F                                  1
+  ok   GATE   M4/intermediate marginals both uniform                                  True
+  ok   GATE   M4/overlap subalgebra at the intermediate slice is trivial              {(0, 0)}
+  ok   GATE   M4/ROUTE-EXT A-outcome vs B-outcome at SP-A                             (False, 4, False)
+  ok   GATE   M4/ROUTE-EXT at SP-E: bijection-supported but value-reversing           (False, 2, True)
+  ok   GATE   M3/reachable-subprocess isomorphisms (size, count) per setting          [(21, 1), (21, 1), (35, 1), (35, 1), (9, 1), (27, 1)]
+  ok   GATE   M3/fact-level descent over a committed triple                           'GROUPOID-AMALGAM'
+  ok   GATE   M3/fact-level coherent families, orbits                                 (4, 1)
+  ok   GATE   M3/token-level descent over the same triple                             'SET-AMALGAM'
+  ok   GATE   M3/token-level amalgam size, injective                                  (2, True)
+  ok   ANCHOR M5/eraser H-corr holds [sec4_records.py:634]                            True
+  ok   ANCHOR M5/eraser H-avail fails [sec4_records.py:635]                           False
+  ok   ANCHOR M5/no-record H-corr fails [sec4_records.py:209]                         False
+  ok   ANCHOR M5/eraser defect values [sec4_records.py:633]                           ['-1/2', '0', '1/2']
+  ok   ANCHOR M5/preserving defect zero [sec4_records.py:632]                         True
+  ok   ANCHOR M5/eraser cross-sector tensor entries [sec7_descent.py:139]             16
+  ok   GATE   M5/eraser off-diagonal tensor entries (W6's own)                        16
+  ok   ANCHOR M5/preserving cross-sector entries [sec7_descent.py:137]                0
+  ok   GATE   M5/historical occurrence P,E,N                                          (True, True, True)
+  ok   GATE   M5/availability P,E                                                     (True, False)
+  ok   GATE   M5/erased flag P,E                                                      (False, True)
+  ok   GATE   M5/available token counts P,E,N                                         (1, 0, 0)
+  ok   GATE   M5/historical token counts P,E,N                                        (1, 1, 0)
+  ok   GATE   M5/|Phi_A(available)| E<-N                                              1
+  ok   GATE   M5/|Phi_A(historical)| E<-N                                             0
+  ok   GATE   M5/|Phi_B(historical)| E<-N                                             0
+  ok   GATE   M5/|Phi_B(historical)| P<-E                                             0
+  ok   GATE   M5/|Phi_A(historical)| P<-E                                             0
+  ok   GATE   M5/P and E carry the same record law                                    True
+  ok   GATE   M5/availability forced equal: |Phi_A(historical)| P<-E                  1
+  ok   GATE   M5/availability restored: |Phi_A(historical)| P<-E                      0
+  ok   GATE   M6/single leg unitary                                                   True
+  ok   GATE   M6/the two CNOTs commute                                                True
+  ok   GATE   M6/sigma is an automorphism of the leg (amplitudes)                     True
+  ok   GATE   M6/sigma fixes j0                                                       True
+  ok   GATE   M6/sigma preserves the Born shadow                                      True
+  ok   GATE   M6/four-cycle phase invariants preserved by sigma (784 quadruples)      (784, 0)
+  ok   GATE   M6/both tokens occurred and are available                               [(True, True), (True, True)]
+  ok   GATE   M6/joint law is the perfectly correlated pair                           [('0', '0'), ('1', '1')]
+  ok   GATE   M6/frame-isomorphism token maps                                         [(0, 1), (1, 0)]
+  ok   GATE   M6/|Phi_A| a<-b                                                         2
+  ok   GATE   M6/|Phi_B| a<-b                                                         2
+  ok   GATE   M6/no committed datum distinguishes the tokens                          True
+  ok   GATE   M6/|Aut| per chart                                                      [2, 2, 2]
+  ok   GATE   M6/Phi sets inverse-closed                                              True
+  ok   GATE   M6/identity is in every Aut set                                         True
+  ok   GATE   M6/descent verdict                                                      'GROUPOID-AMALGAM'
+  ok   GATE   M6/coherent families of 8 selections                                    4
+  ok   GATE   M6/gauge orbits on coherent families                                    1
+  ok   ANCHOR M8/limit merge classes [sec7_descent.py:239]                            [1, 1, 3, 3]
+  ok   ANCHOR M8/limit has a record structure [sec7_descent.py:240]                   True
+  ok   ANCHOR M8/limit tensor fully diagonal [sec7_descent.py:241]                    0
+  ok   ANCHOR M8/composites differ in the four-cycle invariant [sec7_descent.py:242]  True
+  ok   GATE   M8/leg Born shadows agree                                               True
+  ok   GATE   M8/composite Born shadows agree                                         True
+  ok   GATE   M8/record algebras identical                                            True
+  ok   GATE   M8/|Phi_A| a<-b (phase NOT consulted)                                   1
+  ok   GATE   M8/|Phi_A| if phase were on the preservation list                       0
+  ok   GATE   M9/consistent declaration verdict                                       'GROUPOID-AMALGAM'
+  ok   GATE   M9/twisted declaration verdict                                          'NO-DESCENT'
+  ok   GATE   M9/twisted coherent families                                            0
+  ok   GATE   M9/consistent pinning verdict                                           'SET-AMALGAM'
+  ok   GATE   M9/two families with trivial Aut                                        ('UNDERDETERMINED', 2, 2)
+  ok   GATE   M9/empty Phi on a pair                                                  'ABSENT-PAIR'
+--------------------------------------------------------------------------
+  137 rows (16 ANCHOR, 121 GATE) : 137 pass, 0 fail   [1.3s]

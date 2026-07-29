@@ -1283,3 +1283,140 @@ updated (W7 terminal → W6 in census); Non-claims updated (O2's
 clause re-scoped).  The nomological-vs-actuality reading REMAINS
 the postulate — nothing in this pass ontologizes beyond §5's
 existing commitments.
+
+## 2026-07-29 — W6 DELIVERED; ADJUDICATOR RERUN VERIFIED;
+## COMMITTED GREEN-UNREVIEWED (v12 LEDGER #35)
+The construction worker returned the full unit: 137 receipt rows
+(16 ANCHOR to committed sec4_records/sec7_descent lines, 121
+GATE), 137 pass / 0 fail, exit 0, ~1.3s; adjudicator rerun
+IDENTICAL modulo timings; exactly the three permitted files; the
+worker's falsification test (deliberately breaking an anchor →
+exit 1 with a visible FAIL) and float sweep both clean.  **THE
+CENSUS PASSES — no referent block** (the first unit of the
+descent family to clear STEP 0): record algebras LOCATED at
+committed lines, typed as Boolean algebras on ACTUAL value
+tuples (occurred/available computed, not stipulated); the
+overlap object DERIVED from the corpus's own frame declaration
+(model_composite.py:26-28), not postulated; φ as enumerated
+token bijections; the 6-item preservation list with 5 measured
+to bite independently and the 6th disclosed subsumed; the gauge
+measured to act trivially on the base; the discriminator
+|Φ| ∈ {0 absent, 1 forced, ≥2 inserted-if-named} with all three
+values realized; provenance admitted ONLY via frame-isomorphism
+(nothing compared by name — non-circular).  **THE DESCENT TABLE
+(9 models × A/B/C):** M1 relabelling SET-AMALGAM (forced both
+levels); M2 redundant copies — fact FORCED by both routes, token
+ABSENT (|Φ_B| = 0), exactly the pre-registered split; M3
+two-frame — B FORCED at all six settings (amalgam 2, injective)
+while A sits at |Φ_A| = 2 with a 56/144 candidate map (GROUPOID
+at fact level); M4 intermediate frame content NOT FORCED — a
+probability-preserving map EXISTS and is REJECTED (the
+frame-relativity respected, measurably); M5 erasure —
+availability/occurrence split realized (0 vs 1 under the
+isolation control; erased token ≠ no event); M6 symmetric
+duplicate — **GROUPOID-AMALGAM**: the tie survives every
+committed observable AND all 784 four-cycle phase invariants (4
+of 8 families coherent, 1 orbit); M7 accidental same-value
+agreement correctly FAILS route-ext (fact ≠ value, measured);
+M8 the phase rule ENFORCED measurably (|Φ_A| = 1 with phase off
+the list; 0 if it were on — the recorded-but-phased limit pair
+glues at fact level exactly as the architecture demands); M9
+synthetic detector-validation branch realizing NO-DESCENT / SET
+/ UNDERDETERMINED / ABSENT-PAIR (no physical claim).
+**OUTCOMES: three obtain** — W6-FACT-DESCENT; W6-SET-AMALGAM
+(SCOPED: where the generating structure distinguishes tokens;
+T5″-SAFE — actual stable records only, six disjoint two-chart
+components, no global present, no value table);
+W6-GROUPOID-AMALGAM (M6: no invariant rule may choose).
+UNDERDETERMINED / NO-DESCENT obtain only in the synthetic
+branch; BLOCKED-AT-REFERENT does NOT obtain.  Worker deviations
+declared and provisionally accepted pending the round (three
+added controls; the strengthened 144-pair biconditional; the
+F1/F2/F2^π committed triple disclosed).  **THE FINDING THAT CUTS
+AGAINST THE PIN'S OWN ARCHITECTURE, flagged for the round:** at
+the two symmetric settings (SP-E, SP-F) the ENTIRE stochastic
+history from the initial configuration is wing-exchange
+symmetric — what breaks the token tie there is the singlet's
+amplitude ANTISYMMETRY, i.e. fibre data; the worker's
+reachable-subprocess control rules out the deflation that this
+is an artifact of U_prep's arbitrary orthogonal completion.  If
+it survives the round: base token identity is fixed by fibre
+data at those settings — a genuine tension with W6=base /
+W7=fibre.  Note: the worker mentioned launching its own
+independent audit that had not reported at delivery; its
+findings rest on its own verification — the hostile round is the
+independence layer, as always.  GREEN-UNREVIEWED; round next;
+dispatch recorded after it occurs.
+
+## 2026-07-29 — THE WORKER'S OWN CHILD AUDIT LANDED: 22 FINDINGS
+## AGAINST THE W6 INSTRUMENT; MAJOR REPAIR REQUIRED BEFORE ANY
+## EXTERNAL ROUND (v12 LEDGER #36)
+The construction worker had launched its own independent auditor
+(not an adjudicator dispatch); it reported after delivery,
+pinned to md5 f8bbf7e7d0a0c6291799151fe25d9606 / 1557 lines —
+CONFIRMED equal to the committed file (the audit's 131-row
+figure was an intermediate revision; the final file emits 137,
+adjudicator-rerun-verified).  REVISION-SKEW DISCLOSED AND
+ENGRAVED AS A PROCESS RULE: the worker edited the unit three
+times WHILE its audit ran (1479 → 1522 → 1557 lines) — two
+defects the audit found mid-flight were already fixed at
+delivery; henceforth DELIVERIES MUST BE FROZEN BEFORE ANY AUDIT
+BEGINS.  THE FINDINGS (most severe): (1) the token-overlap-graph
+gates never read the graph (adj written, never consumed; comps
+group by setting name — true by construction) — the load-bearing
+support of M3/M4's no-triple-overlap story; (2) M3's level-B
+descent is a DECLARATION (phisB/autsB hard-coded singletons ⇒
+SET-AMALGAM unconditional), the only support of the table's
+"C = SET-AMALGAM at level B", and the same tautology as M9's
+control; (3) M6's phase-invariant gate compares L with ITSELF
+(perm_conj already gated equal ⇒ 784 trivial agreements) — the
+sole carrier of "the tie survives the phase invariants"; (4)
+M8's counterfactual restates its own anchor (no phase-consulting
+φ ever constructed); (5) the declared 72-permutation frame scope
+admits EXACTLY 2 after the j0 filter (identity + wing swap) —
+every M3 level-B result is a 2-element search advertised as 72;
+(6) M1/M3 ROUTE-EXT keys hard-wired diagonal ((v,v)) and M3's
+agreecfg=36 forced by an earlier gate, with the disagreement
+path EXCLUDED rather than tested (M2's route-ext and route-wit
+are GENUINE); (7) phi_set LOGIC BUG: level B silently returns 0
+whenever scope filters any token (false zeros on erased-token
+charts); (8) M2's "token level has no edges" is FALSE
+(|Φ_B(a←c)| = 1 exists; the a←b zero is genuine); (9) two table
+cells contradict the unit's own discriminator (M6-A "FORCED" at
+|Φ|=2; M4-A "NOT FORCED" at 1); (10) M4's trivial-overlap gate
+is true by string literal; (11) M3's 56/144 biconditional is
+algebraically forced (items 2/4 constant; only item 3 bites),
+and one of its gates registers a row ONLY on failure; (12) the
+"committed triple" is a DUPLICATED PAIR (charts["F2r"] is
+charts["F2"] — the same object; the 4-of-8 count is Z/2 triangle
+group theory); (13) M5's zeros are code-path duplicates, none a
+level-B measurement, and its one nonzero is the EMPTY MAP read
+as "forced"; (14) triple coherence tests ⊆ not =, and asymmetric
+declarations are half-ignored (reverse legs constructed, never
+consulted); (15) the gauge-orbit BFS can only OVERCOUNT (no
+gauge-closure gate; orbits=1 verdicts safe, orbits>1 would not
+be) and a single-family nontrivial-Aut case would be
+misclassified GROUPOID (latent, not triggered); (16) bij
+redundant by construction everywhere reported; (17) provenance
+is NEVER READ by any co-reference decision — preservation items
+5/6 never exercised; the note's "wing tie broken by PROVENANCE"
+is wrong — THE TIE IS BROKEN BY AMPLITUDE-LEVEL LEG MATCHING,
+which CONFIRMS the fibre-grounds-tokens tension under the
+corrected mechanism; (18) a gate labelled item-1 tests item 3;
+(19) eleven derived/restatement gates recompute prior gates'
+values; (20) vacuous occurred/literal-comparison gates; (21)
+level-B phi_set structurally inapplicable to composite charts
+(reads fields DataChart lacks) — M4/M7 B cells have NO gate;
+(22) dead code.  CLEAN CATEGORIES: floats CLEAN; LEVEL-A PHASE
+LEAKAGE CLEAN (with the one-item caveat: items 2/4 constant on
+the composite model, so A-level phase blindness there is a
+one-item property); M2's |Φ_B(a←b)| = 0 GENUINE with positive
+controls.  ADJUDICATION: the delivery is NOT round-ready; the
+descent table's M3/M4/M5/M6 cells and two of the three claimed
+outcomes (SET-AMALGAM-scoped; the GROUPOID's phase-survival
+clause) are at present UNSUPPORTED AS GATED; FACT-DESCENT
+retains genuine support (M2 both routes; M1 modulo finding 6).
+The delivered state is committed AS-IS with this entry so the
+findings have a fixed referent; MAJOR REPAIR dispatched next
+(recorded after it occurs); the external hostile round runs
+AFTER the repair.
