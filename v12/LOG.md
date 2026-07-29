@@ -857,3 +857,21 @@ W7-SIGNATURE-INCOMPLETE-SEAM-DATUM-NAMED (G-REDUCED; referent
 delivered, completeness scoped).  STATUS: GREEN-UNREVIEWED;
 hostile round next; per the #11/#15 rule its dispatch is recorded
 only after it occurs.
+
+## 2026-07-29 — W7 HOSTILE ROUND DISPATCHED (v12 LEDGER #22)
+Background reviewer (Opus 5), independence required (own exact
+rebuild code in the session scratchpad, nothing sliced from the
+unit; NO repo writes).  Attack surface assigned in full: both
+G-theorem proofs (quantifier scope; the slot-negation step; the
+unitarity⟺Haagerup-trivial⟺boundary chain), the n=4 witness
+rebuilt from specification, the K completion (invariance; the
+1300-class claim; minimality vs sufficiency), both directions of
+the completeness IFF, the Weyl β claims and their quantifiers,
+the W7-4 record gates against W3′'s committed hypotheses and the
+limit witness's record grade, the declared deviations (esp. the
+necessary-condition superset), the note's sentences (scope,
+attribution incl. [SvN], the split Bargmann verdict vs the
+pre-registered binary, "derived not chosen" conditioning,
+ontological restraint), and an independent recomputation of the
+declared number set.  This entry is written after the dispatch
+occurred.
