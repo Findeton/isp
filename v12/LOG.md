@@ -272,3 +272,24 @@ the anti-correlation exhibit, the three-defect separation, and the
 coherence law — the first positive claim in this collaboration to
 survive hostile review: 1-for-10.**  W2a/W2b/W2c, W3′, W4′, W5
 remain pinned-not-dispatched, awaiting the user's word.
+
+## 2026-07-28 — W2/W3′/W4′/W5 PINS FROZEN AND DISPATCHED IN
+## PARALLEL (v12 LEDGER #8)
+User-authorized ("run W2-5 in parallel").  Four pins:
+**note-w2-multiplier-ladder-pin.md** (staged W2a defect-algebra →
+W2b projective descent → W2c selection; the B(ωU) = B(U)
+annihilation wall engraved; NO-ACTION/VACUOUS first-class);
+**note-w3p-records-kill-defect-pin.md** (the T3′ theorem at finite
+dim + the bc M-1 instance + the v11 global corollary shape + the
+scoped converse + THE ERASER NEGATIVE CONTROL; kill = a stable
+record with surviving D₂₁₀ under record-preserving dynamics);
+**note-w4p-one-invariant-or-three-pin.md** (the exact relation
+table between the Δᴮ-family, the AB/[AMB] contextual obstruction,
+and the committed BC obstructions — separating models chosen in
+advance; U2's warning engraved);
+**note-w5-barandes-recast-pin.md** (the axiom-by-axiom recast with
+FAITHFUL/EXTENSION/TENSION marks; the survives/doesn't table; the
+LTP lemma gated).  All four workers instructed: the bc working
+tree is DIRTY with frozen partial edits — committed state only,
+via git show.  v13's GW1 dispatched alongside (v13 LOG #1).  Five
+units in flight.
