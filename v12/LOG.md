@@ -1536,3 +1536,69 @@ attacks of the reviewer's own design (alternative partition;
 different restriction convention; wider scopes; adversarial
 route-ext pair).  This round can confer terminal.  Recorded
 after the dispatch occurred.
+
+## 2026-07-29 — W6 EXTERNAL ROUND ADJUDICATED: ACCEPT-WITH-FIXES;
+## THE SUB-AUDIT CORROBORATES; TERMINAL-FIX PASS DISPATCHED (v12
+## LEDGER #40)
+THE ROUND: independent from-scratch rebuild (own ℚ(cos π/8)
+field, own 36-configuration model, own chart/φ/iso/descent
+logic, nothing imported) — **25/25 measured quantities
+reproduced exactly; no false numerical result anywhere; all 22
+internal-audit fixes verified real** (21 direct, dead-code sweep
+partial — closed by the sub-audit's AST sweep: zero unreferenced
+names).  **THE CENTRAL FINDING CONFIRMED AND STRENGTHENED**: it
+survived FIVE designed attacks — the recomputed-typing
+deflation; a frame-symmetric AND a column-only restriction
+convention; a 28,800-permutation scope (~300× the declared 96 —
+the FORCED verdicts unmoved: full legs force the identity at all
+six settings, realized legs give ∅×4 + wing-swap×2); the
+alternative pointer-only token partition — and the round
+ISOLATED THE MECHANISM: at SP-E/SP-F the two measurement legs
+map onto each other exactly under the wing swap; the SOLE
+blocker on the full legs is U_prep (w·U_prep·w = −U_prep on the
+j0 column — a sign-level match — and neither ±U_prep on the
+other 35 columns), and j0 being the only configuration ever
+occupied at time 0, those 35 columns are without qualification
+TRANSITIONS THE PROCESS NEVER TAKES; the time-independent
+deflation control is THE SAME PHENOMENON (it still carries
+U_prep's unrealized columns).  **ONE CORRECTION INSISTED ON**:
+on the realized legs the identity is inadmissible at ALL SIX
+settings (the two frames' time-2 occupied supports never
+coincide — frame-relativity, M4's own content); the right
+statement is "the realized legs never admit the identity; the
+four asymmetric settings admit nothing; the two symmetric
+settings admit exactly one map, the wing swap".  THE DEFECTS,
+ALL PROSE OR GATE-LABEL: F1/F2 scope inflation (M3's descent
+column measured at SP-A only, stated unscoped; two
+certification claims stated over 12/32 pairs, measured on 1
+each); F3 the note narrates its own repair (single-threaded
+violation); F4 "independently rebuilt swapped circuit"
+oversold — the rebuild is GATED EQUAL to the original (a real
+symmetry; the ζ₈ control keeps the sweep falsifiable) — **AND
+#38's OWN PHRASE "against an INDEPENDENTLY REBUILT swapped
+circuit" IS FORWARD-CORRECTED HERE to the round's form**; F5
+vocabulary self-contradiction (NO-INSTRUMENT gated but never
+emitted); F6 two senses of "provenance" (structural filter vs
+dynamical frame-isomorphism — to be named apart); F7 the
+base/fibre adjudication unscoped; F8 the corrected realized-legs
+statement; F9 the realized-legs charts bypass the constructor
+(stipulated typing — reviewer recomputed: unchanged); F10
+route_ext degeneracy guard absent (never triggered); F11/F12
+nits (the four-copy-edge count; the 88-char receipt truncation
+hiding the flagship values — reviewer confirmed the truncated
+values faithful).  THE SUB-AUDIT (the round's audit-closure
+child, reported separately): 14/14 categories FIX-REAL; floats
+CLEAN; dead code CLEAN; three residuals — M9's partial-domain
+gate MISLABELLED (rejected by the inverse law, never reaching
+the triple law it claims; the triple law DOES bite once the
+declaration is inverse-consistent — 6 failures verified); the
+dis-disagreement branch never executes (counted, gated 0, no
+positive control); three true-by-construction gate components
+(2**6; the comprehension-bound 72; a deterministic re-call).
+ADJUDICATION: verdict ACCEPT-WITH-FIXES accepted; ALL fixes —
+the round's P-list and optional C-list AND the sub-audit's three
+residuals — folded into ONE TERMINAL-FIX PASS, dispatched
+(recorded after dispatch); on its return: verify, terminal.
+Outcomes unchanged in identity and now measurement-carried:
+FACT-DESCENT; SET-AMALGAM (scoped, to gain the SP-A tag);
+GROUPOID-AMALGAM (phase-survival falsifiable).
