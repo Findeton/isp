@@ -1,0 +1,757 @@
+{
+  "unit": "v13 GW1",
+  "step": "STEP 0 \u2014 instrument census",
+  "verdict": "GW1-NOT-RUNNABLE \u2014 PRIMARY LOCATED BLOCK AT THE DEFORMATION INTERFACE",
+  "steps_1_5_run": false,
+  "environment": {
+    "audited_commit": "c483cfd590bba412bf977ae393240af550440c8d",
+    "audited_commit_short": "c483cfd",
+    "working_tree_clean": false,
+    "working_tree_entries": [
+      "M bc/code/bc2_two_frames_exact.py",
+      " M v13/note-gw1-metric-from-closure.md",
+      "?? bc/code/bc3_output.txt",
+      "?? bc/code/bc3_refinement_exact.py",
+      "?? v11/code/u1c_depth15_exact.py",
+      "?? v11/code/u1c_output.txt",
+      "?? v11/note-u1c-depth15-two-sided.md",
+      "?? v12/code/w2_multiplier_ladder_exact.py",
+      "?? v12/code/w2_output.txt",
+      "?? v12/note-w2-multiplier-ladder.md",
+      "?? v13/code/",
+      "?? v13/receipts/"
+    ],
+    "python": "3.13.2",
+    "python_executable": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "numpy": "unavailable",
+    "scipy": "unavailable",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "inspected_paths": [
+    {
+      "path": "code/v6_task2b_metric_extraction.py",
+      "exists": true,
+      "worktree_blob": "d947d20460c029a8d0101f999a0d312e6601cffe",
+      "head_blob": "d947d20460c029a8d0101f999a0d312e6601cffe",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p2d_curved_coefficient.py",
+      "exists": true,
+      "worktree_blob": "cdc0b23bc34426aeebbdfc8bb9c0f820139fb6bd",
+      "head_blob": "cdc0b23bc34426aeebbdfc8bb9c0f820139fb6bd",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p2_spatial_direction.py",
+      "exists": true,
+      "worktree_blob": "c634958fe00efe4d3d92aa275fcdb5288a42665d",
+      "head_blob": "c634958fe00efe4d3d92aa275fcdb5288a42665d",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p2b_local_frame.py",
+      "exists": true,
+      "worktree_blob": "cbe8055f65d9fbf3c6e0ed055f10ff543ee7047e",
+      "head_blob": "cbe8055f65d9fbf3c6e0ed055f10ff543ee7047e",
+      "modified": false
+    },
+    {
+      "path": "v8/code/r1_order_to_conformal_direction.py",
+      "exists": true,
+      "worktree_blob": "6b1d9ce03173fc707179f0933596cc8bdcc9119e",
+      "head_blob": "6b1d9ce03173fc707179f0933596cc8bdcc9119e",
+      "modified": false
+    },
+    {
+      "path": "v8/code/r2_number_volume_lstep.py",
+      "exists": true,
+      "worktree_blob": "c48c8954bb78a7c09679f10a5f1a3e40e9dcfe9d",
+      "head_blob": "c48c8954bb78a7c09679f10a5f1a3e40e9dcfe9d",
+      "modified": false
+    },
+    {
+      "path": "v8/code/r3_manifoldlikeness_myrheim_meyer.py",
+      "exists": true,
+      "worktree_blob": "1130c8d5d616a433f1f653a73d646a68ef24f0eb",
+      "head_blob": "1130c8d5d616a433f1f653a73d646a68ef24f0eb",
+      "modified": false
+    },
+    {
+      "path": "v8/code/k3_decoration_probe.py",
+      "exists": true,
+      "worktree_blob": "94f814ff35e20a23b68f0af9a0021377d8cde29c",
+      "head_blob": "94f814ff35e20a23b68f0af9a0021377d8cde29c",
+      "modified": false
+    },
+    {
+      "path": "v8/code/l2_intrinsic_finder.py",
+      "exists": true,
+      "worktree_blob": "f64fff52aaf3adba6ccaebd7a846147fdb7c9b1d",
+      "head_blob": "f64fff52aaf3adba6ccaebd7a846147fdb7c9b1d",
+      "modified": false
+    },
+    {
+      "path": "v8/code/m1_intrinsic_4d.py",
+      "exists": true,
+      "worktree_blob": "628e5cd2536f45b4abf6566f11b26b119299a7a0",
+      "head_blob": "628e5cd2536f45b4abf6566f11b26b119299a7a0",
+      "modified": false
+    },
+    {
+      "path": "v8/code/m2_intrinsic_4d_scale.py",
+      "exists": true,
+      "worktree_blob": "08085227f43be184b53d7aa030ed1aef1eff78be",
+      "head_blob": "08085227f43be184b53d7aa030ed1aef1eff78be",
+      "modified": false
+    },
+    {
+      "path": "v9/code/n1_chi_dictionary.py",
+      "exists": true,
+      "worktree_blob": "4a6cebf0508aba06f1819ccce2d1d3b097c47a03",
+      "head_blob": "4a6cebf0508aba06f1819ccce2d1d3b097c47a03",
+      "modified": false
+    },
+    {
+      "path": "v9/code/n2_chi_geometry.py",
+      "exists": true,
+      "worktree_blob": "6b252031e2436d85f984e437b7475b15caa98ff0",
+      "head_blob": "6b252031e2436d85f984e437b7475b15caa98ff0",
+      "modified": false
+    },
+    {
+      "path": "v9/code/dimwall_lorentz1.py",
+      "exists": true,
+      "worktree_blob": "73496c0b61507ca2e2aac95ae5b2ea3d21b2c1b6",
+      "head_blob": "73496c0b61507ca2e2aac95ae5b2ea3d21b2c1b6",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d29_ruler_validation.py",
+      "exists": true,
+      "worktree_blob": "7f8c8aa86d2053b70781b07b72ede7b1f12e42e9",
+      "head_blob": "7f8c8aa86d2053b70781b07b72ede7b1f12e42e9",
+      "modified": false
+    },
+    {
+      "path": "code/v6_task2_antichain_deformations.py",
+      "exists": true,
+      "worktree_blob": "cfb3405c7cfba5d3daccf7132a2dae5cdaf5d0bb",
+      "head_blob": "cfb3405c7cfba5d3daccf7132a2dae5cdaf5d0bb",
+      "modified": false
+    },
+    {
+      "path": "code/v6_task2d_bracket_closure.py",
+      "exists": true,
+      "worktree_blob": "80fbbedf52e719d61c3ade2f11bc0af4a0df49ac",
+      "head_blob": "80fbbedf52e719d61c3ade2f11bc0af4a0df49ac",
+      "modified": false
+    },
+    {
+      "path": "code/v6_task2e_AvsB_diagnostic.py",
+      "exists": true,
+      "worktree_blob": "3f1f59cc1b4c309437acbef2414b83efec3b1dc5",
+      "head_blob": "3f1f59cc1b4c309437acbef2414b83efec3b1dc5",
+      "modified": false
+    },
+    {
+      "path": "code/v6_task2f_nogo_confirm.py",
+      "exists": true,
+      "worktree_blob": "66fdcbefc3f18dd9087f7c4b78aa3b88c534e917",
+      "head_blob": "66fdcbefc3f18dd9087f7c4b78aa3b88c534e917",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p2c_flow_drift.py",
+      "exists": true,
+      "worktree_blob": "1c0f722d2367fe14d71882c17cb4f9d2133365e3",
+      "head_blob": "1c0f722d2367fe14d71882c17cb4f9d2133365e3",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p2e_3d_tensor_coefficient.py",
+      "exists": true,
+      "worktree_blob": "e1ce40e9f38614c5bfd4a25ea866978b41ad1ed9",
+      "head_blob": "e1ce40e9f38614c5bfd4a25ea866978b41ad1ed9",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p2f_4d_tensor_coefficient.py",
+      "exists": true,
+      "worktree_blob": "e479f7dd09b633e3f80ca58fb0b9a51479ffc7de",
+      "head_blob": "e479f7dd09b633e3f80ca58fb0b9a51479ffc7de",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d43a_lie_trotter_exact.py",
+      "exists": true,
+      "worktree_blob": "120aaa1c3457b2404c43765834a81a5d49540e62",
+      "head_blob": "120aaa1c3457b2404c43765834a81a5d49540e62",
+      "modified": false
+    },
+    {
+      "path": "validate_minimal_interacting_gauge_matter_benchmark.py",
+      "exists": true,
+      "worktree_blob": "7f047845e6cbda45ade9432990e79e4f9c8b4ef8",
+      "head_blob": "7f047845e6cbda45ade9432990e79e4f9c8b4ef8",
+      "modified": false
+    },
+    {
+      "path": "validate_truncated_u1_benchmark.py",
+      "exists": true,
+      "worktree_blob": "0960d4dfc3113aa997ef8819c1b5677ba13a93f8",
+      "head_blob": "0960d4dfc3113aa997ef8819c1b5677ba13a93f8",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d42b3_placement_exact.py",
+      "exists": true,
+      "worktree_blob": "17c816da2a654a47bba1dc0be7d1b6bf7655c3ca",
+      "head_blob": "17c816da2a654a47bba1dc0be7d1b6bf7655c3ca",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d49_dichotomy_settlement_exact.py",
+      "exists": true,
+      "worktree_blob": "32140c8709543d371ffddef7389b71bd28bded3e",
+      "head_blob": "32140c8709543d371ffddef7389b71bd28bded3e",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d44f_foliation_measure_exact.py",
+      "exists": true,
+      "worktree_blob": "1940d612fc6ff75421e99f9605779971084f7969",
+      "head_blob": "1940d612fc6ff75421e99f9605779971084f7969",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d74_transport_holonomy_exact.py",
+      "exists": true,
+      "worktree_blob": "204145a85ec91751427036eb316e85c8f65bdefc",
+      "head_blob": "204145a85ec91751427036eb316e85c8f65bdefc",
+      "modified": false
+    },
+    {
+      "path": "v10/code/d72_weld_exact.py",
+      "exists": true,
+      "worktree_blob": "566a1bb30b4dd66b4e16a0aff90504f6cccaa31c",
+      "head_blob": "566a1bb30b4dd66b4e16a0aff90504f6cccaa31c",
+      "modified": false
+    },
+    {
+      "path": "v11/code/ld_reversal_probe_exact.py",
+      "exists": true,
+      "worktree_blob": "7704c8b41c83bfda5b7ce0edf700d21a2809e141",
+      "head_blob": "7704c8b41c83bfda5b7ce0edf700d21a2809e141",
+      "modified": false
+    },
+    {
+      "path": "v11/code/u2_three_address_weld_exact.py",
+      "exists": true,
+      "worktree_blob": "86918294d6e57cd2a3b62769ec3b39392e95bcdd",
+      "head_blob": "86918294d6e57cd2a3b62769ec3b39392e95bcdd",
+      "modified": false
+    },
+    {
+      "path": "v11/code/u3_unistochasticity_screen_exact.py",
+      "exists": true,
+      "worktree_blob": "7bfb63829e2f09745d9455d49364553338c1f593",
+      "head_blob": "7bfb63829e2f09745d9455d49364553338c1f593",
+      "modified": false
+    },
+    {
+      "path": "code/v6_p4n_exchange_cocycle_law.py",
+      "exists": true,
+      "worktree_blob": "c847cff2e6064126aaaffc45baf139c477e7d439",
+      "head_blob": "c847cff2e6064126aaaffc45baf139c477e7d439",
+      "modified": false
+    },
+    {
+      "path": "v2/relativistic-isp-v2-paper1-free-stochastic-curvature-theorem.md",
+      "exists": true,
+      "worktree_blob": "c6b72c4557b2be01c0526042ca9afb2b0b76dc49",
+      "head_blob": "c6b72c4557b2be01c0526042ca9afb2b0b76dc49",
+      "modified": false
+    },
+    {
+      "path": "v2/relativistic-isp-v2-paper10-metric-data-from-stochastic-exchange-curvature-investigation.md",
+      "exists": true,
+      "worktree_blob": "9130294a366e386518a2ca18c98f0252f40206a1",
+      "head_blob": "9130294a366e386518a2ca18c98f0252f40206a1",
+      "modified": false
+    },
+    {
+      "path": "v3/relativistic-isp-v3-paper2-primitive-smooth-lapse-hypersurface-kernels.md",
+      "exists": true,
+      "worktree_blob": "fa4ce0f510e86bad554697feff520eef23b4db63",
+      "head_blob": "fa4ce0f510e86bad554697feff520eef23b4db63",
+      "modified": false
+    },
+    {
+      "path": "v4/relativistic-isp-v4-paper2-fixed-background-metric-data-from-exchange-curvature.md",
+      "exists": true,
+      "worktree_blob": "d7b5a3230df42184259e0130fd78ba4ea5f6da50",
+      "head_blob": "d7b5a3230df42184259e0130fd78ba4ea5f6da50",
+      "modified": false
+    },
+    {
+      "path": "v4/relativistic-isp-v4-paper4-operational-orientation-quorum-or-enriched-only-metric-diagnostic.md",
+      "exists": true,
+      "worktree_blob": "21c22e0c9a9abe1d64d93dc79cc449309f347436",
+      "head_blob": "21c22e0c9a9abe1d64d93dc79cc449309f347436",
+      "modified": false
+    },
+    {
+      "path": "v4/relativistic-isp-v4-paper5-operational-curvature-compatibility-source.md",
+      "exists": true,
+      "worktree_blob": "06a8ffcb0573cbf1d13ba69dddc336dc3d015523",
+      "head_blob": "06a8ffcb0573cbf1d13ba69dddc336dc3d015523",
+      "modified": false
+    },
+    {
+      "path": "v4/relativistic-isp-v4-paper7-finite-constraint-dynamics-or-gr-no-go.md",
+      "exists": true,
+      "worktree_blob": "59791bf0e1369bba9a96101bad5c98a4d52bb2ee",
+      "head_blob": "59791bf0e1369bba9a96101bad5c98a4d52bb2ee",
+      "modified": false
+    },
+    {
+      "path": "v4/relativistic-isp-v4-paper12-residual-source-ward-stein-four-route-decision.md",
+      "exists": true,
+      "worktree_blob": "a9bf916ed8353ebf04383aaf79f52aa96fc89697",
+      "head_blob": "a9bf916ed8353ebf04383aaf79f52aa96fc89697",
+      "modified": false
+    },
+    {
+      "path": "v4/relativistic-isp-v4-paper13-three-normal-switch-decision-or-floor.md",
+      "exists": true,
+      "worktree_blob": "5f8fc5f4e4be090c80c91c7bb531ee7e318939e6",
+      "head_blob": "5f8fc5f4e4be090c80c91c7bb531ee7e318939e6",
+      "modified": false
+    },
+    {
+      "path": "v6/relativistic-isp-v6-paper2-spatial-direction-and-interacting-integrability.md",
+      "exists": true,
+      "worktree_blob": "93f817e779f637fc052c857d35e9a916fed7899d",
+      "head_blob": "93f817e779f637fc052c857d35e9a916fed7899d",
+      "modified": false
+    },
+    {
+      "path": "publishable/paper2-hypersurface-deformation-obstruction.md",
+      "exists": true,
+      "worktree_blob": "7efccc4ba0bc01a15ca4c874b2265a4a8943235e",
+      "head_blob": "7efccc4ba0bc01a15ca4c874b2265a4a8943235e",
+      "modified": false
+    },
+    {
+      "path": "v13/relativistic-isp-v13-paper0-gravity.md",
+      "exists": true,
+      "worktree_blob": "91a6440b6db3ace65c5c37016bfa6e10b282f9cf",
+      "head_blob": "91a6440b6db3ace65c5c37016bfa6e10b282f9cf",
+      "modified": false
+    },
+    {
+      "path": "v13/note-gw1-metric-from-closure-pin.md",
+      "exists": true,
+      "worktree_blob": "9172f110fabf7fd3577dde58e4172cdd4d33a3ec",
+      "head_blob": "9172f110fabf7fd3577dde58e4172cdd4d33a3ec",
+      "modified": false
+    }
+  ],
+  "search_protocol": [
+    {
+      "tree": "code",
+      "py_files": 353,
+      "lapse_files": 12,
+      "hypersurface_files": 2,
+      "antichain_files": 25,
+      "commands": [
+        "find code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v6/code",
+      "py_files": 1,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find v6/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v6/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v6/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v6/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v7/code",
+      "py_files": 273,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 15,
+      "commands": [
+        "find v7/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v7/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v7/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v7/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v8/code",
+      "py_files": 101,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 6,
+      "commands": [
+        "find v8/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v8/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v8/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v8/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v9/code",
+      "py_files": 84,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 4,
+      "commands": [
+        "find v9/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v9/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v9/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v9/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v10/code",
+      "py_files": 137,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 8,
+      "commands": [
+        "find v10/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v10/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v10/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v10/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v11/code",
+      "py_files": 7,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find v11/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v11/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v11/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v11/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "v12/code",
+      "py_files": 5,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find v12/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' v12/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' v12/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' v12/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "bc/code",
+      "py_files": 3,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find bc/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' bc/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' bc/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' bc/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "external/walsh-delta-code",
+      "py_files": 8,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find external/walsh-delta-code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' external/walsh-delta-code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' external/walsh-delta-code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' external/walsh-delta-code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "_archive_low_value_2026-06-14/code",
+      "py_files": 9,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find _archive_low_value_2026-06-14/code -name '*.py' -not -path '*/.venv/*' | wc -l",
+        "grep -rlwi 'lapse' _archive_low_value_2026-06-14/code --include='*.py' | wc -l",
+        "grep -rlwi 'hypersurface' _archive_low_value_2026-06-14/code --include='*.py' | wc -l",
+        "grep -rlwi 'antichain' _archive_low_value_2026-06-14/code --include='*.py' | wc -l"
+      ]
+    },
+    {
+      "tree": "<repository root>",
+      "py_files": 3,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "ls *.py",
+        "grep -lwi lapse *.py",
+        "grep -lwi hypersurface *.py",
+        "grep -lwi antichain *.py"
+      ]
+    },
+    {
+      "tree": "v1..v5 + publishable",
+      "py_files": 0,
+      "lapse_files": 0,
+      "hypersurface_files": 0,
+      "antichain_files": 0,
+      "commands": [
+        "find v1 v2 v3 v4 v5 publishable -name '*.py'"
+      ]
+    }
+  ],
+  "reruns": [
+    {
+      "script": "code/v6_task2b_metric_extraction.py",
+      "exit_code": 0,
+      "wall_seconds": 2.54,
+      "stdout_sha256": "aa2fc5f14c490057627504d43bfb60f2a7b141991b091a9e379214d12ac7e4b6",
+      "anchors": {
+        "structure function g^xx = +0.99": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_task2d_bracket_closure.py",
+      "exit_code": 0,
+      "wall_seconds": 0.54,
+      "stdout_sha256": "06f73ffe4b1ee20e700e95305ed3d0fe06a882d3fc32fb8a3ed35bbd3b4be1e7",
+      "anchors": {
+        "CONTROL holds: equal lapses commute exactly (|comm|=0) in every run": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_task2e_AvsB_diagnostic.py",
+      "exit_code": 0,
+      "wall_seconds": 6.96,
+      "stdout_sha256": "cc7425354ed0bc5ac94f987b93bfb0dc1d0c2c581f75a16015bdf136a171bf22",
+      "anchors": {
+        "(A) STRUCTURAL BLINDNESS": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_task2f_nogo_confirm.py",
+      "exit_code": 0,
+      "wall_seconds": 0.52,
+      "stdout_sha256": "e4f786287445db315a39b0829992657af919f4513a3a309764df3b8a746cff2f",
+      "anchors": {
+        "IDEAL pointwise-additive deformation: |commutator| = 0 EXACTLY": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_p2c_flow_drift.py",
+      "exit_code": 0,
+      "wall_seconds": 0.91,
+      "stdout_sha256": "68f479651e4194879cde0938f69898c0ca4d32b6155d7384bd22e76d54900de0",
+      "anchors": {
+        "= +1.0000": true,
+        "mean +0.540": true,
+        "mean 1.26": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_p2d_curved_coefficient.py",
+      "exit_code": 0,
+      "wall_seconds": 0.32,
+      "stdout_sha256": "89f4fb5aa142b466de554674d12a6987db044c6e5b2ee2b00aa2a33ab1ca0a0e",
+      "anchors": {
+        "corr(C, 1/Omega^2)=+1.0000": true,
+        "corr(C, 1/Omega^2)=+0.0109": true,
+        "corr(C_chain, 1/Omega^2_true) = +0.993": true,
+        "corr(C_dens , 1/Omega^2_true) = +1.000": true,
+        "corr(C_chain, C_dens)         = +0.995": true,
+        "centre/wing of C_chain = 0.214  (GR target 0.160": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_p2e_3d_tensor_coefficient.py",
+      "exit_code": 0,
+      "wall_seconds": 0.12,
+      "stdout_sha256": "2d045ae4b84f22c5017ae265fa44b3f916a64d9b745fc40ab3fcc736536fb01a",
+      "anchors": {
+        "cos=1.0000": true,
+        "0.9729": true,
+        "13.38": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_p2f_4d_tensor_coefficient.py",
+      "exit_code": 0,
+      "wall_seconds": 0.73,
+      "stdout_sha256": "e6b4db5c07cc0561f9bfd6bac2aaa4ad82849b568e09698252b56d795e316d9a",
+      "anchors": {
+        "cos=1.0000": true,
+        "0.9739": true,
+        "13.13": true
+      },
+      "anchors_ok": true
+    },
+    {
+      "script": "code/v6_p2_spatial_direction.py",
+      "exit_code": 0,
+      "wall_seconds": 21.32,
+      "stdout_sha256": "76e4e1036495c25c5909f71ed9576bc7ff3dbc5591252a2ab1ba47caca914861",
+      "anchors": {
+        "mean=0.94": true,
+        "x from (v2,v3): mean=0.95;  y: mean=0.92": true
+      },
+      "anchors_ok": true
+    }
+  ],
+  "rerun_total_wall_seconds": 33.96,
+  "error_control_declared_by_any_rerun": false,
+  "schema": [
+    "family",
+    "substrate",
+    "object_type",
+    "runnable",
+    "spatial_dimension",
+    "takes_lapse_profile",
+    "primitive_signed_lapse",
+    "metric_explicitly_supplied",
+    "background_geometry_encoded",
+    "transported_second_step",
+    "invertible_comparison_map",
+    "forward_swap_nontrivial",
+    "group_twocell_defined",
+    "group_twocell_nontrivial",
+    "q_order_same_substrate"
+  ],
+  "classification": [
+    {
+      "family": "1. record-growth updates (v6 task2/2d/2e/2f)",
+      "substrate": "sprinkled causal set (1+1)",
+      "object_type": "Phi \u2014 monotone history update (down-set advance)",
+      "runnable": "yes",
+      "spatial_dimension": 1,
+      "takes_lapse_profile": "yes (eventwise N(x_e), coordinate-assisted at task2d:11-13)",
+      "primitive_signed_lapse": "no (threshold shift; sign untested)",
+      "metric_explicitly_supplied": "no",
+      "background_geometry_encoded": "partial \u2014 the lapse is applied at the embedding coordinate x_e",
+      "transported_second_step": "no \u2014 two forward orders on a fixed event set",
+      "invertible_comparison_map": "threshold rule: empirically yes, bitwise, on tested instances; recomputed-height rule: no (non-injective set union)",
+      "forward_swap_nontrivial": "threshold rule: no, delta_swap = 0 exactly [theorem, v6_task2f:4-8]; recomputed-height rule: yes but gradient-blind",
+      "group_twocell_defined": "threshold rule: yes (additive translations); recomputed-height rule: no (no inverse)",
+      "group_twocell_nontrivial": "threshold rule: no, Omega = I exactly; recomputed-height rule: undefined",
+      "q_order_same_substrate": "yes (v6_task2b, v6_p2d PART 2 run on the same sprinkling)"
+    },
+    {
+      "family": "2. embedding-flow / grid (v6 p2c/p2d/p2e/p2f PART 1; v4 p5 Def 3.3)",
+      "substrate": "coordinate grid with a declared background metric",
+      "object_type": "Phi \u2014 embedding flow on tracer labels (v4 p5: J^emb = T_a(Phi_N^eps))",
+      "runnable": "yes",
+      "spatial_dimension": "1, 2, 3",
+      "takes_lapse_profile": "yes",
+      "primitive_signed_lapse": "yes (a real-valued profile field)",
+      "metric_explicitly_supplied": "yes \u2014 the unit normal is normalized with it (p2c:32-36, p2d:50-54, p2e:42-47, p2f:38-47)",
+      "background_geometry_encoded": "yes",
+      "transported_second_step": "yes \u2014 the second push acts on the pushed slice",
+      "invertible_comparison_map": "not formed; the flow is inverted only in the small-eps expansion",
+      "forward_swap_nontrivial": "yes \u2014 the O(eps^2) tracer-label difference",
+      "group_twocell_defined": "not as supplied \u2014 no J^-1 is constructed; the measured object is x1 - x2 at leading order",
+      "group_twocell_nontrivial": "the leading-order surrogate is nonzero and equals -eps^2 q^ij(N d_j M - M d_j N)",
+      "q_order_same_substrate": "no \u2014 the metric is declared input on this substrate"
+    },
+    {
+      "family": "3. Gamma-level lattice (v2 p1, p10; v10 d43a; the root validators)",
+      "substrate": "fixed lattice Dirac benchmark",
+      "object_type": "Gamma endpoint kernel -> J algebraic comparison map -> Omega group two-cell",
+      "runnable": "yes at Delta-parameterized code level; the lapse-parameterized family is theorem-level only",
+      "spatial_dimension": "1 (theorem); d >= 2 posed and blocked",
+      "takes_lapse_profile": "yes at paper level (v2 p10:747-760 J[N;Delta] = exp L[N;Delta]); no in any committed .py (region + slab thickness only)",
+      "primitive_signed_lapse": "no \u2014 pseudo-stochastic for sign-changing N (v2 p10:765-768)",
+      "metric_explicitly_supplied": "yes \u2014 the frame E_A^j fixes h_0^ij and enters the Hamiltonian (v2 p10:655-671)",
+      "background_geometry_encoded": "yes",
+      "transported_second_step": "no \u2014 a fixed-space group commutator",
+      "invertible_comparison_map": "yes for small |Delta| (v2 p10:804-808)",
+      "forward_swap_nontrivial": "yes",
+      "group_twocell_defined": "yes \u2014 E[N,M;Delta] = J_N J_M J_N^-1 J_M^-1 (v2 p10:773-778)",
+      "group_twocell_nontrivial": "yes, exact; recovery blocked at h^12 to all orders (Prop 10.6)",
+      "q_order_same_substrate": "no"
+    },
+    {
+      "family": "4. record-history holonomies (v10 d42b3/d49/d44f/d72/d74; v11 ld/u2/u3; v6_p4n)",
+      "substrate": "exact record histories, Fraction-exact weights",
+      "object_type": "record-holonomy weight ratio (path-order ratio of admission weights)",
+      "runnable": "yes, exact",
+      "spatial_dimension": "not defined \u2014 no slice, no spatial index",
+      "takes_lapse_profile": "no \u2014 advance is by one event",
+      "primitive_signed_lapse": "not applicable",
+      "metric_explicitly_supplied": "no",
+      "background_geometry_encoded": "no",
+      "transported_second_step": "path-order ratios on closed squares",
+      "invertible_comparison_map": "weight ratios invert; no comparison-map family is declared",
+      "forward_swap_nontrivial": "yes \u2014 36 chain-consistency violations of 202 diamonds; 88 of 1546 closed squares non-unit",
+      "group_twocell_defined": "not in the pinned form \u2014 no N, no eps, no d_j",
+      "group_twocell_nontrivial": "the holonomy census is nontrivial; the pinned Omega is not posed",
+      "q_order_same_substrate": "partial \u2014 the same order data, no metric extraction run there"
+    },
+    {
+      "family": "5. smooth-lapse convex mixture (v3 p2 Candidate B) \u2014 definition-only",
+      "substrate": "fixed flat lattice Dirac benchmark (V2 singleton kernels imported)",
+      "object_type": "Gamma endpoint kernel -> J algebraic comparison map -> Omega group two-cell",
+      "runnable": "no \u2014 v3 carries no code; definition only",
+      "spatial_dimension": 1,
+      "takes_lapse_profile": "yes \u2014 smooth compactly supported N",
+      "primitive_signed_lapse": "no \u2014 positive cone only; signed lapses reached by continuum polarization (Thm 7.2), finite-regulator signed kernel declared an open burden (v3 p2:596-610)",
+      "metric_explicitly_supplied": "no metric symbol in the kernel",
+      "background_geometry_encoded": "yes \u2014 the singleton kernels come from the fixed flat lattice benchmark; fails the no-smuggling test",
+      "transported_second_step": "no \u2014 a fixed-space group commutator",
+      "invertible_comparison_map": "yes (J^mix = I + O(eta a))",
+      "forward_swap_nontrivial": "yes at theorem level",
+      "group_twocell_defined": "yes \u2014 E^mix[N,M;Delta] = J_N J_M J_N^-1 J_M^-1 (v3 p2:298-313)",
+      "group_twocell_nontrivial": "yes at Theorem 6.1, positive cone, conditional on a uniform singleton-remainder bound",
+      "q_order_same_substrate": "no"
+    },
+    {
+      "family": "6. declared normal comparison maps (v4 p7 Defs 1.3/1.4/2.3; p12/p13 switch) \u2014 the fifth family of v13 LOG #3",
+      "substrate": "finite total matter-geometry records, general regulator a",
+      "object_type": "H_a[N] algebraic comparison map + D_a[v]; R_HH,a the pinned residual",
+      "runnable": "no \u2014 v4 carries no code; declaration only",
+      "spatial_dimension": "general d (the metric candidate is I_a(g)^ij)",
+      "takes_lapse_profile": "yes \u2014 a finite lapse test N",
+      "primitive_signed_lapse": "unconstrained by declaration",
+      "metric_explicitly_supplied": "no \u2014 I_a(g)^ij is READ from the finite geometry record g_a",
+      "background_geometry_encoded": "no (g is a finite configuration variable, v4 p7:238)",
+      "transported_second_step": "declared via D_a[-beta_a(g;N,M)] in R_HH,a",
+      "invertible_comparison_map": "yes BY DECLARATION (v4 p7:161-166) \u2014 never constructed",
+      "forward_swap_nontrivial": "not excluded; p13 Prop 3.6 exhibits a nonzero three-normal switch detector on a two-state metric alphabet",
+      "group_twocell_defined": "yes \u2014 R_HH,a[N,M] is the pinned object exactly (v4 p7:227-236)",
+      "group_twocell_nontrivial": "undecided \u2014 no construction exists to measure",
+      "q_order_same_substrate": "no \u2014 no order/count instrument runs on a v4 record substrate"
+    }
+  ],
+  "anchor_failures": []
+}

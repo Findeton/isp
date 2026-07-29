@@ -187,3 +187,37 @@ record-native and fail to produce the required closure.**  The
 in-flight repair worker's fix list is AMENDED accordingly (its
 ownership extended to the step-0 receipt code); #2 and #3 remain
 forward-corrected by this entry where they conflict.
+
+## 2026-07-28 — GW1 REPAIRED PER BOTH ROUNDS — **GW1 TERMINAL** (v13
+## LEDGER #5)
+All fixes from #3 (internal) and #4 (external, code-blind) applied
+and verified (adjudicator reruns: the STEP-0 census receipt exits 0,
+re-emits both machine-readable receipts, all anchors hold; the
+diagnostics receipt exits 0 under the declared venv interpreter —
+note: it REQUIRES code/.venv/bin/python3.13, numpy — the plain
+interpreter lacks it; recorded here as the run rule).  **THE
+TERMINAL VERDICT: GW1-NOT-RUNNABLE — PRIMARY LOCATED BLOCK AT THE
+DEFORMATION INTERFACE**, with the five-condition statement (§1.1),
+the no-smuggling definition (§1.2), the typed object vocabulary
+(§1.3), SIX classified families (the repair's flagged judgement
+call — Candidate B is a distinct schema row beside LOG #3's fifth
+family — accepted: the table must be consistent with the note), the
+two-rule §3.1 split (δ_swap ≡ 0 [theorem] / nonzero-but-
+gradient-blind; Ω = I exactly / undefined), instrument (i) demoted
+to runnable partial diagnostics with per-row reach-outside-
+order+count disclosures and the engraved provisional acceptance,
+the §5 interface inventory (the kernel is the PRIMARY located
+block, not the only one), Prop 10.6 scoped modulo gauge, the §9.1
+drift root cause with the required connectivity guard (and the
+live unguarded twin at v6_p2_spatial_direction.py:48-50 named),
+and the ordered successor (H_a[N] per v4 p7 Def 1.3 first, with
+the §5 co-requisites; the family-4 lapse graft second; Candidate B
+third).  The STEP-0 receipt: 47 paths (0 differing from HEAD), 13
+search rows, 9 re-runs all exit 0, 6 families × 15 schema fields,
+zero scripts declaring error control — recorded.  The boxed
+conclusion stands: **the corpus can either obtain nontrivial
+closure by supplying geometry, or remain record-native and fail to
+produce the required closure.**  GW1 IS TERMINAL — v13's founding
+question is answered at its first joint with a receipted negative
+and a constructive successor; the v13 programme's next unit (the
+H_a[N] construction) awaits the user's word.

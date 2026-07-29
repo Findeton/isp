@@ -1,0 +1,257 @@
+==============================================================================
+code/v6_task2b_metric_extraction.py  exit=0  wall=2.54s  sha256=aa2fc5f14c490057627504d43bfb60f2a7b141991b091a9e379214d12ac7e4b6
+  anchor [HIT ] structure function g^xx = +0.99
+--- stdout ---
+==============================================================================
+Task 2b: extract g_{mu nu} (and the spatial g^{ij}) from causal data on a flat sprinkling
+==============================================================================
+
+2D (67739 central related pairs; tau-from-volume vs true corr = 0.984):
+   recovered g_{mu nu} (normalized g_tt=1):
+    [[ 1.     0.007]
+     [ 0.007 -1.006]]
+   -> g_tt=+1.00, g_tx=+0.01, g_xx=-1.01   (Minkowski: +1, 0, -1)
+   -> induced SPATIAL metric h_xx = -g_xx = +1.01  =>  structure function g^xx = +0.99  (flat = +1)
+   boost-covariance check (beta=0.5): recovered g_tt=+1.00, g_tx=-0.00, g_xx=-1.01  (still Minkowski)
+
+3D (24970 central related pairs; tau-from-volume vs true corr = 0.950):
+   recovered g_{mu nu} (normalized g_tt=1):
+    [[ 1.   -0.   -0.  ]
+     [-0.   -1.    0.  ]
+     [-0.    0.   -0.96]]
+   -> spatial block ~ -I_2  =>  g^{ij} ~ +I_2  (flat Euclidean structure function)
+
+==============================================================================
+VERDICT (Task 2b)
+==============================================================================
+- The metric g_{mu nu} is RECOVERED from causal data alone (interval cardinalities = volume =
+  order+number): both 2D and 3D return Minkowski diag(1,-1[,-1]) to a few percent, and the
+  extraction is boost-covariant. The induced spatial metric -> g^{ij} = flat delta^{ij}.
+- So the HKT structure function g^{ij} IS extractable from local causal data on the division-event
+  set -- the ingredient §5.9 flagged as missing is now in hand (validated on flat space).
+- REMAINING (honest): (i) curved test -- repeat on a curved sprinkling and recover the curved
+  g^{ij} (next calc); (ii) the final HKT closure -- verify the antichain-deformation bracket
+  {H_perp,H_perp} actually closes on g^{ij} H_j with THIS extracted metric. That last step is
+  what turns the dynamics leg from 'ingredients present' into 'GR derived'.
+==============================================================================
+code/v6_task2d_bracket_closure.py  exit=0  wall=0.54s  sha256=06f73ffe4b1ee20e700e95305ed3d0fe06a882d3fc32fb8a3ed35bbd3b4be1e7
+  anchor [HIT ] CONTROL holds: equal lapses commute exactly (|comm|=0) in every run
+--- stdout ---
+==============================================================================
+Task 2d: does the two-lapse commutator close on g^{ij}(N1 dN2 - N2 dN1)?
+==============================================================================
+
+    N    s | ctrl(N1=N2) | |comm| N1!=N2 |  % of N | corr to GR xi
+ 3000    6 |           0 |             7 |   0.23% |        -0.161
+ 4000    6 |           0 |            13 |   0.33% |        -0.139
+ 4000   10 |           0 |            20 |   0.50% |        -0.470
+ 6000    8 |           0 |            21 |   0.35% |        -0.251
+
+==============================================================================
+VERDICT (Task 2d) -- read honestly
+==============================================================================
+- CONTROL holds: equal lapses commute exactly (|comm|=0) in every run -- the necessary {H,H[N=N]}=0.
+- NEGATIVE / NULL: for N1!=N2 the commutator is at the discretization-noise floor (~0.35% of
+  events) and does NOT localize on the lapse-gradient profile (mean corr -0.26 ~ 0).
+  => the naive order-based deformations DO NOT reproduce the GR term g^{ij}(N1 dN2 - N2 dN1).
+     The construction sits at (or near) the ABELIAN / ultralocal (Carrollian) limit. The GR
+     structure function is the metric-dependence of 'normal', which the bare causal ORDER
+     cannot supply: the extracted metric (§5.10/5.11) is the genuinely-needed extra datum, and
+     'order + metric -> exact Dirac-Schwinger' is NOT achieved here -- it is the open core.
+==============================================================================
+code/v6_task2e_AvsB_diagnostic.py  exit=0  wall=6.96s  sha256=cc7425354ed0bc5ac94f987b93bfb0dc1d0c2c581f75a16015bdf136a171bf22
+  anchor [HIT ] (A) STRUCTURAL BLINDNESS
+--- stdout ---
+==================================================================================
+Task 2e: A (structural blindness) vs B (subleading, noise-swamped)?  band scale s ∝ N
+==================================================================================
+     N | reals | comm/real | enrichment <|xi|>_c/<|xi|>_touch | hist corr
+  1500 |    40 |       8.5 |                            0.831 |    -0.667   (ctrl=0)
+  3000 |    20 |      14.2 |                            0.921 |    -0.322   (ctrl=0)
+  6000 |    10 |      18.3 |                            0.727 |    -0.759   (ctrl=0)
+ 10000 |     6 |      25.0 |                            0.838 |    -0.543   (ctrl=0)
+
+==================================================================================
+VERDICT (Task 2e)
+==================================================================================
+- (A) STRUCTURAL BLINDNESS: enrichment ~ 1 and correlation ~ 0 at ALL N (no rising trend) -> the
+  naive order-based rule produces only boundary NOISE, with NO GR-shift signal at any resolution.
+  The naive deformation is directionally metric-blind; the c->0 (Carrollian) limit is genuine for it.
+  Path: it CANNOT be fixed by scaling -- needs a directional construction (unit normal from local
+  order+counts) OR a no-go theorem that k-local order+count deformations can't make the dz contact
+  term. This is the honest fork the diagnostic was built to resolve.
+
+  enrichment trend: [0.83 0.92 0.73 0.84]   hist-corr trend: [-0.67 -0.32 -0.76 -0.54]
+==============================================================================
+code/v6_task2f_nogo_confirm.py  exit=0  wall=0.52s  sha256=e4f786287445db315a39b0829992657af919f4513a3a309764df3b8a746cff2f
+  anchor [HIT ] IDEAL pointwise-additive deformation: |commutator| = 0 EXACTLY
+--- stdout ---
+================================================================================
+Task 2f: confirm the gradient-blind no-go (exact commute for the pointwise-additive class)
+================================================================================
+     N |  IDEAL additive |comm| | recomputed-ha |comm| (§5.12)
+  2000 |                      0 |                           19
+  4000 |                      0 |                           13
+  8000 |                      0 |                           31
+
+================================================================================
+VERDICT (Task 2f)
+================================================================================
+- IDEAL pointwise-additive deformation: |commutator| = 0 EXACTLY at every N -> {H_perp,H_perp}=0,
+  the Carrollian limit, as the theorem proves: both orders reach { h <= s(N+M) }, symmetric in N,M.
+- §5.12 recomputed-ha rule: small nonzero residual (the H2-violation / boundary discreteness), which
+  §5.13 showed does NOT track the GR shift xi (gradient-blind noise). Consistent with the theorem.
+- CONCLUSION: pointwise lapse-dependence => exact (or up to gradient-blind noise) commute => Carrollian.
+  The GR term g^{ij}(N dM - M dN) is the metric-raised lapse GRADIENT (normal tilt); a rule that never
+  forms dN cannot form g^{ij}dN. Escaping Carrollian REQUIRES neighbour-lapse (gradient) coupling +
+  the inverse metric g^{ij} (have it, §5.10/5.11) + a combinatorial spatial DIRECTION (the open piece).
+==============================================================================
+code/v6_p2c_flow_drift.py  exit=0  wall=0.91s  sha256=68f479651e4194879cde0938f69898c0ca4d32b6155d7384bd22e76d54900de0
+  anchor [HIT ] = +1.0000
+  anchor [HIT ] mean +0.540
+  anchor [HIT ] mean 1.26
+--- stdout ---
+==============================================================================
+PART 1: noise-free grid mechanism check (push along local unit normal)
+==============================================================================
+   corr( commutator drift , GR prediction -eps^2(NM'-MN') ) = +1.0000
+   slope(Delta vs xi)/(-eps^2) = 1.001   (1.000 => exactly the GR coefficient)
+   => the assembled normal-flow reproduces the GR tangential drift xi. Mechanism CONFIRMED.
+
+==============================================================================
+PART 2: causal-set flow-drift -- does it survive the recovered frame & localize on xi?
+==============================================================================
+   over 5 sprinklings (|A|~85):
+   corr( causal-frame drift , GR profile -xi ) = mean +0.540  (per-trial [0.01 0.72 0.84 0.8  0.33])
+   enrichment of |drift| at high |xi|          = mean 1.26  (>1 = localizes on GR profile)
+   [§5.12 gradient-blind baseline was: enrichment ~0.8, corr ~0 (no localization)]
+
+==============================================================================
+VERDICT
+==============================================================================
+- WEAK-POSITIVE/NOISY: corr +0.54, enrichment 1.26 -- a real but noisy GR-profile signal,
+  above the §5.12 null; consistent with the recovered frame's known noise. Suggestive, not clean.
+==============================================================================
+code/v6_p2d_curved_coefficient.py  exit=0  wall=0.32s  sha256=89f4fb5aa142b466de554674d12a6987db044c6e5b2ee2b00aa2a33ab1ca0a0e
+  anchor [HIT ] corr(C, 1/Omega^2)=+1.0000
+  anchor [HIT ] corr(C, 1/Omega^2)=+0.0109
+  anchor [HIT ] corr(C_chain, 1/Omega^2_true) = +0.993
+  anchor [HIT ] corr(C_dens , 1/Omega^2_true) = +1.000
+  anchor [HIT ] corr(C_chain, C_dens)         = +0.995
+  anchor [HIT ] centre/wing of C_chain = 0.214  (GR target 0.160
+--- stdout ---
+====================================================================================
+PART 1: clean grid -- does the curved-normal flow-drift give C(x)=1/Omega^2 (GR)?
+====================================================================================
+  GR  (curved normal, uses proper-time Jacobian 1/Omega)
+     corr(C, 1/Omega^2)=+1.0000   centre/wing C = 0.239   (GR target 0.232,  Horava target 1.000)
+  Hor (flat normal, ignores Omega)                     
+     corr(C, 1/Omega^2)=+0.0109   centre/wing C = 1.000   (GR target 0.232,  Horava target 1.000)
+  -> the discriminator SEPARATES them: GR coefficient tracks the curved 1/Omega^2 and DIPS at the
+     centre (g^xx small where Omega large); Horava stays flat (centre/wing ~ 1).
+
+====================================================================================
+PART 2: causal set -- recover the coefficient from order+number, Omega NEVER inserted
+====================================================================================
+   per-x recovered (mean over 6 sprinklings), normalized to flat wings:
+        x 1/Om^2 true   C_chain    C_dens
+    -1.65       0.720     0.965     0.993
+    -1.05       0.375     0.489     0.518
+    -0.45       0.192     0.261     0.272
+     0.15       0.163     0.203     0.230
+     0.75       0.259     0.316     0.364
+     1.35       0.540     0.691     0.760
+
+   corr(C_chain, 1/Omega^2_true) = +0.993     [flow-drift coeff (chains) tracks the curved metric?]
+   corr(C_dens , 1/Omega^2_true) = +1.000     [independent density channel cross-check]
+   corr(C_chain, C_dens)         = +0.995     [two INDEPENDENT causal-data channels agree? = isotropy/GR]
+   centre/wing of C_chain = 0.214  (GR target 0.160; Horava-artifact target 1.000)
+
+====================================================================================
+VERDICT (§5.18)
+====================================================================================
+- POSITIVE: the flow-drift coefficient recovered from causal data TRACKS the curved inverse metric
+  1/Omega^2 (corr +0.99), DIPS in the curved centre (centre/wing 0.21 vs GR 0.16),
+  and the two independent channels (longest-chain proper time, number density) AGREE (corr +0.99).
+  => the structure function is the curved metric g^{ij} (GR), NOT a constant (Horava) -- and the
+     time/space conformal factors are isotropic (Lorentzian, z=1), not anisotropic (Lifshitz).
+     Scope: shows the v6 construction is GR-faithful in CURVED space; it does not (cannot, w/o the
+     dynamics) show nature SELECTS GR over Horava -- that is the §10 reconstruction question.
+==============================================================================
+code/v6_p2e_3d_tensor_coefficient.py  exit=0  wall=0.12s  sha256=2d045ae4b84f22c5017ae265fa44b3f916a64d9b745fc40ab3fcc736536fb01a
+  anchor [HIT ] cos=1.0000
+  anchor [HIT ] 0.9729
+  anchor [HIT ] 13.38
+--- stdout ---
+====================================================================================
+2+1 tensor-coefficient test: does the flow-drift carry the full inverse metric h^{ab}?
+   anisotropy of h (mean |h_xy|/sqrt(h_xx h_yy)) = 0.148   (0 => no rotation to detect)
+====================================================================================
+
+      eps  cos(meas,GR-tensor)  cos(meas,isotropic)  coeff ratio
+    0.060               1.0000               0.9729        1.000
+    0.030               1.0000               0.9729        1.000
+    0.015               1.0000               0.9729        1.000
+
+   rotation away from the isotropic direction (deg): GR-tensor predicts 13.38, measured 13.38
+
+====================================================================================
+VERDICT (§5.18, 2+1)
+====================================================================================
+- POSITIVE: the measured flow-drift VECTOR tracks the full inverse-metric TENSOR h^{ab}(N d_bM-M d_bN)
+  (cos=1.0000) and is measurably ROTATED (13.4 deg) away from the isotropic-scalar
+  direction (cos to isotropic only 0.9729), exactly as the tensor predicts (13.4 deg).
+  => in 2+1 the structure function is the full spatial metric TENSOR (GR), not merely its scalar part;
+     an isotropic/scalar (or wrong-tensor Horava) coefficient is excluded by the rotation.
+  Caveat: leading-order grid mechanism (clean), like §5.18 Part 1; the causal-set extraction of the
+  3D spatial metric tensor was shown separately in §5.10 (diag recovered to a few %).
+==============================================================================
+code/v6_p2f_4d_tensor_coefficient.py  exit=0  wall=0.73s  sha256=e6b4db5c07cc0561f9bfd6bac2aaa4ad82849b568e09698252b56d795e316d9a
+  anchor [HIT ] cos=1.0000
+  anchor [HIT ] 0.9739
+  anchor [HIT ] 13.13
+--- stdout ---
+======================================================================================
+3+1 tensor-coefficient test: is the flow-drift the FULL 3x3 inverse metric h^{ab}? (SO(3) rotation)
+   anisotropy (mean |h_01|/sqrt(h00 h11)) = 0.110   grid 64^3,  min eig(h) = 0.885
+======================================================================================
+       eps  cos(meas,GR-tensor)  cos(meas,isotropic)  coeff ratio
+    0.0500               1.0000               0.9739        1.000
+    0.0250               1.0000               0.9739        1.000
+    0.0125               1.0000               0.9739        1.000
+
+   SO(3) rotation away from the isotropic direction (deg): tensor predicts 13.13, measured 13.13
+
+======================================================================================
+VERDICT (§5.18, 3+1)
+======================================================================================
+- POSITIVE: the measured flow-drift 3-VECTOR tracks the full inverse-metric TENSOR h^{ab}(N d_bM-M d_bN)
+  (cos=1.0000), rotated 13.1 deg in 3D away from the isotropic-scalar direction
+  (cos to isotropic 0.9739), matching the tensor's predicted SO(3) rotation (13.1 deg).
+  => in the PHYSICAL 3+1 case the structure function is the full 3x3 spatial metric tensor (GR);
+     an isotropic/scalar or wrong-tensor (Horava/Lifshitz) coefficient is excluded by the rotation.
+  Caveat: leading-order grid mechanism (clean); causal-set tensor extraction shown in §5.10 (3D diag).
+==============================================================================
+code/v6_p2_spatial_direction.py  exit=0  wall=21.32s  sha256=76e4e1036495c25c5909f71ed9576bc7ff3dbc5591252a2ab1ba47caca914861
+  anchor [HIT ] mean=0.94
+  anchor [HIT ] x from (v2,v3): mean=0.95;  y: mean=0.92
+--- stdout ---
+================================================================================
+Paper 2 v6: spatial direction from causal order (spectral embedding of slice graph)
+================================================================================
+
+[1+1] recover slice x-coordinate from Fiedler vector v2:
+   |A|~86;  |corr(v2, x_true)| over 6 trials = [0.84 0.97 0.86 0.99 0.98 0.98]   mean=0.94
+
+[2+1] recover slice (x,y) from {v2,v3} (Laplacian eigenmaps):
+   |A|~384;  R^2 recovering x from (v2,v3): mean=0.95;  y: mean=0.92
+   (R^2 -> 1 means the 2 eigenmodes linearly span the true (x,y): full oriented frame recovered)
+
+================================================================================
+VERDICT
+================================================================================
+- SUCCESS (qualified): spatial coordinates ARE recovered from order+counts -- 1+1 |corr|=0.94,
+  2+1 mean R^2=0.93. The slice graph Laplacian's low modes give an ORIENTED spatial frame, so
+  ingredient (iii) is AVAILABLE k-locally (spectrally). The directional deformation is buildable in
+  principle; remaining work is locality/continuum-limit of the construction (spectral embedding is
+  global, so a genuinely k-LOCAL version must be shown). NOT a no-go.
