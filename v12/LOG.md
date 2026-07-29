@@ -1711,3 +1711,46 @@ reference gates); verdict/status vocabulary; the user-review
 protocol; memory-vs-repo; and the failure catalogue mapping each
 rule to the ledger entry that made it.  No unit reopened; the
 halt stands.
+
+## 2026-07-29 — PAPER 2 ADOPTED AND PRODUCTISED; COMMITTED
+## GREEN-UNREVIEWED; ITS ROUND DEFERRED AT THE USER'S ORDER (v12
+## LEDGER #44)
+PROVENANCE: paper2-record-coreference.md + bundle + README were
+delivered by ANOTHER AGENT post-halt (untracked, ~17:13); the
+user ordered adoption ("productise it") with the hostile round
+explicitly DEFERRED (token constraint).  ADJUDICATOR
+VERIFICATION AT ADOPTION: bundle rerun from the relocated
+paper2_code/ — exit 0, 39/39 exact checks, RUN.txt regenerated;
+float sweep 0 across all three modules; ref [13]'s full 40-char
+hash verified against the repository; THE FIVE-CONFIGURATION
+WITNESS HAND-VERIFIED (column-stochasticity; realized
+distribution (0,½,½,0,0); the predecessor-chain proof that the
+full law's automorphism group is trivial; the forced opposite
+unique identifications id vs (12)(34)).  CONTENT VERDICT
+(adjudicator's, pre-round): the counterfactual-completion
+theorem (Thm 6.3) is the correct minimal distillation of W6's
+realized-legs finding — identical realized process + identical
+record law, opposite full-law-forced token identifications — and
+the identity-grounding trilemma (nomological individuation /
+added provenance / groupoid) makes the O4 discriminator concrete;
+Thm 5.1's torsor argument + the Weatherall / Bradley-Weatherall
+citations correctly position the groupoid result as a stochastic
+hole argument.  THE FIX PASS APPLIED (this entry): the stale W6
+status upgraded to TERMINAL in header, §7 and ref [13] (now at
+the terminal hash 158ff8e…940f, with the round's confirmation
+summarized); the §1.3 cross-reference corrected (Theorem 6.2 →
+6.3); THREE RENDERING REPAIRS (the mangled \not\Rightarrow
+hierarchy chain ×3; the §8.5 array's lost line-break
+backslashes; the boxed conclusion restructured); bundle paths
+code/ → paper2_code/ (the other agent had already relocated the
+files; v12/README.md folded into paper2_code/README.md and
+removed).  Rendering audit clean (97 inline spans, 0 with & or
+\\; backslash-in-prose 0; $$ balanced).  THE DECLARED STANCE,
+disclosed in the retroactive pin (note-paper2-pin.md):
+self-contained AT THE THEOREM LAYER with §7 a scoped companion
+comparison — deliberately NOT paper 1's zero-corpus-reference
+standard; if full self-containment is later ordered, §7 and refs
+[12]/[13] are the only sections touched.  STATUS:
+GREEN-UNREVIEWED — NOT citable as terminal, NOT publishable
+until its deferred round runs (mandatory gates listed in the
+pin).  The halt otherwise stands.
