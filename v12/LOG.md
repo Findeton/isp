@@ -1692,3 +1692,22 @@ paper 1's open problems (general-n completion; exhaustive n=5;
 [GMH] converse; beyond-CHSH); (5) the publication route — THE
 USER'S, always.  v11 and BC stay frozen; the 25a959e additions
 stay unreviewed.  **v12 HALTS HERE.**
+
+## 2026-07-29 — RUNBOOK.md CREATED AT THE USER'S REQUEST (v12
+## LEDGER #43)
+Post-halt housekeeping, user-ordered ("other agents are going to
+work on this"): the operating discipline distilled into
+/RUNBOOK.md at the repo root — authority and frozen lines; the
+unit cycle; pin contents and the four-gate rule; worker dispatch
+and freeze-on-delivery; the receipt discipline (exact
+arithmetic, exit-1 anchors, computed-not-typed counts,
+falsifiable gates, both-direction controls, determinism,
+declared scope); adjudicator verification incl. the
+commit-flawed-state-as-referent principle; hostile-round
+protocol; ledger rules (append-only, forward-only corrections,
+post-hoc dispatch records); git rules; the paper standards
+(single-threaded; the paper-1 self-containment + rendering +
+reference gates); verdict/status vocabulary; the user-review
+protocol; memory-vs-repo; and the failure catalogue mapping each
+rule to the ledger entry that made it.  No unit reopened; the
+halt stands.
