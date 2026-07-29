@@ -385,3 +385,45 @@ Alice's permutation is NOT an eraser (relabels, does not
 recombine).  THE KILL evaluated explicitly: DOES NOT FIRE.
 Hostile round dispatched.  W2/W4′ still constructing; W5's and
 GW1's rounds/repair out.
+
+## 2026-07-28 — W4′ DELIVERED: **NEITHER-ONE-NOR-THREE** — SIX PAIRS
+## INDEPENDENT, NINE INVARIANTS, GREEN-UNREVIEWED (v12 LEDGER #11)
+The relation table lands (note-w4p-one-invariant-or-three.md, 60
+gates / 60 pass / 0 fail, 14 anchors, 6.9s; adjudicator rerun
+byte-identical modulo timings).  **ALL SIX CELLS: INDEPENDENT,
+witnesses BOTH WAYS, every one an exact model** — zero IDENTICAL,
+zero MAPPED-BUT-INEQUIVALENT.  The honest count is **NINE measured
+invariants, not three** (Δᴮ, D₂₁₀, d_div, AB, LC, SC, γ, B1, B2)
+with four strict implications (Δᴮ = 0 ⇒ d_div = 0; SC ⇒ LC ⇒ AB;
+γ ≠ 0 ⇒ AB) and ONE ingredient containment: **BC1's predicate IS
+d_div** — the lattice-extended divisibility distance, established
+by verbatim quotation and gated both ways.  U2's
+assumed-one-measured-three warning REPEATS ONE LEVEL UP.
+Separating models in-receipt: (H,H) single-context (Δᴮ ≠ 0, global
+section exhibited — defect without contextuality); PR (strong
+contextuality, CHSH = 4 > 2√2 by the gated AM-QM certificate —
+Φ_X→T is PARTIAL, undefined at PR); BC2's committed model at
+SP-A/E/C cited both directions with M-1 carried; the Δᴮ(H,W) = 0
+phase-alignment zero beside the singlet's γ = 0 — two false zeros
+on different models.  **FINDINGS BEYOND THE PIN: (1)** D₂₁₀ at a
+wing cut is joint − product — a CORRELATION measure; a classical
+two-bit table carries exactly the singlet's defect: reading
+Δᴮ ≠ 0 as a quantumness mark FAILS classically.  **(2)** [AMB]'s γ
+fires ONLY on PR in this zoo — it vanishes on the contextual
+singlet (16/16) AND on HARDY (13/13) despite Hardy's
+non-extendable local section (an explicit ℤ-family with a negative
+coefficient defeats the support restriction); no table cell
+depends on Hardy's γ (verified).  **(3)** d_div ≡ 0 across the
+whole zoo — W1′ C+1's separation instantiated on a Bell carrier
+(144 divisibility queries, all decided by exact certificates, LP
+never invoked).  **(4)** the toy B2 instrument independently
+reproduces bc #4's shape (empty at coarse grains under φ_LOR;
+separating invariant = support size — the same invariant the
+pointer-free replication reports).  **PROGRAMME CONSEQUENCES:**
+v1's T5 ("one class") now FALSIFIED AS MEASURED, not merely
+withdrawn; v2.1's refusal to assert Δᴮ-governs-gluing is
+VINDICATED as a measurement; the v2.1 evidence table's W4′ row is
+DECIDED NEGATIVELY (owed at the Phase-close paper-0 pass); W3′
+receives the record-kills-D₂₁₀-at-every-cut hook; W5 receives the
+BC1-predicate-is-d_div quotation-fact; W2 receives nothing.
+Hostile round dispatched.  W2 still constructing.
