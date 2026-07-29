@@ -1104,3 +1104,56 @@ witnesses; the frame instrument rebuilt from the text alone); G6
 register + rendering (KaTeX-safe grep; abstract-vs-body;
 scope tags; references); G7 the writer's open items refereed.
 This entry is written after the dispatch occurred.
+
+## 2026-07-29 — [REV4] ADJUDICATED: THE PAPER-1 READING ADOPTED,
+## THE USER'S NO-SPLIT ORDER, W6 ORDERED STARTED NOW (v12 LEDGER
+## #29)
+The fourth external review, delivered by the user.  ITS PAPER-1
+VERDICT (input to, not substitute for, the running round): "the
+first genuinely self-contained mathematical paper of the Weld
+programme"; the deepest result read as "an isolated transition
+has no gauge-invariant phase content, but a composable diagram
+does"; O2's referent characterized as THE GAUGE-EQUIVALENCE
+CLASS OF A COMPOSITIONAL AMPLITUDE DIAGRAM (hierarchy of
+support-cycle / relation-loop / cut-coherence / cross-block
+invariants — NOT one scalar, matrix, wavefunction, cohomology
+class, or shadow functional); the record-descent limit read as
+"classical recorded actuality can coexist with nontrivial
+quantum nomology".  Its paper-level challenges (§3) FORWARDED to
+the running round as an amendment (recorded here; sent this
+session): abstract too dense — foreground the four central
+results; the novelty hierarchy (gauge reduction + record descent
++ the pair/composite boundary, NOT the elementary cross-term
+identity) stated earlier and harder; K's canonicality vs
+sufficiency pressed; "lowest degree" at exactly the proved
+scope; §8's placement examined — **WITH THE USER'S EXPLICIT
+CONSTRAINT: THE PAPER IS NOT TO BE SPLIT** ("Don't split the
+paper into two though") — internal reorganization only if
+publishability demands.  Its Paper-0 recommendation QUEUED (not
+executed): after the paper round, update §4/§5 — W7 terminal;
+O2's finite one-chart referent supplied per its proposed
+"Nomological composition structure" wording; universal
+completion, general-dimension classification, cross-chart
+descent open.  ITS W6 SPECIFICATION ADOPTED AS THE PIN (#30):
+the three-problem division (fact≠value / fact≠token /
+pairwise≠global), the φ-skeleton with preservation list and
+coherence laws, fact-vs-event-token-vs-effective-descent
+(W6-A/B/C), six pre-registered outcomes incl. groupoid and
+blocked-at-referent, six mandatory controls incl. the symmetric
+duplicate, the PHASE-IS-NOT-A-CRITERION architecture rule (W6 =
+base of record referents; W7 = the nomological fibre over it),
+and the T5″ safety clauses (descent ⇏ global present; actual
+records only).  THE USER'S ORDER: start W6 now, in parallel with
+the paper round.
+
+## 2026-07-29 — W6 PINNED: RECORD CO-REFERENCE AND EFFECTIVE
+## DESCENT (v12 LEDGER #30)
+The pin (note-w6-record-coreference-pin.md) freezes the unit per
+[REV4]: STEP-0 referent census FIRST (typed objects, file:line
+citations, four-gate discipline on φ/overlap/provenance; the
+GW1-precedent blocked verdict first-class; bc/ only at its
+pre-25a959e adjudicated state; phase agreement banned as a fact-
+identity criterion); then W6-A/B/C with the coherence laws; the
+six controls as exact models; the deliverable = the DESCENT
+TABLE (model × sub-problem → outcome); six pre-registered
+outcomes.  Dispatch to follow; recorded after it occurs.
