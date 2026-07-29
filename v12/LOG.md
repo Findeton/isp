@@ -1017,3 +1017,17 @@ binding: writer → adjudicator token-audit + bundle regeneration →
 paper hostile round (self-containment, number sweep, proof,
 attribution, quote verification, register) → repairs → terminal.
 Writer dispatch to follow; recorded after it occurs.
+
+## 2026-07-29 — PAPER 1 WRITER DISPATCHED (v12 LEDGER #26)
+Background writer (Opus 5), bound to the frozen pin at f58a79f;
+read list = the pin, the charter, the six terminal notes + code,
+the LOG terminal entries (for understanding only — never citable
+in-paper); deliverables v12/paper1-composition-defect.md +
+v12/paper1_code/ (standalone exact bundle + master runner +
+RUN.txt); the full forbidden-token list, the reconstruction
+requirement for the independence witnesses, the repaired W7
+statement forms, and the honesty/scope rules in the dispatch.
+On return: adjudicator forbidden-token audit + full bundle
+regeneration + spot proof reads → commit GREEN-UNREVIEWED →
+paper hostile round per the pin's binding review plan.  This
+entry is written after the dispatch occurred.
