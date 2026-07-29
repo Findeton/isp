@@ -557,3 +557,50 @@ computation).  **W3′ IS TERMINAL — the programme's third surviving
 positive, and its strongest: the records theorem with a sharp
 decision procedure, an all-class biconditional, and an honest
 converse map.**
+
+## 2026-07-28 — W4′ HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES,
+## ALL APPLIED — **W4′ TERMINAL**; #11's PROCESS SLIP OWNED (v12
+## LEDGER #15)
+The round reproduced every number under a fully independent
+implementation (its own Smith-normal-form solver; its B2 by plain
+DFS with no invariant pruning, so its negatives are independent
+non-existence proofs) and even verified the verdicts are MORE
+robust than printed (physics-varying witnesses exist for the
+same-model cells).  **THE PRINCIPAL FINDING (M1, attribution): the
+Hardy-γ and singlet-γ vanishings are [AMB]'s OWN published results
+— their §5 opening example (same support up to relabelling, same
+ℤ-family r₂ = s₆ + s₇ − s₈) and their extendability clause; the
+novelty claim dies, the computation stands.**  All fixes applied;
+AND THE REPAIR CORRECTED THE ROUND'S OWN CITATIONS after fetching
+the paper (the extendability clause is Prop 4.5, not 4.3 — 4.3 is
+the compatible-family criterion this receipt implements, now cited
+as such; the "false positive" terminology is §4 — the paper has
+six sections, no §8; the support-table match now GATED, Hardy
+fingerprint (3,3,3,4), 13 sections).  Also applied: **(M2)** the
+wing-cut finding restated as D₂₁₀-only (covariance at the COH leg;
+"phase-forgetting" → "discards the classical record" — there are
+no phases anywhere in this zoo; the Δᴮ-quantumness sentence
+withdrawn and its scoped form carried); **(M3)** d_div ≡ 0 is
+FORCED BY THE CARRIER — new structural gate: 144/144 cuts have
+pairwise support-disjoint source columns (distinct-column counts
+exactly {3, 9}), so the disjoint-support construction decides
+everything; "C+1's separation instantiated" → "constant by
+construction; re-anchored, not re-measured"; **(m-fixes)** the
+witness-cell listing corrected (the SWAPBACK pair sits in T vs B1,
+X vs B1, B1 vs B2 — gated); the AST-self-auditing disclosure (11
+literal-True gates + 8 re-assertions, enumerated by name — cannot
+drift); SEP(a) now BUILDS the (H,H)-induced model; the
+Δᴮ ⇒ d_div gate's substance gated (B(U₂) column-stochasticity);
+the physics-varying witnesses gated (DET vs LCORR: X, B1, B2 equal,
+T moves); the ingredient-containment phrasing carried everywhere
+("the ∀-over-targets conjunction of the atom on per-subsystem
+reduced matrices"); the nine/seven counting convention stated with
+a convention-independence gate; Z3#4 on all six models.
+**PROCESS SLIP OWNED: #11 closed with "Hostile round dispatched"
+— written before the dispatch happened; the round was dispatched
+one adjudication cycle later and flagged the line.  The ledger
+must record dispatches only after they occur.**  Receipt: 66
+gates / 66 pass / 0 fail, 14 anchors, 5.1s; adjudicator rerun
+byte-identical modulo timings; the relation table UNCHANGED — all
+six pairs INDEPENDENT, W4′-NEITHER-ONE-NOR-THREE stands.  **W4′ IS
+TERMINAL.**

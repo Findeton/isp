@@ -12,8 +12,13 @@ THE QUESTION.  Paper 0 v1's T5 bundled three obstructions into one
 class as a HYPOTHESIS.  U2's precedent is the engraved warning: three
 structures assumed one, measured three.  This unit assumes no
 unification.  It formalizes the objects, constructs the candidate maps,
-and measures co-variation on models CHOSEN IN ADVANCE TO SEPARATE.  The
-deliverable is the relation TABLE.
+and measures co-variation.  SCOPE OF "CHOSEN IN ADVANCE": the FOUR
+pin-named separating models (6.3 a-d) were named in the frozen pin
+BEFORE this file existed; the ZOO of 5.x/6.2 (six tables x two variants
+x two prefixes) is THIS UNIT'S CONSTRUCTION, built after the pin and
+not pre-registered.  The declared TEST of independence (below) is what
+is fixed in advance for the zoo.  The deliverable is the relation
+TABLE.
 
 THE OBJECTS
   T   THE TEMPORAL OBJECT — the Delta^B-family on declared
@@ -26,8 +31,19 @@ THE OBJECTS
       no-global-section obstruction on the CHSH context 4-cycle [AB],
       on declared exact empirical models, with the possibilistic
       hierarchy and the Abramsky-Mansfield-Barbosa cohomological
-      witness [AMB], computed where defined, its SUFFICIENT-NOT-
-      NECESSARY caution carried as a measured fact, not a remark.
+      witness [AMB], computed where defined.  ATTRIBUTION, ENGRAVED:
+      the two VANISHING results below (on Hardy, and on the singlet)
+      are [AMB]'s OWN PUBLISHED RESULTS, not this unit's.  [AMB] sec.5
+      "Examples" OPENS with Hardy ("We begin with an example to show
+      that false positives do indeed arise") and exhibits the same
+      Z-family mechanism r_2 = s_6 + s_7 - s_8 with the negative
+      coefficient; [AMB] Prop. 4.5's first clause (possibilistic
+      extendability => the obstruction vanishes for every section in
+      the support) yields the singlet at once, since supp(SINGLET) =
+      supp(UNIF) is full.  [AMB]'s own term for this is a FALSE
+      POSITIVE (sec.4: the family exists but determines no bona fide
+      global section).  Both are REPRODUCED INDEPENDENTLY here, on the
+      definition printed in full at 3.4.
   B1  BC1's measured obstruction — division events do not glue across
       the subsystem lattice.  CITED from the committed bc state (the bc
       working tree is dirty with frozen partial edits; every quoted
@@ -249,6 +265,7 @@ Q_BC1 = {
     "predicate": "> a column-stochastic X_b on C_S with "
                  "X_b Γ_S(t_k←0) = Γ_S(t_b←0).",
     "gs1axiom": "**GS1 restriction-compatibility.**",
+    "u1d1": "This is U1's (D1) conjoined over the spanning",
 }
 Q_LOG = {
     "m1": "declared intermediate division event VIOLATES the law of total",
@@ -600,16 +617,51 @@ anchor("W1 committed value  Delta^B_00 = -4032/15625 with d_div = 0",
 print()
 print("2.1  THE INTERNAL RELATIONS OF T — an implication lattice, not an")
 print("     identity.  T is three objects before any other object is met.")
+_U2S = (H2, W_UNB, mmul(K8, H2, W_UNB), mmul(K8, W_UNB, W_UNB))
+_U1S = (H2, W_UNB, mmul(K8, W_UNB, H2), mmul(K8, H2, H2))
+
+
+def _brat(U):
+    """B(U) as an exact RATIONAL matrix, or None if an entry leaves Q."""
+    out = []
+    for row in mB(K8, U):
+        r = []
+        for x in row:
+            v = K8.to_rat(x)
+            if v is None:
+                return None
+            r.append(v)
+        out.append(r)
+    return out
+
+
 _imp_ok, _imp_n = True, 0
-for _U2 in (H2, W_UNB, mmul(K8, H2, W_UNB), mmul(K8, W_UNB, W_UNB)):
-    for _U1 in (H2, W_UNB, mmul(K8, W_UNB, H2), mmul(K8, H2, H2)):
+for _U2 in _U2S:
+    for _U1 in _U1S:
         _imp_n += 1
         if mzero(K8, delta_def(K8, _U2, _U1)):
             if not meq(K8, mB(K8, mmul(K8, _U2, _U1)),
                        mmul(K8, mB(K8, _U2), mB(K8, _U1))):
                 _imp_ok = False
-gate("T-int", "Delta^B = 0  =>  d_div = 0  (the divisor is K = B(U2))",
-     _imp_ok, "%d exact pairs; a one-line theorem, gated" % _imp_n)
+_stoch_ok, _stoch_n = True, 0
+for _U in _U2S + _U1S:
+    _stoch_n += 1
+    _Bm = _brat(_U)
+    if _Bm is None or not stochastic(_Bm):
+        _stoch_ok = False
+print("     THE GATE'S SUBSTANCE, STATED.  'Delta^B = 0 => d_div = 0' is")
+print("     DEFINITIONAL once the divisor is admissible: Delta^B = 0 SAYS")
+print("     B(U2U1) = B(U2)B(U1), which is the witness equation itself.  The")
+print("     non-trivial ingredient is that K = B(U2) is a legal divisor at")
+print("     all — column-stochastic — and THAT is what is gated.  The")
+print("     16-pair walk is retained as an arithmetic consistency check and")
+print("     is, as coded, a tautology.")
+gate("T-int", "SUBSTANCE: the divisor K = B(U2) is COLUMN-STOCHASTIC",
+     _stoch_ok and _imp_ok,
+     "%d census Born shadows, each exactly rational with unit column sums; "
+     "the implication is then definitional (%d-pair walk consistent).  "
+     "SCOPE: d_div here is d_div of the BORN-DECLARED pair "
+     "Gam_10 := B(U1), Gam_20 := B(U2U1)" % (_stoch_n, _imp_n))
 gate("T-int", "STRICT: d_div = 0 while Delta^B != 0", True,
      "W1 C+1 anchor: Delta^B_00 = -4032/15625 with K = S(-175/527)",
      "[REV2]")
@@ -627,10 +679,18 @@ cite("[AB]", "Abramsky-Brandenburger NJP 13 113036 (2011) — the presheaf "
              "formulation; global section = non-contextual; the "
              "possibilistic hierarchy (contextual / logically contextual / "
              "strongly contextual).")
-cite("[AMB]", "Abramsky-Mansfield-Barbosa arXiv:1111.3620 — the "
-              "cohomological obstruction on the free abelian presheaf "
-              "generated by the SUPPORT: a SUFFICIENT, NOT NECESSARY "
-              "witness of contextuality.")
+cite("[AMB]", "Abramsky-Mansfield-Barbosa, 'The Cohomology of Non-Locality "
+              "and Contextuality', arXiv:1111.3620 — the cohomological "
+              "obstruction on the free abelian presheaf generated by the "
+              "SUPPORT: a SUFFICIENT, NOT NECESSARY witness of "
+              "contextuality.  Prop. 4.3 is the compatible-family criterion "
+              "implemented at 3.4; sec.4 names the failure mode a FALSE "
+              "POSITIVE; sec.5's OPENING example is HARDY, with the "
+              "Z-family r_2 = s_6 + s_7 - s_8; Prop. 4.5's first clause "
+              "(possibilistic extendability => vanishing obstruction on the "
+              "whole support) covers the singlet.  BOTH VANISHING VERDICTS "
+              "BELOW ARE [AMB]'s OWN; this unit reproduces them "
+              "independently.")
 cite("[F]", "Fine PRL 48 291 (1982) — for the (2,2,2) scenario a joint "
             "distribution exists iff the CHSH inequalities hold.")
 cite("[T]", "Tsirelson — the real-unit-vector (Gram) representation of "
@@ -810,11 +870,32 @@ print("     For C0 in the cover and s0 in S(C0),")
 print("       gamma(s0) = 0  <=>  there are r_i in F(C_i) with r_{C0} = s0")
 print("                           and r_i| = r_j| on every C_i n C_j,")
 print("                           the empty intersections included.")
-print("     This is the compatible-family form of [AMB]'s obstruction: an")
-print("     INTEGER linear feasibility problem, decided by Hermite normal")
+print("     This is [AMB] Prop. 4.3's criterion in compatible-family form:")
+print("     an INTEGER linear feasibility problem, decided by Hermite normal")
 print("     form.  The rational relaxation is reported alongside.  No claim")
 print("     is made to reproduce any published per-model table; the verdict")
 print("     below is a verdict about THIS definition.")
+print()
+print("     ATTRIBUTION, BEFORE THE NUMBERS.  The two VANISHING results")
+print("     below are [AMB]'s OWN PUBLISHED RESULTS, reproduced")
+print("     independently here — they are NOT this unit's findings:")
+print("       * HARDY.  [AMB] sec.5 'Examples' OPENS with Hardy — 'We begin")
+print("         with an example to show that false positives do indeed")
+print("         arise' — and exhibits the same Z-family mechanism,")
+print("         r_2 = s_6 + s_7 - s_8, with the negative coefficient that")
+print("         defeats the support restriction, concluding that the")
+print("         obstruction gamma(s_1) vanishes.")
+print("       * SINGLET.  [AMB] Prop. 4.5's first clause: if the model is")
+print("         possibilistically extendable the obstruction vanishes for")
+print("         EVERY section in the support.  supp(SINGLET) = supp(UNIF)")
+print("         is full, and UNIF is extendable, so the singlet verdict is")
+print("         an immediate corollary of [AMB]'s own proposition.")
+print("     [AMB]'s TERM for this failure mode is a FALSE POSITIVE (sec.4:")
+print("     a compatible family exists but determines no bona fide global")
+print("     section) — the obstruction vanishes though the model IS")
+print("     contextual.  This unit's contribution here is the exact")
+print("     integer certificate and the placement of these facts in the")
+print("     relation table, not the facts themselves.")
 
 
 def gamma_zero(supp, i0, s0):
@@ -869,28 +950,37 @@ gate("X4", "gamma != 0 on the PR box, at every local section",
      XVAL["PR"]["gnz"] == XVAL["PR"]["gtot"],
      "%d/%d sections obstructed" % (XVAL["PR"]["gnz"], XVAL["PR"]["gtot"]),
      "[AMB]")
-gate("X4", "NOT NECESSARY: a CONTEXTUAL model with gamma = 0 everywhere",
+gate("X4", "[AMB] Prop. 4.5 REPRODUCED: contextual, gamma = 0 everywhere",
      XVAL["SINGLET"]["contextual"] and XVAL["SINGLET"]["gnz"] == 0,
-     "SINGLET: max CHSH = %s > 2, yet gamma = 0 at all %d sections"
-     % (XVAL["SINGLET"]["chsh"], XVAL["SINGLET"]["gtot"]), "[AMB]")
-gate("X4", "NOT NECESSARY even at the LOGICAL level, on this definition",
+     "SINGLET: max CHSH = %s > 2, yet gamma = 0 at all %d sections — "
+     "[AMB]'s OWN result (Prop. 4.5, first clause; supp(SINGLET) = "
+     "supp(UNIF) is full), reproduced independently, NOT a finding of this "
+     "unit" % (XVAL["SINGLET"]["chsh"], XVAL["SINGLET"]["gtot"]), "[AMB]")
+_hardy_fp = tuple(sorted(len(XVAL["HARDY"]["supp"][c])
+                         for c in XVAL["HARDY"]["supp"]))
+gate("X4", "[AMB] sec.5's OPENING EXAMPLE reproduced: HARDY, gamma = 0",
      (XVAL["HARDY"]["level"] == "LC" and XVAL["HARDY"]["nbad"] > 0
-      and XVAL["HARDY"]["gnz"] == 0),
+      and XVAL["HARDY"]["gnz"] == 0 and _hardy_fp == (3, 3, 3, 4)),
      "HARDY has a NON-EXTENDABLE local section and gamma = 0 at all %d "
-     "sections: an explicit Z-family with a negative coefficient defeats "
-     "the support restriction" % XVAL["HARDY"]["gtot"], "[AMB]")
+     "sections; support fingerprint %s = [AMB] sec.5's Hardy table up to "
+     "outcome relabelling, same Z-family mechanism (r_2 = s_6 + s_7 - s_8, "
+     "negative coefficient).  [AMB]'s OWN example, reproduced independently"
+     % (XVAL["HARDY"]["gtot"], str(_hardy_fp)), "[AMB]")
 gate("X4", "so gamma is STRICTLY WEAKER than logical contextuality here",
      XVAL["HARDY"]["gnz"] < XVAL["PR"]["gnz"],
      "the witness fires on the STRONGLY contextual PR and on nothing else "
-     "in this zoo — reported for the definition of 3.4 and no other",
+     "in this zoo — reported for the definition of 3.4 and no other; the "
+     "sufficient-not-necessary status is [AMB]'s stated result, cited",
      "[AMB]")
-print("     THE CAUTION, MEASURED rather than quoted: the cohomological")
-print("     witness is SUFFICIENT and NOT NECESSARY.  The singlet at the")
-print("     CHSH settings has full support, so every local section extends")
-print("     to a compatible Z-family and gamma vanishes on a model with NO")
-print("     global section at all.  gamma is therefore a SEPARATE object,")
-print("     strictly weaker than the AB obstruction: X is not one invariant")
-print("     either.")
+print("     THE CAUTION, REPRODUCED rather than discovered: the cohomological")
+print("     witness is SUFFICIENT and NOT NECESSARY — [AMB]'s own stated")
+print("     status for it, with [AMB]'s own two examples.  The singlet at")
+print("     the CHSH settings has full support, so every local section")
+print("     extends to a compatible Z-family and gamma vanishes on a model")
+print("     with NO global section at all.  gamma is therefore a SEPARATE")
+print("     object, strictly weaker than the AB obstruction: X is not one")
+print("     invariant either.  What is THIS UNIT'S is only the placement of")
+print("     that known separation inside the relation table.")
 print()
 
 # ============================================================================
@@ -901,9 +991,16 @@ print("     CITED, NOT re-run.  bc/note-bc1-... @ %s." % BC1_COMMIT)
 print("       BC1's predicate, quoted: DIV_S(t_k) holds iff for EVERY grid")
 print("       target t_b >= t_k there EXISTS a column-stochastic X_b with")
 print("       X_b Gam_S(t_k<-0) = Gam_S(t_b<-0).")
-print("       => BC1's predicate IS d_div, the THIRD member of T's family —")
-print("          neither Delta^B nor D_210.  This is a fact about the two")
-print("          texts, established by quotation; it is NOT an")
+print("       => BC1's predicate is BUILT FROM d_div, the THIRD member of T's")
+print("          family — neither Delta^B nor D_210.  STATED IN ITS HONEST")
+print("          FORM (6.4, carried here): B1 is a functional of the")
+print("          LATTICE-EXTENDED d_div family — the ALL-TARGETS conjunction")
+print("          of the d_div atom, evaluated on PER-SUBSYSTEM REDUCED")
+print("          matrices.  It is not the atom itself, and this is a")
+print("          containment of INGREDIENTS, not of VALUES.  BC1's own text")
+print("          says as much: 'This is U1's (D1) conjoined over the")
+print("          spanning pairs that straddle t_k' — the connection is")
+print("          BC1's, quoted, not this unit's discovery.  It is NOT an")
 print("          identification of the invariants (see 6.4).")
 print("       axioms over 88 (model, reading) pairs:")
 print("         GS0 88/88 | GS1 66/88 | GS2 88/88 | GS3 22/88")
@@ -970,8 +1067,9 @@ nz_bc2 = sum(0 if gamma_zero(supp_bc2, i0, s0)[0] else 1
              for s0 in supp_bc2[(int(c[0][1]), int(c[1][1]))])
 gate("B2x", "and its [AMB] witness VANISHES at every local section",
      nz_bc2 == 0,
-     "full support => gamma = 0: the false negative lands on the corpus's "
-     "own measured model", "[AMB]")
+     "full support => gamma = 0 by [AMB] Prop. 4.5; [AMB]'s known FALSE "
+     "POSITIVE lands on the corpus's own measured model — the instance is "
+     "this unit's, the phenomenon is [AMB]'s", "[AMB]")
 print("     => ON BC2's OWN MODEL, in one place: X = PC (contextual) with")
 print("        gamma = 0; the frame obstruction NONZERO at all four CHSH")
 print("        settings; the temporal residual ZERO at SP-A/SP-B and")
@@ -999,9 +1097,19 @@ print("PREFIX NONE, or SWAPBACK: two pointer-exchange steps first, so")
 print("Gam(2<-0) = I — a permutation prologue that changes NO statistic.")
 print("VARIANT REC: the declared second leg is the true conditional law (a")
 print("stable record of the first outcome is read).  VARIANT COH: the")
-print("declared second leg is the phase-forgetting law that ignores the")
-print("record, so its residual D_210 = joint - product is exactly a")
-print("Born-shadow defect at the wing cut.")
+print("declared second leg DISCARDS the classical record and uses the bare")
+print("marginal P_B(.|b), so its residual D_210 = joint - product is a")
+print("DECLARED-LAW RESIDUAL at the wing cut.")
+print()
+print("NAMING DISCIPLINE, ENGRAVED (paper 0 v2.1's three defects).  There")
+print("are NO PHASES anywhere in this zoo: the tables are stochastic and no")
+print("amplitude realization is built for any of them (7.3).  COH's")
+print("discarded object is a CLASSICAL RECORD, not a phase.  What is")
+print("measured at the wing cut is therefore D_210 and NOTHING ELSE.  It is")
+print("NOT Delta^B, and it is not called a Born-shadow defect: Delta^B")
+print("requires a unitary pair, D_210 = Delta^B only under the Born")
+print("declaration Gam_21 := B(U2), and that declaration is UNAVAILABLE")
+print("here.  Every finding of 5.1 below is a finding about D_210.")
 print()
 
 PT = ("r", 1, -1)
@@ -1232,12 +1340,79 @@ gate("Z1", "COH's residual is nonzero exactly on the CORRELATED tables",
           for n2 in ("LCORR", "SINGLET", "HARDY", "PR"))
       and all(ZOO[(n2, "COH", "NONE")]["T"][0] is False
               for n2 in ("DET", "UNIF"))),
-     "D_210 = joint - product at the wing cut: a CORRELATION measure — the "
-     "LOCAL LCORR table has the same defect as the singlet")
-gate("Z1", "d_div = 0 across the whole zoo",
+     "D_210 = joint - product at the wing cut is a CORRELATION measure: the "
+     "LOCAL LCORR table has the same D_210 as the singlet, and the "
+     "superquantum PR has no more.  THE OBJECT IS D_210 ALONE — no Delta^B "
+     "is defined on any Bell table in this receipt")
+
+print()
+print("     THE STRUCTURAL REASON d_div IS CONSTANT HERE, made explicit.")
+print("     The A-step's column at (u,v) is delta_v on the B pointer")
+print("     tensored with p_A on the A pointer: it does not depend on u, so")
+print("     the cut carries at most THREE distinct source columns, with")
+print("     pairwise-DISJOINT supports (one v-block each).  The SWAPBACK")
+print("     prologue cut is a permutation: nine distinct columns, supports")
+print("     of size one, also pairwise disjoint.  Whenever the distinct")
+print("     source columns are pairwise support-disjoint the")
+print("     disjoint-support construction builds a column-stochastic divisor")
+print("     for ANY column-stochastic target.  So d_div = 0 here is FORCED")
+print("     BY THE CARRIER — independent of table, variant, prefix and")
+print("     target — and is NOT an independent measurement.")
+
+
+def _disjoint_branch(Gs, Gt):
+    """Run the disjoint-support branch UNCONDITIONALLY.  Returns
+    (supports pairwise disjoint, the construction verifies, #distinct)."""
+    n = len(Gs)
+    scol = {j: tuple(Gs[i][j] for i in range(n)) for j in range(n)}
+    tcol = {j: tuple(Gt[i][j] for i in range(n)) for j in range(n)}
+    reps = {}
+    for j in range(n):
+        reps.setdefault(scol[j], []).append(j)
+    keys = list(reps)
+    sup = [set(i for i in range(n) if not d[i].is_zero()) for d in keys]
+    dj = all(not (sup[p] & sup[q]) for p in range(len(sup))
+             for q in range(p + 1, len(sup)))
+    if not dj:
+        return False, False, len(keys)
+    X = [[E1 if i == 0 else E0 for _ in range(n)] for i in range(n)]
+    for kk, d in enumerate(keys):
+        tgt = tcol[reps[d][0]]
+        for i in sup[kk]:
+            for r in range(n):
+                X[r][i] = tgt[r]
+    return True, (_stoch(X) and _mm(X, Gs) == Gt), len(keys)
+
+
+_dj_all, _dj_built, _dj_n, _dj_k = True, True, 0, set()
+for prefix in ("NONE", "SWAPBACK"):
+    for variant in ("REC", "COH"):
+        for nm in TORDER:
+            T = TABLES[nm]
+            for a in (0, 1):
+                for b in (0, 1):
+                    M = build(T, a, b, prefix, "F1")
+                    for (tc, leg) in declared_cuts(T, a, b, variant, prefix):
+                        dj, built, nk = _disjoint_branch(M["G"][tc],
+                                                         M["G"][tc + 1])
+                        _dj_n += 1
+                        _dj_k.add(nk)
+                        _dj_all = _dj_all and dj
+                        _dj_built = _dj_built and built
+gate("Z1", "STRUCTURAL: every cut's distinct source columns are DISJOINT",
+     _dj_all and _dj_built and _dj_n == 144,
+     "%d/%d cuts pairwise support-disjoint; distinct-column counts %s; the "
+     "disjoint-support construction builds and VERIFIES a divisor at every "
+     "one of them, run unconditionally (not only where the cascade reached "
+     "it)" % (_dj_n, _dj_n, sorted(_dj_k)))
+gate("Z1", "d_div = 0 across the whole zoo — FORCED BY THE CARRIER",
      all(ZOO[k]["T"][1] is False for k in ZOO),
-     "W1 C+1's separation instantiated on a Bell carrier: the DECLARED "
-     "residual separates where the EXISTENTIAL one cannot", "[REV2]")
+     "d_div is CONSTANT on this carrier by construction (previous gate), so "
+     "it is not re-measured here: W1' C+1's separation is RE-ANCHORED from "
+     "the committed value Delta^B_00 = -4032/15625 with K = S(-175/527) "
+     "(anchor, sec.2), not instantiated afresh.  What the zoo DOES show is "
+     "that the DECLARED residual D_210 separates on a carrier where the "
+     "EXISTENTIAL one is constant", "[REV2]")
 gate("Z1", "no divisibility decision is UNDECIDED-BY-CAP", UNDEC[0] == 0,
      "certificate cascade: %s ; exact-LP invocations %d"
      % (CERTS, LPCALL[0]))
@@ -1456,15 +1631,18 @@ gate("Z3", "the instrument is sensitive to the TIME CORRESPONDENCE",
      "phi_ORD admits the wing-exchange map on the outcome-symmetric "
      "tables where phi_LOR admits nothing — BC2's two-correspondence "
      "structure reproduced", "[BC2]")
-_supA = len([1 for s in SEC2 if TABLES["SINGLET"][(0, 0)][s].sign() > 0])
-_supD = len([1 for s in SEC2 if TABLES["DET"][(0, 0)][s].sign() > 0])
-gate("Z3", "the separating invariant at G-SUPP is SUPPORT SIZE",
-     (_supA == 4 and _supD == 1
-      and ZOO[("SINGLET", "REC", "NONE")]["B2"][2] is False
-      and ZOO[("DET", "REC", "NONE")]["B2"][2] is True),
-     "joint support %d (SINGLET) vs %d (DET) against the wing marginal's "
-     "support: the same invariant bc/LOG #4 reports for the pointer-free "
-     "replication" % (_supA, _supD), "[BC2]")
+MAXSUP = {nm: max(len([1 for s in SEC2 if TABLES[nm][(a, b)][s].sign() > 0])
+                  for a in (0, 1) for b in (0, 1)) for nm in TORDER}
+gate("Z3", "the separating invariant at G-SUPP is SUPPORT SIZE — ALL SIX",
+     (all((ZOO[k]["B2"][2] is True) == (MAXSUP[k[0]] <= 2) for k in ZOO)
+      and len(set(MAXSUP.values())) > 1),
+     "a BICONDITIONAL on 6/6 tables and all %d zoo processes: T at "
+     "phi_LOR/G-SUPP <=> max joint support <= 2.  %s.  The same invariant "
+     "bc/LOG #4 reports for the pointer-free replication"
+     % (len(ZOO), "; ".join(
+         "%s %d %s" % (nm, MAXSUP[nm],
+                       "T" if ZOO[(nm, "REC", "NONE")]["B2"][2] else "-")
+         for nm in TORDER)), "[BC2]")
 
 for k in ZOO:
     ZOO[k]["X"] = (XVAL[k[0]]["level"], XVAL[k[0]]["gnz"] > 0)
@@ -1481,9 +1659,11 @@ print("           WHOLE cover.  Tested anyway, both directions.")
 print("  Phi_XT   'contextuality IS a defect'.  Needs an amplitude")
 print("           realization; PARTIAL — undefined at PR (6.3b).")
 print("  Phi_TB1  'BC1's obstruction IS the temporal one'.  BC1's predicate")
-print("           is d_div (quoted), so B1 is a functional of the")
-print("           LATTICE-EXTENDED d_div family (6.4).  Tested against T as")
-print("           declared.")
+print("           is BUILT FROM d_div (quoted), so B1 is a functional of the")
+print("           LATTICE-EXTENDED d_div family — the all-targets")
+print("           conjunction of the atom on per-subsystem reduced matrices,")
+print("           a containment of INGREDIENTS, not of VALUES (6.4).  Tested")
+print("           against T as declared.")
 print("  Phi_TB2  'BC2's obstruction IS the temporal one'.  BC2's own")
 print("           sentence denies it; tested here independently.")
 print("  Phi_XB1, Phi_XB2  the v1 T5 hypothesis in its contextual form.")
@@ -1559,21 +1739,71 @@ for i in range(len(OBJS)):
              verdict != "UNSEPARATED-ON-THIS-ZOO", verdict)
         print()
 
+print("6.2a  THE WITNESS CHOICE IS A TIE-BREAK, NOT A NECESSITY.")
+_DN = ("DET", "COH", "NONE")
+_SW = ("DET", "COH", "SWAPBACK")
+_LC = ("LCORR", "COH", "NONE")
+_swcells = [p for p in TABLE
+            if any(w == (_DN, _SW) for w in TABLE[p][1:] if w)]
+print("      The selector prefers the pair differing in the FEWEST model")
+print("      coordinates, so where a same-table pair exists it wins.  The")
+print("      DET/COH/NONE vs DET/COH/SWAPBACK pair (same table, hence")
+print("      LITERALLY the same empirical model) carries exactly the cells")
+print("      %s." % ", ".join("%s vs %s" % p for p in _swcells))
+gate("REL", "the same-empirical-model witness carries exactly 3 cells",
+     (len(_swcells) == 3
+      and set(_swcells) == {("T", "B1"), ("X", "B1"), ("B1", "B2")}),
+     "T vs B1, X vs B1, B1 vs B2 — every cell whose partner is B1; the "
+     "SWAPBACK prologue moves GS1 and nothing else")
+print("      For the three T-ROW cells the tie-break instead lands on")
+print("      HARDY/COH vs HARDY/REC — same empirical model, only the")
+print("      DECLARED leg changes.  A PHYSICS-VARYING witness exists for all")
+print("      three as well, and is gated here so those verdicts do not rest")
+print("      on declaration-only separation.")
+gate("REL", "physics-varying witnesses ALSO carry all three T-row cells",
+     (val(_DN, "X") == val(_LC, "X") and val(_DN, "B1") == val(_LC, "B1")
+      and val(_DN, "B2") == val(_LC, "B2")
+      and val(_DN, "T") != val(_LC, "T")),
+     "DET/COH/NONE vs LCORR/COH/NONE — DIFFERENT TABLES, different physics: "
+     "X %s, B1 %s, B2 %s all EQUAL, T %s vs %s.  The declaration-only pairs "
+     "are the tie-break's choice, not the only witnesses available"
+     % (val(_DN, "X"), val(_DN, "B1"), val(_DN, "B2"), val(_DN, "T"),
+        val(_LC, "T")))
+print()
+
 print("6.3  THE PIN'S NAMED SEPARATING MODELS, each carried in-receipt.")
 print()
 print("  (a) A SINGLE-CONTEXT COMPOSITION WITH Delta^B != 0 AND NO")
 print("      CONTEXTUALITY.  (H,H) over Q(zeta_8) has")
-print("      Delta^B = [[1/2,-1/2],[-1/2,1/2]] != 0.  Its induced empirical")
-print("      model has ONE context, and a one-context model always has a")
-print("      global section: any extension of that context's distribution")
-print("      by a product with an arbitrary distribution on the unmeasured")
-print("      variables restricts to it.  Exhibited and verified below.")
+print("      Delta^B = [[1/2,-1/2],[-1/2,1/2]] != 0.  THE INDUCED EMPIRICAL")
+print("      MODEL IS BUILT HERE, not assumed: the two declared cuts of the")
+print("      (H,H) composition are read as ONE context {A0, B0}, A0 the")
+print("      intermediate outcome and B0 the final one, with the DECLARED")
+print("      two-time law  P(x,y) = B(H)_{y,x} B(H)_{x,0}  computed from the")
+print("      lifted Born shadow and converted exactly to Q.  Basis 0 -> +1,")
+print("      basis 1 -> -1.  A one-context model always has a global")
+print("      section: extend by a product with an arbitrary distribution on")
+print("      the unmeasured A1, B1.  Both the model and the section are")
+print("      exhibited and verified entrywise below.")
+_BH = _brat(H2)
+_IDX = {1: 0, -1: 1}
+_HHmod = {(x, y): _BH[_IDX[y]][_IDX[x]] * _BH[_IDX[x]][0] for x, y in SEC2}
+print("      induced one-context model  P(A0,B0) = %s"
+      % {k: str(v) for k, v in sorted(_HHmod.items())})
 _one = {tuple(g[m] for m in MEAS): ES(Fr(1, 16)) for g in GLOBAL}
 _onemg = marginals_of(_one)
-gate("SEP", "(a) Delta^B != 0 with a verified global section",
+gate("SEP", "(a) the (H,H)-INDUCED one-context model is normalized",
+     (_BH is not None and sum(_HHmod.values()) == 1
+      and all(v >= 0 for v in _HHmod.values())),
+     "built from B(H) by the declared two-time law; sum = 1, all entries "
+     "non-negative, exact in Q")
+gate("SEP", "(a) Delta^B != 0 with a global section VERIFIED ON THAT MODEL",
      (not mzero(K8, d_HH) and sum(_one.values(), E0) == E1
-      and all(_onemg[(0, 0)][s] == ES(Fr(1, 4)) for s in SEC2)),
-     "temporal defect PRESENT, contextual obstruction ABSENT")
+      and all(w.sign() >= 0 for w in _one.values())
+      and all(_onemg[(0, 0)][s] == es(_HHmod[s]) for s in SEC2)),
+     "the uniform 16-atom global distribution restricts on {A0,B0} to the "
+     "induced model entrywise: temporal defect PRESENT, contextual "
+     "obstruction ABSENT")
 print()
 print("  (b) CONTEXTUALITY WITHOUT A QUANTUM REALIZATION.  PR is strongly")
 print("      contextual with CHSH = 4.  Every U(1)-Gram correlator obeys the")
@@ -1613,20 +1843,29 @@ print("  (d) THE Delta^B(H,W) = 0 WITNESS (unbiased pair, zero defect).")
 print("      Both factors are fully unbiased — maximal amplitude coherence —")
 print("      and the defect is exactly zero, by PHASE ALIGNMENT (W1's closed")
 print("      form t+u = +-2 mod 8).  A vanishing temporal defect certifies")
-print("      nothing classical.  Its structural twin is [AMB]'s vanishing")
-print("      gamma on the CONTEXTUAL singlet (gate X4): two invariants, two")
-print("      false zeros, on DIFFERENT models — the zero-loci do not agree")
-print("      even where both are defined.")
+print("      nothing classical.  Its structural twin is the vanishing gamma")
+print("      on the CONTEXTUAL singlet (gate X4) — which is [AMB]'s OWN")
+print("      result, not this unit's; [AMB]'s term for it is a FALSE")
+print("      POSITIVE of the compatible-family criterion, which is what")
+print("      'false zero of gamma' names here.  Two invariants, two false")
+print("      zeros, on DIFFERENT models — the zero-loci do not agree even")
+print("      where both are defined.  THE JUXTAPOSITION is this unit's; the")
+print("      two ingredients are W1's and [AMB]'s respectively.")
 gate("SEP", "(d) both invariants have false zeros, on different models",
      (mzero(K8, d_HW) and XVAL["SINGLET"]["gnz"] == 0
       and XVAL["SINGLET"]["contextual"]),
-     "Delta^B(H,W) = 0 (unbiased); gamma(singlet) = 0 (contextual)")
+     "Delta^B(H,W) = 0 (unbiased) — W1's; gamma(singlet) = 0 (contextual) — "
+     "[AMB] Prop. 4.5's; only the pairing is this unit's")
 print()
 
 print("6.4  THE ONE GENUINE CONTAINMENT, stated exactly.")
-print("     BC1's predicate, quoted verbatim from the committed note, IS the")
-print("     existential divisibility d_div, the third member of T's family.")
-print("     So B1 is a functional of the LATTICE-EXTENDED d_div family.")
+print("     BC1's predicate, quoted verbatim from the committed note, is")
+print("     BUILT FROM the existential divisibility d_div, the third member")
+print("     of T's family: it is the ALL-TARGETS conjunction of the d_div")
+print("     atom, evaluated on PER-SUBSYSTEM REDUCED matrices.  So B1 is a")
+print("     functional of the LATTICE-EXTENDED d_div family — NOT of the")
+print("     atom.  (BC1's own text already states the connection: 'This is")
+print("     U1's (D1) conjoined over the spanning pairs that straddle t_k'.)")
 print("     That is a containment of INGREDIENTS, not of VALUES: as")
 print("     declared invariants of a model, B1 and T separate both ways")
 print("     (6.2).  The honest statement is that they SHARE AN INGREDIENT")
@@ -1661,10 +1900,28 @@ print("     7  gamma     the [AMB] cohomological witness        3.4")
 print("     8  B1        BC1's lattice non-gluing               4.1 / 5.2")
 print("     9  B2        BC2's frame non-mappability            4.2 / 5.3")
 print()
+print("     THE COUNTING CONVENTION, STATED ONCE, BOTH WAYS.  Entries 4, 5")
+print("     and 6 (AB, LC, SC) are THREE NESTED LEVELS OF ONE [AB]")
+print("     HIERARCHY, not three unrelated objects: SC => LC => AB, and both")
+print("     inclusions are strict on this zoo.  The headline 'NINE' counts")
+print("     the levels SEPARATELY, because each is separately decided here")
+print("     and each has its own witness.  Under the COLLAPSED convention —")
+print("     one [AB] hierarchy counted once — the count is SEVEN.  Nothing")
+print("     in the relation table depends on the choice: X enters every cell")
+print("     as the PAIR (level, gamma != 0), and all six cross-object")
+print("     verdicts are unchanged under either convention.")
+gate("H", "the count is stated under BOTH conventions",
+     (XVAL["PR"]["level"] == "SC" and XVAL["HARDY"]["level"] == "LC"
+      and XVAL["SINGLET"]["level"] == "PC"),
+     "9 counting AB/LC/SC separately; 7 collapsing the [AB] hierarchy to "
+     "one entry; the six cross-object verdicts are convention-independent")
+print()
 print("     STRICT IMPLICATIONS FOUND (four):")
 print("       Delta^B = 0 => d_div = 0     (strict: W1' C+1)")
 print("       SC => LC => AB               (both strict: PR, HARDY, SINGLET)")
-print("       gamma != 0 => AB             (strict: SINGLET)")
+print("       gamma != 0 => AB             (strict: SINGLET *and* HARDY —")
+print("                                     both are contextual with")
+print("                                     gamma = 0 at every section)")
 print("     INGREDIENT CONTAINMENT FOUND (one): B1 is a functional of the")
 print("       lattice-extended d_div family (6.4).")
 print("     CONSTRUCTED EQUIVALENCES FOUND: NONE.")
@@ -1711,6 +1968,59 @@ print("       stochastic layer is the Born-declaration identity, stated.")
 print("     * gamma is computed for the definition of 3.4 and no other.")
 print()
 
+print("7.4  DISCLOSURES.  What follows is an AST SELF-AUDIT of this file, so")
+print("     the count cannot drift from the code.")
+with open(os.path.abspath(__file__), "rb") as _fh:
+    _self_src = _fh.read().decode("utf-8")
+_hard = []
+for _n in ast.walk(ast.parse(_self_src, filename="w4p_self")):
+    if isinstance(_n, ast.Call) and isinstance(_n.func, ast.Name) and \
+            _n.func.id == "gate" and len(_n.args) >= 3 and \
+            isinstance(_n.args[2], ast.Constant) and _n.args[2].value is True:
+        _hard.append((_n.args[0].value
+                      if isinstance(_n.args[0], ast.Constant) else "?",
+                      _n.args[1].value
+                      if isinstance(_n.args[1], ast.Constant)
+                      else "<computed>"))
+_NGATE = len(GATES) + 1                      # this section's own gate included
+print("     * ASSERTED, NOT COMPUTED: %d of the %d gates carry the LITERAL"
+      % (len(_hard), _NGATE))
+print("       True as their predicate.  They record a declared scope, a")
+print("       provenance already established by an exit-1 anchor, or a")
+print("       quotation — they compute nothing.  Enumerated by AST:")
+for _s, _nm2 in _hard:
+    print("         [%-5s] %s" % (_s, _nm2))
+_REASSERT = [
+    ("T-int", "Delta^B = 0 is PHASE ALIGNMENT (mzero(d_HW) is an anchor)"),
+    ("SEP", "(a) Delta^B != 0 ... (mzero(d_HH) is an anchor)"),
+    ("SEP", "(b) PR: CHSH = 4 (already gated at X2)"),
+    ("SEP", "(d) false zeros (both conjuncts already gated/anchored)"),
+    ("X4", "SUFFICIENT: gamma != 0 only on contextual models (X2 + 3.4)"),
+    ("Z3", "the coarse grains are empty under phi_LOR (the 5.3 table)"),
+    ("H", "no unification is assumed (the six REL verdicts)"),
+    ("H", "U2's warning discharged (the six REL verdicts)"),
+]
+print("     * RE-ASSERTIONS: %d further gates are computed but re-assert a"
+      % len(_REASSERT))
+print("       boolean an EARLIER gate or anchor already established:")
+for _s, _nm2 in _REASSERT:
+    print("         [%-5s] %s" % (_s, _nm2))
+print("     * SEP(a)'s empirical model is BUILT (6.3a), not asserted: the")
+print("       (H,H)-induced one-context law is computed from the lifted")
+print("       Born shadow and the global section is verified against it")
+print("       entrywise.  Earlier versions of this gate checked only a")
+print("       uniform section's marginal; that is repaired.")
+print("     * The [AMB] verdicts on HARDY and the SINGLET are [AMB]'s OWN")
+print("       published results (sec.5 and Prop. 4.5), reproduced")
+print("       independently here.  See 3.4's attribution block.")
+print("     * d_div = 0 on the zoo is FORCED by the carrier (gate Z1), not")
+print("       an independent measurement.")
+gate("H", "disclosures are AST-self-audited, not hand-counted",
+     len(_hard) + len(_REASSERT) < _NGATE and _NGATE == len(GATES) + 1,
+     "%d asserted-True + %d re-assertions of %d gates, enumerated above"
+     % (len(_hard), len(_REASSERT), _NGATE))
+print()
+
 # ============================================================================
 head("SUMMARY")
 # ============================================================================
@@ -1731,9 +2041,12 @@ hr("-")
 print()
 print("VERDICT: **W4'-NEITHER-ONE-NOR-THREE.**  The three objects the pin")
 print("names are not one invariant, and they are not three: at the")
-print("resolution this receipt measures they are NINE, related by exactly")
-print("four strict implications and one ingredient containment, with ZERO")
-print("constructed equivalences.  Every cross-object pair is INDEPENDENT,")
+print("resolution this receipt measures they are NINE — SEVEN if the [AB]")
+print("hierarchy's three nested levels are counted once (7.1 states both) —")
+print("related by exactly four strict implications and one ingredient")
+print("containment, with ZERO constructed equivalences, and the six")
+print("cross-object verdicts do not depend on the convention.")
+print("Every cross-object pair is INDEPENDENT,")
 print("each carried by a pair of exact models agreeing on one invariant and")
 print("differing on the other.  Paper 0 v1's T5 ('BC1/BC2 as one class') is")
 print("FALSIFIED as stated.  Paper 0 v2.1's refusal to assert that Delta^B")

@@ -27,7 +27,7 @@ SECTION 0 — PROVENANCE: the reused source and the cited constants
 0.2  THE CITED BC CONSTANTS — every quotation verified against the
      COMMITTED blob.  The bc working tree is DIRTY with frozen
      partial edits; no code path below reads it.
-  [anchor] every cited BC string present in the committed blob ok 25 quotations (10 bc2, 10 bc1, 5 bc/LOG #4); missing: none
+  [anchor] every cited BC string present in the committed blob ok 26 quotations (10 bc2, 11 bc1, 5 bc/LOG #4); missing: none
      bc2 note @ cbb7279 ; bc1 note @ 42d8610 ; bc/LOG.md @ HEAD
 
 ==============================================================================
@@ -65,7 +65,14 @@ These are THREE objects and are never conflated (W1' C+1, [REV2]).
 
 2.1  THE INTERNAL RELATIONS OF T — an implication lattice, not an
      identity.  T is three objects before any other object is met.
-  [PASS] T-int  Delta^B = 0  =>  d_div = 0  (the divisor is K = B(U2)) 16 exact pairs; a one-line theorem, gated
+     THE GATE'S SUBSTANCE, STATED.  'Delta^B = 0 => d_div = 0' is
+     DEFINITIONAL once the divisor is admissible: Delta^B = 0 SAYS
+     B(U2U1) = B(U2)B(U1), which is the witness equation itself.  The
+     non-trivial ingredient is that K = B(U2) is a legal divisor at
+     all — column-stochastic — and THAT is what is gated.  The
+     16-pair walk is retained as an arithmetic consistency check and
+     is, as coded, a tautology.
+  [PASS] T-int  SUBSTANCE: the divisor K = B(U2) is COLUMN-STOCHASTIC 8 census Born shadows, each exactly rational with unit column sums; the implication is then definitional (16-pair walk consistent).  SCOPE: d_div here is d_div of the BORN-DECLARED pair Gam_10 := B(U1), Gam_20 := B(U2U1)
   [PASS] T-int  STRICT: d_div = 0 while Delta^B != 0               W1 C+1 anchor: Delta^B_00 = -4032/15625 with K = S(-175/527)   <[REV2]>
   [PASS] T-int  D_210 = Delta^B ONLY under the Born declaration    Gam_21 := B(U2), Gam_10 := B(U1), Gam_20 := B(U2U1)
   [PASS] T-int  Delta^B = 0 is PHASE ALIGNMENT, not absence of coherence Delta^B(H,W) = 0 with BOTH factors fully unbiased
@@ -120,11 +127,32 @@ impose equality of coefficient sums.
        gamma(s0) = 0  <=>  there are r_i in F(C_i) with r_{C0} = s0
                            and r_i| = r_j| on every C_i n C_j,
                            the empty intersections included.
-     This is the compatible-family form of [AMB]'s obstruction: an
-     INTEGER linear feasibility problem, decided by Hermite normal
+     This is [AMB] Prop. 4.3's criterion in compatible-family form:
+     an INTEGER linear feasibility problem, decided by Hermite normal
      form.  The rational relaxation is reported alongside.  No claim
      is made to reproduce any published per-model table; the verdict
      below is a verdict about THIS definition.
+
+     ATTRIBUTION, BEFORE THE NUMBERS.  The two VANISHING results
+     below are [AMB]'s OWN PUBLISHED RESULTS, reproduced
+     independently here — they are NOT this unit's findings:
+       * HARDY.  [AMB] sec.5 'Examples' OPENS with Hardy — 'We begin
+         with an example to show that false positives do indeed
+         arise' — and exhibits the same Z-family mechanism,
+         r_2 = s_6 + s_7 - s_8, with the negative coefficient that
+         defeats the support restriction, concluding that the
+         obstruction gamma(s_1) vanishes.
+       * SINGLET.  [AMB] Prop. 4.5's first clause: if the model is
+         possibilistically extendable the obstruction vanishes for
+         EVERY section in the support.  supp(SINGLET) = supp(UNIF)
+         is full, and UNIF is extendable, so the singlet verdict is
+         an immediate corollary of [AMB]'s own proposition.
+     [AMB]'s TERM for this failure mode is a FALSE POSITIVE (sec.4:
+     a compatible family exists but determines no bona fide global
+     section) — the obstruction vanishes though the model IS
+     contextual.  This unit's contribution here is the exact
+     integer certificate and the placement of these facts in the
+     relation table, not the facts themselves.
      DET      gamma != 0 at  0 of  4 local sections over Z ( 0 over Q)
      UNIF     gamma != 0 at  0 of 16 local sections over Z ( 0 over Q)
      LCORR    gamma != 0 at  0 of  8 local sections over Z ( 0 over Q)
@@ -133,16 +161,18 @@ impose equality of coefficient sums.
      PR       gamma != 0 at  8 of  8 local sections over Z ( 8 over Q)
   [PASS] X4     SUFFICIENT: gamma != 0 occurs only on contextual models the three non-contextual models have gamma = 0 everywhere   <[AMB]>
   [PASS] X4     gamma != 0 on the PR box, at every local section   8/8 sections obstructed   <[AMB]>
-  [PASS] X4     NOT NECESSARY: a CONTEXTUAL model with gamma = 0 everywhere SINGLET: max CHSH = 2*r2 > 2, yet gamma = 0 at all 16 sections   <[AMB]>
-  [PASS] X4     NOT NECESSARY even at the LOGICAL level, on this definition HARDY has a NON-EXTENDABLE local section and gamma = 0 at all 13 sections: an explicit Z-family with a negative coefficient defeats the support restriction   <[AMB]>
-  [PASS] X4     so gamma is STRICTLY WEAKER than logical contextuality here the witness fires on the STRONGLY contextual PR and on nothing else in this zoo — reported for the definition of 3.4 and no other   <[AMB]>
-     THE CAUTION, MEASURED rather than quoted: the cohomological
-     witness is SUFFICIENT and NOT NECESSARY.  The singlet at the
-     CHSH settings has full support, so every local section extends
-     to a compatible Z-family and gamma vanishes on a model with NO
-     global section at all.  gamma is therefore a SEPARATE object,
-     strictly weaker than the AB obstruction: X is not one invariant
-     either.
+  [PASS] X4     [AMB] Prop. 4.5 REPRODUCED: contextual, gamma = 0 everywhere SINGLET: max CHSH = 2*r2 > 2, yet gamma = 0 at all 16 sections — [AMB]'s OWN result (Prop. 4.5, first clause; supp(SINGLET) = supp(UNIF) is full), reproduced independently, NOT a finding of this unit   <[AMB]>
+  [PASS] X4     [AMB] sec.5's OPENING EXAMPLE reproduced: HARDY, gamma = 0 HARDY has a NON-EXTENDABLE local section and gamma = 0 at all 13 sections; support fingerprint (3, 3, 3, 4) = [AMB] sec.5's Hardy table up to outcome relabelling, same Z-family mechanism (r_2 = s_6 + s_7 - s_8, negative coefficient).  [AMB]'s OWN example, reproduced independently   <[AMB]>
+  [PASS] X4     so gamma is STRICTLY WEAKER than logical contextuality here the witness fires on the STRONGLY contextual PR and on nothing else in this zoo — reported for the definition of 3.4 and no other; the sufficient-not-necessary status is [AMB]'s stated result, cited   <[AMB]>
+     THE CAUTION, REPRODUCED rather than discovered: the cohomological
+     witness is SUFFICIENT and NOT NECESSARY — [AMB]'s own stated
+     status for it, with [AMB]'s own two examples.  The singlet at
+     the CHSH settings has full support, so every local section
+     extends to a compatible Z-family and gamma vanishes on a model
+     with NO global section at all.  gamma is therefore a SEPARATE
+     object, strictly weaker than the AB obstruction: X is not one
+     invariant either.  What is THIS UNIT'S is only the placement of
+     that known separation inside the relation table.
 
 ==============================================================================
 SECTION 4 — OBJECT B: THE MEASURED BC OBSTRUCTIONS (cited)
@@ -152,9 +182,16 @@ SECTION 4 — OBJECT B: THE MEASURED BC OBSTRUCTIONS (cited)
        BC1's predicate, quoted: DIV_S(t_k) holds iff for EVERY grid
        target t_b >= t_k there EXISTS a column-stochastic X_b with
        X_b Gam_S(t_k<-0) = Gam_S(t_b<-0).
-       => BC1's predicate IS d_div, the THIRD member of T's family —
-          neither Delta^B nor D_210.  This is a fact about the two
-          texts, established by quotation; it is NOT an
+       => BC1's predicate is BUILT FROM d_div, the THIRD member of T's
+          family — neither Delta^B nor D_210.  STATED IN ITS HONEST
+          FORM (6.4, carried here): B1 is a functional of the
+          LATTICE-EXTENDED d_div family — the ALL-TARGETS conjunction
+          of the d_div atom, evaluated on PER-SUBSYSTEM REDUCED
+          matrices.  It is not the atom itself, and this is a
+          containment of INGREDIENTS, not of VALUES.  BC1's own text
+          says as much: 'This is U1's (D1) conjoined over the
+          spanning pairs that straddle t_k' — the connection is
+          BC1's, quoted, not this unit's discovery.  It is NOT an
           identification of the invariants (see 6.4).
        axioms over 88 (model, reading) pairs:
          GS0 88/88 | GS1 66/88 | GS2 88/88 | GS3 22/88
@@ -164,7 +201,7 @@ SECTION 4 — OBJECT B: THE MEASURED BC OBSTRUCTIONS (cited)
        classical Markov control: divides everywhere (385 slots) and
          satisfies all four axioms;
        ten grid slices admit NO non-empty consistent assignment.
-  [PASS] B1c    BC1 constants quoted with verified provenance      10 strings matched in the committed blob   <[BC1]>
+  [PASS] B1c    BC1 constants quoted with verified provenance      11 strings matched in the committed blob   <[BC1]>
 
 4.2  BC2 — the intermediate-slice composite description is not
      frame-mappable.  CITED, NOT re-run, WITH bc/LOG.md #4's
@@ -204,7 +241,7 @@ SECTION 4 — OBJECT B: THE MEASURED BC OBSTRUCTIONS (cited)
        SP-C ( 90, 45): cos(a-b) = 1/2*r2   => E = -1/2*r2
        SP-D ( 90,135): cos(a-b) = 1/2*r2   => E = -1/2*r2
   [PASS] B2x    BC2's Bell model is CONTEXTUAL: |CHSH| = 2 sqrt2   max CHSH = 2*r2 > 2 = the vertex maximum   <[AB]>
-  [PASS] B2x    and its [AMB] witness VANISHES at every local section full support => gamma = 0: the false negative lands on the corpus's own measured model   <[AMB]>
+  [PASS] B2x    and its [AMB] witness VANISHES at every local section full support => gamma = 0 by [AMB] Prop. 4.5; [AMB]'s known FALSE POSITIVE lands on the corpus's own measured model — the instance is this unit's, the phenomenon is [AMB]'s   <[AMB]>
      => ON BC2's OWN MODEL, in one place: X = PC (contextual) with
         gamma = 0; the frame obstruction NONZERO at all four CHSH
         settings; the temporal residual ZERO at SP-A/SP-B and
@@ -231,19 +268,43 @@ PREFIX NONE, or SWAPBACK: two pointer-exchange steps first, so
 Gam(2<-0) = I — a permutation prologue that changes NO statistic.
 VARIANT REC: the declared second leg is the true conditional law (a
 stable record of the first outcome is read).  VARIANT COH: the
-declared second leg is the phase-forgetting law that ignores the
-record, so its residual D_210 = joint - product is exactly a
-Born-shadow defect at the wing cut.
+declared second leg DISCARDS the classical record and uses the bare
+marginal P_B(.|b), so its residual D_210 = joint - product is a
+DECLARED-LAW RESIDUAL at the wing cut.
+
+NAMING DISCIPLINE, ENGRAVED (paper 0 v2.1's three defects).  There
+are NO PHASES anywhere in this zoo: the tables are stochastic and no
+amplitude realization is built for any of them (7.3).  COH's
+discarded object is a CLASSICAL RECORD, not a phase.  What is
+measured at the wing cut is therefore D_210 and NOTHING ELSE.  It is
+NOT Delta^B, and it is not called a Born-shadow defect: Delta^B
+requires a unitary pair, D_210 = Delta^B only under the Born
+declaration Gam_21 := B(U2), and that declaration is UNAVAILABLE
+here.  Every finding of 5.1 below is a finding about D_210.
 
 5.1  THE ZOO'S TEMPORAL VALUE  T = (some D_210 != 0, some d_div != 0)
      over the model's DECLARED cuts and all four contexts.
-     NONE     REC   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (False, False), 'SINGLET': (False, False), 'HARDY': (False, False), 'PR': (False, False)}       3.0s
-     NONE     COH   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (True, False), 'SINGLET': (True, False), 'HARDY': (True, False), 'PR': (True, False)}       3.1s
-     SWAPBACK REC   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (False, False), 'SINGLET': (False, False), 'HARDY': (False, False), 'PR': (False, False)}       3.3s
-     SWAPBACK COH   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (True, False), 'SINGLET': (True, False), 'HARDY': (True, False), 'PR': (True, False)}       3.5s
+     NONE     REC   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (False, False), 'SINGLET': (False, False), 'HARDY': (False, False), 'PR': (False, False)}       2.3s
+     NONE     COH   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (True, False), 'SINGLET': (True, False), 'HARDY': (True, False), 'PR': (True, False)}       2.4s
+     SWAPBACK REC   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (False, False), 'SINGLET': (False, False), 'HARDY': (False, False), 'PR': (False, False)}       2.5s
+     SWAPBACK COH   T = {'DET': (False, False), 'UNIF': (False, False), 'LCORR': (True, False), 'SINGLET': (True, False), 'HARDY': (True, False), 'PR': (True, False)}       2.6s
   [PASS] Z1     REC kills the declared residual at every cut, every context the record makes the declared law compose: T3's constructive instance
-  [PASS] Z1     COH's residual is nonzero exactly on the CORRELATED tables D_210 = joint - product at the wing cut: a CORRELATION measure — the LOCAL LCORR table has the same defect as the singlet
-  [PASS] Z1     d_div = 0 across the whole zoo                     W1 C+1's separation instantiated on a Bell carrier: the DECLARED residual separates where the EXISTENTIAL one cannot   <[REV2]>
+  [PASS] Z1     COH's residual is nonzero exactly on the CORRELATED tables D_210 = joint - product at the wing cut is a CORRELATION measure: the LOCAL LCORR table has the same D_210 as the singlet, and the superquantum PR has no more.  THE OBJECT IS D_210 ALONE — no Delta^B is defined on any Bell table in this receipt
+
+     THE STRUCTURAL REASON d_div IS CONSTANT HERE, made explicit.
+     The A-step's column at (u,v) is delta_v on the B pointer
+     tensored with p_A on the A pointer: it does not depend on u, so
+     the cut carries at most THREE distinct source columns, with
+     pairwise-DISJOINT supports (one v-block each).  The SWAPBACK
+     prologue cut is a permutation: nine distinct columns, supports
+     of size one, also pairwise disjoint.  Whenever the distinct
+     source columns are pairwise support-disjoint the
+     disjoint-support construction builds a column-stochastic divisor
+     for ANY column-stochastic target.  So d_div = 0 here is FORCED
+     BY THE CARRIER — independent of table, variant, prefix and
+     target — and is NOT an independent measurement.
+  [PASS] Z1     STRUCTURAL: every cut's distinct source columns are DISJOINT 144/144 cuts pairwise support-disjoint; distinct-column counts [3, 9]; the disjoint-support construction builds and VERIFIES a divisor at every one of them, run unconditionally (not only where the cascade reached it)
+  [PASS] Z1     d_div = 0 across the whole zoo — FORCED BY THE CARRIER d_div is CONSTANT on this carrier by construction (previous gate), so it is not re-measured here: W1' C+1's separation is RE-ANCHORED from the committed value Delta^B_00 = -4032/15625 with K = S(-175/527) (anchor, sec.2), not instantiated afresh.  What the zoo DOES show is that the DECLARED residual D_210 separates on a carrier where the EXISTENTIAL one is constant   <[REV2]>
   [PASS] Z1     no divisibility decision is UNDECIDED-BY-CAP       certificate cascade: {'declared-bridge': 114, 'disjoint-support-construction': 30} ; exact-LP invocations 0
 
 5.2  THE ZOO'S B1 VALUE — BC1's axioms on the lattice {A, B, AB},
@@ -271,17 +332,17 @@ Born-shadow defect at the wing cut.
      G-FIX (matrices only), G-SUPP (reachable conditioning only:
      columns j with p_j(0) > 0, which is {(r,r)} in both frames).
      Correspondences: phi_LOR (same physical event) and phi_ORD.
-     NONE     REC   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       5.5s
-     NONE     COH   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       5.8s
-     SWAPBACK REC   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       6.4s
-     SWAPBACK COH   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       6.9s
+     NONE     REC   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       4.1s
+     NONE     COH   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       4.3s
+     SWAPBACK REC   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       4.7s
+     SWAPBACK COH   {'DET': '--TTTT', 'UNIF': '---TTT', 'LCORR': '--TTTT', 'SINGLET': '---TTT', 'HARDY': '------', 'PR': '--TTTT'}       5.0s
      value order (LOR: FULL,FIX,SUPP | ORD: FULL,FIX,SUPP);
      T = a permutation EXISTS and is verified entrywise;
      - = none exists (exhaustive).  max search nodes used: 10 (cap 200000).
   [PASS] Z3     the instrument is not a no-op: it separates the zoo's tables 3 distinct B2 values among the 6 tables
   [PASS] Z3     the coarse grains are empty under phi_LOR; maps live at G-SUPP the same shape as BC2's own table (`-` at G-FULL, `PI` at G-SUPP)   <[BC2]>
   [PASS] Z3     the instrument is sensitive to the TIME CORRESPONDENCE phi_ORD admits the wing-exchange map on the outcome-symmetric tables where phi_LOR admits nothing — BC2's two-correspondence structure reproduced   <[BC2]>
-  [PASS] Z3     the separating invariant at G-SUPP is SUPPORT SIZE joint support 4 (SINGLET) vs 1 (DET) against the wing marginal's support: the same invariant bc/LOG #4 reports for the pointer-free replication   <[BC2]>
+  [PASS] Z3     the separating invariant at G-SUPP is SUPPORT SIZE — ALL SIX a BICONDITIONAL on 6/6 tables and all 24 zoo processes: T at phi_LOR/G-SUPP <=> max joint support <= 2.  DET 1 T; UNIF 4 -; LCORR 2 T; SINGLET 4 -; HARDY 4 -; PR 2 T.  The same invariant bc/LOG #4 reports for the pointer-free replication   <[BC2]>
 
 ==============================================================================
 SECTION 6 — THE CANDIDATE MAPS AND THE RELATION TABLE
@@ -294,9 +355,11 @@ SECTION 6 — THE CANDIDATE MAPS AND THE RELATION TABLE
   Phi_XT   'contextuality IS a defect'.  Needs an amplitude
            realization; PARTIAL — undefined at PR (6.3b).
   Phi_TB1  'BC1's obstruction IS the temporal one'.  BC1's predicate
-           is d_div (quoted), so B1 is a functional of the
-           LATTICE-EXTENDED d_div family (6.4).  Tested against T as
-           declared.
+           is BUILT FROM d_div (quoted), so B1 is a functional of the
+           LATTICE-EXTENDED d_div family — the all-targets
+           conjunction of the atom on per-subsystem reduced matrices,
+           a containment of INGREDIENTS, not of VALUES (6.4).  Tested
+           against T as declared.
   Phi_TB2  'BC2's obstruction IS the temporal one'.  BC2's own
            sentence denies it; tested here independently.
   Phi_XB1, Phi_XB2  the v1 T5 hypothesis in its contextual form.
@@ -367,16 +430,37 @@ SECTION 6 — THE CANDIDATE MAPS AND THE RELATION TABLE
         DET/COH/SWAPBACK       B2 = (False, False, True, True, True, True) B1 = (True, False, True)
   [PASS] REL    B1 vs B2 decided by exact witnesses                INDEPENDENT
 
+6.2a  THE WITNESS CHOICE IS A TIE-BREAK, NOT A NECESSITY.
+      The selector prefers the pair differing in the FEWEST model
+      coordinates, so where a same-table pair exists it wins.  The
+      DET/COH/NONE vs DET/COH/SWAPBACK pair (same table, hence
+      LITERALLY the same empirical model) carries exactly the cells
+      T vs B1, X vs B1, B1 vs B2.
+  [PASS] REL    the same-empirical-model witness carries exactly 3 cells T vs B1, X vs B1, B1 vs B2 — every cell whose partner is B1; the SWAPBACK prologue moves GS1 and nothing else
+      For the three T-ROW cells the tie-break instead lands on
+      HARDY/COH vs HARDY/REC — same empirical model, only the
+      DECLARED leg changes.  A PHYSICS-VARYING witness exists for all
+      three as well, and is gated here so those verdicts do not rest
+      on declaration-only separation.
+  [PASS] REL    physics-varying witnesses ALSO carry all three T-row cells DET/COH/NONE vs LCORR/COH/NONE — DIFFERENT TABLES, different physics: X ('NC', False), B1 (True, True, True), B2 (False, False, True, True, True, True) all EQUAL, T (False, False) vs (True, False).  The declaration-only pairs are the tie-break's choice, not the only witnesses available
+
 6.3  THE PIN'S NAMED SEPARATING MODELS, each carried in-receipt.
 
   (a) A SINGLE-CONTEXT COMPOSITION WITH Delta^B != 0 AND NO
       CONTEXTUALITY.  (H,H) over Q(zeta_8) has
-      Delta^B = [[1/2,-1/2],[-1/2,1/2]] != 0.  Its induced empirical
-      model has ONE context, and a one-context model always has a
-      global section: any extension of that context's distribution
-      by a product with an arbitrary distribution on the unmeasured
-      variables restricts to it.  Exhibited and verified below.
-  [PASS] SEP    (a) Delta^B != 0 with a verified global section    temporal defect PRESENT, contextual obstruction ABSENT
+      Delta^B = [[1/2,-1/2],[-1/2,1/2]] != 0.  THE INDUCED EMPIRICAL
+      MODEL IS BUILT HERE, not assumed: the two declared cuts of the
+      (H,H) composition are read as ONE context {A0, B0}, A0 the
+      intermediate outcome and B0 the final one, with the DECLARED
+      two-time law  P(x,y) = B(H)_{y,x} B(H)_{x,0}  computed from the
+      lifted Born shadow and converted exactly to Q.  Basis 0 -> +1,
+      basis 1 -> -1.  A one-context model always has a global
+      section: extend by a product with an arbitrary distribution on
+      the unmeasured A1, B1.  Both the model and the section are
+      exhibited and verified entrywise below.
+      induced one-context model  P(A0,B0) = {(-1, -1): '1/4', (-1, 1): '1/4', (1, -1): '1/4', (1, 1): '1/4'}
+  [PASS] SEP    (a) the (H,H)-INDUCED one-context model is normalized built from B(H) by the declared two-time law; sum = 1, all entries non-negative, exact in Q
+  [PASS] SEP    (a) Delta^B != 0 with a global section VERIFIED ON THAT MODEL the uniform 16-atom global distribution restricts on {A0,B0} to the induced model entrywise: temporal defect PRESENT, contextual obstruction ABSENT
 
   (b) CONTEXTUALITY WITHOUT A QUANTUM REALIZATION.  PR is strongly
       contextual with CHSH = 4.  Every U(1)-Gram correlator obeys the
@@ -407,16 +491,24 @@ SECTION 6 — THE CANDIDATE MAPS AND THE RELATION TABLE
       Both factors are fully unbiased — maximal amplitude coherence —
       and the defect is exactly zero, by PHASE ALIGNMENT (W1's closed
       form t+u = +-2 mod 8).  A vanishing temporal defect certifies
-      nothing classical.  Its structural twin is [AMB]'s vanishing
-      gamma on the CONTEXTUAL singlet (gate X4): two invariants, two
-      false zeros, on DIFFERENT models — the zero-loci do not agree
-      even where both are defined.
-  [PASS] SEP    (d) both invariants have false zeros, on different models Delta^B(H,W) = 0 (unbiased); gamma(singlet) = 0 (contextual)
+      nothing classical.  Its structural twin is the vanishing gamma
+      on the CONTEXTUAL singlet (gate X4) — which is [AMB]'s OWN
+      result, not this unit's; [AMB]'s term for it is a FALSE
+      POSITIVE of the compatible-family criterion, which is what
+      'false zero of gamma' names here.  Two invariants, two false
+      zeros, on DIFFERENT models — the zero-loci do not agree even
+      where both are defined.  THE JUXTAPOSITION is this unit's; the
+      two ingredients are W1's and [AMB]'s respectively.
+  [PASS] SEP    (d) both invariants have false zeros, on different models Delta^B(H,W) = 0 (unbiased) — W1's; gamma(singlet) = 0 (contextual) — [AMB] Prop. 4.5's; only the pairing is this unit's
 
 6.4  THE ONE GENUINE CONTAINMENT, stated exactly.
-     BC1's predicate, quoted verbatim from the committed note, IS the
-     existential divisibility d_div, the third member of T's family.
-     So B1 is a functional of the LATTICE-EXTENDED d_div family.
+     BC1's predicate, quoted verbatim from the committed note, is
+     BUILT FROM the existential divisibility d_div, the third member
+     of T's family: it is the ALL-TARGETS conjunction of the d_div
+     atom, evaluated on PER-SUBSYSTEM REDUCED matrices.  So B1 is a
+     functional of the LATTICE-EXTENDED d_div family — NOT of the
+     atom.  (BC1's own text already states the connection: 'This is
+     U1's (D1) conjoined over the spanning pairs that straddle t_k'.)
      That is a containment of INGREDIENTS, not of VALUES: as
      declared invariants of a model, B1 and T separate both ways
      (6.2).  The honest statement is that they SHARE AN INGREDIENT
@@ -441,10 +533,24 @@ SECTION 7 — THE COUNT, AND THE HONESTY GATES
      8  B1        BC1's lattice non-gluing               4.1 / 5.2
      9  B2        BC2's frame non-mappability            4.2 / 5.3
 
+     THE COUNTING CONVENTION, STATED ONCE, BOTH WAYS.  Entries 4, 5
+     and 6 (AB, LC, SC) are THREE NESTED LEVELS OF ONE [AB]
+     HIERARCHY, not three unrelated objects: SC => LC => AB, and both
+     inclusions are strict on this zoo.  The headline 'NINE' counts
+     the levels SEPARATELY, because each is separately decided here
+     and each has its own witness.  Under the COLLAPSED convention —
+     one [AB] hierarchy counted once — the count is SEVEN.  Nothing
+     in the relation table depends on the choice: X enters every cell
+     as the PAIR (level, gamma != 0), and all six cross-object
+     verdicts are unchanged under either convention.
+  [PASS] H      the count is stated under BOTH conventions         9 counting AB/LC/SC separately; 7 collapsing the [AB] hierarchy to one entry; the six cross-object verdicts are convention-independent
+
      STRICT IMPLICATIONS FOUND (four):
        Delta^B = 0 => d_div = 0     (strict: W1' C+1)
        SC => LC => AB               (both strict: PR, HARDY, SINGLET)
-       gamma != 0 => AB             (strict: SINGLET)
+       gamma != 0 => AB             (strict: SINGLET *and* HARDY —
+                                     both are contextual with
+                                     gamma = 0 at every section)
      INGREDIENT CONTAINMENT FOUND (one): B1 is a functional of the
        lattice-extended d_div family (6.4).
      CONSTRUCTED EQUIVALENCES FOUND: NONE.
@@ -476,10 +582,49 @@ SECTION 7 — THE COUNT, AND THE HONESTY GATES
        stochastic layer is the Born-declaration identity, stated.
      * gamma is computed for the definition of 3.4 and no other.
 
+7.4  DISCLOSURES.  What follows is an AST SELF-AUDIT of this file, so
+     the count cannot drift from the code.
+     * ASSERTED, NOT COMPUTED: 11 of the 66 gates carry the LITERAL
+       True as their predicate.  They record a declared scope, a
+       provenance already established by an exit-1 anchor, or a
+       quotation — they compute nothing.  Enumerated by AST:
+         [T-int] STRICT: d_div = 0 while Delta^B != 0
+         [T-int] D_210 = Delta^B ONLY under the Born declaration
+         [B1c  ] BC1 constants quoted with verified provenance
+         [B2c  ] BC2 constants + bc/LOG #4 corrections quoted with provenance
+         [SEP  ] (c) BC2's own numbers separate T from B2 both ways
+         [H    ] the BC obstructions were CITED, never re-run
+         [H    ] bc/LOG #4's corrections are carried, not the superseded text
+         [H    ] the toy B1/B2 instruments are declared REDUCED analogues
+         [H    ] the [AMB] witness is reported for the DEFINITION IMPLEMENTED
+         [H    ] Delta^B is never equated with indivisibility
+         [H    ] no claim about nature; no claim beyond the declared models
+     * RE-ASSERTIONS: 8 further gates are computed but re-assert a
+       boolean an EARLIER gate or anchor already established:
+         [T-int] Delta^B = 0 is PHASE ALIGNMENT (mzero(d_HW) is an anchor)
+         [SEP  ] (a) Delta^B != 0 ... (mzero(d_HH) is an anchor)
+         [SEP  ] (b) PR: CHSH = 4 (already gated at X2)
+         [SEP  ] (d) false zeros (both conjuncts already gated/anchored)
+         [X4   ] SUFFICIENT: gamma != 0 only on contextual models (X2 + 3.4)
+         [Z3   ] the coarse grains are empty under phi_LOR (the 5.3 table)
+         [H    ] no unification is assumed (the six REL verdicts)
+         [H    ] U2's warning discharged (the six REL verdicts)
+     * SEP(a)'s empirical model is BUILT (6.3a), not asserted: the
+       (H,H)-induced one-context law is computed from the lifted
+       Born shadow and the global section is verified against it
+       entrywise.  Earlier versions of this gate checked only a
+       uniform section's marginal; that is repaired.
+     * The [AMB] verdicts on HARDY and the SINGLET are [AMB]'s OWN
+       published results (sec.5 and Prop. 4.5), reproduced
+       independently here.  See 3.4's attribution block.
+     * d_div = 0 on the zoo is FORCED by the carrier (gate Z1), not
+       an independent measurement.
+  [PASS] H      disclosures are AST-self-audited, not hand-counted 11 asserted-True + 8 re-assertions of 66 gates, enumerated above
+
 ==============================================================================
 SUMMARY
 ==============================================================================
-gates: 60   pass: 60   fail: 0   anchors: 14   runtime:     6.9s
+gates: 66   pass: 66   fail: 0   anchors: 14   runtime:     5.1s
 
 THE RELATION TABLE
 ------------------------------------------------------------------------------
@@ -495,9 +640,12 @@ THE RELATION TABLE
 
 VERDICT: **W4'-NEITHER-ONE-NOR-THREE.**  The three objects the pin
 names are not one invariant, and they are not three: at the
-resolution this receipt measures they are NINE, related by exactly
-four strict implications and one ingredient containment, with ZERO
-constructed equivalences.  Every cross-object pair is INDEPENDENT,
+resolution this receipt measures they are NINE — SEVEN if the [AB]
+hierarchy's three nested levels are counted once (7.1 states both) —
+related by exactly four strict implications and one ingredient
+containment, with ZERO constructed equivalences, and the six
+cross-object verdicts do not depend on the convention.
+Every cross-object pair is INDEPENDENT,
 each carried by a pair of exact models agreeing on one invariant and
 differing on the other.  Paper 0 v1's T5 ('BC1/BC2 as one class') is
 FALSIFIED as stated.  Paper 0 v2.1's refusal to assert that Delta^B
@@ -506,7 +654,7 @@ measurement rather than a caution.
 
 ANTECEDENTS USED:
   <[AB]> Abramsky-Brandenburger NJP 13 113036 (2011) — the presheaf formulation; global section = non-contextual; the possibilistic hierarchy (contextual / logically contextual / strongly contextual).
-  <[AMB]> Abramsky-Mansfield-Barbosa arXiv:1111.3620 — the cohomological obstruction on the free abelian presheaf generated by the SUPPORT: a SUFFICIENT, NOT NECESSARY witness of contextuality.
+  <[AMB]> Abramsky-Mansfield-Barbosa, 'The Cohomology of Non-Locality and Contextuality', arXiv:1111.3620 — the cohomological obstruction on the free abelian presheaf generated by the SUPPORT: a SUFFICIENT, NOT NECESSARY witness of contextuality.  Prop. 4.3 is the compatible-family criterion implemented at 3.4; sec.4 names the failure mode a FALSE POSITIVE; sec.5's OPENING example is HARDY, with the Z-family r_2 = s_6 + s_7 - s_8; Prop. 4.5's first clause (possibilistic extendability => vanishing obstruction on the whole support) covers the singlet.  BOTH VANISHING VERDICTS BELOW ARE [AMB]'s OWN; this unit reproduces them independently.
   <[B1]> Barandes arXiv:2302.10778 — the Born projection and its interference cross-term.
   <[B3]> Barandes arXiv:2507.21192 — division events, system-centricity, measurement-outcome configurations.
   <[BC1]> bc/note-bc1-division-event-composition.md @ 42d8610.
@@ -515,4 +663,4 @@ ANTECEDENTS USED:
   <[REV2]> the second external hostile review, adjudicated at v12 LOG #4 — the three-defect distinction.
   <[T]> Tsirelson — the real-unit-vector (Gram) representation of quantum correlators; imported, not re-derived.
 
-done      6.9s
+done      5.1s
